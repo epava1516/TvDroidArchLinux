@@ -23,8 +23,10 @@ parser.add_argument('--window-service-build',type=Path)
 parser.add_argument('--window-framework',type=Path)
 parser.add_argument('--window-bindings',type=Path)
 parser.add_argument('--window-system-resources',type=Path)
+parser.add_argument('--window-rendernode-build',type=Path)
 args = parser.parse_args()
 assert all((args.window_service_build,args.window_framework,args.window_bindings,args.window_system_resources)) or not any((args.window_service_build,args.window_framework,args.window_bindings,args.window_system_resources))
+assert args.window_rendernode_build is None or args.window_service_build
 root = Path(__file__).resolve().parents[2]
 out = args.output.resolve()
 out.mkdir(parents=True, exist_ok=False)
@@ -95,7 +97,17 @@ try:
         system_apk=args.window_system_resources.resolve()/'framework-res.apk'
         system_proof=json.loads((args.window_system_resources/'provenance.json').read_text())
         assert hashlib.sha256(system_apk.read_bytes()).hexdigest()==system_proof['apk_sha256']
-        service_command = [str(args.art.resolve()/'bin/art'),'--64','--no-compile','--','-Xint','-Xcheck:jni','-cp',
+        rendernode_options=[]
+        rendernode_sha256=None
+        if args.window_rendernode_build:
+            rendernode_build=args.window_rendernode_build.resolve()
+            rendernode_proof=json.loads((rendernode_build/'result.json').read_text())
+            rendernode_library=rendernode_build/'libarchtv_rendernode_host.so'
+            assert rendernode_proof['build_pass']
+            rendernode_sha256=hashlib.sha256(rendernode_library.read_bytes()).hexdigest()
+            assert rendernode_sha256==rendernode_proof['library_sha256']
+            rendernode_options=['-Darchtv.rendernode.library='+str(rendernode_library)]
+        service_command = [str(args.art.resolve()/'bin/art'),'--64','--no-compile','--','-Xint','-Xcheck:jni',*rendernode_options,'-cp',
             ':'.join(str(build/'dex/classes.dex') for build in builds),'org.archtv.apkruntime.WindowServiceProbe',
             str(args.linux_library.resolve()),str(policy),str(args.resources_library.resolve()),str(apk),str(system_apk),str(out/'service-data')]
         service = start(service_command,'window-service.log',service_env,input_pipe=True)
@@ -105,6 +117,7 @@ try:
         service_check('check 960 540 960 540 0.5','WINDOW_SERVICE_OK 960x540')
         assert 'AOSP_ANIMATION_POLICY_OK scale=0.5 callbacks=3 interpolators=2' in (out/'window-service.log').read_text()
         service_info={'command':service_command,'system_resources_sha256':system_proof['apk_sha256'],'sha256':{str(build/'dex/classes.dex'):proof['dex_sha256'] for build,proof in zip(builds,proofs)}}
+        service_info['rendernode_library_sha256']=rendernode_sha256
     def ready():
         text = (out/'compositor.log').read_text(errors='replace')
         return bool(re.search(r'APK_FRAME \d+ 800x450', text))

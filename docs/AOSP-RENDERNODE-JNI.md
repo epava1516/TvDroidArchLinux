@@ -41,3 +41,8 @@ ejecuta un método RenderNode original. La prueba de ocho firmas de
 AOSP-CRITICAL-HOST.md es independiente y utiliza funciones de prueba. Después
 de terminar Skia habrá que enlazar el cierre nativo HWUI y probar creación,
 propiedades y ownership reales en ART antes de repetir el constructor View.
+
+La ejecución posterior del perfil ya pasa en ART con 64 objetos y sus
+propiedades originales: ver AOSP-RENDERNODE-ART.md. El constructor View con
+servicio Wayland avanza hasta getApplicationInfo, todavía no implementado. No
+se acredita aún grabación/dibujo ni liberación final por GC de esos objetos.

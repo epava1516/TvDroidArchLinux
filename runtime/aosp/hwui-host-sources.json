@@ -1,0 +1,81 @@
+{
+  "scope": "Additional original HWUI host headers; not the full dependency closure",
+  "components": [
+    {
+      "name": "ui-types",
+      "archive_url": "https://android.googlesource.com/platform/frameworks/native/+archive/2fe7eddf185ecb63223eeadc58804f9bf6cbd426/libs/ui/include_types.tar.gz",
+      "files": {
+        "ui/ColorSpace.h": {
+          "bytes": 9739,
+          "sha256": "989414dbc54ba2ddf6d81fb80f26193b869f0b7b54d3dbc26823bbfbe5fa1ecc"
+        },
+        "ui/DataspaceUtils.h": {
+          "bytes": 925,
+          "sha256": "f344c846b92ea731c44218b217ef8d2e7672d5e0cfe372c3023f436cb0a9bb9c"
+        }
+      },
+      "omitted_links": [
+        "ui/GraphicTypes.h"
+      ]
+    },
+    {
+      "name": "math-headers",
+      "archive_url": "https://android.googlesource.com/platform/frameworks/native/+archive/2fe7eddf185ecb63223eeadc58804f9bf6cbd426/libs/math/include.tar.gz",
+      "files": {
+        "math/HashCombine.h": {
+          "bytes": 1158,
+          "sha256": "679b39cfb150f50ef5b216e7cde938060496c58f4f0d2dd5ab1f678749e38c26"
+        },
+        "math/TMatHelpers.h": {
+          "bytes": 19940,
+          "sha256": "7280cc0b94b56590fdbd01a81c5e00b4ec9905d03b664a359657eb3366ffc84e"
+        },
+        "math/TQuatHelpers.h": {
+          "bytes": 9939,
+          "sha256": "a321822713462aa8471ec902bfcd8227fda1da3adba5513c43bff55327ea33b0"
+        },
+        "math/TVecHelpers.h": {
+          "bytes": 20157,
+          "sha256": "f372271c937a87aa3c6522632684d4d9699ab822709f112b18c488dda547028b"
+        },
+        "math/half.h": {
+          "bytes": 7986,
+          "sha256": "25193cafb06c840c96874ef18ce794276b048406d4a6073e82d607338aa7f02f"
+        },
+        "math/mat2.h": {
+          "bytes": 10497,
+          "sha256": "a9f35ece8473ab673309d1a3e9c2dd87b0c658f0ff2dc0a5c0f5882d801acef7"
+        },
+        "math/mat3.h": {
+          "bytes": 12666,
+          "sha256": "a1553b1543b2581170c303954eb243ff22783975b22234e1d13d2e6c54debcf7"
+        },
+        "math/mat4.h": {
+          "bytes": 18532,
+          "sha256": "7b262a9a007174b511a5f25bc4308d1cdb7e392dbff2bf46535492dd5e092b72"
+        },
+        "math/quat.h": {
+          "bytes": 6126,
+          "sha256": "9d8d0dca7b7f3dea641deefc537c86d7ec088c5d5782a10e85ee7518b67c985f"
+        },
+        "math/scalar.h": {
+          "bytes": 1164,
+          "sha256": "415f7165061493f5c213a7004d81e0cc43e3bfd2d2319abec0b0f236b55ccce0"
+        },
+        "math/vec2.h": {
+          "bytes": 3834,
+          "sha256": "70c782fe637abb3c85c95186304fba48103946d300e66ba0234ea75870804cff"
+        },
+        "math/vec3.h": {
+          "bytes": 4160,
+          "sha256": "c516bbee76cd20e25513c83f5334d37e60d2c56a71fc8f3749ea45d171a25843"
+        },
+        "math/vec4.h": {
+          "bytes": 4010,
+          "sha256": "9c2182e9c25eb5445e47ae85ee95ed60366a379c391d246bd570a8ed59359fce"
+        }
+      },
+      "omitted_links": []
+    }
+  ]
+}

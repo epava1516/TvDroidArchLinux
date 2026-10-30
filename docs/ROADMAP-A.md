@@ -244,3 +244,11 @@ Skia host CPU original ya completa su construcción y ejecuta Canvas nativo con
 aosp-skia-raster conserva archivos, hashes y verificación posterior de fuentes.
 Esta prueba C++ no carga Canvas Java/RenderNode en ART ni presenta una ventana;
 continúan pendientes el enlace HWUI, integración APK, GPU y las puertas A3–A5.
+
+El enlace HWUI/Minikin y el perfil RenderNode de 16 JNI ya pasan en ART con 64
+objetos originales y propiedades independientes. AOSP-RENDERNODE-ART.md y el
+informe aosp-rendernode-native conservan los resultados. Pasan también resize
+Wayland y cierre del proveedor; View avanza hasta getApplicationInfo ausente.
+Todavía no se construye una View funcional ni se dibuja el APK con esas clases.
+Quedan metadata APK, las otras entradas, callbacks, lifecycle y dibujo/GPU; este
+avance no cierra A3 ni los requisitos de estabilidad/distribución.

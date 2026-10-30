@@ -1,0 +1,92 @@
+{
+  "wayland_live_resize_pass": true,
+  "window_service": {
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Xcheck:jni",
+      "-Darchtv.rendernode.library=/home/tv/repositorio-principal/dist/apk/rendernode-host-1/libarchtv_rendernode_host.so",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/aosp-animation-rendernode-1/dex/classes.dex:/home/tv/repositorio-principal/dist/apk/window-aidl-3/dex/classes.dex:/home/tv/repositorio-principal/dist/apk/window-rendernode-service-1/dex/classes.dex",
+      "org.archtv.apkruntime.WindowServiceProbe",
+      "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "/home/tv/repositorio-principal/dist/apk/window-rendernode-wayland-1/data/window-policy.properties",
+      "/home/tv/repositorio-principal/dist/apk/androidfw-system-assets-2/libarchtv_resources_linux.so",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "/home/tv/repositorio-principal/dist/apk/system-resources-3/framework-res.apk",
+      "/home/tv/repositorio-principal/dist/apk/window-rendernode-wayland-1/service-data"
+    ],
+    "system_resources_sha256": "b6942b09b4742f738d41b5595470b4b0b26f9063c818bd8ea8ee0433599450cf",
+    "sha256": {
+      "/home/tv/repositorio-principal/dist/apk/aosp-animation-rendernode-1/dex/classes.dex": "0b15ceb4f562bbeb9a10658816e8b05d838868ddbc615c3cfae752bc6384e0dd",
+      "/home/tv/repositorio-principal/dist/apk/window-aidl-3/dex/classes.dex": "3a4f9f9b70e9bd7488e0093591bd3b9c4d189e29bd09d5265c99bd65fc2b273d",
+      "/home/tv/repositorio-principal/dist/apk/window-rendernode-service-1/dex/classes.dex": "8cd404a64f28d4722b65828c4f1a4c64dd5470c49e39fa9e4bc796e02e551c46"
+    },
+    "rendernode_library_sha256": "69c694a632d0864ee6c2678980565288153bf40a9657cc5861acce301090492e",
+    "real_wayland_service_pass": true,
+    "original_animation_policy_pass": true,
+    "view_constructed": false,
+    "view_constructor_failures": [
+      "VIEW_CONSTRUCTOR_BLOCKED java.lang.UnsupportedOperationException: Unsupported Linux context API: getApplicationInfo"
+    ]
+  },
+  "initial": [
+    960,
+    540
+  ],
+  "resized": [
+    800,
+    450
+  ],
+  "frame_sizes": [
+    [
+      960,
+      540
+    ],
+    [
+      960,
+      540
+    ],
+    [
+      800,
+      450
+    ]
+  ],
+  "command": [
+    "setpriv",
+    "--inh-caps=-all",
+    "--ambient-caps=-all",
+    "/home/tv/.cache/archtv/smithay/target/debug/archtv-compositor",
+    "--winit",
+    "--mode",
+    "960x540",
+    "--test-resize",
+    "8",
+    "800x450",
+    "--exit-after",
+    "45",
+    "--",
+    "/home/tv/.cache/archtv/smithay/target/debug/archtv-apk-host",
+    "/home/tv/.cache/archtv/art-host/host/art-13.0.0",
+    "/home/tv/repositorio-principal/dist/apk/apk-display-context-1/dex/classes.dex",
+    "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+    "org.archtv.probe.MainActivity",
+    "/home/tv/repositorio-principal/dist/apk/window-rendernode-wayland-1/data",
+    "/home/tv/repositorio-principal/dist/apk/window-rendernode-wayland-1/art.stderr",
+    "/home/tv/repositorio-principal/dist/apk/window-rendernode-wayland-1/frames"
+  ],
+  "app_text_before": "Contador: 0",
+  "app_text_after": "Contador: 0",
+  "scope": "Real nested Wayland resize after the first frame, original Resources on the main Handler, and client SHM dimensions. No physical mode switch, HiDPI, Activity recreation or native scanout resize claim.",
+  "sha256": {
+    "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk": "f07c9b92ab3353237276081c22e11ce06168b8c9f71a99ea32968b2ce0f00e28",
+    "dist/apk/apk-display-context-1/dex/classes.dex": "cf032cd8f1bf4e538b7490d34ae74f36e6f3659b68cc5ef48014e0560af69c51",
+    "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so": "0ff761f86136e769d99ca6aa113b2296bde111c423eb43a891346e8f36e3c863",
+    "dist/apk/androidfw-system-assets-2/libarchtv_resources_linux.so": "a580d1a5fd6322175961ede45e1348e9eaa8b9dfae490c60defdb434797a715d",
+    "/home/tv/.cache/archtv/smithay/target/debug/archtv-apk-host": "879c0458a473cedcab1cd60377f0d91762511aeb5adb583713da77856b4ee0dc",
+    "/home/tv/.cache/archtv/smithay/target/debug/archtv-compositor": "61750546c4b348610874e1cd4c80234fb7114c045f4c2012e4970a32b577856c"
+  }
+}

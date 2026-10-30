@@ -39,6 +39,9 @@ futura distribución.
 - anvil-lab.txt: paquetes usados en el laboratorio, incluido el anfitrión Weston.
 - platform-candidates.txt: bibliotecas candidatas según el backend; selección pendiente.
 - checks.txt: herramientas para comprobar los scripts conservados.
+- apk-lab.txt: JDK, Clang y dependencias del laboratorio APK/AOSP, incluido el
+  perfil gráfico host experimental (Ninja, códecs, FreeType, HarfBuzz e ICU).
+  No es todavía un manifiesto de dependencias de la distribución final.
 
 El ensayo de Anvil se prepara con los scripts 69–72. Los pasos, la revisión
 y los límites de la prueba están en [el laboratorio H1](../lab/anvil/README.md).

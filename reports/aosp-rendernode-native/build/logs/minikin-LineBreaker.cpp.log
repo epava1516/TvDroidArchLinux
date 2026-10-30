@@ -1,0 +1,33 @@
+In file included from /home/tv/.cache/archtv/hwui-port/minikin/libs/minikin/LineBreaker.cpp:17:
+In file included from /home/tv/.cache/archtv/hwui-port/minikin/include/minikin/LineBreaker.h:31:
+/home/tv/.cache/archtv/hwui-port/minikin/include/minikin/MeasuredText.h:132:11: warning: 'measureText' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+  132 |     float measureText(const U16StringPiece& text) const;
+      |           ^
+/home/tv/.cache/archtv/hwui-port/minikin/include/minikin/MeasuredText.h:69:19: note: overridden virtual function is here
+   69 |     virtual float measureText(const U16StringPiece& text) const = 0;
+      |                   ^
+/home/tv/.cache/archtv/hwui-port/minikin/include/minikin/MeasuredText.h:146:10: warning: 'isRtl' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+  146 |     bool isRtl() const { return false; }
+      |          ^
+/home/tv/.cache/archtv/hwui-port/minikin/include/minikin/MeasuredText.h:40:18: note: overridden virtual function is here
+   40 |     virtual bool isRtl() const = 0;
+      |                  ^
+/home/tv/.cache/archtv/hwui-port/minikin/include/minikin/MeasuredText.h:147:10: warning: 'canBreak' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+  147 |     bool canBreak() const { return false; }
+      |          ^
+/home/tv/.cache/archtv/hwui-port/minikin/include/minikin/MeasuredText.h:43:18: note: overridden virtual function is here
+   43 |     virtual bool canBreak() const = 0;
+      |                  ^
+/home/tv/.cache/archtv/hwui-port/minikin/include/minikin/MeasuredText.h:150:14: warning: 'getLocaleListId' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+  150 |     uint32_t getLocaleListId() const { return mLocaleListId; }
+      |              ^
+/home/tv/.cache/archtv/hwui-port/minikin/include/minikin/MeasuredText.h:52:22: note: overridden virtual function is here
+   52 |     virtual uint32_t getLocaleListId() const = 0;
+      |                      ^
+/home/tv/.cache/archtv/hwui-port/minikin/include/minikin/MeasuredText.h:176:11: warning: 'measureText' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+  176 |     float measureText(const U16StringPiece&) const { return 0; }
+      |           ^
+/home/tv/.cache/archtv/hwui-port/minikin/include/minikin/MeasuredText.h:69:19: note: overridden virtual function is here
+   69 |     virtual float measureText(const U16StringPiece& text) const = 0;
+      |                   ^
+5 warnings generated.

@@ -1,0 +1,25 @@
+{
+  "original_rendernode_properties_pass": true,
+  "exit_code": 0,
+  "command": [
+    "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+    "--64",
+    "--no-compile",
+    "--",
+    "-Xint",
+    "-Xcheck:jni",
+    "-cp",
+    "/home/tv/repositorio-principal/dist/apk/aosp-animation-rendernode-1/dex/classes.dex:/home/tv/repositorio-principal/dist/apk/rendernode-art-1/dex/classes.dex",
+    "org.archtv.aospprobe.RenderNodeProbe",
+    "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+    "/home/tv/repositorio-principal/dist/apk/rendernode-host-1/libarchtv_rendernode_host.so"
+  ],
+  "source_sha256": "6f5708c79927feb5e0beb7f84bd2cdfb94e9377effb5a56818aac4cbd95d752a",
+  "verifier_sha256": "73a1901db842d2c4a3ee3eb499e4615cc8d4e4b66f4d3634db31c335ae1360b7",
+  "library_sha256": "69c694a632d0864ee6c2678980565288153bf40a9657cc5861acce301090492e",
+  "library_provenance_sha256": "c19d665f92a365fb0da4fe989c8bd3b2270fb9050364d573fa482cd2639b5368",
+  "framework_dex_sha256": "0b15ceb4f562bbeb9a10658816e8b05d838868ddbc615c3cfae752bc6384e0dd",
+  "probe_dex_sha256": "b3fb6a50e7f802804d727381068d0a72af2238c7c8162abd29105b0e81ade437",
+  "linux_library_sha256": "0ff761f86136e769d99ca6aa113b2296bde111c423eb43a891346e8f36e3c863",
+  "scope": "Original Java RenderNode constructor and 16-entry native object/property profile. No recorded drawing, View construction, Wayland presentation or GC/lifetime/stability proof."
+}

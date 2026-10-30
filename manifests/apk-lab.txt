@@ -2,3 +2,15 @@
 jdk17-openjdk
 ffmpeg
 clang
+# Original AOSP graphics host build; experimental, not packaged product dependencies.
+ninja
+pkgconf
+freetype2
+libpng
+libjpeg-turbo
+libwebp
+zlib
+expat
+harfbuzz
+harfbuzz-icu
+icu

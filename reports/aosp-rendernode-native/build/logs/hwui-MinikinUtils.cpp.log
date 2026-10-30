@@ -1,0 +1,72 @@
+In file included from /home/tv/.cache/archtv/hwui-port/hwui/hwui/MinikinUtils.cpp:17:
+In file included from /home/tv/.cache/archtv/hwui-port/hwui/hwui/MinikinUtils.h:30:
+/home/tv/.cache/archtv/hwui-port/hwui/hwui/MinikinSkia.h:58:17: warning: 'GetFontData' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+   58 |     const void* GetFontData() const;
+      |                 ^
+/home/tv/.cache/archtv/hwui-port/minikin/include/minikin/MinikinFont.h:61:25: note: overridden virtual function is here
+   61 |     virtual const void* GetFontData() const { return nullptr; }
+      |                         ^
+In file included from /home/tv/.cache/archtv/hwui-port/hwui/hwui/MinikinUtils.cpp:17:
+In file included from /home/tv/.cache/archtv/hwui-port/hwui/hwui/MinikinUtils.h:30:
+/home/tv/.cache/archtv/hwui-port/hwui/hwui/MinikinSkia.h:59:12: warning: 'GetFontSize' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+   59 |     size_t GetFontSize() const;
+      |            ^
+/home/tv/.cache/archtv/hwui-port/minikin/include/minikin/MinikinFont.h:64:20: note: overridden virtual function is here
+   64 |     virtual size_t GetFontSize() const { return 0; }
+      |                    ^
+In file included from /home/tv/.cache/archtv/hwui-port/hwui/hwui/MinikinUtils.cpp:17:
+In file included from /home/tv/.cache/archtv/hwui-port/hwui/hwui/MinikinUtils.h:30:
+/home/tv/.cache/archtv/hwui-port/hwui/hwui/MinikinSkia.h:60:9: warning: 'GetFontIndex' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+   60 |     int GetFontIndex() const;
+      |         ^
+/home/tv/.cache/archtv/hwui-port/minikin/include/minikin/MinikinFont.h:68:17: note: overridden virtual function is here
+   68 |     virtual int GetFontIndex() const { return 0; }
+      |                 ^
+In file included from /home/tv/.cache/archtv/hwui-port/hwui/hwui/MinikinUtils.cpp:17:
+In file included from /home/tv/.cache/archtv/hwui-port/hwui/hwui/MinikinUtils.h:30:
+/home/tv/.cache/archtv/hwui-port/hwui/hwui/MinikinSkia.h:62:48: warning: 'GetAxes' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+   62 |     const std::vector<minikin::FontVariation>& GetAxes() const;
+      |                                                ^
+/home/tv/.cache/archtv/hwui-port/minikin/include/minikin/MinikinFont.h:72:56: note: overridden virtual function is here
+   72 |     virtual const std::vector<minikin::FontVariation>& GetAxes() const = 0;
+      |                                                        ^
+In file included from /home/tv/.cache/archtv/hwui-port/hwui/hwui/MinikinUtils.cpp:17:
+In file included from /home/tv/.cache/archtv/hwui-port/hwui/hwui/MinikinUtils.h:30:
+/home/tv/.cache/archtv/hwui-port/hwui/hwui/MinikinSkia.h:63:43: warning: 'createFontWithVariation' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+   63 |     std::shared_ptr<minikin::MinikinFont> createFontWithVariation(
+      |                                           ^
+/home/tv/.cache/archtv/hwui-port/minikin/include/minikin/MinikinFont.h:74:42: note: overridden virtual function is here
+   74 |     virtual std::shared_ptr<MinikinFont> createFontWithVariation(
+      |                                          ^
+In file included from /home/tv/.cache/archtv/hwui-port/hwui/hwui/MinikinUtils.cpp:23:
+/home/tv/.cache/archtv/hwui-port/minikin/include/minikin/MeasuredText.h:132:11: warning: 'measureText' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+  132 |     float measureText(const U16StringPiece& text) const;
+      |           ^
+/home/tv/.cache/archtv/hwui-port/minikin/include/minikin/MeasuredText.h:69:19: note: overridden virtual function is here
+   69 |     virtual float measureText(const U16StringPiece& text) const = 0;
+      |                   ^
+/home/tv/.cache/archtv/hwui-port/minikin/include/minikin/MeasuredText.h:146:10: warning: 'isRtl' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+  146 |     bool isRtl() const { return false; }
+      |          ^
+/home/tv/.cache/archtv/hwui-port/minikin/include/minikin/MeasuredText.h:40:18: note: overridden virtual function is here
+   40 |     virtual bool isRtl() const = 0;
+      |                  ^
+/home/tv/.cache/archtv/hwui-port/minikin/include/minikin/MeasuredText.h:147:10: warning: 'canBreak' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+  147 |     bool canBreak() const { return false; }
+      |          ^
+/home/tv/.cache/archtv/hwui-port/minikin/include/minikin/MeasuredText.h:43:18: note: overridden virtual function is here
+   43 |     virtual bool canBreak() const = 0;
+      |                  ^
+/home/tv/.cache/archtv/hwui-port/minikin/include/minikin/MeasuredText.h:150:14: warning: 'getLocaleListId' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+  150 |     uint32_t getLocaleListId() const { return mLocaleListId; }
+      |              ^
+/home/tv/.cache/archtv/hwui-port/minikin/include/minikin/MeasuredText.h:52:22: note: overridden virtual function is here
+   52 |     virtual uint32_t getLocaleListId() const = 0;
+      |                      ^
+/home/tv/.cache/archtv/hwui-port/minikin/include/minikin/MeasuredText.h:176:11: warning: 'measureText' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+  176 |     float measureText(const U16StringPiece&) const { return 0; }
+      |           ^
+/home/tv/.cache/archtv/hwui-port/minikin/include/minikin/MeasuredText.h:69:19: note: overridden virtual function is here
+   69 |     virtual float measureText(const U16StringPiece& text) const = 0;
+      |                   ^
+10 warnings generated.

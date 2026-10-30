@@ -1,0 +1,64 @@
+In file included from /home/tv/.cache/archtv/hwui-port/hwui/utils/Color.cpp:19:
+In file included from /home/tv/.cache/archtv/hwui-port/ui-types/ui/ColorSpace.h:26:
+In file included from /home/tv/.cache/archtv/hwui-port/math-headers/math/mat3.h:19:
+In file included from /home/tv/.cache/archtv/hwui-port/math-headers/math/quat.h:19:
+/home/tv/.cache/archtv/hwui-port/math-headers/math/half.h:96:38: warning: identifier '_hf' preceded by whitespace in a literal operator declaration is deprecated [-Wdeprecated-literal-operator]
+   96 |     friend CONSTEXPR half operator"" _hf(long double v);
+      |                           ~~~~~~~~~~~^~~
+      |                           operator""_hf
+/home/tv/.cache/archtv/hwui-port/math-headers/math/half.h:155:43: warning: identifier '_hf' preceded by whitespace in a literal operator declaration is deprecated [-Wdeprecated-literal-operator]
+  155 | inline CONSTEXPR android::half operator"" _hf(long double v) {
+      |                                ~~~~~~~~~~~^~~
+      |                                operator""_hf
+In file included from /home/tv/.cache/archtv/hwui-port/hwui/utils/Color.cpp:19:
+In file included from /home/tv/.cache/archtv/hwui-port/ui-types/ui/ColorSpace.h:26:
+In file included from /home/tv/.cache/archtv/hwui-port/math-headers/math/mat3.h:19:
+/home/tv/.cache/archtv/hwui-port/math-headers/math/quat.h:147:34: warning: identifier '_i' preceded by whitespace in a literal operator declaration is deprecated [-Wdeprecated-literal-operator]
+  147 | constexpr inline quat operator"" _i(long double v) {
+      |                       ~~~~~~~~~~~^~
+      |                       operator""_i
+/home/tv/.cache/archtv/hwui-port/math-headers/math/quat.h:150:34: warning: identifier '_j' preceded by whitespace in a literal operator declaration is deprecated [-Wdeprecated-literal-operator]
+  150 | constexpr inline quat operator"" _j(long double v) {
+      |                       ~~~~~~~~~~~^~
+      |                       operator""_j
+/home/tv/.cache/archtv/hwui-port/math-headers/math/quat.h:153:34: warning: identifier '_k' preceded by whitespace in a literal operator declaration is deprecated [-Wdeprecated-literal-operator]
+  153 | constexpr inline quat operator"" _k(long double v) {
+      |                       ~~~~~~~~~~~^~
+      |                       operator""_k
+/home/tv/.cache/archtv/hwui-port/math-headers/math/quat.h:157:34: warning: identifier '_i' preceded by whitespace in a literal operator declaration is deprecated [-Wdeprecated-literal-operator]
+  157 | constexpr inline quat operator"" _i(unsigned long long v) {  // NOLINT
+      |                       ~~~~~~~~~~~^~
+      |                       operator""_i
+/home/tv/.cache/archtv/hwui-port/math-headers/math/quat.h:160:34: warning: identifier '_j' preceded by whitespace in a literal operator declaration is deprecated [-Wdeprecated-literal-operator]
+  160 | constexpr inline quat operator"" _j(unsigned long long v) {  // NOLINT
+      |                       ~~~~~~~~~~~^~
+      |                       operator""_j
+/home/tv/.cache/archtv/hwui-port/math-headers/math/quat.h:163:34: warning: identifier '_k' preceded by whitespace in a literal operator declaration is deprecated [-Wdeprecated-literal-operator]
+  163 | constexpr inline quat operator"" _k(unsigned long long v) {  // NOLINT
+      |                       ~~~~~~~~~~~^~
+      |                       operator""_k
+/home/tv/.cache/archtv/hwui-port/math-headers/math/quat.h:167:35: warning: identifier '_id' preceded by whitespace in a literal operator declaration is deprecated [-Wdeprecated-literal-operator]
+  167 | constexpr inline quatd operator"" _id(long double v) {
+      |                        ~~~~~~~~~~~^~~
+      |                        operator""_id
+/home/tv/.cache/archtv/hwui-port/math-headers/math/quat.h:170:35: warning: identifier '_jd' preceded by whitespace in a literal operator declaration is deprecated [-Wdeprecated-literal-operator]
+  170 | constexpr inline quatd operator"" _jd(long double v) {
+      |                        ~~~~~~~~~~~^~~
+      |                        operator""_jd
+/home/tv/.cache/archtv/hwui-port/math-headers/math/quat.h:173:35: warning: identifier '_kd' preceded by whitespace in a literal operator declaration is deprecated [-Wdeprecated-literal-operator]
+  173 | constexpr inline quatd operator"" _kd(long double v) {
+      |                        ~~~~~~~~~~~^~~
+      |                        operator""_kd
+/home/tv/.cache/archtv/hwui-port/math-headers/math/quat.h:177:35: warning: identifier '_id' preceded by whitespace in a literal operator declaration is deprecated [-Wdeprecated-literal-operator]
+  177 | constexpr inline quatd operator"" _id(unsigned long long v) {  // NOLINT
+      |                        ~~~~~~~~~~~^~~
+      |                        operator""_id
+/home/tv/.cache/archtv/hwui-port/math-headers/math/quat.h:180:35: warning: identifier '_jd' preceded by whitespace in a literal operator declaration is deprecated [-Wdeprecated-literal-operator]
+  180 | constexpr inline quatd operator"" _jd(unsigned long long v) {  // NOLINT
+      |                        ~~~~~~~~~~~^~~
+      |                        operator""_jd
+/home/tv/.cache/archtv/hwui-port/math-headers/math/quat.h:183:35: warning: identifier '_kd' preceded by whitespace in a literal operator declaration is deprecated [-Wdeprecated-literal-operator]
+  183 | constexpr inline quatd operator"" _kd(unsigned long long v) {  // NOLINT
+      |                        ~~~~~~~~~~~^~~
+      |                        operator""_kd
+14 warnings generated.

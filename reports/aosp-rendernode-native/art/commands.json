@@ -1,0 +1,34 @@
+[
+  [
+    "/usr/lib/jvm/java-17-openjdk/bin/javac",
+    "--release",
+    "8",
+    "-classpath",
+    "/home/tv/repositorio-principal/dist/apk/aosp-animation-rendernode-1/framework.jar",
+    "-d",
+    "/home/tv/repositorio-principal/dist/apk/rendernode-art-1/classes",
+    "/home/tv/repositorio-principal/fixtures/aosp-rendernode/RenderNodeProbe.java"
+  ],
+  [
+    "/usr/lib/jvm/java-17-openjdk/bin/jar",
+    "cf",
+    "/home/tv/repositorio-principal/dist/apk/rendernode-art-1/probe.jar",
+    "-C",
+    "/home/tv/repositorio-principal/dist/apk/rendernode-art-1/classes",
+    "."
+  ],
+  [
+    "/usr/lib/jvm/java-17-openjdk/bin/java",
+    "-cp",
+    "/home/tv/.cache/archtv/apk-build-tools/r8.jar",
+    "com.android.tools.r8.D8",
+    "--release",
+    "--min-api",
+    "28",
+    "--lib",
+    "/home/tv/.cache/archtv/apk-build-tools/android.jar",
+    "--output",
+    "/home/tv/repositorio-principal/dist/apk/rendernode-art-1/dex",
+    "/home/tv/repositorio-principal/dist/apk/rendernode-art-1/probe.jar"
+  ]
+]

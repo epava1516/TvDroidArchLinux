@@ -1,0 +1,56 @@
+In file included from /home/tv/.cache/archtv/hwui-port/hwui/pipeline/skia/SkiaRecordingCanvas.cpp:17:
+In file included from /home/tv/.cache/archtv/hwui-port/hwui/pipeline/skia/SkiaRecordingCanvas.h:21:
+In file included from /home/tv/.cache/archtv/hwui-port/hwui/SkiaCanvas.h:22:
+In file included from /home/tv/.cache/archtv/hwui-port/hwui/RenderNode.h:28:
+In file included from /home/tv/.cache/archtv/androidfw-port/androidfw/include/androidfw/ResourceTypes.h:26:
+In file included from /home/tv/.cache/archtv/androidfw-port/androidfw/include/androidfw/Errors.h:23:
+In file included from /home/tv/.cache/archtv/androidfw-port/base/include/android-base/result.h:103:
+In file included from /home/tv/.cache/archtv/androidfw-port/base/include/android-base/format.h:23:
+In file included from /home/tv/.cache/archtv/androidfw-port/fmt/include/fmt/chrono.h:16:
+/home/tv/.cache/archtv/androidfw-port/fmt/include/fmt/format.h:3943:48: warning: identifier '_a' preceded by whitespace in a literal operator declaration is deprecated [-Wdeprecated-literal-operator]
+ 3943 | FMT_CONSTEXPR detail::udl_arg<char> operator"" _a(const char* s, size_t) {
+      |                                     ~~~~~~~~~~~^~
+      |                                     operator""_a
+/home/tv/.cache/archtv/androidfw-port/fmt/include/fmt/format.h:3946:51: warning: identifier '_a' preceded by whitespace in a literal operator declaration is deprecated [-Wdeprecated-literal-operator]
+ 3946 | FMT_CONSTEXPR detail::udl_arg<wchar_t> operator"" _a(const wchar_t* s, size_t) {
+      |                                        ~~~~~~~~~~~^~
+      |                                        operator""_a
+In file included from /home/tv/.cache/archtv/hwui-port/hwui/pipeline/skia/SkiaRecordingCanvas.cpp:17:
+In file included from /home/tv/.cache/archtv/hwui-port/hwui/pipeline/skia/SkiaRecordingCanvas.h:21:
+In file included from /home/tv/.cache/archtv/hwui-port/hwui/SkiaCanvas.h:23:
+In file included from /home/tv/.cache/archtv/hwui-port/hwui/VectorDrawable.h:23:
+In file included from /home/tv/.cache/archtv/hwui-port/hwui/renderthread/CacheManager.h:26:
+/home/tv/.cache/archtv/hwui-port/hwui/utils/TimeUtils.h:24:30: warning: identifier '_s' preceded by whitespace in a literal operator declaration is deprecated [-Wdeprecated-literal-operator]
+   24 | constexpr nsecs_t operator"" _s(unsigned long long s) {
+      |                   ~~~~~~~~~~~^~
+      |                   operator""_s
+/home/tv/.cache/archtv/hwui-port/hwui/utils/TimeUtils.h:28:30: warning: identifier '_ms' preceded by whitespace in a literal operator declaration is deprecated [-Wdeprecated-literal-operator]
+   28 | constexpr nsecs_t operator"" _ms(unsigned long long ms) {
+      |                   ~~~~~~~~~~~^~~
+      |                   operator""_ms
+/home/tv/.cache/archtv/hwui-port/hwui/utils/TimeUtils.h:32:30: warning: identifier '_us' preceded by whitespace in a literal operator declaration is deprecated [-Wdeprecated-literal-operator]
+   32 | constexpr nsecs_t operator"" _us(unsigned long long us) {
+      |                   ~~~~~~~~~~~^~~
+      |                   operator""_us
+In file included from /home/tv/.cache/archtv/hwui-port/hwui/pipeline/skia/SkiaRecordingCanvas.cpp:17:
+In file included from /home/tv/.cache/archtv/hwui-port/hwui/pipeline/skia/SkiaRecordingCanvas.h:21:
+In file included from /home/tv/.cache/archtv/hwui-port/hwui/SkiaCanvas.h:23:
+/home/tv/.cache/archtv/hwui-port/hwui/VectorDrawable.h:353:18: warning: 'setAntiAlias' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+  353 |     virtual void setAntiAlias(bool aa) { mAntiAlias = aa; }
+      |                  ^
+/home/tv/.cache/archtv/hwui-port/hwui/VectorDrawable.h:121:18: note: overridden virtual function is here
+  121 |     virtual void setAntiAlias(bool aa) = 0;
+      |                  ^
+/home/tv/.cache/archtv/hwui-port/hwui/VectorDrawable.h:378:18: warning: 'setAntiAlias' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+  378 |     virtual void setAntiAlias(bool aa) {}
+      |                  ^
+/home/tv/.cache/archtv/hwui-port/hwui/VectorDrawable.h:121:18: note: overridden virtual function is here
+  121 |     virtual void setAntiAlias(bool aa) = 0;
+      |                  ^
+/home/tv/.cache/archtv/hwui-port/hwui/VectorDrawable.h:482:18: warning: 'setAntiAlias' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+  482 |     virtual void setAntiAlias(bool aa) {
+      |                  ^
+/home/tv/.cache/archtv/hwui-port/hwui/VectorDrawable.h:121:18: note: overridden virtual function is here
+  121 |     virtual void setAntiAlias(bool aa) = 0;
+      |                  ^
+8 warnings generated.

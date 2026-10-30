@@ -1,5 +1,10 @@
 # Port gráfico original: frontera RenderNode
 
+Estado actual: el perfil de 16 JNI ya ejecuta el constructor y propiedades
+RenderNode originales en ART. View avanza hasta getApplicationInfo ausente.
+[AOSP-RENDERNODE-ART.md](AOSP-RENDERNODE-ART.md) registra la ejecución; las
+secciones siguientes conservan el estudio y la construcción iniciales.
+
 ## Evidencia y decisión
 
 La prueba ART/Wayland registrada en `reports/aosp-animation-context/wayland/`

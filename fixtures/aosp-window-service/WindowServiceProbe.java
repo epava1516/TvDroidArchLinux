@@ -16,6 +16,8 @@ public final class WindowServiceProbe {
     }
     public static void main(String[] args) throws Exception {
         System.load(args[0]);System.load(args[2]);HostProfile.initialize();
+        String renderNodeLibrary=System.getProperty("archtv.rendernode.library");
+        if(renderNodeLibrary!=null)System.load(renderNodeLibrary);
         LinuxWindowService endpoint=new LinuxWindowService(Paths.get(args[1]));
         ServiceManager.initServiceCache(Collections.<String,IBinder>singletonMap("window",endpoint));
         IWindowManager window=IWindowManager.Stub.asInterface(ServiceManager.getService("window"));
