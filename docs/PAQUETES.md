@@ -24,7 +24,10 @@ credenciales y material de laboratorio. Genera en dist/packages/VERSION/:
 
 - archtv-VERSION.tar.gz, con cabecera gzip determinista.
 - PKGBUILD con SHA-256 concreto y .SRCINFO generado por makepkg.
-- source-commit.txt, source-date-epoch.txt y SHA256SUMS.
+- source-commit.txt, source-date-epoch.txt y SHA256SUMS con nombres relativos.
+
+Desde ese directorio, sha256sum --check SHA256SUMS verifica tanto el archivo
+de fuentes como PKGBUILD incluso después de copiarlos a otra máquina.
 
 El script ejecuta makepkg --verifysource. Eso verifica el archivo de fuentes,
 no demuestra compilación ni instalación. La versión de paquete incluye el

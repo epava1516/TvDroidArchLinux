@@ -25,5 +25,5 @@ RECIPE
 (cd "$output" && makepkg --printsrcinfo > .SRCINFO && makepkg --verifysource)
 git rev-parse HEAD > "$output/source-commit.txt"
 git show -s --format=%ct HEAD > "$output/source-date-epoch.txt"
-sha256sum "$archive" "$output/PKGBUILD" > "$output/SHA256SUMS"
+(cd "$output" && sha256sum "archtv-$version.tar.gz" PKGBUILD > SHA256SUMS && sha256sum --check SHA256SUMS)
 printf 'Fuentes y receta verificadas: %s\n' "$output"
