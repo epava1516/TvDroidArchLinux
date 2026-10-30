@@ -1,0 +1,46 @@
+dalvikvm64 E 10-30 21:05:37 177563 177563 image_space.cc:2239] Error reading named image component header for /home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/core.art, error: Unable to open file "/home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/x86_64/core.art" for reading image header
+dalvikvm64 E 10-30 21:05:37 177563 177563 image_space.cc:3470] Could not create image space with image file '/home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/core.art'. Attempting to fall back to imageless running. Error was: Full boot image cannot be compiled because no profile is provided.
+ziparchive W 10-30 21:05:37 177563 177563 Unable to open '/home/tv/repositorio-principal/dist/apk/aosp-log-writer-1/dex/classes.dm': No such file or directory
+ziparchive W 10-30 21:05:37 177563 177563 Unable to open '/home/tv/repositorio-principal/dist/apk/window-aidl-3/dex/classes.dm': No such file or directory
+ziparchive W 10-30 21:05:37 177563 177563 Unable to open '/home/tv/repositorio-principal/dist/apk/window-log-writer-service-1/dex/classes.dm': No such file or directory
+ziparchive W 10-30 21:05:37 177563 177563 Unable to open '/home/tv/repositorio-principal/dist/apk/accessibility-aidl-1/dex/classes.dm': No such file or directory
+APK_HOST_PROFILE sdk=33 abi=x86_64
+dalvikvm64 E 10-30 21:05:37 177563 177563 jni_entrypoints.cc:116] No implementation found for android.os.IBinder android.os.Binder.getExtension() (tried Java_android_os_Binder_getExtension and Java_android_os_Binder_getExtension__)
+BINDER_HOLDER_ART_OK objects=32
+APK_RESOURCES_AOSP_READY
+APK_PUBLIC_RESOURCES_AOSP_READY
+LINUX_PERMISSION_QUERY_OK grants=0
+VIEW_CONSTRUCTOR_OK
+VIEW_BASE_STATE_OK
+VIEW_MEASURE_OK cases=5
+ANDROID_LOG buffer=main priority=6 tag="AccessibilityManager" Error while initialing the focus appearance data then setting to default value by hardcoded
+android.content.res.Resources$NotFoundException: Resource ID #0x105000b
+	at android.content.res.ResourcesImpl.getValue(ResourcesImpl.java:226)
+	at android.content.res.Resources.getDimensionPixelSize(Resources.java:831)
+	at android.view.accessibility.AccessibilityManager.initialFocusAppearanceLocked(AccessibilityManager.java:1993)
+	at android.view.accessibility.AccessibilityManager.<init>(AccessibilityManager.java:519)
+	at android.view.accessibility.AccessibilityManager.getInstance(AccessibilityManager.java:497)
+	at android.view.View.notifySubtreeAccessibilityStateChangedIfNeeded(View.java:14389)
+	at android.view.View.setFrame(View.java:23859)
+	at android.view.View.layout(View.java:23691)
+	at org.archtv.apkruntime.WindowServiceProbe.main(WindowServiceProbe.java:101)
+
+dalvikvm64 E 10-30 21:05:38 177563 177563 jni_entrypoints.cc:116] No implementation found for android.os.IBinder com.android.internal.os.BinderInternal.getContextObject() (tried Java_com_android_internal_os_BinderInternal_getContextObject and Java_com_android_internal_os_BinderInternal_getContextObject__)
+VIEW_LAYOUT_BLOCKED java.lang.UnsatisfiedLinkError: No implementation found for android.os.IBinder com.android.internal.os.BinderInternal.getContextObject() (tried Java_com_android_internal_os_BinderInternal_getContextObject and Java_com_android_internal_os_BinderInternal_getContextObject__)
+java.lang.UnsatisfiedLinkError: No implementation found for android.os.IBinder com.android.internal.os.BinderInternal.getContextObject() (tried Java_com_android_internal_os_BinderInternal_getContextObject and Java_com_android_internal_os_BinderInternal_getContextObject__)
+	at com.android.internal.os.BinderInternal.getContextObject(Native Method)
+	at android.os.ServiceManager.getIServiceManager(ServiceManager.java:129)
+	at android.os.ServiceManager.rawGetService(ServiceManager.java:372)
+	at android.os.ServiceManager.getService(ServiceManager.java:147)
+	at android.view.accessibility.AccessibilityManager.tryConnectToServiceLocked(AccessibilityManager.java:1844)
+	at android.view.accessibility.AccessibilityManager.<init>(AccessibilityManager.java:520)
+	at android.view.accessibility.AccessibilityManager.getInstance(AccessibilityManager.java:497)
+	at android.view.View.notifySubtreeAccessibilityStateChangedIfNeeded(View.java:14389)
+	at android.view.View.setFrame(View.java:23859)
+	at android.view.View.layout(View.java:23691)
+	at org.archtv.apkruntime.WindowServiceProbe.main(WindowServiceProbe.java:101)
+AOSP_ANIMATION_POLICY_OK scale=0.5 callbacks=3 interpolators=2
+WINDOW_SERVICE_OK 960x540 initial=960x540 scale=0.5
+WINDOW_SERVICE_OK 800x450 initial=960x540 scale=0.5
+WINDOW_SERVICE_DEAD
+WINDOW_SERVICE_CLOSED

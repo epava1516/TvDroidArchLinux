@@ -603,6 +603,11 @@
       "path": "core/jni/android_util_Binder.cpp",
       "bytes": 60275,
       "sha256": "8092182d7ac882296f2a3bb300f4fe0ce5afcd69c3dd9e53042c3fc49f746b30"
+    },
+    {
+      "path": "core/java/com/android/internal/util/LineBreakBufferedWriter.java",
+      "bytes": 9775,
+      "sha256": "18120713e2065a24ec0a297f63edecb0af1e11d40371bf3795d0798a1e40e029"
     }
   ],
   "public_resources_sources": [
@@ -631,7 +636,8 @@
     "graphics/java/android/graphics/Xfermode.java",
     "core/java/android/util/LongSparseLongArray.java",
     "core/java/android/os/UserHandle.java",
-    "core/java/android/view/accessibility/AccessibilityManager.java"
+    "core/java/android/view/accessibility/AccessibilityManager.java",
+    "core/java/com/android/internal/util/LineBreakBufferedWriter.java"
   ],
   "context_sources": [
     "core/java/android/content/Context.java",

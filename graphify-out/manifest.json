@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793394151.8724947,
-    "seen": 1793394160.6632426,
-    "ast_hash": "439b3328ef834387dd42189f488fc25c",
+    "mtime": 1793394388.5743566,
+    "seen": 1793394398.2602346,
+    "ast_hash": "dc3027eea66d685e1cb198460211644f",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -882,9 +882,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/framework-study.json": {
-    "mtime": 1793393622.2686083,
-    "seen": 1793393677.4614775,
-    "ast_hash": "8c6dce274724e2534cb3ed75967101f6",
+    "mtime": 1793394239.6297336,
+    "seen": 1793394398.2427077,
+    "ast_hash": "786b47be2053464c9f67700c5d1c61c9",
     "semantic_hash": ""
   },
   "tools/apk/study_framework.py": {
@@ -1290,9 +1290,9 @@
     "semantic_hash": ""
   },
   "tools/apk/verify_linux_log.py": {
-    "mtime": 1793374530.0033064,
-    "seen": 1793374857.871412,
-    "ast_hash": "cce51ccb27cea14998b9d30f2133581c",
+    "mtime": 1793394275.878496,
+    "seen": 1793394398.2548232,
+    "ast_hash": "9330de84da0863d73413e543ed4ace6d",
     "semantic_hash": ""
   },
   "docs/AOSP-LOG-LINUX.md": {
@@ -1695,6 +1695,18 @@
     "mtime": 1793394151.871935,
     "seen": 1793394160.6602283,
     "ast_hash": "4afe05bdda47943083299d853aea4d7a",
+    "semantic_hash": ""
+  },
+  "fixtures/aosp-log/ThrowableLogProbe.java": {
+    "mtime": 1793394286.886195,
+    "seen": 1793394398.2387152,
+    "ast_hash": "ac5cfd07093ae714d4ffc479b98e614e",
+    "semantic_hash": ""
+  },
+  "docs/AOSP-LOG-EXCEPCIONES.md": {
+    "mtime": 1793394388.5740733,
+    "seen": 1793394398.2571507,
+    "ast_hash": "f910ba068b9a97696c07e948d964f9ea",
     "semantic_hash": ""
   }
 }

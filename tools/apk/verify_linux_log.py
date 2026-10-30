@@ -12,6 +12,7 @@ from apk_inventory import dex_inventory
 parser = argparse.ArgumentParser()
 for name in ('aosp-build', 'tools', 'art', 'linux-library', 'output'):
     parser.add_argument('--'+name, type=Path, required=True)
+parser.add_argument('--with-throwables',action='store_true')
 args = parser.parse_args()
 root = Path(__file__).resolve().parents[2]
 out = args.output.resolve()
@@ -29,6 +30,7 @@ sha = next(item['sha256'] for item in manifest['files'] if item['path']==path)
 assert any(name.endswith('/'+path) and digest==sha for name,digest in proof['original_sources_sha256'].items())
 source = root/'fixtures/aosp-log/LogProbe.java'
 sources = [source]
+if args.with_throwables:sources.append(root/'fixtures/aosp-log/ThrowableLogProbe.java')
 jdk = Path('/usr/lib/jvm/java-17-openjdk/bin')
 reference = Path.home()/'.cache/archtv/aosp-compile-tools/android-all-13.jar'
 assert hashlib.sha256(reference.read_bytes()).hexdigest() == json.loads((root/'runtime/aosp/compile-reference.json').read_text())['sha256']
@@ -44,7 +46,7 @@ for index, command in enumerate(commands):
     with (out/('build-'+str(index)+'.log')).open('wb') as log:
         subprocess.run(command,check=True,stdout=log,stderr=subprocess.STDOUT,timeout=120)
 definitions = dex_inventory((out/'dex/classes.dex').read_bytes())[1]
-assert definitions == {'Lorg/archtv/aospprobe/LogProbe;'}
+assert definitions == ({'Lorg/archtv/aospprobe/LogProbe;','Lorg/archtv/aospprobe/ThrowableLogProbe;'} if args.with_throwables else {'Lorg/archtv/aospprobe/LogProbe;'})
 base = [str(args.art.resolve()/'bin/art'),'--64','--no-compile','--','-Xint','-Xcheck:jni','-cp',
  ':'.join(map(str,[dex,out/'dex/classes.dex'])),'org.archtv.aospprobe.LogProbe',str(args.linux_library.resolve())]
 base_env = {k:v for k,v in os.environ.items() if not k.startswith(('ANDROID_','ARCHTV_ANDROID_PROPERTY_')) and k not in ('LD_PRELOAD','LD_LIBRARY_PATH','CLASSPATH')}
@@ -78,9 +80,30 @@ for name,properties,minimum,global_minimum in cases:
     for marker in (b'BINARY_BUFFER_REJECTED',b'INVALID_PRIORITY_REJECTED',b'OVERSIZED_TAG_REJECTED'):
         assert marker not in stderr
     results.append({'case':name,'properties':properties,'minimum':minimum,'global_minimum':global_minimum,'command':command})
-(out/'result.json').write_text(json.dumps({'original_log_linux_pass':True,'cases':results,'build_commands':commands,
+throwable_pass=None
+if args.with_throwables:
+    command=list(base);command[-2]='org.archtv.aospprobe.ThrowableLogProbe'
+    with subprocess.Popen(command,stdout=subprocess.PIPE,stderr=subprocess.PIPE,env=base_env,start_new_session=True) as process:
+        try:stdout,stderr=process.communicate(timeout=30)
+        except BaseException:
+            try:os.killpg(process.pid,signal.SIGKILL)
+            except ProcessLookupError:pass
+            process.communicate();raise
+    (out/'throwables.stdout').write_bytes(stdout);(out/'throwables.stderr').write_bytes(stderr)
+    assert process.returncode==0 and b'AOSP_THROWABLE_LOG_OK' in stdout
+    text=stderr.decode('utf-8')
+    for marker in ['MULTILINE_MESSAGE','SECOND_MESSAGE_LINE','OUTER_MARKER','CAUSE_MARKER ñ 📺','NETWORK_MESSAGE_VISIBLE','DEAD_SYSTEM_MESSAGE','DeadSystemException: The system died; earlier logs will point to the root cause','LONG_BEGIN:',':LONG_END']:
+        assert marker in text,marker
+    assert 'NETWORK_WRAPPER_SUPPRESSED' not in text and 'NETWORK_CAUSE_SUPPRESSED' not in text
+    long_part=text[text.index('LONG_BEGIN:'):text.index(':LONG_END')]
+    # Count message payload independently of inserted native record prefixes.
+    assert long_part.count('x')==12000,'Long line was truncated or duplicated'
+    throwable_pass=True
+    results.append({'case':'throwables','command':command,'long_ascii_payload':12000})
+(out/'result.json').write_text(json.dumps({'original_log_linux_pass':True,'throwable_log_pass':throwable_pass,
+ 'sources_sha256':{str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sources},'cases':results,'build_commands':commands,
  'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),
  'sha256':{str(path.resolve()):hashlib.sha256(path.read_bytes()).hexdigest() for path in
     (args.linux_library,out/'dex/classes.dex',dex,args.aosp_build/'framework.jar')},
- 'scope':'Original AOSP Log Java on ART with three Linux JNI methods, actual stderr UTF8 text, property thresholds and precedence, null message/tag, long tag, payload boundary and explicit unsupported binary buffer. No logd, Android ring buffers, WTF handler, throwable writer or full StrictMode support claim.'},indent=2)+'\n')
+ 'scope':'Original AOSP Log Java on ART with three Linux JNI methods, actual stderr UTF8 text, property thresholds and precedence, null message/tag, long tag, payload boundary and explicit unsupported binary buffer. No logd, Android ring buffers, WTF handler or full StrictMode support claim. Throwable writer tested only when throwable_log_pass is true.'},indent=2)+'\n')
 print(out/'result.json')

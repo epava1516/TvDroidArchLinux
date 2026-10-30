@@ -285,3 +285,10 @@ mediante el finalizador AOSP, sin fugas detectadas por LSan en esa prueba. El
 layout supera el cliente AIDL y se detiene en LineBreakBufferedWriter al registrar
 el fallback de foco. AOSP-BINDER-HOLDER.md distingue las pruebas nativas del GC
 ART y mantiene pendientes transporte, layout completo y dibujo original.
+
+Log original ya formatea excepciones mediante LineBreakBufferedWriter original;
+pasan cuatro regresiones de filtros y el caso adicional de causas, Unicode,
+supresión de red, DeadSystemException y línea ASCII de 12.000 caracteres. El
+layout supera el registro del fallback de foco y se detiene ahora en la búsqueda
+de servicios: BinderInternal.getContextObject ausente. AOSP-LOG-EXCEPCIONES.md
+registra el alcance y mantiene layout/dibujo original y A3 pendientes.
