@@ -223,9 +223,9 @@
     "semantic_hash": "577f47ff30b8d605d5f59c96424dfd85"
   },
   "scripts/check.sh": {
-    "mtime": 1793328501.7976146,
-    "seen": 1793328812.856158,
-    "ast_hash": "473974573c8cf75e134d7cf27c7fe6c8",
+    "mtime": 1793345105.691431,
+    "seen": 1793345138.880461,
+    "ast_hash": "c606109462b071c3c6476e90663edad5",
     "semantic_hash": ""
   },
   "scripts/lib/common.sh": {
@@ -559,9 +559,9 @@
     "semantic_hash": ""
   },
   "docs/PAQUETES.md": {
-    "mtime": 1793344936.6075163,
-    "seen": 1793344993.3955464,
-    "ast_hash": "8d58e5753f2bbbfb1a47b2ec37683605",
+    "mtime": 1793345126.8747506,
+    "seen": 1793345138.88055,
+    "ast_hash": "18a34db92b7011613bddd83725455d16",
     "semantic_hash": ""
   },
   "packaging/arch/cargo-license-inventory.py": {
@@ -574,6 +574,12 @@
     "mtime": 1793344709.1934087,
     "seen": 1793344742.5583076,
     "ast_hash": "2f04822d4e2285424957a52fb5d35023",
+    "semantic_hash": ""
+  },
+  "packaging/arch/package-lifecycle.sh": {
+    "mtime": 1793345153.9859972,
+    "seen": 1793345167.343057,
+    "ast_hash": "14d3315f9b269fcefa142cca8e01ec21",
     "semantic_hash": ""
   }
 }

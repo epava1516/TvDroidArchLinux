@@ -70,6 +70,23 @@ Las preferencias del usuario permanecen en XDG_CONFIG_HOME/archtv/settings.json;
 el paquete no instala ni elimina ese archivo. El fondo original se compila como
 recurso del shell, y las fuentes tipográficas se obtienen del paquete del sistema.
 
+## Prueba del ciclo de paquetes preparada
+
+packaging/arch/package-lifecycle.sh acepta dos directorios con los tres paquetes,
+primero la versión anterior y después una versión superior. Solo permite ejecución
+como root dentro de systemd-nspawn y requiere que Arch TV no esté instalado.
+Se usa exclusivamente en una raíz desechable creada con base, sin compiladores.
+
+Resuelve las dependencias de .PKGINFO, instala, actualiza, vuelve a la versión
+anterior y retira los tres paquetes. Comprueba archivos con pacman, bibliotecas
+con ldd, comandos --help y conservación de un archivo de preferencias. Verifica
+que desaparecen los archivos de los paquetes al retirarlos. No elimina las
+dependencias del sistema ni el usuario de prueba: se conserva la raíz para inspección.
+
+El script está preparado y pasa comprobación estática; su ejecución completa
+requiere dos compilaciones terminadas. Su PASS no certifica sesión gráfica,
+transformación de esquemas ni aplicaciones Android. Esas pruebas siguen pendientes.
+
 ## Preferencias y recuperación entre versiones
 
 El esquema actual de settings.json es versión 1. Los campos ausentes reciben los
