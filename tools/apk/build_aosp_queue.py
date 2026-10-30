@@ -1,0 +1,87 @@
+#!/usr/bin/env python3
+"""Compile unmodified original AOSP queue classes and a separate linkage probe."""
+import argparse
+import hashlib
+import json
+from pathlib import Path
+import subprocess
+import zipfile
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--sources', type=Path, required=True)
+parser.add_argument('--reference', type=Path, required=True)
+parser.add_argument('--tools', type=Path, required=True)
+parser.add_argument('--output', type=Path, required=True)
+parser.add_argument('--jdk', type=Path, default=Path('/usr/lib/jvm/java-17-openjdk'))
+args = parser.parse_args()
+root = Path(__file__).resolve().parents[2]
+manifest = json.loads((root/'runtime/aosp/framework-study.json').read_text())
+reference = json.loads((root/'runtime/aosp/compile-reference.json').read_text())
+tools = json.loads((root/'fixtures/apk/counter/toolchain.json').read_text())
+
+
+def verify(path, expected):
+    with path.open('rb') as stream:
+        actual = hashlib.file_digest(stream, 'sha256').hexdigest()
+    if actual != expected:
+        raise SystemExit('Checksum mismatch: '+str(path))
+
+
+verify(args.reference, reference['sha256'])
+for item in tools['artifacts']:
+    if item['file'] in ('android.jar', 'r8.jar'):
+        verify(args.tools/item['file'], item['sha256'])
+names = ('Looper', 'Handler', 'Message', 'MessageQueue')
+sources = []
+for name in names:
+    path = 'core/java/android/os/'+name+'.java'
+    item = next(item for item in manifest['files'] if item['path'] == path)
+    source = args.sources/path
+    verify(source, item['sha256'])
+    sources.append(source.resolve())
+out = args.output.resolve()
+out.mkdir(parents=True, exist_ok=False)
+for name in ('classes', 'stubs', 'dex'):
+    (out/name).mkdir()
+reference_path = args.reference.resolve()
+tool_path = args.tools.resolve()
+stubs = sorted((root/'runtime/aosp/compile-stubs').rglob('*.java'))
+probe = root/'fixtures/aosp-queue/QueueLinkProbe.java'
+commands = []
+
+
+def run(name, command):
+    command = [str(part) for part in command]
+    commands.append({'name': name, 'command': command})
+    with (out/(name+'.stdout')).open('w') as stdout, (out/(name+'.stderr')).open('w') as stderr:
+        result = subprocess.run(command, stdout=stdout, stderr=stderr, timeout=120)
+    if result.returncode != 0:
+        raise SystemExit('Build failed: '+name+'; see '+str(out))
+
+
+run('compile-private-declarations', [args.jdk/'bin/javac', '--release', '8', '-d', out/'stubs', *stubs])
+run('pack-private-declarations', [args.jdk/'bin/jar', 'cf', out/'compile-only.jar', '-C', out/'stubs', '.'])
+boot = ':'.join(str(path) for path in [out/'compile-only.jar', reference_path, tool_path/'android.jar'])
+run('compile-original', [args.jdk/'bin/javac', '-source', '8', '-target', '8', '-bootclasspath', boot,
+                         '-d', out/'classes', *sources])
+run('compile-probe', [args.jdk/'bin/javac', '--release', '8', '-classpath', str(out/'classes')+':'+str(reference_path),
+                      '-d', out/'classes', probe])
+run('pack-original', [args.jdk/'bin/jar', 'cf', out/'queue.jar', '-C', out/'classes', '.'])
+with zipfile.ZipFile(out/'queue.jar') as archive:
+    classes = sorted(name for name in archive.namelist() if name.endswith('.class'))
+    if any(not name.startswith(('android/os/', 'org/archtv/aospprobe/')) for name in classes):
+        raise SystemExit('Unexpected compile-only class in runtime artifact')
+run('dex-original', [args.jdk/'bin/java', '-cp', tool_path/'r8.jar', 'com.android.tools.r8.D8', '--release',
+                     '--min-api', '28', '--lib', tool_path/'android.jar', '--output', out/'dex', out/'queue.jar'])
+(out/'provenance.json').write_text(json.dumps({
+    'source_revision': manifest['revision'],
+    'original_sources_sha256': {str(path): hashlib.sha256(path.read_bytes()).hexdigest() for path in sources},
+    'original_sources_modified': False,
+    'compile_reference': reference,
+    'compile_only_declarations_sha256': {str(path.relative_to(root)): hashlib.sha256(path.read_bytes()).hexdigest() for path in stubs},
+    'probe_sha256': hashlib.sha256(probe.read_bytes()).hexdigest(),
+    'runtime_classes': classes, 'commands': commands,
+    'dex_sha256': hashlib.sha256((out/'dex/classes.dex').read_bytes()).hexdigest(),
+    'scope': 'Original AOSP queue source compilation and DEX generation. Compile-only jar, declarations and full framework reference excluded. JNI, functional queue and APK compatibility not proved.',
+}, indent=2)+'\n')
+print(out/'dex/classes.dex')

@@ -64,5 +64,16 @@ Fuentes originales principales:
 No se necesita arrancar un sistema Android completo como criterio del port.
 Tampoco se presupone que se puedan eliminar todos sus servicios sin adaptar
 contratos: cada dependencia debe resolverse, portarse o rechazarse explícitamente.
-La secuencia anterior aún no está implementada; el avance actual es el inventario
-fijado y la prueba funcional del prototipo anterior.
+## Primer conjunto original compilado
+
+Looper, Handler, Message y MessageQueue ya compilan sin modificar sus fuentes,
+contra una referencia interna Android 13 y dos declaraciones auxiliares de
+compilación. D8 genera un DEX que excluye la referencia completa y esas
+declaraciones. En ART, Looper.prepare entra en el constructor original de
+MessageQueue y se detiene en nativeInit con UnsatisfiedLinkError. El método
+privado getInt$ de FileDescriptor se comprobó en el ART real por reflexión.
+
+Ver runtime/aosp/README.md y reports/aosp-queue-compile/. No funciona aún la cola;
+el siguiente paso es su JNI Linux y las dependencias de ejecución posteriores.
+El cierre de compilación no prueba que ya se haya resuelto todo ese conjunto,
+ni sustituye las API propias que sigue usando el contador.

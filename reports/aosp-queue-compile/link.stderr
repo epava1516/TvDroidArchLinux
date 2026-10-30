@@ -1,0 +1,11 @@
+dalvikvm64 E 10-30 10:48:35    26    26 image_space.cc:2239] Error reading named image component header for /home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/core.art, error: Unable to open file "/home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/x86_64/core.art" for reading image header
+dalvikvm64 E 10-30 10:48:35    26    26 image_space.cc:3470] Could not create image space with image file '/home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/core.art'. Attempting to fall back to imageless running. Error was: Full boot image cannot be compiled because no profile is provided.
+ziparchive W 10-30 10:48:35    26    26 Unable to open '/home/tv/repositorio-principal/dist/apk/aosp-queue-original-1/dex/classes.dm': No such file or directory
+dalvikvm64 E 10-30 10:48:36    26    26 jni_entrypoints.cc:116] No implementation found for long android.os.MessageQueue.nativeInit() (tried Java_android_os_MessageQueue_nativeInit and Java_android_os_MessageQueue_nativeInit__)
+Exception in thread "main" java.lang.UnsatisfiedLinkError: No implementation found for long android.os.MessageQueue.nativeInit() (tried Java_android_os_MessageQueue_nativeInit and Java_android_os_MessageQueue_nativeInit__)
+	at android.os.MessageQueue.nativeInit(Native Method)
+	at android.os.MessageQueue.<init>(MessageQueue.java:79)
+	at android.os.Looper.<init>(Looper.java:325)
+	at android.os.Looper.prepare(Looper.java:116)
+	at android.os.Looper.prepare(Looper.java:109)
+	at org.archtv.aospprobe.QueueLinkProbe.main(QueueLinkProbe.java:5)

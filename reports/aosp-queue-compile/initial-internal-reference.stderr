@@ -1,0 +1,181 @@
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:21: error: cannot find symbol
+import android.compat.annotation.UnsupportedAppUsage;
+                                ^
+  symbol:   class UnsupportedAppUsage
+  location: package android.compat.annotation
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:22: error: cannot find symbol
+import android.compat.annotation.UnsupportedAppUsage;
+                                ^
+  symbol:   class UnsupportedAppUsage
+  location: package android.compat.annotation
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:71: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:73: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:77: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:82: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:350: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:192: error: cannot find symbol
+    @UnsupportedAppUsage(maxTargetSdk = Build.VERSION_CODES.R, trackingBug = 170729553)
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:254: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:300: error: cannot find symbol
+    @UnsupportedAppUsage(maxTargetSdk = Build.VERSION_CODES.R, trackingBug = 170729553)
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:909: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:933: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:945: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:948: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:951: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:115: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Message
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:123: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Message
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:129: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Message
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:132: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Message
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:136: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Message
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:323: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Message
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:407: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Message
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:521: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Message
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:536: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Message
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:46: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:49: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:53: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:55: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:66: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:71: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:269: error: cannot find symbol
+    @UnsupportedAppUsage(maxTargetSdk = Build.VERSION_CODES.R, trackingBug = 170729553)
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:318: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:470: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:515: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:638: error: cannot find symbol
+    @UnsupportedAppUsage(maxTargetSdk = Build.VERSION_CODES.R, trackingBug = 170729553)
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:233: error: cannot find symbol
+        final int fdNum = fd.getInt$();
+                            ^
+  symbol:   method getInt$()
+  location: variable fd of type FileDescriptor
+36 errors

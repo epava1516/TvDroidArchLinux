@@ -1,0 +1,35 @@
+{
+  "command": [
+    "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+    "--64",
+    "--no-compile",
+    "--",
+    "-Xint",
+    "-cp",
+    "/home/tv/repositorio-principal/dist/apk/aosp-queue-original-1/dex/classes.dex",
+    "org.archtv.aospprobe.QueueLinkProbe"
+  ],
+  "exit_code": 1,
+  "art_private_fd_api_verified": true,
+  "original_queue_native_boundary_observed": true,
+  "queue_functional_pass": false,
+  "dex_sha256": "a865d4010d8dac6e74e15d15099d48ed99f6956b29401702f1e84bda2f82087d",
+  "dex_defined_classes": [
+    "Landroid/os/Handler$1;",
+    "Landroid/os/Handler$BlockingRunnable;",
+    "Landroid/os/Handler$Callback;",
+    "Landroid/os/Handler$MessengerImpl;",
+    "Landroid/os/Handler;",
+    "Landroid/os/Looper$Observer;",
+    "Landroid/os/Looper;",
+    "Landroid/os/Message$1;",
+    "Landroid/os/Message;",
+    "Landroid/os/MessageQueue$FileDescriptorRecord;",
+    "Landroid/os/MessageQueue$IdleHandler;",
+    "Landroid/os/MessageQueue$OnFileDescriptorEventListener$Events;",
+    "Landroid/os/MessageQueue$OnFileDescriptorEventListener;",
+    "Landroid/os/MessageQueue;",
+    "Lorg/archtv/aospprobe/QueueLinkProbe;"
+  ],
+  "scope": "Original Looper.prepare reaches original MessageQueue constructor and missing nativeInit on ART. No functional queue, JNI port, full dependency closure or APK compatibility proof."
+}

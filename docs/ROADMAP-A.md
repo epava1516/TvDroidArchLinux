@@ -86,5 +86,10 @@ port ya realizado ni introducir el arranque de Android como requisito.
 PORT-FRAMEWORK-AOSP.md define la secuencia del port original: cierre de compilación
 de Looper/Handler/Message/MessageQueue, JNI Linux, recursos originales y después
 vistas/ventanas/ciclo de vida. Hay 17 fuentes fijadas con hashes e inventario
-reproducible; todavía no se ha compilado ni portado ese conjunto. Las puertas
+reproducible; el primer resultado de compilación se detalla a continuación. Las puertas
 A0–A2 verificadas describen el prototipo propio, no este trabajo nuevo pendiente.
+
+El primer conjunto original (Looper/Handler/Message/MessageQueue) ya compila sin
+modificar fuentes y llega en ART hasta MessageQueue.nativeInit, aún sin enlace
+JNI. La cola no es funcional todavía. Ver runtime/aosp/README.md y
+reports/aosp-queue-compile/. El contador sigue usando el prototipo previo.

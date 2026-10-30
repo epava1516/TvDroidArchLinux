@@ -108,3 +108,13 @@ sin acreditar otras APK, mando físico, seguridad o estabilidad prolongada.
 La siguiente dirección solicitada es portar componentes originales del framework
 AOSP, adaptando dependencias a Linux. Las clases android.* actuales son propias;
 la prueba existente será regresión durante ese port, no su resultado final.
+
+## Compilación y primer enlace del framework original
+
+Las fuentes originales fijadas de Looper, Handler, Message y MessageQueue compilan
+sin cambios y se convierten a DEX. La referencia completa de API internas y las
+dos declaraciones auxiliares son sólo de compilación y no están en ese DEX.
+ART ejecuta Looper.prepare hasta el constructor original de MessageQueue, que
+falla en nativeInit por ausencia de JNI. FileDescriptor.getInt$ se verificó en
+el ART real. Aún no hay cola funcional ni sustitución de las API del contador.
+Ver runtime/aosp/README.md y reports/aosp-queue-compile/.

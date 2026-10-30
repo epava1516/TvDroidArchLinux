@@ -1,0 +1,835 @@
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:19: error: cannot find symbol
+import android.annotation.NonNull;
+                         ^
+  symbol:   class NonNull
+  location: package android.annotation
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:20: error: cannot find symbol
+import android.annotation.Nullable;
+                         ^
+  symbol:   class Nullable
+  location: package android.annotation
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:21: error: package android.compat.annotation does not exist
+import android.compat.annotation.UnsupportedAppUsage;
+                                ^
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:24: error: cannot find symbol
+import android.util.Slog;
+                   ^
+  symbol:   class Slog
+  location: package android.util
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:25: error: package android.util.proto does not exist
+import android.util.proto.ProtoOutputStream;
+                         ^
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:19: error: cannot find symbol
+import android.annotation.IntDef;
+                         ^
+  symbol:   class IntDef
+  location: package android.annotation
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:20: error: cannot find symbol
+import android.annotation.NonNull;
+                         ^
+  symbol:   class NonNull
+  location: package android.annotation
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:21: error: cannot find symbol
+import android.annotation.TestApi;
+                         ^
+  symbol:   class TestApi
+  location: package android.annotation
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:22: error: package android.compat.annotation does not exist
+import android.compat.annotation.UnsupportedAppUsage;
+                                ^
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:26: error: package android.util.proto does not exist
+import android.util.proto.ProtoOutputStream;
+                         ^
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:19: error: package android.compat.annotation does not exist
+import android.compat.annotation.UnsupportedAppUsage;
+                                ^
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:21: error: package android.util.proto does not exist
+import android.util.proto.ProtoOutputStream;
+                         ^
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:23: error: package com.android.internal.annotations does not exist
+import com.android.internal.annotations.VisibleForTesting;
+                                       ^
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:19: error: cannot find symbol
+import android.annotation.NonNull;
+                         ^
+  symbol:   class NonNull
+  location: package android.annotation
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:20: error: cannot find symbol
+import android.annotation.Nullable;
+                         ^
+  symbol:   class Nullable
+  location: package android.annotation
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:21: error: package android.compat.annotation does not exist
+import android.compat.annotation.UnsupportedAppUsage;
+                                ^
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:443: error: cannot find symbol
+    public void dumpDebug(ProtoOutputStream proto, long fieldId) {
+                          ^
+  symbol:   class ProtoOutputStream
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:910: error: cannot find symbol
+    final IMessenger getIMessenger() {
+          ^
+  symbol:   class IMessenger
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:952: error: cannot find symbol
+    IMessenger mMessenger;
+    ^
+  symbol:   class IMessenger
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:577: error: cannot find symbol
+    void dumpDebug(ProtoOutputStream proto, long fieldId) {
+                   ^
+  symbol:   class ProtoOutputStream
+  location: class Message
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:929: error: cannot find symbol
+    void dumpDebug(ProtoOutputStream proto, long fieldId) {
+                   ^
+  symbol:   class ProtoOutputStream
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:920: error: package IMessenger does not exist
+    private final class MessengerImpl extends IMessenger.Stub {
+                                                        ^
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:1009: error: cannot find symbol
+        @IntDef(flag = true, prefix = { "EVENT_" }, value = {
+         ^
+  symbol:   class IntDef
+  location: interface OnFileDescriptorEventListener
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:71: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:73: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:77: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:82: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:151: error: cannot find symbol
+    public static void setObserver(@Nullable Observer observer) {
+                                    ^
+  symbol:   class Nullable
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:311: error: cannot find symbol
+    public static @Nullable Looper myLooper() {
+                   ^
+  symbol:   class Nullable
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:320: error: cannot find symbol
+    public static @NonNull MessageQueue myQueue() {
+                   ^
+  symbol:   class NonNull
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:345: error: cannot find symbol
+    public void setMessageLogging(@Nullable Printer printer) {
+                                   ^
+  symbol:   class Nullable
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:350: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:405: error: cannot find symbol
+    public @NonNull Thread getThread() {
+            ^
+  symbol:   class NonNull
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:414: error: cannot find symbol
+    public @NonNull MessageQueue getQueue() {
+            ^
+  symbol:   class NonNull
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:424: error: cannot find symbol
+    public void dump(@NonNull Printer pw, @NonNull String prefix) {
+                      ^
+  symbol:   class NonNull
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:424: error: cannot find symbol
+    public void dump(@NonNull Printer pw, @NonNull String prefix) {
+                                           ^
+  symbol:   class NonNull
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:437: error: cannot find symbol
+    public void dump(@NonNull Printer pw, @NonNull String prefix, Handler handler) {
+                      ^
+  symbol:   class NonNull
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:437: error: cannot find symbol
+    public void dump(@NonNull Printer pw, @NonNull String prefix, Handler handler) {
+                                           ^
+  symbol:   class NonNull
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:91: error: cannot find symbol
+    public void handleMessage(@NonNull Message msg) {
+                               ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:97: error: cannot find symbol
+    public void dispatchMessage(@NonNull Message msg) {
+                                 ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:152: error: cannot find symbol
+    public Handler(@Nullable Callback callback) {
+                    ^
+  symbol:   class Nullable
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:161: error: cannot find symbol
+    public Handler(@NonNull Looper looper) {
+                    ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:172: error: cannot find symbol
+    public Handler(@NonNull Looper looper, @Nullable Callback callback) {
+                    ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:172: error: cannot find symbol
+    public Handler(@NonNull Looper looper, @Nullable Callback callback) {
+                                            ^
+  symbol:   class Nullable
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:192: error: cannot find symbol
+    @UnsupportedAppUsage(maxTargetSdk = Build.VERSION_CODES.R, trackingBug = 170729553)
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:192: error: cannot find symbol
+    @UnsupportedAppUsage(maxTargetSdk = Build.VERSION_CODES.R, trackingBug = 170729553)
+                                                           ^
+  symbol:   variable R
+  location: class VERSION_CODES
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:214: error: cannot find symbol
+    public Handler(@Nullable Callback callback, boolean async) {
+                    ^
+  symbol:   class Nullable
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:255: error: cannot find symbol
+    public Handler(@NonNull Looper looper, @Nullable Callback callback, boolean async) {
+                    ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:255: error: cannot find symbol
+    public Handler(@NonNull Looper looper, @Nullable Callback callback, boolean async) {
+                                            ^
+  symbol:   class Nullable
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:254: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:275: error: cannot find symbol
+    public static Handler createAsync(@NonNull Looper looper) {
+                                       ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:274: error: cannot find symbol
+    @NonNull
+     ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:293: error: cannot find symbol
+    public static Handler createAsync(@NonNull Looper looper, @NonNull Callback callback) {
+                                       ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:293: error: cannot find symbol
+    public static Handler createAsync(@NonNull Looper looper, @NonNull Callback callback) {
+                                                               ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:292: error: cannot find symbol
+    @NonNull
+     ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:300: error: cannot find symbol
+    @UnsupportedAppUsage(maxTargetSdk = Build.VERSION_CODES.R, trackingBug = 170729553)
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:300: error: cannot find symbol
+    @UnsupportedAppUsage(maxTargetSdk = Build.VERSION_CODES.R, trackingBug = 170729553)
+                                                           ^
+  symbol:   variable R
+  location: class VERSION_CODES
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:301: error: cannot find symbol
+    @NonNull
+     ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:311: error: cannot find symbol
+    public static Handler mainIfNull(@Nullable Handler handler) {
+                                      ^
+  symbol:   class Nullable
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:310: error: cannot find symbol
+    @NonNull
+     ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:317: error: cannot find symbol
+    public String getTraceName(@NonNull Message message) {
+                                ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:316: error: cannot find symbol
+    @NonNull
+     ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:341: error: cannot find symbol
+    public String getMessageName(@NonNull Message message) {
+                                  ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:340: error: cannot find symbol
+    @NonNull
+     ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:353: error: cannot find symbol
+    @NonNull
+     ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:365: error: cannot find symbol
+    @NonNull
+     ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:381: error: cannot find symbol
+    public final Message obtainMessage(int what, @Nullable Object obj) {
+                                                  ^
+  symbol:   class Nullable
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:380: error: cannot find symbol
+    @NonNull
+     ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:394: error: cannot find symbol
+    @NonNull
+     ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:411: error: cannot find symbol
+    public final Message obtainMessage(int what, int arg1, int arg2, @Nullable Object obj) {
+                                                                      ^
+  symbol:   class Nullable
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:410: error: cannot find symbol
+    @NonNull
+     ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:426: error: cannot find symbol
+    public final boolean post(@NonNull Runnable r) {
+                               ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:448: error: cannot find symbol
+    public final boolean postAtTime(@NonNull Runnable r, long uptimeMillis) {
+                                     ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:475: error: cannot find symbol
+            @NonNull Runnable r, @Nullable Object token, long uptimeMillis) {
+             ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:475: error: cannot find symbol
+            @NonNull Runnable r, @Nullable Object token, long uptimeMillis) {
+                                  ^
+  symbol:   class Nullable
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:498: error: cannot find symbol
+    public final boolean postDelayed(@NonNull Runnable r, long delayMillis) {
+                                      ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:529: error: cannot find symbol
+            @NonNull Runnable r, @Nullable Object token, long delayMillis) {
+             ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:529: error: cannot find symbol
+            @NonNull Runnable r, @Nullable Object token, long delayMillis) {
+                                  ^
+  symbol:   class Nullable
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:548: error: cannot find symbol
+    public final boolean postAtFrontOfQueue(@NonNull Runnable r) {
+                                             ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:592: error: cannot find symbol
+    public final boolean runWithScissors(@NonNull Runnable r, long timeout) {
+                                          ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:612: error: cannot find symbol
+    public final void removeCallbacks(@NonNull Runnable r) {
+                                       ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:621: error: cannot find symbol
+    public final void removeCallbacks(@NonNull Runnable r, @Nullable Object token) {
+                                       ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:621: error: cannot find symbol
+    public final void removeCallbacks(@NonNull Runnable r, @Nullable Object token) {
+                                                            ^
+  symbol:   class Nullable
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:634: error: cannot find symbol
+    public final boolean sendMessage(@NonNull Message msg) {
+                                      ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:693: error: cannot find symbol
+    public final boolean sendMessageDelayed(@NonNull Message msg, long delayMillis) {
+                                             ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:719: error: cannot find symbol
+    public boolean sendMessageAtTime(@NonNull Message msg, long uptimeMillis) {
+                                      ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:742: error: cannot find symbol
+    public final boolean sendMessageAtFrontOfQueue(@NonNull Message msg) {
+                                                    ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:762: error: cannot find symbol
+    public final boolean executeOrSendMessage(@NonNull Message msg) {
+                                               ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:770: error: cannot find symbol
+    private boolean enqueueMessage(@NonNull MessageQueue queue, @NonNull Message msg,
+                                    ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:770: error: cannot find symbol
+    private boolean enqueueMessage(@NonNull MessageQueue queue, @NonNull Message msg,
+                                                                 ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:794: error: cannot find symbol
+    public final void removeMessages(int what, @Nullable Object object) {
+                                                ^
+  symbol:   class Nullable
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:809: error: cannot find symbol
+    public final void removeEqualMessages(int what, @Nullable Object object) {
+                                                     ^
+  symbol:   class Nullable
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:818: error: cannot find symbol
+    public final void removeCallbacksAndMessages(@Nullable Object token) {
+                                                  ^
+  symbol:   class Nullable
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:829: error: cannot find symbol
+    public final void removeCallbacksAndEqualMessages(@Nullable Object token) {
+                                                       ^
+  symbol:   class Nullable
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:852: error: cannot find symbol
+    public final boolean hasMessages(int what, @Nullable Object object) {
+                                                ^
+  symbol:   class Nullable
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:862: error: cannot find symbol
+    public final boolean hasEqualMessages(int what, @Nullable Object object) {
+                                                     ^
+  symbol:   class Nullable
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:870: error: cannot find symbol
+    public final boolean hasCallbacks(@NonNull Runnable r) {
+                                       ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:876: error: cannot find symbol
+    @NonNull
+     ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:881: error: cannot find symbol
+    public final void dump(@NonNull Printer pw, @NonNull String prefix) {
+                            ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:881: error: cannot find symbol
+    public final void dump(@NonNull Printer pw, @NonNull String prefix) {
+                                                 ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:893: error: cannot find symbol
+    public final void dumpMine(@NonNull Printer pw, @NonNull String prefix) {
+                                ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:893: error: cannot find symbol
+    public final void dumpMine(@NonNull Printer pw, @NonNull String prefix) {
+                                                     ^
+  symbol:   class NonNull
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:909: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:933: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:945: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:948: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:951: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:85: error: cannot find symbol
+        boolean handleMessage(@NonNull Message msg);
+                               ^
+  symbol:   class NonNull
+  location: interface Callback
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:115: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Message
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:123: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Message
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:124: error: cannot find symbol
+    @VisibleForTesting(visibility = VisibleForTesting.Visibility.PACKAGE)
+     ^
+  symbol:   class VisibleForTesting
+  location: class Message
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:124: error: package VisibleForTesting does not exist
+    @VisibleForTesting(visibility = VisibleForTesting.Visibility.PACKAGE)
+                                                     ^
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:129: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Message
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:132: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Message
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:136: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Message
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:323: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Message
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:407: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Message
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:521: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Message
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:536: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class Message
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:608: error: cannot find symbol
+    public static final @android.annotation.NonNull Parcelable.Creator<Message> CREATOR
+                                           ^
+  symbol:   class NonNull
+  location: package android.annotation
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:46: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:49: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:53: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:55: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:66: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:71: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:124: error: cannot find symbol
+    public void addIdleHandler(@NonNull IdleHandler handler) {
+                                ^
+  symbol:   class NonNull
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:142: error: cannot find symbol
+    public void removeIdleHandler(@NonNull IdleHandler handler) {
+                                   ^
+  symbol:   class NonNull
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:194: error: cannot find symbol
+    public void addOnFileDescriptorEventListener(@NonNull FileDescriptor fd,
+                                                  ^
+  symbol:   class NonNull
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:196: error: cannot find symbol
+            @NonNull OnFileDescriptorEventListener listener) {
+             ^
+  symbol:   class NonNull
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:221: error: cannot find symbol
+    public void removeOnFileDescriptorEventListener(@NonNull FileDescriptor fd) {
+                                                     ^
+  symbol:   class NonNull
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:269: error: cannot find symbol
+    @UnsupportedAppUsage(maxTargetSdk = Build.VERSION_CODES.R, trackingBug = 170729553)
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:269: error: cannot find symbol
+    @UnsupportedAppUsage(maxTargetSdk = Build.VERSION_CODES.R, trackingBug = 170729553)
+                                                           ^
+  symbol:   variable R
+  location: class VERSION_CODES
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:318: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:470: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:471: error: cannot find symbol
+    @TestApi
+     ^
+  symbol:   class TestApi
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:515: error: cannot find symbol
+    @UnsupportedAppUsage
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:516: error: cannot find symbol
+    @TestApi
+     ^
+  symbol:   class TestApi
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:638: error: cannot find symbol
+    @UnsupportedAppUsage(maxTargetSdk = Build.VERSION_CODES.R, trackingBug = 170729553)
+     ^
+  symbol:   class UnsupportedAppUsage
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:638: error: cannot find symbol
+    @UnsupportedAppUsage(maxTargetSdk = Build.VERSION_CODES.R, trackingBug = 170729553)
+                                                           ^
+  symbol:   variable R
+  location: class VERSION_CODES
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:1028: error: cannot find symbol
+        @Events int onFileDescriptorEvents(@NonNull FileDescriptor fd, @Events int events);
+                                            ^
+  symbol:   class NonNull
+  location: interface OnFileDescriptorEventListener
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:189: error: cannot find symbol
+        if (traceTag != 0 && Trace.isTagEnabled(traceTag)) {
+                                  ^
+  symbol:   method isTagEnabled(long)
+  location: class Trace
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:190: error: cannot find symbol
+            Trace.traceBegin(traceTag, msg.target.getTraceName(msg));
+                 ^
+  symbol:   method traceBegin(long,String)
+  location: class Trace
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:199: error: cannot find symbol
+        long origWorkSource = ThreadLocalWorkSource.setUid(msg.workSourceUid);
+                              ^
+  symbol:   variable ThreadLocalWorkSource
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:212: error: cannot find symbol
+            ThreadLocalWorkSource.restore(origWorkSource);
+            ^
+  symbol:   variable ThreadLocalWorkSource
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:214: error: cannot find symbol
+                Trace.traceEnd(traceTag);
+                     ^
+  symbol:   method traceEnd(long)
+  location: class Trace
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:220: error: cannot find symbol
+                    Slog.w(TAG, "Drained");
+                    ^
+  symbol:   variable Slog
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:266: error: cannot find symbol
+            Slog.w(TAG, "Loop again would have the queued messages be executed"
+            ^
+  symbol:   variable Slog
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:280: error: cannot find symbol
+                SystemProperties.getInt("log.looper."
+                ^
+  symbol:   variable SystemProperties
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:301: error: cannot find symbol
+        Slog.w(TAG, "Slow " + what + " took " + actualTime + "ms "
+        ^
+  symbol:   variable Slog
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:445: error: cannot find symbol
+        proto.write(LooperProto.THREAD_NAME, mThread.getName());
+                    ^
+  symbol:   variable LooperProto
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:446: error: cannot find symbol
+        proto.write(LooperProto.THREAD_ID, mThread.getId());
+                    ^
+  symbol:   variable LooperProto
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java:448: error: cannot find symbol
+            mQueue.dumpDebug(proto, LooperProto.QUEUE);
+                                    ^
+  symbol:   variable LooperProto
+  location: class Looper
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:233: error: cannot find symbol
+        final int fdNum = fd.getInt$();
+                            ^
+  symbol:   method getInt$()
+  location: variable fd of type FileDescriptor
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:933: error: cannot find symbol
+                msg.dumpDebug(proto, MessageQueueProto.MESSAGES);
+                                     ^
+  symbol:   variable MessageQueueProto
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:935: error: cannot find symbol
+            proto.write(MessageQueueProto.IS_POLLING_LOCKED, isPollingLocked());
+                        ^
+  symbol:   variable MessageQueueProto
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java:936: error: cannot find symbol
+            proto.write(MessageQueueProto.IS_QUITTING, mQuitting);
+                        ^
+  symbol:   variable MessageQueueProto
+  location: class MessageQueue
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:540: error: cannot find symbol
+        TimeUtils.formatDuration(when - now, b);
+                 ^
+  symbol:   method formatDuration(long,StringBuilder)
+  location: class TimeUtils
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:579: error: cannot find symbol
+        proto.write(MessageProto.WHEN, when);
+                    ^
+  symbol:   variable MessageProto
+  location: class Message
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:583: error: cannot find symbol
+                proto.write(MessageProto.CALLBACK, callback.getClass().getName());
+                            ^
+  symbol:   variable MessageProto
+  location: class Message
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:585: error: cannot find symbol
+                proto.write(MessageProto.WHAT, what);
+                            ^
+  symbol:   variable MessageProto
+  location: class Message
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:589: error: cannot find symbol
+                proto.write(MessageProto.ARG1, arg1);
+                            ^
+  symbol:   variable MessageProto
+  location: class Message
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:593: error: cannot find symbol
+                proto.write(MessageProto.ARG2, arg2);
+                            ^
+  symbol:   variable MessageProto
+  location: class Message
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:597: error: cannot find symbol
+                proto.write(MessageProto.OBJ, obj.toString());
+                            ^
+  symbol:   variable MessageProto
+  location: class Message
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:600: error: cannot find symbol
+            proto.write(MessageProto.TARGET, target.getClass().getName());
+                        ^
+  symbol:   variable MessageProto
+  location: class Message
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:602: error: cannot find symbol
+            proto.write(MessageProto.BARRIER, arg1);
+                        ^
+  symbol:   variable MessageProto
+  location: class Message
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java:657: error: method readParcelable in class Parcel cannot be applied to given types;
+            obj = source.readParcelable(getClass().getClassLoader(), java.lang.Object.class);
+                        ^
+  required: ClassLoader
+  found:    ClassLoader,Class<Object>
+  reason: cannot infer type-variable(s) T
+    (actual and formal argument lists differ in length)
+  where T is a type-variable:
+    T extends Parcelable declared in method <T>readParcelable(ClassLoader)
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:318: error: cannot find symbol
+        if (message.callback instanceof TraceNameSupplier) {
+                                        ^
+  symbol:   class TraceNameSupplier
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:319: error: cannot find symbol
+            return ((TraceNameSupplier) message.callback).getTraceName();
+                     ^
+  symbol:   class TraceNameSupplier
+  location: class Handler
+/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java:773: error: cannot find symbol
+        msg.workSourceUid = ThreadLocalWorkSource.getUid();
+                            ^
+  symbol:   variable ThreadLocalWorkSource
+  location: class Handler
+170 errors
