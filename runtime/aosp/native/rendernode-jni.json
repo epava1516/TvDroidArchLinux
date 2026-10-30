@@ -1,0 +1,631 @@
+{
+  "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+  "original_sources_sha256": {
+    "RenderNode.java": "7a78c5a37e08098841ff60e3caa1e416e3aa02f86727d820d4e65f9888f04fe6",
+    "android_graphics_RenderNode.cpp": "ea5cbc31a2292e1d0efbd17cc5b32ffcd203bfdd5b37cc01fd89d998a4763911",
+    "graphics_jni_helpers.h": "c15cbd1db7a04419b23944a9302ce185f38b7a856e9250b29a604874a03a55d1"
+  },
+  "original_contract_methods": 88,
+  "selected_methods": 16,
+  "selected_critical_methods": 14,
+  "profile": "construction-properties",
+  "methods": [
+    {
+      "name": "nAddAnimator",
+      "descriptor": "(JJ)V",
+      "critical": false,
+      "cpp_function": "android_view_RenderNode_addAnimator",
+      "selected": false
+    },
+    {
+      "name": "nClearStretch",
+      "descriptor": "(J)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_clearStretch",
+      "selected": false
+    },
+    {
+      "name": "nCreate",
+      "descriptor": "(Ljava/lang/String;)J",
+      "critical": false,
+      "cpp_function": "android_view_RenderNode_create",
+      "selected": true
+    },
+    {
+      "name": "nDiscardDisplayList",
+      "descriptor": "(J)V",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_discardDisplayList",
+      "selected": true
+    },
+    {
+      "name": "nEndAllAnimators",
+      "descriptor": "(J)V",
+      "critical": false,
+      "cpp_function": "android_view_RenderNode_endAllAnimators",
+      "selected": false
+    },
+    {
+      "name": "nForceEndAnimators",
+      "descriptor": "(J)V",
+      "critical": false,
+      "cpp_function": "android_view_RenderNode_forceEndAnimators",
+      "selected": false
+    },
+    {
+      "name": "nGetAllocatedSize",
+      "descriptor": "(J)I",
+      "critical": false,
+      "cpp_function": "android_view_RenderNode_getAllocatedSize",
+      "selected": false
+    },
+    {
+      "name": "nGetAllowForceDark",
+      "descriptor": "(J)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_getAllowForceDark",
+      "selected": false
+    },
+    {
+      "name": "nGetAlpha",
+      "descriptor": "(J)F",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_getAlpha",
+      "selected": true
+    },
+    {
+      "name": "nGetAmbientShadowColor",
+      "descriptor": "(J)I",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_getAmbientShadowColor",
+      "selected": false
+    },
+    {
+      "name": "nGetAnimationMatrix",
+      "descriptor": "(JJ)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_getAnimationMatrix",
+      "selected": false
+    },
+    {
+      "name": "nGetBottom",
+      "descriptor": "(J)I",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_getBottom",
+      "selected": true
+    },
+    {
+      "name": "nGetCameraDistance",
+      "descriptor": "(J)F",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_getCameraDistance",
+      "selected": false
+    },
+    {
+      "name": "nGetClipToBounds",
+      "descriptor": "(J)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_getClipToBounds",
+      "selected": true
+    },
+    {
+      "name": "nGetClipToOutline",
+      "descriptor": "(J)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_getClipToOutline",
+      "selected": false
+    },
+    {
+      "name": "nGetElevation",
+      "descriptor": "(J)F",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_getElevation",
+      "selected": false
+    },
+    {
+      "name": "nGetHeight",
+      "descriptor": "(J)I",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_getHeight",
+      "selected": true
+    },
+    {
+      "name": "nGetInverseTransformMatrix",
+      "descriptor": "(JJ)V",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_getInverseTransformMatrix",
+      "selected": false
+    },
+    {
+      "name": "nGetLayerType",
+      "descriptor": "(J)I",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_getLayerType",
+      "selected": false
+    },
+    {
+      "name": "nGetLeft",
+      "descriptor": "(J)I",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_getLeft",
+      "selected": true
+    },
+    {
+      "name": "nGetNativeFinalizer",
+      "descriptor": "()J",
+      "critical": false,
+      "cpp_function": "android_view_RenderNode_getNativeFinalizer",
+      "selected": true
+    },
+    {
+      "name": "nGetPivotX",
+      "descriptor": "(J)F",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_getPivotX",
+      "selected": false
+    },
+    {
+      "name": "nGetPivotY",
+      "descriptor": "(J)F",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_getPivotY",
+      "selected": false
+    },
+    {
+      "name": "nGetRight",
+      "descriptor": "(J)I",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_getRight",
+      "selected": true
+    },
+    {
+      "name": "nGetRotation",
+      "descriptor": "(J)F",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_getRotation",
+      "selected": false
+    },
+    {
+      "name": "nGetRotationX",
+      "descriptor": "(J)F",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_getRotationX",
+      "selected": false
+    },
+    {
+      "name": "nGetRotationY",
+      "descriptor": "(J)F",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_getRotationY",
+      "selected": false
+    },
+    {
+      "name": "nGetScaleX",
+      "descriptor": "(J)F",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_getScaleX",
+      "selected": false
+    },
+    {
+      "name": "nGetScaleY",
+      "descriptor": "(J)F",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_getScaleY",
+      "selected": false
+    },
+    {
+      "name": "nGetSpotShadowColor",
+      "descriptor": "(J)I",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_getSpotShadowColor",
+      "selected": false
+    },
+    {
+      "name": "nGetTop",
+      "descriptor": "(J)I",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_getTop",
+      "selected": true
+    },
+    {
+      "name": "nGetTransformMatrix",
+      "descriptor": "(JJ)V",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_getTransformMatrix",
+      "selected": false
+    },
+    {
+      "name": "nGetTranslationX",
+      "descriptor": "(J)F",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_getTranslationX",
+      "selected": false
+    },
+    {
+      "name": "nGetTranslationY",
+      "descriptor": "(J)F",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_getTranslationY",
+      "selected": false
+    },
+    {
+      "name": "nGetTranslationZ",
+      "descriptor": "(J)F",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_getTranslationZ",
+      "selected": false
+    },
+    {
+      "name": "nGetUniqueId",
+      "descriptor": "(J)J",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_getUniqueId",
+      "selected": true
+    },
+    {
+      "name": "nGetUsageSize",
+      "descriptor": "(J)I",
+      "critical": false,
+      "cpp_function": "android_view_RenderNode_getUsageSize",
+      "selected": false
+    },
+    {
+      "name": "nGetWidth",
+      "descriptor": "(J)I",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_getWidth",
+      "selected": true
+    },
+    {
+      "name": "nHasIdentityMatrix",
+      "descriptor": "(J)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_hasIdentityMatrix",
+      "selected": false
+    },
+    {
+      "name": "nHasOverlappingRendering",
+      "descriptor": "(J)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_hasOverlappingRendering",
+      "selected": false
+    },
+    {
+      "name": "nHasShadow",
+      "descriptor": "(J)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_hasShadow",
+      "selected": false
+    },
+    {
+      "name": "nIsPivotExplicitlySet",
+      "descriptor": "(J)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_isPivotExplicitlySet",
+      "selected": false
+    },
+    {
+      "name": "nIsValid",
+      "descriptor": "(J)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_isValid",
+      "selected": true
+    },
+    {
+      "name": "nOffsetLeftAndRight",
+      "descriptor": "(JI)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_offsetLeftAndRight",
+      "selected": false
+    },
+    {
+      "name": "nOffsetTopAndBottom",
+      "descriptor": "(JI)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_offsetTopAndBottom",
+      "selected": false
+    },
+    {
+      "name": "nOutput",
+      "descriptor": "(J)V",
+      "critical": false,
+      "cpp_function": "android_view_RenderNode_output",
+      "selected": false
+    },
+    {
+      "name": "nRequestPositionUpdates",
+      "descriptor": "(JLjava/lang/ref/WeakReference;)V",
+      "critical": false,
+      "cpp_function": "android_view_RenderNode_requestPositionUpdates",
+      "selected": false
+    },
+    {
+      "name": "nResetPivot",
+      "descriptor": "(J)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_resetPivot",
+      "selected": false
+    },
+    {
+      "name": "nSetAllowForceDark",
+      "descriptor": "(JZ)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setAllowForceDark",
+      "selected": false
+    },
+    {
+      "name": "nSetAlpha",
+      "descriptor": "(JF)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setAlpha",
+      "selected": true
+    },
+    {
+      "name": "nSetAmbientShadowColor",
+      "descriptor": "(JI)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setAmbientShadowColor",
+      "selected": false
+    },
+    {
+      "name": "nSetAnimationMatrix",
+      "descriptor": "(JJ)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setAnimationMatrix",
+      "selected": false
+    },
+    {
+      "name": "nSetBottom",
+      "descriptor": "(JI)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setBottom",
+      "selected": false
+    },
+    {
+      "name": "nSetCameraDistance",
+      "descriptor": "(JF)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setCameraDistance",
+      "selected": false
+    },
+    {
+      "name": "nSetClipBounds",
+      "descriptor": "(JIIII)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setClipBounds",
+      "selected": false
+    },
+    {
+      "name": "nSetClipBoundsEmpty",
+      "descriptor": "(J)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setClipBoundsEmpty",
+      "selected": false
+    },
+    {
+      "name": "nSetClipToBounds",
+      "descriptor": "(JZ)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setClipToBounds",
+      "selected": true
+    },
+    {
+      "name": "nSetClipToOutline",
+      "descriptor": "(JZ)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setClipToOutline",
+      "selected": false
+    },
+    {
+      "name": "nSetElevation",
+      "descriptor": "(JF)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setElevation",
+      "selected": false
+    },
+    {
+      "name": "nSetHasOverlappingRendering",
+      "descriptor": "(JZ)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setHasOverlappingRendering",
+      "selected": false
+    },
+    {
+      "name": "nSetLayerPaint",
+      "descriptor": "(JJ)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setLayerPaint",
+      "selected": false
+    },
+    {
+      "name": "nSetLayerType",
+      "descriptor": "(JI)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setLayerType",
+      "selected": false
+    },
+    {
+      "name": "nSetLeft",
+      "descriptor": "(JI)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setLeft",
+      "selected": false
+    },
+    {
+      "name": "nSetLeftTopRightBottom",
+      "descriptor": "(JIIII)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setLeftTopRightBottom",
+      "selected": true
+    },
+    {
+      "name": "nSetOutlineEmpty",
+      "descriptor": "(J)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setOutlineEmpty",
+      "selected": false
+    },
+    {
+      "name": "nSetOutlineNone",
+      "descriptor": "(J)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setOutlineNone",
+      "selected": false
+    },
+    {
+      "name": "nSetOutlinePath",
+      "descriptor": "(JJF)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setOutlinePath",
+      "selected": false
+    },
+    {
+      "name": "nSetOutlineRoundRect",
+      "descriptor": "(JIIIIFF)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setOutlineRoundRect",
+      "selected": false
+    },
+    {
+      "name": "nSetPivotX",
+      "descriptor": "(JF)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setPivotX",
+      "selected": false
+    },
+    {
+      "name": "nSetPivotY",
+      "descriptor": "(JF)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setPivotY",
+      "selected": false
+    },
+    {
+      "name": "nSetProjectBackwards",
+      "descriptor": "(JZ)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setProjectBackwards",
+      "selected": false
+    },
+    {
+      "name": "nSetProjectionReceiver",
+      "descriptor": "(JZ)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setProjectionReceiver",
+      "selected": false
+    },
+    {
+      "name": "nSetRenderEffect",
+      "descriptor": "(JJ)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setRenderEffect",
+      "selected": false
+    },
+    {
+      "name": "nSetRevealClip",
+      "descriptor": "(JZFFF)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setRevealClip",
+      "selected": false
+    },
+    {
+      "name": "nSetRight",
+      "descriptor": "(JI)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setRight",
+      "selected": false
+    },
+    {
+      "name": "nSetRotation",
+      "descriptor": "(JF)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setRotation",
+      "selected": false
+    },
+    {
+      "name": "nSetRotationX",
+      "descriptor": "(JF)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setRotationX",
+      "selected": false
+    },
+    {
+      "name": "nSetRotationY",
+      "descriptor": "(JF)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setRotationY",
+      "selected": false
+    },
+    {
+      "name": "nSetScaleX",
+      "descriptor": "(JF)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setScaleX",
+      "selected": false
+    },
+    {
+      "name": "nSetScaleY",
+      "descriptor": "(JF)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setScaleY",
+      "selected": false
+    },
+    {
+      "name": "nSetSpotShadowColor",
+      "descriptor": "(JI)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setSpotShadowColor",
+      "selected": false
+    },
+    {
+      "name": "nSetStaticMatrix",
+      "descriptor": "(JJ)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setStaticMatrix",
+      "selected": false
+    },
+    {
+      "name": "nSetTop",
+      "descriptor": "(JI)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setTop",
+      "selected": false
+    },
+    {
+      "name": "nSetTranslationX",
+      "descriptor": "(JF)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setTranslationX",
+      "selected": false
+    },
+    {
+      "name": "nSetTranslationY",
+      "descriptor": "(JF)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setTranslationY",
+      "selected": false
+    },
+    {
+      "name": "nSetTranslationZ",
+      "descriptor": "(JF)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setTranslationZ",
+      "selected": false
+    },
+    {
+      "name": "nSetUsageHint",
+      "descriptor": "(JI)V",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_setUsageHint",
+      "selected": false
+    },
+    {
+      "name": "nStretch",
+      "descriptor": "(JFFFF)Z",
+      "critical": true,
+      "cpp_function": "android_view_RenderNode_stretch",
+      "selected": false
+    }
+  ],
+  "scope": "Source-verified JNI registration generation only. Position-listener and animator callbacks excluded. No compilation, linkage or original RenderNode execution claim."
+}

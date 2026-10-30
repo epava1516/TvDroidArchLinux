@@ -1,0 +1,12 @@
+{
+  "syntax_pass": true,
+  "exit_code": 0,
+  "linked": false,
+  "executed": false,
+  "generated_cpp_sha256": "aa255d2f58cdce7470433d0bf066c0cc639fd910ebb952fc9598eea9e62de2ff",
+  "contract_sha256": "d1ea3fb405c219164886672df3d3515a63e69a0aa4a78ebdbf1b10098a31b5f4",
+  "generator_sha256": "779bb7bbc7a7614ed78649f98b5e6a1a5049ec7e1bbc9619d0d5b491047655f2",
+  "critical_adapter_sha256": "f1f7a78a641239400bb5722deff46bfa5656220c309c05d51f77b019f5cc0c6c",
+  "stale_generated_rejected": true,
+  "modified_original_rejected": true
+}

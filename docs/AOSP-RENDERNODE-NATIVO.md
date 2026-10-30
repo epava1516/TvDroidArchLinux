@@ -131,3 +131,8 @@ El adaptador tipado de AOSP-CRITICAL-HOST.md ya supera una prueba ART con ocho
 firmas y 2298 llamadas de funciones propias, incluidos argumentos mixtos en
 registros/pila y rechazo de referencias a objetos. Su integración en el JNI
 RenderNode original sigue pendiente; esa prueba no ejecuta métodos RenderNode.
+
+AOSP-RENDERNODE-JNI.md registra la comprobación de las 88 firmas Java/C++
+originales y un perfil generado de 16 entradas, con catorce adaptaciones
+CriticalNative. Pasa sintaxis contra las funciones originales, pero todavía no
+se enlaza ni ejecuta. La construcción de Skia sigue siendo una dependencia.

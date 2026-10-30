@@ -1428,9 +1428,9 @@
     "semantic_hash": ""
   },
   "docs/AOSP-RENDERNODE-NATIVO.md": {
-    "mtime": 1793386131.2694058,
-    "seen": 1793386153.1425009,
-    "ast_hash": "b15c2610eb15382d4d2dfc178113f90f",
+    "mtime": 1793386686.688373,
+    "seen": 1793386696.0966847,
+    "ast_hash": "9ec1f7ee85aadb4166411f8c0f30adea",
     "semantic_hash": ""
   },
   "tools/apk/probe_hwui_host.py": {
@@ -1557,6 +1557,30 @@
     "mtime": 1793386131.142738,
     "seen": 1793386153.1417966,
     "ast_hash": "193d45b01645e24f12cbbd98581e1531",
+    "semantic_hash": ""
+  },
+  "runtime/aosp/native/rendernode-jni.cpp": {
+    "mtime": 1793386466.6803312,
+    "seen": 1793386696.0825462,
+    "ast_hash": "4c6298d6bd0c0377f0d08d817f57d8ea",
+    "semantic_hash": ""
+  },
+  "runtime/aosp/native/rendernode-jni.json": {
+    "mtime": 1793386466.6805177,
+    "seen": 1793386696.0825553,
+    "ast_hash": "3a3c7db6319b6ee052670c8b8cba3d90",
+    "semantic_hash": ""
+  },
+  "tools/apk/generate_rendernode_jni.py": {
+    "mtime": 1793386466.2757175,
+    "seen": 1793386696.09299,
+    "ast_hash": "98846885570c18d3e41987fff68cb1af",
+    "semantic_hash": ""
+  },
+  "docs/AOSP-RENDERNODE-JNI.md": {
+    "mtime": 1793386686.4450355,
+    "seen": 1793386696.096677,
+    "ast_hash": "a3c29c63eb311890b864a57147225c46",
     "semantic_hash": ""
   }
 }
