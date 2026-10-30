@@ -1,0 +1,99 @@
+93: 
+94: cc_defaults {
+95:     name: "hwui_static_deps",
+96:     shared_libs: [
+97:         "libbase",
+98:         "libharfbuzz_ng",
+99:         "libminikin",
+100:     ],
+101: 
+102:     static_libs: [
+103:         "libui-types",
+104:     ],
+105: 
+106:     target: {
+107:         android: {
+108:             shared_libs: [
+109:                 "android.hardware.graphics.common-V3-ndk",
+110:                 "android.hardware.graphics.common@1.2",
+111:                 "android.hardware.graphics.composer3-V1-ndk",
+112:                 "liblog",
+113:                 "libcutils",
+114:                 "libutils",
+115:                 "libEGL",
+116:                 "libGLESv1_CM",
+117:                 "libGLESv2",
+118:                 "libGLESv3",
+119:                 "libvulkan",
+120:                 "libnativedisplay",
+121:                 "libnativewindow",
+122:                 "libprotobuf-cpp-lite",
+123:                 "libft2",
+124:                 "libandroidfw",
+125:                 "libcrypto",
+126:                 "libsync",
+127:             ],
+128:             static_libs: [
+129:                 "libEGL_blobCache",
+130:                 "libprotoutil",
+131:                 "libshaders",
+132:                 "libstatslog_hwui",
+133:                 "libstatspull_lazy",
+134:                 "libstatssocket_lazy",
+135:                 "libtonemap",
+136:             ],
+137:         },
+138:         host: {
+139:             static_libs: [
+140:                 "libandroidfw",
+141:                 "libutils",
+142:             ],
+143:         },
+144:     },
+145: }
+478: 
+479: cc_defaults {
+480:     name: "libhwui_defaults",
+481:     defaults: ["hwui_defaults"],
+482: 
+483:     whole_static_libs: ["libskia"],
+484: 
+485:     srcs: [
+486:         "canvas/CanvasFrontend.cpp",
+590:                 "protos/graphicsstats.proto",
+591:             ],
+592: 
+593:             // Allow implicit fallthroughs in HardwareBitmapUploader.cpp until they are fixed.
+594:             cflags: ["-Wno-implicit-fallthrough"],
+595:         },
+596:         host: {
+597:             srcs: [
+598:                 "utils/HostColorSpace.cpp",
+599:             ],
+600:             export_static_lib_headers: [
+601:                 "libarect",
+602:             ],
+603:         },
+604:     },
+605: }
+606: 
+607: cc_library {
+608:     name: "libhwui",
+609:     host_supported: true,
+610:     defaults: [
+611:         "libhwui_defaults",
+612:         "android_graphics_apex",
+613:         "android_graphics_jni",
+614:         "linker_hugepage_aligned",
+615:     ],
+616:     export_header_lib_headers: ["android_graphics_apex_headers"],
+617:     target: {
+618:         android: {
+619:             version_script: "libhwui.map.txt",
+620:         },
+621:     },
+622:     afdo: true,
+623: }
+624: 
+625: cc_library_static {
+626:     name: "libhwui_static",

@@ -894,9 +894,9 @@
     "semantic_hash": ""
   },
   "docs/PORT-FRAMEWORK-AOSP.md": {
-    "mtime": 1793383054.3218482,
-    "seen": 1793383062.9210446,
-    "ast_hash": "000a14efe5f54f136e77ff7d3036d558",
+    "mtime": 1793383448.2912066,
+    "seen": 1793383455.9771688,
+    "ast_hash": "a3fb57916b7cb8928e7dacde8b77e28a",
     "semantic_hash": ""
   },
   "fixtures/aosp-queue/QueueLinkProbe.java": {
@@ -1425,6 +1425,12 @@
     "mtime": 1793382915.4565895,
     "seen": 1793383062.920926,
     "ast_hash": "8391b49baa9190651eb0957e0f0d1735",
+    "semantic_hash": ""
+  },
+  "docs/AOSP-RENDERNODE-NATIVO.md": {
+    "mtime": 1793383442.8143644,
+    "seen": 1793383455.977012,
+    "ast_hash": "b1358443d482d6c3cf1433f667c1ce0e",
     "semantic_hash": ""
   }
 }

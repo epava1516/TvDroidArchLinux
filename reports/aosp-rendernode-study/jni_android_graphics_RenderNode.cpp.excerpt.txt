@@ -1,0 +1,24 @@
+58: }
+59: 
+60: static jlong android_view_RenderNode_create(JNIEnv* env, jobject, jstring name) {
+61:     RenderNode* renderNode = new RenderNode();
+62:     renderNode->incStrong(0);
+63:     if (name != NULL) {
+64:         const char* textArray = env->GetStringUTFChars(name, NULL);
+65:         renderNode->setName(textArray);
+66:         env->ReleaseStringUTFChars(name, textArray);
+67:     }
+68:     return reinterpret_cast<jlong>(renderNode);
+69: }
+70: 
+71: static void releaseRenderNode(RenderNode* renderNode) {
+72:     renderNode->decStrong(0);
+73: }
+74: 
+75: static jlong android_view_RenderNode_getNativeFinalizer(JNIEnv* env,
+76:         jobject clazz) {
+77:     return static_cast<jlong>(reinterpret_cast<uintptr_t>(&releaseRenderNode));
+78: }
+79: 
+80: static void android_view_RenderNode_discardDisplayList(CRITICAL_JNI_PARAMS_COMMA jlong renderNodePtr) {
+81:     RenderNode* renderNode = reinterpret_cast<RenderNode*>(renderNodePtr);

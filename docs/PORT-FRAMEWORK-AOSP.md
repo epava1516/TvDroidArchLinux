@@ -190,3 +190,8 @@ funcional. AOSP-ANIMACION-CONTEXTO.md y reports/aosp-animation-context/ conserva
 las pruebas Wayland, el rechazo de display en modo headless y las regresiones.
 El reloj de animación, gráficos nativos, integración APK y distribución siguen
 pendientes.
+
+El estudio fijado de cuatro fuentes HWUI identifica la variante original host de
+libhwui como siguiente base de construcción. AOSP-RENDERNODE-NATIVO.md detalla
+ownership, dependencias Skia/Minikin y la separación entre crear RenderNode y
+presentar píxeles. No hay todavía compilación ni ejecución gráfica nativa nueva.

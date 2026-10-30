@@ -1,0 +1,14 @@
+62: RenderNode::RenderNode()
+63:         : mUniqueId(generateId())
+64:         , mDirtyPropertyFields(0)
+65:         , mNeedsDisplayListSync(false)
+66:         , mDisplayList(nullptr)
+67:         , mStagingDisplayList(nullptr)
+68:         , mAnimatorManager(*this)
+69:         , mParentCount(0) {}
+70: 
+71: RenderNode::~RenderNode() {
+72:     ImmediateRemoved observer(nullptr);
+73:     deleteDisplayList(observer);
+74:     LOG_ALWAYS_FATAL_IF(hasLayer(), "layer missed detachment!");
+75: }

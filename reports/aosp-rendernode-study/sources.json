@@ -1,0 +1,31 @@
+{
+  "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+  "repository": "platform/frameworks/base",
+  "scope": "Four inspected original files; not a complete build dependency closure",
+  "sources": [
+    {
+      "path": "libs/hwui/jni/android_graphics_RenderNode.cpp",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/bff944d05cd47d2b3b713565d3f00d512840d282/libs/hwui/jni/android_graphics_RenderNode.cpp?format=TEXT",
+      "sha256": "ea5cbc31a2292e1d0efbd17cc5b32ffcd203bfdd5b37cc01fd89d998a4763911",
+      "bytes": 41615
+    },
+    {
+      "path": "libs/hwui/RenderNode.h",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/bff944d05cd47d2b3b713565d3f00d512840d282/libs/hwui/RenderNode.h?format=TEXT",
+      "sha256": "47b7534f6808681870dd907cd0eab338cb3936c589f773d02ffdfc065c54d859",
+      "bytes": 14956
+    },
+    {
+      "path": "libs/hwui/RenderNode.cpp",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/bff944d05cd47d2b3b713565d3f00d512840d282/libs/hwui/RenderNode.cpp?format=TEXT",
+      "sha256": "f0bee1706d30aef173a43700b27f1bd73c6293cd36630d4530fc019e5830bef2",
+      "bytes": 21815
+    },
+    {
+      "path": "libs/hwui/Android.bp",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/bff944d05cd47d2b3b713565d3f00d512840d282/libs/hwui/Android.bp?format=TEXT",
+      "sha256": "78e6649f1c9f3e8c57795cdace1e0faaa161252fe11ed88e6dc08df52ce6c5fb",
+      "bytes": 20382
+    }
+  ]
+}
