@@ -1,0 +1,38 @@
+{
+  "pass": true,
+  "cases": [
+    {
+      "case": "original",
+      "returncode": 0,
+      "pass": true
+    },
+    {
+      "case": "variant",
+      "returncode": 0,
+      "pass": true
+    },
+    {
+      "case": "truncated",
+      "returncode": 4,
+      "pass": true
+    },
+    {
+      "case": "missing-name",
+      "returncode": 4,
+      "pass": true
+    },
+    {
+      "case": "missing-apk",
+      "returncode": 3,
+      "pass": true
+    }
+  ],
+  "apk_sha256": "f07c9b92ab3353237276081c22e11ce06168b8c9f71a99ea32968b2ce0f00e28",
+  "probe_sha256": "9ed2dc4787d3d072946582ba879dda8e0b25ed2c86ccbbd907ff2e5f8a32f6b4",
+  "scope": "Original AOSP native AssetManager/ResTable string lookup. No Java Resources/JNI integration or general APK compatibility claim.",
+  "environment": {
+    "waydroid_container_service": "inactive",
+    "android_process_check": "No zygote, zygote64, system_server or waydroid process found on host after verification",
+    "checked_utc": "2026-10-30"
+  }
+}

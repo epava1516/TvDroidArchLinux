@@ -690,9 +690,9 @@
     "semantic_hash": ""
   },
   "manifests/apk-lab.txt": {
-    "mtime": 1793359875.9577334,
-    "seen": 1793360316.4484572,
-    "ast_hash": "564fdef5dbbb19adc9ad684dbfaa5212",
+    "mtime": 1793361358.159314,
+    "seen": 1793362304.4762747,
+    "ast_hash": "3311c40340d676ea9149c94dfa720c7e",
     "semantic_hash": ""
   },
   "fixtures/art-host/RuntimeProbe.java": {
@@ -822,15 +822,15 @@
     "semantic_hash": ""
   },
   "docs/CONTRATO-APK.md": {
-    "mtime": 1793360239.3450704,
-    "seen": 1793360316.448383,
-    "ast_hash": "9bdff631acaf13f348d7db35493bc06e",
+    "mtime": 1793360373.2996473,
+    "seen": 1793362304.4762092,
+    "ast_hash": "ccfa23669599ab0e0361088965122c31",
     "semantic_hash": ""
   },
   "runtime/apk/README.md": {
-    "mtime": 1793360239.198399,
-    "seen": 1793360316.4484932,
-    "ast_hash": "00c6239a50cbbbd561760c97c4c386b5",
+    "mtime": 1793360373.3002791,
+    "seen": 1793362304.4763093,
+    "ast_hash": "76956cb5d126c65e42da0d9a101dfd59",
     "semantic_hash": ""
   },
   "crates/archtv-apk-host/Cargo.toml": {
@@ -882,9 +882,9 @@
     "semantic_hash": ""
   },
   "docs/APK-WAYLAND.md": {
-    "mtime": 1793360239.488408,
-    "seen": 1793360316.4483678,
-    "ast_hash": "14c26e1dcb45a404442a9c9d8556a561",
+    "mtime": 1793360373.2984414,
+    "seen": 1793362304.4761946,
+    "ast_hash": "b451934e0faf27a4d033e6a6abaec8b5",
     "semantic_hash": ""
   },
   "runtime/aosp/framework-study.json": {
@@ -900,9 +900,9 @@
     "semantic_hash": ""
   },
   "docs/PORT-FRAMEWORK-AOSP.md": {
-    "mtime": 1793360311.3806922,
-    "seen": 1793360316.4484324,
-    "ast_hash": "7ef3d03508da7c2c291244fbc38ee94d",
+    "mtime": 1793362298.8826547,
+    "seen": 1793362304.4762504,
+    "ast_hash": "befa270e5031ea9dcbcb70928ea0d13b",
     "semantic_hash": ""
   },
   "fixtures/aosp-queue/QueueLinkProbe.java": {
@@ -948,9 +948,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/README.md": {
-    "mtime": 1793360311.3806922,
-    "seen": 1793360316.4484897,
-    "ast_hash": "c7131f67602e9d43099a82090bdb1c0e",
+    "mtime": 1793362298.8843007,
+    "seen": 1793362304.4763055,
+    "ast_hash": "d716ae0b082d0f8967c5f386d9c51a61",
     "semantic_hash": ""
   },
   "crates/archtv-aosp-linux/Cargo.toml": {
@@ -1050,9 +1050,9 @@
     "semantic_hash": ""
   },
   "docs/AOSP-HANDLER-LINUX.md": {
-    "mtime": 1793359349.395303,
-    "seen": 1793360316.448351,
-    "ast_hash": "4f8fc22773a2f8436485dd3b16c7f312",
+    "mtime": 1793360373.2976942,
+    "seen": 1793362304.4761753,
+    "ast_hash": "ccc5d0428f1bd2eacb5061ac2ca56d8b",
     "semantic_hash": ""
   },
   "tools/apk/verify_ui_scanout.py": {
@@ -1065,6 +1065,48 @@
     "mtime": 1793360239.0517278,
     "seen": 1793360316.4483633,
     "ast_hash": "613d16e1e151b2865454602148188b8a",
+    "semantic_hash": ""
+  },
+  "runtime/aosp/androidfw-build.json": {
+    "mtime": 1793362235.4442227,
+    "seen": 1793362304.4758446,
+    "ast_hash": "5d411325062fba6f063fe0fc6ab08dda",
+    "semantic_hash": ""
+  },
+  "runtime/aosp/androidfw-sources.json": {
+    "mtime": 1793362037.7926672,
+    "seen": 1793362304.4758525,
+    "ast_hash": "331f024e87b4fad37dcbe45f8b846d0f",
+    "semantic_hash": ""
+  },
+  "runtime/aosp/native/resource-probe.cpp": {
+    "mtime": 1793362271.6821578,
+    "seen": 1793362304.4758763,
+    "ast_hash": "6ceb76e8ed87d667df2e908b69476714",
+    "semantic_hash": ""
+  },
+  "tools/apk/build_androidfw.py": {
+    "mtime": 1793362235.4466963,
+    "seen": 1793362304.476098,
+    "ast_hash": "b318f13b3f31c09732ed25b7f4e5fac0",
+    "semantic_hash": ""
+  },
+  "tools/apk/fetch_androidfw_sources.py": {
+    "mtime": 1793361476.2287548,
+    "seen": 1793362304.4761162,
+    "ast_hash": "de8c2b625a51254099c8f50677725354",
+    "semantic_hash": ""
+  },
+  "tools/apk/verify_androidfw.py": {
+    "mtime": 1793362077.9233441,
+    "seen": 1793362304.4761443,
+    "ast_hash": "3d68992da31d95ab230744094877678f",
+    "semantic_hash": ""
+  },
+  "docs/AOSP-RECURSOS-LINUX.md": {
+    "mtime": 1793362149.040803,
+    "seen": 1793362304.4761865,
+    "ast_hash": "d01fb34eacf211bf2027ce72fd7f1502",
     "semantic_hash": ""
   }
 }

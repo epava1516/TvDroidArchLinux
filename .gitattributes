@@ -16,3 +16,5 @@ reports/aosp-handler-foundations/**/*.stderr -whitespace
 reports/aosp-handler-foundations/*.log whitespace=-blank-at-eof
 reports/aosp-ui-headless/**/*.stderr -whitespace
 reports/aosp-main-ui-wayland/** -whitespace
+
+reports/aosp-androidfw-build/*.log -whitespace

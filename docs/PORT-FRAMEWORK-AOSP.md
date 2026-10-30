@@ -100,3 +100,11 @@ El contador ya usa el principal y Handler originales para sus callbacks. La
 regresión de entrada/persistencia y las capturas DRM pasan, incluida contrapresión
 de comandos y recuperación tras error. Ver APK-LOOPER-AOSP.md. Esto integra el
 bucle original; no acredita Activity/View/recursos originales ni Binder IPC.
+
+## Recursos nativos originales en Linux
+
+La construcción host estática de libandroidfw ya resuelve los tres textos de la
+APK original y pasa la variante con el mismo DEX y los casos de recursos
+ausentes/truncados. Ver AOSP-RECURSOS-LINUX.md y reports/aosp-androidfw-build/.
+El contador todavía utiliza su proveedor Java reducido: falta conectar los
+recursos originales mediante JNI. Este hito no cierra el port de Activity/View.

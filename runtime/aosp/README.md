@@ -77,3 +77,11 @@ El constructor genera framework.jar antes de los comprobadores. El runtime APK
 verifica ese hash y lo combina con su anfitrión; no incorpora los comprobadores
 ni las declaraciones auxiliares. Ya usa prepareMainLooper/Handler originales en
 la APK del contador. Ver docs/APK-LOOPER-AOSP.md para construcción e integración.
+
+## Recursos nativos originales en Linux
+
+La construcción host estática de libandroidfw ya resuelve los tres textos de la
+APK original y pasa la variante con el mismo DEX y los casos de recursos
+ausentes/truncados. Ver ../../docs/AOSP-RECURSOS-LINUX.md y reports/aosp-androidfw-build/.
+El contador todavía utiliza su proveedor Java reducido: falta conectar los
+recursos originales mediante JNI. Este hito no cierra el port de Activity/View.
