@@ -1,0 +1,22 @@
+Note: in a future version of systemd-nspawn the default set of permitted socket address families will be restricted to AF_INET, AF_INET6 and AF_UNIX. Use --restrict-address-families= to configure the set of permitted socket address families, or set RestrictAddressFamilies= in a .nspawn file.
+2026-10-30T07:45:11.802006Z  INFO archtv_compositor::state: OUTPUT_CONFIGURED width=1280 height=720
+2026-10-30T07:45:11.808595Z  INFO archtv_compositor::session: SESSION_CHILD_STARTED pid=12 shell=true
+2026-10-30T07:45:11.808727Z  INFO archtv_compositor: TV_COMPOSITOR_READY socket="wayland-1"
+2026-10-30T07:45:11.809265Z  INFO archtv_compositor::input: INPUT_ADDED name="winit virtual input"
+2026-10-30T07:45:11.809293Z  INFO archtv_compositor::state: OUTPUT_CONFIGURED width=1280 height=720
+SHELL_STARTED
+SHELL_CONFIGURE 1280x720
+SHELL_CATALOG applications=0 favorites=0 hidden=0 recent=0
+SHELL_FRAME 1 size=1280x720 page=Home
+2026-10-30T07:45:12.657339Z  INFO archtv_compositor::state: SHELL_SURFACE_READY
+2026-10-30T07:45:12.657462Z  INFO archtv_compositor::state: TOPLEVEL_MAPPED
+SHELL_FOCUS_ENTER page=Home band=2 index=0
+SHELL_CONFIGURE 1280x720
+SHELL_FRAME 2 size=1280x720 page=Home
+SHELL_WALLPAPER loaded=true
+SHELL_FRAME 3 size=1280x720 page=Home
+SHELL_CAPTURED /report/shell.png
+SHELL_STOPPED frames=3
+2026-10-30T07:45:34.410957Z  INFO archtv_compositor::handlers::xdg_shell: TOPLEVEL_DESTROYED
+2026-10-30T07:45:42.582638Z  WARN archtv_compositor::session: SESSION_CHILD_EXITED status=ExitStatus(unix_wait_status(0)) shell=true
+2026-10-30T07:45:42.582685Z  INFO archtv_compositor: TV_COMPOSITOR_STOPPED

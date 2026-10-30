@@ -2,7 +2,7 @@
   "0": "start",
   "2": "Client",
   "15": "95-kernel-lts.sh",
-  "18": "Key",
+  "18": ".shell",
   "23": "Shell Rust: interfaz y mediciones",
   "30": "runtime.rs",
   "49": "archtv-compositor/src/main.rs",

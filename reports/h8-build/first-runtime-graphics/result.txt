@@ -1,0 +1,2 @@
+PASS: installed compositor and shell rendered at 720p in runtime container, nested on host Weston with software graphics.
+Native DRM session selection and Android are not covered.

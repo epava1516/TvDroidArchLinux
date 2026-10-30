@@ -559,9 +559,9 @@
     "semantic_hash": ""
   },
   "docs/PAQUETES.md": {
-    "mtime": 1793345126.8747506,
-    "seen": 1793345138.88055,
-    "ast_hash": "18a34db92b7011613bddd83725455d16",
+    "mtime": 1793346373.8929913,
+    "seen": 1793346378.9894245,
+    "ast_hash": "1212bb0c89c9c5fc69a430d699f72c95",
     "semantic_hash": ""
   },
   "packaging/arch/cargo-license-inventory.py": {

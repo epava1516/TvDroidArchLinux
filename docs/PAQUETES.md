@@ -103,6 +103,29 @@ implementar y probar su transformación y recuperación antes de cambiar la vers
 Esta protección tiene una prueba Rust con dos formatos posteriores; la prueba de
 actualización de paquetes en una máquina limpia sigue pendiente.
 
+## Primera compilación e instalación comprobadas
+
+La revisión 0.1.0.r14.g3012fbc92f7a terminó su compilación limpia y pasó nueve
+pruebas (cuatro core, cinco shell). Generó los tres paquetes con SHA-256 guardados
+en reports/h8-build/first-package-sha256.txt. Se instalaron mediante pacman en
+una raíz Arch base separada, sin Rust, Cargo ni GCC. pacman -Qkk no encontró
+archivos alterados y los tres comandos --help respondieron correctamente.
+
+Los binarios instalados también abrieron la interfaz a 1280×720 en ese contenedor,
+con el backend Wayland anidado sobre Weston headless del anfitrión y renderizado
+software. Se inspeccionó la captura del shell: fondo, tipografía y navegación
+visibles. El catálogo está vacío porque el sistema base no contiene aplicaciones
+gráficas. Logs, captura y comando reproducible están en
+reports/h8-build/first-runtime-graphics/. No acredita selección de sesión DRM,
+entrada de mando ni funcionamiento Android dentro del sistema instalado.
+
+makepkg detectó referencias al directorio de compilación en ambos binarios. La
+receta posterior incorpora --remap-path-prefix; su efecto aún requiere comprobar
+la siguiente compilación. Esta primera versión tampoco incluye las mejoras
+posteriores de avisos Cargo y protección de esquemas nuevos. La revisión
+0.1.0.r22.gae035c4e2323 se está compilando desde cero con esas mejoras para probar
+la actualización. H8 permanece abierto.
+
 ## Puertas pendientes
 
 1. Compilar en un entorno Arch limpio, registrar toolchain, dependencias reales,
