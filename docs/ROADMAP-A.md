@@ -1,4 +1,46 @@
-# Roadmap A · compatibilidad APK mínima sobre Linux
+# Roadmap A · plataforma APK general sobre Linux
+
+## Prioridad vigente · A16-QPR2-1
+
+Aplica el [contrato actualizado](CONTRATO-APK.md). Android16 QPR2, Bionic nativo y
+primera hipótesis SurfaceFlinger→Wayland reemplazan la selección A/B/C y API33
+anteriores. La base nueva se mantiene aislada; no se descartan el compositor,
+instalación, herramientas o regresiones útiles. No reiniciar VM ni cliente.
+
+| Puerta | Dependencias y trabajo | Evidencia de salida | Estado |
+| --- | --- | --- | --- |
+| R0 · procedencia | Verificar versión/rama/tag/build, resolver todos los repositorios, elegir target y artefactos coherentes; revisar licencias y mantenimiento | Manifiesto con revisiones exactas/procedencia, hashes de binarios y configuración; separación referencia vs parches de seguridad | Tag/rama/build verificados; 1.013 refs resueltas en caché. Manifiesto versionado y binarios A16 pendientes |
+| R1 · runtime Bionic coherente | R0; Bionic/linker/ART/libcore/APEX/framework/JNI/recursos y configuración original; bootclasspath/classloaders/namespaces/propiedades y kernel | Ejecución reproducible del motor, cierre de dependencias/configuración/identidad y fallos honestos; no mezclar Android13/host sin frontera probada | Pendiente A16; pruebas antiguas sólo históricas |
+| R2 · comportamiento y servicios | R1; evaluar unidades originales completas de paquetes/permisos/Activity/Binder/Content/servicios/segundo plano; conservar agrupaciones grandes si conviene | Semántica real, callbacks/concurrencia/error/persistencia/muerte/IPC y separación por app; cierre transitivo. Conflicto con Android completo documentado antes de cambiar alcance | Pendiente; no asumir separación fácil de system_server |
+| R3 · salida gráfica y entrada | R1/R2; contrastar primero SF original, WM/Surface/BufferQueue/HWC/RenderEngine y puente Wayland hacia Smithay | Buffers/fences/ownership, aceleración/composición/ventanas/escalado/foco; teclado/ratón/táctil/mando; multimedia con superficie y sync AV | Hipótesis no ejecutada; no excluir SF por su nombre ni sustituirlo por widgets propios |
+| R4 · vertical Markor | R0–R3 e instalación/firmas/datos; APK intacta y recorrido de nota ya definido | Instalar→lanzar→UI original→entrada/editar→guardar/proveedor elegido→servicios→cerrar→reabrir; bytes/eventos/frames y fallos trazables | Nueve etapas no probadas sobre A16 |
+| R5 · horizontal y TV | R4 como primera referencia, sin excluir análisis temprano de riesgos; Calculator/JNI, VLC/AV, Android TV, WebView/aceleración/externos y APK por API/ABI | Misma base en categorías distintas sin reconstrucciones por APK; matriz por versión/función, nueve etapas y tres ejes. Casos posteriores a API base y apps OEM/privilegiadas explícitos | Pendiente; artefactos adicionales por fijar |
+| R6 · ISA y 32/64 | Fronteras definidas desde R1; primero DEX/x86_64, diseño portable ARM64; traducción ARM→x86_64 y APK x86/ARM de 32 bits aparte | Traducción/enlazador/JNI/servicios y pruebas reales por combinación; no derivar una cobertura de otra | No probado; no posponer diseño de fronteras |
+| R7 · conformidad técnica y producto | R1–R6, H7–H9; CDD16/CTS16.1 pertinentes, seguridad, medidas y paquete/instalación/actualización | Tests ejecutados y no ejecutados, sin afirmar certificación; presupuestos por hardware, estabilidad/recuperación, UID/permisos efectivos, splits/firma/ABI/migración/desinstalación/rollback/licencias/parches | Pendiente |
+
+La primera secuencia es R0→R1, después Markor con R2/R3 y validación horizontal.
+Una fixture semántica o un frame no cierran R1 completo ni R4/R5. Se preserva
+compatibilidad amplia con aplicaciones arbitrarias como meta, sin prometer
+universalidad ni seleccionar sólo casos fáciles. Un límite necesita evidencia,
+clasificación y plan explícito, no un porcentaje inferido de casos no probados.
+
+Para cada decisión: alternativa elegida, motivo, evidencia, cambio propio,
+dependencia y aceptación. Seguir las siete fases de diagnóstico del contrato;
+corregir subsistema/frontera y probar beneficio para otra app. Las correcciones
+particulares por APK y respuestas vacías no son estrategia.
+
+Referencia técnica: [CDD16](https://source.android.com/docs/compatibility/16/android-16-cdd)
+y [CTS oficial](https://source.android.com/docs/compatibility/cts/downloads), familia
+16.1 para QPR2. Introducir módulos pertinentes de recursos, Binder/permisos,
+paquetes/splits/lifecycle/graphics/media/TV según el entorno permita; fijar suite,
+comando y revisión, guardar también tests no ejecutados y causas. Un subconjunto
+no es certificación. Referencia Android externa cuando sea posible, sin arrancar
+otro Android local sin autorización. GMS/microG/DRM/OEM/backends siguen con pruebas
+y requisitos externos separados en la matriz; entender una interfaz no las cierra.
+
+## Historia · etapas anteriores, no prioridad vigente
+
+# Roadmap anterior · laboratorio Android13
 
 Objetivo aclarado por el usuario: estudiar AOSP y reproducir o reutilizar el mínimo
 necesario para ejecutar APK de forma estable sobre Linux, dentro de nuestra sesión

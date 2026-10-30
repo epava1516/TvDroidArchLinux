@@ -1,4 +1,146 @@
-# Arquitectura vigente
+# Arquitectura vigente · A16-QPR2-1
+
+Esta revisión aplica el [contrato del usuario](CONTRATO-APK.md) recibido el
+2026-10-30 y sustituye BASE-AOSP-1. Objetivo: plataforma general para APK completas
+sin modificar, incluidas Android TV, en nuestro Linux/Rust/Smithay; sin Waydroid,
+VM Android ni distribución/imagen Android arrancada. No se eligen sólo aplicaciones
+fáciles ni se mantienen adaptaciones particulares por APK como estrategia.
+La vía principal **es Bionic/AOSP nativo**; es una decisión contractual, todavía
+sin validación funcional de la base nueva. El host Linux puede conservar glibc.
+
+## Base de ingeniería y procedencia
+
+Android 16 QPR2 y `android-16.0.0_r4` están vinculados oficialmente a
+`BP4A.251205.006` y `android16-qpr2-release` en el
+[anuncio de AOSP](https://groups.google.com/g/android-building/c/WEtw0zEGkLg).
+La [tabla oficial](https://source.android.com/docs/setup/reference/build-numbers)
+identifica API 36.1 y nivel de parche 2025-12-05. No se confunde esa etiqueta
+reproducible con seguridad vigente: identificar/aplicar correcciones y probarlas
+es puerta de distribución, con registro de desviaciones sobre la referencia.
+No se sigue una rama flotante `android-latest-release` para fijar revisiones.
+
+El manifiesto oficial contiene 1.013 proyectos; commit del repositorio manifest:
+`15128c9e27cfa599c48d294babd39286ee8f1426`. Se resolverán todas sus referencias a
+commits y se fijará el manifiesto derivado, con procedencia y hashes, sin descargar
+el árbol entero como requisito de esta revisión. Un tag/commit de fuentes no
+identifica por sí solo un ZIP binario: elegir target/build/artefactos requiere
+sus propios metadatos y comprobaciones, sin mezclar compilaciones por compartir
+API. Estado verificable en [ESTADO.md](ESTADO.md) e índice de evidencias.
+
+AOSP oficial publica fuentes y targets x86_64; Cuttlefish y Android Emulator son
+dispositivos/herramientas virtuales y fuentes posibles de artefactos, no nuestra
+arquitectura de ejecución. Android-x86 es otro proyecto independiente. Extraer
+artefactos no es arrancarlos. La primera ISA es x86_64; interfaces portables a
+ARM64. Compatibilidad 32/64 bits y traducción ARM→x86_64 se prueban aparte.
+
+## Subsistemas y fronteras elegidas
+
+```mermaid
+flowchart TB
+  Supervisor[Supervisor Linux] --> Android[Procesos originales Bionic/AOSP]
+  Supervisor --> Smithay[Compositor y shell Rust/Smithay]
+  Android --> ART[ART y libcore]
+  Android --> Servicios[Paquetes, Activity, permisos, Binder y servicios]
+  ART --> Framework[Framework, JNI, recursos y módulos APEX coherentes]
+  Framework --> WM[WindowManager, Surface y BufferQueue]
+  WM --> SF[SurfaceFlinger original: hipótesis inicial]
+  SF --> Puente[Adaptación de salida hacia Wayland por contrastar]
+  Puente --> Smithay
+```
+
+| Decisión | Motivo/evidencia disponible | Cambio propio permitido y dependencia pendiente | Aceptación |
+| --- | --- | --- | --- |
+| Conservar Bionic/linker/ART/libcore/framework/JNI/APEX/recursos de una base coherente | Contrato; experimentos Android13 mostraron coste de mezclas host y configuración omitida, no aceptación de Android16 | Configurar entorno original; modificar interiores sólo con necesidad demostrada y desviación registrada. Falta cierre de runtime A16 | Motor y configuración originales, identidades/ABI/classloaders, después recorrido real |
+| Conservar unidades funcionales grandes si dividirlas cuesta más o reduce semántica | Paquetes, permisos y lifecycle tienen dependencias reales; el parser antiguo falló por PermissionManager ausente | Evaluar servicios y agrupaciones originales, incluido alcance real de system_server; no asumir separación fácil ni vaciar respuestas | Inicio/operación/error/callbacks/persistencia/concurrencia/cierre e IPC de la unidad y aplicaciones |
+| Frontera Android/host explícita | Glibc y Bionic no son intercambiables; el host ya usa Rust/Linux | Preferir límites de proceso y protocolos versionados para memoria/FD/buffers/identidad. Fronteras híbridas sólo con prueba | Propiedad, lifetime, credenciales, revocación y recuperación verificadas; no objetos C++/JNI compartidos por suponer misma ISA |
+| SurfaceFlinger hacia Wayland primero | Nueva hipótesis contractual; conservar semántica gráfica en vez de reconstruirla por suponer incompatibilidad | Estudiar HWC/RenderEngine/allocator/sync y puente de salida; Smithay mantiene pantalla/foco/dispositivos del host | Interfaz APK real, buffers/fences/aceleración/escalado, ventanas y entrada; no basta captura o menú |
+| Instalación/actualización como subsistema completo | APK, splits, firmas y selección ABI forman el comportamiento de plataforma | Supervisor/almacenamiento Linux y empaquetado; no confundir AAB con APK ni parchear apps | Instalar/actualizar/migrar/desinstalar, fallo/rollback y conjunto firmado coherente |
+| Android13/host sólo referencia histórica | Conserva regresiones y evidencia de costes, pero otra API/build/classloader | Se pausa su ampliación; no sustituir aún sus fixtures/compositor ni mezclar sus jars/JNI con A16 | Comparación etiquetada; reemplazar sólo con resultados de base nueva |
+
+El anfitrión conserva arranque, supervisión, dispositivos, escritorio y composición
+Linux. Se permiten procesos AOSP necesarios: su nombre o presencia no equivale
+por sí solo a Android completo. No se arranca Android init/una imagen ni se oculta
+un SO Android bajo el shell. Si el cierre de una unidad exige ese entorno, registrar
+el conflicto real antes de cambiar el alcance. No se decreta que eliminar Zygote,
+system_server o SurfaceFlinger sea fácil o requisito por sí mismo; se mide el
+conjunto ejecutado y quién conserva el control del sistema. Los namespaces se
+describen por su función real, sin sustituir pruebas de aislamiento.
+
+## Cierre y comportamiento que hay que conservar
+
+Antes de implementar: inventario de repositorios/build/artefactos; bootclasspath,
+classloaders y namespaces; APEX/configuración generada; propiedades, Binder y
+requisitos del kernel; permisos/identidad/datos; servicios y dependencias transitivas.
+El número de versión del kernel Linux no demuestra las interfaces Android necesarias.
+
+No se reimplementa ART ni se porta código Android a glibc por defecto. Se reutilizan
+bibliotecas/procesos originales cuando puedan ejecutarse; no se usan stubs SDK como
+framework. Cada modificación interna registra motivo, archivo/revisión original,
+diff, dependencia y regresión. Las ausencias fallan explícitamente y con traza.
+
+Los subsistemas incluyen instalación/firmas/componentes, Activity/ventanas y muerte
+de procesos, Binder/identidad/permisos/IPC entre apps, recursos/almacenamiento/URI/
+intents, servicios/notificaciones/trabajos/segundo plano, callbacks/concurrencia/
+errores/persistencia. No se resuelve sólo el método que desbloquea un constructor.
+El diagnóstico sigue las siete fases del contrato y comprueba beneficio para otra
+aplicación sin un parche por APK.
+
+## Gráficos, TV y multimedia
+
+Primer experimento gráfico: SurfaceFlinger original componiendo la salida Android
+que se presenta mediante Wayland a Smithay. Hay que estudiar la interfaz de salida
+(HWC/virtual display u otra adaptación demostrada), buffers/formatos, ownership y
+fences; todavía no se elige una implementación de puente ni se afirma que funcione.
+Alternativas se comparan cuando existan costes o fallos concretos, no por excluir
+SurfaceFlinger de antemano. Su proceso no controla el escritorio Linux.
+
+Probar aceleración, composición, ventanas, escalado y foco con teclado, ratón,
+táctil y mando/D-pad. Audio/vídeo: codecs, audio focus/rutas, superficies y sincronía
+AV con reproducción real y cierre. Android TV añade resolución de actividades TV,
+features/manifest, navegación y funciones específicas. Apariencia Fire TV no implica
+compatibilidad de APK privilegiadas Amazon/OEM o de sus servicios.
+
+## Ejes independientes y dependencias externas
+
+API/comportamiento/servicios, ABI Bionic/JNI/enlazado e ISA/32/64 bits tienen resultados
+separados en la [matriz](COMPATIBILIDAD-APK.md). Comenzar con APK DEX y x86_64; definir
+fronteras ARM64 y traducción ARM desde ahora sin afirmar que exista traductor. Respetar
+`targetSdkVersion`; las API posteriores a la base requieren evolución explícita.
+
+El catálogo canónico de dependencias ya registra GMS/microG, WebView, proveedores,
+media y DRM; se amplía con servicios OEM y apps privilegiadas. Estudiar contrato
+real de una app, fuente original y binarios/REA; distinguir reutilización/adaptación/
+servicio remoto. Evaluar implementaciones existentes antes de escribir otra, sin
+atribuir a AOSP GMS ni a una API local cuentas, licencias, claves, certificación,
+hardware seguro o aceptación del backend. No parchear APK para eludir requisitos
+y contarlas como compatibles. Interfaces identificadas no son funciones resueltas.
+
+ATL/art_standalone y libhybris conservan interés comparativo para componentes y
+fronteras: no son adopción de stubs/widgets propios ni sustituyen la base Bionic
+coherente elegida. Sus versiones/licencias y función concreta necesitan pruebas.
+El ART host/glibc queda como referencia, con mezclas antiguas documentadas como tales.
+
+## Pruebas, seguridad y entrega
+
+La base nueva se desarrolla aislada de la anterior. Primero cierre Bionic/ART con
+configuración original; después Markor completa; luego categorías distintas sin
+reconstrucciones particulares. Para cada APK: instalación, lanzamiento, interfaz,
+entrada, función principal, persistencia, servicios, cierre y reapertura. Estados:
+aprobado, fallo demostrado, bloqueo externo y no probado, sin porcentajes inferidos.
+Fixtures sólo regresiones. Referencia Android externa cuando esté disponible; no
+se arranca otro Android local ni se reinicia VM/cliente para esta tarea.
+
+CDD Android16 y CTS16.1 son referencias técnicas. Registrar módulos/casos pertinentes
+y no ejecutados; ni subconjunto ni informe local equivalen a certificación. Las
+puertas abarcan firmas/splits/ABI, UID real por app, permisos/datos/Binder, límites y
+recuperación, mediciones RAM/CPU/arranque/latencia/estabilidad sobre hardware conocido,
+presupuestos justificados, mantenimiento de seguridad, procedencia/licencias,
+instalación limpia y actualización reversible. No conseguir ligereza suprimiendo
+comportamiento. [ROADMAP-A.md](ROADMAP-A.md) fija dependencias y aceptación.
+
+## Historia de decisiones anteriores · sustituida por A16-QPR2-1
+
+# Arquitectura anterior BASE-AOSP-1
 
 ## Decisión BASE-AOSP-1 · evaluación de base x86_64 (2026-10-30)
 

@@ -1,0 +1,30 @@
+)]}'
+{
+  "commit": "15128c9e27cfa599c48d294babd39286ee8f1426",
+  "tree": "5b71c5801f6eb290bfdff5563bbe4dda0897b780",
+  "parents": [
+    "551f738e53bda3d969e6a0d2022d29ab4c9d47de"
+  ],
+  "author": {
+    "name": "The Android Open Source Project",
+    "email": "initial-contribution@android.com",
+    "time": "Tue Dec 02 21:07:28 2025 +0000"
+  },
+  "committer": {
+    "name": "The Android Open Source Project",
+    "email": "initial-contribution@android.com",
+    "time": "Tue Dec 02 21:07:28 2025 +0000"
+  },
+  "message": "Manifest for Android 16.0.0 Release 4\n",
+  "tree_diff": [
+    {
+      "type": "modify",
+      "old_id": "5b70d528c06599d6282b551ed0d101327624876e",
+      "old_mode": 33188,
+      "old_path": "default.xml",
+      "new_id": "c762144b403e50fd20bdcf9ca7fdb7d7663f6c06",
+      "new_mode": 33188,
+      "new_path": "default.xml"
+    }
+  ]
+}

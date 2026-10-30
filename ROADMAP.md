@@ -32,25 +32,29 @@ Se podrán añadir mediante decisiones posteriores y pruebas concretas.
 | H3 | Salida directa TTY y ruta gráfica de la VM validada. | H2 | Completado en VM |
 | H4 | Política TV, sesión y recuperación. | H3 | Completado en VM |
 | H5 | Shell Rust con diseño Fire TV y uso mediante mando. | H4 | En curso |
-| H6 | APK completas sin modificar sobre Linux, sin Waydroid ni boot Android. | H5, A3–A4 | Pendiente; laboratorio Waydroid histórico |
+| H6 | APK completas sin modificar sobre Linux, sin Waydroid ni imagen Android arrancada. | H5, R0–R7 | Pendiente; laboratorio Waydroid histórico |
 | H7 | Rendimiento, estabilidad y accesibilidad medidos. | H5, H6 | Pendiente |
 | H8 | Paquetes propios y sesión instalable. | H7 | Parcial histórico; runtime APK sin empaquetar |
 | H9 | Imagen Arch TV e instalación desde cero. | H8 | ISO de laboratorio; instalación/recuperación pendientes |
 
-## Decisión de base APK y dependencias externas
+## Runtime vigente · A16-QPR2-1
 
 H6 se rige por [el contrato](docs/CONTRATO-APK.md) y las puertas
-[D0–D6](docs/ROADMAP-A.md): comparar ART host/glibc, componentes originales
-Bionic/AOSP x86_64 y mezclas con fronteras probadas. La primera prioridad es un
-experimento vertical con Markor completa, sin boot Android oculto. Los servicios
-originales individuales son candidatos, sujetos a cierre y costes verificables.
+[R0–R7](docs/ROADMAP-A.md): Android16 QPR2 como base, Bionic/AOSP original sobre
+Linux, SurfaceFlinger→Wayland como primera hipótesis y Smithay manteniendo el
+control del escritorio anfitrión. ART host/glibc y API33 conservan evidencia
+histórica, sin fijar la base nueva ni prohibir servicios originales individuales.
+No se arranca Android completo ni se reinicia VM/cliente para este contrato.
 
-La aceptación incluye API/servicios externos, ABI Bionic/JNI e ISA por separado.
-GMS/microG, proveedores/media y DRM/auth/certificación no se consideran resueltos
-por copiar bibliotecas o identificar interfaces. La [matriz](docs/COMPATIBILIDAD-APK.md)
-conserva cobertura pendiente y pruebas negativas; se ampliará con APK reales
-para esos perfiles. H7 mide también el runtime y servicios, H8 fija licencias y
-actualiza componentes coherentes, H9 verifica instalación y recuperación.
+La vertical inicial es Markor completa; después categorías distintas, incluidas
+Android TV/mando, sin adaptaciones particulares por APK. La matriz registra nueve
+etapas, API/servicios externos, ABI e ISA/32/64 por separado. GMS/microG, WebView,
+media/DRM y OEM no se dan por resueltos por identificar interfaces. CDD/CTS son
+referencias, no certificación por un subconjunto. H7 mide todos los procesos y
+servicios con presupuestos justificados por hardware/resultados; H8/H9 añaden
+APK/splits/firmas/ABI, migración/desinstalación, runtime reproducible, mantenimiento
+de seguridad, instalación limpia y rollback. No recortar comportamiento para
+aparentar ligereza o compatibilidad.
 
 ## H0 · Limpieza y base documental
 
@@ -269,6 +273,11 @@ Android por separado y junto a la sesión. ARM, Google Play y DRM se evalúan
 independientemente; no son consecuencias automáticas de usar Waydroid.
 
 ## H7 · Ligereza, estabilidad y accesibilidad
+
+Para A16-QPR2-1 se medirán también runtime y servicios completos. Los umbrales
+del shell que siguen son objetivos heredados del laboratorio; contrastarlos con
+hardware/resultados y documentar los presupuestos de la nueva base, sin suprimir
+comportamiento. Ninguna cifra antigua acredita ligereza del runtime A16.
 
 Presupuestos iniciales de ingeniería, **no resultados medidos**. Revisarlos al
 terminar los ensayos gráficos y documentar cualquier cambio:

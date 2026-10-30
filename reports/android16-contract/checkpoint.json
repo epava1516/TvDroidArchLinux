@@ -1,0 +1,57 @@
+{
+  "head": "916b4908d7a51c8f62ab9d65ffc7755ed5be93ea",
+  "directive": "Android16 QPR2/r4 to verify; native Bionic primary; SurfaceFlinger to Wayland first graphics hypothesis; no VM/client restart",
+  "own_pending": [
+    "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java",
+    "tools/apk/verify_isolated_bootstrap.py",
+    "runtime/aosp/native/original-resources-host.cpp",
+    "tools/apk/build_original_resources.py"
+  ],
+  "other_pending": [
+    "reports/h9-uefi-boot/qemu.log",
+    "reports/h9-uefi-boot/serial.log"
+  ],
+  "terminal_tool_handles": [
+    38897,
+    40526,
+    77458,
+    2525,
+    14955,
+    45947,
+    63425
+  ],
+  "old_android13_evidence_local": [
+    "dist/apk/bionic-environment-1",
+    "dist/apk/bionic-environment-2",
+    "dist/apk/bionic-environment-3",
+    "dist/apk/bionic-environment-4",
+    "/home/tv/.cache/archtv/aosp-platform-33/property-study"
+  ],
+  "latest_tests": "Native generator abort134; diagnostic from private /dev/kmsg file: SANITIZER_DEFAULT_VENDOR undefined because VNDK property absent. Original API33 vendor props confirm ro.vndk.version33. Host original property serializer compile failed link (missing original parser definitions); not executed. No further Android13 implementation under new directive.",
+  "next": "Version/test derived all-project pinned source manifest, then choose matching A16 x86_64 target/artifacts and inspect exact source closures for native runtime/config/kernel and SF\u2192Wayland. No more API33 implementation.",
+  "observed_at": "2026-10-30T23:34:47.742688+00:00",
+  "branch": "main",
+  "remote": "origin git@github.com:epava1516/TvDroidArchLinux.git",
+  "origin_main_verified": "916b4908d7a51c8f62ab9d65ffc7755ed5be93ea",
+  "active_observed": [
+    {
+      "unit": "codex-remote.service",
+      "scope": "system",
+      "pid": 181298,
+      "started": "2026-10-30 21:21:11 UTC",
+      "state": "active"
+    }
+  ],
+  "no_test_processes_observed": "Host ps at checkpoint found no bwrap/dalvikvm64/clang++/QEMU; revalidate handles on resume",
+  "pending_own_hashes": {
+    "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+    "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+    "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+    "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+  },
+  "pending_other_hashes": {
+    "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+  },
+  "restart_policy": "No VM or client restart under current contract"
+}

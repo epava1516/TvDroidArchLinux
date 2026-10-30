@@ -2,7 +2,11 @@
 
 Objetivo: desarrollar un compositor Wayland ligero y específico en **Rust con
 Smithay**, acompañado de una interfaz Rust inspirada en **Fire TV 2026** y soporte
-de APK sin modificar mediante componentes AOSP adaptados a Linux, sin Waydroid ni arranque de un Android completo. La base prevista es Arch Linux.
+de APK completas sin modificar mediante Android16 QPR2 nativo Bionic/AOSP, sin Waydroid ni arranque de un Android completo. La base prevista es Arch Linux.
+
+El [contrato vigente](docs/CONTRATO-APK.md) prioriza subsistemas originales completos
+y contrastar SurfaceFlinger con salida hacia Wayland/Smithay. La base nueva todavía
+no tiene aceptación funcional; el laboratorio Android13 se conserva como historia.
 
 El compositor propio y su cliente de prueba Rust ya están implementados para
 el laboratorio anidado y salida directa DRM/KMS/Pixman desde TTY. El shell

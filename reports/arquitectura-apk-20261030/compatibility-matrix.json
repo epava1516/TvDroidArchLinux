@@ -1,6 +1,6 @@
 {
-  "schema": 1,
-  "runtime_baseline": "b8169a5 with prior registry experiment uncommitted",
+  "schema": 2,
+  "runtime_baseline": "A16-QPR2-1: Android16 QPR2 native Bionic/AOSP, x86_64 first/ARM64 portable; no A16 runtime artifacts executed. Earlier runtime evidence is historical, not this baseline.",
   "scope": "Unmodified real APK static identities and planned end-to-end workflows. No general compatibility or runtime failure claimed from unexecuted cases.",
   "applications": [
     {
@@ -34,12 +34,15 @@
       "full_evidence_id": "ev_746d40138a0f10e9c3202cd147e41d5efd4a7c58e81078c6109567a0bce77781",
       "workflow": "Abrir fichero local, reproducir audio/v\u00eddeo, volver al shell y cerrar",
       "runtime_results": {
-        "launch": "not_run",
-        "interface": "not_run",
-        "input": "not_run",
-        "persistence": "not_run",
-        "services": "not_run",
-        "close": "not_run"
+        "installation": "not_tested",
+        "launch": "not_tested",
+        "interface": "not_tested",
+        "input": "not_tested",
+        "main_function": "not_tested",
+        "persistence": "not_tested",
+        "services": "not_tested",
+        "close": "not_tested",
+        "reopen": "not_tested"
       },
       "reason": "Current host launcher substitutes Application and Activity/widgets. Complete real-app route not demonstrated; static inventory does not establish execution.",
       "framework_class_link_pass": null,
@@ -50,7 +53,17 @@
         "documents-providers",
         "vlc-media"
       ],
-      "external_coverage_note": "See dependency_catalog. Static references do not establish executed features. GMS and commercial DRM are not demonstrated by these artifacts."
+      "external_coverage_note": "See dependency_catalog. Static references do not establish executed features. GMS and commercial DRM are not demonstrated by these artifacts.",
+      "historical_runtime_results": {
+        "launch": "not_run",
+        "interface": "not_run",
+        "input": "not_run",
+        "persistence": "not_run",
+        "services": "not_run",
+        "close": "not_run"
+      },
+      "runtime_evidence_base": "Android16 QPR2 / A16-QPR2-1",
+      "privilege_model": "Ordinary APK candidate. Privileged/OEM/signature-dependent features not assumed or patched away."
     },
     {
       "id": "calculator",
@@ -83,12 +96,15 @@
       "full_evidence_id": "ev_64110040521bff8faa94ed6b7108b9cd4917e7733771b7eca451825a962f4c57",
       "workflow": "Lanzador y alias, 2+3, historial/preferencias, cierre y reapertura",
       "runtime_results": {
-        "launch": "not_run",
-        "interface": "not_run",
-        "input": "not_run",
-        "persistence": "not_run",
-        "services": "not_run",
-        "close": "not_run"
+        "installation": "not_tested",
+        "launch": "not_tested",
+        "interface": "not_tested",
+        "input": "not_tested",
+        "main_function": "not_tested",
+        "persistence": "not_tested",
+        "services": "not_tested",
+        "close": "not_tested",
+        "reopen": "not_tested"
       },
       "reason": "Current host launcher substitutes Application and Activity/widgets. Complete real-app route not demonstrated; static inventory does not establish execution.",
       "framework_class_link_pass": true,
@@ -96,7 +112,17 @@
       "dependency_profiles": [
         "android-services"
       ],
-      "external_coverage_note": "See dependency_catalog. Static references do not establish executed features. GMS and commercial DRM are not demonstrated by these artifacts."
+      "external_coverage_note": "See dependency_catalog. Static references do not establish executed features. GMS and commercial DRM are not demonstrated by these artifacts.",
+      "historical_runtime_results": {
+        "launch": "not_run",
+        "interface": "not_run",
+        "input": "not_run",
+        "persistence": "not_run",
+        "services": "not_run",
+        "close": "not_run"
+      },
+      "runtime_evidence_base": "Android16 QPR2 / A16-QPR2-1",
+      "privilege_model": "Ordinary APK candidate. Privileged/OEM/signature-dependent features not assumed or patched away."
     },
     {
       "id": "markor",
@@ -124,12 +150,15 @@
       "full_evidence_id": "ev_d5cd84183419bac98590670d305ee85ecfe49a1c9dbe9c33ac78fdc6deb21f7f",
       "workflow": "Crear nota de texto local, editar con teclado, guardar, cerrar y reabrir",
       "runtime_results": {
-        "launch": "not_run",
-        "interface": "not_run",
-        "input": "not_run",
-        "persistence": "not_run",
-        "services": "not_run",
-        "close": "not_run"
+        "installation": "not_tested",
+        "launch": "not_tested",
+        "interface": "not_tested",
+        "input": "not_tested",
+        "main_function": "not_tested",
+        "persistence": "not_tested",
+        "services": "not_tested",
+        "close": "not_tested",
+        "reopen": "not_tested"
       },
       "reason": "Current host launcher substitutes Application and Activity/widgets. Complete real-app route not demonstrated; static inventory does not establish execution.",
       "framework_class_link_pass": true,
@@ -140,7 +169,8 @@
         "source_status": "own source changes preserved pending; not in review commit",
         "last_stage": "parse-original-package",
         "error": "PackageParserException caused by null IPermissionManager.getSplitPermissions",
-        "scope": "Four original resource JNI units registered and parser reads XML; service unavailable. No app code or six-stage acceptance. Does not validate whole JNI/ABI/platform."
+        "scope": "Four original resource JNI units registered and parser reads XML; service unavailable. No app code or six-stage acceptance. Does not validate whole JNI/ABI/platform.",
+        "base_scope": "Android13 historical, does not classify A16 behavior"
       },
       "dependency_profiles": [
         "android-services",
@@ -155,7 +185,17 @@
           "error": "Original ApkAssets.nativeOpenXml JNI not linked",
           "scope": "System context initialized; no Markor code, Application.onCreate, Activity or complete workflow executed. All six functional results remain not_run."
         }
-      ]
+      ],
+      "historical_runtime_results": {
+        "launch": "not_run",
+        "interface": "not_run",
+        "input": "not_run",
+        "persistence": "not_run",
+        "services": "not_run",
+        "close": "not_run"
+      },
+      "runtime_evidence_base": "Android16 QPR2 / A16-QPR2-1",
+      "privilege_model": "Ordinary APK candidate. Privileged/OEM/signature-dependent features not assumed or patched away."
     }
   ],
   "uncovered": [
@@ -192,7 +232,8 @@
       "api_services": "blocked in real bootstrap before application code",
       "binary_abi": "Host original JNI registration/parser route partially exercised; target Bionic not_run",
       "isa": "No ARM translation involved in observed x86_64 route",
-      "runtime_proof": "Parser failure at null permission service; not full app execution"
+      "runtime_proof": "Parser failure at null permission service; not full app execution",
+      "current_base_result": "not_tested on A16; existing static/historical evidence scope retained"
     },
     "documents-providers": {
       "contracts": [
@@ -220,7 +261,8 @@
       "api_services": "static contract observed; actual provider operation not_run",
       "binary_abi": "JNI/native file and Binder FD semantics not_run",
       "isa": "Provider/app ABI must be checked independently",
-      "runtime_proof": "No save/open/provider success on actual app yet"
+      "runtime_proof": "No save/open/provider success on actual app yet",
+      "current_base_result": "not_tested on A16; existing static/historical evidence scope retained"
     },
     "vlc-media": {
       "contracts": [
@@ -247,7 +289,8 @@
       "api_services": "not_run",
       "binary_abi": "Bionic dependency names observed statically; glibc libVLC not drop-in proof",
       "isa": "x86_64 binaries present; ARM variants and translator separately pending",
-      "runtime_proof": "No original VLC playback on this runtime; prior Waydroid not counted"
+      "runtime_proof": "No original VLC playback on this runtime; prior Waydroid not counted",
+      "current_base_result": "not_tested on A16; existing static/historical evidence scope retained"
     },
     "gms": {
       "contracts": [
@@ -272,7 +315,8 @@
       "api_services": "unverified; no positive GMS test APK fixed yet",
       "binary_abi": "unverified; each original APK/SO closure must be checked",
       "isa": "unverified; no automatic ARM support",
-      "runtime_proof": "No GMS success or failure app workflow observed; matrix coverage gap"
+      "runtime_proof": "No GMS success or failure app workflow observed; matrix coverage gap",
+      "current_base_result": "not_tested on A16; existing static/historical evidence scope retained"
     },
     "integrity-billing": {
       "contracts": [
@@ -293,7 +337,8 @@
       "api_services": "unverified",
       "binary_abi": "unverified",
       "isa": "unverified",
-      "runtime_proof": "No representative real artifact/account fixed; not resolved"
+      "runtime_proof": "No representative real artifact/account fixed; not resolved",
+      "current_base_result": "not_tested on A16; existing static/historical evidence scope retained"
     },
     "drm-widevine": {
       "contracts": [
@@ -316,7 +361,8 @@
       "api_services": "unverified",
       "binary_abi": "unverified for proprietary CDM",
       "isa": "unverified; same ISA does not supply CDM or certification",
-      "runtime_proof": "No Widevine-capable real APK/content session tested; MediaDrm type refs in Markor/Calculator do not establish a DRM playback feature"
+      "runtime_proof": "No Widevine-capable real APK/content session tested; MediaDrm type refs in Markor/Calculator do not establish a DRM playback feature",
+      "current_base_result": "not_tested on A16; existing static/historical evidence scope retained"
     },
     "drm-clearkey": {
       "contracts": [
@@ -335,7 +381,8 @@
       "api_services": "not_run",
       "binary_abi": "not_run",
       "isa": "not_run",
-      "runtime_proof": "Planned independent coverage, no real APK fixed"
+      "runtime_proof": "Planned independent coverage, no real APK fixed",
+      "current_base_result": "not_tested on A16; existing static/historical evidence scope retained"
     },
     "webview": {
       "contracts": [
@@ -354,7 +401,28 @@
       "api_services": "unverified",
       "binary_abi": "unverified",
       "isa": "unverified",
-      "runtime_proof": "No real WebView workflow demonstrated"
+      "runtime_proof": "No real WebView workflow demonstrated",
+      "current_base_result": "not_tested on A16; existing static/historical evidence scope retained"
+    },
+    "oem-privileged": {
+      "contracts": [
+        "Actual OEM/TV/platform APIs, signature permissions, privileged install role or remote services to be identified per fixed APK"
+      ],
+      "observed_in": [],
+      "evidence": [],
+      "reusable": "Original available components evaluated by version/license; privileged role and OEM platform are not ordinary app APIs",
+      "adaptation": "Only justified Linux/Smithay boundaries; do not modify APK to evade privilege/signature/OEM distinctions",
+      "existing_candidates": [
+        "Existing OEM/service compatibility only after per-contract evaluation"
+      ],
+      "external_requirements": [
+        "Potential OEM signing keys, privileged role, hardware/secure components, accounts/certification/backend acceptance; not locally substituted by guessing an interface"
+      ],
+      "api_services": "not_tested",
+      "binary_abi": "not_tested",
+      "isa": "not_tested",
+      "runtime_proof": "No representative fixed OEM/privileged APK workflow",
+      "current_base_result": "not_tested on A16"
     }
   },
   "required_coverage_cases": [
@@ -399,9 +467,30 @@
       "sha256": null,
       "status": "artifact_and_workflow_not_fixed",
       "acceptance": "Choose real author-distributed APK/version, trace actual contract and execute complete workflow; mark unknown until evidenced"
+    },
+    {
+      "profile": "android-tv-dpad",
+      "apk": null,
+      "sha256": null,
+      "status": "not_tested",
+      "acceptance": "Fix real author-distributed APK/version/requirements; test nine-stage workflow without per-APK patches or privileged bypass"
+    },
+    {
+      "profile": "x86-32-and-arm32",
+      "apk": null,
+      "sha256": null,
+      "status": "not_tested",
+      "acceptance": "Fix real author-distributed APK/version/requirements; test nine-stage workflow without per-APK patches or privileged bypass"
+    },
+    {
+      "profile": "privileged-oem",
+      "apk": null,
+      "sha256": null,
+      "status": "not_tested",
+      "acceptance": "Fix real author-distributed APK/version/requirements; test nine-stage workflow without per-APK patches or privileged bypass"
     }
   ],
-  "base_review": "BASE-AOSP-1: A host/glibc baseline; B original Bionic candidate with partial component tests, no DEX/app pass; C requires justified/proven boundaries. API/service, binary ABI and ISA measured separately.",
+  "base_review": "A16-QPR2-1 supersedes A/B/C selection: native Bionic primary; SF\u2192Wayland first graphics hypothesis. Prior choice/experiments historical only.",
   "base_component_observation": {
     "evidence": "reports/bionic-component/art-core-result.json",
     "linker_help_and_launcher_list_exit": 0,
@@ -409,6 +498,14 @@
     "art_target_exit": 134,
     "dex_semantics_pass": false,
     "full_apk_functional_pass": false,
-    "limit": "Original public.libraries.txt omitted from harness; generated linker namespaces absent. Environment incomplete, not app incompatibility or proof B cannot work."
+    "limit": "Original public.libraries.txt omitted from harness; generated linker namespaces absent. Environment incomplete, not app incompatibility or proof B cannot work.",
+    "base_scope": "Android13 historical, not A16 runtime execution"
+  },
+  "historical_runtime_baseline": "b8169a5 with prior registry experiment uncommitted",
+  "status_vocabulary": {
+    "approved": "Evidence for exact stage/version/base; not inferred from static or fixture evidence",
+    "demonstrated_failure": "Reproduced stage failure with evidence; distinguish app/runtime/env cause",
+    "external_block": "Specific externally unmet condition evidenced, not generic uncertainty",
+    "not_tested": "Not executed/insufficient evidence; no compatibility percentage inferred"
   }
 }

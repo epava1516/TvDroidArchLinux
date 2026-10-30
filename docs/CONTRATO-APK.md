@@ -1,4 +1,226 @@
-# Contrato vigente de ejecución APK
+# Contrato vigente · AOSP Android 16 QPR2
+
+Versión contractual: A16-QPR2-1 · 2026-10-30. Instrucción vigente del usuario;
+reemplaza las elecciones de base y restricciones gráficas de BASE-AOSP-1.
+La verificación de versión/revisiones, decisiones de implementación y evidencia
+están en [ARQUITECTURA.md](ARQUITECTURA.md), [ROADMAP-A.md](ROADMAP-A.md),
+[ESTADO.md](ESTADO.md) y [COMPATIBILIDAD-APK.md](COMPATIBILIDAD-APK.md).
+El contenido siguiente conserva el alcance completo del contrato recibido.
+
+## OBJETIVO
+
+Ejecutar APK completas sin modificar sobre nuestro Linux, integrado con nuestro compositor Rust/Smithay, sin Waydroid ni arrancar una distribución o imagen Android completa.
+
+La meta es compatibilidad amplia con aplicaciones arbitrarias, incluidas Android TV: una plataforma general, sin seleccionar únicamente aplicaciones fáciles ni mantener adaptaciones particulares por APK como estrategia.
+
+No prometas compatibilidad universal. Cualquier límite debe quedar identificado, demostrado y documentado, sin reducir silenciosamente el objetivo.
+
+## PRINCIPIO DE IMPLEMENTACIÓN
+
+Prioriza reutilizar subsistemas originales AOSP lo más completos y coherentes posible para reducir código propio, esfuerzo de estudio y divergencias de comportamiento.
+
+“Fragmentos necesarios” significa unidades funcionales con sus dependencias reales, no clases o métodos aislados. Conserva un subsistema grande cuando dividirlo suponga más trabajo o menor compatibilidad.
+
+Cuando los componentes originales puedan ejecutarse directamente sobre Linux con Bionic, consérvalos. No los portes a glibc por defecto.
+
+Concentra los cambios en las fronteras con Linux y Smithay. Modifica el interior de los componentes originales únicamente ante una necesidad demostrada y registra cada desviación.
+
+No uses stubs, respuestas ficticias o éxitos simulados para aparentar compatibilidad. Las funciones ausentes deben producir resultados explícitos y trazables.
+
+## 1. PROTEGER EL TRABAJO EXISTENTE
+
+Antes de modificar:
+
+- Guarda un checkpoint del estado real: HEAD, rama, remotos, cambios pendientes, archivos nuevos, procesos y handles relevantes, pruebas, evidencias y siguiente acción.
+- Separa el trabajo propio del pendiente o ajeno. No descartes, mezcles ni incorpores cambios sin comprobarlos.
+- Conserva los experimentos anteriores como evidencia con alcance y limitaciones.
+- Mantén el compositor, instalación, herramientas y pruebas que sigan siendo útiles.
+- Desarrolla la nueva base del runtime de forma aislada y comparable. Sustituye la anterior cuando existan resultados que lo justifiquen.
+
+No reinicies la VM ni el cliente como parte de este contrato.
+
+## 2. BASE AOSP
+
+Adopta Android 16 QPR2 como base inicial de ingeniería, con x86_64 como primera arquitectura de ejecución y diseño portable a ARM64.
+
+Comprueba en fuentes oficiales la correspondencia exacta entre versión, rama, etiqueta y artefactos. Usa android-16.0.0_r4 como referencia inicial a verificar; fija después un manifiesto con revisiones exactas de todos los repositorios y registra su procedencia.
+
+No confundas una etiqueta reproducible con una base de seguridad actualizada. Identifica e incorpora las correcciones necesarias, con pruebas, antes de distribuir.
+
+Conserva una combinación coherente de Bionic, enlazador, ART, libcore, framework, recursos, JNI, módulos APEX y servicios. Documenta configuración, bootclasspath, classloaders, namespaces del enlazador y artefactos generados.
+
+No mezcles builds o versiones sin justificar y probar sus fronteras. No uses stubs del SDK como implementaciones ejecutables del framework.
+
+Distingue AOSP oficial, Cuttlefish/Android Emulator y el proyecto independiente Android-x86. Extraer artefactos oficiales no implica arrancar esos sistemas.
+
+## 3. ARQUITECTURA DE EJECUCIÓN
+
+La vía principal será conservar el entorno nativo Bionic/AOSP sobre nuestro kernel Linux, sin pasar por glibc para ejecutar el código Android.
+
+Los procesos anfitriones podrán seguir utilizando glibc. Cualquier comunicación o intercambio entre entornos tendrá fronteras explícitas de procesos, ABI, memoria, propiedad de objetos, descriptores e identidad.
+
+Conserva ART host/glibc como referencia experimental cuando sea útil. Una solución híbrida solo se aceptará si sus fronteras están justificadas y verificadas.
+
+Evalúa subsistemas completos antes de reimplementar sus funciones. Identifica qué puede ejecutarse directamente, qué necesita configuración, qué requiere adaptación y qué introduce dependencias adicionales.
+
+No presupongas que los servicios pueden separarse fácilmente de system_server o de otros componentes.
+
+## 4. SIGNIFICADO DE “SIN ANDROID COMPLETO”
+
+El anfitrión Linux conservará el control del arranque, supervisión, dispositivos, escritorio y compositor.
+
+Se permite reutilizar procesos y servicios originales AOSP necesarios para las aplicaciones. Su mera presencia no equivale automáticamente a arrancar Android completo.
+
+No introduzcas una VM, una imagen Android arrancada, Waydroid o un sistema Android completo oculto bajo nuestra interfaz.
+
+Los namespaces u otros mecanismos de aislamiento deberán describirse por su función real; no deben utilizarse para ocultar un cambio de arquitectura.
+
+Si la clausura de dependencias exige un entorno que entre en conflicto con esta restricción, presenta el conflicto con evidencia antes de cambiar el alcance.
+
+## 5. COMPORTAMIENTO Y SERVICIOS
+
+Preserva el comportamiento de los subsistemas, no solo sus firmas:
+
+- Instalación, paquetes, firmas y resolución de componentes.
+- Actividades, ventanas, ciclo de vida y recuperación de procesos.
+- Binder, identidad del llamante, permisos y comunicación entre aplicaciones.
+- Recursos, almacenamiento, proveedores de contenido e intents.
+- Servicios, notificaciones, tareas programadas y segundo plano.
+- Callbacks, concurrencia, errores y persistencia.
+
+Determina sus dependencias mediante fuentes originales y pruebas. No avances mediante sustituciones vacías de servicios que únicamente permitan superar el siguiente fallo.
+
+6. GRÁFICOS, ENTRADA Y MULTIMEDIA
+
+Evalúa primero conservar la semántica gráfica original: WindowManager, Surface, BufferQueue, sincronización y componentes relacionados.
+
+La primera alternativa a contrastar será conservar SurfaceFlinger y adaptar su salida hacia Wayland, con Smithay como compositor del anfitrión. Es una hipótesis de integración, no una solución previamente demostrada.
+
+Compara alternativas solo cuando las pruebas revelen costes o limitaciones concretos. No reconstruyas todo el sistema gráfico por asumir que SurfaceFlinger es incompatible con Smithay.
+
+Comprueba gráficos acelerados, buffers, fences, composición, ventanas, escalado, foco, teclado, ratón, táctil y mando/D-pad.
+
+Incluye audio, vídeo, códecs, superficies de reproducción y sincronización audiovisual. Una captura estática o un menú visible no demuestra reproducción funcional.
+
+Contempla las actividades y funciones específicas de Android TV. La semejanza visual con Fire TV no acredita compatibilidad con sus APK o servicios.
+
+7. INSTALACIÓN, ACTUALIZACIÓN Y SEGURIDAD
+
+Incluye:
+
+- APK individuales y conjuntos de APK divididas.
+- Verificación de firmas y coherencia del conjunto instalado.
+- Selección de ABI y bibliotecas nativas.
+- Instalación, actualización, migración de datos, desinstalación y recuperación.
+- Versionado reproducible del runtime y reversión ante actualizaciones fallidas.
+
+No confundas AAB, formato de publicación, con un APK directamente instalable.
+
+Preserva aislamiento por aplicación, identidades, permisos efectivos y separación de datos. Verifica Binder y los requisitos reales del kernel de la base elegida.
+
+Aplica límites de recursos y recuperación ante fallos. No dependas de ejecutar todas las aplicaciones bajo una identidad compartida o con privilegios generales.
+
+Registra licencias, procedencia, modificaciones y mantenimiento de seguridad de los componentes reutilizados.
+
+## 8. TRES EJES INDEPENDIENTES
+
+Mantén separados en arquitectura, pruebas y resultados:
+
+A. Compatibilidad de API, comportamiento y servicios.
+B. Compatibilidad binaria Bionic/JNI y enlazado.
+C. Compatibilidad de instrucciones y arquitecturas, incluyendo 32/64 bits.
+
+Valida inicialmente APK sin código nativo y con bibliotecas x86_64. Investiga traducción ARM→x86_64 como línea independiente, sin usarla para posponer el diseño de sus fronteras.
+
+Ejecutar bytecode con ART no demuestra compatibilidad JNI. Ejecutar una biblioteca x86_64 no demuestra soporte ARM. Compartir kernel Linux no demuestra compatibilidad del entorno Android.
+
+Respeta los mecanismos de comportamiento según targetSdkVersion. Identifica las APK que requieran API posteriores a la base y planifica su evolución sin fingir soporte.
+
+## 9. DEPENDENCIAS EXTERNAS Y PROPIETARIAS
+
+Incluye Google Play Services, alternativas existentes como microG cuando correspondan, WebView, DRM, proveedores multimedia, servicios OEM y servicios remotos.
+
+Para cada dependencia:
+
+- Identifica el contrato realmente utilizado por la aplicación.
+- Distingue implementación reutilizable, biblioteca original, adaptación local y servicio remoto.
+- Evalúa soluciones existentes antes de desarrollar otra.
+- Documenta autenticación, licencias, certificación, claves, hardware seguro y aceptación por servidores externos.
+- Comprueba su funcionamiento o limitación con aplicaciones reales.
+
+No presupongas que AOSP proporciona GMS, que una API local sustituye un backend o que comprender DRM proporciona claves o certificación.
+
+Distingue aplicaciones ordinarias de aplicaciones privilegiadas o vinculadas a un fabricante. No modifiques las APK para eludir esas diferencias y contarlas como compatibles.
+
+## 10. USO DE FUENTES Y REA
+
+Comprueba que REA MCP está realmente disponible y funcional. No presentes su CLI como prueba de conexión MCP.
+
+Para código abierto AOSP, estudia primero las fuentes originales de la revisión utilizada. Usa REA para inspeccionar artefactos compilados, APK, JNI, dependencias y divergencias respecto a esas fuentes, dentro de sus capacidades reales.
+
+Procedimiento de diagnóstico:
+
+1. Reproducir el fallo y conservar evidencia.
+2. Identificar el contrato solicitado por la aplicación.
+3. Contrastar fuentes y artefactos concretos.
+4. Localizar la divergencia de nuestro entorno.
+5. Corregir preferentemente el subsistema o su frontera.
+6. Repetir el recorrido y añadir una regresión significativa.
+7. Comprobar si la corrección beneficia a otras aplicaciones.
+
+REA reduce incertidumbre; no proporciona automáticamente implementaciones, servicios, traducción de instrucciones o infraestructura externa.
+
+Mantén separados análisis estático, hipótesis y resultados de ejecución. Si REA MCP no está disponible, registra la limitación y continúa solo el trabajo independiente que pueda sostenerse con otras evidencias.
+
+## 11. VALIDACIÓN
+
+Utiliza CDD y CTS de la versión correspondiente como referencias técnicas. Introduce pruebas pertinentes de CTS conforme la infraestructura permita ejecutarlas y registra también las no ejecutadas.
+
+No presentes un subconjunto de CTS como certificación Android.
+
+Mantén una matriz de APK reales, con versiones, hashes, procedencia, API, ABI, dependencias y recorridos reproducibles. Incluye progresivamente:
+
+- Markor y almacenamiento/proveedores.
+- Calculator y dependencias nativas.
+- VLC y multimedia.
+- Aplicaciones Android TV y navegación con mando.
+- Aplicaciones con WebView, gráficos acelerados y servicios externos.
+
+Las fixtures propias serán regresiones, no el criterio general de compatibilidad.
+
+Para cada aplicación registra al menos: instalación, lanzamiento, interfaz, entrada, función principal, persistencia, servicios, cierre y reapertura.
+
+Distingue aprobado, fallo demostrado, bloqueo externo y no probado. No conviertas “no probado” en un porcentaje de compatibilidad.
+
+Cuando sea posible, compara el mismo recorrido con un dispositivo Android de referencia externo. No arranques otro sistema Android local sin autorización para ello.
+
+## 12. HITOS Y PUERTAS DE DECISIÓN
+
+Primero demuestra una base Bionic/ART coherente con sus dependencias y configuración originales.
+
+Después completa el recorrido de Markor ya definido, incluyendo interfaz real, entrada, edición, persistencia y reapertura. La selección del primer caso no reduce el alcance general.
+
+A continuación demuestra que la misma base permite avanzar en aplicaciones de categorías distintas sin reconstrucciones particulares por APK.
+
+Compilar, cargar clases, resolver JNI, inicializar ContextImpl o mostrar un widget son hitos parciales. Ninguno cierra el runtime ni acredita una aplicación completa.
+
+Mide RAM, CPU, arranque, latencia de entrada, estabilidad y consumo de recursos. Define presupuestos a partir de resultados y hardware documentado. No obtengas ligereza eliminando silenciosamente comportamiento necesario para las aplicaciones.
+
+## 13. DOCUMENTACIÓN Y ENTREGA
+
+Revisa y actualiza los documentos canónicos existentes de contrato, arquitectura, roadmap, estado, evidencias y matriz. No crees fuentes de verdad duplicadas.
+
+Para cada decisión registra: alternativa elegida, motivo, evidencia, modificaciones propias, dependencia pendiente y prueba de aceptación.
+
+Conserva los experimentos anteriores con su alcance histórico. Actualiza Graphify según AGENTS.md.
+
+Guarda la revisión contractual y arquitectónica en un commit separado. Conserva los cambios ajenos o pendientes y no los incorpores accidentalmente. Haz commits y push de hitos comprobados conforme a la autorización existente.
+
+Continúa autónomamente con la estrategia sustentada por las pruebas. Si la evidencia contradice una hipótesis, revisa la decisión de forma explícita; no alteres el objetivo ni declares compatibilidad por superar únicamente pruebas parciales.
+
+# Historia preservada · no establece requisitos vigentes
+
+# Contrato anterior BASE-AOSP-1 · histórico
 
 Revisión BASE-AOSP-1 · 2026-10-30. El objetivo es ejecutar APK completas sin
 modificar sobre Linux, con compositor y shell Rust/Smithay, sin Waydroid ni un

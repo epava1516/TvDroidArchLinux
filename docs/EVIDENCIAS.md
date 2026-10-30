@@ -1,5 +1,23 @@
 # Índice de evidencias
 
+## Entrada vigente · contrato Android16
+
+[Checkpoint](../reports/android16-contract/checkpoint.json),
+[verificación de versión](../reports/android16-contract/release-verification.json),
+[REA MCP](../reports/android16-contract/rea-mcp-session.json) e
+[índice de revisión](../reports/android16-contract/artifact-index.json).
+Android16 QPR2/r4 está identificado; 1.013 refs resueltas en caché, todavía sin
+aceptación de binarios/runtime A16. La revisión contractual se separa de código
+pendiente. [Estudio API33 pausado](../reports/android16-contract/android13-study-summary.json):
+su generador abortó por propiedades ausentes y el serializador host no enlazó;
+no se presenta como snapshot de propiedades ejecutado ni como prueba A16.
+
+El índice inferior conserva los alcances históricos y sus commits/hashes. Ninguna
+fixture, clase, JNI o captura antigua acredita una APK completa sobre A16.
+
+## Índices históricos y alcances originales
+
+
 Este índice enlaza las afirmaciones del estado vigente; no duplica logs ni
 convierte compilación/inspección en compatibilidad. Los hashes completos y commits
 fuente están en [evidence-index.json](../reports/continuidad-20261030/evidence-index.json).

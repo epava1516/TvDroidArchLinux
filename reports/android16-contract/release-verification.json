@@ -1,0 +1,26 @@
+{
+  "contract": "A16-QPR2-1",
+  "received_contract_sha256": "555ae68af96d9f6770f8fdf60758efe0611f499fa634e2b74b0193e9e814eb32",
+  "release": "Android 16 QPR2",
+  "tag": "android-16.0.0_r4",
+  "branch": "android16-qpr2-release",
+  "build_id": "BP4A.251205.006",
+  "api": "36.1",
+  "cts_family": "16.1",
+  "reference_security_patch": "2025-12-05",
+  "security_current": "not established; distribution requires maintained security corrections and tests",
+  "manifest_commit": "15128c9e27cfa599c48d294babd39286ee8f1426",
+  "manifest_tag_object": "6a0aa432c646cef4c76b276c9a0f38ecaa6e0c59",
+  "default_xml_sha256": "19db4af44aa74ea4ed07bf602f5805476bab1c821d59ba818031022280ae055f",
+  "resolved_project_refs": 1013,
+  "resolved_projects_local": "/home/tv/.cache/archtv/aosp16-qpr2/resolved-projects.json",
+  "resolved_projects_sha256": "90e439c5b295bde894e6dd37abe2a44546dba6d7078437ed604acfdfe59adcc1",
+  "compiled_artifacts": "not selected or executed; no source/binary correspondence assumed",
+  "sources": [
+    "https://groups.google.com/g/android-building/c/WEtw0zEGkLg",
+    "https://source.android.com/docs/setup/reference/build-numbers",
+    "https://android.googlesource.com/platform/manifest/+/android-16.0.0_r4/default.xml",
+    "https://source.android.com/docs/compatibility/cts/downloads"
+  ],
+  "limits": "HTTPS/Git ref evidence, not tag-signature verification, complete source sync/build, security acceptance, CTS certification or application compatibility."
+}

@@ -1,0 +1,12 @@
+{
+  "status": "historical, further implementation stopped on new contract",
+  "environment_local": "dist/apk/bionic-environment-4",
+  "environment_manifest_sha256": "5042c716e9fc88ac8c1224a304ed6987cd66e1b1a6490c438e60cbe5bffc3037",
+  "closure": "27 APEX identities, 239 SONAMEs/all candidates, 408 extracted files, static missing list empty; no new Java/real APK execution",
+  "original_generator": "abort134, SANITIZER_DEFAULT_VENDOR undefined; Android VNDK property missing in harness. No hand-edited namespace output accepted.",
+  "properties": "Original vendor metadata ro.vndk.version33 extracted. Host build of original property serializer did not link (FindContextIndex/FindTypeIndex definitions absent); no property area/snapshot/native initializer implemented or executed.",
+  "source_cache": "/home/tv/.cache/archtv/aosp-platform-33/source-study",
+  "property_cache": "/home/tv/.cache/archtv/aosp-platform-33/property-study",
+  "property_compile_log_sha256": "33c4e59d1709836bb5f39a18f36b4c7ab2a3508cccb71f6ca9b1c7c7566f2591",
+  "limits": "API33 study does not validate A16. All data/experiments retained locally; no VM/client restart."
+}

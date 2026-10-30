@@ -1,5 +1,8 @@
 # Checkpoint y recuperación
 
+El contrato activo puede prohibir reinicios: un checkpoint no autoriza a reiniciar
+VM o cliente si [CONTRATO-APK.md](CONTRATO-APK.md) lo impide.
+
 El punto de entrada único es [ESTADO.md](ESTADO.md). Arquitectura explica decisiones;
 ROADMAP y ROADMAP-A definen requisitos/aceptación; [EVIDENCIAS.md](EVIDENCIAS.md)
 indexa resultados. Git conserva versiones. No hay RAG ni otro gestor de memoria.

@@ -1,67 +1,55 @@
 # Estado actual y punto de entrada
 
-Actualizado: 30 de octubre de 2026. Esta cabecera es el estado vigente; el
-historial inferior conserva experimentos y fronteras ya superadas. Git y los
-artefactos enlazados prevalecen sobre cualquier resumen.
+Vigente: contrato **A16-QPR2-1**, recibido el 2026-10-30. Sustituye BASE-AOSP-1 en
+base, estrategia nativa y prioridad gráfica. Git y artefactos prevalecen sobre
+los resúmenes; no se ha completado compatibilidad amplia.
 
-## Retomar en este orden
+## Retomar
 
-1. Leer [el checkpoint fechado](../reports/bionic-component/checkpoint.json)
-   y contrastarlo con Git/procesos siguiendo [CONTINUIDAD.md](CONTINUIDAD.md).
-2. Consultar [arquitectura y decisiones](ARQUITECTURA.md),
-   [roadmap general](../ROADMAP.md) y [detalle APK](ROADMAP-A.md).
-3. Consultar [el índice de evidencias](EVIDENCIAS.md) antes de atribuir un resultado.
-4. Continuar el bootstrap original por conjuntos según [la revisión de arquitectura](ARQUITECTURA.md)
-   y [la matriz real](COMPATIBILIDAD-APK.md). No volver a ampliar sustitutos Android por inercia.
+1. [Checkpoint](../reports/android16-contract/checkpoint.json) y contraste con
+   Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
+2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
+   [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
+3. [Matriz real](COMPATIBILIDAD-APK.md) e [índice de evidencias](EVIDENCIAS.md).
+4. Continuar R0→R1 sobre Android16 QPR2 nativo, sin ampliar API33 por métodos.
 
-## Objetivo y alcance real
+## Objetivo y decisiones
 
-Ejecutar APK completas sin modificar sobre Linux y compositor Rust/Smithay, sin
-Waydroid ni arrancar un Android completo. Compatibilidad amplia, aislamiento,
-estabilidad, ligereza, instalación y actualización siguen siendo requisitos.
-Las fixtures, compilaciones y constructores no acreditan ese resultado.
+APK completas sin modificar, plataforma general con compatibilidad amplia para
+aplicaciones arbitrarias/Android TV sobre Linux y compositor Rust/Smithay. Bionic/AOSP
+es la vía principal; conservar subsistemas originales completos y sus dependencias.
+Primera hipótesis gráfica: SurfaceFlinger original con salida adaptada a Wayland.
+No Waydroid ni imagen/distribución Android arrancada, ni VM Android escondida.
+No reiniciar **VM ni cliente** bajo este contrato. Servicios originales individuales
+no equivalen automáticamente a Android completo; estudiar cierres reales.
 
-| Clasificación | Estado comprobado y límites |
+| Clasificación | Estado verificable |
 | --- | --- |
-| Vigente | Compositor y shell Rust existen; pruebas H0–H5 limitadas a la VM y plataformas documentadas. H7–H9 siguen abiertos. |
-| Experimental publicado | ART host ejecuta fixtures; recursos, cola y partes de contexto AOSP se reutilizan. Activity/widgets/vistas del contador siguen siendo propios. No hay compatibilidad general acreditada. |
-| Experimental publicado | ART host/glibc y 24 jars no básicos de otra build inicializan ContextImpl; no APK real ejecutada. Base Bionic/AOSP sigue sin elegir; pruebas de loader/arranque parcial D1, sin DEX ni APK real. |
-| Experimental pendiente separado | Cuatro unidades JNI originales registradas en ART: parser lee XML de Markor y falla por IPermissionManager nulo. Código propio conservado fuera del commit de revisión; no interfaz ni callbacks Markor. |
-| Herramientas verificadas | REA MCP 6.8.0 respondió a Codex y analizó estáticamente VLC 3.7.1 y una biblioteca ELF. La sesión de archivo se exportó y cerró. No es una prueba de ejecución de VLC en el runtime propio. |
-| Histórico | H6 Waydroid, imágenes Android e ISO anteriores conservan evidencia; no son el backend ni la aceptación vigentes del runtime APK. |
-| Desconocido/no verificado | Compatibilidad de aplicaciones reales en este runtime, aislamiento por APK, GPU del runtime, ARM, WebView, DRM/servicios propietarios, consumo y estabilidad prolongada. |
+| Base elegida por contrato | Android16 QPR2/r4, x86_64 primero y diseño ARM64. Tag/rama/build y API verificados en fuentes oficiales. Elección no equivale a implementación funcionando. |
+| Procedencia en curso | 1.013 referencias resueltas a commits en caché; manifiesto derivado/registro completo pendientes de versionar. Binarios/build target A16 aún no seleccionados ni ejecutados. |
+| Se conserva | Compositor/shell Rust, instalación/herramientas y regresiones previas útiles; H7–H9 permanecen abiertos. |
+| Históricos Android13 | ART host/glibc y fixtures propias; mezcla de jars/core/JNI; loader Bionic parcial y cierre de bibliotecas. No se trasladan como validación de A16. |
+| Pendiente separado | Cuatro archivos propios de JNI/bootstrap host conservados sin commit. Ensayos API33 de propiedades/configuración pausados; no área de propiedades nueva ejecutada ni cambio a producción. |
+| Herramientas | REA MCP respondió realmente; análisis ELF/APK estático previo y estado actual, sin presentarlos como ejecución ni CLI como conexión. |
+| No probado | Nueve etapas de las APK sobre A16; SF→Wayland, aceleración/entrada/AV/TV, aislamiento por app/Binder, GMS/DRM/OEM/WebView, traducción ISA/32/64, presupuestos, instalación/actualización/seguridad actualizada. |
 
-## Trabajo preservado y siguiente acción
+## Checkpoint y siguiente acción
 
-Base del checkpoint vigente: `ad00bbf`; el HEAD actual y origin se consultan con Git.
-El snapshot distingue cambios propios del JNI de recursos/bootstrap y los logs
-ajenos `reports/h9-uefi-boot/qemu.log` y `serial.log`. No se han descartado ni
-incluido esos cambios de código en el desvío documental.
+Base Git observada: `916b490`, main, origin verificado igual. El snapshot local
+`/home/tv/recuperacion-archtv/20261030T232235Z-android16-contract` guarda parches,
+archivos nuevos y scripts de estudio. Los logs ajenos H9 permanecen intactos.
+El checkpoint registra procesos/handles y resultados; no hay ART/bwrap/build activo
+observado tras las pruebas Android13. No restaurar parches sin contrastar Git.
 
-El reinicio afectó sólo a codex-remote.service, no a la VM. El checkpoint conserva
-PIDs/handles observados y estados terminales; no presupone que sigan activos.
-No se espera actualmente ningún build o prueba. Las autorizaciones ya concedidas
-para pruebas, commits/push y trabajo autónomo siguen vigentes; no hay autorización
-nueva para reiniciar la VM.
+Siguiente acción: versionar y validar el manifiesto completo resuelto de r4,
+seleccionar/identificar artefactos A16 coherentes y estudiar sus fuentes exactas
+para runtime/configuración/kernel y SF/WM/HWC→Wayland. La revisión contractual
+se guarda separada del código experimental pendiente. Después R1 y vertical
+Markor con nueve etapas; categorías distintas y Android TV sin parches por APK.
+Nada de ello se cierra por compilar, resolver JNI o mostrar un widget.
 
-Siguiente acción concreta: completar el inventario de configuración original de
-linker/libnativeloader para D1 de [BASE-AOSP-1](ARQUITECTURA.md). El linker Bionic
-original pasa --help y --list del launcher en namespace; el ART target aborta
-antes de DEX porque el harness omite public.libraries.txt y no reproduce aún
-los namespaces generados. [Resultado](../reports/bionic-component/art-core-result.json).
-Es cierre de entorno incompleto, no un fallo de una APK ni una imposibilidad de B.
-La revisión está publicada en 2e9e11b. A host sigue como comparación, B candidato,
-C sin aprobar. Después: servicios y Markor completa según contrato/puertas D0–D6.
-API/servicios externos, ABI e ISA siguen separados; GMS/DRM requieren aplicaciones
-y pruebas reales todavía pendientes. Ningún paso preparatorio cierra compatibilidad.
+## Historial conservado · no es el estado vigente
 
-El snapshot local `/home/tv/recuperacion-archtv/20261030T223637Z-base-aosp` conserva
-parches/archivos propios del JNI pendiente. Los logs H9 ajenos quedan intactos.
-Los handles de build/bootstrap 31930, 82388 y 26593 terminaron; ningún ART/bwrap
-seguía activo al comprobarlos. REA MCP inspeccionó realmente exportaciones ELF
-y rutas estáticas de Markor/VLC; ni la CLI ni esas inspecciones prueban ejecución.
-
-## Historial conservado (no es el estado vigente)
 
 ### Capa de compatibilidad APK propia sobre Linux
 

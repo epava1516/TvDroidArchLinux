@@ -1,0 +1,15 @@
+{
+  "source_base_commit": "916b4908d7a51c8f62ab9d65ffc7755ed5be93ea",
+  "files": {
+    "reports/android16-contract/rea-mcp-session.json": "fbcc00c6c25c1cad4527c46ee098abc9216f304b68977692b1b69ecce27698f7",
+    "reports/android16-contract/validation.json": "aad2ff4966f5a1aad0d55e281e8aebca00bc7b7a07a858b7fd61f9eb3e524568",
+    "reports/android16-contract/release-verification.json": "6590598f9ed003e7525e719d4a302cdf46b9afe7c4c964b06d504c282029abb4",
+    "reports/android16-contract/android13-generator.kmsg": "1bb4fe5b3cbbe0f6313bbed7beff681e6751d7192f01cdc6e6eb55d39cc33ce3",
+    "reports/android16-contract/manifest-commit.json": "e7dd0369778a308f15625838368612820c1983cd3539ed2744094de68de37798",
+    "reports/android16-contract/android13-generator-result.json": "34c84adda51bcd1f5cd10e5c34338a0bc71dfb84226065d27bb1042bd62b79ce",
+    "reports/android16-contract/checkpoint.json": "7b6a2e3a3830e6a78d87bc46626ac832b4f8b807e69b73e4a10093a919071985",
+    "reports/android16-contract/android13-study-summary.json": "187dc484cac05daaf3f93ba08190ead88716ece43c69e5da7e3e33b4454c8e33",
+    "reports/android16-contract/manifest-tag.json": "fad04719c92ec9c61cebc0dec1b5fc63b1248dff8f839302b086969cb97c5d90"
+  },
+  "scope": "Contractual review and historical Android13 diagnosis. Full all-project lock is local pending next source milestone; no new binary runtime accepted."
+}

@@ -1,0 +1,12 @@
+{
+  "pass": true,
+  "user_contract_full_body_preserved": true,
+  "contract_numbered_sections": 13,
+  "local_document_links_checked": 121,
+  "pending_own_sources_and_other_logs_preserved": true,
+  "matrix_apps": 3,
+  "current_base_stages_per_app": 9,
+  "all_current_base_stages": "not_tested",
+  "source_refs_resolved_in_local_cache": 1013,
+  "scope": "Contract fidelity, document links/status, preservation and reference metadata; no A16 runtime, APK or security/CTS acceptance."
+}
