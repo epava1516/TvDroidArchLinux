@@ -1,13 +1,21 @@
 # Arquitectura vigente
 
-Estado posterior a la revisión: el [bootstrap original aislado](../reports/aosp-isolated-bootstrap/result.json)
-construye Looper/ActivityThread con UID 10000, pero ContextImpl no inicializa
-SystemServiceRegistry por ausencia de TetheringManager. El bundle R8 no es
-un conjunto modular suficiente. El snapshot SDK Connectivity consultado lista
-stubs, que no se usarán para ejecutar aplicaciones. Se mantiene la decisión de
-reutilizar implementaciones originales con procedencia y classpath coherentes;
-Markor todavía no ejecuta su código. Aislamiento: sólo preflight parcial, no
-aceptación de seguridad.
+Estado posterior a la revisión: el [framework modular original](../reports/aosp-platform-bootstrap/result.json)
+supera SystemServiceRegistry/ContextImpl. PackageParser original se detiene en
+ApkAssets.nativeOpenXml, sin ejecutar código de Markor. Se reutilizará el
+subsistema JNI original de recursos, conservando su ownership; no se sustituirá
+la semántica de parseo del manifiesto por una implementación propia.
+
+Los componentes no básicos proceden juntos de una imagen AOSP API 33 r2
+(fingerprint TE1A.220922.034/10940250), extraída sin montar ni arrancar Android.
+31 jars tienen DEX ejecutable; el ensayo usa 24 no básicos en classpath de
+aplicación con core/libcore/JNI de ART host r3. Esta frontera de build y
+classloader no es una plataforma coherente completa ni una ABI validada.
+Las versiones, orden original de fragmentos y hashes quedan en el
+[inventario](../reports/aosp-platform-bootstrap/bootclasspath.json). El snapshot
+SDK de Connectivity con stubs sigue descartado como implementación. La imagen
+es input de estudio; distribución/licencias/actualización del runtime siguen abiertas.
+Aislamiento: sólo preflight parcial, no aceptación de seguridad.
 
 Esta sección sustituye las decisiones antiguas de backend Android que se conservan
 al final como historia. Estado operativo: [ESTADO.md](ESTADO.md). Requisitos y

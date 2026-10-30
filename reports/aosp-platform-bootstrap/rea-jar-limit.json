@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"error\":{\"code\":\"capability_unavailable\",\"category\":\"unsupported_provider\",\"message\":\"This analysis is unavailable for the current target. Choose another analysis or target.\",\"retryable\":false,\"remediation\":{\"action\":\"This analysis is unavailable for the current target. Choose another analysis or target.\"},\"details\":{\"provider_id\":\"jadx\",\"operation\":\"inspect_android_class\",\"reason\":\"Target /home/tv/.cache/archtv/aosp-platform-33/modules/com.android.tethering/javalib/framework-tethering.jar is zip; provide one standalone APK.\"}}}"
+    }
+  ],
+  "isError": true
+}

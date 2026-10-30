@@ -1,0 +1,14 @@
+{
+  "pass": true,
+  "original_boot_jar_count": 31,
+  "jar_identities_order_reproduced": true,
+  "malformed_proto_rejected": 3,
+  "archive_extractor_executed": true,
+  "module_extractor_executed": true,
+  "bootstrap_advanced_to_original_package_parser": true,
+  "application_executed": false,
+  "scope": "Positive extraction on pinned real image, matching independent exploratory extraction, jar hashes/ordering, three malformed protobuf inputs. No APK workflow/security/ABI acceptance.",
+  "mismatched_archive_rejected_before_output": true,
+  "original_resource_jni_hashes_verified": 4,
+  "local_document_links_checked": 81
+}

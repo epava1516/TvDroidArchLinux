@@ -68,3 +68,18 @@ La fuente R8 exporta system/framework y APEX host; no acredita una plataforma
 modular completa. El snapshot SDK de Connectivity lista stubs, no implementación
 ejecutable. Ningún resultado cierra lanzamiento, UI, entrada, persistencia o
 compatibilidad; los ensayos fallidos previos siguen en dist/apk local.
+
+## Framework modular y parser original
+
+[Resultado ART](../reports/aosp-platform-bootstrap/result.json),
+[classpath original](../reports/aosp-platform-bootstrap/bootclasspath.json),
+[validación](../reports/aosp-platform-bootstrap/validation.json) y
+[checkpoint](../reports/aosp-platform-bootstrap/checkpoint.json). 31 jars con DEX,
+orden y hashes reproducidos por dos extracciones del mismo archivo oficial.
+ContextImpl pasa; PackageParser falla en nativeOpenXml. No se ejecutó código
+de Markor. Se conservan logs pequeños y procedencia de imagen/módulos; el
+[inventario de artefactos](../reports/aosp-platform-bootstrap/artifact-index.json)
+registra hashes. REA MCP devuelve capability_unavailable para inspección Android
+de JAR, documentado; no se atribuye esa inspección a MCP. Las APK reales analizadas
+previamente conservan sus evidencias REA. La extracción no verifica firmas
+AVB/APEX ni acredita distribución, compatibilidad nativa o seguridad.

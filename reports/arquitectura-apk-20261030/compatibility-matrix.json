@@ -123,7 +123,14 @@
       },
       "reason": "Current host launcher substitutes Application and Activity/widgets. Complete real-app route not demonstrated; static inventory does not establish execution.",
       "framework_class_link_pass": true,
-      "declared_application": "net.gsantner.markor.ApplicationObject"
+      "declared_application": "net.gsantner.markor.ApplicationObject",
+      "bootstrap_experiment": {
+        "status": "blocked_before_app_execution",
+        "evidence": "reports/aosp-platform-bootstrap/result.json",
+        "last_stage": "parse-original-package",
+        "error": "Original ApkAssets.nativeOpenXml JNI not linked",
+        "scope": "System context initialized; no Markor code, Application.onCreate, Activity or complete workflow executed. All six functional results remain not_run."
+      }
     }
   ],
   "uncovered": [

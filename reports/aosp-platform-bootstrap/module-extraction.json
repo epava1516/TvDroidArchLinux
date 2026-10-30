@@ -1,0 +1,1514 @@
+{
+  "input_image_sha256": "9e5e07ecc221040fc4dce7db05087338e74882aabf65bf9a95150dbce0cae55e",
+  "extractor_sha256": "fd47df9c356490919739ca9c4ac93d8510f2113969c72ca189de10f50374b272",
+  "commands": [
+    [
+      "sfdisk",
+      "--json",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-extraction-1/system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/framework/framework.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/system/framework/framework.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/framework/framework-graphics.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/system/framework/framework-graphics.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/framework/ext.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/system/framework/ext.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/framework/telephony-common.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/system/framework/telephony-common.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/framework/voip-common.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/system/framework/voip-common.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/framework/ims-common.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/system/framework/ims-common.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/framework/framework-res.apk \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/system/framework/framework-res.apk\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/etc/classpaths/bootclasspath.pb \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/system/classpaths/bootclasspath.pb\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /system/apex",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.adbd.capex \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/archives/com.android.adbd.capex\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /javalib",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.adbd/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /etc/classpaths",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.adbd/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.adservices.capex \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/archives/com.android.adservices.capex\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /javalib",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.adservices/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/framework-adservices.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.adservices/javalib/framework-adservices.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.adservices/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/framework-sdksandbox.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.adservices/javalib/framework-sdksandbox.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.adservices/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/service-adservices.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.adservices/javalib/service-adservices.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.adservices/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/service-sdksandbox.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.adservices/javalib/service-sdksandbox.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.adservices/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /etc/classpaths",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.adservices/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /etc/classpaths/bootclasspath.pb \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.adservices/etc/classpaths/bootclasspath.pb\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.adservices/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /etc/classpaths/systemserverclasspath.pb \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.adservices/etc/classpaths/systemserverclasspath.pb\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.adservices/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.apex.cts.shim.apex \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/archives/com.android.apex.cts.shim.apex\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /javalib",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.apex.cts.shim/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /etc/classpaths",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.apex.cts.shim/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.appsearch.apex \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/archives/com.android.appsearch.apex\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /javalib",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.appsearch/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/framework-appsearch.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.appsearch/javalib/framework-appsearch.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.appsearch/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/service-appsearch.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.appsearch/javalib/service-appsearch.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.appsearch/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /etc/classpaths",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.appsearch/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /etc/classpaths/bootclasspath.pb \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.appsearch/etc/classpaths/bootclasspath.pb\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.appsearch/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /etc/classpaths/systemserverclasspath.pb \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.appsearch/etc/classpaths/systemserverclasspath.pb\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.appsearch/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.art.capex \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/archives/com.android.art.capex\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /javalib",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.art/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/apache-xml.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.art/javalib/apache-xml.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.art/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/bouncycastle.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.art/javalib/bouncycastle.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.art/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/core-libart.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.art/javalib/core-libart.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.art/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/core-oj.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.art/javalib/core-oj.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.art/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/okhttp.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.art/javalib/okhttp.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.art/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/service-art.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.art/javalib/service-art.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.art/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /etc/classpaths",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.art/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /etc/classpaths/bootclasspath.pb \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.art/etc/classpaths/bootclasspath.pb\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.art/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /etc/classpaths/systemserverclasspath.pb \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.art/etc/classpaths/systemserverclasspath.pb\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.art/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.btservices.apex \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/archives/com.android.btservices.apex\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /javalib",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.btservices/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/framework-bluetooth.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.btservices/javalib/framework-bluetooth.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.btservices/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/service-bluetooth.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.btservices/javalib/service-bluetooth.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.btservices/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /etc/classpaths",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.btservices/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /etc/classpaths/bootclasspath.pb \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.btservices/etc/classpaths/bootclasspath.pb\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.btservices/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /etc/classpaths/systemserverclasspath.pb \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.btservices/etc/classpaths/systemserverclasspath.pb\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.btservices/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.cellbroadcast.capex \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/archives/com.android.cellbroadcast.capex\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /javalib",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.cellbroadcast/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /etc/classpaths",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.cellbroadcast/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.conscrypt.capex \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/archives/com.android.conscrypt.capex\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /javalib",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.conscrypt/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/conscrypt.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.conscrypt/javalib/conscrypt.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.conscrypt/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /etc/classpaths",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.conscrypt/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /etc/classpaths/bootclasspath.pb \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.conscrypt/etc/classpaths/bootclasspath.pb\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.conscrypt/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.extservices.capex \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/archives/com.android.extservices.capex\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /javalib",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.extservices/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /etc/classpaths",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.extservices/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.i18n.apex \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/archives/com.android.i18n.apex\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /javalib",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.i18n/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/core-icu4j.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.i18n/javalib/core-icu4j.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.i18n/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /etc/classpaths",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.i18n/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.ipsec.capex \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/archives/com.android.ipsec.capex\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /javalib",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.ipsec/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/android.net.ipsec.ike.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.ipsec/javalib/android.net.ipsec.ike.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.ipsec/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /etc/classpaths",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.ipsec/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /etc/classpaths/bootclasspath.pb \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.ipsec/etc/classpaths/bootclasspath.pb\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.ipsec/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.media.capex \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/archives/com.android.media.capex\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /javalib",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.media/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/service-media-s.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.media/javalib/service-media-s.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.media/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/updatable-media.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.media/javalib/updatable-media.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.media/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /etc/classpaths",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.media/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /etc/classpaths/bootclasspath.pb \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.media/etc/classpaths/bootclasspath.pb\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.media/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /etc/classpaths/systemserverclasspath.pb \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.media/etc/classpaths/systemserverclasspath.pb\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.media/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.media.swcodec.capex \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/archives/com.android.media.swcodec.capex\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /javalib",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.media.swcodec/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /etc/classpaths",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.media.swcodec/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.mediaprovider.capex \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/archives/com.android.mediaprovider.capex\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /javalib",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.mediaprovider/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/framework-mediaprovider.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.mediaprovider/javalib/framework-mediaprovider.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.mediaprovider/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /etc/classpaths",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.mediaprovider/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /etc/classpaths/bootclasspath.pb \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.mediaprovider/etc/classpaths/bootclasspath.pb\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.mediaprovider/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.neuralnetworks.capex \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/archives/com.android.neuralnetworks.capex\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /javalib",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.neuralnetworks/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /etc/classpaths",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.neuralnetworks/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.ondevicepersonalization.apex \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/archives/com.android.ondevicepersonalization.apex\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /javalib",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.ondevicepersonalization/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/framework-ondevicepersonalization.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.ondevicepersonalization/javalib/framework-ondevicepersonalization.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.ondevicepersonalization/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /etc/classpaths",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.ondevicepersonalization/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /etc/classpaths/bootclasspath.pb \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.ondevicepersonalization/etc/classpaths/bootclasspath.pb\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.ondevicepersonalization/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.os.statsd.apex \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/archives/com.android.os.statsd.apex\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /javalib",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.os.statsd/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/framework-statsd.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.os.statsd/javalib/framework-statsd.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.os.statsd/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/service-statsd.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.os.statsd/javalib/service-statsd.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.os.statsd/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /etc/classpaths",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.os.statsd/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /etc/classpaths/bootclasspath.pb \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.os.statsd/etc/classpaths/bootclasspath.pb\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.os.statsd/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /etc/classpaths/systemserverclasspath.pb \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.os.statsd/etc/classpaths/systemserverclasspath.pb\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.os.statsd/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.permission.capex \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/archives/com.android.permission.capex\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /javalib",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.permission/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/framework-permission-s.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.permission/javalib/framework-permission-s.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.permission/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/framework-permission.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.permission/javalib/framework-permission.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.permission/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/service-permission.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.permission/javalib/service-permission.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.permission/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /etc/classpaths",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.permission/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /etc/classpaths/bootclasspath.pb \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.permission/etc/classpaths/bootclasspath.pb\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.permission/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /etc/classpaths/systemserverclasspath.pb \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.permission/etc/classpaths/systemserverclasspath.pb\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.permission/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.resolv.capex \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/archives/com.android.resolv.capex\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /javalib",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.resolv/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /etc/classpaths",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.resolv/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.runtime.apex \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/archives/com.android.runtime.apex\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /javalib",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.runtime/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /etc/classpaths",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.runtime/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.scheduling.apex \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/archives/com.android.scheduling.apex\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /javalib",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.scheduling/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/framework-scheduling.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.scheduling/javalib/framework-scheduling.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.scheduling/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/service-scheduling.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.scheduling/javalib/service-scheduling.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.scheduling/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /etc/classpaths",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.scheduling/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /etc/classpaths/bootclasspath.pb \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.scheduling/etc/classpaths/bootclasspath.pb\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.scheduling/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /etc/classpaths/systemserverclasspath.pb \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.scheduling/etc/classpaths/systemserverclasspath.pb\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.scheduling/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.sdkext.apex \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/archives/com.android.sdkext.apex\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /javalib",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.sdkext/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/framework-sdkextensions.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.sdkext/javalib/framework-sdkextensions.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.sdkext/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /etc/classpaths",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.sdkext/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /etc/classpaths/bootclasspath.pb \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.sdkext/etc/classpaths/bootclasspath.pb\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.sdkext/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.tethering.capex \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/archives/com.android.tethering.capex\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /javalib",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.tethering/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/framework-connectivity-t.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.tethering/javalib/framework-connectivity-t.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.tethering/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/framework-connectivity.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.tethering/javalib/framework-connectivity.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.tethering/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/framework-tethering.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.tethering/javalib/framework-tethering.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.tethering/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/service-connectivity.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.tethering/javalib/service-connectivity.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.tethering/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /etc/classpaths",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.tethering/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /etc/classpaths/bootclasspath.pb \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.tethering/etc/classpaths/bootclasspath.pb\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.tethering/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /etc/classpaths/systemserverclasspath.pb \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.tethering/etc/classpaths/systemserverclasspath.pb\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.tethering/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.tzdata.apex \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/archives/com.android.tzdata.apex\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /javalib",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.tzdata/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /etc/classpaths",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.tzdata/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.uwb.capex \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/archives/com.android.uwb.capex\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /javalib",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.uwb/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/framework-uwb.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.uwb/javalib/framework-uwb.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.uwb/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/service-uwb.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.uwb/javalib/service-uwb.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.uwb/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /etc/classpaths",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.uwb/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /etc/classpaths/bootclasspath.pb \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.uwb/etc/classpaths/bootclasspath.pb\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.uwb/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /etc/classpaths/systemserverclasspath.pb \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.uwb/etc/classpaths/systemserverclasspath.pb\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.uwb/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.vndk.current.apex \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/archives/com.android.vndk.current.apex\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /javalib",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.vndk.current/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /etc/classpaths",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.vndk.current/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.wifi.capex \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/archives/com.android.wifi.capex\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/logical-system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /javalib",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.wifi/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/framework-wifi.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.wifi/javalib/framework-wifi.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.wifi/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /javalib/service-wifi.jar \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.wifi/javalib/service-wifi.jar\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.wifi/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "ls -p /etc/classpaths",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.wifi/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /etc/classpaths/bootclasspath.pb \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.wifi/etc/classpaths/bootclasspath.pb\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.wifi/payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /etc/classpaths/systemserverclasspath.pb \"/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.wifi/etc/classpaths/systemserverclasspath.pb\"",
+      "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.wifi/payload.img"
+    ]
+  ],
+  "files": {
+    "extraction.stderr": {
+      "bytes": 5250,
+      "sha256": "d4445877509b8503740ab0257cd33bd17089330e6fc2c2d18d6a38cbb67b7401"
+    },
+    "logical-system.img": {
+      "bytes": 872837120,
+      "sha256": "990f942c473c507ffcab830696fe7a5fb2b549a1627592eab60840122f73fe20"
+    },
+    "archives/com.android.media.original.apex": {
+      "bytes": 5685248,
+      "sha256": "2359f2ddc247bc0644a12e7734075d9940de4b7cff18309ffd0929a463766cf8"
+    },
+    "archives/com.android.extservices.original.apex": {
+      "bytes": 6864896,
+      "sha256": "66b3fe68714d9d65a2afbc4495c9bd0de0a2bcd4f33d100598cdfd6e78d27f4b"
+    },
+    "archives/com.android.media.swcodec.capex": {
+      "bytes": 9195520,
+      "sha256": "32b5ab44b17c0699ee7bb1ff944ebebcc687d5ef8d276a909e031c82f0bb4f30"
+    },
+    "archives/com.android.media.capex": {
+      "bytes": 2400256,
+      "sha256": "983100e9bb191c1742fadac7cbbfa2afd320253d045c980181009c180b9332ac"
+    },
+    "archives/com.android.wifi.capex": {
+      "bytes": 3346432,
+      "sha256": "c9cac1e197a6150d51804b55cffaef564df5fe0348987aaad734f085c6e832db"
+    },
+    "archives/com.android.sdkext.apex": {
+      "bytes": 892928,
+      "sha256": "cd6fb827d2408f7b431d5434681ce02e94d1190e4636b4763d36bcef717c78f0"
+    },
+    "archives/com.android.neuralnetworks.original.apex": {
+      "bytes": 5693440,
+      "sha256": "57439329139a927264be4db853c2d93c4f4d6d683cae6849bbaf2487c8c6fabe"
+    },
+    "archives/com.android.cellbroadcast.capex": {
+      "bytes": 4751360,
+      "sha256": "685ec24ef154f55276da3928acbe82fb39cd5ba8fbc715b887d670b29aab35d8"
+    },
+    "archives/com.android.neuralnetworks.capex": {
+      "bytes": 2285568,
+      "sha256": "f87f2ceb9fc0391b1a88afa31ec7497593e87a987b4e6f0bbe8cc2caebefbb39"
+    },
+    "archives/com.android.runtime.apex": {
+      "bytes": 5562368,
+      "sha256": "9f83eb4a8fa96cc46e51d18a6b4a4943c6f5e1b4f340f16ecc5bc0dcb658b1a7"
+    },
+    "archives/com.android.btservices.apex": {
+      "bytes": 21782528,
+      "sha256": "7c896802e670ba4d88e498f60ca5608750a80ea13569b47334aa32dc33ec4bbe"
+    },
+    "archives/com.android.conscrypt.original.apex": {
+      "bytes": 3776512,
+      "sha256": "c90f8b3ed4ef8658e2db0d177bf17cc65a9374c8cb607728bf1900e61bb6001c"
+    },
+    "archives/com.android.media.swcodec.original.apex": {
+      "bytes": 22712320,
+      "sha256": "32840b33481200357d23e17fa5c8edd91558aa7a18cacf21a9bee01068b3d923"
+    },
+    "archives/com.android.adbd.capex": {
+      "bytes": 2965504,
+      "sha256": "c2426cc6ea18b5363fcf6e3f3addb4bea4e057909b312b5b9f334f7488310c6a"
+    },
+    "archives/com.android.permission.original.apex": {
+      "bytes": 14999552,
+      "sha256": "c721e26fcf0a3b2cdfeaed7f63c8e9f3da8102370b9f406b712570dffcf6bbf9"
+    },
+    "archives/com.android.ipsec.original.apex": {
+      "bytes": 884736,
+      "sha256": "533ea2b0ee5863eae2dcc88882a5ad4b61afe6224b3323d2632bf3f21fb17f0e"
+    },
+    "archives/com.android.wifi.original.apex": {
+      "bytes": 8921088,
+      "sha256": "9b8ea6053cf0d71037c1c2edc4ddc085a0ccccb8bc6d19c28fc237b79df4fb01"
+    },
+    "archives/com.android.adservices.capex": {
+      "bytes": 155648,
+      "sha256": "6106ac2d3cb2cf5d288d9c587bd5b29d441927c1ce7482a0a300a4f8fd5b0818"
+    },
+    "archives/com.android.conscrypt.capex": {
+      "bytes": 1552384,
+      "sha256": "14e35a9f7e24a904d444d6e5998d02b02b2535684a3dc227cf626c8e9fd8fff3"
+    },
+    "archives/com.android.appsearch.apex": {
+      "bytes": 3674112,
+      "sha256": "ca951c01b5d208c6634417d067e202f51cab22e1954916ab31b3859b3d24b399"
+    },
+    "archives/com.android.os.statsd.apex": {
+      "bytes": 1896448,
+      "sha256": "99b4c0da88b43bd2a254d39b5b01ea20c60a10c79201e823d892023386a0d77a"
+    },
+    "archives/com.android.mediaprovider.capex": {
+      "bytes": 3727360,
+      "sha256": "05517daa056380b70e4cfbdccb3cfd75cb3e0d6bc41bdc39bae2b100254481b0"
+    },
+    "archives/com.android.tethering.capex": {
+      "bytes": 4014080,
+      "sha256": "c1ab4a7e0068f677f76600bedb904a45834504b12bf181a060bd08c6c2bf8faa"
+    },
+    "archives/com.android.i18n.apex": {
+      "bytes": 34918400,
+      "sha256": "bd5ba05a26a9df22f989cb0fa1db2d512384e1d6e4f6bfe4b3bd3cba6c6cb9d1"
+    },
+    "archives/com.android.resolv.original.apex": {
+      "bytes": 4829184,
+      "sha256": "916498793bff76572ab56730a8dcbf039e8cf56fe5ea1a44ee1f21d3bc9d078b"
+    },
+    "archives/com.android.ipsec.capex": {
+      "bytes": 380928,
+      "sha256": "a93b853086dcd6e68f39ba5c6755688dffa3222ec1991a8ba650496447e092d1"
+    },
+    "archives/com.android.tethering.original.apex": {
+      "bytes": 10039296,
+      "sha256": "134619c6979306ea72f01efefc8b090a75be90149c58184d9795f2a4359ee83f"
+    },
+    "archives/com.android.art.capex": {
+      "bytes": 12640256,
+      "sha256": "1116386e7449042b75ab10186c269ab922ac85fbe3694cd55074c1a502633a39"
+    },
+    "archives/com.android.adservices.original.apex": {
+      "bytes": 356352,
+      "sha256": "1d14eb101da1fdbcfd170c2053d6b749e8fbc7618ae4e40b83ca3ea65aff06a9"
+    },
+    "archives/com.android.extservices.capex": {
+      "bytes": 3100672,
+      "sha256": "19d657a66e2e12934a9949713b9d6e17b276b8a643b4a6cce2b529b96149ac25"
+    },
+    "archives/com.android.tzdata.apex": {
+      "bytes": 933888,
+      "sha256": "5374d30c08f1af045f14cfd465d5b640f7aeed2744550dd7dcc1031880ca1c62"
+    },
+    "archives/com.android.ondevicepersonalization.apex": {
+      "bytes": 344064,
+      "sha256": "1a47bcc8d69db50153263b5dfb968a8e9644442cc4addda16b40a47c3e91a744"
+    },
+    "archives/com.android.permission.capex": {
+      "bytes": 5713920,
+      "sha256": "04eb288d7d5580c5a59267be2d48c3c369e69e038621cb0b07ab26adee1f152b"
+    },
+    "archives/com.android.resolv.capex": {
+      "bytes": 2084864,
+      "sha256": "c2b981568752ca1b544902892ad1b9fb33ec9d0a50d50521f7efa7cca1efcb5f"
+    },
+    "archives/com.android.mediaprovider.original.apex": {
+      "bytes": 9306112,
+      "sha256": "60b9cbad293a2ac84124244d99110891e283b04cf2e4b3f3c3050f667b7561d9"
+    },
+    "archives/com.android.uwb.original.apex": {
+      "bytes": 3264512,
+      "sha256": "06153b82ae40cd0ebfa125ae78f8b9e194faa9be95a2b998610ea816bf946cbe"
+    },
+    "archives/com.android.apex.cts.shim.apex": {
+      "bytes": 315392,
+      "sha256": "516d78d749b79b9907678e94e3506c1c29289f0bd69c8ef948210341855dd7e9"
+    },
+    "archives/com.android.art.original.apex": {
+      "bytes": 32595968,
+      "sha256": "07b3e401d1215a9ad6ccaf5b5d29bea1fbd209259493461fe85471bc013f68ed"
+    },
+    "archives/com.android.scheduling.apex": {
+      "bytes": 339968,
+      "sha256": "e8fa719b947b1b4ab6c6a5a018c68dad92c8e4659000698421da557221b87c29"
+    },
+    "archives/com.android.adbd.original.apex": {
+      "bytes": 6873088,
+      "sha256": "b044ccd5abe7143615929cae565d0d119a1a2c7ae53587804a6b2a6f48390557"
+    },
+    "archives/com.android.uwb.capex": {
+      "bytes": 1359872,
+      "sha256": "466963be26037163edaf632fbf7556d2538351ed40291343f5658c2cbbb1982b"
+    },
+    "archives/com.android.vndk.current.apex": {
+      "bytes": 30695424,
+      "sha256": "d32810b3b3d7a39136d444a10fdb0cb034c35253fd150ac9c82931a58a60d9bb"
+    },
+    "archives/com.android.cellbroadcast.original.apex": {
+      "bytes": 13094912,
+      "sha256": "5da205108b5a21e458f9ff05aa378df352b9393f163eaf0693d8a201b45f7e05"
+    },
+    "modules/com.android.art/payload.img": {
+      "bytes": 32456704,
+      "sha256": "b566fccef64fb5db07dcefd498b9692f9c1616ed9936893bb089b4217397f92f"
+    },
+    "modules/com.android.tethering/payload.img": {
+      "bytes": 9854976,
+      "sha256": "52919d703e539e2663f9ff645890470eb33b3befab8ec338bf2fdc2382905040"
+    },
+    "modules/com.android.uwb/payload.img": {
+      "bytes": 3080192,
+      "sha256": "c6dc4f4f2dfa93eb5d52620bff0c6927f60c6644d8e826ed86223e958af2ddd2"
+    },
+    "modules/com.android.adbd/payload.img": {
+      "bytes": 6606848,
+      "sha256": "cd6b2aa7cf1e34ffdf903759a79925d7e2550613894272d0e9ad6e500960c0a3"
+    },
+    "modules/com.android.os.statsd/payload.img": {
+      "bytes": 1798144,
+      "sha256": "8102435810d14bc51568a085c0bc6b3e94b1110812ec74702dbfb368c186564f"
+    },
+    "modules/com.android.media.swcodec/payload.img": {
+      "bytes": 22634496,
+      "sha256": "664e74b82823c1d09f4c1f59ea5396cc6fda714685a7a143e92ceeb5c09daddd"
+    },
+    "modules/com.android.adservices/payload.img": {
+      "bytes": 274432,
+      "sha256": "565d6c90f8d714547689c5f2dbf55186faa190256611384e45b124dd5b74890a"
+    },
+    "modules/com.android.scheduling/payload.img": {
+      "bytes": 274432,
+      "sha256": "3fd3c84d7ef45536799c7036ced446ccda0ce884f0ad4ff818ac781d4011d30a"
+    },
+    "modules/com.android.extservices/payload.img": {
+      "bytes": 6717440,
+      "sha256": "a6ff1192a7965fcd970bb92105ef7d39232736479372c983e062397e03e3d039"
+    },
+    "modules/com.android.cellbroadcast/payload.img": {
+      "bytes": 12943360,
+      "sha256": "67ae1534d4f17b9c6b756d025fa92c59b665450194b3799134abd7b8b6a8326d"
+    },
+    "modules/com.android.appsearch/payload.img": {
+      "bytes": 3575808,
+      "sha256": "c8fa4fc5d8e3a074b7499eff36319333af07816b520533f6d6cbed44494d3968"
+    },
+    "modules/com.android.media/payload.img": {
+      "bytes": 5550080,
+      "sha256": "265149ce559b6e682bcc7917c6269ec104939744d660c3b96cef2f7b86611534"
+    },
+    "modules/com.android.resolv/payload.img": {
+      "bytes": 4747264,
+      "sha256": "c0c05f76866b6385e2779394d8fc27fd197b3e018874f1177ed5b012f3ca4f2d"
+    },
+    "modules/com.android.runtime/payload.img": {
+      "bytes": 5492736,
+      "sha256": "3af13b5f69ec7d25fe3789d7461e2ea748c521364776283e53f40d3381c3ff92"
+    },
+    "modules/com.android.ipsec/payload.img": {
+      "bytes": 811008,
+      "sha256": "c3b55c8f334b68658611e3c521cd62a647287779c6a150c114e1955521689d99"
+    },
+    "modules/com.android.btservices/payload.img": {
+      "bytes": 21590016,
+      "sha256": "698b29fb44b42347de0dd3c924350c24fcdd4f01c6dbb9ddc3df241426cda699"
+    },
+    "modules/com.android.tzdata/payload.img": {
+      "bytes": 884736,
+      "sha256": "e3ad63577d55866b2fd257a3e5d7fad3d33176997cd53c0a8a4a13f0e24c72b4"
+    },
+    "modules/com.android.vndk.current/payload.img": {
+      "bytes": 30556160,
+      "sha256": "3732d2b7033db03c020d9772f7485eea0b97989c7f4f7440c101290959382ba0"
+    },
+    "modules/com.android.permission/payload.img": {
+      "bytes": 14843904,
+      "sha256": "113ce11699ec0aee640aa48a583c170719567c338b4cd06acebfd0eb15153b39"
+    },
+    "modules/com.android.sdkext/payload.img": {
+      "bytes": 806912,
+      "sha256": "269d0156f4b89fddc347cb0c633e0a1bfcdca8764a476622df599da81b736b3f"
+    },
+    "modules/com.android.wifi/payload.img": {
+      "bytes": 8761344,
+      "sha256": "a4a719af61e0dfdb568205e8a9153e2abb82a6684b8673c737674aa7b057caee"
+    },
+    "modules/com.android.neuralnetworks/payload.img": {
+      "bytes": 5591040,
+      "sha256": "8eb6bcff8f46b89957ef91c9fe847d7fac57cbd94c17fc84e299481c01917c2b"
+    },
+    "modules/com.android.apex.cts.shim/payload.img": {
+      "bytes": 274432,
+      "sha256": "4ca260bb8e9987343ec14265bf2ffd52d17ef75af7721b90f593d18d1f6c96e6"
+    },
+    "modules/com.android.ondevicepersonalization/payload.img": {
+      "bytes": 274432,
+      "sha256": "20a4cc7906cd5962a0191d9a2117c4630855ba05b0c9ccdd605144d00da4db4f"
+    },
+    "modules/com.android.i18n/payload.img": {
+      "bytes": 34824192,
+      "sha256": "8f5c4ccffa0c6d781a56e7324072f15305bc2a1e1ef206c6ee5a77e442758789"
+    },
+    "modules/com.android.conscrypt/payload.img": {
+      "bytes": 3690496,
+      "sha256": "1ae2229dc09b64e18507c9461ee5b94b58495455ff8144620800a96bd8be633f"
+    },
+    "modules/com.android.mediaprovider/payload.img": {
+      "bytes": 9150464,
+      "sha256": "577c9b795d81a54cb871118d6a6206bca0865939fd69e6924f4a6b6ce225fb2c"
+    },
+    "modules/com.android.mediaprovider/javalib/framework-mediaprovider.jar": {
+      "bytes": 75605,
+      "sha256": "4b066227e093e20a68dc4a4c8f52a85f2adc268c17b567da09f2b4d3574c09e4"
+    },
+    "modules/com.android.mediaprovider/etc/classpaths/bootclasspath.pb": {
+      "bytes": 77,
+      "sha256": "e29daec43e038656a10890a9023c0501f62e5067ec8ca16fa8858529209828b2"
+    },
+    "modules/com.android.conscrypt/javalib/conscrypt.jar": {
+      "bytes": 464421,
+      "sha256": "fc7fcd77c30436d5fc2e91921a2e36158c54d1ecf93b83c9bf7bcf01e12a4fe3"
+    },
+    "modules/com.android.conscrypt/etc/classpaths/bootclasspath.pb": {
+      "bytes": 55,
+      "sha256": "f6c16d2dd91452d2a8c148546c7fb796274d4e794f751d86694b561ef443efc0"
+    },
+    "modules/com.android.i18n/javalib/core-icu4j.jar": {
+      "bytes": 2851772,
+      "sha256": "76a960b03a8f33e20d92465f5dffc8d9649afcf5844f91b00edf0cdfc8d55834"
+    },
+    "modules/com.android.ondevicepersonalization/javalib/framework-ondevicepersonalization.jar": {
+      "bytes": 9445,
+      "sha256": "e38608e45fec2b21180b52a14bfa515eadfdfda575dbc4c3e6125bf9a29c5607"
+    },
+    "modules/com.android.ondevicepersonalization/etc/classpaths/bootclasspath.pb": {
+      "bytes": 97,
+      "sha256": "c2710b7cba9745ad894822937e0ed651b92121bd3eb4171dbb372ea0dd88f71f"
+    },
+    "modules/com.android.wifi/javalib/service-wifi.jar": {
+      "bytes": 4627721,
+      "sha256": "e28eb3b6298555cb3d1b2caa92e3505046d6a863eaebafe6ebf15e1f146ab913"
+    },
+    "modules/com.android.wifi/javalib/framework-wifi.jar": {
+      "bytes": 1002337,
+      "sha256": "7e1aa1e0b05c220b74dbcfd4d684f889e3e5bde0aea5c5973407583a37e95fab"
+    },
+    "modules/com.android.wifi/etc/classpaths/bootclasspath.pb": {
+      "bytes": 59,
+      "sha256": "b35a407b1d8c0b0ff04c709d58431175eaec8943cc78090ac7792b4811dda7ca"
+    },
+    "modules/com.android.wifi/etc/classpaths/systemserverclasspath.pb": {
+      "bytes": 53,
+      "sha256": "0ca623436dbd6140425f37155deb1037c48b2519639ae456ab9b772e1a7211b9"
+    },
+    "modules/com.android.sdkext/javalib/framework-sdkextensions.jar": {
+      "bytes": 6349,
+      "sha256": "ea04d8122b34ca07f46ff67fa87d5de26188cebfc97c5d172b4854f4c4e18b7e"
+    },
+    "modules/com.android.sdkext/etc/classpaths/bootclasspath.pb": {
+      "bytes": 70,
+      "sha256": "68cce823a18fbfc2d81a8b7c98a874f1bfd4bc9414981260986d280bc6afa924"
+    },
+    "modules/com.android.permission/javalib/framework-permission-s.jar": {
+      "bytes": 177609,
+      "sha256": "baf8b4054f3fe1df9005ba0377bb988e7a941cfe947213b8d35518b2979ad6cb"
+    },
+    "modules/com.android.permission/javalib/service-permission.jar": {
+      "bytes": 95134,
+      "sha256": "23b732fd7817ac44f0ec53dc3b6d43932cb3ec6a160544a25fab5b296846dab6"
+    },
+    "modules/com.android.permission/javalib/framework-permission.jar": {
+      "bytes": 897,
+      "sha256": "959677769ee8424a993215f2abfaef4c413809020896bc29f2d9da95309a8e6a"
+    },
+    "modules/com.android.permission/etc/classpaths/bootclasspath.pb": {
+      "bytes": 144,
+      "sha256": "bcc012861415274858a8b7b07f80dd144c0c28f57127043ef08b28265a1e09f7"
+    },
+    "modules/com.android.permission/etc/classpaths/systemserverclasspath.pb": {
+      "bytes": 69,
+      "sha256": "12ef4caeb3836448fd3a733b73105400de907483b3882a3cecc19e4015492ef3"
+    },
+    "modules/com.android.btservices/javalib/framework-bluetooth.jar": {
+      "bytes": 960617,
+      "sha256": "a13b0306de161f5078f4c43f6b85e7da820d2bfd024accd3821ab98761c9f095"
+    },
+    "modules/com.android.btservices/javalib/service-bluetooth.jar": {
+      "bytes": 1045830,
+      "sha256": "1a11b45ecb5e60609abc6344a49205b4dd6df9465e5ab6dd3a5463bf524336af"
+    },
+    "modules/com.android.btservices/etc/classpaths/bootclasspath.pb": {
+      "bytes": 70,
+      "sha256": "bd92ad70158b5bfc295dcbdcaa18e1619363072f7ab0763e516d081ca922ab77"
+    },
+    "modules/com.android.btservices/etc/classpaths/systemserverclasspath.pb": {
+      "bytes": 64,
+      "sha256": "0e0c005a52b741c107d045b3abfed28d9aa7deada46f7637cffbcbeaaaad3456"
+    },
+    "modules/com.android.ipsec/javalib/android.net.ipsec.ike.jar": {
+      "bytes": 680641,
+      "sha256": "4088ffa9ac03b4880373ac3e37d9b587254da94ee58d809b959f7b81630b71a3"
+    },
+    "modules/com.android.ipsec/etc/classpaths/bootclasspath.pb": {
+      "bytes": 67,
+      "sha256": "9e4cd4039a7586d2a723c9489d52d82e9ddc2c7979fc5bcf8f69ae8af4e84d23"
+    },
+    "modules/com.android.media/javalib/updatable-media.jar": {
+      "bytes": 494793,
+      "sha256": "3e0a5dc6a03c10c0f76851e88e9c3e3779684d0db38c2f9516c10921ec884e3c"
+    },
+    "modules/com.android.media/javalib/service-media-s.jar": {
+      "bytes": 23434,
+      "sha256": "b31ff1960ad532ee959bf086168d9ce07c61581a76238d4658770ad67347961c"
+    },
+    "modules/com.android.media/etc/classpaths/bootclasspath.pb": {
+      "bytes": 57,
+      "sha256": "f4fbee71fce7eb12a22164c7ee02a1f5aab6b41b249e32b37bc4dc6265c5fc6c"
+    },
+    "modules/com.android.media/etc/classpaths/systemserverclasspath.pb": {
+      "bytes": 61,
+      "sha256": "21d41e865c4911c459824a5a58b518ce53d3ba12852917381c4b455dc24e4339"
+    },
+    "modules/com.android.appsearch/javalib/framework-appsearch.jar": {
+      "bytes": 141953,
+      "sha256": "212ab1449fee05db8ecfb9d606f1c26818c136939033f9a3e7189ea06be26792"
+    },
+    "modules/com.android.appsearch/javalib/service-appsearch.jar": {
+      "bytes": 1154460,
+      "sha256": "748e2ecb733adbba35f40b4bdd5b0bfe6686bc0fdd3fbd63f3fad3dbd5c61355"
+    },
+    "modules/com.android.appsearch/etc/classpaths/bootclasspath.pb": {
+      "bytes": 69,
+      "sha256": "efcb96fe921e18008f46995c3af1bfbea0fdd6ea22a4a09efb2ec9127df1e360"
+    },
+    "modules/com.android.appsearch/etc/classpaths/systemserverclasspath.pb": {
+      "bytes": 63,
+      "sha256": "0b558e82571f7c858baa78af9eccc24c480fe95c56e41032f81d9c8fffd3a5b8"
+    },
+    "modules/com.android.scheduling/javalib/framework-scheduling.jar": {
+      "bytes": 12569,
+      "sha256": "08e92b67420cb66cabe3911f477e3ec28fea429ccbe53476cc48789d155d2b7d"
+    },
+    "modules/com.android.scheduling/javalib/service-scheduling.jar": {
+      "bytes": 49869,
+      "sha256": "e13822963714bf10173042433d30a84ba43d23a03f7646e4a04b547526c95ec7"
+    },
+    "modules/com.android.scheduling/etc/classpaths/bootclasspath.pb": {
+      "bytes": 71,
+      "sha256": "0c0af8dadf37e87822015e68594916d0956bf6d90c72b70318605b880dba5064"
+    },
+    "modules/com.android.scheduling/etc/classpaths/systemserverclasspath.pb": {
+      "bytes": 65,
+      "sha256": "0d278ea6d37efa0a928948d44f0361173fbd57b90ad4d1dead2d343d63c85d4a"
+    },
+    "modules/com.android.adservices/javalib/framework-sdksandbox.jar": {
+      "bytes": 12261,
+      "sha256": "fb333dbb0922806d894bcd684d0faa6e11eaca14c2acfc321a3c5586b18b6bfb"
+    },
+    "modules/com.android.adservices/javalib/framework-adservices.jar": {
+      "bytes": 26233,
+      "sha256": "9bc1aa529318b5bc9b665ea3e63a5c1f7f6f3a0a4e4163cd1cc5e6ec0637728b"
+    },
+    "modules/com.android.adservices/javalib/service-sdksandbox.jar": {
+      "bytes": 39642,
+      "sha256": "3cd2b95339044aab7714d26e0c17c3bdea67728ebddfae0173b362c529c780b1"
+    },
+    "modules/com.android.adservices/javalib/service-adservices.jar": {
+      "bytes": 2082,
+      "sha256": "c473824ca489888df4f233e8f4d9bff4c12e2366b70a93a3329975f5743b14de"
+    },
+    "modules/com.android.adservices/etc/classpaths/bootclasspath.pb": {
+      "bytes": 142,
+      "sha256": "53616e7e57da3d8168013a87e8c678f2f01270c7f94b1d24194378e9a28344aa"
+    },
+    "modules/com.android.adservices/etc/classpaths/systemserverclasspath.pb": {
+      "bytes": 138,
+      "sha256": "619c6ff9e9b6cafc0ad4a782f6043153f0bc019bc5227a23167b0d78c8ed9195"
+    },
+    "modules/com.android.os.statsd/javalib/service-statsd.jar": {
+      "bytes": 47194,
+      "sha256": "e605ffee12100367a2686df4e9244722ac8755b96f730834978978969ff1c838"
+    },
+    "modules/com.android.os.statsd/javalib/framework-statsd.jar": {
+      "bytes": 75241,
+      "sha256": "4de740626d660a31816fd132b8461ddff0b6b7374781253932c128965f178d89"
+    },
+    "modules/com.android.os.statsd/etc/classpaths/bootclasspath.pb": {
+      "bytes": 66,
+      "sha256": "1429938d3f67c92765e8e8ee6e2e43866d27d2564fc9735d8daa8a83ea6b87d6"
+    },
+    "modules/com.android.os.statsd/etc/classpaths/systemserverclasspath.pb": {
+      "bytes": 60,
+      "sha256": "768a981e9b42b32d43d339b77fd27aa7630cb4f5e9d48536f34c01d1735c6d7f"
+    },
+    "modules/com.android.uwb/javalib/framework-uwb.jar": {
+      "bytes": 100913,
+      "sha256": "088f934ac86d09774b4956aa3d33080a7a62ccf344029892e5d04ee7bb7affb3"
+    },
+    "modules/com.android.uwb/javalib/service-uwb.jar": {
+      "bytes": 542124,
+      "sha256": "27636ad24e575189ea8882e2442b2ee045e4542594a8d0138236c8c60b9a12aa"
+    },
+    "modules/com.android.uwb/etc/classpaths/bootclasspath.pb": {
+      "bytes": 57,
+      "sha256": "94e491901b58a686b198f7e1a603803158f01f60f10ee76687a0fc7b96e99642"
+    },
+    "modules/com.android.uwb/etc/classpaths/systemserverclasspath.pb": {
+      "bytes": 51,
+      "sha256": "0511917f3d98c53f1fd2d6dbef0ac270e23d11727f0a402cf749dc99dc2da064"
+    },
+    "modules/com.android.tethering/javalib/service-connectivity.jar": {
+      "bytes": 2233971,
+      "sha256": "d8468cc85d06926a8336572a44e5d4bdd9b23174ca685a436967b1d0564d6f1c"
+    },
+    "modules/com.android.tethering/javalib/framework-connectivity-t.jar": {
+      "bytes": 380667,
+      "sha256": "8a45b1135ed9c7de9cfed4ad30cc65e2629ba6c231ab001f058ea35e1b44760f"
+    },
+    "modules/com.android.tethering/javalib/framework-tethering.jar": {
+      "bytes": 65313,
+      "sha256": "5cd6351703e27ee3d0db8018677b55b237a584f9a7c0a9dd8b64a5956e7b74af"
+    },
+    "modules/com.android.tethering/javalib/framework-connectivity.jar": {
+      "bytes": 497679,
+      "sha256": "4069b73a05526e5b79e6b31667f8fe810da6f6ac1da0aaf535b53791f74823b0"
+    },
+    "modules/com.android.tethering/etc/classpaths/bootclasspath.pb": {
+      "bytes": 215,
+      "sha256": "5147574d2d632c7666cf4f2de5d74c91f90b9a56acbd1c43cac6a242ca3c4b5a"
+    },
+    "modules/com.android.tethering/etc/classpaths/systemserverclasspath.pb": {
+      "bytes": 66,
+      "sha256": "7ce69273b096935598617640caa4d4d8d79cf90bc158fa0af9e6f44df18124ce"
+    },
+    "modules/com.android.art/javalib/okhttp.jar": {
+      "bytes": 406869,
+      "sha256": "5fabb92532a3dca846a9c6efa555bb8fffb2159929ed3e737a6b10b0526e257d"
+    },
+    "modules/com.android.art/javalib/apache-xml.jar": {
+      "bytes": 1230332,
+      "sha256": "f079846c14ef74ef3a99ae315f5cb43eba8f49974b5d4678ad8ef96b9800242b"
+    },
+    "modules/com.android.art/javalib/service-art.jar": {
+      "bytes": 974,
+      "sha256": "a9ec7f5e34f5cea760e816743148809316cfe7d3f2a739bcb6e8098267a77059"
+    },
+    "modules/com.android.art/javalib/core-oj.jar": {
+      "bytes": 5290635,
+      "sha256": "5d3d6cd751b2cf7e011e7ddf22c1faf876375103b899180d5f4e73263151c1d4"
+    },
+    "modules/com.android.art/javalib/bouncycastle.jar": {
+      "bytes": 1477845,
+      "sha256": "d0ef8e3ae3e23dd2967477b82dcd65e5b3662d977eaa1c00b43b9b65afd1a8f1"
+    },
+    "modules/com.android.art/javalib/core-libart.jar": {
+      "bytes": 563021,
+      "sha256": "77f6189f5b86d6325def87dd3c236a27759c930645a844eca05a31ba34430ed1"
+    },
+    "modules/com.android.art/etc/classpaths/bootclasspath.pb": {
+      "bytes": 492,
+      "sha256": "a18712f5be9a8d29a1a1a8b5914abcf672b83923025c50af891fdfbe3f439bf9"
+    },
+    "modules/com.android.art/etc/classpaths/systemserverclasspath.pb": {
+      "bytes": 55,
+      "sha256": "08275fa9f8a8e69bdc71eb2821c7940df15a7d3521c1d5463935ca50fc233674"
+    },
+    "system/framework/ext.jar": {
+      "bytes": 2338493,
+      "sha256": "f094994ab12b66a767a95710ba008d9510bbc520b22c7b7107dda4bfc040a274"
+    },
+    "system/framework/framework.jar": {
+      "bytes": 37219910,
+      "sha256": "6d701925c55340ff26d9919d5a677f86d312d7838f037465196112d903be5304"
+    },
+    "system/framework/framework-graphics.jar": {
+      "bytes": 3817,
+      "sha256": "668650cd1a6cd4d7e4137db0aa2cb97fb8fc192b58461cbc208746aef9f38017"
+    },
+    "system/framework/telephony-common.jar": {
+      "bytes": 3990876,
+      "sha256": "5679d2efa6e8a2ee7859122bbfe01087e39989084aabbe6d631d6385dec9213c"
+    },
+    "system/framework/framework-res.apk": {
+      "bytes": 59238416,
+      "sha256": "f73b75e4da4aee410f0c0551ec18e118db6d00b71f2d93b627224b178fa7561b"
+    },
+    "system/framework/voip-common.jar": {
+      "bytes": 823617,
+      "sha256": "7f507fc9459f0869521fe6a10f68cb8ac2512fef56c103ffd64a5846e9c75df7"
+    },
+    "system/framework/ims-common.jar": {
+      "bytes": 591357,
+      "sha256": "c98f3d0065d41b1ee43a44dd9f16a1ca2cd6d46431e751f6eafaf97f21ccbb80"
+    },
+    "system/classpaths/bootclasspath.pb": {
+      "bytes": 580,
+      "sha256": "e7fe9f7d313f4e2859d0a365e1ea22542517a41aa5a9e0e6706c563e3b79f18f"
+    }
+  },
+  "scope": "Pinned static image only; GPT via sfdisk, LP geometry/header/table SHA256 verified, linear single-device system extents only; debugfs read-only dumps, ZIP CRC for read APEX members. No AVB/APEX signature verification, mount, Android boot or execution. Ownership is intentionally not restored."
+}

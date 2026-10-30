@@ -1,0 +1,24 @@
+{
+  "archive_sha256": "297a7384ceb7a3d050d78c98c11e166dd3985ccb72bfa6d13b56b71a4aa5bc22",
+  "manifest_sha256": "de33e7d9e28744cf2b2534c96649c5a03592c5d2b1e454cc4c6ba99585e7aa92",
+  "extractor_sha256": "19a85754667e18161483e3a029c6bb042771bf4f9aba9ae735a83c65683073b8",
+  "files": {
+    "x86_64/build.prop": {
+      "bytes": 4454,
+      "sha256": "2f4d59af0fc4ef7a2cac865dc9de452a988ed0e14c5c150a98035fe09e8da4fc"
+    },
+    "x86_64/source.properties": {
+      "bytes": 370,
+      "sha256": "f03462436135f3be2a1d89ad01d3b4fc411c79bb08a154a0ade5d4d1c16c1863"
+    },
+    "x86_64/NOTICE.txt": {
+      "bytes": 3372624,
+      "sha256": "4060ebb7b650c1e0717d894eef8f2de61e69026e59ea69518973d38dbc4a20bd"
+    },
+    "x86_64/system.img": {
+      "bytes": 4306501632,
+      "sha256": "9e5e07ecc221040fc4dce7db05087338e74882aabf65bf9a95150dbce0cae55e"
+    }
+  },
+  "scope": "Selected static files only; ZIP CRC checked by zipfile. No mount, boot or APK execution. Output must be new; failed partial outputs are retained for diagnosis."
+}

@@ -75,3 +75,42 @@ result.json mantiene apk_functional_pass=false explícitamente. Ese ensayo conse
 su valor como prueba del motor sin API. El ensayo posterior añade runtime/apk y
 ejecuta el DEX del contador con recursos y preferencias: ver CONTRATO-APK.md y
 reports/a1-counter-headless/. El siguiente paso sigue siendo la ventana Wayland.
+
+## Investigación modular de la plataforma original
+
+La entrada vigente sigue en [ESTADO.md](ESTADO.md); estos comandos reproducen la
+extracción estática y el ensayo, no instalan ni arrancan Android. Los outputs
+deben ser nuevos y requieren espacio para imagen y payloads. La URL/tamaño y
+hashes están fijados en runtime/aosp/platform-image.json; la imagen SDK se mantiene
+en caché como input de investigación y conserva NOTICE, sin incorporarse a paquetes.
+
+```sh
+python tools/apk/extract_platform_image.py \
+  --archive "$HOME/.cache/archtv/aosp-platform-33/x86_64-33_r02.zip" \
+  --output "$HOME/.cache/archtv/aosp-platform-33/extraction-new"
+python tools/apk/extract_platform_modules.py \
+  --image "$HOME/.cache/archtv/aosp-platform-33/extraction-new/system.img" \
+  --output "$HOME/.cache/archtv/aosp-platform-33/modules-new"
+python tools/apk/read_platform_classpath.py \
+  --system "$HOME/.cache/archtv/aosp-platform-33/modules-new/system" \
+  --modules "$HOME/.cache/archtv/aosp-platform-33/modules-new/modules" \
+  --sdk 33 --output "$HOME/.cache/archtv/aosp-platform-33/classpath-new.json"
+python tools/apk/verify_isolated_bootstrap.py \
+  --platform-classpath "$HOME/.cache/archtv/aosp-platform-33/classpath-new.json" \
+  --platform-resources "$HOME/.cache/archtv/aosp-platform-33/modules-new/system/framework/framework-res.apk" \
+  --output dist/apk/isolated-platform-new
+```
+
+El extractor usa sfdisk y debugfs en modo lectura, sin loop mounts, y verifica
+SHA-256 de la imagen y metadatos LP. Sólo admite el layout fijado de un dispositivo,
+extents lineales LP 10.0; falla en otros formatos. El lector protobuf sólo admite
+el esquema fijado y límites SDK numéricos, no codenames futuros. El ensayo conserva
+core/JNI del host, usa jars no básicos del SDK en classpath de aplicación y no
+acredita identidad de boot classloader ni compatibilidad entre builds.
+
+La siguiente adaptación debe preservar handles/ownership del JNI original:
+ApkAssets utiliza Guarded<unique_ptr<const ApkAssets>>, mientras que el adaptador
+anterior usa tokens de un mapa propio. Enlazar sólo nativeOpenXml original con
+esos tokens sería incorrecto. Las cuatro fuentes originales de recursos/XML
+están [identificadas y verificadas](../reports/aosp-platform-bootstrap/original-resource-jni-source-study.json);
+su integración y ejecución todavía no están demostradas.

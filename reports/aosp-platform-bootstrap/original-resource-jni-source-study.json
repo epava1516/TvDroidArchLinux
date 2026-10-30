@@ -1,0 +1,22 @@
+{
+  "archive_url": "https://android.googlesource.com/platform/frameworks/base/+archive/bff944d05cd47d2b3b713565d3f00d512840d282/core/jni.tar.gz",
+  "files": {
+    "android_content_res_ApkAssets.cpp": {
+      "sha256": "4036e839f8287c5acd03bdf1fbd55ace9ced64c1a9f443a74868949ee43ea798",
+      "original_bytes": 21427
+    },
+    "android_util_XmlBlock.cpp": {
+      "sha256": "53b0e16051094636d881bbf952a610266570d80df7ff373611144ce3bfa0eb70",
+      "original_bytes": 14557
+    },
+    "android_util_StringBlock.cpp": {
+      "sha256": "43f90676bae3258fab90745aadd6f508346a0653a00d21b1ad06db5bcbff57fa",
+      "original_bytes": 5520
+    },
+    "android_util_AssetManager.cpp": {
+      "sha256": "7c96767d9f87f042f537bcc9de70d832f42dd2292cccd6f6508a849c660d8a30",
+      "original_bytes": 62168
+    }
+  },
+  "finding": "ApkAssets original uses Guarded<unique_ptr<const ApkAssets>> raw pointer handles; old own resources adapter uses integer token maps. Cannot link nativeOpenXml alone onto old handles. Reuse original resource JNI subsystem coherently and preserve ownership. Source study only, not build/runtime proof."
+}

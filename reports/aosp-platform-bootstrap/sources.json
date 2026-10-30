@@ -1,0 +1,6 @@
+{
+  "lp-format.h": "https://android.googlesource.com/platform/system/core/+/refs/tags/android-13.0.0_r3/fs_mgr/liblp/include/liblp/metadata_format.h",
+  "classpath-proto.txt": "https://android.googlesource.com/platform/packages/modules/common/+/refs/tags/android-13.0.0_r3/proto/classpaths.proto",
+  "derive-classpath.txt": "https://android.googlesource.com/platform/packages/modules/SdkExtensions/+/refs/tags/android-13.0.0_r3/derive_classpath/derive_classpath.cpp",
+  "platform-bootjars.txt": "https://android.googlesource.com/platform/build/+/refs/tags/android-13.0.0_r3/target/product/default_art_config.mk"
+}

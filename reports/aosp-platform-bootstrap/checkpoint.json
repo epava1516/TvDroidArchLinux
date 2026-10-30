@@ -1,0 +1,44 @@
+{
+  "observed_at": "2026-10-30T22:30:13.664355+00:00",
+  "objective": "Complete unmodified APK on Rust/Smithay Linux; no Waydroid/full Android. Broad compatibility/isolation/stability/lightweight/install/update remain open",
+  "branch": "main",
+  "source_head": "6b01246f43d5a35a933468a7765edfb8c16d162c",
+  "origin_before_milestone": "6b01246 (previous push confirmed); new milestone must be pushed",
+  "pending_own": "this platform extraction/classpath/bootstrap milestone",
+  "pending_other": [
+    "reports/h9-uefi-boot/qemu.log",
+    "reports/h9-uefi-boot/serial.log"
+  ],
+  "terminal_tool_handles": [
+    49732,
+    47788,
+    59799,
+    20634,
+    96779,
+    90105,
+    85503,
+    93841,
+    83913,
+    63601,
+    44035,
+    43517,
+    75333,
+    70646,
+    75541,
+    80266
+  ],
+  "active_work": "No awaited extraction/build/bootstrap handles; revalidate host processes. Graphify milestone update still to run. Codex system unit PID181298 from prior observation must be revalidated before reuse.",
+  "evidence": "result.json, validation.json, bootclasspath.json, archive/module-extraction.json; source hashes in artifact-index.json",
+  "failure": "System context now initializes. PackageParser reaches missing ApkAssets.nativeOpenXml before any application code. REA Android class tool refuses standalone JAR.",
+  "next_action": "Reuse original AOSP resource JNI subsystem (ApkAssets/XmlBlock/StringBlock/AssetManager) with host nativehelper/registration adapters, retaining ownership semantics; avoid translating XML/package parsing into own Java. Then repeat original Markor Application bootstrap and full note lifecycle.",
+  "limits": "31 executable original jars inventoried; 24 non-core SDK image jars on app classpath plus existing host core/JNI. Different Android13 builds; classloader/ABI/security/complete app compatibility not proven. No Android boot performed.",
+  "active_observed": [
+    {
+      "unit": "codex-remote.service",
+      "scope": "system",
+      "pid": 181298,
+      "start": "2026-10-30 21:21:11 UTC",
+      "state": "active"
+    }
+  ]
+}

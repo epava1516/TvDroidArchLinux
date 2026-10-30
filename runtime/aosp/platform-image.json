@@ -1,0 +1,12 @@
+{
+  "catalog_url": "https://dl.google.com/android/repository/sys-img/android/sys-img2-1.xml",
+  "package": "system-images;android-33;default;x86_64",
+  "revision": 2,
+  "url": "https://dl.google.com/android/repository/sys-img/android/x86_64-33_r02.zip",
+  "bytes": 694005732,
+  "published_sha1": "d4698590184a21fe1e8754284130ad3006b5fc79",
+  "observed_sha256": "297a7384ceb7a3d050d78c98c11e166dd3985ccb72bfa6d13b56b71a4aa5bc22",
+  "fingerprint": "Android/sdk_phone64_x86_64/emulator64_x86_64:13/TE1A.220922.034/10940250:userdebug/test-keys",
+  "scope": "Static research input only. No Android boot, installation, production dependency or redistribution approval. The SDK image build differs from the existing ART host r3 bundle; compatibility must be tested explicitly.",
+  "system_image_sha256": "9e5e07ecc221040fc4dce7db05087338e74882aabf65bf9a95150dbce0cae55e"
+}

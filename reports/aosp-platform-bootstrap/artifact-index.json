@@ -1,0 +1,35 @@
+{
+  "source_base_commit": "6b01246f43d5a35a933468a7765edfb8c16d162c",
+  "files": {
+    "reports/aosp-platform-bootstrap/archive-extraction.json": "52d8103ea249862fd725a62a840bc1876f9328413c8fb0fe29eeb844a167501c",
+    "reports/aosp-platform-bootstrap/original-resource-jni-source-study.json": "b262b7247c87218745fcf714fdc341260b8a50a14d4e45e00e3b891df890c974",
+    "reports/aosp-platform-bootstrap/classpath-proto.txt": "679c488b19754766b351fa1002a688db4b6009f8e34531b55bf7216de08f984b",
+    "reports/aosp-platform-bootstrap/archive-test-manifest.json": "de33e7d9e28744cf2b2534c96649c5a03592c5d2b1e454cc4c6ba99585e7aa92",
+    "reports/aosp-platform-bootstrap/build.prop": "2f4d59af0fc4ef7a2cac865dc9de452a988ed0e14c5c150a98035fe09e8da4fc",
+    "reports/aosp-platform-bootstrap/derive-classpath.txt": "8ee22ba8070604dec463f754eafb4584c3fea9e8677776acc68fca28349b0a4f",
+    "reports/aosp-platform-bootstrap/validation.json": "a89a6852046bcce56af716d88902516a57b383609872e75aaed83c4d5f9160e8",
+    "reports/aosp-platform-bootstrap/platform-bootjars.txt": "5c9316c402109b5e824c94b92b12d2f9b08f69ceafa08a5219b313245407ef29",
+    "reports/aosp-platform-bootstrap/javac.stderr": "5611ebbcef22b910dca04e734fcc147ba2c3110c1badd237495d48cb825a5ec0",
+    "reports/aosp-platform-bootstrap/bootstrap.stdout": "5be8235cbf26053672f84917ba577f879cfe62775e17a1a54e19dc5e752a70a2",
+    "reports/aosp-platform-bootstrap/checkpoint.json": "d4d10e84251e8a253e621ae8ea782593591ae6f24824f1c17bfbf3cc4a55463d",
+    "reports/aosp-platform-bootstrap/sources.json": "879d9399b58cd5367468f81787f44a0cee81a47308cc92d16ca6eebc03f5cb0b",
+    "reports/aosp-platform-bootstrap/result.json": "f0d91918171fae5030a9fea6b072929f0a1f54c889fa5bd6b2632699e269d654",
+    "reports/aosp-platform-bootstrap/bootstrap.stderr": "480f5dafd8ae383dc2965d2d9da9e8c085cb0ce1cb7515e8b2184845b61851bc",
+    "reports/aosp-platform-bootstrap/dex.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/aosp-platform-bootstrap/source.properties": "f03462436135f3be2a1d89ad01d3b4fc411c79bb08a154a0ade5d4d1c16c1863",
+    "reports/aosp-platform-bootstrap/bootclasspath.json": "6e8bb7f679a424bc326c8f03b196dda50564d8cbe42c383107dd7cfcef1e6421",
+    "reports/aosp-platform-bootstrap/namespace.stdout": "5fd984c5fd39c4980d63e5192029ba6bed20e94a244df53eb016bec10dc6c5e7",
+    "reports/aosp-platform-bootstrap/rea-jar-limit.json": "c7e1ec4f18891280d68d61b3d6c313b0ba83acebedfa2e30492f6656821de0d2",
+    "reports/aosp-platform-bootstrap/namespace.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/aosp-platform-bootstrap/lp-format.h": "5214bd291f5a7ea14b7ff110195e884d377fbbae87ba44d9e1513a1e7481c470",
+    "reports/aosp-platform-bootstrap/module-extraction.json": "ead7c8aa7a895a278f91debe8df9cf228f87bb0c3911daed1f7ee80dd4917cfb"
+  },
+  "sources": {
+    "runtime/aosp/platform-image.json": "20364c797c098603909c46ff6c3719f788376cdcef341869c802a2a8cc21707d",
+    "tools/apk/extract_platform_image.py": "19a85754667e18161483e3a029c6bb042771bf4f9aba9ae735a83c65683073b8",
+    "tools/apk/extract_platform_modules.py": "fd47df9c356490919739ca9c4ac93d8510f2113969c72ca189de10f50374b272",
+    "tools/apk/read_platform_classpath.py": "1226361d1e6a34553cc8fa5b45233946cf15f7426ebae1d8cecd16407b394fcb",
+    "tools/apk/verify_isolated_bootstrap.py": "f483bfdc32dd8feb0ad95dedf7eecabef10b1f2ec4b8cfeb411596b652328afb"
+  },
+  "scope": "Small original logs/provenance and source identities. Large image/modules remain local cache inputs. Runtime failure is preserved, not a functional pass."
+}

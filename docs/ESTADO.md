@@ -6,7 +6,7 @@ artefactos enlazados prevalecen sobre cualquier resumen.
 
 ## Retomar en este orden
 
-1. Leer [el checkpoint fechado](../reports/aosp-isolated-bootstrap/checkpoint.json)
+1. Leer [el checkpoint fechado](../reports/aosp-platform-bootstrap/checkpoint.json)
    y contrastarlo con Git/procesos siguiendo [CONTINUIDAD.md](CONTINUIDAD.md).
 2. Consultar [arquitectura y decisiones](ARQUITECTURA.md),
    [roadmap general](../ROADMAP.md) y [detalle APK](ROADMAP-A.md).
@@ -25,7 +25,7 @@ Las fixtures, compilaciones y constructores no acreditan ese resultado.
 | --- | --- |
 | Vigente | Compositor y shell Rust existen; pruebas H0–H5 limitadas a la VM y plataformas documentadas. H7–H9 siguen abiertos. |
 | Experimental publicado | ART host ejecuta fixtures; recursos, cola y partes de contexto AOSP se reutilizan. Activity/widgets/vistas del contador siguen siendo propios. No hay compatibilidad general acreditada. |
-| Experimental publicado | Registro local y layout/resize de View original probados en `b8ea156`; no dibujan la APK. Bootstrap aislado: UID 10000, Looper y ActivityThread originales; ContextImpl falla por framework modular incompleto antes de ejecutar Markor. |
+| Experimental publicado | Registro local y layout/resize de View original probados en `b8ea156`; no dibujan la APK. Bootstrap aislado: UID 10000, Looper y ActivityThread originales; El framework modular original ya inicializa ContextImpl; PackageParser falla por JNI de XML ausente, antes de ejecutar Markor. |
 | Herramientas verificadas | REA MCP 6.8.0 respondió a Codex y analizó estáticamente VLC 3.7.1 y una biblioteca ELF. La sesión de archivo se exportó y cerró. No es una prueba de ejecución de VLC en el runtime propio. |
 | Histórico | H6 Waydroid, imágenes Android e ISO anteriores conservan evidencia; no son el backend ni la aceptación vigentes del runtime APK. |
 | Desconocido/no verificado | Compatibilidad de aplicaciones reales en este runtime, aislamiento por APK, GPU del runtime, ARM, WebView, DRM/servicios propietarios, consumo y estabilidad prolongada. |
@@ -43,14 +43,16 @@ No se espera actualmente ningún build o prueba. Las autorizaciones ya concedida
 para pruebas, commits/push y trabajo autónomo siguen vigentes; no hay autorización
 nueva para reiniciar la VM.
 
-Siguiente acción concreta: obtener implementaciones originales y metadatos de un
-bootclasspath modular coherente. El bundle R8 no basta para ContextImpl; el SDK
-Connectivity consultado contiene stubs, que no se usarán como runtime. Después,
-retomar el bootstrap aislado de Application y el recorrido completo de Markor.
-[Resultado y límite actuales](../reports/aosp-isolated-bootstrap/result.json):
-no se ejecutó código de Markor, ni onCreate ni su interfaz. La matriz continúa
-sin recorridos funcionales completos. El aislamiento sólo tiene comprobaciones
-parciales de namespace, no aceptación general de seguridad.
+Siguiente acción concreta: reutilizar el subsistema JNI original de recursos
+(ApkAssets/XmlBlock/StringBlock/AssetManager), conservando sus handles y ownership,
+con adaptación de registro/nativehelper al host. El framework modular original
+ya inicializa ContextImpl; el parser original de Markor falla al abrir XML por
+nativeOpenXml ausente. [Resultado](../reports/aosp-platform-bootstrap/result.json).
+Después, continuar Application.attach/onCreate y el recorrido de nota completo.
+Los 31 jars originales se obtienen de una imagen oficial sólo para extracción
+estática; 24 no básicos se ensayan con core/JNI host de otra build Android 13.
+Esa frontera sigue siendo experimental. Markor no ha ejecutado su código y las
+seis etapas funcionales siguen sin probarse. No se ha arrancado Android.
 
 ## Historial conservado (no es el estado vigente)
 

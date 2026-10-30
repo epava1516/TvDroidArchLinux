@@ -1,0 +1,42 @@
+dalvikvm64 E 10-30 22:27:17    14    14 image_space.cc:2239] Error reading named image component header for /runtime/host/art-13.0.0/framework/core.art, error: Unable to open file "/runtime/host/art-13.0.0/framework/x86_64/core.art" for reading image header
+dalvikvm64 E 10-30 22:27:17    14    14 image_space.cc:3470] Could not create image space with image file '/runtime/host/art-13.0.0/framework/core.art'. Attempting to fall back to imageless running. Error was: Full boot image cannot be compiled because no profile is provided.
+ziparchive W 10-30 22:27:18    14    14 Unable to open '/platform/0.dm': No such file or directory
+ziparchive W 10-30 22:27:18    14    14 Unable to open '/platform/1.dm': No such file or directory
+ziparchive W 10-30 22:27:18    14    14 Unable to open '/platform/2.dm': No such file or directory
+ziparchive W 10-30 22:27:18    14    14 Unable to open '/platform/3.dm': No such file or directory
+ziparchive W 10-30 22:27:18    14    14 Unable to open '/platform/4.dm': No such file or directory
+ziparchive W 10-30 22:27:18    14    14 Unable to open '/platform/5.dm': No such file or directory
+ziparchive W 10-30 22:27:18    14    14 Unable to open '/platform/6.dm': No such file or directory
+ziparchive W 10-30 22:27:18    14    14 Unable to open '/platform/7.dm': No such file or directory
+ziparchive W 10-30 22:27:18    14    14 Unable to open '/platform/8.dm': No such file or directory
+ziparchive W 10-30 22:27:18    14    14 Unable to open '/platform/9.dm': No such file or directory
+ziparchive W 10-30 22:27:18    14    14 Unable to open '/platform/10.dm': No such file or directory
+ziparchive W 10-30 22:27:18    14    14 Unable to open '/platform/11.dm': No such file or directory
+ziparchive W 10-30 22:27:18    14    14 Unable to open '/platform/12.dm': No such file or directory
+ziparchive W 10-30 22:27:18    14    14 Unable to open '/platform/13.dm': No such file or directory
+ziparchive W 10-30 22:27:18    14    14 Unable to open '/platform/14.dm': No such file or directory
+ziparchive W 10-30 22:27:18    14    14 Unable to open '/platform/15.dm': No such file or directory
+ziparchive W 10-30 22:27:18    14    14 Unable to open '/platform/16.dm': No such file or directory
+ziparchive W 10-30 22:27:18    14    14 Unable to open '/platform/17.dm': No such file or directory
+ziparchive W 10-30 22:27:18    14    14 Unable to open '/platform/18.dm': No such file or directory
+ziparchive W 10-30 22:27:18    14    14 Unable to open '/platform/19.dm': No such file or directory
+ziparchive W 10-30 22:27:18    14    14 Unable to open '/platform/20.dm': No such file or directory
+ziparchive W 10-30 22:27:18    14    14 Unable to open '/platform/21.dm': No such file or directory
+ziparchive W 10-30 22:27:18    14    14 Unable to open '/platform/22.dm': No such file or directory
+ziparchive W 10-30 22:27:18    14    14 Unable to open '/platform/23.dm': No such file or directory
+ziparchive W 10-30 22:27:18    14    14 Unable to open '/app/app.dm': No such file or directory
+ziparchive W 10-30 22:27:19    14    14 Unable to open '/app/probe.dm': No such file or directory
+APK_HOST_PROFILE sdk=33 abi=x86_64
+dalvikvm64 E 10-30 22:27:20    14    14 jni_entrypoints.cc:116] No implementation found for long android.content.res.ApkAssets.nativeOpenXml(long, java.lang.String) (tried Java_android_content_res_ApkAssets_nativeOpenXml and Java_android_content_res_ApkAssets_nativeOpenXml__JLjava_lang_String_2)
+BOOTSTRAP_BLOCKED stage=parse-original-package java.lang.UnsatisfiedLinkError: No implementation found for long android.content.res.ApkAssets.nativeOpenXml(long, java.lang.String) (tried Java_android_content_res_ApkAssets_nativeOpenXml and Java_android_content_res_ApkAssets_nativeOpenXml__JLjava_lang_String_2)
+java.lang.UnsatisfiedLinkError: No implementation found for long android.content.res.ApkAssets.nativeOpenXml(long, java.lang.String) (tried Java_android_content_res_ApkAssets_nativeOpenXml and Java_android_content_res_ApkAssets_nativeOpenXml__JLjava_lang_String_2)
+	at android.content.res.ApkAssets.nativeOpenXml(Native Method)
+	at android.content.res.ApkAssets.openXml(ApkAssets.java:380)
+	at android.content.pm.PackageParser.parseApkLiteInner(PackageParser.java:1507)
+	at android.content.pm.PackageParser.parseApkLite(PackageParser.java:1474)
+	at android.content.pm.PackageParser.parseMonolithicPackageLite(PackageParser.java:980)
+	at android.content.pm.PackageParser.parseMonolithicPackage(PackageParser.java:1189)
+	at android.content.pm.PackageParser.parsePackage(PackageParser.java:1103)
+	at android.content.pm.PackageParser.parsePackage(PackageParser.java:1112)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at org.archtv.apkruntime.OriginalBootstrapProbe.main(OriginalBootstrapProbe.java:18)

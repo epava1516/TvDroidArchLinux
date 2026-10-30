@@ -326,3 +326,12 @@ Application.attach/onCreate originales y recorrido de nota completo. No usar
 stubs del SDK como runtime. Namespace UID 10000 y comprobaciones parciales
 pasan; aislamiento completo, presupuestos y todas las etapas reales siguen
 pendientes. A4/A5 no se cierran.
+
+### Framework modular original · 2026-10-30
+
+A3: el [nuevo ensayo](../reports/aosp-platform-bootstrap/result.json) utiliza
+24 jars no básicos originales de una única imagen, con core/JNI host separado.
+ContextImpl se inicializa; PackageParser falla por nativeOpenXml sin enlazar.
+Prioridad: reutilizar JNI original de recursos/XML y continuar Application
+original y recorrido completo de Markor. El límite anterior de TetheringManager
+queda superado en este perfil, no mediante stubs. A4/A5 y H7–H9 siguen abiertos.

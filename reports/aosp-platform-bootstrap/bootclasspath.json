@@ -1,0 +1,419 @@
+{
+  "sdk": 33,
+  "boot_jars": [
+    {
+      "path": "/apex/com.android.art/javalib/core-oj.jar",
+      "classpath": 1,
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.art/javalib/core-oj.jar",
+      "sha256": "5d3d6cd751b2cf7e011e7ddf22c1faf876375103b899180d5f4e73263151c1d4",
+      "bytes": 5290635,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 3842,
+      "defines_tethering_manager": false
+    },
+    {
+      "path": "/apex/com.android.art/javalib/core-libart.jar",
+      "classpath": 1,
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.art/javalib/core-libart.jar",
+      "sha256": "77f6189f5b86d6325def87dd3c236a27759c930645a844eca05a31ba34430ed1",
+      "bytes": 563021,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 449,
+      "defines_tethering_manager": false
+    },
+    {
+      "path": "/apex/com.android.art/javalib/okhttp.jar",
+      "classpath": 1,
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.art/javalib/okhttp.jar",
+      "sha256": "5fabb92532a3dca846a9c6efa555bb8fffb2159929ed3e737a6b10b0526e257d",
+      "bytes": 406869,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 241,
+      "defines_tethering_manager": false
+    },
+    {
+      "path": "/apex/com.android.art/javalib/bouncycastle.jar",
+      "classpath": 1,
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.art/javalib/bouncycastle.jar",
+      "sha256": "d0ef8e3ae3e23dd2967477b82dcd65e5b3662d977eaa1c00b43b9b65afd1a8f1",
+      "bytes": 1477845,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 1186,
+      "defines_tethering_manager": false
+    },
+    {
+      "path": "/apex/com.android.art/javalib/apache-xml.jar",
+      "classpath": 1,
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.art/javalib/apache-xml.jar",
+      "sha256": "f079846c14ef74ef3a99ae315f5cb43eba8f49974b5d4678ad8ef96b9800242b",
+      "bytes": 1230332,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 679,
+      "defines_tethering_manager": false
+    },
+    {
+      "path": "/system/framework/framework.jar",
+      "classpath": 1,
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/system/framework/framework.jar",
+      "sha256": "6d701925c55340ff26d9919d5a677f86d312d7838f037465196112d903be5304",
+      "bytes": 37219910,
+      "dex": [
+        "classes.dex",
+        "classes2.dex",
+        "classes3.dex",
+        "classes4.dex"
+      ],
+      "defined_types": 26800,
+      "defines_tethering_manager": false
+    },
+    {
+      "path": "/system/framework/framework-graphics.jar",
+      "classpath": 1,
+      "min_sdk_version": "33",
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/system/framework/framework-graphics.jar",
+      "sha256": "668650cd1a6cd4d7e4137db0aa2cb97fb8fc192b58461cbc208746aef9f38017",
+      "bytes": 3817,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 1,
+      "defines_tethering_manager": false
+    },
+    {
+      "path": "/system/framework/ext.jar",
+      "classpath": 1,
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/system/framework/ext.jar",
+      "sha256": "f094994ab12b66a767a95710ba008d9510bbc520b22c7b7107dda4bfc040a274",
+      "bytes": 2338493,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 91,
+      "defines_tethering_manager": false
+    },
+    {
+      "path": "/system/framework/telephony-common.jar",
+      "classpath": 1,
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/system/framework/telephony-common.jar",
+      "sha256": "5679d2efa6e8a2ee7859122bbfe01087e39989084aabbe6d631d6385dec9213c",
+      "bytes": 3990876,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 2051,
+      "defines_tethering_manager": false
+    },
+    {
+      "path": "/system/framework/voip-common.jar",
+      "classpath": 1,
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/system/framework/voip-common.jar",
+      "sha256": "7f507fc9459f0869521fe6a10f68cb8ac2512fef56c103ffd64a5846e9c75df7",
+      "bytes": 823617,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 600,
+      "defines_tethering_manager": false
+    },
+    {
+      "path": "/system/framework/ims-common.jar",
+      "classpath": 1,
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/system/framework/ims-common.jar",
+      "sha256": "c98f3d0065d41b1ee43a44dd9f16a1ca2cd6d46431e751f6eafaf97f21ccbb80",
+      "bytes": 591357,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 384,
+      "defines_tethering_manager": false
+    },
+    {
+      "path": "/apex/com.android.i18n/javalib/core-icu4j.jar",
+      "classpath": 1,
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.i18n/javalib/core-icu4j.jar",
+      "sha256": "76a960b03a8f33e20d92465f5dffc8d9649afcf5844f91b00edf0cdfc8d55834",
+      "bytes": 2851772,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 1747,
+      "defines_tethering_manager": false
+    },
+    {
+      "path": "/apex/com.android.adservices/javalib/framework-adservices.jar",
+      "classpath": 1,
+      "min_sdk_version": "33",
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.adservices/javalib/framework-adservices.jar",
+      "sha256": "9bc1aa529318b5bc9b665ea3e63a5c1f7f6f3a0a4e4163cd1cc5e6ec0637728b",
+      "bytes": 26233,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 40,
+      "defines_tethering_manager": false
+    },
+    {
+      "path": "/apex/com.android.adservices/javalib/framework-sdksandbox.jar",
+      "classpath": 1,
+      "min_sdk_version": "33",
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.adservices/javalib/framework-sdksandbox.jar",
+      "sha256": "fb333dbb0922806d894bcd684d0faa6e11eaca14c2acfc321a3c5586b18b6bfb",
+      "bytes": 12261,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 15,
+      "defines_tethering_manager": false
+    },
+    {
+      "path": "/apex/com.android.appsearch/javalib/framework-appsearch.jar",
+      "classpath": 1,
+      "min_sdk_version": "33",
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.appsearch/javalib/framework-appsearch.jar",
+      "sha256": "212ab1449fee05db8ecfb9d606f1c26818c136939033f9a3e7189ea06be26792",
+      "bytes": 141953,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 139,
+      "defines_tethering_manager": false
+    },
+    {
+      "path": "/apex/com.android.btservices/javalib/framework-bluetooth.jar",
+      "classpath": 1,
+      "min_sdk_version": "33",
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.btservices/javalib/framework-bluetooth.jar",
+      "sha256": "a13b0306de161f5078f4c43f6b85e7da820d2bfd024accd3821ab98761c9f095",
+      "bytes": 960617,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 705,
+      "defines_tethering_manager": false
+    },
+    {
+      "path": "/apex/com.android.conscrypt/javalib/conscrypt.jar",
+      "classpath": 1,
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.conscrypt/javalib/conscrypt.jar",
+      "sha256": "fc7fcd77c30436d5fc2e91921a2e36158c54d1ecf93b83c9bf7bcf01e12a4fe3",
+      "bytes": 464421,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 346,
+      "defines_tethering_manager": false
+    },
+    {
+      "path": "/apex/com.android.ipsec/javalib/android.net.ipsec.ike.jar",
+      "classpath": 1,
+      "min_sdk_version": "30",
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.ipsec/javalib/android.net.ipsec.ike.jar",
+      "sha256": "4088ffa9ac03b4880373ac3e37d9b587254da94ee58d809b959f7b81630b71a3",
+      "bytes": 680641,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 645,
+      "defines_tethering_manager": false
+    },
+    {
+      "path": "/apex/com.android.media/javalib/updatable-media.jar",
+      "classpath": 1,
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.media/javalib/updatable-media.jar",
+      "sha256": "3e0a5dc6a03c10c0f76851e88e9c3e3779684d0db38c2f9516c10921ec884e3c",
+      "bytes": 494793,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 446,
+      "defines_tethering_manager": false
+    },
+    {
+      "path": "/apex/com.android.mediaprovider/javalib/framework-mediaprovider.jar",
+      "classpath": 1,
+      "min_sdk_version": "30",
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.mediaprovider/javalib/framework-mediaprovider.jar",
+      "sha256": "4b066227e093e20a68dc4a4c8f52a85f2adc268c17b567da09f2b4d3574c09e4",
+      "bytes": 75605,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 61,
+      "defines_tethering_manager": false
+    },
+    {
+      "path": "/apex/com.android.ondevicepersonalization/javalib/framework-ondevicepersonalization.jar",
+      "classpath": 1,
+      "min_sdk_version": "33",
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.ondevicepersonalization/javalib/framework-ondevicepersonalization.jar",
+      "sha256": "e38608e45fec2b21180b52a14bfa515eadfdfda575dbc4c3e6125bf9a29c5607",
+      "bytes": 9445,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 12,
+      "defines_tethering_manager": false
+    },
+    {
+      "path": "/apex/com.android.os.statsd/javalib/framework-statsd.jar",
+      "classpath": 1,
+      "min_sdk_version": "30",
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.os.statsd/javalib/framework-statsd.jar",
+      "sha256": "4de740626d660a31816fd132b8461ddff0b6b7374781253932c128965f178d89",
+      "bytes": 75241,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 49,
+      "defines_tethering_manager": false
+    },
+    {
+      "path": "/apex/com.android.permission/javalib/framework-permission.jar",
+      "classpath": 1,
+      "min_sdk_version": "30",
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.permission/javalib/framework-permission.jar",
+      "sha256": "959677769ee8424a993215f2abfaef4c413809020896bc29f2d9da95309a8e6a",
+      "bytes": 897,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 1,
+      "defines_tethering_manager": false
+    },
+    {
+      "path": "/apex/com.android.permission/javalib/framework-permission-s.jar",
+      "classpath": 1,
+      "min_sdk_version": "30",
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.permission/javalib/framework-permission-s.jar",
+      "sha256": "baf8b4054f3fe1df9005ba0377bb988e7a941cfe947213b8d35518b2979ad6cb",
+      "bytes": 177609,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 173,
+      "defines_tethering_manager": false
+    },
+    {
+      "path": "/apex/com.android.scheduling/javalib/framework-scheduling.jar",
+      "classpath": 1,
+      "min_sdk_version": "31",
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.scheduling/javalib/framework-scheduling.jar",
+      "sha256": "08e92b67420cb66cabe3911f477e3ec28fea429ccbe53476cc48789d155d2b7d",
+      "bytes": 12569,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 15,
+      "defines_tethering_manager": false
+    },
+    {
+      "path": "/apex/com.android.sdkext/javalib/framework-sdkextensions.jar",
+      "classpath": 1,
+      "min_sdk_version": "30",
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.sdkext/javalib/framework-sdkextensions.jar",
+      "sha256": "ea04d8122b34ca07f46ff67fa87d5de26188cebfc97c5d172b4854f4c4e18b7e",
+      "bytes": 6349,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 4,
+      "defines_tethering_manager": false
+    },
+    {
+      "path": "/apex/com.android.tethering/javalib/framework-connectivity.jar",
+      "classpath": 1,
+      "min_sdk_version": "30",
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.tethering/javalib/framework-connectivity.jar",
+      "sha256": "4069b73a05526e5b79e6b31667f8fe810da6f6ac1da0aaf535b53791f74823b0",
+      "bytes": 497679,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 406,
+      "defines_tethering_manager": false
+    },
+    {
+      "path": "/apex/com.android.tethering/javalib/framework-connectivity-t.jar",
+      "classpath": 1,
+      "min_sdk_version": "33",
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.tethering/javalib/framework-connectivity-t.jar",
+      "sha256": "8a45b1135ed9c7de9cfed4ad30cc65e2629ba6c231ab001f058ea35e1b44760f",
+      "bytes": 380667,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 392,
+      "defines_tethering_manager": false
+    },
+    {
+      "path": "/apex/com.android.tethering/javalib/framework-tethering.jar",
+      "classpath": 1,
+      "min_sdk_version": "30",
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.tethering/javalib/framework-tethering.jar",
+      "sha256": "5cd6351703e27ee3d0db8018677b55b237a584f9a7c0a9dd8b64a5956e7b74af",
+      "bytes": 65313,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 81,
+      "defines_tethering_manager": true
+    },
+    {
+      "path": "/apex/com.android.uwb/javalib/framework-uwb.jar",
+      "classpath": 1,
+      "min_sdk_version": "33",
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.uwb/javalib/framework-uwb.jar",
+      "sha256": "088f934ac86d09774b4956aa3d33080a7a62ccf344029892e5d04ee7bb7affb3",
+      "bytes": 100913,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 103,
+      "defines_tethering_manager": false
+    },
+    {
+      "path": "/apex/com.android.wifi/javalib/framework-wifi.jar",
+      "classpath": 1,
+      "min_sdk_version": "30",
+      "local_path": "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.wifi/javalib/framework-wifi.jar",
+      "sha256": "7e1aa1e0b05c220b74dbcfd4d684f889e3e5bde0aea5c5973407583a37e95fab",
+      "bytes": 1002337,
+      "dex": [
+        "classes.dex"
+      ],
+      "defined_types": 781,
+      "defines_tethering_manager": false
+    }
+  ],
+  "excluded_sdk_bounds": [],
+  "fragments": {
+    "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.art/etc/classpaths/bootclasspath.pb": "a18712f5be9a8d29a1a1a8b5914abcf672b83923025c50af891fdfbe3f439bf9",
+    "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/system/classpaths/bootclasspath.pb": "e7fe9f7d313f4e2859d0a365e1ea22542517a41aa5a9e0e6706c563e3b79f18f",
+    "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.adservices/etc/classpaths/bootclasspath.pb": "53616e7e57da3d8168013a87e8c678f2f01270c7f94b1d24194378e9a28344aa",
+    "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.appsearch/etc/classpaths/bootclasspath.pb": "efcb96fe921e18008f46995c3af1bfbea0fdd6ea22a4a09efb2ec9127df1e360",
+    "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.btservices/etc/classpaths/bootclasspath.pb": "bd92ad70158b5bfc295dcbdcaa18e1619363072f7ab0763e516d081ca922ab77",
+    "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.conscrypt/etc/classpaths/bootclasspath.pb": "f6c16d2dd91452d2a8c148546c7fb796274d4e794f751d86694b561ef443efc0",
+    "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.ipsec/etc/classpaths/bootclasspath.pb": "9e4cd4039a7586d2a723c9489d52d82e9ddc2c7979fc5bcf8f69ae8af4e84d23",
+    "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.media/etc/classpaths/bootclasspath.pb": "f4fbee71fce7eb12a22164c7ee02a1f5aab6b41b249e32b37bc4dc6265c5fc6c",
+    "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.mediaprovider/etc/classpaths/bootclasspath.pb": "e29daec43e038656a10890a9023c0501f62e5067ec8ca16fa8858529209828b2",
+    "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.ondevicepersonalization/etc/classpaths/bootclasspath.pb": "c2710b7cba9745ad894822937e0ed651b92121bd3eb4171dbb372ea0dd88f71f",
+    "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.os.statsd/etc/classpaths/bootclasspath.pb": "1429938d3f67c92765e8e8ee6e2e43866d27d2564fc9735d8daa8a83ea6b87d6",
+    "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.permission/etc/classpaths/bootclasspath.pb": "bcc012861415274858a8b7b07f80dd144c0c28f57127043ef08b28265a1e09f7",
+    "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.scheduling/etc/classpaths/bootclasspath.pb": "0c0af8dadf37e87822015e68594916d0956bf6d90c72b70318605b880dba5064",
+    "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.sdkext/etc/classpaths/bootclasspath.pb": "68cce823a18fbfc2d81a8b7c98a874f1bfd4bc9414981260986d280bc6afa924",
+    "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.tethering/etc/classpaths/bootclasspath.pb": "5147574d2d632c7666cf4f2de5d74c91f90b9a56acbd1c43cac6a242ca3c4b5a",
+    "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.uwb/etc/classpaths/bootclasspath.pb": "94e491901b58a686b198f7e1a603803158f01f60f10ee76687a0fc7b96e99642",
+    "/home/tv/.cache/archtv/aosp-platform-33/verified-modules-1/modules/com.android.wifi/etc/classpaths/bootclasspath.pb": "b35a407b1d8c0b0ff04c709d58431175eaec8943cc78090ac7792b4811dda7ca"
+  },
+  "scope": "Original metadata ordering ART/system/sorted APEX; BOOTCLASSPATH only, numeric API bounds. DEX identities are static evidence, not runtime or member compatibility. Unknown schema/codename/path fails explicitly."
+}
