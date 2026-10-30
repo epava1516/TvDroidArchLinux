@@ -122,3 +122,7 @@ La verificación del descargador también acepta un archivo válido y rechaza un
 archivo extraído modificado, un archivo comprimido en caché que excede el
 presupuesto y un presupuesto de manifiesto fuera del límite permitido. La
 verificación del manifiesto androidfw predeterminado continúa pasando.
+
+La siguiente fase de construcción Skia, sus dependencias y la compatibilidad
+con Clang 23 se registran en [AOSP-SKIA-HOST.md](AOSP-SKIA-HOST.md). La prueba
+numérica F16C pasa; el enlace y la ejecución de HWUI aún están pendientes.

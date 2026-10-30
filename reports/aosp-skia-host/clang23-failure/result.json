@@ -1,0 +1,23 @@
+{
+  "build_pass": false,
+  "exit_code": 1,
+  "scope": "Original Linux CPU Skia static libraries; HWUI/ART execution and GPU presentation unverified",
+  "configuration": {
+    "sources": "/home/tv/.cache/archtv/hwui-port",
+    "androidfw_sources": "/home/tv/.cache/archtv/androidfw-port",
+    "manifests": {
+      "hwui": "f2b9eb8f9167abbdca8b6cb5b5f0e8e8173dab04cb14cb8d364912c1fb61d565",
+      "androidfw": "629776b58a6f922f82cd853069bcb50ce78c11936cd912d83a74ed37fd215947",
+      "skia-extra": "96184ce2dd041fae9e17066aba912ca91256824eb206831b1bee2e667eb3e779"
+    },
+    "gn_sha256": "49999586fe533198ba872196586b66eae5bd81ab13e6c8943ea630efe2bc7051",
+    "args_gn": "cc = \"clang\"\ncxx = \"clang++\"\nextra_cflags = [\"-fPIC\", \"-O1\", \"-I/home/tv/.cache/archtv/hwui-port/skia/linux\", \"-I/home/tv/.cache/archtv/hwui-port/skia/include/config\", \"-I/home/tv/.cache/archtv/androidfw-port/androidfw/include\", \"-I/home/tv/.cache/archtv/androidfw-port/utils/include\", \"-I/home/tv/.cache/archtv/androidfw-port/cutils/include\", \"-I/home/tv/.cache/archtv/androidfw-port/base/include\", \"-I/home/tv/.cache/archtv/androidfw-port/log/include\", \"-I/home/tv/.cache/archtv/androidfw-port/ziparchive/include\", \"-I/home/tv/.cache/archtv/androidfw-port/ziparchive/incfs_support/include\", \"-I/home/tv/.cache/archtv/androidfw-port/incfs/util/include\", \"-I/home/tv/.cache/archtv/androidfw-port/fmt/include\", \"-I/home/tv/.cache/archtv/androidfw-port/system/include\", \"-I/home/tv/.cache/archtv/androidfw-port/processgroup\", \"-I/home/tv/.cache/archtv/androidfw-port/gtest\", \"-I/home/tv/.cache/archtv/androidfw-port/ndk\", \"-I/home/tv/.cache/archtv/androidfw-port/binder-headers\", \"-I/home/tv/.cache/archtv/androidfw-port/backtrace-headers\"]\nextra_cflags_cc = [\"-nostdinc++\", \"-isystem\", \"/home/tv/.cache/archtv/androidfw-port/libcxx\"]\nis_official_build = true\nskia_enable_android_utils = true\nskia_enable_fontmgr_android = false\nskia_enable_fontmgr_custom_directory = false\nskia_enable_fontmgr_custom_embedded = false\nskia_enable_fontmgr_custom_empty = true\nskia_enable_fontmgr_win = false\nskia_enable_fontmgr_win_gdi = false\nskia_enable_gpu = false\nskia_include_multiframe_procs = false\nskia_tools_require_resources = true\nskia_use_fixed_gamma_text = true\nskia_use_fontconfig = false\nskia_use_fonthost_mac = false\nskia_use_freetype = true\nskia_use_libheif = false\nskia_use_vulkan = false\nskia_use_wuffs = true\ntarget_cpu = \"x64\"\ntarget_os = \"linux\"\n",
+    "compiler": "clang version 23.1.4\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /usr/bin\n",
+    "ninja": "1.13.2",
+    "system_packages": "ninja 1.13.2-3\npkgconf 3.0.10-1\nlibwebp 1.6.0-2\nlibjpeg-turbo 3.2.0-2\nlibpng 1.6.59-1\nfreetype2 2.15.0-1\nexpat 2.9.0-1\nzlib 1:1.3.2-4\nharfbuzz 15.0.0-1\nicu 78.3-1\n",
+    "package_query_stderr": "error: package 'harfbuzz-icu' was not found\n"
+  },
+  "script_sha256": "c6a16200109b99ca827502ae90e28e7cef3c1f34cb241a67fd3938849654f8b6",
+  "archives": {},
+  "build_log_sha256": "30671377ef6e513fe61de6a87b9737b6549880b4bb0daba345df85a6351e1b15"
+}

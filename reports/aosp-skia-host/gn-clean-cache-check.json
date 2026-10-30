@@ -1,0 +1,5 @@
+{
+  "clean_cache_fetch_pass": true,
+  "gn_sha256": "49999586fe533198ba872196586b66eae5bd81ab13e6c8943ea630efe2bc7051",
+  "scope": "New-cache download via fetch_skia_gn.py; ZIP and binary matched pinned hashes"
+}

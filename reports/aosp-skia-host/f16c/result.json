@@ -1,0 +1,18 @@
+{
+  "all_binary16_patterns_pass": true,
+  "exit_code": 0,
+  "scope": "AVX2/F16C conversion compared bitwise with a scalar IEEE binary16 reference; no Skia/HWUI runtime claim",
+  "command": [
+    "clang++",
+    "-std=c++17",
+    "-O1",
+    "/home/tv/repositorio-principal/runtime/aosp/native/skcms-clang-compat-probe.cpp",
+    "-o",
+    "/home/tv/repositorio-principal/dist/apk/skcms-compat-verified-1/probe"
+  ],
+  "compiler": "clang version 23.1.4\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /usr/bin\n",
+  "source_sha256": "66d9d2a71a0ad3c9913b10e4b041af9193fa422e9a714bc4eb43689a83e991fa",
+  "header_sha256": "f1da36ea2bc60511acc5ac9062c3b1117a63c1ce5c2adf1f77262bf0e80a8f4a",
+  "verifier_sha256": "1988547a6c1797aba5183a427ab5519a69ba0b63b4ddf877d4d940d1a15c0fa3",
+  "executable_sha256": "bee4944a0863718461cd69d743aec55dfb817739d821d8c7127f146f2276c7df"
+}
