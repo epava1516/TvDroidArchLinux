@@ -1,0 +1,4 @@
+Valid archive accepted
+Modified extracted source rejected
+Oversized cached archive rejected
+Excessive manifest budget rejected

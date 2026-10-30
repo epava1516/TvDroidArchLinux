@@ -1,0 +1,32 @@
+{
+  "exit_code": 1,
+  "command": [
+    "clang++",
+    "-shared",
+    "-nostdlib++",
+    "-Wl,--no-undefined",
+    "-L/home/tv/.cache/archtv/art-host/host/art-13.0.0/lib64",
+    "-Wl,-rpath,/home/tv/.cache/archtv/art-host/host/art-13.0.0/lib64",
+    "-o",
+    "/home/tv/repositorio-principal/dist/apk/hwui-object-final-1/libhwui-unresolved.so",
+    "/home/tv/repositorio-principal/dist/apk/hwui-object-final-1/0.o",
+    "/home/tv/repositorio-principal/dist/apk/hwui-object-final-1/1.o",
+    "/home/tv/repositorio-principal/dist/apk/hwui-object-final-1/2.o",
+    "/home/tv/repositorio-principal/dist/apk/hwui-object-final-1/3.o",
+    "/home/tv/repositorio-principal/dist/apk/hwui-object-final-1/4.o",
+    "/home/tv/repositorio-principal/dist/apk/hwui-object-final-1/5.o",
+    "/home/tv/repositorio-principal/dist/apk/hwui-object-final-1/6.o",
+    "/home/tv/repositorio-principal/dist/apk/hwui-object-final-1/7.o",
+    "/home/tv/repositorio-principal/dist/apk/hwui-object-final-1/8.o",
+    "/home/tv/repositorio-principal/dist/apk/hwui-object-final-1/9.o",
+    "/home/tv/repositorio-principal/dist/apk/hwui-object-final-1/10.o",
+    "/home/tv/repositorio-principal/dist/apk/hwui-object-final-1/11.o",
+    "/home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o",
+    "/home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o",
+    "-lc++",
+    "-ldl",
+    "-lpthread"
+  ],
+  "scope": "Diagnostic link of 14 HWUI units without remaining HWUI/Skia libraries; failure expected, runtime not linked",
+  "stderr_sha256": "ec615cfc159dc4862841fd0c9cbbb50b36ac6c18da7a8e795e0c46466f06084e"
+}

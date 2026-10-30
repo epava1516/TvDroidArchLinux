@@ -1,0 +1,41 @@
+                 U _Unwind_Resume
+                 U android::uirenderer::RenderNode::damageSelf(android::uirenderer::TreeInfo&)
+                 U android::uirenderer::RenderNode::removeAnimator(android::sp<android::uirenderer::BaseRenderNodeAnimator> const&)
+                 U android::uirenderer::AnimationHandle::notifyAnimationsRan()
+                 U android::uirenderer::AnimationHandle::release()
+                 U android::uirenderer::RenderProperties::updateMatrix()
+                 U android::uirenderer::DamageAccumulator::popTransform()
+                 U android::uirenderer::DamageAccumulator::pushTransform(android::uirenderer::RenderNode const*)
+                 U android::uirenderer::BaseRenderNodeAnimator::forceEndNow(android::uirenderer::AnimationContext&)
+                 U android::uirenderer::BaseRenderNodeAnimator::pushStaging(android::uirenderer::AnimationContext&)
+                 U android::uirenderer::BaseRenderNodeAnimator::attach(android::uirenderer::RenderNode*)
+                 U android::uirenderer::BaseRenderNodeAnimator::cancel()
+                 U android::uirenderer::BaseRenderNodeAnimator::animate(android::uirenderer::AnimationContext&)
+                 U android::sp_report_race()
+                 U android::sp_report_stack_pointer()
+                 U std::runtime_error::what() const
+                 U std::__1::__vector_base_common<true>::__throw_length_error() const
+                 U std::logic_error::logic_error(char const*)
+                 U std::length_error::~length_error()
+                 U std::runtime_error::~runtime_error()
+                 U std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::~basic_string()
+                 U std::terminate()
+                 U typeinfo for std::length_error
+                 U typeinfo for std::runtime_error
+                 U vtable for __cxxabiv1::__si_class_type_info
+                 U vtable for std::length_error
+                 U operator delete(void*, unsigned long)
+                 U operator delete(void*, unsigned long, std::align_val_t)
+                 U operator new(unsigned long)
+                 U operator new(unsigned long, std::align_val_t)
+                 U __android_log_assert
+                 U __android_log_print
+                 U __cxa_allocate_exception
+                 U __cxa_atexit
+                 U __cxa_begin_catch
+                 U __cxa_free_exception
+                 U __cxa_throw
+                 U __dso_handle
+                 U __gxx_personality_v0
+                 U __stack_chk_fail
+                 U memset

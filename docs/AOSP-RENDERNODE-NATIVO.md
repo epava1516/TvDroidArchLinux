@@ -59,3 +59,66 @@ con el productor de superficies Wayland del proyecto.
 No se acredita aún ninguna de estas cinco comprobaciones como superada. La
 política de animación Java ya probada tampoco acredita un reloj de frames ni
 animaciones renderizadas.
+
+## Construcción de objetos host
+
+`runtime/aosp/hwui-sources.json` fija archivos originales de HWUI, Skia,
+Layoutlib, cabeceras ui/gui/Vulkan, libnativehelper, Minikin y HarfBuzz. Son
+revisiones correspondientes a android-13.0.0_r3. Incluye árboles completos para
+estudio; no implica que todos sus archivos se compilen ni que el cierre de
+dependencias del runtime esté completo. Las fuentes permanecen fuera de Git.
+
+El descargador de fuentes nativas admite ahora un manifiesto explícito, conserva
+la verificación por archivo y limita descarga/extracción con presupuestos
+acotados. El comportamiento predeterminado de androidfw se conserva:
+
+```sh
+python tools/apk/fetch_androidfw_sources.py \
+  /home/tv/.cache/archtv/hwui-port \
+  --manifest runtime/aosp/hwui-sources.json
+
+python tools/apk/probe_hwui_host.py \
+  --sources /home/tv/.cache/archtv/hwui-port \
+  --androidfw-sources /home/tv/.cache/archtv/androidfw-port \
+  --output dist/apk/hwui-object-check
+```
+
+La segunda orden compila RenderNode.cpp y su JNI por defecto. `--unit` permite
+seleccionar otras unidades originales del manifiesto. Comprueba todos los
+archivos fijados antes de compilar, utiliza C++20 y las cabeceras libc++ ya
+empleadas por el port de recursos, y registra comandos, hashes de objetos,
+diagnósticos y símbolos sin resolver. Necesita Clang y `nm` del anfitrión.
+No enlaza ni carga una biblioteca: `linked` y `executed` permanecen en false.
+
+La cabecera JNI tiene que ser la original de libnativehelper: la de OpenJDK no
+declara `C_JNIEnv`, requerido por JNIPlatformHelp. Skia usa su configuración
+`linux/include/config/SkUserConfig.h`; no se copia ni inventa una configuración.
+
+Otra frontera previa a ejecutar en ART está en graphics_jni_helpers.h: sus
+macros CRITICAL_JNI_PARAMS incluyen JNIEnv/jclass en host y los omiten en la
+variante Android. El framework Java original contiene métodos CriticalNative.
+El futuro enlace debe resolver esa convención de llamada explícitamente antes
+de registrar estos métodos; compilar el JNI host no acredita su ABI en ART.
+
+### Resultado de la primera compilación
+
+`reports/aosp-hwui-host-objects/result.json` registra compilación correcta de 14
+unidades originales: RenderNode, su JNI, RenderProperties, AnimatorManager,
+Matrix, CanvasTransform, DamageAccumulator, Animator, Interpolator,
+SkiaInterpolator, AnimationContext, LinearAllocator, SkiaDisplayList y
+RenderNodeDrawable. No se modificaron sus fuentes. Se comprobaron los 11 374
+archivos del manifiesto gráfico y los archivos del manifiesto androidfw antes
+de compilar. Se conservan las advertencias originales del compilador.
+
+Los objetos y sus hashes quedan en `dist/apk/hwui-object-final-1`; los comandos,
+diagnósticos y listas `nm` de símbolos sin resolver se conservan en el informe.
+Un enlace diagnóstico deliberadamente sin las bibliotecas restantes falla:
+incluye símbolos de Skia, libutils, liblog y otras unidades HWUI. Ese fallo no
+es una prueba del enlace completo ni una incompatibilidad demostrada de esas
+bibliotecas; identifica dependencias que aún hay que construir e incorporar.
+No se carga ningún objeto de esta prueba en el runtime APK de producción.
+
+La verificación del descargador también acepta un archivo válido y rechaza un
+archivo extraído modificado, un archivo comprimido en caché que excede el
+presupuesto y un presupuesto de manifiesto fuera del límite permitido. La
+verificación del manifiesto androidfw predeterminado continúa pasando.

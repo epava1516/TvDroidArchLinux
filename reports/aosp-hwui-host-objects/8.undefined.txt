@@ -1,0 +1,17 @@
+                 U _Unwind_Resume
+                 U std::terminate()
+                 U vtable for __cxxabiv1::__class_type_info
+                 U vtable for __cxxabiv1::__si_class_type_info
+                 U operator delete[](void*)
+                 U operator delete(void*, unsigned long)
+                 U operator delete(void*, unsigned long, std::align_val_t)
+                 U operator new(unsigned long)
+                 U __android_log_assert
+                 U __cxa_begin_catch
+                 U __cxa_pure_virtual
+                 U __gxx_personality_v0
+                 U __stack_chk_fail
+                 U cosf
+                 U modff
+                 U powf
+                 U sinf

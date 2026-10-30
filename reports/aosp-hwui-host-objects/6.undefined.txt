@@ -1,0 +1,34 @@
+                 U _Unwind_Resume
+                 U SkRect::join(SkRect const&)
+                 U SkRect::intersect(SkRect const&)
+                 U android::uirenderer::Properties::stretchEffectBehavior
+                 U android::uirenderer::LinearAllocator::allocImpl(unsigned long)
+                 U android::uirenderer::LinearAllocator::LinearAllocator()
+                 U android::uirenderer::LinearAllocator::~LinearAllocator()
+                 U android::uirenderer::Matrix4::loadIdentity()
+                 U android::uirenderer::Matrix4::loadMultiply(android::uirenderer::Matrix4 const&, android::uirenderer::Matrix4 const&)
+                 U SkMatrix::setScale(float, float, float, float)
+                 U android::uirenderer::RenderNode::applyViewPropertyTransforms(android::uirenderer::Matrix4&, bool) const
+                 U android::uirenderer::Matrix4::isIdentity() const
+                 U android::uirenderer::Matrix4::isPerspective() const
+                 U android::uirenderer::Matrix4::mapRect(android::uirenderer::Rect&) const
+                 U SkMatrix::computeTypeMask() const
+                 U SkMatrix::computePerspectiveTypeMask() const
+                 U SkMatrix::mapRect(SkRect*, SkRect const&, SkApplyPerspectiveClip) const
+                 U std::runtime_error::what() const
+                 U std::runtime_error::~runtime_error()
+                 U std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::~basic_string()
+                 U std::terminate()
+                 U typeinfo for std::runtime_error
+                 U vtable for __cxxabiv1::__si_class_type_info
+                 U operator delete(void*, unsigned long)
+                 U __android_log_assert
+                 U __cxa_atexit
+                 U __cxa_begin_catch
+                 U __dso_handle
+                 U __gxx_personality_v0
+                 U __stack_chk_fail
+                 U ceilf
+                 U floorf
+                 U memcpy
+                 U memset

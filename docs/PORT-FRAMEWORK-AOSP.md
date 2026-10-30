@@ -194,4 +194,11 @@ pendientes.
 El estudio fijado de cuatro fuentes HWUI identifica la variante original host de
 libhwui como siguiente base de construcción. AOSP-RENDERNODE-NATIVO.md detalla
 ownership, dependencias Skia/Minikin y la separación entre crear RenderNode y
-presentar píxeles. No hay todavía compilación ni ejecución gráfica nativa nueva.
+presentar píxeles. Ese primer estudio aún no incluía compilación ni ejecución
+gráfica nativa nueva.
+
+La prueba posterior ya compila 14 unidades nativas HWUI originales, incluido el
+JNI RenderNode, con cabeceras Skia/Linux fijadas y sin modificar sus fuentes.
+Los informes aosp-hwui-host-objects conservan comandos, hashes y símbolos sin
+resolver. El enlace completo, la convención CriticalNative host/ART y la
+ejecución de RenderNode permanecen pendientes; no se acredita dibujo original.

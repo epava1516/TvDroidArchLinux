@@ -225,3 +225,9 @@ funcional. AOSP-ANIMACION-CONTEXTO.md y reports/aosp-animation-context/ conserva
 las pruebas Wayland, el rechazo de display en modo headless y las regresiones.
 El reloj de animación, gráficos nativos, integración APK y distribución siguen
 pendientes.
+
+El primer paso nativo HWUI compila 14 unidades originales, incluido RenderNode
+y su JNI, usando fuentes Skia y dependencias host fijadas por archivo. Ver
+AOSP-RENDERNODE-NATIVO.md y reports/aosp-hwui-host-objects/. Faltan el enlace de
+las bibliotecas, resolver la ABI CriticalNative en ART, ejecutar y presentar
+gráficos originales; A3 no se considera terminado por esta compilación.

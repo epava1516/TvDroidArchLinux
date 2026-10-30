@@ -1,0 +1,68 @@
+                 U _Unwind_Resume
+                 U SkRuntimeShaderBuilder::~SkRuntimeShaderBuilder()
+                 U SkPath::addRoundRect(SkRect const&, float, float, SkPathDirection)
+                 U SkPath::reset()
+                 U SkPath::rewind()
+                 U SkPath::addRect(SkRect const&, SkPathDirection, unsigned int)
+                 U SkPath::addCircle(float, float, float, SkPathDirection)
+                 U SkPath::operator=(SkPath const&)
+                 U SkRect::setBoundsCheck(SkPoint const*, int)
+                 U android::uirenderer::Properties::stretchEffectBehavior
+                 U android::uirenderer::RenderNode::addAnimator(android::sp<android::uirenderer::BaseRenderNodeAnimator> const&)
+                 U android::uirenderer::RenderNode::getUsageSize()
+                 U android::uirenderer::RenderNode::getAllocatedSize()
+                 U android::uirenderer::RenderNode::discardStagingDisplayList()
+                 U android::uirenderer::RenderNode::output()
+                 U android::uirenderer::RenderNode::RenderNode()
+                 U android::uirenderer::AnimatorManager::forceEndAnimators()
+                 U android::uirenderer::AnimatorManager::endAllStagingAnimators()
+                 U android::uirenderer::LayerProperties::setFromPaint(SkPaint const*)
+                 U android::uirenderer::LayerProperties::setImageFilter(SkImageFilter*)
+                 U android::uirenderer::LayerProperties::reset()
+                 U android::uirenderer::RenderProperties::updateMatrix()
+                 U android::uirenderer::Matrix4::loadIdentity()
+                 U android::sp_report_race()
+                 U android::sp_report_stack_pointer()
+                 U android::String8::setTo(char const*)
+                 U Sk3DView::setCameraLocation(float, float, float)
+                 U SkMatrix::reset()
+                 U SkPath::countVerbs() const
+                 U android::uirenderer::StretchEffect::computeStretchedPositionX(float) const
+                 U android::uirenderer::StretchEffect::computeStretchedPositionY(float) const
+                 U android::uirenderer::DamageAccumulator::computeCurrentTransform(android::uirenderer::Matrix4*) const
+                 U android::uirenderer::DamageAccumulator::findNearestStretchEffect() const
+                 U android::uirenderer::Matrix4::isPureTranslate() const
+                 U android::uirenderer::Matrix4::mapRect(android::uirenderer::Rect&) const
+                 U Sk3DView::getCameraLocationZ() const
+                 U SkMatrix::computeTypeMask() const
+                 U SkMatrix::invertNonIdentity(SkMatrix*) const
+                 U std::runtime_error::what() const
+                 U std::runtime_error::~runtime_error()
+                 U std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::~basic_string()
+                 U std::terminate()
+                 U typeinfo for std::runtime_error
+                 U vtable for __cxxabiv1::__class_type_info
+                 U vtable for __cxxabiv1::__si_class_type_info
+                 U vtable for __cxxabiv1::__vmi_class_type_info
+                 U operator delete(void*, unsigned long)
+                 U operator new(unsigned long)
+                 U __android_log_assert
+                 U __android_log_print
+                 U __cxa_atexit
+                 U __cxa_begin_catch
+                 U __cxa_pure_virtual
+                 U __dso_handle
+                 U __gxx_personality_v0
+                 U __stack_chk_fail
+                 U atrace_begin_body
+                 U atrace_end_body
+                 U atrace_get_enabled_tags
+                 U ceilf
+                 U floorf
+                 U free
+                 U memcmp
+                 U memcpy
+                 U memset
+                 U realloc
+                 U strlen
+                 U strrchr

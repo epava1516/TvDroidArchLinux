@@ -9,9 +9,16 @@ import urllib.request
 
 parser = argparse.ArgumentParser()
 parser.add_argument('cache', type=Path)
+parser.add_argument('--manifest', type=Path, help='Pinned native subtree manifest; defaults to androidfw')
 args = parser.parse_args()
 root = Path(__file__).resolve().parents[2]
-manifest = json.loads((root/'runtime/aosp/androidfw-sources.json').read_text())
+manifest = json.loads((args.manifest or root/'runtime/aosp/androidfw-sources.json').read_text())
+archive_budget = manifest.get('archive_budget_bytes', 24*1024*1024)
+extraction_budget = manifest.get('extraction_budget_bytes', 100*1024*1024)
+member_budget = manifest.get('member_budget', 10000)
+if not (0 < archive_budget <= 256*1024*1024 and
+        0 < extraction_budget <= 512*1024*1024 and 0 < member_budget <= 50000):
+    raise SystemExit('Invalid native source manifest budgets')
 args.cache.mkdir(parents=True, exist_ok=True)
 for item in manifest['components']:
     archive = args.cache/(item['name']+'.tar.gz')
@@ -21,14 +28,16 @@ for item in manifest['components']:
             total = 0
             while block := response.read(1024*1024):
                 total += len(block)
-                if total > 24*1024*1024:
+                if total > archive_budget:
                     raise SystemExit('Source archive exceeds budget')
                 output.write(block)
         temporary.replace(archive)
+    if archive.stat().st_size > archive_budget:
+        raise SystemExit('Source archive exceeds budget')
     destination = args.cache/item['name']
     with tarfile.open(archive, 'r:gz') as bundle:
         members = bundle.getmembers()
-        if len(members) > 10000 or sum(entry.size for entry in members) > 100*1024*1024:
+        if len(members) > member_budget or sum(entry.size for entry in members) > extraction_budget:
             raise SystemExit('Source extraction budget exceeded')
         actual = {}
         normal = []

@@ -1,0 +1,56 @@
+                 U _Unwind_Resume
+                 U SkRuntimeShaderBuilder::~SkRuntimeShaderBuilder()
+                 U SkPath::SkPath()
+                 U SkPath::~SkPath()
+                 U SkPath::operator=(SkPath const&)
+                 U Sk3DView::setCameraLocation(float, float, float)
+                 U Sk3DView::save()
+                 U Sk3DView::restore()
+                 U Sk3DView::rotateX(float)
+                 U Sk3DView::rotateY(float)
+                 U Sk3DView::rotateZ(float)
+                 U Sk3DView::Sk3DView()
+                 U Sk3DView::~Sk3DView()
+                 U SkMatrix::postConcat(SkMatrix const&)
+                 U SkMatrix::preTranslate(float, float)
+                 U SkMatrix::setTranslate(float, float)
+                 U SkMatrix::postTranslate(float, float)
+                 U SkMatrix::reset()
+                 U SkMatrix::preScale(float, float, float, float)
+                 U SkMatrix::preRotate(float, float, float)
+                 U SkPaint::getBlendMode_or(SkBlendMode) const
+                 U Sk3DView::getCameraLocationZ() const
+                 U Sk3DView::getMatrix(SkMatrix*) const
+                 U SkMatrix::computeTypeMask() const
+                 U std::runtime_error::what() const
+                 U std::__1::locale::use_facet(std::__1::locale::id&) const
+                 U std::__1::ios_base::getloc() const
+                 U std::runtime_error::~runtime_error()
+                 U std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__init(unsigned long, char)
+                 U std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::~basic_string()
+                 U std::__1::basic_ostream<char, std::__1::char_traits<char> >::put(char)
+                 U std::__1::basic_ostream<char, std::__1::char_traits<char> >::flush()
+                 U std::__1::basic_ostream<char, std::__1::char_traits<char> >::sentry::sentry(std::__1::basic_ostream<char, std::__1::char_traits<char> >&)
+                 U std::__1::basic_ostream<char, std::__1::char_traits<char> >::sentry::~sentry()
+                 U std::__1::basic_ostream<char, std::__1::char_traits<char> >::operator<<(void const*)
+                 U std::__1::basic_ostream<char, std::__1::char_traits<char> >::operator<<(float)
+                 U std::__1::basic_ostream<char, std::__1::char_traits<char> >::operator<<(int)
+                 U std::__1::ctype<char>::id
+                 U std::__1::locale::~locale()
+                 U std::__1::ios_base::__set_badbit_and_consider_rethrow()
+                 U std::__1::ios_base::clear(unsigned int)
+                 U std::terminate()
+                 U typeinfo for std::runtime_error
+                 U vtable for __cxxabiv1::__class_type_info
+                 U vtable for __cxxabiv1::__si_class_type_info
+                 U operator delete(void*, unsigned long)
+                 U operator new(unsigned long)
+                 U __android_log_assert
+                 U __cxa_begin_catch
+                 U __cxa_end_catch
+                 U __gxx_personality_v0
+                 U __stack_chk_fail
+                 U floorf
+                 U memcpy
+                 U memset
+                 U strlen

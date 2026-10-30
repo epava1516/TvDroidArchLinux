@@ -1,0 +1,14 @@
+                 U _Unwind_Resume
+                 U SkMatrix::reset()
+                 U SkMatrix::computeTypeMask() const
+                 U __android_log_print
+                 U __cxa_guard_abort
+                 U __cxa_guard_acquire
+                 U __cxa_guard_release
+                 U __gxx_personality_v0
+                 U __stack_chk_fail
+                 U cosf
+                 U memcpy
+                 U memset
+                 U sinf
+                 U sqrtf

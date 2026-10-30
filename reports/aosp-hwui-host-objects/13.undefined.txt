@@ -1,0 +1,127 @@
+                 U _Unwind_Resume
+                 U SkDrawable::onNewPictureSnapshot()
+                 U SkDrawable::onApproximateBytesUsed()
+                 U SkDrawable::draw(SkCanvas*, SkMatrix const*)
+                 U SkDrawable::SkDrawable()
+                 U SkNWayCanvas::onClipPath(SkPath const&, SkClipOp, SkCanvas::ClipEdgeStyle)
+                 U SkNWayCanvas::onClipRect(SkRect const&, SkClipOp, SkCanvas::ClipEdgeStyle)
+                 U SkNWayCanvas::didConcat44(SkM44 const&)
+                 U SkNWayCanvas::onClipRRect(SkRRect const&, SkClipOp, SkCanvas::ClipEdgeStyle)
+                 U SkNWayCanvas::onResetClip()
+                 U SkNWayCanvas::willRestore()
+                 U SkNWayCanvas::didTranslate(float, float)
+                 U SkNWayCanvas::onClipRegion(SkRegion const&, SkClipOp)
+                 U SkNWayCanvas::onClipShader(sk_sp<SkShader>, SkClipOp)
+                 U SkNWayCanvas::removeCanvas(SkCanvas*)
+                 U SkNWayCanvas::onDoSaveBehind(SkRect const*)
+                 U SkNWayCanvas::getSaveLayerStrategy(SkCanvas::SaveLayerRec const&)
+                 U SkNWayCanvas::onFlush()
+                 U SkNWayCanvas::didScale(float, float)
+                 U SkNWayCanvas::willSave()
+                 U SkNWayCanvas::addCanvas(SkCanvas*)
+                 U SkNWayCanvas::didSetM44(SkM44 const&)
+                 U SkNWayCanvas::removeAll()
+                 U SkNWayCanvas::~SkNWayCanvas()
+                 U SkPaintFilterCanvas::onDrawOval(SkRect const&, SkPaint const&)
+                 U SkPaintFilterCanvas::onDrawPath(SkPath const&, SkPaint const&)
+                 U SkPaintFilterCanvas::onDrawRect(SkRect const&, SkPaint const&)
+                 U SkPaintFilterCanvas::onDrawPaint(SkPaint const&)
+                 U SkPaintFilterCanvas::onDrawPatch(SkPoint const*, unsigned int const*, SkPoint const*, SkBlendMode, SkPaint const&)
+                 U SkPaintFilterCanvas::onDrawRRect(SkRRect const&, SkPaint const&)
+                 U SkPaintFilterCanvas::onDrawAtlas2(SkImage const*, SkRSXform const*, SkRect const*, unsigned int const*, int, SkBlendMode, SkSamplingOptions const&, SkRect const*, SkPaint const*)
+                 U SkPaintFilterCanvas::onDrawBehind(SkPaint const&)
+                 U SkPaintFilterCanvas::onDrawDRRect(SkRRect const&, SkRRect const&, SkPaint const&)
+                 U SkPaintFilterCanvas::onDrawImage2(SkImage const*, float, float, SkSamplingOptions const&, SkPaint const*)
+                 U SkPaintFilterCanvas::onDrawPoints(SkCanvas::PointMode, unsigned long, SkPoint const*, SkPaint const&)
+                 U SkPaintFilterCanvas::onDrawRegion(SkRegion const&, SkPaint const&)
+                 U SkPaintFilterCanvas::onNewSurface(SkImageInfo const&, SkSurfaceProps const&)
+                 U SkPaintFilterCanvas::onPeekPixels(SkPixmap*)
+                 U SkPaintFilterCanvas::onDrawPicture(SkPicture const*, SkMatrix const*, SkPaint const*)
+                 U SkPaintFilterCanvas::onDrawTextBlob(SkTextBlob const*, float, float, SkPaint const&)
+                 U SkPaintFilterCanvas::onDrawShadowRec(SkPath const&, SkDrawShadowRec const&)
+                 U SkPaintFilterCanvas::onDrawAnnotation(SkRect const&, char const*, SkData*)
+                 U SkPaintFilterCanvas::onDrawEdgeAAQuad(SkRect const&, SkPoint const*, SkCanvas::QuadAAFlags, SkRGBA4f<(SkAlphaType)3> const&, SkBlendMode)
+                 U SkPaintFilterCanvas::onDrawImageRect2(SkImage const*, SkRect const&, SkRect const&, SkSamplingOptions const&, SkPaint const*, SkCanvas::SrcRectConstraint)
+                 U SkPaintFilterCanvas::onDrawGlyphRunList(SkGlyphRunList const&, SkPaint const&)
+                 U SkPaintFilterCanvas::onDrawImageLattice2(SkImage const*, SkCanvas::Lattice const&, SkRect const&, SkFilterMode, SkPaint const*)
+                 U SkPaintFilterCanvas::onDrawVerticesObject(SkVertices const*, SkBlendMode, SkPaint const&)
+                 U SkPaintFilterCanvas::onDrawEdgeAAImageSet2(SkCanvas::ImageSetEntry const*, int, SkPoint const*, SkMatrix const*, SkSamplingOptions const&, SkPaint const*, SkCanvas::SrcRectConstraint)
+                 U SkPaintFilterCanvas::onAccessTopLayerPixels(SkPixmap*)
+                 U SkPaintFilterCanvas::onDrawArc(SkRect const&, float, float, bool, SkPaint const&)
+                 U SkPaintFilterCanvas::SkPaintFilterCanvas(SkCanvas*)
+                 U SkRect::intersect(SkRect const&)
+                 U SkPaint::setBlendMode(SkBlendMode)
+                 U SkPaint::setColorFilter(sk_sp<SkColorFilter>)
+                 U SkPaint::setColor(unsigned int)
+                 U SkPaint::setAlphaf(float)
+                 U SkPaint::setShader(sk_sp<SkShader>)
+                 U SkPaint::SkPaint()
+                 U SkPaint::~SkPaint()
+                 U SkRRect::setRectXY(SkRect const&, float, float)
+                 U android::uirenderer::Properties::debugOverdraw
+                 U android::uirenderer::Properties::skpCaptureEnabled
+                 U android::uirenderer::Properties::debugLayersUpdates
+                 U android::uirenderer::Properties::stretchEffectBehavior
+                 U android::uirenderer::Properties::enableRenderEffectCache
+                 U android::uirenderer::RenderNode::markDrawEnd(SkCanvas&)
+                 U android::uirenderer::RenderNode::markDrawStart(SkCanvas&)
+                 U android::uirenderer::RenderNode::updateSnapshotIfRequired(GrRecordingContext*, SkImageFilter const*, SkIRect const&)
+                 U android::uirenderer::StretchMask::draw(GrRecordingContext*, android::uirenderer::StretchEffect const&, SkRect const&, android::uirenderer::skiapipeline::SkiaDisplayList*, SkCanvas*)
+                 U android::uirenderer::Matrix4::load(SkMatrix const&)
+                 U android::sp_report_stack_pointer()
+                 U android::String8::format(char const*, ...)
+                 U android::String8::~String8()
+                 U SkCanvas::drawImageRect(SkImage const*, SkRect const&, SkRect const&, SkSamplingOptions const&, SkPaint const*, SkCanvas::SrcRectConstraint)
+                 U SkCanvas::drawAnnotation(SkRect const&, char const*, SkData*)
+                 U SkCanvas::restoreToCount(int)
+                 U SkCanvas::saveLayerAlpha(SkRect const*, unsigned int)
+                 U SkCanvas::onDrawCustomMesh(SkCustomMesh, sk_sp<SkBlender>, SkPaint const&)
+                 U SkCanvas::save()
+                 U SkCanvas::concat(SkMatrix const&)
+                 U SkCanvas::clipPath(SkPath const&, SkClipOp, bool)
+                 U SkCanvas::clipRect(SkRect const&, SkClipOp, bool)
+                 U SkCanvas::drawRect(SkRect const&, SkPaint const&)
+                 U SkCanvas::clipRRect(SkRRect const&, SkClipOp, bool)
+                 U SkCanvas::onDiscard()
+                 U SkCanvas::setMatrix(SkMatrix const&)
+                 U SkCanvas::translate(float, float)
+                 U SkMatrix::setTranslate(float, float)
+                 U SkMatrix::setScale(float, float, float, float)
+                 U SkSurface::makeImageSnapshot()
+                 U SkPaintFilterCanvas::onGetProps(SkSurfaceProps*) const
+                 U SkPaintFilterCanvas::onImageInfo() const
+                 U SkImage::makeWithFilter(GrRecordingContext*, SkImageFilter const*, SkIRect const&, SkIRect const&, SkIRect*, SkIPoint*) const
+                 U android::uirenderer::RenderNode::applyViewPropertyTransforms(android::uirenderer::Matrix4&, bool) const
+                 U android::uirenderer::StretchEffect::getShader(float, float, sk_sp<SkImage> const&, SkMatrix const*) const
+                 U android::uirenderer::DisplayListData::draw(SkCanvas*) const
+                 U android::uirenderer::Matrix4::copyTo(SkMatrix&) const
+                 U SkCanvas::isClipRect() const
+                 U SkCanvas::isClipEmpty() const
+                 U SkCanvas::quickReject(SkRect const&) const
+                 U SkCanvas::getSaveCount() const
+                 U SkCanvas::getTotalMatrix() const
+                 U SkCanvas::getLocalClipBounds() const
+                 U SkMatrix::computeTypeMask() const
+                 U std::runtime_error::what() const
+                 U std::runtime_error::~runtime_error()
+                 U std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::~basic_string()
+                 U std::terminate()
+                 U typeinfo for SkDrawable
+                 U typeinfo for SkPaintFilterCanvas
+                 U typeinfo for std::runtime_error
+                 U vtable for TransformCanvas
+                 U vtable for __cxxabiv1::__si_class_type_info
+                 U operator delete(void*, unsigned long)
+                 U __android_log_assert
+                 U __cxa_atexit
+                 U __cxa_begin_catch
+                 U __dso_handle
+                 U __gxx_personality_v0
+                 U __stack_chk_fail
+                 U atrace_begin_body
+                 U atrace_end_body
+                 U atrace_get_enabled_tags
+                 U ceilf
+                 U floorf
+                 U memset
+                 U vsnprintf

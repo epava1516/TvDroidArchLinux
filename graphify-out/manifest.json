@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793383054.3209481,
-    "seen": 1793383062.9210522,
-    "ast_hash": "6b94bf2051b8b27babde43472f6c1f86",
+    "mtime": 1793384106.5125825,
+    "seen": 1793384114.8396194,
+    "ast_hash": "49d0e136d8e9e8415f6a0b659b67fbb5",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -894,9 +894,9 @@
     "semantic_hash": ""
   },
   "docs/PORT-FRAMEWORK-AOSP.md": {
-    "mtime": 1793383448.2912066,
-    "seen": 1793383455.9771688,
-    "ast_hash": "a3fb57916b7cb8928e7dacde8b77e28a",
+    "mtime": 1793384106.3592453,
+    "seen": 1793384114.8395355,
+    "ast_hash": "37d587767d18c451f53389ffe16a6f14",
     "semantic_hash": ""
   },
   "fixtures/aosp-queue/QueueLinkProbe.java": {
@@ -1086,9 +1086,9 @@
     "semantic_hash": ""
   },
   "tools/apk/fetch_androidfw_sources.py": {
-    "mtime": 1793361476.2287548,
-    "seen": 1793362304.4761162,
-    "ast_hash": "de8c2b625a51254099c8f50677725354",
+    "mtime": 1793383996.24652,
+    "seen": 1793384114.833447,
+    "ast_hash": "b28e1ac52383d1993034c4f2fc3474c2",
     "semantic_hash": ""
   },
   "tools/apk/verify_androidfw.py": {
@@ -1428,9 +1428,15 @@
     "semantic_hash": ""
   },
   "docs/AOSP-RENDERNODE-NATIVO.md": {
-    "mtime": 1793383442.8143644,
-    "seen": 1793383455.977012,
-    "ast_hash": "b1358443d482d6c3cf1433f667c1ce0e",
+    "mtime": 1793384095.595649,
+    "seen": 1793384114.837791,
+    "ast_hash": "09d34215b60f1ffefb59dc183a5537fe",
+    "semantic_hash": ""
+  },
+  "tools/apk/probe_hwui_host.py": {
+    "mtime": 1793383954.2287917,
+    "seen": 1793384114.8341656,
+    "ast_hash": "27d50198e07a02693c9b3a6d8654eeaa",
     "semantic_hash": ""
   }
 }

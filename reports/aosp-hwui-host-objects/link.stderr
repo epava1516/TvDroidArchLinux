@@ -1,0 +1,455 @@
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/0.o: in function `android::uirenderer::RenderNode::RenderNode()':
+RenderNode.cpp:(.text+0x66): undefined reference to `android::String8::String8()'
+/usr/bin/ld: RenderNode.cpp:(.text+0x3e4): undefined reference to `android::String8::~String8()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/0.o: in function `android::uirenderer::RenderNode::~RenderNode()':
+RenderNode.cpp:(.text+0x4d5): undefined reference to `__android_log_assert'
+/usr/bin/ld: RenderNode.cpp:(.text+0x5d0): undefined reference to `android::String8::~String8()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/0.o: in function `android::uirenderer::RenderNode::prepareTree(android::uirenderer::TreeInfo&)':
+RenderNode.cpp:(.text+0xd8f): undefined reference to `__android_log_assert'
+/usr/bin/ld: RenderNode.cpp:(.text+0xe37): undefined reference to `__android_log_assert'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/0.o: in function `android::uirenderer::RenderNode::updateSnapshotIfRequired(GrRecordingContext*, SkImageFilter const*, SkIRect const&)':
+RenderNode.cpp:(.text+0x1762): undefined reference to `SkSurface::makeImageSnapshot()'
+/usr/bin/ld: RenderNode.cpp:(.text+0x17f4): undefined reference to `SkSurface::generationID()'
+/usr/bin/ld: RenderNode.cpp:(.text+0x19ab): undefined reference to `SkImage::makeWithFilter(GrRecordingContext*, SkImageFilter const*, SkIRect const&, SkIRect const&, SkIRect*, SkIPoint*) const'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/0.o: in function `android::uirenderer::RenderNode::handleForceDark(android::uirenderer::TreeInfo*)':
+RenderNode.cpp:(.text+0x20b6): undefined reference to `SkRect::join(SkRect const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/0.o: in function `android::uirenderer::RenderNode::decParentRefCount(android::uirenderer::TreeObserver&, android::uirenderer::TreeInfo*)':
+RenderNode.cpp:(.text+0x24c7): undefined reference to `__android_log_assert'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/0.o: in function `android::uirenderer::RenderNode::onRemovedFromTree(android::uirenderer::TreeInfo*)':
+RenderNode.cpp:(.text+0x255b): undefined reference to `android::uirenderer::Properties::enableWebViewOverlays'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/0.o: in function `android::uirenderer::RenderNode::getClippedOutline(SkRect const&) const':
+RenderNode.cpp:(.text+0x2c53): undefined reference to `SkPath::getGenerationID() const'
+/usr/bin/ld: RenderNode.cpp:(.text+0x2cab): undefined reference to `SkPath::SkPath()'
+/usr/bin/ld: RenderNode.cpp:(.text+0x2cd9): undefined reference to `Op(SkPath const&, SkPath const&, SkPathOp, SkPath*)'
+/usr/bin/ld: RenderNode.cpp:(.text+0x2ce4): undefined reference to `SkPath::~SkPath()'
+/usr/bin/ld: RenderNode.cpp:(.text+0x2cfb): undefined reference to `SkPath::~SkPath()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/0.o: in function `android::uirenderer::RenderNode::markDrawStart(SkCanvas&)':
+RenderNode.cpp:(.text+0x2eb1): undefined reference to `SkCanvas::drawAnnotation(SkRect const&, char const*, SkData*)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/0.o: in function `android::uirenderer::RenderNode::markDrawEnd(SkCanvas&)':
+RenderNode.cpp:(.text+0x3171): undefined reference to `SkCanvas::drawAnnotation(SkRect const&, char const*, SkData*)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/0.o: in function `atrace_begin(unsigned long, char const*)':
+RenderNode.cpp:(.text+0x321f): undefined reference to `atrace_begin_body'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/0.o: in function `atrace_is_tag_enabled(unsigned long)':
+RenderNode.cpp:(.text+0x323d): undefined reference to `atrace_get_enabled_tags'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/0.o: in function `atrace_end(unsigned long)':
+RenderNode.cpp:(.text+0x3277): undefined reference to `atrace_end_body'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/0.o: in function `android::uirenderer::RenderNode::ClippedOutlineCache::ClippedOutlineCache()':
+RenderNode.cpp:(.text._ZN7android10uirenderer10RenderNode19ClippedOutlineCacheC2Ev[_ZN7android10uirenderer10RenderNode19ClippedOutlineCacheC2Ev]+0x1b): undefined reference to `SkPath::SkPath()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/0.o: in function `android::uirenderer::RenderNode::ClippedOutlineCache::~ClippedOutlineCache()':
+RenderNode.cpp:(.text._ZN7android10uirenderer10RenderNode19ClippedOutlineCacheD2Ev[_ZN7android10uirenderer10RenderNode19ClippedOutlineCacheD2Ev]+0x15): undefined reference to `SkPath::~SkPath()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/0.o: in function `android::sp<android::uirenderer::RenderNode::PositionListener>::operator=(android::sp<android::uirenderer::RenderNode::PositionListener>&&)':
+RenderNode.cpp:(.text._ZN7android2spINS_10uirenderer10RenderNode16PositionListenerEEaSEOS4_[_ZN7android2spINS_10uirenderer10RenderNode16PositionListenerEEaSEOS4_]+0x48): undefined reference to `android::sp_report_race()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/0.o: in function `android::sp<android::uirenderer::RenderNode::PositionListener>::operator=(android::uirenderer::RenderNode::PositionListener*)':
+RenderNode.cpp:(.text._ZN7android2spINS_10uirenderer10RenderNode16PositionListenerEEaSEPS3_[_ZN7android2spINS_10uirenderer10RenderNode16PositionListenerEEaSEPS3_]+0x69): undefined reference to `android::sp_report_race()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/0.o: in function `android::uirenderer::RenderProperties::getTransformMatrix() const':
+RenderNode.cpp:(.text._ZNK7android10uirenderer16RenderProperties18getTransformMatrixEv[_ZNK7android10uirenderer16RenderProperties18getTransformMatrixEv]+0x3a): undefined reference to `__android_log_assert'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/0.o: in function `android::uirenderer::Properties::getStretchEffectBehavior()':
+RenderNode.cpp:(.text._ZN7android10uirenderer10Properties24getStretchEffectBehaviorEv[_ZN7android10uirenderer10Properties24getStretchEffectBehaviorEv]+0x7): undefined reference to `android::uirenderer::Properties::stretchEffectBehavior'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/0.o: in function `android::uirenderer::StretchEffect::makeLinearStretch(float, float) const':
+RenderNode.cpp:(.text._ZNK7android10uirenderer13StretchEffect17makeLinearStretchEff[_ZNK7android10uirenderer13StretchEffect17makeLinearStretchEff]+0xdd): undefined reference to `SkMatrix::setScale(float, float, float, float)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/0.o: in function `SkPath::addRect(SkRect const&, SkPathDirection)':
+RenderNode.cpp:(.text._ZN6SkPath7addRectERK6SkRect15SkPathDirection[_ZN6SkPath7addRectERK6SkRect15SkPathDirection]+0x21): undefined reference to `SkPath::addRect(SkRect const&, SkPathDirection, unsigned int)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/0.o: in function `android::uirenderer::skiapipeline::SkiaDisplayList::~SkiaDisplayList()':
+RenderNode.cpp:(.text._ZN7android10uirenderer12skiapipeline15SkiaDisplayListD2Ev[_ZN7android10uirenderer12skiapipeline15SkiaDisplayListD2Ev]+0x1c): undefined reference to `android::uirenderer::DisplayListData::reset()'
+/usr/bin/ld: RenderNode.cpp:(.text._ZN7android10uirenderer12skiapipeline15SkiaDisplayListD2Ev[_ZN7android10uirenderer12skiapipeline15SkiaDisplayListD2Ev]+0x2e): undefined reference to `android::uirenderer::DisplayListData::~DisplayListData()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/0.o: in function `android::uirenderer::LogcatStream::LogcatStreamBuf::sync()':
+RenderNode.cpp:(.text._ZN7android10uirenderer12LogcatStream15LogcatStreamBuf4syncEv[_ZN7android10uirenderer12LogcatStream15LogcatStreamBuf4syncEv]+0x4b): undefined reference to `__android_log_print'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/0.o: in function `android::sp<android::uirenderer::RenderNode>::check_not_on_stack(void const*)':
+RenderNode.cpp:(.text._ZN7android2spINS_10uirenderer10RenderNodeEE18check_not_on_stackEPKv[_ZN7android2spINS_10uirenderer10RenderNodeEE18check_not_on_stackEPKv]+0x28): undefined reference to `android::sp_report_stack_pointer()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/0.o: in function `SkMatrix::getType() const':
+RenderNode.cpp:(.text._ZNK8SkMatrix7getTypeEv[_ZNK8SkMatrix7getTypeEv]+0x26): undefined reference to `SkMatrix::computeTypeMask() const'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/0.o: in function `android::uirenderer::skiapipeline::SkiaDisplayList::applyColorTransform(android::uirenderer::ColorTransform)':
+RenderNode.cpp:(.text._ZN7android10uirenderer12skiapipeline15SkiaDisplayList19applyColorTransformENS0_14ColorTransformE[_ZN7android10uirenderer12skiapipeline15SkiaDisplayList19applyColorTransformENS0_14ColorTransformE]+0x1e): undefined reference to `android::uirenderer::DisplayListData::applyColorTransform(android::uirenderer::ColorTransform)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/0.o: in function `std::__1::default_delete<SkRuntimeShaderBuilder>::operator()(SkRuntimeShaderBuilder*) const':
+RenderNode.cpp:(.text._ZNKSt3__114default_deleteI22SkRuntimeShaderBuilderEclEPS1_[_ZNKSt3__114default_deleteI22SkRuntimeShaderBuilderEclEPS1_]+0x23): undefined reference to `SkRuntimeShaderBuilder::~SkRuntimeShaderBuilder()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/0.o: in function `android::sp<android::uirenderer::RenderNode::PositionListener>::check_not_on_stack(void const*)':
+RenderNode.cpp:(.text._ZN7android2spINS_10uirenderer10RenderNode16PositionListenerEE18check_not_on_stackEPKv[_ZN7android2spINS_10uirenderer10RenderNode16PositionListenerEE18check_not_on_stackEPKv]+0x28): undefined reference to `android::sp_report_stack_pointer()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/1.o: in function `android::FindClassOrDie(_JNIEnv*, char const*)':
+android_graphics_RenderNode.cpp:(.text+0x10c): undefined reference to `__android_log_assert'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/1.o: in function `_jclass* android::MakeGlobalRefOrDie<_jclass*>(_JNIEnv*, _jclass*)':
+android_graphics_RenderNode.cpp:(.text+0x168): undefined reference to `__android_log_assert'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/1.o: in function `android::GetStaticMethodIDOrDie(_JNIEnv*, _jclass*, char const*, char const*)':
+android_graphics_RenderNode.cpp:(.text+0x1dc): undefined reference to `__android_log_assert'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/1.o: in function `android::RegisterMethodsOrDie(_JNIEnv*, char const*, JNINativeMethod const*, int)':
+android_graphics_RenderNode.cpp:(.text+0x244): undefined reference to `__android_log_assert'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/1.o: in function `jniRegisterNativeMethods(_JNIEnv*, char const*, JNINativeMethod const*, int)':
+android_graphics_RenderNode.cpp:(.text+0x2d6): undefined reference to `__android_log_assert'
+/usr/bin/ld: android_graphics_RenderNode.cpp:(.text+0x35e): undefined reference to `__android_log_print'
+/usr/bin/ld: android_graphics_RenderNode.cpp:(.text+0x392): undefined reference to `__android_log_print'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/1.o: in function `android::android_view_RenderNode_requestPositionUpdates(_JNIEnv*, _jobject*, long, _jobject*)::PositionListenerTrampoline::jnienv()':
+android_graphics_RenderNode.cpp:(.text+0x2a2b): undefined reference to `__android_log_assert'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/1.o: in function `android::android_view_RenderNode_requestPositionUpdates(_JNIEnv*, _jobject*, long, _jobject*)::PositionListenerTrampoline::stretchTargetBounds(android::uirenderer::StretchEffect const&, float, float, SkRect const&, android::uirenderer::Rect&)':
+android_graphics_RenderNode.cpp:(.text+0x2b92): undefined reference to `android::uirenderer::StretchEffect::computeStretchedPositionX(float) const'
+/usr/bin/ld: android_graphics_RenderNode.cpp:(.text+0x2bc0): undefined reference to `android::uirenderer::StretchEffect::computeStretchedPositionY(float) const'
+/usr/bin/ld: android_graphics_RenderNode.cpp:(.text+0x2bee): undefined reference to `android::uirenderer::StretchEffect::computeStretchedPositionX(float) const'
+/usr/bin/ld: android_graphics_RenderNode.cpp:(.text+0x2c1c): undefined reference to `android::uirenderer::StretchEffect::computeStretchedPositionY(float) const'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/1.o: in function `atrace_begin(unsigned long, char const*)':
+android_graphics_RenderNode.cpp:(.text+0x2caf): undefined reference to `atrace_begin_body'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/1.o: in function `atrace_is_tag_enabled(unsigned long)':
+android_graphics_RenderNode.cpp:(.text+0x2ccd): undefined reference to `atrace_get_enabled_tags'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/1.o: in function `atrace_end(unsigned long)':
+android_graphics_RenderNode.cpp:(.text+0x2d07): undefined reference to `atrace_end_body'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/1.o: in function `android::uirenderer::RenderNode::setName(char const*)':
+android_graphics_RenderNode.cpp:(.text._ZN7android10uirenderer10RenderNode7setNameEPKc[_ZN7android10uirenderer10RenderNode7setNameEPKc]+0x49): undefined reference to `android::String8::setTo(char const*)'
+/usr/bin/ld: android_graphics_RenderNode.cpp:(.text._ZN7android10uirenderer10RenderNode7setNameEPKc[_ZN7android10uirenderer10RenderNode7setNameEPKc]+0x5c): undefined reference to `android::String8::setTo(char const*)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/1.o: in function `android::sp<android::uirenderer::BaseRenderNodeAnimator>::check_not_on_stack(void const*)':
+android_graphics_RenderNode.cpp:(.text._ZN7android2spINS_10uirenderer22BaseRenderNodeAnimatorEE18check_not_on_stackEPKv[_ZN7android2spINS_10uirenderer22BaseRenderNodeAnimatorEE18check_not_on_stackEPKv]+0x28): undefined reference to `android::sp_report_stack_pointer()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/1.o: in function `android::uirenderer::Outline::setRoundRect(int, int, int, int, float, float)':
+android_graphics_RenderNode.cpp:(.text._ZN7android10uirenderer7Outline12setRoundRectEiiiiff[_ZN7android10uirenderer7Outline12setRoundRectEiiiiff]+0xdd): undefined reference to `SkPath::countVerbs() const'
+/usr/bin/ld: android_graphics_RenderNode.cpp:(.text._ZN7android10uirenderer7Outline12setRoundRectEiiiiff[_ZN7android10uirenderer7Outline12setRoundRectEiiiiff]+0xef): undefined reference to `SkPath::reset()'
+/usr/bin/ld: android_graphics_RenderNode.cpp:(.text._ZN7android10uirenderer7Outline12setRoundRectEiiiiff[_ZN7android10uirenderer7Outline12setRoundRectEiiiiff]+0xfe): undefined reference to `SkPath::rewind()'
+/usr/bin/ld: android_graphics_RenderNode.cpp:(.text._ZN7android10uirenderer7Outline12setRoundRectEiiiiff[_ZN7android10uirenderer7Outline12setRoundRectEiiiiff]+0x156): undefined reference to `SkPath::addRoundRect(SkRect const&, float, float, SkPathDirection)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/1.o: in function `SkPath::addRect(float, float, float, float, SkPathDirection)':
+android_graphics_RenderNode.cpp:(.text._ZN6SkPath7addRectEffff15SkPathDirection[_ZN6SkPath7addRectEffff15SkPathDirection]+0x66): undefined reference to `SkPath::addRect(SkRect const&, SkPathDirection, unsigned int)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/1.o: in function `android::uirenderer::Outline::setPath(SkPath const*, float)':
+android_graphics_RenderNode.cpp:(.text._ZN7android10uirenderer7Outline7setPathEPK6SkPathf[_ZN7android10uirenderer7Outline7setPathEPK6SkPathf]+0x50): undefined reference to `SkPath::operator=(SkPath const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/1.o: in function `android::uirenderer::Outline::setEmpty()':
+android_graphics_RenderNode.cpp:(.text._ZN7android10uirenderer7Outline8setEmptyEv[_ZN7android10uirenderer7Outline8setEmptyEv]+0x20): undefined reference to `SkPath::reset()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/1.o: in function `SkPathRef::ComputePtBounds(SkRect*, SkPathRef const&)':
+android_graphics_RenderNode.cpp:(.text._ZN9SkPathRef15ComputePtBoundsEP6SkRectRKS_[_ZN9SkPathRef15ComputePtBoundsEP6SkRectRKS_]+0x39): undefined reference to `SkRect::setBoundsCheck(SkPoint const*, int)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/1.o: in function `android::uirenderer::Outline::setNone()':
+android_graphics_RenderNode.cpp:(.text._ZN7android10uirenderer7Outline7setNoneEv[_ZN7android10uirenderer7Outline7setNoneEv]+0x20): undefined reference to `SkPath::reset()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/1.o: in function `android::uirenderer::RevealClip::set(bool, float, float, float)':
+android_graphics_RenderNode.cpp:(.text._ZN7android10uirenderer10RevealClip3setEbfff[_ZN7android10uirenderer10RevealClip3setEbfff]+0x59): undefined reference to `SkPath::rewind()'
+/usr/bin/ld: android_graphics_RenderNode.cpp:(.text._ZN7android10uirenderer10RevealClip3setEbfff[_ZN7android10uirenderer10RevealClip3setEbfff]+0x80): undefined reference to `SkPath::addCircle(float, float, float, SkPathDirection)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/1.o: in function `android::uirenderer::RenderProperties::setCameraDistance(float)':
+android_graphics_RenderNode.cpp:(.text._ZN7android10uirenderer16RenderProperties17setCameraDistanceEf[_ZN7android10uirenderer16RenderProperties17setCameraDistanceEf]+0x58): undefined reference to `Sk3DView::setCameraLocation(float, float, float)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/1.o: in function `android::uirenderer::RenderProperties::getCameraDistance() const':
+android_graphics_RenderNode.cpp:(.text._ZNK7android10uirenderer16RenderProperties17getCameraDistanceEv[_ZNK7android10uirenderer16RenderProperties17getCameraDistanceEv]+0x1c): undefined reference to `Sk3DView::getCameraLocationZ() const'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/1.o: in function `SkMatrix::setIdentity()':
+android_graphics_RenderNode.cpp:(.text._ZN8SkMatrix11setIdentityEv[_ZN8SkMatrix11setIdentityEv]+0x11): undefined reference to `SkMatrix::reset()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/1.o: in function `SkMatrix::invert(SkMatrix*) const':
+android_graphics_RenderNode.cpp:(.text._ZNK8SkMatrix6invertEPS_[_ZNK8SkMatrix6invertEPS_]+0x2f): undefined reference to `SkMatrix::reset()'
+/usr/bin/ld: android_graphics_RenderNode.cpp:(.text._ZNK8SkMatrix6invertEPS_[_ZNK8SkMatrix6invertEPS_]+0x42): undefined reference to `SkMatrix::invertNonIdentity(SkMatrix*) const'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/3.o: in function `android::uirenderer::AnimatorManager::setAnimationHandle(android::uirenderer::AnimationHandle*)':
+AnimatorManager.cpp:(.text+0x301): undefined reference to `__android_log_assert'
+/usr/bin/ld: AnimatorManager.cpp:(.text+0x372): undefined reference to `__android_log_assert'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/3.o: in function `android::uirenderer::AnimatorManager::pushStaging()':
+AnimatorManager.cpp:(.text+0x3fc): undefined reference to `__android_log_print'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/3.o: in function `android::uirenderer::AnimatorManager::onAnimatorTargetChanged(android::uirenderer::BaseRenderNodeAnimator*)':
+AnimatorManager.cpp:(.text+0x63d): undefined reference to `__android_log_assert'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/3.o: in function `android::uirenderer::AnimatorManager::endAllStagingAnimators()':
+AnimatorManager.cpp:(.text+0x95d): undefined reference to `__android_log_print'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/3.o: in function `android::uirenderer::AnimatorManager::endAllActiveAnimators()':
+AnimatorManager.cpp:(.text+0xa6d): undefined reference to `__android_log_print'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/3.o: in function `android::sp<android::uirenderer::BaseRenderNodeAnimator>::operator=(android::sp<android::uirenderer::BaseRenderNodeAnimator>&&)':
+AnimatorManager.cpp:(.text._ZN7android2spINS_10uirenderer22BaseRenderNodeAnimatorEEaSEOS3_[_ZN7android2spINS_10uirenderer22BaseRenderNodeAnimatorEEaSEOS3_]+0x4c): undefined reference to `android::sp_report_race()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/6.o: in function `android::uirenderer::computeTransformImpl(android::uirenderer::DirtyStack const*, android::uirenderer::Matrix4*)':
+DamageAccumulator.cpp:(.text+0x164): undefined reference to `__android_log_assert'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/6.o: in function `android::uirenderer::DamageAccumulator::popTransform()':
+DamageAccumulator.cpp:(.text+0x2b2): undefined reference to `__android_log_assert'
+/usr/bin/ld: DamageAccumulator.cpp:(.text+0x327): undefined reference to `SkRect::join(SkRect const&)'
+/usr/bin/ld: DamageAccumulator.cpp:(.text+0x344): undefined reference to `__android_log_assert'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/6.o: in function `android::uirenderer::DamageAccumulator::applyRenderNodeTransform(android::uirenderer::DirtyStack*)':
+DamageAccumulator.cpp:(.text+0x415): undefined reference to `SkRect::intersect(SkRect const&)'
+/usr/bin/ld: DamageAccumulator.cpp:(.text+0x4ac): undefined reference to `SkRect::join(SkRect const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/6.o: in function `android::uirenderer::mapRect(android::uirenderer::Matrix4 const*, SkRect const&, SkRect*)':
+DamageAccumulator.cpp:(.text+0x5d6): undefined reference to `SkRect::join(SkRect const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/6.o: in function `android::uirenderer::mapRect(android::uirenderer::RenderProperties const&, SkRect const&, SkRect*)':
+DamageAccumulator.cpp:(.text+0x756): undefined reference to `SkRect::join(SkRect const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/6.o: in function `android::uirenderer::DamageAccumulator::dirty(float, float, float, float)':
+DamageAccumulator.cpp:(.text+0x926): undefined reference to `SkRect::join(SkRect const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/6.o: in function `android::uirenderer::DamageAccumulator::finish(SkRect*)':
+DamageAccumulator.cpp:(.text+0x9d6): undefined reference to `__android_log_assert'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/6.o: in function `android::uirenderer::computeTransformImpl(android::uirenderer::DirtyStack const*, android::uirenderer::DirtyStack const*, android::uirenderer::Matrix4*)':
+DamageAccumulator.cpp:(.text+0xcc3): undefined reference to `__android_log_assert'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/6.o: in function `SkMatrix::mapRect(SkRect*, SkApplyPerspectiveClip) const':
+DamageAccumulator.cpp:(.text._ZNK8SkMatrix7mapRectEP6SkRect22SkApplyPerspectiveClip[_ZNK8SkMatrix7mapRectEP6SkRect22SkApplyPerspectiveClip]+0x23): undefined reference to `SkMatrix::mapRect(SkRect*, SkRect const&, SkApplyPerspectiveClip) const'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/6.o: in function `SkMatrix::getPerspectiveTypeMaskOnly() const':
+DamageAccumulator.cpp:(.text._ZNK8SkMatrix26getPerspectiveTypeMaskOnlyEv[_ZNK8SkMatrix26getPerspectiveTypeMaskOnlyEv]+0x35): undefined reference to `SkMatrix::computePerspectiveTypeMask() const'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/7.o: in function `android::uirenderer::BaseRenderNodeAnimator::resolveStagingRequest(android::uirenderer::BaseRenderNodeAnimator::Request)':
+Animator.cpp:(.text+0x63f): undefined reference to `__android_log_assert'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/7.o: in function `android::uirenderer::BaseRenderNodeAnimator::transitionToRunning(android::uirenderer::AnimationContext&)':
+Animator.cpp:(.text+0x950): undefined reference to `__android_log_assert'
+/usr/bin/ld: Animator.cpp:(.text+0x98a): undefined reference to `__android_log_print'
+/usr/bin/ld: Animator.cpp:(.text+0x9c8): undefined reference to `__android_log_print'
+/usr/bin/ld: Animator.cpp:(.text+0x9fe): undefined reference to `__android_log_print'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/7.o: in function `android::uirenderer::CanvasPropertyPaintAnimator::getValue(android::uirenderer::RenderNode*) const':
+Animator.cpp:(.text+0x12c9): undefined reference to `__android_log_assert'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/7.o: in function `android::uirenderer::CanvasPropertyPaintAnimator::setValue(android::uirenderer::RenderNode*, float)':
+Animator.cpp:(.text+0x1333): undefined reference to `SkPaint::setStrokeWidth(float)'
+/usr/bin/ld: Animator.cpp:(.text+0x1384): undefined reference to `__android_log_assert'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/7.o: in function `android::uirenderer::BaseRenderNodeAnimator::checkMutable()':
+Animator.cpp:(.text._ZN7android10uirenderer22BaseRenderNodeAnimator12checkMutableEv[_ZN7android10uirenderer22BaseRenderNodeAnimator12checkMutableEv]+0x36): undefined reference to `__android_log_assert'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/7.o: in function `SkPaint::setAlpha(unsigned int)':
+Animator.cpp:(.text._ZN7SkPaint8setAlphaEj[_ZN7SkPaint8setAlphaEj]+0x28): undefined reference to `SkPaint::setAlphaf(float)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/7.o: in function `android::sp<android::uirenderer::CanvasPropertyPrimitive>::check_not_on_stack(void const*)':
+Animator.cpp:(.text._ZN7android2spINS_10uirenderer23CanvasPropertyPrimitiveEE18check_not_on_stackEPKv[_ZN7android2spINS_10uirenderer23CanvasPropertyPrimitiveEE18check_not_on_stackEPKv]+0x28): undefined reference to `android::sp_report_stack_pointer()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/7.o: in function `android::sp<android::uirenderer::CanvasPropertyPaint>::check_not_on_stack(void const*)':
+Animator.cpp:(.text._ZN7android2spINS_10uirenderer19CanvasPropertyPaintEE18check_not_on_stackEPKv[_ZN7android2spINS_10uirenderer19CanvasPropertyPaintEE18check_not_on_stackEPKv]+0x28): undefined reference to `android::sp_report_stack_pointer()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/10.o: in function `android::uirenderer::AnimationContext::destroy()':
+AnimationContext.cpp:(.text+0x172): undefined reference to `__android_log_assert'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/10.o: in function `android::uirenderer::AnimationContext::startFrame(android::uirenderer::TreeInfo::TraversalMode)':
+AnimationContext.cpp:(.text+0x2e3): undefined reference to `__android_log_assert'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/10.o: in function `android::uirenderer::AnimationContext::runRemainingAnimations(android::uirenderer::TreeInfo&)':
+AnimationContext.cpp:(.text+0x3f8): undefined reference to `__android_log_assert'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/10.o: in function `android::uirenderer::AnimationHandle::~AnimationHandle()':
+AnimationContext.cpp:(.text+0x56f): undefined reference to `__android_log_assert'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/10.o: in function `android::uirenderer::AnimationHandle::release()':
+AnimationContext.cpp:(.text+0x698): undefined reference to `__android_log_assert'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o: in function `android::uirenderer::skiapipeline::SkiaDisplayList::syncContents(android::uirenderer::WebViewSyncData const&)':
+SkiaDisplayList.cpp:(.text+0xe6): undefined reference to `android::AnimatedImageDrawable::syncProperties()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o: in function `android::uirenderer::skiapipeline::SkiaDisplayList::reset()':
+SkiaDisplayList.cpp:(.text+0x287): undefined reference to `android::uirenderer::DisplayListData::reset()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o: in function `android::uirenderer::skiapipeline::SkiaDisplayList::prepareListAndChildren(android::uirenderer::TreeObserver&, android::uirenderer::TreeInfo&, bool, std::__1::function<void (android::uirenderer::RenderNode*, android::uirenderer::TreeObserver&, android::uirenderer::TreeInfo&, bool)>)':
+SkiaDisplayList.cpp:(.text+0x6ae): undefined reference to `android::AnimatedImageDrawable::isDirty(long*)'
+/usr/bin/ld: SkiaDisplayList.cpp:(.text+0x6ca): undefined reference to `android::AnimatedImageDrawable::isRunning()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o: in function `android::uirenderer::skiapipeline::SkiaDisplayList::output(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, unsigned int) const':
+SkiaDisplayList.cpp:(.text+0xbb0): undefined reference to `android::uirenderer::DisplayListData::draw(SkCanvas*) const'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o: in function `android::uirenderer::skiapipeline::DumpOpsCanvas::DumpOpsCanvas(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, int, android::uirenderer::skiapipeline::SkiaDisplayList const&)':
+SkiaDisplayList.cpp:(.text._ZN7android10uirenderer12skiapipeline13DumpOpsCanvasC2ERNSt3__113basic_ostreamIcNS3_11char_traitsIcEEEEiRKNS1_15SkiaDisplayListE[_ZN7android10uirenderer12skiapipeline13DumpOpsCanvasC2ERNSt3__113basic_ostreamIcNS3_11char_traitsIcEEEEiRKNS1_15SkiaDisplayListE]+0x20): undefined reference to `SkCanvas::SkCanvas()'
+/usr/bin/ld: SkiaDisplayList.cpp:(.text._ZN7android10uirenderer12skiapipeline13DumpOpsCanvasC2ERNSt3__113basic_ostreamIcNS3_11char_traitsIcEEEEiRKNS1_15SkiaDisplayListE[_ZN7android10uirenderer12skiapipeline13DumpOpsCanvasC2ERNSt3__113basic_ostreamIcNS3_11char_traitsIcEEEEiRKNS1_15SkiaDisplayListE]+0x8b): undefined reference to `SkCanvas::~SkCanvas()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o: in function `android::uirenderer::skiapipeline::DumpOpsCanvas::~DumpOpsCanvas()':
+SkiaDisplayList.cpp:(.text._ZN7android10uirenderer12skiapipeline13DumpOpsCanvasD2Ev[_ZN7android10uirenderer12skiapipeline13DumpOpsCanvasD2Ev]+0x33): undefined reference to `SkCanvas::~SkCanvas()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE[_ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE]+0x20): undefined reference to `SkCanvas::getBaseLayerSize() const'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE[_ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE]+0x28): undefined reference to `SkCanvas::recordingContext()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE[_ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE]+0x30): undefined reference to `SkCanvas::isClipEmpty() const'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE[_ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE]+0x38): undefined reference to `SkCanvas::isClipRect() const'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE[_ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE]+0x40): undefined reference to `SkCanvas::onNewSurface(SkImageInfo const&, SkSurfaceProps const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE[_ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE]+0x48): undefined reference to `SkCanvas::onPeekPixels(SkPixmap*)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE[_ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE]+0x50): undefined reference to `SkCanvas::onAccessTopLayerPixels(SkPixmap*)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE[_ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE]+0x58): undefined reference to `SkCanvas::onImageInfo() const'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE[_ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE]+0x60): undefined reference to `SkCanvas::onGetProps(SkSurfaceProps*) const'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE[_ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE]+0x68): undefined reference to `SkCanvas::onFlush()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE[_ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE]+0xc0): undefined reference to `SkCanvas::onDrawBehind(SkPaint const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE[_ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE]+0x108): undefined reference to `SkCanvas::onDrawGlyphRunList(SkGlyphRunList const&, SkPaint const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE[_ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE]+0x110): undefined reference to `SkCanvas::onDrawPatch(SkPoint const*, unsigned int const*, SkPoint const*, SkBlendMode, SkPaint const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE[_ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE]+0x138): undefined reference to `SkCanvas::onDrawAtlas2(SkImage const*, SkRSXform const*, SkRect const*, unsigned int const*, int, SkBlendMode, SkSamplingOptions const&, SkRect const*, SkPaint const*)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE[_ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE]+0x140): undefined reference to `SkCanvas::onDrawEdgeAAImageSet2(SkCanvas::ImageSetEntry const*, int, SkPoint const*, SkMatrix const*, SkSamplingOptions const&, SkPaint const*, SkCanvas::SrcRectConstraint)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE[_ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE]+0x148): undefined reference to `SkCanvas::onDrawVerticesObject(SkVertices const*, SkBlendMode, SkPaint const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE[_ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE]+0x150): undefined reference to `SkCanvas::onDrawCustomMesh(SkCustomMesh, sk_sp<SkBlender>, SkPaint const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE[_ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE]+0x158): undefined reference to `SkCanvas::onDrawAnnotation(SkRect const&, char const*, SkData*)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE[_ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE]+0x160): undefined reference to `SkCanvas::onDrawShadowRec(SkPath const&, SkDrawShadowRec const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE[_ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE]+0x178): undefined reference to `SkCanvas::onDrawEdgeAAQuad(SkRect const&, SkPoint const*, SkCanvas::QuadAAFlags, SkRGBA4f<(SkAlphaType)3> const&, SkBlendMode)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE[_ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE]+0x198): undefined reference to `SkCanvas::onClipShader(sk_sp<SkShader>, SkClipOp)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE[_ZTVN7android10uirenderer12skiapipeline13DumpOpsCanvasE]+0x1b0): undefined reference to `SkCanvas::onDiscard()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/12.o:(.data.rel.ro._ZTIN7android10uirenderer12skiapipeline13DumpOpsCanvasE[_ZTIN7android10uirenderer12skiapipeline13DumpOpsCanvasE]+0x10): undefined reference to `typeinfo for SkCanvas'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o: in function `android::uirenderer::skiapipeline::RenderNodeDrawable::RenderNodeDrawable(android::uirenderer::RenderNode*, SkCanvas*, bool, bool)':
+RenderNodeDrawable.cpp:(.text+0x2b): undefined reference to `SkDrawable::SkDrawable()'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x61): undefined reference to `SkCanvas::getTotalMatrix() const'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o: in function `android::uirenderer::skiapipeline::RenderNodeDrawable::drawBackwardsProjectedNodes(SkCanvas*, android::uirenderer::skiapipeline::SkiaDisplayList const&, int) const':
+RenderNodeDrawable.cpp:(.text+0x1e4): undefined reference to `__android_log_assert'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x2de): undefined reference to `SkCanvas::concat(SkMatrix const&)'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x3e4): undefined reference to `SkCanvas::concat(SkMatrix const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o: in function `android::uirenderer::skiapipeline::RenderNodeDrawable::drawContent(SkCanvas*) const':
+RenderNodeDrawable.cpp:(.text+0x5d4): undefined reference to `SkCanvas::getTotalMatrix() const'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x671): undefined reference to `SkCanvas::quickReject(SkRect const&) const'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x691): undefined reference to `SkCanvas::getLocalClipBounds() const'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x768): undefined reference to `SkPaint::SkPaint()'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x7e4): undefined reference to `android::uirenderer::Properties::enableRenderEffectCache'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x815): undefined reference to `SkSurface::makeImageSnapshot()'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x95b): undefined reference to `SkImage::makeWithFilter(GrRecordingContext*, SkImageFilter const*, SkIRect const&, SkIRect const&, SkIRect*, SkIPoint*) const'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0xbe8): undefined reference to `android::uirenderer::Properties::skpCaptureEnabled'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0xc3a): undefined reference to `android::String8::format(char const*, ...)'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0xc6f): undefined reference to `SkCanvas::drawAnnotation(SkRect const&, char const*, SkData*)'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0xc7d): undefined reference to `android::String8::~String8()'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0xc9d): undefined reference to `android::String8::~String8()'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0xef2): undefined reference to `SkMatrix::setTranslate(float, float)'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0xf8d): undefined reference to `android::uirenderer::StretchMask::draw(GrRecordingContext*, android::uirenderer::StretchEffect const&, SkRect const&, android::uirenderer::skiapipeline::SkiaDisplayList*, SkCanvas*)'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0xffc): undefined reference to `android::uirenderer::StretchEffect::getShader(float, float, sk_sp<SkImage> const&, SkMatrix const*) const'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x1026): undefined reference to `SkPaint::setShader(sk_sp<SkShader>)'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x1096): undefined reference to `SkCanvas::drawRect(SkRect const&, SkPaint const&)'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x1136): undefined reference to `android::uirenderer::Properties::debugLayersUpdates'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x1152): undefined reference to `SkPaint::SkPaint()'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x1165): undefined reference to `SkPaint::setColor(unsigned int)'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x1181): undefined reference to `SkCanvas::drawRect(SkRect const&, SkPaint const&)'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x118f): undefined reference to `SkPaint::~SkPaint()'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x11b2): undefined reference to `SkPaint::~SkPaint()'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x11be): undefined reference to `android::uirenderer::Properties::debugOverdraw'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x11da): undefined reference to `SkPaint::SkPaint()'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x11ea): undefined reference to `SkPaint::setColor(unsigned int)'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x1206): undefined reference to `SkCanvas::drawRect(SkRect const&, SkPaint const&)'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x1214): undefined reference to `SkPaint::~SkPaint()'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x1234): undefined reference to `SkPaint::~SkPaint()'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x1252): undefined reference to `SkPaint::~SkPaint()'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x126f): undefined reference to `SkPaint::~SkPaint()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o: in function `android::uirenderer::skiapipeline::RenderNodeDrawable::forceDraw(SkCanvas*) const':
+RenderNodeDrawable.cpp:(.text+0x15bf): undefined reference to `__android_log_assert'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x1631): undefined reference to `SkCanvas::setMatrix(SkMatrix const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o: in function `android::uirenderer::skiapipeline::RenderNodeDrawable::setViewProperties(android::uirenderer::RenderProperties const&, SkCanvas*, float*)':
+RenderNodeDrawable.cpp:(.text+0x17d5): undefined reference to `SkCanvas::translate(float, float)'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x1810): undefined reference to `SkCanvas::concat(SkMatrix const&)'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x184d): undefined reference to `SkCanvas::concat(SkMatrix const&)'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x18bb): undefined reference to `SkCanvas::translate(float, float)'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x18e6): undefined reference to `SkCanvas::concat(SkMatrix const&)'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x198d): undefined reference to `SkCanvas::concat(SkMatrix const&)'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x1b09): undefined reference to `SkCanvas::saveLayerAlpha(SkRect const*, unsigned int)'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x1c4a): undefined reference to `SkCanvas::clipPath(SkPath const&, SkClipOp, bool)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o: in function `android::uirenderer::skiapipeline::layerNeedsPaint(android::uirenderer::LayerProperties const&, float, SkPaint*)':
+RenderNodeDrawable.cpp:(.text+0x1da3): undefined reference to `SkPaint::setBlendMode(SkBlendMode)'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x1dd1): undefined reference to `SkPaint::setColorFilter(sk_sp<SkColorFilter>)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o: in function `atrace_is_tag_enabled(unsigned long)':
+RenderNodeDrawable.cpp:(.text+0x1e5d): undefined reference to `atrace_get_enabled_tags'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o: in function `android::uirenderer::skiapipeline::clipOutline(android::uirenderer::Outline const&, SkCanvas*, SkRect const*)':
+RenderNodeDrawable.cpp:(.text+0x1eec): undefined reference to `SkCanvas::clipPath(SkPath const&, SkClipOp, bool)'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x1f75): undefined reference to `SkCanvas::clipRRect(SkRRect const&, SkClipOp, bool)'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text+0x1f8b): undefined reference to `SkRect::intersect(SkRect const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o: in function `atrace_begin(unsigned long, char const*)':
+RenderNodeDrawable.cpp:(.text+0x216f): undefined reference to `atrace_begin_body'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o: in function `atrace_end(unsigned long)':
+RenderNodeDrawable.cpp:(.text+0x21a7): undefined reference to `atrace_end_body'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o: in function `SkAutoCanvasRestore::SkAutoCanvasRestore(SkCanvas*, bool)':
+RenderNodeDrawable.cpp:(.text._ZN19SkAutoCanvasRestoreC2EP8SkCanvasb[_ZN19SkAutoCanvasRestoreC2EP8SkCanvasb]+0x38): undefined reference to `SkCanvas::getSaveCount() const'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text._ZN19SkAutoCanvasRestoreC2EP8SkCanvasb[_ZN19SkAutoCanvasRestoreC2EP8SkCanvasb]+0x50): undefined reference to `SkCanvas::save()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o: in function `SkAutoCanvasRestore::~SkAutoCanvasRestore()':
+RenderNodeDrawable.cpp:(.text._ZN19SkAutoCanvasRestoreD2Ev[_ZN19SkAutoCanvasRestoreD2Ev]+0x25): undefined reference to `SkCanvas::restoreToCount(int)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o: in function `android::uirenderer::skiapipeline::MarkDraw::MarkDraw(SkCanvas&, android::uirenderer::RenderNode&)':
+RenderNodeDrawable.cpp:(.text._ZN7android10uirenderer12skiapipeline8MarkDrawC2ER8SkCanvasRNS0_10RenderNodeE[_ZN7android10uirenderer12skiapipeline8MarkDrawC2ER8SkCanvasRNS0_10RenderNodeE]+0x2e): undefined reference to `android::uirenderer::Properties::skpCaptureEnabled'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o: in function `SkAutoCanvasRestore::restore()':
+RenderNodeDrawable.cpp:(.text._ZN19SkAutoCanvasRestore7restoreEv[_ZN19SkAutoCanvasRestore7restoreEv]+0x25): undefined reference to `SkCanvas::restoreToCount(int)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o: in function `SkCanvas::clipPath(SkPath const&, bool)':
+RenderNodeDrawable.cpp:(.text._ZN8SkCanvas8clipPathERK6SkPathb[_ZN8SkCanvas8clipPathERK6SkPathb]+0x32): undefined reference to `SkCanvas::clipPath(SkPath const&, SkClipOp, bool)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o: in function `android::uirenderer::skiapipeline::MarkDraw::~MarkDraw()':
+RenderNodeDrawable.cpp:(.text._ZN7android10uirenderer12skiapipeline8MarkDrawD2Ev[_ZN7android10uirenderer12skiapipeline8MarkDrawD2Ev]+0x17): undefined reference to `android::uirenderer::Properties::skpCaptureEnabled'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o: in function `TransformCanvas::TransformCanvas(SkCanvas*, SkBlendMode)':
+RenderNodeDrawable.cpp:(.text._ZN15TransformCanvasC2EP8SkCanvas11SkBlendMode[_ZN15TransformCanvasC2EP8SkCanvas11SkBlendMode]+0x20): undefined reference to `SkPaintFilterCanvas::SkPaintFilterCanvas(SkCanvas*)'
+/usr/bin/ld: RenderNodeDrawable.cpp:(.text._ZN15TransformCanvasC2EP8SkCanvas11SkBlendMode[_ZN15TransformCanvasC2EP8SkCanvas11SkBlendMode]+0x2b): undefined reference to `vtable for TransformCanvas'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o: in function `android::uirenderer::skiapipeline::SkiaDisplayList::draw(SkCanvas*)':
+RenderNodeDrawable.cpp:(.text._ZN7android10uirenderer12skiapipeline15SkiaDisplayList4drawEP8SkCanvas[_ZN7android10uirenderer12skiapipeline15SkiaDisplayList4drawEP8SkCanvas]+0x20): undefined reference to `android::uirenderer::DisplayListData::draw(SkCanvas*) const'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o: in function `SkCanvas::drawImageRect(sk_sp<SkImage> const&, SkRect const&, SkRect const&, SkSamplingOptions const&, SkPaint const*, SkCanvas::SrcRectConstraint)':
+RenderNodeDrawable.cpp:(.text._ZN8SkCanvas13drawImageRectERK5sk_spI7SkImageERK6SkRectS7_RK17SkSamplingOptionsPK7SkPaintNS_17SrcRectConstraintE[_ZN8SkCanvas13drawImageRectERK5sk_spI7SkImageERK6SkRectS7_RK17SkSamplingOptionsPK7SkPaintNS_17SrcRectConstraintE]+0x52): undefined reference to `SkCanvas::drawImageRect(SkImage const*, SkRect const&, SkRect const&, SkSamplingOptions const&, SkPaint const*, SkCanvas::SrcRectConstraint)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o: in function `android::uirenderer::skiapipeline::AlphaFilterCanvas::AlphaFilterCanvas(SkCanvas*, float)':
+RenderNodeDrawable.cpp:(.text._ZN7android10uirenderer12skiapipeline17AlphaFilterCanvasC2EP8SkCanvasf[_ZN7android10uirenderer12skiapipeline17AlphaFilterCanvasC2EP8SkCanvasf]+0x22): undefined reference to `SkPaintFilterCanvas::SkPaintFilterCanvas(SkCanvas*)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o: in function `SkCanvas::clipRect(SkRect const&, bool)':
+RenderNodeDrawable.cpp:(.text._ZN8SkCanvas8clipRectERK6SkRectb[_ZN8SkCanvas8clipRectERK6SkRectb]+0x32): undefined reference to `SkCanvas::clipRect(SkRect const&, SkClipOp, bool)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o: in function `SkCanvasVirtualEnforcer<SkNWayCanvas>::~SkCanvasVirtualEnforcer()':
+RenderNodeDrawable.cpp:(.text._ZN23SkCanvasVirtualEnforcerI12SkNWayCanvasED2Ev[_ZN23SkCanvasVirtualEnforcerI12SkNWayCanvasED2Ev]+0x11): undefined reference to `SkNWayCanvas::~SkNWayCanvas()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o: in function `android::uirenderer::skiapipeline::AlphaFilterCanvas::onDrawDrawable(SkDrawable*, SkMatrix const*)':
+RenderNodeDrawable.cpp:(.text._ZN7android10uirenderer12skiapipeline17AlphaFilterCanvas14onDrawDrawableEP10SkDrawablePK8SkMatrix[_ZN7android10uirenderer12skiapipeline17AlphaFilterCanvas14onDrawDrawableEP10SkDrawablePK8SkMatrix]+0x21): undefined reference to `SkDrawable::draw(SkCanvas*, SkMatrix const*)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o: in function `SkRRect::MakeRectXY(SkRect const&, float, float)':
+RenderNodeDrawable.cpp:(.text._ZN7SkRRect10MakeRectXYERK6SkRectff[_ZN7SkRRect10MakeRectXYERK6SkRectff]+0x39): undefined reference to `SkRRect::setRectXY(SkRect const&, float, float)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro+0x50): undefined reference to `SkDrawable::onApproximateBytesUsed()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro+0x70): undefined reference to `SkDrawable::onNewPictureSnapshot()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro+0x88): undefined reference to `typeinfo for SkDrawable'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x30): undefined reference to `SkCanvas::isClipEmpty() const'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x38): undefined reference to `SkCanvas::isClipRect() const'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x40): undefined reference to `SkPaintFilterCanvas::onNewSurface(SkImageInfo const&, SkSurfaceProps const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x48): undefined reference to `SkPaintFilterCanvas::onPeekPixels(SkPixmap*)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x50): undefined reference to `SkPaintFilterCanvas::onAccessTopLayerPixels(SkPixmap*)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x58): undefined reference to `SkPaintFilterCanvas::onImageInfo() const'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x60): undefined reference to `SkPaintFilterCanvas::onGetProps(SkSurfaceProps*) const'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x68): undefined reference to `SkNWayCanvas::onFlush()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x70): undefined reference to `SkNWayCanvas::willSave()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x78): undefined reference to `SkNWayCanvas::getSaveLayerStrategy(SkCanvas::SaveLayerRec const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x80): undefined reference to `SkNWayCanvas::onDoSaveBehind(SkRect const*)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x88): undefined reference to `SkNWayCanvas::willRestore()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x98): undefined reference to `SkNWayCanvas::didConcat44(SkM44 const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0xa0): undefined reference to `SkNWayCanvas::didSetM44(SkM44 const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0xa8): undefined reference to `SkNWayCanvas::didTranslate(float, float)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0xb0): undefined reference to `SkNWayCanvas::didScale(float, float)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0xb8): undefined reference to `SkPaintFilterCanvas::onDrawPaint(SkPaint const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0xc0): undefined reference to `SkPaintFilterCanvas::onDrawBehind(SkPaint const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0xc8): undefined reference to `SkPaintFilterCanvas::onDrawRect(SkRect const&, SkPaint const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0xd0): undefined reference to `SkPaintFilterCanvas::onDrawRRect(SkRRect const&, SkPaint const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0xd8): undefined reference to `SkPaintFilterCanvas::onDrawDRRect(SkRRect const&, SkRRect const&, SkPaint const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0xe0): undefined reference to `SkPaintFilterCanvas::onDrawOval(SkRect const&, SkPaint const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0xe8): undefined reference to `SkPaintFilterCanvas::onDrawArc(SkRect const&, float, float, bool, SkPaint const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0xf0): undefined reference to `SkPaintFilterCanvas::onDrawPath(SkPath const&, SkPaint const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0xf8): undefined reference to `SkPaintFilterCanvas::onDrawRegion(SkRegion const&, SkPaint const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x100): undefined reference to `SkPaintFilterCanvas::onDrawTextBlob(SkTextBlob const*, float, float, SkPaint const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x108): undefined reference to `SkPaintFilterCanvas::onDrawGlyphRunList(SkGlyphRunList const&, SkPaint const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x110): undefined reference to `SkPaintFilterCanvas::onDrawPatch(SkPoint const*, unsigned int const*, SkPoint const*, SkBlendMode, SkPaint const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x118): undefined reference to `SkPaintFilterCanvas::onDrawPoints(SkCanvas::PointMode, unsigned long, SkPoint const*, SkPaint const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x120): undefined reference to `SkPaintFilterCanvas::onDrawImage2(SkImage const*, float, float, SkSamplingOptions const&, SkPaint const*)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x128): undefined reference to `SkPaintFilterCanvas::onDrawImageRect2(SkImage const*, SkRect const&, SkRect const&, SkSamplingOptions const&, SkPaint const*, SkCanvas::SrcRectConstraint)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x130): undefined reference to `SkPaintFilterCanvas::onDrawImageLattice2(SkImage const*, SkCanvas::Lattice const&, SkRect const&, SkFilterMode, SkPaint const*)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x138): undefined reference to `SkPaintFilterCanvas::onDrawAtlas2(SkImage const*, SkRSXform const*, SkRect const*, unsigned int const*, int, SkBlendMode, SkSamplingOptions const&, SkRect const*, SkPaint const*)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x140): undefined reference to `SkPaintFilterCanvas::onDrawEdgeAAImageSet2(SkCanvas::ImageSetEntry const*, int, SkPoint const*, SkMatrix const*, SkSamplingOptions const&, SkPaint const*, SkCanvas::SrcRectConstraint)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x148): undefined reference to `SkPaintFilterCanvas::onDrawVerticesObject(SkVertices const*, SkBlendMode, SkPaint const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x150): undefined reference to `SkCanvas::onDrawCustomMesh(SkCustomMesh, sk_sp<SkBlender>, SkPaint const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x158): undefined reference to `SkPaintFilterCanvas::onDrawAnnotation(SkRect const&, char const*, SkData*)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x160): undefined reference to `SkPaintFilterCanvas::onDrawShadowRec(SkPath const&, SkDrawShadowRec const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x170): undefined reference to `SkPaintFilterCanvas::onDrawPicture(SkPicture const*, SkMatrix const*, SkPaint const*)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x178): undefined reference to `SkPaintFilterCanvas::onDrawEdgeAAQuad(SkRect const&, SkPoint const*, SkCanvas::QuadAAFlags, SkRGBA4f<(SkAlphaType)3> const&, SkBlendMode)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x180): undefined reference to `SkNWayCanvas::onClipRect(SkRect const&, SkClipOp, SkCanvas::ClipEdgeStyle)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x188): undefined reference to `SkNWayCanvas::onClipRRect(SkRRect const&, SkClipOp, SkCanvas::ClipEdgeStyle)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x190): undefined reference to `SkNWayCanvas::onClipPath(SkPath const&, SkClipOp, SkCanvas::ClipEdgeStyle)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x198): undefined reference to `SkNWayCanvas::onClipShader(sk_sp<SkShader>, SkClipOp)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x1a0): undefined reference to `SkNWayCanvas::onClipRegion(SkRegion const&, SkClipOp)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x1a8): undefined reference to `SkNWayCanvas::onResetClip()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x1b0): undefined reference to `SkCanvas::onDiscard()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x1c0): undefined reference to `SkNWayCanvas::addCanvas(SkCanvas*)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x1c8): undefined reference to `SkNWayCanvas::removeCanvas(SkCanvas*)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTVN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x1d0): undefined reference to `SkNWayCanvas::removeAll()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/13.o:(.data.rel.ro._ZTIN7android10uirenderer12skiapipeline17AlphaFilterCanvasE[_ZTIN7android10uirenderer12skiapipeline17AlphaFilterCanvasE]+0x10): undefined reference to `typeinfo for SkPaintFilterCanvas'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/2.o: in function `android::uirenderer::RenderProperties::ComputedFields::ComputedFields()':
+RenderProperties.cpp:(.text+0x4a0): undefined reference to `Sk3DView::Sk3DView()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/2.o: in function `android::uirenderer::RenderProperties::ComputedFields::~ComputedFields()':
+RenderProperties.cpp:(.text+0x4f8): undefined reference to `Sk3DView::~Sk3DView()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/2.o: in function `android::uirenderer::RenderProperties::updateMatrix()':
+RenderProperties.cpp:(.text+0x815): undefined reference to `SkMatrix::reset()'
+/usr/bin/ld: RenderProperties.cpp:(.text+0x87f): undefined reference to `SkMatrix::setTranslate(float, float)'
+/usr/bin/ld: RenderProperties.cpp:(.text+0x8c8): undefined reference to `SkMatrix::preRotate(float, float, float)'
+/usr/bin/ld: RenderProperties.cpp:(.text+0x91e): undefined reference to `SkMatrix::preScale(float, float, float, float)'
+/usr/bin/ld: RenderProperties.cpp:(.text+0x940): undefined reference to `Sk3DView::save()'
+/usr/bin/ld: RenderProperties.cpp:(.text+0x9ae): undefined reference to `SkMatrix::preScale(float, float, float, float)'
+/usr/bin/ld: RenderProperties.cpp:(.text+0x9ca): undefined reference to `Sk3DView::rotateX(float)'
+/usr/bin/ld: RenderProperties.cpp:(.text+0x9e6): undefined reference to `Sk3DView::rotateY(float)'
+/usr/bin/ld: RenderProperties.cpp:(.text+0xa0f): undefined reference to `Sk3DView::rotateZ(float)'
+/usr/bin/ld: RenderProperties.cpp:(.text+0xa27): undefined reference to `Sk3DView::getMatrix(SkMatrix*) const'
+/usr/bin/ld: RenderProperties.cpp:(.text+0xa6f): undefined reference to `SkMatrix::preTranslate(float, float)'
+/usr/bin/ld: RenderProperties.cpp:(.text+0xada): undefined reference to `SkMatrix::postTranslate(float, float)'
+/usr/bin/ld: RenderProperties.cpp:(.text+0xae7): undefined reference to `SkMatrix::postConcat(SkMatrix const&)'
+/usr/bin/ld: RenderProperties.cpp:(.text+0xafb): undefined reference to `Sk3DView::restore()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/2.o: in function `android::uirenderer::PaintUtils::getBlendModeDirect(SkPaint const*)':
+RenderProperties.cpp:(.text._ZN7android10uirenderer10PaintUtils18getBlendModeDirectEPK7SkPaint[_ZN7android10uirenderer10PaintUtils18getBlendModeDirectEPK7SkPaint]+0x1d): undefined reference to `SkPaint::getBlendMode_or(SkBlendMode) const'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/2.o: in function `android::uirenderer::Outline::Outline()':
+RenderProperties.cpp:(.text._ZN7android10uirenderer7OutlineC2Ev[_ZN7android10uirenderer7OutlineC2Ev]+0x40): undefined reference to `SkPath::SkPath()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/2.o: in function `android::uirenderer::RevealClip::RevealClip()':
+RenderProperties.cpp:(.text._ZN7android10uirenderer10RevealClipC2Ev[_ZN7android10uirenderer10RevealClipC2Ev]+0x30): undefined reference to `SkPath::SkPath()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/2.o: in function `android::uirenderer::Outline::~Outline()':
+RenderProperties.cpp:(.text._ZN7android10uirenderer7OutlineD2Ev[_ZN7android10uirenderer7OutlineD2Ev]+0x15): undefined reference to `SkPath::~SkPath()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/2.o: in function `android::uirenderer::RevealClip::~RevealClip()':
+RenderProperties.cpp:(.text._ZN7android10uirenderer10RevealClipD2Ev[_ZN7android10uirenderer10RevealClipD2Ev]+0x15): undefined reference to `SkPath::~SkPath()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/2.o: in function `android::uirenderer::Outline::operator=(android::uirenderer::Outline const&)':
+RenderProperties.cpp:(.text._ZN7android10uirenderer7OutlineaSERKS1_[_ZN7android10uirenderer7OutlineaSERKS1_]+0x47): undefined reference to `SkPath::operator=(SkPath const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/2.o: in function `android::uirenderer::RevealClip::operator=(android::uirenderer::RevealClip const&)':
+RenderProperties.cpp:(.text._ZN7android10uirenderer10RevealClipaSERKS1_[_ZN7android10uirenderer10RevealClipaSERKS1_]+0x37): undefined reference to `SkPath::operator=(SkPath const&)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/4.o: in function `android::uirenderer::Matrix4::copyTo(SkMatrix&) const':
+Matrix.cpp:(.text+0x6cd): undefined reference to `SkMatrix::reset()'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/4.o: in function `android::uirenderer::Matrix4::dump(char const*) const':
+Matrix.cpp:(.text+0x1c97): undefined reference to `__android_log_print'
+/usr/bin/ld: Matrix.cpp:(.text+0x1cd5): undefined reference to `__android_log_print'
+/usr/bin/ld: Matrix.cpp:(.text+0x1d14): undefined reference to `__android_log_print'
+/usr/bin/ld: Matrix.cpp:(.text+0x1d53): undefined reference to `__android_log_print'
+/usr/bin/ld: Matrix.cpp:(.text+0x1d92): undefined reference to `__android_log_print'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/4.o:Matrix.cpp:(.text+0x1da9): more undefined references to `__android_log_print' follow
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/4.o: in function `SkMatrix::rectStaysRect() const':
+Matrix.cpp:(.text._ZNK8SkMatrix13rectStaysRectEv[_ZNK8SkMatrix13rectStaysRectEv]+0x26): undefined reference to `SkMatrix::computeTypeMask() const'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/5.o: in function `android::uirenderer::makeLight(unsigned int)':
+CanvasTransform.cpp:(.text+0x1c): undefined reference to `android::uirenderer::sRGBToLab(unsigned int)'
+/usr/bin/ld: CanvasTransform.cpp:(.text+0x95): undefined reference to `android::uirenderer::LabToSRGB(android::uirenderer::Lab const&, unsigned char)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/5.o: in function `android::uirenderer::makeDark(unsigned int)':
+CanvasTransform.cpp:(.text+0xec): undefined reference to `android::uirenderer::sRGBToLab(unsigned int)'
+/usr/bin/ld: CanvasTransform.cpp:(.text+0x169): undefined reference to `android::uirenderer::LabToSRGB(android::uirenderer::Lab const&, unsigned char)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/5.o: in function `android::uirenderer::applyColorTransform(android::uirenderer::ColorTransform, SkPaint&)':
+CanvasTransform.cpp:(.text+0x2dc): undefined reference to `SkPaint::setColor(unsigned int)'
+/usr/bin/ld: CanvasTransform.cpp:(.text+0x3e9): undefined reference to `SkGradientShader::MakeLinear(SkPoint const*, unsigned int const*, float const*, int, SkTileMode, unsigned int, SkMatrix const*)'
+/usr/bin/ld: CanvasTransform.cpp:(.text+0x3fc): undefined reference to `SkPaint::setShader(sk_sp<SkShader>)'
+/usr/bin/ld: CanvasTransform.cpp:(.text+0x46d): undefined reference to `SkColorFilter::asAColorMode(unsigned int*, SkBlendMode*) const'
+/usr/bin/ld: CanvasTransform.cpp:(.text+0x4ba): undefined reference to `SkColorFilters::Blend(unsigned int, SkBlendMode)'
+/usr/bin/ld: CanvasTransform.cpp:(.text+0x4cd): undefined reference to `SkPaint::setColorFilter(sk_sp<SkColorFilter>)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/5.o: in function `android::uirenderer::transformPaint(android::uirenderer::ColorTransform, SkPaint*, android::BitmapPalette)':
+CanvasTransform.cpp:(.text+0x5d8): undefined reference to `SkHighContrastFilter::Make(SkHighContrastConfig const&)'
+/usr/bin/ld: CanvasTransform.cpp:(.text+0x5f4): undefined reference to `SkPaint::refColorFilter() const'
+/usr/bin/ld: CanvasTransform.cpp:(.text+0x607): undefined reference to `SkColorFilter::makeComposed(sk_sp<SkColorFilter>) const'
+/usr/bin/ld: CanvasTransform.cpp:(.text+0x616): undefined reference to `SkPaint::setColorFilter(sk_sp<SkColorFilter>)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/5.o: in function `android::uirenderer::filterPalette(SkPaint const*, android::BitmapPalette)':
+CanvasTransform.cpp:(.text+0x739): undefined reference to `SkColorFilter::filterColor(unsigned int) const'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/5.o: in function `SkColorToHSV(unsigned int, float*)':
+CanvasTransform.cpp:(.text+0x828): undefined reference to `SkRGBToHSV(unsigned int, unsigned int, unsigned int, float*)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/5.o: in function `SkPaint::getColor() const':
+CanvasTransform.cpp:(.text._ZNK7SkPaint8getColorEv[_ZNK7SkPaint8getColorEv]+0x15): undefined reference to `SkRGBA4f<(SkAlphaType)3>::toSkColor() const'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/8.o: in function `android::uirenderer::LUTInterpolator::interpolate(float)':
+Interpolator.cpp:(.text+0xa32): undefined reference to `__android_log_assert'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/9.o: in function `SkiaInterpolatorBase::~SkiaInterpolatorBase()':
+SkiaInterpolator.cpp:(.text+0x44): undefined reference to `sk_free(void*)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/9.o: in function `SkiaInterpolatorBase::reset(int, int)':
+SkiaInterpolator.cpp:(.text+0xbe): undefined reference to `sk_free(void*)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/9.o: in function `sk_malloc_throw(unsigned long)':
+SkiaInterpolator.cpp:(.text+0x7e6): undefined reference to `sk_malloc_flags(unsigned long, unsigned int)'
+/usr/bin/ld: /home/tv/repositorio-principal/dist/apk/hwui-object-final-1/11.o: in function `android::uirenderer::LinearAllocator::dumpMemoryStats(char const*)':
+LinearAllocator.cpp:(.text+0x71b): undefined reference to `__android_log_print'
+/usr/bin/ld: LinearAllocator.cpp:(.text+0x819): undefined reference to `__android_log_print'
+/usr/bin/ld: LinearAllocator.cpp:(.text+0x83f): undefined reference to `__android_log_print'
+clang++: error: linker command failed with exit code 1 (use -v to see invocation)

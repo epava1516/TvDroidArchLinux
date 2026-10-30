@@ -1,0 +1,78 @@
+                 U _Unwind_Resume
+                 U android::uirenderer::RenderNode::output(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, unsigned int)
+                 U android::uirenderer::DisplayListData::reset()
+                 U android::uirenderer::DisplayListData::~DisplayListData()
+                 U android::uirenderer::LinearAllocator::LinearAllocator()
+                 U android::uirenderer::LinearAllocator::~LinearAllocator()
+                 U android::uirenderer::DamageAccumulator::popTransform()
+                 U android::uirenderer::DamageAccumulator::pushTransform(android::uirenderer::Matrix4 const*)
+                 U android::uirenderer::Matrix4::loadIdentity()
+                 U android::uirenderer::Matrix4::loadMultiply(android::uirenderer::Matrix4 const&, android::uirenderer::Matrix4 const&)
+                 U android::uirenderer::Matrix4::load(SkMatrix const&)
+                 U android::AnimatedImageDrawable::syncProperties()
+                 U android::AnimatedImageDrawable::isDirty(long*)
+                 U android::AnimatedImageDrawable::isRunning()
+                 U SkCanvas::onDrawPatch(SkPoint const*, unsigned int const*, SkPoint const*, SkBlendMode, SkPaint const&)
+                 U SkCanvas::onClipShader(sk_sp<SkShader>, SkClipOp)
+                 U SkCanvas::onDrawAtlas2(SkImage const*, SkRSXform const*, SkRect const*, unsigned int const*, int, SkBlendMode, SkSamplingOptions const&, SkRect const*, SkPaint const*)
+                 U SkCanvas::onDrawBehind(SkPaint const&)
+                 U SkCanvas::onNewSurface(SkImageInfo const&, SkSurfaceProps const&)
+                 U SkCanvas::onPeekPixels(SkPixmap*)
+                 U SkCanvas::onDrawShadowRec(SkPath const&, SkDrawShadowRec const&)
+                 U SkCanvas::onDrawAnnotation(SkRect const&, char const*, SkData*)
+                 U SkCanvas::onDrawCustomMesh(SkCustomMesh, sk_sp<SkBlender>, SkPaint const&)
+                 U SkCanvas::onDrawEdgeAAQuad(SkRect const&, SkPoint const*, SkCanvas::QuadAAFlags, SkRGBA4f<(SkAlphaType)3> const&, SkBlendMode)
+                 U SkCanvas::recordingContext()
+                 U SkCanvas::onDrawGlyphRunList(SkGlyphRunList const&, SkPaint const&)
+                 U SkCanvas::onDrawVerticesObject(SkVertices const*, SkBlendMode, SkPaint const&)
+                 U SkCanvas::onDrawEdgeAAImageSet2(SkCanvas::ImageSetEntry const*, int, SkPoint const*, SkMatrix const*, SkSamplingOptions const&, SkPaint const*, SkCanvas::SrcRectConstraint)
+                 U SkCanvas::onAccessTopLayerPixels(SkPixmap*)
+                 U SkCanvas::onFlush()
+                 U SkCanvas::onDiscard()
+                 U SkCanvas::SkCanvas()
+                 U SkCanvas::~SkCanvas()
+                 U android::uirenderer::skiapipeline::RenderNodeDrawable::getNodeProperties() const
+                 U android::uirenderer::DisplayListData::draw(SkCanvas*) const
+                 U android::uirenderer::DamageAccumulator::computeCurrentTransform(android::uirenderer::Matrix4*) const
+                 U android::uirenderer::Matrix4::isIdentity() const
+                 U android::uirenderer::Matrix4::mapPoint3d(android::uirenderer::Vector3&) const
+                 U SkCanvas::isClipRect() const
+                 U SkCanvas::onGetProps(SkSurfaceProps*) const
+                 U SkCanvas::isClipEmpty() const
+                 U SkCanvas::onImageInfo() const
+                 U SkCanvas::getBaseLayerSize() const
+                 U std::runtime_error::what() const
+                 U std::__1::locale::use_facet(std::__1::locale::id&) const
+                 U std::__1::ios_base::getloc() const
+                 U std::exception::what() const
+                 U std::runtime_error::~runtime_error()
+                 U std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__init(unsigned long, char)
+                 U std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::~basic_string()
+                 U std::__1::basic_ostream<char, std::__1::char_traits<char> >::put(char)
+                 U std::__1::basic_ostream<char, std::__1::char_traits<char> >::flush()
+                 U std::__1::basic_ostream<char, std::__1::char_traits<char> >::sentry::sentry(std::__1::basic_ostream<char, std::__1::char_traits<char> >&)
+                 U std::__1::basic_ostream<char, std::__1::char_traits<char> >::sentry::~sentry()
+                 U std::__1::ctype<char>::id
+                 U std::__1::locale::~locale()
+                 U std::__1::ios_base::__set_badbit_and_consider_rethrow()
+                 U std::__1::ios_base::clear(unsigned int)
+                 U std::exception::~exception()
+                 U std::terminate()
+                 U typeinfo for SkCanvas
+                 U typeinfo for std::runtime_error
+                 U typeinfo for std::exception
+                 U vtable for __cxxabiv1::__si_class_type_info
+                 U vtable for std::exception
+                 U operator delete(void*, unsigned long)
+                 U operator delete(void*, unsigned long, std::align_val_t)
+                 U __cxa_allocate_exception
+                 U __cxa_atexit
+                 U __cxa_begin_catch
+                 U __cxa_end_catch
+                 U __cxa_throw
+                 U __dso_handle
+                 U __gxx_personality_v0
+                 U __stack_chk_fail
+                 U memcpy
+                 U memset
+                 U strlen

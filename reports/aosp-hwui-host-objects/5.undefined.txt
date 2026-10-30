@@ -1,0 +1,19 @@
+                 U _Unwind_Resume
+                 U SkRGBToHSV(unsigned int, unsigned int, unsigned int, float*)
+                 U SkColorFilters::Blend(unsigned int, SkBlendMode)
+                 U SkGradientShader::MakeLinear(SkPoint const*, unsigned int const*, float const*, int, SkTileMode, unsigned int, SkMatrix const*)
+                 U SkHighContrastFilter::Make(SkHighContrastConfig const&)
+                 U SkPaint::setColorFilter(sk_sp<SkColorFilter>)
+                 U SkPaint::setColor(unsigned int)
+                 U SkPaint::setShader(sk_sp<SkShader>)
+                 U android::uirenderer::LabToSRGB(android::uirenderer::Lab const&, unsigned char)
+                 U android::uirenderer::sRGBToLab(unsigned int)
+                 U SkColorFilter::filterColor(unsigned int) const
+                 U SkColorFilter::asAColorMode(unsigned int*, SkBlendMode*) const
+                 U SkColorFilter::makeComposed(sk_sp<SkColorFilter>) const
+                 U SkPaint::refColorFilter() const
+                 U SkRGBA4f<(SkAlphaType)3>::toSkColor() const
+                 U std::terminate()
+                 U __cxa_begin_catch
+                 U __gxx_personality_v0
+                 U __stack_chk_fail

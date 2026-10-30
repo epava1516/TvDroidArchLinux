@@ -1,0 +1,127 @@
+                 U _Unwind_Resume
+                 U Op(SkPath const&, SkPath const&, SkPathOp, SkPath*)
+                 U SkRuntimeShaderBuilder::~SkRuntimeShaderBuilder()
+                 U SkPath::addRect(SkRect const&, SkPathDirection, unsigned int)
+                 U SkPath::SkPath()
+                 U SkPath::~SkPath()
+                 U SkRect::join(SkRect const&)
+                 U android::uirenderer::Properties::enableWebViewOverlays
+                 U android::uirenderer::Properties::stretchEffectBehavior
+                 U android::uirenderer::skiapipeline::SkiaDisplayList::syncContents(android::uirenderer::WebViewSyncData const&)
+                 U android::uirenderer::skiapipeline::SkiaDisplayList::updateChildren(std::__1::function<void (android::uirenderer::RenderNode*)>)
+                 U android::uirenderer::skiapipeline::SkiaDisplayList::reuseDisplayList(android::uirenderer::RenderNode*)
+                 U android::uirenderer::skiapipeline::SkiaDisplayList::onRemovedFromTree()
+                 U android::uirenderer::skiapipeline::SkiaDisplayList::prepareListAndChildren(android::uirenderer::TreeObserver&, android::uirenderer::TreeInfo&, bool, std::__1::function<void (android::uirenderer::RenderNode*, android::uirenderer::TreeObserver&, android::uirenderer::TreeInfo&, bool)>)
+                 U android::uirenderer::AnimatorManager::addAnimator(android::sp<android::uirenderer::BaseRenderNodeAnimator> const&)
+                 U android::uirenderer::AnimatorManager::pushStaging()
+                 U android::uirenderer::AnimatorManager::removeAnimator(android::sp<android::uirenderer::BaseRenderNodeAnimator> const&)
+                 U android::uirenderer::AnimatorManager::animate(android::uirenderer::TreeInfo&)
+                 U android::uirenderer::AnimatorManager::AnimatorManager(android::uirenderer::RenderNode&)
+                 U android::uirenderer::AnimatorManager::~AnimatorManager()
+                 U android::uirenderer::DisplayListData::applyColorTransform(android::uirenderer::ColorTransform)
+                 U android::uirenderer::DisplayListData::reset()
+                 U android::uirenderer::DisplayListData::~DisplayListData()
+                 U android::uirenderer::LinearAllocator::~LinearAllocator()
+                 U android::uirenderer::RenderProperties::RenderProperties()
+                 U android::uirenderer::RenderProperties::~RenderProperties()
+                 U android::uirenderer::RenderProperties::operator=(android::uirenderer::RenderProperties const&)
+                 U android::uirenderer::DamageAccumulator::popTransform()
+                 U android::uirenderer::DamageAccumulator::pushTransform(android::uirenderer::RenderNode const*)
+                 U android::uirenderer::DamageAccumulator::dirty(float, float, float, float)
+                 U android::uirenderer::Matrix4::loadRotate(float, float, float, float)
+                 U android::uirenderer::Matrix4::loadIdentity()
+                 U android::uirenderer::Matrix4::loadMultiply(android::uirenderer::Matrix4 const&, android::uirenderer::Matrix4 const&)
+                 U android::uirenderer::Matrix4::loadTranslate(float, float, float)
+                 U android::uirenderer::Matrix4::load(SkMatrix const&)
+                 U android::uirenderer::Matrix4::loadScale(float, float, float)
+                 U android::sp_report_race()
+                 U android::sp_report_stack_pointer()
+                 U android::String8::String8()
+                 U android::String8::~String8()
+                 U SkCanvas::drawAnnotation(SkRect const&, char const*, SkData*)
+                 U SkMatrix::setScale(float, float, float, float)
+                 U SkSurface::generationID()
+                 U SkSurface::makeImageSnapshot()
+                 U SkPath::getGenerationID() const
+                 U SkImage::makeWithFilter(GrRecordingContext*, SkImageFilter const*, SkIRect const&, SkIRect const&, SkIRect*, SkIPoint*) const
+                 U android::uirenderer::skiapipeline::SkiaDisplayList::output(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, unsigned int) const
+                 U android::uirenderer::RenderProperties::debugOutputProperties(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, int) const
+                 U android::uirenderer::Matrix4::isIdentity() const
+                 U android::uirenderer::Matrix4::getType() const
+                 U SkMatrix::computeTypeMask() const
+                 U std::runtime_error::what() const
+                 U std::__1::__vector_base_common<true>::__throw_length_error() const
+                 U std::__1::__basic_string_common<true>::__throw_length_error() const
+                 U std::__1::locale::use_facet(std::__1::locale::id&) const
+                 U std::__1::ios_base::getloc() const
+                 U std::logic_error::logic_error(char const*)
+                 U std::length_error::~length_error()
+                 U std::runtime_error::~runtime_error()
+                 U std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__init(char const*, unsigned long)
+                 U std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__init(unsigned long, char)
+                 U std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::resize(unsigned long, char)
+                 U std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::push_back(char)
+                 U std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::~basic_string()
+                 U std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::operator=(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)
+                 U std::__1::basic_ostream<char, std::__1::char_traits<char> >::put(char)
+                 U std::__1::basic_ostream<char, std::__1::char_traits<char> >::flush()
+                 U std::__1::basic_ostream<char, std::__1::char_traits<char> >::sentry::sentry(std::__1::basic_ostream<char, std::__1::char_traits<char> >&)
+                 U std::__1::basic_ostream<char, std::__1::char_traits<char> >::sentry::~sentry()
+                 U std::__1::basic_ostream<char, std::__1::char_traits<char> >::~basic_ostream()
+                 U std::__1::basic_ostream<char, std::__1::char_traits<char> >::~basic_ostream()
+                 U std::__1::basic_ostream<char, std::__1::char_traits<char> >::~basic_ostream()
+                 U std::__1::basic_ostream<char, std::__1::char_traits<char> >::operator<<(void const*)
+                 U std::__1::basic_streambuf<char, std::__1::char_traits<char> >::sync()
+                 U std::__1::basic_streambuf<char, std::__1::char_traits<char> >::imbue(std::__1::locale const&)
+                 U std::__1::basic_streambuf<char, std::__1::char_traits<char> >::uflow()
+                 U std::__1::basic_streambuf<char, std::__1::char_traits<char> >::setbuf(char*, long)
+                 U std::__1::basic_streambuf<char, std::__1::char_traits<char> >::xsgetn(char*, long)
+                 U std::__1::basic_streambuf<char, std::__1::char_traits<char> >::xsputn(char const*, long)
+                 U std::__1::basic_streambuf<char, std::__1::char_traits<char> >::showmanyc()
+                 U std::__1::basic_streambuf<char, std::__1::char_traits<char> >::basic_streambuf()
+                 U std::__1::basic_streambuf<char, std::__1::char_traits<char> >::~basic_streambuf()
+                 U std::__1::ctype<char>::id
+                 U std::__1::locale::~locale()
+                 U std::__1::ios_base::__set_badbit_and_consider_rethrow()
+                 U std::__1::ios_base::init(void*)
+                 U std::__1::ios_base::clear(unsigned int)
+                 U std::__1::basic_ios<char, std::__1::char_traits<char> >::~basic_ios()
+                 U std::terminate()
+                 U typeinfo for std::__1::basic_ostream<char, std::__1::char_traits<char> >
+                 U typeinfo for std::__1::basic_streambuf<char, std::__1::char_traits<char> >
+                 U typeinfo for std::length_error
+                 U typeinfo for std::runtime_error
+                 U vtable for __cxxabiv1::__class_type_info
+                 U vtable for __cxxabiv1::__si_class_type_info
+                 U vtable for __cxxabiv1::__vmi_class_type_info
+                 U vtable for std::__1::ios_base
+                 U vtable for std::__1::basic_ios<char, std::__1::char_traits<char> >
+                 U vtable for std::length_error
+                 U virtual thunk to std::__1::basic_ostream<char, std::__1::char_traits<char> >::~basic_ostream()
+                 U virtual thunk to std::__1::basic_ostream<char, std::__1::char_traits<char> >::~basic_ostream()
+                 U operator delete(void*, unsigned long)
+                 U operator delete(void*, unsigned long, std::align_val_t)
+                 U operator new(unsigned long)
+                 U operator new(unsigned long, std::align_val_t)
+                 U __android_log_assert
+                 U __android_log_print
+                 U __cxa_allocate_exception
+                 U __cxa_atexit
+                 U __cxa_begin_catch
+                 U __cxa_end_catch
+                 U __cxa_free_exception
+                 U __cxa_pure_virtual
+                 U __cxa_throw
+                 U __dso_handle
+                 U __gxx_personality_v0
+                 U __stack_chk_fail
+                 U atrace_begin_body
+                 U atrace_end_body
+                 U atrace_get_enabled_tags
+                 U free
+                 U malloc
+                 U memcmp
+                 U memcpy
+                 U memset
+                 U snprintf
+                 U strlen

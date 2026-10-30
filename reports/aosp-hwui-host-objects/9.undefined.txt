@@ -1,0 +1,10 @@
+                 U _Unwind_Resume
+                 U sk_malloc_flags(unsigned long, unsigned int)
+                 U sk_free(void*)
+                 U std::terminate()
+                 U __cxa_begin_catch
+                 U __gxx_personality_v0
+                 U __stack_chk_fail
+                 U floorf
+                 U memcpy
+                 U truncf
