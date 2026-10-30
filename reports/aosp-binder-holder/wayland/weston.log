@@ -1,0 +1,35 @@
+Date: 2026-10-30 UTC
+[21:01:52.673] weston 15.0.1
+               https://wayland.freedesktop.org
+               Bug reports to: https://gitlab.freedesktop.org/wayland/weston/issues/
+               Build: 15.0.1
+[21:01:52.673] Command line: weston --backend=headless --renderer=pixman --fake-seat --width=1280 --height=720 --socket=archtv-host --no-config --idle-time=0 --log=/home/tv/repositorio-principal/dist/apk/binder-holder-final-wayland-1/weston.log
+[21:01:52.673] OS: Linux, 6.18.59-1-lts, #1 SMP PREEMPT_DYNAMIC Mon, 26 Oct 2026 18:35:24 +0000, x86_64
+[21:01:52.673] Flight recorder: enabled, scopes subscribed: log
+[21:01:52.673] Starting with no config file.
+[21:01:52.673] Output repaint window is 7 ms maximum.
+[21:01:52.673] Loading module '/usr/lib/libweston-15/headless-backend.so'
+[21:01:52.699] Using Pixman renderer
+[21:01:52.699] Registered plugin API 'weston_windowed_output_api_headless_v2' of size 16
+[21:01:52.699] Color manager: no-op
+                 protocol support: no
+[21:01:52.699] Color representation not supported by renderer
+[21:01:52.699] Output 'headless' attempts EOTF mode SDR and colorimetry mode default.
+[21:01:52.699] Output 'headless' using color profile: stock sRGB color profile
+[21:01:52.699] Output 'headless' enabled with head(s) headless
+[21:01:52.699] Compositor capabilities:
+               arbitrary surface rotation: yes
+               screen capture uses y-flip: no
+               cursor planes: no
+               arbitrary resolutions: no
+               view mask clipping: yes
+               explicit sync: no
+               color operations: no
+               color representation: no
+               presentation clock: CLOCK_MONOTONIC_RAW, id 4
+               presentation clock resolution: 0.000000001 s
+[21:01:52.699] Loading module '/usr/lib/weston/desktop-shell.so'
+[21:01:52.699] launching '/usr/lib/weston/weston-keyboard'
+[21:01:52.701] launching '/usr/lib/weston/weston-desktop-shell'
+[21:02:02.349] caught signal 15
+[21:02:02.349] BUG: finalizing a layer with views still on it.

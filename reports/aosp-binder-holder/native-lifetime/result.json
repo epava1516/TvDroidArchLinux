@@ -1,0 +1,26 @@
+{
+  "lifetime_pass": true,
+  "commands": [
+    [
+      "clang++",
+      "-std=c++17",
+      "-O1",
+      "-g",
+      "-fsanitize=address",
+      "-fno-omit-frame-pointer",
+      "/home/tv/repositorio-principal/fixtures/aosp-binder-holder/holder-lifetime.cpp",
+      "-ldl",
+      "-o",
+      "/home/tv/repositorio-principal/dist/apk/binder-holder-lifetime-final-1/probe"
+    ],
+    [
+      "/home/tv/repositorio-principal/dist/apk/binder-holder-lifetime-final-1/probe",
+      "/home/tv/repositorio-principal/dist/apk/binder-holder-4/libarchtv_binder_holder.so"
+    ]
+  ],
+  "fixture_sha256": "a6b26966338f980b14e21bf3ef1bcfa45f217e52da9c346e53cd0275aaaa05b4",
+  "library_sha256": "f8658488f2c3db379188aaa254a7b48da28a68318186e990e79d50b807aedd85",
+  "verifier_sha256": "adc73f0756f3f1ac2a9b256797aca4176ec1c5a1ec785dc72bc895e0b8e8a441",
+  "asan_options": "detect_leaks=1",
+  "scope": "12800 empty original holders allocated/finalized through original JNI exports, 100 cycles of 128 unique live pointers. Sanitized probe intercepts allocations; loaded production library is not compiler-instrumented. Not ART GC/finalizer scheduling, native JavaBBinder transport, IPC, extensions or general runtime lifetime proof."
+}

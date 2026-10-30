@@ -1,0 +1,2156 @@
+{
+  "scope": "Original Binder and framework JNI sources for Linux host port; not a complete dependency closure or runtime IPC proof",
+  "components": [
+    {
+      "name": "binder",
+      "archive_url": "https://android.googlesource.com/platform/frameworks/native/+archive/2fe7eddf185ecb63223eeadc58804f9bf6cbd426/libs/binder.tar.gz",
+      "files": {
+        "ActivityManager.cpp": {
+          "bytes": 4571,
+          "sha256": "9edabf84d593c6a0da0f5df2f0a226f96f9927de28c1c97b4e5564415c1a7fb8"
+        },
+        "Android.bp": {
+          "bytes": 10616,
+          "sha256": "68d96bb468aac9b7810c7c102a2fd344368b573e5f2f643050ebb6512cfcb2c3"
+        },
+        "Binder.cpp": {
+          "bytes": 21368,
+          "sha256": "4e48894105ca0dcffd08296d1903bb6b8b38b36a6f9e091ad17f41aab2e72a84"
+        },
+        "BpBinder.cpp": {
+          "bytes": 19598,
+          "sha256": "005fd8746a70474f081e7b9988da2798d3b84b6abbf0d77c5761a60af028341a"
+        },
+        "BufferedTextOutput.cpp": {
+          "bytes": 7452,
+          "sha256": "5e5686ccdc94c69f3b3de079c7f035d7bef375e0496a2427ca5c51043e08d094"
+        },
+        "BufferedTextOutput.h": {
+          "bytes": 1840,
+          "sha256": "49419e67e0dc1c0e6ef7a5f24682a2710a0aa6a87ba245b713d78413fee86c80"
+        },
+        "Debug.cpp": {
+          "bytes": 8580,
+          "sha256": "e45e4f2bc0ab4ec04b04157d292af1229ecbce09c6e3f2b6d0ea37431f2fc8b3"
+        },
+        "Debug.h": {
+          "bytes": 1427,
+          "sha256": "7fae57c64a14f72b13494e1737397161e070386aa91f86a679f2253b22dac0e8"
+        },
+        "FdTrigger.cpp": {
+          "bytes": 3171,
+          "sha256": "5d8c0de84ed615c3f030fc900eb0fd3404303316c95d867f6de053a35b5950cb"
+        },
+        "FdTrigger.h": {
+          "bytes": 1796,
+          "sha256": "a93d8f2d0ed7565435ac691cf4b8da7c07c10cbf322e2533ead65cb40e71eff2"
+        },
+        "IActivityManager.cpp": {
+          "bytes": 5357,
+          "sha256": "9dd048dce12deebeaa773b36dd6b3b41c044bb9c07294e9354019e2df2116acc"
+        },
+        "IBatteryStats.cpp": {
+          "bytes": 8586,
+          "sha256": "454eccc7c79a826a422647d5ca3592f608f31a080c391a35fb4a05b02545a820"
+        },
+        "IInterface.cpp": {
+          "bytes": 1365,
+          "sha256": "9a87f8b9594d643619e0429a9d08ee8cffb863d99d2f85373da1bfda039bcd3c"
+        },
+        "IMemory.cpp": {
+          "bytes": 15759,
+          "sha256": "2397cc23944b65acab2c43ac8dfca070d8a5f0c998dd5c746c6b041874d5f191"
+        },
+        "IPCThreadState.cpp": {
+          "bytes": 47136,
+          "sha256": "ae810adf70b83735569eaf714b69d714c7ceeb9bedcb5f9bc3f2fdbbe412ddeb"
+        },
+        "IPermissionController.cpp": {
+          "bytes": 6200,
+          "sha256": "c3ca9eeeb73b3b94314aaa9448699e672ab1d334d0a3a465471582dbe10eccca"
+        },
+        "IProcessInfoService.cpp": {
+          "bytes": 3417,
+          "sha256": "fdd552afd958ccf8a16f90a6f07d35ede36eef91a7867f5d23df7997edd6e95f"
+        },
+        "IResultReceiver.cpp": {
+          "bytes": 2065,
+          "sha256": "1bc6b382356123f62ae3500b9b3a59b73c493e35d75582c1dab5e66232da6dd8"
+        },
+        "IServiceManager.cpp": {
+          "bytes": 23686,
+          "sha256": "abd93d1b4646cb659cedd93665e4202a003039bd8781f2e9d3851517e668d73e"
+        },
+        "IShellCallback.cpp": {
+          "bytes": 2814,
+          "sha256": "a3a7d812759c80b2069a57f89ae395d05303618b11a8722db384a835586f63e4"
+        },
+        "IUidObserver.cpp": {
+          "bytes": 4586,
+          "sha256": "9525efd7c07a97d1ab7df21abd9f0feb6d6fb807dfd727efebf64f23806c1990"
+        },
+        "LazyServiceRegistrar.cpp": {
+          "bytes": 12116,
+          "sha256": "48cc363658468ed0c62f85241f5c5b4f5848ca757f2709873b1016a5f61a5734"
+        },
+        "MemoryBase.cpp": {
+          "bytes": 1236,
+          "sha256": "2f687817e6ea0304e7270ba202f7dde79cdb8b290ab267a1fa8592ae9b581e04"
+        },
+        "MemoryDealer.cpp": {
+          "bytes": 13926,
+          "sha256": "778d452019bcaafd0113f7f3618f0b93edca763f4b2982490492396747c2ebe9"
+        },
+        "MemoryHeapBase.cpp": {
+          "bytes": 7155,
+          "sha256": "04ec5c0c85dffca2f0a030fa7ae7f85bc61a3b42bf2ff6415802d66ca2425dcf"
+        },
+        "OWNERS": {
+          "bytes": 113,
+          "sha256": "3ff40851b199d00f49fd90a8fb8c6ed166daff0ee443f07302df3c226b5288d3"
+        },
+        "Parcel.cpp": {
+          "bytes": 84581,
+          "sha256": "3f464060cfbc759f66dc6bc89164ae2888b416718faa8254e279dc38f285c839"
+        },
+        "ParcelFileDescriptor.cpp": {
+          "bytes": 1214,
+          "sha256": "adab72f8fc8b0ebb461a96c42bc6525646520d0e53b53e89f215140dd6286b29"
+        },
+        "ParcelValTypes.h": {
+          "bytes": 1581,
+          "sha256": "9bcd33c7232c1217018f6b94d9b846590bbb9bbd68d30eae01e6d2508404c5be"
+        },
+        "ParcelableHolder.cpp": {
+          "bytes": 3222,
+          "sha256": "e51d2ad361770a3a8ae58f80d0a11c9286b1be153c3e70095de7844e85661860"
+        },
+        "PermissionCache.cpp": {
+          "bytes": 3636,
+          "sha256": "bbaa52a1be2bd6d5de82b3e3aae2415b13f82b47ec691cf1dd48ecb1ca837059"
+        },
+        "PermissionController.cpp": {
+          "bytes": 3004,
+          "sha256": "9c125bb4c813d3ce6e4e40996c43e04281f6121ee0f416e764d3165eac9ff694"
+        },
+        "PersistableBundle.cpp": {
+          "bytes": 16567,
+          "sha256": "dac35a29e45899171bc59d377041a191474f94b0a9287b3d6d56b398df067d15"
+        },
+        "ProcessInfoService.cpp": {
+          "bytes": 3254,
+          "sha256": "62d96ce337f74dc112eae2add07a1b7f9da597d694b82faca29e96d7032f7914"
+        },
+        "ProcessState.cpp": {
+          "bytes": 17461,
+          "sha256": "1c722c784ab7fba2796818e47d5046ffe34e82dcda8a1cd61aa8ce5ff06019ed"
+        },
+        "RpcServer.cpp": {
+          "bytes": 19485,
+          "sha256": "e8fd25a9e001345d71f45d48cd43f4321d2761bde15fbf3ae1759af55b2d5392"
+        },
+        "RpcSession.cpp": {
+          "bytes": 36447,
+          "sha256": "d041a7896653aa950e27765da58cf65430712b1bb8c2094bb00ced13150a14cc"
+        },
+        "RpcSocketAddress.h": {
+          "bytes": 3984,
+          "sha256": "0d2848ee937f4dc83195fb433541ca0a58190fe6c0157c8a8bd123a2ac02b27d"
+        },
+        "RpcState.cpp": {
+          "bytes": 41758,
+          "sha256": "8922f90ef6b9893a0b5b1ca2c8803d4adc04fb2fff3c9e2f3af7e563de0a4342"
+        },
+        "RpcState.h": {
+          "bytes": 11903,
+          "sha256": "da658584e3221dbda76049d642fb04e83d76ad46907e5ab7b3daed40dab1275e"
+        },
+        "RpcTlsUtils.cpp": {
+          "bytes": 4259,
+          "sha256": "deb67229091d72e6b796b2d0a82920c3e196a00cd060447ff150ab3ad0f8b298"
+        },
+        "RpcTransportRaw.cpp": {
+          "bytes": 6901,
+          "sha256": "99cec18d81df2fe1f3bb64c39f43d176c557925696e1b698cf51a7e485e75203"
+        },
+        "RpcTransportTls.cpp": {
+          "bytes": 21489,
+          "sha256": "c954b6bbec9fb9e492338bba52e36f7c61b34b7d2988342c169b87c6bb50bde4"
+        },
+        "RpcWireFormat.h": {
+          "bytes": 4215,
+          "sha256": "3071659f71bca9b6092e14e69d8ea4047c337eaf77c21bf4a75533d96b40cf42"
+        },
+        "ServiceManagerHost.cpp": {
+          "bytes": 6664,
+          "sha256": "3cdeb1c7f443532c094f97dcce66c8bb7b1e9635c8520978a1d1837a0965a955"
+        },
+        "ServiceManagerHost.h": {
+          "bytes": 1230,
+          "sha256": "cede45eaaa4ea476cbdc7363735f6d53a40bb8229d9ad7d327b151c28979a289"
+        },
+        "Stability.cpp": {
+          "bytes": 5761,
+          "sha256": "d0d147ffc0629cf928acfbcdb4f51f47812a5109d5746835319481d23a0858f7"
+        },
+        "Static.cpp": {
+          "bytes": 2024,
+          "sha256": "44a1cadaf5a8980f965af8f6658eabe416117556c77d62f550962fdc26a3ca93"
+        },
+        "Static.h": {
+          "bytes": 890,
+          "sha256": "cb2dfb3fe4ae5b717f8cae8bacdb6b7213e229bb449dc32827f4a9825ad06d43"
+        },
+        "Status.cpp": {
+          "bytes": 8477,
+          "sha256": "923cca3dc140b6f008b5ae0e8222f0a3a3f42e02e3613a2477035384c05a5f47"
+        },
+        "TEST_MAPPING": {
+          "bytes": 1554,
+          "sha256": "6c9a7465a53430171c3727220a749967764ae8a91fa8919cfeeda6619e677853"
+        },
+        "TextOutput.cpp": {
+          "bytes": 1906,
+          "sha256": "19cab105897e5c03cc839c53cb0a4fbd88f0e081c04fce6ded39e917b718e737"
+        },
+        "Utils.cpp": {
+          "bytes": 1252,
+          "sha256": "7409eda4ca2c9fc11e83f7295c50c429a52d2b1bb24034d163c61a4efa7e0cf7"
+        },
+        "Utils.h": {
+          "bytes": 1260,
+          "sha256": "67efef022eaa3fb9b0b1a42029b91afd09cd6238a5f3172d80f422e485198091"
+        },
+        "UtilsHost.cpp": {
+          "bytes": 6399,
+          "sha256": "78b9229b0e9580f3ebc8ff1b1fd51f54fa8f221fbfcd8bd306eebaef46c5343f"
+        },
+        "UtilsHost.h": {
+          "bytes": 3629,
+          "sha256": "5cdec7a31bd9bf525aa8e651e24a353b8c03bb484c91dcf813bfd4bf98a5a299"
+        },
+        "aidl/android/content/pm/ApexStagedEvent.aidl": {
+          "bytes": 896,
+          "sha256": "8280a13e3775968dae3600d388d8126e6ee08600ec2b1f61b87ea5a19b2e18d3"
+        },
+        "aidl/android/content/pm/IPackageChangeObserver.aidl": {
+          "bytes": 882,
+          "sha256": "6362f534aad49240dcca602eaffe383f4974827ebcf4094bbd3948cd5d15c55e"
+        },
+        "aidl/android/content/pm/IPackageManagerNative.aidl": {
+          "bytes": 5676,
+          "sha256": "7a6ba894f5d65455a6ce02ced900cf3098d9f75a22739e8e4a4acfd97577c467"
+        },
+        "aidl/android/content/pm/IStagedApexObserver.aidl": {
+          "bytes": 877,
+          "sha256": "33775d393a32e5e060da8a19ead751381646ea050c123383b7f80dfc89fa7177"
+        },
+        "aidl/android/content/pm/OWNERS": {
+          "bytes": 94,
+          "sha256": "6154be6f0806ef169d386609e3d956ce26491dd63c1f9fb3279d93544916aafa"
+        },
+        "aidl/android/content/pm/PackageChangeEvent.aidl": {
+          "bytes": 987,
+          "sha256": "acfaad8da0fa6369ea0bbb41d04b1e3042a3265171e92ce9f605cb3569a0e021"
+        },
+        "aidl/android/content/pm/StagedApexInfo.aidl": {
+          "bytes": 973,
+          "sha256": "58191b5dea81a25c15c20bf8b761b70e679b090529d2a2431656d5c2f1e1e0b8"
+        },
+        "aidl/android/os/ConnectionInfo.aidl": {
+          "bytes": 972,
+          "sha256": "2d8ba6075b12d0667824386790518cc956c04e811c9b6080444f214fb49a21fa"
+        },
+        "aidl/android/os/IClientCallback.aidl": {
+          "bytes": 1550,
+          "sha256": "287e2c4ce4debe0d1d883d66eee8cbf63910b86bd3e508fab64f5b806d15776a"
+        },
+        "aidl/android/os/IServiceCallback.aidl": {
+          "bytes": 946,
+          "sha256": "031e31e46fc31cfaececb3b9eb69b3bd4792b07a16549212fa1d1b5ae8cc0989"
+        },
+        "aidl/android/os/IServiceManager.aidl": {
+          "bytes": 4625,
+          "sha256": "1b6b4d0584d96c1c7f82e87162f63ea6bc262e191670c13b086c5bc33739a201"
+        },
+        "aidl/android/os/ServiceDebugInfo.aidl": {
+          "bytes": 980,
+          "sha256": "f62aaf6f4606609daec0995b234281bc73cf74d3ed4e9f8c46f516c4b3aa2f6b"
+        },
+        "binder_module.h": {
+          "bytes": 3091,
+          "sha256": "2980dfb5331eac2e2badf3e05c7105a9005a8d83c9918c1d6d0b0d9390e606ce"
+        },
+        "include/binder/Binder.h": {
+          "bytes": 6109,
+          "sha256": "87ec26a326d270096f3dadf1cccdced24e0e26b3aff50ea9bf5b6c300de9ef00"
+        },
+        "include/binder/BinderService.h": {
+          "bytes": 2957,
+          "sha256": "0a2ba40bec643efaacac0f8e6825fdf63e30811a5efff9c063b2f5240154bbd7"
+        },
+        "include/binder/BpBinder.h": {
+          "bytes": 7087,
+          "sha256": "85a5a36db5e48fd0a0438eee1b16787b3622435c1d34ffdf94bc814d1211751e"
+        },
+        "include/binder/Enums.h": {
+          "bytes": 1421,
+          "sha256": "57a62020282e25133dd1dd0ea9522e8408efbfc5681e3de55393d1f7ed53079f"
+        },
+        "include/binder/IBinder.h": {
+          "bytes": 12311,
+          "sha256": "863d67eee75666edd430bea0144495905c87e12bd03a0d9b14f5b87a23c3cd7e"
+        },
+        "include/binder/IInterface.h": {
+          "bytes": 13553,
+          "sha256": "df006ec747d0117eeba2bccacccd7a3e56318c807f7bd6bbaf77570dd5330891"
+        },
+        "include/binder/IMemory.h": {
+          "bytes": 3904,
+          "sha256": "ae7292b208ac57c9d925a0b8544f3413e20378c9eb9c1eae0772187ceb1294ca"
+        },
+        "include/binder/IPCThreadState.h": {
+          "bytes": 11664,
+          "sha256": "84247cb4514804502dd08e2f6afe36eb98b4fc1f877ac30ab860550b18fcc72a"
+        },
+        "include/binder/IPermissionController.h": {
+          "bytes": 2354,
+          "sha256": "3c9470ad89e441eb58b984761a9159c29ca16c4f1e108bfa284488293b88c3c3"
+        },
+        "include/binder/IResultReceiver.h": {
+          "bytes": 1490,
+          "sha256": "00bca412b9769f6972d471102013e653f0afc1babd3ea087f266ad3fd62c3969"
+        },
+        "include/binder/IServiceManager.h": {
+          "bytes": 8548,
+          "sha256": "38dd5d5edaf2edd5b06291ae16248d2825f7aa6c4ce4502edcb54394c5d235d9"
+        },
+        "include/binder/IShellCallback.h": {
+          "bytes": 1569,
+          "sha256": "0a7fcb758a3b6bec66023e47673bf158426df83480d7bace0dec2399d451c239"
+        },
+        "include/binder/LazyServiceRegistrar.h": {
+          "bytes": 3917,
+          "sha256": "071b329aaf2256bc92df839479840a6d917604c2500570e25891d9301a362b77"
+        },
+        "include/binder/MemoryBase.h": {
+          "bytes": 1397,
+          "sha256": "e729a437df4fe1cc276f4bd4e9002b9b525615cb3ec8346aa98ff1c57485ca9c"
+        },
+        "include/binder/MemoryDealer.h": {
+          "bytes": 1888,
+          "sha256": "aa9878880629047a18ffbb35a1e9797b3fd5e0d06f0276f6206ceeaec0286120"
+        },
+        "include/binder/MemoryHeapBase.h": {
+          "bytes": 3701,
+          "sha256": "c82849d20d8e8df8cb469b454c3ada2994c4f62ea4c8dd0a9874d0e7fe290d64"
+        },
+        "include/binder/Parcel.h": {
+          "bytes": 68187,
+          "sha256": "fc8af40508a1773c51f4e1ecd73cc2b83e4fa3975f84e2182a42fb9222baf3a7"
+        },
+        "include/binder/ParcelFileDescriptor.h": {
+          "bytes": 2410,
+          "sha256": "59a390c52542025440c84b4a1df3e48382a712f62d88789aff8620cb04f203b4"
+        },
+        "include/binder/Parcelable.h": {
+          "bytes": 2527,
+          "sha256": "64c0f52ad931a4dce017f4b6632e1a02429ab7b11d0be0b2b4484b4ebaa55f2e"
+        },
+        "include/binder/ParcelableHolder.h": {
+          "bytes": 5000,
+          "sha256": "a6ed1f590c9a86eddf58d9da49a281d1db6b3f14cea586c24a4c27deff4fb1d6"
+        },
+        "include/binder/PermissionCache.h": {
+          "bytes": 2617,
+          "sha256": "a556fa20e95dc116f60234212bde594dc27ad4d85690787ff1d77c85c677d372"
+        },
+        "include/binder/PermissionController.h": {
+          "bytes": 1854,
+          "sha256": "0cff1df94a5d09b39c714e8e8397b6030b1f1a8060ef35fdc9e42047f9e092a4"
+        },
+        "include/binder/PersistableBundle.h": {
+          "bytes": 5533,
+          "sha256": "1c3d225379eb59f00ad1f65f93c29906d52f31ab213d16772de4265742ce457b"
+        },
+        "include/binder/ProcessState.h": {
+          "bytes": 4786,
+          "sha256": "de2be6e6cc3f57702687b441ef5b6594ce28b07e1a0ecd72737b185a622e50d1"
+        },
+        "include/binder/RpcCertificateFormat.h": {
+          "bytes": 1082,
+          "sha256": "1271d4869ca90ed369068c3d91f2c493251a5d82765e507d89ce133a249033f7"
+        },
+        "include/binder/RpcKeyFormat.h": {
+          "bytes": 1051,
+          "sha256": "ead34da0ccda73dbbc6d63d6d5963da611768d914299aaaaa81de5ba2491839b"
+        },
+        "include/binder/RpcServer.h": {
+          "bytes": 6684,
+          "sha256": "19573a20b7318a7e323dcecdef9468e4838b3a175cb018161fb12bfb802a4b48"
+        },
+        "include/binder/RpcSession.h": {
+          "bytes": 13471,
+          "sha256": "27e2db4e8b5d99f82ecbd55423222f5ccda04b8d0e8a829b3d2c1396a5563308"
+        },
+        "include/binder/RpcTransport.h": {
+          "bytes": 3847,
+          "sha256": "8eb29e7830cf05ebdcc776b363a5f3691d1a49b814ec739d1e929ae04b7e60d3"
+        },
+        "include/binder/RpcTransportRaw.h": {
+          "bytes": 1321,
+          "sha256": "750a0fc477b3a7d215199342ee4138b1ffca8b9c2d577c637e7518769dfaf476"
+        },
+        "include/binder/SafeInterface.h": {
+          "bytes": 31789,
+          "sha256": "0fa13cfb9dd8d0d403a272c46eb7461c4cc661ead7aa438f69140f7e5d370459"
+        },
+        "include/binder/Stability.h": {
+          "bytes": 7791,
+          "sha256": "5c588e2153db810ba1f71556c1501fd7f7a2e9823b334747b455528463f68038"
+        },
+        "include/binder/Status.h": {
+          "bytes": 6581,
+          "sha256": "9986fd6df36d0086e035e5d2608e2c7daffea4a863774959b09f8012e6fd27b3"
+        },
+        "include/binder/TextOutput.h": {
+          "bytes": 5636,
+          "sha256": "665cea64f737e104191d448f9b02399d3902b9b7c261a360a2b36012537267c9"
+        },
+        "include_activitymanager/binder/ActivityManager.h": {
+          "bytes": 4071,
+          "sha256": "fdfa4ba902462906b5185b0e09943742dd476541449bb0ced192a538d2f51c09"
+        },
+        "include_activitymanager/binder/IActivityManager.h": {
+          "bytes": 2267,
+          "sha256": "f412664d908a4da2e7e78e257efcd67e8b755be7b976ae8bf94f626c0bdd7cdb"
+        },
+        "include_activitymanager/binder/IUidObserver.h": {
+          "bytes": 2078,
+          "sha256": "e5b8e9c6f7004ebbe5e4a24452528000cda352e8b8db97489be1c30dac2e2110"
+        },
+        "include_batterystats/batterystats/IBatteryStats.h": {
+          "bytes": 2739,
+          "sha256": "6c987f5018c1548366d12b78a12f05d11a629cfc28e10f3243abc5fab948e8d2"
+        },
+        "include_processinfo/processinfo/IProcessInfoService.h": {
+          "bytes": 1758,
+          "sha256": "7d5515ba679da57e2e6b986942bcd77a3a3602515f63bed2902a8c9b7b8d0c94"
+        },
+        "include_processinfo/processinfo/ProcessInfoService.h": {
+          "bytes": 3116,
+          "sha256": "c43552897b80537957c46a0b7b6667b7d6e819f28936d6f8bae8319b2bc7f382"
+        },
+        "include_rpc_unstable/binder_rpc_unstable.hpp": {
+          "bytes": 2118,
+          "sha256": "71a7bebc4ea12e86a68a788b1cb419293e20d7f6f2ca91675c4c9fc55b8e6469"
+        },
+        "include_tls/binder/RpcAuth.h": {
+          "bytes": 1655,
+          "sha256": "1b8b06a45cf6fc7c90cd35b05423fa734dcf8414ee790cc3d38a6edefe7cbef8"
+        },
+        "include_tls/binder/RpcCertificateVerifier.h": {
+          "bytes": 1507,
+          "sha256": "b0e76d22cf4b294095fc376f5f79fc1fb029d3db12523fdb104bb3c3da43f5c6"
+        },
+        "include_tls/binder/RpcTlsUtils.h": {
+          "bytes": 1465,
+          "sha256": "9039f850acb654fa36c3c23f92eb2576b1ca62aaa64e095fbb588aba420cf737"
+        },
+        "include_tls/binder/RpcTransportTls.h": {
+          "bytes": 1680,
+          "sha256": "f937374d8364a3d7bdd297baffc1fb15c412faaa40ad6b39387b8b86e855f299"
+        },
+        "libbinder.map": {
+          "bytes": 89,
+          "sha256": "4ca3e531bf01e4b045f9af4a282949351727be57d42b3415efb2cbcb10555be7"
+        },
+        "libbinder_rpc_unstable.cpp": {
+          "bytes": 3681,
+          "sha256": "285d2546aea97adb7678ce1b44028727f40a734db4561ae8c071504ecf0478b1"
+        },
+        "libbinder_rpc_unstable.map.txt": {
+          "bytes": 161,
+          "sha256": "8a9869774af4e88cfd38d1222e20b61d8cae20e78f5515d102fa86c7321a6920"
+        },
+        "ndk/.clang-format": {
+          "bytes": 205,
+          "sha256": "7010b10ba5ceb3f26887cb20bbc2e0a5e2f6aa0f5ff1b218828a5c3deba3cc5d"
+        },
+        "ndk/Android.bp": {
+          "bytes": 4425,
+          "sha256": "4d2f228e7fcfb1d151382efffea38f0929668be7f980984cb713225cadced1d6"
+        },
+        "ndk/NOTICE": {
+          "bytes": 10689,
+          "sha256": "3c892bf5c5ea4bc860eee7aff856e6716d27c6841732e08fec4a88c4b276978d"
+        },
+        "ndk/ibinder.cpp": {
+          "bytes": 26209,
+          "sha256": "4b62ffcfb0304a1b3c4be33aa36bbbbdff30d1e6c0d0e83926409e1a45656c65"
+        },
+        "ndk/ibinder_internal.h": {
+          "bytes": 8001,
+          "sha256": "808fe8432167a99c64cae3e3a159c5d392b2b0814b3ec5fe6c0b7e6bad2442ba"
+        },
+        "ndk/ibinder_jni.cpp": {
+          "bytes": 1364,
+          "sha256": "6e2578e95f75761489198e71de1d894a6a3ec7dfc597f3f14c8f86990571f4f5"
+        },
+        "ndk/include_cpp/android/binder_auto_utils.h": {
+          "bytes": 12585,
+          "sha256": "9b4203f6019ecfcbebec308f43bbd7102f9a5c0b516a7aaf86b51449099d1037"
+        },
+        "ndk/include_cpp/android/binder_enums.h": {
+          "bytes": 1723,
+          "sha256": "a4f3b34f5478d5ad820e93eabfa0d5fe82e53a71727ad6f48b5932a043060189"
+        },
+        "ndk/include_cpp/android/binder_interface_utils.h": {
+          "bytes": 12057,
+          "sha256": "e6f2417cb606a30fd85394c7be310f56e7632b3dc0f13280b59a51a1c4b14583"
+        },
+        "ndk/include_cpp/android/binder_internal_logging.h": {
+          "bytes": 1010,
+          "sha256": "b3dc27d60e3c75629f231f94ab24779af9faeede2c4d605401179265d6d5eea8"
+        },
+        "ndk/include_cpp/android/binder_parcel_utils.h": {
+          "bytes": 72129,
+          "sha256": "f23868af7d7371aed8dd19fac8ae56d3af43b3428220bdfc6581bc6fef5c21a8"
+        },
+        "ndk/include_cpp/android/binder_parcelable_utils.h": {
+          "bytes": 6945,
+          "sha256": "1db285c2b64d6be3cfeff4df0c223d7df7e48549e65291762c0bf11b01abb5d9"
+        },
+        "ndk/include_cpp/android/binder_to_string.h": {
+          "bytes": 6556,
+          "sha256": "e6e630885e7afbd2d24b49e187eb39a472a98cb93f43848d8f8afe868410e2e3"
+        },
+        "ndk/include_ndk/android/binder_ibinder.h": {
+          "bytes": 34964,
+          "sha256": "84e1480c50a4e9b130e1d81256e1f2aa42a7ecee3a1961572f60bdcb62c36aaa"
+        },
+        "ndk/include_ndk/android/binder_ibinder_jni.h": {
+          "bytes": 2204,
+          "sha256": "fb7b6c31ca22487a3279ff8f195853f4693b09d6cf7eb4a1e4c3b9a76cb1c8ed"
+        },
+        "ndk/include_ndk/android/binder_parcel.h": {
+          "bytes": 45990,
+          "sha256": "a77ee55a1b0fb1c29b35f5a663774b72ae911bdc59594211c4b000bdc4c23226"
+        },
+        "ndk/include_ndk/android/binder_parcel_jni.h": {
+          "bytes": 1516,
+          "sha256": "87b43db266c2c3e8fcc319eae7288a106264a3d15f5699cb332cb8bd6b63792c"
+        },
+        "ndk/include_ndk/android/binder_status.h": {
+          "bytes": 9656,
+          "sha256": "33cc1cca381979c0819ebf1ff07dcee85d767e4abee46bb982e533b6b4580858"
+        },
+        "ndk/include_platform/android/binder_ibinder_platform.h": {
+          "bytes": 2898,
+          "sha256": "35e0c22a5aa5df893b1f32dc0755803463a7d43653124a6f66f569e8e8a73b01"
+        },
+        "ndk/include_platform/android/binder_libbinder.h": {
+          "bytes": 1769,
+          "sha256": "68d87ff03ad4d773ba70b9107b80efd1d6344d9766739142f7cddad5e065a092"
+        },
+        "ndk/include_platform/android/binder_manager.h": {
+          "bytes": 8006,
+          "sha256": "c9e3bab3af37a63e1dc7cd11bf9b7e8c0c91f666c47ed74667eb798998e8d64e"
+        },
+        "ndk/include_platform/android/binder_parcel_platform.h": {
+          "bytes": 1466,
+          "sha256": "f322bdab762a121b557be401be732098715847956b4be24fa1b2ecfb7281d9d1"
+        },
+        "ndk/include_platform/android/binder_process.h": {
+          "bytes": 2433,
+          "sha256": "cb6b3d4ad963c170445caadeb9d2a1352ee83bde5bf0a26050fa50194a091c90"
+        },
+        "ndk/include_platform/android/binder_shell.h": {
+          "bytes": 1895,
+          "sha256": "9ad33163a5849625869264748224c425980b96581346de55602f8b89733d8821"
+        },
+        "ndk/include_platform/android/binder_stability.h": {
+          "bytes": 3336,
+          "sha256": "3db29e44bb54528417e165be9d864452ee164d29734c60edf30b9e76c3ee547d"
+        },
+        "ndk/libbinder_ndk.map.txt": {
+          "bytes": 4616,
+          "sha256": "79d0be31f614f37b6a9184f87e2f063980a1be326a80f81c60cd0e040a2be821"
+        },
+        "ndk/parcel.cpp": {
+          "bytes": 24131,
+          "sha256": "7e610549f9917675495768f1a38156173770e5376e67d9d732fff55baf61b77b"
+        },
+        "ndk/parcel_internal.h": {
+          "bytes": 1678,
+          "sha256": "4af772f6f55ad2711f86a56d28698badd60e4297935561c650687133a48645a4"
+        },
+        "ndk/parcel_jni.cpp": {
+          "bytes": 1103,
+          "sha256": "5357624ebdd860c7f4fb7dfe4cea57771571ecb86c84b91348ad8500fcffedd5"
+        },
+        "ndk/process.cpp": {
+          "bytes": 1414,
+          "sha256": "87fa87433c9194dcdbd43f6052a05534c3b57e8a16f64c3d38d254f6313a7efd"
+        },
+        "ndk/scripts/gen_parcel_helper.py": {
+          "bytes": 14925,
+          "sha256": "7edc230e231110211b6beb03ee7ff1101e05f1a5b0926e4a03979adfff331b2d"
+        },
+        "ndk/service_manager.cpp": {
+          "bytes": 4694,
+          "sha256": "ecfa3994614d2d7646a6b5113843a414ff99179c915a6d557d55b98544f8e184"
+        },
+        "ndk/stability.cpp": {
+          "bytes": 1774,
+          "sha256": "d2934315fa3c12c4f3cd804116af27a0f20e8a4f2129282350eaf0b6f9c130c2"
+        },
+        "ndk/status.cpp": {
+          "bytes": 5667,
+          "sha256": "9a610c70877d17074ba49eac1d72104e71f7a392f9efbec664bcd9ca6d46e083"
+        },
+        "ndk/status_internal.h": {
+          "bytes": 1205,
+          "sha256": "d7832c34f98945013f907dd87ae29c4488ec8513951010a3fbf86632df5731b5"
+        },
+        "ndk/tests/Android.bp": {
+          "bytes": 3349,
+          "sha256": "bdf422a81e45fd45447af43a3463470c4bec98812e9b5cd99f892e58848ea349"
+        },
+        "ndk/tests/IBinderNdkUnitTest.aidl": {
+          "bytes": 1136,
+          "sha256": "ee5cf7d0ad325bdaec73d787b9ddf1e015f7d8252ef7f5752514f954a1092129"
+        },
+        "ndk/tests/IBinderVendorDoubleLoadTest.aidl": {
+          "bytes": 727,
+          "sha256": "b34fe59e37db262de95ff9f37657ca8f8778d88d5d381d5cc521759833975924"
+        },
+        "ndk/tests/IEmpty.aidl": {
+          "bytes": 642,
+          "sha256": "38e74441bfb8fa40a6cd03cdc95827fc9ac9316c668ea87a77914c4161802fbf"
+        },
+        "ndk/tests/binderVendorDoubleLoadTest.cpp": {
+          "bytes": 6014,
+          "sha256": "f14d710f2a9d8ac16710316ffe6c75183d44d9f1db3bd7c7df15b73dbe416993"
+        },
+        "ndk/tests/iface.cpp": {
+          "bytes": 5713,
+          "sha256": "aa915d3b5395ff0bd01a51f59736f3f35980c45cbb3a2924cd7cefc9933d2746"
+        },
+        "ndk/tests/include/iface/iface.h": {
+          "bytes": 1910,
+          "sha256": "495ac510676a2068b32c52473eb65a3b2a29ea740f376f545f8f0f811d9dff1c"
+        },
+        "ndk/tests/libbinder_ndk_unit_test.cpp": {
+          "bytes": 26616,
+          "sha256": "7560037df2dce060a9943bdc5cf3e9ce3d21b988194a510587a752a5398618bb"
+        },
+        "run_rpc_tests.sh": {
+          "bytes": 1447,
+          "sha256": "ad3a229fbd9129aa1494e4e4255eb1f9528ccf050e9798dae536a63405afc19a"
+        },
+        "rust/Android.bp": {
+          "bytes": 4732,
+          "sha256": "4623ac59c5856cb70304c173f4a8abd82ae6958b8971c864f5a01e42a7de4c70"
+        },
+        "rust/binder_tokio/lib.rs": {
+          "bytes": 5422,
+          "sha256": "6dabe9d8ace09d7021feef0b72152c05609a9757062a78537f845e68a80e9b82"
+        },
+        "rust/src/binder.rs": {
+          "bytes": 42616,
+          "sha256": "b6c506a54b71f778f0f74051cb4a5a1e3af98910f7692083499692213d5259b7"
+        },
+        "rust/src/binder_async.rs": {
+          "bytes": 2475,
+          "sha256": "03a91875ff18962693f6b3545f393d0fac445f0560453a890d9272870228351e"
+        },
+        "rust/src/error.rs": {
+          "bytes": 14855,
+          "sha256": "90649569b78b39cf3d896fd6c6511b943ec33f226275680c4118e104292429a8"
+        },
+        "rust/src/lib.rs": {
+          "bytes": 4875,
+          "sha256": "cb4ea95a795e1a32c1555444086114001f9e746af154e6af60ac55d21c741bd1"
+        },
+        "rust/src/native.rs": {
+          "bytes": 20785,
+          "sha256": "d03df84b4a6482b80a988466bad817a0d91f72b481ae6e09324bc9910c835bec"
+        },
+        "rust/src/parcel.rs": {
+          "bytes": 32799,
+          "sha256": "aa170fcd4e46b16c6688e9707f2059c1021859fbdd3105639aefd8a62fe377ba"
+        },
+        "rust/src/parcel/file_descriptor.rs": {
+          "bytes": 4961,
+          "sha256": "7276477ae6e1805bb2fb1c0b9dd75ea4622d4ebdbd20b50a2fe86cc7fb0c9d2b"
+        },
+        "rust/src/parcel/parcelable.rs": {
+          "bytes": 45115,
+          "sha256": "c914fa9a30f5615d1074e54e39323798d7f335b32408724fec6a6c33bc9df6ab"
+        },
+        "rust/src/parcel/parcelable_holder.rs": {
+          "bytes": 9433,
+          "sha256": "d74c836fd16e35569d5b675c2bcd49f50c0a68c24d12162395ad6f1e0d91cc4a"
+        },
+        "rust/src/proxy.rs": {
+          "bytes": 32459,
+          "sha256": "f805f9c6023b1c64345ead1d3dc67aa9ec637ad259b6375fee710d0a1a61618a"
+        },
+        "rust/src/state.rs": {
+          "bytes": 5341,
+          "sha256": "8a900df13e4269af4f44c1746f98b67a86072293da5c77144105cc1e13d0a84e"
+        },
+        "rust/sys/BinderBindings.hpp": {
+          "bytes": 2850,
+          "sha256": "eb21d7a2d349a39c8f0be22f4a1c41a014b703a0f4b40cdfb326b2e715a1e9e0"
+        },
+        "rust/sys/lib.rs": {
+          "bytes": 974,
+          "sha256": "6f0b08bef6a504c9dd0c1b1f5715113bcd9cb51c4e78bbd545dc1f55e285e546"
+        },
+        "rust/tests/Android.bp": {
+          "bytes": 3283,
+          "sha256": "71e0e6db1c9e575c53ee94c2acaa0c5365e6fc341c574054c96971885149f460"
+        },
+        "rust/tests/AndroidTest.xml": {
+          "bytes": 1399,
+          "sha256": "92f8e652baaa36cf27a73b98cc42f6e123f882c51734707c9f3bf9c5a06d1a38"
+        },
+        "rust/tests/IBinderRustNdkInteropTest.aidl": {
+          "bytes": 712,
+          "sha256": "eeb7cc7bdeeca4d442cdd86e20c1107cc9a5291b996ad933ccccc6796cfd948e"
+        },
+        "rust/tests/IBinderRustNdkInteropTestOther.aidl": {
+          "bytes": 717,
+          "sha256": "c765426af1ff75892c1e0d4611c4f067bbb861246bc97631a2d32a7c35e26dc6"
+        },
+        "rust/tests/binderRustNdkInteropTest.cpp": {
+          "bytes": 2655,
+          "sha256": "3b3884ca2bdd440e13fed788bff34006e48f1e977cf869659bda8da132aee8c3"
+        },
+        "rust/tests/integration.rs": {
+          "bytes": 34023,
+          "sha256": "c31e988913cb3af61b9482ecbbcaa8cebd5efa65c4509d1136aa0f09e9b084c7"
+        },
+        "rust/tests/ndk_rust_interop.rs": {
+          "bytes": 3484,
+          "sha256": "d4b3b65d9023a91265691c362cb12c6d1b47dbab6b2cb1ee75dd78a1bddbe362"
+        },
+        "rust/tests/serialization.cpp": {
+          "bytes": 15346,
+          "sha256": "66b0401b26c21d8990becdfc3b155035ed277f3bcd8b7720172712cdf9118d19"
+        },
+        "rust/tests/serialization.hpp": {
+          "bytes": 1340,
+          "sha256": "a50e2b849e4172722601b0f8b616d3718ba6894d0bda1a1d023a0ea661f0746d"
+        },
+        "rust/tests/serialization.rs": {
+          "bytes": 12292,
+          "sha256": "5874fb3cec75fcd8cfe2e4166863d7e935993ba2bee48f11fb6a0cce942797e2"
+        },
+        "servicedispatcher.cpp": {
+          "bytes": 11522,
+          "sha256": "b79b8a35d83ee730baa591ba0577f0376039c36ab4a24e1536f546cce6b41721"
+        },
+        "tests/Android.bp": {
+          "bytes": 10791,
+          "sha256": "71d3099a2438219b8aa030391f9058ff8027d8edaf07a7743dda6c051c3c053c"
+        },
+        "tests/BinderRpcTestClientInfo.aidl": {
+          "bytes": 734,
+          "sha256": "d7fdb5d73e4beafffd1b034e8bbd488589a18bf16a72c5bb2d9ec27184331a96"
+        },
+        "tests/BinderRpcTestServerInfo.aidl": {
+          "bytes": 746,
+          "sha256": "d9f21a76d59f7583cf603caf838fe693fedacd1f80c4f299d00d5cddd6fc5174"
+        },
+        "tests/IBinderRpcBenchmark.aidl": {
+          "bytes": 797,
+          "sha256": "e228aee8e6bb7eca6258752ae64b4b5c7729aa27f8d720483ec2aae1fcf9794f"
+        },
+        "tests/IBinderRpcCallback.aidl": {
+          "bytes": 759,
+          "sha256": "15afae95a9cd408e3b9248a9240e5f76f94da9eecbb89bd0cd600a6023097419"
+        },
+        "tests/IBinderRpcSession.aidl": {
+          "bytes": 686,
+          "sha256": "66f8b02d6b7ec474dc114c2cce4dca8a43c8065bbe6ec4d1c141bcdade03cc76"
+        },
+        "tests/IBinderRpcTest.aidl": {
+          "bytes": 2613,
+          "sha256": "0dca1cc31bfde3576e65d0fc9ebb2a74a352dbb83808c68cbca27f275eee5e03"
+        },
+        "tests/IBinderStabilityTest.aidl": {
+          "bytes": 1759,
+          "sha256": "37eee603666753c1d3e80f841c7ce178d8bb16b47a66f4db8947308823833c0c"
+        },
+        "tests/ParcelableCertificateData.aidl": {
+          "bytes": 679,
+          "sha256": "24caeae616c56f437faf60d3b3fd0e0221d57c5fe5c535c165d0d4c236b96fac"
+        },
+        "tests/RpcTlsTestUtils.cpp": {
+          "bytes": 4929,
+          "sha256": "f9bf5a542da240cffc64d7ea544b5c829e8110a85bfd936d4c998823dbee2701"
+        },
+        "tests/RpcTlsUtilsTest.cpp": {
+          "bytes": 4982,
+          "sha256": "824fda6c815c68054f8aadabf2a7290dc9ec186c5ac72642882873e7737c2377"
+        },
+        "tests/binderAbiHelper.h": {
+          "bytes": 2155,
+          "sha256": "75d62d8ff47d7405c574d0384f867a0330af218b65c45c70baf84f79e653403c"
+        },
+        "tests/binderAllocationLimits.cpp": {
+          "bytes": 5613,
+          "sha256": "caec66d264ea80d44ff71d42ef5f39886affe48d375fbc80ed52014f05fbae6f"
+        },
+        "tests/binderBinderUnitTest.cpp": {
+          "bytes": 1841,
+          "sha256": "5b563b9d712a30165045a17945198ec130516351e8daccb9edad8d0287cc69ff"
+        },
+        "tests/binderClearBufTest.cpp": {
+          "bytes": 3889,
+          "sha256": "73d287cdbe9f016ef7c324bf9e320eed48f29a042064b297adc4977fac2d72e2"
+        },
+        "tests/binderDriverInterfaceTest.cpp": {
+          "bytes": 11652,
+          "sha256": "cbe18c4892c9b54179459da5afd41a1596171711a0fff6c4f09d99b842becbcf"
+        },
+        "tests/binderHostDeviceTest.cpp": {
+          "bytes": 5916,
+          "sha256": "56c4f3823ee8bdfa76beeeb058d278a2a57bfab9b97c49e7a939f0cea2a500b1"
+        },
+        "tests/binderHostDeviceTest.xml": {
+          "bytes": 1263,
+          "sha256": "794245a88c28bb531c298e4c42580eb08384202bf535a504790113d182b016ca"
+        },
+        "tests/binderHostDeviceTestService.cpp": {
+          "bytes": 1861,
+          "sha256": "f34c9b4d4517e0674c3fddaa2dc67cde030c393c69d767da7b73d1d9c6e68022"
+        },
+        "tests/binderLibTest.cpp": {
+          "bytes": 62440,
+          "sha256": "4e3b1b8790841ea1d1a721e4195987a007d98d279452a84272d9d05364aa0ae0"
+        },
+        "tests/binderMemoryHeapBaseUnitTest.cpp": {
+          "bytes": 3684,
+          "sha256": "f803f9d9c6198f0e5d9c84b0a8d132ab7fac20600e51c9ab668047da54535860"
+        },
+        "tests/binderParcelBenchmark.cpp": {
+          "bytes": 6557,
+          "sha256": "b3bcd237b73ee5d2ac64c12d740760c5757f254519301fd690a9ee42a5452eb0"
+        },
+        "tests/binderParcelUnitTest.cpp": {
+          "bytes": 6661,
+          "sha256": "9ba9a3ad1063d07767f86d7a2979eeb37505920ea05a1a0dc9600d441fcf607b"
+        },
+        "tests/binderRpcBenchmark.cpp": {
+          "bytes": 9232,
+          "sha256": "dfe3d99c7e4d26f8df5b6523cb9ac1a7370197dd649858415a086068a27303ea"
+        },
+        "tests/binderRpcTest.cpp": {
+          "bytes": 76051,
+          "sha256": "c1682c28d31bdb5a655929542c1e09b84b994c1850e382da7a269cb223b04c6b"
+        },
+        "tests/binderRpcWireProtocolTest.cpp": {
+          "bytes": 17207,
+          "sha256": "cbb1d67e42c5035dd366d5091271beaf483f0b6400b2620e4f7cc505299d7061"
+        },
+        "tests/binderSafeInterfaceTest.cpp": {
+          "bytes": 34943,
+          "sha256": "1f92085987bf10751d6493f934f2ac17db18dc36ec5b63e8d10ec9b45243364e"
+        },
+        "tests/binderStabilityTest.cpp": {
+          "bytes": 15027,
+          "sha256": "e2cb7edf5bb424776a1edda7e0cddc5807ec2abea549ff2ab6ef482424c0e9e7"
+        },
+        "tests/binderStatusUnitTest.cpp": {
+          "bytes": 1056,
+          "sha256": "3ad2d69ce7ffec767a16ca8711374a31d8893fdd64a50e53c2d60fa15dee409f"
+        },
+        "tests/binderTextOutputTest.cpp": {
+          "bytes": 4516,
+          "sha256": "952bf2ab1f974cc9ee95f8d76f336c0eda9268d70b6f392745d249d676c58ebd"
+        },
+        "tests/binderThroughputTest.cpp": {
+          "bytes": 12869,
+          "sha256": "2af4a0b4cc9ec3726072efe679739f5d1299452c21b7c0ce8787b27bb65675d4"
+        },
+        "tests/binderUtilsHostTest.cpp": {
+          "bytes": 3873,
+          "sha256": "a36c2479254af45c4f0a0abec8acffec1507c1117a0b3be0751ce79c1bc6af5d"
+        },
+        "tests/include_tls_test_utils/binder/RpcTlsTestUtils.h": {
+          "bytes": 3222,
+          "sha256": "7c55fafff6560f830ea3a7a5ec9e817c7bbb455255d761929bdba001f90c3e30"
+        },
+        "tests/parcel_fuzzer/Android.bp": {
+          "bytes": 1994,
+          "sha256": "95d92b6c436a7f72292b2c72d0c7a39ec762e9f7e67780c4a3474627482abd85"
+        },
+        "tests/parcel_fuzzer/binder.cpp": {
+          "bytes": 18293,
+          "sha256": "466189876619a4558fbe24f12e76608cecb74f0448e481170822c8bddf6cd1ae"
+        },
+        "tests/parcel_fuzzer/binder.h": {
+          "bytes": 788,
+          "sha256": "84257db2574642d01bab9fa38015565086dbf3445f89e35a4cc997d89a70be0f"
+        },
+        "tests/parcel_fuzzer/binder_ndk.cpp": {
+          "bytes": 8797,
+          "sha256": "87d0dffe6752cc7038e2836f7e43ecb42bc92cf24ca758f82b04e339a0ab603d"
+        },
+        "tests/parcel_fuzzer/binder_ndk.h": {
+          "bytes": 1820,
+          "sha256": "a8c89649ebf17f21a73ebbba885a5b5300904c844a271d63aaf7f57d2448d682"
+        },
+        "tests/parcel_fuzzer/hwbinder.cpp": {
+          "bytes": 7162,
+          "sha256": "2413603c23638875647dca93fd00dd23b3d7a2869b55794b994869f6f1367791"
+        },
+        "tests/parcel_fuzzer/hwbinder.h": {
+          "bytes": 802,
+          "sha256": "227566dc20eeb15d80edd6935256b225a51da641e289420eb20cca48d90e3864"
+        },
+        "tests/parcel_fuzzer/include_random_parcel/fuzzbinder/libbinder_driver.h": {
+          "bytes": 1317,
+          "sha256": "d679d286fb4e9ac39f8277b25e05e5f1f842d9d9343096942a2f9616ea769d4f"
+        },
+        "tests/parcel_fuzzer/include_random_parcel/fuzzbinder/libbinder_ndk_driver.h": {
+          "bytes": 1362,
+          "sha256": "f81d763d4b7a222ee400011594c41d3623a2b30c23e755cbcd631b8f9ba9f54b"
+        },
+        "tests/parcel_fuzzer/include_random_parcel/fuzzbinder/random_fd.h": {
+          "bytes": 914,
+          "sha256": "ec1559100240042549770ff09b81788aa75cea3a76fca3a3e2e12dce262eb13a"
+        },
+        "tests/parcel_fuzzer/include_random_parcel/fuzzbinder/random_parcel.h": {
+          "bytes": 1402,
+          "sha256": "3bd1f3a701fad93d21bc48608929462c7a4d3129ce5e54368132a51cd45cc0fb"
+        },
+        "tests/parcel_fuzzer/libbinder_driver.cpp": {
+          "bytes": 2602,
+          "sha256": "3633bb8cd5c25de66564709c679cdb6f4d0d951b896c312156763112febac342"
+        },
+        "tests/parcel_fuzzer/libbinder_ndk_driver.cpp": {
+          "bytes": 1092,
+          "sha256": "1aab815f9c5557659ea1f1618b4809bf4a44c2aeb1dcf1d0875990936b9857fb"
+        },
+        "tests/parcel_fuzzer/main.cpp": {
+          "bytes": 6346,
+          "sha256": "1059605474373d0ee533a2a427665618be16c494515c1929fd8ebc7edf4a8d39"
+        },
+        "tests/parcel_fuzzer/parcel_fuzzer.h": {
+          "bytes": 722,
+          "sha256": "b3b71664692b8e198fc3c0126be4b9b8c3694627a4ca77bb9f1025ea208a0426"
+        },
+        "tests/parcel_fuzzer/random_fd.cpp": {
+          "bytes": 1106,
+          "sha256": "be2df28124ee6abee4db6d3cd4d4efe053df6fd4b68874f4d65d290c7c4f02f3"
+        },
+        "tests/parcel_fuzzer/random_parcel.cpp": {
+          "bytes": 5080,
+          "sha256": "2dfd90ac3d08afe21d530bdbc5282bae696e0ca08e0c499c7b9d27fc56135dbc"
+        },
+        "tests/parcel_fuzzer/util.h": {
+          "bytes": 1311,
+          "sha256": "08796f4ec10e093248c7740aaeda887cbcb95008a0342563a0e1687e70bcfb21"
+        },
+        "tests/rpc_fuzzer/Android.bp": {
+          "bytes": 1323,
+          "sha256": "b5f346b1a921519d5d20adabd0bf8f0ac5f9456cbf7481c97880ec4178589f93"
+        },
+        "tests/rpc_fuzzer/binder_rpc_fuzzer.dict": {
+          "bytes": 31,
+          "sha256": "fa4df22b144d6714730a657b8d456061e17baa3b8742efc9b305d768301ab207"
+        },
+        "tests/rpc_fuzzer/corpus/special_transaction": {
+          "bytes": 84,
+          "sha256": "f977081ab6207ce4c91c87074cbbcdf39688c4d2947f70406ff24b05222080d7"
+        },
+        "tests/rpc_fuzzer/corpus/transact_on_binder": {
+          "bytes": 140,
+          "sha256": "23e23e66c3abe0a71ae44a75895d51c443620b6a7fd65d5ef119f4721698432b"
+        },
+        "tests/rpc_fuzzer/create_certs.sh": {
+          "bytes": 432,
+          "sha256": "c05f15be880ff6fe712219ce3601409e2cdca7e2b9574b59e02506c796225b79"
+        },
+        "tests/rpc_fuzzer/main.cpp": {
+          "bytes": 6121,
+          "sha256": "447f54a0243000f891bf7fd40a5f43f84ea3f46a803adb9aa5d7bf0b404a6041"
+        },
+        "tests/rpc_fuzzer/server.crt": {
+          "bytes": 940,
+          "sha256": "84fc8ef790b3c6abc848c8dd689e9056790077c207223c50684ff15f9bee7a54"
+        },
+        "tests/rpc_fuzzer/server.key": {
+          "bytes": 1679,
+          "sha256": "1ab5a8ec2f8e6049c0222322868694325d39ed821446d53b188ac33e1bbcc7e4"
+        },
+        "tests/schd-dbg.cpp": {
+          "bytes": 14481,
+          "sha256": "110c98f63d283d1bb517ab9952d7a9138f49576ddfe85fd4b79b308f95487a0a"
+        },
+        "tests/unit_fuzzers/Android.bp": {
+          "bytes": 2623,
+          "sha256": "a427d7ba7239b348c7b5e7c705cd2f959fcf1e4bf97375245afee76178471883"
+        },
+        "tests/unit_fuzzers/BinderFuzz.cpp": {
+          "bytes": 1510,
+          "sha256": "e630ad572ecb06e235aaf5072b02f357bfe3a53ecec3a4a5b138b20967f10050"
+        },
+        "tests/unit_fuzzers/BinderFuzzFunctions.h": {
+          "bytes": 4149,
+          "sha256": "5aa2d75c69a58bc009c7d247a5016313b72340bdd7a1252fcdb7181aae15e112"
+        },
+        "tests/unit_fuzzers/BpBinderFuzz.cpp": {
+          "bytes": 2703,
+          "sha256": "8830825916164647d2e8f50abc61e0cf7f6ad5732a2235e4561b2d509985c1b9"
+        },
+        "tests/unit_fuzzers/BpBinderFuzzFunctions.h": {
+          "bytes": 5348,
+          "sha256": "7a0eb5f5bcaba662ee10704a35fed3fac74bf7941477415742f9b7ac306a44ba"
+        },
+        "tests/unit_fuzzers/BufferedTextOutputFuzz.cpp": {
+          "bytes": 2391,
+          "sha256": "53d877e34e18fc38fb58107f7ecc9abc249830e57fda858695bf32a808eee06f"
+        },
+        "tests/unit_fuzzers/IBinderFuzzFunctions.h": {
+          "bytes": 3936,
+          "sha256": "ea30ee4e373230ff6cd823de25b48f0699eeba702aeac096cf886a59b74f10a9"
+        },
+        "tests/unit_fuzzers/MemoryDealerFuzz.cpp": {
+          "bytes": 2694,
+          "sha256": "8ba945cbc4f3fc9f2d50dc9a27674065d279c6863e12185eb1a0add1621f8efa"
+        },
+        "tests/unit_fuzzers/PersistableBundleFuzz.cpp": {
+          "bytes": 1296,
+          "sha256": "eb51ff78016e1fd41578cd37dc3d8ff52157a30c6e810aee8e84d52c48d79f64"
+        },
+        "tests/unit_fuzzers/PersistableBundleFuzzFunctions.h": {
+          "bytes": 9307,
+          "sha256": "b1f1fbd289ca96f8c1e872bd3079e9e91e2b64801a677ebc38b391c35bd22614"
+        },
+        "tests/unit_fuzzers/StabilityFuzz.cpp": {
+          "bytes": 1143,
+          "sha256": "952969fbb3f21e9fb1599bc48429919682264d5dacc09153d654c66073a66f61"
+        },
+        "tests/unit_fuzzers/StabilityFuzzFunctions.h": {
+          "bytes": 2508,
+          "sha256": "f11bdceb3fbcab160cc86fc4d6222d0331c989fc06dbb304b9547249d2909057"
+        },
+        "tests/unit_fuzzers/StatusFuzz.cpp": {
+          "bytes": 1652,
+          "sha256": "3037c93c3ce04b291ae812ddee69dd4ffcb285cee6296fbb64a75194ab92f638"
+        },
+        "tests/unit_fuzzers/StatusFuzzFunctions.h": {
+          "bytes": 4536,
+          "sha256": "e51f7473d373199df853be60931c3450539289193c824748433a117c23ee123e"
+        },
+        "tests/unit_fuzzers/TextOutputFuzz.cpp": {
+          "bytes": 1963,
+          "sha256": "5603e35f81e12cf95087fd7d4ffad083f0752abf15011cd596b8e02b9422a268"
+        },
+        "tests/unit_fuzzers/commonFuzzHelpers.h": {
+          "bytes": 1494,
+          "sha256": "15f195644404e4ef792b07ad38982bdb03bed95956f772fc424f104ae2e74ced"
+        },
+        "vm_sockets.h": {
+          "bytes": 2011,
+          "sha256": "737aedcf864f617151e1bc0ab833559b58b42c2c9a80be5f766271175c9763f1"
+        }
+      },
+      "omitted_links": []
+    },
+    {
+      "name": "binderthreadstate",
+      "archive_url": "https://android.googlesource.com/platform/frameworks/native/+archive/2fe7eddf185ecb63223eeadc58804f9bf6cbd426/libs/binderthreadstate.tar.gz",
+      "files": {
+        "1.0/Android.bp": {
+          "bytes": 656,
+          "sha256": "8e6821597f12222c64dffea5faf8ad91d60c6bab9a3d2852a0e11c2f667e7e26"
+        },
+        "1.0/IHidlStuff.hal": {
+          "bytes": 728,
+          "sha256": "7e394d642d4a8530156fde64b5b0b3ae76ccbf43a0696903ceda805215166a90"
+        },
+        "Android.bp": {
+          "bytes": 2272,
+          "sha256": "096025b4405442da65d8c80a2ff8f2f5808774581f88a32f333ea475d45f838c"
+        },
+        "IAidlStuff.aidl": {
+          "bytes": 693,
+          "sha256": "94c2a654e052368cc4af7a59ce95e6c18eea1dd04f745268db25795b6b0befd2"
+        },
+        "TEST_MAPPING": {
+          "bytes": 84,
+          "sha256": "c5ec12d882dd5ea3c4fc55cdf64b40328c15b3163b6d8635531c1a533bd83f37"
+        },
+        "include/binderthreadstate/CallerUtils.h": {
+          "bytes": 1754,
+          "sha256": "b2b172c5c8a5bf51427874dae08bae1c82c6684d0cc73e11a51e4fc1d47c8761"
+        },
+        "test.cpp": {
+          "bytes": 6598,
+          "sha256": "4dbbc0962a2115bea94ea8d5dd897e41a408ebeb2ea5e08f19b7a33017f99798"
+        }
+      },
+      "omitted_links": []
+    },
+    {
+      "name": "core-jni",
+      "archive_url": "https://android.googlesource.com/platform/frameworks/base/+archive/bff944d05cd47d2b3b713565d3f00d512840d282/core/jni.tar.gz",
+      "files": {
+        "Android.bp": {
+          "bytes": 16575,
+          "sha256": "f7ed85cbf9f55423dafe003e92cc7f992cfc44b7619ef836bdac6915b7428d3c"
+        },
+        "AndroidRuntime.cpp": {
+          "bytes": 70273,
+          "sha256": "e85c36ebe4f13dc0747d430f3d35755a77ba82be206b75776cbac8dec512c858"
+        },
+        "BindTest.cpp": {
+          "bytes": 8254,
+          "sha256": "d2b9d551582c645cf8e4df9bdc32a9b771d1c81fe18227f0d6dbb7b86d303337"
+        },
+        "GraphicsExternGlue.h": {
+          "bytes": 1002,
+          "sha256": "a4bc3e1bedc2066493eabf4c919bbdff8f9489af47082ca22e43b4482dd66fbd"
+        },
+        "GraphicsRegisterGlue.h": {
+          "bytes": 908,
+          "sha256": "c30b26fda42fc181dd88f17462f5278d63541c175c38295d4675367d191dcb5c"
+        },
+        "LayoutlibLoader.cpp": {
+          "bytes": 17214,
+          "sha256": "e87880409e09680099a0ac0fb3bcb080be71d16fdb832186ec29cc52b7863e40"
+        },
+        "MODULE_LICENSE_APACHE2": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "NOTICE": {
+          "bytes": 10695,
+          "sha256": "38751245389e1e23f73e6f5384b5cbe7fa972cc4410c5adc9c04b082a0b9561a"
+        },
+        "OWNERS": {
+          "bytes": 5171,
+          "sha256": "ba5ffa2bd41b8d693e31955a494a03fda4e9d3d6f3486a428dd35b6df20ed438"
+        },
+        "android/opengl/OWNERS": {
+          "bytes": 44,
+          "sha256": "4da9792f1174ec8a40431441bdafbf94c270b421fe34dd47312a5ca648dd53d9"
+        },
+        "android/opengl/poly.h": {
+          "bytes": 1571,
+          "sha256": "d0832169ce33b1d0b1750da83ec96d4b45a218164ef3a7c91c57121f39c35f4e"
+        },
+        "android/opengl/poly_clip.cpp": {
+          "bytes": 4989,
+          "sha256": "47d45cfc909872bd70e641a4ab2f68ff2f467eb25f09506c197def856e137a3e"
+        },
+        "android/opengl/util.cpp": {
+          "bytes": 32698,
+          "sha256": "ddac49e73d6fd73e8edf4c603938576757189d1d32477c8a84f906627a3c4359"
+        },
+        "android_animation_PropertyValuesHolder.cpp": {
+          "bytes": 7553,
+          "sha256": "f4db2f60123ca99e2ed2128f8cf397f38336e9ee86edce488dbbd1fd9c15e9f1"
+        },
+        "android_app_Activity.cpp": {
+          "bytes": 1490,
+          "sha256": "a9b4390c5ee6b843e4ee5e5b454746baf9f716a6fcf0320ecb30806daab8a467"
+        },
+        "android_app_ActivityThread.cpp": {
+          "bytes": 1644,
+          "sha256": "4b80a1c248d8b9443a9610fa559947cd8ffbaf8b52382e7c17d3e453c1cbd36d"
+        },
+        "android_app_NativeActivity.cpp": {
+          "bytes": 23720,
+          "sha256": "366dcbe41f902df26e45662c30593f5328b17be4951a6792c5a1af9eb26845d7"
+        },
+        "android_app_admin_SecurityLog.cpp": {
+          "bytes": 3770,
+          "sha256": "f2f55b2d2b27a7464f560f56ff6beb91ea6fdd4178e395a9b8d6b712c2704d8c"
+        },
+        "android_app_backup_FullBackup.cpp": {
+          "bytes": 6250,
+          "sha256": "ec3e0a4b6a9411fa3513883047e2e0eb09da0030727b2db73bdb977f64a3e845"
+        },
+        "android_backup_BackupDataInput.cpp": {
+          "bytes": 3942,
+          "sha256": "49054a70c51e46470b317fb42ef7408ebf57d1b84758aed93b750c9d448cf879"
+        },
+        "android_backup_BackupDataOutput.cpp": {
+          "bytes": 3140,
+          "sha256": "fc1f82fcc23b2c1fd5dd8a82c78de4c70b47a1c391b8e1b5c543dd19cb24206c"
+        },
+        "android_backup_BackupHelperDispatcher.cpp": {
+          "bytes": 7272,
+          "sha256": "42e89e98de36d2bd385a3c68eec66f33a077f346b899126283ff791d466e7af2"
+        },
+        "android_backup_FileBackupHelperBase.cpp": {
+          "bytes": 3863,
+          "sha256": "4c2783efacc06795fc7a27ed7f299955a414622e7df1331d73043ead1d976537"
+        },
+        "android_content_res_ApkAssets.cpp": {
+          "bytes": 21427,
+          "sha256": "4036e839f8287c5acd03bdf1fbd55ace9ced64c1a9f443a74868949ee43ea798"
+        },
+        "android_content_res_ApkAssets.h": {
+          "bytes": 949,
+          "sha256": "7205b439d8f1d76243e9da88cbbc688170a6b3d6b145b757dace2056e09b4d1c"
+        },
+        "android_content_res_Configuration.cpp": {
+          "bytes": 4535,
+          "sha256": "00d15a8588f7105571e868bfef451f3058bc3f3da370c178caa283fa81c6352b"
+        },
+        "android_content_res_ObbScanner.cpp": {
+          "bytes": 3204,
+          "sha256": "4ff965f5f635df09add599be9a78dd49bcf402e5cc227642f87c9088a7c3ef9d"
+        },
+        "android_database_CursorWindow.cpp": {
+          "bytes": 21338,
+          "sha256": "2979e3279b5decf0b6490fddf8fbdb2fc6911a8f606aa986f97de23c175070d7"
+        },
+        "android_database_SQLiteCommon.cpp": {
+          "bytes": 9061,
+          "sha256": "895feacbd4787bc54bfd57377146bd0cc383548d2dfd1b69d9b100a43c9411bc"
+        },
+        "android_database_SQLiteCommon.h": {
+          "bytes": 1733,
+          "sha256": "5addef1636eeea530aee5c17e54674d8754f12b1f274e24ef4bb7934ae514368"
+        },
+        "android_database_SQLiteConnection.cpp": {
+          "bytes": 37190,
+          "sha256": "14709965eae88b0658a06d61c5e87e40bce12595946545b247db868f9564f6a3"
+        },
+        "android_database_SQLiteDebug.cpp": {
+          "bytes": 2605,
+          "sha256": "766bc174d1c00dfdac7c98d6610c68a50fbc8b739be5fe718430455b8ae5c967"
+        },
+        "android_database_SQLiteGlobal.cpp": {
+          "bytes": 3192,
+          "sha256": "63f87aaa7f5c70a92af4aa7a79e40574c85810b44a033c248d2de2d59d259124"
+        },
+        "android_ddm_DdmHandleNativeHeap.cpp": {
+          "bytes": 3813,
+          "sha256": "ee4520503b47dc08fc6d9dea58e1c5067b71b930ade892ac0f5c4ae9e4b0d389"
+        },
+        "android_graphics_BLASTBufferQueue.cpp": {
+          "bytes": 10082,
+          "sha256": "dc7d39239252fd3dcd52a23fa02c39f98f273535f8cfb78f2e92dda6383b5eaf"
+        },
+        "android_graphics_GraphicBuffer.cpp": {
+          "bytes": 11192,
+          "sha256": "9638e9e1c1575ce28d61a2637b8b9cdc2087b1d7b9be9cb3f21014d980b63a8e"
+        },
+        "android_graphics_SurfaceTexture.cpp": {
+          "bytes": 14183,
+          "sha256": "ec55fa33a1582726f48fd2ab0df9094552ae63a91edb54bf51b9fd4a6df9d99b"
+        },
+        "android_hardware_Camera.cpp": {
+          "bytes": 42611,
+          "sha256": "fa95e954c8b54a9707a9acda67269e2a19ba528e3d22de53d5d0cf5cb09dca96"
+        },
+        "android_hardware_HardwareBuffer.cpp": {
+          "bytes": 11936,
+          "sha256": "edb51a89f37653f80e021fd83a2e1c4a69ee013d7cda7f967c6a98bf34953d56"
+        },
+        "android_hardware_SensorManager.cpp": {
+          "bytes": 23922,
+          "sha256": "9ec2e43e16f035e6fedf3d6bea8f6f6d706e4589fbe8e9db4aaa06722f3a8801"
+        },
+        "android_hardware_SerialPort.cpp": {
+          "bytes": 7813,
+          "sha256": "8e97d87f6abf91f75917ae46763e7eaf6d62cb003a75f2c79b2ffc5d04261fb7"
+        },
+        "android_hardware_SyncFence.cpp": {
+          "bytes": 2714,
+          "sha256": "2b2de12a52998ec65aa715c782ec8fb52ef454602ab38229cba165e05cf0fc07"
+        },
+        "android_hardware_UsbDevice.cpp": {
+          "bytes": 1881,
+          "sha256": "d102b082eca567be4189bef4928bf933494864a08a850e8a6ea7a87c71e676b2"
+        },
+        "android_hardware_UsbDeviceConnection.cpp": {
+          "bytes": 10747,
+          "sha256": "76ca328e2892d5357c908024b87065884576067e22f7066d4c1d588aff47a133"
+        },
+        "android_hardware_UsbRequest.cpp": {
+          "bytes": 8458,
+          "sha256": "b349b64b6c46b78f68eedcb1afd05a7e3b1cb5c7216f769ab40f4b60861befe5"
+        },
+        "android_hardware_camera2_CameraMetadata.cpp": {
+          "bytes": 34588,
+          "sha256": "ee69c4dcfc59c2bfb10cfd8fb04c6ed61a0f6ace41e4fd2117c26d720d23bbab"
+        },
+        "android_hardware_camera2_DngCreator.cpp": {
+          "bytes": 101455,
+          "sha256": "376e10232eb9cb321e2e0dee07af8e2c7600162b64988a89e7a10c6826438f9e"
+        },
+        "android_hardware_camera2_impl_CameraExtensionJpegProcessor.cpp": {
+          "bytes": 21393,
+          "sha256": "f17a52d93dc515dd42fe23e3c2c3fcb55df252945130d0af2f7c3ea3a9a11bc1"
+        },
+        "android_hardware_camera2_utils_SurfaceUtils.cpp": {
+          "bytes": 8090,
+          "sha256": "fffdcec0b01b1a8f70c8ad1180a64c76a19ea40f7628feabb0e7f4dc426db0db"
+        },
+        "android_hardware_display_DisplayManagerGlobal.cpp": {
+          "bytes": 1914,
+          "sha256": "371951896817b0e44a3d68420b4618340a76c77cc4f84b7afca2ce94763a79d1"
+        },
+        "android_hardware_display_DisplayViewport.cpp": {
+          "bytes": 5998,
+          "sha256": "9a4b9c4574a4ae91a1e98d96de8b49762d5cca83d0282d9eb730b898e0c80bbf"
+        },
+        "android_hardware_display_DisplayViewport.h": {
+          "bytes": 1191,
+          "sha256": "d3bee15158ed596cf70b1263e8fdfcb031273e84d11d540a1cde9ece9d1fda06"
+        },
+        "android_hardware_input_InputApplicationHandle.cpp": {
+          "bytes": 6295,
+          "sha256": "6cd7aa4d38e6d3fddc3117133e2b1e28d6189865851dfdb4468017bb0fb29f91"
+        },
+        "android_hardware_input_InputApplicationHandle.h": {
+          "bytes": 1534,
+          "sha256": "022fdfbef3247f102615b0a9c264c0df72eb1764fb2353a2e66991c82f6275e3"
+        },
+        "android_hardware_input_InputWindowHandle.cpp": {
+          "bytes": 18445,
+          "sha256": "4d0cf42e513d7569888582f966e0cab1bc148e545cb800baada0f95122942277"
+        },
+        "android_hardware_input_InputWindowHandle.h": {
+          "bytes": 1457,
+          "sha256": "c25d10182621f24ab88a0c5bc34f2ee6d8e86a8979605977464770941535a8d5"
+        },
+        "android_hardware_location_ActivityRecognitionHardware.cpp": {
+          "bytes": 4323,
+          "sha256": "09db89c4565bde5ff5e57af3bedc1e5b664e7ad75ca40211ee9c393b42b1146e"
+        },
+        "android_media_AudioAttributes.cpp": {
+          "bytes": 9590,
+          "sha256": "7e54b6e2173ba61a312bc4597c57d704a43f22d8c5e9d4c7d7cb7b92cf682fc4"
+        },
+        "android_media_AudioAttributes.h": {
+          "bytes": 2324,
+          "sha256": "a3dc21bb90e02775255525c86a04d8327aa79e6816ba9c14da3e362b6cfe4c79"
+        },
+        "android_media_AudioDescriptor.h": {
+          "bytes": 1375,
+          "sha256": "7e9cbf47ccc28580bab365bf0159c85a2511e80e64b472be8d4ac7fac6c1c8d5"
+        },
+        "android_media_AudioDeviceAttributes.cpp": {
+          "bytes": 2855,
+          "sha256": "f8d9b4e290109b7d8ea6e896348edabf146ded0a0c90d3c6a6b1f0ec6980921b"
+        },
+        "android_media_AudioDeviceAttributes.h": {
+          "bytes": 1282,
+          "sha256": "f049bc895f6a6a39349b10ae87e68c706002b5a7b5a0cdaeb23fc14575aea9dd"
+        },
+        "android_media_AudioEffectDescriptor.cpp": {
+          "bytes": 4451,
+          "sha256": "d3414eab7bdcbce34685dd2215c9f37018d4abb903da96e709cba2c6ffb1a765"
+        },
+        "android_media_AudioEffectDescriptor.h": {
+          "bytes": 1267,
+          "sha256": "48374515d1074d605538c9a52f64dde44d459c569a9ba21ff9ac45e6d4f8e698"
+        },
+        "android_media_AudioErrors.h": {
+          "bytes": 1915,
+          "sha256": "1ed0ee27aed6e036586734d566128c6d1887601c2f48aedb60f6094422932fbe"
+        },
+        "android_media_AudioFormat.h": {
+          "bytes": 8107,
+          "sha256": "3549e56ce131c94cf92ee99d58e18851c665ab25e6a7352c128e1ee17576a129"
+        },
+        "android_media_AudioProductStrategies.cpp": {
+          "bytes": 10136,
+          "sha256": "81c2786ba43fa8e220f20c6c00596b7cc51e307b8b9eb1e5dd5c9b1a9b15daaa"
+        },
+        "android_media_AudioProfile.h": {
+          "bytes": 1488,
+          "sha256": "f8a903eadd334249e038e2c7347d26ecb7e38acad18ac76c32833ee9e9986974"
+        },
+        "android_media_AudioRecord.cpp": {
+          "bytes": 38333,
+          "sha256": "ab5bb3a7e44bd839e46bdb5e01c354d0bf30942129d8da77807ae91291822ee8"
+        },
+        "android_media_AudioSystem.cpp": {
+          "bytes": 141902,
+          "sha256": "93307d55a189df145b20a377b4db897d55e8c8978b0a836fd55acafaf496ee7a"
+        },
+        "android_media_AudioTrack.cpp": {
+          "bytes": 66436,
+          "sha256": "5c179082c52e96426a61444bc49a59334ab256588a2301ec9ca53d0a8df5a1fb"
+        },
+        "android_media_AudioTrack.h": {
+          "bytes": 1005,
+          "sha256": "4a9d3181bd1f1a3b69c2f9f2211969df937d8733607be72232c1c1be2516a843"
+        },
+        "android_media_AudioTrackCallback.cpp": {
+          "bytes": 3557,
+          "sha256": "a9331a00d936b84a531da38cbbd64252445adcfec17f7c66658ae4bbaddd3703"
+        },
+        "android_media_AudioTrackCallback.h": {
+          "bytes": 1721,
+          "sha256": "0f929f25504b79cdb99b3e3e31f19e0ad0b9c84647ddfaaf8132845a50514e62"
+        },
+        "android_media_AudioVolumeGroupCallback.cpp": {
+          "bytes": 6095,
+          "sha256": "5c1ab90b5a3e3560c40410ae33e3d314e5c865995882218a177f499a46c18059"
+        },
+        "android_media_AudioVolumeGroupCallback.h": {
+          "bytes": 1460,
+          "sha256": "c54c9b476805b6e56694657b875516718cdd9057efc39c6ae50161200b1f66a5"
+        },
+        "android_media_AudioVolumeGroups.cpp": {
+          "bytes": 6161,
+          "sha256": "aee6fb1b8dc2db227a351a6223db3eec77afe569bb1471f7010571192983860a"
+        },
+        "android_media_DeviceCallback.cpp": {
+          "bytes": 2547,
+          "sha256": "4ee8f992aef1ea0fddc58d751b10b8628631638bd3c08ea3fc270f8ee82c53aa"
+        },
+        "android_media_DeviceCallback.h": {
+          "bytes": 1553,
+          "sha256": "0763ba10af53ad837ffe3508a36698023d94c29f62673543b06493690ecd6765"
+        },
+        "android_media_JNIUtils.h": {
+          "bytes": 3403,
+          "sha256": "3112e6244d7222acd1d503a0c7e886fbf01a3d0692f62ee165a5652195c2561f"
+        },
+        "android_media_MicrophoneInfo.cpp": {
+          "bytes": 8323,
+          "sha256": "ddd1b633ba3272e33edb5a304ac4afc4f5089d1f1e711a542f4f890ff3fe4278"
+        },
+        "android_media_MicrophoneInfo.h": {
+          "bytes": 1043,
+          "sha256": "4c1a3a4445f323d12f7a065223708a1db9b1d8a932869a2e822d9f17059c3eb6"
+        },
+        "android_media_RemoteDisplay.cpp": {
+          "bytes": 6798,
+          "sha256": "13e937d3d37f5a98dbd1e6f22147017532eebafa2f7be0c6e3a7a7a93b7f2287"
+        },
+        "android_media_ToneGenerator.cpp": {
+          "bytes": 5384,
+          "sha256": "263c711b3b6f67bf7ce8e0220e3c22eba57f373ec08c16b8a37569822feaeb8e"
+        },
+        "android_media_audio_common_AidlConversion.cpp": {
+          "bytes": 10544,
+          "sha256": "258ef0c833b3060b24bd13e3ef5dd26892b5a55884169103c8822d46ecae4c07"
+        },
+        "android_media_midi.cpp": {
+          "bytes": 2194,
+          "sha256": "89902f34459b81ebc480ed66f7b53a89d1f3a8848c4d8037dafe8227984b15d6"
+        },
+        "android_net_LocalSocketImpl.cpp": {
+          "bytes": 12183,
+          "sha256": "a4a2ef7475cea7499910b92c433b94591642936f9102da6ef998d8e6295eb710"
+        },
+        "android_opengl_EGL14.cpp": {
+          "bytes": 48161,
+          "sha256": "3d9dabd44c1953c3e9ed1c5f953942e60e7f79a1d1534a288614712f0f4755f0"
+        },
+        "android_opengl_EGL15.cpp": {
+          "bytes": 21503,
+          "sha256": "9df5c6c5761e872ca5533209094a750d4271364632757f52fe85915cffd21b0c"
+        },
+        "android_opengl_EGLExt.cpp": {
+          "bytes": 4272,
+          "sha256": "e50df026445f56fe6892bf6adbe33df3555a0b000785bfb1639ae18affdf4b31"
+        },
+        "android_opengl_GLES10.cpp": {
+          "bytes": 106302,
+          "sha256": "68f869f8c7998db810b7dce307e8b3544ad698d3cab8cc743bbfba4a36c8d09e"
+        },
+        "android_opengl_GLES10Ext.cpp": {
+          "bytes": 19627,
+          "sha256": "1d90c20f42f52fdd6a69f3c7a2ad1147514364877f1d52723d84fea5e0252c6b"
+        },
+        "android_opengl_GLES11.cpp": {
+          "bytes": 104417,
+          "sha256": "24a26613032dcf2e63eb6f5fff5b70264d5ea75b68ff656a14dc1800cc1b3b40"
+        },
+        "android_opengl_GLES11Ext.cpp": {
+          "bytes": 132519,
+          "sha256": "d0c0d830255a3ce374979de4ec5600b4ed904b4597bfe12233aef921f403291c"
+        },
+        "android_opengl_GLES20.cpp": {
+          "bytes": 218538,
+          "sha256": "0513e4133e6ae5f096a7651a1ed397b9d9259a8b6125aea4dcb2393dc8caa8d4"
+        },
+        "android_opengl_GLES30.cpp": {
+          "bytes": 205909,
+          "sha256": "a48a114b2cfa723fc46236be19fe5f4852afc9fb82d9f8d3b5c4085cc91e0b9d"
+        },
+        "android_opengl_GLES31.cpp": {
+          "bytes": 128495,
+          "sha256": "337b76e0c808bb7378bacbad09992019e8bc80fcb04a612f3a64ae8ca74988ec"
+        },
+        "android_opengl_GLES31Ext.cpp": {
+          "bytes": 55740,
+          "sha256": "317af1c9ad5a81d5db0c27ddf6d61a097a1d780441ab2758255e8a03061e869f"
+        },
+        "android_opengl_GLES32.cpp": {
+          "bytes": 73732,
+          "sha256": "68a4ab63e56777c1d9831e28a9b20a52fd5bdb5240677ebfe348996d632b4230"
+        },
+        "android_os_Debug.cpp": {
+          "bytes": 37826,
+          "sha256": "afcba8af4d8c6714a53ffcacdcf356b4b773ce506950a25ec17c1f6184c573dc"
+        },
+        "android_os_Debug.h": {
+          "bytes": 1150,
+          "sha256": "30f96f69eb088560f67b37ba615e9b17ce1c53a84cdb9668027c23f9ade5f3e2"
+        },
+        "android_os_GraphicsEnvironment.cpp": {
+          "bytes": 6195,
+          "sha256": "7dc7a256d880138545042f3305c46296b0a003f055473f152de8951dc4ce1e23"
+        },
+        "android_os_HidlMemory.cpp": {
+          "bytes": 5813,
+          "sha256": "390292c7b5ffab2dac986ce694f88219803ca29fa33787065b22bd42b6de758c"
+        },
+        "android_os_HidlMemory.h": {
+          "bytes": 2850,
+          "sha256": "23cd2b6d4015ad06ebc2daed6a8ffc4836f583985a9e30e8c0dd32fc007159a1"
+        },
+        "android_os_HidlSupport.cpp": {
+          "bytes": 1274,
+          "sha256": "d721e2f99952d6aeda59043c8fdcc7418de99d63755e1828cd2bbe4d54d84371"
+        },
+        "android_os_HwBinder.cpp": {
+          "bytes": 11705,
+          "sha256": "80c9107915071acbeccf22f5337d72a1e63b818bd04af9ac2331a8be73f81c54"
+        },
+        "android_os_HwBinder.h": {
+          "bytes": 1666,
+          "sha256": "f58d8a927f31545314899c245cb170d8ba1773cce0f8a21a0e70fa85762a522a"
+        },
+        "android_os_HwBlob.cpp": {
+          "bytes": 23035,
+          "sha256": "25e38d6f3317017fe58634ab7e5af4e87320dd4949210aa08913c6a281ef231f"
+        },
+        "android_os_HwBlob.h": {
+          "bytes": 2621,
+          "sha256": "b2997db075031b04c684faf8c11fb86b87867caa93ba7dca724e2a5ec5135ac1"
+        },
+        "android_os_HwParcel.cpp": {
+          "bytes": 40816,
+          "sha256": "94cad854b5a97f0cefa1c290c622d68c943fbc352f6d72b412e48560c9c28f82"
+        },
+        "android_os_HwParcel.h": {
+          "bytes": 1968,
+          "sha256": "ca71af70c4e00f755214b840fe59b376372bb2469af7624d96d3a9028541be10"
+        },
+        "android_os_HwRemoteBinder.cpp": {
+          "bytes": 15699,
+          "sha256": "7dd3322fe7fba4a5243a6d1c33a315ae3b34f7d06cd5b725645f456efce985dc"
+        },
+        "android_os_HwRemoteBinder.h": {
+          "bytes": 2637,
+          "sha256": "23804a9dea6339cb90f9fc64682f475b00bce026cc611ba483c8c745d77209f2"
+        },
+        "android_os_MemoryFile.cpp": {
+          "bytes": 2414,
+          "sha256": "24e6df11ba61d154d307e4ab77ebd72d55105d3835b0e22566b6f857e851d81f"
+        },
+        "android_os_MessageQueue.cpp": {
+          "bytes": 8028,
+          "sha256": "858d2faff63d693e4d9d1f2dd2929264fab890a630a9ab3fcc7ed526db4abab4"
+        },
+        "android_os_MessageQueue.h": {
+          "bytes": 2397,
+          "sha256": "64d3ba4847e7ea6b82bacd6d626e3e920e540c1026bcae6da10858f1efb89ce1"
+        },
+        "android_os_NativeHandle.cpp": {
+          "bytes": 3749,
+          "sha256": "d5a46dcfdf95886a00e6fe0728f720a15ff016b1c0c964284855641d1e85a1e1"
+        },
+        "android_os_NativeHandle.h": {
+          "bytes": 1672,
+          "sha256": "eb9604887ceeaba52d90f41cc769ebd4a9b80773d7dd0600c50e788e6c21158c"
+        },
+        "android_os_Parcel.cpp": {
+          "bytes": 30215,
+          "sha256": "34e69825db603cc625a8939b9a1c0675aa81270b15f408739acb1781d1948957"
+        },
+        "android_os_Parcel.h": {
+          "bytes": 1007,
+          "sha256": "ec873038e079f985f373e69ab61043f9c93bc86dde426579d79acf1a7752d4fb"
+        },
+        "android_os_PerformanceHintManager.cpp": {
+          "bytes": 7063,
+          "sha256": "ed0c33bf17cd3df2834992d03f58deb1648d444a0b6b813849898a199ae9bb03"
+        },
+        "android_os_SELinux.cpp": {
+          "bytes": 14437,
+          "sha256": "ccac7c3abd2a69bb87f2268ee38dd7a6b1a7b0ce6a353614134f036202841d98"
+        },
+        "android_os_ServiceManager.cpp": {
+          "bytes": 2276,
+          "sha256": "81051e20fa6d0328045ec161d9e35af4f7f2b063970396105a20d6657d5ed825"
+        },
+        "android_os_SharedMemory.cpp": {
+          "bytes": 3091,
+          "sha256": "fca35e6800b1bf9c49b7d0ff16355822e5b7e812675c4cbdd3649c09d1de03a6"
+        },
+        "android_os_SystemClock.cpp": {
+          "bytes": 3191,
+          "sha256": "e123d7ec32927f6ef9d66ad43100c2803b1910fe8ff8c8b29000d8f8b2e3be96"
+        },
+        "android_os_SystemProperties.cpp": {
+          "bytes": 8715,
+          "sha256": "726e77c46ce3e8508de5f08e0b40d909caebacfde6e1bd72a54ff76c3e2cc726"
+        },
+        "android_os_Trace.cpp": {
+          "bytes": 6395,
+          "sha256": "2942e7ab674c54d52c8a02b00d447ab26c28f30c602d9f4f7bd98e964b7fdf5a"
+        },
+        "android_os_UEventObserver.cpp": {
+          "bytes": 3647,
+          "sha256": "dbb72825e2c24db7d653818d283c72479027ab84e5ef5d1ac0f7ef7a0209b006"
+        },
+        "android_os_VintfObject.cpp": {
+          "bytes": 7906,
+          "sha256": "96c6be21ee45b3c58c96e9f77ff9f7ff8ba533aca6ca807ea61ddd2b8a690321"
+        },
+        "android_os_VintfRuntimeInfo.cpp": {
+          "bytes": 4010,
+          "sha256": "ecf4bed3bcd07ab6ea227781280648f409b1338caa4ffd3f336a66825a990598"
+        },
+        "android_os_incremental_IncrementalManager.cpp": {
+          "bytes": 2654,
+          "sha256": "2e3bed67c6ab61214ddec38b7bb0f261bd9def586b81bd02c01ed6c5a8d416ce"
+        },
+        "android_os_storage_StorageManager.cpp": {
+          "bytes": 2947,
+          "sha256": "8f86dc7a533db430260aa3094ad94fe2e186990e48942ea438493322cd119b27"
+        },
+        "android_security_Scrypt.cpp": {
+          "bytes": 2327,
+          "sha256": "b87c93b76d72459b690e53bf5040eb7211d014306169fe802523a88e09f07bc4"
+        },
+        "android_service_DataLoaderService.cpp": {
+          "bytes": 3689,
+          "sha256": "2220b5e567348fed58710fe139100d738a48cea1cf0f136395dbe17db830aa75"
+        },
+        "android_text_AndroidCharacter.cpp": {
+          "bytes": 7291,
+          "sha256": "bc4c6d6cc3f1ff4fb10c875835200668c4a8a5b9872a16951077a66c984b9506"
+        },
+        "android_text_Hyphenator.cpp": {
+          "bytes": 8820,
+          "sha256": "ef5a285e61b74e62b6dae89ccedc25acc84ccbf005c9f7bf75f23b506a85466c"
+        },
+        "android_util_AssetManager.cpp": {
+          "bytes": 62168,
+          "sha256": "7c96767d9f87f042f537bcc9de70d832f42dd2292cccd6f6508a849c660d8a30"
+        },
+        "android_util_Binder.cpp": {
+          "bytes": 60275,
+          "sha256": "8092182d7ac882296f2a3bb300f4fe0ce5afcd69c3dd9e53042c3fc49f746b30"
+        },
+        "android_util_Binder.h": {
+          "bytes": 1463,
+          "sha256": "c5452d4e0bb31535e3d8da2b1f5f8562cf619fa4e8bc0500315f7db6682c0548"
+        },
+        "android_util_CharsetUtils.cpp": {
+          "bytes": 2644,
+          "sha256": "612cef75705f58bf39e2cbdc90501fe229dfec44cd0580e8c14ce06ffef83be7"
+        },
+        "android_util_EventLog.cpp": {
+          "bytes": 3260,
+          "sha256": "b014f633a8c9cbf69a991781c96c38ed1aaabccfaa882146b816f18ae02357e1"
+        },
+        "android_util_FileObserver.cpp": {
+          "bytes": 4715,
+          "sha256": "0625e4f55a85c93a1ab786da21c133f41b0ca940c0a61246c4568e36335d53ec"
+        },
+        "android_util_Log.cpp": {
+          "bytes": 4324,
+          "sha256": "f005e7b0fabc2f09c377ec8db5ab1895480a279c76202a050044ede644cc9bce"
+        },
+        "android_util_Log.h": {
+          "bytes": 846,
+          "sha256": "64f8948789b2ba30f3e89f28cdbbf41546717a471b9b503da94382390be73403"
+        },
+        "android_util_MemoryIntArray.cpp": {
+          "bytes": 7250,
+          "sha256": "367c226d42805a0179df3f31558a657d85f2176ceaaf4a793366fe4838e495d3"
+        },
+        "android_util_Process.cpp": {
+          "bytes": 40482,
+          "sha256": "2014e08155d771acc2695b098b13a9f02087c86beaa1703a64a017805e7aeea3"
+        },
+        "android_util_StringBlock.cpp": {
+          "bytes": 5520,
+          "sha256": "43f90676bae3258fab90745aadd6f508346a0653a00d21b1ad06db5bcbff57fa"
+        },
+        "android_util_XmlBlock.cpp": {
+          "bytes": 14557,
+          "sha256": "53b0e16051094636d881bbf952a610266570d80df7ff373611144ce3bfa0eb70"
+        },
+        "android_util_jar_StrictJarFile.cpp": {
+          "bytes": 5445,
+          "sha256": "58249d67bd93e95f5af98b1878789d295e9d2fa38408d49df5fb5c82fae1c60c"
+        },
+        "android_view_CompositionSamplingListener.cpp": {
+          "bytes": 5033,
+          "sha256": "05478f2add0af4e25c709adaae47debfd448eff539a44077d186b0de82b13617"
+        },
+        "android_view_DisplayEventReceiver.cpp": {
+          "bytes": 14999,
+          "sha256": "c682558d5ebac470260cef258f2642fefeaf08d3c750a0a5acf7cd446724074b"
+        },
+        "android_view_InputChannel.cpp": {
+          "bytes": 12103,
+          "sha256": "684e11b74802b55637358bfa6e348d6f4f548bf8600d7a3e7df3c7a982bcf97f"
+        },
+        "android_view_InputChannel.h": {
+          "bytes": 1725,
+          "sha256": "98e9571eaa49e4d4955ed638e2504af1f04f8b89d63f051102ed0ac552d6fa6b"
+        },
+        "android_view_InputDevice.cpp": {
+          "bytes": 3970,
+          "sha256": "227af201333fcedc248479433a662b5a58a7111c6b3fcded8ed70facd7b836eb"
+        },
+        "android_view_InputDevice.h": {
+          "bytes": 988,
+          "sha256": "d675b44e18a85c93e3f409101141fa47d841e471ea4a4f086ee5e8c3e598537d"
+        },
+        "android_view_InputEventReceiver.cpp": {
+          "bytes": 26405,
+          "sha256": "7e4088f9ffa737b998fcb59e5fc11fa1525e8793aba760bd44027a56430318b0"
+        },
+        "android_view_InputEventReceiver.md": {
+          "bytes": 4198,
+          "sha256": "77c675580c17299bdcc42954aafe2aee744eabe85713bc4d4e468be35994a1bd"
+        },
+        "android_view_InputEventSender.cpp": {
+          "bytes": 15691,
+          "sha256": "08f3ac8de302f9ec26f9561cecde144a4d38e2ef91df970ad3247f45b98021b1"
+        },
+        "android_view_InputQueue.cpp": {
+          "bytes": 9319,
+          "sha256": "6c5090e82c325213c9fd5e2247f522535207e5573b83afecf4af877e1c0481d9"
+        },
+        "android_view_KeyCharacterMap.cpp": {
+          "bytes": 10291,
+          "sha256": "273b798f674f40c64b5b601ce73eac2080eab407b48428f35426bafdc088afad"
+        },
+        "android_view_KeyCharacterMap.h": {
+          "bytes": 1095,
+          "sha256": "2d6fb9e3cc540de965fc311874d248c4b73a4a4378b07280cc7de444c0358290"
+        },
+        "android_view_KeyEvent.cpp": {
+          "bytes": 8919,
+          "sha256": "07394950e49fc71cbc467871fac8ee187e3d1f9ede707e6068c5304e60ada137"
+        },
+        "android_view_KeyEvent.h": {
+          "bytes": 1583,
+          "sha256": "02f208a3580753f37154b376caf4c0e2319e04fbbfb58f9abe14155477a1207c"
+        },
+        "android_view_MotionEvent.cpp": {
+          "bytes": 38024,
+          "sha256": "c01f088e7378a9f19f148dc2db7185562943acfb1ebf91fe316416832aecba63"
+        },
+        "android_view_MotionEvent.h": {
+          "bytes": 1454,
+          "sha256": "0bc6f233a648f5015f85e85d1ce0f49c4124d5eb4de4dd2af1cadd6087d6462b"
+        },
+        "android_view_PointerIcon.cpp": {
+          "bytes": 5754,
+          "sha256": "037ca1f893b0d0f8104ecc5d8a9363f7a28554cc2c15a0866ac25303806b7a54"
+        },
+        "android_view_PointerIcon.h": {
+          "bytes": 3565,
+          "sha256": "dc6c6ccb872bce5345b61d40b5898904565270fecd44e93b4cd13ec7a76c1444"
+        },
+        "android_view_Surface.cpp": {
+          "bytes": 19606,
+          "sha256": "a70f59c5ea0b34ad374c911f83eea57a060eced2bf7de77db95847e657b7c527"
+        },
+        "android_view_SurfaceControl.cpp": {
+          "bytes": 111340,
+          "sha256": "0257431a8aac1a11eb4ba2456b3519faf7f5e895b045a19c38757451bec630dc"
+        },
+        "android_view_SurfaceControlHdrLayerInfoListener.cpp": {
+          "bytes": 4789,
+          "sha256": "2e0b39715249b21970c6c25898d9a3af175801569adaf494d48a96d5a80e51df"
+        },
+        "android_view_SurfaceSession.cpp": {
+          "bytes": 2327,
+          "sha256": "8a72d7eee8b61698a3a52554307cb489d02afd057e0e3833e8c4156dd54909cf"
+        },
+        "android_view_TextureView.cpp": {
+          "bytes": 6470,
+          "sha256": "0c902830ea49e7321893de2798bb0e9ecb0954c1e9e18b7756176a1ebc56c337"
+        },
+        "android_view_TunnelModeEnabledListener.cpp": {
+          "bytes": 4777,
+          "sha256": "4169a3d82537257b6c3bb8343324baa4c27214a519484f34ae467c2209aaeefa"
+        },
+        "android_view_VelocityTracker.cpp": {
+          "bytes": 8829,
+          "sha256": "a32387d68d3cf6862874fd1c565594a0b60be65fe2e6da7d503d273273e3c981"
+        },
+        "android_view_VerifiedKeyEvent.cpp": {
+          "bytes": 1760,
+          "sha256": "9c8560208d3344602b35a2c98ac38645025d7c3e3a451a6a9059443cab65b999"
+        },
+        "android_view_VerifiedKeyEvent.h": {
+          "bytes": 1015,
+          "sha256": "adca70208515baec6e463fb25701df961d671b2d7976e9e26950f75d01966df4"
+        },
+        "android_view_VerifiedMotionEvent.cpp": {
+          "bytes": 1818,
+          "sha256": "119ff7a9bd7227f933da6bef5641c07cee889813e3da30b25547bd0731d11d09"
+        },
+        "android_view_VerifiedMotionEvent.h": {
+          "bytes": 1033,
+          "sha256": "580bd05437cd9004bed203496fe125d40519052064701a2e8768e539fb6df6f7"
+        },
+        "android_window_WindowInfosListener.cpp": {
+          "bytes": 7729,
+          "sha256": "15c1db8f3a3edfcde4bb44a886b3a8a4001d33d5b4413d4f926edda00a236f67"
+        },
+        "com_android_internal_content_F2fsUtils.cpp": {
+          "bytes": 2461,
+          "sha256": "af98fe6ef31bca189b2fe9c5549addbf551dfec5f5782e32cc7d5991c1c826c3"
+        },
+        "com_android_internal_content_NativeLibraryHelper.cpp": {
+          "bytes": 20450,
+          "sha256": "b529081537afaf9a04a5cee7e1a357a5d96a2004d82ffdececee9016e768483f"
+        },
+        "com_android_internal_content_om_OverlayConfig.cpp": {
+          "bytes": 4079,
+          "sha256": "ad390ced9643eb0371a9d544282870d553027b1258b609ee7d2e4ba284bf5c3a"
+        },
+        "com_android_internal_net_NetworkUtilsInternal.cpp": {
+          "bytes": 1961,
+          "sha256": "033232720257c97bfe9797df51ce66e6ff181348f2001f890b973d851af92fac"
+        },
+        "com_android_internal_os_ClassLoaderFactory.cpp": {
+          "bytes": 2319,
+          "sha256": "ce47776a5b1fb1c8096665626fa9d7ff31dc9064a29fb884a2c6cc87e5b94af8"
+        },
+        "com_android_internal_os_FuseAppLoop.cpp": {
+          "bytes": 7881,
+          "sha256": "90583e4e653228bb878a86bc8416d900281876fcd7cbcc0ed8e9b6edfd6c3b20"
+        },
+        "com_android_internal_os_KernelAllocationStats.cpp": {
+          "bytes": 8306,
+          "sha256": "38fac58a3a744c7e9266fdd473c19ff49eec21a328dd489430ebd15476d033de"
+        },
+        "com_android_internal_os_KernelCpuBpfTracking.cpp": {
+          "bytes": 2786,
+          "sha256": "caa74b726580eef033c62813eced489ba2f726a02c7be2acf9d2840686cfa8f3"
+        },
+        "com_android_internal_os_KernelCpuTotalBpfMapReader.cpp": {
+          "bytes": 1687,
+          "sha256": "0bf7ddea25ab1880a10016b83779136fdbddeb2c3b7b50c4baed94a24493ef60"
+        },
+        "com_android_internal_os_KernelCpuUidBpfMapReader.cpp": {
+          "bytes": 7362,
+          "sha256": "7b0a75658009d757d054bd7cd54b8c11cae1c228d79cd12d5eab8393bb1499dc"
+        },
+        "com_android_internal_os_KernelSingleProcessCpuThreadReader.cpp": {
+          "bytes": 13648,
+          "sha256": "02421fefdbca3bf93f0668702dadab0a3dccc8aafd2ede16fd03aaf93ec8e306"
+        },
+        "com_android_internal_os_KernelSingleUidTimeReader.cpp": {
+          "bytes": 5216,
+          "sha256": "34a2b7dafd67429de4a7b064dd613288ff63c4b71f36f7c4c6b7ad978c10b631"
+        },
+        "com_android_internal_os_LongArrayMultiStateCounter.cpp": {
+          "bytes": 10902,
+          "sha256": "fdfeb534ef59a3d3c940da52cf0128d59dd2fb230bb60acc4e7b9744829480d9"
+        },
+        "com_android_internal_os_LongMultiStateCounter.cpp": {
+          "bytes": 7285,
+          "sha256": "3ee30109141b13e89bc50718296cc426188672b900f3d7830e1acad951a3f767"
+        },
+        "com_android_internal_os_Zygote.cpp": {
+          "bytes": 105318,
+          "sha256": "e5cdf6444b157e2148fd2313f9652493204756fb50690452197072cc4613fab9"
+        },
+        "com_android_internal_os_Zygote.h": {
+          "bytes": 2300,
+          "sha256": "19bf327b7728c68df88f2c8ca17a0178ae10237c6bc1e6deabafdd7663f58ecd"
+        },
+        "com_android_internal_os_ZygoteCommandBuffer.cpp": {
+          "bytes": 21403,
+          "sha256": "4558cbfbe62a6b5502723ba8660fe6064a8f34015a5faa87be052a366a51dd5d"
+        },
+        "com_android_internal_os_ZygoteInit.cpp": {
+          "bytes": 2860,
+          "sha256": "fd04c60c8604cbdcf645e7f4244a45780e882b21ce882d2bfe0fce57ff0cc985"
+        },
+        "com_android_internal_security_VerityUtils.cpp": {
+          "bytes": 4764,
+          "sha256": "f7da45dcebe6eb989b1929be6c0dba0af1280de467291a9ace3ea814189a87d6"
+        },
+        "com_android_internal_util_VirtualRefBasePtr.cpp": {
+          "bytes": 1663,
+          "sha256": "64d90381a9ff0b3a0c359a4320662b741e4e199daa2aeb71d173ddad3a88017a"
+        },
+        "com_google_android_gles_jni_EGLImpl.cpp": {
+          "bytes": 20379,
+          "sha256": "ceff036300d6c9cdba3821e2cc04c30bcbd7ee1c9f2296a85e5f511fefdb7168"
+        },
+        "com_google_android_gles_jni_GLImpl.cpp": {
+          "bytes": 298184,
+          "sha256": "905b82825dae33d35a7ff996bdb360041d72179d5aec11e227e136a608c276ef"
+        },
+        "core_jni_helpers.h": {
+          "bytes": 5456,
+          "sha256": "5f95946d53370c9260ec48e227251ae0f23a849b2d45fd900903451c9efd6b13"
+        },
+        "eventlog_helper.h": {
+          "bytes": 10101,
+          "sha256": "f8b7c87bdbbc1cffadf7776a05d2f52c27fbbcc0ffb89fff81c9b8bfc05ed3d3"
+        },
+        "fd_utils.cpp": {
+          "bytes": 23596,
+          "sha256": "7a6fb51797cdb501770ffbb0e011a337be68d600d11e350fd02a19f1404c637a"
+        },
+        "fd_utils.h": {
+          "bytes": 4011,
+          "sha256": "b503116d454d0883f90d192008807a2e354164825d793ec86072297b02900cb6"
+        },
+        "filesystem_utils.h": {
+          "bytes": 1510,
+          "sha256": "252c4b557eda07860d9939f7bfa5c49311c89ab10c4a88cbeb447160f6816764"
+        },
+        "hwbinder/EphemeralStorage.cpp": {
+          "bytes": 6333,
+          "sha256": "721b9c1be7bd4b587e2d43e778114cd69b3040cf8e10750bda3ff0fe3c2f5e8e"
+        },
+        "hwbinder/EphemeralStorage.h": {
+          "bytes": 2249,
+          "sha256": "9becb5db0a48cc037f5c4a460fadcd881347b1e55b4a50df923fdf0de815a8b9"
+        },
+        "include/android_runtime/AndroidRuntime.h": {
+          "bytes": 5077,
+          "sha256": "6d518a63b8a6918f5428b02e7b2e05e252b89e55d3660a32d86813a7f462f714"
+        },
+        "include/android_runtime/Log.h": {
+          "bytes": 1369,
+          "sha256": "3be76ba0ce72021a2f06a9af20200d92bc5093a9bd38f0893913bff5fe4d1b48"
+        },
+        "include/android_runtime/android_app_NativeActivity.h": {
+          "bytes": 1373,
+          "sha256": "adae4feeb3c19895da27f2ff620f8fa39489ed53f44819c268db2a3a43474d1d"
+        },
+        "include/android_runtime/android_content_res_Configuration.h": {
+          "bytes": 1064,
+          "sha256": "7a1464cb5e14c71e61df731fcd3ae08852ab29717021150ed66bb273a76baf1c"
+        },
+        "include/android_runtime/android_graphics_GraphicBuffer.h": {
+          "bytes": 1134,
+          "sha256": "46da0ea457914043aed781e9f5fa4dfa897c3d8703e852e9b4cec5780ea9df04"
+        },
+        "include/android_runtime/android_graphics_SurfaceTexture.h": {
+          "bytes": 1295,
+          "sha256": "1873c073a8d29b98b01082a675c987a75b3cdb35599253f64bafd4baa9e0c483"
+        },
+        "include/android_runtime/android_hardware_HardwareBuffer.h": {
+          "bytes": 2265,
+          "sha256": "5e4c56b8d520b244188613541468e286bc573ac33263eb318595afb29fe17468"
+        },
+        "include/android_runtime/android_hardware_camera2_CameraMetadata.h": {
+          "bytes": 1106,
+          "sha256": "cb47f534ec7849dd4b4ef878e876578f27d5c42cb95c26743140efa37c972b54"
+        },
+        "include/android_runtime/android_util_AssetManager.h": {
+          "bytes": 1262,
+          "sha256": "3367feafe4a8e6f5713b7c06e5acd7f1cd7646d725d01b6717fb23041164596c"
+        },
+        "include/android_runtime/android_view_InputQueue.h": {
+          "bytes": 2383,
+          "sha256": "804216fb07cf7f5abad2ba609bdf339d1ac9f558a0cb9649f3327dfd77a49ee7"
+        },
+        "include/android_runtime/android_view_Surface.h": {
+          "bytes": 1690,
+          "sha256": "5805f8fbace1f8dcc2362c790d696c44c16cb0d867faa4ba1d51cdab8c01edec"
+        },
+        "include/android_runtime/android_view_SurfaceSession.h": {
+          "bytes": 1029,
+          "sha256": "16cbc4eb1e4e75bc4bc9228e8509d9f106dfb2f8c483396112e03e93bd7bd3b6"
+        },
+        "include_vm/android_runtime/vm.h": {
+          "bytes": 912,
+          "sha256": "c8e291c294fa7ec1da51ada8d3912ddd0be86170167216dd9e65353b2e432081"
+        },
+        "runtime_native_boot-flags-test.sh": {
+          "bytes": 10901,
+          "sha256": "25a6a609c6ca88aa1ff137b7564f7cfaff49a4d6641f7bbd407f62f64e0c14dc"
+        },
+        "scoped_nullable_primitive_array.h": {
+          "bytes": 4770,
+          "sha256": "20c60adf38e0b0e5bc5029d51362220c34c61bc5f39837f4a5d9f138fe747db9"
+        }
+      },
+      "omitted_links": [
+        "android_media_MediaMetricsJNI.cpp",
+        "android_media_MediaMetricsJNI.h"
+      ]
+    },
+    {
+      "name": "hwbinder",
+      "archive_url": "https://android.googlesource.com/platform/system/libhwbinder/+archive/6a99431c775b748ef15c205d8fd0dfb44a6e0389.tar.gz",
+      "files": {
+        "Android.bp": {
+          "bytes": 3853,
+          "sha256": "84d0d207f10135ffc06cf0259b39b267854eb9fc15b0a4eac9a870e297255fe1"
+        },
+        "Binder.cpp": {
+          "bytes": 6515,
+          "sha256": "d6712c75ec9068cb578db4b67e3b9b5d6fe288c6500729d9fc01891853360d3a"
+        },
+        "BpHwBinder.cpp": {
+          "bytes": 9045,
+          "sha256": "ed92b6ef397ccbf21c7ac1e92b1d5ab92645522b71fc72b08e907435712f433c"
+        },
+        "BufferedTextOutput.cpp": {
+          "bytes": 7376,
+          "sha256": "7b5286820a05b5cc3f7acf80587a84479d9744a871921cb89527f40917375c6f"
+        },
+        "BufferedTextOutput.h": {
+          "bytes": 1912,
+          "sha256": "fd3946614eef822969a6089a459979c03270a7b9ddacb306b3230513ff84e712"
+        },
+        "Debug.cpp": {
+          "bytes": 8634,
+          "sha256": "83009dafad9e4aad4f01dbbe838cb55de0561bb54185dedf0299e7b872ed36b4"
+        },
+        "IInterface.cpp": {
+          "bytes": 1361,
+          "sha256": "d99d6fb0db9088642b5869d74e703a1a5bf1d296cb7c0dde8858cb2b76794999"
+        },
+        "IPCThreadState.cpp": {
+          "bytes": 42862,
+          "sha256": "e55b62241ad505eedc878fdbbea802038909ac19d6ad83eb67d4374b6590959b"
+        },
+        "NOTICE": {
+          "bytes": 11358,
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        "OWNERS": {
+          "bytes": 72,
+          "sha256": "e098063b2ae04402903854e7e5c28e756bd80d295b3512ed6d8d26a1ca999bdb"
+        },
+        "Parcel.cpp": {
+          "bytes": 61863,
+          "sha256": "d3ec42a9dead1a6e63e6257806e148dd7690a99ffbde8302d5c1fde705f303c3"
+        },
+        "ProcessState.cpp": {
+          "bytes": 13490,
+          "sha256": "762248b9f8cc23664cfe66a8d36e2245f9c2ba8dd14ff5f68a78c93f7b78e50a"
+        },
+        "Static.cpp": {
+          "bytes": 1549,
+          "sha256": "8ab1ca236382289eec7f5d19e7dbd0316670908d1c65db39487c10f5b4f0e6c1"
+        },
+        "TEST_MAPPING": {
+          "bytes": 251,
+          "sha256": "29149ece6a1e730caed86d79bb0e71c6a7fa2715000f42827d68caa7fcf5ff18"
+        },
+        "TextOutput.cpp": {
+          "bytes": 1953,
+          "sha256": "dfc2f2d107b10a63da89d8b8e231223c101137adfe4573b7a0f17979f5325d47"
+        },
+        "TextOutput.h": {
+          "bytes": 5350,
+          "sha256": "93828174c5040701915337faf2db2e69ac4503b5bf36f3022a4292165820f9a2"
+        },
+        "Utils.cpp": {
+          "bytes": 804,
+          "sha256": "77742635f2a1fd5b25636b3ea540c1b1817887f207a140b3e3d082fa030efad8"
+        },
+        "Utils.h": {
+          "bytes": 796,
+          "sha256": "6e715252ae46ae4efb4d1bc658e0bf2b80cc9a1495e41233291d3c303c8db381"
+        },
+        "binder_kernel.h": {
+          "bytes": 1442,
+          "sha256": "64858dba72cf8a5b5ce41eb65460a7ffcedefafcb578c3b14d67fbaafaf66ec7"
+        },
+        "include/hwbinder/Binder.h": {
+          "bytes": 4505,
+          "sha256": "9ea1a8275a81633cb04476de6d0204b219f3fdd855a1a922d1401fa36fd221c0"
+        },
+        "include/hwbinder/BpHwBinder.h": {
+          "bytes": 4645,
+          "sha256": "5205e23761a8111856e1116c718b5a57761c801840bb6ecfbef1bff4c6f6be16"
+        },
+        "include/hwbinder/Debug.h": {
+          "bytes": 1809,
+          "sha256": "6afb78859679aa5ff28f3f9012b7e11b9fe2d443beffc59439f6b7e4915afc60"
+        },
+        "include/hwbinder/IBinder.h": {
+          "bytes": 8012,
+          "sha256": "8d87cf3ffbbe62bda7f6c747c7c757062eb38674486e169e983a2984b018b3d2"
+        },
+        "include/hwbinder/IInterface.h": {
+          "bytes": 2273,
+          "sha256": "effab896ed40f2b5b447e99298119e1a0ac5e9968b804bfcdf8a453df4152017"
+        },
+        "include/hwbinder/IPCThreadState.h": {
+          "bytes": 6927,
+          "sha256": "5520a4f6f4213cdb54e86f098f76e6e2e72ebcee839fdb1a4bad25620c684e33"
+        },
+        "include/hwbinder/Parcel.h": {
+          "bytes": 14646,
+          "sha256": "86e609a4280245d6337570ab9aa23d5033d21f908ba86e9cf4ec9e0ec622af87"
+        },
+        "include/hwbinder/ProcessState.h": {
+          "bytes": 5272,
+          "sha256": "aca1f8a72fe45d05129c519c46bc083486ca037961692b501b68439a2e520c1a"
+        },
+        "include/hwbinder/Static.h": {
+          "bytes": 1172,
+          "sha256": "47be4d89ba1554c8cd89264bcb739952807e1c4bc62cda9dd35ba94843bae436"
+        },
+        "vts/OWNERS": {
+          "bytes": 34,
+          "sha256": "7e3224dad5a528c785f5d320b89e5fc19a20d11cef644311567c915d4406d33e"
+        },
+        "vts/performance/Android.bp": {
+          "bytes": 2529,
+          "sha256": "bf29c8ba00e2dafd78108686568336cc9337e1256c003e7e544713fe34b4a154"
+        },
+        "vts/performance/Benchmark.cpp": {
+          "bytes": 4178,
+          "sha256": "b2319472d3c87bba1aeb1bba07672ec41d7bae723e58fb4308a3bf9017da0a5a"
+        },
+        "vts/performance/Benchmark_binder.cpp": {
+          "bytes": 3222,
+          "sha256": "71525237a3792b87e8e3578510968d4bdd7c7d0d02ce958bcd5bda62d973e7e7"
+        },
+        "vts/performance/Benchmark_throughput.cpp": {
+          "bytes": 12563,
+          "sha256": "b433e2ffb60b1166a54b0a9175cc8a76691fd9e78f604516f6235ee465f4be0c"
+        },
+        "vts/performance/Latency.cpp": {
+          "bytes": 12306,
+          "sha256": "e9ecbd1365922422842f055061dd148b1e8235ca4b968048c7d16070f07a066c"
+        },
+        "vts/performance/PerfTest.cpp": {
+          "bytes": 6824,
+          "sha256": "bc7363dfe6eb11dcd81659bf67c379a40b41999544cb0d01042491ac76acb269"
+        },
+        "vts/performance/PerfTest.h": {
+          "bytes": 5502,
+          "sha256": "8429679117d9600f55f81de3151ac9ddbdd29b4fbcb96b04d465d030af611a75"
+        }
+      },
+      "omitted_links": []
+    }
+  ]
+}

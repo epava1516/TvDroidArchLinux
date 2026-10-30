@@ -25,6 +25,7 @@ parser.add_argument('--window-bindings',type=Path)
 parser.add_argument('--window-system-resources',type=Path)
 parser.add_argument('--window-rendernode-build',type=Path)
 parser.add_argument('--accessibility-bindings',type=Path)
+parser.add_argument('--window-binder-holder-build',type=Path)
 args = parser.parse_args()
 assert all((args.window_service_build,args.window_framework,args.window_bindings,args.window_system_resources)) or not any((args.window_service_build,args.window_framework,args.window_bindings,args.window_system_resources))
 assert args.window_rendernode_build is None or args.window_service_build
@@ -116,6 +117,13 @@ try:
             rendernode_sha256=hashlib.sha256(rendernode_library.read_bytes()).hexdigest()
             assert rendernode_sha256==rendernode_proof['library_sha256']
             rendernode_options=['-Darchtv.rendernode.library='+str(rendernode_library)]
+        binder_holder_sha256=None
+        if args.window_binder_holder_build:
+            binder_build=args.window_binder_holder_build.resolve();binder_proof=json.loads((binder_build/'result.json').read_text())
+            binder_library=binder_build/'libarchtv_binder_holder.so'
+            binder_holder_sha256=hashlib.sha256(binder_library.read_bytes()).hexdigest()
+            assert binder_proof['build_pass'] and binder_holder_sha256==binder_proof['library_sha256']
+            rendernode_options.append('-Darchtv.binder.holder.library='+str(binder_library))
         service_command = [str(args.art.resolve()/'bin/art'),'--64','--no-compile','--','-Xint','-Xcheck:jni',*rendernode_options,'-cp',
             ':'.join(str(build/'dex/classes.dex') for build in builds),'org.archtv.apkruntime.WindowServiceProbe',
             str(args.linux_library.resolve()),str(policy),str(args.resources_library.resolve()),str(apk),str(system_apk),str(out/'service-data')]
@@ -127,6 +135,7 @@ try:
         assert 'AOSP_ANIMATION_POLICY_OK scale=0.5 callbacks=3 interpolators=2' in (out/'window-service.log').read_text()
         service_info={'command':service_command,'system_resources_sha256':system_proof['apk_sha256'],'sha256':{str(build/'dex/classes.dex'):proof['dex_sha256'] for build,proof in zip(builds,proofs)}}
         service_info['rendernode_library_sha256']=rendernode_sha256
+        service_info['binder_holder_library_sha256']=binder_holder_sha256
     def ready():
         text = (out/'compositor.log').read_text(errors='replace')
         return bool(re.search(r'APK_FRAME \d+ 800x450', text))
@@ -167,6 +176,8 @@ try:
         service_log=(out/'window-service.log').read_text()
         service_info['local_permission_query_pass']='LINUX_PERMISSION_QUERY_OK grants=0' in service_log
         if args.accessibility_bindings: assert service_info['local_permission_query_pass']
+        service_info['binder_holder_art_pass']='BINDER_HOLDER_ART_OK objects=32' in service_log
+        if args.window_binder_holder_build: assert service_info['binder_holder_art_pass']
         service_info['view_constructed']='VIEW_CONSTRUCTOR_OK' in service_log
         service_info['view_measure_pass']='VIEW_MEASURE_OK cases=5' in service_log
         service_info['view_layout_pass']='VIEW_LAYOUT_OK' in service_log

@@ -278,3 +278,10 @@ concesiones y regresiones de medida/Wayland; layout avanza a la asignación nati
 de Binder original, aún ausente. AOSP-ACCESIBILIDAD-CLIENTE.md registra la política,
 la colisión UID Linux/Android y el ciclo de vida nativo pendiente. No se acredita
 accesibilidad, aislamiento ni layout completo.
+
+El holder Binder original ya compila/enlaza en Linux y permite 32 Binder originales
+en ART con interfaces locales. Pasan 12.800 asignaciones/liberaciones nativas
+mediante el finalizador AOSP, sin fugas detectadas por LSan en esa prueba. El
+layout supera el cliente AIDL y se detiene en LineBreakBufferedWriter al registrar
+el fallback de foco. AOSP-BINDER-HOLDER.md distingue las pruebas nativas del GC
+ART y mantiene pendientes transporte, layout completo y dibujo original.

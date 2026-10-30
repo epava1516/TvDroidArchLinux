@@ -1,0 +1,12 @@
+In file included from /home/tv/repositorio-principal/runtime/aosp/native/binder-holder-jni.cpp:3:
+/home/tv/.cache/archtv/binder-port/core-jni/android_util_Binder.cpp:351:13: warning: 'checkSubclass' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+  351 |     bool    checkSubclass(const void* subclassID) const
+      |             ^
+/home/tv/.cache/archtv/binder-port/binder/include/binder/IBinder.h:250:29: note: overridden virtual function is here
+  250 |     virtual bool            checkSubclass(const void* subclassID) const;
+      |                             ^
+In file included from /home/tv/repositorio-principal/runtime/aosp/native/binder-holder-jni.cpp:3:
+/home/tv/.cache/archtv/binder-port/core-jni/android_util_Binder.cpp:896:17: warning: 'snprintf' will always be truncated; specified size is 127, but format string expands to at least 134 [-Wformat-truncation]
+  896 |                 snprintf(msg, sizeof(msg) - 1,
+      |                 ^
+2 warnings generated.

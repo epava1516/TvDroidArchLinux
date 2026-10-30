@@ -1,0 +1,100 @@
+{
+  "wayland_live_resize_pass": true,
+  "window_service": {
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Xcheck:jni",
+      "-Darchtv.rendernode.library=/home/tv/repositorio-principal/dist/apk/rendernode-host-1/libarchtv_rendernode_host.so",
+      "-Darchtv.binder.holder.library=/home/tv/repositorio-principal/dist/apk/binder-holder-4/libarchtv_binder_holder.so",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/aosp-accessibility-1/dex/classes.dex:/home/tv/repositorio-principal/dist/apk/window-aidl-3/dex/classes.dex:/home/tv/repositorio-principal/dist/apk/window-binder-holder-service-1/dex/classes.dex:/home/tv/repositorio-principal/dist/apk/accessibility-aidl-1/dex/classes.dex",
+      "org.archtv.apkruntime.WindowServiceProbe",
+      "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "/home/tv/repositorio-principal/dist/apk/binder-holder-final-wayland-1/data/window-policy.properties",
+      "/home/tv/repositorio-principal/dist/apk/androidfw-apk-metadata-4/libarchtv_resources_linux.so",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "/home/tv/repositorio-principal/dist/apk/system-resources-appinfo-1/framework-res.apk",
+      "/home/tv/repositorio-principal/dist/apk/binder-holder-final-wayland-1/service-data"
+    ],
+    "system_resources_sha256": "0a2a4f3e4b78927d8bc3e36a3ba9f0254f425ab8ea07034c17221ced48804637",
+    "sha256": {
+      "/home/tv/repositorio-principal/dist/apk/aosp-accessibility-1/dex/classes.dex": "99144957d280ae82e29d3c6fc022f05ac5c3559a6f96a44064e20133d5136e10",
+      "/home/tv/repositorio-principal/dist/apk/window-aidl-3/dex/classes.dex": "3a4f9f9b70e9bd7488e0093591bd3b9c4d189e29bd09d5265c99bd65fc2b273d",
+      "/home/tv/repositorio-principal/dist/apk/window-binder-holder-service-1/dex/classes.dex": "12ea7ca7cccea15146823fa94dc81bbcd6f498489f1f9f17624b53235ec1abe1",
+      "/home/tv/repositorio-principal/dist/apk/accessibility-aidl-1/dex/classes.dex": "810526dfde19517b8d97c63eac8041bf03129465baacf95fe6b14e8999079f55"
+    },
+    "rendernode_library_sha256": "69c694a632d0864ee6c2678980565288153bf40a9657cc5861acce301090492e",
+    "binder_holder_library_sha256": "f8658488f2c3db379188aaa254a7b48da28a68318186e990e79d50b807aedd85",
+    "real_wayland_service_pass": true,
+    "original_animation_policy_pass": true,
+    "local_permission_query_pass": true,
+    "binder_holder_art_pass": true,
+    "view_constructed": true,
+    "view_measure_pass": true,
+    "view_layout_pass": false,
+    "view_layout_failures": [
+      "VIEW_LAYOUT_BLOCKED java.lang.NoClassDefFoundError: Failed resolution of: Lcom/android/internal/util/LineBreakBufferedWriter;"
+    ],
+    "view_constructor_failures": []
+  },
+  "initial": [
+    960,
+    540
+  ],
+  "resized": [
+    800,
+    450
+  ],
+  "frame_sizes": [
+    [
+      960,
+      540
+    ],
+    [
+      960,
+      540
+    ],
+    [
+      800,
+      450
+    ]
+  ],
+  "command": [
+    "setpriv",
+    "--inh-caps=-all",
+    "--ambient-caps=-all",
+    "/home/tv/.cache/archtv/smithay/target/debug/archtv-compositor",
+    "--winit",
+    "--mode",
+    "960x540",
+    "--test-resize",
+    "8",
+    "800x450",
+    "--exit-after",
+    "45",
+    "--",
+    "/home/tv/.cache/archtv/smithay/target/debug/archtv-apk-host",
+    "/home/tv/.cache/archtv/art-host/host/art-13.0.0",
+    "/home/tv/repositorio-principal/dist/apk/apk-appinfo-2/dex/classes.dex",
+    "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+    "org.archtv.probe.MainActivity",
+    "/home/tv/repositorio-principal/dist/apk/binder-holder-final-wayland-1/data",
+    "/home/tv/repositorio-principal/dist/apk/binder-holder-final-wayland-1/art.stderr",
+    "/home/tv/repositorio-principal/dist/apk/binder-holder-final-wayland-1/frames"
+  ],
+  "app_text_before": "Contador: 0",
+  "app_text_after": "Contador: 0",
+  "scope": "Real nested Wayland resize after the first frame, original Resources on the main Handler, and client SHM dimensions. No physical mode switch, HiDPI, Activity recreation or native scanout resize claim.",
+  "sha256": {
+    "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk": "f07c9b92ab3353237276081c22e11ce06168b8c9f71a99ea32968b2ce0f00e28",
+    "dist/apk/apk-appinfo-2/dex/classes.dex": "ac39cccd6a938f73d3d9a4d05060f762f66921f99ac19e12e2e20c9da4f74d73",
+    "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so": "0ff761f86136e769d99ca6aa113b2296bde111c423eb43a891346e8f36e3c863",
+    "dist/apk/androidfw-apk-metadata-4/libarchtv_resources_linux.so": "559cdda1a0b4ab7ac738d86c2e7dec6e47cf6ac87ec6bc8d3e07543d8e47c6ab",
+    "/home/tv/.cache/archtv/smithay/target/debug/archtv-apk-host": "879c0458a473cedcab1cd60377f0d91762511aeb5adb583713da77856b4ee0dc",
+    "/home/tv/.cache/archtv/smithay/target/debug/archtv-compositor": "61750546c4b348610874e1cd4c80234fb7114c045f4c2012e4970a32b577856c"
+  }
+}

@@ -18,6 +18,24 @@ public final class WindowServiceProbe {
         System.load(args[0]);System.load(args[2]);HostProfile.initialize();
         String renderNodeLibrary=System.getProperty("archtv.rendernode.library");
         if(renderNodeLibrary!=null)System.load(renderNodeLibrary);
+        String binderHolder=System.getProperty("archtv.binder.holder.library");
+        if(binderHolder!=null) {
+            System.load(binderHolder);
+            java.lang.reflect.Field field=android.os.Binder.class.getDeclaredField("mObject");field.setAccessible(true);
+            java.util.HashSet<Long> holders=new java.util.HashSet<Long>();
+            android.os.Binder[] tokens=new android.os.Binder[32];
+            for(int i=0;i<tokens.length;i++) {
+                tokens[i]=new android.os.Binder("org.archtv.token."+i);
+                check(field.getLong(tokens[i])!=0 && holders.add(field.getLong(tokens[i])),"Independent original Binder holder");
+                final android.os.Binder token=tokens[i];android.os.IInterface owner=()->token;
+                token.attachInterface(owner,"org.archtv.local."+i);
+                check(token.queryLocalInterface("org.archtv.local."+i)==owner,"Original local interface identity");
+                check(token.queryLocalInterface("wrong")==null && token.isBinderAlive() && token.pingBinder(),"Original local token behavior");
+            }
+            try { tokens[0].getExtension();throw new AssertionError("Unported Binder extension accepted"); }
+            catch(UnsatisfiedLinkError expected) { }
+            System.out.println("BINDER_HOLDER_ART_OK objects=32");
+        }
         LinuxWindowService endpoint=new LinuxWindowService(Paths.get(args[1]));
         ServiceManager.initServiceCache(Collections.<String,IBinder>singletonMap("window",endpoint));
         IWindowManager window=IWindowManager.Stub.asInterface(ServiceManager.getService("window"));

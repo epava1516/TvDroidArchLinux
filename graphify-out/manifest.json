@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793393668.965916,
-    "seen": 1793393677.4754722,
-    "ast_hash": "be88230800a2ecb9903cbd4f39e664c1",
+    "mtime": 1793394151.8724947,
+    "seen": 1793394160.6632426,
+    "ast_hash": "439b3328ef834387dd42189f488fc25c",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -1170,9 +1170,9 @@
     "semantic_hash": ""
   },
   "tools/apk/verify_wayland_resize.py": {
-    "mtime": 1793393607.4534209,
-    "seen": 1793393677.472022,
-    "ast_hash": "727d97c3a59f0581951fcf971911ec20",
+    "mtime": 1793393995.316854,
+    "seen": 1793394160.6597438,
+    "ast_hash": "3c66edb537a6cc2bb12802524179bc68",
     "semantic_hash": ""
   },
   "fixtures/aosp-context/ContextProbe.java": {
@@ -1380,9 +1380,9 @@
     "semantic_hash": ""
   },
   "fixtures/aosp-window-service/WindowServiceProbe.java": {
-    "mtime": 1793393526.2383752,
-    "seen": 1793393677.4586663,
-    "ast_hash": "19722d26551156b2db64f8d6ad5eb629",
+    "mtime": 1793393995.3159585,
+    "seen": 1793394160.6456547,
+    "ast_hash": "5d837037cc7909305074557e1fd1cdf1",
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/org/archtv/aosplinux/LinuxWindowService.java": {
@@ -1659,6 +1659,42 @@
     "mtime": 1793393668.9652767,
     "seen": 1793393677.4723654,
     "ast_hash": "8b94755261a8e8dcf4bae902c90f6ca4",
+    "semantic_hash": ""
+  },
+  "fixtures/aosp-binder-holder/holder-lifetime.cpp": {
+    "mtime": 1793394020.800353,
+    "seen": 1793394160.6439884,
+    "ast_hash": "1bd29a79cf520147ec0e86e121793584",
+    "semantic_hash": ""
+  },
+  "runtime/aosp/binder-sources.json": {
+    "mtime": 1793393905.5280058,
+    "seen": 1793394160.6470246,
+    "ast_hash": "3ce6548aad6432081f2f1120b21f2a1b",
+    "semantic_hash": ""
+  },
+  "runtime/aosp/native/binder-holder-jni.cpp": {
+    "mtime": 1793393878.357059,
+    "seen": 1793394160.6479716,
+    "ast_hash": "2212e108312673e84501a96d0c98d0ba",
+    "semantic_hash": ""
+  },
+  "tools/apk/build_binder_holder.py": {
+    "mtime": 1793394081.675678,
+    "seen": 1793394160.6565206,
+    "ast_hash": "2d51a0d2e70bd83f5abb0ebfd8c9cb47",
+    "semantic_hash": ""
+  },
+  "tools/apk/verify_binder_holder.py": {
+    "mtime": 1793394081.609817,
+    "seen": 1793394160.6588118,
+    "ast_hash": "4b2793ee22193e7ceefc54dd0ada32f8",
+    "semantic_hash": ""
+  },
+  "docs/AOSP-BINDER-HOLDER.md": {
+    "mtime": 1793394151.871935,
+    "seen": 1793394160.6602283,
+    "ast_hash": "4afe05bdda47943083299d853aea4d7a",
     "semantic_hash": ""
   }
 }
