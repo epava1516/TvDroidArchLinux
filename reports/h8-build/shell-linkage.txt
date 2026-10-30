@@ -1,0 +1,7 @@
+/build/archtv/src/target/release/archtv-shell: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 4.4.0, BuildID[sha1]=de777135d3cae379c854952b53d853142b1fe2a5, not stripped
+	linux-vdso.so.1 (0x00007f768c9f2000)
+	libxkbcommon.so.0 => /usr/lib/libxkbcommon.so.0 (0x00007f768c982000)
+	libgcc_s.so.1 => /usr/lib/libgcc_s.so.1 (0x00007f768c955000)
+	libm.so.6 => /usr/lib/libm.so.6 (0x00007f768c2c9000)
+	libc.so.6 => /usr/lib/libc.so.6 (0x00007f768c000000)
+	/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x00007f768c9f4000)

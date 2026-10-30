@@ -1,0 +1,31 @@
+rustc 1.99.1 (58cf8f9c3 2026-10-13) (Arch Linux rust 1:1.99.1-1)
+cargo 1.99.1 (5f94df478 2026-08-27) (Arch Linux rust 1:1.99.1-1)
+rust 1:1.99.1-1
+glibc 2.44+r50+g1848099f063e-1
+mesa 1:26.2.6-1
+pixman 0.46.4-1
+wayland 1.26.0-1
+libinput 1.32.0-1
+seatd 0.9.3-1
+libxkbcommon 1.13.2-1
+/build/archtv/src/target/release/archtv-compositor: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 4.4.0, BuildID[sha1]=97b25cc2768250c42b3f6d93be58bb8149c7f264, not stripped
+	linux-vdso.so.1 (0x00007f8c6cd72000)
+	libseat.so.1 => /usr/lib/libseat.so.1 (0x00007f8c6cd56000)
+	libudev.so.1 => /usr/lib/libudev.so.1 (0x00007f8c6c5b0000)
+	libinput.so.10 => /usr/lib/libinput.so.10 (0x00007f8c6c53e000)
+	libxkbcommon.so.0 => /usr/lib/libxkbcommon.so.0 (0x00007f8c6c4df000)
+	libpixman-1.so.0 => /usr/lib/libpixman-1.so.0 (0x00007f8c6c430000)
+	libgcc_s.so.1 => /usr/lib/libgcc_s.so.1 (0x00007f8c6cd29000)
+	libc.so.6 => /usr/lib/libc.so.6 (0x00007f8c6c200000)
+	/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x00007f8c6cd74000)
+	libsystemd.so.0 => /usr/lib/libsystemd.so.0 (0x00007f8c6c0b6000)
+	libmtdev.so.1 => /usr/lib/libmtdev.so.1 (0x00007f8c6c429000)
+	libevdev.so.2 => /usr/lib/libevdev.so.2 (0x00007f8c6c0a0000)
+	libm.so.6 => /usr/lib/libm.so.6 (0x00007f8c6bf69000)
+	libwacom.so.9 => /usr/lib/libwacom.so.9 (0x00007f8c6bf56000)
+	liblua5.4.so.5.4 => /usr/lib/liblua5.4.so.5.4 (0x00007f8c6bf10000)
+	libgudev-1.0.so.0 => /usr/lib/libgudev-1.0.so.0 (0x00007f8c6bf03000)
+	libgobject-2.0.so.0 => /usr/lib/libgobject-2.0.so.0 (0x00007f8c6bea0000)
+	libglib-2.0.so.0 => /usr/lib/libglib-2.0.so.0 (0x00007f8c6bd3b000)
+	libffi.so.8 => /usr/lib/libffi.so.8 (0x00007f8c6bd2d000)
+	libpcre2-8.so.0 => /usr/lib/libpcre2-8.so.0 (0x00007f8c6bc7a000)

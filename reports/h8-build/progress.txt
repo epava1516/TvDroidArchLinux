@@ -4,3 +4,6 @@ At this checkpoint it remains RUNNING; no package build PASS is claimed.
 The separate runtime root was created with base and verified without rustc, cargo or gcc.
 Later source improvements require a subsequent build before lifecycle tests compare versions.
 Kernel warnings and resource snapshots are recorded separately; they do not certify H7 performance.
+Release compilation completed successfully after 19m 59s, and makepkg entered check().
+The test binaries are still being built at this checkpoint; no test or package PASS is claimed.
+ELF linkage and toolchain are recorded in shell-linkage.txt and toolchain-compositor-linkage.txt.
