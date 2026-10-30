@@ -1,0 +1,91 @@
+{
+  "observations": [
+    {
+      "id": "vlc",
+      "apk_sha256": "4646633ede40c4784c5584087cffc5c60cc45b16966ae0b36cedd784d7c4a11e",
+      "type_references": {
+        "gms": [],
+        "firebase": [],
+        "media_drm": [],
+        "media_codec": [],
+        "documents_contract": [
+          "Landroid/provider/DocumentsContract;"
+        ],
+        "documentfile": [
+          "Landroidx/documentfile/provider/DocumentFile;",
+          "Landroidx/documentfile/provider/DocumentsContractApi19;",
+          "Landroidx/documentfile/provider/RawDocumentFile;",
+          "Landroidx/documentfile/provider/SingleDocumentFile;",
+          "Landroidx/documentfile/provider/TreeDocumentFile;"
+        ],
+        "vlc": [
+          "Lorg/videolan/libvlc/MediaPlayer$1;",
+          "Lorg/videolan/libvlc/MediaPlayer$2;",
+          "Lorg/videolan/libvlc/MediaPlayer$3;",
+          "Lorg/videolan/libvlc/MediaPlayer$4;",
+          "Lorg/videolan/libvlc/MediaPlayer$Chapter;",
+          "Lorg/videolan/libvlc/MediaPlayer$Equalizer;",
+          "Lorg/videolan/libvlc/MediaPlayer$Event;",
+          "Lorg/videolan/libvlc/MediaPlayer$EventListener;",
+          "Lorg/videolan/libvlc/MediaPlayer$Navigate;",
+          "Lorg/videolan/libvlc/MediaPlayer$Position;",
+          "Lorg/videolan/libvlc/MediaPlayer$ScaleType;",
+          "Lorg/videolan/libvlc/MediaPlayer$Title$Flags;",
+          "Lorg/videolan/libvlc/MediaPlayer$Title;",
+          "Lorg/videolan/libvlc/MediaPlayer$TrackDescription;",
+          "Lorg/videolan/libvlc/MediaPlayer;"
+        ],
+        "billing": [],
+        "integrity": []
+      },
+      "referenced_methods_on_media_drm_owner": 0
+    },
+    {
+      "id": "calculator",
+      "apk_sha256": "7c5443c22d6d62c67dfe80df33ea9161ff0fa440f92590bcb45d7008b57613ed",
+      "type_references": {
+        "gms": [],
+        "firebase": [],
+        "media_drm": [
+          "Landroid/media/MediaDrm;"
+        ],
+        "media_codec": [],
+        "documents_contract": [
+          "Landroid/provider/DocumentsContract;"
+        ],
+        "documentfile": [],
+        "vlc": [],
+        "billing": [],
+        "integrity": []
+      },
+      "referenced_methods_on_media_drm_owner": 1
+    },
+    {
+      "id": "markor",
+      "apk_sha256": "c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440",
+      "type_references": {
+        "gms": [],
+        "firebase": [],
+        "media_drm": [
+          "Landroid/media/MediaDrm;"
+        ],
+        "media_codec": [],
+        "documents_contract": [
+          "Landroid/provider/DocumentsContract;"
+        ],
+        "documentfile": [
+          "Landroidx/documentfile/provider/DocumentFile;",
+          "Landroidx/documentfile/provider/RawDocumentFile;",
+          "Landroidx/documentfile/provider/TreeDocumentFile;"
+        ],
+        "vlc": [],
+        "billing": [],
+        "integrity": []
+      },
+      "referenced_methods_on_media_drm_owner": 1
+    }
+  ],
+  "analyzer": "tools/apk/apk_inventory.py",
+  "analyzer_sha256": "c22bd2c0679a60a76fefca656642b9ea50b1ae0d9f8d1af7b0e10a8b843326da",
+  "scope": "Declared DEX type/method-owner tables only, not instructions executed, call graph, reflection/native/dynamic loading or absence of remote services. No matching GMS prefix in these three artifacts is bounded negative evidence, not proof of GMS independence for every feature."
+}

@@ -1,4 +1,89 @@
-# Contrato experimental del runtime APK
+# Contrato vigente de ejecución APK
+
+Revisión BASE-AOSP-1 · 2026-10-30. El objetivo es ejecutar APK completas sin
+modificar sobre Linux, con compositor y shell Rust/Smithay, sin Waydroid ni un
+Android completo arrancado detrás de la interfaz. La compatibilidad amplia,
+aislamiento, estabilidad, ligereza, instalación y actualización son requisitos;
+ninguna ruta técnica queda aceptada por defecto. Este contrato sustituye las
+reglas del prototipo A1/A2 conservadas más abajo como historia.
+
+## Alcance y frontera con Android completo
+
+Se permite reutilizar código, bibliotecas y servicios AOSP originales, incluso
+procesos Bionic x86_64 supervisados por Linux. Un servicio individual no equivale
+a arrancar Android: debe declarar versión, proceso/ABI, dependencias transitivas,
+IPC, permisos, identidad, archivos/dispositivos, inicio/cierre, coste y fallos.
+Hay que demostrar su cierre mínimo; no basta renombrar un sistema Android como
+«capa». El supervisor, sesión, ventanas y política TV pertenecen a nuestro Linux.
+
+No se acepta boot de una imagen/kernel Android, Android init como sistema gestor,
+ni iniciar la cadena estándar init→Zygote→system_server→SystemUI/SurfaceFlinger
+para envolverla con Smithay. Tampoco un contenedor/VM Android completo oculto.
+Extraer componentes de una imagen no es arrancarla. Namespaces/chroot de una
+selección de componentes no son automáticamente Android completo, pero tampoco
+prueban aislamiento: hay que inventariar lo realmente ejecutado.
+
+No se prohíbe por nombre cada componente de esa cadena: si reutilizar un servicio,
+lanzador o código de Zygote exige activar el conjunto completo, registrar el
+conflicto antes de cambiar el alcance. Un system_server monolítico con servicios
+sin cierre verificado no satisface esta restricción. No se reduce compatibilidad
+silenciosamente para evitar esa tensión. No se instalará ni arrancará otro Android
+para la revisión de base.
+
+## Requisitos y evidencia de aceptación
+
+| ID | Requisito | Evidencia necesaria |
+| --- | --- | --- |
+| C1 | APK originales completas | SHA-256/versiones, firma criptográfica y procedencia/política de confianza; no parchear APK ni sustituir su código por una réplica. Splits y bibliotecas dinámicas se registran explícitamente. |
+| C2 | Base reproducible | Build/revisión/ABI de ART, libcore, Bionic/linker, framework/APEX/JNI/recursos y servicios, classpath y namespaces; hashes/licencias. Stubs SDK sólo compilan: no cuentan como implementación ejecutable. |
+| C3 | Aplicación real completa | Las seis etapas de la matriz: lanzamiento por manifiesto/alias, interfaz propia de la APK, entrada real, persistencia, servicios y cierre/reapertura. Fixtures y pasos de bootstrap son regresiones parciales. |
+| C4 | Aislamiento e identidad | Separación real por APK, permisos/URI/FD/Binder y datos, IPC autenticado, límites de procesos/memoria/red, lectura de código y recursos protegida. Probar accesos cruzados, denegación y caída; UID declarado no sustituye credenciales reales. |
+| C5 | Estabilidad y ligereza | Mantener puertas H7: latencias, CPU/PSS y presupuestos, frame pacing, soak, ciclos y recuperación. Contabilizar todos los servicios compartidos y por app, además del shell; presupuesto global del runtime aún por medir/decidir. |
+| C6 | Instalación/actualización | Dependencias/versiones/licencias fijadas; instalación limpia, migración de datos, actualización atómica, rollback y recuperación H8/H9. Una caché SDK del laboratorio no es un paquete distribuible aceptado. |
+| C7 | Fallos honestos y servicios externos | Por función: contrato usado, implementación candidata, ABI e ISA, resultado real y límites. No devolver certificados, tokens, capacidades DRM o éxito de API ficticios. Ausencias/denegaciones se observan como tales. |
+
+La matriz canónica es [COMPATIBILIDAD-APK.md](COMPATIBILIDAD-APK.md) y su JSON
+vinculado. Marcar una etapa como verificada requiere artefacto/commit, comandos,
+resultado observable y limitaciones. Compilar, enlazar Activity, inicializar
+ContextImpl o registrar JNI no cumplen C3. API de servicio, ABI Bionic/JNI e ISA
+son ejes separados; x86_64 oficial no ejecuta automáticamente bibliotecas ARM.
+
+## Servicios externos y propietarios
+
+El catálogo de dependencias de la matriz distingue código reutilizable, binarios
+originales candidatos, adaptación Linux y servicios remotos. Antes de implementar
+una compatibilidad nueva se evalúan alternativas existentes (p. ej. microG,
+libhybris o las bibliotecas multimedia originales), con versión y prueba de la
+función concreta. No se consideran reemplazos generales por su nombre.
+
+Google Play Services/GMS, autenticación/push/mapas/pagos e integridad, proveedores
+de documentos/multimedia, codecs/HAL y DRM tienen pruebas separadas por aplicación.
+Un proveedor local no acredita acceso a una nube autenticada; reproducir un
+fichero libre no acredita Widevine. Licencias, servidor de licencias, cuenta,
+provisioning, certificación, TEE/hardware o backend fuera del control local deben
+quedar explícitos. No se simulan atestaciones ni se extraen secretos. Sin APK o
+cuenta de prueba disponible, la cobertura queda pendiente, no aprobada.
+
+## Experimento vertical para decidir base
+
+Misma Markor 2026.10.0 intacta y mismo recorrido en ambas rutas: seleccionar su
+Activity original por manifiesto, crear/editar una nota local con contenido de
+control, recibir teclado/mando a través de Smithay, guardar, usar la ruta de
+archivo/proveedor realmente elegida, cerrar sin huérfanos y reabrir verificando
+los bytes guardados. Observar callbacks, permisos y fallos; no sustituir la UI.
+La ruta SAF requiere probar grants y revocación del proveedor; el recorrido local
+inicial no cierra nube/SAF/otras funciones de Markor.
+
+A: ART host/glibc con subsistemas originales adaptados. B: runtime nativo
+Bionic/AOSP x86_64 coherente en procesos Linux con fronteras Linux explícitas.
+C: combinación sólo con IPC/ABI/versiones justificadas y pruebas de cada frontera.
+El orden y puertas de decisión están en [ROADMAP-A.md](ROADMAP-A.md); la elección
+final exige recorrido real, cierre de dependencias y costes medidos. Los ensayos
+preparatorios no rebajan ese criterio. El soporte de API 33 del laboratorio no
+se presenta como cobertura de todas las versiones Android ni como base segura
+actualizada para distribución.
+
+# Historia del prototipo A1/A2 · alcance limitado
 
 Este contrato describe el prototipo ejecutado, separado del antiguo proveedor
 Waydroid. Su primer consumidor será un cliente Wayland en Rust. Todavía no es una

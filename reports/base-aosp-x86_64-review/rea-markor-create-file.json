@@ -1,0 +1,148 @@
+{
+  "evidence_id": "ev_e966f3e9b9a0960fb6706e9c4952e90c2f8becf85aca9464eec5c6aec4e7409e",
+  "subject": {
+    "name": "net.gsantner.markor-v164-2026.10.0-flavorDefault-release.apk",
+    "digest": {
+      "sha256": "c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440"
+    },
+    "local_path": "/home/tv/.cache/archtv/apk/real-app-candidates/net.gsantner.markor-v164-2026.10.0-flavorDefault-release.apk",
+    "format": "apk",
+    "architecture": null
+  },
+  "provider": {
+    "id": "jadx",
+    "name": "JADX headless",
+    "version": "0.7.1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.analysis",
+  "operation": "inspect_android_method",
+  "parameters": {
+    "path": "/home/tv/.cache/archtv/apk/real-app-candidates/net.gsantner.markor-v164-2026.10.0-flavorDefault-release.apk",
+    "class_name": "androidx.documentfile.provider.TreeDocumentFile",
+    "method_name": "createFile",
+    "overload_index": 0
+  },
+  "raw_result": {
+    "server": {
+      "name": "rea-jadx-bridge",
+      "version": "7"
+    },
+    "bridge_sha256": "e5044a8312dd0731f53af3f095508b3e5cff54df6b971c95d4305e2f39b4fa30",
+    "jar_sha256": "6e5eacf500b64292bfb73c49797c1958f6ee44646e43e868039ae7feb573ff75",
+    "loaded": {
+      "state": "LOADED",
+      "apk_path": "/tmp/rea-android-GC7TQN/target.apk",
+      "class_count": 4985,
+      "resource_count": 1732,
+      "threads": 1,
+      "resources": "full"
+    },
+    "calls": [
+      {
+        "operation": "rea_jvm_status",
+        "input": {},
+        "response": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"metadata_scope\":\"parsed_members\",\"max_heap_bytes\":2076180480,\"java_version\":\"17.0.21.0.3\",\"available_processors\":4,\"engine_reported_version\":\"0.7.1\"}"
+            }
+          ],
+          "isError": false
+        }
+      },
+      {
+        "operation": "load_apk",
+        "input": {
+          "path": "/tmp/rea-android-GC7TQN/target.apk",
+          "threads": 1,
+          "resources": "full"
+        },
+        "response": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"state\":\"LOADED\",\"apk_path\":\"/tmp/rea-android-GC7TQN/target.apk\",\"class_count\":4985,\"raw_class_count\":4985,\"resource_count\":1732,\"load_duration_ms\":12659,\"decompile_timeout_ms\":90000,\"threads\":1,\"code_cache_size\":64,\"resources\":\"full\"}"
+            }
+          ],
+          "isError": false
+        }
+      },
+      {
+        "operation": "get_class_summary",
+        "input": {
+          "class_name": "androidx.documentfile.provider.TreeDocumentFile"
+        },
+        "response": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"inner_class_count\":0,\"name\":\"TreeDocumentFile\",\"field_count\":3,\"full_name\":\"androidx.documentfile.provider.TreeDocumentFile\",\"method_count\":18,\"raw_name\":\"androidx.documentfile.provider.TreeDocumentFile\",\"fields\":[{\"type\":\"byte\",\"def_pos\":0,\"name\":\"$r8$classId\"},{\"type\":\"android.content.Context\",\"def_pos\":0,\"name\":\"mContext\"},{\"type\":\"android.net.Uri\",\"def_pos\":0,\"name\":\"mUri\"}],\"methods\":[{\"signature\":\"\\u003cinit\\u003e(androidx.documentfile.provider.DocumentFile): void\",\"def_pos\":0,\"name\":\"\\u003cinit\\u003e\",\"is_constructor\":true,\"dex_descriptor\":\"(Landroidx/documentfile/provider/DocumentFile;)V\"},{\"signature\":\"\\u003cinit\\u003e(androidx.documentfile.provider.TreeDocumentFile, android.content.Context, android.net.Uri): void\",\"def_pos\":0,\"name\":\"\\u003cinit\\u003e\",\"is_constructor\":true,\"dex_descriptor\":\"(Landroidx/documentfile/provider/TreeDocumentFile;Landroid/content/Context;Landroid/net/Uri;)V\"},{\"signature\":\"canRead(): boolean\",\"def_pos\":0,\"name\":\"canRead\",\"is_constructor\":false,\"dex_descriptor\":\"()Z\"},{\"signature\":\"canWrite(): boolean\",\"def_pos\":0,\"name\":\"canWrite\",\"is_constructor\":false,\"dex_descriptor\":\"()Z\"},{\"signature\":\"createDirectory(java.lang.String): androidx.documentfile.provider.DocumentFile\",\"def_pos\":0,\"name\":\"createDirectory\",\"is_constructor\":false,\"dex_descriptor\":\"(Ljava/lang/String;)Landroidx/documentfile/provider/DocumentFile;\"},{\"signature\":\"createFile(java.lang.String, java.lang.String): androidx.documentfile.provider.DocumentFile\",\"def_pos\":0,\"name\":\"createFile\",\"is_constructor\":false,\"dex_descriptor\":\"(Ljava/lang/String;Ljava/lang/String;)Landroidx/documentfile/provider/DocumentFile;\"},{\"signature\":\"delete(): boolean\",\"def_pos\":0,\"name\":\"delete\",\"is_constructor\":false,\"dex_descriptor\":\"()Z\"},{\"signature\":\"exists(): boolean\",\"def_pos\":0,\"name\":\"exists\",\"is_constructor\":false,\"dex_descriptor\":\"()Z\"},{\"signature\":\"getName(): java.lang.String\",\"def_pos\":0,\"name\":\"getName\",\"is_constructor\":false,\"dex_descriptor\":\"()Ljava/lang/String;\"},{\"signature\":\"getType(): java.lang.String\",\"def_pos\":0,\"name\":\"getType\",\"is_constructor\":false,\"dex_descriptor\":\"()Ljava/lang/String;\"},{\"signature\":\"getUri(): android.net.Uri\",\"def_pos\":0,\"name\":\"getUri\",\"is_constructor\":false,\"dex_descriptor\":\"()Landroid/net/Uri;\"},{\"signature\":\"isDirectory(): boolean\",\"def_pos\":0,\"name\":\"isDirectory\",\"is_constructor\":false,\"dex_descriptor\":\"()Z\"},{\"signature\":\"isFile(): boolean\",\"def_pos\":0,\"name\":\"isFile\",\"is_constructor\":false,\"dex_descriptor\":\"()Z\"},{\"signature\":\"isVirtual(): boolean\",\"def_pos\":0,\"name\":\"isVirtual\",\"is_constructor\":false,\"dex_descriptor\":\"()Z\"},{\"signature\":\"lastModified(): long\",\"def_pos\":0,\"name\":\"lastModified\",\"is_constructor\":false,\"dex_descriptor\":\"()J\"},{\"signature\":\"length(): long\",\"def_pos\":0,\"name\":\"length\",\"is_constructor\":false,\"dex_descriptor\":\"()J\"},{\"signature\":\"listFiles(): androidx.documentfile.provider.DocumentFile[]\",\"def_pos\":0,\"name\":\"listFiles\",\"is_constructor\":false,\"dex_descriptor\":\"()[Landroidx/documentfile/provider/DocumentFile;\"},{\"signature\":\"renameTo(java.lang.String): boolean\",\"def_pos\":0,\"name\":\"renameTo\",\"is_constructor\":false,\"dex_descriptor\":\"(Ljava/lang/String;)Z\"}],\"inner_classes\":[]}"
+            }
+          ],
+          "isError": false
+        }
+      },
+      {
+        "operation": "get_method_body",
+        "input": {
+          "class_name": "androidx.documentfile.provider.TreeDocumentFile",
+          "method_name": "createFile",
+          "overload_index": 0,
+          "smali_fallback": true
+        },
+        "response": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"fell_back\":false,\"full_name\":\"androidx.documentfile.provider.TreeDocumentFile.createFile\",\"overload_index\":0,\"method_name\":\"createFile\",\"overload_count\":1,\"dex_descriptor\":\"(Ljava/lang/String;Ljava/lang/String;)Landroidx/documentfile/provider/DocumentFile;\",\"class_name\":\"androidx.documentfile.provider.TreeDocumentFile\",\"mode\":\"java\",\"body\":\"    @Override // androidx.documentfile.provider.DocumentFile\\n    public final DocumentFile createFile(String str, String str2) {\\n        Uri uriCreateDocument;\\n        switch (this.$r8$classId) {\\n            case 0:\\n                Context context \\u003d this.mContext;\\n                try {\\n                    uriCreateDocument \\u003d DocumentsContract.createDocument(context.getContentResolver(), this.mUri, str, str2);\\n                    break;\\n                } catch (Exception unused) {\\n                    uriCreateDocument \\u003d null;\\n                }\\n                if (uriCreateDocument !\\u003d null) {\\n                    return new TreeDocumentFile(this, context, uriCreateDocument);\\n                }\\n                return null;\\n            default:\\n                throw new UnsupportedOperationException();\\n        }\\n    }\",\"markers\":[]}"
+            }
+          ],
+          "isError": false
+        }
+      }
+    ]
+  },
+  "normalized_result": {
+    "engine": {
+      "name": "jadx-headless-mcp",
+      "version": "0.7.1",
+      "artifact_sha256": "6e5eacf500b64292bfb73c49797c1958f6ee44646e43e868039ae7feb573ff75",
+      "source_revision": "5844800a486d2248fa949b74c9896285f5b54de2",
+      "worker_count": 1,
+      "heap_limit_mib": 1980
+    },
+    "class_name": "androidx.documentfile.provider.TreeDocumentFile",
+    "method": {
+      "name": "createFile",
+      "reported_signature": "createFile(java.lang.String, java.lang.String): androidx.documentfile.provider.DocumentFile",
+      "overload_index": 0,
+      "is_constructor": false,
+      "dex_descriptor": "(Ljava/lang/String;Ljava/lang/String;)Landroidx/documentfile/provider/DocumentFile;"
+    },
+    "overload_count": 1,
+    "representation": "java",
+    "body_status": "available",
+    "fell_back": false,
+    "markers": [],
+    "source": {
+      "status": "complete",
+      "text": "    @Override // androidx.documentfile.provider.DocumentFile\n    public final DocumentFile createFile(String str, String str2) {\n        Uri uriCreateDocument;\n        switch (this.$r8$classId) {\n            case 0:\n                Context context = this.mContext;\n                try {\n                    uriCreateDocument = DocumentsContract.createDocument(context.getContentResolver(), this.mUri, str, str2);\n                    break;\n                } catch (Exception unused) {\n                    uriCreateDocument = null;\n                }\n                if (uriCreateDocument != null) {\n                    return new TreeDocumentFile(this, context, uriCreateDocument);\n                }\n                return null;\n            default:\n                throw new UnsupportedOperationException();\n        }\n    }",
+      "reported_total_bytes": null
+    }
+  },
+  "confidence": "derived",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+    "Method signatures use provider display types; DEX prototypes come from frozen JADX metadata. Display names may be aliases, and overload indices are local to this engine and artifact.",
+    "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+    "Incoming reference totals count JADX using nodes. Direct invoke entries within a using method report raw DEX code-unit offsets and method indexes, but coverage is limited to those nodes and directly matched invokes; it does not establish every possible dynamic or reflective call site.",
+    "Manifest summaries are parsed once by REA's bridge from the exact root AndroidManifest.xml resource, using namespace-aware XML attributes; decoded XML is retained. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

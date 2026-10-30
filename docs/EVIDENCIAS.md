@@ -83,3 +83,18 @@ registra hashes. REA MCP devuelve capability_unavailable para inspección Androi
 de JAR, documentado; no se atribuye esa inspección a MCP. Las APK reales analizadas
 previamente conservan sus evidencias REA. La extracción no verifica firmas
 AVB/APEX ni acredita distribución, compatibilidad nativa o seguridad.
+
+## Revisión BASE-AOSP-1
+
+[Checkpoint](../reports/base-aosp-x86_64-review/checkpoint.json),
+[fuentes oficiales](../reports/base-aosp-x86_64-review/sources.json),
+[índice y hashes](../reports/base-aosp-x86_64-review/artifact-index.json). El
+ensayo JNI preservado sigue como código pendiente, separado de la revisión.
+[Su error original](../reports/base-aosp-x86_64-review/pending-bootstrap.stderr)
+demuestra ausencia de PermissionManager antes de ejecutar Markor. REA MCP verifica
+una exportación JNI_OnLoad en ELF; [DocumentFile](../reports/base-aosp-x86_64-review/rea-markor-create-file.json)
+y [VLC play](../reports/base-aosp-x86_64-review/rea-vlc-play.json) son contratos
+estáticos. La traza externa MediaDrm no está disponible por clase SDK ausente
+en APK y queda conservada, sin convertir el fallo de herramienta en compatibilidad.
+Las búsquedas DEX sólo tienen su alcance declarado. Ningún flujo GMS/DRM ni
+runtime target Bionic está probado por esta revisión.

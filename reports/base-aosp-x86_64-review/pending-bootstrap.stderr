@@ -1,0 +1,43 @@
+dalvikvm64 E 10-30 22:36:09    14    14 image_space.cc:2239] Error reading named image component header for /runtime/host/art-13.0.0/framework/core.art, error: Unable to open file "/runtime/host/art-13.0.0/framework/x86_64/core.art" for reading image header
+dalvikvm64 E 10-30 22:36:09    14    14 image_space.cc:3470] Could not create image space with image file '/runtime/host/art-13.0.0/framework/core.art'. Attempting to fall back to imageless running. Error was: Full boot image cannot be compiled because no profile is provided.
+ziparchive W 10-30 22:36:10    14    14 Unable to open '/platform/0.dm': No such file or directory
+ziparchive W 10-30 22:36:10    14    14 Unable to open '/platform/1.dm': No such file or directory
+ziparchive W 10-30 22:36:10    14    14 Unable to open '/platform/2.dm': No such file or directory
+ziparchive W 10-30 22:36:10    14    14 Unable to open '/platform/3.dm': No such file or directory
+ziparchive W 10-30 22:36:10    14    14 Unable to open '/platform/4.dm': No such file or directory
+ziparchive W 10-30 22:36:10    14    14 Unable to open '/platform/5.dm': No such file or directory
+ziparchive W 10-30 22:36:10    14    14 Unable to open '/platform/6.dm': No such file or directory
+ziparchive W 10-30 22:36:10    14    14 Unable to open '/platform/7.dm': No such file or directory
+ziparchive W 10-30 22:36:10    14    14 Unable to open '/platform/8.dm': No such file or directory
+ziparchive W 10-30 22:36:10    14    14 Unable to open '/platform/9.dm': No such file or directory
+ziparchive W 10-30 22:36:10    14    14 Unable to open '/platform/10.dm': No such file or directory
+ziparchive W 10-30 22:36:10    14    14 Unable to open '/platform/11.dm': No such file or directory
+ziparchive W 10-30 22:36:10    14    14 Unable to open '/platform/12.dm': No such file or directory
+ziparchive W 10-30 22:36:10    14    14 Unable to open '/platform/13.dm': No such file or directory
+ziparchive W 10-30 22:36:10    14    14 Unable to open '/platform/14.dm': No such file or directory
+ziparchive W 10-30 22:36:10    14    14 Unable to open '/platform/15.dm': No such file or directory
+ziparchive W 10-30 22:36:10    14    14 Unable to open '/platform/16.dm': No such file or directory
+ziparchive W 10-30 22:36:10    14    14 Unable to open '/platform/17.dm': No such file or directory
+ziparchive W 10-30 22:36:10    14    14 Unable to open '/platform/18.dm': No such file or directory
+ziparchive W 10-30 22:36:10    14    14 Unable to open '/platform/19.dm': No such file or directory
+ziparchive W 10-30 22:36:10    14    14 Unable to open '/platform/20.dm': No such file or directory
+ziparchive W 10-30 22:36:10    14    14 Unable to open '/platform/21.dm': No such file or directory
+ziparchive W 10-30 22:36:10    14    14 Unable to open '/platform/22.dm': No such file or directory
+ziparchive W 10-30 22:36:10    14    14 Unable to open '/platform/23.dm': No such file or directory
+ziparchive W 10-30 22:36:10    14    14 Unable to open '/app/app.dm': No such file or directory
+ziparchive W 10-30 22:36:10    14    14 Unable to open '/app/probe.dm': No such file or directory
+APK_HOST_PROFILE sdk=33 abi=x86_64
+ANDROID_LOG buffer=system priority=5 tag="PackageParser" Unknown element under <manifest>: queries at /app/app.apk Binary XML file line #42
+BOOTSTRAP_BLOCKED stage=parse-original-package android.content.pm.PackageParser$PackageParserException: Failed to read manifest from /app/app.apk
+android.content.pm.PackageParser$PackageParserException: Failed to read manifest from /app/app.apk
+	at android.content.pm.PackageParser.parseBaseApk(PackageParser.java:1253)
+	at android.content.pm.PackageParser.parseMonolithicPackage(PackageParser.java:1199)
+	at android.content.pm.PackageParser.parsePackage(PackageParser.java:1103)
+	at android.content.pm.PackageParser.parsePackage(PackageParser.java:1112)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at org.archtv.apkruntime.OriginalBootstrapProbe.main(OriginalBootstrapProbe.java:18)
+Caused by: java.lang.NullPointerException: Attempt to invoke interface method 'java.util.List android.permission.IPermissionManager.getSplitPermissions()' on a null object reference
+	at android.content.pm.PackageParser.parseBaseApkCommon(PackageParser.java:2441)
+	at android.content.pm.PackageParser.parseBaseApk(PackageParser.java:1922)
+	at android.content.pm.PackageParser.parseBaseApk(PackageParser.java:1237)
+	... 5 more

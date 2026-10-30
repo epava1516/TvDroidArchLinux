@@ -1,0 +1,76 @@
+{
+  "evidence_id": "ev_3d62e013b186ecffee2546ef9b472b844e10af95d1e866d14b4293796e684225",
+  "subject": {
+    "name": "libarchtv_resources_linux.so",
+    "digest": {
+      "sha256": "3d6744feef6d0016b40044b9dc0da4389c60c47ba63b02530033bc9e78279353"
+    },
+    "local_path": "/home/tv/repositorio-principal/dist/apk/original-resources-2/libarchtv_resources_linux.so",
+    "format": "elf",
+    "architecture": null
+  },
+  "provider": {
+    "id": "rea-native-exports",
+    "name": "REA PE/ELF export table reader",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.analysis",
+  "operation": "inspect_native_exports",
+  "parameters": {
+    "path": "/home/tv/repositorio-principal/dist/apk/original-resources-2/libarchtv_resources_linux.so",
+    "max_file_bytes": 268435456
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "artifact": {
+      "path": "/home/tv/repositorio-principal/dist/apk/original-resources-2/libarchtv_resources_linux.so",
+      "sha256": "3d6744feef6d0016b40044b9dc0da4389c60c47ba63b02530033bc9e78279353",
+      "bytes": 3148224
+    },
+    "format": "elf",
+    "architecture": "amd64",
+    "bits": 64,
+    "byte_order": "little",
+    "exports": [
+      {
+        "name": "JNI_OnLoad",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x1d2c0",
+        "size": "168",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      }
+    ],
+    "coverage": {
+      "status": "complete",
+      "reason": null,
+      "examined_entries": 248,
+      "exports": 1
+    },
+    "issues": [],
+    "limitations": [
+      "Rows list defined default- or protected-visibility global, weak and unique dynamic symbols; local, hidden, internal and undefined symbols are not exports.",
+      "A hidden symbol version is not the default version that a by-name dlsym lookup selects.",
+      "Rows reproduce the dynamic symbol table; they do not establish that a symbol is reachable, safe to call or loaded at runtime."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "Rows list defined default- or protected-visibility global, weak and unique dynamic symbols; local, hidden, internal and undefined symbols are not exports.",
+    "A hidden symbol version is not the default version that a by-name dlsym lookup selects.",
+    "Rows reproduce the dynamic symbol table; they do not establish that a symbol is reachable, safe to call or loaded at runtime."
+  ],
+  "relationship_coverage": null,
+  "locations": [
+    {
+      "kind": "artifact-path",
+      "path": "/home/tv/repositorio-principal/dist/apk/original-resources-2/libarchtv_resources_linux.so"
+    }
+  ],
+  "evidence_links": []
+}

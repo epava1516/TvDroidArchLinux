@@ -1,6 +1,163 @@
 # Arquitectura vigente
 
-Estado posterior a la revisión: el [framework modular original](../reports/aosp-platform-bootstrap/result.json)
+## Decisión BASE-AOSP-1 · evaluación de base x86_64 (2026-10-30)
+
+El [contrato vigente](CONTRATO-APK.md) mantiene APK sin modificar y Linux/Smithay,
+sin Waydroid ni Android completo. **La base definitiva no está elegida.** Se
+prioriza medir una selección coherente Bionic/AOSP original (B) antes de seguir
+ampliando adaptaciones por métodos. ART host (A) queda como comparación reproducible,
+no como arquitectura obligatoria. Una combinación (C) necesita fronteras probadas.
+Estado/checkpoint: [ESTADO.md](ESTADO.md); aceptación: [ROADMAP-A.md](ROADMAP-A.md).
+
+### Qué significa AOSP x86_64 oficial
+
+AOSP publica código/targets para x86_64; la guía oficial de
+[Cuttlefish](https://source.android.com/docs/devices/cuttlefish/get-started)
+identifica `aosp_cf_x86_64_only_phone` y artefactos en Android CI. Cuttlefish es
+un dispositivo virtual de referencia, no una biblioteca de compatibilidad Linux.
+[Android Emulator](https://developer.android.com/studio/run/emulator) es otra
+herramienta de dispositivo virtual para desarrollo de apps. Descargar sus imágenes
+como input de estudio no exige ejecutarlas. No se han instalado ni arrancado.
+
+El [proyecto Android-x86](https://www.android-x86.org/) mantiene su propio port y
+fuentes: se distingue de los targets y artefactos del árbol oficial AOSP. El
+[NDK enumera x86_64](https://developer.android.com/ndk/guides/abis) entre sus ABI;
+esto no convierte glibc en Bionic ni traduce instrucciones ARM. Tampoco garantiza
+que una APK arbitraria incluya una biblioteca x86_64 o que sus servicios existan.
+
+Artefactos ya comprobados: imagen oficial SDK `default;x86_64` API 33 revisión 2,
+SHA-256 `297a7384…aa5bc22`, fingerprint TE1A.220922.034/10940250; sistema/APEX,
+recursos y 31 jars con DEX y fragmentos originales de bootclasspath. Procedencia
+completa en [platform-image.json](../runtime/aosp/platform-image.json) y
+[extracción](../reports/aosp-platform-bootstrap/artifact-index.json). No son stubs.
+`android.jar`, android-all de compilación y snapshots SDK con `*-stubs.jar` no
+son sustitutos de esas implementaciones. API 33 y parche 2022-11-05 de esta imagen
+son referencia histórica fijada, no aceptación de seguridad/actualización del producto.
+No se ha validado una build reciente Cuttlefish ni su cierre mínimo. La caché SDK
+no implica autorización de redistribución: H8 debe revisar licencias/NOTICE y, si
+procede, producir componentes desde fuentes fijadas de una build mantenida.
+
+### Comparación de estrategias y mezclas actuales
+
+| Ruta | Reutilización y frontera | Evidencia actual | Dependencias/costes y experimento decisivo |
+| --- | --- | --- | --- |
+| A · host glibc | ART/libcore host, androidfw y subsistemas JNI recompilados; puente Rust/Linux. | Fixtures funcionales; framework modular llega a ContextImpl. Ensayo JNI pendiente lee manifiesto y falla por PermissionManager. | Coste de port/ABI/classloader y servicios propio. Repetir Markor completa con JNI/servicios por subsistemas; medir mantenimiento y recursos. No extender Activity/widgets propios para dar apariencia de compatibilidad. |
+| B · nativo Bionic | ART/libcore, Bionic/linker, framework, APEX, JNI y recursos del mismo target/build; procesos Linux supervisados, interfaces gráficas/entrada/servicios adaptadas. | Imagen original y jars extraídos estáticamente; todavía no ejecución de ART target. | Namespaces/rutas/APEX, propiedades, TLS/bionic, Binder, permisos, SELinux/seccomp/cgroups esperados, fonts, HAL/BufferQueue/servicios. Primero loader/ART aislado, después runtime original y cierre de servicios de Markor. Puede conservar más semántica; no se presupone menor coste ni funcionamiento. |
+| C · mezcla controlada | Componentes Bionic y host en procesos separados, protocolo versionado de buffers/entrada/servicios; o frontera intraproceso demostrada. | Ninguna combinación aceptada para APK reales. Mezcla actual sólo experimental. | Probar ABI, identidad, ownership, hilos, excepciones, FD y caídas. No pasar objetos C++/JNI entre libc o VM por coincidencia de ISA/nombres. Medir copias, latencia y complejidad. |
+
+La mezcla real no equivale aún a B ni a C aprobadas:
+
+- ART/libcore/core JNI host: export R8 de Android 13 r3, enlazado para glibc.
+- 24 jars no básicos de la imagen SDK Android 13 r2 en classpath de aplicación,
+  con siete jars core del host. Hay dos builds y el framework no está situado como
+  en su bootclasspath original. Identidad del classloader, reflexión y JNI sólo
+  tienen pruebas parciales, no una validación general.
+- androidfw/recursos JNI originales fijados a sus manifiestos de fuentes, compilados
+  para host con libc++ del bundle ART; no son binarios Bionic de la imagen SDK.
+  El experimento nuevo registra cuatro unidades originales sin modificar, pero
+  sigue sin commit y separado de esta revisión. Sus fuentes no se presuponen
+  idénticas a la build SDK: el registro JNI y parseo probado sólo contrastan esa ruta.
+- `libarchtv_aosp_linux.so` y registro local son adaptadores propios. El Binder
+  local no acredita IPC ni autorización Android. El contador usa UI propia;
+  todavía no hay ventana de Markor con vistas originales.
+
+[libhybris](https://github.com/libhybris/libhybris/blob/master/README.md) es una
+alternativa existente para cargar bibliotecas basadas en Bionic desde host Linux;
+no implementa framework/servicios APK ni traduce ISA. Se evaluará sólo si una
+frontera intraproceso lo requiere, comparando versión de Bionic/TLS/enlazador,
+JNI y ownership. No está instalado ni probado aquí. Un proceso Bionic separado
+permite evitar asumir esa compatibilidad intraproceso, pero necesita su propio
+cierre de dependencias e IPC.
+
+### Componentes, procesos y cierre mínimo
+
+Esta tabla clasifica hipótesis de reutilización, no promete que los binarios ya
+funcionen fuera de su sistema. Cada fila requiere manifiesto de dependencias y
+pruebas de inicio, operación, denegación, caída, cierre y costes.
+
+| Subsistema original | Posible unidad sobre Linux | Dependencias/puerta |
+| --- | --- | --- |
+| Bionic/linker | Proceso ELF propio; libc/libm/libdl dentro de ese entorno | ABI/TLS, rutas y namespaces originales; syscalls y políticas del host. No cargar libc.so Android como sustituto de libc.so.6. |
+| ART/libcore | dalvikvm/launcher y bibliotecas del mismo APEX/build | Bootclasspath original, ICU/Conscrypt, JNI/core, propiedades y entorno. Ejecutar DEX semántico es sólo puerta preparatoria. |
+| Framework/APEX/recursos | Jars/recursos y bibliotecas cargados por ese runtime | APEX son unidades de componentes, no servicios mágicos; extraerlos no inicia apexd ni cumple actualización/firma. Mantener metadatos/versiones coherentes. |
+| libandroid_runtime/androidfw/XmlBlock/AssetManager | Subsistema JNI original, con registro y ownership íntegros | Clases de la misma build, nativehelper, Bionic y bibliotecas transitivas. En host exige adaptación y pruebas; no mezclar tokens propios con punteros originales. |
+| Package/Permission/Activity/Content services | Reutilización de lógica/servicios individuales o proceso Java especializado | Binder/registro, identidades/UID, datos, permisos, settings y otras dependencias reales; no inyectar éxito vacío. Averiguar si pueden separarse de system_server sin romper contrato. |
+| Binder/servicemanager | IPC kernel/daemon de nombres o adaptación de protocolo justificada | Dispositivo/namespace, credenciales, políticas, muerte y FD. Kernel Linux compartido no prueba driver/política disponibles ni autoriza a desactivar aislamiento. |
+| HWUI/Skia/Surface/BufferQueue | Renderizador original y puente a buffers Wayland | Fonts, allocator/mapper, sync/fences, EGL/Vulkan y ciclo de superficies. Smithay conserva composición/foco. SurfaceFlinger/HWC originales no se arrancan como escritorio Android de fondo. |
+| Audio/media/codec | Bibliotecas originales y servicios limitados o adaptadores a PipeWire/Mesa | Selección de backend, Binder/HAL, rutas audio/video, synchronización y DRM; medir reproducción real en VLC y permisos/proveedor. |
+| Red/almacenamiento/proveedores | Libcore y servicios con adaptación Linux | DNS/TLS/keystore, SQLite/datos, ContentResolver/URI grants/persistencia y proveedores locales/remotos. No sustituir una URI por un path sin probar su semántica. |
+| Zygote/system_server/init | No se asumen requisitos globales ni se eliminan por decreto | [Zygote](https://source.android.com/docs/core/runtime/zygote) forma parte de la gestión de procesos Android. Cualquier reutilización limitada debe demostrar cierre. Si sólo funciona la cadena completa, es conflicto con C1–C7, no permiso para boot oculto. |
+
+[APEX](https://source.android.com/docs/core/ota/apex) agrupa runtime, bibliotecas y
+servicios; su mecanismo de activación/actualización es distinto de copiar archivos.
+El [linker Android](https://source.android.com/docs/core/architecture/vndk/linker-namespace)
+usa configuración de namespaces generada en Android moderno. Para B habrá que
+reproducir ese contrato mínimo de entorno o generar una configuración equivalente
+verificada; no asumir que `LD_LIBRARY_PATH` acredita la plataforma.
+
+[BufferQueue/Gralloc](https://source.android.com/docs/core/graphics/arch-bq-gralloc)
+y el [framework multimedia](https://source.android.com/docs/core/media) explican
+por qué una biblioteca con símbolos resueltos todavía necesita buffers, sync,
+servicios y backends. La selección de componentes debe hacer explícitas esas
+fronteras, evitando tanto arrancar Android entero como reescribir sus algoritmos.
+
+### Servicios externos/propietarios y tres ejes de compatibilidad
+
+El catálogo canónico está en la [matriz](COMPATIBILIDAD-APK.md), incluyendo evidencia
+REA y requisitos de prueba por función. Se mantienen tres ejes independientes:
+API/servicio; ABI Bionic/JNI; ISA. El [Native Bridge de AOSP](https://android.googlesource.com/platform/art/+/refs/heads/main/libnativebridge/README.md)
+permite integrar un traductor, pero AOSP no proporciona uno. No hay traducción ARM
+probada aquí; se requiere otra puerta con APK ARM-only y dependencias reales.
+
+[Google Play services](https://developers.google.com/android/guides/overview) y
+[GMS](https://www.android.com/gms/) no quedan incluidos por reutilizar AOSP;
+GMS es externo y requiere licencia. [microG](https://github.com/microg/GmsCore)
+se evaluará antes de reimplementar contratos, atendiendo a su
+[cobertura declarada por API](https://github.com/microg/GmsCore/wiki/Implementation-Status)
+y [requisitos de identidad](https://github.com/microg/GmsCore/wiki/Signature-Spoofing).
+No está probado sobre esta capa ni sustituye cuentas, backend o certificación.
+El [Play Integrity API](https://developer.android.com/google/play/integrity/overview)
+usa señales verificadas y puede exigir confianza de hardware; no se generarán
+veredictos ficticios. Autenticación, FCM, mapas, billing e integridad se probarán
+separados con APK concretas y pruebas de error/offline; los tres APK actuales no
+cubren GMS. Se buscará un APK real distribuido por su autor para ese perfil.
+
+[Widevine](https://developers.google.com/widevine/drm/overview) requiere integración
+y licencias; provisioning/keybox/OEMCrypto y el servicio de licencias del proveedor
+no se sustituyen con una interfaz local. [Media3](https://developer.android.com/media/media3/exoplayer/drm)
+usa MediaDrm y esquemas concretos: ClearKey no acredita Widevine/PlayReady ni vídeo
+protegido por hardware. Faltan APK real/versión, contenido y acceso de prueba para
+DRM comercial. Su ausencia se registra como cobertura pendiente, no como éxito ni
+imposibilidad universal. Sin prueba de esas condiciones no se promete el catálogo
+comercial. No se alteran APK ni se evaden certificaciones para ocultar límites.
+
+Markor incluye DocumentFile/TreeDocumentFile: REA observa createDocument mediante
+ContentResolver y referencias desde NewFileDialog/otros componentes. Esa evidencia
+es estática, no acredita que una ruta se haya ejecutado. SAF implica proveedor y
+grants; un proveedor de nube requiere además su autenticación/backend. En VLC,
+REA observa `MediaPlayer.play()`→`nativePlay()` y espera de superficies; el JNI y
+libVLC originales necesitan resolución binaria, salida audio/video y servicios.
+Una referencia DEX a MediaDrm en Markor/Calculator no demuestra reproducción DRM:
+la ruta exacta sigue por investigar. No se atribuye Widevine a esas apps por ese tipo.
+
+### Decisión operativa y prueba vertical
+
+Siguiente experimento: inventario y ejecución acotada del linker/ART target Bionic
+original bajo supervisión Linux, sin init/boot Android; luego bootstrap Markor con
+cierre explícito de Package/Permission/Content/Activity y presentación/entrada
+Smithay. A conserva el ensayo y fallo reales como comparación. No se añadirá un
+stub PermissionManager que devuelva una lista vacía para dar por parseada la APK.
+
+La elección A/B/C se realizará al comparar las seis etapas del recorrido Markor,
+identidad/clase/ABI, dependencias y coste total; una prueba parcial sólo decide
+el siguiente riesgo a investigar. Si B necesita un conjunto de servicios equivalente
+a Android completo, documentar esa tensión y estudiar separación/adaptación antes
+de cambiar el objetivo. Los detalles de ejecución y puertas están en ROADMAP-A.
+
+## Evidencia anterior conservada (no fija la base elegida)
+
+
+Estado del experimento anterior: el [framework modular original](../reports/aosp-platform-bootstrap/result.json)
 supera SystemServiceRegistry/ContextImpl. PackageParser original se detiene en
 ApkAssets.nativeOpenXml, sin ejecutar código de Markor. Se reutilizará el
 subsistema JNI original de recursos, conservando su ownership; no se sustituirá
@@ -36,7 +193,7 @@ ventana del contador se representa desde su árbol propio; construir/layout de
 View AOSP en otro proceso no demuestra que esa vista dibuje la APK. La flecha
 APK del diagrama es el diseño objetivo, no una integración completa acreditada.
 
-| Decisión vigente | Justificación/evidencia | Trabajo abierto |
+| Decisión del experimento anterior | Justificación/evidencia | Trabajo abierto |
 | --- | --- | --- |
 | Compositor y shell Rust separados | Política TV y recuperación H4/H5; evitar bloquear el bucle gráfico con servicios. | Medición H7, mandos físicos y accesibilidad. |
 | Reutilizar ART/libcore y lógica original AOSP cuando corresponda | DEX, cola, recursos y perfiles nativos existentes; ver índice. | Decidir conjunto coherente de runtime/framework/servicios y ABI. |

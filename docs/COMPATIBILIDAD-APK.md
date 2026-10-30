@@ -34,3 +34,25 @@ sin convertir filas no probadas en compatibilidad ni usar fixtures como sustitut
 
 Las decisiones y la siguiente prueba están en [ARQUITECTURA.md](ARQUITECTURA.md);
 el estado y roadmap conservan aislamiento, ligereza, instalación y actualización.
+
+## Dependencias y selección de base BASE-AOSP-1
+
+El JSON canónico incluye `dependency_catalog`, `dependency_profiles` por APK y
+`required_coverage_cases`: registra contrato, código/bibliotecas candidatos,
+adaptación, alternativas existentes, requisitos externos y resultados separados
+de API/servicios, ABI Bionic/JNI e ISA. No duplica la aceptación en otro catálogo.
+
+| Perfil | Evidencia real actual | Límite y siguiente comprobación |
+| --- | --- | --- |
+| Servicios AOSP de Markor | Parser original lee XML y falla por IPermissionManager.getSplitPermissions nulo | No arranca Application; fuente del ensayo JNI sigue pendiente y separada del commit de revisión. Comparar cierre de servicios en A/B. |
+| Proveedores de documentos | REA: DocumentFile referido desde NewFileDialog/otros componentes; TreeDocumentFile.createFile llama DocumentsContract/ContentResolver | Estático: no demuestra guardado, grant o revocación. Probar URI/provider real; nube añade autenticación/backend. |
+| Bibliotecas/media VLC | REA: play() espera superficies y llama nativePlay; ELF Bionic x86_64 inventariado previamente | No carga/reproducción probada, backend de codec/audio preciso pendiente. Comparar binarios originales y adaptación Linux. |
+| GMS, autenticación/push/mapas | No prefijos GMS/Firebase en las tablas DEX examinadas de las tres APK | Búsqueda acotada, no ausencia garantizada de carga dinámica. Falta APK real que ejerza cada función; microG no evaluado en ejecución. |
+| Integridad/billing | Sin APK/versión/cuenta/flujo fijados | Servicios y validación remotos; certificación/hardware según política. No tokens/veredictos/compras ficticios. |
+| DRM | MediaDrm aparece como tipo en Markor/Calculator; REA no traza clases SDK externas ausentes en la APK | No atribuir reproducción Widevine a esas apps. Faltan ruta exacta y APK/contenido/condiciones de licencia. ClearKey es otra prueba, no sustituto de DRM comercial. |
+| ARM-only, WebView/splits | Sin flujo completo representativo | Casos requeridos, no exclusiones definitivas; selección de artefactos y prueba pendientes. |
+
+Los tres recorridos originales siguen abiertos en sus seis etapas. La selección
+de Markor local es una primera vertical, no reducción del objetivo a archivos
+locales ni una acreditación de todos sus proveedores. El [contrato](CONTRATO-APK.md)
+y [la arquitectura](ARQUITECTURA.md) fijan aceptación y alternativas.

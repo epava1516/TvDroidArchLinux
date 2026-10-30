@@ -1,0 +1,122 @@
+{
+  "observed_date": "2026-10-30",
+  "method": "Official/vendor/upstream project pages read using web tool; implementation sources/artifact provenance separately pinned in existing reports. These summaries are not runtime evidence.",
+  "sources": [
+    {
+      "id": "official-x86-targets",
+      "url": "https://source.android.com/docs/devices/cuttlefish/get-started",
+      "scope": "Official x86_64 target and CI artifact procedure. Describes full virtual-device launch, which was not performed."
+    },
+    {
+      "id": "cuttlefish",
+      "url": "https://source.android.com/docs/devices/cuttlefish",
+      "scope": "Virtual AOSP reference device; not a Linux APK library."
+    },
+    {
+      "id": "emulator",
+      "url": "https://developer.android.com/studio/run/emulator",
+      "scope": "App-development virtual Android device; distinct from Cuttlefish and independent Android-x86."
+    },
+    {
+      "id": "android-x86",
+      "url": "https://www.android-x86.org/",
+      "scope": "Independent project describes its AOSP-to-x86 port; distinct source/targets."
+    },
+    {
+      "id": "ndk-abi",
+      "url": "https://developer.android.com/ndk/guides/abis",
+      "scope": "Official supported x86_64 ABI; ISA/ABI distinctions."
+    },
+    {
+      "id": "bionic",
+      "url": "https://android.googlesource.com/platform/bionic/+/master/README.md",
+      "scope": "Original libc/libm/libdl/linker sources; host glibc is a different native environment."
+    },
+    {
+      "id": "apex",
+      "url": "https://source.android.com/docs/core/ota/apex",
+      "scope": "Components packaging/activation/update architecture; extracted archives are not activated services."
+    },
+    {
+      "id": "linker",
+      "url": "https://source.android.com/docs/core/architecture/vndk/linker-namespace",
+      "scope": "Linker namespaces/config generated at runtime in modern Android; closure not established by LD_LIBRARY_PATH."
+    },
+    {
+      "id": "zygote",
+      "url": "https://source.android.com/docs/core/runtime/zygote",
+      "scope": "Android process management and usual boot relations; individual reuse must establish its own closure."
+    },
+    {
+      "id": "buffers",
+      "url": "https://source.android.com/docs/core/graphics/arch-bq-gralloc",
+      "scope": "Buffer ownership, allocation and synchronization across graphics components."
+    },
+    {
+      "id": "media",
+      "url": "https://source.android.com/docs/core/media",
+      "scope": "Native multimedia, IPC and backend integration; library resolution alone is insufficient."
+    },
+    {
+      "id": "nativebridge",
+      "url": "https://android.googlesource.com/platform/art/+/refs/heads/main/libnativebridge/README.md",
+      "scope": "Integration API for foreign ISA/ABI; AOSP does not supply a translator."
+    },
+    {
+      "id": "libhybris",
+      "url": "https://github.com/libhybris/libhybris/blob/master/README.md",
+      "scope": "Existing Bionic-library/host compatibility candidate, not evaluated here for ART or complete APK APIs."
+    },
+    {
+      "id": "gms",
+      "url": "https://www.android.com/gms/",
+      "scope": "GMS outside AOSP and requires Google license; not supplied by selected AOSP image."
+    },
+    {
+      "id": "play-api",
+      "url": "https://developers.google.com/android/guides/overview",
+      "scope": "Separate provider/client API families; no actual GMS application workflow demonstrated."
+    },
+    {
+      "id": "microg",
+      "url": "https://github.com/microg/GmsCore",
+      "scope": "Existing free Play Services implementation to evaluate per API before new reimplementation."
+    },
+    {
+      "id": "microg-coverage",
+      "url": "https://github.com/microg/GmsCore/wiki/Implementation-Status",
+      "scope": "Declared upstream per-API coverage, not a local test or guarantee; must pin version and execute."
+    },
+    {
+      "id": "microg-identity",
+      "url": "https://github.com/microg/GmsCore/wiki/Signature-Spoofing",
+      "scope": "Upstream identity/signature compatibility requirements; no global identity bypass was installed or authorized by this review."
+    },
+    {
+      "id": "integrity",
+      "url": "https://developer.android.com/google/play/integrity/overview",
+      "scope": "Provider/device trust signals, hardware-backed requirements by tier; no fabricated verifications."
+    },
+    {
+      "id": "widevine",
+      "url": "https://developers.google.com/widevine/drm/overview",
+      "scope": "Licensing and device/proxy/remote service integration prerequisites, not reproducible by a local API alone."
+    },
+    {
+      "id": "media3-drm",
+      "url": "https://developer.android.com/media/media3/exoplayer/drm",
+      "scope": "DRM scheme-specific client support; ClearKey test does not prove Widevine or secure hardware."
+    },
+    {
+      "id": "saf",
+      "url": "https://developer.android.com/guide/topics/providers/document-provider",
+      "scope": "DocumentsProvider/picker/URI contract; local and cloud providers have distinct backing services."
+    }
+  ],
+  "existing_static_artifact_evidence": [
+    "runtime/aosp/platform-image.json",
+    "reports/aosp-platform-bootstrap/bootclasspath.json",
+    "reports/aosp-platform-bootstrap/module-extraction.json"
+  ],
+  "no_android_boot_or_install": true
+}

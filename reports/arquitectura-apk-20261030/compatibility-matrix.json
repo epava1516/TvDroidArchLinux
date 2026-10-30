@@ -44,7 +44,13 @@
       "reason": "Current host launcher substitutes Application and Activity/widgets. Complete real-app route not demonstrated; static inventory does not establish execution.",
       "framework_class_link_pass": null,
       "source_verification": "Existing cached artifact; download provenance not revalidated in this audit. REA identity and declared signer recorded.",
-      "declared_application": "org.videolan.mobile.app.VLCApplication"
+      "declared_application": "org.videolan.mobile.app.VLCApplication",
+      "dependency_profiles": [
+        "android-services",
+        "documents-providers",
+        "vlc-media"
+      ],
+      "external_coverage_note": "See dependency_catalog. Static references do not establish executed features. GMS and commercial DRM are not demonstrated by these artifacts."
     },
     {
       "id": "calculator",
@@ -86,7 +92,11 @@
       },
       "reason": "Current host launcher substitutes Application and Activity/widgets. Complete real-app route not demonstrated; static inventory does not establish execution.",
       "framework_class_link_pass": true,
-      "declared_application": "org.fossify.commons.FossifyApp"
+      "declared_application": "org.fossify.commons.FossifyApp",
+      "dependency_profiles": [
+        "android-services"
+      ],
+      "external_coverage_note": "See dependency_catalog. Static references do not establish executed features. GMS and commercial DRM are not demonstrated by these artifacts."
     },
     {
       "id": "markor",
@@ -126,11 +136,26 @@
       "declared_application": "net.gsantner.markor.ApplicationObject",
       "bootstrap_experiment": {
         "status": "blocked_before_app_execution",
-        "evidence": "reports/aosp-platform-bootstrap/result.json",
+        "evidence": "reports/base-aosp-x86_64-review/pending-bootstrap-result.json",
+        "source_status": "own source changes preserved pending; not in review commit",
         "last_stage": "parse-original-package",
-        "error": "Original ApkAssets.nativeOpenXml JNI not linked",
-        "scope": "System context initialized; no Markor code, Application.onCreate, Activity or complete workflow executed. All six functional results remain not_run."
-      }
+        "error": "PackageParserException caused by null IPermissionManager.getSplitPermissions",
+        "scope": "Four original resource JNI units registered and parser reads XML; service unavailable. No app code or six-stage acceptance. Does not validate whole JNI/ABI/platform."
+      },
+      "dependency_profiles": [
+        "android-services",
+        "documents-providers"
+      ],
+      "external_coverage_note": "See dependency_catalog. Static references do not establish executed features. GMS and commercial DRM are not demonstrated by these artifacts.",
+      "bootstrap_experiment_history": [
+        {
+          "status": "blocked_before_app_execution",
+          "evidence": "reports/aosp-platform-bootstrap/result.json",
+          "last_stage": "parse-original-package",
+          "error": "Original ApkAssets.nativeOpenXml JNI not linked",
+          "scope": "System context initialized; no Markor code, Application.onCreate, Activity or complete workflow executed. All six functional results remain not_run."
+        }
+      ]
     }
   ],
   "uncovered": [
@@ -142,5 +167,239 @@
     "non-VM hardware",
     "per-APK isolation",
     "installation/update/rollback"
-  ]
+  ],
+  "dependency_catalog": {
+    "android-services": {
+      "contracts": [
+        "IPermissionManager.getSplitPermissions",
+        "PackageParser/PackageManager",
+        "Activity lifecycle and window services"
+      ],
+      "observed_in": [
+        "markor"
+      ],
+      "evidence": [
+        "reports/base-aosp-x86_64-review/pending-bootstrap.stderr"
+      ],
+      "reusable": "Original AOSP framework/service logic and AIDL contracts; evaluate complete Permission/Package/Activity closures",
+      "adaptation": "Linux identity, permissions, data, IPC and process supervision; local Binder holder does not provide IPC",
+      "existing_candidates": [
+        "Original AOSP Permission/Package services before new implementation"
+      ],
+      "external_requirements": [
+        "None proven remote for the observed parser call; local service unavailable"
+      ],
+      "api_services": "blocked in real bootstrap before application code",
+      "binary_abi": "Host original JNI registration/parser route partially exercised; target Bionic not_run",
+      "isa": "No ARM translation involved in observed x86_64 route",
+      "runtime_proof": "Parser failure at null permission service; not full app execution"
+    },
+    "documents-providers": {
+      "contracts": [
+        "DocumentFile/TreeDocumentFile",
+        "DocumentsContract.createDocument(ContentResolver, URI, MIME, name)",
+        "ContentProvider/URI grants and persistence"
+      ],
+      "observed_in": [
+        "markor",
+        "vlc"
+      ],
+      "evidence": [
+        "reports/base-aosp-x86_64-review/rea-markor-create-file.json",
+        "reports/base-aosp-x86_64-review/rea-markor-document-refs.json",
+        "reports/base-aosp-x86_64-review/external-static-surface.json"
+      ],
+      "reusable": "AndroidX client code in original APK; original AOSP DocumentsProvider/client infrastructure",
+      "adaptation": "File descriptors, grant/revocation, storage mapping, picker and provider lifecycle. Linux file path alone not equivalent",
+      "existing_candidates": [
+        "Original AOSP ExternalStorage/Media/Documents providers; evaluate xdg portal bridge only with verified URI/grant semantics"
+      ],
+      "external_requirements": [
+        "Cloud providers require their own account/auth/backend and possibly proprietary APK; none configured"
+      ],
+      "api_services": "static contract observed; actual provider operation not_run",
+      "binary_abi": "JNI/native file and Binder FD semantics not_run",
+      "isa": "Provider/app ABI must be checked independently",
+      "runtime_proof": "No save/open/provider success on actual app yet"
+    },
+    "vlc-media": {
+      "contracts": [
+        "org.videolan.libvlc.MediaPlayer.play() -> nativePlay()",
+        "Surface readiness; native audio output selection",
+        "APK libvlcjni/libvlc/medialibrary/C++"
+      ],
+      "observed_in": [
+        "vlc"
+      ],
+      "evidence": [
+        "reports/base-aosp-x86_64-review/rea-vlc-play.json",
+        "reports/arquitectura-apk-20261030/artifact-index.json"
+      ],
+      "reusable": "Original Android libVLC JNI and x86_64 binaries are candidates, not loaded successfully here",
+      "adaptation": "Surface/BufferQueue, audio routes, focus, provider FDs and codec/HAL as actually selected; precise backend remains untraced",
+      "existing_candidates": [
+        "Original libVLC binaries on Bionic",
+        "Host libVLC/PipeWire/Mesa with rebuilt compatible JNI only after interface tests"
+      ],
+      "external_requirements": [
+        "Hardware codecs/drivers optional per actual backend; network streams may require remote auth. Local unencrypted playback does not cover these"
+      ],
+      "api_services": "not_run",
+      "binary_abi": "Bionic dependency names observed statically; glibc libVLC not drop-in proof",
+      "isa": "x86_64 binaries present; ARM variants and translator separately pending",
+      "runtime_proof": "No original VLC playback on this runtime; prior Waydroid not counted"
+    },
+    "gms": {
+      "contracts": [
+        "Per-function client API and service package/protocol must be traced in a fixed real APK",
+        "Authentication",
+        "FCM/push",
+        "Maps/location"
+      ],
+      "observed_in": [],
+      "evidence": [
+        "reports/base-aosp-x86_64-review/external-static-surface.json"
+      ],
+      "reusable": "Client libraries may be bundled; original GMS is outside AOSP, availability/license/ABI separate",
+      "adaptation": "Package/service identity, IPC, accounts, permissions, notifications, location and errors; do not invent success",
+      "existing_candidates": [
+        "microG GmsCore per API/version, with documented identity requirements and actual tests",
+        "Original licensed GMS only if available/permitted; not installed"
+      ],
+      "external_requirements": [
+        "Google/backend network, account/token where required, keys/project config for some APIs, GMS licensing/certification/availability. microG is not proof of these conditions"
+      ],
+      "api_services": "unverified; no positive GMS test APK fixed yet",
+      "binary_abi": "unverified; each original APK/SO closure must be checked",
+      "isa": "unverified; no automatic ARM support",
+      "runtime_proof": "No GMS success or failure app workflow observed; matrix coverage gap"
+    },
+    "integrity-billing": {
+      "contracts": [
+        "Play Integrity request/verdict and server validation",
+        "Play Billing/store/account/purchase contracts per real app"
+      ],
+      "observed_in": [],
+      "evidence": [],
+      "reusable": "Client-facing SDK/source where available; not provider signing keys or trusted verdict service",
+      "adaptation": "Error/cancellation/retry and permissions may be implemented honestly; successful integrity/purchase cannot be synthesized",
+      "existing_candidates": [
+        "Evaluate microG declared per-feature coverage before implementing; no full compatibility claim",
+        "Official provider only under its actual conditions"
+      ],
+      "external_requirements": [
+        "Provider/server policies, authentic store/account/project and purchases where required; integrity tiers can require hardware-backed security/certified device signals"
+      ],
+      "api_services": "unverified",
+      "binary_abi": "unverified",
+      "isa": "unverified",
+      "runtime_proof": "No representative real artifact/account fixed; not resolved"
+    },
+    "drm-widevine": {
+      "contracts": [
+        "Actual application MediaDrm UUID/session/provisioning/license contract must be identified",
+        "DRM plugin/CDM and secure decode/output when required"
+      ],
+      "observed_in": [],
+      "evidence": [
+        "reports/base-aosp-x86_64-review/external-static-surface.json"
+      ],
+      "reusable": "AOSP framework DRM APIs and open components; original proprietary plugin only as a separately available licensed candidate",
+      "adaptation": "MediaDrm/JNI/Binder/plugin/media buffers and backend selection; no fake keys/security level",
+      "existing_candidates": [
+        "Original licensed Widevine integration; evaluate supported scheme/platform version",
+        "Media3/ExoPlayer client is not a CDM or license server"
+      ],
+      "external_requirements": [
+        "Widevine license/integration, provisioning/keybox/OEMCrypto as applicable, partner license server/account/content; hardware/TEE/protected path for required security tier. No legitimate credentials/content configured"
+      ],
+      "api_services": "unverified",
+      "binary_abi": "unverified for proprietary CDM",
+      "isa": "unverified; same ISA does not supply CDM or certification",
+      "runtime_proof": "No Widevine-capable real APK/content session tested; MediaDrm type refs in Markor/Calculator do not establish a DRM playback feature"
+    },
+    "drm-clearkey": {
+      "contracts": [
+        "MediaDrm ClearKey cenc/session/license and media decode/output"
+      ],
+      "observed_in": [],
+      "evidence": [],
+      "reusable": "Original AOSP ClearKey implementation candidate",
+      "adaptation": "DRM service/plugin and media stack; independently prove complete playback",
+      "existing_candidates": [
+        "AOSP ClearKey and a fixed author-distributed Media3 demo/player APK when obtainable"
+      ],
+      "external_requirements": [
+        "Controlled test content/keys and real application artifact not fixed; no implication for Widevine/PlayReady or protected hardware"
+      ],
+      "api_services": "not_run",
+      "binary_abi": "not_run",
+      "isa": "not_run",
+      "runtime_proof": "Planned independent coverage, no real APK fixed"
+    },
+    "webview": {
+      "contracts": [
+        "Provider selection, framework WebView and renderer/Chromium contracts per actual app path"
+      ],
+      "observed_in": [],
+      "evidence": [],
+      "reusable": "Original compatible WebView provider candidate; app HTML libraries do not imply working WebView provider",
+      "adaptation": "Renderer sandbox, surfaces/input/fonts/network/provider loading; exact closure to inventory",
+      "existing_candidates": [
+        "Original compatible AOSP/Chromium WebView subsystem; evaluate before new implementation"
+      ],
+      "external_requirements": [
+        "Provider availability, update chain and site auth/network as used"
+      ],
+      "api_services": "unverified",
+      "binary_abi": "unverified",
+      "isa": "unverified",
+      "runtime_proof": "No real WebView workflow demonstrated"
+    }
+  },
+  "required_coverage_cases": [
+    {
+      "profile": "gms-auth-fcm-maps",
+      "apk": null,
+      "sha256": null,
+      "status": "artifact_and_workflow_not_fixed",
+      "acceptance": "Choose real author-distributed APK/version, trace actual contract and execute complete workflow; mark unknown until evidenced"
+    },
+    {
+      "profile": "play-integrity-billing",
+      "apk": null,
+      "sha256": null,
+      "status": "artifact_and_workflow_not_fixed",
+      "acceptance": "Choose real author-distributed APK/version, trace actual contract and execute complete workflow; mark unknown until evidenced"
+    },
+    {
+      "profile": "commercial-drm-widevine",
+      "apk": null,
+      "sha256": null,
+      "status": "artifact_and_workflow_not_fixed",
+      "acceptance": "Choose real author-distributed APK/version, trace actual contract and execute complete workflow; mark unknown until evidenced"
+    },
+    {
+      "profile": "clearkey-real-player",
+      "apk": null,
+      "sha256": null,
+      "status": "artifact_and_workflow_not_fixed",
+      "acceptance": "Choose real author-distributed APK/version, trace actual contract and execute complete workflow; mark unknown until evidenced"
+    },
+    {
+      "profile": "arm-only-jni",
+      "apk": null,
+      "sha256": null,
+      "status": "artifact_and_workflow_not_fixed",
+      "acceptance": "Choose real author-distributed APK/version, trace actual contract and execute complete workflow; mark unknown until evidenced"
+    },
+    {
+      "profile": "webview-splits",
+      "apk": null,
+      "sha256": null,
+      "status": "artifact_and_workflow_not_fixed",
+      "acceptance": "Choose real author-distributed APK/version, trace actual contract and execute complete workflow; mark unknown until evidenced"
+    }
+  ],
+  "base_review": "BASE-AOSP-1: A host/glibc baseline; B original Bionic candidate unexecuted; C requires justified/proven boundaries. API/service, binary ABI and ISA measured separately."
 }

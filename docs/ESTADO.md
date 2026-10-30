@@ -6,7 +6,7 @@ artefactos enlazados prevalecen sobre cualquier resumen.
 
 ## Retomar en este orden
 
-1. Leer [el checkpoint fechado](../reports/aosp-platform-bootstrap/checkpoint.json)
+1. Leer [el checkpoint fechado](../reports/base-aosp-x86_64-review/checkpoint.json)
    y contrastarlo con Git/procesos siguiendo [CONTINUIDAD.md](CONTINUIDAD.md).
 2. Consultar [arquitectura y decisiones](ARQUITECTURA.md),
    [roadmap general](../ROADMAP.md) y [detalle APK](ROADMAP-A.md).
@@ -25,15 +25,16 @@ Las fixtures, compilaciones y constructores no acreditan ese resultado.
 | --- | --- |
 | Vigente | Compositor y shell Rust existen; pruebas H0–H5 limitadas a la VM y plataformas documentadas. H7–H9 siguen abiertos. |
 | Experimental publicado | ART host ejecuta fixtures; recursos, cola y partes de contexto AOSP se reutilizan. Activity/widgets/vistas del contador siguen siendo propios. No hay compatibilidad general acreditada. |
-| Experimental publicado | Registro local y layout/resize de View original probados en `b8ea156`; no dibujan la APK. Bootstrap aislado: UID 10000, Looper y ActivityThread originales; El framework modular original ya inicializa ContextImpl; PackageParser falla por JNI de XML ausente, antes de ejecutar Markor. |
+| Experimental publicado | ART host/glibc y 24 jars no básicos de otra build inicializan ContextImpl; no APK real ejecutada. Base Bionic/AOSP coherente sigue sin elegir ni ejecutar. |
+| Experimental pendiente separado | Cuatro unidades JNI originales registradas en ART: parser lee XML de Markor y falla por IPermissionManager nulo. Código propio conservado fuera del commit de revisión; no interfaz ni callbacks Markor. |
 | Herramientas verificadas | REA MCP 6.8.0 respondió a Codex y analizó estáticamente VLC 3.7.1 y una biblioteca ELF. La sesión de archivo se exportó y cerró. No es una prueba de ejecución de VLC en el runtime propio. |
 | Histórico | H6 Waydroid, imágenes Android e ISO anteriores conservan evidencia; no son el backend ni la aceptación vigentes del runtime APK. |
 | Desconocido/no verificado | Compatibilidad de aplicaciones reales en este runtime, aislamiento por APK, GPU del runtime, ARM, WebView, DRM/servicios propietarios, consumo y estabilidad prolongada. |
 
 ## Trabajo preservado y siguiente acción
 
-Base del checkpoint vigente: `b8ea156`; el HEAD actual y origin se consultan con Git.
-El snapshot distingue cambios propios del registro experimental y los logs
+Base del checkpoint vigente: `ad00bbf`; el HEAD actual y origin se consultan con Git.
+El snapshot distingue cambios propios del JNI de recursos/bootstrap y los logs
 ajenos `reports/h9-uefi-boot/qemu.log` y `serial.log`. No se han descartado ni
 incluido esos cambios de código en el desvío documental.
 
@@ -43,16 +44,20 @@ No se espera actualmente ningún build o prueba. Las autorizaciones ya concedida
 para pruebas, commits/push y trabajo autónomo siguen vigentes; no hay autorización
 nueva para reiniciar la VM.
 
-Siguiente acción concreta: reutilizar el subsistema JNI original de recursos
-(ApkAssets/XmlBlock/StringBlock/AssetManager), conservando sus handles y ownership,
-con adaptación de registro/nativehelper al host. El framework modular original
-ya inicializa ContextImpl; el parser original de Markor falla al abrir XML por
-nativeOpenXml ausente. [Resultado](../reports/aosp-platform-bootstrap/result.json).
-Después, continuar Application.attach/onCreate y el recorrido de nota completo.
-Los 31 jars originales se obtienen de una imagen oficial sólo para extracción
-estática; 24 no básicos se ensayan con core/JNI host de otra build Android 13.
-Esa frontera sigue siendo experimental. Markor no ha ejecutado su código y las
-seis etapas funcionales siguen sin probarse. No se ha arrancado Android.
+Siguiente acción concreta: ejecutar D1 de [BASE-AOSP-1](ARQUITECTURA.md), con
+linker/ART target Bionic originales bajo supervisor Linux y cierre inventariado,
+sin arrancar Android. A host queda como comparación, B candidato, C sin aprobar.
+Después: cierre de servicios y vertical Markor completa según
+[contrato](CONTRATO-APK.md) y [puertas D0–D6](ROADMAP-A.md). No continuar con un
+stub aislado de PermissionManager. API/servicios externos, ABI e ISA se evalúan
+separados. La matriz incluye GMS/microG, proveedores/media, DRM y sus requisitos
+remotos/hardware como cobertura pendiente, sin éxito ficticio.
+
+El snapshot local `/home/tv/recuperacion-archtv/20261030T223637Z-base-aosp` conserva
+parches/archivos propios del JNI pendiente. Los logs H9 ajenos quedan intactos.
+Los handles de build/bootstrap 31930, 82388 y 26593 terminaron; ningún ART/bwrap
+seguía activo al comprobarlos. REA MCP inspeccionó realmente exportaciones ELF
+y rutas estáticas de Markor/VLC; ni la CLI ni esas inspecciones prueban ejecución.
 
 ## Historial conservado (no es el estado vigente)
 

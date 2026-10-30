@@ -1,0 +1,203 @@
+{
+  "evidence_id": "ev_017ef75e0ed994b89e20fa80357c3c1941fba1e629cadd562af1c039305b2bd3",
+  "subject": {
+    "name": "net.gsantner.markor-v164-2026.10.0-flavorDefault-release.apk",
+    "digest": {
+      "sha256": "c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440"
+    },
+    "local_path": "/home/tv/.cache/archtv/apk/real-app-candidates/net.gsantner.markor-v164-2026.10.0-flavorDefault-release.apk",
+    "format": "apk",
+    "architecture": null
+  },
+  "provider": {
+    "id": "jadx",
+    "name": "JADX headless",
+    "version": "0.7.1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.analysis",
+  "operation": "trace_android_references",
+  "parameters": {
+    "path": "/home/tv/.cache/archtv/apk/real-app-candidates/net.gsantner.markor-v164-2026.10.0-flavorDefault-release.apk",
+    "class_name": "androidx.documentfile.provider.DocumentFile"
+  },
+  "raw_result": {
+    "server": {
+      "name": "rea-jadx-bridge",
+      "version": "7"
+    },
+    "bridge_sha256": "e5044a8312dd0731f53af3f095508b3e5cff54df6b971c95d4305e2f39b4fa30",
+    "jar_sha256": "6e5eacf500b64292bfb73c49797c1958f6ee44646e43e868039ae7feb573ff75",
+    "loaded": {
+      "state": "LOADED",
+      "apk_path": "/tmp/rea-android-ODL5FI/target.apk",
+      "class_count": 4985,
+      "resource_count": 1732,
+      "threads": 1,
+      "resources": "full"
+    },
+    "calls": [
+      {
+        "operation": "rea_jvm_status",
+        "input": {},
+        "response": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"metadata_scope\":\"parsed_members\",\"max_heap_bytes\":2076180480,\"java_version\":\"17.0.21.0.3\",\"available_processors\":4,\"engine_reported_version\":\"0.7.1\"}"
+            }
+          ],
+          "isError": false
+        }
+      },
+      {
+        "operation": "load_apk",
+        "input": {
+          "path": "/tmp/rea-android-ODL5FI/target.apk",
+          "threads": 1,
+          "resources": "full"
+        },
+        "response": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"state\":\"LOADED\",\"apk_path\":\"/tmp/rea-android-ODL5FI/target.apk\",\"class_count\":4985,\"raw_class_count\":4985,\"resource_count\":1732,\"load_duration_ms\":12115,\"decompile_timeout_ms\":90000,\"threads\":1,\"code_cache_size\":64,\"resources\":\"full\"}"
+            }
+          ],
+          "isError": false
+        }
+      },
+      {
+        "operation": "get_class_summary",
+        "input": {
+          "class_name": "androidx.documentfile.provider.DocumentFile"
+        },
+        "response": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"inner_class_count\":0,\"name\":\"DocumentFile\",\"field_count\":1,\"full_name\":\"androidx.documentfile.provider.DocumentFile\",\"method_count\":23,\"raw_name\":\"androidx.documentfile.provider.DocumentFile\",\"fields\":[{\"type\":\"androidx.documentfile.provider.DocumentFile\",\"def_pos\":0,\"name\":\"mParent\"}],\"methods\":[{\"signature\":\"\\u003cinit\\u003e(androidx.documentfile.provider.DocumentFile): void\",\"def_pos\":0,\"name\":\"\\u003cinit\\u003e\",\"is_constructor\":true,\"dex_descriptor\":\"(Landroidx/documentfile/provider/DocumentFile;)V\"},{\"signature\":\"canRead(): boolean\",\"def_pos\":0,\"name\":\"canRead\",\"is_constructor\":false,\"dex_descriptor\":\"()Z\"},{\"signature\":\"canWrite(): boolean\",\"def_pos\":0,\"name\":\"canWrite\",\"is_constructor\":false,\"dex_descriptor\":\"()Z\"},{\"signature\":\"createDirectory(java.lang.String): androidx.documentfile.provider.DocumentFile\",\"def_pos\":0,\"name\":\"createDirectory\",\"is_constructor\":false,\"dex_descriptor\":\"(Ljava/lang/String;)Landroidx/documentfile/provider/DocumentFile;\"},{\"signature\":\"createFile(java.lang.String, java.lang.String): androidx.documentfile.provider.DocumentFile\",\"def_pos\":0,\"name\":\"createFile\",\"is_constructor\":false,\"dex_descriptor\":\"(Ljava/lang/String;Ljava/lang/String;)Landroidx/documentfile/provider/DocumentFile;\"},{\"signature\":\"delete(): boolean\",\"def_pos\":0,\"name\":\"delete\",\"is_constructor\":false,\"dex_descriptor\":\"()Z\"},{\"signature\":\"exists(): boolean\",\"def_pos\":0,\"name\":\"exists\",\"is_constructor\":false,\"dex_descriptor\":\"()Z\"},{\"signature\":\"findFile(java.lang.String): androidx.documentfile.provider.DocumentFile\",\"def_pos\":0,\"name\":\"findFile\",\"is_constructor\":false,\"dex_descriptor\":\"(Ljava/lang/String;)Landroidx/documentfile/provider/DocumentFile;\"},{\"signature\":\"fromFile(java.io.File): androidx.documentfile.provider.DocumentFile\",\"def_pos\":0,\"name\":\"fromFile\",\"is_constructor\":false,\"dex_descriptor\":\"(Ljava/io/File;)Landroidx/documentfile/provider/DocumentFile;\"},{\"signature\":\"fromSingleUri(android.content.Context, android.net.Uri): androidx.documentfile.provider.DocumentFile\",\"def_pos\":0,\"name\":\"fromSingleUri\",\"is_constructor\":false,\"dex_descriptor\":\"(Landroid/content/Context;Landroid/net/Uri;)Landroidx/documentfile/provider/DocumentFile;\"},{\"signature\":\"fromTreeUri(android.content.Context, android.net.Uri): androidx.documentfile.provider.DocumentFile\",\"def_pos\":0,\"name\":\"fromTreeUri\",\"is_constructor\":false,\"dex_descriptor\":\"(Landroid/content/Context;Landroid/net/Uri;)Landroidx/documentfile/provider/DocumentFile;\"},{\"signature\":\"getName(): java.lang.String\",\"def_pos\":0,\"name\":\"getName\",\"is_constructor\":false,\"dex_descriptor\":\"()Ljava/lang/String;\"},{\"signature\":\"getParentFile(): androidx.documentfile.provider.DocumentFile\",\"def_pos\":0,\"name\":\"getParentFile\",\"is_constructor\":false,\"dex_descriptor\":\"()Landroidx/documentfile/provider/DocumentFile;\"},{\"signature\":\"getType(): java.lang.String\",\"def_pos\":0,\"name\":\"getType\",\"is_constructor\":false,\"dex_descriptor\":\"()Ljava/lang/String;\"},{\"signature\":\"getUri(): android.net.Uri\",\"def_pos\":0,\"name\":\"getUri\",\"is_constructor\":false,\"dex_descriptor\":\"()Landroid/net/Uri;\"},{\"signature\":\"isDirectory(): boolean\",\"def_pos\":0,\"name\":\"isDirectory\",\"is_constructor\":false,\"dex_descriptor\":\"()Z\"},{\"signature\":\"isDocumentUri(android.content.Context, android.net.Uri): boolean\",\"def_pos\":0,\"name\":\"isDocumentUri\",\"is_constructor\":false,\"dex_descriptor\":\"(Landroid/content/Context;Landroid/net/Uri;)Z\"},{\"signature\":\"isFile(): boolean\",\"def_pos\":0,\"name\":\"isFile\",\"is_constructor\":false,\"dex_descriptor\":\"()Z\"},{\"signature\":\"isVirtual(): boolean\",\"def_pos\":0,\"name\":\"isVirtual\",\"is_constructor\":false,\"dex_descriptor\":\"()Z\"},{\"signature\":\"lastModified(): long\",\"def_pos\":0,\"name\":\"lastModified\",\"is_constructor\":false,\"dex_descriptor\":\"()J\"},{\"signature\":\"length(): long\",\"def_pos\":0,\"name\":\"length\",\"is_constructor\":false,\"dex_descriptor\":\"()J\"},{\"signature\":\"listFiles(): androidx.documentfile.provider.DocumentFile[]\",\"def_pos\":0,\"name\":\"listFiles\",\"is_constructor\":false,\"dex_descriptor\":\"()[Landroidx/documentfile/provider/DocumentFile;\"},{\"signature\":\"renameTo(java.lang.String): boolean\",\"def_pos\":0,\"name\":\"renameTo\",\"is_constructor\":false,\"dex_descriptor\":\"(Ljava/lang/String;)Z\"}],\"inner_classes\":[]}"
+            }
+          ],
+          "isError": false
+        }
+      },
+      {
+        "operation": "get_xrefs_to_class",
+        "input": {
+          "class_name": "androidx.documentfile.provider.DocumentFile",
+          "limit": 2147483647,
+          "resolve_line": false
+        },
+        "response": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"count\":6,\"target\":\"androidx.documentfile.provider.DocumentFile\",\"resolve_line\":false,\"total\":6,\"items\":[{\"kind\":\"class\",\"name\":\"RawDocumentFile\",\"full_name\":\"androidx.documentfile.provider.RawDocumentFile\",\"containing_class\":\"\",\"top_class\":\"androidx.documentfile.provider.RawDocumentFile\",\"def_pos\":0},{\"kind\":\"class\",\"name\":\"TreeDocumentFile\",\"full_name\":\"androidx.documentfile.provider.TreeDocumentFile\",\"containing_class\":\"\",\"top_class\":\"androidx.documentfile.provider.TreeDocumentFile\",\"def_pos\":0},{\"kind\":\"class\",\"name\":\"NewFileDialog$$ExternalSyntheticLambda4\",\"full_name\":\"net.gsantner.markor.frontend.NewFileDialog$$ExternalSyntheticLambda4\",\"containing_class\":\"\",\"top_class\":\"net.gsantner.markor.frontend.NewFileDialog\",\"def_pos\":0},{\"kind\":\"class\",\"name\":\"GsContextUtils\",\"full_name\":\"net.gsantner.opoc.util.GsContextUtils\",\"containing_class\":\"\",\"top_class\":\"net.gsantner.opoc.util.GsContextUtils\",\"def_pos\":0},{\"kind\":\"class\",\"name\":\"WrMarkorSingleton\",\"full_name\":\"other.writeily.model.WrMarkorSingleton\",\"containing_class\":\"\",\"top_class\":\"other.writeily.model.WrMarkorSingleton\",\"def_pos\":0},{\"kind\":\"class\",\"name\":\"WrRenameDialog$$ExternalSyntheticLambda0\",\"full_name\":\"other.writeily.ui.WrRenameDialog$$ExternalSyntheticLambda0\",\"containing_class\":\"\",\"top_class\":\"other.writeily.ui.WrRenameDialog\",\"def_pos\":0}]}"
+            }
+          ],
+          "isError": false
+        }
+      }
+    ]
+  },
+  "normalized_result": {
+    "engine": {
+      "name": "jadx-headless-mcp",
+      "version": "0.7.1",
+      "artifact_sha256": "6e5eacf500b64292bfb73c49797c1958f6ee44646e43e868039ae7feb573ff75",
+      "source_revision": "5844800a486d2248fa949b74c9896285f5b54de2",
+      "worker_count": 1,
+      "heap_limit_mib": 1980
+    },
+    "class_name": "androidx.documentfile.provider.DocumentFile",
+    "method_name": null,
+    "overload_index": null,
+    "reported_signature": null,
+    "dex_descriptor": null,
+    "total": 6,
+    "references": [
+      {
+        "kind": "class",
+        "name": "RawDocumentFile",
+        "reported_full_name": "androidx.documentfile.provider.RawDocumentFile",
+        "containing_class": "",
+        "top_class": "androidx.documentfile.provider.RawDocumentFile",
+        "source_line": null,
+        "dex_offset": null,
+        "direct_invokes_exhaustive": null,
+        "direct_invokes": null
+      },
+      {
+        "kind": "class",
+        "name": "TreeDocumentFile",
+        "reported_full_name": "androidx.documentfile.provider.TreeDocumentFile",
+        "containing_class": "",
+        "top_class": "androidx.documentfile.provider.TreeDocumentFile",
+        "source_line": null,
+        "dex_offset": null,
+        "direct_invokes_exhaustive": null,
+        "direct_invokes": null
+      },
+      {
+        "kind": "class",
+        "name": "NewFileDialog$$ExternalSyntheticLambda4",
+        "reported_full_name": "net.gsantner.markor.frontend.NewFileDialog$$ExternalSyntheticLambda4",
+        "containing_class": "",
+        "top_class": "net.gsantner.markor.frontend.NewFileDialog",
+        "source_line": null,
+        "dex_offset": null,
+        "direct_invokes_exhaustive": null,
+        "direct_invokes": null
+      },
+      {
+        "kind": "class",
+        "name": "GsContextUtils",
+        "reported_full_name": "net.gsantner.opoc.util.GsContextUtils",
+        "containing_class": "",
+        "top_class": "net.gsantner.opoc.util.GsContextUtils",
+        "source_line": null,
+        "dex_offset": null,
+        "direct_invokes_exhaustive": null,
+        "direct_invokes": null
+      },
+      {
+        "kind": "class",
+        "name": "WrMarkorSingleton",
+        "reported_full_name": "other.writeily.model.WrMarkorSingleton",
+        "containing_class": "",
+        "top_class": "other.writeily.model.WrMarkorSingleton",
+        "source_line": null,
+        "dex_offset": null,
+        "direct_invokes_exhaustive": null,
+        "direct_invokes": null
+      },
+      {
+        "kind": "class",
+        "name": "WrRenameDialog$$ExternalSyntheticLambda0",
+        "reported_full_name": "other.writeily.ui.WrRenameDialog$$ExternalSyntheticLambda0",
+        "containing_class": "",
+        "top_class": "other.writeily.ui.WrRenameDialog",
+        "source_line": null,
+        "dex_offset": null,
+        "direct_invokes_exhaustive": null,
+        "direct_invokes": null
+      }
+    ],
+    "coverage": "complete",
+    "reference_unit": "using_node"
+  },
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+    "Method signatures use provider display types; DEX prototypes come from frozen JADX metadata. Display names may be aliases, and overload indices are local to this engine and artifact.",
+    "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+    "Incoming reference totals count JADX using nodes. Direct invoke entries within a using method report raw DEX code-unit offsets and method indexes, but coverage is limited to those nodes and directly matched invokes; it does not establish every possible dynamic or reflective call site.",
+    "Manifest summaries are parsed once by REA's bridge from the exact root AndroidManifest.xml resource, using namespace-aware XML attributes; decoded XML is retained. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

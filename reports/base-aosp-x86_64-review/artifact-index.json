@@ -1,0 +1,21 @@
+{
+  "source_base_commit": "ad00bbfe1a0d2e543f11a39146fa75ac8b08161d",
+  "files": {
+    "reports/base-aosp-x86_64-review/external-static-surface.json": "ab5145270098f8da1283b7644a32f11201376bc6864db880c2ffcf85c4fafbf3",
+    "reports/base-aosp-x86_64-review/rea-mcp-session.json": "f6b32c560ffeb88ecfb80c5ce133a02e1dadd148a2907ddd80d832b4755987c0",
+    "reports/base-aosp-x86_64-review/rea-vlc-play.json": "fc07efae576d2b68fefb8ed98c035e8a249b4fdcfd989827460e6a055122c1f7",
+    "reports/base-aosp-x86_64-review/pending-bootstrap.stderr": "1f59d1d1a0e8b7f4eaff001ab6222aa09a61c9b6fef131fff8706a4516fdf6fd",
+    "reports/base-aosp-x86_64-review/validation.json": "ff64597735f7fd72bfd51c372ef951439762f0adb246582bdc9dd1e488a7a982",
+    "reports/base-aosp-x86_64-review/pending-source-index.json": "dc4c7345c8f47330b4889309dea805de175d9a8e77985554eb205f8cfa8fa579",
+    "reports/base-aosp-x86_64-review/checkpoint.json": "dc97e229b8c6795ac1ff3cbf7a19c87ab54eec557837882e517f53a586bdb157",
+    "reports/base-aosp-x86_64-review/sources.json": "843d80a9efe0fc62b92578bac20f5390293061369e2f3b446dba1a7deb99d4d9",
+    "reports/base-aosp-x86_64-review/rea-markor-document-refs.json": "956ec04da234eee723ddf719dc649c381ddc17b0fdef7bd1b63df8a301ef2b29",
+    "reports/base-aosp-x86_64-review/pending-bootstrap-result.json": "d8bd2949a5f46acc852de1530ae15435e3cbc686025a41e11931dd770bf71fed",
+    "reports/base-aosp-x86_64-review/rea-resource-exports.json": "49e1d1f59a60b82cb4c49c575fd691df0394da57a38cc876aa3d102e8eb5b4f9",
+    "reports/base-aosp-x86_64-review/pending-bootstrap.stdout": "5be8235cbf26053672f84917ba577f879cfe62775e17a1a54e19dc5e752a70a2",
+    "reports/base-aosp-x86_64-review/rea-markor-create-file.json": "6fe1edb84d8b55c3e82ef73b75ae2a77a0caf4bfba4f1755c3739629e03f8d34",
+    "reports/base-aosp-x86_64-review/rea-external-class-limit.json": "aa576ecc3d66013efe9bc2f9b75bf64f526023df722f43831f313b4c38204b84",
+    "reports/base-aosp-x86_64-review/pending-jni-build.json": "fc3e77f425e7bd7efc5f19a800bc1c05f98f76b1a29459877522d9615827eb39"
+  },
+  "scope": "Review checkpoint/evidence only. Pending runtime source hashes are recorded, not committed with review. CLI not used as MCP proof."
+}

@@ -1,0 +1,10 @@
+{
+  "pass": true,
+  "local_document_links_checked": 100,
+  "pending_runtime_preserved": true,
+  "real_app_functional_stages_still_not_run": true,
+  "dependency_profiles_and_evidence_paths_valid": true,
+  "rea_mcp_success_records": 4,
+  "official_sources": 22,
+  "scope": "Links, hashes, preservation and schema coherence. Does not re-run earlier tests, execute app features, authenticate remote services or prove licenses/compatibility."
+}

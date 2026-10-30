@@ -1,0 +1,75 @@
+{
+  "observed_at": "2026-10-30T22:44:32.662041+00:00",
+  "objective": "Revisi\u00f3n de base coherente AOSP x86_64; APK completas sin modificar, Linux Rust/Smithay, sin Waydroid/full Android; compatibilidad amplia y dependencias externas expl\u00edcitas",
+  "branch": "main",
+  "head": "ad00bbfe1a0d2e543f11a39146fa75ac8b08161d",
+  "origin_main_verified": "ad00bbfe1a0d2e543f11a39146fa75ac8b08161d",
+  "recovery_snapshot_local": "/home/tv/recuperacion-archtv/20261030T223637Z-base-aosp",
+  "pending_own": [
+    "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java",
+    "tools/apk/verify_isolated_bootstrap.py",
+    "runtime/aosp/native/original-resources-host.cpp",
+    "tools/apk/build_original_resources.py"
+  ],
+  "pending_other": [
+    "reports/h9-uefi-boot/qemu.log",
+    "reports/h9-uefi-boot/serial.log"
+  ],
+  "active_observed": [
+    {
+      "unit": "codex-remote.service",
+      "scope": "system",
+      "pid": 181298,
+      "started": "2026-10-30 21:21:11 UTC",
+      "state": "active"
+    },
+    {
+      "pid": 181308,
+      "started": "2026-10-30 21:21:11 UTC",
+      "command": "codex"
+    },
+    {
+      "pid": 181453,
+      "started": "2026-10-30 21:21:55 UTC",
+      "command": "codex-code-mode"
+    },
+    {
+      "pid": 181424,
+      "started": "2026-10-30 21:21:43 UTC",
+      "command": "node-MainThread",
+      "role": "unknown from comm alone"
+    },
+    {
+      "pid": 181888,
+      "started": "2026-10-30 21:23:13 UTC",
+      "command": "node-MainThread",
+      "role": "unknown from comm alone"
+    },
+    {
+      "pid": 189221,
+      "started": "2026-10-30 22:31:29 UTC",
+      "command": "node-MainThread",
+      "role": "unknown from comm alone"
+    }
+  ],
+  "terminal_tool_handles": [
+    31930,
+    82388,
+    26593,
+    12001,
+    33680,
+    1647,
+    99893
+  ],
+  "rea_calls": "MCP native exports success; Markor DocumentFile/createFile and VLC play static evidence. External SDK class tracing unsupported (exact class absent in APK). No active binary target assumed.",
+  "tests": "Original resource JNI build passes with unchanged four source units; isolated UID/preflight passes; original Markor package parser fails at null IPermissionManager.getSplitPermissions; app code not executed. Pending code is not part of review commit.",
+  "evidence": "pending-bootstrap-result.json / pending-bootstrap.stderr / pending-jni-build.json; prior 31-jar inventory preserved",
+  "next": "Complete canonical review commit, then original Bionic loader/ART component experiment with declared closure; no more single-method fixes before base decision.",
+  "unknown": "Bionic component execution and closure, JNI build ABI correctness beyond observed route, all real app workflows, GMS/DRM/ARM translation, complete sandbox/performance/install/update",
+  "restriction": "No VM restart, no Android init/full boot, no new Android installation. Individual service reuse evaluated with explicit closure/cost, not presumed Android boot.",
+  "observed_tools": "REA binary_session MCP successful, open=false cleanup_pending=false; no Java process observed after calls",
+  "other_pending_hashes": {
+    "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+  }
+}

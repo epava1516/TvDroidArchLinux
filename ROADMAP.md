@@ -37,6 +37,21 @@ Se podrán añadir mediante decisiones posteriores y pruebas concretas.
 | H8 | Paquetes propios y sesión instalable. | H7 | Parcial histórico; runtime APK sin empaquetar |
 | H9 | Imagen Arch TV e instalación desde cero. | H8 | ISO de laboratorio; instalación/recuperación pendientes |
 
+## Decisión de base APK y dependencias externas
+
+H6 se rige por [el contrato](docs/CONTRATO-APK.md) y las puertas
+[D0–D6](docs/ROADMAP-A.md): comparar ART host/glibc, componentes originales
+Bionic/AOSP x86_64 y mezclas con fronteras probadas. La primera prioridad es un
+experimento vertical con Markor completa, sin boot Android oculto. Los servicios
+originales individuales son candidatos, sujetos a cierre y costes verificables.
+
+La aceptación incluye API/servicios externos, ABI Bionic/JNI e ISA por separado.
+GMS/microG, proveedores/media y DRM/auth/certificación no se consideran resueltos
+por copiar bibliotecas o identificar interfaces. La [matriz](docs/COMPATIBILIDAD-APK.md)
+conserva cobertura pendiente y pruebas negativas; se ampliará con APK reales
+para esos perfiles. H7 mide también el runtime y servicios, H8 fija licencias y
+actualiza componentes coherentes, H9 verifica instalación y recuperación.
+
 ## H0 · Limpieza y base documental
 
 Trabajo realizado:
