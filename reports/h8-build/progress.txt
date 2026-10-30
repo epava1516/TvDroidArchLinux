@@ -7,3 +7,7 @@ Kernel warnings and resource snapshots are recorded separately; they do not cert
 Release compilation completed successfully after 19m 59s, and makepkg entered check().
 The test binaries are still being built at this checkpoint; no test or package PASS is claimed.
 ELF linkage and toolchain are recorded in shell-linkage.txt and toolchain-compositor-linkage.txt.
+The first clean build completed with exit 0. All 9 tests passed (4 core, 5 shell).
+Three packages were generated. makepkg warned that compositor and shell retain srcdir references.
+The next recipe remaps build paths; that change needs a subsequent clean build for verification.
+This first version predates the complete available-notice bundle and newer-schema protection.

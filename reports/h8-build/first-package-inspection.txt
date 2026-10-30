@@ -1,0 +1,167 @@
+Name            : archtv-compositor
+Version         : 0.1.0.r14.g3012fbc92f7a-1
+Description     : Wayland TV compositor using Rust and Smithay
+Architecture    : x86_64
+URL             : https://github.com/epava1516/TvDroidArchLinux
+Licenses        : MIT
+Groups          : None
+Provides        : None
+Depends On      : glibc  gcc-libs  seatd  systemd-libs  libinput  libxkbcommon  pixman  wayland  mesa  libglvnd
+Optional Deps   : None
+Conflicts With  : None
+Replaces        : None
+Compressed Size : 2.62 MiB
+Installed Size  : 7.20 MiB
+Packager        : Unknown Packager
+Build Date      : Fri Oct 30 07:17:50 2026
+Install Script  : No
+Validated By    : None
+Signatures      : None
+
+archtv-compositor /usr/
+archtv-compositor /usr/bin/
+archtv-compositor /usr/bin/archtv-compositor
+archtv-compositor /usr/share/
+archtv-compositor /usr/share/licenses/
+archtv-compositor /usr/share/licenses/archtv-compositor/
+archtv-compositor /usr/share/licenses/archtv-compositor/LICENSE
+archtv-compositor /usr/share/licenses/archtv-compositor/THIRD_PARTY.md
+archtv-compositor /usr/share/licenses/archtv-compositor/notices/
+archtv-compositor /usr/share/licenses/archtv-compositor/notices/Graphify-APACHE-2.0.txt
+archtv-compositor /usr/share/licenses/archtv-compositor/notices/Graphify-MIT.txt
+archtv-compositor /usr/share/licenses/archtv-compositor/notices/Graphify-NOTICE.txt
+archtv-compositor /usr/share/licenses/archtv-compositor/notices/SCTK-MIT.txt
+archtv-compositor /usr/share/licenses/archtv-compositor/notices/Smithay-MIT.txt
+archtv-compositor /usr/share/licenses/archtv-compositor/notices/cargo-supplemental/
+archtv-compositor /usr/share/licenses/archtv-compositor/notices/cargo-supplemental/gl_generator-0.14.0/
+archtv-compositor /usr/share/licenses/archtv-compositor/notices/cargo-supplemental/gl_generator-0.14.0/LICENSE
+archtv-compositor /usr/share/licenses/archtv-compositor/notices/cargo-supplemental/khronos_api-3.1.0/
+archtv-compositor /usr/share/licenses/archtv-compositor/notices/cargo-supplemental/khronos_api-3.1.0/LICENSE
+archtv-compositor /usr/share/licenses/archtv-compositor/notices/cargo-supplemental/profiling-1.0.18/
+archtv-compositor /usr/share/licenses/archtv-compositor/notices/cargo-supplemental/profiling-1.0.18/LICENSE-APACHE
+archtv-compositor /usr/share/licenses/archtv-compositor/notices/cargo-supplemental/profiling-1.0.18/LICENSE-MIT
+archtv-compositor /usr/share/licenses/archtv-compositor/notices/cargo-supplemental/profiling-procmacros-1.0.18/
+archtv-compositor /usr/share/licenses/archtv-compositor/notices/cargo-supplemental/profiling-procmacros-1.0.18/LICENSE-APACHE
+archtv-compositor /usr/share/licenses/archtv-compositor/notices/cargo-supplemental/profiling-procmacros-1.0.18/LICENSE-MIT
+archtv-compositor /usr/share/licenses/archtv-compositor/notices/cargo-supplemental/sources.json
+archtv-compositor /usr/share/licenses/archtv-compositor/notices/cargo-supplemental/zune-core-0.4.12/
+archtv-compositor /usr/share/licenses/archtv-compositor/notices/cargo-supplemental/zune-core-0.4.12/LICENSE-ZLIB
+archtv-compositor /usr/share/licenses/archtv-compositor/notices/cargo-supplemental/zune-core-0.4.12/LICENSE.md
+archtv-compositor /usr/share/licenses/archtv-compositor/notices/cargo-supplemental/zune-jpeg-0.4.21/
+archtv-compositor /usr/share/licenses/archtv-compositor/notices/cargo-supplemental/zune-jpeg-0.4.21/LICENSE-ZLIB
+archtv-compositor /usr/share/licenses/archtv-compositor/notices/cargo-supplemental/zune-jpeg-0.4.21/LICENSE.md
+archtv-compositor /usr/share/licenses/archtv-compositor/notices/fontdue-MIT.txt
+archtv-compositor /usr/share/licenses/archtv-compositor/notices/tiny-skia-BSD-3-Clause.txt
+Name            : archtv-session
+Version         : 0.1.0.r14.g3012fbc92f7a-1
+Description     : Session entry and launcher for Arch TV
+Architecture    : x86_64
+URL             : https://github.com/epava1516/TvDroidArchLinux
+Licenses        : MIT
+Groups          : None
+Provides        : None
+Depends On      : archtv-compositor=0.1.0.r14.g3012fbc92f7a-1  archtv-shell=0.1.0.r14.g3012fbc92f7a-1  bash  dbus  util-linux
+Optional Deps   : None
+Conflicts With  : None
+Replaces        : None
+Compressed Size : 14.53 KiB
+Installed Size  : 74.59 KiB
+Packager        : Unknown Packager
+Build Date      : Fri Oct 30 07:17:50 2026
+Install Script  : No
+Validated By    : None
+Signatures      : None
+
+archtv-session /usr/
+archtv-session /usr/bin/
+archtv-session /usr/bin/archtv-session
+archtv-session /usr/share/
+archtv-session /usr/share/licenses/
+archtv-session /usr/share/licenses/archtv-session/
+archtv-session /usr/share/licenses/archtv-session/LICENSE
+archtv-session /usr/share/licenses/archtv-session/THIRD_PARTY.md
+archtv-session /usr/share/licenses/archtv-session/notices/
+archtv-session /usr/share/licenses/archtv-session/notices/Graphify-APACHE-2.0.txt
+archtv-session /usr/share/licenses/archtv-session/notices/Graphify-MIT.txt
+archtv-session /usr/share/licenses/archtv-session/notices/Graphify-NOTICE.txt
+archtv-session /usr/share/licenses/archtv-session/notices/SCTK-MIT.txt
+archtv-session /usr/share/licenses/archtv-session/notices/Smithay-MIT.txt
+archtv-session /usr/share/licenses/archtv-session/notices/cargo-supplemental/
+archtv-session /usr/share/licenses/archtv-session/notices/cargo-supplemental/gl_generator-0.14.0/
+archtv-session /usr/share/licenses/archtv-session/notices/cargo-supplemental/gl_generator-0.14.0/LICENSE
+archtv-session /usr/share/licenses/archtv-session/notices/cargo-supplemental/khronos_api-3.1.0/
+archtv-session /usr/share/licenses/archtv-session/notices/cargo-supplemental/khronos_api-3.1.0/LICENSE
+archtv-session /usr/share/licenses/archtv-session/notices/cargo-supplemental/profiling-1.0.18/
+archtv-session /usr/share/licenses/archtv-session/notices/cargo-supplemental/profiling-1.0.18/LICENSE-APACHE
+archtv-session /usr/share/licenses/archtv-session/notices/cargo-supplemental/profiling-1.0.18/LICENSE-MIT
+archtv-session /usr/share/licenses/archtv-session/notices/cargo-supplemental/profiling-procmacros-1.0.18/
+archtv-session /usr/share/licenses/archtv-session/notices/cargo-supplemental/profiling-procmacros-1.0.18/LICENSE-APACHE
+archtv-session /usr/share/licenses/archtv-session/notices/cargo-supplemental/profiling-procmacros-1.0.18/LICENSE-MIT
+archtv-session /usr/share/licenses/archtv-session/notices/cargo-supplemental/sources.json
+archtv-session /usr/share/licenses/archtv-session/notices/cargo-supplemental/zune-core-0.4.12/
+archtv-session /usr/share/licenses/archtv-session/notices/cargo-supplemental/zune-core-0.4.12/LICENSE-ZLIB
+archtv-session /usr/share/licenses/archtv-session/notices/cargo-supplemental/zune-core-0.4.12/LICENSE.md
+archtv-session /usr/share/licenses/archtv-session/notices/cargo-supplemental/zune-jpeg-0.4.21/
+archtv-session /usr/share/licenses/archtv-session/notices/cargo-supplemental/zune-jpeg-0.4.21/LICENSE-ZLIB
+archtv-session /usr/share/licenses/archtv-session/notices/cargo-supplemental/zune-jpeg-0.4.21/LICENSE.md
+archtv-session /usr/share/licenses/archtv-session/notices/fontdue-MIT.txt
+archtv-session /usr/share/licenses/archtv-session/notices/tiny-skia-BSD-3-Clause.txt
+archtv-session /usr/share/wayland-sessions/
+archtv-session /usr/share/wayland-sessions/archtv.desktop
+Name            : archtv-shell
+Version         : 0.1.0.r14.g3012fbc92f7a-1
+Description     : Native Rust TV application launcher
+Architecture    : x86_64
+URL             : https://github.com/epava1516/TvDroidArchLinux
+Licenses        : MIT
+Groups          : None
+Provides        : None
+Depends On      : glibc  gcc-libs  wayland  libxkbcommon  ttf-dejavu
+Optional Deps   : wireplumber: volume controls through wpctl
+                  networkmanager: network controls through nmcli
+                  waydroid: Android application backend
+                  foot: terminal desktop entries
+Conflicts With  : None
+Replaces        : None
+Compressed Size : 3.02 MiB
+Installed Size  : 4.72 MiB
+Packager        : Unknown Packager
+Build Date      : Fri Oct 30 07:17:50 2026
+Install Script  : No
+Validated By    : None
+Signatures      : None
+
+archtv-shell /usr/
+archtv-shell /usr/bin/
+archtv-shell /usr/bin/archtv-shell
+archtv-shell /usr/share/
+archtv-shell /usr/share/licenses/
+archtv-shell /usr/share/licenses/archtv-shell/
+archtv-shell /usr/share/licenses/archtv-shell/LICENSE
+archtv-shell /usr/share/licenses/archtv-shell/THIRD_PARTY.md
+archtv-shell /usr/share/licenses/archtv-shell/notices/
+archtv-shell /usr/share/licenses/archtv-shell/notices/Graphify-APACHE-2.0.txt
+archtv-shell /usr/share/licenses/archtv-shell/notices/Graphify-MIT.txt
+archtv-shell /usr/share/licenses/archtv-shell/notices/Graphify-NOTICE.txt
+archtv-shell /usr/share/licenses/archtv-shell/notices/SCTK-MIT.txt
+archtv-shell /usr/share/licenses/archtv-shell/notices/Smithay-MIT.txt
+archtv-shell /usr/share/licenses/archtv-shell/notices/cargo-supplemental/
+archtv-shell /usr/share/licenses/archtv-shell/notices/cargo-supplemental/gl_generator-0.14.0/
+archtv-shell /usr/share/licenses/archtv-shell/notices/cargo-supplemental/gl_generator-0.14.0/LICENSE
+archtv-shell /usr/share/licenses/archtv-shell/notices/cargo-supplemental/khronos_api-3.1.0/
+archtv-shell /usr/share/licenses/archtv-shell/notices/cargo-supplemental/khronos_api-3.1.0/LICENSE
+archtv-shell /usr/share/licenses/archtv-shell/notices/cargo-supplemental/profiling-1.0.18/
+archtv-shell /usr/share/licenses/archtv-shell/notices/cargo-supplemental/profiling-1.0.18/LICENSE-APACHE
+archtv-shell /usr/share/licenses/archtv-shell/notices/cargo-supplemental/profiling-1.0.18/LICENSE-MIT
+archtv-shell /usr/share/licenses/archtv-shell/notices/cargo-supplemental/profiling-procmacros-1.0.18/
+archtv-shell /usr/share/licenses/archtv-shell/notices/cargo-supplemental/profiling-procmacros-1.0.18/LICENSE-APACHE
+archtv-shell /usr/share/licenses/archtv-shell/notices/cargo-supplemental/profiling-procmacros-1.0.18/LICENSE-MIT
+archtv-shell /usr/share/licenses/archtv-shell/notices/cargo-supplemental/sources.json
+archtv-shell /usr/share/licenses/archtv-shell/notices/cargo-supplemental/zune-core-0.4.12/
+archtv-shell /usr/share/licenses/archtv-shell/notices/cargo-supplemental/zune-core-0.4.12/LICENSE-ZLIB
+archtv-shell /usr/share/licenses/archtv-shell/notices/cargo-supplemental/zune-core-0.4.12/LICENSE.md
+archtv-shell /usr/share/licenses/archtv-shell/notices/cargo-supplemental/zune-jpeg-0.4.21/
+archtv-shell /usr/share/licenses/archtv-shell/notices/cargo-supplemental/zune-jpeg-0.4.21/LICENSE-ZLIB
+archtv-shell /usr/share/licenses/archtv-shell/notices/cargo-supplemental/zune-jpeg-0.4.21/LICENSE.md
+archtv-shell /usr/share/licenses/archtv-shell/notices/fontdue-MIT.txt
+archtv-shell /usr/share/licenses/archtv-shell/notices/tiny-skia-BSD-3-Clause.txt
