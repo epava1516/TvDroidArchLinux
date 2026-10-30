@@ -124,3 +124,9 @@ de relojes/Handler/colas pasa con el conjunto ampliado (10 procesos de semántic
 Ver AOSP-RECURSOS-LINUX.md y reports/aosp-resources-jni/. Sigue pendiente conectar
 el proveedor usado por la APK, inicializar los recursos de sistema y portar
 Resources/Activity/View. Este hito no cierra A3–A5 ni las puertas generales.
+
+La integración del proveedor de recursos en el contador ya sustituye el parser
+propio. Pasan la regresión headless y dos sesiones nativas DRM/Pixman con entrada
+y coincidencia exacta de capturas: reports/aosp-resources-headless/ y
+reports/aosp-resources-wayland/. Persisten los pendientes de recursos de sistema,
+Resources y Activity/View originales, servicios, estabilidad y distribución.

@@ -1,9 +1,9 @@
 # La APK usa el Looper principal original de AOSP
 
 El runtime combinado ejecuta el DEX original del contador sobre ART y usa
-Looper/Handler/MessageQueue portados desde AOSP para su hilo UI. Las 19 fuentes
-seleccionadas siguen sin cambios. Activity, View, Bundle, recursos y preferencias
-siguen siendo el subconjunto propio: el framework completo aún no está portado.
+Looper/Handler/MessageQueue portados desde AOSP para su hilo UI. El conjunto ampliado contiene 30 fuentes originales sin cambios e incluye
+AssetManager/ApkAssets/StringBlock para los recursos. Activity, View, Bundle y
+preferencias siguen siendo el subconjunto propio; el framework completo aún no está portado.
 
 ## Ensamblado y ejecución
 
@@ -12,9 +12,10 @@ build_apk_runtime.py verifica su hash, rechaza clases de comprobación/java.* y
 lo combina con el anfitrión mediante D8. No incorpora la referencia completa,
 declaraciones auxiliares ni fuentes de la APK. Registra la procedencia original.
 
-El proceso requiere -Darchtv.linux.library. archtv-apk-host obtiene la ruta de
+El proceso requiere -Darchtv.linux.library y -Darchtv.resources.library. archtv-apk-host obtiene la ruta de
 ARCHTV_APK_LINUX_LIBRARY y la pasa como argumento, sin shell. El comprobador sin
-ventana usa --linux-library. Si falta, falla: no vuelve al antiguo bucle propio.
+ventana usa --linux-library y --resources-library. El cliente requiere también
+ARCHTV_APK_RESOURCES_LIBRARY para el segundo enlace nativo. Si falta, falla: no vuelve al antiguo bucle propio.
 
 ## Hilo y cierre
 
@@ -49,6 +50,9 @@ no quedaron procesos de compositor/cliente/ART ni sesión local, y volvió tty1.
 
 La invalidación visual sigue ligada a las instantáneas del protocolo de entrada:
 todavía no se redibujan automáticamente los cambios asíncronos de View. Faltan
-Activity/View/recursos originales, Bundle/Parcel/Binder IPC, servicios, aislamiento,
+Activity/View y Resources originales, recursos de sistema, Bundle/Parcel/Binder IPC, servicios, aislamiento,
 ampliación de APK y pruebas de rendimiento/estabilidad. H7 y la distribución siguen
 abiertos; esta regresión no acredita compatibilidad general.
+
+La regresión actual con recursos originales está en reports/aosp-resources-headless/
+y reports/aosp-resources-wayland/. Ver AOSP-RECURSOS-LINUX.md.

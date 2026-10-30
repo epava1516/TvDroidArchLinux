@@ -11,6 +11,7 @@ fi
 [[ -x "$target/debug/archtv-compositor" && -x "$target/debug/archtv-apk-host" ]]
 [[ -c /dev/dri/card0 && -c /dev/uinput ]]
 [[ -f ${ARCHTV_APK_RUNTIME_DEX:?runtime DEX required} ]]
+[[ -f ${ARCHTV_APK_RESOURCES_LIBRARY:?Resources library required} ]]
 [[ -f ${ARCHTV_APK_LINUX_LIBRARY:?Linux library required} ]]
 [[ -z $(loginctl list-sessions --no-legend) ]] || { echo 'Se requiere una sesión local libre.' >&2; exit 1; }
 if systemctl is-active --quiet getty@tty2.service; then
@@ -40,6 +41,7 @@ for phase in first reopen; do
     --setenv="CARGO_TARGET_DIR=$target" --setenv=RUST_LOG=archtv_compositor=debug,smithay=warn \
     --setenv="ARCHTV_APK_REPORT=$report/$phase" --setenv="ARCHTV_APK_DATA=$data" \
     --setenv="ARCHTV_APK_RUNTIME_DEX=$(realpath "$ARCHTV_APK_RUNTIME_DEX")" \
+    --setenv="ARCHTV_APK_RESOURCES_LIBRARY=$(realpath "$ARCHTV_APK_RESOURCES_LIBRARY")" \
     --setenv="ARCHTV_APK_LINUX_LIBRARY=$(realpath "$ARCHTV_APK_LINUX_LIBRARY")" \
     "$root/scripts/100-apk-session.sh"
   sudo -n chvt 2
@@ -70,5 +72,5 @@ proof={'fixture_wayland_pass':True,'resolution':[1280,720],
  [root/'fixtures/apk/counter/golden/counter.apk',dex,target/'debug/archtv-apk-host',target/'debug/archtv-compositor']}}
 (report/'result.json').write_text(json.dumps(proof,indent=2)+'\n')
 CHECK
-python "$root/tools/apk/verify_ui_scanout.py" "$report" --library "$ARCHTV_APK_LINUX_LIBRARY"
+python "$root/tools/apk/verify_ui_scanout.py" "$report" --library "$ARCHTV_APK_LINUX_LIBRARY" --resources-library "$ARCHTV_APK_RESOURCES_LIBRARY"
 echo "PASS: APK propia en Wayland, 0→1→2, reapertura 2→3; $report"

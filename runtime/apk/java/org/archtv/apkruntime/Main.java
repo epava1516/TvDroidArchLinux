@@ -183,6 +183,9 @@ public final class Main {
         String library = System.getProperty("archtv.linux.library");
         if (library == null) throw new IllegalArgumentException("archtv.linux.library is required");
         System.load(Paths.get(library).toRealPath().toString());
+        String resourcesLibrary = System.getProperty("archtv.resources.library");
+        if (resourcesLibrary == null) throw new IllegalArgumentException("archtv.resources.library is required");
+        System.load(Paths.get(resourcesLibrary).toRealPath().toString());
         Path apk = Paths.get(args[0]).toRealPath();
         Path data = Paths.get(args[2]).toAbsolutePath();
         if (Files.isSymbolicLink(data)) throw new IllegalArgumentException("Symlink data directory");
@@ -192,7 +195,8 @@ public final class Main {
              FileLock lock = lockFile.getChannel().tryLock()) {
             if (lock == null) throw new IllegalStateException("App data already in use");
             AppEnvironment.initialize(apk, data);
-            runUi(args[1]);
+            try { runUi(args[1]); }
+            finally { AppEnvironment.current().resources.close(); }
         }
     }
 }

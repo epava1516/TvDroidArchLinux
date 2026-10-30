@@ -3,7 +3,8 @@
 Este directorio contiene el primer subconjunto de API anfitriona. ART ejecuta
 el DEX original de la aplicación; las clases android.* de este directorio resuelven
 las llamadas necesarias para la fixture del contador. El bucle UI usa
-Looper/Handler/MessageQueue originales de AOSP. No se recompilan las fuentes de la APK
+Looper/Handler/MessageQueue originales de AOSP. Los recursos usan también
+AssetManager/ApkAssets/StringBlock originales y libandroidfw mediante JNI. No se recompilan las fuentes de la APK
 ni se incorpora su MainActivity al DEX del runtime.
 
 El árbol de View se emite como JSON para archtv-apk-host, cliente Wayland en Rust
@@ -14,7 +15,8 @@ el contador: esos cambios los produce onClick de la APK.
 
 Requiere las herramientas fijadas del laboratorio APK, JDK 17 y el conjunto ART host
 descrito en docs/ESTUDIO-ART-HOST.md. Requiere además la biblioteca Rust y un build
-AOSP con framework.jar, siguiendo runtime/aosp/README.md. Los destinos deben ser nuevos.
+AOSP con framework.jar generado con --with-resources, siguiendo runtime/aosp/README.md.
+La biblioteca de recursos y sus instrucciones están en docs/AOSP-RECURSOS-LINUX.md. Los destinos deben ser nuevos.
 
 ```bash
 CARGO_TARGET_DIR="$HOME/.cache/archtv/smithay/target" cargo build --offline -j1 -p archtv-aosp-linux
@@ -36,9 +38,11 @@ preferencias corruptas sin sustituirlas por cero.
 - Sólo se ha probado nuestra APK Java propia, sin JNI ni dependencias adicionales.
 - Activity implementa la secuencia básica de creación/cierre; no reproduce toda la
   jerarquía Android, tareas, intents, recreación ni restauración de Bundle.
-- Recursos: strings simples de configuración por defecto, UTF-8/UTF-16 y referencias
-  con límite de profundidad. No estilos, XML de layouts, selección de locale,
-  drawables, tablas compactas/sparse ni overlays.
+- Recursos: las cadenas y referencias se resuelven en el framework original
+  mediante un adaptador de inicialización sin recursos de sistema ni overlays.
+  Se conserva el presupuesto de tabla de 16 MiB; ya no se usa el parser propio.
+  Sólo están probadas las cadenas de la fixture y su variante; estilos, layouts,
+  drawables, selección de locale y otros formatos siguen pendientes.
 - View conserva árbol, texto, padding, orientación, listener y foco solicitado.
   El cliente Rust ofrece disposición básica y activación por teclado en Wayland;
   no reproduce layout/renderizado Android completo. Ver docs/APK-WAYLAND.md.
@@ -57,3 +61,9 @@ El contrato experimental está en docs/CONTRATO-APK.md.
 La integración original del principal y las pruebas de ráfaga, EOF, error y
 Wayland están descritas en docs/APK-LOOPER-AOSP.md. El lector tiene 16 comandos
 pendientes como máximo; los callbacks de la APK se despachan en main mediante Handler.
+
+El runtime exige -Darchtv.resources.library; el cliente Rust usa
+ARCHTV_APK_RESOURCES_LIBRARY y la prueba headless --resources-library.
+El gestor original y sus ApkAssets se cierran en finally tras finalizar UI,
+incluso en errores de callback. La regresión actual figura en
+reports/aosp-resources-headless/ y reports/aosp-resources-wayland/.

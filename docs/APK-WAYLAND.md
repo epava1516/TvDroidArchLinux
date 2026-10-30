@@ -22,7 +22,7 @@ completo, otras APK, rendimiento objetivo ni estabilidad prolongada.
 
 ```bash
 CARGO_TARGET_DIR="$HOME/.cache/archtv/smithay/target" cargo build --offline -j1 -p archtv-apk-host
-CARGO_TARGET_DIR="$HOME/.cache/archtv/smithay/target" ARCHTV_APK_RUNTIME_DEX="$PWD/dist/apk/runtime-nuevo/dex/classes.dex" ARCHTV_APK_LINUX_LIBRARY="$HOME/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so" ./scripts/101-apk-smoke.sh --apply
+CARGO_TARGET_DIR="$HOME/.cache/archtv/smithay/target" ARCHTV_APK_RUNTIME_DEX="$PWD/dist/apk/runtime-nuevo/dex/classes.dex" ARCHTV_APK_LINUX_LIBRARY="$HOME/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so" ARCHTV_APK_RESOURCES_LIBRARY="$PWD/dist/apk/androidfw-native/libarchtv_resources_linux.so" ./scripts/101-apk-smoke.sh --apply
 ```
 
 Requiere el runtime construido según runtime/apk/README.md, el compositor ya
@@ -48,6 +48,7 @@ esta prueba como regresión durante su sustitución. Esta primera interfaz demue
 la puerta funcional A2 para la fixture; no constituye el framework final portado.
 
 La integración posterior usa ya el principal y Handler originales de AOSP:
-ver APK-LOOPER-AOSP.md y reports/aosp-main-ui-wayland/. Activity/View y recursos
-siguen siendo propios. La comparación automática de capturas usa FFmpeg sólo en
+ver APK-LOOPER-AOSP.md y reports/aosp-main-ui-wayland/. Activity/View siguen siendo propios; los recursos ya pasan por
+AssetManager/ApkAssets/StringBlock originales mediante JNI. La regresión actual
+está en reports/aosp-resources-wayland/. La comparación automática de capturas usa FFmpeg sólo en
 el laboratorio, declarado en manifests/apk-lab.txt.

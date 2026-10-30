@@ -1,0 +1,20 @@
+dalvikvm64 E 10-30 12:25:02   255   255 image_space.cc:2239] Error reading named image component header for /home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/core.art, error: Unable to open file "/home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/x86_64/core.art" for reading image header
+dalvikvm64 E 10-30 12:25:02   255   255 image_space.cc:3470] Could not create image space with image file '/home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/core.art'. Attempting to fall back to imageless running. Error was: Full boot image cannot be compiled because no profile is provided.
+ziparchive W 10-30 12:25:02   255   255 Unable to open '/home/tv/repositorio-principal/dist/apk/apk-aosp-resources-1/dex/classes.dm': No such file or directory
+ziparchive W 10-30 12:25:02   255   255 Unable to open '/home/tv/repositorio-principal/dist/apk/counter-original-resources-1/truncated-resources-unsigned.dm': No such file or directory
+dalvikvm64 W 10-30 12:25:02   255   255 art_dex_file_loader.cc:451] Can't mmap dex file /home/tv/repositorio-principal/dist/apk/counter-original-resources-1/truncated-resources-unsigned.apk!classes.dex directly; please zipalign to 4 bytes. Falling back to extracting file.
+dalvikvm64 E 10-30 12:25:02   255   255 LoadedArsc.cpp:849] chunk size is bigger than given data
+dalvikvm64 E 10-30 12:25:02   255   255 ApkAssets.cpp:149] Failed to load resources table in APK '/home/tv/repositorio-principal/dist/apk/counter-original-resources-1/truncated-resources-unsigned.apk'.
+Exception in thread "main" java.lang.IllegalArgumentException: Unsupported or invalid APK resources: AOSP asset initialization
+	at org.archtv.apkruntime.ApkResources.bad(ApkResources.java:57)
+	at org.archtv.apkruntime.ApkResources.<init>(ApkResources.java:52)
+	at org.archtv.apkruntime.AppEnvironment.<init>(AppEnvironment.java:16)
+	at org.archtv.apkruntime.AppEnvironment.initialize(AppEnvironment.java:21)
+	at org.archtv.apkruntime.Main.main(Main.java:197)
+Caused by: java.io.IOException: Cannot load APK resources
+	at android.content.res.ApkAssets.nativeLoad(Native Method)
+	at android.content.res.ApkAssets.<init>(ApkAssets.java:296)
+	at android.content.res.ApkAssets.loadFromPath(ApkAssets.java:145)
+	at android.content.res.ApkAssets.loadFromPath(ApkAssets.java:132)
+	at org.archtv.apkruntime.ApkResources.<init>(ApkResources.java:30)
+	... 3 more

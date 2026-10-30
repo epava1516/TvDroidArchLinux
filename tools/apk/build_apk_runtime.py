@@ -26,6 +26,9 @@ if aosp_provenance['original_sources_modified'] is not False:
 with zipfile.ZipFile(framework) as archive:
     if any(name.startswith(('org/archtv/', 'java/')) for name in archive.namelist()):
         raise SystemExit('Framework jar contains probes or compile-only classes')
+    required = {'android/content/res/AssetManager.class', 'android/content/res/ApkAssets.class', 'android/content/res/StringBlock.class'}
+    if not required.issubset(archive.namelist()):
+        raise SystemExit('Build original framework with --with-resources first')
     framework_classes = sorted(name for name in archive.namelist() if name.endswith('.class'))
 manifest = json.loads((root/'fixtures/apk/counter/toolchain.json').read_text())
 for item in manifest['artifacts']:

@@ -11,7 +11,8 @@ classpath. Main recibe ruta de APK, nombre cualificado de Activity y directorio
 de datos. Se selecciona la Activity explícitamente; aún no se analiza el manifiesto
 binario para descubrir su punto de entrada. No se inicia Zygote ni system_server.
 
-AppEnvironment carga resources.arsc y preferencias. ART resuelve MainActivity de
+AppEnvironment carga recursos mediante AssetManager/ApkAssets originales y mantiene
+las preferencias del subconjunto propio. ART resuelve MainActivity de
 la APK como subclase de nuestra Activity e invoca su constructor y onCreate.
 La secuencia anfitriona es onCreate(null), onStart, onResume; al cerrar se llama
 onPause, onStop, onDestroy. Estas transiciones se inspiran en el
@@ -53,11 +54,11 @@ No se ha probado durabilidad ante pérdida de energía. Lecturas corruptas falla
 sin sobrescribir datos. Los permisos Unix no sustituyen una política de acceso
 entre APK: actualmente comparten el usuario del laboratorio.
 
-Recursos no soportados y APIs ausentes deben fallar explícitamente. El lector
-actual limita resources.arsc a 16 MiB, pools a 65536 strings y referencias a 16
-saltos. Sigue el formato de
-[ResourceTypes.h de AOSP](https://android.googlesource.com/platform/frameworks/base/+/android-13.0.0_r3/libs/androidfw/include/androidfw/ResourceTypes.h),
-con un subconjunto propio descrito en runtime/apk/README.md.
+Recursos no soportados y APIs ausentes deben fallar explícitamente. El adaptador
+actual limita resources.arsc a 16 MiB y delega el análisis y las referencias en
+libandroidfw original. El parser propio anterior se ha retirado. Todavía no hay
+recursos de sistema, constructor público completo ni estilos; sólo están
+probadas las cadenas de la fixture. Ver AOSP-RECURSOS-LINUX.md.
 
 ## Evidencia y aceptación
 

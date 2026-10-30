@@ -15,6 +15,7 @@ from apk_inventory import dex_inventory
 parser = argparse.ArgumentParser()
 parser.add_argument('--art', type=Path, required=True)
 parser.add_argument('--runtime-dex', type=Path, required=True)
+parser.add_argument('--resources-library', type=Path, required=True)
 parser.add_argument('--linux-library', type=Path, required=True)
 parser.add_argument('--output', type=Path, required=True)
 args = parser.parse_args()
@@ -22,6 +23,7 @@ root = Path(__file__).resolve().parents[2]
 apk = root/'fixtures/apk/counter/golden/counter.apk'
 dex = args.runtime_dex.resolve()
 library = args.linux_library.resolve(strict=True)
+resources_library = args.resources_library.resolve(strict=True)
 assert not any(name.startswith('Lorg/archtv/probe/') for name in dex_inventory(dex.read_bytes())[1])
 art = args.art.resolve()
 out = args.output.resolve()
@@ -45,7 +47,7 @@ def kill_group(process):
 
 
 def execute(name, artifact, data, commands, expected_exit):
-    command = [str(art/'bin/art'), '--64', '--no-compile', '--', '-Xint', '-Darchtv.linux.library='+str(library), '-cp',
+    command = [str(art/'bin/art'), '--64', '--no-compile', '--', '-Xint', '-Darchtv.linux.library='+str(library), '-Darchtv.resources.library='+str(resources_library), '-cp',
                str(dex)+':'+str(artifact), 'org.archtv.apkruntime.Main', str(artifact),
                'org.archtv.probe.MainActivity', str(data)]
     with subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
@@ -61,6 +63,7 @@ def execute(name, artifact, data, commands, expected_exit):
     if process.returncode != expected_exit:
         raise AssertionError(name+' unexpected exit; see '+str(out/(name+'.stderr')))
     if expected_exit == 0:
+        assert stderr.count(b'APK_RESOURCES_AOSP_READY') == 1, name
         actions = commands.splitlines()
         if not actions or actions[-1] != 'quit':
             actions.append('quit')  # EOF is an ordered close request.
@@ -163,8 +166,9 @@ assert not events and b'Cannot read preferences' in stderr
 assert (data/'counter.properties').read_text() == 'count=invalid\n'
 assert hashlib.sha256(apk.read_bytes()).hexdigest() == original_hash
 results.update(original_apk_sha256=original_hash, runtime_dex_sha256=hashlib.sha256(dex.read_bytes()).hexdigest(),
+               resources_library_sha256=hashlib.sha256(resources_library.read_bytes()).hexdigest(),
                linux_library_sha256=hashlib.sha256(library.read_bytes()).hexdigest(),
-               headless_counter_pass=True, original_ui_looper_pass=True, wayland_pass=False,
+               headless_counter_pass=True, original_resources_pass=True, original_ui_looper_pass=True, wayland_pass=False,
                scope='Original APK DEX lifecycle, listener, resources and integer persistence. Separate unsigned resource variant and malformed inputs. No Wayland UI, signature enforcement, isolation, full Android API or stable general APK support.')
 (out/'result.json').write_text(json.dumps(results, indent=2)+'\n')
 print(json.dumps({'headless_counter_pass': True, 'wayland_pass': False, 'output': str(out)}))

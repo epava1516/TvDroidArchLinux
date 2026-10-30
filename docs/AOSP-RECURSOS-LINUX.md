@@ -3,7 +3,7 @@
 El objetivo es reutilizar `libandroidfw` original como proveedor de recursos de
 las APK, sustituyendo progresivamente el lector reducido propio. La biblioteca ya se conecta con las clases originales `AssetManager`,
 `ApkAssets` y `StringBlock` en ART. Sigue pendiente integrar `Resources`, la
-inicialización pública de recursos del sistema y el proveedor usado por la APK.
+inicialización pública de recursos del sistema. La APK del contador ya usa este proveedor.
 
 ## Fuentes y construcción
 
@@ -93,3 +93,26 @@ entradas no portadas fallan por enlace ausente; formatos distintos de APK normal
 flags especiales, proveedores y cadenas con estilos se rechazan explícitamente.
 El código Java completo de `Parcelling` compila, pero sus operaciones Parcel no
 se han habilitado ni probado.
+
+## Integración en el contador
+
+`ApkResources` ya no interpreta el formato binario. Conserva la validación del
+presupuesto ZIP de 16 MiB y adapta la inicialización interna del gestor original;
+`getString` llama a `AssetManager.getResourceText`. No hay un lector propio de
+respaldo. Main carga explícitamente la biblioteca de recursos y cierra el gestor
+y sus ApkAssets en `finally` después de la UI. Activity/View siguen siendo propios.
+
+El runtime requiere framework.jar construido con `--with-resources`. Main exige
+`-Darchtv.resources.library`; el cliente Rust recibe la ruta mediante
+`ARCHTV_APK_RESOURCES_LIBRARY`. `verify_counter_headless.py` usa
+`--resources-library`, además de los argumentos existentes. La biblioteca se genera
+junto con la herramienta nativa de recursos.
+
+Pasan la APK original, persistencia 0→1→2/reapertura 2→3, ráfaga, EOF, error de
+comando y recuperación, exclusión de datos, variante con el mismo DEX y rechazos
+de tablas truncadas/preferencias corruptas. En DRM/Pixman 720p pasan las dos
+sesiones, entrada uinput y coincidencia exacta RGB entre frame y scanout.
+Las evidencias están en `reports/aosp-resources-headless/` y
+`reports/aosp-resources-wayland/`; ambas exigen la traza de inicialización AOSP y
+registran hashes del DEX y la biblioteca. Esto sustituye el parser del contador;
+no completa `Resources`, los recursos de sistema ni el port de interfaz.
