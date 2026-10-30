@@ -1,0 +1,11 @@
+{
+  "video_roi_channel_mae": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "audio_samples": 917504,
+  "audio_rms_s16": 7.27314064411665,
+  "audio_peak_s16": 821,
+  "interpretation": "INCOMPLETE: identical subsequent video frames; nonzero overall audio RMS alone does not prove continuous tone or successful playback."
+}

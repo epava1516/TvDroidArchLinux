@@ -1,0 +1,2 @@
+30c87ee44412fee4f50173716a6bb7c6941d3021853f0adab4a249da8a9455ab  /var/lib/waydroid/images/system.img
+c49c75c0e703bac7f1495e6db0e9232390a6539b3d732999dd601c63cb01bdd3  /var/lib/waydroid/images/vendor.img

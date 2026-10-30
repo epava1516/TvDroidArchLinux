@@ -1,0 +1,105 @@
+--------- beginning of radio
+10-30 01:21:10.918  1303  1405 D GsmInboundSmsHandler: IdleState.enter: entering IdleState
+10-30 01:21:10.918  1303  1405 D GsmInboundSmsHandler: IdleState.processMessage: processing EVENT_RELEASE_WAKELOCK
+10-30 01:21:10.918  1303  1406 D CdmaInboundSmsHandler: IdleState.processMessage: processing EVENT_RELEASE_WAKELOCK
+--------- beginning of main
+10-30 01:21:10.922  1271  1353 I LatinIME:LogUtils: Dictionary info: dictionary = main:hu ; version = 1 ; date = 1473269900
+10-30 01:21:10.932  1303  1303 D CdmaSSM : subscriptionSource from settings: 0
+10-30 01:21:10.932  1303  1303 D CdmaSSM : cdmaSSM constructor: 0
+10-30 01:21:10.938  1303  1405 D GsmInboundSmsHandler: IdleState.processMessage: EVENT_RELEASE_WAKELOCK: mWakeLock released
+10-30 01:21:10.939  1303  1303 D GsmCdmaPhone: [0] Precise phone type 1
+10-30 01:21:10.939  1303  1303 D RILJ    : setPhoneType=1 old value=0 [PHONE0]
+10-30 01:21:10.941  1271  1353 I LatinIME:LogUtils: Dictionary info: dictionary = main:it ; version = 54 ; date = 1414726258
+10-30 01:21:10.944  1303  1303 D CarrierActionAgent: [0]Creating CarrierActionAgent
+10-30 01:21:10.944  1303  1303 W CarrierConfigManager: Error getting config for subId -1 ICarrierConfigLoader is null
+10-30 01:21:10.945  1303  1406 D CdmaInboundSmsHandler: IdleState.processMessage: EVENT_RELEASE_WAKELOCK: mWakeLock released
+10-30 01:21:10.951  1303  1303 D ANM-0   : operates in legacy mode.
+10-30 01:21:10.956  1271  1353 I LatinIME:LogUtils: Dictionary info: dictionary = main:iw ; version = 44 ; date = 1393228136
+10-30 01:21:10.961  1303  1303 W CarrierConfigManager: Error getting config for subId -1 ICarrierConfigLoader is null
+10-30 01:21:10.966  1271  1353 I LatinIME:LogUtils: Dictionary info: dictionary = main:ka ; version = 1 ; date = 1457766000
+10-30 01:21:10.974  1271  1353 I LatinIME:LogUtils: Dictionary info: dictionary = main:lb ; version = 1 ; date = 1380519383
+10-30 01:21:10.982  1271  1353 I LatinIME:LogUtils: Dictionary info: dictionary = main:lt ; version = 44 ; date = 1393228136
+10-30 01:21:10.997  1271  1353 I LatinIME:LogUtils: Dictionary info: dictionary = main:lv ; version = 44 ; date = 1393228136
+10-30 01:21:11.010  1271  1353 I LatinIME:LogUtils: Dictionary info: dictionary = main:nb ; version = 44 ; date = 1393228136
+10-30 01:21:11.021  1366  1402 D CompatibilityChangeReporter: Compat change id reported: 160794467; UID 10085; state: ENABLED
+10-30 01:21:11.032  1271  1353 I LatinIME:LogUtils: Dictionary info: dictionary = main:nl ; version = 44 ; date = 1393228136
+10-30 01:21:11.045  1271  1353 I LatinIME:LogUtils: Dictionary info: dictionary = main:pl ; version = 54 ; date = 1414726264
+10-30 01:21:11.045  1303  1303 W CarrierConfigManager: Error getting config for subId -1 ICarrierConfigLoader is null
+10-30 01:21:11.048   787  1075 D TelephonyRegistry: listen oscl: mHasNotifySubscriptionInfoChangedOccurred==false no callback
+10-30 01:21:11.059  1271  1353 I LatinIME:LogUtils: Dictionary info: dictionary = main:ro ; version = 52 ; date = 1412325511
+10-30 01:21:11.060  1303  1303 D NRM-C-0 : registerForNetworkRegistrationInfoChanged
+10-30 01:21:11.066  1271  1353 I LatinIME:LogUtils: Dictionary info: dictionary = main:ru ; version = 54 ; date = 1414726277
+10-30 01:21:11.108  1271  1353 I LatinIME:LogUtils: Dictionary info: dictionary = main:sl ; version = 44 ; date = 1393228152
+10-30 01:21:11.124  1271  1353 I LatinIME:LogUtils: Dictionary info: dictionary = main:sr ; version = 44 ; date = 1393228154
+10-30 01:21:11.131  1271  1353 I LatinIME:LogUtils: Dictionary info: dictionary = main:sv ; version = 44 ; date = 1393228154
+10-30 01:21:11.136  1366  1402 V AlarmClock: AlarmInitReceiver finished
+--------- beginning of events
+10-30 01:21:11.138   787  1107 I am_uid_running: 10109
+10-30 01:21:11.147  1271  1353 I LatinIME:LogUtils: Dictionary info: dictionary = main:tr ; version = 54 ; date = 1414726261
+--------- beginning of system
+10-30 01:21:11.154   787  1107 D CompatibilityChangeReporter: Compat change id reported: 135634846; UID 10109; state: DISABLED
+10-30 01:21:11.155   787  1107 D CompatibilityChangeReporter: Compat change id reported: 177438394; UID 10109; state: DISABLED
+10-30 01:21:11.178  1271  1353 I LatinIME:LogUtils: Dictionary info: dictionary = main:uk ; version = 1 ; date = 1376495808
+10-30 01:21:11.182   787  1107 D CompatibilityChangeReporter: Compat change id reported: 135772972; UID 10109; state: DISABLED
+10-30 01:21:11.184   787  1107 D CompatibilityChangeReporter: Compat change id reported: 135754954; UID 10109; state: ENABLED
+10-30 01:21:11.185   787   813 D CompatibilityChangeReporter: Compat change id reported: 143937733; UID 10109; state: ENABLED
+10-30 01:21:11.191   787  1075 I dvm_lock_sample: [system_server,1,binder:787_5,60,ActivityManagerService.java,13345,android.content.Intent com.android.server.am.ActivityManagerService.registerReceiverWithFeature(android.app.IApplicationThread, java.lang.String, java.lang.String, java.lang.String, android.content.IIntentReceiver, android.content.IntentFilter, java.lang.String, int, int),-,14673,void com.android.server.am.ActivityManagerService.finishReceiver(android.os.IBinder, int, java.lang.String, android.os.Bundle, boolean, int),12]
+10-30 01:21:11.197  1271  1353 I BinaryDictionaryFileDumper: reinitializeClientRecordInDictionaryContentProvider() : Insert DictionaryInfo : Id = 'main:bg' : Locale=bg : Version=2
+10-30 01:21:11.210   771   771 D Zygote  : Forked child process 1407
+10-30 01:21:11.211   787   813 W ActivityManager: Slow operation: 73ms so far, now at startProcess: returned from zygote!
+10-30 01:21:11.212   787   813 W ActivityManager: Slow operation: 74ms so far, now at startProcess: done updating battery stats
+10-30 01:21:11.212   787   813 I am_proc_start: [0,1407,10109,org.lineageos.settingsconfig,broadcast,{org.lineageos.settingsconfig/org.lineageos.settingsconfig.BootReceiver}]
+10-30 01:21:11.212   787   813 W ActivityManager: Slow operation: 74ms so far, now at startProcess: building log message
+10-30 01:21:11.212   787   813 I ActivityManager: Start proc 1407:org.lineageos.settingsconfig/u0a109 for broadcast {org.lineageos.settingsconfig/org.lineageos.settingsconfig.BootReceiver}
+10-30 01:21:11.212   787   813 W ActivityManager: Slow operation: 74ms so far, now at startProcess: starting to update pids map
+10-30 01:21:11.212   787   813 W ActivityManager: Slow operation: 74ms so far, now at startProcess: done updating pids map
+10-30 01:21:11.213  1303  1303 D SST     : [0] notifyVoiceRegStateRilRadioTechnologyChanged: vrs=1 rat=0
+10-30 01:21:11.237   787  1075 D TelephonyRegistry: listen oscl: mHasNotifySubscriptionInfoChangedOccurred==false no callback
+10-30 01:21:11.241  1303  1303 D Phone   : [0] SubId-1,get allowed network types user: value = GPRS|EDGE|UMTS|HSDPA|HSUPA|HSPA|HSPA+|GSM
+10-30 01:21:11.266  1303  1303 W CarrierConfigManager: Error getting config for subId -1 ICarrierConfigLoader is null
+10-30 01:21:11.287  1407  1407 E libprocessgroup: Failed to make and chown /sys/fs/cgroup/uid_10109: Read-only file system
+10-30 01:21:11.288  1407  1407 W Zygote  : createProcessGroup failed, kernel missing CONFIG_CGROUP_CPUACCT?
+10-30 01:21:11.294  1407  1407 W .settingsconfig: Unexpected CPU variant for x86: x86_64.
+10-30 01:21:11.294  1407  1407 W .settingsconfig: Known variants: atom, sandybridge, silvermont, kabylake, default
+10-30 01:21:11.326  1303  1303 D EmergencyNumberTracker:  asset emergency database is loaded. Ver: 1 Phone Id: 0
+10-30 01:21:11.341  1303  1303 E EmergencyNumberTracker: Cache ota emergency database IOException: java.io.FileNotFoundException: /data/misc/emergencynumberdb/emergency_number_db: open failed: ENOENT (No such file or directory)
+10-30 01:21:11.342  1303  1303 D EmergencyNumberTracker: Using Asset Emergency database. Version: 1
+10-30 01:21:11.346  1407  1407 E .settingsconfig: Not starting debugger since process cannot load the jdwp agent.
+10-30 01:21:11.404   787  1107 I am_proc_bound: [0,1407,org.lineageos.settingsconfig]
+10-30 01:21:11.443   787  1107 I pm_snapshot_rebuild: [38,1]
+10-30 01:21:11.444   787  1107 D CompatibilityChangeReporter: Compat change id reported: 168419799; UID 10109; state: DISABLED
+10-30 01:21:11.445   787  1107 D CompatibilityChangeReporter: Compat change id reported: 273564678; UID 10109; state: DISABLED
+10-30 01:21:11.453   787  1107 I am_uid_active: 10109
+10-30 01:21:11.464  1271  1353 I BinaryDictionaryFileDumper: reinitializeClientRecordInDictionaryContentProvider() : Insert DictionaryInfo : Id = 'main:cs' : Locale=cs : Version=44
+10-30 01:21:11.471   787   911 D ConnectivityService: NetReassign [no changes]
+10-30 01:21:11.509  1407  1407 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10109; state: ENABLED
+10-30 01:21:11.510  1303  1303 D DNC-0   : DataNetworkController created.
+10-30 01:21:11.578  1303  1303 W CarrierConfigManager: Error getting config for subId -1 ICarrierConfigLoader is null
+10-30 01:21:11.589  1303  1303 W CarrierConfigManager: Error getting config for subId -1 ICarrierConfigLoader is null
+10-30 01:21:11.600   787  1023 I DefaultPermGrantPolicy: Revoking permissions from disabled data services for user:0
+10-30 01:21:11.611  1303  1303 W CarrierConfigManager: Error getting config for subId -1 ICarrierConfigLoader is null
+10-30 01:21:11.617   787  1075 I DefaultPermGrantPolicy: Granting permissions to enabled data services for user:0
+10-30 01:21:11.618  1271  1353 I BinaryDictionaryFileDumper: reinitializeClientRecordInDictionaryContentProvider() : Insert DictionaryInfo : Id = 'main:da' : Locale=da : Version=44
+10-30 01:21:11.652   787  1023 D CompatibilityChangeReporter: Compat change id reported: 168419799; UID 1001; state: DISABLED
+10-30 01:21:11.652   787  1023 D CompatibilityChangeReporter: Compat change id reported: 273564678; UID 1001; state: DISABLED
+10-30 01:21:11.661  1303  1303 D DCM-0   : DataConfigManager created.
+10-30 01:21:11.698  1303  1303 W CarrierConfigManager: Error getting config for subId -1 ICarrierConfigLoader is null
+10-30 01:21:11.698  1407  1407 V GraphicsEnvironment: ANGLE Developer option for 'org.lineageos.settingsconfig' set to: 'default'
+10-30 01:21:11.705  1271  1353 I BinaryDictionaryFileDumper: reinitializeClientRecordInDictionaryContentProvider() : Insert DictionaryInfo : Id = 'main:de' : Locale=de : Version=54
+10-30 01:21:11.707  1407  1407 V GraphicsEnvironment: ANGLE GameManagerService for org.lineageos.settingsconfig: false
+10-30 01:21:11.707  1407  1407 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-30 01:21:11.756  1303  1303 D DCM-0   : Carrier config updated. Config is not carrier specific.
+10-30 01:21:11.769  1271  1353 I BinaryDictionaryFileDumper: reinitializeClientRecordInDictionaryContentProvider() : Insert DictionaryInfo : Id = 'main:el' : Locale=el : Version=44
+10-30 01:21:11.781  1303  1303 D DSMGR-0 : DataSettingsManager created.
+10-30 01:21:11.781  1407  1407 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+10-30 01:21:11.787   787  1107 D CompatibilityChangeReporter: Compat change id reported: 124107808; UID 1001; state: ENABLED
+10-30 01:21:11.793  1407  1407 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+10-30 01:21:11.828   787  1107 I am_uid_running: 10099
+10-30 01:21:11.830  1303  1303 D DSRM-0  : DataStallRecoveryManager created.
+10-30 01:21:11.834   787  1107 D CompatibilityChangeReporter: Compat change id reported: 135634846; UID 10099; state: DISABLED
+10-30 01:21:11.837   787  1107 D CompatibilityChangeReporter: Compat change id reported: 177438394; UID 10099; state: DISABLED
+10-30 01:21:11.837   787  1107 D CompatibilityChangeReporter: Compat change id reported: 135772972; UID 10099; state: DISABLED
+10-30 01:21:11.837   787  1107 D CompatibilityChangeReporter: Compat change id reported: 135754954; UID 10099; state: ENABLED
+10-30 01:21:11.841  1303  1303 D CarrierResolver: Creating CarrierResolver[0]
+10-30 01:21:11.848  1271  1353 I BinaryDictionaryFileDumper: reinitializeClientRecordInDictionaryContentProvider() : Insert DictionaryInfo : Id = 'main:en' : Locale=en : Version=54
+10-30 01:21:11.854  1407  1424 I SimpleSettingsConfig: Updating settings storage at boot

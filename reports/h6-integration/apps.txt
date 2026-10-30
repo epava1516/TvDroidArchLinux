@@ -1,0 +1,48 @@
+Name: Files
+packageName: com.android.documentsui
+categories:
+	android.intent.category.LAUNCHER
+Name: Contacts
+packageName: com.android.contacts
+categories:
+	android.intent.category.LAUNCHER
+Name: Recorder
+packageName: org.lineageos.recorder
+categories:
+	android.intent.category.LAUNCHER
+Name: Gallery
+packageName: com.android.gallery3d
+categories:
+	android.intent.category.LAUNCHER
+Name: Browser
+packageName: org.lineageos.jelly
+categories:
+	android.intent.category.LAUNCHER
+Name: VLC
+packageName: org.videolan.vlc
+categories:
+	android.intent.category.LAUNCHER
+Name: Music
+packageName: org.lineageos.eleven
+categories:
+	android.intent.category.LAUNCHER
+Name: Calendar
+packageName: org.lineageos.etar
+categories:
+	android.intent.category.LAUNCHER
+Name: Camera
+packageName: org.lineageos.aperture
+categories:
+	android.intent.category.LAUNCHER
+Name: Settings
+packageName: com.android.settings
+categories:
+	android.intent.category.LAUNCHER
+Name: Calculator
+packageName: com.android.calculator2
+categories:
+	android.intent.category.LAUNCHER
+Name: Clock
+packageName: com.android.deskclock
+categories:
+	android.intent.category.LAUNCHER

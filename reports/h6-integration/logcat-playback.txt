@@ -1,0 +1,2 @@
+lxc-attach: waydroid: ../src/lxc/attach.c: get_attach_context: 406 Connection refused - Failed to get init pid
+lxc-attach: waydroid: ../src/lxc/attach.c: lxc_attach: 1474 Connection refused - Failed to get attach context

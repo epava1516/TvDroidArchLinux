@@ -1,0 +1,37 @@
+2026-10-30T01:15:10.884403Z  INFO input_seat{name="winit"}:add_keyboard_with_context_flags{xkb_config=XkbConfig { rules: "", model: "", layout: "es", variant: "", options: None } repeat_delay=250 repeat_rate=25 context_flags=0}:input_keyboard: smithay::input::keyboard: Initializing a xkbcommon handler with keymap query
+2026-10-30T01:15:10.968596Z  INFO input_seat{name="winit"}:add_keyboard_with_context_flags{xkb_config=XkbConfig { rules: "", model: "", layout: "es", variant: "", options: None } repeat_delay=250 repeat_rate=25 context_flags=0}:input_keyboard: smithay::input::keyboard: Loaded Keymap name="Spanish"
+2026-10-30T01:15:10.977788Z  INFO smithay::wayland::socket: Created new socket name=Some("wayland-1")
+2026-10-30T01:15:10.991437Z  WARN smithay::backend::drm::device::fd: Unable to become drm master, assuming unprivileged mode
+2026-10-30T01:15:10.994490Z  INFO new{name="ArchTV-DRM" physical=PhysicalProperties { size: Size<smithay::utils::geometry::Raw> { w: 0, h: 0 }, subpixel: Unknown, make: "ArchTV", model: "Virtual", serial_number: "1" }}: smithay::output: Creating new Output name="ArchTV-DRM"
+2026-10-30T01:15:10.994617Z  INFO smithay::wayland::output: Creating new wl_output output="ArchTV-DRM"
+2026-10-30T01:15:10.994779Z  INFO archtv_compositor::state: OUTPUT_CONFIGURED width=1280 height=720
+2026-10-30T01:15:11.210303Z  INFO smithay::backend::libinput: Initializing a libinput backend
+2026-10-30T01:15:11.210500Z  INFO archtv_compositor::drm: DRM_READY device=/dev/dri/card0 width=1280 height=720 refresh=60 format="XRGB8888" modifier="LINEAR" buffers=2 renderer="Pixman"
+2026-10-30T01:15:11.215520Z  INFO archtv_compositor::session: SESSION_CHILD_STARTED pid=46540 shell=false
+2026-10-30T01:15:11.215729Z  INFO archtv_compositor: TV_COMPOSITOR_READY socket="wayland-1"
+2026-10-30T01:15:11.215913Z  INFO smithay::backend::libinput: New device "event4"
+2026-10-30T01:15:11.215961Z  INFO archtv_compositor::input: INPUT_ADDED name="VirtualBox mouse integration"
+2026-10-30T01:15:11.216015Z  INFO smithay::backend::libinput: New device "event3"
+2026-10-30T01:15:11.216040Z  INFO archtv_compositor::input: INPUT_ADDED name="VirtualBox USB Tablet"
+2026-10-30T01:15:11.216508Z  INFO smithay::backend::libinput: New device "event6"
+2026-10-30T01:15:11.216554Z  INFO archtv_compositor::input: INPUT_ADDED name="Video Bus"
+2026-10-30T01:15:11.216595Z  INFO smithay::backend::libinput: New device "event0"
+2026-10-30T01:15:11.216622Z  INFO archtv_compositor::input: INPUT_ADDED name="Power Button"
+2026-10-30T01:15:11.216656Z  INFO smithay::backend::libinput: New device "event1"
+2026-10-30T01:15:11.216681Z  INFO archtv_compositor::input: INPUT_ADDED name="Sleep Button"
+2026-10-30T01:15:11.216714Z  INFO smithay::backend::libinput: New device "event2"
+2026-10-30T01:15:11.216739Z  INFO archtv_compositor::input: INPUT_ADDED name="AT Translated Set 2 keyboard"
+2026-10-30T01:15:11.216769Z  INFO smithay::backend::libinput: New device "event7"
+2026-10-30T01:15:11.216794Z  INFO archtv_compositor::input: INPUT_ADDED name="ImExPS/2 Generic Explorer Mouse"
+2026-10-30T01:15:24.890615Z  INFO archtv_compositor::state: TOPLEVEL_MAPPED
+2026-10-30T01:15:24.904317Z  INFO archtv_compositor::handlers::xdg_shell: TOPLEVEL_DESTROYED
+2026-10-30T01:17:07.612812Z  INFO archtv_compositor::state: TOPLEVEL_MAPPED
+2026-10-30T01:17:07.751764Z  INFO archtv_compositor::handlers::xdg_shell: TOPLEVEL_DESTROYED
+2026-10-30T01:17:11.276773Z  INFO archtv_compositor::drm: DRM_CAPTURED path=/home/tv/repositorio-principal/reports/h6-boot/scanout.ppm
+2026-10-30T01:18:35.222821Z  INFO archtv_compositor::state: TOPLEVEL_MAPPED
+2026-10-30T01:20:55.938854Z  INFO archtv_compositor::handlers::xdg_shell: TOPLEVEL_DESTROYED
+2026-10-30T01:21:07.626020Z  INFO archtv_compositor::state: TOPLEVEL_MAPPED
+2026-10-30T01:21:07.650257Z  INFO archtv_compositor::handlers::xdg_shell: TOPLEVEL_DESTROYED
+2026-10-30T01:21:34.798703Z  INFO archtv_compositor: TV_COMPOSITOR_STOPPED
+2026-10-30T01:21:35.341699Z  INFO archtv_compositor::drm: DRM_STOPPED frames=1408
+2026-10-30T01:21:35.342415Z  INFO smithay::backend::drm::device::fd: Dropping device: Some("/dev/dri/card0")

@@ -61,3 +61,11 @@ servicios del sistema. Las bibliotecas GTK que necesite Waydroid no convierten
 la interfaz propia en una aplicación GTK.
 
 Los hitos y criterios que validan estas decisiones están en [ROADMAP.md](../ROADMAP.md).
+
+## Evolución del entorno Android
+
+La dirección futura es un entorno propio basado en AOSP, compartiendo el kernel
+Linux e integrado con Rust/Smithay. Waydroid sirve de backend inicial y referencia
+funcional. El contrato de aplicaciones deberá permitir sustituirlo sin rehacer
+el shell. Véase [AOSP-NATIVO.md](AOSP-NATIVO.md) para etapas, requisitos de ART,
+Binder/framework/HAL, ABIs y criterios para retirar la dependencia.

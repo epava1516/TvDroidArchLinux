@@ -1,0 +1,594 @@
+--------- beginning of main
+10-30 01:39:11.406  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.409  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.409  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.415  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.415  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.426  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.427  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.432  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.432  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.437  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.437  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.452  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.452  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.463  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.463  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.467  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.467  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.475  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.475  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.487  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.487  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.499  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.500  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.504  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.504  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.510  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.510  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.517  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.518  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.546  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.546  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.557  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.558  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.581  1130  1130 I ProvidersCache: Updating roots due to change on user 0at content://com.android.externalstorage.documents
+10-30 01:39:11.583  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.583  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.585   879   976 D LoaderTask: load widgets
+10-30 01:39:11.593  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.594  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.599   879   976 D LoaderTask: bindWidgets
+10-30 01:39:11.600   879   976 D LoaderTask: save widgets in icon cache
+10-30 01:39:11.600  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.601   879   976 D LoaderTask: finish icon update
+10-30 01:39:11.601  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.610  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.610  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.613  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.614  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.618  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.618  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.625  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.625  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.631  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.632  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.632   879   976 D QuickstepModelDelegate: Successfully registered for launcher snapshot logging!
+10-30 01:39:11.634   300   337 W Binder  : Caught a RuntimeException from the binder stub implementation.
+10-30 01:39:11.634   300   337 W Binder  : java.lang.SecurityException: Need REGISTER_STATS_PULL_ATOM permission.: Neither user 10104 nor current process has android.permission.REGISTER_STATS_PULL_ATOM.
+10-30 01:39:11.634   300   337 W Binder  : 	at android.app.ContextImpl.enforce(ContextImpl.java:2240)
+10-30 01:39:11.634   300   337 W Binder  : 	at android.app.ContextImpl.enforceCallingOrSelfPermission(ContextImpl.java:2268)
+10-30 01:39:11.634   300   337 W Binder  : 	at com.android.server.stats.StatsManagerService.enforceRegisterStatsPullAtomPermission(StatsManagerService.java:520)
+10-30 01:39:11.634   300   337 W Binder  : 	at com.android.server.stats.StatsManagerService.registerPullAtomCallback(StatsManagerService.java:175)
+10-30 01:39:11.634   300   337 W Binder  : 	at android.os.IStatsManagerService$Stub.onTransact(IStatsManagerService.java:313)
+10-30 01:39:11.634   300   337 W Binder  : 	at android.os.Binder.execTransactInternal(Binder.java:1285)
+10-30 01:39:11.634   300   337 W Binder  : 	at android.os.Binder.execTransact(Binder.java:1244)
+10-30 01:39:11.634  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.634  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.636  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.636  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.639  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.639  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.641  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.641  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.645  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.645  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.648  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.648  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.650  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.651  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:11.653  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:11.653  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:12.622  1130  1130 I ProvidersCache: Updating roots due to change on user 0at content://com.android.externalstorage.documents
+10-30 01:39:12.648   992  1006 I PermissionControllerServiceImpl: Updating user sensitive for user 0
+10-30 01:39:12.654  1130  1130 I ProvidersCache: Updating roots due to change on user 0at content://com.android.externalstorage.documents
+10-30 01:39:13.099   879   976 D ModelWriter: removing items from db . Reason: [removed because the corresponding package or component is removed. mOp=2 removedPackages=[com.android.nfc] removedComponents=[]]
+--------- beginning of system
+10-30 01:39:13.719   300   390 D OomAdjuster: Not killing cached processes
+10-30 01:39:14.230  1396  1396 D CompatibilityChangeReporter: Compat change id reported: 194532703; UID 10059; state: ENABLED
+10-30 01:39:14.237   300   757 D CompatibilityChangeReporter: Compat change id reported: 194532703; UID 10059; state: ENABLED
+10-30 01:39:14.963  1130  1130 I ProvidersCache: Updating roots due to change on user 0at content://com.android.providers.media.documents/root
+10-30 01:39:15.239  1130  1796 W oid.documentsui: Long monitor contention with owner pool-22-thread-1 (1794) at void com.android.documentsui.roots.ProvidersCache$MultiProviderUpdateTask.handleDocumentsProvider(android.content.pm.ProviderInfo, com.android.documentsui.base.UserId)(ProvidersCache.java:646) waiters=3 in void com.android.documentsui.roots.ProvidersCache$MultiProviderUpdateTask.handleDocumentsProvider(android.content.pm.ProviderInfo, com.android.documentsui.base.UserId) for 220ms
+10-30 01:39:15.327  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:15.327  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:15.332  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:15.332  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:15.336  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:15.338  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:15.346  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:15.346  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:15.357  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:15.357  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:15.369  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:15.369  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:15.374   879  1226 W Parcel  : Expecting binder but got null!
+10-30 01:39:15.378  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:15.379  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:15.399  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:15.400  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:15.411  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:15.412  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:15.417  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:15.417  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:15.428  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:15.428  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:15.431   879  1226 E FrameEvents: updateAcquireFence: Did not find frame.
+10-30 01:39:15.431  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:15.431  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:15.441  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:15.441  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:15.446  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:15.447  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:15.456  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:15.456  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:15.476  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:15.476  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:15.479  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:15.480  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:15.484  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:15.484  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:15.487  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:15.487  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:15.489  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:15.489  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:15.492  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:15.492  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:15.494  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:15.494  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:15.496  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:15.496  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:15.498  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:15.498  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:15.500  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:15.500  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:15.503  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:15.503  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:17.024   300   372 E SELinuxJNI: fileSelabelLookup => SELinux is disabled
+10-30 01:39:18.216  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:18.216  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:18.220  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:18.221  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:18.228  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:18.229  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:18.235  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:18.235  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:18.239  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:18.239  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:18.242  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:18.243  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:18.247  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:18.248  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:18.252  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:18.252  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:18.258  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:18.258  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:18.264  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:18.264  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:18.269  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:18.270  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:18.276  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:18.277  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:18.282  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:18.283  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:18.288  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:18.288  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:18.293  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:18.293  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:18.308  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:18.308  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:18.312  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:18.313  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:18.317  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:18.318  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:18.322  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:18.322  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:18.340  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:18.340  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:18.343  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:18.344  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:18.347  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:18.347  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:18.353  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:18.353  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:18.355  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:18.355  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:18.357  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:18.358  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:18.361  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:18.361  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:18.370  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:18.371  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:19.209  1066  1074 I id.ext.services: Background concurrent copying GC freed 4117(313KB) AllocSpace objects, 0(0B) LOS objects, 92% free, 1926KB/25MB, paused 58us,10us total 121.573ms
+10-30 01:39:19.778   207  1753 D mediaserver: Time zone APEX ICU file found: /apex/com.android.tzdata/etc/icu/icu_tzdata.dat
+10-30 01:39:19.780   207  1753 D mediaserver: I18n APEX ICU file found: /apex/com.android.i18n/etc/icu/icudt70l.dat
+10-30 01:39:21.193  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.194  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.197  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.198  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.201  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.201  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.205  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.206  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.209  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.210  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.212  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.212  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.215  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.216  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.218  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.219  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.222  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.222  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.226  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.226  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.228  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.229  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.232  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.232  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.235  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.236  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.240  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.240  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.243  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.243  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.247  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.247  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.252  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.253  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.256  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.257  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.260  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.261  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.264  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.265  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.268  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.269  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.273  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.274  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.276  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.277  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.281  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.281  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.285  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.287  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.291  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.292  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.297  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.297  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.301  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.301  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.304  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.305  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.310  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.311  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.314  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.315  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.320  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.320  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:21.323  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:21.323  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:23.354   300   339 D OomAdjuster: Not killing cached processes
+10-30 01:39:24.915  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:24.916  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:24.920  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:24.920  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:24.925  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:24.926  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:24.930  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:24.930  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:24.932  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:24.932  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:24.936  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:24.936  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:24.939  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:24.939  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:24.941  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:24.942  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:24.944  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:24.944  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:24.946  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:24.946  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:24.949  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:24.950  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:24.953  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:24.953  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:24.956  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:24.956  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:24.960  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:24.960  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:24.965  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:24.966  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:24.969  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:24.969  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:24.973  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:24.974  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:24.977  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:24.977  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:24.981  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:24.981  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:24.985  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:24.985  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:24.992  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:24.992  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:24.997  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:24.998  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:25.003  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:25.003  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:25.009  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:25.009  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:25.017  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:25.017  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:25.023  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:25.023  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:25.027  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:25.027  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:25.034  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:25.034  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:25.037  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:25.037  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:25.050  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:25.050  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:25.058  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:25.058  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:25.068  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:25.068  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:25.074  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:25.075  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.307  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.307  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.309  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.309  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.312  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.312  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.315  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.315  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.318  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.318  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.321  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.321  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.323  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.324  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.326  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.326  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.328  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.329  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.331  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.331  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.334  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.334  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.337  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.337  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.340  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.340  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.342  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.343  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.345  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.345  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.347  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.348  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.350  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.350  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.353  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.353  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.356  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.356  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.359  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.359  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.361  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.361  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.363  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.364  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.365  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.365  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.367  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.367  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.369  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.369  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.372  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.372  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.373  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.373  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.376  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.377  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.381  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.381  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.385  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.385  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.387  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.387  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.390  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.390  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.392  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:28.392  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:28.406   300   390 D OomAdjuster: Not killing cached processes
+10-30 01:39:30.261  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:30.261  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:30.268  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:30.268  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:30.272  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:30.273  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:30.277  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:30.278  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:30.283  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:30.283  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:30.287  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:30.287  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:30.317  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:30.318  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:30.323  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:30.324  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:30.331  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:30.332  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:30.335  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:30.336  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:30.339  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:30.340  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:30.344  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:30.345  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:30.349  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:30.349  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:31.875  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:31.875  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:31.879  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:31.879  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:31.882  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:31.883  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:31.885  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:31.885  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:31.888  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:31.888  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:31.890  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:31.890  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:31.892  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:31.892  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:31.894  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:31.894  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:31.897  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:31.897  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:31.899  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:31.899  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:31.901  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:31.901  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:31.904  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:31.904  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:31.906  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:31.907  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:31.910  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:31.911  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:31.915  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:31.915  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:31.920  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:31.920  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:31.923  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:31.923  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:31.925  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:31.925  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:31.927  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:31.928  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:31.930  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:31.930  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:31.967  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:31.967  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:31.969  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:31.970  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:31.972  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:31.972  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:31.975  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:31.975  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:31.977  1148  1417 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:39:31.977  1148  1417 V MediaProvider: Skipping next row id backup.
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: Failed to apply ContentProviderOperation(type=insert uri=content://media/internal/file values={instance_id=null, compilation=null, disc_number=null, duration=null, album_artist=null, resolution=null, orientation=null, artist=null, author=null, height=null, is_drm=0, date_modified=1790539062, writer=null, composer=null, _modifier=3, datetaken=null, mime_type=application/zip, bitrate=null, cd_track_number=null, year=null, _data=/system/product/media/bootanimation-dark.zip, _size=17, album=null, genre=null, title=bootanimation-dark, width=null, document_id=null, capture_framerate=null, num_tracks=null, original_document_id=null, media_type=0} exceptionAllowed)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: android.database.sqlite.SQLiteConstraintException: UNIQUE constraint failed: files._data (code 2067 SQLITE_CONSTRAINT_UNIQUE)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at android.database.sqlite.SQLiteConnection.nativeExecuteForLastInsertedRowId(Native Method)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at android.database.sqlite.SQLiteConnection.executeForLastInsertedRowId(SQLiteConnection.java:961)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at android.database.sqlite.SQLiteSession.executeForLastInsertedRowId(SQLiteSession.java:790)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at android.database.sqlite.SQLiteStatement.executeInsert(SQLiteStatement.java:89)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at com.android.providers.media.util.DatabaseUtils.executeInsert(DatabaseUtils.java:489)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.insert(SQLiteQueryBuilder.java:611)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.lambda$insert$1(SQLiteQueryBuilder.java:575)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.$r8$lambda$J8sHyRt4f9G-jpErUkeO-jG4Hmw(Unknown Source:0)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder$$ExternalSyntheticLambda2.apply(Unknown Source:6)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at com.android.providers.media.DatabaseHelper.runWithTransaction(DatabaseHelper.java:800)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.insert(SQLiteQueryBuilder.java:574)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.lambda$insertAllowingUpsert$22(MediaProvider.java:4576)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.$r8$lambda$7VmeE5G4E5kViN6Mqcp0qCsuLk0(Unknown Source:0)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider$$ExternalSyntheticLambda49.apply(Unknown Source:13)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at com.android.providers.media.DatabaseHelper.runWithTransaction(DatabaseHelper.java:800)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertAllowingUpsert(MediaProvider.java:4566)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertFile(MediaProvider.java:4548)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertInternal(MediaProvider.java:5006)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insert(MediaProvider.java:4708)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at android.content.ContentProviderOperation.applyInternal(ContentProviderOperation.java:375)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at android.content.ContentProviderOperation.apply(ContentProviderOperation.java:347)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at android.content.ContentProvider.applyBatch(ContentProvider.java:2506)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.applyBatch(MediaProvider.java:5058)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at android.content.ContentProvider.applyBatch(ContentProvider.java:2497)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at android.content.ContentResolver.applyBatch(ContentResolver.java:2230)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.applyPending(ModernMediaScanner.java:935)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.postVisitDirectory(ModernMediaScanner.java:893)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.postVisitDirectory(ModernMediaScanner.java:336)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at java.nio.file.Files.walkFileTree(Files.java:2688)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at java.nio.file.Files.walkFileTree(Files.java:2742)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.walkFileTree(ModernMediaScanner.java:453)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.runInternal(ModernMediaScanner.java:416)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.run(ModernMediaScanner.java:405)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner.scanDirectory(ModernMediaScanner.java:251)
+10-30 01:39:31.994  1148  1417 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.scanDirectory(MediaProvider.java:1745)
+10-30 01:39:31.995  1148  1417 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onScanVolume(MediaService.java:204)
+10-30 01:39:31.995  1148  1417 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onScanVolume(MediaService.java:172)
+10-30 01:39:31.995  1148  1417 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onHandleWork(MediaService.java:95)
+10-30 01:39:31.995  1148  1417 W ModernMediaScanner: 	at androidx.core.app.JobIntentService$CommandProcessor.doInBackground(JobIntentService.java:396)
+10-30 01:39:31.995  1148  1417 W ModernMediaScanner: 	at androidx.core.app.JobIntentService$CommandProcessor.doInBackground(JobIntentService.java:387)
+10-30 01:39:31.995  1148  1417 W ModernMediaScanner: 	at android.os.AsyncTask$3.call(AsyncTask.java:394)
+10-30 01:39:31.995  1148  1417 W ModernMediaScanner: 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+10-30 01:39:31.995  1148  1417 W ModernMediaScanner: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137)
+10-30 01:39:31.995  1148  1417 W ModernMediaScanner: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:637)
+10-30 01:39:31.995  1148  1417 W ModernMediaScanner: 	at java.lang.Thread.run(Thread.java:1012)
+10-30 01:39:31.997  1148  1417 I MediaProvider: Scanned internal due to REASON_MOUNTED, found 257 items in 26872ms, 257 inserts 0 updates 0 deletes
+10-30 01:39:32.019   300   624 D CompatibilityChangeReporter: Compat change id reported: 182734110; UID 1000; state: ENABLED
+10-30 01:39:32.033   300   300 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+10-30 01:39:32.039  1148  1417 W MediaProvider: Didn't find any volume for getVolume(/system/product/media/audio/ringtones/Ring_Synth_04.ogg)
+10-30 01:39:32.041  1148  1417 I MediaProvider: Open with lower FS for /system/product/media/audio/ringtones/Ring_Synth_04.ogg. Uid: 10121
+10-30 01:39:32.089  1148  1417 W MediaProvider: Didn't find any volume for getVolume(/system/product/media/audio/notifications/Argon.ogg)
+10-30 01:39:32.092  1148  1417 I MediaProvider: Open with lower FS for /system/product/media/audio/notifications/Argon.ogg. Uid: 10121
+10-30 01:39:32.125  1148  1417 W MediaProvider: Didn't find any volume for getVolume(/system/product/media/audio/alarms/Hassium.ogg)
+10-30 01:39:32.128  1148  1417 I MediaProvider: Open with lower FS for /system/product/media/audio/alarms/Hassium.ogg. Uid: 10121
+10-30 01:39:32.161  1148  1417 W MediaProvider: isAppCloneUserPair failed. Users: 0 and 0
+10-30 01:39:32.161  1148  1417 W MediaProvider: isAppCloneUserPair for user 0: false
+10-30 01:39:32.162  1148  1417 V MediaProvider: Inserted id:1000000015 less than next row id backup:1000001000.
+10-30 01:39:32.164  1148  1417 W MediaProvider: isAppCloneUserPair failed. Users: 0 and 0
+10-30 01:39:32.164  1148  1417 W MediaProvider: isAppCloneUserPair for user 0: false
+10-30 01:39:32.165  1148  1417 V MediaProvider: Inserted id:1000000016 less than next row id backup:1000001000.
+10-30 01:39:32.179  1148  1356 E StorageManager: Failed to set extended attributes for /storage/emulated/0/Android to set project id.: Operation not permitted
+10-30 01:39:32.180  1148  1356 W MediaProvider: Failed to update quota type for /storage/emulated/0/Android
+10-30 01:39:32.180  1148  1356 W MediaProvider: java.io.IOException: Failed to update quota type for /storage/emulated/0/Android
+10-30 01:39:32.180  1148  1356 W MediaProvider: 	at android.os.storage.StorageManager.updateExternalStorageFileQuotaType(StorageManager.java:2618)
+10-30 01:39:32.180  1148  1356 W MediaProvider: 	at com.android.providers.media.MediaProvider.updateQuotaTypeForFileInternal(MediaProvider.java:708)
+10-30 01:39:32.180  1148  1356 W MediaProvider: 	at com.android.providers.media.MediaProvider.updateQuotaTypeForUri(MediaProvider.java:682)
+10-30 01:39:32.180  1148  1356 W MediaProvider: 	at com.android.providers.media.MediaProvider.-$$Nest$mupdateQuotaTypeForUri(Unknown Source:0)
+10-30 01:39:32.180  1148  1356 W MediaProvider: 	at com.android.providers.media.MediaProvider$4.lambda$onInsert$0(MediaProvider.java:735)
+10-30 01:39:32.180  1148  1356 W MediaProvider: 	at com.android.providers.media.MediaProvider$4.$r8$lambda$DnIEye5Sx8fODP4Bt_qvKpm3U-Q(Unknown Source:0)
+10-30 01:39:32.180  1148  1356 W MediaProvider: 	at com.android.providers.media.MediaProvider$4$$ExternalSyntheticLambda0.run(Unknown Source:6)
+10-30 01:39:32.180  1148  1356 W MediaProvider: 	at android.os.Handler.handleCallback(Handler.java:942)
+10-30 01:39:32.180  1148  1356 W MediaProvider: 	at android.os.Handler.dispatchMessage(Handler.java:99)
+10-30 01:39:32.180  1148  1356 W MediaProvider: 	at android.os.Looper.loopOnce(Looper.java:201)
+10-30 01:39:32.180  1148  1356 W MediaProvider: 	at android.os.Looper.loop(Looper.java:288)
+10-30 01:39:32.180  1148  1356 W MediaProvider: 	at android.os.HandlerThread.run(HandlerThread.java:67)
+10-30 01:39:32.186  1148  1356 E StorageManager: Failed to set extended attributes for /storage/emulated/0/Android/media to set project id.: Operation not permitted
+10-30 01:39:32.186  1148  1356 W MediaProvider: Failed to update quota type for /storage/emulated/0/Android/media
+10-30 01:39:32.186  1148  1356 W MediaProvider: java.io.IOException: Failed to update quota type for /storage/emulated/0/Android/media
+10-30 01:39:32.186  1148  1356 W MediaProvider: 	at android.os.storage.StorageManager.updateExternalStorageFileQuotaType(StorageManager.java:2618)
+10-30 01:39:32.186  1148  1356 W MediaProvider: 	at com.android.providers.media.MediaProvider.updateQuotaTypeForFileInternal(MediaProvider.java:708)
+10-30 01:39:32.186  1148  1356 W MediaProvider: 	at com.android.providers.media.MediaProvider.updateQuotaTypeForUri(MediaProvider.java:682)
+10-30 01:39:32.186  1148  1356 W MediaProvider: 	at com.android.providers.media.MediaProvider.-$$Nest$mupdateQuotaTypeForUri(Unknown Source:0)
+10-30 01:39:32.186  1148  1356 W MediaProvider: 	at com.android.providers.media.MediaProvider$4.lambda$onInsert$0(MediaProvider.java:735)
+10-30 01:39:32.186  1148  1356 W MediaProvider: 	at com.android.providers.media.MediaProvider$4.$r8$lambda$DnIEye5Sx8fODP4Bt_qvKpm3U-Q(Unknown Source:0)
+10-30 01:39:32.186  1148  1356 W MediaProvider: 	at com.android.providers.media.MediaProvider$4$$ExternalSyntheticLambda0.run(Unknown Source:6)
+10-30 01:39:32.186  1148  1356 W MediaProvider: 	at android.os.Handler.handleCallback(Handler.java:942)
+10-30 01:39:32.186  1148  1356 W MediaProvider: 	at android.os.Handler.dispatchMessage(Handler.java:99)
+10-30 01:39:32.186  1148  1356 W MediaProvider: 	at android.os.Looper.loopOnce(Looper.java:201)
+10-30 01:39:32.186  1148  1356 W MediaProvider: 	at android.os.Looper.loop(Looper.java:288)
+10-30 01:39:32.186  1148  1356 W MediaProvider: 	at android.os.HandlerThread.run(HandlerThread.java:67)
+10-30 01:39:32.196  1148  1417 W MediaProvider: isAppCloneUserPair failed. Users: 0 and 0
+10-30 01:39:32.222  1148  1417 W MediaProvider: isAppCloneUserPair for user 0: false
+10-30 01:39:32.223  1148  1417 V MediaProvider: Inserted id:1000000017 less than next row id backup:1000001000.
+10-30 01:39:32.236  1148  1417 I MediaProvider: Scanned external_primary due to REASON_MOUNTED, found 15 items in 91ms, 3 inserts 0 updates 0 deletes
+10-30 01:39:32.239  1148  1417 I MediaProvider: End Intent { act=com.android.providers.media.action.SCAN_VOLUME (has extras) }
+10-30 01:39:32.240  1148  1417 I MediaProvider: Begin Intent { act=android.intent.action.MEDIA_MOUNTED dat=file:///... flg=0x5000010 cmp=com.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
+10-30 01:39:32.241  1148  1417 I MediaProvider: Volume MediaVolume name: [external_primary] id: [emulated;0] user: [UserHandle{0}] path: [/storage/emulated/0] externallyManaged: [false] mPublicVolume: [false] already attached
+10-30 01:39:32.241  1148  1417 I MediaProvider: End Intent { act=android.intent.action.MEDIA_MOUNTED dat=file:///... flg=0x5000010 cmp=com.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
+10-30 01:39:32.273  1148  1356 E StorageManager: Failed to set extended attributes for /storage/emulated/0/Download to set project id.: Operation not supported on transport endpoint
+10-30 01:39:32.273  1148  1356 W MediaProvider: Failed to update quota type for /storage/emulated/0/Download
+10-30 01:39:32.273  1148  1356 W MediaProvider: java.io.IOException: Failed to update quota type for /storage/emulated/0/Download
+10-30 01:39:32.273  1148  1356 W MediaProvider: 	at android.os.storage.StorageManager.updateExternalStorageFileQuotaType(StorageManager.java:2618)
+10-30 01:39:32.273  1148  1356 W MediaProvider: 	at com.android.providers.media.MediaProvider.updateQuotaTypeForFileInternal(MediaProvider.java:708)
+10-30 01:39:32.273  1148  1356 W MediaProvider: 	at com.android.providers.media.MediaProvider.updateQuotaTypeForUri(MediaProvider.java:682)
+10-30 01:39:32.273  1148  1356 W MediaProvider: 	at com.android.providers.media.MediaProvider.-$$Nest$mupdateQuotaTypeForUri(Unknown Source:0)
+10-30 01:39:32.273  1148  1356 W MediaProvider: 	at com.android.providers.media.MediaProvider$4.lambda$onInsert$0(MediaProvider.java:735)
+10-30 01:39:32.273  1148  1356 W MediaProvider: 	at com.android.providers.media.MediaProvider$4.$r8$lambda$DnIEye5Sx8fODP4Bt_qvKpm3U-Q(Unknown Source:0)
+10-30 01:39:32.273  1148  1356 W MediaProvider: 	at com.android.providers.media.MediaProvider$4$$ExternalSyntheticLambda0.run(Unknown Source:6)
+10-30 01:39:32.273  1148  1356 W MediaProvider: 	at android.os.Handler.handleCallback(Handler.java:942)
+10-30 01:39:32.273  1148  1356 W MediaProvider: 	at android.os.Handler.dispatchMessage(Handler.java:99)
+10-30 01:39:32.273  1148  1356 W MediaProvider: 	at android.os.Looper.loopOnce(Looper.java:201)
+10-30 01:39:32.273  1148  1356 W MediaProvider: 	at android.os.Looper.loop(Looper.java:288)
+10-30 01:39:32.273  1148  1356 W MediaProvider: 	at android.os.HandlerThread.run(HandlerThread.java:67)

@@ -1,0 +1,8 @@
+{
+  "package": "org.videolan.vlc",
+  "version": "3.7.1",
+  "abi": "x86_64",
+  "url": "https://download.videolan.org/pub/videolan/vlc-android/3.7.1/VLC-Android-3.7.1-x86_64.apk",
+  "checksum_url": "https://download.videolan.org/pub/videolan/vlc-android/3.7.1/VLC-Android-3.7.1-x86_64.apk.sha256",
+  "purpose": "Useful Android TV application for H6 app, input and audio/video validation. APK stays in local cache."
+}

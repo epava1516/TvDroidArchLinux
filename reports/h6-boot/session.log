@@ -1,0 +1,2 @@
+[01:15:13] Skipping notification manager service because we could not connect to the notifications server: org.freedesktop.DBus.Error.ServiceUnknown: The name is not activatable
+[gbinder] Service manager /dev/anbox-binder has appeared

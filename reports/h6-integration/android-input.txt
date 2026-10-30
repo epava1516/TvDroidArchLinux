@@ -1,0 +1,307 @@
+INPUT MANAGER (dumpsys input)
+
+Input properties:
+  persist.input.velocitytracker.strategy = default
+
+Input Manager State:
+  Interactive: true
+  System UI Lights Out: true
+  Pointer Speed: 0
+  Pointer Acceleration: 3.000
+  Pointer Gestures Enabled: true
+  Show Touches: false
+  Pointer Capture: Disabled, seq=0
+
+Event Hub State:
+  BuiltInKeyboardId: -2
+  Devices:
+    1: wayland_keyboard
+      Classes: KEYBOARD | ALPHAKEY | DPAD
+      Path: /dev/input/wl_keyboard_events
+      Enabled: true
+      Descriptor: 248b7bc701fffde6eccdbead7f6d171589e957cc
+      Location: wayland
+      ControllerNumber: 0
+      UniqueId: wayland_keyboard
+      Identifier: bus=0x0006, vendor=0x0001, product=0x0001, version=0x0001
+      KeyLayoutFile: /system/usr/keylayout/Generic.kl
+      KeyCharacterMapFile: /system/usr/keychars/Generic.kcm
+      ConfigurationFile: 
+      VideoDevice: <none>
+    2: wayland_pointer
+      Classes: CURSOR
+      Path: /dev/input/wl_pointer_events
+      Enabled: true
+      Descriptor: e2bba247c0bb03e689fa51552a5f2b8f9f22a09d
+      Location: wayland
+      ControllerNumber: 0
+      UniqueId: wayland_pointer
+      Identifier: bus=0x0006, vendor=0x0001, product=0x0001, version=0x0001
+      KeyLayoutFile: 
+      KeyCharacterMapFile: 
+      ConfigurationFile: 
+      VideoDevice: <none>
+    -1: Virtual
+      Classes: KEYBOARD | ALPHAKEY | DPAD | VIRTUAL
+      Path: <virtual>
+      Enabled: true
+      Descriptor: a718a782d34bc767f4689c232d64d527998ea7fd
+      Location: 
+      ControllerNumber: 0
+      UniqueId: <virtual>
+      Identifier: bus=0x0000, vendor=0x0000, product=0x0000, version=0x0000
+      KeyLayoutFile: /system/usr/keylayout/Generic.kl
+      KeyCharacterMapFile: /system/usr/keychars/Virtual.kcm
+      ConfigurationFile: 
+      VideoDevice: <none>
+  Unattached video devices:
+    <none>
+
+Input Reader State (Nums of device: 3):
+  Device 3: wayland_keyboard
+    EventHub Devices: [ 1 ] 
+    Generation: 17
+    IsExternal: false
+    AssociatedDisplayPort: <none>
+    AssociatedDisplayUniqueId: <none>
+    HasMic:     false
+    Sources: KEYBOARD | DPAD
+    KeyboardType: 2
+    ControllerNum: 0
+    Keyboard Input Mapper:
+      Parameters:
+        OrientationAware: true
+        HandlesKeyRepeat: false
+      KeyboardType: 2
+      Orientation: 0
+      KeyDowns: 0 keys currently down
+      MetaState: 0x0
+      DownTime: 761862149000
+  Device 2: wayland_pointer
+    EventHub Devices: [ 2 ] 
+    Generation: 13
+    IsExternal: false
+    AssociatedDisplayPort: <none>
+    AssociatedDisplayUniqueId: <none>
+    HasMic:     false
+    Sources: MOUSE
+    KeyboardType: 0
+    ControllerNum: 0
+    Motion Ranges:
+      X: source=MOUSE, min=0.000, max=1279.000, flat=0.000, fuzz=0.000, resolution=0.000
+      Y: source=MOUSE, min=0.000, max=719.000, flat=0.000, fuzz=0.000, resolution=0.000
+      PRESSURE: source=MOUSE, min=0.000, max=1.000, flat=0.000, fuzz=0.000, resolution=0.000
+      VSCROLL: source=MOUSE, min=-1.000, max=1.000, flat=0.000, fuzz=0.000, resolution=0.000
+      HSCROLL: source=MOUSE, min=-1.000, max=1.000, flat=0.000, fuzz=0.000, resolution=0.000
+    Cursor Input Mapper:
+      Parameters:
+        HasAssociatedDisplay: true
+        Mode: POINTER
+        OrientationAware: false
+      XScale: 1.000
+      YScale: 1.000
+      XPrecision: 1.000
+      YPrecision: 1.000
+      HaveVWheel: true
+      HaveHWheel: true
+      VWheelScale: 1.000
+      HWheelScale: 1.000
+      DisplayId: 0
+      Orientation: 0
+      ButtonState: 0x00000000
+      Down: false
+      DownTime: 725457420000
+  Device -1: Virtual
+    EventHub Devices: [ -1 ] 
+    Generation: 3
+    IsExternal: false
+    AssociatedDisplayPort: <none>
+    AssociatedDisplayUniqueId: <none>
+    HasMic:     false
+    Sources: KEYBOARD | DPAD
+    KeyboardType: 2
+    ControllerNum: 0
+    Keyboard Input Mapper:
+      Parameters:
+        OrientationAware: true
+        HandlesKeyRepeat: false
+      KeyboardType: 2
+      Orientation: 0
+      KeyDowns: 0 keys currently down
+      MetaState: 0x0
+      DownTime: 0
+  Configuration:
+    ExcludedDeviceNames: []
+    VirtualKeyQuietTime: 0.0ms
+    PointerVelocityControlParameters: scale=1.000, lowThreshold=500.000, highThreshold=3000.000, acceleration=3.000
+    WheelVelocityControlParameters: scale=1.000, lowThreshold=15.000, highThreshold=50.000, acceleration=4.000
+    PointerGesture:
+      Enabled: true
+      QuietInterval: 100.0ms
+      DragMinSwitchSpeed: 50.0px/s
+      TapInterval: 150.0ms
+      TapDragInterval: 300.0ms
+      TapSlop: 20.0px
+      MultitouchSettleInterval: 100.0ms
+      MultitouchMinDistance: 15.0px
+      SwipeTransitionAngleCosine: 0.3
+      SwipeMaxWidthRatio: 0.2
+      MovementSpeedRatio: 0.8
+      ZoomSpeedRatio: 0.3
+      Viewports:
+        Viewport INTERNAL: displayId=0, uniqueId=local:0, port=0, orientation=0, logicalFrame=[0, 0, 1280, 720], physicalFrame=[0, 0, 1280, 720], deviceSize=[1280, 720], isActive=[1]
+
+UnwantedInteractionBlocker:
+  mPreferStylusOverTouchBlocker:
+    mActiveStyli: {}
+    mLastTouchEvents: 
+    mDevicesWithMixedToolType: {}
+    mCanceledDevices: {}
+  mEnablePalmRejection: 0
+  isPalmRejectionEnabled (flag value): 0
+  mPalmRejectors: None
+
+Input Classifier State:
+  Motion Classifier:
+    <nullptr>
+
+Input Dispatcher State:
+  DispatchEnabled: true
+  DispatchFrozen: false
+  InputFilterEnabled: false
+  FocusedDisplayId: 0
+  FocusedApplications:
+    displayId=0, name='ActivityRecord{2076de3 u0 com.android.permissioncontroller/.permission.ui.GrantPermissionsActivity} t7}', dispatchingTimeout=5000ms
+  FocusedWindows:
+    displayId=0, name='5591f41 com.android.permissioncontroller/com.android.permissioncontroller.permission.ui.GrantPermissionsActivity'
+  FocusRequests:
+    displayId=0, name='5591f41 com.android.permissioncontroller/com.android.permissioncontroller.permission.ui.GrantPermissionsActivity' result='OK'
+  Pointer Capture Requested: false
+  Current Window with Pointer Capture: None
+  TouchStatesByDisplay:
+    0: down=false, split=false, deviceId=2, source=0x00002002
+      Windows: <none>
+  Display: 0
+    logicalSize=1280x720
+        transform (ROT_0) (IDENTITY)
+    Windows:
+      0: name='4bb859c NavigationBar0', id=170, displayId=0, inputConfig=NOT_FOCUSABLE | TRUSTED_OVERLAY | WATCH_OUTSIDE_TOUCH | SLIPPERY, alpha=1.00, frame=[0,666][1280,720], globalScale=1.000000, applicationInfo.name=, applicationInfo.token=<null>, touchableRegion=[0,666][1280,720], ownerPid=1703, ownerUid=10108, dispatchingTimeout=5000ms, hasToken=true, touchOcclusionMode=BLOCK_UNTRUSTED
+        transform (ROT_0) (TRANSLATE)
+            1.0000  0.0000  -0.0000
+            0.0000  1.0000  -666.0000
+            0.0000  0.0000  1.0000
+      1: name='1477166 StatusBar', id=171, displayId=0, inputConfig=NOT_VISIBLE | NOT_FOCUSABLE | TRUSTED_OVERLAY, alpha=0.00, frame=[0,0][0,0], globalScale=1.000000, applicationInfo.name=, applicationInfo.token=<null>, touchableRegion=<empty>, ownerPid=1703, ownerUid=10108, dispatchingTimeout=5000ms, hasToken=true, touchOcclusionMode=BLOCK_UNTRUSTED
+        transform (ROT_0) (IDENTITY)
+      2: name='5591f41 com.android.permissioncontroller/com.android.permissioncontroller.permission.ui.GrantPermissionsActivity', id=210, displayId=0, inputConfig=0x0, alpha=1.00, frame=[288,171][992,495], globalScale=1.000000, applicationInfo.name=ActivityRecord{2076de3 u0 com.android.permissioncontroller/.permission.ui.GrantPermissionsActivity} t7}, applicationInfo.token=0x7f4b38b30410, touchableRegion=[0,0][1280,720], ownerPid=1132, ownerUid=10119, dispatchingTimeout=5000ms, hasToken=true, touchOcclusionMode=BLOCK_UNTRUSTED
+        transform (ROT_0) (TRANSLATE)
+            1.0000  -0.0000  -288.0000
+            -0.0000  1.0000  -171.0000
+            0.0000  0.0000  1.0000
+      3: name='Dim Layer for - Task=7#213', id=213, displayId=0, inputConfig=NO_INPUT_CHANNEL, alpha=0.60, frame=[0,0][1280,720], globalScale=1.000000, applicationInfo.name=, applicationInfo.token=<null>, touchableRegion=<empty>, ownerPid=278, ownerUid=1000, dispatchingTimeout=5000ms, hasToken=false, touchOcclusionMode=BLOCK_UNTRUSTED
+        transform (ROT_0) (IDENTITY)
+      4: name='736dd9d ActivityRecordInputSink com.android.permissioncontroller/.permission.ui.GrantPermissionsActivity', id=212, displayId=0, inputConfig=NO_INPUT_CHANNEL | NOT_FOCUSABLE | NOT_TOUCHABLE, alpha=1.00, frame=[0,0][0,0], globalScale=0.000000, applicationInfo.name=, applicationInfo.token=<null>, touchableRegion=[-12799,-7199][12800,7200], ownerPid=278, ownerUid=1000, dispatchingTimeout=0ms, hasToken=false, touchOcclusionMode=BLOCK_UNTRUSTED
+        transform (ROT_0) (IDENTITY)
+      5: name='fa260ec org.videolan.vlc/org.videolan.vlc.gui.MainActivity', id=196, displayId=0, inputConfig=0x0, alpha=1.00, frame=[0,0][1280,720], globalScale=1.000000, applicationInfo.name=ActivityRecord{e96748e u0 org.videolan.vlc/.gui.MainActivity} t7}, applicationInfo.token=0x7f4b38b2e730, touchableRegion=[0,0][1280,720], ownerPid=1624, ownerUid=10125, dispatchingTimeout=5000ms, hasToken=true, touchOcclusionMode=BLOCK_UNTRUSTED
+        transform (ROT_0) (IDENTITY)
+      6: name='fe66653 ActivityRecordInputSink org.videolan.vlc/.gui.MainActivity', id=199, displayId=0, inputConfig=NO_INPUT_CHANNEL | NOT_FOCUSABLE, alpha=1.00, frame=[0,0][0,0], globalScale=0.000000, applicationInfo.name=, applicationInfo.token=<null>, touchableRegion=[-12799,-7199][12800,7200], ownerPid=278, ownerUid=1000, dispatchingTimeout=0ms, hasToken=false, touchOcclusionMode=BLOCK_UNTRUSTED
+        transform (ROT_0) (IDENTITY)
+      7: name='Dim layer#175', id=175, displayId=0, inputConfig=NO_INPUT_CHANNEL | NOT_VISIBLE, alpha=1.00, frame=[1280,0][1280,0], globalScale=1.000000, applicationInfo.name=, applicationInfo.token=<null>, touchableRegion=<empty>, ownerPid=1703, ownerUid=10108, dispatchingTimeout=5000ms, hasToken=false, touchOcclusionMode=BLOCK_UNTRUSTED
+        transform (ROT_0) (TRANSLATE)
+            1.0000  0.0000  -1280.0000
+            0.0000  1.0000  -0.0000
+            0.0000  0.0000  1.0000
+      8: name='Dim layer#169', id=169, displayId=0, inputConfig=NO_INPUT_CHANNEL | NOT_VISIBLE, alpha=1.00, frame=[0,0][0,0], globalScale=1.000000, applicationInfo.name=, applicationInfo.token=<null>, touchableRegion=<empty>, ownerPid=1703, ownerUid=10108, dispatchingTimeout=5000ms, hasToken=false, touchOcclusionMode=BLOCK_UNTRUSTED
+        transform (ROT_0) (IDENTITY)
+      9: name='9664649 ActivityRecordInputSink com.android.launcher3/.uioverrides.QuickstepLauncher', id=100, displayId=0, inputConfig=NO_INPUT_CHANNEL | NOT_VISIBLE | NOT_FOCUSABLE | NOT_TOUCHABLE, alpha=1.00, frame=[0,0][0,0], globalScale=0.000000, applicationInfo.name=, applicationInfo.token=<null>, touchableRegion=[-12799,-7199][12800,7200], ownerPid=278, ownerUid=1000, dispatchingTimeout=0ms, hasToken=false, touchOcclusionMode=BLOCK_UNTRUSTED
+        transform (ROT_0) (IDENTITY)
+      10: name='Wallpaper BBQ wrapper#174', id=174, displayId=0, inputConfig=NO_INPUT_CHANNEL | NOT_VISIBLE, alpha=1.00, frame=[-63,-343][1856,1576], globalScale=1.000000, applicationInfo.name=, applicationInfo.token=<null>, touchableRegion=<empty>, ownerPid=1703, ownerUid=10108, dispatchingTimeout=5000ms, hasToken=false, touchOcclusionMode=BLOCK_UNTRUSTED
+        transform (ROT_0) (TRANSLATE)
+            1.0000  0.0000  64.0000
+            0.0000  1.0000  344.0000
+            0.0000  0.0000  1.0000
+      11: name='b6323e com.android.systemui.wallpapers.ImageWallpaper', id=173, displayId=0, inputConfig=NOT_VISIBLE | NOT_FOCUSABLE | NOT_TOUCHABLE | PREVENT_SPLITTING | IS_WALLPAPER, alpha=1.00, frame=[-63,-343][-63,-343], globalScale=1.000000, applicationInfo.name=, applicationInfo.token=<null>, touchableRegion=<empty>, ownerPid=1703, ownerUid=10108, dispatchingTimeout=5000ms, hasToken=true, touchOcclusionMode=BLOCK_UNTRUSTED
+        transform (ROT_0) (TRANSLATE)
+            1.0000  0.0000  64.0000
+            0.0000  1.0000  344.0000
+            0.0000  0.0000  1.0000
+  Global monitors on display 0:
+    0: 'PointerEventDispatcher0 (server)', 
+  RecentQueue: length=10
+    MotionEvent, age=62262ms
+    FocusEvent(hasFocus=true), age=61287ms
+    FocusEvent(hasFocus=false), age=61143ms
+    FocusEvent(hasFocus=true), age=60425ms
+    KeyEvent, age=28539ms
+    KeyEvent, age=28459ms
+    KeyEvent, age=27309ms
+    KeyEvent, age=27251ms
+    KeyEvent, age=26040ms
+    KeyEvent, age=25959ms
+  PendingEvent: <none>
+  InboundQueue: <empty>
+  ReplacedKeys: <empty>
+  CommandQueue: <empty>
+  Connections:
+    311: channelName='fa260ec org.videolan.vlc/org.videolan.vlc.gui.MainActivity (server)', windowName='fa260ec org.videolan.vlc/org.videolan.vlc.gui.MainActivity (server)', status=NORMAL, monitor=false, responsive=true
+      OutboundQueue: <empty>
+      WaitQueue: <empty>
+    367: channelName='b6323e com.android.systemui.wallpapers.ImageWallpaper (server)', windowName='b6323e com.android.systemui.wallpapers.ImageWallpaper (server)', status=NORMAL, monitor=false, responsive=true
+      OutboundQueue: <empty>
+      WaitQueue: <empty>
+    383: channelName='25169a5 com.android.launcher3/com.android.launcher3.uioverrides.QuickstepLauncher (server)', windowName='25169a5 com.android.launcher3/com.android.launcher3.uioverrides.QuickstepLauncher (server)', status=NORMAL, monitor=false, responsive=true
+      OutboundQueue: <empty>
+      WaitQueue: <empty>
+    357: channelName='6bfb75e ShellDropTarget (server)', windowName='6bfb75e ShellDropTarget (server)', status=NORMAL, monitor=false, responsive=true
+      OutboundQueue: <empty>
+      WaitQueue: <empty>
+    344: channelName='1477166 StatusBar (server)', windowName='1477166 StatusBar (server)', status=NORMAL, monitor=false, responsive=true
+      OutboundQueue: <empty>
+      WaitQueue: <empty>
+    364: channelName='5591f41 com.android.permissioncontroller/com.android.permissioncontroller.permission.ui.GrantPermissionsActivity (server)', windowName='5591f41 com.android.permissioncontroller/com.android.permissioncontroller.permission.ui.GrantPermissionsActivity (server)', status=NORMAL, monitor=false, responsive=true
+      OutboundQueue: <empty>
+      WaitQueue: <empty>
+    330: channelName='6d1901 ScreenDecorOverlayBottom (server)', windowName='6d1901 ScreenDecorOverlayBottom (server)', status=NORMAL, monitor=false, responsive=true
+      OutboundQueue: <empty>
+      WaitQueue: <empty>
+    319: channelName='dcab5d0 ScreenDecorOverlay (server)', windowName='dcab5d0 ScreenDecorOverlay (server)', status=NORMAL, monitor=false, responsive=true
+      OutboundQueue: <empty>
+      WaitQueue: <empty>
+    342: channelName='1a7a853 NotificationShade (server)', windowName='1a7a853 NotificationShade (server)', status=NORMAL, monitor=false, responsive=true
+      OutboundQueue: <empty>
+      WaitQueue: <empty>
+    309: channelName='recents_animation_input_consumer (server)', windowName='recents_animation_input_consumer (server)', status=NORMAL, monitor=false, responsive=true
+      OutboundQueue: <empty>
+      WaitQueue: <empty>
+    355: channelName='ea5cd9e InputMethod (server)', windowName='ea5cd9e InputMethod (server)', status=NORMAL, monitor=false, responsive=true
+      OutboundQueue: <empty>
+      WaitQueue: <empty>
+    339: channelName='4bb859c NavigationBar0 (server)', windowName='4bb859c NavigationBar0 (server)', status=NORMAL, monitor=false, responsive=true
+      OutboundQueue: <empty>
+      WaitQueue: <empty>
+    154: channelName='PointerEventDispatcher0 (server)', windowName='PointerEventDispatcher0 (server)', status=NORMAL, monitor=true, responsive=true
+      OutboundQueue: <empty>
+      WaitQueue: <empty>
+  AppSwitch: not pending
+  Configuration:
+    KeyRepeatDelay: 50ms
+    KeyRepeatTimeout: 400ms
+    LatencyTracker:
+      mTimelines.size() = 76
+      mEventTimes.size() = 76
+    LatencyAggregator:
+      Sketches:
+        mDownSketches[0]->num_values = 6 size = 0.0KB mMoveSketches[0]->num_values = 280 size = 0.3KB
+        mDownSketches[1]->num_values = 0 size = 0.0KB mMoveSketches[1]->num_values = 0 size = 0.0KB
+        mDownSketches[2]->num_values = 0 size = 0.0KB mMoveSketches[2]->num_values = 0 size = 0.0KB
+        mDownSketches[3]->num_values = 0 size = 0.0KB mMoveSketches[3]->num_values = 0 size = 0.0KB
+        mDownSketches[4]->num_values = 0 size = 0.0KB mMoveSketches[4]->num_values = 0 size = 0.0KB
+        mDownSketches[5]->num_values = 0 size = 0.0KB mMoveSketches[5]->num_values = 0 size = 0.0KB
+        mDownSketches[6]->num_values = 0 size = 0.0KB mMoveSketches[6]->num_values = 0 size = 0.0KB
+      mNumSketchEventsProcessed=286
+      mLastSlowEventTime=0
+      mNumEventsSinceLastSlowEventReport = 0
+      mNumSkippedSlowEvents = 0
+
+
+Input Manager Service (Java) State:
+  BatteryController: 0 battery listeners

@@ -1,0 +1,5 @@
+PARTIAL: the final direct query returned sys.boot_completed=1 before shutdown.
+The initial 1.9 GiB RAM trial also recorded SurfaceFlinger DEAD_OBJECT abort and System UI failure.
+The earlier blank property reads did not establish a permanent boot failure.
+No usable application or audio/video was verified in this initial trial.
+Container stopped and tty1 restored. See the separate post-upgrade h6-boot-probe trial.

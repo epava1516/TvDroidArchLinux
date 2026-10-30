@@ -1,0 +1,502 @@
+--------- beginning of system
+10-30 01:16:00.117   330   400 V SystemServerTimingAsync: InitThreadPoolExec:StartNativeSensorService took to complete: 531ms
+10-30 01:16:00.207   330   330 V SystemServerTiming: StartWebViewUpdateService took to complete: 215ms
+10-30 01:16:00.208   330   330 D SystemServerTiming: StartCachedDeviceStateService
+10-30 01:16:00.208   330   330 I SystemServiceManager: Starting com.android.server.CachedDeviceStateService
+10-30 01:16:00.208   330   330 V SystemServerTiming: StartCachedDeviceStateService took to complete: 0ms
+10-30 01:16:00.208   330   330 D SystemServerTiming: StartBinderCallsStatsService
+10-30 01:16:00.208   330   330 I SystemServiceManager: Starting com.android.server.BinderCallsStatsService$LifeCycle
+10-30 01:16:00.213   330   330 V SystemServerTiming: StartBinderCallsStatsService took to complete: 5ms
+10-30 01:16:00.213   330   330 D SystemServerTiming: StartLooperStatsService
+10-30 01:16:00.213   330   330 I SystemServiceManager: Starting com.android.server.LooperStatsService$Lifecycle
+10-30 01:16:00.213   330   330 V SystemServerTiming: StartLooperStatsService took to complete: 0ms
+10-30 01:16:00.213   330   330 D SystemServerTiming: StartRollbackManagerService
+10-30 01:16:00.214   330   330 I SystemServiceManager: Starting com.android.server.rollback.RollbackManagerService
+10-30 01:16:00.347   330   330 I PackageWatchdog: Syncing state, reason: added new observer
+10-30 01:16:00.347   330   330 I PackageWatchdog: Not pruning observers, elapsed time: 0ms
+10-30 01:16:00.347   330   330 I PackageWatchdog: Cancelling state sync, nothing to sync
+10-30 01:16:00.389   330   355 I PackageWatchdog: Saving observer state to file
+10-30 01:16:00.412   330   330 W SystemServiceManager: Service com.android.server.rollback.RollbackManagerService took 198 ms in onStart
+10-30 01:16:00.412   330   330 V SystemServerTiming: StartRollbackManagerService took to complete: 198ms
+10-30 01:16:00.412   330   330 D SystemServerTiming: StartNativeTombstoneManagerService
+10-30 01:16:00.413   330   330 I SystemServiceManager: Starting com.android.server.os.NativeTombstoneManagerService
+10-30 01:16:00.420   330   330 V SystemServerTiming: StartNativeTombstoneManagerService took to complete: 8ms
+10-30 01:16:00.420   330   330 D SystemServerTiming: StartBugreportManagerService
+10-30 01:16:00.421   330   330 I SystemServiceManager: Starting com.android.server.os.BugreportManagerService
+10-30 01:16:00.423   330   330 V SystemServerTiming: StartBugreportManagerService took to complete: 2ms
+10-30 01:16:00.423   330   330 D SystemServerTiming: GpuService
+10-30 01:16:00.423   330   330 I SystemServiceManager: Starting com.android.server.gpu.GpuService
+10-30 01:16:00.423   330   330 V SystemServerTiming: GpuService took to complete: 0ms
+10-30 01:16:00.423   330   330 V SystemServerTiming: startCoreServices took to complete: 842ms
+10-30 01:16:00.423   330   330 D SystemServerTiming: startOtherServices
+10-30 01:16:00.430   330   330 D SystemServerTiming: StartKeyAttestationApplicationIdProviderService
+10-30 01:16:00.434   330   409 D SystemServerTimingAsync: InitThreadPoolExec:SecondaryZygotePreload
+10-30 01:16:00.434   330   409 I SystemServer: SecondaryZygotePreload
+10-30 01:16:00.434   330   409 D SystemServerTimingAsync: SecondaryZygotePreload
+10-30 01:16:00.437   330   330 V SystemServerTiming: StartKeyAttestationApplicationIdProviderService took to complete: 6ms
+10-30 01:16:00.437   330   330 D SystemServerTiming: StartKeyChainSystemService
+10-30 01:16:00.437   330   330 I SystemServiceManager: Starting com.android.server.security.KeyChainSystemService
+10-30 01:16:00.449   330   330 V SystemServerTiming: StartKeyChainSystemService took to complete: 12ms
+10-30 01:16:00.449   330   330 D SystemServerTiming: StartBinaryTransparencyService
+10-30 01:16:00.449   330   330 I SystemServiceManager: Starting com.android.server.BinaryTransparencyService
+10-30 01:16:00.457   330   330 I TransparencyService: Started BinaryTransparencyService
+10-30 01:16:00.457   330   330 V SystemServerTiming: StartBinaryTransparencyService took to complete: 8ms
+10-30 01:16:00.457   330   330 D SystemServerTiming: StartSchedulingPolicyService
+10-30 01:16:00.463   330   352 D SystemServerTimingAsync: InitThreadPoolExec:SchedulingPolicyService.<init>
+10-30 01:16:00.464   330   330 V SystemServerTiming: StartSchedulingPolicyService took to complete: 7ms
+10-30 01:16:00.465   330   330 D SystemServerTiming: StartTelecomLoaderService
+10-30 01:16:00.465   330   330 I SystemServiceManager: Starting com.android.server.telecom.TelecomLoaderService
+10-30 01:16:00.465   330   330 V SystemServerTiming: StartTelecomLoaderService took to complete: 0ms
+10-30 01:16:00.465   330   330 D SystemServerTiming: StartTelephonyRegistry
+--------- beginning of main
+10-30 01:16:00.484   330   352 I SchedulingPolicyService: Moving 145 back to group default
+10-30 01:16:00.484   330   352 V SystemServerTimingAsync: InitThreadPoolExec:SchedulingPolicyService.<init> took to complete: 21ms
+10-30 01:16:00.492   330   330 V SystemServerTiming: StartTelephonyRegistry took to complete: 27ms
+10-30 01:16:00.492   330   330 D SystemServerTiming: StartEntropyMixer
+10-30 01:16:00.505   330   330 I EntropyMixer: Loaded existing seed file
+10-30 01:16:00.678   330   330 I EntropyMixer: Updated seed file
+10-30 01:16:00.679   330   330 V SystemServerTiming: StartEntropyMixer took to complete: 187ms
+10-30 01:16:00.679   330   330 D SystemServerTiming: StartAccountManagerService
+10-30 01:16:00.725   330   330 I SystemServiceManager: Starting com.android.server.accounts.AccountManagerService$Lifecycle
+10-30 01:16:01.102   330   330 D CompatibilityChangeReporter: Compat change id reported: 148180766; UID 1000; state: ENABLED
+10-30 01:16:01.159   330   330 W SystemServiceManager: Service com.android.server.accounts.AccountManagerService$Lifecycle took 434 ms in onStart
+10-30 01:16:01.159   330   330 V SystemServerTiming: StartAccountManagerService took to complete: 480ms
+10-30 01:16:01.163   330   330 D SystemServerTiming: StartContentService
+10-30 01:16:01.163   330   330 I SystemServiceManager: Starting com.android.server.content.ContentService$Lifecycle
+10-30 01:16:01.177   330   330 V SystemServerTiming: StartContentService took to complete: 14ms
+10-30 01:16:01.177   330   330 D SystemServerTiming: InstallSystemProviders
+10-30 01:16:01.582   235   300 D BootAnimation: Playing files = /product/media/bootanimation.zip/part1, Requested repeat = 0, playUntilComplete = true
+10-30 01:16:01.630    73    73 I Zygote  : Lazily preloading resources.
+10-30 01:16:01.633    73    73 D Zygote  : begin preload
+10-30 01:16:01.835    73    73 I Zygote  : Calling ZygoteHooks.beginPreload()
+10-30 01:16:02.528   330   330 W SettingsState: No settings state /data/system/users/0/settings_config.xml
+10-30 01:16:02.575   330   330 W SettingsState: No settings state /data/system/users/0/settings_ssaid.xml
+10-30 01:16:03.079    73    73 V ZygoteInitTiming_lazy: BeginPreload took to complete: 1446ms
+10-30 01:16:03.080    73    73 I Zygote  : Preloading classes...
+10-30 01:16:03.190   330   330 W ActivityManager: unable to read freezer info
+10-30 01:16:03.192   330   356 D ActivityManager: Freezer disabled
+10-30 01:16:03.192   330   330 V SystemServerTiming: InstallSystemProviders took to complete: 2015ms
+10-30 01:16:03.192   330   330 D SystemServerTiming: UpdateWatchdogTimeout
+10-30 01:16:03.193   330   330 I Watchdog: Watchdog timeout updated to 60000 millis
+10-30 01:16:03.193   330   330 V SystemServerTiming: UpdateWatchdogTimeout took to complete: 1ms
+10-30 01:16:03.194   330   330 D SystemServerTiming: StartDropBoxManager
+10-30 01:16:03.194   330   330 I SystemServiceManager: Starting com.android.server.DropBoxManagerService
+10-30 01:16:03.200   330   330 V SystemServerTiming: StartDropBoxManager took to complete: 6ms
+10-30 01:16:03.200   330   330 D SystemServerTiming: StartRoleManagerService
+10-30 01:16:03.205   330   330 I SystemServiceManager: Starting com.android.role.RoleService
+10-30 01:16:03.254   330   330 V SystemServerTiming: StartRoleManagerService took to complete: 53ms
+10-30 01:16:03.254   330   330 D SystemServerTiming: StartVibratorManagerService
+10-30 01:16:03.254   330   330 I SystemServiceManager: Starting com.android.server.vibrator.VibratorManagerService$Lifecycle
+10-30 01:16:03.290    19    19 I servicemanager: Could not find android.hardware.vibrator.IVibratorManager/default in the VINTF manifest.
+10-30 01:16:03.309    19    19 I servicemanager: Could not find android.hardware.vibrator.IVibrator/default in the VINTF manifest.
+10-30 01:16:03.395   330   330 W SystemServiceManager: Service com.android.server.vibrator.VibratorManagerService$Lifecycle took 141 ms in onStart
+10-30 01:16:03.396   330   330 V SystemServerTiming: StartVibratorManagerService took to complete: 142ms
+10-30 01:16:03.396   330   330 D SystemServerTiming: StartDynamicSystemService
+10-30 01:16:03.403   330   330 V SystemServerTiming: StartDynamicSystemService took to complete: 7ms
+10-30 01:16:03.403   330   330 D SystemServerTiming: StartConsumerIrService
+10-30 01:16:03.412    19    19 I servicemanager: Could not find android.hardware.ir.IConsumerIr/default in the VINTF manifest.
+10-30 01:16:03.413    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.ir@1.0::IConsumerIr/default in either framework or device VINTF manifest.
+10-30 01:16:03.418   330   330 V SystemServerTiming: StartConsumerIrService took to complete: 15ms
+10-30 01:16:03.418   330   330 D SystemServerTiming: StartResourceEconomy
+10-30 01:16:03.418   330   330 I SystemServiceManager: Starting com.android.server.tare.InternalResourceService
+10-30 01:16:03.554    73    73 I Typeface: Preloading /system/fonts/Roboto-Regular.ttf
+10-30 01:16:03.572   330   330 V SystemServerTiming: StartResourceEconomy took to complete: 154ms
+10-30 01:16:03.572   330   330 D SystemServerTiming: StartAlarmManagerService
+10-30 01:16:03.625   330   330 I SystemServiceManager: Starting com.android.server.alarm.AlarmManagerService
+10-30 01:16:03.639    73    73 I Typeface: Preloading /system/fonts/RobotoStatic-Regular.ttf
+10-30 01:16:03.727   330   330 D AlarmManagerService: Kernel timezone updated to 0 minutes west of GMT
+10-30 01:16:03.854   330   382 E SELinuxJNI: fileSelabelLookup => SELinux is disabled
+10-30 01:16:03.951    73    73 E ActivityRecognitionHardware: activity_recognition HAL is deprecated. class_init is effectively a no-op
+10-30 01:16:04.000   330   330 D CompatibilityChangeReporter: Compat change id reported: 160794467; UID 1000; state: ENABLED
+10-30 01:16:04.045   330   330 W SystemServiceManager: Service com.android.server.alarm.AlarmManagerService took 409 ms in onStart
+10-30 01:16:04.045   330   330 V SystemServerTiming: StartAlarmManagerService took to complete: 473ms
+10-30 01:16:04.045   330   330 D SystemServerTiming: StartInputManagerService
+10-30 01:16:04.183    70    88 I ServiceManager: Waiting for service 'statscompanion' on '/dev/binder'...
+10-30 01:16:04.279   330   330 I InputManager: Initializing input manager, mUseDevInputEventForAudioJack=false
+10-30 01:16:04.280   330   330 V SystemServerTiming: StartInputManagerService took to complete: 235ms
+10-30 01:16:04.280   330   330 D SystemServerTiming: DeviceStateManagerService
+10-30 01:16:04.280   330   330 I SystemServiceManager: Starting com.android.server.devicestate.DeviceStateManagerService
+10-30 01:16:04.357   330   330 V SystemServerTiming: DeviceStateManagerService took to complete: 76ms
+10-30 01:16:04.362   330   330 D SystemServerTiming: StartCameraServiceProxy
+10-30 01:16:04.366   330   330 I SystemServiceManager: Starting com.android.server.camera.CameraServiceProxy
+10-30 01:16:04.462   330   330 V SystemServerTiming: StartCameraServiceProxy took to complete: 100ms
+10-30 01:16:04.462   330   330 D SystemServerTiming: StartWindowManagerService
+10-30 01:16:04.462   330   330 I SystemServiceManager: Starting phase 200
+10-30 01:16:04.462   330   330 D SystemServerTiming: OnBootPhase_200
+10-30 01:16:04.462   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.security.FileIntegrityService
+10-30 01:16:04.462   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.security.FileIntegrityService took to complete: 0ms
+10-30 01:16:04.462   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.pm.Installer
+10-30 01:16:04.462   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.pm.Installer took to complete: 0ms
+10-30 01:16:04.462   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.os.DeviceIdentifiersPolicyService
+10-30 01:16:04.462   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.os.DeviceIdentifiersPolicyService took to complete: 0ms
+10-30 01:16:04.462   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.uri.UriGrantsManagerService$Lifecycle
+10-30 01:16:04.462   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.uri.UriGrantsManagerService$Lifecycle took to complete: 0ms
+10-30 01:16:04.462   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.powerstats.PowerStatsService
+10-30 01:16:04.462   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.powerstats.PowerStatsService took to complete: 0ms
+10-30 01:16:04.462   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.wm.ActivityTaskManagerService$Lifecycle
+10-30 01:16:04.462   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.wm.ActivityTaskManagerService$Lifecycle took to complete: 0ms
+10-30 01:16:04.462   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.am.ActivityManagerService$Lifecycle
+10-30 01:16:04.462   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.am.ActivityManagerService$Lifecycle took to complete: 0ms
+10-30 01:16:04.462   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.pm.DataLoaderManagerService
+10-30 01:16:04.462   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.pm.DataLoaderManagerService took to complete: 0ms
+10-30 01:16:04.462   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.power.PowerManagerService
+10-30 01:16:04.462   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.power.PowerManagerService took to complete: 0ms
+10-30 01:16:04.462   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.power.ThermalManagerService
+10-30 01:16:04.462   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.power.ThermalManagerService took to complete: 0ms
+10-30 01:16:04.462   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.power.hint.HintManagerService
+10-30 01:16:04.462   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.power.hint.HintManagerService took to complete: 0ms
+10-30 01:16:04.462   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.recoverysystem.RecoverySystemService$Lifecycle
+10-30 01:16:04.462   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.recoverysystem.RecoverySystemService$Lifecycle took to complete: 0ms
+10-30 01:16:04.462   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.lights.LightsService
+10-30 01:16:04.462   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.lights.LightsService took to complete: 0ms
+10-30 01:16:04.462   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.display.DisplayManagerService
+10-30 01:16:04.462   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.display.DisplayManagerService took to complete: 0ms
+10-30 01:16:04.462   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.pm.verify.domain.DomainVerificationService
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.pm.verify.domain.DomainVerificationService took to complete: 0ms
+10-30 01:16:04.463   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.pm.PackageInstallerService$Lifecycle
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.pm.PackageInstallerService$Lifecycle took to complete: 0ms
+10-30 01:16:04.463   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.pm.UserManagerService$LifeCycle
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.pm.UserManagerService$LifeCycle took to complete: 0ms
+10-30 01:16:04.463   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.om.OverlayManagerService
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.om.OverlayManagerService took to complete: 0ms
+10-30 01:16:04.463   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.resources.ResourcesManagerService
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.resources.ResourcesManagerService took to complete: 0ms
+10-30 01:16:04.463   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.sensorprivacy.SensorPrivacyService
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.sensorprivacy.SensorPrivacyService took to complete: 0ms
+10-30 01:16:04.463   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.sensors.SensorService
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.sensors.SensorService took to complete: 0ms
+10-30 01:16:04.463   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.SystemConfigService
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.SystemConfigService took to complete: 0ms
+10-30 01:16:04.463   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.BatteryService
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.BatteryService took to complete: 0ms
+10-30 01:16:04.463   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.usage.UsageStatsService
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.usage.UsageStatsService took to complete: 0ms
+10-30 01:16:04.463   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.webkit.WebViewUpdateService
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.webkit.WebViewUpdateService took to complete: 0ms
+10-30 01:16:04.463   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.CachedDeviceStateService
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.CachedDeviceStateService took to complete: 0ms
+10-30 01:16:04.463   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.BinderCallsStatsService$LifeCycle
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.BinderCallsStatsService$LifeCycle took to complete: 0ms
+10-30 01:16:04.463   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.LooperStatsService$Lifecycle
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.LooperStatsService$Lifecycle took to complete: 0ms
+10-30 01:16:04.463   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.rollback.RollbackManagerService
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.rollback.RollbackManagerService took to complete: 0ms
+10-30 01:16:04.463   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.os.NativeTombstoneManagerService
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.os.NativeTombstoneManagerService took to complete: 0ms
+10-30 01:16:04.463   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.os.BugreportManagerService
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.os.BugreportManagerService took to complete: 0ms
+10-30 01:16:04.463   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.gpu.GpuService
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.gpu.GpuService took to complete: 0ms
+10-30 01:16:04.463   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.security.KeyChainSystemService
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.security.KeyChainSystemService took to complete: 0ms
+10-30 01:16:04.463   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.BinaryTransparencyService
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.BinaryTransparencyService took to complete: 0ms
+10-30 01:16:04.463   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.telecom.TelecomLoaderService
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.telecom.TelecomLoaderService took to complete: 0ms
+10-30 01:16:04.463   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.accounts.AccountManagerService$Lifecycle
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.accounts.AccountManagerService$Lifecycle took to complete: 0ms
+10-30 01:16:04.463   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.content.ContentService$Lifecycle
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.content.ContentService$Lifecycle took to complete: 0ms
+10-30 01:16:04.463   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.DropBoxManagerService
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.DropBoxManagerService took to complete: 0ms
+10-30 01:16:04.463   330   330 D SystemServerTiming: OnBootPhase_200_com.android.role.RoleService
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.role.RoleService took to complete: 0ms
+10-30 01:16:04.463   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.vibrator.VibratorManagerService$Lifecycle
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.vibrator.VibratorManagerService$Lifecycle took to complete: 0ms
+10-30 01:16:04.463   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.tare.InternalResourceService
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.tare.InternalResourceService took to complete: 0ms
+10-30 01:16:04.463   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.alarm.AlarmManagerService
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.alarm.AlarmManagerService took to complete: 0ms
+10-30 01:16:04.463   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.devicestate.DeviceStateManagerService
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.devicestate.DeviceStateManagerService took to complete: 0ms
+10-30 01:16:04.463   330   330 D SystemServerTiming: OnBootPhase_200_com.android.server.camera.CameraServiceProxy
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200_com.android.server.camera.CameraServiceProxy took to complete: 0ms
+10-30 01:16:04.463   330   330 V SystemServerTiming: OnBootPhase_200 took to complete: 1ms
+10-30 01:16:04.481   330   330 I WindowManager: No existing display settings, starting empty
+10-30 01:16:04.482   330   330 I WindowManager: No existing display settings, starting empty
+10-30 01:16:04.589   330   348 I WindowTracing: Setting window tracing log level to 1
+10-30 01:16:04.589   330   348 I WindowTracing: Setting window tracing buffer capacity to 10485760bytes
+10-30 01:16:04.689   330   330 V SystemServerTiming: StartWindowManagerService took to complete: 227ms
+10-30 01:16:04.689   330   330 D SystemServerTiming: SetWindowManagerService
+10-30 01:16:04.865   330   330 I android_os_HwBinder: HwBinder: Starting hwbinderthread pool for getting: vendor.waydroid.window@1.2::IWaydroidWindow/default
+10-30 01:16:04.877   330   330 I ActivityTaskManager: Loaded persisted task ids for user 0
+10-30 01:16:04.981   330   330 V SystemServerTiming: SetWindowManagerService took to complete: 292ms
+10-30 01:16:04.994   330   330 D SystemServerTiming: WindowManagerServiceOnInitReady
+10-30 01:16:05.004   330   346 W Looper  : Slow dispatch took 112ms android.ui h=android.hardware.display.DisplayManagerGlobal$DisplayListenerDelegate c=null m=2
+10-30 01:16:05.061   330   346 I CameraManagerGlobal: Connecting to camera service
+10-30 01:16:05.586   330   346 W system_server: ClassLoaderContext parent mismatch.  (PCL[] | PCL[];PCL[/system/framework/com.android.location.provider.jar*1318803953:/system/framework/services.jar*2830159051:/system/framework/services.jar!classes2.dex*3103681395:/system/framework/org.lineageos.platform.jar*1336628185:/apex/com.android.adservices/javalib/service-adservices.jar*2971009261:/apex/com.android.adservices/javalib/service-sdksandbox.jar*2365422212:/apex/com.android.appsearch/javalib/service-appsearch.jar*794625567:/apex/com.android.art/javalib/service-art.jar*4047874299:/apex/com.android.media/javalib/service-media-s.jar*2629321376:/apex/com.android.permission/javalib/service-permission.jar*175911225])
+10-30 01:16:05.661   330   330 V SystemServerTiming: WindowManagerServiceOnInitReady took to complete: 666ms
+10-30 01:16:05.662   330   330 D SystemServerTiming: StartInputManager
+10-30 01:16:05.662   330   330 I InputManager: Starting input manager
+10-30 01:16:05.665   330   391 D SystemServerTimingAsync: InitThreadPoolExec:StartHidlServices
+10-30 01:16:05.665   330   391 D SystemServerTimingAsync: StartHidlServices
+10-30 01:16:05.680   330   346 W Looper  : Slow dispatch took 663ms android.ui h=android.os.Handler c=android.os.Handler$BlockingRunnable@68553c9 m=0
+10-30 01:16:05.699   330   391 I HidlServiceManagement: Registered android.frameworks.sensorservice@1.0::ISensorManager/default
+10-30 01:16:05.706   330   330 I InputManager: Enabling motion classifier because just booted: feature enabled, long press timeout = 400
+10-30 01:16:05.706   330   330 I InputClassifier: Enabling motion classifier
+10-30 01:16:05.715    19    19 I servicemanager: Could not find android.hardware.input.processor.IInputProcessor/default in the VINTF manifest.
+10-30 01:16:05.720   330   330 V SystemServerTiming: StartInputManager took to complete: 58ms
+10-30 01:16:05.720   330   330 D SystemServerTiming: DisplayManagerWindowManagerAndInputReady
+10-30 01:16:05.720   330   330 V SystemServerTiming: DisplayManagerWindowManagerAndInputReady took to complete: 0ms
+10-30 01:16:05.722   330   330 D SystemServerTiming: StartBluetoothService
+10-30 01:16:05.729   330   391 I HidlServiceManagement: Registered android.frameworks.schedulerservice@1.0::ISchedulingPolicyService/default
+10-30 01:16:05.730   330   391 V SystemServerTimingAsync: StartHidlServices took to complete: 65ms
+10-30 01:16:05.730   330   391 V SystemServerTimingAsync: InitThreadPoolExec:StartHidlServices took to complete: 65ms
+10-30 01:16:05.753   330   427 I InputClassifier: HAL android.hardware.input.processor.IInputProcessor/default is not declared
+10-30 01:16:06.097    73    73 D MtpDeviceJNI: register_android_mtp_MtpDevice
+10-30 01:16:06.097   330   330 I SystemServiceManager: Starting com.android.server.bluetooth.BluetoothService
+10-30 01:16:06.106    73    73 W MediaProfiles: Could not find a validated xml file. Using the default instance instead.
+10-30 01:16:06.121   330   330 D BluetoothManagerService: Loading stored name and address
+10-30 01:16:06.125   330   426 D EventHub: No input device configuration file found for device 'wayland_keyboard'.
+10-30 01:16:06.125   330   426 W EventHub: Could not run filesystem::canonical() due to error 2 : No such file or directory.
+10-30 01:16:06.127   330   330 D BluetoothManagerService: Stored bluetooth Name=null,Address=null
+10-30 01:16:06.138   330   330 D BluetoothManagerService: Bluetooth persisted state: 1
+10-30 01:16:06.138   330   330 D BluetoothManagerService: Startup: Bluetooth persisted state is ON.
+10-30 01:16:06.147   330   330 D BluetoothManagerService: Detected SystemUiUid: 10108
+10-30 01:16:06.147   330   330 V SystemServerTiming: StartBluetoothService took to complete: 425ms
+10-30 01:16:06.147   330   330 D SystemServerTiming: IpConnectivityMetrics
+10-30 01:16:06.148   330   330 I SystemServiceManager: Starting com.android.server.connectivity.IpConnectivityMetrics
+10-30 01:16:06.149   330   330 V SystemServerTiming: IpConnectivityMetrics took to complete: 2ms
+10-30 01:16:06.149   330   330 D SystemServerTiming: NetworkWatchlistService
+10-30 01:16:06.149   330   330 I SystemServiceManager: Starting com.android.server.net.watchlist.NetworkWatchlistService$Lifecycle
+10-30 01:16:06.260   330   330 I WatchlistSettings: Reload watchlist settings done
+10-30 01:16:06.275   330   330 W SystemServiceManager: Service com.android.server.net.watchlist.NetworkWatchlistService$Lifecycle took 126 ms in onStart
+10-30 01:16:06.275   330   330 V SystemServerTiming: NetworkWatchlistService took to complete: 126ms
+10-30 01:16:06.275   330   330 D SystemServerTiming: PinnerService
+10-30 01:16:06.278   330   330 I SystemServiceManager: Starting com.android.server.PinnerService
+10-30 01:16:06.291   330   330 V HistoricalRegistry: Interaction before persistence initialized
+10-30 01:16:06.326   330   430 I WatchlistLoggingHandler: Start aggregating watchlist records.
+10-30 01:16:06.338   330   330 V SystemServerTiming: PinnerService took to complete: 63ms
+10-30 01:16:06.362   330   330 D SystemServerTiming: SignedConfigService
+10-30 01:16:06.362   330   330 V SystemServerTiming: SignedConfigService took to complete: 0ms
+10-30 01:16:06.363   330   330 D SystemServerTiming: AppIntegrityService
+10-30 01:16:06.363   330   330 I SystemServiceManager: Starting com.android.server.integrity.AppIntegrityManagerService
+10-30 01:16:06.437   330   330 E IntegrityFileManager: Error creating staging and rules directory
+10-30 01:16:06.449   330   330 W SystemServiceManager: Service com.android.server.integrity.AppIntegrityManagerService took 86 ms in onStart
+10-30 01:16:06.449   330   330 V SystemServerTiming: AppIntegrityService took to complete: 86ms
+10-30 01:16:06.449   330   330 D SystemServerTiming: StartLogcatManager
+10-30 01:16:06.449   330   330 I SystemServiceManager: Starting com.android.server.logcat.LogcatManagerService
+10-30 01:16:06.478   330   330 V SystemServerTiming: StartLogcatManager took to complete: 29ms
+10-30 01:16:06.514   330   426 W EventHub: Unable to disable kernel key repeat for /dev/input/wl_keyboard_events: Inappropriate ioctl for device
+10-30 01:16:06.514   330   426 I EventHub: usingClockIoctl=false
+10-30 01:16:06.514   330   426 I EventHub: New device: id=1, fd=161, path='/dev/input/wl_keyboard_events', name='wayland_keyboard', classes=KEYBOARD | ALPHAKEY | DPAD, configuration='', keyLayout='/system/usr/keylayout/Generic.kl', keyCharacterMap='/system/usr/keychars/Generic.kcm', builtinKeyboard=false, 
+10-30 01:16:06.546   330   426 D EventHub: No input device configuration file found for device 'wayland_pointer'.
+10-30 01:16:06.547   330   426 W EventHub: Could not run filesystem::canonical() due to error 2 : No such file or directory.
+10-30 01:16:06.557   330   426 I EventHub: usingClockIoctl=false
+10-30 01:16:06.558   330   426 I EventHub: New device: id=2, fd=170, path='/dev/input/wl_pointer_events', name='wayland_pointer', classes=CURSOR, configuration='', keyLayout='', keyCharacterMap='', builtinKeyboard=false, 
+10-30 01:16:06.614   330   426 I InputReader: Device added: id=-1, eventHubId=-1, name='Virtual', descriptor='a718a782d34bc767f4689c232d64d527998ea7fd',sources=KEYBOARD | DPAD
+10-30 01:16:06.618    73    73 I zygote  : Thread[1,tid=73,Native,Thread*=0xeffc0010,peer=0x12d00390,"main"] recursive attempt to load library "librtp_jni.so"
+10-30 01:16:06.618   330   426 W InputReader: Can't find the designated viewport with ID 0 to update cursor input mapper. Fall back to default display
+10-30 01:16:06.618   330   426 E InputReader: Still can't find a viable viewport to update cursor input mapper. Skip setting it to PointerController.
+10-30 01:16:06.618   330   426 I InputReader: Device added: id=2, eventHubId=2, name='wayland_pointer', descriptor='e2bba247c0bb03e689fa51552a5f2b8f9f22a09d',sources=MOUSE
+10-30 01:16:06.619   330   426 I InputReader: Device added: id=3, eventHubId=1, name='wayland_keyboard', descriptor='248b7bc701fffde6eccdbead7f6d171589e957cc',sources=KEYBOARD | DPAD
+10-30 01:16:06.689   330   330 I WindowManager: SAFE MODE not enabled
+10-30 01:16:06.690   330   330 D SystemServerTiming: StartInputMethodManagerLifecycle
+10-30 01:16:06.691   330   330 I SystemServiceManager: Starting com.android.server.inputmethod.InputMethodManagerService$Lifecycle
+10-30 01:16:06.942   330   330 V SystemServerTiming: StartInputMethodManagerLifecycle took to complete: 251ms
+10-30 01:16:06.942   330   330 D SystemServerTiming: StartAccessibilityManagerService
+10-30 01:16:06.942   330   330 I SystemServiceManager: Starting com.android.server.accessibility.AccessibilityManagerService$Lifecycle
+10-30 01:16:06.953   330   330 V SystemServerTiming: StartAccessibilityManagerService took to complete: 10ms
+10-30 01:16:06.953   330   330 D SystemServerTiming: MakeDisplayReady
+10-30 01:16:06.995   330   330 I ActivityTaskManager: Config changes=20005df8 {1.0 ?mcc?mnc [en_US] ldltr sw640dp w1138dp h640dp 180dpi lrg long land ?uimode ?night -touch qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1280, 720) mAppBounds=Rect(0, 0 - 1280, 720) mMaxBounds=Rect(0, 0 - 1280, 720) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.2 ?fontWeightAdjustment}
+10-30 01:16:06.998   330   330 I WindowManager: Override config changes=60007dfc {1.0 ?mcc?mnc [en_US] ldltr sw640dp w1138dp h640dp 180dpi lrg long land ?uimode ?night -touch qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1280, 720) mAppBounds=Rect(0, 0 - 1280, 720) mMaxBounds=Rect(0, 0 - 1280, 720) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.2 ?fontWeightAdjustment} for displayId=0
+10-30 01:16:07.032   330   330 I DisplayDevice: [0] Layerstack set to 0 for local:0
+10-30 01:16:07.108   330   330 V SystemServerTiming: MakeDisplayReady took to complete: 155ms
+10-30 01:16:07.108   330   330 D SystemServerTiming: StartStorageManagerService
+10-30 01:16:07.131   330   330 I SystemServiceManager: Starting com.android.server.StorageManagerService$Lifecycle
+10-30 01:16:07.134   330   346 W system_server: Long monitor contention with owner main (330) at android.content.res.Configuration com.android.server.wm.WindowManagerService.computeNewConfiguration(int)(WindowManagerService.java:5088) waiters=1 in void com.android.server.wm.RootWindowContainer.onDisplayChanged(int) for 110ms
+10-30 01:16:07.135   330   346 W Looper  : Slow dispatch took 111ms android.ui h=android.hardware.display.DisplayManagerGlobal$DisplayListenerDelegate c=null m=2
+10-30 01:16:07.146   330   348 W system_server: Long monitor contention with owner main (330) at android.content.res.Configuration com.android.server.wm.WindowManagerService.computeNewConfiguration(int)(WindowManagerService.java:5088) waiters=0 in void com.android.server.wm.WindowManagerService.notifyHardKeyboardStatusChange() for 140ms
+10-30 01:16:07.148   330   348 I InputManager-JNI: Viewport [0] to add: local:0, isActive: false
+10-30 01:16:07.149   330   426 I InputReader: Reconfiguring input devices, changes=DISPLAY_INFO | 
+10-30 01:16:07.412   330   433 D StorageManagerService: Thinking about init, mBootCompleted=false, mDaemonConnected=true
+10-30 01:16:07.412   330   433 D StorageManagerService: Thinking about reset, mBootCompleted=false, mDaemonConnected=true
+10-30 01:16:08.372   330   330 W SystemServiceManager: Service com.android.server.StorageManagerService$Lifecycle took 1241 ms in onStart
+10-30 01:16:08.381   330   433 D StorageManagerService: Thinking about init, mBootCompleted=false, mDaemonConnected=true
+10-30 01:16:08.382   330   433 D StorageManagerService: Thinking about reset, mBootCompleted=false, mDaemonConnected=true
+10-30 01:16:08.390   330   330 V SystemServerTiming: StartStorageManagerService took to complete: 1282ms
+10-30 01:16:08.390   330   330 D SystemServerTiming: StartStorageStatsService
+10-30 01:16:08.390   330   330 I SystemServiceManager: Starting com.android.server.usage.StorageStatsService$Lifecycle
+10-30 01:16:08.970   330   330 W SystemServiceManager: Service com.android.server.usage.StorageStatsService$Lifecycle took 580 ms in onStart
+10-30 01:16:08.973   330   330 V SystemServerTiming: StartStorageStatsService took to complete: 583ms
+10-30 01:16:08.973   330   330 D SystemServerTiming: StartUiModeManager
+10-30 01:16:08.973   330   330 I SystemServiceManager: Starting com.android.server.UiModeManagerService
+10-30 01:16:09.231    70    88 W ServiceManager: Service statscompanion didn't start. Returning NULL
+10-30 01:16:09.401   330   400 D SystemServerTimingAsync: InitThreadPoolExec:UiModeManager.onStart
+10-30 01:16:09.402   330   330 V SystemServerTiming: StartUiModeManager took to complete: 429ms
+10-30 01:16:09.426   330   330 D SystemServerTiming: StartLocaleManagerService
+10-30 01:16:09.426   330   330 I SystemServiceManager: Starting com.android.server.locales.LocaleManagerService
+10-30 01:16:09.698   330   400 V SystemServerTimingAsync: InitThreadPoolExec:UiModeManager.onStart took to complete: 297ms
+10-30 01:16:09.714   330   345 W Looper  : Slow dispatch took 215ms android.fg h=android.os.Handler c=com.android.server.om.IdmapDaemon$Connection$$ExternalSyntheticLambda0@adf4f49 m=0
+10-30 01:16:10.054    70    88 E statsd  : Uid 1000 does not have the android.permission.REGISTER_STATS_PULL_ATOM permission when registering atom 10110 (-1)
+10-30 01:16:11.266   330   330 W system_server: Long monitor contention with owner android.io (347) at int com.android.server.am.ActivityManagerService.bindServiceInstance(android.app.IApplicationThread, android.os.IBinder, android.content.Intent, java.lang.String, android.app.IServiceConnection, int, java.lang.String, boolean, int, java.lang.String, java.lang.String, int)(ActivityManagerService.java:12778) waiters=0 in android.content.Intent com.android.server.am.ActivityManagerService.registerReceiverWithFeature(android.app.IApplicationThread, java.lang.String, java.lang.String, java.lang.String, android.content.IIntentReceiver, android.content.IntentFilter, java.lang.String, int, int) for 970ms
+10-30 01:16:11.317   330   330 V SystemServerTiming: StartLocaleManagerService took to complete: 1891ms
+10-30 01:16:11.317   330   330 D SystemServerTiming: UpdatePackagesIfNeeded
+10-30 01:16:11.317   330   330 I Watchdog: Pausing HandlerChecker: main thread for reason: dexopt. Pause count: 1
+10-30 01:16:11.324   330   330 I Watchdog: Resuming HandlerChecker: main thread for reason: dexopt. Pause count: 0
+10-30 01:16:11.326   330   330 V SystemServerTiming: UpdatePackagesIfNeeded took to complete: 9ms
+10-30 01:16:11.326   330   330 D SystemServerTiming: PerformFstrimIfNeeded
+10-30 01:16:11.331   330   330 V SystemServerTiming: PerformFstrimIfNeeded took to complete: 5ms
+10-30 01:16:11.336   330   330 D SystemServerTiming: StartLockSettingsService
+10-30 01:16:11.336   330   330 I SystemServiceManager: Starting com.android.server.locksettings.LockSettingsService$Lifecycle
+10-30 01:16:11.876   330   330 W SystemServiceManager: Service com.android.server.locksettings.LockSettingsService$Lifecycle took 540 ms in onStart
+10-30 01:16:11.888   330   330 V SystemServerTiming: StartLockSettingsService took to complete: 552ms
+10-30 01:16:11.889   330   330 D SystemServerTiming: StartTestHarnessMode
+10-30 01:16:11.889   330   330 I SystemServiceManager: Starting com.android.server.testharness.TestHarnessModeService
+10-30 01:16:11.907   330   330 V SystemServerTiming: StartTestHarnessMode took to complete: 18ms
+10-30 01:16:11.975    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.oemlock@1.0::IOemLock/default in either framework or device VINTF manifest.
+10-30 01:16:11.976   330   330 I OemLock : OemLock HAL not present on device
+10-30 01:16:11.976   330   330 D SystemServerTiming: StartDeviceIdleController
+10-30 01:16:11.976   330   330 I SystemServiceManager: Starting com.android.server.DeviceIdleController
+10-30 01:16:12.056   330   330 W SystemServiceManager: Service com.android.server.DeviceIdleController took 69 ms in onStart
+10-30 01:16:12.056   330   330 V SystemServerTiming: StartDeviceIdleController took to complete: 80ms
+10-30 01:16:12.056   330   330 D SystemServerTiming: StartDevicePolicyManager
+10-30 01:16:12.056   330   330 I SystemServiceManager: Starting com.android.server.devicepolicy.DevicePolicyManagerService$Lifecycle
+10-30 01:16:12.285   330   330 I DevicePolicyManager: Current version 3, latest version 3, not upgrading.
+10-30 01:16:12.700   330   330 D DevicePolicyManagerService: /data/system/updated_resources.xml doesn't exist
+10-30 01:16:12.766   330   330 V SystemServerTiming: StartDevicePolicyManager took to complete: 710ms
+10-30 01:16:12.804   330   330 D SystemServerTiming: StartStatusBarManagerService
+10-30 01:16:12.821   330   330 V SystemServerTiming: StartStatusBarManagerService took to complete: 16ms
+10-30 01:16:12.835   330   330 D SystemServer: MusicRecognitionManagerService not defined by OEM or disabled by flag
+10-30 01:16:12.835   330   330 D SystemServer: ContentCaptureService disabled because resource is not overlaid
+10-30 01:16:12.837   330   330 D SystemServer: AttentionService is not configured on this device
+10-30 01:16:12.837   330   330 D SystemServer: RotationResolverService is not configured on this device
+10-30 01:16:12.837   330   330 D SystemServer: SystemCaptionsManagerService disabled because resource is not overlaid
+10-30 01:16:12.837   330   330 D SystemServerTiming: StartTextToSpeechManagerService
+10-30 01:16:12.837   330   330 I SystemServiceManager: Starting com.android.server.texttospeech.TextToSpeechManagerService
+10-30 01:16:12.882   330   330 V SystemServerTiming: StartTextToSpeechManagerService took to complete: 45ms
+10-30 01:16:12.883   330   330 D SystemServerTiming: StartAmbientContextService
+10-30 01:16:12.884   330   330 I SystemServiceManager: Starting com.android.server.ambientcontext.AmbientContextManagerService
+10-30 01:16:12.985   330   330 W SystemServiceManager: Service com.android.server.ambientcontext.AmbientContextManagerService took 101 ms in onStart
+10-30 01:16:12.988   330   330 V SystemServerTiming: StartAmbientContextService took to complete: 104ms
+10-30 01:16:13.204   330   330 D SystemServerTiming: StartSpeechRecognitionManagerService
+10-30 01:16:13.215   330   330 I SystemServiceManager: Starting com.android.server.speech.SpeechRecognitionManagerService
+10-30 01:16:13.241   330   330 V SystemServerTiming: StartSpeechRecognitionManagerService took to complete: 27ms
+10-30 01:16:13.243   330   330 D SystemServer: AppPredictionService not defined by OEM
+10-30 01:16:13.243   330   330 D SystemServer: ContentSuggestionsService not defined by OEM
+10-30 01:16:13.243   330   330 D SystemServerTiming: StartSearchUiService
+10-30 01:16:13.243   330   330 I SystemServiceManager: Starting com.android.server.searchui.SearchUiManagerService
+10-30 01:16:13.283   330   330 V SystemServerTiming: StartSearchUiService took to complete: 40ms
+10-30 01:16:13.283   330   330 D SystemServerTiming: StartSmartspaceService
+10-30 01:16:13.283   330   330 I SystemServiceManager: Starting com.android.server.smartspace.SmartspaceManagerService
+10-30 01:16:13.296   330   330 V SystemServerTiming: StartSmartspaceService took to complete: 12ms
+10-30 01:16:13.298   330   330 D SystemServerTiming: InitConnectivityModuleConnector
+10-30 01:16:13.350   330   330 D ConnectivityModuleConnector: Network stack init
+10-30 01:16:13.428   330   330 V SystemServerTiming: InitConnectivityModuleConnector took to complete: 77ms
+10-30 01:16:13.428   330   330 D SystemServerTiming: InitNetworkStackClient
+10-30 01:16:13.429   330   330 V SystemServerTiming: InitNetworkStackClient took to complete: 0ms
+10-30 01:16:13.429   330   330 D SystemServerTiming: StartNetworkManagementService
+10-30 01:16:15.386   330   345 W Looper  : Slow dispatch took 1835ms android.fg h=android.os.Handler c=com.android.server.Watchdog$HandlerChecker@5ef2c64 m=0
+10-30 01:16:15.540   330   330 V SystemServerTiming: StartNetworkManagementService took to complete: 2111ms
+10-30 01:16:15.540   330   330 D SystemServerTiming: StartFontManagerService
+10-30 01:16:16.216   330   330 V SystemServerTiming: StartFontManagerService took to complete: 676ms
+10-30 01:16:16.216   330   330 D SystemServerTiming: StartTextServicesManager
+10-30 01:16:16.216   330   330 I SystemServiceManager: Starting com.android.server.textservices.TextServicesManagerService$Lifecycle
+10-30 01:16:16.310   330   330 V SystemServerTiming: StartTextServicesManager took to complete: 94ms
+10-30 01:16:16.311   330   330 D SystemServerTiming: StartTextClassificationManagerService
+10-30 01:16:16.312   330   330 I SystemServiceManager: Starting com.android.server.textclassifier.TextClassificationManagerService$Lifecycle
+10-30 01:16:16.313   330   330 V SystemServerTiming: StartTextClassificationManagerService took to complete: 1ms
+10-30 01:16:16.313   330   330 D SystemServerTiming: StartNetworkScoreService
+10-30 01:16:16.313   330   330 I SystemServiceManager: Starting com.android.server.NetworkScoreService$Lifecycle
+10-30 01:16:16.487   330   330 I NetworkScoreService: Registering network_score
+10-30 01:16:16.488   330   330 W SystemServiceManager: Service com.android.server.NetworkScoreService$Lifecycle took 88 ms in onStart
+10-30 01:16:16.488   330   330 V SystemServerTiming: StartNetworkScoreService took to complete: 175ms
+10-30 01:16:16.488   330   330 D SystemServerTiming: StartNetworkStatsService
+10-30 01:16:16.702   330   330 I SystemServiceManager: Starting com.android.server.NetworkStatsServiceInitializer
+10-30 01:16:17.631   330   330 I NetworkStatsServiceInitializer: Registering netstats
+10-30 01:16:17.655   330   330 V SystemServerTiming: StartNetworkStatsService took to complete: 1167ms
+10-30 01:16:17.655   330   330 D SystemServerTiming: StartNetworkPolicyManagerService
+10-30 01:16:19.815    73    73 W Zygote  : Class not found for preloading: com.android.internal.telephony.ServiceStateTracker$$ExternalSyntheticLambda6
+10-30 01:16:22.144   330   330 V SystemServerTiming: StartNetworkPolicyManagerService took to complete: 4489ms
+10-30 01:16:22.144   330   330 D SystemServerTiming: StartWifi
+10-30 01:16:22.348   235   300 D BootAnimation: Playing files = /product/media/bootanimation.zip/part1, Requested repeat = 0, playUntilComplete = true
+10-30 01:16:22.699   330   330 I SystemServiceManager: Starting com.android.server.wifi.WifiService
+10-30 01:16:24.739   330   330 I WifiContext: Got resolveInfos for com.android.server.wifi.intent.action.SERVICE_WIFI_RESOURCES_APK: [ResolveInfo{9080445 com.android.wifi.resources/android.app.Activity m=0x108000}]
+10-30 01:16:24.786   330   330 I WifiContext: Found Wifi Resources APK at: com.android.wifi.resources
+10-30 01:16:25.117    73    73 I Zygote  : ...preloaded 16430 classes in 21958ms.
+10-30 01:16:25.127    73    73 V ZygoteInitTiming_lazy: PreloadClasses took to complete: 22048ms
+10-30 01:16:25.896   330   330 D ScanMetrics: Settings package: com.android.settings
+10-30 01:16:25.899   330   330 E ScanMetrics: Can't get GMS uid
+10-30 01:16:26.112    19    19 I servicemanager: Could not find android.hardware.wifi.supplicant.ISupplicant/default in the VINTF manifest.
+10-30 01:16:26.268   330   330 I android_os_HwBinder: HwBinder: Starting hwbinderthread pool for getting: android.hidl.manager@1.0::IServiceManager/default
+10-30 01:16:26.414    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.wifi.supplicant@1.0::ISupplicant/default in either framework or device VINTF manifest.
+10-30 01:16:26.417   330   330 E SupplicantStaIfaceHal: No HIDL or AIDL service available for SupplicantStaIfaceHal.
+10-30 01:16:26.419   330   330 E SupplicantStaIfaceHal: Failed to get internal ISupplicantStaIfaceHal instance.
+10-30 01:16:26.423    19    19 I servicemanager: Could not find android.hardware.wifi.supplicant.ISupplicant/default in the VINTF manifest.
+10-30 01:16:26.448   330   330 I android_os_HwBinder: HwBinder: Starting hwbinderthread pool for getting: android.hidl.manager@1.0::IServiceManager/default
+10-30 01:16:26.530    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.wifi.supplicant@1.0::ISupplicant/default in either framework or device VINTF manifest.
+10-30 01:16:26.536   330   330 E SupplicantP2pIfaceHal: No HIDL or AIDL service available for SupplicantP2pIfaceHal.
+10-30 01:16:26.536   330   330 E SupplicantP2pIfaceHal: Failed to get internal ISupplicantP2pIfaceHal instance.
+10-30 01:16:26.559   330   330 I WifiCoexManager: Default coex algorithm is disabled.
+10-30 01:16:26.981   330   356 I DropBoxManagerService: add tag=system_server_wtf isTagEnabled=true flags=0x2
+10-30 01:16:27.332    73    73 D ApplicationLoaders: Created zygote-cached class loader: /system/framework/android.hidl.base-V1.0-java.jar
+10-30 01:16:27.682   330   356 I DropBoxManagerService: add tag=system_server_wtf isTagEnabled=true flags=0x2
+10-30 01:16:27.787    73    73 D ApplicationLoaders: Created zygote-cached class loader: /system/framework/android.hidl.manager-V1.0-java.jar
+10-30 01:16:27.793   330   330 E SupplicantStaIfaceHal: Cannot call registerDppCallback because HAL object is null.
+10-30 01:16:27.802   330   330 D WifiOpenNetworkNotifier: Settings toggle enabled=true
+10-30 01:16:27.822    73    73 D ApplicationLoaders: Created zygote-cached class loader: /system/framework/android.test.base.jar
+10-30 01:16:27.822    73    73 V ZygoteInitTiming_lazy: CacheNonBootClasspathClassLoaders took to complete: 2688ms
+10-30 01:16:27.822    73    73 I Zygote  : Preloading resources...
+10-30 01:16:27.891   330   330 D WifiNl80211Manager: registerCountryCodeEventListener called
+10-30 01:16:27.891   330   330 D WifiCountryCode: Default country code from system property ro.boot.wificountrycode is null
+10-30 01:16:27.998   330   330 D WakeupController: WifiWake enabled
+10-30 01:16:28.062   330   330 V HistoricalRegistry: Interaction before persistence initialized
+10-30 01:16:28.201   330   330 I WifiService: Registering wifi
+10-30 01:16:28.214   128   128 I wificond: New wificond event callback registered
+10-30 01:16:28.245   330   330 V SystemServerTiming: StartWifi took to complete: 6101ms
+10-30 01:16:28.245   330   330 D SystemServerTiming: StartWifiScanning
+10-30 01:16:28.245   330   330 I SystemServiceManager: Starting com.android.server.wifi.scanner.WifiScanningService
+10-30 01:16:28.247   330   330 I WifiScanningService: Creating wifiscanner
+10-30 01:16:28.274   330   330 I WifiScanningService: Publishing wifiscanner
+10-30 01:16:28.274   330   330 V SystemServerTiming: StartWifiScanning took to complete: 29ms
+10-30 01:16:28.274   330   330 D SystemServerTiming: StartPacProxyService
+10-30 01:16:28.325   330   330 V SystemServerTiming: StartPacProxyService took to complete: 50ms
+10-30 01:16:28.325   330   330 D SystemServerTiming: StartConnectivityService
+10-30 01:16:28.329   330   330 I SystemServiceManager: Starting com.android.server.ConnectivityServiceInitializer
+10-30 01:16:29.156    73    73 W Resources: Preloaded drawable resource #0x108028e (android:drawable/dialog_background_material) that varies with configuration!!
+10-30 01:16:29.564    73    73 I Zygote  : ...preloaded 64 resources in 1742ms.
+10-30 01:16:29.579    73    73 I Zygote  : ...preloaded 41 resources in 14ms.
+10-30 01:16:29.908    73    73 I Zygote  : ...preloaded 8 resource in 329ms.
+10-30 01:16:29.913    73    73 V ZygoteInitTiming_lazy: PreloadResources took to complete: 2091ms
+10-30 01:16:32.234    73    73 D libEGL  : loaded /vendor/lib/egl/libEGL_angle.so
+10-30 01:16:32.248    73    73 D libEGL  : loaded /vendor/lib/egl/libGLESv1_CM_angle.so
+10-30 01:16:32.281   330   330 D EthernetTracker: Interface match regexp set to 'eth\d'
+10-30 01:16:32.289    73    73 D libEGL  : loaded /vendor/lib/egl/libGLESv2_angle.so
+10-30 01:16:32.594   330   330 D ConnectivityService: ConnectivityService starting up
+10-30 01:16:32.694    73    73 D libEGL  : dlopen (libGLESv2_angle.so) success at 0x3415dc4b
+10-30 01:16:32.695    73    73 I Zygote  : Preloading shared libraries...
+10-30 01:16:34.305   330   330 E ConnectivityService: Ignoring protectedNetwork 10
+10-30 01:16:34.308   330   330 E ConnectivityService: Ignoring protectedNetwork 11
+10-30 01:16:34.308   330   330 E ConnectivityService: Ignoring protectedNetwork 12
+10-30 01:16:34.308   330   330 E ConnectivityService: Ignoring protectedNetwork 14
+10-30 01:16:34.308   330   330 E ConnectivityService: Ignoring protectedNetwork 15
+10-30 01:16:34.649   235   300 D BootAnimation: Playing files = /product/media/bootanimation.zip/part1, Requested repeat = 0, playUntilComplete = true
+10-30 01:16:34.653    73    73 E zygote  : Unable to find pattern file or unable to map it for am
+10-30 01:16:35.235    73    73 I Zygote  : Called ZygoteHooks.endPreload()
+10-30 01:16:35.396    73    73 I Zygote  : Installed AndroidKeyStoreProvider in 161ms.
+10-30 01:16:35.401    73    73 I Zygote  : Warmed up JCA providers in 5ms.
+10-30 01:16:35.401    73    73 D Zygote  : end preload
+10-30 01:16:35.704   330   409 V SystemServerTimingAsync: SecondaryZygotePreload took to complete: 35270ms
+10-30 01:16:35.778   330   409 V SystemServerTimingAsync: InitThreadPoolExec:SecondaryZygotePreload took to complete: 35344ms
+10-30 01:16:35.878   330   330 D CompatibilityChangeReporter: Compat change id reported: 182478738; UID 1000; state: ENABLED
+10-30 01:16:36.156   330   330 D ConnectivityNativeService: Attached BPF_CGROUP_INET4_BIND and BPF_CGROUP_INET6_BIND programs
+10-30 01:16:36.661   330   330 W UnsafeUtil: platform method missing - proto runtime falling back to safer methods: java.lang.NoSuchMethodException: sun.misc.Unsafe.copyMemory [class java.lang.Object, long, class java.lang.Object, long, long]
+10-30 01:16:36.851   330   330 I ConnectivityServiceInitializer: Registering ethernet
+10-30 01:16:36.857   330   330 I ConnectivityServiceInitializer: Registering connectivity
+10-30 01:16:36.862   330   330 I ConnectivityServiceInitializer: Registering ipsec
+10-30 01:16:36.863   330   330 I ConnectivityServiceInitializer: Registering connectivity_native
+10-30 01:16:36.864   330   330 I ConnectivityServiceInitializer: Registering servicediscovery
+10-30 01:16:36.883   330   330 I ConnectivityServiceInitializer: Registering nearby
+10-30 01:16:37.047   330   330 V SystemServerTiming: StartConnectivityService took to complete: 8722ms
+10-30 01:16:37.047   330   330 D SystemServerTiming: StartVpnManagerService
+10-30 01:16:37.443   330   330 D VpnManagerService: VpnManagerService starting up
+10-30 01:16:37.448   330   330 V SystemServerTiming: StartVpnManagerService took to complete: 401ms
+10-30 01:16:37.449   330   330 D SystemServerTiming: StartVcnManagementService
+10-30 01:16:37.988   330   330 V SystemServerTiming: StartVcnManagementService took to complete: 539ms
+10-30 01:16:37.994   330   330 D SystemServerTiming: StartSystemUpdateManagerService
+10-30 01:16:38.202   330   330 I SystemUpdateManagerService: No existing info file /data/system/system-update-info.xml
+10-30 01:16:38.207   330   330 V SystemServerTiming: StartSystemUpdateManagerService took to complete: 213ms
+10-30 01:16:38.208   330   330 D SystemServerTiming: StartUpdateLockService
+10-30 01:16:38.228   330   330 V SystemServerTiming: StartUpdateLockService took to complete: 20ms
+10-30 01:16:38.238   330   330 D SystemServerTiming: StartNotificationManager
+10-30 01:16:38.238   330   330 I SystemServiceManager: Starting com.android.server.notification.NotificationManagerService

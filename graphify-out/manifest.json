@@ -121,9 +121,9 @@
     "semantic_hash": ""
   },
   "crates/archtv-shell/src/worker.rs": {
-    "mtime": 1793321980.8198054,
-    "seen": 1793321989.255075,
-    "ast_hash": "a3c4742d7d1c11dc5e16b57855a3766e",
+    "mtime": 1793324435.861671,
+    "seen": 1793324896.6615484,
+    "ast_hash": "e4921fab25d61a4c2dd99f484dbc6b4e",
     "semantic_hash": ""
   },
   "crates/archtv-test-client/Cargo.toml": {
@@ -283,9 +283,9 @@
     "semantic_hash": ""
   },
   "ROADMAP.md": {
-    "mtime": 1793322765.317149,
-    "seen": 1793322786.762916,
-    "ast_hash": "d40ca0cd4a1678c5099f926b7c82e179",
+    "mtime": 1793325169.5073133,
+    "seen": 1793325176.5651429,
+    "ast_hash": "40df9d13b9c39b7cc7d057c9b9a2636a",
     "semantic_hash": ""
   },
   "THIRD_PARTY.md": {
@@ -295,9 +295,9 @@
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793320426.1134257,
-    "seen": 1793320436.512487,
-    "ast_hash": "8f38c422018835b52e6ac0f27709a146",
+    "mtime": 1793323176.9699857,
+    "seen": 1793324896.6617131,
+    "ast_hash": "f644b68f7581585563c4a07697c21127",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
@@ -313,9 +313,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793322765.3231156,
-    "seen": 1793322786.7629445,
-    "ast_hash": "c66c1dc97c01eee625e0d77dbeecbf68",
+    "mtime": 1793325169.5081196,
+    "seen": 1793325176.565164,
+    "ast_hash": "3ba561b29e7c5733fe6edba9395e6817",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -331,9 +331,9 @@
     "semantic_hash": ""
   },
   "docs/INSTALACION.md": {
-    "mtime": 1793317454.635912,
-    "seen": 1793318868.5705235,
-    "ast_hash": "0f6bf0e40f748a64032a62e7b2be258c",
+    "mtime": 1793325169.508468,
+    "seen": 1793325176.5651767,
+    "ast_hash": "d658412f960f736be0be8935e47a2404",
     "semantic_hash": ""
   },
   "docs/REFERENCIAS-FIRE-TV.md": {
@@ -454,6 +454,54 @@
     "mtime": 1793322623.2016678,
     "seen": 1793322754.2462137,
     "ast_hash": "657004732fcf7ee4f32e7bb54bd3d849",
+    "semantic_hash": ""
+  },
+  "scripts/90-android-session.sh": {
+    "mtime": 1793324215.5719907,
+    "seen": 1793324896.6616282,
+    "ast_hash": "8be87ec483fae876c70a22806e8dd74d",
+    "semantic_hash": ""
+  },
+  "scripts/91-android-client.sh": {
+    "mtime": 1793323427.8943863,
+    "seen": 1793324896.6616342,
+    "ast_hash": "0f59d115c7d73540e32266d6e25f85fd",
+    "semantic_hash": ""
+  },
+  "scripts/92-android-boot-probe.sh": {
+    "mtime": 1793324215.5727234,
+    "seen": 1793324896.661639,
+    "ast_hash": "f82ca5d42d8e21dbda49b9cea8853e64",
+    "semantic_hash": ""
+  },
+  "scripts/93-android-shell-session.sh": {
+    "mtime": 1793324450.2437975,
+    "seen": 1793324896.6616426,
+    "ast_hash": "74fcd9cc91c65c2f6327171aa9552e18",
+    "semantic_hash": ""
+  },
+  "scripts/lib/android-ui-probe.py": {
+    "mtime": 1793324889.953598,
+    "seen": 1793324896.6616552,
+    "ast_hash": "32d5f1c1c8eece52d82296b4b76142f6",
+    "semantic_hash": ""
+  },
+  "docs/AOSP-NATIVO.md": {
+    "mtime": 1793323173.283112,
+    "seen": 1793324896.661709,
+    "ast_hash": "0d22615e4926313255dbf58227a8bfae",
+    "semantic_hash": ""
+  },
+  "manifests/android-test-lab.txt": {
+    "mtime": 1793324946.7829764,
+    "seen": 1793325176.5651848,
+    "ast_hash": "4f33a43dd39b4d7c85a3e47472f9b62c",
+    "semantic_hash": ""
+  },
+  "scripts/94-android-media-probe.sh": {
+    "mtime": 1793325215.0982869,
+    "seen": 1793325222.5991929,
+    "ast_hash": "54709f6d372dd19605c6d7a018ed956b",
     "semantic_hash": ""
   }
 }

@@ -1,0 +1,153 @@
+--------- beginning of system
+10-30 01:45:39.800   278   856 D CompatibilityChangeReporter: Compat change id reported: 264301586; UID 10119; state: DISABLED
+10-30 01:45:39.800   278   856 D CompatibilityChangeReporter: Compat change id reported: 254631730; UID 10119; state: DISABLED
+10-30 01:45:39.801   278   856 D CompatibilityChangeReporter: Compat change id reported: 273509367; UID 10119; state: DISABLED
+10-30 01:45:39.801   278   856 D CompatibilityChangeReporter: Compat change id reported: 263259275; UID 10119; state: DISABLED
+10-30 01:45:39.860   278   856 D CompatibilityChangeReporter: Compat change id reported: 194480991; UID 10119; state: ENABLED
+--------- beginning of main
+10-30 01:45:39.881   278   856 E CellBroadcastUtils: getDefaultCellBroadcastReceiverPackageName: no package found
+10-30 01:45:39.905   278   856 D CompatibilityChangeReporter: Compat change id reported: 174042980; UID 10119; state: DISABLED
+10-30 01:45:39.906   278   856 D CompatibilityChangeReporter: Compat change id reported: 184838306; UID 10119; state: DISABLED
+10-30 01:45:39.906   278   856 D CompatibilityChangeReporter: Compat change id reported: 185004937; UID 10119; state: DISABLED
+10-30 01:45:39.906   278   856 D CompatibilityChangeReporter: Compat change id reported: 181136395; UID 10119; state: DISABLED
+10-30 01:45:39.906   278   856 D CompatibilityChangeReporter: Compat change id reported: 174042936; UID 10119; state: DISABLED
+10-30 01:45:39.936   278   333 W Looper  : Drained
+10-30 01:45:39.973   278   336 W system_server: Long monitor contention with owner binder:278_A (856) at void com.android.server.wm.ActivityTaskManagerService.resumeAppSwitches()(ActivityTaskManagerService.java:3946) waiters=0 in void com.android.server.wm.InputMonitor$UpdateInputWindows.run() for 149ms
+10-30 01:45:40.034   108   132 W TransactionTracing: Could not find layer handle 0x7f45912358f0
+10-30 01:45:40.034   108   132 W TransactionTracing: Could not find layer handle 0x7f459123ff10
+10-30 01:45:40.034   108   132 W TransactionTracing: Could not find layer handle 0x7f45912320b0
+10-30 01:45:40.034   108   132 W TransactionTracing: Could not find layer handle 0x7f4591257250
+10-30 01:45:40.034   108   132 W TransactionTracing: Could not find layer handle 0x7f4591252930
+10-30 01:45:40.034   108   132 W TransactionTracing: Could not find layer handle 0x7f4591241110
+10-30 01:45:40.112   278   346 W libprocessgroup: Failed to open /dev/stune/top-app/cgroup.procs: No such file or directory
+10-30 01:45:40.113   278   346 W libprocessgroup: Failed to open /dev/cpuset/top-app/cgroup.procs: No such file or directory
+10-30 01:45:40.113   278   346 W libprocessgroup: Failed to open /dev/blkio//cgroup.procs: No such file or directory
+10-30 01:45:40.121   278   335 D OomAdjuster: Not killing cached processes
+10-30 01:45:40.231   108   132 W TransactionTracing: Could not find layer handle 0x7f459121f090
+10-30 01:45:40.340  1863  1863 I ServiceManager: Waydroid: host-AIDL whitelisted: android.hardware.camera.provider.ICameraProvider
+10-30 01:45:40.340  1863  1863 I ServiceManager: Waydroid: host-AIDL whitelisted: android.hardware.graphics.allocator.IAllocator
+10-30 01:45:40.357  1132  1132 D CompatibilityChangeReporter: Compat change id reported: 171228096; UID 10119; state: ENABLED
+10-30 01:45:40.365  1863  1863 W ProcessState: Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+10-30 01:45:40.380  1132  1132 D CompatibilityChangeReporter: Compat change id reported: 210923482; UID 10119; state: DISABLED
+10-30 01:45:40.380  1132  1132 D CompatibilityChangeReporter: Compat change id reported: 37756858; UID 10119; state: ENABLED
+10-30 01:45:40.427    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-30 01:45:40.428  1863  1865 I Gralloc4: mapper 4.x is not supported
+10-30 01:45:40.428    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@3.0::IMapper/default in either framework or device VINTF manifest.
+10-30 01:45:40.430  1863  1865 W Gralloc3: mapper 3.x is not supported
+10-30 01:45:40.513  1132  1132 I android_os_HwBinder: HwBinder: Starting hwbinderthread pool for getting: vendor.waydroid.window@1.1::IWaydroidWindow/default
+10-30 01:45:40.606  1132  1132 I ServiceManager: Waydroid: host-AIDL whitelisted: android.hardware.camera.provider.ICameraProvider
+10-30 01:45:40.607  1132  1132 I ServiceManager: Waydroid: host-AIDL whitelisted: android.hardware.graphics.allocator.IAllocator
+10-30 01:45:40.632  1132  1132 D CompatibilityChangeReporter: Compat change id reported: 237531167; UID 10119; state: DISABLED
+10-30 01:45:40.634   278  1187 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+10-30 01:45:40.653   278  1685 D CoreBackPreview: Window{5591f41 u0 com.android.permissioncontroller/com.android.permissioncontroller.permission.ui.GrantPermissionsActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@b590227, mPriority=0}
+10-30 01:45:40.779   108   361 W ServiceManager: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10119 pid=0
+10-30 01:45:40.779   108   361 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10119 => denied (10411 us)
+10-30 01:45:40.781   108   361 W ServiceManager: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10119 pid=0
+10-30 01:45:40.781   108   361 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10119 => denied (1702 us)
+10-30 01:45:40.782   108   361 W ServiceManager: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10119 pid=0
+10-30 01:45:40.782   108   361 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10119 => denied (940 us)
+10-30 01:45:40.784   108  1075 W ServiceManager: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10119 pid=1132
+10-30 01:45:40.784   108  1075 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10119 => denied (12926 us)
+10-30 01:45:40.860   278   332 I ActivityTaskManager: Displayed com.android.permissioncontroller/.permission.ui.GrantPermissionsActivity: +1s40ms
+10-30 01:45:40.918   278  1294 D ConnectivityService: requestNetwork for uid/pid:10108/1703 asUid: 10119 activeRequest: null callbackRequest: 87 [NetworkRequest [ REQUEST id=88, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10119 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+10-30 01:45:40.936   278   450 D ConnectivityService: NetReassign [88 : null → 100]
+10-30 01:45:40.937   278   449 D EthernetNetworkFactory: eth0: onNetworkUnneeded for request: NetworkRequest [ REQUEST id=68, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10125 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:40.945   676   676 D PhoneSwitcherNetworkRequstListener: got request NetworkRequest [ REQUEST id=88, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10119 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:40.946   278   442 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=88, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10119 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:40.946   278   442 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=88, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10119 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:40.946   278   442 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=88, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10119 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:40.947   278   449 D EthernetNetworkFactory: eth0: onNetworkNeeded for request: NetworkRequest [ REQUEST id=88, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10119 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:40.947   278   449 D EthernetNetworkFactory: IpClient already started
+10-30 01:45:41.007    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-30 01:45:41.007  1132  1132 I Gralloc4: mapper 4.x is not supported
+10-30 01:45:41.010    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@3.0::IMapper/default in either framework or device VINTF manifest.
+10-30 01:45:41.011  1132  1132 W Gralloc3: mapper 3.x is not supported
+10-30 01:45:41.092    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.allocator@4.0::IAllocator/default in either framework or device VINTF manifest.
+10-30 01:45:41.097    19    19 I servicemanager: Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest.
+10-30 01:45:41.131  1132  1132 W ProcessState: Waydroid: host binder driver /dev/host_binder unavailable; host-AIDL passthrough disabled
+10-30 01:45:41.131  1132  1132 W ServiceManager: Waydroid: host ProcessState unavailable for android.hardware.graphics.allocator.IAllocator/default
+10-30 01:45:41.131  1132  1132 E Gralloc4: AIDL IAllocator declared but failed to get service
+10-30 01:45:41.131  1132  1132 W Gralloc4: allocator 4.x is not supported
+10-30 01:45:41.134   108   132 W TransactionTracing: Could not find layer handle 0x7f4591240f30
+10-30 01:45:41.135    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.allocator@3.0::IAllocator/default in either framework or device VINTF manifest.
+10-30 01:45:41.135  1132  1132 W Gralloc3: allocator 3.x is not supported
+10-30 01:45:43.448  1624  1858 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 01:45:49.476  1624  1858 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 01:45:55.482  1624  1858 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 01:45:59.625   278   404 I InputReader: Dropping key up from device wayland_keyboard because the key was not down.  keyCode=111, scanCode=1
+10-30 01:46:01.533  1624  1858 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 01:46:07.702  1624  1858 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 01:46:13.711  1624  1858 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 01:46:13.754   278   404 I InputReader: Dropping key up from device wayland_keyboard because the key was not down.  keyCode=57, scanCode=56
+10-30 01:46:13.792   278   404 I InputReader: Dropping key up from device wayland_keyboard because the key was not down.  keyCode=61, scanCode=15
+10-30 01:46:14.785   278   404 I InputReader: Dropping key up from device wayland_keyboard because the key was not down.  keyCode=57, scanCode=56
+10-30 01:46:14.825   278   404 I InputReader: Dropping key up from device wayland_keyboard because the key was not down.  keyCode=61, scanCode=15
+10-30 01:46:19.714  1624  1858 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 01:46:25.720  1624  1858 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 01:46:31.722  1624  1858 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 01:46:37.727  1624  1858 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 01:46:43.734  1624  1858 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 01:46:44.056  1132  1132 D VRI[GrantPermissionsActivity]: updatePointerIcon called with position out of bounds
+10-30 01:46:44.064  1132  1132 D VRI[GrantPermissionsActivity]: updatePointerIcon called with position out of bounds
+10-30 01:46:44.085   278   404 I InputReader: Dropping key up from device wayland_keyboard because the key was not down.  keyCode=57, scanCode=56
+10-30 01:46:44.118   278   404 I InputReader: Dropping key up from device wayland_keyboard because the key was not down.  keyCode=61, scanCode=15
+10-30 01:46:44.245  1132  1132 D VRI[GrantPermissionsActivity]: updatePointerIcon called with position out of bounds
+10-30 01:46:44.299  1132  1132 D VRI[GrantPermissionsActivity]: updatePointerIcon called with position out of bounds
+10-30 01:46:45.048  1132  1132 D VRI[GrantPermissionsActivity]: updatePointerIcon called with position out of bounds
+10-30 01:46:45.065  1132  1132 D VRI[GrantPermissionsActivity]: updatePointerIcon called with position out of bounds
+10-30 01:46:45.080  1132  1132 D VRI[GrantPermissionsActivity]: updatePointerIcon called with position out of bounds
+10-30 01:46:46.130   278   404 I InputReader: Dropping key up from device wayland_keyboard because the key was not down.  keyCode=57, scanCode=56
+10-30 01:46:48.594   278   404 I InputReader: Dropping key up from device wayland_keyboard because the key was not down.  keyCode=57, scanCode=56
+10-30 01:46:48.596   278   404 I InputReader: Dropping key up from device wayland_keyboard because the key was not down.  keyCode=61, scanCode=15
+10-30 01:46:49.740  1624  1858 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 01:46:55.747  1624  1858 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 01:47:01.750  1624  1858 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 01:47:07.756  1624  1858 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 01:47:13.762  1624  1858 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 01:47:19.769  1624  1858 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 01:47:25.775  1624  1858 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 01:47:31.779  1624  1858 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 01:47:37.786  1624  1858 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 01:47:40.629   278   354 V DisplayPowerController[0]: Brightness [0.05] reason changing to: 'manual [ dim ]', previous reason: 'manual'.
+10-30 01:47:40.629   278   354 I DisplayPowerController[0]: BrightnessEvent: disp=0, physDisp=local:0, brt=0.05, initBrt=0.39763778, rcmdBrt=NaN, preBrt=NaN, lux=0.0, preLux=0.0, hbmMax=1.0, hbmMode=off, rbcStrength=50, powerFactor=1.0, thrmMax=1.0, wasShortTermModelActive=false, flags=, reason=manual [ dim ], autoBrightness=false
+10-30 01:47:41.264   278   354 I DisplayPowerController[0]: BrightnessEvent: disp=0, physDisp=local:0, brt=0.05, initBrt=0.05, rcmdBrt=NaN, preBrt=NaN, lux=0.0, preLux=0.0, hbmMax=1.0, hbmMode=off, rbcStrength=50, powerFactor=1.0, thrmMax=1.0, wasShortTermModelActive=false, flags=, reason=manual [ dim ], autoBrightness=false
+10-30 01:47:43.797  1624  1858 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 01:47:49.805  1624  1858 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 01:47:55.812  1624  1858 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 01:47:56.722   278   278 W Looper  : Slow delivery took 811ms main h=android.os.Handler c=com.android.internal.os.BinderCallsStats$1@ebb87ca m=0
+10-30 01:48:00.017   278   278 W Looper  : Drained
+10-30 01:48:01.842  1624  1858 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 01:48:07.848  1624  1858 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 01:48:10.269   278   354 V DisplayPowerController[0]: Brightness [0.39763778] reason changing to: 'manual', previous reason: 'manual [ dim ]'.
+10-30 01:48:10.269   278   354 I DisplayPowerController[0]: BrightnessEvent: disp=0, physDisp=local:0, brt=0.39763778, initBrt=0.05, rcmdBrt=NaN, preBrt=NaN, lux=0.0, preLux=0.0, hbmMax=1.0, hbmMode=off, rbcStrength=50, powerFactor=1.0, thrmMax=1.0, wasShortTermModelActive=false, flags=, reason=manual, autoBrightness=false
+10-30 01:48:10.335  1132  1132 V GrantPermissionsViewModel: Logged buttons presented and clicked permissionGroupName=android.permission-group.NOTIFICATIONS uid=10125 selectedLocations=0 package=org.videolan.vlc presentedButtons=9 clickedButton=0 sessionId=-7823526052123789060 targetSdk=36
+10-30 01:48:10.336  1132  1132 V GrantPermissionsViewModel: Permission grant result requestId=-7823526052123789060 callingUid=10125 callingPackage=org.videolan.vlc permission=android.permission.POST_NOTIFICATIONS isImplicit=false result=11
+10-30 01:48:10.338   278   278 D OomAdjuster: Not killing cached processes
+10-30 01:48:10.525   278   346 W libprocessgroup: Failed to open /dev/stune/top-app/cgroup.procs: No such file or directory
+10-30 01:48:10.525   278   346 W libprocessgroup: Failed to open /dev/cpuset/top-app/cgroup.procs: No such file or directory
+10-30 01:48:10.525   278   346 W libprocessgroup: Failed to open /dev/blkio//cgroup.procs: No such file or directory
+10-30 01:48:10.531  1624  1624 D CompatibilityChangeReporter: Compat change id reported: 78294732; UID 10125; state: ENABLED
+10-30 01:48:10.536  1624  1624 W OnBackInvokedCallback: OnBackInvokedCallback is not enabled for the application.
+10-30 01:48:10.536  1624  1624 W OnBackInvokedCallback: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+10-30 01:48:10.563   278   489 D LightsService: Excessive delay setting light
+10-30 01:48:10.664   278   336 W system_server: Long monitor contention with owner binder:278_7 (715) at void com.android.server.wm.ActivityClientController.activityPaused(android.os.IBinder)(ActivityClientController.java:205) waiters=0 in void com.android.server.wm.InputMonitor$UpdateInputWindows.run() for 195ms
+10-30 01:48:10.679   278   856 D ConnectivityService: requestNetwork for uid/pid:10108/1703 asUid: 10125 activeRequest: null callbackRequest: 89 [NetworkRequest [ REQUEST id=90, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10125 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+10-30 01:48:10.681   278   449 D EthernetNetworkFactory: eth0: onNetworkUnneeded for request: NetworkRequest [ REQUEST id=88, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10119 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:48:10.707   278   450 D ConnectivityService: NetReassign [90 : null → 100]
+10-30 01:48:10.710   278   449 D EthernetNetworkFactory: eth0: onNetworkNeeded for request: NetworkRequest [ REQUEST id=90, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10125 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:48:10.710   278   449 D EthernetNetworkFactory: IpClient already started
+10-30 01:48:10.711   676   676 D PhoneSwitcherNetworkRequstListener: got request NetworkRequest [ REQUEST id=90, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10125 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:48:10.714   278   442 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=90, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10125 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:48:10.714   278   442 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=90, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10125 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:48:10.715   278   442 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=90, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10125 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:48:10.816   278   489 D LightsService: Excessive delay setting light
+10-30 01:48:10.850   108   132 W TransactionTracing: Could not find layer handle 0x7f4591216930
+10-30 01:48:10.850   108   132 W TransactionTracing: Could not find layer handle 0x7f459123bcb0
+10-30 01:48:10.850   108   132 W TransactionTracing: Could not find layer handle 0x7f4591240f30
+10-30 01:48:10.899   278   354 I DisplayPowerController[0]: BrightnessEvent: disp=0, physDisp=local:0, brt=0.39763778, initBrt=0.39763778, rcmdBrt=NaN, preBrt=NaN, lux=0.0, preLux=0.0, hbmMax=1.0, hbmMode=off, rbcStrength=50, powerFactor=1.0, thrmMax=1.0, wasShortTermModelActive=false, flags=, reason=manual, autoBrightness=false
+10-30 01:48:11.171   278   856 D CoreBackPreview: Window{5591f41 u0 com.android.permissioncontroller/com.android.permissioncontroller.permission.ui.GrantPermissionsActivity}: Setting back callback null
+10-30 01:48:11.178   278  1294 W InputManager-JNI: Input channel object '5591f41 com.android.permissioncontroller/com.android.permissioncontroller.permission.ui.GrantPermissionsActivity (client)' was disposed without first being removed with the input manager!
+10-30 01:48:11.230   108   108 W SurfaceFlinger: couldn't log to binary event log: overflow.
+10-30 01:48:11.308   108   132 W TransactionTracing: Could not find layer handle 0x7f4591220290
+10-30 01:48:13.884  1624  1858 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 01:48:19.890  1624  1858 D libdsm  : Sending netbios packet to 255.255.255.255

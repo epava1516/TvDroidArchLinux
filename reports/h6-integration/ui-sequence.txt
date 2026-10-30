@@ -1,0 +1,7 @@
+PASS: start through uinput -> libinput -> compositor -> shell.
+PASS: vlc through uinput -> libinput -> compositor -> shell.
+PASS: android through uinput -> libinput -> compositor -> shell.
+PASS: home through uinput -> libinput -> compositor -> shell.
+PASS: resume through uinput -> libinput -> compositor -> shell.
+PASS: android through uinput -> libinput -> compositor -> shell.
+PASS: android through uinput -> libinput -> compositor -> shell.

@@ -1,0 +1,513 @@
+--------- beginning of system
+10-30 01:43:55.163   278  1540 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.autofill.AutofillManagerService
+10-30 01:43:55.163   278  1540 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.autofill.AutofillManagerService took to complete: 0ms
+10-30 01:43:55.163   278  1540 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.clipboard.ClipboardService
+10-30 01:43:55.163   278  1540 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.clipboard.ClipboardService took to complete: 0ms
+10-30 01:43:55.163   278  1540 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.appbinding.AppBindingService$Lifecycle
+10-30 01:43:55.163   278  1540 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.appbinding.AppBindingService$Lifecycle took to complete: 0ms
+10-30 01:43:55.163   278  1540 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.tracing.TracingServiceProxy
+10-30 01:43:55.163   278  1540 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.tracing.TracingServiceProxy took to complete: 0ms
+10-30 01:43:55.163   278  1540 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_org.lineageos.platform.internal.ProfileManagerService
+10-30 01:43:55.163   278  1540 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_org.lineageos.platform.internal.ProfileManagerService took to complete: 0ms
+10-30 01:43:55.163   278  1540 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_org.lineageos.platform.internal.LineageHardwareService
+10-30 01:43:55.163   278  1540 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_org.lineageos.platform.internal.LineageHardwareService took to complete: 0ms
+10-30 01:43:55.163   278  1540 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_org.lineageos.platform.internal.display.LiveDisplayService
+10-30 01:43:55.163   278  1540 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_org.lineageos.platform.internal.display.LiveDisplayService took to complete: 0ms
+10-30 01:43:55.163   278  1540 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_org.lineageos.platform.internal.LineageSettingsService
+10-30 01:43:55.163   278  1540 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_org.lineageos.platform.internal.LineageSettingsService took to complete: 0ms
+10-30 01:43:55.163   278  1540 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_org.lineageos.platform.internal.LineageGlobalActionsService
+10-30 01:43:55.163   278  1540 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_org.lineageos.platform.internal.LineageGlobalActionsService took to complete: 0ms
+10-30 01:43:55.163   278  1540 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_org.lineageos.platform.internal.health.HealthInterfaceService
+10-30 01:43:55.163   278  1540 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_org.lineageos.platform.internal.health.HealthInterfaceService took to complete: 0ms
+10-30 01:43:55.163   278  1540 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_org.lineageos.platform.internal.WayDroidService
+10-30 01:43:55.163   278  1540 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_org.lineageos.platform.internal.WayDroidService took to complete: 0ms
+10-30 01:43:55.163   278  1540 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.policy.PermissionPolicyService
+10-30 01:43:55.163   278  1540 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.policy.PermissionPolicyService took to complete: 0ms
+10-30 01:43:55.163   278  1540 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.StagingManager$Lifecycle
+10-30 01:43:55.163   278  1540 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.StagingManager$Lifecycle took to complete: 0ms
+10-30 01:43:55.163   278  1540 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.app.GameManagerService$Lifecycle
+10-30 01:43:55.163   278  1540 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.app.GameManagerService$Lifecycle took to complete: 0ms
+10-30 01:43:55.163   278  1540 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.safetycenter.SafetyCenterService
+10-30 01:43:55.163   278  1540 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.safetycenter.SafetyCenterService took to complete: 0ms
+10-30 01:43:55.163   278  1540 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.appsearch.AppSearchModule$Lifecycle
+10-30 01:43:55.163   278  1540 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.appsearch.AppSearchModule$Lifecycle took to complete: 0ms
+10-30 01:43:55.163   278  1540 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.media.MediaCommunicationService
+10-30 01:43:55.163   278  1540 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.media.MediaCommunicationService took to complete: 0ms
+10-30 01:43:55.163   278  1540 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.compat.overrides.AppCompatOverridesService$Lifecycle
+10-30 01:43:55.163   278  1540 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.compat.overrides.AppCompatOverridesService$Lifecycle took to complete: 0ms
+10-30 01:43:55.165   278   343 W ActivityManager: Slow operation: 53ms so far, now at startProcess: returned from zygote!
+10-30 01:43:55.166   278   343 W ActivityManager: Slow operation: 70ms so far, now at startProcess: done updating battery stats
+10-30 01:43:55.166   278   343 W ActivityManager: Slow operation: 70ms so far, now at startProcess: building log message
+10-30 01:43:55.166   278   343 I ActivityManager: Start proc 1542:com.android.statementservice/u0a62 for broadcast {com.android.statementservice/com.android.statementservice.domain.BootCompletedReceiver}
+10-30 01:43:55.166   278   343 W ActivityManager: Slow operation: 70ms so far, now at startProcess: starting to update pids map
+10-30 01:43:55.166   278   343 W ActivityManager: Slow operation: 71ms so far, now at startProcess: done updating pids map
+10-30 01:43:55.167   278  1539 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.BinderCallsStatsService$LifeCycle
+10-30 01:43:55.168   278  1539 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.BinderCallsStatsService$LifeCycle took to complete: 0ms
+10-30 01:43:55.168   278  1541 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.tare.InternalResourceService
+10-30 01:43:55.168   278  1541 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.tare.InternalResourceService took to complete: 0ms
+10-30 01:43:55.169   278   342 V SystemServerTimingAsync: ssm.CompletedEventUser-0 took to complete: 72ms
+--------- beginning of main
+10-30 01:43:55.186  1542  1542 E tatementservice: Not starting debugger since process cannot load the jdwp agent.
+10-30 01:43:55.212   278  1292 D CompatibilityChangeReporter: Compat change id reported: 168419799; UID 10062; state: DISABLED
+10-30 01:43:55.212   278  1292 D CompatibilityChangeReporter: Compat change id reported: 273564678; UID 10062; state: DISABLED
+10-30 01:43:55.223  1542  1542 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10062; state: DISABLED
+10-30 01:43:55.228  1542  1542 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+10-30 01:43:55.270  1542  1542 V GraphicsEnvironment: ANGLE Developer option for 'com.android.statementservice' set to: 'default'
+10-30 01:43:55.274  1542  1542 V GraphicsEnvironment: ANGLE GameManagerService for com.android.statementservice: false
+10-30 01:43:55.274   278   338 I system_server: libdebuggerd_client: done dumping process 108
+10-30 01:43:55.275    43    43 W tombstoned: skipping tombstone file creation due to intercept
+10-30 01:43:55.282  1542  1542 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-30 01:43:55.282   108   132 W TransactionTracing: Could not find layer handle 0x7f4591258330
+10-30 01:43:55.282   108   132 W TransactionTracing: Could not find layer handle 0x7f459124a8f0
+10-30 01:43:55.282   108   132 W TransactionTracing: Could not find layer handle 0x7f459124a8f0
+10-30 01:43:55.287  1542  1542 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+10-30 01:43:55.287  1542  1542 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+10-30 01:43:55.296   278   338 I ActivityManager: Collecting stacks for native pid 173
+10-30 01:43:55.301   278   338 I system_server: libdebuggerd_client: started dumping process 173
+10-30 01:43:55.305    43    43 I tombstoned: registered intercept for pid 173 and type kDebuggerdNativeBacktrace
+10-30 01:43:55.315    43    43 I tombstoned: received crash request for pid 173
+10-30 01:43:55.315    43    43 I tombstoned: found intercept fd 512 for pid 173 and type kDebuggerdNativeBacktrace
+10-30 01:43:55.328  1542  1542 D WM-WrkMgrInitializer: Initializing WorkManager with default configuration.
+10-30 01:43:55.360   889   994 I OpenGLRenderer: Davey! duration=2415ms; Flags=1, FrameTimelineVsyncId=14703, IntendedVsync=618776870667, Vsync=618810309239, InputEventId=0, HandleInputStart=618818347854, AnimationStart=618818348843, PerformTraversalsStart=618818579223, DrawStart=618830029396, FrameDeadline=618797537333, FrameInterval=618818346382, FrameStartTime=16719286, SyncQueued=618832224041, SyncStart=618833843174, IssueDrawCommandsStart=618834762668, SwapBuffers=618899677393, FrameCompleted=621193663336, DequeueBufferDuration=0, QueueBufferDuration=843722, GpuCompleted=618899677393, SwapBuffersCompleted=621193663336, DisplayPresentTime=0, CommandSubmissionCompleted=618899677393, 
+10-30 01:43:55.462  1542  1542 D CompatibilityChangeReporter: Compat change id reported: 183155436; UID 10062; state: DISABLED
+10-30 01:43:55.517  1279  1289 W System  : A resource failed to call close. 
+10-30 01:43:55.518   889   994 I OpenGLRenderer: Davey! duration=2479ms; Flags=0, FrameTimelineVsyncId=14710, IntendedVsync=618827028525, Vsync=621184447851, InputEventId=0, HandleInputStart=621196376206, AnimationStart=621196377134, PerformTraversalsStart=621197558151, DrawStart=621197693351, FrameDeadline=618931291621, FrameInterval=621195615003, FrameStartTime=16719286, SyncQueued=621197812188, SyncStart=621198694411, IssueDrawCommandsStart=621198956502, SwapBuffers=621199775881, FrameCompleted=621307656323, DequeueBufferDuration=18748, QueueBufferDuration=4187914, GpuCompleted=621199775881, SwapBuffersCompleted=621307656323, DisplayPresentTime=0, CommandSubmissionCompleted=621199775881, 
+10-30 01:43:55.629   278   338 I system_server: libdebuggerd_client: done dumping process 173
+10-30 01:43:55.629    43    43 W tombstoned: skipping tombstone file creation due to intercept
+10-30 01:43:55.634  1542  1558 D CompatibilityChangeReporter: Compat change id reported: 160794467; UID 10062; state: DISABLED
+10-30 01:43:55.642   278   338 I ActivityManager: Collecting stacks for native pid 78
+10-30 01:43:55.642   278   338 I system_server: libdebuggerd_client: started dumping process 78
+10-30 01:43:55.643    43    43 I tombstoned: registered intercept for pid 78 and type kDebuggerdNativeBacktrace
+10-30 01:43:55.647    43    43 I tombstoned: received crash request for pid 78
+10-30 01:43:55.647    43    43 I tombstoned: found intercept fd 512 for pid 78 and type kDebuggerdNativeBacktrace
+10-30 01:43:55.661  1542  1558 D CompatibilityChangeReporter: Compat change id reported: 194532703; UID 10062; state: DISABLED
+10-30 01:43:55.663   278   715 D CompatibilityChangeReporter: Compat change id reported: 194532703; UID 10062; state: DISABLED
+10-30 01:43:55.668   278   715 D ConnectivityService: requestNetwork for uid/pid:1000/278 asUid: 10062 activeRequest: null callbackRequest: 53 [NetworkRequest [ REQUEST id=54, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10062 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+10-30 01:43:55.670   278   450 D ConnectivityService: NetReassign [54 : null → 100]
+10-30 01:43:55.671   278   449 D EthernetNetworkFactory: eth0: onNetworkNeeded for request: NetworkRequest [ REQUEST id=54, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10062 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]
+10-30 01:43:55.671   278   449 D EthernetNetworkFactory: IpClient already started
+10-30 01:43:55.682   278  1292 D CompatibilityChangeReporter: Compat change id reported: 135634846; UID 10087; state: DISABLED
+10-30 01:43:55.685   278  1292 D CompatibilityChangeReporter: Compat change id reported: 177438394; UID 10087; state: DISABLED
+10-30 01:43:55.686   278  1292 D CompatibilityChangeReporter: Compat change id reported: 135772972; UID 10087; state: DISABLED
+10-30 01:43:55.686   278  1292 D CompatibilityChangeReporter: Compat change id reported: 135754954; UID 10087; state: ENABLED
+10-30 01:43:55.687   278   343 D CompatibilityChangeReporter: Compat change id reported: 143937733; UID 10087; state: ENABLED
+10-30 01:43:55.687   676   676 D PhoneSwitcherNetworkRequstListener: got request NetworkRequest [ REQUEST id=54, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10062 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]
+10-30 01:43:55.699   278   338 I system_server: libdebuggerd_client: done dumping process 78
+10-30 01:43:55.699    43    43 W tombstoned: skipping tombstone file creation due to intercept
+10-30 01:43:55.708   278   442 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=54, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10062 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]
+10-30 01:43:55.708   278   442 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=54, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10062 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]
+10-30 01:43:55.708   278   442 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=54, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10062 RequestorUid: 1000 RequestorPkg: android UnderlyingNetworks: Null] ]
+10-30 01:43:55.714    70    70 D Zygote  : Forked child process 1561
+10-30 01:43:55.715   278   338 I ActivityManager: Collecting stacks for native pid 176
+10-30 01:43:55.715   278   343 I ActivityManager: Start proc 1561:org.calyxos.backup.contacts/u0a87 for broadcast {org.calyxos.backup.contacts/org.calyxos.backup.contacts.StartBroadcastReceiver}
+10-30 01:43:55.716   278   338 I system_server: libdebuggerd_client: started dumping process 176
+10-30 01:43:55.716    43    43 I tombstoned: registered intercept for pid 176 and type kDebuggerdNativeBacktrace
+10-30 01:43:55.720  1561  1561 E libprocessgroup: Failed to make and chown /sys/fs/cgroup/uid_10087: Read-only file system
+10-30 01:43:55.720  1561  1561 W Zygote  : createProcessGroup failed, kernel missing CONFIG_CGROUP_CPUACCT?
+10-30 01:43:55.723    43    43 I tombstoned: received crash request for pid 176
+10-30 01:43:55.723    43    43 I tombstoned: found intercept fd 512 for pid 176 and type kDebuggerdNativeBacktrace
+10-30 01:43:55.724  1561  1561 W backup.contacts: Unexpected CPU variant for x86: x86_64.
+10-30 01:43:55.724  1561  1561 W backup.contacts: Known variants: atom, sandybridge, silvermont, kabylake, default
+10-30 01:43:55.760  1561  1561 E backup.contacts: Not starting debugger since process cannot load the jdwp agent.
+10-30 01:43:55.815   278   856 D ConnectivityService: requestNetwork for uid/pid:10062/1542 activeRequest: null callbackRequest: 55 [NetworkRequest [ REQUEST id=56, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10062 RequestorUid: 10062 RequestorPkg: com.android.statementservice UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+10-30 01:43:55.816   278   450 D ConnectivityService: NetReassign [56 : null → 100]
+10-30 01:43:55.818   278   449 D EthernetNetworkFactory: eth0: onNetworkNeeded for request: NetworkRequest [ REQUEST id=56, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10062 RequestorUid: 10062 RequestorPkg: com.android.statementservice UnderlyingNetworks: Null] ]
+10-30 01:43:55.818   278   449 D EthernetNetworkFactory: IpClient already started
+10-30 01:43:55.819   278   856 D CompatibilityChangeReporter: Compat change id reported: 168419799; UID 10087; state: DISABLED
+10-30 01:43:55.819   676   676 D PhoneSwitcherNetworkRequstListener: got request NetworkRequest [ REQUEST id=56, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10062 RequestorUid: 10062 RequestorPkg: com.android.statementservice UnderlyingNetworks: Null] ]
+10-30 01:43:55.819   278   856 D CompatibilityChangeReporter: Compat change id reported: 273564678; UID 10087; state: DISABLED
+10-30 01:43:55.835   278   442 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=56, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10062 RequestorUid: 10062 RequestorPkg: com.android.statementservice UnderlyingNetworks: Null] ]
+10-30 01:43:55.835   278   442 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=56, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10062 RequestorUid: 10062 RequestorPkg: com.android.statementservice UnderlyingNetworks: Null] ]
+10-30 01:43:55.835   278   442 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=56, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10062 RequestorUid: 10062 RequestorPkg: com.android.statementservice UnderlyingNetworks: Null] ]
+10-30 01:43:55.851  1561  1561 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10087; state: ENABLED
+10-30 01:43:55.879  1542  1558 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=5fbadcbd-f439-4077-852c-e08811cdd55d, tags={ com.android.statementservice.domain.worker.RetryRequestWorker } ]
+10-30 01:43:55.894   278   449 D EthernetNetworkFactory: eth0: onNetworkUnneeded for request: NetworkRequest [ REQUEST id=56, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10062 RequestorUid: 10062 RequestorPkg: com.android.statementservice UnderlyingNetworks: Null] ]
+10-30 01:43:55.901  1561  1561 V GraphicsEnvironment: ANGLE Developer option for 'org.calyxos.backup.contacts' set to: 'default'
+10-30 01:43:55.907  1561  1561 V GraphicsEnvironment: ANGLE GameManagerService for org.calyxos.backup.contacts: false
+10-30 01:43:55.907  1561  1561 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-30 01:43:55.922  1561  1561 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+10-30 01:43:55.923  1561  1561 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+10-30 01:43:55.931  1561  1561 D StartBroadcastReceiver: Broadcast received: Intent { act=android.intent.action.BOOT_COMPLETED flg=0x89000010 cmp=org.calyxos.backup.contacts/.StartBroadcastReceiver (has extras) }
+10-30 01:43:55.947  1279  1279 D CompatibilityChangeReporter: Compat change id reported: 160794467; UID 1000; state: ENABLED
+10-30 01:43:55.953  1279  1279 D ReportingServiceManager: Next sync attempt in : 23 hours
+10-30 01:43:55.961   278   715 D CompatibilityChangeReporter: Compat change id reported: 135634846; UID 10103; state: DISABLED
+10-30 01:43:55.961   278   715 D CompatibilityChangeReporter: Compat change id reported: 177438394; UID 10103; state: DISABLED
+10-30 01:43:55.961   278   715 D CompatibilityChangeReporter: Compat change id reported: 135772972; UID 10103; state: DISABLED
+10-30 01:43:55.961   278   715 D CompatibilityChangeReporter: Compat change id reported: 135754954; UID 10103; state: ENABLED
+10-30 01:43:55.963   278   343 D CompatibilityChangeReporter: Compat change id reported: 143937733; UID 10103; state: ENABLED
+10-30 01:43:55.966   278   338 I system_server: libdebuggerd_client: done dumping process 176
+10-30 01:43:55.966    43    43 W tombstoned: skipping tombstone file creation due to intercept
+10-30 01:43:56.036   278   338 I ActivityManager: Collecting stacks for native pid 84
+10-30 01:43:56.037   278   338 I system_server: libdebuggerd_client: started dumping process 84
+10-30 01:43:56.038    43    43 I tombstoned: registered intercept for pid 84 and type kDebuggerdNativeBacktrace
+10-30 01:43:56.042    43    43 I tombstoned: received crash request for pid 84
+10-30 01:43:56.042    43    43 I tombstoned: found intercept fd 512 for pid 84 and type kDebuggerdNativeBacktrace
+10-30 01:43:56.083    70    70 D Zygote  : Forked child process 1582
+10-30 01:43:56.085   278   343 W ActivityManager: Slow operation: 125ms so far, now at startProcess: returned from zygote!
+10-30 01:43:56.085   278   343 W ActivityManager: Slow operation: 125ms so far, now at startProcess: done updating battery stats
+10-30 01:43:56.085   278   343 W ActivityManager: Slow operation: 125ms so far, now at startProcess: building log message
+10-30 01:43:56.085   278   343 I ActivityManager: Start proc 1582:org.lineageos.waydroidupdater/u0a103 for broadcast {org.lineageos.waydroidupdater/org.lineageos.waydroidupdater.BootReceiver}
+10-30 01:43:56.085   278   343 W ActivityManager: Slow operation: 126ms so far, now at startProcess: starting to update pids map
+10-30 01:43:56.092  1582  1582 E libprocessgroup: Failed to make and chown /sys/fs/cgroup/uid_10103: Read-only file system
+10-30 01:43:56.092  1582  1582 W Zygote  : createProcessGroup failed, kernel missing CONFIG_CGROUP_CPUACCT?
+10-30 01:43:56.097  1582  1582 W waydroidupdater: Unexpected CPU variant for x86: x86_64.
+10-30 01:43:56.097  1582  1582 W waydroidupdater: Known variants: atom, sandybridge, silvermont, kabylake, default
+10-30 01:43:56.122  1582  1582 E waydroidupdater: Not starting debugger since process cannot load the jdwp agent.
+10-30 01:43:56.126   278   343 W ActivityManager: Slow operation: 166ms so far, now at startProcess: done updating pids map
+10-30 01:43:56.168   278   338 I system_server: libdebuggerd_client: done dumping process 84
+10-30 01:43:56.169    43    43 W tombstoned: skipping tombstone file creation due to intercept
+10-30 01:43:56.178   889   930 D LoaderTask: step 1 complete
+10-30 01:43:56.180   278   715 D CompatibilityChangeReporter: Compat change id reported: 168419799; UID 10103; state: DISABLED
+10-30 01:43:56.180   278   715 D CompatibilityChangeReporter: Compat change id reported: 273564678; UID 10103; state: DISABLED
+10-30 01:43:56.188   278   338 I ActivityManager: Collecting stacks for native pid 85
+10-30 01:43:56.188   278   338 I system_server: libdebuggerd_client: started dumping process 85
+10-30 01:43:56.219    43    43 I tombstoned: registered intercept for pid 85 and type kDebuggerdNativeBacktrace
+10-30 01:43:56.225  1582  1582 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10103; state: ENABLED
+10-30 01:43:56.231   889   994 I OpenGLRenderer: Davey! duration=1370ms; Flags=0, FrameTimelineVsyncId=14790, IntendedVsync=621341981768, Vsync=621341981768, InputEventId=0, HandleInputStart=621352595158, AnimationStart=621352595839, PerformTraversalsStart=621352606362, DrawStart=621356411939, FrameDeadline=621362648434, FrameInterval=621352592475, FrameStartTime=16666666, SyncQueued=621357672181, SyncStart=621433051451, IssueDrawCommandsStart=621435132807, SwapBuffers=622124972527, FrameCompleted=622787920660, DequeueBufferDuration=608450439, QueueBufferDuration=3104808, GpuCompleted=622124972527, SwapBuffersCompleted=622787920660, DisplayPresentTime=0, CommandSubmissionCompleted=622124972527, 
+10-30 01:43:56.233    43    43 I tombstoned: received crash request for pid 85
+10-30 01:43:56.233    43    43 I tombstoned: found intercept fd 512 for pid 85 and type kDebuggerdNativeBacktrace
+10-30 01:43:56.304   278   338 I system_server: libdebuggerd_client: done dumping process 85
+10-30 01:43:56.306    43    43 W tombstoned: skipping tombstone file creation due to intercept
+10-30 01:43:56.321   278   338 I ActivityManager: Collecting stacks for native pid 87
+10-30 01:43:56.323   278   338 I system_server: libdebuggerd_client: started dumping process 87
+10-30 01:43:56.323    43    43 I tombstoned: registered intercept for pid 87 and type kDebuggerdNativeBacktrace
+10-30 01:43:56.332    43    43 I tombstoned: received crash request for pid 87
+10-30 01:43:56.332    43    43 I tombstoned: found intercept fd 512 for pid 87 and type kDebuggerdNativeBacktrace
+10-30 01:43:56.355  1582  1582 V GraphicsEnvironment: ANGLE Developer option for 'org.lineageos.waydroidupdater' set to: 'default'
+10-30 01:43:56.357  1582  1582 V GraphicsEnvironment: ANGLE GameManagerService for org.lineageos.waydroidupdater: false
+10-30 01:43:56.357  1582  1582 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-30 01:43:56.359  1582  1582 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+10-30 01:43:56.360  1582  1582 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+10-30 01:43:56.361   278   338 I system_server: libdebuggerd_client: done dumping process 87
+10-30 01:43:56.362    43    43 W tombstoned: skipping tombstone file creation due to intercept
+10-30 01:43:56.363   278  1208 I ActivityManager: Finished processing BOOT_COMPLETED for u0
+10-30 01:43:56.367   278  1208 I BroadcastQueue: BOOT_COMPLETED_BROADCAST_COMPLETION_LATENCY_REPORTED action:android.intent.action.BOOT_COMPLETED dispatchLatency:2152 completeLatency:8389 dispatchRealLatency:2152 completeRealLatency:8389 receiversSize:35 userId:0 userType:android.os.usertype.full.SYSTEM
+10-30 01:43:56.369   889  1232 W Parcel  : Expecting binder but got null!
+10-30 01:43:56.378   278   338 I ActivityManager: Collecting stacks for native pid 91
+10-30 01:43:56.380   278   338 I system_server: libdebuggerd_client: started dumping process 91
+10-30 01:43:56.383    43    43 I tombstoned: registered intercept for pid 91 and type kDebuggerdNativeBacktrace
+10-30 01:43:56.387    43    43 I tombstoned: received crash request for pid 91
+10-30 01:43:56.387    43    43 I tombstoned: found intercept fd 512 for pid 91 and type kDebuggerdNativeBacktrace
+10-30 01:43:56.410   278   338 I system_server: libdebuggerd_client: done dumping process 91
+10-30 01:43:56.411    43    43 W tombstoned: skipping tombstone file creation due to intercept
+10-30 01:43:56.422   278   338 I ActivityManager: Collecting stacks for native pid 93
+10-30 01:43:56.422   278   338 I system_server: libdebuggerd_client: started dumping process 93
+10-30 01:43:56.422    43    43 I tombstoned: registered intercept for pid 93 and type kDebuggerdNativeBacktrace
+10-30 01:43:56.424    43    43 I tombstoned: received crash request for pid 93
+10-30 01:43:56.424    43    43 I tombstoned: found intercept fd 512 for pid 93 and type kDebuggerdNativeBacktrace
+10-30 01:43:56.431   278   338 I system_server: libdebuggerd_client: done dumping process 93
+10-30 01:43:56.432    43    43 W tombstoned: skipping tombstone file creation due to intercept
+10-30 01:43:56.443   278   338 I ActivityManager: Collecting stacks for native pid 95
+10-30 01:43:56.443   278   338 I system_server: libdebuggerd_client: started dumping process 95
+10-30 01:43:56.444    43    43 I tombstoned: registered intercept for pid 95 and type kDebuggerdNativeBacktrace
+10-30 01:43:56.445    43    43 I tombstoned: received crash request for pid 95
+10-30 01:43:56.445    43    43 I tombstoned: found intercept fd 512 for pid 95 and type kDebuggerdNativeBacktrace
+10-30 01:43:56.446  1582  1598 D TrafficStats: tagSocket(56) with statsTag=0xffffffff, statsUid=-1
+10-30 01:43:56.459    43    43 W tombstoned: skipping tombstone file creation due to intercept
+10-30 01:43:56.459   278   338 I system_server: libdebuggerd_client: done dumping process 95
+10-30 01:43:56.472   278   338 I ActivityManager: Collecting stacks for native pid 31
+10-30 01:43:56.472   278   338 I system_server: libdebuggerd_client: started dumping process 31
+10-30 01:43:56.473    43    43 I tombstoned: registered intercept for pid 31 and type kDebuggerdNativeBacktrace
+10-30 01:43:56.476    43    43 I tombstoned: received crash request for pid 31
+10-30 01:43:56.476    43    43 I tombstoned: found intercept fd 512 for pid 31 and type kDebuggerdNativeBacktrace
+10-30 01:43:56.543   278   338 I system_server: libdebuggerd_client: done dumping process 31
+10-30 01:43:56.543    43    43 W tombstoned: skipping tombstone file creation due to intercept
+10-30 01:43:56.554   278   338 I ActivityManager: Done dumping
+10-30 01:43:57.142   889  1232 E FrameEvents: updateAcquireFence: Did not find frame.
+10-30 01:43:57.166   889   930 I Launcher.IconCache: Database bulk icon loading failed, using fallback bulk icon loading for: ComponentInfo{org.videolan.vlc/org.videolan.vlc.StartActivity}
+10-30 01:43:57.179   889   930 D LoaderTask: loadAllApps
+10-30 01:43:57.179   889   930 D LoaderTask: bindAllApps
+10-30 01:43:57.234   889   930 D LoaderTask: update icon cache
+10-30 01:43:57.234   889   930 D LoaderTask: save shortcuts in icon cache
+10-30 01:43:57.234   889   930 D LoaderTask: step 2 complete
+10-30 01:43:57.237   889   930 D LoaderTask: loadDeepShortcuts
+10-30 01:43:57.237   889   930 D LoaderTask: bindDeepShortcuts
+10-30 01:43:57.237   889   930 D LoaderTask: save deep shortcuts in icon cache
+10-30 01:43:57.238   889   930 D LoaderTask: step 3 complete
+10-30 01:43:57.360   889   930 D LoaderTask: load widgets
+10-30 01:43:57.366   889   930 D LoaderTask: bindWidgets
+10-30 01:43:57.367   889   930 D LoaderTask: save widgets in icon cache
+10-30 01:43:57.422   889   930 D LoaderTask: finish icon update
+10-30 01:43:57.425   889   930 D QuickstepModelDelegate: Successfully registered for launcher snapshot logging!
+10-30 01:43:57.427   278   306 W Binder  : Caught a RuntimeException from the binder stub implementation.
+10-30 01:43:57.427   278   306 W Binder  : java.lang.SecurityException: Need REGISTER_STATS_PULL_ATOM permission.: Neither user 10104 nor current process has android.permission.REGISTER_STATS_PULL_ATOM.
+10-30 01:43:57.427   278   306 W Binder  : 	at android.app.ContextImpl.enforce(ContextImpl.java:2240)
+10-30 01:43:57.427   278   306 W Binder  : 	at android.app.ContextImpl.enforceCallingOrSelfPermission(ContextImpl.java:2268)
+10-30 01:43:57.427   278   306 W Binder  : 	at com.android.server.stats.StatsManagerService.enforceRegisterStatsPullAtomPermission(StatsManagerService.java:520)
+10-30 01:43:57.427   278   306 W Binder  : 	at com.android.server.stats.StatsManagerService.registerPullAtomCallback(StatsManagerService.java:175)
+10-30 01:43:57.427   278   306 W Binder  : 	at android.os.IStatsManagerService$Stub.onTransact(IStatsManagerService.java:313)
+10-30 01:43:57.427   278   306 W Binder  : 	at android.os.Binder.execTransactInternal(Binder.java:1285)
+10-30 01:43:57.427   278   306 W Binder  : 	at android.os.Binder.execTransact(Binder.java:1244)
+10-30 01:43:57.567  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.568  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.574  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.574  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.577  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.577  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.580  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.580  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.583  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.583  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.585  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.585  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.588  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.588  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.592  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.592  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.595  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.595  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.598  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.598  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.601  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.601  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.604  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.604  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.607  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.607  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.612  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.612  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.621  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.622  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.627  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.627  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.634  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.634  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.642  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.643  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.659  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.660  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.670  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.671  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.673  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.673  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.676  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.677  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.685  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.685  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.690  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.691  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.696  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.696  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.702  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.703  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.710  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.710  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.715  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.715  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.723  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.723  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.726  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.726  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.733  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.733  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.738  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.738  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.742  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:57.742  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:57.794  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:57.810  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:57.817  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:57.823  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:57.829  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:57.836  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:57.847  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:57.855  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:57.869  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:57.878  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:57.884  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:57.891  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:57.906  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:57.916  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:57.941  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:57.952  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:57.973  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:57.981  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:57.994  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:58.009  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:58.024  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:58.036  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:58.052  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:58.067  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:58.080  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:58.086  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:58.092  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:58.100  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:58.110  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:58.122  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:58.127  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:58.138  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:58.152  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:58.905  1170  1178 I FuseDaemon: Background concurrent copying GC freed 70605(4055KB) AllocSpace objects, 59(1180KB) LOS objects, 90% free, 2483KB/26MB, paused 72us,13us total 130.548ms
+10-30 01:43:59.018   278   341 D OomAdjuster: Not killing cached processes
+10-30 01:43:59.531   278   342 D CompatibilityChangeReporter: Compat change id reported: 168419799; UID 10059; state: DISABLED
+10-30 01:43:59.531   278   342 D CompatibilityChangeReporter: Compat change id reported: 273564678; UID 10059; state: DISABLED
+10-30 01:43:59.547  1496  1496 D CompatibilityChangeReporter: Compat change id reported: 194532703; UID 10059; state: ENABLED
+10-30 01:43:59.548   278  1208 D CompatibilityChangeReporter: Compat change id reported: 194532703; UID 10059; state: ENABLED
+10-30 01:43:59.698  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.698  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.708  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.709  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.725  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.725  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.734  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.735  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.746  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.746  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.753  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.753  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.764  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.764  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.769  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.769  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.777  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.777  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.787  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.788  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.796  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.796  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.802  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.802  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.814  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.814  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.834  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.834  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.840  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.840  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.849  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.849  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.858  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.858  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.864  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.864  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.873  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.873  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.877  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.878  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.882  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.882  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.886  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.887  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.891  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.891  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.896  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.896  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.901  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.901  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.905  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.905  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.910  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.910  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.914  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.914  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.917  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.917  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.920  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.920  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.923  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.923  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.925  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.926  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.928  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:43:59.929  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:43:59.951  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:59.957  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:59.962  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:59.966  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:59.971  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:59.976  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:59.981  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:59.985  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:59.991  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:43:59.997  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:44:00.014  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:44:00.024  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:44:00.045  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:44:00.052  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:44:00.059  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:44:00.070  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:44:00.201  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:44:00.216  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:44:00.228  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:44:00.243  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:44:00.249  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:44:00.261  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:44:00.288  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:44:00.293  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:44:00.299  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:44:00.304  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:44:00.316  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:44:00.322  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:44:00.326  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:44:00.331  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:44:00.336  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:44:00.340  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:44:00.345  1170  1261 W MediaProvider: getVolumePath for unknown volume: internal
+10-30 01:44:00.592   278   346 W libprocessgroup: Failed to open /dev/stune/top-app/cgroup.procs: No such file or directory
+10-30 01:44:00.592   278   346 W libprocessgroup: Failed to open /dev/cpuset/top-app/cgroup.procs: No such file or directory
+10-30 01:44:00.592   278   346 W libprocessgroup: Failed to open /dev/blkio//cgroup.procs: No such file or directory
+10-30 01:44:00.597   510   510 W OnBackInvokedCallback: OnBackInvokedCallback is not enabled for the application.
+10-30 01:44:00.597   510   510 W OnBackInvokedCallback: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+10-30 01:44:00.597   510   510 D CentralSurfaces: Received new disable state: enaihbcrso.qingr (unchanged)
+10-30 01:44:00.697    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-30 01:44:00.703    76  1489 I Gralloc4: mapper 4.x is not supported
+10-30 01:44:00.704    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@3.0::IMapper/default in either framework or device VINTF manifest.
+10-30 01:44:00.706    76  1489 W Gralloc3: mapper 3.x is not supported
+10-30 01:44:00.829   510   886 E OpenGLRenderer: Unable to match the desired swap behavior.
+10-30 01:44:00.841   278   404 I InputReader: Dropping key up from device wayland_keyboard because the key was not down.  keyCode=21, scanCode=105
+10-30 01:44:00.957   510   761 D ControlsListingControllerImpl: Subscribing callback, service count: 0
+10-30 01:44:01.020   108   132 W TransactionTracing: Could not find layer handle 0x7f4591219870
+10-30 01:44:01.020   108   132 W TransactionTracing: Could not find layer handle 0x7f4591219870
+10-30 01:44:01.021   108   132 W TransactionTracing: Could not find layer handle 0x7f459121f030
+10-30 01:44:01.021   108   132 W TransactionTracing: Could not find layer handle 0x7f4591219870
+10-30 01:44:01.109   278  1208 D CompatibilityChangeReporter: Compat change id reported: 173031413; UID 1000; state: ENABLED
+10-30 01:44:01.258   278   333 W Looper  : Slow dispatch took 172ms android.ui h=android.view.Choreographer$FrameHandler c=android.view.Choreographer$FrameDisplayEventReceiver@3822812 m=0
+10-30 01:44:01.581   278  1606 I DropBoxManagerService: add tag=system_server_pre_watchdog isTagEnabled=true flags=0x6
+10-30 01:44:01.884   510   780 I OpenGLRenderer: Davey! duration=917ms; Flags=0, FrameTimelineVsyncId=14893, IntendedVsync=627508648188, Vsync=627541981520, InputEventId=0, HandleInputStart=627545693305, AnimationStart=627545694395, PerformTraversalsStart=627575570650, DrawStart=627580731805, FrameDeadline=627545981520, FrameInterval=627545692291, FrameStartTime=16666666, SyncQueued=627588885894, SyncStart=627589006705, IssueDrawCommandsStart=627590101013, SwapBuffers=627616787882, FrameCompleted=628426521376, DequeueBufferDuration=15413, QueueBufferDuration=686614, GpuCompleted=627616787882, SwapBuffersCompleted=628426521376, DisplayPresentTime=0, CommandSubmissionCompleted=627616787882, 
+10-30 01:44:01.985  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:44:01.986  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:44:01.989  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:44:01.990  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:44:01.993  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:44:01.993  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:44:01.997  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:44:01.998  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:44:02.001  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:44:02.002  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:44:02.009  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:44:02.009   510   510 I Choreographer: Skipped 63 frames!  The application may be doing too much work on its main thread.
+10-30 01:44:02.009  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:44:02.018  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:44:02.018  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:44:02.021   510   510 D CentralSurfaces: Received new disable state: enaihbcrso.qingr (unchanged)
+10-30 01:44:02.022  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:44:02.022  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:44:02.033  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:44:02.034  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:44:02.038  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:44:02.038  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:44:02.043  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:44:02.043  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:44:02.197  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:44:02.197  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:44:02.199  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:44:02.200  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:44:02.202  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:44:02.202  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:44:02.204  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:44:02.204  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:44:02.208  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:44:02.208  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:44:02.217  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:44:02.217  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:44:02.219  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:44:02.219  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:44:02.220  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:44:02.220  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:44:02.223  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:44:02.223  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:44:02.225  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:44:02.226  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:44:02.229  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:44:02.230  1170  1421 V MediaProvider: Skipping next row id backup.
+10-30 01:44:02.238  1170  1421 V MediaProvider: Skipping next row id backup for internal database.
+10-30 01:44:02.238  1170  1421 V MediaProvider: Skipping next row id backup.

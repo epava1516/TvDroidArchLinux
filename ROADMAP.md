@@ -215,6 +215,15 @@ su integración no existe. El inicio funciona sin red y sin Android arrancado.
 
 ## H6 · Integración Android real
 
+En curso. Tras ampliar la VM a 7,7 GiB, sys.boot_completed=1 se observó a los
+79 s y se capturó el escritorio Android sobre DRM/Pixman. En sesión combinada,
+el shell inicia Android desde ajustes y lanza el VLC oficial x86_64 desde su
+búsqueda; Inicio y reanudación pasan con uinput. Evidencia en reports/h6-boot-probe/
+y reports/h6-integration/. Se observó un ANR de System UI. Las pruebas multimedia
+siguen incompletas: primeros frames decodificados, reproducción detenida y sin
+audio continuo demostrado. Persisten pruebas de red externa, IME, recuperación
+y suspensión; el hito no está cerrado.
+
 - Confirmar Binder en el kernel y completar el arranque Android: no basta con que
   el contenedor informe RUNNING. Registrar imagen, kernel y sys.boot_completed.
 - Validar superficies de Waydroid, buffers SHM/DMA-BUF según el perfil, formatos,
@@ -273,6 +282,14 @@ ocultos, actualización y retirada comprobadas, receta y fuentes reproducibles.
 **Aceptación:** instalar desde una ISO con hash registrado en una VM vacía,
 arrancar desde disco, abrir aplicación Linux y Android, actualizar y recuperar
 la sesión tras un fallo. Repetir en el hardware físico declarado compatible.
+
+## Evolución posterior: AOSP propio y ejecución de APK
+
+Dirección futura solicitada: sustituir Waydroid por un entorno AOSP controlado
+por el proyecto, con procesos sobre el kernel Linux e integración con el shell y
+compositor Rust. Plan, contratos y puertas de aceptación en
+[docs/AOSP-NATIVO.md](docs/AOSP-NATIVO.md). Esta línea A0–A5 sigue a H0–H9 y no
+reemplaza la validación Android H6 ni acredita ejecución nativa ya disponible.
 
 ## Regla para cerrar un hito
 

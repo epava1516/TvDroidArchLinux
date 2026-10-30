@@ -46,7 +46,9 @@ y los límites de la prueba están en [el laboratorio H1](../lab/anvil/README.md
 ## Android existente
 
 Se conservan el paquete Waydroid, sus imágenes y sus datos. Las pruebas históricas
-no confirmaron un arranque completo ni una interfaz usable en esta VM de 1,9 GiB.
+no confirmaron una interfaz usable con 1,9 GiB. Tras ampliar la VM a 7,7 GiB,
+el ensayo H6 sí confirma sys.boot_completed=1 y escritorio Android nativo.
+VLC se instala y lanza desde el shell; audio/vídeo y estabilidad siguen pendientes.
 El perfil software configura gralloc=default y egl=swiftshader; vendor moderno
 puede traducir este último a ANGLE/Pastel. No se ha reintentado Android durante
 la limpieza. Su validación corresponde al hito H6 del roadmap.

@@ -1,0 +1,6 @@
+PARTIAL: Android started through shell Settings using uinput; sys.boot_completed=1 confirmed.
+Official VLC 3.7.1 x86_64 installed and exported as a desktop entry.
+VLC launched from shell physical search; Android activity verified; Home restored the shell and Resume restored Android.
+First-start System UI ANR was observed. Application then responded to uinput.
+MEDIA INCOMPLETE: initial tutorial paused playback. Second trial decoded initial test frames, but subsequent captures were identical and monitor audio was not continuous. Do not claim working audio/video.
+The bounded native unit ended. Session/container stopped and tty1 restored.

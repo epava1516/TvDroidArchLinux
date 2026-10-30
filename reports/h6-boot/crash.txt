@@ -1,0 +1,89 @@
+--------- beginning of crash
+10-30 01:17:56.400    97    97 F DEBUG   : *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+10-30 01:17:56.401    97    97 F DEBUG   : LineageOS Version: '20.0-20260927-VANILLA-waydroid_x86_64'
+10-30 01:17:56.401    97    97 F DEBUG   : Build fingerprint: 'waydroid/lineage_waydroid_x86_64/waydroid_x86_64:13/TQ3A.230901.001/eng.aleast.20260927.215901:userdebug/test-keys'
+10-30 01:17:56.401    97    97 F DEBUG   : Revision: '0'
+10-30 01:17:56.401    97    97 F DEBUG   : ABI: 'x86_64'
+10-30 01:17:56.401    97    97 F DEBUG   : Timestamp: 2026-10-30 01:17:50.573186385+0000
+10-30 01:17:56.401    97    97 F DEBUG   : Process uptime: 150s
+10-30 01:17:56.401    97    97 F DEBUG   : Cmdline: /system/bin/surfaceflinger
+10-30 01:17:56.401    97    97 F DEBUG   : pid: 97, tid: 97, name: surfaceflinger  >>> /system/bin/surfaceflinger <<<
+10-30 01:17:56.401    97    97 F DEBUG   : uid: 1000
+10-30 01:17:56.401    97    97 F DEBUG   : signal 0 (SIGABRT), code -1 (SI_QUEUE), fault addr --------
+10-30 01:17:56.401    97    97 F DEBUG   : Abort message: 'Attempted to retrieve value from failed HIDL call: Status(EX_TRANSACTION_FAILED): 'DEAD_OBJECT: ''
+10-30 01:17:56.401    97    97 F DEBUG   :     rax 0000000000000000  rbx 0000000000000061  rcx 00007f7597ade65f  rdx 0000000000000006
+10-30 01:17:56.401    97    97 F DEBUG   :     r8  00007f736dc13c10  r9  00007f736dc13c10  r10 00007ffdf7561670  r11 0000000000000207
+10-30 01:17:56.401    97    97 F DEBUG   :     r12 00007ffdf7561798  r13 0000000000000001  r14 00007ffdf7561668  r15 0000000000000061
+10-30 01:17:56.401    97    97 F DEBUG   :     rdi 0000000000000061  rsi 0000000000000061
+10-30 01:17:56.401    97    97 F DEBUG   :     rbp 0000000000000009  rsp 00007ffdf7561660  rip 00007f7597ade65f
+10-30 01:17:56.401    97    97 F DEBUG   : backtrace:
+10-30 01:17:56.401    97    97 F DEBUG   :       #00 pc 000000000005f65f  /apex/com.android.runtime/lib64/bionic/libc.so (abort+191) (BuildId: edac77664d4699371f98b0f76841bb37)
+10-30 01:17:56.401    97    97 F DEBUG   :       #01 pc 00000000000069aa  /system/lib64/liblog.so (__android_log_default_aborter+10) (BuildId: f0538d632eee5d6820b96914c8a1657c)
+10-30 01:17:56.401    97    97 F DEBUG   :       #02 pc 000000000001924e  /system/lib64/libbase.so (android::base::LogMessage::~LogMessage()+350) (BuildId: 9335a3052c0ad43b3680057cf90b0afe)
+10-30 01:17:56.401    97    97 F DEBUG   :       #03 pc 00000000000542e5  /system/lib64/libhidlbase.so (android::hardware::details::return_status::onValueRetrieval() const+229) (BuildId: 08aa26ccc3160d8dbce5c97ef41ce9ce)
+10-30 01:17:56.401    97    97 F DEBUG   :       #04 pc 0000000000177f15  /system/bin/surfaceflinger (android::Hwc2::HidlComposer::setLayerHandleInfo(unsigned long, unsigned long, android::sp<android::GraphicBuffer> const&)+1029) (BuildId: 3dd5acebb81cafa8857a9def1c893e04)
+10-30 01:17:56.401    97    97 F DEBUG   :       #05 pc 00000000002737ae  /system/bin/surfaceflinger (android::compositionengine::impl::OutputLayer::writeStateToHWC(bool, bool, unsigned int, bool, bool)+2894) (BuildId: 3dd5acebb81cafa8857a9def1c893e04)
+10-30 01:17:56.401    97    97 F DEBUG   :       #06 pc 00000000002456af  /system/bin/surfaceflinger (android::compositionengine::impl::Output::writeCompositionState(android::compositionengine::CompositionRefreshArgs const&)+751) (BuildId: 3dd5acebb81cafa8857a9def1c893e04)
+10-30 01:17:56.401    97    97 F DEBUG   :       #07 pc 0000000000243925  /system/bin/surfaceflinger (android::compositionengine::impl::Output::present(android::compositionengine::CompositionRefreshArgs const&)+101) (BuildId: 3dd5acebb81cafa8857a9def1c893e04)
+10-30 01:17:56.401    97    97 F DEBUG   :       #08 pc 000000000023aefe  /system/bin/surfaceflinger (android::compositionengine::impl::CompositionEngine::present(android::compositionengine::CompositionRefreshArgs&)+254) (BuildId: 3dd5acebb81cafa8857a9def1c893e04)
+10-30 01:17:56.401    97    97 F DEBUG   :       #09 pc 00000000001f4ae9  /system/bin/surfaceflinger (android::SurfaceFlinger::composite(long, long)+2361) (BuildId: 3dd5acebb81cafa8857a9def1c893e04)
+10-30 01:17:56.401    97    97 F DEBUG   :       #10 pc 00000000001cc9b8  /system/bin/surfaceflinger (android::impl::MessageQueue::Handler::handleMessage(android::Message const&)+72) (BuildId: 3dd5acebb81cafa8857a9def1c893e04)
+10-30 01:17:56.401    97    97 F DEBUG   :       #11 pc 00000000000184af  /system/lib64/libutils.so (android::Looper::pollInner(int)+447) (BuildId: 056174139c244cde0be9a8d5970636f2)
+10-30 01:17:56.401    97    97 F DEBUG   :       #12 pc 000000000001828e  /system/lib64/libutils.so (android::Looper::pollOnce(int, int*, int*, void**)+110) (BuildId: 056174139c244cde0be9a8d5970636f2)
+10-30 01:17:56.401    97    97 F DEBUG   :       #13 pc 00000000001cd041  /system/bin/surfaceflinger (android::impl::MessageQueue::waitMessage()+97) (BuildId: 3dd5acebb81cafa8857a9def1c893e04)
+10-30 01:17:56.401    97    97 F DEBUG   :       #14 pc 00000000001d6308  /system/bin/surfaceflinger (android::scheduler::Scheduler::run()+24) (BuildId: 3dd5acebb81cafa8857a9def1c893e04)
+10-30 01:17:56.401    97    97 F DEBUG   :       #15 pc 000000000023a80a  /system/bin/surfaceflinger (main+2090) (BuildId: 3dd5acebb81cafa8857a9def1c893e04)
+10-30 01:17:56.401    97    97 F DEBUG   :       #16 pc 0000000000050cf9  /apex/com.android.runtime/lib64/bionic/libc.so (__libc_init+89) (BuildId: edac77664d4699371f98b0f76841bb37)
+10-30 01:18:15.381   555   555 E AndroidRuntime: FATAL EXCEPTION: main
+10-30 01:18:15.381   555   555 E AndroidRuntime: Process: com.android.systemui, PID: 555
+10-30 01:18:15.381   555   555 E AndroidRuntime: java.lang.RuntimeException: Unable to get provider com.android.systemui.keyguard.CustomizationProvider: java.lang.RuntimeException: Failed to initialize display event receiver.  status=-19
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at android.app.ActivityThread.installProvider(ActivityThread.java:7519)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at android.app.ActivityThread.installContentProviders(ActivityThread.java:7025)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:6796)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown Source:0)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2133)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:201)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:288)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:7924)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:548)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:937)
+10-30 01:18:15.381   555   555 E AndroidRuntime: Caused by: java.lang.RuntimeException: Failed to initialize display event receiver.  status=-19
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at android.view.DisplayEventReceiver.nativeInit(Native Method)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at android.view.DisplayEventReceiver.<init>(DisplayEventReceiver.java:113)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at android.view.Choreographer$FrameDisplayEventReceiver.<init>(Choreographer.java:1165)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at android.view.Choreographer.<init>(Choreographer.java:276)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at android.view.Choreographer.<init>(Unknown Source:0)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at android.view.Choreographer$1.initialValue(Choreographer.java:116)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at android.view.Choreographer$1.initialValue(Choreographer.java:109)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at java.lang.ThreadLocal.setInitialValue(ThreadLocal.java:180)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at java.lang.ThreadLocal.get(ThreadLocal.java:170)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at android.view.Choreographer.getInstance(Choreographer.java:304)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at com.android.keyguard.CarrierTextManager$$ExternalSyntheticLambda3.run(R8$$SyntheticClass:12)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at com.android.wm.shell.common.ShellExecutor$$ExternalSyntheticLambda0.run(R8$$SyntheticClass:65)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at com.android.wm.shell.common.HandlerExecutor.execute(HandlerExecutor.java:12)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at com.android.wm.shell.common.ShellExecutor.executeBlocking(ShellExecutor.java:2)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at com.android.wm.shell.common.ShellExecutor.executeBlocking(ShellExecutor.java:4)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at com.android.wm.shell.dagger.WMShellConcurrencyModule_ProvideShellMainChoreographerFactory.get(WMShellConcurrencyModule_ProvideShellMainChoreographerFactory.java:24)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at dagger.internal.DoubleCheck.get(DoubleCheck.java:13)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at com.android.wm.shell.dagger.WMShellModule_ProvideWindowDecorViewModelFactory.get(WMShellModule_ProvideWindowDecorViewModelFactory.java:20)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at dagger.internal.DoubleCheck.get(DoubleCheck.java:13)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at com.android.systemui.dagger.DaggerReferenceGlobalRootComponent$PresentJdkOptionalInstanceProvider.get(DaggerReferenceGlobalRootComponent.java:2)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at com.android.systemui.dagger.DaggerReferenceGlobalRootComponent$PresentJdkOptionalInstanceProvider.get(DaggerReferenceGlobalRootComponent.java:1)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at com.android.wm.shell.dagger.WMShellBaseModule_ProvideFullscreenTaskListenerFactory.get(WMShellBaseModule_ProvideFullscreenTaskListenerFactory.java:46)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at dagger.internal.DoubleCheck.get(DoubleCheck.java:13)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at com.android.wm.shell.dagger.WMShellBaseModule_ProvideIndependentShellComponentsToCreateFactory.get(WMShellBaseModule_ProvideIndependentShellComponentsToCreateFactory.java:74)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at dagger.internal.DoubleCheck.get(DoubleCheck.java:13)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at com.android.wm.shell.dagger.WMShellBaseModule_ProvideShellSysuiCallbacksFactory.get(WMShellBaseModule_ProvideShellSysuiCallbacksFactory.java:8)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at dagger.internal.DoubleCheck.get(DoubleCheck.java:13)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at com.android.systemui.dagger.DaggerReferenceGlobalRootComponent$WMComponentImpl.getShell(DaggerReferenceGlobalRootComponent.java:2)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at com.android.systemui.SystemUIInitializer.init(SystemUIInitializer.java:51)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at com.android.systemui.SystemUIAppComponentFactoryBase.access$createSystemUIInitializerInternal(SystemUIAppComponentFactoryBase.kt:18)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at com.android.systemui.SystemUIAppComponentFactoryBase$instantiateProviderCompat$1.onContextAvailable(SystemUIAppComponentFactoryBase.kt:6)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at com.android.systemui.keyguard.CustomizationProvider.attachInfo(CustomizationProvider.kt:7)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	at android.app.ActivityThread.installProvider(ActivityThread.java:7514)
+10-30 01:18:15.381   555   555 E AndroidRuntime: 	... 11 more
+10-30 01:18:17.234   690   690 E AndroidRuntime: FATAL EXCEPTION: main
+10-30 01:18:17.234   690   690 E AndroidRuntime: PID: 690
+10-30 01:18:17.234   690   690 E AndroidRuntime: DeadSystemException: The system died; earlier logs will point to the root cause

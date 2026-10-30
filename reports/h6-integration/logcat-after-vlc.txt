@@ -1,0 +1,518 @@
+--------- beginning of main
+10-30 01:45:28.709   676   676 D PhoneSwitcherNetworkRequstListener: got request NetworkRequest [ REQUEST id=71, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:28.710   278   442 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=71, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:28.711   278   450 D ConnectivityService: NetReassign [74 : null → 100]
+10-30 01:45:28.711   278   715 D ConnectivityService: requestNetwork for uid/pid:10108/1703 activeRequest: null callbackRequest: 76 [NetworkRequest [ REQUEST id=77, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+10-30 01:45:28.716   278   449 D EthernetNetworkFactory: eth0: onNetworkNeeded for request: NetworkRequest [ REQUEST id=74, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:28.716   278   449 D EthernetNetworkFactory: IpClient already started
+10-30 01:45:28.716   278   450 D ConnectivityService: NetReassign [no changes]
+10-30 01:45:28.718   278   442 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=74, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:28.718   278   442 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=74, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:28.718   278   442 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=74, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:28.723   676   676 D PhoneSwitcherNetworkRequstListener: got request NetworkRequest [ REQUEST id=74, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:28.725   278   450 D ConnectivityService: NetReassign [77 : null → 100]
+10-30 01:45:28.725   278   449 D EthernetNetworkFactory: eth0: onNetworkNeeded for request: NetworkRequest [ REQUEST id=77, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:28.725   278   449 D EthernetNetworkFactory: IpClient already started
+10-30 01:45:28.728   676   676 D PhoneSwitcherNetworkRequstListener: got request NetworkRequest [ REQUEST id=77, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:28.732   278   442 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=77, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:28.732   278   442 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=77, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:28.732   278   442 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=77, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:28.737  1703  1703 D ClockController: onTuningChanged key=icon_blacklist value=null
+10-30 01:45:28.739  1703  1703 D ClockController: onTuningChanged key=lineagesystem:status_bar_clock value=2
+10-30 01:45:28.740  1703  1703 D ClockController: onTuningChanged key=icon_blacklist value=null
+10-30 01:45:28.741  1703  1703 D ClockController: onTuningChanged key=lineagesystem:status_bar_clock value=2
+10-30 01:45:28.769  1703  1703 E NotificationPanelView: maxPanelHeight is invalid. mOverExpansion: 0.0, calculatePanelHeightQsExpanded: 0, calculatePanelHeightShade: 0, mStatusBarMinHeight = 0, mQsMinExpansionHeight = 0
+--------- beginning of system
+10-30 01:45:28.776   278  1823 I DropBoxManagerService: add tag=system_app_wtf isTagEnabled=true flags=0x2
+10-30 01:45:28.781  1703  1703 I Choreographer: Skipped 78 frames!  The application may be doing too much work on its main thread.
+10-30 01:45:28.783  1703  1703 I WallpaperController: Won't set zoom. Window not attached com.android.systemui.shade.NotificationShadeWindowView{f606826 I.E...... ......I. 0,0-0,0}
+10-30 01:45:28.795  1703  1703 D NavigationModeController: getCurrentUserContext: contextUser=0 currentUser=0
+10-30 01:45:28.891  1703  1703 I NoBackGesture: Config changed: newConfig={1.0 ?mcc?mnc [en_US] ldltr sw640dp w1138dp h592dp 180dpi lrg long land night -touch qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1280, 720) mAppBounds=Rect(0, 0 - 1280, 666) mMaxBounds=Rect(0, 0 - 1280, 720) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} as.2 s.116 fontWeightAdjustment=0} lastReportedConfig={1.0 ?mcc?mnc [en_US] ldltr sw640dp w1138dp h640dp 180dpi lrg long land night -touch qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1280, 720) mAppBounds=Rect(0, 0 - 1280, 720) mMaxBounds=Rect(0, 0 - 1280, 720) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} as.2 s.80 fontWeightAdjustment=0}
+10-30 01:45:28.909  1703  1756 D libEGL  : dlopen (libGLESv2_angle.so) success at 0xe6f54fa8dd6573a5
+10-30 01:45:29.040  1703  1756 D vulkan  : searching for layers in '/system/lib64'
+10-30 01:45:29.041  1703  1756 D vulkan  : searching for layers in '/system/system_ext/lib64'
+10-30 01:45:29.041  1703  1756 D vulkan  : searching for layers in '/system/product/lib64'
+10-30 01:45:29.043  1703  1756 W libEGL  : ANGLE Warn:vulkan_icd.cpp:311 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+10-30 01:45:29.067  1703  1756 I ANGLE   : Version (2.1.20440 git hash: 353815e0d958), Renderer (Vulkan 1.2.0 (SwiftShader Device (LLVM 10.0.0) (0x0000C0DE)))
+10-30 01:45:29.068    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-30 01:45:29.068  1703  1756 I Gralloc4: mapper 4.x is not supported
+10-30 01:45:29.069    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@3.0::IMapper/default in either framework or device VINTF manifest.
+10-30 01:45:29.069  1703  1756 W Gralloc3: mapper 3.x is not supported
+10-30 01:45:29.075    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.allocator@4.0::IAllocator/default in either framework or device VINTF manifest.
+10-30 01:45:29.076    19    19 I servicemanager: Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest.
+10-30 01:45:29.077  1703  1756 W ProcessState: Waydroid: host binder driver /dev/host_binder unavailable; host-AIDL passthrough disabled
+10-30 01:45:29.077  1703  1756 W ServiceManager: Waydroid: host ProcessState unavailable for android.hardware.graphics.allocator.IAllocator/default
+10-30 01:45:29.077  1703  1756 E Gralloc4: AIDL IAllocator declared but failed to get service
+10-30 01:45:29.077  1703  1756 W Gralloc4: allocator 4.x is not supported
+10-30 01:45:29.077    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.allocator@3.0::IAllocator/default in either framework or device VINTF manifest.
+10-30 01:45:29.077  1703  1756 W Gralloc3: allocator 3.x is not supported
+10-30 01:45:29.163   108  1075 E HWComposer: getSupportedContentTypes: getSupportedContentTypes failed for display 0: Unsupported (8)
+10-30 01:45:29.186  1703  1756 E OpenGLRenderer: Unable to match the desired swap behavior.
+10-30 01:45:29.191  1703  1831 D libEGL  : dlopen (libGLESv2_angle.so) success at 0xe6f54fa8dd6573a5
+10-30 01:45:29.707    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-30 01:45:29.708    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@3.0::IMapper/default in either framework or device VINTF manifest.
+10-30 01:45:29.729  1703  1815 I OpenGLRenderer: Davey! duration=2233ms; Flags=1, FrameTimelineVsyncId=18706, IntendedVsync=714091978058, Vsync=715391978006, InputEventId=0, HandleInputStart=715396828699, AnimationStart=715396829907, PerformTraversalsStart=715398969907, DrawStart=715802772917, FrameDeadline=714112644724, FrameInterval=715396052020, FrameStartTime=16666666, SyncQueued=715863039121, SyncStart=715863865823, IssueDrawCommandsStart=715865756525, SwapBuffers=715893644702, FrameCompleted=716326354882, DequeueBufferDuration=0, QueueBufferDuration=285931, GpuCompleted=715893644702, SwapBuffersCompleted=716326354882, DisplayPresentTime=0, CommandSubmissionCompleted=715893644702, 
+10-30 01:45:29.844  1703  1703 D CompatibilityChangeReporter: Compat change id reported: 170233598; UID 10108; state: DISABLED
+10-30 01:45:29.860  1703  1703 W ConstraintSet: Unknown attribute 0x39   0
+10-30 01:45:29.860  1703  1703 W ConstraintSet: Unknown attribute 0x39   0
+10-30 01:45:29.860  1703  1703 W ConstraintSet: Unknown attribute 0x39   0
+10-30 01:45:29.861  1703  1703 W ConstraintSet: Unknown attribute 0x39   0
+10-30 01:45:30.002  1703  1703 D CentralSurfaces: Received new disable state: enaihbcrso.qingr (unchanged)
+10-30 01:45:30.199  1703  1756 E OpenGLRenderer: Unable to match the desired swap behavior.
+10-30 01:45:30.205  1703  1703 I NoBackGesture: NavbarController: newConfig={1.0 ?mcc?mnc [en_US] ldltr sw640dp w1138dp h592dp 180dpi lrg long land night -touch qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1280, 720) mAppBounds=Rect(0, 0 - 1280, 666) mMaxBounds=Rect(0, 0 - 1280, 720) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} as.2 s.116 fontWeightAdjustment=0} mTaskbarDelegate initialized=false willApplyConfigToNavbars=false navBarCount=1
+10-30 01:45:30.217  1703  1703 I NoBackGesture: Config changed: newConfig={1.0 ?mcc?mnc [en_US] ldltr sw640dp w1138dp h592dp 180dpi lrg long land night -touch qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1280, 720) mAppBounds=Rect(0, 0 - 1280, 666) mMaxBounds=Rect(0, 0 - 1280, 720) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} as.2 s.116 fontWeightAdjustment=0} lastReportedConfig={1.0 ?mcc?mnc [en_US] ldltr sw640dp w1138dp h592dp 180dpi lrg long land night -touch qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1280, 720) mAppBounds=Rect(0, 0 - 1280, 666) mMaxBounds=Rect(0, 0 - 1280, 720) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} as.2 s.116 fontWeightAdjustment=0}
+10-30 01:45:30.222  1703  1703 D NavigationModeController: onOverlayChanged
+10-30 01:45:30.223  1703  1703 D NavigationModeController: getCurrentUserContext: contextUser=0 currentUser=0
+10-30 01:45:30.223  1703  1703 D NavigationModeController: getCurrentInteractionMode: mode=0 contextUser=0
+10-30 01:45:30.224  1703  1703 D NavigationModeController: updateCurrentInteractionMode: mode=0
+10-30 01:45:30.224  1703  1703 D NavigationModeController:   contextUser=0
+10-30 01:45:30.224  1703  1703 D NavigationModeController:   assetPaths=
+10-30 01:45:30.224  1703  1703 D NavigationModeController:     <empty> and /system/framework/framework-res.apk
+10-30 01:45:30.224  1703  1703 D NavigationModeController:     <empty> and /system/framework/org.lineageos.platform-res.apk
+10-30 01:45:30.224  1703  1703 D NavigationModeController:     <empty> and /system/system_ext/priv-app/SystemUI/SystemUI.apk
+10-30 01:45:30.224  1703  1703 D NavigationModeController:     /data/resource-cache/com.android.systemui-neutral-rZ03.frro
+10-30 01:45:30.224  1703  1703 D NavigationModeController:     /data/resource-cache/com.android.systemui-accent-W4qv.frro
+10-30 01:45:30.241  1703  1703 D NavigationModeController: getCurrentUserContext: contextUser=0 currentUser=0
+10-30 01:45:30.263  1703  1703 E KeyguardClockSwitch: No clock being shown
+10-30 01:45:30.292  1703  1703 E KeyguardClockSwitch: No clock being shown
+10-30 01:45:30.474  1703  1703 V WindowManagerShell: Display changed: 0
+10-30 01:45:30.606  1703  1703 D QSPanel : setUsingHorizontalLayout: false, true
+10-30 01:45:30.607  1703  1703 D QSPanel : Reattaching media host: false, current null, new com.android.systemui.qs.QSPanel{75110c9 VFE...... ......I. 0,0-0,0 #7f0a055e app:id/quick_settings_panel}
+10-30 01:45:30.618  1703  1703 D QSPanel : setUsingHorizontalLayout: false, true
+10-30 01:45:30.619  1703  1703 D QSPanel : Reattaching media host: false, current com.android.systemui.qs.QSPanel{75110c9 VFE...... ......I. 0,0-0,0 #7f0a055e app:id/quick_settings_panel}, new com.android.systemui.qs.QSPanel{75110c9 VFE...... ......I. 0,0-0,0 #7f0a055e app:id/quick_settings_panel}
+10-30 01:45:30.628  1703  1703 D QuickQSPanel: setUsingHorizontalLayout: false, true
+10-30 01:45:30.629  1703  1703 D QuickQSPanel: Reattaching media host: false, current null, new com.android.systemui.qs.QuickQSPanel{468bf0b VFE...... ......I. 0,0-0,0 #7f0a055c app:id/quick_qs_panel}
+10-30 01:45:30.642  1703  1703 D QS      : Binding the View implementation of the QS footer actions
+10-30 01:45:30.666  1703  1703 W DepthController: Invalid qs expansion
+10-30 01:45:30.673  1703  1703 D ThemeOverlayController: Boot colors: [WallpaperColors: ff63a3ad ff1b242a h: 6]
+10-30 01:45:30.683  1703  1703 D ThemeOverlayController: fetched overlays. accent: android.content.om.FabricatedOverlay@59d112e neutral: android.content.om.FabricatedOverlay@6b084cf
+10-30 01:45:30.683  1703  1703 D ThemeOverlayController: updateThemeOverlays. Setting: null
+10-30 01:45:30.686  1703  1703 D ThemeOverlayController: Applying overlays: android.theme.customization.system_palette -> com.android.systemui:neutral, android.theme.customization.accent_color -> com.android.systemui:accent
+10-30 01:45:30.702  1703  1703 D CentralSurfaces: mShouldDelayWakeUpAnimation CLEARED
+10-30 01:45:30.708  1703  1703 D CentralSurfaces: Received new disable state: enaihbcrso.qingr (unchanged)
+10-30 01:45:30.708  1703  1703 W DepthController: Invalid qs expansion
+10-30 01:45:30.710  1703  1703 D CentralSurfaces: updateQsExpansionEnabled - QS Expand enabled: true
+10-30 01:45:30.712   136   376 W idmap2d : failed to parse idmap header of '/data/resource-cache/data@resource-cache@com.android.systemui-accent-HtCp.frro@idmap'
+10-30 01:45:30.739   136   376 W idmap2d : failed to parse idmap header of '/data/resource-cache/data@resource-cache@com.android.systemui-neutral-pW5y.frro@idmap'
+10-30 01:45:30.757  1703  1703 D WallpaperService: reportEngineShown: shouldWait=true
+10-30 01:45:30.847  1703  1703 W AudioManager: attempt to call registerAudioRecordingCallback() on a previouslyregistered callback
+10-30 01:45:30.852   278   715 D SystemServerTiming: getUserSwitchability-0
+10-30 01:45:30.852   278   715 D SystemServerTiming: TM.isInCall
+10-30 01:45:30.854   278   715 V SystemServerTiming: TM.isInCall took to complete: 2ms
+10-30 01:45:30.857   278   715 D SystemServerTiming: hasUserRestriction-DISALLOW_USER_SWITCH
+10-30 01:45:30.859   278   715 V SystemServerTiming: hasUserRestriction-DISALLOW_USER_SWITCH took to complete: 0ms
+10-30 01:45:30.859   278   715 D SystemServerTiming: getInt-ALLOW_USER_SWITCHING_WHEN_SYSTEM_USER_LOCKED
+10-30 01:45:30.859   278   715 V SystemServerTiming: getInt-ALLOW_USER_SWITCHING_WHEN_SYSTEM_USER_LOCKED took to complete: 0ms
+10-30 01:45:30.859   278   715 D SystemServerTiming: isUserUnlocked-USER_SYSTEM
+10-30 01:45:30.859   278   715 V SystemServerTiming: isUserUnlocked-USER_SYSTEM took to complete: 0ms
+10-30 01:45:30.859   278   715 V SystemServerTiming: getUserSwitchability-0 took to complete: 6ms
+10-30 01:45:30.938  1703  1703 I Choreographer: Skipped 128 frames!  The application may be doing too much work on its main thread.
+10-30 01:45:30.970  1703  1734 D ControlsListingControllerImpl: Subscribing callback, service count: 0
+10-30 01:45:30.997   278   332 I ActivityTaskManager: Config changes=80000000 {1.0 ?mcc?mnc [en_US] ldltr sw640dp w1138dp h592dp 180dpi lrg long land night -touch qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1280, 720) mAppBounds=Rect(0, 0 - 1280, 666) mMaxBounds=Rect(0, 0 - 1280, 720) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} as.3 s.151 fontWeightAdjustment=0}
+10-30 01:45:31.021   889   889 I TouchInteractionService: preloadOverview: forSUWAllSet=false, isHomeAndOverviewSame=true
+10-30 01:45:31.033   278   332 I WindowManager: Override config changes=80000000 {1.0 ?mcc?mnc [en_US] ldltr sw640dp w1138dp h592dp 180dpi lrg long land night -touch qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1280, 720) mAppBounds=Rect(0, 0 - 1280, 666) mMaxBounds=Rect(0, 0 - 1280, 720) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} as.3 s.151 fontWeightAdjustment=0} for displayId=0
+10-30 01:45:31.044   889   889 D b/254119092: TaskbarManager#mComponentCallbacks.onConfigurationChanged: {1.0 ?mcc?mnc [en_US] ldltr sw640dp w1138dp h592dp 180dpi lrg long land night -touch qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1280, 720) mAppBounds=Rect(0, 0 - 1280, 666) mMaxBounds=Rect(0, 0 - 1280, 720) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} as.3 s.151 fontWeightAdjustment=0}
+10-30 01:45:31.044   889   889 D b/254119092: mActivity and mContext agree taskbarIsPresent=false
+10-30 01:45:31.044   889   889 D b/254119092: ComponentCallbacks#onConfigurationChanged() configDiffForRecreate={CONFIG_ASSETS_PATHS}
+10-30 01:45:31.044   889   889 D b/254119092: mActivity and mContext agree taskbarIsPresent=false
+10-30 01:45:31.044   889   889 D b/254119092: destroyExistingTaskbar: null
+10-30 01:45:31.044   889   889 D b/254119092: mActivity and mContext agree taskbarIsPresent=false
+10-30 01:45:31.044   889   889 D b/254119092: recreateTaskbar: isTaskbarEnabled=false [dp != null (i.e. mUserUnlocked)]=true FLAG_HIDE_NAVBAR_WINDOW=false dp.isTaskbarPresent=false
+10-30 01:45:31.044   889   889 D b/254119092: mActivity and mContext agree taskbarIsPresent=false
+10-30 01:45:31.047  1703  1813 I OpenGLRenderer: Davey! duration=2214ms; Flags=0, FrameTimelineVsyncId=19264, IntendedVsync=715408644672, Vsync=717541977920, InputEventId=0, HandleInputStart=717552539336, AnimationStart=717552540478, PerformTraversalsStart=717556462315, DrawStart=717567029278, FrameDeadline=715929311318, FrameInterval=717552467414, FrameStartTime=16666666, SyncQueued=717600948334, SyncStart=717601606383, IssueDrawCommandsStart=717601663332, SwapBuffers=717602947846, FrameCompleted=717624173655, DequeueBufferDuration=14894, QueueBufferDuration=1112008, GpuCompleted=717602947846, SwapBuffersCompleted=717624173655, DisplayPresentTime=0, CommandSubmissionCompleted=717602947846, 
+10-30 01:45:31.044   889   889 D b/254119092: DisplayController#onConfigurationChanged: {1.0 ?mcc?mnc [en_US] ldltr sw640dp w1138dp h592dp 180dpi lrg long land night -touch qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1280, 720) mAppBounds=Rect(0, 0 - 1280, 666) mMaxBounds=Rect(0, 0 - 1280, 720) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} as.3 s.151 fontWeightAdjustment=0}
+10-30 01:45:31.070  1703  1703 D CentralSurfaces: Received new disable state: enaihbcrso.qingr (unchanged)
+10-30 01:45:31.129   278   332 W ImageReader_JNI: Unable to acquire a buffer item, very likely client tried to acquire more than maxImages buffers
+10-30 01:45:31.131  1703  1734 D ControlsListingControllerImpl: Unsubscribing callback
+10-30 01:45:31.169   278   336 W system_server: Long monitor contention with owner android.fg (332) at android.content.res.Configuration com.android.server.wm.ActivityTaskManagerService.getGlobalConfigurationForPid(int)(ActivityTaskManagerService.java:1137) waiters=0 in void com.android.server.wm.WindowAnimator.lambda$new$1$com-android-server-wm-WindowAnimator(long) for 166ms
+10-30 01:45:31.189   278   332 W Looper  : Slow dispatch took 285ms android.fg h=android.os.Handler c=com.android.server.om.OverlayManagerService$$ExternalSyntheticLambda1@2a97f26 m=0
+10-30 01:45:31.224  1060  1060 I DigitalWidgetProvider: onReceive: Intent { act=android.intent.action.CONFIGURATION_CHANGED flg=0x70200010 }
+10-30 01:45:31.242   278   380 D CoreBackPreview: Window{5bfe651 u0 org.videolan.vlc/org.videolan.vlc.gui.onboarding.OnboardingActivity}: Setting back callback null
+10-30 01:45:31.245  1703  1703 D WallpaperService: reportEngineShown: shouldWait=true
+10-30 01:45:31.258   278  1292 W InputManager-JNI: Input channel object '5bfe651 org.videolan.vlc/org.videolan.vlc.gui.onboarding.OnboardingActivity (client)' was disposed without first being removed with the input manager!
+10-30 01:45:31.268  1624  1838 D libEGL  : dlopen (libGLESv2_angle.so) success at 0xe6f54fa8dd6573a5
+10-30 01:45:31.268   108   132 W TransactionTracing: Could not find layer handle 0x7f459123ab10
+10-30 01:45:31.268   108   132 W TransactionTracing: Could not find layer handle 0x7f45912200b0
+10-30 01:45:31.278   278   335 V WindowManager: Unknown focus tokens, dropping reportFocusChanged
+10-30 01:45:31.325   676   676 D CarrierSvcBindHelper: onPackageModified: android
+10-30 01:45:31.328  1060  1060 V DigitalWidgetProvider: Target dimensions: 409px x 272px
+10-30 01:45:31.328  1060  1060 V DigitalWidgetProvider: Last valid widget container measurement: 248px x 182px
+10-30 01:45:31.328  1060  1060 V DigitalWidgetProvider: Last text clock measurement: 212px x 119px
+10-30 01:45:31.328  1060  1060 V DigitalWidgetProvider: Clock font: 101px
+10-30 01:45:31.331  1624  1624 I android_os_HwBinder: HwBinder: Starting hwbinderthread pool for getting: vendor.waydroid.window@1.1::IWaydroidWindow/default
+10-30 01:45:31.339   278   278 I Telecom : DefaultDialerCache: Refreshing default dialer for user 0: now null: DDC.oR@ACk
+10-30 01:45:31.348   278  1166 W BackupTransportManager: Package android enabled setting: 0
+10-30 01:45:31.354   889   889 D b/254119092: clearActivity
+10-30 01:45:31.354   889   889 D b/254119092: mActivity and mContext agree taskbarIsPresent=false
+10-30 01:45:31.354   278   404 I InputReader: Reconfiguring input devices, changes=KEYBOARD_LAYOUTS | 
+10-30 01:45:31.355   278  1688 D CoreBackPreview: Window{c0793ad u0 com.android.launcher3/com.android.launcher3.uioverrides.QuickstepLauncher}: Setting back callback null
+10-30 01:45:31.378   278   341 W Searchables: No global search activity found
+10-30 01:45:31.378   278   856 W InputManager-JNI: Input channel object 'c0793ad com.android.launcher3/com.android.launcher3.uioverrides.QuickstepLauncher (client)' was disposed without first being removed with the input manager!
+10-30 01:45:31.379  1060  1060 V DigitalWidgetProvider: Target dimensions: 666px x 190px
+10-30 01:45:31.379  1060  1060 V DigitalWidgetProvider: Last valid widget container measurement: 248px x 182px
+10-30 01:45:31.379  1060  1060 V DigitalWidgetProvider: Last text clock measurement: 212px x 119px
+10-30 01:45:31.379  1060  1060 V DigitalWidgetProvider: Clock font: 101px
+10-30 01:45:31.385  1703  1756 W Parcel  : Expecting binder but got null!
+10-30 01:45:31.396   889  1840 D libEGL  : dlopen (libGLESv2_angle.so) success at 0xe6f54fa8dd6573a5
+10-30 01:45:31.412  1132  1153 I PermissionControllerServiceImpl: Updating user sensitive for uid 1000
+10-30 01:45:31.421   278   341 W Searchables: No global search activity found
+10-30 01:45:31.428   889   889 W OnBackInvokedCallback: OnBackInvokedCallback is not enabled for the application.
+10-30 01:45:31.428   889   889 W OnBackInvokedCallback: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+10-30 01:45:31.431   278   341 W VoiceInteractionManager: no available voice recognition services found for user 0
+10-30 01:45:31.438  1624  1647 W Parcel  : Expecting binder but got null!
+10-30 01:45:31.448   278  1688 D CoreBackPreview: Window{e4d88d1 u0 org.videolan.vlc/org.videolan.vlc.gui.onboarding.OnboardingActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@25c5fa4, mPriority=0}
+10-30 01:45:31.521   108   132 W TransactionTracing: Could not find layer handle 0x7f4591254730
+10-30 01:45:31.521   108   132 W TransactionTracing: Could not find layer handle 0x7f4591250950
+10-30 01:45:31.550  1703  1820 D WallpaperService: reportEngineShown: shouldWait=false
+10-30 01:45:31.595   889   889 I OverviewComponentObserver: updateOverviewTargets: mIsHomeDisabled=false, isDefaultHomeNull=false, mIsDefaultHome=true
+10-30 01:45:31.602  1624  1647 E OpenGLRenderer: Unable to match the desired swap behavior.
+10-30 01:45:31.663   278  1292 I WindowManager: finishDrawing of relaunch: Window{e4d88d1 u0 org.videolan.vlc/org.videolan.vlc.gui.onboarding.OnboardingActivity} 506ms
+10-30 01:45:31.727   889   889 I LauncherAppWidgetHostView: App widget created with id: 2
+10-30 01:45:31.730   889   889 I LauncherAppWidgetHostView: App widget with id: 2 loaded
+10-30 01:45:31.730   889   889 V ActivityThread: getPackageInfo() caused update to cached ApplicationInfo for package com.android.deskclock
+10-30 01:45:31.732   889   889 W System  : ClassLoader referenced unknown path: 
+10-30 01:45:31.781   889   889 I android_os_HwBinder: HwBinder: Starting hwbinderthread pool for getting: vendor.waydroid.window@1.1::IWaydroidWindow/default
+10-30 01:45:31.803   889   889 D b/267448330: provider: ComponentInfo{com.android.deskclock/com.android.alarmclock.DigitalAppWidgetProvider}, paddedSizes: [364.44446x242.66667, 581.3333x181.33333, 592.0x169.77777], getMinMaxSizes: Rect(364, 169 - 592, 242)
+10-30 01:45:31.813   278  1689 W ActivityManager: Unable to start service Intent { act=com.android.launcher3.WINDOW_OVERLAY dat=app://com.android.launcher3:10104/... pkg=com.google.android.googlequicksearchbox } U=0: not found
+10-30 01:45:31.826   278   715 W ActivityManager: Unable to start service Intent { act=com.android.launcher3.WINDOW_OVERLAY dat=app://com.android.launcher3:10104/... pkg=com.google.android.googlequicksearchbox } U=0: not found
+10-30 01:45:31.837   889  1232 W Parcel  : Expecting binder but got null!
+10-30 01:45:31.844   278   380 D CoreBackPreview: Window{25169a5 u0 com.android.launcher3/com.android.launcher3.uioverrides.QuickstepLauncher}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@537ad2b, mPriority=0}
+10-30 01:45:31.845   889   889 D DisplayController: Configuration changed, notifying listeners
+10-30 01:45:31.866   889   889 I Choreographer: Skipped 32 frames!  The application may be doing too much work on its main thread.
+10-30 01:45:31.922   889   889 D TISBindHelper: TIS service connected
+10-30 01:45:31.922   889   889 D b/254119092: Set mActivity=com.android.launcher3.uioverrides.QuickstepLauncher@9d48780
+10-30 01:45:31.922   889   889 D b/254119092: mActivity and mContext agree taskbarIsPresent=false
+10-30 01:45:32.214  1703  1820 D WallpaperService: reportEngineShown: shouldWait=false
+10-30 01:45:32.372  1703  1703 W System  : ClassLoader referenced unknown path: 
+10-30 01:45:32.396   278   336 I WindowManager: Screen frozen for +1s343ms due to Window{4bb859c u0 NavigationBar0}
+10-30 01:45:32.455  1703  1703 I NoBackGesture: NavbarController: newConfig={1.0 ?mcc?mnc [en_US] ldltr sw640dp w1138dp h592dp 180dpi lrg long land night -touch qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1280, 720) mAppBounds=Rect(0, 0 - 1280, 666) mMaxBounds=Rect(0, 0 - 1280, 720) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} as.3 s.152 fontWeightAdjustment=0} mTaskbarDelegate initialized=false willApplyConfigToNavbars=false navBarCount=1
+10-30 01:45:32.637   278   336 W ImageReader_JNI: Unable to acquire a buffer item, very likely client tried to acquire more than maxImages buffers
+10-30 01:45:32.657   278   715 W system_server: Long monitor contention with owner android.anim (336) at float com.android.server.wm.WindowManagerService.getCurrentAnimatorScale()(WindowManagerService.java:3546) waiters=0 in int com.android.server.wm.WindowManagerService$LocalService.hasInputMethodClientFocus(android.os.IBinder, int, int, int) for 261ms
+10-30 01:45:32.707   108   132 W TransactionTracing: Could not find layer handle 0x7f45912360d0
+10-30 01:45:32.708   108   132 W TransactionTracing: Could not find layer handle 0x7f4591255390
+10-30 01:45:32.708   108   132 W TransactionTracing: Could not find layer handle 0x7f45912360d0
+10-30 01:45:32.746  1703  1703 I NoBackGesture: Config changed: newConfig={1.0 ?mcc?mnc [en_US] ldltr sw640dp w1138dp h592dp 180dpi lrg long land night -touch qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1280, 720) mAppBounds=Rect(0, 0 - 1280, 666) mMaxBounds=Rect(0, 0 - 1280, 720) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} as.3 s.152 fontWeightAdjustment=0} lastReportedConfig={1.0 ?mcc?mnc [en_US] ldltr sw640dp w1138dp h592dp 180dpi lrg long land night -touch qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1280, 720) mAppBounds=Rect(0, 0 - 1280, 666) mMaxBounds=Rect(0, 0 - 1280, 720) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} as.2 s.116 fontWeightAdjustment=0}
+10-30 01:45:32.807   108   132 W TransactionTracing: Could not find layer handle 0x7f459123e0b0
+10-30 01:45:32.807   108   132 W TransactionTracing: Could not find layer handle 0x7f45912409f0
+10-30 01:45:32.807   108   132 W TransactionTracing: Could not find layer handle 0x7f45912590b0
+10-30 01:45:32.807   108   132 W TransactionTracing: Could not find layer handle 0x7f459123e0b0
+10-30 01:45:32.831  1703  1703 D NavigationModeController: onOverlayChanged
+10-30 01:45:32.846  1703  1703 D NavigationModeController: getCurrentUserContext: contextUser=0 currentUser=0
+10-30 01:45:32.846  1703  1703 D NavigationModeController: getCurrentInteractionMode: mode=0 contextUser=0
+10-30 01:45:32.847  1703  1703 D NavigationModeController: updateCurrentInteractionMode: mode=0
+10-30 01:45:32.847  1703  1703 D NavigationModeController:   contextUser=0
+10-30 01:45:32.847  1703  1703 D NavigationModeController:   assetPaths=
+10-30 01:45:32.847  1703  1703 D NavigationModeController:     <empty> and /system/framework/framework-res.apk
+10-30 01:45:32.847  1703  1703 D NavigationModeController:     <empty> and /system/framework/org.lineageos.platform-res.apk
+10-30 01:45:32.847  1703  1703 D NavigationModeController:     <empty> and /system/system_ext/priv-app/SystemUI/SystemUI.apk
+10-30 01:45:32.847  1703  1703 D NavigationModeController:     /data/resource-cache/com.android.systemui-neutral-pW5y.frro
+10-30 01:45:32.847  1703  1703 D NavigationModeController:     /data/resource-cache/com.android.systemui-accent-HtCp.frro
+10-30 01:45:32.864   108   132 W TransactionTracing: Could not find layer handle 0x7f4591218f10
+10-30 01:45:32.891  1703  1703 D NavigationModeController: getCurrentUserContext: contextUser=0 currentUser=0
+10-30 01:45:32.976  1703  1703 E KeyguardClockSwitch: No clock being shown
+10-30 01:45:33.067  1703  1703 E KeyguardClockSwitch: No clock being shown
+10-30 01:45:33.197  1703  1711 I ndroid.systemui: NativeAlloc concurrent copying GC freed 177388(10MB) AllocSpace objects, 10(200KB) LOS objects, 68% free, 10MB/34MB, paused 156us,34us total 284.539ms
+10-30 01:45:33.260  1703  1703 D VRI[NavigationBar0]: updatePointerIcon called with position out of bounds
+10-30 01:45:33.322  1703  1703 V WindowManagerShell: Display changed: 0
+10-30 01:45:33.334  1703  1703 I NoBackGesture: Config changed: newConfig={1.0 ?mcc?mnc [en_US] ldltr sw640dp w1138dp h592dp 180dpi lrg long land night -touch qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1280, 720) mAppBounds=Rect(0, 0 - 1280, 666) mMaxBounds=Rect(0, 0 - 1280, 720) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} as.3 s.152 fontWeightAdjustment=0} lastReportedConfig={1.0 ?mcc?mnc [en_US] ldltr sw640dp w1138dp h592dp 180dpi lrg long land night -touch qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1280, 720) mAppBounds=Rect(0, 0 - 1280, 666) mMaxBounds=Rect(0, 0 - 1280, 720) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mDisplayWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} as.3 s.152 fontWeightAdjustment=0}
+10-30 01:45:33.336  1703  1703 D NavigationModeController: ACTION_OVERLAY_CHANGED
+10-30 01:45:33.339  1703  1703 D NavigationModeController: getCurrentUserContext: contextUser=0 currentUser=0
+10-30 01:45:33.339  1703  1703 D NavigationModeController: getCurrentInteractionMode: mode=0 contextUser=0
+10-30 01:45:33.339  1703  1703 D NavigationModeController: updateCurrentInteractionMode: mode=0
+10-30 01:45:33.339  1703  1703 D NavigationModeController:   contextUser=0
+10-30 01:45:33.339  1703  1703 D NavigationModeController:   assetPaths=
+10-30 01:45:33.340  1703  1703 D NavigationModeController:     <empty> and /system/framework/framework-res.apk
+10-30 01:45:33.340  1703  1703 D NavigationModeController:     <empty> and /system/framework/org.lineageos.platform-res.apk
+10-30 01:45:33.340  1703  1703 D NavigationModeController:     <empty> and /system/system_ext/priv-app/SystemUI/SystemUI.apk
+10-30 01:45:33.340  1703  1703 D NavigationModeController:     /data/resource-cache/com.android.systemui-neutral-pW5y.frro
+10-30 01:45:33.340  1703  1703 D NavigationModeController:     /data/resource-cache/com.android.systemui-accent-HtCp.frro
+10-30 01:45:33.359  1703  1703 D NavigationModeController: getCurrentUserContext: contextUser=0 currentUser=0
+10-30 01:45:33.373  1703  1703 D SbStateController: setIsDreaming:false
+10-30 01:45:33.377   278  1293 D SystemServerTiming: getUserSwitchability-0
+10-30 01:45:33.378   278  1293 D SystemServerTiming: TM.isInCall
+10-30 01:45:33.379   278  1293 V SystemServerTiming: TM.isInCall took to complete: 1ms
+10-30 01:45:33.379   278  1293 D SystemServerTiming: hasUserRestriction-DISALLOW_USER_SWITCH
+10-30 01:45:33.379   278  1293 V SystemServerTiming: hasUserRestriction-DISALLOW_USER_SWITCH took to complete: 0ms
+10-30 01:45:33.379   278  1293 D SystemServerTiming: getInt-ALLOW_USER_SWITCHING_WHEN_SYSTEM_USER_LOCKED
+10-30 01:45:33.379   278  1293 V SystemServerTiming: getInt-ALLOW_USER_SWITCHING_WHEN_SYSTEM_USER_LOCKED took to complete: 0ms
+10-30 01:45:33.379   278  1293 D SystemServerTiming: isUserUnlocked-USER_SYSTEM
+10-30 01:45:33.379   278  1293 V SystemServerTiming: isUserUnlocked-USER_SYSTEM took to complete: 0ms
+10-30 01:45:33.379   278  1293 V SystemServerTiming: getUserSwitchability-0 took to complete: 2ms
+10-30 01:45:33.380  1703  1703 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+10-30 01:45:33.380  1703  1703 I Choreographer: Skipped 122 frames!  The application may be doing too much work on its main thread.
+10-30 01:45:33.462  1703  1716 I OpenGLRenderer: Davey! duration=2081ms; Flags=0, FrameTimelineVsyncId=19837, IntendedVsync=717958644570, Vsync=719991977822, InputEventId=2077707345, HandleInputStart=719995183934, AnimationStart=719995185258, PerformTraversalsStart=719995342818, DrawStart=720014634647, FrameDeadline=718845977868, FrameInterval=719995017859, FrameStartTime=16666666, SyncQueued=720018836661, SyncStart=720020173598, IssueDrawCommandsStart=720020961583, SwapBuffers=720037692586, FrameCompleted=720041928749, DequeueBufferDuration=17852, QueueBufferDuration=353316, GpuCompleted=720037692586, SwapBuffersCompleted=720041928749, DisplayPresentTime=0, CommandSubmissionCompleted=720037692586, 
+10-30 01:45:33.478  1703  1703 D WallpaperService: Wallpaper has updated the surface:null
+10-30 01:45:33.559   278   450 D ConnectivityService: NetReassign [no changes]
+10-30 01:45:33.563   278  1293 D ConnectivityService: requestNetwork for uid/pid:10108/1703 activeRequest: null callbackRequest: 79 [NetworkRequest [ REQUEST id=80, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+10-30 01:45:33.570   278   450 D ConnectivityService: NetReassign [80 : null → 100]
+10-30 01:45:33.573   278   449 D EthernetNetworkFactory: eth0: onNetworkNeeded for request: NetworkRequest [ REQUEST id=80, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:33.573   278   449 D EthernetNetworkFactory: IpClient already started
+10-30 01:45:33.573   278   442 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=80, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:33.574   278   442 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=80, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:33.575   278   442 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=80, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:33.575   278   450 D ConnectivityService: NetReassign [no changes]
+10-30 01:45:33.580   278  1293 D ConnectivityService: requestNetwork for uid/pid:10108/1703 activeRequest: null callbackRequest: 82 [NetworkRequest [ REQUEST id=83, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+10-30 01:45:33.584   278   450 D ConnectivityService: NetReassign [83 : null → 100]
+10-30 01:45:33.586   676   676 D PhoneSwitcherNetworkRequstListener: got request NetworkRequest [ REQUEST id=80, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:33.586   278   449 D EthernetNetworkFactory: eth0: onNetworkNeeded for request: NetworkRequest [ REQUEST id=83, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:33.586   278   449 D EthernetNetworkFactory: IpClient already started
+10-30 01:45:33.590   278   442 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=83, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:33.591   676   676 D PhoneSwitcherNetworkRequstListener: got request NetworkRequest [ REQUEST id=83, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:33.592   278   450 D ConnectivityService: NetReassign [no changes]
+10-30 01:45:33.593   278   442 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=83, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:33.593   278   442 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=83, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:33.606   278  1293 D ConnectivityService: requestNetwork for uid/pid:10108/1703 activeRequest: null callbackRequest: 85 [NetworkRequest [ REQUEST id=86, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+10-30 01:45:33.607   278   450 D ConnectivityService: NetReassign [86 : null → 100]
+10-30 01:45:33.612   278   449 D EthernetNetworkFactory: eth0: onNetworkNeeded for request: NetworkRequest [ REQUEST id=86, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:33.612   278   449 D EthernetNetworkFactory: IpClient already started
+10-30 01:45:33.612   278   442 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=86, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:33.612   278   442 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=86, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:33.612   278   442 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=86, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:33.612   676   676 D PhoneSwitcherNetworkRequstListener: got request NetworkRequest [ REQUEST id=86, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10108 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:33.619  1703  1703 D ClockController: onTuningChanged key=icon_blacklist value=null
+10-30 01:45:33.619  1703  1703 D ClockController: onTuningChanged key=lineagesystem:status_bar_clock value=2
+10-30 01:45:33.640  1703  1703 D ClockController: onTuningChanged key=icon_blacklist value=null
+10-30 01:45:33.640  1703  1703 D ClockController: onTuningChanged key=lineagesystem:status_bar_clock value=2
+10-30 01:45:33.731  1703  1703 D QSPanel : setUsingHorizontalLayout: false, true
+10-30 01:45:33.731  1703  1703 D QSPanel : Reattaching media host: false, current com.android.systemui.qs.QSPanel{75110c9 IFE...... ......ID 0,0-586,509 #7f0a055e app:id/quick_settings_panel}, new com.android.systemui.qs.QSPanel{f91f024 VFE...... ......I. 0,0-0,0 #7f0a055e app:id/quick_settings_panel}
+10-30 01:45:33.734  1703  1703 D QSPanel : setUsingHorizontalLayout: false, true
+10-30 01:45:33.734  1703  1703 D QSPanel : Reattaching media host: false, current com.android.systemui.qs.QSPanel{f91f024 VFE...... ......I. 0,0-0,0 #7f0a055e app:id/quick_settings_panel}, new com.android.systemui.qs.QSPanel{f91f024 VFE...... ......I. 0,0-0,0 #7f0a055e app:id/quick_settings_panel}
+10-30 01:45:33.746  1703  1703 D QuickQSPanel: setUsingHorizontalLayout: false, true
+10-30 01:45:33.748  1703  1703 D QuickQSPanel: Reattaching media host: false, current com.android.systemui.qs.QuickQSPanel{468bf0b IFE...... ......ID 0,9-586,258 #7f0a055c app:id/quick_qs_panel}, new com.android.systemui.qs.QuickQSPanel{e0fea90 VFE...... ......I. 0,0-0,0 #7f0a055c app:id/quick_qs_panel}
+10-30 01:45:33.762  1703  1703 D QS      : Binding the View implementation of the QS footer actions
+10-30 01:45:33.776   278   856 D SystemServerTiming: getUserSwitchability-0
+10-30 01:45:33.777   278   856 D SystemServerTiming: TM.isInCall
+10-30 01:45:33.791   278   856 V SystemServerTiming: TM.isInCall took to complete: 1ms
+10-30 01:45:33.792   278   856 D SystemServerTiming: hasUserRestriction-DISALLOW_USER_SWITCH
+10-30 01:45:33.792   278   856 V SystemServerTiming: hasUserRestriction-DISALLOW_USER_SWITCH took to complete: 0ms
+10-30 01:45:33.792   278   856 D SystemServerTiming: getInt-ALLOW_USER_SWITCHING_WHEN_SYSTEM_USER_LOCKED
+10-30 01:45:33.792   278   856 V SystemServerTiming: getInt-ALLOW_USER_SWITCHING_WHEN_SYSTEM_USER_LOCKED took to complete: 0ms
+10-30 01:45:33.792   278   856 D SystemServerTiming: isUserUnlocked-USER_SYSTEM
+10-30 01:45:33.792   278   856 V SystemServerTiming: isUserUnlocked-USER_SYSTEM took to complete: 0ms
+10-30 01:45:33.792   278   856 V SystemServerTiming: getUserSwitchability-0 took to complete: 15ms
+10-30 01:45:33.829   278   856 D SystemServerTiming: getUserSwitchability-0
+10-30 01:45:33.829   278   856 D SystemServerTiming: TM.isInCall
+10-30 01:45:33.829   278   856 V SystemServerTiming: TM.isInCall took to complete: 0ms
+10-30 01:45:33.829   278   856 D SystemServerTiming: hasUserRestriction-DISALLOW_USER_SWITCH
+10-30 01:45:33.829   278   856 V SystemServerTiming: hasUserRestriction-DISALLOW_USER_SWITCH took to complete: 0ms
+10-30 01:45:33.829   278   856 D SystemServerTiming: getInt-ALLOW_USER_SWITCHING_WHEN_SYSTEM_USER_LOCKED
+10-30 01:45:33.829   278   856 V SystemServerTiming: getInt-ALLOW_USER_SWITCHING_WHEN_SYSTEM_USER_LOCKED took to complete: 0ms
+10-30 01:45:33.829   278   856 D SystemServerTiming: isUserUnlocked-USER_SYSTEM
+10-30 01:45:33.829   278   856 V SystemServerTiming: isUserUnlocked-USER_SYSTEM took to complete: 0ms
+10-30 01:45:33.829   278   856 V SystemServerTiming: getUserSwitchability-0 took to complete: 0ms
+10-30 01:45:33.845   278   856 D SystemServerTiming: getUserSwitchability-0
+10-30 01:45:33.845   278   856 D SystemServerTiming: TM.isInCall
+10-30 01:45:33.845   278  1293 D SystemServerTiming: getUserSwitchability-0
+10-30 01:45:33.845   278  1293 D SystemServerTiming: TM.isInCall
+10-30 01:45:33.846   278   856 V SystemServerTiming: TM.isInCall took to complete: 0ms
+10-30 01:45:33.846   278   856 D SystemServerTiming: hasUserRestriction-DISALLOW_USER_SWITCH
+10-30 01:45:33.846   278   856 V SystemServerTiming: hasUserRestriction-DISALLOW_USER_SWITCH took to complete: 0ms
+10-30 01:45:33.846   278   856 D SystemServerTiming: getInt-ALLOW_USER_SWITCHING_WHEN_SYSTEM_USER_LOCKED
+10-30 01:45:33.846   278   856 V SystemServerTiming: getInt-ALLOW_USER_SWITCHING_WHEN_SYSTEM_USER_LOCKED took to complete: 0ms
+10-30 01:45:33.846   278   856 D SystemServerTiming: isUserUnlocked-USER_SYSTEM
+10-30 01:45:33.846   278   856 V SystemServerTiming: isUserUnlocked-USER_SYSTEM took to complete: 0ms
+10-30 01:45:33.846   278   856 V SystemServerTiming: getUserSwitchability-0 took to complete: 0ms
+10-30 01:45:33.848   278  1293 V SystemServerTiming: TM.isInCall took to complete: 2ms
+10-30 01:45:33.849   278  1293 D SystemServerTiming: hasUserRestriction-DISALLOW_USER_SWITCH
+10-30 01:45:33.849   278  1293 V SystemServerTiming: hasUserRestriction-DISALLOW_USER_SWITCH took to complete: 0ms
+10-30 01:45:33.849   278  1293 D SystemServerTiming: getInt-ALLOW_USER_SWITCHING_WHEN_SYSTEM_USER_LOCKED
+10-30 01:45:33.849   278  1293 V SystemServerTiming: getInt-ALLOW_USER_SWITCHING_WHEN_SYSTEM_USER_LOCKED took to complete: 0ms
+10-30 01:45:33.849   278  1293 D SystemServerTiming: isUserUnlocked-USER_SYSTEM
+10-30 01:45:33.849   278  1293 V SystemServerTiming: isUserUnlocked-USER_SYSTEM took to complete: 0ms
+10-30 01:45:33.849   278  1293 V SystemServerTiming: getUserSwitchability-0 took to complete: 4ms
+10-30 01:45:33.953  1624  1624 I Choreographer: Skipped 37 frames!  The application may be doing too much work on its main thread.
+10-30 01:45:33.971   278   856 I ActivityTaskManager: START u0 {cmp=org.videolan.vlc/.gui.MainActivity (has extras)} from uid 10125
+10-30 01:45:33.986   278   856 E CellBroadcastUtils: getDefaultCellBroadcastReceiverPackageName: no package found
+10-30 01:45:34.110  1624  1637 I OpenGLRenderer: Davey! duration=700ms; Flags=0, FrameTimelineVsyncId=20664, IntendedVsync=719941977824, Vsync=720558644466, InputEventId=634144082, HandleInputStart=720567704557, AnimationStart=720568002535, PerformTraversalsStart=720568008276, DrawStart=720568042069, FrameDeadline=720595977798, FrameInterval=720567558810, FrameStartTime=16666666, SyncQueued=720570994752, SyncStart=720574213379, IssueDrawCommandsStart=720574516893, SwapBuffers=720625710196, FrameCompleted=720646172322, DequeueBufferDuration=34206767, QueueBufferDuration=293414, GpuCompleted=720625710196, SwapBuffersCompleted=720646172322, DisplayPresentTime=139965345320928, CommandSubmissionCompleted=720625710196, 
+10-30 01:45:34.119   278  1685 W ActivityTaskManager: Tried to set launchTime (0) < mLastActivityLaunchTime (681084)
+10-30 01:45:34.216   278  1685 D CompatibilityChangeReporter: Compat change id reported: 161145287; UID 10125; state: DISABLED
+10-30 01:45:34.228  1624  1848 D libEGL  : dlopen (libGLESv2_angle.so) success at 0xe6f54fa8dd6573a5
+10-30 01:45:34.290  1624  1624 I android_os_HwBinder: HwBinder: Starting hwbinderthread pool for getting: vendor.waydroid.window@1.1::IWaydroidWindow/default
+10-30 01:45:34.504    96   227 W AudioFlinger: write blocked for 437 msecs, 2 delayed writes, thread 13
+10-30 01:45:34.524   278   335 D OomAdjuster: Not killing cached processes
+10-30 01:45:34.575  1624  1624 I AppCompatViewInflater: app:theme is now deprecated. Please move to using android:theme instead.
+10-30 01:45:34.658  1624  1624 D CompatibilityChangeReporter: Compat change id reported: 171228096; UID 10125; state: ENABLED
+10-30 01:45:34.664  1624  1624 W BottomSheetBehavior: Cannot set state: 5
+10-30 01:45:34.824  1624  1624 I android_os_HwBinder: HwBinder: Starting hwbinderthread pool for getting: vendor.waydroid.window@1.1::IWaydroidWindow/default
+10-30 01:45:34.881  1624  1647 W Parcel  : Expecting binder but got null!
+10-30 01:45:34.965   278  1685 D CoreBackPreview: Window{fb2fb54 u0 org.videolan.vlc/org.videolan.vlc.gui.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@2cf1d3e, mPriority=0}
+10-30 01:45:35.002  1624  1624 W OnBackInvokedCallback: OnBackInvokedCallback is not enabled for the application.
+10-30 01:45:35.002  1624  1624 W OnBackInvokedCallback: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+10-30 01:45:35.003   278   335 I system_server: Explicit concurrent copying GC freed 170543(7609KB) AllocSpace objects, 12(260KB) LOS objects, 68% free, 10MB/34MB, paused 80us,36us total 349.718ms
+10-30 01:45:35.031   278   302 W JavaBinder: BinderProxy is being destroyed but the application did not call unlinkToDeath to unlink all of its death recipients beforehand.  Releasing leaked death recipient: com.android.server.wm.ActivityRecord$$ExternalSyntheticLambda0
+10-30 01:45:35.031   278   302 I BpBinder: onLastStrongRef automatically unlinking death recipients: <uncached descriptor>
+10-30 01:45:35.217   278   403 D InputDispatcher: No new touched window at (1100, 635) in display 0
+10-30 01:45:35.217   278   403 I InputDispatcher: Dropping event because there is no touchable window at (1100, 635) on display 0.
+10-30 01:45:35.256   278   403 I InputDispatcher: Dropping event because there is no touched window on display 0 to receive it: MotionEvent
+10-30 01:45:35.269   278   303 W System  : A resource failed to call HardwareBuffer.close. 
+10-30 01:45:35.269   278   303 W System  : A resource failed to call HardwareBuffer.close. 
+10-30 01:45:35.275   278   303 W System  : A resource failed to call HardwareBuffer.close. 
+10-30 01:45:35.337   278   303 W System  : A resource failed to call HardwareBuffer.close. 
+10-30 01:45:35.351   278   303 W System  : A resource failed to call HardwareBuffer.close. 
+10-30 01:45:35.358   278   403 I InputDispatcher: Dropping event because there is no touched window on display 0 to receive it: MotionEvent
+10-30 01:45:35.384   278   403 I InputDispatcher: Dropping event because there is no touched window on display 0 to receive it: MotionEvent
+10-30 01:45:35.387   278   303 W System  : A resource failed to call HardwareBuffer.close. 
+10-30 01:45:35.388  1624  1647 W Parcel  : Expecting binder but got null!
+10-30 01:45:35.388   278   403 D InputDispatcher: No new touched window at (1100, 635) in display 0
+10-30 01:45:35.388   278   403 I InputDispatcher: Dropping event because there is no touchable window at (1100, 635) on display 0.
+10-30 01:45:35.423  1624  1624 I Choreographer: Skipped 76 frames!  The application may be doing too much work on its main thread.
+10-30 01:45:35.424   278  1685 D CoreBackPreview: Window{fa260ec u0 org.videolan.vlc/org.videolan.vlc.gui.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@91bcf4a, mPriority=0}
+10-30 01:45:35.487  1624  1624 W OnBackInvokedCallback: OnBackInvokedCallback is not enabled for the application.
+10-30 01:45:35.487  1624  1624 W OnBackInvokedCallback: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+10-30 01:45:35.574  1624  1637 I OpenGLRenderer: Davey! duration=1360ms; Flags=0, FrameTimelineVsyncId=20917, IntendedVsync=720758644458, Vsync=722025311074, InputEventId=0, HandleInputStart=722037519836, AnimationStart=722037520870, PerformTraversalsStart=722038064660, DrawStart=722059649637, FrameDeadline=722079311072, FrameInterval=722037476655, FrameStartTime=16666666, SyncQueued=722059871675, SyncStart=722100819166, IssueDrawCommandsStart=722101099348, SwapBuffers=722119054780, FrameCompleted=722159755297, DequeueBufferDuration=7730, QueueBufferDuration=162755, GpuCompleted=722119054780, SwapBuffersCompleted=722159755297, DisplayPresentTime=139964394242048, CommandSubmissionCompleted=722119054780, 
+10-30 01:45:35.803  1624  1647 E OpenGLRenderer: Unable to match the desired swap behavior.
+10-30 01:45:36.040   278   403 D InputDispatcher: No new touched window at (1100, 635) in display 0
+10-30 01:45:36.040   278   403 I InputDispatcher: Dropping event because there is no touchable window at (1100, 635) on display 0.
+10-30 01:45:36.046   278   403 I InputDispatcher: Dropping event because there is no touched window on display 0 to receive it: MotionEvent
+10-30 01:45:36.108   278   403 I InputDispatcher: Dropping event because there is no touched window on display 0 to receive it: MotionEvent
+10-30 01:45:36.108   278   403 I InputDispatcher: Dropping event because there is no touched window on display 0 to receive it: MotionEvent
+10-30 01:45:36.108   278   403 D InputDispatcher: No new touched window at (1100, 635) in display 0
+10-30 01:45:36.108   278   403 I InputDispatcher: Dropping event because there is no touchable window at (1100, 635) on display 0.
+10-30 01:45:36.183   278   403 D InputDispatcher: No new touched window at (1100, 635) in display 0
+10-30 01:45:36.183   278   403 I InputDispatcher: Dropping event because there is no touchable window at (1100, 635) on display 0.
+10-30 01:45:36.189   278   403 I InputDispatcher: Dropping event because there is no touched window on display 0 to receive it: MotionEvent
+10-30 01:45:36.243   278   403 I InputDispatcher: Dropping event because there is no touched window on display 0 to receive it: MotionEvent
+10-30 01:45:36.243   278   403 I InputDispatcher: Dropping event because there is no touched window on display 0 to receive it: MotionEvent
+10-30 01:45:36.243   278   403 D InputDispatcher: No new touched window at (1100, 635) in display 0
+10-30 01:45:36.243   278   403 I InputDispatcher: Dropping event because there is no touchable window at (1100, 635) on display 0.
+10-30 01:45:36.397  1624  1738 I OpenGLRenderer: Davey! duration=2205ms; Flags=1, FrameTimelineVsyncId=20917, IntendedVsync=720758644458, Vsync=722025311074, InputEventId=0, HandleInputStart=722037519836, AnimationStart=722037520870, PerformTraversalsStart=722038064660, DrawStart=722420450509, FrameDeadline=720779311124, FrameInterval=722037476655, FrameStartTime=16666666, SyncQueued=722422659076, SyncStart=722425936669, IssueDrawCommandsStart=722427869876, SwapBuffers=722512227264, FrameCompleted=722967505015, DequeueBufferDuration=0, QueueBufferDuration=687207, GpuCompleted=722512227264, SwapBuffersCompleted=722967505015, DisplayPresentTime=139957920285496, CommandSubmissionCompleted=722512227264, 
+10-30 01:45:36.437  1624  1647 E OpenGLRenderer: Unable to match the desired swap behavior.
+10-30 01:45:36.492  1624  1624 W View    : requestLayout() improperly called by com.google.android.material.textview.MaterialTextView{f1b99f0 V.ED..... ..S...ID 57,16-122,38 #7f0a063d app:id/tab_title} during layout: running second layout pass
+10-30 01:45:36.494  1624  1624 W View    : requestLayout() improperly called by com.google.android.material.textview.MaterialTextView{747db69 V.ED..... ......ID 41,16-139,38 #7f0a063d app:id/tab_title} during layout: running second layout pass
+10-30 01:45:36.847  1624  1624 D CompatibilityChangeReporter: Compat change id reported: 160794467; UID 10125; state: ENABLED
+10-30 01:45:36.850  1624  1738 I OpenGLRenderer: Davey! duration=2673ms; Flags=1, FrameTimelineVsyncId=20917, IntendedVsync=720758644458, Vsync=722025311074, InputEventId=0, HandleInputStart=722037519836, AnimationStart=722037520870, PerformTraversalsStart=722038064660, DrawStart=723122825966, FrameDeadline=720779311124, FrameInterval=722037476655, FrameStartTime=16666666, SyncQueued=723134566154, SyncStart=723135607875, IssueDrawCommandsStart=723136929093, SwapBuffers=723193025036, FrameCompleted=723433660595, DequeueBufferDuration=0, QueueBufferDuration=533977, GpuCompleted=723193025036, SwapBuffersCompleted=723433660595, DisplayPresentTime=-8, CommandSubmissionCompleted=723193025036, 
+10-30 01:45:36.871   278   332 I ActivityTaskManager: Displayed org.videolan.vlc/.gui.MainActivity: +2s882ms
+10-30 01:45:37.032  1624  1646 D VLC/medialibrary: [T#139957974932720] ../src/filesystem/FsHolder.cpp:93 registerDeviceLister Registering device lister for scheme file://
+10-30 01:45:37.095   278  1187 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+10-30 01:45:37.138   278  1294 D CompatibilityChangeReporter: Compat change id reported: 149924527; UID 10125; state: ENABLED
+10-30 01:45:37.140  1624  1624 I Choreographer: Skipped 98 frames!  The application may be doing too much work on its main thread.
+10-30 01:45:37.140   278  1294 D CompatibilityChangeReporter: Compat change id reported: 132649864; UID 10125; state: DISABLED
+10-30 01:45:37.154  1624  1646 I VLC/medialibrary: [T#139957974932720] ../src/MediaLibrary.cpp:661 initialize Initializing medialibrary...
+10-30 01:45:37.154  1624  1646 I VLC/medialibrary: [T#139957974932720] ../src/MediaLibrary.cpp:663 initialize Current version is 0.13.0. Database model is 38
+10-30 01:45:37.198  1624  1646 D VLC/medialibrary: [T#139957974932720] ../src/database/SqliteConnection.cpp:106 handle Fetched absolute database path from sqlite: /data/user/0/org.videolan.vlc/app_db/vlc_media.db
+10-30 01:45:37.327  1624  1738 I OpenGLRenderer: Davey! duration=1779ms; Flags=0, FrameTimelineVsyncId=21242, IntendedVsync=722108644404, Vsync=723741977672, InputEventId=0, HandleInputStart=723755456499, AnimationStart=723755457301, PerformTraversalsStart=723864510933, DrawStart=723867575975, FrameDeadline=722545977720, FrameInterval=723755278675, FrameStartTime=16666666, SyncQueued=723867910767, SyncStart=723868403014, IssueDrawCommandsStart=723868641211, SwapBuffers=723869939450, FrameCompleted=723888853407, DequeueBufferDuration=17608, QueueBufferDuration=573938, GpuCompleted=723869939450, SwapBuffersCompleted=723888853407, DisplayPresentTime=139967761151744, CommandSubmissionCompleted=723869939450, 
+10-30 01:45:37.395  1624  1646 I VLC/medialibrary: [T#139957974932720] ../src/MediaLibrary.cpp:759 initialize Successfully initialized
+10-30 01:45:37.395  1624  1646 D VLC/medialibrary: [T#139957974932720] ../src/filesystem/libvlc/FileSystemFactory.cpp:116 start Starting FS Factory with scheme file://
+10-30 01:45:37.395  1624  1646 D VLC/medialibrary: [T#139957974932720] ../src/parser/Parser.cpp:153 restore No task to resume.
+10-30 01:45:37.396  1624  1646 I VLC/medialibrary: [T#139957974932720] ../src/MediaLibrary.cpp:2566 setExternalLibvlcInstance Setting external libvlc instance: 0x7f4b68a3ef70
+10-30 01:45:37.396  1624  1646 D VLC/medialibrary: [T#139957974932720] ../src/filesystem/libvlc/FileSystemFactory.cpp:116 start Starting FS Factory with scheme smb://
+10-30 01:45:37.396  1624  1646 D VLC/medialibrary: [T#139957974932720] ../src/filesystem/libvlc/DeviceLister.cpp:75 start Starting Service Discovery dsm
+10-30 01:45:37.396  1624  1646 D VLC     : [00007f4b98a37480/66e] libvlc services discovery: looking for services_discovery module matching "dsm": 4 candidates
+10-30 01:45:37.401  1624  1624 D VLC     : [00007f4b88a667e0/658] libvlc probe: looking for renderer probe module matching "any": 1 candidates
+10-30 01:45:37.402  1624  1624 D VLC     : [00007f4b88a667e0/658] libvlc probe: no renderer probe modules matched
+10-30 01:45:37.408  1624  1738 I OpenGLRenderer: Davey! duration=1846ms; Flags=0, FrameTimelineVsyncId=21242, IntendedVsync=722108644404, Vsync=723741977672, InputEventId=0, HandleInputStart=723755456499, AnimationStart=723755457301, PerformTraversalsStart=723864510933, DrawStart=723875215677, FrameDeadline=723229311026, FrameInterval=723755278675, FrameStartTime=16666666, SyncQueued=723876082618, SyncStart=723888917308, IssueDrawCommandsStart=723889301802, SwapBuffers=723902717694, FrameCompleted=723967845330, DequeueBufferDuration=7290, QueueBufferDuration=1218670, GpuCompleted=723902717694, SwapBuffersCompleted=723967845330, DisplayPresentTime=0, CommandSubmissionCompleted=723902717694, 
+10-30 01:45:37.410  1624  1624 D VLC     : [00007f4b98a39640/658] libvlc renderer discovery: looking for renderer_discovery module matching "microdns_renderer": 1 candidates
+10-30 01:45:37.410  1624  1624 D VLC     : [00007f4b98a39640/658] libvlc renderer discovery: mDNS: listening to _googlecast._tcp.local renderer
+10-30 01:45:37.410  1624  1624 D VLC     : [00007f4b98a39640/658] libvlc renderer discovery: using renderer_discovery module "microdns"
+10-30 01:45:37.422  1624  1858 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 01:45:37.439  1624  1646 D VLC     : [00007f4b98a37480/66e] libvlc services discovery: using services_discovery module "dsm"
+10-30 01:45:37.439  1624  1646 D VLC/medialibrary: [T#139957974932720] ../src/filesystem/libvlc/DeviceLister.cpp:75 start Starting Service Discovery microdns
+10-30 01:45:37.439  1624  1646 D VLC     : [00007f4b98a380e0/66e] libvlc services discovery: looking for services_discovery module matching "microdns": 4 candidates
+10-30 01:45:37.439  1624  1646 D VLC     : [00007f4b98a380e0/66e] libvlc services discovery: mDNS: listening to _ftp._tcp.local service
+10-30 01:45:37.439  1624  1646 D VLC     : [00007f4b98a380e0/66e] libvlc services discovery: mDNS: listening to _smb._tcp.local service
+10-30 01:45:37.449  1624  1646 D VLC     : [00007f4b98a380e0/66e] libvlc services discovery: mDNS: listening to _nfs._tcp.local service
+10-30 01:45:37.450  1624  1646 D VLC     : [00007f4b98a380e0/66e] libvlc services discovery: mDNS: listening to _sftp-ssh._tcp.local service
+10-30 01:45:37.450  1624  1646 D VLC     : [00007f4b98a380e0/66e] libvlc services discovery: mDNS: listening to _rtsp._tcp.local service
+10-30 01:45:37.450  1624  1646 D VLC     : [00007f4b98a380e0/66e] libvlc services discovery: using services_discovery module "microdns"
+10-30 01:45:37.489  1624  1738 I OpenGLRenderer: Davey! duration=1796ms; Flags=0, FrameTimelineVsyncId=21242, IntendedVsync=722108644404, Vsync=723741977672, InputEventId=0, HandleInputStart=723755456499, AnimationStart=723755457301, PerformTraversalsStart=723864510933, DrawStart=723890743546, FrameDeadline=722445977724, FrameInterval=723755278675, FrameStartTime=16666666, SyncQueued=723892078959, SyncStart=723967927091, IssueDrawCommandsStart=723969354561, SwapBuffers=723971667077, FrameCompleted=723981140361, DequeueBufferDuration=16479, QueueBufferDuration=388853, GpuCompleted=723971667077, SwapBuffersCompleted=723981140361, DisplayPresentTime=139957920285496, CommandSubmissionCompleted=723971667077, 
+10-30 01:45:37.530   278  1685 D CoreBackPreview: Window{e4d88d1 u0 org.videolan.vlc/org.videolan.vlc.gui.onboarding.OnboardingActivity}: Setting back callback null
+10-30 01:45:37.555   278  1685 W InputManager-JNI: Input channel object 'e4d88d1 org.videolan.vlc/org.videolan.vlc.gui.onboarding.OnboardingActivity (client)' was disposed without first being removed with the input manager!
+10-30 01:45:37.635   108   132 W TransactionTracing: Could not find layer handle 0x7f459123bcb0
+10-30 01:45:38.178  1624  1624 D VRI[MainActivity]: updatePointerIcon called with position out of bounds
+10-30 01:45:38.196  1624  1624 D VRI[MainActivity]: updatePointerIcon called with position out of bounds
+10-30 01:45:38.220  1624  1624 D VRI[MainActivity]: updatePointerIcon called with position out of bounds
+10-30 01:45:38.220  1624  1624 D VRI[MainActivity]: updatePointerIcon called with position out of bounds
+10-30 01:45:38.233  1624  1624 D VRI[MainActivity]: updatePointerIcon called with position out of bounds
+10-30 01:45:38.473   278  1685 D InputDispatcher: Touch mode switch rejected, caller (pid=0, uid=10125) doesn't own the focused window nor none of the previously interacted window
+10-30 01:45:38.843   278   404 D InputDispatcher: Received a new pointer down event, stop waiting for events to process and just send the pending key event to the focused window.
+10-30 01:45:39.263   278   333 W Looper  : Slow delivery took 321ms android.ui h=android.view.GestureDetector$GestureHandler c=null m=1
+10-30 01:45:39.271  1703  1703 D VRI[NavigationBar0]: updatePointerIcon called with position out of bounds
+10-30 01:45:39.296   278  1294 D InputDispatcher: Touch mode switch rejected, caller (pid=0, uid=10125) doesn't own the focused window nor none of the previously interacted window
+10-30 01:45:39.631   278  1685 D CoreBackPreview: Window{fb2fb54 u0 org.videolan.vlc/org.videolan.vlc.gui.MainActivity}: Setting back callback null
+10-30 01:45:39.640  1624  1647 D OpenGLRenderer: endAllActiveAnimators on 0x7f4bf8aae5e0 (RippleDrawable) with handle 0x7f4b08a74210
+10-30 01:45:39.668   278  1294 W InputManager-JNI: Input channel object 'fb2fb54 org.videolan.vlc/org.videolan.vlc.gui.MainActivity (client)' was disposed without first being removed with the input manager!
+10-30 01:45:39.751  1624  1624 W OnBackInvokedCallback: OnBackInvokedCallback is not enabled for the application.
+10-30 01:45:39.751  1624  1624 W OnBackInvokedCallback: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+10-30 01:45:39.756   278   335 V WindowManager: Unknown focus tokens, dropping reportFocusChanged
+10-30 01:45:39.778   278   856 I ActivityTaskManager: START u0 {act=android.content.pm.action.REQUEST_PERMISSIONS pkg=com.android.permissioncontroller cmp=com.android.permissioncontroller/.permission.ui.GrantPermissionsActivity (has extras)} from uid 10125
+10-30 01:45:39.789   278   856 D CompatibilityChangeReporter: Compat change id reported: 265464455; UID 10119; state: DISABLED
+10-30 01:45:39.793   278   856 D CompatibilityChangeReporter: Compat change id reported: 265452344; UID 10119; state: DISABLED
+10-30 01:45:39.794   278   856 D CompatibilityChangeReporter: Compat change id reported: 266124927; UID 10119; state: DISABLED
+10-30 01:45:39.795   278   856 D CompatibilityChangeReporter: Compat change id reported: 265451093; UID 10119; state: DISABLED
+10-30 01:45:39.796   278   856 D CompatibilityChangeReporter: Compat change id reported: 265456536; UID 10119; state: DISABLED
+10-30 01:45:39.798   278   856 D CompatibilityChangeReporter: Compat change id reported: 255940284; UID 10119; state: DISABLED
+10-30 01:45:39.800   278   856 D CompatibilityChangeReporter: Compat change id reported: 236283604; UID 10119; state: DISABLED
+10-30 01:45:39.800   278   856 D CompatibilityChangeReporter: Compat change id reported: 263959004; UID 10119; state: DISABLED
+10-30 01:45:39.800   278   856 D CompatibilityChangeReporter: Compat change id reported: 264304459; UID 10119; state: DISABLED
+10-30 01:45:39.800   278   856 D CompatibilityChangeReporter: Compat change id reported: 264301586; UID 10119; state: DISABLED
+10-30 01:45:39.800   278   856 D CompatibilityChangeReporter: Compat change id reported: 254631730; UID 10119; state: DISABLED
+10-30 01:45:39.801   278   856 D CompatibilityChangeReporter: Compat change id reported: 273509367; UID 10119; state: DISABLED
+10-30 01:45:39.801   278   856 D CompatibilityChangeReporter: Compat change id reported: 263259275; UID 10119; state: DISABLED
+10-30 01:45:39.860   278   856 D CompatibilityChangeReporter: Compat change id reported: 194480991; UID 10119; state: ENABLED
+10-30 01:45:39.881   278   856 E CellBroadcastUtils: getDefaultCellBroadcastReceiverPackageName: no package found
+10-30 01:45:39.905   278   856 D CompatibilityChangeReporter: Compat change id reported: 174042980; UID 10119; state: DISABLED
+10-30 01:45:39.906   278   856 D CompatibilityChangeReporter: Compat change id reported: 184838306; UID 10119; state: DISABLED
+10-30 01:45:39.906   278   856 D CompatibilityChangeReporter: Compat change id reported: 185004937; UID 10119; state: DISABLED
+10-30 01:45:39.906   278   856 D CompatibilityChangeReporter: Compat change id reported: 181136395; UID 10119; state: DISABLED
+10-30 01:45:39.906   278   856 D CompatibilityChangeReporter: Compat change id reported: 174042936; UID 10119; state: DISABLED
+10-30 01:45:39.936   278   333 W Looper  : Drained
+10-30 01:45:39.973   278   336 W system_server: Long monitor contention with owner binder:278_A (856) at void com.android.server.wm.ActivityTaskManagerService.resumeAppSwitches()(ActivityTaskManagerService.java:3946) waiters=0 in void com.android.server.wm.InputMonitor$UpdateInputWindows.run() for 149ms
+10-30 01:45:40.034   108   132 W TransactionTracing: Could not find layer handle 0x7f45912358f0
+10-30 01:45:40.034   108   132 W TransactionTracing: Could not find layer handle 0x7f459123ff10
+10-30 01:45:40.034   108   132 W TransactionTracing: Could not find layer handle 0x7f45912320b0
+10-30 01:45:40.034   108   132 W TransactionTracing: Could not find layer handle 0x7f4591257250
+10-30 01:45:40.034   108   132 W TransactionTracing: Could not find layer handle 0x7f4591252930
+10-30 01:45:40.034   108   132 W TransactionTracing: Could not find layer handle 0x7f4591241110
+10-30 01:45:40.112   278   346 W libprocessgroup: Failed to open /dev/stune/top-app/cgroup.procs: No such file or directory
+10-30 01:45:40.113   278   346 W libprocessgroup: Failed to open /dev/cpuset/top-app/cgroup.procs: No such file or directory
+10-30 01:45:40.113   278   346 W libprocessgroup: Failed to open /dev/blkio//cgroup.procs: No such file or directory
+10-30 01:45:40.121   278   335 D OomAdjuster: Not killing cached processes
+10-30 01:45:40.231   108   132 W TransactionTracing: Could not find layer handle 0x7f459121f090
+10-30 01:45:40.340  1863  1863 I ServiceManager: Waydroid: host-AIDL whitelisted: android.hardware.camera.provider.ICameraProvider
+10-30 01:45:40.340  1863  1863 I ServiceManager: Waydroid: host-AIDL whitelisted: android.hardware.graphics.allocator.IAllocator
+10-30 01:45:40.357  1132  1132 D CompatibilityChangeReporter: Compat change id reported: 171228096; UID 10119; state: ENABLED
+10-30 01:45:40.365  1863  1863 W ProcessState: Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+10-30 01:45:40.380  1132  1132 D CompatibilityChangeReporter: Compat change id reported: 210923482; UID 10119; state: DISABLED
+10-30 01:45:40.380  1132  1132 D CompatibilityChangeReporter: Compat change id reported: 37756858; UID 10119; state: ENABLED
+10-30 01:45:40.427    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-30 01:45:40.428  1863  1865 I Gralloc4: mapper 4.x is not supported
+10-30 01:45:40.428    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@3.0::IMapper/default in either framework or device VINTF manifest.
+10-30 01:45:40.430  1863  1865 W Gralloc3: mapper 3.x is not supported
+10-30 01:45:40.513  1132  1132 I android_os_HwBinder: HwBinder: Starting hwbinderthread pool for getting: vendor.waydroid.window@1.1::IWaydroidWindow/default
+10-30 01:45:40.606  1132  1132 I ServiceManager: Waydroid: host-AIDL whitelisted: android.hardware.camera.provider.ICameraProvider
+10-30 01:45:40.607  1132  1132 I ServiceManager: Waydroid: host-AIDL whitelisted: android.hardware.graphics.allocator.IAllocator
+10-30 01:45:40.632  1132  1132 D CompatibilityChangeReporter: Compat change id reported: 237531167; UID 10119; state: DISABLED
+10-30 01:45:40.634   278  1187 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+10-30 01:45:40.653   278  1685 D CoreBackPreview: Window{5591f41 u0 com.android.permissioncontroller/com.android.permissioncontroller.permission.ui.GrantPermissionsActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@b590227, mPriority=0}
+10-30 01:45:40.779   108   361 W ServiceManager: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10119 pid=0
+10-30 01:45:40.779   108   361 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10119 => denied (10411 us)
+10-30 01:45:40.781   108   361 W ServiceManager: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10119 pid=0
+10-30 01:45:40.781   108   361 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10119 => denied (1702 us)
+10-30 01:45:40.782   108   361 W ServiceManager: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10119 pid=0
+10-30 01:45:40.782   108   361 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10119 => denied (940 us)
+10-30 01:45:40.784   108  1075 W ServiceManager: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10119 pid=1132
+10-30 01:45:40.784   108  1075 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10119 => denied (12926 us)
+10-30 01:45:40.860   278   332 I ActivityTaskManager: Displayed com.android.permissioncontroller/.permission.ui.GrantPermissionsActivity: +1s40ms
+10-30 01:45:40.918   278  1294 D ConnectivityService: requestNetwork for uid/pid:10108/1703 asUid: 10119 activeRequest: null callbackRequest: 87 [NetworkRequest [ REQUEST id=88, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10119 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+10-30 01:45:40.936   278   450 D ConnectivityService: NetReassign [88 : null → 100]
+10-30 01:45:40.937   278   449 D EthernetNetworkFactory: eth0: onNetworkUnneeded for request: NetworkRequest [ REQUEST id=68, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10125 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:40.945   676   676 D PhoneSwitcherNetworkRequstListener: got request NetworkRequest [ REQUEST id=88, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10119 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:40.946   278   442 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=88, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10119 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:40.946   278   442 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=88, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10119 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:40.946   278   442 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=88, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10119 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:40.947   278   449 D EthernetNetworkFactory: eth0: onNetworkNeeded for request: NetworkRequest [ REQUEST id=88, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10119 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 01:45:40.947   278   449 D EthernetNetworkFactory: IpClient already started
+10-30 01:45:41.007    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-30 01:45:41.007  1132  1132 I Gralloc4: mapper 4.x is not supported
+10-30 01:45:41.010    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@3.0::IMapper/default in either framework or device VINTF manifest.
+10-30 01:45:41.011  1132  1132 W Gralloc3: mapper 3.x is not supported
+10-30 01:45:41.092    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.allocator@4.0::IAllocator/default in either framework or device VINTF manifest.
+10-30 01:45:41.097    19    19 I servicemanager: Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest.
+10-30 01:45:41.131  1132  1132 W ProcessState: Waydroid: host binder driver /dev/host_binder unavailable; host-AIDL passthrough disabled
+10-30 01:45:41.131  1132  1132 W ServiceManager: Waydroid: host ProcessState unavailable for android.hardware.graphics.allocator.IAllocator/default
+10-30 01:45:41.131  1132  1132 E Gralloc4: AIDL IAllocator declared but failed to get service
+10-30 01:45:41.131  1132  1132 W Gralloc4: allocator 4.x is not supported
+10-30 01:45:41.134   108   132 W TransactionTracing: Could not find layer handle 0x7f4591240f30
+10-30 01:45:41.135    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.allocator@3.0::IAllocator/default in either framework or device VINTF manifest.
+10-30 01:45:41.135  1132  1132 W Gralloc3: allocator 3.x is not supported
+10-30 01:45:43.448  1624  1858 D libdsm  : Sending netbios packet to 255.255.255.255

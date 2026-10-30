@@ -209,16 +209,17 @@ pub fn start() -> Workers {
                 .map(|value| value.trim().to_string())
                 .unwrap_or_else(|_| "Red no disponible".into());
                 let android = run("waydroid", &["status"], Duration::from_secs(2))
-                    .map(|value| {
-                        if value
-                            .lines()
-                            .find(|line| line.contains("Session:"))
-                            .is_some_and(|line| line.contains("RUNNING"))
-                        {
-                            "Sesión activa · arranque por verificar".into()
-                        } else {
-                            "Sesión detenida".into()
-                        }
+                    .map(|status| {
+                        let running = session_state(&status) == Some("RUNNING");
+                        let boot = running.then(|| {
+                            run(
+                                "waydroid",
+                                &["prop", "get", "sys.boot_completed"],
+                                Duration::from_secs(2),
+                            )
+                        });
+                        android_status_label(&status, boot.as_ref().map(|value| value.as_deref()))
+                            .to_string()
                     })
                     .unwrap_or_else(|_| "Android no disponible".into());
                 if events
@@ -240,6 +241,23 @@ pub fn start() -> Workers {
         assets,
         events: event_rx,
         stop,
+    }
+}
+fn session_state(status: &str) -> Option<&str> {
+    status
+        .lines()
+        .find_map(|line| line.trim().strip_prefix("Session:").map(str::trim))
+}
+fn android_status_label(status: &str, boot: Option<Result<&str, &String>>) -> &'static str {
+    match session_state(status) {
+        Some("RUNNING") => match boot {
+            Some(Ok(value)) if value.trim() == "1" => "Arranque Android completado",
+            Some(Ok(_)) => "Android arrancando…",
+            _ => "Sesión activa · estado no disponible",
+        },
+        Some("STOPPED") => "Sesión Android detenida",
+        Some("FROZEN") => "Sesión Android suspendida",
+        _ => "Estado Android desconocido",
     }
 }
 pub fn settings_path() -> PathBuf {
@@ -547,6 +565,37 @@ fn decode_wallpaper(bytes: &[u8]) -> Result<tiny_skia::Pixmap, String> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    #[test]
+    fn android_ready_requires_exact_boot_confirmation_and_running_session() {
+        assert_eq!(
+            android_status_label("Session: RUNNING", Some(Ok("1\n"))),
+            "Arranque Android completado"
+        );
+        assert_eq!(
+            android_status_label("Session: RUNNING", Some(Ok(""))),
+            "Android arrancando…"
+        );
+        assert_eq!(
+            android_status_label("Session: RUNNING", Some(Ok("11"))),
+            "Android arrancando…"
+        );
+        assert_eq!(
+            android_status_label("Session: RUNNING", None),
+            "Sesión activa · estado no disponible"
+        );
+        assert_eq!(
+            android_status_label("Session: STOPPED\nContainer: RUNNING", Some(Ok("1"))),
+            "Sesión Android detenida"
+        );
+        assert_eq!(
+            android_status_label("Vendor: RUNNING", Some(Ok("1"))),
+            "Estado Android desconocido"
+        );
+        assert_eq!(
+            android_status_label("Session: FROZEN", None),
+            "Sesión Android suspendida"
+        );
+    }
     #[test]
     fn settings_roundtrip_and_corruption_backup_preserve_user_state() {
         let dir = std::env::temp_dir().join(format!("archtv-settings-{}", std::process::id()));

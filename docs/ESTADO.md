@@ -39,7 +39,9 @@ anteriores y las referencias visuales de la implementación retirada quedan all�
 
 Waydroid, sus imágenes y datos se conservan. La prueba anterior informó sesión y
 contenedor RUNNING, pero no confirmó sys.boot_completed=1 y mostró lentitud y
-avisos ANR. La integración Android sigue pendiente; no se ha reintentado aquí.
+avisos ANR. La integración Android sigue en H6. Tras ampliar la VM a 7,7 GiB, una prueba
+nativa confirma sys.boot_completed=1 a los 79 segundos y captura el escritorio
+Android sobre DRM/Pixman; reports/h6-boot-probe/.
 
 Esta VM dispone de unos 1,9 GiB de RAM. No tiene aceleración 3D validada, pero H1
 demostró renderizado anidado por CPU con Mesa llvmpipe. La presentación DRM/KMS
@@ -173,3 +175,21 @@ El recorrido completo de interacción también pasa a 1280×720 sobre DRM nativo
 (01:12 UTC), incluida persistencia y restauración de controles. H5 queda
 comprobado en esta VM; los mandos físicos y los presupuestos de rendimiento
 permanecen en H7. H6 sigue pendiente de arranque Android completo y aplicación.
+
+## H6: arranque y aplicación en validación
+
+La VM dispone ahora de 7,7 GiB de RAM y cuatro vCPU. La primera prueba tras
+la ampliación confirma arranque completo y escritorio Android, sin crash en
+el registro capturado. La sesión combinada permite iniciar Android desde
+ajustes y abrir el VLC oficial x86_64 desde el buscador del shell, así como
+volver con Inicio y reanudar. Hubo un aviso ANR de System UI durante el inicio
+de VLC; la estabilidad sigue pendiente. Las pruebas multimedia y de recuperación
+se documentan por separado; H6 continúa abierto.
+
+La dirección futura AOSP propia está registrada en AOSP-NATIVO.md, con etapas
+posteriores al roadmap actual y criterios explícitos para sustituir Waydroid.
+
+Primer ensayo multimedia: el tutorial de VLC pausó la reproducción. Tras cerrarlo
+se decodificaron frames iniciales del clip original, pero las capturas posteriores
+quedaron idénticas y el monitor de audio no mostró señal continua. Esto no acredita
+audio/vídeo funcional; se conserva como resultado incompleto en h6-integration/.
