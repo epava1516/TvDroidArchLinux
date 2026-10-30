@@ -119,6 +119,12 @@ gráficas. Logs, captura y comando reproducible están en
 reports/h8-build/first-runtime-graphics/. No acredita selección de sesión DRM,
 entrada de mando ni funcionamiento Android dentro del sistema instalado.
 
+La retirada de esta primera versión también se comprobó en el contenedor:
+64 archivos de los paquetes desaparecieron, sus registros dejaron de figurar en
+pacman y los bytes de un archivo de preferencias de prueba se conservaron.
+Ver first-runtime-removal.log y su script reproducible en reports/h8-build/.
+La raíz de prueba queda sin Arch TV instalado para el siguiente ciclo completo.
+
 makepkg detectó referencias al directorio de compilación en ambos binarios. La
 receta posterior incorpora --remap-path-prefix; su efecto aún requiere comprobar
 la siguiente compilación. Esta primera versión tampoco incluye las mejoras
@@ -155,3 +161,11 @@ pendiente esa revisión y la revisión de los cinco avisos ausentes. La receta g
 el árbol Cargo de la compilación y copia ese inventario y todos los avisos
 localizados a cada paquete bajo /usr/share/licenses/PAQUETE/. Esto conserva
 los avisos disponibles; no transforma los cinco casos pendientes en resueltos.
+
+## Herramientas para la imagen de distribución
+
+El manifiesto manifests/distribution-lab.txt registra devtools y archiso como
+herramientas de laboratorio, separadas de la sesión instalada. Archiso 91 está
+instalado; su perfil oficial releng soporta systemd-boot UEFI. No se ha generado
+una ISO propia ni validado su arranque. Versiones e instalación están guardadas
+en reports/h9-preparation/. El perfil propio y el instalador siguen pendientes.

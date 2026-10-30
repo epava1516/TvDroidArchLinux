@@ -16,6 +16,7 @@
   "57": "98-package-build.sh",
   "58": "layout.rs",
   "59": "Dirección futura: entorno APK propio sobre Linux",
+  "60": "Canvas",
   "61": "90-android-session.sh",
   "62": "93-android-shell-session.sh",
   "63": "91-android-client.sh",
@@ -26,5 +27,8 @@
   "68": "Arch TV · compositor propio para televisión",
   "69": "Paquetes Arch TV en preparación",
   "70": "archtv-session",
-  "71": "97-package-source.sh"
+  "71": "97-package-source.sh",
+  "72": "model.rs",
+  "73": "Page",
+  "74": "Key"
 }
