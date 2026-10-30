@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793392274.1865141,
-    "seen": 1793392404.4286861,
-    "ast_hash": "89776c76ca5f5610373a49af55866cc8",
+    "mtime": 1793392946.8532476,
+    "seen": 1793392963.0853293,
+    "ast_hash": "f81c2e28c3ddd96e17fcb95538082fb6",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -882,9 +882,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/framework-study.json": {
-    "mtime": 1793390229.6792865,
-    "seen": 1793392404.4147744,
-    "ast_hash": "aa91ff7961212f06bc3cee3d2f36d516",
+    "mtime": 1793392836.4643385,
+    "seen": 1793392963.0704772,
+    "ast_hash": "11916c1417c324a3fc3a19256c4f3b63",
     "semantic_hash": ""
   },
   "tools/apk/study_framework.py": {
@@ -1380,9 +1380,9 @@
     "semantic_hash": ""
   },
   "fixtures/aosp-window-service/WindowServiceProbe.java": {
-    "mtime": 1793389138.324349,
-    "seen": 1793389684.1429424,
-    "ast_hash": "6c92ec41a1b557b710f976d31bd68c50",
+    "mtime": 1793392928.3934228,
+    "seen": 1793392963.0694559,
+    "ast_hash": "6bfcb7099817e3f59604ce0c8d57b970",
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/org/archtv/aosplinux/LinuxWindowService.java": {
@@ -1635,6 +1635,12 @@
     "mtime": 1793392364.913217,
     "seen": 1793392404.4263432,
     "ast_hash": "2ab250746aaf42c216ee0c3cb5f55f89",
+    "semantic_hash": ""
+  },
+  "docs/AOSP-DRAWABLE-BOOTSTRAP.md": {
+    "mtime": 1793392946.8526921,
+    "seen": 1793392963.0825324,
+    "ast_hash": "74926c938525a3efc1a8308fabce1048",
     "semantic_hash": ""
   }
 }

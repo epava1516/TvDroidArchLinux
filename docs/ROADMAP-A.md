@@ -259,3 +259,9 @@ rechazos de XML inválido/SDK superior/expansión y regresiones. El perfil añad
 el foco original (19 recursos); View avanza hasta GradientDrawable ausente.
 AOSP-METADATOS-APK.md e informes aosp-application-info registran el alcance;
 no se acredita todavía View funcional ni dibujo original del APK.
+
+El constructor de View original ya termina en ART tras incorporar GradientDrawable,
+PorterDuff, BlendMode y Xfermode sin modificar. AOSP-DRAWABLE-BOOTSTRAP.md y
+reports/aosp-drawable-bootstrap registran el estado inicial y la regresión de
+Wayland. No hay todavía dibujo de la View original ni sustitución de las vistas
+propias del contador; measure/layout, widgets y presentación siguen pendientes.

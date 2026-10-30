@@ -47,7 +47,16 @@ public final class WindowServiceProbe {
                 catch (UnsupportedOperationException expected) { }
                 if (!attempted) {
                     attempted=true;
-                    try { new android.view.View(AppEnvironment.current().applicationContext);System.out.println("VIEW_CONSTRUCTOR_OK"); }
+                    try {
+                        android.view.View view=new android.view.View(AppEnvironment.current().applicationContext);
+                        check(view.getClass()==android.view.View.class,"Original View instance");
+                        check(view.getContext()==AppEnvironment.current().applicationContext,"Original context retained");
+                        check(view.getWidth()==0 && view.getHeight()==0,"Unlaid View dimensions");
+                        check(view.getId()==android.view.View.NO_ID && view.getParent()==null,"Unattached View state");
+                        check(view.getVisibility()==android.view.View.VISIBLE && view.getAlpha()==1.0f,"Initial visibility and native alpha");
+                        check(!android.graphics.drawable.GradientDrawable.sWrapNegativeAngleMeasurements,"Actual APK target 28 compatibility");
+                        System.out.println("VIEW_CONSTRUCTOR_OK");System.out.println("VIEW_BASE_STATE_OK");
+                    }
                     catch (LinkageError | UnsupportedOperationException | android.content.res.Resources.NotFoundException failure) {
                         System.out.println("VIEW_CONSTRUCTOR_BLOCKED "+failure);failure.printStackTrace(System.err);
                     }

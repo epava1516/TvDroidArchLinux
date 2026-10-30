@@ -563,6 +563,26 @@
       "path": "core/java/android/content/pm/PackageParser.java",
       "sha256": "a29b98edbb43f45da9de2046bb44f7aa83c8813f6a4652c407916db2945b24e8",
       "bytes": 405512
+    },
+    {
+      "path": "graphics/java/android/graphics/drawable/GradientDrawable.java",
+      "sha256": "5cd312ebf0c98c2f658fea2f56ec8de0f9cd824e925db2043a9ce10f7a87c33d",
+      "bytes": 92776
+    },
+    {
+      "path": "graphics/java/android/graphics/PorterDuff.java",
+      "sha256": "25eb7e541f4c8026839a046c2102c96c553cf823cf9037e72805e3e6749e7832",
+      "bytes": 18482
+    },
+    {
+      "path": "graphics/java/android/graphics/BlendMode.java",
+      "sha256": "229d880ac0d5f20b34e2988b5d8e95272d60acda189feadb980c8f7d0f490b48",
+      "bytes": 18962
+    },
+    {
+      "path": "graphics/java/android/graphics/Xfermode.java",
+      "sha256": "0b7f6f61b5889e6b314095ee512b4c5619b56c701e9f4960e76b4955615b1495",
+      "bytes": 1617
     }
   ],
   "public_resources_sources": [
@@ -584,7 +604,11 @@
     "core/java/android/app/WindowConfiguration.java",
     "graphics/java/android/graphics/Rect.java",
     "core/java/android/text/TextUtils.java",
-    "core/java/android/content/pm/ApplicationInfo.java"
+    "core/java/android/content/pm/ApplicationInfo.java",
+    "graphics/java/android/graphics/drawable/GradientDrawable.java",
+    "graphics/java/android/graphics/PorterDuff.java",
+    "graphics/java/android/graphics/BlendMode.java",
+    "graphics/java/android/graphics/Xfermode.java"
   ],
   "context_sources": [
     "core/java/android/content/Context.java",
