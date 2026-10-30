@@ -1,0 +1,5 @@
+/660/040755/0/0/classpaths//
+/755/100644/0/0/linker.config.pb/1068/
+/782/100644/0/0/public.libraries.txt/500/
+/788/100644/0/0/sanitizer.libraries.txt/82/
+/1042/100644/0/0/vndkcorevariant.libraries.txt/1/

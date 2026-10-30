@@ -6,7 +6,7 @@ artefactos enlazados prevalecen sobre cualquier resumen.
 
 ## Retomar en este orden
 
-1. Leer [el checkpoint fechado](../reports/base-aosp-x86_64-review/checkpoint.json)
+1. Leer [el checkpoint fechado](../reports/bionic-component/checkpoint.json)
    y contrastarlo con Git/procesos siguiendo [CONTINUIDAD.md](CONTINUIDAD.md).
 2. Consultar [arquitectura y decisiones](ARQUITECTURA.md),
    [roadmap general](../ROADMAP.md) y [detalle APK](ROADMAP-A.md).
@@ -25,7 +25,7 @@ Las fixtures, compilaciones y constructores no acreditan ese resultado.
 | --- | --- |
 | Vigente | Compositor y shell Rust existen; pruebas H0–H5 limitadas a la VM y plataformas documentadas. H7–H9 siguen abiertos. |
 | Experimental publicado | ART host ejecuta fixtures; recursos, cola y partes de contexto AOSP se reutilizan. Activity/widgets/vistas del contador siguen siendo propios. No hay compatibilidad general acreditada. |
-| Experimental publicado | ART host/glibc y 24 jars no básicos de otra build inicializan ContextImpl; no APK real ejecutada. Base Bionic/AOSP coherente sigue sin elegir ni ejecutar. |
+| Experimental publicado | ART host/glibc y 24 jars no básicos de otra build inicializan ContextImpl; no APK real ejecutada. Base Bionic/AOSP sigue sin elegir; pruebas de loader/arranque parcial D1, sin DEX ni APK real. |
 | Experimental pendiente separado | Cuatro unidades JNI originales registradas en ART: parser lee XML de Markor y falla por IPermissionManager nulo. Código propio conservado fuera del commit de revisión; no interfaz ni callbacks Markor. |
 | Herramientas verificadas | REA MCP 6.8.0 respondió a Codex y analizó estáticamente VLC 3.7.1 y una biblioteca ELF. La sesión de archivo se exportó y cerró. No es una prueba de ejecución de VLC en el runtime propio. |
 | Histórico | H6 Waydroid, imágenes Android e ISO anteriores conservan evidencia; no son el backend ni la aceptación vigentes del runtime APK. |
@@ -44,14 +44,16 @@ No se espera actualmente ningún build o prueba. Las autorizaciones ya concedida
 para pruebas, commits/push y trabajo autónomo siguen vigentes; no hay autorización
 nueva para reiniciar la VM.
 
-Siguiente acción concreta: ejecutar D1 de [BASE-AOSP-1](ARQUITECTURA.md), con
-linker/ART target Bionic originales bajo supervisor Linux y cierre inventariado,
-sin arrancar Android. A host queda como comparación, B candidato, C sin aprobar.
-Después: cierre de servicios y vertical Markor completa según
-[contrato](CONTRATO-APK.md) y [puertas D0–D6](ROADMAP-A.md). No continuar con un
-stub aislado de PermissionManager. API/servicios externos, ABI e ISA se evalúan
-separados. La matriz incluye GMS/microG, proveedores/media, DRM y sus requisitos
-remotos/hardware como cobertura pendiente, sin éxito ficticio.
+Siguiente acción concreta: completar el inventario de configuración original de
+linker/libnativeloader para D1 de [BASE-AOSP-1](ARQUITECTURA.md). El linker Bionic
+original pasa --help y --list del launcher en namespace; el ART target aborta
+antes de DEX porque el harness omite public.libraries.txt y no reproduce aún
+los namespaces generados. [Resultado](../reports/bionic-component/art-core-result.json).
+Es cierre de entorno incompleto, no un fallo de una APK ni una imposibilidad de B.
+La revisión está publicada en 2e9e11b. A host sigue como comparación, B candidato,
+C sin aprobar. Después: servicios y Markor completa según contrato/puertas D0–D6.
+API/servicios externos, ABI e ISA siguen separados; GMS/DRM requieren aplicaciones
+y pruebas reales todavía pendientes. Ningún paso preparatorio cierra compatibilidad.
 
 El snapshot local `/home/tv/recuperacion-archtv/20261030T223637Z-base-aosp` conserva
 parches/archivos propios del JNI pendiente. Los logs H9 ajenos quedan intactos.

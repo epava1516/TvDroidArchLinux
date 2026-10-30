@@ -1,0 +1,4 @@
+linker: Warning: failed to find generated linker configuration from "/linkerconfig/ld.config.txt"
+WARNING: linker: Warning: failed to find generated linker configuration from "/linkerconfig/ld.config.txt"
+Error reading public native library list from "/system/etc/public.libraries.txt": No such file or directory
+libc: failed to connect to tombstoned: No such file or directory

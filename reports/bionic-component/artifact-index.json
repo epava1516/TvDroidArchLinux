@@ -1,0 +1,29 @@
+{
+  "source_base_commit": "2e9e11becb7aa1945a42a7838f701e19e60dafea",
+  "files": {
+    "reports/bionic-component/closure.json": "1d751c61265964136b2a038540c38a866c254c538a5f6f482896e008ad544e7f",
+    "reports/bionic-component/linker-list.stderr": "64b801b2ad70764a25d2d1bc797edb3afa6ddd162ed1853386964be7a643fcd2",
+    "reports/bionic-component/extraction.json": "41fc72f0ffd3a551073d0db0ae1253896baa26609503f702f2c6b1fc2bab37ae",
+    "reports/bionic-component/validation.json": "1a90633699d8423d17d27e20e16fc30221c234703ad16eb79921ff1181e86842",
+    "reports/bionic-component/art-core.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/bionic-component/bionic-closure.py": "e40f51daf6e7a4e8b5f93b2ad3250ae437fe7ce22f2491786843f4d025764e39",
+    "reports/bionic-component/linker-help.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/bionic-component/linker-list.stdout": "55ae79d34d56c24e8bb151931dd7e78d8581b9691ba4f1971982e372ae74f31d",
+    "reports/bionic-component/run-bionic-core.py": "5c3d0178fa8076423f2b969edf607d11a1d87bceeac4088bc0f51dd09ee70c7e",
+    "reports/bionic-component/existing-alternative.json": "edb351f77ce8140adaee5c78308af5b8adcb9090944242c3d2b1abe11dd82193",
+    "reports/bionic-component/linker64.elf.txt": "6f1dc0f88fc9ef77200eac16078b6bcaadc6a1e807b148b05a9b83552df1c99e",
+    "reports/bionic-component/original-config-inventory.txt": "10213f8abb1e4f51980850f33a01ab990d9d393998bff3530ece3762dd8ec2d2",
+    "reports/bionic-component/checkpoint.json": "53a3752779f9b10954870f3c320d93a4c47f6921c6c461ba76afa1ef77ecc76c",
+    "reports/bionic-component/art-core-result.json": "0f0f4dfa5f1489540863b234da5f9ac4fd012019e6176c5809f0c822540145e4",
+    "reports/bionic-component/linker-main.cpp": "85c3a9b70b85f4d3644046ad16ff79c1d5b1024c2fd7242db43960930beafce6",
+    "reports/bionic-component/libart.so.elf.txt": "bd70d8b52868bdc79729154875da2485646d052d83eae0085b9edaaa5136563f",
+    "reports/bionic-component/dalvikvm64.elf.txt": "1ead83afb00aed5ad2fe6e6498e94dd96afc3393df340a2767257f2d0b208090",
+    "reports/bionic-component/linker-help.stdout": "052183045e9c22e959b6a3380feee7db3c733573080538ab49ba79f96c186891",
+    "reports/bionic-component/art-core.stderr": "1d4b840fc5afc32e7c416515b366914704445a4cc53a191d47e126e75dbdcbf9",
+    "reports/bionic-component/linker-list-result.json": "b68080f911b61f81793d750077cc04f0af8798d1d874a1642f79d55127c51952",
+    "reports/bionic-component/rea-linker-notes.json": "14e07c368c796fecf047b502add8dd6eeea794eb7c113613dc05b09f78d381e8",
+    "reports/bionic-component/linker-help-result.json": "f80d28b082ebffac9cd7beafd4232d7165734225358db797400522cd5d8a052e"
+  },
+  "linker_source_reference": "https://android.googlesource.com/platform/bionic/+/refs/tags/android-13.0.0_r3/linker/linker_main.cpp",
+  "scope": "Component research and scripts with fixed local paths, not an installer. Original libraries remain in verified local cache; captured scripts/commands preserve observed operations."
+}

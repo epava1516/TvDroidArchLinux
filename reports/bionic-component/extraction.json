@@ -1,0 +1,29 @@
+{
+  "files": [
+    {
+      "image": "modules/com.android.runtime/payload.img",
+      "image_sha256": "3af13b5f69ec7d25fe3789d7461e2ea748c521364776283e53f40d3381c3ff92",
+      "path": "/bin/linker64",
+      "local": "/home/tv/repositorio-principal/dist/apk/bionic-component-1/root/apex/com.android.runtime/bin/linker64",
+      "sha256": "e1af2f4ebef3110bba73374ef6153f4f220c68f8181431a7a8cc40562262c84c",
+      "bytes": 1738824
+    },
+    {
+      "image": "modules/com.android.art/payload.img",
+      "image_sha256": "b566fccef64fb5db07dcefd498b9692f9c1616ed9936893bb089b4217397f92f",
+      "path": "/bin/dalvikvm64",
+      "local": "/home/tv/repositorio-principal/dist/apk/bionic-component-1/root/apex/com.android.art/bin/dalvikvm64",
+      "sha256": "8797d7afeca7444a3cdacc52238f3d605f787a0957f8f5356909143fb573abc3",
+      "bytes": 10688
+    },
+    {
+      "image": "modules/com.android.art/payload.img",
+      "image_sha256": "b566fccef64fb5db07dcefd498b9692f9c1616ed9936893bb089b4217397f92f",
+      "path": "/lib64/libart.so",
+      "local": "/home/tv/repositorio-principal/dist/apk/bionic-component-1/root/apex/com.android.art/lib64/libart.so",
+      "sha256": "8b3b3323a8fe66672e8c91e84b67f1215a78deca517f798f5caafc416a147d95",
+      "bytes": 9028440
+    }
+  ],
+  "scope": "Static read-only extraction and readelf headers/dependencies; no target executed"
+}

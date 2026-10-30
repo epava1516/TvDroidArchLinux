@@ -1,0 +1,10 @@
+{
+  "pass": true,
+  "local_links": 103,
+  "native_library_hashes": 46,
+  "pending_jni_sources_preserved": true,
+  "linker_help_and_list_pass": true,
+  "art_target_dex_semantics_pass": false,
+  "scope": "Recorded outcomes/identities/links; component environment incomplete; no APK, namespaces/security/performance acceptance.",
+  "raw_tool_output_preserved": "readelf text kept verbatim, including trailing spaces; code/doc whitespace checks exclude these raw output files"
+}

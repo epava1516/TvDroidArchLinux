@@ -1,0 +1,154 @@
+{
+  "evidence_id": "ev_a717e7af290c6b252015858835753aa878230c4df440d430ddd7d26f44e9519b",
+  "subject": {
+    "name": "linker64",
+    "digest": {
+      "sha256": "e1af2f4ebef3110bba73374ef6153f4f220c68f8181431a7a8cc40562262c84c"
+    },
+    "local_path": "/home/tv/repositorio-principal/dist/apk/bionic-component-1/root/apex/com.android.runtime/bin/linker64",
+    "format": "elf",
+    "architecture": "x86_64"
+  },
+  "provider": {
+    "id": "rea-elf-notes",
+    "name": "REA ELF note parser",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.analysis",
+  "operation": "inspect_elf_notes",
+  "parameters": {
+    "path": "/home/tv/repositorio-principal/dist/apk/bionic-component-1/root/apex/com.android.runtime/bin/linker64",
+    "max_file_bytes": 67108864,
+    "max_entries": 64
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "artifact": {
+      "path": "/home/tv/repositorio-principal/dist/apk/bionic-component-1/root/apex/com.android.runtime/bin/linker64",
+      "sha256": "e1af2f4ebef3110bba73374ef6153f4f220c68f8181431a7a8cc40562262c84c",
+      "bytes": 1738824
+    },
+    "format": "elf64",
+    "byte_order": "little",
+    "machine": 62,
+    "type": 3,
+    "type_name": "shared",
+    "tables": [
+      {
+        "kind": "program",
+        "index": 9,
+        "name": null,
+        "location": {
+          "offset": 624,
+          "bytes": 32
+        },
+        "alignment": 4
+      },
+      {
+        "kind": "section",
+        "index": 1,
+        "name": ".note.gnu.build-id",
+        "location": {
+          "offset": 624,
+          "bytes": 32
+        },
+        "alignment": 4
+      }
+    ],
+    "entries": [
+      {
+        "index": 0,
+        "table_kind": "program",
+        "table_index": 9,
+        "location": {
+          "offset": 624,
+          "bytes": 32
+        },
+        "namesz": 4,
+        "descsz": 16,
+        "type": 3,
+        "type_name": "gnu_build_id",
+        "owner": "GNU",
+        "owner_bytes_hex": "474e5500",
+        "descriptor": {
+          "location": {
+            "offset": 640,
+            "bytes": 16
+          },
+          "bytes": 16,
+          "sha256": "6dcfac6a12aba47f6803d012f4e556273b8e4923bc35fe596d82eb6117607c34",
+          "hex": "88b9a0b1efb561bd3d51b1972ee9b024"
+        },
+        "gnu": {
+          "build_id_hex": "88b9a0b1efb561bd3d51b1972ee9b024",
+          "abi_tag": null,
+          "gold_version": null
+        }
+      },
+      {
+        "index": 1,
+        "table_kind": "section",
+        "table_index": 1,
+        "location": {
+          "offset": 624,
+          "bytes": 32
+        },
+        "namesz": 4,
+        "descsz": 16,
+        "type": 3,
+        "type_name": "gnu_build_id",
+        "owner": "GNU",
+        "owner_bytes_hex": "474e5500",
+        "descriptor": {
+          "location": {
+            "offset": 640,
+            "bytes": 16
+          },
+          "bytes": 16,
+          "sha256": "6dcfac6a12aba47f6803d012f4e556273b8e4923bc35fe596d82eb6117607c34",
+          "hex": "88b9a0b1efb561bd3d51b1972ee9b024"
+        },
+        "gnu": {
+          "build_id_hex": "88b9a0b1efb561bd3d51b1972ee9b024",
+          "abi_tag": null,
+          "gold_version": null
+        }
+      }
+    ],
+    "coverage": {
+      "status": "complete",
+      "examined_tables": 2,
+      "examined_entries": 2
+    },
+    "limitations": [
+      "This workflow does not execute the image, resolve runtime notes, or verify GNU build-id uniqueness against package catalogs.",
+      "PT_NOTE and SHT_NOTE are examined independently; the same file range may appear twice when both tables declare it."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "This workflow does not execute the image, resolve runtime notes, or verify GNU build-id uniqueness against package catalogs.",
+    "PT_NOTE and SHT_NOTE are examined independently; the same file range may appear twice when both tables declare it."
+  ],
+  "relationship_coverage": null,
+  "locations": [
+    {
+      "kind": "artifact-path",
+      "path": "/home/tv/repositorio-principal/dist/apk/bionic-component-1/root/apex/com.android.runtime/bin/linker64"
+    },
+    {
+      "kind": "file-offset-range",
+      "start": 624,
+      "end": 656
+    },
+    {
+      "kind": "file-offset-range",
+      "start": 624,
+      "end": 656
+    }
+  ],
+  "evidence_links": []
+}

@@ -401,5 +401,14 @@
       "acceptance": "Choose real author-distributed APK/version, trace actual contract and execute complete workflow; mark unknown until evidenced"
     }
   ],
-  "base_review": "BASE-AOSP-1: A host/glibc baseline; B original Bionic candidate unexecuted; C requires justified/proven boundaries. API/service, binary ABI and ISA measured separately."
+  "base_review": "BASE-AOSP-1: A host/glibc baseline; B original Bionic candidate with partial component tests, no DEX/app pass; C requires justified/proven boundaries. API/service, binary ABI and ISA measured separately.",
+  "base_component_observation": {
+    "evidence": "reports/bionic-component/art-core-result.json",
+    "linker_help_and_launcher_list_exit": 0,
+    "static_libraries": 46,
+    "art_target_exit": 134,
+    "dex_semantics_pass": false,
+    "full_apk_functional_pass": false,
+    "limit": "Original public.libraries.txt omitted from harness; generated linker namespaces absent. Environment incomplete, not app incompatibility or proof B cannot work."
+  }
 }

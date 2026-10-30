@@ -1,0 +1,8 @@
+	linux-vdso.so.1 => [vdso] (0x7f122ec5e000)
+	liblog.so => /system/lib64/liblog.so (0x7f122e9a2000)
+	libnativehelper.so => /apex/com.android.art/lib64/libnativehelper.so (0x7f122ea36000)
+	libsigchain.so => /apex/com.android.art/lib64/libsigchain.so (0x7f122e9d5000)
+	libc++.so => /apex/com.android.art/lib64/libc++.so (0x7f122e88d000)
+	libc.so => /apex/com.android.runtime/lib64/bionic/libc.so (0x7f122d067000)
+	libm.so => /apex/com.android.runtime/lib64/bionic/libm.so (0x7f122ea46000)
+	libdl.so => /apex/com.android.runtime/lib64/bionic/libdl.so (0x7f122e978000)

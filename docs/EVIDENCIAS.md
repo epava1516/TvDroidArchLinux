@@ -98,3 +98,15 @@ estáticos. La traza externa MediaDrm no está disponible por clase SDK ausente
 en APK y queda conservada, sin convertir el fallo de herramienta en compatibilidad.
 Las búsquedas DEX sólo tienen su alcance declarado. Ningún flujo GMS/DRM ni
 runtime target Bionic está probado por esta revisión.
+
+## Primera prueba de componentes Bionic
+
+[Checkpoint](../reports/bionic-component/checkpoint.json),
+[resolución del launcher](../reports/bionic-component/linker-list-result.json),
+[invocación ART target](../reports/bionic-component/art-core-result.json) y
+[hashes](../reports/bionic-component/artifact-index.json). Linker original ejecuta
+ayuda/listado con código 0; las 46 bibliotecas de la selección tienen cierre
+estático. ART aborta 134 antes de la fixture por configuración pública ausente
+en el harness, con namespaces generados todavía pendientes. No demuestra
+compatibilidad de aplicaciones, servicios ni inviabilidad de Bionic. REA MCP
+verifica notas/identidad ELF, no observa esa ejecución. No se arrancó Android.

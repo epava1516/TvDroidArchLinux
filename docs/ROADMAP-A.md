@@ -22,7 +22,7 @@ A3–A5 ni H6–H9 y no convierten sus preparativos en compatibilidad.
 | Puerta | Dependencias y experimento | Aceptación verificable | Estado |
 | --- | --- | --- | --- |
 | D0 · base oficial | Fuentes/targets x86_64, imagen/artefactos/versiones y licencias; distinguir Cuttlefish, Emulator y Android-x86 | Identidad completa y origen; implementaciones DEX/ELF frente a stubs; revisión de build soportada/patches antes de distribuir | Parcial: imagen oficial API33 r2 e inventario fijados; build reciente/distribución pendientes |
-| D1 · cierre Bionic | D0; inventariar linker/libc/ART/libcore/APEX/JNI/recursos del mismo target, DT_NEEDED/configuración/classloader | Todas las entradas identificadas, ausencia/mezcla explícita; pruebas de loader y ART en namespace sin Android init ni VM/contenedor Android completo | No ejecutado para runtime target; 31 jars sólo inventariados |
+| D1 · cierre Bionic | D0; inventariar linker/libc/ART/libcore/APEX/JNI/recursos del mismo target, DT_NEEDED/configuración/classloader | Todas las entradas identificadas, ausencia/mezcla explícita; pruebas de loader y ART en namespace sin Android init ni VM/contenedor Android completo | Parcial: linker original --help/--list pasa; 46 bibliotecas inventariadas. ART target aborta por configuración original ausente en harness, antes de DEX |
 | D2 · fronteras Linux | D1; IPC/FD/buffers/entrada, identidad/permisos, servicios originales individuales y recuperación | Contrato por proceso/biblioteca, cierre transitivo, operación/denegación/caída/cierre; sin ampliar a un boot Android oculto | Pendiente; registro Binder local no prueba IPC |
 | D3 · aplicación original | D2; Markor intacta, manifiesto/alias, Package/Permission/Activity/Content, resources/JNI por subsistemas | Application/Activity/callbacks originales y dependencias reales identificadas; errores honestos | Host pendiente: XML leído, fallo IPermissionManager.getSplitPermissions; B sin probar. No código Markor ejecutado |
 | D4 · vertical y elección | D3; misma APK/datos/entrada y condiciones para A y B; C sólo con frontera probada | Seis etapas Markor: ventana original→editar→guardar→servicio/proveedor elegido→cerrar→reabrir, bytes/eventos/frames/logs, aislamiento y costes. Decisión motivada; sin ganador por mera compilación | Todas las etapas funcionales siguen sin verificar |
@@ -34,6 +34,9 @@ linker/ART Bionic originales como componentes Linux aislados; timeouts, credenci
 procesos/handles, cierre y archivos expuestos deben registrarse. No se inicia Android
 para obtener un resultado de referencia. Después se conecta la ruta original de
 Markor a Smithay; las pruebas de fixture sólo guardan regresiones y no eligen base.
+
+Para la comparación A, evaluar también ATL/art_standalone con revisión/licencias
+fijadas y la misma Markor; sus demos, stubs o widgets GTK no son aceptación local.
 
 Antes de escribir un nuevo servicio, investigar el subsistema original y su cierre,
 consultar implementaciones existentes y asociarlo a una etapa real de la aplicación.

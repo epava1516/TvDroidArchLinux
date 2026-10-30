@@ -42,7 +42,7 @@ procede, producir componentes desde fuentes fijadas de una build mantenida.
 | Ruta | Reutilización y frontera | Evidencia actual | Dependencias/costes y experimento decisivo |
 | --- | --- | --- | --- |
 | A · host glibc | ART/libcore host, androidfw y subsistemas JNI recompilados; puente Rust/Linux. | Fixtures funcionales; framework modular llega a ContextImpl. Ensayo JNI pendiente lee manifiesto y falla por PermissionManager. | Coste de port/ABI/classloader y servicios propio. Repetir Markor completa con JNI/servicios por subsistemas; medir mantenimiento y recursos. No extender Activity/widgets propios para dar apariencia de compatibilidad. |
-| B · nativo Bionic | ART/libcore, Bionic/linker, framework, APEX, JNI y recursos del mismo target/build; procesos Linux supervisados, interfaces gráficas/entrada/servicios adaptadas. | Imagen original y jars extraídos estáticamente; todavía no ejecución de ART target. | Namespaces/rutas/APEX, propiedades, TLS/bionic, Binder, permisos, SELinux/seccomp/cgroups esperados, fonts, HAL/BufferQueue/servicios. Primero loader/ART aislado, después runtime original y cierre de servicios de Markor. Puede conservar más semántica; no se presupone menor coste ni funcionamiento. |
+| B · nativo Bionic | ART/libcore, Bionic/linker, framework, APEX, JNI y recursos del mismo target/build; procesos Linux supervisados, interfaces gráficas/entrada/servicios adaptadas. | Linker Bionic --help/--list pasa. ART target se invoca y aborta por public.libraries.txt omitido; no DEX ni app ejecutados. | Namespaces/rutas/APEX, propiedades, TLS/bionic, Binder, permisos, SELinux/seccomp/cgroups esperados, fonts, HAL/BufferQueue/servicios. Primero loader/ART aislado, después runtime original y cierre de servicios de Markor. Puede conservar más semántica; no se presupone menor coste ni funcionamiento. |
 | C · mezcla controlada | Componentes Bionic y host en procesos separados, protocolo versionado de buffers/entrada/servicios; o frontera intraproceso demostrada. | Ninguna combinación aceptada para APK reales. Mezcla actual sólo experimental. | Probar ABI, identidad, ownership, hilos, excepciones, FD y caídas. No pasar objetos C++/JNI entre libc o VM por coincidencia de ISA/nombres. Medir copias, latencia y complejidad. |
 
 La mezcla real no equivale aún a B ni a C aprobadas:
@@ -60,6 +60,16 @@ La mezcla real no equivale aún a B ni a C aprobadas:
 - `libarchtv_aosp_linux.so` y registro local son adaptadores propios. El Binder
   local no acredita IPC ni autorización Android. El contador usa UI propia;
   todavía no hay ventana de Markor con vistas originales.
+
+Alternativa existente para A: [ATL](https://gitlab.com/android_translation_layer/android_translation_layer/-/raw/master/README.md)
+y [art_standalone](https://gitlab.com/android_translation_layer/art_standalone).
+Upstream documenta ART/dependencias AOSP adaptadas a Linux y un enlazador de
+traducción para JNI. Su README también describe APIs incompletas, stubs y widgets
+GTK: no acredita nuestra matriz ni justifica respuestas ficticias. Antes de más
+port host, fijar revisión/licencias y evaluar sus componentes y el mismo recorrido
+Markor, no sólo demos upstream. No se ha descargado/instalado/ejecutado ATL en esta
+revisión. Esta comparación puede reducir reimplementación; no cambia la prioridad
+de probar cierres A/B ni convierte una compatibilidad de API en traducción ISA.
 
 [libhybris](https://github.com/libhybris/libhybris/blob/master/README.md) es una
 alternativa existente para cargar bibliotecas basadas en Bionic desde host Linux;

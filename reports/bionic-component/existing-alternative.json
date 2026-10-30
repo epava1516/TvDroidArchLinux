@@ -1,0 +1,8 @@
+{
+  "observed_date": "2026-10-30",
+  "sources": [
+    "https://gitlab.com/android_translation_layer/android_translation_layer/-/raw/master/README.md",
+    "https://gitlab.com/android_translation_layer/art_standalone"
+  ],
+  "finding": "Upstream ART/dependencies adaptation and JNI translation linker are existing candidates for host strategy comparison; README explicitly describes partial stubs and GTK widget implementations. No local runtime test, source revision/license audit or compatibility acceptance performed. Evaluate before new host reimplementation. Not an ARM ISA translator proof."
+}

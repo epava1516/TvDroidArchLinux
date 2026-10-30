@@ -1,0 +1,40 @@
+{
+  "observed_at": "2026-10-30T22:59:23.871877+00:00",
+  "branch": "main",
+  "base_commit": "2e9e11becb7aa1945a42a7838f701e19e60dafea",
+  "goal": "Complete unmodified APK on Linux Rust/Smithay without Waydroid or full Android. BASE-AOSP-1 review published; GMS/DRM and broad compatibility remain open.",
+  "pending_own": [
+    "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java",
+    "tools/apk/verify_isolated_bootstrap.py",
+    "runtime/aosp/native/original-resources-host.cpp",
+    "tools/apk/build_original_resources.py"
+  ],
+  "pending_other": [
+    "reports/h9-uefi-boot/qemu.log",
+    "reports/h9-uefi-boot/serial.log"
+  ],
+  "terminal_handles": [
+    29113,
+    27580,
+    51712,
+    6859,
+    74223,
+    93567,
+    44189,
+    29195
+  ],
+  "results": "Bionic linker help/list exit0. Static 46-library closure present. ART target abort134 before DEX: original public.libraries.txt omitted from harness; generated linker config also absent. No Android boot or app execution.",
+  "next": "Inventory original libnativeloader/linker configuration contracts and original metadata; construct coherent minimal environment, then retry component D1. Do not add class/method stubs or silently run Android init. Retain host baseline and continue full Markor vertical after base gates.",
+  "limits": "Flat LD_LIBRARY_PATH not production namespaces; one SONAME candidate selected from explicit image locations, duplicates noted. No ART semantic fixture success, no original app workflows or full security/performance/install/update acceptance.",
+  "active_observed": [
+    {
+      "unit": "codex-remote.service",
+      "scope": "system",
+      "pid": 181298,
+      "state": "active",
+      "started": "2026-10-30 21:21:11 UTC"
+    }
+  ],
+  "no_test_processes_observed": "Host ps found no bwrap/dalvikvm64/QEMU; terminal handles above",
+  "existing_alternative_next": "Evaluate ATL/art_standalone source revision/licensing/components against A before further host adaptation; not installed/tested"
+}
