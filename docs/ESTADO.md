@@ -6,13 +6,13 @@ artefactos enlazados prevalecen sobre cualquier resumen.
 
 ## Retomar en este orden
 
-1. Leer [el checkpoint fechado](../reports/continuidad-20261030/checkpoint.json)
+1. Leer [el checkpoint fechado](../reports/arquitectura-apk-20261030/checkpoint.json)
    y contrastarlo con Git/procesos siguiendo [CONTINUIDAD.md](CONTINUIDAD.md).
 2. Consultar [arquitectura y decisiones](ARQUITECTURA.md),
    [roadmap general](../ROADMAP.md) y [detalle APK](ROADMAP-A.md).
 3. Consultar [el índice de evidencias](EVIDENCIAS.md) antes de atribuir un resultado.
-4. Continuar la revisión global de componentes AOSP y la matriz de aplicaciones
-   reales. No seguir portando dependencias aisladas hasta decidir esa arquitectura.
+4. Continuar el bootstrap original por conjuntos según [la revisión de arquitectura](ARQUITECTURA.md)
+   y [la matriz real](COMPATIBILIDAD-APK.md). No volver a ampliar sustitutos Android por inercia.
 
 ## Objetivo y alcance real
 
@@ -43,11 +43,12 @@ No se espera actualmente ningún build o prueba. Las autorizaciones ya concedida
 para pruebas, commits/push y trabajo autónomo siguen vigentes; no hay autorización
 nueva para reiniciar la VM.
 
-Siguiente acción concreta: contrastar ART/Bionic/bibliotecas y servicios originales,
-libhybris y traducción de ISA con fuentes y artefactos, definir una matriz de APK
-reales y elegir un primer recorrido completo de lanzamiento/interfaz/entrada/
-persistencia/servicios/cierre. La resolución aislada de constructores queda como
-regresión técnica, no como mecanismo para declarar compatibilidad.
+Siguiente acción concreta: contrastar procedencia y bootclasspath del framework
+DEX original del bundle ART y ensayar bootstrap Application/Activity original en
+proceso aislado, orientado al recorrido de Markor. La revisión de arquitectura
+ya compara ART/Bionic/servicios, libhybris y traducción de ISA con evidencia; la
+matriz fija tres APK reales. Sólo está probado el enlace sin inicialización de
+las Activity de dos de ellas. No hay recorrido funcional completo demostrado.
 
 ## Historial conservado (no es el estado vigente)
 

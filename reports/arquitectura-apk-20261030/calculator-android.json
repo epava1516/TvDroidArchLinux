@@ -1,0 +1,791 @@
+{
+  "evidence_id": "ev_b6ceb13df6179e88003b35ccc751fccb2a8f12b57c7b379e9452bda59a7f6f1f",
+  "subject": {
+    "name": "calculator-10-foss-release.apk",
+    "digest": {
+      "sha256": "7c5443c22d6d62c67dfe80df33ea9161ff0fa440f92590bcb45d7008b57613ed"
+    },
+    "local_path": "/home/tv/.cache/archtv/apk/real-app-candidates/calculator-10-foss-release.apk",
+    "format": "apk",
+    "architecture": null
+  },
+  "provider": {
+    "id": "rea-analysis-view",
+    "name": "REA analysis view projection",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.analysis-view",
+  "operation": "inspect_analysis_view",
+  "parameters": {
+    "parent_evidence_id": "ev_64110040521bff8faa94ed6b7108b9cd4917e7733771b7eca451825a962f4c57",
+    "view": {
+      "kind": "summary"
+    }
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "kind": "summary",
+    "view": {
+      "kind": "summary"
+    },
+    "parent_evidence_id": "ev_64110040521bff8faa94ed6b7108b9cd4917e7733771b7eca451825a962f4c57",
+    "parent_operation": "inspect_android_package",
+    "parent_digest": "64110040521bff8faa94ed6b7108b9cd4917e7733771b7eca451825a962f4c57",
+    "view_digest": "d609fa4b3431ceab4c9912c26365ee8f8531f2e6359bdbe809c0cc30e00dee49",
+    "artifact": {
+      "path": "/home/tv/.cache/archtv/apk/real-app-candidates/calculator-10-foss-release.apk",
+      "sha256": "7c5443c22d6d62c67dfe80df33ea9161ff0fa440f92590bcb45d7008b57613ed"
+    },
+    "coverage": {
+      "status": "complete-within-view",
+      "examined": 1,
+      "total": 1,
+      "next_offset": null,
+      "exhausted": true
+    },
+    "limitations": [
+      "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+      "Method signatures use provider display types; DEX prototypes come from frozen JADX metadata. Display names may be aliases, and overload indices are local to this engine and artifact.",
+      "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+      "Incoming reference totals count JADX using nodes. Direct invoke entries within a using method report raw DEX code-unit offsets and method indexes, but coverage is limited to those nodes and directly matched invokes; it does not establish every possible dynamic or reflective call site.",
+      "Manifest summaries are parsed once by REA's bridge from the exact root AndroidManifest.xml resource, using namespace-aware XML attributes; decoded XML is retained. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+    ],
+    "unknowns": [
+      "APK signatures were not verified; package declarations do not establish authenticity or runtime behavior."
+    ],
+    "summary": {
+      "engine": {
+        "name": "jadx-headless-mcp",
+        "version": "0.7.1",
+        "artifact_sha256": "6e5eacf500b64292bfb73c49797c1958f6ee44646e43e868039ae7feb573ff75",
+        "source_revision": "5844800a486d2248fa949b74c9896285f5b54de2",
+        "worker_count": 1,
+        "heap_limit_mib": 1980
+      },
+      "package_name": "org.fossify.math",
+      "version_name": "1.4.0",
+      "version_code": "10",
+      "min_sdk": "26",
+      "target_sdk": "36",
+      "permissions": [
+        "org.fossify.android.permission.WRITE_GLOBAL_SETTINGS"
+      ],
+      "manifest": {
+        "status": "complete",
+        "reported_total_bytes": null,
+        "text_code_units": 19444,
+        "text_included": false
+      },
+      "components": {
+        "status": "complete",
+        "items": [
+          {
+            "kind": "activity",
+            "declared_name": "org.fossify.math.activities.SplashActivity",
+            "name": "org.fossify.math.activities.SplashActivity",
+            "exported": false,
+            "exported_default": false,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 0,
+            "actions": [],
+            "categories": [],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": null
+          },
+          {
+            "kind": "activity-alias",
+            "declared_name": "org.fossify.math.activities.SplashActivity.Grey_black",
+            "name": "org.fossify.math.activities.SplashActivity.Grey_black",
+            "exported": true,
+            "exported_default": true,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 1,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.LAUNCHER"
+            ],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": "org.fossify.math.activities.SplashActivity"
+          },
+          {
+            "kind": "activity-alias",
+            "declared_name": "org.fossify.math.activities.SplashActivity.Blue_grey",
+            "name": "org.fossify.math.activities.SplashActivity.Blue_grey",
+            "exported": true,
+            "exported_default": true,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 1,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.LAUNCHER"
+            ],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": "org.fossify.math.activities.SplashActivity"
+          },
+          {
+            "kind": "activity-alias",
+            "declared_name": "org.fossify.math.activities.SplashActivity.Brown",
+            "name": "org.fossify.math.activities.SplashActivity.Brown",
+            "exported": true,
+            "exported_default": true,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 1,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.LAUNCHER"
+            ],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": "org.fossify.math.activities.SplashActivity"
+          },
+          {
+            "kind": "activity-alias",
+            "declared_name": "org.fossify.math.activities.SplashActivity.Deep_orange",
+            "name": "org.fossify.math.activities.SplashActivity.Deep_orange",
+            "exported": true,
+            "exported_default": true,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 1,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.LAUNCHER"
+            ],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": "org.fossify.math.activities.SplashActivity"
+          },
+          {
+            "kind": "activity-alias",
+            "declared_name": "org.fossify.math.activities.SplashActivity.Orange",
+            "name": "org.fossify.math.activities.SplashActivity.Orange",
+            "exported": true,
+            "exported_default": true,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 1,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.LAUNCHER"
+            ],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": "org.fossify.math.activities.SplashActivity"
+          },
+          {
+            "kind": "activity-alias",
+            "declared_name": "org.fossify.math.activities.SplashActivity.Amber",
+            "name": "org.fossify.math.activities.SplashActivity.Amber",
+            "exported": true,
+            "exported_default": true,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 1,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.LAUNCHER"
+            ],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": "org.fossify.math.activities.SplashActivity"
+          },
+          {
+            "kind": "activity-alias",
+            "declared_name": "org.fossify.math.activities.SplashActivity.Yellow",
+            "name": "org.fossify.math.activities.SplashActivity.Yellow",
+            "exported": true,
+            "exported_default": true,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 1,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.LAUNCHER"
+            ],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": "org.fossify.math.activities.SplashActivity"
+          },
+          {
+            "kind": "activity-alias",
+            "declared_name": "org.fossify.math.activities.SplashActivity.Lime",
+            "name": "org.fossify.math.activities.SplashActivity.Lime",
+            "exported": true,
+            "exported_default": true,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 1,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.LAUNCHER"
+            ],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": "org.fossify.math.activities.SplashActivity"
+          },
+          {
+            "kind": "activity-alias",
+            "declared_name": "org.fossify.math.activities.SplashActivity.Light_green",
+            "name": "org.fossify.math.activities.SplashActivity.Light_green",
+            "exported": true,
+            "exported_default": true,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 1,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.LAUNCHER"
+            ],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": "org.fossify.math.activities.SplashActivity"
+          },
+          {
+            "kind": "activity-alias",
+            "declared_name": "org.fossify.math.activities.SplashActivity.Green",
+            "name": "org.fossify.math.activities.SplashActivity.Green",
+            "exported": true,
+            "exported_default": true,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 1,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.LAUNCHER"
+            ],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": "org.fossify.math.activities.SplashActivity"
+          },
+          {
+            "kind": "activity-alias",
+            "declared_name": "org.fossify.math.activities.SplashActivity.Teal",
+            "name": "org.fossify.math.activities.SplashActivity.Teal",
+            "exported": true,
+            "exported_default": true,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 1,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.LAUNCHER"
+            ],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": "org.fossify.math.activities.SplashActivity"
+          },
+          {
+            "kind": "activity-alias",
+            "declared_name": "org.fossify.math.activities.SplashActivity.Cyan",
+            "name": "org.fossify.math.activities.SplashActivity.Cyan",
+            "exported": true,
+            "exported_default": true,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 1,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.LAUNCHER"
+            ],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": "org.fossify.math.activities.SplashActivity"
+          },
+          {
+            "kind": "activity-alias",
+            "declared_name": "org.fossify.math.activities.SplashActivity.Light_blue",
+            "name": "org.fossify.math.activities.SplashActivity.Light_blue",
+            "exported": true,
+            "exported_default": true,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 1,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.LAUNCHER"
+            ],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": "org.fossify.math.activities.SplashActivity"
+          },
+          {
+            "kind": "activity-alias",
+            "declared_name": "org.fossify.math.activities.SplashActivity.Blue",
+            "name": "org.fossify.math.activities.SplashActivity.Blue",
+            "exported": true,
+            "exported_default": true,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 1,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.LAUNCHER"
+            ],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": "org.fossify.math.activities.SplashActivity"
+          },
+          {
+            "kind": "activity-alias",
+            "declared_name": "org.fossify.math.activities.SplashActivity.Indigo",
+            "name": "org.fossify.math.activities.SplashActivity.Indigo",
+            "exported": true,
+            "exported_default": true,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 1,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.LAUNCHER"
+            ],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": "org.fossify.math.activities.SplashActivity"
+          },
+          {
+            "kind": "activity-alias",
+            "declared_name": "org.fossify.math.activities.SplashActivity.Deep_purple",
+            "name": "org.fossify.math.activities.SplashActivity.Deep_purple",
+            "exported": true,
+            "exported_default": true,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 1,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.LAUNCHER"
+            ],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": "org.fossify.math.activities.SplashActivity"
+          },
+          {
+            "kind": "activity-alias",
+            "declared_name": "org.fossify.math.activities.SplashActivity.Purple",
+            "name": "org.fossify.math.activities.SplashActivity.Purple",
+            "exported": true,
+            "exported_default": true,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 1,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.LAUNCHER"
+            ],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": "org.fossify.math.activities.SplashActivity"
+          },
+          {
+            "kind": "activity-alias",
+            "declared_name": "org.fossify.math.activities.SplashActivity.Pink",
+            "name": "org.fossify.math.activities.SplashActivity.Pink",
+            "exported": true,
+            "exported_default": true,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 1,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.LAUNCHER"
+            ],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": "org.fossify.math.activities.SplashActivity"
+          },
+          {
+            "kind": "activity-alias",
+            "declared_name": "org.fossify.math.activities.SplashActivity.Red",
+            "name": "org.fossify.math.activities.SplashActivity.Red",
+            "exported": true,
+            "exported_default": true,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 1,
+            "actions": [
+              "android.intent.action.MAIN"
+            ],
+            "categories": [
+              "android.intent.category.LAUNCHER"
+            ],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": "org.fossify.math.activities.SplashActivity"
+          },
+          {
+            "kind": "activity",
+            "declared_name": "org.fossify.math.activities.MainActivity",
+            "name": "org.fossify.math.activities.MainActivity",
+            "exported": false,
+            "exported_default": false,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 0,
+            "actions": [],
+            "categories": [],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": null
+          },
+          {
+            "kind": "activity",
+            "declared_name": "org.fossify.math.activities.UnitConverterActivity",
+            "name": "org.fossify.math.activities.UnitConverterActivity",
+            "exported": false,
+            "exported_default": false,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 0,
+            "actions": [],
+            "categories": [],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": null
+          },
+          {
+            "kind": "activity",
+            "declared_name": "org.fossify.math.activities.UnitConverterPickerActivity",
+            "name": "org.fossify.math.activities.UnitConverterPickerActivity",
+            "exported": false,
+            "exported_default": false,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 0,
+            "actions": [],
+            "categories": [],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": null
+          },
+          {
+            "kind": "activity",
+            "declared_name": "org.fossify.math.activities.WidgetConfigureActivity",
+            "name": "org.fossify.math.activities.WidgetConfigureActivity",
+            "exported": true,
+            "exported_default": true,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 1,
+            "actions": [
+              "android.appwidget.action.APPWIDGET_CONFIGURE"
+            ],
+            "categories": [],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": null
+          },
+          {
+            "kind": "activity",
+            "declared_name": "org.fossify.math.activities.SettingsActivity",
+            "name": "org.fossify.math.activities.SettingsActivity",
+            "exported": true,
+            "exported_default": true,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 1,
+            "actions": [
+              "android.intent.action.APPLICATION_PREFERENCES"
+            ],
+            "categories": [
+              "android.intent.category.DEFAULT"
+            ],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": null
+          },
+          {
+            "kind": "activity",
+            "declared_name": "org.fossify.commons.activities.AboutActivity",
+            "name": "org.fossify.commons.activities.AboutActivity",
+            "exported": false,
+            "exported_default": false,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 0,
+            "actions": [],
+            "categories": [],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": null
+          },
+          {
+            "kind": "activity",
+            "declared_name": "org.fossify.commons.activities.CustomizationActivity",
+            "name": "org.fossify.commons.activities.CustomizationActivity",
+            "exported": false,
+            "exported_default": false,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 0,
+            "actions": [],
+            "categories": [],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": null
+          },
+          {
+            "kind": "receiver",
+            "declared_name": "org.fossify.math.helpers.MyWidgetProvider",
+            "name": "org.fossify.math.helpers.MyWidgetProvider",
+            "exported": true,
+            "exported_default": true,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 1,
+            "actions": [
+              "android.appwidget.action.APPWIDGET_UPDATE"
+            ],
+            "categories": [],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": null
+          },
+          {
+            "kind": "receiver",
+            "declared_name": "org.fossify.math.receivers.LocaleChangeReceiver",
+            "name": "org.fossify.math.receivers.LocaleChangeReceiver",
+            "exported": true,
+            "exported_default": true,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 1,
+            "actions": [
+              "android.intent.action.LOCALE_CHANGED"
+            ],
+            "categories": [],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": null
+          },
+          {
+            "kind": "activity",
+            "declared_name": "org.fossify.commons.activities.ContributorsActivity",
+            "name": "org.fossify.commons.activities.ContributorsActivity",
+            "exported": false,
+            "exported_default": false,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 0,
+            "actions": [],
+            "categories": [],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": null
+          },
+          {
+            "kind": "activity",
+            "declared_name": "org.fossify.commons.activities.FAQActivity",
+            "name": "org.fossify.commons.activities.FAQActivity",
+            "exported": false,
+            "exported_default": false,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 0,
+            "actions": [],
+            "categories": [],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": null
+          },
+          {
+            "kind": "activity",
+            "declared_name": "org.fossify.commons.activities.LicenseActivity",
+            "name": "org.fossify.commons.activities.LicenseActivity",
+            "exported": false,
+            "exported_default": false,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 0,
+            "actions": [],
+            "categories": [],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": null
+          },
+          {
+            "kind": "activity",
+            "declared_name": "org.fossify.commons.activities.ManageBlockedNumbersActivity",
+            "name": "org.fossify.commons.activities.ManageBlockedNumbersActivity",
+            "exported": false,
+            "exported_default": false,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 0,
+            "actions": [],
+            "categories": [],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": null
+          },
+          {
+            "kind": "activity",
+            "declared_name": "org.fossify.commons.activities.DonationActivity",
+            "name": "org.fossify.commons.activities.DonationActivity",
+            "exported": false,
+            "exported_default": false,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 0,
+            "actions": [],
+            "categories": [],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": null
+          },
+          {
+            "kind": "activity",
+            "declared_name": "org.fossify.commons.activities.AppLockActivity",
+            "name": "org.fossify.commons.activities.AppLockActivity",
+            "exported": false,
+            "exported_default": false,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 0,
+            "actions": [],
+            "categories": [],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": null
+          },
+          {
+            "kind": "receiver",
+            "declared_name": "org.fossify.commons.receivers.FossifyBroadcastReceiver",
+            "name": "org.fossify.commons.receivers.FossifyBroadcastReceiver",
+            "exported": true,
+            "exported_default": true,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 1,
+            "actions": [
+              "org.fossify.android.GLOBAL_CONFIG_UPDATED"
+            ],
+            "categories": [],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": null
+          },
+          {
+            "kind": "provider",
+            "declared_name": "androidx.startup.InitializationProvider",
+            "name": "androidx.startup.InitializationProvider",
+            "exported": false,
+            "exported_default": false,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 0,
+            "actions": [],
+            "categories": [],
+            "foreground_service_type": null,
+            "authorities": [
+              "org.fossify.math.androidx-startup"
+            ],
+            "target_activity": null
+          },
+          {
+            "kind": "service",
+            "declared_name": "androidx.room.MultiInstanceInvalidationService",
+            "name": "androidx.room.MultiInstanceInvalidationService",
+            "exported": false,
+            "exported_default": false,
+            "permission": null,
+            "permission_source": "none",
+            "intent_filter_count": 0,
+            "actions": [],
+            "categories": [],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": null
+          },
+          {
+            "kind": "receiver",
+            "declared_name": "androidx.profileinstaller.ProfileInstallReceiver",
+            "name": "androidx.profileinstaller.ProfileInstallReceiver",
+            "exported": true,
+            "exported_default": true,
+            "permission": "android.permission.DUMP",
+            "permission_source": "component",
+            "intent_filter_count": 4,
+            "actions": [
+              "androidx.profileinstaller.action.INSTALL_PROFILE",
+              "androidx.profileinstaller.action.SKIP_FILE",
+              "androidx.profileinstaller.action.SAVE_PROFILE",
+              "androidx.profileinstaller.action.BENCHMARK_OPERATION"
+            ],
+            "categories": [],
+            "foreground_service_type": null,
+            "authorities": null,
+            "target_activity": null
+          }
+        ],
+        "limitations": []
+      },
+      "class_count": 5023,
+      "resource_count": 1584,
+      "signature_verification": "not_performed"
+    }
+  },
+  "confidence": "derived",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+    "Method signatures use provider display types; DEX prototypes come from frozen JADX metadata. Display names may be aliases, and overload indices are local to this engine and artifact.",
+    "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+    "Incoming reference totals count JADX using nodes. Direct invoke entries within a using method report raw DEX code-unit offsets and method indexes, but coverage is limited to those nodes and directly matched invokes; it does not establish every possible dynamic or reflective call site.",
+    "Manifest summaries are parsed once by REA's bridge from the exact root AndroidManifest.xml resource, using namespace-aware XML attributes; decoded XML is retained. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+  ],
+  "relationship_coverage": null,
+  "locations": [
+    {
+      "kind": "artifact-path",
+      "path": "/home/tv/.cache/archtv/apk/real-app-candidates/calculator-10-foss-release.apk"
+    }
+  ],
+  "evidence_links": [
+    "ev_64110040521bff8faa94ed6b7108b9cd4917e7733771b7eca451825a962f4c57"
+  ]
+}

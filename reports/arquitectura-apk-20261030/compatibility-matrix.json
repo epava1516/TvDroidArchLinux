@@ -1,0 +1,139 @@
+{
+  "schema": 1,
+  "runtime_baseline": "b8169a5 with prior registry experiment uncommitted",
+  "scope": "Unmodified real APK static identities and planned end-to-end workflows. No general compatibility or runtime failure claimed from unexecuted cases.",
+  "applications": [
+    {
+      "id": "vlc",
+      "package": "org.videolan.vlc",
+      "version": "3.7.1",
+      "version_code": "13070108",
+      "path_local": "/home/tv/.cache/archtv/apk/VLC-Android-3.7.1-x86_64.apk",
+      "sha256": "4646633ede40c4784c5584087cffc5c60cc45b16966ae0b36cedd784d7c4a11e",
+      "source_url": "https://get.videolan.org/vlc-android/3.7.1/",
+      "min_sdk": "17",
+      "target_sdk": "36",
+      "classes": 15261,
+      "resources": 2618,
+      "native_members": [
+        "lib/x86_64/libc++_shared.so",
+        "lib/x86_64/libmla.so",
+        "lib/x86_64/libvlc.so",
+        "lib/x86_64/libvlcjni.so"
+      ],
+      "signature": {
+        "declared_certificate_sha256": [
+          "c8768d2cea0c4b622e419b4b4715981946821e4ebc035fb41776cad395a7f68e"
+        ],
+        "strongest_scheme": "v3",
+        "payload_self_consistent": true,
+        "cryptographic_verification": "not_performed",
+        "authenticity": "unknown"
+      },
+      "evidence_id": "ev_37c5a66b942f8e277c88500b2a15d430c2e523b672bf47fe74cf9c90638d164e",
+      "full_evidence_id": "ev_746d40138a0f10e9c3202cd147e41d5efd4a7c58e81078c6109567a0bce77781",
+      "workflow": "Abrir fichero local, reproducir audio/v\u00eddeo, volver al shell y cerrar",
+      "runtime_results": {
+        "launch": "not_run",
+        "interface": "not_run",
+        "input": "not_run",
+        "persistence": "not_run",
+        "services": "not_run",
+        "close": "not_run"
+      },
+      "reason": "Current host launcher substitutes Application and Activity/widgets. Complete real-app route not demonstrated; static inventory does not establish execution.",
+      "framework_class_link_pass": null,
+      "source_verification": "Existing cached artifact; download provenance not revalidated in this audit. REA identity and declared signer recorded.",
+      "declared_application": "org.videolan.mobile.app.VLCApplication"
+    },
+    {
+      "id": "calculator",
+      "package": "org.fossify.math",
+      "version": "1.4.0",
+      "version_code": "10",
+      "path_local": "/home/tv/.cache/archtv/apk/real-app-candidates/calculator-10-foss-release.apk",
+      "sha256": "7c5443c22d6d62c67dfe80df33ea9161ff0fa440f92590bcb45d7008b57613ed",
+      "source_url": "https://github.com/FossifyOrg/Calculator/releases/tag/1.4.0",
+      "min_sdk": "26",
+      "target_sdk": "36",
+      "classes": 5023,
+      "resources": 1584,
+      "native_members": [
+        "lib/arm64-v8a/libandroidx.graphics.path.so",
+        "lib/armeabi-v7a/libandroidx.graphics.path.so",
+        "lib/x86/libandroidx.graphics.path.so",
+        "lib/x86_64/libandroidx.graphics.path.so"
+      ],
+      "signature": {
+        "declared_certificate_sha256": [
+          "affdb124d3f4720c2f98dbca9eacba0514fba4306e20a2786c861c3c0d6ff292"
+        ],
+        "strongest_scheme": "v2",
+        "payload_self_consistent": true,
+        "cryptographic_verification": "not_performed",
+        "authenticity": "unknown"
+      },
+      "evidence_id": "ev_b6ceb13df6179e88003b35ccc751fccb2a8f12b57c7b379e9452bda59a7f6f1f",
+      "full_evidence_id": "ev_64110040521bff8faa94ed6b7108b9cd4917e7733771b7eca451825a962f4c57",
+      "workflow": "Lanzador y alias, 2+3, historial/preferencias, cierre y reapertura",
+      "runtime_results": {
+        "launch": "not_run",
+        "interface": "not_run",
+        "input": "not_run",
+        "persistence": "not_run",
+        "services": "not_run",
+        "close": "not_run"
+      },
+      "reason": "Current host launcher substitutes Application and Activity/widgets. Complete real-app route not demonstrated; static inventory does not establish execution.",
+      "framework_class_link_pass": true,
+      "declared_application": "org.fossify.commons.FossifyApp"
+    },
+    {
+      "id": "markor",
+      "package": "net.gsantner.markor",
+      "version": "2026.10.0",
+      "version_code": "164",
+      "path_local": "/home/tv/.cache/archtv/apk/real-app-candidates/net.gsantner.markor-v164-2026.10.0-flavorDefault-release.apk",
+      "sha256": "c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440",
+      "source_url": "https://github.com/gsantner/markor/releases/tag/v2026.10.0",
+      "min_sdk": "21",
+      "target_sdk": "35",
+      "classes": 4985,
+      "resources": 1732,
+      "native_members": [],
+      "signature": {
+        "declared_certificate_sha256": [
+          "57d106d0cfa8763442b3645ef2741c38bb820bd56fd4612bf40a23b6d998be5e"
+        ],
+        "strongest_scheme": "v2",
+        "payload_self_consistent": true,
+        "cryptographic_verification": "not_performed",
+        "authenticity": "unknown"
+      },
+      "evidence_id": "ev_be4b4f2ace1c70b84652361653cf3a24f0aba8c3a7451a13c93cb997337cbe35",
+      "full_evidence_id": "ev_d5cd84183419bac98590670d305ee85ecfe49a1c9dbe9c33ac78fdc6deb21f7f",
+      "workflow": "Crear nota de texto local, editar con teclado, guardar, cerrar y reabrir",
+      "runtime_results": {
+        "launch": "not_run",
+        "interface": "not_run",
+        "input": "not_run",
+        "persistence": "not_run",
+        "services": "not_run",
+        "close": "not_run"
+      },
+      "reason": "Current host launcher substitutes Application and Activity/widgets. Complete real-app route not demonstrated; static inventory does not establish execution.",
+      "framework_class_link_pass": true,
+      "declared_application": "net.gsantner.markor.ApplicationObject"
+    }
+  ],
+  "uncovered": [
+    "ARM-only guest execution",
+    "WebView workflow",
+    "Google Play services",
+    "commercial DRM",
+    "split APK and dynamic features",
+    "non-VM hardware",
+    "per-APK isolation",
+    "installation/update/rollback"
+  ]
+}

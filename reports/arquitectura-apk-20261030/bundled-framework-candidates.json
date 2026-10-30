@@ -1,0 +1,44 @@
+[
+  {
+    "path": "/home/tv/.cache/archtv/art-host/host/art-13.0.0/product/redfin/system/framework/framework.jar",
+    "bytes": 37051014,
+    "sha256": "4e58df948402e5fe8f694a9f788377a660f849c9dcb1299e6ce6196d7326188e",
+    "dex_members": [
+      "classes.dex",
+      "classes2.dex",
+      "classes3.dex",
+      "classes4.dex"
+    ],
+    "exact_build_revision": "not_yet_verified",
+    "runtime_compatibility": "not_tested"
+  },
+  {
+    "path": "/home/tv/.cache/archtv/art-host/host/art-13.0.0/product/redfin/system/framework/services.jar",
+    "bytes": 17291603,
+    "sha256": "9bda7f6bff21507c374032e66bb7f58ce561eed74e25807f54a5b714a0fbd6ee",
+    "dex_members": [
+      "classes.dex",
+      "classes2.dex"
+    ],
+    "exact_build_revision": "not_yet_verified",
+    "runtime_compatibility": "not_tested"
+  },
+  {
+    "path": "/home/tv/.cache/archtv/art-host/host/art-13.0.0/product/redfin/system/framework/framework-res.apk",
+    "bytes": 59372545,
+    "sha256": "7e75d0f2f420d365e4d780fc5c5f14baf9d268b14b6f827246f8efa5a82ea108",
+    "dex_members": [],
+    "exact_build_revision": "not_yet_verified",
+    "runtime_compatibility": "not_tested"
+  },
+  {
+    "path": "/home/tv/.cache/archtv/art-host/host/art-13.0.0/product/redfin/system/framework/ext.jar",
+    "bytes": 2338493,
+    "sha256": "f094994ab12b66a767a95710ba008d9510bbc520b22c7b7107dda4bfc040a274",
+    "dex_members": [
+      "classes.dex"
+    ],
+    "exact_build_revision": "not_yet_verified",
+    "runtime_compatibility": "not_tested"
+  }
+]

@@ -1,0 +1,5 @@
+FRAMEWORK_CLASS_LINK_OK android.app.Application
+FRAMEWORK_CLASS_LINK_OK android.view.View
+FRAMEWORK_CLASS_LINK_OK android.view.LayoutInflater
+FRAMEWORK_CLASS_LINK_OK org.fossify.math.activities.SplashActivity
+FRAMEWORK_SPACE_ONLY_OK no_app_execution

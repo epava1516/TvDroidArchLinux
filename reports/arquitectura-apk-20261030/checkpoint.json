@@ -1,0 +1,72 @@
+{
+  "objective": "Unmodified complete APK compatibility on Linux Rust/Smithay, no Waydroid or full Android boot; isolation, stability, resource budgets, install/update remain required",
+  "other_pending": [
+    "reports/h9-uefi-boot/qemu.log",
+    "reports/h9-uefi-boot/serial.log"
+  ],
+  "own_pending_files": [
+    "fixtures/aosp-window-service/WindowServiceProbe.java",
+    "runtime/aosp/framework-study.json",
+    "runtime/aosp/native/binder-holder-jni.cpp",
+    "tools/apk/build_binder_holder.py",
+    "tools/apk/build_window_service_probe.py",
+    "tools/apk/generate_window_aidl.py",
+    "tools/apk/verify_wayland_resize.py",
+    "fixtures/aosp-window-service/ServiceRegistryChecks.java",
+    "runtime/aosp/linux-services/org/archtv/aosplinux/LinuxServiceRegistry.java",
+    "runtime/aosp/service-registry-aidl-sources.json"
+  ],
+  "recovery_snapshot_local": "/home/tv/recuperacion-archtv/20261030T211710Z",
+  "recovery_patch_sha256": "0eae19994a47bccc4478f529c64291891f16894b0873c2fad441b0d9594bc317",
+  "captured_utc": "2026-10-30T21:50:28.379480+00:00",
+  "baseline_head": "b8169a5a6720b97965d752abe0175b8f486f3829",
+  "branch": "main",
+  "origin_relation_before_audit_commit": "0 ahead, 0 behind after successful b8169a5 push; revalidate at resume",
+  "preserved_experiment": "Previous registry/layout code remains uncommitted; original tracked patch and own untracked sources match first recovery snapshot.",
+  "tool_handles": {
+    "exec_93107_dex_comparison": "terminal",
+    "exec_69237_framework_class_link": "terminal",
+    "rea_archive_session": "closed",
+    "rea_target_free_operations": "completed",
+    "active_build_or_test_handles": [],
+    "graphify_session_9572": "terminal"
+  },
+  "results": [
+    "REA MCP identifies three real APKs and declared signing structures; no cryptographic verification",
+    "readelf records VLC Bionic dependencies vs glibc host library; no native code execution",
+    "Full original bundled framework links two real APK Activity types with initialization disabled; six functional stages remain not_run"
+  ],
+  "open_requirements": [
+    "Original Application/Activity bootstrap and providers",
+    "Wayland presentation/input/persistence and complete service behavior for real APK",
+    "Per-app identity/isolation (UID collision unresolved)",
+    "Bionic vs glibc native loading decision",
+    "H7 resource budgets/soak/accessibility; H8 packaging/update; H9 install/recovery; broad ABI/app coverage"
+  ],
+  "next_action": "Verify original framework bootclasspath/provenance and test original Application/Activity bootstrap in isolated process for Markor; preserve prototype fixtures as regressions and avoid expanding substitute android.* APIs.",
+  "processes_observed": [
+    {
+      "pid": "181298",
+      "ppid": "1",
+      "state": "Ssl",
+      "elapsed": "29:47",
+      "command": "node-MainThread"
+    },
+    {
+      "pid": "181308",
+      "ppid": "181298",
+      "state": "Sl",
+      "elapsed": "29:47",
+      "command": "codex"
+    },
+    {
+      "pid": "181453",
+      "ppid": "181308",
+      "state": "Sl",
+      "elapsed": "29:02",
+      "command": "codex-code-mode"
+    }
+  ],
+  "processes_observed_utc": "2026-10-30T21:50:59.151321+00:00",
+  "rea_server_pid": "unknown in host process observation; MCP connection and completed calls are separately evidenced"
+}

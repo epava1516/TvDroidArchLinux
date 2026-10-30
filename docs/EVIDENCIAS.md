@@ -44,3 +44,15 @@ soak y mandos físicos; el incidente de VM sigue documentado en
 [INCIDENTE-VM-20261030.md](INCIDENTE-VM-20261030.md). H8/H9 conservan pruebas de
 paquetes/ISO anteriores, no aceptación de instalación/actualización del runtime
 APK actual. No hay resultado general de aislamiento ni compatibilidad amplia.
+
+## Revisión de arquitectura y aplicaciones reales
+
+El [índice de artefactos de la revisión](../reports/arquitectura-apk-20261030/artifact-index.json)
+registra los hashes de resultados REA, dependencias ELF, matriz y ensayo de enlace
+del framework. [La matriz](COMPATIBILIDAD-APK.md) fija Markor, Calculator y VLC;
+las seis etapas funcionales siguen sin ejecutar. El ensayo
+[framework-space](../reports/arquitectura-apk-20261030/framework-space/result.json)
+sólo enlaza clases de dos APK sin inicializarlas, excluyendo android.* propios.
+El [checkpoint de la revisión](../reports/arquitectura-apk-20261030/checkpoint.json)
+es el punto fechado más reciente; el snapshot de continuidad anterior conserva
+su propio alcance histórico. Ninguna de estas evidencias cierra compatibilidad.

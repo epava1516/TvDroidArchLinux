@@ -1,0 +1,78 @@
+{
+  "class_space_pass": true,
+  "cases": [
+    {
+      "app": "markor",
+      "activity": "net.gsantner.markor.activity.MainActivity",
+      "exit_code": 0,
+      "class_space_pass": true,
+      "apk_sha256": "c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440"
+    },
+    {
+      "app": "calculator",
+      "activity": "org.fossify.math.activities.SplashActivity",
+      "exit_code": 0,
+      "class_space_pass": true,
+      "apk_sha256": "7c5443c22d6d62c67dfe80df33ea9161ff0fa440f92590bcb45d7008b57613ed"
+    }
+  ],
+  "commands": [
+    [
+      "/usr/lib/jvm/java-17-openjdk/bin/javac",
+      "--release",
+      "8",
+      "-d",
+      "/home/tv/repositorio-principal/dist/apk/framework-space-1/classes",
+      "/home/tv/repositorio-principal/fixtures/aosp-framework-space/FrameworkSpaceProbe.java"
+    ],
+    [
+      "/usr/lib/jvm/java-17-openjdk/bin/jar",
+      "cf",
+      "/home/tv/repositorio-principal/dist/apk/framework-space-1/probe.jar",
+      "-C",
+      "/home/tv/repositorio-principal/dist/apk/framework-space-1/classes",
+      "."
+    ],
+    [
+      "/usr/lib/jvm/java-17-openjdk/bin/java",
+      "-cp",
+      "/home/tv/.cache/archtv/apk-build-tools/r8.jar",
+      "com.android.tools.r8.D8",
+      "--release",
+      "--min-api",
+      "28",
+      "--lib",
+      "/home/tv/.cache/archtv/apk-build-tools/android.jar",
+      "--output",
+      "/home/tv/repositorio-principal/dist/apk/framework-space-1/dex",
+      "/home/tv/repositorio-principal/dist/apk/framework-space-1/probe.jar"
+    ],
+    [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Xcheck:jni",
+      "-cp",
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/product/redfin/system/framework/framework.jar:/home/tv/.cache/archtv/apk/real-app-candidates/net.gsantner.markor-v164-2026.10.0-flavorDefault-release.apk:/home/tv/repositorio-principal/dist/apk/framework-space-1/dex/classes.dex",
+      "org.archtv.aospprobe.FrameworkSpaceProbe",
+      "net.gsantner.markor.activity.MainActivity"
+    ],
+    [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Xcheck:jni",
+      "-cp",
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/product/redfin/system/framework/framework.jar:/home/tv/.cache/archtv/apk/real-app-candidates/calculator-10-foss-release.apk:/home/tv/repositorio-principal/dist/apk/framework-space-1/dex/classes.dex",
+      "org.archtv.aospprobe.FrameworkSpaceProbe",
+      "org.fossify.math.activities.SplashActivity"
+    ]
+  ],
+  "framework_sha256": "4e58df948402e5fe8f694a9f788377a660f849c9dcb1299e6ce6196d7326188e",
+  "fixture_sha256": "816005d7c7e6c81e28a1135cf8c14aa9b033d8fb37d3d26247f9cf7a83a60d44",
+  "scope": "Original bundled framework.jar and unmodified APK DEX only, excluding prototype android.* definitions. Class.forName initialize=false and Activity subtype check. Not Application/Activity execution, native services, UI, permissions, isolation or APK compatibility proof."
+}

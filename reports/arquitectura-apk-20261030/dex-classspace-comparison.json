@@ -1,0 +1,169 @@
+{
+  "scope": "Static DEX declared type references only. No dynamic/reflection coverage, member resolution, ABI check, class loading, lifecycle or app execution. Missing from one JAR may be supplied by another boot library. Larger definition coverage is not compatibility proof.",
+  "framework_jar_sha256": "4e58df948402e5fe8f694a9f788377a660f849c9dcb1299e6ce6196d7326188e",
+  "framework_dex": [
+    {
+      "member": "classes.dex",
+      "bytes": 9522584,
+      "sha256": "8aa29408f2ecd2b27bc743f5ba2999e5405e26d98c47efe49b06d538173a0fd4"
+    },
+    {
+      "member": "classes2.dex",
+      "bytes": 9052896,
+      "sha256": "ad25a635b0cd71756c0f6a6f1c1a757ed25b3937e40491b8a88dbbddb94dba9a"
+    },
+    {
+      "member": "classes3.dex",
+      "bytes": 8630256,
+      "sha256": "00146b9e3933f266cd714f74d38daa3c31ba25e2e37246b422cf6461eea4f4c0"
+    },
+    {
+      "member": "classes4.dex",
+      "bytes": 9807760,
+      "sha256": "621a72be712ab28e0eb94aa0034c4a9af8419c7e209b1028d2f6fe6cdab0d52a"
+    }
+  ],
+  "framework_defined_types": 26676,
+  "selective_dex_sha256": "5d60a0b7772743d6a09b6d89b9d23d5fdc84f9b5f3f6970190374954a6516cab",
+  "selective_defined_types": 518,
+  "apps": [
+    {
+      "app": "markor",
+      "apk_sha256": "c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440",
+      "dex": [
+        {
+          "member": "classes.dex",
+          "bytes": 9677760,
+          "sha256": "10e33cecf0870006fad6348187ae9ce34f910e7a95087006095ed3b61dac2bfb"
+        },
+        {
+          "member": "classes2.dex",
+          "bytes": 782724,
+          "sha256": "07c8e1aea1f6913ccc1e5c25ed876faa7cfa324b5695ce0f7751c20a3095fcf4"
+        }
+      ],
+      "external_android_type_references": 789,
+      "not_defined_in_selective_profile": 688,
+      "not_defined_in_bundled_framework_jar": 39,
+      "missing_from_bundled_sample": [
+        "Landroid/app/GrammaticalInflectionManager;",
+        "Landroid/app/UiModeManager$ContrastChangeListener;",
+        "Landroid/bluetooth/BluetoothManager;",
+        "Landroid/graphics/ColorMatrix;",
+        "Landroid/icu/number/FormattedNumber;",
+        "Landroid/icu/number/LocalizedNumberFormatter;",
+        "Landroid/icu/number/NumberFormatter;",
+        "Landroid/icu/number/NumberFormatterSettings;",
+        "Landroid/icu/number/UnlocalizedNumberFormatter;",
+        "Landroid/icu/text/DateFormat$HourCycle;",
+        "Landroid/icu/text/DateFormat;",
+        "Landroid/icu/text/DateTimePatternGenerator;",
+        "Landroid/icu/text/DecimalFormatSymbols;",
+        "Landroid/icu/text/DisplayContext;",
+        "Landroid/icu/util/Calendar;",
+        "Landroid/icu/util/MeasureUnit;",
+        "Landroid/icu/util/TimeZone;",
+        "Landroid/icu/util/ULocale;",
+        "Landroid/net/ConnectivityManager;",
+        "Landroid/net/NetworkInfo;"
+      ]
+    },
+    {
+      "app": "calculator",
+      "apk_sha256": "7c5443c22d6d62c67dfe80df33ea9161ff0fa440f92590bcb45d7008b57613ed",
+      "dex": [
+        {
+          "member": "classes.dex",
+          "bytes": 4624152,
+          "sha256": "9299c1f8ed3d24b80d26b008884f7d93e0ae6ca49f05d624ead24595d6d5cb74"
+        }
+      ],
+      "external_android_type_references": 594,
+      "not_defined_in_selective_profile": 495,
+      "not_defined_in_bundled_framework_jar": 30,
+      "missing_from_bundled_sample": [
+        "Landroid/app/role/RoleManager;",
+        "Landroid/graphics/Gainmap;",
+        "Landroid/icu/text/DateFormat;",
+        "Landroid/icu/text/DecimalFormatSymbols;",
+        "Landroid/icu/text/DisplayContext;",
+        "Landroid/icu/util/TimeZone;",
+        "Landroid/net/ConnectivityManager$NetworkCallback;",
+        "Landroid/net/ConnectivityManager;",
+        "Landroid/net/Network;",
+        "Landroid/os/ext/SdkExtensions;",
+        "Landroid/provider/MediaStore$Images$Thumbnails;",
+        "Landroid/provider/MediaStore$Video$Thumbnails;",
+        "Landroid/provider/MediaStore;",
+        "Landroid/system/ErrnoException;",
+        "Landroid/system/Os;",
+        "Landroid/system/OsConstants;",
+        "Landroid/text/GraphemeClusterSegmentFinder;",
+        "Landroid/text/Layout$TextInclusionStrategy;",
+        "Landroid/view/DisplayListCanvas;",
+        "Landroid/view/RenderNode;"
+      ]
+    },
+    {
+      "app": "vlc",
+      "apk_sha256": "4646633ede40c4784c5584087cffc5c60cc45b16966ae0b36cedd784d7c4a11e",
+      "dex": [
+        {
+          "member": "classes.dex",
+          "bytes": 9880960,
+          "sha256": "c4d151ba2ecc37d8294c92af4b3f8f108d7ec8e385a77fc2654ebb9918784659"
+        },
+        {
+          "member": "classes2.dex",
+          "bytes": 734728,
+          "sha256": "a1229a854febc13e2c2c62ebf3c72d726685113e279379e7da2905d82a215bab"
+        },
+        {
+          "member": "classes3.dex",
+          "bytes": 8899228,
+          "sha256": "2dfa68d9193d95591b4784eb9c58d9be71934f439d4abe8df79546898a54a427"
+        },
+        {
+          "member": "classes4.dex",
+          "bytes": 8915488,
+          "sha256": "dda85a5484c5c69b1af6f9cc89b9a3f2444657513f934ad6be41f07969455f40"
+        },
+        {
+          "member": "classes5.dex",
+          "bytes": 6525660,
+          "sha256": "ff9cd66396832ba7937264aa0f6d34c0ab89f189ef45b549f79052c83ef99c02"
+        },
+        {
+          "member": "classes6.dex",
+          "bytes": 5348508,
+          "sha256": "8deeae7e800a2c71d4dfa93d814b1be235e0b06dc39c0b9a24323152fb57b5f1"
+        }
+      ],
+      "external_android_type_references": 893,
+      "not_defined_in_selective_profile": 793,
+      "not_defined_in_bundled_framework_jar": 40,
+      "missing_from_bundled_sample": [
+        "Landroid/app/GrammaticalInflectionManager;",
+        "Landroid/app/UiModeManager$ContrastChangeListener;",
+        "Landroid/bluetooth/BluetoothAdapter;",
+        "Landroid/bluetooth/BluetoothManager;",
+        "Landroid/graphics/ColorMatrix;",
+        "Landroid/icu/number/FormattedNumber;",
+        "Landroid/icu/number/LocalizedNumberFormatter;",
+        "Landroid/icu/number/NumberFormatter;",
+        "Landroid/icu/number/NumberFormatterSettings;",
+        "Landroid/icu/number/UnlocalizedNumberFormatter;",
+        "Landroid/icu/text/DateFormat$HourCycle;",
+        "Landroid/icu/text/DateFormat;",
+        "Landroid/icu/text/DateTimePatternGenerator;",
+        "Landroid/icu/text/DecimalFormatSymbols;",
+        "Landroid/icu/text/DisplayContext;",
+        "Landroid/icu/text/Transliterator;",
+        "Landroid/icu/util/Calendar;",
+        "Landroid/icu/util/MeasureUnit;",
+        "Landroid/icu/util/TimeZone;",
+        "Landroid/icu/util/ULocale;"
+      ]
+    }
+  ]
+}

@@ -24,6 +24,19 @@ A0–A2 de la tabla sólo acreditan fixtures; A3–A5 y compatibilidad amplia si
 abiertos. El historial siguiente conserva los primeros experimentos y sus
 fronteras sucesivas: una frase «siguiente paso» histórica no es la prioridad actual.
 
+### Entregables actuales de la reconducción
+
+- [Revisión de arquitectura y reutilización](ARQUITECTURA.md): conservar runtime y
+  framework originales por conjuntos; no ampliar Activity/widgets propios para
+  aparentar compatibilidad. Bionic/libhybris/servicios e ISA tienen decisiones y
+  pruebas pendientes explícitas.
+- [Matriz de APK reales](COMPATIBILIDAD-APK.md): Markor, Calculator y VLC con hashes
+  y evidencia estática REA. Los seis pasos funcionales de cada app siguen not_run.
+- Primer recorrido: Markor → nota local → edición → guardar → cerrar/reabrir.
+  Antes: coherencia de bootclasspath y aislamiento/identidad, bootstrap original
+  Application/Activity, presentación y entrada reales. No cerrar A3–A5 por el
+  ensayo de enlace de clases del framework original.
+
 ## Primer experimento (histórico)
 
 1. Crear una APK propia con una Activity, texto, botón y contador persistente,

@@ -1,0 +1,51 @@
+[
+  {
+    "apk_member": "lib/x86_64/libvlcjni.so",
+    "bytes": 94008,
+    "sha256": "bcce33a11affe5a41b5560f3f6432abcaca7558a6327b28da42f643a302e2515",
+    "needed": [
+      "0x0000000000000001 (NEEDED)             Shared library: [libvlc.so]",
+      "0x0000000000000001 (NEEDED)             Shared library: [liblog.so]",
+      "0x0000000000000001 (NEEDED)             Shared library: [libc.so]",
+      "0x0000000000000001 (NEEDED)             Shared library: [libm.so]",
+      "0x0000000000000001 (NEEDED)             Shared library: [libdl.so]"
+    ]
+  },
+  {
+    "apk_member": "lib/x86_64/libvlc.so",
+    "bytes": 48973736,
+    "sha256": "6e84fd2d86e6746894159d31b8ff55990ec48d317388fac248baad39a605203d",
+    "needed": [
+      "0x0000000000000001 (NEEDED)             Shared library: [libEGL.so]",
+      "0x0000000000000001 (NEEDED)             Shared library: [libGLESv2.so]",
+      "0x0000000000000001 (NEEDED)             Shared library: [libm.so]",
+      "0x0000000000000001 (NEEDED)             Shared library: [liblog.so]",
+      "0x0000000000000001 (NEEDED)             Shared library: [libc.so]",
+      "0x0000000000000001 (NEEDED)             Shared library: [libdl.so]",
+      "0x0000000000000001 (NEEDED)             Shared library: [libc++_shared.so]"
+    ]
+  },
+  {
+    "apk_member": "lib/x86_64/libmla.so",
+    "bytes": 5413728,
+    "sha256": "0f15831f71e5bd817f3155dc1b56c393d005daba33eb1c0523552f7c98c8f725",
+    "needed": [
+      "0x0000000000000001 (NEEDED)             Shared library: [libvlc.so]",
+      "0x0000000000000001 (NEEDED)             Shared library: [liblog.so]",
+      "0x0000000000000001 (NEEDED)             Shared library: [libc.so]",
+      "0x0000000000000001 (NEEDED)             Shared library: [libm.so]",
+      "0x0000000000000001 (NEEDED)             Shared library: [libc++_shared.so]",
+      "0x0000000000000001 (NEEDED)             Shared library: [libdl.so]"
+    ]
+  },
+  {
+    "apk_member": "lib/x86_64/libc++_shared.so",
+    "bytes": 1229808,
+    "sha256": "2e855857f80819737d25a663109fedf816a5e996a85423166806014a06593256",
+    "needed": [
+      "0x0000000000000001 (NEEDED)             Shared library: [libc.so]",
+      "0x0000000000000001 (NEEDED)             Shared library: [libm.so]",
+      "0x0000000000000001 (NEEDED)             Shared library: [libdl.so]"
+    ]
+  }
+]
