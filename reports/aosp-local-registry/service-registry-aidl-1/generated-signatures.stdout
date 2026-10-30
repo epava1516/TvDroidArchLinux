@@ -1,0 +1,55 @@
+Compiled from "IServiceManager.java"
+public interface android.os.IServiceManager extends android.os.IInterface {
+  public static final java.lang.String DESCRIPTOR;
+    descriptor: Ljava/lang/String;
+  public static final int DUMP_FLAG_PRIORITY_CRITICAL;
+    descriptor: I
+  public static final int DUMP_FLAG_PRIORITY_HIGH;
+    descriptor: I
+  public static final int DUMP_FLAG_PRIORITY_NORMAL;
+    descriptor: I
+  public static final int DUMP_FLAG_PRIORITY_DEFAULT;
+    descriptor: I
+  public static final int DUMP_FLAG_PRIORITY_ALL;
+    descriptor: I
+  public static final int DUMP_FLAG_PROTO;
+    descriptor: I
+  public abstract android.os.IBinder getService(java.lang.String) throws android.os.RemoteException;
+    descriptor: (Ljava/lang/String;)Landroid/os/IBinder;
+
+  public abstract android.os.IBinder checkService(java.lang.String) throws android.os.RemoteException;
+    descriptor: (Ljava/lang/String;)Landroid/os/IBinder;
+
+  public abstract void addService(java.lang.String, android.os.IBinder, boolean, int) throws android.os.RemoteException;
+    descriptor: (Ljava/lang/String;Landroid/os/IBinder;ZI)V
+
+  public abstract java.lang.String[] listServices(int) throws android.os.RemoteException;
+    descriptor: (I)[Ljava/lang/String;
+
+  public abstract void registerForNotifications(java.lang.String, android.os.IServiceCallback) throws android.os.RemoteException;
+    descriptor: (Ljava/lang/String;Landroid/os/IServiceCallback;)V
+
+  public abstract void unregisterForNotifications(java.lang.String, android.os.IServiceCallback) throws android.os.RemoteException;
+    descriptor: (Ljava/lang/String;Landroid/os/IServiceCallback;)V
+
+  public abstract boolean isDeclared(java.lang.String) throws android.os.RemoteException;
+    descriptor: (Ljava/lang/String;)Z
+
+  public abstract java.lang.String[] getDeclaredInstances(java.lang.String) throws android.os.RemoteException;
+    descriptor: (Ljava/lang/String;)[Ljava/lang/String;
+
+  public abstract java.lang.String updatableViaApex(java.lang.String) throws android.os.RemoteException;
+    descriptor: (Ljava/lang/String;)Ljava/lang/String;
+
+  public abstract android.os.ConnectionInfo getConnectionInfo(java.lang.String) throws android.os.RemoteException;
+    descriptor: (Ljava/lang/String;)Landroid/os/ConnectionInfo;
+
+  public abstract void registerClientCallback(java.lang.String, android.os.IBinder, android.os.IClientCallback) throws android.os.RemoteException;
+    descriptor: (Ljava/lang/String;Landroid/os/IBinder;Landroid/os/IClientCallback;)V
+
+  public abstract void tryUnregisterService(java.lang.String, android.os.IBinder) throws android.os.RemoteException;
+    descriptor: (Ljava/lang/String;Landroid/os/IBinder;)V
+
+  public abstract android.os.ServiceDebugInfo[] getServiceDebugInfo() throws android.os.RemoteException;
+    descriptor: ()[Landroid/os/ServiceDebugInfo;
+}

@@ -1,0 +1,62 @@
+{
+  "roots": [
+    "native/aidl/service-manager/android/os/IServiceManager.aidl",
+    "native/aidl/service-manager/android/os/IServiceCallback.aidl",
+    "native/aidl/service-manager/android/os/IClientCallback.aidl",
+    "native/aidl/service-manager/android/os/ServiceDebugInfo.aidl",
+    "native/aidl/service-manager/android/os/ConnectionInfo.aidl"
+  ],
+  "builtin_imports": [
+    "android.os.IBinder"
+  ],
+  "include_roots": [
+    "native/aidl/service-manager"
+  ],
+  "files": [
+    {
+      "repository": "https://android.googlesource.com/platform/frameworks/native/",
+      "revision": "2fe7eddf185ecb63223eeadc58804f9bf6cbd426",
+      "path": "libs/binder/aidl/android/os/IServiceManager.aidl",
+      "cache_path": "native/aidl/service-manager/android/os/IServiceManager.aidl",
+      "include_root": "native/aidl/service-manager",
+      "bytes": 4625,
+      "sha256": "1b6b4d0584d96c1c7f82e87162f63ea6bc262e191670c13b086c5bc33739a201"
+    },
+    {
+      "repository": "https://android.googlesource.com/platform/frameworks/native/",
+      "revision": "2fe7eddf185ecb63223eeadc58804f9bf6cbd426",
+      "path": "libs/binder/aidl/android/os/IServiceCallback.aidl",
+      "cache_path": "native/aidl/service-manager/android/os/IServiceCallback.aidl",
+      "include_root": "native/aidl/service-manager",
+      "bytes": 946,
+      "sha256": "031e31e46fc31cfaececb3b9eb69b3bd4792b07a16549212fa1d1b5ae8cc0989"
+    },
+    {
+      "repository": "https://android.googlesource.com/platform/frameworks/native/",
+      "revision": "2fe7eddf185ecb63223eeadc58804f9bf6cbd426",
+      "path": "libs/binder/aidl/android/os/IClientCallback.aidl",
+      "cache_path": "native/aidl/service-manager/android/os/IClientCallback.aidl",
+      "include_root": "native/aidl/service-manager",
+      "bytes": 1550,
+      "sha256": "287e2c4ce4debe0d1d883d66eee8cbf63910b86bd3e508fab64f5b806d15776a"
+    },
+    {
+      "repository": "https://android.googlesource.com/platform/frameworks/native/",
+      "revision": "2fe7eddf185ecb63223eeadc58804f9bf6cbd426",
+      "path": "libs/binder/aidl/android/os/ServiceDebugInfo.aidl",
+      "cache_path": "native/aidl/service-manager/android/os/ServiceDebugInfo.aidl",
+      "include_root": "native/aidl/service-manager",
+      "bytes": 980,
+      "sha256": "f62aaf6f4606609daec0995b234281bc73cf74d3ed4e9f8c46f516c4b3aa2f6b"
+    },
+    {
+      "repository": "https://android.googlesource.com/platform/frameworks/native/",
+      "revision": "2fe7eddf185ecb63223eeadc58804f9bf6cbd426",
+      "path": "libs/binder/aidl/android/os/ConnectionInfo.aidl",
+      "cache_path": "native/aidl/service-manager/android/os/ConnectionInfo.aidl",
+      "include_root": "native/aidl/service-manager",
+      "bytes": 972,
+      "sha256": "2d8ba6075b12d0667824386790518cc956c04e811c9b6080444f214fb49a21fa"
+    }
+  ]
+}

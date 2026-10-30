@@ -5,6 +5,7 @@ from pathlib import Path
 parser=argparse.ArgumentParser()
 for name in ('aosp-build','bindings','tools','output'):parser.add_argument('--'+name,type=Path,required=True)
 parser.add_argument('--accessibility-bindings',type=Path)
+parser.add_argument('--service-registry-bindings',type=Path)
 args=parser.parse_args();root=Path(__file__).resolve().parents[2]
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 framework=args.aosp_build.resolve();bindings=args.bindings.resolve();tools=args.tools.resolve()
@@ -25,8 +26,17 @@ if args.accessibility_bindings:
     assert sha(extra/'dex/classes.dex')==accessibility_proof['dex_sha256']
     assert accessibility_proof['compile_reference']==fproof['compile_reference']
     extra_classpath.append(extra/'bindings.jar')
+registry_proof=None
+if args.service_registry_bindings:
+    extra=args.service_registry_bindings.resolve();registry_proof=json.loads((extra/'provenance.json').read_text())
+    assert sha(extra/'bindings.jar')==registry_proof['bindings_jar_sha256'] and sha(extra/'dex/classes.dex')==registry_proof['dex_sha256']
+    assert registry_proof['compile_reference']==fproof['compile_reference']
+    extra_classpath.append(extra/'bindings.jar')
 source=root/'runtime/aosp/linux-services/org/archtv/aosplinux'
 sources=[source/name for name in ('LocalServiceBinder.java','WindowPolicyState.java','LinuxWindowService.java')]
+if args.service_registry_bindings:
+    sources.append(source/'LinuxServiceRegistry.java')
+    sources.append(root/'fixtures/aosp-window-service/ServiceRegistryChecks.java')
 sources+=[root/'runtime/apk/java/org/archtv/apkruntime'/name for name in ('HostProfile.java','LinuxContext.java','AppEnvironment.java','ApkResources.java','ApkMetadata.java','IntPreferences.java')]
 sources+=[root/'runtime/apk/java/android/content/SharedPreferences.java',root/'fixtures/aosp-window-service/WindowServiceProbe.java',root/'fixtures/aosp-window-service/AnimationPolicyChecks.java']
 subprocess.run(['python',str(root/'tools/apk/generate_linux_window_service.py'),'--bindings',str(bindings),'--output',str(source/'LinuxWindowService.java'),'--check'],check=True)
@@ -42,6 +52,7 @@ for i,command in enumerate(commands):
 with zipfile.ZipFile(out/'service.jar') as archive:
     assert not any(n.endswith('.class') and n.startswith('android/') and n not in ('android/content/SharedPreferences.class','android/content/SharedPreferences$Editor.class') for n in archive.namelist())
 (out/'provenance.json').write_text(json.dumps({'sources_sha256':{str(p.relative_to(root)):sha(p) for p in sources},
+ 'service_registry_bindings_dex_sha256':registry_proof['dex_sha256'] if registry_proof else None,
  'accessibility_bindings_dex_sha256':accessibility_proof['dex_sha256'] if accessibility_proof else None,
  'framework_dex_sha256':fproof['dex_sha256'],'bindings_dex_sha256':bproof['dex_sha256'],
  'service_jar_sha256':sha(out/'service.jar'),'dex_sha256':sha(out/'dex/classes.dex'),'commands':[list(map(str,c)) for c in commands],

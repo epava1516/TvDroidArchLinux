@@ -28,7 +28,7 @@ assert sha(atomic)==bionic['files']['stdatomic.h']['sha256']
 headers=out/'host-headers';headers.mkdir();(headers/'stdatomic.h').write_bytes(atomic.read_bytes())
 inc=[headers]+[sources/x for x in ['binder/include','binderthreadstate/include','hwbinder/include','core-jni','core-jni/include']]+[hwui/x for x in ['nativehelper/include','nativehelper/include_jni','nativehelper/include_platform','nativehelper/header_only_include']]+[cache/x for x in recipe['includes']]
 flags=['clang++','-std=gnu++20','-nostdinc++','-isystem',str(cache/'libcxx'),'-fPIC','-O1','-g0','-fno-rtti','-fvisibility=hidden','-ffunction-sections','-fdata-sections','-DSTATIC_ANDROIDFW_FOR_TOOLS','-DFMT_HEADER_ONLY','-DNDEBUG',*['-I'+str(x) for x in inc]]
-version=out/'exports.map';version.write_text('{ global: Java_android_os_Binder_getNativeBBinderHolder; Java_android_os_Binder_getNativeFinalizer; local: *; };\n')
+version=out/'exports.map';version.write_text('{ global: Java_android_os_Binder_getNativeBBinderHolder; Java_android_os_Binder_getNativeFinalizer; Java_com_android_internal_os_BinderInternal_getContextObject; local: *; };\n')
 commands=[[*flags,'-c',str(own),'-o',str(obj)],['clang++','-shared','-nostdlib++','-Wl,--gc-sections','-Wl,--no-undefined','-Wl,--version-script='+str(version),'-L'+str(libcxx.parent),'-Wl,-rpath,'+str(libcxx.parent),str(obj),'-Wl,--start-group',*map(str,archives),'-Wl,--end-group','-lc++','-lz','-ldl','-lpthread','-lm','-o',str(lib)]]
 result={'build_pass':False,'manifest_sha256':manifest_hashes,'builder_sha256':sha(Path(__file__)),'recipe_sha256':sha(root/'runtime/aosp/androidfw-build.json'),'commands':commands,'own_source_sha256':sha(own),'original_jni_sha256':sha(sources/'core-jni/android_util_Binder.cpp'),'original_stdatomic_sha256':sha(atomic),'archives':proof['archives'],'libcxx_sha256':sha(libcxx),'compiler':subprocess.check_output(['clang++','--version'],text=True)}
 for i,cmd in enumerate(commands):
@@ -38,7 +38,7 @@ for i,cmd in enumerate(commands):
 else:
  symbols=subprocess.check_output(['nm','-D','--defined-only',str(lib)],text=True)
  (out/'exports.txt').write_text(symbols)
- assert {line.split()[-1] for line in symbols.splitlines()}=={'Java_android_os_Binder_getNativeBBinderHolder','Java_android_os_Binder_getNativeFinalizer'}
+ assert {line.split()[-1] for line in symbols.splitlines()}=={'Java_android_os_Binder_getNativeBBinderHolder','Java_android_os_Binder_getNativeFinalizer','Java_com_android_internal_os_BinderInternal_getContextObject'}
  result.update(build_pass=True,library_sha256=sha(lib))
 (out/'result.json').write_text(json.dumps(result,indent=2)+'\n')
 if not result['build_pass']:raise SystemExit('Binder holder build failed; inspect '+str(out))

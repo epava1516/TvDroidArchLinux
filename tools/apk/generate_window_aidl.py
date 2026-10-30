@@ -49,7 +49,9 @@ for index,primary in enumerate(primaries):
         *includes,'-o',out/'generated',primary])
 sources=sorted((out/'generated').rglob('*.java'))
 assert {p.name for p in sources}=={p.stem+'.java' for p in primaries}
-interface_names=[re.search(r'^package\s+([^;]+);',p.read_text(),re.M).group(1)+'.'+p.stem for p in primaries]
+root_names=[re.search(r'^package\s+([^;]+);',p.read_text(),re.M).group(1)+'.'+p.stem for p in primaries]
+interface_names=[name for name in root_names if any(p.stem==name.rsplit('.',1)[1] and re.search(r'^public interface ',p.read_text(),re.M) for p in sources)]
+assert interface_names
 jdk=Path('/usr/lib/jvm/java-17-openjdk/bin')
 run('compile',[jdk/'javac','--release','8','-classpath',args.reference,'-d',out/'classes',*sources])
 run('pack',[jdk/'jar','cf',out/'bindings.jar','-C',out/'classes','.'])
@@ -75,14 +77,14 @@ for index,name in enumerate(interface_names):
         'transaction_ids':transaction_ids,'reference_transaction_ids_equal':True}
 with zipfile.ZipFile(out/'bindings.jar') as archive:
     classes=sorted(name for name in archive.namelist() if name.endswith('.class'))
-    assert classes and all(any(n==name.replace('.','/')+'.class' or n.startswith(name.replace('.','/')+'$') for name in interface_names) for n in classes)
+    assert classes and all(any(n==name.replace('.','/')+'.class' or n.startswith(name.replace('.','/')+'$') for name in root_names) for n in classes)
 # Preserve the primary-interface fields consumed by the window service generator.
 primary_contract=contracts[interface_names[0]]
 actual=methods(out/'generated-signatures.stdout');expected=methods(out/'reference-signatures.stdout')
 transaction_ids=primary_contract['transaction_ids'];reference_ids=transactions(out/'reference-transactions.stdout')
 verify()
 (out/'provenance.json').write_text(json.dumps({'original_aidl_inputs':inputs,'toolchain':toolchain,'compile_reference':reference,
- 'interface_contracts':contracts,'commands':commands,'generated_java_sha256':{str(path.relative_to(out)):sha(path) for path in sources},
+ 'generated_root_types':root_names,'interface_contracts':contracts,'commands':commands,'generated_java_sha256':{str(path.relative_to(out)):sha(path) for path in sources},
  'runtime_classes':classes,'bindings_jar_sha256':sha(out/'bindings.jar'),'dex_sha256':sha(out/'dex/classes.dex'),
  'transaction_ids':transaction_ids,'reference_transaction_ids_equal':transaction_ids==reference_ids,
  'interface_methods_count':len(actual),'reference_methods_equal':actual==expected,

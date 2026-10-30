@@ -608,6 +608,16 @@
       "path": "core/java/com/android/internal/util/LineBreakBufferedWriter.java",
       "bytes": 9775,
       "sha256": "18120713e2065a24ec0a297f63edecb0af1e11d40371bf3795d0798a1e40e029"
+    },
+    {
+      "path": "core/java/android/os/ServiceManagerNative.java",
+      "bytes": 4061,
+      "sha256": "cdfdae5b350d3d5b228a04f97d7228a384f4d595de67cf34ed41b26552dc7235"
+    },
+    {
+      "path": "core/java/android/os/BinderProxy.java",
+      "bytes": 28695,
+      "sha256": "5000f74d07b13f4fd5cec6d6551c10771daef28df7e21e285a8616e4bb352995"
     }
   ],
   "public_resources_sources": [
@@ -637,7 +647,9 @@
     "core/java/android/util/LongSparseLongArray.java",
     "core/java/android/os/UserHandle.java",
     "core/java/android/view/accessibility/AccessibilityManager.java",
-    "core/java/com/android/internal/util/LineBreakBufferedWriter.java"
+    "core/java/com/android/internal/util/LineBreakBufferedWriter.java",
+    "core/java/android/os/ServiceManagerNative.java",
+    "core/java/android/os/BinderProxy.java"
   ],
   "context_sources": [
     "core/java/android/content/Context.java",

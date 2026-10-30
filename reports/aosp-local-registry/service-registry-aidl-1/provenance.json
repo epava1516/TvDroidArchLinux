@@ -1,0 +1,439 @@
+{
+  "original_aidl_inputs": {
+    "roots": [
+      "native/aidl/service-manager/android/os/IServiceManager.aidl",
+      "native/aidl/service-manager/android/os/IServiceCallback.aidl",
+      "native/aidl/service-manager/android/os/IClientCallback.aidl",
+      "native/aidl/service-manager/android/os/ServiceDebugInfo.aidl",
+      "native/aidl/service-manager/android/os/ConnectionInfo.aidl"
+    ],
+    "builtin_imports": [
+      "android.os.IBinder"
+    ],
+    "include_roots": [
+      "native/aidl/service-manager"
+    ],
+    "files": [
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/native/",
+        "revision": "2fe7eddf185ecb63223eeadc58804f9bf6cbd426",
+        "path": "libs/binder/aidl/android/os/IServiceManager.aidl",
+        "cache_path": "native/aidl/service-manager/android/os/IServiceManager.aidl",
+        "include_root": "native/aidl/service-manager",
+        "bytes": 4625,
+        "sha256": "1b6b4d0584d96c1c7f82e87162f63ea6bc262e191670c13b086c5bc33739a201"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/native/",
+        "revision": "2fe7eddf185ecb63223eeadc58804f9bf6cbd426",
+        "path": "libs/binder/aidl/android/os/IServiceCallback.aidl",
+        "cache_path": "native/aidl/service-manager/android/os/IServiceCallback.aidl",
+        "include_root": "native/aidl/service-manager",
+        "bytes": 946,
+        "sha256": "031e31e46fc31cfaececb3b9eb69b3bd4792b07a16549212fa1d1b5ae8cc0989"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/native/",
+        "revision": "2fe7eddf185ecb63223eeadc58804f9bf6cbd426",
+        "path": "libs/binder/aidl/android/os/IClientCallback.aidl",
+        "cache_path": "native/aidl/service-manager/android/os/IClientCallback.aidl",
+        "include_root": "native/aidl/service-manager",
+        "bytes": 1550,
+        "sha256": "287e2c4ce4debe0d1d883d66eee8cbf63910b86bd3e508fab64f5b806d15776a"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/native/",
+        "revision": "2fe7eddf185ecb63223eeadc58804f9bf6cbd426",
+        "path": "libs/binder/aidl/android/os/ServiceDebugInfo.aidl",
+        "cache_path": "native/aidl/service-manager/android/os/ServiceDebugInfo.aidl",
+        "include_root": "native/aidl/service-manager",
+        "bytes": 980,
+        "sha256": "f62aaf6f4606609daec0995b234281bc73cf74d3ed4e9f8c46f516c4b3aa2f6b"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/native/",
+        "revision": "2fe7eddf185ecb63223eeadc58804f9bf6cbd426",
+        "path": "libs/binder/aidl/android/os/ConnectionInfo.aidl",
+        "cache_path": "native/aidl/service-manager/android/os/ConnectionInfo.aidl",
+        "include_root": "native/aidl/service-manager",
+        "bytes": 972,
+        "sha256": "2d8ba6075b12d0667824386790518cc956c04e811c9b6080444f214fb49a21fa"
+      }
+    ]
+  },
+  "toolchain": {
+    "repository": "https://android.googlesource.com/platform/prebuilts/sdk/",
+    "revision": "01f7b13e02cf93c031d1f5a9a6a5118db9d4ad39",
+    "tag": "android-13.0.0_r3",
+    "artifacts": [
+      {
+        "file": "aidl",
+        "path": "tools/linux/bin/aidl",
+        "url": "https://android.googlesource.com/platform/prebuilts/sdk/+/01f7b13e02cf93c031d1f5a9a6a5118db9d4ad39/tools/linux/bin/aidl?format=TEXT",
+        "sha256": "a465a2f3c7e4f21521a3babfcc71c64f1120eea7fc141eeb5ac43ec5c00e818f",
+        "bytes": 5284464
+      },
+      {
+        "file": "NOTICE.txt",
+        "path": "tools/linux/bin/NOTICE.txt",
+        "url": "https://android.googlesource.com/platform/prebuilts/sdk/+/01f7b13e02cf93c031d1f5a9a6a5118db9d4ad39/tools/linux/bin/NOTICE.txt?format=TEXT",
+        "sha256": "204b02831fe6bb33c50a1c515eb2bd2a0e333812e3c193ffef15dc3445bb56ce",
+        "bytes": 151751
+      },
+      {
+        "file": "libc++.so",
+        "path": "tools/linux/lib64/libc++.so",
+        "url": "https://android.googlesource.com/platform/prebuilts/sdk/+/01f7b13e02cf93c031d1f5a9a6a5118db9d4ad39/tools/linux/lib64/libc++.so?format=TEXT",
+        "sha256": "d1680605847593feb504b8a63822aba4d721d098758dface8993b015dad94ccf",
+        "bytes": 1077880
+      }
+    ],
+    "compiler_reported_platform_sdk": 32
+  },
+  "compile_reference": {
+    "artifact": "org.robolectric:android-all:13-robolectric-9030017",
+    "file": "android-all-13.jar",
+    "url": "https://repo.maven.apache.org/maven2/org/robolectric/android-all/13-robolectric-9030017/android-all-13-robolectric-9030017.jar",
+    "bytes": 178380165,
+    "upstream_sha1": "6f1de3639fb19379abaa68b9f29d10cd6653047f",
+    "sha256": "6e67dca81d30295e31ee6a28cfb601b6b66aaeaee51a92386ed099a64cea5996",
+    "scope": "Android 13 compiler reference, never placed wholesale on runtime classpath. --with-public-resources reuses only generated classes explicitly pinned in prebuilt-bindings.json; rebuilding these remains pending."
+  },
+  "generated_root_types": [
+    "android.os.IServiceManager",
+    "android.os.IServiceCallback",
+    "android.os.IClientCallback",
+    "android.os.ServiceDebugInfo",
+    "android.os.ConnectionInfo"
+  ],
+  "interface_contracts": {
+    "android.os.IServiceManager": {
+      "interface_methods_count": 13,
+      "reference_methods_equal": true,
+      "transaction_ids": {
+        "getService": 1,
+        "checkService": 2,
+        "addService": 3,
+        "listServices": 4,
+        "registerForNotifications": 5,
+        "unregisterForNotifications": 6,
+        "isDeclared": 7,
+        "getDeclaredInstances": 8,
+        "updatableViaApex": 9,
+        "getConnectionInfo": 10,
+        "registerClientCallback": 11,
+        "tryUnregisterService": 12,
+        "getServiceDebugInfo": 13
+      },
+      "reference_transaction_ids_equal": true
+    },
+    "android.os.IServiceCallback": {
+      "interface_methods_count": 1,
+      "reference_methods_equal": true,
+      "transaction_ids": {
+        "onRegistration": 1
+      },
+      "reference_transaction_ids_equal": true
+    },
+    "android.os.IClientCallback": {
+      "interface_methods_count": 1,
+      "reference_methods_equal": true,
+      "transaction_ids": {
+        "onClients": 1
+      },
+      "reference_transaction_ids_equal": true
+    }
+  },
+  "commands": [
+    {
+      "name": "generate",
+      "command": [
+        "/home/tv/.cache/archtv/aosp-aidl-tools/aidl",
+        "--lang=java",
+        "--min_sdk_version=28",
+        "-I",
+        "/home/tv/.cache/archtv/aosp-framework-study/pinned/native/aidl/service-manager",
+        "-o",
+        "/home/tv/repositorio-principal/dist/apk/service-registry-aidl-1/generated",
+        "/home/tv/.cache/archtv/aosp-framework-study/pinned/native/aidl/service-manager/android/os/IServiceManager.aidl"
+      ]
+    },
+    {
+      "name": "generate-1",
+      "command": [
+        "/home/tv/.cache/archtv/aosp-aidl-tools/aidl",
+        "--lang=java",
+        "--min_sdk_version=28",
+        "-I",
+        "/home/tv/.cache/archtv/aosp-framework-study/pinned/native/aidl/service-manager",
+        "-o",
+        "/home/tv/repositorio-principal/dist/apk/service-registry-aidl-1/generated",
+        "/home/tv/.cache/archtv/aosp-framework-study/pinned/native/aidl/service-manager/android/os/IServiceCallback.aidl"
+      ]
+    },
+    {
+      "name": "generate-2",
+      "command": [
+        "/home/tv/.cache/archtv/aosp-aidl-tools/aidl",
+        "--lang=java",
+        "--min_sdk_version=28",
+        "-I",
+        "/home/tv/.cache/archtv/aosp-framework-study/pinned/native/aidl/service-manager",
+        "-o",
+        "/home/tv/repositorio-principal/dist/apk/service-registry-aidl-1/generated",
+        "/home/tv/.cache/archtv/aosp-framework-study/pinned/native/aidl/service-manager/android/os/IClientCallback.aidl"
+      ]
+    },
+    {
+      "name": "generate-3",
+      "command": [
+        "/home/tv/.cache/archtv/aosp-aidl-tools/aidl",
+        "--lang=java",
+        "--min_sdk_version=28",
+        "-I",
+        "/home/tv/.cache/archtv/aosp-framework-study/pinned/native/aidl/service-manager",
+        "-o",
+        "/home/tv/repositorio-principal/dist/apk/service-registry-aidl-1/generated",
+        "/home/tv/.cache/archtv/aosp-framework-study/pinned/native/aidl/service-manager/android/os/ServiceDebugInfo.aidl"
+      ]
+    },
+    {
+      "name": "generate-4",
+      "command": [
+        "/home/tv/.cache/archtv/aosp-aidl-tools/aidl",
+        "--lang=java",
+        "--min_sdk_version=28",
+        "-I",
+        "/home/tv/.cache/archtv/aosp-framework-study/pinned/native/aidl/service-manager",
+        "-o",
+        "/home/tv/repositorio-principal/dist/apk/service-registry-aidl-1/generated",
+        "/home/tv/.cache/archtv/aosp-framework-study/pinned/native/aidl/service-manager/android/os/ConnectionInfo.aidl"
+      ]
+    },
+    {
+      "name": "compile",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/javac",
+        "--release",
+        "8",
+        "-classpath",
+        "/home/tv/.cache/archtv/aosp-compile-tools/android-all-13.jar",
+        "-d",
+        "/home/tv/repositorio-principal/dist/apk/service-registry-aidl-1/classes",
+        "/home/tv/repositorio-principal/dist/apk/service-registry-aidl-1/generated/android/os/ConnectionInfo.java",
+        "/home/tv/repositorio-principal/dist/apk/service-registry-aidl-1/generated/android/os/IClientCallback.java",
+        "/home/tv/repositorio-principal/dist/apk/service-registry-aidl-1/generated/android/os/IServiceCallback.java",
+        "/home/tv/repositorio-principal/dist/apk/service-registry-aidl-1/generated/android/os/IServiceManager.java",
+        "/home/tv/repositorio-principal/dist/apk/service-registry-aidl-1/generated/android/os/ServiceDebugInfo.java"
+      ]
+    },
+    {
+      "name": "pack",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/jar",
+        "cf",
+        "/home/tv/repositorio-principal/dist/apk/service-registry-aidl-1/bindings.jar",
+        "-C",
+        "/home/tv/repositorio-principal/dist/apk/service-registry-aidl-1/classes",
+        "."
+      ]
+    },
+    {
+      "name": "dex",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/java",
+        "-cp",
+        "/home/tv/.cache/archtv/apk-build-tools/r8.jar",
+        "com.android.tools.r8.D8",
+        "--release",
+        "--min-api",
+        "28",
+        "--lib",
+        "/home/tv/.cache/archtv/apk-build-tools/android.jar",
+        "--output",
+        "/home/tv/repositorio-principal/dist/apk/service-registry-aidl-1/dex",
+        "/home/tv/repositorio-principal/dist/apk/service-registry-aidl-1/bindings.jar"
+      ]
+    },
+    {
+      "name": "generated-signatures",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/javap",
+        "-p",
+        "-s",
+        "-classpath",
+        "/home/tv/repositorio-principal/dist/apk/service-registry-aidl-1/bindings.jar",
+        "android.os.IServiceManager"
+      ]
+    },
+    {
+      "name": "reference-signatures",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/javap",
+        "-p",
+        "-s",
+        "-classpath",
+        "/home/tv/.cache/archtv/aosp-compile-tools/android-all-13.jar",
+        "android.os.IServiceManager"
+      ]
+    },
+    {
+      "name": "generated-transactions",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/javap",
+        "-p",
+        "-constants",
+        "-classpath",
+        "/home/tv/repositorio-principal/dist/apk/service-registry-aidl-1/bindings.jar",
+        "android.os.IServiceManager$Stub"
+      ]
+    },
+    {
+      "name": "reference-transactions",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/javap",
+        "-p",
+        "-constants",
+        "-classpath",
+        "/home/tv/.cache/archtv/aosp-compile-tools/android-all-13.jar",
+        "android.os.IServiceManager$Stub"
+      ]
+    },
+    {
+      "name": "1-generated-signatures",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/javap",
+        "-p",
+        "-s",
+        "-classpath",
+        "/home/tv/repositorio-principal/dist/apk/service-registry-aidl-1/bindings.jar",
+        "android.os.IServiceCallback"
+      ]
+    },
+    {
+      "name": "1-reference-signatures",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/javap",
+        "-p",
+        "-s",
+        "-classpath",
+        "/home/tv/.cache/archtv/aosp-compile-tools/android-all-13.jar",
+        "android.os.IServiceCallback"
+      ]
+    },
+    {
+      "name": "1-generated-transactions",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/javap",
+        "-p",
+        "-constants",
+        "-classpath",
+        "/home/tv/repositorio-principal/dist/apk/service-registry-aidl-1/bindings.jar",
+        "android.os.IServiceCallback$Stub"
+      ]
+    },
+    {
+      "name": "1-reference-transactions",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/javap",
+        "-p",
+        "-constants",
+        "-classpath",
+        "/home/tv/.cache/archtv/aosp-compile-tools/android-all-13.jar",
+        "android.os.IServiceCallback$Stub"
+      ]
+    },
+    {
+      "name": "2-generated-signatures",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/javap",
+        "-p",
+        "-s",
+        "-classpath",
+        "/home/tv/repositorio-principal/dist/apk/service-registry-aidl-1/bindings.jar",
+        "android.os.IClientCallback"
+      ]
+    },
+    {
+      "name": "2-reference-signatures",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/javap",
+        "-p",
+        "-s",
+        "-classpath",
+        "/home/tv/.cache/archtv/aosp-compile-tools/android-all-13.jar",
+        "android.os.IClientCallback"
+      ]
+    },
+    {
+      "name": "2-generated-transactions",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/javap",
+        "-p",
+        "-constants",
+        "-classpath",
+        "/home/tv/repositorio-principal/dist/apk/service-registry-aidl-1/bindings.jar",
+        "android.os.IClientCallback$Stub"
+      ]
+    },
+    {
+      "name": "2-reference-transactions",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/javap",
+        "-p",
+        "-constants",
+        "-classpath",
+        "/home/tv/.cache/archtv/aosp-compile-tools/android-all-13.jar",
+        "android.os.IClientCallback$Stub"
+      ]
+    }
+  ],
+  "generated_java_sha256": {
+    "generated/android/os/ConnectionInfo.java": "8c2b2a8fe746bc4b6b42ee348561b4d8a94b111ec3d6529f637ced89e3f7cc18",
+    "generated/android/os/IClientCallback.java": "847413fae585c5c8a78e1666521a022656bb32d53c3b74dbc0551019620c9e18",
+    "generated/android/os/IServiceCallback.java": "4d428a1eafcfcff467760cfa4f44dbd71a9f1504808fb14a3fe27da912942b6d",
+    "generated/android/os/IServiceManager.java": "86f1753d9e4c040283192a904cbad56a7fc994cccaa251aedec23a48ddd2e56d",
+    "generated/android/os/ServiceDebugInfo.java": "cd98a576ad7d39d55927529030844f77a627c252babf5627bda5fcad20740d94"
+  },
+  "runtime_classes": [
+    "android/os/ConnectionInfo$1.class",
+    "android/os/ConnectionInfo.class",
+    "android/os/IClientCallback$Default.class",
+    "android/os/IClientCallback$Stub$Proxy.class",
+    "android/os/IClientCallback$Stub.class",
+    "android/os/IClientCallback.class",
+    "android/os/IServiceCallback$Default.class",
+    "android/os/IServiceCallback$Stub$Proxy.class",
+    "android/os/IServiceCallback$Stub.class",
+    "android/os/IServiceCallback.class",
+    "android/os/IServiceManager$Default.class",
+    "android/os/IServiceManager$Stub$Proxy.class",
+    "android/os/IServiceManager$Stub.class",
+    "android/os/IServiceManager.class",
+    "android/os/ServiceDebugInfo$1.class",
+    "android/os/ServiceDebugInfo.class"
+  ],
+  "bindings_jar_sha256": "c6e8bd1bd27e36093bcf1b52aa558e6dc69518d2ab08d48563006a63ecf38042",
+  "dex_sha256": "0723a5bc88bb4625412033bf69755f8b2ddfc10b779e46ddca1a963043173692",
+  "transaction_ids": {
+    "getService": 1,
+    "checkService": 2,
+    "addService": 3,
+    "listServices": 4,
+    "registerForNotifications": 5,
+    "unregisterForNotifications": 6,
+    "isDeclared": 7,
+    "getDeclaredInstances": 8,
+    "updatableViaApex": 9,
+    "getConnectionInfo": 10,
+    "registerClientCallback": 11,
+    "tryUnregisterService": 12,
+    "getServiceDebugInfo": 13
+  },
+  "reference_transaction_ids_equal": true,
+  "interface_methods_count": 13,
+  "reference_methods_equal": true,
+  "methods_only_generated": [],
+  "methods_only_reference": [],
+  "scope": "Complete selected original AIDL contracts generated with pinned official compiler and original transitive import contracts. No trimmed interface, imported implementation classes or reference bytecode copied. Method comparison is not proof of transaction ABI, native Binder IPC, loaded runtime classes or working window service."
+}

@@ -1,0 +1,23 @@
+Compiled from "IServiceManager.java"
+public abstract class android.os.IServiceManager$Stub extends android.os.Binder implements android.os.IServiceManager {
+  static final int TRANSACTION_getService = 1;
+  static final int TRANSACTION_checkService = 2;
+  static final int TRANSACTION_addService = 3;
+  static final int TRANSACTION_listServices = 4;
+  static final int TRANSACTION_registerForNotifications = 5;
+  static final int TRANSACTION_unregisterForNotifications = 6;
+  static final int TRANSACTION_isDeclared = 7;
+  static final int TRANSACTION_getDeclaredInstances = 8;
+  static final int TRANSACTION_updatableViaApex = 9;
+  static final int TRANSACTION_getConnectionInfo = 10;
+  static final int TRANSACTION_registerClientCallback = 11;
+  static final int TRANSACTION_tryUnregisterService = 12;
+  static final int TRANSACTION_getServiceDebugInfo = 13;
+  public android.os.IServiceManager$Stub();
+  public static android.os.IServiceManager asInterface(android.os.IBinder);
+  public android.os.IBinder asBinder();
+  public static java.lang.String getDefaultTransactionName(int);
+  public java.lang.String getTransactionName(int);
+  public boolean onTransact(int, android.os.Parcel, android.os.Parcel, int) throws android.os.RemoteException;
+  public int getMaxTransactionId();
+}

@@ -1,0 +1,7 @@
+Compiled from "IServiceCallback.java"
+public interface android.os.IServiceCallback extends android.os.IInterface {
+  public static final java.lang.String DESCRIPTOR;
+    descriptor: Ljava/lang/String;
+  public abstract void onRegistration(java.lang.String, android.os.IBinder) throws android.os.RemoteException;
+    descriptor: (Ljava/lang/String;Landroid/os/IBinder;)V
+}

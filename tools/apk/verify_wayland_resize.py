@@ -25,10 +25,14 @@ parser.add_argument('--window-bindings',type=Path)
 parser.add_argument('--window-system-resources',type=Path)
 parser.add_argument('--window-rendernode-build',type=Path)
 parser.add_argument('--accessibility-bindings',type=Path)
+parser.add_argument('--service-registry-bindings',type=Path)
 parser.add_argument('--window-binder-holder-build',type=Path)
 args = parser.parse_args()
 assert all((args.window_service_build,args.window_framework,args.window_bindings,args.window_system_resources)) or not any((args.window_service_build,args.window_framework,args.window_bindings,args.window_system_resources))
 assert args.window_rendernode_build is None or args.window_service_build
+assert args.accessibility_bindings is None or args.window_service_build
+assert args.window_binder_holder_build is None or args.window_service_build
+assert args.service_registry_bindings is None or (args.window_service_build and args.window_binder_holder_build)
 root = Path(__file__).resolve().parents[2]
 out = args.output.resolve()
 out.mkdir(parents=True, exist_ok=False)
@@ -101,6 +105,12 @@ try:
         else:
             assert not proofs[2].get('accessibility_bindings_dex_sha256'),'Missing accessibility contract DEX'
 
+        if args.service_registry_bindings:
+            extra=args.service_registry_bindings.resolve();extra_proof=json.loads((extra/'provenance.json').read_text())
+            assert hashlib.sha256((extra/'dex/classes.dex').read_bytes()).hexdigest()==extra_proof['dex_sha256']
+            assert proofs[2]['service_registry_bindings_dex_sha256']==extra_proof['dex_sha256']
+            builds.append(extra);proofs.append(extra_proof)
+        else: assert not proofs[2].get('service_registry_bindings_dex_sha256'),'Missing service registry DEX'
         (out/'service-art-data').mkdir(mode=0o700)
         service_env = {key:value for key,value in env.items() if not key.startswith('ANDROID_') and key not in ('LD_LIBRARY_PATH','LD_PRELOAD','CLASSPATH')}
         service_env.update(ANDROID_DATA=str(out/'service-art-data'),ANDROID_LOG_TAGS='*:w')
@@ -124,6 +134,7 @@ try:
             binder_holder_sha256=hashlib.sha256(binder_library.read_bytes()).hexdigest()
             assert binder_proof['build_pass'] and binder_holder_sha256==binder_proof['library_sha256']
             rendernode_options.append('-Darchtv.binder.holder.library='+str(binder_library))
+        if args.service_registry_bindings:rendernode_options.append('-Darchtv.service.registry=true')
         service_command = [str(args.art.resolve()/'bin/art'),'--64','--no-compile','--','-Xint','-Xcheck:jni',*rendernode_options,'-cp',
             ':'.join(str(build/'dex/classes.dex') for build in builds),'org.archtv.apkruntime.WindowServiceProbe',
             str(args.linux_library.resolve()),str(policy),str(args.resources_library.resolve()),str(apk),str(system_apk),str(out/'service-data')]
@@ -178,9 +189,13 @@ try:
         if args.accessibility_bindings: assert service_info['local_permission_query_pass']
         service_info['binder_holder_art_pass']='BINDER_HOLDER_ART_OK objects=32' in service_log
         if args.window_binder_holder_build: assert service_info['binder_holder_art_pass']
+        service_info['local_service_registry_pass']='LINUX_SERVICE_REGISTRY_OK services=2' in service_log and 'LINUX_SERVICE_REGISTRY_DEAD_OK' in service_log
+        if args.service_registry_bindings: assert service_info['local_service_registry_pass']
         service_info['view_constructed']='VIEW_CONSTRUCTOR_OK' in service_log
         service_info['view_measure_pass']='VIEW_MEASURE_OK cases=5' in service_log
         service_info['view_layout_pass']='VIEW_LAYOUT_OK' in service_log
+        service_info['view_layout_resize_pass']=all('VIEW_LAYOUT_RESIZE_OK '+size in service_log for size in ('960x540','800x450'))
+        if args.service_registry_bindings: assert service_info['view_layout_pass'] and service_info['view_layout_resize_pass']
         service_info['view_layout_failures']=[line for line in service_log.splitlines() if line.startswith('VIEW_LAYOUT_BLOCKED ')]
         service_info['view_constructor_failures']=[line for line in service_log.splitlines() if line.startswith('VIEW_CONSTRUCTOR_BLOCKED ')]
     result = {'wayland_live_resize_pass':True, 'window_service':service_info, 'initial':[960,540], 'resized':[800,450],

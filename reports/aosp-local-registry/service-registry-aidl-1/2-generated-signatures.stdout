@@ -1,0 +1,7 @@
+Compiled from "IClientCallback.java"
+public interface android.os.IClientCallback extends android.os.IInterface {
+  public static final java.lang.String DESCRIPTOR;
+    descriptor: Ljava/lang/String;
+  public abstract void onClients(android.os.IBinder, boolean) throws android.os.RemoteException;
+    descriptor: (Landroid/os/IBinder;Z)V
+}

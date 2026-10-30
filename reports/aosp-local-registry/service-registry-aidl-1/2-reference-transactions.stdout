@@ -1,0 +1,11 @@
+Compiled from "IClientCallback.java"
+public abstract class android.os.IClientCallback$Stub extends android.os.Binder implements android.os.IClientCallback {
+  static final int TRANSACTION_onClients = 1;
+  public android.os.IClientCallback$Stub();
+  public static android.os.IClientCallback asInterface(android.os.IBinder);
+  public android.os.IBinder asBinder();
+  public static java.lang.String getDefaultTransactionName(int);
+  public java.lang.String getTransactionName(int);
+  public boolean onTransact(int, android.os.Parcel, android.os.Parcel, int) throws android.os.RemoteException;
+  public int getMaxTransactionId();
+}

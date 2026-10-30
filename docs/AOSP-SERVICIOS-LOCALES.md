@@ -6,6 +6,9 @@ RemoteException/DeadObjectException/DeadSystemException/AndroidException. Las
 fuentes permanecen sin modificar y con hashes fijados. La referencia completa
 sigue siendo exclusivamente de compilación.
 
+El relato siguiente conserva las etapas históricas; la actualización al final
+registra el estado del experimento local, sin acreditar compatibilidad APK.
+
 ## Caché original y endpoint local
 
 ServiceManager.initServiceCache permite instalar referencias de servicios en el
@@ -112,3 +115,26 @@ explícitamente pendientes. El constructor View con ese servicio supera la
 resolución de window y llega a ValueAnimator, aún ausente. Ver
 AOSP-VENTANAS-WAYLAND.md y reports/aosp-window-wayland/. El servicio se prueba en
 un proceso ART separado; el bootstrap en Main y dibujo original siguen pendientes.
+
+## Registro local verificado (2026-10-30)
+
+El perfil selectivo incorpora 108 fuentes originales, sin modificar. Un adaptador
+LinuxServiceRegistry implementa el contrato IServiceManager original: getService,
+checkService, listServices y getServiceDebugInfo consultan endpoints locales. Las
+otras nueve operaciones fallan explícitamente. BinderInternal.getContextObject
+devuelve este registro instalado una sola vez; no hay driver ni transporte IPC,
+VINTF, APEX ni servicios Android completos. Los endpoints cerrados desaparecen
+de las consultas, con orden estable y pruebas de cierre y muerte local.
+
+El generador AIDL admite manifiestos separados; se verifican firmas e IDs de tres
+interfaces del registro y la regresión de los 133 métodos IWindowManager. El
+ensayo Wayland supera constructor, cinco medidas y layout de View original,
+notificaciones y geometría RenderNode al cambiar 960×540 a 800×450. Esa View no
+se dibuja: el contenido de la fixture sigue usando widgets propios. El cierre
+del proveedor y del registro también pasa. ASan/LSan comprueba 12800 ciclos
+del holder nativo ampliado; no acredita GC de ART ni IPC.
+
+Evidencias y hashes: [aosp-local-registry](../reports/aosp-local-registry/source-index.json).
+Los resultados conservan comandos, procedencia y limitaciones. Este experimento
+no demuestra lanzamiento ni recorrido de una APK real y no reemplaza la revisión
+del framework completo ni la matriz de compatibilidad.

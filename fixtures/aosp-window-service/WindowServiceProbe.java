@@ -38,6 +38,8 @@ public final class WindowServiceProbe {
         }
         LinuxWindowService endpoint=new LinuxWindowService(Paths.get(args[1]));
         ServiceManager.initServiceCache(Collections.<String,IBinder>singletonMap("window",endpoint));
+        if(Boolean.getBoolean("archtv.service.registry"))
+            Class.forName("org.archtv.apkruntime.ServiceRegistryChecks").getMethod("installAndVerify",IBinder.class).invoke(null,endpoint);
         IWindowManager window=IWindowManager.Stub.asInterface(ServiceManager.getService("window"));
         check(window==endpoint,"Original Stub.asInterface local service identity");
         Point first=new Point();window.getBaseDisplaySize(0,first);
@@ -54,6 +56,7 @@ public final class WindowServiceProbe {
         catch(IllegalArgumentException expected) { }
         System.out.println("LINUX_PERMISSION_QUERY_OK grants=0");
         boolean attempted=false;
+        android.view.View layoutView=null;final int[] layoutCallbacks={0};
         final int[] deaths={0};endpoint.linkToDeath(()->deaths[0]++,0);
         BufferedReader input=new BufferedReader(new InputStreamReader(System.in,"UTF-8"));String line;
         while ((line=input.readLine())!=null) {
@@ -98,9 +101,12 @@ public final class WindowServiceProbe {
                                     android.view.View.MeasureSpec.makeMeasureSpec(180,android.view.View.MeasureSpec.EXACTLY));
                             check(view.getMeasuredWidth()==320 && view.getMeasuredHeight()==180,"Exact dimensions after minimum/spec changes");
                             System.out.println("VIEW_MEASURE_OK cases=5");
+                            view.addOnLayoutChangeListener((v,l,t,r,b,ol,ot,or,ob)->layoutCallbacks[0]++);
                             view.layout(13,17,333,197);
                             check(view.getLeft()==13 && view.getTop()==17 && view.getRight()==333 && view.getBottom()==197,"Original layout coordinates");
                             check(view.getWidth()==320 && view.getHeight()==180 && view.isLaidOut(),"Original layout dimensions/state");
+                            check(layoutCallbacks[0]==1,"Original layout change notification");
+                            layoutView=view;
                             System.out.println("VIEW_LAYOUT_OK");
                         } catch (LinkageError | UnsupportedOperationException | android.content.res.Resources.NotFoundException failure) {
                             System.out.println("VIEW_LAYOUT_BLOCKED "+failure);failure.printStackTrace(System.err);
@@ -111,11 +117,26 @@ public final class WindowServiceProbe {
                     }
                     AnimationPolicyChecks.verify(Float.parseFloat(words[5]));
                 }
+                if(layoutView!=null) {
+                    layoutView.measure(android.view.View.MeasureSpec.makeMeasureSpec(actual.x,android.view.View.MeasureSpec.EXACTLY),
+                            android.view.View.MeasureSpec.makeMeasureSpec(actual.y,android.view.View.MeasureSpec.EXACTLY));
+                    layoutView.layout(0,0,actual.x,actual.y);
+                    check(layoutView.getWidth()==actual.x && layoutView.getHeight()==actual.y,"Original View follows actual window dimensions");
+                    java.lang.reflect.Field field=android.view.View.class.getDeclaredField("mRenderNode");field.setAccessible(true);
+                    android.graphics.RenderNode node=(android.graphics.RenderNode)field.get(layoutView);
+                    check(node.getLeft()==0 && node.getTop()==0 && node.getRight()==actual.x && node.getBottom()==actual.y,"Original native RenderNode bounds follow layout");
+                    check(node.getWidth()==actual.x && node.getHeight()==actual.y,"Native RenderNode dimensions");
+                    int callbacks=layoutCallbacks[0];layoutView.layout(0,0,actual.x,actual.y);
+                    check(layoutCallbacks[0]==callbacks,"Unchanged layout does not notify listeners");
+                    System.out.println("VIEW_LAYOUT_RESIZE_OK "+actual.x+"x"+actual.y);
+                }
                 System.out.println("WINDOW_SERVICE_OK "+words[1]+"x"+words[2]+" initial="+initial.x+"x"+initial.y+" scale="+words[5]);
             } else if (words[0].equals("dead")) {
                 try { window.getBaseDisplaySize(0,new Point());throw new AssertionError("Dead provider served stale state"); }
                 catch (android.os.DeadObjectException expected) { }
                 check(!endpoint.isBinderAlive() && deaths[0]==1,"Closed endpoint after provider death");
+                if(Boolean.getBoolean("archtv.service.registry"))
+                    Class.forName("org.archtv.apkruntime.ServiceRegistryChecks").getMethod("verifyProviderDeath").invoke(null);
                 System.out.println("WINDOW_SERVICE_DEAD");
             } else if (words[0].equals("quit")) {
                 endpoint.close();

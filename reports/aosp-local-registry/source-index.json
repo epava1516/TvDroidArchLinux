@@ -1,0 +1,12 @@
+{
+  "fixtures/aosp-window-service/WindowServiceProbe.java": "9b8a9e62a9d0569044807edee7fb321bd4b9249c7687e1540d7f2affc5adb163",
+  "runtime/aosp/framework-study.json": "adaf1a8d304a71af0ff175f981a0e34d99c71bfb99e77fd6874a265c54020f52",
+  "runtime/aosp/native/binder-holder-jni.cpp": "aa96dd3a10fe0386c7dd4242e4a55770f335c4e252278380e9f252af8de3e830",
+  "tools/apk/build_binder_holder.py": "4d8f650281d63da8be069ec59f11a0434c2b335dcf1facf6b82ed730dd5cde2a",
+  "tools/apk/build_window_service_probe.py": "6aa9394e8efd801ad5a0e1efcfed0af1344a5977bd2fbef4732c45d1a0d63c34",
+  "tools/apk/generate_window_aidl.py": "7aa281903e090aab2572db0316ba543aa0a2e48d026fc8cb5b39d997dfdb4346",
+  "tools/apk/verify_wayland_resize.py": "f0057cec97e6258a6f01ae3aaabe7d1ab8304de188bb2854fb88aa8d7dbce590",
+  "fixtures/aosp-window-service/ServiceRegistryChecks.java": "190b0ea927648c05e9fc6122bf7e83c4caab955de5b4458f3820cfdd4668f25b",
+  "runtime/aosp/linux-services/org/archtv/aosplinux/LinuxServiceRegistry.java": "4807a585424559aa748535969ce55a8bf122bb8d066f542e56bc3e6bef443c2b",
+  "runtime/aosp/service-registry-aidl-sources.json": "7f4b7add51b7f7869964e51f1899eca97a33e1c011f9d05ba811df23592446f9"
+}

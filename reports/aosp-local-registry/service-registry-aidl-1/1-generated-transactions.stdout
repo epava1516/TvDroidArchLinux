@@ -1,0 +1,8 @@
+Compiled from "IServiceCallback.java"
+public abstract class android.os.IServiceCallback$Stub extends android.os.Binder implements android.os.IServiceCallback {
+  static final int TRANSACTION_onRegistration = 1;
+  public android.os.IServiceCallback$Stub();
+  public static android.os.IServiceCallback asInterface(android.os.IBinder);
+  public android.os.IBinder asBinder();
+  public boolean onTransact(int, android.os.Parcel, android.os.Parcel, int) throws android.os.RemoteException;
+}

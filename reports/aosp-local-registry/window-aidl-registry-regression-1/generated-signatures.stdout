@@ -1,0 +1,407 @@
+Compiled from "IWindowManager.java"
+public interface android.view.IWindowManager extends android.os.IInterface {
+  public static final int FIXED_TO_USER_ROTATION_DEFAULT;
+    descriptor: I
+  public static final int FIXED_TO_USER_ROTATION_DISABLED;
+    descriptor: I
+  public static final int FIXED_TO_USER_ROTATION_ENABLED;
+    descriptor: I
+  public abstract boolean startViewServer(int) throws android.os.RemoteException;
+    descriptor: (I)Z
+
+  public abstract boolean stopViewServer() throws android.os.RemoteException;
+    descriptor: ()Z
+
+  public abstract boolean isViewServerRunning() throws android.os.RemoteException;
+    descriptor: ()Z
+
+  public abstract android.view.IWindowSession openSession(android.view.IWindowSessionCallback) throws android.os.RemoteException;
+    descriptor: (Landroid/view/IWindowSessionCallback;)Landroid/view/IWindowSession;
+
+  public abstract boolean useBLAST() throws android.os.RemoteException;
+    descriptor: ()Z
+
+  public abstract void getInitialDisplaySize(int, android.graphics.Point) throws android.os.RemoteException;
+    descriptor: (ILandroid/graphics/Point;)V
+
+  public abstract void getBaseDisplaySize(int, android.graphics.Point) throws android.os.RemoteException;
+    descriptor: (ILandroid/graphics/Point;)V
+
+  public abstract void setForcedDisplaySize(int, int, int) throws android.os.RemoteException;
+    descriptor: (III)V
+
+  public abstract void clearForcedDisplaySize(int) throws android.os.RemoteException;
+    descriptor: (I)V
+
+  public abstract int getInitialDisplayDensity(int) throws android.os.RemoteException;
+    descriptor: (I)I
+
+  public abstract int getBaseDisplayDensity(int) throws android.os.RemoteException;
+    descriptor: (I)I
+
+  public abstract void setForcedDisplayDensityForUser(int, int, int) throws android.os.RemoteException;
+    descriptor: (III)V
+
+  public abstract void clearForcedDisplayDensityForUser(int, int) throws android.os.RemoteException;
+    descriptor: (II)V
+
+  public abstract void setForcedDisplayScalingMode(int, int) throws android.os.RemoteException;
+    descriptor: (II)V
+
+  public abstract void setEventDispatching(boolean) throws android.os.RemoteException;
+    descriptor: (Z)V
+
+  public abstract boolean isWindowToken(android.os.IBinder) throws android.os.RemoteException;
+    descriptor: (Landroid/os/IBinder;)Z
+
+  public abstract void addWindowToken(android.os.IBinder, int, int, android.os.Bundle) throws android.os.RemoteException;
+    descriptor: (Landroid/os/IBinder;IILandroid/os/Bundle;)V
+
+  public abstract void removeWindowToken(android.os.IBinder, int) throws android.os.RemoteException;
+    descriptor: (Landroid/os/IBinder;I)V
+
+  public abstract void setDisplayWindowRotationController(android.view.IDisplayWindowRotationController) throws android.os.RemoteException;
+    descriptor: (Landroid/view/IDisplayWindowRotationController;)V
+
+  public abstract android.view.SurfaceControl addShellRoot(int, android.view.IWindow, int) throws android.os.RemoteException;
+    descriptor: (ILandroid/view/IWindow;I)Landroid/view/SurfaceControl;
+
+  public abstract void setShellRootAccessibilityWindow(int, int, android.view.IWindow) throws android.os.RemoteException;
+    descriptor: (IILandroid/view/IWindow;)V
+
+  public abstract void overridePendingAppTransitionMultiThumbFuture(android.view.IAppTransitionAnimationSpecsFuture, android.os.IRemoteCallback, boolean, int) throws android.os.RemoteException;
+    descriptor: (Landroid/view/IAppTransitionAnimationSpecsFuture;Landroid/os/IRemoteCallback;ZI)V
+
+  public abstract void overridePendingAppTransitionRemote(android.view.RemoteAnimationAdapter, int) throws android.os.RemoteException;
+    descriptor: (Landroid/view/RemoteAnimationAdapter;I)V
+
+  public abstract void endProlongedAnimations() throws android.os.RemoteException;
+    descriptor: ()V
+
+  public abstract void startFreezingScreen(int, int) throws android.os.RemoteException;
+    descriptor: (II)V
+
+  public abstract void stopFreezingScreen() throws android.os.RemoteException;
+    descriptor: ()V
+
+  public abstract void disableKeyguard(android.os.IBinder, java.lang.String, int) throws android.os.RemoteException;
+    descriptor: (Landroid/os/IBinder;Ljava/lang/String;I)V
+
+  public abstract void reenableKeyguard(android.os.IBinder, int) throws android.os.RemoteException;
+    descriptor: (Landroid/os/IBinder;I)V
+
+  public abstract void exitKeyguardSecurely(android.view.IOnKeyguardExitResult) throws android.os.RemoteException;
+    descriptor: (Landroid/view/IOnKeyguardExitResult;)V
+
+  public abstract boolean isKeyguardLocked() throws android.os.RemoteException;
+    descriptor: ()Z
+
+  public abstract boolean isKeyguardSecure(int) throws android.os.RemoteException;
+    descriptor: (I)Z
+
+  public abstract void dismissKeyguard(com.android.internal.policy.IKeyguardDismissCallback, java.lang.CharSequence) throws android.os.RemoteException;
+    descriptor: (Lcom/android/internal/policy/IKeyguardDismissCallback;Ljava/lang/CharSequence;)V
+
+  public abstract void addKeyguardLockedStateListener(com.android.internal.policy.IKeyguardLockedStateListener) throws android.os.RemoteException;
+    descriptor: (Lcom/android/internal/policy/IKeyguardLockedStateListener;)V
+
+  public abstract void removeKeyguardLockedStateListener(com.android.internal.policy.IKeyguardLockedStateListener) throws android.os.RemoteException;
+    descriptor: (Lcom/android/internal/policy/IKeyguardLockedStateListener;)V
+
+  public abstract void setSwitchingUser(boolean) throws android.os.RemoteException;
+    descriptor: (Z)V
+
+  public abstract void closeSystemDialogs(java.lang.String) throws android.os.RemoteException;
+    descriptor: (Ljava/lang/String;)V
+
+  public abstract float getAnimationScale(int) throws android.os.RemoteException;
+    descriptor: (I)F
+
+  public abstract float[] getAnimationScales() throws android.os.RemoteException;
+    descriptor: ()[F
+
+  public abstract void setAnimationScale(int, float) throws android.os.RemoteException;
+    descriptor: (IF)V
+
+  public abstract void setAnimationScales(float[]) throws android.os.RemoteException;
+    descriptor: ([F)V
+
+  public abstract float getCurrentAnimatorScale() throws android.os.RemoteException;
+    descriptor: ()F
+
+  public abstract void setInTouchMode(boolean) throws android.os.RemoteException;
+    descriptor: (Z)V
+
+  public abstract void showStrictModeViolation(boolean) throws android.os.RemoteException;
+    descriptor: (Z)V
+
+  public abstract void setStrictModeVisualIndicatorPreference(java.lang.String) throws android.os.RemoteException;
+    descriptor: (Ljava/lang/String;)V
+
+  public abstract void refreshScreenCaptureDisabled() throws android.os.RemoteException;
+    descriptor: ()V
+
+  public abstract void updateRotation(boolean, boolean) throws android.os.RemoteException;
+    descriptor: (ZZ)V
+
+  public abstract int getDefaultDisplayRotation() throws android.os.RemoteException;
+    descriptor: ()I
+
+  public abstract int watchRotation(android.view.IRotationWatcher, int) throws android.os.RemoteException;
+    descriptor: (Landroid/view/IRotationWatcher;I)I
+
+  public abstract void removeRotationWatcher(android.view.IRotationWatcher) throws android.os.RemoteException;
+    descriptor: (Landroid/view/IRotationWatcher;)V
+
+  public abstract int getPreferredOptionsPanelGravity(int) throws android.os.RemoteException;
+    descriptor: (I)I
+
+  public abstract void freezeRotation(int) throws android.os.RemoteException;
+    descriptor: (I)V
+
+  public abstract void thawRotation() throws android.os.RemoteException;
+    descriptor: ()V
+
+  public abstract boolean isRotationFrozen() throws android.os.RemoteException;
+    descriptor: ()Z
+
+  public abstract void freezeDisplayRotation(int, int) throws android.os.RemoteException;
+    descriptor: (II)V
+
+  public abstract void thawDisplayRotation(int) throws android.os.RemoteException;
+    descriptor: (I)V
+
+  public abstract boolean isDisplayRotationFrozen(int) throws android.os.RemoteException;
+    descriptor: (I)Z
+
+  public abstract void setFixedToUserRotation(int, int) throws android.os.RemoteException;
+    descriptor: (II)V
+
+  public abstract void setIgnoreOrientationRequest(int, boolean) throws android.os.RemoteException;
+    descriptor: (IZ)V
+
+  public abstract android.graphics.Bitmap screenshotWallpaper() throws android.os.RemoteException;
+    descriptor: ()Landroid/graphics/Bitmap;
+
+  public abstract android.view.SurfaceControl mirrorWallpaperSurface(int) throws android.os.RemoteException;
+    descriptor: (I)Landroid/view/SurfaceControl;
+
+  public abstract boolean registerWallpaperVisibilityListener(android.view.IWallpaperVisibilityListener, int) throws android.os.RemoteException;
+    descriptor: (Landroid/view/IWallpaperVisibilityListener;I)Z
+
+  public abstract void unregisterWallpaperVisibilityListener(android.view.IWallpaperVisibilityListener, int) throws android.os.RemoteException;
+    descriptor: (Landroid/view/IWallpaperVisibilityListener;I)V
+
+  public abstract void registerSystemGestureExclusionListener(android.view.ISystemGestureExclusionListener, int) throws android.os.RemoteException;
+    descriptor: (Landroid/view/ISystemGestureExclusionListener;I)V
+
+  public abstract void unregisterSystemGestureExclusionListener(android.view.ISystemGestureExclusionListener, int) throws android.os.RemoteException;
+    descriptor: (Landroid/view/ISystemGestureExclusionListener;I)V
+
+  public abstract boolean requestAssistScreenshot(android.app.IAssistDataReceiver) throws android.os.RemoteException;
+    descriptor: (Landroid/app/IAssistDataReceiver;)Z
+
+  public abstract void hideTransientBars(int) throws android.os.RemoteException;
+    descriptor: (I)V
+
+  public abstract void setRecentsVisibility(boolean) throws android.os.RemoteException;
+    descriptor: (Z)V
+
+  public abstract void updateStaticPrivacyIndicatorBounds(int, android.graphics.Rect[]) throws android.os.RemoteException;
+    descriptor: (I[Landroid/graphics/Rect;)V
+
+  public abstract void setNavBarVirtualKeyHapticFeedbackEnabled(boolean) throws android.os.RemoteException;
+    descriptor: (Z)V
+
+  public abstract boolean hasNavigationBar(int) throws android.os.RemoteException;
+    descriptor: (I)Z
+
+  public abstract int getNavBarPosition(int) throws android.os.RemoteException;
+    descriptor: (I)I
+
+  public abstract void lockNow(android.os.Bundle) throws android.os.RemoteException;
+    descriptor: (Landroid/os/Bundle;)V
+
+  public abstract boolean isSafeModeEnabled() throws android.os.RemoteException;
+    descriptor: ()Z
+
+  public abstract void enableScreenIfNeeded() throws android.os.RemoteException;
+    descriptor: ()V
+
+  public abstract boolean clearWindowContentFrameStats(android.os.IBinder) throws android.os.RemoteException;
+    descriptor: (Landroid/os/IBinder;)Z
+
+  public abstract android.view.WindowContentFrameStats getWindowContentFrameStats(android.os.IBinder) throws android.os.RemoteException;
+    descriptor: (Landroid/os/IBinder;)Landroid/view/WindowContentFrameStats;
+
+  public abstract int getDockedStackSide() throws android.os.RemoteException;
+    descriptor: ()I
+
+  public abstract void setDockedTaskDividerTouchRegion(android.graphics.Rect) throws android.os.RemoteException;
+    descriptor: (Landroid/graphics/Rect;)V
+
+  public abstract void registerPinnedTaskListener(int, android.view.IPinnedTaskListener) throws android.os.RemoteException;
+    descriptor: (ILandroid/view/IPinnedTaskListener;)V
+
+  public abstract void requestAppKeyboardShortcuts(com.android.internal.os.IResultReceiver, int) throws android.os.RemoteException;
+    descriptor: (Lcom/android/internal/os/IResultReceiver;I)V
+
+  public abstract void getStableInsets(int, android.graphics.Rect) throws android.os.RemoteException;
+    descriptor: (ILandroid/graphics/Rect;)V
+
+  public abstract void registerShortcutKey(long, com.android.internal.policy.IShortcutService) throws android.os.RemoteException;
+    descriptor: (JLcom/android/internal/policy/IShortcutService;)V
+
+  public abstract void createInputConsumer(android.os.IBinder, java.lang.String, int, android.view.InputChannel) throws android.os.RemoteException;
+    descriptor: (Landroid/os/IBinder;Ljava/lang/String;ILandroid/view/InputChannel;)V
+
+  public abstract boolean destroyInputConsumer(java.lang.String, int) throws android.os.RemoteException;
+    descriptor: (Ljava/lang/String;I)Z
+
+  public abstract android.graphics.Region getCurrentImeTouchRegion() throws android.os.RemoteException;
+    descriptor: ()Landroid/graphics/Region;
+
+  public abstract void registerDisplayFoldListener(android.view.IDisplayFoldListener) throws android.os.RemoteException;
+    descriptor: (Landroid/view/IDisplayFoldListener;)V
+
+  public abstract void unregisterDisplayFoldListener(android.view.IDisplayFoldListener) throws android.os.RemoteException;
+    descriptor: (Landroid/view/IDisplayFoldListener;)V
+
+  public abstract int[] registerDisplayWindowListener(android.view.IDisplayWindowListener) throws android.os.RemoteException;
+    descriptor: (Landroid/view/IDisplayWindowListener;)[I
+
+  public abstract void unregisterDisplayWindowListener(android.view.IDisplayWindowListener) throws android.os.RemoteException;
+    descriptor: (Landroid/view/IDisplayWindowListener;)V
+
+  public abstract void startWindowTrace() throws android.os.RemoteException;
+    descriptor: ()V
+
+  public abstract void stopWindowTrace() throws android.os.RemoteException;
+    descriptor: ()V
+
+  public abstract void saveWindowTraceToFile() throws android.os.RemoteException;
+    descriptor: ()V
+
+  public abstract boolean isWindowTraceEnabled() throws android.os.RemoteException;
+    descriptor: ()Z
+
+  public abstract int getWindowingMode(int) throws android.os.RemoteException;
+    descriptor: (I)I
+
+  public abstract void setWindowingMode(int, int) throws android.os.RemoteException;
+    descriptor: (II)V
+
+  public abstract int getRemoveContentMode(int) throws android.os.RemoteException;
+    descriptor: (I)I
+
+  public abstract void setRemoveContentMode(int, int) throws android.os.RemoteException;
+    descriptor: (II)V
+
+  public abstract boolean shouldShowWithInsecureKeyguard(int) throws android.os.RemoteException;
+    descriptor: (I)Z
+
+  public abstract void setShouldShowWithInsecureKeyguard(int, boolean) throws android.os.RemoteException;
+    descriptor: (IZ)V
+
+  public abstract boolean shouldShowSystemDecors(int) throws android.os.RemoteException;
+    descriptor: (I)Z
+
+  public abstract void setShouldShowSystemDecors(int, boolean) throws android.os.RemoteException;
+    descriptor: (IZ)V
+
+  public abstract int getDisplayImePolicy(int) throws android.os.RemoteException;
+    descriptor: (I)I
+
+  public abstract void setDisplayImePolicy(int, int) throws android.os.RemoteException;
+    descriptor: (II)V
+
+  public abstract void syncInputTransactions(boolean) throws android.os.RemoteException;
+    descriptor: (Z)V
+
+  public abstract boolean isLayerTracing() throws android.os.RemoteException;
+    descriptor: ()Z
+
+  public abstract void setLayerTracing(boolean) throws android.os.RemoteException;
+    descriptor: (Z)V
+
+  public abstract boolean mirrorDisplay(int, android.view.SurfaceControl) throws android.os.RemoteException;
+    descriptor: (ILandroid/view/SurfaceControl;)Z
+
+  public abstract void setDisplayWindowInsetsController(int, android.view.IDisplayWindowInsetsController) throws android.os.RemoteException;
+    descriptor: (ILandroid/view/IDisplayWindowInsetsController;)V
+
+  public abstract void updateDisplayWindowRequestedVisibilities(int, android.view.InsetsVisibilities) throws android.os.RemoteException;
+    descriptor: (ILandroid/view/InsetsVisibilities;)V
+
+  public abstract boolean getWindowInsets(android.view.WindowManager$LayoutParams, int, android.view.InsetsState) throws android.os.RemoteException;
+    descriptor: (Landroid/view/WindowManager$LayoutParams;ILandroid/view/InsetsState;)Z
+
+  public abstract java.util.List<android.view.DisplayInfo> getPossibleDisplayInfo(int, java.lang.String) throws android.os.RemoteException;
+    descriptor: (ILjava/lang/String;)Ljava/util/List;
+
+  public abstract void showGlobalActions() throws android.os.RemoteException;
+    descriptor: ()V
+
+  public abstract void setLayerTracingFlags(int) throws android.os.RemoteException;
+    descriptor: (I)V
+
+  public abstract void requestScrollCapture(int, android.os.IBinder, int, android.view.IScrollCaptureResponseListener) throws android.os.RemoteException;
+    descriptor: (ILandroid/os/IBinder;ILandroid/view/IScrollCaptureResponseListener;)V
+
+  public abstract void holdLock(android.os.IBinder, int) throws android.os.RemoteException;
+    descriptor: (Landroid/os/IBinder;I)V
+
+  public abstract java.lang.String[] getSupportedDisplayHashAlgorithms() throws android.os.RemoteException;
+    descriptor: ()[Ljava/lang/String;
+
+  public abstract android.view.displayhash.VerifiedDisplayHash verifyDisplayHash(android.view.displayhash.DisplayHash) throws android.os.RemoteException;
+    descriptor: (Landroid/view/displayhash/DisplayHash;)Landroid/view/displayhash/VerifiedDisplayHash;
+
+  public abstract void setDisplayHashThrottlingEnabled(boolean) throws android.os.RemoteException;
+    descriptor: (Z)V
+
+  public abstract android.content.res.Configuration attachWindowContextToDisplayArea(android.os.IBinder, int, int, android.os.Bundle) throws android.os.RemoteException;
+    descriptor: (Landroid/os/IBinder;IILandroid/os/Bundle;)Landroid/content/res/Configuration;
+
+  public abstract void attachWindowContextToWindowToken(android.os.IBinder, android.os.IBinder) throws android.os.RemoteException;
+    descriptor: (Landroid/os/IBinder;Landroid/os/IBinder;)V
+
+  public abstract android.content.res.Configuration attachToDisplayContent(android.os.IBinder, int) throws android.os.RemoteException;
+    descriptor: (Landroid/os/IBinder;I)Landroid/content/res/Configuration;
+
+  public abstract void detachWindowContextFromWindowContainer(android.os.IBinder) throws android.os.RemoteException;
+    descriptor: (Landroid/os/IBinder;)V
+
+  public abstract boolean registerCrossWindowBlurEnabledListener(android.view.ICrossWindowBlurEnabledListener) throws android.os.RemoteException;
+    descriptor: (Landroid/view/ICrossWindowBlurEnabledListener;)Z
+
+  public abstract void unregisterCrossWindowBlurEnabledListener(android.view.ICrossWindowBlurEnabledListener) throws android.os.RemoteException;
+    descriptor: (Landroid/view/ICrossWindowBlurEnabledListener;)V
+
+  public abstract boolean isTaskSnapshotSupported() throws android.os.RemoteException;
+    descriptor: ()Z
+
+  public abstract int getImeDisplayId() throws android.os.RemoteException;
+    descriptor: ()I
+
+  public abstract void setTaskSnapshotEnabled(boolean) throws android.os.RemoteException;
+    descriptor: (Z)V
+
+  public abstract void setTaskTransitionSpec(android.view.TaskTransitionSpec) throws android.os.RemoteException;
+    descriptor: (Landroid/view/TaskTransitionSpec;)V
+
+  public abstract void clearTaskTransitionSpec() throws android.os.RemoteException;
+    descriptor: ()V
+
+  public abstract void registerTaskFpsCallback(int, android.window.ITaskFpsCallback) throws android.os.RemoteException;
+    descriptor: (ILandroid/window/ITaskFpsCallback;)V
+
+  public abstract void unregisterTaskFpsCallback(android.window.ITaskFpsCallback) throws android.os.RemoteException;
+    descriptor: (Landroid/window/ITaskFpsCallback;)V
+
+  public abstract android.graphics.Bitmap snapshotTaskForRecents(int) throws android.os.RemoteException;
+    descriptor: (I)Landroid/graphics/Bitmap;
+
+  public abstract void setRecentsAppBehindSystemBars(boolean) throws android.os.RemoteException;
+    descriptor: (Z)V
+}
