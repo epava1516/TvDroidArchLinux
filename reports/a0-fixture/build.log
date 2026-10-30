@@ -1,0 +1,19 @@
+Generating 2,048 bit RSA key pair and self-signed certificate (SHA256withRSA) with a validity of 3,650 days
+	for: CN=ArchTV APK Fixture
+jar signed.
+
+Warning: 
+The signer's certificate is self-signed.
+POSIX file permission and/or symlink attributes detected. These attributes are ignored when signing and are not protected by the signature.
+
+jar verified.
+
+Warning: 
+This jar contains entries whose certificate chain is invalid. Reason: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+This jar contains entries whose signer certificate is self-signed.
+This jar contains signatures that do not include a timestamp. Without a timestamp, users may not be able to validate this jar after any of the signer certificates expire (as early as 2036-10-27).
+POSIX file permission and/or symlink attributes detected. These attributes are ignored when signing and are not protected by the signature.
+
+Re-run with the -verbose and -certs options for more details.
+{"dex_files": 1, "platform_classes": 17, "native_libraries": 0}
+/home/tv/repositorio-principal/dist/apk/counter-v1/counter.apk

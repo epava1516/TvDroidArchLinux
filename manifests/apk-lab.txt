@@ -1,0 +1,2 @@
+# APK fixture compilation only; not a dependency of the Linux TV runtime.
+jdk17-openjdk

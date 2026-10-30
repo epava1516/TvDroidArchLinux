@@ -1,0 +1,8 @@
+Built owned org.archtv.probe APK with pinned AAPT2, D8 and API 28 reference classes; min API 21, target API 28.
+AAPT2 badging confirmed the package and launcher Activity.
+One DEX, 3 owned classes, 17 external platform descriptors, no native libraries.
+JAR v1 test signing verified with jarsigner; self-signed test certificate, no production trust or APK v2/v3 validation claim.
+Two unsigned builds compared byte-for-byte equal with the same toolchain on this VM.
+No APK executed on Linux or Android. Lifecycle, UI, storage and compatibility acceptance remain pending.
+Unsigned SHA-256: fd90b6b431604bf3b0af5c42a108c7cc152f7a10f67d7df8da45e7cb944ed943
+Signed golden APK SHA-256: f07c9b92ab3353237276081c22e11ce06168b8c9f71a99ea32968b2ce0f00e28

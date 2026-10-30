@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Arch TV · APK probe</string>
+    <string name="counter">Contador:</string>
+    <string name="increment">Incrementar</string>
+</resources>

@@ -1,0 +1,43 @@
+{
+  "source_sha256": {
+    "AndroidManifest.xml": "c7c20225ba8395d254e275f21d95ccb1ecdcde4d1732a153e4bc47c8af9bea39",
+    "res/values/strings.xml": "9efa83d9566e22b3655fff4962073d189215a8896bcc8c1c225e9472b4261ffd",
+    "src/org/archtv/probe/MainActivity.java": "e3dd90a20d75ba98136c13866a255f637b59d1b1fffe0945e7407dc13fd8e86f",
+    "toolchain.json": "a19f206870e002829043cc56ea531dc70acb87161c43bf90c3b6f0fa8f8e1ede"
+  },
+  "toolchain": {
+    "schema": 1,
+    "aapt2": "8.6.1-11315950",
+    "d8": "8.3.37",
+    "android_api": 28,
+    "android_sdk_source_commit": "3af7c93524be6f51e092b87b17f009f13ee98b43",
+    "artifacts": [
+      {
+        "file": "aapt2.jar",
+        "url": "https://dl.google.com/dl/android/maven2/com/android/tools/build/aapt2/8.6.1-11315950/aapt2-8.6.1-11315950-linux.jar",
+        "base64": false,
+        "sha256": "955f14e61cac2e1d70a4703b1aa539ca4f348469ac64a155dcce47bda3de52c8",
+        "bytes": 2174058
+      },
+      {
+        "file": "r8.jar",
+        "url": "https://dl.google.com/dl/android/maven2/com/android/tools/r8/8.3.37/r8-8.3.37.jar",
+        "base64": false,
+        "sha256": "59753e70a74f918389cc87f1b7d66b5c0862932559167425708ded159e3de439",
+        "bytes": 16628796
+      },
+      {
+        "file": "android.jar",
+        "url": "https://android.googlesource.com/platform/prebuilts/sdk/+/3af7c93524be6f51e092b87b17f009f13ee98b43/28/public/android.jar?format=TEXT",
+        "base64": true,
+        "sha256": "d20853d289a5161d9cf1c1268d7923076487d4fa68c970b0733e2d5a0ccfc3c5",
+        "bytes": 46784255
+      }
+    ]
+  },
+  "apk_sha256": {
+    "counter.apk": "f07c9b92ab3353237276081c22e11ce06168b8c9f71a99ea32968b2ce0f00e28",
+    "counter-unsigned.apk": "fd90b6b431604bf3b0af5c42a108c7cc152f7a10f67d7df8da45e7cb944ed943"
+  },
+  "scope": "Build, static inventory and JAR v1 test signing only. No APK runtime execution; no APK v2/v3 verifier or binary reproducibility claim."
+}

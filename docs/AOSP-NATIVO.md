@@ -56,3 +56,11 @@ un problema de estabilidad documentado en INCIDENTE-VM-20261030.md.
 El contrato y adaptador Waydroid anteriores no se presentan como esta capa.
 Se conserva el trabajo publicado como referencia histórica; su ampliación se ha
 detenido. La aceptación de A no exige boot Android ni sys.boot_completed.
+
+## APK propia preparada
+
+La fixture fixtures/apk/counter ya está compilada y dispone de manifiesto, recursos,
+fuentes y hashes. Su Activity contiene texto, botón y contador en preferencias.
+No incorpora clases de framework Android ni bibliotecas JNI en el paquete.
+La construcción no usó Android ni Waydroid. La ejecución DEX sobre Linux y el
+puente de UI siguen pendientes. Ver reports/a0-fixture/ y el README de la fixture.

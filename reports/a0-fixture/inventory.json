@@ -1,0 +1,43 @@
+{
+  "apk": "counter.apk",
+  "sha256": "f07c9b92ab3353237276081c22e11ce06168b8c9f71a99ea32968b2ce0f00e28",
+  "has_manifest": true,
+  "dex_files": [
+    {
+      "file": "classes.dex",
+      "bytes": 3052
+    }
+  ],
+  "defined_class_count": 3,
+  "platform_class_references": [
+    "Landroid/app/Activity;",
+    "Landroid/content/Context;",
+    "Landroid/content/SharedPreferences$Editor;",
+    "Landroid/content/SharedPreferences;",
+    "Landroid/os/Bundle;",
+    "Landroid/view/View$OnClickListener;",
+    "Landroid/view/View;",
+    "Landroid/widget/Button;",
+    "Landroid/widget/LinearLayout;",
+    "Landroid/widget/TextView;",
+    "Ldalvik/annotation/EnclosingClass;",
+    "Ldalvik/annotation/InnerClass;",
+    "Ldalvik/annotation/MemberClasses;",
+    "Ljava/lang/CharSequence;",
+    "Ljava/lang/Object;",
+    "Ljava/lang/String;",
+    "Ljava/lang/StringBuilder;"
+  ],
+  "platform_method_reference_counts": {
+    "Landroid/app/Activity;": 2,
+    "Landroid/content/SharedPreferences$Editor;": 2,
+    "Landroid/content/SharedPreferences;": 2,
+    "Landroid/widget/Button;": 4,
+    "Landroid/widget/LinearLayout;": 4,
+    "Landroid/widget/TextView;": 3,
+    "Ljava/lang/Object;": 1,
+    "Ljava/lang/StringBuilder;": 4
+  },
+  "native_libraries": [],
+  "scope": "Static DEX type/method-owner references, subtracting classes defined across all DEX. Not reachability, API completeness, reflection/JNI resolution, signature validation or execution. Manifest/resources and ELF dependencies are not decoded. Descriptors outside ASCII are escaped; DEX 041 unsupported."
+}
