@@ -1,0 +1,6 @@
+==> Making package: archtv 0.1.0.r12.ge76e4df6521a-1 (Fri Oct 30 02:54:15 2026)
+==> Retrieving sources...
+  -> Found archtv-0.1.0.r12.ge76e4df6521a.tar.gz
+==> Validating source files with sha256sums...
+    archtv-0.1.0.r12.ge76e4df6521a.tar.gz ... Passed
+Fuentes y receta verificadas: /home/tv/repositorio-principal/dist/packages/0.1.0.r12.ge76e4df6521a
