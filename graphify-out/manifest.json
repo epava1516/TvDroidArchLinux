@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793385428.905832,
-    "seen": 1793385471.4362423,
-    "ast_hash": "936d475d312f8f339815481f3431eefe",
+    "mtime": 1793387437.8525379,
+    "seen": 1793387446.4191933,
+    "ast_hash": "2f6f2b4833eda6e2beb736f7d5014ab6",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -1428,9 +1428,9 @@
     "semantic_hash": ""
   },
   "docs/AOSP-RENDERNODE-NATIVO.md": {
-    "mtime": 1793386686.688373,
-    "seen": 1793386696.0966847,
-    "ast_hash": "9ec1f7ee85aadb4166411f8c0f30adea",
+    "mtime": 1793387437.6992025,
+    "seen": 1793387446.4172864,
+    "ast_hash": "e877e1cd4cf8ed5ced2f8157b4721b6f",
     "semantic_hash": ""
   },
   "tools/apk/probe_hwui_host.py": {
@@ -1494,9 +1494,9 @@
     "semantic_hash": ""
   },
   "docs/AOSP-SKIA-HOST.md": {
-    "mtime": 1793385462.9058523,
-    "seen": 1793385471.4346075,
-    "ast_hash": "0de3db5379354d61b3633bcf16aa5f45",
+    "mtime": 1793387437.5492008,
+    "seen": 1793387446.4174378,
+    "ast_hash": "a7cb3e34134bb56e5277fc7487cd5773",
     "semantic_hash": ""
   },
   "fixtures/aosp-native-interpolators/NativeInterpolatorsProbe.java": {

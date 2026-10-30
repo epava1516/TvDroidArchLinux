@@ -136,3 +136,8 @@ AOSP-RENDERNODE-JNI.md registra la comprobación de las 88 firmas Java/C++
 originales y un perfil generado de 16 entradas, con catorce adaptaciones
 CriticalNative. Pasa sintaxis contra las funciones originales, pero todavía no
 se enlaza ni ejecuta. La construcción de Skia sigue siendo una dependencia.
+
+La construcción posterior de Skia host CPU ya termina y su ejecutable nativo
+supera dibujo/recorte/traslación y lectura exacta de 3072 píxeles. Ver
+AOSP-SKIA-HOST.md y reports/aosp-skia-raster/. Esto permite continuar el enlace
+HWUI; todavía no ejecuta RenderNode ni Canvas Java en ART.

@@ -1,0 +1,13 @@
+{
+  "original_skia_raster_pass": true,
+  "art_pass": false,
+  "wayland_pass": false,
+  "scope": "CPU raster clear/rect/clip/translate and exact 3072-pixel RGBA readback",
+  "source_sha256": "78bf97a0abaac409a2a66671768deee739ab3f21170fca4128d148c00d55461b",
+  "verifier_sha256": "5310ba5055a0d8954797b82c741ec6414193fa0f1c950bd7ff5eedebbb3ac408",
+  "build_provenance_sha256": "373254b792c811635f4fe32671cda551f660f5be9d4c51feda69f921f015851a",
+  "native_provenance_sha256": "e809cecd83963fe65125e29ad2ccbd98a71f3f54b0f494eb9f1e3c6ab5d1be1d",
+  "libcxx_sha256": "1f1a3c91139d4e6e87b14886d4b6ff035ea7c37162f3f0cc3d692702785ea8fa",
+  "executable_sha256": "d3a52ce7c78f37ebad34db2345057e62d5917ed91fc2df8a0d53e5d481bc9752",
+  "raster_sha256": "b4c6f3ad291b42234a23e709c12d92648509396dda8bf06a1417f4a75b2e8496"
+}

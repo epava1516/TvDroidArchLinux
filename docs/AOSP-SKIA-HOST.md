@@ -1,8 +1,9 @@
 # Skia original para HWUI host
 
-El enlace de RenderNode necesita Skia y el resto de HWUI. Este avance prepara la
-construcción del Skia original fijado en `hwui-sources.json`; todavía no acredita
-una biblioteca Skia completa, ejecución gráfica en ART ni presentación Wayland.
+La variante host CPU del Skia original fijado en `hwui-sources.json` ya compila
+y supera una prueba de dibujo y lectura exacta de píxeles. Es una dependencia
+para enlazar HWUI/RenderNode; su ejecución gráfica en ART y presentación Wayland
+siguen pendientes.
 
 ## Fuentes y herramientas
 
@@ -18,7 +19,7 @@ libc/include completo en las rutas de búsqueda de una construcción glibc.
 
 Se instaló Ninja 1.13.2-3 con pacman. El constructor registra versiones de Clang,
 Ninja y paquetes de códecs/fuentes del anfitrión. Las interfaces C de estos
-últimos se enlazarán con bibliotecas Linux; esto no acredita una construcción
+últimos se enlazan con bibliotecas Linux; esto no acredita una construcción
 hermética ni sustituye la futura revisión de licencias y empaquetado.
 
 ```sh
@@ -66,24 +67,49 @@ python tools/apk/verify_skcms_compat.py --output dist/apk/skcms-compat-check
 
 `reports/aosp-skia-host/` conserva el fallo original, las pruebas numéricas, la
 descarga GN desde una caché nueva y rechazos de binario modificado y de
-reanudación con distinta configuración. La compilación con la adaptación debe
-completar todavía sus 645 tareas antes de acreditar un Skia host construido.
+reanudación con distinta configuración. Esas pruebas previas no acreditaban aún
+una construcción Skia terminada; el resultado posterior se registra abajo.
 
-Después se necesita una prueba real de Canvas y lectura de píxeles, el enlace de
-HWUI y la adaptación CriticalNative descrita en AOSP-RENDERNODE-NATIVO.md. Ninguna
-de esas fases queda superada por la comprobación numérica del intrinsic.
+La comprobación numérica del intrinsic por sí sola no acredita Canvas ni HWUI.
+El resultado posterior de Canvas se describe abajo; el enlace HWUI y la
+integración CriticalNative de RenderNode siguen pendientes.
 
 El intento con la adaptación F16C superó ese error y se detuvo después en
 SkATrace.cpp: cutils/trace.h introducía macros atómicas C de Clang antes de
 `<atomic>` del libc++ original de ART. La cabecera stdatomic.h original de Bionic
 usa la implementación C++ `<atomic>` y exporta sus nombres. Con esa cabecera
 intacta, SkATrace.cpp ya compila como objeto. El constructor registra su hash y
-la aplica solo a C++; los archivos C conservan stdatomic del anfitrión. El nuevo
-perfil completo se está compilando en skia-host-6 y sigue sin resultado exitoso
-acreditado. Ver reports/aosp-skia-host/atomic-headers/.
+la aplica solo a C++; los archivos C conservan stdatomic del anfitrión. Con este
+perfil, skia-host-6 termina sus 645 tareas y genera libskia.a, libdng_sdk.a,
+libpiex.a y libwuffs.a. Ver reports/aosp-skia-host/atomic-headers/ y el resultado
+terminal en reports/aosp-skia-raster/build/.
 
-Se prepararon `skia-raster-probe.cpp` y `verify_skia_raster.py` para ese siguiente
-paso: dibujan rectángulos con recorte y traslación y comprueban 3072 píxeles y su
-lectura RGBA. La fuente C++ supera sintaxis, pero la prueba no se ha enlazado ni
-ejecutado todavía. El verificador exige un resultado Skia exitoso y archivos
-estáticos con hashes coincidentes antes de intentar el enlace.
+## Dibujo nativo verificado
+
+`skia-raster-probe.cpp` y `verify_skia_raster.py` ya enlazan y ejecutan las
+bibliotecas construidas. El verificador exige un resultado Skia exitoso y
+archivos estáticos con hashes coincidentes antes del enlace, y comprueba el
+libc++ de ART contra el de los archivos androidfw usados como apoyo.
+
+```sh
+python tools/apk/verify_skia_raster.py \
+  --skia-build dist/apk/skia-host-6 \
+  --sources /home/tv/.cache/archtv/hwui-port \
+  --androidfw-build dist/apk/androidfw-clang-1 \
+  --androidfw-sources /home/tv/.cache/archtv/androidfw-port \
+  --art /home/tv/.cache/archtv/art-host/host/art-13.0.0 \
+  --output dist/apk/skia-raster-check
+```
+
+La prueba utiliza SkSurface y SkCanvas originales, limpia el fondo, dibuja un
+rectángulo rojo y otro azul con recorte y traslación, y comprueba los 3072
+píxeles por peekPixels/getColor y por readPixels RGBA. Coinciden ambas rutas.
+El archivo PPM resultante contiene 2304 píxeles de fondo, 732 rojos y 36 azules,
+comprobados también desde Python. No hay fuentes ni texto en esta prueba.
+
+`reports/aosp-skia-raster/` conserva configuración, logs, hashes, comandos,
+resultado terminal y PPM. Las fuentes originales se verificaron de nuevo tras
+terminar la construcción. Los archivos ar son completos, no referencias a
+objetos externos. El dibujo es un ejecutable C++ fuera de ART: no acredita
+Canvas Java, View, RenderNode, GPU, ventanas Wayland ni las metas de rendimiento
+o estabilidad de la distribución.

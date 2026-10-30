@@ -238,3 +238,9 @@ Java/C++ de dos curvas. AOSP-INTERPOLADORES-NATIVOS.md y su informe registran
 esta prueba separada. El bootstrap del runtime APK, CriticalNative de RenderNode,
 el reloj de frames y dibujo siguen pendientes. La construcción Skia continúa;
 no se acredita A3 completo ni estabilidad general con estos ciclos de prueba.
+
+Skia host CPU original ya completa su construcción y ejecuta Canvas nativo con
+3072 píxeles comprobados mediante dos lecturas y salida PPM. El informe
+aosp-skia-raster conserva archivos, hashes y verificación posterior de fuentes.
+Esta prueba C++ no carga Canvas Java/RenderNode en ART ni presenta una ventana;
+continúan pendientes el enlace HWUI, integración APK, GPU y las puertas A3–A5.
