@@ -70,6 +70,22 @@ Las preferencias del usuario permanecen en XDG_CONFIG_HOME/archtv/settings.json;
 el paquete no instala ni elimina ese archivo. El fondo original se compila como
 recurso del shell, y las fuentes tipográficas se obtienen del paquete del sistema.
 
+## Preferencias y recuperación entre versiones
+
+El esquema actual de settings.json es versión 1. Los campos ausentes reciben los
+valores predeterminados del esquema; no existe todavía un esquema anterior que
+requiera transformación. Las actualizaciones que mantengan versión 1 conservan
+favoritos, ocultos, recientes y movimiento reducido. Los archivos demasiado
+grandes se conservan, y los datos corruptos se copian antes de sustituirlos.
+
+Al volver a un binario anterior, una versión de esquema explícita distinta de 1
+impide guardar sobre el archivo original. El shell puede usar valores temporales
+pero conserva los bytes del archivo para que la versión compatible los recupere.
+No se convierte silenciosamente un formato futuro. Una migración futura deberá
+implementar y probar su transformación y recuperación antes de cambiar la versión.
+Esta protección tiene una prueba Rust con dos formatos posteriores; la prueba de
+actualización de paquetes en una máquina limpia sigue pendiente.
+
 ## Puertas pendientes
 
 1. Compilar en un entorno Arch limpio, registrar toolchain, dependencias reales,

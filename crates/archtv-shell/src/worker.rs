@@ -292,6 +292,10 @@ fn load_settings(path: &Path) -> (Settings, String) {
                     }
                     (settings, "Aplicaciones listas".into())
                 }
+                Ok(_) => (
+                    Settings::default(),
+                    "Versión de configuración no compatible; se conserva sin cambios".into(),
+                ),
                 _ => {
                     let backup = path.with_extension(format!(
                         "invalid-{}",
@@ -335,6 +339,13 @@ fn save_settings(path: &Path, settings: &Settings) -> Result<(), String> {
             return Err("configuración demasiado grande; se conserva sin cambios".into());
         }
         let current = std::fs::read(path).map_err(|error| error.to_string())?;
+        if serde_json::from_slice::<serde_json::Value>(&current)
+            .ok()
+            .and_then(|value| value.get("version").cloned())
+            .is_some_and(|version| version.as_u64() != Some(1))
+        {
+            return Err("versión de configuración no compatible; se conserva sin cambios".into());
+        }
         if !serde_json::from_slice::<Settings>(&current).is_ok_and(|old| old.version == 1) {
             let backup = path.with_extension(format!(
                 "invalid-{}",
@@ -595,6 +606,24 @@ mod tests {
             android_status_label("Session: FROZEN", None),
             "Sesión Android suspendida"
         );
+    }
+    #[test]
+    fn downgrade_does_not_overwrite_newer_settings() {
+        let dir =
+            std::env::temp_dir().join(format!("archtv-future-settings-{}", std::process::id()));
+        std::fs::create_dir_all(&dir).unwrap();
+        let path = dir.join("settings.json");
+        // New schema can change known field types as well as add new fields.
+        for bytes in [
+            br#"{"version":2,"favorites":["keep.desktop"],"future_option":true}"#.as_slice(),
+            br#"{"version":2,"favorites":{"keep.desktop":true}}"#.as_slice(),
+        ] {
+            std::fs::write(&path, bytes).unwrap();
+            let (settings, _) = load_settings(&path);
+            assert!(save_settings(&path, &settings).is_err());
+            assert_eq!(std::fs::read(&path).unwrap(), bytes);
+        }
+        std::fs::remove_dir_all(dir).unwrap();
     }
     #[test]
     fn settings_roundtrip_and_corruption_backup_preserve_user_state() {

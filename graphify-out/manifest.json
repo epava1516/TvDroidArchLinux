@@ -121,9 +121,9 @@
     "semantic_hash": ""
   },
   "crates/archtv-shell/src/worker.rs": {
-    "mtime": 1793324435.861671,
-    "seen": 1793324896.6615484,
-    "ast_hash": "e4921fab25d61a4c2dd99f484dbc6b4e",
+    "mtime": 1793344912.4249034,
+    "seen": 1793344993.3953216,
+    "ast_hash": "8c9f2b7c39d7ff42f1abca8a1a3c60ef",
     "semantic_hash": ""
   },
   "crates/archtv-test-client/Cargo.toml": {
@@ -283,9 +283,9 @@
     "semantic_hash": ""
   },
   "ROADMAP.md": {
-    "mtime": 1793328222.6465106,
-    "seen": 1793328235.619012,
-    "ast_hash": "93244aeff57fc7a5507bf9ee1e483ffd",
+    "mtime": 1793344985.450933,
+    "seen": 1793344993.3954978,
+    "ast_hash": "31c8328556f2e9931fdc509bd993af20",
     "semantic_hash": ""
   },
   "THIRD_PARTY.md": {
@@ -559,9 +559,9 @@
     "semantic_hash": ""
   },
   "docs/PAQUETES.md": {
-    "mtime": 1793344792.0733495,
-    "seen": 1793344812.1844773,
-    "ast_hash": "54e114d4053dbe7480263183438db721",
+    "mtime": 1793344936.6075163,
+    "seen": 1793344993.3955464,
+    "ast_hash": "8d58e5753f2bbbfb1a47b2ec37683605",
     "semantic_hash": ""
   },
   "packaging/arch/cargo-license-inventory.py": {
