@@ -583,9 +583,9 @@
     "semantic_hash": ""
   },
   "manifests/distribution-lab.txt": {
-    "mtime": 1793346512.6215994,
-    "seen": 1793346521.001268,
-    "ast_hash": "00e9c3843a7a717168d949264a86b76e",
+    "mtime": 1793347129.153345,
+    "seen": 1793347158.2941809,
+    "ast_hash": "9c0bd1b9dcf51b36121923cf56409086",
     "semantic_hash": ""
   },
   "packaging/arch/local-repository.py": {
@@ -595,15 +595,15 @@
     "semantic_hash": ""
   },
   "packaging/iso/prepare-profile.py": {
-    "mtime": 1793346842.4014025,
-    "seen": 1793346897.5390298,
-    "ast_hash": "bd019bd47dc6d96093bb48c3cee0a7fd",
+    "mtime": 1793347224.5159795,
+    "seen": 1793347235.373089,
+    "ast_hash": "b73445b1d69f2b5164fa6b81ad4b0186",
     "semantic_hash": ""
   },
   "docs/DISTRIBUCION.md": {
-    "mtime": 1793346888.4410233,
-    "seen": 1793346897.5391884,
-    "ast_hash": "5d5e07907e7ca54a48c19992e3a91ea2",
+    "mtime": 1793347224.5169213,
+    "seen": 1793347235.3734312,
+    "ast_hash": "8a32c1e6432a2d3fadee08cbd2a5431e",
     "semantic_hash": ""
   }
 }

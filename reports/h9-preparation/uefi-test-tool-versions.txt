@@ -1,0 +1,2 @@
+qemu-system-x86 11.1.2-1
+edk2-ovmf 202608-1

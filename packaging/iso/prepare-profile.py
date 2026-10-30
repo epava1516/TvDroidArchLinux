@@ -34,7 +34,7 @@ install_dir="arch"
 bootmodes=('uefi.systemd-boot')
 pacman_conf="pacman.conf"
 airootfs_image_type="squashfs"
-airootfs_image_tool_options=('-comp' 'zstd' '-Xcompression-level' '6')
+airootfs_image_tool_options=('-comp' 'zstd' '-Xcompression-level' '6' '-processors' '1')
 file_permissions=(["/etc/shadow"]="0:0:400")
 ''')
 packages = '''base linux-lts mkinitcpio mkinitcpio-archiso arch-install-scripts dosfstools e2fsprogs efibootmgr gptfdisk networkmanager pipewire pipewire-alsa pipewire-pulse wireplumber sudo foot waydroid'''.split()
@@ -52,7 +52,7 @@ options archisobasedir=%INSTALL_DIR% archisosearchuuid=%ARCHISO_UUID%
     'airootfs/etc/hostname': 'archtv-live\n',
     'airootfs/etc/locale.conf': 'LANG=C.UTF-8\n',
     'airootfs/etc/shadow': 'root::14871::::::\n',
-    'airootfs/etc/mkinitcpio.conf.d/archiso.conf': '''HOOKS=(base udev microcode modconf kms memdisk archiso archiso_loop_mnt block filesystems keyboard)
+    'airootfs/etc/mkinitcpio.conf.d/archiso.conf': '''HOOKS=(base udev microcode modconf kms archiso archiso_loop_mnt block filesystems keyboard)
 COMPRESSION="zstd"
 ''',
     'airootfs/etc/motd': '''Arch TV laboratory. Local root console, no password; no SSH server enabled.

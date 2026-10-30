@@ -1,3 +1,6 @@
 # Solo laboratorio de paquetes H8 e imagen H9; no dependencias del producto.
 devtools
 archiso
+# Prueba UEFI emulada; no se incluyen en la imagen de ejecución.
+qemu-system-x86
+edk2-ovmf

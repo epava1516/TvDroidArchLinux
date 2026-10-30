@@ -35,3 +35,17 @@ Antes de publicar faltan el cierre de licencias, firma de paquetes, política de
 snapshots/actualización, validación del instalador y recuperación, y las pruebas
 completas H6–H9. Las imágenes Android se descargarán de forma explícita en una fase
 posterior; este perfil no incorpora imágenes ni datos de la VM de desarrollo.
+
+## Primera construcción en curso y corrección detectada
+
+Archiso aceptó las opciones UEFI y comenzó a construir el perfil. mkinitcpio
+detectó memdiskfind ausente al ejecutar el hook memdisk; pese a ello, Archiso
+continuó hasta comprimir el sistema. Esta candidata no queda validada por un
+código de salida global cero: contiene un aviso de initramfs potencialmente
+incompleto y no se usará como prueba de arranque. El generador corregido retira
+memdisk, porque el perfil UEFI no utiliza arranque BIOS por MEMDISK. La siguiente
+construcción deberá confirmar que desaparece el error. SquashFS queda limitado
+a un procesador para compartir la VM con la compilación de paquetes.
+
+QEMU x86 y OVMF se instalaron como herramientas de laboratorio. Esta VM no expone
+/dev/kvm; una prueba anidada usará emulación y no acreditará rendimiento H7.
