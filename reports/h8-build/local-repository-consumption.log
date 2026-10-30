@@ -1,0 +1,6 @@
+Note: in a future version of systemd-nspawn the default set of permitted socket address families will be restricted to AF_INET, AF_INET6 and AF_UNIX. Use --restrict-address-families= to configure the set of permitted socket address families, or set RestrictAddressFamilies= in a .nspawn file.
+:: Synchronizing package databases...
+ archtv downloading...
+archtv archtv-compositor 0.1.0.r14.g3012fbc92f7a-1
+archtv archtv-session 0.1.0.r14.g3012fbc92f7a-1
+archtv archtv-shell 0.1.0.r14.g3012fbc92f7a-1

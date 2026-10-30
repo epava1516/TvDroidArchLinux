@@ -169,3 +169,21 @@ herramientas de laboratorio, separadas de la sesión instalada. Archiso 91 está
 instalado; su perfil oficial releng soporta systemd-boot UEFI. No se ha generado
 una ISO propia ni validado su arranque. Versiones e instalación están guardadas
 en reports/h9-preparation/. El perfil propio y el instalador siguen pendientes.
+
+## Repositorio local de laboratorio
+
+```bash
+python packaging/arch/local-repository.py dist/packages/VERSION dist/repositories/VERSION
+```
+
+El destino debe ser nuevo. El generador exige los tres nombres de paquete, una
+única versión común y un commit de fuentes válido. Copia solo esos paquetes y
+genera los índices de repo-add, manifest.json con hashes y SHA256SUMS relativos.
+No modifica pacman.conf ni instala paquetes. El repositorio es local, sin firma
+y no constituye una publicación. La distribución deberá definir claves y política
+de firma antes de ofrecer actualizaciones públicas.
+
+La primera revisión se generó con sus tres paquetes y todos los hashes pasaron.
+El consumo del índice mediante pacman en el contenedor queda registrado en
+reports/h8-build/local-repository-consumption.log; la configuración de prueba
+se limita a ese repositorio y una base temporal, sin cambiar el anfitrión.

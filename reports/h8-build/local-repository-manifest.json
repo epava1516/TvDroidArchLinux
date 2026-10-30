@@ -1,0 +1,24 @@
+{
+  "source_commit": "3012fbc92f7a9414745cb1afabd28afc097ef65f",
+  "scope": "Unsigned local laboratory repository; not a public release.",
+  "packages": [
+    {
+      "name": "archtv-compositor",
+      "version": "0.1.0.r14.g3012fbc92f7a-1",
+      "file": "archtv-compositor-0.1.0.r14.g3012fbc92f7a-1-x86_64.pkg.tar.zst",
+      "sha256": "c44ddafed299da04a4ac76bb2ef0df85bd829363ebbcece4699837a1867d5d5f"
+    },
+    {
+      "name": "archtv-session",
+      "version": "0.1.0.r14.g3012fbc92f7a-1",
+      "file": "archtv-session-0.1.0.r14.g3012fbc92f7a-1-x86_64.pkg.tar.zst",
+      "sha256": "7f1a899b61277693ac87e3b248eabf5ebe880041d1a1f770aac69eaae7867d36"
+    },
+    {
+      "name": "archtv-shell",
+      "version": "0.1.0.r14.g3012fbc92f7a-1",
+      "file": "archtv-shell-0.1.0.r14.g3012fbc92f7a-1-x86_64.pkg.tar.zst",
+      "sha256": "566e358860f90db513cd8ebff470a413fdd9896492f6af485e15026961e645d5"
+    }
+  ]
+}

@@ -1,17 +1,17 @@
 # Graph Report - repositorio-principal  (2026-10-30)
 
 ## Corpus Check
-- 87 files · ~38,800 words
+- 88 files · ~39,135 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 7 file(s) not represented in the graph (top: (none) 5, .in 1, .desktop 1)
 
 ## Summary
-- 851 nodes · 1482 edges · 75 communities (35 shown, 40 thin omitted)
+- 854 nodes · 1491 edges · 68 communities (33 shown, 35 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 4 edges (avg confidence: 0.76)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d1810df8`
+- Built from commit: `21149913`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -73,7 +73,6 @@
 - 98-package-build.sh
 - layout.rs
 - Dirección futura: entorno APK propio sobre Linux
-- Canvas
 - 90-android-session.sh
 - 93-android-shell-session.sh
 - 91-android-client.sh
@@ -83,9 +82,6 @@
 - Arch TV · compositor propio para televisión
 - Paquetes Arch TV en preparación
 - 97-package-source.sh
-- model.rs
-- Page
-- Key
 
 ## God Nodes (most connected - your core abstractions)
 1. `State` - 54 edges
@@ -114,19 +110,19 @@
 ## Import Cycles
 - None detected.
 
-## Communities (75 total, 40 thin omitted)
+## Communities (68 total, 35 thin omitted)
 
 ### Community 0 - "start"
 Cohesion: 0.38
 Nodes (3): Result, start(), Supervisor
 
 ### Community 1 - "runtime.rs"
-Cohesion: 0.10
+Cohesion: 0.06
 Nodes (3): control_fd(), run(), State
 
 ### Community 3 - "worker.rs"
-Cohesion: 0.05
-Nodes (43): collect(), data_directories(), discover(), exec_keeps_arguments_and_shell_metacharacters_literal(), executable(), expand_exec(), locale_hidden_and_desktop_sections_are_respected(), parse_entry() (+35 more)
+Cohesion: 0.07
+Nodes (32): collect(), data_directories(), discover(), exec_keeps_arguments_and_shell_metacharacters_literal(), executable(), expand_exec(), locale_hidden_and_desktop_sections_are_respected(), parse_entry() (+24 more)
 
 ### Community 4 - "TvCompositor"
 Cohesion: 0.08
@@ -155,6 +151,10 @@ Nodes (15): Alcance inicial, Evolución posterior: AOSP propio y ejecución de A
 ### Community 17 - "Estado real del proyecto"
 Cohesion: 0.13
 Nodes (15): Comprobaciones y evidencia, Copia previa, Desarrollo interactivo y seguimiento, Dirección actual, Estado de Android y gráficos, Estado real del proyecto, H1 comprobado, H2 comprobado: compositor propio (+7 more)
+
+### Community 18 - ".shell"
+Cohesion: 0.14
+Nodes (3): Canvas, Canvas, short()
 
 ### Community 19 - "Referencias Fire TV para Arch TV"
 Cohesion: 0.22
@@ -205,8 +205,8 @@ Cohesion: 0.67
 Nodes (3): archtv-compositor, archtv-core, archtv-shell
 
 ### Community 50 - "Model"
-Cohesion: 0.21
-Nodes (6): Application, app(), context_order_hide_restore_and_row_focus_survive_navigation(), keyboard_and_physical_search_agree_and_back_is_bounded(), Model, navigation_filters_and_banner_use_real_application_sets()
+Cohesion: 0.05
+Nodes (45): Application, Action, AndroidStart, AndroidStop, Launch, Mute, Quit, Refresh (+37 more)
 
 ### Community 51 - "89-shell-resolutions.sh"
 Cohesion: 0.20
@@ -241,40 +241,28 @@ Cohesion: 0.50
 Nodes (4): Arch TV · compositor propio para televisión, Documentación principal, Herramientas disponibles, Laboratorio H1
 
 ### Community 69 - "Paquetes Arch TV en preparación"
-Cohesion: 0.18
-Nodes (10): Compilación en entorno limpio, Fuentes y receta, Herramientas para la imagen de distribución, Inventario inicial de licencias Cargo, Paquetes Arch TV en preparación, Preferencias y recuperación entre versiones, Primera compilación e instalación comprobadas, Prueba del ciclo de paquetes preparada (+2 more)
-
-### Community 72 - "model.rs"
-Cohesion: 0.18
-Nodes (9): ContextAction, Cancel, Favorite, Hide, Left, Right, KEYBOARD, MENU_ITEMS (+1 more)
-
-### Community 73 - "Page"
-Cohesion: 0.18
-Nodes (9): Page, Android, Apps, Home, Linux, Menu, Recent, Search (+1 more)
-
-### Community 74 - "Key"
-Cohesion: 0.20
-Nodes (10): Key, Back, Backspace, Character, Down, Enter, Left, Menu (+2 more)
+Cohesion: 0.17
+Nodes (11): Compilación en entorno limpio, Fuentes y receta, Herramientas para la imagen de distribución, Inventario inicial de licencias Cargo, Paquetes Arch TV en preparación, Preferencias y recuperación entre versiones, Primera compilación e instalación comprobadas, Prueba del ciclo de paquetes preparada (+3 more)
 
 ## Knowledge Gaps
 - **69 isolated node(s):** `archtv-compositor`, `Home`, `Resume`, `Exit`, `TvCompositor` (+64 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 353 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **40 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 355 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **35 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `TvCompositor` connect `TvCompositor` to `start`, `session.rs`, `xdg_shell.rs`, `mod.rs`, `input.rs`, `drm.rs`, `compositor.rs`, `winit.rs`, `Backend`, `archtv-compositor/src/main.rs`?**
-  _High betweenness centrality (0.213) - this node is a cross-community bridge._
+  _High betweenness centrality (0.214) - this node is a cross-community bridge._
 - **What connects `archtv-compositor`, `Home`, `Resume` to the rest of the system?**
   _69 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `runtime.rs` be split into smaller, more focused modules?**
-  _Cohesion score 0.1027450980392157 - nodes in this community are weakly interconnected._
-- **Why does `Event` connect `worker.rs` to `input.rs`, `Model`, `runtime.rs`?**
+  _Cohesion score 0.06185919343814081 - nodes in this community are weakly interconnected._
+- **Why does `Event` connect `worker.rs` to `input.rs`, `runtime.rs`, `Model`?**
   _High betweenness centrality (0.054) - this node is a cross-community bridge._
 - **Should `Client` be split into smaller, more focused modules?**
-  _Cohesion score 0.10420168067226891 - nodes in this community are weakly interconnected._
-- **Why does `Model` connect `Model` to `runtime.rs`, `worker.rs`, `model.rs`, `Page`, `.shell`, `runtime.rs`?**
+  _Cohesion score 0.0818452380952381 - nodes in this community are weakly interconnected._
+- **Why does `Model` connect `Model` to `runtime.rs`, `.shell`, `worker.rs`?**
   _High betweenness centrality (0.050) - this node is a cross-community bridge._
 - **Should `worker.rs` be split into smaller, more focused modules?**
-  _Cohesion score 0.053075396825396824 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06821480406386067 - nodes in this community are weakly interconnected._
