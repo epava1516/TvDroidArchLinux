@@ -163,6 +163,61 @@
       "path": "core/java/android/net/LocalSocketAddress.java",
       "bytes": 2712,
       "sha256": "81de93fd0424609b9e0e76948e57a73aa7a280bfa817c48018cee4f5a107a111"
+    },
+    {
+      "path": "core/java/android/content/res/ApkAssets.java",
+      "sha256": "19f85d3a3e18ef96790b73be8089f7abb99e2979a91095c976ed92a2cda375fc",
+      "bytes": 19541
+    },
+    {
+      "path": "core/java/android/util/TypedValue.java",
+      "sha256": "bdde8667b7e69a2bc4b5156610f0ba3789c1603c15718a75fdeaeb9d397e2b9f",
+      "bytes": 28673
+    },
+    {
+      "path": "core/java/android/content/res/StringBlock.java",
+      "sha256": "487b3d22946e3534be2b1f5f1049943b0e0217a0bc3716e4ef15036aa2854c10",
+      "bytes": 21576
+    },
+    {
+      "path": "core/java/android/content/pm/ActivityInfo.java",
+      "sha256": "cd2fb7c2c344bd9e0e9fe930f9848cfbba8d3e1fad03dbb663b7b83c4ba89faa",
+      "bytes": 76298
+    },
+    {
+      "path": "core/java/android/content/pm/ComponentInfo.java",
+      "sha256": "b804330c941d122ef24ba79622a3531ec7d0f906eaccdcfc5521fa961754d97e",
+      "bytes": 9742
+    },
+    {
+      "path": "core/java/android/content/pm/PackageItemInfo.java",
+      "sha256": "81faac0227ae44e92a7e6d32f22965be3ae1b34b4e91b5dec48f20c885fabff9",
+      "bytes": 17806
+    },
+    {
+      "path": "core/jni/android_util_AssetManager.cpp",
+      "sha256": "7c96767d9f87f042f537bcc9de70d832f42dd2292cccd6f6508a849c660d8a30",
+      "bytes": 62168
+    },
+    {
+      "path": "core/java/com/android/internal/util/Parcelling.java",
+      "sha256": "18f96e74be4bdb1964c7985f43446dbcd9f5e55885b091287935670fe41cd4dc",
+      "bytes": 11404
+    },
+    {
+      "path": "core/java/android/util/ArrayMap.java",
+      "sha256": "785e08ddfabc46a7c5571fae742e4631940dba29a1009823abec4c95c3668ac2",
+      "bytes": 41838
+    },
+    {
+      "path": "core/java/android/util/ArraySet.java",
+      "sha256": "56587629c00d3ec286a1eadfc4eee50f5e76c40339ccb410acad77643f0cc15d",
+      "bytes": 34855
+    },
+    {
+      "path": "core/java/android/util/MapCollections.java",
+      "sha256": "a029e3b7d72b7e744a9f45001354a416f9fc28ed92facf62eb5972ca6fe7fb3b",
+      "bytes": 15717
     }
   ]
 }

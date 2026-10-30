@@ -1,0 +1,100 @@
+{
+  "pass": true,
+  "cases": [
+    {
+      "case": "original-1",
+      "exit_code": 0,
+      "pass": true,
+      "command": [
+        "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+        "--64",
+        "--no-compile",
+        "--",
+        "-Xint",
+        "-Xcheck:jni",
+        "-cp",
+        "/home/tv/repositorio-principal/dist/apk/aosp-resources-java-5/dex/classes.dex",
+        "org.archtv.aospprobe.ResourcesProbe",
+        "/home/tv/repositorio-principal/dist/apk/androidfw-clang-1/libarchtv_resources_linux.so",
+        "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk"
+      ]
+    },
+    {
+      "case": "original-2",
+      "exit_code": 0,
+      "pass": true,
+      "command": [
+        "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+        "--64",
+        "--no-compile",
+        "--",
+        "-Xint",
+        "-Xcheck:jni",
+        "-cp",
+        "/home/tv/repositorio-principal/dist/apk/aosp-resources-java-5/dex/classes.dex",
+        "org.archtv.aospprobe.ResourcesProbe",
+        "/home/tv/repositorio-principal/dist/apk/androidfw-clang-1/libarchtv_resources_linux.so",
+        "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk"
+      ]
+    },
+    {
+      "case": "variant",
+      "exit_code": 0,
+      "pass": true,
+      "command": [
+        "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+        "--64",
+        "--no-compile",
+        "--",
+        "-Xint",
+        "-Xcheck:jni",
+        "-cp",
+        "/home/tv/repositorio-principal/dist/apk/aosp-resources-java-5/dex/classes.dex",
+        "org.archtv.aospprobe.ResourcesProbe",
+        "/home/tv/repositorio-principal/dist/apk/androidfw-clang-1/libarchtv_resources_linux.so",
+        "/home/tv/repositorio-principal/dist/apk/aosp-resources-jni-3/variant-unsigned.apk",
+        "Registro:"
+      ]
+    },
+    {
+      "case": "truncated",
+      "exit_code": 1,
+      "pass": true,
+      "command": [
+        "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+        "--64",
+        "--no-compile",
+        "--",
+        "-Xint",
+        "-Xcheck:jni",
+        "-cp",
+        "/home/tv/repositorio-principal/dist/apk/aosp-resources-java-5/dex/classes.dex",
+        "org.archtv.aospprobe.ResourcesProbe",
+        "/home/tv/repositorio-principal/dist/apk/androidfw-clang-1/libarchtv_resources_linux.so",
+        "/home/tv/repositorio-principal/dist/apk/aosp-resources-jni-3/truncated-unsigned.apk"
+      ]
+    },
+    {
+      "case": "missing-apk",
+      "exit_code": 1,
+      "pass": true,
+      "command": [
+        "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+        "--64",
+        "--no-compile",
+        "--",
+        "-Xint",
+        "-Xcheck:jni",
+        "-cp",
+        "/home/tv/repositorio-principal/dist/apk/aosp-resources-java-5/dex/classes.dex",
+        "org.archtv.aospprobe.ResourcesProbe",
+        "/home/tv/repositorio-principal/dist/apk/androidfw-clang-1/libarchtv_resources_linux.so",
+        "/home/tv/repositorio-principal/dist/apk/aosp-resources-jni-3/absent.apk"
+      ]
+    }
+  ],
+  "dex_sha256": "e71c6b95a7d143269004af980a54d6d80a19b2199c825c31d07686bc189b867b",
+  "library_sha256": "dfd179c79b3bcb69dbe2812299947a481bde2611ffd786a923b6e44bd21597b4",
+  "apk_sha256": "f07c9b92ab3353237276081c22e11ce06168b8c9f71a99ea32968b2ce0f00e28",
+  "scope": "Original ApkAssets.loadFromPath, AssetManager identifier/value/text resolution, ActivityInfo configuration conversion and StringBlock cache via real ART JNI. Internal sentinel constructor bypasses system resource initialization only in probe. No Resources.getString, public constructor, Activity/View integration, styled text or general APK support claim."
+}

@@ -114,3 +114,13 @@ y recuperación, además de DRM/Pixman y entrada uinput con persistencia 2→3.
 Ver APK-LOOPER-AOSP.md, reports/aosp-ui-headless/ y reports/aosp-main-ui-wayland/.
 La biblioteca nativa se exige explícitamente. Activity/View/Bundle/recursos y
 preferencias siguen propios; el framework completo y las puertas finales siguen abiertos.
+
+## Recursos originales: JNI aislado
+
+AssetManager.getResourceText, ApkAssets y StringBlock originales ya resuelven
+los textos del contador en ART mediante libandroidfw original. Pasan la variante
+con el mismo DEX y los rechazos de tablas truncadas/rutas ausentes; la regresión
+de relojes/Handler/colas pasa con el conjunto ampliado (10 procesos de semántica).
+Ver AOSP-RECURSOS-LINUX.md y reports/aosp-resources-jni/. Sigue pendiente conectar
+el proveedor usado por la APK, inicializar los recursos de sistema y portar
+Resources/Activity/View. Este hito no cierra A3–A5 ni las puertas generales.

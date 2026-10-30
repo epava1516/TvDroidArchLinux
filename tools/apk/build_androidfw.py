@@ -73,8 +73,21 @@ with (out/'link.log').open('w') as log:
     result = subprocess.run(command, stdout=log, stderr=subprocess.STDOUT, timeout=120)
 if result.returncode != 0:
     raise SystemExit('Link failed; see '+str(out/'link.log'))
+jni_source = root/'runtime/aosp/native/resources-jni.cpp'
+jni_library = out/'libarchtv_resources_linux.so'
+jni_command = [*cpp, '-shared', '-I/usr/lib/jvm/java-17-openjdk/include',
+               '-I/usr/lib/jvm/java-17-openjdk/include/linux',
+               '-L'+str(libcxx.parent), '-Wl,-rpath,'+str(libcxx.parent), '-Wl,--no-undefined',
+               '-o', str(jni_library), str(jni_source), '-Wl,--start-group',
+               *map(str, archives), '-Wl,--end-group', '-lz', '-ldl', '-lpthread']
+with (out/'jni-link.log').open('w') as log:
+    result = subprocess.run(jni_command, stdout=log, stderr=subprocess.STDOUT, timeout=120)
+if result.returncode != 0:
+    raise SystemExit('JNI link failed; see '+str(out/'jni-link.log'))
 (out/'provenance.json').write_text(json.dumps({'source_manifest': manifest, 'recipe': recipe, 'compiler': compiler,
-    'libcxx_runtime_sha256': libcxx_hash, 'commands': commands+[command],
+    'libcxx_runtime_sha256': libcxx_hash, 'commands': commands+[command, jni_command],
+    'jni_source_sha256': hashlib.sha256(jni_source.read_bytes()).hexdigest(),
+    'jni_library_sha256': hashlib.sha256(jni_library.read_bytes()).hexdigest(),
     'probe_source_sha256': hashlib.sha256(probe.read_bytes()).hexdigest(),
     'original_sources_modified': False, 'probe_sha256': hashlib.sha256(library.read_bytes()).hexdigest(),
     'archives': {path.name: hashlib.sha256(path.read_bytes()).hexdigest() for path in archives},

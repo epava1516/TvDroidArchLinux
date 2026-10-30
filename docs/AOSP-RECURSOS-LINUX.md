@@ -1,9 +1,9 @@
 # Port nativo de recursos de AOSP a Linux
 
 El objetivo es reutilizar `libandroidfw` original como proveedor de recursos de
-las APK, sustituyendo progresivamente el lector reducido propio. Este primer
-paso construye la biblioteca y una herramienta de comprobación; todavía no
-conecta las clases Java originales `Resources` y `AssetManager` con ART.
+las APK, sustituyendo progresivamente el lector reducido propio. La biblioteca ya se conecta con las clases originales `AssetManager`,
+`ApkAssets` y `StringBlock` en ART. Sigue pendiente integrar `Resources`, la
+inicialización pública de recursos del sistema y el proveedor usado por la APK.
 
 ## Fuentes y construcción
 
@@ -53,3 +53,43 @@ contador. Faltan el puente JNI, configuración/idiomas, temas, recursos de siste
 pruebas ampliadas de formatos y las clases originales de interfaz. Tampoco
 acredita aislamiento frente a APK hostiles, estabilidad prolongada ni soporte
 general de aplicaciones. No requiere iniciar Waydroid ni un sistema Android.
+
+## Puente JNI sobre ART
+
+`runtime/aosp/native/resources-jni.cpp` adapta once entradas JNI de las clases
+originales. El análisis y la selección de recursos se delegan en `ApkAssets`,
+`AssetManager2` y `ResStringPool` originales. Los identificadores nativos son
+handles comprobados bajo mutex; el gestor conserva referencias a sus APK para
+mantener vivos sus datos. Las cadenas se devuelven mediante JNI UTF-16.
+
+El conjunto Java ampliado contiene 30 fuentes originales sin modificar,
+incluidas las dependencias de inicialización de `ActivityInfo` y sus colecciones.
+El JAR de referencia solo sirve al compilador; no forma parte del classpath ART.
+
+```sh
+python tools/apk/build_aosp_queue.py --with-resources \
+  --sources /home/tv/.cache/archtv/aosp-framework-study/pinned \
+  --reference /home/tv/.cache/archtv/aosp-compile-tools/android-all-13.jar \
+  --tools /home/tv/.cache/archtv/apk-build-tools \
+  --output dist/apk/aosp-resources-java
+python tools/apk/verify_resources_jni.py \
+  --art /home/tv/.cache/archtv/art-host/host/art-13.0.0 \
+  --java-build dist/apk/aosp-resources-java \
+  --native-build dist/apk/androidfw-native \
+  --output dist/apk/aosp-resources-jni
+```
+
+Pasan dos procesos ART con la APK original, la variante del mismo DEX y los
+rechazos de tabla truncada y ruta inexistente, con `-Xcheck:jni` activo. Se prueban
+identificadores con nombre completo y valores de tipo/paquete por defecto,
+`AssetManager.getResourceText`, la caché original de cadenas y el cierre del gestor.
+Las pruebas están en `reports/aosp-resources-jni/`.
+
+El comprobador usa por reflexión el constructor interno empleado por el Builder
+de AOSP y su instalación nativa de APK. Así aísla la inicialización del sistema,
+que todavía presupone `framework-res.apk` y overlays. No acredita el constructor
+público, ni `Resources.getString`, ni el proveedor de la APK del contador. Las
+entradas no portadas fallan por enlace ausente; formatos distintos de APK normal,
+flags especiales, proveedores y cadenas con estilos se rechazan explícitamente.
+El código Java completo de `Parcelling` compila, pero sus operaciones Parcel no
+se han habilitado ni probado.

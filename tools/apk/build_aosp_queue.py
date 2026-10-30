@@ -12,6 +12,7 @@ parser.add_argument('--sources', type=Path, required=True)
 parser.add_argument('--reference', type=Path, required=True)
 parser.add_argument('--tools', type=Path, required=True)
 parser.add_argument('--output', type=Path, required=True)
+parser.add_argument('--with-resources', action='store_true', help='Compile original AssetManager, ApkAssets and TypedValue as well')
 parser.add_argument('--jdk', type=Path, default=Path('/usr/lib/jvm/java-17-openjdk'))
 args = parser.parse_args()
 root = Path(__file__).resolve().parents[2]
@@ -38,6 +39,12 @@ paths += ['core/java/android/os/Binder.java', 'core/java/android/os/IBinder.java
           'core/java/android/util/IntArray.java', 'core/java/com/android/internal/os/BinderInternal.java']
 paths += ['core/java/android/os/Process.java', 'core/java/android/os/ZygoteProcess.java',
           'core/java/android/os/SystemProperties.java', 'core/java/android/net/LocalSocketAddress.java']
+if args.with_resources:
+    paths += ['core/java/android/content/res/AssetManager.java', 'core/java/android/content/res/ApkAssets.java', 'core/java/android/content/res/StringBlock.java', 'core/java/android/util/TypedValue.java']
+if args.with_resources:
+    paths += ['core/java/com/android/internal/util/Parcelling.java']
+    paths += ['core/java/android/util/'+name+'.java' for name in ('ArrayMap', 'ArraySet', 'MapCollections')]
+    paths += ['core/java/android/content/pm/'+name+'.java' for name in ('ActivityInfo', 'ComponentInfo', 'PackageItemInfo')]
 sources = []
 for path in paths:
     item = next(item for item in manifest['files'] if item['path'] == path)
@@ -52,6 +59,8 @@ reference_path = args.reference.resolve()
 tool_path = args.tools.resolve()
 stubs = sorted((root/'runtime/aosp/compile-stubs').rglob('*.java'))
 probes = sorted((root/'fixtures/aosp-queue').glob('*.java'))
+if args.with_resources:
+    probes += sorted((root/'fixtures/aosp-resources').glob('*.java'))
 commands = []
 
 
@@ -75,7 +84,7 @@ run('compile-probe', [args.jdk/'bin/javac', '--release', '8', '-classpath', str(
 run('pack-original', [args.jdk/'bin/jar', 'cf', out/'queue.jar', '-C', out/'classes', '.'])
 with zipfile.ZipFile(out/'queue.jar') as archive:
     classes = sorted(name for name in archive.namelist() if name.endswith('.class'))
-    if any(not name.startswith(('android/os/', 'android/util/', 'android/net/', 'com/android/internal/util/', 'com/android/internal/os/', 'org/archtv/aospprobe/')) for name in classes):
+    if any(not name.startswith(('android/os/', 'android/util/', 'android/net/', 'android/content/res/', 'android/content/pm/', 'com/android/internal/util/', 'com/android/internal/os/', 'org/archtv/aospprobe/')) for name in classes):
         raise SystemExit('Unexpected compile-only class in runtime artifact')
 run('dex-original', [args.jdk/'bin/java', '-cp', tool_path/'r8.jar', 'com.android.tools.r8.D8', '--release',
                      '--min-api', '28', '--lib', tool_path/'android.jar', '--output', out/'dex', out/'queue.jar'])

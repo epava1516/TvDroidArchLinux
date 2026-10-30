@@ -108,3 +108,8 @@ APK original y pasa la variante con el mismo DEX y los casos de recursos
 ausentes/truncados. Ver AOSP-RECURSOS-LINUX.md y reports/aosp-androidfw-build/.
 El contador todavía utiliza su proveedor Java reducido: falta conectar los
 recursos originales mediante JNI. Este hito no cierra el port de Activity/View.
+
+El puente JNI ya ejecuta también AssetManager.getResourceText y ApkAssets/
+StringBlock originales en ART. El constructor interno de la prueba evita la
+inicialización de recursos del sistema aún pendiente; no se ha conectado todavía
+el proveedor de recursos del contador. Ver reports/aosp-resources-jni/.

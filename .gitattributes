@@ -18,3 +18,5 @@ reports/aosp-ui-headless/**/*.stderr -whitespace
 reports/aosp-main-ui-wayland/** -whitespace
 
 reports/aosp-androidfw-build/*.log -whitespace
+reports/aosp-resources-jni/**/*.stderr -whitespace
+reports/aosp-resources-jni/*.stderr -whitespace

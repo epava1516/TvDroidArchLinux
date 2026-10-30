@@ -1,0 +1,6 @@
+QUEUE_STAGE ordered
+QUEUE_STAGE cross-thread
+QUEUE_STAGE barrier
+QUEUE_STAGE quitSafely
+QUEUE_STAGE quit
+AOSP_QUEUE_SEMANTICS_OK
