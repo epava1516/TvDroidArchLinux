@@ -11,6 +11,11 @@ por el DEPS original de Skia. El descargador común verifica sus archivos igual
 que los árboles HWUI. `skia-gn-tool.json` fija el ZIP y el ejecutable GN cuya
 revisión aparece en el script original `bin/fetch-gn`.
 
+El manifiesto adicional incluye también las cabeceras Bionic de Android 13,
+fijadas a 0b981d1ec055efaef86d8a5d402cf1b3167ba10b. De ese árbol se exporta
+únicamente stdatomic.h al perfil C++ generado. No se introduce su directorio
+libc/include completo en las rutas de búsqueda de una construcción glibc.
+
 Se instaló Ninja 1.13.2-3 con pacman. El constructor registra versiones de Clang,
 Ninja y paquetes de códecs/fuentes del anfitrión. Las interfaces C de estos
 últimos se enlazarán con bibliotecas Linux; esto no acredita una construcción
@@ -67,6 +72,15 @@ completar todavía sus 645 tareas antes de acreditar un Skia host construido.
 Después se necesita una prueba real de Canvas y lectura de píxeles, el enlace de
 HWUI y la adaptación CriticalNative descrita en AOSP-RENDERNODE-NATIVO.md. Ninguna
 de esas fases queda superada por la comprobación numérica del intrinsic.
+
+El intento con la adaptación F16C superó ese error y se detuvo después en
+SkATrace.cpp: cutils/trace.h introducía macros atómicas C de Clang antes de
+`<atomic>` del libc++ original de ART. La cabecera stdatomic.h original de Bionic
+usa la implementación C++ `<atomic>` y exporta sus nombres. Con esa cabecera
+intacta, SkATrace.cpp ya compila como objeto. El constructor registra su hash y
+la aplica solo a C++; los archivos C conservan stdatomic del anfitrión. El nuevo
+perfil completo se está compilando en skia-host-6 y sigue sin resultado exitoso
+acreditado. Ver reports/aosp-skia-host/atomic-headers/.
 
 Se prepararon `skia-raster-probe.cpp` y `verify_skia_raster.py` para ese siguiente
 paso: dibujan rectángulos con recorte y traslación y comprueban 3072 píxeles y su

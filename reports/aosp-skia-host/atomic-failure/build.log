@@ -1,0 +1,381 @@
+ninja: Entering directory `/home/tv/repositorio-principal/dist/apk/skia-host-5'
+[1/645] compile ../../../../.cache/archtv/hwui-port/skia/src/ports/SkFontHost_FreeType.cpp
+[2/645] compile ../../../../.cache/archtv/hwui-port/skia/src/ports/SkFontHost_FreeType_common.cpp
+[3/645] stamp obj/third_party/freetype2/freetype2.stamp
+[4/645] compile ../../../../.cache/archtv/hwui-port/skia/src/ports/SkFontMgr_custom.cpp
+[5/645] stamp obj/typeface_freetype.stamp
+[6/645] stamp obj/fontmgr_custom.stamp
+[7/645] compile ../../../../.cache/archtv/hwui-port/skia/src/ports/SkFontMgr_custom_empty.cpp
+[8/645] stamp obj/fontmgr_custom_empty.stamp
+[9/645] compile ../../../../.cache/archtv/hwui-port/skia/src/ports/SkFontMgr_custom_empty_factory.cpp
+[10/645] compile ../../../../.cache/archtv/hwui-port/skia/src/codec/SkJpegCodec.cpp
+[11/645] compile ../../../../.cache/archtv/hwui-port/skia/src/codec/SkJpegDecoderMgr.cpp
+[12/645] compile ../../../../.cache/archtv/hwui-port/skia/src/codec/SkJpegUtility.cpp
+[13/645] compile ../../../../.cache/archtv/hwui-port/skia/src/images/SkJPEGWriteUtility.cpp
+[14/645] compile ../../../../.cache/archtv/hwui-port/skia/src/images/SkJpegEncoder.cpp
+[15/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_1d_function.cpp
+[16/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_1d_table.cpp
+[17/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_abort_sniffer.cpp
+[18/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_area_task.cpp
+[19/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_bad_pixels.cpp
+[20/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_bottlenecks.cpp
+[21/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_camera_profile.cpp
+[22/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_color_space.cpp
+[23/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_color_spec.cpp
+[24/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_date_time.cpp
+[25/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_exceptions.cpp
+[26/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_exif.cpp
+[27/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_file_stream.cpp
+[28/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_filter_task.cpp
+[29/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_fingerprint.cpp
+[30/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_gain_map.cpp
+[31/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_globals.cpp
+[32/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_host.cpp
+[33/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_hue_sat_map.cpp
+[34/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_ifd.cpp
+[35/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_image.cpp
+[36/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_image_writer.cpp
+[37/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_info.cpp
+[38/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_iptc.cpp
+[39/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_jpeg_image.cpp
+[40/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_jpeg_memory_source.cpp
+[41/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_lens_correction.cpp
+[42/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_linearization_info.cpp
+[43/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_lossless_jpeg.cpp
+[44/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_matrix.cpp
+[45/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_memory.cpp
+[46/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_memory_stream.cpp
+[47/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_misc_opcodes.cpp
+[48/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_mosaic_info.cpp
+[49/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_mutex.cpp
+[50/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_negative.cpp
+[51/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_opcode_list.cpp
+[52/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_opcodes.cpp
+[53/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_orientation.cpp
+[54/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_parse_utils.cpp
+[55/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_pixel_buffer.cpp
+[56/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_point.cpp
+[57/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_preview.cpp
+[58/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_pthread.cpp
+[59/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_rational.cpp
+[60/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_read_image.cpp
+[61/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_rect.cpp
+[62/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_ref_counted_block.cpp
+[63/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_reference.cpp
+[64/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_render.cpp
+[65/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_resample.cpp
+[66/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_safe_arithmetic.cpp
+[67/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_shared.cpp
+[68/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_simple_image.cpp
+[69/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_spline.cpp
+[70/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_stream.cpp
+[71/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_string.cpp
+[72/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_string_list.cpp
+[73/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_tag_types.cpp
+[74/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_temperature.cpp
+[75/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_tile_iterator.cpp
+[76/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_tone_curve.cpp
+[77/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_utils.cpp
+[78/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/dng_sdk/source/dng_xy_coord.cpp
+[79/645] stamp obj/third_party/libjpeg-turbo/libjpeg.stamp
+[80/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/piex/src/binary_parse/cached_paged_byte_array.cc
+[81/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/piex/src/binary_parse/range_checked_byte_ptr.cc
+[82/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/piex/src/image_type_recognition/image_type_recognition_lite.cc
+[83/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/piex/src/piex.cc
+[84/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/piex/src/tiff_directory/tiff_directory.cc
+[85/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/piex/src/tiff_parser.cc
+[86/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/externals/wuffs/release/c/wuffs-v0.3.c
+[87/645] stamp obj/third_party/zlib/zlib.stamp
+[88/645] compile ../../../../.cache/archtv/hwui-port/skia/client_utils/android/BitmapRegionDecoder.cpp
+[89/645] compile ../../../../.cache/archtv/hwui-port/skia/client_utils/android/FrontBufferedStream.cpp
+[90/645] compile ../../../../.cache/archtv/hwui-port/skia/src/opts/SkOpts_avx.cpp
+[91/645] stamp obj/fontmgr_custom_empty_factory.stamp
+[92/645] compile ../../../../.cache/archtv/hwui-port/skia/src/opts/SkOpts_hsw.cpp
+[93/645] stamp obj/jpeg_decode.stamp
+[94/645] stamp obj/jpeg_encode.stamp
+[95/645] compile ../../../../.cache/archtv/hwui-port/skia/src/pdf/SkClusterator.cpp
+[96/645] compile ../../../../.cache/archtv/hwui-port/skia/src/pdf/SkDeflate.cpp
+[97/645] compile ../../../../.cache/archtv/hwui-port/skia/src/pdf/SkJpegInfo.cpp
+[98/645] compile ../../../../.cache/archtv/hwui-port/skia/src/pdf/SkKeyedImage.cpp
+[99/645] compile ../../../../.cache/archtv/hwui-port/skia/src/pdf/SkPDFBitmap.cpp
+[100/645] compile ../../../../.cache/archtv/hwui-port/skia/src/pdf/SkPDFDevice.cpp
+[101/645] compile ../../../../.cache/archtv/hwui-port/skia/src/pdf/SkPDFDocument.cpp
+[102/645] compile ../../../../.cache/archtv/hwui-port/skia/src/pdf/SkPDFFont.cpp
+[103/645] compile ../../../../.cache/archtv/hwui-port/skia/src/pdf/SkPDFFormXObject.cpp
+[104/645] compile ../../../../.cache/archtv/hwui-port/skia/src/pdf/SkPDFGradientShader.cpp
+[105/645] compile ../../../../.cache/archtv/hwui-port/skia/src/pdf/SkPDFGraphicStackState.cpp
+[106/645] compile ../../../../.cache/archtv/hwui-port/skia/src/pdf/SkPDFGraphicState.cpp
+[107/645] compile ../../../../.cache/archtv/hwui-port/skia/src/pdf/SkPDFMakeCIDGlyphWidthsArray.cpp
+[108/645] compile ../../../../.cache/archtv/hwui-port/skia/src/pdf/SkPDFMakeToUnicodeCmap.cpp
+[109/645] compile ../../../../.cache/archtv/hwui-port/skia/src/pdf/SkPDFMetadata.cpp
+[110/645] compile ../../../../.cache/archtv/hwui-port/skia/src/pdf/SkPDFResourceDict.cpp
+[111/645] compile ../../../../.cache/archtv/hwui-port/skia/src/pdf/SkPDFShader.cpp
+[112/645] compile ../../../../.cache/archtv/hwui-port/skia/src/pdf/SkPDFSubsetFont.cpp
+[113/645] compile ../../../../.cache/archtv/hwui-port/skia/src/pdf/SkPDFTag.cpp
+[114/645] compile ../../../../.cache/archtv/hwui-port/skia/src/pdf/SkPDFType1Font.cpp
+[115/645] compile ../../../../.cache/archtv/hwui-port/skia/src/pdf/SkPDFTypes.cpp
+[116/645] compile ../../../../.cache/archtv/hwui-port/skia/src/pdf/SkPDFUtils.cpp
+[117/645] compile ../../../../.cache/archtv/hwui-port/skia/src/codec/SkIcoCodec.cpp
+[118/645] compile ../../../../.cache/archtv/hwui-port/skia/src/codec/SkPngCodec.cpp
+[119/645] compile ../../../../.cache/archtv/hwui-port/skia/src/images/SkPngEncoder.cpp
+[120/645] compile ../../../../.cache/archtv/hwui-port/skia/src/codec/SkRawCodec.cpp
+[121/645] compile ../../../../.cache/archtv/hwui-port/skia/third_party/skcms/skcms.cc
+[122/645] compile ../../../../.cache/archtv/hwui-port/skia/src/opts/SkOpts_skx.cpp
+[123/645] compile ../../../../.cache/archtv/hwui-port/skia/src/opts/SkOpts_sse41.cpp
+[124/645] compile ../../../../.cache/archtv/hwui-port/skia/src/opts/SkOpts_sse42.cpp
+[125/645] compile ../../../../.cache/archtv/hwui-port/skia/src/opts/SkOpts_ssse3.cpp
+[126/645] compile ../../../../.cache/archtv/hwui-port/skia/src/codec/SkWebpCodec.cpp
+[127/645] compile ../../../../.cache/archtv/hwui-port/skia/src/images/SkWebpEncoder.cpp
+[128/645] compile ../../../../.cache/archtv/hwui-port/skia/src/codec/SkWuffsCodec.cpp
+[129/645] compile ../../../../.cache/archtv/hwui-port/skia/src/svg/SkSVGCanvas.cpp
+[130/645] compile ../../../../.cache/archtv/hwui-port/skia/src/svg/SkSVGDevice.cpp
+[131/645] compile ../../../../.cache/archtv/hwui-port/skia/src/xml/SkDOM.cpp
+[132/645] compile ../../../../.cache/archtv/hwui-port/skia/src/xml/SkXMLParser.cpp
+../../../../.cache/archtv/hwui-port/skia/src/xml/SkXMLParser.cpp:171:24: warning: 'XML_GetCurrentLineNumber' is deprecated: please use XML_GetCurrentLineNumber64 instead [-Wdeprecated-declarations]
+  171 |             int line = XML_GetCurrentLineNumber(ctx.fXMLParser);
+      |                        ^
+/usr/include/expat.h:964:1: note: 'XML_GetCurrentLineNumber' has been explicitly marked deprecated here
+  964 | XML_ATTR_DEPRECATED("please use XML_GetCurrentLineNumber64 instead")
+      | ^
+/usr/include/expat_external.h:133:22: note: expanded from macro 'XML_ATTR_DEPRECATED'
+  133 |       __attribute__((__deprecated__(message)))
+      |                      ^
+../../../../.cache/archtv/hwui-port/skia/src/xml/SkXMLParser.cpp:172:26: warning: 'XML_GetCurrentColumnNumber' is deprecated: please use XML_GetCurrentColumnNumber64 instead [-Wdeprecated-declarations]
+  172 |             int column = XML_GetCurrentColumnNumber(ctx.fXMLParser);
+      |                          ^
+/usr/include/expat.h:967:1: note: 'XML_GetCurrentColumnNumber' has been explicitly marked deprecated here
+  967 | XML_ATTR_DEPRECATED("please use XML_GetCurrentColumnNumber64 instead")
+      | ^
+/usr/include/expat_external.h:133:22: note: expanded from macro 'XML_ATTR_DEPRECATED'
+  133 |       __attribute__((__deprecated__(message)))
+      |                      ^
+2 warnings generated.
+[133/645] compile ../../../../.cache/archtv/hwui-port/skia/src/xml/SkXMLWriter.cpp
+[134/645] link libdng_sdk.a
+[135/645] stamp obj/third_party/expat/expat.stamp
+[136/645] stamp obj/third_party/harfbuzz/harfbuzz.stamp
+[137/645] stamp obj/third_party/libpng/libpng.stamp
+[138/645] stamp obj/third_party/libwebp/libwebp.stamp
+[139/645] link libpiex.a
+[140/645] link libwuffs.a
+[141/645] stamp obj/android_utils.stamp
+[142/645] stamp obj/arm64.stamp
+[143/645] stamp obj/armv7.stamp
+[144/645] stamp obj/avx.stamp
+[145/645] stamp obj/crc32.stamp
+[146/645] stamp obj/dehydrate_sksl.stamp
+[147/645] stamp obj/fontmgr_FontConfigInterface.stamp
+[148/645] stamp obj/fontmgr_android.stamp
+[149/645] stamp obj/fontmgr_custom_directory.stamp
+[150/645] stamp obj/fontmgr_custom_embedded.stamp
+[151/645] stamp obj/fontmgr_factory.stamp
+[152/645] stamp obj/fontmgr_fontconfig.stamp
+[153/645] stamp obj/fontmgr_fuchsia.stamp
+[154/645] stamp obj/fontmgr_mac_ct.stamp
+[155/645] stamp obj/fontmgr_win.stamp
+[156/645] stamp obj/fontmgr_win_gdi.stamp
+[157/645] stamp obj/gif.stamp
+[158/645] stamp obj/gpu.stamp
+[159/645] stamp obj/graphite.stamp
+[160/645] stamp obj/heif.stamp
+[161/645] stamp obj/hsw.stamp
+[162/645] stamp obj/jpegxl_decode.stamp
+[163/645] stamp obj/ndk_images.stamp
+[164/645] stamp obj/none.stamp
+[165/645] stamp obj/pdf.stamp
+[166/645] stamp obj/png_decode.stamp
+[167/645] stamp obj/png_encode.stamp
+[168/645] stamp obj/raw.stamp
+[169/645] stamp obj/skcms.stamp
+[170/645] compile ../../../../.cache/archtv/hwui-port/skia/src/c/sk_imageinfo.cpp
+[171/645] compile ../../../../.cache/archtv/hwui-port/skia/src/c/sk_paint.cpp
+[172/645] compile ../../../../.cache/archtv/hwui-port/skia/src/c/sk_surface.cpp
+[173/645] compile ../../../../.cache/archtv/hwui-port/skia/src/core/SkAAClip.cpp
+[174/645] compile ../../../../.cache/archtv/hwui-port/skia/src/core/SkATrace.cpp
+FAILED: [code=1] obj/src/core/libskia.SkATrace.o 
+clang++ -MD -MF obj/src/core/libskia.SkATrace.o.d -DSK_HAS_ANDROID_CODEC -DNDEBUG -DSK_R32_SHIFT=16 -DSK_SUPPORT_GPU=0 -DSK_ENABLE_SKSL -DSK_GAMMA_APPLY_TO_A8 -DSK_GAMMA_EXPONENT=1.4 -DSK_GAMMA_CONTRAST=0.0 -DSKIA_IMPLEMENTATION=1 -DSK_SUPPORT_PDF -DSK_CODEC_DECODES_JPEG -DSK_ENCODE_JPEG -DSK_ENABLE_ANDROID_UTILS -DSK_CODEC_DECODES_PNG -DSK_ENCODE_PNG -DSK_CODEC_DECODES_RAW -DSK_CODEC_DECODES_WEBP -DSK_ENCODE_WEBP -DSK_HAS_WUFFS_LIBRARY -DSK_XML -I../../../../.cache/archtv/hwui-port/skia -Wno-attributes -fstrict-aliasing -fPIC -fvisibility=hidden -O3 -fdata-sections -ffunction-sections -fPIC -O1 -I/home/tv/.cache/archtv/hwui-port/skia/linux -I/home/tv/.cache/archtv/hwui-port/skia/include/config -include /home/tv/repositorio-principal/runtime/aosp/native/skcms-clang-compat.h -I/home/tv/.cache/archtv/androidfw-port/androidfw/include -I/home/tv/.cache/archtv/androidfw-port/utils/include -I/home/tv/.cache/archtv/androidfw-port/cutils/include -I/home/tv/.cache/archtv/androidfw-port/base/include -I/home/tv/.cache/archtv/androidfw-port/log/include -I/home/tv/.cache/archtv/androidfw-port/ziparchive/include -I/home/tv/.cache/archtv/androidfw-port/ziparchive/incfs_support/include -I/home/tv/.cache/archtv/androidfw-port/incfs/util/include -I/home/tv/.cache/archtv/androidfw-port/fmt/include -I/home/tv/.cache/archtv/androidfw-port/system/include -I/home/tv/.cache/archtv/androidfw-port/processgroup -I/home/tv/.cache/archtv/androidfw-port/gtest -I/home/tv/.cache/archtv/androidfw-port/ndk -I/home/tv/.cache/archtv/androidfw-port/binder-headers -I/home/tv/.cache/archtv/androidfw-port/backtrace-headers -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti -nostdinc++ -isystem /home/tv/.cache/archtv/androidfw-port/libcxx -c ../../../../.cache/archtv/hwui-port/skia/src/core/SkATrace.cpp -o obj/src/core/libskia.SkATrace.o
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkATrace.cpp:10:
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkTraceEvent.h:15:
+/home/tv/.cache/archtv/androidfw-port/libcxx/atomic:560:2: error: C++ standard library is incompatible with <stdatomic.h>
+  560 | #error C++ standard library is incompatible with <stdatomic.h>
+      |  ^
+/home/tv/.cache/archtv/androidfw-port/libcxx/atomic:859:21: error: expected ')'
+  859 | kill_dependency(_Tp __y) _NOEXCEPT
+      |                     ^
+/home/tv/.cache/archtv/androidfw-port/libcxx/atomic:859:1: note: to match this '('
+  859 | kill_dependency(_Tp __y) _NOEXCEPT
+      | ^
+/usr/lib/clang/23/include/stdatomic.h:77:28: note: expanded from macro 'kill_dependency'
+   77 | #define kill_dependency(y) (y)
+      |                            ^
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkATrace.cpp:10:
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkTraceEvent.h:15:
+/home/tv/.cache/archtv/androidfw-port/libcxx/atomic:859:25: error: expected ';' after top level declarator
+  859 | kill_dependency(_Tp __y) _NOEXCEPT
+      |                         ^
+/home/tv/.cache/archtv/androidfw-port/libcxx/atomic:1166:49: error: expected ')'
+ 1166 | atomic_is_lock_free(const volatile atomic<_Tp>* __o) _NOEXCEPT
+      |                                                 ^
+/home/tv/.cache/archtv/androidfw-port/libcxx/atomic:1166:1: note: to match this '('
+ 1166 | atomic_is_lock_free(const volatile atomic<_Tp>* __o) _NOEXCEPT
+      | ^
+/usr/lib/clang/23/include/stdatomic.h:90:68: note: expanded from macro 'atomic_is_lock_free'
+   90 | #define atomic_is_lock_free(obj) __c11_atomic_is_lock_free(sizeof(*(obj)))
+      |                                                                    ^
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkATrace.cpp:10:
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkTraceEvent.h:15:
+/home/tv/.cache/archtv/androidfw-port/libcxx/atomic:1166:1: error: expected expression
+ 1166 | atomic_is_lock_free(const volatile atomic<_Tp>* __o) _NOEXCEPT
+      | ^
+/usr/lib/clang/23/include/stdatomic.h:90:73: note: expanded from macro 'atomic_is_lock_free'
+   90 | #define atomic_is_lock_free(obj) __c11_atomic_is_lock_free(sizeof(*(obj)))
+      |                                                                         ^
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkATrace.cpp:10:
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkTraceEvent.h:15:
+/home/tv/.cache/archtv/androidfw-port/libcxx/atomic:1166:53: error: expected ';' after top level declarator
+ 1166 | atomic_is_lock_free(const volatile atomic<_Tp>* __o) _NOEXCEPT
+      |                                                     ^
+/home/tv/.cache/archtv/androidfw-port/libcxx/atomic:1174:1: error: redefinition of '__c11_atomic_is_lock_free'
+ 1174 | atomic_is_lock_free(const atomic<_Tp>* __o) _NOEXCEPT
+      | ^
+/usr/lib/clang/23/include/stdatomic.h:90:34: note: expanded from macro 'atomic_is_lock_free'
+   90 | #define atomic_is_lock_free(obj) __c11_atomic_is_lock_free(sizeof(*(obj)))
+      |                                  ^
+/home/tv/.cache/archtv/androidfw-port/libcxx/atomic:1166:1: note: previous definition is here
+ 1166 | atomic_is_lock_free(const volatile atomic<_Tp>* __o) _NOEXCEPT
+      | ^
+/usr/lib/clang/23/include/stdatomic.h:90:34: note: expanded from macro 'atomic_is_lock_free'
+   90 | #define atomic_is_lock_free(obj) __c11_atomic_is_lock_free(sizeof(*(obj)))
+      |                                  ^
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkATrace.cpp:10:
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkTraceEvent.h:15:
+/home/tv/.cache/archtv/androidfw-port/libcxx/atomic:1174:40: error: expected ')'
+ 1174 | atomic_is_lock_free(const atomic<_Tp>* __o) _NOEXCEPT
+      |                                        ^
+/home/tv/.cache/archtv/androidfw-port/libcxx/atomic:1174:1: note: to match this '('
+ 1174 | atomic_is_lock_free(const atomic<_Tp>* __o) _NOEXCEPT
+      | ^
+/usr/lib/clang/23/include/stdatomic.h:90:68: note: expanded from macro 'atomic_is_lock_free'
+   90 | #define atomic_is_lock_free(obj) __c11_atomic_is_lock_free(sizeof(*(obj)))
+      |                                                                    ^
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkATrace.cpp:10:
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkTraceEvent.h:15:
+/home/tv/.cache/archtv/androidfw-port/libcxx/atomic:1174:1: error: expected expression
+ 1174 | atomic_is_lock_free(const atomic<_Tp>* __o) _NOEXCEPT
+      | ^
+/usr/lib/clang/23/include/stdatomic.h:90:73: note: expanded from macro 'atomic_is_lock_free'
+   90 | #define atomic_is_lock_free(obj) __c11_atomic_is_lock_free(sizeof(*(obj)))
+      |                                                                         ^
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkATrace.cpp:10:
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkTraceEvent.h:15:
+/home/tv/.cache/archtv/androidfw-port/libcxx/atomic:1174:44: error: expected ';' after top level declarator
+ 1174 | atomic_is_lock_free(const atomic<_Tp>* __o) _NOEXCEPT
+      |                                            ^
+/home/tv/.cache/archtv/androidfw-port/libcxx/atomic:1202:1: error: expected parameter declarator
+ 1202 | atomic_store(volatile atomic<_Tp>* __o, _Tp __d) _NOEXCEPT
+      | ^
+/usr/lib/clang/23/include/stdatomic.h:141:75: note: expanded from macro 'atomic_store'
+  141 | #define atomic_store(object, desired) __c11_atomic_store(object, desired, __ATOMIC_SEQ_CST)
+      |                                                                           ^
+<built-in>:18:26: note: expanded from macro '__ATOMIC_SEQ_CST'
+   18 | #define __ATOMIC_SEQ_CST 5
+      |                          ^
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkATrace.cpp:10:
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkTraceEvent.h:15:
+/home/tv/.cache/archtv/androidfw-port/libcxx/atomic:1202:1: error: expected ')'
+/usr/lib/clang/23/include/stdatomic.h:141:75: note: expanded from macro 'atomic_store'
+  141 | #define atomic_store(object, desired) __c11_atomic_store(object, desired, __ATOMIC_SEQ_CST)
+      |                                                                           ^
+<built-in>:18:26: note: expanded from macro '__ATOMIC_SEQ_CST'
+   18 | #define __ATOMIC_SEQ_CST 5
+      |                          ^
+/home/tv/.cache/archtv/androidfw-port/libcxx/atomic:1202:1: note: to match this '('
+/usr/lib/clang/23/include/stdatomic.h:141:57: note: expanded from macro 'atomic_store'
+  141 | #define atomic_store(object, desired) __c11_atomic_store(object, desired, __ATOMIC_SEQ_CST)
+      |                                                         ^
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkATrace.cpp:10:
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkTraceEvent.h:15:
+/home/tv/.cache/archtv/androidfw-port/libcxx/atomic:1210:1: error: expected parameter declarator
+ 1210 | atomic_store(atomic<_Tp>* __o, _Tp __d) _NOEXCEPT
+      | ^
+/usr/lib/clang/23/include/stdatomic.h:141:75: note: expanded from macro 'atomic_store'
+  141 | #define atomic_store(object, desired) __c11_atomic_store(object, desired, __ATOMIC_SEQ_CST)
+      |                                                                           ^
+<built-in>:18:26: note: expanded from macro '__ATOMIC_SEQ_CST'
+   18 | #define __ATOMIC_SEQ_CST 5
+      |                          ^
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkATrace.cpp:10:
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkTraceEvent.h:15:
+/home/tv/.cache/archtv/androidfw-port/libcxx/atomic:1210:1: error: expected ')'
+/usr/lib/clang/23/include/stdatomic.h:141:75: note: expanded from macro 'atomic_store'
+  141 | #define atomic_store(object, desired) __c11_atomic_store(object, desired, __ATOMIC_SEQ_CST)
+      |                                                                           ^
+<built-in>:18:26: note: expanded from macro '__ATOMIC_SEQ_CST'
+   18 | #define __ATOMIC_SEQ_CST 5
+      |                          ^
+/home/tv/.cache/archtv/androidfw-port/libcxx/atomic:1210:1: note: to match this '('
+/usr/lib/clang/23/include/stdatomic.h:141:57: note: expanded from macro 'atomic_store'
+  141 | #define atomic_store(object, desired) __c11_atomic_store(object, desired, __ATOMIC_SEQ_CST)
+      |                                                         ^
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkATrace.cpp:10:
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkTraceEvent.h:15:
+/home/tv/.cache/archtv/androidfw-port/libcxx/atomic:1240:1: error: expected parameter declarator
+ 1240 | atomic_load(const volatile atomic<_Tp>* __o) _NOEXCEPT
+      | ^
+/usr/lib/clang/23/include/stdatomic.h:144:55: note: expanded from macro 'atomic_load'
+  144 | #define atomic_load(object) __c11_atomic_load(object, __ATOMIC_SEQ_CST)
+      |                                                       ^
+<built-in>:18:26: note: expanded from macro '__ATOMIC_SEQ_CST'
+   18 | #define __ATOMIC_SEQ_CST 5
+      |                          ^
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkATrace.cpp:10:
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkTraceEvent.h:15:
+/home/tv/.cache/archtv/androidfw-port/libcxx/atomic:1240:1: error: expected ')'
+/usr/lib/clang/23/include/stdatomic.h:144:55: note: expanded from macro 'atomic_load'
+  144 | #define atomic_load(object) __c11_atomic_load(object, __ATOMIC_SEQ_CST)
+      |                                                       ^
+<built-in>:18:26: note: expanded from macro '__ATOMIC_SEQ_CST'
+   18 | #define __ATOMIC_SEQ_CST 5
+      |                          ^
+/home/tv/.cache/archtv/androidfw-port/libcxx/atomic:1240:1: note: to match this '('
+/usr/lib/clang/23/include/stdatomic.h:144:46: note: expanded from macro 'atomic_load'
+  144 | #define atomic_load(object) __c11_atomic_load(object, __ATOMIC_SEQ_CST)
+      |                                              ^
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkATrace.cpp:10:
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkTraceEvent.h:15:
+/home/tv/.cache/archtv/androidfw-port/libcxx/atomic:1248:1: error: expected parameter declarator
+ 1248 | atomic_load(const atomic<_Tp>* __o) _NOEXCEPT
+      | ^
+/usr/lib/clang/23/include/stdatomic.h:144:55: note: expanded from macro 'atomic_load'
+  144 | #define atomic_load(object) __c11_atomic_load(object, __ATOMIC_SEQ_CST)
+      |                                                       ^
+<built-in>:18:26: note: expanded from macro '__ATOMIC_SEQ_CST'
+   18 | #define __ATOMIC_SEQ_CST 5
+      |                          ^
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkATrace.cpp:10:
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkTraceEvent.h:15:
+/home/tv/.cache/archtv/androidfw-port/libcxx/atomic:1248:1: error: expected ')'
+/usr/lib/clang/23/include/stdatomic.h:144:55: note: expanded from macro 'atomic_load'
+  144 | #define atomic_load(object) __c11_atomic_load(object, __ATOMIC_SEQ_CST)
+      |                                                       ^
+<built-in>:18:26: note: expanded from macro '__ATOMIC_SEQ_CST'
+   18 | #define __ATOMIC_SEQ_CST 5
+      |                          ^
+/home/tv/.cache/archtv/androidfw-port/libcxx/atomic:1248:1: note: to match this '('
+/usr/lib/clang/23/include/stdatomic.h:144:46: note: expanded from macro 'atomic_load'
+  144 | #define atomic_load(object) __c11_atomic_load(object, __ATOMIC_SEQ_CST)
+      |                                              ^
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkATrace.cpp:10:
+In file included from ../../../../.cache/archtv/hwui-port/skia/src/core/SkTraceEvent.h:15:
+/home/tv/.cache/archtv/androidfw-port/libcxx/atomic:1278:1: error: expected parameter declarator
+ 1278 | atomic_exchange(volatile atomic<_Tp>* __o, _Tp __d) _NOEXCEPT
+      | ^
+/usr/lib/clang/23/include/stdatomic.h:147:81: note: expanded from macro 'atomic_exchange'
+  147 | #define atomic_exchange(object, desired) __c11_atomic_exchange(object, desired, __ATOMIC_SEQ_CST)
+      |                                                                                 ^
+<built-in>:18:26: note: expanded from macro '__ATOMIC_SEQ_CST'
+   18 | #define __ATOMIC_SEQ_CST 5
+      |                          ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+ninja: build stopped: subcommand failed.

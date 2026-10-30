@@ -1,0 +1,9 @@
+{
+  "original_SkATrace_compiled": true,
+  "linked": false,
+  "executed": false,
+  "bionic_stdatomic_sha256": "0dcf8eb6252cf427c2205164102f595c507ec5a71e8e8ce944dee340fdb24795",
+  "object_sha256": "9b71201f2ed20fc47e008ca57dd777c98c8c3c486570f4623afcbaa26e5d1277",
+  "command_sha256": "bb7d7615ecb96cde17fdca79a7d14e659c33192d59048dfa4cbb5411aa88a244",
+  "scope": "Original failing SkATrace.cpp compiled with original Bionic stdatomic C++ header; not complete Skia build"
+}

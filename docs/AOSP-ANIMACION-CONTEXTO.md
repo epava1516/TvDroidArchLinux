@@ -80,3 +80,8 @@ interfaz del prototipo; el constructor original se prueba en otro proceso ART.
 reports/aosp-animation-context/ conserva los logs, snapshots, hashes, procedencia,
 regresiones y frames. No cierra A3/A4/A5 ni las puertas generales de rendimiento,
 estabilidad, instalación o distribución.
+
+La comprobación posterior de AOSP-INTERPOLADORES-NATIVOS.md ya ejecuta las once
+factorías JNI y los objetos C++ originales de interpolación en ART. Es un avance
+separado de este servicio Wayland: no añade todavía reloj de frames, ejecución
+RenderNode ni animaciones dibujadas.

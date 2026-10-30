@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793384106.5125825,
-    "seen": 1793384114.8396194,
-    "ast_hash": "49d0e136d8e9e8415f6a0b659b67fbb5",
+    "mtime": 1793385428.905832,
+    "seen": 1793385471.4362423,
+    "ast_hash": "936d475d312f8f339815481f3431eefe",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -1422,9 +1422,9 @@
     "semantic_hash": ""
   },
   "docs/AOSP-ANIMACION-CONTEXTO.md": {
-    "mtime": 1793382915.4565895,
-    "seen": 1793383062.920926,
-    "ast_hash": "8391b49baa9190651eb0957e0f0d1735",
+    "mtime": 1793385428.7491653,
+    "seen": 1793385471.4337075,
+    "ast_hash": "5f084a9d15bc153f1d6d497f9e45e231",
     "semantic_hash": ""
   },
   "docs/AOSP-RENDERNODE-NATIVO.md": {
@@ -1458,9 +1458,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/skia-extra-sources.json": {
-    "mtime": 1793384288.6719923,
-    "seen": 1793384830.9555883,
-    "ast_hash": "7be09c5c38315f49462c55bd884bfabb",
+    "mtime": 1793385293.777265,
+    "seen": 1793385471.424275,
+    "ast_hash": "ac241c7f020143aaca0b8e6459c55350",
     "semantic_hash": ""
   },
   "runtime/aosp/skia-gn-tool.json": {
@@ -1470,9 +1470,9 @@
     "semantic_hash": ""
   },
   "tools/apk/build_skia_host.py": {
-    "mtime": 1793384698.9551046,
-    "seen": 1793384830.961185,
-    "ast_hash": "e8205297f8921d00402d88f52e8f1fe0",
+    "mtime": 1793385320.6426034,
+    "seen": 1793385471.4307454,
+    "ast_hash": "0cc1115f5d9e067ca5287538bec13a0c",
     "semantic_hash": ""
   },
   "tools/apk/fetch_skia_gn.py": {
@@ -1494,9 +1494,39 @@
     "semantic_hash": ""
   },
   "docs/AOSP-SKIA-HOST.md": {
-    "mtime": 1793384822.1749308,
-    "seen": 1793384830.9648857,
-    "ast_hash": "3925d8ebe1cb1eb36aec40b7682b9246",
+    "mtime": 1793385462.9058523,
+    "seen": 1793385471.4346075,
+    "ast_hash": "0de3db5379354d61b3633bcf16aa5f45",
+    "semantic_hash": ""
+  },
+  "fixtures/aosp-native-interpolators/NativeInterpolatorsProbe.java": {
+    "mtime": 1793385072.2407675,
+    "seen": 1793385471.4203372,
+    "ast_hash": "fa4ca23442dc2a3d61bfb198b946d107",
+    "semantic_hash": ""
+  },
+  "fixtures/aosp-native-interpolators/native-probe.cpp": {
+    "mtime": 1793385072.1341019,
+    "seen": 1793385471.420347,
+    "ast_hash": "2005f725220293fef6e884254b61489e",
+    "semantic_hash": ""
+  },
+  "runtime/aosp/native/interpolators-jni.cpp": {
+    "mtime": 1793385071.7574394,
+    "seen": 1793385471.4236681,
+    "ast_hash": "0117c08c3b00d62b0d45d057c29c6ef4",
+    "semantic_hash": ""
+  },
+  "tools/apk/verify_native_interpolators.py": {
+    "mtime": 1793385115.437019,
+    "seen": 1793385471.4329853,
+    "ast_hash": "57cf449f9190d04077dc0eb417c5ca42",
+    "semantic_hash": ""
+  },
+  "docs/AOSP-INTERPOLADORES-NATIVOS.md": {
+    "mtime": 1793385428.6024985,
+    "seen": 1793385471.4339578,
+    "ast_hash": "f11d07a433117291534847b09ee03275",
     "semantic_hash": ""
   }
 }

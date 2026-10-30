@@ -231,3 +231,10 @@ y su JNI, usando fuentes Skia y dependencias host fijadas por archivo. Ver
 AOSP-RENDERNODE-NATIVO.md y reports/aosp-hwui-host-objects/. Faltan el enlace de
 las bibliotecas, resolver la ABI CriticalNative en ART, ejecutar y presentar
 gráficos originales; A3 no se considera terminado por esta compilación.
+
+Las once factorías nativas originales de interpolación ya se ejecutan en ART
+con 222 objetos creados/evaluados/liberados y 3102 muestras, incluyendo paridad
+Java/C++ de dos curvas. AOSP-INTERPOLADORES-NATIVOS.md y su informe registran
+esta prueba separada. El bootstrap del runtime APK, CriticalNative de RenderNode,
+el reloj de frames y dibujo siguen pendientes. La construcción Skia continúa;
+no se acredita A3 completo ni estabilidad general con estos ciclos de prueba.

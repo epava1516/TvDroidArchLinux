@@ -1,0 +1,32 @@
+{
+  "original_native_interpolators_pass": true,
+  "exit_code": 0,
+  "command": [
+    "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+    "--64",
+    "--no-compile",
+    "--",
+    "-Xint",
+    "-Xcheck:jni",
+    "-cp",
+    "/home/tv/repositorio-principal/dist/apk/aosp-animation-rendernode-1/dex/classes.dex:/home/tv/repositorio-principal/dist/apk/native-interpolators-1/dex/classes.dex",
+    "org.archtv.aospprobe.NativeInterpolatorsProbe",
+    "/home/tv/repositorio-principal/dist/apk/native-interpolators-1/libinterpolator_probe.so"
+  ],
+  "scope": "11 original JNI factories, native C++ interpolation and controlled release; two original Java/native parity checks. No frame clock, RenderNode, CriticalNative or rendered animation claim.",
+  "manifests": {
+    "hwui": "f2b9eb8f9167abbdca8b6cb5b5f0e8e8173dab04cb14cb8d364912c1fb61d565",
+    "androidfw": "629776b58a6f922f82cd853069bcb50ce78c11936cd912d83a74ed37fd215947"
+  },
+  "sources_sha256": {
+    "runtime/aosp/native/interpolators-jni.cpp": "2e8a9c37cd823d006f4daae76654fc4d74fa1389d2a07d0e7290fb1e97702122",
+    "fixtures/aosp-native-interpolators/native-probe.cpp": "c8e569130b284891783b75a34b3925b28289a6dab3717b2fe2b568feb90f6097",
+    "fixtures/aosp-native-interpolators/NativeInterpolatorsProbe.java": "8a4be026ee32b58eb1cdab37f45e1c1d88a7c041778c9d5e6a1af769756ec708"
+  },
+  "verifier_sha256": "81f606afa9b8b4666bb7586c38941a04f968462bc937250df47d30dbdd6f8457",
+  "framework_dex_sha256": "0b15ceb4f562bbeb9a10658816e8b05d838868ddbc615c3cfae752bc6384e0dd",
+  "native_provenance_sha256": "e809cecd83963fe65125e29ad2ccbd98a71f3f54b0f494eb9f1e3c6ab5d1be1d",
+  "libcxx_sha256": "1f1a3c91139d4e6e87b14886d4b6ff035ea7c37162f3f0cc3d692702785ea8fa",
+  "library_sha256": "79b3f82531c787e8f980e5bc6eb930a5e32f048aa4cc3dc03b43cec1bd27aa15",
+  "probe_dex_sha256": "fe60386cb83ee699f9ef8c2692b6c67a178a77c797584de686618488ed87f53e"
+}

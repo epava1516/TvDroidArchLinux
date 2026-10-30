@@ -46,6 +46,8 @@ def main():
     namespace = {}
     exec(compile(ast.Module(body=[function], type_ignores=[]), str(generator), 'exec'), namespace)
     settings = namespace['generate_args']('"linux"', False)
+    out = args.output.resolve()
+    atomic_header = skia/'third_party/externals/bionic-headers/stdatomic.h'
     compatibility = root/'runtime/aosp/native/skcms-clang-compat.h'
     native_includes = json.loads((root/'runtime/aosp/androidfw-build.json').read_text())['includes']
     settings.update(target_cpu='"x64"', cc='"clang"', cxx='"clang++"',
@@ -53,7 +55,8 @@ def main():
                                              '-I'+str(skia/'include/config'),
                                              '-include', str(compatibility),
                                              *['-I'+str(androidfw/p) for p in native_includes]]),
-                    extra_cflags_cc=json.dumps(['-nostdinc++', '-isystem', str(androidfw/'libcxx')]))
+                    extra_cflags_cc=json.dumps(['-nostdinc++', '-isystem', str(androidfw/'libcxx'),
+                                                '-I'+str(out/'host-headers')]))
     text = '\n'.join(k+' = '+v for k, v in sorted(settings.items()))+'\n'
     packages = ['ninja', 'pkgconf', 'libwebp', 'libjpeg-turbo', 'libpng', 'freetype2',
                 'expat', 'zlib', 'harfbuzz', 'icu']
@@ -61,10 +64,10 @@ def main():
     identity = {'sources': str(sources), 'androidfw_sources': str(androidfw),
                 'manifests': manifests, 'gn_sha256': digest(gn), 'args_gn': text,
                 'compiler_compatibility_sha256': digest(compatibility),
+                'original_bionic_stdatomic_sha256': digest(atomic_header),
                 'compiler': subprocess.check_output(['clang++', '--version'], text=True),
                 'ninja': subprocess.check_output(['ninja', '--version'], text=True).strip(),
                 'system_packages': package_info.stdout, 'package_query_stderr': package_info.stderr}
-    out = args.output.resolve()
     out.mkdir(parents=True, exist_ok=args.resume)
     config = out/'configuration.json'
     if args.resume:
@@ -72,6 +75,12 @@ def main():
             raise SystemExit('Cannot resume with different sources, tools or configuration')
     else:
         config.write_text(json.dumps(identity, indent=2)+'\n')
+    (out/'host-headers').mkdir(exist_ok=args.resume)
+    # Export only this original C++ compatibility header, never Bionic's full
+    # libc include directory into a glibc build. C sources keep host stdatomic.
+    exported_atomic = out/'host-headers/stdatomic.h'
+    if not exported_atomic.exists() or digest(exported_atomic) != digest(atomic_header):
+        exported_atomic.write_bytes(atomic_header.read_bytes())
     (out/'args.gn').write_text(text)
     with (out/'generate.log').open('w') as log:
         subprocess.run([str(gn), 'gen', str(out)], cwd=skia, stdout=log,
