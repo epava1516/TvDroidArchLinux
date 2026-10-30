@@ -19,7 +19,12 @@ parser.add_argument('--activity', default='org.archtv.probe.MainActivity')
 parser.add_argument('--text-before', default='Contador: 0')
 parser.add_argument('--text-after', default='Contador: 0')
 parser.add_argument('--art', type=Path, default=Path.home()/'.cache/archtv/art-host/host/art-13.0.0')
+parser.add_argument('--window-service-build',type=Path)
+parser.add_argument('--window-framework',type=Path)
+parser.add_argument('--window-bindings',type=Path)
+parser.add_argument('--window-system-resources',type=Path)
 args = parser.parse_args()
+assert all((args.window_service_build,args.window_framework,args.window_bindings,args.window_system_resources)) or not any((args.window_service_build,args.window_framework,args.window_bindings,args.window_system_resources))
 root = Path(__file__).resolve().parents[2]
 out = args.output.resolve()
 out.mkdir(parents=True, exist_ok=False)
@@ -29,10 +34,10 @@ processes = []
 logs = []
 
 
-def start(command, name, env):
+def start(command, name, env, input_pipe=False):
     log = (out/name).open('wb')
     logs.append(log)
-    process = subprocess.Popen(command, stdout=log, stderr=subprocess.STDOUT, env=env,
+    process = subprocess.Popen(command, stdin=subprocess.PIPE if input_pipe else None, stdout=log, stderr=subprocess.STDOUT, env=env,
                                start_new_session=True, cwd=root)
     processes.append(process)
     return process
@@ -55,6 +60,7 @@ try:
                GALLIUM_DRIVER='llvmpipe', EGL_PLATFORM='wayland',
                ARCHTV_APK_LINUX_LIBRARY=str(args.linux_library.resolve()),
                ARCHTV_APK_RESOURCES_LIBRARY=str(args.resources_library.resolve()))
+    if args.window_service_build: env['ARCHTV_APK_ANIMATOR_SCALE']='0.5'
     env.pop('DISPLAY', None)
     env.pop('WAYLAND_SOCKET', None)
     weston = start(['setpriv', '--inh-caps=-all', '--ambient-caps=-all', 'weston',
@@ -69,10 +75,42 @@ try:
         str(args.runtime_dex.resolve()), str(apk),
         args.activity, str(out/'data'), str(out/'art.stderr'), str(out/'frames')]
     compositor = start(command, 'compositor.log', env)
+    service = None
+    service_info = None
+    if args.window_service_build:
+        wait_for(lambda: 'APK_FRAME 1 960x540' in (out/'compositor.log').read_text(errors='replace'),compositor)
+        policy = out/'data/window-policy.properties'
+        (out/'window-policy-before.properties').write_bytes(policy.read_bytes())
+        values = dict(line.split('=',1) for line in policy.read_text().splitlines())
+        owner = int(values['owner_pid'])
+        builds = [args.window_framework.resolve(),args.window_bindings.resolve(),args.window_service_build.resolve()]
+        proofs = [json.loads((build/'provenance.json').read_text()) for build in builds]
+        for build,proof in zip(builds,proofs):
+            assert hashlib.sha256((build/'dex/classes.dex').read_bytes()).hexdigest()==proof['dex_sha256']
+        assert proofs[2]['framework_dex_sha256']==proofs[0]['dex_sha256']
+        assert proofs[2]['bindings_dex_sha256']==proofs[1]['dex_sha256']
+        (out/'service-art-data').mkdir(mode=0o700)
+        service_env = {key:value for key,value in env.items() if not key.startswith('ANDROID_') and key not in ('LD_LIBRARY_PATH','LD_PRELOAD','CLASSPATH')}
+        service_env.update(ANDROID_DATA=str(out/'service-art-data'),ANDROID_LOG_TAGS='*:w')
+        system_apk=args.window_system_resources.resolve()/'framework-res.apk'
+        system_proof=json.loads((args.window_system_resources/'provenance.json').read_text())
+        assert hashlib.sha256(system_apk.read_bytes()).hexdigest()==system_proof['apk_sha256']
+        service_command = [str(args.art.resolve()/'bin/art'),'--64','--no-compile','--','-Xint','-Xcheck:jni','-cp',
+            ':'.join(str(build/'dex/classes.dex') for build in builds),'org.archtv.apkruntime.WindowServiceProbe',
+            str(args.linux_library.resolve()),str(policy),str(args.resources_library.resolve()),str(apk),str(system_apk),str(out/'service-data')]
+        service = start(service_command,'window-service.log',service_env,input_pipe=True)
+        def service_check(command,marker):
+            service.stdin.write((command+'\n').encode());service.stdin.flush()
+            wait_for(lambda:marker in (out/'window-service.log').read_text(errors='replace'),service,seconds=20)
+        service_check('check 960 540 960 540 0.5','WINDOW_SERVICE_OK 960x540')
+        service_info={'command':service_command,'system_resources_sha256':system_proof['apk_sha256'],'sha256':{str(build/'dex/classes.dex'):proof['dex_sha256'] for build,proof in zip(builds,proofs)}}
     def ready():
         text = (out/'compositor.log').read_text(errors='replace')
         return bool(re.search(r'APK_FRAME \d+ 800x450', text))
     wait_for(ready, compositor)
+    if service:
+        (out/'window-policy-after.properties').write_bytes(policy.read_bytes())
+        service_check('check 800 450 960 540 0.5','WINDOW_SERVICE_OK 800x450')
     text = (out/'compositor.log').read_text()
     initial = text.index('APK_FRAME 1 960x540')
     resized = text.index('APK_DISPLAY 800x450')
@@ -90,7 +128,19 @@ try:
             'stream=width,height','-of','json',str(image)], text=True, timeout=15))['streams'][0]
         dimensions.append([info['width'], info['height']])
     assert [960,540] in dimensions and dimensions[-1] == [800,450]
-    result = {'wayland_live_resize_pass':True, 'initial':[960,540], 'resized':[800,450],
+    if service:
+        compositor.terminate();compositor.wait(timeout=20)
+        def provider_dead():
+            try:
+                stat=Path('/proc/'+str(owner)+'/stat').read_text()
+                return stat.rsplit(')',1)[1].split()[0] in ('Z','X')
+            except FileNotFoundError:return True
+        wait_for(provider_dead,service,seconds=20)
+        service_check('dead','WINDOW_SERVICE_DEAD')
+        service_check('quit','WINDOW_SERVICE_CLOSED')
+        assert service.wait(timeout=15)==0
+        service_info['real_wayland_service_pass']=True
+    result = {'wayland_live_resize_pass':True, 'window_service':service_info, 'initial':[960,540], 'resized':[800,450],
         'frame_sizes':dimensions, 'command':command,
         'app_text_before':args.text_before,'app_text_after':args.text_after,
         'scope':'Real nested Wayland resize after the first frame, original Resources on the main Handler, and client SHM dimensions. No physical mode switch, HiDPI, Activity recreation or native scanout resize claim.',

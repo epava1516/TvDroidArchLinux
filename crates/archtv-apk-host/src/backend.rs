@@ -10,6 +10,7 @@ use std::{
 };
 pub type Update = Result<Message, String>;
 pub struct Backend {
+    policy: crate::window_policy::WindowPolicy,
     child: Child,
     input: Option<ChildStdin>,
     reader: Option<JoinHandle<()>>,
@@ -44,6 +45,7 @@ impl Backend {
             .open(log)?;
         let art_data = data.join("art-data");
         std::fs::create_dir_all(&art_data)?;
+        let policy = crate::window_policy::WindowPolicy::new(data, size)?;
         let classpath = std::env::join_paths([dex, apk])?;
         let resources_library = std::env::var_os("ARCHTV_APK_RESOURCES_LIBRARY")
             .ok_or("ARCHTV_APK_RESOURCES_LIBRARY is required")?;
@@ -110,10 +112,14 @@ impl Backend {
             }
         });
         Ok(Self {
+            policy,
             child,
             input,
             reader: Some(reader),
         })
+    }
+    pub fn window_configured(&mut self, size: [u32; 2]) -> std::io::Result<()> {
+        self.policy.publish(size)
     }
     pub fn configure(&mut self, width: u32, height: u32) -> std::io::Result<()> {
         writeln!(

@@ -1,0 +1,62 @@
+{
+  "sources_sha256": {
+    "runtime/aosp/linux-services/org/archtv/aosplinux/LocalServiceBinder.java": "e3e6dfd6d41bc62944c78f3371871ea60dcf37d79ca5df0050f4010db0c8c0b4",
+    "runtime/aosp/linux-services/org/archtv/aosplinux/WindowPolicyState.java": "706b25f5904676e3464cf844208c7433e5627712c5b2ea397048ddf782c366f8",
+    "runtime/aosp/linux-services/org/archtv/aosplinux/LinuxWindowService.java": "81ba91cf080ac8e448af38471336e0c0750ee4879f262ab389a26f6e6db92d8f",
+    "runtime/apk/java/org/archtv/apkruntime/HostProfile.java": "3f62435bfe26b5bd808eb628cf953d95479e1e22b24d35bef06ee4620da31cc2",
+    "runtime/apk/java/org/archtv/apkruntime/LinuxContext.java": "26192c5d7d80fccdbc8aa9caf55f01013c19a8230bdc9074fc8935221a0e8867",
+    "runtime/apk/java/org/archtv/apkruntime/AppEnvironment.java": "b1c985ca0c0187d3efa7cdc8265c72bb7eee0a6e931367dce827a6f7ec08503e",
+    "runtime/apk/java/org/archtv/apkruntime/ApkResources.java": "87c04cb68907652acbb858f92d071ac286b84f797c64081ac073d95066d79c4f",
+    "runtime/apk/java/org/archtv/apkruntime/IntPreferences.java": "3b28dd2fdb8b032be4d055d33599ab43c9ba95f916d85e82efe72cae9834baaf",
+    "runtime/apk/java/android/content/SharedPreferences.java": "7b486348fab60cee2f1abe90f23840553755ac85f14dbd9fca48576ae3105fc6",
+    "fixtures/aosp-window-service/WindowServiceProbe.java": "855a061c9a2da9c330f0bdc85623e12639607e0c221ef4bfae98f2ac0338be74"
+  },
+  "framework_dex_sha256": "6840fd4810d1b555dd9af6c5a6581ee806eea752ad082910011f15f70ca5b753",
+  "bindings_dex_sha256": "3a4f9f9b70e9bd7488e0093591bd3b9c4d189e29bd09d5265c99bd65fc2b273d",
+  "service_jar_sha256": "af94bfd642aa52069992d22822ddd110d04326889724717fc541830052cce465",
+  "dex_sha256": "25bb9cd854987abe94ecac31505b2663ee8f61c5a3569cdab02c668bf606c088",
+  "commands": [
+    [
+      "/usr/lib/jvm/java-17-openjdk/bin/javac",
+      "--release",
+      "8",
+      "-classpath",
+      "/home/tv/repositorio-principal/dist/apk/window-aidl-3/bindings.jar:/home/tv/repositorio-principal/dist/apk/aosp-window-point-1/framework.jar:/home/tv/.cache/archtv/aosp-compile-tools/android-all-13.jar",
+      "-d",
+      "/home/tv/repositorio-principal/dist/apk/linux-window-service-3/classes",
+      "/home/tv/repositorio-principal/runtime/aosp/linux-services/org/archtv/aosplinux/LocalServiceBinder.java",
+      "/home/tv/repositorio-principal/runtime/aosp/linux-services/org/archtv/aosplinux/WindowPolicyState.java",
+      "/home/tv/repositorio-principal/runtime/aosp/linux-services/org/archtv/aosplinux/LinuxWindowService.java",
+      "/home/tv/repositorio-principal/runtime/apk/java/org/archtv/apkruntime/HostProfile.java",
+      "/home/tv/repositorio-principal/runtime/apk/java/org/archtv/apkruntime/LinuxContext.java",
+      "/home/tv/repositorio-principal/runtime/apk/java/org/archtv/apkruntime/AppEnvironment.java",
+      "/home/tv/repositorio-principal/runtime/apk/java/org/archtv/apkruntime/ApkResources.java",
+      "/home/tv/repositorio-principal/runtime/apk/java/org/archtv/apkruntime/IntPreferences.java",
+      "/home/tv/repositorio-principal/runtime/apk/java/android/content/SharedPreferences.java",
+      "/home/tv/repositorio-principal/fixtures/aosp-window-service/WindowServiceProbe.java"
+    ],
+    [
+      "/usr/lib/jvm/java-17-openjdk/bin/jar",
+      "cf",
+      "/home/tv/repositorio-principal/dist/apk/linux-window-service-3/service.jar",
+      "-C",
+      "/home/tv/repositorio-principal/dist/apk/linux-window-service-3/classes",
+      "."
+    ],
+    [
+      "/usr/lib/jvm/java-17-openjdk/bin/java",
+      "-cp",
+      "/home/tv/.cache/archtv/apk-build-tools/r8.jar",
+      "com.android.tools.r8.D8",
+      "--release",
+      "--min-api",
+      "28",
+      "--lib",
+      "/home/tv/.cache/archtv/apk-build-tools/android.jar",
+      "--output",
+      "/home/tv/repositorio-principal/dist/apk/linux-window-service-3/dex",
+      "/home/tv/repositorio-principal/dist/apk/linux-window-service-3/service.jar"
+    ]
+  ],
+  "scope": "Own Linux IWindowManager implementation: 7 host-state getters, 126 explicit unsupported methods. Original contract/Point/ServiceManager in separate verified artifacts. No window creation/rendering/global WM or APK integration from this build."
+}

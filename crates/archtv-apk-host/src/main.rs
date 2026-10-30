@@ -2,6 +2,7 @@
 mod backend;
 mod model;
 mod render;
+mod window_policy;
 use smithay_client_toolkit::{
     compositor::{CompositorHandler, CompositorState, FrameCallbackData},
     delegate_registry,
@@ -301,6 +302,12 @@ impl WindowHandler for Client {
                 }
             }
         } else {
+            if let Some(backend) = self.backend.as_mut() {
+                if let Err(error) = backend.window_configured(size) {
+                    self.fail(error.to_string());
+                    return;
+                }
+            }
             self.pending_size = Some(size);
             if let Err(error) = self.flush_configuration() {
                 self.fail(error);

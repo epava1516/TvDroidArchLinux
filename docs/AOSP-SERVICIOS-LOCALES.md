@@ -103,3 +103,12 @@ reports/aosp-service-bootstrap/ conserva compilación, generación, comparación
 prueba ART de caché/lifecycle y carga del contrato, y la frontera del constructor.
 A3 sigue en curso; A4/A5 y las puertas generales de estabilidad y distribución
 siguen abiertas.
+
+
+Siete consultas IWindowManager ya leen el estado real publicado por el anfitrión
+Rust tras configures Wayland. Pasan 960×540→800×450, tamaño inicial, densidad y
+políticas, junto con el cierre del proveedor. El contrato conserva 126 métodos
+explícitamente pendientes. El constructor View con ese servicio supera la
+resolución de window y llega a ValueAnimator, aún ausente. Ver
+AOSP-VENTANAS-WAYLAND.md y reports/aosp-window-wayland/. El servicio se prueba en
+un proceso ART separado; el bootstrap en Main y dibujo original siguen pendientes.

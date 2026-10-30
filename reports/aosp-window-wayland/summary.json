@@ -1,0 +1,26 @@
+{
+  "seven_window_getters_verified": true,
+  "sizes": [
+    [
+      960,
+      540
+    ],
+    [
+      800,
+      450
+    ]
+  ],
+  "initial_size_retained": [
+    960,
+    540
+  ],
+  "animator_policy": 0.5,
+  "virtual_density": 160,
+  "provider_death_detected_on_query": true,
+  "view_constructed": false,
+  "view_constructor_failures": [
+    "VIEW_CONSTRUCTOR_BLOCKED java.lang.NoClassDefFoundError: Failed resolution of: Landroid/animation/ValueAnimator;"
+  ],
+  "source_log_sha256": "b983274a8e813d4b007d1bf8ea391b4adbc92115a3b37ad0846e00d9924ac042",
+  "scope": "Real Rust frontend state from Wayland configures, queried through original ServiceManager/Stub with own Linux endpoint in a separate ART process. Prototype counter UI remains the visual regression; no original View drawing, full WindowManager or APK service bootstrap claim."
+}

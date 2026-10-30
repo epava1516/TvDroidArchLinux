@@ -1,0 +1,7 @@
+{
+  "command": "CARGO_TARGET_DIR=/home/tv/.cache/archtv/smithay/target CARGO_BUILD_JOBS=1 cargo test -p archtv-apk-host",
+  "tests_passed": 1,
+  "test": "window_policy::tests::exclusive_owner_preserves_live_state_and_releases_on_drop",
+  "scope": "Kernel flock exclusivity, stale reserved temporary recovery, snapshot preservation on conflicting owner, drop cleanup and replacement owner. Observed command exited 0.",
+  "source_sha256": "dacc858b30a138c03df93d202286f51227789d7ee364be694d29c1a358ff973b"
+}

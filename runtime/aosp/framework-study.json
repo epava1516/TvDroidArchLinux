@@ -473,6 +473,11 @@
       "path": "core/java/android/os/DeadSystemException.java",
       "bytes": 894,
       "sha256": "be6d8812fc51fb2d13bcf72a7359c00c44fe7c2fc9c1c79523d154321846ffac"
+    },
+    {
+      "path": "graphics/java/android/graphics/Point.java",
+      "bytes": 4406,
+      "sha256": "df644b622a632a981299c5979cd23be85bf0b740c756ae1f3383782db92cab3c"
     }
   ],
   "public_resources_sources": [
@@ -531,7 +536,8 @@
     "core/java/android/os/RemoteException.java",
     "core/java/android/os/DeadObjectException.java",
     "core/java/android/util/AndroidException.java",
-    "core/java/android/os/DeadSystemException.java"
+    "core/java/android/os/DeadSystemException.java",
+    "graphics/java/android/graphics/Point.java"
   ],
   "view_resource_inputs": [
     "core/res/res/values/attrs.xml",
