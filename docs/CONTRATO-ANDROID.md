@@ -1,4 +1,9 @@
-# Contrato Android A0 · borrador v1
+# Contrato anterior de proveedores Android · borrador sin congelar
+
+El usuario aclaró después que el objetivo es una capa mínima de compatibilidad
+APK, no una plataforma Android completa ni un adaptador Waydroid. Este borrador
+se conserva como referencia del laboratorio; no es el contrato final de la capa
+y no impone sys.boot_completed a su aceptación. Ver ROADMAP-A.md.
 
 El contrato separa el shell y el compositor del proveedor que administra Android.
 La definición Rust está en crates/archtv-core/src/android.rs y no introduce

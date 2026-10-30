@@ -1,73 +1,58 @@
-# Dirección futura: entorno APK propio sobre Linux
+# Capa de compatibilidad APK propia sobre Linux
 
-Propuesta registrada el 30 de octubre de 2026 a petición del usuario. El objetivo
-es sustituir la dependencia operativa de Waydroid por un entorno Android propio,
-basado en AOSP, integrado con el compositor Rust/Smithay y la distribución Arch TV.
-La plataforma propia sigue sin estar implementada ni validada. A petición del
-usuario, el contrato A0 avanza en paralelo a H0–H9; no sustituye sus validaciones.
-Ver [ROADMAP-A.md](ROADMAP-A.md) y [CONTRATO-ANDROID.md](CONTRATO-ANDROID.md).
+La dirección solicitada es estudiar AOSP para reutilizar o reproducir el mínimo
+necesario para ejecutar APK de forma estable en Linux, sin Waydroid y sin arrancar
+un sistema Android completo. Nuestro compositor y shell siguen siendo Rust/Smithay.
+El desarrollo se organiza en [ROADMAP-A.md](ROADMAP-A.md).
 
-## Qué significa ejecutar APK de forma nativa
+## Qué se debe demostrar
 
-Los procesos compartirían el kernel Linux del equipo, sin emular una máquina
-Android completa para una ABI coincidente. Un APK sigue necesitando las APIs
-Android, el runtime ART para DEX, bibliotecas nativas compatibles con Bionic y
-servicios de plataforma. ART por sí solo no ejecuta cualquier aplicación Android.
-Una biblioteca ARM dentro del APK tampoco se convierte automáticamente a x86_64.
+Una APK propia, sin reescribirla como aplicación Linux, debe ejecutar su código,
+resolver las APIs que usa, abrir una ventana en nuestro compositor, recibir entrada,
+conservar estado y cerrar correctamente. Después se ampliará la compatibilidad
+con APK reales y se medirán estabilidad, aislamiento y consumo.
 
-AOSP proporciona el código de la plataforma, no una biblioteca lista para enlazar
-con glibc y ejecutar cualquier APK de escritorio. Véanse la
-[arquitectura oficial](https://source.android.com/docs/core/architecture) y
-[ART](https://source.android.com/docs/core/runtime).
+Se investigarán por separado:
 
-## Arquitectura que se investigará
+- DEX: ejecución y biblioteca de clases, estudiando ART/libcore y su posible uso host.
+- Framework: subconjunto requerido de ciclo de vida, recursos, vistas y servicios.
+- Gráficos/entrada: puente a Wayland y nuestra sesión Rust, con presentación real.
+- JNI: ABI, bibliotecas nativas y compatibilidad Bionic cuando las APK lo requieran.
+- Servicios: audio, red, almacenamiento y permisos incorporados según pruebas.
 
-- Shell/compositor propios en Rust: navegación TV, ciclo de vida de ventanas,
-  foco, entrada y presentación Wayland.
-- Servicio anfitrión propio en Rust: instalación, inventario, lanzamiento,
-  detención y estado de apps mediante un contrato independiente del backend.
-- Userspace AOSP controlado: ART, Zygote, servicios de paquetes/actividades,
-  recursos, permisos, Binder y bibliotecas Android que requieran las apps.
-- Integraciones de gráficos, audio, entrada, red, almacenamiento y energía.
-  Primera ruta gráfica: conservar SurfaceFlinger y adaptar su salida a Wayland;
-  después medir si una integración más directa reduce coste sin romper APIs.
-- Separación de datos y privilegios de apps. Compartir kernel no exige compartir
-  el espacio de nombres ni conceder acceso general al sistema anfitrión.
+No se presupone que ART solo ejecute cualquier APK. La
+[documentación de ART](https://source.android.com/docs/core/runtime) identifica
+DEX como su formato de ejecución; la resolución de APIs y dependencias de la
+aplicación constituye trabajo adicional de nuestra capa. Compartir el kernel
+no convierte bibliotecas ARM en x86_64 ni garantiza compatibilidad de JNI.
 
-Esta es una hipótesis de diseño que debe probarse. El backend Rust de AIDL
-[está documentado por AOSP](https://source.android.com/docs/core/architecture/aidl/aidl-backends),
-pero depende del runtime Binder de Android: no implica que todo AOSP sea Rust ni
-que funcione directamente contra las bibliotecas glibc del anfitrión.
-Las [HAL](https://source.android.com/docs/core/architecture/hal) identifican los
-contratos de hardware a adaptar. Se reutilizarán componentes AOSP mantenidos;
-la lógica anfitriona nueva se desarrollará preferentemente en Rust.
+## Primer estudio implementado
 
-## Etapas y pruebas de salida
+```bash
+python tools/apk/apk_inventory.py ARCHIVO.apk INFORME.json
+```
 
-| Etapa | Entregable | Evidencia necesaria |
-| --- | --- | --- |
-| A0: contrato | Protocolo de apps independiente del proveedor, con adaptador Waydroid inicial | Mismas pruebas de instalar/listar/lanzar/parar/estado y errores; shell sin comandos específicos del proveedor |
-| A1: build AOSP | Manifest fijado a revisiones, producto x86_64, parches y licencias | Build reproducible en infraestructura adecuada; hashes e inventario; arranque completo sin paquetes ni servicios Waydroid |
-| A2: primera APK | Userspace mínimo, Binder y ciclo de vida de apps | APK propia Java/Kotlin instalada, ventana e interacción sobre nuestro compositor, sys.boot_completed=1, cierre y reinicio |
-| A3: integración | Gráficos, mando/IME, audio/vídeo, red y archivos | Matriz de pruebas funcionales, formatos/sincronización de buffers, permisos y recuperación ante fallos |
-| A4: compatibilidad | Conjunto de APK reales con ABIs y APIs declaradas | Resultados por app y arquitectura, JNI/Bionic, WebView y servicios requeridos; pruebas CTS aplicables sin afirmar certificación |
-| A5: distribución | Paquetes/imagen propios, actualizaciones y datos migrables | Instalación limpia sin Waydroid, actualización/rollback, conservación de datos y métricas comparables con H6/H7 |
+El analizador no instala ni ejecuta Android. Lee tablas DEX de versiones 035–040,
+resta clases definidas en todos los DEX y registra referencias externas de plataforma,
+propietarios de referencias de métodos y bibliotecas lib/ABI/*.so. Usa límites de
+entrada y comprueba rangos básicos. El formato se basa en la
+[especificación DEX](https://source.android.com/docs/core/runtime/dex-format).
 
-La retirada de Waydroid ocurrirá cuando el entorno propio pase las mismas pruebas
-con mejor control de mantenimiento e integración. Hasta entonces es un backend
-de referencia que permite avanzar y detectar requisitos reales de las APK.
-La compatibilidad con Google Play Services, certificaciones y DRM comercial se
-estudiará por separado; no se deduce de disponer del código AOSP.
+El ensayo sobre VLC 3.7.1 x86_64 encuentra seis DEX, 1628 descriptores externos de
+plataforma y cuatro bibliotecas nativas. Es una aplicación compleja de referencia,
+no la APK elegida para el mínimo inicial. Ver reports/a0-apk-study/vlc-static.json.
+Las referencias estáticas no indican qué código se ejecutará ni cubren reflexión,
+JNI o carga dinámica. El informe no verifica firma, manifiesto, recursos o ELF,
+no es un verificador DEX completo y no prueba compatibilidad ni ejecución.
 
-## Recursos y decisiones pendientes
+## Alcance y recursos
 
-La [guía de compilación actual](https://source.android.com/docs/setup/start/requirements)
-indica 400 GB libres y 64 GB de RAM para la estación de desarrollo. La VM actual
-dispone de unos 7,7 GiB tras la ampliación, pero no satisface ese perfil de
-compilación y además presenta problemas de estabilidad pendientes de diagnóstico.
-Se elegirá infraestructura de build antes de descargar AOSP.
+No se iniciará una descarga del árbol AOSP completo por defecto. La cifra oficial
+de 400 GB/64 GB corresponde al desarrollo de la plataforma completa y no se toma
+como requisito demostrado de esta investigación selectiva. Los recursos de los
+componentes elegidos deberán medirse. La VM dispone de unos 7,7 GiB y mantiene
+un problema de estabilidad documentado en INCIDENTE-VM-20261030.md.
 
-Quedan por fijar la versión soportada, ABI inicial, perfil de seguridad, conjunto
-de servicios mínimo y estrategia de HAL/gráficos. La memoria y la CPU deben
-medirse tanto en reposo como con aplicaciones; quitar el nombre Waydroid no
-prueba por sí mismo una reducción de consumo.
+El contrato y adaptador Waydroid anteriores no se presentan como esta capa.
+Se conserva el trabajo publicado como referencia histórica; su ampliación se ha
+detenido. La aceptación de A no exige boot Android ni sys.boot_completed.

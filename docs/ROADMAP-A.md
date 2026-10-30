@@ -1,42 +1,46 @@
-# Roadmap A · proveedor Android propio basado en AOSP
+# Roadmap A · compatibilidad APK mínima sobre Linux
 
-El usuario pidió avanzar A0 en paralelo a H0–H9. Se mantiene todo el alcance de
-ambos: A no sustituye las pruebas multimedia, estabilidad, empaquetado e instalación
-pendientes. El objetivo final es ejecutar apps Android con userspace AOSP propio,
-compartiendo kernel Linux y usando nuestra sesión Rust/Smithay, sin Waydroid.
+Objetivo aclarado por el usuario: estudiar AOSP y reproducir o reutilizar el mínimo
+necesario para ejecutar APK de forma estable sobre Linux, dentro de nuestra sesión
+Rust/Smithay. No se persigue arrancar un sistema Android completo ni envolver
+Waydroid. El éxito se mide por ejecución real de aplicaciones, no por boot Android.
 
 | Etapa | Trabajo concreto | Puerta de salida | Estado |
 | --- | --- | --- | --- |
-| A0 · contrato | Tipos Rust, adaptador Waydroid, catálogo y acciones del shell a través del proveedor, errores y plazos | APK real instalada, listada, lanzada y parada; boot y errores comprobados; shell sin comandos Waydroid | En curso: tipos, contrato y consulta de estado Waydroid conectada al shell; resto del adaptador pendiente |
-| A1 · plataforma | Elegir versión/API, fijar manifests y toolchain, producto x86_64, inventario/licencias, infraestructura de build | Build registrado y repetible; arranque completo sin servicios ni paquetes Waydroid | Pendiente |
-| A2 · primera APK | Binder, Bionic, ART/Zygote, servicios mínimos de paquetes/actividades y recursos; APK propia | Instalación, ventana Wayland, entrada, cierre y reinicio de APK propia; boot confirmado | Pendiente |
-| A3 · integración TV | SurfaceFlinger/HAL hacia Wayland, mando/IME, audio/vídeo, red, archivos, energía y aislamiento | Matriz funcional con formatos/sincronización y recuperación; controles de permisos | Pendiente |
-| A4 · compatibilidad | Apps reales por ABI/API, JNI, WebView y servicios requeridos; pruebas CTS aplicables | Matriz con resultados y límites; ninguna afirmación de certificación sin evidencia | Pendiente |
-| A5 · producto | Paquetes propios, imagen, actualizaciones, rollback y migración de datos desde el proveedor anterior | Instalación nueva sin Waydroid, apps verificadas, recuperación y métricas comparables | Pendiente |
+| A0 · superficie real | APK propia pequeña, inventario DEX/recursos/JNI y pruebas funcionales; revisar contrato según esas necesidades | APK y fuentes fijadas, APIs realmente usadas identificadas, pruebas reproducibles | En curso: analizador estático implementado; APK propia pendiente |
+| A1 · ejecución DEX | Estudiar ART/libcore en modo host y alternativas; prototipo de ejecución sobre Linux sin sistema Android | Código DEX de la APK ejecutado con salida verificable, sin Waydroid ni arranque Android | Pendiente |
+| A2 · primera interfaz | Subconjunto medido de Activity, ciclo de vida, recursos, View/texto/botón y entrada; puente hacia Wayland/Rust | APK propia sin modificar abre ventana, responde a entrada, guarda estado y se cierra correctamente | Pendiente |
+| A3 · servicios mínimos | JNI/ABI/Bionic donde sean necesarios, gráficos, audio, red, archivos y permisos según APK de prueba | Pruebas por API/servicio, errores explícitos en funciones ausentes y recuperación | Pendiente |
+| A4 · compatibilidad y estabilidad | APK reales por ABI/API, reflexión, WebView y demás dependencias descubiertas; ampliar la capa con evidencia | Matriz por aplicación, pruebas prolongadas, reinicios y mediciones; fallos y cobertura registrados | Pendiente |
+| A5 · distribución | Runtime y servicio anfitrión propios, paquetes, actualizaciones, migración de datos e integración TV | Instalación limpia sin Waydroid ni sistema Android completo, apps verificadas, actualización y rollback | Pendiente |
 
-## Orden inmediato A0
+## Próximo experimento
 
-1. Definir contrato y tipos independientes en archtv-core, con errores y plazos.
-2. Añadir adaptador Waydroid con límites de procesos/salida y pruebas de errores.
-3. Consumirlo desde los workers del shell; retirar comandos específicos de la UI.
-4. Migrar inventario y lanzamiento Android conservando favoritos y aplicaciones Linux.
-5. Probar APK real y fallos en una plataforma estable; registrar qué queda sin verificar.
-6. Congelar v1 solo tras esa integración. Después definir IPC y servicio anfitrión.
+1. Crear una APK propia con una Activity, texto, botón y contador persistente,
+   sin bibliotecas JNI ni dependencias adicionales en su primera versión.
+2. Fijar sus fuentes, SDK, APK y hashes; analizar referencias y recursos.
+3. Probar ejecución DEX fuera de Android. Evaluar reutilización selectiva de ART
+   y libcore antes de escribir un runtime completo desde cero.
+4. Implementar las APIs que esa APK requiere y un puente de ventana/entrada hacia
+   el compositor; ninguna pantalla simulada cuenta como ejecución de la APK.
+5. Verificar cierre, estado, repetición y consumo. Ampliar el conjunto de APK y
+   APIs con resultados de ejecución, manteniendo la meta de estabilidad.
 
-La etapa 1 tiene una primera implementación en android.rs. Las etapas 2/3
-comenzaron con status en archtv-android y su consumo desde el worker de estado.
-El contrato se detalla en CONTRATO-ANDROID.md. No constituye un proveedor AOSP operativo. Las pruebas de
-identidad/boot son unitarias; el resto requiere adaptador y evidencia de ejecución.
+AOSP aporta especificaciones y componentes que se estudiarán individualmente.
+Zygote, system_server, SystemUI, SurfaceFlinger, HAL y Binder no se convierten en
+requisitos globales por defecto: cada dependencia deberá justificarse o adaptarse
+según la ruta elegida y las aplicaciones. Tampoco se afirma que todos puedan
+eliminarse conservando cualquier API; esa compatibilidad debe demostrarse.
 
-## Decisiones que debe resolver A1
+## Corrección del enfoque anterior
 
-- Versión AOSP y nivel de API, revisión exacta y calendario de mantenimiento.
-- ABI x86_64 inicial y declaración explícita de ABIs adicionales.
-- Mínimo de servicios y HAL requerido por la APK propia, no por suposición.
-- Infraestructura de compilación y almacenamiento; no descargar AOSP en esta VM
-  sin resolver esos recursos y su capacidad de mantenimiento.
-- Límites de privilegios, perfiles, datos y asociación autenticada de ventanas.
+Los tipos AndroidProvider y el adaptador de estado Waydroid publicados son trabajo
+previo y una referencia del laboratorio. No son el entregable de este roadmap ni
+un prerrequisito para A1. Se detuvo su ampliación; el inventario Waydroid no
+publicado se archivó fuera del repositorio. El contrato mínimo se revisará a la
+luz de los experimentos, sin exigir sys.boot_completed ni un arranque AOSP.
 
-Las puertas H6/H7 siguen determinando si la plataforma anfitriona puede usarse
-para validar multimedia y rendimiento. Los soft lockups actuales de la VM se
-registran por separado; no se atribuyen al futuro proveedor AOSP.
+Las validaciones funcionales, de ligereza, estabilidad e instalación del proyecto
+siguen vigentes. H6 contiene resultados del laboratorio Waydroid; no se reutilizan
+como prueba de la futura capa. La infraestructura para compilar una plataforma
+AOSP completa no se presupone necesaria para investigar este runtime mínimo.

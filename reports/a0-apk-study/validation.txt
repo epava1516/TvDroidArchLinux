@@ -1,0 +1,3 @@
+Static inventory executed on cached official VLC APK: 6 DEX, 1628 external platform descriptors, 4 native libraries.
+Negative probes: malformed DEX magic and out-of-file table rejected with ValueError.
+Scope: static inventory only; no APK execution, manifest decoding or compatibility proof.

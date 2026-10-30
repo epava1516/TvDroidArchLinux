@@ -300,14 +300,15 @@ Ver docs/DISTRIBUCION.md y reports/h9-uefi-boot/. H9 continúa abierto.
 arrancar desde disco, abrir aplicación Linux y Android, actualizar y recuperar
 la sesión tras un fallo. Repetir en el hardware físico declarado compatible.
 
-## Evolución posterior: AOSP propio y ejecución de APK
+## Evolución A · compatibilidad APK mínima sobre Linux
 
-Dirección futura solicitada: sustituir Waydroid por un entorno AOSP controlado
-por el proyecto, con procesos sobre el kernel Linux e integración con el shell y
-compositor Rust. Plan, contratos y puertas de aceptación en
-[docs/AOSP-NATIVO.md](docs/AOSP-NATIVO.md). A petición del usuario, A0 avanza en paralelo con tipos y contrato en Rust;
-A1–A5 siguen pendientes. Ver [docs/ROADMAP-A.md](docs/ROADMAP-A.md). No reemplaza
-la validación H6 ni acredita ejecución AOSP propia ya disponible.
+El usuario precisó el objetivo: estudiar AOSP y reproducir/reutilizar las partes
+mínimas para ejecutar APK estables en Linux, sin Waydroid ni un sistema Android
+completo. La ampliación del adaptador Waydroid se detuvo. La siguiente acción es
+una APK propia pequeña y un experimento de ejecución DEX con APIs mínimas.
+[docs/ROADMAP-A.md](docs/ROADMAP-A.md) recoge las etapas y pruebas; los resultados
+H6 del laboratorio Waydroid no acreditan esta capa. Se mantienen las validaciones
+funcionales, de estabilidad, rendimiento e instalación del proyecto.
 
 ## Regla para cerrar un hito
 
@@ -315,6 +316,6 @@ Cada hito requiere implementación, pruebas y evidencia. Un documento, un binari
 que solo imprime texto, un paquete instalado o un contenedor RUNNING no acreditan
 por sí mismos un compositor, una interfaz o Android funcionales.
 
-Siguiente acción en A0: completar el adaptador Waydroid y migrar acciones e
-inventario del shell; la consulta de estado ya consume el contrato Rust. H6/H7 conservan sus validaciones de estabilidad
-y multimedia pendientes; H8/H9 mantienen las puertas descritas arriba.
+Siguiente acción en A0: preparar la APK propia mínima, fijar sus fuentes y
+analizar sus dependencias para el primer experimento DEX sobre Linux. Las demás
+puertas del proyecto permanecen abiertas y documentadas.
