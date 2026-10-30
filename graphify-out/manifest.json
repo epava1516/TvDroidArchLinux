@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793374256.588808,
-    "seen": 1793374263.754694,
-    "ast_hash": "bfb99fe5396f2665a58e0f14a7d70af2",
+    "mtime": 1793374850.109157,
+    "seen": 1793374857.871529,
+    "ast_hash": "28797093e957a6425e0027865d6855ef",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -882,9 +882,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/framework-study.json": {
-    "mtime": 1793374090.9765368,
-    "seen": 1793374263.753988,
-    "ast_hash": "69f91c5f27b4fee934d5f6919f12ac58",
+    "mtime": 1793374634.7180302,
+    "seen": 1793374857.871162,
+    "ast_hash": "9baf8c61dc85f0a40fceb8990ade068f",
     "semantic_hash": ""
   },
   "tools/apk/study_framework.py": {
@@ -894,9 +894,9 @@
     "semantic_hash": ""
   },
   "docs/PORT-FRAMEWORK-AOSP.md": {
-    "mtime": 1793374256.5853965,
-    "seen": 1793374263.7546895,
-    "ast_hash": "94df90b25c902b2a38ced0a99046d347",
+    "mtime": 1793374850.1082106,
+    "seen": 1793374857.871524,
+    "ast_hash": "f47f7c9c2fb6a39c90e338ca5fc83470",
     "semantic_hash": ""
   },
   "fixtures/aosp-queue/QueueLinkProbe.java": {
@@ -954,9 +954,9 @@
     "semantic_hash": ""
   },
   "crates/archtv-aosp-linux/src/lib.rs": {
-    "mtime": 1793363770.9572797,
-    "seen": 1793364902.2696729,
-    "ast_hash": "ef86e47fcad356f68d2db20a57dc01ec",
+    "mtime": 1793374378.1357074,
+    "seen": 1793374857.8708563,
+    "ast_hash": "102da8ec428c48a7f5c25f5a6898be63",
     "semantic_hash": ""
   },
   "crates/archtv-aosp-linux/src/queue.rs": {
@@ -1260,9 +1260,9 @@
     "semantic_hash": ""
   },
   "fixtures/aosp-view-constructor/ViewConstructorProbe.java": {
-    "mtime": 1793374156.5607274,
-    "seen": 1793374263.7539086,
-    "ast_hash": "4a6ecf2b326c9d2235a687c445c3696b",
+    "mtime": 1793374771.3093345,
+    "seen": 1793374857.8711066,
+    "ast_hash": "ea099e34e929e6f828ff53ac432d172c",
     "semantic_hash": ""
   },
   "tools/apk/probe_view_constructor.py": {
@@ -1272,9 +1272,33 @@
     "semantic_hash": ""
   },
   "docs/AOSP-CONSTRUCTOR-VIEW.md": {
-    "mtime": 1793374256.5817428,
-    "seen": 1793374263.7545435,
-    "ast_hash": "727cfc50039beaa5444b34a7846f4177",
+    "mtime": 1793374850.1040094,
+    "seen": 1793374857.8714468,
+    "ast_hash": "dd7fadffbf5870d1f75468a1bd6dbb24",
+    "semantic_hash": ""
+  },
+  "crates/archtv-aosp-linux/src/logging.rs": {
+    "mtime": 1793374410.4321346,
+    "seen": 1793374857.8708649,
+    "ast_hash": "f69ab99313f2af29ba15712bd9581f35",
+    "semantic_hash": ""
+  },
+  "fixtures/aosp-log/LogProbe.java": {
+    "mtime": 1793374530.0023952,
+    "seen": 1793374857.871076,
+    "ast_hash": "6b5856e4de6a4ad3e683b48655ae5873",
+    "semantic_hash": ""
+  },
+  "tools/apk/verify_linux_log.py": {
+    "mtime": 1793374530.0033064,
+    "seen": 1793374857.871412,
+    "ast_hash": "cce51ccb27cea14998b9d30f2133581c",
+    "semantic_hash": ""
+  },
+  "docs/AOSP-LOG-LINUX.md": {
+    "mtime": 1793374771.3124382,
+    "seen": 1793374857.8714557,
+    "ast_hash": "f53f6ee7978559244ac0130d44c861c8",
     "semantic_hash": ""
   }
 }

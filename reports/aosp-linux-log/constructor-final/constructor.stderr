@@ -1,0 +1,14 @@
+dalvikvm64 E 10-30 15:39:40    99    99 image_space.cc:2239] Error reading named image component header for /home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/core.art, error: Unable to open file "/home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/x86_64/core.art" for reading image header
+dalvikvm64 E 10-30 15:39:40    99    99 image_space.cc:3470] Could not create image space with image file '/home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/core.art'. Attempting to fall back to imageless running. Error was: Full boot image cannot be compiled because no profile is provided.
+ziparchive W 10-30 15:39:40    99    99 Unable to open '/home/tv/repositorio-principal/dist/apk/aosp-view-constructor-singleton-1/dex/classes.dm': No such file or directory
+ziparchive W 10-30 15:39:40    99    99 Unable to open '/home/tv/repositorio-principal/dist/apk/view-constructor-singleton-2/dex/classes.dm': No such file or directory
+APK_HOST_PROFILE sdk=33 abi=x86_64
+APK_RESOURCES_AOSP_READY
+APK_PUBLIC_RESOURCES_AOSP_READY
+android.content.res.Resources$NotFoundException: Resource ID #0x10500d6
+	at android.content.res.ResourcesImpl.getValue(ResourcesImpl.java:226)
+	at android.content.res.Resources.getDimensionPixelSize(Resources.java:831)
+	at android.view.ViewConfiguration.<init>(ViewConfiguration.java:426)
+	at android.view.ViewConfiguration.get(ViewConfiguration.java:533)
+	at android.view.View.<init>(View.java:5366)
+	at org.archtv.apkruntime.ViewConstructorProbe.main(ViewConstructorProbe.java:26)

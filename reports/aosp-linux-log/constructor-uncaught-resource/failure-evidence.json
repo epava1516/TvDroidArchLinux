@@ -1,0 +1,9 @@
+{
+  "diagnostic_completed": false,
+  "original_view_constructed": false,
+  "failure": "Uncaught original Resources.NotFoundException for system dimension 0x10500d6",
+  "probe_source_sha256": "f4f1ee986898ebd6bb02884c91e35d689cccbd716496118962db66007ab8a6d7",
+  "probe_jar_sha256": "2a6b47196159ec6f638e67d37c8006545178f7d3239c73275173498eee77c03b",
+  "native_sha256": "0ff761f86136e769d99ca6aa113b2296bde111c423eb43a891346e8f36e3c863",
+  "scope": "Original failure before adding a specific diagnostic catch; no success result was emitted."
+}

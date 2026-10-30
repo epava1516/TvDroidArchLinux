@@ -182,3 +182,10 @@ del APK está documentado en AOSP-CONSTRUCTOR-VIEW.md. Las dependencias original
 amplían el conjunto a 73 fuentes y permiten avanzar hasta el JNI ausente de
 Log.isLoggable. La View todavía no se construye; la regresión estática sigue
 pasando. Ver reports/aosp-view-constructor/.
+
+
+Log original ya enlaza sus tres métodos JNI con stderr Linux y filtrado de
+prioridad probado en ART; ver AOSP-LOG-LINUX.md y reports/aosp-linux-log/. Pasa la
+regresión headless del contador. El constructor View con el conjunto de 74 fuentes
+avanza hasta config_scrollbarSize del sistema, todavía ausente. Cargar recursos
+de sistema y completar construcción/dibujo siguen pendientes.

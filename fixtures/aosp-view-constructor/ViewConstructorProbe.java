@@ -27,7 +27,7 @@ public final class ViewConstructorProbe {
                 if (view.getContext() != AppEnvironment.current().applicationContext)
                     throw new AssertionError("View context identity");
                 System.out.println("VIEW_CONSTRUCTOR_OK "+view.getClass().getName());
-            } catch (LinkageError | UnsupportedOperationException failure) {
+            } catch (LinkageError | UnsupportedOperationException | android.content.res.Resources.NotFoundException failure) {
                 System.out.println("VIEW_CONSTRUCTOR_BLOCKED "+failure);
                 failure.printStackTrace(System.err);
             }

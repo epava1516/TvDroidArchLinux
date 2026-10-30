@@ -69,3 +69,23 @@ UnsatisfiedLinkError por JNI aún ausente. stage-4/result.json registra
 original_view_constructed=false. El siguiente trabajo es el enlace nativo de
 registro sobre Linux; todavía no se han alcanzado las rutas de recursos internos
 y RenderNode mencionadas arriba.
+
+
+## Log nativo resuelto y siguiente recurso del sistema
+
+AOSP-LOG-LINUX.md describe el enlace JNI de Log ya probado. Tras incorporar
+Singleton original (74 fuentes Java en el conjunto), StrictMode y ViewConfiguration
+avanzan hasta Resources.getDimensionPixelSize. Falla config_scrollbarSize,
+ID 0x10500d6 (17105110), porque los assets actuales contienen sólo los del APK.
+La constante se contrastó con la referencia Android fijada; no es un recurso del
+paquete org.archtv.probe.
+
+reports/aosp-linux-log/constructor-final/ conserva el diagnóstico con
+original_view_constructed=false y la NotFoundException original. La prueba captura
+ahora específicamente Resources.NotFoundException como dependencia ausente; no
+captura otras RuntimeException o AssertionError. La ejecución anterior sin esa
+captura se conserva separada y no produjo un resultado satisfactorio.
+
+Sigue pendiente construir/cargar recursos de sistema AOSP junto con el APK,
+conservando IDs y selección de configuración. No se sustituye la dimensión por
+un cero ni se omite ViewConfiguration. Tampoco se ha alcanzado RenderNode.

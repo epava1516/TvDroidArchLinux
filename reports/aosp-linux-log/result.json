@@ -1,0 +1,137 @@
+{
+  "original_log_linux_pass": true,
+  "cases": [
+    {
+      "case": "default",
+      "properties": {},
+      "minimum": 4,
+      "global_minimum": 4,
+      "command": [
+        "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+        "--64",
+        "--no-compile",
+        "--",
+        "-Xint",
+        "-Xcheck:jni",
+        "-cp",
+        "/home/tv/repositorio-principal/dist/apk/aosp-view-constructor-log-1/dex/classes.dex:/home/tv/repositorio-principal/dist/apk/aosp-linux-log-2/dex/classes.dex",
+        "org.archtv.aospprobe.LogProbe",
+        "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+        "4",
+        "4"
+      ]
+    },
+    {
+      "case": "tag-debug",
+      "properties": {
+        "log.tag.Probe": "DEBUG",
+        "persist.log.tag.Probe": "ERROR",
+        "log.tag": "WARN"
+      },
+      "minimum": 3,
+      "global_minimum": 5,
+      "command": [
+        "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+        "--64",
+        "--no-compile",
+        "--",
+        "-Xint",
+        "-Xcheck:jni",
+        "-cp",
+        "/home/tv/repositorio-principal/dist/apk/aosp-view-constructor-log-1/dex/classes.dex:/home/tv/repositorio-principal/dist/apk/aosp-linux-log-2/dex/classes.dex",
+        "org.archtv.aospprobe.LogProbe",
+        "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+        "3",
+        "5"
+      ]
+    },
+    {
+      "case": "persistent-fallback",
+      "properties": {
+        "log.tag.Probe": "invalid",
+        "persist.log.tag.Probe": "ERROR",
+        "log.tag": "WARN"
+      },
+      "minimum": 6,
+      "global_minimum": 5,
+      "command": [
+        "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+        "--64",
+        "--no-compile",
+        "--",
+        "-Xint",
+        "-Xcheck:jni",
+        "-cp",
+        "/home/tv/repositorio-principal/dist/apk/aosp-view-constructor-log-1/dex/classes.dex:/home/tv/repositorio-principal/dist/apk/aosp-linux-log-2/dex/classes.dex",
+        "org.archtv.aospprobe.LogProbe",
+        "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+        "6",
+        "5"
+      ]
+    },
+    {
+      "case": "global-silent",
+      "properties": {
+        "log.tag": "SILENT"
+      },
+      "minimum": 8,
+      "global_minimum": 8,
+      "command": [
+        "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+        "--64",
+        "--no-compile",
+        "--",
+        "-Xint",
+        "-Xcheck:jni",
+        "-cp",
+        "/home/tv/repositorio-principal/dist/apk/aosp-view-constructor-log-1/dex/classes.dex:/home/tv/repositorio-principal/dist/apk/aosp-linux-log-2/dex/classes.dex",
+        "org.archtv.aospprobe.LogProbe",
+        "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+        "8",
+        "8"
+      ]
+    }
+  ],
+  "build_commands": [
+    [
+      "/usr/lib/jvm/java-17-openjdk/bin/javac",
+      "--release",
+      "8",
+      "-classpath",
+      "/home/tv/repositorio-principal/dist/apk/aosp-view-constructor-log-1/framework.jar:/home/tv/.cache/archtv/aosp-compile-tools/android-all-13.jar",
+      "-d",
+      "/home/tv/repositorio-principal/dist/apk/aosp-linux-log-2/classes",
+      "/home/tv/repositorio-principal/fixtures/aosp-log/LogProbe.java"
+    ],
+    [
+      "/usr/lib/jvm/java-17-openjdk/bin/jar",
+      "cf",
+      "/home/tv/repositorio-principal/dist/apk/aosp-linux-log-2/probe.jar",
+      "-C",
+      "/home/tv/repositorio-principal/dist/apk/aosp-linux-log-2/classes",
+      "."
+    ],
+    [
+      "/usr/lib/jvm/java-17-openjdk/bin/java",
+      "-cp",
+      "/home/tv/.cache/archtv/apk-build-tools/r8.jar",
+      "com.android.tools.r8.D8",
+      "--release",
+      "--min-api",
+      "28",
+      "--lib",
+      "/home/tv/.cache/archtv/apk-build-tools/android.jar",
+      "--output",
+      "/home/tv/repositorio-principal/dist/apk/aosp-linux-log-2/dex",
+      "/home/tv/repositorio-principal/dist/apk/aosp-linux-log-2/probe.jar"
+    ]
+  ],
+  "source_sha256": "503c35c3e3b77919af4ff179214e4e2b82d6ebe373274850d01687db3fee0025",
+  "sha256": {
+    "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so": "0ff761f86136e769d99ca6aa113b2296bde111c423eb43a891346e8f36e3c863",
+    "/home/tv/repositorio-principal/dist/apk/aosp-linux-log-2/dex/classes.dex": "0ef805b5040d98a46d222740b37097ed2586789ae6ad27fa0f047e0cd0488cff",
+    "/home/tv/repositorio-principal/dist/apk/aosp-view-constructor-log-1/dex/classes.dex": "1c0f8b9f5ebf08908db6922c4e3a260e8b605e0960d95a79b20efd36384d76bc",
+    "/home/tv/repositorio-principal/dist/apk/aosp-view-constructor-log-1/framework.jar": "05645d2a2942186db948e327d7333c78ac04ed16ce2ff8547a700527f40c88b2"
+  },
+  "scope": "Original AOSP Log Java on ART with three Linux JNI methods, actual stderr UTF8 text, property thresholds and precedence, null message/tag, long tag, payload boundary and explicit unsupported binary buffer. No logd, Android ring buffers, WTF handler, throwable writer or full StrictMode support claim."
+}

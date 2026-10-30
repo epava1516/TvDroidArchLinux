@@ -1,6 +1,7 @@
 //! JNI adapters for original AOSP MessageQueue; Java scheduling remains upstream.
 mod clock;
 mod identity;
+mod logging;
 mod properties;
 mod queue;
 mod tracing;
