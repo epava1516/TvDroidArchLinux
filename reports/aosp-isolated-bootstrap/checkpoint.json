@@ -1,0 +1,46 @@
+{
+  "observed_at": "2026-10-30T22:17:06.217008+00:00",
+  "objective": "Unmodified complete APK on Linux Rust/Smithay; no Waydroid/full Android; broad compatibility/isolation/stability/lightweight/install/update remain open",
+  "branch": "main",
+  "head_before_this_milestone": "b8ea156bce27f888cc48a892dbc7eff467d7d28e",
+  "origin_main_verified": "b8ea156bce27f888cc48a892dbc7eff467d7d28e",
+  "pending_own": "isolated original bootstrap experiment and evidence in this milestone; graph hook changes expected",
+  "pending_other": [
+    "reports/h9-uefi-boot/qemu.log",
+    "reports/h9-uefi-boot/serial.log"
+  ],
+  "active_observed": [
+    {
+      "unit": "codex-remote.service",
+      "scope": "system",
+      "pid": 181298,
+      "started": "2026-10-30 21:21:11 UTC",
+      "state": "active"
+    },
+    {
+      "pid": 181308,
+      "started": "2026-10-30 21:21:11 UTC",
+      "command": "codex"
+    },
+    {
+      "pid": 181453,
+      "started": "2026-10-30 21:21:55 UTC",
+      "command": "codex-code-mode"
+    }
+  ],
+  "tool_handles_terminal": [
+    20895,
+    51684,
+    15131,
+    54590,
+    29742,
+    12478,
+    48200
+  ],
+  "rea_mcp": "binary_session successful; open=false cleanup_pending=false; see rea-session.json",
+  "process_limitations": "Host process snapshot observed no ART/bwrap/QEMU. node processes 181424/181888 observed; role not inferred from comm alone. systemctl --user failed; actual Codex service is system unit. No VM restart. Revalidate all PIDs.",
+  "tests": "namespace preflight/actual UID passed; original Looper/ActivityThread passed; ContextImpl failed before any Markor code",
+  "failure": "SystemServiceRegistry static initialization cannot resolve android.net.TetheringManager; coherent modular platform classpath incomplete",
+  "next_action": "Obtain coherent original runtime framework module implementation artifacts and bootclasspath metadata; do not use SDK stubs or add substitute classes. Resume isolated original Application bootstrap then Markor complete note workflow.",
+  "limits": "No Application.onCreate, Activity/UI/input/save/reopen verified. Preflight is partial namespace evidence, not complete APK sandbox/security/resource audit."
+}

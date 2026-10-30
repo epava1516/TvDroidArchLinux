@@ -1,0 +1,26 @@
+{
+  "repository": "https://android.googlesource.com/platform/frameworks/base/",
+  "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+  "files": [
+    {
+      "path": "core/java/android/app/Instrumentation.java",
+      "bytes": 96997,
+      "sha256": "613d5e004d24bc04a3ae5a6d7a45635946ea8e3b9389f426e35c9efecf6e9118"
+    },
+    {
+      "path": "core/java/android/app/ActivityThread.java",
+      "bytes": 355196,
+      "sha256": "b771ee5efdfc2a07247107741d3f31d11184a44c70a1799393719639bce0033a"
+    },
+    {
+      "path": "core/java/android/app/LoadedApk.java",
+      "bytes": 97364,
+      "sha256": "393346bd31b2c2325eb726994aa38beaf2bbe1f34fd6309dcf87c83e67765382"
+    },
+    {
+      "path": "core/java/android/app/AppComponentFactory.java",
+      "bytes": 7026,
+      "sha256": "a8ae267434bd84dad61b1196218c1d01b43835b4030b8d357f68b074cdbcfb13"
+    }
+  ]
+}

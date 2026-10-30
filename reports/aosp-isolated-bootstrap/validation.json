@@ -1,0 +1,8 @@
+{
+  "pass": true,
+  "local_document_links_checked": 72,
+  "evidence_hashes_checked": 13,
+  "rea_bundle_bytes": 6317589,
+  "pending_runtime_preserved": true,
+  "scope": "Local document targets, indexed SHA256 and commit paths, REA bundle IDs/decompression, original pending runtime patch and own untracked sources. External URL reachability and historic test re-execution not performed."
+}

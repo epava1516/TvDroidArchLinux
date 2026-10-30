@@ -1,5 +1,14 @@
 # Arquitectura vigente
 
+Estado posterior a la revisión: el [bootstrap original aislado](../reports/aosp-isolated-bootstrap/result.json)
+construye Looper/ActivityThread con UID 10000, pero ContextImpl no inicializa
+SystemServiceRegistry por ausencia de TetheringManager. El bundle R8 no es
+un conjunto modular suficiente. El snapshot SDK Connectivity consultado lista
+stubs, que no se usarán para ejecutar aplicaciones. Se mantiene la decisión de
+reutilizar implementaciones originales con procedencia y classpath coherentes;
+Markor todavía no ejecuta su código. Aislamiento: sólo preflight parcial, no
+aceptación de seguridad.
+
 Esta sección sustituye las decisiones antiguas de backend Android que se conservan
 al final como historia. Estado operativo: [ESTADO.md](ESTADO.md). Requisitos y
 aceptación: [ROADMAP.md](../ROADMAP.md). Evidencia: [EVIDENCIAS.md](EVIDENCIAS.md).

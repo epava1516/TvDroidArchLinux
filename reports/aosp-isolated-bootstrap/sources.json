@@ -1,0 +1,10 @@
+{
+  "r8-host-export": {
+    "url": "https://r8.googlesource.com/r8/+/7966a31aa18051a062b33c8cdcc15c09e6a993a2/scripts/update-host-art.sh?format=TEXT",
+    "scope": "export script at pinned R8 revision; does not prove every platform output retained"
+  },
+  "connectivity-sdk": {
+    "url": "https://android.googlesource.com/platform/prebuilts/module_sdk/Connectivity/+/refs/tags/android-13.0.0_r3/current/Android.bp?format=TEXT",
+    "scope": "snapshot lists API stubs and invalid systemserver jar placeholder, not runnable implementation"
+  }
+}

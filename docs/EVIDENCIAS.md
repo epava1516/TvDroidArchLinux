@@ -14,8 +14,8 @@ un catálogo exhaustivo de todas las pruebas históricas del repositorio.
 | rendernode | [result.json](../reports/aosp-rendernode-native/art/result.json) | Propiedades de RenderNode; no dibujo de APK original | git |
 | binder-holder | [result.json](../reports/aosp-binder-holder/native-lifetime/result.json) | 12800 ciclos nativos; no GC ART ni IPC | git |
 | log | [result.json](../reports/aosp-log-throwables/log/result.json) | Log: filtros y Throwable; no logd | git |
-| registro-pendiente | [result.json](../dist/apk/local-registry-final-wayland-1/result.json) | Experimento sin commit: registro local, layout/resize de View aislada; no dibujo de APK | local |
-| binder-context-pendiente | [result.json](../dist/apk/binder-service-context-lifetime-1/result.json) | Experimento sin commit: ciclo del holder extendido | local |
+| registro-pendiente | [result.json](../dist/apk/local-registry-final-wayland-1/result.json) | Experimento versionado en b8ea156: registro local, layout/resize de View aislada; no dibujo de APK | local |
+| binder-context-pendiente | [result.json](../dist/apk/binder-service-context-lifetime-1/result.json) | Experimento versionado en b8ea156: ciclo del holder extendido | local |
 | rea-bundle | [rea-evidence.json.gz](../reports/continuidad-20261030/rea-evidence.json.gz) | MCP y análisis estático VLC/ELF; no ejecución ni compatibilidad | new |
 | drm | [result.txt](../reports/h3/result.txt) | Histórico: DRM/entrada/VT en VM; no mando físico ni APK | git |
 | sesion | [result.txt](../reports/h4/result.txt) | Histórico: foco y recuperación del shell; no compatibilidad APK | git |
@@ -54,5 +54,17 @@ las seis etapas funcionales siguen sin ejecutar. El ensayo
 [framework-space](../reports/arquitectura-apk-20261030/framework-space/result.json)
 sólo enlaza clases de dos APK sin inicializarlas, excluyendo android.* propios.
 El [checkpoint de la revisión](../reports/arquitectura-apk-20261030/checkpoint.json)
-es el punto fechado más reciente; el snapshot de continuidad anterior conserva
+conserva la revisión anterior; el snapshot de continuidad conserva
 su propio alcance histórico. Ninguna de estas evidencias cierra compatibilidad.
+
+## Bootstrap original aislado
+
+[Resultado](../reports/aosp-isolated-bootstrap/result.json),
+[hashes y procedencia](../reports/aosp-isolated-bootstrap/artifact-index.json) y
+[checkpoint vigente](../reports/aosp-isolated-bootstrap/checkpoint.json). UID
+10000 y preflight de namespace pasan; ActivityThread original se construye.
+ContextImpl falla por TetheringManager ausente. Markor permanece sin ejecutar.
+La fuente R8 exporta system/framework y APEX host; no acredita una plataforma
+modular completa. El snapshot SDK de Connectivity lista stubs, no implementación
+ejecutable. Ningún resultado cierra lanzamiento, UI, entrada, persistencia o
+compatibilidad; los ensayos fallidos previos siguen en dist/apk local.

@@ -1,0 +1,1 @@
+{"isolation_preflight_pass": true, "uid": 10000, "groups": [65534, 10000], "effective_capabilities_hex": "0000000000000000", "host_home_absent": true, "readonly_input": true, "host_loopback_unreachable": true, "writable_data": true}

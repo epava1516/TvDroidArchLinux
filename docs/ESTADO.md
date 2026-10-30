@@ -6,7 +6,7 @@ artefactos enlazados prevalecen sobre cualquier resumen.
 
 ## Retomar en este orden
 
-1. Leer [el checkpoint fechado](../reports/arquitectura-apk-20261030/checkpoint.json)
+1. Leer [el checkpoint fechado](../reports/aosp-isolated-bootstrap/checkpoint.json)
    y contrastarlo con Git/procesos siguiendo [CONTINUIDAD.md](CONTINUIDAD.md).
 2. Consultar [arquitectura y decisiones](ARQUITECTURA.md),
    [roadmap general](../ROADMAP.md) y [detalle APK](ROADMAP-A.md).
@@ -25,14 +25,14 @@ Las fixtures, compilaciones y constructores no acreditan ese resultado.
 | --- | --- |
 | Vigente | Compositor y shell Rust existen; pruebas H0–H5 limitadas a la VM y plataformas documentadas. H7–H9 siguen abiertos. |
 | Experimental publicado | ART host ejecuta fixtures; recursos, cola y partes de contexto AOSP se reutilizan. Activity/widgets/vistas del contador siguen siendo propios. No hay compatibilidad general acreditada. |
-| Experimental pendiente | Registro local de servicios y layout/resize de View original pasan en proceso de prueba; los cambios de código continúan sin commit. No dibujan la APK con vistas originales. |
+| Experimental publicado | Registro local y layout/resize de View original probados en `b8ea156`; no dibujan la APK. Bootstrap aislado: UID 10000, Looper y ActivityThread originales; ContextImpl falla por framework modular incompleto antes de ejecutar Markor. |
 | Herramientas verificadas | REA MCP 6.8.0 respondió a Codex y analizó estáticamente VLC 3.7.1 y una biblioteca ELF. La sesión de archivo se exportó y cerró. No es una prueba de ejecución de VLC en el runtime propio. |
 | Histórico | H6 Waydroid, imágenes Android e ISO anteriores conservan evidencia; no son el backend ni la aceptación vigentes del runtime APK. |
 | Desconocido/no verificado | Compatibilidad de aplicaciones reales en este runtime, aislamiento por APK, GPU del runtime, ARM, WebView, DRM/servicios propietarios, consumo y estabilidad prolongada. |
 
 ## Trabajo preservado y siguiente acción
 
-Base del checkpoint: `96b0b5b`; el HEAD actual y origin se consultan con Git.
+Base del checkpoint vigente: `b8ea156`; el HEAD actual y origin se consultan con Git.
 El snapshot distingue cambios propios del registro experimental y los logs
 ajenos `reports/h9-uefi-boot/qemu.log` y `serial.log`. No se han descartado ni
 incluido esos cambios de código en el desvío documental.
@@ -43,12 +43,14 @@ No se espera actualmente ningún build o prueba. Las autorizaciones ya concedida
 para pruebas, commits/push y trabajo autónomo siguen vigentes; no hay autorización
 nueva para reiniciar la VM.
 
-Siguiente acción concreta: contrastar procedencia y bootclasspath del framework
-DEX original del bundle ART y ensayar bootstrap Application/Activity original en
-proceso aislado, orientado al recorrido de Markor. La revisión de arquitectura
-ya compara ART/Bionic/servicios, libhybris y traducción de ISA con evidencia; la
-matriz fija tres APK reales. Sólo está probado el enlace sin inicialización de
-las Activity de dos de ellas. No hay recorrido funcional completo demostrado.
+Siguiente acción concreta: obtener implementaciones originales y metadatos de un
+bootclasspath modular coherente. El bundle R8 no basta para ContextImpl; el SDK
+Connectivity consultado contiene stubs, que no se usarán como runtime. Después,
+retomar el bootstrap aislado de Application y el recorrido completo de Markor.
+[Resultado y límite actuales](../reports/aosp-isolated-bootstrap/result.json):
+no se ejecutó código de Markor, ni onCreate ni su interfaz. La matriz continúa
+sin recorridos funcionales completos. El aislamiento sólo tiene comprobaciones
+parciales de namespace, no aceptación general de seguridad.
 
 ## Historial conservado (no es el estado vigente)
 

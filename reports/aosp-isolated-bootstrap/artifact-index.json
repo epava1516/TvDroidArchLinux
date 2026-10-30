@@ -1,0 +1,21 @@
+{
+  "files": {
+    "reports/aosp-isolated-bootstrap/rea-session.json": "c5709e48d8573ef1453f49309a31af5cd91d5d16c6617a0330bda69f2b77220d",
+    "reports/aosp-isolated-bootstrap/connectivity-sdk.txt": "5768cab2f6a25e917191f2cd0689a5bb0c28d6835db212bef3968865aa885c64",
+    "reports/aosp-isolated-bootstrap/validation.json": "a265a4dba235faedbc3b087dac76fdceff7d80430951964ad2a1f29fa7951976",
+    "reports/aosp-isolated-bootstrap/javac.stderr": "5611ebbcef22b910dca04e734fcc147ba2c3110c1badd237495d48cb825a5ec0",
+    "reports/aosp-isolated-bootstrap/bootstrap.stdout": "6f42bbc5587e5004d9f81d1fc4d35d223e87a52be5ad9244e6525a360bbb0f05",
+    "reports/aosp-isolated-bootstrap/r8-host-export.txt": "873476e5213046fba8735250b01cfea6845a97c63bb061a0dd3192ed76a6bd6e",
+    "reports/aosp-isolated-bootstrap/checkpoint.json": "1cb61c3e020afbe8be2d9f9d72f48bfee12576c3d20341cf4c45febb1495e538",
+    "reports/aosp-isolated-bootstrap/sources.json": "1c842f18892a516775bbb6402507ecc02be0c2fff81b42390b4d7c5006864673",
+    "reports/aosp-isolated-bootstrap/result.json": "481be8c9b23bdaa27826fc3cd767ec3d1caed025ca4f1854402bc1994d4c3fa7",
+    "reports/aosp-isolated-bootstrap/bootstrap.stderr": "ddc682f944542698e94dca9cfedcd35cf9360cf792f801466456682175b832c3",
+    "reports/aosp-isolated-bootstrap/dex.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/aosp-isolated-bootstrap/namespace.stdout": "5fd984c5fd39c4980d63e5192029ba6bed20e94a244df53eb016bec10dc6c5e7",
+    "reports/aosp-isolated-bootstrap/namespace.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_base_commit": "b8ea156bce27f888cc48a892dbc7eff467d7d28e",
+  "source_manifest": "runtime/aosp/bootstrap-study.json",
+  "verifier": "tools/apk/verify_isolated_bootstrap.py",
+  "raw_local_trial": "/home/tv/repositorio-principal/dist/apk/isolated-original-bootstrap-4"
+}

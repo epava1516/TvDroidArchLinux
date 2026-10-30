@@ -1,0 +1,18 @@
+dalvikvm64 E 10-30 22:09:43    14    14 image_space.cc:2239] Error reading named image component header for /runtime/host/art-13.0.0/framework/core.art, error: Unable to open file "/runtime/host/art-13.0.0/framework/x86_64/core.art" for reading image header
+dalvikvm64 E 10-30 22:09:43    14    14 image_space.cc:3470] Could not create image space with image file '/runtime/host/art-13.0.0/framework/core.art'. Attempting to fall back to imageless running. Error was: Full boot image cannot be compiled because no profile is provided.
+ziparchive W 10-30 22:09:44    14    14 Unable to open '/app/framework.dm': No such file or directory
+ziparchive W 10-30 22:09:44    14    14 Unable to open '/app/framework-graphics.dm': No such file or directory
+ziparchive W 10-30 22:09:44    14    14 Unable to open '/app/app.dm': No such file or directory
+ziparchive W 10-30 22:09:44    14    14 Unable to open '/app/probe.dm': No such file or directory
+APK_HOST_PROFILE sdk=33 abi=x86_64
+BOOTSTRAP_BLOCKED stage=system-context java.lang.NoClassDefFoundError: Failed resolution of: Landroid/net/TetheringManager;
+java.lang.NoClassDefFoundError: Failed resolution of: Landroid/net/TetheringManager;
+	at android.app.SystemServiceRegistry.<clinit>(SystemServiceRegistry.java:403)
+	at android.app.SystemServiceRegistry.createServiceCache(SystemServiceRegistry.java:1571)
+	at android.app.ContextImpl.<init>(ContextImpl.java:348)
+	at android.app.ContextImpl.createSystemContext(ContextImpl.java:3053)
+	at android.app.ActivityThread.getSystemContext(ActivityThread.java:2723)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at org.archtv.apkruntime.OriginalBootstrapProbe.main(OriginalBootstrapProbe.java:17)
+Caused by: java.lang.ClassNotFoundException: android.net.TetheringManager
+	... 7 more

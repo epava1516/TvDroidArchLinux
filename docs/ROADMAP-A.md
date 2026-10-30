@@ -315,3 +315,14 @@ supresión de red, DeadSystemException y línea ASCII de 12.000 caracteres. El
 layout supera el registro del fallback de foco y se detiene ahora en la búsqueda
 de servicios: BinderInternal.getContextObject ausente. AOSP-LOG-EXCEPCIONES.md
 registra el alcance y mantiene layout/dibujo original y A3 pendientes.
+
+### Bootstrap original aislado · 2026-10-30
+
+A3 sigue abierto. El [ensayo](../reports/aosp-isolated-bootstrap/result.json)
+con Markor intacta alcanza ActivityThread, pero falla en ContextImpl antes de
+ejecutar la aplicación: faltan módulos originales del framework. Siguiente
+puerta: classpath modular coherente con implementaciones originales, después
+Application.attach/onCreate originales y recorrido de nota completo. No usar
+stubs del SDK como runtime. Namespace UID 10000 y comprobaciones parciales
+pasan; aislamiento completo, presupuestos y todas las etapas reales siguen
+pendientes. A4/A5 no se cierran.
