@@ -47,5 +47,8 @@ Getters como getString/getSharedPreferences pueden referirse al propietario de l
 app en DEX y necesitan resolución hacia la superclase; el analizador estático
 actual no resuelve esa herencia. El inventario también contiene anotaciones.
 
-Todavía no se ha ejecutado esta APK en nuestra capa. Esta fixture fija el caso
-reproducible que usará A1; no se cuenta como compatibilidad ya implementada.
+Esta APK ya ejecuta su DEX en ART host con el subconjunto de runtime/apk:
+onCreate, listener, textos de resources.arsc y contador persistente entre procesos.
+El runtime no contiene clases de la app. Ver reports/a1-counter-headless/ y
+tools/apk/verify_counter_headless.py. Falta la ventana y la entrada Wayland;
+la prueba sin interfaz no acredita compatibilidad general ni estabilidad prolongada.

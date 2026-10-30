@@ -1,0 +1,119 @@
+{
+  "first-process": {
+    "exit_code": 0,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/minimal-runtime-1/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-headless-3/app-data"
+    ]
+  },
+  "second-process": {
+    "exit_code": 0,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/minimal-runtime-1/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-headless-3/app-data"
+    ]
+  },
+  "lock-contender": {
+    "exit_code": 1,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/minimal-runtime-1/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-headless-3/app-data"
+    ]
+  },
+  "after-lock-release": {
+    "exit_code": 0,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/minimal-runtime-1/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-headless-3/app-data"
+    ]
+  },
+  "resource-variant": {
+    "exit_code": 0,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/minimal-runtime-1/dex/classes.dex:/home/tv/repositorio-principal/dist/apk/counter-headless-3/resource-variant-unsigned.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/dist/apk/counter-headless-3/resource-variant-unsigned.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-headless-3/variant-data"
+    ]
+  },
+  "truncated-resources": {
+    "exit_code": 1,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/minimal-runtime-1/dex/classes.dex:/home/tv/repositorio-principal/dist/apk/counter-headless-3/truncated-resources-unsigned.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/dist/apk/counter-headless-3/truncated-resources-unsigned.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-headless-3/malformed-data"
+    ]
+  },
+  "corrupt-preferences": {
+    "exit_code": 1,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/minimal-runtime-1/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-headless-3/app-data"
+    ]
+  },
+  "original_apk_sha256": "f07c9b92ab3353237276081c22e11ce06168b8c9f71a99ea32968b2ce0f00e28",
+  "runtime_dex_sha256": "057259bd01b44cab3298ed7ad95ddb907f94040d396c9afa5136a047b19a58bd",
+  "headless_counter_pass": true,
+  "wayland_pass": false,
+  "scope": "Original APK DEX lifecycle, listener, resources and integer persistence. Separate unsigned resource variant and malformed inputs. No Wayland UI, signature enforcement, isolation, full Android API or stable general APK support."
+}

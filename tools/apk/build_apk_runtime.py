@@ -1,0 +1,42 @@
+#!/usr/bin/env python3
+"""Build the host API subset to DEX. APK application sources are not inputs."""
+import argparse
+import hashlib
+import json
+from pathlib import Path
+import subprocess
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--tools', type=Path, required=True)
+parser.add_argument('--output', type=Path, required=True)
+parser.add_argument('--jdk', type=Path, default=Path('/usr/lib/jvm/java-17-openjdk'))
+args = parser.parse_args()
+root = Path(__file__).resolve().parents[2]
+tools = args.tools.resolve()
+manifest = json.loads((root/'fixtures/apk/counter/toolchain.json').read_text())
+for item in manifest['artifacts']:
+    if item['file'] in ('r8.jar', 'android.jar'):
+        with (tools/item['file']).open('rb') as stream:
+            if hashlib.file_digest(stream, 'sha256').hexdigest() != item['sha256']:
+                raise SystemExit('Tool checksum mismatch: '+item['file'])
+out = args.output.resolve()
+out.mkdir(parents=True, exist_ok=False)
+(out/'classes').mkdir()
+(out/'dex').mkdir()
+sources = sorted((root/'runtime/apk/java').rglob('*.java'))
+commands = [
+    [args.jdk/'bin/javac', '--release', '8', '-encoding', 'UTF-8', '-d', out/'classes', *sources],
+    [args.jdk/'bin/jar', 'cf', out/'runtime.jar', '-C', out/'classes', '.'],
+    [args.jdk/'bin/java', '-cp', tools/'r8.jar', 'com.android.tools.r8.D8', '--release',
+     '--min-api', '28', '--lib', tools/'android.jar', '--output', out/'dex', out/'runtime.jar'],
+]
+for command in commands:
+    subprocess.run([str(part) for part in command], check=True, timeout=120)
+(out/'provenance.json').write_text(json.dumps({
+    'sources_sha256': {str(path.relative_to(root)): hashlib.sha256(path.read_bytes()).hexdigest()
+                       for path in sources},
+    'dex_sha256': hashlib.sha256((out/'dex/classes.dex').read_bytes()).hexdigest(),
+    'toolchain': manifest,
+    'scope': 'Host API subset only. No application classes compiled or included; no APK compatibility claim from a build.',
+}, indent=2)+'\n')
+print(out/'dex/classes.dex')

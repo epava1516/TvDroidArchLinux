@@ -7,3 +7,4 @@ reports/h6-ffmpeg-install.log -whitespace
 # Avisos upstream: preservar exactamente los bytes verificados por SHA-256.
 licenses/cargo-supplemental/** -whitespace
 reports/a1-art-host/*.stderr -whitespace
+reports/a1-counter-headless/*.stderr -whitespace

@@ -62,5 +62,7 @@ detenido. La aceptación de A no exige boot Android ni sys.boot_completed.
 La fixture fixtures/apk/counter ya está compilada y dispone de manifiesto, recursos,
 fuentes y hashes. Su Activity contiene texto, botón y contador en preferencias.
 No incorpora clases de framework Android ni bibliotecas JNI en el paquete.
-La construcción no usó Android ni Waydroid. La ejecución DEX sobre Linux y el
-puente de UI siguen pendientes. Ver reports/a0-fixture/ y el README de la fixture.
+La construcción no usó Android ni Waydroid. ART host ya ejecuta su DEX con el
+subconjunto de runtime/apk: creación, listener, recursos reales y persistencia
+entre procesos verificados. El puente de UI sigue pendiente. Ver
+reports/a0-fixture/, reports/a1-counter-headless/ y CONTRATO-APK.md.

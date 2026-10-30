@@ -79,3 +79,19 @@ precompilada; la prueba semántica termina con código 0. La selección mínima,
 compilación reproducible de ART y mediciones de consumo siguen pendientes. El
 archivo del laboratorio no es el runtime final distribuible.
 Ver ESTUDIO-ART-HOST.md y reports/a1-art-host/. A1/A2 no se dan por terminados.
+
+## La APK propia ejecuta sus callbacks en Linux
+
+El primer subconjunto de runtime/apk resuelve Activity, Context, View y preferencias
+enteras. ART ejecuta el DEX de la APK original fijada: crea su árbol de texto/botón,
+activa el listener 0→1→2 y, en otro proceso, recupera 2 y pasa a 3. No se recompilan
+sus fuentes ni se incluyen clases org.archtv.probe en el DEX anfitrión. Los recursos
+se leen de resources.arsc; una variante separada con DEX idéntico demuestra que el
+texto cambia al cambiar el recurso.
+
+El comprobador también verifica exclusión de un segundo proceso sobre datos
+ocupados, liberación al cerrar, modos 0700/0600 y rechazo de recursos truncados y
+preferencias corruptas. No hay ventana ni eventos Wayland todavía: A0/A1 están
+verificados para esta fixture; A2 sigue en curso. La implementación no es una
+capa Android completa ni aporta aún aislamiento o estabilidad prolongada.
+Ver runtime/apk/README.md, CONTRATO-APK.md y reports/a1-counter-headless/.

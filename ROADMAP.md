@@ -304,8 +304,9 @@ la sesión tras un fallo. Repetir en el hardware físico declarado compatible.
 
 El usuario precisó el objetivo: estudiar AOSP y reproducir/reutilizar las partes
 mínimas para ejecutar APK estables en Linux, sin Waydroid ni un sistema Android
-completo. La ampliación del adaptador Waydroid se detuvo. La siguiente acción es
-una APK propia pequeña y un experimento de ejecución DEX con APIs mínimas.
+completo. La ampliación del adaptador Waydroid se detuvo. La APK propia ya ejecuta
+su DEX en ART host con recursos, listener y preferencias del subconjunto mínimo;
+la siguiente acción es conectar su árbol View y la entrada a Wayland/Rust.
 [docs/ROADMAP-A.md](docs/ROADMAP-A.md) recoge las etapas y pruebas; los resultados
 H6 del laboratorio Waydroid no acreditan esta capa. Se mantienen las validaciones
 funcionales, de estabilidad, rendimiento e instalación del proyecto.
@@ -316,6 +317,7 @@ Cada hito requiere implementación, pruebas y evidencia. Un documento, un binari
 que solo imprime texto, un paquete instalado o un contenedor RUNNING no acreditan
 por sí mismos un compositor, una interfaz o Android funcionales.
 
-Siguiente acción en A0: preparar la APK propia mínima, fijar sus fuentes y
-analizar sus dependencias para el primer experimento DEX sobre Linux. Las demás
-puertas del proyecto permanecen abiertas y documentadas.
+Siguiente acción en A2: cliente Wayland que represente el árbol real generado por
+la APK y envíe entrada real al listener, con cierre y reapertura. A0/A1 están
+verificados para la fixture propia; las demás puertas del proyecto permanecen
+abiertas y documentadas.

@@ -1,0 +1,49 @@
+{
+  "sources_sha256": {
+    "runtime/apk/java/android/app/Activity.java": "f365fee0676ba9576ade34f11ee4250e7ee45b26380c9eee406f616b26d71c37",
+    "runtime/apk/java/android/content/Context.java": "2ef0d123cdd8c31fc333419b4a1611f1ad7b0192318cc1057fb763fb73ad224e",
+    "runtime/apk/java/android/content/SharedPreferences.java": "7b486348fab60cee2f1abe90f23840553755ac85f14dbd9fca48576ae3105fc6",
+    "runtime/apk/java/android/os/Bundle.java": "80b837e3f482f5b20cab00778756b9643fc8bab86e140475f1d5fef65ccedadc",
+    "runtime/apk/java/android/view/View.java": "6ef3d1e020294f7f488d685fc4e4563f8b7205c8d3487cce35699b081923d454",
+    "runtime/apk/java/android/view/ViewGroup.java": "8db6019fb344a3b97dcf861fe7173e529a4aff437a82fe3a61366ebb06b4a0d4",
+    "runtime/apk/java/android/widget/Button.java": "69406359823efe62692274e83ff87163c003c58b4df21e811af7a3e319b085fe",
+    "runtime/apk/java/android/widget/LinearLayout.java": "d2512cc5505272d51f93fed7d64e3eac6c0b07fa3bfa9ae2b43a581fb18ef886",
+    "runtime/apk/java/android/widget/TextView.java": "e9c58bae452f4da151627c4f0c70087f21c1f287a2c88c6a5468ebf5e8684090",
+    "runtime/apk/java/org/archtv/apkruntime/ApkResources.java": "ae1ec14f6456b26c46daa123bea5130da5c3350bdb6b7ef61c8993625559a1c2",
+    "runtime/apk/java/org/archtv/apkruntime/AppEnvironment.java": "127d5284837027a5d42dfcd572771736afd3e90e5505049d13fa4770bb6c85a1",
+    "runtime/apk/java/org/archtv/apkruntime/IntPreferences.java": "3b28dd2fdb8b032be4d055d33599ab43c9ba95f916d85e82efe72cae9834baaf",
+    "runtime/apk/java/org/archtv/apkruntime/Main.java": "eae940056a82fb2398905883efbe68556d897ab99208abd8e607ee03778bc37b"
+  },
+  "dex_sha256": "057259bd01b44cab3298ed7ad95ddb907f94040d396c9afa5136a047b19a58bd",
+  "toolchain": {
+    "schema": 1,
+    "aapt2": "8.6.1-11315950",
+    "d8": "8.3.37",
+    "android_api": 28,
+    "android_sdk_source_commit": "3af7c93524be6f51e092b87b17f009f13ee98b43",
+    "artifacts": [
+      {
+        "file": "aapt2.jar",
+        "url": "https://dl.google.com/dl/android/maven2/com/android/tools/build/aapt2/8.6.1-11315950/aapt2-8.6.1-11315950-linux.jar",
+        "base64": false,
+        "sha256": "955f14e61cac2e1d70a4703b1aa539ca4f348469ac64a155dcce47bda3de52c8",
+        "bytes": 2174058
+      },
+      {
+        "file": "r8.jar",
+        "url": "https://dl.google.com/dl/android/maven2/com/android/tools/r8/8.3.37/r8-8.3.37.jar",
+        "base64": false,
+        "sha256": "59753e70a74f918389cc87f1b7d66b5c0862932559167425708ded159e3de439",
+        "bytes": 16628796
+      },
+      {
+        "file": "android.jar",
+        "url": "https://android.googlesource.com/platform/prebuilts/sdk/+/3af7c93524be6f51e092b87b17f009f13ee98b43/28/public/android.jar?format=TEXT",
+        "base64": true,
+        "sha256": "d20853d289a5161d9cf1c1268d7923076487d4fa68c970b0733e2d5a0ccfc3c5",
+        "bytes": 46784255
+      }
+    ]
+  },
+  "scope": "Host API subset only. No application classes compiled or included; no APK compatibility claim from a build."
+}

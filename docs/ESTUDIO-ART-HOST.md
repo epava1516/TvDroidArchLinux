@@ -71,6 +71,7 @@ python tools/apk/run_art_probe.py --runtime "$HOME/.cache/archtv/art-host/host/a
 El extractor rechaza un destino ya existente, verifica tamaño y hashes antes de
 extraer y limita rutas/tipos/tamaño de entradas. El código 0 del comprobador
 significa que pasó la prueba del motor y se observó la frontera de API esperada.
-result.json mantiene apk_functional_pass=false explícitamente. El próximo trabajo
-es implementar el comportamiento mínimo de Activity y las dependencias reales
-del contador, resolviendo sus recursos desde la APK y conectándolo con Wayland.
+result.json mantiene apk_functional_pass=false explícitamente. Ese ensayo conserva
+su valor como prueba del motor sin API. El ensayo posterior añade runtime/apk y
+ejecuta el DEX del contador con recursos y preferencias: ver CONTRATO-APK.md y
+reports/a1-counter-headless/. El siguiente paso sigue siendo la ventana Wayland.
