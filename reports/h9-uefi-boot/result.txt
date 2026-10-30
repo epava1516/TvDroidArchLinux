@@ -1,1 +1,4 @@
-PARTIAL: UEFI loader entered Linux, mounted ISO and squashfs, started systemd services in QEMU TCG. Login, installed system, graphical session and Android remain unverified. Same VM still running.
+PARTIAL: UEFI live ISO reached tty1 login with 6.18.59-1-lts; root login succeeded.
+Installed r14 packages queried with pacman. archtv-session opened native Virtio DRM shell; Foot launched from the catalog and Home returned to shell.
+Timezone firstboot prompt skipped manually; UTC profile correction is generated but not ISO-boot tested.
+Terminal input verified after clearing emulated modifiers: uname returned Linux in Foot. Normal installed user, disk installation, Android, audio and performance remain unverified.

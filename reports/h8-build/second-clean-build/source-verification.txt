@@ -1,0 +1,2 @@
+archtv-0.1.0.r22.gae035c4e2323.tar.gz: OK
+PKGBUILD: OK

@@ -188,3 +188,24 @@ La primera revisión se generó con sus tres paquetes y todos los hashes pasaron
 El consumo del índice mediante pacman en el contenedor queda registrado en
 reports/h8-build/local-repository-consumption.log; la configuración de prueba
 se limita a ese repositorio y una base temporal, sin cambiar el anfitrión.
+
+## Segunda versión y ciclo de paquetes verificados
+
+0.1.0.r22.gae035c4e2323 compiló en una raíz Arch nueva y pasó diez pruebas. El
+proceso original terminó con 143 al entrar en fakeroot; se comprobó que no
+quedaban procesos de build. El empaquetado se reanudó con --repackage desde los
+binarios y avisos conservados de esa compilación, sin recompilar ni sustituir
+fuentes. La reanudación terminó correctamente. Logs completos e inspección en
+reports/h8-build/second-clean-build/.
+
+Cada paquete contiene el inventario Cargo y 292 archivos de aviso disponibles.
+Los cinco crates sin aviso localizado siguen pendientes de revisión. La búsqueda
+de /build/archtv/src en los dos binarios empaquetados no encontró coincidencias;
+es una comprobación de remapeo, no una prueba de reproducibilidad binaria.
+
+El ciclo real entre las revisiones r14 y r22 pasó en la raíz Arch base separada:
+instalación, actualización, retorno a r14 y retirada. Verificó integridad con
+pacman, bibliotecas con ldd, comandos de entrada, ausencia de compiladores y
+conservación exacta de preferencias. Ver reports/h8-build/package-lifecycle.log.
+La sesión gráfica con r22, las migraciones futuras y Android siguen siendo
+pruebas distintas; H8 no se considera cerrado.

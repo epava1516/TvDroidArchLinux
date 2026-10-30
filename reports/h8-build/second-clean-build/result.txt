@@ -1,0 +1,6 @@
+PASS: release binaries compiled in a fresh Arch chroot and all 10 tests passed.
+Original process exited 143 entering fakeroot; no build processes remained.
+Packaging resumed with makechrootpkg --repackage using the preserved clean-build outputs and completed successfully.
+Three packages inspected: Cargo inventory and 292 available notice files each; original /build/archtv/src path absent from both binaries.
+Package lifecycle install/update/rollback/remove passed in separate compiler-free runtime; see ../package-lifecycle.log.
+License review, binary reproducibility and full installed-session acceptance remain open.

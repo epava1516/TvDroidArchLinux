@@ -51,6 +51,7 @@ options archisobasedir=%INSTALL_DIR% archisosearchuuid=%ARCHISO_UUID%
 ''',
     'airootfs/etc/hostname': 'archtv-live\n',
     'airootfs/etc/locale.conf': 'LANG=C.UTF-8\n',
+    'airootfs/etc/vconsole.conf': 'KEYMAP=us\n',
     'airootfs/etc/shadow': 'root::14871::::::\n',
     'airootfs/etc/mkinitcpio.conf.d/archiso.conf': '''HOOKS=(base udev microcode modconf kms archiso archiso_loop_mnt block filesystems keyboard)
 COMPRESSION="zstd"
@@ -64,6 +65,7 @@ for relative, content in files.items():
     path = output / relative
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(content)
+(output / 'airootfs/etc/localtime').symlink_to('/usr/share/zoneinfo/UTC')
 # Keep the live system's pacman configuration free of build-host paths.
 runtime_config = output / 'airootfs/etc/pacman.conf'
 runtime_config.write_text((template / 'pacman.conf').read_text())

@@ -1,0 +1,202 @@
+Note: in a future version of systemd-nspawn the default set of permitted socket address families will be restricted to AF_INET, AF_INET6 and AF_UNIX. Use --restrict-address-families= to configure the set of permitted socket address families, or set RestrictAddressFamilies= in a .nspawn file.
+:: Synchronizing package databases...
+ core downloading...
+ extra downloading...
+:: Starting full system upgrade...
+ there is nothing to do
+warning: bash-5.3.20-1 is up to date -- skipping
+warning: dbus-1.16.2-2 is up to date -- skipping
+warning: gcc-libs-16.2.1+r23+gd564253eb6c8-1 is up to date -- skipping
+warning: glibc-2.44+r50+g1848099f063e-1 is up to date -- skipping
+warning: libglvnd-1.7.0-3 is up to date -- skipping
+warning: libinput-1.32.0-1 is up to date -- skipping
+warning: libxkbcommon-1.13.2-1 is up to date -- skipping
+warning: mesa-1:26.2.6-1 is up to date -- skipping
+warning: pixman-0.46.4-1 is up to date -- skipping
+warning: seatd-0.9.3-1 is up to date -- skipping
+warning: systemd-libs-262.1-1 is up to date -- skipping
+warning: ttf-dejavu-2.37+18+g9b5d1b2f-8 is up to date -- skipping
+warning: util-linux-2.42.4-1 is up to date -- skipping
+warning: wayland-1.26.0-1 is up to date -- skipping
+ there is nothing to do
+loading packages...
+resolving dependencies...
+looking for conflicting packages...
+
+Packages (3) archtv-compositor-0.1.0.r14.g3012fbc92f7a-1  archtv-session-0.1.0.r14.g3012fbc92f7a-1  archtv-shell-0.1.0.r14.g3012fbc92f7a-1
+
+Total Installed Size:  11.99 MiB
+
+:: Proceed with installation? [Y/n] 
+checking keyring...
+checking package integrity...
+loading package files...
+checking for file conflicts...
+checking available disk space...
+:: Processing package changes...
+installing archtv-compositor...
+installing archtv-shell...
+Optional dependencies for archtv-shell
+    wireplumber: volume controls through wpctl
+    networkmanager: network controls through nmcli
+    waydroid: Android application backend
+    foot: terminal desktop entries
+installing archtv-session...
+:: Running post-transaction hooks...
+(1/1) Arming ConditionNeedsUpdate...
+archtv-compositor: 34 total files, 0 altered files
+archtv-shell: 34 total files, 0 altered files
+archtv-session: 36 total files, 0 altered files
+	linux-vdso.so.1 (0x00007facf2108000)
+	libseat.so.1 => /usr/lib/libseat.so.1 (0x00007facf20ee000)
+	libudev.so.1 => /usr/lib/libudev.so.1 (0x00007facf209e000)
+	libinput.so.10 => /usr/lib/libinput.so.10 (0x00007facf202c000)
+	libxkbcommon.so.0 => /usr/lib/libxkbcommon.so.0 (0x00007facf1fcd000)
+	libpixman-1.so.0 => /usr/lib/libpixman-1.so.0 (0x00007facf1751000)
+	libgcc_s.so.1 => /usr/lib/libgcc_s.so.1 (0x00007facf1fa0000)
+	libc.so.6 => /usr/lib/libc.so.6 (0x00007facf1400000)
+	/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x00007facf210a000)
+	libsystemd.so.0 => /usr/lib/libsystemd.so.0 (0x00007facf12b6000)
+	libmtdev.so.1 => /usr/lib/libmtdev.so.1 (0x00007facf1f97000)
+	libevdev.so.2 => /usr/lib/libevdev.so.2 (0x00007facf1f81000)
+	libm.so.6 => /usr/lib/libm.so.6 (0x00007facf117f000)
+	libwacom.so.9 => /usr/lib/libwacom.so.9 (0x00007facf1f6e000)
+	liblua5.4.so.5.4 => /usr/lib/liblua5.4.so.5.4 (0x00007facf1f26000)
+	libgudev-1.0.so.0 => /usr/lib/libgudev-1.0.so.0 (0x00007facf1744000)
+	libgobject-2.0.so.0 => /usr/lib/libgobject-2.0.so.0 (0x00007facf16e1000)
+	libglib-2.0.so.0 => /usr/lib/libglib-2.0.so.0 (0x00007facf101a000)
+	libffi.so.8 => /usr/lib/libffi.so.8 (0x00007facf16d3000)
+	libpcre2-8.so.0 => /usr/lib/libpcre2-8.so.0 (0x00007facf0f67000)
+archtv-compositor [--winit | --drm DEVICE] [--shell] [--mode WIDTHxHEIGHT] [--exit-after SECONDS] [--test-resize SECONDS WIDTHxHEIGHT] [-- PROGRAM ARGS...]
+	linux-vdso.so.1 (0x00007fb22e7a7000)
+	libxkbcommon.so.0 => /usr/lib/libxkbcommon.so.0 (0x00007fb22e739000)
+	libgcc_s.so.1 => /usr/lib/libgcc_s.so.1 (0x00007fb22e70c000)
+	libm.so.6 => /usr/lib/libm.so.6 (0x00007fb22e0c9000)
+	libc.so.6 => /usr/lib/libc.so.6 (0x00007fb22de00000)
+	/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x00007fb22e7a9000)
+archtv-shell [--exit-after SECONDS] [--capture-after SECONDS FILE.png] [--capture-states DIRECTORY] | --render-probe DIRECTORY
+Arch TV DRM session. Optional: ARCHTV_DRM_DEVICE=/dev/dri/cardN, ARCHTV_MODE=1920x1080.
+loading packages...
+resolving dependencies...
+looking for conflicting packages...
+
+Packages (3) archtv-compositor-0.1.0.r22.gae035c4e2323-1  archtv-session-0.1.0.r22.gae035c4e2323-1  archtv-shell-0.1.0.r22.gae035c4e2323-1
+
+Total Installed Size:  16.35 MiB
+Net Upgrade Size:       4.36 MiB
+
+:: Proceed with installation? [Y/n] 
+checking keyring...
+checking package integrity...
+loading package files...
+checking for file conflicts...
+checking available disk space...
+:: Processing package changes...
+upgrading archtv-compositor...
+upgrading archtv-shell...
+upgrading archtv-session...
+:: Running post-transaction hooks...
+(1/1) Arming ConditionNeedsUpdate...
+archtv-compositor: 500 total files, 0 altered files
+archtv-shell: 500 total files, 0 altered files
+archtv-session: 502 total files, 0 altered files
+	linux-vdso.so.1 (0x00007f76fdd9d000)
+	libseat.so.1 => /usr/lib/libseat.so.1 (0x00007f76fdd83000)
+	libudev.so.1 => /usr/lib/libudev.so.1 (0x00007f76fdd33000)
+	libinput.so.10 => /usr/lib/libinput.so.10 (0x00007f76fd58e000)
+	libxkbcommon.so.0 => /usr/lib/libxkbcommon.so.0 (0x00007f76fd52f000)
+	libpixman-1.so.0 => /usr/lib/libpixman-1.so.0 (0x00007f76fd480000)
+	libgcc_s.so.1 => /usr/lib/libgcc_s.so.1 (0x00007f76fd453000)
+	libc.so.6 => /usr/lib/libc.so.6 (0x00007f76fd200000)
+	/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x00007f76fdd9f000)
+	libsystemd.so.0 => /usr/lib/libsystemd.so.0 (0x00007f76fd0b6000)
+	libmtdev.so.1 => /usr/lib/libmtdev.so.1 (0x00007f76fdd2a000)
+	libevdev.so.2 => /usr/lib/libevdev.so.2 (0x00007f76fd43d000)
+	libm.so.6 => /usr/lib/libm.so.6 (0x00007f76fcf7f000)
+	libwacom.so.9 => /usr/lib/libwacom.so.9 (0x00007f76fd42a000)
+	liblua5.4.so.5.4 => /usr/lib/liblua5.4.so.5.4 (0x00007f76fcf39000)
+	libgudev-1.0.so.0 => /usr/lib/libgudev-1.0.so.0 (0x00007f76fcf2c000)
+	libgobject-2.0.so.0 => /usr/lib/libgobject-2.0.so.0 (0x00007f76fcec9000)
+	libglib-2.0.so.0 => /usr/lib/libglib-2.0.so.0 (0x00007f76fcd64000)
+	libffi.so.8 => /usr/lib/libffi.so.8 (0x00007f76fcd56000)
+	libpcre2-8.so.0 => /usr/lib/libpcre2-8.so.0 (0x00007f76fcca3000)
+archtv-compositor [--winit | --drm DEVICE] [--shell] [--mode WIDTHxHEIGHT] [--exit-after SECONDS] [--test-resize SECONDS WIDTHxHEIGHT] [-- PROGRAM ARGS...]
+	linux-vdso.so.1 (0x00007f98b2fb1000)
+	libxkbcommon.so.0 => /usr/lib/libxkbcommon.so.0 (0x00007f98b2f43000)
+	libgcc_s.so.1 => /usr/lib/libgcc_s.so.1 (0x00007f98b2f16000)
+	libm.so.6 => /usr/lib/libm.so.6 (0x00007f98b28c9000)
+	libc.so.6 => /usr/lib/libc.so.6 (0x00007f98b2600000)
+	/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x00007f98b2fb3000)
+archtv-shell [--exit-after SECONDS] [--capture-after SECONDS FILE.png] [--capture-states DIRECTORY] | --render-probe DIRECTORY
+Arch TV DRM session. Optional: ARCHTV_DRM_DEVICE=/dev/dri/cardN, ARCHTV_MODE=1920x1080.
+warning: downgrading package archtv-compositor (0.1.0.r22.gae035c4e2323-1 => 0.1.0.r14.g3012fbc92f7a-1)
+warning: downgrading package archtv-shell (0.1.0.r22.gae035c4e2323-1 => 0.1.0.r14.g3012fbc92f7a-1)
+warning: downgrading package archtv-session (0.1.0.r22.gae035c4e2323-1 => 0.1.0.r14.g3012fbc92f7a-1)
+loading packages...
+resolving dependencies...
+looking for conflicting packages...
+
+Packages (3) archtv-compositor-0.1.0.r14.g3012fbc92f7a-1  archtv-session-0.1.0.r14.g3012fbc92f7a-1  archtv-shell-0.1.0.r14.g3012fbc92f7a-1
+
+Total Installed Size:  11.99 MiB
+Net Upgrade Size:      -4.36 MiB
+
+:: Proceed with installation? [Y/n] 
+checking keyring...
+checking package integrity...
+loading package files...
+checking for file conflicts...
+checking available disk space...
+:: Processing package changes...
+downgrading archtv-compositor...
+downgrading archtv-shell...
+downgrading archtv-session...
+:: Running post-transaction hooks...
+(1/1) Arming ConditionNeedsUpdate...
+archtv-compositor: 34 total files, 0 altered files
+archtv-shell: 34 total files, 0 altered files
+archtv-session: 36 total files, 0 altered files
+	linux-vdso.so.1 (0x00007fa8993f2000)
+	libseat.so.1 => /usr/lib/libseat.so.1 (0x00007fa8993d8000)
+	libudev.so.1 => /usr/lib/libudev.so.1 (0x00007fa899388000)
+	libinput.so.10 => /usr/lib/libinput.so.10 (0x00007fa898b8e000)
+	libxkbcommon.so.0 => /usr/lib/libxkbcommon.so.0 (0x00007fa899329000)
+	libpixman-1.so.0 => /usr/lib/libpixman-1.so.0 (0x00007fa898adf000)
+	libgcc_s.so.1 => /usr/lib/libgcc_s.so.1 (0x00007fa898ab2000)
+	libc.so.6 => /usr/lib/libc.so.6 (0x00007fa898800000)
+	/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x00007fa8993f4000)
+	libsystemd.so.0 => /usr/lib/libsystemd.so.0 (0x00007fa8986b6000)
+	libmtdev.so.1 => /usr/lib/libmtdev.so.1 (0x00007fa898aab000)
+	libevdev.so.2 => /usr/lib/libevdev.so.2 (0x00007fa898a95000)
+	libm.so.6 => /usr/lib/libm.so.6 (0x00007fa89857f000)
+	libwacom.so.9 => /usr/lib/libwacom.so.9 (0x00007fa898a82000)
+	liblua5.4.so.5.4 => /usr/lib/liblua5.4.so.5.4 (0x00007fa898a3a000)
+	libgudev-1.0.so.0 => /usr/lib/libgudev-1.0.so.0 (0x00007fa898a2d000)
+	libgobject-2.0.so.0 => /usr/lib/libgobject-2.0.so.0 (0x00007fa89851c000)
+	libglib-2.0.so.0 => /usr/lib/libglib-2.0.so.0 (0x00007fa8983b7000)
+	libffi.so.8 => /usr/lib/libffi.so.8 (0x00007fa8983a9000)
+	libpcre2-8.so.0 => /usr/lib/libpcre2-8.so.0 (0x00007fa8982f6000)
+archtv-compositor [--winit | --drm DEVICE] [--shell] [--mode WIDTHxHEIGHT] [--exit-after SECONDS] [--test-resize SECONDS WIDTHxHEIGHT] [-- PROGRAM ARGS...]
+	linux-vdso.so.1 (0x00007fbcf5827000)
+	libxkbcommon.so.0 => /usr/lib/libxkbcommon.so.0 (0x00007fbcf57b9000)
+	libgcc_s.so.1 => /usr/lib/libgcc_s.so.1 (0x00007fbcf578c000)
+	libm.so.6 => /usr/lib/libm.so.6 (0x00007fbcf50c9000)
+	libc.so.6 => /usr/lib/libc.so.6 (0x00007fbcf4e00000)
+	/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x00007fbcf5829000)
+archtv-shell [--exit-after SECONDS] [--capture-after SECONDS FILE.png] [--capture-states DIRECTORY] | --render-probe DIRECTORY
+Arch TV DRM session. Optional: ARCHTV_DRM_DEVICE=/dev/dri/cardN, ARCHTV_MODE=1920x1080.
+checking dependencies...
+
+Packages (3) archtv-compositor-0.1.0.r14.g3012fbc92f7a-1  archtv-session-0.1.0.r14.g3012fbc92f7a-1  archtv-shell-0.1.0.r14.g3012fbc92f7a-1
+
+Total Removed Size:  11.99 MiB
+
+:: Do you want to remove these packages? [Y/n] 
+:: Processing package changes...
+removing archtv-session...
+removing archtv-shell...
+removing archtv-compositor...
+:: Running post-transaction hooks...
+(1/1) Arming ConditionNeedsUpdate...
+PASS: package install/update/rollback/remove and unchanged preference bytes in runtime container.
+Graphical session, schema migration and Android functionality require separate tests.

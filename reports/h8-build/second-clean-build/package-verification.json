@@ -1,0 +1,28 @@
+[
+  {
+    "name": "archtv-compositor",
+    "version": "0.1.0.r22.gae035c4e2323-1",
+    "file": "archtv-compositor-0.1.0.r22.gae035c4e2323-1-x86_64.pkg.tar.zst",
+    "sha256": "ce3d669a6070c99248619d01a2b9895e1522202e76cc8f7cd083b484df02d9b5",
+    "has_cargo_inventory": true,
+    "cargo_notice_file_count": 292,
+    "contains_original_build_path": false
+  },
+  {
+    "name": "archtv-session",
+    "version": "0.1.0.r22.gae035c4e2323-1",
+    "file": "archtv-session-0.1.0.r22.gae035c4e2323-1-x86_64.pkg.tar.zst",
+    "sha256": "10a81eb711e75bc583d4fdaeb07cfd8bfa1bfd7f9035fb4b4416fb86039aa9e0",
+    "has_cargo_inventory": true,
+    "cargo_notice_file_count": 292
+  },
+  {
+    "name": "archtv-shell",
+    "version": "0.1.0.r22.gae035c4e2323-1",
+    "file": "archtv-shell-0.1.0.r22.gae035c4e2323-1-x86_64.pkg.tar.zst",
+    "sha256": "33ca71a4e94cf0593b3072cc4d1f055c8850ccf71b05bd6d05cce2c03f8e148e",
+    "has_cargo_inventory": true,
+    "cargo_notice_file_count": 292,
+    "contains_original_build_path": false
+  }
+]

@@ -559,9 +559,9 @@
     "semantic_hash": ""
   },
   "docs/PAQUETES.md": {
-    "mtime": 1793346912.887333,
-    "seen": 1793346917.2506347,
-    "ast_hash": "e1954075b22f97b79035e65f833e3756",
+    "mtime": 1793348447.6736946,
+    "seen": 1793348452.5100784,
+    "ast_hash": "6184d2252ba0684d2b0e47de1f12898b",
     "semantic_hash": ""
   },
   "packaging/arch/cargo-license-inventory.py": {
@@ -595,15 +595,15 @@
     "semantic_hash": ""
   },
   "packaging/iso/prepare-profile.py": {
-    "mtime": 1793347224.5159795,
-    "seen": 1793347235.373089,
-    "ast_hash": "b73445b1d69f2b5164fa6b81ad4b0186",
+    "mtime": 1793347973.7229111,
+    "seen": 1793348452.5098503,
+    "ast_hash": "58217f18da4e7715a723fc566c1be23e",
     "semantic_hash": ""
   },
   "docs/DISTRIBUCION.md": {
-    "mtime": 1793347779.575348,
-    "seen": 1793347793.1501238,
-    "ast_hash": "cccda6478bf13a587552aa9544880db1",
+    "mtime": 1793348503.8869827,
+    "seen": 1793348506.4948719,
+    "ast_hash": "2f43ce422f7358cb002d655a9a9c1900",
     "semantic_hash": ""
   },
   "packaging/iso/verify-build.py": {

@@ -1,0 +1,590 @@
+==> Synchronizing chroot copy [/home/tv/.cache/archtv/clean-build/root] -> [tv]...done
+==> Making package: archtv 0.1.0.r22.gae035c4e2323-1 (Fri Oct 30 07:44:15 2026)
+==> Retrieving sources...
+  -> Found archtv-0.1.0.r22.gae035c4e2323.tar.gz
+==> Validating source files with sha256sums...
+    archtv-0.1.0.r22.gae035c4e2323.tar.gz ... Passed
+Note: in a future version of systemd-nspawn the default set of permitted socket address families will be restricted to AF_INET, AF_INET6 and AF_UNIX. Use --restrict-address-families= to configure the set of permitted socket address families, or set RestrictAddressFamilies= in a .nspawn file.
+==> Making package: archtv 0.1.0.r22.gae035c4e2323-1 (Fri Oct 30 07:44:30 2026)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> Installing missing dependencies...
+resolving dependencies...
+looking for conflicting packages...
+
+Packages (34) compiler-rt-23.1.4-1  default-cursors-3-1  libdrm-2.4.134-1  libedit-20260512_3.1-1  libevdev-1.14.0-1  libgit2-1:1.9.7-1  libgudev-238-4  libpciaccess-0.19-1  libwacom-2.20.0-1  libx11-1.8.14-1  libxau-1.0.12-1  libxcb-1.17.0-1  libxdmcp-1.1.5-2  libxext-1.3.7-1  libxshmfence-1.3.3-1  libxxf86vm-1.1.7-1  lld-23.1.4-1  llhttp-9.3.1-1  llvm-libs-23.1.4-1  lm_sensors-1:3.6.2-1  lua54-5.4.9-1  mtdev-1.1.7-1  spirv-tools-1:1.4.363.0-1  xcb-proto-1.17.0-4  xkeyboard-config-2.48-1  xorgproto-2026.1-1  libglvnd-1.7.0-3  libinput-1.32.0-1  libxkbcommon-1.13.2-1  mesa-1:26.2.6-1  pixman-0.46.4-1  rust-1:1.99.1-1  seatd-0.9.3-1  wayland-1.26.0-1
+
+Total Installed Size:  642.62 MiB
+
+:: Proceed with installation? [Y/n] 
+checking keyring...
+checking package integrity...
+loading package files...
+checking for file conflicts...
+checking available disk space...
+:: Processing package changes...
+installing compiler-rt...
+installing llhttp...
+installing libgit2...
+installing libedit...
+installing llvm-libs...
+installing lld...
+installing rust...
+Optional dependencies for rust
+    gdb: rust-gdb script [installed]
+    lldb: rust-lldb script
+installing seatd...
+installing libevdev...
+installing libgudev...
+installing libwacom...
+Optional dependencies for libwacom
+    python-libevdev: for libwacom-show-stylus
+    python-pyudev: for libwacom-show-stylus
+installing lua54...
+installing mtdev...
+installing libinput...
+Optional dependencies for libinput
+    libinput-tools: debug utilities
+installing xkeyboard-config...
+installing libxkbcommon...
+Optional dependencies for libxkbcommon
+    libxkbcommon-x11: xkbcli interactive-x11
+    wayland: xkbcli interactive-wayland [pending]
+installing pixman...
+installing default-cursors...
+Optional dependencies for default-cursors
+    adwaita-cursors: default cursor theme
+installing wayland...
+installing libpciaccess...
+installing libdrm...
+Optional dependencies for libdrm
+    cairo: needed for modetest tool
+installing xcb-proto...
+installing xorgproto...
+installing libxdmcp...
+installing libxau...
+installing libxcb...
+installing libx11...
+installing libxext...
+installing libglvnd...
+installing libxshmfence...
+installing libxxf86vm...
+installing lm_sensors...
+Optional dependencies for lm_sensors
+    rrdtool: for logging with sensord
+    perl: for sensor detection and configuration convert [installed]
+installing spirv-tools...
+installing mesa...
+Optional dependencies for mesa
+    opengl-man-pages: for the OpenGL API man pages
+:: Running post-transaction hooks...
+(1/5) Creating system user accounts...
+Creating group 'seat' with GID 969.
+(2/5) Updating udev hardware database...
+(3/5) Reloading system manager configuration...
+  Skipped: Current root is not booted.
+(4/5) Reloading device manager configuration...
+  Skipped: Current root is not booted.
+(5/5) Arming ConditionNeedsUpdate...
+==> Retrieving sources...
+  -> Found archtv-0.1.0.r22.gae035c4e2323.tar.gz
+==> WARNING: Skipping all source file integrity checks.
+==> Extracting sources...
+  -> Extracting archtv-0.1.0.r22.gae035c4e2323.tar.gz with bsdtar
+==> Starting prepare()...
+    Updating crates.io index
+    Updating git repository `https://github.com/Smithay/smithay`
+ Downloading crates ...
+  Downloaded dlib v0.5.3
+  Downloaded errno v0.3.14
+  Downloaded float-cmp v0.9.0
+  Downloaded matchers v0.2.0
+  Downloaded thread_local v1.1.10
+  Downloaded adler2 v2.0.1
+  Downloaded arrayref v0.3.9
+  Downloaded scoped-tls v1.0.1
+  Downloaded strict-num v0.1.1
+  Downloaded xcursor v0.3.11
+  Downloaded wayland-csd-frame v0.3.0
+  Downloaded wayland-cursor v0.31.14
+  Downloaded core_maths v0.1.1
+  Downloaded xkbcommon-dl v0.4.2
+  Downloaded as-raw-xcb-connection v1.0.1
+  Downloaded byteorder-lite v0.1.0
+  Downloaded equivalent v1.0.3
+  Downloaded xmlwriter v0.1.0
+  Downloaded wayland-protocols-misc v0.3.12
+  Downloaded itoa v1.0.18
+  Downloaded cfg_aliases v0.2.2
+  Downloaded cursor-icon v1.2.0
+  Downloaded calloop-wayland-source v0.4.1
+  Downloaded lazy_static v1.5.1
+  Downloaded wayland-sys v0.31.11
+  Downloaded gethostname v1.1.0
+  Downloaded downcast-rs v1.2.1
+  Downloaded cpufeatures v0.3.1
+  Downloaded dpi v0.1.2
+  Downloaded wayland-egl v0.32.11
+  Downloaded pico-args v0.5.0
+  Downloaded libudev-sys v0.1.4
+  Downloaded drm-ffi v0.9.1
+  Downloaded libseat-sys v0.2.0
+  Downloaded pixman-sys v0.1.0
+  Downloaded libloading v0.8.9
+  Downloaded fdeflate v0.3.7
+  Downloaded bytemuck_derive v1.12.1
+  Downloaded bitflags v1.3.2
+  Downloaded shlex v2.0.1
+  Downloaded simd-adler32 v0.3.10
+  Downloaded find-msvc-tools v0.1.15
+  Downloaded thiserror v2.0.21
+  Downloaded libseat v0.2.4
+  Downloaded siphasher v1.0.4
+  Downloaded simplecss v0.2.2
+  Downloaded data-url v0.3.2
+  Downloaded autocfg v1.5.1
+  Downloaded imagesize v0.13.0
+  Downloaded zune-core v0.4.12
+  Downloaded thiserror-impl v2.0.21
+  Downloaded rgb v0.8.53
+  Downloaded percent-encoding v2.3.2
+  Downloaded pkg-config v0.3.34
+  Downloaded profiling v1.0.18
+  Downloaded cfg-if v1.0.5
+  Downloaded jobserver v0.1.35
+  Downloaded wayland-protocols-wlr v0.3.12
+  Downloaded drm-sys v0.8.1
+  Downloaded pin-project-lite v0.2.17
+  Downloaded profiling-procmacros v1.0.18
+  Downloaded enumflags2_derive v0.7.12
+  Downloaded drm-fourcc v2.2.0
+  Downloaded zmij v1.0.23
+  Downloaded appendlist v1.4.0
+  Downloaded foldhash v0.1.5
+  Downloaded once_cell v1.21.4
+  Downloaded nu-ansi-term v0.50.3
+  Downloaded memmap2 v0.9.12
+  Downloaded tracing-log v0.2.0
+  Downloaded arrayvec v0.7.8
+  Downloaded smol_str v0.3.2
+  Downloaded quote v1.0.47
+  Downloaded svgtypes v0.15.3
+  Downloaded udev v0.9.3
+  Downloaded rand_core v0.10.1
+  Downloaded enumflags2 v0.7.12
+  Downloaded gl_generator v0.14.0
+  Downloaded smallvec v1.16.4
+  Downloaded wayland-protocols-experimental v20251230.0.3
+  Downloaded foldhash v0.2.0
+  Downloaded thiserror v1.0.69
+  Downloaded objc2-encode v4.1.0
+  Downloaded pixman v0.2.1
+  Downloaded thiserror-impl v1.0.69
+  Downloaded bytemuck v1.25.2
+  Downloaded tiny-skia-path v0.11.4
+  Downloaded crc32fast v1.5.3
+  Downloaded tracing-attributes v0.1.31
+  Downloaded tracing-core v0.1.36
+  Downloaded polling v3.11.0
+  Downloaded serde_derive v1.0.229
+  Downloaded num-traits v0.2.19
+  Downloaded log v0.4.34
+  Downloaded bitflags v2.13.2
+  Downloaded roxmltree v0.20.0
+  Downloaded serde_core v1.0.229
+  Downloaded raw-window-handle v0.6.2
+  Downloaded miniz_oxide v0.8.9
+  Downloaded flate2 v1.1.10
+  Downloaded xkbcommon v0.8.0
+  Downloaded miniz_oxide v0.9.1
+  Downloaded wayland-server v0.31.14
+  Downloaded calloop v0.14.5
+  Downloaded wayland-scanner v0.31.11
+  Downloaded zune-jpeg v0.4.21
+  Downloaded paste v1.0.15
+  Downloaded wayland-backend v0.3.17
+  Downloaded resvg v0.45.1
+  Downloaded chacha20 v0.10.2
+  Downloaded fastrand v2.5.0
+  Downloaded block2 v0.6.2
+  Downloaded tempfile v3.27.0
+  Downloaded serde v1.0.229
+  Downloaded euclid v0.22.14
+  Downloaded io-lifetimes v1.0.11
+  Downloaded proc-macro2 v1.0.107
+  Downloaded base64 v0.22.1
+  Downloaded memchr v2.8.3
+  Downloaded png v0.17.16
+  Downloaded unicode-ident v1.0.27
+  Downloaded xml-rs v0.8.29
+  Downloaded xkeysym v0.2.1
+  Downloaded getrandom v0.4.3
+  Downloaded winit-common v0.31.0-beta.4
+  Downloaded input v0.10.0
+  Downloaded png v0.18.1
+  Downloaded dispatch2 v0.3.1
+  Downloaded drm v0.14.1
+  Downloaded x11-dl v2.21.0
+  Downloaded sharded-slab v0.1.7
+  Downloaded cc v1.10.0
+  Downloaded wayland-client v0.31.15
+  Downloaded usvg v0.45.1
+  Downloaded bytes v1.12.1
+  Downloaded smithay-client-toolkit v0.21.1
+  Downloaded fontdue v0.9.5
+  Downloaded kurbo v0.11.3
+  Downloaded hashbrown v0.15.5
+  Downloaded wayland-protocols v0.32.13
+  Downloaded libm v0.2.16
+  Downloaded serde_json v1.0.154
+  Downloaded moxcms v0.7.11
+  Downloaded wayland-protocols-plasma v0.3.12
+  Downloaded allocator-api2 v0.2.21
+  Downloaded zlib-rs v0.6.8
+  Downloaded winit-core v0.31.0-beta.4
+  Downloaded borsh v1.8.1
+  Downloaded tiny-skia v0.11.4
+  Downloaded ttf-parser v0.25.1
+  Downloaded xkbcommon v0.9.0
+  Downloaded reis v0.7.1
+  Downloaded keyboard-types v0.8.3
+  Downloaded winit-x11 v0.31.0-beta.4
+  Downloaded syn v3.0.9
+  Downloaded winit-wayland v0.31.0-beta.4
+  Downloaded image v0.25.8
+  Downloaded syn v2.0.119
+  Downloaded nix v0.31.3
+  Downloaded rand v0.10.3
+  Downloaded indexmap v2.14.2
+  Downloaded rustix v1.1.6
+  Downloaded tracing v0.1.44
+  Downloaded libc v0.2.191
+  Downloaded pxfm v0.1.30
+  Downloaded hashbrown v0.17.1
+  Downloaded aho-corasick v1.1.5
+  Downloaded objc2-core-foundation v0.3.2
+  Downloaded tracing-subscriber v0.3.23
+  Downloaded portable-atomic v1.15.0
+  Downloaded x11rb v0.14.0
+  Downloaded linux-raw-sys v0.12.1
+  Downloaded quick-xml v0.41.0
+  Downloaded objc2 v0.6.5
+  Downloaded objc2-foundation v0.3.2
+  Downloaded regex-syntax v0.8.11
+  Downloaded rustix v0.38.44
+  Downloaded winit v0.31.0-beta.4
+  Downloaded x11rb-protocol v0.14.0
+  Downloaded khronos_api v3.1.0
+  Downloaded regex-automata v0.4.18
+  Downloaded input-sys v1.19.0
+  Downloaded glam v0.33.12
+  Downloaded linux-raw-sys v0.4.15
+  Downloaded linux-raw-sys v0.9.4
+{"packages": 177, "missing_notice_or_declaration": ["drm-fourcc", "libseat", "libseat-sys", "pixman", "pixman-sys"]}
+==> Starting build()...
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.27
+   Compiling cfg-if v1.0.5
+   Compiling pkg-config v0.3.34
+   Compiling bitflags v2.13.2
+   Compiling log v0.4.34
+   Compiling once_cell v1.21.4
+   Compiling rustix v1.1.6
+   Compiling libc v0.2.191
+   Compiling linux-raw-sys v0.12.1
+   Compiling syn v3.0.9
+   Compiling libloading v0.8.9
+   Compiling smallvec v1.16.4
+   Compiling dlib v0.5.3
+   Compiling syn v2.0.119
+   Compiling find-msvc-tools v0.1.15
+   Compiling shlex v2.0.1
+   Compiling cc v1.10.0
+   Compiling bytemuck_derive v1.12.1
+   Compiling wayland-sys v0.31.11
+   Compiling bytemuck v1.25.2
+   Compiling wayland-backend v0.3.17
+   Compiling scoped-tls v1.0.1
+   Compiling downcast-rs v1.2.1
+   Compiling memchr v2.8.3
+   Compiling quick-xml v0.41.0
+   Compiling wayland-scanner v0.31.11
+   Compiling cfg_aliases v0.2.2
+   Compiling wayland-client v0.31.15
+   Compiling tracing-core v0.1.36
+   Compiling tracing-attributes v0.1.31
+   Compiling pin-project-lite v0.2.17
+   Compiling tracing v0.1.44
+   Compiling nix v0.31.3
+   Compiling wayland-server v0.31.14
+   Compiling xkeysym v0.2.1
+   Compiling simd-adler32 v0.3.10
+   Compiling wayland-protocols v0.32.13
+   Compiling memmap2 v0.9.12
+   Compiling polling v3.11.0
+   Compiling cursor-icon v1.2.0
+   Compiling adler2 v2.0.1
+   Compiling crc32fast v1.5.3
+   Compiling calloop v0.14.5
+   Compiling xcursor v0.3.11
+   Compiling miniz_oxide v0.9.1
+   Compiling x11-dl v2.21.0
+   Compiling thiserror v2.0.21
+   Compiling flate2 v1.1.10
+   Compiling thiserror-impl v2.0.21
+   Compiling keyboard-types v0.8.3
+   Compiling smithay-client-toolkit v0.21.1
+   Compiling raw-window-handle v0.6.2
+   Compiling smol_str v0.3.2
+   Compiling dpi v0.1.2
+   Compiling khronos_api v3.1.0
+   Compiling winit-core v0.31.0-beta.4
+   Compiling wayland-cursor v0.31.14
+   Compiling calloop-wayland-source v0.4.1
+   Compiling miniz_oxide v0.8.9
+   Compiling wayland-csd-frame v0.3.0
+   Compiling xkbcommon v0.8.0
+   Compiling wayland-protocols-experimental v20251230.0.3
+   Compiling wayland-protocols-wlr v0.3.12
+   Compiling wayland-protocols-misc v0.3.12
+   Compiling fdeflate v0.3.7
+   Compiling xkbcommon-dl v0.4.2
+   Compiling libudev-sys v0.1.4
+   Compiling autocfg v1.5.1
+   Compiling io-lifetimes v1.0.11
+   Compiling float-cmp v0.9.0
+   Compiling drm-sys v0.8.1
+   Compiling rand_core v0.10.1
+   Compiling getrandom v0.4.3
+   Compiling arrayvec v0.7.8
+   Compiling drm-fourcc v2.2.0
+   Compiling equivalent v1.0.3
+   Compiling siphasher v1.0.4
+   Compiling libm v0.2.16
+   Compiling strict-num v0.1.1
+   Compiling num-traits v0.2.19
+   Compiling winit-common v0.31.0-beta.4
+   Compiling gethostname v1.1.0
+   Compiling libseat-sys v0.2.0
+   Compiling thiserror v1.0.69
+   Compiling percent-encoding v2.3.2
+   Compiling x11rb-protocol v0.14.0
+   Compiling rustix v0.38.44
+   Compiling xml-rs v0.8.29
+   Compiling serde_core v1.0.229
+   Compiling paste v1.0.15
+   Compiling as-raw-xcb-connection v1.0.1
+   Compiling input-sys v1.19.0
+   Compiling arrayref v0.3.9
+   Compiling pixman-sys v0.1.0
+   Compiling linux-raw-sys v0.9.4
+   Compiling tiny-skia-path v0.11.4
+   Compiling x11rb v0.14.0
+   Compiling gl_generator v0.14.0
+   Compiling kurbo v0.11.3
+   Compiling wayland-protocols-plasma v0.3.12
+   Compiling winit v0.31.0-beta.4
+   Compiling enumflags2_derive v0.7.12
+   Compiling thiserror-impl v1.0.69
+   Compiling cpufeatures v0.3.1
+   Compiling bitflags v1.3.2
+   Compiling linux-raw-sys v0.4.15
+   Compiling foldhash v0.2.0
+   Compiling regex-syntax v0.8.11
+   Compiling libseat v0.2.4
+   Compiling portable-atomic v1.15.0
+   Compiling zmij v1.0.23
+   Compiling regex-automata v0.4.18
+   Compiling winit-wayland v0.31.0-beta.4
+   Compiling png v0.17.16
+   Compiling chacha20 v0.10.2
+   Compiling enumflags2 v0.7.12
+   Compiling svgtypes v0.15.3
+   Compiling core_maths v0.1.1
+   Compiling udev v0.9.3
+   Compiling smithay v0.7.0 (https://github.com/Smithay/smithay?rev=f581531d479cf2e3307bafb913c5d2bb12860bb3#f581531d)
+   Compiling winit-x11 v0.31.0-beta.4
+   Compiling drm-ffi v0.9.1
+   Compiling profiling-procmacros v1.0.18
+   Compiling errno v0.3.14
+   Compiling simplecss v0.2.2
+   Compiling allocator-api2 v0.2.21
+   Compiling xmlwriter v0.1.0
+   Compiling data-url v0.3.2
+   Compiling serde v1.0.229
+   Compiling base64 v0.22.1
+   Compiling imagesize v0.13.0
+   Compiling serde_json v1.0.154
+   Compiling roxmltree v0.20.0
+   Compiling hashbrown v0.17.1
+   Compiling fastrand v2.5.0
+   Compiling foldhash v0.1.5
+   Compiling pxfm v0.1.30
+   Compiling pico-args v0.5.0
+   Compiling zune-core v0.4.12
+   Compiling lazy_static v1.5.1
+   Compiling sharded-slab v0.1.7
+   Compiling zune-jpeg v0.4.21
+   Compiling usvg v0.45.1
+   Compiling moxcms v0.7.11
+   Compiling hashbrown v0.15.5
+   Compiling tempfile v3.27.0
+   Compiling indexmap v2.14.2
+   Compiling profiling v1.0.18
+   Compiling drm v0.14.1
+   Compiling pixman v0.2.1
+   Compiling input v0.10.0
+   Compiling ttf-parser v0.25.1
+   Compiling reis v0.7.1
+   Compiling rand v0.10.3
+   Compiling tiny-skia v0.11.4
+   Compiling matchers v0.2.0
+   Compiling png v0.18.1
+   Compiling xkbcommon v0.9.0
+   Compiling tracing-log v0.2.0
+   Compiling wayland-egl v0.32.11
+   Compiling rgb v0.8.53
+   Compiling serde_derive v1.0.229
+   Compiling thread_local v1.1.10
+   Compiling nu-ansi-term v0.50.3
+   Compiling byteorder-lite v0.1.0
+   Compiling appendlist v1.4.0
+   Compiling glam v0.33.12
+   Compiling archtv-core v0.1.0 (/build/archtv/src/archtv-0.1.0.r22.gae035c4e2323/crates/archtv-core)
+   Compiling itoa v1.0.18
+   Compiling image v0.25.8
+   Compiling tracing-subscriber v0.3.23
+   Compiling resvg v0.45.1
+   Compiling fontdue v0.9.5
+   Compiling archtv-shell v0.1.0 (/build/archtv/src/archtv-0.1.0.r22.gae035c4e2323/crates/archtv-shell)
+   Compiling archtv-compositor v0.1.0 (/build/archtv/src/archtv-0.1.0.r22.gae035c4e2323/crates/archtv-compositor)
+    Finished `release` profile [optimized] target(s) in 20m 59s
+==> Starting check()...
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.27
+   Compiling syn v3.0.9
+   Compiling pkg-config v0.3.34
+   Compiling bitflags v2.13.2
+   Compiling smallvec v1.16.4
+   Compiling rustix v1.1.6
+   Compiling find-msvc-tools v0.1.15
+   Compiling shlex v2.0.1
+   Compiling linux-raw-sys v0.12.1
+   Compiling cc v1.10.0
+   Compiling wayland-sys v0.31.11
+   Compiling cfg-if v1.0.5
+   Compiling wayland-backend v0.3.17
+   Compiling bytemuck_derive v1.12.1
+   Compiling memchr v2.8.3
+   Compiling simd-adler32 v0.3.10
+   Compiling downcast-rs v1.2.1
+   Compiling quick-xml v0.41.0
+   Compiling bytemuck v1.25.2
+   Compiling adler2 v2.0.1
+   Compiling crc32fast v1.5.3
+   Compiling wayland-client v0.31.15
+   Compiling wayland-scanner v0.31.11
+   Compiling log v0.4.34
+   Compiling miniz_oxide v0.9.1
+   Compiling flate2 v1.1.10
+   Compiling miniz_oxide v0.8.9
+   Compiling fdeflate v0.3.7
+   Compiling arrayvec v0.7.8
+   Compiling float-cmp v0.9.0
+   Compiling libc v0.2.191
+   Compiling autocfg v1.5.1
+   Compiling libm v0.2.16
+   Compiling num-traits v0.2.19
+   Compiling strict-num v0.1.1
+   Compiling wayland-protocols v0.32.13
+   Compiling arrayref v0.3.9
+   Compiling tracing-core v0.1.36
+   Compiling pin-project-lite v0.2.17
+   Compiling serde_core v1.0.229
+   Compiling tracing v0.1.44
+   Compiling tiny-skia-path v0.11.4
+   Compiling kurbo v0.11.3
+   Compiling polling v3.11.0
+   Compiling thiserror v2.0.21
+   Compiling siphasher v1.0.4
+   Compiling bitflags v1.3.2
+   Compiling zmij v1.0.23
+   Compiling png v0.17.16
+   Compiling svgtypes v0.15.3
+   Compiling calloop v0.14.5
+   Compiling core_maths v0.1.1
+   Compiling memmap2 v0.9.12
+   Compiling simplecss v0.2.2
+   Compiling xkeysym v0.2.1
+   Compiling smithay-client-toolkit v0.21.1
+   Compiling thiserror-impl v2.0.21
+   Compiling data-url v0.3.2
+   Compiling serde_json v1.0.154
+   Compiling base64 v0.22.1
+   Compiling cursor-icon v1.2.0
+   Compiling xmlwriter v0.1.0
+   Compiling foldhash v0.1.5
+   Compiling allocator-api2 v0.2.21
+   Compiling serde v1.0.229
+   Compiling imagesize v0.13.0
+   Compiling xcursor v0.3.11
+   Compiling equivalent v1.0.3
+   Compiling roxmltree v0.20.0
+   Compiling pxfm v0.1.30
+   Compiling zune-core v0.4.12
+   Compiling pico-args v0.5.0
+   Compiling usvg v0.45.1
+   Compiling zune-jpeg v0.4.21
+   Compiling moxcms v0.7.11
+   Compiling hashbrown v0.15.5
+   Compiling wayland-cursor v0.31.14
+   Compiling wayland-csd-frame v0.3.0
+   Compiling xkbcommon v0.8.0
+   Compiling ttf-parser v0.25.1
+   Compiling calloop-wayland-source v0.4.1
+   Compiling tiny-skia v0.11.4
+   Compiling wayland-protocols-misc v0.3.12
+   Compiling wayland-protocols-experimental v20251230.0.3
+   Compiling wayland-protocols-wlr v0.3.12
+   Compiling png v0.18.1
+   Compiling rgb v0.8.53
+   Compiling serde_derive v1.0.229
+   Compiling itoa v1.0.18
+   Compiling archtv-core v0.1.0 (/build/archtv/src/archtv-0.1.0.r22.gae035c4e2323/crates/archtv-core)
+   Compiling byteorder-lite v0.1.0
+   Compiling image v0.25.8
+   Compiling resvg v0.45.1
+   Compiling fontdue v0.9.5
+   Compiling archtv-shell v0.1.0 (/build/archtv/src/archtv-0.1.0.r22.gae035c4e2323/crates/archtv-shell)
+    Finished `release` profile [optimized] target(s) in 8m 15s
+     Running unittests src/lib.rs (/build/archtv/src/target/release/deps/archtv_core-a08e425e9e560b3e)
+
+running 4 tests
+test desktop::tests::exec_keeps_arguments_and_shell_metacharacters_literal ... ok
+test tests::home_returns_without_destroying_app_and_close_restores_focus ... ok
+test desktop::tests::locale_hidden_and_desktop_sections_are_respected ... ok
+test tests::repeated_activation_does_not_duplicate_a_window ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests src/main.rs (/build/archtv/src/target/release/deps/archtv_shell-35862853bae42087)
+
+running 6 tests
+test model::tests::navigation_filters_and_banner_use_real_application_sets ... ok
+test model::tests::context_order_hide_restore_and_row_focus_survive_navigation ... ok
+test worker::tests::android_ready_requires_exact_boot_confirmation_and_running_session ... ok
+test model::tests::keyboard_and_physical_search_agree_and_back_is_bounded ... ok
+test worker::tests::downgrade_does_not_overwrite_newer_settings ... ok
+test worker::tests::settings_roundtrip_and_corruption_backup_preserve_user_state ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+   Doc-tests archtv_core
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+==> Entering fakeroot environment...

@@ -1,0 +1,1 @@
+Linux archtv 6.18.59-1-lts #1 SMP PREEMPT_DYNAMIC Mon, 26 Oct 2026 18:35:24 +0000 x86_64 GNU/Linux

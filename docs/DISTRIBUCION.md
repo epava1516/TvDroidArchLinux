@@ -83,3 +83,20 @@ boot-progress.png muestra el kernel montando sr0 y airootfs y entrando en
 systemd. Eso todavía no acredita consola operativa, instalación ni sesión gráfica.
 QEMU requirió los módulos de paquete Virtio GPU/VGA, registrados en el manifiesto
 del laboratorio. La VM de prueba sigue en observación para completar el arranque.
+
+## Login y sesión nativa desde la ISO
+
+La misma ISO llegó al login de tty1 con 6.18.59-1-lts. El asistente de primer
+arranque pidió zona horaria; se omitió manualmente en esta prueba. El generador
+posterior añade enlace UTC y KEYMAP=us; el perfil live-utc se generó y pasó
+comprobación estática, pero todavía no se ha reconstruido su ISO.
+
+Se inició sesión root en el sistema live y pacman confirmó los tres paquetes
+r14. archtv-session abrió el compositor directamente sobre Virtio DRM y mostró
+el shell y el catálogo. Desde él se abrió Foot y Home volvió al shell; las
+capturas están en reports/h9-uefi-boot/. Esta prueba usa root en el laboratorio,
+sin red y sin disco instalado. No sustituye la prueba con un usuario normal tras
+instalar, ni acredita Android, audio, rendimiento o recuperación de fallos.
+Se verificó finalmente escritura y ejecución en Foot: uname devolvió Linux.
+Las entradas anteriores afectadas por modificadores y mapa de teclado quedan
+visibles en la captura terminal-final.png; no se usaron como evidencia de éxito.
