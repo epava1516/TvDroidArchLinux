@@ -9,7 +9,9 @@ el constructor verifica sus hashes antes de compilar.
 
 El SDK público API 28 no contiene sus API internas: la compilación inicial produjo
 170 errores. compile-reference.json fija org.robolectric:android-all:13-robolectric-9030017,
-178 380 165 bytes. Se usa exclusivamente como referencia de clases al compilar.
+178 380 165 bytes. Se usa como referencia de clases al compilar; la excepción explícita actual
+son las cuatro clases generadas de prebuilt-bindings.json, reutilizadas sólo con
+--with-public-resources y pendientes de reconstrucción con el generador oficial.
 Según la [arquitectura de Robolectric](https://robolectric.org/architecture/), los
 JAR android-all contienen implementación del framework, a diferencia del SDK de
 firmas públicas. Aquí no se usa el runner, instrumentación ni shadows de Robolectric.
@@ -90,3 +92,12 @@ El puente JNI ya ejecuta también AssetManager.getResourceText y ApkAssets/
 StringBlock originales en ART. El constructor interno de la prueba evita la
 inicialización de recursos del sistema aún pendiente; no se ha conectado todavía
 el proveedor de recursos del contador. Ver reports/aosp-resources-jni/.
+
+## Resources público original
+
+El conjunto --with-public-resources compila 48 fuentes originales y reutiliza
+cuatro bindings sysprop generados fijados individualmente por hash. El constructor
+público Resources, getIdentifier/getString y la actualización de configuración
+ya pasan en ART. Ver docs/AOSP-RESOURCES-PUBLICO.md y
+reports/aosp-public-resources/. La APK todavía usa AssetManager directamente;
+recursos de sistema y port de Activity/View permanecen pendientes.

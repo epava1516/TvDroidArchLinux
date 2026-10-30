@@ -130,3 +130,9 @@ propio. Pasan la regresión headless y dos sesiones nativas DRM/Pixman con entra
 y coincidencia exacta de capturas: reports/aosp-resources-headless/ y
 reports/aosp-resources-wayland/. Persisten los pendientes de recursos de sistema,
 Resources y Activity/View originales, servicios, estabilidad y distribución.
+
+Resources público ya construye su implementación original y ejecuta getString,
+configuración/densidad y RTL sobre Linux. Ver AOSP-RESOURCES-PUBLICO.md y
+reports/aosp-public-resources/. Falta integrarlo en el contador, inicializar
+recursos de sistema y reconstruir los cuatro bindings sysprop precompilados
+registrados; el resto del port y las puertas generales siguen abiertos.

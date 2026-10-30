@@ -218,6 +218,106 @@
       "path": "core/java/android/util/MapCollections.java",
       "sha256": "a029e3b7d72b7e744a9f45001354a416f9fc28ed92facf62eb5972ca6fe7fb3b",
       "bytes": 15717
+    },
+    {
+      "path": "core/java/android/content/res/Configuration.java",
+      "sha256": "9108ff13d9fa19692ecc9f3af9dfec58d3ecb281d803b31d06e97807acb7e9d4",
+      "bytes": 125863
+    },
+    {
+      "path": "core/java/android/content/res/CompatibilityInfo.java",
+      "sha256": "50d31900f6a96b860dc5abed8a6272be73194c32dc3550f6429491983b52063f",
+      "bytes": 26310
+    },
+    {
+      "path": "core/java/android/content/res/DrawableCache.java",
+      "sha256": "43c77e81c2a41b9731fc51d005b9f48315a8d8ad51e43cfac623698a2fca580d",
+      "bytes": 1965
+    },
+    {
+      "path": "core/java/android/content/res/ConfigurationBoundResourceCache.java",
+      "sha256": "faf8a8ab34b1ef2fdc4fc7a3ead1c437283dcf2ccdc9cf1d892c3b8a46b14428",
+      "bytes": 1973
+    },
+    {
+      "path": "core/java/android/content/res/ThemedResourceCache.java",
+      "sha256": "d136dbb2ff102b5235b70c4668f2ab042fe936aa2f912237f93e9ce9d2705fd1",
+      "bytes": 8796
+    },
+    {
+      "path": "core/java/android/content/res/XmlBlock.java",
+      "sha256": "9b76822b7a6be9fa22f0fc0c0ade68f08f8d0509e1b528b74a18badd9e14f62d",
+      "bytes": 23326
+    },
+    {
+      "path": "core/java/android/util/DisplayMetrics.java",
+      "sha256": "9200b53a13ddd89cf5f39e457b74edd3fcd48c579126d9db3b685e2f1e9e1d48",
+      "bytes": 16653
+    },
+    {
+      "path": "core/java/android/util/LongSparseArray.java",
+      "sha256": "fd85d3e0fae9f323994a75428a124b47689b9dc642fcc9d043b1331364331311",
+      "bytes": 16947
+    },
+    {
+      "path": "core/java/android/util/Pools.java",
+      "sha256": "026b2df82ce5073e742accf00b56f490319354a3588e6e4de96a0dc25e1aca4a",
+      "bytes": 5073
+    },
+    {
+      "path": "core/java/android/view/DisplayAdjustments.java",
+      "sha256": "4c594e46ca48eefee5b4bdf9b0ed4d830a8a0eebc8433e8f7f5703a0ce65ce71",
+      "bytes": 3636
+    },
+    {
+      "path": "core/java/android/os/LocaleList.java",
+      "sha256": "ec2b56428378ee6e37facabac99884b14e9b41ce7f281b0b59f9cca2d7ae9885",
+      "bytes": 21981
+    },
+    {
+      "path": "core/java/android/os/Trace.java",
+      "sha256": "a2715c9f43fa20e0e13d44edd5068730e007185061f1ba3b09c82ad7adc94eb0",
+      "bytes": 16939
+    },
+    {
+      "path": "core/java/android/os/Build.java",
+      "sha256": "77d6b4a7fef0ac88197bd269a2a9c1c4e37d20a3fa026b3b0654930187147e95",
+      "bytes": 70316
+    },
+    {
+      "path": "core/java/android/app/WindowConfiguration.java",
+      "sha256": "f7dfe0035db2e0da214b97818c10a88b8492fe5d52710e406403075a00bb9cde",
+      "bytes": 34464
+    },
+    {
+      "path": "graphics/java/android/graphics/Rect.java",
+      "sha256": "d9da74e359dc6c7a74fa80554ca04a94f0f2cfabbe277b134372e9d8b6a5a633",
+      "bytes": 28780
+    },
+    {
+      "path": "core/java/android/text/TextUtils.java",
+      "sha256": "9cda7f24d20c1aa8ac196333bf10e173b0e9b0ab7693e08eae54b8dfe4f10e16",
+      "bytes": 92580
     }
+  ],
+  "public_resources_sources": [
+    "core/java/android/content/res/Resources.java",
+    "core/java/android/content/res/ResourcesImpl.java",
+    "core/java/android/content/res/Configuration.java",
+    "core/java/android/content/res/CompatibilityInfo.java",
+    "core/java/android/content/res/DrawableCache.java",
+    "core/java/android/content/res/ConfigurationBoundResourceCache.java",
+    "core/java/android/content/res/ThemedResourceCache.java",
+    "core/java/android/content/res/XmlBlock.java",
+    "core/java/android/util/DisplayMetrics.java",
+    "core/java/android/util/LongSparseArray.java",
+    "core/java/android/util/Pools.java",
+    "core/java/android/view/DisplayAdjustments.java",
+    "core/java/android/os/LocaleList.java",
+    "core/java/android/os/Trace.java",
+    "core/java/android/os/Build.java",
+    "core/java/android/app/WindowConfiguration.java",
+    "graphics/java/android/graphics/Rect.java",
+    "core/java/android/text/TextUtils.java"
   ]
 }

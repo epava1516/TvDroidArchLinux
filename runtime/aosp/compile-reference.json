@@ -5,5 +5,5 @@
   "bytes": 178380165,
   "upstream_sha1": "6f1de3639fb19379abaa68b9f29d10cd6653047f",
   "sha256": "6e67dca81d30295e31ee6a28cfb601b6b66aaeaee51a92386ed099a64cea5996",
-  "scope": "Compile-only Android 13 framework class reference; not added to runtime classpath or distributed as the port."
+  "scope": "Android 13 compiler reference, never placed wholesale on runtime classpath. --with-public-resources reuses only generated classes explicitly pinned in prebuilt-bindings.json; rebuilding these remains pending."
 }

@@ -153,3 +153,47 @@ extern "C" JNIEXPORT jint JNICALL Java_android_content_res_AssetManager_nativeGe
         return jint(value->cookie + 1);
     });
 }
+namespace {
+// NativeAllocationRegistry's real release callback. Themes are original AOSP objects.
+void release_theme(void* pointer) { delete static_cast<android::Theme*>(pointer); }
+}
+extern "C" JNIEXPORT jlong JNICALL Java_android_content_res_AssetManager_nativeGetThemeFreeFunction(
+    JNIEnv*, jclass) {
+    return static_cast<jlong>(reinterpret_cast<uintptr_t>(&release_theme));
+}
+extern "C" JNIEXPORT jlong JNICALL Java_android_content_res_AssetManager_nativeThemeCreate(
+    JNIEnv* env, jclass, jlong handle) {
+    return guard<jlong>(env, 0, [&] {
+        return static_cast<jlong>(reinterpret_cast<uintptr_t>(managers.at(handle)->value.NewTheme().release()));
+    });
+}
+extern "C" JNIEXPORT void JNICALL Java_android_content_res_AssetManager_nativeSetConfiguration(
+    JNIEnv* env, jclass, jlong handle, jint mcc, jint mnc, jstring locale,
+    jint orientation, jint touchscreen, jint density, jint keyboard, jint keyboard_hidden,
+    jint navigation, jint width, jint height, jint smallest_width_dp, jint width_dp,
+    jint height_dp, jint layout, jint ui_mode, jint color_mode, jint sdk) {
+    guard<int>(env, 0, [&] {
+        android::ResTable_config configuration{};
+        configuration.mcc = uint16_t(mcc);
+        configuration.mnc = uint16_t(mnc);
+        configuration.orientation = uint8_t(orientation);
+        configuration.touchscreen = uint8_t(touchscreen);
+        configuration.density = uint16_t(density);
+        configuration.keyboard = uint8_t(keyboard);
+        configuration.inputFlags = uint8_t(keyboard_hidden);
+        configuration.navigation = uint8_t(navigation);
+        configuration.screenWidth = uint16_t(width);
+        configuration.screenHeight = uint16_t(height);
+        configuration.smallestScreenWidthDp = uint16_t(smallest_width_dp);
+        configuration.screenWidthDp = uint16_t(width_dp);
+        configuration.screenHeightDp = uint16_t(height_dp);
+        configuration.screenLayout = uint8_t(layout);
+        configuration.screenLayout2 = uint8_t((layout & 0x300) >> 8);
+        configuration.uiMode = uint8_t(ui_mode);
+        configuration.colorMode = uint8_t(color_mode);
+        configuration.sdkVersion = uint16_t(sdk);
+        if (locale) configuration.setBcp47Locale(string(env, locale).c_str());
+        managers.at(handle)->value.SetConfiguration(configuration);
+        return 0;
+    });
+}

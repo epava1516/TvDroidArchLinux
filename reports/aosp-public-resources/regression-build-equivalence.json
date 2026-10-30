@@ -1,0 +1,8 @@
+{
+  "framework_class_bytes_identical": true,
+  "class_count": 167,
+  "class_map_sha256": "32d792540c9cb9c054bcd4cf0fc97eb14f459fa261c7ec8947204acaba534afb",
+  "regression_build": "dist/apk/aosp-public-resources-10",
+  "public_probe_build": "dist/apk/aosp-public-resources-11",
+  "difference": "Only the separate probe was extended to exercise native Theme allocation/release; original framework class bytes are identical."
+}

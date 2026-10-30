@@ -1,0 +1,154 @@
+{
+  "recipe": {
+    "includes": [
+      "androidfw/include",
+      "utils/include",
+      "cutils/include",
+      "base/include",
+      "log/include",
+      "ziparchive/include",
+      "ziparchive/incfs_support/include",
+      "incfs/util/include",
+      "fmt/include",
+      "system/include",
+      "processgroup",
+      "gtest",
+      "ndk",
+      "binder-headers",
+      "backtrace-headers"
+    ],
+    "components": {
+      "androidfw": [
+        "ApkAssets.cpp",
+        "Asset.cpp",
+        "AssetDir.cpp",
+        "AssetManager.cpp",
+        "AssetManager2.cpp",
+        "AssetsProvider.cpp",
+        "AttributeResolution.cpp",
+        "ChunkIterator.cpp",
+        "ConfigDescription.cpp",
+        "Idmap.cpp",
+        "LoadedArsc.cpp",
+        "Locale.cpp",
+        "LocaleData.cpp",
+        "misc.cpp",
+        "ObbFile.cpp",
+        "PosixUtils.cpp",
+        "ResourceTypes.cpp",
+        "ResourceUtils.cpp",
+        "StreamingZipInflater.cpp",
+        "TypeWrappers.cpp",
+        "Util.cpp",
+        "ZipFileRO.cpp",
+        "ZipUtils.cpp",
+        "CursorWindow.cpp"
+      ],
+      "utils": [
+        "Errors.cpp",
+        "FileMap.cpp",
+        "JenkinsHash.cpp",
+        "LightRefBase.cpp",
+        "NativeHandle.cpp",
+        "Printer.cpp",
+        "RefBase.cpp",
+        "SharedBuffer.cpp",
+        "StopWatch.cpp",
+        "String8.cpp",
+        "String16.cpp",
+        "StrongPointer.cpp",
+        "SystemClock.cpp",
+        "Threads.cpp",
+        "Timers.cpp",
+        "Tokenizer.cpp",
+        "Unicode.cpp",
+        "VectorImpl.cpp",
+        "misc.cpp",
+        "Looper.cpp"
+      ],
+      "base": [
+        "abi_compatibility.cpp",
+        "chrono_utils.cpp",
+        "cmsg.cpp",
+        "file.cpp",
+        "hex.cpp",
+        "logging.cpp",
+        "mapped_file.cpp",
+        "parsebool.cpp",
+        "parsenetaddress.cpp",
+        "posix_strerror_r.cpp",
+        "process.cpp",
+        "properties.cpp",
+        "stringprintf.cpp",
+        "strings.cpp",
+        "threads.cpp",
+        "test_utils.cpp",
+        "errors_unix.cpp"
+      ],
+      "log": [
+        "log_event_list.cpp",
+        "log_event_write.cpp",
+        "logger_name.cpp",
+        "logger_read.cpp",
+        "logger_write.cpp",
+        "logprint.cpp",
+        "properties.cpp",
+        "event_tag_map.cpp"
+      ],
+      "ziparchive": [
+        "zip_archive.cc",
+        "zip_archive_stream_entry.cc",
+        "zip_cd_entry_map.cc",
+        "zip_error.cpp",
+        "zip_writer.cc"
+      ],
+      "cutils": [
+        "config_utils.cpp",
+        "iosched_policy.cpp",
+        "load_file.cpp",
+        "native_handle.cpp",
+        "properties.cpp",
+        "record_stream.cpp",
+        "strlcpy.c",
+        "threads.cpp",
+        "fs.cpp",
+        "hashmap.cpp",
+        "multiuser.cpp",
+        "str_parms.cpp",
+        "ashmem-host.cpp",
+        "canned_fs_config.cpp",
+        "fs_config.cpp",
+        "trace-host.cpp"
+      ],
+      "incfs": [
+        "util/map_ptr.cpp"
+      ]
+    },
+    "scope": "Original Linux host source selections and static archives as Android.bp. CursorWindow is compiled but requires Binder IPC at link/runtime if selected. fmt header-only.",
+    "cpp_standards": {
+      "ziparchive": "gnu++2a"
+    },
+    "component_flags": {
+      "ziparchive": [
+        "-DZLIB_CONST"
+      ]
+    }
+  },
+  "compiler": "clang version 23.1.4\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /usr/bin\n",
+  "libcxx_runtime_sha256": "1f1a3c91139d4e6e87b14886d4b6ff035ea7c37162f3f0cc3d692702785ea8fa",
+  "jni_source_sha256": "f8d07910f6aba2baeb0c99b1e797be194a0851f5370e59d0a0fde65f363db1a1",
+  "jni_library_sha256": "7e6130020a9ccc8a6efe2ab4cca335c558c4dda58d7cd4860df00f90e735012d",
+  "probe_source_sha256": "6190292958d98d01c6cd6a4e62bf8cd9203eb19cff5cca19c55c7770323e0d59",
+  "original_sources_modified": false,
+  "probe_sha256": "9ed2dc4787d3d072946582ba879dda8e0b25ed2c86ccbbd907ff2e5f8a32f6b4",
+  "archives": {
+    "libandroidfw_host.a": "31a944d02b281ee783ec17415ba6cee224b2e7e4445a5184cfcff4b18accc878",
+    "libutils_host.a": "e5875efe0d766674d78b6f9cb1feb617dd9bdb11bece45dae77958ba4099da93",
+    "libbase_host.a": "953c6fb38f32cb0c9c5a03c24d15f180e018da42f47cfcc414fd6c612d4a46d9",
+    "liblog_host.a": "dd7c7e4cab129bacb38cbeb76155dc3ae9d63e2300bc68aa1339bfdabe40f678",
+    "libziparchive_host.a": "d2bc1a16545bd510c5c602ad2841edb8d8aca262b94b3dbb7d0a8fc9eca7d268",
+    "libcutils_host.a": "d2fa28a3b1692a7c6965dac99dc2d348877998ec2b033e8fa0cf8bce13d5f1cd",
+    "libincfs_host.a": "69a704e05829a783f7975165311a411e2d20bb12d688def3575fb4573f056ca2"
+  },
+  "scope": "Original Linux host androidfw build with matching original libc++ headers and ART libc++ runtime; no resource lookup, JNI integration, APK execution or distribution claim from this build."
+}

@@ -22,3 +22,5 @@ reports/aosp-resources-jni/**/*.stderr -whitespace
 reports/aosp-resources-jni/*.stderr -whitespace
 reports/aosp-resources-headless/*.stderr -whitespace
 reports/aosp-resources-wayland/** -whitespace
+reports/aosp-public-resources/**/*.stderr -whitespace
+reports/aosp-public-resources/*.stderr -whitespace

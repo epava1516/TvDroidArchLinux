@@ -1,0 +1,23 @@
+{
+  "artifact": "org.robolectric:android-all:13-robolectric-9030017",
+  "artifact_sha256": "6e67dca81d30295e31ee6a28cfb601b6b66aaeaee51a92386ed099a64cea5996",
+  "classes": {
+    "android/sysprop/DisplayProperties.class": {
+      "bytes": 8283,
+      "sha256": "0fde984166d52f326efe0ca77c6471fe33f1c39dc762135df757ed918c6946db"
+    },
+    "android/sysprop/SocProperties.class": {
+      "bytes": 7228,
+      "sha256": "2070ba462acd1b4ee1fef6f2659ce8ed64aac525964123dbc366056d1142d7a3"
+    },
+    "android/sysprop/TelephonyProperties.class": {
+      "bytes": 17346,
+      "sha256": "1f0cca661d8e97b681bbf697a38ea19ddfcc2a3c6c4a61b25b76884e1651b704"
+    },
+    "android/sysprop/DeviceProperties.class": {
+      "bytes": 7149,
+      "sha256": "947f5a379263abb1d786c3d73ac83fd518680401fbe8b3d09ad1bc8b75881274"
+    }
+  },
+  "scope": "Explicitly allowlisted generated AOSP sysprop bindings reused as verified bytecode. Full reference jar excluded from runtime; no Robolectric runner or shadows. Rebuilding these bindings with the original sysprop generator remains pending."
+}

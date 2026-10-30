@@ -116,3 +116,8 @@ Las evidencias están en `reports/aosp-resources-headless/` y
 `reports/aosp-resources-wayland/`; ambas exigen la traza de inicialización AOSP y
 registran hashes del DEX y la biblioteca. Esto sustituye el parser del contador;
 no completa `Resources`, los recursos de sistema ni el port de interfaz.
+
+El constructor público Resources y sus llamadas de texto ya pasan de forma
+aislada, con configuración y métricas originales: ver AOSP-RESOURCES-PUBLICO.md.
+La integración del contador sigue usando AssetManager; el nivel público nuevo
+todavía requiere conectar el perfil de arranque y completar recursos de sistema.

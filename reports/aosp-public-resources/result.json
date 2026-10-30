@@ -1,0 +1,83 @@
+{
+  "reference": {
+    "pass": true,
+    "exit_code": 0,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Xcheck:jni",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/aosp-public-resources-11/dex/classes.dex",
+      "org.archtv.aospprobe.PublicResourcesProbe"
+    ]
+  },
+  "public-resources": {
+    "pass": true,
+    "exit_code": 0,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Xcheck:jni",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/aosp-public-resources-11/dex/classes.dex",
+      "org.archtv.aospprobe.PublicResourcesProbe",
+      "/home/tv/repositorio-principal/dist/apk/androidfw-clang-1/libarchtv_resources_linux.so",
+      "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk"
+    ]
+  },
+  "host_properties": {
+    "ro.build.version.sdk": "33",
+    "ro.build.version.codename": "REL",
+    "ro.build.version.all_codenames": "REL",
+    "ro.build.version.release": "13",
+    "ro.product.cpu.abilist": "x86_64",
+    "ro.product.cpu.abilist64": "x86_64",
+    "archtv.public.unicode": "Televisi\u00f3n \ud83d\udcfa",
+    "archtv.public.true": "yes",
+    "archtv.public.false": "off",
+    "archtv.public.invalid": "TRUE"
+  },
+  "source_count": 48,
+  "prebuilt_bindings": {
+    "artifact": "org.robolectric:android-all:13-robolectric-9030017",
+    "artifact_sha256": "6e67dca81d30295e31ee6a28cfb601b6b66aaeaee51a92386ed099a64cea5996",
+    "classes": {
+      "android/sysprop/DisplayProperties.class": {
+        "bytes": 8283,
+        "sha256": "0fde984166d52f326efe0ca77c6471fe33f1c39dc762135df757ed918c6946db"
+      },
+      "android/sysprop/SocProperties.class": {
+        "bytes": 7228,
+        "sha256": "2070ba462acd1b4ee1fef6f2659ce8ed64aac525964123dbc366056d1142d7a3"
+      },
+      "android/sysprop/TelephonyProperties.class": {
+        "bytes": 17346,
+        "sha256": "1f0cca661d8e97b681bbf697a38ea19ddfcc2a3c6c4a61b25b76884e1651b704"
+      },
+      "android/sysprop/DeviceProperties.class": {
+        "bytes": 7149,
+        "sha256": "947f5a379263abb1d786c3d73ac83fd518680401fbe8b3d09ad1bc8b75881274"
+      }
+    },
+    "scope": "Explicitly allowlisted generated AOSP sysprop bindings reused as verified bytecode. Full reference jar excluded from runtime; no Robolectric runner or shadows. Rebuilding these bindings with the original sysprop generator remains pending."
+  },
+  "scope": "Original public Resources constructor/getIdentifier/getString with internal host AssetManager setup. No full system-resource initialization or broad API/Activity/View compatibility claim.",
+  "sha256": {
+    "/home/tv/repositorio-principal/dist/apk/aosp-public-resources-11/dex/classes.dex": "f5f57746e3359e34edbf63ddc27d5780527a4738745dc4dda98df154df219f48",
+    "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so": "72ae751325d341ffb6200158a2338152c8ffbf56fc61a2d78b0a709b7396a5fb",
+    "/home/tv/repositorio-principal/dist/apk/androidfw-clang-1/libarchtv_resources_linux.so": "7e6130020a9ccc8a6efe2ab4cca335c558c4dda58d7cd4860df00f90e735012d",
+    "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk": "f07c9b92ab3353237276081c22e11ce06168b8c9f71a99ea32968b2ce0f00e28"
+  },
+  "cleanup": {
+    "waydroid_container_service": "inactive",
+    "remaining_art_compositor_client_zygote_system_server_processes": 0,
+    "foreground_vt": 1
+  }
+}

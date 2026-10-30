@@ -113,3 +113,9 @@ El puente JNI ya ejecuta también AssetManager.getResourceText y ApkAssets/
 StringBlock originales en ART. El constructor interno de la prueba evita la
 inicialización de recursos del sistema aún pendiente; no se ha conectado todavía
 el proveedor de recursos del contador. Ver reports/aosp-resources-jni/.
+
+El conjunto ampliado ya ejecuta el constructor público de Resources y su lectura
+de cadenas/configuración: AOSP-RESOURCES-PUBLICO.md documenta las 48 fuentes
+originales y la excepción de cuatro clases generadas reutilizadas como bytecode.
+No se carga la referencia completa. Sigue pendiente integrarlo en el contador
+y cerrar la inicialización de recursos de sistema y el port de Activity/View.

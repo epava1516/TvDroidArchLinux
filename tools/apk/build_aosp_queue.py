@@ -12,9 +12,12 @@ parser.add_argument('--sources', type=Path, required=True)
 parser.add_argument('--reference', type=Path, required=True)
 parser.add_argument('--tools', type=Path, required=True)
 parser.add_argument('--output', type=Path, required=True)
+parser.add_argument('--with-public-resources', action='store_true', help='Compile original Resources/ResourcesImpl and their recorded dependency set')
 parser.add_argument('--with-resources', action='store_true', help='Compile original AssetManager, ApkAssets and TypedValue as well')
 parser.add_argument('--jdk', type=Path, default=Path('/usr/lib/jvm/java-17-openjdk'))
 args = parser.parse_args()
+if args.with_public_resources:
+    args.with_resources = True
 root = Path(__file__).resolve().parents[2]
 manifest = json.loads((root/'runtime/aosp/framework-study.json').read_text())
 reference = json.loads((root/'runtime/aosp/compile-reference.json').read_text())
@@ -45,6 +48,8 @@ if args.with_resources:
     paths += ['core/java/com/android/internal/util/Parcelling.java']
     paths += ['core/java/android/util/'+name+'.java' for name in ('ArrayMap', 'ArraySet', 'MapCollections')]
     paths += ['core/java/android/content/pm/'+name+'.java' for name in ('ActivityInfo', 'ComponentInfo', 'PackageItemInfo')]
+if args.with_public_resources:
+    paths += manifest['public_resources_sources']
 sources = []
 for path in paths:
     item = next(item for item in manifest['files'] if item['path'] == path)
@@ -61,6 +66,8 @@ stubs = sorted((root/'runtime/aosp/compile-stubs').rglob('*.java'))
 probes = sorted((root/'fixtures/aosp-queue').glob('*.java'))
 if args.with_resources:
     probes += sorted((root/'fixtures/aosp-resources').glob('*.java'))
+if args.with_public_resources:
+    probes += sorted((root/'fixtures/aosp-public-resources').glob('*.java'))
 commands = []
 
 
@@ -78,13 +85,25 @@ run('pack-private-declarations', [args.jdk/'bin/jar', 'cf', out/'compile-only.ja
 boot = ':'.join(str(path) for path in [out/'compile-only.jar', reference_path, tool_path/'android.jar'])
 run('compile-original', [args.jdk/'bin/javac', '-source', '8', '-target', '8', '-bootclasspath', boot,
                          '-d', out/'classes', *sources])
+prebuilt_bindings = {}
+if args.with_public_resources:
+    prebuilt_bindings = json.loads((root/'runtime/aosp/prebuilt-bindings.json').read_text())
+    verify(args.reference, prebuilt_bindings['artifact_sha256'])
+    with zipfile.ZipFile(args.reference) as archive:
+        for name, expected in prebuilt_bindings['classes'].items():
+            data = archive.read(name)
+            if len(data) != expected['bytes'] or hashlib.sha256(data).hexdigest() != expected['sha256']:
+                raise SystemExit('Generated binding mismatch: '+name)
+            destination = out/'classes'/name
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            destination.write_bytes(data)
 run('pack-framework', [args.jdk/'bin/jar', 'cf', out/'framework.jar', '-C', out/'classes', '.'])
 run('compile-probe', [args.jdk/'bin/javac', '--release', '8', '-classpath', str(out/'classes')+':'+str(reference_path),
                       '-d', out/'classes', *probes])
 run('pack-original', [args.jdk/'bin/jar', 'cf', out/'queue.jar', '-C', out/'classes', '.'])
 with zipfile.ZipFile(out/'queue.jar') as archive:
     classes = sorted(name for name in archive.namelist() if name.endswith('.class'))
-    if any(not name.startswith(('android/os/', 'android/util/', 'android/net/', 'android/content/res/', 'android/content/pm/', 'com/android/internal/util/', 'com/android/internal/os/', 'org/archtv/aospprobe/')) for name in classes):
+    if any(not name.startswith(('android/os/', 'android/util/', 'android/net/', 'android/content/res/', 'android/content/pm/', 'android/app/', 'android/view/', 'android/graphics/', 'android/text/', 'android/sysprop/', 'com/android/internal/util/', 'com/android/internal/os/', 'org/archtv/aospprobe/')) for name in classes):
         raise SystemExit('Unexpected compile-only class in runtime artifact')
 run('dex-original', [args.jdk/'bin/java', '-cp', tool_path/'r8.jar', 'com.android.tools.r8.D8', '--release',
                      '--min-api', '28', '--lib', tool_path/'android.jar', '--output', out/'dex', out/'queue.jar'])
@@ -94,10 +113,11 @@ run('dex-original', [args.jdk/'bin/java', '-cp', tool_path/'r8.jar', 'com.androi
     'original_sources_modified': False,
     'framework_jar_sha256': hashlib.sha256((out/'framework.jar').read_bytes()).hexdigest(),
     'compile_reference': reference,
+    'prebuilt_bindings': prebuilt_bindings,
     'compile_only_declarations_sha256': {str(path.relative_to(root)): hashlib.sha256(path.read_bytes()).hexdigest() for path in stubs},
     'probes_sha256': {str(path.relative_to(root)): hashlib.sha256(path.read_bytes()).hexdigest() for path in probes},
     'runtime_classes': classes, 'commands': commands,
     'dex_sha256': hashlib.sha256((out/'dex/classes.dex').read_bytes()).hexdigest(),
-    'scope': 'Original AOSP queue source compilation and DEX generation. Compile-only jar, declarations and full framework reference excluded. JNI, functional queue and APK compatibility not proved.',
+    'scope': 'Original AOSP queue source compilation and DEX generation. Compile-only jar, declarations and full framework reference excluded except recorded allowlisted generated bindings. JNI, functional queue and APK compatibility not proved.',
 }, indent=2)+'\n')
 print(out/'dex/classes.dex')
