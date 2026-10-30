@@ -1,0 +1,2 @@
+Oct 30 07:16:46 archtv kernel: tun: Universal TUN/TAP device driver, 1.6
+Oct 30 07:21:51 archtv kernel: clocksource: Long readout interval, skipping watchdog check: cs_nsec: 9465795929 wd_nsec: 9465790880

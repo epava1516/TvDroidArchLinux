@@ -1,0 +1,10 @@
+Fri Oct 30 07:28:06 UTC 2026
+some avg10=1.81 avg60=3.29 avg300=4.14 total=50668482
+full avg10=0.00 avg60=0.00 avg300=0.00 total=0
+some avg10=0.00 avg60=0.00 avg300=0.00 total=72650
+full avg10=0.00 avg60=0.00 avg300=0.00 total=67881
+some avg10=0.21 avg60=0.44 avg300=0.98 total=19307199
+full avg10=0.07 avg60=0.20 avg300=0.57 total=14095418
+               total        used        free      shared  buff/cache   available
+Mem:           7.7Gi       999Mi       840Mi       2.8Mi       6.2Gi       6.8Gi
+Swap:          3.9Gi       4.0Ki       3.9Gi

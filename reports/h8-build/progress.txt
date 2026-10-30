@@ -1,0 +1,6 @@
+Clean build started from committed source 3012fbc92f7a (package version 0.1.0.r14.g3012fbc92f7a).
+Build uses official devtools makechrootpkg, one Cargo job, and a dedicated clean Arch root.
+At this checkpoint it remains RUNNING; no package build PASS is claimed.
+The separate runtime root was created with base and verified without rustc, cargo or gcc.
+Later source improvements require a subsequent build before lifecycle tests compare versions.
+Kernel warnings and resource snapshots are recorded separately; they do not certify H7 performance.
