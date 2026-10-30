@@ -12,9 +12,9 @@
     "semantic_hash": "e07235a9c36b0cb03cd3f0b36b5cfa14"
   },
   "crates/archtv-compositor/src/drm.rs": {
-    "mtime": 1793319578.5984178,
-    "seen": 1793319591.853742,
-    "ast_hash": "93ab8030a26d006fa9973d8d6bb107f0",
+    "mtime": 1793367973.0878084,
+    "seen": 1793368769.9798043,
+    "ast_hash": "e78a849a855704b14258aecdfbca17a8",
     "semantic_hash": ""
   },
   "crates/archtv-compositor/src/handlers/compositor.rs": {
@@ -42,9 +42,9 @@
     "semantic_hash": "7783c5634fb6278d04255576f659fe25"
   },
   "crates/archtv-compositor/src/main.rs": {
-    "mtime": 1793319578.6384187,
-    "seen": 1793319591.8537743,
-    "ast_hash": "196d2c5d2c95109cb223160850ef0205",
+    "mtime": 1793367973.0887237,
+    "seen": 1793368769.9798238,
+    "ast_hash": "6acb6d71d08aa53330e3df50e5d3ffe4",
     "semantic_hash": ""
   },
   "crates/archtv-compositor/src/session.rs": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793365516.2196188,
-    "seen": 1793365522.576454,
-    "ast_hash": "7432cffa1217d0d6032d568f12122ef7",
+    "mtime": 1793368631.0266578,
+    "seen": 1793368769.9801002,
+    "ast_hash": "02dbb360ccf4f0af1204563aaa8dbaf9",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -786,9 +786,9 @@
     "semantic_hash": ""
   },
   "runtime/apk/java/org/archtv/apkruntime/ApkResources.java": {
-    "mtime": 1793365150.6703584,
-    "seen": 1793365522.5757823,
-    "ast_hash": "e7a16b532073160ce1b7ea5343a6e85a",
+    "mtime": 1793365908.6567852,
+    "seen": 1793366883.8912535,
+    "ast_hash": "6c0337f759ff9c86e94840e3defb65c4",
     "semantic_hash": ""
   },
   "runtime/apk/java/org/archtv/apkruntime/AppEnvironment.java": {
@@ -804,9 +804,9 @@
     "semantic_hash": ""
   },
   "runtime/apk/java/org/archtv/apkruntime/Main.java": {
-    "mtime": 1793365150.6677427,
-    "seen": 1793365522.575802,
-    "ast_hash": "e2d0e84990cd7263f00ff3bd51ded527",
+    "mtime": 1793365908.6584144,
+    "seen": 1793366883.891269,
+    "ast_hash": "14e760699dbd0978319eb154bcf2dd7d",
     "semantic_hash": ""
   },
   "tools/apk/build_apk_runtime.py": {
@@ -816,21 +816,21 @@
     "semantic_hash": ""
   },
   "tools/apk/verify_counter_headless.py": {
-    "mtime": 1793365435.7807977,
-    "seen": 1793365522.576039,
-    "ast_hash": "9798fc4f2e94baaec533c7965f1b3f09",
+    "mtime": 1793366063.0012405,
+    "seen": 1793366883.8914986,
+    "ast_hash": "1f1c21a3971c5c18ed5db6e85ca5117f",
     "semantic_hash": ""
   },
   "docs/CONTRATO-APK.md": {
-    "mtime": 1793363205.3623166,
-    "seen": 1793363211.3162208,
-    "ast_hash": "57024d4f4ecf4a181e7079b92c55401f",
+    "mtime": 1793366877.9004123,
+    "seen": 1793366883.8915648,
+    "ast_hash": "2ec4a06003b9f13cd6c814800ec85fda",
     "semantic_hash": ""
   },
   "runtime/apk/README.md": {
-    "mtime": 1793365516.2147639,
-    "seen": 1793365522.5764859,
-    "ast_hash": "cb2ee30ab43f3631244fb6268d5fd0ca",
+    "mtime": 1793366963.2801456,
+    "seen": 1793367198.6665733,
+    "ast_hash": "1546b08377d1bb6d8a184503b80ee1a1",
     "semantic_hash": ""
   },
   "crates/archtv-apk-host/Cargo.toml": {
@@ -840,21 +840,21 @@
     "semantic_hash": ""
   },
   "crates/archtv-apk-host/src/backend.rs": {
-    "mtime": 1793363119.9252746,
-    "seen": 1793363211.3156934,
-    "ast_hash": "5176af04922edc24751c838573b06f8d",
+    "mtime": 1793367049.2543082,
+    "seen": 1793367198.66497,
+    "ast_hash": "33ce38876aa6285cb042c2978bb6b53a",
     "semantic_hash": ""
   },
   "crates/archtv-apk-host/src/main.rs": {
-    "mtime": 1793356304.1458344,
-    "seen": 1793356571.744606,
-    "ast_hash": "5cccfe015a0160e17fa0ba06c1d5a3e6",
+    "mtime": 1793367049.2543082,
+    "seen": 1793367198.6649776,
+    "ast_hash": "0ce95f0650600fc8f64f4630fa19b7b0",
     "semantic_hash": ""
   },
   "crates/archtv-apk-host/src/model.rs": {
-    "mtime": 1793356304.1558347,
-    "seen": 1793356571.7446108,
-    "ast_hash": "8c64c72f6c464d3a065892e47759e9aa",
+    "mtime": 1793365908.6605031,
+    "seen": 1793366883.8910217,
+    "ast_hash": "bd0cdd71e3b8ced47bdf145cbe275717",
     "semantic_hash": ""
   },
   "crates/archtv-apk-host/src/render.rs": {
@@ -864,27 +864,27 @@
     "semantic_hash": ""
   },
   "scripts/100-apk-session.sh": {
-    "mtime": 1793356285.6389563,
-    "seen": 1793356571.7448034,
-    "ast_hash": "53591fa12612e636244a211c7bd52e49",
+    "mtime": 1793367650.3260021,
+    "seen": 1793368769.9799328,
+    "ast_hash": "53a63a75f349814506e04dc410c51f18",
     "semantic_hash": ""
   },
   "scripts/101-apk-smoke.sh": {
-    "mtime": 1793363082.878321,
-    "seen": 1793363211.3159497,
-    "ast_hash": "74f4f6b562b60c1e91a67137a6356ffb",
+    "mtime": 1793366167.8548179,
+    "seen": 1793366883.8912842,
+    "ast_hash": "daad303af3d6658bc4c4ba21df133fdd",
     "semantic_hash": ""
   },
   "scripts/lib/apk-ui-probe.py": {
-    "mtime": 1793356352.3717132,
-    "seen": 1793356571.7449102,
-    "ast_hash": "bc081a8c7e5a9ce8c461f3726cc448a2",
+    "mtime": 1793369107.0115268,
+    "seen": 1793369376.6652188,
+    "ast_hash": "ffdbd245168cf49c79ab0c82b43cc72d",
     "semantic_hash": ""
   },
   "docs/APK-WAYLAND.md": {
-    "mtime": 1793365516.2180614,
-    "seen": 1793365522.5760884,
-    "ast_hash": "60e582c8ff80049f231259723df8faed",
+    "mtime": 1793366877.9008756,
+    "seen": 1793366883.891551,
+    "ast_hash": "8834c16d5737559cc95ed624deee8b93",
     "semantic_hash": ""
   },
   "runtime/aosp/framework-study.json": {
@@ -1056,9 +1056,9 @@
     "semantic_hash": ""
   },
   "tools/apk/verify_ui_scanout.py": {
-    "mtime": 1793365150.6755137,
-    "seen": 1793365522.576047,
-    "ast_hash": "ddd69d638e3da9807eb832c63f55bed7",
+    "mtime": 1793366167.8570206,
+    "seen": 1793366883.8915055,
+    "ast_hash": "5ed7791fdf3b66183f93c666e2afd0e2",
     "semantic_hash": ""
   },
   "docs/APK-LOOPER-AOSP.md": {
@@ -1158,15 +1158,27 @@
     "semantic_hash": ""
   },
   "docs/AOSP-RESOURCES-PUBLICO.md": {
-    "mtime": 1793365516.2134356,
-    "seen": 1793365522.5760794,
-    "ast_hash": "8a0b679a41bb37f9afe9a46372c7e535",
+    "mtime": 1793366963.2773893,
+    "seen": 1793367198.6664367,
+    "ast_hash": "511ce6d5ff73b3e4fb414df9e5bf9049",
     "semantic_hash": ""
   },
   "runtime/apk/java/org/archtv/apkruntime/HostProfile.java": {
     "mtime": 1793365150.6205504,
     "seen": 1793365522.5757935,
     "ast_hash": "5b9291f119fb55a673f6873a235db1f8",
+    "semantic_hash": ""
+  },
+  "docs/AOSP-METRICAS-WAYLAND.md": {
+    "mtime": 1793369107.0124693,
+    "seen": 1793369376.665368,
+    "ast_hash": "1afd4e730bb3ecf38d55d7d6e2624bed",
+    "semantic_hash": ""
+  },
+  "tools/apk/verify_wayland_resize.py": {
+    "mtime": 1793368631.0226955,
+    "seen": 1793368769.9800496,
+    "ast_hash": "59e3697b0a67da2f509b92d138cee47c",
     "semantic_hash": ""
   }
 }

@@ -1,0 +1,35 @@
+Date: 2026-10-30 UTC
+[13:52:56.186] weston 15.0.1
+               https://wayland.freedesktop.org
+               Bug reports to: https://gitlab.freedesktop.org/wayland/weston/issues/
+               Build: 15.0.1
+[13:52:56.188] Command line: weston --backend=headless --renderer=pixman --fake-seat --width=1280 --height=720 --socket=archtv-host --no-config --idle-time=0 --log=/home/tv/repositorio-principal/reports/aosp-display-wayland-resize/weston.log
+[13:52:56.188] OS: Linux, 6.18.59-1-lts, #1 SMP PREEMPT_DYNAMIC Mon, 26 Oct 2026 18:35:24 +0000, x86_64
+[13:52:56.188] Flight recorder: enabled, scopes subscribed: log
+[13:52:56.190] Starting with no config file.
+[13:52:56.196] Output repaint window is 7 ms maximum.
+[13:52:56.204] Loading module '/usr/lib/libweston-15/headless-backend.so'
+[13:52:56.229] Using Pixman renderer
+[13:52:56.229] Registered plugin API 'weston_windowed_output_api_headless_v2' of size 16
+[13:52:56.231] Color manager: no-op
+                 protocol support: no
+[13:52:56.232] Color representation not supported by renderer
+[13:52:56.238] Output 'headless' attempts EOTF mode SDR and colorimetry mode default.
+[13:52:56.238] Output 'headless' using color profile: stock sRGB color profile
+[13:52:56.238] Output 'headless' enabled with head(s) headless
+[13:52:56.238] Compositor capabilities:
+               arbitrary surface rotation: yes
+               screen capture uses y-flip: no
+               cursor planes: no
+               arbitrary resolutions: no
+               view mask clipping: yes
+               explicit sync: no
+               color operations: no
+               color representation: no
+               presentation clock: CLOCK_MONOTONIC_RAW, id 4
+               presentation clock resolution: 0.000000001 s
+[13:52:56.241] Loading module '/usr/lib/weston/desktop-shell.so'
+[13:52:56.249] launching '/usr/lib/weston/weston-keyboard'
+[13:52:56.251] launching '/usr/lib/weston/weston-desktop-shell'
+[13:53:06.046] caught signal 15
+[13:53:06.048] BUG: finalizing a layer with views still on it.

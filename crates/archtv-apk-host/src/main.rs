@@ -34,6 +34,7 @@ use wayland_client::{
     globals::registry_queue_init,
     protocol::{wl_keyboard, wl_output, wl_seat, wl_shm, wl_surface},
 };
+type Starter = Box<dyn FnOnce(u32, u32) -> Result<backend::Backend, Box<dyn std::error::Error>>>;
 struct Client {
     registry: RegistryState,
     output: OutputState,
@@ -42,7 +43,11 @@ struct Client {
     seats: SeatState,
     keyboard: Option<wl_keyboard::WlKeyboard>,
     pool: SlotPool,
-    backend: backend::Backend,
+    backend: Option<backend::Backend>,
+    start: Option<Starter>,
+    resource_size: Option<[u32; 2]>,
+    sent_size: Option<[u32; 2]>,
+    pending_size: Option<[u32; 2]>,
     renderer: render::Renderer,
     tree: Option<model::Node>,
     width: u32,
@@ -88,7 +93,21 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let renderer = render::Renderer::new(std::fs::read("/usr/share/fonts/TTF/DejaVuSans.ttf")?)?;
     let pool = SlotPool::new(1280 * 720 * 4, &shm)?;
     let (sender, receiver) = channel::sync_channel(8);
-    let backend = backend::Backend::start(&art, &dex, &apk, &args[3], &data, &log, sender)?;
+    let activity = args[3].clone();
+    let start: Starter = Box::new(move |width, height| {
+        backend::Backend::start(
+            backend::Launch {
+                art: &art,
+                dex: &dex,
+                apk: &apk,
+                activity: &activity,
+                data: &data,
+                log: &log,
+            },
+            sender,
+            [width, height],
+        )
+    });
     let mut state = Client {
         registry: RegistryState::new(&globals),
         output: OutputState::new(&globals, &qh),
@@ -97,7 +116,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         shm,
         window,
         pool,
-        backend,
+        backend: None,
+        start: Some(start),
+        resource_size: None,
+        sent_size: None,
+        pending_size: None,
         renderer,
         tree: None,
         width: 1280,
@@ -168,12 +191,41 @@ impl Client {
         let tree = message.root.ok_or("Missing View root")?;
         tree.validate(0, &mut 4096)?;
         println!("APK_VIEW {} {:?}", message.event, tree);
+        let display = message.display.ok_or("Missing resource display metrics")?;
+        if display[0] == 0 || display[0] > 3840 || display[1] == 0 || display[1] > 2160 {
+            return Err("Invalid resource display metrics".into());
+        }
+        println!("APK_DISPLAY {}x{}", display[0], display[1]);
+        self.resource_size = Some(display);
         self.tree = Some(tree);
         self.dirty = true;
         self.progress = Instant::now();
+        self.flush_configuration()?;
+        Ok(())
+    }
+    fn flush_configuration(&mut self) -> Result<(), String> {
+        if self.requests == 0 {
+            if let Some(size) = self.pending_size.take() {
+                if self.sent_size != Some(size) {
+                    self.backend
+                        .as_mut()
+                        .ok_or("ART not started")?
+                        .configure(size[0], size[1])
+                        .map_err(|error| error.to_string())?;
+                    self.sent_size = Some(size);
+                    if self.requests == 0 {
+                        self.progress = Instant::now();
+                    }
+                    self.requests += 1;
+                }
+            }
+        }
         Ok(())
     }
     fn draw(&mut self, qh: &QueueHandle<Self>) -> Result<(), Box<dyn std::error::Error>> {
+        if self.resource_size != Some([self.width, self.height]) {
+            return Ok(());
+        }
         let Some(tree) = &self.tree else {
             return Ok(());
         };
@@ -222,11 +274,38 @@ impl WindowHandler for Client {
         config: WindowConfigure,
         _: u32,
     ) {
-        self.width = config.new_size.0.map(|size| size.get()).unwrap_or(1280);
-        self.height = config.new_size.1.map(|size| size.get()).unwrap_or(720);
+        self.width = config
+            .new_size
+            .0
+            .map(|size| size.get())
+            .unwrap_or(self.width);
+        self.height = config
+            .new_size
+            .1
+            .map(|size| size.get())
+            .unwrap_or(self.height);
         if self.width > 3840 || self.height > 2160 {
             self.fail("Output exceeds 4K budget".into());
             return;
+        }
+        let size = [self.width, self.height];
+        if let Some(start) = self.start.take() {
+            match start(self.width, self.height) {
+                Ok(backend) => {
+                    self.backend = Some(backend);
+                    self.sent_size = Some(size);
+                }
+                Err(error) => {
+                    self.fail(error.to_string());
+                    return;
+                }
+            }
+        } else {
+            self.pending_size = Some(size);
+            if let Err(error) = self.flush_configuration() {
+                self.fail(error);
+                return;
+            }
         }
         self.configured = true;
         self.dirty = true;
@@ -360,7 +439,7 @@ impl KeyboardHandler for Client {
                     self.fail("Input queue exceeds budget".into());
                     return;
                 }
-                if let Err(error) = self.backend.activate() {
+                if let Err(error) = self.backend.as_mut().expect("backend with tree").activate() {
                     self.fail(error.to_string());
                 } else {
                     if self.requests == 0 {

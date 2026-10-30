@@ -78,3 +78,10 @@ El cierre del anfitrión conserva la prohibición original de quit del principal
 libera la cola por su método dispose. Ver APK-LOOPER-AOSP.md. La regresión gráfica
 actual, incluido cierre/reapertura, está en reports/aosp-main-ui-wayland/; A2 está
 verificado para esta fixture, mientras el resto del framework sigue pendiente.
+
+## Métricas de ventana
+
+El protocolo experimental añade display:[ancho,alto] a ready/updated y el comando
+configure ANCHO ALTO. Deben reconstruirse juntos DEX y cliente Rust. Los cambios
+se aplican en el Handler UI y actualizan Resources original; no acreditan todavía
+el ciclo completo de configuración de Activity/View. Ver AOSP-METRICAS-WAYLAND.md.

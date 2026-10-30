@@ -143,3 +143,8 @@ DRM/Pixman con entrada/persistencia y capturas idénticas. Ver
 reports/aosp-public-resources-headless/ y reports/aosp-public-resources-wayland/.
 La inicialización de sistema, métricas dinámicas, reconstrucción de bindings y
 port de Activity/View/servicios siguen pendientes, junto con las puertas generales.
+
+Métricas iniciales de Resources verificadas con configure Wayland real a 720p y
+1080p, entrada/persistencia y capturas exactas. Los cambios de tamaño del runtime
+pasan en headless. El resize en vivo después del primer frame también pasa en Wayland anidado;
+continúan pendientes HiDPI/hotplug y cambio físico de modo DRM; ver AOSP-METRICAS-WAYLAND.md y reports/aosp-display-*.

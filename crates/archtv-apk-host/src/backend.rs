@@ -14,16 +14,29 @@ pub struct Backend {
     input: Option<ChildStdin>,
     reader: Option<JoinHandle<()>>,
 }
+pub struct Launch<'a> {
+    pub art: &'a Path,
+    pub dex: &'a Path,
+    pub apk: &'a Path,
+    pub activity: &'a str,
+    pub data: &'a Path,
+    pub log: &'a Path,
+}
 impl Backend {
     pub fn start(
-        art: &Path,
-        dex: &Path,
-        apk: &Path,
-        activity: &str,
-        data: &Path,
-        log: &Path,
+        launch: Launch<'_>,
         sender: SyncSender<Update>,
+        size: [u32; 2],
     ) -> Result<Self, Box<dyn std::error::Error>> {
+        let Launch {
+            art,
+            dex,
+            apk,
+            activity,
+            data,
+            log,
+        } = launch;
+        let [width, height] = size;
         let error_log = std::fs::OpenOptions::new()
             .write(true)
             .create_new(true)
@@ -46,6 +59,8 @@ impl Backend {
                 "-Darchtv.resources.library={}",
                 resources_library.display()
             ))
+            .arg(format!("-Darchtv.display.width={width}"))
+            .arg(format!("-Darchtv.display.height={height}"))
             .arg("-cp")
             .arg(classpath)
             .arg("org.archtv.apkruntime.Main")
@@ -99,6 +114,14 @@ impl Backend {
             input,
             reader: Some(reader),
         })
+    }
+    pub fn configure(&mut self, width: u32, height: u32) -> std::io::Result<()> {
+        writeln!(
+            self.input
+                .as_mut()
+                .ok_or_else(|| std::io::Error::other("ART input closed"))?,
+            "configure {width} {height}"
+        )
     }
     pub fn activate(&mut self) -> std::io::Result<()> {
         self.input

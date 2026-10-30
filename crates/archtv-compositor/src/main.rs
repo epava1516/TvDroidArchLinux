@@ -30,9 +30,15 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut drm_device = None;
     let mut requested_mode = None;
     let mut capture = None;
+    let mut capture_request = None;
     let mut args = std::env::args().skip(1);
     while let Some(arg) = args.next() {
         match arg.as_str() {
+            "--capture-request" => {
+                capture_request = Some(std::path::PathBuf::from(
+                    args.next().ok_or("missing capture request path")?,
+                ));
+            }
             "--capture-after" => {
                 let seconds = args.next().ok_or("missing capture delay")?.parse::<u64>()?;
                 let path = args.next().ok_or("missing capture path")?;
@@ -58,12 +64,15 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             }
             "--help" => {
                 println!(
-                    "archtv-compositor [--winit | --drm DEVICE] [--shell] [--mode WIDTHxHEIGHT] [--exit-after SECONDS] [--test-resize SECONDS WIDTHxHEIGHT] [-- PROGRAM ARGS...]"
+                    "archtv-compositor [--winit | --drm DEVICE] [--shell] [--mode WIDTHxHEIGHT] [--exit-after SECONDS] [--test-resize SECONDS WIDTHxHEIGHT] [--capture-after SECONDS OUTPUT] [--capture-request FILE] [-- PROGRAM ARGS...]"
                 );
                 return Ok(());
             }
             _ => return Err(format!("unknown argument: {arg}").into()),
         }
+    }
+    if capture_request.is_some() && capture.is_none() {
+        return Err("--capture-request requires --capture-after".into());
     }
     let signals = Signals::new(&[Signal::SIGTERM, Signal::SIGINT])?;
     let mut event_loop: EventLoop<TvCompositor> = EventLoop::try_new()?;
@@ -78,6 +87,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             &mut state,
             std::path::Path::new(&device),
             capture,
+            capture_request,
             requested_mode,
         )?;
     } else {

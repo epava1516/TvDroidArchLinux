@@ -73,4 +73,8 @@ Sus seis propiedades son inmutables y prevalecen sobre el entorno; esto no
 acredita compatibilidad completa API 33 ni NDK/Bionic. La lectura de texto usa
 Resources.getString directamente. Ver docs/AOSP-RESOURCES-PUBLICO.md y
 reports/aosp-public-resources-headless/ / reports/aosp-public-resources-wayland/.
-Las métricas del adaptador siguen fijadas a 1280×720 durante esta fase.
+El tamaño inicial se obtiene del configure Wayland; los cambios posteriores
+actualizan Resources mediante su Handler UI, con escala de superficie 1.
+
+Las métricas iniciales ya proceden de la ventana Wayland; el runtime acepta
+cambios de tamaño en el hilo UI original. Ver docs/AOSP-METRICAS-WAYLAND.md para las pruebas y sus límites.

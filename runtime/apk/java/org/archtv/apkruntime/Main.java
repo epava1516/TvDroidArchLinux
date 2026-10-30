@@ -61,7 +61,8 @@ public final class Main {
         json.append('}');
     }
     private static void snapshot(Activity activity, String event) {
-        StringBuilder json = new StringBuilder("{\"event\":").append(quote(event)).append(",\"root\":");
+        StringBuilder json = new StringBuilder("{\"event\":").append(quote(event))
+            .append(",\"display\":").append(AppEnvironment.current().resources.displayJson()).append(",\"root\":");
         view(json, activity.hostContentView(), 0);
         System.out.println(json.append('}').toString());
         System.out.flush();
@@ -129,6 +130,11 @@ public final class Main {
                                                         View focus = AppEnvironment.current().focus;
                                                         if (focus == null || !contains(activity[0].hostContentView(), focus) || !focus.performClick())
                                                             throw new IllegalStateException("No clickable focus in content tree");
+                                                    } else if (action.startsWith("configure ")) {
+                                                        String[] dimensions = action.split(" ", -1);
+                                                        if (dimensions.length != 3) throw new IllegalArgumentException("Invalid configure command");
+                                                        AppEnvironment.current().resources.configure(
+                                                            Integer.parseInt(dimensions[1]), Integer.parseInt(dimensions[2]));
                                                     } else if (!action.equals("dump"))
                                                         throw new IllegalArgumentException("Unknown command: "+action);
                                                     snapshot(activity[0], "updated");

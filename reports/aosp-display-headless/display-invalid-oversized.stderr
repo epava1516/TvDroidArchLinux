@@ -1,0 +1,20 @@
+dalvikvm64 E 10-30 13:14:35   644   644 image_space.cc:2239] Error reading named image component header for /home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/core.art, error: Unable to open file "/home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/x86_64/core.art" for reading image header
+dalvikvm64 E 10-30 13:14:35   644   644 image_space.cc:3470] Could not create image space with image file '/home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/core.art'. Attempting to fall back to imageless running. Error was: Full boot image cannot be compiled because no profile is provided.
+ziparchive W 10-30 13:14:35   644   644 Unable to open '/home/tv/repositorio-principal/dist/apk/apk-dynamic-display-1/dex/classes.dm': No such file or directory
+ziparchive W 10-30 13:14:35   644   644 Unable to open '/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.dm': No such file or directory
+APK_HOST_PROFILE sdk=33 abi=x86_64
+APK_RESOURCES_AOSP_READY
+APK_PUBLIC_RESOURCES_AOSP_READY
+APK_UI_DISPATCH create thread=main
+APK_UI_DISPATCH configure 3841 720 thread=main
+APK_UI_DISPATCH destroy-after-failure thread=main
+Exception in thread "main" java.lang.IllegalArgumentException: Display dimensions exceed budget
+	at org.archtv.apkruntime.ApkResources.checkSize(ApkResources.java:78)
+	at org.archtv.apkruntime.ApkResources.configure(ApkResources.java:89)
+	at org.archtv.apkruntime.Main$1$1$1.run(Main.java:136)
+	at android.os.Handler.handleCallback(Handler.java:942)
+	at android.os.Handler.dispatchMessage(Handler.java:99)
+	at android.os.Looper.loopOnce(Looper.java:201)
+	at android.os.Looper.loop(Looper.java:288)
+	at org.archtv.apkruntime.Main.runUi(Main.java:161)
+	at org.archtv.apkruntime.Main.main(Main.java:205)

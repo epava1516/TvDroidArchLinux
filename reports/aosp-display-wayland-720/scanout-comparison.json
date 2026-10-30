@@ -1,0 +1,31 @@
+{
+  "first": {
+    "client_frame": "/home/tv/repositorio-principal/reports/aosp-display-wayland-720/first/frames/frame-0004.png",
+    "scanout": "/home/tv/repositorio-principal/reports/aosp-display-wayland-720/first/scanout.png",
+    "size": [
+      1280,
+      720
+    ],
+    "max_channel_difference": 0,
+    "ui_dispatch": [
+      "create",
+      "activate",
+      "activate",
+      "quit"
+    ]
+  },
+  "reopen": {
+    "client_frame": "/home/tv/repositorio-principal/reports/aosp-display-wayland-720/reopen/frames/frame-0003.png",
+    "scanout": "/home/tv/repositorio-principal/reports/aosp-display-wayland-720/reopen/scanout.png",
+    "size": [
+      1280,
+      720
+    ],
+    "max_channel_difference": 0,
+    "ui_dispatch": [
+      "create",
+      "activate",
+      "quit"
+    ]
+  }
+}

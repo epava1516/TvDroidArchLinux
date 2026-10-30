@@ -1,0 +1,6 @@
+{
+  "verification_failed": true,
+  "observed": "libinput device-added appears but no APK_KEY or counter update occurs before the session deadline",
+  "inferred_cause": "The helper used a fixed 1.5-second delay after uinput creation; Enter could be emitted before libinput had discovered the device.",
+  "fix": "Use a unique device name and await its INPUT_ADDED acknowledgment before emitting keys."
+}

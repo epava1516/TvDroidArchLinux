@@ -26,3 +26,8 @@ reports/aosp-public-resources/**/*.stderr -whitespace
 reports/aosp-public-resources/*.stderr -whitespace
 reports/aosp-public-resources-headless/*.stderr -whitespace
 reports/aosp-public-resources-wayland/** -whitespace
+reports/aosp-display-headless/*.stderr -whitespace
+reports/aosp-display-wayland-*/** -whitespace
+reports/aosp-display-wayland-resize/** -whitespace
+reports/aosp-display-capture-race/*.log -whitespace
+reports/aosp-display-input-readiness/** -whitespace

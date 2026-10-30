@@ -96,8 +96,8 @@ ni un servidor de propiedades Android.
 
 ApkResources construye Resources original y llama directamente a getString;
 la reflexión queda limitada a inicializar el AssetManager interno sin recursos
-de sistema. El perfil de métricas de esta prueba es 1280×720; todavía no se
-sincroniza con redimensionamientos del cliente Wayland. El cierre conserva la
+de sistema. El tamaño inicial procede del configure Wayland y los cambios se envían al
+Handler UI; la escala de superficie sigue siendo 1. El cierre conserva la
 liberación de AssetManager/ApkAssets en finally.
 
 Pasan el contador original, cierre/reapertura, persistencia, ráfaga, EOF, error y
@@ -107,3 +107,6 @@ Dos sesiones DRM/Pixman pasan entrada uinput y coincidencia exacta RGB de captur
 Evidencia: reports/aosp-public-resources-headless/ y
 reports/aosp-public-resources-wayland/. Esto no completa recursos de sistema,
 Activity/View, estilos, Bionic/NDK, aislamiento ni estabilidad prolongada.
+
+Las métricas iniciales ya proceden de la ventana Wayland; el runtime acepta
+cambios de tamaño en el hilo UI original. Ver AOSP-METRICAS-WAYLAND.md para las pruebas y sus límites.

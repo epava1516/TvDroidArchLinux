@@ -51,11 +51,13 @@ struct Backend {
     presented: u64,
     restored: bool,
     capture: Option<(u64, std::path::PathBuf)>,
+    capture_request: Option<std::path::PathBuf>,
 }
 impl Backend {
     fn capture(&mut self, state: &TvCompositor) -> Result<()> {
         use std::io::Write;
         if self.presented == 0
+            || self.pending.is_some()
             || !self.active
             || !self
                 .capture
@@ -64,7 +66,12 @@ impl Backend {
         {
             return Ok(());
         }
-        let (_, path) = self.capture.take().unwrap();
+        if let Some(request) = &self.capture_request {
+            if !request.is_file() || state.dirty {
+                return Ok(());
+            }
+        }
+        let (_, path) = self.capture.as_ref().unwrap();
         let buffer = &self.buffers[self.current].dmabuf;
         buffer.sync_plane(0, DmabufSyncFlags::START | DmabufSyncFlags::READ)?;
         let mapping = buffer.map_plane(0, DmabufMappingMode::READ)?;
@@ -83,10 +90,18 @@ impl Backend {
             }
         }
         buffer.sync_plane(0, DmabufSyncFlags::END | DmabufSyncFlags::READ)?;
-        let mut file = std::fs::File::create(&path)?;
+        let temporary = path.with_extension("ppm.tmp");
+        let mut file = std::fs::File::create(&temporary)?;
         write!(file, "P6\n{width} {height}\n255\n")?;
         file.write_all(&rgb)?;
+        drop(file);
+        std::fs::rename(&temporary, path)?;
         tracing::info!(path=%path.display(), "DRM_CAPTURED");
+        if let Some(request) = &self.capture_request {
+            std::fs::remove_file(request)?;
+        } else {
+            self.capture.take();
+        }
         Ok(())
     }
     fn restore(&self) {
@@ -184,6 +199,7 @@ pub fn init(
     state: &mut TvCompositor,
     path: &Path,
     capture: Option<(u64, std::path::PathBuf)>,
+    capture_request: Option<std::path::PathBuf>,
     requested_mode: Option<(u32, u32)>,
 ) -> Result<()> {
     let (mut session, notifier) = LibSeatSession::new()?;
@@ -296,6 +312,7 @@ pub fn init(
         presented: 0,
         restored: false,
         capture,
+        capture_request,
     }));
     backend.borrow().modeset()?;
     let mut input = Libinput::new_with_udev(LibinputSessionInterface::from(session.clone()));
@@ -345,7 +362,12 @@ pub fn init(
         move |_, fd, state| {
             for event in fd.receive_events()? {
                 if matches!(event, control::Event::PageFlip(_)) {
-                    flips.borrow_mut().finish(state);
+                    let mut backend = flips.borrow_mut();
+                    backend.finish(state);
+                    if let Err(error) = backend.capture(state) {
+                        tracing::error!(%error, "DRM_CAPTURE_FAILED");
+                        state.loop_signal.stop();
+                    }
                 }
             }
             Ok(PostAction::Continue)

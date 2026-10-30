@@ -17,3 +17,6 @@ __pycache__/
 /graphify-out/.graphify_root
 /graphify-out/.graphify_python
 /graphify-out/20??-??-??/
+
+# Private process data from the nested APK resize probe.
+/reports/aosp-display-wayland-resize/data/

@@ -8,6 +8,8 @@ if ! "$APPLY"; then
   echo 'Probará la APK propia en DRM/Pixman, entrada uinput, cierre y reapertura con estado.'
   exit 0
 fi
+mode="${ARCHTV_APK_MODE:-1280x720}"
+[[ $mode == 1280x720 || $mode == 1920x1080 ]] || { echo 'Modo APK no verificado.' >&2; exit 1; }
 [[ -x "$target/debug/archtv-compositor" && -x "$target/debug/archtv-apk-host" ]]
 [[ -c /dev/dri/card0 && -c /dev/uinput ]]
 [[ -f ${ARCHTV_APK_RUNTIME_DEX:?runtime DEX required} ]]
@@ -38,7 +40,7 @@ for phase in first reopen; do
     --property="User=$(id -un)" --property=PAMName=login --property=TTYPath=/dev/tty2 \
     --property=StandardInput=tty --property=TTYReset=yes --property=TTYVHangup=yes \
     --property=KillMode=control-group --property=TimeoutStopSec=10 \
-    --setenv="CARGO_TARGET_DIR=$target" --setenv=RUST_LOG=archtv_compositor=debug,smithay=warn \
+    --setenv="ARCHTV_APK_MODE=$mode" --setenv="CARGO_TARGET_DIR=$target" --setenv=RUST_LOG=archtv_compositor=debug,smithay=warn \
     --setenv="ARCHTV_APK_REPORT=$report/$phase" --setenv="ARCHTV_APK_DATA=$data" \
     --setenv="ARCHTV_APK_RUNTIME_DEX=$(realpath "$ARCHTV_APK_RUNTIME_DEX")" \
     --setenv="ARCHTV_APK_RESOURCES_LIBRARY=$(realpath "$ARCHTV_APK_RESOURCES_LIBRARY")" \
@@ -60,12 +62,13 @@ for phase in first reopen; do
   unit="archtv-apk-reopen-$$"
 done
 cp "$data/app-data/counter.properties" "$report/persisted-counter.properties"
-python - "$root" "$report" "$target" "$ARCHTV_APK_RUNTIME_DEX" <<'CHECK'
+python - "$root" "$report" "$target" "$ARCHTV_APK_RUNTIME_DEX" "$mode" <<'CHECK'
 import hashlib,json,sys
 from pathlib import Path
-root,report,target,dex=map(Path,sys.argv[1:])
+root,report,target,dex=map(Path,sys.argv[1:5])
+size=list(map(int,sys.argv[5].split('x')))
 assert 'count=3' in (report/'persisted-counter.properties').read_text().splitlines()
-proof={'fixture_wayland_pass':True,'resolution':[1280,720],
+proof={'fixture_wayland_pass':True,'resolution':size,
  'input':'uinput → libinput → compositor → Wayland keyboard → Rust → ART → APK listener',
  'scope':'Owned APK only, close/reopen persistence, no physical remote, no stability/performance/general APK compatibility claim.',
  'sha256':{str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in

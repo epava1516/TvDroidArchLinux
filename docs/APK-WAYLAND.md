@@ -56,3 +56,8 @@ el laboratorio, declarado en manifests/apk-lab.txt.
 La regresión actual incorpora Resources público y HostProfile: ver
 reports/aosp-public-resources-wayland/. El DEX debe construirse con el conjunto
 --with-public-resources; se mantienen ambas bibliotecas JNI requeridas.
+
+ARCHTV_APK_MODE permite repetir la prueba en 1280x720 (predeterminado) o
+1920x1080. Usar un directorio de informe nuevo por resolución. El cliente ya
+arranca ART después del primer configure y publica/verifica métricas de Resources;
+ver AOSP-METRICAS-WAYLAND.md y reports/aosp-display-wayland-{720,1080}/.

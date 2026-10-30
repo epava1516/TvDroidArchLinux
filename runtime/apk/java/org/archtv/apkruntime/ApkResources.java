@@ -46,10 +46,14 @@ public final class ApkResources implements AutoCloseable {
             inventory.set(created, assets);
             DisplayMetrics metrics = new DisplayMetrics();
             metrics.setToDefaults();
-            metrics.widthPixels = metrics.noncompatWidthPixels = 1280;
-            metrics.heightPixels = metrics.noncompatHeightPixels = 720;
+            int width = Integer.parseInt(System.getProperty("archtv.display.width", "1280"));
+            int height = Integer.parseInt(System.getProperty("archtv.display.height", "720"));
+            checkSize(width, height);
+            metrics.widthPixels = metrics.noncompatWidthPixels = width;
+            metrics.heightPixels = metrics.noncompatHeightPixels = height;
             Configuration configuration = new Configuration();
             configuration.setToDefaults();
+            setDimensions(configuration, metrics);
             resources = new Resources(created, metrics, configuration);
             apkAssets = loaded;
             manager = created;
@@ -69,6 +73,32 @@ public final class ApkResources implements AutoCloseable {
         return resources.getString(resourceId);
     }
 
+    private static void checkSize(int width, int height) {
+        if (width < 1 || width > 3840 || height < 1 || height > 2160)
+            throw new IllegalArgumentException("Display dimensions exceed budget");
+    }
+    private static void setDimensions(Configuration configuration, DisplayMetrics metrics) {
+        configuration.orientation = metrics.widthPixels >= metrics.heightPixels
+            ? Configuration.ORIENTATION_LANDSCAPE : Configuration.ORIENTATION_PORTRAIT;
+        configuration.screenWidthDp = (int)(metrics.widthPixels / metrics.density);
+        configuration.screenHeightDp = (int)(metrics.heightPixels / metrics.density);
+        configuration.smallestScreenWidthDp = Math.min(configuration.screenWidthDp, configuration.screenHeightDp);
+    }
+    public synchronized void configure(int width, int height) {
+        if (closed) throw new IllegalStateException("APK resources closed");
+        checkSize(width, height);
+        DisplayMetrics metrics = new DisplayMetrics();
+        metrics.setTo(resources.getDisplayMetrics());
+        metrics.widthPixels = metrics.noncompatWidthPixels = width;
+        metrics.heightPixels = metrics.noncompatHeightPixels = height;
+        Configuration configuration = new Configuration(resources.getConfiguration());
+        setDimensions(configuration, metrics);
+        resources.updateConfiguration(configuration, metrics);
+    }
+    public synchronized String displayJson() {
+        DisplayMetrics metrics = resources.getDisplayMetrics();
+        return "["+metrics.widthPixels+","+metrics.heightPixels+"]";
+    }
     @Override public synchronized void close() {
         if (closed) return;
         closed = true;

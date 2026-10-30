@@ -13,7 +13,7 @@ for ((attempt=0;attempt<100;attempt++)); do
 done
 mkdir -p "$report"
 exec setpriv --inh-caps=-all --ambient-caps=-all "$target/debug/archtv-compositor" \
-  --drm /dev/dri/card0 --mode 1280x720 --capture-after 6 "$report/scanout.ppm" --exit-after 60 \
+  --drm /dev/dri/card0 --mode "${ARCHTV_APK_MODE:-1280x720}" --capture-after 0 "$report/scanout.ppm" --capture-request "$report/capture.request" --exit-after 60 \
   -- "$target/debug/archtv-apk-host" \
   "$HOME/.cache/archtv/art-host/host/art-13.0.0" \
   "${ARCHTV_APK_RUNTIME_DEX:?runtime DEX required}" \

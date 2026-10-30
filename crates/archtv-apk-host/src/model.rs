@@ -4,6 +4,7 @@ use serde::Deserialize;
 #[serde(deny_unknown_fields)]
 pub struct Message {
     pub event: String,
+    pub display: Option<[u32; 2]>,
     pub root: Option<Node>,
 }
 #[derive(Debug, Deserialize)]

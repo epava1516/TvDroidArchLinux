@@ -1,0 +1,13 @@
+{
+  "verification_failed": true,
+  "stage": "final 1080p first-session RGB comparison",
+  "scanout_matches_previous_frame": true,
+  "different_channels_from_final_frame": 465,
+  "cause": "Timed capture ran while the final page flip was pending; helper used a global frame number which could refer to an earlier view.",
+  "fix": "Wait for a frame after the target counter update; request settled DRM captures and require exact target pixels before closing.",
+  "sha256": {
+    "scanout.png": "273c9a2a15977903407a29b57461da618012e3730ff1f12384256b0381f74270",
+    "frame-final.png": "d0be05cf1e61f206cfd32eaf9ae6ce5caaca92c90f2d1da3be8e94cfbb820689",
+    "frame-before.png": "7e8613757aaa38ecf2db0ddf67bdaf57c933e813cba54889b2e6da1a5ee1d3db"
+  }
+}

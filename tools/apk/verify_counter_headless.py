@@ -173,10 +173,21 @@ events, _ = execute('profile-overrides', apk, out/'profile-data', 'quit\n', 0, {
     'ARCHTV_ANDROID_PROPERTY_ro.build.version.sdk': '999',
     'ARCHTV_ANDROID_PROPERTY_ro.product.cpu.abilist64': 'unsupported'})
 check_tree(events[0], 'Contador:', 0)
+events, _ = execute('display-resize', apk, out/'display-data',
+    'configure 1920 1080\nactivate\nconfigure 1080 1920\nconfigure 1280 720\nquit\n', 0)
+assert [event.get('display') for event in events[:-1]] == [
+    [1280, 720], [1920, 1080], [1920, 1080], [1080, 1920], [1280, 720]]
+check_tree(events[1], 'Contador:', 0)
+check_tree(events[2], 'Contador:', 1)
+for label, dimensions in [('zero', '0 720'), ('oversized', '3841 720'), ('malformed', 'abc 720')]:
+    events, stderr = execute('display-invalid-'+label, apk, out/('display-invalid-'+label),
+        'configure '+dimensions+'\n', 1)
+    assert len(events) == 1 and events[0]['event'] == 'ready'
+    assert b'android.os.Handler.dispatchMessage' in stderr
 results.update(original_apk_sha256=original_hash, runtime_dex_sha256=hashlib.sha256(dex.read_bytes()).hexdigest(),
                resources_library_sha256=hashlib.sha256(resources_library.read_bytes()).hexdigest(),
                linux_library_sha256=hashlib.sha256(library.read_bytes()).hexdigest(),
-               headless_counter_pass=True, original_resources_pass=True, original_public_resources_pass=True, original_ui_looper_pass=True, wayland_pass=False,
+               headless_counter_pass=True, original_resources_pass=True, original_public_resources_pass=True, dynamic_resource_metrics_pass=True, original_ui_looper_pass=True, wayland_pass=False,
                scope='Original APK DEX lifecycle, listener, resources and integer persistence. Separate unsigned resource variant and malformed inputs. No Wayland UI, signature enforcement, isolation, full Android API or stable general APK support.')
 (out/'result.json').write_text(json.dumps(results, indent=2)+'\n')
 print(json.dumps({'headless_counter_pass': True, 'wayland_pass': False, 'output': str(out)}))
