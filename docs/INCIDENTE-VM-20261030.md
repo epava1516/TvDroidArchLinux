@@ -47,3 +47,21 @@ plazo. Ver clock-baseline.json para jitter y duración reales.
 No se ha cambiado permanentemente el reloj ni se han suprimido los avisos RCU.
 La referencia oficial de [parámetros del kernel](https://kernel.org/doc/html/latest/admin-guide/kernel-parameters.html)
 documenta clocksource; su existencia no prueba que forzarlo resuelva este caso.
+
+## Alternativa LTS preparada
+
+Se instaló linux-lts 6.18.59-1 y se generó su initramfs. La entrada separada
+archtv-lts.conf conserva las opciones de raíz y microcódigo de arch.conf. Se
+verificaron hashes de arch.conf y loader.conf antes/después y una segunda
+invocación del helper: no cambió la selección predeterminada ni se reinició.
+
+Binder Rust también figura como integrado en este LTS; cambiar de kernel no
+constituye una comparación del driver Binder C frente a Rust. El ensayo sigue
+pendiente de arrancar LTS y repetir los controles. Evidencia y hashes en
+reports/h6-kernel-lts/. El script 95 reproduce la instalación y creación de la
+entrada; no modifica el kernel que se está ejecutando.
+
+La selección de un arranque concreto puede hacerse una sola vez mediante
+[bootctl set-oneshot](https://www.freedesktop.org/software/systemd/man/latest/bootctl.html).
+Cargar el nuevo kernel requiere reiniciar; instalarlo no acredita que corrija
+el cuelgue observado.

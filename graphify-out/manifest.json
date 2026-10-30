@@ -523,9 +523,27 @@
     "semantic_hash": ""
   },
   "docs/INCIDENTE-VM-20261030.md": {
-    "mtime": 1793327447.9021053,
-    "seen": 1793327462.2589085,
-    "ast_hash": "dac33f069f946126622f421cb74496c4",
+    "mtime": 1793327959.6032925,
+    "seen": 1793327972.0172017,
+    "ast_hash": "3954ddd451a16009839c3ca62016c70b",
+    "semantic_hash": ""
+  },
+  "scripts/95-kernel-lts.sh": {
+    "mtime": 1793327777.9417546,
+    "seen": 1793327972.0170133,
+    "ast_hash": "bdc7d9b84033ae493d502ed24b2db043",
+    "semantic_hash": ""
+  },
+  "scripts/lib/lts-boot-entry.py": {
+    "mtime": 1793327777.931754,
+    "seen": 1793327972.0170476,
+    "ast_hash": "9cf8d83811f7b1fddd605340317b7f67",
+    "semantic_hash": ""
+  },
+  "manifests/kernel-lab.txt": {
+    "mtime": 1793327777.95735,
+    "seen": 1793327972.0172458,
+    "ast_hash": "38fe251794105e2daf2abf718dde2534",
     "semantic_hash": ""
   }
 }

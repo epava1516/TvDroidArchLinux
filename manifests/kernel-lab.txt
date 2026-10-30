@@ -1,0 +1,2 @@
+# Kernel alternativo para comparar estabilidad de VM; aún no es el perfil de distribución.
+linux-lts

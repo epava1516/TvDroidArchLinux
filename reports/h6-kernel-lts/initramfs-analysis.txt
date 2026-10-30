@@ -1,0 +1,27 @@
+==> Image: /boot/initramfs-linux-lts.img
+==> Created with mkinitcpio 42.2
+==> Kernel: 6.18.59-1-lts
+==> Early CPIO: 1.09 MiB
+==> Size: 14.11 MiB
+==> Compressed with: zstd
+  -> Uncompressed size: 42.63 MiB (.331 ratio)
+  -> Estimated decompression time: 0.352s
+
+==> Included modules (23):
+  ata_generic		  lz4_compress		  rpmb-core
+  ata_piix		  mmc_block		  serio_raw
+  cdrom			  mmc_core		  sr_mod
+  drm_ttm_helper	  nvme			  ttm
+  hkdf			  nvme-auth		  uas
+  intel-agp		  nvme-core		  usb-storage
+  intel-gtt		  nvme-keyring		  vmwgfx
+  lz4			  pata_acpi
+
+==> Included binaries (17):
+  blkid			  loadkeys		  switch_root
+  busybox		  mount			  systemctl
+  e2fsck		  setfont		  systemd-tmpfiles
+  fsck			  sulogin		  udevadm
+  journalctl		  swapoff		  umount
+  kmod			  swapon
+

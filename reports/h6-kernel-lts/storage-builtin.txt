@@ -1,0 +1,3 @@
+kernel/fs/ext4/ext4.ko
+kernel/drivers/ata/ahci.ko
+kernel/drivers/ata/libahci.ko

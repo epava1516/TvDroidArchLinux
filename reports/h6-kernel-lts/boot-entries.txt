@@ -1,0 +1,22 @@
+         type: Boot Loader Specification Type #1 (.conf)
+        title: Arch TV diagnostic - Linux LTS (not reported/new)
+           id: archtv-lts.conf
+       source: /boot//loader/entries/archtv-lts.conf (on the EFI System Partition)
+        linux: /boot//vmlinuz-linux-lts
+       initrd: /boot//intel-ucode.img
+               /boot//initramfs-linux-lts.img
+      options: root=UUID=4f479cd5-85ab-4806-931d-792e6f0c860c rw
+
+         type: Boot Loader Specification Type #1 (.conf)
+        title: Arch Linux (default) (selected)
+           id: arch.conf
+       source: /boot//loader/entries/arch.conf (on the EFI System Partition)
+        linux: /boot//vmlinuz-linux
+       initrd: /boot//intel-ucode.img
+               /boot//initramfs-linux.img
+      options: root=UUID=4f479cd5-85ab-4806-931d-792e6f0c860c rw
+
+         type: Automatic
+        title: Reboot Into Firmware Interface
+           id: auto-reboot-to-firmware-setup
+       source: /sys/firmware/efi/efivars/LoaderEntries-4a67b082-0a4c-41cf-b6c7-440b29bb8c4f (on the EFI System Partition)

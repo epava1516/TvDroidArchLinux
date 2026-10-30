@@ -1,0 +1,4 @@
+Manifiestos válidos
+Revisión y Cargo.lock de Anvil válidos
+Workspace y lock del producto válidos
+Scripts, manifiestos, locks y formato Rust verificados; compilar y probar por separado.

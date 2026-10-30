@@ -1,0 +1,6 @@
+title Arch TV diagnostic - Linux LTS
+linux /vmlinuz-linux-lts
+initrd /intel-ucode.img
+initrd /initramfs-linux-lts.img
+options root=UUID=4f479cd5-85ab-4806-931d-792e6f0c860c rw
+Separate entry created. Default selection unchanged; no reboot requested.

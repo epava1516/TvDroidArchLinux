@@ -1,0 +1,5 @@
+PREPARED: official linux-lts 6.18.59-1 installed; initramfs generated successfully.
+Separate archtv-lts.conf entry created and idempotence checked.
+Original arch.conf and loader.conf checksums unchanged.
+Binder Rust is included as a built-in in this LTS; it is not a C-Binder comparison.
+The running kernel remains 7.2.11-arch1-1. No reboot or LTS stability claim.
