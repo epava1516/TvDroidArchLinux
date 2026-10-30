@@ -136,3 +136,10 @@ configuración/densidad y RTL sobre Linux. Ver AOSP-RESOURCES-PUBLICO.md y
 reports/aosp-public-resources/. Falta integrarlo en el contador, inicializar
 recursos de sistema y reconstruir los cuatro bindings sysprop precompilados
 registrados; el resto del port y las puertas generales siguen abiertos.
+
+El contador ya integra Resources público y el perfil inmutable x86_64/API 33.
+Pasan regresión headless, conflicto de propiedades externas y dos sesiones
+DRM/Pixman con entrada/persistencia y capturas idénticas. Ver
+reports/aosp-public-resources-headless/ y reports/aosp-public-resources-wayland/.
+La inicialización de sistema, métricas dinámicas, reconstrucción de bindings y
+port de Activity/View/servicios siguen pendientes, junto con las puertas generales.

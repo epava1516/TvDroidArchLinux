@@ -16,6 +16,8 @@ for phase, actions in [('first', ['create', 'activate', 'activate', 'quit']),
                        ('reopen', ['create', 'activate', 'quit'])]:
     directory = args.report/phase
     assert (directory/'art.stderr').read_text().count('APK_RESOURCES_AOSP_READY') == 1
+    assert (directory/'art.stderr').read_text().count('APK_PUBLIC_RESOURCES_AOSP_READY') == 1
+    assert (directory/'art.stderr').read_text().count('APK_HOST_PROFILE sdk=33 abi=x86_64') == 1
     observed = [line for line in (directory/'art.stderr').read_text().splitlines()
                 if line.startswith('APK_UI_DISPATCH ')]
     assert observed == ['APK_UI_DISPATCH '+action+' thread=main' for action in actions]
@@ -31,7 +33,7 @@ for phase, actions in [('first', ['create', 'activate', 'activate', 'quit']),
 (args.report/'scanout-comparison.json').write_text(json.dumps(comparisons, indent=2)+'\n')
 result_path = args.report/'result.json'
 result = json.loads(result_path.read_text())
-result.update(original_ui_looper_pass=True, original_resources_pass=True, scanout_rgb_match=True)
+result.update(original_ui_looper_pass=True, original_resources_pass=True, original_public_resources_pass=True, scanout_rgb_match=True)
 library = args.library.resolve(strict=True)
 result['sha256'][str(library)] = hashlib.sha256(library.read_bytes()).hexdigest()
 resources_library = args.resources_library.resolve(strict=True)

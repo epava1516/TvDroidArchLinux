@@ -2,9 +2,11 @@ package org.archtv.apkruntime;
 
 import android.content.res.ApkAssets;
 import android.content.res.AssetManager;
+import android.content.res.Resources;
+import android.content.res.Configuration;
+import android.util.DisplayMetrics;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.nio.file.Path;
 import java.util.zip.ZipEntry;
@@ -14,7 +16,7 @@ import java.util.zip.ZipFile;
 public final class ApkResources implements AutoCloseable {
     private final ApkAssets apkAssets;
     private final AssetManager manager;
-    private final Method getResourceText;
+    private final Resources resources;
     private boolean closed;
 
     public ApkResources(Path apk) throws Exception {
@@ -42,8 +44,13 @@ public final class ApkResources implements AutoCloseable {
             Field inventory = AssetManager.class.getDeclaredField("mApkAssets");
             inventory.setAccessible(true);
             inventory.set(created, assets);
-            getResourceText = AssetManager.class.getDeclaredMethod("getResourceText", int.class);
-            getResourceText.setAccessible(true);
+            DisplayMetrics metrics = new DisplayMetrics();
+            metrics.setToDefaults();
+            metrics.widthPixels = metrics.noncompatWidthPixels = 1280;
+            metrics.heightPixels = metrics.noncompatHeightPixels = 720;
+            Configuration configuration = new Configuration();
+            configuration.setToDefaults();
+            resources = new Resources(created, metrics, configuration);
             apkAssets = loaded;
             manager = created;
         } catch (Exception error) {
@@ -52,22 +59,16 @@ public final class ApkResources implements AutoCloseable {
             throw bad("AOSP asset initialization", error);
         }
         System.err.println("APK_RESOURCES_AOSP_READY");
+        System.err.println("APK_PUBLIC_RESOURCES_AOSP_READY");
     }
     private static IllegalArgumentException bad(String message, Throwable cause) {
         return new IllegalArgumentException("Unsupported or invalid APK resources: "+message, cause);
     }
     public synchronized String getString(int resourceId) {
         if (closed) throw new IllegalStateException("APK resources closed");
-        try {
-            CharSequence text = (CharSequence)getResourceText.invoke(manager, resourceId);
-            if (text == null) throw bad("String not found: "+Integer.toHexString(resourceId), null);
-            return text.toString();
-        } catch (InvocationTargetException error) {
-            throw bad("AOSP resource resolution", error.getCause());
-        } catch (IllegalAccessException error) {
-            throw new IllegalStateException("AOSP resource method inaccessible", error);
-        }
+        return resources.getString(resourceId);
     }
+
     @Override public synchronized void close() {
         if (closed) return;
         closed = true;

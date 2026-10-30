@@ -4,8 +4,8 @@ El constructor público `Resources(AssetManager, DisplayMetrics, Configuration)`
 ya funciona en ART junto con `getIdentifier` y `getString` originales. El conjunto
 ampliado conserva 48 fuentes Java de AOSP Android 13 sin modificar. Incluye
 ResourcesImpl, configuración, métricas, cachés, LocaleList, TextUtils y Build.
-El contador integrado sigue usando AssetManager directamente: conectar este nivel
-público al runtime y definir su perfil de arranque son los siguientes pasos.
+El contador integrado ya llama a Resources.getString. HostProfile configura
+explícitamente el perfil de arranque antes de inicializar Build y Resources.
 
 ## Procedencia y construcción
 
@@ -83,3 +83,27 @@ framework-res.apk, overlays o zygote. No funciona aún la inicialización públi
 recursos del sistema, Resources.getSystem ni la integración general de Activity,
 View, estilos y gráficos originales. Tampoco se cierran aislamiento, compatibilidad
 de APK ampliada, H7 o distribución.
+
+## Integración y perfil del contador
+
+Main inicializa `HostProfile` una sola vez mediante el adaptador Rust. El perfil
+fija `ro.build.version.sdk=33`, `ro.build.version.release=13`, codename y
+all_codenames a `REL`, y las listas ABI del proceso a `x86_64`. Se rechaza una
+segunda inicialización o una arquitectura distinta a la verificada. Estos seis
+valores tienen prioridad sobre las variables de entorno; las demás propiedades
+siguen el proveedor de sólo lectura existente. No se habilita SystemProperties.set
+ni un servidor de propiedades Android.
+
+ApkResources construye Resources original y llama directamente a getString;
+la reflexión queda limitada a inicializar el AssetManager interno sin recursos
+de sistema. El perfil de métricas de esta prueba es 1280×720; todavía no se
+sincroniza con redimensionamientos del cliente Wayland. El cierre conserva la
+liberación de AssetManager/ApkAssets en finally.
+
+Pasan el contador original, cierre/reapertura, persistencia, ráfaga, EOF, error y
+recuperación, tabla truncada, preferencias corruptas y variante con el mismo DEX.
+Una prueba con SDK/ABI contradictorios en el entorno conserva el perfil fijado.
+Dos sesiones DRM/Pixman pasan entrada uinput y coincidencia exacta RGB de capturas.
+Evidencia: reports/aosp-public-resources-headless/ y
+reports/aosp-public-resources-wayland/. Esto no completa recursos de sistema,
+Activity/View, estilos, Bionic/NDK, aislamiento ni estabilidad prolongada.

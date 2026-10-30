@@ -52,3 +52,7 @@ ver APK-LOOPER-AOSP.md y reports/aosp-main-ui-wayland/. Activity/View siguen sie
 AssetManager/ApkAssets/StringBlock originales mediante JNI. La regresión actual
 está en reports/aosp-resources-wayland/. La comparación automática de capturas usa FFmpeg sólo en
 el laboratorio, declarado en manifests/apk-lab.txt.
+
+La regresión actual incorpora Resources público y HostProfile: ver
+reports/aosp-public-resources-wayland/. El DEX debe construirse con el conjunto
+--with-public-resources; se mantienen ambas bibliotecas JNI requeridas.

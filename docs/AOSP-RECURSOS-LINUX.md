@@ -121,3 +121,8 @@ El constructor público Resources y sus llamadas de texto ya pasan de forma
 aislada, con configuración y métricas originales: ver AOSP-RESOURCES-PUBLICO.md.
 La integración del contador sigue usando AssetManager; el nivel público nuevo
 todavía requiere conectar el perfil de arranque y completar recursos de sistema.
+
+El contador ya usa también Resources.getString público, con el perfil explícito
+HostProfile; ver AOSP-RESOURCES-PUBLICO.md y reports/aosp-public-resources-headless/
+/ reports/aosp-public-resources-wayland/. Las métricas están fijadas a 1280×720;
+la inicialización pública de recursos del sistema sigue pendiente.

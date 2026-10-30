@@ -1,0 +1,27 @@
+{
+  "fixture_wayland_pass": true,
+  "resolution": [
+    1280,
+    720
+  ],
+  "input": "uinput \u2192 libinput \u2192 compositor \u2192 Wayland keyboard \u2192 Rust \u2192 ART \u2192 APK listener",
+  "scope": "Owned APK only, close/reopen persistence, no physical remote, no stability/performance/general APK compatibility claim.",
+  "sha256": {
+    "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk": "f07c9b92ab3353237276081c22e11ce06168b8c9f71a99ea32968b2ce0f00e28",
+    "/home/tv/repositorio-principal/dist/apk/apk-public-resources-1/dex/classes.dex": "fdff3f0fd33f201575cc0a3eb4c4e701c9296bbff97a95fff2920c829482d44e",
+    "/home/tv/.cache/archtv/smithay/target/debug/archtv-apk-host": "ec3e19dd7b2cc2bc82e0b44abd4dbd2ec760e26a3103b64615bc203579196ba0",
+    "/home/tv/.cache/archtv/smithay/target/debug/archtv-compositor": "b90e858fe681191169b6bd5ed49ac2d03ec9f6817fff41386058928ed51f61ba",
+    "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so": "bf3165f74bd98d7fcb0f7dd0edb1ec573b3e7ee23e445212ca7ddd22e202bd56",
+    "/home/tv/repositorio-principal/dist/apk/androidfw-clang-1/libarchtv_resources_linux.so": "7e6130020a9ccc8a6efe2ab4cca335c558c4dda58d7cd4860df00f90e735012d"
+  },
+  "original_ui_looper_pass": true,
+  "original_resources_pass": true,
+  "original_public_resources_pass": true,
+  "scanout_rgb_match": true,
+  "cleanup": {
+    "active_login_sessions": 0,
+    "foreground_vt": 1,
+    "remaining_compositor_client_art_zygote_system_server_processes": 0,
+    "waydroid_container_service": "inactive"
+  }
+}

@@ -1,7 +1,7 @@
 # La APK usa el Looper principal original de AOSP
 
 El runtime combinado ejecuta el DEX original del contador sobre ART y usa
-Looper/Handler/MessageQueue portados desde AOSP para su hilo UI. El conjunto ampliado contiene 30 fuentes originales sin cambios e incluye
+Looper/Handler/MessageQueue portados desde AOSP para su hilo UI. El conjunto ampliado contiene 48 fuentes originales sin cambios e incluye
 AssetManager/ApkAssets/StringBlock para los recursos. Activity, View, Bundle y
 preferencias siguen siendo el subconjunto propio; el framework completo aún no está portado.
 
@@ -56,3 +56,8 @@ abiertos; esta regresión no acredita compatibilidad general.
 
 La regresión actual con recursos originales está en reports/aosp-resources-headless/
 y reports/aosp-resources-wayland/. Ver AOSP-RECURSOS-LINUX.md.
+
+La integración actual usa Resources.getString original y un perfil de arranque
+inmutable x86_64/API 33. Conserva cuatro bindings sysprop precompilados fijados por
+hash, pendientes de reconstrucción. Ver AOSP-RESOURCES-PUBLICO.md y las evidencias
+actuales aosp-public-resources-headless/ y aosp-public-resources-wayland/.

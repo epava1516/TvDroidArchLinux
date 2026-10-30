@@ -1,6 +1,8 @@
 //! Read-only process-local host properties, not Android's global property service.
 use jni_sys::{JNIEnv, jboolean, jclass, jint, jstring};
-use std::{ffi::CStr, io};
+use std::{ffi::CStr, io, sync::OnceLock};
+
+static HOST_PROFILE: OnceLock<()> = OnceLock::new();
 
 unsafe fn property(env: *mut JNIEnv, key: jstring) -> io::Result<Option<String>> {
     if key.is_null() {
@@ -19,6 +21,18 @@ unsafe fn property(env: *mut JNIEnv, key: jstring) -> io::Result<Option<String>>
         return Err(io::Error::other("Host property names must be ASCII"));
     }
     let name = String::from_utf8(name).map_err(io::Error::other)?;
+    if HOST_PROFILE.get().is_some() {
+        let value = match name.as_str() {
+            "ro.build.version.sdk" => Some("33"),
+            "ro.build.version.codename" | "ro.build.version.all_codenames" => Some("REL"),
+            "ro.build.version.release" => Some("13"),
+            "ro.product.cpu.abilist" | "ro.product.cpu.abilist64" => Some("x86_64"),
+            _ => None,
+        };
+        if let Some(value) = value {
+            return Ok(Some(value.to_owned()));
+        }
+    }
     Ok(std::env::var(format!("ARCHTV_ANDROID_PROPERTY_{name}")).ok())
 }
 
@@ -77,4 +91,24 @@ pub unsafe extern "system" fn Java_android_os_SystemProperties_native_1get_1bool
             _ => default,
         })
     })
+}
+
+/// # Safety
+/// ART supplies a valid JNI environment. One explicit immutable profile per process;
+/// source-level API 33 and the verified x86_64 ART host, not full API or NDK support.
+#[unsafe(no_mangle)]
+pub unsafe extern "system" fn Java_org_archtv_apkruntime_HostProfile_nativeInitialize(
+    env: *mut JNIEnv,
+    _: jclass,
+) {
+    super::guard(env, || {
+        if std::env::consts::ARCH != "x86_64" {
+            return Err(io::Error::other(
+                "Only the x86_64 ART host profile is verified",
+            ));
+        }
+        HOST_PROFILE
+            .set(())
+            .map_err(|_| io::Error::other("Host profile already initialized"))
+    });
 }

@@ -46,12 +46,12 @@ def kill_group(process):
     process.communicate()
 
 
-def execute(name, artifact, data, commands, expected_exit):
+def execute(name, artifact, data, commands, expected_exit, overrides=None):
     command = [str(art/'bin/art'), '--64', '--no-compile', '--', '-Xint', '-Darchtv.linux.library='+str(library), '-Darchtv.resources.library='+str(resources_library), '-cp',
                str(dex)+':'+str(artifact), 'org.archtv.apkruntime.Main', str(artifact),
                'org.archtv.probe.MainActivity', str(data)]
     with subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-                          env=environment, cwd=out, start_new_session=True) as process:
+                          env={**environment, **(overrides or {})}, cwd=out, start_new_session=True) as process:
         try:
             stdout, stderr = process.communicate(commands.encode(), timeout=60)
         except BaseException:
@@ -60,10 +60,14 @@ def execute(name, artifact, data, commands, expected_exit):
     (out/(name+'.stdout')).write_bytes(stdout)
     (out/(name+'.stderr')).write_bytes(stderr)
     results[name] = {'exit_code': process.returncode, 'command': command}
+    if overrides:
+        results[name]['property_overrides'] = overrides
     if process.returncode != expected_exit:
         raise AssertionError(name+' unexpected exit; see '+str(out/(name+'.stderr')))
     if expected_exit == 0:
         assert stderr.count(b'APK_RESOURCES_AOSP_READY') == 1, name
+        assert stderr.count(b'APK_PUBLIC_RESOURCES_AOSP_READY') == 1, name
+        assert stderr.count(b'APK_HOST_PROFILE sdk=33 abi=x86_64') == 1, name
         actions = commands.splitlines()
         if not actions or actions[-1] != 'quit':
             actions.append('quit')  # EOF is an ordered close request.
@@ -165,10 +169,14 @@ events, stderr = execute('corrupt-preferences', apk, data, 'quit\n', 1)
 assert not events and b'Cannot read preferences' in stderr
 assert (data/'counter.properties').read_text() == 'count=invalid\n'
 assert hashlib.sha256(apk.read_bytes()).hexdigest() == original_hash
+events, _ = execute('profile-overrides', apk, out/'profile-data', 'quit\n', 0, {
+    'ARCHTV_ANDROID_PROPERTY_ro.build.version.sdk': '999',
+    'ARCHTV_ANDROID_PROPERTY_ro.product.cpu.abilist64': 'unsupported'})
+check_tree(events[0], 'Contador:', 0)
 results.update(original_apk_sha256=original_hash, runtime_dex_sha256=hashlib.sha256(dex.read_bytes()).hexdigest(),
                resources_library_sha256=hashlib.sha256(resources_library.read_bytes()).hexdigest(),
                linux_library_sha256=hashlib.sha256(library.read_bytes()).hexdigest(),
-               headless_counter_pass=True, original_resources_pass=True, original_ui_looper_pass=True, wayland_pass=False,
+               headless_counter_pass=True, original_resources_pass=True, original_public_resources_pass=True, original_ui_looper_pass=True, wayland_pass=False,
                scope='Original APK DEX lifecycle, listener, resources and integer persistence. Separate unsigned resource variant and malformed inputs. No Wayland UI, signature enforcement, isolation, full Android API or stable general APK support.')
 (out/'result.json').write_text(json.dumps(results, indent=2)+'\n')
 print(json.dumps({'headless_counter_pass': True, 'wayland_pass': False, 'output': str(out)}))

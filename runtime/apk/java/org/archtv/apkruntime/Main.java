@@ -186,6 +186,7 @@ public final class Main {
         String resourcesLibrary = System.getProperty("archtv.resources.library");
         if (resourcesLibrary == null) throw new IllegalArgumentException("archtv.resources.library is required");
         System.load(Paths.get(resourcesLibrary).toRealPath().toString());
+        HostProfile.initialize();
         Path apk = Paths.get(args[0]).toRealPath();
         Path data = Paths.get(args[2]).toAbsolutePath();
         if (Files.isSymbolicLink(data)) throw new IllegalArgumentException("Symlink data directory");

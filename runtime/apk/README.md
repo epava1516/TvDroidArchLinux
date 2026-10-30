@@ -4,7 +4,7 @@ Este directorio contiene el primer subconjunto de API anfitriona. ART ejecuta
 el DEX original de la aplicación; las clases android.* de este directorio resuelven
 las llamadas necesarias para la fixture del contador. El bucle UI usa
 Looper/Handler/MessageQueue originales de AOSP. Los recursos usan también
-AssetManager/ApkAssets/StringBlock originales y libandroidfw mediante JNI. No se recompilan las fuentes de la APK
+Resources/AssetManager/ApkAssets/StringBlock originales y libandroidfw mediante JNI. No se recompilan las fuentes de la APK
 ni se incorpora su MainActivity al DEX del runtime.
 
 El árbol de View se emite como JSON para archtv-apk-host, cliente Wayland en Rust
@@ -15,7 +15,7 @@ el contador: esos cambios los produce onClick de la APK.
 
 Requiere las herramientas fijadas del laboratorio APK, JDK 17 y el conjunto ART host
 descrito en docs/ESTUDIO-ART-HOST.md. Requiere además la biblioteca Rust y un build
-AOSP con framework.jar generado con --with-resources, siguiendo runtime/aosp/README.md.
+AOSP con framework.jar generado con --with-public-resources, siguiendo runtime/aosp/README.md.
 La biblioteca de recursos y sus instrucciones están en docs/AOSP-RECURSOS-LINUX.md. Los destinos deben ser nuevos.
 
 ```bash
@@ -67,3 +67,10 @@ ARCHTV_APK_RESOURCES_LIBRARY y la prueba headless --resources-library.
 El gestor original y sus ApkAssets se cierran en finally tras finalizar UI,
 incluso en errores de callback. La regresión actual figura en
 reports/aosp-resources-headless/ y reports/aosp-resources-wayland/.
+
+Main activa el perfil experimental x86_64/API 33 antes de construir Resources.
+Sus seis propiedades son inmutables y prevalecen sobre el entorno; esto no
+acredita compatibilidad completa API 33 ni NDK/Bionic. La lectura de texto usa
+Resources.getString directamente. Ver docs/AOSP-RESOURCES-PUBLICO.md y
+reports/aosp-public-resources-headless/ / reports/aosp-public-resources-wayland/.
+Las métricas del adaptador siguen fijadas a 1280×720 durante esta fase.
