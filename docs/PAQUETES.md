@@ -35,6 +35,29 @@ número de commits y el identificador de HEAD para distinguir revisiones.
 La receta usa cargo fetch --locked en prepare y --frozen para compilar/probar.
 Las dependencias Cargo quedan fijadas en Cargo.lock y Smithay a su revisión Git.
 
+## Compilación en entorno limpio
+
+Con devtools instalado y un directorio de fuentes ya generado:
+
+```bash
+ARCHTV_PACKAGE_SOURCE="$PWD/dist/packages/VERSION" ./scripts/98-package-build.sh --apply
+```
+
+El script verifica SHA256SUMS antes de usar makechrootpkg, crea una base Arch con
+base-devel si falta y prepara una copia limpia para cada compilación. La receta
+limita Cargo a un trabajo. El producto no se instala en el anfitrión. Requiere
+sudo para devtools y acceso a los repositorios Arch, crates.io y Smithay.
+ARCHTV_PACKAGE_CHROOT y ARCHTV_PACKAGE_REPORT permiten elegir caché e informes;
+un bloqueo evita ejecutar simultáneamente dos instancias del script en la misma
+caché. No coordina invocaciones manuales externas de makechrootpkg.
+
+Los informes incluyen salida de compilación, commit de fuentes, receta, hashes,
+metadatos y lista de archivos de los tres paquetes. Un resultado PASS de este
+script acredita compilación e inspección; las pruebas de instalación y licencia
+siguen siendo puertas independientes. El wrapper tiene comprobación estática;
+la primera compilación limpia se inició manualmente con los mismos devtools y
+su resultado se conserva en reports/h8-build/clean-build.log.
+
 ## Sesión
 
 El wrapper detecta la primera salida DRM conectada o acepta ARCHTV_DRM_DEVICE.

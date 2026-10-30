@@ -1,17 +1,17 @@
 # Graph Report - repositorio-principal  (2026-10-30)
 
 ## Corpus Check
-- 85 files · ~37,264 words
+- 86 files · ~37,673 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 7 file(s) not represented in the graph (top: (none) 5, .in 1, .desktop 1)
 
 ## Summary
-- 840 nodes · 1471 edges · 71 communities (37 shown, 34 thin omitted)
+- 843 nodes · 1473 edges · 71 communities (33 shown, 38 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 4 edges (avg confidence: 0.76)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `3012fbc9`
+- Built from commit: `c6d602aa`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -39,14 +39,13 @@
 - common.sh
 - 72-anvil-smoke.sh
 - 82-rust-smoke.sh
-- Shell Rust: interfaz y mediciones
+- REFERENCIAS-FIRE-TV.md
 - Base actual y herramientas conservadas
 - Desarrollo del compositor Rust
 - Estudio de Smithay y Anvil
 - 68-graphify.sh
 - graphify.sh
 - Arquitectura objetivo
-- Model
 - archtv-core
 - 00-diagnostico.sh
 - 83-drm-session.sh
@@ -66,14 +65,12 @@
 - THIRD_PARTY.md
 - archtv-test-client
 - archtv-compositor/src/main.rs
-- model.rs
+- Model
 - 89-shell-resolutions.sh
-- Action
-- Page
-- Key
+- Shell Rust: interfaz y mediciones
 - 87-shell-session.sh
 - 88-shell-smoke.sh
-- ContextAction
+- 98-package-build.sh
 - layout.rs
 - Dirección futura: entorno APK propio sobre Linux
 - 90-android-session.sh
@@ -113,14 +110,14 @@
 ## Import Cycles
 - None detected.
 
-## Communities (71 total, 34 thin omitted)
+## Communities (71 total, 38 thin omitted)
 
 ### Community 0 - "start"
-Cohesion: 0.44
+Cohesion: 0.38
 Nodes (3): Result, start(), Supervisor
 
 ### Community 1 - "runtime.rs"
-Cohesion: 0.07
+Cohesion: 0.10
 Nodes (3): control_fd(), run(), State
 
 ### Community 3 - "worker.rs"
@@ -156,7 +153,7 @@ Cohesion: 0.13
 Nodes (15): Comprobaciones y evidencia, Copia previa, Desarrollo interactivo y seguimiento, Dirección actual, Estado de Android y gráficos, Estado real del proyecto, H1 comprobado, H2 comprobado: compositor propio (+7 more)
 
 ### Community 18 - ".shell"
-Cohesion: 0.15
+Cohesion: 0.14
 Nodes (3): Canvas, Canvas, short()
 
 ### Community 19 - "Referencias Fire TV para Arch TV"
@@ -174,10 +171,6 @@ Nodes (5): EGL_PLATFORM, GALLIUM_DRIVER, LIBGL_ALWAYS_SOFTWARE, 72-anvil-smoke.s
 ### Community 22 - "82-rust-smoke.sh"
 Cohesion: 0.29
 Nodes (5): EGL_PLATFORM, GALLIUM_DRIVER, LIBGL_ALWAYS_SOFTWARE, 82-rust-smoke.sh script, XDG_RUNTIME_DIR
-
-### Community 23 - "Shell Rust: interfaz y mediciones"
-Cohesion: 0.18
-Nodes (8): Comparación de composición con Fire TV 2026, Composición medida, Decisión provisional, Primer resultado del renderer optimizado, Reproducción, Shell Rust: interfaz y mediciones, Validación interactiva, Fuentes técnicas
 
 ### Community 24 - "Base actual y herramientas conservadas"
 Cohesion: 0.33
@@ -207,33 +200,21 @@ Nodes (5): Arquitectura objetivo, Decisiones iniciales, Dependencias compartidas
 Cohesion: 0.67
 Nodes (3): archtv-compositor, archtv-core, archtv-shell
 
-### Community 50 - "model.rs"
-Cohesion: 0.17
-Nodes (7): app(), context_order_hide_restore_and_row_focus_survive_navigation(), KEYBOARD, keyboard_and_physical_search_agree_and_back_is_bounded(), MENU_ITEMS, navigation_filters_and_banner_use_real_application_sets(), SETTING_ITEMS
+### Community 50 - "Model"
+Cohesion: 0.05
+Nodes (45): Application, Action, AndroidStart, AndroidStop, Launch, Mute, Quit, Refresh (+37 more)
 
 ### Community 51 - "89-shell-resolutions.sh"
 Cohesion: 0.20
 Nodes (8): EGL_PLATFORM, GALLIUM_DRIVER, LIBGL_ALWAYS_SOFTWARE, 89-shell-resolutions.sh script, XDG_CONFIG_HOME, XDG_DATA_DIRS, XDG_DATA_HOME, XDG_RUNTIME_DIR
 
-### Community 52 - "Action"
-Cohesion: 0.18
-Nodes (11): Action, AndroidStart, AndroidStop, Launch, Mute, Quit, Refresh, Resume (+3 more)
-
-### Community 53 - "Page"
-Cohesion: 0.18
-Nodes (9): Page, Android, Apps, Home, Linux, Menu, Recent, Search (+1 more)
-
-### Community 54 - "Key"
-Cohesion: 0.20
-Nodes (10): Key, Back, Backspace, Character, Down, Enter, Left, Menu (+2 more)
+### Community 54 - "Shell Rust: interfaz y mediciones"
+Cohesion: 0.33
+Nodes (6): Composición medida, Decisión provisional, Primer resultado del renderer optimizado, Reproducción, Shell Rust: interfaz y mediciones, Validación interactiva
 
 ### Community 55 - "87-shell-session.sh"
 Cohesion: 0.50
 Nodes (3): DBUS_SESSION_BUS_ADDRESS, LIBSEAT_BACKEND, 87-shell-session.sh script
-
-### Community 57 - "ContextAction"
-Cohesion: 0.33
-Nodes (6): ContextAction, Cancel, Favorite, Hide, Left, Right
 
 ### Community 58 - "layout.rs"
 Cohesion: 0.14
@@ -260,28 +241,28 @@ Cohesion: 0.50
 Nodes (4): Arch TV · compositor propio para televisión, Documentación principal, Herramientas disponibles, Laboratorio H1
 
 ### Community 69 - "Paquetes Arch TV en preparación"
-Cohesion: 0.33
-Nodes (5): Fuentes y receta, Inventario inicial de licencias Cargo, Paquetes Arch TV en preparación, Puertas pendientes, Sesión
+Cohesion: 0.29
+Nodes (6): Compilación en entorno limpio, Fuentes y receta, Inventario inicial de licencias Cargo, Paquetes Arch TV en preparación, Puertas pendientes, Sesión
 
 ## Knowledge Gaps
 - **69 isolated node(s):** `archtv-compositor`, `Home`, `Resume`, `Exit`, `TvCompositor` (+64 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 346 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **34 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 349 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **38 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `TvCompositor` connect `TvCompositor` to `start`, `session.rs`, `xdg_shell.rs`, `mod.rs`, `input.rs`, `drm.rs`, `compositor.rs`, `winit.rs`, `Backend`, `archtv-compositor/src/main.rs`?**
-  _High betweenness centrality (0.218) - this node is a cross-community bridge._
+  _High betweenness centrality (0.217) - this node is a cross-community bridge._
 - **What connects `archtv-compositor`, `Home`, `Resume` to the rest of the system?**
   _69 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `runtime.rs` be split into smaller, more focused modules?**
-  _Cohesion score 0.07042253521126761 - nodes in this community are weakly interconnected._
-- **Why does `Event` connect `worker.rs` to `input.rs`, `runtime.rs`, `Model`?**
-  _High betweenness centrality (0.055) - this node is a cross-community bridge._
+  _Cohesion score 0.1027450980392157 - nodes in this community are weakly interconnected._
+- **Why does `Event` connect `worker.rs` to `input.rs`, `Model`, `runtime.rs`?**
+  _High betweenness centrality (0.054) - this node is a cross-community bridge._
 - **Should `Client` be split into smaller, more focused modules?**
-  _Cohesion score 0.07080745341614907 - nodes in this community are weakly interconnected._
-- **Why does `Model` connect `Model` to `runtime.rs`, `worker.rs`, `.shell`, `model.rs`, `Page`?**
+  _Cohesion score 0.10420168067226891 - nodes in this community are weakly interconnected._
+- **Why does `Model` connect `Model` to `runtime.rs`, `.shell`, `worker.rs`, `runtime.rs`?**
   _High betweenness centrality (0.051) - this node is a cross-community bridge._
 - **Should `worker.rs` be split into smaller, more focused modules?**
-  _Cohesion score 0.06748911465892599 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0693815987933635 - nodes in this community are weakly interconnected._

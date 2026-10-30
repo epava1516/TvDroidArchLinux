@@ -559,15 +559,21 @@
     "semantic_hash": ""
   },
   "docs/PAQUETES.md": {
-    "mtime": 1793344617.8880253,
-    "seen": 1793344622.5572941,
-    "ast_hash": "1c605d890e00867675e6f724ff11e6c4",
+    "mtime": 1793344736.8944192,
+    "seen": 1793344742.5583613,
+    "ast_hash": "fe3f0b147de44664a4e87a75d77dbd10",
     "semantic_hash": ""
   },
   "packaging/arch/cargo-license-inventory.py": {
     "mtime": 1793328750.580042,
     "seen": 1793328812.8560581,
     "ast_hash": "5cdb5edccd25974ab567ea87c71b82b7",
+    "semantic_hash": ""
+  },
+  "scripts/98-package-build.sh": {
+    "mtime": 1793344709.1934087,
+    "seen": 1793344742.5583076,
+    "ast_hash": "2f04822d4e2285424957a52fb5d35023",
     "semantic_hash": ""
   }
 }
