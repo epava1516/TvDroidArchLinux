@@ -1,22 +1,21 @@
 # Graph Report - repositorio-principal  (2026-10-30)
 
 ## Corpus Check
-- 88 files · ~39,135 words
+- 90 files · ~39,832 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 7 file(s) not represented in the graph (top: (none) 5, .in 1, .desktop 1)
 
 ## Summary
-- 854 nodes · 1491 edges · 68 communities (33 shown, 35 thin omitted)
+- 858 nodes · 1499 edges · 72 communities (32 shown, 40 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 4 edges (avg confidence: 0.76)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `21149913`
+- Built from commit: `2819e4b2`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- start
 - runtime.rs
 - Client
 - worker.rs
@@ -27,7 +26,6 @@
 - input.rs
 - drm.rs
 - compositor.rs
-- winit.rs
 - Backend
 - FocusStack<T>
 - Roadmap · Arch TV nativo en Rust
@@ -46,6 +44,7 @@
 - 68-graphify.sh
 - graphify.sh
 - Arquitectura objetivo
+- .process_input_event
 - archtv-core
 - 00-diagnostico.sh
 - 83-drm-session.sh
@@ -67,16 +66,19 @@
 - archtv-compositor/src/main.rs
 - Model
 - 89-shell-resolutions.sh
+- ClientState
 - package-lifecycle.sh
 - 87-shell-session.sh
 - 88-shell-smoke.sh
 - 98-package-build.sh
 - layout.rs
 - Dirección futura: entorno APK propio sobre Linux
+- DISTRIBUCION.md
 - 90-android-session.sh
 - 93-android-shell-session.sh
 - 91-android-client.sh
 - 92-android-boot-probe.sh
+- session.rs
 - 94-android-media-probe.sh
 - Cuelgue completo de la VM durante H6
 - Arch TV · compositor propio para televisión
@@ -110,23 +112,15 @@
 ## Import Cycles
 - None detected.
 
-## Communities (68 total, 35 thin omitted)
-
-### Community 0 - "start"
-Cohesion: 0.38
-Nodes (3): Result, start(), Supervisor
+## Communities (72 total, 40 thin omitted)
 
 ### Community 1 - "runtime.rs"
-Cohesion: 0.06
+Cohesion: 0.10
 Nodes (3): control_fd(), run(), State
 
 ### Community 3 - "worker.rs"
 Cohesion: 0.07
 Nodes (32): collect(), data_directories(), discover(), exec_keeps_arguments_and_shell_metacharacters_literal(), executable(), expand_exec(), locale_hidden_and_desktop_sections_are_respected(), parse_entry() (+24 more)
-
-### Community 4 - "TvCompositor"
-Cohesion: 0.08
-Nodes (3): TvCompositor, ClientState, TvCompositor
 
 ### Community 6 - "input-probe.py"
 Cohesion: 0.06
@@ -136,9 +130,9 @@ Nodes (16): key(), text(), wait_for(), event(), wait_for(), chunk(), event(), au
 Cohesion: 0.09
 Nodes (5): Shortcut, Exit, Home, Resume, Vt
 
-### Community 12 - "Backend"
-Cohesion: 0.20
-Nodes (3): Backend, init(), Result
+### Community 9 - "drm.rs"
+Cohesion: 0.07
+Nodes (3): Backend, Scanout, init()
 
 ### Community 13 - "FocusStack<T>"
 Cohesion: 0.30
@@ -232,6 +226,10 @@ Nodes (3): DBUS_SESSION_BUS_ADDRESS, LIBSEAT_BACKEND, 90-android-session.sh scri
 Cohesion: 0.50
 Nodes (3): DBUS_SESSION_BUS_ADDRESS, LIBSEAT_BACKEND, 93-android-shell-session.sh script
 
+### Community 65 - "session.rs"
+Cohesion: 0.15
+Nodes (3): Result, start(), Supervisor
+
 ### Community 67 - "Cuelgue completo de la VM durante H6"
 Cohesion: 0.29
 Nodes (6): Alternativa LTS preparada, Arranque LTS verificado, Continuación, Cuelgue completo de la VM durante H6, Estado después del reinicio, Evidencia guardada
@@ -246,23 +244,23 @@ Nodes (11): Compilación en entorno limpio, Fuentes y receta, Herramientas para 
 
 ## Knowledge Gaps
 - **69 isolated node(s):** `archtv-compositor`, `Home`, `Resume`, `Exit`, `TvCompositor` (+64 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 355 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **35 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 358 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **40 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `TvCompositor` connect `TvCompositor` to `start`, `session.rs`, `xdg_shell.rs`, `mod.rs`, `input.rs`, `drm.rs`, `compositor.rs`, `winit.rs`, `Backend`, `archtv-compositor/src/main.rs`?**
-  _High betweenness centrality (0.214) - this node is a cross-community bridge._
+- **Why does `TvCompositor` connect `TvCompositor` to `session.rs`, `xdg_shell.rs`, `mod.rs`, `input.rs`, `drm.rs`, `compositor.rs`, `Backend`, `archtv-compositor/src/main.rs`, `.process_input_event`?**
+  _High betweenness centrality (0.215) - this node is a cross-community bridge._
 - **What connects `archtv-compositor`, `Home`, `Resume` to the rest of the system?**
   _69 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `runtime.rs` be split into smaller, more focused modules?**
-  _Cohesion score 0.06185919343814081 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
 - **Why does `Event` connect `worker.rs` to `input.rs`, `runtime.rs`, `Model`?**
-  _High betweenness centrality (0.054) - this node is a cross-community bridge._
-- **Should `Client` be split into smaller, more focused modules?**
-  _Cohesion score 0.0818452380952381 - nodes in this community are weakly interconnected._
-- **Why does `Model` connect `Model` to `runtime.rs`, `.shell`, `worker.rs`?**
+  _High betweenness centrality (0.053) - this node is a cross-community bridge._
+- **Should `runtime.rs` be split into smaller, more focused modules?**
+  _Cohesion score 0.1027450980392157 - nodes in this community are weakly interconnected._
+- **Why does `Model` connect `Model` to `runtime.rs`, `runtime.rs`, `.shell`, `worker.rs`?**
   _High betweenness centrality (0.050) - this node is a cross-community bridge._
-- **Should `worker.rs` be split into smaller, more focused modules?**
-  _Cohesion score 0.06821480406386067 - nodes in this community are weakly interconnected._
+- **Should `Client` be split into smaller, more focused modules?**
+  _Cohesion score 0.10420168067226891 - nodes in this community are weakly interconnected._

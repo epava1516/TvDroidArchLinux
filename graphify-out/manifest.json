@@ -223,9 +223,9 @@
     "semantic_hash": "577f47ff30b8d605d5f59c96424dfd85"
   },
   "scripts/check.sh": {
-    "mtime": 1793345105.691431,
-    "seen": 1793345138.880461,
-    "ast_hash": "c606109462b071c3c6476e90663edad5",
+    "mtime": 1793346888.4252603,
+    "seen": 1793346897.5391142,
+    "ast_hash": "8ae39bf2f516a3778abff5e398366419",
     "semantic_hash": ""
   },
   "scripts/lib/common.sh": {
@@ -283,9 +283,9 @@
     "semantic_hash": ""
   },
   "ROADMAP.md": {
-    "mtime": 1793344985.450933,
-    "seen": 1793344993.3954978,
-    "ast_hash": "31c8328556f2e9931fdc509bd993af20",
+    "mtime": 1793346912.8896112,
+    "seen": 1793346917.250576,
+    "ast_hash": "99ac018228ecd82adcd2c85a2ac18bc7",
     "semantic_hash": ""
   },
   "THIRD_PARTY.md": {
@@ -559,9 +559,9 @@
     "semantic_hash": ""
   },
   "docs/PAQUETES.md": {
-    "mtime": 1793346687.047965,
-    "seen": 1793346691.6840904,
-    "ast_hash": "901301a50b69c4a50cc36a3217345f79",
+    "mtime": 1793346912.887333,
+    "seen": 1793346917.2506347,
+    "ast_hash": "e1954075b22f97b79035e65f833e3756",
     "semantic_hash": ""
   },
   "packaging/arch/cargo-license-inventory.py": {
@@ -592,6 +592,18 @@
     "mtime": 1793346655.0581803,
     "seen": 1793346691.6838658,
     "ast_hash": "b185570b6afe5d11af64643dc20ab789",
+    "semantic_hash": ""
+  },
+  "packaging/iso/prepare-profile.py": {
+    "mtime": 1793346842.4014025,
+    "seen": 1793346897.5390298,
+    "ast_hash": "bd019bd47dc6d96093bb48c3cee0a7fd",
+    "semantic_hash": ""
+  },
+  "docs/DISTRIBUCION.md": {
+    "mtime": 1793346888.4410233,
+    "seen": 1793346897.5391884,
+    "ast_hash": "5d5e07907e7ca54a48c19992e3a91ea2",
     "semantic_hash": ""
   }
 }

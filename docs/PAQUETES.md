@@ -168,7 +168,8 @@ El manifiesto manifests/distribution-lab.txt registra devtools y archiso como
 herramientas de laboratorio, separadas de la sesión instalada. Archiso 91 está
 instalado; su perfil oficial releng soporta systemd-boot UEFI. No se ha generado
 una ISO propia ni validado su arranque. Versiones e instalación están guardadas
-en reports/h9-preparation/. El perfil propio y el instalador siguen pendientes.
+en reports/h9-preparation/. El perfil de laboratorio ya se prepara con packaging/iso/prepare-profile.py;
+su construcción, arranque y el instalador siguen pendientes. Ver docs/DISTRIBUCION.md.
 
 ## Repositorio local de laboratorio
 

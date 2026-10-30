@@ -280,6 +280,11 @@ ocultos, actualización y retirada comprobadas, receta y fuentes reproducibles.
 
 ## H9 · Distribución Arch TV
 
+Preparación: herramientas Archiso instaladas y generador de perfil UEFI/LTS
+comprobado hasta la generación y sintaxis. Consume el repositorio local de los
+tres paquetes y contenido explícito, sin datos personales. No se ha construido
+ni arrancado una ISO. Ver docs/DISTRIBUCION.md y reports/h9-preparation/.
+
 - Perfil archiso basado en los paquetes propios, sin datos ni credenciales de la VM.
 - Política de versiones/snapshots, kernel/Binder e imágenes Android.
 - Arranque e instalación UEFI, elección explícita de disco, usuario, idioma y red.
