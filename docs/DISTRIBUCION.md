@@ -49,3 +49,22 @@ a un procesador para compartir la VM con la compilación de paquetes.
 
 QEMU x86 y OVMF se instalaron como herramientas de laboratorio. Esta VM no expone
 /dev/kvm; una prueba anidada usará emulación y no acreditará rendimiento H7.
+
+## Construcción con comprobación de errores
+
+```bash
+ARCHTV_ISO_PROFILE="$PWD/dist/iso-profiles/NOMBRE" ./scripts/99-iso-build.sh --apply
+```
+
+El wrapper crea directorios nuevos para trabajo e imágenes, guarda el log y exige
+una única ISO. verify-build.py rechaza errores conocidos de mkinitcpio/Archiso,
+comprueba la finalización de xorriso y una entrada El Torito UEFI habilitada, y
+registra SHA-256 mediante lectura en bloques. El estado CANDIDATE permite pasar a
+la prueba de arranque; no acredita integridad completa del initramfs, instalación
+ni ejecución Android. El escaneo cubre patrones conocidos y no detecta todos los
+fallos posibles. El wrapper tiene comprobación estática y modo informativo; la
+construcción corregida actual se inició manualmente antes de añadirlo.
+
+El verificador se ejecutó contra la primera ISO: devolvió FAIL y encontró los
+tres mensajes del fallo memdiskfind. El informe conserva el hash de esa imagen,
+que está separada con sufijo invalid-initramfs.iso. Ver reports/h9-first-build/.

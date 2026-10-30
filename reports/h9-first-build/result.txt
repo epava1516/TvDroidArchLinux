@@ -1,0 +1,1 @@
+INVALID: mkinitcpio reported memdiskfind missing and potentially incomplete initramfs. mkarchiso exit 0 does not validate this artifact. Do not use it for boot acceptance.

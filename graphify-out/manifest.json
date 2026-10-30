@@ -601,9 +601,21 @@
     "semantic_hash": ""
   },
   "docs/DISTRIBUCION.md": {
-    "mtime": 1793347224.5169213,
-    "seen": 1793347235.3734312,
-    "ast_hash": "8a32c1e6432a2d3fadee08cbd2a5431e",
+    "mtime": 1793347396.4976916,
+    "seen": 1793347401.3698256,
+    "ast_hash": "fe4218d6dc4352e9acbbd58ad8034b3c",
+    "semantic_hash": ""
+  },
+  "packaging/iso/verify-build.py": {
+    "mtime": 1793347334.4823306,
+    "seen": 1793347401.369609,
+    "ast_hash": "0a81307a6dd7392d7d1bbe8a48077b7d",
+    "semantic_hash": ""
+  },
+  "scripts/99-iso-build.sh": {
+    "mtime": 1793347374.1066623,
+    "seen": 1793347401.3697255,
+    "ast_hash": "f8a1795025f3b3735ab90432d2190981",
     "semantic_hash": ""
   }
 }

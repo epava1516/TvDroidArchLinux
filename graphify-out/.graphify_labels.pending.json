@@ -1,12 +1,16 @@
 {
   "0": "Key",
   "2": "Client",
+  "11": "runtime.rs",
+  "12": "QueueHandle",
   "15": "95-kernel-lts.sh",
+  "18": ".shell",
   "23": "Shell Rust: interfaz y mediciones",
   "30": ".process_input_event",
   "49": "winit.rs",
   "50": "Model",
   "51": "89-shell-resolutions.sh",
+  "52": "Canvas",
   "53": "ClientState",
   "54": "package-lifecycle.sh",
   "55": "87-shell-session.sh",
@@ -25,5 +29,9 @@
   "68": "Arch TV · compositor propio para televisión",
   "69": "Paquetes Arch TV en preparación",
   "70": "archtv-session",
-  "71": "97-package-source.sh"
+  "71": "97-package-source.sh",
+  "72": "model.rs",
+  "73": "Page",
+  "74": "WlKeyboard",
+  "75": "99-iso-build.sh"
 }
