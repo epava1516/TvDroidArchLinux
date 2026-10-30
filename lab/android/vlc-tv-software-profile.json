@@ -1,0 +1,23 @@
+{
+  "application": "VLC Android 3.7.1 x86_64",
+  "purpose": "Test APK configuration; not a global Android profile",
+  "preferences": {
+    "tv_ui": true,
+    "video_player_tips_shown": true,
+    "VideoPaused": false,
+    "hardware_acceleration": "0"
+  },
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/videolan/vlc-android/3.7.1/application/tools/src/main/java/org/videolan/tools/Settings.kt",
+      "sha256": "54b3ee661015388d56d3c178bd0df153d5697a418c6f04d582523f18a212f997"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/videolan/vlc-android/3.7.1/application/resources/src/main/res/values/arrays.xml",
+      "sha256": "9066736c8fdf260fbdf865e0ab476ea8ff287ff6f22fb0bac2d29bb6da43dc56"
+    }
+  ],
+  "remove_preferences": [
+    "aout"
+  ]
+}

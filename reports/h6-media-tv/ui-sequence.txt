@@ -1,0 +1,2 @@
+PASS: start through uinput -> libinput -> compositor -> shell.
+PASS: vlc through uinput -> libinput -> compositor -> shell.

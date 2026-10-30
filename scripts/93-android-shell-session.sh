@@ -14,7 +14,7 @@ for ((attempt=0;attempt<100;attempt++)); do
 done
 systemctl --user start pipewire.service pipewire-pulse.service wireplumber.service
 exec setpriv --inh-caps=-all --ambient-caps=-all "$target/debug/archtv-compositor" \
-  --drm /dev/dri/card0 --mode 1280x720 --shell --exit-after 600 \
+  --drm /dev/dri/card0 --mode 1280x720 --shell --exit-after "${ARCHTV_ANDROID_EXIT_AFTER:-600}" \
   --capture-after 240 "$report/scanout.ppm" \
   -- "$target/debug/archtv-shell" --capture-states "$report/states" \
   > "$report/compositor.log" 2>&1

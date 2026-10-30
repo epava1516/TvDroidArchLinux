@@ -1,0 +1,1 @@
+10125 10125 660 /home/tv/.local/share/waydroid/data/data/org.videolan.vlc/shared_prefs/org.videolan.vlc_preferences.xml

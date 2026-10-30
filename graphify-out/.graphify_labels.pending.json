@@ -1,14 +1,14 @@
 {
   "0": "model.rs",
   "2": "Client",
-  "15": "session.rs",
+  "15": "runtime.rs",
   "18": ".shell",
   "23": "Shell Rust: prototipo de dibujo",
-  "30": "Child",
+  "30": "QueueHandle",
   "49": "archtv-compositor/src/main.rs",
   "50": "Model",
   "51": "89-shell-resolutions.sh",
-  "52": "Pixmap",
+  "52": "WlKeyboard",
   "53": "Key",
   "54": "Page",
   "55": "87-shell-session.sh",
@@ -22,5 +22,7 @@
   "63": "91-android-client.sh",
   "64": "92-android-boot-probe.sh",
   "65": "session.rs",
-  "66": "94-android-media-probe.sh"
+  "66": "94-android-media-probe.sh",
+  "67": "Cuelgue completo de la VM durante H6",
+  "68": "Arch TV · compositor propio para televisión"
 }

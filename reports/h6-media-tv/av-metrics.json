@@ -1,0 +1,69 @@
+{
+  "video_roi_channel_mae": [
+    2.8669741030092593,
+    5.747869646990741,
+    5.242683015046296
+  ],
+  "video_changed": true,
+  "audio_seconds": 11.946666666666667,
+  "audio_windows": [
+    {
+      "second": 0.0,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0
+    },
+    {
+      "second": 1.0,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0
+    },
+    {
+      "second": 2.0,
+      "rms_s16": 0.14237567676163415,
+      "tone_440_amplitude_s16": 0.016320990155126756
+    },
+    {
+      "second": 3.0,
+      "rms_s16": 2.620555761665834,
+      "tone_440_amplitude_s16": 1.761610500519639
+    },
+    {
+      "second": 4.0,
+      "rms_s16": 0.6029096117993143,
+      "tone_440_amplitude_s16": 0.14776255969048532
+    },
+    {
+      "second": 5.0,
+      "rms_s16": 2.321825790191848,
+      "tone_440_amplitude_s16": 0.6631578459519923
+    },
+    {
+      "second": 6.0,
+      "rms_s16": 0.7553558763920487,
+      "tone_440_amplitude_s16": 0.10415398925214339
+    },
+    {
+      "second": 7.0,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0
+    },
+    {
+      "second": 8.0,
+      "rms_s16": 2.0675267027699222,
+      "tone_440_amplitude_s16": 0.9471525987767071
+    },
+    {
+      "second": 9.0,
+      "rms_s16": 1.2720718009085283,
+      "tone_440_amplitude_s16": 0.4185116544795498
+    },
+    {
+      "second": 10.0,
+      "rms_s16": 1.8499605851657128,
+      "tone_440_amplitude_s16": 1.3840538162492566
+    }
+  ],
+  "longest_continuous_tone_seconds": 0,
+  "pass": false,
+  "scope": "Digital monitor audio and changed Android video content; inspect PNGs for overlays. No HDMI/acoustic or performance claim."
+}

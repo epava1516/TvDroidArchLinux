@@ -1,0 +1,326 @@
+--------- beginning of main
+10-30 02:19:10.523  1732  1732 V MediaRouter: Selecting route: RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:19:10.527  1732  1770 D VLC     : [00007f52a88a0ee0/6ea] libvlc video output: destroying useless vout
+10-30 02:19:10.527  1732  1809 D VLC     : [00007f5288824040/711] libvlc vout display: removing module "gles2"
+10-30 02:19:10.549  1732  1809 D VLC     : [00007f525888e5e0/711] libvlc gl: removing module "egl_android"
+10-30 02:19:10.587  1732  1770 D VLC     : [00007f5298910b80/6ea] libvlc spu text: removing module "freetype"
+10-30 02:19:10.593  1732  1770 D VLC     : [00007f529893a3a0/6ea] libvlc scale: removing module "yuvp"
+10-30 02:19:10.593  1732  1770 D VLC     : [00007f52988feee0/6ea] libvlc scale: removing module "swscale"
+10-30 02:19:10.615  1732  1732 D VLC     : [00007f5268847e20/6c4] libvlc generic: creating audio output
+10-30 02:19:10.615  1732  1732 D VLC     : [00007f5288811da0/6c4] libvlc audio output: looking for audio output module matching "android_audiotrack": 4 candidates
+10-30 02:19:10.615  1732  1732 D VLC     : [00007f5288811da0/6c4] libvlc audio output: using audio output module "android_audiotrack"
+10-30 02:19:10.615  1732  1732 D VLC     : [00007f5268847e20/6c4] libvlc generic: keeping audio output
+10-30 02:19:10.615  1732  1732 D VLC     : [00007f5288811da0/6c4] libvlc audio output: removing module "android_audiotrack"
+10-30 02:19:10.615  1732  1732 D VLC     : [00007f5268847e20/6c4] libvlc generic: creating audio output
+10-30 02:19:10.615  1732  1732 D VLC     : [00007f5288811da0/6c4] libvlc audio output: looking for audio output module matching "opensles_android,none": 4 candidates
+10-30 02:19:10.616  1732  1732 W libOpenSLES: class OutputMix interface 0 requested but unavailable MPH=43
+10-30 02:19:10.616  1732  1732 D VLC     : [00007f5288811da0/6c4] libvlc audio output: using audio output module "opensles_android"
+10-30 02:19:10.616  1732  1732 D VLC     : [00007f5268847e20/6c4] libvlc generic: keeping audio output
+10-30 02:19:10.620  1732  1770 D VLC     : [00007f528883c0a0/6ea] libvlc audio output: removing module "opensles_android"
+--------- beginning of system
+10-30 02:19:10.674   289   310 D CompatibilityChangeReporter: Compat change id reported: 197654537; UID 10125; state: ENABLED
+10-30 02:19:10.835  1732  1753 E OpenGLRenderer: Unable to match the desired swap behavior.
+10-30 02:19:11.118   289   381 D CoreBackPreview: Window{37b9a29 u0 org.videolan.vlc/org.videolan.vlc.gui.video.VideoPlayerActivity}: Setting back callback null
+10-30 02:19:11.133   289   381 W InputManager-JNI: Input channel object '37b9a29 org.videolan.vlc/org.videolan.vlc.gui.video.VideoPlayerActivity (client)' was disposed without first being removed with the input manager!
+10-30 02:19:11.154   102   126 W TransactionTracing: Could not find layer handle 0x7fbf6c644eb0
+10-30 02:19:11.154   102   126 W TransactionTracing: Could not find layer handle 0x7fbf6c62b8f0
+10-30 02:19:11.169   102   126 W TransactionTracing: Could not find layer handle 0x7fbf6c643110
+10-30 02:19:11.179   289   327 D OomAdjuster: Not killing cached processes
+10-30 02:19:12.384  1732  1781 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:19:14.212   289  1102 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+10-30 02:19:18.390  1732  1781 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:19:24.397  1732  1781 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:19:30.496  1732  1781 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:19:34.637   289   358 V DisplayPowerController[0]: Brightness [0.05] reason changing to: 'manual [ dim ]', previous reason: 'manual'.
+10-30 02:19:34.637   289   358 I DisplayPowerController[0]: BrightnessEvent: disp=0, physDisp=local:0, brt=0.05, initBrt=0.39763778, rcmdBrt=NaN, preBrt=NaN, lux=0.0, preLux=0.0, hbmMax=1.0, hbmMode=off, rbcStrength=50, powerFactor=1.0, thrmMax=1.0, wasShortTermModelActive=false, flags=, reason=manual [ dim ], autoBrightness=false
+10-30 02:19:35.265   289   358 I DisplayPowerController[0]: BrightnessEvent: disp=0, physDisp=local:0, brt=0.05, initBrt=0.05, rcmdBrt=NaN, preBrt=NaN, lux=0.0, preLux=0.0, hbmMax=1.0, hbmMode=off, rbcStrength=50, powerFactor=1.0, thrmMax=1.0, wasShortTermModelActive=false, flags=, reason=manual [ dim ], autoBrightness=false
+10-30 02:19:35.281   289   358 I DisplayPowerController[0]: BrightnessEvent: disp=0, physDisp=local:0, brt=0.05, initBrt=0.05, rcmdBrt=NaN, preBrt=NaN, lux=0.0, preLux=0.0, hbmMax=1.0, hbmMode=off, rbcStrength=50, powerFactor=1.0, thrmMax=1.0, wasShortTermModelActive=false, flags=, reason=manual [ dim ], autoBrightness=false
+10-30 02:19:36.503  1732  1781 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:19:42.510  1732  1781 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:19:48.516  1732  1781 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:19:54.522  1732  1781 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:20:00.539  1732  1781 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:20:06.547  1732  1781 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:20:10.453   289   336 D OomAdjuster: Not killing cached processes
+10-30 02:20:12.553  1732  1781 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:20:18.558  1732  1781 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:20:20.513   289   384 D OomAdjuster: Not killing cached processes
+10-30 02:20:24.559  1732  1781 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:20:30.566  1732  1781 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:20:36.567  1732  1781 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:20:42.615  1732  1781 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:20:49.629  1732  1781 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:20:55.638  1732  1781 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:21:01.685  1732  1781 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:21:07.709  1732  1781 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:21:13.736  1732  1781 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:21:19.738  1732  1781 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:21:25.743  1732  1781 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:21:32.316  1732  1781 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:21:32.492   289   310 I ActivityTaskManager: START u0 {act=android.intent.action.VIEW dat=http://192.168.240.1:8765/... typ=video/mp4 flg=0x10000000 cmp=com.android.gallery3d/.app.MovieActivity (has extras)} from uid 0
+10-30 02:21:32.493   289   310 D CompatibilityChangeReporter: Compat change id reported: 265464455; UID 10093; state: DISABLED
+10-30 02:21:32.493   289   310 D CompatibilityChangeReporter: Compat change id reported: 265452344; UID 10093; state: DISABLED
+10-30 02:21:32.493   289   310 D CompatibilityChangeReporter: Compat change id reported: 266124927; UID 10093; state: DISABLED
+10-30 02:21:32.493   289   310 D CompatibilityChangeReporter: Compat change id reported: 265451093; UID 10093; state: DISABLED
+10-30 02:21:32.493   289   310 D CompatibilityChangeReporter: Compat change id reported: 265456536; UID 10093; state: DISABLED
+10-30 02:21:32.493   289   310 D CompatibilityChangeReporter: Compat change id reported: 255940284; UID 10093; state: DISABLED
+10-30 02:21:32.493   289   310 D CompatibilityChangeReporter: Compat change id reported: 236283604; UID 10093; state: DISABLED
+10-30 02:21:32.494   289   310 D CompatibilityChangeReporter: Compat change id reported: 263959004; UID 10093; state: DISABLED
+10-30 02:21:32.494   289   310 D CompatibilityChangeReporter: Compat change id reported: 264304459; UID 10093; state: DISABLED
+10-30 02:21:32.494   289   310 D CompatibilityChangeReporter: Compat change id reported: 264301586; UID 10093; state: DISABLED
+10-30 02:21:32.494   289   310 D CompatibilityChangeReporter: Compat change id reported: 254631730; UID 10093; state: DISABLED
+10-30 02:21:32.494   289   310 D CompatibilityChangeReporter: Compat change id reported: 273509367; UID 10093; state: DISABLED
+10-30 02:21:32.494   289   310 D CompatibilityChangeReporter: Compat change id reported: 263259275; UID 10093; state: DISABLED
+10-30 02:21:32.499   289   310 D CompatibilityChangeReporter: Compat change id reported: 194480991; UID 10093; state: ENABLED
+10-30 02:21:32.499   289   310 D CompatibilityChangeReporter: Compat change id reported: 174042980; UID 10093; state: DISABLED
+10-30 02:21:32.500   289   310 E CellBroadcastUtils: getDefaultCellBroadcastReceiverPackageName: no package found
+10-30 02:21:32.504   289   310 D CompatibilityChangeReporter: Compat change id reported: 184838306; UID 10093; state: DISABLED
+10-30 02:21:32.504   289   310 D CompatibilityChangeReporter: Compat change id reported: 185004937; UID 10093; state: DISABLED
+10-30 02:21:32.504   289   310 D CompatibilityChangeReporter: Compat change id reported: 181136395; UID 10093; state: DISABLED
+10-30 02:21:32.504   289   310 D CompatibilityChangeReporter: Compat change id reported: 174042936; UID 10093; state: DISABLED
+10-30 02:21:32.506   289   310 D CompatibilityChangeReporter: Compat change id reported: 197654537; UID 10093; state: DISABLED
+10-30 02:21:32.508   289   310 D CompatibilityChangeReporter: Compat change id reported: 205907456; UID 10093; state: DISABLED
+10-30 02:21:32.520   289   327 D CompatibilityChangeReporter: Compat change id reported: 135634846; UID 10093; state: DISABLED
+10-30 02:21:32.522   289   337 D CompatibilityChangeReporter: Compat change id reported: 143937733; UID 10093; state: DISABLED
+10-30 02:21:32.529   508   870 W Parcel  : Expecting binder but got null!
+10-30 02:21:32.529   289   327 D OomAdjuster: Not killing cached processes
+10-30 02:21:32.530   289   310 D CompatibilityChangeReporter: Compat change id reported: 168419799; UID 10093; state: DISABLED
+10-30 02:21:32.531   289   310 D CompatibilityChangeReporter: Compat change id reported: 273564678; UID 10093; state: DISABLED
+10-30 02:21:32.540   289   340 W libprocessgroup: Failed to open /dev/stune/top-app/cgroup.procs: No such file or directory
+10-30 02:21:32.540   289   340 W libprocessgroup: Failed to open /dev/cpuset/top-app/cgroup.procs: No such file or directory
+10-30 02:21:32.540   289   340 W libprocessgroup: Failed to open /dev/blkio//cgroup.procs: No such file or directory
+10-30 02:21:32.540   289   310 D CoreBackPreview: Window{949fa94 u0 com.android.gallery3d/SplashScreen}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@d98e532, mPriority=0}
+10-30 02:21:32.545    71    71 D Zygote  : Forked child process 1847
+10-30 02:21:32.550  1847  1847 E libprocessgroup: Failed to make and chown /sys/fs/cgroup/uid_10093: Read-only file system
+10-30 02:21:32.550  1847  1847 W Zygote  : createProcessGroup failed, kernel missing CONFIG_CGROUP_CPUACCT?
+10-30 02:21:32.551   289   337 I ActivityManager: Start proc 1847:com.android.gallery3d/u0a93 for next-top-activity {com.android.gallery3d/com.android.gallery3d.app.MovieActivity}
+10-30 02:21:32.553  1847  1847 W droid.gallery3d: Unexpected CPU variant for x86: x86_64.
+10-30 02:21:32.553  1847  1847 W droid.gallery3d: Known variants: atom, sandybridge, silvermont, kabylake, default
+10-30 02:21:32.567  1847  1847 E droid.gallery3d: Not starting debugger since process cannot load the jdwp agent.
+10-30 02:21:32.602  1847  1847 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10093; state: DISABLED
+10-30 02:21:32.623  1847  1847 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+10-30 02:21:32.679  1847  1847 V GraphicsEnvironment: ANGLE Developer option for 'com.android.gallery3d' set to: 'default'
+10-30 02:21:32.680  1847  1847 V GraphicsEnvironment: ANGLE GameManagerService for com.android.gallery3d: false
+10-30 02:21:32.682  1847  1847 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-30 02:21:32.689  1847  1847 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+10-30 02:21:32.690  1847  1847 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+10-30 02:21:32.691   508   870 E OpenGLRenderer: Unable to match the desired swap behavior.
+10-30 02:21:32.801  1847  1863 I ServiceManager: Waydroid: host-AIDL whitelisted: android.hardware.camera.provider.ICameraProvider
+10-30 02:21:32.803  1847  1863 I ServiceManager: Waydroid: host-AIDL whitelisted: android.hardware.graphics.allocator.IAllocator
+10-30 02:21:32.831  1847  1865 D libEGL  : dlopen (libGLESv2_angle.so) success at 0x9e8642431feab20d
+10-30 02:21:32.952   289   310 D ConnectivityService: requestNetwork for uid/pid:10108/508 asUid: 10093 activeRequest: null callbackRequest: 63 [NetworkRequest [ REQUEST id=64, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10093 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+10-30 02:21:32.956   289   450 D ConnectivityService: NetReassign [64 : null → 100]
+10-30 02:21:32.959   289   449 D EthernetNetworkFactory: eth0: onNetworkUnneeded for request: NetworkRequest [ REQUEST id=62, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10125 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 02:21:32.959   289   449 D EthernetNetworkFactory: eth0: onNetworkNeeded for request: NetworkRequest [ REQUEST id=64, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10093 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 02:21:32.959   289   449 D EthernetNetworkFactory: IpClient already started
+10-30 02:21:32.960   689   689 D PhoneSwitcherNetworkRequstListener: got request NetworkRequest [ REQUEST id=64, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10093 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 02:21:32.961   289   442 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=64, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10093 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 02:21:32.961   289   442 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=64, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10093 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 02:21:32.962   289   442 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=64, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10093 RequestorUid: 10108 RequestorPkg: com.android.systemui UnderlyingNetworks: Null] ]
+10-30 02:21:33.063  1847  1847 I android_os_HwBinder: HwBinder: Starting hwbinderthread pool for getting: vendor.waydroid.window@1.1::IWaydroidWindow/default
+10-30 02:21:33.161  1847  1847 D CompatibilityChangeReporter: Compat change id reported: 210923482; UID 10093; state: DISABLED
+10-30 02:21:33.162  1847  1847 D CompatibilityChangeReporter: Compat change id reported: 37756858; UID 10093; state: ENABLED
+10-30 02:21:33.173   289   552 D CompatibilityChangeReporter: Compat change id reported: 161145287; UID 10093; state: DISABLED
+10-30 02:21:33.198  1847  1847 W BlobCache: cannot read header
+10-30 02:21:33.200  1847  1847 W AudioManager: Use of stream types is deprecated for operations other than volume control
+10-30 02:21:33.200  1847  1847 W AudioManager: See the documentation of requestAudioFocus() for what to use instead with android.media.AudioAttributes to qualify your playback use case
+10-30 02:21:33.214   289   552 I MediaFocusControl: requestAudioFocus() from uid/pid 10093/1847 AA=USAGE_MEDIA/CONTENT_TYPE_MUSIC clientId=android.media.AudioManager@75ba66com.android.gallery3d.app.MoviePlayer$14@1cfa1a7 callingPack=com.android.gallery3d req=2 flags=0x0 sdk=29
+10-30 02:21:33.216   289   552 I AudioService.FadeOutManager: unfadeOutUid() uid:10093
+10-30 02:21:33.223  1847  1847 D CodeauroraVideoView: setVideoURI uri = http://192.168.240.1:8765/archtv-av-test.mp4?run=5-14901
+10-30 02:21:33.228  1847  1847 W AudioManager: Use of stream types is deprecated for operations other than volume control
+10-30 02:21:33.228  1847  1847 W AudioManager: See the documentation of requestAudioFocus() for what to use instead with android.media.AudioAttributes to qualify your playback use case
+10-30 02:21:33.232   289   310 I MediaFocusControl: requestAudioFocus() from uid/pid 10093/1847 AA=USAGE_MEDIA/CONTENT_TYPE_MUSIC clientId=android.media.AudioManager@75ba66com.android.gallery3d.app.MoviePlayer$14@1cfa1a7 callingPack=com.android.gallery3d req=2 flags=0x0 sdk=29
+10-30 02:21:33.249   289   358 V DisplayPowerController[0]: Brightness [0.39763778] reason changing to: 'manual', previous reason: 'manual [ dim ]'.
+10-30 02:21:33.249   289   358 I DisplayPowerController[0]: BrightnessEvent: disp=0, physDisp=local:0, brt=0.39763778, initBrt=0.05, rcmdBrt=NaN, preBrt=NaN, lux=0.0, preLux=0.0, hbmMax=1.0, hbmMode=off, rbcStrength=50, powerFactor=1.0, thrmMax=1.0, wasShortTermModelActive=false, flags=, reason=manual, autoBrightness=false
+10-30 02:21:33.270  1847  1847 D CompatibilityChangeReporter: Compat change id reported: 237531167; UID 10093; state: DISABLED
+10-30 02:21:33.281  1847  1863 W Parcel  : Expecting binder but got null!
+10-30 02:21:33.286   289   552 W WindowManager: Failed looking up window session=Session{1c7aa60 1847:u0a10093} callers=com.android.server.wm.WindowManagerService.windowForClientLocked:6068 com.android.server.wm.Session.updateRequestedVisibilities:707 android.view.IWindowSession$Stub.onTransact:1075 
+10-30 02:21:33.298   289   552 D CoreBackPreview: Window{b2e1dbf u0 com.android.gallery3d/com.android.gallery3d.app.MovieActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@8892fd5, mPriority=0}
+10-30 02:21:33.366   102   234 W ServiceManager: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10093 pid=0
+10-30 02:21:33.366   102   234 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10093 => denied (1505 us)
+10-30 02:21:33.368   102  1020 W ServiceManager: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10093 pid=1847
+10-30 02:21:33.368   102  1020 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10093 => denied (2860 us)
+10-30 02:21:33.372   102   234 W ServiceManager: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10093 pid=0
+10-30 02:21:33.372   102   234 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10093 => denied (5709 us)
+10-30 02:21:33.376   102   234 W ServiceManager: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10093 pid=0
+10-30 02:21:33.376   102   234 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10093 => denied (3524 us)
+10-30 02:21:33.378   102  1020 W ServiceManager: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10093 pid=1847
+10-30 02:21:33.378   102  1020 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10093 => denied (10027 us)
+10-30 02:21:33.398  1847  1863 D libEGL  : dlopen (libGLESv2_angle.so) success at 0x9e8642431feab20d
+10-30 02:21:33.437  1847  1847 V MediaHTTPService: MediaHTTPService(android.media.MediaHTTPService@5f38c25): Cookies: null
+10-30 02:21:33.452   185   800 D NuPlayerDriver: NuPlayerDriver(0xf78012a0) created, clientPid(1847)
+10-30 02:21:33.463   185   800 D SurfaceUtils: connecting to surface 0xf1dc1948, reason setVideoSurfaceTexture
+10-30 02:21:33.466   185  1876 D NuPlayer: onSetVideoSurface(0xf1dc3270, no video decoder)
+10-30 02:21:33.468  1847  1847 W MediaPlayer: Use of stream types is deprecated for operations other than volume control
+10-30 02:21:33.468  1847  1847 W MediaPlayer: See the documentation of setAudioStreamType() for what to use instead with android.media.AudioAttributes to qualify your playback use case
+10-30 02:21:33.479  1847  1847 E SurfaceSyncer: Failed to find sync for id=0
+10-30 02:21:33.481  1847  1874 V MediaHTTPService: makeHTTPConnection: CookieManager created: java.net.CookieManager@26263c6
+10-30 02:21:33.481  1847  1874 V MediaHTTPService: makeHTTPConnection(android.media.MediaHTTPService@5f38c25): cookieHandler: java.net.CookieManager@26263c6 Cookies: null
+10-30 02:21:33.494  1847  1863 D vulkan  : searching for layers in '/system/product/app/Gallery2/lib/x86_64'
+10-30 02:21:33.497  1847  1874 D TrafficStats: tagSocket(73) with statsTag=0xffffffff, statsUid=-1
+10-30 02:21:33.498  1847  1863 D vulkan  : searching for layers in '/system/product/app/Gallery2/Gallery2.apk!/lib/x86_64'
+10-30 02:21:33.499  1847  1863 D vulkan  : searching for layers in '/system/lib64'
+10-30 02:21:33.499  1847  1863 D vulkan  : searching for layers in '/system/system_ext/lib64'
+10-30 02:21:33.500  1847  1863 D vulkan  : searching for layers in '/system/product/lib64'
+10-30 02:21:33.515  1847  1863 W libEGL  : ANGLE Warn:vulkan_icd.cpp:311 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.
+10-30 02:21:33.529  1847  1863 I ANGLE   : Version (2.1.20440 git hash: 353815e0d958), Renderer (Vulkan 1.2.0 (SwiftShader Device (LLVM 10.0.0) (0x0000C0DE)))
+10-30 02:21:33.530    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-30 02:21:33.530  1847  1863 I Gralloc4: mapper 4.x is not supported
+10-30 02:21:33.531    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@3.0::IMapper/default in either framework or device VINTF manifest.
+10-30 02:21:33.532  1847  1863 W Gralloc3: mapper 3.x is not supported
+10-30 02:21:33.535    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.allocator@4.0::IAllocator/default in either framework or device VINTF manifest.
+10-30 02:21:33.535    19    19 I servicemanager: Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest.
+10-30 02:21:33.535  1847  1863 W ProcessState: Waydroid: host binder driver /dev/host_binder unavailable; host-AIDL passthrough disabled
+10-30 02:21:33.536  1847  1863 W ServiceManager: Waydroid: host ProcessState unavailable for android.hardware.graphics.allocator.IAllocator/default
+10-30 02:21:33.536  1847  1863 E Gralloc4: AIDL IAllocator declared but failed to get service
+10-30 02:21:33.536  1847  1863 W Gralloc4: allocator 4.x is not supported
+10-30 02:21:33.536    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.allocator@3.0::IAllocator/default in either framework or device VINTF manifest.
+10-30 02:21:33.536  1847  1863 W Gralloc3: allocator 3.x is not supported
+10-30 02:21:33.561   102   234 E HWComposer: getSupportedContentTypes: getSupportedContentTypes failed for display 0: Unsupported (8)
+10-30 02:21:33.578   179   855 D MediaBufferGroup: creating MemoryDealer
+10-30 02:21:33.599  1847  1863 E OpenGLRenderer: Unable to match the desired swap behavior.
+10-30 02:21:33.747   185  1879 I NuCachedSource2: caching reached eos.
+10-30 02:21:33.943   289   358 I DisplayPowerController[0]: BrightnessEvent: disp=0, physDisp=local:0, brt=0.39763778, initBrt=0.39763778, rcmdBrt=NaN, preBrt=NaN, lux=0.0, preLux=0.0, hbmMax=1.0, hbmMode=off, rbcStrength=50, powerFactor=1.0, thrmMax=1.0, wasShortTermModelActive=false, flags=, reason=manual, autoBrightness=false
+10-30 02:21:34.705    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-30 02:21:34.707    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@3.0::IMapper/default in either framework or device VINTF manifest.
+10-30 02:21:34.723  1847  1847 I Choreographer: Skipped 85 frames!  The application may be doing too much work on its main thread.
+10-30 02:21:34.745  1847  1874 I OpenGLRenderer: Davey! duration=1441ms; Flags=1, FrameTimelineVsyncId=22240, IntendedVsync=2879893831003, Vsync=2879910526606, InputEventId=0, HandleInputStart=2879914548563, AnimationStart=2879914549445, PerformTraversalsStart=2879914549810, DrawStart=2880214195979, FrameDeadline=2879914497669, FrameInterval=2879914545481, FrameStartTime=16695603, SyncQueued=2880221348399, SyncStart=2880222264420, IssueDrawCommandsStart=2880222599592, SwapBuffers=2880321526945, FrameCompleted=2881335925610, DequeueBufferDuration=0, QueueBufferDuration=1317080, GpuCompleted=2880321526945, SwapBuffersCompleted=2881335925610, DisplayPresentTime=0, CommandSubmissionCompleted=2880321526945, 
+10-30 02:21:34.785   289   324 I ActivityTaskManager: Displayed com.android.gallery3d/.app.MovieActivity: +2s257ms
+10-30 02:21:34.812  1847  1847 D MediaPlayerNative: getMetadata
+10-30 02:21:34.814  1847  1847 V CodeauroraVideoView: surfaceChanged() start()
+10-30 02:21:34.849  1847  1847 D MediaPlayerNative: getMetadata
+10-30 02:21:34.860   185  1876 I GenericSource: start
+10-30 02:21:34.864  1847  1847 D MediaPlayerNative: getMetadata
+10-30 02:21:34.934  1847  1874 I OpenGLRenderer: Davey! duration=1487ms; Flags=0, FrameTimelineVsyncId=22262, IntendedVsync=2879910526606, Vsync=2881329652861, InputEventId=0, HandleInputStart=2881338406391, AnimationStart=2881338407025, PerformTraversalsStart=2881338561484, DrawStart=2881338609166, FrameDeadline=2880348583347, FrameInterval=2881338344129, FrameStartTime=16695603, SyncQueued=2881338687556, SyncStart=2881338747579, IssueDrawCommandsStart=2881338940731, SwapBuffers=2881345045435, FrameCompleted=2881398548881, DequeueBufferDuration=13591, QueueBufferDuration=1490227, GpuCompleted=2881345045435, SwapBuffersCompleted=2881398548881, DisplayPresentTime=0, CommandSubmissionCompleted=2881345045435, 
+10-30 02:21:35.096   185  1897 I OMXClient: IOmx service obtained
+10-30 02:21:35.098   190   840 I OMXStore: makeComponentInstance(OMX.google.h264.decoder) in android.hardwar process
+10-30 02:21:35.158   185  1895 D SurfaceUtils: disconnecting from surface 0xf1dc3278, reason onConfigure
+10-30 02:21:35.181   185  1896 D MediaCodec: flushMediametrics
+10-30 02:21:35.182   185  1901 I OMXClient: IOmx service obtained
+10-30 02:21:35.182   190   840 I OMXStore: makeComponentInstance(OMX.google.aac.decoder) in android.hardwar process
+10-30 02:21:35.189   185  1896 D SurfaceUtils: connecting to surface 0xf1dc3278, reason connectToSurface
+10-30 02:21:35.196   289   325 D MediaSessionService: Sending KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_MEDIA_PLAY, scanCode=0, metaState=0, flags=0x0, repeatCount=0, eventTime=2881770000000, downTime=2881770000000, deviceId=-1, source=0x0, displayId=-1 } to org.videolan.vlc/VLC (userId=0)
+10-30 02:21:35.198   185  1901 D MediaCodec: flushMediametrics
+10-30 02:21:35.205   185  1896 I MediaCodec: [OMX.google.h264.decoder] setting surface generation to 189441
+10-30 02:21:35.205   185  1896 D SurfaceUtils: disconnecting from surface 0xf1dc3278, reason connectToSurface(reconnect)
+10-30 02:21:35.214   190   190 E OMXNodeInstance: setConfig(0xf5640940:google.aac.decoder, ConfigPriority(0x6f800002)) ERROR: Undefined(0x80001001)
+10-30 02:21:35.214   185  1901 I ACodec  : codec does not support config priority (err -2147483648)
+10-30 02:21:35.217   185  1896 D SurfaceUtils: connecting to surface 0xf1dc3278, reason connectToSurface(reconnect)
+10-30 02:21:35.235   289   325 I MediaSessionService: tempAllowlistTargetPkgIfPossible callingPackage:android targetPackage:org.videolan.vlc reason:action=ACTION_DOWN;code=KEYCODE_MEDIA_PLAY [WIU] [FGS]
+10-30 02:21:35.242   190   190 E OMXNodeInstance: getConfig(0xf5640940:google.aac.decoder, ConfigAndroidVendorExtension(0x6f100004)) ERROR: Undefined(0x80001001)
+10-30 02:21:35.245   190   840 D SoftAAC2: get OMX_IndexParamAudioAndroidAacDrcPresentation
+10-30 02:21:35.254   289   325 D MediaSessionService: Sending KeyEvent { action=ACTION_UP, keyCode=KEYCODE_MEDIA_PLAY, scanCode=0, metaState=0, flags=0x0, repeatCount=0, eventTime=2881770000000, downTime=2881770000000, deviceId=-1, source=0x0, displayId=-1 } to org.videolan.vlc/VLC (userId=0)
+10-30 02:21:35.255   185  1901 I MediaCodec: MediaCodec will operate in async mode
+10-30 02:21:35.256   185  1900 D MediaCodec: keep callback message for reclaim
+10-30 02:21:35.260   289   325 I MediaSessionService: tempAllowlistTargetPkgIfPossible callingPackage:android targetPackage:org.videolan.vlc reason:action=ACTION_UP;code=KEYCODE_MEDIA_PLAY [WIU] [FGS]
+10-30 02:21:35.267   190   190 E OMXNodeInstance: getExtensionIndex(0xf5641660:google.h264.decoder, OMX.google.android.index.enableAndroidNativeBuffers) ERROR: UnsupportedIndex(0x8000101a)
+10-30 02:21:35.268   185  1897 E ACodec  : [OMX.google.h264.decoder] setPortMode on output to DynamicANWBuffer failed w/ err -1010
+10-30 02:21:35.271   190   190 E OMXNodeInstance: getParameter(0xf5641660:google.h264.decoder, ??(0x6f600011)) ERROR: UnsupportedIndex(0x8000101a)
+10-30 02:21:35.276   190   190 W OMXNodeInstance: [0xf5641660:google.h264.decoder] component does not support metadata mode; using fallback
+10-30 02:21:35.348   190   542 D SoftVideoDecoderOMXComponent: Color Aspects preference: 1 
+10-30 02:21:35.354  1732  1732 W VLC/VLCApplication: onTrimMemory, level: 20
+10-30 02:21:35.395   190   542 E OMXNodeInstance: setConfig(0xf5641660:google.h264.decoder, ConfigPriority(0x6f800002)) ERROR: UnsupportedIndex(0x8000101a)
+10-30 02:21:35.401   185  1897 I ACodec  : codec does not support config priority (err -1010)
+10-30 02:21:35.403   190   542 E OMXNodeInstance: setConfig(0xf5641660:google.h264.decoder, ConfigOperatingRate(0x6f800003)) ERROR: UnsupportedIndex(0x8000101a)
+10-30 02:21:35.407   102   126 W TransactionTracing: Could not find layer handle 0x7fbf6c625fb0
+10-30 02:21:35.407   185  1897 I ACodec  : codec does not support config operating rate (err -1010)
+10-30 02:21:35.418   190   542 E OMXNodeInstance: getConfig(0xf5641660:google.h264.decoder, ConfigAndroidVendorExtension(0x6f100004)) ERROR: UnsupportedIndex(0x8000101a)
+10-30 02:21:35.444   190   542 E OMXNodeInstance: getConfig(0xf5641660:google.h264.decoder, ??(0x7f000003)) ERROR: UnsupportedSetting(0x80001019)
+10-30 02:21:35.454   185  1896 I MediaCodec: MediaCodec will operate in async mode
+10-30 02:21:35.458   185  1895 D MediaCodec: keep callback message for reclaim
+10-30 02:21:35.554   289  1102 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+10-30 02:21:35.558   289   344 W BatteryExternalStatsWorker: error reading Bluetooth stats: 9
+10-30 02:21:35.562   689   689 E PhoneInterfaceManager: [PhoneIntfMgr] queryModemActivityInfo: Empty response
+10-30 02:21:35.563   289   310 W BatteryExternalStatsWorker: error reading modem stats:ERROR_INVALID_INFO_RECEIVED
+10-30 02:21:35.563   289   344 W KernelCpuProcStringReader: File not found. It's normal if not implemented: /proc/uid_cputime/show_uid_stat
+10-30 02:21:35.563   289   344 W KernelCpuProcStringReader: File not found. It's normal if not implemented: /proc/uid_time_in_state
+10-30 02:21:35.563   289   344 W KernelCpuProcStringReader: File not found. It's normal if not implemented: /proc/uid_concurrent_active_time
+10-30 02:21:35.563   289   344 W KernelCpuProcStringReader: File not found. It's normal if not implemented: /proc/uid_concurrent_policy_time
+10-30 02:21:35.563   289   344 E KernelCpuSpeedReader: Failed to read cpu-freq: /sys/devices/system/cpu/cpu0/cpufreq/stats/time_in_state: open failed: ENOENT (No such file or directory)
+10-30 02:21:35.563   289   344 E system_server: Cannot obtain CPU frequency count
+10-30 02:21:35.564   289   344 E system_server: Cannot obtain CPU frequency count
+10-30 02:21:35.564   289   344 E system_server: Cannot obtain CPU frequency count
+10-30 02:21:35.564   289   344 E system_server: Cannot read thread CPU times for PID 289
+10-30 02:21:35.567   190  1903 I SoftAAC2: Reconfiguring decoder: 0->48000 Hz, 0->1 channels
+10-30 02:21:35.578   190   542 D SoftAAC2: get OMX_IndexParamAudioAndroidAacDrcPresentation
+10-30 02:21:35.607   185  1896 W ResourceManagerService: Ignoring request to add new resource entry with value <= 0
+10-30 02:21:35.615   289   310 I ActivityManager: Background started FGS: Allowed [callingPackage: org.videolan.vlc; callingUid: 10125; uidState: SVC ; intent: Intent { cmp=org.videolan.vlc/.PlaybackService }; code:TEMP_ALLOWED_WHILE_IN_USE; tempAllowListReason:<action=ACTION_UP;code=KEYCODE_MEDIA_PLAY,reasonCode:MEDIA_SESSION_CALLBACK,duration:10000,callingUid:1000>; targetSdkVersion:36; callerTargetSdkVersion:36; startForegroundCount:2; bindFromPackage:null]
+10-30 02:21:35.645   190   190 E OMXNodeInstance: setConfig(0xf5641660:google.h264.decoder, ConfigOperatingRate(0x6f800003)) ERROR: UnsupportedIndex(0x8000101a)
+10-30 02:21:35.646   185  1897 I ACodec  : codec does not support config operating rate (err -1010)
+10-30 02:21:35.650   190  1898 D SoftVideoDecoderOMXComponent: Color Aspects preference: 1 
+10-30 02:21:35.682   190   573 E OMXNodeInstance: getConfig(0xf5641660:google.h264.decoder, ??(0x7f000003)) ERROR: UnsupportedSetting(0x80001019)
+10-30 02:21:35.738  1732  1732 D CompatibilityChangeReporter: Compat change id reported: 147798919; UID 10125; state: ENABLED
+10-30 02:21:35.745   289   310 E NotificationService: Suppressing toast from package org.videolan.vlc by user request.
+10-30 02:21:35.753   185  1896 D MediaCodec: [OMX.google.h264.decoder] setting dataspace on output surface to #103
+10-30 02:21:35.804   289   310 I MediaSessionStack: removeSession | record: org.videolan.vlc/VLC (userId=0)
+10-30 02:21:35.804   289   310 D MediaSessionService: Media button session is changed to null
+10-30 02:21:35.813  1732  1759 D VLC     : [00007f5288811da0/6df] libvlc audio output: removing module "opensles_android"
+10-30 02:21:35.831    92  1707 W AudioFlinger: createTrack_l(): mismatch between requested flags (00000008) and output flags (00000002)
+10-30 02:21:35.837    92  1707 D AudioFlinger: Client defaulted notificationFrames to 12288 for frameCount 24576
+10-30 02:21:35.855    92  1707 D AF::TrackHandle: OpPlayAudio: track:57 usage:1 not muted
+10-30 02:21:35.863   289   552 D MediaSessionService: Unknown session changed playback state. Ignoring.
+10-30 02:21:35.918  1732  1732 E ActivityThread: Service org.videolan.vlc.PlaybackService has leaked IntentReceiver androidx.car.app.connection.CarConnectionTypeLiveData$CarConnectionBroadcastReceiver@8cc8b8f that was originally registered here. Are you missing a call to unregisterReceiver()?
+10-30 02:21:35.918  1732  1732 E ActivityThread: android.app.IntentReceiverLeaked: Service org.videolan.vlc.PlaybackService has leaked IntentReceiver androidx.car.app.connection.CarConnectionTypeLiveData$CarConnectionBroadcastReceiver@8cc8b8f that was originally registered here. Are you missing a call to unregisterReceiver()?
+10-30 02:21:35.918  1732  1732 E ActivityThread: 	at android.app.LoadedApk$ReceiverDispatcher.<init>(LoadedApk.java:1828)
+10-30 02:21:35.918  1732  1732 E ActivityThread: 	at android.app.LoadedApk.getReceiverDispatcher(LoadedApk.java:1601)
+10-30 02:21:35.918  1732  1732 E ActivityThread: 	at android.app.ContextImpl.registerReceiverInternal(ContextImpl.java:1798)
+10-30 02:21:35.918  1732  1732 E ActivityThread: 	at android.app.ContextImpl.registerReceiver(ContextImpl.java:1757)
+10-30 02:21:35.918  1732  1732 E ActivityThread: 	at android.app.ContextImpl.registerReceiver(ContextImpl.java:1744)
+10-30 02:21:35.918  1732  1732 E ActivityThread: 	at android.content.ContextWrapper.registerReceiver(ContextWrapper.java:753)
+10-30 02:21:35.918  1732  1732 E ActivityThread: 	at androidx.car.app.connection.CarConnectionTypeLiveData$Api33Impl.registerExportedReceiver(CarConnectionTypeLiveData.java:138)
+10-30 02:21:35.918  1732  1732 E ActivityThread: 	at androidx.car.app.connection.CarConnectionTypeLiveData.onActive(CarConnectionTypeLiveData.java:69)
+10-30 02:21:35.918  1732  1732 E ActivityThread: 	at androidx.lifecycle.LiveData.changeActiveCounter(LiveData.java:405)
+10-30 02:21:35.918  1732  1732 E ActivityThread: 	at androidx.lifecycle.LiveData$ObserverWrapper.activeStateChanged(LiveData.java:481)
+10-30 02:21:35.918  1732  1732 E ActivityThread: 	at androidx.lifecycle.LiveData.observeForever(LiveData.java:234)
+10-30 02:21:35.918  1732  1732 E ActivityThread: 	at org.videolan.vlc.PlaybackService.onCreate(PlaybackService.kt:788)
+10-30 02:21:35.918  1732  1732 E ActivityThread: 	at android.app.ActivityThread.handleCreateService(ActivityThread.java:4486)
+10-30 02:21:35.918  1732  1732 E ActivityThread: 	at android.app.ActivityThread.-$$Nest$mhandleCreateService(Unknown Source:0)
+10-30 02:21:35.918  1732  1732 E ActivityThread: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2161)
+10-30 02:21:35.918  1732  1732 E ActivityThread: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+10-30 02:21:35.918  1732  1732 E ActivityThread: 	at android.os.Looper.loopOnce(Looper.java:201)
+10-30 02:21:35.918  1732  1732 E ActivityThread: 	at android.os.Looper.loop(Looper.java:288)
+10-30 02:21:35.918  1732  1732 E ActivityThread: 	at android.app.ActivityThread.main(ActivityThread.java:7924)
+10-30 02:21:35.918  1732  1732 E ActivityThread: 	at java.lang.reflect.Method.invoke(Native Method)
+10-30 02:21:35.918  1732  1732 E ActivityThread: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:548)
+10-30 02:21:35.918  1732  1732 E ActivityThread: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:937)
+10-30 02:21:35.992  1847  1886 W MediaPlayerNative: info/warning (3, 0)
+10-30 02:21:35.999    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-30 02:21:36.000   185  1896 I Gralloc4: mapper 4.x is not supported
+10-30 02:21:36.002    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@3.0::IMapper/default in either framework or device VINTF manifest.
+10-30 02:21:36.002   185  1896 W Gralloc3: mapper 3.x is not supported
+10-30 02:21:36.025   185  1896 D SoftwareRenderer: setting dataspace on output surface to #8000103
+10-30 02:21:36.590    92   238 W AudioFlinger: write blocked for 602 msecs, 7 delayed writes, thread 13
+10-30 02:21:36.646   508   683 I Choreographer: Skipped 110 frames!  The application may be doing too much work on its main thread.
+10-30 02:21:36.709   508   839 I OpenGLRenderer: Davey! duration=1864ms; Flags=0, FrameTimelineVsyncId=22539, IntendedVsync=2881393785067, Vsync=2881393785067, InputEventId=0, HandleInputStart=2881395744175, AnimationStart=2881395744837, PerformTraversalsStart=2881395966398, DrawStart=2881408899381, FrameDeadline=2881414451733, FrameInterval=2881395742542, FrameStartTime=16666666, SyncQueued=2881410065846, SyncStart=2881410127853, IssueDrawCommandsStart=2881411077642, SwapBuffers=2881485083178, FrameCompleted=2883258686459, DequeueBufferDuration=16577, QueueBufferDuration=3061938, GpuCompleted=2881485083178, SwapBuffersCompleted=2883258686459, DisplayPresentTime=139990164045824, CommandSubmissionCompleted=2881485083178, 
+10-30 02:21:36.895   289   381 D CoreBackPreview: Window{949fa94 u0 com.android.gallery3d/SplashScreen EXITING}: Setting back callback null
+10-30 02:21:36.903   289   552 W InputManager-JNI: Input channel object '949fa94 com.android.gallery3d/SplashScreen (client)' was disposed without first being removed with the input manager!
+10-30 02:21:37.124   102   126 W TransactionTracing: Could not find layer handle 0x7fbf6c6549f0
+10-30 02:21:37.124   102   126 W TransactionTracing: Could not find layer handle 0x7fbf6c641190
+10-30 02:21:37.124   102   126 W TransactionTracing: Could not find layer handle 0x7fbf6c6376b0
+10-30 02:21:37.124   102   126 W TransactionTracing: Could not find layer handle 0x7fbf6c626c10
+10-30 02:21:38.360  1732  1781 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:21:38.948  1978  1978 I ServiceManager: Waydroid: host-AIDL whitelisted: android.hardware.camera.provider.ICameraProvider
+10-30 02:21:38.949  1978  1978 I ServiceManager: Waydroid: host-AIDL whitelisted: android.hardware.graphics.allocator.IAllocator
+10-30 02:21:38.965  1978  1978 W ProcessState: Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+10-30 02:21:39.033    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-30 02:21:39.035  1978  1983 I Gralloc4: mapper 4.x is not supported
+10-30 02:21:39.047    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@3.0::IMapper/default in either framework or device VINTF manifest.
+10-30 02:21:39.049  1978  1983 W Gralloc3: mapper 3.x is not supported
+10-30 02:21:39.292  1847  1847 I Choreographer: Skipped 100 frames!  The application may be doing too much work on its main thread.
+10-30 02:21:39.350  1847  1859 I OpenGLRenderer: Davey! duration=1699ms; Flags=0, FrameTimelineVsyncId=22831, IntendedVsync=2884193961083, Vsync=2884193961083, InputEventId=0, HandleInputStart=2884195897975, AnimationStart=2884195899392, PerformTraversalsStart=2884195899791, DrawStart=2884195966147, FrameDeadline=2884214627749, FrameInterval=2884195895710, FrameStartTime=16666666, SyncQueued=2884196306617, SyncStart=2884208024246, IssueDrawCommandsStart=2884208132592, SwapBuffers=2884386952696, FrameCompleted=2885905329604, DequeueBufferDuration=10333, QueueBufferDuration=912593, GpuCompleted=2884386952696, SwapBuffersCompleted=2885905329604, DisplayPresentTime=0, CommandSubmissionCompleted=2884386952696, 
+10-30 02:21:39.481  1847  1859 I OpenGLRenderer: Davey! duration=1756ms; Flags=0, FrameTimelineVsyncId=22847, IntendedVsync=2884227294415, Vsync=2885893961015, InputEventId=0, HandleInputStart=2885906672008, AnimationStart=2885906672672, PerformTraversalsStart=2885906673058, DrawStart=2885906735281, FrameDeadline=2885931294347, FrameInterval=2885906517697, FrameStartTime=16666666, SyncQueued=2885920543119, SyncStart=2885975250810, IssueDrawCommandsStart=2885976059737, SwapBuffers=2885977429278, FrameCompleted=2886038895272, DequeueBufferDuration=15288, QueueBufferDuration=9977918, GpuCompleted=2885977429278, SwapBuffersCompleted=2886038895272, DisplayPresentTime=0, CommandSubmissionCompleted=2885977429278, 
+10-30 02:21:40.184  1847  1847 I Choreographer: Skipped 35 frames!  The application may be doing too much work on its main thread.
+10-30 02:21:43.666  2096  2096 I ServiceManager: Waydroid: host-AIDL whitelisted: android.hardware.camera.provider.ICameraProvider
+10-30 02:21:43.666  2096  2096 I ServiceManager: Waydroid: host-AIDL whitelisted: android.hardware.graphics.allocator.IAllocator
+10-30 02:21:43.707  2096  2096 W ProcessState: Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+10-30 02:21:43.778    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-30 02:21:43.781  2096  2109 I Gralloc4: mapper 4.x is not supported
+10-30 02:21:43.783    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@3.0::IMapper/default in either framework or device VINTF manifest.
+10-30 02:21:43.784  2096  2109 W Gralloc3: mapper 3.x is not supported
+10-30 02:21:44.372  1732  1781 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:21:45.292   289   384 D OomAdjuster: Not killing cached processes
+10-30 02:21:45.927    92   238 W AudioFlinger: write blocked for 422 msecs, 8 delayed writes, thread 13
+10-30 02:21:50.386  1732  1781 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:21:56.393  1732  1781 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:22:00.017    92   238 W AudioFlinger: write blocked for 987 msecs, 9 delayed writes, thread 13
+10-30 02:22:00.018   185  1894 W NuPlayerRenderer: getPendingAudioPlayoutDurationUs: pendingUs -412039 < 0, clamping to zero, potential resume after pause writtenAudioDurationUs: 19690666, audioSinkPlayedUs: 20102705

@@ -12,7 +12,10 @@ mode = sys.argv[2]
 assert mode in ('start', 'vlc', 'home', 'resume', 'android')
 log = report / 'compositor.log'
 def text():
-    return log.read_text(errors='replace')
+    try:
+        return log.read_text(errors='replace')
+    except FileNotFoundError:
+        return ''
 def wait_for(predicate, message, timeout=12):
     end = time.monotonic() + timeout
     while time.monotonic() < end:

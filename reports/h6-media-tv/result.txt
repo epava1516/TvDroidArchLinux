@@ -1,0 +1,4 @@
+PARTIAL: VLC TV/software profile; video content timestamp advanced from 4.467 s to 8.733 s.
+AudioTrack/PipeWire stream existed, but continuous monitor tone was not verified; timing resets were logged.
+System UI ANR was visible during captures. This is not a multimedia or stability PASS.
+The user subsequently reported a full VM hang and rebooted; see reports/h6-reboot/.

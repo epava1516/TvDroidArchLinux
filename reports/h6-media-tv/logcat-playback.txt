@@ -1,0 +1,1017 @@
+--------- beginning of main
+10-30 02:14:43.071  1637  1637 V GraphicsEnvironment: ANGLE Developer option for 'org.lineageos.waydroidupdater' set to: 'default'
+10-30 02:14:43.073  1637  1637 V GraphicsEnvironment: ANGLE GameManagerService for org.lineageos.waydroidupdater: false
+10-30 02:14:43.075  1637  1637 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-30 02:14:43.093  1637  1637 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+10-30 02:14:43.094  1637  1637 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+--------- beginning of system
+10-30 02:14:43.136   289   552 I ActivityManager: Finished processing BOOT_COMPLETED for u0
+10-30 02:14:43.137   289   552 I BroadcastQueue: BOOT_COMPLETED_BROADCAST_COMPLETION_LATENCY_REPORTED action:android.intent.action.BOOT_COMPLETED dispatchLatency:5401 completeLatency:20291 dispatchRealLatency:5401 completeRealLatency:20291 receiversSize:36 userId:0 userType:android.os.usertype.full.SYSTEM
+10-30 02:14:43.311  1637  1653 D TrafficStats: tagSocket(56) with statsTag=0xffffffff, statsUid=-1
+10-30 02:14:43.509   202   235 D BootAnimation: Playing files = /product/media/bootanimation.zip/part3, Requested repeat = 1, playUntilComplete = true
+10-30 02:14:43.618   202   235 D BootAnimation: Playing files = /product/media/bootanimation.zip/part4, Requested repeat = 1, playUntilComplete = true
+10-30 02:14:44.732   202   235 D BootAnimation: BootAnimationShownTiming End time: 2471346ms
+10-30 02:14:44.746   289   336 D CompatibilityChangeReporter: Compat change id reported: 168419799; UID 10059; state: DISABLED
+10-30 02:14:44.746   289   336 D CompatibilityChangeReporter: Compat change id reported: 273564678; UID 10059; state: DISABLED
+10-30 02:14:44.749  1552  1552 D CompatibilityChangeReporter: Compat change id reported: 194532703; UID 10059; state: ENABLED
+10-30 02:14:44.751   289   552 D CompatibilityChangeReporter: Compat change id reported: 194532703; UID 10059; state: ENABLED
+10-30 02:14:44.934   202   202 D BootAnimation: BootAnimationStopTiming start time: 2471548ms
+10-30 02:14:47.154  1371  1461 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:14:53.152   289   324 D OomAdjuster: Not killing cached processes
+10-30 02:14:53.161  1371  1461 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:14:53.439  1088  1097 I FuseDaemon: Background concurrent copying GC freed 53380(3784KB) AllocSpace objects, 8(160KB) LOS objects, 90% free, 2559KB/26MB, paused 77us,17us total 279.818ms
+10-30 02:14:57.493  1371  1379 W rg.videolan.vlc: Cleared Reference was only reachable from finalizer (only reported once)
+10-30 02:14:57.538  1371  1381 E PowerManager: WakeLock finalized while still held: VLC:MediaParsingService
+10-30 02:14:57.546   289  1662 I DropBoxManagerService: add tag=data_app_wtf isTagEnabled=true flags=0x2
+10-30 02:14:57.747   289   310 I ActivityTaskManager: START u0 {act=android.intent.action.VIEW dat=http://192.168.240.1:8765/... typ=video/mp4 flg=0x10000000 cmp=org.videolan.vlc/.gui.video.VideoPlayerActivity (has extras)} from uid 0
+10-30 02:14:57.751   289   310 E CellBroadcastUtils: getDefaultCellBroadcastReceiverPackageName: no package found
+10-30 02:14:57.829   289   310 W ActivityTaskManager: Tried to set launchTime (0) < mLastActivityLaunchTime (2460053)
+10-30 02:14:57.861  1371  1667 D libEGL  : dlopen (libGLESv2_angle.so) success at 0x9e8642431feab20d
+10-30 02:14:57.872  1371  1371 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+10-30 02:14:57.899  1371  1371 W VLC/LiveEvent: Multiple observers registered but only one will be notified of changes.
+10-30 02:14:57.930  1371  1371 V MediaRouter: Selecting route: RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:14:57.934  1371  1371 I MediaRouter: Skip setBluetoothA2dpOn(): types=8388615, isPlaybackActive()=false, BT route=null
+10-30 02:14:57.949  1371  1371 I android_os_HwBinder: HwBinder: Starting hwbinderthread pool for getting: vendor.waydroid.window@1.1::IWaydroidWindow/default
+10-30 02:14:58.134  1371  1371 I TextInputLayout: EditText added is not a TextInputEditText. Please switch to using that class instead.
+10-30 02:14:58.163  1371  1371 W OnBackInvokedCallback: OnBackInvokedCallback is not enabled for the application.
+10-30 02:14:58.163  1371  1371 W OnBackInvokedCallback: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+10-30 02:14:58.175  1371  1403 W Parcel  : Expecting binder but got null!
+10-30 02:14:58.186   289   310 W WindowManager: Failed looking up window session=Session{4c57c8a 1371:u0a10125} callers=com.android.server.wm.WindowManagerService.windowForClientLocked:6068 com.android.server.wm.Session.updateRequestedVisibilities:707 android.view.IWindowSession$Stub.onTransact:1075 
+10-30 02:14:58.195   289   310 D CoreBackPreview: Window{8828b0 u0 org.videolan.vlc/org.videolan.vlc.gui.video.VideoPlayerActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@38ea6ae, mPriority=0}
+10-30 02:14:58.317  1371  1403 E OpenGLRenderer: Unable to match the desired swap behavior.
+10-30 02:14:58.337   289   384 D OomAdjuster: Not killing cached processes
+10-30 02:14:58.369   289   324 I ActivityTaskManager: Displayed org.videolan.vlc/.gui.video.VideoPlayerActivity: +617ms
+10-30 02:14:58.595   289   381 I MediaSessionStack: addSession to bottom of stack | record: org.videolan.vlc/VLC (userId=0)
+10-30 02:14:58.625  1371  1671 E ActivityThread: Failed to find provider info for androidx.car.app.connection
+10-30 02:14:58.633  1371  1371 D MediaBrowserCompat: Connecting to a MediaBrowserService.
+10-30 02:14:58.643  1371  1371 D VLC     : [00007f5268857be0/55b] libvlc generic: creating audio output
+10-30 02:14:58.644  1371  1371 D VLC     : [00007f5288827ec0/55b] libvlc audio output: looking for audio output module matching "android_audiotrack": 4 candidates
+10-30 02:14:58.646  1371  1371 D VLC     : [00007f5288827ec0/55b] libvlc audio output: using audio output module "android_audiotrack"
+10-30 02:14:58.646  1371  1371 D VLC     : [00007f5268857be0/55b] libvlc generic: keeping audio output
+10-30 02:14:58.731  1371  1371 W CarApp.Conn: Null response from content provider when checking connection to the car, treating as disconnected
+10-30 02:14:58.800   102   126 W TransactionTracing: Could not find layer handle 0x7fbf6c63d230
+10-30 02:14:58.855  1371  1371 D VLC/medialibrary: [T#140000139773176] ../src/MediaLibrary.cpp:790 media Fetching media from mrl: http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:14:58.860  1371  1371 D VLC/medialibrary: [T#140000139773176] ../src/File.cpp:605 fromMrl Failed to find folder containing http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:14:58.865  1371  1371 D VLC/medialibrary: [T#140000139773176] ../src/MediaLibrary.cpp:790 media Fetching media from mrl: http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:14:58.867  1371  1371 D VLC/medialibrary: [T#140000139773176] ../src/File.cpp:605 fromMrl Failed to find folder containing http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:14:58.870  1371  1434 I FileUtils: Expanding uri: http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749 to http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:14:59.001  1371  1371 D VLC     : [00007f52c8830f30/55b] libvlc input: Creating an input for 'archtv-av-test.mp4?run=5-12749'
+10-30 02:14:59.008  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: using timeshift granularity of 50 MiB
+10-30 02:14:59.008  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: using default timeshift path
+10-30 02:14:59.008  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: `http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749' gives access `http' demux `any' path `192.168.240.1:8765/archtv-av-test.mp4?run=5-12749'
+10-30 02:14:59.009  1371  1673 D VLC     : [00007f5248846e00/689] libvlc input source: creating demux: access='http' demux='any' location='192.168.240.1:8765/archtv-av-test.mp4?run=5-12749' file='(null)'
+10-30 02:14:59.009  1371  1673 D VLC     : [00007f525881b620/689] libvlc demux: looking for access_demux module matching "http": 7 candidates
+10-30 02:14:59.009  1371  1673 D VLC     : [00007f525881b620/689] libvlc demux: no access_demux modules matched
+10-30 02:14:59.009  1371  1673 D VLC     : [00007f526885c3a0/689] libvlc stream: creating access: http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:14:59.009  1371  1673 D VLC     : [00007f526885c3a0/689] libvlc stream: looking for access module matching "http": 25 candidates
+10-30 02:14:59.009  1371  1673 D VLC     : [00007f52488423c0/689] libvlc keystore: looking for keystore module matching "file_crypt,none": 3 candidates
+10-30 02:14:59.030  1371  1371 I VLC/AccessControl: Known access from self (org.videolan.vlc) to VLC
+10-30 02:14:59.030  1371  1371 W VLC/PlaybackService: Returning null MediaBrowserService root. READ_EXTERNAL_STORAGE permission not granted.
+10-30 02:14:59.030  1371  1371 I MediaBrowserService: No root for client org.videolan.vlc from service android.service.media.MediaBrowserService$ServiceBinder$1
+10-30 02:14:59.062  1371  1371 E MediaBrowser: onConnectFailed for ComponentInfo{org.videolan.vlc/org.videolan.vlc.PlaybackService}
+10-30 02:14:59.092  1371  1673 D VLC     : [00007f52488423c0/689] libvlc keystore: using keystore module "file"
+10-30 02:14:59.092  1371  1673 D VLC     : [00007f526885c3a0/689] http stream: resolving 192.168.240.1 ...
+10-30 02:14:59.093  1371  1673 D VLC     : [00007f526885c3a0/689] http stream: outgoing request:
+10-30 02:14:59.093  1371  1673 D VLC     : GET /archtv-av-test.mp4?run=5-12749 HTTP/1.1
+10-30 02:14:59.093  1371  1673 D VLC     : Host: 192.168.240.1:8765
+10-30 02:14:59.093  1371  1673 D VLC     : Accept: */*
+10-30 02:14:59.093  1371  1673 D VLC     : Accept-Language: en_US
+10-30 02:14:59.093  1371  1673 D VLC     : User-Agent: VLC/3.0.23 LibVLC/3.0.23
+10-30 02:14:59.093  1371  1673 D VLC     : Range: bytes=0-
+10-30 02:14:59.093  1371  1673 D VLC     : 
+10-30 02:14:59.117  1371  1673 D VLC     : [00007f526885c3a0/689] http stream: incoming response:
+10-30 02:14:59.117  1371  1673 D VLC     : HTTP/1.0 200 OK
+10-30 02:14:59.117  1371  1673 D VLC     : Server: SimpleHTTP/0.6 Python/3.14.8
+10-30 02:14:59.117  1371  1673 D VLC     : Date: Fri, 30 Oct 2026 02:14:59 GMT
+10-30 02:14:59.117  1371  1673 D VLC     : Content-type: video/mp4
+10-30 02:14:59.117  1371  1673 D VLC     : Content-Length: 3521155
+10-30 02:14:59.117  1371  1673 D VLC     : Last-Modified: Fri, 30 Oct 2026 02:14:55 GMT
+10-30 02:14:59.117  1371  1673 D VLC     : 
+10-30 02:14:59.117  1371  1673 D VLC     : [00007f52488423c0/689] libvlc keystore: removing module "file"
+10-30 02:14:59.117  1371  1673 D VLC     : [00007f526885c3a0/689] libvlc stream: using access module "access"
+10-30 02:14:59.117  1371  1673 D VLC     : [00007f5268859ee0/689] libvlc stream: looking for stream_filter module matching "prefetch,cache_block": 26 candidates
+10-30 02:14:59.118  1371  1673 D VLC     : [00007f5268859ee0/689] libvlc stream: using 3521155 bytes buffer, 3521155 bytes read
+10-30 02:14:59.118  1371  1673 D VLC     : [00007f5268859ee0/689] libvlc stream: using stream_filter module "prefetch"
+10-30 02:14:59.118  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: looking for stream_filter module matching "any": 26 candidates
+10-30 02:14:59.120  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: Trying Lua scripts in /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist
+10-30 02:14:59.120  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/anevia_streams.lua
+10-30 02:14:59.122  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/anevia_xml.lua
+10-30 02:14:59.123  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/appletrailers.lua
+10-30 02:14:59.124  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/bbc_co_uk.lua
+10-30 02:14:59.124  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/break.lua
+10-30 02:14:59.126  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/cue.lua
+10-30 02:14:59.128  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/dailymotion.lua
+10-30 02:14:59.131  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/extreme.lua
+10-30 02:14:59.132  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/france2.lua
+10-30 02:14:59.133  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/jamendo.lua
+10-30 02:14:59.135  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/katsomo.lua
+10-30 02:14:59.135  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/koreus.lua
+10-30 02:14:59.136  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/lelombrik.lua
+10-30 02:14:59.136  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/liveleak.lua
+10-30 02:14:59.137  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/metacafe.lua
+10-30 02:14:59.138  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/mpora.lua
+10-30 02:14:59.139  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/newgrounds.lua
+10-30 02:14:59.140  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/pinkbike.lua
+10-30 02:14:59.140  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/rockbox_fm_presets.lua
+10-30 02:14:59.142  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/soundcloud.lua
+10-30 02:14:59.143  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/twitch.lua
+10-30 02:14:59.144  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/vimeo.lua
+10-30 02:14:59.147  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/vocaroo.lua
+10-30 02:14:59.148  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/youtube.lua
+10-30 02:14:59.153  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/zapiks.lua
+10-30 02:14:59.153  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: Trying Lua scripts in /data/app/~~M2wDTwvYqicamv2YXYa2AQ==/org.videolan.vlc-KVYZ-NHNRc__ZCSCSThjJQ==/lib/x86_64/vlc/lua/playlist
+10-30 02:14:59.153  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: Trying Lua scripts in /system/usr/share/lua/playlist
+10-30 02:14:59.153  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: no stream_filter modules matched
+10-30 02:14:59.153  1371  1673 D VLC     : [00007f525881b620/689] libvlc stream_directory: looking for stream_directory module matching "any": 1 candidates
+10-30 02:14:59.153  1371  1673 D VLC     : [00007f525881b620/689] libvlc stream_directory: no stream_directory modules matched
+10-30 02:14:59.153  1371  1673 D VLC     : [00007f5248846e00/689] libvlc input source: attachment of directory-extractor failed for http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:14:59.153  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: looking for stream_filter module matching "record": 26 candidates
+10-30 02:14:59.153  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: using stream_filter module "record"
+10-30 02:14:59.153  1371  1673 D VLC     : [00007f5248846e00/689] libvlc input source: creating demux: access='http' demux='any' location='192.168.240.1:8765/archtv-av-test.mp4?run=5-12749' file='(null)'
+10-30 02:14:59.154  1371  1673 D VLC     : [00007f525881b620/689] libvlc demux: looking for demux module matching "any": 51 candidates
+10-30 02:14:59.154  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "mvhd" creation 694977d-48h:00m:00s modification 694977d-48h:00m:00s time scale 48000 duration 0d-00h:00m:30s rate 1.000000 volume 1.000000 next track id 3
+10-30 02:14:59.154  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "tkhd" creation 694977d-48h:00m:00s modification 694977d-48h:00m:00s duration 16d-40h:00m:00s track ID 1 layer 0 volume 0.000000 rotation 0.000000 scaleX 1.000000 scaleY 1.000000 translateX 0.000000 translateY 0.000000 width 640.000000 height 360.000000. Matrix: 65536 0 0 0 65536 0 0 0 1073741824
+10-30 02:14:59.154  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "elst" entry-count 1
+10-30 02:14:59.154  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "mdhd" creation 694977d-48h:00m:00s modification 694977d-48h:00m:00s time scale 15360 duration 5d-08h:00m:00s language    
+10-30 02:14:59.154  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "hdlr" handler type: "vide" name: "VideoHandler"
+10-30 02:14:59.154  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "vmhd" graphics-mode 0 opcolor (0, 0, 0)
+10-30 02:14:59.155  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "url" url: (null)
+10-30 02:14:59.155  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "dref" entry-count 1
+10-30 02:14:59.155  1371  1673 D VLC     : [00007f5268831ca0/689] libvlc stream: read box: "avcC" version=1 profile=0x42 level=0x16 length size=4 sps=1 pps=1
+10-30 02:14:59.155  1371  1673 D VLC     : [00007f5268831ca0/689] libvlc stream:          - sps[0] length=25
+10-30 02:14:59.155  1371  1673 D VLC     : [00007f5268831ca0/689] libvlc stream:          - pps[0] length=4
+10-30 02:14:59.155  1371  1673 D VLC     : [00007f5268831ca0/689] libvlc stream: read box: "paps" 1x1
+10-30 02:14:59.155  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "vide" in stsd 640x360 depth 24 (Lavc63.1.102 libx264)
+10-30 02:14:59.155  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "stsd" entry-count 1
+10-30 02:14:59.155  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "stts" entry-count 1
+10-30 02:14:59.155  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "stss" entry-count 2
+10-30 02:14:59.155  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "stsc" entry-count 1
+10-30 02:14:59.155  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "stsz" sample-size 0 sample-count 450
+10-30 02:14:59.155  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "co64" entry-count 450
+10-30 02:14:59.155  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "tkhd" creation 694977d-48h:00m:00s modification 694977d-48h:00m:00s duration 16d-40h:00m:00s track ID 2 layer 0 volume 1.000000 rotation 0.000000 scaleX 1.000000 scaleY 1.000000 translateX 0.000000 translateY 0.000000 width 0.000000 height 0.000000. Matrix: 65536 0 0 0 65536 0 0 0 1073741824
+10-30 02:14:59.155  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "elst" entry-count 1
+10-30 02:14:59.155  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "mdhd" creation 694977d-48h:00m:00s modification 694977d-48h:00m:00s time scale 48000 duration 16d-40h:17m:04s language    
+10-30 02:14:59.155  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "hdlr" handler type: "soun" name: "SoundHandler"
+10-30 02:14:59.155  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "smhd" balance 0.000000
+10-30 02:14:59.155  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "url" url: (null)
+10-30 02:14:59.155  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "dref" entry-count 1
+10-30 02:14:59.155  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "soun" stsd qt_version 0 compid=0
+10-30 02:14:59.155  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "soun" V0 or qt1/2 (rest=74)
+10-30 02:14:59.155  1371  1673 D VLC     : [00007f5268831ca0/689] libvlc stream: found esds MPEG4ESDescr (37 bytes)
+10-30 02:14:59.155  1371  1673 D VLC     : [00007f5268831ca0/689] libvlc stream: found esds MP4DecConfigDescr (23 bytes)
+10-30 02:14:59.155  1371  1673 D VLC     : [00007f5268831ca0/689] libvlc stream: found esds MP4DecSpecificDescr (5 bytes)
+10-30 02:14:59.155  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "soun" in stsd channel 1 sample size 16 sample rate 48000.000000
+10-30 02:14:59.155  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "stsd" entry-count 1
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "stts" entry-count 2
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "stsc" entry-count 115
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "stsz" sample-size 0 sample-count 1408
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "co64" entry-count 451
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "sgpd" grouping type roll (unimplemented)
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "sbgp" grouping type roll
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read box: "hdlr" handler type: "mdir" name: ""
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: read 'data' atom: knowntype=1, country=0 lang=0, size 12 bytes
+10-30 02:14:59.156  1371  1673 W VLC     : [00007f5268832c60/689] libvlc stream: truncated box mdat discarded
+10-30 02:14:59.156  1371  1673 W VLC     : [00007f5268832c60/689] libvlc stream: truncated box mdat discarded
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: dumping root Box "root"
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   + ftyp size 32 offset 0
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   + moov size 13773 offset 32
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   + mvhd size 108 offset 40
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   + trak size 4191 offset 148
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   + tkhd size 92 offset 156
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   + edts size 36 offset 248
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   + elst size 28 offset 256
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   + mdia size 4055 offset 284
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   + mdhd size 32 offset 292
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   + hdlr size 45 offset 324
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   + minf size 3970 offset 369
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   + vmhd size 20 offset 377
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   + dinf size 36 offset 397
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   |   + dref size 28 offset 405
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   |   |   + url  size 12 offset 421
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   + stbl size 3906 offset 433
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   |   + stsd size 186 offset 441
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   |   |   + avc1 size 170 offset 457
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   |   |   |   + avcC size 48 offset 543
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   |   |   |   + pasp size 16 offset 591
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   |   |   |   + btrt size 20 offset 607
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   |   + stts size 24 offset 627
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   |   + stss size 24 offset 651
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   |   + stsc size 28 offset 675
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   |   + stsz size 1820 offset 703
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   |   + stco size 1816 offset 2523
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   + trak size 9369 offset 4339
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   + tkhd size 92 offset 4347
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   + edts size 36 offset 4439
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   + elst size 28 offset 4447
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   + mdia size 9233 offset 4475
+10-30 02:14:59.156  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   + mdhd size 32 offset 4483
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   + hdlr size 45 offset 4515
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   + minf size 9148 offset 4560
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   + smhd size 16 offset 4568
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   + dinf size 36 offset 4584
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   |   + dref size 28 offset 4592
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   |   |   + url  size 12 offset 4608
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   + stbl size 9088 offset 4620
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   |   + stsd size 126 offset 4628
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   |   |   + mp4a size 110 offset 4644
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   |   |   |   + esds size 54 offset 4680
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   |   |   |   + btrt size 20 offset 4734
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   |   + stts size 32 offset 4754
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   |   + stsc size 1396 offset 4786
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   |   + stsz size 5652 offset 6182
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   |   + stco size 1820 offset 11834
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   |   + sgpd size 26 offset 13654
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   |   + sbgp size 28 offset 13680
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   + udta size 97 offset 13708
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   + meta size 89 offset 13716
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   + hdlr size 33 offset 13728
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   + ilst size 44 offset 13761
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   + ctoo size 36 offset 13769
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   |   |   |   |   |   + data size 28 offset 13777
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: |   + free size 8 offset 13805
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f525881b620/689] libvlc demux: ISO Media (isom) version 512.
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f525881b620/689] libvlc demux: found 2 tracks
+10-30 02:14:59.157  1371  1673 W VLC     : [00007f525881b620/689] libvlc demux: elst box found
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f525881b620/689] libvlc demux:    - [0] duration=30000ms media time=0ms) rate=1.0
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f525881b620/689] libvlc demux: track[Id 0x1] read 450 chunk
+10-30 02:14:59.157  1371  1673 W VLC     : [00007f525881b620/689] libvlc demux: STTS table of 1 entries
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f525881b620/689] libvlc demux: track[Id 0x1] read 450 samples length:30s
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: selecting program id=0
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f525881b620/689] libvlc demux: adding track[Id 0x1] video (enable) language undef
+10-30 02:14:59.157  1371  1673 W VLC     : [00007f525881b620/689] libvlc demux: elst box found
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f525881b620/689] libvlc demux:    - [0] duration=30000ms media time=21ms) rate=1.0
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f525881b620/689] libvlc demux: track[Id 0x2] read 451 chunk
+10-30 02:14:59.157  1371  1673 W VLC     : [00007f525881b620/689] libvlc demux: STTS table of 2 entries
+10-30 02:14:59.157  1371  1673 D VLC     : [00007f525881b620/689] libvlc demux: track[Id 0x2] read 1408 samples length:30s
+10-30 02:14:59.158  1371  1673 D VLC     : [00007f525881b620/689] libvlc demux: adding track[Id 0x2] audio (enable) language undef
+10-30 02:14:59.158  1371  1673 W VLC     : [00007f525881b620/689] libvlc demux: MP4 plugin discarded (not seekable)
+10-30 02:14:59.158  1371  1673 D VLC     : [00007f525881b620/689] libvlc demux: freeing all memory
+10-30 02:14:59.158  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Program doesn't contain anymore ES
+10-30 02:14:59.158  1371  1673 D VLC     : [00007f52488423c0/689] libvlc xml reader: looking for xml reader module matching "any": 1 candidates
+10-30 02:14:59.159  1371  1673 D VLC     : [00007f52488423c0/689] libvlc xml reader: using xml reader module "xml"
+10-30 02:14:59.159  1371  1673 D VLC     : [00007f525881b620/689] libvlc demux: subtitle demux discarded
+10-30 02:14:59.159  1371  1673 D VLC     : [00007f525881b620/689] libvlc demux: TS module discarded (lost sync)
+10-30 02:14:59.159  1371  1673 D VLC     : [00007f525881b620/689] libvlc demux: MOD validation failed (ext=)
+10-30 02:14:59.159  1371  1673 D VLC     : [00007f525881b620/689] libvlc demux: trying url: http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:14:59.160  1371  1673 D VLC     : [00007f525881b620/689] libvlc demux: CPU flags: 0x00000000
+10-30 02:14:59.161  1371  1675 D VLC     : [00007f5268859ee0/68b] libvlc stream: end of stream
+10-30 02:14:59.165  1371  1673 D VLC     : [00007f525881b620/689] libvlc demux: detected format: mov,mp4,m4a,3gp,3g2,mj2
+10-30 02:14:59.168  1371  1461 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:14:59.187  1371  1449 E VLC-std : [h264 @ 0x7f5298812c90] Reinit context to 640x368, pix_fmt: yuv420p
+10-30 02:14:59.196  1371  1673 D VLC     : [00007f525881b620/689] libvlc demux: adding es: video codec = h264 (27)
+10-30 02:14:59.196  1371  1673 D VLC     : [00007f525881b620/689] libvlc demux: adding es: audio codec = mp4a (86018)
+10-30 02:14:59.196  1371  1673 D VLC     : [00007f525881b620/689] libvlc demux: AVFormat(ffmpeg Lavf58.76.100) supported stream
+10-30 02:14:59.196  1371  1673 D VLC     : [00007f525881b620/689] libvlc demux:     - format = mov,mp4,m4a,3gp,3g2,mj2 (QuickTime / MOV)
+10-30 02:14:59.196  1371  1673 D VLC     : [00007f525881b620/689] libvlc demux:     - start time = 0
+10-30 02:14:59.196  1371  1673 D VLC     : [00007f525881b620/689] libvlc demux:     - duration = 30000000
+10-30 02:14:59.196  1371  1673 D VLC     : [00007f525881b620/689] libvlc demux: using demux module "avformat"
+10-30 02:14:59.196  1371  1673 D VLC     : [00007f5298913250/689] libvlc decoder: looking for video decoder module matching "all": 15 candidates
+10-30 02:14:59.197  1371  1673 D VLC     : [00007f5298913250/689] libvlc decoder: using ffmpeg Lavc58.134.100
+10-30 02:14:59.197  1371  1673 D VLC     : [00007f5298913250/689] libvlc decoder: CPU flags: 0x00000000
+10-30 02:14:59.198  1371  1673 D VLC     : [00007f5298913250/689] libvlc decoder: allowing 5 thread(s) for decoding
+10-30 02:14:59.200  1371  1673 D VLC     : [00007f5298913250/689] libvlc decoder: codec (h264) started
+10-30 02:14:59.200  1371  1673 D VLC     : [00007f5298913250/689] libvlc decoder: using frame thread mode with 5 threads
+10-30 02:14:59.200  1371  1673 D VLC     : [00007f5298913250/689] libvlc decoder: using video decoder module "avcodec"
+10-30 02:14:59.201  1371  1673 D VLC     : [00007f5298930cb0/689] libvlc decoder: looking for audio decoder module matching "all": 16 candidates
+10-30 02:14:59.201  1371  1673 D VLC     : [00007f5298930cb0/689] libvlc decoder: using ffmpeg Lavc58.134.100
+10-30 02:14:59.201  1371  1673 D VLC     : [00007f5298930cb0/689] libvlc decoder: CPU flags: 0x00000000
+10-30 02:14:59.201  1371  1673 D VLC     : [00007f5298930cb0/689] libvlc decoder: codec (aac) started
+10-30 02:14:59.201  1371  1673 D VLC     : [00007f5298930cb0/689] libvlc decoder: using audio decoder module "avcodec"
+10-30 02:14:59.202  1371  1673 D VLC     : [00007f524884bde0/689] libvlc demux meta: looking for meta reader module matching "any": 2 candidates
+10-30 02:14:59.202  1371  1673 D VLC     : [00007f524884bde0/689] libvlc demux meta: Trying Lua scripts in /data/user/0/org.videolan.vlc/app_vlc/.share/lua/meta/reader
+10-30 02:14:59.202  1371  1673 D VLC     : [00007f524884bde0/689] libvlc demux meta: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/meta/reader/filename.lua
+10-30 02:14:59.217  1371  1433 D VLC/medialibrary: [T#139986584976624] ../src/MediaLibrary.cpp:790 media Fetching media from mrl: http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:14:59.219  1371  1433 D VLC/medialibrary: [T#139986584976624] ../src/File.cpp:605 fromMrl Failed to find folder containing http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:14:59.220  1371  1401 D VLC/medialibrary: [T#139986591657200] ../src/MediaLibrary.cpp:790 media Fetching media from mrl: http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:14:59.221  1371  1401 D VLC/medialibrary: [T#139986591657200] ../src/File.cpp:605 fromMrl Failed to find folder containing http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:14:59.240  1371  1673 D VLC     : [00007f524884bde0/689] libvlc demux meta: Trying Lua scripts in /data/app/~~M2wDTwvYqicamv2YXYa2AQ==/org.videolan.vlc-KVYZ-NHNRc__ZCSCSThjJQ==/lib/x86_64/vlc/lua/meta/reader
+10-30 02:14:59.242  1371  1673 D VLC     : [00007f524884bde0/689] libvlc demux meta: Trying Lua scripts in /system/usr/share/lua/meta/reader
+10-30 02:14:59.242  1371  1673 D VLC     : [00007f524884bde0/689] libvlc demux meta: no meta reader modules matched
+10-30 02:14:59.242  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: `http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749' successfully opened
+10-30 02:14:59.242  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Buffering 0%
+10-30 02:14:59.243  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Buffering 6%
+10-30 02:14:59.243  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Buffering 12%
+10-30 02:14:59.243  1371  1682 D VLC     : [00007f5268857be0/692] libvlc generic: reusing audio output
+10-30 02:14:59.244  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Buffering 13%
+10-30 02:14:59.244  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Buffering 19%
+10-30 02:14:59.244  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Buffering 20%
+10-30 02:14:59.244  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Buffering 25%
+10-30 02:14:59.244  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Buffering 26%
+10-30 02:14:59.245  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Buffering 32%
+10-30 02:14:59.245  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Buffering 33%
+10-30 02:14:59.245  1371  1676 D VLC     : [00007f5298913250/68c] libvlc decoder: available software decoder output format 0 (yuv420p)
+10-30 02:14:59.245  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Buffering 38%
+10-30 02:14:59.245  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Buffering 40%
+10-30 02:14:59.245  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Buffering 44%
+10-30 02:14:59.245  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Buffering 46%
+10-30 02:14:59.245  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Buffering 51%
+10-30 02:14:59.245  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Buffering 53%
+10-30 02:14:59.245  1371  1449 E VLC-std : [h264 @ 0x7f5298936260] Reinit context to 640x368, pix_fmt: yuv420p
+10-30 02:14:59.245  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Buffering 59%
+10-30 02:14:59.245  1371  1676 D VLC     : [00007f529894aab0/68c] libvlc spu text: looking for text renderer module matching "any": 1 candidates
+10-30 02:14:59.245  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Buffering 60%
+10-30 02:14:59.245  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Buffering 66%
+10-30 02:14:59.246  1371  1676 D VLC     : [00007f526885be60/68c] libvlc stream: creating access: file:///system/etc/fonts.xml
+10-30 02:14:59.246  1371  1676 D VLC     : [00007f526885be60/68c] libvlc stream:  (path: /system/etc/fonts.xml)
+10-30 02:14:59.246  1371  1676 D VLC     : [00007f526885be60/68c] libvlc stream: looking for access module matching "file": 25 candidates
+10-30 02:14:59.246  1371  1676 D VLC     : [00007f526885be60/68c] libvlc stream: using access module "filesystem"
+10-30 02:14:59.246  1371  1676 D VLC     : [00007f526885a7a0/68c] libvlc stream: looking for stream_filter module matching "prefetch,cache_read": 26 candidates
+10-30 02:14:59.246  1371  1676 D VLC     : [00007f526885a7a0/68c] libvlc stream: Using stream method for AStream*
+10-30 02:14:59.246  1371  1676 D VLC     : [00007f526885a7a0/68c] libvlc stream: starting pre-buffering
+10-30 02:14:59.246  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Buffering 72%
+10-30 02:14:59.246  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Buffering 73%
+10-30 02:14:59.247  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Buffering 78%
+10-30 02:14:59.247  1371  1676 D VLC     : [00007f526885a7a0/68c] libvlc stream: received first data after 0 ms
+10-30 02:14:59.247  1371  1676 D VLC     : [00007f526885a7a0/68c] libvlc stream: pre-buffering done 1024 bytes in 0s - 2000 KiB/s
+10-30 02:14:59.247  1371  1676 D VLC     : [00007f526885a7a0/68c] libvlc stream: using stream_filter module "cache_read"
+10-30 02:14:59.247  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: looking for stream_filter module matching "any": 26 candidates
+10-30 02:14:59.247  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: Trying Lua scripts in /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist
+10-30 02:14:59.247  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/anevia_streams.lua
+10-30 02:14:59.248  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Buffering 80%
+10-30 02:14:59.250  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: VLC is looking for: 'f32l' 48000 Hz Mono frame=1 samples/4 bytes
+10-30 02:14:59.251  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Buffering 85%
+10-30 02:14:59.252  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Buffering 86%
+10-30 02:14:59.252  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/anevia_xml.lua
+10-30 02:14:59.252  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Buffering 91%
+10-30 02:14:59.252  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Buffering 93%
+10-30 02:14:59.253  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Buffering 98%
+10-30 02:14:59.253  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Buffering 100%
+10-30 02:14:59.253  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/appletrailers.lua
+10-30 02:14:59.253  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Stream buffering done (1045 ms in 11 ms)
+10-30 02:14:59.255  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/bbc_co_uk.lua
+10-30 02:14:59.255  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/break.lua
+10-30 02:14:59.257  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/cue.lua
+10-30 02:14:59.259  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/dailymotion.lua
+10-30 02:14:59.261  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/extreme.lua
+10-30 02:14:59.262  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/france2.lua
+10-30 02:14:59.264  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/jamendo.lua
+10-30 02:14:59.266  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/katsomo.lua
+10-30 02:14:59.268  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/koreus.lua
+10-30 02:14:59.270  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/lelombrik.lua
+10-30 02:14:59.272  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/liveleak.lua
+10-30 02:14:59.273  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/metacafe.lua
+10-30 02:14:59.276  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/mpora.lua
+10-30 02:14:59.276    92    92 W AudioFlinger: createTrack_l(): mismatch between requested flags (00000008) and output flags (00000002)
+10-30 02:14:59.277  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/newgrounds.lua
+10-30 02:14:59.280    92    92 D AudioFlinger: Client defaulted notificationFrames to 4104 for frameCount 8208
+10-30 02:14:59.281  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/pinkbike.lua
+10-30 02:14:59.283  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/rockbox_fm_presets.lua
+10-30 02:14:59.284  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/soundcloud.lua
+10-30 02:14:59.286  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/twitch.lua
+10-30 02:14:59.288  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/vimeo.lua
+10-30 02:14:59.290  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/vocaroo.lua
+10-30 02:14:59.291  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/youtube.lua
+10-30 02:14:59.293    92    92 D AF::TrackHandle: OpPlayAudio: track:55 usage:1 not muted
+10-30 02:14:59.295  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/zapiks.lua
+10-30 02:14:59.297  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: Trying Lua scripts in /data/app/~~M2wDTwvYqicamv2YXYa2AQ==/org.videolan.vlc-KVYZ-NHNRc__ZCSCSThjJQ==/lib/x86_64/vlc/lua/playlist
+10-30 02:14:59.297  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: Trying Lua scripts in /system/usr/share/lua/playlist
+10-30 02:14:59.297  1371  1676 D VLC     : [00007f526885cc60/68c] libvlc stream: no stream_filter modules matched
+10-30 02:14:59.297  1371  1676 D VLC     : [00007f52488461a0/68c] libvlc xml reader: looking for xml reader module matching "any": 1 candidates
+10-30 02:14:59.297  1371  1676 D VLC     : [00007f52488461a0/68c] libvlc xml reader: using xml reader module "xml"
+10-30 02:14:59.302  1371  1676 D VLC     : [00007f526885a7a0/68c] libvlc stream: removing module "cache_read"
+10-30 02:14:59.304  1371  1676 D VLC     : [00007f526885be60/68c] libvlc stream: removing module "filesystem"
+10-30 02:14:59.305  1371  1676 D VLC     : [00007f529894aab0/68c] libvlc spu text: using text renderer module "freetype"
+10-30 02:14:59.305  1371  1676 D VLC     : [00007f529890dc10/68c] libvlc scale: looking for video converter module matching "any": 20 candidates
+10-30 02:14:59.306  1371  1676 D VLC     : [00007f529890dc10/68c] libvlc scale: 32x32 (32x32) chroma: YUVA -> 16x16 (16x16) chroma: RGBA with scaling using Bicubic (good quality)
+10-30 02:14:59.306  1371  1676 D VLC     : [00007f529890dc10/68c] libvlc scale: using video converter module "swscale"
+10-30 02:14:59.306  1371  1676 D VLC     : [00007f529892dd40/68c] libvlc scale: looking for video converter module matching "any": 20 candidates
+10-30 02:14:59.307  1371  1676 D VLC     : [00007f529892dd40/68c] libvlc scale: YUVP to YUVA converter
+10-30 02:14:59.307  1371  1676 D VLC     : [00007f529892dd40/68c] libvlc scale: using video converter module "yuvp"
+10-30 02:14:59.307  1371  1676 D VLC     : [00007f52a887f220/68c] libvlc video output: Deinterlacing available
+10-30 02:14:59.307  1371  1676 D VLC     : [00007f52a887f220/68c] libvlc video output: deinterlace -1, mode auto, is_needed 0
+10-30 02:14:59.307  1371  1676 D VLC     : [00007f525887eba0/68c] libvlc window: looking for vout window module matching "any": 1 candidates
+10-30 02:14:59.310  1371  1676 D VLC     : [00007f525887eba0/68c] libvlc window: InitJNIFields success
+10-30 02:14:59.311  1371  1676 D VLC     : [00007f525887eba0/68c] libvlc window: resized to 1280x720
+10-30 02:14:59.321  1371  1682 W AudioTrack: Use of stream types is deprecated for operations other than volume control
+10-30 02:14:59.322  1371  1682 W AudioTrack: See the documentation of AudioTrack() for what to use instead with android.media.AudioAttributes to qualify your playback use case
+10-30 02:14:59.325  1371  1676 D VLC     : [00007f525887eba0/68c] libvlc window: using vout window module "android_window"
+10-30 02:14:59.332  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: Opening vout display wrapper
+10-30 02:14:59.333  1371  1684 D VLC     : [00007f52888233c0/694] libvlc vout display: looking for vout display module matching "any": 5 candidates
+10-30 02:14:59.333  1371  1684 E VLC     : [00007f525887eba0/694] libvlc window: request 1 not implemented
+10-30 02:14:59.333  1371  1684 D VLC     : [00007f52888233c0/694] libvlc vout display: VoutDisplayEvent 'resize' 1280x720
+10-30 02:14:59.333  1371  1684 D VLC     : [00007f5258821d40/694] libvlc gl: looking for opengl es2 module matching "any": 1 candidates
+10-30 02:14:59.357    76    76 I EffectsFactory: EffectCreate() create_effect
+10-30 02:14:59.357    76    76 E EffectDP: DP_reset(0xf6a00da0): null DynamicsProcessing
+10-30 02:14:59.359    76    76 E EffectDP: DP_reset(0xf6a00da0): null DynamicsProcessing
+10-30 02:14:59.361    76    76 E EffectDP: DP_reset(0xf6a00da0): null DynamicsProcessing
+10-30 02:14:59.362    76    76 E EffectDP: DP_reset(0xf6a00da0): null DynamicsProcessing
+10-30 02:14:59.421  1371  1401 D VLC/medialibrary: [T#139986591657200] ../src/MediaLibrary.cpp:790 media Fetching media from mrl: http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:14:59.422  1371  1401 D VLC/medialibrary: [T#139986591657200] ../src/File.cpp:605 fromMrl Failed to find folder containing http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:14:59.425  1371  1434 D VLC/medialibrary: [T#139986583891184] ../src/MediaLibrary.cpp:790 media Fetching media from mrl: http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:14:59.425  1371  1434 D VLC/medialibrary: [T#139986583891184] ../src/File.cpp:605 fromMrl Failed to find folder containing http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:14:59.425  1371  1684 D libEGL  : dlopen (libGLESv2_angle.so) success at 0x9e8642431feab20d
+10-30 02:14:59.425  1371  1684 D VLC     : [00007f5258821d40/694] libvlc gl: EGL version 1.5 Android META-EGL by Android
+10-30 02:14:59.425  1371  1684 D VLC     : [00007f5258821d40/694] libvlc gl:  extensions: EGL_ANDROID_front_buffer_auto_refresh EGL_ANDROID_get_frame_timestamps EGL_ANDROID_get_native_client_buffer EGL_ANDROID_presentation_time EGL_EXT_surface_CTA861_3_metadata EGL_EXT_surface_SMPTE2086_metadata EGL_KHR_get_all_proc_addresses EGL_KHR_swap_buffers_with_damage EGL_ANDROID_image_native_buffer EGL_ANDROID_recordable EGL_EXT_buffer_age EGL_EXT_create_context_robustness EGL_EXT_image_gl_colorspace EGL_EXT_pixel_format_float EGL_IMG_context_priority EGL_KHR_create_context EGL_KHR_fence_sync EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image EGL_KHR_image_base EGL_KHR_mutable_render_buffer EGL_KHR_no_config_context EGL_KHR_partial_update EGL_KHR_reusable_sync EGL_KHR_surfaceless_context EGL_KHR_wait_sync 
+10-30 02:14:59.461  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: using WRITE_BYTEARRAYV23
+10-30 02:14:59.468   289   289 D MediaSessionService: Media button session is changed to org.videolan.vlc/VLC (userId=0)
+10-30 02:14:59.468   289   463 D CompatibilityChangeReporter: Compat change id reported: 171306433; UID 1000; state: ENABLED
+10-30 02:14:59.469   289   463 D CompatibilityChangeReporter: Compat change id reported: 218533173; UID 1000; state: ENABLED
+10-30 02:14:59.560    76    76 W DeviceHAL: Error from HAL Device in function set_voice_volume: Function not implemented
+10-30 02:14:59.565  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: VLC will output: 's16l' 48000 Hz Mono frame=1 samples/2 bytes
+10-30 02:14:59.565  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: output 's16l' 48000 Hz Mono frame=1 samples/2 bytes
+10-30 02:14:59.565  1371  1682 D VLC     : [00007f524883e820/692] libvlc volume: looking for audio volume module matching "any": 2 candidates
+10-30 02:14:59.565  1371  1682 D VLC     : [00007f524883e820/692] libvlc volume: using audio volume module "integer_mixer"
+10-30 02:14:59.565  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: input 'f32l' 48000 Hz Mono frame=1 samples/4 bytes
+10-30 02:14:59.565  1371  1682 D VLC     : [00007f5298922820/692] libvlc audio filter: looking for audio filter module matching "scaletempo": 15 candidates
+10-30 02:14:59.565  1371  1682 D VLC     : [00007f5298922820/692] libvlc audio filter: format: 48000 rate, 1 nch, 4 bps, fl32
+10-30 02:14:59.565  1371  1682 D VLC     : [00007f5298922820/692] libvlc audio filter: params: 30 stride, 0.200 overlap, 14 search
+10-30 02:14:59.565  1371  1682 D VLC     : [00007f5298922820/692] libvlc audio filter: 1.000 scale, 1440.000 stride_in, 1440 stride_out, 1152 standing, 288 overlap, 672 search, 2400 queue, fl32 mode
+10-30 02:14:59.565  1371  1682 D VLC     : [00007f5298922820/692] libvlc audio filter: using audio filter module "scaletempo"
+10-30 02:14:59.565  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: conversion: 'f32l'->'f32l' 48000 Hz->48000 Hz Mono->Mono
+10-30 02:14:59.565  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: conversion pipeline complete
+10-30 02:14:59.565  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: conversion: 'f32l'->'s16l' 48000 Hz->48000 Hz Mono->Mono
+10-30 02:14:59.566  1371  1682 D VLC     : [00007f5298936b90/692] libvlc audio converter: looking for audio converter module matching "any": 7 candidates
+10-30 02:14:59.566  1371  1682 D VLC     : [00007f5298936b90/692] libvlc audio converter: using audio converter module "trivial"
+10-30 02:14:59.566  1371  1682 D VLC     : [00007f529893f9e0/692] libvlc audio converter: looking for audio converter module matching "any": 7 candidates
+10-30 02:14:59.572  1371  1682 D VLC     : [00007f529893f9e0/692] libvlc audio converter: f32l->s16l, bits per sample: 32->16
+10-30 02:14:59.575  1371  1682 D VLC     : [00007f529893f9e0/692] libvlc audio converter: using audio converter module "audio_format"
+10-30 02:14:59.575  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: conversion pipeline complete
+10-30 02:14:59.575  1371  1682 D VLC     : [00007f529893b4e0/692] libvlc audio resampler: looking for audio resampler module matching "soxr": 2 candidates
+10-30 02:14:59.576  1371  1682 D VLC     : [00007f529893b4e0/692] libvlc audio resampler: Using SoX Resampler with 'cr32s' engine and 'Medium 16-bit with medium roll-off' quality to convert s16l/48000Hz to s16l/48000Hz.
+10-30 02:14:59.576  1371  1682 D VLC     : [00007f529893b4e0/692] libvlc audio resampler: using audio resampler module "soxr"
+10-30 02:14:59.723  1371  1434 D VLC/medialibrary: [T#139986583891184] ../src/MediaLibrary.cpp:790 media Fetching media from mrl: http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:14:59.723  1371  1434 D VLC/medialibrary: [T#139986583891184] ../src/File.cpp:605 fromMrl Failed to find folder containing http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:14:59.737  1371  1684 D VLC     : [00007f5258821d40/694] libvlc gl: using opengl es2 module "egl_android"
+10-30 02:14:59.741  1371  1371 D MediaRouter: onRestoreRoute() : route=RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:14:59.741  1371  1371 V MediaRouter: Selecting route: RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:14:59.767  1371  1434 D VLC/medialibrary: [T#139986583891184] ../src/MediaLibrary.cpp:790 media Fetching media from mrl: http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:14:59.767  1371  1434 D VLC/medialibrary: [T#139986583891184] ../src/File.cpp:605 fromMrl Failed to find folder containing http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:14:59.815  1371  1684 D VLC     : [00007f52888233c0/694] libvlc vout display: using vout display module "gles2"
+10-30 02:14:59.816  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: original format sz 640x386, of (0,0), vsz 640x360, 4cc I420, sar 1:1, msk r0x0 g0x0 b0x0
+10-30 02:14:59.816  1371  1684 E VLC     : [00007f525887eba0/694] libvlc window: request 0 not implemented
+10-30 02:14:59.816  1371  1684 E VLC     : [00007f525887eba0/694] libvlc window: request 0 not implemented
+10-30 02:14:59.820  1371  1676 D VLC     : [00007f529894aab0/68c] libvlc spu text: removing module "freetype"
+10-30 02:14:59.822  1371  1684 E VLC     : [00007f525887eba0/694] libvlc window: request 1 not implemented
+10-30 02:14:59.822  1371  1676 D VLC     : [00007f529894aab0/68c] libvlc spu text: looking for text renderer module matching "any": 1 candidates
+10-30 02:14:59.822  1371  1676 D VLC     : [00007f52688600e0/68c] libvlc stream: creating access: file:///system/etc/fonts.xml
+10-30 02:14:59.822  1371  1676 D VLC     : [00007f52688600e0/68c] libvlc stream:  (path: /system/etc/fonts.xml)
+10-30 02:14:59.822  1371  1676 D VLC     : [00007f52688600e0/68c] libvlc stream: looking for access module matching "file": 25 candidates
+10-30 02:14:59.822  1371  1676 D VLC     : [00007f52688600e0/68c] libvlc stream: using access module "filesystem"
+10-30 02:14:59.822  1371  1676 D VLC     : [00007f526885ebe0/68c] libvlc stream: looking for stream_filter module matching "prefetch,cache_read": 26 candidates
+10-30 02:14:59.822  1371  1676 D VLC     : [00007f526885ebe0/68c] libvlc stream: Using stream method for AStream*
+10-30 02:14:59.822  1371  1676 D VLC     : [00007f526885ebe0/68c] libvlc stream: starting pre-buffering
+10-30 02:14:59.823  1371  1676 D VLC     : [00007f526885ebe0/68c] libvlc stream: received first data after 0 ms
+10-30 02:14:59.823  1371  1676 D VLC     : [00007f526885ebe0/68c] libvlc stream: pre-buffering done 1024 bytes in 0s - 14084 KiB/s
+10-30 02:14:59.823  1371  1676 D VLC     : [00007f526885ebe0/68c] libvlc stream: using stream_filter module "cache_read"
+10-30 02:14:59.823  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: looking for stream_filter module matching "any": 26 candidates
+10-30 02:14:59.826  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: Trying Lua scripts in /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist
+10-30 02:14:59.826  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/anevia_streams.lua
+10-30 02:14:59.833  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/anevia_xml.lua
+10-30 02:14:59.835  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/appletrailers.lua
+10-30 02:14:59.835  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/bbc_co_uk.lua
+10-30 02:14:59.836  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/break.lua
+10-30 02:14:59.836  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/cue.lua
+10-30 02:14:59.838  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/dailymotion.lua
+10-30 02:14:59.842  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/extreme.lua
+10-30 02:14:59.847  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/france2.lua
+10-30 02:14:59.850  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/jamendo.lua
+10-30 02:14:59.861  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/katsomo.lua
+10-30 02:14:59.861  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/koreus.lua
+10-30 02:14:59.880  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/lelombrik.lua
+10-30 02:14:59.893  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/liveleak.lua
+10-30 02:14:59.899  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/metacafe.lua
+10-30 02:14:59.900  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/mpora.lua
+10-30 02:14:59.918    92   238 W AudioFlinger: write blocked for 342 msecs, 1 delayed writes, thread 13
+10-30 02:14:59.931  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/newgrounds.lua
+10-30 02:14:59.933  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/pinkbike.lua
+10-30 02:14:59.935  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/rockbox_fm_presets.lua
+10-30 02:14:59.948  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/soundcloud.lua
+10-30 02:14:59.949  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/twitch.lua
+10-30 02:14:59.949  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/vimeo.lua
+10-30 02:14:59.950  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/vocaroo.lua
+10-30 02:14:59.956  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/youtube.lua
+10-30 02:14:59.976  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: Trying Lua playlist script /data/user/0/org.videolan.vlc/app_vlc/.share/lua/playlist/zapiks.lua
+10-30 02:15:00.002  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: Trying Lua scripts in /data/app/~~M2wDTwvYqicamv2YXYa2AQ==/org.videolan.vlc-KVYZ-NHNRc__ZCSCSThjJQ==/lib/x86_64/vlc/lua/playlist
+10-30 02:15:00.002  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: Trying Lua scripts in /system/usr/share/lua/playlist
+10-30 02:15:00.003  1371  1676 D VLC     : [00007f526885ab20/68c] libvlc stream: no stream_filter modules matched
+10-30 02:15:00.003  1371  1676 D VLC     : [00007f524884f3e0/68c] libvlc xml reader: looking for xml reader module matching "any": 1 candidates
+10-30 02:15:00.003  1371  1676 D VLC     : [00007f524884f3e0/68c] libvlc xml reader: using xml reader module "xml"
+10-30 02:15:00.019  1371  1676 D VLC     : [00007f526885ebe0/68c] libvlc stream: removing module "cache_read"
+10-30 02:15:00.021  1371  1676 D VLC     : [00007f52688600e0/68c] libvlc stream: removing module "filesystem"
+10-30 02:15:00.021  1371  1676 D VLC     : [00007f529894aab0/68c] libvlc spu text: using text renderer module "freetype"
+10-30 02:15:00.045   289   381 I MediaSessionStack: onPlaybackStateChanged - Pushing session to top | record: org.videolan.vlc/VLC (userId=0)
+10-30 02:15:00.062  1371  1681 D VLC     : [00007f5298913250/691] libvlc decoder: Received first picture
+10-30 02:15:00.065   289   381 I MediaFocusControl: requestAudioFocus() from uid/pid 10125/1371 AA=USAGE_UNKNOWN/CONTENT_TYPE_MOVIE clientId=android.media.AudioManager@d9bea7corg.videolan.vlc.util.VLCAudioFocusHelper$createOnAudioFocusChangeListener$1@4bccf05 callingPack=org.videolan.vlc req=1 flags=0x0 sdk=36
+10-30 02:15:00.073   289   381 I AudioService.FadeOutManager: unfadeOutUid() uid:10125
+10-30 02:15:00.077  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Decoder wait done in 823 ms
+10-30 02:15:00.080  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: control type=1
+10-30 02:15:00.080  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: control type=24
+10-30 02:15:00.080  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: control type=25
+10-30 02:15:00.080  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: control type=1
+10-30 02:15:00.080  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: control type=22
+10-30 02:15:00.088    92    92 D PermissionCache: checking android.permission.MODIFY_AUDIO_SETTINGS for uid=10125 => granted (10448 us)
+10-30 02:15:00.289  1371  1434 D VLC/medialibrary: [T#139986583891184] ../src/MediaLibrary.cpp:790 media Fetching media from mrl: http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:15:00.289  1371  1434 D VLC/medialibrary: [T#139986583891184] ../src/MediaLibrary.cpp:794 media Found external media: http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:15:00.319   289   325 D MediaSessionService: Sending KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_MEDIA_PLAY, scanCode=0, metaState=0, flags=0x0, repeatCount=0, eventTime=2486884000000, downTime=2486884000000, deviceId=-1, source=0x0, displayId=-1 } to org.videolan.vlc/VLC (userId=0)
+10-30 02:15:00.321   289   325 I MediaSessionService: tempAllowlistTargetPkgIfPossible callingPackage:android targetPackage:org.videolan.vlc reason:action=ACTION_DOWN;code=KEYCODE_MEDIA_PLAY [WIU] [FGS]
+10-30 02:15:00.336   289   325 D MediaSessionService: Sending KeyEvent { action=ACTION_UP, keyCode=KEYCODE_MEDIA_PLAY, scanCode=0, metaState=0, flags=0x0, repeatCount=0, eventTime=2486884000000, downTime=2486884000000, deviceId=-1, source=0x0, displayId=-1 } to org.videolan.vlc/VLC (userId=0)
+10-30 02:15:00.346   289   325 I MediaSessionService: tempAllowlistTargetPkgIfPossible callingPackage:android targetPackage:org.videolan.vlc reason:action=ACTION_UP;code=KEYCODE_MEDIA_PLAY [WIU] [FGS]
+10-30 02:15:00.712  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: timing screwed, reset positions
+10-30 02:15:00.713  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too late (177437): up-sampling
+10-30 02:15:00.782   289  1102 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+10-30 02:15:00.783  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too late (196714): flushing buffers
+10-30 02:15:00.787  1371  1371 D MediaRouter: onRestoreRoute() : route=RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:00.787  1371  1371 V MediaRouter: Selecting route: RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:00.858  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too early (-1039214): playing silence
+10-30 02:15:00.858  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: inserting 49882 zeroes
+10-30 02:15:00.993  1371  1684 D VLC     : [00007f52888233c0/694] libvlc vout display: auto hiding mouse cursor
+10-30 02:15:00.993  1371  1684 E VLC     : [00007f525887eba0/694] libvlc window: request 3 not implemented
+10-30 02:15:00.995  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 840 ms)
+10-30 02:15:00.995  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 774 ms)
+10-30 02:15:00.995  1371  1684 E VLC     : [00007f525887eba0/694] libvlc window: request 1 not implemented
+10-30 02:15:00.998  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 710 ms)
+10-30 02:15:00.998  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 644 ms)
+10-30 02:15:00.998  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 577 ms)
+10-30 02:15:00.999  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 512 ms)
+10-30 02:15:01.034  1371  1383 I OpenGLRenderer: Davey! duration=871ms; Flags=0, FrameTimelineVsyncId=10452, IntendedVsync=2486743539808, Vsync=2486893539802, InputEventId=0, HandleInputStart=2486909377135, AnimationStart=2486909377898, PerformTraversalsStart=2486909378335, DrawStart=2486910923275, FrameDeadline=2486764206474, FrameInterval=2486909375424, FrameStartTime=16666666, SyncQueued=2486911025495, SyncStart=2486911511569, IssueDrawCommandsStart=2486911664450, SwapBuffers=2487609617956, FrameCompleted=2487616022253, DequeueBufferDuration=19699, QueueBufferDuration=938278, GpuCompleted=2487609617956, SwapBuffersCompleted=2487616022253, DisplayPresentTime=139996480864576, CommandSubmissionCompleted=2487609617956, 
+10-30 02:15:01.096  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 8 ms)
+10-30 02:15:01.171  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 17 ms)
+10-30 02:15:01.291  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 4 ms)
+10-30 02:15:02.228  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 7 ms)
+10-30 02:15:02.308  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 20 ms)
+10-30 02:15:02.401  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too late (61591): up-sampling
+10-30 02:15:02.453  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 32 ms)
+10-30 02:15:02.532  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 44 ms)
+10-30 02:15:02.603  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: timing screwed, reset positions
+10-30 02:15:02.603  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too late (291465): flushing buffers
+10-30 02:15:02.653  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 32 ms)
+10-30 02:15:02.690  1371  1371 D MediaRouter: onRestoreRoute() : route=RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:02.692  1371  1371 V MediaRouter: Selecting route: RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:02.722  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 34 ms)
+10-30 02:15:02.788  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too early (-963698): playing silence
+10-30 02:15:02.788  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: inserting 46257 zeroes
+10-30 02:15:02.865  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 44 ms)
+10-30 02:15:02.970  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 16 ms)
+10-30 02:15:03.145  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 56 ms)
+10-30 02:15:03.182  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too late (64359): up-sampling
+10-30 02:15:03.433  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 12 ms)
+10-30 02:15:03.517  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 29 ms)
+10-30 02:15:03.584  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: timing screwed (drift: 147782 us): stopping resampling
+10-30 02:15:03.592  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too late (147747): up-sampling
+10-30 02:15:03.665  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 111 ms)
+10-30 02:15:03.667  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 46 ms)
+10-30 02:15:03.797  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 43 ms)
+10-30 02:15:03.804  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too late (186261): flushing buffers
+10-30 02:15:03.852  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too early (-1093991): playing silence
+10-30 02:15:03.852  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: inserting 52511 zeroes
+10-30 02:15:03.872  1371  1371 D MediaRouter: onRestoreRoute() : route=RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:03.872  1371  1371 V MediaRouter: Selecting route: RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:03.974  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 87 ms)
+10-30 02:15:03.974  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 20 ms)
+10-30 02:15:04.036  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 15 ms)
+10-30 02:15:04.088  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 0 ms)
+10-30 02:15:04.228  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 7 ms)
+10-30 02:15:04.379  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 91 ms)
+10-30 02:15:04.381  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 26 ms)
+10-30 02:15:04.449  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 28 ms)
+10-30 02:15:04.519  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 31 ms)
+10-30 02:15:04.559  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 5 ms)
+10-30 02:15:04.638  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 17 ms)
+10-30 02:15:04.644  1693  1693 I ServiceManager: Waydroid: host-AIDL whitelisted: android.hardware.camera.provider.ICameraProvider
+10-30 02:15:04.644  1693  1693 I ServiceManager: Waydroid: host-AIDL whitelisted: android.hardware.graphics.allocator.IAllocator
+10-30 02:15:04.670  1693  1693 W ProcessState: Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+10-30 02:15:04.700  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 12 ms)
+10-30 02:15:04.772    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-30 02:15:04.772  1693  1694 I Gralloc4: mapper 4.x is not supported
+10-30 02:15:04.772    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@3.0::IMapper/default in either framework or device VINTF manifest.
+10-30 02:15:04.772  1693  1694 W Gralloc3: mapper 3.x is not supported
+10-30 02:15:04.784  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 29 ms)
+10-30 02:15:04.839  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 18 ms)
+10-30 02:15:04.918  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 30 ms)
+10-30 02:15:04.969  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 15 ms)
+10-30 02:15:05.039  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 18 ms)
+10-30 02:15:05.083  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too late (76529): up-sampling
+10-30 02:15:05.097  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 7 ms)
+10-30 02:15:05.156  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 2 ms)
+10-30 02:15:05.181  1371  1461 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:15:05.288  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 1 ms)
+10-30 02:15:05.377  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: timing screwed (drift: 154158 us): stopping resampling
+10-30 02:15:05.388  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too late (154115): up-sampling
+10-30 02:15:05.494  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 6 ms)
+10-30 02:15:05.524  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too late (186659): flushing buffers
+10-30 02:15:05.542  1371  1434 D VLC/medialibrary: [T#139986583891184] ../src/MediaLibrary.cpp:790 media Fetching media from mrl: http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:15:05.542  1371  1434 D VLC/medialibrary: [T#139986583891184] ../src/MediaLibrary.cpp:794 media Found external media: http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:15:05.561  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 7 ms)
+10-30 02:15:05.567  1371  1371 D MediaRouter: onRestoreRoute() : route=RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:05.567  1371  1371 V MediaRouter: Selecting route: RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:05.646  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 25 ms)
+10-30 02:15:05.712  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too early (-941284): playing silence
+10-30 02:15:05.715  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: inserting 45181 zeroes
+10-30 02:15:05.726  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 37 ms)
+10-30 02:15:05.852  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too late (68830): up-sampling
+10-30 02:15:05.857  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 36 ms)
+10-30 02:15:06.037  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 16 ms)
+10-30 02:15:06.078  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: timing screwed, reset positions
+10-30 02:15:06.101  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too late (384451): flushing buffers
+10-30 02:15:06.135  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 47 ms)
+10-30 02:15:06.139  1371  1371 D MediaRouter: onRestoreRoute() : route=RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:06.139    92   238 W AudioFlinger: write blocked for 436 msecs, 3 delayed writes, thread 13
+10-30 02:15:06.140  1371  1371 V MediaRouter: Selecting route: RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:06.193  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too early (-996712): playing silence
+10-30 02:15:06.193  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: inserting 47842 zeroes
+10-30 02:15:06.294  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 73 ms)
+10-30 02:15:06.295  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 7 ms)
+10-30 02:15:06.375  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too late (89915): up-sampling
+10-30 02:15:06.378  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 24 ms)
+10-30 02:15:06.459  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 38 ms)
+10-30 02:15:06.607  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 53 ms)
+10-30 02:15:06.611  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: timing screwed, reset positions
+10-30 02:15:06.612  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too late (353065): flushing buffers
+10-30 02:15:06.685  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too early (-1066976): playing silence
+10-30 02:15:06.685  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: inserting 51214 zeroes
+10-30 02:15:06.775  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 21 ms)
+10-30 02:15:06.981  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 160 ms)
+10-30 02:15:06.981  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 93 ms)
+10-30 02:15:06.981  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 26 ms)
+10-30 02:15:07.062  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too late (81434): up-sampling
+10-30 02:15:07.069  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 48 ms)
+10-30 02:15:07.314  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: timing screwed, reset positions
+10-30 02:15:07.319  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too late (426614): flushing buffers
+10-30 02:15:07.351  1371  1371 D MediaRouter: onRestoreRoute() : route=RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:07.351  1371  1371 V MediaRouter: Selecting route: RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:07.390  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too early (-862904): playing silence
+10-30 02:15:07.390  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: inserting 41419 zeroes
+10-30 02:15:07.416  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 195 ms)
+10-30 02:15:07.416  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 129 ms)
+10-30 02:15:07.416  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 62 ms)
+10-30 02:15:07.694  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 6 ms)
+10-30 02:15:07.895  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 8 ms)
+10-30 02:15:08.029  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 8 ms)
+10-30 02:15:08.365  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 10 ms)
+10-30 02:15:08.458  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 37 ms)
+10-30 02:15:08.609  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 55 ms)
+10-30 02:15:08.797  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 109 ms)
+10-30 02:15:08.799  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 45 ms)
+10-30 02:15:08.928  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 40 ms)
+10-30 02:15:08.975  1697  1697 I ServiceManager: Waydroid: host-AIDL whitelisted: android.hardware.camera.provider.ICameraProvider
+10-30 02:15:08.976  1697  1697 I ServiceManager: Waydroid: host-AIDL whitelisted: android.hardware.graphics.allocator.IAllocator
+10-30 02:15:08.988  1697  1697 W ProcessState: Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+10-30 02:15:09.044  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too late (64781): up-sampling
+10-30 02:15:09.052    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+10-30 02:15:09.053  1697  1698 I Gralloc4: mapper 4.x is not supported
+10-30 02:15:09.053    20    20 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@3.0::IMapper/default in either framework or device VINTF manifest.
+10-30 02:15:09.054  1697  1698 W Gralloc3: mapper 3.x is not supported
+10-30 02:15:09.062  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 41 ms)
+10-30 02:15:09.200  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 46 ms)
+10-30 02:15:09.326  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: timing screwed (drift: 145910 us): stopping resampling
+10-30 02:15:09.326  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too late (145869): up-sampling
+10-30 02:15:09.345  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 57 ms)
+10-30 02:15:09.424  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 3 ms)
+10-30 02:15:09.445  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too late (186718): flushing buffers
+10-30 02:15:09.491  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 3 ms)
+10-30 02:15:09.548  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too early (-1008677): playing silence
+10-30 02:15:09.548  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: inserting 48416 zeroes
+10-30 02:15:09.574  1371  1371 D MediaRouter: onRestoreRoute() : route=RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:09.574  1371  1371 V MediaRouter: Selecting route: RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:09.580  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 25 ms)
+10-30 02:15:09.642    38  1674 I keystore2: keystore2::watchdog: Watchdog thread idle -> terminating. Have a great day.
+10-30 02:15:09.650  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 29 ms)
+10-30 02:15:09.736  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 49 ms)
+10-30 02:15:09.866  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 44 ms)
+10-30 02:15:09.968  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 14 ms)
+10-30 02:15:10.065  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 44 ms)
+10-30 02:15:10.166  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 12 ms)
+10-30 02:15:10.256  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 35 ms)
+10-30 02:15:10.370   289   384 D OomAdjuster: Not killing cached processes
+10-30 02:15:10.422  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 68 ms)
+10-30 02:15:10.422  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 2 ms)
+10-30 02:15:10.494  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 6 ms)
+10-30 02:15:10.560  1371  1434 D VLC/medialibrary: [T#139986583891184] ../src/MediaLibrary.cpp:790 media Fetching media from mrl: http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:15:10.560  1371  1434 D VLC/medialibrary: [T#139986583891184] ../src/MediaLibrary.cpp:794 media Found external media: http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:15:10.578  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 24 ms)
+10-30 02:15:10.583    76    76 W EffectDP: DP_command invalid command 21
+10-30 02:15:10.586    76    76 W EffectHAL: Effect 0xf6b00270 command DUMP error: Invalid argument
+10-30 02:15:10.673  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 52 ms)
+10-30 02:15:10.809  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: timing screwed, reset positions
+10-30 02:15:10.814  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too late (220502): flushing buffers
+10-30 02:15:10.821  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 67 ms)
+10-30 02:15:10.821  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 0 ms)
+10-30 02:15:10.850  1371  1371 D MediaRouter: onRestoreRoute() : route=RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:10.850  1371  1371 V MediaRouter: Selecting route: RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:10.983  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too early (-1008554): playing silence
+10-30 02:15:10.983  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: inserting 48410 zeroes
+10-30 02:15:10.997  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 43 ms)
+10-30 02:15:11.129  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 42 ms)
+10-30 02:15:11.201  1371  1461 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:15:11.389  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 34 ms)
+10-30 02:15:11.503  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 16 ms)
+10-30 02:15:11.571  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 17 ms)
+10-30 02:15:11.689  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 2 ms)
+10-30 02:15:11.834  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 13 ms)
+10-30 02:15:12.109  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 21 ms)
+10-30 02:15:12.168  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 14 ms)
+10-30 02:15:12.172  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too late (61610): up-sampling
+10-30 02:15:12.249  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 28 ms)
+10-30 02:15:12.265  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: timing screwed, reset positions
+10-30 02:15:12.266  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too late (232662): flushing buffers
+10-30 02:15:12.290  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 2 ms)
+10-30 02:15:12.322  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too early (-1098755): playing silence
+10-30 02:15:12.322  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: inserting 52740 zeroes
+10-30 02:15:12.343  1371  1371 D MediaRouter: onRestoreRoute() : route=RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:12.343  1371  1371 V MediaRouter: Selecting route: RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:12.345  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: timing screwed, reset positions
+10-30 02:15:12.346  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: timing screwed, reset positions
+10-30 02:15:12.368  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 13 ms)
+10-30 02:15:12.460  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 39 ms)
+10-30 02:15:12.586  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 32 ms)
+10-30 02:15:12.653  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 32 ms)
+10-30 02:15:12.773  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 85 ms)
+10-30 02:15:12.773  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 19 ms)
+10-30 02:15:12.878  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 57 ms)
+10-30 02:15:12.964  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 9 ms)
+10-30 02:15:13.079  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 58 ms)
+10-30 02:15:13.188  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 33 ms)
+10-30 02:15:13.308  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too late (70654): up-sampling
+10-30 02:15:13.345  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 57 ms)
+10-30 02:15:13.710  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: timing screwed (drift: 143844 us): stopping resampling
+10-30 02:15:13.732  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too late (143799): up-sampling
+10-30 02:15:14.133  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 45 ms)
+10-30 02:15:14.261  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 40 ms)
+10-30 02:15:14.264  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: timing screwed, reset positions
+10-30 02:15:14.264  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too late (341595): flushing buffers
+10-30 02:15:14.388  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too early (-1017686): playing silence
+10-30 02:15:14.389  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: inserting 48848 zeroes
+10-30 02:15:14.491  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 3 ms)
+10-30 02:15:14.554  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too late (80566): up-sampling
+10-30 02:15:14.580  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 26 ms)
+10-30 02:15:14.643  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 22 ms)
+10-30 02:15:14.686    92   238 W AudioFlinger: write blocked for 330 msecs, 5 delayed writes, thread 13
+10-30 02:15:14.730  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: timing screwed (drift: 173594 us): stopping resampling
+10-30 02:15:14.730  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too late (173565): up-sampling
+10-30 02:15:14.743  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 55 ms)
+10-30 02:15:14.778  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too late (187481): flushing buffers
+10-30 02:15:14.818  1371  1371 D MediaRouter: onRestoreRoute() : route=RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:14.819  1371  1371 V MediaRouter: Selecting route: RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:14.921  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 100 ms)
+10-30 02:15:14.922  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 34 ms)
+10-30 02:15:14.991  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too early (-899026): playing silence
+10-30 02:15:14.991  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: inserting 43153 zeroes
+10-30 02:15:15.100  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 69 ms)
+10-30 02:15:15.100  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 12 ms)
+10-30 02:15:15.130  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too late (78842): up-sampling
+10-30 02:15:15.160  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 6 ms)
+10-30 02:15:15.365  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 11 ms)
+10-30 02:15:15.503  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: timing screwed (drift: 161049 us): stopping resampling
+10-30 02:15:15.511  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 24 ms)
+10-30 02:15:15.555  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too late (173115): up-sampling
+10-30 02:15:15.585  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 31 ms)
+10-30 02:15:15.587  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too late (202839): flushing buffers
+10-30 02:15:15.653  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too early (-1051632): playing silence
+10-30 02:15:15.653  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: inserting 50478 zeroes
+10-30 02:15:15.672  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 51 ms)
+10-30 02:15:15.682  1371  1434 D VLC/medialibrary: [T#139986583891184] ../src/MediaLibrary.cpp:790 media Fetching media from mrl: http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:15:15.682  1371  1434 D VLC/medialibrary: [T#139986583891184] ../src/MediaLibrary.cpp:794 media Found external media: http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:15:15.685  1371  1371 D MediaRouter: onRestoreRoute() : route=RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:15.685  1371  1371 V MediaRouter: Selecting route: RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:15.777  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too late (67208): up-sampling
+10-30 02:15:15.886  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 132 ms)
+10-30 02:15:15.886  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 65 ms)
+10-30 02:15:15.961  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 6 ms)
+10-30 02:15:16.040  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 19 ms)
+10-30 02:15:16.101  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 12 ms)
+10-30 02:15:16.212  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 58 ms)
+10-30 02:15:16.303  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: timing screwed (drift: 140962 us): stopping resampling
+10-30 02:15:16.303  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too late (140914): up-sampling
+10-30 02:15:16.318  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 30 ms)
+10-30 02:15:16.428  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 74 ms)
+10-30 02:15:16.429  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 8 ms)
+10-30 02:15:16.500  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 13 ms)
+10-30 02:15:16.583  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 28 ms)
+10-30 02:15:16.662  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too late (182002): flushing buffers
+10-30 02:15:16.673  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 52 ms)
+10-30 02:15:16.713  1371  1371 D MediaRouter: onRestoreRoute() : route=RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:16.713  1371  1371 V MediaRouter: Selecting route: RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:16.741    92   238 D AudioMixer: previous float ramp hasn't finished, prev:0.023646  set_to:0.000000
+10-30 02:15:16.741    92   238 D AudioMixer: previous float ramp hasn't finished, prev:0.023646  set_to:0.000000
+10-30 02:15:16.746  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too early (-1063844): playing silence
+10-30 02:15:16.747  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: inserting 51064 zeroes
+10-30 02:15:16.838  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 84 ms)
+10-30 02:15:16.839  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 18 ms)
+10-30 02:15:16.902  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 14 ms)
+10-30 02:15:17.021  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 66 ms)
+10-30 02:15:17.024  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 3 ms)
+10-30 02:15:17.108  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 20 ms)
+10-30 02:15:17.170  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 16 ms)
+10-30 02:15:17.227  1371  1461 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:15:17.259  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too late (70916): up-sampling
+10-30 02:15:17.320  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 32 ms)
+10-30 02:15:17.411  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 57 ms)
+10-30 02:15:17.592  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: timing screwed (drift: 154303 us): stopping resampling
+10-30 02:15:17.599  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too late (154260): up-sampling
+10-30 02:15:17.606  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 50 ms)
+10-30 02:15:17.751  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too late (186338): flushing buffers
+10-30 02:15:17.762  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 74 ms)
+10-30 02:15:17.762  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 7 ms)
+10-30 02:15:17.803  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too early (-1052791): playing silence
+10-30 02:15:17.803  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: inserting 50533 zeroes
+10-30 02:15:17.862  1371  1371 D MediaRouter: onRestoreRoute() : route=RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:17.866  1371  1371 V MediaRouter: Selecting route: RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:17.886  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 65 ms)
+10-30 02:15:17.888  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 1 ms)
+10-30 02:15:17.965  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 11 ms)
+10-30 02:15:18.109  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 88 ms)
+10-30 02:15:18.110  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 22 ms)
+10-30 02:15:18.211  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 56 ms)
+10-30 02:15:18.379  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 92 ms)
+10-30 02:15:18.380  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 26 ms)
+10-30 02:15:18.457  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 36 ms)
+10-30 02:15:18.607  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 53 ms)
+10-30 02:15:18.799  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 111 ms)
+10-30 02:15:18.799  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 45 ms)
+10-30 02:15:18.912  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 24 ms)
+10-30 02:15:19.045  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 24 ms)
+10-30 02:15:19.107  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 19 ms)
+10-30 02:15:19.216  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too late (62023): up-sampling
+10-30 02:15:19.237  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 16 ms)
+10-30 02:15:19.310  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 22 ms)
+10-30 02:15:19.424  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 70 ms)
+10-30 02:15:19.424  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 3 ms)
+10-30 02:15:19.525  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 37 ms)
+10-30 02:15:19.719  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 87 ms)
+10-30 02:15:19.730  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 42 ms)
+10-30 02:15:19.774  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: timing screwed (drift: 135189 us): stopping resampling
+10-30 02:15:19.790  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too late (135146): up-sampling
+10-30 02:15:19.906  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 84 ms)
+10-30 02:15:19.906  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 18 ms)
+10-30 02:15:19.962  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 8 ms)
+10-30 02:15:19.992  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too late (188152): flushing buffers
+10-30 02:15:20.030  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too early (-1065639): playing silence
+10-30 02:15:20.030  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: inserting 51150 zeroes
+10-30 02:15:20.094  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 73 ms)
+10-30 02:15:20.095  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 7 ms)
+10-30 02:15:20.163  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 9 ms)
+10-30 02:15:20.248  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 27 ms)
+10-30 02:15:20.321  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 33 ms)
+10-30 02:15:20.444  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 23 ms)
+10-30 02:15:20.533  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 45 ms)
+10-30 02:15:20.582  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too early (-42621): down-sampling
+10-30 02:15:20.638  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 16 ms)
+10-30 02:15:20.699  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 11 ms)
+10-30 02:15:20.737  1371  1434 D VLC/medialibrary: [T#139986583891184] ../src/MediaLibrary.cpp:790 media Fetching media from mrl: http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:15:20.754  1371  1434 D VLC/medialibrary: [T#139986583891184] ../src/MediaLibrary.cpp:794 media Found external media: http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:15:20.761  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 7 ms)
+10-30 02:15:20.917  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 29 ms)
+10-30 02:15:20.929  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: timing screwed (drift: -87974 us): stopping resampling
+10-30 02:15:20.929  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too early (-87978): down-sampling
+10-30 02:15:20.979  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 24 ms)
+10-30 02:15:21.028  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 7 ms)
+10-30 02:15:21.092  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 4 ms)
+10-30 02:15:21.287  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 0 ms)
+10-30 02:15:21.436  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 15 ms)
+10-30 02:15:21.521  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 33 ms)
+10-30 02:15:21.653  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 32 ms)
+10-30 02:15:21.739  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 52 ms)
+10-30 02:15:21.742  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too early (-120124): playing silence
+10-30 02:15:21.742  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: inserting 5765 zeroes
+10-30 02:15:21.856  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 35 ms)
+10-30 02:15:22.009  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 55 ms)
+10-30 02:15:22.118  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too late (70851): up-sampling
+10-30 02:15:22.119  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 31 ms)
+10-30 02:15:22.198  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 44 ms)
+10-30 02:15:22.298  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 10 ms)
+10-30 02:15:22.372  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: timing screwed (drift: 160995 us): stopping resampling
+10-30 02:15:22.388  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too late (160968): up-sampling
+10-30 02:15:22.422  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 68 ms)
+10-30 02:15:22.423  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 2 ms)
+10-30 02:15:22.505  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 17 ms)
+10-30 02:15:22.536  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too late (194550): flushing buffers
+10-30 02:15:22.569   289   344 W BatteryExternalStatsWorker: error reading Bluetooth stats: 9
+10-30 02:15:22.582  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 28 ms)
+10-30 02:15:22.589  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too early (-1050387): playing silence
+10-30 02:15:22.590  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: inserting 50418 zeroes
+10-30 02:15:22.668  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 47 ms)
+10-30 02:15:22.815  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 61 ms)
+10-30 02:15:22.938  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 50 ms)
+10-30 02:15:23.040  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 19 ms)
+10-30 02:15:23.185  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too late (63945): up-sampling
+10-30 02:15:23.232  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 11 ms)
+10-30 02:15:23.239  1371  1461 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:15:23.261  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: timing screwed, reset positions
+10-30 02:15:23.261  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too late (266922): flushing buffers
+10-30 02:15:23.289  1371  1371 D MediaRouter: onRestoreRoute() : route=RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:23.289  1371  1371 V MediaRouter: Selecting route: RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:23.292  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 4 ms)
+10-30 02:15:23.400  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too early (-1001739): playing silence
+10-30 02:15:23.400  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: inserting 48083 zeroes
+10-30 02:15:23.493  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 5 ms)
+10-30 02:15:23.565  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 10 ms)
+10-30 02:15:23.622  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 1 ms)
+10-30 02:15:24.426  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 5 ms)
+10-30 02:15:24.758  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 3 ms)
+10-30 02:15:24.781  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too early (-44294): down-sampling
+10-30 02:15:25.267  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: timing screwed (drift: -89455 us): stopping resampling
+10-30 02:15:25.268  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too early (-89452): down-sampling
+10-30 02:15:25.638  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too early (-126070): playing silence
+10-30 02:15:25.638  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: inserting 6051 zeroes
+10-30 02:15:25.812  1371  1434 D VLC/medialibrary: [T#139986583891184] ../src/MediaLibrary.cpp:790 media Fetching media from mrl: http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:15:25.812  1371  1434 D VLC/medialibrary: [T#139986583891184] ../src/MediaLibrary.cpp:794 media Found external media: http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:15:25.888  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 0 ms)
+10-30 02:15:26.914  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too early (-41015): down-sampling
+10-30 02:15:27.023  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 2 ms)
+10-30 02:15:27.090  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 2 ms)
+10-30 02:15:27.179  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 24 ms)
+10-30 02:15:27.254  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 34 ms)
+10-30 02:15:27.374  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 20 ms)
+10-30 02:15:27.432  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 11 ms)
+10-30 02:15:27.503  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 16 ms)
+10-30 02:15:27.570  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 16 ms)
+10-30 02:15:27.631  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 10 ms)
+10-30 02:15:27.733  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: timing screwed, reset positions
+10-30 02:15:27.769  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback too late (159878): up-sampling
+10-30 02:15:27.772  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 18 ms)
+10-30 02:15:27.910  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 22 ms)
+10-30 02:15:27.986  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 32 ms)
+10-30 02:15:28.046  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too late (186859): flushing buffers
+10-30 02:15:28.051  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 30 ms)
+10-30 02:15:28.053  1371  1371 D MediaRouter: onRestoreRoute() : route=RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:28.053  1371  1371 V MediaRouter: Selecting route: RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:28.137  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 49 ms)
+10-30 02:15:28.141  1371  1682 W VLC     : [00007f5288827ec0/692] libvlc audio output: playback way too early (-1043633): playing silence
+10-30 02:15:28.141  1371  1682 D VLC     : [00007f5288827ec0/692] libvlc audio output: inserting 50094 zeroes
+10-30 02:15:28.273  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 52 ms)
+10-30 02:15:28.427  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 73 ms)
+10-30 02:15:28.428  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 7 ms)
+10-30 02:15:28.494  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 6 ms)
+10-30 02:15:28.554  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 0 ms)
+10-30 02:15:28.709  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 21 ms)
+10-30 02:15:28.827  1371  1684 W VLC     : [00007f52a887f220/694] libvlc video output: picture is too late to be displayed (missing 72 ms)
+10-30 02:15:28.827  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 6 ms)
+10-30 02:15:28.888  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 1 ms)
+10-30 02:15:28.936  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: EOF reached
+10-30 02:15:28.941  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: waiting decoder fifos to empty
+10-30 02:15:28.973  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 19 ms)
+10-30 02:15:29.038  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 17 ms)
+10-30 02:15:29.042  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: waiting decoder fifos to empty
+10-30 02:15:29.093  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 5 ms)
+10-30 02:15:29.149  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: waiting decoder fifos to empty
+10-30 02:15:29.160  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 6 ms)
+10-30 02:15:29.250  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: waiting decoder fifos to empty
+10-30 02:15:29.256  1371  1461 D libdsm  : Sending netbios packet to 255.255.255.255
+10-30 02:15:29.354  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: waiting decoder fifos to empty
+10-30 02:15:29.371  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 16 ms)
+10-30 02:15:29.438  1371  1684 D VLC     : [00007f52a887f220/694] libvlc video output: picture might be displayed late (missing 17 ms)
+10-30 02:15:29.460  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: waiting decoder fifos to empty
+10-30 02:15:29.562  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: waiting decoder fifos to empty
+10-30 02:15:29.669  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: waiting decoder fifos to empty
+10-30 02:15:29.770  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: waiting decoder fifos to empty
+10-30 02:15:29.872  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: waiting decoder fifos to empty
+10-30 02:15:29.976  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: waiting decoder fifos to empty
+10-30 02:15:30.087  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: waiting decoder fifos to empty
+10-30 02:15:30.090  1371  1682 D AudioTrack: stop(7): called with 95391 frames delivered
+10-30 02:15:30.120  1371  1371 D MediaRouter: onRestoreRoute() : route=RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:30.121  1371  1371 V MediaRouter: Selecting route: RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:30.198  1371  1434 D VLC/medialibrary: [T#139986583891184] ../src/MediaLibrary.cpp:790 media Fetching media from mrl: http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:15:30.200  1371  1434 D VLC/medialibrary: [T#139986583891184] ../src/MediaLibrary.cpp:794 media Found external media: http://192.168.240.1:8765/archtv-av-test.mp4?run=5-12749
+10-30 02:15:30.211  1371  1371 W VLC/PlaylistManager: Warning: invalid next index, aborted !
+10-30 02:15:30.211  1371  1371 D VLC     : [00007f52688670e0/55b] libvlc generic: creating audio output
+10-30 02:15:30.211  1371  1371 D VLC     : [00007f528883d360/55b] libvlc audio output: looking for audio output module matching "android_audiotrack": 4 candidates
+10-30 02:15:30.211  1371  1371 D VLC     : [00007f528883d360/55b] libvlc audio output: using audio output module "android_audiotrack"
+10-30 02:15:30.220  1371  1371 D VLC     : [00007f52688670e0/55b] libvlc generic: keeping audio output
+10-30 02:15:30.232  1371  1673 D VLC     : [00007f5298913250/689] libvlc decoder: killing decoder fourcc `h264'
+10-30 02:15:30.232  1371  1673 D VLC     : [00007f5298913250/689] libvlc decoder: removing module "avcodec"
+10-30 02:15:30.272   289   381 I MediaFocusControl: abandonAudioFocus() from uid/pid 10125/1371 clientId=android.media.AudioManager@d9bea7corg.videolan.vlc.util.VLCAudioFocusHelper$createOnAudioFocusChangeListener$1@4bccf05
+10-30 02:15:30.318  1371  1673 D VLC     : [00007f5268857be0/689] libvlc generic: saving a free vout
+10-30 02:15:30.324  1371  1673 D VLC     : [00007f5268857be0/689] libvlc generic: reusing provided vout
+10-30 02:15:30.339   289   289 W AS.AudioService: couldn't find receiver package for effect intent
+10-30 02:15:30.354  1371  1673 D VLC     : [00007f5298930cb0/689] libvlc decoder: killing decoder fourcc `mp4a'
+10-30 02:15:30.354  1371  1673 D VLC     : [00007f5298930cb0/689] libvlc decoder: removing module "avcodec"
+10-30 02:15:30.363  1371  1673 D VLC     : [00007f529893b4e0/689] libvlc audio resampler: removing module "soxr"
+10-30 02:15:30.364  1371  1673 D VLC     : [00007f5298922820/689] libvlc audio filter: removing module "scaletempo"
+10-30 02:15:30.364  1371  1673 D VLC     : [00007f5298936b90/689] libvlc audio converter: removing module "trivial"
+10-30 02:15:30.364  1371  1673 D VLC     : [00007f529893f9e0/689] libvlc audio converter: removing module "audio_format"
+10-30 02:15:30.365  1371  1673 D AudioTrack: stop(7): called with 0 frames delivered
+10-30 02:15:30.378  1371  1673 D VLC     : [00007f524883e820/689] libvlc volume: removing module "integer_mixer"
+10-30 02:15:30.382  1371  1673 D VLC     : [00007f5268857be0/689] libvlc generic: keeping audio output
+10-30 02:15:30.382  1371  1673 D VLC     : [00007f525881b620/689] libvlc demux: removing module "avformat"
+10-30 02:15:30.382  1371  1673 D VLC     : [00007f5268832c60/689] libvlc stream: removing module "record"
+10-30 02:15:30.382  1371  1673 D VLC     : [00007f5268859ee0/689] libvlc stream: removing module "prefetch"
+10-30 02:15:30.398  1371  1673 D VLC     : [00007f526885c3a0/689] libvlc stream: removing module "access"
+10-30 02:15:30.400  1371  1673 D VLC     : [00007f526885c3a0/689] http stream: connection failed
+10-30 02:15:30.402  1371  1673 D VLC     : [00007f52c8830f30/689] libvlc input: Program doesn't contain anymore ES
+10-30 02:15:30.410  1371  1401 D VLC     : [00007f52c8830f30/579] libvlc input: Destroying the input for 'archtv-av-test.mp4?run=5-12749'
+10-30 02:15:30.410  1371  1401 D VLC     : [00007f5288827ec0/579] libvlc audio output: removing module "android_audiotrack"
+10-30 02:15:30.410  1371  1401 D VLC     : [00007f52a887f220/579] libvlc video output: destroying useless vout
+10-30 02:15:30.411  1371  1684 D VLC     : [00007f52888233c0/694] libvlc vout display: removing module "gles2"
+10-30 02:15:30.420  1371  1684 D VLC     : [00007f5258821d40/694] libvlc gl: removing module "egl_android"
+10-30 02:15:30.427  1371  1371 D MediaRouter: onRestoreRoute() : route=RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:30.427  1371  1371 V MediaRouter: Selecting route: RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-30 02:15:30.475  1371  1371 D VLC     : [00007f5268854e60/55b] libvlc generic: creating audio output
+10-30 02:15:30.476  1371  1371 D VLC     : [00007f5288825f80/55b] libvlc audio output: looking for audio output module matching "android_audiotrack": 4 candidates
+10-30 02:15:30.476  1371  1371 D VLC     : [00007f5288825f80/55b] libvlc audio output: using audio output module "android_audiotrack"
+10-30 02:15:30.476  1371  1371 D VLC     : [00007f5268854e60/55b] libvlc generic: keeping audio output
+10-30 02:15:30.481  1371  1401 D VLC     : [00007f529894aab0/579] libvlc spu text: removing module "freetype"
+10-30 02:15:30.482  1371  1401 D VLC     : [00007f529892dd40/579] libvlc scale: removing module "yuvp"
+10-30 02:15:30.482  1371  1401 D VLC     : [00007f529890dc10/579] libvlc scale: removing module "swscale"
+10-30 02:15:30.484  1371  1401 D VLC     : [00007f528883d360/579] libvlc audio output: removing module "android_audiotrack"
+10-30 02:15:30.743  1371  1403 E OpenGLRenderer: Unable to match the desired swap behavior.
+10-30 02:15:31.061   289  1327 D CoreBackPreview: Window{8828b0 u0 org.videolan.vlc/org.videolan.vlc.gui.video.VideoPlayerActivity}: Setting back callback null
+10-30 02:15:31.075   289  1327 W InputManager-JNI: Input channel object '8828b0 org.videolan.vlc/org.videolan.vlc.gui.video.VideoPlayerActivity (client)' was disposed without first being removed with the input manager!
+10-30 02:15:31.090   102   126 W TransactionTracing: Could not find layer handle 0x7fbf6c619d70
+10-30 02:15:31.090   102   126 W TransactionTracing: Could not find layer handle 0x7fbf6c6530d0
+10-30 02:15:31.119   289   327 D OomAdjuster: Not killing cached processes
+10-30 02:15:31.133   289   306 I system_server: NativeAlloc concurrent copying GC freed 177227(11MB) AllocSpace objects, 33(1300KB) LOS objects, 68% free, 11MB/35MB, paused 339us,73us total 714.688ms
+10-30 02:15:31.134   289   307 W JavaBinder: BinderProxy is being destroyed but the application did not call unlinkToDeath to unlink all of its death recipients beforehand.  Releasing leaked death recipient: com.android.server.om.IdmapDaemon$$ExternalSyntheticLambda0
+10-30 02:15:31.134   289   307 I BpBinder: onLastStrongRef automatically unlinking death recipients: <uncached descriptor>
+10-30 02:15:31.185   289   308 W System  : A resource failed to call release. 
+10-30 02:15:34.133   289  1102 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+10-30 02:15:35.270  1371  1461 D libdsm  : Sending netbios packet to 255.255.255.255

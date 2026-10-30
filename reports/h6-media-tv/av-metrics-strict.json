@@ -1,0 +1,728 @@
+{
+  "video_roi_channel_mae": [
+    2.8669741030092593,
+    5.747869646990741,
+    5.242683015046296
+  ],
+  "video_changed": true,
+  "audio_seconds": 11.946666666666667,
+  "audio_windows": [
+    {
+      "second": 0.0,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 0.1,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 0.2,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 0.3,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 0.4,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 0.5,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 0.6,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 0.7,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 0.8,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 0.9,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 1.0,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 1.1,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 1.2,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 1.3,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 1.4,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 1.5,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 1.6,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 1.7,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 1.8,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 1.9,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 2.0,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 2.1,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 2.2,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 2.3,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 2.4,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 2.5,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 2.6,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 2.7,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 2.8,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 2.9,
+      "rms_s16": 0.45023142197467,
+      "tone_440_amplitude_s16": 0.16320990155146398,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 3.0,
+      "rms_s16": 3.4427157400323756,
+      "tone_440_amplitude_s16": 4.840970067226983,
+      "active_fraction": 0.46979166666666666
+    },
+    {
+      "second": 3.1,
+      "rms_s16": 3.4911495241538995,
+      "tone_440_amplitude_s16": 4.920524986866983,
+      "active_fraction": 0.485
+    },
+    {
+      "second": 3.2,
+      "rms_s16": 3.4865515436698575,
+      "tone_440_amplitude_s16": 4.913974878911531,
+      "active_fraction": 0.4841666666666667
+    },
+    {
+      "second": 3.3,
+      "rms_s16": 3.478984526170436,
+      "tone_440_amplitude_s16": 4.90304072495953,
+      "active_fraction": 0.4816666666666667
+    },
+    {
+      "second": 3.4,
+      "rms_s16": 1.3301785594423028,
+      "tone_440_amplitude_s16": 0.5729871804325827,
+      "active_fraction": 0.07
+    },
+    {
+      "second": 3.5,
+      "rms_s16": 2.633992533525231,
+      "tone_440_amplitude_s16": 1.585989018363471,
+      "active_fraction": 0.27625
+    },
+    {
+      "second": 3.6,
+      "rms_s16": 3.0976133285698095,
+      "tone_440_amplitude_s16": 1.6079314038670878,
+      "active_fraction": 0.381875
+    },
+    {
+      "second": 3.7,
+      "rms_s16": 1.4390390312056631,
+      "tone_440_amplitude_s16": 0.835443143755878,
+      "active_fraction": 0.0825
+    },
+    {
+      "second": 3.8,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 3.9,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 4.0,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 4.1,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 4.2,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 4.3,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 4.4,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 4.5,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 4.6,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 4.7,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 4.8,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 4.9,
+      "rms_s16": 1.9065675964937618,
+      "tone_440_amplitude_s16": 1.4776255969066325,
+      "active_fraction": 0.14479166666666668
+    },
+    {
+      "second": 5.0,
+      "rms_s16": 3.4821269840908062,
+      "tone_440_amplitude_s16": 4.907603894200359,
+      "active_fraction": 0.4820833333333333
+    },
+    {
+      "second": 5.1,
+      "rms_s16": 3.0941140358213475,
+      "tone_440_amplitude_s16": 1.3786795937989018,
+      "active_fraction": 0.38083333333333336
+    },
+    {
+      "second": 5.2,
+      "rms_s16": 2.633043232965738,
+      "tone_440_amplitude_s16": 0.8754693378680787,
+      "active_fraction": 0.2760416666666667
+    },
+    {
+      "second": 5.3,
+      "rms_s16": 1.2136377823167284,
+      "tone_440_amplitude_s16": 0.5979685859801904,
+      "active_fraction": 0.059166666666666666
+    },
+    {
+      "second": 5.4,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 5.5,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 5.6,
+      "rms_s16": 1.5973937106006981,
+      "tone_440_amplitude_s16": 1.0340289445493018,
+      "active_fraction": 0.10125
+    },
+    {
+      "second": 5.7,
+      "rms_s16": 3.1701077794506185,
+      "tone_440_amplitude_s16": 4.063748747404668,
+      "active_fraction": 0.40020833333333333
+    },
+    {
+      "second": 5.8,
+      "rms_s16": 2.6280537792569363,
+      "tone_440_amplitude_s16": 1.790286687285701,
+      "active_fraction": 0.27458333333333335
+    },
+    {
+      "second": 5.9,
+      "rms_s16": 2.072739732817413,
+      "tone_440_amplitude_s16": 1.3402496165303377,
+      "active_fraction": 0.17125
+    },
+    {
+      "second": 6.0,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 6.1,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 6.2,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 6.3,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 6.4,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 6.5,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 6.6,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 6.7,
+      "rms_s16": 1.6026670479755507,
+      "tone_440_amplitude_s16": 1.0488052143546331,
+      "active_fraction": 0.10270833333333333
+    },
+    {
+      "second": 6.8,
+      "rms_s16": 1.7711813383539623,
+      "tone_440_amplitude_s16": 1.1083221208420466,
+      "active_fraction": 0.12479166666666666
+    },
+    {
+      "second": 6.9,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 7.0,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 7.1,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 7.2,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 7.3,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 7.4,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 7.5,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 7.6,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 7.7,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 7.8,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 7.9,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 8.0,
+      "rms_s16": 2.380957440470815,
+      "tone_440_amplitude_s16": 2.290163736670866,
+      "active_fraction": 0.22541666666666665
+    },
+    {
+      "second": 8.1,
+      "rms_s16": 3.3491292400662394,
+      "tone_440_amplitude_s16": 4.528317496994347,
+      "active_fraction": 0.44708333333333333
+    },
+    {
+      "second": 8.2,
+      "rms_s16": 2.81136088042784,
+      "tone_440_amplitude_s16": 1.4379162590733905,
+      "active_fraction": 0.314375
+    },
+    {
+      "second": 8.3,
+      "rms_s16": 3.4804812885576615,
+      "tone_440_amplitude_s16": 4.905182279179707,
+      "active_fraction": 0.481875
+    },
+    {
+      "second": 8.4,
+      "rms_s16": 2.4173418597018226,
+      "tone_440_amplitude_s16": 2.3662154605608103,
+      "active_fraction": 0.233125
+    },
+    {
+      "second": 8.5,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 8.6,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 8.7,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 8.8,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 8.9,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 9.0,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 9.1,
+      "rms_s16": 1.6216632408322842,
+      "tone_440_amplitude_s16": 1.0593452728284938,
+      "active_fraction": 0.10541666666666667
+    },
+    {
+      "second": 9.2,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 9.3,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 9.4,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 9.5,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 9.6,
+      "rms_s16": 2.634664747806319,
+      "tone_440_amplitude_s16": 2.6847916974548385,
+      "active_fraction": 0.275625
+    },
+    {
+      "second": 9.7,
+      "rms_s16": 2.5710730574347096,
+      "tone_440_amplitude_s16": 2.1401650471500604,
+      "active_fraction": 0.263125
+    },
+    {
+      "second": 9.8,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 9.9,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 10.0,
+      "rms_s16": 2.9809813820284083,
+      "tone_440_amplitude_s16": 3.586268104472069,
+      "active_fraction": 0.3539583333333333
+    },
+    {
+      "second": 10.1,
+      "rms_s16": 3.485894194225254,
+      "tone_440_amplitude_s16": 4.9129895893807545,
+      "active_fraction": 0.48354166666666665
+    },
+    {
+      "second": 10.2,
+      "rms_s16": 3.4776368892300034,
+      "tone_440_amplitude_s16": 4.901135201231727,
+      "active_fraction": 0.4814583333333333
+    },
+    {
+      "second": 10.3,
+      "rms_s16": 1.0449282272003182,
+      "tone_440_amplitude_s16": 0.4415022448721707,
+      "active_fraction": 0.042916666666666665
+    },
+    {
+      "second": 10.4,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 10.5,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 10.6,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 10.7,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 10.8,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 10.9,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 11.0,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 11.1,
+      "rms_s16": 0.0,
+      "tone_440_amplitude_s16": 0.0,
+      "active_fraction": 0.0
+    },
+    {
+      "second": 11.2,
+      "rms_s16": 0.12332207155790618,
+      "tone_440_amplitude_s16": 0.007891955262454993,
+      "active_fraction": 0.0008333333333333334
+    },
+    {
+      "second": 11.3,
+      "rms_s16": 3.341812133159692,
+      "tone_440_amplitude_s16": 4.517254186884099,
+      "active_fraction": 0.44395833333333334
+    },
+    {
+      "second": 11.4,
+      "rms_s16": 1.6589404248897346,
+      "tone_440_amplitude_s16": 1.084325556932674,
+      "active_fraction": 0.10958333333333334
+    },
+    {
+      "second": 11.5,
+      "rms_s16": 3.4754496112014053,
+      "tone_440_amplitude_s16": 4.897954324529065,
+      "active_fraction": 0.48083333333333333
+    },
+    {
+      "second": 11.6,
+      "rms_s16": 3.4895976367866064,
+      "tone_440_amplitude_s16": 4.918352211119275,
+      "active_fraction": 0.4845833333333333
+    },
+    {
+      "second": 11.7,
+      "rms_s16": 2.0930938026439874,
+      "tone_440_amplitude_s16": 0.7915533563373652,
+      "active_fraction": 0.175
+    },
+    {
+      "second": 11.8,
+      "rms_s16": 3.088587865028288,
+      "tone_440_amplitude_s16": 2.358437688042746,
+      "active_fraction": 0.37916666666666665
+    }
+  ],
+  "longest_continuous_tone_seconds": 0.0,
+  "pass": false,
+  "scope": "Digital monitor audio and changed Android video content; inspect PNGs for overlays. No HDMI/acoustic or performance claim."
+}

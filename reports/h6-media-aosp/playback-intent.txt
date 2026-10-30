@@ -1,0 +1,1 @@
+Starting: Intent { act=android.intent.action.VIEW dat=http://192.168.240.1:8765/... typ=video/mp4 cmp=com.android.gallery3d/.app.MovieActivity (has extras) }

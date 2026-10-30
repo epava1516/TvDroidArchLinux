@@ -1,0 +1,1 @@
+initrd=\intel-ucode.img initrd=\initramfs-linux.img root=UUID=4f479cd5-85ab-4806-931d-792e6f0c860c rw

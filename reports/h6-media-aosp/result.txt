@@ -1,0 +1,3 @@
+PARTIAL CONTROL: the AOSP Gallery player produced 2.5 s of consecutive detected tone with the stricter 100-ms-window verifier.
+The video captures remained identical at encoded timestamp 1.600 s and a System UI ANR overlay was present.
+The combined media verifier correctly reports failure. This control does not close VLC or H6 validation.

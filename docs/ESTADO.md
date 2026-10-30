@@ -193,3 +193,13 @@ Primer ensayo multimedia: el tutorial de VLC pausó la reproducción. Tras cerra
 se decodificaron frames iniciales del clip original, pero las capturas posteriores
 quedaron idénticas y el monitor de audio no mostró señal continua. Esto no acredita
 audio/vídeo funcional; se conserva como resultado incompleto en h6-integration/.
+
+## Incidente de VM durante las pruebas multimedia
+
+El usuario confirmó un cuelgue de toda la VM y la reinició. Se conservaron los
+logs de kernel con TSC inestable, cambio a kvm-clock y stall RCU. La causa aún
+no está demostrada: [INCIDENTE-VM-20261030.md](INCIDENTE-VM-20261030.md).
+El ensayo VLC TV/software sí muestra avance del vídeo; el audio continuo sigue
+sin validarse. El control con el reproductor AOSP detecta audio pero mantiene
+el vídeo congelado. Ninguno cierra H6. Tras el reinicio Android queda detenido
+mientras se revisa la estabilidad de la VM.

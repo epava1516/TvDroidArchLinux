@@ -1,0 +1,101 @@
+--------- beginning of events
+10-30 02:14:57.698   289   335 I am_pss  : [1498,10058,com.android.managedprovisioning,11266048,8826880,0,95875072,0,19,7]
+10-30 02:14:57.711   289   335 I am_pss  : [1463,1000,com.android.dynsystem,7798784,5312512,0,91308032,0,19,9]
+10-30 02:14:57.724   289   335 I am_pss  : [1139,10052,android.process.acore,19816448,15872000,0,116727808,0,19,8]
+10-30 02:14:57.735   289   335 I am_pss  : [1420,10054,com.android.externalstorage,8092672,5529600,0,94089216,0,19,8]
+10-30 02:14:57.748   289   335 I am_pss  : [1406,10083,com.android.contacts,16468992,13041664,0,103280640,0,19,10]
+10-30 02:14:57.757   289   310 I wm_task_moved: [9,1,2]
+10-30 02:14:57.757   289   310 I wm_create_activity: [0,176021376,9,org.videolan.vlc/.gui.video.VideoPlayerActivity,android.intent.action.VIEW,video/mp4,http://192.168.240.1:8765/...,268435456]
+10-30 02:14:57.757   289   335 I am_pss  : [1292,10107,com.stevesoltys.seedvault,24269824,21549056,0,112672768,0,19,6]
+10-30 02:14:57.763   289   310 I wm_pause_activity: [0,202797713,org.videolan.vlc/org.videolan.television.ui.MainTvActivity,userLeaving=true,resumeTopActivity]
+10-30 02:14:57.765  1371  1371 I wm_on_top_resumed_lost_called: [202797713,org.videolan.television.ui.MainTvActivity,topStateChangedWhenResumed]
+10-30 02:14:57.769   289   335 I am_pss  : [1111,1000,com.android.keychain,12014592,9506816,0,97755136,0,19,7]
+10-30 02:14:57.776   289   327 I sysui_multi_action: [757,1144,758,8,806,org.videolan.vlc,871,org.videolan.television.ui.MainTvActivity]
+10-30 02:14:57.801  1371  1371 I wm_on_paused_called: [202797713,org.videolan.television.ui.MainTvActivity,performPause]
+10-30 02:14:57.810   289   335 I am_pss  : [1166,10074,com.android.printspooler,12745728,10178560,0,99094528,0,19,14]
+10-30 02:14:57.829   289   310 I wm_add_to_stopping: [0,202797713,org.videolan.vlc/org.videolan.television.ui.MainTvActivity,makeInvisible]
+10-30 02:14:57.830   289   335 I am_pss  : [1206,1000,com.android.localtransport,12049408,9547776,0,97472512,0,19,5]
+10-30 02:14:57.835   289   310 I wm_restart_activity: [0,176021376,9,org.videolan.vlc/.gui.video.VideoPlayerActivity]
+10-30 02:14:57.836   289   310 I wm_set_resumed_activity: [0,org.videolan.vlc/.gui.video.VideoPlayerActivity,minimalResumeActivityLocked - onActivityStateChanged]
+10-30 02:14:57.837   289   335 I am_pss  : [1259,10099,org.protonaosp.deviceconfig,7703552,5312512,0,91385856,0,19,5]
+10-30 02:14:57.838   289   324 I sysui_multi_action: [757,803,799,window_time_0,802,24]
+10-30 02:14:57.849   289   335 I am_pss  : [1187,10109,org.lineageos.settingsconfig,7645184,5275648,0,90992640,0,19,8]
+10-30 02:14:58.141   289   310 I wm_set_requested_orientation: [10,org.videolan.vlc/.gui.video.VideoPlayerActivity]
+10-30 02:14:58.159  1371  1371 I wm_on_create_called: [176021376,org.videolan.vlc.gui.video.VideoPlayerActivity,performCreate]
+10-30 02:14:58.163  1371  1371 I wm_on_start_called: [176021376,org.videolan.vlc.gui.video.VideoPlayerActivity,handleStartActivity]
+10-30 02:14:58.169  1371  1371 I wm_on_resume_called: [176021376,org.videolan.vlc.gui.video.VideoPlayerActivity,RESUME_ACTIVITY]
+10-30 02:14:58.195  1371  1371 I wm_on_top_resumed_gained_called: [176021376,org.videolan.vlc.gui.video.VideoPlayerActivity,topStateChangedWhenResumed]
+10-30 02:14:58.355   289   335 I am_pss  : [1088,10121,com.android.providers.media.module,23631872,18665472,0,125075456,0,0,6]
+10-30 02:14:58.364   289   335 I am_pss  : [1349,10051,android.process.media,16241664,13295616,0,107462656,0,19,4]
+10-30 02:14:58.369   289   324 I wm_activity_launch_time: [0,176021376,org.videolan.vlc/.gui.video.VideoPlayerActivity,617]
+10-30 02:14:58.395   289   327 I wm_stop_activity: [0,202797713,org.videolan.vlc/org.videolan.television.ui.MainTvActivity]
+10-30 02:14:58.675   289   310 I am_foreground_service_start: [0,org.videolan.vlc/.PlaybackService,1,PROC_STATE_TOP,36,36,0,0,0,1,UNKNOWN]
+10-30 02:14:58.683   289   310 I am_foreground_service_stop: [0,org.videolan.vlc/.PlaybackService,1,PROC_STATE_TOP,36,36,0,0,8,1,STOP_FOREGROUND]
+10-30 02:14:58.699  1371  1371 I wm_on_stop_called: [202797713,org.videolan.television.ui.MainTvActivity,STOP_ACTIVITY_ITEM]
+10-30 02:14:58.787   102   102 I sf_frame_dur: [TID:9#org.videolan.vlc/org.videolan.television.ui.MainTvActivity#102,0,0,0,3,2,2,1]
+10-30 02:14:59.090   289   335 I am_pss  : [875,10104,com.android.launcher3,122658816,110039040,0,263106560,0,5,7]
+10-30 02:15:00.309   289   403 I input_interaction: Interaction with: 6e10d10 Application Not Responding: com.android.systemui (server), PointerEventDispatcher0 (server), 
+10-30 02:15:01.791   289   335 I am_pss  : [1582,2000,com.android.shell,8273920,5873664,0,92471296,0,19,5]
+10-30 02:15:02.719   289   335 I am_pss  : [1598,10062,com.android.statementservice,14189568,11202560,0,105611264,0,19,7]
+10-30 02:15:02.725   289   335 I am_pss  : [1616,10087,org.calyxos.backup.contacts,7771136,5373952,0,90775552,0,19,4]
+10-30 02:15:10.433   289   335 I am_pss  : [1552,10059,com.android.providers.calendar,13560832,10694656,0,103989248,0,19,8]
+10-30 02:15:10.443   289   335 I am_pss  : [1637,10103,org.lineageos.waydroidupdater,15992832,12906496,0,104980480,0,19,5]
+10-30 02:15:28.607   289   336 I am_uid_idle: 10074
+10-30 02:15:29.738   289   336 I am_uid_idle: 10107
+10-30 02:15:30.352   289   381 I wm_finish_activity: [0,176021376,9,org.videolan.vlc/.gui.video.VideoPlayerActivity,app-request]
+10-30 02:15:30.415   289   381 I wm_pause_activity: [0,176021376,org.videolan.vlc/.gui.video.VideoPlayerActivity,userLeaving=false,finish]
+10-30 02:15:30.428  1371  1371 I wm_on_top_resumed_lost_called: [176021376,org.videolan.vlc.gui.video.VideoPlayerActivity,topStateChangedWhenResumed]
+10-30 02:15:30.497  1371  1371 I wm_on_paused_called: [176021376,org.videolan.vlc.gui.video.VideoPlayerActivity,performPause]
+10-30 02:15:30.505   289  1327 I wm_add_to_stopping: [0,176021376,org.videolan.vlc/.gui.video.VideoPlayerActivity,completeFinishing]
+10-30 02:15:30.510   289  1327 I wm_set_resumed_activity: [0,org.videolan.vlc/org.videolan.television.ui.MainTvActivity,resumeTopActivity - onActivityStateChanged]
+10-30 02:15:30.514   289  1327 I wm_resume_activity: [0,202797713,9,org.videolan.vlc/org.videolan.television.ui.MainTvActivity]
+10-30 02:15:30.518   289   324 I sysui_multi_action: [757,803,799,window_time_0,802,33]
+10-30 02:15:30.529  1371  1371 I wm_on_restart_called: [202797713,org.videolan.television.ui.MainTvActivity,performRestartActivity]
+10-30 02:15:30.580  1371  1371 I wm_on_start_called: [202797713,org.videolan.television.ui.MainTvActivity,handleStartActivity]
+10-30 02:15:30.610  1371  1371 I wm_on_resume_called: [202797713,org.videolan.television.ui.MainTvActivity,RESUME_ACTIVITY]
+10-30 02:15:30.616  1371  1371 I wm_on_top_resumed_gained_called: [202797713,org.videolan.television.ui.MainTvActivity,topWhenResuming]
+10-30 02:15:30.881   289   327 I wm_destroy_activity: [0,176021376,9,org.videolan.vlc/.gui.video.VideoPlayerActivity,finish-imm:transit]
+10-30 02:15:30.910   289   328 I dvm_lock_sample: [system_server,1,android.anim,20,WindowSurfacePlacer.java,56,void com.android.server.wm.WindowSurfacePlacer$Traverser.run(),WindowManagerService.java,2640,int com.android.server.wm.WindowManagerService.relayoutWindow(com.android.server.wm.Session, android.view.IWindow, android.view.WindowManager$LayoutParams, int, int, int, int, int, int, android.window.ClientWindowFrames, android.util.MergedConfiguration, android.view.SurfaceControl, android.view.InsetsState, android.view.InsetsSourceControl[], android.os.Bundle),4]
+10-30 02:15:31.032  1371  1371 I wm_on_stop_called: [176021376,org.videolan.vlc.gui.video.VideoPlayerActivity,LIFECYCLER_STOP_ACTIVITY]
+10-30 02:15:31.057  1371  1371 I wm_on_destroy_called: [176021376,org.videolan.vlc.gui.video.VideoPlayerActivity,performDestroy]
+10-30 02:15:31.092   102   102 I sf_frame_dur: [TID:9#org.videolan.vlc/org.videolan.vlc.gui.video.VideoPlayerActivity#110,7,7,4,1,2,2,2]
+10-30 02:15:31.207   289   335 I am_pss  : [875,10104,com.android.launcher3,123004928,109916160,0,263831552,0,5,16]
+10-30 02:15:31.218   289   335 I am_pss  : [1244,10119,com.android.permissioncontroller,21097472,17985536,0,112066560,0,19,6]
+10-30 02:15:31.231   289   335 I am_pss  : [1552,10059,com.android.providers.calendar,13651968,10706944,0,104460288,0,19,7]
+10-30 02:15:31.241   289   335 I am_pss  : [1637,10103,org.lineageos.waydroidupdater,15976448,12906496,0,103342080,0,19,6]
+10-30 02:15:31.251   289   335 I am_pss  : [1312,1000,org.lineageos.lineageparts,14067712,10665984,0,101961728,0,19,4]
+10-30 02:15:31.255   289   335 I am_pss  : [1598,10062,com.android.statementservice,14276608,11218944,0,105955328,0,19,4]
+10-30 02:15:31.261   289   335 I am_pss  : [1616,10087,org.calyxos.backup.contacts,7666688,5373952,0,87040000,0,19,4]
+10-30 02:15:31.265   289   335 I am_pss  : [1582,2000,com.android.shell,8169472,5873664,0,88735744,0,19,3]
+10-30 02:15:31.282   289   335 I am_pss  : [709,1000,com.android.settings,54760448,46166016,0,181080064,0,19,9]
+10-30 02:15:31.298   289   335 I am_pss  : [1349,10051,android.process.media,16345088,13324288,0,107884544,0,19,9]
+10-30 02:15:31.312   289   335 I am_pss  : [1064,10085,com.android.deskclock,22798336,17612800,0,121942016,0,19,6]
+10-30 02:15:31.316   289   335 I am_pss  : [1533,10050,com.android.packageinstaller,9875456,7540736,0,90648576,0,19,3]
+10-30 02:15:31.325   289   335 I am_pss  : [1515,10080,com.android.onetimeinitializer,11685888,9420800,0,91488256,0,19,6]
+10-30 02:15:31.339   289   335 I am_pss  : [1485,1000,com.android.dynsystem:dynsystem,7951360,5431296,0,89116672,0,19,8]
+10-30 02:15:31.356   289   335 I am_pss  : [1498,10058,com.android.managedprovisioning,11250688,8826880,0,94236672,0,19,8]
+10-30 02:15:31.377   289   335 I am_pss  : [1463,1000,com.android.dynsystem,7701504,5312512,0,87572480,0,19,9]
+10-30 02:15:31.390   289   335 I am_pss  : [1139,10052,android.process.acore,19115008,15126528,0,116178944,0,19,7]
+10-30 02:15:31.401   289   335 I am_pss  : [1420,10054,com.android.externalstorage,8177664,5529600,0,94547968,0,19,6]
+10-30 02:15:31.409   289   335 I am_pss  : [1406,10083,com.android.contacts,17482752,14929920,0,103542784,0,19,5]
+10-30 02:15:31.427   289   335 I am_pss  : [1292,10107,com.stevesoltys.seedvault,24336384,21549056,0,112934912,0,19,7]
+10-30 02:15:31.449   289   335 I am_pss  : [1111,1000,com.android.keychain,11901952,9506816,0,93822976,0,19,13]
+10-30 02:15:31.472   289   335 I am_pss  : [1166,10074,com.android.printspooler,12818432,10178560,0,99487744,0,19,12]
+10-30 02:15:31.498   289   335 I am_pss  : [1206,1000,com.android.localtransport,12140544,9564160,0,97878016,0,19,14]
+10-30 02:15:31.516   289   335 I am_pss  : [1259,10099,org.protonaosp.deviceconfig,7780352,5312512,0,91779072,0,19,9]
+10-30 02:15:36.305   289   336 I am_uid_idle: 10052
+10-30 02:15:53.300   289   358 I sysui_multi_action: [757,1696,758,6,759,2]
+10-30 02:15:57.686   289   336 I am_uid_idle: 10058
+10-30 02:15:57.687   289   336 I am_uid_idle: 10050
+10-30 02:15:57.700   289   336 I am_uid_idle: 10080
+10-30 02:15:57.704   289   336 I am_uid_idle: 10083
+10-30 02:15:57.709   289   336 I am_uid_idle: 10099
+10-30 02:15:57.713   289   336 I am_uid_idle: 10109
+10-30 02:15:57.730   289   336 I am_uid_idle: 10085
+10-30 02:15:58.365   289   336 I am_uid_idle: 10119
+10-30 02:15:58.366   289   336 I am_uid_idle: 10059
+10-30 02:15:59.836   289   336 I am_uid_idle: 10051
+10-30 02:16:00.310   289   336 I am_uid_idle: 2000
+10-30 02:16:01.767   289   336 I am_uid_idle: 10062
+10-30 02:16:02.063   289   336 I am_uid_idle: 10087
+10-30 02:16:02.697   289   336 I am_uid_idle: 10103

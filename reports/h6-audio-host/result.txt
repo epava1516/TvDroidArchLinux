@@ -1,0 +1,2 @@
+CONTROL: Linux pw-play produced a sustained 440-Hz tone in the same sink monitor.
+This verifies the basic host digital audio route, not Android, HDMI, acoustic playback or long-term timing.

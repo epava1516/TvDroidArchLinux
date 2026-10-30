@@ -1,0 +1,4 @@
+INCOMPLETE: alternate VLC output setting did not establish stable audio/video playback.
+Initial one-second-window verifier found only two consecutive detected-tone seconds; stricter analysis is required.
+Source tone amplitude changed between the AudioTrack and this trial, so results do not isolate backend effects.
+See raw captures and logs. No support or performance claim.

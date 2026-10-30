@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <boolean name="obsolete_restore_file_warned" value="true" />
+    <boolean name="key_current_media_is_audio" value="false" />
+    <string name="media_list">http://192.168.240.1:8765/archtv-av-test.mp4</string>
+    <long name="position_in_media" value="0" />
+    <boolean name="app_onboarding_done" value="true" />
+    <int name="current_settings_version" value="17" />
+    <boolean name="media_shuffling" value="false" />
+    <int name="key_current_major_version" value="3" />
+    <long name="VideoResumeTime" value="-1" />
+    <int name="first_run" value="3070100" />
+    <string name="media_list_resume">http://192.168.240.1:8765/archtv-av-test.mp4</string>
+    <int name="position_in_media_list" value="0" />
+    <string name="app_theme">-1</string>
+    <int name="video_hud_timeout_in_s" value="4" />
+    <float name="VideoSpeed" value="1.0" />
+    <int name="fragment_id" value="2131362831" />
+    <boolean name="notification_permission_asked" value="true" />
+    <string name="current_media">http://192.168.240.1:8765/archtv-av-test.mp4</string>
+    <int name="audio_stop_after" value="-1" />
+    <boolean name="pref_show_video_settings_disclaimer" value="false" />
+    <string name="current_media_resume">http://192.168.240.1:8765/archtv-av-test.mp4</string>
+    <int name="current_settings_libvlc_version" value="1" />
+    <int name="ml_scan" value="0" />
+    <boolean name="video_player_tips_shown" value="true" />
+</map>

@@ -313,9 +313,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793325169.5081196,
-    "seen": 1793325176.565164,
-    "ast_hash": "3ba561b29e7c5733fe6edba9395e6817",
+    "mtime": 1793327448.0362682,
+    "seen": 1793327462.258889,
+    "ast_hash": "d57230303a82edc17cd0ab9359aa42d6",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -475,15 +475,15 @@
     "semantic_hash": ""
   },
   "scripts/93-android-shell-session.sh": {
-    "mtime": 1793324450.2437975,
-    "seen": 1793324896.6616426,
-    "ast_hash": "74fcd9cc91c65c2f6327171aa9552e18",
+    "mtime": 1793326344.1063526,
+    "seen": 1793327462.258236,
+    "ast_hash": "3a174e38eaabf336c700b7288e1961ce",
     "semantic_hash": ""
   },
   "scripts/lib/android-ui-probe.py": {
-    "mtime": 1793324889.953598,
-    "seen": 1793324896.6616552,
-    "ast_hash": "32d5f1c1c8eece52d82296b4b76142f6",
+    "mtime": 1793326389.0170293,
+    "seen": 1793327462.2582543,
+    "ast_hash": "022ec88d64c91d0cca10ad448d09c603",
     "semantic_hash": ""
   },
   "docs/AOSP-NATIVO.md": {
@@ -499,9 +499,33 @@
     "semantic_hash": ""
   },
   "scripts/94-android-media-probe.sh": {
-    "mtime": 1793325215.0982869,
-    "seen": 1793325222.5991929,
-    "ast_hash": "54709f6d372dd19605c6d7a018ed956b",
+    "mtime": 1793326887.1134212,
+    "seen": 1793327462.2582421,
+    "ast_hash": "cc33898e0dedfee114ac3bd940e0951d",
+    "semantic_hash": ""
+  },
+  "scripts/lib/clock-probe.py": {
+    "mtime": 1793327328.8587947,
+    "seen": 1793327462.2582598,
+    "ast_hash": "97f58c0d191ce872a9aaed354f260d54",
+    "semantic_hash": ""
+  },
+  "scripts/lib/verify-android-media.py": {
+    "mtime": 1793326916.365156,
+    "seen": 1793327462.258289,
+    "ast_hash": "be748ed9f31928a295503a4e26f6ed26",
+    "semantic_hash": ""
+  },
+  "scripts/lib/vlc-test-profile.py": {
+    "mtime": 1793327521.2298572,
+    "seen": 1793327561.258231,
+    "ast_hash": "604230f56fd314aae030300ba89173d8",
+    "semantic_hash": ""
+  },
+  "docs/INCIDENTE-VM-20261030.md": {
+    "mtime": 1793327447.9021053,
+    "seen": 1793327462.2589085,
+    "ast_hash": "dac33f069f946126622f421cb74496c4",
     "semantic_hash": ""
   }
 }

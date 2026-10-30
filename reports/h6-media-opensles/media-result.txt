@@ -1,0 +1,1 @@
+CAPTURED: inspect frames, timing and continuous audio; this is not a PASS.
