@@ -118,3 +118,13 @@ ART ejecuta Looper.prepare hasta el constructor original de MessageQueue, que
 falla en nativeInit por ausencia de JNI. FileDescriptor.getInt$ se verificó en
 el ART real. Aún no hay cola funcional ni sustitución de las API del contador.
 Ver runtime/aosp/README.md y reports/aosp-queue-compile/.
+
+## Puente JNI Rust de MessageQueue probado
+
+Los seis métodos JNI se enlazan con epoll/eventfd. Pasan cuatro pruebas Rust con
+FD reales y una prueba ART de creación, espera, despertar entre hilos, listener
+Java público sobre una tubería y destrucción. SparseArray y tres utilidades se
+compilan desde fuentes AOSP sin cambios, junto con las cuatro clases de la cola.
+HandlerDispatchProbe aún falla por Parcelable ausente: no se acredita despacho
+Java ni integración del framework original con la APK. Ver AOSP-JNI-LINUX.md y
+reports/aosp-queue-jni/.

@@ -1,0 +1,22 @@
+{
+  "command": [
+    "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+    "--64",
+    "--no-compile",
+    "--",
+    "-Xint",
+    "-cp",
+    "/home/tv/repositorio-principal/dist/apk/aosp-queue-jni-4/dex/classes.dex",
+    "org.archtv.aospprobe.NativeQueueProbe",
+    "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so"
+  ],
+  "exit_code": 0,
+  "native_queue_jni_pass": true,
+  "handler_dispatch_pass": false,
+  "apk_uses_original_framework": false,
+  "sha256": {
+    "/home/tv/repositorio-principal/dist/apk/aosp-queue-jni-4/dex/classes.dex": "8c673f807402f99a8ac075ab7563ef6374ed87312b0a8d4edc2680292feeecc4",
+    "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so": "aa87f6d0528f9d42aa7503aca57fca17a3e455e34022d8a9e4247ab8b40c7a9d"
+  },
+  "scope": "Original MessageQueue JNI creation, polling, wake across threads, public FD listener on Linux pipe, listener removal and disposal. Not Handler/Looper scheduling, full framework, APK integration or stability proof."
+}

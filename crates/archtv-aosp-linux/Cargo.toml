@@ -1,0 +1,13 @@
+[package]
+name = "archtv-aosp-linux"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+libc = "0.2"
+jni-sys = "=0.3.1"

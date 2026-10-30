@@ -1,8 +1,8 @@
 {
   "Cargo.toml": {
-    "mtime": 1793356123.9910567,
-    "seen": 1793356571.7445414,
-    "ast_hash": "c5bc4c82f9b64b68c5ae5face23d3812",
+    "mtime": 1793357476.2944863,
+    "seen": 1793357970.7741787,
+    "ast_hash": "e8e6b2b37412dd20bd55474e22c69e74",
     "semantic_hash": ""
   },
   "crates/archtv-compositor/Cargo.toml": {
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793357370.7278118,
-    "seen": 1793357376.1186898,
-    "ast_hash": "728b9082dd80fd45fe165bdb81865fee",
+    "mtime": 1793357965.1959655,
+    "seen": 1793357970.774792,
+    "ast_hash": "7c29745682e87fa410392df56282f0a1",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793357370.6344728,
-    "seen": 1793357376.1187308,
-    "ast_hash": "34a1d8ff1d0c063a2ff4f09e7d26096a",
+    "mtime": 1793357965.0693274,
+    "seen": 1793357970.7748303,
+    "ast_hash": "1986e27857cf380f9cdb62e9d9c94b23",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -888,9 +888,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/framework-study.json": {
-    "mtime": 1793356776.1892881,
-    "seen": 1793356895.710925,
-    "ast_hash": "8a8efb24ee2f29b05cc71660aa2c2eb2",
+    "mtime": 1793357675.4379644,
+    "seen": 1793357970.7744105,
+    "ast_hash": "d84032dc3153d955c89c08febff0f0fe",
     "semantic_hash": ""
   },
   "tools/apk/study_framework.py": {
@@ -900,15 +900,15 @@
     "semantic_hash": ""
   },
   "docs/PORT-FRAMEWORK-AOSP.md": {
-    "mtime": 1793357370.5378006,
-    "seen": 1793357376.118723,
-    "ast_hash": "8cf98c9f8c44851de47a254074fca9b0",
+    "mtime": 1793357964.929359,
+    "seen": 1793357970.7748227,
+    "ast_hash": "57776af1b9333cc9c9f244f497a11d8a",
     "semantic_hash": ""
   },
   "fixtures/aosp-queue/QueueLinkProbe.java": {
-    "mtime": 1793357277.879338,
-    "seen": 1793357376.1183326,
-    "ast_hash": "6b18c320afee76ed83228d013ab0ff84",
+    "mtime": 1793357617.6109815,
+    "seen": 1793357970.7743638,
+    "ast_hash": "e0ca927c117320ded7881a0f171a651e",
     "semantic_hash": ""
   },
   "runtime/aosp/compile-reference.json": {
@@ -930,9 +930,9 @@
     "semantic_hash": ""
   },
   "tools/apk/build_aosp_queue.py": {
-    "mtime": 1793357278.549372,
-    "seen": 1793357376.1186006,
-    "ast_hash": "2d3b33dfacc5a47c05263c420a4e1da1",
+    "mtime": 1793357707.1775515,
+    "seen": 1793357970.774625,
+    "ast_hash": "934f9cf86320375bc74dcf1212b9ebd9",
     "semantic_hash": ""
   },
   "tools/apk/fetch_compile_reference.py": {
@@ -942,15 +942,57 @@
     "semantic_hash": ""
   },
   "tools/apk/probe_aosp_queue.py": {
-    "mtime": 1793357315.1913035,
-    "seen": 1793357376.1186273,
-    "ast_hash": "46561f5154f63393bf486d574d2a84f6",
+    "mtime": 1793357707.340897,
+    "seen": 1793357970.7746491,
+    "ast_hash": "c785a440ff4017d9d3c1c7b193a6fc6a",
     "semantic_hash": ""
   },
   "runtime/aosp/README.md": {
-    "mtime": 1793357370.4377944,
-    "seen": 1793357376.1187804,
-    "ast_hash": "7cf271e7b6fb8128f9bf6e7e04318999",
+    "mtime": 1793357964.7760603,
+    "seen": 1793357970.7748811,
+    "ast_hash": "4cf608d497e1d23abc4feaadfafb4fc4",
+    "semantic_hash": ""
+  },
+  "crates/archtv-aosp-linux/Cargo.toml": {
+    "mtime": 1793357476.4378293,
+    "seen": 1793357970.774229,
+    "ast_hash": "af26ba2a33c35844f7c5f28fdf6f6967",
+    "semantic_hash": ""
+  },
+  "crates/archtv-aosp-linux/src/lib.rs": {
+    "mtime": 1793357658.7073038,
+    "seen": 1793357970.7742348,
+    "ast_hash": "e51c914053f4515e37edc5404d877c30",
+    "semantic_hash": ""
+  },
+  "crates/archtv-aosp-linux/src/queue.rs": {
+    "mtime": 1793357658.7073038,
+    "seen": 1793357970.7742395,
+    "ast_hash": "5a07f5fecba9cd8597acfd6e988fc1ce",
+    "semantic_hash": ""
+  },
+  "fixtures/aosp-queue/HandlerDispatchProbe.java": {
+    "mtime": 1793357836.9573638,
+    "seen": 1793357970.7743542,
+    "ast_hash": "cf2aa7a7142f6dba6acc685126850074",
+    "semantic_hash": ""
+  },
+  "fixtures/aosp-queue/NativeQueueProbe.java": {
+    "mtime": 1793357728.772497,
+    "seen": 1793357970.774359,
+    "ast_hash": "a59c4dff66e1e2cf32a1bac8067890cf",
+    "semantic_hash": ""
+  },
+  "tools/apk/verify_aosp_jni.py": {
+    "mtime": 1793357826.1065335,
+    "seen": 1793357970.7746603,
+    "ast_hash": "add4e68f00abbba6286aa0c596baf500",
+    "semantic_hash": ""
+  },
+  "docs/AOSP-JNI-LINUX.md": {
+    "mtime": 1793357964.636092,
+    "seen": 1793357970.7747512,
+    "ast_hash": "6bf66889f90c54807d3100d069892727",
     "semantic_hash": ""
   }
 }

@@ -31,10 +31,11 @@ verify(args.reference, reference['sha256'])
 for item in tools['artifacts']:
     if item['file'] in ('android.jar', 'r8.jar'):
         verify(args.tools/item['file'], item['sha256'])
-names = ('Looper', 'Handler', 'Message', 'MessageQueue')
+paths = ['core/java/android/os/'+name+'.java' for name in ('Looper', 'Handler', 'Message', 'MessageQueue')]
+paths += ['core/java/android/util/SparseArray.java', 'core/java/android/util/ContainerHelpers.java',
+          'core/java/com/android/internal/util/ArrayUtils.java', 'core/java/com/android/internal/util/GrowingArrayUtils.java']
 sources = []
-for name in names:
-    path = 'core/java/android/os/'+name+'.java'
+for path in paths:
     item = next(item for item in manifest['files'] if item['path'] == path)
     source = args.sources/path
     verify(source, item['sha256'])
@@ -46,7 +47,7 @@ for name in ('classes', 'stubs', 'dex'):
 reference_path = args.reference.resolve()
 tool_path = args.tools.resolve()
 stubs = sorted((root/'runtime/aosp/compile-stubs').rglob('*.java'))
-probe = root/'fixtures/aosp-queue/QueueLinkProbe.java'
+probes = sorted((root/'fixtures/aosp-queue').glob('*.java'))
 commands = []
 
 
@@ -65,11 +66,11 @@ boot = ':'.join(str(path) for path in [out/'compile-only.jar', reference_path, t
 run('compile-original', [args.jdk/'bin/javac', '-source', '8', '-target', '8', '-bootclasspath', boot,
                          '-d', out/'classes', *sources])
 run('compile-probe', [args.jdk/'bin/javac', '--release', '8', '-classpath', str(out/'classes')+':'+str(reference_path),
-                      '-d', out/'classes', probe])
+                      '-d', out/'classes', *probes])
 run('pack-original', [args.jdk/'bin/jar', 'cf', out/'queue.jar', '-C', out/'classes', '.'])
 with zipfile.ZipFile(out/'queue.jar') as archive:
     classes = sorted(name for name in archive.namelist() if name.endswith('.class'))
-    if any(not name.startswith(('android/os/', 'org/archtv/aospprobe/')) for name in classes):
+    if any(not name.startswith(('android/os/', 'android/util/', 'com/android/internal/util/', 'org/archtv/aospprobe/')) for name in classes):
         raise SystemExit('Unexpected compile-only class in runtime artifact')
 run('dex-original', [args.jdk/'bin/java', '-cp', tool_path/'r8.jar', 'com.android.tools.r8.D8', '--release',
                      '--min-api', '28', '--lib', tool_path/'android.jar', '--output', out/'dex', out/'queue.jar'])
@@ -79,7 +80,7 @@ run('dex-original', [args.jdk/'bin/java', '-cp', tool_path/'r8.jar', 'com.androi
     'original_sources_modified': False,
     'compile_reference': reference,
     'compile_only_declarations_sha256': {str(path.relative_to(root)): hashlib.sha256(path.read_bytes()).hexdigest() for path in stubs},
-    'probe_sha256': hashlib.sha256(probe.read_bytes()).hexdigest(),
+    'probes_sha256': {str(path.relative_to(root)): hashlib.sha256(path.read_bytes()).hexdigest() for path in probes},
     'runtime_classes': classes, 'commands': commands,
     'dex_sha256': hashlib.sha256((out/'dex/classes.dex').read_bytes()).hexdigest(),
     'scope': 'Original AOSP queue source compilation and DEX generation. Compile-only jar, declarations and full framework reference excluded. JNI, functional queue and APK compatibility not proved.',

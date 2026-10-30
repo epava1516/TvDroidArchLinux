@@ -1,0 +1,150 @@
+{
+  "source_revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+  "original_sources_sha256": {
+    "/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java": "10c120f5c53e2e2231e977b81fb2d4fde05421d2ed30e985b2cc5c52c18f42e6",
+    "/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java": "5f5b183631895c690479bac3872c28a8e3cea25302fdb2f3d0e35f5674863993",
+    "/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java": "30b7ebaeed12ddbbd820da74776fd7cc5591ce9efc6ec4fc9831150bfa5232f2",
+    "/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java": "9645371eb17866a5ad97bfd68ca328506baf9bcb19fb5b24759794ab8050833c",
+    "/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/util/SparseArray.java": "f68ac36bca0aaed50d1b635bd829e2c0a9483e00222785b6d9016126441230b7",
+    "/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/util/ContainerHelpers.java": "4551d9d2003c5b89ba322e0cf4722b7365779257baedf3cc541688622b15be98",
+    "/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/com/android/internal/util/ArrayUtils.java": "9f4d05626044f539328565568ef1f381b1865fff4f18404639e39cacb72a6ed1",
+    "/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/com/android/internal/util/GrowingArrayUtils.java": "61a9ba91a67fabdc78534849a07d398930e2770273da5d7297f5206feab984c0"
+  },
+  "original_sources_modified": false,
+  "compile_reference": {
+    "artifact": "org.robolectric:android-all:13-robolectric-9030017",
+    "file": "android-all-13.jar",
+    "url": "https://repo.maven.apache.org/maven2/org/robolectric/android-all/13-robolectric-9030017/android-all-13-robolectric-9030017.jar",
+    "bytes": 178380165,
+    "upstream_sha1": "6f1de3639fb19379abaa68b9f29d10cd6653047f",
+    "sha256": "6e67dca81d30295e31ee6a28cfb601b6b66aaeaee51a92386ed099a64cea5996",
+    "scope": "Compile-only Android 13 framework class reference; not added to runtime classpath or distributed as the port."
+  },
+  "compile_only_declarations_sha256": {
+    "runtime/aosp/compile-stubs/android/compat/annotation/UnsupportedAppUsage.java": "1416d1eceffa040872e76a5a623370b94e9a4031ba8998d31b732d792918a7ad",
+    "runtime/aosp/compile-stubs/java/io/FileDescriptor.java": "24eb6b5031f0ce4b5f61c7b65e031e4db5d678005de0f1f2e394ed6204d03a28"
+  },
+  "probes_sha256": {
+    "fixtures/aosp-queue/HandlerDispatchProbe.java": "5943e44182f100fb953ac7a2d27321df6d3baf5b5ee9b4aefad4b8725aa44aeb",
+    "fixtures/aosp-queue/NativeQueueProbe.java": "a4839d5f9026d5a11321cfc1823a5bfb021f63153c0d0716732e579ae83fb694",
+    "fixtures/aosp-queue/QueueLinkProbe.java": "83750cd18e72d3c2176f244246684c9e19ff81d6bbda1e7ca16fec231b7d8e4d"
+  },
+  "runtime_classes": [
+    "android/os/Handler$1.class",
+    "android/os/Handler$BlockingRunnable.class",
+    "android/os/Handler$Callback.class",
+    "android/os/Handler$MessengerImpl.class",
+    "android/os/Handler.class",
+    "android/os/Looper$Observer.class",
+    "android/os/Looper.class",
+    "android/os/Message$1.class",
+    "android/os/Message.class",
+    "android/os/MessageQueue$FileDescriptorRecord.class",
+    "android/os/MessageQueue$IdleHandler.class",
+    "android/os/MessageQueue$OnFileDescriptorEventListener$Events.class",
+    "android/os/MessageQueue$OnFileDescriptorEventListener.class",
+    "android/os/MessageQueue.class",
+    "android/util/ContainerHelpers.class",
+    "android/util/SparseArray.class",
+    "com/android/internal/util/ArrayUtils.class",
+    "com/android/internal/util/GrowingArrayUtils.class",
+    "org/archtv/aospprobe/HandlerDispatchProbe$1.class",
+    "org/archtv/aospprobe/HandlerDispatchProbe.class",
+    "org/archtv/aospprobe/NativeQueueProbe$1.class",
+    "org/archtv/aospprobe/NativeQueueProbe$2.class",
+    "org/archtv/aospprobe/NativeQueueProbe.class",
+    "org/archtv/aospprobe/QueueLinkProbe.class"
+  ],
+  "commands": [
+    {
+      "name": "compile-private-declarations",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/javac",
+        "--release",
+        "8",
+        "-d",
+        "/home/tv/repositorio-principal/dist/apk/aosp-queue-jni-4/stubs",
+        "/home/tv/repositorio-principal/runtime/aosp/compile-stubs/android/compat/annotation/UnsupportedAppUsage.java",
+        "/home/tv/repositorio-principal/runtime/aosp/compile-stubs/java/io/FileDescriptor.java"
+      ]
+    },
+    {
+      "name": "pack-private-declarations",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/jar",
+        "cf",
+        "/home/tv/repositorio-principal/dist/apk/aosp-queue-jni-4/compile-only.jar",
+        "-C",
+        "/home/tv/repositorio-principal/dist/apk/aosp-queue-jni-4/stubs",
+        "."
+      ]
+    },
+    {
+      "name": "compile-original",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/javac",
+        "-source",
+        "8",
+        "-target",
+        "8",
+        "-bootclasspath",
+        "/home/tv/repositorio-principal/dist/apk/aosp-queue-jni-4/compile-only.jar:/home/tv/.cache/archtv/aosp-compile-tools/android-all-13.jar:/home/tv/.cache/archtv/apk-build-tools/android.jar",
+        "-d",
+        "/home/tv/repositorio-principal/dist/apk/aosp-queue-jni-4/classes",
+        "/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Looper.java",
+        "/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Handler.java",
+        "/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/Message.java",
+        "/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/os/MessageQueue.java",
+        "/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/util/SparseArray.java",
+        "/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/util/ContainerHelpers.java",
+        "/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/com/android/internal/util/ArrayUtils.java",
+        "/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/com/android/internal/util/GrowingArrayUtils.java"
+      ]
+    },
+    {
+      "name": "compile-probe",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/javac",
+        "--release",
+        "8",
+        "-classpath",
+        "/home/tv/repositorio-principal/dist/apk/aosp-queue-jni-4/classes:/home/tv/.cache/archtv/aosp-compile-tools/android-all-13.jar",
+        "-d",
+        "/home/tv/repositorio-principal/dist/apk/aosp-queue-jni-4/classes",
+        "/home/tv/repositorio-principal/fixtures/aosp-queue/HandlerDispatchProbe.java",
+        "/home/tv/repositorio-principal/fixtures/aosp-queue/NativeQueueProbe.java",
+        "/home/tv/repositorio-principal/fixtures/aosp-queue/QueueLinkProbe.java"
+      ]
+    },
+    {
+      "name": "pack-original",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/jar",
+        "cf",
+        "/home/tv/repositorio-principal/dist/apk/aosp-queue-jni-4/queue.jar",
+        "-C",
+        "/home/tv/repositorio-principal/dist/apk/aosp-queue-jni-4/classes",
+        "."
+      ]
+    },
+    {
+      "name": "dex-original",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/java",
+        "-cp",
+        "/home/tv/.cache/archtv/apk-build-tools/r8.jar",
+        "com.android.tools.r8.D8",
+        "--release",
+        "--min-api",
+        "28",
+        "--lib",
+        "/home/tv/.cache/archtv/apk-build-tools/android.jar",
+        "--output",
+        "/home/tv/repositorio-principal/dist/apk/aosp-queue-jni-4/dex",
+        "/home/tv/repositorio-principal/dist/apk/aosp-queue-jni-4/queue.jar"
+      ]
+    }
+  ],
+  "dex_sha256": "8c673f807402f99a8ac075ab7563ef6374ed87312b0a8d4edc2680292feeecc4",
+  "scope": "Original AOSP queue source compilation and DEX generation. Compile-only jar, declarations and full framework reference excluded. JNI, functional queue and APK compatibility not proved."
+}

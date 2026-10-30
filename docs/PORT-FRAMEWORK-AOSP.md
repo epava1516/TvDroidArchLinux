@@ -10,7 +10,7 @@ como regresión durante la sustitución.
 
 Se ha fijado frameworks/base de Android 13 en la revisión
 bff944d05cd47d2b3b713565d3f00d512840d282, coherente con la rama del ART host
-estudiado. runtime/aosp/framework-study.json enumera 17 archivos, 3 148 358 bytes,
+estudiado. El inventario inicial enumera 17 archivos, 3 148 358 bytes,
 con tamaño y SHA-256. Se descargan únicamente esos archivos a caché, sin árbol
 Android completo. reports/aosp-framework-study/dependencies.json registra imports,
 declaraciones native y referencias léxicas entre tipos del mismo paquete.
@@ -77,3 +77,11 @@ Ver runtime/aosp/README.md y reports/aosp-queue-compile/. No funciona aún la co
 el siguiente paso es su JNI Linux y las dependencias de ejecución posteriores.
 El cierre de compilación no prueba que ya se haya resuelto todo ese conjunto,
 ni sustituye las API propias que sigue usando el contador.
+
+## JNI Linux verificado
+
+El enlace Rust de los seis métodos native de MessageQueue ya pasa creación,
+espera, despertar, FD con listener Java original y destrucción en ART. Se añadieron
+cuatro utilidades originales sin modificarlas: el manifiesto contiene ahora 21
+archivos. Falta el despacho con Handler/Looper.loop, cuya prueba encuentra ahora
+Parcelable ausente. Ver AOSP-JNI-LINUX.md y reports/aosp-queue-jni/.

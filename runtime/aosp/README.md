@@ -37,7 +37,7 @@ nativeInit y termina con UnsatisfiedLinkError. Ver reports/aosp-queue-compile/.
 El código 0 del comprobador significa que observó esa frontera esperada, no que
 funcione una cola. result.json mantiene queue_functional_pass=false.
 
-El siguiente trabajo es implementar y probar la adaptación JNI de la cola a Linux:
+En el primer ensayo, el siguiente trabajo era implementar la adaptación JNI:
 creación/destrucción, espera, despertar, estado de espera y eventos de FD. Después
 habrá que seguir resolviendo dependencias de ejecución (Binder, reloj, identidad,
 trazas, Parcel/Bundle, utilidades y demás referencias que aparezcan). Haber llegado
@@ -50,3 +50,13 @@ no acredita Activity/View originales, framework completo ni estabilidad de APK.
 Las licencias y avisos de cada fuente/dependencia deberán conservarse al incorporar
 y distribuir código original; actualmente se publica el manifiesto y herramientas,
 no los archivos descargados ni el JAR de referencia.
+
+## Enlace JNI ya probado
+
+archtv-aosp-linux implementa los seis enlaces con epoll/eventfd. El conjunto de
+fuentes original incluye ahora SparseArray, ContainerHelpers, ArrayUtils y
+GrowingArrayUtils para ejecutar el listener público de FD. NativeQueueProbe pasa
+en ART con una tubería Linux y despertar entre hilos. La prueba de despacho con
+Handler falla todavía por ausencia de Parcelable. Ver docs/AOSP-JNI-LINUX.md y
+reports/aosp-queue-jni/. Este avance no sustituye las API de la APK ni convierte
+el conjunto completo en una cola Java funcional.

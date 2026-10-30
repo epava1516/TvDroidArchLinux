@@ -10,3 +10,5 @@ reports/a1-art-host/*.stderr -whitespace
 reports/a1-counter-headless/*.stderr -whitespace
 reports/a2-wayland/** -whitespace
 reports/aosp-queue-compile/*.stderr -whitespace
+reports/aosp-queue-jni/*.stderr -whitespace
+reports/aosp-queue-jni/*.log whitespace=-blank-at-eof

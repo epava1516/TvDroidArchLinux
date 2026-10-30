@@ -93,3 +93,8 @@ El primer conjunto original (Looper/Handler/Message/MessageQueue) ya compila sin
 modificar fuentes y llega en ART hasta MessageQueue.nativeInit, aún sin enlace
 JNI. La cola no es funcional todavía. Ver runtime/aosp/README.md y
 reports/aosp-queue-compile/. El contador sigue usando el prototipo previo.
+
+El JNI Linux Rust de MessageQueue ya está probado en ART, incluyendo despertar
+entre hilos y listener FD público con SparseArray/utilidades originales. El
+despacho Handler/Looper.loop falla todavía por Parcelable ausente. AOSP-JNI-LINUX.md
+y reports/aosp-queue-jni/ registran esta frontera; no se da por completado el port.

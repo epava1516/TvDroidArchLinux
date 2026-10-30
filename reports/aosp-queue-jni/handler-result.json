@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+    "--64",
+    "--no-compile",
+    "--",
+    "-Xint",
+    "-cp",
+    "/home/tv/repositorio-principal/dist/apk/aosp-queue-jni-4/dex/classes.dex",
+    "org.archtv.aospprobe.HandlerDispatchProbe",
+    "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so"
+  ],
+  "exit_code": 1,
+  "scope": "Next dependency probe, not a dispatch pass."
+}

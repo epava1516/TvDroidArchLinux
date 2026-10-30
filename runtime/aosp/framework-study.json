@@ -88,6 +88,26 @@
       "path": "core/java/android/app/SharedPreferencesImpl.java",
       "sha256": "92f2a9a019c48d5a4aa70cf8683b2703346e47779e2ef1ea937b1c0494809012",
       "bytes": 30273
+    },
+    {
+      "path": "core/java/android/util/SparseArray.java",
+      "bytes": 18207,
+      "sha256": "f68ac36bca0aaed50d1b635bd829e2c0a9483e00222785b6d9016126441230b7"
+    },
+    {
+      "path": "core/java/android/util/ContainerHelpers.java",
+      "bytes": 1754,
+      "sha256": "4551d9d2003c5b89ba322e0cf4722b7365779257baedf3cc541688622b15be98"
+    },
+    {
+      "path": "core/java/com/android/internal/util/ArrayUtils.java",
+      "bytes": 29122,
+      "sha256": "9f4d05626044f539328565568ef1f381b1865fff4f18404639e39cacb72a6ed1"
+    },
+    {
+      "path": "core/java/com/android/internal/util/GrowingArrayUtils.java",
+      "bytes": 8288,
+      "sha256": "61a9ba91a67fabdc78534849a07d398930e2770273da5d7297f5206feab984c0"
     }
   ]
 }
