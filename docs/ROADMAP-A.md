@@ -148,3 +148,9 @@ Métricas iniciales de Resources verificadas con configure Wayland real a 720p y
 1080p, entrada/persistencia y capturas exactas. Los cambios de tamaño del runtime
 pasan en headless. El resize en vivo después del primer frame también pasa en Wayland anidado;
 continúan pendientes HiDPI/hotplug y cambio físico de modo DRM; ver AOSP-METRICAS-WAYLAND.md y reports/aosp-display-*.
+
+Context/ContextWrapper/Application originales integrados: 54 fuentes originales,
+seis hooks Linux funcionales y 126 abstractos rechazados explícitamente. Se retiró
+el Context propio; pasan contador, wrapper/callbacks, DRM y resize anidado. Ver
+CONTEXTO-AOSP-LINUX.md y reports/aosp-context-*. No cierra ContextImpl, servicios,
+Activity/View originales ni las puertas generales de estabilidad/distribución.

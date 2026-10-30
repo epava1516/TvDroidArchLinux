@@ -68,6 +68,8 @@ public final class ApkResources implements AutoCloseable {
     private static IllegalArgumentException bad(String message, Throwable cause) {
         return new IllegalArgumentException("Unsupported or invalid APK resources: "+message, cause);
     }
+    public Resources platformResources() { return resources; }
+    public AssetManager platformAssets() { return manager; }
     public synchronized String getString(int resourceId) {
         if (closed) throw new IllegalStateException("APK resources closed");
         return resources.getString(resourceId);

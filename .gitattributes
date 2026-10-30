@@ -31,3 +31,8 @@ reports/aosp-display-wayland-*/** -whitespace
 reports/aosp-display-wayland-resize/** -whitespace
 reports/aosp-display-capture-race/*.log -whitespace
 reports/aosp-display-input-readiness/** -whitespace
+reports/aosp-context-probe/*.stderr -whitespace
+reports/aosp-context-probe/*.log -whitespace
+reports/aosp-context-headless/*.stderr -whitespace
+reports/aosp-context-wayland/** -whitespace
+reports/aosp-context-wayland-resize/** -whitespace

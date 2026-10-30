@@ -1,0 +1,35 @@
+2026-10-30T14:43:30.341333Z  WARN smithay::backend::drm::device::fd: Unable to become drm master, assuming unprivileged mode
+2026-10-30T14:43:30.342829Z  INFO archtv_compositor::state: OUTPUT_CONFIGURED width=1280 height=720
+2026-10-30T14:43:30.460338Z  INFO archtv_compositor::drm: DRM_READY device=/dev/dri/card0 width=1280 height=720 refresh=60 format="XRGB8888" modifier="LINEAR" buffers=2 renderer="Pixman"
+2026-10-30T14:43:30.462952Z  INFO archtv_compositor::session: SESSION_CHILD_STARTED pid=136371 shell=false
+2026-10-30T14:43:30.463238Z  INFO archtv_compositor: TV_COMPOSITOR_READY socket="wayland-1"
+2026-10-30T14:43:30.463413Z  INFO archtv_compositor::input: INPUT_ADDED name="Video Bus"
+2026-10-30T14:43:30.463461Z  INFO archtv_compositor::input: INPUT_ADDED name="VirtualBox mouse integration"
+2026-10-30T14:43:30.463500Z  INFO archtv_compositor::input: INPUT_ADDED name="VirtualBox USB Tablet"
+2026-10-30T14:43:30.463539Z  INFO archtv_compositor::input: INPUT_ADDED name="AT Translated Set 2 keyboard"
+2026-10-30T14:43:30.463577Z  INFO archtv_compositor::input: INPUT_ADDED name="ImExPS/2 Generic Explorer Mouse"
+2026-10-30T14:43:30.480718Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=1
+2026-10-30T14:43:31.005132Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=2
+APK_VIEW ready Node { kind: "android.widget.LinearLayout", focused: false, padding: [24, 24, 24, 24], text: None, text_size: None, orientation: Some(1), children: [Node { kind: "android.widget.TextView", focused: false, padding: [0, 0, 0, 0], text: Some("Contador: 2"), text_size: Some(28.0), orientation: None, children: [] }, Node { kind: "android.widget.Button", focused: true, padding: [0, 0, 0, 0], text: Some("Incrementar"), text_size: Some(14.0), orientation: None, children: [] }] }
+APK_DISPLAY 1280x720
+APK_FRAME 1 1280x720
+2026-10-30T14:43:31.853374Z  INFO archtv_compositor::state: TOPLEVEL_MAPPED
+APK_FOCUS_ENTER
+2026-10-30T14:43:31.873038Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=3
+2026-10-30T14:43:31.979861Z  INFO archtv_compositor::input: INPUT_ADDED name="ArchTV APK test keyboard 136361"
+APK_FRAME 2 1280x720
+APK_KEY XK_Return
+2026-10-30T14:43:32.225144Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=4
+APK_VIEW updated Node { kind: "android.widget.LinearLayout", focused: false, padding: [24, 24, 24, 24], text: None, text_size: None, orientation: Some(1), children: [Node { kind: "android.widget.TextView", focused: false, padding: [0, 0, 0, 0], text: Some("Contador: 3"), text_size: Some(28.0), orientation: None, children: [] }, Node { kind: "android.widget.Button", focused: true, padding: [0, 0, 0, 0], text: Some("Incrementar"), text_size: Some(14.0), orientation: None, children: [] }] }
+APK_DISPLAY 1280x720
+APK_FRAME 3 1280x720
+2026-10-30T14:43:32.898927Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=5
+2026-10-30T14:43:33.363964Z  INFO archtv_compositor::drm: DRM_CAPTURED path=/home/tv/repositorio-principal/reports/aosp-context-wayland/reopen/scanout.ppm
+APK_KEY XK_Escape
+APK_HOST_STOPPED frames=3
+2026-10-30T14:43:33.689078Z  INFO archtv_compositor::handlers::xdg_shell: TOPLEVEL_DESTROYED
+2026-10-30T14:43:33.699681Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=6
+2026-10-30T14:43:33.873568Z  INFO archtv_compositor::input: INPUT_REMOVED name="ArchTV APK test keyboard 136361"
+2026-10-30T14:43:33.886673Z  WARN archtv_compositor::session: SESSION_CHILD_EXITED status=ExitStatus(unix_wait_status(0)) shell=false
+2026-10-30T14:43:33.978380Z  INFO archtv_compositor: TV_COMPOSITOR_STOPPED
+2026-10-30T14:43:34.218154Z  INFO archtv_compositor::drm: DRM_STOPPED frames=6

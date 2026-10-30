@@ -101,6 +101,7 @@ public final class Main {
             ui.post(new Runnable() {
                 public void run() {
                     uiThread(owner, "create");
+                    AppEnvironment.current().applicationContext.onCreate();
                     try {
                         activity[0] = Class.forName(activityClass).asSubclass(Activity.class).getDeclaredConstructor().newInstance();
                     } catch (Exception problem) { throw new IllegalStateException("Cannot construct Activity", problem); }
@@ -135,6 +136,8 @@ public final class Main {
                                                         if (dimensions.length != 3) throw new IllegalArgumentException("Invalid configure command");
                                                         AppEnvironment.current().resources.configure(
                                                             Integer.parseInt(dimensions[1]), Integer.parseInt(dimensions[2]));
+                                                        AppEnvironment.current().applicationContext.onConfigurationChanged(
+                                                            new android.content.res.Configuration(AppEnvironment.current().resources.platformResources().getConfiguration()));
                                                     } else if (!action.equals("dump"))
                                                         throw new IllegalArgumentException("Unknown command: "+action);
                                                     snapshot(activity[0], "updated");

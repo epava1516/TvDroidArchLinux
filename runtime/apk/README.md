@@ -15,7 +15,7 @@ el contador: esos cambios los produce onClick de la APK.
 
 Requiere las herramientas fijadas del laboratorio APK, JDK 17 y el conjunto ART host
 descrito en docs/ESTUDIO-ART-HOST.md. Requiere además la biblioteca Rust y un build
-AOSP con framework.jar generado con --with-public-resources, siguiendo runtime/aosp/README.md.
+AOSP con framework.jar generado con --with-context, siguiendo runtime/aosp/README.md.
 La biblioteca de recursos y sus instrucciones están en docs/AOSP-RECURSOS-LINUX.md. Los destinos deben ser nuevos.
 
 ```bash
@@ -78,3 +78,8 @@ actualizan Resources mediante su Handler UI, con escala de superficie 1.
 
 Las métricas iniciales ya proceden de la ventana Wayland; el runtime acepta
 cambios de tamaño en el hilo UI original. Ver docs/AOSP-METRICAS-WAYLAND.md para las pruebas y sus límites.
+
+Context y Application ya son originales: LinuxContext aporta sólo seis hooks
+para los recursos y estado real del proceso. Los 126 hooks abstractos restantes
+fallan explícitamente. Activity sigue propia y hereda ese contexto. Ver
+docs/CONTEXTO-AOSP-LINUX.md para el alcance y la inicialización de Application.

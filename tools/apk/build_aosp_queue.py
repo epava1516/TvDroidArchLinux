@@ -12,10 +12,13 @@ parser.add_argument('--sources', type=Path, required=True)
 parser.add_argument('--reference', type=Path, required=True)
 parser.add_argument('--tools', type=Path, required=True)
 parser.add_argument('--output', type=Path, required=True)
+parser.add_argument('--with-context', action='store_true', help='Compile original Context, ContextWrapper, Application and component callbacks')
 parser.add_argument('--with-public-resources', action='store_true', help='Compile original Resources/ResourcesImpl and their recorded dependency set')
 parser.add_argument('--with-resources', action='store_true', help='Compile original AssetManager, ApkAssets and TypedValue as well')
 parser.add_argument('--jdk', type=Path, default=Path('/usr/lib/jvm/java-17-openjdk'))
 args = parser.parse_args()
+if args.with_context:
+    args.with_public_resources = True
 if args.with_public_resources:
     args.with_resources = True
 root = Path(__file__).resolve().parents[2]
@@ -50,6 +53,8 @@ if args.with_resources:
     paths += ['core/java/android/content/pm/'+name+'.java' for name in ('ActivityInfo', 'ComponentInfo', 'PackageItemInfo')]
 if args.with_public_resources:
     paths += manifest['public_resources_sources']
+if args.with_context:
+    paths += manifest['context_sources']
 sources = []
 for path in paths:
     item = next(item for item in manifest['files'] if item['path'] == path)
@@ -103,7 +108,7 @@ run('compile-probe', [args.jdk/'bin/javac', '--release', '8', '-classpath', str(
 run('pack-original', [args.jdk/'bin/jar', 'cf', out/'queue.jar', '-C', out/'classes', '.'])
 with zipfile.ZipFile(out/'queue.jar') as archive:
     classes = sorted(name for name in archive.namelist() if name.endswith('.class'))
-    if any(not name.startswith(('android/os/', 'android/util/', 'android/net/', 'android/content/res/', 'android/content/pm/', 'android/app/', 'android/view/', 'android/graphics/', 'android/text/', 'android/sysprop/', 'com/android/internal/util/', 'com/android/internal/os/', 'org/archtv/aospprobe/')) for name in classes):
+    if any(not name.startswith(('android/os/', 'android/util/', 'android/net/', 'android/content/', 'android/content/pm/', 'android/app/', 'android/view/', 'android/graphics/', 'android/text/', 'android/sysprop/', 'com/android/internal/util/', 'com/android/internal/os/', 'org/archtv/aospprobe/')) for name in classes):
         raise SystemExit('Unexpected compile-only class in runtime artifact')
 run('dex-original', [args.jdk/'bin/java', '-cp', tool_path/'r8.jar', 'com.android.tools.r8.D8', '--release',
                      '--min-api', '28', '--lib', tool_path/'android.jar', '--output', out/'dex', out/'queue.jar'])

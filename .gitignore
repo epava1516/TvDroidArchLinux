@@ -20,3 +20,4 @@ __pycache__/
 
 # Private process data from the nested APK resize probe.
 /reports/aosp-display-wayland-resize/data/
+/reports/aosp-context-wayland-resize/data/

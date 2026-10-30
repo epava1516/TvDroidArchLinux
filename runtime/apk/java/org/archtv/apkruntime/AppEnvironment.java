@@ -9,11 +9,23 @@ import java.util.Map;
 public final class AppEnvironment {
     private static AppEnvironment instance;
     public final ApkResources resources;
+    public final android.app.Application applicationContext;
     public View focus;
     private final Path dataDirectory;
     private final Map<String, SharedPreferences> preferences = new HashMap<String, SharedPreferences>();
     private AppEnvironment(Path apk, Path data) throws Exception {
+        LinuxContext base = new LinuxContext();
         resources = new ApkResources(apk);
+        try {
+            applicationContext = new android.app.Application();
+            java.lang.reflect.Method attach = android.content.ContextWrapper.class.getDeclaredMethod(
+                "attachBaseContext", android.content.Context.class);
+            attach.setAccessible(true);
+            attach.invoke(applicationContext, base);
+        } catch (Exception | Error problem) {
+            resources.close();
+            throw problem;
+        }
         dataDirectory = data;
     }
     public static void initialize(Path apk, Path data) throws Exception {

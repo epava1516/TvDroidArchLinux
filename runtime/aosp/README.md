@@ -101,3 +101,11 @@ público Resources, getIdentifier/getString y la actualización de configuració
 ya pasan en ART. Ver docs/AOSP-RESOURCES-PUBLICO.md y
 reports/aosp-public-resources/. La APK todavía usa AssetManager directamente;
 recursos de sistema y port de Activity/View permanecen pendientes.
+
+## Context y Application originales
+
+--with-context amplía el grupo a 54 fuentes originales, incluidos Context,
+ContextWrapper, Application y ComponentCallbacks. El runtime exige este conjunto.
+LinuxContext implementa seis hooks reales y rechaza explícitamente 126 hooks de
+servicios aún ausentes. Ver docs/CONTEXTO-AOSP-LINUX.md y reports/aosp-context-*.
+La Activity y View siguen propios; ContextImpl/LoadedApk no se han portado.

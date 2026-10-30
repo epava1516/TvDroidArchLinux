@@ -1,0 +1,30 @@
+{
+  "context_pass": true,
+  "exit_code": 0,
+  "command": [
+    "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+    "--64",
+    "--no-compile",
+    "--",
+    "-Xint",
+    "-Xcheck:jni",
+    "-cp",
+    "/home/tv/repositorio-principal/dist/apk/apk-context-application-1/dex/classes.dex:/home/tv/repositorio-principal/dist/apk/context-application-probe-1/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+    "org.archtv.apkruntime.ContextProbe",
+    "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+    "/home/tv/repositorio-principal/dist/apk/androidfw-clang-1/libarchtv_resources_linux.so",
+    "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+    "/home/tv/repositorio-principal/dist/apk/context-application-probe-1/data"
+  ],
+  "probe_source_sha256": "b4939c60dcdea80c43a2ab9561ca43d6d2b5bd02901986b612732b093c44153c",
+  "runtime_dex_sha256": "b0ddbb02aa793000d014b6ad0a98279c046052a56864e0242756bc318b76f104",
+  "inputs_sha256": {
+    "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so": "bf3165f74bd98d7fcb0f7dd0edb1ec573b3e7ee23e445212ca7ddd22e202bd56",
+    "/home/tv/repositorio-principal/dist/apk/androidfw-clang-1/libarchtv_resources_linux.so": "7e6130020a9ccc8a6efe2ab4cca335c558c4dda58d7cd4860df00f90e735012d",
+    "/home/tv/repositorio-principal/dist/apk/context-application-probe-1/dex/classes.dex": "ec239f6d887a53af9fa99095c41132a6f3862e7f37084364d8c49ba42f9c0147",
+    "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk": "f07c9b92ab3353237276081c22e11ce06168b8c9f71a99ea32968b2ce0f00e28",
+    "/home/tv/repositorio-principal/dist/apk/apk-context-application-1/runtime.jar": "eec68da6b75f1e62d81e4804f14dea98472fa2c96a2948690ad0f903b6200394",
+    "/home/tv/repositorio-principal/dist/apk/aosp-context-application-2/framework.jar": "c92d8510d8a312aae8f9adfdd8af6b22a5f15faa241eb44b2b0e7781e378f7f0"
+  },
+  "scope": "Original Context resource methods, ContextWrapper delegation/attach guard, original Application identity/component callbacks (manual memory dispatch), six real Linux hooks and explicit unsupported service. No ContextImpl, full Activity/View, system services or general APK compatibility claim."
+}

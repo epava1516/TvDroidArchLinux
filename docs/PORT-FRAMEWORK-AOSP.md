@@ -119,3 +119,8 @@ de cadenas/configuración: AOSP-RESOURCES-PUBLICO.md documenta las 48 fuentes
 originales y la excepción de cuatro clases generadas reutilizadas como bytecode.
 No se carga la referencia completa. Sigue pendiente integrarlo en el contador
 y cerrar la inicialización de recursos de sistema y el port de Activity/View.
+
+El siguiente conjunto incorpora Context, ContextWrapper y Application originales.
+El Context reducido se retiró y los hooks de Linux quedan separados de los
+métodos originales. CONTEXTO-AOSP-LINUX.md documenta soporte real, rechazos y
+pendientes de ContextImpl/LoadedApk y servicios.

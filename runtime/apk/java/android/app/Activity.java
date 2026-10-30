@@ -1,11 +1,11 @@
 package android.app;
 
-import android.content.Context;
+import org.archtv.apkruntime.LinuxContext;
 import android.os.Bundle;
 import android.view.View;
 
 /** Measured lifecycle subset, not the full Android Activity implementation. */
-public class Activity extends Context {
+public class Activity extends LinuxContext {
     private View content;
     private boolean created;
     protected void onCreate(Bundle state) { }
