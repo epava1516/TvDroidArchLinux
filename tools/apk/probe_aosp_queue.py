@@ -16,7 +16,7 @@ parser.add_argument('--output', type=Path, required=True)
 args = parser.parse_args()
 dex = args.dex.resolve()
 definitions = sorted(dex_inventory(dex.read_bytes())[1])
-if any(not name.startswith(('Landroid/os/', 'Landroid/util/', 'Lcom/android/internal/util/', 'Lorg/archtv/aospprobe/')) for name in definitions):
+if any(not name.startswith(('Landroid/os/', 'Landroid/util/', 'Landroid/net/', 'Lcom/android/internal/util/', 'Lcom/android/internal/os/', 'Lorg/archtv/aospprobe/')) for name in definitions):
     raise SystemExit('Unexpected class in queue runtime DEX')
 out = args.output.resolve()
 out.mkdir(parents=True, exist_ok=False)

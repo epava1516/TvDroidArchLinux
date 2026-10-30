@@ -31,9 +31,13 @@ verify(args.reference, reference['sha256'])
 for item in tools['artifacts']:
     if item['file'] in ('android.jar', 'r8.jar'):
         verify(args.tools/item['file'], item['sha256'])
-paths = ['core/java/android/os/'+name+'.java' for name in ('Looper', 'Handler', 'Message', 'MessageQueue')]
+paths = ['core/java/android/os/'+name+'.java' for name in ('Looper', 'Handler', 'Message', 'MessageQueue', 'Parcelable', 'SystemClock', 'ThreadLocalWorkSource')]
 paths += ['core/java/android/util/SparseArray.java', 'core/java/android/util/ContainerHelpers.java',
           'core/java/com/android/internal/util/ArrayUtils.java', 'core/java/com/android/internal/util/GrowingArrayUtils.java']
+paths += ['core/java/android/os/Binder.java', 'core/java/android/os/IBinder.java',
+          'core/java/android/util/IntArray.java', 'core/java/com/android/internal/os/BinderInternal.java']
+paths += ['core/java/android/os/Process.java', 'core/java/android/os/ZygoteProcess.java',
+          'core/java/android/os/SystemProperties.java', 'core/java/android/net/LocalSocketAddress.java']
 sources = []
 for path in paths:
     item = next(item for item in manifest['files'] if item['path'] == path)
@@ -70,7 +74,7 @@ run('compile-probe', [args.jdk/'bin/javac', '--release', '8', '-classpath', str(
 run('pack-original', [args.jdk/'bin/jar', 'cf', out/'queue.jar', '-C', out/'classes', '.'])
 with zipfile.ZipFile(out/'queue.jar') as archive:
     classes = sorted(name for name in archive.namelist() if name.endswith('.class'))
-    if any(not name.startswith(('android/os/', 'android/util/', 'com/android/internal/util/', 'org/archtv/aospprobe/')) for name in classes):
+    if any(not name.startswith(('android/os/', 'android/util/', 'android/net/', 'com/android/internal/util/', 'com/android/internal/os/', 'org/archtv/aospprobe/')) for name in classes):
         raise SystemExit('Unexpected compile-only class in runtime artifact')
 run('dex-original', [args.jdk/'bin/java', '-cp', tool_path/'r8.jar', 'com.android.tools.r8.D8', '--release',
                      '--min-api', '28', '--lib', tool_path/'android.jar', '--output', out/'dex', out/'queue.jar'])

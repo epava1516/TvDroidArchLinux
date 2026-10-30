@@ -108,6 +108,61 @@
       "path": "core/java/com/android/internal/util/GrowingArrayUtils.java",
       "bytes": 8288,
       "sha256": "61a9ba91a67fabdc78534849a07d398930e2770273da5d7297f5206feab984c0"
+    },
+    {
+      "path": "core/java/android/os/Parcelable.java",
+      "bytes": 9094,
+      "sha256": "a356faaacdc732d5439d9e763356f04bafb93905c86a8414b3e1515eb2a25e95"
+    },
+    {
+      "path": "core/java/android/os/SystemClock.java",
+      "bytes": 13508,
+      "sha256": "34ff31d5c79f946b6871cc61ce00120ce059382790cc3d8de11fa4305d2075a9"
+    },
+    {
+      "path": "core/java/android/os/ThreadLocalWorkSource.java",
+      "bytes": 3762,
+      "sha256": "f9914e820de850258e92ae3a8acbd5c96a8f35c1fc951b9d6497bf2fc01f51ff"
+    },
+    {
+      "path": "core/java/android/os/Binder.java",
+      "bytes": 50997,
+      "sha256": "b19230597e7da5c490de0887dfcb704aa82ceed2c6e2be2ecca0a3ec43443343"
+    },
+    {
+      "path": "core/java/android/os/IBinder.java",
+      "bytes": 15629,
+      "sha256": "a9ce93296a895c3aac430b229edec24f7656b8bfbb9ad7fba79f08c149837891"
+    },
+    {
+      "path": "core/java/android/util/IntArray.java",
+      "bytes": 7343,
+      "sha256": "e7afd6a7e46037befe108b277900ea67ee818dcab1cd275aa6fe51d229ce33d2"
+    },
+    {
+      "path": "core/java/com/android/internal/os/BinderInternal.java",
+      "bytes": 10658,
+      "sha256": "c3b43bf7624f261b6579669aeae50aa04907a508353a2d35465386117a4b9f07"
+    },
+    {
+      "path": "core/java/android/os/Process.java",
+      "bytes": 58256,
+      "sha256": "96db77de284346a89f538c18aeb3fe9f39cc94ee6aeb1077ceaa3e2ff7b2f07c"
+    },
+    {
+      "path": "core/java/android/os/ZygoteProcess.java",
+      "bytes": 56740,
+      "sha256": "9a2007010dad124bded8f3da19e4069e615faa26f1dee625948e015cad2974c0"
+    },
+    {
+      "path": "core/java/android/os/SystemProperties.java",
+      "bytes": 13392,
+      "sha256": "ba1ef9aefc18a4043dfd66f462b414a0fb0790ff0a9b730eced4cceebc42cd6f"
+    },
+    {
+      "path": "core/java/android/net/LocalSocketAddress.java",
+      "bytes": 2712,
+      "sha256": "81de93fd0424609b9e0e76948e57a73aa7a280bfa817c48018cee4f5a107a111"
     }
   ]
 }

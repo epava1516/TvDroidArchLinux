@@ -1,0 +1,6 @@
+{
+  "observed": "The first QueueSemanticsProbe run reached the 45-second subprocess timeout. The initial runner killed its process group and re-raised without saving that probe output. Clock, LocalContext and Handler stdout from that run contained their success markers.",
+  "cause": "Not established.",
+  "test_changes": "Added stage traces, retained timeout outputs, made test workers daemon on failure; all successful scenarios still join workers.",
+  "subsequent_evidence": "All five probes passed, then the queue semantics passed ten fresh ART processes. No claim of fixing the original timeout or prolonged stability."
+}

@@ -1,0 +1,18 @@
+   Compiling archtv-aosp-linux v0.1.0 (/home/tv/repositorio-principal/crates/archtv-aosp-linux)
+    Finished `test` profile [unoptimized] target(s) in 1.50s
+     Running unittests src/lib.rs (/home/tv/.cache/archtv/smithay/target/debug/deps/archtv_aosp_linux-5e4628683433b532)
+
+running 4 tests
+test queue::tests::callback_replacement_preserves_new_registration ... ok
+test queue::tests::pending_wake_is_consumed_without_fd_dispatch ... ok
+test queue::tests::readable_descriptor_callback_can_unregister ... ok
+test queue::tests::another_thread_wakes_a_live_poll ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+   Doc-tests archtv_aosp_linux
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

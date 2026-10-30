@@ -85,3 +85,11 @@ espera, despertar, FD con listener Java original y destrucción en ART. Se añad
 cuatro utilidades originales sin modificarlas: el manifiesto contiene ahora 21
 archivos. Falta el despacho con Handler/Looper.loop, cuya prueba encuentra ahora
 Parcelable ausente. Ver AOSP-JNI-LINUX.md y reports/aosp-queue-jni/.
+
+## Primer despacho original
+
+El conjunto se amplió a 19 fuentes originales y ya ejecuta Handler.post/Looper.loop
+con relojes e identidad local Linux. Pasan las pruebas de semántica descritas en
+AOSP-HANDLER-LINUX.md; todavía no se integró este bucle en el contador ni se portó
+Binder IPC, Activity/View o recursos originales. La documentación conserva el
+timeout inicial sin atribuir su causa y mantiene las puertas de estabilidad abiertas.

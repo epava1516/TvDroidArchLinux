@@ -12,3 +12,5 @@ reports/a2-wayland/** -whitespace
 reports/aosp-queue-compile/*.stderr -whitespace
 reports/aosp-queue-jni/*.stderr -whitespace
 reports/aosp-queue-jni/*.log whitespace=-blank-at-eof
+reports/aosp-handler-foundations/**/*.stderr -whitespace
+reports/aosp-handler-foundations/*.log whitespace=-blank-at-eof

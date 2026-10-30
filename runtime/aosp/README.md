@@ -60,3 +60,13 @@ en ART con una tubería Linux y despertar entre hilos. La prueba de despacho con
 Handler falla todavía por ausencia de Parcelable. Ver docs/AOSP-JNI-LINUX.md y
 reports/aosp-queue-jni/. Este avance no sustituye las API de la APK ni convierte
 el conjunto completo en una cola Java funcional.
+
+## Despacho y semántica originales
+
+El conjunto actual contiene 19 fuentes originales, con Parcelable, relojes,
+atribución de trabajo, Binder/Process y sus dependencias de inicialización.
+Handler.post/Looper.loop y las pruebas de orden, diferidos, cancelación, barreras,
+idle y cierre ya pasan sobre Linux local. Ver docs/AOSP-HANDLER-LINUX.md y
+reports/aosp-handler-foundations/. La primera prueba ampliada tuvo un timeout no
+diagnosticado; los diez procesos posteriores no acreditan estabilidad prolongada.
+La APK, Activity/View y el resto de servicios siguen pendientes de integración/port.

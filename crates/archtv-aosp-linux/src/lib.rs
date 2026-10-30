@@ -1,4 +1,7 @@
 //! JNI adapters for original AOSP MessageQueue; Java scheduling remains upstream.
+mod clock;
+mod identity;
+mod properties;
 mod queue;
 use jni_sys::{JNIEnv, jboolean, jclass, jint, jlong, jobject, jvalue};
 use queue::Queue;

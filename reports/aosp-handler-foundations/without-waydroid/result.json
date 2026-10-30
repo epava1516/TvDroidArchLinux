@@ -1,0 +1,92 @@
+{
+  "probes": {
+    "ClockNativeProbe": {
+      "command": [
+        "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+        "--64",
+        "--no-compile",
+        "--",
+        "-Xint",
+        "-cp",
+        "/home/tv/repositorio-principal/dist/apk/aosp-handler-semantics-2/dex/classes.dex",
+        "org.archtv.aospprobe.ClockNativeProbe",
+        "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so"
+      ],
+      "exit_code": 0,
+      "pass": true,
+      "timed_out": false
+    },
+    "LocalContextProbe": {
+      "command": [
+        "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+        "--64",
+        "--no-compile",
+        "--",
+        "-Xint",
+        "-cp",
+        "/home/tv/repositorio-principal/dist/apk/aosp-handler-semantics-2/dex/classes.dex",
+        "org.archtv.aospprobe.LocalContextProbe",
+        "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so"
+      ],
+      "exit_code": 0,
+      "pass": true,
+      "timed_out": false
+    },
+    "HandlerDispatchProbe": {
+      "command": [
+        "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+        "--64",
+        "--no-compile",
+        "--",
+        "-Xint",
+        "-cp",
+        "/home/tv/repositorio-principal/dist/apk/aosp-handler-semantics-2/dex/classes.dex",
+        "org.archtv.aospprobe.HandlerDispatchProbe",
+        "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so"
+      ],
+      "exit_code": 0,
+      "pass": true,
+      "timed_out": false
+    },
+    "QueueSemanticsProbe": {
+      "command": [
+        "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+        "--64",
+        "--no-compile",
+        "--",
+        "-Xint",
+        "-cp",
+        "/home/tv/repositorio-principal/dist/apk/aosp-handler-semantics-2/dex/classes.dex",
+        "org.archtv.aospprobe.QueueSemanticsProbe",
+        "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so"
+      ],
+      "exit_code": 0,
+      "pass": true,
+      "timed_out": false
+    },
+    "NativeQueueProbe": {
+      "command": [
+        "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+        "--64",
+        "--no-compile",
+        "--",
+        "-Xint",
+        "-cp",
+        "/home/tv/repositorio-principal/dist/apk/aosp-handler-semantics-2/dex/classes.dex",
+        "org.archtv.aospprobe.NativeQueueProbe",
+        "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so"
+      ],
+      "exit_code": 0,
+      "pass": true,
+      "timed_out": false
+    }
+  },
+  "selected_foundations_pass": true,
+  "apk_uses_original_framework": false,
+  "binder_ipc_pass": false,
+  "sha256": {
+    "/home/tv/repositorio-principal/dist/apk/aosp-handler-semantics-2/dex/classes.dex": "525050812d0ad0c502cc1f3b66b3485ca84234cc55f6304241e5276b45f8b5a9",
+    "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so": "b67889cc817b4277562a054a348453f781f7e56679d12db45e75b0ea62419913"
+  },
+  "scope": "Selected clock, local identity, read-only host property, original Handler/Looper scheduling and native FD tests. Not all framework APIs, Binder IPC/global property service, APK integration, performance or prolonged stability."
+}

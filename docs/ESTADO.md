@@ -128,3 +128,14 @@ compilan desde fuentes AOSP sin cambios, junto con las cuatro clases de la cola.
 HandlerDispatchProbe aún falla por Parcelable ausente: no se acredita despacho
 Java ni integración del framework original con la APK. Ver AOSP-JNI-LINUX.md y
 reports/aosp-queue-jni/.
+
+## Despacho Handler/Looper original verificado en Linux local
+
+Se compilan 19 fuentes originales sin cambios. El adaptador Rust añade relojes
+Linux, identidad local y lectura de propiedades del anfitrión. Handler.post y
+Looper.loop pasan un Runnable y pruebas de orden, cancelación, diferidos, idle,
+hilos cruzados, WorkSource, barreras, quit y quitSafely; la cola se repitió en diez
+procesos ART. Binder IPC y el servicio global de propiedades no están implementados.
+Un primer timeout quedó sin diagnóstico; se conserva ese límite en el informe y
+no se considera resuelta la estabilidad. La APK aún usa el runtime anterior.
+Ver AOSP-HANDLER-LINUX.md y reports/aosp-handler-foundations/.

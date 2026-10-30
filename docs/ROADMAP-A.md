@@ -98,3 +98,10 @@ El JNI Linux Rust de MessageQueue ya está probado en ART, incluyendo despertar
 entre hilos y listener FD público con SparseArray/utilidades originales. El
 despacho Handler/Looper.loop falla todavía por Parcelable ausente. AOSP-JNI-LINUX.md
 y reports/aosp-queue-jni/ registran esta frontera; no se da por completado el port.
+
+Handler.post y Looper.loop originales ya despachan mensajes en modo Linux local.
+Pasan FIFO, diferidos, cancelación, idle, WorkSource, hilos cruzados, barreras,
+quit y quitSafely, con diez procesos nuevos. Ver AOSP-HANDLER-LINUX.md y
+reports/aosp-handler-foundations/. Falta integrar este bucle en la APK y portar
+Activity/View/recursos y servicios restantes. El primer timeout del comprobador
+se conserva sin causa atribuida; H7 sigue abierto.
