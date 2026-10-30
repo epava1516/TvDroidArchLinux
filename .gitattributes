@@ -1,3 +1,5 @@
 graphify-out/graph.json merge=graphify
 # Los logs conservan la salida original de las herramientas.
 reports/*.log whitespace=-blank-at-eof
+# Capturas H6: conservar espacios y finales originales de Android y herramientas.
+reports/h6-*/** -whitespace
