@@ -1,0 +1,7 @@
+{
+  "archive": "archtv-0.1.0.r11.g8e1ffcee5ece.tar.gz",
+  "file_entries": 56,
+  "excludes_reports_credentials_and_caches": true,
+  "contains_product_assets_and_session": true,
+  "scope": "Structural source inspection, not binary build or installation"
+}

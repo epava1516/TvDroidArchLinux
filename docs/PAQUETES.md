@@ -56,3 +56,17 @@ recurso del shell, y las fuentes tipográficas se obtienen del paquete del siste
 
 La estructura sigue el [formato oficial PKGBUILD](https://man.archlinux.org/man/PKGBUILD.5.en).
 La auditoría de licencias de todas las dependencias precederá a publicar paquetes.
+
+## Inventario inicial de licencias Cargo
+
+packaging/arch/cargo-license-inventory.py contrasta el árbol normal/build de
+x86_64 con los metadatos Cargo y copia los avisos disponibles. El primer inventario
+identifica 177 paquetes. Los avisos que faltaban en los crates se buscan en la
+revisión Git publicada por cada crate; URL y hash quedan en
+licenses/cargo-supplemental/sources.json. Cinco crates siguen sin un archivo de
+aviso localizado: drm-fourcc, libseat, libseat-sys, pixman y pixman-sys.
+
+La licencia declarada y los autores publicados se conservan tal cual, sin inventar
+un aviso de copyright. Encontrar un archivo de licencia no completa por sí solo
+la revisión de condiciones. La preparación de paquetes de distribución mantiene
+pendiente esa revisión y la inclusión completa de avisos en los paquetes binarios.

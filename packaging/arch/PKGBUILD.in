@@ -31,7 +31,7 @@ _license_files() {
   install -Dm644 "$srcdir/archtv-$pkgver/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
   install -Dm644 "$srcdir/archtv-$pkgver/THIRD_PARTY.md" "$pkgdir/usr/share/licenses/$pkgname/THIRD_PARTY.md"
   install -dm755 "$pkgdir/usr/share/licenses/$pkgname/notices"
-  install -m644 "$srcdir/archtv-$pkgver/licenses/"* "$pkgdir/usr/share/licenses/$pkgname/notices/"
+  cp -a "$srcdir/archtv-$pkgver/licenses/." "$pkgdir/usr/share/licenses/$pkgname/notices/"
 }
 package_archtv-compositor() {
   pkgdesc='Wayland TV compositor using Rust and Smithay'

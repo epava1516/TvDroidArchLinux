@@ -1,0 +1,2 @@
+PASS: makepkg source checksum verification and identical source archive/recipe across two runs at the same commit.
+Binary build, clean installation/update/removal and full dependency-license audit remain pending.

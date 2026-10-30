@@ -1,0 +1,53 @@
+pkgbase = archtv
+	pkgdesc = Rust and Smithay television session
+	pkgver = 0.1.0.r11.g8e1ffcee5ece
+	pkgrel = 1
+	url = https://github.com/epava1516/TvDroidArchLinux
+	arch = x86_64
+	license = MIT
+	makedepends = rust>=1.87
+	makedepends = pkgconf
+	makedepends = seatd
+	makedepends = systemd-libs
+	makedepends = libinput
+	makedepends = libxkbcommon
+	makedepends = pixman
+	makedepends = wayland
+	makedepends = mesa
+	makedepends = libglvnd
+	options = !debug
+	source = archtv-0.1.0.r11.g8e1ffcee5ece.tar.gz
+	sha256sums = 536bda0b36de3fc766342d768b5ea49bf3a8cec5eb68528a94dc67e09e522616
+
+pkgname = archtv-compositor
+	pkgdesc = Wayland TV compositor using Rust and Smithay
+	depends = glibc
+	depends = gcc-libs
+	depends = seatd
+	depends = systemd-libs
+	depends = libinput
+	depends = libxkbcommon
+	depends = pixman
+	depends = wayland
+	depends = mesa
+	depends = libglvnd
+
+pkgname = archtv-shell
+	pkgdesc = Native Rust TV application launcher
+	depends = glibc
+	depends = gcc-libs
+	depends = wayland
+	depends = libxkbcommon
+	depends = ttf-dejavu
+	optdepends = wireplumber: volume controls through wpctl
+	optdepends = networkmanager: network controls through nmcli
+	optdepends = waydroid: Android application backend
+	optdepends = foot: terminal desktop entries
+
+pkgname = archtv-session
+	pkgdesc = Session entry and launcher for Arch TV
+	depends = archtv-compositor=0.1.0.r11.g8e1ffcee5ece-1
+	depends = archtv-shell=0.1.0.r11.g8e1ffcee5ece-1
+	depends = bash
+	depends = dbus
+	depends = util-linux

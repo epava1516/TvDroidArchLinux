@@ -1,0 +1,165 @@
+{
+  "scope": "Upstream notice files at crate-published VCS revisions; metadata collection, not legal review.",
+  "packages": [
+    {
+      "name": "drm-fourcc",
+      "version": "2.2.0",
+      "repository": "https://github.com/danielzfranklin/drm-fourcc-rs",
+      "revision": "7b9f80060ffd4b35cd236437e65a17fb517d163c",
+      "path_in_vcs": null,
+      "repository_inferred": false,
+      "files": []
+    },
+    {
+      "name": "gl_generator",
+      "version": "0.14.0",
+      "repository": "https://github.com/brendanzab/gl-rs/",
+      "revision": "ea503e8d5fb6d73c6030e6191ce738cd3bf3433e",
+      "path_in_vcs": null,
+      "repository_inferred": false,
+      "files": [
+        {
+          "file": "LICENSE",
+          "url": "https://raw.githubusercontent.com/brendanzab/gl-rs/ea503e8d5fb6d73c6030e6191ce738cd3bf3433e/LICENSE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        }
+      ]
+    },
+    {
+      "name": "khronos_api",
+      "version": "3.1.0",
+      "repository": "https://github.com/brendanzab/gl-rs/",
+      "revision": "f150967b1c44ae888e6676f93f639ebc82771bdc",
+      "path_in_vcs": null,
+      "repository_inferred": false,
+      "files": [
+        {
+          "file": "LICENSE",
+          "url": "https://raw.githubusercontent.com/brendanzab/gl-rs/f150967b1c44ae888e6676f93f639ebc82771bdc/LICENSE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        }
+      ]
+    },
+    {
+      "name": "libseat",
+      "version": "0.2.4",
+      "repository": "https://github.com/PolyMeilex/libseat-rs",
+      "revision": "00a7f14ae1cac8e475ec90bfdfb05884f53e1d0c",
+      "path_in_vcs": "",
+      "repository_inferred": false,
+      "files": []
+    },
+    {
+      "name": "libseat-sys",
+      "version": "0.2.0",
+      "repository": "https://github.com/PolyMeilex/libseat-rs",
+      "revision": "cfc67eeb449b5a034a192a2fa8d23ca44d59832d",
+      "path_in_vcs": "libseat-sys",
+      "repository_inferred": false,
+      "files": []
+    },
+    {
+      "name": "pixman",
+      "version": "0.2.1",
+      "repository": "https://github.com/cmeissl/pixman-rs",
+      "revision": "92f4f9c716d031d9c9c015ebe5fba49a771c5252",
+      "path_in_vcs": "pixman",
+      "repository_inferred": false,
+      "files": []
+    },
+    {
+      "name": "pixman-sys",
+      "version": "0.1.0",
+      "repository": "https://github.com/cmeissl/pixman-rs",
+      "revision": "ce00d51354470a0130e25b318d2cbabc19323a4e",
+      "path_in_vcs": "pixman-sys",
+      "repository_inferred": false,
+      "files": []
+    },
+    {
+      "name": "profiling",
+      "version": "1.0.18",
+      "repository": "https://github.com/aclysma/profiling",
+      "revision": "8271551172eb6fa4cba47369aedd93790c623df9",
+      "path_in_vcs": "profiling",
+      "repository_inferred": false,
+      "files": [
+        {
+          "file": "LICENSE-APACHE",
+          "url": "https://raw.githubusercontent.com/aclysma/profiling/8271551172eb6fa4cba47369aedd93790c623df9/LICENSE-APACHE",
+          "sha256": "10d30a673cd5e9349bdc02aeb48f14b3386d27d0da32df8f0a555d4aa16aa551"
+        },
+        {
+          "file": "LICENSE-MIT",
+          "url": "https://raw.githubusercontent.com/aclysma/profiling/8271551172eb6fa4cba47369aedd93790c623df9/LICENSE-MIT",
+          "sha256": "c8167fdeeed46d3f244d3f85c5bf998ce889343691c32be2c61a8bc4b5c08333"
+        }
+      ]
+    },
+    {
+      "name": "profiling-procmacros",
+      "version": "1.0.18",
+      "repository": "https://github.com/aclysma/profiling",
+      "revision": "8271551172eb6fa4cba47369aedd93790c623df9",
+      "path_in_vcs": "profiling-procmacros",
+      "repository_inferred": false,
+      "files": [
+        {
+          "file": "LICENSE-APACHE",
+          "url": "https://raw.githubusercontent.com/aclysma/profiling/8271551172eb6fa4cba47369aedd93790c623df9/LICENSE-APACHE",
+          "sha256": "10d30a673cd5e9349bdc02aeb48f14b3386d27d0da32df8f0a555d4aa16aa551"
+        },
+        {
+          "file": "LICENSE-MIT",
+          "url": "https://raw.githubusercontent.com/aclysma/profiling/8271551172eb6fa4cba47369aedd93790c623df9/LICENSE-MIT",
+          "sha256": "c8167fdeeed46d3f244d3f85c5bf998ce889343691c32be2c61a8bc4b5c08333"
+        }
+      ]
+    },
+    {
+      "name": "zune-core",
+      "version": "0.4.12",
+      "repository": "https://github.com/etemesi254/zune-image",
+      "revision": "f8fbb123d5ed04441e8324a555bfcda0cb1bd28f",
+      "path_in_vcs": "crates/zune-core",
+      "repository_inferred": true,
+      "files": [
+        {
+          "file": "LICENSE-ZLIB",
+          "url": "https://raw.githubusercontent.com/etemesi254/zune-image/f8fbb123d5ed04441e8324a555bfcda0cb1bd28f/LICENSE-ZLIB",
+          "sha256": "7fa429541e55b1509909e058f2d21a37467e4958ec713b357f6e0cf9dc4ee352"
+        },
+        {
+          "file": "LICENSE.md",
+          "url": "https://raw.githubusercontent.com/etemesi254/zune-image/f8fbb123d5ed04441e8324a555bfcda0cb1bd28f/LICENSE.md",
+          "sha256": "c6dff146a9f31848ac296faa5a08a4253caf2c384c86f906dc99e7fc0a39cc8c"
+        }
+      ],
+      "inferred_repository_manifest_verification": {
+        "url": "https://raw.githubusercontent.com/etemesi254/zune-image/f8fbb123d5ed04441e8324a555bfcda0cb1bd28f/crates/zune-core/Cargo.toml",
+        "sha256": "cc3fa616bb3dd673abbdebce2d8b2a1a1ecb6a3dd9654313d6fcc0ab2d3c5f84",
+        "name_version_match": true
+      }
+    },
+    {
+      "name": "zune-jpeg",
+      "version": "0.4.21",
+      "repository": "https://github.com/etemesi254/zune-image/tree/dev/crates/zune-jpeg",
+      "revision": "fa2c767a01d7d9373911d0bf63e0588553d67e0e",
+      "path_in_vcs": "crates/zune-jpeg",
+      "repository_inferred": false,
+      "files": [
+        {
+          "file": "LICENSE-ZLIB",
+          "url": "https://raw.githubusercontent.com/etemesi254/zune-image/fa2c767a01d7d9373911d0bf63e0588553d67e0e/LICENSE-ZLIB",
+          "sha256": "7fa429541e55b1509909e058f2d21a37467e4958ec713b357f6e0cf9dc4ee352"
+        },
+        {
+          "file": "LICENSE.md",
+          "url": "https://raw.githubusercontent.com/etemesi254/zune-image/fa2c767a01d7d9373911d0bf63e0588553d67e0e/LICENSE.md",
+          "sha256": "c6dff146a9f31848ac296faa5a08a4253caf2c384c86f906dc99e7fc0a39cc8c"
+        }
+      ]
+    }
+  ]
+}

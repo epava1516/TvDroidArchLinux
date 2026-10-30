@@ -4,3 +4,5 @@ reports/*.log whitespace=-blank-at-eof
 # Capturas H6: conservar espacios y finales originales de Android y herramientas.
 reports/h6-*/** -whitespace
 reports/h6-ffmpeg-install.log -whitespace
+# Avisos upstream: preservar exactamente los bytes verificados por SHA-256.
+licenses/cargo-supplemental/** -whitespace

@@ -4,7 +4,7 @@ root=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
 cd "$root"
 for file in scripts/*.sh scripts/lib/*.sh packaging/session/archtv-session packaging/arch/PKGBUILD.in; do bash -n "$file"; done
 shellcheck -x -e SC1091,SC2034 scripts/*.sh scripts/lib/*.sh packaging/session/archtv-session
-python -m py_compile scripts/lib/*.py
+python -m py_compile scripts/lib/*.py packaging/arch/*.py
 python - <<'CHECK'
 from pathlib import Path
 import re
