@@ -124,3 +124,11 @@ El siguiente conjunto incorpora Context, ContextWrapper y Application originales
 El Context reducido se retiró y los hooks de Linux quedan separados de los
 métodos originales. CONTEXTO-AOSP-LINUX.md documenta soporte real, rechazos y
 pendientes de ContextImpl/LoadedApk y servicios.
+
+## Compilación inicial de vistas
+
+--with-views compila View/ViewGroup/ContextThemeWrapper originales sobre el
+conjunto anterior. La carga real en ART sólo completa ContextThemeWrapper;
+View/ViewGroup siguen bloqueadas. AOSP-VISTAS-LINUX.md y
+reports/aosp-views-linkage/ registran el diagnóstico y las dependencias estáticas.
+Todavía no hay objeto View original ni sustitución de la interfaz del prototipo.

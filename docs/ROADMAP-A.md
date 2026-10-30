@@ -163,3 +163,8 @@ horizontal/vertical en ART y resize Wayland real con texto y callbacks actualiza
 por la aplicación. Fuentes, APK, toolchain y evidencias están fijados en
 reports/aosp-context-metrics/ y su README. Amplía la cobertura del port; no cierra
 A3/A4 ni el port pendiente de Activity/View originales.
+
+El port de vistas dispone ya de un modo de compilación de View/ViewGroup y
+ContextThemeWrapper originales. El diagnóstico ART deja explícito que sólo se
+carga ContextThemeWrapper: las otras dos clases y su integración siguen
+pendientes. Ver AOSP-VISTAS-LINUX.md; no cambia las puertas A2/A3 del port.

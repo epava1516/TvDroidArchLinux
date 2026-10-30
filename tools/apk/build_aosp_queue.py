@@ -12,11 +12,14 @@ parser.add_argument('--sources', type=Path, required=True)
 parser.add_argument('--reference', type=Path, required=True)
 parser.add_argument('--tools', type=Path, required=True)
 parser.add_argument('--output', type=Path, required=True)
+parser.add_argument('--with-views', action='store_true', help='Experimental original View/ViewGroup compilation; not runtime integration')
 parser.add_argument('--with-context', action='store_true', help='Compile original Context, ContextWrapper, Application and component callbacks')
 parser.add_argument('--with-public-resources', action='store_true', help='Compile original Resources/ResourcesImpl and their recorded dependency set')
 parser.add_argument('--with-resources', action='store_true', help='Compile original AssetManager, ApkAssets and TypedValue as well')
 parser.add_argument('--jdk', type=Path, default=Path('/usr/lib/jvm/java-17-openjdk'))
 args = parser.parse_args()
+if args.with_views:
+    args.with_context = True
 if args.with_context:
     args.with_public_resources = True
 if args.with_public_resources:
@@ -55,6 +58,8 @@ if args.with_public_resources:
     paths += manifest['public_resources_sources']
 if args.with_context:
     paths += manifest['context_sources']
+if args.with_views:
+    paths += ['core/java/android/view/'+name+'.java' for name in ('View', 'ViewGroup', 'ContextThemeWrapper')]
 sources = []
 for path in paths:
     item = next(item for item in manifest['files'] if item['path'] == path)
@@ -73,6 +78,8 @@ if args.with_resources:
     probes += sorted((root/'fixtures/aosp-resources').glob('*.java'))
 if args.with_public_resources:
     probes += sorted((root/'fixtures/aosp-public-resources').glob('*.java'))
+if args.with_views:
+    probes += sorted((root/'fixtures/aosp-views').glob('*.java'))
 commands = []
 
 
