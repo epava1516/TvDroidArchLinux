@@ -1,0 +1,10 @@
+warning: unknown enum constant Client.MODULE_LIBRARIES
+  reason: class file for android.annotation.SystemApi$Client not found
+warning: unknown enum constant Client.MODULE_LIBRARIES
+warning: unknown enum constant Client.MODULE_LIBRARIES
+warning: unknown enum constant Client.MODULE_LIBRARIES
+warning: unknown enum constant Client.PRIVILEGED_APPS
+warning: unknown enum constant Client.PRIVILEGED_APPS
+warning: unknown enum constant Client.MODULE_LIBRARIES
+warning: unknown enum constant Client.MODULE_LIBRARIES
+8 warnings

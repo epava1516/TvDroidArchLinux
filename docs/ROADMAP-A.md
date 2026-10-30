@@ -252,3 +252,10 @@ Wayland y cierre del proveedor; View avanza hasta getApplicationInfo ausente.
 Todavía no se construye una View funcional ni se dibuja el APK con esas clases.
 Quedan metadata APK, las otras entradas, callbacks, lifecycle y dibujo/GPU; este
 avance no cierra A3 ni los requisitos de estabilidad/distribución.
+
+ApplicationInfo original ya obtiene paquete, SDK y metadata de la APK mediante
+androidfw/ZIP originales, con UID y rutas Linux. Pasan dos APK target 27/28,
+rechazos de XML inválido/SDK superior/expansión y regresiones. El perfil añade
+el foco original (19 recursos); View avanza hasta GradientDrawable ausente.
+AOSP-METADATOS-APK.md e informes aosp-application-info registran el alcance;
+no se acredita todavía View funcional ni dibujo original del APK.

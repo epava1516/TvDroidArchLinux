@@ -548,6 +548,21 @@
       "path": "graphics/java/android/graphics/RenderNode.java",
       "bytes": 72781,
       "sha256": "7a78c5a37e08098841ff60e3caa1e416e3aa02f86727d820d4e65f9888f04fe6"
+    },
+    {
+      "path": "core/java/android/content/pm/ApplicationInfo.java",
+      "sha256": "bf20c104a21e5dd5d46f6871f152fdd10be46f29ee71fba5ad0d6ebbd80fc4fa",
+      "bytes": 104160
+    },
+    {
+      "path": "core/java/android/os/storage/StorageManager.java",
+      "sha256": "2ea3f94efcaa553aab7cfabb028434ca573110c8281046a5c890cdcafa598955",
+      "bytes": 114243
+    },
+    {
+      "path": "core/java/android/content/pm/PackageParser.java",
+      "sha256": "a29b98edbb43f45da9de2046bb44f7aa83c8813f6a4652c407916db2945b24e8",
+      "bytes": 405512
     }
   ],
   "public_resources_sources": [
@@ -568,7 +583,8 @@
     "core/java/android/os/Build.java",
     "core/java/android/app/WindowConfiguration.java",
     "graphics/java/android/graphics/Rect.java",
-    "core/java/android/text/TextUtils.java"
+    "core/java/android/text/TextUtils.java",
+    "core/java/android/content/pm/ApplicationInfo.java"
   ],
   "context_sources": [
     "core/java/android/content/Context.java",

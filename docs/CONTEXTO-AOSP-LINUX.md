@@ -5,7 +5,7 @@ Android 13. Se retiró runtime/apk/java/android/content/Context.java, que sólo
 contenía getString y preferencias. getString/getText ahora ejecutan los métodos
 concretos originales de Context y Resources.
 
-El conjunto --with-context conserva 54 fuentes originales sin modificar y los
+El conjunto --with-context conserva 55 fuentes originales sin modificar y los
 cuatro bindings sysprop precompilados ya documentados. Esto no porta ContextImpl,
 ActivityThread ni los servicios de Android.
 
@@ -13,7 +13,7 @@ ActivityThread ni los servicios de Android.
 
 LinuxContext extiende el Context abstracto original. Su archivo se genera desde
 las declaraciones del framework.jar verificado y se comprueba con --check.
-Hay 132 métodos abstractos: siete tienen implementación Linux (display condicional); los otros 125 lanzan
+Hay 132 métodos abstractos: nueve tienen implementación Linux (display condicional); los otros 123 lanzan
 UnsupportedOperationException con el nombre de la API. No devuelven valores de
 éxito o servicios simulados. Los demás métodos concretos siguen siendo originales;
 las dependencias y tipos aún no portados pueden producir errores de enlace,
@@ -23,11 +23,16 @@ incluso antes de entrar en un hook.
 | --- | --- |
 | getResources | Resources original del APK; lectura de cadenas y métricas verificadas |
 | getAssets | El AssetManager original ya abierto; no acredita todos sus métodos de archivos/XML |
+| getApplicationInfo | ApplicationInfo original con metadata de manifiesto, UID y rutas Linux; snapshot protegido |
+| getPackageName | Paquete real del manifiesto de la APK actual |
 | getSharedPreferences(String,int) | Backend existente de enteros, sólo MODE_PRIVATE; no SharedPreferencesImpl/XML de Android |
 | getClassLoader | Classloader real del proceso que contiene runtime y APK; no aislamiento por aplicación |
 | getMainLooper | Principal original preparado por el anfitrión |
 | getApplicationContext | Instancia real de Application original, única en el proceso |
 | getDisplayId | ID virtual 0 asociado explícitamente al contexto durante el bootstrap validado con Wayland; los contextos sin display fallan explícitamente |
+
+El alcance parcial de campos y reglas de metadata, recursos referenciados y las
+pruebas de dos SDK distintos se detallan en AOSP-METADATOS-APK.md.
 
 Application se construye con su controlador original de ComponentCallbacks y se
 conecta al contexto Linux mediante attachBaseContext original de ContextWrapper.

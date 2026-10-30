@@ -1,0 +1,197 @@
+{
+  "application_info_pass": true,
+  "cases": {
+    "counter": {
+      "pass": true,
+      "exit_code": 0,
+      "command": [
+        "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+        "--64",
+        "--no-compile",
+        "--",
+        "-Xint",
+        "-Xcheck:jni",
+        "-cp",
+        "/home/tv/repositorio-principal/dist/apk/apk-appinfo-2/dex/classes.dex:/home/tv/repositorio-principal/dist/apk/application-metadata-final-2/dex/classes.dex",
+        "org.archtv.apkruntime.MetadataProbe",
+        "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+        "/home/tv/repositorio-principal/dist/apk/androidfw-apk-metadata-4/libarchtv_resources_linux.so",
+        "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+        "/home/tv/repositorio-principal/dist/apk/application-metadata-final-2/counter-data",
+        "org.archtv.probe",
+        "28"
+      ],
+      "apk_sha256": "f07c9b92ab3353237276081c22e11ce06168b8c9f71a99ea32968b2ce0f00e28"
+    },
+    "metadata": {
+      "pass": true,
+      "exit_code": 0,
+      "command": [
+        "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+        "--64",
+        "--no-compile",
+        "--",
+        "-Xint",
+        "-Xcheck:jni",
+        "-cp",
+        "/home/tv/repositorio-principal/dist/apk/apk-appinfo-2/dex/classes.dex:/home/tv/repositorio-principal/dist/apk/application-metadata-final-2/dex/classes.dex",
+        "org.archtv.apkruntime.MetadataProbe",
+        "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+        "/home/tv/repositorio-principal/dist/apk/androidfw-apk-metadata-4/libarchtv_resources_linux.so",
+        "/home/tv/repositorio-principal/dist/apk/application-metadata-final-2/metadata.apk",
+        "/home/tv/repositorio-principal/dist/apk/application-metadata-final-2/metadata-data",
+        "org.archtv.metadata",
+        "27"
+      ],
+      "apk_sha256": "bd10aa476ab24b7623d23b6a37bcc52fb14ddfadee90b63aca8230f76e17fcaa"
+    },
+    "invalid": {
+      "pass": true,
+      "exit_code": 1,
+      "command": [
+        "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+        "--64",
+        "--no-compile",
+        "--",
+        "-Xint",
+        "-Xcheck:jni",
+        "-cp",
+        "/home/tv/repositorio-principal/dist/apk/apk-appinfo-2/dex/classes.dex:/home/tv/repositorio-principal/dist/apk/application-metadata-final-2/dex/classes.dex",
+        "org.archtv.apkruntime.MetadataProbe",
+        "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+        "/home/tv/repositorio-principal/dist/apk/androidfw-apk-metadata-4/libarchtv_resources_linux.so",
+        "/home/tv/repositorio-principal/dist/apk/application-metadata-final-2/invalid.apk",
+        "/home/tv/repositorio-principal/dist/apk/application-metadata-final-2/invalid-data",
+        "org.archtv.probe",
+        "28"
+      ],
+      "apk_sha256": "7d8f0b4beb3d4db69e8abf95d205287f2dd5c5de86bfec77aea20c72e3a8ca04"
+    },
+    "newer": {
+      "pass": true,
+      "exit_code": 1,
+      "command": [
+        "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+        "--64",
+        "--no-compile",
+        "--",
+        "-Xint",
+        "-Xcheck:jni",
+        "-cp",
+        "/home/tv/repositorio-principal/dist/apk/apk-appinfo-2/dex/classes.dex:/home/tv/repositorio-principal/dist/apk/application-metadata-final-2/dex/classes.dex",
+        "org.archtv.apkruntime.MetadataProbe",
+        "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+        "/home/tv/repositorio-principal/dist/apk/androidfw-apk-metadata-4/libarchtv_resources_linux.so",
+        "/home/tv/repositorio-principal/dist/apk/application-metadata-final-2/newer.apk",
+        "/home/tv/repositorio-principal/dist/apk/application-metadata-final-2/newer-data",
+        "org.archtv.metadata",
+        "35"
+      ],
+      "apk_sha256": "37cc7df86d491603de7f759fdbe64ffe2431ce16823bb207f8b691e8c1e9f569"
+    },
+    "amplified": {
+      "pass": true,
+      "exit_code": 1,
+      "command": [
+        "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+        "--64",
+        "--no-compile",
+        "--",
+        "-Xint",
+        "-Xcheck:jni",
+        "-cp",
+        "/home/tv/repositorio-principal/dist/apk/apk-appinfo-2/dex/classes.dex:/home/tv/repositorio-principal/dist/apk/application-metadata-final-2/dex/classes.dex",
+        "org.archtv.apkruntime.MetadataProbe",
+        "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+        "/home/tv/repositorio-principal/dist/apk/androidfw-apk-metadata-4/libarchtv_resources_linux.so",
+        "/home/tv/repositorio-principal/dist/apk/application-metadata-final-2/amplified.apk",
+        "/home/tv/repositorio-principal/dist/apk/application-metadata-final-2/amplified-data",
+        "org.archtv.metadata",
+        "27"
+      ],
+      "apk_sha256": "7189d6c305024b028b30b8168287b32b7ce37ab0efb9f2567d8f7ac4b823013d"
+    }
+  },
+  "commands": [
+    [
+      "/home/tv/.cache/archtv/apk-build-tools/aapt2",
+      "compile",
+      "--dir",
+      "/home/tv/repositorio-principal/fixtures/aosp-metadata/res",
+      "-o",
+      "/home/tv/repositorio-principal/dist/apk/application-metadata-final-2/res.zip"
+    ],
+    [
+      "/home/tv/.cache/archtv/apk-build-tools/aapt2",
+      "link",
+      "-I",
+      "/home/tv/.cache/archtv/apk-build-tools/android.jar",
+      "--manifest",
+      "/home/tv/repositorio-principal/fixtures/aosp-metadata/AndroidManifest.xml",
+      "-o",
+      "/home/tv/repositorio-principal/dist/apk/application-metadata-final-2/metadata.apk",
+      "/home/tv/repositorio-principal/dist/apk/application-metadata-final-2/res.zip"
+    ],
+    [
+      "/usr/lib/jvm/java-17-openjdk/bin/javac",
+      "--release",
+      "8",
+      "-encoding",
+      "UTF-8",
+      "-classpath",
+      "/home/tv/repositorio-principal/dist/apk/apk-appinfo-2/runtime.jar:/home/tv/repositorio-principal/dist/apk/aosp-context-appinfo-1/framework.jar",
+      "-d",
+      "/home/tv/repositorio-principal/dist/apk/application-metadata-final-2/classes",
+      "/home/tv/repositorio-principal/fixtures/aosp-metadata/MetadataProbe.java"
+    ],
+    [
+      "/usr/lib/jvm/java-17-openjdk/bin/jar",
+      "cf",
+      "/home/tv/repositorio-principal/dist/apk/application-metadata-final-2/probe.jar",
+      "-C",
+      "/home/tv/repositorio-principal/dist/apk/application-metadata-final-2/classes",
+      "."
+    ],
+    [
+      "/usr/lib/jvm/java-17-openjdk/bin/java",
+      "-cp",
+      "/home/tv/.cache/archtv/apk-build-tools/r8.jar",
+      "com.android.tools.r8.D8",
+      "--release",
+      "--min-api",
+      "28",
+      "--lib",
+      "/home/tv/.cache/archtv/apk-build-tools/android.jar",
+      "--output",
+      "/home/tv/repositorio-principal/dist/apk/application-metadata-final-2/dex",
+      "/home/tv/repositorio-principal/dist/apk/application-metadata-final-2/probe.jar"
+    ],
+    [
+      "/home/tv/.cache/archtv/apk-build-tools/aapt2",
+      "link",
+      "-I",
+      "/home/tv/.cache/archtv/apk-build-tools/android.jar",
+      "--manifest",
+      "/home/tv/repositorio-principal/dist/apk/application-metadata-final-2/newer-manifest.xml",
+      "-o",
+      "/home/tv/repositorio-principal/dist/apk/application-metadata-final-2/newer.apk",
+      "/home/tv/repositorio-principal/dist/apk/application-metadata-final-2/res.zip"
+    ],
+    [
+      "/home/tv/.cache/archtv/apk-build-tools/aapt2",
+      "link",
+      "-I",
+      "/home/tv/.cache/archtv/apk-build-tools/android.jar",
+      "--manifest",
+      "/home/tv/repositorio-principal/dist/apk/application-metadata-final-2/amplified-manifest.xml",
+      "-o",
+      "/home/tv/repositorio-principal/dist/apk/application-metadata-final-2/amplified.apk",
+      "/home/tv/repositorio-principal/dist/apk/application-metadata-final-2/res.zip"
+    ]
+  ],
+  "runtime_dex_sha256": "ac39cccd6a938f73d3d9a4d05060f762f66921f99ac19e12e2e20c9da4f74d73",
+  "resources_library_sha256": "559cdda1a0b4ab7ac738d86c2e7dec6e47cf6ac87ec6bc8d3e07543d8e47c6ab",
+  "probe_source_sha256": "97a28f3ba62a023a0750bbad0be22e2daca45b42179e41dc18c92b13c2b7af29",
+  "verifier_sha256": "59ce745222eb9d98d13e9ef7410894c5acb8b58d4d1efc58876455eed9e8aabd",
+  "scope": "Original ApplicationInfo populated from original androidfw binary XML in two APKs, actual Linux UID/paths, literal flags and UTF-16 label. Malformed XML and excessive minimum SDK rejected. Not full PackageManager, signatures, split packages or general APK compatibility."
+}

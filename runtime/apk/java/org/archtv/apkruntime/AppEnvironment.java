@@ -13,6 +13,8 @@ public final class AppEnvironment {
     public final android.app.Application applicationContext;
     public View focus;
     private final Path dataDirectory;
+    private final Path apkPath;
+    private android.content.pm.ApplicationInfo applicationInfo;
     private final Map<String, SharedPreferences> preferences = new HashMap<String, SharedPreferences>();
     private AppEnvironment(Path apk, Path data, Path systemResources, Integer displayId) throws Exception {
         if (displayId != null && displayId != 0) throw new IllegalArgumentException("Only virtual display 0 is supported");
@@ -30,6 +32,7 @@ public final class AppEnvironment {
             throw problem;
         }
         dataDirectory = data;
+        apkPath = apk;
     }
     public static void initialize(Path apk, Path data) throws Exception { initialize(apk, data, null); }
     public static void initialize(Path apk, Path data, Path systemResources) throws Exception { initialize(apk, data, systemResources, null); }
@@ -40,6 +43,10 @@ public final class AppEnvironment {
     public static AppEnvironment current() {
         if (instance == null) throw new IllegalStateException("App environment not initialized");
         return instance;
+    }
+    public synchronized android.content.pm.ApplicationInfo applicationInfo() {
+        if(applicationInfo==null)applicationInfo=ApkMetadata.read(apkPath,dataDirectory);
+        return new android.content.pm.ApplicationInfo(applicationInfo);
     }
     public synchronized SharedPreferences preferences(String name) {
         if (!name.matches("[A-Za-z0-9_.-]{1,100}") || name.equals(".") || name.equals(".."))

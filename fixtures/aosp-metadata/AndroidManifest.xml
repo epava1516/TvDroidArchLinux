@@ -1,0 +1,5 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="org.archtv.metadata" android:versionCode="7">
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="27"/>
+    <application android:hasCode="false" android:debuggable="true" android:hardwareAccelerated="false"
+        android:supportsRtl="true" android:process=":metadata" android:label="Aplicación ñ 📺"/>
+</manifest>

@@ -1,0 +1,43 @@
+Binary APK
+Package name=android id=01
+  type dimen id=05 entryCount=10
+    resource 0x010500a6 dimen/config_ambiguousGestureMultiplier
+      () 2
+    resource 0x010500b6 dimen/config_horizontalScrollFactor
+      () 64.000000dp
+    resource 0x010500bf dimen/config_minScalingSpan
+      () 27.000000mm
+    resource 0x010500c1 dimen/config_minScrollbarTouchTarget
+      () 48.000000dp
+    resource 0x010500d6 dimen/config_scrollbarSize
+      () 4.000000dp
+    resource 0x010500d9 dimen/config_verticalScrollFactor
+      () 64.000000dp
+    resource 0x010500da dimen/config_viewConfigurationHoverSlop
+      () 4.000000dp
+    resource 0x010500db dimen/config_viewConfigurationTouchSlop
+      () 8.000000dp
+    resource 0x010500dc dimen/config_viewMaxFlingVelocity
+      () 8000.000000dp
+    resource 0x010500dd dimen/config_viewMinFlingVelocity
+      () 50.000000dp
+  type integer id=0e entryCount=5
+    resource 0x010e0073 integer/config_globalActionsKeyTimeout
+      () 500
+    resource 0x010e00ba integer/config_overrideHasPermanentMenuKey
+      () 0
+    resource 0x010e00d8 integer/config_screenshotChordKeyTimeout
+      () 0
+    resource 0x010e00dd integer/config_smartSelectionInitializedTimeoutMillis
+      () 200
+    resource 0x010e00de integer/config_smartSelectionInitializingTimeoutMillis
+      () 500
+  type bool id=11 entryCount=4
+    resource 0x0111018e bool/config_preferKeepClearForFocus
+      () false
+    resource 0x011101a5 bool/config_showMenuShortcutsWhenKeyboardPresent
+      () false
+    resource 0x011101d9 bool/config_ui_enableFadingMarquee
+      () false
+    resource 0x011101e1 bool/config_useDefaultFocusHighlight
+      () true

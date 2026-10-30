@@ -31,13 +31,13 @@ public class LinuxContext extends android.content.Context {
         return getClass().getClassLoader();
     }
     @Override public java.lang.String getPackageName() {
-        throw new UnsupportedOperationException("Unsupported Linux context API: getPackageName");
+        return AppEnvironment.current().applicationInfo().packageName;
     }
     @Override public java.lang.String getBasePackageName() {
         throw new UnsupportedOperationException("Unsupported Linux context API: getBasePackageName");
     }
     @Override public android.content.pm.ApplicationInfo getApplicationInfo() {
-        throw new UnsupportedOperationException("Unsupported Linux context API: getApplicationInfo");
+        return AppEnvironment.current().applicationInfo();
     }
     @Override public java.lang.String getPackageResourcePath() {
         throw new UnsupportedOperationException("Unsupported Linux context API: getPackageResourcePath");

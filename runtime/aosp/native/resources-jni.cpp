@@ -8,6 +8,9 @@
 #include <memory>
 #include <stdexcept>
 #include <limits>
+#include <ziparchive/zip_archive.h>
+#include <set>
+#include <unistd.h>
 
 namespace {
 std::mutex lock;
@@ -195,5 +198,118 @@ extern "C" JNIEXPORT void JNICALL Java_android_content_res_AssetManager_nativeSe
         if (locale) configuration.setBcp47Locale(string(env, locale).c_str());
         managers.at(handle)->value.SetConfiguration(configuration);
         return 0;
+    });
+}
+
+namespace {
+std::u16string xmlText(const char16_t* text, size_t size, size_t maximum = 512*1024) {
+    if (!text || size > maximum) throw std::runtime_error("Invalid manifest string");
+    return std::u16string(text, size);
+}
+std::u16string ascii16(const std::string& text) {
+    return std::u16string(text.begin(), text.end());
+}
+}
+
+// Flat, typed manifest attributes for the Linux application metadata adapter.
+// ZIP and binary XML decoding are the original libziparchive/androidfw parsers.
+extern "C" JNIEXPORT jobjectArray JNICALL
+Java_org_archtv_apkruntime_ApkMetadata_nativeRead(JNIEnv* env, jclass, jstring path) {
+    return guard<jobjectArray>(env, nullptr, [&]() -> jobjectArray {
+        std::string filename = string(env, path);
+        if (filename.empty() || filename.find('\0') != std::string::npos)
+            throw std::runtime_error("Invalid APK path");
+        struct Archive {
+            ZipArchiveHandle value = nullptr;
+            ~Archive() { if (value) CloseArchive(value); }
+        } archive;
+        if (OpenArchive(filename.c_str(), &archive.value) != 0)
+            throw std::runtime_error("Cannot open APK manifest archive");
+        ZipEntry64 entry;
+        if (FindEntry(archive.value, "AndroidManifest.xml", &entry) != 0
+                || entry.uncompressed_length == 0 || entry.uncompressed_length > 1024*1024)
+            throw std::runtime_error("Missing or oversized APK manifest");
+        std::vector<uint8_t> bytes(entry.uncompressed_length);
+        if (ExtractToMemory(archive.value, &entry, bytes.data(), bytes.size()) != 0)
+            throw std::runtime_error("Cannot extract APK manifest");
+        android::ResXMLTree xml;
+        if (xml.setTo(bytes.data(), bytes.size(), false) != android::NO_ERROR)
+            throw std::runtime_error("Invalid APK binary XML");
+        std::vector<std::u16string> result, stack;
+        size_t outputUnits = 0;
+        auto append = [&](std::u16string key, std::u16string type, std::u16string data) {
+            size_t needed = key.size() + type.size() + data.size();
+            if (needed > 2*1024*1024 - outputUnits)
+                throw std::runtime_error("Manifest metadata output exceeds budget");
+            outputUnits += needed;
+            result.push_back(std::move(key)); result.push_back(std::move(type)); result.push_back(std::move(data));
+        };
+        std::set<std::u16string> keys, sections;
+        bool rootSeen = false;
+        size_t events = 0;
+        for (;;) {
+            auto event = xml.next();
+            if (++events > 100000 || event == android::ResXMLParser::BAD_DOCUMENT)
+                throw std::runtime_error("Invalid or oversized manifest event stream");
+            if (event == android::ResXMLParser::END_DOCUMENT) break;
+            if (event != android::ResXMLParser::START_TAG && event != android::ResXMLParser::END_TAG) continue;
+            size_t length = 0;
+            const char16_t* name = xml.getElementName(&length);
+            std::u16string tag = xmlText(name, length, 256);
+            if (event == android::ResXMLParser::END_TAG) {
+                if (stack.empty() || stack.back() != tag) throw std::runtime_error("Unbalanced manifest tags");
+                stack.pop_back();
+                continue;
+            }
+            stack.push_back(tag);
+            if (stack.size() > 64) throw std::runtime_error("Manifest nesting exceeds budget");
+            if (stack.size() == 1) {
+                if (rootSeen || tag != u"manifest") throw std::runtime_error("Invalid manifest root");
+                rootSeen = true;
+            }
+            bool collect = stack.size() == 1 || (stack.size() == 2
+                    && (tag == u"uses-sdk" || tag == u"application" || tag == u"supports-screens"));
+            if (!collect) continue;
+            if (!sections.insert(tag).second) throw std::runtime_error("Repeated metadata section");
+            append(tag + u"/@present", u"18", u"1");
+            size_t count = xml.getAttributeCount();
+            if (count > 256) throw std::runtime_error("Manifest attribute budget exceeded");
+            for (size_t i = 0; i < count; ++i) {
+                size_t n = 0;
+                const char16_t* ns = xml.getAttributeNamespace(i, &n);
+                std::u16string prefix;
+                if (ns) {
+                    if (xmlText(ns, n, 1024) != u"http://schemas.android.com/apk/res/android") continue;
+                    prefix = u"android:";
+                }
+                const char16_t* attribute = xml.getAttributeName(i, &n);
+                std::u16string key = tag + u"/" + prefix + xmlText(attribute, n, 256);
+                if (!keys.insert(key).second) throw std::runtime_error("Duplicate metadata attribute");
+                android::Res_value value;
+                if (xml.getAttributeValue(i, &value) < 0) throw std::runtime_error("Invalid metadata attribute");
+                std::u16string data;
+                if (value.dataType == android::Res_value::TYPE_STRING) {
+                    auto text = xml.getStrings().stringAt(value.data);
+                    if (!text.has_value()) throw std::runtime_error("Invalid manifest string index");
+                    data = xmlText(text->data(), text->size());
+                } else data = ascii16(std::to_string(value.data));
+                append(std::move(key), ascii16(std::to_string(value.dataType)), std::move(data));
+            }
+        }
+        if (!rootSeen || !stack.empty()) throw std::runtime_error("Incomplete manifest");
+        append(u"host/uid", u"16", ascii16(std::to_string(getuid())));
+        jclass strings = env->FindClass("java/lang/String");
+        if (!strings) return nullptr;
+        jobjectArray output = env->NewObjectArray(result.size(), strings, nullptr);
+        env->DeleteLocalRef(strings);
+        if (!output) return nullptr;
+        for (size_t i = 0; i < result.size(); ++i) {
+            jstring text = env->NewString(reinterpret_cast<const jchar*>(result[i].data()), result[i].size());
+            if (!text) return nullptr;
+            env->SetObjectArrayElement(output, i, text);
+            env->DeleteLocalRef(text);
+            if (env->ExceptionCheck()) return nullptr;
+        }
+        return output;
     });
 }
