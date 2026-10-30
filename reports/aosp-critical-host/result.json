@@ -1,0 +1,28 @@
+{
+  "critical_host_abi_pass": true,
+  "exit_code": 0,
+  "command": [
+    "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+    "--64",
+    "--no-compile",
+    "--",
+    "-Xint",
+    "-Xcheck:jni",
+    "-cp",
+    "/home/tv/repositorio-principal/dist/apk/critical-host-final-1/dex/classes.dex",
+    "org.archtv.aospprobe.CriticalHostProbe",
+    "/home/tv/repositorio-principal/dist/apk/critical-host-final-1/libcritical_probe.so"
+  ],
+  "object_argument_compile_rejected": true,
+  "sources_sha256": {
+    "runtime/aosp/native/critical-host-adapter.h": "f1f7a78a641239400bb5722deff46bfa5656220c309c05d51f77b019f5cc0c6c",
+    "fixtures/aosp-critical-host/native-probe.cpp": "124aedb36bc6125403238fb59a9bd80db830a7c60d8538ce73fba342f757215e",
+    "fixtures/aosp-critical-host/CriticalHostProbe.java": "250427c8fa79a2fcc6a77aefe27d9c2361ea5373c541bd1e7f2f0e0a4c3a4f84"
+  },
+  "verifier_sha256": "9fa182752c13b6efefc064f017a6f179734dab2fde95c8d24f203cfabda682b0",
+  "original_jni_header_sha256": "5df9074457c041b372f2c68ff646d6e8600cd673a223885e8df21c44c94ec667",
+  "compile_reference_sha256": "6e67dca81d30295e31ee6a28cfb601b6b66aaeaee51a92386ed099a64cea5996",
+  "probe_dex_sha256": "1c4c053fa52770cd78a137f92dfb17fd7a47361f4826e87b02ed8962db41546e",
+  "library_sha256": "388ce39868e3ee9532afa866079fe2dc84ab4922e19bbc50f842f813bac9b17f",
+  "scope": "Eight fixture-defined native signatures adapted to ART CriticalNative, primitive-only guard. No original RenderNode JNI execution, graphics or rendering claim."
+}

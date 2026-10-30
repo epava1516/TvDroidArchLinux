@@ -1428,9 +1428,9 @@
     "semantic_hash": ""
   },
   "docs/AOSP-RENDERNODE-NATIVO.md": {
-    "mtime": 1793384822.4682572,
-    "seen": 1793384830.9647367,
-    "ast_hash": "76341677bfc1a0f347683a52ca705ece",
+    "mtime": 1793386131.2694058,
+    "seen": 1793386153.1425009,
+    "ast_hash": "b15c2610eb15382d4d2dfc178113f90f",
     "semantic_hash": ""
   },
   "tools/apk/probe_hwui_host.py": {
@@ -1527,6 +1527,36 @@
     "mtime": 1793385428.6024985,
     "seen": 1793385471.4339578,
     "ast_hash": "f11d07a433117291534847b09ee03275",
+    "semantic_hash": ""
+  },
+  "fixtures/aosp-critical-host/CriticalHostProbe.java": {
+    "mtime": 1793386105.6058643,
+    "seen": 1793386153.125854,
+    "ast_hash": "00742f7b9566cc6b15ed3244fd0f40dc",
+    "semantic_hash": ""
+  },
+  "fixtures/aosp-critical-host/native-probe.cpp": {
+    "mtime": 1793386105.4791965,
+    "seen": 1793386153.1258624,
+    "ast_hash": "cad6e9bfd37f57bb1203281ce9ded4f7",
+    "semantic_hash": ""
+  },
+  "runtime/aosp/native/critical-host-adapter.h": {
+    "mtime": 1793385778.3602724,
+    "seen": 1793386042.8768365,
+    "ast_hash": "0a873c080004c1ceb4082c0f43e23eeb",
+    "semantic_hash": ""
+  },
+  "tools/apk/verify_critical_host.py": {
+    "mtime": 1793386105.7358654,
+    "seen": 1793386153.1405263,
+    "ast_hash": "0da9efaa0fe78adf7ea4f5cd66454560",
+    "semantic_hash": ""
+  },
+  "docs/AOSP-CRITICAL-HOST.md": {
+    "mtime": 1793386131.142738,
+    "seen": 1793386153.1417966,
+    "ast_hash": "193d45b01645e24f12cbbd98581e1531",
     "semantic_hash": ""
   }
 }

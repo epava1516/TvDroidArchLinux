@@ -126,3 +126,8 @@ verificación del manifiesto androidfw predeterminado continúa pasando.
 La siguiente fase de construcción Skia, sus dependencias y la compatibilidad
 con Clang 23 se registran en [AOSP-SKIA-HOST.md](AOSP-SKIA-HOST.md). La prueba
 numérica F16C pasa; el enlace y la ejecución de HWUI aún están pendientes.
+
+El adaptador tipado de AOSP-CRITICAL-HOST.md ya supera una prueba ART con ocho
+firmas y 2298 llamadas de funciones propias, incluidos argumentos mixtos en
+registros/pila y rechazo de referencias a objetos. Su integración en el JNI
+RenderNode original sigue pendiente; esa prueba no ejecuta métodos RenderNode.

@@ -1,0 +1,8 @@
+In file included from /home/tv/repositorio-principal/dist/apk/critical-host-final-1/object-argument.cpp:1:
+/home/tv/repositorio-principal/runtime/aosp/native/critical-host-adapter.h:23:20: error: static assertion failed due to requirement 'jni_primitive<_jobject *>': CriticalNative arguments must be primitive
+   23 |     static_assert((jni_primitive<Args> && ...), "CriticalNative arguments must be primitive");
+      |                    ^~~~~~~~~~~~~~~~~~~
+/home/tv/repositorio-principal/dist/apk/critical-host-final-1/object-argument.cpp:3:15: note: in instantiation of template class 'archtv::aosp::CriticalHostAdapter<&invalid>' requested here
+    3 | auto entry = &archtv::aosp::CriticalHostAdapter<&invalid>::call;
+      |               ^
+1 error generated.
