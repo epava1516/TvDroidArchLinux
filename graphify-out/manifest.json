@@ -79,10 +79,10 @@
     "semantic_hash": "e8bc21c7a1c4f0773d8b876c2055ef00"
   },
   "crates/archtv-core/src/lib.rs": {
-    "mtime": 1793317694.167789,
-    "seen": 1793318729.488728,
-    "ast_hash": "96f2263bce8f1e16d4ba6a08f55ad6fe",
-    "semantic_hash": "96f2263bce8f1e16d4ba6a08f55ad6fe"
+    "mtime": 1793349160.3349638,
+    "seen": 1793349396.1397657,
+    "ast_hash": "822a398499b88bee034cf85e12eebdc2",
+    "semantic_hash": ""
   },
   "crates/archtv-shell/Cargo.toml": {
     "mtime": 1793317694.177789,
@@ -283,9 +283,9 @@
     "semantic_hash": ""
   },
   "ROADMAP.md": {
-    "mtime": 1793348900.1674178,
-    "seen": 1793348904.6468048,
-    "ast_hash": "b924b3ca697d120aa5bd0116041b44b3",
+    "mtime": 1793349390.982493,
+    "seen": 1793349396.139973,
+    "ast_hash": "bbd2f8efc3569ba33b09181ca7818895",
     "semantic_hash": ""
   },
   "THIRD_PARTY.md": {
@@ -313,9 +313,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793348900.1704652,
-    "seen": 1793348904.6469114,
-    "ast_hash": "dbbde97845f17801df65311d3d42816b",
+    "mtime": 1793349390.9812942,
+    "seen": 1793349396.139999,
+    "ast_hash": "d5d262d6c1341083f1b7a8d4e91682a8",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -487,9 +487,9 @@
     "semantic_hash": ""
   },
   "docs/AOSP-NATIVO.md": {
-    "mtime": 1793323173.283112,
-    "seen": 1793324896.661709,
-    "ast_hash": "0d22615e4926313255dbf58227a8bfae",
+    "mtime": 1793349390.9850717,
+    "seen": 1793349396.1399784,
+    "ast_hash": "e0eec38dbda277675be68f276d6b22ad",
     "semantic_hash": ""
   },
   "manifests/android-test-lab.txt": {
@@ -616,6 +616,24 @@
     "mtime": 1793347374.1066623,
     "seen": 1793347401.3697255,
     "ast_hash": "f8a1795025f3b3735ab90432d2190981",
+    "semantic_hash": ""
+  },
+  "crates/archtv-core/src/android.rs": {
+    "mtime": 1793349300.5642397,
+    "seen": 1793349396.1397336,
+    "ast_hash": "ec80c3ca9660725428eb72575a98b835",
+    "semantic_hash": ""
+  },
+  "docs/CONTRATO-ANDROID.md": {
+    "mtime": 1793349300.57993,
+    "seen": 1793349396.1399872,
+    "ast_hash": "fcf93ab985e62851e8fc9639b8d64a90",
+    "semantic_hash": ""
+  },
+  "docs/ROADMAP-A.md": {
+    "mtime": 1793349300.5832636,
+    "seen": 1793349396.1400235,
+    "ast_hash": "f13b7c6d783bfe23a68d85dbb54e0ba2",
     "semantic_hash": ""
   }
 }

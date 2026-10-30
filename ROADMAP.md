@@ -305,8 +305,9 @@ la sesión tras un fallo. Repetir en el hardware físico declarado compatible.
 Dirección futura solicitada: sustituir Waydroid por un entorno AOSP controlado
 por el proyecto, con procesos sobre el kernel Linux e integración con el shell y
 compositor Rust. Plan, contratos y puertas de aceptación en
-[docs/AOSP-NATIVO.md](docs/AOSP-NATIVO.md). Esta línea A0–A5 sigue a H0–H9 y no
-reemplaza la validación Android H6 ni acredita ejecución nativa ya disponible.
+[docs/AOSP-NATIVO.md](docs/AOSP-NATIVO.md). A petición del usuario, A0 avanza en paralelo con tipos y contrato en Rust;
+A1–A5 siguen pendientes. Ver [docs/ROADMAP-A.md](docs/ROADMAP-A.md). No reemplaza
+la validación H6 ni acredita ejecución AOSP propia ya disponible.
 
 ## Regla para cerrar un hito
 
@@ -314,4 +315,6 @@ Cada hito requiere implementación, pruebas y evidencia. Un documento, un binari
 que solo imprime texto, un paquete instalado o un contenedor RUNNING no acreditan
 por sí mismos un compositor, una interfaz o Android funcionales.
 
-La siguiente acción es H5: implementar y medir el shell Rust con referencia Fire TV 2026.
+Siguiente acción en A0: implementar el adaptador Waydroid contra el contrato Rust
+y migrar los workers del shell. H6/H7 conservan sus validaciones de estabilidad
+y multimedia pendientes; H8/H9 mantienen las puertas descritas arriba.

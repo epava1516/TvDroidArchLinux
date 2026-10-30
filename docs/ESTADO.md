@@ -146,7 +146,7 @@ reanudación de presentación. Evidencia en el informe H3 más reciente.
 
 El cliente Wayland del shell, catálogo desktop, navegación, búsqueda/teclado en
 pantalla, menús de favoritos/orden/ocultación y persistencia ya están implementados
-y compilados. Pasan diez pruebas unitarias entre núcleo y shell en la revisión actual. La prueba
+y compilados. Pasan doce pruebas unitarias entre núcleo y shell en la revisión actual. La prueba
 gráfica nativa utiliza uinput; el mando físico pertenece a H7.
 
 Graphify 0.9.97 instalado con mapa local AST/Cargo, consultas y vistas interactivas.
@@ -222,3 +222,13 @@ posible reinicio no permite confirmar pausa/suspensión. Una muestra posterior
 sin carga tardó 32 s para 20 s de esperas; kvm-clock temporal tampoco eliminó
 los retrasos y se restauró TSC. La causa no está demostrada y H6/H7 siguen abiertos.
 Evidencia: reports/h6-lts-stability/ e INCIDENTE-VM-20261030.md.
+
+## A0 en paralelo: contrato Android
+
+A petición del usuario se abrió A0 mientras continúa H0–H9. El contrato Rust
+independiente del proveedor está en archtv-core/src/android.rs: identidad por
+paquete/perfil, metadatos, capacidades, estados, errores, plazos y operaciones.
+Se documentó el contrato y el orden A0–A5 en CONTRATO-ANDROID.md y ROADMAP-A.md.
+Pasan doce pruebas core + shell, Clippy del núcleo y los controles del repositorio.
+El adaptador Waydroid y la migración de los workers aún no están implementados;
+A0 no se cierra y no se afirma ejecución AOSP propia.

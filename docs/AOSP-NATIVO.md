@@ -3,7 +3,9 @@
 Propuesta registrada el 30 de octubre de 2026 a petición del usuario. El objetivo
 es sustituir la dependencia operativa de Waydroid por un entorno Android propio,
 basado en AOSP, integrado con el compositor Rust/Smithay y la distribución Arch TV.
-Es una evolución posterior al roadmap H0–H9; no está implementada ni validada.
+La plataforma propia sigue sin estar implementada ni validada. A petición del
+usuario, el contrato A0 avanza en paralelo a H0–H9; no sustituye sus validaciones.
+Ver [ROADMAP-A.md](ROADMAP-A.md) y [CONTRATO-ANDROID.md](CONTRATO-ANDROID.md).
 
 ## Qué significa ejecutar APK de forma nativa
 
@@ -61,8 +63,9 @@ estudiará por separado; no se deduce de disponer del código AOSP.
 
 La [guía de compilación actual](https://source.android.com/docs/setup/start/requirements)
 indica 400 GB libres y 64 GB de RAM para la estación de desarrollo. La VM actual
-de unos 1,9 GiB sirve para ensayos limitados de ejecución, no satisface ese perfil
-de compilación. Se elegirá infraestructura de build antes de descargar AOSP.
+dispone de unos 7,7 GiB tras la ampliación, pero no satisface ese perfil de
+compilación y además presenta problemas de estabilidad pendientes de diagnóstico.
+Se elegirá infraestructura de build antes de descargar AOSP.
 
 Quedan por fijar la versión soportada, ABI inicial, perfil de seguridad, conjunto
 de servicios mínimo y estrategia de HAL/gráficos. La memoria y la CPU deben

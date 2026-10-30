@@ -1,0 +1,7 @@
+Resumen de comprobaciones ejecutadas para el borrador A0:
+- scripts/check.sh: correcto (scripts, manifiestos, locks, Python y formato Rust).
+- cargo clippy --locked --offline --jobs 1 -p archtv-core --all-targets -- -D warnings: correcto.
+- cargo test --locked --offline --jobs 1 -p archtv-core -p archtv-shell: 12 pruebas correctas (6 core, 6 shell).
+- Nuevas pruebas: identidad de paquete/perfil y confirmación de boot que no sobrevive a sesión detenida.
+Alcance: tipos e invariantes internos. No hay adaptador, transporte IPC ni integración Android nueva validada.
+SHA-256 android.rs: 1dfe8c73a59b3a85c3e14fb4d81b8a32700827ffbc49d13fa07883135d5ab4cd
