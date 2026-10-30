@@ -283,9 +283,9 @@
     "semantic_hash": ""
   },
   "ROADMAP.md": {
-    "mtime": 1793346912.8896112,
-    "seen": 1793346917.250576,
-    "ast_hash": "99ac018228ecd82adcd2c85a2ac18bc7",
+    "mtime": 1793348900.1674178,
+    "seen": 1793348904.6468048,
+    "ast_hash": "b924b3ca697d120aa5bd0116041b44b3",
     "semantic_hash": ""
   },
   "THIRD_PARTY.md": {
@@ -313,9 +313,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793327448.0362682,
-    "seen": 1793327462.258889,
-    "ast_hash": "d57230303a82edc17cd0ab9359aa42d6",
+    "mtime": 1793348900.1704652,
+    "seen": 1793348904.6469114,
+    "ast_hash": "dbbde97845f17801df65311d3d42816b",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -523,9 +523,9 @@
     "semantic_hash": ""
   },
   "docs/INCIDENTE-VM-20261030.md": {
-    "mtime": 1793344461.7904334,
-    "seen": 1793344463.9019809,
-    "ast_hash": "d44e7797c66f91dd021852c5bfa25132",
+    "mtime": 1793348933.1506376,
+    "seen": 1793348935.6483881,
+    "ast_hash": "58e439dbcc2645f98f773ac717685595",
     "semantic_hash": ""
   },
   "scripts/95-kernel-lts.sh": {

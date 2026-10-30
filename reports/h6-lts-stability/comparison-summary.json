@@ -1,0 +1,38 @@
+{
+  "samples": [
+    {
+      "file": "clock-idle.json",
+      "clocksource": "tsc",
+      "elapsed_seconds": 32.014620305,
+      "sleep_lateness_ms": {
+        "min": 0.3413099999999929,
+        "median": 53.32995149999999,
+        "p95": 155.820003,
+        "max": 223.732825
+      }
+    },
+    {
+      "file": "clock-kvm.json",
+      "clocksource": "kvm-clock",
+      "elapsed_seconds": 30.621855266,
+      "sleep_lateness_ms": {
+        "min": 0.32974299999999346,
+        "median": 51.111818,
+        "p95": 112.745607,
+        "max": 166.10051099999998
+      }
+    },
+    {
+      "file": "clock-tsc-restored.json",
+      "clocksource": "tsc",
+      "elapsed_seconds": 29.513523239,
+      "sleep_lateness_ms": {
+        "min": 0.23123499999999808,
+        "median": 35.560406,
+        "p95": 127.047823,
+        "max": 177.35698000000002
+      }
+    }
+  ],
+  "result": "Delays persist in all three short guest samples. No causal stability fix demonstrated. TSC restored; Android not started. Guest clocks are not independent host timing references."
+}

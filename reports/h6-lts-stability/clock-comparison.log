@@ -1,0 +1,3 @@
+Original clocksource: tsc
+{"scope": "Short guest baseline only; clocks are not independent host references. No Android or load test.", "clocksource_before": "kvm-clock", "clocksource_after": "kvm-clock", "elapsed_seconds": {"monotonic": 30.621855266, "raw": 30.620038905, "boottime": 30.621856579, "realtime": 30.621856437}, "sleep_lateness_ms": {"min": 0.32974299999999346, "median": 51.111818, "p95": 112.745607, "max": 166.10051099999998}}
+Restored clocksource: tsc

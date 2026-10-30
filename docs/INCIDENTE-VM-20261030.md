@@ -56,8 +56,8 @@ verificaron hashes de arch.conf y loader.conf antes/después y una segunda
 invocación del helper: no cambió la selección predeterminada ni se reinició.
 
 Binder Rust también figura como integrado en este LTS; cambiar de kernel no
-constituye una comparación del driver Binder C frente a Rust. El ensayo sigue
-pendiente de arrancar LTS y repetir los controles. Evidencia y hashes en
+constituye una comparación del driver Binder C frente a Rust. En esa fase aún faltaba arrancar LTS; el arranque y los controles posteriores
+se documentan más abajo. Evidencia y hashes en
 reports/h6-kernel-lts/. El script 95 reproduce la instalación y creación de la
 entrada; no modifica el kernel que se está ejecutando.
 
@@ -85,3 +85,41 @@ uinput, búsqueda, lanzamiento y escritura en Foot, Home/reanudación, persisten
 y reinicio del shell, volumen/silencio PipeWire y restauración de Wi-Fi. Conserva
 logs y captura DRM en reports/h6-kernel-lts/native-shell/. Es una prueba funcional
 corta; no acredita rendimiento H7 ni corrige los fallos multimedia H6.
+
+## Soft lockups también con LTS
+
+El 30 de octubre a las 08:10:43 UTC, LTS registró avisos de 28 segundos en
+CPU 2 (swapper/2), CPU 0 (opt cgu.0) y CPU 3 (ALL CPUs/TCG). Coinciden con
+compilación y prueba QEMU de la ISO, sin haber iniciado la prueba Android.
+La CPU 2 muestra pv_native_safe_halt y la CPU 3 irqentry_exit_to_user_mode.
+La presencia de compilador o TCG en una traza no demuestra causalidad.
+
+La [documentación del watchdog del kernel](https://docs.kernel.org/admin-guide/lockup-watchdogs.html)
+explica que el detector observa el tiempo transcurrido desde que su trabajo
+pudo actualizar una marca temporal. Estos avisos no constituyen una prueba de
+falta de RAM ni identifican por sí solos el componente responsable. No se han
+desactivado detectores ni aumentado sus umbrales.
+
+Tras terminar compilación y emulación, con Android STOPPED y 6,8 GiB disponibles,
+una muestra de 200 esperas de 100 ms tardó 32,015 segundos: mediana de retraso
+53,330 ms, p95 155,820 ms y máximo 223,733 ms. Conservó TSC. Las referencias de
+tiempo están dentro del invitado; no son mediciones independientes del anfitrión.
+Ver reports/h6-lts-stability/ para logs completos, memoria, CPU y estado del reloj.
+
+El usuario no pudo confirmar una pausa o suspensión durante el incidente y
+recordó de forma incierta un posible reinicio. El boot ID actual sigue siendo
+4c90fafb-d957-43fb-9628-107b4ad1e956; no se toma ese recuerdo como prueba de
+reinicio ni de su causa. La validación de estabilidad continúa abierta.
+
+La comparación temporal con kvm-clock, anunciado por el kernel, terminó
+y restauró TSC. Las mismas 200 esperas tardaron 30,622 s, con mediana de
+retraso 51,112 ms, p95 112,746 ms y máximo 166,101 ms; el retraso persiste. El mecanismo sysfs está documentado por
+[Red Hat](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux_for_real_time/7/html/tuning_guide/using_hardware_clocks_for_system_timestamping).
+Un cambio de resultado en una muestra corta no acreditaría por sí solo una
+corrección del bloqueo; el anfitrión no está instrumentado.
+
+Tras restaurar TSC, la tercera muestra tardó 29,514 s; p95 de retraso
+127,048 ms y máximo 177,357 ms. Las tres muestras conservan retrasos y
+no permiten atribuir causalmente la diferencia a la fuente de reloj.
+comparison-summary.json recoge el orden TSC → kvm-clock → TSC.
+Android permaneció detenido durante este diagnóstico.

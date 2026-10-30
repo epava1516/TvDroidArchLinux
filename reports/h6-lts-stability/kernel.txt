@@ -1,0 +1,86 @@
+Oct 30 08:10:43 archtv kernel: watchdog: BUG: soft lockup - CPU#2 stuck for 28s! [swapper/2:0]
+Oct 30 08:10:43 archtv kernel: CPU#2 Utilization every 4000ms during lockup:
+Oct 30 08:10:43 archtv kernel:         #1:   1% system,          1% softirq,          2% hardirq,          1% idle
+Oct 30 08:10:43 archtv kernel:         #2:   0% system,          0% softirq,          1% hardirq,          0% idle
+Oct 30 08:10:43 archtv kernel:         #3:   1% system,          1% softirq,          5% hardirq,          7% idle
+Oct 30 08:10:43 archtv kernel:         #4:   0% system,          3% softirq,         11% hardirq,         65% idle
+Oct 30 08:10:43 archtv kernel:         #5:   0% system,          0% softirq,          2% hardirq,          0% idle
+Oct 30 08:10:43 archtv kernel: Modules linked in: tun uinput snd_seq_dummy snd_hrtimer snd_seq snd_seq_device rfkill intel_rapl_msr intel_rapl_common intel_uncore_frequency_common intel_pmc_core pmt_telemetry pmt_discovery pmt_class intel_pmc_ssram_telemetry intel_vsec polyval_clmulni ghash_clmulni_intel snd_intel8x0 aesni_intel snd_ac97_codec rapl ac97_bus vfat fat snd_pcm snd_timer pcspkr psmouse snd video wmi i2c_piix4 soundcore e1000 joydev i2c_smbus vboxguest mousedev mac_hid vsock_loopback vmw_vsock_virtio_transport_common vmw_vsock_vmci_transport zram vsock 842_decompress 842_compress vmw_vmci lz4hc_compress lz4_compress sr_mod cdrom ata_generic pata_acpi vmwgfx intel_agp drm_ttm_helper ata_piix intel_gtt ttm serio_raw
+Oct 30 08:10:43 archtv kernel: CPU: 2 UID: 0 PID: 0 Comm: swapper/2 Tainted: G             L      6.18.59-1-lts #1 PREEMPT(voluntary)  7ae8fd28dad809d81307d7768e9437d18d5c717e
+Oct 30 08:10:43 archtv kernel: Tainted: [L]=SOFTLOCKUP
+Oct 30 08:10:43 archtv kernel: Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+Oct 30 08:10:43 archtv kernel: RIP: 0010:pv_native_safe_halt+0xf/0x20
+Oct 30 08:10:43 archtv kernel: Code: 20 d0 e9 94 3b 01 00 0f 1f 40 00 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 f3 0f 1e fa eb 07 0f 00 2d 13 e8 13 00 fb f4 <c3> cc cc cc cc 90 66 66 2e 0f 1f 84 00 00 00 00 00 90 90 90 90 90
+Oct 30 08:10:43 archtv kernel: RSP: 0018:ffffcdd5000cbec0 EFLAGS: 00010296
+Oct 30 08:10:43 archtv kernel: RAX: 0000000000000002 RBX: 0000000000000000 RCX: ffff8c9540a31b40
+Oct 30 08:10:43 archtv kernel: RDX: 0000000000000000 RSI: 0000000000000000 RDI: 000000000071c6cc
+Oct 30 08:10:43 archtv kernel: RBP: ffff8c9540a31b40 R08: 0000000000000001 R09: 0000000000000001
+Oct 30 08:10:43 archtv kernel: R10: 00000000fffffffb R11: 0000000000000000 R12: 0000000000000002
+Oct 30 08:10:43 archtv kernel: R13: 0000000000000000 R14: 0000000000000000 R15: 0000000000000000
+Oct 30 08:10:43 archtv kernel: FS:  0000000000000000(0000) GS:ffff8c96c26b1000(0000) knlGS:0000000000000000
+Oct 30 08:10:43 archtv kernel: CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+Oct 30 08:10:43 archtv kernel: CR2: 00007f93b2469000 CR3: 000000010e08c005 CR4: 00000000000706f0
+Oct 30 08:10:43 archtv kernel: Call Trace:
+Oct 30 08:10:43 archtv kernel:  <TASK>
+Oct 30 08:10:43 archtv kernel:  default_idle+0x9/0x20
+Oct 30 08:10:43 archtv kernel:  default_idle_call+0x2a/0x100
+Oct 30 08:10:43 archtv kernel:  do_idle+0x264/0x2a0
+Oct 30 08:10:43 archtv kernel:  ? schedule_idle+0x22/0x40
+Oct 30 08:10:43 archtv kernel:  cpu_startup_entry+0x29/0x30
+Oct 30 08:10:43 archtv kernel:  start_secondary+0x119/0x140
+Oct 30 08:10:43 archtv kernel:  common_startup_64+0x13e/0x141
+Oct 30 08:10:43 archtv kernel:  </TASK>
+Oct 30 08:10:43 archtv kernel: watchdog: BUG: soft lockup - CPU#0 stuck for 28s! [opt cgu.0:76006]
+Oct 30 08:10:43 archtv kernel: CPU#0 Utilization every 4000ms during lockup:
+Oct 30 08:10:43 archtv kernel:         #1:   0% system,          1% softirq,          3% hardirq,          1% idle
+Oct 30 08:10:43 archtv kernel:         #2:   1% system,          2% softirq,          2% hardirq,          1% idle
+Oct 30 08:10:43 archtv kernel:         #3:   0% system,          3% softirq,          4% hardirq,         17% idle
+Oct 30 08:10:43 archtv kernel:         #4:   1% system,          0% softirq,         12% hardirq,          0% idle
+Oct 30 08:10:43 archtv kernel:         #5:   0% system,          6% softirq,          6% hardirq,          0% idle
+Oct 30 08:10:43 archtv kernel: Modules linked in: tun uinput snd_seq_dummy snd_hrtimer snd_seq snd_seq_device rfkill intel_rapl_msr intel_rapl_common intel_uncore_frequency_common intel_pmc_core pmt_telemetry pmt_discovery pmt_class intel_pmc_ssram_telemetry intel_vsec polyval_clmulni ghash_clmulni_intel snd_intel8x0 aesni_intel snd_ac97_codec rapl ac97_bus vfat fat snd_pcm snd_timer pcspkr psmouse snd video wmi i2c_piix4 soundcore e1000 joydev i2c_smbus vboxguest mousedev mac_hid vsock_loopback vmw_vsock_virtio_transport_common vmw_vsock_vmci_transport zram vsock 842_decompress 842_compress vmw_vmci lz4hc_compress lz4_compress sr_mod cdrom ata_generic pata_acpi vmwgfx intel_agp drm_ttm_helper ata_piix intel_gtt ttm serio_raw
+Oct 30 08:10:43 archtv kernel: CPU: 0 UID: 1000 PID: 76006 Comm: opt cgu.0 Tainted: G             L      6.18.59-1-lts #1 PREEMPT(voluntary)  7ae8fd28dad809d81307d7768e9437d18d5c717e
+Oct 30 08:10:43 archtv kernel: Tainted: [L]=SOFTLOCKUP
+Oct 30 08:10:43 archtv kernel: Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+Oct 30 08:10:43 archtv kernel: RIP: 0033:0x7f0b516a74a8
+Oct 30 08:10:43 archtv kernel: Code: 00 00 48 8d 3d c9 87 11 00 e8 44 d3 ff ff 0f 1f 40 00 8d bc 36 dd 00 00 00 8d 4e 6e 48 c1 e7 03 e9 92 fa ff ff 0f 1f 44 00 00 <4c> 8b 66 10 eb b0 66 90 48 8d 3d 01 88 11 00 e8 14 d3 ff ff 0f 1f
+Oct 30 08:10:43 archtv kernel: RSP: 002b:00007f0b329f5fb0 EFLAGS: 00010246
+Oct 30 08:10:43 archtv kernel: RAX: 00007f0b0dc09990 RBX: 0000000000002710 RCX: 0000000000000059
+Oct 30 08:10:43 archtv kernel: RDX: 0000000000000a41 RSI: 00007f0b0dc21960 RDI: 0000000000000a41
+Oct 30 08:10:43 archtv kernel: RBP: 00007f0b329f6000 R08: 00007f0b18000030 R09: 0000000000000090
+Oct 30 08:10:43 archtv kernel: R10: 0000000000000088 R11: 00007f0b18000038 R12: 00007f0b180005b8
+Oct 30 08:10:43 archtv kernel: R13: 00007f0b2a492d30 R14: 0000000000000a41 R15: 0000000000000009
+Oct 30 08:10:43 archtv kernel: FS:  00007f0b329ff6c0 GS:  0000000000000000
+Oct 30 08:10:43 archtv kernel: watchdog: BUG: soft lockup - CPU#3 stuck for 28s! [ALL CPUs/TCG:75420]
+Oct 30 08:10:43 archtv kernel: CPU#3 Utilization every 4000ms during lockup:
+Oct 30 08:10:43 archtv kernel:         #1:   1% system,          0% softirq,          1% hardirq,          0% idle
+Oct 30 08:10:43 archtv kernel:         #2:   1% system,          0% softirq,          0% hardirq,          1% idle
+Oct 30 08:10:43 archtv kernel:         #3:   4% system,          1% softirq,          5% hardirq,         20% idle
+Oct 30 08:10:43 archtv kernel:         #4:   3% system,          1% softirq,         17% hardirq,         62% idle
+Oct 30 08:10:43 archtv kernel:         #5:   0% system,          0% softirq,          0% hardirq,          0% idle
+Oct 30 08:10:43 archtv kernel: Modules linked in: tun uinput snd_seq_dummy snd_hrtimer snd_seq snd_seq_device rfkill intel_rapl_msr intel_rapl_common intel_uncore_frequency_common intel_pmc_core pmt_telemetry pmt_discovery pmt_class intel_pmc_ssram_telemetry intel_vsec polyval_clmulni ghash_clmulni_intel snd_intel8x0 aesni_intel snd_ac97_codec rapl ac97_bus vfat fat snd_pcm snd_timer pcspkr psmouse snd video wmi i2c_piix4 soundcore e1000 joydev i2c_smbus vboxguest mousedev mac_hid vsock_loopback vmw_vsock_virtio_transport_common vmw_vsock_vmci_transport zram vsock 842_decompress 842_compress vmw_vmci lz4hc_compress lz4_compress sr_mod cdrom ata_generic pata_acpi vmwgfx intel_agp drm_ttm_helper ata_piix intel_gtt ttm serio_raw
+Oct 30 08:10:43 archtv kernel: CPU: 3 UID: 1000 PID: 75420 Comm: ALL CPUs/TCG Tainted: G             L      6.18.59-1-lts #1 PREEMPT(voluntary)  7ae8fd28dad809d81307d7768e9437d18d5c717e
+Oct 30 08:10:43 archtv kernel: Tainted: [L]=SOFTLOCKUP
+Oct 30 08:10:43 archtv kernel: Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+Oct 30 08:10:43 archtv kernel: RIP: 0010:irqentry_exit_to_user_mode+0xeb/0x2d0
+Oct 30 08:10:43 archtv kernel: Code: 6f 1e f8 01 48 8b 05 3c bb 03 02 48 0f a3 10 0f 82 7f 01 00 00 48 8b 2b f7 c5 37 03 00 00 0f 84 42 ff ff ff fb 0f 1f 44 00 00 <40> f6 c5 30 0f 85 30 01 00 00 f7 c5 00 01 00 00 0f 85 35 01 00 00
+Oct 30 08:10:43 archtv kernel: RSP: 0000:ffffcdd50203bf28 EFLAGS: 00010202
+Oct 30 08:10:43 archtv kernel: RAX: 0000000000000000 RBX: ffff8c9441169b40 RCX: ffffffff956815c0
+Oct 30 08:10:43 archtv kernel: RDX: ffff8c96c2731000 RSI: 0000000000000000 RDI: ffffcdd50203bf48
+Oct 30 08:10:43 archtv kernel: RBP: 0000000000000010 R08: 0000000000000001 R09: 0000000000000003
+Oct 30 08:10:43 archtv kernel: R10: ffff8c9657db25c0 R11: 0000000000000000 R12: ffffcdd50203bf48
+Oct 30 08:10:43 archtv kernel: R13: 0000000000000000 R14: 0000000000000000 R15: 0000000000000000
+Oct 30 08:10:43 archtv kernel: FS:  00007efe6a3f26c0(0000) GS:ffff8c96c2731000(0000) knlGS:0000000000000000
+Oct 30 08:10:43 archtv kernel: CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+Oct 30 08:10:43 archtv kernel: CR2: 00007efdb870aff0 CR3: 0000000143b79005 CR4: 00000000000706f0
+Oct 30 08:10:43 archtv kernel: Call Trace:
+Oct 30 08:10:43 archtv kernel:  <TASK>
+Oct 30 08:10:43 archtv kernel:  asm_sysvec_call_function_single+0x1a/0x20
+Oct 30 08:10:43 archtv kernel: RIP: 0033:0x5616c861e03d
+Oct 30 08:10:43 archtv kernel: Code: 90 bf ff ff 48 83 ec 68 48 8b 87 28 c0 ff ff 64 4c 8b 04 25 28 00 00 00 4c 89 45 e8 49 89 f8 c6 47 f0 01 48 8b 80 50 01 00 00 <48> 8b 40 18 48 39 d0 0f 85 56 02 00 00 41 8b b0 08 01 00 00 41 8b
+Oct 30 08:10:43 archtv kernel: RSP: 002b:00007efe6a3f0e10 EFLAGS: 00010202
+Oct 30 08:10:43 archtv kernel: RAX: 00005616c9e32260 RBX: 00005616e401f6f0 RCX: 00005616e4034c90
+Oct 30 08:10:43 archtv kernel: RDX: 00005616c8a80b70 RSI: ff728a9c8081f000 RDI: 00005616e4023760
+Oct 30 08:10:43 archtv kernel: RBP: 00007efe6a3f0e80 R08: 00005616e4023760 R09: ffffffff9cb21fb5
+Oct 30 08:10:43 archtv kernel: R10: 0000000000000000 R11: 00007efe2e173654 R12: ffffffff9cb21f97
+Oct 30 08:10:43 archtv kernel: R13: ff728a9c8081f958 R14: ff728a9c8081f958 R15: 0000000000000000
+Oct 30 08:10:43 archtv kernel:  </TASK>

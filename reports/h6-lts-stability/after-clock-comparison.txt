@@ -1,0 +1,6 @@
+Fri Oct 30 08:27:29 UTC 2026
+tsc
+4c90fafb-d957-43fb-9628-107b4ad1e956
+STOPPED
+Oct 30 08:25:58 archtv kernel: clocksource: Switched to clocksource kvm-clock
+Oct 30 08:26:28 archtv kernel: clocksource: Switched to clocksource tsc

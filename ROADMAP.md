@@ -261,12 +261,14 @@ afirmaciones de ligereza y compatibilidad se limitan a plataformas medidas.
 
 ## H8 · Paquetes y actualización
 
-Preparación en paralelo con la investigación multimedia H6: LTS ya arrancado
-y shell nativo comprobado; persisten retrasos del reloj. Hay recetas separadas
-para compositor, shell y sesión, generador de fuentes fijadas a un commit y
-SHA-256, y comando de compilación limpia con registros e inspección de paquetes. Los artefactos de fuentes no acreditan paquetes binarios
-ni instalación. Pendientes: build limpio, auditoría de licencias transitivas y
-validación de instalación/actualización/retirada. Ver docs/PAQUETES.md.
+Dos revisiones se compilaron en raíces Arch limpias; la segunda pasó diez
+pruebas. Su empaquetado se reanudó con --repackage tras una interrupción al
+entrar en fakeroot, conservando binarios y fuentes. El ciclo entre r14 y r22
+(instalar, actualizar, volver a r14 y retirar) pasó en una raíz Arch base sin
+compiladores y conservó preferencias. Se registran hashes, dependencias e
+inventario Cargo. Pendientes: cierre de cinco avisos de licencia ausentes,
+revisión de condiciones transitivas, reproducibilidad binaria y aceptación
+completa de la sesión instalada con usuario normal. Ver docs/PAQUETES.md.
 
 - Paquetes separados para compositor, shell y archivos de sesión.
 - Build limpio, Cargo.lock, revisión de dependencias/licencias y fuentes verificadas.
@@ -280,10 +282,13 @@ ocultos, actualización y retirada comprobadas, receta y fuentes reproducibles.
 
 ## H9 · Distribución Arch TV
 
-Preparación: herramientas Archiso instaladas y generador de perfil UEFI/LTS
-comprobado hasta la generación y sintaxis. Consume el repositorio local de los
-tres paquetes y contenido explícito, sin datos personales. No se ha construido
-ni arrancado una ISO. Ver docs/DISTRIBUCION.md y reports/h9-preparation/.
+La ISO de laboratorio corregida se construyó, tiene hash registrado y arrancó
+con OVMF/UEFI en QEMU TCG. Llegó al login LTS; desde root live abrió la sesión
+DRM/Virtio, lanzó Foot desde el shell y volvió con Home. Un fallo inicial de
+initramfs se conservó separado y se corrigió. El ajuste posterior de zona
+horaria UTC solo está generado. Pendientes: instalador, usuario normal, arranque
+desde disco, aplicación Android, actualización/recuperación y hardware físico.
+Ver docs/DISTRIBUCION.md y reports/h9-uefi-boot/. H9 continúa abierto.
 
 - Perfil archiso basado en los paquetes propios, sin datos ni credenciales de la VM.
 - Política de versiones/snapshots, kernel/Binder e imágenes Android.

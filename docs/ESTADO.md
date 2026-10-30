@@ -146,7 +146,7 @@ reanudación de presentación. Evidencia en el informe H3 más reciente.
 
 El cliente Wayland del shell, catálogo desktop, navegación, búsqueda/teclado en
 pantalla, menús de favoritos/orden/ocultación y persistencia ya están implementados
-y compilados. Pasan ocho pruebas unitarias entre núcleo y shell. La prueba
+y compilados. Pasan diez pruebas unitarias entre núcleo y shell en la revisión actual. La prueba
 gráfica nativa utiliza uinput; el mando físico pertenece a H7.
 
 Graphify 0.9.97 instalado con mapa local AST/Cargo, consultas y vistas interactivas.
@@ -203,3 +203,22 @@ El ensayo VLC TV/software sí muestra avance del vídeo; el audio continuo sigue
 sin validarse. El control con el reproductor AOSP detecta audio pero mantiene
 el vídeo congelado. Ninguno cierra H6. Tras el reinicio Android queda detenido
 mientras se revisa la estabilidad de la VM.
+
+## Paquetes e ISO comprobados, estabilidad aún abierta
+
+Las compilaciones limpias y el ciclo instalar/actualizar/rollback/retirar entre
+r14 y r22 pasan en una raíz Arch base sin compiladores. Se conservan preferencias,
+hashes e inventario Cargo. Cinco avisos de licencia y la revisión completa de
+condiciones siguen pendientes; H8 no se ha cerrado. Ver PAQUETES.md.
+
+La ISO live corregida arrancó con UEFI/LTS en QEMU TCG, abrió la sesión DRM y
+ejecutó Foot desde el shell con escritura comprobada. No se instaló en disco
+ni se ejecutó Android en esa ISO. Quedan pendientes usuario normal, instalador,
+actualización/recuperación y hardware físico. Ver DISTRIBUCION.md.
+
+En el anfitrión VirtualBox, LTS registró tres soft lockups de 28 s durante
+compilación y emulación, sin iniciar Android. El recuerdo del usuario sobre un
+posible reinicio no permite confirmar pausa/suspensión. Una muestra posterior
+sin carga tardó 32 s para 20 s de esperas; kvm-clock temporal tampoco eliminó
+los retrasos y se restauró TSC. La causa no está demostrada y H6/H7 siguen abiertos.
+Evidencia: reports/h6-lts-stability/ e INCIDENTE-VM-20261030.md.
