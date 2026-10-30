@@ -1,0 +1,20 @@
+{
+  "first": {
+    "last_client_frame": "reports/a2-wayland/first/frames/frame-0004.png",
+    "scanout": "reports/a2-wayland/first/scanout.png",
+    "size": [
+      1280,
+      720
+    ],
+    "max_channel_difference": 0
+  },
+  "reopen": {
+    "last_client_frame": "reports/a2-wayland/reopen/frames/frame-0003.png",
+    "scanout": "reports/a2-wayland/reopen/scanout.png",
+    "size": [
+      1280,
+      720
+    ],
+    "max_channel_difference": 0
+  }
+}

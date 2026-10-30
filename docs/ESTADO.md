@@ -95,3 +95,16 @@ preferencias corruptas. No hay ventana ni eventos Wayland todavía: A0/A1 están
 verificados para esta fixture; A2 sigue en curso. La implementación no es una
 capa Android completa ni aporta aún aislamiento o estabilidad prolongada.
 Ver runtime/apk/README.md, CONTRATO-APK.md y reports/a1-counter-headless/.
+
+## La APK tiene ventana Wayland y entrada real de la pila Linux
+
+archtv-apk-host representa en Rust el árbol generado por la APK en ART. Dos
+sesiones DRM/Pixman a 1280×720 verificaron Enter/Espacio desde uinput, 0→1→2,
+cierre con Escape y reapertura persistente 2→3. Las capturas DRM y del cliente
+coinciden exactamente en RGB. Los procesos y sesiones se cerraron y volvió tty1.
+Ver APK-WAYLAND.md y reports/a2-wayland/. A2 está verificado para la fixture,
+sin acreditar otras APK, mando físico, seguridad o estabilidad prolongada.
+
+La siguiente dirección solicitada es portar componentes originales del framework
+AOSP, adaptando dependencias a Linux. Las clases android.* actuales son propias;
+la prueba existente será regresión durante ese port, no su resultado final.

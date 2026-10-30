@@ -8,3 +8,4 @@ reports/h6-ffmpeg-install.log -whitespace
 licenses/cargo-supplemental/** -whitespace
 reports/a1-art-host/*.stderr -whitespace
 reports/a1-counter-headless/*.stderr -whitespace
+reports/a2-wayland/** -whitespace

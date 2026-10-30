@@ -5,8 +5,8 @@ el DEX original de la aplicación; las clases android.* de este directorio resue
 las llamadas necesarias para la fixture del contador. No se recompilan sus fuentes
 ni se incorpora su MainActivity al DEX del runtime.
 
-La prueba actual es sin ventana. El árbol de View se emite como JSON para el futuro
-cliente Wayland en Rust. El runtime no dibuja una pantalla prefabricada ni calcula
+El árbol de View se emite como JSON para archtv-apk-host, cliente Wayland en Rust
+probado en DRM/Pixman a 720p. El runtime no dibuja una pantalla prefabricada ni calcula
 el contador: esos cambios los produce onClick de la APK.
 
 ## Construcción y prueba
@@ -36,7 +36,8 @@ preferencias corruptas sin sustituirlas por cero.
   con límite de profundidad. No estilos, XML de layouts, selección de locale,
   drawables, tablas compactas/sparse ni overlays.
 - View conserva árbol, texto, padding, orientación, listener y foco solicitado.
-  Layout, renderizado y entrada Wayland aún no están implementados.
+  El cliente Rust ofrece disposición básica y activación por teclado en Wayland;
+  no reproduce layout/renderizado Android completo. Ver docs/APK-WAYLAND.md.
 - SharedPreferences sólo ofrece getInt/edit/putInt/commit con MODE_PRIVATE.
   El formato de disco es propio; no intercambia XML de Android. commit sincroniza
   el archivo temporal y hace rename atómico, pero no se ha demostrado resistencia
@@ -45,6 +46,6 @@ preferencias corruptas sin sustituirlas por cero.
   no constituye aislamiento de seguridad. Faltan firma/permisos de instalación,
   classloader por aplicación, límites globales de recursos y servicios de sistema.
 
-Las APIs ausentes producen errores de enlace o excepciones. La prueba funcional
-sin ventana no demuestra compatibilidad general ni estabilidad prolongada.
+Las APIs ausentes producen errores de enlace o excepciones. Las pruebas de esta
+fixture no demuestran compatibilidad general ni estabilidad prolongada.
 El contrato experimental está en docs/CONTRATO-APK.md.

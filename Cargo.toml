@@ -1,6 +1,6 @@
 [workspace]
 resolver = "3"
-members = ["crates/archtv-core", "crates/archtv-compositor", "crates/archtv-test-client", "crates/archtv-shell", "crates/archtv-android"]
+members = ["crates/archtv-core", "crates/archtv-compositor", "crates/archtv-test-client", "crates/archtv-shell", "crates/archtv-android", "crates/archtv-apk-host"]
 
 [workspace.package]
 version = "0.1.0"

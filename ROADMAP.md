@@ -317,7 +317,7 @@ Cada hito requiere implementación, pruebas y evidencia. Un documento, un binari
 que solo imprime texto, un paquete instalado o un contenedor RUNNING no acreditan
 por sí mismos un compositor, una interfaz o Android funcionales.
 
-Siguiente acción en A2: cliente Wayland que represente el árbol real generado por
-la APK y envíe entrada real al listener, con cierre y reapertura. A0/A1 están
-verificados para la fixture propia; las demás puertas del proyecto permanecen
-abiertas y documentadas.
+La prueba A2 ya representa el árbol en Wayland y verifica uinput, cierre y
+reapertura persistente. La siguiente acción es estudiar el port del framework
+original AOSP a Linux y mantener esta prueba como regresión. Las demás puertas
+del proyecto permanecen abiertas y documentadas.

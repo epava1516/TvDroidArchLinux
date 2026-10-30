@@ -9,7 +9,7 @@ Waydroid. El éxito se mide por ejecución real de aplicaciones, no por boot And
 | --- | --- | --- | --- |
 | A0 · superficie real | APK propia pequeña, inventario DEX/recursos/JNI y pruebas funcionales; revisar contrato según esas necesidades | APK y fuentes fijadas, APIs realmente usadas identificadas, pruebas reproducibles | Verificado para la fixture: inventario, recursos, firmas y comportamiento; contrato experimental en CONTRATO-APK.md |
 | A1 · ejecución DEX | Estudiar ART/libcore en modo host y alternativas; prototipo de ejecución sobre Linux sin sistema Android | Código DEX de la APK ejecutado con salida verificable, sin Waydroid ni arranque Android | Verificado para la APK propia: ART ejecuta onCreate/onClick y conserva preferencias entre procesos; sin UI todavía |
-| A2 · primera interfaz | Subconjunto medido de Activity, ciclo de vida, recursos, View/texto/botón y entrada; puente hacia Wayland/Rust | APK propia sin modificar abre ventana, responde a entrada, guarda estado y se cierra correctamente | En curso: API y árbol View probados sin ventana; falta cliente Wayland y entrada real |
+| A2 · primera interfaz | Subconjunto medido de Activity, ciclo de vida, recursos, View/texto/botón y entrada; puente hacia Wayland/Rust | APK propia sin modificar abre ventana, responde a entrada, guarda estado y se cierra correctamente | Verificado para la fixture: DRM/Pixman 720p, uinput→Wayland, cierre y reapertura 2→3; framework aún propio |
 | A3 · servicios mínimos | JNI/ABI/Bionic donde sean necesarios, gráficos, audio, red, archivos y permisos según APK de prueba | Pruebas por API/servicio, errores explícitos en funciones ausentes y recuperación | Pendiente |
 | A4 · compatibilidad y estabilidad | APK reales por ABI/API, reflexión, WebView y demás dependencias descubiertas; ampliar la capa con evidencia | Matriz por aplicación, pruebas prolongadas, reinicios y mediciones; fallos y cobertura registrados | Pendiente |
 | A5 · distribución | Runtime y servicio anfitrión propios, paquetes, actualizaciones, migración de datos e integración TV | Instalación limpia sin Waydroid ni sistema Android completo, apps verificadas, actualización y rollback | Pendiente |
@@ -72,3 +72,13 @@ cambia el texto observado. Se comprueban bloqueo de datos, permisos, recursos
 truncados y preferencias corruptas. Ver reports/a1-counter-headless/ y
 CONTRATO-APK.md. Esta prueba cierra A0/A1 para la fixture medida; A2, el resto de
 aplicaciones, estabilidad, seguridad y distribución siguen pendientes.
+
+## Ventana y entrada verificadas; dirección del port
+
+archtv-apk-host representa el árbol real en Wayland. La prueba de
+reports/a2-wayland/ verifica entrada uinput, persistencia entre sesiones, cierre
+y coincidencia exacta del frame del cliente con el buffer DRM capturado.
+Ver APK-WAYLAND.md. La implementación android.* sigue siendo un subconjunto
+propio: el usuario pide ahora priorizar el port selectivo del framework original
+de AOSP a Linux. Esta prueba se mantiene como regresión, sin confundirla con un
+port ya realizado ni introducir el arranque de Android como requisito.
