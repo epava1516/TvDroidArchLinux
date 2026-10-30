@@ -65,3 +65,23 @@ La selección de un arranque concreto puede hacerse una sola vez mediante
 [bootctl set-oneshot](https://www.freedesktop.org/software/systemd/man/latest/bootctl.html).
 Cargar el nuevo kernel requiere reiniciar; instalarlo no acredita que corrija
 el cuelgue observado.
+
+## Arranque LTS verificado
+
+Con autorización del usuario se realizó un reinicio con selección temporal de
+archtv-lts.conf. El kernel cargado es 6.18.59-1-lts y el boot ID es
+4c90fafb-d957-43fb-9628-107b4ad1e956. bootctl confirma LTS seleccionado y
+arch.conf como predeterminado; loader.conf conserva default arch.conf.
+
+El arranque registra avisos de vmwgfx sobre el hipervisor, intervalos largos del
+watchdog de reloj y retraso de planificación DL. Una muestra sin carga gráfica
+con 200 esperas de 100 ms duró 28,225 s: p95 de retraso 112,665 ms y máximo
+330,663 ms; TSC permaneció seleccionado. No prueba una causa concreta ni permite
+declarar resuelto el incidente. Android estaba STOPPED antes del ensayo gráfico.
+Evidencia: reports/h6-kernel-lts/booted-lts.txt y clock-baseline.json.
+
+La prueba nativa a 1280×720 terminó correctamente en LTS: navegación mediante
+uinput, búsqueda, lanzamiento y escritura en Foot, Home/reanudación, persistencia
+y reinicio del shell, volumen/silencio PipeWire y restauración de Wi-Fi. Conserva
+logs y captura DRM en reports/h6-kernel-lts/native-shell/. Es una prueba funcional
+corta; no acredita rendimiento H7 ni corrige los fallos multimedia H6.

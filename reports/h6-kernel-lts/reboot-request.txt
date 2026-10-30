@@ -1,0 +1,4 @@
+Authorized reboot UTC: 2026-10-30T07:07:39Z
+Previous boot ID: 5286af21-aa51-4be4-944f-b99a38102864
+Previous kernel: 7.2.11-arch1-1
+User approved one reboot into archtv-lts.conf. Persistent default remains arch.conf.
