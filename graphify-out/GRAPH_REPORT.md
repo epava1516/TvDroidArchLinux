@@ -1,28 +1,27 @@
 # Graph Report - repositorio-principal  (2026-10-30)
 
 ## Corpus Check
-- 104 files · ~44,787 words
+- 110 files · ~46,345 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 10 file(s) not represented in the graph (top: (none) 5, .xml 2, .apk 1)
 
 ## Summary
-- 1012 nodes · 1760 edges · 91 communities (48 shown, 43 thin omitted)
-- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 4 edges (avg confidence: 0.76)
+- 1034 nodes · 1799 edges · 91 communities (50 shown, 41 thin omitted)
+- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 5 edges (avg confidence: 0.78)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `9dec4310`
+- Built from commit: `6cab9e1a`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- .shell
+- Model
 - runtime.rs
 - Client
 - worker.rs
 - TvCompositor
 - xdg_shell.rs
-- pathlib
 - mod.rs
 - input.rs
 - drm.rs
@@ -32,18 +31,19 @@
 - FocusStack<T>
 - Roadmap · Arch TV nativo en Rust
 - 95-kernel-lts.sh
-- Model
+- json
+- Estudio de Smithay y Anvil
+- Roadmap A · compatibilidad APK mínima sobre Linux
 - Referencias Fire TV para Arch TV
 - common.sh
 - 72-anvil-smoke.sh
 - 82-rust-smoke.sh
-- README.md
+- Shell Rust: interfaz y mediciones
 - Base actual y herramientas conservadas
 - Desarrollo del compositor Rust
 - Arquitectura objetivo
 - 68-graphify.sh
 - graphify.sh
-- json
 - .process_input_event
 - archtv-core
 - 00-diagnostico.sh
@@ -98,11 +98,11 @@
 - tv-ui-probe.py
 - ROADMAP.md
 - SessionState
-- Shell Rust: interfaz y mediciones
 - Capa de compatibilidad APK propia sobre Linux
 - Capa de compatibilidad APK propia sobre Linux
 - APK mínima: contador
-- ppm-to-png.py
+- RuntimeProbe
+- ART host para la capa APK
 
 ## God Nodes (most connected - your core abstractions)
 1. `State` - 54 edges
@@ -131,19 +131,19 @@
 ## Import Cycles
 - None detected.
 
-## Communities (91 total, 43 thin omitted)
+## Communities (91 total, 41 thin omitted)
 
-### Community 0 - ".shell"
-Cohesion: 0.14
-Nodes (3): Canvas, Canvas, short()
+### Community 0 - "Model"
+Cohesion: 0.06
+Nodes (26): app(), context_order_hide_restore_and_row_focus_survive_navigation(), ContextAction, Cancel, Favorite, Hide, Left, Right (+18 more)
 
 ### Community 1 - "runtime.rs"
-Cohesion: 0.10
-Nodes (3): control_fd(), run(), State
+Cohesion: 0.05
+Nodes (13): Key, Back, Backspace, Character, Down, Enter, Left, Menu (+5 more)
 
 ### Community 3 - "worker.rs"
-Cohesion: 0.07
-Nodes (30): collect(), data_directories(), discover(), exec_keeps_arguments_and_shell_metacharacters_literal(), executable(), expand_exec(), locale_hidden_and_desktop_sections_are_respected(), parse_entry() (+22 more)
+Cohesion: 0.05
+Nodes (42): Application, collect(), data_directories(), discover(), exec_keeps_arguments_and_shell_metacharacters_literal(), executable(), expand_exec(), locale_hidden_and_desktop_sections_are_respected() (+34 more)
 
 ### Community 8 - "input.rs"
 Cohesion: 0.09
@@ -165,9 +165,17 @@ Nodes (4): FocusStack, FocusStack<T>, home_returns_without_destroying_app_and_cl
 Cohesion: 0.13
 Nodes (15): Alcance inicial, Evolución A · compatibilidad APK mínima sobre Linux, H0 · Limpieza y base documental, H1 · Rust y Anvil como laboratorio, H2 · Compositor mínimo propio, H3 · Salida directa y decisión de renderizado, H4 · Comportamiento de televisión y sesión, H5 · Interfaz Rust con referencia Fire TV 2026 (+7 more)
 
-### Community 18 - "Model"
-Cohesion: 0.05
-Nodes (45): Application, Action, AndroidStart, AndroidStop, Launch, Mute, Quit, Refresh (+37 more)
+### Community 16 - "json"
+Cohesion: 0.16
+Nodes (3): radio(), settings(), run()
+
+### Community 17 - "Estudio de Smithay y Anvil"
+Cohesion: 0.40
+Nodes (5): Estudio de Smithay y Anvil, Mapa de lectura, Qué no resuelve Smithay automáticamente, Revisión de referencia, Riesgo gráfico que debe resolverse primero
+
+### Community 18 - "Roadmap A · compatibilidad APK mínima sobre Linux"
+Cohesion: 0.40
+Nodes (5): Corrección del enfoque anterior, Fixture disponible, Primer motor probado, Próximo experimento, Roadmap A · compatibilidad APK mínima sobre Linux
 
 ### Community 19 - "Referencias Fire TV para Arch TV"
 Cohesion: 0.22
@@ -185,9 +193,9 @@ Nodes (5): EGL_PLATFORM, GALLIUM_DRIVER, LIBGL_ALWAYS_SOFTWARE, 72-anvil-smoke.s
 Cohesion: 0.29
 Nodes (5): EGL_PLATFORM, GALLIUM_DRIVER, LIBGL_ALWAYS_SOFTWARE, 82-rust-smoke.sh script, XDG_RUNTIME_DIR
 
-### Community 23 - "README.md"
-Cohesion: 0.25
-Nodes (3): Comparación de composición con Fire TV 2026, Fuentes técnicas, Mapa del proyecto con Graphify
+### Community 23 - "Shell Rust: interfaz y mediciones"
+Cohesion: 0.18
+Nodes (8): Comparación de composición con Fire TV 2026, Composición medida, Decisión provisional, Primer resultado del renderer optimizado, Reproducción, Shell Rust: interfaz y mediciones, Validación interactiva, Fuentes técnicas
 
 ### Community 24 - "Base actual y herramientas conservadas"
 Cohesion: 0.33
@@ -198,8 +206,8 @@ Cohesion: 0.29
 Nodes (7): Construcción y comprobaciones, Desarrollo del compositor Rust, Ensayo del shell interactivo, Ensayo directo en VM, Límites actuales, Política y supervisión, Resoluciones del shell real
 
 ### Community 26 - "Arquitectura objetivo"
-Cohesion: 0.18
-Nodes (10): Arquitectura objetivo, Decisiones iniciales, Dependencias compartidas, Entrada y control, Evolución del entorno Android, Estudio de Smithay y Anvil, Mapa de lectura, Qué no resuelve Smithay automáticamente (+2 more)
+Cohesion: 0.40
+Nodes (5): Arquitectura objetivo, Decisiones iniciales, Dependencias compartidas, Entrada y control, Evolución del entorno Android
 
 ### Community 27 - "68-graphify.sh"
 Cohesion: 0.40
@@ -238,8 +246,8 @@ Cohesion: 0.14
 Nodes (13): APP_HEIGHT, APP_STEP, APP_WIDTH, APP_Y, BANNER_HEIGHT, BANNER_Y, FEATURE_HEIGHT, FEATURE_STEP (+5 more)
 
 ### Community 59 - "time"
-Cohesion: 0.26
-Nodes (7): key(), text(), wait_for(), event(), wait_for(), event(), event()
+Cohesion: 0.21
+Nodes (7): key(), text(), wait_for(), event(), wait_for(), chunk(), event()
 
 ### Community 60 - "DISTRIBUCION.md"
 Cohesion: 0.33
@@ -290,7 +298,7 @@ Cohesion: 0.09
 Nodes (8): command_deadline_and_output_limit_do_not_wait_for_pipe_eof(), drain(), error(), Process, run(), status_requires_exact_boot_value_and_rejects_stale_boot_for_stopped_session(), unsupported(), Waydroid
 
 ### Community 79 - "apk_inventory.py"
-Cohesion: 0.18
+Cohesion: 0.27
 Nodes (5): dex_inventory(), string(), table(), uint(), inspect()
 
 ### Community 80 - "archtv-compositor/src/main.rs"
@@ -298,52 +306,52 @@ Cohesion: 0.16
 Nodes (3): main(), dimensions(), main()
 
 ### Community 82 - "tv-ui-probe.py"
-Cohesion: 0.33
-Nodes (6): audio(), key(), state(), text(), volume(), wait_for()
-
-### Community 83 - "ROADMAP.md"
-Cohesion: 0.27
-Nodes (4): Corrección del enfoque anterior, Fixture disponible, Próximo experimento, Roadmap A · compatibilidad APK mínima sobre Linux
+Cohesion: 0.31
+Nodes (7): audio(), event(), key(), state(), text(), volume(), wait_for()
 
 ### Community 84 - "SessionState"
 Cohesion: 0.33
 Nodes (6): SessionState, Running, Starting, Stopped, Suspended, Unknown
-
-### Community 86 - "Shell Rust: interfaz y mediciones"
-Cohesion: 0.33
-Nodes (6): Composición medida, Decisión provisional, Primer resultado del renderer optimizado, Reproducción, Shell Rust: interfaz y mediciones, Validación interactiva
 
 ### Community 87 - "Capa de compatibilidad APK propia sobre Linux"
 Cohesion: 0.40
 Nodes (5): Alcance y recursos, APK propia preparada, Capa de compatibilidad APK propia sobre Linux, Primer estudio implementado, Qué se debe demostrar
 
 ### Community 88 - "Capa de compatibilidad APK propia sobre Linux"
-Cohesion: 0.40
-Nodes (5): Alcance y recursos, APK propia preparada, Capa de compatibilidad APK propia sobre Linux, Primer estudio implementado, Qué se debe demostrar
+Cohesion: 0.33
+Nodes (6): Alcance y recursos, APK propia preparada, ART host ejecuta DEX en Linux, Capa de compatibilidad APK propia sobre Linux, Primer estudio implementado, Qué se debe demostrar
 
 ### Community 89 - "APK mínima: contador"
 Cohesion: 0.50
 Nodes (3): APK mínima: contador, Construcción, Prueba que debe pasar la futura capa
 
+### Community 92 - "RuntimeProbe"
+Cohesion: 0.39
+Nodes (3): Increment, Operation, RuntimeProbe
+
+### Community 95 - "ART host para la capa APK"
+Cohesion: 0.40
+Nodes (4): ART host para la capa APK, Fuentes y alcance, Pruebas separadas, Resultado del primer experimento
+
 ## Knowledge Gaps
 - **100 isolated node(s):** `archtv-compositor`, `Home`, `Resume`, `Exit`, `TvCompositor` (+95 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 427 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **43 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 438 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **41 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `TvCompositor` connect `TvCompositor` to `xdg_shell.rs`, `mod.rs`, `input.rs`, `drm.rs`, `compositor.rs`, `session.rs`, `winit.rs`, `archtv-compositor/src/main.rs`, `.process_input_event`?**
-  _High betweenness centrality (0.210) - this node is a cross-community bridge._
+  _High betweenness centrality (0.217) - this node is a cross-community bridge._
 - **What connects `archtv-compositor`, `Home`, `Resume` to the rest of the system?**
   _100 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `.shell` be split into smaller, more focused modules?**
-  _Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected._
-- **Why does `Event` connect `worker.rs` to `input.rs`, `runtime.rs`, `Model`?**
-  _High betweenness centrality (0.044) - this node is a cross-community bridge._
+- **Should `Model` be split into smaller, more focused modules?**
+  _Cohesion score 0.05727605727605728 - nodes in this community are weakly interconnected._
+- **Why does `Event` connect `worker.rs` to `input.rs`, `runtime.rs`?**
+  _High betweenness centrality (0.054) - this node is a cross-community bridge._
 - **Should `runtime.rs` be split into smaller, more focused modules?**
-  _Cohesion score 0.1027450980392157 - nodes in this community are weakly interconnected._
-- **Why does `Model` connect `Model` to `runtime.rs`, `runtime.rs`, `worker.rs`, `.shell`?**
-  _High betweenness centrality (0.034) - this node is a cross-community bridge._
+  _Cohesion score 0.051590483827853514 - nodes in this community are weakly interconnected._
+- **Why does `Model` connect `Model` to `runtime.rs`, `worker.rs`?**
+  _High betweenness centrality (0.035) - this node is a cross-community bridge._
 - **Should `Client` be split into smaller, more focused modules?**
-  _Cohesion score 0.10420168067226891 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0818452380952381 - nodes in this community are weakly interconnected._

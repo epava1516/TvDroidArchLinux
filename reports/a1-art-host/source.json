@@ -1,0 +1,9 @@
+{
+  "r8_revision": "7966a31aa18051a062b33c8cdcc15c09e6a993a2",
+  "art_branch": "android-13.0.0_r3",
+  "upstream_sha1": "2002103b43d57ad52c1e9101c7b1db8e1ba85038",
+  "url": "https://storage.googleapis.com/r8-deps/2002103b43d57ad52c1e9101c7b1db8e1ba85038",
+  "compressed_bytes": 488131720,
+  "scope": "Official R8 host test bundle. Laboratory engine evaluation, not a minimal product runtime or APK compatibility proof.",
+  "sha256": "522a2bb4416f78519f8c3c83b7a1ebd058e3a96ccb0d193458e6bb29d85b65e1"
+}

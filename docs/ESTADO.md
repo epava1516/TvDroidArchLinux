@@ -64,3 +64,18 @@ fuentes y hashes. Su Activity contiene texto, botón y contador en preferencias.
 No incorpora clases de framework Android ni bibliotecas JNI en el paquete.
 La construcción no usó Android ni Waydroid. La ejecución DEX sobre Linux y el
 puente de UI siguen pendientes. Ver reports/a0-fixture/ y el README de la fixture.
+
+## ART host ejecuta DEX en Linux
+
+Se descargó y verificó el conjunto ART 13 host publicado por R8, fijando revisión,
+SHA-1 oficial y SHA-256. No se construyó ni arrancó Android. Una prueba DEX propia
+pasó aritmética, recursión, interfaz, arrays, excepciones y reflexión básica en ART
+con -Xint. La APK original del contador se encuentra en el classpath; su
+MainActivity falla al resolver android.app.Activity, confirmado por el registro
+de clases. No se ha ejecutado su ciclo de vida ni mostrado su interfaz.
+
+El lanzador informa que falta framework/core.art y continúa sin imagen de clases
+precompilada; la prueba semántica termina con código 0. La selección mínima,
+compilación reproducible de ART y mediciones de consumo siguen pendientes. El
+archivo del laboratorio no es el runtime final distribuible.
+Ver ESTUDIO-ART-HOST.md y reports/a1-art-host/. A1/A2 no se dan por terminados.

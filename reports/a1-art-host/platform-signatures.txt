@@ -1,0 +1,56 @@
+Selected signatures from pinned API 28 android.jar via JDK 17 javap.
+Not runtime implementation or proof of API completeness.
+
+public class android.app.Activity extends android.view.ContextThemeWrapper implements android.view.LayoutInflater$Factory2,android.view.Window$Callback,android.view.KeyEvent$Callback,android.view.View$OnCreateContextMenuListener,android.content.ComponentCallbacks2 {
+  protected void onCreate(android.os.Bundle);
+
+public class android.app.Activity extends android.view.ContextThemeWrapper implements android.view.LayoutInflater$Factory2,android.view.Window$Callback,android.view.KeyEvent$Callback,android.view.View$OnCreateContextMenuListener,android.content.ComponentCallbacks2 {
+  public void setContentView(android.view.View);
+
+public abstract class android.content.Context {
+  public final java.lang.String getString(int);
+
+public abstract class android.content.Context {
+  public abstract android.content.SharedPreferences getSharedPreferences(java.lang.String, int);
+
+public class android.content.ContextWrapper extends android.content.Context {
+  public android.content.SharedPreferences getSharedPreferences(java.lang.String, int);
+
+public class android.view.View implements android.graphics.drawable.Drawable$Callback,android.view.KeyEvent$Callback,android.view.accessibility.AccessibilityEventSource {
+  public void setOnClickListener(android.view.View$OnClickListener);
+
+public class android.view.View implements android.graphics.drawable.Drawable$Callback,android.view.KeyEvent$Callback,android.view.accessibility.AccessibilityEventSource {
+  public final boolean requestFocus();
+
+public class android.view.View implements android.graphics.drawable.Drawable$Callback,android.view.KeyEvent$Callback,android.view.accessibility.AccessibilityEventSource {
+  public void setPadding(int, int, int, int);
+
+public class android.widget.TextView extends android.view.View implements android.view.ViewTreeObserver$OnPreDrawListener {
+  public void setPadding(int, int, int, int);
+
+public class android.widget.TextView extends android.view.View implements android.view.ViewTreeObserver$OnPreDrawListener {
+  public void setTextSize(float);
+
+public class android.widget.TextView extends android.view.View implements android.view.ViewTreeObserver$OnPreDrawListener {
+  public final void setText(java.lang.CharSequence);
+
+public class android.widget.TextView extends android.view.View implements android.view.ViewTreeObserver$OnPreDrawListener {
+  public final void setText(int);
+
+public class android.widget.LinearLayout extends android.view.ViewGroup {
+  public void setOrientation(int);
+
+public interface android.content.SharedPreferences {
+  public abstract int getInt(java.lang.String, int);
+
+public interface android.content.SharedPreferences {
+  public abstract android.content.SharedPreferences$Editor edit();
+
+public interface android.content.SharedPreferences$Editor {
+  public abstract android.content.SharedPreferences$Editor putInt(java.lang.String, int);
+
+public interface android.content.SharedPreferences$Editor {
+  public abstract boolean commit();
+
+android.view.ViewGroup
+  public void addView(android.view.View);

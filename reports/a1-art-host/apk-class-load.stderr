@@ -1,0 +1,23 @@
+dalvikvm64 E 10-30 09:38:06    48    48 image_space.cc:2239] Error reading named image component header for /home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/core.art, error: Unable to open file "/home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/x86_64/core.art" for reading image header
+dalvikvm64 E 10-30 09:38:06    48    48 image_space.cc:3470] Could not create image space with image file '/home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/core.art'. Attempting to fall back to imageless running. Error was: Full boot image cannot be compiled because no profile is provided.
+ziparchive W 10-30 09:38:06    48    48 Unable to open '/home/tv/repositorio-principal/dist/apk/art-host-probe-v3/dex/classes.dm': No such file or directory
+ziparchive W 10-30 09:38:06    48    48 Unable to open '/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.dm': No such file or directory
+dalvikvm64 E 10-30 09:38:06    48    48 class.cc:228] Setting org.archtv.probe.MainActivity to erroneous.
+dalvikvm64 E 10-30 09:38:06    48    48 class.cc:230] Exception: java.lang.NoClassDefFoundError: Failed resolution of: Landroid/app/Activity;
+dalvikvm64 E 10-30 09:38:06    48    48 class.cc:230]   at java.lang.Class java.lang.Class.classForName(java.lang.String, boolean, java.lang.ClassLoader) (Class.java:-2)
+dalvikvm64 E 10-30 09:38:06    48    48 class.cc:230]   at java.lang.Class java.lang.Class.forName(java.lang.String, boolean, java.lang.ClassLoader) (Class.java:454)
+dalvikvm64 E 10-30 09:38:06    48    48 class.cc:230]   at java.lang.Class java.lang.Class.forName(java.lang.String) (Class.java:379)
+dalvikvm64 E 10-30 09:38:06    48    48 class.cc:230]   at void org.archtv.runtimeprobe.RuntimeProbe.main(java.lang.String[]) (RuntimeProbe.java:32)
+dalvikvm64 E 10-30 09:38:06    48    48 class.cc:230] Caused by: java.lang.ClassNotFoundException: android.app.Activity
+dalvikvm64 E 10-30 09:38:06    48    48 class.cc:230]   at java.lang.Class java.lang.Class.classForName(java.lang.String, boolean, java.lang.ClassLoader) (Class.java:-2)
+dalvikvm64 E 10-30 09:38:06    48    48 class.cc:230]   at java.lang.Class java.lang.Class.forName(java.lang.String, boolean, java.lang.ClassLoader) (Class.java:454)
+dalvikvm64 E 10-30 09:38:06    48    48 class.cc:230]   at java.lang.Class java.lang.Class.forName(java.lang.String) (Class.java:379)
+dalvikvm64 E 10-30 09:38:06    48    48 class.cc:230]   at void org.archtv.runtimeprobe.RuntimeProbe.main(java.lang.String[]) (RuntimeProbe.java:32)
+dalvikvm64 E 10-30 09:38:06    48    48 class.cc:230] 
+Exception in thread "main" java.lang.ClassNotFoundException: org.archtv.probe.MainActivity
+	at java.lang.Class.classForName(Native Method)
+	at java.lang.Class.forName(Class.java:454)
+	at java.lang.Class.forName(Class.java:379)
+	at org.archtv.runtimeprobe.RuntimeProbe.main(RuntimeProbe.java:32)
+Caused by: java.lang.ClassNotFoundException: org.archtv.probe.MainActivity
+	... 4 more

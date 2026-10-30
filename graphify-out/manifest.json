@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793351715.8427289,
-    "seen": 1793351719.6384408,
-    "ast_hash": "78c85cd73138611e91bc5bfda30fa131",
+    "mtime": 1793353063.110413,
+    "seen": 1793353070.5296156,
+    "ast_hash": "b9d8dcecaf08b09da5d3fb21976fd7d7",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793351715.838774,
-    "seen": 1793351719.6384761,
-    "ast_hash": "44ab39fb44265ad2f8c0feee96866ddc",
+    "mtime": 1793353062.953746,
+    "seen": 1793353070.5296435,
+    "ast_hash": "12b0a97f5c633fdbb592b91c58ca5452",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -693,6 +693,42 @@
     "mtime": 1793351657.512462,
     "seen": 1793351719.638498,
     "ast_hash": "24f726be8045d664ead24097de705555",
+    "semantic_hash": ""
+  },
+  "fixtures/art-host/RuntimeProbe.java": {
+    "mtime": 1793353077.9904447,
+    "seen": 1793353096.83875,
+    "ast_hash": "1d65942ce8122ad82da3cc1f9c692066",
+    "semantic_hash": ""
+  },
+  "tools/apk/build_art_probe.py": {
+    "mtime": 1793352593.33621,
+    "seen": 1793352739.7179885,
+    "ast_hash": "050834c31c984dc6f76bd9b18914ba7b",
+    "semantic_hash": ""
+  },
+  "tools/apk/fetch_art_host.py": {
+    "mtime": 1793352672.6388302,
+    "seen": 1793352739.717998,
+    "ast_hash": "5a03deedf97877ac7722d78b366946ed",
+    "semantic_hash": ""
+  },
+  "tools/apk/run_art_probe.py": {
+    "mtime": 1793353005.5667343,
+    "seen": 1793353070.5295799,
+    "ast_hash": "9a96de1303b30f2e1447de0fc164165a",
+    "semantic_hash": ""
+  },
+  "docs/ESTUDIO-ART-HOST.md": {
+    "mtime": 1793353063.283747,
+    "seen": 1793353070.5296187,
+    "ast_hash": "7d29726fa54129cc66ecb71af2d1bcfe",
+    "semantic_hash": ""
+  },
+  "tools/apk/art-host.json": {
+    "mtime": 1793352916.1558666,
+    "seen": 1793353070.5295606,
+    "ast_hash": "646b4acfe68d9380719db85981651ee5",
     "semantic_hash": ""
   }
 }

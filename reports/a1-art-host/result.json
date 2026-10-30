@@ -1,0 +1,40 @@
+{
+  "semantics": {
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/art-host-probe-v3/dex/classes.dex",
+      "org.archtv.runtimeprobe.RuntimeProbe"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.3394773170002736
+  },
+  "apk-class-load": {
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-verbose:class",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/art-host-probe-v3/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.runtimeprobe.RuntimeProbe",
+      "org.archtv.probe.MainActivity"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 0.3076340640000126
+  },
+  "engine_semantics_pass": true,
+  "apk_api_boundary_observed": true,
+  "apk_functional_pass": false,
+  "sha256": {
+    "/home/tv/repositorio-principal/dist/apk/art-host-probe-v3/dex/classes.dex": "829fd9f1387c069ee075558b3f8238eecb1eb1c5e3259be3e1bd99f2fa5e2d66",
+    "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk": "f07c9b92ab3353237276081c22e11ce06168b8c9f71a99ea32968b2ce0f00e28"
+  },
+  "scope": "ART host engine probe and expected missing Android superclass. No Activity lifecycle, UI, persistence, isolation or stable APK compatibility proved."
+}

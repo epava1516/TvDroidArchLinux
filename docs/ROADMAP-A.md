@@ -8,7 +8,7 @@ Waydroid. El éxito se mide por ejecución real de aplicaciones, no por boot And
 | Etapa | Trabajo concreto | Puerta de salida | Estado |
 | --- | --- | --- | --- |
 | A0 · superficie real | APK propia pequeña, inventario DEX/recursos/JNI y pruebas funcionales; revisar contrato según esas necesidades | APK y fuentes fijadas, APIs realmente usadas identificadas, pruebas reproducibles | En curso: analizador y APK propia compilada con hashes; ejecución pendiente |
-| A1 · ejecución DEX | Estudiar ART/libcore en modo host y alternativas; prototipo de ejecución sobre Linux sin sistema Android | Código DEX de la APK ejecutado con salida verificable, sin Waydroid ni arranque Android | Pendiente |
+| A1 · ejecución DEX | Estudiar ART/libcore en modo host y alternativas; prototipo de ejecución sobre Linux sin sistema Android | Código DEX de la APK ejecutado con salida verificable, sin Waydroid ni arranque Android | En curso: ART host ejecuta la prueba DEX; la APK falla al resolver Activity; aún no ejecuta su ciclo de vida |
 | A2 · primera interfaz | Subconjunto medido de Activity, ciclo de vida, recursos, View/texto/botón y entrada; puente hacia Wayland/Rust | APK propia sin modificar abre ventana, responde a entrada, guarda estado y se cierra correctamente | Pendiente |
 | A3 · servicios mínimos | JNI/ABI/Bionic donde sean necesarios, gráficos, audio, red, archivos y permisos según APK de prueba | Pruebas por API/servicio, errores explícitos en funciones ausentes y recuperación | Pendiente |
 | A4 · compatibilidad y estabilidad | APK reales por ABI/API, reflexión, WebView y demás dependencias descubiertas; ampliar la capa con evidencia | Matriz por aplicación, pruebas prolongadas, reinicios y mediciones; fallos y cobertura registrados | Pendiente |
@@ -53,3 +53,11 @@ Dos builds sin firma resultaron idénticos en esta VM; firma JAR v1 de laborator
 comprobada. Inventario: un DEX, 17 referencias de tipo externas y sin JNI.
 Ver su README y reports/a0-fixture/. La siguiente puerta es ejecutar ese DEX
 y resolver sus APIs fuera de Android, antes de afirmar compatibilidad de interfaz.
+
+## Primer motor probado
+
+ART host de las pruebas oficiales de R8 ejecuta nuestro DEX semántico en Linux,
+sin arrancar Android. Al cargar la APK original, el enlazador encuentra
+MainActivity y falla explícitamente al resolver android.app.Activity. Es evidencia
+del motor y de la siguiente dependencia, no de ejecución funcional de la APK.
+Ver ESTUDIO-ART-HOST.md y reports/a1-art-host/. A1 y A2 siguen abiertos.
