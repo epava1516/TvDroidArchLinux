@@ -7,7 +7,7 @@ pkgdesc='Rust and Smithay television session'
 arch=('x86_64')
 url='https://github.com/epava1516/TvDroidArchLinux'
 license=('MIT')
-makedepends=('rust>=1.87' 'pkgconf' 'seatd' 'systemd-libs' 'libinput' 'libxkbcommon' 'pixman' 'wayland' 'mesa' 'libglvnd')
+makedepends=('python' 'rust>=1.87' 'pkgconf' 'seatd' 'systemd-libs' 'libinput' 'libxkbcommon' 'pixman' 'wayland' 'mesa' 'libglvnd')
 source=("archtv-$pkgver.tar.gz")
 sha256sums=('@SOURCE_SHA256@')
 options=('!debug')
@@ -16,6 +16,7 @@ prepare() {
   export CARGO_HOME="$srcdir/cargo-home"
   cd "$srcdir/archtv-$pkgver"
   cargo fetch --locked --target x86_64-unknown-linux-gnu
+  python packaging/arch/cargo-license-inventory.py "$srcdir/cargo-license-inventory.json" "$srcdir/cargo-notices"
 }
 build() {
   export CARGO_HOME="$srcdir/cargo-home" CARGO_TARGET_DIR="$srcdir/target"
@@ -32,6 +33,8 @@ _license_files() {
   install -Dm644 "$srcdir/archtv-$pkgver/THIRD_PARTY.md" "$pkgdir/usr/share/licenses/$pkgname/THIRD_PARTY.md"
   install -dm755 "$pkgdir/usr/share/licenses/$pkgname/notices"
   cp -a "$srcdir/archtv-$pkgver/licenses/." "$pkgdir/usr/share/licenses/$pkgname/notices/"
+  install -Dm644 "$srcdir/cargo-license-inventory.json" "$pkgdir/usr/share/licenses/$pkgname/cargo-license-inventory.json"
+  cp -a "$srcdir/cargo-notices" "$pkgdir/usr/share/licenses/$pkgname/cargo-notices"
 }
 package_archtv-compositor() {
   pkgdesc='Wayland TV compositor using Rust and Smithay'

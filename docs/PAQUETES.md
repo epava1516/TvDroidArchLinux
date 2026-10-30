@@ -95,4 +95,7 @@ aviso localizado: drm-fourcc, libseat, libseat-sys, pixman y pixman-sys.
 La licencia declarada y los autores publicados se conservan tal cual, sin inventar
 un aviso de copyright. Encontrar un archivo de licencia no completa por sí solo
 la revisión de condiciones. La preparación de paquetes de distribución mantiene
-pendiente esa revisión y la inclusión completa de avisos en los paquetes binarios.
+pendiente esa revisión y la revisión de los cinco avisos ausentes. La receta genera el inventario desde
+el árbol Cargo de la compilación y copia ese inventario y todos los avisos
+localizados a cada paquete bajo /usr/share/licenses/PAQUETE/. Esto conserva
+los avisos disponibles; no transforma los cinco casos pendientes en resueltos.
