@@ -1,0 +1,95 @@
+Compiled from "IAccessibilityManager.java"
+public interface android.view.accessibility.IAccessibilityManager extends android.os.IInterface {
+  public abstract void interrupt(int) throws android.os.RemoteException;
+    descriptor: (I)V
+
+  public abstract void sendAccessibilityEvent(android.view.accessibility.AccessibilityEvent, int) throws android.os.RemoteException;
+    descriptor: (Landroid/view/accessibility/AccessibilityEvent;I)V
+
+  public abstract long addClient(android.view.accessibility.IAccessibilityManagerClient, int) throws android.os.RemoteException;
+    descriptor: (Landroid/view/accessibility/IAccessibilityManagerClient;I)J
+
+  public abstract boolean removeClient(android.view.accessibility.IAccessibilityManagerClient, int) throws android.os.RemoteException;
+    descriptor: (Landroid/view/accessibility/IAccessibilityManagerClient;I)Z
+
+  public abstract java.util.List<android.accessibilityservice.AccessibilityServiceInfo> getInstalledAccessibilityServiceList(int) throws android.os.RemoteException;
+    descriptor: (I)Ljava/util/List;
+
+  public abstract java.util.List<android.accessibilityservice.AccessibilityServiceInfo> getEnabledAccessibilityServiceList(int, int) throws android.os.RemoteException;
+    descriptor: (II)Ljava/util/List;
+
+  public abstract int addAccessibilityInteractionConnection(android.view.IWindow, android.os.IBinder, android.view.accessibility.IAccessibilityInteractionConnection, java.lang.String, int) throws android.os.RemoteException;
+    descriptor: (Landroid/view/IWindow;Landroid/os/IBinder;Landroid/view/accessibility/IAccessibilityInteractionConnection;Ljava/lang/String;I)I
+
+  public abstract void removeAccessibilityInteractionConnection(android.view.IWindow) throws android.os.RemoteException;
+    descriptor: (Landroid/view/IWindow;)V
+
+  public abstract void setPictureInPictureActionReplacingConnection(android.view.accessibility.IAccessibilityInteractionConnection) throws android.os.RemoteException;
+    descriptor: (Landroid/view/accessibility/IAccessibilityInteractionConnection;)V
+
+  public abstract void registerUiTestAutomationService(android.os.IBinder, android.accessibilityservice.IAccessibilityServiceClient, android.accessibilityservice.AccessibilityServiceInfo, int) throws android.os.RemoteException;
+    descriptor: (Landroid/os/IBinder;Landroid/accessibilityservice/IAccessibilityServiceClient;Landroid/accessibilityservice/AccessibilityServiceInfo;I)V
+
+  public abstract void unregisterUiTestAutomationService(android.accessibilityservice.IAccessibilityServiceClient) throws android.os.RemoteException;
+    descriptor: (Landroid/accessibilityservice/IAccessibilityServiceClient;)V
+
+  public abstract void temporaryEnableAccessibilityStateUntilKeyguardRemoved(android.content.ComponentName, boolean) throws android.os.RemoteException;
+    descriptor: (Landroid/content/ComponentName;Z)V
+
+  public abstract android.os.IBinder getWindowToken(int, int) throws android.os.RemoteException;
+    descriptor: (II)Landroid/os/IBinder;
+
+  public abstract void notifyAccessibilityButtonClicked(int, java.lang.String) throws android.os.RemoteException;
+    descriptor: (ILjava/lang/String;)V
+
+  public abstract void notifyAccessibilityButtonVisibilityChanged(boolean) throws android.os.RemoteException;
+    descriptor: (Z)V
+
+  public abstract void performAccessibilityShortcut(java.lang.String) throws android.os.RemoteException;
+    descriptor: (Ljava/lang/String;)V
+
+  public abstract java.util.List<java.lang.String> getAccessibilityShortcutTargets(int) throws android.os.RemoteException;
+    descriptor: (I)Ljava/util/List;
+
+  public abstract boolean sendFingerprintGesture(int) throws android.os.RemoteException;
+    descriptor: (I)Z
+
+  public abstract int getAccessibilityWindowId(android.os.IBinder) throws android.os.RemoteException;
+    descriptor: (Landroid/os/IBinder;)I
+
+  public abstract long getRecommendedTimeoutMillis() throws android.os.RemoteException;
+    descriptor: ()J
+
+  public abstract void registerSystemAction(android.app.RemoteAction, int) throws android.os.RemoteException;
+    descriptor: (Landroid/app/RemoteAction;I)V
+
+  public abstract void unregisterSystemAction(int) throws android.os.RemoteException;
+    descriptor: (I)V
+
+  public abstract void setWindowMagnificationConnection(android.view.accessibility.IWindowMagnificationConnection) throws android.os.RemoteException;
+    descriptor: (Landroid/view/accessibility/IWindowMagnificationConnection;)V
+
+  public abstract void associateEmbeddedHierarchy(android.os.IBinder, android.os.IBinder) throws android.os.RemoteException;
+    descriptor: (Landroid/os/IBinder;Landroid/os/IBinder;)V
+
+  public abstract void disassociateEmbeddedHierarchy(android.os.IBinder) throws android.os.RemoteException;
+    descriptor: (Landroid/os/IBinder;)V
+
+  public abstract int getFocusStrokeWidth() throws android.os.RemoteException;
+    descriptor: ()I
+
+  public abstract int getFocusColor() throws android.os.RemoteException;
+    descriptor: ()I
+
+  public abstract boolean isAudioDescriptionByDefaultEnabled() throws android.os.RemoteException;
+    descriptor: ()Z
+
+  public abstract void setSystemAudioCaptioningEnabled(boolean, int) throws android.os.RemoteException;
+    descriptor: (ZI)V
+
+  public abstract boolean isSystemAudioCaptioningUiEnabled(int) throws android.os.RemoteException;
+    descriptor: (I)Z
+
+  public abstract void setSystemAudioCaptioningUiEnabled(boolean, int) throws android.os.RemoteException;
+    descriptor: (ZI)V
+}

@@ -1,0 +1,15 @@
+Compiled from "IAccessibilityManagerClient.java"
+public abstract class android.view.accessibility.IAccessibilityManagerClient$Stub extends android.os.Binder implements android.view.accessibility.IAccessibilityManagerClient {
+  public static final java.lang.String DESCRIPTOR = "android.view.accessibility.IAccessibilityManagerClient";
+  static final int TRANSACTION_setState = 1;
+  static final int TRANSACTION_notifyServicesStateChanged = 2;
+  static final int TRANSACTION_setRelevantEventTypes = 3;
+  static final int TRANSACTION_setFocusAppearance = 4;
+  public android.view.accessibility.IAccessibilityManagerClient$Stub();
+  public static android.view.accessibility.IAccessibilityManagerClient asInterface(android.os.IBinder);
+  public android.os.IBinder asBinder();
+  public static java.lang.String getDefaultTransactionName(int);
+  public java.lang.String getTransactionName(int);
+  public boolean onTransact(int, android.os.Parcel, android.os.Parcel, int) throws android.os.RemoteException;
+  public int getMaxTransactionId();
+}

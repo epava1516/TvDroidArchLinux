@@ -5,7 +5,7 @@ Android 13. Se retiró runtime/apk/java/android/content/Context.java, que sólo
 contenía getString y preferencias. getString/getText ahora ejecutan los métodos
 concretos originales de Context y Resources.
 
-El conjunto --with-context conserva 55 fuentes originales sin modificar y los
+El perfil de metadatos verificado conservaba 55 fuentes originales sin modificar y los
 cuatro bindings sysprop precompilados ya documentados. Esto no porta ContextImpl,
 ActivityThread ni los servicios de Android.
 
@@ -13,7 +13,7 @@ ActivityThread ni los servicios de Android.
 
 LinuxContext extiende el Context abstracto original. Su archivo se genera desde
 las declaraciones del framework.jar verificado y se comprueba con --check.
-Hay 132 métodos abstractos: nueve tienen implementación Linux (display condicional); los otros 123 lanzan
+Hay 132 métodos abstractos: diez tienen implementación Linux (display condicional); los otros 122 lanzan
 UnsupportedOperationException con el nombre de la API. No devuelven valores de
 éxito o servicios simulados. Los demás métodos concretos siguen siendo originales;
 las dependencias y tipos aún no portados pueden producir errores de enlace,
@@ -25,6 +25,7 @@ incluso antes de entrar en un hook.
 | getAssets | El AssetManager original ya abierto; no acredita todos sus métodos de archivos/XML |
 | getApplicationInfo | ApplicationInfo original con metadata de manifiesto, UID y rutas Linux; snapshot protegido |
 | getPackageName | Paquete real del manifiesto de la APK actual |
+| checkCallingOrSelfPermission | Consulta local sin concesiones: PERMISSION_DENIED; no acredita aislamiento de recursos Linux |
 | getSharedPreferences(String,int) | Backend existente de enteros, sólo MODE_PRIVATE; no SharedPreferencesImpl/XML de Android |
 | getClassLoader | Classloader real del proceso que contiene runtime y APK; no aislamiento por aplicación |
 | getMainLooper | Principal original preparado por el anfitrión |
@@ -107,3 +108,5 @@ null para los contextos sin display y rechaza otros IDs antes de abrir recursos.
 Se verifican el caso headless sin display, el ID inválido y el contexto visual con
 el servicio Wayland real. No proporciona todavía objetos Display/DisplayManager
 ni convierte el contexto headless en un contexto visual.
+
+El cliente de accesibilidad y su frontera Binder se documentan en AOSP-ACCESIBILIDAD-CLIENTE.md; su perfil de vistas compila 105 fuentes originales.

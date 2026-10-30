@@ -24,6 +24,7 @@ parser.add_argument('--window-framework',type=Path)
 parser.add_argument('--window-bindings',type=Path)
 parser.add_argument('--window-system-resources',type=Path)
 parser.add_argument('--window-rendernode-build',type=Path)
+parser.add_argument('--accessibility-bindings',type=Path)
 args = parser.parse_args()
 assert all((args.window_service_build,args.window_framework,args.window_bindings,args.window_system_resources)) or not any((args.window_service_build,args.window_framework,args.window_bindings,args.window_system_resources))
 assert args.window_rendernode_build is None or args.window_service_build
@@ -91,6 +92,14 @@ try:
             assert hashlib.sha256((build/'dex/classes.dex').read_bytes()).hexdigest()==proof['dex_sha256']
         assert proofs[2]['framework_dex_sha256']==proofs[0]['dex_sha256']
         assert proofs[2]['bindings_dex_sha256']==proofs[1]['dex_sha256']
+        if args.accessibility_bindings:
+            extra=args.accessibility_bindings.resolve();extra_proof=json.loads((extra/'provenance.json').read_text())
+            assert hashlib.sha256((extra/'dex/classes.dex').read_bytes()).hexdigest()==extra_proof['dex_sha256']
+            assert proofs[2]['accessibility_bindings_dex_sha256']==extra_proof['dex_sha256']
+            builds.append(extra);proofs.append(extra_proof)
+        else:
+            assert not proofs[2].get('accessibility_bindings_dex_sha256'),'Missing accessibility contract DEX'
+
         (out/'service-art-data').mkdir(mode=0o700)
         service_env = {key:value for key,value in env.items() if not key.startswith('ANDROID_') and key not in ('LD_LIBRARY_PATH','LD_PRELOAD','CLASSPATH')}
         service_env.update(ANDROID_DATA=str(out/'service-art-data'),ANDROID_LOG_TAGS='*:w')
@@ -156,6 +165,8 @@ try:
         service_info['real_wayland_service_pass']=True
         service_info['original_animation_policy_pass']=True
         service_log=(out/'window-service.log').read_text()
+        service_info['local_permission_query_pass']='LINUX_PERMISSION_QUERY_OK grants=0' in service_log
+        if args.accessibility_bindings: assert service_info['local_permission_query_pass']
         service_info['view_constructed']='VIEW_CONSTRUCTOR_OK' in service_log
         service_info['view_measure_pass']='VIEW_MEASURE_OK cases=5' in service_log
         service_info['view_layout_pass']='VIEW_LAYOUT_OK' in service_log

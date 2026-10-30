@@ -53,6 +53,8 @@ for line in text.splitlines():
             'getClassLoader': 'return getClass().getClassLoader();',
             'getApplicationContext': 'return AppEnvironment.current().applicationContext;',
         }.get(name)
+    if name == 'checkCallingOrSelfPermission' and types == ['java.lang.String']:
+        body = 'return AppEnvironment.checkLocalPermission(p0);'
     if name == 'getSharedPreferences' and types == ['java.lang.String', 'int']:
         body = 'if (p1 != MODE_PRIVATE) throw new UnsupportedOperationException("Only MODE_PRIVATE is supported"); return AppEnvironment.current().preferences(p0);'
     if body is None:

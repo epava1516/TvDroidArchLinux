@@ -44,6 +44,12 @@ public final class AppEnvironment {
         if (instance == null) throw new IllegalStateException("App environment not initialized");
         return instance;
     }
+    public static int checkLocalPermission(String permission) {
+        if (permission == null) throw new IllegalArgumentException("permission is null");
+        // This runtime has no grant store or authority to grant Android permissions.
+        // Query policy only: OS resource isolation/enforcement is a separate requirement.
+        return android.content.pm.PackageManager.PERMISSION_DENIED;
+    }
     public synchronized android.content.pm.ApplicationInfo applicationInfo() {
         if(applicationInfo==null)applicationInfo=ApkMetadata.read(apkPath,dataDirectory);
         return new android.content.pm.ApplicationInfo(applicationInfo);

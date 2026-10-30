@@ -1,0 +1,16 @@
+2026-10-30T20:53:45.001039Z  INFO archtv_compositor::state: OUTPUT_CONFIGURED width=960 height=540
+2026-10-30T20:53:45.007762Z  INFO archtv_compositor::session: SESSION_CHILD_STARTED pid=175399 shell=false
+2026-10-30T20:53:45.008755Z  INFO archtv_compositor: TV_COMPOSITOR_READY socket="wayland-1"
+2026-10-30T20:53:45.010274Z  INFO archtv_compositor::input: INPUT_ADDED name="winit virtual input"
+2026-10-30T20:53:45.010369Z  INFO archtv_compositor::state: OUTPUT_CONFIGURED width=960 height=540
+APK_VIEW ready Node { kind: "android.widget.LinearLayout", focused: false, padding: [24, 24, 24, 24], text: None, text_size: None, orientation: Some(1), children: [Node { kind: "android.widget.TextView", focused: false, padding: [0, 0, 0, 0], text: Some("Contador: 0"), text_size: Some(28.0), orientation: None, children: [] }, Node { kind: "android.widget.Button", focused: true, padding: [0, 0, 0, 0], text: Some("Incrementar"), text_size: Some(14.0), orientation: None, children: [] }] }
+APK_DISPLAY 960x540
+APK_FRAME 1 960x540
+2026-10-30T20:53:46.374957Z  INFO archtv_compositor::state: TOPLEVEL_MAPPED
+APK_FOCUS_ENTER
+APK_FRAME 2 960x540
+2026-10-30T20:53:53.003821Z  INFO archtv_compositor::state: OUTPUT_CONFIGURED width=800 height=450
+APK_VIEW updated Node { kind: "android.widget.LinearLayout", focused: false, padding: [24, 24, 24, 24], text: None, text_size: None, orientation: Some(1), children: [Node { kind: "android.widget.TextView", focused: false, padding: [0, 0, 0, 0], text: Some("Contador: 0"), text_size: Some(28.0), orientation: None, children: [] }, Node { kind: "android.widget.Button", focused: true, padding: [0, 0, 0, 0], text: Some("Incrementar"), text_size: Some(14.0), orientation: None, children: [] }] }
+APK_DISPLAY 800x450
+APK_FRAME 3 800x450
+2026-10-30T20:53:53.885616Z  INFO archtv_compositor: TV_COMPOSITOR_STOPPED

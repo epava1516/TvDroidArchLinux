@@ -310,7 +310,7 @@ public class LinuxContext extends android.content.Context {
         throw new UnsupportedOperationException("Unsupported Linux context API: checkCallingPermission");
     }
     @Override public int checkCallingOrSelfPermission(java.lang.String p0) {
-        throw new UnsupportedOperationException("Unsupported Linux context API: checkCallingOrSelfPermission");
+        return AppEnvironment.checkLocalPermission(p0);
     }
     @Override public int checkSelfPermission(java.lang.String p0) {
         throw new UnsupportedOperationException("Unsupported Linux context API: checkSelfPermission");

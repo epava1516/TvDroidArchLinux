@@ -1,0 +1,14 @@
+Compiled from "IAccessibilityManagerClient.java"
+public interface android.view.accessibility.IAccessibilityManagerClient extends android.os.IInterface {
+  public abstract void setState(int) throws android.os.RemoteException;
+    descriptor: (I)V
+
+  public abstract void notifyServicesStateChanged(long) throws android.os.RemoteException;
+    descriptor: (J)V
+
+  public abstract void setRelevantEventTypes(int) throws android.os.RemoteException;
+    descriptor: (I)V
+
+  public abstract void setFocusAppearance(int, int) throws android.os.RemoteException;
+    descriptor: (II)V
+}

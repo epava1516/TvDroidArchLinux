@@ -1,0 +1,67 @@
+{
+  "sources_sha256": {
+    "runtime/aosp/linux-services/org/archtv/aosplinux/LocalServiceBinder.java": "e3e6dfd6d41bc62944c78f3371871ea60dcf37d79ca5df0050f4010db0c8c0b4",
+    "runtime/aosp/linux-services/org/archtv/aosplinux/WindowPolicyState.java": "706b25f5904676e3464cf844208c7433e5627712c5b2ea397048ddf782c366f8",
+    "runtime/aosp/linux-services/org/archtv/aosplinux/LinuxWindowService.java": "81ba91cf080ac8e448af38471336e0c0750ee4879f262ab389a26f6e6db92d8f",
+    "runtime/apk/java/org/archtv/apkruntime/HostProfile.java": "3f62435bfe26b5bd808eb628cf953d95479e1e22b24d35bef06ee4620da31cc2",
+    "runtime/apk/java/org/archtv/apkruntime/LinuxContext.java": "17348c76249f65f82fff9627a0ff3459b88eb7df87c6d39226164fec6d57dcc1",
+    "runtime/apk/java/org/archtv/apkruntime/AppEnvironment.java": "85d470597627fabf28ea6bd154531c8bde94b595718d8505d521991e0bfbaf3a",
+    "runtime/apk/java/org/archtv/apkruntime/ApkResources.java": "87c04cb68907652acbb858f92d071ac286b84f797c64081ac073d95066d79c4f",
+    "runtime/apk/java/org/archtv/apkruntime/ApkMetadata.java": "5ee4a740ebf217ced7e2d4d15b88066d0aae95ec9090bf0ec5e651c210c65bc0",
+    "runtime/apk/java/org/archtv/apkruntime/IntPreferences.java": "3b28dd2fdb8b032be4d055d33599ab43c9ba95f916d85e82efe72cae9834baaf",
+    "runtime/apk/java/android/content/SharedPreferences.java": "7b486348fab60cee2f1abe90f23840553755ac85f14dbd9fca48576ae3105fc6",
+    "fixtures/aosp-window-service/WindowServiceProbe.java": "e6747479a83c368904a7ac562027b1405cb892d084a5b9456908f8ecc4f6524e",
+    "fixtures/aosp-window-service/AnimationPolicyChecks.java": "31a1b833934d6b79e4f8c1119eafb49728789483c12484632858ef656bf48309"
+  },
+  "accessibility_bindings_dex_sha256": "810526dfde19517b8d97c63eac8041bf03129465baacf95fe6b14e8999079f55",
+  "framework_dex_sha256": "99144957d280ae82e29d3c6fc022f05ac5c3559a6f96a44064e20133d5136e10",
+  "bindings_dex_sha256": "3a4f9f9b70e9bd7488e0093591bd3b9c4d189e29bd09d5265c99bd65fc2b273d",
+  "service_jar_sha256": "c65246b054a5343c678aa6672752ebc865e4e670c28cbaee3d4ca44ea431a837",
+  "dex_sha256": "d393f8a9e5c31b57c24c3b54937e18e3c037a18b49df6ac7dadf8c60acf9350a",
+  "commands": [
+    [
+      "/usr/lib/jvm/java-17-openjdk/bin/javac",
+      "--release",
+      "8",
+      "-classpath",
+      "/home/tv/repositorio-principal/dist/apk/window-aidl-3/bindings.jar:/home/tv/repositorio-principal/dist/apk/aosp-accessibility-1/framework.jar:/home/tv/.cache/archtv/aosp-compile-tools/android-all-13.jar:/home/tv/repositorio-principal/dist/apk/accessibility-aidl-1/bindings.jar",
+      "-d",
+      "/home/tv/repositorio-principal/dist/apk/window-accessibility-service-1/classes",
+      "/home/tv/repositorio-principal/runtime/aosp/linux-services/org/archtv/aosplinux/LocalServiceBinder.java",
+      "/home/tv/repositorio-principal/runtime/aosp/linux-services/org/archtv/aosplinux/WindowPolicyState.java",
+      "/home/tv/repositorio-principal/runtime/aosp/linux-services/org/archtv/aosplinux/LinuxWindowService.java",
+      "/home/tv/repositorio-principal/runtime/apk/java/org/archtv/apkruntime/HostProfile.java",
+      "/home/tv/repositorio-principal/runtime/apk/java/org/archtv/apkruntime/LinuxContext.java",
+      "/home/tv/repositorio-principal/runtime/apk/java/org/archtv/apkruntime/AppEnvironment.java",
+      "/home/tv/repositorio-principal/runtime/apk/java/org/archtv/apkruntime/ApkResources.java",
+      "/home/tv/repositorio-principal/runtime/apk/java/org/archtv/apkruntime/ApkMetadata.java",
+      "/home/tv/repositorio-principal/runtime/apk/java/org/archtv/apkruntime/IntPreferences.java",
+      "/home/tv/repositorio-principal/runtime/apk/java/android/content/SharedPreferences.java",
+      "/home/tv/repositorio-principal/fixtures/aosp-window-service/WindowServiceProbe.java",
+      "/home/tv/repositorio-principal/fixtures/aosp-window-service/AnimationPolicyChecks.java"
+    ],
+    [
+      "/usr/lib/jvm/java-17-openjdk/bin/jar",
+      "cf",
+      "/home/tv/repositorio-principal/dist/apk/window-accessibility-service-1/service.jar",
+      "-C",
+      "/home/tv/repositorio-principal/dist/apk/window-accessibility-service-1/classes",
+      "."
+    ],
+    [
+      "/usr/lib/jvm/java-17-openjdk/bin/java",
+      "-cp",
+      "/home/tv/.cache/archtv/apk-build-tools/r8.jar",
+      "com.android.tools.r8.D8",
+      "--release",
+      "--min-api",
+      "28",
+      "--lib",
+      "/home/tv/.cache/archtv/apk-build-tools/android.jar",
+      "--output",
+      "/home/tv/repositorio-principal/dist/apk/window-accessibility-service-1/dex",
+      "/home/tv/repositorio-principal/dist/apk/window-accessibility-service-1/service.jar"
+    ]
+  ],
+  "scope": "Own Linux IWindowManager implementation: 7 host-state getters, 126 explicit unsupported methods. Original contract/Point/ServiceManager in separate verified artifacts. No window creation/rendering/global WM or APK integration from this build."
+}

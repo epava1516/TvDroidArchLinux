@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fetch and verify pinned original AIDL inputs for the complete window contract."""
+"""Fetch and verify pinned original AIDL inputs (window manifest by default)."""
 import argparse
 import base64
 import hashlib
@@ -10,9 +10,10 @@ import urllib.request
 parser=argparse.ArgumentParser()
 parser.add_argument('--cache',type=Path,required=True)
 parser.add_argument('--fetch',action='store_true')
+parser.add_argument('--manifest',type=Path,default=Path('runtime/aosp/window-aidl-sources.json'))
 args=parser.parse_args()
 root=Path(__file__).resolve().parents[2]
-manifest=json.loads((root/'runtime/aosp/window-aidl-sources.json').read_text())
+manifest=json.loads((root/args.manifest).read_text())
 for item in manifest['files']:
     relative=Path(item['cache_path'])
     if relative.is_absolute() or '..' in relative.parts:raise SystemExit('Unsafe AIDL cache path')

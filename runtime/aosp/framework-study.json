@@ -593,6 +593,16 @@
       "path": "core/java/android/view/accessibility/AccessibilityManager.java",
       "sha256": "a688d971ab217e2ab806b34912c7fb858aa2d280c22094a80299ea2bf4a8e552",
       "bytes": 73933
+    },
+    {
+      "path": "core/java/android/os/UserHandle.java",
+      "sha256": "73d30912e67874b7fc35865a0bfc17e6debfb0fa63e34f51991479630327a946",
+      "bytes": 22430
+    },
+    {
+      "path": "core/jni/android_util_Binder.cpp",
+      "bytes": 60275,
+      "sha256": "8092182d7ac882296f2a3bb300f4fe0ce5afcd69c3dd9e53042c3fc49f746b30"
     }
   ],
   "public_resources_sources": [
@@ -619,7 +629,9 @@
     "graphics/java/android/graphics/PorterDuff.java",
     "graphics/java/android/graphics/BlendMode.java",
     "graphics/java/android/graphics/Xfermode.java",
-    "core/java/android/util/LongSparseLongArray.java"
+    "core/java/android/util/LongSparseLongArray.java",
+    "core/java/android/os/UserHandle.java",
+    "core/java/android/view/accessibility/AccessibilityManager.java"
   ],
   "context_sources": [
     "core/java/android/content/Context.java",

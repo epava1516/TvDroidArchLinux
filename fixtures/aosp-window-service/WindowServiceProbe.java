@@ -29,6 +29,12 @@ public final class WindowServiceProbe {
         AppEnvironment.initialize(Paths.get(args[3]),Paths.get(args[5]),Paths.get(args[4]),0);
         check(AppEnvironment.current().applicationContext.getDisplayId()==0,"Actual app virtual display binding");
         android.os.Looper.prepareMainLooper();
+        android.content.Context app=AppEnvironment.current().applicationContext;
+        for(String permission:new String[]{"android.permission.INTERACT_ACROSS_USERS","android.permission.INTERACT_ACROSS_USERS_FULL","android.permission.INTERNET","org.archtv.UNKNOWN"})
+            check(app.checkCallingOrSelfPermission(permission)==-1,"No Android permission grants: "+permission);
+        try { app.checkCallingOrSelfPermission(null);throw new AssertionError("Null permission accepted"); }
+        catch(IllegalArgumentException expected) { }
+        System.out.println("LINUX_PERMISSION_QUERY_OK grants=0");
         boolean attempted=false;
         final int[] deaths={0};endpoint.linkToDeath(()->deaths[0]++,0);
         BufferedReader input=new BufferedReader(new InputStreamReader(System.in,"UTF-8"));String line;

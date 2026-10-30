@@ -1,0 +1,39 @@
+Compiled from "IAccessibilityManager.java"
+public abstract class android.view.accessibility.IAccessibilityManager$Stub extends android.os.Binder implements android.view.accessibility.IAccessibilityManager {
+  public static final java.lang.String DESCRIPTOR = "android.view.accessibility.IAccessibilityManager";
+  static final int TRANSACTION_interrupt = 1;
+  static final int TRANSACTION_sendAccessibilityEvent = 2;
+  static final int TRANSACTION_addClient = 3;
+  static final int TRANSACTION_removeClient = 4;
+  static final int TRANSACTION_getInstalledAccessibilityServiceList = 5;
+  static final int TRANSACTION_getEnabledAccessibilityServiceList = 6;
+  static final int TRANSACTION_addAccessibilityInteractionConnection = 7;
+  static final int TRANSACTION_removeAccessibilityInteractionConnection = 8;
+  static final int TRANSACTION_setPictureInPictureActionReplacingConnection = 9;
+  static final int TRANSACTION_registerUiTestAutomationService = 10;
+  static final int TRANSACTION_unregisterUiTestAutomationService = 11;
+  static final int TRANSACTION_temporaryEnableAccessibilityStateUntilKeyguardRemoved = 12;
+  static final int TRANSACTION_getWindowToken = 13;
+  static final int TRANSACTION_notifyAccessibilityButtonClicked = 14;
+  static final int TRANSACTION_notifyAccessibilityButtonVisibilityChanged = 15;
+  static final int TRANSACTION_performAccessibilityShortcut = 16;
+  static final int TRANSACTION_getAccessibilityShortcutTargets = 17;
+  static final int TRANSACTION_sendFingerprintGesture = 18;
+  static final int TRANSACTION_getAccessibilityWindowId = 19;
+  static final int TRANSACTION_getRecommendedTimeoutMillis = 20;
+  static final int TRANSACTION_registerSystemAction = 21;
+  static final int TRANSACTION_unregisterSystemAction = 22;
+  static final int TRANSACTION_setWindowMagnificationConnection = 23;
+  static final int TRANSACTION_associateEmbeddedHierarchy = 24;
+  static final int TRANSACTION_disassociateEmbeddedHierarchy = 25;
+  static final int TRANSACTION_getFocusStrokeWidth = 26;
+  static final int TRANSACTION_getFocusColor = 27;
+  static final int TRANSACTION_isAudioDescriptionByDefaultEnabled = 28;
+  static final int TRANSACTION_setSystemAudioCaptioningEnabled = 29;
+  static final int TRANSACTION_isSystemAudioCaptioningUiEnabled = 30;
+  static final int TRANSACTION_setSystemAudioCaptioningUiEnabled = 31;
+  public android.view.accessibility.IAccessibilityManager$Stub();
+  public static android.view.accessibility.IAccessibilityManager asInterface(android.os.IBinder);
+  public android.os.IBinder asBinder();
+  public boolean onTransact(int, android.os.Parcel, android.os.Parcel, int) throws android.os.RemoteException;
+}

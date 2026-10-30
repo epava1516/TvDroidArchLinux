@@ -1,0 +1,807 @@
+{
+  "original_aidl_inputs": {
+    "roots": [
+      "core/java/android/view/accessibility/IAccessibilityManager.aidl",
+      "core/java/android/view/accessibility/IAccessibilityManagerClient.aidl"
+    ],
+    "builtin_imports": [
+      "android.os.IBinder",
+      "android.os.ParcelFileDescriptor",
+      "java.util.List"
+    ],
+    "files": [
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/native/",
+        "revision": "2fe7eddf185ecb63223eeadc58804f9bf6cbd426",
+        "path": "aidl/gui/android/view/Surface.aidl",
+        "cache_path": "native/aidl/gui/android/view/Surface.aidl",
+        "include_root": "native/aidl/gui",
+        "bytes": 742,
+        "sha256": "38d5c34ca0196a499fe6b6d5c9b72b385bcac51d273b5c4aae1a0365437b476c"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/accessibilityservice/AccessibilityGestureEvent.aidl",
+        "cache_path": "core/java/android/accessibilityservice/AccessibilityGestureEvent.aidl",
+        "bytes": 698,
+        "sha256": "cf88d0df714b8c159bb99b87e0c4246eb91511b90640527bed4569b368dd8840",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/accessibilityservice/AccessibilityServiceInfo.aidl",
+        "cache_path": "core/java/android/accessibilityservice/AccessibilityServiceInfo.aidl",
+        "bytes": 697,
+        "sha256": "d4144e14df8ecd21252399437fa5ea6a2f44b74c810635a46834a0df5ff07a1b",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/accessibilityservice/IAccessibilityServiceClient.aidl",
+        "cache_path": "core/java/android/accessibilityservice/IAccessibilityServiceClient.aidl",
+        "bytes": 2802,
+        "sha256": "f9d096ee91ab122e4f3d87d281c5097098a3628260d31f827af80f6a1a998dc1",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/accessibilityservice/IAccessibilityServiceConnection.aidl",
+        "cache_path": "core/java/android/accessibilityservice/IAccessibilityServiceConnection.aidl",
+        "bytes": 5408,
+        "sha256": "68a39bf75678f00745265d4cf59441b03ff24daf0610d300c1c3e3d4105162dc",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/accessibilityservice/MagnificationConfig.aidl",
+        "cache_path": "core/java/android/accessibilityservice/MagnificationConfig.aidl",
+        "bytes": 692,
+        "sha256": "c2930572a9d50a9dfa826ca870104adaae013cdd854fc406e106108e5b630ade",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/app/RemoteAction.aidl",
+        "cache_path": "core/java/android/app/RemoteAction.aidl",
+        "include_root": "core/java",
+        "bytes": 669,
+        "sha256": "75b6437fd131f4c6b7cd70d7c209247b58666a0923f22e093ad06c46dc7233d2"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/content/ComponentName.aidl",
+        "cache_path": "core/java/android/content/ComponentName.aidl",
+        "include_root": "core/java",
+        "bytes": 682,
+        "sha256": "dcf957d3121569e70e4a7d739aa0f3c51018df12ba23df32f7c71ba3549d77fc"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/content/pm/ParceledListSlice.aidl",
+        "cache_path": "core/java/android/content/pm/ParceledListSlice.aidl",
+        "include_root": "core/java",
+        "bytes": 679,
+        "sha256": "ea0c37e363759c30cf6031a80544bb3c1cce97b77df0941f66915c9c88b5e8e3"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/os/Bundle.aidl",
+        "cache_path": "core/java/android/os/Bundle.aidl",
+        "bytes": 712,
+        "sha256": "c4a7a65e8e2ab4579854d41159ec8a6449872ddbeb0e4f48b89c735f82e38015",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/os/RemoteCallback.aidl",
+        "cache_path": "core/java/android/os/RemoteCallback.aidl",
+        "include_root": "core/java",
+        "bytes": 672,
+        "sha256": "6305bbbd695933b649835817edfee817c0f1655dff0e1aac55cd34371c68b18d"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/util/MergedConfiguration.aidl",
+        "cache_path": "core/java/android/util/MergedConfiguration.aidl",
+        "include_root": "core/java",
+        "bytes": 674,
+        "sha256": "3f2b1558bea675a0610e52c028e305af5e347da9428445f57f329908f0986d4a"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/view/DisplayCutout.aidl",
+        "cache_path": "core/java/android/view/DisplayCutout.aidl",
+        "bytes": 689,
+        "sha256": "25d65fbf3e0cf6402b099b3336bcc5d90105ad42a05d52044191989773d7e5c1",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/view/DragEvent.aidl",
+        "cache_path": "core/java/android/view/DragEvent.aidl",
+        "include_root": "core/java",
+        "bytes": 669,
+        "sha256": "fc9f53bb5f8d198e4eda4dcedb8335977d46b3281dca509b6c982c387d4c8a99"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/view/IScrollCaptureResponseListener.aidl",
+        "cache_path": "core/java/android/view/IScrollCaptureResponseListener.aidl",
+        "bytes": 1129,
+        "sha256": "021539c240f5a477821f8f4ab7b8feba4600e35710e2e7c4d64b47c6676ba51b",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/view/IWindow.aidl",
+        "cache_path": "core/java/android/view/IWindow.aidl",
+        "bytes": 4124,
+        "sha256": "de5111a925024be2258963426d6b9c301c547ddb772f850fed3891b5d62e6636",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/view/InsetsSourceControl.aidl",
+        "cache_path": "core/java/android/view/InsetsSourceControl.aidl",
+        "include_root": "core/java",
+        "bytes": 677,
+        "sha256": "810e832d9326727a34c23aea8cbc4b823572499ef5b1a2211e1ea29f146f1664"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/view/InsetsState.aidl",
+        "cache_path": "core/java/android/view/InsetsState.aidl",
+        "bytes": 669,
+        "sha256": "b71343a9a2a4b869fd6fd750b90f51bf07922a185034792bfd15a08d776a1826",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/view/KeyEvent.aidl",
+        "cache_path": "core/java/android/view/KeyEvent.aidl",
+        "bytes": 746,
+        "sha256": "a02d7d6ba2775bef032d973153817e079b4c8f356bf6a8e28bf6ed5684eddd82",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/view/MagnificationSpec.aidl",
+        "cache_path": "core/java/android/view/MagnificationSpec.aidl",
+        "bytes": 671,
+        "sha256": "0046850efb876c0bf8ff57bf8e186dbb2c57ffc00e11023ce0022212087649f9",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/view/MotionEvent.aidl",
+        "cache_path": "core/java/android/view/MotionEvent.aidl",
+        "bytes": 723,
+        "sha256": "ea9120f0fe62500ba53df8ad57087750a4f3f294c8cdd02bf06c05eea3132929",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/view/ScrollCaptureResponse.aidl",
+        "cache_path": "core/java/android/view/ScrollCaptureResponse.aidl",
+        "include_root": "core/java",
+        "bytes": 678,
+        "sha256": "127463cdb1bc84fcaa21393f85b8fa4df0602184fa7ce707e160936059b62fd1"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/view/accessibility/AccessibilityEvent.aidl",
+        "cache_path": "core/java/android/view/accessibility/AccessibilityEvent.aidl",
+        "bytes": 690,
+        "sha256": "a42d39f63e9308f8a7b5d28a7b43385cde636d778f53d2c773969dd263511349",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/view/accessibility/AccessibilityNodeInfo.aidl",
+        "cache_path": "core/java/android/view/accessibility/AccessibilityNodeInfo.aidl",
+        "bytes": 747,
+        "sha256": "434797daec623fbf4ae9c33ca6a076cf3a659dc05061698894607ab2ab9f0bb3",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/view/accessibility/AccessibilityWindowInfo.aidl",
+        "cache_path": "core/java/android/view/accessibility/AccessibilityWindowInfo.aidl",
+        "bytes": 753,
+        "sha256": "c03614fb22980eb7bb05157008367acbe79098351b7d3193d7741aa66a4427d1",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/view/accessibility/IAccessibilityInteractionConnection.aidl",
+        "cache_path": "core/java/android/view/accessibility/IAccessibilityInteractionConnection.aidl",
+        "bytes": 2902,
+        "sha256": "8b6f609f3c005a1944c93eb0d98837c8da0f8a3f6762d7c0c23c6f92a289364b",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/view/accessibility/IAccessibilityInteractionConnectionCallback.aidl",
+        "cache_path": "core/java/android/view/accessibility/IAccessibilityInteractionConnectionCallback.aidl",
+        "bytes": 2602,
+        "sha256": "e3fdeb829af7a174ee78f4f430a11eb73bdf019380da50b112ac8c295d398a8b",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/view/accessibility/IAccessibilityManager.aidl",
+        "cache_path": "core/java/android/view/accessibility/IAccessibilityManager.aidl",
+        "bytes": 4306,
+        "sha256": "8e023ec7a7304a1de99bc6cb0713a5ee3a0fcfb443ad93a050094e54f881dea1",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/view/accessibility/IAccessibilityManagerClient.aidl",
+        "cache_path": "core/java/android/view/accessibility/IAccessibilityManagerClient.aidl",
+        "bytes": 1055,
+        "sha256": "adbf5ef7b97cbf82a2cccf5d3443cc564a9c6caf68d458acc8e69a88b51ad294",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/view/accessibility/IRemoteMagnificationAnimationCallback.aidl",
+        "cache_path": "core/java/android/view/accessibility/IRemoteMagnificationAnimationCallback.aidl",
+        "bytes": 1075,
+        "sha256": "134126839ae2ff3e77c082727b6507b2981b3e08e3601b86ee790a0b87843cdc",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/view/accessibility/IWindowMagnificationConnection.aidl",
+        "cache_path": "core/java/android/view/accessibility/IWindowMagnificationConnection.aidl",
+        "bytes": 4618,
+        "sha256": "da93b17b571893ff54e374d730d0e7c8b4b9780665a3268f5f1ff4e283f276e8",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/view/accessibility/IWindowMagnificationConnectionCallback.aidl",
+        "cache_path": "core/java/android/view/accessibility/IWindowMagnificationConnectionCallback.aidl",
+        "bytes": 2477,
+        "sha256": "9b7f66d463ec468b9e965d805e120252df85fcaa6df7a08275cbc5b424855354",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/view/inputmethod/CompletionInfo.aidl",
+        "cache_path": "core/java/android/view/inputmethod/CompletionInfo.aidl",
+        "bytes": 683,
+        "sha256": "e1572ceadcbf83f92f654f7da3c57e319234b332dca5ef496c080c42e77bb359",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/view/inputmethod/CorrectionInfo.aidl",
+        "cache_path": "core/java/android/view/inputmethod/CorrectionInfo.aidl",
+        "bytes": 683,
+        "sha256": "2d6225eab83d903c3ad59aa07fdcec02aaca80f285668c22e622d50e18d6780a",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/view/inputmethod/CursorAnchorInfo.aidl",
+        "cache_path": "core/java/android/view/inputmethod/CursorAnchorInfo.aidl",
+        "bytes": 685,
+        "sha256": "11777bba243616b4b6a51e759157fb6efac2558224f1a1bc1cbd83cab5f43981",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/view/inputmethod/EditorInfo.aidl",
+        "cache_path": "core/java/android/view/inputmethod/EditorInfo.aidl",
+        "bytes": 679,
+        "sha256": "39baa303a085fb630d5c1ff57c0df8ebbe04993af0f9a6c22c78294fa1ec4892",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/view/inputmethod/ExtractedText.aidl",
+        "cache_path": "core/java/android/view/inputmethod/ExtractedText.aidl",
+        "bytes": 682,
+        "sha256": "9b0eecd92a4552a879cd53264a426f7ce03e24dd4c36db5b2c12e0496c983639",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/view/inputmethod/ExtractedTextRequest.aidl",
+        "cache_path": "core/java/android/view/inputmethod/ExtractedTextRequest.aidl",
+        "bytes": 689,
+        "sha256": "6003ee9d94e220defcddb099f24908f1a9342e13f80bd80dccaff7a72262336f",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/view/inputmethod/InputContentInfo.aidl",
+        "cache_path": "core/java/android/view/inputmethod/InputContentInfo.aidl",
+        "bytes": 685,
+        "sha256": "44acccec14d3684f77b5a58a239d0fc5e3889f7b0aab987135fb95b6fcb0488f",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/view/inputmethod/TextAttribute.aidl",
+        "cache_path": "core/java/android/view/inputmethod/TextAttribute.aidl",
+        "bytes": 681,
+        "sha256": "9d88586aaece50baff11a9e11ed7850fd345817692be7af90d8548627c72dd90",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/android/window/ClientWindowFrames.aidl",
+        "cache_path": "core/java/android/window/ClientWindowFrames.aidl",
+        "include_root": "core/java",
+        "bytes": 677,
+        "sha256": "d9ef1f53ad44aeccb4a28e2bf96871d830223731f703ff6cad245f498d9cf701"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/com/android/internal/infra/AndroidFuture.aidl",
+        "cache_path": "core/java/com/android/internal/infra/AndroidFuture.aidl",
+        "bytes": 695,
+        "sha256": "035173fcacc3ae91b0610d1674833efd574406c179800f5521a09e66e8551700",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/com/android/internal/inputmethod/IAccessibilityInputMethodSession.aidl",
+        "cache_path": "core/java/com/android/internal/inputmethod/IAccessibilityInputMethodSession.aidl",
+        "bytes": 1561,
+        "sha256": "e178b7da7347070198a18fd9b12823a0bdb48fd07e72985b92174279f4eee088",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/com/android/internal/inputmethod/IAccessibilityInputMethodSessionCallback.aidl",
+        "cache_path": "core/java/com/android/internal/inputmethod/IAccessibilityInputMethodSessionCallback.aidl",
+        "bytes": 1010,
+        "sha256": "f1c15ec2c3e8d0af1531ded82f7e858517a7219fa9e7cda118e74b202d668b81",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/com/android/internal/inputmethod/IRemoteAccessibilityInputConnection.aidl",
+        "cache_path": "core/java/com/android/internal/inputmethod/IRemoteAccessibilityInputConnection.aidl",
+        "bytes": 2079,
+        "sha256": "676c55d54dd39630ef3ac824e337afe79eff0d83449de5b844aac2944ec6f609",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/com/android/internal/inputmethod/InputConnectionCommandHeader.aidl",
+        "cache_path": "core/java/com/android/internal/inputmethod/InputConnectionCommandHeader.aidl",
+        "bytes": 704,
+        "sha256": "489e4914fdc658d49f5d96bc375c63282d2ed77245b18ab77f9c364ce3d0166a",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/com/android/internal/os/IResultReceiver.aidl",
+        "cache_path": "core/java/com/android/internal/os/IResultReceiver.aidl",
+        "bytes": 853,
+        "sha256": "26c4144debcb5666f7c995c26100afb10fe78660ed643882628030eb3654f151",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "core/java/com/android/internal/view/IInputContext.aidl",
+        "cache_path": "core/java/com/android/internal/view/IInputContext.aidl",
+        "bytes": 4957,
+        "sha256": "6fa247c4417aa5cb9c9c7f324a9eb76762072c9adb03d3c199b5ef870460fc67",
+        "include_root": "core/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "graphics/java/android/graphics/Bitmap.aidl",
+        "cache_path": "graphics/java/android/graphics/Bitmap.aidl",
+        "bytes": 676,
+        "sha256": "3861fba94b969c22c4535d8291146a0932d1380ed8c9e26508e8f793c3481e8c",
+        "include_root": "graphics/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "graphics/java/android/graphics/Point.aidl",
+        "cache_path": "graphics/java/android/graphics/Point.aidl",
+        "bytes": 658,
+        "sha256": "59b72e4684f4143d13ab5dc322deb81151df2d1896e6baac6e3b41e2330f42d2",
+        "include_root": "graphics/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "graphics/java/android/graphics/PointF.aidl",
+        "cache_path": "graphics/java/android/graphics/PointF.aidl",
+        "bytes": 659,
+        "sha256": "a7a3e6a74467d4934041c49e982aba1b254be5117a1636196760fdaf52412e4f",
+        "include_root": "graphics/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "graphics/java/android/graphics/Rect.aidl",
+        "cache_path": "graphics/java/android/graphics/Rect.aidl",
+        "bytes": 720,
+        "sha256": "682fb735d2c7f07597cf510059cae274f999c26648faa469aedf4bd732b55f36",
+        "include_root": "graphics/java"
+      },
+      {
+        "repository": "https://android.googlesource.com/platform/frameworks/base/",
+        "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+        "path": "graphics/java/android/graphics/Region.aidl",
+        "cache_path": "graphics/java/android/graphics/Region.aidl",
+        "bytes": 722,
+        "sha256": "d532065b1dee3ede31086ea71275ebdb3dc27a5c16e9e1bde7805c7714bc4bc3",
+        "include_root": "graphics/java"
+      }
+    ],
+    "include_roots": [
+      "core/java",
+      "graphics/java",
+      "native/aidl/gui"
+    ]
+  },
+  "toolchain": {
+    "repository": "https://android.googlesource.com/platform/prebuilts/sdk/",
+    "revision": "01f7b13e02cf93c031d1f5a9a6a5118db9d4ad39",
+    "tag": "android-13.0.0_r3",
+    "artifacts": [
+      {
+        "file": "aidl",
+        "path": "tools/linux/bin/aidl",
+        "url": "https://android.googlesource.com/platform/prebuilts/sdk/+/01f7b13e02cf93c031d1f5a9a6a5118db9d4ad39/tools/linux/bin/aidl?format=TEXT",
+        "sha256": "a465a2f3c7e4f21521a3babfcc71c64f1120eea7fc141eeb5ac43ec5c00e818f",
+        "bytes": 5284464
+      },
+      {
+        "file": "NOTICE.txt",
+        "path": "tools/linux/bin/NOTICE.txt",
+        "url": "https://android.googlesource.com/platform/prebuilts/sdk/+/01f7b13e02cf93c031d1f5a9a6a5118db9d4ad39/tools/linux/bin/NOTICE.txt?format=TEXT",
+        "sha256": "204b02831fe6bb33c50a1c515eb2bd2a0e333812e3c193ffef15dc3445bb56ce",
+        "bytes": 151751
+      },
+      {
+        "file": "libc++.so",
+        "path": "tools/linux/lib64/libc++.so",
+        "url": "https://android.googlesource.com/platform/prebuilts/sdk/+/01f7b13e02cf93c031d1f5a9a6a5118db9d4ad39/tools/linux/lib64/libc++.so?format=TEXT",
+        "sha256": "d1680605847593feb504b8a63822aba4d721d098758dface8993b015dad94ccf",
+        "bytes": 1077880
+      }
+    ],
+    "compiler_reported_platform_sdk": 32
+  },
+  "compile_reference": {
+    "artifact": "org.robolectric:android-all:13-robolectric-9030017",
+    "file": "android-all-13.jar",
+    "url": "https://repo.maven.apache.org/maven2/org/robolectric/android-all/13-robolectric-9030017/android-all-13-robolectric-9030017.jar",
+    "bytes": 178380165,
+    "upstream_sha1": "6f1de3639fb19379abaa68b9f29d10cd6653047f",
+    "sha256": "6e67dca81d30295e31ee6a28cfb601b6b66aaeaee51a92386ed099a64cea5996",
+    "scope": "Android 13 compiler reference, never placed wholesale on runtime classpath. --with-public-resources reuses only generated classes explicitly pinned in prebuilt-bindings.json; rebuilding these remains pending."
+  },
+  "interface_contracts": {
+    "android.view.accessibility.IAccessibilityManager": {
+      "interface_methods_count": 31,
+      "reference_methods_equal": true,
+      "transaction_ids": {
+        "interrupt": 1,
+        "sendAccessibilityEvent": 2,
+        "addClient": 3,
+        "removeClient": 4,
+        "getInstalledAccessibilityServiceList": 5,
+        "getEnabledAccessibilityServiceList": 6,
+        "addAccessibilityInteractionConnection": 7,
+        "removeAccessibilityInteractionConnection": 8,
+        "setPictureInPictureActionReplacingConnection": 9,
+        "registerUiTestAutomationService": 10,
+        "unregisterUiTestAutomationService": 11,
+        "temporaryEnableAccessibilityStateUntilKeyguardRemoved": 12,
+        "getWindowToken": 13,
+        "notifyAccessibilityButtonClicked": 14,
+        "notifyAccessibilityButtonVisibilityChanged": 15,
+        "performAccessibilityShortcut": 16,
+        "getAccessibilityShortcutTargets": 17,
+        "sendFingerprintGesture": 18,
+        "getAccessibilityWindowId": 19,
+        "getRecommendedTimeoutMillis": 20,
+        "registerSystemAction": 21,
+        "unregisterSystemAction": 22,
+        "setWindowMagnificationConnection": 23,
+        "associateEmbeddedHierarchy": 24,
+        "disassociateEmbeddedHierarchy": 25,
+        "getFocusStrokeWidth": 26,
+        "getFocusColor": 27,
+        "isAudioDescriptionByDefaultEnabled": 28,
+        "setSystemAudioCaptioningEnabled": 29,
+        "isSystemAudioCaptioningUiEnabled": 30,
+        "setSystemAudioCaptioningUiEnabled": 31
+      },
+      "reference_transaction_ids_equal": true
+    },
+    "android.view.accessibility.IAccessibilityManagerClient": {
+      "interface_methods_count": 4,
+      "reference_methods_equal": true,
+      "transaction_ids": {
+        "setState": 1,
+        "notifyServicesStateChanged": 2,
+        "setRelevantEventTypes": 3,
+        "setFocusAppearance": 4
+      },
+      "reference_transaction_ids_equal": true
+    }
+  },
+  "commands": [
+    {
+      "name": "generate",
+      "command": [
+        "/home/tv/.cache/archtv/aosp-aidl-tools/aidl",
+        "--lang=java",
+        "--min_sdk_version=28",
+        "-I",
+        "/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java",
+        "-I",
+        "/home/tv/.cache/archtv/aosp-framework-study/pinned/graphics/java",
+        "-I",
+        "/home/tv/.cache/archtv/aosp-framework-study/pinned/native/aidl/gui",
+        "-o",
+        "/home/tv/repositorio-principal/dist/apk/accessibility-aidl-1/generated",
+        "/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/view/accessibility/IAccessibilityManager.aidl"
+      ]
+    },
+    {
+      "name": "generate-1",
+      "command": [
+        "/home/tv/.cache/archtv/aosp-aidl-tools/aidl",
+        "--lang=java",
+        "--min_sdk_version=28",
+        "-I",
+        "/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java",
+        "-I",
+        "/home/tv/.cache/archtv/aosp-framework-study/pinned/graphics/java",
+        "-I",
+        "/home/tv/.cache/archtv/aosp-framework-study/pinned/native/aidl/gui",
+        "-o",
+        "/home/tv/repositorio-principal/dist/apk/accessibility-aidl-1/generated",
+        "/home/tv/.cache/archtv/aosp-framework-study/pinned/core/java/android/view/accessibility/IAccessibilityManagerClient.aidl"
+      ]
+    },
+    {
+      "name": "compile",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/javac",
+        "--release",
+        "8",
+        "-classpath",
+        "/home/tv/.cache/archtv/aosp-compile-tools/android-all-13.jar",
+        "-d",
+        "/home/tv/repositorio-principal/dist/apk/accessibility-aidl-1/classes",
+        "/home/tv/repositorio-principal/dist/apk/accessibility-aidl-1/generated/android/view/accessibility/IAccessibilityManager.java",
+        "/home/tv/repositorio-principal/dist/apk/accessibility-aidl-1/generated/android/view/accessibility/IAccessibilityManagerClient.java"
+      ]
+    },
+    {
+      "name": "pack",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/jar",
+        "cf",
+        "/home/tv/repositorio-principal/dist/apk/accessibility-aidl-1/bindings.jar",
+        "-C",
+        "/home/tv/repositorio-principal/dist/apk/accessibility-aidl-1/classes",
+        "."
+      ]
+    },
+    {
+      "name": "dex",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/java",
+        "-cp",
+        "/home/tv/.cache/archtv/apk-build-tools/r8.jar",
+        "com.android.tools.r8.D8",
+        "--release",
+        "--min-api",
+        "28",
+        "--lib",
+        "/home/tv/.cache/archtv/apk-build-tools/android.jar",
+        "--output",
+        "/home/tv/repositorio-principal/dist/apk/accessibility-aidl-1/dex",
+        "/home/tv/repositorio-principal/dist/apk/accessibility-aidl-1/bindings.jar"
+      ]
+    },
+    {
+      "name": "generated-signatures",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/javap",
+        "-p",
+        "-s",
+        "-classpath",
+        "/home/tv/repositorio-principal/dist/apk/accessibility-aidl-1/bindings.jar",
+        "android.view.accessibility.IAccessibilityManager"
+      ]
+    },
+    {
+      "name": "reference-signatures",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/javap",
+        "-p",
+        "-s",
+        "-classpath",
+        "/home/tv/.cache/archtv/aosp-compile-tools/android-all-13.jar",
+        "android.view.accessibility.IAccessibilityManager"
+      ]
+    },
+    {
+      "name": "generated-transactions",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/javap",
+        "-p",
+        "-constants",
+        "-classpath",
+        "/home/tv/repositorio-principal/dist/apk/accessibility-aidl-1/bindings.jar",
+        "android.view.accessibility.IAccessibilityManager$Stub"
+      ]
+    },
+    {
+      "name": "reference-transactions",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/javap",
+        "-p",
+        "-constants",
+        "-classpath",
+        "/home/tv/.cache/archtv/aosp-compile-tools/android-all-13.jar",
+        "android.view.accessibility.IAccessibilityManager$Stub"
+      ]
+    },
+    {
+      "name": "1-generated-signatures",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/javap",
+        "-p",
+        "-s",
+        "-classpath",
+        "/home/tv/repositorio-principal/dist/apk/accessibility-aidl-1/bindings.jar",
+        "android.view.accessibility.IAccessibilityManagerClient"
+      ]
+    },
+    {
+      "name": "1-reference-signatures",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/javap",
+        "-p",
+        "-s",
+        "-classpath",
+        "/home/tv/.cache/archtv/aosp-compile-tools/android-all-13.jar",
+        "android.view.accessibility.IAccessibilityManagerClient"
+      ]
+    },
+    {
+      "name": "1-generated-transactions",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/javap",
+        "-p",
+        "-constants",
+        "-classpath",
+        "/home/tv/repositorio-principal/dist/apk/accessibility-aidl-1/bindings.jar",
+        "android.view.accessibility.IAccessibilityManagerClient$Stub"
+      ]
+    },
+    {
+      "name": "1-reference-transactions",
+      "command": [
+        "/usr/lib/jvm/java-17-openjdk/bin/javap",
+        "-p",
+        "-constants",
+        "-classpath",
+        "/home/tv/.cache/archtv/aosp-compile-tools/android-all-13.jar",
+        "android.view.accessibility.IAccessibilityManagerClient$Stub"
+      ]
+    }
+  ],
+  "generated_java_sha256": {
+    "generated/android/view/accessibility/IAccessibilityManager.java": "3ba9ab6c6613ed8e5adc424f0da820b28be7f31cddd5d36ed5caed17f26b726d",
+    "generated/android/view/accessibility/IAccessibilityManagerClient.java": "8cf7d6f081faded8cb7debfe4de22b47da4ca572e4773ca9aee65c782cdfd816"
+  },
+  "runtime_classes": [
+    "android/view/accessibility/IAccessibilityManager$Default.class",
+    "android/view/accessibility/IAccessibilityManager$Stub$Proxy.class",
+    "android/view/accessibility/IAccessibilityManager$Stub.class",
+    "android/view/accessibility/IAccessibilityManager.class",
+    "android/view/accessibility/IAccessibilityManagerClient$Default.class",
+    "android/view/accessibility/IAccessibilityManagerClient$Stub$Proxy.class",
+    "android/view/accessibility/IAccessibilityManagerClient$Stub.class",
+    "android/view/accessibility/IAccessibilityManagerClient.class"
+  ],
+  "bindings_jar_sha256": "6ac72ce7d6c584b18c2ca5977e0fd6adb982b16886d2ecd61f40b29e57c9c9e9",
+  "dex_sha256": "810526dfde19517b8d97c63eac8041bf03129465baacf95fe6b14e8999079f55",
+  "transaction_ids": {
+    "interrupt": 1,
+    "sendAccessibilityEvent": 2,
+    "addClient": 3,
+    "removeClient": 4,
+    "getInstalledAccessibilityServiceList": 5,
+    "getEnabledAccessibilityServiceList": 6,
+    "addAccessibilityInteractionConnection": 7,
+    "removeAccessibilityInteractionConnection": 8,
+    "setPictureInPictureActionReplacingConnection": 9,
+    "registerUiTestAutomationService": 10,
+    "unregisterUiTestAutomationService": 11,
+    "temporaryEnableAccessibilityStateUntilKeyguardRemoved": 12,
+    "getWindowToken": 13,
+    "notifyAccessibilityButtonClicked": 14,
+    "notifyAccessibilityButtonVisibilityChanged": 15,
+    "performAccessibilityShortcut": 16,
+    "getAccessibilityShortcutTargets": 17,
+    "sendFingerprintGesture": 18,
+    "getAccessibilityWindowId": 19,
+    "getRecommendedTimeoutMillis": 20,
+    "registerSystemAction": 21,
+    "unregisterSystemAction": 22,
+    "setWindowMagnificationConnection": 23,
+    "associateEmbeddedHierarchy": 24,
+    "disassociateEmbeddedHierarchy": 25,
+    "getFocusStrokeWidth": 26,
+    "getFocusColor": 27,
+    "isAudioDescriptionByDefaultEnabled": 28,
+    "setSystemAudioCaptioningEnabled": 29,
+    "isSystemAudioCaptioningUiEnabled": 30,
+    "setSystemAudioCaptioningUiEnabled": 31
+  },
+  "reference_transaction_ids_equal": true,
+  "interface_methods_count": 31,
+  "reference_methods_equal": true,
+  "methods_only_generated": [],
+  "methods_only_reference": [],
+  "scope": "Complete selected original AIDL contracts generated with pinned official compiler and original transitive import contracts. No trimmed interface, imported implementation classes or reference bytecode copied. Method comparison is not proof of transaction ABI, native Binder IPC, loaded runtime classes or working window service."
+}

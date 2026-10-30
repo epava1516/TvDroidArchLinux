@@ -271,3 +271,10 @@ LongSparseLongArray original. El layout avanza a AccessibilityManager ausente;
 AOSP-VIEW-MEDIDA.md describe contratos, permisos e identidad pendientes antes de
 su adaptación. El resize Wayland sigue pasando; no se acredita layout completo,
 accesibilidad, dibujo original ni cierre de A3.
+
+AccessibilityManager y UserHandle originales compilan; sus dos contratos AIDL
+completos coinciden con la referencia fijada. Pasan consultas de permisos sin
+concesiones y regresiones de medida/Wayland; layout avanza a la asignación nativa
+de Binder original, aún ausente. AOSP-ACCESIBILIDAD-CLIENTE.md registra la política,
+la colisión UID Linux/Android y el ciclo de vida nativo pendiente. No se acredita
+accesibilidad, aislamiento ni layout completo.
