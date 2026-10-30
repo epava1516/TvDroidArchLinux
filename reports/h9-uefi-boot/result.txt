@@ -1,0 +1,1 @@
+PARTIAL: UEFI loader entered Linux, mounted ISO and squashfs, started systemd services in QEMU TCG. Login, installed system, graphical session and Android remain unverified. Same VM still running.

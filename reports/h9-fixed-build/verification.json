@@ -1,0 +1,8 @@
+{
+  "status": "CANDIDATE",
+  "image": "archtv-lab-0.1.0-x86_64.iso",
+  "sha256": "2b0a67c8c1ca2f25fddf848da6fda89695db3b2cdaba26c7dbd8bd538aa6c952",
+  "errors": [],
+  "el_torito_report": "xorriso 1.5.8.pl02 : RockRidge filesystem manipulator, libburnia project.\n\nxorriso : NOTE : ISO image bears MBR with  -boot_image any partition_offset=16\nxorriso : NOTE : Loading ISO image tree from LBA 0\nxorriso : UPDATE :      24 nodes read in 1 seconds\nlibisofs: NOTE : Found hidden El-Torito image for EFI.\nlibisofs: NOTE : EFI image start and load size: 344028 * 2048 , 0 * 512\nlibisofs: NOTE : Roughly estimated EFI image size: 79691776 bytes\nxorriso : NOTE : Detected El-Torito boot information which currently is set to be discarded\nDrive current: -indev 'dist/images/archtv-lab-0.1.0-x86_64.iso'\nMedia current: stdio file, overwriteable\nMedia status : is written , is appendable\nBoot record  : El Torito , MBR protective-msdos-label cyl-align-off GPT\nMedia summary: 1 session, 383106 data blocks,  748m data,  162g free\nVolume id    : 'ARCHTV_LAB'\nEl Torito catalog  : 90  1\nEl Torito cat path : /EFI/boot.cat\nEl Torito images   :   N  Pltf  B   Emul  Ld_seg  Hdpt  Ldsiz         LBA\nEl Torito boot img :   1  UEFI  y   none  0x0000  0x00      0      344028\nEl Torito img blks :   1  38912\n",
+  "scope": "Known build-error scan, ISO SHA-256 and UEFI catalog only. Does not prove initramfs correctness, boot, installation, reproducibility or Android functionality."
+}

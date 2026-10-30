@@ -68,3 +68,18 @@ construcción corregida actual se inició manualmente antes de añadirlo.
 El verificador se ejecutó contra la primera ISO: devolvió FAIL y encontró los
 tres mensajes del fallo memdiskfind. El informe conserva el hash de esa imagen,
 que está separada con sufijo invalid-initramfs.iso. Ver reports/h9-first-build/.
+
+## ISO corregida construida
+
+La segunda construcción generó correctamente el initramfs LTS y una ISO de
+749 MiB. verify-build.py la clasificó CANDIDATE sin errores conocidos y con
+catálogo UEFI habilitado. SHA-256:
+2b0a67c8c1ca2f25fddf848da6fda89695db3b2cdaba26c7dbd8bd538aa6c952.
+Ver reports/h9-fixed-build/.
+
+La prueba en QEMU/OVMF usa TCG, un procesador virtual, 1536 MiB, Virtio VGA y
+solo la ISO de lectura. No conecta red ni discos del anfitrión. La captura
+boot-progress.png muestra el kernel montando sr0 y airootfs y entrando en
+systemd. Eso todavía no acredita consola operativa, instalación ni sesión gráfica.
+QEMU requirió los módulos de paquete Virtio GPU/VGA, registrados en el manifiesto
+del laboratorio. La VM de prueba sigue en observación para completar el arranque.

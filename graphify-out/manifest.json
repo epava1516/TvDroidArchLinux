@@ -583,9 +583,9 @@
     "semantic_hash": ""
   },
   "manifests/distribution-lab.txt": {
-    "mtime": 1793347129.153345,
-    "seen": 1793347158.2941809,
-    "ast_hash": "9c0bd1b9dcf51b36121923cf56409086",
+    "mtime": 1793347779.4741058,
+    "seen": 1793347793.1501548,
+    "ast_hash": "259c3f65705db89edde6829a83250175",
     "semantic_hash": ""
   },
   "packaging/arch/local-repository.py": {
@@ -601,9 +601,9 @@
     "semantic_hash": ""
   },
   "docs/DISTRIBUCION.md": {
-    "mtime": 1793347396.4976916,
-    "seen": 1793347401.3698256,
-    "ast_hash": "fe4218d6dc4352e9acbbd58ad8034b3c",
+    "mtime": 1793347779.575348,
+    "seen": 1793347793.1501238,
+    "ast_hash": "cccda6478bf13a587552aa9544880db1",
     "semantic_hash": ""
   },
   "packaging/iso/verify-build.py": {

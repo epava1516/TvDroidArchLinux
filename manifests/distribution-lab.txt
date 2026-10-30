@@ -4,3 +4,5 @@ archiso
 # Prueba UEFI emulada; no se incluyen en la imagen de ejecución.
 qemu-system-x86
 edk2-ovmf
+qemu-hw-display-virtio-gpu
+qemu-hw-display-virtio-vga

@@ -1,0 +1,1 @@
+qemu-system-x86_64: -device virtio-vga: 'virtio-vga' is not a valid device model name

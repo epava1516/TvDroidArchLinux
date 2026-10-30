@@ -1,17 +1,17 @@
 # Graph Report - repositorio-principal  (2026-10-30)
 
 ## Corpus Check
-- 92 files · ~40,460 words
+- 92 files · ~40,571 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 7 file(s) not represented in the graph (top: (none) 5, .in 1, .desktop 1)
 
 ## Summary
-- 864 nodes · 1510 edges · 76 communities (36 shown, 40 thin omitted)
+- 865 nodes · 1511 edges · 77 communities (37 shown, 40 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 4 edges (avg confidence: 0.76)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `0b302bb8`
+- Built from commit: `27ce10a6`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -88,6 +88,7 @@
 - model.rs
 - Page
 - 99-iso-build.sh
+- Action
 
 ## God Nodes (most connected - your core abstractions)
 1. `State` - 54 edges
@@ -116,7 +117,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (76 total, 40 thin omitted)
+## Communities (77 total, 40 thin omitted)
 
 ### Community 0 - "Key"
 Cohesion: 0.20
@@ -127,8 +128,8 @@ Cohesion: 0.10
 Nodes (3): control_fd(), run(), State
 
 ### Community 3 - "worker.rs"
-Cohesion: 0.05
-Nodes (43): collect(), data_directories(), discover(), exec_keeps_arguments_and_shell_metacharacters_literal(), executable(), expand_exec(), locale_hidden_and_desktop_sections_are_respected(), parse_entry() (+35 more)
+Cohesion: 0.07
+Nodes (32): collect(), data_directories(), discover(), exec_keeps_arguments_and_shell_metacharacters_literal(), executable(), expand_exec(), locale_hidden_and_desktop_sections_are_respected(), parse_entry() (+24 more)
 
 ### Community 6 - "input-probe.py"
 Cohesion: 0.06
@@ -227,8 +228,8 @@ Cohesion: 0.40
 Nodes (5): Arquitectura que se investigará, Dirección futura: entorno APK propio sobre Linux, Etapas y pruebas de salida, Qué significa ejecutar APK de forma nativa, Recursos y decisiones pendientes
 
 ### Community 60 - "DISTRIBUCION.md"
-Cohesion: 0.50
-Nodes (3): Construcción con comprobación de errores, Distribución Arch TV: perfil de laboratorio, Primera construcción en curso y corrección detectada
+Cohesion: 0.40
+Nodes (4): Construcción con comprobación de errores, Distribución Arch TV: perfil de laboratorio, ISO corregida construida, Primera construcción en curso y corrección detectada
 
 ### Community 61 - "90-android-session.sh"
 Cohesion: 0.50
@@ -255,23 +256,27 @@ Cohesion: 0.17
 Nodes (11): Compilación en entorno limpio, Fuentes y receta, Herramientas para la imagen de distribución, Inventario inicial de licencias Cargo, Paquetes Arch TV en preparación, Preferencias y recuperación entre versiones, Primera compilación e instalación comprobadas, Prueba del ciclo de paquetes preparada (+3 more)
 
 ### Community 72 - "model.rs"
-Cohesion: 0.18
+Cohesion: 0.16
 Nodes (9): ContextAction, Cancel, Favorite, Hide, Left, Right, KEYBOARD, MENU_ITEMS (+1 more)
 
 ### Community 73 - "Page"
 Cohesion: 0.18
 Nodes (9): Page, Android, Apps, Home, Linux, Menu, Recent, Search (+1 more)
 
+### Community 76 - "Action"
+Cohesion: 0.18
+Nodes (11): Action, AndroidStart, AndroidStop, Launch, Mute, Quit, Refresh, Resume (+3 more)
+
 ## Knowledge Gaps
 - **69 isolated node(s):** `archtv-compositor`, `Home`, `Resume`, `Exit`, `TvCompositor` (+64 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 362 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 363 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **40 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `TvCompositor` connect `TvCompositor` to `session.rs`, `xdg_shell.rs`, `mod.rs`, `input.rs`, `drm.rs`, `compositor.rs`, `winit.rs`, `.process_input_event`?**
-  _High betweenness centrality (0.215) - this node is a cross-community bridge._
+  _High betweenness centrality (0.214) - this node is a cross-community bridge._
 - **What connects `archtv-compositor`, `Home`, `Resume` to the rest of the system?**
   _69 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `runtime.rs` be split into smaller, more focused modules?**
@@ -283,4 +288,4 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `Model` connect `Model` to `runtime.rs`, `worker.rs`, `model.rs`, `Page`, `runtime.rs`, `.shell`?**
   _High betweenness centrality (0.049) - this node is a cross-community bridge._
 - **Should `worker.rs` be split into smaller, more focused modules?**
-  _Cohesion score 0.053075396825396824 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06821480406386067 - nodes in this community are weakly interconnected._
