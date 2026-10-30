@@ -1,0 +1,1 @@
+session=Stopped boot=Unknown boot_ready=false

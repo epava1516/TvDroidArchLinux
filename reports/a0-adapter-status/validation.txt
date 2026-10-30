@@ -1,0 +1,7 @@
+Comprobaciones ejecutadas:
+- cargo test --locked --offline --jobs 1 -p archtv-core -p archtv-android -p archtv-shell: 14 pruebas correctas (6 + 2 + 6).
+- cargo clippy para los tres paquetes, all-targets y -D warnings: correcto.
+- scripts/check.sh: correcto.
+- Ejemplo status contra Waydroid instalado: session=Stopped boot=Unknown boot_ready=false.
+- lxc-info posterior: STOPPED. No se solicitó inicio de Android.
+Alcance: consulta de estado y migración del worker de estado; mutaciones e inventario siguen pendientes.

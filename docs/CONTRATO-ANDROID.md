@@ -3,8 +3,9 @@
 El contrato separa el shell y el compositor del proveedor que administra Android.
 La definición Rust está en crates/archtv-core/src/android.rs y no introduce
 bibliotecas Android en el núcleo. Es una interfaz interna compilable: todavía
-no hay servicio, transporte IPC ni adaptador que implemente AndroidProvider.
-Las llamadas Waydroid actuales del shell aún no se han migrado.
+no hay servicio ni transporte IPC. archtv-android implementa una primera parte
+del adaptador Waydroid: status. El worker de estado del shell ya consume el
+contrato; las acciones y el inventario Android aún no se han migrado.
 
 ## Identidad y negociación
 
@@ -73,8 +74,8 @@ No se heredan privilegios generales de root para interpretar una petición de UI
 
 ## Transporte y adaptación pendientes
 
-Primero se implementará un adaptador Waydroid sobre esta interfaz, con ejecución
-de comandos separada y acotada. Después se definirá un servicio Rust con socket
+Se inició el adaptador Waydroid sobre esta interfaz, con ejecución separada
+y acotada para las consultas de estado. Falta implementar sus demás operaciones. Después se definirá un servicio Rust con socket
 Unix, credenciales del par, autorización por perfil y paso de descriptores para
 APK. El formato de mensajes, límites y negociación wire aún no están congelados;
 CONTRACT_VERSION no es una ABI Rust ni un protocolo IPC ya implementado.
@@ -88,6 +89,28 @@ responsabilidad del compositor y no detienen el runtime como efecto colateral.
 
 A0 se cierra cuando Waydroid implemente el contrato, el shell lo consuma sin
 comandos específicos del proveedor y pasen instalar/listar/lanzar/parar/estado,
-plazos, errores y conservación de datos con APK real. Las pruebas actuales solo
-cubren validación de identidad y el invariante de boot; no acreditan integración
-Android ni ejecución AOSP propia. Ver ROADMAP-A.md.
+plazos, errores y conservación de datos con APK real. Las pruebas cubren identidad, boot, estado, límites del helper y una consulta
+real con Android detenido; no acreditan instalación/lanzamiento de APK a través
+del contrato ni ejecución AOSP propia. Ver ROADMAP-A.md.
+
+## Adaptador de estado implementado
+
+crates/archtv-android consulta waydroid status y, solo para sesión Running,
+lee sys.boot_completed. Comparte un plazo absoluto entre ambas consultas, usa
+stdout no bloqueante con límite 64 KiB y mantiene cada helper en un grupo de
+procesos separado que limpia al terminar o fallar. El hijo directo recibe una
+señal si muere el proceso anfitrión; la cancelación abrupta de todo el árbol y
+los casos de bloqueo del kernel siguen requiriendo pruebas específicas.
+
+info.version identifica la versión del adaptador. API Android y ABIs todavía no
+se han consultado: se devuelven desconocidas/sin confirmar. No anuncia capacidades
+de mutación y las operaciones pendientes devuelven Unsupported sin ejecutarlas.
+El worker de estado usa RuntimeStatus y traduce sus campos a las etiquetas UI.
+Las acciones de arranque/parada y los launchers desktop siguen usando el flujo
+anterior, por lo que A0 continúa abierto.
+
+La prueba real de solo lectura devolvió sesión Stopped, boot Unknown y
+boot_ready=false; lxc-info confirmó STOPPED después. Evidencia en
+reports/a0-adapter-status/. Las pruebas de comandos usan ejecutables fixture
+para comprobar propiedades de boot, plazo y exceso de salida; no prueban una
+instalación APK ni un runtime AOSP.

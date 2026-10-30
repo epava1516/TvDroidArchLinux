@@ -7,7 +7,7 @@ compartiendo kernel Linux y usando nuestra sesión Rust/Smithay, sin Waydroid.
 
 | Etapa | Trabajo concreto | Puerta de salida | Estado |
 | --- | --- | --- | --- |
-| A0 · contrato | Tipos Rust, adaptador Waydroid, catálogo y acciones del shell a través del proveedor, errores y plazos | APK real instalada, listada, lanzada y parada; boot y errores comprobados; shell sin comandos Waydroid | En curso: tipos y contrato; adaptador y migración pendientes |
+| A0 · contrato | Tipos Rust, adaptador Waydroid, catálogo y acciones del shell a través del proveedor, errores y plazos | APK real instalada, listada, lanzada y parada; boot y errores comprobados; shell sin comandos Waydroid | En curso: tipos, contrato y consulta de estado Waydroid conectada al shell; resto del adaptador pendiente |
 | A1 · plataforma | Elegir versión/API, fijar manifests y toolchain, producto x86_64, inventario/licencias, infraestructura de build | Build registrado y repetible; arranque completo sin servicios ni paquetes Waydroid | Pendiente |
 | A2 · primera APK | Binder, Bionic, ART/Zygote, servicios mínimos de paquetes/actividades y recursos; APK propia | Instalación, ventana Wayland, entrada, cierre y reinicio de APK propia; boot confirmado | Pendiente |
 | A3 · integración TV | SurfaceFlinger/HAL hacia Wayland, mando/IME, audio/vídeo, red, archivos, energía y aislamiento | Matriz funcional con formatos/sincronización y recuperación; controles de permisos | Pendiente |
@@ -23,8 +23,9 @@ compartiendo kernel Linux y usando nuestra sesión Rust/Smithay, sin Waydroid.
 5. Probar APK real y fallos en una plataforma estable; registrar qué queda sin verificar.
 6. Congelar v1 solo tras esa integración. Después definir IPC y servicio anfitrión.
 
-La etapa 1 tiene una primera implementación en android.rs y el contrato se detalla
-en CONTRATO-ANDROID.md. No constituye un proveedor AOSP operativo. Las pruebas de
+La etapa 1 tiene una primera implementación en android.rs. Las etapas 2/3
+comenzaron con status en archtv-android y su consumo desde el worker de estado.
+El contrato se detalla en CONTRATO-ANDROID.md. No constituye un proveedor AOSP operativo. Las pruebas de
 identidad/boot son unitarias; el resto requiere adaptador y evidencia de ejecución.
 
 ## Decisiones que debe resolver A1

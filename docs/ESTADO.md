@@ -146,7 +146,7 @@ reanudación de presentación. Evidencia en el informe H3 más reciente.
 
 El cliente Wayland del shell, catálogo desktop, navegación, búsqueda/teclado en
 pantalla, menús de favoritos/orden/ocultación y persistencia ya están implementados
-y compilados. Pasan doce pruebas unitarias entre núcleo y shell en la revisión actual. La prueba
+y compilados. Pasan catorce pruebas unitarias entre núcleo, adaptador Android y shell en la revisión actual. La prueba
 gráfica nativa utiliza uinput; el mando físico pertenece a H7.
 
 Graphify 0.9.97 instalado con mapa local AST/Cargo, consultas y vistas interactivas.
@@ -230,5 +230,15 @@ independiente del proveedor está en archtv-core/src/android.rs: identidad por
 paquete/perfil, metadatos, capacidades, estados, errores, plazos y operaciones.
 Se documentó el contrato y el orden A0–A5 en CONTRATO-ANDROID.md y ROADMAP-A.md.
 Pasan doce pruebas core + shell, Clippy del núcleo y los controles del repositorio.
-El adaptador Waydroid y la migración de los workers aún no están implementados;
+En ese primer avance aún faltaban el adaptador Waydroid y la migración de workers;
 A0 no se cierra y no se afirma ejecución AOSP propia.
+
+## A0: estado Android mediante adaptador
+
+Se añadió el crate archtv-android con la consulta de estado Waydroid y un ejecutor
+acotado, separado de la UI. El worker de estado consume ahora AndroidProvider.
+Pasan catorce pruebas y Clippy para núcleo, adaptador y shell. La consulta real
+contra la instalación local confirmó Stopped/boot Unknown y contenedor STOPPED.
+Las acciones, inventario y lanzamiento todavía no pasan por el contrato; las
+operaciones no implementadas devuelven Unsupported. No se inició Android ni
+se cerró A0. Ver CONTRATO-ANDROID.md y reports/a0-adapter-status/.

@@ -315,6 +315,6 @@ Cada hito requiere implementación, pruebas y evidencia. Un documento, un binari
 que solo imprime texto, un paquete instalado o un contenedor RUNNING no acreditan
 por sí mismos un compositor, una interfaz o Android funcionales.
 
-Siguiente acción en A0: implementar el adaptador Waydroid contra el contrato Rust
-y migrar los workers del shell. H6/H7 conservan sus validaciones de estabilidad
+Siguiente acción en A0: completar el adaptador Waydroid y migrar acciones e
+inventario del shell; la consulta de estado ya consume el contrato Rust. H6/H7 conservan sus validaciones de estabilidad
 y multimedia pendientes; H8/H9 mantienen las puertas descritas arriba.

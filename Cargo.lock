@@ -55,6 +55,14 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e149dc73cd30538307e7ffa2acd3d2221148eaeed4871f246657b1c3eaa1cbd2"
 
 [[package]]
+name = "archtv-android"
+version = "0.1.0"
+dependencies = [
+ "archtv-core",
+ "libc",
+]
+
+[[package]]
 name = "archtv-compositor"
 version = "0.1.0"
 dependencies = [
@@ -75,6 +83,7 @@ version = "0.1.0"
 name = "archtv-shell"
 version = "0.1.0"
 dependencies = [
+ "archtv-android",
  "archtv-core",
  "fontdue",
  "image",

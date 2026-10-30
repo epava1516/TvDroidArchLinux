@@ -1,6 +1,6 @@
 [workspace]
 resolver = "3"
-members = ["crates/archtv-core", "crates/archtv-compositor", "crates/archtv-test-client", "crates/archtv-shell"]
+members = ["crates/archtv-core", "crates/archtv-compositor", "crates/archtv-test-client", "crates/archtv-shell", "crates/archtv-android"]
 
 [workspace.package]
 version = "0.1.0"
@@ -13,6 +13,7 @@ smithay = { git = "https://github.com/Smithay/smithay", rev = "f581531d479cf2e33
 tracing = "0.1.44"
 tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
 archtv-core = { path = "crates/archtv-core" }
+archtv-android = { path = "crates/archtv-android" }
 
 [profile.dev]
 debug = 0

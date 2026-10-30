@@ -7,7 +7,7 @@
   "18": "Model",
   "23": "Shell Rust: interfaz y mediciones",
   "30": ".process_input_event",
-  "49": "SessionState",
+  "49": "RuntimeStatus",
   "50": "ErrorKind",
   "51": "89-shell-resolutions.sh",
   "52": "android.rs",
@@ -35,5 +35,13 @@
   "74": "Contrato Android A0 · borrador v1",
   "75": "99-iso-build.sh",
   "76": "Capability",
-  "77": "AppState"
+  "77": "AppState",
+  "78": "archtv-android/src/lib.rs",
+  "79": "Canvas",
+  "80": "archtv-compositor/src/main.rs",
+  "81": "model.rs",
+  "82": "Page",
+  "83": "Key",
+  "84": "SessionState",
+  "85": "Roadmap A · proveedor Android propio basado en AOSP"
 }
