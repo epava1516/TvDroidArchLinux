@@ -1,0 +1,64 @@
+{
+  "sources_sha256": {
+    "runtime/aosp/linux-services/org/archtv/aosplinux/LocalServiceBinder.java": "e3e6dfd6d41bc62944c78f3371871ea60dcf37d79ca5df0050f4010db0c8c0b4",
+    "runtime/aosp/linux-services/org/archtv/aosplinux/WindowPolicyState.java": "706b25f5904676e3464cf844208c7433e5627712c5b2ea397048ddf782c366f8",
+    "runtime/aosp/linux-services/org/archtv/aosplinux/LinuxWindowService.java": "81ba91cf080ac8e448af38471336e0c0750ee4879f262ab389a26f6e6db92d8f",
+    "runtime/apk/java/org/archtv/apkruntime/HostProfile.java": "3f62435bfe26b5bd808eb628cf953d95479e1e22b24d35bef06ee4620da31cc2",
+    "runtime/apk/java/org/archtv/apkruntime/LinuxContext.java": "a926122720fc8a8021a96cb3411d7d2fe2fe553c9d206d7e15c2ec3b1f0708d5",
+    "runtime/apk/java/org/archtv/apkruntime/AppEnvironment.java": "cce6ae1e257fd2bd6c6790e2b3ad8015dc9ba0ef336a792a99f74f48b67d621f",
+    "runtime/apk/java/org/archtv/apkruntime/ApkResources.java": "87c04cb68907652acbb858f92d071ac286b84f797c64081ac073d95066d79c4f",
+    "runtime/apk/java/org/archtv/apkruntime/IntPreferences.java": "3b28dd2fdb8b032be4d055d33599ab43c9ba95f916d85e82efe72cae9834baaf",
+    "runtime/apk/java/android/content/SharedPreferences.java": "7b486348fab60cee2f1abe90f23840553755ac85f14dbd9fca48576ae3105fc6",
+    "fixtures/aosp-window-service/WindowServiceProbe.java": "db61fdb3e475c60f99a6ccf35b33245eaafb6e05d84fcc988df3fc22f2052849",
+    "fixtures/aosp-window-service/AnimationPolicyChecks.java": "31a1b833934d6b79e4f8c1119eafb49728789483c12484632858ef656bf48309"
+  },
+  "framework_dex_sha256": "0b15ceb4f562bbeb9a10658816e8b05d838868ddbc615c3cfae752bc6384e0dd",
+  "bindings_dex_sha256": "3a4f9f9b70e9bd7488e0093591bd3b9c4d189e29bd09d5265c99bd65fc2b273d",
+  "service_jar_sha256": "067e89fb326d6cbe8d453f1aa058b02b0a7302a7669787781296d9f880e92430",
+  "dex_sha256": "b23226868e89ecd3d1fab04279a41ed3576cc463e4dad1e4e3a9ed2546519c46",
+  "commands": [
+    [
+      "/usr/lib/jvm/java-17-openjdk/bin/javac",
+      "--release",
+      "8",
+      "-classpath",
+      "/home/tv/repositorio-principal/dist/apk/window-aidl-3/bindings.jar:/home/tv/repositorio-principal/dist/apk/aosp-animation-rendernode-1/framework.jar:/home/tv/.cache/archtv/aosp-compile-tools/android-all-13.jar",
+      "-d",
+      "/home/tv/repositorio-principal/dist/apk/window-animation-rendernode-service-1/classes",
+      "/home/tv/repositorio-principal/runtime/aosp/linux-services/org/archtv/aosplinux/LocalServiceBinder.java",
+      "/home/tv/repositorio-principal/runtime/aosp/linux-services/org/archtv/aosplinux/WindowPolicyState.java",
+      "/home/tv/repositorio-principal/runtime/aosp/linux-services/org/archtv/aosplinux/LinuxWindowService.java",
+      "/home/tv/repositorio-principal/runtime/apk/java/org/archtv/apkruntime/HostProfile.java",
+      "/home/tv/repositorio-principal/runtime/apk/java/org/archtv/apkruntime/LinuxContext.java",
+      "/home/tv/repositorio-principal/runtime/apk/java/org/archtv/apkruntime/AppEnvironment.java",
+      "/home/tv/repositorio-principal/runtime/apk/java/org/archtv/apkruntime/ApkResources.java",
+      "/home/tv/repositorio-principal/runtime/apk/java/org/archtv/apkruntime/IntPreferences.java",
+      "/home/tv/repositorio-principal/runtime/apk/java/android/content/SharedPreferences.java",
+      "/home/tv/repositorio-principal/fixtures/aosp-window-service/WindowServiceProbe.java",
+      "/home/tv/repositorio-principal/fixtures/aosp-window-service/AnimationPolicyChecks.java"
+    ],
+    [
+      "/usr/lib/jvm/java-17-openjdk/bin/jar",
+      "cf",
+      "/home/tv/repositorio-principal/dist/apk/window-animation-rendernode-service-1/service.jar",
+      "-C",
+      "/home/tv/repositorio-principal/dist/apk/window-animation-rendernode-service-1/classes",
+      "."
+    ],
+    [
+      "/usr/lib/jvm/java-17-openjdk/bin/java",
+      "-cp",
+      "/home/tv/.cache/archtv/apk-build-tools/r8.jar",
+      "com.android.tools.r8.D8",
+      "--release",
+      "--min-api",
+      "28",
+      "--lib",
+      "/home/tv/.cache/archtv/apk-build-tools/android.jar",
+      "--output",
+      "/home/tv/repositorio-principal/dist/apk/window-animation-rendernode-service-1/dex",
+      "/home/tv/repositorio-principal/dist/apk/window-animation-rendernode-service-1/service.jar"
+    ]
+  ],
+  "scope": "Own Linux IWindowManager implementation: 7 host-state getters, 126 explicit unsupported methods. Original contract/Point/ServiceManager in separate verified artifacts. No window creation/rendering/global WM or APK integration from this build."
+}

@@ -103,6 +103,7 @@ try:
             service.stdin.write((command+'\n').encode());service.stdin.flush()
             wait_for(lambda:marker in (out/'window-service.log').read_text(errors='replace'),service,seconds=20)
         service_check('check 960 540 960 540 0.5','WINDOW_SERVICE_OK 960x540')
+        assert 'AOSP_ANIMATION_POLICY_OK scale=0.5 callbacks=3 interpolators=2' in (out/'window-service.log').read_text()
         service_info={'command':service_command,'system_resources_sha256':system_proof['apk_sha256'],'sha256':{str(build/'dex/classes.dex'):proof['dex_sha256'] for build,proof in zip(builds,proofs)}}
     def ready():
         text = (out/'compositor.log').read_text(errors='replace')
@@ -140,6 +141,10 @@ try:
         service_check('quit','WINDOW_SERVICE_CLOSED')
         assert service.wait(timeout=15)==0
         service_info['real_wayland_service_pass']=True
+        service_info['original_animation_policy_pass']=True
+        service_log=(out/'window-service.log').read_text()
+        service_info['view_constructed']='VIEW_CONSTRUCTOR_OK' in service_log
+        service_info['view_constructor_failures']=[line for line in service_log.splitlines() if line.startswith('VIEW_CONSTRUCTOR_BLOCKED ')]
     result = {'wayland_live_resize_pass':True, 'window_service':service_info, 'initial':[960,540], 'resized':[800,450],
         'frame_sizes':dimensions, 'command':command,
         'app_text_before':args.text_before,'app_text_after':args.text_after,

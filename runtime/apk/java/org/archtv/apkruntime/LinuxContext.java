@@ -385,7 +385,7 @@ public class LinuxContext extends android.content.Context {
         throw new UnsupportedOperationException("Unsupported Linux context API: getDisplayAdjustments");
     }
     @Override public int getDisplayId() {
-        throw new UnsupportedOperationException("Unsupported Linux context API: getDisplayId");
+        Integer id = AppEnvironment.current().virtualDisplayId; if (id == null) throw new UnsupportedOperationException("No visual display attached to this Linux context"); return id;
     }
     @Override public void updateDisplay(int p0) {
         throw new UnsupportedOperationException("Unsupported Linux context API: updateDisplay");

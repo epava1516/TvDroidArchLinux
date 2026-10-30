@@ -24,7 +24,8 @@ public final class WindowServiceProbe {
         System.setProperty("archtv.display.width",Integer.toString(first.x));
         System.setProperty("archtv.display.height",Integer.toString(first.y));
         java.nio.file.Files.createDirectories(Paths.get(args[5]));
-        AppEnvironment.initialize(Paths.get(args[3]),Paths.get(args[5]),Paths.get(args[4]));
+        AppEnvironment.initialize(Paths.get(args[3]),Paths.get(args[5]),Paths.get(args[4]),0);
+        check(AppEnvironment.current().applicationContext.getDisplayId()==0,"Actual app virtual display binding");
         android.os.Looper.prepareMainLooper();
         boolean attempted=false;
         final int[] deaths={0};endpoint.linkToDeath(()->deaths[0]++,0);
@@ -48,6 +49,7 @@ public final class WindowServiceProbe {
                     catch (LinkageError | UnsupportedOperationException | android.content.res.Resources.NotFoundException failure) {
                         System.out.println("VIEW_CONSTRUCTOR_BLOCKED "+failure);failure.printStackTrace(System.err);
                     }
+                    AnimationPolicyChecks.verify(Float.parseFloat(words[5]));
                 }
                 System.out.println("WINDOW_SERVICE_OK "+words[1]+"x"+words[2]+" initial="+initial.x+"x"+initial.y+" scale="+words[5]);
             } else if (words[0].equals("dead")) {

@@ -109,3 +109,13 @@ ContextWrapper, Application y ComponentCallbacks. El runtime exige este conjunto
 LinuxContext implementa seis hooks reales y rechaza explícitamente 126 hooks de
 servicios aún ausentes. Ver docs/CONTEXTO-AOSP-LINUX.md y reports/aosp-context-*.
 La Activity y View siguen propios; ContextImpl/LoadedApk no se han portado.
+
+
+El conjunto de 97 fuentes originales ya aplica la política de animación del host
+a ValueAnimator original y verifica sus callbacks e interpoladores Java. El
+contexto visual se asocia explícitamente al display virtual validado. View supera
+esas rutas y llega al JNI RenderNode.nCreate, aún sin portar; no se crea una View
+funcional. AOSP-ANIMACION-CONTEXTO.md y reports/aosp-animation-context/ conservan
+las pruebas Wayland, el rechazo de display en modo headless y las regresiones.
+El reloj de animación, gráficos nativos, integración APK y distribución siguen
+pendientes.

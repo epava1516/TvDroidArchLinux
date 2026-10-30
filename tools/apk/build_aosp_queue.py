@@ -126,7 +126,7 @@ run('compile-probe', [args.jdk/'bin/javac', '--release', '8', '-classpath', str(
 run('pack-original', [args.jdk/'bin/jar', 'cf', out/'queue.jar', '-C', out/'classes', '.'])
 with zipfile.ZipFile(out/'queue.jar') as archive:
     classes = sorted(name for name in archive.namelist() if name.endswith('.class'))
-    if any(not name.startswith(('android/os/', 'android/util/', 'android/net/', 'android/content/', 'android/content/pm/', 'android/app/', 'android/view/', 'android/graphics/', 'android/text/', 'android/sysprop/', 'com/android/internal/R.class', 'com/android/internal/R$', 'com/android/internal/util/', 'com/android/internal/os/', 'org/archtv/aospprobe/')) for name in classes):
+    if any(not name.startswith(('android/os/', 'android/util/', 'android/net/', 'android/content/', 'android/content/pm/', 'android/app/', 'android/view/', 'android/animation/', 'android/graphics/', 'android/text/', 'android/sysprop/', 'com/android/internal/R.class', 'com/android/internal/R$', 'com/android/internal/util/', 'com/android/internal/os/', 'org/archtv/aospprobe/')) for name in classes):
         raise SystemExit('Unexpected compile-only class in runtime artifact')
 run('dex-original', [args.jdk/'bin/java', '-cp', tool_path/'r8.jar', 'com.android.tools.r8.D8', '--release',
                      '--min-api', '28', '--lib', tool_path/'android.jar', '--output', out/'dex', out/'queue.jar'])

@@ -13,7 +13,7 @@ ActivityThread ni los servicios de Android.
 
 LinuxContext extiende el Context abstracto original. Su archivo se genera desde
 las declaraciones del framework.jar verificado y se comprueba con --check.
-Hay 132 métodos abstractos: seis delegan en estado real; los otros 126 lanzan
+Hay 132 métodos abstractos: siete tienen implementación Linux (display condicional); los otros 125 lanzan
 UnsupportedOperationException con el nombre de la API. No devuelven valores de
 éxito o servicios simulados. Los demás métodos concretos siguen siendo originales;
 las dependencias y tipos aún no portados pueden producir errores de enlace,
@@ -27,6 +27,7 @@ incluso antes de entrar en un hook.
 | getClassLoader | Classloader real del proceso que contiene runtime y APK; no aislamiento por aplicación |
 | getMainLooper | Principal original preparado por el anfitrión |
 | getApplicationContext | Instancia real de Application original, única en el proceso |
+| getDisplayId | ID virtual 0 asociado explícitamente al contexto durante el bootstrap validado con Wayland; los contextos sin display fallan explícitamente |
 
 Application se construye con su controlador original de ComponentCallbacks y se
 conecta al contexto Linux mediante attachBaseContext original de ContextWrapper.
@@ -93,3 +94,11 @@ ART 1280×720 → 1920×1080 → 1080×1920 con callbacks 0→1→2; Wayland rea
 960×540 → 800×450 con callbacks 0→1 y buffers PNG de ambos tamaños. La prueba
 Wayland usa el compositor propio anidado en Weston headless; no acredita un
 cambio de modo DRM ni sustituye las pruebas nativas del contador.
+
+
+El bootstrap experimental asocia el display virtual 0 después de resolver su
+servicio vivo y consultar sus dimensiones. La sobrecarga de AppEnvironment conserva
+null para los contextos sin display y rechaza otros IDs antes de abrir recursos.
+Se verifican el caso headless sin display, el ID inválido y el contexto visual con
+el servicio Wayland real. No proporciona todavía objetos Display/DisplayManager
+ni convierte el contexto headless en un contexto visual.

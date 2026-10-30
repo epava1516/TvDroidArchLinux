@@ -478,6 +478,76 @@
       "path": "graphics/java/android/graphics/Point.java",
       "bytes": 4406,
       "sha256": "df644b622a632a981299c5979cd23be85bf0b740c756ae1f3383782db92cab3c"
+    },
+    {
+      "path": "core/java/android/animation/ValueAnimator.java",
+      "bytes": 73554,
+      "sha256": "b32626bd528e771c2c8c9a925fc590ad6078c711938137b70c5447222254ad88"
+    },
+    {
+      "path": "core/java/android/animation/Animator.java",
+      "bytes": 27385,
+      "sha256": "8dba3b8a5954d3e829e8698ad639f6053c54d1a519489e23bc9dbb41ba4e37a5"
+    },
+    {
+      "path": "core/java/android/animation/AnimationHandler.java",
+      "bytes": 19033,
+      "sha256": "4f25922a828001d45832bd3af95bc153d05292cdddcae212c4c95303c1ad17f3"
+    },
+    {
+      "path": "core/java/android/animation/TimeInterpolator.java",
+      "bytes": 1598,
+      "sha256": "eea3b99b09619ed2b463a7c3e16e03b08e0449de5e4adcfa8f85fde29c1b855f"
+    },
+    {
+      "path": "core/java/android/view/animation/AccelerateDecelerateInterpolator.java",
+      "bytes": 1625,
+      "sha256": "135dd1f71bf8f57c6accb9b2630ca632a03cdc8a506543d6a8762a0557b02fb4"
+    },
+    {
+      "path": "core/java/android/view/animation/BaseInterpolator.java",
+      "bytes": 1179,
+      "sha256": "cb33e26481aa4ee30f600203ee5dd319137dc407addaa00458b20dd8c2de4aa3"
+    },
+    {
+      "path": "core/java/android/view/animation/Interpolator.java",
+      "bytes": 1292,
+      "sha256": "b3c62ac8f8433b9d7a3b179610c3f5ee02d3fb3c8dd2185f419201ac6e3407f2"
+    },
+    {
+      "path": "core/java/android/view/animation/LinearInterpolator.java",
+      "bytes": 1418,
+      "sha256": "e7f1721cef18c39d7ddfccbcb5aac5ed5385a73bc2fa388e51bc04a2077880c7"
+    },
+    {
+      "path": "graphics/java/android/graphics/animation/NativeInterpolator.java",
+      "bytes": 915,
+      "sha256": "33c3c6b4c3a7170c1c388945d143100f3755bc966fa1525c40d242bca59b3210"
+    },
+    {
+      "path": "graphics/java/android/graphics/animation/HasNativeInterpolator.java",
+      "bytes": 1282,
+      "sha256": "a0cb1317fd727f922b51de4a64f2d01fdb9744e7316db7a585815d72f020fc58"
+    },
+    {
+      "path": "graphics/java/android/graphics/animation/NativeInterpolatorFactory.java",
+      "bytes": 3100,
+      "sha256": "eedc0c12f90a15bc02fb48ebda98098055f5631aefb32e411fd2693ec1e66986"
+    },
+    {
+      "path": "core/java/android/util/AndroidRuntimeException.java",
+      "bytes": 1105,
+      "sha256": "848c7c68fce3c12b5420b447317097308ca051cf2e1e924d68a6456f8ec90b40"
+    },
+    {
+      "path": "core/java/android/view/ViewAnimationHostBridge.java",
+      "bytes": 1461,
+      "sha256": "23b3cc994cd5aa51678aa91bc9936ebc63558ba01bbfe678a08e09d0af7d6955"
+    },
+    {
+      "path": "graphics/java/android/graphics/RenderNode.java",
+      "bytes": 72781,
+      "sha256": "7a78c5a37e08098841ff60e3caa1e416e3aa02f86727d820d4e65f9888f04fe6"
     }
   ],
   "public_resources_sources": [
@@ -537,7 +607,21 @@
     "core/java/android/os/DeadObjectException.java",
     "core/java/android/util/AndroidException.java",
     "core/java/android/os/DeadSystemException.java",
-    "graphics/java/android/graphics/Point.java"
+    "graphics/java/android/graphics/Point.java",
+    "core/java/android/animation/ValueAnimator.java",
+    "core/java/android/animation/Animator.java",
+    "core/java/android/animation/AnimationHandler.java",
+    "core/java/android/animation/TimeInterpolator.java",
+    "core/java/android/view/animation/AccelerateDecelerateInterpolator.java",
+    "core/java/android/view/animation/BaseInterpolator.java",
+    "core/java/android/view/animation/Interpolator.java",
+    "core/java/android/view/animation/LinearInterpolator.java",
+    "graphics/java/android/graphics/animation/NativeInterpolator.java",
+    "graphics/java/android/graphics/animation/HasNativeInterpolator.java",
+    "graphics/java/android/graphics/animation/NativeInterpolatorFactory.java",
+    "core/java/android/util/AndroidRuntimeException.java",
+    "core/java/android/view/ViewAnimationHostBridge.java",
+    "graphics/java/android/graphics/RenderNode.java"
   ],
   "view_resource_inputs": [
     "core/res/res/values/attrs.xml",

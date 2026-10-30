@@ -20,6 +20,8 @@ public final class ContextProbe {
         System.load(args[1]);
         HostProfile.initialize();
         Files.createDirectories(Paths.get(args[3]));
+        try { AppEnvironment.initialize(Paths.get(args[2]),Paths.get(args[3]),null,1);throw new AssertionError("Unknown virtual display accepted"); }
+        catch (IllegalArgumentException expected) { }
         AppEnvironment.initialize(Paths.get(args[2]), Paths.get(args[3]));
         Looper.prepareMainLooper();
         try {
@@ -31,6 +33,8 @@ public final class ContextProbe {
             check(wrapper.getAssets() == base.getAssets(), "Original AssetManager identity");
             check(wrapper.getApplicationContext() == base, "Process application context");
             check(wrapper.getMainLooper() == Looper.getMainLooper(), "Real main Looper");
+            try { wrapper.getDisplayId();throw new AssertionError("Headless context invented a visual display"); }
+            catch (UnsupportedOperationException expected) { check(expected.getMessage().contains("No visual display"),"Explicit missing display"); }
             check(wrapper.getClassLoader().loadClass("org.archtv.probe.MainActivity").getClassLoader()
                     == wrapper.getClassLoader(), "Actual APK classloader");
             int id = base.getResources().getIdentifier("counter", "string", "org.archtv.probe");

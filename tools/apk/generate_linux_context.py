@@ -46,6 +46,7 @@ for line in text.splitlines():
         body = {
             'getResources': 'return AppEnvironment.current().resources.platformResources();',
             'getAssets': 'return AppEnvironment.current().resources.platformAssets();',
+            'getDisplayId': 'Integer id = AppEnvironment.current().virtualDisplayId; if (id == null) throw new UnsupportedOperationException("No visual display attached to this Linux context"); return id;',
             'getMainLooper': 'return android.os.Looper.getMainLooper();',
             'getClassLoader': 'return getClass().getClassLoader();',
             'getApplicationContext': 'return AppEnvironment.current().applicationContext;',

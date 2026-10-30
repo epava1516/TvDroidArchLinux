@@ -19,7 +19,7 @@ for item in manifest['artifacts']:
 source=root/'runtime/aosp/linux-services/org/archtv/aosplinux'
 sources=[source/name for name in ('LocalServiceBinder.java','WindowPolicyState.java','LinuxWindowService.java')]
 sources+=[root/'runtime/apk/java/org/archtv/apkruntime'/name for name in ('HostProfile.java','LinuxContext.java','AppEnvironment.java','ApkResources.java','IntPreferences.java')]
-sources+=[root/'runtime/apk/java/android/content/SharedPreferences.java',root/'fixtures/aosp-window-service/WindowServiceProbe.java']
+sources+=[root/'runtime/apk/java/android/content/SharedPreferences.java',root/'fixtures/aosp-window-service/WindowServiceProbe.java',root/'fixtures/aosp-window-service/AnimationPolicyChecks.java']
 subprocess.run(['python',str(root/'tools/apk/generate_linux_window_service.py'),'--bindings',str(bindings),'--output',str(source/'LinuxWindowService.java'),'--check'],check=True)
 out=args.output.resolve();out.mkdir(parents=True,exist_ok=False)
 for name in ('classes','dex'):(out/name).mkdir()

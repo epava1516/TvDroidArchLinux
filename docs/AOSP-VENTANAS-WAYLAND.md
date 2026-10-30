@@ -73,9 +73,11 @@ el compositor y la consulta al proveedor muerto produce DeadObjectException y un
 único callback de cierre. El contador sigue dibujando frames de ambos tamaños.
 
 En la primera configuración se intenta también new View con el mismo servicio
-precargado. WindowManagerGlobal ya resuelve window y avanza hasta ValueAnimator,
-aún ausente. El constructor falla explícitamente allí. No se repite el constructor
-para evitar confundir una inicialización global parcial con un resultado válido.
+precargado. El primer ensayo llegó a ValueAnimator ausente. El conjunto posterior
+verifica su política original y el contexto de display; avanza hasta el JNI
+RenderNode.nCreate aún pendiente. AOSP-ANIMACION-CONTEXTO.md conserva esa frontera.
+No se repite el constructor para evitar confundir una inicialización global
+parcial con un resultado válido.
 
 El servicio se prueba en un proceso ART separado del runtime de la APK. El
 bootstrap de ese servicio en Main y las operaciones de creación, sesiones,
