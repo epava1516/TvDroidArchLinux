@@ -261,6 +261,12 @@ afirmaciones de ligereza y compatibilidad se limitan a plataformas medidas.
 
 ## H8 · Paquetes y actualización
 
+Preparación en paralelo mientras H6 espera la prueba del kernel alternativo:
+recetas separadas para compositor, shell y sesión; generador de fuentes fijadas
+a un commit y SHA-256. Los artefactos de fuentes no acreditan paquetes binarios
+ni instalación. Pendientes: build limpio, auditoría de licencias transitivas y
+validación de instalación/actualización/retirada. Ver docs/PAQUETES.md.
+
 - Paquetes separados para compositor, shell y archivos de sesión.
 - Build limpio, Cargo.lock, revisión de dependencias/licencias y fuentes verificadas.
 - Separar compiladores y herramientas de prueba de la imagen de ejecución.

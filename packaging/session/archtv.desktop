@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Arch TV
+Comment=Lightweight TV session using Rust and Smithay
+Exec=/usr/bin/archtv-session
+TryExec=/usr/bin/archtv-session
+Type=Application
+DesktopNames=ArchTV

@@ -223,10 +223,10 @@
     "semantic_hash": "577f47ff30b8d605d5f59c96424dfd85"
   },
   "scripts/check.sh": {
-    "mtime": 1793315758.4783683,
-    "seen": 1793318729.4915667,
-    "ast_hash": "8efb5703263d38029049b47266218991",
-    "semantic_hash": "8efb5703263d38029049b47266218991"
+    "mtime": 1793328222.644401,
+    "seen": 1793328235.618942,
+    "ast_hash": "0925553e77a509193290d08142fd8f03",
+    "semantic_hash": ""
   },
   "scripts/lib/common.sh": {
     "mtime": 1793303265.2197359,
@@ -283,9 +283,9 @@
     "semantic_hash": ""
   },
   "ROADMAP.md": {
-    "mtime": 1793325169.5073133,
-    "seen": 1793325176.5651429,
-    "ast_hash": "40df9d13b9c39b7cc7d057c9b9a2636a",
+    "mtime": 1793328222.6465106,
+    "seen": 1793328235.619012,
+    "ast_hash": "93244aeff57fc7a5507bf9ee1e483ffd",
     "semantic_hash": ""
   },
   "THIRD_PARTY.md": {
@@ -544,6 +544,24 @@
     "mtime": 1793327777.95735,
     "seen": 1793327972.0172458,
     "ast_hash": "38fe251794105e2daf2abf718dde2534",
+    "semantic_hash": ""
+  },
+  "packaging/session/archtv-session": {
+    "mtime": 1793328147.0187752,
+    "seen": 1793328235.6187654,
+    "ast_hash": "52a0580501ee8aa83772682bd7c6c81a",
+    "semantic_hash": ""
+  },
+  "scripts/97-package-source.sh": {
+    "mtime": 1793328147.0537744,
+    "seen": 1793328235.6189363,
+    "ast_hash": "ba858809fdf9c1deecf781572cb8955d",
+    "semantic_hash": ""
+  },
+  "docs/PAQUETES.md": {
+    "mtime": 1793328222.6739333,
+    "seen": 1793328235.6190605,
+    "ast_hash": "bce44b864cfe211f96cbe820391f1e9f",
     "semantic_hash": ""
   }
 }

@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+set -euo pipefail
+if [[ ${1:-} == --help ]]; then
+  echo 'Arch TV DRM session. Optional: ARCHTV_DRM_DEVICE=/dev/dri/cardN, ARCHTV_MODE=1920x1080.'
+  exit 0
+fi
+(($# == 0)) || { echo 'Unsupported arguments; use --help.' >&2; exit 2; }
+if [[ -z ${DBUS_SESSION_BUS_ADDRESS:-} ]]; then
+  exec dbus-run-session -- "$0"
+fi
+device="${ARCHTV_DRM_DEVICE:-}"
+if [[ -z "$device" ]]; then
+  for status in /sys/class/drm/card*-*/status; do
+    [[ -r "$status" ]] || continue
+    if [[ $(cat "$status") == connected ]]; then
+      connector=${status%/status}
+      connector=${connector##*/}
+      device="/dev/dri/${connector%%-*}"
+      break
+    fi
+  done
+fi
+[[ -n "$device" && -c "$device" ]] || { echo 'No connected DRM device. Set ARCHTV_DRM_DEVICE explicitly.' >&2; exit 1; }
+export XDG_SESSION_TYPE=wayland XDG_CURRENT_DESKTOP=ArchTV XDG_SESSION_DESKTOP=archtv
+unset DISPLAY WAYLAND_DISPLAY WAYLAND_SOCKET ARCHTV_CONTROL_FD
+args=(--drm "$device" --shell)
+if [[ -n ${ARCHTV_MODE:-} ]]; then args+=(--mode "$ARCHTV_MODE"); fi
+exec setpriv --inh-caps=-all --ambient-caps=-all /usr/bin/archtv-compositor \
+  "${args[@]}" -- /usr/bin/archtv-shell

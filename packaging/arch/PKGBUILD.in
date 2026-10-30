@@ -1,0 +1,55 @@
+# Generated from committed project sources by scripts/97-package-source.sh.
+pkgbase=archtv
+pkgname=(archtv-compositor archtv-shell archtv-session)
+pkgver=@PKGVER@
+pkgrel=1
+pkgdesc='Rust and Smithay television session'
+arch=('x86_64')
+url='https://github.com/epava1516/TvDroidArchLinux'
+license=('MIT')
+makedepends=('rust>=1.87' 'pkgconf' 'seatd' 'systemd-libs' 'libinput' 'libxkbcommon' 'pixman' 'wayland' 'mesa' 'libglvnd')
+source=("archtv-$pkgver.tar.gz")
+sha256sums=('@SOURCE_SHA256@')
+options=('!debug')
+
+prepare() {
+  export CARGO_HOME="$srcdir/cargo-home"
+  cd "$srcdir/archtv-$pkgver"
+  cargo fetch --locked --target x86_64-unknown-linux-gnu
+}
+build() {
+  export CARGO_HOME="$srcdir/cargo-home" CARGO_TARGET_DIR="$srcdir/target"
+  cd "$srcdir/archtv-$pkgver"
+  cargo build --frozen --release --jobs 1 -p archtv-compositor -p archtv-shell
+}
+check() {
+  export CARGO_HOME="$srcdir/cargo-home" CARGO_TARGET_DIR="$srcdir/target"
+  cd "$srcdir/archtv-$pkgver"
+  cargo test --frozen --release --jobs 1 -p archtv-core -p archtv-shell
+}
+_license_files() {
+  install -Dm644 "$srcdir/archtv-$pkgver/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 "$srcdir/archtv-$pkgver/THIRD_PARTY.md" "$pkgdir/usr/share/licenses/$pkgname/THIRD_PARTY.md"
+  install -dm755 "$pkgdir/usr/share/licenses/$pkgname/notices"
+  install -m644 "$srcdir/archtv-$pkgver/licenses/"* "$pkgdir/usr/share/licenses/$pkgname/notices/"
+}
+package_archtv-compositor() {
+  pkgdesc='Wayland TV compositor using Rust and Smithay'
+  depends=('glibc' 'gcc-libs' 'seatd' 'systemd-libs' 'libinput' 'libxkbcommon' 'pixman' 'wayland' 'mesa' 'libglvnd')
+  install -Dm755 "$srcdir/target/release/archtv-compositor" "$pkgdir/usr/bin/archtv-compositor"
+  _license_files
+}
+package_archtv-shell() {
+  pkgdesc='Native Rust TV application launcher'
+  depends=('glibc' 'gcc-libs' 'wayland' 'libxkbcommon' 'ttf-dejavu')
+  optdepends=('wireplumber: volume controls through wpctl' 'networkmanager: network controls through nmcli' 'waydroid: Android application backend' 'foot: terminal desktop entries')
+  install -Dm755 "$srcdir/target/release/archtv-shell" "$pkgdir/usr/bin/archtv-shell"
+  _license_files
+}
+package_archtv-session() {
+  pkgdesc='Session entry and launcher for Arch TV'
+  depends=("archtv-compositor=$pkgver-$pkgrel" "archtv-shell=$pkgver-$pkgrel" 'bash' 'dbus' 'util-linux')
+  install -Dm755 "$srcdir/archtv-$pkgver/packaging/session/archtv-session" "$pkgdir/usr/bin/archtv-session"
+  install -Dm644 "$srcdir/archtv-$pkgver/packaging/session/archtv.desktop" "$pkgdir/usr/share/wayland-sessions/archtv.desktop"
+  _license_files
+}
