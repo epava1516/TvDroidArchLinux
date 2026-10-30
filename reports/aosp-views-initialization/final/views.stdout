@@ -1,0 +1,12 @@
+VIEW_STATESET_OK masks=1024
+VIEW_LINKAGE_BEGIN android.view.View
+VIEW_LINKAGE_INITIALIZED android.view.View
+VIEW_LINKAGE_LOADED android.view.View constructors=4
+VIEW_MEASUREMENT_HELPERS_OK
+VIEW_LINKAGE_BEGIN android.view.ViewGroup
+VIEW_LINKAGE_INITIALIZED android.view.ViewGroup
+VIEW_LINKAGE_LOADED android.view.ViewGroup constructors=4
+VIEW_LINKAGE_BEGIN android.view.ContextThemeWrapper
+VIEW_LINKAGE_INITIALIZED android.view.ContextThemeWrapper
+VIEW_LINKAGE_LOADED android.view.ContextThemeWrapper constructors=3
+VIEW_LINKAGE_DIAGNOSTIC_DONE

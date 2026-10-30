@@ -23,7 +23,7 @@ Los destinos deben ser nuevos. Este conjunto no sustituye el runtime de las APK:
 contiene View/ViewGroup originales que entran en conflicto con las clases propias
 del prototipo. No debe combinarse con el DEX anterior para afirmar un port.
 
-## Resultado observado
+## Primer diagnóstico conservado
 
 reports/aosp-views-linkage/ conserva procedencia, compilación e intento de carga
 real en ART. ContextThemeWrapper se inicializa y resuelve sus tres constructores
@@ -35,7 +35,7 @@ interfaz funcional; todavía no se construye ningún objeto View.
 El inventario externo enumera referencias android.* y com.android.* ausentes de
 este DEX completo. Es estático: incluye rutas no ejecutadas y no es un cierre de
 carga ni una lista de servicios obligatorios. Las cabeceras compiladas muestran
-estas interfaces directas todavía ausentes:
+estas interfaces directas ausentes en aquel primer conjunto:
 
 | Clase | Interfaces originales pendientes |
 | --- | --- |
@@ -58,3 +58,42 @@ la frontera gráfica y verificar measure/layout/draw y entrada. Mantener el
 contador y la APK de métricas como regresión, hasta poder retirar sus View,
 ViewGroup, TextView y Activity propios. Dibujado, ViewRootImpl, Window, widgets,
 accesibilidad e integración de APK siguen abiertos.
+
+
+## Inicialización original y estados de View
+
+El conjunto posterior añade las fuentes originales de Drawable, KeyEvent,
+AccessibilityEventSource, ViewParent, ViewManager, StateSet, Property,
+FloatProperty, Color y ActionMode. No se modifican ni se extraen sus interfaces
+como sustitutos parciales: se compilan las clases originales completas.
+
+StateSet necesita R.styleable.ViewDrawableStates. view_resource_bindings.py genera
+únicamente ese binding desde attrs.xml y public-final.xml originales de la misma
+revisión, ambos con tamaño y SHA-256 fijados. Los diez IDs se ordenan por ID de
+recurso. ResourceBindingCheck compara el array generado con el de la referencia
+Android verificada, en classloaders JVM separados durante el build. La comparación
+es obligatoria; no se copia R ni otro bytecode de esa referencia al runtime.
+
+Este binding no es framework-res.apk ni proporciona estilos/temas o las otras
+tablas R.styleable. Las solicitudes a campos ausentes seguirán fallando. El JAR
+framework incluye el binding generado; el comprobador JVM queda fuera de él y
+del DEX.
+
+El diagnóstico ART comprueba las 1.024 combinaciones de StateSet, el orden de
+IDs, coincidencias positivas/negativas y el rechazo de la máscara 1024. Prueba
+también las funciones estáticas originales MeasureSpec, resolveSize,
+resolveSizeAndState y getDefaultSize, antes de construir un contexto de vistas.
+Esto verifica algoritmos originales; todavía no acredita measure/layout de un
+objeto View, su dibujo ni la compatibilidad según targetSdk de una aplicación.
+
+Las evidencias posteriores se guardan en reports/aosp-views-initialization/.
+La ejecución previa sin binding se conserva allí como frontera de diagnóstico;
+el resultado final y sus logs distinguen inicialización y resolución de firmas.
+
+El resultado final carga e inicializa las tres clases: View (cuatro constructores
+públicos), ViewGroup (cuatro) y ContextThemeWrapper (tres). Pasan StateSet y los
+helpers de tamaño. El conjunto conserva 67 fuentes Java originales, los cuatro
+bindings sysprop previos y el nuevo binding R generado desde XML. Sigue pendiente
+invocar un constructor de View con contexto real y resolver ViewConfiguration,
+RenderNode/JNI y recursos de sistema. No se ha retirado la interfaz propia del
+runtime de las APK.

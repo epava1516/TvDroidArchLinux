@@ -1,0 +1,7 @@
+VIEW_LINKAGE_BEGIN android.view.View
+VIEW_LINKAGE_BLOCKED android.view.View java.lang.NoClassDefFoundError: Failed resolution of: Landroid/util/StateSet;
+VIEW_LINKAGE_BEGIN android.view.ViewGroup
+VIEW_LINKAGE_BLOCKED android.view.ViewGroup java.lang.VerifyError: Rejecting class android.view.ViewGroup that attempts to sub-type erroneous class android.view.View (declaration of 'android.view.ViewGroup' appears in /home/tv/repositorio-principal/dist/apk/aosp-views-interfaces-1/dex/classes.dex)
+VIEW_LINKAGE_BEGIN android.view.ContextThemeWrapper
+VIEW_LINKAGE_LOADED android.view.ContextThemeWrapper constructors=3
+VIEW_LINKAGE_DIAGNOSTIC_DONE

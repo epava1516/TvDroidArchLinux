@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 import subprocess
 import zipfile
+from view_resource_bindings import generate as generate_view_bindings
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--sources', type=Path, required=True)
@@ -59,7 +60,7 @@ if args.with_public_resources:
 if args.with_context:
     paths += manifest['context_sources']
 if args.with_views:
-    paths += ['core/java/android/view/'+name+'.java' for name in ('View', 'ViewGroup', 'ContextThemeWrapper')]
+    paths += manifest['view_sources']
 sources = []
 for path in paths:
     item = next(item for item in manifest['files'] if item['path'] == path)
@@ -97,6 +98,16 @@ run('pack-private-declarations', [args.jdk/'bin/jar', 'cf', out/'compile-only.ja
 boot = ':'.join(str(path) for path in [out/'compile-only.jar', reference_path, tool_path/'android.jar'])
 run('compile-original', [args.jdk/'bin/javac', '-source', '8', '-target', '8', '-bootclasspath', boot,
                          '-d', out/'classes', *sources])
+view_bindings = {}
+if args.with_views:
+    generated_source, view_bindings = generate_view_bindings(args.sources, manifest, out/'generated')
+    run('compile-view-resource-binding', [args.jdk/'bin/javac', '--release', '8', '-d', out/'classes', generated_source])
+    binding_check = root/'fixtures/aosp-view-bindings/ResourceBindingCheck.java'
+    (out/'binding-check').mkdir()
+    run('compile-view-binding-check', [args.jdk/'bin/javac', '--release', '8', '-d', out/'binding-check', binding_check])
+    run('verify-view-resource-binding', [args.jdk/'bin/java', '-cp', out/'binding-check', 'ResourceBindingCheck', out/'classes', reference_path])
+    view_bindings['reference_comparison_pass'] = True
+    view_bindings['check_source_sha256'] = hashlib.sha256(binding_check.read_bytes()).hexdigest()
 prebuilt_bindings = {}
 if args.with_public_resources:
     prebuilt_bindings = json.loads((root/'runtime/aosp/prebuilt-bindings.json').read_text())
@@ -115,7 +126,7 @@ run('compile-probe', [args.jdk/'bin/javac', '--release', '8', '-classpath', str(
 run('pack-original', [args.jdk/'bin/jar', 'cf', out/'queue.jar', '-C', out/'classes', '.'])
 with zipfile.ZipFile(out/'queue.jar') as archive:
     classes = sorted(name for name in archive.namelist() if name.endswith('.class'))
-    if any(not name.startswith(('android/os/', 'android/util/', 'android/net/', 'android/content/', 'android/content/pm/', 'android/app/', 'android/view/', 'android/graphics/', 'android/text/', 'android/sysprop/', 'com/android/internal/util/', 'com/android/internal/os/', 'org/archtv/aospprobe/')) for name in classes):
+    if any(not name.startswith(('android/os/', 'android/util/', 'android/net/', 'android/content/', 'android/content/pm/', 'android/app/', 'android/view/', 'android/graphics/', 'android/text/', 'android/sysprop/', 'com/android/internal/R.class', 'com/android/internal/R$', 'com/android/internal/util/', 'com/android/internal/os/', 'org/archtv/aospprobe/')) for name in classes):
         raise SystemExit('Unexpected compile-only class in runtime artifact')
 run('dex-original', [args.jdk/'bin/java', '-cp', tool_path/'r8.jar', 'com.android.tools.r8.D8', '--release',
                      '--min-api', '28', '--lib', tool_path/'android.jar', '--output', out/'dex', out/'queue.jar'])
@@ -126,6 +137,7 @@ run('dex-original', [args.jdk/'bin/java', '-cp', tool_path/'r8.jar', 'com.androi
     'framework_jar_sha256': hashlib.sha256((out/'framework.jar').read_bytes()).hexdigest(),
     'compile_reference': reference,
     'prebuilt_bindings': prebuilt_bindings,
+    'view_resource_bindings': view_bindings,
     'compile_only_declarations_sha256': {str(path.relative_to(root)): hashlib.sha256(path.read_bytes()).hexdigest() for path in stubs},
     'probes_sha256': {str(path.relative_to(root)): hashlib.sha256(path.read_bytes()).hexdigest() for path in probes},
     'runtime_classes': classes, 'commands': commands,

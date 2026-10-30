@@ -1,0 +1,18 @@
+// Generated from pinned AOSP attrs.xml and public-final.xml.
+package com.android.internal;
+public final class R {
+  public static final class styleable {
+    public static final int[] ViewDrawableStates = new int[] {
+      0x0101009c, // state_focused
+      0x0101009d, // state_window_focused
+      0x0101009e, // state_enabled
+      0x010100a1, // state_selected
+      0x010100a7, // state_pressed
+      0x010102fe, // state_activated
+      0x0101031b, // state_accelerated
+      0x01010367, // state_hovered
+      0x01010368, // state_drag_can_accept
+      0x01010369, // state_drag_hovered
+    };
+  }
+}

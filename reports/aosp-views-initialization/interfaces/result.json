@@ -1,0 +1,31 @@
+{
+  "diagnostic_completed": true,
+  "all_three_classes_linked": false,
+  "loaded": [
+    "VIEW_LINKAGE_LOADED android.view.ContextThemeWrapper constructors=3"
+  ],
+  "blocked": [
+    "VIEW_LINKAGE_BLOCKED android.view.View java.lang.NoClassDefFoundError: Failed resolution of: Landroid/util/StateSet;",
+    "VIEW_LINKAGE_BLOCKED android.view.ViewGroup java.lang.VerifyError: Rejecting class android.view.ViewGroup that attempts to sub-type erroneous class android.view.View (declaration of 'android.view.ViewGroup' appears in /home/tv/repositorio-principal/dist/apk/aosp-views-interfaces-1/dex/classes.dex)"
+  ],
+  "command": [
+    "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+    "--64",
+    "--no-compile",
+    "--",
+    "-Xint",
+    "-Xcheck:jni",
+    "-cp",
+    "/home/tv/repositorio-principal/dist/apk/aosp-views-interfaces-1/dex/classes.dex",
+    "org.archtv.aospprobe.ViewLinkageProbe",
+    "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+    "/home/tv/repositorio-principal/dist/apk/androidfw-clang-1/libarchtv_resources_linux.so"
+  ],
+  "sha256": {
+    "/home/tv/repositorio-principal/dist/apk/aosp-views-interfaces-1/dex/classes.dex": "b22d4f1eb9322a3f6a6e207be58207ab8cfe2735fb81f33a5a36882fd6196843",
+    "/home/tv/repositorio-principal/fixtures/aosp-views/ViewLinkageProbe.java": "037deb4bf3ceaaafa2e9e6062c9f4aa4a591715a8103ebe1aeb9a88d50a06c2c",
+    "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so": "bf3165f74bd98d7fcb0f7dd0edb1ec573b3e7ee23e445212ca7ddd22e202bd56",
+    "/home/tv/repositorio-principal/dist/apk/androidfw-clang-1/libarchtv_resources_linux.so": "7e6130020a9ccc8a6efe2ab4cca335c558c4dda58d7cd4860df00f90e735012d"
+  },
+  "scope": "Original View/ViewGroup/ContextThemeWrapper compiled from pinned sources. ART initialization and public constructor-signature resolution only, no full reference on runtime classpath. Linkage failures are recorded as incomplete work; no View object, rendering, input or APK integration proved."
+}

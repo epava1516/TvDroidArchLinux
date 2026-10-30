@@ -323,6 +323,66 @@
       "path": "core/java/android/content/ComponentCallbacksController.java",
       "bytes": 4201,
       "sha256": "119997d74fd27ffb6be6076ee47098375feadae27020d43dc6174bf86168a724"
+    },
+    {
+      "path": "graphics/java/android/graphics/drawable/Drawable.java",
+      "bytes": 67302,
+      "sha256": "e3a8ec29bea0557928fb459b4f28c06bcaff404ff4268627405a8d2657b2625b"
+    },
+    {
+      "path": "core/java/android/view/KeyEvent.java",
+      "bytes": 134791,
+      "sha256": "287780a6cd1492a83fad1e529d56cb44102b37f555ba7baf0701c0cb92be7de3"
+    },
+    {
+      "path": "core/java/android/view/accessibility/AccessibilityEventSource.java",
+      "bytes": 2396,
+      "sha256": "88966b42e372fd04dc4daecf07f3f6c311e66fe4026fc9d3a8f072760f40b7f1"
+    },
+    {
+      "path": "core/java/android/view/ViewParent.java",
+      "bytes": 32792,
+      "sha256": "5d7330a6be18d7d8f8f668fe100d549c7943d5060e131ee012a6faebd3f69b03"
+    },
+    {
+      "path": "core/java/android/view/ViewManager.java",
+      "bytes": 1690,
+      "sha256": "8bb4f0d4c0c235767b77a5a281fe87bdff8f55e9abd3ecd8f578d0663974324c"
+    },
+    {
+      "path": "core/java/android/util/StateSet.java",
+      "bytes": 10547,
+      "sha256": "4e1243c35a75631cb059ab128ce28895f2d203c1841f0de2c4f585f1f0d02eef"
+    },
+    {
+      "path": "core/java/android/util/Property.java",
+      "bytes": 4349,
+      "sha256": "63eafe3b00c60817c4643f9b323e354d0dfe469d375bb188c9d58b163544b3cb"
+    },
+    {
+      "path": "core/java/android/util/FloatProperty.java",
+      "bytes": 1579,
+      "sha256": "c76234f48e03d4fca0448ec93540d6d8c7f1259e2cac4f6bc6f4c27fbbdf1dff"
+    },
+    {
+      "path": "graphics/java/android/graphics/Color.java",
+      "bytes": 62119,
+      "sha256": "011a83010ada5569f3e4b95bb6be3dd03e39f313cbdd84540f39a81853cd5cac"
+    },
+    {
+      "path": "core/res/res/values/attrs.xml",
+      "bytes": 557059,
+      "sha256": "9a3e2d116b6d1b65fbbaf08fc75615b0bb797a0455a59469b9006a53918e7d8f"
+    },
+    {
+      "path": "core/res/res/values/public-final.xml",
+      "bytes": 222190,
+      "sha256": "a6bcbf7001395bedd83e15f27dc4b89d25819810c3c225ad6e271a64393b3d4c"
+    },
+    {
+      "path": "core/java/android/view/ActionMode.java",
+      "bytes": 13240,
+      "sha256": "d0530eecc7461ad0d7897866a96d396fbbfcccfd22abaf69180e1da308f3498b"
     }
   ],
   "public_resources_sources": [
@@ -352,5 +412,24 @@
     "core/java/android/content/ComponentCallbacks.java",
     "core/java/android/content/ComponentCallbacks2.java",
     "core/java/android/content/ComponentCallbacksController.java"
+  ],
+  "view_sources": [
+    "core/java/android/view/View.java",
+    "core/java/android/view/ViewGroup.java",
+    "core/java/android/view/ContextThemeWrapper.java",
+    "graphics/java/android/graphics/drawable/Drawable.java",
+    "core/java/android/view/KeyEvent.java",
+    "core/java/android/view/accessibility/AccessibilityEventSource.java",
+    "core/java/android/view/ViewParent.java",
+    "core/java/android/view/ViewManager.java",
+    "core/java/android/util/StateSet.java",
+    "core/java/android/util/Property.java",
+    "core/java/android/util/FloatProperty.java",
+    "graphics/java/android/graphics/Color.java",
+    "core/java/android/view/ActionMode.java"
+  ],
+  "view_resource_inputs": [
+    "core/res/res/values/attrs.xml",
+    "core/res/res/values/public-final.xml"
   ]
 }

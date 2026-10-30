@@ -1,0 +1,37 @@
+{
+  "diagnostic_completed": true,
+  "all_three_classes_linked": true,
+  "original_stateset_masks_checked": 1024,
+  "original_measurement_helpers_pass": true,
+  "initialized": [
+    "VIEW_LINKAGE_INITIALIZED android.view.View",
+    "VIEW_LINKAGE_INITIALIZED android.view.ViewGroup",
+    "VIEW_LINKAGE_INITIALIZED android.view.ContextThemeWrapper"
+  ],
+  "loaded": [
+    "VIEW_LINKAGE_LOADED android.view.View constructors=4",
+    "VIEW_LINKAGE_LOADED android.view.ViewGroup constructors=4",
+    "VIEW_LINKAGE_LOADED android.view.ContextThemeWrapper constructors=3"
+  ],
+  "blocked": [],
+  "command": [
+    "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+    "--64",
+    "--no-compile",
+    "--",
+    "-Xint",
+    "-Xcheck:jni",
+    "-cp",
+    "/home/tv/repositorio-principal/dist/apk/aosp-views-bindings-actionmode-1/dex/classes.dex",
+    "org.archtv.aospprobe.ViewLinkageProbe",
+    "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+    "/home/tv/repositorio-principal/dist/apk/androidfw-clang-1/libarchtv_resources_linux.so"
+  ],
+  "sha256": {
+    "/home/tv/repositorio-principal/dist/apk/aosp-views-bindings-actionmode-1/dex/classes.dex": "a05344b11ae7b97a0d235fa5f3b892c479472821bbbcd8d70f8042b386ec5225",
+    "/home/tv/repositorio-principal/fixtures/aosp-views/ViewLinkageProbe.java": "642e0b24d133fe00ccb881051528040ee2b99dbc107b3e52176cc327e85c8f93",
+    "/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so": "bf3165f74bd98d7fcb0f7dd0edb1ec573b3e7ee23e445212ca7ddd22e202bd56",
+    "/home/tv/repositorio-principal/dist/apk/androidfw-clang-1/libarchtv_resources_linux.so": "7e6130020a9ccc8a6efe2ab4cca335c558c4dda58d7cd4860df00f90e735012d"
+  },
+  "scope": "Pinned original View/ViewGroup/ContextThemeWrapper ART initialization and public constructor-signature resolution, StateSet masks/matching and static measurement helpers. Generated state binding checked at build time; no full reference on runtime classpath. Linkage failures remain incomplete work. No View object, instance measure/layout, rendering, input or APK integration proved."
+}

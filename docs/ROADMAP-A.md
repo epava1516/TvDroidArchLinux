@@ -168,3 +168,10 @@ El port de vistas dispone ya de un modo de compilación de View/ViewGroup y
 ContextThemeWrapper originales. El diagnóstico ART deja explícito que sólo se
 carga ContextThemeWrapper: las otras dos clases y su integración siguen
 pendientes. Ver AOSP-VISTAS-LINUX.md; no cambia las puertas A2/A3 del port.
+
+
+El diagnóstico posterior ya inicializa View/ViewGroup/ContextThemeWrapper
+originales, con pruebas de StateSet y helpers de tamaño sobre ART. Se genera el
+binding de estados desde XML AOSP original, sin añadir bytecode de la referencia.
+Ver reports/aosp-views-initialization/. La construcción y dibujo de View original
+y la sustitución de la jerarquía propia siguen abiertos.

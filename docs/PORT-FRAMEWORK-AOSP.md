@@ -132,3 +132,11 @@ conjunto anterior. La carga real en ART sólo completa ContextThemeWrapper;
 View/ViewGroup siguen bloqueadas. AOSP-VISTAS-LINUX.md y
 reports/aosp-views-linkage/ registran el diagnóstico y las dependencias estáticas.
 Todavía no hay objeto View original ni sustitución de la interfaz del prototipo.
+
+
+El conjunto ampliado de 67 fuentes originales ya inicializa View, ViewGroup y
+ContextThemeWrapper en ART sin la referencia completa. Pasa la prueba de 1.024
+combinaciones de StateSet y los helpers estáticos de medida. Un binding mínimo
+R.styleable se genera desde XML AOSP y se contrasta durante el build; no sustituye
+los recursos de sistema. Ver reports/aosp-views-initialization/. Construcción de
+objetos, dibujo e integración en las APK siguen pendientes.
