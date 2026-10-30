@@ -1,6 +1,6 @@
-# Shell Rust: prototipo de dibujo
+# Shell Rust: interfaz y mediciones
 
-H5 está en curso. El shell ya es un cliente Wayland interactivo, con catálogo
+H5 está comprobado en esta VM. El shell ya es un cliente Wayland interactivo, con catálogo
 local de aplicaciones y operaciones reales. Mantiene un modo de dibujo aislado
 para comparar bibliotecas y resoluciones. Las primeras capturas de reports/h5/
 son una escena de laboratorio; las de reports/h5-interactive/ proceden del
@@ -8,7 +8,7 @@ cliente interactivo real con un catálogo de prueba explícito.
 
 ## Decisión provisional
 
-- Smithay Client Toolkit y SHM para la futura conexión Wayland del shell.
+- Smithay Client Toolkit y SHM para la conexión Wayland del shell.
 - tiny-skia 0.11.4 para formas y rasterizado CPU.
 - fontdue 0.9.5 y DejaVu Sans del sistema para texto y caché de glifos.
 - Espacio de diseño 1920×1080, escalado a 720p/1080p/4K.
@@ -32,18 +32,19 @@ la codificación PNG; la medida del proceso sí la incluye.
 El máximo RSS del proceso no equivale a PSS en reposo ni al consumo de la sesión.
 No son tiempos de entrada a pantalla, ni una demostración de 60 fps.
 
-## Composición provisional
+## Composición medida
 
-La referencia elegida sigue siendo [Fire TV 2026](REFERENCIAS-FIRE-TV.md): navegación
-superior, destacado amplio, fila de tarjetas y fila compacta de aplicaciones.
-El prototipo utiliza identidad Arch TV, texto local y arte vectorial original.
-No incorpora carteles comerciales ni presenta servicios de contenidos como disponibles.
+La referencia elegida es [Fire TV 2026](REFERENCIAS-FIRE-TV.md). La cabecera usa
+ocho iconos compactos; el inicio seleccionado ocupa 66×66 px. Las tarjetas
+empiezan en y=608, las apps en y=816 y el panel inferior en y=922, sobre 1080 px.
+Las medidas y sus límites están en [COMPARACION-FIRE-TV.md](COMPARACION-FIRE-TV.md).
+Los destinos representan funciones existentes: menú, búsqueda, inicio, apps,
+recientes, Linux, Android y ajustes.
 
-La navegación ocupa la franja superior. El destacado ocupa aproximadamente el
-primer 57% de altura; las tarjetas empiezan en y=620 y las apps en y=898, sobre
-1080 píxeles. Son medidas del prototipo, no medidas publicadas por Amazon.
-Hace falta comparar con la captura principal normalizada y con estados de foco;
-no se ha demostrado aún una semejanza precisa con Fire TV.
+El fondo cinematográfico original está incluido en assets/hero-home.png; se
+decodifica en el worker y se conserva un fondo escalado en caché. Los controles
+y los iconos de navegación se dibujan en Rust. El catálogo muestra aplicaciones
+locales; los nombres de prueba pertenecen solo al ensayo aislado.
 
 ## Validación interactiva
 
@@ -57,8 +58,9 @@ El catálogo y las preferencias de la prueba están aislados de los personales.
 Después de matar el shell se comprueba un nuevo primer frame/foco, la carga de
 dos favoritos y un reciente y una nueva captura. El arranque sigue funcionando
 con IPv4/IPv6 denegados y sin Android. Las pruebas usan teclado uinput, no un
-mando físico. Pendientes: cotejo visual medido y resoluciones interactivas
-restantes. Los tiempos de la tabla inferior son del prototipo aislado original,
+mando físico. El cotejo visual medido se conserva en reports/h5-layout/. La prueba
+89 comprueba buffers y presentación del shell real a distintas resoluciones;
+la interacción completa a 1080p se verifica con la prueba 88. Los tiempos de la tabla inferior son del prototipo aislado original,
 no del cliente interactivo ni de la presentación completa.
 
 ## Primer resultado del renderer optimizado

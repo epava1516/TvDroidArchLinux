@@ -8,6 +8,8 @@ pub struct Canvas {
     font: Font,
     glyphs: HashMap<(char, u16), (Metrics, Vec<u8>)>,
     scale: f32,
+    pub(crate) home_background: Option<Pixmap>,
+    pub(crate) wallpaper: Option<std::sync::Arc<Pixmap>>,
 }
 impl Canvas {
     pub fn scale(&self) -> f32 {
@@ -19,6 +21,8 @@ impl Canvas {
             font: Font::from_bytes(font, FontSettings::default()).map_err(str::to_string)?,
             glyphs: HashMap::new(),
             scale: width as f32 / 1920.0,
+            home_background: None,
+            wallpaper: None,
         })
     }
     pub fn rect(&mut self, x: f32, y: f32, w: f32, h: f32, color: [u8; 4]) {

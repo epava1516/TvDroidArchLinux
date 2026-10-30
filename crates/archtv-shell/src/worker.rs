@@ -15,6 +15,7 @@ use std::{
 pub enum Event {
     Loaded(Vec<Application>, Settings, String),
     Icon(String, Option<tiny_skia::Pixmap>),
+    Wallpaper(Option<tiny_skia::Pixmap>),
     Status {
         volume: String,
         network: String,
@@ -56,6 +57,10 @@ pub fn start() -> Workers {
             let apps = discover(&dirs, &locale);
             let (settings, notice) = load_settings(&path);
             if tx.send(Event::Loaded(apps, settings, notice)).is_err() {
+                return;
+            }
+            let wallpaper = decode_wallpaper(include_bytes!("../assets/hero-home.png")).ok();
+            if tx.send(Event::Wallpaper(wallpaper)).is_err() {
                 return;
             }
             while !stopped.load(Ordering::Relaxed) {
@@ -519,6 +524,26 @@ fn decode_icon(path: &Path) -> Result<tiny_skia::Pixmap, String> {
             .ok_or_else(|| "icon pixmap".into())
     }
 }
+
+fn decode_wallpaper(bytes: &[u8]) -> Result<tiny_skia::Pixmap, String> {
+    let mut reader = image::ImageReader::new(std::io::Cursor::new(bytes))
+        .with_guessed_format()
+        .map_err(|error| error.to_string())?;
+    let mut limits = image::Limits::default();
+    limits.max_image_width = Some(4096);
+    limits.max_image_height = Some(2160);
+    limits.max_alloc = Some(64 * 1024 * 1024);
+    reader.limits(limits);
+    let image = reader
+        .decode()
+        .map_err(|error| error.to_string())?
+        .resize_to_fill(1920, 1080, image::imageops::FilterType::Triangle)
+        .to_rgba8();
+    let data = image.into_raw();
+    tiny_skia::Pixmap::from_vec(data, tiny_skia::IntSize::from_wh(1920, 1080).unwrap())
+        .ok_or_else(|| "wallpaper allocation".into())
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -1,6 +1,5 @@
 {
   "1": "runtime.rs",
-  "2": "Client",
   "3": "worker.rs",
   "4": "TvCompositor",
   "5": "xdg_shell.rs",

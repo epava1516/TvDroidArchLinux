@@ -1,4 +1,5 @@
 //! Native TV shell and its isolated renderer measurement mode.
+mod layout;
 mod model;
 mod render;
 mod runtime;

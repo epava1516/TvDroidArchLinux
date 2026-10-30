@@ -1,0 +1,30 @@
+2026-10-30T01:09:57.069467Z  INFO archtv_compositor::state: OUTPUT_CONFIGURED width=1920 height=1080
+2026-10-30T01:09:57.080009Z  INFO archtv_compositor::session: SESSION_CHILD_STARTED pid=44288 shell=true
+2026-10-30T01:09:57.080158Z  INFO archtv_compositor: TV_COMPOSITOR_READY socket="wayland-1"
+2026-10-30T01:09:57.081002Z  INFO archtv_compositor::input: INPUT_ADDED name="winit virtual input"
+2026-10-30T01:09:57.081126Z  INFO archtv_compositor::state: OUTPUT_CONFIGURED width=1920 height=1080
+SHELL_STARTED
+SHELL_CONFIGURE 1920x1080
+SHELL_CATALOG applications=12 favorites=0 hidden=0 recent=0
+SHELL_FRAME 1 size=1920x1080 page=Home
+2026-10-30T01:10:00.635890Z  INFO archtv_compositor::state: SHELL_SURFACE_READY
+2026-10-30T01:10:00.636762Z  INFO archtv_compositor::state: TOPLEVEL_MAPPED
+SHELL_FOCUS_ENTER page=Home band=2 index=0
+SHELL_CONFIGURE 1920x1080
+SHELL_FRAME 2 size=1920x1080 page=Home
+SHELL_CAPTURED /home/tv/repositorio-principal/reports/h5-resolutions/1920x1080/shell.png
+SHELL_WALLPAPER loaded=true
+SHELL_ICON id=probe-1.desktop loaded=false
+SHELL_ICON id=probe-10.desktop loaded=false
+SHELL_ICON id=probe-11.desktop loaded=false
+SHELL_ICON id=probe-12.desktop loaded=false
+SHELL_ICON id=probe-2.desktop loaded=false
+SHELL_ICON id=probe-3.desktop loaded=false
+SHELL_ICON id=probe-4.desktop loaded=false
+SHELL_ICON id=probe-5.desktop loaded=false
+SHELL_ICON id=probe-6.desktop loaded=false
+SHELL_ICON id=probe-7.desktop loaded=false
+SHELL_ICON id=probe-8.desktop loaded=false
+SHELL_FRAME 3 size=1920x1080 page=Home
+SHELL_STATE_CAPTURED home
+2026-10-30T01:10:15.323950Z  INFO archtv_compositor: TV_COMPOSITOR_STOPPED

@@ -1,0 +1,308 @@
+2026-10-30T01:11:42.131976Z  WARN smithay::backend::drm::device::fd: Unable to become drm master, assuming unprivileged mode
+2026-10-30T01:11:42.134327Z  INFO archtv_compositor::state: OUTPUT_CONFIGURED width=1280 height=720
+2026-10-30T01:11:42.392927Z  INFO archtv_compositor::drm: DRM_READY device=/dev/dri/card0 width=1280 height=720 refresh=60 format="XRGB8888" modifier="LINEAR" buffers=2 renderer="Pixman"
+2026-10-30T01:11:42.397265Z  INFO archtv_compositor::session: SESSION_CHILD_STARTED pid=45266 shell=true
+2026-10-30T01:11:42.397526Z  INFO archtv_compositor: TV_COMPOSITOR_READY socket="wayland-1"
+2026-10-30T01:11:42.397663Z  INFO archtv_compositor::input: INPUT_ADDED name="VirtualBox mouse integration"
+2026-10-30T01:11:42.397690Z  INFO archtv_compositor::input: INPUT_ADDED name="VirtualBox USB Tablet"
+2026-10-30T01:11:42.397703Z  INFO archtv_compositor::input: INPUT_ADDED name="Video Bus"
+2026-10-30T01:11:42.397715Z  INFO archtv_compositor::input: INPUT_ADDED name="Power Button"
+2026-10-30T01:11:42.397727Z  INFO archtv_compositor::input: INPUT_ADDED name="Sleep Button"
+2026-10-30T01:11:42.397740Z  INFO archtv_compositor::input: INPUT_ADDED name="AT Translated Set 2 keyboard"
+2026-10-30T01:11:42.397752Z  INFO archtv_compositor::input: INPUT_ADDED name="ImExPS/2 Generic Explorer Mouse"
+2026-10-30T01:11:42.410988Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=1
+SHELL_STARTED
+SHELL_CONFIGURE 1280x720
+SHELL_CATALOG applications=3 favorites=0 hidden=0 recent=0
+2026-10-30T01:11:43.263574Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=2
+SHELL_FRAME 1 size=1280x720 page=Home
+2026-10-30T01:11:43.817835Z  INFO archtv_compositor::state: SHELL_SURFACE_READY
+2026-10-30T01:11:43.818804Z  INFO archtv_compositor::state: TOPLEVEL_MAPPED
+SHELL_FOCUS_ENTER page=Home band=2 index=0
+SHELL_CONFIGURE 1280x720
+2026-10-30T01:11:43.852953Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=3
+2026-10-30T01:11:43.986265Z  INFO archtv_compositor::input: INPUT_ADDED name="ArchTV UI test remote"
+SHELL_FRAME 2 size=1280x720 page=Home
+2026-10-30T01:11:44.168879Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=4
+SHELL_FRAME 3 size=1280x720 page=Home
+2026-10-30T01:11:44.472873Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=5
+SHELL_CONTEXT_OPEN
+SHELL_FRAME 4 size=1280x720 page=Home
+SHELL_KEY Enter page=Home band=2 index=0
+SHELL_SETTINGS_SAVED
+2026-10-30T01:11:45.460834Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=6
+SHELL_FRAME 5 size=1280x720 page=Home
+SHELL_KEY Down page=Home band=3 index=0
+2026-10-30T01:11:45.788873Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=7
+SHELL_FRAME 6 size=1280x720 page=Home
+SHELL_KEY Right page=Home band=3 index=1
+2026-10-30T01:11:46.033054Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=8
+SHELL_FRAME 7 size=1280x720 page=Home
+SHELL_KEY Menu page=Home band=3 index=1
+2026-10-30T01:11:46.286444Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=9
+SHELL_FRAME 8 size=1280x720 page=Home
+SHELL_KEY Enter page=Home band=3 index=1
+2026-10-30T01:11:46.968123Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=10
+SHELL_SETTINGS_SAVED
+SHELL_FRAME 9 size=1280x720 page=Home
+SHELL_KEY Up page=Home band=2 index=0
+2026-10-30T01:11:47.355446Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=11
+SHELL_CAPTURED /home/tv/repositorio-principal/reports/h5-interactive-720/startup.png
+SHELL_KEY Right page=Home band=2 index=1
+SHELL_FRAME 10 size=1280x720 page=Home
+SHELL_KEY Menu page=Home band=2 index=1
+2026-10-30T01:11:48.233067Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=12
+SHELL_FRAME 11 size=1280x720 page=Home
+SHELL_KEY Down page=Home band=2 index=1
+2026-10-30T01:11:48.922210Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=13
+SHELL_FRAME 12 size=1280x720 page=Home
+SHELL_KEY Enter page=Home band=2 index=0
+2026-10-30T01:11:49.538510Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=14
+SHELL_SETTINGS_SAVED
+SHELL_FRAME 13 size=1280x720 page=Home
+SHELL_KEY Menu page=Home band=2 index=0
+2026-10-30T01:11:49.787891Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=15
+SHELL_FRAME 14 size=1280x720 page=Home
+SHELL_KEY Down page=Home band=2 index=0
+2026-10-30T01:11:50.373891Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=16
+SHELL_FRAME 15 size=1280x720 page=Home
+SHELL_KEY Down page=Home band=2 index=0
+2026-10-30T01:11:50.805909Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=17
+SHELL_FRAME 16 size=1280x720 page=Home
+SHELL_KEY Down page=Home band=2 index=0
+2026-10-30T01:11:51.472622Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=18
+SHELL_FRAME 17 size=1280x720 page=Home
+SHELL_KEY Enter page=Home band=2 index=0
+SHELL_WALLPAPER loaded=true
+SHELL_ICON id=01-archtv-probe.desktop loaded=true
+SHELL_ICON id=02-archtv-second.desktop loaded=true
+SHELL_ICON id=03-broken-icon.desktop loaded=false
+SHELL_SETTINGS_SAVED
+2026-10-30T01:11:52.066269Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=19
+SHELL_FRAME 18 size=1280x720 page=Home
+SHELL_STATE_CAPTURED home
+SHELL_KEY Character('c') page=Search band=1 index=0
+2026-10-30T01:11:54.920342Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=20
+SHELL_FRAME 19 size=1280x720 page=Search
+SHELL_STATE_CAPTURED search
+SHELL_KEY Character('l') page=Search band=1 index=0
+2026-10-30T01:11:55.646334Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=21
+SHELL_FRAME 20 size=1280x720 page=Search
+SHELL_KEY Character('i') page=Search band=1 index=0
+2026-10-30T01:11:55.909880Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=22
+SHELL_FRAME 21 size=1280x720 page=Search
+SHELL_KEY Character('e') page=Search band=1 index=0
+2026-10-30T01:11:56.171251Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=23
+SHELL_FRAME 22 size=1280x720 page=Search
+SHELL_KEY Character('n') page=Search band=1 index=0
+2026-10-30T01:11:56.452459Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=24
+SHELL_FRAME 23 size=1280x720 page=Search
+SHELL_KEY Character('t') page=Search band=1 index=0
+2026-10-30T01:11:56.729045Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=25
+SHELL_FRAME 24 size=1280x720 page=Search
+SHELL_KEY Character('e') page=Search band=1 index=0
+2026-10-30T01:11:56.971150Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=26
+SHELL_FRAME 25 size=1280x720 page=Search
+SHELL_KEY Character(' ') page=Search band=1 index=0
+2026-10-30T01:11:57.311212Z  INFO archtv_compositor::drm: DRM_CAPTURED path=/home/tv/repositorio-principal/reports/h5-interactive-720/scanout.ppm
+SHELL_KEY Character('a') page=Search band=1 index=0
+2026-10-30T01:11:57.335769Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=27
+SHELL_FRAME 26 size=1280x720 page=Search
+SHELL_KEY Backspace page=Search band=1 index=0
+2026-10-30T01:11:57.605440Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=28
+SHELL_FRAME 27 size=1280x720 page=Search
+SHELL_KEY Backspace page=Search band=1 index=0
+2026-10-30T01:11:57.847369Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=29
+SHELL_FRAME 28 size=1280x720 page=Search
+SHELL_KEY Backspace page=Search band=1 index=0
+2026-10-30T01:11:58.097108Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=30
+SHELL_FRAME 29 size=1280x720 page=Search
+SHELL_KEY Backspace page=Search band=1 index=0
+2026-10-30T01:11:58.343737Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=31
+SHELL_FRAME 30 size=1280x720 page=Search
+SHELL_KEY Backspace page=Search band=1 index=0
+2026-10-30T01:11:58.602385Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=32
+SHELL_FRAME 31 size=1280x720 page=Search
+SHELL_KEY Backspace page=Search band=1 index=0
+2026-10-30T01:11:58.896530Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=33
+SHELL_FRAME 32 size=1280x720 page=Search
+SHELL_KEY Backspace page=Search band=1 index=0
+2026-10-30T01:11:59.197822Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=34
+SHELL_FRAME 33 size=1280x720 page=Search
+SHELL_KEY Backspace page=Search band=1 index=0
+2026-10-30T01:11:59.480384Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=35
+SHELL_FRAME 34 size=1280x720 page=Search
+SHELL_KEY Backspace page=Search band=1 index=0
+2026-10-30T01:11:59.778821Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=36
+SHELL_FRAME 35 size=1280x720 page=Search
+SHELL_KEY Down page=Search band=1 index=0
+2026-10-30T01:12:00.040528Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=37
+SHELL_FRAME 36 size=1280x720 page=Search
+SHELL_KEY Enter page=Search band=1 index=0
+2026-10-30T01:12:00.401261Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=38
+SHELL_FRAME 37 size=1280x720 page=Search
+SHELL_KEY Down page=Search band=1 index=0
+2026-10-30T01:12:00.675655Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=39
+SHELL_FRAME 38 size=1280x720 page=Search
+SHELL_KEY Down page=Search band=1 index=0
+2026-10-30T01:12:00.959103Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=40
+SHELL_FRAME 39 size=1280x720 page=Search
+SHELL_KEY Right page=Search band=1 index=1
+2026-10-30T01:12:01.259823Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=41
+SHELL_FRAME 40 size=1280x720 page=Search
+SHELL_KEY Right page=Search band=1 index=2
+2026-10-30T01:12:01.516907Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=42
+SHELL_FRAME 41 size=1280x720 page=Search
+SHELL_KEY Enter page=Search band=2 index=0
+2026-10-30T01:12:01.776472Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=43
+SHELL_FRAME 42 size=1280x720 page=Search
+SHELL_KEY Enter page=Search band=2 index=0
+SHELL_APP_STARTED id=01-archtv-probe.desktop pid=45414
+SHELL_APP_LAUNCHED id=01-archtv-probe.desktop
+SHELL_NOTICE Abriendo Cliente A…
+2026-10-30T01:12:02.066946Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=44
+SHELL_SETTINGS_SAVED
+SHELL_FRAME 43 size=1280x720 page=Search
+2026-10-30T01:12:02.474578Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=45
+2026-10-30T01:12:02.499827Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=46
+2026-10-30T01:12:02.553624Z  INFO archtv_compositor::state: TOPLEVEL_MAPPED
+SHELL_FOCUS_LEAVE
+SHELL_CONFIGURE 1280x720
+2026-10-30T01:12:02.560932Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=47
+2026-10-30T01:12:02.630716Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=48
+2026-10-30T01:12:02.730808Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=49
+SHELL_FRAME 44 size=1280x720 page=Search
+2026-10-30T01:12:02.801732Z  INFO archtv_compositor::state: TV_HOME
+2026-10-30T01:12:02.802524Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=50
+SHELL_FOCUS_ENTER page=Search band=2 index=0
+SHELL_CONFIGURE 1280x720
+2026-10-30T01:12:02.858539Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=51
+SHELL_FRAME 45 size=1280x720 page=Search
+SHELL_KEY Back page=Home band=0 index=2
+2026-10-30T01:12:03.070082Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=52
+SHELL_FRAME 46 size=1280x720 page=Home
+SHELL_KEY Right page=Apps band=0 index=3
+2026-10-30T01:12:03.300504Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=53
+SHELL_FRAME 47 size=1280x720 page=Apps
+SHELL_STATE_CAPTURED apps
+SHELL_KEY Right page=Recent band=0 index=4
+2026-10-30T01:12:03.986205Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=54
+SHELL_FRAME 48 size=1280x720 page=Recent
+SHELL_STATE_CAPTURED recent
+SHELL_KEY Right page=Linux band=0 index=5
+2026-10-30T01:12:04.651542Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=55
+SHELL_FRAME 49 size=1280x720 page=Linux
+SHELL_STATE_CAPTURED linux
+SHELL_KEY Right page=Android band=0 index=6
+2026-10-30T01:12:05.295565Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=56
+SHELL_FRAME 50 size=1280x720 page=Android
+SHELL_STATE_CAPTURED android
+SHELL_KEY Right page=Settings band=0 index=7
+2026-10-30T01:12:05.925087Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=57
+SHELL_FRAME 51 size=1280x720 page=Settings
+SHELL_STATE_CAPTURED settings
+SHELL_KEY Down page=Settings band=1 index=0
+2026-10-30T01:12:06.586596Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=58
+SHELL_FRAME 52 size=1280x720 page=Settings
+2026-10-30T01:12:06.821850Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=59
+SHELL_KEY Enter page=Settings band=1 index=0
+SHELL_FRAME 53 size=1280x720 page=Settings
+SHELL_NOTICE Volumen actualizado
+2026-10-30T01:12:07.310037Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=60
+SHELL_FRAME 54 size=1280x720 page=Settings
+SHELL_KEY Down page=Settings band=1 index=1
+2026-10-30T01:12:07.638381Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=61
+SHELL_FRAME 55 size=1280x720 page=Settings
+2026-10-30T01:12:07.944407Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=62
+SHELL_KEY Enter page=Settings band=1 index=1
+SHELL_FRAME 56 size=1280x720 page=Settings
+SHELL_NOTICE Volumen actualizado
+2026-10-30T01:12:08.365570Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=63
+SHELL_FRAME 57 size=1280x720 page=Settings
+SHELL_KEY Down page=Settings band=1 index=2
+2026-10-30T01:12:08.640382Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=64
+SHELL_FRAME 58 size=1280x720 page=Settings
+SHELL_KEY Enter page=Settings band=1 index=2
+2026-10-30T01:12:08.905985Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=65
+SHELL_FRAME 59 size=1280x720 page=Settings
+SHELL_NOTICE Sonido actualizado
+2026-10-30T01:12:09.190580Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=66
+SHELL_FRAME 60 size=1280x720 page=Settings
+SHELL_KEY Enter page=Settings band=1 index=2
+2026-10-30T01:12:09.446622Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=67
+SHELL_FRAME 61 size=1280x720 page=Settings
+SHELL_NOTICE Sonido actualizado
+2026-10-30T01:12:09.706286Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=68
+SHELL_FRAME 62 size=1280x720 page=Settings
+SHELL_KEY Down page=Settings band=1 index=3
+2026-10-30T01:12:09.962398Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=69
+SHELL_FRAME 63 size=1280x720 page=Settings
+2026-10-30T01:12:10.161783Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=70
+SHELL_KEY Enter page=Settings band=1 index=3
+SHELL_FRAME 64 size=1280x720 page=Settings
+2026-10-30T01:12:10.648683Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=71
+SHELL_NOTICE Radio Wi-Fi actualizada
+SHELL_FRAME 65 size=1280x720 page=Settings
+SHELL_KEY Enter page=Settings band=1 index=3
+2026-10-30T01:12:11.116673Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=72
+SHELL_FRAME 66 size=1280x720 page=Settings
+2026-10-30T01:12:11.399970Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=73
+SHELL_KEY Down page=Settings band=1 index=4
+SHELL_NOTICE Radio Wi-Fi actualizada
+SHELL_FRAME 67 size=1280x720 page=Settings
+SHELL_KEY Down page=Settings band=1 index=5
+2026-10-30T01:12:11.711552Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=74
+SHELL_FRAME 68 size=1280x720 page=Settings
+SHELL_KEY Enter page=Settings band=1 index=5
+SHELL_SETTINGS_SAVED
+2026-10-30T01:12:11.991779Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=75
+SHELL_FRAME 69 size=1280x720 page=Settings
+SHELL_KEY Down page=Settings band=1 index=6
+2026-10-30T01:12:12.242885Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=76
+SHELL_FRAME 70 size=1280x720 page=Settings
+SHELL_KEY Enter page=Settings band=1 index=6
+SHELL_SETTINGS_SAVED
+2026-10-30T01:12:12.491092Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=77
+SHELL_FRAME 71 size=1280x720 page=Settings
+SHELL_KEY Enter page=Settings band=1 index=6
+SHELL_SETTINGS_SAVED
+2026-10-30T01:12:12.722032Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=78
+SHELL_FRAME 72 size=1280x720 page=Settings
+SHELL_KEY Back page=Home band=0 index=2
+2026-10-30T01:12:12.968664Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=79
+SHELL_FRAME 73 size=1280x720 page=Home
+SHELL_KEY Back page=Home band=0 index=2
+2026-10-30T01:12:13.208786Z  INFO archtv_compositor::state: TV_RESUME
+SHELL_FOCUS_LEAVE
+SHELL_CONFIGURE 1280x720
+2026-10-30T01:12:13.228694Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=80
+2026-10-30T01:12:13.250516Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=81
+2026-10-30T01:12:13.306813Z  INFO archtv_compositor::handlers::xdg_shell: TV_APP_CLOSED_HOME
+2026-10-30T01:12:13.311908Z  INFO archtv_compositor::handlers::xdg_shell: TOPLEVEL_DESTROYED
+2026-10-30T01:12:13.324727Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=82
+SHELL_FOCUS_ENTER page=Home band=0 index=2
+SHELL_CONFIGURE 1280x720
+SHELL_FRAME 74 size=1280x720 page=Home
+2026-10-30T01:12:13.576962Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=83
+2026-10-30T01:12:14.170679Z  INFO archtv_compositor::input: INPUT_REMOVED name="ArchTV UI test remote"
+2026-10-30T01:12:14.283497Z  INFO archtv_compositor::handlers::xdg_shell: TOPLEVEL_DESTROYED
+2026-10-30T01:12:14.302741Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=84
+2026-10-30T01:12:14.467390Z  WARN archtv_compositor::session: SESSION_CHILD_EXITED status=ExitStatus(unix_wait_status(15)) shell=true
+2026-10-30T01:12:15.492109Z  INFO archtv_compositor::session: SESSION_CHILD_STARTED pid=45681 shell=true
+SHELL_STARTED
+2026-10-30T01:12:16.355854Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=85
+SHELL_CONFIGURE 1280x720
+SHELL_CATALOG applications=3 favorites=2 hidden=0 recent=1
+SHELL_FRAME 1 size=1280x720 page=Home
+2026-10-30T01:12:16.990347Z  INFO archtv_compositor::state: SHELL_SURFACE_READY
+2026-10-30T01:12:16.990756Z  INFO archtv_compositor::state: TOPLEVEL_MAPPED
+SHELL_FOCUS_ENTER page=Home band=2 index=0
+SHELL_CONFIGURE 1280x720
+2026-10-30T01:12:17.018071Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=86
+SHELL_FRAME 2 size=1280x720 page=Home
+2026-10-30T01:12:17.290724Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=87
+SHELL_FRAME 3 size=1280x720 page=Home
+2026-10-30T01:12:17.567085Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=88
+SHELL_CAPTURED /home/tv/repositorio-principal/reports/h5-interactive-720/startup.png
+2026-10-30T01:12:22.072535Z  INFO archtv_compositor: TV_COMPOSITOR_STOPPED
+2026-10-30T01:12:22.179778Z  INFO archtv_compositor::drm: DRM_STOPPED frames=88

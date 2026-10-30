@@ -140,7 +140,7 @@ try:
     key(102, shell=False)
     wait_for(lambda: 'SHELL_FOCUS_ENTER page=Search band=2 index=0' in text()[before:], 'Home did not restore row focus')
     key(1)
-    for _ in range(3):
+    for _ in range(5):
         key(106)
     key(108)
     state('Settings', 1, 0)

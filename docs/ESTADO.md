@@ -5,8 +5,8 @@ Actualizado: 30 de octubre de 2026 (Europe/Madrid). Los informes usan UTC.
 ## Dirección actual
 
 Compositor Wayland propio en Rust/Smithay y shell Rust con referencia Fire TV
-2026. **H0–H4 comprobados en VM; H5 en curso; H6–H9 pendientes.** Existe un workspace
-Cargo con compositor propio, modelo de foco y cliente SCTK. El shell Rust interactivo está implementado y en validación H5. La salida DRM/Pixman ya está comprobada desde TTY. Anvil está compilado y probado como referencia upstream.
+2026. **H0–H5 comprobados en VM; H6–H9 pendientes.** Existe un workspace
+Cargo con compositor propio, modelo de foco y cliente SCTK. El shell Rust interactivo está implementado y validado en H5. La salida DRM/Pixman ya está comprobada desde TTY. Anvil está compilado y probado como referencia upstream.
 
 ## Limpieza realizada
 
@@ -128,13 +128,12 @@ D-Bus, PipeWire, PipeWire Pulse y WirePlumber activos durante el ensayo. Se ha
 utilizado archtv-test-client como cliente de prueba del rol, no una interfaz TV.
 Evidencia: reports/h4/, reports/h4-build.log y reports/h4-clippy.log.
 
-## H5 iniciado: renderer del shell
+## H5: del renderer al shell interactivo
 
-Crate archtv-shell con dibujo CPU tiny-skia/fontdue, caché de glifos y escena de
-laboratorio a 720p/1080p/4K. Las capturas se generan realmente con --render-probe;
-no representan un launcher operativo. Falta la conexión Wayland interactiva,
-catálogo real de apps, persistencia, búsqueda, teclado en pantalla y ajustes.
-Ver docs/DISENO-SHELL.md y reports/h5/.
+El prototipo aislado tiny-skia/fontdue se conserva en --render-probe para las
+mediciones iniciales. El producto ya incluye conexión SCTK/SHM, catálogo real,
+persistencia, búsqueda, teclado en pantalla y ajustes. Sus evidencias están
+separadas de las medidas del prototipo en reports/h5/.
 
 En las pruebas de entrada se añadió liberación de teclas al pausar la sesión o
 retirar un dispositivo, conservando las retenidas por otro teclado. Tras volver
@@ -145,8 +144,8 @@ reanudación de presentación. Evidencia en el informe H3 más reciente.
 
 El cliente Wayland del shell, catálogo desktop, navegación, búsqueda/teclado en
 pantalla, menús de favoritos/orden/ocultación y persistencia ya están implementados
-y compilados. Pasan siete pruebas unitarias entre núcleo y shell. Siguen pendientes
-las pruebas gráficas y de mando de esta parte: H5 permanece en curso.
+y compilados. Pasan ocho pruebas unitarias entre núcleo y shell. La prueba
+gráfica nativa utiliza uinput; el mando físico pertenece a H7.
 
 Graphify 0.9.97 instalado con mapa local AST/Cargo, consultas y vistas interactivas.
 El roadmap sigue siendo la fuente del estado de cada hito. Ver GRAPHIFY.md.
@@ -163,4 +162,14 @@ sesión; no se inicia Android. Evidencia completa en reports/h5-interactive/.
 Se añadió selección de modos DRM anunciados por el conector. Menú reconoce
 XF86MenuKB además de Menu/F10. La pulsación larga usa también las marcas de
 tiempo del evento para conservar su comportamiento si se retrasa un frame.
-H5 sigue abierto por la comparación visual y las resoluciones restantes.
+La comparación visual ahora mide cinco elementos contra la fotografía normalizada
+Fire TV 2026; ver COMPARACION-FIRE-TV.md. El shell incluye cabecera de iconos y
+un fondo original cargado en worker. La presentación anidada real pasa a 720p,
+1080p y 4K con coincidencia de dimensiones, contenido y orientación. Evidencia
+en reports/h5-resolutions/. Esta VM no anuncia DRM 4K: no se afirma soporte
+nativo 4K ni rendimiento de producción.
+
+El recorrido completo de interacción también pasa a 1280×720 sobre DRM nativo
+(01:12 UTC), incluida persistencia y restauración de controles. H5 queda
+comprobado en esta VM; los mandos físicos y los presupuestos de rendimiento
+permanecen en H7. H6 sigue pendiente de arranque Android completo y aplicación.

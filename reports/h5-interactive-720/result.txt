@@ -1,0 +1,4 @@
+Fecha UTC: 2026-10-30T01:12:22Z
+PASS: long Select, favorites/order/hide/restore, physical and on-screen search, real Foot launch/input, recents, Home, resume, close, reduced motion, real PipeWire volume/mute and Wi-Fi radio toggle/restore.
+PASS: PNG/SVG fallback, persisted settings and shell restart; real DRM/Pixman presentation.
+IP socket families disabled for the session; no Android session started.

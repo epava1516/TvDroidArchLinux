@@ -114,3 +114,17 @@ Clientes SHM comprobados en ambos backends. El shell interactivo está en valida
 instalable ni integración Android validada. Popup, grab, reposicionamiento,
 límites y mapa español están probados con entrada virtual de kernel. Quedan
 pendientes mando físico y plataformas distintas de esta VM.
+
+## Resoluciones del shell real
+
+La prueba 89 requiere el venv de análisis descrito en COMPARACION-FIRE-TV.md:
+
+```bash
+CARGO_TARGET_DIR="$HOME/.cache/archtv/smithay/target" ./scripts/89-shell-resolutions.sh --apply
+```
+
+Usa Weston headless kiosk como anfitrión de prueba, catálogo aislado de doce
+aplicaciones y el compositor/shell reales. Comprueba dimensiones y contenido
+cliente frente a la captura presentada a 720p/1080p/4K. No mide rendimiento.
+Para el recorrido completo nativo a otro modo anunciado, la prueba 88 acepta
+ARCHTV_SHELL_MODE y ARCHTV_SHELL_REPORT; por defecto conserva 1920x1080.

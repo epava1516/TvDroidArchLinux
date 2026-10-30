@@ -46,6 +46,7 @@ struct State {
     pool: SlotPool,
     model: Model,
     canvas: Canvas,
+    wallpaper: Option<std::sync::Arc<tiny_skia::Pixmap>>,
     font: Vec<u8>,
     workers: Workers,
     control: Option<UnixStream>,
@@ -99,6 +100,7 @@ pub fn run(
         pool,
         model: Model::default(),
         canvas,
+        wallpaper: None,
         font,
         workers: worker::start(),
         control,
@@ -141,7 +143,7 @@ pub fn run(
         if state.dirty && state.configured && !state.frame_pending {
             state.draw(&qh)?;
             if let Some(directory) = &capture_states {
-                if !state.model.loading {
+                if !state.model.loading && state.wallpaper.is_some() && state.requested.is_empty() {
                     let name = if state.model.context.is_some() {
                         "context".into()
                     } else {
@@ -245,6 +247,13 @@ impl State {
                     self.model.clamp();
                     self.dirty = true;
                 }
+                Event::Wallpaper(image) => {
+                    println!("SHELL_WALLPAPER loaded={}", image.is_some());
+                    self.wallpaper = image.map(std::sync::Arc::new);
+                    self.canvas.wallpaper = self.wallpaper.clone();
+                    self.canvas.home_background = None;
+                    self.dirty = true;
+                }
                 Event::Icon(id, icon) => {
                     println!("SHELL_ICON id={id} loaded={}", icon.is_some());
                     self.requested.remove(&id);
@@ -341,11 +350,11 @@ impl State {
                     .row(2)
                     .into_iter()
                     .skip(if self.model.band == 2 {
-                        self.model.index.saturating_sub(3)
+                        self.model.index.saturating_sub(4)
                     } else {
                         0
                     })
-                    .take(5)
+                    .take(6)
                     .cloned()
                     .collect();
                 row.extend(
@@ -353,16 +362,16 @@ impl State {
                         .row(3)
                         .into_iter()
                         .skip(if self.model.band == 3 {
-                            self.model.index.saturating_sub(7)
+                            self.model.index.saturating_sub(9)
                         } else {
                             0
                         })
-                        .take(9)
+                        .take(11)
                         .cloned(),
                 );
                 row
             }
-            Page::Apps | Page::Recent => self
+            Page::Apps | Page::Recent | Page::Linux | Page::Android => self
                 .model
                 .row(1)
                 .into_iter()
@@ -382,7 +391,7 @@ impl State {
                 .take(8)
                 .cloned()
                 .collect(),
-            Page::Settings => vec![],
+            Page::Settings | Page::Menu => vec![],
         };
         let mut seen = HashSet::new();
         let wanted: Vec<_> = wanted
@@ -623,6 +632,9 @@ impl KeyboardHandler for State {
         _: &[u32],
         _: &[Keysym],
     ) {
+        if self.model.notice.starts_with("Abriendo ") {
+            self.model.notice = "Aplicaciones listas".into();
+        }
         println!(
             "SHELL_FOCUS_ENTER page={:?} band={} index={}",
             self.model.page, self.model.band, self.model.index

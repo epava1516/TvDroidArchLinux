@@ -1,14 +1,19 @@
 {
   "0": "Model",
+  "2": "Client",
   "15": "session.rs",
   "18": ".shell",
   "23": "Shell Rust: prototipo de dibujo",
   "49": "archtv-compositor/src/main.rs",
   "50": "model.rs",
-  "51": "Canvas",
+  "51": "89-shell-resolutions.sh",
   "52": "Action",
   "53": "Key",
-  "54": "ContextAction",
+  "54": "start",
   "55": "87-shell-session.sh",
-  "56": "88-shell-smoke.sh"
+  "56": "88-shell-smoke.sh",
+  "57": "ContextAction",
+  "58": "layout.rs",
+  "59": "Page",
+  "60": "REFERENCIAS-FIRE-TV.md"
 }

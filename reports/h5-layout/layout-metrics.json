@@ -1,0 +1,158 @@
+{
+  "reference_url": "https://assets.aboutamazon.com/1d/49/e027bbeb4eec97f0248687ed3ac1/aa-jan2026-firetv-inline-v2b-ui-home-1600x900.jpg",
+  "reference_sha256": "d98eb0780b40cdd05ddc93b92fd9c26228b46524a6a0271a53b23fb6531a297c",
+  "reference_ui_crop": [
+    164,
+    80,
+    1272,
+    715
+  ],
+  "method": "manual photo landmarks \u00b13 source px; normalized to 1920x1080; actual CTA detected by neutral white pixels",
+  "landmarks": {
+    "home_nav": {
+      "photo": [
+        348,
+        109,
+        43,
+        44
+      ],
+      "target": [
+        277,
+        43,
+        66,
+        66
+      ],
+      "normalized_reference": [
+        277.7358490566038,
+        43.80419580419581,
+        64.90566037735849,
+        66.46153846153847
+      ],
+      "target_minus_reference": [
+        -0.7358490566037972,
+        -0.8041958041958068,
+        1.0943396226415132,
+        -0.461538461538467
+      ]
+    },
+    "hero_button": {
+      "photo": [
+        232,
+        403,
+        138,
+        43
+      ],
+      "target": [
+        104,
+        488,
+        210,
+        64
+      ],
+      "normalized_reference": [
+        102.64150943396227,
+        487.8881118881119,
+        208.30188679245282,
+        64.95104895104895
+      ],
+      "target_minus_reference": [
+        1.3584905660377302,
+        0.11188811188810632,
+        1.6981132075471805,
+        -0.9510489510489464
+      ]
+    },
+    "featured_card": {
+      "photo": [
+        232,
+        482,
+        214,
+        121
+      ],
+      "target": [
+        104,
+        608,
+        324,
+        184
+      ],
+      "normalized_reference": [
+        102.64150943396227,
+        607.2167832167833,
+        323.0188679245283,
+        182.76923076923077
+      ],
+      "target_minus_reference": [
+        1.3584905660377302,
+        0.7832167832167443,
+        0.9811320754716917,
+        1.2307692307692264
+      ]
+    },
+    "app_card": {
+      "photo": [
+        232,
+        620,
+        99,
+        55
+      ],
+      "target": [
+        104,
+        816,
+        150,
+        84
+      ],
+      "normalized_reference": [
+        102.64150943396227,
+        815.6643356643357,
+        149.43396226415095,
+        83.07692307692308
+      ],
+      "target_minus_reference": [
+        1.3584905660377302,
+        0.33566433566431897,
+        0.5660377358490507,
+        0.9230769230769198
+      ]
+    },
+    "bottom_banner": {
+      "photo": [
+        232,
+        690,
+        1134,
+        90
+      ],
+      "target": [
+        104,
+        922,
+        1712,
+        135
+      ],
+      "normalized_reference": [
+        102.64150943396227,
+        921.3986013986014,
+        1711.698113207547,
+        135.94405594405595
+      ],
+      "target_minus_reference": [
+        1.3584905660377302,
+        0.6013986013986141,
+        0.30188679245293315,
+        -0.9440559440559468
+      ]
+    }
+  },
+  "observed": {
+    "reference_cta": [
+      103,
+      488,
+      207,
+      63
+    ],
+    "shell_cta": [
+      104,
+      488,
+      210,
+      64
+    ]
+  },
+  "scope": "layout only; artwork, labels and application content intentionally differ; not pixel equality"
+}

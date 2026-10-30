@@ -1,5 +1,6 @@
+use crate::layout::*;
 use crate::{
-    model::{KEYBOARD, Model, Page, SETTING_ITEMS},
+    model::{KEYBOARD, MENU_ITEMS, Model, Page, SETTING_ITEMS},
     render::Canvas,
 };
 use std::collections::HashMap;
@@ -36,7 +37,11 @@ impl Canvas {
         selected: bool,
     ) {
         let (x, y) = position;
-        let (w, h) = if wide { (322.0, 175.0) } else { (322.0, 155.0) };
+        let (w, h) = if wide {
+            (FEATURE_WIDTH, FEATURE_HEIGHT)
+        } else {
+            (322.0, 155.0)
+        };
         if selected {
             self.rounded(
                 x - 6.0,
@@ -92,139 +97,284 @@ impl Canvas {
         }
     }
     pub fn shell(&mut self, model: &Model, icons: &HashMap<String, Option<Pixmap>>) {
-        self.pixmap
-            .fill(tiny_skia::Color::from_rgba8(14, 16, 22, 255));
-        let navigation = ["Buscar", "Inicio", "Aplicaciones", "Recientes", "Ajustes"];
-        let positions = [190.0, 390.0, 570.0, 880.0, 1130.0];
-        let widths = [150.0, 145.0, 270.0, 220.0, 185.0];
-        self.text("≡", 80.0, 75.0, 40.0, [230, 232, 237]);
-        for (index, label) in navigation.iter().enumerate() {
-            let selected = index == model.page.index();
-            if selected {
-                self.rounded(
-                    positions[index] - 25.0,
-                    31.0,
-                    widths[index],
-                    57.0,
-                    29.0,
-                    if model.band == 0 {
-                        model.focus_color()
-                    } else {
-                        [59, 66, 79, 255]
-                    },
-                );
-            }
-            self.text(
-                label,
-                positions[index],
-                70.0,
-                29.0,
-                if selected && model.band == 0 {
-                    [20, 23, 29]
-                } else {
-                    [224, 229, 237]
-                },
-            );
+        if model.page == Page::Home {
+            self.cached_home_background();
+        } else {
+            self.pixmap
+                .fill(tiny_skia::Color::from_rgba8(14, 16, 22, 255));
         }
-        self.text("ARCH TV", 1640.0, 70.0, 27.0, [221, 226, 234]);
+        self.header(model);
         match model.page {
             Page::Home => self.home(model, icons),
-            Page::Apps | Page::Recent => {
-                self.text(
-                    if model.page == Page::Apps {
-                        "Tus aplicaciones"
-                    } else {
-                        "Abiertas recientemente"
-                    },
-                    88.0,
-                    185.0,
-                    43.0,
-                    [244, 247, 250],
-                );
-                self.text(
-                    "Mantén Seleccionar o pulsa Menú para organizar",
-                    90.0,
-                    235.0,
-                    23.0,
-                    [172, 185, 203],
-                );
-                let apps = model.row(1);
-                let start = if model.band > 0 {
-                    (model.index / 5).saturating_sub(2) * 5
-                } else {
-                    0
-                };
-                if apps.is_empty() {
-                    self.text(
-                        if model.loading {
-                            "Buscando aplicaciones…"
-                        } else {
-                            "No hay aplicaciones en esta sección"
-                        },
-                        90.0,
-                        380.0,
-                        29.0,
-                        [204, 214, 229],
-                    );
-                }
-                for (position, app) in apps.iter().enumerate().skip(start).take(20) {
-                    let cell = position - start;
-                    self.application(
-                        model,
-                        icons,
-                        app,
-                        (
-                            88.0 + (cell % 5) as f32 * 352.0,
-                            290.0 + (cell / 5) as f32 * 176.0,
-                        ),
-                        false,
-                        model.band > 0 && model.index == position,
-                    );
-                }
-            }
+            Page::Apps | Page::Recent | Page::Linux | Page::Android => self.grid(model, icons),
             Page::Search => self.search(model, icons),
             Page::Settings => self.settings(model),
+            Page::Menu => self.menu(model),
         }
-        self.rect(0.0, 1020.0, 1920.0, 60.0, [14, 16, 22, 255]);
-        self.text(
-            &short(&model.notice, 116),
-            88.0,
-            1059.0,
-            21.0,
-            [175, 191, 210],
-        );
+        if model.page != Page::Home {
+            self.rect(0.0, 1020.0, 1920.0, 60.0, [14, 16, 22, 255]);
+            self.text(
+                &short(&model.notice, 116),
+                SAFE_LEFT,
+                1059.0,
+                21.0,
+                [175, 191, 210],
+            );
+        }
         if model.context.is_some() {
             self.context(model);
         }
     }
-    fn home(&mut self, model: &Model, icons: &HashMap<String, Option<Pixmap>>) {
-        for band in 0..70 {
-            let t = band as f32 / 69.0;
-            self.rect(
-                700.0 + band as f32 * 18.0,
-                115.0,
-                20.0,
-                485.0,
-                [
-                    18 + (t * 12.0) as u8,
-                    29 + (t * 34.0) as u8,
-                    46 + (t * 48.0) as u8,
-                    255,
-                ],
+    fn cached_home_background(&mut self) {
+        if self.home_background.is_none() {
+            let width = self.pixmap.width();
+            let scale = self.scale();
+            for (index, pixel) in self.pixmap.data_mut().chunks_exact_mut(4).enumerate() {
+                let x = (index % width as usize) as f32 / width as f32;
+                let y = (index / width as usize) as f32 / scale;
+                let right = ((x - 0.15) / 0.85).clamp(0.0, 1.0);
+                let top = (y / 145.0).clamp(0.0, 1.0);
+                let bottom = ((830.0 - y) / 260.0).clamp(0.0, 1.0);
+                let amount = right * top * bottom;
+                for channel in 0..3 {
+                    let base = [14.0, 16.0, 22.0][channel];
+                    pixel[channel] = (base + amount * ([38.0, 77.0, 96.0][channel] - base)) as u8;
+                }
+                pixel[3] = 255;
+            }
+            self.rounded(1180.0, 175.0, 500.0, 300.0, 150.0, [34, 88, 105, 220]);
+            self.rounded(1280.0, 200.0, 320.0, 250.0, 125.0, [48, 129, 134, 220]);
+            if let Some(image) = &self.wallpaper {
+                self.pixmap
+                    .fill(tiny_skia::Color::from_rgba8(14, 16, 22, 255));
+                let factor = self.pixmap.width() as f32 / image.width() as f32;
+                self.pixmap.draw_pixmap(
+                    0,
+                    0,
+                    image.as_ref().as_ref(),
+                    &tiny_skia::PixmapPaint::default(),
+                    tiny_skia::Transform::from_scale(factor, factor),
+                    None,
+                );
+                let width = self.pixmap.width() as usize;
+                for (index, pixel) in self.pixmap.data_mut().chunks_exact_mut(4).enumerate() {
+                    let y = (index / width) as f32 / scale;
+                    let shade = (((y - 510.0) / 320.0).clamp(0.0, 1.0))
+                        .max((1.0 - y / 185.0).clamp(0.0, 1.0) * 0.55);
+                    for channel in 0..3 {
+                        pixel[channel] = (f32::from(pixel[channel]) * (1.0 - shade)
+                            + [14.0, 16.0, 22.0][channel] * shade)
+                            as u8;
+                    }
+                }
+            }
+            self.home_background = Some(self.pixmap.clone());
+        }
+        if let Some(background) = &self.home_background {
+            self.pixmap.data_mut().copy_from_slice(background.data());
+        }
+    }
+    fn header(&mut self, model: &Model) {
+        for (index, x) in NAV_X.iter().enumerate() {
+            let selected = index == model.page.index();
+            if selected {
+                if model.band == 0 {
+                    self.rounded(
+                        *x - 35.0,
+                        NAV_Y - 35.0,
+                        70.0,
+                        70.0,
+                        19.0,
+                        model.focus_color(),
+                    );
+                }
+                self.rounded(*x - 33.0, NAV_Y - 33.0, 66.0, 66.0, 18.0, [54, 54, 54, 255]);
+            }
+            self.nav_icon(index, *x, NAV_Y, 36.0, [233, 234, 236, 255]);
+        }
+        if model.band == 0 {
+            let label = model.page.label();
+            self.text(
+                label,
+                (NAV_X[model.page.index()] - label.chars().count() as f32 * 6.0).max(50.0),
+                137.0,
+                21.0,
+                [231, 234, 240],
             );
         }
-        self.rounded(1180.0, 175.0, 500.0, 300.0, 150.0, [34, 88, 105, 255]);
-        self.rounded(1280.0, 200.0, 320.0, 250.0, 125.0, [48, 129, 134, 255]);
+        self.text("arch tv", 1738.0, 73.0, 26.0, [243, 245, 249]);
+    }
+    fn nav_icon(&mut self, index: usize, x: f32, y: f32, size: f32, color: [u8; 4]) {
+        use tiny_skia::{LineCap, LineJoin, Paint, PathBuilder, Rect, Stroke, Transform};
+        let mut path = PathBuilder::new();
+        match index {
+            0 => {
+                for y in [6.0, 12.0, 18.0] {
+                    path.move_to(4.0, y);
+                    path.line_to(20.0, y);
+                }
+            }
+            1 => {
+                path.push_circle(10.0, 10.0, 6.5);
+                path.move_to(15.0, 15.0);
+                path.line_to(21.0, 21.0);
+            }
+            2 => {
+                path.move_to(2.0, 11.0);
+                path.line_to(12.0, 3.0);
+                path.line_to(22.0, 11.0);
+                path.move_to(5.0, 9.0);
+                path.line_to(5.0, 21.0);
+                path.line_to(19.0, 21.0);
+                path.line_to(19.0, 9.0);
+                path.move_to(10.0, 21.0);
+                path.line_to(10.0, 15.0);
+                path.line_to(14.0, 15.0);
+                path.line_to(14.0, 21.0);
+            }
+            3 => {
+                path.push_rect(Rect::from_xywh(3.0, 4.0, 18.0, 13.0).unwrap());
+                path.move_to(12.0, 17.0);
+                path.line_to(12.0, 21.0);
+                path.move_to(7.0, 21.0);
+                path.line_to(17.0, 21.0);
+            }
+            4 => {
+                path.push_circle(12.0, 12.0, 9.0);
+                path.move_to(12.0, 6.0);
+                path.line_to(12.0, 12.0);
+                path.line_to(17.0, 15.0);
+            }
+            5 => {
+                path.push_rect(Rect::from_xywh(2.0, 4.0, 20.0, 16.0).unwrap());
+                path.move_to(6.0, 8.0);
+                path.line_to(9.0, 11.0);
+                path.line_to(6.0, 14.0);
+                path.move_to(12.0, 15.0);
+                path.line_to(18.0, 15.0);
+            }
+            6 => {
+                path.push_circle(12.0, 12.0, 7.0);
+                path.move_to(7.0, 6.0);
+                path.line_to(5.0, 2.0);
+                path.move_to(17.0, 6.0);
+                path.line_to(19.0, 2.0);
+                path.move_to(9.0, 11.0);
+                path.line_to(9.0, 11.2);
+                path.move_to(15.0, 11.0);
+                path.line_to(15.0, 11.2);
+                path.move_to(8.0, 19.0);
+                path.line_to(8.0, 22.0);
+                path.move_to(16.0, 19.0);
+                path.line_to(16.0, 22.0);
+            }
+            _ => {
+                for point in 0..32 {
+                    let angle = point as f32 * std::f32::consts::TAU / 32.0;
+                    let radius = if point % 4 < 2 { 10.0 } else { 8.0 };
+                    let (x, y) = (12.0 + angle.cos() * radius, 12.0 + angle.sin() * radius);
+                    if point == 0 {
+                        path.move_to(x, y);
+                    } else {
+                        path.line_to(x, y);
+                    }
+                }
+                path.close();
+                path.push_circle(12.0, 12.0, 3.5);
+            }
+        }
+        if let Some(path) = path.finish() {
+            let mut paint = Paint::default();
+            paint.set_color_rgba8(color[0], color[1], color[2], color[3]);
+            let stroke = Stroke {
+                width: 1.7,
+                line_cap: LineCap::Round,
+                line_join: LineJoin::Round,
+                ..Stroke::default()
+            };
+            let scale = self.scale();
+            self.pixmap.stroke_path(
+                &path,
+                &paint,
+                &stroke,
+                Transform::from_scale(size * scale / 24.0, size * scale / 24.0)
+                    .post_translate((x - size / 2.0) * scale, (y - size / 2.0) * scale),
+                None,
+            );
+        }
+    }
+    fn grid(&mut self, model: &Model, icons: &HashMap<String, Option<Pixmap>>) {
+        let title = match model.page {
+            Page::Recent => "Abiertas recientemente",
+            Page::Linux => "Aplicaciones Linux",
+            Page::Android => "Aplicaciones Android",
+            _ => "Tus aplicaciones",
+        };
+        self.text(title, SAFE_LEFT, 195.0, 43.0, [244, 247, 250]);
+        self.text(
+            "Mantén Seleccionar o pulsa Menú para organizar",
+            SAFE_LEFT,
+            245.0,
+            23.0,
+            [172, 185, 203],
+        );
+        let apps = model.row(1);
+        let start = if model.band > 0 {
+            (model.index / 5).saturating_sub(2) * 5
+        } else {
+            0
+        };
+        if apps.is_empty() {
+            self.text(
+                if model.loading {
+                    "Buscando aplicaciones…"
+                } else {
+                    "No hay aplicaciones en esta sección"
+                },
+                SAFE_LEFT,
+                380.0,
+                29.0,
+                [204, 214, 229],
+            );
+        }
+        for (position, app) in apps.iter().enumerate().skip(start).take(20) {
+            let cell = position - start;
+            self.application(
+                model,
+                icons,
+                app,
+                (
+                    SAFE_LEFT + (cell % 5) as f32 * 347.0,
+                    295.0 + (cell / 5) as f32 * 176.0,
+                ),
+                false,
+                model.band > 0 && model.index == position,
+            );
+        }
+    }
+    fn home(&mut self, model: &Model, icons: &HashMap<String, Option<Pixmap>>) {
         if let Some(app) = model.selected() {
-            self.text(&short(&app.name, 23), 88.0, 300.0, 58.0, [248, 249, 251]);
-            self.text(&short(&app.comment, 64), 90.0, 365.0, 25.0, [199, 210, 225]);
+            self.text(
+                &short(&app.name, 23),
+                SAFE_LEFT,
+                300.0,
+                58.0,
+                [248, 249, 251],
+            );
+            self.text(
+                &short(&app.comment, 64),
+                SAFE_LEFT,
+                365.0,
+                25.0,
+                [199, 210, 225],
+            );
             self.text(
                 if app.android {
-                    "Aplicación Android · requiere sesión disponible"
+                    "Aplicación Android"
                 } else {
                     "Aplicación Linux instalada"
                 },
-                90.0,
+                SAFE_LEFT,
                 415.0,
                 24.0,
                 [170, 190, 208],
@@ -233,55 +383,40 @@ impl Canvas {
                 self.image(icon, 1320.0, 240.0, 180.0);
             }
         } else {
-            self.text("Tu televisión.", 88.0, 275.0, 68.0, [248, 249, 251]);
-            self.text("A tu manera.", 88.0, 355.0, 68.0, [248, 249, 251]);
+            self.text("Tu televisión.", SAFE_LEFT, 275.0, 68.0, [248, 249, 251]);
+            self.text("A tu manera.", SAFE_LEFT, 355.0, 68.0, [248, 249, 251]);
             self.text(
                 "Tu biblioteca de aplicaciones Linux y Android",
-                90.0,
+                SAFE_LEFT,
                 415.0,
                 25.0,
                 [191, 204, 220],
             );
         }
         if model.band == 1 {
-            self.rounded(82.0, 454.0, 296.0, 75.0, 36.0, [255, 255, 255, 255]);
+            self.rounded(
+                SAFE_LEFT - 5.0,
+                483.0,
+                220.0,
+                74.0,
+                36.0,
+                model.focus_color(),
+            );
         }
-        self.rounded(
-            88.0,
-            460.0,
-            284.0,
-            63.0,
-            31.0,
-            if model.band == 1 {
-                [255, 216, 139, 255]
-            } else {
-                [233, 237, 244, 255]
-            },
-        );
-        self.text("Mis aplicaciones", 112.0, 502.0, 27.0, [20, 24, 31]);
-        self.text(
-            if model.settings.favorites.is_empty() {
-                "Aplicaciones destacadas"
-            } else {
-                "Tus favoritas"
-            },
-            88.0,
-            587.0,
-            25.0,
-            [218, 226, 238],
-        );
+        self.rounded(SAFE_LEFT, 488.0, 210.0, 64.0, 32.0, [241, 243, 247, 255]);
+        self.text("Ver apps", SAFE_LEFT + 43.0, 531.0, 27.0, [20, 24, 31]);
         let row = model.row(2);
         let start = if model.band == 2 {
-            model.index.saturating_sub(3)
+            model.index.saturating_sub(4)
         } else {
             0
         };
-        for (index, app) in row.iter().enumerate().skip(start).take(5) {
+        for (index, app) in row.iter().enumerate().skip(start).take(6) {
             self.application(
                 model,
                 icons,
                 app,
-                (88.0 + (index - start) as f32 * 352.0, 615.0),
+                (SAFE_LEFT + (index - start) as f32 * FEATURE_STEP, FEATURE_Y),
                 true,
                 model.band == 2 && model.index == index,
             );
@@ -293,42 +428,116 @@ impl Canvas {
                 } else {
                     "No se encontraron aplicaciones gráficas"
                 },
-                90.0,
+                SAFE_LEFT,
                 710.0,
                 30.0,
                 [208, 218, 231],
             );
         }
-        self.text("Todas tus aplicaciones", 88.0, 861.0, 26.0, [222, 227, 235]);
         let row = model.row(3);
         let start = if model.band == 3 {
-            model.index.saturating_sub(7)
+            model.index.saturating_sub(9)
         } else {
             0
         };
-        for (index, app) in row.iter().enumerate().skip(start).take(9) {
-            let x = 88.0 + (index - start) as f32 * 192.0;
+        for (index, app) in row.iter().enumerate().skip(start).take(11) {
+            let x = SAFE_LEFT + (index - start) as f32 * APP_STEP;
             if model.band == 3 && model.index == index {
-                self.rounded(x - 5.0, 884.0, 178.0, 105.0, 21.0, model.focus_color());
+                self.rounded(
+                    x - 5.0,
+                    APP_Y - 5.0,
+                    APP_WIDTH + 10.0,
+                    APP_HEIGHT + 10.0,
+                    20.0,
+                    model.focus_color(),
+                );
             }
-            self.rounded(x, 889.0, 168.0, 95.0, 17.0, [33, 39, 51, 255]);
+            self.rounded(x, APP_Y, APP_WIDTH, APP_HEIGHT, 16.0, [32, 38, 49, 255]);
             if let Some(Some(icon)) = icons.get(&app.id) {
-                self.image(icon, x + 54.0, 899.0, 48.0);
+                self.image(icon, x + 51.0, APP_Y + 6.0, 48.0);
             } else {
                 self.text(
                     &app.name.chars().next().unwrap_or('?').to_string(),
-                    x + 70.0,
-                    934.0,
-                    30.0,
+                    x + 62.0,
+                    APP_Y + 40.0,
+                    29.0,
                     [230, 236, 245],
                 );
             }
             self.text(
                 &short(&app.name, 12),
-                x + 10.0,
-                976.0,
+                x + 11.0,
+                APP_Y + 73.0,
                 17.0,
                 [225, 233, 243],
+            );
+        }
+        let width = 1920.0 - SAFE_LEFT * 2.0;
+        if model.band == 4 {
+            self.rounded(
+                SAFE_LEFT - 4.0,
+                BANNER_Y - 4.0,
+                width + 8.0,
+                BANNER_HEIGHT + 8.0,
+                22.0,
+                model.focus_color(),
+            );
+        }
+        self.rounded(
+            SAFE_LEFT,
+            BANNER_Y,
+            width,
+            BANNER_HEIGHT,
+            18.0,
+            [27, 49, 68, 255],
+        );
+        self.text(
+            if model.settings.recent.is_empty() {
+                "Explora tus aplicaciones"
+            } else {
+                "Abiertas recientemente"
+            },
+            SAFE_LEFT + 36.0,
+            BANNER_Y + 53.0,
+            34.0,
+            [242, 246, 251],
+        );
+        self.text(
+            &short(&model.notice, 90),
+            SAFE_LEFT + 36.0,
+            BANNER_Y + 100.0,
+            23.0,
+            [183, 205, 226],
+        );
+        self.text("arch tv", 1650.0, BANNER_Y + 78.0, 33.0, [230, 239, 250]);
+    }
+    fn menu(&mut self, model: &Model) {
+        self.text("Menú", SAFE_LEFT, 195.0, 43.0, [243, 246, 250]);
+        for (index, label) in MENU_ITEMS.iter().enumerate() {
+            let y = 245.0 + index as f32 * 82.0;
+            let selected = model.band > 0 && model.index == index;
+            self.rounded(
+                SAFE_LEFT,
+                y,
+                900.0,
+                68.0,
+                16.0,
+                if selected {
+                    model.focus_color()
+                } else {
+                    [32, 39, 52, 255]
+                },
+            );
+            self.text(
+                label,
+                SAFE_LEFT + 25.0,
+                y + 45.0,
+                28.0,
+                if selected {
+                    [18, 23, 30]
+                } else {
+                    [230, 237, 247]
+                },
             );
         }
     }

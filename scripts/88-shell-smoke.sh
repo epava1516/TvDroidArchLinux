@@ -7,7 +7,8 @@ target="${CARGO_TARGET_DIR:-$root/target}"
 if ! "$APPLY"; then echo 'Probará el shell Rust por DRM/Pixman con mando uinput y configuración aislada.'; exit 0; fi
 [[ -z $(loginctl list-sessions --no-legend) ]]
 if systemctl is-active --quiet getty@tty2.service; then echo 'tty2 tiene un getty activo.' >&2; exit 1; fi
-report="$root/reports/h5-interactive"
+report="${ARCHTV_SHELL_REPORT:-$root/reports/h5-interactive}"
+mode="${ARCHTV_SHELL_MODE:-1920x1080}"
 mkdir -p "$report"
 rm -f "$report/result.txt" "$report/compositor.log" "$report/ui-sequence.txt" "$report/startup.png" "$report/scanout.ppm"
 rm -rf "$report/states"
@@ -76,6 +77,7 @@ sudo -n systemd-run --unit="$unit" --collect \
   --property=KillMode=control-group --property=TimeoutStopSec=10 \
   --property='RestrictAddressFamilies=AF_UNIX AF_NETLINK AF_PACKET' \
   --setenv="CARGO_TARGET_DIR=$target" --setenv="ARCHTV_SHELL_REPORT=$report" \
+  --setenv="ARCHTV_SHELL_MODE=$mode" \
   --setenv="XDG_DATA_HOME=$fixture/data" --setenv="XDG_DATA_DIRS=$fixture/empty" \
   --setenv="XDG_CONFIG_HOME=$fixture/config" --setenv=RUST_LOG=archtv_compositor=debug,smithay=warn \
   "$root/scripts/87-shell-session.sh"
@@ -96,6 +98,7 @@ done
 [[ $(rg -c SHELL_CAPTURED "$report/compositor.log") -ge 2 ]]
 rg -q 'SHELL_CATALOG applications=3 favorites=2 hidden=0 recent=1' "$report/compositor.log"
 rg -q 'SHELL_ICON id=02-archtv-second.desktop loaded=true' "$report/compositor.log"
+rg -q 'SHELL_WALLPAPER loaded=true' "$report/compositor.log"
 rg -q 'SHELL_ICON id=01-archtv-probe.desktop loaded=true' "$report/compositor.log"
 rg -q 'SHELL_ICON id=03-broken-icon.desktop loaded=false' "$report/compositor.log"
 for ((attempt=0;attempt<150;attempt++)); do

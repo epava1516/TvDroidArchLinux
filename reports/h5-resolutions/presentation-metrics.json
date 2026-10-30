@@ -1,0 +1,35 @@
+[
+  {
+    "resolution": [
+      1280,
+      720
+    ],
+    "presented_channel_mae": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "resolution": [
+      1920,
+      1080
+    ],
+    "presented_channel_mae": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "resolution": [
+      3840,
+      2160
+    ],
+    "presented_channel_mae": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  }
+]

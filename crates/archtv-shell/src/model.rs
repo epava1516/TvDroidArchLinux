@@ -22,32 +22,63 @@ impl Default for Settings {
 }
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Page {
+    Menu,
     Search,
     Home,
     Apps,
     Recent,
+    Linux,
+    Android,
     Settings,
 }
 impl Page {
     pub fn index(self) -> usize {
         match self {
-            Self::Search => 0,
-            Self::Home => 1,
-            Self::Apps => 2,
-            Self::Recent => 3,
-            Self::Settings => 4,
+            Self::Menu => 0,
+            Self::Search => 1,
+            Self::Home => 2,
+            Self::Apps => 3,
+            Self::Recent => 4,
+            Self::Linux => 5,
+            Self::Android => 6,
+            Self::Settings => 7,
         }
     }
     pub fn from_index(index: usize) -> Self {
         [
+            Self::Menu,
             Self::Search,
             Self::Home,
             Self::Apps,
             Self::Recent,
+            Self::Linux,
+            Self::Android,
             Self::Settings,
-        ][index.min(4)]
+        ][index.min(7)]
+    }
+    pub fn label(self) -> &'static str {
+        match self {
+            Self::Menu => "Menú",
+            Self::Search => "Buscar",
+            Self::Home => "Inicio",
+            Self::Apps => "Aplicaciones",
+            Self::Recent => "Recientes",
+            Self::Linux => "Linux",
+            Self::Android => "Android",
+            Self::Settings => "Ajustes",
+        }
     }
 }
+pub const MENU_ITEMS: [&str; 8] = [
+    "Inicio",
+    "Todas las aplicaciones",
+    "Aplicaciones Linux",
+    "Aplicaciones Android",
+    "Recientes",
+    "Ajustes",
+    "Volver a la aplicación",
+    "Cerrar sesión",
+];
 #[derive(Clone, Debug)]
 pub enum Action {
     Launch(Application),
@@ -101,7 +132,7 @@ pub struct Model {
     pub page: Page,
     pub band: u8,
     pub index: usize,
-    pub memory: [usize; 4],
+    pub memory: [usize; 5],
     pub query: String,
     pub keyboard_row: usize,
     pub context: Option<(String, usize)>,
@@ -120,7 +151,7 @@ impl Default for Model {
             page: Page::Home,
             band: 2,
             index: 0,
-            memory: [0; 4],
+            memory: [0; 5],
             query: String::new(),
             keyboard_row: 0,
             context: None,
@@ -159,6 +190,8 @@ impl Model {
                 }
             }
             Page::Recent => ordered(&self.settings.recent),
+            Page::Linux => visible.into_iter().filter(|app| !app.android).collect(),
+            Page::Android => visible.into_iter().filter(|app| app.android).collect(),
             Page::Search => {
                 let query = self.query.to_lowercase();
                 visible
@@ -175,8 +208,8 @@ impl Model {
     }
     pub fn selected(&self) -> Option<&Application> {
         if self.band == 0
-            || self.page == Page::Settings
-            || (self.page == Page::Home && self.band == 1)
+            || matches!(self.page, Page::Settings | Page::Menu)
+            || (self.page == Page::Home && matches!(self.band, 1 | 4))
             || (self.page == Page::Search && self.band == 1)
         {
             None
@@ -226,7 +259,11 @@ impl Model {
             self.index = self.page.index();
             return;
         }
-        if self.page == Page::Settings {
+        if self.page == Page::Menu {
+            self.index = self.index.min(MENU_ITEMS.len() - 1);
+        } else if self.page == Page::Home && matches!(self.band, 1 | 4) {
+            self.index = 0;
+        } else if self.page == Page::Settings {
             self.index = self.index.min(SETTING_ITEMS.len() - 1);
         } else if self.page == Page::Search && self.band == 1 {
             self.index = self
@@ -251,7 +288,13 @@ impl Model {
             return self.context_key(key);
         }
         if matches!(key, Key::Menu) {
-            self.show_context();
+            if self.selected().is_some() {
+                self.show_context();
+            } else {
+                self.page = Page::Menu;
+                self.band = 1;
+                self.index = 0;
+            }
             return vec![];
         }
         if matches!(key, Key::Back) {
@@ -260,7 +303,7 @@ impl Model {
             }
             self.page = Page::Home;
             self.band = 0;
-            self.index = 1;
+            self.index = Page::Home.index();
             return vec![];
         }
         if let Key::Character(ch) = key {
@@ -283,7 +326,7 @@ impl Model {
         if self.band == 0 {
             match key {
                 Key::Left => self.index = self.index.saturating_sub(1),
-                Key::Right => self.index = (self.index + 1).min(4),
+                Key::Right => self.index = (self.index + 1).min(7),
                 Key::Down | Key::Enter => {
                     self.band = 1;
                     self.index = self.memory[self.band as usize];
@@ -295,11 +338,39 @@ impl Model {
             self.page = Page::from_index(self.index);
             return vec![];
         }
+        if self.page == Page::Menu {
+            match key {
+                Key::Up if self.index == 0 => {
+                    self.band = 0;
+                    self.index = 0;
+                }
+                Key::Up => self.index -= 1,
+                Key::Down => self.index = (self.index + 1).min(MENU_ITEMS.len() - 1),
+                Key::Enter => match self.index {
+                    6 => return vec![Action::Resume],
+                    7 => return vec![Action::Quit],
+                    index => {
+                        self.page = [
+                            Page::Home,
+                            Page::Apps,
+                            Page::Linux,
+                            Page::Android,
+                            Page::Recent,
+                            Page::Settings,
+                        ][index];
+                        self.band = if self.page == Page::Home { 2 } else { 1 };
+                        self.index = 0;
+                    }
+                },
+                _ => (),
+            }
+            return vec![];
+        }
         if self.page == Page::Settings {
             match key {
                 Key::Up if self.index == 0 => {
                     self.band = 0;
-                    self.index = 4;
+                    self.index = Page::Settings.index();
                 }
                 Key::Up => self.index -= 1,
                 Key::Down => self.index = (self.index + 1).min(SETTING_ITEMS.len() - 1),
@@ -318,7 +389,7 @@ impl Model {
                 Key::Right => self.index += 1,
                 Key::Up if self.keyboard_row == 0 => {
                     self.band = 0;
-                    self.index = 0;
+                    self.index = Page::Search.index();
                 }
                 Key::Up => self.keyboard_row -= 1,
                 Key::Down => self.keyboard_row = (self.keyboard_row + 1).min(3),
@@ -377,7 +448,7 @@ impl Model {
             Key::Down => {
                 if self.page == Page::Home {
                     self.memory[self.band as usize] = self.index;
-                    self.band = (self.band + 1).min(3);
+                    self.band = (self.band + 1).min(4);
                     self.index = self.memory[self.band as usize];
                 } else if self.page == Page::Search {
                     self.index = (self.index + 1).min(count.saturating_sub(1));
@@ -388,6 +459,14 @@ impl Model {
             Key::Enter => {
                 if self.page == Page::Home && self.band == 1 {
                     self.page = Page::Apps;
+                    self.band = 1;
+                    self.index = 0;
+                } else if self.page == Page::Home && self.band == 4 {
+                    self.page = if self.settings.recent.is_empty() {
+                        Page::Apps
+                    } else {
+                        Page::Recent
+                    };
                     self.band = 1;
                     self.index = 0;
                 } else if let Some(app) = self.selected() {
@@ -534,5 +613,47 @@ mod tests {
         m.key(Key::Back);
         assert_eq!(m.page, Page::Home);
         assert_eq!(m.band, 0);
+    }
+    #[test]
+    fn navigation_filters_and_banner_use_real_application_sets() {
+        let mut android = app("two");
+        android.android = true;
+        let mut model = Model {
+            apps: vec![app("one"), android],
+            loading: false,
+            ..Model::default()
+        };
+        model.page = Page::Linux;
+        model.band = 0;
+        model.index = Page::Linux.index();
+        model.key(Key::Down);
+        assert_eq!(model.row(1).len(), 1);
+        assert_eq!(model.selected().unwrap().id, "one");
+        model.key(Key::Back);
+        model.key(Key::Left);
+        model.key(Key::Left);
+        model.key(Key::Down);
+        assert_eq!(model.page, Page::Menu);
+        for _ in 0..3 {
+            model.key(Key::Down);
+        }
+        model.key(Key::Enter);
+        assert_eq!(model.page, Page::Android);
+        assert_eq!(model.selected().unwrap().id, "two");
+        model.page = Page::Home;
+        model.band = 3;
+        model.index = 0;
+        model.key(Key::Down);
+        assert_eq!(model.band, 4);
+        assert!(model.selected().is_none());
+        model.key(Key::Enter);
+        assert_eq!(model.page, Page::Apps);
+        model.launched("one".into());
+        model.page = Page::Home;
+        model.band = 4;
+        model.index = 0;
+        model.key(Key::Enter);
+        assert_eq!(model.page, Page::Recent);
+        assert_eq!(model.selected().unwrap().id, "one");
     }
 }
