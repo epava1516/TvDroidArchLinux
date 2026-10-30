@@ -1,4 +1,57 @@
-# Capa de compatibilidad APK propia sobre Linux
+# Estado actual y punto de entrada
+
+Actualizado: 30 de octubre de 2026. Esta cabecera es el estado vigente; el
+historial inferior conserva experimentos y fronteras ya superadas. Git y los
+artefactos enlazados prevalecen sobre cualquier resumen.
+
+## Retomar en este orden
+
+1. Leer [el checkpoint fechado](../reports/continuidad-20261030/checkpoint.json)
+   y contrastarlo con Git/procesos siguiendo [CONTINUIDAD.md](CONTINUIDAD.md).
+2. Consultar [arquitectura y decisiones](ARQUITECTURA.md),
+   [roadmap general](../ROADMAP.md) y [detalle APK](ROADMAP-A.md).
+3. Consultar [el índice de evidencias](EVIDENCIAS.md) antes de atribuir un resultado.
+4. Continuar la revisión global de componentes AOSP y la matriz de aplicaciones
+   reales. No seguir portando dependencias aisladas hasta decidir esa arquitectura.
+
+## Objetivo y alcance real
+
+Ejecutar APK completas sin modificar sobre Linux y compositor Rust/Smithay, sin
+Waydroid ni arrancar un Android completo. Compatibilidad amplia, aislamiento,
+estabilidad, ligereza, instalación y actualización siguen siendo requisitos.
+Las fixtures, compilaciones y constructores no acreditan ese resultado.
+
+| Clasificación | Estado comprobado y límites |
+| --- | --- |
+| Vigente | Compositor y shell Rust existen; pruebas H0–H5 limitadas a la VM y plataformas documentadas. H7–H9 siguen abiertos. |
+| Experimental publicado | ART host ejecuta fixtures; recursos, cola y partes de contexto AOSP se reutilizan. Activity/widgets/vistas del contador siguen siendo propios. No hay compatibilidad general acreditada. |
+| Experimental pendiente | Registro local de servicios y layout/resize de View original pasan en proceso de prueba; los cambios de código continúan sin commit. No dibujan la APK con vistas originales. |
+| Herramientas verificadas | REA MCP 6.8.0 respondió a Codex y analizó estáticamente VLC 3.7.1 y una biblioteca ELF. La sesión de archivo se exportó y cerró. No es una prueba de ejecución de VLC en el runtime propio. |
+| Histórico | H6 Waydroid, imágenes Android e ISO anteriores conservan evidencia; no son el backend ni la aceptación vigentes del runtime APK. |
+| Desconocido/no verificado | Compatibilidad de aplicaciones reales en este runtime, aislamiento por APK, GPU del runtime, ARM, WebView, DRM/servicios propietarios, consumo y estabilidad prolongada. |
+
+## Trabajo preservado y siguiente acción
+
+Base del checkpoint: `96b0b5b`; el HEAD actual y origin se consultan con Git.
+El snapshot distingue cambios propios del registro experimental y los logs
+ajenos `reports/h9-uefi-boot/qemu.log` y `serial.log`. No se han descartado ni
+incluido esos cambios de código en el desvío documental.
+
+El reinicio afectó sólo a codex-remote.service, no a la VM. El checkpoint conserva
+PIDs/handles observados y estados terminales; no presupone que sigan activos.
+No se espera actualmente ningún build o prueba. Las autorizaciones ya concedidas
+para pruebas, commits/push y trabajo autónomo siguen vigentes; no hay autorización
+nueva para reiniciar la VM.
+
+Siguiente acción concreta: contrastar ART/Bionic/bibliotecas y servicios originales,
+libhybris y traducción de ISA con fuentes y artefactos, definir una matriz de APK
+reales y elegir un primer recorrido completo de lanzamiento/interfaz/entrada/
+persistencia/servicios/cierre. La resolución aislada de constructores queda como
+regresión técnica, no como mecanismo para declarar compatibilidad.
+
+## Historial conservado (no es el estado vigente)
+
+### Capa de compatibilidad APK propia sobre Linux
 
 La dirección solicitada es estudiar AOSP para reutilizar o reproducir el mínimo
 necesario para ejecutar APK de forma estable en Linux, sin Waydroid y sin arrancar

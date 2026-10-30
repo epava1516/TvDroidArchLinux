@@ -1,0 +1,61 @@
+{
+  "head": "96b0b5b8e656e135751f92593b729334ad9f3ea8",
+  "branch": "main",
+  "origin_state": "origin/main is local tracking reference, not yet fetched this turn",
+  "active_tool_handles": {
+    "functions_exec_cell_6": "terminal",
+    "exec_session_73981": "terminal",
+    "rea_target": "closed after export",
+    "ongoing_builds_or_tests": []
+  },
+  "own_pending": "Previous local service registry experiment; preserve unstaged source changes. Current bounded detour is documentation only, to be committed separately.",
+  "other_pending": [
+    "reports/h9-uefi-boot/qemu.log",
+    "reports/h9-uefi-boot/serial.log"
+  ],
+  "objective": "Unmodified complete APK compatibility on Linux Rust/Smithay, no Waydroid or full Android boot; isolation, stability, resource budgets, install/update remain required",
+  "rea": "MCP binary_session called successfully with codex-mcp-client 0.165.0 / REA6.8.0; VLC JADX and archive inspection completed; native ELF notes completed. Static only.",
+  "next_step": "Consolidate existing docs and evidence index, verify links/hashes and commit only detour docs/evidence/graph; then resume architecture audit, component reuse evaluation and real-app matrix.",
+  "observed_utc": "2026-10-30T21:28:06.680273+00:00",
+  "origin_verified_commit": "96b0b5b8e656e135751f92593b729334ad9f3ea8",
+  "relation_to_verified_origin": "0 ahead, 0 behind before documentation commit",
+  "processes_observed": [
+    {
+      "pid": "181298",
+      "ppid": "1",
+      "state": "Ssl",
+      "elapsed": "10:25",
+      "command": "node-MainThread"
+    },
+    {
+      "pid": "181308",
+      "ppid": "181298",
+      "state": "Sl",
+      "elapsed": "10:25",
+      "command": "codex"
+    },
+    {
+      "pid": "181453",
+      "ppid": "181308",
+      "state": "Sl",
+      "elapsed": "09:40",
+      "command": "codex-code-mode"
+    }
+  ],
+  "own_pending_files": [
+    "fixtures/aosp-window-service/WindowServiceProbe.java",
+    "runtime/aosp/framework-study.json",
+    "runtime/aosp/native/binder-holder-jni.cpp",
+    "tools/apk/build_binder_holder.py",
+    "tools/apk/build_window_service_probe.py",
+    "tools/apk/generate_window_aidl.py",
+    "tools/apk/verify_wayland_resize.py",
+    "fixtures/aosp-window-service/ServiceRegistryChecks.java",
+    "runtime/aosp/linux-services/org/archtv/aosplinux/LinuxServiceRegistry.java",
+    "runtime/aosp/service-registry-aidl-sources.json"
+  ],
+  "recovery_snapshot_local": "/home/tv/recuperacion-archtv/20261030T211710Z",
+  "recovery_patch_sha256": "0eae19994a47bccc4478f529c64291891f16894b0873c2fad441b0d9594bc317",
+  "tool_handle_snapshot_note": "Point-in-time observation; not proof of liveness when resuming. REA bundle export and close completed before this snapshot. Temporary documentation worktree handle 6234 was subsequently polled terminal.",
+  "processes_observed_utc": "2026-10-30T21:31:37.003477+00:00"
+}

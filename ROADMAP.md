@@ -6,7 +6,7 @@ Linux/Android. La distribución final estará basada en Arch Linux.
 
 Fecha de definición: 29 de octubre de 2026. Se planifica por entregables y pruebas,
 sin fechas inventadas. H0–H4 están comprobados en la VM x86_64. El compositor y el cliente de prueba
-son propios; H5–H9 siguen pendientes. No hay validación de mando físico. El estudio previo y las fuentes están en
+son propios; H5 conserva pruebas funcionales parciales; H6–H9 siguen abiertos. No hay validación de mando físico. El estudio previo y las fuentes están en
 [ESTUDIO-SMITHAY-ANVIL.md](docs/ESTUDIO-SMITHAY-ANVIL.md).
 
 ## Alcance inicial
@@ -32,10 +32,10 @@ Se podrán añadir mediante decisiones posteriores y pruebas concretas.
 | H3 | Salida directa TTY y ruta gráfica de la VM validada. | H2 | Completado en VM |
 | H4 | Política TV, sesión y recuperación. | H3 | Completado en VM |
 | H5 | Shell Rust con diseño Fire TV y uso mediante mando. | H4 | En curso |
-| H6 | Waydroid y aplicaciones Android comprobadas. | H5 | Pendiente |
+| H6 | APK completas sin modificar sobre Linux, sin Waydroid ni boot Android. | H5, A3–A4 | Pendiente; laboratorio Waydroid histórico |
 | H7 | Rendimiento, estabilidad y accesibilidad medidos. | H5, H6 | Pendiente |
-| H8 | Paquetes propios y sesión instalable. | H7 | Pendiente |
-| H9 | Imagen Arch TV e instalación desde cero. | H8 | Pendiente |
+| H8 | Paquetes propios y sesión instalable. | H7 | Parcial histórico; runtime APK sin empaquetar |
+| H9 | Imagen Arch TV e instalación desde cero. | H8 | ISO de laboratorio; instalación/recuperación pendientes |
 
 ## H0 · Limpieza y base documental
 
@@ -148,7 +148,7 @@ captura o grabación y logs; repetir en cada plataforma declarada compatible.
 Comprobado con cliente de prueba ocupando el rol de shell: Inicio global,
 RESUME por canal privado, cierre de aplicación → inicio, tres reinicios del
 shell sin cerrar la app, límite de fallos y salida de emergencia por teclado.
-La interfaz de televisión sigue perteneciendo a H5 y aún no existe.
+En el momento de ese ensayo H4, la interfaz de televisión de H5 aún no existía; los resultados posteriores están en H5.
 
 El supervisor entrega conexiones Wayland y de control privadas al hijo. Solo
 esa conexión recibe el rol de shell; un cliente público con el mismo app_id no
@@ -213,7 +213,22 @@ favoritos, ajustar volumen y volver al inicio sin ratón. Persistencia tras
 reiniciar, foco siempre visible y ninguna función mostrada como operativa si
 su integración no existe. El inicio funciona sin red y sin Android arrancado.
 
-## H6 · Integración Android real
+## H6 · Aplicaciones APK completas sobre Linux
+
+Aceptación vigente: APK reales de la matriz, con versión/hash y ABI registrados,
+ejecutan lanzamiento, interfaz, entrada, persistencia, servicios necesarios y
+cierre en Rust/Smithay sin Waydroid ni arrancar Android completo. La inspección
+estática y las fixtures son evidencia parcial; no cierran H6 ni A3–A4.
+Aislamiento, consumo, recuperación y estabilidad siguen siendo requisitos.
+
+El desglose del runtime está en [ROADMAP-A.md](docs/ROADMAP-A.md); el estado
+verificable y la siguiente acción se mantienen en [ESTADO.md](docs/ESTADO.md).
+
+### Laboratorio histórico Waydroid (no aceptación vigente)
+
+El siguiente texto conserva los ensayos y criterios del backend anterior; no
+ordena volver a instalarlos ni acredita el runtime APK actual.
+
 
 En curso. Tras ampliar la VM a 7,7 GiB, sys.boot_completed=1 se observó a los
 79 s y se capturó el escritorio Android sobre DRM/Pixman. En sesión combinada,
@@ -291,9 +306,9 @@ desde disco, aplicación Android, actualización/recuperación y hardware físic
 Ver docs/DISTRIBUCION.md y reports/h9-uefi-boot/. H9 continúa abierto.
 
 - Perfil archiso basado en los paquetes propios, sin datos ni credenciales de la VM.
-- Política de versiones/snapshots, kernel/Binder e imágenes Android.
+- Política de versiones/snapshots, kernel y componentes del runtime APK fijados.
 - Arranque e instalación UEFI, elección explícita de disco, usuario, idioma y red.
-- Definir si Android se descarga en el primer uso o se incluye en la imagen.
+- Definir distribución, procedencia y licencias del runtime APK sin imagen Android completa.
 - Actualización, recuperación y documentación para máquinas nuevas.
 
 **Aceptación:** instalar desde una ISO con hash registrado en una VM vacía,

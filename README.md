@@ -2,7 +2,7 @@
 
 Objetivo: desarrollar un compositor Wayland ligero y específico en **Rust con
 Smithay**, acompañado de una interfaz Rust inspirada en **Fire TV 2026** y soporte
-de aplicaciones Android mediante Waydroid. La base prevista es Arch Linux.
+de APK sin modificar mediante componentes AOSP adaptados a Linux, sin Waydroid ni arranque de un Android completo. La base prevista es Arch Linux.
 
 El compositor propio y su cliente de prueba Rust ya están implementados para
 el laboratorio anidado y salida directa DRM/KMS/Pixman desde TTY. El shell
@@ -10,6 +10,10 @@ Rust interactivo ya funciona y está en validación: navegación, favoritos, bú
 aplicaciones Linux y ajustes. Android y la distribución instalable siguen pendientes. La sesión anterior y sus instaladores se han retirado.
 
 ## Documentación principal
+
+Empieza por [Estado actual y cómo retomar](docs/ESTADO.md).
+El procedimiento está en [Continuidad](docs/CONTINUIDAD.md) y los resultados
+en [Evidencias](docs/EVIDENCIAS.md).
 
 - [Mapa y seguimiento con Graphify](docs/GRAPHIFY.md)
 
@@ -33,7 +37,7 @@ aplicaciones Linux y ajustes. Android y la distribución instalable siguen pendi
 ```
 
 Las fases `10-base.sh`, `40-android.sh` y `41-android-software.sh` siguen disponibles
-para la base del sistema y Android. Simulan por defecto y requieren `--apply`
+como herramientas históricas de la base del sistema y el laboratorio Android. Simulan por defecto y requieren `--apply`
 para aplicar cambios. No instalan un compositor ni una interfaz de TV.
 
 Los manifiestos separan paquetes base, Android, herramientas y candidatos de la

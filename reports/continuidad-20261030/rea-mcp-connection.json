@@ -1,0 +1,65 @@
+{
+  "server_identity": {
+    "package": {
+      "name": "rea-agents",
+      "version": "6.8.0",
+      "root_path": "/home/tv/.local/lib/node_modules/rea-agents",
+      "build_commit": null
+    },
+    "server": {
+      "name": "rea",
+      "version": "6.8.0",
+      "started_at": "2026-10-30T21:21:46.315Z",
+      "command_path": "/home/tv/.local/bin/rea"
+    },
+    "sdk": {
+      "server": "2.3.1",
+      "client_test": "2.3.1",
+      "core": "2.3.1"
+    },
+    "negotiated_protocol_version": "2025-06-18",
+    "client": {
+      "name": "codex-mcp-client",
+      "version": "0.165.0"
+    },
+    "skill": {
+      "name": "reverse-engineer-anything",
+      "expected_version": "49"
+    },
+    "catalog": {
+      "counts": {
+        "cli_commands": 175,
+        "mcp_tools": 229,
+        "mcp_prompts": 6
+      },
+      "digests": {
+        "tools_sha256": "a98940ba69acd9c1781d180cee362d4ddab18f77eefdd3e3216f10e1bf98e5e9",
+        "prompts_sha256": "9609379442110570cd52fdea61a777242350873bc28958f54827ca3590e680b7",
+        "combined_sha256": "fe938a7c6eba3763b22ae2022de76dc4a7812d35d86f1d4efd36b9962b04da0b"
+      }
+    },
+    "protocol_features": {
+      "progress": true,
+      "cancellation": true,
+      "elicitation": false
+    },
+    "alignment": {
+      "state": "aligned",
+      "reasons": [],
+      "remediation": null
+    }
+  },
+  "successful_mcp_calls": [
+    "binary_session",
+    "inspect_android_package",
+    "inspect_elf_notes",
+    "open_binary",
+    "inspect_artifact",
+    "export_evidence_bundle",
+    "close_binary"
+  ],
+  "limitations": [
+    "Static inspection only. Native deep-analysis providers not configured; ELF notes are not dependency resolution.",
+    "No claim of application runtime compatibility."
+  ]
+}

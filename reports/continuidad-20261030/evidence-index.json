@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "generated_utc": "2026-10-30T21:28:06.671681+00:00",
+  "baseline_head": "96b0b5b8e656e135751f92593b729334ad9f3ea8",
+  "evidence": [
+    {
+      "id": "fixture-wayland",
+      "path": "reports/a2-wayland/result.json",
+      "sha256": "62daa34be0692846dccf85cf8ff3b204c9aa7a85d7114d8f9c95ace1a52b4a4b",
+      "scope": "Fixture propia: ventana/entrada; no aplicaci\u00f3n real general",
+      "storage": "git",
+      "source_commit": "fc3efdd6b11919d123da2765c9936959eff2aa89"
+    },
+    {
+      "id": "metadatos",
+      "path": "reports/aosp-application-info/metadata/result.json",
+      "sha256": "688fee7e6c147976ce0bbfbc08ee62209b7b6a1dde4eb514e97d19a44d2d7607",
+      "scope": "ApplicationInfo y cinco casos de metadatos; no PackageManager completo",
+      "storage": "git",
+      "source_commit": "da3ed03fd06a1c24721fdf9d6847ec394def9e60"
+    },
+    {
+      "id": "rendernode",
+      "path": "reports/aosp-rendernode-native/art/result.json",
+      "sha256": "d4ef0db9ecf59b6e20154b4df2412ae48f1928281d4fb99853fe449972d08045",
+      "scope": "Propiedades de RenderNode; no dibujo de APK original",
+      "storage": "git",
+      "source_commit": "242a9c7e316997c64544900093093ff0ae48e079"
+    },
+    {
+      "id": "binder-holder",
+      "path": "reports/aosp-binder-holder/native-lifetime/result.json",
+      "sha256": "329344b189b328a7d02baa6e295512d145f3c7953ecb7089cee2a989f05e8d64",
+      "scope": "12800 ciclos nativos; no GC ART ni IPC",
+      "storage": "git",
+      "source_commit": "441dfbd2527f49aacb9f9d3702d31ae75c34d8ea"
+    },
+    {
+      "id": "log",
+      "path": "reports/aosp-log-throwables/log/result.json",
+      "sha256": "49df455497da6e3913df0ed24ba6d26f3c1cb9f004443bbbb8f688e092ffab82",
+      "scope": "Log: filtros y Throwable; no logd",
+      "storage": "git",
+      "source_commit": "96b0b5b8e656e135751f92593b729334ad9f3ea8"
+    },
+    {
+      "id": "registro-pendiente",
+      "path": "dist/apk/local-registry-final-wayland-1/result.json",
+      "sha256": "118121f0eefab1fcd4b9f82ae9de84d7686f5febc0a741688fc7b80ae8069894",
+      "scope": "Experimento sin commit: registro local, layout/resize de View aislada; no dibujo de APK",
+      "storage": "local",
+      "source_commit": null
+    },
+    {
+      "id": "binder-context-pendiente",
+      "path": "dist/apk/binder-service-context-lifetime-1/result.json",
+      "sha256": "fc881eab3a25ef2ccbade2b70954e977c010eda62f81db75ac404f629351424d",
+      "scope": "Experimento sin commit: ciclo del holder extendido",
+      "storage": "local",
+      "source_commit": null
+    },
+    {
+      "id": "rea-bundle",
+      "path": "reports/continuidad-20261030/rea-evidence.json.gz",
+      "sha256": "1d0a8c6c61781cf0bdbafa823b2d1e9c7cca7c9832bf300f41a334693bbd8f4e",
+      "scope": "MCP y an\u00e1lisis est\u00e1tico VLC/ELF; no ejecuci\u00f3n ni compatibilidad",
+      "storage": "new",
+      "source_commit": null
+    },
+    {
+      "id": "drm",
+      "path": "reports/h3/result.txt",
+      "sha256": "b77c4b49d32a0d2957af77dda1f63be3fe5fef29ea8827aea1dd4b20b3cd1df4",
+      "scope": "Hist\u00f3rico: DRM/entrada/VT en VM; no mando f\u00edsico ni APK",
+      "storage": "git",
+      "source_commit": "30b52ca2c3ad7d446329a9afa1a930fa23790a49"
+    },
+    {
+      "id": "sesion",
+      "path": "reports/h4/result.txt",
+      "sha256": "c76199a341d716922a51caf5b2c829ba0d25fd4aba28c086f13ec104a9a0cc32",
+      "scope": "Hist\u00f3rico: foco y recuperaci\u00f3n del shell; no compatibilidad APK",
+      "storage": "git",
+      "source_commit": "30b52ca2c3ad7d446329a9afa1a930fa23790a49"
+    },
+    {
+      "id": "shell",
+      "path": "reports/h5-interactive/result.txt",
+      "sha256": "2c0aab7dd099d55eefd4519086e76bbe75cbf616572832ea5a97cfef62547711",
+      "scope": "Hist\u00f3rico: recorrido shell/Foot/ajustes en VM; no runtime APK",
+      "storage": "git",
+      "source_commit": "6807664affb7d6f958ed998071d2466b2ed89e0c"
+    },
+    {
+      "id": "paquetes",
+      "path": "reports/h8-build/runtime-root-verification.txt",
+      "sha256": "1fa90240de9de8f6fd149ff8b777418ba075004edb761b221cf83828c0dad1b4",
+      "scope": "Hist\u00f3rico: ra\u00edz de paquetes sin compiladores; no instalaci\u00f3n del runtime APK actual",
+      "storage": "git",
+      "source_commit": "19f7c006a7167a06bb89166f918ff50386db39b0"
+    },
+    {
+      "id": "mcp",
+      "path": "reports/continuidad-20261030/rea-mcp-connection.json",
+      "sha256": "9a8115324783b83a05779201a78ee95314e4382fa5fef99aafdb15ffc6dcb9ef",
+      "scope": "Conexi\u00f3n MCP real e identidad observada; no compatibilidad de aplicaciones",
+      "storage": "new",
+      "source_commit": null
+    }
+  ]
+}

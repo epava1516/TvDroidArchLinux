@@ -14,7 +14,17 @@ Waydroid. El éxito se mide por ejecución real de aplicaciones, no por boot And
 | A4 · compatibilidad y estabilidad | APK reales por ABI/API, reflexión, WebView y demás dependencias descubiertas; ampliar la capa con evidencia | Matriz por aplicación, pruebas prolongadas, reinicios y mediciones; fallos y cobertura registrados | Pendiente |
 | A5 · distribución | Runtime y servicio anfitrión propios, paquetes, actualizaciones, migración de datos e integración TV | Instalación limpia sin Waydroid ni sistema Android completo, apps verificadas, actualización y rollback | Pendiente |
 
-## Próximo experimento
+## Prioridad vigente
+
+Revisar arquitectura completa y reutilización AOSP antes de añadir dependencias
+por fallos aislados. Definir matriz de APK reales y recorridos funcionales
+completos. [ESTADO.md](ESTADO.md) es el punto de entrada; [EVIDENCIAS.md](EVIDENCIAS.md)
+separa resultados publicados, experimentos pendientes y ensayos históricos.
+A0–A2 de la tabla sólo acreditan fixtures; A3–A5 y compatibilidad amplia siguen
+abiertos. El historial siguiente conserva los primeros experimentos y sus
+fronteras sucesivas: una frase «siguiente paso» histórica no es la prioridad actual.
+
+## Primer experimento (histórico)
 
 1. Crear una APK propia con una Activity, texto, botón y contador persistente,
    sin bibliotecas JNI ni dependencias adicionales en su primera versión.
