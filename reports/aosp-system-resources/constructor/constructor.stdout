@@ -1,0 +1,5 @@
+SYSTEM_RESOURCES_OK count=18 density=160 app-cookie=2
+SYSTEM_RESOURCES_OK count=18 density=320 app-cookie=2
+VIEW_CONSTRUCTOR_BEGIN resources=DisplayMetrics{density=1.0, width=1280, height=720, scaledDensity=1.0, xdpi=160.0, ydpi=160.0}
+VIEW_CONSTRUCTOR_BLOCKED java.lang.NoClassDefFoundError: Failed resolution of: Landroid/view/WindowManagerGlobal;
+VIEW_CONSTRUCTOR_DIAGNOSTIC_DONE

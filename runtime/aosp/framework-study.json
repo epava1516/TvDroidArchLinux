@@ -418,6 +418,16 @@
       "path": "core/java/android/util/Singleton.java",
       "bytes": 1235,
       "sha256": "9f810fe46605e585bbae5376157e91cc56be92bdd146f87de466ab0b5b3c6e1c"
+    },
+    {
+      "path": "core/res/res/values/config.xml",
+      "bytes": 320369,
+      "sha256": "a25fc58a2e677fcef95573fbeff6c1be6ae4af8b8ccdb993d77b4b2571033713"
+    },
+    {
+      "path": "core/res/res/values/dimens.xml",
+      "bytes": 55726,
+      "sha256": "c49782a2e7096df054c09df86c1464c6615f60c30e75999b37fc5e05da8754bb"
     }
   ],
   "public_resources_sources": [
@@ -473,5 +483,9 @@
   "view_resource_inputs": [
     "core/res/res/values/attrs.xml",
     "core/res/res/values/public-final.xml"
+  ],
+  "system_resource_inputs": [
+    "core/res/res/values/config.xml",
+    "core/res/res/values/dimens.xml"
   ]
 }

@@ -1,0 +1,305 @@
+{
+  "first-process": {
+    "exit_code": 0,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Darchtv.linux.library=/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "-Darchtv.resources.library=/home/tv/repositorio-principal/dist/apk/androidfw-system-assets-2/libarchtv_resources_linux.so",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/apk-system-resource-adapter-2/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-system-resources-final-1/app-data"
+    ]
+  },
+  "second-process": {
+    "exit_code": 0,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Darchtv.linux.library=/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "-Darchtv.resources.library=/home/tv/repositorio-principal/dist/apk/androidfw-system-assets-2/libarchtv_resources_linux.so",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/apk-system-resource-adapter-2/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-system-resources-final-1/app-data"
+    ]
+  },
+  "lock-contender": {
+    "exit_code": 1,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Darchtv.linux.library=/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "-Darchtv.resources.library=/home/tv/repositorio-principal/dist/apk/androidfw-system-assets-2/libarchtv_resources_linux.so",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/apk-system-resource-adapter-2/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-system-resources-final-1/app-data"
+    ]
+  },
+  "after-lock-release": {
+    "exit_code": 0,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Darchtv.linux.library=/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "-Darchtv.resources.library=/home/tv/repositorio-principal/dist/apk/androidfw-system-assets-2/libarchtv_resources_linux.so",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/apk-system-resource-adapter-2/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-system-resources-final-1/app-data"
+    ]
+  },
+  "bounded-burst": {
+    "exit_code": 0,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Darchtv.linux.library=/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "-Darchtv.resources.library=/home/tv/repositorio-principal/dist/apk/androidfw-system-assets-2/libarchtv_resources_linux.so",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/apk-system-resource-adapter-2/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-system-resources-final-1/burst-data"
+    ]
+  },
+  "eof-close": {
+    "exit_code": 0,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Darchtv.linux.library=/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "-Darchtv.resources.library=/home/tv/repositorio-principal/dist/apk/androidfw-system-assets-2/libarchtv_resources_linux.so",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/apk-system-resource-adapter-2/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-system-resources-final-1/eof-data"
+    ]
+  },
+  "invalid-command": {
+    "exit_code": 1,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Darchtv.linux.library=/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "-Darchtv.resources.library=/home/tv/repositorio-principal/dist/apk/androidfw-system-assets-2/libarchtv_resources_linux.so",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/apk-system-resource-adapter-2/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-system-resources-final-1/invalid-data"
+    ]
+  },
+  "after-invalid-command": {
+    "exit_code": 0,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Darchtv.linux.library=/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "-Darchtv.resources.library=/home/tv/repositorio-principal/dist/apk/androidfw-system-assets-2/libarchtv_resources_linux.so",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/apk-system-resource-adapter-2/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-system-resources-final-1/invalid-data"
+    ]
+  },
+  "resource-variant": {
+    "exit_code": 0,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Darchtv.linux.library=/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "-Darchtv.resources.library=/home/tv/repositorio-principal/dist/apk/androidfw-system-assets-2/libarchtv_resources_linux.so",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/apk-system-resource-adapter-2/dex/classes.dex:/home/tv/repositorio-principal/dist/apk/counter-system-resources-final-1/resource-variant-unsigned.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/dist/apk/counter-system-resources-final-1/resource-variant-unsigned.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-system-resources-final-1/variant-data"
+    ]
+  },
+  "truncated-resources": {
+    "exit_code": 1,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Darchtv.linux.library=/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "-Darchtv.resources.library=/home/tv/repositorio-principal/dist/apk/androidfw-system-assets-2/libarchtv_resources_linux.so",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/apk-system-resource-adapter-2/dex/classes.dex:/home/tv/repositorio-principal/dist/apk/counter-system-resources-final-1/truncated-resources-unsigned.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/dist/apk/counter-system-resources-final-1/truncated-resources-unsigned.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-system-resources-final-1/malformed-data"
+    ]
+  },
+  "corrupt-preferences": {
+    "exit_code": 1,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Darchtv.linux.library=/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "-Darchtv.resources.library=/home/tv/repositorio-principal/dist/apk/androidfw-system-assets-2/libarchtv_resources_linux.so",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/apk-system-resource-adapter-2/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-system-resources-final-1/app-data"
+    ]
+  },
+  "profile-overrides": {
+    "exit_code": 0,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Darchtv.linux.library=/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "-Darchtv.resources.library=/home/tv/repositorio-principal/dist/apk/androidfw-system-assets-2/libarchtv_resources_linux.so",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/apk-system-resource-adapter-2/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-system-resources-final-1/profile-data"
+    ],
+    "property_overrides": {
+      "ARCHTV_ANDROID_PROPERTY_ro.build.version.sdk": "999",
+      "ARCHTV_ANDROID_PROPERTY_ro.product.cpu.abilist64": "unsupported"
+    }
+  },
+  "display-resize": {
+    "exit_code": 0,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Darchtv.linux.library=/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "-Darchtv.resources.library=/home/tv/repositorio-principal/dist/apk/androidfw-system-assets-2/libarchtv_resources_linux.so",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/apk-system-resource-adapter-2/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-system-resources-final-1/display-data"
+    ]
+  },
+  "display-invalid-zero": {
+    "exit_code": 1,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Darchtv.linux.library=/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "-Darchtv.resources.library=/home/tv/repositorio-principal/dist/apk/androidfw-system-assets-2/libarchtv_resources_linux.so",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/apk-system-resource-adapter-2/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-system-resources-final-1/display-invalid-zero"
+    ]
+  },
+  "display-invalid-oversized": {
+    "exit_code": 1,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Darchtv.linux.library=/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "-Darchtv.resources.library=/home/tv/repositorio-principal/dist/apk/androidfw-system-assets-2/libarchtv_resources_linux.so",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/apk-system-resource-adapter-2/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-system-resources-final-1/display-invalid-oversized"
+    ]
+  },
+  "display-invalid-malformed": {
+    "exit_code": 1,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Darchtv.linux.library=/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "-Darchtv.resources.library=/home/tv/repositorio-principal/dist/apk/androidfw-system-assets-2/libarchtv_resources_linux.so",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/apk-system-resource-adapter-2/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-system-resources-final-1/display-invalid-malformed"
+    ]
+  },
+  "original_apk_sha256": "f07c9b92ab3353237276081c22e11ce06168b8c9f71a99ea32968b2ce0f00e28",
+  "runtime_dex_sha256": "2bda4b04444a15616d5d8941f8014e401ef535dc59d2c8e8872dd576f3c55a91",
+  "resources_library_sha256": "a580d1a5fd6322175961ede45e1348e9eaa8b9dfae490c60defdb434797a715d",
+  "linux_library_sha256": "0ff761f86136e769d99ca6aa113b2296bde111c423eb43a891346e8f36e3c863",
+  "headless_counter_pass": true,
+  "original_resources_pass": true,
+  "original_public_resources_pass": true,
+  "dynamic_resource_metrics_pass": true,
+  "original_ui_looper_pass": true,
+  "wayland_pass": false,
+  "scope": "Original APK DEX lifecycle, listener, resources and integer persistence. Separate unsigned resource variant and malformed inputs. No Wayland UI, signature enforcement, isolation, full Android API or stable general APK support."
+}

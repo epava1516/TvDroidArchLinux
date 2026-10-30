@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Selected original AOSP defaults; input licenses: Apache-2.0. -->
+<resources>
+  <bool name="config_preferKeepClearForFocus">false</bool>
+  <bool name="config_showMenuShortcutsWhenKeyboardPresent">false</bool>
+  <bool name="config_ui_enableFadingMarquee">false</bool>
+  <item name="config_ambiguousGestureMultiplier" format="float" type="dimen">2.0</item>
+  <dimen name="config_horizontalScrollFactor">64dp</dimen>
+  <dimen name="config_minScalingSpan">27mm</dimen>
+  <dimen name="config_minScrollbarTouchTarget">48dp</dimen>
+  <dimen name="config_scrollbarSize">4dp</dimen>
+  <dimen name="config_verticalScrollFactor">64dp</dimen>
+  <dimen name="config_viewConfigurationHoverSlop">4dp</dimen>
+  <dimen name="config_viewConfigurationTouchSlop">8dp</dimen>
+  <dimen name="config_viewMaxFlingVelocity">8000dp</dimen>
+  <dimen name="config_viewMinFlingVelocity">50dp</dimen>
+  <integer name="config_globalActionsKeyTimeout">500</integer>
+  <integer name="config_overrideHasPermanentMenuKey">0</integer>
+  <integer name="config_screenshotChordKeyTimeout">0</integer>
+  <integer name="config_smartSelectionInitializedTimeoutMillis">200</integer>
+  <integer name="config_smartSelectionInitializingTimeoutMillis">500</integer>
+</resources>

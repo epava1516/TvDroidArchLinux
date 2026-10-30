@@ -1,0 +1,14 @@
+dalvikvm64 E 10-30 15:56:24    97    97 image_space.cc:2239] Error reading named image component header for /home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/core.art, error: Unable to open file "/home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/x86_64/core.art" for reading image header
+dalvikvm64 E 10-30 15:56:24    97    97 image_space.cc:3470] Could not create image space with image file '/home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/core.art'. Attempting to fall back to imageless running. Error was: Full boot image cannot be compiled because no profile is provided.
+ziparchive W 10-30 15:56:24    97    97 Unable to open '/home/tv/repositorio-principal/dist/apk/aosp-view-constructor-singleton-1/dex/classes.dm': No such file or directory
+ziparchive W 10-30 15:56:24    97    97 Unable to open '/home/tv/repositorio-principal/dist/apk/view-system-resources-final-2/dex/classes.dm': No such file or directory
+APK_HOST_PROFILE sdk=33 abi=x86_64
+APK_RESOURCES_AOSP_READY
+APK_PUBLIC_RESOURCES_AOSP_READY
+java.lang.NoClassDefFoundError: Failed resolution of: Landroid/view/WindowManagerGlobal;
+	at android.view.ViewConfiguration.<init>(ViewConfiguration.java:452)
+	at android.view.ViewConfiguration.get(ViewConfiguration.java:533)
+	at android.view.View.<init>(View.java:5366)
+	at org.archtv.apkruntime.ViewConstructorProbe.main(ViewConstructorProbe.java:27)
+Caused by: java.lang.ClassNotFoundException: android.view.WindowManagerGlobal
+	... 4 more

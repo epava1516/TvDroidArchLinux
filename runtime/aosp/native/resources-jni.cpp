@@ -49,10 +49,10 @@ const android::ResStringPool* pool(jlong handle) {
 extern "C" JNIEXPORT jlong JNICALL Java_android_content_res_ApkAssets_nativeLoad(
     JNIEnv* env, jclass, jint format, jstring path, jint flags, jobject provider) {
     return guard<jlong>(env, 0, [&] {
-        if (format != 0 || flags != 0 || provider) {
-            fail(env, "java/lang/UnsupportedOperationException", "Only ordinary path APKs supported"); return jlong(0);
+        if (format != 0 || (flags & ~jint(android::PROPERTY_SYSTEM)) != 0 || provider) {
+            fail(env, "java/lang/UnsupportedOperationException", "Only path APKs with optional PROPERTY_SYSTEM supported"); return jlong(0);
         }
-        auto apk = android::ApkAssets::Load(string(env, path));
+        auto apk = android::ApkAssets::Load(string(env, path), android::package_property_t(flags));
         if (!apk) { fail(env, "java/io/IOException", "Cannot load APK resources"); return jlong(0); }
         jlong id = token(); assets.emplace(id, std::shared_ptr<android::ApkAssets>(std::move(apk))); return id;
     });

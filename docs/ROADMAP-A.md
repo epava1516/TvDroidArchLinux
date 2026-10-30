@@ -8,9 +8,9 @@ Waydroid. El éxito se mide por ejecución real de aplicaciones, no por boot And
 | Etapa | Trabajo concreto | Puerta de salida | Estado |
 | --- | --- | --- | --- |
 | A0 · superficie real | APK propia pequeña, inventario DEX/recursos/JNI y pruebas funcionales; revisar contrato según esas necesidades | APK y fuentes fijadas, APIs realmente usadas identificadas, pruebas reproducibles | Verificado para la fixture: inventario, recursos, firmas y comportamiento; contrato experimental en CONTRATO-APK.md |
-| A1 · ejecución DEX | Estudiar ART/libcore en modo host y alternativas; prototipo de ejecución sobre Linux sin sistema Android | Código DEX de la APK ejecutado con salida verificable, sin Waydroid ni arranque Android | Verificado para la APK propia: ART ejecuta onCreate/onClick y conserva preferencias entre procesos; sin UI todavía |
-| A2 · primera interfaz | Subconjunto medido de Activity, ciclo de vida, recursos, View/texto/botón y entrada; puente hacia Wayland/Rust | APK propia sin modificar abre ventana, responde a entrada, guarda estado y se cierra correctamente | Verificado para la fixture: DRM/Pixman 720p, uinput→Wayland, cierre y reapertura 2→3; framework aún propio |
-| A3 · servicios mínimos | JNI/ABI/Bionic donde sean necesarios, gráficos, audio, red, archivos y permisos según APK de prueba | Pruebas por API/servicio, errores explícitos en funciones ausentes y recuperación | Pendiente |
+| A1 · ejecución DEX | Estudiar ART/libcore en modo host y alternativas; prototipo de ejecución sobre Linux sin sistema Android | Código DEX de la APK ejecutado con salida verificable, sin Waydroid ni arranque Android | Verificado para la APK propia: ART ejecuta onCreate/onClick y conserva preferencias entre procesos; interfaz del prototipo verificada en A2 |
+| A2 · primera interfaz | Subconjunto medido de Activity, ciclo de vida, recursos, View/texto/botón y entrada; puente hacia Wayland/Rust | APK propia sin modificar abre ventana, responde a entrada, guarda estado y se cierra correctamente | Verificado para la fixture: DRM/Pixman 720p, uinput→Wayland, cierre y reapertura 2→3; Activity/View propios; cola, contexto y recursos originales integrados |
+| A3 · servicios mínimos | JNI/ABI/Bionic donde sean necesarios, gráficos, audio, red, archivos y permisos según APK de prueba | Pruebas por API/servicio, errores explícitos en funciones ausentes y recuperación | En curso: JNI Linux, Log y recursos/contexto originales verificados para fixtures; gráficos, audio, red, archivos y permisos pendientes |
 | A4 · compatibilidad y estabilidad | APK reales por ABI/API, reflexión, WebView y demás dependencias descubiertas; ampliar la capa con evidencia | Matriz por aplicación, pruebas prolongadas, reinicios y mediciones; fallos y cobertura registrados | Pendiente |
 | A5 · distribución | Runtime y servicio anfitrión propios, paquetes, actualizaciones, migración de datos e integración TV | Instalación limpia sin Waydroid ni sistema Android completo, apps verificadas, actualización y rollback | Pendiente |
 
@@ -189,3 +189,11 @@ prioridad probado en ART; ver AOSP-LOG-LINUX.md y reports/aosp-linux-log/. Pasa 
 regresión headless del contador. El constructor View con el conjunto de 74 fuentes
 avanza hasta config_scrollbarSize del sistema, todavía ausente. Cargar recursos
 de sistema y completar construcción/dibujo siguen pendientes.
+
+
+El perfil de 18 recursos de sistema AOSP ya carga junto con el APK, preservando
+IDs y valores originales. Pasan lectura de los 18 valores a 160/320 dpi, cookies
+de sistema/aplicación y regresiones de contador/métricas. El constructor View
+avanza hasta WindowManagerGlobal, aún ausente. AOSP-RECURSOS-SISTEMA.md y
+reports/aosp-system-resources/ registran el alcance parcial y la frontera de
+servicio de ventanas; no se acredita construcción ni dibujo de View original.

@@ -1,0 +1,9 @@
+dalvikvm64 E 10-30 15:54:59   299   299 image_space.cc:2239] Error reading named image component header for /home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/core.art, error: Unable to open file "/home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/x86_64/core.art" for reading image header
+dalvikvm64 E 10-30 15:54:59   299   299 image_space.cc:3470] Could not create image space with image file '/home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/core.art'. Attempting to fall back to imageless running. Error was: Full boot image cannot be compiled because no profile is provided.
+ziparchive W 10-30 15:54:59   299   299 Unable to open '/home/tv/repositorio-principal/dist/apk/apk-system-resource-adapter-2/dex/classes.dm': No such file or directory
+ziparchive W 10-30 15:54:59   299   299 Unable to open '/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.dm': No such file or directory
+APK_HOST_PROFILE sdk=33 abi=x86_64
+APK_RESOURCES_AOSP_READY
+APK_PUBLIC_RESOURCES_AOSP_READY
+APK_UI_DISPATCH create thread=main
+APK_UI_DISPATCH quit thread=main

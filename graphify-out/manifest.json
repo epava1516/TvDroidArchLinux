@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793374850.109157,
-    "seen": 1793374857.871529,
-    "ast_hash": "28797093e957a6425e0027865d6855ef",
+    "mtime": 1793375947.9496713,
+    "seen": 1793375954.7454545,
+    "ast_hash": "184baf6f575ed5aa1a75fc2543da8125",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -780,15 +780,15 @@
     "semantic_hash": ""
   },
   "runtime/apk/java/org/archtv/apkruntime/ApkResources.java": {
-    "mtime": 1793369875.0143716,
-    "seen": 1793371730.7097716,
-    "ast_hash": "7d438c6606ec21d11a5bafcb91a461a4",
+    "mtime": 1793375665.968977,
+    "seen": 1793375954.744406,
+    "ast_hash": "1f07e1e49b3541ba7a28608ab6c86d67",
     "semantic_hash": ""
   },
   "runtime/apk/java/org/archtv/apkruntime/AppEnvironment.java": {
-    "mtime": 1793371084.3477044,
-    "seen": 1793371730.7097757,
-    "ast_hash": "8a422af115eeb763f412f47808543bfd",
+    "mtime": 1793375273.413967,
+    "seen": 1793375954.7444098,
+    "ast_hash": "43d9d161ada4accd4d7aa5138d002d9e",
     "semantic_hash": ""
   },
   "runtime/apk/java/org/archtv/apkruntime/IntPreferences.java": {
@@ -882,9 +882,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/framework-study.json": {
-    "mtime": 1793374634.7180302,
-    "seen": 1793374857.871162,
-    "ast_hash": "9baf8c61dc85f0a40fceb8990ade068f",
+    "mtime": 1793375018.6040306,
+    "seen": 1793375954.7443604,
+    "ast_hash": "ca2035c66399f5aaf110d582b444b73c",
     "semantic_hash": ""
   },
   "tools/apk/study_framework.py": {
@@ -894,9 +894,9 @@
     "semantic_hash": ""
   },
   "docs/PORT-FRAMEWORK-AOSP.md": {
-    "mtime": 1793374850.1082106,
-    "seen": 1793374857.871524,
-    "ast_hash": "f47f7c9c2fb6a39c90e338ca5fc83470",
+    "mtime": 1793375947.944369,
+    "seen": 1793375954.745447,
+    "ast_hash": "65defa9abc1b6635c2f5e45d3dd18dfb",
     "semantic_hash": ""
   },
   "fixtures/aosp-queue/QueueLinkProbe.java": {
@@ -1080,9 +1080,9 @@
     "semantic_hash": ""
   },
   "tools/apk/build_androidfw.py": {
-    "mtime": 1793362528.5111542,
-    "seen": 1793362961.0811,
-    "ast_hash": "ebd1581ba96a001bbed482f94122004d",
+    "mtime": 1793375516.3724027,
+    "seen": 1793375954.7452176,
+    "ast_hash": "338016f2b63625d72d4dab91fb9f37bc",
     "semantic_hash": ""
   },
   "tools/apk/fetch_androidfw_sources.py": {
@@ -1110,9 +1110,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/native/resources-jni.cpp": {
-    "mtime": 1793364281.6883209,
-    "seen": 1793364902.2699013,
-    "ast_hash": "ae92ced47bf8e073a04586293cbdda02",
+    "mtime": 1793375142.5753613,
+    "seen": 1793375954.7443683,
+    "ast_hash": "e79c8c6cac13e24296bcfc172382cabc",
     "semantic_hash": ""
   },
   "tools/apk/verify_resources_jni.py": {
@@ -1260,21 +1260,21 @@
     "semantic_hash": ""
   },
   "fixtures/aosp-view-constructor/ViewConstructorProbe.java": {
-    "mtime": 1793374771.3093345,
-    "seen": 1793374857.8711066,
-    "ast_hash": "ea099e34e929e6f828ff53ac432d172c",
+    "mtime": 1793375594.3492954,
+    "seen": 1793375954.7442849,
+    "ast_hash": "bc99515c9744b0506b86e046ac3bda38",
     "semantic_hash": ""
   },
   "tools/apk/probe_view_constructor.py": {
-    "mtime": 1793373922.9228742,
-    "seen": 1793374263.7542782,
-    "ast_hash": "1c3456b761688528550039c787a2fc61",
+    "mtime": 1793375409.8896484,
+    "seen": 1793375954.745277,
+    "ast_hash": "3b283d6bbe8398116f3a42c15665f477",
     "semantic_hash": ""
   },
   "docs/AOSP-CONSTRUCTOR-VIEW.md": {
-    "mtime": 1793374850.1040094,
-    "seen": 1793374857.8714468,
-    "ast_hash": "dd7fadffbf5870d1f75468a1bd6dbb24",
+    "mtime": 1793375947.9465413,
+    "seen": 1793375954.7453423,
+    "ast_hash": "af5363b5023f2b4b1be2749c6768187f",
     "semantic_hash": ""
   },
   "crates/archtv-aosp-linux/src/logging.rs": {
@@ -1299,6 +1299,24 @@
     "mtime": 1793374771.3124382,
     "seen": 1793374857.8714557,
     "ast_hash": "f53f6ee7978559244ac0130d44c861c8",
+    "semantic_hash": ""
+  },
+  "fixtures/aosp-view-constructor/SystemResourcesChecks.java": {
+    "mtime": 1793375774.5074592,
+    "seen": 1793375954.7442777,
+    "ast_hash": "abd0f81ce939fe13db73fe885ce51a87",
+    "semantic_hash": ""
+  },
+  "tools/apk/build_system_resources.py": {
+    "mtime": 1793375516.373195,
+    "seen": 1793375954.7452385,
+    "ast_hash": "9ad7a2d824e0d8b973edaac88e6389ce",
+    "semantic_hash": ""
+  },
+  "docs/AOSP-RECURSOS-SISTEMA.md": {
+    "mtime": 1793375749.5578475,
+    "seen": 1793375954.7453678,
+    "ast_hash": "a400b245be5a1d6e31d0b2a7932e099b",
     "semantic_hash": ""
   }
 }

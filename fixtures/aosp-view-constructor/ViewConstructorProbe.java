@@ -13,13 +13,14 @@ public final class ViewConstructorProbe {
         System.load(args[1]);
         HostProfile.initialize();
         Files.createDirectories(Paths.get(args[3]));
-        AppEnvironment.initialize(Paths.get(args[2]),Paths.get(args[3]));
+        AppEnvironment.initialize(Paths.get(args[2]),Paths.get(args[3]),args.length==5?Paths.get(args[4]):null);
         Looper.prepareMainLooper();
         try {
             if (Looper.myLooper() != Looper.getMainLooper()) throw new AssertionError("Main Looper");
             android.content.Context context = AppEnvironment.current().applicationContext;
             int counter = context.getResources().getIdentifier("counter","string","org.archtv.probe");
             if (!"Contador:".equals(context.getString(counter))) throw new AssertionError("APK resource identity");
+            if (args.length==5) SystemResourcesChecks.verify(context,args[4]);
             System.out.println("VIEW_CONSTRUCTOR_BEGIN resources="+
                 AppEnvironment.current().applicationContext.getResources().getDisplayMetrics());
             try {

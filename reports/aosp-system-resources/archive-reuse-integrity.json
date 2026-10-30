@@ -1,0 +1,39 @@
+{
+  "negative_controls_pass": true,
+  "cases": [
+    {
+      "case": "archive-checksum",
+      "rejected": true,
+      "stderr": "Archive checksum mismatch: /tmp/archtv-reuse-negative-vj6rrm00/archive-checksum/libandroidfw_host.a\n",
+      "command": [
+        "python",
+        "tools/apk/build_androidfw.py",
+        "--sources",
+        "/home/tv/.cache/archtv/androidfw-port",
+        "--art",
+        "/home/tv/.cache/archtv/art-host/host/art-13.0.0",
+        "--reuse-archives",
+        "/tmp/archtv-reuse-negative-vj6rrm00/archive-checksum",
+        "--output",
+        "/tmp/archtv-reuse-negative-vj6rrm00/archive-checksum-output"
+      ]
+    },
+    {
+      "case": "compile-command",
+      "rejected": true,
+      "stderr": "Archive compile command mismatch: androidfw/ApkAssets.cpp\n",
+      "command": [
+        "python",
+        "tools/apk/build_androidfw.py",
+        "--sources",
+        "/home/tv/.cache/archtv/androidfw-port",
+        "--art",
+        "/home/tv/.cache/archtv/art-host/host/art-13.0.0",
+        "--reuse-archives",
+        "/tmp/archtv-reuse-negative-vj6rrm00/compile-command",
+        "--output",
+        "/tmp/archtv-reuse-negative-vj6rrm00/compile-command-output"
+      ]
+    }
+  ]
+}

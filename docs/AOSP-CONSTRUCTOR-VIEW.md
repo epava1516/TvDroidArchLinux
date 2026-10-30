@@ -89,3 +89,11 @@ captura se conserva separada y no produjo un resultado satisfactorio.
 Sigue pendiente construir/cargar recursos de sistema AOSP junto con el APK,
 conservando IDs y selección de configuración. No se sustituye la dimensión por
 un cero ni se omite ViewConfiguration. Tampoco se ha alcanzado RenderNode.
+
+
+El perfil de 18 recursos de sistema AOSP ya carga junto con el APK, preservando
+IDs y valores originales. Pasan lectura de los 18 valores a 160/320 dpi, cookies
+de sistema/aplicación y regresiones de contador/métricas. El constructor View
+avanza hasta WindowManagerGlobal, aún ausente. AOSP-RECURSOS-SISTEMA.md y
+reports/aosp-system-resources/ registran el alcance parcial y la frontera de
+servicio de ventanas; no se acredita construcción ni dibujo de View original.

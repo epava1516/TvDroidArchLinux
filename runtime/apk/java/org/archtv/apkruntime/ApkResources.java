@@ -14,24 +14,25 @@ import java.util.zip.ZipFile;
 
 /** Host initialization adapter; all resource parsing and value resolution use original AOSP. */
 public final class ApkResources implements AutoCloseable {
-    private final ApkAssets apkAssets;
+    private final ApkAssets[] apkAssets;
     private final AssetManager manager;
     private final Resources resources;
     private boolean closed;
 
-    public ApkResources(Path apk) throws Exception {
-        // Retain the laboratory input budget without interpreting the resource table.
-        try (ZipFile archive = new ZipFile(apk.toFile())) {
-            ZipEntry table = archive.getEntry("resources.arsc");
-            if (table == null || table.getSize() < 0 || table.getSize() > 16*1024*1024)
-                throw bad("Missing or oversized resources.arsc", null);
-        }
+    public ApkResources(Path apk) throws Exception { this(apk, null); }
+
+    public ApkResources(Path apk, Path systemResources) throws Exception {
+        checkTable(apk);
+        if (systemResources != null) checkTable(systemResources);
         ApkAssets loaded = null;
+        ApkAssets system = null;
         AssetManager created = null;
         try {
+            if (systemResources != null)
+                system = ApkAssets.loadFromPath(systemResources.toString(), ApkAssets.PROPERTY_SYSTEM);
             loaded = ApkAssets.loadFromPath(apk.toString());
-            // Host initialization has no framework-res.apk/overlays yet. This is the
-            // original internal constructor used by AOSP Builder, not an API replacement.
+            // Explicit bootstrap asset set; the original internal constructor is also
+            // used by AOSP Builder. Global Android overlays remain outside this host.
             Constructor<AssetManager> constructor = AssetManager.class.getDeclaredConstructor(boolean.class);
             constructor.setAccessible(true);
             created = constructor.newInstance(false);
@@ -39,7 +40,7 @@ public final class ApkResources implements AutoCloseable {
             object.setAccessible(true);
             Method install = AssetManager.class.getDeclaredMethod("nativeSetApkAssets", long.class, ApkAssets[].class, boolean.class);
             install.setAccessible(true);
-            ApkAssets[] assets = {loaded};
+            ApkAssets[] assets = system == null ? new ApkAssets[]{loaded} : new ApkAssets[]{system, loaded};
             install.invoke(null, object.getLong(created), assets, false);
             Field inventory = AssetManager.class.getDeclaredField("mApkAssets");
             inventory.setAccessible(true);
@@ -55,15 +56,25 @@ public final class ApkResources implements AutoCloseable {
             configuration.setToDefaults();
             setDimensions(configuration, metrics);
             resources = new Resources(created, metrics, configuration);
-            apkAssets = loaded;
+            apkAssets = assets;
             manager = created;
-        } catch (Exception error) {
-            try { if (created != null) created.close(); }
-            finally { if (loaded != null) loaded.close(); }
+        } catch (Exception | Error error) {
+            if (created != null) try { created.close(); } catch (Throwable close) { error.addSuppressed(close); }
+            if (loaded != null) try { loaded.close(); } catch (Throwable close) { error.addSuppressed(close); }
+            if (system != null) try { system.close(); } catch (Throwable close) { error.addSuppressed(close); }
+            if (error instanceof Error) throw (Error)error;
             throw bad("AOSP asset initialization", error);
         }
         System.err.println("APK_RESOURCES_AOSP_READY");
         System.err.println("APK_PUBLIC_RESOURCES_AOSP_READY");
+    }
+    private static void checkTable(Path apk) throws Exception {
+        // Keep the laboratory input budget without interpreting resource tables.
+        try (ZipFile archive = new ZipFile(apk.toFile())) {
+            ZipEntry table = archive.getEntry("resources.arsc");
+            if (table == null || table.getSize() < 0 || table.getSize() > 16*1024*1024)
+                throw bad("Missing or oversized resources.arsc", null);
+        }
     }
     private static IllegalArgumentException bad(String message, Throwable cause) {
         return new IllegalArgumentException("Unsupported or invalid APK resources: "+message, cause);
@@ -105,6 +116,16 @@ public final class ApkResources implements AutoCloseable {
         if (closed) return;
         closed = true;
         try { manager.close(); }
-        finally { apkAssets.close(); }
+        finally {
+            Throwable failure = null;
+            for (int i=apkAssets.length-1; i>=0; i--) {
+                try { apkAssets[i].close(); }
+                catch (RuntimeException | Error error) {
+                    if (failure == null) failure=error; else failure.addSuppressed(error);
+                }
+            }
+            if (failure instanceof Error) throw (Error)failure;
+            if (failure != null) throw (RuntimeException)failure;
+        }
     }
 }

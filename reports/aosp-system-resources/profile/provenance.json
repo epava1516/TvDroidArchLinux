@@ -1,0 +1,184 @@
+{
+  "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+  "original_inputs_sha256": {
+    "core/res/res/values/config.xml": "a25fc58a2e677fcef95573fbeff6c1be6ae4af8b8ccdb993d77b4b2571033713",
+    "core/res/res/values/dimens.xml": "c49782a2e7096df054c09df86c1464c6615f60c30e75999b37fc5e05da8754bb",
+    "core/java/android/view/ViewConfiguration.java": "023d3ae63af3740d0c44c83db3d04aeee8e4920e933d40e59c6505021eaeef89"
+  },
+  "reference": {
+    "artifact": "org.robolectric:android-all:13-robolectric-9030017",
+    "file": "android-all-13.jar",
+    "url": "https://repo.maven.apache.org/maven2/org/robolectric/android-all/13-robolectric-9030017/android-all-13-robolectric-9030017.jar",
+    "bytes": 178380165,
+    "upstream_sha1": "6f1de3639fb19379abaa68b9f29d10cd6653047f",
+    "sha256": "6e67dca81d30295e31ee6a28cfb601b6b66aaeaee51a92386ed099a64cea5996",
+    "scope": "Android 13 compiler reference, never placed wholesale on runtime classpath. --with-public-resources reuses only generated classes explicitly pinned in prebuilt-bindings.json; rebuilding these remains pending."
+  },
+  "aapt2": {
+    "file": "aapt2.jar",
+    "url": "https://dl.google.com/dl/android/maven2/com/android/tools/build/aapt2/8.6.1-11315950/aapt2-8.6.1-11315950-linux.jar",
+    "base64": false,
+    "sha256": "955f14e61cac2e1d70a4703b1aa539ca4f348469ac64a155dcce47bda3de52c8",
+    "bytes": 2174058
+  },
+  "commands": [
+    [
+      "/home/tv/repositorio-principal/dist/apk/system-resources-3/aapt2",
+      "compile",
+      "--dir",
+      "/home/tv/repositorio-principal/dist/apk/system-resources-3/res",
+      "-o",
+      "/home/tv/repositorio-principal/dist/apk/system-resources-3/compiled.zip"
+    ],
+    [
+      "/home/tv/repositorio-principal/dist/apk/system-resources-3/aapt2",
+      "link",
+      "-x",
+      "--stable-ids",
+      "/home/tv/repositorio-principal/dist/apk/system-resources-3/stable-ids.txt",
+      "--emit-ids",
+      "/home/tv/repositorio-principal/dist/apk/system-resources-3/emitted-ids.txt",
+      "--manifest",
+      "/home/tv/repositorio-principal/dist/apk/system-resources-3/AndroidManifest.xml",
+      "-o",
+      "/home/tv/repositorio-principal/dist/apk/system-resources-3/framework-res.apk",
+      "/home/tv/repositorio-principal/dist/apk/system-resources-3/compiled.zip"
+    ],
+    [
+      "/home/tv/repositorio-principal/dist/apk/system-resources-3/aapt2",
+      "dump",
+      "resources",
+      "/home/tv/repositorio-principal/dist/apk/system-resources-3/framework-res.apk"
+    ]
+  ],
+  "resources": [
+    {
+      "type": "bool",
+      "name": "config_preferKeepClearForFocus",
+      "id": 17891726,
+      "source": "core/res/res/values/config.xml",
+      "original_definition": "<bool name=\"config_preferKeepClearForFocus\">false</bool>"
+    },
+    {
+      "type": "bool",
+      "name": "config_showMenuShortcutsWhenKeyboardPresent",
+      "id": 17891749,
+      "source": "core/res/res/values/config.xml",
+      "original_definition": "<bool name=\"config_showMenuShortcutsWhenKeyboardPresent\">false</bool>"
+    },
+    {
+      "type": "bool",
+      "name": "config_ui_enableFadingMarquee",
+      "id": 17891801,
+      "source": "core/res/res/values/config.xml",
+      "original_definition": "<bool name=\"config_ui_enableFadingMarquee\">false</bool>"
+    },
+    {
+      "type": "dimen",
+      "name": "config_ambiguousGestureMultiplier",
+      "id": 17105062,
+      "source": "core/res/res/values/config.xml",
+      "original_definition": "<item name=\"config_ambiguousGestureMultiplier\" format=\"float\" type=\"dimen\">2.0</item>"
+    },
+    {
+      "type": "dimen",
+      "name": "config_horizontalScrollFactor",
+      "id": 17105078,
+      "source": "core/res/res/values/config.xml",
+      "original_definition": "<dimen name=\"config_horizontalScrollFactor\">64dp</dimen>"
+    },
+    {
+      "type": "dimen",
+      "name": "config_minScalingSpan",
+      "id": 17105087,
+      "source": "core/res/res/values/config.xml",
+      "original_definition": "<dimen name=\"config_minScalingSpan\">27mm</dimen>"
+    },
+    {
+      "type": "dimen",
+      "name": "config_minScrollbarTouchTarget",
+      "id": 17105089,
+      "source": "core/res/res/values/config.xml",
+      "original_definition": "<dimen name=\"config_minScrollbarTouchTarget\">48dp</dimen>"
+    },
+    {
+      "type": "dimen",
+      "name": "config_scrollbarSize",
+      "id": 17105110,
+      "source": "core/res/res/values/config.xml",
+      "original_definition": "<dimen name=\"config_scrollbarSize\">4dp</dimen>"
+    },
+    {
+      "type": "dimen",
+      "name": "config_verticalScrollFactor",
+      "id": 17105113,
+      "source": "core/res/res/values/config.xml",
+      "original_definition": "<dimen name=\"config_verticalScrollFactor\">64dp</dimen>"
+    },
+    {
+      "type": "dimen",
+      "name": "config_viewConfigurationHoverSlop",
+      "id": 17105114,
+      "source": "core/res/res/values/config.xml",
+      "original_definition": "<dimen name=\"config_viewConfigurationHoverSlop\">4dp</dimen>"
+    },
+    {
+      "type": "dimen",
+      "name": "config_viewConfigurationTouchSlop",
+      "id": 17105115,
+      "source": "core/res/res/values/config.xml",
+      "original_definition": "<dimen name=\"config_viewConfigurationTouchSlop\">8dp</dimen>"
+    },
+    {
+      "type": "dimen",
+      "name": "config_viewMaxFlingVelocity",
+      "id": 17105116,
+      "source": "core/res/res/values/config.xml",
+      "original_definition": "<dimen name=\"config_viewMaxFlingVelocity\">8000dp</dimen>"
+    },
+    {
+      "type": "dimen",
+      "name": "config_viewMinFlingVelocity",
+      "id": 17105117,
+      "source": "core/res/res/values/config.xml",
+      "original_definition": "<dimen name=\"config_viewMinFlingVelocity\">50dp</dimen>"
+    },
+    {
+      "type": "integer",
+      "name": "config_globalActionsKeyTimeout",
+      "id": 17694835,
+      "source": "core/res/res/values/config.xml",
+      "original_definition": "<integer name=\"config_globalActionsKeyTimeout\">500</integer>"
+    },
+    {
+      "type": "integer",
+      "name": "config_overrideHasPermanentMenuKey",
+      "id": 17694906,
+      "source": "core/res/res/values/config.xml",
+      "original_definition": "<integer name=\"config_overrideHasPermanentMenuKey\">0</integer>"
+    },
+    {
+      "type": "integer",
+      "name": "config_screenshotChordKeyTimeout",
+      "id": 17694936,
+      "source": "core/res/res/values/config.xml",
+      "original_definition": "<integer name=\"config_screenshotChordKeyTimeout\">0</integer>"
+    },
+    {
+      "type": "integer",
+      "name": "config_smartSelectionInitializedTimeoutMillis",
+      "id": 17694941,
+      "source": "core/res/res/values/config.xml",
+      "original_definition": "<integer name=\"config_smartSelectionInitializedTimeoutMillis\">200</integer>"
+    },
+    {
+      "type": "integer",
+      "name": "config_smartSelectionInitializingTimeoutMillis",
+      "id": 17694942,
+      "source": "core/res/res/values/config.xml",
+      "original_definition": "<integer name=\"config_smartSelectionInitializingTimeoutMillis\">500</integer>"
+    }
+  ],
+  "apk_sha256": "b6942b09b4742f738d41b5595470b4b0b26f9063c818bd8ea8ee0433599450cf",
+  "scope": "Selected 18 original AOSP default resources used by ViewConfiguration, compiled as package android/0x01. Private IDs derive from the pinned compiler reference and are verified in emitted IDs. No copied reference bytecode, DEX, product overlay, full framework-res, themes or qualifier-complete compatibility claim."
+}

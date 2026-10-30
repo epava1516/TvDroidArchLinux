@@ -154,3 +154,11 @@ prioridad probado en ART; ver AOSP-LOG-LINUX.md y reports/aosp-linux-log/. Pasa 
 regresión headless del contador. El constructor View con el conjunto de 74 fuentes
 avanza hasta config_scrollbarSize del sistema, todavía ausente. Cargar recursos
 de sistema y completar construcción/dibujo siguen pendientes.
+
+
+El perfil de 18 recursos de sistema AOSP ya carga junto con el APK, preservando
+IDs y valores originales. Pasan lectura de los 18 valores a 160/320 dpi, cookies
+de sistema/aplicación y regresiones de contador/métricas. El constructor View
+avanza hasta WindowManagerGlobal, aún ausente. AOSP-RECURSOS-SISTEMA.md y
+reports/aosp-system-resources/ registran el alcance parcial y la frontera de
+servicio de ventanas; no se acredita construcción ni dibujo de View original.

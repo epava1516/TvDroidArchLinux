@@ -13,9 +13,9 @@ public final class AppEnvironment {
     public View focus;
     private final Path dataDirectory;
     private final Map<String, SharedPreferences> preferences = new HashMap<String, SharedPreferences>();
-    private AppEnvironment(Path apk, Path data) throws Exception {
+    private AppEnvironment(Path apk, Path data, Path systemResources) throws Exception {
         LinuxContext base = new LinuxContext();
-        resources = new ApkResources(apk);
+        resources = new ApkResources(apk, systemResources);
         try {
             applicationContext = new android.app.Application();
             java.lang.reflect.Method attach = android.content.ContextWrapper.class.getDeclaredMethod(
@@ -28,9 +28,10 @@ public final class AppEnvironment {
         }
         dataDirectory = data;
     }
-    public static void initialize(Path apk, Path data) throws Exception {
+    public static void initialize(Path apk, Path data) throws Exception { initialize(apk, data, null); }
+    public static void initialize(Path apk, Path data, Path systemResources) throws Exception {
         if (instance != null) throw new IllegalStateException("One APK per process");
-        instance = new AppEnvironment(apk, data);
+        instance = new AppEnvironment(apk, data, systemResources);
     }
     public static AppEnvironment current() {
         if (instance == null) throw new IllegalStateException("App environment not initialized");
