@@ -5,7 +5,7 @@ Workspace de producto, separado del checkout upstream usado en H1:
 - `archtv-core`: modelo de foco y pruebas sin servidor gráfico.
 - `archtv-compositor`: servidor Wayland Smithay; backends winit y DRM/KMS/Pixman.
 - `archtv-test-client`: cliente SCTK con buffers SHM, configure, frames y teclado.
-- `archtv-shell`: renderer CPU experimental; por ahora solo genera capturas y métricas.
+- `archtv-shell`: cliente Wayland interactivo; conserva un modo aislado para medir dibujo.
 
 Smithay está fijado al mismo commit que el laboratorio H1. Las dependencias se
 resuelven mediante el Cargo.lock raíz. Las adaptaciones de Smallvil conservan
@@ -87,9 +87,30 @@ acepta HOME, RESUME o QUIT terminados en salto de línea. El shell debe marcarlo
 CLOEXEC y retirar esa variable al lanzar aplicaciones. No se expone un socket de
 control público. Las conexiones públicas nunca adquieren el rol de shell.
 
+## Ensayo del shell interactivo
+
+```bash
+./scripts/88-shell-smoke.sh --apply
+```
+
+Usa tty2 libre y una configuración/catálogo aislados. Prueba Menú y pulsación
+larga, persistencia, búsqueda, Foot real, retorno Inicio/Volver y ajustes de
+sonido y radio Wi-Fi, restaurando volumen/silencio/radio al terminar. Requiere
+una conexión de desarrollo por cable y una salida PipeWire disponible. La
+creación de sockets IP queda denegada durante la sesión. No modifica favoritos
+ni recientes personales y no inicia Android.
+
+`--mode WIDTHxHEIGHT` selecciona un modo DRM anunciado por el conector; rechaza
+modos no disponibles. En winit establece el tamaño inicial de ventana. El ensayo
+H5 elige 1920×1080, disponible en esta VM.
+
+El shell acepta `--capture-states DIRECTORIO` y `--capture-after SEGUNDOS PNG`
+para diagnóstico. Esas capturas se codifican durante la prueba y deben omitirse
+al medir rendimiento normal.
+
 ## Límites actuales
 
-Clientes SHM comprobados en ambos backends. No hay shell de televisión, sesión
+Clientes SHM comprobados en ambos backends. El shell interactivo está en validación; no hay sesión
 instalable ni integración Android validada. Popup, grab, reposicionamiento,
 límites y mapa español están probados con entrada virtual de kernel. Quedan
 pendientes mando físico y plataformas distintas de esta VM.

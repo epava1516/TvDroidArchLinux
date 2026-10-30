@@ -184,6 +184,7 @@ pub fn init(
     state: &mut TvCompositor,
     path: &Path,
     capture: Option<(u64, std::path::PathBuf)>,
+    requested_mode: Option<(u32, u32)>,
 ) -> Result<()> {
     let (mut session, notifier) = LibSeatSession::new()?;
     let fd = session.open(
@@ -201,13 +202,26 @@ pub fn init(
                 .filter(|info| info.state() == control::connector::State::Connected)
         })
         .ok_or("no connected DRM output")?;
-    let mode = connector
-        .modes()
-        .iter()
-        .find(|mode| mode.mode_type().contains(control::ModeTypeFlags::PREFERRED))
-        .or_else(|| connector.modes().first())
-        .copied()
-        .ok_or("output has no modes")?;
+    let mode = if let Some((width, height)) = requested_mode {
+        connector
+            .modes()
+            .iter()
+            .filter(|mode| {
+                let size = mode.size();
+                u32::from(size.0) == width && u32::from(size.1) == height
+            })
+            .max_by_key(|mode| mode.vrefresh())
+            .copied()
+            .ok_or("requested DRM mode is not advertised by this output")?
+    } else {
+        connector
+            .modes()
+            .iter()
+            .find(|mode| mode.mode_type().contains(control::ModeTypeFlags::PREFERRED))
+            .or_else(|| connector.modes().first())
+            .copied()
+            .ok_or("output has no modes")?
+    };
     let crtc = connector
         .encoders()
         .iter()

@@ -58,7 +58,7 @@ struct State {
     exit: bool,
     frames: u64,
     held: Option<(u32, Key, Instant)>,
-    enter_pending: Option<Instant>,
+    enter_pending: Option<(Instant, u32)>,
     enter_long: bool,
     modifiers: Modifiers,
     pending_save: Option<crate::model::Settings>,
@@ -68,6 +68,7 @@ struct State {
 pub fn run(
     exit_after: Option<u64>,
     capture: Option<(u64, PathBuf)>,
+    capture_states: Option<PathBuf>,
 ) -> Result<(), Box<dyn std::error::Error>> {
     let control = control_fd()?;
     let connection = Connection::connect_to_env()?;
@@ -119,6 +120,9 @@ pub fn run(
     };
     let mut event_loop: EventLoop<State> = EventLoop::try_new()?;
     WaylandSource::new(connection.clone(), queue).insert(event_loop.handle())?;
+    if let Some(directory) = &capture_states {
+        std::fs::create_dir_all(directory)?;
+    }
     let started = Instant::now();
     let mut capture = capture;
     println!("SHELL_STARTED");
@@ -136,6 +140,20 @@ pub fn run(
         }
         if state.dirty && state.configured && !state.frame_pending {
             state.draw(&qh)?;
+            if let Some(directory) = &capture_states {
+                if !state.model.loading {
+                    let name = if state.model.context.is_some() {
+                        "context".into()
+                    } else {
+                        format!("{:?}", state.model.page).to_lowercase()
+                    };
+                    let path = directory.join(format!("{name}.png"));
+                    if !path.exists() {
+                        state.canvas.pixmap.save_png(&path)?;
+                        println!("SHELL_STATE_CAPTURED {name}");
+                    }
+                }
+            }
         }
         connection.flush()?;
         if exit_after.is_some_and(|seconds| started.elapsed().as_secs() >= seconds) {
@@ -213,7 +231,13 @@ impl State {
         for event in events {
             match event {
                 Event::Loaded(apps, settings, notice) => {
-                    println!("SHELL_CATALOG applications={}", apps.len());
+                    println!(
+                        "SHELL_CATALOG applications={} favorites={} hidden={} recent={}",
+                        apps.len(),
+                        settings.favorites.len(),
+                        settings.hidden.len(),
+                        settings.recent.len()
+                    );
                     self.model.apps = apps;
                     self.model.settings = settings;
                     self.model.notice = notice;
@@ -222,6 +246,7 @@ impl State {
                     self.dirty = true;
                 }
                 Event::Icon(id, icon) => {
+                    println!("SHELL_ICON id={id} loaded={}", icon.is_some());
                     self.requested.remove(&id);
                     if self.icons.len() >= 64 {
                         if let Some(old) = self.icon_order.pop_front() {
@@ -290,7 +315,7 @@ impl State {
         }
         if self
             .enter_pending
-            .is_some_and(|time| time.elapsed() >= Duration::from_millis(650))
+            .is_some_and(|(time, _)| time.elapsed() >= Duration::from_millis(650))
             && !self.enter_long
         {
             self.enter_long = true;
@@ -423,7 +448,7 @@ impl State {
         let sym = event.keysym;
         if sym == Keysym::Return || sym == Keysym::KP_Enter {
             if self.enter_pending.is_none() {
-                self.enter_pending = Some(Instant::now());
+                self.enter_pending = Some((Instant::now(), event.time));
                 self.enter_long = false;
             }
             return;
@@ -444,7 +469,7 @@ impl State {
             } else {
                 Key::Back
             })
-        } else if sym == Keysym::Menu || sym == Keysym::F10 {
+        } else if sym == Keysym::Menu || sym == Keysym::XF86_MenuKB || sym == Keysym::F10 {
             Some(Key::Menu)
         } else {
             None
@@ -642,8 +667,16 @@ impl KeyboardHandler for State {
             self.held = None;
         }
         if event.keysym == Keysym::Return || event.keysym == Keysym::KP_Enter {
-            if self.enter_pending.take().is_some() && !self.enter_long {
-                self.key(Key::Enter);
+            if let Some((_, pressed_at)) = self.enter_pending.take() {
+                if !self.enter_long {
+                    if event.time.wrapping_sub(pressed_at) >= 650 {
+                        self.model.show_context();
+                        self.dirty = true;
+                        println!("SHELL_CONTEXT_OPEN");
+                    } else {
+                        self.key(Key::Enter);
+                    }
+                }
             }
             self.enter_long = false;
         }

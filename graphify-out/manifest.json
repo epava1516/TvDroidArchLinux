@@ -13,10 +13,10 @@
     "semantic_hash": "e07235a9c36b0cb03cd3f0b36b5cfa14"
   },
   "crates/archtv-compositor/src/drm.rs": {
-    "mtime": 1793316649.5619383,
-    "seen": 1793318729.485934,
-    "ast_hash": "d65ce86f37099b5341fc3b213762dfe1",
-    "semantic_hash": "d65ce86f37099b5341fc3b213762dfe1"
+    "mtime": 1793319578.5984178,
+    "seen": 1793319591.853742,
+    "ast_hash": "93ab8030a26d006fa9973d8d6bb107f0",
+    "semantic_hash": ""
   },
   "crates/archtv-compositor/src/handlers/compositor.rs": {
     "mtime": 1793314618.8838065,
@@ -43,10 +43,10 @@
     "semantic_hash": "7783c5634fb6278d04255576f659fe25"
   },
   "crates/archtv-compositor/src/main.rs": {
-    "mtime": 1793315984.1494455,
-    "seen": 1793318729.4870622,
-    "ast_hash": "9523054615961ca094355a756748d512",
-    "semantic_hash": "9523054615961ca094355a756748d512"
+    "mtime": 1793319578.6384187,
+    "seen": 1793319591.8537743,
+    "ast_hash": "196d2c5d2c95109cb223160850ef0205",
+    "semantic_hash": ""
   },
   "crates/archtv-compositor/src/session.rs": {
     "mtime": 1793316314.737812,
@@ -61,10 +61,10 @@
     "semantic_hash": "25af09cc334739379ea9ba566d0ddb16"
   },
   "crates/archtv-compositor/src/winit.rs": {
-    "mtime": 1793315038.6727297,
-    "seen": 1793318729.4877613,
-    "ast_hash": "6f1a61bf46b310961ba32abff572b7a7",
-    "semantic_hash": "6f1a61bf46b310961ba32abff572b7a7"
+    "mtime": 1793319578.6844196,
+    "seen": 1793319591.8537884,
+    "ast_hash": "9a03f399d6c7b93e930f324c5fe49d8b",
+    "semantic_hash": ""
   },
   "crates/archtv-core/Cargo.toml": {
     "mtime": 1793314996.0958087,
@@ -91,10 +91,10 @@
     "semantic_hash": "18e02403c38838ddb9b81c4563260c47"
   },
   "crates/archtv-shell/src/main.rs": {
-    "mtime": 1793318093.1833036,
-    "seen": 1793318729.4888167,
-    "ast_hash": "46a9a8553fb35b3bff5bc9d448610a3e",
-    "semantic_hash": "46a9a8553fb35b3bff5bc9d448610a3e"
+    "mtime": 1793319192.7273712,
+    "seen": 1793319199.6894703,
+    "ast_hash": "8a329689f1d267e106c8c0f255148b20",
+    "semantic_hash": ""
   },
   "crates/archtv-shell/src/model.rs": {
     "mtime": 1793318616.5283341,
@@ -109,10 +109,10 @@
     "semantic_hash": "b82c5e559773b95e39188e70e991a2bd"
   },
   "crates/archtv-shell/src/runtime.rs": {
-    "mtime": 1793318348.3606732,
-    "seen": 1793318729.4894753,
-    "ast_hash": "42f1d2872b9be0ca2f468f8ea41ba0eb",
-    "semantic_hash": "42f1d2872b9be0ca2f468f8ea41ba0eb"
+    "mtime": 1793319799.035727,
+    "seen": 1793319808.0539377,
+    "ast_hash": "83054087f1a9f49c04d17075c7eb5052",
+    "semantic_hash": ""
   },
   "crates/archtv-shell/src/view.rs": {
     "mtime": 1793318862.0238652,
@@ -121,10 +121,10 @@
     "semantic_hash": "302044213d51319341106cd610805db6"
   },
   "crates/archtv-shell/src/worker.rs": {
-    "mtime": 1793318348.4136748,
-    "seen": 1793318729.4896798,
-    "ast_hash": "52b37cb98d3ca26d77211abfc22b5877",
-    "semantic_hash": "52b37cb98d3ca26d77211abfc22b5877"
+    "mtime": 1793319934.8604538,
+    "seen": 1793319941.7242072,
+    "ast_hash": "582fa9367e99a2522b01f8e50eaea0d3",
+    "semantic_hash": ""
   },
   "crates/archtv-test-client/Cargo.toml": {
     "mtime": 1793316070.640566,
@@ -277,15 +277,15 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1793318904.7009084,
-    "seen": 1793319022.6096933,
-    "ast_hash": "c78513343dfabcd1048e854292c0d3e7",
+    "mtime": 1793320426.0465941,
+    "seen": 1793320436.5124712,
+    "ast_hash": "855894e42c8bee35fd1a0018d2d34254",
     "semantic_hash": ""
   },
   "ROADMAP.md": {
-    "mtime": 1793317145.217043,
-    "seen": 1793318868.570493,
-    "ast_hash": "d38189cbad117ae6098d5a0dc39d7749",
+    "mtime": 1793320426.1144881,
+    "seen": 1793320436.5124784,
+    "ast_hash": "f21ce39f52f4ff1061ce449331ce3911",
     "semantic_hash": ""
   },
   "THIRD_PARTY.md": {
@@ -295,27 +295,27 @@
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793316409.1324122,
-    "seen": 1793318868.5705004,
-    "ast_hash": "43724af3ba8a7117f429072adcf35654",
+    "mtime": 1793320426.1134257,
+    "seen": 1793320436.512487,
+    "ast_hash": "8f38c422018835b52e6ac0f27709a146",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
-    "mtime": 1793317260.8516853,
-    "seen": 1793318868.570504,
-    "ast_hash": "268688c5f9ce67fa4ae85b1a0a6fc41f",
+    "mtime": 1793320426.1253798,
+    "seen": 1793320436.5124907,
+    "ast_hash": "c4b29c3efa026c16c9113800246aecca",
     "semantic_hash": ""
   },
   "docs/DISENO-SHELL.md": {
-    "mtime": 1793317502.223467,
-    "seen": 1793318868.570508,
-    "ast_hash": "b04de529f156a44d333ed4301c7b2103",
+    "mtime": 1793320426.1271737,
+    "seen": 1793320436.5124946,
+    "ast_hash": "56cc6b342f3172a4d7680fb1eaec2b42",
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793318904.7071593,
-    "seen": 1793319022.6097097,
-    "ast_hash": "a591f3a2dfd7c3fb24f3afe84842cab0",
+    "mtime": 1793320426.1291146,
+    "seen": 1793320436.5124986,
+    "ast_hash": "2840e30a2f8ed872de20554cdf7bf061",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -406,6 +406,24 @@
     "mtime": 1793318904.5678782,
     "seen": 1793319022.609721,
     "ast_hash": "e3f2bf16a72bb6d58f32df59f80e03ba",
+    "semantic_hash": ""
+  },
+  "scripts/87-shell-session.sh": {
+    "mtime": 1793319578.0835545,
+    "seen": 1793319591.8538935,
+    "ast_hash": "bbb1dff25d4524c8cbe5bedd9b3c0000",
+    "semantic_hash": ""
+  },
+  "scripts/88-shell-smoke.sh": {
+    "mtime": 1793320158.8443584,
+    "seen": 1793320166.8208716,
+    "ast_hash": "5310b27c260c17fe29bf3cfc110743c4",
+    "semantic_hash": ""
+  },
+  "scripts/lib/tv-ui-probe.py": {
+    "mtime": 1793320158.8461175,
+    "seen": 1793320166.820905,
+    "ast_hash": "43bcd3eacf9dd340ca0f443124c9194a",
     "semantic_hash": ""
   }
 }

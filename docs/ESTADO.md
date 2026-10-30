@@ -6,8 +6,7 @@ Actualizado: 30 de octubre de 2026 (Europe/Madrid). Los informes usan UTC.
 
 Compositor Wayland propio en Rust/Smithay y shell Rust con referencia Fire TV
 2026. **H0–H4 comprobados en VM; H5 en curso; H6–H9 pendientes.** Existe un workspace
-Cargo con compositor propio, modelo de foco y cliente SCTK. El shell Rust interactivo aún no
-está implementado. Existe un renderer de prototipo. La salida DRM/Pixman ya está comprobada desde TTY. Anvil está compilado y probado como referencia upstream.
+Cargo con compositor propio, modelo de foco y cliente SCTK. El shell Rust interactivo está implementado y en validación H5. La salida DRM/Pixman ya está comprobada desde TTY. Anvil está compilado y probado como referencia upstream.
 
 ## Limpieza realizada
 
@@ -151,3 +150,17 @@ las pruebas gráficas y de mando de esta parte: H5 permanece en curso.
 
 Graphify 0.9.97 instalado con mapa local AST/Cargo, consultas y vistas interactivas.
 El roadmap sigue siendo la fuente del estado de cada hito. Ver GRAPHIFY.md.
+
+## H5: flujo interactivo comprobado a 1080p
+
+Prueba nativa del 30 de octubre a las 00:31 UTC: todos los recorridos de la
+interfaz pasan con teclado uinput. Foot recibe texto real, vuelve a primer plano
+y se cierra; Inicio restaura el shell. Volumen/silencio PipeWire y radio Wi-Fi
+cambian y recuperan sus valores originales. Se confirma persistencia después de
+reiniciar el shell y un nuevo frame visible. IPv4 e IPv6 están denegados en la
+sesión; no se inicia Android. Evidencia completa en reports/h5-interactive/.
+
+Se añadió selección de modos DRM anunciados por el conector. Menú reconoce
+XF86MenuKB además de Menu/F10. La pulsación larga usa también las marcas de
+tiempo del evento para conservar su comportamiento si se retrasa un frame.
+H5 sigue abierto por la comparación visual y las resoluciones restantes.

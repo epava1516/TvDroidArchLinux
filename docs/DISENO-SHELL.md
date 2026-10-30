@@ -1,8 +1,10 @@
 # Shell Rust: prototipo de dibujo
 
-H5 está en curso. Este prototipo mide la biblioteca de dibujo antes de conectarla
-al cliente Wayland. No implementa todavía un launcher interactivo. Los elementos
-de las capturas son una escena de laboratorio, sin acciones ni catálogo remoto.
+H5 está en curso. El shell ya es un cliente Wayland interactivo, con catálogo
+local de aplicaciones y operaciones reales. Mantiene un modo de dibujo aislado
+para comparar bibliotecas y resoluciones. Las primeras capturas de reports/h5/
+son una escena de laboratorio; las de reports/h5-interactive/ proceden del
+cliente interactivo real con un catálogo de prueba explícito.
 
 ## Decisión provisional
 
@@ -43,12 +45,21 @@ primer 57% de altura; las tarjetas empiezan en y=620 y las apps en y=898, sobre
 Hace falta comparar con la captura principal normalizada y con estados de foco;
 no se ha demostrado aún una semejanza precisa con Fire TV.
 
-## Siguientes entregables H5
+## Validación interactiva
 
-Cliente Wayland interactivo, modelo de navegación espacial, catálogo real de
-archivos desktop, lanzamiento estructurado y carga de iconos en worker. Después,
-favoritos/recientes persistentes, búsqueda, teclado en pantalla, menú contextual,
-ajustes operativos y validación completa por mando y resoluciones.
+La prueba scripts/88-shell-smoke.sh valida desde DRM/Pixman a 1080p: navegación,
+pulsación larga y Menú, favoritos/orden/ocultación, restauración, búsqueda física
+y en pantalla, lanzamiento e introducción de texto en Foot, recientes, Inicio,
+Volver y cierre. Se modifican y restauran valores reales de PipeWire y radio
+Wi-Fi. PNG/SVG se cargan en worker; un PNG dañado usa la alternativa legible.
+El catálogo y las preferencias de la prueba están aislados de los personales.
+
+Después de matar el shell se comprueba un nuevo primer frame/foco, la carga de
+dos favoritos y un reciente y una nueva captura. El arranque sigue funcionando
+con IPv4/IPv6 denegados y sin Android. Las pruebas usan teclado uinput, no un
+mando físico. Pendientes: cotejo visual medido y resoluciones interactivas
+restantes. Los tiempos de la tabla inferior son del prototipo aislado original,
+no del cliente interactivo ni de la presentación completa.
 
 ## Primer resultado del renderer optimizado
 

@@ -6,7 +6,8 @@ de aplicaciones Android mediante Waydroid. La base prevista es Arch Linux.
 
 El compositor propio y su cliente de prueba Rust ya están implementados para
 el laboratorio anidado y salida directa DRM/KMS/Pixman desde TTY. El shell
-Rust interactivo sigue pendiente; ya existe un prototipo de dibujo medido. La sesión anterior y sus instaladores se han retirado.
+Rust interactivo ya funciona y está en validación: navegación, favoritos, búsqueda,
+aplicaciones Linux y ajustes. Android y la distribución instalable siguen pendientes. La sesión anterior y sus instaladores se han retirado.
 
 ## Documentación principal
 

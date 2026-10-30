@@ -1,7 +1,7 @@
 # Arquitectura objetivo
 
 Estado: compositor, núcleo de foco, supervisión y cliente de prueba implementados;
-shell de televisión pendiente. El alcance inicial es un equipo
+shell de televisión implementado y en validación H5. El alcance inicial es un equipo
 x86_64 UEFI, un monitor y una aplicación principal a pantalla completa.
 
 ```mermaid

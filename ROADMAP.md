@@ -174,10 +174,17 @@ sistema sin salida. No configurar autologin durante el desarrollo inicial.
 
 ## H5 · Interfaz Rust con referencia Fire TV 2026
 
-En curso: renderer CPU real con tiny-skia/fontdue y capturas de prototipo a
-720p/1080p/4K. Solo dibuja una escena de laboratorio; aún no es un shell Wayland
-interactivo. No hay lanzamiento de apps, persistencia ni paneles operativos.
-Medición y límites en docs/DISENO-SHELL.md y reports/h5/.
+En curso: shell Wayland interactivo SCTK con tiny-skia/fontdue. Probados desde
+TTY a 1920×1080: pulsación larga y Menú nativo, favoritos/orden/ocultación,
+búsqueda física y en pantalla, Foot con entrada real, recientes, Inicio/Volver,
+volumen/silencio PipeWire y radio Wi-Fi, con restauración de valores. La sesión
+funciona con creación de sockets IPv4/IPv6 denegada y sin iniciar Android.
+Se verificó carga de preferencias después de reiniciar el shell y alternativas
+para iconos dañados, junto con PNG/SVG válidos. Evidencia en reports/h5-interactive/.
+Pendientes: contraste visual medido con la referencia Fire TV y completar la
+validación interactiva de resoluciones. El renderer aislado tiene medidas a
+720p/1080p/4K; esas medidas no son rendimiento del shell completo. Mando físico
+y rendimiento/estabilidad del producto pertenecen a H7.
 
 
 Primero elegir la biblioteca de dibujo/texto y medir un prototipo. Evaluar

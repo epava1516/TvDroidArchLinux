@@ -1,4 +1,4 @@
-//! Shell renderer prototype. Interactive Wayland session is the next H5 deliverable.
+//! Native TV shell and its isolated renderer measurement mode.
 mod model;
 mod render;
 mod runtime;
@@ -12,6 +12,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         let mut all = first.into_iter().chain(args);
         let mut exit_after = None;
         let mut capture = None;
+        let mut capture_states = None;
         while let Some(arg) = all.next() {
             match arg.as_str() {
                 "--exit-after" => {
@@ -24,16 +25,21 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                         PathBuf::from(all.next().ok_or("missing capture path")?),
                     ));
                 }
+                "--capture-states" => {
+                    capture_states = Some(PathBuf::from(
+                        all.next().ok_or("missing capture directory")?,
+                    ))
+                }
                 "--help" => {
                     println!(
-                        "archtv-shell [--exit-after SECONDS] [--capture-after SECONDS FILE.png] | --render-probe DIRECTORY"
+                        "archtv-shell [--exit-after SECONDS] [--capture-after SECONDS FILE.png] [--capture-states DIRECTORY] | --render-probe DIRECTORY"
                     );
                     return Ok(());
                 }
                 _ => return Err(format!("unknown argument: {arg}").into()),
             }
         }
-        return runtime::run(exit_after, capture);
+        return runtime::run(exit_after, capture, capture_states);
     }
     let directory = PathBuf::from(args.next().ok_or("missing output directory")?);
     std::fs::create_dir_all(&directory)?;

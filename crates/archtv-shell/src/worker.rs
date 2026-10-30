@@ -89,6 +89,7 @@ pub fn start() -> Workers {
                             Ok(String::new())
                         }
                         Action::Launch(app) => launch(&app).map(|child| {
+                            println!("SHELL_APP_STARTED id={} pid={}", app.id, child.id());
                             children.push((app.name.clone(), child));
                             let _ = tx.send(Event::Launched(app.id));
                             format!("Abriendo {}…", app.name)
@@ -393,6 +394,7 @@ fn run(program: &str, args: &[&str], timeout: Duration) -> Result<String, String
     }
     let mut child = command
         .args(args)
+        .env("LC_ALL", "C")
         .env_remove("WAYLAND_SOCKET")
         .env_remove("ARCHTV_CONTROL_FD")
         .stdin(Stdio::null())

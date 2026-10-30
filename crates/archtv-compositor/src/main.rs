@@ -28,6 +28,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut lifetime = None;
     let mut test_resize = None;
     let mut drm_device = None;
+    let mut requested_mode = None;
     let mut capture = None;
     let mut args = std::env::args().skip(1);
     while let Some(arg) = args.next() {
@@ -39,15 +40,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             }
             "--shell" => shell = true,
             "--winit" => (),
+            "--mode" => {
+                requested_mode = Some(dimensions(&args.next().ok_or("missing mode dimensions")?)?)
+            }
             "--drm" => drm_device = Some(args.next().ok_or("missing DRM device")?),
             "--test-resize" => {
                 let seconds = args.next().ok_or("missing resize delay")?.parse::<u64>()?;
-                let dimensions = args.next().ok_or("missing resize dimensions")?;
-                let (width, height) = dimensions.split_once('x').ok_or("expected WIDTHxHEIGHT")?;
-                let (width, height) = (width.parse::<u32>()?, height.parse::<u32>()?);
-                if !(320..=7680).contains(&width) || !(240..=4320).contains(&height) {
-                    return Err("invalid test dimensions".into());
-                }
+                let (width, height) = dimensions(&args.next().ok_or("missing resize dimensions")?)?;
                 test_resize = Some((seconds, width, height));
             }
             "--exit-after" => {
@@ -59,7 +58,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             }
             "--help" => {
                 println!(
-                    "archtv-compositor [--winit | --drm DEVICE] [--shell] [--exit-after SECONDS] [--test-resize SECONDS WIDTHxHEIGHT] [-- PROGRAM ARGS...]"
+                    "archtv-compositor [--winit | --drm DEVICE] [--shell] [--mode WIDTHxHEIGHT] [--exit-after SECONDS] [--test-resize SECONDS WIDTHxHEIGHT] [-- PROGRAM ARGS...]"
                 );
                 return Ok(());
             }
@@ -79,12 +78,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             &mut state,
             std::path::Path::new(&device),
             capture,
+            requested_mode,
         )?;
     } else {
         if capture.is_some() {
             return Err("--capture-after requires DRM".into());
         }
-        winit::init(&mut event_loop, &mut state, test_resize)?;
+        winit::init(&mut event_loop, &mut state, test_resize, requested_mode)?;
     }
     event_loop
         .handle()
@@ -115,4 +115,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     tracing::info!("TV_COMPOSITOR_STOPPED");
     result?;
     Ok(())
+}
+
+fn dimensions(value: &str) -> Result<(u32, u32), Box<dyn std::error::Error>> {
+    let (width, height) = value.split_once('x').ok_or("expected WIDTHxHEIGHT")?;
+    let (width, height) = (width.parse::<u32>()?, height.parse::<u32>()?);
+    if !(320..=7680).contains(&width) || !(240..=4320).contains(&height) {
+        return Err("invalid dimensions".into());
+    }
+    Ok((width, height))
 }

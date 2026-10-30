@@ -1,5 +1,4 @@
 {
-  "0": "Model",
   "1": "runtime.rs",
   "2": "Client",
   "3": "worker.rs",
@@ -20,7 +19,6 @@
   "20": "common.sh",
   "21": "72-anvil-smoke.sh",
   "22": "82-rust-smoke.sh",
-  "23": "Shell Rust: prototipo de dibujo",
   "24": "Base actual y herramientas conservadas",
   "25": "Desarrollo del compositor Rust",
   "26": "Estudio de Smithay y Anvil",

@@ -21,13 +21,12 @@ pub fn init(
     event_loop: &mut EventLoop<TvCompositor>,
     state: &mut TvCompositor,
     test_resize: Option<(u64, u32, u32)>,
+    requested_mode: Option<(u32, u32)>,
 ) -> Result<(), Box<dyn std::error::Error>> {
-    use smithay::reexports::winit::{
-        dpi::{LogicalSize, PhysicalSize},
-        window::WindowAttributes,
-    };
+    use smithay::reexports::winit::{dpi::PhysicalSize, window::WindowAttributes};
+    let size = requested_mode.unwrap_or((960, 540));
     let attributes = WindowAttributes::default()
-        .with_surface_size(LogicalSize::new(960.0, 540.0))
+        .with_surface_size(PhysicalSize::new(size.0, size.1))
         .with_title("Arch TV compositor")
         .with_visible(true);
     let (backend, winit) = winit::init_from_attributes::<GlesRenderer>(attributes)?;

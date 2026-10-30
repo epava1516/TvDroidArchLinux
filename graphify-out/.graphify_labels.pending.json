@@ -1,5 +1,14 @@
 {
+  "0": "Model",
   "15": "session.rs",
-  "18": "Canvas",
-  "49": "archtv-compositor/src/main.rs"
+  "18": ".shell",
+  "23": "Shell Rust: prototipo de dibujo",
+  "49": "archtv-compositor/src/main.rs",
+  "50": "model.rs",
+  "51": "Canvas",
+  "52": "Action",
+  "53": "Key",
+  "54": "ContextAction",
+  "55": "87-shell-session.sh",
+  "56": "88-shell-smoke.sh"
 }
