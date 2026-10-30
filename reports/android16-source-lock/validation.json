@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-10-30T23:48:16.225174+00:00",
+  "source_manifest_sha256": "19db4af44aa74ea4ed07bf602f5805476bab1c821d59ba818031022280ae055f",
+  "project_count": 1013,
+  "exact_pins_match": true,
+  "project_attributes_and_children_preserved": true,
+  "offline_reproduction_byte_identical": true,
+  "empty_offline_cache": {
+    "resolved": 0,
+    "xml_emitted": false,
+    "scope": "Exit 2 recorded in original run; output checked here"
+  },
+  "malformed_ref_cases_rejected": 3,
+  "major_commit_objects_match_lock": 10,
+  "source_file_hashes_match": 3,
+  "pending_own_hashes_unchanged": true,
+  "tool_sha256": "15feca7a6e28bce99e9253d1460eef75bed2fda68bf351cada5b95582d2c4c5b",
+  "scope": "Source identity and metadata tooling only. No Android16 build, runtime, APK or CTS acceptance.",
+  "local_document_links_checked": 98,
+  "local_document_links_broken": 0,
+  "graphify": "Isolated staged milestone worktree; AST update:2556 nodes,4919 edges,218 communities; no LLM semantic re-extraction"
+}

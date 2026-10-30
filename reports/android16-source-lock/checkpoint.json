@@ -1,0 +1,38 @@
+{
+  "observed_at": "2026-10-30T23:46:04.921042+00:00",
+  "contract": "A16-QPR2-1",
+  "objective": "Complete unmodified arbitrary APK incl TV, Linux Rust/Smithay; native coherent AOSP16 QPR2, SF\u2192Wayland first hypothesis; no Waydroid/full Android. Preserve compatibility/isolation/stability/lightweight/install/update.",
+  "branch": "main",
+  "source_base_commit": "f4c9d47d25659a8ca4e282c9d62707aec341d67b",
+  "origin_contract_push_verified": "f4c9d47",
+  "runtime_reference": "runtime/aosp/android16-qpr2/release.json",
+  "own_new_work": "Source lock, metadata tool, tests/source study in this milestone, separate from pending Android13 code.",
+  "pending_own": {
+    "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+    "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+    "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+    "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+  },
+  "pending_other": [
+    "reports/h9-uefi-boot/qemu.log",
+    "reports/h9-uefi-boot/serial.log"
+  ],
+  "terminal_handles": [
+    2525,
+    36279,
+    44027,
+    1757,
+    50091
+  ],
+  "tests": "1013 refs all peeled; offline XML identical across runs; malformed refs rejected; empty offline cache exit2 no XML; copy/link metadata preserved; 10 commit objects checked; exact sources confirm build ID and x86_64 TV target",
+  "not_done": "A16 binary selection/build, runtime/config/kernel, services or SF integration; no A16 APK execution, no CTS/certification/security acceptance",
+  "next": "Select matching official A16 x86_64 build artifacts, verify identity/provenance/config, inspect native runtime and SF/WM/HWC source closure at pins; avoid old API33 implementation and per-APK shims.",
+  "restart_policy": "Do not restart VM or client. Recovery snapshot /home/tv/recuperacion-archtv/20261030T232235Z-android16-contract preserves original pending work.",
+  "process_observation": {
+    "observed_at": "2026-10-30T23:49:03.070181+00:00",
+    "codex_pid": 181308,
+    "code_mode_pid": 181453,
+    "matched_art_bwrap_qemu_linkerconfig_clang": [],
+    "scope": "Host ps PID/PPID/state/elapsed/comm; no restart performed"
+  }
+}

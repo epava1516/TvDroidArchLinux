@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-contract/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-source-lock/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -26,7 +26,7 @@ no equivalen automáticamente a Android completo; estudiar cierres reales.
 | Clasificación | Estado verificable |
 | --- | --- |
 | Base elegida por contrato | Android16 QPR2/r4, x86_64 primero y diseño ARM64. Tag/rama/build y API verificados en fuentes oficiales. Elección no equivale a implementación funcionando. |
-| Procedencia en curso | 1.013 referencias resueltas a commits en caché; manifiesto derivado/registro completo pendientes de versionar. Binarios/build target A16 aún no seleccionados ni ejecutados. |
+| Procedencia fijada | Manifiesto fuente/derivado y registro de las 1.013 revisiones exactas; reproducción offline y diez objetos principales verificados. Binarios/build target A16 aún no seleccionados ni ejecutados. |
 | Se conserva | Compositor/shell Rust, instalación/herramientas y regresiones previas útiles; H7–H9 permanecen abiertos. |
 | Históricos Android13 | ART host/glibc y fixtures propias; mezcla de jars/core/JNI; loader Bionic parcial y cierre de bibliotecas. No se trasladan como validación de A16. |
 | Pendiente separado | Cuatro archivos propios de JNI/bootstrap host conservados sin commit. Ensayos API33 de propiedades/configuración pausados; no área de propiedades nueva ejecutada ni cambio a producción. |
@@ -35,18 +35,19 @@ no equivalen automáticamente a Android completo; estudiar cierres reales.
 
 ## Checkpoint y siguiente acción
 
-Base Git observada: `916b490`, main, origin verificado igual. El snapshot local
+Base del nuevo hito: `f4c9d47`, main; revisión contractual publicada. Consultar Git para HEAD/origin actuales. El snapshot local
 `/home/tv/recuperacion-archtv/20261030T232235Z-android16-contract` guarda parches,
 archivos nuevos y scripts de estudio. Los logs ajenos H9 permanecen intactos.
 El checkpoint registra procesos/handles y resultados; no hay ART/bwrap/build activo
 observado tras las pruebas Android13. No restaurar parches sin contrastar Git.
 
-Siguiente acción: versionar y validar el manifiesto completo resuelto de r4,
-seleccionar/identificar artefactos A16 coherentes y estudiar sus fuentes exactas
-para runtime/configuración/kernel y SF/WM/HWC→Wayland. La revisión contractual
-se guarda separada del código experimental pendiente. Después R1 y vertical
-Markor con nueve etapas; categorías distintas y Android TV sin parches por APK.
-Nada de ello se cierra por compilar, resolver JNI o mostrar un widget.
+Siguiente acción: seleccionar/identificar artefactos A16 x86_64 coherentes con
+[la referencia completa](../runtime/aosp/android16-qpr2/release.json), registrar
+configuración de build, hashes y diferencias; estudiar sus cierres de runtime,
+configuración/kernel y SF/WM/HWC→Wayland. Los targets TV/phone están declarados
+en fuentes, no se ha seleccionado ni arrancado un dispositivo Android. Después
+R1 y vertical Markor de nueve etapas, seguida de categorías distintas/TV.
+El lock reproducible no acredita seguridad actualizada ni APK funcional.
 
 ## Historial conservado · no es el estado vigente
 

@@ -19,13 +19,20 @@ reproducible con seguridad vigente: identificar/aplicar correcciones y probarlas
 es puerta de distribución, con registro de desviaciones sobre la referencia.
 No se sigue una rama flotante `android-latest-release` para fijar revisiones.
 
-El manifiesto oficial contiene 1.013 proyectos; commit del repositorio manifest:
-`15128c9e27cfa599c48d294babd39286ee8f1426`. Se resolverán todas sus referencias a
-commits y se fijará el manifiesto derivado, con procedencia y hashes, sin descargar
-el árbol entero como requisito de esta revisión. Un tag/commit de fuentes no
-identifica por sí solo un ZIP binario: elegir target/build/artefactos requiere
-sus propios metadatos y comprobaciones, sin mezclar compilaciones por compartir
-API. Estado verificable en [ESTADO.md](ESTADO.md) e índice de evidencias.
+El [registro de base](../runtime/aosp/android16-qpr2/release.json) conserva
+identidad y procedencia. El [manifiesto fijado](../runtime/aosp/android16-qpr2/manifest.lock.xml)
+asigna commits a los 1.013 proyectos, con [evidencia por ref](../runtime/aosp/android16-qpr2/manifest.lock.json)
+y original intacto. Commit del repo manifest:
+`15128c9e27cfa599c48d294babd39286ee8f1426`. La reproducción offline coincide;
+objetos commit de diez subsistemas principales se contrastaron adicionalmente.
+Esto no es una descarga/build de fuentes ni identifica por sí solo un ZIP
+binario. Target/build/configuración/artefactos necesitan comprobaciones propias;
+no mezclar compilaciones por compartir API.
+
+El estudio de las fuentes fijadas confirma BUILD_ID y declara el target Cuttlefish
+x86_64 TV. El main original de SF inicializa/registra su servicio, hilo Binder y
+bucle; sólo es evidencia estática de entrada, no cierre ni puente Wayland.
+[Estudio y hashes](../reports/android16-source-lock/source-study.json).
 
 AOSP oficial publica fuentes y targets x86_64; Cuttlefish y Android Emulator son
 dispositivos/herramientas virtuales y fuentes posibles de artefactos, no nuestra

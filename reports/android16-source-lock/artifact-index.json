@@ -1,0 +1,15 @@
+{
+  "scope": "Hashes of this milestone; index excludes itself. Historical reports retain their original scope.",
+  "artifacts": {
+    "reports/android16-source-lock/checkpoint.json": "37d77704037d770592d9d41a58b46016d433035efd2f8db98c36dd0bf80abb17",
+    "reports/android16-source-lock/commit-object-checks.json": "21579868ec704985468f50f58d0f0e7dd38e0cc464d9f00707297c987d2c9a18",
+    "reports/android16-source-lock/source-study.json": "9a1f1ed6119b1e54911c810722f31ff575bee3e90f2b0e3a4a4679bf18cc4476",
+    "reports/android16-source-lock/validation.json": "eeebebf888d106933f14709485b1d99588224239d2a7869b7b3868b4ba8b9b5d",
+    "runtime/aosp/android16-qpr2/README.md": "c4498ca890bb9fa4e1d637661c347c1a2242a0a9bdd2c7f0ef016cb8845648e5",
+    "runtime/aosp/android16-qpr2/manifest.lock.json": "06c6fcc779cb0e115f4515a0c38a67c31151dc8b55bd335ff2f0987e3db3eb58",
+    "runtime/aosp/android16-qpr2/manifest.lock.xml": "0e7b599cce00d491bf56b63a62c7d0f5b5944067d372210e367ee123db1ef77e",
+    "runtime/aosp/android16-qpr2/release.json": "d29b3f587df252e1430d406fd224f43e75a92b50c5e1b6bf506f4cf0ce0bf3fe",
+    "runtime/aosp/android16-qpr2/source-manifest.xml": "19db4af44aa74ea4ed07bf602f5805476bab1c821d59ba818031022280ae055f",
+    "tools/aosp/lock_release_manifest.py": "15feca7a6e28bce99e9253d1460eef75bed2fda68bf351cada5b95582d2c4c5b"
+  }
+}

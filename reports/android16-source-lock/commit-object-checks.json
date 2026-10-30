@@ -1,0 +1,72 @@
+[
+  {
+    "path": "art",
+    "commit": "1690c6912a7972c9e62c39b48c706de9b8b18b4a",
+    "tree": "0570781021ec72285b5820fa358ba1360037b636",
+    "url": "https://android.googlesource.com/platform/art/+/1690c6912a7972c9e62c39b48c706de9b8b18b4a?format=JSON",
+    "response_sha256": "077132466780bf24c4d92dd4f87b28cc78eadfce1afc52a5c4ba17d8e1dd3b90"
+  },
+  {
+    "path": "bionic",
+    "commit": "f22516cbc67e81c13cf943ce02f01b8929a98726",
+    "tree": "2785efe04f43333ae6aaa11719321cf18f535398",
+    "url": "https://android.googlesource.com/platform/bionic/+/f22516cbc67e81c13cf943ce02f01b8929a98726?format=JSON",
+    "response_sha256": "8ab44299185401751db36e6c615ec0f7c30c70d46fdd7e55d8076e828a87c592"
+  },
+  {
+    "path": "build/make",
+    "commit": "b815dded1eafbf06191a6ae306956bb6ed6fb415",
+    "tree": "29fffbe6cf1a799cf5ea6b0cfb7716313445d084",
+    "url": "https://android.googlesource.com/platform/build/+/b815dded1eafbf06191a6ae306956bb6ed6fb415?format=JSON",
+    "response_sha256": "651ce5fdd12b1a03cb14392ae8a034600935edde92b6bb93addbd324089e8994"
+  },
+  {
+    "path": "device/google/cuttlefish",
+    "commit": "4d368849922b04124e66b1aad48f93b3209f3c8d",
+    "tree": "10d3ad52c59318f5c7603196cf8918871cfe8264",
+    "url": "https://android.googlesource.com/device/google/cuttlefish/+/4d368849922b04124e66b1aad48f93b3209f3c8d?format=JSON",
+    "response_sha256": "b6032c59a042d499bbd10f882e6b865266e40af716c68caec3e632785e502917"
+  },
+  {
+    "path": "frameworks/base",
+    "commit": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+    "tree": "6667cba9cf8225451f0822ad94cb21902025dfa3",
+    "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4?format=JSON",
+    "response_sha256": "9a395d2cfc5d8ce7ca80c6cd738db45fc8915e55f6f020d041417a542aab4d09"
+  },
+  {
+    "path": "frameworks/native",
+    "commit": "fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103",
+    "tree": "99baec33e1309d380fe84fbe89e8c49cd952569a",
+    "url": "https://android.googlesource.com/platform/frameworks/native/+/fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103?format=JSON",
+    "response_sha256": "5153ed54e213a9091e33ecac786c1411998bee84c22c4f042e560dacfab1f26b"
+  },
+  {
+    "path": "libcore",
+    "commit": "1c599b67bcd3de5c50c79d0622e40b6de99b4cb4",
+    "tree": "4f737191416cb373a9431e96206e86e9ed02a925",
+    "url": "https://android.googlesource.com/platform/libcore/+/1c599b67bcd3de5c50c79d0622e40b6de99b4cb4?format=JSON",
+    "response_sha256": "210440d41ca096ee69b0ed20597f398368c850de66a4ed63065683d76e3712fe"
+  },
+  {
+    "path": "packages/modules/Permission",
+    "commit": "e86c3ce11c473fe33c644296363a9d72069f40a3",
+    "tree": "8bcd3e0517cba1f2c5e3744929f23b1263e9f1c9",
+    "url": "https://android.googlesource.com/platform/packages/modules/Permission/+/e86c3ce11c473fe33c644296363a9d72069f40a3?format=JSON",
+    "response_sha256": "7658a7a9cb0265a1b3dc93f2bf4aef2d742713dc25a01265704efdc35ac802e0"
+  },
+  {
+    "path": "system/core",
+    "commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+    "tree": "d620c7ba1da8299d097b623f7a820b65466f558b",
+    "url": "https://android.googlesource.com/platform/system/core/+/e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1?format=JSON",
+    "response_sha256": "152eedd91163d3b6b074452eb47ceb2fcec813b66f3532074f3a429ae20e6f6c"
+  },
+  {
+    "path": "system/linkerconfig",
+    "commit": "12743643593c9f13784ed30424db2ea09a7bc65f",
+    "tree": "868c8ffb7df1c91c6acb00d9fbd640c69007f17c",
+    "url": "https://android.googlesource.com/platform/system/linkerconfig/+/12743643593c9f13784ed30424db2ea09a7bc65f?format=JSON",
+    "response_sha256": "21b0cb4c1bf6b2d95d55569e84ddc76f3088ce63791af6599b1d0423c6a260aa"
+  }
+]

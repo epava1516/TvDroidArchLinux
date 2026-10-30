@@ -1,0 +1,28 @@
+{
+  "files": {
+    "build/make/core/build_id.mk": {
+      "commit": "b815dded1eafbf06191a6ae306956bb6ed6fb415",
+      "url": "https://android.googlesource.com/platform/build/+/b815dded1eafbf06191a6ae306956bb6ed6fb415/core/build_id.mk",
+      "local_cache": "/home/tv/.cache/archtv/aosp16-qpr2/source-check/build_id.mk",
+      "sha256": "fa5bd5f0d6a680810212d8a26841625c541e8fcf561ca7668c686bfe73d9f930"
+    },
+    "frameworks/native/services/surfaceflinger/main_surfaceflinger.cpp": {
+      "commit": "fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103",
+      "url": "https://android.googlesource.com/platform/frameworks/native/+/fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103/services/surfaceflinger/main_surfaceflinger.cpp",
+      "local_cache": "/home/tv/.cache/archtv/aosp16-qpr2/source-check/main_surfaceflinger.cpp",
+      "sha256": "1357d89dff014ca970d852fe55f66030138b78e9e36616ca0e6ec4c92f7a6552"
+    },
+    "device/google/cuttlefish/AndroidProducts.mk": {
+      "commit": "4d368849922b04124e66b1aad48f93b3209f3c8d",
+      "url": "https://android.googlesource.com/device/google/cuttlefish/+/4d368849922b04124e66b1aad48f93b3209f3c8d/AndroidProducts.mk",
+      "local_cache": "/home/tv/.cache/archtv/aosp16-qpr2/source-check/AndroidProducts.mk",
+      "sha256": "20fd7172104365e9bc7522d2252820e05b49e87ce80933943cc4c8b380057e5c"
+    }
+  },
+  "findings": [
+    "Pinned build_id.mk contains BUILD_ID=BP4A.251205.006",
+    "Pinned SurfaceFlinger main creates/initializes/registers the original service and runs its loop; Binder/threadpool/scheduling dependencies visible. Main alone does not prove complete closure or Wayland integration.",
+    "Pinned Cuttlefish products include aosp_cf_x86_64_tv and aosp_cf_x86_64_only_phone. Declared targets only; release configuration, actual matching binary build/artifact availability not selected."
+  ],
+  "scope": "Exact-source static study, not build/runtime/graphics test."
+}

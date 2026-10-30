@@ -1,12 +1,24 @@
 # Índice de evidencias
 
+## Fuente completa fijada · A16-QPR2-1
+
+[Registro](../runtime/aosp/android16-qpr2/release.json),
+[lock](../runtime/aosp/android16-qpr2/manifest.lock.xml),
+[refs/procedencia](../runtime/aosp/android16-qpr2/manifest.lock.json),
+[validación](../reports/android16-source-lock/validation.json) y
+[checkpoint actual](../reports/android16-source-lock/checkpoint.json).
+1.013 proyectos con commits exactos; XML repetido offline idéntico, input/caché
+inválidos no aprueban lock. Diez objetos commit contrastados; build ID, main SF
+y targets TV leídos a esas revisiones. No hay fuente completa sincronizada,
+binarios ejecutados, prueba SF/Wayland ni nueva compatibilidad de APK.
+
 ## Entrada vigente · contrato Android16
 
 [Checkpoint](../reports/android16-contract/checkpoint.json),
 [verificación de versión](../reports/android16-contract/release-verification.json),
 [REA MCP](../reports/android16-contract/rea-mcp-session.json) e
 [índice de revisión](../reports/android16-contract/artifact-index.json).
-Android16 QPR2/r4 está identificado; 1.013 refs resueltas en caché, todavía sin
+Android16 QPR2/r4 está identificado; 1.013 refs ya fijadas en el hito de fuentes siguiente, todavía sin
 aceptación de binarios/runtime A16. La revisión contractual se separa de código
 pendiente. [Estudio API33 pausado](../reports/android16-contract/android13-study-summary.json):
 su generador abortó por propiedades ausentes y el serializador host no enlazó;
