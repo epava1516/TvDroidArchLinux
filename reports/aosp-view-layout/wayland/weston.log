@@ -1,0 +1,35 @@
+Date: 2026-10-30 UTC
+[20:47:06.783] weston 15.0.1
+               https://wayland.freedesktop.org
+               Bug reports to: https://gitlab.freedesktop.org/wayland/weston/issues/
+               Build: 15.0.1
+[20:47:06.783] Command line: weston --backend=headless --renderer=pixman --fake-seat --width=1280 --height=720 --socket=archtv-host --no-config --idle-time=0 --log=/home/tv/repositorio-principal/dist/apk/view-measure-final-1/weston.log
+[20:47:06.783] OS: Linux, 6.18.59-1-lts, #1 SMP PREEMPT_DYNAMIC Mon, 26 Oct 2026 18:35:24 +0000, x86_64
+[20:47:06.783] Flight recorder: enabled, scopes subscribed: log
+[20:47:06.783] Starting with no config file.
+[20:47:06.783] Output repaint window is 7 ms maximum.
+[20:47:06.783] Loading module '/usr/lib/libweston-15/headless-backend.so'
+[20:47:06.804] Using Pixman renderer
+[20:47:06.804] Registered plugin API 'weston_windowed_output_api_headless_v2' of size 16
+[20:47:06.804] Color manager: no-op
+                 protocol support: no
+[20:47:06.804] Color representation not supported by renderer
+[20:47:06.804] Output 'headless' attempts EOTF mode SDR and colorimetry mode default.
+[20:47:06.804] Output 'headless' using color profile: stock sRGB color profile
+[20:47:06.804] Output 'headless' enabled with head(s) headless
+[20:47:06.804] Compositor capabilities:
+               arbitrary surface rotation: yes
+               screen capture uses y-flip: no
+               cursor planes: no
+               arbitrary resolutions: no
+               view mask clipping: yes
+               explicit sync: no
+               color operations: no
+               color representation: no
+               presentation clock: CLOCK_MONOTONIC_RAW, id 4
+               presentation clock resolution: 0.000000001 s
+[20:47:06.805] Loading module '/usr/lib/weston/desktop-shell.so'
+[20:47:06.807] launching '/usr/lib/weston/weston-keyboard'
+[20:47:06.808] launching '/usr/lib/weston/weston-desktop-shell'
+[20:47:16.310] caught signal 15
+[20:47:16.311] BUG: finalizing a layer with views still on it.

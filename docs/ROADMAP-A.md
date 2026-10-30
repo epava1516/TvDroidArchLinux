@@ -265,3 +265,9 @@ PorterDuff, BlendMode y Xfermode sin modificar. AOSP-DRAWABLE-BOOTSTRAP.md y
 reports/aosp-drawable-bootstrap registran el estado inicial y la regresión de
 Wayland. No hay todavía dibujo de la View original ni sustitución de las vistas
 propias del contador; measure/layout, widgets y presentación siguen pendientes.
+
+View.measure original pasa cinco casos de restricciones y mínimos tras incorporar
+LongSparseLongArray original. El layout avanza a AccessibilityManager ausente;
+AOSP-VIEW-MEDIDA.md describe contratos, permisos e identidad pendientes antes de
+su adaptación. El resize Wayland sigue pasando; no se acredita layout completo,
+accesibilidad, dibujo original ni cierre de A3.

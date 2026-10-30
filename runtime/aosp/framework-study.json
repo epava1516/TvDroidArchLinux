@@ -583,6 +583,16 @@
       "path": "graphics/java/android/graphics/Xfermode.java",
       "sha256": "0b7f6f61b5889e6b314095ee512b4c5619b56c701e9f4960e76b4955615b1495",
       "bytes": 1617
+    },
+    {
+      "path": "core/java/android/util/LongSparseLongArray.java",
+      "sha256": "2b60a27e3f5dd84429392df3a84591f9b2405854a715cfc152b3773331999852",
+      "bytes": 11416
+    },
+    {
+      "path": "core/java/android/view/accessibility/AccessibilityManager.java",
+      "sha256": "a688d971ab217e2ab806b34912c7fb858aa2d280c22094a80299ea2bf4a8e552",
+      "bytes": 73933
     }
   ],
   "public_resources_sources": [
@@ -608,7 +618,8 @@
     "graphics/java/android/graphics/drawable/GradientDrawable.java",
     "graphics/java/android/graphics/PorterDuff.java",
     "graphics/java/android/graphics/BlendMode.java",
-    "graphics/java/android/graphics/Xfermode.java"
+    "graphics/java/android/graphics/Xfermode.java",
+    "core/java/android/util/LongSparseLongArray.java"
   ],
   "context_sources": [
     "core/java/android/content/Context.java",

@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793392946.8532476,
-    "seen": 1793392963.0853293,
-    "ast_hash": "f81c2e28c3ddd96e17fcb95538082fb6",
+    "mtime": 1793393246.2011445,
+    "seen": 1793393254.7609532,
+    "ast_hash": "9862a97730351dc36aede527a8ee2828",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -882,9 +882,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/framework-study.json": {
-    "mtime": 1793392836.4643385,
-    "seen": 1793392963.0704772,
-    "ast_hash": "11916c1417c324a3fc3a19256c4f3b63",
+    "mtime": 1793393207.2379358,
+    "seen": 1793393254.7490115,
+    "ast_hash": "fe6c7a412437e10c37bff30647727a10",
     "semantic_hash": ""
   },
   "tools/apk/study_framework.py": {
@@ -1170,9 +1170,9 @@
     "semantic_hash": ""
   },
   "tools/apk/verify_wayland_resize.py": {
-    "mtime": 1793389138.4576852,
-    "seen": 1793389684.1564217,
-    "ast_hash": "67e61f8a544ee0a541d39cf5f377cdfd",
+    "mtime": 1793393207.226022,
+    "seen": 1793393254.7598324,
+    "ast_hash": "f5e92858c8c91f56f6fe3969d598997a",
     "semantic_hash": ""
   },
   "fixtures/aosp-context/ContextProbe.java": {
@@ -1380,9 +1380,9 @@
     "semantic_hash": ""
   },
   "fixtures/aosp-window-service/WindowServiceProbe.java": {
-    "mtime": 1793392928.3934228,
-    "seen": 1793392963.0694559,
-    "ast_hash": "6bfcb7099817e3f59604ce0c8d57b970",
+    "mtime": 1793393207.2251956,
+    "seen": 1793393254.7469375,
+    "ast_hash": "b007615229b2f856b79fcf9dfbc8dfb6",
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/org/archtv/aosplinux/LinuxWindowService.java": {
@@ -1641,6 +1641,12 @@
     "mtime": 1793392946.8526921,
     "seen": 1793392963.0825324,
     "ast_hash": "74926c938525a3efc1a8308fabce1048",
+    "semantic_hash": ""
+  },
+  "docs/AOSP-VIEW-MEDIDA.md": {
+    "mtime": 1793393246.200614,
+    "seen": 1793393254.7604194,
+    "ast_hash": "4ff9763077569591e5b64624d00ba58e",
     "semantic_hash": ""
   }
 }

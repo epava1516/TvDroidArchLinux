@@ -1,0 +1,24 @@
+dalvikvm64 E 10-30 20:47:08 173704 173704 image_space.cc:2239] Error reading named image component header for /home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/core.art, error: Unable to open file "/home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/x86_64/core.art" for reading image header
+dalvikvm64 E 10-30 20:47:08 173704 173704 image_space.cc:3470] Could not create image space with image file '/home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/core.art'. Attempting to fall back to imageless running. Error was: Full boot image cannot be compiled because no profile is provided.
+ziparchive W 10-30 20:47:08 173704 173704 Unable to open '/home/tv/repositorio-principal/dist/apk/aosp-layout-1/dex/classes.dm': No such file or directory
+ziparchive W 10-30 20:47:08 173704 173704 Unable to open '/home/tv/repositorio-principal/dist/apk/window-aidl-3/dex/classes.dm': No such file or directory
+ziparchive W 10-30 20:47:08 173704 173704 Unable to open '/home/tv/repositorio-principal/dist/apk/window-layout-service-3/dex/classes.dm': No such file or directory
+APK_HOST_PROFILE sdk=33 abi=x86_64
+APK_RESOURCES_AOSP_READY
+APK_PUBLIC_RESOURCES_AOSP_READY
+VIEW_CONSTRUCTOR_OK
+VIEW_BASE_STATE_OK
+VIEW_MEASURE_OK cases=5
+VIEW_LAYOUT_BLOCKED java.lang.NoClassDefFoundError: Failed resolution of: Landroid/view/accessibility/AccessibilityManager;
+java.lang.NoClassDefFoundError: Failed resolution of: Landroid/view/accessibility/AccessibilityManager;
+	at android.view.View.notifySubtreeAccessibilityStateChangedIfNeeded(View.java:14389)
+	at android.view.View.setFrame(View.java:23859)
+	at android.view.View.layout(View.java:23691)
+	at org.archtv.apkruntime.WindowServiceProbe.main(WindowServiceProbe.java:77)
+Caused by: java.lang.ClassNotFoundException: android.view.accessibility.AccessibilityManager
+	... 4 more
+AOSP_ANIMATION_POLICY_OK scale=0.5 callbacks=3 interpolators=2
+WINDOW_SERVICE_OK 960x540 initial=960x540 scale=0.5
+WINDOW_SERVICE_OK 800x450 initial=960x540 scale=0.5
+WINDOW_SERVICE_DEAD
+WINDOW_SERVICE_CLOSED

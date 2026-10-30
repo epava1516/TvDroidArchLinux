@@ -157,6 +157,9 @@ try:
         service_info['original_animation_policy_pass']=True
         service_log=(out/'window-service.log').read_text()
         service_info['view_constructed']='VIEW_CONSTRUCTOR_OK' in service_log
+        service_info['view_measure_pass']='VIEW_MEASURE_OK cases=5' in service_log
+        service_info['view_layout_pass']='VIEW_LAYOUT_OK' in service_log
+        service_info['view_layout_failures']=[line for line in service_log.splitlines() if line.startswith('VIEW_LAYOUT_BLOCKED ')]
         service_info['view_constructor_failures']=[line for line in service_log.splitlines() if line.startswith('VIEW_CONSTRUCTOR_BLOCKED ')]
     result = {'wayland_live_resize_pass':True, 'window_service':service_info, 'initial':[960,540], 'resized':[800,450],
         'frame_sizes':dimensions, 'command':command,

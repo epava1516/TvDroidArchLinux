@@ -56,6 +56,31 @@ public final class WindowServiceProbe {
                         check(view.getVisibility()==android.view.View.VISIBLE && view.getAlpha()==1.0f,"Initial visibility and native alpha");
                         check(!android.graphics.drawable.GradientDrawable.sWrapNegativeAngleMeasurements,"Actual APK target 28 compatibility");
                         System.out.println("VIEW_CONSTRUCTOR_OK");System.out.println("VIEW_BASE_STATE_OK");
+                        try {
+                            view.measure(android.view.View.MeasureSpec.makeMeasureSpec(320,android.view.View.MeasureSpec.EXACTLY),
+                                    android.view.View.MeasureSpec.makeMeasureSpec(180,android.view.View.MeasureSpec.EXACTLY));
+                            check(view.getMeasuredWidth()==320 && view.getMeasuredHeight()==180,"Exact original View measure");
+                            view.measure(android.view.View.MeasureSpec.makeMeasureSpec(210,android.view.View.MeasureSpec.AT_MOST),
+                                    android.view.View.MeasureSpec.makeMeasureSpec(110,android.view.View.MeasureSpec.AT_MOST));
+                            check(view.getMeasuredWidth()==210 && view.getMeasuredHeight()==110,"Base View AT_MOST uses available size");
+                            view.measure(android.view.View.MeasureSpec.makeMeasureSpec(0,android.view.View.MeasureSpec.UNSPECIFIED),
+                                    android.view.View.MeasureSpec.makeMeasureSpec(0,android.view.View.MeasureSpec.UNSPECIFIED));
+                            check(view.getMeasuredWidth()==0 && view.getMeasuredHeight()==0,"Unspecified empty View size");
+                            view.setMinimumWidth(96);view.setMinimumHeight(54);
+                            view.measure(android.view.View.MeasureSpec.makeMeasureSpec(0,android.view.View.MeasureSpec.UNSPECIFIED),
+                                    android.view.View.MeasureSpec.makeMeasureSpec(0,android.view.View.MeasureSpec.UNSPECIFIED));
+                            check(view.getMeasuredWidth()==96 && view.getMeasuredHeight()==54,"Original suggested minimum dimensions");
+                            view.measure(android.view.View.MeasureSpec.makeMeasureSpec(320,android.view.View.MeasureSpec.EXACTLY),
+                                    android.view.View.MeasureSpec.makeMeasureSpec(180,android.view.View.MeasureSpec.EXACTLY));
+                            check(view.getMeasuredWidth()==320 && view.getMeasuredHeight()==180,"Exact dimensions after minimum/spec changes");
+                            System.out.println("VIEW_MEASURE_OK cases=5");
+                            view.layout(13,17,333,197);
+                            check(view.getLeft()==13 && view.getTop()==17 && view.getRight()==333 && view.getBottom()==197,"Original layout coordinates");
+                            check(view.getWidth()==320 && view.getHeight()==180 && view.isLaidOut(),"Original layout dimensions/state");
+                            System.out.println("VIEW_LAYOUT_OK");
+                        } catch (LinkageError | UnsupportedOperationException | android.content.res.Resources.NotFoundException failure) {
+                            System.out.println("VIEW_LAYOUT_BLOCKED "+failure);failure.printStackTrace(System.err);
+                        }
                     }
                     catch (LinkageError | UnsupportedOperationException | android.content.res.Resources.NotFoundException failure) {
                         System.out.println("VIEW_CONSTRUCTOR_BLOCKED "+failure);failure.printStackTrace(System.err);
