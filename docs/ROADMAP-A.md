@@ -105,3 +105,12 @@ quit y quitSafely, con diez procesos nuevos. Ver AOSP-HANDLER-LINUX.md y
 reports/aosp-handler-foundations/. Falta integrar este bucle en la APK y portar
 Activity/View/recursos y servicios restantes. El primer timeout del comprobador
 se conserva sin causa atribuida; H7 sigue abierto.
+
+## La APK ya usa el principal original
+
+El runtime combinado usa prepareMainLooper y Handler originales para creación,
+activaciones y cierre. Pasan ráfaga de 64 comandos con 16 pendientes, EOF, error
+y recuperación, además de DRM/Pixman y entrada uinput con persistencia 2→3.
+Ver APK-LOOPER-AOSP.md, reports/aosp-ui-headless/ y reports/aosp-main-ui-wayland/.
+La biblioteca nativa se exige explícitamente. Activity/View/Bundle/recursos y
+preferencias siguen propios; el framework completo y las puertas finales siguen abiertos.

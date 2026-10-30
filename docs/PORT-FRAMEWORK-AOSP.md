@@ -93,3 +93,10 @@ con relojes e identidad local Linux. Pasan las pruebas de semántica descritas e
 AOSP-HANDLER-LINUX.md; todavía no se integró este bucle en el contador ni se portó
 Binder IPC, Activity/View o recursos originales. La documentación conserva el
 timeout inicial sin atribuir su causa y mantiene las puertas de estabilidad abiertas.
+
+## Integración en la APK
+
+El contador ya usa el principal y Handler originales para sus callbacks. La
+regresión de entrada/persistencia y las capturas DRM pasan, incluida contrapresión
+de comandos y recuperación tras error. Ver APK-LOOPER-AOSP.md. Esto integra el
+bucle original; no acredita Activity/View/recursos originales ni Binder IPC.

@@ -32,9 +32,14 @@ impl Backend {
         let art_data = data.join("art-data");
         std::fs::create_dir_all(&art_data)?;
         let classpath = std::env::join_paths([dex, apk])?;
+        let library = std::env::var_os("ARCHTV_APK_LINUX_LIBRARY")
+            .ok_or("ARCHTV_APK_LINUX_LIBRARY is required")?;
+        let library = std::fs::canonicalize(library)?;
         let mut command = Command::new(art.join("bin/art"));
         command
-            .args(["--64", "--no-compile", "--", "-Xint", "-cp"])
+            .args(["--64", "--no-compile", "--", "-Xint"])
+            .arg(format!("-Darchtv.linux.library={}", library.display()))
+            .arg("-cp")
             .arg(classpath)
             .arg("org.archtv.apkruntime.Main")
             .arg(apk)

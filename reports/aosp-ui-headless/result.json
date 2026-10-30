@@ -1,0 +1,196 @@
+{
+  "first-process": {
+    "exit_code": 0,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Darchtv.linux.library=/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/apk-aosp-ui-2/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-aosp-ui-headless-3/app-data"
+    ]
+  },
+  "second-process": {
+    "exit_code": 0,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Darchtv.linux.library=/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/apk-aosp-ui-2/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-aosp-ui-headless-3/app-data"
+    ]
+  },
+  "lock-contender": {
+    "exit_code": 1,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Darchtv.linux.library=/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/apk-aosp-ui-2/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-aosp-ui-headless-3/app-data"
+    ]
+  },
+  "after-lock-release": {
+    "exit_code": 0,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Darchtv.linux.library=/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/apk-aosp-ui-2/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-aosp-ui-headless-3/app-data"
+    ]
+  },
+  "bounded-burst": {
+    "exit_code": 0,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Darchtv.linux.library=/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/apk-aosp-ui-2/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-aosp-ui-headless-3/burst-data"
+    ]
+  },
+  "eof-close": {
+    "exit_code": 0,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Darchtv.linux.library=/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/apk-aosp-ui-2/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-aosp-ui-headless-3/eof-data"
+    ]
+  },
+  "invalid-command": {
+    "exit_code": 1,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Darchtv.linux.library=/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/apk-aosp-ui-2/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-aosp-ui-headless-3/invalid-data"
+    ]
+  },
+  "after-invalid-command": {
+    "exit_code": 0,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Darchtv.linux.library=/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/apk-aosp-ui-2/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-aosp-ui-headless-3/invalid-data"
+    ]
+  },
+  "resource-variant": {
+    "exit_code": 0,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Darchtv.linux.library=/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/apk-aosp-ui-2/dex/classes.dex:/home/tv/repositorio-principal/dist/apk/counter-aosp-ui-headless-3/resource-variant-unsigned.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/dist/apk/counter-aosp-ui-headless-3/resource-variant-unsigned.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-aosp-ui-headless-3/variant-data"
+    ]
+  },
+  "truncated-resources": {
+    "exit_code": 1,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Darchtv.linux.library=/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/apk-aosp-ui-2/dex/classes.dex:/home/tv/repositorio-principal/dist/apk/counter-aosp-ui-headless-3/truncated-resources-unsigned.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/dist/apk/counter-aosp-ui-headless-3/truncated-resources-unsigned.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-aosp-ui-headless-3/malformed-data"
+    ]
+  },
+  "corrupt-preferences": {
+    "exit_code": 1,
+    "command": [
+      "/home/tv/.cache/archtv/art-host/host/art-13.0.0/bin/art",
+      "--64",
+      "--no-compile",
+      "--",
+      "-Xint",
+      "-Darchtv.linux.library=/home/tv/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so",
+      "-cp",
+      "/home/tv/repositorio-principal/dist/apk/apk-aosp-ui-2/dex/classes.dex:/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.apkruntime.Main",
+      "/home/tv/repositorio-principal/fixtures/apk/counter/golden/counter.apk",
+      "org.archtv.probe.MainActivity",
+      "/home/tv/repositorio-principal/dist/apk/counter-aosp-ui-headless-3/app-data"
+    ]
+  },
+  "original_apk_sha256": "f07c9b92ab3353237276081c22e11ce06168b8c9f71a99ea32968b2ce0f00e28",
+  "runtime_dex_sha256": "cdbd3833f3b16cb8e15d3c83bd38cc36f13399c4f33ad5b5c1d23a8819b0c014",
+  "linux_library_sha256": "b67889cc817b4277562a054a348453f781f7e56679d12db45e75b0ea62419913",
+  "headless_counter_pass": true,
+  "original_ui_looper_pass": true,
+  "wayland_pass": false,
+  "scope": "Original APK DEX lifecycle, listener, resources and integer persistence. Separate unsigned resource variant and malformed inputs. No Wayland UI, signature enforcement, isolation, full Android API or stable general APK support."
+}

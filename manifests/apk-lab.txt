@@ -1,2 +1,3 @@
-# APK fixture compilation only; not a dependency of the Linux TV runtime.
+# APK fixture compilation and capture validation; not Linux TV runtime dependencies.
 jdk17-openjdk
+ffmpeg

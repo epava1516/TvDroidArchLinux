@@ -1,0 +1,13 @@
+dalvikvm64 E 10-30 11:33:58   255   255 image_space.cc:2239] Error reading named image component header for /home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/core.art, error: Unable to open file "/home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/x86_64/core.art" for reading image header
+dalvikvm64 E 10-30 11:33:58   255   255 image_space.cc:3470] Could not create image space with image file '/home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/core.art'. Attempting to fall back to imageless running. Error was: Full boot image cannot be compiled because no profile is provided.
+ziparchive W 10-30 11:33:58   255   255 Unable to open '/home/tv/repositorio-principal/dist/apk/apk-aosp-ui-2/dex/classes.dm': No such file or directory
+ziparchive W 10-30 11:33:58   255   255 Unable to open '/home/tv/repositorio-principal/dist/apk/counter-aosp-ui-headless-3/truncated-resources-unsigned.dm': No such file or directory
+dalvikvm64 W 10-30 11:33:58   255   255 art_dex_file_loader.cc:451] Can't mmap dex file /home/tv/repositorio-principal/dist/apk/counter-aosp-ui-headless-3/truncated-resources-unsigned.apk!classes.dex directly; please zipalign to 4 bytes. Falling back to extracting file.
+Exception in thread "main" java.lang.IllegalArgumentException: Unsupported or invalid APK resources: Out of bounds
+	at org.archtv.apkruntime.ApkResources.bad(ApkResources.java:54)
+	at org.archtv.apkruntime.ApkResources.range(ApkResources.java:57)
+	at org.archtv.apkruntime.ApkResources.chunkEnd(ApkResources.java:71)
+	at org.archtv.apkruntime.ApkResources.<init>(ApkResources.java:38)
+	at org.archtv.apkruntime.AppEnvironment.<init>(AppEnvironment.java:16)
+	at org.archtv.apkruntime.AppEnvironment.initialize(AppEnvironment.java:21)
+	at org.archtv.apkruntime.Main.main(Main.java:194)

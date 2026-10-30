@@ -64,6 +64,16 @@ con un subconjunto propio descrito en runtime/apk/README.md.
 reports/a1-counter-headless conserva la construcción, comandos, hashes y salidas
 de la APK original y de las variantes separadas de prueba. El comprobador verifica
 que el runtime no contiene clases de la fixture. El criterio de A1 se cumple para
-esa APK al ejecutar DEX y observar sus callbacks y persistencia. A2 permanece
-abierto hasta probar ventana Wayland, entrada real, cierre y reapertura. No se
+esa APK al ejecutar DEX y observar sus callbacks y persistencia. Ese primer ensayo dejó A2
+abierto hasta las regresiones gráficas posteriores descritas a continuación. No se
 extrapola ese resultado al resto de APK ni se cierra estabilidad/distribución.
+
+## Integración actual del principal AOSP
+
+El contador ya usa el Looper principal y Handler originales. El lector publica
+comandos con contrapresión de 16 pendientes y todos los callbacks UI se ejecutan
+en main. La librería Rust se carga explícitamente; no hay fallback al bucle anterior.
+El cierre del anfitrión conserva la prohibición original de quit del principal y
+libera la cola por su método dispose. Ver APK-LOOPER-AOSP.md. La regresión gráfica
+actual, incluido cierre/reapertura, está en reports/aosp-main-ui-wayland/; A2 está
+verificado para esta fixture, mientras el resto del framework sigue pendiente.

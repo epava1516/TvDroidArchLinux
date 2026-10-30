@@ -22,7 +22,7 @@ completo, otras APK, rendimiento objetivo ni estabilidad prolongada.
 
 ```bash
 CARGO_TARGET_DIR="$HOME/.cache/archtv/smithay/target" cargo build --offline -j1 -p archtv-apk-host
-CARGO_TARGET_DIR="$HOME/.cache/archtv/smithay/target" ARCHTV_APK_RUNTIME_DEX="$PWD/dist/apk/runtime-nuevo/dex/classes.dex" ./scripts/101-apk-smoke.sh --apply
+CARGO_TARGET_DIR="$HOME/.cache/archtv/smithay/target" ARCHTV_APK_RUNTIME_DEX="$PWD/dist/apk/runtime-nuevo/dex/classes.dex" ARCHTV_APK_LINUX_LIBRARY="$HOME/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so" ./scripts/101-apk-smoke.sh --apply
 ```
 
 Requiere el runtime construido según runtime/apk/README.md, el compositor ya
@@ -42,7 +42,12 @@ ni aislamiento de código no confiable.
 
 El protocolo usa stdout del runtime y sigue siendo experimental. No implementa
 layout/renderizado Android completo, temas, accesibilidad, puntero o selección de
-foco con cruceta entre varias vistas. Las API android.* actuales son propias;
+foco con cruceta entre varias vistas. Las API de Activity/View de este primer ensayo son propias;
 la nueva dirección es estudiar y portar componentes originales de AOSP y conservar
 esta prueba como regresión durante su sustitución. Esta primera interfaz demuestra
 la puerta funcional A2 para la fixture; no constituye el framework final portado.
+
+La integración posterior usa ya el principal y Handler originales de AOSP:
+ver APK-LOOPER-AOSP.md y reports/aosp-main-ui-wayland/. Activity/View y recursos
+siguen siendo propios. La comparación automática de capturas usa FFmpeg sólo en
+el laboratorio, declarado en manifests/apk-lab.txt.

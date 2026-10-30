@@ -1,0 +1,1 @@
+{"event":"ready","root":{"class":"android.widget.LinearLayout","focused":false,"padding":[24,24,24,24],"orientation":1,"children":[{"class":"android.widget.TextView","focused":false,"padding":[0,0,0,0],"text":"Contador: 0","text_size":28.0},{"class":"android.widget.Button","focused":true,"padding":[0,0,0,0],"text":"Incrementar","text_size":14.0}]}}

@@ -15,11 +15,13 @@ from apk_inventory import dex_inventory
 parser = argparse.ArgumentParser()
 parser.add_argument('--art', type=Path, required=True)
 parser.add_argument('--runtime-dex', type=Path, required=True)
+parser.add_argument('--linux-library', type=Path, required=True)
 parser.add_argument('--output', type=Path, required=True)
 args = parser.parse_args()
 root = Path(__file__).resolve().parents[2]
 apk = root/'fixtures/apk/counter/golden/counter.apk'
 dex = args.runtime_dex.resolve()
+library = args.linux_library.resolve(strict=True)
 assert not any(name.startswith('Lorg/archtv/probe/') for name in dex_inventory(dex.read_bytes())[1])
 art = args.art.resolve()
 out = args.output.resolve()
@@ -43,7 +45,7 @@ def kill_group(process):
 
 
 def execute(name, artifact, data, commands, expected_exit):
-    command = [str(art/'bin/art'), '--64', '--no-compile', '--', '-Xint', '-cp',
+    command = [str(art/'bin/art'), '--64', '--no-compile', '--', '-Xint', '-Darchtv.linux.library='+str(library), '-cp',
                str(dex)+':'+str(artifact), 'org.archtv.apkruntime.Main', str(artifact),
                'org.archtv.probe.MainActivity', str(data)]
     with subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
@@ -58,6 +60,13 @@ def execute(name, artifact, data, commands, expected_exit):
     results[name] = {'exit_code': process.returncode, 'command': command}
     if process.returncode != expected_exit:
         raise AssertionError(name+' unexpected exit; see '+str(out/(name+'.stderr')))
+    if expected_exit == 0:
+        actions = commands.splitlines()
+        if not actions or actions[-1] != 'quit':
+            actions.append('quit')  # EOF is an ordered close request.
+        expected = ['APK_UI_DISPATCH '+action+' thread=main' for action in ['create', *actions]]
+        observed = [line for line in stderr.decode().splitlines() if line.startswith('APK_UI_DISPATCH ')]
+        assert observed == expected, (name, observed, expected)
     return [json.loads(line) for line in stdout.splitlines()], stderr
 
 
@@ -108,6 +117,21 @@ events, _ = execute('after-lock-release', apk, data, 'quit\n', 0)
 check_tree(events[0], 'Contador:', 3)
 assert events[-1] == {'event': 'closed'}
 
+# More commands than the 16-slot ingress queue must be processed exactly once.
+events, _ = execute('bounded-burst', apk, out/'burst-data', 'activate\n'*64+'quit\n', 0)
+assert len(events) == 66 and events[-1] == {'event': 'closed'}
+for index, event in enumerate(events[:-1]):
+    check_tree(event, 'Contador:', index)
+events, _ = execute('eof-close', apk, out/'eof-data', 'activate\n', 0)
+check_tree(events[1], 'Contador:', 1)
+assert events[-1] == {'event': 'closed'}
+events, stderr = execute('invalid-command', apk, out/'invalid-data', 'invalid\n', 1)
+assert len(events) == 1 and events[0]['event'] == 'ready'
+assert b'Unknown command: invalid' in stderr and b'APK_UI_DISPATCH destroy-after-failure thread=main' in stderr
+assert b'android.os.Handler.dispatchMessage' in stderr and b'android.os.Looper.loop' in stderr
+events, _ = execute('after-invalid-command', apk, out/'invalid-data', 'quit\n', 0)
+check_tree(events[0], 'Contador:', 0)
+
 # Same app DEX, changed unsigned resource table: proves text comes from the APK.
 with zipfile.ZipFile(apk) as archive:
     content = {entry.filename: archive.read(entry) for entry in archive.infolist()
@@ -139,7 +163,8 @@ assert not events and b'Cannot read preferences' in stderr
 assert (data/'counter.properties').read_text() == 'count=invalid\n'
 assert hashlib.sha256(apk.read_bytes()).hexdigest() == original_hash
 results.update(original_apk_sha256=original_hash, runtime_dex_sha256=hashlib.sha256(dex.read_bytes()).hexdigest(),
-               headless_counter_pass=True, wayland_pass=False,
+               linux_library_sha256=hashlib.sha256(library.read_bytes()).hexdigest(),
+               headless_counter_pass=True, original_ui_looper_pass=True, wayland_pass=False,
                scope='Original APK DEX lifecycle, listener, resources and integer persistence. Separate unsigned resource variant and malformed inputs. No Wayland UI, signature enforcement, isolation, full Android API or stable general APK support.')
 (out/'result.json').write_text(json.dumps(results, indent=2)+'\n')
 print(json.dumps({'headless_counter_pass': True, 'wayland_pass': False, 'output': str(out)}))

@@ -68,7 +68,6 @@ La regresión final de los cinco comprobadores también pasa con el servicio
 Waydroid detenido. Antes de detenerlo, el daemon estaba activo pero la sesión y
 el contenedor LXC estaban STOPPED; esos estados se conservan por separado.
 
-El contador sigue utilizando el runtime anterior: el siguiente paso es integrar
-este Looper/Handler original en su hilo de UI y repetir la regresión sin ventana
-y Wayland. Activity, View, recursos originales, Parcel/Binder IPC y el resto del
+El ensayo descrito aquí precede a la integración en la APK. Esa integración ya
+pasa la regresión sin ventana y Wayland: ver APK-LOOPER-AOSP.md. Activity, View, recursos originales, Parcel/Binder IPC y el resto del
 framework continúan pendientes; no se acredita aún que la APK use este port.

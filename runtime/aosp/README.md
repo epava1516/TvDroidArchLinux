@@ -70,3 +70,10 @@ idle y cierre ya pasan sobre Linux local. Ver docs/AOSP-HANDLER-LINUX.md y
 reports/aosp-handler-foundations/. La primera prueba ampliada tuvo un timeout no
 diagnosticado; los diez procesos posteriores no acreditan estabilidad prolongada.
 La APK, Activity/View y el resto de servicios siguen pendientes de integración/port.
+
+## Uso en el runtime APK
+
+El constructor genera framework.jar antes de los comprobadores. El runtime APK
+verifica ese hash y lo combina con su anfitrión; no incorpora los comprobadores
+ni las declaraciones auxiliares. Ya usa prepareMainLooper/Handler originales en
+la APK del contador. Ver docs/APK-LOOPER-AOSP.md para construcción e integración.

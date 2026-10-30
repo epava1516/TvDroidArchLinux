@@ -1,6 +1,9 @@
 package org.archtv.apkruntime;
 
 import android.app.Activity;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.MessageQueue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -13,9 +16,14 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.attribute.PosixFilePermissions;
+import java.util.concurrent.Semaphore;
 
 /** Single-APK host. Commands activate/dump/quit drive real app callbacks. */
 public final class Main {
+    /** Host-only process shutdown; applications cannot quit Android's main Looper. */
+    private static final class UiShutdown extends Error {
+        UiShutdown() { super(null, null, false, false); }
+    }
     private static String quote(String value) {
         StringBuilder result = new StringBuilder("\"");
         for (int index = 0; index < value.length(); index++) {
@@ -75,8 +83,106 @@ public final class Main {
         if (line.length() != 0) throw new IllegalArgumentException("Incomplete command");
         return null;
     }
+    private static void uiThread(Looper owner, String event) {
+        if (Looper.myLooper() != owner || Looper.getMainLooper() != owner || Thread.currentThread() != owner.getThread())
+            throw new IllegalStateException("Callback outside UI Looper");
+        System.err.println("APK_UI_DISPATCH "+event+" thread="+Thread.currentThread().getName());
+    }
+    private static void runUi(String activityClass) throws Exception {
+        Looper.prepareMainLooper();
+        Looper owner = Looper.myLooper();
+        Handler ui = new Handler(owner);
+        Activity[] activity = new Activity[1];
+        boolean[] created = new boolean[1], closed = new boolean[1];
+        Semaphore pending = new Semaphore(16);
+        Throwable failure = null;
+        try {
+            ui.post(new Runnable() {
+                public void run() {
+                    uiThread(owner, "create");
+                    try {
+                        activity[0] = Class.forName(activityClass).asSubclass(Activity.class).getDeclaredConstructor().newInstance();
+                    } catch (Exception problem) { throw new IllegalStateException("Cannot construct Activity", problem); }
+                    created[0] = true;
+                    activity[0].hostCreate();
+                    snapshot(activity[0], "ready");
+                    Thread reader = new Thread(new Runnable() {
+                        public void run() {
+                            try {
+                                InputStreamReader input = new InputStreamReader(System.in, StandardCharsets.UTF_8);
+                                while (true) {
+                                    String line = command(input);
+                                    final String action = line == null ? "quit" : line;
+                                    pending.acquire();
+                                    if (!ui.post(new Runnable() {
+                                        public void run() {
+                                            try {
+                                                uiThread(owner, action);
+                                                if (action.equals("quit")) {
+                                                    created[0] = false;
+                                                    try { activity[0].hostDestroy(); }
+                                                    finally { AppEnvironment.current().focus = null; }
+                                                    closed[0] = true;
+                                                    throw new UiShutdown();
+                                                } else {
+                                                    if (action.equals("activate")) {
+                                                        View focus = AppEnvironment.current().focus;
+                                                        if (focus == null || !contains(activity[0].hostContentView(), focus) || !focus.performClick())
+                                                            throw new IllegalStateException("No clickable focus in content tree");
+                                                    } else if (!action.equals("dump"))
+                                                        throw new IllegalArgumentException("Unknown command: "+action);
+                                                    snapshot(activity[0], "updated");
+                                                }
+                                            } finally { pending.release(); }
+                                        }
+                                    })) {
+                                        pending.release();
+                                        throw new IllegalStateException("UI queue stopped accepting commands");
+                                    }
+                                    if (action.equals("quit")) return;
+                                }
+                            } catch (Exception problem) {
+                                ui.post(new Runnable() {
+                                    public void run() { throw new IllegalStateException("Command reader failed", problem); }
+                                });
+                            }
+                        }
+                    }, "archtv-apk-input");
+                    reader.setDaemon(true);
+                    reader.start();
+                }
+            });
+            try { Looper.loop(); }
+            catch (UiShutdown shutdown) { if (!closed[0]) throw shutdown; }
+            if (!closed[0]) throw new IllegalStateException("UI loop exited without closing Activity");
+        } catch (Exception | Error problem) {
+            failure = problem;
+            throw problem;
+        } finally {
+            try {
+                if (created[0]) {
+                    created[0] = false;
+                    uiThread(owner, "destroy-after-failure");
+                    try { activity[0].hostDestroy(); }
+                    finally { AppEnvironment.current().focus = null; }
+                }
+            } catch (Exception | Error cleanup) {
+                if (failure != null) failure.addSuppressed(cleanup); else throw cleanup;
+            } finally {
+                // Host shutdown/error unwinds the non-quittable main Looper.
+                // Reuse the original, idempotent disposal method from the pinned framework.
+                java.lang.reflect.Method dispose = MessageQueue.class.getDeclaredMethod("dispose");
+                dispose.setAccessible(true);
+                dispose.invoke(owner.getQueue());
+            }
+        }
+        System.out.println("{\"event\":\"closed\"}");
+    }
     public static void main(String[] args) throws Exception {
         if (args.length != 3) throw new IllegalArgumentException("APK ACTIVITY DATA_DIRECTORY required");
+        String library = System.getProperty("archtv.linux.library");
+        if (library == null) throw new IllegalArgumentException("archtv.linux.library is required");
+        System.load(Paths.get(library).toRealPath().toString());
         Path apk = Paths.get(args[0]).toRealPath();
         Path data = Paths.get(args[2]).toAbsolutePath();
         if (Files.isSymbolicLink(data)) throw new IllegalArgumentException("Symlink data directory");
@@ -86,25 +192,7 @@ public final class Main {
              FileLock lock = lockFile.getChannel().tryLock()) {
             if (lock == null) throw new IllegalStateException("App data already in use");
             AppEnvironment.initialize(apk, data);
-            Activity activity = Class.forName(args[1]).asSubclass(Activity.class).getDeclaredConstructor().newInstance();
-            try {
-                activity.hostCreate();
-                snapshot(activity, "ready");
-                InputStreamReader reader = new InputStreamReader(System.in, StandardCharsets.UTF_8);
-                String input;
-                while ((input = command(reader)) != null && !input.equals("quit")) {
-                    if (input.equals("activate")) {
-                        View focus = AppEnvironment.current().focus;
-                        if (focus == null || !contains(activity.hostContentView(), focus) || !focus.performClick())
-                            throw new IllegalStateException("No clickable focus in content tree");
-                    } else if (!input.equals("dump")) throw new IllegalArgumentException("Unknown command: "+input);
-                    snapshot(activity, "updated");
-                }
-            } finally {
-                activity.hostDestroy();
-                AppEnvironment.current().focus = null;
-            }
-            System.out.println("{\"event\":\"closed\"}");
+            runUi(args[1]);
         }
     }
 }

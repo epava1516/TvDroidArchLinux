@@ -69,6 +69,7 @@ run('pack-private-declarations', [args.jdk/'bin/jar', 'cf', out/'compile-only.ja
 boot = ':'.join(str(path) for path in [out/'compile-only.jar', reference_path, tool_path/'android.jar'])
 run('compile-original', [args.jdk/'bin/javac', '-source', '8', '-target', '8', '-bootclasspath', boot,
                          '-d', out/'classes', *sources])
+run('pack-framework', [args.jdk/'bin/jar', 'cf', out/'framework.jar', '-C', out/'classes', '.'])
 run('compile-probe', [args.jdk/'bin/javac', '--release', '8', '-classpath', str(out/'classes')+':'+str(reference_path),
                       '-d', out/'classes', *probes])
 run('pack-original', [args.jdk/'bin/jar', 'cf', out/'queue.jar', '-C', out/'classes', '.'])
@@ -82,6 +83,7 @@ run('dex-original', [args.jdk/'bin/java', '-cp', tool_path/'r8.jar', 'com.androi
     'source_revision': manifest['revision'],
     'original_sources_sha256': {str(path): hashlib.sha256(path.read_bytes()).hexdigest() for path in sources},
     'original_sources_modified': False,
+    'framework_jar_sha256': hashlib.sha256((out/'framework.jar').read_bytes()).hexdigest(),
     'compile_reference': reference,
     'compile_only_declarations_sha256': {str(path.relative_to(root)): hashlib.sha256(path.read_bytes()).hexdigest() for path in stubs},
     'probes_sha256': {str(path.relative_to(root)): hashlib.sha256(path.read_bytes()).hexdigest() for path in probes},

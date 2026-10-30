@@ -139,3 +139,14 @@ procesos ART. Binder IPC y el servicio global de propiedades no están implement
 Un primer timeout quedó sin diagnóstico; se conserva ese límite en el informe y
 no se considera resuelta la estabilidad. La APK aún usa el runtime anterior.
 Ver AOSP-HANDLER-LINUX.md y reports/aosp-handler-foundations/.
+
+## El principal original está integrado en la APK
+
+El contador original ya crea y modifica sus vistas mediante mensajes de Handler
+en el Looper principal AOSP, con comprobación de getMainLooper y del hilo main.
+Pasan persistencia, 64 activaciones sin pérdidas, EOF, fallo de comando y reapertura.
+La regresión DRM/Pixman 720p con uinput pasa y los frames coinciden exactamente
+con las capturas DRM. Waydroid siguió inactivo y se liberaron sesión/procesos.
+Ver APK-LOOPER-AOSP.md y los informes aosp-ui-headless y aosp-main-ui-wayland.
+Activity/View/Bundle/recursos y preferencias siguen siendo propios; aún falta el
+redibujado por cambios asíncronos y el resto del port, seguridad y estabilidad.

@@ -50,5 +50,6 @@ actual no resuelve esa herencia. El inventario también contiene anotaciones.
 Esta APK ya ejecuta su DEX en ART host con el subconjunto de runtime/apk:
 onCreate, listener, textos de resources.arsc y contador persistente entre procesos.
 El runtime no contiene clases de la app. Ver reports/a1-counter-headless/ y
-tools/apk/verify_counter_headless.py. Falta la ventana y la entrada Wayland;
-la prueba sin interfaz no acredita compatibilidad general ni estabilidad prolongada.
+tools/apk/verify_counter_headless.py. También pasan ventana/entrada Wayland y la
+integración del principal AOSP: docs/APK-LOOPER-AOSP.md, reports/aosp-ui-headless/
+y reports/aosp-main-ui-wayland/. No acredita compatibilidad general ni estabilidad prolongada.

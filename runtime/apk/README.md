@@ -2,7 +2,8 @@
 
 Este directorio contiene el primer subconjunto de API anfitriona. ART ejecuta
 el DEX original de la aplicación; las clases android.* de este directorio resuelven
-las llamadas necesarias para la fixture del contador. No se recompilan sus fuentes
+las llamadas necesarias para la fixture del contador. El bucle UI usa
+Looper/Handler/MessageQueue originales de AOSP. No se recompilan las fuentes de la APK
 ni se incorpora su MainActivity al DEX del runtime.
 
 El árbol de View se emite como JSON para archtv-apk-host, cliente Wayland en Rust
@@ -12,11 +13,14 @@ el contador: esos cambios los produce onClick de la APK.
 ## Construcción y prueba
 
 Requiere las herramientas fijadas del laboratorio APK, JDK 17 y el conjunto ART host
-descrito en docs/ESTUDIO-ART-HOST.md. Los destinos de salida deben ser nuevos.
+descrito en docs/ESTUDIO-ART-HOST.md. Requiere además la biblioteca Rust y un build
+AOSP con framework.jar, siguiendo runtime/aosp/README.md. Los destinos deben ser nuevos.
 
 ```bash
-python tools/apk/build_apk_runtime.py --tools "$HOME/.cache/archtv/apk-build-tools" --output dist/apk/runtime-nuevo
-python tools/apk/verify_counter_headless.py --art "$HOME/.cache/archtv/art-host/host/art-13.0.0" --runtime-dex dist/apk/runtime-nuevo/dex/classes.dex --output dist/apk/contador-prueba-nueva
+CARGO_TARGET_DIR="$HOME/.cache/archtv/smithay/target" cargo build --offline -j1 -p archtv-aosp-linux
+python tools/apk/build_aosp_queue.py --sources "$HOME/.cache/archtv/aosp-framework-study/pinned" --reference "$HOME/.cache/archtv/aosp-compile-tools/android-all-13.jar" --tools "$HOME/.cache/archtv/apk-build-tools" --output dist/apk/framework-nuevo
+python tools/apk/build_apk_runtime.py --tools "$HOME/.cache/archtv/apk-build-tools" --aosp-build dist/apk/framework-nuevo --output dist/apk/runtime-nuevo
+python tools/apk/verify_counter_headless.py --art "$HOME/.cache/archtv/art-host/host/art-13.0.0" --runtime-dex dist/apk/runtime-nuevo/dex/classes.dex --linux-library "$HOME/.cache/archtv/smithay/target/debug/libarchtv_aosp_linux.so" --output dist/apk/contador-prueba-nueva
 ```
 
 El comprobador fija el hash de la APK original y comprueba que el runtime no define
@@ -49,3 +53,7 @@ preferencias corruptas sin sustituirlas por cero.
 Las APIs ausentes producen errores de enlace o excepciones. Las pruebas de esta
 fixture no demuestran compatibilidad general ni estabilidad prolongada.
 El contrato experimental está en docs/CONTRATO-APK.md.
+
+La integración original del principal y las pruebas de ráfaga, EOF, error y
+Wayland están descritas en docs/APK-LOOPER-AOSP.md. El lector tiene 16 comandos
+pendientes como máximo; los callbacks de la APK se despachan en main mediante Handler.
