@@ -282,9 +282,9 @@
     "semantic_hash": ""
   },
   "ROADMAP.md": {
-    "mtime": 1793355953.072491,
-    "seen": 1793355958.925367,
-    "ast_hash": "6af50535f94c02b7e0aa6a4c09740e9f",
+    "mtime": 1793356655.9953504,
+    "seen": 1793356895.711217,
+    "ast_hash": "ea2784a0e317c026a5397d3b309ce910",
     "semantic_hash": ""
   },
   "THIRD_PARTY.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793356566.0295002,
-    "seen": 1793356571.745071,
-    "ast_hash": "7ac30fa4a9f4266f58c7ea2842e24de6",
+    "mtime": 1793356889.774695,
+    "seen": 1793356895.711256,
+    "ast_hash": "85323f00ae833e1c048b45e74a017e59",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -885,6 +885,24 @@
     "mtime": 1793356565.8828266,
     "seen": 1793356571.7450109,
     "ast_hash": "c73019162b96eba34b1af638d6a4bca9",
+    "semantic_hash": ""
+  },
+  "runtime/aosp/framework-study.json": {
+    "mtime": 1793356776.1892881,
+    "seen": 1793356895.710925,
+    "ast_hash": "8a8efb24ee2f29b05cc71660aa2c2eb2",
+    "semantic_hash": ""
+  },
+  "tools/apk/study_framework.py": {
+    "mtime": 1793356831.6194491,
+    "seen": 1793356895.7112105,
+    "ast_hash": "d45b2237620115dc4ada1366e256b40f",
+    "semantic_hash": ""
+  },
+  "docs/PORT-FRAMEWORK-AOSP.md": {
+    "mtime": 1793356889.6146803,
+    "seen": 1793356895.7112498,
+    "ast_hash": "de52dd8bbead1c2d3f23e77f3ac59394",
     "semantic_hash": ""
   }
 }

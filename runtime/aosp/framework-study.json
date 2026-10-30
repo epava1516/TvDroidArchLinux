@@ -1,0 +1,93 @@
+{
+  "repository": "https://android.googlesource.com/platform/frameworks/base/",
+  "revision": "bff944d05cd47d2b3b713565d3f00d512840d282",
+  "tag": "android-13.0.0_r3",
+  "license": "Apache-2.0; preserve per-file headers; review native dependency licenses separately",
+  "files": [
+    {
+      "path": "core/java/android/app/Activity.java",
+      "sha256": "7f036c73ee18f9f8fb8908672551c8dc99fdeaca2d44ad951b6092fbbf67db5c",
+      "bytes": 390956
+    },
+    {
+      "path": "core/java/android/app/ContextImpl.java",
+      "sha256": "665513876f3889778768eab7de817035304a723b054d9bb44941987485b7274e",
+      "bytes": 138257
+    },
+    {
+      "path": "core/java/android/view/ContextThemeWrapper.java",
+      "sha256": "09361c3ffa454c28c326bbadd78ad0b93cf951eda7a9108901d92291d94017ee",
+      "bytes": 7376
+    },
+    {
+      "path": "core/java/android/content/ContextWrapper.java",
+      "sha256": "166eb27effae3db06d474f16026129567f459a2f36ebc3d08751725dc928a38e",
+      "bytes": 44068
+    },
+    {
+      "path": "core/java/android/view/View.java",
+      "sha256": "8b2dfece3297e044d9e79c35b3af7654f1d098498efff8fb0c86e00c3f80e7fc",
+      "bytes": 1293532
+    },
+    {
+      "path": "core/java/android/view/ViewGroup.java",
+      "sha256": "df5f5d762dbb5da1b0c1c7f31281a1e9c7cead0b9c65961d43fb4aea4bb3e74b",
+      "bytes": 364856
+    },
+    {
+      "path": "core/java/android/view/ViewRootImpl.java",
+      "sha256": "9cdfe6b68c397bbd994a810d195def7f20d4ad837c0ee903835fc865302fb30d",
+      "bytes": 462680
+    },
+    {
+      "path": "core/java/android/content/res/Resources.java",
+      "sha256": "e6d25a752d6fbb986d86b3b8b6876ba47f4cafc0dc8296cb066989af25a88dc3",
+      "bytes": 107865
+    },
+    {
+      "path": "core/java/android/content/res/ResourcesImpl.java",
+      "sha256": "2f51f9d96879e5e31d91c68890108c0477a44fdac9722e89d4f95af4f1de4d37",
+      "bytes": 60034
+    },
+    {
+      "path": "core/java/android/content/res/AssetManager.java",
+      "sha256": "bf14465de45406f98a45c90c718f870da4b70698a7258a5515a77dd0fe582c9f",
+      "bytes": 62426
+    },
+    {
+      "path": "core/java/android/os/Looper.java",
+      "sha256": "10c120f5c53e2e2231e977b81fb2d4fde05421d2ed30e985b2cc5c52c18f42e6",
+      "bytes": 17649
+    },
+    {
+      "path": "core/java/android/os/Handler.java",
+      "sha256": "5f5b183631895c690479bac3872c28a8e3cea25302fdb2f3d0e35f5674863993",
+      "bytes": 40618
+    },
+    {
+      "path": "core/java/android/os/Message.java",
+      "sha256": "30b7ebaeed12ddbbd820da74776fd7cc5591ce9efc6ec4fc9831150bfa5232f2",
+      "bytes": 21060
+    },
+    {
+      "path": "core/java/android/os/MessageQueue.java",
+      "sha256": "9645371eb17866a5ad97bfd68ca328506baf9bcb19fb5b24759794ab8050833c",
+      "bytes": 36512
+    },
+    {
+      "path": "core/jni/android_os_MessageQueue.cpp",
+      "sha256": "858d2faff63d693e4d9d1f2dd2929264fab890a630a9ab3fcc7ed526db4abab4",
+      "bytes": 8028
+    },
+    {
+      "path": "core/jni/android_util_AssetManager.cpp",
+      "sha256": "7c96767d9f87f042f537bcc9de70d832f42dd2292cccd6f6508a849c660d8a30",
+      "bytes": 62168
+    },
+    {
+      "path": "core/java/android/app/SharedPreferencesImpl.java",
+      "sha256": "92f2a9a019c48d5a4aa70cf8683b2703346e47779e2ef1ea937b1c0494809012",
+      "bytes": 30273
+    }
+  ]
+}

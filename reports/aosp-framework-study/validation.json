@@ -1,0 +1,6 @@
+{
+  "fresh_cache_fetch_pass": true,
+  "inventory_byte_identical": true,
+  "inventory_sha256": "eab91c09990de5cc401cdbfacdd849d82f08b6bf013495394f9330ef61dd7a9c",
+  "scope": "Source retrieval and lexical inventory only; no framework compilation or runtime port."
+}

@@ -82,3 +82,9 @@ Ver APK-WAYLAND.md. La implementación android.* sigue siendo un subconjunto
 propio: el usuario pide ahora priorizar el port selectivo del framework original
 de AOSP a Linux. Esta prueba se mantiene como regresión, sin confundirla con un
 port ya realizado ni introducir el arranque de Android como requisito.
+
+PORT-FRAMEWORK-AOSP.md define la secuencia del port original: cierre de compilación
+de Looper/Handler/Message/MessageQueue, JNI Linux, recursos originales y después
+vistas/ventanas/ciclo de vida. Hay 17 fuentes fijadas con hashes e inventario
+reproducible; todavía no se ha compilado ni portado ese conjunto. Las puertas
+A0–A2 verificadas describen el prototipo propio, no este trabajo nuevo pendiente.
