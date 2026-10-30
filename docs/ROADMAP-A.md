@@ -154,3 +154,12 @@ seis hooks Linux funcionales y 126 abstractos rechazados explícitamente. Se ret
 el Context propio; pasan contador, wrapper/callbacks, DRM y resize anidado. Ver
 CONTEXTO-AOSP-LINUX.md y reports/aosp-context-*. No cierra ContextImpl, servicios,
 Activity/View originales ni las puertas generales de estabilidad/distribución.
+
+## Segunda APK: contexto y configuración observados por la aplicación
+
+La APK independiente fixtures/apk/context-metrics usa sólo el SDK público y
+verifica Resources/Application originales desde su Activity. Pasan configuración
+horizontal/vertical en ART y resize Wayland real con texto y callbacks actualizados
+por la aplicación. Fuentes, APK, toolchain y evidencias están fijados en
+reports/aosp-context-metrics/ y su README. Amplía la cobertura del port; no cierra
+A3/A4 ni el port pendiente de Activity/View originales.

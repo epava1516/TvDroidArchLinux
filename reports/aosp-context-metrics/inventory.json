@@ -1,0 +1,52 @@
+{
+  "apk": "context-metrics.apk",
+  "sha256": "5145697eaa7e3be56519b1ca151871d505ecf679a4a2aabf7a33e2fedbab0c83",
+  "has_manifest": true,
+  "dex_files": [
+    {
+      "file": "classes.dex",
+      "bytes": 4632
+    }
+  ],
+  "defined_class_count": 4,
+  "platform_class_references": [
+    "Landroid/app/Activity;",
+    "Landroid/app/Application;",
+    "Landroid/content/ComponentCallbacks2;",
+    "Landroid/content/ComponentCallbacks;",
+    "Landroid/content/Context;",
+    "Landroid/content/res/Configuration;",
+    "Landroid/content/res/Resources;",
+    "Landroid/os/Bundle;",
+    "Landroid/os/Looper;",
+    "Landroid/util/DisplayMetrics;",
+    "Landroid/view/View;",
+    "Landroid/widget/TextView;",
+    "Ldalvik/annotation/EnclosingClass;",
+    "Ldalvik/annotation/InnerClass;",
+    "Ldalvik/annotation/MemberClasses;",
+    "Ljava/io/PrintStream;",
+    "Ljava/lang/AssertionError;",
+    "Ljava/lang/CharSequence;",
+    "Ljava/lang/Object;",
+    "Ljava/lang/String;",
+    "Ljava/lang/StringBuilder;",
+    "Ljava/lang/System;",
+    "Ljava/lang/Thread;"
+  ],
+  "platform_method_reference_counts": {
+    "Landroid/app/Activity;": 3,
+    "Landroid/app/Application;": 3,
+    "Landroid/content/res/Resources;": 1,
+    "Landroid/os/Looper;": 1,
+    "Landroid/widget/TextView;": 4,
+    "Ljava/io/PrintStream;": 1,
+    "Ljava/lang/AssertionError;": 1,
+    "Ljava/lang/Object;": 1,
+    "Ljava/lang/String;": 1,
+    "Ljava/lang/StringBuilder;": 4,
+    "Ljava/lang/Thread;": 2
+  },
+  "native_libraries": [],
+  "scope": "Static DEX type/method-owner references, subtracting classes defined across all DEX. Not reachability, API completeness, reflection/JNI resolution, signature validation or execution. Manifest/resources and ELF dependencies are not decoded. Descriptors outside ASCII are escaped; DEX 041 unsupported."
+}

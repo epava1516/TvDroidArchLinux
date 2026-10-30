@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the owned counter APK without Gradle or an Android runtime."""
+"""Build owned fixture APKs without Gradle or an Android runtime."""
 import argparse
 import hashlib
 import json
@@ -12,15 +12,21 @@ import zipfile
 parser = argparse.ArgumentParser()
 parser.add_argument('--tools', type=Path, required=True)
 parser.add_argument('--output', type=Path, required=True)
+parser.add_argument('--fixture', choices=('counter','context-metrics'), default='counter')
 parser.add_argument('--jdk', type=Path, default=Path('/usr/lib/jvm/java-17-openjdk'))
 args = parser.parse_args()
 root = Path(__file__).resolve().parents[2]
-fixture = root/'fixtures/apk/counter'
-manifest = json.loads((fixture/'toolchain.json').read_text())
+fixture = root/'fixtures/apk'/args.fixture
+manifest = json.loads((root/'fixtures/apk/counter/toolchain.json').read_text())
 for item in manifest['artifacts']:
     with (args.tools/item['file']).open('rb') as stream:
         if hashlib.file_digest(stream, 'sha256').hexdigest() != item['sha256']:
             raise SystemExit('Tool checksum mismatch: '+item['file'])
+def source_inputs():
+    paths = [fixture/'AndroidManifest.xml', *sorted((fixture/'src').rglob('*.java')),
+             *sorted(path for path in (fixture/'res').rglob('*') if path.is_file())]
+    return {str(path.relative_to(fixture)):hashlib.sha256(path.read_bytes()).hexdigest() for path in paths}
+source_hashes = source_inputs()
 args.output.mkdir(parents=True, exist_ok=False)
 out = args.output.resolve()
 args.tools = args.tools.resolve()
@@ -43,7 +49,7 @@ with tempfile.TemporaryDirectory(prefix='archtv-apk-') as temporary:
     run([args.jdk/'bin/jar', 'cf', work/'classes.jar', '-C', work/'classes', '.'])
     run([args.jdk/'bin/java', '-cp', args.tools/'r8.jar', 'com.android.tools.r8.D8', '--release',
          '--min-api', '21', '--lib', args.tools/'android.jar', '--output', work/'dex', work/'classes.jar'])
-    with zipfile.ZipFile(work/'resources.apk') as resources, zipfile.ZipFile(out/'counter-unsigned.apk', 'w') as apk:
+    with zipfile.ZipFile(work/'resources.apk') as resources, zipfile.ZipFile(out/(args.fixture+'-unsigned.apk'), 'w') as apk:
         entries = {name:resources.read(name) for name in resources.namelist() if not name.endswith('/')}
         entries.update({path.name:path.read_bytes() for path in (work/'dex').glob('*.dex')})
         for name, data in sorted(entries.items()):
@@ -57,17 +63,17 @@ with tempfile.TemporaryDirectory(prefix='archtv-apk-') as temporary:
              '-keysize', '2048', '-storetype', 'PKCS12', '-keystore', key, '-storepass', 'archtv-fixture',
              '-keypass', 'archtv-fixture', '-dname', 'CN=ArchTV APK Fixture', '-validity', '3650'])
         key.chmod(0o600)
-    shutil.copyfile(out/'counter-unsigned.apk', out/'counter.apk')
+    shutil.copyfile(out/(args.fixture+'-unsigned.apk'), out/(args.fixture+'.apk'))
     run([args.jdk/'bin/jarsigner', '-keystore', key, '-storepass', 'archtv-fixture',
-         '-sigalg', 'SHA256withRSA', '-digestalg', 'SHA-256', out/'counter.apk', 'archtv-fixture'])
-    run([args.jdk/'bin/jarsigner', '-verify', out/'counter.apk'])
+         '-sigalg', 'SHA256withRSA', '-digestalg', 'SHA-256', out/(args.fixture+'.apk'), 'archtv-fixture'])
+    run([args.jdk/'bin/jarsigner', '-verify', out/(args.fixture+'.apk')])
     with (out/'manifest.txt').open('w') as stream:
-        subprocess.run([str(aapt), 'dump', 'badging', str(out/'counter.apk')], stdout=stream, check=True)
-    run(['python', root/'tools/apk/apk_inventory.py', out/'counter.apk', out/'inventory.json'])
-source_hashes = {str(path.relative_to(fixture)):hashlib.sha256(path.read_bytes()).hexdigest()
-                 for path in sorted(fixture.rglob('*')) if path.is_file()}
+        subprocess.run([str(aapt), 'dump', 'badging', str(out/(args.fixture+'.apk'))], stdout=stream, check=True)
+    run(['python', root/'tools/apk/apk_inventory.py', out/(args.fixture+'.apk'), out/'inventory.json'])
+if source_hashes != source_inputs():
+    raise SystemExit('Fixture sources changed during build')
 artifacts = {path.name:hashlib.sha256(path.read_bytes()).hexdigest()
              for path in out.glob('*.apk')}
-(out/'provenance.json').write_text(json.dumps({'source_sha256':source_hashes, 'toolchain':manifest,
+(out/'provenance.json').write_text(json.dumps({'fixture':args.fixture, 'source_sha256':source_hashes, 'toolchain':manifest,
     'apk_sha256':artifacts, 'scope':'Build, static inventory and JAR v1 test signing only. No APK runtime execution; no APK v2/v3 verifier or binary reproducibility claim.'}, indent=2)+'\n')
-print(out/'counter.apk')
+print(out/(args.fixture+'.apk'))

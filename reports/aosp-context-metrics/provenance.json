@@ -1,0 +1,43 @@
+{
+  "fixture": "context-metrics",
+  "source_sha256": {
+    "AndroidManifest.xml": "f813959086a3771803de2e6919616fcc24c87230d81ed337cbd4ae99572d1213",
+    "src/org/archtv/metrics/MainActivity.java": "3ed00851de048884fb6d301dde83a9c48db80ed9d007567856d50535c532b131",
+    "res/values/strings.xml": "a3380f1a506ca2f6064676dfdaa300bc804eaec3faf2464afc18bff99ef4c886"
+  },
+  "toolchain": {
+    "schema": 1,
+    "aapt2": "8.6.1-11315950",
+    "d8": "8.3.37",
+    "android_api": 28,
+    "android_sdk_source_commit": "3af7c93524be6f51e092b87b17f009f13ee98b43",
+    "artifacts": [
+      {
+        "file": "aapt2.jar",
+        "url": "https://dl.google.com/dl/android/maven2/com/android/tools/build/aapt2/8.6.1-11315950/aapt2-8.6.1-11315950-linux.jar",
+        "base64": false,
+        "sha256": "955f14e61cac2e1d70a4703b1aa539ca4f348469ac64a155dcce47bda3de52c8",
+        "bytes": 2174058
+      },
+      {
+        "file": "r8.jar",
+        "url": "https://dl.google.com/dl/android/maven2/com/android/tools/r8/8.3.37/r8-8.3.37.jar",
+        "base64": false,
+        "sha256": "59753e70a74f918389cc87f1b7d66b5c0862932559167425708ded159e3de439",
+        "bytes": 16628796
+      },
+      {
+        "file": "android.jar",
+        "url": "https://android.googlesource.com/platform/prebuilts/sdk/+/3af7c93524be6f51e092b87b17f009f13ee98b43/28/public/android.jar?format=TEXT",
+        "base64": true,
+        "sha256": "d20853d289a5161d9cf1c1268d7923076487d4fa68c970b0733e2d5a0ccfc3c5",
+        "bytes": 46784255
+      }
+    ]
+  },
+  "apk_sha256": {
+    "context-metrics.apk": "5145697eaa7e3be56519b1ca151871d505ecf679a4a2aabf7a33e2fedbab0c83",
+    "context-metrics-unsigned.apk": "0dc8ea7beb4f0d704db7d0d1a914c8df1970daa98dd3d6b948374a55799c395b"
+  },
+  "scope": "Build, static inventory and JAR v1 test signing only. No APK runtime execution; no APK v2/v3 verifier or binary reproducibility claim."
+}

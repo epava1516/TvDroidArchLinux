@@ -14,12 +14,17 @@ import time
 parser = argparse.ArgumentParser()
 for name in ('target', 'runtime-dex', 'linux-library', 'resources-library', 'output'):
     parser.add_argument('--'+name, type=Path, required=True)
+parser.add_argument('--apk', type=Path)
+parser.add_argument('--activity', default='org.archtv.probe.MainActivity')
+parser.add_argument('--text-before', default='Contador: 0')
+parser.add_argument('--text-after', default='Contador: 0')
 parser.add_argument('--art', type=Path, default=Path.home()/'.cache/archtv/art-host/host/art-13.0.0')
 args = parser.parse_args()
 root = Path(__file__).resolve().parents[2]
 out = args.output.resolve()
 out.mkdir(parents=True, exist_ok=False)
 target = args.target.resolve()
+apk = args.apk.resolve() if args.apk else root/'fixtures/apk/counter/golden/counter.apk'
 processes = []
 logs = []
 
@@ -61,8 +66,8 @@ try:
     command = ['setpriv', '--inh-caps=-all', '--ambient-caps=-all', str(target/'debug/archtv-compositor'),
         '--winit', '--mode', '960x540', '--test-resize', '8', '800x450', '--exit-after', '45', '--',
         str(target/'debug/archtv-apk-host'), str(args.art.resolve()),
-        str(args.runtime_dex.resolve()), str(root/'fixtures/apk/counter/golden/counter.apk'),
-        'org.archtv.probe.MainActivity', str(out/'data'), str(out/'art.stderr'), str(out/'frames')]
+        str(args.runtime_dex.resolve()), str(apk),
+        args.activity, str(out/'data'), str(out/'art.stderr'), str(out/'frames')]
     compositor = start(command, 'compositor.log', env)
     def ready():
         text = (out/'compositor.log').read_text(errors='replace')
@@ -76,7 +81,9 @@ try:
     assert text.count('APK_DISPLAY 800x450') >= 1
     trace = (out/'art.stderr').read_text()
     assert 'APK_UI_DISPATCH configure 800 450 thread=main' in trace
-    assert 'APK_VIEW updated' in text and 'text: Some("Contador: 0")' in text
+    assert 'APK_VIEW updated' in text
+    assert 'text: Some("'+args.text_before+'")' in text[:initial]
+    assert 'text: Some("'+args.text_after+'")' in text[initial:]
     dimensions = []
     for image in sorted((out/'frames').glob('*.png')):
         info = json.loads(subprocess.check_output(['ffprobe','-v','error','-show_entries',
@@ -85,9 +92,10 @@ try:
     assert [960,540] in dimensions and dimensions[-1] == [800,450]
     result = {'wayland_live_resize_pass':True, 'initial':[960,540], 'resized':[800,450],
         'frame_sizes':dimensions, 'command':command,
+        'app_text_before':args.text_before,'app_text_after':args.text_after,
         'scope':'Real nested Wayland resize after the first frame, original Resources on the main Handler, and client SHM dimensions. No physical mode switch, HiDPI, Activity recreation or native scanout resize claim.',
         'sha256':{str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in
-            (args.runtime_dex,args.linux_library,args.resources_library,target/'debug/archtv-apk-host',target/'debug/archtv-compositor')}}
+            (apk,args.runtime_dex,args.linux_library,args.resources_library,target/'debug/archtv-apk-host',target/'debug/archtv-compositor')}}
     (out/'result.json').write_text(json.dumps(result,indent=2)+'\n')
 finally:
     # Compositor SIGTERM runs its supervisor cleanup, including the child's private group.

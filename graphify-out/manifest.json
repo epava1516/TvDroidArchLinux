@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793371723.9757202,
-    "seen": 1793371730.710242,
-    "ast_hash": "5ae29757111cc03a7e992a100efc77e1",
+    "mtime": 1793373015.8727837,
+    "seen": 1793373022.547796,
+    "ast_hash": "5d5c3f9c6846df043c07263fa0b38c6f",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -672,9 +672,9 @@
     "semantic_hash": ""
   },
   "tools/apk/build_fixture.py": {
-    "mtime": 1793351403.8729806,
-    "seen": 1793351719.6383805,
-    "ast_hash": "e5713c2c1f3e4e5bcc6b69de1b3b745f",
+    "mtime": 1793372528.1557205,
+    "seen": 1793373022.5476172,
+    "ast_hash": "1c77d3ee7d926bd184557ac2f464561c",
     "semantic_hash": ""
   },
   "tools/apk/fetch_fixture_tools.py": {
@@ -1170,9 +1170,9 @@
     "semantic_hash": ""
   },
   "tools/apk/verify_wayland_resize.py": {
-    "mtime": 1793368631.0226955,
-    "seen": 1793368769.9800496,
-    "ast_hash": "59e3697b0a67da2f509b92d138cee47c",
+    "mtime": 1793372767.3636365,
+    "seen": 1793373022.5476866,
+    "ast_hash": "98497972ce83dfe45451a48149ea4231",
     "semantic_hash": ""
   },
   "fixtures/aosp-context/ContextProbe.java": {
@@ -1200,9 +1200,33 @@
     "semantic_hash": ""
   },
   "docs/CONTEXTO-AOSP-LINUX.md": {
-    "mtime": 1793371894.046902,
-    "seen": 1793372145.557074,
-    "ast_hash": "b803ee37855ac13578a66f3d1ca72b44",
+    "mtime": 1793373015.8627834,
+    "seen": 1793373022.547739,
+    "ast_hash": "3a257919dd0e64a1ec65747a90eaf0fa",
+    "semantic_hash": ""
+  },
+  "fixtures/apk/context-metrics/golden/metadata.json": {
+    "mtime": 1793372962.5704417,
+    "seen": 1793373022.547294,
+    "ast_hash": "491b9ab4d55c3882da4ebb77b378f438",
+    "semantic_hash": ""
+  },
+  "fixtures/apk/context-metrics/src/org/archtv/metrics/MainActivity.java": {
+    "mtime": 1793372645.5772135,
+    "seen": 1793373022.5473015,
+    "ast_hash": "be5bc4caf7fcb365cb958972936a6318",
+    "semantic_hash": ""
+  },
+  "tools/apk/verify_metrics_apk.py": {
+    "mtime": 1793372767.2747152,
+    "seen": 1793373022.5476751,
+    "ast_hash": "30b98b5e2cf6150446cafbe046b57309",
+    "semantic_hash": ""
+  },
+  "fixtures/apk/context-metrics/README.md": {
+    "mtime": 1793373015.85945,
+    "seen": 1793373022.5478005,
+    "ast_hash": "4500ce37a2481db572376ce40871ef62",
     "semantic_hash": ""
   }
 }

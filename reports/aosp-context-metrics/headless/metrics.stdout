@@ -1,0 +1,4 @@
+{"event":"ready","display":[1280,720],"root":{"class":"android.widget.TextView","focused":false,"padding":[24,24,24,24],"text":"Metrics: 1280x720 callbacks=0","text_size":28.0}}
+{"event":"updated","display":[1920,1080],"root":{"class":"android.widget.TextView","focused":false,"padding":[24,24,24,24],"text":"Metrics: 1920x1080 callbacks=1","text_size":28.0}}
+{"event":"updated","display":[1080,1920],"root":{"class":"android.widget.TextView","focused":false,"padding":[24,24,24,24],"text":"Metrics: 1080x1920 callbacks=2","text_size":28.0}}
+{"event":"closed"}

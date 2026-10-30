@@ -1,0 +1,10 @@
+{
+  "default_counter_build_pass": true,
+  "non_signature_entries_identical_to_golden": [
+    "AndroidManifest.xml",
+    "classes.dex",
+    "resources.arsc"
+  ],
+  "golden_sha256": "f07c9b92ab3353237276081c22e11ce06168b8c9f71a99ea32968b2ce0f00e28",
+  "new_sha256": "55f93c2391bea597a47e2b317c5a28303399a04d0a284cdc4f42bc8ec7638b2b"
+}

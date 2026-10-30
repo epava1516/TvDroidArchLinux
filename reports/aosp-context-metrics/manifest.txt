@@ -1,0 +1,13 @@
+package: name='org.archtv.metrics' versionCode='1' versionName='0.1' platformBuildVersionName='9' platformBuildVersionCode='28' compileSdkVersion='28' compileSdkVersionCodename='9'
+minSdkVersion:'21'
+targetSdkVersion:'28'
+application-label:'Arch TV · Context metrics'
+application: label='Arch TV · Context metrics' icon=''
+launchable-activity: name='org.archtv.metrics.MainActivity'  label='' icon=''
+feature-group: label=''
+  uses-feature-not-required: name='android.hardware.touchscreen'
+main
+supports-screens: 'small' 'normal' 'large' 'xlarge'
+supports-any-density: 'true'
+locales: '--_--'
+densities: '160'

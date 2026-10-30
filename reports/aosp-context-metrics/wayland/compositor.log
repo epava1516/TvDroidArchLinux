@@ -1,0 +1,16 @@
+2026-10-30T15:09:32.600065Z  INFO archtv_compositor::state: OUTPUT_CONFIGURED width=960 height=540
+2026-10-30T15:09:32.606370Z  INFO archtv_compositor::session: SESSION_CHILD_STARTED pid=137555 shell=false
+2026-10-30T15:09:32.606524Z  INFO archtv_compositor: TV_COMPOSITOR_READY socket="wayland-1"
+2026-10-30T15:09:32.606894Z  INFO archtv_compositor::input: INPUT_ADDED name="winit virtual input"
+2026-10-30T15:09:32.606930Z  INFO archtv_compositor::state: OUTPUT_CONFIGURED width=960 height=540
+APK_VIEW ready Node { kind: "android.widget.TextView", focused: false, padding: [24, 24, 24, 24], text: Some("Metrics: 960x540 callbacks=0"), text_size: Some(28.0), orientation: None, children: [] }
+APK_DISPLAY 960x540
+APK_FRAME 1 960x540
+2026-10-30T15:09:33.966702Z  INFO archtv_compositor::state: TOPLEVEL_MAPPED
+APK_FOCUS_ENTER
+APK_FRAME 2 960x540
+2026-10-30T15:09:40.602702Z  INFO archtv_compositor::state: OUTPUT_CONFIGURED width=800 height=450
+APK_VIEW updated Node { kind: "android.widget.TextView", focused: false, padding: [24, 24, 24, 24], text: Some("Metrics: 800x450 callbacks=1"), text_size: Some(28.0), orientation: None, children: [] }
+APK_DISPLAY 800x450
+APK_FRAME 3 800x450
+2026-10-30T15:09:41.455449Z  INFO archtv_compositor: TV_COMPOSITOR_STOPPED

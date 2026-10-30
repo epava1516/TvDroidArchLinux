@@ -79,3 +79,17 @@ ContextImpl/LoadedApk, recursos de sistema, SharedPreferencesImpl y la jerarquí
 original de Activity/View. La Activity sigue siendo el subconjunto propio y ahora
 hereda LinuxContext/Context originales. Este hito no acredita compatibilidad
 general, estabilidad prolongada, instalación final o distribución.
+
+## Segunda APK independiente
+
+fixtures/apk/context-metrics prueba estas rutas desde una aplicación compilada
+sólo contra el SDK público, sin código del anfitrión ni clases de aplicación en
+el DEX del runtime. Comprueba Application real, recursos compartidos y nombre de
+su propio APK, callbacks en el Looper principal, dimensiones dp y orientación.
+El texto visible lo actualiza la aplicación desde ComponentCallbacks2.
+
+reports/aosp-context-metrics/ conserva inventario/procedencia y dos pruebas:
+ART 1280×720 → 1920×1080 → 1080×1920 con callbacks 0→1→2; Wayland real
+960×540 → 800×450 con callbacks 0→1 y buffers PNG de ambos tamaños. La prueba
+Wayland usa el compositor propio anidado en Weston headless; no acredita un
+cambio de modo DRM ni sustituye las pruebas nativas del contador.
