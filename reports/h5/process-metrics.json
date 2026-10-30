@@ -1,0 +1,8 @@
+{
+  "scope": "one renderer probe, including PNG encoding; not session PSS",
+  "elapsed_seconds": 3.262227019999955,
+  "user_cpu_seconds": 2.724709,
+  "system_cpu_seconds": 0.116641,
+  "max_rss_kib": 89328,
+  "exit_code": 0
+}

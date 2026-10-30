@@ -1,0 +1,360 @@
+plane[38]: plane-0
+	crtc=crtc-0
+	fb=111
+		allocated by = archtv-composit
+		refcount=2
+		format=XR24 little-endian (0x34325258)
+		modifier=0x0
+		size=1280x800
+		layers:
+			size[0]=1280x800
+			pitch[0]=5120
+			offset[0]=0
+			obj[0]:
+				name=0
+				refcount=4
+				start=001007d0
+				size=4096000
+				imported=no
+				placement=(none)
+	crtc-pos=1280x800+0+0
+	src-pos=1280.000000x800.000000+0.000000+0.000000
+	rotation=1
+	normalized-zpos=0
+	color-encoding=ITU-R BT.601 YCbCr
+	color-range=YCbCr limited range
+	color_mgmt_changed=0
+	color-pipeline=0
+plane[40]: plane-1
+	crtc=(null)
+	fb=0
+	crtc-pos=0x0+0+0
+	src-pos=0.000000x0.000000+0.000000+0.000000
+	rotation=1
+	normalized-zpos=0
+	color-encoding=ITU-R BT.601 YCbCr
+	color-range=YCbCr limited range
+	color_mgmt_changed=0
+	color-pipeline=0
+plane[47]: plane-2
+	crtc=(null)
+	fb=0
+	crtc-pos=0x0+0+0
+	src-pos=0.000000x0.000000+0.000000+0.000000
+	rotation=1
+	normalized-zpos=0
+	color-encoding=ITU-R BT.601 YCbCr
+	color-range=YCbCr limited range
+	color_mgmt_changed=0
+	color-pipeline=0
+plane[49]: plane-3
+	crtc=(null)
+	fb=0
+	crtc-pos=0x0+0+0
+	src-pos=0.000000x0.000000+0.000000+0.000000
+	rotation=1
+	normalized-zpos=0
+	color-encoding=ITU-R BT.601 YCbCr
+	color-range=YCbCr limited range
+	color_mgmt_changed=0
+	color-pipeline=0
+plane[56]: plane-4
+	crtc=(null)
+	fb=0
+	crtc-pos=0x0+0+0
+	src-pos=0.000000x0.000000+0.000000+0.000000
+	rotation=1
+	normalized-zpos=0
+	color-encoding=ITU-R BT.601 YCbCr
+	color-range=YCbCr limited range
+	color_mgmt_changed=0
+	color-pipeline=0
+plane[58]: plane-5
+	crtc=(null)
+	fb=0
+	crtc-pos=0x0+0+0
+	src-pos=0.000000x0.000000+0.000000+0.000000
+	rotation=1
+	normalized-zpos=0
+	color-encoding=ITU-R BT.601 YCbCr
+	color-range=YCbCr limited range
+	color_mgmt_changed=0
+	color-pipeline=0
+plane[65]: plane-6
+	crtc=(null)
+	fb=0
+	crtc-pos=0x0+0+0
+	src-pos=0.000000x0.000000+0.000000+0.000000
+	rotation=1
+	normalized-zpos=0
+	color-encoding=ITU-R BT.601 YCbCr
+	color-range=YCbCr limited range
+	color_mgmt_changed=0
+	color-pipeline=0
+plane[67]: plane-7
+	crtc=(null)
+	fb=0
+	crtc-pos=0x0+0+0
+	src-pos=0.000000x0.000000+0.000000+0.000000
+	rotation=1
+	normalized-zpos=0
+	color-encoding=ITU-R BT.601 YCbCr
+	color-range=YCbCr limited range
+	color_mgmt_changed=0
+	color-pipeline=0
+plane[74]: plane-8
+	crtc=(null)
+	fb=0
+	crtc-pos=0x0+0+0
+	src-pos=0.000000x0.000000+0.000000+0.000000
+	rotation=1
+	normalized-zpos=0
+	color-encoding=ITU-R BT.601 YCbCr
+	color-range=YCbCr limited range
+	color_mgmt_changed=0
+	color-pipeline=0
+plane[76]: plane-9
+	crtc=(null)
+	fb=0
+	crtc-pos=0x0+0+0
+	src-pos=0.000000x0.000000+0.000000+0.000000
+	rotation=1
+	normalized-zpos=0
+	color-encoding=ITU-R BT.601 YCbCr
+	color-range=YCbCr limited range
+	color_mgmt_changed=0
+	color-pipeline=0
+plane[83]: plane-10
+	crtc=(null)
+	fb=0
+	crtc-pos=0x0+0+0
+	src-pos=0.000000x0.000000+0.000000+0.000000
+	rotation=1
+	normalized-zpos=0
+	color-encoding=ITU-R BT.601 YCbCr
+	color-range=YCbCr limited range
+	color_mgmt_changed=0
+	color-pipeline=0
+plane[85]: plane-11
+	crtc=(null)
+	fb=0
+	crtc-pos=0x0+0+0
+	src-pos=0.000000x0.000000+0.000000+0.000000
+	rotation=1
+	normalized-zpos=0
+	color-encoding=ITU-R BT.601 YCbCr
+	color-range=YCbCr limited range
+	color_mgmt_changed=0
+	color-pipeline=0
+plane[92]: plane-12
+	crtc=(null)
+	fb=0
+	crtc-pos=0x0+0+0
+	src-pos=0.000000x0.000000+0.000000+0.000000
+	rotation=1
+	normalized-zpos=0
+	color-encoding=ITU-R BT.601 YCbCr
+	color-range=YCbCr limited range
+	color_mgmt_changed=0
+	color-pipeline=0
+plane[94]: plane-13
+	crtc=(null)
+	fb=0
+	crtc-pos=0x0+0+0
+	src-pos=0.000000x0.000000+0.000000+0.000000
+	rotation=1
+	normalized-zpos=0
+	color-encoding=ITU-R BT.601 YCbCr
+	color-range=YCbCr limited range
+	color_mgmt_changed=0
+	color-pipeline=0
+plane[101]: plane-14
+	crtc=(null)
+	fb=0
+	crtc-pos=0x0+0+0
+	src-pos=0.000000x0.000000+0.000000+0.000000
+	rotation=1
+	normalized-zpos=0
+	color-encoding=ITU-R BT.601 YCbCr
+	color-range=YCbCr limited range
+	color_mgmt_changed=0
+	color-pipeline=0
+plane[103]: plane-15
+	crtc=(null)
+	fb=0
+	crtc-pos=0x0+0+0
+	src-pos=0.000000x0.000000+0.000000+0.000000
+	rotation=1
+	normalized-zpos=0
+	color-encoding=ITU-R BT.601 YCbCr
+	color-range=YCbCr limited range
+	color_mgmt_changed=0
+	color-pipeline=0
+crtc[46]: crtc-0
+	enable=1
+	active=1
+	self_refresh_active=0
+	planes_changed=1
+	mode_changed=0
+	active_changed=0
+	connectors_changed=0
+	color_mgmt_changed=0
+	plane_mask=1
+	connector_mask=1
+	encoder_mask=1
+	mode: "1280x800": 60 81510 1280 1330 1380 1430 800 850 900 950 0x48 0x6
+	background_color=ffff000000000000
+crtc[55]: crtc-1
+	enable=0
+	active=0
+	self_refresh_active=0
+	planes_changed=0
+	mode_changed=0
+	active_changed=0
+	connectors_changed=0
+	color_mgmt_changed=0
+	plane_mask=0
+	connector_mask=0
+	encoder_mask=0
+	mode: "": 0 0 0 0 0 0 0 0 0 0 0x0 0x0
+	background_color=ffff000000000000
+crtc[64]: crtc-2
+	enable=0
+	active=0
+	self_refresh_active=0
+	planes_changed=0
+	mode_changed=0
+	active_changed=0
+	connectors_changed=0
+	color_mgmt_changed=0
+	plane_mask=0
+	connector_mask=0
+	encoder_mask=0
+	mode: "": 0 0 0 0 0 0 0 0 0 0 0x0 0x0
+	background_color=ffff000000000000
+crtc[73]: crtc-3
+	enable=0
+	active=0
+	self_refresh_active=0
+	planes_changed=0
+	mode_changed=0
+	active_changed=0
+	connectors_changed=0
+	color_mgmt_changed=0
+	plane_mask=0
+	connector_mask=0
+	encoder_mask=0
+	mode: "": 0 0 0 0 0 0 0 0 0 0 0x0 0x0
+	background_color=ffff000000000000
+crtc[82]: crtc-4
+	enable=0
+	active=0
+	self_refresh_active=0
+	planes_changed=0
+	mode_changed=0
+	active_changed=0
+	connectors_changed=0
+	color_mgmt_changed=0
+	plane_mask=0
+	connector_mask=0
+	encoder_mask=0
+	mode: "": 0 0 0 0 0 0 0 0 0 0 0x0 0x0
+	background_color=ffff000000000000
+crtc[91]: crtc-5
+	enable=0
+	active=0
+	self_refresh_active=0
+	planes_changed=0
+	mode_changed=0
+	active_changed=0
+	connectors_changed=0
+	color_mgmt_changed=0
+	plane_mask=0
+	connector_mask=0
+	encoder_mask=0
+	mode: "": 0 0 0 0 0 0 0 0 0 0 0x0 0x0
+	background_color=ffff000000000000
+crtc[100]: crtc-6
+	enable=0
+	active=0
+	self_refresh_active=0
+	planes_changed=0
+	mode_changed=0
+	active_changed=0
+	connectors_changed=0
+	color_mgmt_changed=0
+	plane_mask=0
+	connector_mask=0
+	encoder_mask=0
+	mode: "": 0 0 0 0 0 0 0 0 0 0 0x0 0x0
+	background_color=ffff000000000000
+crtc[109]: crtc-7
+	enable=0
+	active=0
+	self_refresh_active=0
+	planes_changed=0
+	mode_changed=0
+	active_changed=0
+	connectors_changed=0
+	color_mgmt_changed=0
+	plane_mask=0
+	connector_mask=0
+	encoder_mask=0
+	mode: "": 0 0 0 0 0 0 0 0 0 0 0x0 0x0
+	background_color=ffff000000000000
+connector[44]: Virtual-1
+	crtc=crtc-0
+	self_refresh_aware=0
+	interlace_allowed=0
+	ycbcr_420_allowed=0
+	max_requested_bpc=0
+	colorspace=Default
+connector[53]: Virtual-2
+	crtc=(null)
+	self_refresh_aware=0
+	interlace_allowed=0
+	ycbcr_420_allowed=0
+	max_requested_bpc=0
+	colorspace=Default
+connector[62]: Virtual-3
+	crtc=(null)
+	self_refresh_aware=0
+	interlace_allowed=0
+	ycbcr_420_allowed=0
+	max_requested_bpc=0
+	colorspace=Default
+connector[71]: Virtual-4
+	crtc=(null)
+	self_refresh_aware=0
+	interlace_allowed=0
+	ycbcr_420_allowed=0
+	max_requested_bpc=0
+	colorspace=Default
+connector[80]: Virtual-5
+	crtc=(null)
+	self_refresh_aware=0
+	interlace_allowed=0
+	ycbcr_420_allowed=0
+	max_requested_bpc=0
+	colorspace=Default
+connector[89]: Virtual-6
+	crtc=(null)
+	self_refresh_aware=0
+	interlace_allowed=0
+	ycbcr_420_allowed=0
+	max_requested_bpc=0
+	colorspace=Default
+connector[98]: Virtual-7
+	crtc=(null)
+	self_refresh_aware=0
+	interlace_allowed=0
+	ycbcr_420_allowed=0
+	max_requested_bpc=0
+	colorspace=Default
+connector[107]: Virtual-8
+	crtc=(null)
+	self_refresh_aware=0
+	interlace_allowed=0
+	ycbcr_420_allowed=0
+	max_requested_bpc=0
+	colorspace=Default

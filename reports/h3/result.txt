@@ -1,0 +1,5 @@
+Fecha UTC: 2026-10-29T23:35:44Z
+PASS: DRM/KMS directo, Pixman, cliente SHM, presentación y captura del buffer mostrado.
+uinput → libinput → mapa español → cliente: Right, Return, ntilde.
+Ctrl+Alt+F1, pausa y regreso a tty2 verificados; cierre SIGTERM y restauración de VT.
+No acredita un mando físico ni Android.

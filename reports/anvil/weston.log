@@ -1,0 +1,39 @@
+Date: 2026-10-29 UTC
+[22:34:39.904] weston 15.0.1
+               https://wayland.freedesktop.org
+               Bug reports to: https://gitlab.freedesktop.org/wayland/weston/issues/
+               Build: 15.0.1
+[22:34:39.904] Command line: weston --backend=headless --renderer=pixman --shell=kiosk-shell.so --fake-seat --width=1280 --height=720 --socket=archtv-host --no-config --idle-time=0 --debug --log=/home/tv/repositorio-principal/reports/anvil/weston.log
+[22:34:39.904] OS: Linux, 7.2.11-arch1-1, #1 SMP PREEMPT_DYNAMIC Fri, 16 Oct 2026 00:28:58 +0000, x86_64
+[22:34:39.904] Flight recorder: enabled, scopes subscribed: log
+[22:34:39.904] Starting with no config file.
+[22:34:39.905] Output repaint window is 7 ms maximum.
+[22:34:39.909] Loading module '/usr/lib/libweston-15/headless-backend.so'
+[22:34:40.180] Using Pixman renderer
+[22:34:40.180] Registered plugin API 'weston_windowed_output_api_headless_v2' of size 16
+[22:34:40.180] Color manager: no-op
+                 protocol support: no
+[22:34:40.180] Color representation not supported by renderer
+[22:34:40.180] Output 'headless' attempts EOTF mode SDR and colorimetry mode default.
+[22:34:40.180] Output 'headless' using color profile: stock sRGB color profile
+[22:34:40.180] Output 'headless' enabled with head(s) headless
+[22:34:40.180] Compositor capabilities:
+               arbitrary surface rotation: yes
+               screen capture uses y-flip: no
+               cursor planes: no
+               arbitrary resolutions: no
+               view mask clipping: yes
+               explicit sync: no
+               color operations: no
+               color representation: no
+               presentation clock: CLOCK_MONOTONIC_RAW, id 4
+               presentation clock resolution: 0.000000001 s
+[22:34:40.182] Loading module '/usr/lib/weston/kiosk-shell.so'
+[22:34:40.184] Currently advertised debug scopes:
+               'log' - Weston and Wayland log
+               'scene-graph' - Scene graph details
+               'timeline' - Timeline event points
+               'libseat-debug' - libseat debug messages
+               'proto' - Wayland protocol dump for all clients.
+[22:34:47.497] caught signal 15
+[22:34:47.506] BUG: finalizing a layer with views still on it.

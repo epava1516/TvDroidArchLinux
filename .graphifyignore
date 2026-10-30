@@ -1,0 +1,8 @@
+.git/
+.codex/
+reports/
+lab/
+licenses/
+graphify-out/
+target/
+dist/

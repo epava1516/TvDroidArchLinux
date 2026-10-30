@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Arch TV · Rust/Smithay — graphify tree viewer</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      margin: 20px 0 0 24px;
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #1e3a56;
+    }
+    .controls {
+      margin: 20px 0 15px 24px;
+    }
+    button {
+      margin-right: 10px;
+      padding: 8px 18px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s ease-in-out;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    button:active {
+      background: #004085;
+    }
+    #tree-container {
+      width: calc(100vw - 48px); /* Adjust for body margin/padding */
+      height: 85vh;
+      overflow: auto;
+      border-radius: 8px;
+      background: #fff;
+      margin-left: 24px;
+      margin-right: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border: 1px solid #ddd;
+    }
+    svg {
+      background: #fff;
+      border-radius: 8px;
+      display: block; /* Important for D3 */
+    }
+    .node circle {
+      stroke-width: 2.5px;
+    }
+    .node text { /* Base style for the <text> container */
+      font: 13px 'Segoe UI', sans-serif;
+      paint-order: stroke fill; /* Ensures text is readable over lines */
+      stroke: #fff; /* White halo */
+      stroke-width: 3px; /* Halo thickness */
+      stroke-linejoin: round;
+      stroke-opacity: 0.85; /* Halo opacity */
+    }
+    .link {
+      fill: none;
+      stroke-opacity: 0.7;
+      stroke-width: 2px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Arch TV · Rust/Smithay — Knowledge Graph</h1>
+  <div class="controls">
+    <button onclick="expandAll()">Expand All</button>
+    <button onclick="collapseAll()">Collapse All</button>
+    <button onclick="resetView()">Reset View</button>
+  </div>
+  <div id="tree-container">
+    <svg id="tree-svg" width="6000" height="8000"></svg>
+  </div>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script>
+    const initialJsonData = {"name":"Arch TV \u00b7 Rust/Smithay","total_count":376,"children":[{"name":"AGENTS.md","total_count":3,"children":[{"name":"AGENTS.md","total_count":1,"children":[]},{"name":"Flujo de trabajo del proyecto","total_count":1,"children":[]},{"name":"graphify","total_count":1,"children":[]}]},{"name":"crates","total_count":241,"children":[{"name":"archtv-compositor","total_count":64,"children":[{"name":"Cargo.toml","total_count":1,"children":[{"name":"archtv-compositor","total_count":1,"children":[]}]},{"name":"src","total_count":63,"children":[{"name":"drm.rs","total_count":10,"children":[{"name":".capture()","total_count":1,"children":[]},{"name":".draw()","total_count":1,"children":[]},{"name":".drop()","total_count":1,"children":[]},{"name":".finish()","total_count":1,"children":[]},{"name":".modeset()","total_count":1,"children":[]},{"name":".restore()","total_count":1,"children":[]},{"name":"Backend","total_count":1,"children":[]},{"name":"init()","total_count":1,"children":[]},{"name":"Result","total_count":1,"children":[]},{"name":"Scanout","total_count":1,"children":[]}]},{"name":"handlers","total_count":22,"children":[{"name":"compositor.rs","total_count":6,"children":[{"name":".buffer_destroyed()","total_count":1,"children":[]},{"name":".client_compositor_state()","total_count":1,"children":[]},{"name":".commit()","total_count":1,"children":[]},{"name":".compositor_state()","total_count":1,"children":[]},{"name":".shm_state()","total_count":1,"children":[]},{"name":"TvCompositor","total_count":1,"children":[]}]},{"name":"mod.rs","total_count":6,"children":[{"name":".cursor_image()","total_count":1,"children":[]},{"name":".data_device_state()","total_count":1,"children":[]},{"name":".dnd_requested()","total_count":1,"children":[]},{"name":".focus_changed()","total_count":1,"children":[]},{"name":".seat_state()","total_count":1,"children":[]},{"name":"TvCompositor","total_count":1,"children":[]}]},{"name":"xdg_shell.rs","total_count":10,"children":[{"name":".constrain_popup()","total_count":1,"children":[]},{"name":".fullscreen_request()","total_count":1,"children":[]},{"name":".grab()","total_count":1,"children":[]},{"name":".new_popup()","total_count":1,"children":[]},{"name":".new_toplevel()","total_count":1,"children":[]},{"name":".reposition_request()","total_count":1,"children":[]},{"name":".toplevel_destroyed()","total_count":1,"children":[]},{"name":".xdg_shell_state()","total_count":1,"children":[]},{"name":"handle_commit()","total_count":1,"children":[]},{"name":"TvCompositor","total_count":1,"children":[]}]}]},{"name":"input.rs","total_count":7,"children":[{"name":".process_input_event()","total_count":1,"children":[]},{"name":"Exit","total_count":1,"children":[]},{"name":"Home","total_count":1,"children":[]},{"name":"Resume","total_count":1,"children":[]},{"name":"Shortcut","total_count":1,"children":[]},{"name":"TvCompositor","total_count":1,"children":[]},{"name":"Vt","total_count":1,"children":[]}]},{"name":"main.rs","total_count":1,"children":[{"name":"main()","total_count":1,"children":[]}]},{"name":"session.rs","total_count":7,"children":[{"name":".drop()","total_count":1,"children":[]},{"name":".spawn()","total_count":1,"children":[]},{"name":".stop()","total_count":1,"children":[]},{"name":".tick()","total_count":1,"children":[]},{"name":"Result","total_count":1,"children":[]},{"name":"start()","total_count":1,"children":[]},{"name":"Supervisor","total_count":1,"children":[]}]},{"name":"state.rs","total_count":15,"children":[{"name":".activate_committed()","total_count":1,"children":[]},{"name":".disconnected()","total_count":1,"children":[]},{"name":".dismiss_active_popups()","total_count":1,"children":[]},{"name":".focus_surface()","total_count":1,"children":[]},{"name":".init_wayland_listener()","total_count":1,"children":[]},{"name":".initialized()","total_count":1,"children":[]},{"name":".new()","total_count":1,"children":[]},{"name":".release_all_keys()","total_count":1,"children":[]},{"name":".release_keys()","total_count":1,"children":[]},{"name":".resize()","total_count":1,"children":[]},{"name":".resume_application()","total_count":1,"children":[]},{"name":".show_home()","total_count":1,"children":[]},{"name":".surface_under()","total_count":1,"children":[]},{"name":"ClientState","total_count":1,"children":[]},{"name":"TvCompositor","total_count":1,"children":[]}]},{"name":"winit.rs","total_count":1,"children":[{"name":"init()","total_count":1,"children":[]}]}]}]},{"name":"archtv-core","total_count":22,"children":[{"name":"Cargo.toml","total_count":1,"children":[{"name":"archtv-core","total_count":1,"children":[]}]},{"name":"src","total_count":21,"children":[{"name":"desktop.rs","total_count":10,"children":[{"name":"Application","total_count":1,"children":[]},{"name":"collect()","total_count":1,"children":[]},{"name":"data_directories()","total_count":1,"children":[]},{"name":"discover()","total_count":1,"children":[]},{"name":"exec_keeps_arguments_and_shell_metacharacters_literal()","total_count":1,"children":[]},{"name":"executable()","total_count":1,"children":[]},{"name":"expand_exec()","total_count":1,"children":[]},{"name":"locale_hidden_and_desktop_sections_are_respected()","total_count":1,"children":[]},{"name":"parse_entry()","total_count":1,"children":[]},{"name":"unescape()","total_count":1,"children":[]}]},{"name":"lib.rs","total_count":11,"children":[{"name":".activate()","total_count":1,"children":[]},{"name":".current()","total_count":1,"children":[]},{"name":".default()","total_count":1,"children":[]},{"name":".home()","total_count":1,"children":[]},{"name":".previous()","total_count":1,"children":[]},{"name":".remove()","total_count":1,"children":[]},{"name":".set_home()","total_count":1,"children":[]},{"name":"FocusStack","total_count":1,"children":[]},{"name":"FocusStack\u003cT>","total_count":1,"children":[]},{"name":"home_returns_without_destroying_app_and_close_restores_focus()","total_count":1,"children":[]},{"name":"repeated_activation_does_not_duplicate_a_window()","total_count":1,"children":[]}]}]}]},{"name":"archtv-shell","total_count":126,"children":[{"name":"Cargo.toml","total_count":1,"children":[{"name":"archtv-shell","total_count":1,"children":[]}]},{"name":"src","total_count":125,"children":[{"name":"main.rs","total_count":1,"children":[{"name":"main()","total_count":1,"children":[]}]},{"name":"model.rs","total_count":56,"children":[{"name":".clamp()","total_count":1,"children":[]},{"name":".context_actions()","total_count":1,"children":[]},{"name":".context_key()","total_count":1,"children":[]},{"name":".context_labels()","total_count":1,"children":[]},{"name":".default()","total_count":1,"children":[]},{"name":".default()","total_count":1,"children":[]},{"name":".focus_color()","total_count":1,"children":[]},{"name":".from_index()","total_count":1,"children":[]},{"name":".index()","total_count":1,"children":[]},{"name":".key()","total_count":1,"children":[]},{"name":".launched()","total_count":1,"children":[]},{"name":".row()","total_count":1,"children":[]},{"name":".selected()","total_count":1,"children":[]},{"name":".setting_action()","total_count":1,"children":[]},{"name":".show_context()","total_count":1,"children":[]},{"name":".visible()","total_count":1,"children":[]},{"name":"Action","total_count":1,"children":[]},{"name":"AndroidStart","total_count":1,"children":[]},{"name":"AndroidStop","total_count":1,"children":[]},{"name":"app()","total_count":1,"children":[]},{"name":"Apps","total_count":1,"children":[]},{"name":"Back","total_count":1,"children":[]},{"name":"Backspace","total_count":1,"children":[]},{"name":"Cancel","total_count":1,"children":[]},{"name":"Character","total_count":1,"children":[]},{"name":"context_order_hide_restore_and_row_focus_survive_navigation()","total_count":1,"children":[]},{"name":"ContextAction","total_count":1,"children":[]},{"name":"Down","total_count":1,"children":[]},{"name":"Enter","total_count":1,"children":[]},{"name":"Favorite","total_count":1,"children":[]},{"name":"Hide","total_count":1,"children":[]},{"name":"Home","total_count":1,"children":[]},{"name":"Key","total_count":1,"children":[]},{"name":"KEYBOARD","total_count":1,"children":[]},{"name":"keyboard_and_physical_search_agree_and_back_is_bounded()","total_count":1,"children":[]},{"name":"Launch","total_count":1,"children":[]},{"name":"Left","total_count":1,"children":[]},{"name":"Left","total_count":1,"children":[]},{"name":"Menu","total_count":1,"children":[]},{"name":"Model","total_count":1,"children":[]},{"name":"Mute","total_count":1,"children":[]},{"name":"Page","total_count":1,"children":[]},{"name":"Quit","total_count":1,"children":[]},{"name":"Recent","total_count":1,"children":[]},{"name":"Refresh","total_count":1,"children":[]},{"name":"Resume","total_count":1,"children":[]},{"name":"Right","total_count":1,"children":[]},{"name":"Right","total_count":1,"children":[]},{"name":"Save","total_count":1,"children":[]},{"name":"Search","total_count":1,"children":[]},{"name":"SETTING_ITEMS","total_count":1,"children":[]},{"name":"Settings","total_count":1,"children":[]},{"name":"Settings","total_count":1,"children":[]},{"name":"Up","total_count":1,"children":[]},{"name":"Volume","total_count":1,"children":[]},{"name":"Wifi","total_count":1,"children":[]}]},{"name":"render.rs","total_count":7,"children":[{"name":".home_probe()","total_count":1,"children":[]},{"name":".new()","total_count":1,"children":[]},{"name":".rect()","total_count":1,"children":[]},{"name":".rounded()","total_count":1,"children":[]},{"name":".scale()","total_count":1,"children":[]},{"name":".text()","total_count":1,"children":[]},{"name":"Canvas","total_count":1,"children":[]}]},{"name":"runtime.rs","total_count":34,"children":[{"name":".actions()","total_count":1,"children":[]},{"name":".configure()","total_count":1,"children":[]},{"name":".control()","total_count":1,"children":[]},{"name":".draw()","total_count":1,"children":[]},{"name":".enter()","total_count":1,"children":[]},{"name":".frame()","total_count":1,"children":[]},{"name":".key()","total_count":1,"children":[]},{"name":".leave()","total_count":1,"children":[]},{"name":".new_capability()","total_count":1,"children":[]},{"name":".new_output()","total_count":1,"children":[]},{"name":".new_seat()","total_count":1,"children":[]},{"name":".output_destroyed()","total_count":1,"children":[]},{"name":".output_state()","total_count":1,"children":[]},{"name":".press()","total_count":1,"children":[]},{"name":".press_key()","total_count":1,"children":[]},{"name":".registry()","total_count":1,"children":[]},{"name":".release_key()","total_count":1,"children":[]},{"name":".remove_capability()","total_count":1,"children":[]},{"name":".remove_seat()","total_count":1,"children":[]},{"name":".repeat_key()","total_count":1,"children":[]},{"name":".request_close()","total_count":1,"children":[]},{"name":".request_icons()","total_count":1,"children":[]},{"name":".scale_factor_changed()","total_count":1,"children":[]},{"name":".seat_state()","total_count":1,"children":[]},{"name":".shm_state()","total_count":1,"children":[]},{"name":".surface_enter()","total_count":1,"children":[]},{"name":".surface_leave()","total_count":1,"children":[]},{"name":".tick()","total_count":1,"children":[]},{"name":".transform_changed()","total_count":1,"children":[]},{"name":".update_modifiers()","total_count":1,"children":[]},{"name":".update_output()","total_count":1,"children":[]},{"name":"control_fd()","total_count":1,"children":[]},{"name":"run()","total_count":1,"children":[]},{"name":"State","total_count":1,"children":[]}]},{"name":"view.rs","total_count":9,"children":[{"name":".application()","total_count":1,"children":[]},{"name":".context()","total_count":1,"children":[]},{"name":".home()","total_count":1,"children":[]},{"name":".image()","total_count":1,"children":[]},{"name":".search()","total_count":1,"children":[]},{"name":".settings()","total_count":1,"children":[]},{"name":".shell()","total_count":1,"children":[]},{"name":"Canvas","total_count":1,"children":[]},{"name":"short()","total_count":1,"children":[]}]},{"name":"worker.rs","total_count":18,"children":[{"name":".drop()","total_count":1,"children":[]},{"name":"decode_icon()","total_count":1,"children":[]},{"name":"Event","total_count":1,"children":[]},{"name":"Icon","total_count":1,"children":[]},{"name":"icon_path()","total_count":1,"children":[]},{"name":"launch()","total_count":1,"children":[]},{"name":"Launched","total_count":1,"children":[]},{"name":"load_settings()","total_count":1,"children":[]},{"name":"Loaded","total_count":1,"children":[]},{"name":"Notice","total_count":1,"children":[]},{"name":"run()","total_count":1,"children":[]},{"name":"save_settings()","total_count":1,"children":[]},{"name":"Saved","total_count":1,"children":[]},{"name":"settings_path()","total_count":1,"children":[]},{"name":"settings_roundtrip_and_corruption_backup_preserve_user_state()","total_count":1,"children":[]},{"name":"start()","total_count":1,"children":[]},{"name":"Status","total_count":1,"children":[]},{"name":"Workers","total_count":1,"children":[]}]}]}]},{"name":"archtv-test-client","total_count":29,"children":[{"name":"Cargo.toml","total_count":1,"children":[{"name":"archtv-test-client","total_count":1,"children":[]}]},{"name":"src","total_count":28,"children":[{"name":"main.rs","total_count":28,"children":[{"name":".configure()","total_count":1,"children":[]},{"name":".done()","total_count":1,"children":[]},{"name":".draw()","total_count":1,"children":[]},{"name":".enter()","total_count":1,"children":[]},{"name":".frame()","total_count":1,"children":[]},{"name":".leave()","total_count":1,"children":[]},{"name":".new_capability()","total_count":1,"children":[]},{"name":".new_output()","total_count":1,"children":[]},{"name":".new_seat()","total_count":1,"children":[]},{"name":".output_destroyed()","total_count":1,"children":[]},{"name":".output_state()","total_count":1,"children":[]},{"name":".press_key()","total_count":1,"children":[]},{"name":".registry()","total_count":1,"children":[]},{"name":".release_key()","total_count":1,"children":[]},{"name":".remove_capability()","total_count":1,"children":[]},{"name":".remove_seat()","total_count":1,"children":[]},{"name":".repeat_key()","total_count":1,"children":[]},{"name":".request_close()","total_count":1,"children":[]},{"name":".scale_factor_changed()","total_count":1,"children":[]},{"name":".seat_state()","total_count":1,"children":[]},{"name":".shm_state()","total_count":1,"children":[]},{"name":".surface_enter()","total_count":1,"children":[]},{"name":".surface_leave()","total_count":1,"children":[]},{"name":".transform_changed()","total_count":1,"children":[]},{"name":".update_modifiers()","total_count":1,"children":[]},{"name":".update_output()","total_count":1,"children":[]},{"name":"Client","total_count":1,"children":[]},{"name":"main()","total_count":1,"children":[]}]}]}]}]},{"name":"docs","total_count":58,"children":[{"name":"ARQUITECTURA.md","total_count":5,"children":[{"name":"Arquitectura objetivo","total_count":1,"children":[]},{"name":"ARQUITECTURA.md","total_count":1,"children":[]},{"name":"Decisiones iniciales","total_count":1,"children":[]},{"name":"Dependencias compartidas","total_count":1,"children":[]},{"name":"Entrada y control","total_count":1,"children":[]}]},{"name":"DESARROLLO-RUST.md","total_count":6,"children":[{"name":"Construcci\u00f3n y comprobaciones","total_count":1,"children":[]},{"name":"Desarrollo del compositor Rust","total_count":1,"children":[]},{"name":"DESARROLLO-RUST.md","total_count":1,"children":[]},{"name":"Ensayo directo en VM","total_count":1,"children":[]},{"name":"L\u00edmites actuales","total_count":1,"children":[]},{"name":"Pol\u00edtica y supervisi\u00f3n","total_count":1,"children":[]}]},{"name":"DISENO-SHELL.md","total_count":7,"children":[{"name":"Composici\u00f3n provisional","total_count":1,"children":[]},{"name":"Decisi\u00f3n provisional","total_count":1,"children":[]},{"name":"DISENO-SHELL.md","total_count":1,"children":[]},{"name":"Primer resultado del renderer optimizado","total_count":1,"children":[]},{"name":"Reproducci\u00f3n","total_count":1,"children":[]},{"name":"Shell Rust: prototipo de dibujo","total_count":1,"children":[]},{"name":"Siguientes entregables H5","total_count":1,"children":[]}]},{"name":"ESTADO.md","total_count":13,"children":[{"name":"Comprobaciones y evidencia","total_count":1,"children":[]},{"name":"Copia previa","total_count":1,"children":[]},{"name":"Desarrollo interactivo y seguimiento","total_count":1,"children":[]},{"name":"Direcci\u00f3n actual","total_count":1,"children":[]},{"name":"Estado de Android y gr\u00e1ficos","total_count":1,"children":[]},{"name":"Estado real del proyecto","total_count":1,"children":[]},{"name":"ESTADO.md","total_count":1,"children":[]},{"name":"H1 comprobado","total_count":1,"children":[]},{"name":"H2 comprobado: compositor propio","total_count":1,"children":[]},{"name":"H3 comprobado en VM","total_count":1,"children":[]},{"name":"H4 comprobado en VM","total_count":1,"children":[]},{"name":"H5 iniciado: renderer del shell","total_count":1,"children":[]},{"name":"Limpieza realizada","total_count":1,"children":[]}]},{"name":"ESTUDIO-SMITHAY-ANVIL.md","total_count":6,"children":[{"name":"Estudio de Smithay y Anvil","total_count":1,"children":[]},{"name":"ESTUDIO-SMITHAY-ANVIL.md","total_count":1,"children":[]},{"name":"Mapa de lectura","total_count":1,"children":[]},{"name":"Qu\u00e9 no resuelve Smithay autom\u00e1ticamente","total_count":1,"children":[]},{"name":"Revisi\u00f3n de referencia","total_count":1,"children":[]},{"name":"Riesgo gr\u00e1fico que debe resolverse primero","total_count":1,"children":[]}]},{"name":"FUENTES.md","total_count":2,"children":[{"name":"Fuentes t\u00e9cnicas","total_count":1,"children":[]},{"name":"FUENTES.md","total_count":1,"children":[]}]},{"name":"GRAPHIFY.md","total_count":2,"children":[{"name":"GRAPHIFY.md","total_count":1,"children":[]},{"name":"Mapa del proyecto con Graphify","total_count":1,"children":[]}]},{"name":"INSTALACION.md","total_count":7,"children":[{"name":"Android existente","total_count":1,"children":[]},{"name":"Base actual y herramientas conservadas","total_count":1,"children":[]},{"name":"Desarrollo propio disponible","total_count":1,"children":[]},{"name":"Diagn\u00f3stico","total_count":1,"children":[]},{"name":"INSTALACION.md","total_count":1,"children":[]},{"name":"Manifiestos","total_count":1,"children":[]},{"name":"Scripts de sistema","total_count":1,"children":[]}]},{"name":"REFERENCIAS-FIRE-TV.md","total_count":10,"children":[{"name":"Capturas de referencia","total_count":1,"children":[]},{"name":"Cat\u00e1logo de fuentes","total_count":1,"children":[]},{"name":"Comparaci\u00f3n hist\u00f3rica","total_count":1,"children":[]},{"name":"Inicio 2026 \u2014 Amazon","total_count":1,"children":[]},{"name":"Material pendiente para una reproducci\u00f3n precisa","total_count":1,"children":[]},{"name":"Pel\u00edculas 2026 \u2014 Amazon","total_count":1,"children":[]},{"name":"Qu\u00e9 debe parecerse","total_count":1,"children":[]},{"name":"Referencia principal y versiones","total_count":1,"children":[]},{"name":"Referencias Fire TV para Arch TV","total_count":1,"children":[]},{"name":"REFERENCIAS-FIRE-TV.md","total_count":1,"children":[]}]}]},{"name":"README.md","total_count":5,"children":[{"name":"Arch TV \u00b7 compositor propio para televisi\u00f3n","total_count":1,"children":[]},{"name":"Documentaci\u00f3n principal","total_count":1,"children":[]},{"name":"Herramientas disponibles","total_count":1,"children":[]},{"name":"Laboratorio H1","total_count":1,"children":[]},{"name":"README.md","total_count":1,"children":[]}]},{"name":"ROADMAP.md","total_count":15,"children":[{"name":"Alcance inicial","total_count":1,"children":[]},{"name":"H0 \u00b7 Limpieza y base documental","total_count":1,"children":[]},{"name":"H1 \u00b7 Rust y Anvil como laboratorio","total_count":1,"children":[]},{"name":"H2 \u00b7 Compositor m\u00ednimo propio","total_count":1,"children":[]},{"name":"H3 \u00b7 Salida directa y decisi\u00f3n de renderizado","total_count":1,"children":[]},{"name":"H4 \u00b7 Comportamiento de televisi\u00f3n y sesi\u00f3n","total_count":1,"children":[]},{"name":"H5 \u00b7 Interfaz Rust con referencia Fire TV 2026","total_count":1,"children":[]},{"name":"H6 \u00b7 Integraci\u00f3n Android real","total_count":1,"children":[]},{"name":"H7 \u00b7 Ligereza, estabilidad y accesibilidad","total_count":1,"children":[]},{"name":"H8 \u00b7 Paquetes y actualizaci\u00f3n","total_count":1,"children":[]},{"name":"H9 \u00b7 Distribuci\u00f3n Arch TV","total_count":1,"children":[]},{"name":"Orden de entrega","total_count":1,"children":[]},{"name":"Regla para cerrar un hito","total_count":1,"children":[]},{"name":"Roadmap \u00b7 Arch TV nativo en Rust","total_count":1,"children":[]},{"name":"ROADMAP.md","total_count":1,"children":[]}]},{"name":"scripts","total_count":52,"children":[{"name":"00-diagnostico.sh","total_count":2,"children":[{"name":"00-diagnostico.sh script","total_count":1,"children":[]},{"name":"probe()","total_count":1,"children":[]}]},{"name":"10-base.sh","total_count":1,"children":[{"name":"10-base.sh script","total_count":1,"children":[]}]},{"name":"40-android.sh","total_count":1,"children":[{"name":"40-android.sh script","total_count":1,"children":[]}]},{"name":"41-android-software.sh","total_count":1,"children":[{"name":"41-android-software.sh script","total_count":1,"children":[]}]},{"name":"68-graphify.sh","total_count":4,"children":[{"name":"68-graphify.sh script","total_count":1,"children":[]},{"name":"GRAPHIFY_BACKEND","total_count":1,"children":[]},{"name":"GRAPHIFY_MAX_WORKERS","total_count":1,"children":[]},{"name":"PYTHONHASHSEED","total_count":1,"children":[]}]},{"name":"69-anvil-deps.sh","total_count":1,"children":[{"name":"69-anvil-deps.sh script","total_count":1,"children":[]}]},{"name":"70-anvil-prepare.sh","total_count":1,"children":[{"name":"70-anvil-prepare.sh script","total_count":1,"children":[]}]},{"name":"71-anvil-build.sh","total_count":1,"children":[{"name":"71-anvil-build.sh script","total_count":1,"children":[]}]},{"name":"72-anvil-smoke.sh","total_count":6,"children":[{"name":"72-anvil-smoke.sh script","total_count":1,"children":[]},{"name":"cleanup()","total_count":1,"children":[]},{"name":"EGL_PLATFORM","total_count":1,"children":[]},{"name":"GALLIUM_DRIVER","total_count":1,"children":[]},{"name":"LIBGL_ALWAYS_SOFTWARE","total_count":1,"children":[]},{"name":"XDG_RUNTIME_DIR","total_count":1,"children":[]}]},{"name":"80-rust-build.sh","total_count":1,"children":[{"name":"80-rust-build.sh script","total_count":1,"children":[]}]},{"name":"82-rust-smoke.sh","total_count":6,"children":[{"name":"82-rust-smoke.sh script","total_count":1,"children":[]},{"name":"cleanup()","total_count":1,"children":[]},{"name":"EGL_PLATFORM","total_count":1,"children":[]},{"name":"GALLIUM_DRIVER","total_count":1,"children":[]},{"name":"LIBGL_ALWAYS_SOFTWARE","total_count":1,"children":[]},{"name":"XDG_RUNTIME_DIR","total_count":1,"children":[]}]},{"name":"83-drm-session.sh","total_count":2,"children":[{"name":"83-drm-session.sh script","total_count":1,"children":[]},{"name":"LIBSEAT_BACKEND","total_count":1,"children":[]}]},{"name":"84-drm-smoke.sh","total_count":2,"children":[{"name":"84-drm-smoke.sh script","total_count":1,"children":[]},{"name":"cleanup()","total_count":1,"children":[]}]},{"name":"85-session-smoke.sh","total_count":2,"children":[{"name":"85-session-smoke.sh script","total_count":1,"children":[]},{"name":"cleanup()","total_count":1,"children":[]}]},{"name":"86-shell-render-probe.sh","total_count":1,"children":[{"name":"86-shell-render-probe.sh script","total_count":1,"children":[]}]},{"name":"check.sh","total_count":1,"children":[{"name":"check.sh script","total_count":1,"children":[]}]},{"name":"graphify.sh","total_count":4,"children":[{"name":"graphify.sh script","total_count":1,"children":[]},{"name":"GRAPHIFY_BACKEND","total_count":1,"children":[]},{"name":"GRAPHIFY_MAX_WORKERS","total_count":1,"children":[]},{"name":"PYTHONHASHSEED","total_count":1,"children":[]}]},{"name":"lib","total_count":14,"children":[{"name":"common.sh","total_count":5,"children":[{"name":"common.sh script","total_count":1,"children":[]},{"name":"manifest_packages()","total_count":1,"children":[]},{"name":"packages()","total_count":1,"children":[]},{"name":"run()","total_count":1,"children":[]},{"name":"user_only()","total_count":1,"children":[]}]},{"name":"input-probe.py","total_count":3,"children":[{"name":"Create a scoped uinput keyboard, send known evdev keys, then remove it.\u2026","total_count":1,"children":[]},{"name":"event()","total_count":1,"children":[]},{"name":"wait_for()","total_count":1,"children":[]}]},{"name":"measure-process.py","total_count":1,"children":[{"name":"Measure one child process with Linux rusage, without an extra package.","total_count":1,"children":[]}]},{"name":"ppm-to-png.py","total_count":2,"children":[{"name":"chunk()","total_count":1,"children":[]},{"name":"Losslessly encode the RGB P6 screenshots produced by the DRM probe as PNG.","total_count":1,"children":[]}]},{"name":"session-input.py","total_count":2,"children":[{"name":"event()","total_count":1,"children":[]},{"name":"Inject only the TV session shortcuts needed by the integration test.","total_count":1,"children":[]}]},{"name":"waydroid-software.py","total_count":1,"children":[{"name":"Aplicar el perfil software oficial de Waydroid, conservando copia previa.","total_count":1,"children":[]}]}]},{"name":"registrar-paquetes.sh","total_count":1,"children":[{"name":"registrar-paquetes.sh script","total_count":1,"children":[]}]}]},{"name":"THIRD_PARTY.md","total_count":2,"children":[{"name":"Third-party code","total_count":1,"children":[]},{"name":"THIRD_PARTY.md","total_count":1,"children":[]}]}]};
+
+    function transformData(jsonData) {
+        // Helper function to recursively build the children structure
+        function processNode(node, parentL1StageName) {
+            let displayName = node.name;
+            // Append total_count if it exists and is not already in the name
+            if (node.total_count !== undefined) {
+                if (!/\(Total Count: \d+\)$/.test(displayName)) {
+                    displayName += ` (Total Count: ${node.total_count})`;
+                }
+            }
+
+            const newNode = { name: displayName };
+
+            if (parentL1StageName === "Root") {
+                 newNode.originalStageName = node.name;
+            } else {
+                newNode.originalStageName = parentL1StageName;
+            }
+
+            if (node.children && node.children.length > 0) {
+                const stageNameToPass = (parentL1StageName === "Root") ? node.name : parentL1StageName;
+                newNode.children = node.children.map(child => processNode(child, stageNameToPass));
+            }
+
+            return newNode;
+        }
+
+        let rootDisplayName = jsonData.name;
+        if (jsonData.total_count !== undefined && !/\(Total Count: \d+\)$/.test(rootDisplayName)) {
+            rootDisplayName += ` (Total Count: ${jsonData.total_count})`;
+        }
+
+        return {
+            name: rootDisplayName,
+            originalStageName: "Root",
+            children: (jsonData.children || []).map(child => processNode(child, "Root"))
+        };
+    }
+
+    const treeData = transformData(initialJsonData);
+
+    // Auto-populated phaseColors: every depth-1 child of the root gets
+    // a stable colour from a bigger palette so all top-level dirs are
+    // distinguishable.
+    const PALETTE = [
+      ["#3498DB","#2980B9","#AED6F1"], ["#2ECC71","#27AE60","#A9DFBF"],
+      ["#E74C3C","#C0392B","#F5B7B1"], ["#9B59B6","#8E44AD","#D7BDE2"],
+      ["#F39C12","#D68910","#FAD7A0"], ["#1ABC9C","#117864","#A2D9CE"],
+      ["#34495E","#1B2631","#ABB2B9"], ["#E67E22","#BA4A00","#F5CBA7"],
+      ["#16A085","#0E6655","#A2D9CE"], ["#D35400","#A04000","#EDBB99"],
+      ["#7F8C8D","#566573","#D5DBDB"], ["#C0392B","#7B241C","#F5B7B1"],
+      ["#2E86C1","#1B4F72","#A9CCE3"], ["#28B463","#196F3D","#A9DFBF"],
+      ["#AF7AC5","#6C3483","#D2B4DE"],
+    ];
+    const phaseColors = { "Root": { fill: "#4A4A4A", stroke: "#333333", collapsedFill: "#6C757D" },
+                          "Default": { fill: "#BDC3C7", stroke: "#95A5A6", collapsedFill: "#ECF0F1" } };
+    (initialJsonData.children || []).forEach((c, i) => {
+      const pal = PALETTE[i % PALETTE.length];
+      phaseColors[c.name] = { fill: pal[0], stroke: pal[1], collapsedFill: pal[2] };
+    });
+
+    const levelSpecificPalettes = {
+      0: { fill: "#4A4A4A", stroke: "#333333", collapsedFill: "#6C757D" },
+      2: { fill: "#6ab04c", stroke: "#508a38", collapsedFill: "#a3d391" },
+      3: { fill: "#f0932b", stroke: "#d0730f", collapsedFill: "#f6c07e" },
+      4: { fill: "#be2edd", stroke: "#a01cb3", collapsedFill: "#e08bf2" },
+      5: { fill: "#00a8ff", stroke: "#007ac1", collapsedFill: "#74d2ff" },
+      6: { fill: "#e55039", stroke: "#c23620", collapsedFill: "#f09a8d" },
+      default: { fill: "#747d8c", stroke: "#57606f", collapsedFill: "#a4b0be" }
+    };
+
+    const svgElement = d3.select("#tree-svg");
+    const initialSvgWidth = +svgElement.attr("width");
+    const initialSvgHeight = +svgElement.attr("height");
+    const margin = { top: 40, right: 120, bottom: 80, left: 450 };
+    let width = initialSvgWidth - margin.left - margin.right;
+    let height = initialSvgHeight - margin.top - margin.bottom;
+    const duration = 500;
+    let nodeCounter = 0;
+    const g = svgElement.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+    const treemap = d3.tree().nodeSize([40, 0]);
+    let rootNode = d3.hierarchy(treeData, d => d.children);
+    rootNode.x0 = 0;
+    rootNode.y0 = 0;
+
+    if (rootNode.children) {
+      rootNode.children.forEach(d_child => {
+        if (d_child.children) { collapseBranch(d_child); }
+      });
+    }
+    updateTree(rootNode);
+
+    function collapseBranch(d) { if (d.children) { d._children = d.children; d._children.forEach(collapseBranch); d.children = null; } }
+    function expandBranch(d) { if (d._children) { d.children = d._children; d._children = null; } if (d.children) { d.children.forEach(expandBranch); } }
+    window.expandAll = () => { expandBranch(rootNode); updateTree(rootNode); };
+    window.collapseAll = () => { if (rootNode.children) { rootNode.children.forEach(collapseBranch); } updateTree(rootNode); };
+    window.resetView = () => { if (rootNode.children) { rootNode.children.forEach(d_child => { if (d_child.children || d_child._children) { collapseBranch(d_child); } }); } if (rootNode._children && !rootNode.children) { rootNode.children = rootNode._children; rootNode._children = null; } updateTree(rootNode); };
+
+    function updateTree(source) {
+      const treeLayoutData = treemap(rootNode);
+      let nodes = treeLayoutData.descendants();
+      let links = treeLayoutData.descendants().slice(1);
+
+      let minX = 0;
+      let maxX = 0;
+      if (nodes.length > 0) {
+        minX = d3.min(nodes, d => d.x);
+        maxX = d3.max(nodes, d => d.x);
+      }
+
+      let neededHeight = Math.max(initialSvgHeight, maxX - minX + margin.top + margin.bottom + 100);
+      svgElement.transition().duration(duration / 2).attr("height", neededHeight);
+      g.transition().duration(duration / 2).attr("transform", `translate(${margin.left},${margin.top - minX + 40})`);
+
+      nodes.forEach(d => { d.y = d.depth * 400; }); // Adjust horizontal separation if needed
+
+      const node = g.selectAll('g.node').data(nodes, d => d.id || (d.id = ++nodeCounter));
+      const nodeEnter = node.enter().append('g')
+        .attr('class', d => "node" + (d.children || d._children ? " node--internal" : " node--leaf") + (d._children ? " _children" : ""))
+        .attr('transform', d => `translate(${source.y0},${source.x0})`)
+        .on('click', (event, d) => { if (d.children) { d._children = d.children; d.children = null; } else if (d._children) { d.children = d._children; d._children = null; } updateTree(d); })
+        .style('cursor', d => (d.children || d._children) ? 'pointer' : 'default');
+
+      nodeEnter.append('circle').attr('r', 1e-6);
+
+      nodeEnter.append('text')
+        .attr('dy', '.35em')
+        .attr('x', d => d.children || d._children ? -14 : 14)
+        .attr('text-anchor', d => d.children || d._children ? 'end' : 'start')
+        .style("fill-opacity", 1e-6)
+        .call(wrapText, 380);
+
+      const nodeUpdate = nodeEnter.merge(node);
+      nodeUpdate.transition().duration(duration)
+        .attr('transform', d => `translate(${d.y},${d.x})`)
+        .attr('class', d => "node" + (d.children ? " node--internal" : " node--leaf") + (d._children ? " node--internal _children" : ""));
+
+      nodeUpdate.select('circle').attr('r', 8.5)
+        .style('fill', d => {
+            let palette;
+            if (d.depth === 0) {
+                palette = levelSpecificPalettes[0];
+            } else if (d.depth === 1) {
+                palette = phaseColors[d.data.originalStageName] || phaseColors.Default;
+            } else {
+                palette = levelSpecificPalettes[d.depth] || levelSpecificPalettes.default;
+            }
+            if (d._children) return palette.collapsedFill;
+            if (d.children) return palette.fill;
+            return "#fff";
+        })
+        .style('stroke', d => {
+            let palette;
+            if (d.depth === 0) {
+                palette = levelSpecificPalettes[0];
+            } else if (d.depth === 1) {
+                palette = phaseColors[d.data.originalStageName] || phaseColors.Default;
+            } else {
+                palette = levelSpecificPalettes[d.depth] || levelSpecificPalettes.default;
+            }
+            return palette.stroke;
+        });
+      nodeUpdate.select('text').style("fill-opacity", 1).call(wrapText, 380);
+
+      const nodeExit = node.exit().transition().duration(duration).attr('transform', d => `translate(${source.y},${source.x})`).remove();
+      nodeExit.select('circle').attr('r', 1e-6);
+      nodeExit.select('text').style('fill-opacity', 1e-6);
+
+      const link = g.selectAll('path.link').data(links, d => d.id);
+      const linkEnter = link.enter().insert('path', "g").attr('class', 'link').attr('d', d => { const o = { x: source.x0, y: source.y0 }; return diagonal(o, o); });
+
+      linkEnter.merge(link).transition().duration(duration).attr('d', d => diagonal(d, d.parent))
+        .style('stroke', d => {
+            const sourceNode = d.parent;
+            if (!sourceNode) return phaseColors.Default.stroke;
+            const l1AncestorName = sourceNode.data.originalStageName;
+            const colorPalette = phaseColors[l1AncestorName] || phaseColors.Default;
+            return colorPalette.stroke;
+        });
+      link.exit().transition().duration(duration).attr('d', d => { const o = { x: source.x, y: source.y }; return diagonal(o, o); }).remove();
+      nodes.forEach(d => { d.x0 = d.x; d.y0 = d.y; });
+    }
+
+    function diagonal(s, d) { return `M ${s.y} ${s.x} C ${(s.y + d.y) / 2} ${s.x}, ${(s.y + d.y) / 2} ${d.x}, ${d.y} ${d.x}`; }
+
+    function wrapText(textElements, maxWidth) {
+        const textPartColors = {
+            name: '#343a40',
+            count: '#0056b3'
+        };
+        const countRegex = /(\s\(Total Count: \d+\))$/;
+
+        textElements.each(function () {
+            const textD3 = d3.select(this);
+            const originalNodeText = textD3.datum().data.name;
+            const x = parseFloat(textD3.attr("x") || 0);
+            const initialDy = textD3.attr("dy");
+            const textAnchor = textD3.attr("text-anchor");
+            const lineHeight = 1.1;
+
+            textD3.text(null);
+
+            let namePart = originalNodeText;
+            let countPartText = "";
+
+            const countMatch = originalNodeText.match(countRegex);
+            if (countMatch && originalNodeText.endsWith(countMatch[0])) {
+                namePart = originalNodeText.substring(0, originalNodeText.length - countMatch[0].length).trim();
+                countPartText = countMatch[0].trim();
+            }
+
+            const tokens = [];
+            namePart.split(/\s+/).filter(Boolean).forEach(word => {
+                tokens.push({ text: word, type: 'name' });
+            });
+            if (countPartText) {
+                tokens.push({ text: countPartText, type: 'count' });
+            }
+
+            if (tokens.length === 0 && originalNodeText) {
+                tokens.push({ text: originalNodeText, type: 'name' });
+            }
+
+            let currentTspan = textD3.append("tspan").attr("x", x).attr("dy", initialDy);
+            if (textAnchor === "end") currentTspan.attr("text-anchor", "end");
+
+            let lineTokens = [];
+
+            for (let i = 0; i < tokens.length; i++) {
+                const tokenObj = tokens[i];
+
+                lineTokens.push(tokenObj);
+                currentTspan.text(lineTokens.map(t => t.text).join(" "));
+
+                if (currentTspan.node().getComputedTextLength() > maxWidth && lineTokens.length > 1) {
+                    lineTokens.pop();
+
+                    currentTspan.text(null);
+                    lineTokens.forEach((prevToken, idx) => {
+                        currentTspan.append("tspan")
+                            .text((idx > 0 ? " " : "") + prevToken.text)
+                            .style("fill", textPartColors[prevToken.type] || textPartColors.name)
+                            .style("font-weight", prevToken.type === 'count' ? "bold" : "normal");
+                    });
+
+                    lineTokens = [tokenObj];
+                    currentTspan = textD3.append("tspan").attr("x", x).attr("dy", lineHeight + "em");
+                    if (textAnchor === "end") currentTspan.attr("text-anchor", "end");
+                }
+            }
+
+            currentTspan.text(null);
+            lineTokens.forEach((token, idx) => {
+                currentTspan.append("tspan")
+                    .text((idx > 0 ? " " : "") + token.text)
+                    .style("fill", textPartColors[token.type] || textPartColors.name)
+                    .style("font-weight", token.type === 'count' ? "bold" : "normal");
+            });
+
+            if (textD3.selectAll("tspan > tspan").empty() && textD3.select("tspan").text().length === 0 && originalNodeText) {
+                let t = textD3.select("tspan");
+                let displayText = originalNodeText;
+                t.text(displayText).style("fill", textPartColors.name);
+                if (t.node() && t.node().getComputedTextLength() > maxWidth && displayText.length > 20) {
+                    let estimatedChars = Math.floor(maxWidth / (t.node().getComputedTextLength()/displayText.length) );
+                    displayText = displayText.substring(0, Math.max(0, estimatedChars - 3)) + "...";
+                    t.text(displayText);
+                }
+            }
+        });
+    }
+  </script>
+</body>
+</html>

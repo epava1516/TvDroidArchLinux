@@ -1,0 +1,8 @@
+# Bibliotecas enlazadas por el backend DRM/Pixman actual; aún no es un PKGBUILD.
+glibc
+gcc-libs
+seatd
+systemd-libs
+libinput
+libxkbcommon
+pixman

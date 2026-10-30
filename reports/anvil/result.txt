@@ -1,0 +1,5 @@
+Fecha UTC: 2026-10-29T22:34:47Z
+PASS: Weston headless/Pixman → Anvil winit/GLES → cliente SHM
+Socket de Anvil: wayland-1
+Se observaron commits y callbacks de frame del cliente.
+Captura: reports/anvil/screen.png

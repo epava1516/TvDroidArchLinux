@@ -1,0 +1,11 @@
+    Blocking waiting for file lock on build directory
+warning: unused import: `Device as _`
+  --> crates/archtv-compositor/src/drm.rs:26:13
+   |
+26 |             Device as _,
+   |             ^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `archtv-compositor` (bin "archtv-compositor") generated 1 warning (run `cargo fix --bin "archtv-compositor" -p archtv-compositor` to apply 1 suggestion)
+    Finished `dev` profile [unoptimized] target(s) in 29.44s

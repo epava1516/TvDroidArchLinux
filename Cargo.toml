@@ -1,0 +1,23 @@
+[workspace]
+resolver = "3"
+members = ["crates/archtv-core", "crates/archtv-compositor", "crates/archtv-test-client", "crates/archtv-shell"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.87"
+license = "MIT"
+
+[workspace.dependencies]
+smithay = { git = "https://github.com/Smithay/smithay", rev = "f581531d479cf2e3307bafb913c5d2bb12860bb3", default-features = false, features = ["backend_winit", "backend_drm", "backend_session_libseat", "backend_libinput", "backend_udev", "renderer_pixman", "desktop", "wayland_frontend"] }
+tracing = "0.1.44"
+tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
+archtv-core = { path = "crates/archtv-core" }
+
+[profile.dev]
+debug = 0
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = "debuginfo"

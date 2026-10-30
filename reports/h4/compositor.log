@@ -1,0 +1,110 @@
+2026-10-29T23:25:41.464082Z  WARN smithay::backend::drm::device::fd: Unable to become drm master, assuming unprivileged mode
+2026-10-29T23:25:41.466552Z  INFO archtv_compositor::state: OUTPUT_CONFIGURED width=1280 height=800
+2026-10-29T23:25:41.633385Z  INFO archtv_compositor::drm: DRM_READY device=/dev/dri/card0 width=1280 height=800 refresh=60 format="XRGB8888" modifier="LINEAR" buffers=2 renderer="Pixman"
+2026-10-29T23:25:41.721903Z  INFO archtv_compositor::session: SESSION_CHILD_STARTED pid=28462 shell=true
+2026-10-29T23:25:41.722113Z  INFO archtv_compositor: TV_COMPOSITOR_READY socket="wayland-1"
+2026-10-29T23:25:41.722284Z  INFO archtv_compositor::input: INPUT_ADDED name="VirtualBox mouse integration"
+2026-10-29T23:25:41.722332Z  INFO archtv_compositor::input: INPUT_ADDED name="VirtualBox USB Tablet"
+2026-10-29T23:25:41.722371Z  INFO archtv_compositor::input: INPUT_ADDED name="Video Bus"
+2026-10-29T23:25:41.722409Z  INFO archtv_compositor::input: INPUT_ADDED name="Power Button"
+2026-10-29T23:25:41.722446Z  INFO archtv_compositor::input: INPUT_ADDED name="Sleep Button"
+2026-10-29T23:25:41.722483Z  INFO archtv_compositor::input: INPUT_ADDED name="AT Translated Set 2 keyboard"
+2026-10-29T23:25:41.722522Z  INFO archtv_compositor::input: INPUT_ADDED name="ImExPS/2 Generic Explorer Mouse"
+CLIENT_CONFIGURE 1280x800 fullscreen=true
+2026-10-29T23:25:41.826192Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=1
+2026-10-29T23:25:41.847180Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=2
+CLIENT_FRAME 1 size=1280x800
+2026-10-29T23:25:41.956585Z  INFO archtv_compositor::state: SHELL_SURFACE_READY
+2026-10-29T23:25:41.957562Z  INFO archtv_compositor::state: TOPLEVEL_MAPPED
+CLIENT_CONFIGURE 1280x800 fullscreen=true
+2026-10-29T23:25:41.977670Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=3
+2026-10-29T23:25:42.055526Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=4
+CLIENT_FRAME 2 size=1280x800
+CLIENT_FOCUS_ENTER popup=false
+2026-10-29T23:25:42.202897Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=5
+2026-10-29T23:25:42.252306Z  INFO archtv_compositor::state: TOPLEVEL_MAPPED
+CLIENT_FOCUS_LEAVE
+CLIENT_CONFIGURE 1280x800 fullscreen=true
+2026-10-29T23:25:42.262466Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=6
+CLIENT_FRAME 3 size=1280x800
+2026-10-29T23:25:42.432109Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=7
+2026-10-29T23:25:42.462788Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=8
+2026-10-29T23:25:42.800789Z  INFO archtv_compositor::input: INPUT_ADDED name="ArchTV session keyboard"
+2026-10-29T23:25:44.267754Z  INFO archtv_compositor::state: TV_HOME
+CLIENT_FOCUS_ENTER popup=false
+CLIENT_CONFIGURE 1280x800 fullscreen=true
+2026-10-29T23:25:44.284272Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=9
+CLIENT_FRAME 4 size=1280x800
+2026-10-29T23:25:44.423504Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=10
+2026-10-29T23:25:44.446698Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=11
+CLIENT_KEY XK_Return popup=false
+CLIENT_CONTROL_RESUME
+2026-10-29T23:25:44.935785Z  INFO archtv_compositor::state: TV_RESUME
+CLIENT_FOCUS_LEAVE
+CLIENT_CONFIGURE 1280x800 fullscreen=true
+2026-10-29T23:25:44.968559Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=12
+2026-10-29T23:25:45.070380Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=13
+CLIENT_FRAME 5 size=1280x800
+2026-10-29T23:25:45.096871Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=14
+2026-10-29T23:25:45.431779Z  INFO archtv_compositor::input: INPUT_REMOVED name="ArchTV session keyboard"
+2026-10-29T23:25:45.491463Z  INFO archtv_compositor::handlers::xdg_shell: TV_APP_CLOSED_HOME
+2026-10-29T23:25:45.491934Z  INFO archtv_compositor::handlers::xdg_shell: TOPLEVEL_DESTROYED
+2026-10-29T23:25:45.504325Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=15
+CLIENT_FOCUS_ENTER popup=false
+CLIENT_CONFIGURE 1280x800 fullscreen=true
+2026-10-29T23:25:45.568785Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=16
+CLIENT_FRAME 6 size=1280x800
+2026-10-29T23:25:45.650085Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=17
+2026-10-29T23:25:45.722683Z  INFO archtv_compositor::state: TOPLEVEL_MAPPED
+CLIENT_FOCUS_LEAVE
+CLIENT_CONFIGURE 1280x800 fullscreen=true
+2026-10-29T23:25:45.750157Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=18
+CLIENT_FRAME 7 size=1280x800
+2026-10-29T23:25:45.914355Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=19
+2026-10-29T23:25:45.943337Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=20
+2026-10-29T23:25:45.960637Z  INFO archtv_compositor::handlers::xdg_shell: TOPLEVEL_DESTROYED
+2026-10-29T23:25:46.003648Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=21
+2026-10-29T23:25:46.023668Z  WARN archtv_compositor::session: SESSION_CHILD_EXITED status=ExitStatus(unix_wait_status(15)) shell=true
+2026-10-29T23:25:47.035406Z  INFO archtv_compositor::session: SESSION_CHILD_STARTED pid=28532 shell=true
+CLIENT_CONFIGURE 1280x800 fullscreen=true
+2026-10-29T23:25:47.053151Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=22
+CLIENT_FRAME 1 size=1280x800
+2026-10-29T23:25:47.169615Z  INFO archtv_compositor::state: SHELL_SURFACE_READY
+2026-10-29T23:25:47.169983Z  INFO archtv_compositor::state: TOPLEVEL_MAPPED
+CLIENT_CONFIGURE 1280x800 fullscreen=true
+2026-10-29T23:25:47.188461Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=23
+2026-10-29T23:25:47.222474Z  INFO archtv_compositor::handlers::xdg_shell: TOPLEVEL_DESTROYED
+2026-10-29T23:25:47.237412Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=24
+2026-10-29T23:25:47.287679Z  WARN archtv_compositor::session: SESSION_CHILD_EXITED status=ExitStatus(unix_wait_status(15)) shell=true
+2026-10-29T23:25:47.345861Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=25
+2026-10-29T23:25:47.518967Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=26
+2026-10-29T23:25:48.299477Z  INFO archtv_compositor::session: SESSION_CHILD_STARTED pid=28556 shell=true
+CLIENT_CONFIGURE 1280x800 fullscreen=true
+2026-10-29T23:25:48.330579Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=27
+CLIENT_FRAME 1 size=1280x800
+2026-10-29T23:25:48.506969Z  INFO archtv_compositor::state: SHELL_SURFACE_READY
+2026-10-29T23:25:48.507843Z  INFO archtv_compositor::state: TOPLEVEL_MAPPED
+CLIENT_CONFIGURE 1280x800 fullscreen=true
+2026-10-29T23:25:48.524449Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=28
+2026-10-29T23:25:48.596801Z  INFO archtv_compositor::handlers::xdg_shell: TOPLEVEL_DESTROYED
+2026-10-29T23:25:48.619454Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=29
+2026-10-29T23:25:48.691260Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=30
+2026-10-29T23:25:48.813300Z  WARN archtv_compositor::session: SESSION_CHILD_EXITED status=ExitStatus(unix_wait_status(15)) shell=true
+2026-10-29T23:25:48.891821Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=31
+2026-10-29T23:25:49.821397Z  INFO archtv_compositor::session: SESSION_CHILD_STARTED pid=28586 shell=true
+CLIENT_CONFIGURE 1280x800 fullscreen=true
+2026-10-29T23:25:49.844770Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=32
+CLIENT_FRAME 1 size=1280x800
+2026-10-29T23:25:49.991565Z  INFO archtv_compositor::state: SHELL_SURFACE_READY
+2026-10-29T23:25:49.992897Z  INFO archtv_compositor::state: TOPLEVEL_MAPPED
+CLIENT_CONFIGURE 1280x800 fullscreen=true
+2026-10-29T23:25:50.011225Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=33
+2026-10-29T23:25:50.054007Z  INFO archtv_compositor::handlers::xdg_shell: TOPLEVEL_DESTROYED
+2026-10-29T23:25:50.068235Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=34
+2026-10-29T23:25:50.072566Z  WARN archtv_compositor::session: SESSION_CHILD_EXITED status=ExitStatus(unix_wait_status(15)) shell=true
+2026-10-29T23:25:50.173370Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=35
+2026-10-29T23:25:50.335145Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=36
+2026-10-29T23:25:51.078641Z ERROR archtv_compositor::session: SHELL_RESTART_LIMIT: compositor and applications remain active
+2026-10-29T23:25:51.300364Z  INFO archtv_compositor::input: INPUT_ADDED name="ArchTV session keyboard"
+2026-10-29T23:25:52.907663Z  INFO archtv_compositor: TV_COMPOSITOR_STOPPED
+2026-10-29T23:25:53.051212Z  INFO archtv_compositor::drm: DRM_STOPPED frames=36

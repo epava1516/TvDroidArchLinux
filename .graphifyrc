@@ -1,0 +1,3 @@
+# El mapa incluye código local y dependencias Cargo. La documentación de hitos
+# se consulta en ROADMAP.md; no se configura un proveedor LLM para Graphify.
+viz_node_limit=5000

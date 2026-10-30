@@ -1,0 +1,19 @@
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+/target/
+**/target/
+/dist/
+/reports/*.png
+
+/reports/**/*.ppm
+
+# Cachés y rutas locales de Graphify; el grafo y sus vistas sí se versionan.
+/graphify-out/cache/
+/graphify-out/.graphify_root
+/graphify-out/.graphify_python
+/graphify-out/20??-??-??/

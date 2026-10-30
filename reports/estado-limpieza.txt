@@ -1,0 +1,22 @@
+Fecha UTC: 2026-10-29T22:19:54Z
+Paquete retirado: labwc
+Paquete retirado: archtv-shell
+Paquete retirado: swaybg
+Paquete retirado: wlroots0.20
+Paquete retirado: libsfdo
+Proceso del compositor anterior: ausente
+Archivo/configuración retirado: /usr/bin/archtv-session
+Archivo/configuración retirado: /usr/bin/archtv-launcher
+Archivo/configuración retirado: /usr/share/archtv
+Archivo/configuración retirado: /usr/share/themes/ArchTV
+Archivo/configuración retirado: /usr/share/wayland-sessions/archtv.desktop
+Archivo/configuración retirado: /home/tv/.config/archtv
+Archivo/configuración retirado: /home/tv/.config/labwc
+Paquetes compartidos conservados:
+waydroid 1.6.3-1
+mesa 1:26.2.6-1
+wayland 1.26.0-1
+foot 1.28.0-2
+pipewire-audio 1:1.6.10-1
+pipewire-pulse 1:1.6.10-1
+wireplumber 0.5.18-1

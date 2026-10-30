@@ -1,0 +1,16 @@
+   Compiling archtv-core v0.1.0 (/home/tv/repositorio-principal/crates/archtv-core)
+    Finished `test` profile [unoptimized] target(s) in 1.14s
+     Running unittests src/lib.rs (/home/tv/.cache/archtv/smithay/target/debug/deps/archtv_core-e5d183d20251ea85)
+
+running 2 tests
+test tests::home_returns_without_destroying_app_and_close_restores_focus ... ok
+test tests::repeated_activation_does_not_duplicate_a_window ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests archtv_core
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

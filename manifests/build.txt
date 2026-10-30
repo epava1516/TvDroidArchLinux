@@ -1,0 +1,4 @@
+# Herramientas de compilación instaladas para H1; no son dependencias de ejecución.
+rust
+base-devel
+pkgconf

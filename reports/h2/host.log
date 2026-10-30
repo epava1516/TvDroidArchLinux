@@ -1,0 +1,285 @@
+Date: 2026-10-29 UTC
+[23:02:24.075] weston 15.0.1
+               https://wayland.freedesktop.org
+               Bug reports to: https://gitlab.freedesktop.org/wayland/weston/issues/
+               Build: 15.0.1
+[23:02:24.075] Command line: weston --backend=headless --renderer=pixman --fake-seat --width=1280 --height=720 --socket=archtv-host --no-config --idle-time=0 --debug --log=/home/tv/repositorio-principal/reports/h2/host.log
+[23:02:24.075] OS: Linux, 7.2.11-arch1-1, #1 SMP PREEMPT_DYNAMIC Fri, 16 Oct 2026 00:28:58 +0000, x86_64
+[23:02:24.075] Flight recorder: enabled, scopes subscribed: log
+[23:02:24.075] Starting with no config file.
+[23:02:24.075] Output repaint window is 7 ms maximum.
+[23:02:24.079] Loading module '/usr/lib/libweston-15/headless-backend.so'
+[23:02:24.385] Using Pixman renderer
+[23:02:24.385] Registered plugin API 'weston_windowed_output_api_headless_v2' of size 16
+[23:02:24.385] Color manager: no-op
+                 protocol support: no
+[23:02:24.385] Color representation not supported by renderer
+[23:02:24.385] Output 'headless' attempts EOTF mode SDR and colorimetry mode default.
+[23:02:24.385] Output 'headless' using color profile: stock sRGB color profile
+[23:02:24.385] Output 'headless' enabled with head(s) headless
+[23:02:24.385] Compositor capabilities:
+               arbitrary surface rotation: yes
+               screen capture uses y-flip: no
+               cursor planes: no
+               arbitrary resolutions: no
+               view mask clipping: yes
+               explicit sync: no
+               color operations: no
+               color representation: no
+               presentation clock: CLOCK_MONOTONIC_RAW, id 4
+               presentation clock resolution: 0.000000001 s
+[23:02:24.387] Loading module '/usr/lib/weston/desktop-shell.so'
+[23:02:24.389] Currently advertised debug scopes:
+               'log' - Weston and Wayland log
+               'scene-graph' - Scene graph details
+               'timeline' - Timeline event points
+               'libseat-debug' - libseat debug messages
+               'proto' - Wayland protocol dump for all clients.
+[23:02:24.390] launching '/usr/lib/weston/weston-keyboard'
+[23:02:24.392] launching '/usr/lib/weston/weston-desktop-shell'
+[23:02:39.053] caught signal 15
+[23:02:39.061] BUG: finalizing a layer with views still on it.
+Date: 2026-10-29 UTC
+[23:03:31.626] weston 15.0.1
+               https://wayland.freedesktop.org
+               Bug reports to: https://gitlab.freedesktop.org/wayland/weston/issues/
+               Build: 15.0.1
+[23:03:31.629] Command line: weston --backend=headless --renderer=pixman --fake-seat --width=1280 --height=720 --socket=archtv-host --no-config --idle-time=0 --debug --log=/home/tv/repositorio-principal/reports/h2/host.log
+[23:03:31.629] OS: Linux, 7.2.11-arch1-1, #1 SMP PREEMPT_DYNAMIC Fri, 16 Oct 2026 00:28:58 +0000, x86_64
+[23:03:31.629] Flight recorder: enabled, scopes subscribed: log
+[23:03:31.629] Starting with no config file.
+[23:03:31.630] Output repaint window is 7 ms maximum.
+[23:03:31.630] Loading module '/usr/lib/libweston-15/headless-backend.so'
+[23:03:31.707] Using Pixman renderer
+[23:03:31.707] Registered plugin API 'weston_windowed_output_api_headless_v2' of size 16
+[23:03:31.707] Color manager: no-op
+                 protocol support: no
+[23:03:31.707] Color representation not supported by renderer
+[23:03:31.707] Output 'headless' attempts EOTF mode SDR and colorimetry mode default.
+[23:03:31.708] Output 'headless' using color profile: stock sRGB color profile
+[23:03:31.708] Output 'headless' enabled with head(s) headless
+[23:03:31.708] Compositor capabilities:
+               arbitrary surface rotation: yes
+               screen capture uses y-flip: no
+               cursor planes: no
+               arbitrary resolutions: no
+               view mask clipping: yes
+               explicit sync: no
+               color operations: no
+               color representation: no
+               presentation clock: CLOCK_MONOTONIC_RAW, id 4
+               presentation clock resolution: 0.000000001 s
+[23:03:31.708] Loading module '/usr/lib/weston/desktop-shell.so'
+[23:03:31.712] Currently advertised debug scopes:
+               'log' - Weston and Wayland log
+               'scene-graph' - Scene graph details
+               'timeline' - Timeline event points
+               'libseat-debug' - libseat debug messages
+               'proto' - Wayland protocol dump for all clients.
+[23:03:31.712] launching '/usr/lib/weston/weston-keyboard'
+[23:03:31.715] launching '/usr/lib/weston/weston-desktop-shell'
+[23:03:48.915] caught signal 15
+Date: 2026-10-29 UTC
+[23:04:17.834] weston 15.0.1
+               https://wayland.freedesktop.org
+               Bug reports to: https://gitlab.freedesktop.org/wayland/weston/issues/
+               Build: 15.0.1
+[23:04:17.836] Command line: weston --backend=headless --renderer=pixman --fake-seat --width=1280 --height=720 --socket=archtv-host --no-config --idle-time=0 --debug --log=/home/tv/repositorio-principal/reports/h2/host.log
+[23:04:17.836] OS: Linux, 7.2.11-arch1-1, #1 SMP PREEMPT_DYNAMIC Fri, 16 Oct 2026 00:28:58 +0000, x86_64
+[23:04:17.836] Flight recorder: enabled, scopes subscribed: log
+[23:04:17.836] Starting with no config file.
+[23:04:17.836] Output repaint window is 7 ms maximum.
+[23:04:17.836] Loading module '/usr/lib/libweston-15/headless-backend.so'
+[23:04:18.000] Using Pixman renderer
+[23:04:18.000] Registered plugin API 'weston_windowed_output_api_headless_v2' of size 16
+[23:04:18.000] Color manager: no-op
+                 protocol support: no
+[23:04:18.000] Color representation not supported by renderer
+[23:04:18.000] Output 'headless' attempts EOTF mode SDR and colorimetry mode default.
+[23:04:18.000] Output 'headless' using color profile: stock sRGB color profile
+[23:04:18.000] Output 'headless' enabled with head(s) headless
+[23:04:18.000] Compositor capabilities:
+               arbitrary surface rotation: yes
+               screen capture uses y-flip: no
+               cursor planes: no
+               arbitrary resolutions: no
+               view mask clipping: yes
+               explicit sync: no
+               color operations: no
+               color representation: no
+               presentation clock: CLOCK_MONOTONIC_RAW, id 4
+               presentation clock resolution: 0.000000001 s
+[23:04:18.001] Loading module '/usr/lib/weston/desktop-shell.so'
+[23:04:18.004] Currently advertised debug scopes:
+               'log' - Weston and Wayland log
+               'scene-graph' - Scene graph details
+               'timeline' - Timeline event points
+               'libseat-debug' - libseat debug messages
+               'proto' - Wayland protocol dump for all clients.
+[23:04:18.005] launching '/usr/lib/weston/weston-keyboard'
+[23:04:18.007] launching '/usr/lib/weston/weston-desktop-shell'
+[23:04:28.414] caught signal 15
+Date: 2026-10-29 UTC
+[23:05:12.559] weston 15.0.1
+               https://wayland.freedesktop.org
+               Bug reports to: https://gitlab.freedesktop.org/wayland/weston/issues/
+               Build: 15.0.1
+[23:05:12.562] Command line: weston --backend=headless --renderer=pixman --fake-seat --width=1280 --height=720 --socket=archtv-host --no-config --idle-time=0 --debug --log=/home/tv/repositorio-principal/reports/h2/host.log
+[23:05:12.562] OS: Linux, 7.2.11-arch1-1, #1 SMP PREEMPT_DYNAMIC Fri, 16 Oct 2026 00:28:58 +0000, x86_64
+[23:05:12.562] Flight recorder: enabled, scopes subscribed: log
+[23:05:12.562] Starting with no config file.
+[23:05:12.563] Output repaint window is 7 ms maximum.
+[23:05:12.563] Loading module '/usr/lib/libweston-15/headless-backend.so'
+[23:05:12.631] Using Pixman renderer
+[23:05:12.631] Registered plugin API 'weston_windowed_output_api_headless_v2' of size 16
+[23:05:12.631] Color manager: no-op
+                 protocol support: no
+[23:05:12.631] Color representation not supported by renderer
+[23:05:12.634] Output 'headless' attempts EOTF mode SDR and colorimetry mode default.
+[23:05:12.634] Output 'headless' using color profile: stock sRGB color profile
+[23:05:12.634] Output 'headless' enabled with head(s) headless
+[23:05:12.634] Compositor capabilities:
+               arbitrary surface rotation: yes
+               screen capture uses y-flip: no
+               cursor planes: no
+               arbitrary resolutions: no
+               view mask clipping: yes
+               explicit sync: no
+               color operations: no
+               color representation: no
+               presentation clock: CLOCK_MONOTONIC_RAW, id 4
+               presentation clock resolution: 0.000000001 s
+[23:05:12.634] Loading module '/usr/lib/weston/desktop-shell.so'
+[23:05:12.645] Currently advertised debug scopes:
+               'log' - Weston and Wayland log
+               'scene-graph' - Scene graph details
+               'timeline' - Timeline event points
+               'libseat-debug' - libseat debug messages
+               'proto' - Wayland protocol dump for all clients.
+[23:05:12.645] launching '/usr/lib/weston/weston-keyboard'
+[23:05:12.649] launching '/usr/lib/weston/weston-desktop-shell'
+[23:05:23.256] caught signal 15
+[23:05:23.257] BUG: finalizing a layer with views still on it.
+Date: 2026-10-29 UTC
+[23:05:44.563] weston 15.0.1
+               https://wayland.freedesktop.org
+               Bug reports to: https://gitlab.freedesktop.org/wayland/weston/issues/
+               Build: 15.0.1
+[23:05:44.563] Command line: weston --backend=headless --renderer=pixman --fake-seat --width=1280 --height=720 --socket=archtv-host --no-config --idle-time=0 --debug --log=/home/tv/repositorio-principal/reports/h2/host.log
+[23:05:44.563] OS: Linux, 7.2.11-arch1-1, #1 SMP PREEMPT_DYNAMIC Fri, 16 Oct 2026 00:28:58 +0000, x86_64
+[23:05:44.563] Flight recorder: enabled, scopes subscribed: log
+[23:05:44.563] Starting with no config file.
+[23:05:44.563] Output repaint window is 7 ms maximum.
+[23:05:44.563] Loading module '/usr/lib/libweston-15/headless-backend.so'
+[23:05:44.597] Using Pixman renderer
+[23:05:44.597] Registered plugin API 'weston_windowed_output_api_headless_v2' of size 16
+[23:05:44.597] Color manager: no-op
+                 protocol support: no
+[23:05:44.597] Color representation not supported by renderer
+[23:05:44.597] Output 'headless' attempts EOTF mode SDR and colorimetry mode default.
+[23:05:44.597] Output 'headless' using color profile: stock sRGB color profile
+[23:05:44.597] Output 'headless' enabled with head(s) headless
+[23:05:44.597] Compositor capabilities:
+               arbitrary surface rotation: yes
+               screen capture uses y-flip: no
+               cursor planes: no
+               arbitrary resolutions: no
+               view mask clipping: yes
+               explicit sync: no
+               color operations: no
+               color representation: no
+               presentation clock: CLOCK_MONOTONIC_RAW, id 4
+               presentation clock resolution: 0.000000001 s
+[23:05:44.597] Loading module '/usr/lib/weston/desktop-shell.so'
+[23:05:44.597] Currently advertised debug scopes:
+               'log' - Weston and Wayland log
+               'scene-graph' - Scene graph details
+               'timeline' - Timeline event points
+               'libseat-debug' - libseat debug messages
+               'proto' - Wayland protocol dump for all clients.
+[23:05:44.598] launching '/usr/lib/weston/weston-keyboard'
+[23:05:44.600] launching '/usr/lib/weston/weston-desktop-shell'
+[23:05:54.645] caught signal 15
+[23:05:54.647] BUG: finalizing a layer with views still on it.
+Date: 2026-10-29 UTC
+[23:07:54.664] weston 15.0.1
+               https://wayland.freedesktop.org
+               Bug reports to: https://gitlab.freedesktop.org/wayland/weston/issues/
+               Build: 15.0.1
+[23:07:54.665] Command line: weston --backend=headless --renderer=pixman --fake-seat --width=1280 --height=720 --socket=archtv-host --no-config --idle-time=0 --debug --log=/home/tv/repositorio-principal/reports/h2/host.log
+[23:07:54.665] OS: Linux, 7.2.11-arch1-1, #1 SMP PREEMPT_DYNAMIC Fri, 16 Oct 2026 00:28:58 +0000, x86_64
+[23:07:54.665] Flight recorder: enabled, scopes subscribed: log
+[23:07:54.665] Starting with no config file.
+[23:07:54.665] Output repaint window is 7 ms maximum.
+[23:07:54.665] Loading module '/usr/lib/libweston-15/headless-backend.so'
+[23:07:54.804] Using Pixman renderer
+[23:07:54.804] Registered plugin API 'weston_windowed_output_api_headless_v2' of size 16
+[23:07:54.804] Color manager: no-op
+                 protocol support: no
+[23:07:54.804] Color representation not supported by renderer
+[23:07:54.805] Output 'headless' attempts EOTF mode SDR and colorimetry mode default.
+[23:07:54.805] Output 'headless' using color profile: stock sRGB color profile
+[23:07:54.805] Output 'headless' enabled with head(s) headless
+[23:07:54.805] Compositor capabilities:
+               arbitrary surface rotation: yes
+               screen capture uses y-flip: no
+               cursor planes: no
+               arbitrary resolutions: no
+               view mask clipping: yes
+               explicit sync: no
+               color operations: no
+               color representation: no
+               presentation clock: CLOCK_MONOTONIC_RAW, id 4
+               presentation clock resolution: 0.000000001 s
+[23:07:54.805] Loading module '/usr/lib/weston/desktop-shell.so'
+[23:07:54.808] Currently advertised debug scopes:
+               'log' - Weston and Wayland log
+               'scene-graph' - Scene graph details
+               'timeline' - Timeline event points
+               'libseat-debug' - libseat debug messages
+               'proto' - Wayland protocol dump for all clients.
+[23:07:54.808] launching '/usr/lib/weston/weston-keyboard'
+[23:07:54.810] launching '/usr/lib/weston/weston-desktop-shell'
+[23:08:05.794] caught signal 15
+[23:08:05.800] BUG: finalizing a layer with views still on it.
+Date: 2026-10-29 UTC
+[23:17:23.281] weston 15.0.1
+               https://wayland.freedesktop.org
+               Bug reports to: https://gitlab.freedesktop.org/wayland/weston/issues/
+               Build: 15.0.1
+[23:17:23.283] Command line: weston --backend=headless --renderer=pixman --fake-seat --width=1280 --height=720 --socket=archtv-host --no-config --idle-time=0 --debug --log=/home/tv/repositorio-principal/reports/h2/host.log
+[23:17:23.283] OS: Linux, 7.2.11-arch1-1, #1 SMP PREEMPT_DYNAMIC Fri, 16 Oct 2026 00:28:58 +0000, x86_64
+[23:17:23.283] Flight recorder: enabled, scopes subscribed: log
+[23:17:23.284] Starting with no config file.
+[23:17:23.284] Output repaint window is 7 ms maximum.
+[23:17:23.287] Loading module '/usr/lib/libweston-15/headless-backend.so'
+[23:17:23.488] Using Pixman renderer
+[23:17:23.488] Registered plugin API 'weston_windowed_output_api_headless_v2' of size 16
+[23:17:23.488] Color manager: no-op
+                 protocol support: no
+[23:17:23.488] Color representation not supported by renderer
+[23:17:23.488] Output 'headless' attempts EOTF mode SDR and colorimetry mode default.
+[23:17:23.488] Output 'headless' using color profile: stock sRGB color profile
+[23:17:23.488] Output 'headless' enabled with head(s) headless
+[23:17:23.488] Compositor capabilities:
+               arbitrary surface rotation: yes
+               screen capture uses y-flip: no
+               cursor planes: no
+               arbitrary resolutions: no
+               view mask clipping: yes
+               explicit sync: no
+               color operations: no
+               color representation: no
+               presentation clock: CLOCK_MONOTONIC_RAW, id 4
+               presentation clock resolution: 0.000000001 s
+[23:17:23.490] Loading module '/usr/lib/weston/desktop-shell.so'
+[23:17:23.493] Currently advertised debug scopes:
+               'log' - Weston and Wayland log
+               'scene-graph' - Scene graph details
+               'timeline' - Timeline event points
+               'libseat-debug' - libseat debug messages
+               'proto' - Wayland protocol dump for all clients.
+[23:17:23.493] launching '/usr/lib/weston/weston-keyboard'
+[23:17:23.495] launching '/usr/lib/weston/weston-desktop-shell'
+[23:17:34.797] caught signal 15
+[23:17:34.798] BUG: finalizing a layer with views still on it.

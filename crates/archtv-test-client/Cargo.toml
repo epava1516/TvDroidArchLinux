@@ -1,0 +1,11 @@
+[package]
+name = "archtv-test-client"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+smithay-client-toolkit = "=0.21.1"
+wayland-client = "0.31.15"
+libc = "0.2"

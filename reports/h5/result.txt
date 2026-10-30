@@ -1,0 +1,1 @@
+PASS: CPU renderer only; no interactive shell or end-to-end performance claim.

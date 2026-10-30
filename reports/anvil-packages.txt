@@ -1,0 +1,8 @@
+rust 1:1.99.1-1
+weston 15.0.1-3
+mesa 1:26.2.6-1
+wayland 1.26.0-1
+libxkbcommon 1.13.2-1
+libinput 1.32.0-1
+libdrm 2.4.134-1
+seatd 0.9.3-1

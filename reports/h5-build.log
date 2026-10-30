@@ -1,0 +1,28 @@
+   Compiling simd-adler32 v0.3.10
+   Compiling libm v0.2.16
+   Compiling adler2 v2.0.1
+   Compiling crc32fast v1.5.3
+   Compiling cfg-if v1.0.5
+   Compiling miniz_oxide v0.9.1
+   Compiling flate2 v1.1.10
+   Compiling core_maths v0.1.1
+   Compiling miniz_oxide v0.8.9
+   Compiling fdeflate v0.3.7
+   Compiling strict-num v0.1.1
+   Compiling bitflags v1.3.2
+   Compiling arrayref v0.3.9
+   Compiling foldhash v0.1.5
+   Compiling equivalent v1.0.3
+   Compiling allocator-api2 v0.2.21
+   Compiling bytemuck v1.25.2
+   Compiling tiny-skia-path v0.11.4
+   Compiling hashbrown v0.15.5
+   Compiling png v0.17.16
+   Compiling ttf-parser v0.25.1
+   Compiling log v0.4.34
+   Compiling arrayvec v0.7.8
+   Compiling tiny-skia v0.11.4
+   Compiling fontdue v0.9.5
+   Compiling archtv-core v0.1.0 (/home/tv/repositorio-principal/crates/archtv-core)
+   Compiling archtv-shell v0.1.0 (/home/tv/repositorio-principal/crates/archtv-shell)
+    Finished `release` profile [optimized] target(s) in 2m 29s

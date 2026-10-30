@@ -1,0 +1,14 @@
+# Solo laboratorio H1; no define dependencias del producto final.
+rust
+base-devel
+pkgconf
+wayland
+wayland-protocols
+libxkbcommon
+mesa
+libinput
+libdrm
+seatd
+pixman
+libdisplay-info
+weston

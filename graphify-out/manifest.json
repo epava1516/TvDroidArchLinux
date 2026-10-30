@@ -1,0 +1,411 @@
+{
+  "Cargo.toml": {
+    "mtime": 1793316493.4492533,
+    "seen": 1793318729.4857368,
+    "ast_hash": "a85945a276ea4c7b1d76cd2c08ee12a9",
+    "semantic_hash": "a85945a276ea4c7b1d76cd2c08ee12a9",
+    "ast_empty": true
+  },
+  "crates/archtv-compositor/Cargo.toml": {
+    "mtime": 1793315301.5817964,
+    "seen": 1793318729.4857576,
+    "ast_hash": "e07235a9c36b0cb03cd3f0b36b5cfa14",
+    "semantic_hash": "e07235a9c36b0cb03cd3f0b36b5cfa14"
+  },
+  "crates/archtv-compositor/src/drm.rs": {
+    "mtime": 1793316649.5619383,
+    "seen": 1793318729.485934,
+    "ast_hash": "d65ce86f37099b5341fc3b213762dfe1",
+    "semantic_hash": "d65ce86f37099b5341fc3b213762dfe1"
+  },
+  "crates/archtv-compositor/src/handlers/compositor.rs": {
+    "mtime": 1793314618.8838065,
+    "seen": 1793318729.4860363,
+    "ast_hash": "df1726db46efff90ea9ba3006a4fb6bd",
+    "semantic_hash": "df1726db46efff90ea9ba3006a4fb6bd"
+  },
+  "crates/archtv-compositor/src/handlers/mod.rs": {
+    "mtime": 1793314618.8868065,
+    "seen": 1793318729.486136,
+    "ast_hash": "a909bfd03e35815e3a5d80003d1118c7",
+    "semantic_hash": "a909bfd03e35815e3a5d80003d1118c7"
+  },
+  "crates/archtv-compositor/src/handlers/xdg_shell.rs": {
+    "mtime": 1793316314.7188118,
+    "seen": 1793318729.4868355,
+    "ast_hash": "928441b2a41d0065897a7336ffb804e8",
+    "semantic_hash": "928441b2a41d0065897a7336ffb804e8"
+  },
+  "crates/archtv-compositor/src/input.rs": {
+    "mtime": 1793316650.007882,
+    "seen": 1793318729.4869711,
+    "ast_hash": "7783c5634fb6278d04255576f659fe25",
+    "semantic_hash": "7783c5634fb6278d04255576f659fe25"
+  },
+  "crates/archtv-compositor/src/main.rs": {
+    "mtime": 1793315984.1494455,
+    "seen": 1793318729.4870622,
+    "ast_hash": "9523054615961ca094355a756748d512",
+    "semantic_hash": "9523054615961ca094355a756748d512"
+  },
+  "crates/archtv-compositor/src/session.rs": {
+    "mtime": 1793316314.737812,
+    "seen": 1793318729.4875798,
+    "ast_hash": "087b619a5c70f4893c749a1f02672ca7",
+    "semantic_hash": "087b619a5c70f4893c749a1f02672ca7"
+  },
+  "crates/archtv-compositor/src/state.rs": {
+    "mtime": 1793316650.0298824,
+    "seen": 1793318729.4876754,
+    "ast_hash": "25af09cc334739379ea9ba566d0ddb16",
+    "semantic_hash": "25af09cc334739379ea9ba566d0ddb16"
+  },
+  "crates/archtv-compositor/src/winit.rs": {
+    "mtime": 1793315038.6727297,
+    "seen": 1793318729.4877613,
+    "ast_hash": "6f1a61bf46b310961ba32abff572b7a7",
+    "semantic_hash": "6f1a61bf46b310961ba32abff572b7a7"
+  },
+  "crates/archtv-core/Cargo.toml": {
+    "mtime": 1793314996.0958087,
+    "seen": 1793318729.4878495,
+    "ast_hash": "664c40ddb98845c30ccceca56aa9deb5",
+    "semantic_hash": "664c40ddb98845c30ccceca56aa9deb5"
+  },
+  "crates/archtv-core/src/desktop.rs": {
+    "mtime": 1793318182.9088602,
+    "seen": 1793318729.488538,
+    "ast_hash": "e8bc21c7a1c4f0773d8b876c2055ef00",
+    "semantic_hash": "e8bc21c7a1c4f0773d8b876c2055ef00"
+  },
+  "crates/archtv-core/src/lib.rs": {
+    "mtime": 1793317694.167789,
+    "seen": 1793318729.488728,
+    "ast_hash": "96f2263bce8f1e16d4ba6a08f55ad6fe",
+    "semantic_hash": "96f2263bce8f1e16d4ba6a08f55ad6fe"
+  },
+  "crates/archtv-shell/Cargo.toml": {
+    "mtime": 1793317694.177789,
+    "seen": 1793318729.4887788,
+    "ast_hash": "18e02403c38838ddb9b81c4563260c47",
+    "semantic_hash": "18e02403c38838ddb9b81c4563260c47"
+  },
+  "crates/archtv-shell/src/main.rs": {
+    "mtime": 1793318093.1833036,
+    "seen": 1793318729.4888167,
+    "ast_hash": "46a9a8553fb35b3bff5bc9d448610a3e",
+    "semantic_hash": "46a9a8553fb35b3bff5bc9d448610a3e"
+  },
+  "crates/archtv-shell/src/model.rs": {
+    "mtime": 1793318616.5283341,
+    "seen": 1793318729.488856,
+    "ast_hash": "aaa7dde14b8a46e2565f7010c64ea208",
+    "semantic_hash": "aaa7dde14b8a46e2565f7010c64ea208"
+  },
+  "crates/archtv-shell/src/render.rs": {
+    "mtime": 1793318093.2103047,
+    "seen": 1793318729.488907,
+    "ast_hash": "b82c5e559773b95e39188e70e991a2bd",
+    "semantic_hash": "b82c5e559773b95e39188e70e991a2bd"
+  },
+  "crates/archtv-shell/src/runtime.rs": {
+    "mtime": 1793318348.3606732,
+    "seen": 1793318729.4894753,
+    "ast_hash": "42f1d2872b9be0ca2f468f8ea41ba0eb",
+    "semantic_hash": "42f1d2872b9be0ca2f468f8ea41ba0eb"
+  },
+  "crates/archtv-shell/src/view.rs": {
+    "mtime": 1793318862.0238652,
+    "seen": 1793318967.9838617,
+    "ast_hash": "302044213d51319341106cd610805db6",
+    "semantic_hash": "302044213d51319341106cd610805db6"
+  },
+  "crates/archtv-shell/src/worker.rs": {
+    "mtime": 1793318348.4136748,
+    "seen": 1793318729.4896798,
+    "ast_hash": "52b37cb98d3ca26d77211abfc22b5877",
+    "semantic_hash": "52b37cb98d3ca26d77211abfc22b5877"
+  },
+  "crates/archtv-test-client/Cargo.toml": {
+    "mtime": 1793316070.640566,
+    "seen": 1793318729.489765,
+    "ast_hash": "57b3a001e342c408d3d061c0f69ad345",
+    "semantic_hash": "57b3a001e342c408d3d061c0f69ad345"
+  },
+  "crates/archtv-test-client/src/main.rs": {
+    "mtime": 1793318348.4366758,
+    "seen": 1793318729.4898481,
+    "ast_hash": "acf70788171c19364d4b575cb334562d",
+    "semantic_hash": "acf70788171c19364d4b575cb334562d"
+  },
+  "scripts/00-diagnostico.sh": {
+    "mtime": 1793302538.2472193,
+    "seen": 1793318729.490423,
+    "ast_hash": "6ca6076c238f1c6b119abe8ca4c8e0e4",
+    "semantic_hash": "6ca6076c238f1c6b119abe8ca4c8e0e4"
+  },
+  "scripts/10-base.sh": {
+    "mtime": 1793303597.2195866,
+    "seen": 1793318729.4905107,
+    "ast_hash": "51d81c8f8f6eaa179c8385b30d3c8ab7",
+    "semantic_hash": "51d81c8f8f6eaa179c8385b30d3c8ab7"
+  },
+  "scripts/40-android.sh": {
+    "mtime": 1793312421.381928,
+    "seen": 1793318729.4905865,
+    "ast_hash": "9449a75ee26c0d05c0252149f4f7659d",
+    "semantic_hash": "9449a75ee26c0d05c0252149f4f7659d"
+  },
+  "scripts/41-android-software.sh": {
+    "mtime": 1793303731.7920847,
+    "seen": 1793318729.4906614,
+    "ast_hash": "fdcad407a147cabd3f02b269491c6c3f",
+    "semantic_hash": "fdcad407a147cabd3f02b269491c6c3f"
+  },
+  "scripts/69-anvil-deps.sh": {
+    "mtime": 1793312761.6576912,
+    "seen": 1793318729.4907393,
+    "ast_hash": "3506274f79a77626c5913b09561d7104",
+    "semantic_hash": "3506274f79a77626c5913b09561d7104"
+  },
+  "scripts/70-anvil-prepare.sh": {
+    "mtime": 1793312931.5523653,
+    "seen": 1793318729.490812,
+    "ast_hash": "b4278c3c448b5e6dc8d271cf61d51379",
+    "semantic_hash": "b4278c3c448b5e6dc8d271cf61d51379"
+  },
+  "scripts/71-anvil-build.sh": {
+    "mtime": 1793312656.4528096,
+    "seen": 1793318729.4909544,
+    "ast_hash": "b7619cdd9d2854b879f22cd75606cbb7",
+    "semantic_hash": "b7619cdd9d2854b879f22cd75606cbb7"
+  },
+  "scripts/72-anvil-smoke.sh": {
+    "mtime": 1793313374.7703524,
+    "seen": 1793318729.491054,
+    "ast_hash": "e697ad4bf8448343add10c0895abfd39",
+    "semantic_hash": "e697ad4bf8448343add10c0895abfd39"
+  },
+  "scripts/80-rust-build.sh": {
+    "mtime": 1793314712.9314532,
+    "seen": 1793318729.491129,
+    "ast_hash": "0bca237b09290bd22018798d5aafdc05",
+    "semantic_hash": "0bca237b09290bd22018798d5aafdc05"
+  },
+  "scripts/82-rust-smoke.sh": {
+    "mtime": 1793315253.533629,
+    "seen": 1793318729.4912033,
+    "ast_hash": "b83a131d876509ed1f42571922f598f4",
+    "semantic_hash": "b83a131d876509ed1f42571922f598f4"
+  },
+  "scripts/83-drm-session.sh": {
+    "mtime": 1793316139.5836554,
+    "seen": 1793318729.4912763,
+    "ast_hash": "55e81dad5aa8b53ad13ccebf8e037442",
+    "semantic_hash": "55e81dad5aa8b53ad13ccebf8e037442"
+  },
+  "scripts/84-drm-smoke.sh": {
+    "mtime": 1793316754.1224785,
+    "seen": 1793318729.4913473,
+    "ast_hash": "7b3cfd9bcc2ce59aa64a3ada94e4c117",
+    "semantic_hash": "7b3cfd9bcc2ce59aa64a3ada94e4c117"
+  },
+  "scripts/85-session-smoke.sh": {
+    "mtime": 1793316314.459418,
+    "seen": 1793318729.4914222,
+    "ast_hash": "daa4097bdd1cb98afe43ddd2c6cc6f45",
+    "semantic_hash": "daa4097bdd1cb98afe43ddd2c6cc6f45"
+  },
+  "scripts/86-shell-render-probe.sh": {
+    "mtime": 1793317530.3420365,
+    "seen": 1793318729.491495,
+    "ast_hash": "577f47ff30b8d605d5f59c96424dfd85",
+    "semantic_hash": "577f47ff30b8d605d5f59c96424dfd85"
+  },
+  "scripts/check.sh": {
+    "mtime": 1793315758.4783683,
+    "seen": 1793318729.4915667,
+    "ast_hash": "8efb5703263d38029049b47266218991",
+    "semantic_hash": "8efb5703263d38029049b47266218991"
+  },
+  "scripts/lib/common.sh": {
+    "mtime": 1793303265.2197359,
+    "seen": 1793318729.4924018,
+    "ast_hash": "487d4a1d82d21eb8e95917098a56c5f5",
+    "semantic_hash": "487d4a1d82d21eb8e95917098a56c5f5"
+  },
+  "scripts/lib/input-probe.py": {
+    "mtime": 1793315808.2548804,
+    "seen": 1793318729.4928474,
+    "ast_hash": "34262136d0795012f6b088f398d4e90b",
+    "semantic_hash": "34262136d0795012f6b088f398d4e90b"
+  },
+  "scripts/lib/measure-process.py": {
+    "mtime": 1793316956.3063407,
+    "seen": 1793318729.4930124,
+    "ast_hash": "878eb724660de8705bae3c2ffddd40e6",
+    "semantic_hash": "878eb724660de8705bae3c2ffddd40e6"
+  },
+  "scripts/lib/ppm-to-png.py": {
+    "mtime": 1793315758.2661836,
+    "seen": 1793318729.493526,
+    "ast_hash": "15d6b31993ef428a469a3b586f250f25",
+    "semantic_hash": "15d6b31993ef428a469a3b586f250f25"
+  },
+  "scripts/lib/session-input.py": {
+    "mtime": 1793316754.1194644,
+    "seen": 1793318729.4936135,
+    "ast_hash": "85390f96b96b9118d7a9163d023a5280",
+    "semantic_hash": "85390f96b96b9118d7a9163d023a5280"
+  },
+  "scripts/lib/waydroid-software.py": {
+    "mtime": 1793303628.1437206,
+    "seen": 1793318729.4936986,
+    "ast_hash": "365648efa17bd8768b58c15796c97c7b",
+    "semantic_hash": "365648efa17bd8768b58c15796c97c7b"
+  },
+  "scripts/registrar-paquetes.sh": {
+    "mtime": 1793303266.1117492,
+    "seen": 1793318729.493778,
+    "ast_hash": "4683e35a774a756ce55b95c2b726c2ee",
+    "semantic_hash": "4683e35a774a756ce55b95c2b726c2ee"
+  },
+  "AGENTS.md": {
+    "mtime": 1793319015.7124515,
+    "seen": 1793319022.6096902,
+    "ast_hash": "d3821801816a9b23251984ce33676133",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1793318904.7009084,
+    "seen": 1793319022.6096933,
+    "ast_hash": "c78513343dfabcd1048e854292c0d3e7",
+    "semantic_hash": ""
+  },
+  "ROADMAP.md": {
+    "mtime": 1793317145.217043,
+    "seen": 1793318868.570493,
+    "ast_hash": "d38189cbad117ae6098d5a0dc39d7749",
+    "semantic_hash": ""
+  },
+  "THIRD_PARTY.md": {
+    "mtime": 1793318979.291619,
+    "seen": 1793319022.6096988,
+    "ast_hash": "4a81eac985414c24072d6b8b86e05ac8",
+    "semantic_hash": ""
+  },
+  "docs/ARQUITECTURA.md": {
+    "mtime": 1793316409.1324122,
+    "seen": 1793318868.5705004,
+    "ast_hash": "43724af3ba8a7117f429072adcf35654",
+    "semantic_hash": ""
+  },
+  "docs/DESARROLLO-RUST.md": {
+    "mtime": 1793317260.8516853,
+    "seen": 1793318868.570504,
+    "ast_hash": "268688c5f9ce67fa4ae85b1a0a6fc41f",
+    "semantic_hash": ""
+  },
+  "docs/DISENO-SHELL.md": {
+    "mtime": 1793317502.223467,
+    "seen": 1793318868.570508,
+    "ast_hash": "b04de529f156a44d333ed4301c7b2103",
+    "semantic_hash": ""
+  },
+  "docs/ESTADO.md": {
+    "mtime": 1793318904.7071593,
+    "seen": 1793319022.6097097,
+    "ast_hash": "a591f3a2dfd7c3fb24f3afe84842cab0",
+    "semantic_hash": ""
+  },
+  "docs/ESTUDIO-SMITHAY-ANVIL.md": {
+    "mtime": 1793313164.8486297,
+    "seen": 1793318868.5705154,
+    "ast_hash": "6688d2ca851bb5b6c65f7087a4d8fe26",
+    "semantic_hash": ""
+  },
+  "docs/FUENTES.md": {
+    "mtime": 1793312169.4048316,
+    "seen": 1793318868.5705194,
+    "ast_hash": "5fdffab883316ac5d13672bd45acf7b0",
+    "semantic_hash": ""
+  },
+  "docs/INSTALACION.md": {
+    "mtime": 1793317454.635912,
+    "seen": 1793318868.5705235,
+    "ast_hash": "0f6bf0e40f748a64032a62e7b2be258c",
+    "semantic_hash": ""
+  },
+  "docs/REFERENCIAS-FIRE-TV.md": {
+    "mtime": 1793310473.2232764,
+    "seen": 1793318868.570527,
+    "ast_hash": "cee8d413edd35ad58e3f902b45b56697",
+    "semantic_hash": ""
+  },
+  "manifests/android.txt": {
+    "mtime": 1793303219.6070013,
+    "seen": 1793318868.5705311,
+    "ast_hash": "af388e5b01fbfae10dc02ee3783fec78",
+    "semantic_hash": ""
+  },
+  "manifests/anvil-lab.txt": {
+    "mtime": 1793312656.4628098,
+    "seen": 1793318868.5705347,
+    "ast_hash": "6d3e60815f037370214f33a2d351d871",
+    "semantic_hash": ""
+  },
+  "manifests/base.txt": {
+    "mtime": 1793303597.0185857,
+    "seen": 1793318868.5705383,
+    "ast_hash": "8199cbd3c3f4a3595d2b42856f0f9fee",
+    "semantic_hash": ""
+  },
+  "manifests/build.txt": {
+    "mtime": 1793312931.8503602,
+    "seen": 1793318868.5705416,
+    "ast_hash": "65625b76bc75441cc297d2aff400fbb4",
+    "semantic_hash": ""
+  },
+  "manifests/checks.txt": {
+    "mtime": 1793312421.6129363,
+    "seen": 1793318868.570545,
+    "ast_hash": "49a82aa6c1d78b63294833e430350616",
+    "semantic_hash": ""
+  },
+  "manifests/compositor-runtime.txt": {
+    "mtime": 1793317454.4094195,
+    "seen": 1793318868.5705485,
+    "ast_hash": "961fee843f4cde969a9a972c8a3461af",
+    "semantic_hash": ""
+  },
+  "manifests/platform-candidates.txt": {
+    "mtime": 1793312169.4138322,
+    "seen": 1793318868.5705516,
+    "ast_hash": "2fcac99358cef4940f0c17b520d610b3",
+    "semantic_hash": ""
+  },
+  "manifests/shell-runtime.txt": {
+    "mtime": 1793316926.2069073,
+    "seen": 1793318868.5705552,
+    "ast_hash": "ba3878a593f4e203d1151dad5f2516f1",
+    "semantic_hash": ""
+  },
+  "scripts/68-graphify.sh": {
+    "mtime": 1793318979.289719,
+    "seen": 1793319022.6096315,
+    "ast_hash": "15afe678791167f6cc06cd98094eb909",
+    "semantic_hash": ""
+  },
+  "scripts/graphify.sh": {
+    "mtime": 1793318904.5248773,
+    "seen": 1793318967.9867215,
+    "ast_hash": "519b86f384cefb2648dfce8589976a90",
+    "semantic_hash": "519b86f384cefb2648dfce8589976a90"
+  },
+  "docs/GRAPHIFY.md": {
+    "mtime": 1793318904.5678782,
+    "seen": 1793319022.609721,
+    "ast_hash": "e3f2bf16a72bb6d58f32df59f80e03ba",
+    "semantic_hash": ""
+  }
+}

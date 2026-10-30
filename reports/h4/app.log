@@ -1,0 +1,27 @@
+CLIENT_CONFIGURE 1280x800 fullscreen=true
+CLIENT_FRAME 1 size=1280x800
+CLIENT_CONFIGURE 1280x800 fullscreen=true
+CLIENT_FRAME 2 size=1280x800
+CLIENT_FOCUS_ENTER popup=false
+CLIENT_FOCUS_LEAVE
+CLIENT_CONFIGURE 1280x800 fullscreen=true
+CLIENT_FRAME 3 size=1280x800
+CLIENT_FOCUS_ENTER popup=false
+CLIENT_CONFIGURE 1280x800 fullscreen=true
+CLIENT_FRAME 4 size=1280x800
+CLIENT_FOCUS_LEAVE
+CLIENT_CONFIGURE 1280x800 fullscreen=true
+CLIENT_FRAME 5 size=1280x800
+CLIENT_FOCUS_ENTER popup=false
+CLIENT_CONFIGURE 1280x800 fullscreen=true
+CLIENT_FRAME 6 size=1280x800
+CLIENT_FOCUS_LEAVE
+CLIENT_CONFIGURE 1280x800 fullscreen=true
+CLIENT_FRAME 7 size=1280x800
+CLIENT_FOCUS_ENTER popup=false
+CLIENT_CONFIGURE 1280x800 fullscreen=true
+CLIENT_FRAME 8 size=1280x800
+CLIENT_KEY XK_Control_L popup=false
+CLIENT_KEY XK_Alt_L popup=false
+Io error: Broken pipe (os error 32)
+Error: Backend(Io(Os { code: 32, kind: BrokenPipe, message: "Broken pipe" }))

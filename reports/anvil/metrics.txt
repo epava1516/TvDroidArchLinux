@@ -1,0 +1,5 @@
+Anvil dev build; cliente SHM animado; ventana de medida 3.00s
+CPU: 68.64% de un núcleo
+Rss:              136628 kB
+Pss:              128972 kB
+No es un benchmark del compositor propio ni una medida de reposo.

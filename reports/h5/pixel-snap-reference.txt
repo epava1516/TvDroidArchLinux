@@ -1,0 +1,4 @@
+CPU renderer prototype: tiny-skia + fontdue, no Wayland/DRM or input latency claim.
+1280x720: cold_ms=127.86 warm_p50_ms=4.24 warm_p95_ms=5.33 canvas_bytes=3686400
+1920x1080: cold_ms=85.63 warm_p50_ms=6.93 warm_p95_ms=8.31 canvas_bytes=8294400
+3840x2160: cold_ms=114.98 warm_p50_ms=23.73 warm_p95_ms=26.79 canvas_bytes=33177600

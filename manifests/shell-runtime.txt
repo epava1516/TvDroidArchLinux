@@ -1,0 +1,2 @@
+# Fuente utilizada por el renderer; la selección final se valida en H5/H8.
+ttf-dejavu

@@ -1,0 +1,14 @@
+Fecha UTC: 2026-10-29T22:36:22Z
+Linux 7.2.11-arch1-1 x86_64 GNU/Linux
+
+Binder:
+nodev	binder
+
+Memoria:
+               total        used        free      shared  buff/cache   available
+Mem:           1.9Gi       566Mi        88Mi       528Ki       1.4Gi       1.3Gi
+Swap:          969Mi        96Mi       873Mi
+
+Zram:
+NAME       ALGORITHM DISKSIZE  DATA COMPR TOTAL STREAMS MOUNTPOINT
+/dev/zram0 zstd        969.5M 14.9M  1.8M  3.4M         [SWAP]

@@ -1,0 +1,5 @@
+    Finished `release` profile [optimized] target(s) in 0.48s
+CPU renderer prototype: tiny-skia + fontdue, no Wayland/DRM or input latency claim.
+1280x720: cold_ms=140.81 warm_p50_ms=4.43 warm_p95_ms=5.58 canvas_bytes=3686400
+1920x1080: cold_ms=114.49 warm_p50_ms=7.78 warm_p95_ms=9.97 canvas_bytes=8294400
+3840x2160: cold_ms=121.48 warm_p50_ms=26.44 warm_p95_ms=30.96 canvas_bytes=33177600

@@ -1,0 +1,4 @@
+networkmanager
+zram-generator
+git
+ripgrep

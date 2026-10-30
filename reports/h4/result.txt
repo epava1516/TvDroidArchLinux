@@ -1,0 +1,4 @@
+Fecha UTC: 2026-10-29T23:25:53Z
+PASS: shell identificado por conexión privada; app_id idéntico no concede el rol.
+Inicio global y RESUME por canal privado restauran el foco de la app.
+Tres reinicios, límite de fallos y app superviviente; salida de emergencia por teclado.

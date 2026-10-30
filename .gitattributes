@@ -1,0 +1,3 @@
+graphify-out/graph.json merge=graphify
+# Los logs conservan la salida original de las herramientas.
+reports/*.log whitespace=-blank-at-eof

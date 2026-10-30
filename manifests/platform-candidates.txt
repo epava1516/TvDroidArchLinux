@@ -1,0 +1,17 @@
+# Candidatos según backends; no son dependencias finales de un binario existente.
+wayland
+wayland-protocols
+libxkbcommon
+libinput
+libdrm
+mesa
+seatd
+pixman
+libdisplay-info
+systemd
+dbus
+util-linux
+pipewire-audio
+pipewire-pulse
+wireplumber
+ttf-dejavu

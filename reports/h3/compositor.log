@@ -1,0 +1,62 @@
+2026-10-29T23:35:36.190312Z  WARN smithay::backend::drm::device::fd: Unable to become drm master, assuming unprivileged mode
+2026-10-29T23:35:36.195351Z  INFO archtv_compositor::state: OUTPUT_CONFIGURED width=1280 height=800
+2026-10-29T23:35:36.517778Z  INFO archtv_compositor::drm: DRM_READY device=/dev/dri/card0 width=1280 height=800 refresh=60 format="XRGB8888" modifier="LINEAR" buffers=2 renderer="Pixman"
+2026-10-29T23:35:36.613760Z  INFO archtv_compositor::session: SESSION_CHILD_STARTED pid=30467 shell=false
+2026-10-29T23:35:36.614443Z  INFO archtv_compositor: TV_COMPOSITOR_READY socket="wayland-1"
+2026-10-29T23:35:36.614711Z  INFO archtv_compositor::input: INPUT_ADDED name="VirtualBox mouse integration"
+2026-10-29T23:35:36.614777Z  INFO archtv_compositor::input: INPUT_ADDED name="VirtualBox USB Tablet"
+2026-10-29T23:35:36.614817Z  INFO archtv_compositor::input: INPUT_ADDED name="Video Bus"
+2026-10-29T23:35:36.614856Z  INFO archtv_compositor::input: INPUT_ADDED name="Power Button"
+2026-10-29T23:35:36.614893Z  INFO archtv_compositor::input: INPUT_ADDED name="Sleep Button"
+2026-10-29T23:35:36.614931Z  INFO archtv_compositor::input: INPUT_ADDED name="AT Translated Set 2 keyboard"
+2026-10-29T23:35:36.614966Z  INFO archtv_compositor::input: INPUT_ADDED name="ImExPS/2 Generic Explorer Mouse"
+2026-10-29T23:35:36.635160Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=1
+CLIENT_CONFIGURE 1280x800 fullscreen=true
+2026-10-29T23:35:36.666333Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=2
+CLIENT_FRAME 1 size=1280x800
+2026-10-29T23:35:36.895007Z  INFO archtv_compositor::state: TOPLEVEL_MAPPED
+CLIENT_CONFIGURE 1280x800 fullscreen=true
+2026-10-29T23:35:36.910586Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=3
+CLIENT_FRAME 2 size=1280x800
+CLIENT_FOCUS_ENTER popup=false
+2026-10-29T23:35:37.092138Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=4
+2026-10-29T23:35:37.548736Z  INFO archtv_compositor::input: INPUT_ADDED name="ArchTV integration keyboard"
+CLIENT_KEY XK_Right popup=false text=Some("")
+CLIENT_KEY XK_Return popup=false text=Some("\r")
+POPUP_CONFIGURE 160x90 position=(0, 0) kind=Initial
+2026-10-29T23:35:39.180613Z  INFO archtv_compositor::handlers::xdg_shell: POPUP_GRABBED
+CLIENT_FOCUS_LEAVE
+CLIENT_FOCUS_ENTER popup=true
+2026-10-29T23:35:39.196599Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=5
+POPUP_FRAME 1
+CLIENT_KEY XK_ntilde popup=true text=Some("ñ")
+POPUP_CLOSED_BY_KEY
+CLIENT_FOCUS_LEAVE
+CLIENT_FOCUS_ENTER popup=false
+CLIENT_KEY XK_Right popup=false text=Some("")
+CLIENT_KEY XK_Control_L popup=false text=None
+CLIENT_KEY XK_Alt_L popup=false text=None
+2026-10-29T23:35:40.322944Z  INFO archtv_compositor::drm: DRM_CAPTURED path=/home/tv/repositorio-principal/reports/h3/screen.ppm
+2026-10-29T23:35:40.580773Z  INFO archtv_compositor::input: INPUT_REMOVED name="ArchTV integration keyboard"
+2026-10-29T23:35:40.580901Z  INFO archtv_compositor::input: INPUT_REMOVED name="AT Translated Set 2 keyboard"
+2026-10-29T23:35:40.580989Z  INFO archtv_compositor::input: INPUT_REMOVED name="Video Bus"
+2026-10-29T23:35:40.581066Z  INFO archtv_compositor::input: INPUT_REMOVED name="Sleep Button"
+2026-10-29T23:35:40.581141Z  INFO archtv_compositor::input: INPUT_REMOVED name="VirtualBox mouse integration"
+2026-10-29T23:35:40.581215Z  INFO archtv_compositor::input: INPUT_REMOVED name="VirtualBox USB Tablet"
+2026-10-29T23:35:40.581367Z  INFO archtv_compositor::input: INPUT_REMOVED name="Power Button"
+2026-10-29T23:35:40.582066Z  INFO archtv_compositor::input: INPUT_REMOVED name="ImExPS/2 Generic Explorer Mouse"
+2026-10-29T23:35:40.583467Z  INFO archtv_compositor::drm: SESSION_PAUSED
+2026-10-29T23:35:41.525677Z  INFO archtv_compositor::drm: SESSION_ACTIVE
+2026-10-29T23:35:41.525935Z  INFO archtv_compositor::input: INPUT_ADDED name="VirtualBox mouse integration"
+2026-10-29T23:35:41.525969Z  INFO archtv_compositor::input: INPUT_ADDED name="VirtualBox USB Tablet"
+2026-10-29T23:35:41.525989Z  INFO archtv_compositor::input: INPUT_ADDED name="Video Bus"
+2026-10-29T23:35:41.526007Z  INFO archtv_compositor::input: INPUT_ADDED name="Power Button"
+2026-10-29T23:35:41.526048Z  INFO archtv_compositor::input: INPUT_ADDED name="Sleep Button"
+2026-10-29T23:35:41.526069Z  INFO archtv_compositor::input: INPUT_ADDED name="AT Translated Set 2 keyboard"
+2026-10-29T23:35:41.526087Z  INFO archtv_compositor::input: INPUT_ADDED name="ImExPS/2 Generic Explorer Mouse"
+2026-10-29T23:35:41.539819Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=6
+2026-10-29T23:35:41.860555Z  INFO archtv_compositor::input: INPUT_ADDED name="ArchTV session keyboard"
+CLIENT_KEY XK_a popup=false text=Some("a")
+2026-10-29T23:35:43.791022Z  INFO archtv_compositor::input: INPUT_REMOVED name="ArchTV session keyboard"
+2026-10-29T23:35:44.330804Z  INFO archtv_compositor: TV_COMPOSITOR_STOPPED
+2026-10-29T23:35:44.475598Z  INFO archtv_compositor::drm: DRM_STOPPED frames=6
