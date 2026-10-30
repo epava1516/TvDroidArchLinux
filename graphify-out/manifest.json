@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793375947.9496713,
-    "seen": 1793375954.7454545,
-    "ast_hash": "184baf6f575ed5aa1a75fc2543da8125",
+    "mtime": 1793378577.135147,
+    "seen": 1793378584.6601806,
+    "ast_hash": "e39e1bdf8d2c886aa3df39bf1ce6bd9b",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -882,9 +882,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/framework-study.json": {
-    "mtime": 1793375018.6040306,
-    "seen": 1793375954.7443604,
-    "ast_hash": "ca2035c66399f5aaf110d582b444b73c",
+    "mtime": 1793377175.6886222,
+    "seen": 1793378584.6594875,
+    "ast_hash": "fbb45ba64c6b1808af079e858b502433",
     "semantic_hash": ""
   },
   "tools/apk/study_framework.py": {
@@ -894,9 +894,9 @@
     "semantic_hash": ""
   },
   "docs/PORT-FRAMEWORK-AOSP.md": {
-    "mtime": 1793375947.944369,
-    "seen": 1793375954.745447,
-    "ast_hash": "65defa9abc1b6635c2f5e45d3dd18dfb",
+    "mtime": 1793378577.1334498,
+    "seen": 1793378584.660176,
+    "ast_hash": "36b776025750c5277afa2549a5b3cadf",
     "semantic_hash": ""
   },
   "fixtures/aosp-queue/QueueLinkProbe.java": {
@@ -1272,9 +1272,9 @@
     "semantic_hash": ""
   },
   "docs/AOSP-CONSTRUCTOR-VIEW.md": {
-    "mtime": 1793375947.9465413,
-    "seen": 1793375954.7453423,
-    "ast_hash": "af5363b5023f2b4b1be2749c6768187f",
+    "mtime": 1793378577.1356945,
+    "seen": 1793378584.6598487,
+    "ast_hash": "ded77b710972c56d18c2b77cd489d05d",
     "semantic_hash": ""
   },
   "crates/archtv-aosp-linux/src/logging.rs": {
@@ -1317,6 +1317,60 @@
     "mtime": 1793375749.5578475,
     "seen": 1793375954.7453678,
     "ast_hash": "a400b245be5a1d6e31d0b2a7932e099b",
+    "semantic_hash": ""
+  },
+  "fixtures/aosp-services/ServiceCacheProbe.java": {
+    "mtime": 1793378175.83377,
+    "seen": 1793378584.6593933,
+    "ast_hash": "0ad19f55e8a7a74e6a086f7d3e26732f",
+    "semantic_hash": ""
+  },
+  "runtime/aosp/aidl-toolchain.json": {
+    "mtime": 1793377220.2787461,
+    "seen": 1793378584.6594577,
+    "ast_hash": "567c079570941172062e8c45da9f9b40",
+    "semantic_hash": ""
+  },
+  "runtime/aosp/linux-services/org/archtv/aosplinux/LocalServiceBinder.java": {
+    "mtime": 1793376803.2967389,
+    "seen": 1793378584.6594913,
+    "ast_hash": "5b2e10fb2e5e280c8e289489dade4316",
+    "semantic_hash": ""
+  },
+  "runtime/aosp/window-aidl-sources.json": {
+    "mtime": 1793377692.7896028,
+    "seen": 1793378584.659507,
+    "ast_hash": "041896b0def0a14f4f401eb36ab640a4",
+    "semantic_hash": ""
+  },
+  "tools/apk/fetch_aidl_tools.py": {
+    "mtime": 1793377102.9555757,
+    "seen": 1793378584.6597464,
+    "ast_hash": "b825aa3f31b87e4bb675bb5c577fb180",
+    "semantic_hash": ""
+  },
+  "tools/apk/fetch_window_aidl_sources.py": {
+    "mtime": 1793377220.1943634,
+    "seen": 1793378584.6597636,
+    "ast_hash": "5937192b8089fe7635438413a26d7fa1",
+    "semantic_hash": ""
+  },
+  "tools/apk/generate_window_aidl.py": {
+    "mtime": 1793377951.0840647,
+    "seen": 1793378584.6597712,
+    "ast_hash": "facbb57f760cace4c7b08a241a0a7ae6",
+    "semantic_hash": ""
+  },
+  "tools/apk/probe_service_cache.py": {
+    "mtime": 1793378352.4395173,
+    "seen": 1793378584.6597846,
+    "ast_hash": "98ff4023ef7777d6cbc67cfe68cbf83f",
+    "semantic_hash": ""
+  },
+  "docs/AOSP-SERVICIOS-LOCALES.md": {
+    "mtime": 1793378484.6331992,
+    "seen": 1793378584.6599417,
+    "ast_hash": "cf147723e9c9cae4616c4e8a2608c478",
     "semantic_hash": ""
   }
 }

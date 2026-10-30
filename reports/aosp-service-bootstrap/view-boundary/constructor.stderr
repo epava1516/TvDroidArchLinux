@@ -1,0 +1,18 @@
+dalvikvm64 E 10-30 16:34:07    96    96 image_space.cc:2239] Error reading named image component header for /home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/core.art, error: Unable to open file "/home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/x86_64/core.art" for reading image header
+dalvikvm64 E 10-30 16:34:07    96    96 image_space.cc:3470] Could not create image space with image file '/home/tv/.cache/archtv/art-host/host/art-13.0.0/framework/core.art'. Attempting to fall back to imageless running. Error was: Full boot image cannot be compiled because no profile is provided.
+ziparchive W 10-30 16:34:08    96    96 Unable to open '/home/tv/repositorio-principal/dist/apk/aosp-service-cache-1/dex/classes.dm': No such file or directory
+ziparchive W 10-30 16:34:08    96    96 Unable to open '/home/tv/repositorio-principal/dist/apk/view-service-cache-1/dex/classes.dm': No such file or directory
+APK_HOST_PROFILE sdk=33 abi=x86_64
+APK_RESOURCES_AOSP_READY
+APK_PUBLIC_RESOURCES_AOSP_READY
+dalvikvm64 E 10-30 16:34:08    96    96 jni_entrypoints.cc:116] No implementation found for android.os.IBinder com.android.internal.os.BinderInternal.getContextObject() (tried Java_com_android_internal_os_BinderInternal_getContextObject and Java_com_android_internal_os_BinderInternal_getContextObject__)
+java.lang.UnsatisfiedLinkError: No implementation found for android.os.IBinder com.android.internal.os.BinderInternal.getContextObject() (tried Java_com_android_internal_os_BinderInternal_getContextObject and Java_com_android_internal_os_BinderInternal_getContextObject__)
+	at com.android.internal.os.BinderInternal.getContextObject(Native Method)
+	at android.os.ServiceManager.getIServiceManager(ServiceManager.java:129)
+	at android.os.ServiceManager.rawGetService(ServiceManager.java:372)
+	at android.os.ServiceManager.getService(ServiceManager.java:147)
+	at android.view.WindowManagerGlobal.getWindowManagerService(WindowManagerGlobal.java:161)
+	at android.view.ViewConfiguration.<init>(ViewConfiguration.java:452)
+	at android.view.ViewConfiguration.get(ViewConfiguration.java:533)
+	at android.view.View.<init>(View.java:5366)
+	at org.archtv.apkruntime.ViewConstructorProbe.main(ViewConstructorProbe.java:27)

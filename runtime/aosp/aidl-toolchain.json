@@ -1,0 +1,29 @@
+{
+  "repository": "https://android.googlesource.com/platform/prebuilts/sdk/",
+  "revision": "01f7b13e02cf93c031d1f5a9a6a5118db9d4ad39",
+  "tag": "android-13.0.0_r3",
+  "artifacts": [
+    {
+      "file": "aidl",
+      "path": "tools/linux/bin/aidl",
+      "url": "https://android.googlesource.com/platform/prebuilts/sdk/+/01f7b13e02cf93c031d1f5a9a6a5118db9d4ad39/tools/linux/bin/aidl?format=TEXT",
+      "sha256": "a465a2f3c7e4f21521a3babfcc71c64f1120eea7fc141eeb5ac43ec5c00e818f",
+      "bytes": 5284464
+    },
+    {
+      "file": "NOTICE.txt",
+      "path": "tools/linux/bin/NOTICE.txt",
+      "url": "https://android.googlesource.com/platform/prebuilts/sdk/+/01f7b13e02cf93c031d1f5a9a6a5118db9d4ad39/tools/linux/bin/NOTICE.txt?format=TEXT",
+      "sha256": "204b02831fe6bb33c50a1c515eb2bd2a0e333812e3c193ffef15dc3445bb56ce",
+      "bytes": 151751
+    },
+    {
+      "file": "libc++.so",
+      "path": "tools/linux/lib64/libc++.so",
+      "url": "https://android.googlesource.com/platform/prebuilts/sdk/+/01f7b13e02cf93c031d1f5a9a6a5118db9d4ad39/tools/linux/lib64/libc++.so?format=TEXT",
+      "sha256": "d1680605847593feb504b8a63822aba4d721d098758dface8993b015dad94ccf",
+      "bytes": 1077880
+    }
+  ],
+  "compiler_reported_platform_sdk": 32
+}

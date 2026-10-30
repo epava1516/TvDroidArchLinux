@@ -428,6 +428,51 @@
       "path": "core/res/res/values/dimens.xml",
       "bytes": 55726,
       "sha256": "c49782a2e7096df054c09df86c1464c6615f60c30e75999b37fc5e05da8754bb"
+    },
+    {
+      "path": "core/java/android/view/WindowManagerGlobal.java",
+      "bytes": 28171,
+      "sha256": "00ea74ab711c8f24142c0ed3b644c65edfb8d32d5122d3feb9401afef82b78ff"
+    },
+    {
+      "path": "core/java/android/os/ServiceManager.java",
+      "bytes": 14374,
+      "sha256": "a23e406d7b3650f60294b7ff8abce6908d247e31d817cf383bc0647766f323ba"
+    },
+    {
+      "path": "core/java/android/os/IInterface.java",
+      "bytes": 1013,
+      "sha256": "6e25e646afdfbf97a76c69700951298ee04490b938f19bf5c5d1e683e6d9efa6"
+    },
+    {
+      "path": "core/java/com/android/internal/util/StatLogger.java",
+      "bytes": 6199,
+      "sha256": "c4e536336c08724b4a6d937ab9f253e44f16ee4c846096a5f6c491f782d0cee6"
+    },
+    {
+      "path": "core/java/android/view/IWindowManager.aidl",
+      "bytes": 36179,
+      "sha256": "2713db09587f0dfbaabda7bf38e2212d32abc3774347fb24130c8587ae5df397"
+    },
+    {
+      "path": "core/java/android/os/RemoteException.java",
+      "bytes": 2734,
+      "sha256": "5fbe4966abf0209602f506c88f4140e36562a214bcaa5ae8ce97905e94e42b4f"
+    },
+    {
+      "path": "core/java/android/os/DeadObjectException.java",
+      "bytes": 973,
+      "sha256": "787e93e85195e0ff76a3ab104f6d1c3a1c6d6b4e843ccf454c7624588c604247"
+    },
+    {
+      "path": "core/java/android/util/AndroidException.java",
+      "bytes": 1288,
+      "sha256": "1144cd3d1678c0d1a3fe5e2df7f8902f07e02376042180962ce4bc578d9349c6"
+    },
+    {
+      "path": "core/java/android/os/DeadSystemException.java",
+      "bytes": 894,
+      "sha256": "be6d8812fc51fb2d13bcf72a7359c00c44fe7c2fc9c1c79523d154321846ffac"
     }
   ],
   "public_resources_sources": [
@@ -478,7 +523,15 @@
     "core/java/android/os/StrictMode.java",
     "core/java/android/util/SparseLongArray.java",
     "core/java/android/util/Log.java",
-    "core/java/android/util/Singleton.java"
+    "core/java/android/util/Singleton.java",
+    "core/java/android/view/WindowManagerGlobal.java",
+    "core/java/android/os/ServiceManager.java",
+    "core/java/android/os/IInterface.java",
+    "core/java/com/android/internal/util/StatLogger.java",
+    "core/java/android/os/RemoteException.java",
+    "core/java/android/os/DeadObjectException.java",
+    "core/java/android/util/AndroidException.java",
+    "core/java/android/os/DeadSystemException.java"
   ],
   "view_resource_inputs": [
     "core/res/res/values/attrs.xml",
@@ -487,5 +540,9 @@
   "system_resource_inputs": [
     "core/res/res/values/config.xml",
     "core/res/res/values/dimens.xml"
-  ]
+  ],
+  "window_aidl_roots": [
+    "core/java/android/view/IWindowManager.aidl"
+  ],
+  "window_aidl_sources_manifest": "runtime/aosp/window-aidl-sources.json"
 }

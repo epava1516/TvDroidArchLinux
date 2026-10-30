@@ -162,3 +162,12 @@ de sistema/aplicación y regresiones de contador/métricas. El constructor View
 avanza hasta WindowManagerGlobal, aún ausente. AOSP-RECURSOS-SISTEMA.md y
 reports/aosp-system-resources/ registran el alcance parcial y la frontera de
 servicio de ventanas; no se acredita construcción ni dibujo de View original.
+
+
+El conjunto de 82 fuentes originales ya ejecuta la caché de ServiceManager con un
+endpoint local de lifecycle real. Se genera IWindowManager íntegro desde 67
+contratos AIDL originales: coinciden 133 firmas e IDs de transacción y cargan sus
+cuatro clases en ART. AOSP-SERVICIOS-LOCALES.md y reports/aosp-service-bootstrap/
+registran esas pruebas. El constructor View llega al contexto global Binder aún
+sin enlazar; faltan el servicio de ventanas conectado a Rust/Wayland y la
+construcción/dibujo de View. No se acredita IPC Binder ni interfaz APK original.
