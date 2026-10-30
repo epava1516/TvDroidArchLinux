@@ -140,3 +140,10 @@ combinaciones de StateSet y los helpers estáticos de medida. Un binding mínimo
 R.styleable se genera desde XML AOSP y se contrasta durante el build; no sustituye
 los recursos de sistema. Ver reports/aosp-views-initialization/. Construcción de
 objetos, dibujo e integración en las APK siguen pendientes.
+
+
+El ensayo del constructor real de View con contexto Linux y recursos originales
+del APK está documentado en AOSP-CONSTRUCTOR-VIEW.md. Las dependencias originales
+amplían el conjunto a 73 fuentes y permiten avanzar hasta el JNI ausente de
+Log.isLoggable. La View todavía no se construye; la regresión estática sigue
+pasando. Ver reports/aosp-view-constructor/.

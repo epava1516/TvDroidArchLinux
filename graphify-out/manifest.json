@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793373780.857351,
-    "seen": 1793373787.5802486,
-    "ast_hash": "f127aa14a803b8e876ea28118b9391f2",
+    "mtime": 1793374256.588808,
+    "seen": 1793374263.754694,
+    "ast_hash": "bfb99fe5396f2665a58e0f14a7d70af2",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -882,9 +882,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/framework-study.json": {
-    "mtime": 1793373677.4507856,
-    "seen": 1793373787.5797596,
-    "ast_hash": "43e17ccad3dd72441e10637709e0e7fd",
+    "mtime": 1793374090.9765368,
+    "seen": 1793374263.753988,
+    "ast_hash": "69f91c5f27b4fee934d5f6919f12ac58",
     "semantic_hash": ""
   },
   "tools/apk/study_framework.py": {
@@ -894,9 +894,9 @@
     "semantic_hash": ""
   },
   "docs/PORT-FRAMEWORK-AOSP.md": {
-    "mtime": 1793373780.856605,
-    "seen": 1793373787.5802405,
-    "ast_hash": "de9e4f59ac3a05835df019563da7bc6c",
+    "mtime": 1793374256.5853965,
+    "seen": 1793374263.7546895,
+    "ast_hash": "94df90b25c902b2a38ced0a99046d347",
     "semantic_hash": ""
   },
   "fixtures/aosp-queue/QueueLinkProbe.java": {
@@ -1242,9 +1242,9 @@
     "semantic_hash": ""
   },
   "docs/AOSP-VISTAS-LINUX.md": {
-    "mtime": 1793373780.854321,
-    "seen": 1793373787.580154,
-    "ast_hash": "71255cd88a45faef637f62027b13550b",
+    "mtime": 1793374256.5833783,
+    "seen": 1793374263.7545626,
+    "ast_hash": "550edaea0a34e446ce423cd5a9cbdc71",
     "semantic_hash": ""
   },
   "fixtures/aosp-view-bindings/ResourceBindingCheck.java": {
@@ -1257,6 +1257,24 @@
     "mtime": 1793373510.8889534,
     "seen": 1793373787.5801148,
     "ast_hash": "df22e02c912a659ce615a062a3e6fa49",
+    "semantic_hash": ""
+  },
+  "fixtures/aosp-view-constructor/ViewConstructorProbe.java": {
+    "mtime": 1793374156.5607274,
+    "seen": 1793374263.7539086,
+    "ast_hash": "4a6ecf2b326c9d2235a687c445c3696b",
+    "semantic_hash": ""
+  },
+  "tools/apk/probe_view_constructor.py": {
+    "mtime": 1793373922.9228742,
+    "seen": 1793374263.7542782,
+    "ast_hash": "1c3456b761688528550039c787a2fc61",
+    "semantic_hash": ""
+  },
+  "docs/AOSP-CONSTRUCTOR-VIEW.md": {
+    "mtime": 1793374256.5817428,
+    "seen": 1793374263.7545435,
+    "ast_hash": "727cfc50039beaa5444b34a7846f4177",
     "semantic_hash": ""
   }
 }

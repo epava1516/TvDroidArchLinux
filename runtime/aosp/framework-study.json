@@ -383,6 +383,36 @@
       "path": "core/java/android/view/ActionMode.java",
       "bytes": 13240,
       "sha256": "d0530eecc7461ad0d7897866a96d396fbbfcccfd22abaf69180e1da308f3498b"
+    },
+    {
+      "path": "core/java/android/view/ViewOutlineProvider.java",
+      "bytes": 3262,
+      "sha256": "310e1ed4ffd8350364a8b7a72732bc951f2fa9a0e10b44b1f23a583af32829fa"
+    },
+    {
+      "path": "core/java/android/view/InputEventConsistencyVerifier.java",
+      "bytes": 35900,
+      "sha256": "3db7b598dec3639d519add7583afcd85425b6217cad514f5de0efcbe275c0e53"
+    },
+    {
+      "path": "core/java/android/view/ViewConfiguration.java",
+      "bytes": 41026,
+      "sha256": "023d3ae63af3740d0c44c83db3d04aeee8e4920e933d40e59c6505021eaeef89"
+    },
+    {
+      "path": "core/java/android/os/StrictMode.java",
+      "bytes": 129074,
+      "sha256": "98613fb2bf3be1b2ce0d3d8a9314d13768bbf513aa0ed6f84cbf1ba218a1df8f"
+    },
+    {
+      "path": "core/java/android/util/SparseLongArray.java",
+      "bytes": 11988,
+      "sha256": "358fe11bd19f06e84269e9438bd217cb4f229e4290380e11a9a5514092bde4e2"
+    },
+    {
+      "path": "core/java/android/util/Log.java",
+      "bytes": 19991,
+      "sha256": "8f449fe8137ae203637f9f9b81b8242118e4c9b7e94aac8c65c90f2388d09956"
     }
   ],
   "public_resources_sources": [
@@ -426,7 +456,13 @@
     "core/java/android/util/Property.java",
     "core/java/android/util/FloatProperty.java",
     "graphics/java/android/graphics/Color.java",
-    "core/java/android/view/ActionMode.java"
+    "core/java/android/view/ActionMode.java",
+    "core/java/android/view/ViewOutlineProvider.java",
+    "core/java/android/view/InputEventConsistencyVerifier.java",
+    "core/java/android/view/ViewConfiguration.java",
+    "core/java/android/os/StrictMode.java",
+    "core/java/android/util/SparseLongArray.java",
+    "core/java/android/util/Log.java"
   ],
   "view_resource_inputs": [
     "core/res/res/values/attrs.xml",

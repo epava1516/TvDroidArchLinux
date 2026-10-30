@@ -97,3 +97,10 @@ bindings sysprop previos y el nuevo binding R generado desde XML. Sigue pendient
 invocar un constructor de View con contexto real y resolver ViewConfiguration,
 RenderNode/JNI y recursos de sistema. No se ha retirado la interfaz propia del
 runtime de las APK.
+
+
+El ensayo del constructor real de View con contexto Linux y recursos originales
+del APK está documentado en AOSP-CONSTRUCTOR-VIEW.md. Las dependencias originales
+amplían el conjunto a 73 fuentes y permiten avanzar hasta el JNI ausente de
+Log.isLoggable. La View todavía no se construye; la regresión estática sigue
+pasando. Ver reports/aosp-view-constructor/.

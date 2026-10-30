@@ -175,3 +175,10 @@ originales, con pruebas de StateSet y helpers de tamaño sobre ART. Se genera el
 binding de estados desde XML AOSP original, sin añadir bytecode de la referencia.
 Ver reports/aosp-views-initialization/. La construcción y dibujo de View original
 y la sustitución de la jerarquía propia siguen abiertos.
+
+
+El ensayo del constructor real de View con contexto Linux y recursos originales
+del APK está documentado en AOSP-CONSTRUCTOR-VIEW.md. Las dependencias originales
+amplían el conjunto a 73 fuentes y permiten avanzar hasta el JNI ausente de
+Log.isLoggable. La View todavía no se construye; la regresión estática sigue
+pasando. Ver reports/aosp-view-constructor/.

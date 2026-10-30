@@ -1,0 +1,3 @@
+VIEW_CONSTRUCTOR_BEGIN resources=DisplayMetrics{density=1.0, width=1280, height=720, scaledDensity=1.0, xdpi=160.0, ydpi=160.0}
+VIEW_CONSTRUCTOR_BLOCKED java.lang.UnsatisfiedLinkError: No implementation found for boolean android.util.Log.isLoggable(java.lang.String, int) (tried Java_android_util_Log_isLoggable and Java_android_util_Log_isLoggable__Ljava_lang_String_2I)
+VIEW_CONSTRUCTOR_DIAGNOSTIC_DONE
