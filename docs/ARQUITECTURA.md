@@ -25,9 +25,19 @@ de permisos fabricada. La [carencia de entrada al coordinador](../reports/androi
 impide declarar desplegable el candidato compilado. Definir la cohorte funcional
 completa antes de sumar permisos aislados o borrar dependencias de los RC.
 
+El [experimento de entrada](../reports/android16-policy-launcher-entry/findings.json)
+compara identidad Linux automática con exec explícito a u:r:init:s0. La primera
+calcula init con usuario/rol Linux y falla al calcular el siguiente servicio;
+el prototipo explícito con rol exclusivo conserva gestores originales y pasa
+controles TE/MLS/RBAC seleccionados, manteniendo denegaciones. No está en el perfil
+base, no asigna contextos reales y no cierra S1: bootstrap, permisos heredados,
+etiquetas y mediación completa requieren pruebas. No usar el rol genérico
+Linux system_r para conceder la entrada a Android.
+
+
 | Frontera | Requisito y prueba necesarios | Estado verificable |
 | --- | --- | --- |
-| Dominio coordinador | Elegir sujeto Linux de lanzamiento real; contexto original Android de supervisión, usuario/rol/tipo/MLS, entrada exec explícita y denegación de rutas alternativas | Cálculos offline conservan kernel→init y init→gestores Android seleccionados; entrada Linux ausente |
+| Dominio coordinador | Elegir sujeto Linux de lanzamiento real; contexto original Android de supervisión, usuario/rol/tipo/MLS, entrada exec explícita y denegación de rutas alternativas | Cálculos originales conservados; entrada ausente en perfil base. Prototipo de rol exclusivo/exec explícito pasa consultas offline; bootstrap anfitrión pendiente |
 | Etiquetas | Contextos originales de ejecutables/APEX/datos/propiedades/servicios y pseudoarchivos Linux; verificar contexto efectivo y transición, no sólo ficheros de reglas | getfilecon del servicemanager GSI devuelve ENODATA; no se aplicaron etiquetas |
 | Identidades | AID Android vs UID/GID anfitrión, rangos reservados, supplementary groups, mapeo Binder y control positivo/negativo entre usuarios | UID10000/caps0 probado sólo en sondas; Android1000 no debe dar acceso al usuario Linux1000 |
 | Binder/HIDL | Dispositivos/contextos privados, contenido SID real, transacciones entre UID, registro/descubrimiento/callback/muerte y denegaciones originales | Sonda misma UID con BR_TRANSACTION_SEC_CTX/respuesta0; gestores e identidad MAC no aceptados |

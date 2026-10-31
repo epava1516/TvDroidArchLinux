@@ -1,0 +1,14 @@
+{
+  "scope": "Proposed inherited context validity only; error is not denial or kernel exec",
+  "argv": [
+    "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_validate_transition",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-launcher-automatic-1/policy.bin",
+    "linux.system_u:linux.system_r:init:s0",
+    "linux.system_u:linux.system_r:servicemanager:s0",
+    "process",
+    "linux.system_u:linux.system_r:archtv_launcher:s0"
+  ],
+  "exit": 1,
+  "stdout": "",
+  "stderr": "libsepol.context_from_record: invalid security context: \"linux.system_u:linux.system_r:servicemanager:s0\"\nlibsepol.context_from_record: could not create context structure\nlibsepol.context_from_string: could not create context structure\nlibsepol.sepol_context_to_sid: could not convert linux.system_u:linux.system_r:servicemanager:s0 to sid\nInvalid new context linux.system_u:linux.system_r:servicemanager:s0\n"
+}

@@ -1,0 +1,36 @@
+{
+  "scope": "Offline alternatives, no deployment approval or actual exec/host security changes",
+  "base_profile_sha256": "22178f2ec8d9bb7d84bf834f9a41fbd4e162fd63edaf806a595e6803d3dfb0ee",
+  "commands": [
+    {
+      "case": "automatic",
+      "argv": [
+        "python",
+        "/home/tv/repositorio-principal/tools/aosp/build_linux_policy.py",
+        "--profile",
+        "/home/tv/repositorio-principal/reports/android16-policy-launcher-entry/profile-automatic.json",
+        "--output",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-launcher-automatic-1",
+        "--compile"
+      ],
+      "exit": 0,
+      "stdout": "compiled_offline: /home/tv/repositorio-principal/dist/aosp16/policy-launcher-automatic-1\n",
+      "stderr": ""
+    },
+    {
+      "case": "explicit",
+      "argv": [
+        "python",
+        "/home/tv/repositorio-principal/tools/aosp/build_linux_policy.py",
+        "--profile",
+        "/home/tv/repositorio-principal/reports/android16-policy-launcher-entry/profile-explicit.json",
+        "--output",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-launcher-explicit-1",
+        "--compile"
+      ],
+      "exit": 1,
+      "stdout": "Compiler did not pass: 255; evidence: /home/tv/repositorio-principal/dist/aosp16/policy-launcher-explicit-1\n",
+      "stderr": ""
+    }
+  ]
+}

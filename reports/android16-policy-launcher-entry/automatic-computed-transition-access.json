@@ -1,0 +1,14 @@
+{
+  "scope": "Offline AV permission for automatically computed context, not exec",
+  "argv": [
+    "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-launcher-automatic-1/policy.bin",
+    "linux.system_u:linux.system_r:archtv_launcher:s0",
+    "linux.system_u:linux.system_r:init:s0",
+    "process",
+    "transition"
+  ],
+  "exit": 0,
+  "stdout": "requested permission transition allowed\n",
+  "stderr": ""
+}

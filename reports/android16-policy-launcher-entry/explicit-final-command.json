@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "python",
+    "tools/aosp/build_linux_policy.py",
+    "--profile",
+    "/home/tv/repositorio-principal/reports/android16-policy-launcher-entry/profile-explicit.json",
+    "--output",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-launcher-explicit-2",
+    "--compile"
+  ],
+  "scope": "Dedicated role, original assertions enabled, offline only"
+}

@@ -1,0 +1,8 @@
+; Offline alternative only. Never installed/loaded: preserves Linux user/role.
+(type archtv_launcher)
+(roletype linux.system_r archtv_launcher)
+(typeattributeset linux.domain (archtv_launcher))
+(roletype linux.system_r init)
+(typetransition archtv_launcher init_exec process init)
+(allow archtv_launcher init_exec (file (getattr open read execute)))
+(allow archtv_launcher init (process (transition)))

@@ -1,0 +1,464 @@
+{
+  "scope": "Offline computation and AV/validation queries only; no setexeccon/exec/kernel load/enforcement",
+  "policy_sha256": "b7e9cd4f0232cad48ad96fcf1d307d0883962596aefe5d3bcd547e1c20a4f862",
+  "results": [
+    {
+      "case": "automatic_entry_context",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-launch-transitions-1/sepol_compute_transition",
+        "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "linux.system_u:archtv_launcher_r:archtv_launcher:s0",
+        "u:object_r:init_exec:s0",
+        "process"
+      ],
+      "exit": 0,
+      "stdout": "linux.system_u:archtv_launcher_r:archtv_launcher:s0\n",
+      "stderr": ""
+    },
+    {
+      "case": "original_manager_context",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-launch-transitions-1/sepol_compute_transition",
+        "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "u:r:init:s0",
+        "u:object_r:servicemanager_exec:s0",
+        "process"
+      ],
+      "exit": 0,
+      "stdout": "u:r:servicemanager:s0\n",
+      "stderr": ""
+    },
+    {
+      "case": "original_hwmanager_context",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-launch-transitions-1/sepol_compute_transition",
+        "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "u:r:init:s0",
+        "u:object_r:hwservicemanager_exec:s0",
+        "process"
+      ],
+      "exit": 0,
+      "stdout": "u:r:hwservicemanager:s0\n",
+      "stderr": ""
+    },
+    {
+      "case": "explicit_transition_validation",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_validate_transition",
+        "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "linux.system_u:archtv_launcher_r:archtv_launcher:s0",
+        "u:r:init:s0",
+        "process",
+        "linux.system_u:archtv_launcher_r:archtv_launcher:s0"
+      ],
+      "exit": 0,
+      "stdout": "allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "actor_setexec",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "linux.system_u:archtv_launcher_r:archtv_launcher:s0",
+        "linux.system_u:archtv_launcher_r:archtv_launcher:s0",
+        "process",
+        "setexec"
+      ],
+      "exit": 0,
+      "stdout": "requested permission setexec allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "actor_init_transition",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "linux.system_u:archtv_launcher_r:archtv_launcher:s0",
+        "u:r:init:s0",
+        "process",
+        "transition"
+      ],
+      "exit": 0,
+      "stdout": "requested permission transition allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "actor_init_dyntransition",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "linux.system_u:archtv_launcher_r:archtv_launcher:s0",
+        "u:r:init:s0",
+        "process",
+        "dyntransition"
+      ],
+      "exit": 7,
+      "stdout": "requested permission dyntransition denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "actor_manager_bypass",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "linux.system_u:archtv_launcher_r:archtv_launcher:s0",
+        "u:r:servicemanager:s0",
+        "process",
+        "transition"
+      ],
+      "exit": 7,
+      "stdout": "requested permission transition denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "actor_exec_read",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "linux.system_u:archtv_launcher_r:archtv_launcher:s0",
+        "u:object_r:init_exec:s0",
+        "file",
+        "read"
+      ],
+      "exit": 0,
+      "stdout": "requested permission read allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "init_entrypoint",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "u:r:init:s0",
+        "u:object_r:init_exec:s0",
+        "file",
+        "entrypoint"
+      ],
+      "exit": 0,
+      "stdout": "requested permission entrypoint allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "init_channel_fd",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "u:r:init:s0",
+        "linux.system_u:archtv_launcher_r:archtv_launcher:s0",
+        "fd",
+        "use"
+      ],
+      "exit": 0,
+      "stdout": "requested permission use allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "init_channel_read",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "u:r:init:s0",
+        "linux.system_u:archtv_launcher_r:archtv_launcher:s0",
+        "unix_stream_socket",
+        "read"
+      ],
+      "exit": 0,
+      "stdout": "requested permission read allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "app_channel_fd",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "linux.system_u:archtv_launcher_r:archtv_launcher:s0",
+        "fd",
+        "use"
+      ],
+      "exit": 7,
+      "stdout": "requested permission use denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "app_to_init",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "u:r:init:s0",
+        "process",
+        "transition"
+      ],
+      "exit": 7,
+      "stdout": "requested permission transition denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "linux_init_to_android_init",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "linux.system_u:linux.system_r:linux.init_t:s0",
+        "u:r:init:s0",
+        "process",
+        "transition"
+      ],
+      "exit": 7,
+      "stdout": "requested permission transition denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "linux_kernel_to_android_init",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "linux.system_u:linux.system_r:linux.kernel_t:s0",
+        "u:r:init:s0",
+        "process",
+        "transition"
+      ],
+      "exit": 7,
+      "stdout": "requested permission transition denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "init_compute_create",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "u:r:init:s0",
+        "linux.system_u:linux.object_r:linux.security_t:s0",
+        "security",
+        "compute_create"
+      ],
+      "exit": 0,
+      "stdout": "requested permission compute_create allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "init_compute_av",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "u:r:init:s0",
+        "linux.system_u:linux.object_r:linux.security_t:s0",
+        "security",
+        "compute_av"
+      ],
+      "exit": 0,
+      "stdout": "requested permission compute_av allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "init_check_context",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "u:r:init:s0",
+        "linux.system_u:linux.object_r:linux.security_t:s0",
+        "security",
+        "check_context"
+      ],
+      "exit": 0,
+      "stdout": "requested permission check_context allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "init_load_policy",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "u:r:init:s0",
+        "linux.system_u:linux.object_r:linux.security_t:s0",
+        "security",
+        "load_policy"
+      ],
+      "exit": 7,
+      "stdout": "requested permission load_policy denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "init_setenforce",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "u:r:init:s0",
+        "linux.system_u:linux.object_r:linux.security_t:s0",
+        "security",
+        "setenforce"
+      ],
+      "exit": 7,
+      "stdout": "requested permission setenforce denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "app_security_write",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "linux.system_u:linux.object_r:linux.security_t:s0",
+        "file",
+        "write"
+      ],
+      "exit": 7,
+      "stdout": "requested permission write denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "actor_cannot_drop_MCS_categories",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "linux.system_u:archtv_launcher_r:archtv_launcher:s0:c512,c768",
+        "u:r:init:s0",
+        "process",
+        "transition"
+      ],
+      "exit": 7,
+      "stdout": "requested permission transition denied by constraint; reason:\nmlsconstrain process { transition dyntransition } ((h1 eq h2 -Fail-)  and (l1 eq l2 -Fail-)  or (t1 == mlstrustedsubject -Fail-) ); Constraint DENIED\n\n",
+      "stderr": ""
+    },
+    {
+      "case": "actor_cannot_write_coordinator_exec",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "linux.system_u:archtv_launcher_r:archtv_launcher:s0",
+        "u:object_r:init_exec:s0",
+        "file",
+        "write"
+      ],
+      "exit": 7,
+      "stdout": "requested permission write denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "actor_wrong_role_is_invalid_context",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-launch-transitions-1/sepol_compute_transition",
+        "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "linux.system_u:linux.system_r:archtv_launcher:s0",
+        "u:object_r:init_exec:s0",
+        "process"
+      ],
+      "exit": 1,
+      "stdout": "",
+      "stderr": "libsepol.context_from_record: invalid security context: \"linux.system_u:linux.system_r:archtv_launcher:s0\"\nlibsepol.context_from_record: could not create context structure\nlibsepol.context_from_string: could not create context structure\nlibsepol.sepol_context_to_sid: could not convert linux.system_u:linux.system_r:archtv_launcher:s0 to sid\nInvalid source context linux.system_u:linux.system_r:archtv_launcher:s0\n"
+    },
+    {
+      "case": "unrelated_unconfined_base",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-compile-1/policy.bin",
+        "linux.system_u:linux.system_r:linux.unconfined_t:s0",
+        "u:r:init:s0",
+        "process",
+        "transition"
+      ],
+      "exit": 7,
+      "stdout": "requested permission transition denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "unrelated_unconfined_after",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "linux.system_u:linux.system_r:linux.unconfined_t:s0",
+        "u:r:init:s0",
+        "process",
+        "transition"
+      ],
+      "exit": 7,
+      "stdout": "requested permission transition denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "unrelated_sshd_base",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-compile-1/policy.bin",
+        "linux.system_u:linux.system_r:linux.sshd_t:s0",
+        "u:r:init:s0",
+        "process",
+        "transition"
+      ],
+      "exit": 7,
+      "stdout": "requested permission transition denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "unrelated_sshd_after",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "linux.system_u:linux.system_r:linux.sshd_t:s0",
+        "u:r:init:s0",
+        "process",
+        "transition"
+      ],
+      "exit": 7,
+      "stdout": "requested permission transition denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "unrelated_init_base",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-compile-1/policy.bin",
+        "linux.system_u:linux.system_r:linux.init_t:s0",
+        "u:r:init:s0",
+        "process",
+        "transition"
+      ],
+      "exit": 7,
+      "stdout": "requested permission transition denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "unrelated_init_after",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "linux.system_u:linux.system_r:linux.init_t:s0",
+        "u:r:init:s0",
+        "process",
+        "transition"
+      ],
+      "exit": 7,
+      "stdout": "requested permission transition denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "unrelated_kernel_base",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-compile-1/policy.bin",
+        "linux.system_u:linux.system_r:linux.kernel_t:s0",
+        "u:r:init:s0",
+        "process",
+        "transition"
+      ],
+      "exit": 7,
+      "stdout": "requested permission transition denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "unrelated_kernel_after",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "linux.system_u:linux.system_r:linux.kernel_t:s0",
+        "u:r:init:s0",
+        "process",
+        "transition"
+      ],
+      "exit": 7,
+      "stdout": "requested permission transition denied by te-rule\n",
+      "stderr": ""
+    }
+  ]
+}

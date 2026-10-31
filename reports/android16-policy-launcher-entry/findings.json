@@ -1,0 +1,106 @@
+{
+  "observed_at": "2026-10-31T11:54:08.457367+00:00",
+  "base_commit": "0bd112bbcb92583afce8561824c20fc28e283804",
+  "scope": "Offline original Linux/AOSP policy entry alternatives; not policy installation, setexeccon/exec, original service availability or APK compatibility",
+  "canonical_build_profile_unchanged": {
+    "path": "runtime/aosp/android16-qpr2/policy/build-profile.json",
+    "sha256": "22178f2ec8d9bb7d84bf834f9a41fbd4e162fd63edaf806a595e6803d3dfb0ee"
+  },
+  "modules": [
+    {
+      "path": "runtime/aosp/android16-qpr2/policy/experiments/launcher-automatic.cil",
+      "sha256": "61deb805237d8d66db10fc0a90f020ef6b08469d6edb5b40b21477acda1452cc"
+    },
+    {
+      "path": "runtime/aosp/android16-qpr2/policy/experiments/launcher-explicit.cil",
+      "sha256": "077dd8ec4f944b20361a6740d2edd0aa55ec4b2b063bfa5ed63591e5b56fec35"
+    }
+  ],
+  "tool_sources": "Original pinned secilc/libsepol and the explicitly adapted context utility documented in reports/android16-policy-launch-transitions; no own policy evaluator",
+  "compile_results": {
+    "automatic-1": 0,
+    "explicit-1": 255,
+    "explicit-2": 0,
+    "neverallow_disabled": false,
+    "initial_explicit_error": "CIL neverallow target requires named typeattribute rather than inline set expression; original failed module preserved; final fixes syntax and uses dedicated role"
+  },
+  "automatic_result": {
+    "calculated_context": "linux.system_u:linux.system_r:init:s0",
+    "computed_transition_AV_allowed": true,
+    "followup_manager_context": "compute transition error; proposed inherited Linux-role servicemanager context invalid, NOT a denial",
+    "decision": "Not sufficient to preserve original Android cohort identity. Do not add every Android type to Linux role without evaluating consequences."
+  },
+  "explicit_result": {
+    "source": "linux.system_u:archtv_launcher_r:archtv_launcher:s0",
+    "requested_exec_context": "u:r:init:s0",
+    "selection": "Explicit setexeccon required; default computed context remains source (no automatic privilege elevation)",
+    "original_followups": [
+      "u:r:servicemanager:s0",
+      "u:r:hwservicemanager:s0"
+    ],
+    "AV_and_validation": "Selected original libsepol TE/MLS/RBAC/transition-validation checks pass",
+    "scope_of_exception": "Only new actor added to original linux.process_uncond_exempt for cross-user/role constraint; dedicated role edge to Android r, no edge from generic Linux system_r",
+    "negative_cases": [
+      "dyntransition",
+      "direct manager bypass",
+      "exec write",
+      "drop MCS categories (constraint reason)",
+      "app channel FD",
+      "app\u2192init",
+      "init load_policy/setenforce",
+      "app security write"
+    ],
+    "unrelated_linux_controls": "unconfined,sshd,init,kernel all denied transition before/after; 8 queries, not global equivalence",
+    "query_rows": 33,
+    "successful_computations_or_allow": 13,
+    "denials": 19,
+    "invalid_context_errors": 1
+  },
+  "limitations": [
+    "Role/type source is an offline model; bootstrap from real host into that actor not implemented or tested. Host systemd -SELINUX integration/labels/UID mapping still pending",
+    "New actor inherits linux.domain baseline permissions; least privilege of entire domain and full semantic projection not proved by selected checks",
+    "Original init has broad original Android privileges; mount/FD/capability/device/proc/cgroup confinement and original libselinux operation closure not proved",
+    "No kernel policy, security state, files xattrs, enforcing or boot changes. No host context or executable label assigned",
+    "Explicit process exec, AT_SECURE handling, inherited FD/rlimit/signal behavior, MAC denials, real services/Markor nine stages untested",
+    "Original constraints remain; one new source-specific exception is a real policy adaptation, not upstream behavior. Extra neverallow guards enabled but deliberate violating-module compiler controls not executed",
+    "Automatic error and explicit wrong-role error are invalid contexts, not access denials; compiler failure remains separate from runtime evidence",
+    "No REA MCP operation needed for this source-available offline experiment; CLI computations do not represent MCP connection or execution of Android services",
+    "Default candidate/profile not replaced. New modules experimental only, not ready for approval/loading; S0\u2013S2 remain open",
+    "ARM, external services/DRM and real APK acceptance untouched"
+  ],
+  "next": "Audit complete inherited permission/effective-label/host-bootstrap contract for dedicated actor and original init; genuine proc/selinuxfs/channel/device/cgroup interfaces and recovery preflight together. Preserve original cohort identity before real load/exec testing; follow explicit S0\u2013S4 authorization gates, then original managers and complete Markor journey.",
+  "attribute_scope_verification": {
+    "path": "reports/android16-policy-launcher-entry/attribute-delta.json",
+    "scope": "Original analyzer retained membership diff only, not full permissions",
+    "delta": {
+      "linux.domain": {
+        "added": [
+          "archtv_launcher"
+        ],
+        "removed": [],
+        "before": 818,
+        "after": 819
+      },
+      "linux.process_uncond_exempt": {
+        "added": [
+          "archtv_launcher"
+        ],
+        "removed": [],
+        "before": 29,
+        "after": 30
+      },
+      "domain": {
+        "added": [],
+        "removed": [],
+        "before": 221,
+        "after": 221
+      },
+      "mlstrustedsubject": {
+        "added": [],
+        "removed": [],
+        "before": 60,
+        "after": 60
+      }
+    }
+  }
+}

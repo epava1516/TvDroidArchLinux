@@ -1,0 +1,72 @@
+{
+  "branch": "main",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "objective": "Complete unmodified APK on Linux Rust/Smithay with coherent original AOSP16QPR2/Bionic, no Waydroid or complete Android boot; broad compatibility, isolation, stability, lightness, installation/update.",
+  "canonical_entry": "docs/ESTADO.md",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "constraints": [
+    "User reaffirmed no reboot/security state changes based on historical authorization",
+    "No policy load, relabel, setenforce or host setup modification in this hito",
+    "A16-QPR2-1; full unmodified APK on Linux Rust/Smithay, no Waydroid/full Android; broad compatibility/isolation/stability/lightness/install/update",
+    "ARM/external services/DRM separate; own fixtures/probes not compatibility acceptance"
+  ],
+  "observed_at": "2026-10-31T11:54:08.457367+00:00",
+  "base_commit": "0bd112bbcb92583afce8561824c20fc28e283804",
+  "previous_checkpoint": "reports/android16-postboot-mac-readiness/checkpoint.json",
+  "relation_to_local_origin_tracking": "0\t0",
+  "terminal_exec_handles": [
+    66579,
+    61870,
+    47468,
+    88335,
+    49766,
+    13000
+  ],
+  "active_exec_handles": [],
+  "process_scope": "Only current-turn compiler/query handles used; all terminal. Saved preboot handles not polled/reused. ps -C secilc after compiler completed showed no compiler, not host-wide completeness.",
+  "tests": {
+    "automatic_rows": 20,
+    "explicit_rows": 33,
+    "automatic_extra_access_and_invalid_context": 2,
+    "both_final_compiles0_assertions_enabled": true
+  },
+  "next": "Audit complete inherited permission/effective-label/host-bootstrap contract for dedicated actor and original init; genuine proc/selinuxfs/channel/device/cgroup interfaces and recovery preflight together. Preserve original cohort identity before real load/exec testing; follow explicit S0\u2013S4 authorization gates, then original managers and complete Markor journey.",
+  "evidence": {
+    "reports/android16-policy-launcher-entry/build.json": "55e7720d12498b98e597d5b218a679166bbeef011f59abca7a0ac755c67a1267",
+    "reports/android16-policy-launcher-entry/automatic-1-artifact.json": "511b02809a2f17dbfec8f74ec79d7c0e11dc28128dbd8fd052e9d91ce4f50ceb",
+    "reports/android16-policy-launcher-entry/findings.json": "6726c7fba984968a0e4b3f2cc49d36a6cd82d62bb64c9e8d062ef840fa2cbdbf",
+    "reports/android16-policy-launcher-entry/automatic-followup-context-validity.json": "5d31ff4fc7ee11ddc9de0b3149dc546227b367c5b8cdd1a4fe506a0b50a3ede6",
+    "reports/android16-policy-launcher-entry/attribute-delta.json": "52c8ee7e5d535224786703212dc95b3b0a005c5e08091f1bb3333341af9498ee",
+    "reports/android16-policy-launcher-entry/explicit-2-compiler.json": "616f1913ef611ce0f4fa288db1c412a0fe86bd22df4b557ddd49667460f3ad7c",
+    "reports/android16-policy-launcher-entry/explicit-1-compiler.json": "60a1251ec13a82b47f5f020df12224a73f42a0f92ca66d5847a29d8fab35208e",
+    "reports/android16-policy-launcher-entry/profile-automatic.json": "18df1e97703213eca817f3d76552675973a61dade73c4e4327eae940dac877a0",
+    "reports/android16-policy-launcher-entry/automatic-1-composition.json": "e8b41c0f851ab15fa04202db30c9b024a3fbbce458c590f30d6b75a2876d0665",
+    "reports/android16-policy-launcher-entry/build.py": "80615a01b1dfae66f3c6adf4504b3ed99ce902166aff19d257067f1b376098c2",
+    "reports/android16-policy-launcher-entry/automatic-computed-transition-access.json": "8963cbec78a0f84d8cf1badb9b20340a3d11f1c2c506b16ee960374ddf75ad4b",
+    "reports/android16-policy-launcher-entry/verify.py": "34eb6a2e6290f2215f292a841b0e07b140df96b15bb29dc0e14e72c4970bdb73",
+    "reports/android16-policy-launcher-entry/explicit-1-composition.json": "e8b41c0f851ab15fa04202db30c9b024a3fbbce458c590f30d6b75a2876d0665",
+    "reports/android16-policy-launcher-entry/automatic-1-compiler.json": "5032bf85385f72fde40f763af952a804d935b55118a7ff72d64d3d3278486ed9",
+    "reports/android16-policy-launcher-entry/automatic-queries.json": "5e0d06924e91604250f933cf8b77c5b99c8c224957490768bf9855e6c6587e83",
+    "reports/android16-policy-launcher-entry/query.py": "e788c1827373ab99fade359e09773a281fcaad0053942d72d2688f1cdd8fbce1",
+    "reports/android16-policy-launcher-entry/profile-explicit.json": "8cc79cb19f31ef5bb6c7a3d9407588e4144d0585ad37723f20f0349825358cb8",
+    "reports/android16-policy-launcher-entry/explicit-2-artifact.json": "87842e1135173deea99954be8830f2092a52ca243dafe98fcb1e7b71f8bd56dd",
+    "reports/android16-policy-launcher-entry/explicit-queries.json": "3a7b917b4857ccfc2a5d950871b64e2bc5aaa86bd9a76d58b0caf870b74c362d",
+    "reports/android16-policy-launcher-entry/explicit-1-artifact.json": "7ff66cdb701e57b57d28abd49e465190e3464ece611221c2212fd1e686a54bcc",
+    "reports/android16-policy-launcher-entry/explicit-final-command.json": "dee82a9eebde882fa966d98c126fa0db9a33325c031cc4785bbd11c335353097",
+    "reports/android16-policy-launcher-entry/launcher-explicit-initial-syntax-error.cil": "ab9f85ae63973565c72db1768377c4646b6be27bcc9c009d2609652f45e0dcaa",
+    "reports/android16-policy-launcher-entry/explicit-2-composition.json": "e8b41c0f851ab15fa04202db30c9b024a3fbbce458c590f30d6b75a2876d0665"
+  },
+  "current_security": "Last verified permissive/no policy; this hito exclusively offline and does not load, relabel or change enforcing",
+  "graphify": "Isolated staged AST update terminal0,2895 nodes/5519 edges; tracked outputs copied. CIL files unsupported by AST, no semantic policy proof inferred."
+}

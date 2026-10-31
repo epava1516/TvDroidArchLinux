@@ -1,0 +1,31 @@
+; Offline candidate only, not host policy or an admitted launcher.
+; Explicit exec context u:r:init:s0, preserving original Android identity downstream.
+(type archtv_launcher)
+(role archtv_launcher_r)
+(userrole linux.system_u archtv_launcher_r)
+(roletype archtv_launcher_r archtv_launcher)
+(typeattributeset linux.domain (archtv_launcher))
+; Original Linux process constraints otherwise forbid the cross-user/role edge.
+; This exception grants no AV permission; only this new actor gets it.
+(typeattributeset linux.process_uncond_exempt (archtv_launcher))
+(roleallow archtv_launcher_r r)
+(allow archtv_launcher self (process (setexec)))
+(allow archtv_launcher init_exec (file (getattr open read execute)))
+(allow archtv_launcher init (process (transition siginh rlimitinh)))
+; The original coordinator inherits the host lifetime channel, not arbitrary host IPC.
+(allow init archtv_launcher (fd (use)))
+(allow init archtv_launcher (unix_stream_socket (read write getattr getopt setopt shutdown)))
+; Genuine original libselinux status/access/create/context interfaces on Linux labels.
+(allow init linux.security_t (dir (getattr search)))
+(allow init linux.security_t (file (read getattr map open write)))
+(allow init linux.security_t (security (compute_av compute_create check_context)))
+; New cross-boundary assertions remain enabled alongside all original assertions.
+(typeattribute archtv_not_init)
+(typeattributeset archtv_not_init (not init))
+(neverallow archtv_launcher archtv_not_init (process (transition)))
+(typeattribute archtv_all_types)
+(typeattributeset archtv_all_types (all))
+(neverallow archtv_launcher archtv_all_types (process (dyntransition)))
+(neverallow archtv_launcher init_exec (file (write append relabelto relabelfrom)))
+(neverallow init linux.security_t (security (load_policy setenforce setbool setsecparam setcheckreqprot)))
+(neverallow appdomain linux.security_t (file (write)))

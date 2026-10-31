@@ -1,0 +1,34 @@
+{
+  "argv": [
+    "prlimit",
+    "--as=2147483648",
+    "--cpu=180",
+    "--",
+    "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/source/secilc/secilc",
+    "-m",
+    "-M",
+    "true",
+    "-G",
+    "-c",
+    "30",
+    "-o",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-launcher-explicit-1/policy.bin",
+    "-f",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-launcher-explicit-1/file_contexts",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-launcher-explicit-1/combined.cil",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-launcher-explicit-1/adapter-0-linux-proc.cil",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-launcher-explicit-1/adapter-1-linux-servicemanager-selinux.cil",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-launcher-explicit-1/adapter-2-launcher-explicit.cil"
+  ],
+  "exit_code": 255,
+  "elapsed_seconds": 4.944035529999837,
+  "cpu_user_seconds": 3.116064,
+  "cpu_system_seconds": 1.480223,
+  "max_rss_kib": 449704,
+  "neverallow_disabled": false,
+  "limits": {
+    "cpu_seconds_requested": 180,
+    "wall_seconds": 240,
+    "address_space_bytes": 2147483648
+  }
+}

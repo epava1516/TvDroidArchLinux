@@ -1,6 +1,8 @@
 # Índice de evidencias
 
-- [R1-MAC: retoma y observación original](../reports/android16-postboot-mac-readiness/findings.json): checkpoints/hashes contrastados, kernel permisivo/sin política; REA estático51 exports y ejecución Bionic UID10000/caps0 getcon kernel/getfilecon ENODATA/status mmap0 con montaje RO explícito. Systemd -SELINUX; plan de recuperación/autorizaciones en arquitectura, sin carga ni APK aceptada. [Checkpoint actual](../reports/android16-postboot-mac-readiness/checkpoint.json).
+- [R1-MAC/S1: alternativas de entrada originales](../reports/android16-policy-launcher-entry/findings.json): dos políticas finales compilan con neverallow activas; automática deja identidad Linux y falla contexto posterior; explícita de rol exclusivo conserva cálculos Android y AV/MLS/RBAC seleccionados. Denegaciones y cuatro sujetos Linux antes/después, error de rol separado. Sin exec/carga/servicios/APK; perfil base intacto. [Checkpoint actual](../reports/android16-policy-launcher-entry/checkpoint.json).
+
+- [R1-MAC: retoma y observación original](../reports/android16-postboot-mac-readiness/findings.json): checkpoints/hashes contrastados, kernel permisivo/sin política; REA estático51 exports y ejecución Bionic UID10000/caps0 getcon kernel/getfilecon ENODATA/status mmap0 con montaje RO explícito. Systemd -SELINUX; plan de recuperación/autorizaciones en arquitectura, sin carga ni APK aceptada. [Checkpoint del hito](../reports/android16-postboot-mac-readiness/checkpoint.json).
 
 - [R1-MAC: contrato de entrada Linux→Android ausente](../reports/android16-policy-launch-transitions/findings.json):12 cálculos offline con libsepol original y12 consultas de acceso; tres transiciones Android conservadas, dominios Linux quedan iguales y coordinador no accede a selinuxfs Linux. Dos errores de contexto separados de10 denegaciones; sin carga/MAC/servicios/APK. [Checkpoint del hito](../reports/android16-policy-launch-transitions/checkpoint.json).
 

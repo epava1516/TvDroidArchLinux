@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-postboot-mac-readiness/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-policy-launcher-entry/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -16,6 +16,21 @@ los resúmenes; no se ha completado compatibilidad amplia.
 Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCCION-ARM.md).
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
+
+## Último experimento · rol exclusivo y exec Android explícito
+
+[Resultados offline](../reports/android16-policy-launcher-entry/findings.json):
+variante automática calcula Linux.system_u/Linux.system_r/init y el contexto del
+siguiente gestor no es válido. Candidato explícito usa rol nuevo exclusivo y
+u:r:init:s0; compila con aserciones activas, conserva transiciones originales de
+servicemanager/hwservicemanager y permite interfaces seleccionadas del coordinador.
+Niega bypass de gestor, dyntransition, escritura del ejecutable, pérdida MCS,
+administración de política y accesos app examinados. Cuatro sujetos Linux de
+control mantienen denegación antes/después. Error de rol inválido no es denegación.
+Excepción de constraint limitada al nuevo actor: adaptación propia explícita.
+Perfil base intacto; sólo experimento, sin proceso/contexto/label asignado ni carga.
+Faltan bootstrap real de host, permisos heredados y cierre de interfaces/recuperación;
+S0–S2, R1-MAC, gestores y Markor siguen abiertos. Handles de este experimento terminales.
 
 ## Retoma actual · requisitos de host y montaje original
 

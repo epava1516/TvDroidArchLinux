@@ -14,6 +14,12 @@ S0 recuperación → S1 contrato completo offline → S2 preflight anfitrión �
 permisiva sólo con autorización explícita → S4 enforcing sólo tras pruebas y nueva
 autorización → S5 gestores y recorrido Markor. S0–S2 aún abiertos; no hay solicitud
 de carga/enforcing preparada. El arranque anterior no los autoriza.
+El [prototipo de entrada S1](../reports/android16-policy-launcher-entry/findings.json)
+compila offline con aserciones activas: rol exclusivo y contexto exec Android
+conservan transiciones de gestores y denegaciones seleccionadas; la variante
+automática conserva identidad Linux y no valida el contexto del servicio siguiente.
+No hay carga/exec real ni bootstrap de host, ni sustitución del perfil base.
+
 La [inspección nativa actual](../reports/android16-postboot-mac-readiness/findings.json)
 confirma getcon kernel, etiqueta de ejecutable ausente y lectura status real sólo
 tras configurar montaje RO explícito. Systemd -SELINUX exige integración de host.
