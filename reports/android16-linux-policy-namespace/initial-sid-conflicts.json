@@ -1,0 +1,141 @@
+{
+  "scope": "Literal original context conflict; even otherwise matching declarations need explicit authoritative host context and preserved Android mediation",
+  "count": 27,
+  "conflicts": [
+    {
+      "sid": "devnull",
+      "aosp_context": "(u object_r null_device ((s0) (s0)))",
+      "linux_context_original_before_namespace": "(system_u object_r null_device_t ((s0) (s0)))"
+    },
+    {
+      "sid": "UNKNOWN26",
+      "aosp_context": "(u object_r unlabeled ((s0) (s0)))",
+      "linux_context_original_before_namespace": "(system_u object_r unlabeled_t ((s0) (s0)))"
+    },
+    {
+      "sid": "UNKNOWN25",
+      "aosp_context": "(u object_r unlabeled ((s0) (s0)))",
+      "linux_context_original_before_namespace": "(system_u object_r unlabeled_t ((s0) (s0)))"
+    },
+    {
+      "sid": "UNKNOWN24",
+      "aosp_context": "(u object_r unlabeled ((s0) (s0)))",
+      "linux_context_original_before_namespace": "(system_u object_r unlabeled_t ((s0) (s0)))"
+    },
+    {
+      "sid": "UNKNOWN23",
+      "aosp_context": "(u object_r unlabeled ((s0) (s0)))",
+      "linux_context_original_before_namespace": "(system_u object_r unlabeled_t ((s0) (s0)))"
+    },
+    {
+      "sid": "UNKNOWN22",
+      "aosp_context": "(u object_r unlabeled ((s0) (s0)))",
+      "linux_context_original_before_namespace": "(system_u object_r unlabeled_t ((s0) (s0)))"
+    },
+    {
+      "sid": "UNKNOWN21",
+      "aosp_context": "(u object_r unlabeled ((s0) (s0)))",
+      "linux_context_original_before_namespace": "(system_u object_r unlabeled_t ((s0) (s0)))"
+    },
+    {
+      "sid": "UNKNOWN20",
+      "aosp_context": "(u object_r unlabeled ((s0) (s0)))",
+      "linux_context_original_before_namespace": "(system_u object_r unlabeled_t ((s0) (s0)))"
+    },
+    {
+      "sid": "UNKNOWN19",
+      "aosp_context": "(u object_r unlabeled ((s0) (s0)))",
+      "linux_context_original_before_namespace": "(system_u object_r unlabeled_t ((s0) (s0)))"
+    },
+    {
+      "sid": "UNKNOWN18",
+      "aosp_context": "(u object_r unlabeled ((s0) (s0)))",
+      "linux_context_original_before_namespace": "(system_u object_r unlabeled_t ((s0) (s0)))"
+    },
+    {
+      "sid": "UNKNOWN17",
+      "aosp_context": "(u object_r proc ((s0) (s0)))",
+      "linux_context_original_before_namespace": "(system_u object_r sysctl_t ((s0) (s0)))"
+    },
+    {
+      "sid": "UNKNOWN16",
+      "aosp_context": "(u object_r unlabeled ((s0) (s0)))",
+      "linux_context_original_before_namespace": "(system_u object_r unlabeled_t ((s0) (s0)))"
+    },
+    {
+      "sid": "UNKNOWN15",
+      "aosp_context": "(u object_r unlabeled ((s0) (s0)))",
+      "linux_context_original_before_namespace": "(system_u object_r unlabeled_t ((s0) (s0)))"
+    },
+    {
+      "sid": "UNKNOWN14",
+      "aosp_context": "(u object_r unlabeled ((s0) (s0)))",
+      "linux_context_original_before_namespace": "(system_u object_r unlabeled_t ((s0) (s0)))"
+    },
+    {
+      "sid": "UNKNOWN13",
+      "aosp_context": "(u object_r unlabeled ((s0) (s0)))",
+      "linux_context_original_before_namespace": "(system_u object_r unlabeled_t ((s0) (s0)))"
+    },
+    {
+      "sid": "node",
+      "aosp_context": "(u object_r node ((s0) (s0)))",
+      "linux_context_original_before_namespace": "(system_u object_r node_t ((s0) (s0)))"
+    },
+    {
+      "sid": "netmsg",
+      "aosp_context": "(u object_r unlabeled ((s0) (s0)))",
+      "linux_context_original_before_namespace": "(system_u object_r netlabel_peer_t ((s0) (s0)))"
+    },
+    {
+      "sid": "netif",
+      "aosp_context": "(u object_r netif ((s0) (s0)))",
+      "linux_context_original_before_namespace": "(system_u object_r netif_t ((s0) (s0)))"
+    },
+    {
+      "sid": "port",
+      "aosp_context": "(u object_r port ((s0) (s0)))",
+      "linux_context_original_before_namespace": "(system_u object_r port_t ((s0) (s0)))"
+    },
+    {
+      "sid": "any_socket",
+      "aosp_context": "(u object_r unlabeled ((s0) (s0)))",
+      "linux_context_original_before_namespace": "(system_u object_r unlabeled_t ((s0) (s0)))"
+    },
+    {
+      "sid": "init",
+      "aosp_context": "(u object_r unlabeled ((s0) (s0)))",
+      "linux_context_original_before_namespace": "(system_u system_r init_t ((s0) (s0)))"
+    },
+    {
+      "sid": "UNKNOWN6",
+      "aosp_context": "(u object_r unlabeled ((s0) (s0)))",
+      "linux_context_original_before_namespace": "(system_u object_r unlabeled_t ((s0) (s0)))"
+    },
+    {
+      "sid": "file",
+      "aosp_context": "(u object_r unlabeled ((s0) (s0)))",
+      "linux_context_original_before_namespace": "(system_u object_r unlabeled_t ((s0) (s0)))"
+    },
+    {
+      "sid": "UNKNOWN4",
+      "aosp_context": "(u object_r labeledfs ((s0) (s0)))",
+      "linux_context_original_before_namespace": "(system_u object_r fs_t ((s0) (s0)))"
+    },
+    {
+      "sid": "unlabeled",
+      "aosp_context": "(u object_r unlabeled ((s0) (s0)))",
+      "linux_context_original_before_namespace": "(system_u object_r unlabeled_t ((s0) (s0)))"
+    },
+    {
+      "sid": "security",
+      "aosp_context": "(u object_r kernel ((s0) (s0)))",
+      "linux_context_original_before_namespace": "(system_u object_r security_t ((s0) (s0)))"
+    },
+    {
+      "sid": "kernel",
+      "aosp_context": "(u r kernel ((s0) (s0)))",
+      "linux_context_original_before_namespace": "(system_u system_r kernel_t ((s0) (s0)))"
+    }
+  ]
+}

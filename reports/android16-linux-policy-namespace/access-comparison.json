@@ -1,0 +1,77 @@
+[
+  {
+    "case": "linux_init_fork",
+    "argv": [
+      "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+      "/home/tv/repositorio-principal/dist/aosp16/policy-linux-namespace-1/linux.bin",
+      "linux.system_u:linux.system_r:linux.init_t:s0",
+      "linux.system_u:linux.system_r:linux.init_t:s0",
+      "process",
+      "fork"
+    ],
+    "expected": 0,
+    "exit_code": 0,
+    "stdout": "requested permission fork allowed\n",
+    "stderr": ""
+  },
+  {
+    "case": "linux_init_etc_read",
+    "argv": [
+      "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+      "/home/tv/repositorio-principal/dist/aosp16/policy-linux-namespace-1/linux.bin",
+      "linux.system_u:linux.system_r:linux.init_t:s0",
+      "linux.system_u:linux.object_r:linux.etc_t:s0",
+      "file",
+      "read"
+    ],
+    "expected": 0,
+    "exit_code": 0,
+    "stdout": "requested permission read allowed\n",
+    "stderr": ""
+  },
+  {
+    "case": "linux_user_shadow_denied",
+    "argv": [
+      "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+      "/home/tv/repositorio-principal/dist/aosp16/policy-linux-namespace-1/linux.bin",
+      "linux.user_u:linux.user_r:linux.user_t:s0",
+      "linux.system_u:linux.object_r:linux.shadow_t:s0",
+      "file",
+      "read"
+    ],
+    "expected": 7,
+    "exit_code": 7,
+    "stdout": "requested permission read denied by te-rule\n",
+    "stderr": ""
+  },
+  {
+    "case": "linux_missing_android_class_error",
+    "argv": [
+      "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+      "/home/tv/repositorio-principal/dist/aosp16/policy-linux-namespace-1/linux.bin",
+      "linux.system_u:linux.system_r:linux.init_t:s0",
+      "linux.system_u:linux.object_r:linux.etc_t:s0",
+      "service_manager",
+      "find"
+    ],
+    "expected": 1,
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "libsepol.sepol_string_to_security_class: unrecognized class service_manager\nInvalid security class service_manager\n"
+  },
+  {
+    "case": "aosp_context_not_linux_context",
+    "argv": [
+      "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+      "/home/tv/repositorio-principal/dist/aosp16/policy-linux-namespace-1/linux.bin",
+      "linux.u:linux.r:linux.servicemanager:s0",
+      "linux.system_u:linux.object_r:linux.etc_t:s0",
+      "file",
+      "read"
+    ],
+    "expected": 1,
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "libsepol.context_from_record: user linux.u is not defined\nlibsepol.context_from_record: could not create context structure\nlibsepol.context_from_string: could not create context structure\nlibsepol.sepol_context_to_sid: could not convert linux.u:linux.r:linux.servicemanager:s0 to sid\nInvalid source context linux.u:linux.r:linux.servicemanager:s0\n"
+  }
+]

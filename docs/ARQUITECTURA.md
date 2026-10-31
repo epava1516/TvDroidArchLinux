@@ -964,3 +964,20 @@ de nombre. Usuarios/roles/tipos/contextos también cambian. No es una política
 de despliegue ni composición Linux/AOSP aprobada. Siguiente: preservar contratos
 Android de clases/contextos y resolver explícitamente los globales MLS/SID y
 la integración Linux, conservando todas las aserciones. Nada cargado o reiniciado.
+
+## Integración de política · namespace Linux y conflicto de SID
+
+[Ensayos](../reports/android16-linux-policy-namespace/validation.json): refpolicy
+completa compila en namespace Linux con clases/common/MLS y nombres SID globales.
+Cinco consultas seleccionadas con clases originales mantienen sus resultados;
+no prueban equivalencia completa ni etiquetas/transiciones del host. Una unión
+explícita propuesta contiene145 clases y como máximo32 permisos por clase.
+
+El control de composición conserva reglas/aserciones de ambas fuentes, mantiene
+nombres Android y separa símbolos Linux; el compilador original lo rechaza
+porque un SID inicial no puede tener dos contextos. Hay27 contextos iniciales
+literalmente distintos entre las fuentes. La siguiente decisión debe justificar
+qué contexto global representa cada SID y cómo conservar la mediación Android
+y Linux, junto a restricciones MLS y accesos entre dominios. No eliminar
+contextos/asserts para aceptar una compilación. Ninguna política elegida, cargada
+o validada con servicios/APK; no se reinició la VM.

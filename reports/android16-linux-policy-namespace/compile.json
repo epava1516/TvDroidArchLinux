@@ -1,0 +1,35 @@
+{
+  "scope": "Experimental namespace relocation, global class/common/MLS declarations and initial SID names preserved; rules/users/roles/types in Linux namespace; not policy selected or loaded",
+  "results": [
+    {
+      "name": "linux",
+      "input_sha256": "61862f73f13738ee5f27f0d0b09912d8d87498d4cdb3ca01236aa486cd8b85f2",
+      "output_cil_sha256": "9e1a044a6c8b9aa4fbcda43da848ea225d968333e75abbfef68f27dde4de2e39",
+      "top_level_statements": 321909,
+      "hoisted_statements": 1299,
+      "retained_statements": 320610,
+      "argv": [
+        "prlimit",
+        "--as=2147483648",
+        "--cpu=60",
+        "--",
+        "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/source/secilc/secilc",
+        "-m",
+        "-M",
+        "true",
+        "-G",
+        "-c",
+        "30",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-linux-namespace-1/linux.bin",
+        "-f",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-linux-namespace-1/linux.fc",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-linux-namespace-1/linux.cil"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_seconds": 40.23785536599462
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+- [Namespace Linux y conflicto de SID](../reports/android16-linux-policy-namespace/validation.json): compilación0 y cinco consultas seleccionadas conservadas; composición con nombres Android originales rechazada por contextos SID múltiples (27 diferencias literales). Sin política elegida/cargada ni servicios/APK. [Checkpoint actual](../reports/android16-linux-policy-namespace/checkpoint.json).
+
 - [Control experimental de namespaces](../reports/android16-policy-namespace-controls/validation.json): AOSP con MLS global compila; nueve consultas renombradas coinciden, pero el nombre original service_manager falla. Sin política integrada ni aceptación de servicios/APK. [Checkpoint actual](../reports/android16-policy-namespace-controls/checkpoint.json).
 
 - [Decisiones offline con herramientas originales](../reports/android16-policy-semantic-baselines/validation.json): 10 inventarios y 14 accesos (6 permitidos, 3 denegados, 5 errores); límites de sepolicy-check/seamendc documentados. Sin enforcement ni APK. [Checkpoint actual](../reports/android16-policy-semantic-baselines/checkpoint.json).
