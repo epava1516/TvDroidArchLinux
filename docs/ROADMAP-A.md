@@ -29,6 +29,14 @@ El hito auxiliar en curso quedó guardado aparte en311c25f. No ampliar herramien
 ni fixtures como prioridad: cada experimento debe desbloquear una fila de esta
 secuencia y conducir a integración o a una decisión explícita.
 
+[Candidato de entrada](../reports/android16-mc1-exec-handoff/findings.json): payload
+RO y frontera Linux/glibc→Bionic por procesos preparados; diagnóstico directo0,
+MAC guard78 sin política. No basta para MC1. Siguiente cambio concreto: integrar
+parser/Service::Start/oneshot cliente/reaper originales en el coordinador, no
+ampliar herramientas. Después congelar receta y hashes, clasificar lo no probado
+como hipótesis del ensayo y solicitar aprobación específica de carga permisiva.
+Snapshot/consola confirmadas; restauración no ensayada, enforcing sin autorización.
+
 **Bloqueo inmediato demostrado:** el servicio de propiedades original, con
 SELinux genuino visible y sin política, rechaza `property_service` desconocida,
 no publica su versión/readiness y sale1 sin ACK. El gestor por separado alcanza

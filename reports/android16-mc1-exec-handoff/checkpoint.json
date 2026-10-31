@@ -1,0 +1,228 @@
+{
+  "branch": "main",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "objective": "Complete unmodified APK on Linux Rust/Smithay with coherent original AOSP16QPR2/Bionic, no Waydroid or complete Android boot; broad compatibility, isolation, stability, lightness, installation/update.",
+  "canonical_entry": "docs/ESTADO.md",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "constraints": [
+    "User reaffirmed no reboot/security state changes based on historical authorization",
+    "No policy load, relabel, setenforce or host setup modification in this hito",
+    "A16-QPR2-1; full unmodified APK on Linux Rust/Smithay, no Waydroid/full Android; broad compatibility/isolation/stability/lightness/install/update",
+    "ARM/external services/DRM separate; own fixtures/probes not compatibility acceptance"
+  ],
+  "observed_at": "2026-10-31T14:31:38.778178+00:00",
+  "base_commit": "54f94529383249df3ed0c744658a11b390485d3d",
+  "previous_checkpoint": "reports/android16-markor-critical-path/checkpoint.json",
+  "relation_to_local_origin_tracking": "0\t0",
+  "terminal_exec_handles": [
+    41594,
+    14370,
+    21092,
+    38704,
+    17184,
+    39122,
+    55306,
+    5636,
+    63794,
+    48320,
+    99702,
+    66664,
+    39314,
+    22444
+  ],
+  "active_exec_handles": [],
+  "process_scope": "Listed build/query jobs terminal. Three REA captures terminal; owned groups cleanup within reported limits. Owned payload/GSI loop lookup empty and host selinuxfs lookup empty after final capture; no persistent target. Preboot handles historical.",
+  "tests": [
+    "Original Linux libselinux3.11 + same-version headers built without API/source patches. AOSP3.7 host full build fails in stale DB backend; preserve it, use proper upstream Linux component rather than patch individual backends. Android/Bionic library remains original and separate.",
+    "Helper regular exec avoids non-async-safe library calls in Rust pre_exec. Fixed coordinator path, expected actor, kernel classes/mode, root-owned single-link0700 RO inode and original init_exec label checked before original setexeccon_raw/fexecve. No assignment attempted in unloaded policy negative tests.",
+    "Worker normal mode now requires real u:r:init:s0 and classes, enforcing; explicit MAC integration diagnostic also permits permissive but still requires actual identity/classes. Legacy diagnostic remains explicitly non-MAC.",
+    "32MiB ext4 payload,10 entries: original Linux loader/libs under /archtv/lib, Rust supervisor/helper under /archtv/bin, original-linked Bionic coordinator with Android PT_INTERP. Offline UID/GID/mode/xattr bytes, dumped content hashes and e2fsck0 checked. Not a mounted/assigned context proof.",
+    "Actual REA three runs: first loader lacked execute bit (EACCES), second exposed exact-path Android namespace/ICU failure. Both retained. Corrected loader mode and mapped only trusted /archtv/bin to original system namespace, preserving original namespace bodies/APEX links. Linux config metadata private, not host /etc or fake kernel state.",
+    "Final REA: normal helper78, integration helper78 at absent policy classes, worker MAC guard78/no startup. Diagnostic Rust direct-child Bionic startup\u2192observe\u2192STOP\u2192actual child0. Original GSI mounted RO, prepared APEX tree reused RO; diagnostic Android libselinux ignores RO selinuxfs by original design, not authorization success.",
+    "Original policy three variants compile0 with neverallow enabled. Final selected queries 44 have expected0/7 outcomes, no errors. Read-only selinuxfs access for original host library added; write/admin and redundant check_context remain denied. No policy loaded; kernel enforcing0/policyload0."
+  ],
+  "next": "Wire existing original Service parser/Start/oneshot client/reaper into the MAC-only MC1 coordinator, with truthful failures and cleanup. Freeze combined artifacts, operations, stop/recovery proposal, then ask specific permissive load approval if no demonstrated technical gap remains; enforcing separately.",
+  "evidence": {
+    "reports/android16-mc1-exec-handoff/build-argv.json": "17ac673ca1f6ce40daefbbdf8e90dabaf5e83d6bd6384897b1c0b39af223986c",
+    "reports/android16-mc1-exec-handoff/build-payload-before-loaderfix.py": "6dddc56f0f4cbe0cacf73a71a9eee41260e3bcdbe5a4456f47ac3557bb907d1a",
+    "reports/android16-mc1-exec-handoff/build-payload.py": "881d7cc519ab633fe09224e9f7d92dff30bec931059a430de2245070d1efb024",
+    "reports/android16-mc1-exec-handoff/build-result.json": "671016f33d7c7f368ad3f973ad2fc0bc0ab1c854655cdaa882a7450c2dd1cc5d",
+    "reports/android16-mc1-exec-handoff/build.log": "52ed4af70db44fc24696a74e223b0167fd6ed2a5fac66702f7050eea2f9440c0",
+    "reports/android16-mc1-exec-handoff/checkpoint-in-progress.json": "1c735ce6d9c3ca4aca36c3d35ba5f391852b1c9181a7e2ac9dd51d6cb097cc69",
+    "reports/android16-mc1-exec-handoff/external-log-index.json": "ae2e23c8efdabc4a9a339912d2325cb6cdb5199242f2f6895faeb6ee596bd055",
+    "reports/android16-mc1-exec-handoff/findings.json": "3198d332f2ce178eb5af4c4e59723e81ad11ddbd08c661705246b6b5de445642",
+    "reports/android16-mc1-exec-handoff/helper-build-final.json": "e9e48cccbad9a5d107e5f49b9dfa4fff3297cb93c786bdc4e031f144553a8381",
+    "reports/android16-mc1-exec-handoff/helper-build.json": "e9e48cccbad9a5d107e5f49b9dfa4fff3297cb93c786bdc4e031f144553a8381",
+    "reports/android16-mc1-exec-handoff/helper-image-build.json": "80300f8d809febb9246842a79f9da2db561b6a9e7e237501d90d2a8c3d7e0df5",
+    "reports/android16-mc1-exec-handoff/linkerconfig-adapter.json": "26bfbc7a9f664a35de82a358bcf68861c69e1426caa804ef834af835236d9721",
+    "reports/android16-mc1-exec-handoff/payload-before-loaderfix.json": "46eab2e7ef2da875161cdcb21d724cc46cc5d68782b593e6a262dc76cc87b03e",
+    "reports/android16-mc1-exec-handoff/payload-build-final.log": "98a7ecc30681e54181b49e617ef83bdaac241061c90f8c58478bdf5ab38babe3",
+    "reports/android16-mc1-exec-handoff/payload-build.log": "7dd0dba79de9e02dbabc65a90bc0be888cf58b60c6336d3b4d0daecb6f111353",
+    "reports/android16-mc1-exec-handoff/payload-execution-final.py": "93f01d8653fca834d2e4080e886769ff24ecefcb7ea85de46d6bfdd6c043deeb",
+    "reports/android16-mc1-exec-handoff/payload-execution-platform.py": "c805f9fe9fa30a994729734a96ca8d7dc7611943d5b54d15f38403e374ceeedd",
+    "reports/android16-mc1-exec-handoff/payload-execution.py": "df064f29d8e937b643c9c9eb34154c60b2eb0c4fc01220a5a929b92a016a0661",
+    "reports/android16-mc1-exec-handoff/payload-final-mcp.json": "a049823189fc6ca0f4a223fe825828503bf35260a20c1e0ede9bf3c4f7bb88c7",
+    "reports/android16-mc1-exec-handoff/payload-initial-mcp.json": "bb60cc6ebbf587542046f4476b699009d95e9f955c2897c1f82529d382da4e3d",
+    "reports/android16-mc1-exec-handoff/payload-namespace-initial-mcp.json": "c94b704e64c3a4df928e9e32a9aef61e097623ac54ec2162ed73033194f88490",
+    "reports/android16-mc1-exec-handoff/payload.json": "ea6edf8c7a81a16919ecd4a93f1f522f9bbcc4143a656aeea3bd92e734d33aba",
+    "reports/android16-mc1-exec-handoff/policy-1-artifact.json": "486efbfdbaf6490830cf70fb594a970c8f1899c50abcd55e6ffef77737432b33",
+    "reports/android16-mc1-exec-handoff/policy-1-compiler.json": "39faf92d9a2cbcfe4cc1b88a1903e6a7a1193f989c7d86bdc2cb7582f158ab6b",
+    "reports/android16-mc1-exec-handoff/policy-2-artifact.json": "23a86d9a436273b06f5f1abc34d2d59adc14af7dd25f6fbed71f2fcdceb6d3ff",
+    "reports/android16-mc1-exec-handoff/policy-2-compiler.json": "f1860607b4ad9239265bdbec3a5b8c01ffc9d93b119b1b19fe4fd27e7f31502d",
+    "reports/android16-mc1-exec-handoff/policy-3-artifact.json": "2e7b415158726a2fe5b60596d06081ca1505adeb1c635f9116c88145b9ee379a",
+    "reports/android16-mc1-exec-handoff/policy-3-compiler.json": "cab36c04f115797a30e39b0af732e3bdced660d247de0cd683e4bd1f10abc6ab",
+    "reports/android16-mc1-exec-handoff/policy-build-admission.log": "e094dbdb9a9bb1bbb3620810684a341591422fb41f610fcdc160994cd9d79892",
+    "reports/android16-mc1-exec-handoff/policy-build-final.log": "f562f58e28d3ed46013dec225f85e39b6fd1244d4ab84d847f67cbacfdfb1715",
+    "reports/android16-mc1-exec-handoff/policy-build.log": "e1c9098e5ab2055f7b67d61fd9aac7b999d3a96ffe1358d2633ecfe3fdf81b3e",
+    "reports/android16-mc1-exec-handoff/profile.json": "311d888282d064c570efed48abc82997b148656da29f173cff4358d1050d8a08",
+    "reports/android16-mc1-exec-handoff/queries-before-selinuxfs.json": "cdfc5c7b323039498dea37eb5c6a998fd34b30f3c27033202adf09c6de3a8af7",
+    "reports/android16-mc1-exec-handoff/queries.json": "a28b0ac2e17f3d9ff1853ccf9ae0bb0ccd06c9e999853d9070de541de2bef47d",
+    "reports/android16-mc1-exec-handoff/query-before-selinuxfs.py": "6f49295f7e61c2451efc0cb003dfe87baa69052c579dd0975b62df76c3cc61f1",
+    "reports/android16-mc1-exec-handoff/query-final.log": "95ec53c85721e11867ff53a4eb325d2d5a51f0a66da582555891491ad8879976",
+    "reports/android16-mc1-exec-handoff/query-policy.py": "08ba305a0399b25e6c5b7c95a1a3aa6b1ee50f70db805255e35da4f52f2f51a4",
+    "reports/android16-mc1-exec-handoff/query.log": "15d79c7655f2e9876428a0fbedc9dfb5a78b4a2344be20ac637a27471c91ea6b",
+    "reports/android16-mc1-exec-handoff/rust-image-build-final.log": "81eaa4342decaf716aad37f08dc981612ecf6a18fa3960d1e54a87c680fc0607",
+    "reports/android16-mc1-exec-handoff/rust-image-build.log": "aecca3a4628b14755c97804f9cdd1823bf1255834278cfee76c22aeb41a4882b",
+    "reports/android16-mc1-exec-handoff/upstream-build-argv.json": "3e72515d9c2a8f84dab8c3b04a095812178f30ce3497c0f8ea5d7ba5164bd590",
+    "reports/android16-mc1-exec-handoff/upstream-build-result.json": "98d4d39bf45aab88f47ef3f1ef628e592f855f1fa30c5bef7c8a7fccdedf2c55",
+    "reports/android16-mc1-exec-handoff/upstream-build.log": "5f9cd07c58d3f7b97e6625bb8b2346781192920ba0a71ef68d2249f0ba111e47",
+    "reports/android16-mc1-exec-handoff/upstream-final-build-argv.json": "ea56e2fd18f7d551edc3aa7fcb97e851f596371ad457fda04e79f6aabbe48782",
+    "reports/android16-mc1-exec-handoff/upstream-final-build-result.json": "6e66421fc62127719243188c463c77564b5111ff9e49aafc39ad516f67c78012",
+    "reports/android16-mc1-exec-handoff/worker-build-final.json": "8e6e90f89937cd2d9dbb49cc6aebc0a35a52b6ebec5e1bbecbf629a5a79334f8",
+    "reports/android16-mc1-exec-handoff/worker-build.json": "c21b82df50547347195c1d95e50648d26f875a0de9e4249851697500a44dbe55"
+  },
+  "local_artifact": {
+    "scope": "Final original binary export, not live policy",
+    "argv": [
+      "/home/tv/repositorio-principal/dist/aosp16/checkpolicy-host-2/source/checkpolicy",
+      "-M",
+      "-b",
+      "-C",
+      "-o",
+      "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-4/export.cil",
+      "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-4/policy.bin"
+    ],
+    "exit": 0,
+    "path": "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-4/export.cil",
+    "sha256": "33564688f0304edf2c7ea64b60efee8a0e90943ffbb06d426e38158725146a0e",
+    "typebounds": [],
+    "policycaps": [
+      "(policycap cgroup_seclabel)",
+      "(policycap extended_socket_class)",
+      "(policycap functionfs_seclabel)",
+      "(policycap genfs_seclabel_symlinks)",
+      "(policycap ioctl_skip_cloexec)",
+      "(policycap network_peer_controls)",
+      "(policycap nnp_nosuid_transition)",
+      "(policycap open_perms)",
+      "(policycap userspace_initial_context)"
+    ],
+    "initial_sid_contexts": [
+      "(sidcontext kernel (linux.system_u linux.system_r linux.kernel_t ((s0) (s0))))",
+      "(sidcontext init (linux.system_u linux.system_r linux.init_t ((s0) (s0))))"
+    ]
+  },
+  "pending_current": [
+    "runtime/aosp/native/linux-exec-context.c",
+    "runtime/aosp/native/linux-property-worker.cpp",
+    "runtime/aosp/android16-qpr2/policy/experiments/exec-context-helper.cil",
+    "reports/android16-mc1-exec-handoff"
+  ],
+  "verified_2f31032_evidence": [
+    {
+      "path": "reports/android16-selinux-permissive-boot/private-observation.json",
+      "sha256": "e1321c7dbbf0360a9f30517c83a51838968625cff348fbc8239bd12e1c7d4652"
+    },
+    {
+      "path": "reports/android16-selinux-permissive-boot/checker-tests.log",
+      "sha256": "e7868349f80d90e9674de9c2df12e50a116d24331e4cdf921e14d11d317a3981"
+    },
+    {
+      "path": "reports/android16-selinux-permissive-boot/findings.json",
+      "sha256": "bc2945dd047a508e501c6bbd7a469e00e26cebba469988ca21c9d87b95c925b5"
+    },
+    {
+      "path": "reports/android16-selinux-permissive-boot/observe-private.py",
+      "sha256": "7dae2f7ab8601471cbc5f41263f6958a6db41e9cac8085b62b5eed238b63dda9"
+    },
+    {
+      "path": "reports/android16-selinux-permissive-boot/binder-sid-launcher.py",
+      "sha256": "367a524fdf05c4f6086023180c73d647daa5feea198b2e0af91a162a9def1685"
+    },
+    {
+      "path": "reports/android16-selinux-permissive-boot/binder-sid-mcp.json",
+      "sha256": "417c37f75ab7a11bb0ab244fa4a5ecbb5e53402b79016a35cad244ff30ee845d"
+    },
+    {
+      "path": "reports/android16-selinux-permissive-boot/binder-plain-launcher.py",
+      "sha256": "a50beb6dbd2a888fe117ab41cddde385c9ae8aef40419928ee24fc8c60bde1a4"
+    },
+    {
+      "path": "reports/android16-selinux-permissive-boot/checker-private-observation.json",
+      "sha256": "a2a702aecd45252138aa08fd02d2e4751265773749c5e2f2fbd259c0102f4849"
+    },
+    {
+      "path": "reports/android16-selinux-permissive-boot/binder-plain-mcp.json",
+      "sha256": "115c45e708823bb05f2bdc6e4ac6978cd91d5db2edd3bc6fe5292851f768e3a4"
+    },
+    {
+      "path": "reports/android16-selinux-permissive-boot/observe-initial.py",
+      "sha256": "d40635350a8caffe8aa90d4f60d5f4d215191c916956e376d4bf79c943ffa8dc"
+    }
+  ],
+  "host_current": {
+    "observed_at": "2026-10-31T13:36:43.300484+00:00",
+    "scope": "Read-only private mount of current kernel selinuxfs; no load/enforce/relabel operation",
+    "kernel": "6.18.59-1-lts",
+    "active_lsm": {
+      "state": "observed",
+      "value": "capability,landlock,lockdown,yama,selinux,bpf"
+    },
+    "enforce": {
+      "state": "observed",
+      "value": "0"
+    },
+    "policyvers": {
+      "state": "observed",
+      "value": "35"
+    },
+    "current_context": {
+      "state": "observed",
+      "value": "kernel\u0000"
+    },
+    "class_directory_exists": true,
+    "status": {
+      "state": "observed",
+      "version": 1,
+      "sequence": 0,
+      "enforcing": 0,
+      "policyload": 0,
+      "deny_unknown": 1
+    },
+    "private_mounts": "{\n   \"filesystems\": [\n      {\n         \"target\": \"/home/tv/repositorio-principal/dist/aosp16/markor-priority-host-observation-2/sys/fs/selinux\",\n         \"source\": \"selinuxfs\",\n         \"fstype\": \"selinuxfs\",\n         \"options\": \"ro,relatime\"\n      }\n   ]\n}\n"
+  },
+  "graphify": {
+    "worktree": "/home/tv/.cache/archtv/worktrees/mc1-handoff",
+    "mode": "isolated staged AST",
+    "terminal_handle": 10901,
+    "nodes": 2920,
+    "edges": 5575,
+    "communities": 239
+  },
+  "recovery_user_confirmation": {
+    "snapshot": "User reports VM snapshot created this turn; name/time and restore test not independently verified",
+    "external_console": "User confirms access via hypervisor if Codex/network fails",
+    "scope": "Recovery information only; no policy/relabel/enforcing/reboot authorization"
+  }
+}

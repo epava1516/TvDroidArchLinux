@@ -1,0 +1,86 @@
+{
+  "observed_at": "2026-10-31T14:31:38.778178+00:00",
+  "base_commit": "54f94529383249df3ed0c744658a11b390485d3d",
+  "scope": "Concrete process handoff/payload preparation for MC1, not functional MAC or service/APK acceptance.",
+  "recovery": {
+    "snapshot": "User reports created",
+    "external_console": "User confirms accessible",
+    "restore_rehearsed": "unknown/not demonstrated",
+    "security_authorization": "No load/enforce/relabel/reboot approval supplied"
+  },
+  "sources": [
+    {
+      "path": "/home/tv/.cache/archtv/linux-libselinux-3.11/libselinux-3.11.tar.gz",
+      "url": "https://github.com/SELinuxProject/selinux/releases/download/3.11/libselinux-3.11.tar.gz",
+      "sha256": "73d419c6e20e874adaa4019372cbd097eecf4d276e13f27ec5e67d35c0bd203c",
+      "release_api_digest": "sha256:73d419c6e20e874adaa4019372cbd097eecf4d276e13f27ec5e67d35c0bd203c",
+      "signature_verified_locally": false
+    },
+    {
+      "path": "/home/tv/.cache/archtv/linux-libselinux-3.11/libsepol-3.11.tar.gz",
+      "url": "https://github.com/SELinuxProject/selinux/releases/download/3.11/libsepol-3.11.tar.gz",
+      "sha256": "79f3d2c88f44b7eb5cf54d9792e03232297e17f97a179163f2750099a00f164d",
+      "release_api_digest": "sha256:79f3d2c88f44b7eb5cf54d9792e03232297e17f97a179163f2750099a00f164d",
+      "signature_verified_locally": false
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/linux-selinux-handoff-2/payload-2.ext4",
+      "sha256": "de4f246510def85a8c829967dfd33cea207fb328265662edd257ce9cf57ad566",
+      "bytes": 33554432
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/exec-context-policy-3/policy.bin",
+      "sha256": "bd20eabb5b748b9304347d53dae1862d8cd938ee7a944911545e777870139211",
+      "bytes": 3458444
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/linux-selinux-handoff-2/linux-exec-context-image",
+      "sha256": "a02d1a8aa5c78b2229c6daef6e62181b08ee252f0d3bf41c407de8a6759f4344",
+      "bytes": 82400
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/linux-selinux-handoff-2/property-coordinator",
+      "sha256": "7470b5505dbe4c46fc2b658b729ffad5c89ea122736e64efad3c53109b1c4ef9",
+      "bytes": 1114400
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/linux-selinux-handoff-2/cargo/debug/examples/native_supervisor",
+      "sha256": "ef8fabcff290468b34b141add083ee943b59dceccd424b73b15e2cc68c13ef34",
+      "bytes": 688560
+    }
+  ],
+  "default_profile_unchanged_sha256": "22178f2ec8d9bb7d84bf834f9a41fbd4e162fd63edaf806a595e6803d3dfb0ee",
+  "results": [
+    "Original Linux libselinux3.11 + same-version headers built without API/source patches. AOSP3.7 host full build fails in stale DB backend; preserve it, use proper upstream Linux component rather than patch individual backends. Android/Bionic library remains original and separate.",
+    "Helper regular exec avoids non-async-safe library calls in Rust pre_exec. Fixed coordinator path, expected actor, kernel classes/mode, root-owned single-link0700 RO inode and original init_exec label checked before original setexeccon_raw/fexecve. No assignment attempted in unloaded policy negative tests.",
+    "Worker normal mode now requires real u:r:init:s0 and classes, enforcing; explicit MAC integration diagnostic also permits permissive but still requires actual identity/classes. Legacy diagnostic remains explicitly non-MAC.",
+    "32MiB ext4 payload,10 entries: original Linux loader/libs under /archtv/lib, Rust supervisor/helper under /archtv/bin, original-linked Bionic coordinator with Android PT_INTERP. Offline UID/GID/mode/xattr bytes, dumped content hashes and e2fsck0 checked. Not a mounted/assigned context proof.",
+    "Actual REA three runs: first loader lacked execute bit (EACCES), second exposed exact-path Android namespace/ICU failure. Both retained. Corrected loader mode and mapped only trusted /archtv/bin to original system namespace, preserving original namespace bodies/APEX links. Linux config metadata private, not host /etc or fake kernel state.",
+    "Final REA: normal helper78, integration helper78 at absent policy classes, worker MAC guard78/no startup. Diagnostic Rust direct-child Bionic startup\u2192observe\u2192STOP\u2192actual child0. Original GSI mounted RO, prepared APEX tree reused RO; diagnostic Android libselinux ignores RO selinuxfs by original design, not authorization success.",
+    "Original policy three variants compile0 with neverallow enabled. Final selected queries 44 have expected0/7 outcomes, no errors. Read-only selinuxfs access for original host library added; write/admin and redundant check_context remain denied. No policy loaded; kernel enforcing0/policyload0."
+  ],
+  "remaining_classified": [
+    {
+      "kind": "demonstrated technical gap",
+      "item": "Current worker only starts properties; original Service::Start manager and original client full MC1 runner not yet wired. Must implement this before proposing functional test."
+    },
+    {
+      "kind": "recovery/authorization",
+      "item": "Snapshot+console confirmed by user, restore rehearsal unproved; first global policy load and enforcing need separate explicit approvals. None granted."
+    },
+    {
+      "kind": "untested hypothesis",
+      "item": "Actual loaded-policy first-SID\u2192actor\u2192init and fexec path, Binder/property object labels, process groups/profiles/NNP/caps and original manager/client behavior. Test in frozen MC1 integration, not turn each into auxiliary platform."
+    }
+  ],
+  "limitations": [
+    "Source/executable/file metadata samples do not prove atomic kernel image binding. RO mount alone does not prove signed source ownership or protection against writable aliases; install/admission still required.",
+    "Image byte-for-byte reproducibility not proved (UUID/timestamps). Content hashes and metadata recorded.",
+    "Prepared APEX extraction reused, original mount/metadata/activation semantics not all verified. No full Android boot.",
+    "No positive loaded-policy handoff or original service registration. Native diagnostic is not policy bypass available in normal mode.",
+    "No Markor stages accepted; ARM/GMS/DRM remain separate."
+  ],
+  "next": "Wire existing original Service parser/Start/oneshot client/reaper into the MAC-only MC1 coordinator, with truthful failures and cleanup. Freeze combined artifacts, operations, stop/recovery proposal, then ask specific permissive load approval if no demonstrated technical gap remains; enforcing separately."
+}

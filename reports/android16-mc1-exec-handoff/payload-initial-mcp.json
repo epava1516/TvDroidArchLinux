@@ -1,0 +1,111 @@
+{
+  "evidence_id": "ev_380195506fa6275540e9ff1141f768c9dbf38b6d5ff0a08f2bb6c83b56247122",
+  "authority": "controlled-replay",
+  "confidence": "observed",
+  "exit": {
+    "code": 1,
+    "signal": 0,
+    "reason": "exited"
+  },
+  "output": "Traceback (most recent call last):\n  File \"/home/tv/repositorio-principal/reports/android16-mc1-exec-handoff/payload-execution.py\", line 26, in <module>\n  File \"/usr/lib/python3.14/subprocess.py\", line 555, in run\n  File \"/usr/lib/python3.14/subprocess.py\", line 1039, in __init__\n  File \"/usr/lib/python3.14/subprocess.py\", line 1875, in _execute_child\n  File \"/usr/lib/python3.14/subprocess.py\", line 1819, in _posix_spawn\nPermissionError: [Errno 13] Permission denied: '/archtv/bin/linux-exec-context'\n",
+  "cleanup": {
+    "owned_process_group": "verified",
+    "temporary_root": "removed",
+    "unverified_processes": [
+      {
+        "pid": 14780,
+        "reason": "EACCES: permission denied, open '/proc/14780/environ'"
+      },
+      {
+        "pid": 14781,
+        "reason": "EACCES: permission denied, open '/proc/14781/environ'"
+      },
+      {
+        "pid": 14782,
+        "reason": "EACCES: permission denied, open '/proc/14782/environ'"
+      },
+      {
+        "pid": 14790,
+        "reason": "EACCES: permission denied, open '/proc/14790/environ'"
+      },
+      {
+        "pid": 14791,
+        "reason": "EACCES: permission denied, open '/proc/14791/environ'"
+      },
+      {
+        "pid": 14792,
+        "reason": "EACCES: permission denied, open '/proc/14792/environ'"
+      },
+      {
+        "pid": 14793,
+        "reason": "EACCES: permission denied, open '/proc/14793/environ'"
+      }
+    ]
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "The executable digest is a prelaunch file sample; matching path metadata immediately after spawn does not prove an atomic operating-system image binding.",
+    "Process trees are sampled and may omit short-lived descendants.",
+    "Process-tree sampling ended with an incomplete observation.",
+    "Filesystem observations are before/after snapshots, not syscall traces.",
+    "Inherited host environment variables are not recorded and may affect results.",
+    "No filesystem observation paths were selected; filesystem effects remain unknown.",
+    "Process sampling has incomplete observations: /proc/14772/environ: EACCES: Error: EACCES: permission denied, open '/proc/14772/environ'. See truncation_details.process."
+  ],
+  "residual_unknowns": [
+    {
+      "scope": "process",
+      "reason": "Process trees are sampled and may omit short-lived descendants."
+    },
+    {
+      "scope": "process",
+      "reason": "The executable digest is a prelaunch file sample; operating-system image binding is not atomically observed."
+    },
+    {
+      "scope": "environment",
+      "reason": "Inherited host environment variables are not recorded."
+    },
+    {
+      "scope": "network",
+      "reason": "Network activity is not observed by this capture."
+    },
+    {
+      "scope": "filesystem",
+      "reason": "No filesystem observation paths were selected; filesystem effects remain unknown."
+    },
+    {
+      "scope": "process",
+      "reason": "Process sampling has incomplete observations: /proc/14772/environ: EACCES: Error: EACCES: permission denied, open '/proc/14772/environ'. See truncation_details.process."
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 14780 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/14780/environ'"
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 14781 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/14781/environ'"
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 14782 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/14782/environ'"
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 14790 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/14790/environ'"
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 14791 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/14791/environ'"
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 14792 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/14792/environ'"
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 14793 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/14793/environ'"
+    }
+  ],
+  "truncated": true,
+  "note": "Failed payload execution, no runtime success. Derived projection; loop cleanup checked separately."
+}

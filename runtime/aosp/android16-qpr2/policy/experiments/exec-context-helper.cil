@@ -1,0 +1,30 @@
+; Separate immutable helper entry, executable only inside the Rust actor domain.
+; Do not permit the initial creator to skip the Rust parent/channel via this file.
+(type archtv_exec_context_exec)
+(roletype linux.object_r archtv_exec_context_exec)
+(allow archtv_launcher archtv_exec_context_exec (file (read getattr open map execute execute_no_trans)))
+(allow archtv_exec_context_exec linux.fs_t (filesystem (associate)))
+(typeattribute archtv_not_exec_context_actor)
+(typeattributeset archtv_not_exec_context_actor (not archtv_launcher))
+(neverallow archtv_not_exec_context_actor archtv_exec_context_exec (file (execute execute_no_trans)))
+(neverallow archtv_all_types archtv_exec_context_exec (file (entrypoint create write append setattr relabelto relabelfrom)))
+; Immutable payload traversal, separate from the host or APK data directories.
+(type archtv_bundle_dir)
+(roletype linux.object_r archtv_bundle_dir)
+(allow archtv_bundle_dir linux.fs_t (filesystem (associate)))
+(allow linux.init_t archtv_bundle_dir (dir (getattr search)))
+(allow archtv_launcher archtv_bundle_dir (dir (getattr search)))
+(allow init archtv_bundle_dir (dir (getattr search)))
+(typeattribute archtv_not_bundle_traverser)
+(typeattributeset archtv_not_bundle_traverser (not (linux.init_t archtv_launcher init)))
+(neverallow archtv_not_bundle_traverser archtv_bundle_dir (dir (search)))
+(neverallow archtv_all_types archtv_bundle_dir (dir (create write add_name remove_name rmdir reparent setattr relabelto relabelfrom)))
+; Original Android root in the private process filesystem view; not host root.
+(allow linux.init_t rootfs (dir (getattr search)))
+(allow archtv_launcher rootfs (dir (getattr search)))
+; Original host libselinux reads genuine kernel mode/class metadata. No writes
+; to selinuxfs and no policy-management operations are needed by this actor.
+(allow archtv_launcher linux.security_t (dir (read open getattr search)))
+(allow archtv_launcher linux.security_t (file (read open getattr)))
+(neverallow archtv_launcher linux.security_t (file (write append)))
+(neverallow archtv_launcher linux.security_t (security (load_policy setenforce setbool setsecparam setcheckreqprot)))

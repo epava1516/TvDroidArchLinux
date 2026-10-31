@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-markor-critical-path/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-mc1-exec-handoff/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -16,6 +16,18 @@ los resúmenes; no se ha completado compatibilidad amplia.
 Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCCION-ARM.md).
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
+
+## Candidato MC1 · estado de ejecución
+
+[Checkpoint](../reports/android16-mc1-exec-handoff/checkpoint.json) y
+[artefactos/resultados](../reports/android16-mc1-exec-handoff/findings.json).
+Payload RO con supervisor Rust, helper Linux y coordinador Bionic: ejecución
+real de diagnóstico por ruta definitiva y cierre directo0. No es MAC: los modos
+MAC rechazan política/identidad ausentes con78 y no anuncian arranque. Política
+experimental con aserciones activas/44 consultas offline; ninguna carga realizada.
+La carencia técnica siguiente es cablear Service::Start y cliente originales en
+el coordinador; resolverla antes de pedir carga. Snapshot y consola confirmadas
+por el usuario, restauración no ensayada; tampoco autorización de carga/enforcing.
 
 ## Prioridad vigente · recorrido Markor
 

@@ -1,0 +1,10 @@
+{
+  "scope": "Only trusted platform executable directory classification added; original namespace bodies and APEX search/link lists byte-unchanged. No Linux library added to Android paths.",
+  "original": "/home/tv/repositorio-principal/dist/aosp16/linkerconfig-2/generated",
+  "original_main_sha256": "cb2d787018f3c4c2c8d500c8a12cc31e49c132c5c724c73a39fa7a8e603beaf7",
+  "adapter": "/home/tv/repositorio-principal/runtime/aosp/android16-qpr2/linkerconfig/linux-platform-dirs.conf",
+  "adapter_sha256": "e2d41c9660afe957d9e063af0e186feb0244e2118797b8e1a3ea93858a709826",
+  "output": "/home/tv/repositorio-principal/dist/aosp16/linux-selinux-handoff-2/linkerconfig-mc1",
+  "output_main_sha256": "6c89f0932e64daea515a6e121e0625efb49744b3f8b678c5be6a9000405d3155",
+  "other_files_identical": true
+}

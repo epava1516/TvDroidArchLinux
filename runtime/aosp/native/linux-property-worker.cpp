@@ -40,7 +40,8 @@ static bool close_actions(Epoll& epoll) {
 }
 int main(int argc,char** argv) {
     android::base::InitLogging(argv,android::base::StderrLogger);
-    bool diagnostic=argc==2 && std::strcmp(argv[1],"--diagnostic")==0;
+    bool mac_integration=argc==2 && std::strcmp(argv[1],"--mac-integration")==0;
+    bool diagnostic=mac_integration || (argc==2 && std::strcmp(argv[1],"--diagnostic")==0);
     if(argc!=1 && !diagnostic)return 64;
     const char* inherited=getenv("ARCHTV_NATIVE_CONTROL_FD");
     if(!inherited || !*inherited)return 64;
@@ -52,11 +53,16 @@ int main(int argc,char** argv) {
        getsockopt(control.get(),SOL_SOCKET,SO_PEERCRED,&peer,&peer_size)!=0 || peer.uid!=getuid())return 77;
     int flags=fcntl(control.get(),F_GETFL);
     if(flags<0 || fcntl(control.get(),F_SETFL,flags|O_NONBLOCK)<0 || fcntl(control.get(),F_SETFD,FD_CLOEXEC)<0)return 74;
-    if(!diagnostic) {
+    if(!diagnostic || mac_integration) {
         char* context=nullptr;
-        bool valid=is_selinux_enabled()>0 && security_getenforce()==1 && getcon(&context)==0;
+        int enforcing=security_getenforce();
+        bool valid=is_selinux_enabled()==1 && enforcing>=0 &&
+            (enforcing==1 || mac_integration) && getcon(&context)==0 &&
+            context && std::strcmp(context,"u:r:init:s0")==0;
+        for(const char* name: {"process","binder","property_service","service_manager"})
+            valid=valid && string_to_security_class(name)!=0;
         if(context)freecon(context);
-        if(!valid) { std::fprintf(stderr,"PROPERTY_WORKER_REFUSED: active enforcing SELinux/context required; no startup acknowledgment\n");return 78; }
+        if(!valid) { std::fprintf(stderr,"PROPERTY_WORKER_REFUSED: loaded policy classes and u:r:init:s0 required (normal mode also requires enforcing); no startup acknowledgment\n");return 78; }
     }
     if(mkdir("/data/property",0700)!=0 && errno!=EEXIST)return 74;
     struct stat property_dir{};

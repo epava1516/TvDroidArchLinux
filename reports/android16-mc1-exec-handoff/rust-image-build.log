@@ -1,0 +1,8 @@
+   Compiling libc v0.2.191
+error: failed to run custom build command for `libc v0.2.191`
+
+Caused by:
+  could not execute process `/home/tv/repositorio-principal/dist/aosp16/linux-selinux-handoff-2/cargo/debug/build/libc-597a66e42b4791d7/build-script-build` (never executed)
+
+Caused by:
+  No such file or directory (os error 2)

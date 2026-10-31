@@ -1,0 +1,25 @@
+{
+  "argv": [
+    "/usr/bin/cc",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-Wformat=2",
+    "-fstack-protector-strong",
+    "-D_FORTIFY_SOURCE=3",
+    "-I/home/tv/repositorio-principal/dist/aosp16/linux-selinux-handoff-2/libselinux-3.11/include",
+    "/home/tv/repositorio-principal/runtime/aosp/native/linux-exec-context.c",
+    "/home/tv/repositorio-principal/dist/aosp16/linux-selinux-handoff-2/libselinux-3.11/src/libselinux.a",
+    "-lpcre2-8",
+    "-ldl",
+    "-pthread",
+    "-Wl,-z,relro,-z,now",
+    "-o",
+    "/home/tv/repositorio-principal/dist/aosp16/linux-selinux-handoff-2/linux-exec-context"
+  ],
+  "exit": 0,
+  "stdout": "",
+  "stderr": "",
+  "scope": "Original upstream Linux libselinux linked statically into glibc helper. No Bionic library in this process."
+}

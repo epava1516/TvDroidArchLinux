@@ -1,0 +1,11 @@
+[
+  "/usr/bin/make",
+  "-C",
+  "/home/tv/repositorio-principal/dist/aosp16/linux-selinux-handoff-2/libselinux-3.11/src",
+  "-j2",
+  "libselinux.so.1",
+  "libselinux.a",
+  "PCRE_CFLAGS=-DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8",
+  "PCRE_LDLIBS=-lpcre2-8",
+  "PCRE_MODULE=libpcre2-8"
+]

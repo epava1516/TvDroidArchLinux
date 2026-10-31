@@ -1,5 +1,8 @@
 # Índice de evidencias
 
+- [Candidato Linux→Bionic MC1](../reports/android16-mc1-exec-handoff/findings.json): payload32MiB/metadata/contenido/e2fsck; REA guardas78 y diagnóstico directo0. Dos fallos de empaquetado/namespace conservados, adaptación de directorio sin aplanar APEX;44 decisiones offline, aserciones activas. Sin asignación MAC ni registro de gestor. [Checkpoint](../reports/android16-mc1-exec-handoff/checkpoint.json).
+
+
 - [Prioridad Markor y cohorte original](../reports/android16-markor-critical-path/findings.json):2f31032/evidencias contrastadas; host actual permisivo/policyload0. Gestor aislado en epoll/cliente espera propiedad; integración real de propiedades falla por clase MAC desconocida, salida1 sin ACK. Imagen ext4 original conserva labels (metadatos offline). Propuesta MC0/MC1 sin carga/enforce; [checkpoint](../reports/android16-markor-critical-path/checkpoint.json).
 - [Hito de supervisor terminado al cambiar prioridad](../reports/android16-supervisor-observation/findings.json):25 pruebas Linux, clippy/build y MCP diagnóstico0; observación pidfd/canal tras arranque. Sin servicio/APK aceptada; no línea auxiliar prioritaria. [Checkpoint del hito](../reports/android16-supervisor-observation/checkpoint.json).
 

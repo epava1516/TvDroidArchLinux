@@ -67,6 +67,22 @@ readiness; salida1 sin ACK. El gestor aislado alcanza epoll, pero el cliente
 espera la propiedad original. No equivale a gestor disponible.2f31032 sigue
 válido para transporte Binder con SID, no autorización; no repetirlo sin causa.
 
+[Entrada Linux→Bionic preparada](../reports/android16-mc1-exec-handoff/findings.json):
+libselinux Linux original3.11 queda en helper glibc; Android conserva su biblioteca
+Bionic y ABI (getcon exportado, no getcon_raw). Proceso helper separado evita
+llamadas a biblioteca con asignaciones/locks en pre_exec multihilo de Rust.
+Comprueba actor, clases, modo, descriptor RO/root0700/sin enlaces adicionales y
+label init_exec; setter original solicita contexto y fexecve. El coordinador
+contrasta identidad real al entrar; no confundir solicitud/cache con asignación.
+
+Linux tiene intérprete/libs bajo /archtv/lib; Android sigue con /system/apex y su
+enlazador. Una clasificación /archtv/bin→namespace system conserva íntegros enlaces
+APEX, sin copiar ICU ni bibliotecas Linux al espacio Android. Configuración Linux
+de libselinux sólo en raíz privada, no modifica estado del kernel. El diagnóstico
+positivo ignora RO por diseño de autodetección Android y no prueba MAC. Modos MAC
+rechazan sin política/contexto, no sustituyen acceso por éxito. Falta runner MC1
+original completo; antes de carga, fijar sus artefactos y operación exacta.
+
 **Propuesta MC1, todavía no admitida para carga:** conservar la política AOSP y
 Linux fijadas/aserciones y montar imágenes originales GSI/APEX de sólo lectura,
 con sus xattrs/DAC. La GSI retenida contiene etiquetas originales de init,
@@ -183,7 +199,7 @@ privadas. Tras la primera carga no se presupone una operación que restaure
 
 | Fase | Evidencia exigida antes de avanzar | Situación/autorización |
 | --- | --- | --- |
-| S0 · preservar y recuperar | Snapshot/hash de política, labels/xattrs/permisos/configuración y host; entrada original comprobada y acceso de recuperación externo; explicar pérdida de sesión y recuperación desde primera carga | Checkpoints y entrada de recuperación existen; ensayo integral de recuperación pendiente. No reiniciar ahora |
+| S0 · preservar y recuperar | Snapshot/hash de política, labels/xattrs/permisos/configuración y host; entrada original comprobada y acceso de recuperación externo; explicar pérdida de sesión y recuperación desde primera carga | Snapshot y consola externa confirmadas por el usuario; restauración no ensayada. Conservar esa limitación en la propuesta, sin reiniciar ahora |
 | S1 · validar offline | Asserts/neverallow activas, nombres/clases/SID/kernel, MLS/roles, transiciones/AV/condiciones/denegaciones y delta completo del adaptador, fuentes/hashes/licencias | Compilación/consultas seleccionadas parciales; contrato de entrada y mediación sin resolver |
 | S2 · preflight host de lectura | Inventario de sujetos/labels/montajes/capabilities/UID/cgroups, loader/anfitrión compatibles, impacto global y criterios de parada; artefacto instalable reproducible con plan de retirada | Inventario inicial actual y fuentes disponibles; no preparación completa ni autorización de carga |
 | S3 · carga permisiva supervisada | Sólo tras S0–S2 y aprobación explícita del artefacto/operación; status/policy hash, labels/transiciones reales, estabilidad de host/SSH/sesión y servicios, denegaciones registradas, salida de emergencia verificada | No autorizada por el arranque anterior. Aún no realizada; permisos en permisivo no prueban enforcement |

@@ -1,0 +1,71 @@
+{
+  "evidence_id": "ev_b443c5fb8aedfb6b25bc62d1472784fdf22ea122f6daeae30b5ae68afb706cca",
+  "authority": "controlled-replay",
+  "confidence": "observed",
+  "exit": {
+    "code": 1,
+    "signal": 0,
+    "reason": "exited"
+  },
+  "output": "HELPER_NEGATIVE {\"args\": [], \"exit\": 78, \"stdout\": \"\", \"stderr\": \"LINUX_EXEC_CONTEXT_REFUSED stage=SELinux-mode; no child startup\\n\"}\r\nHELPER_NEGATIVE {\"args\": [\"--permissive-integration\"], \"exit\": 78, \"stdout\": \"\", \"stderr\": \"LINUX_EXEC_CONTEXT_REFUSED stage=SELinux-mode; no child startup\\n\"}\r\nWORKER_MAC_NEGATIVE {\"exit\": 1, \"frame\": \"\", \"stdout\": \"\", \"stderr\": \"linker: CANNOT LINK EXECUTABLE \\\"/archtv/bin/property-coordinator\\\": library \\\"libandroidicu.so\\\" not found: needed by /system/lib64/libxml2.so in namespace (default)\\nCANNOT LINK EXECUTABLE \\\"/archtv/bin/property-coordinator\\\": library \\\"libandroidicu.so\\\" not found: needed by /system/lib64/libxml2.so in namespace (default)\\n\"}\r\nTraceback (most recent call last):\r\n  File \"/home/tv/repositorio-principal/reports/android16-mc1-exec-handoff/payload-execution-final.py\", line 31, in <module>\r\nAssertionError\r\n",
+  "cleanup": {
+    "owned_process_group": "verified",
+    "temporary_root": "removed",
+    "unverified_processes": [
+      {
+        "pid": 14982,
+        "reason": "EACCES: permission denied, open '/proc/14982/environ'"
+      },
+      {
+        "pid": 15011,
+        "reason": "EACCES: permission denied, open '/proc/15011/environ'"
+      }
+    ]
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "The executable digest is a prelaunch file sample; matching path metadata immediately after spawn does not prove an atomic operating-system image binding.",
+    "Process trees are sampled and may omit short-lived descendants.",
+    "Process-tree sampling ended with an incomplete observation.",
+    "Filesystem observations are before/after snapshots, not syscall traces.",
+    "Inherited host environment variables are not recorded and may affect results.",
+    "No filesystem observation paths were selected; filesystem effects remain unknown.",
+    "Process sampling has incomplete observations: /proc/14968/environ: EACCES: Error: EACCES: permission denied, open '/proc/14968/environ'. See truncation_details.process."
+  ],
+  "residual_unknowns": [
+    {
+      "scope": "process",
+      "reason": "Process trees are sampled and may omit short-lived descendants."
+    },
+    {
+      "scope": "process",
+      "reason": "The executable digest is a prelaunch file sample; operating-system image binding is not atomically observed."
+    },
+    {
+      "scope": "environment",
+      "reason": "Inherited host environment variables are not recorded."
+    },
+    {
+      "scope": "network",
+      "reason": "Network activity is not observed by this capture."
+    },
+    {
+      "scope": "filesystem",
+      "reason": "No filesystem observation paths were selected; filesystem effects remain unknown."
+    },
+    {
+      "scope": "process",
+      "reason": "Process sampling has incomplete observations: /proc/14968/environ: EACCES: Error: EACCES: permission denied, open '/proc/14968/environ'. See truncation_details.process."
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 14982 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/14982/environ'"
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 15011 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/15011/environ'"
+    }
+  ],
+  "truncated": true,
+  "note": "Failed exact-path ABI check: original Android platform namespace not selected for /archtv/bin. No MAC assignment or runtime success."
+}

@@ -1,0 +1,46 @@
+make: Entering directory '/home/tv/repositorio-principal/dist/aosp16/linux-selinux-handoff-1/libselinux/src'
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o avc.lo avc.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o avc_internal.lo avc_internal.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o avc_sidtab.lo avc_sidtab.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o booleans.lo booleans.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o callbacks.lo callbacks.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o canonicalize_context.lo canonicalize_context.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o checkAccess.lo checkAccess.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o check_context.lo check_context.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o checkreqprot.lo checkreqprot.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o compute_av.lo compute_av.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o compute_create.lo compute_create.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o compute_member.lo compute_member.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o compute_relabel.lo compute_relabel.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o compute_user.lo compute_user.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o context.lo context.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o deny_unknown.lo deny_unknown.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o disable.lo disable.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o enabled.lo enabled.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o fgetfilecon.lo fgetfilecon.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o freecon.lo freecon.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o freeconary.lo freeconary.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o fsetfilecon.lo fsetfilecon.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o get_context_list.lo get_context_list.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o get_default_type.lo get_default_type.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o get_initial_context.lo get_initial_context.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o getenforce.lo getenforce.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o getfilecon.lo getfilecon.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o getpeercon.lo getpeercon.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o hashtab.lo hashtab.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o init.lo init.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o is_customizable_type.lo is_customizable_type.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o label.lo label.c
+cc  -O2 -g0 -Wall -Wextra -Wformat=2 -fstack-protector-strong -D_FORTIFY_SOURCE=3 -I../include -D_GNU_SOURCE -DNO_ANDROID_BACKEND -DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -DHAVE_STRLCPY -DHAVE_REALLOCARRAY -fPIC -DSHARED -c -o label_db.lo label_db.c
+label_db.c: In function ‘db_init’:
+label_db.c:307:14: error: ‘struct selabel_handle’ has no member named ‘spec_file’; did you mean ‘spec_files’?
+  307 |         rec->spec_file = strdup(path);
+      |              ^~~~~~~~~
+      |              spec_files
+label_db.c:308:19: error: ‘struct selabel_handle’ has no member named ‘spec_file’; did you mean ‘spec_files’?
+  308 |         if (!rec->spec_file) {
+      |                   ^~~~~~~~~
+      |                   spec_files
+make: *** [Makefile:179: label_db.lo] Error 1
+make: *** Waiting for unfinished jobs....
+make: Leaving directory '/home/tv/repositorio-principal/dist/aosp16/linux-selinux-handoff-1/libselinux/src'

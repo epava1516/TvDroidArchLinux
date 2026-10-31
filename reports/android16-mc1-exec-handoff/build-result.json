@@ -1,0 +1,4 @@
+{
+  "exit": 2,
+  "scope": "Full original Linux/glibc libselinux, not reduced ANDROID_HOST subset, not Android Bionic. No install target."
+}
