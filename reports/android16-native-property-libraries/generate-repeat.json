@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "unshare",
+    "--mount",
+    "--pid",
+    "--fork",
+    "--kill-child",
+    "--net",
+    "--ipc",
+    "--uts",
+    "--cgroup",
+    "python",
+    "/tmp/archtv-native-property-execution.py",
+    "generate-repeat"
+  ],
+  "exit_code": 0,
+  "stdout": "PREEXEC_STATUS {\"Uid\": \"10000\\t10000\\t10000\\t10000\", \"Gid\": \"10000\\t10000\\t10000\\t10000\", \"Groups\": \"\", \"CapEff\": \"0000000000000000\", \"CapPrm\": \"0000000000000000\", \"NoNewPrivs\": \"1\"}\nentries=1384 bytes=102112\n",
+  "stderr": ""
+}

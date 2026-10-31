@@ -1,0 +1,12 @@
+{
+  "queries": 4145,
+  "native_reader_both_blobs_equal": true,
+  "host_reader_native_blob_equal": true,
+  "native_metadata_repeat_byte_identical": true,
+  "native_and_host_blobs_byte_equal": false,
+  "different_bytes": 115,
+  "native_blob_sha256": "b57c623dd6a368b8738a2980ba38a16e51ae8bbf704bf16b77b4913c08d5ab02",
+  "host_blob_sha256": "9d2012f1007d00631201c4a6d4888b07ba1cede60af2882096c382b13a9c2f4a",
+  "root_owner_enforcement_native_rejected_UID10000_file": true,
+  "scope": "Original metadata serialization and parser lookup across full declared input names plus suffix variants; not all possible API/service/SELinux policies or APK compatibility"
+}

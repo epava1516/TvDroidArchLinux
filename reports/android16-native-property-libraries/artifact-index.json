@@ -1,0 +1,33 @@
+{
+  "source_base_commit": "335d233f5de27d9d3217f7976b903b6acbcd33ca",
+  "scope": "Original property metadata modules native execution and full pairwise tree comparison, not property service/framework/APK acceptance",
+  "artifacts": {
+    "reports/android16-native-property-libraries/archtv-crt-native-build.py": "d25a075e88e76422a5a9d63f599e630836b98174c3cc9bd50cecec0cb2882143",
+    "reports/android16-native-property-libraries/archtv-native-property-execution.py": "5cae05341e95c08aa329334799c24d02534d973018acf34d31e137fb0e5fc43c",
+    "reports/android16-native-property-libraries/archtv-native-property-link.py": "77bb8bd42d358cb78c943e9b9835a5ba80cfa2b7eedcb64d8cc7b256195b188c",
+    "reports/android16-native-property-libraries/archtv-property-layout-compare.py": "bcfe92f9b133c86deb52cfa9a1a1ee361f1203392d7c82d1a2fbc32bd26de8b8",
+    "reports/android16-native-property-libraries/archtv-property-libs-native.py": "fbe12c58c047345b3d30c83f0d7a41a45e9678ba0f42660ef3e6b03c887cf122",
+    "reports/android16-native-property-libraries/archtv-property-semantic-compare.py": "2b17fa1d4f687b5ee8a1b234a123764682cfa8ebc5291fbe10663e8a3a1f5e95",
+    "reports/android16-native-property-libraries/archtv-property-test-driver.py": "a884a9b2862e92514775514c60219734dd30d9bdce7651ab5e33093c2c1cf054",
+    "reports/android16-native-property-libraries/build-commands.json": "1ccaf8220680fad5c3bb5c0747c96534d192c8ae7d82ef224fe4c9d728da1e6c",
+    "reports/android16-native-property-libraries/build-link-commands-2.json": "edb53341a12aaa16e9809db751a034978d5651d57e72dd9aba6f22e6cc3469cb",
+    "reports/android16-native-property-libraries/build-link-commands.json": "f038d6052d5c1bee68791618d5e67b2e32afb04018cc7d6a0abbb1249d37036c",
+    "reports/android16-native-property-libraries/build-tool-compile.json": "8eb46ebe6d02aae9390f2c532328baaad57b4d46674f52303e19621336ca1530",
+    "reports/android16-native-property-libraries/build-validation.json": "e29a22f438924c7c45f9d129d1a22c81c718fb0c5aebf1cd764dceb3a4b94941",
+    "reports/android16-native-property-libraries/checkpoint.json": "fb3d7e2da9cdc49068083eabd64e913680c4c053d8a3fc1218a179f27f514b30",
+    "reports/android16-native-property-libraries/crt-build.json": "9ab399dfffdb7fdcea756436191e45e172828e7c6ca1860649b20c5a8251edce",
+    "reports/android16-native-property-libraries/generate-repeat.json": "12a7bf2e1dec2d586fa55e2505125dc59ce59584e4d405d07a8e2342ac0428eb",
+    "reports/android16-native-property-libraries/generate.json": "17c2f2d0d0a6e3e3fa7339e3e90ee7fb04c6a1a03779e197b8950df203bc54d7",
+    "reports/android16-native-property-libraries/host-reader-native.json": "50351bc20ba205093a73120fdbedf2338d97df94dc9b880061e3732187ac2327",
+    "reports/android16-native-property-libraries/inspect-bad-owner.json": "32066a16a8d52c9f64a4aacec17ccb24550f8f0cce8940fbbc6ba7188bdd5f94",
+    "reports/android16-native-property-libraries/inspect-host.json": "29b54725947349b2f1809ce54f997c48d540d1437f62a1ccb480d74351ddef2c",
+    "reports/android16-native-property-libraries/inspect-native.json": "fc5dad0c997e89a1c74fc4906f501dc1ac8a69160f50c4c49063444a21645568",
+    "reports/android16-native-property-libraries/layout-comparison.json": "c0f93e2537f6af6d0a2d2b43a91460d9c5ddcc2671bf48d6ea5694f4637baf0b",
+    "reports/android16-native-property-libraries/linker-host-xml-provenance.json": "7cd7b6d4918cb7bdc52035d7e7c19d086e8d6e06c495626dbfc2946687da86ae",
+    "reports/android16-native-property-libraries/linker-provenance.json": "2a6e5e326e3e6e5f3333846b3eca75f84b8b24923028369b33e198b85b10fba8",
+    "reports/android16-native-property-libraries/native-tool.elf.txt": "e3a8bd517ece7285af299a47f49e1e67e8938436cb0e32c8f37f8afe2f8d2a58",
+    "reports/android16-native-property-libraries/rea-native-tool-notes.json": "51e199ff64f3ac1658e92a3366c4a7a11c5c39e3a50d124601ca7df3c36b07da",
+    "reports/android16-native-property-libraries/semantic-comparison.json": "0ed058634a32b4c790ae10de49a30f74ad20297408dd0ecbea2a3b0cd917ead9",
+    "reports/android16-native-property-libraries/validation.json": "f25f83f87bc35e266cd3d6e685fb17abf8fa166a1e547f5bfdeb6219f1ae545b"
+  }
+}

@@ -1,7 +1,7 @@
-# Graph Report - archtv-a16-native-dependencies-milestone  (2026-10-31)
+# Graph Report - archtv-a16-native-property-milestone  (2026-10-31)
 
 ## Corpus Check
-- 300 files · ~244,760 words
+- 300 files · ~245,087 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 18 file(s) not represented in the graph (top: .xml 8, (none) 6, .apk 2)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `3d81347a`
+- Built from commit: `335d233f`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

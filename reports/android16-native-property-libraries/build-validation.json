@@ -1,0 +1,22 @@
+{
+  "modules": {
+    "libpropertyinfoparser": [
+      "property_info_parser.cpp"
+    ],
+    "libpropertyinfoserializer": [
+      "property_info_file.cpp",
+      "property_info_serializer.cpp",
+      "trie_builder.cpp",
+      "trie_serializer.cpp"
+    ]
+  },
+  "original_source_modified": false,
+  "selected_original_clang21": true,
+  "original_Bionic_platform_headers": true,
+  "parser_stl_none_preserved": true,
+  "archive_sha256": {
+    "libpropertyinfoparser": "2aeb461004315563da39ed63e0ca295d1398cd804801597c04bb6faabe7c5377",
+    "libpropertyinfoserializer": "4b33edf033e6d2b0e5dcb6dd9d12f2c5a576a1a18bf784bdb2b03692ad9f7d74"
+  },
+  "scope": "Two complete original static module source sets compiled for Bionic; no link/run/property-service/SELinux/APK acceptance"
+}

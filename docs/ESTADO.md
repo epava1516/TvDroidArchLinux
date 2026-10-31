@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-native-dependencies/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-native-property-libraries/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -36,7 +36,7 @@ no equivalen automáticamente a Android completo; estudiar cierres reales.
 
 ## Checkpoint y siguiente acción
 
-Base del nuevo hito: `e520093`, main; contrato y manifiesto publicados. Consultar Git para HEAD/origin actuales. El snapshot local
+Base histórica del diagnóstico de entrada: `e520093`. Contrato y manifiesto publicados; consultar el checkpoint vigente y Git para HEAD/origin actuales. El snapshot local
 `/home/tv/recuperacion-archtv/20261031T010916Z-a16-framework-entry` guarda parches,
 archivos nuevos y scripts de estudio. Los logs ajenos H9 permanecen intactos.
 El checkpoint registra procesos/handles y resultados; no hay ART/bwrap/build activo
@@ -63,6 +63,13 @@ libcap estático original construido, seis fuentes/miembros ELF y generadores
 originales. No ejecutado ni prueba de permisos. Las fuentes de los otros grupos
 ya adquiridas no son servicios disponibles. Protoc69923 sigue siendo el proceso
 que debe comprobarse antes de generar esquemas y repetir el build de libinit.
+
+[Metadatos nativos ejecutados](../reports/android16-native-property-libraries/validation.json):
+ambos módulos completos, CRT y linker originales; generación y lectura sin
+capacidades y con identidad 10000 real. Nativo y host difieren en 115 bytes por
+orden de prefijos empatados; árbol completo equivalente y 4.145 consultas iguales,
+sin modificar artefactos ni debilitar el control de propietario. Los archivos
+estáticos y el wrapper no equivalen a PropertyInit o a un servidor de propiedades.
 
 app_process original termina 0 sin readiness: fuente y diagnóstico muestran
 retorno temprano de startVm por ro.product.cpu.abilist64 ausente, antes de crear

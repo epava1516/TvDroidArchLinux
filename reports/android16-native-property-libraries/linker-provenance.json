@@ -1,0 +1,8 @@
+{
+  "commit": "9916fb51ccb914d62d35ad9a7b9b21d2ef046928",
+  "url": "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+/9916fb51ccb914d62d35ad9a7b9b21d2ef046928/clang-r563880c/bin/lld?format=TEXT",
+  "git_blob_verified": "dcacc606889a782d76a5efe69fa17a5fb9e1f69d",
+  "sha256": "784146955ed87545385bf5c89b3b920ca7fe3ac83e034c3e6c53783ce544adf1",
+  "bytes": 68882328,
+  "scope": "Original build host linker, not target runtime"
+}

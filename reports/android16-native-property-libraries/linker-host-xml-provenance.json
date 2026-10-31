@@ -1,0 +1,8 @@
+{
+  "commit": "9916fb51ccb914d62d35ad9a7b9b21d2ef046928",
+  "url": "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+/9916fb51ccb914d62d35ad9a7b9b21d2ef046928/clang-r563880c/lib/libxml2.so.2?format=TEXT",
+  "git_blob_verified": "726e04d9b7de73eaf6319019539341e55215bc92",
+  "sha256": "b9858e922ae6ad101745947775c37c39b3d57b46256a5668ffbab780e627cf70",
+  "bytes": 1502296,
+  "scope": "Original host linker dependency only; not target Android library"
+}

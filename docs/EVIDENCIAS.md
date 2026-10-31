@@ -1,5 +1,14 @@
 # Índice de evidencias
 
+- [Bibliotecas originales de metadatos, ejecución Bionic](../reports/android16-native-property-libraries/validation.json):
+  cinco fuentes de dos módulos, CRT y linker originales, wrapper existente
+  ejecutado sin capacidades con UID10000 y namespaces originales. Generación
+  repetida, rechazo de propietario y 4.145 lecturas cruzadas. Divergencia de 115
+  bytes contrastada con [árbol completo](../reports/android16-native-property-libraries/layout-comparison.json);
+  sólo cambia el orden de prefijos de igual longitud. No servicio/SELinux/APK.
+  [Checkpoint](../reports/android16-native-property-libraries/checkpoint.json) conserva
+  el build protobuf activo; evidencia REA estática separada de las ejecuciones.
+
 - [Dependencias originales de libinit](../reports/android16-native-dependencies/validation.json):
   libcap nativo estático, sus seis fuentes y generadores originales; miembros
   ELF64 x86_64 verificados. Fuentes adicionales y fallo acotado de adquisición

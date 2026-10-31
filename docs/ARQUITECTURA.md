@@ -62,6 +62,25 @@ DEX/APK ni integración gráfica se ha demostrado en este hito.
 
 ## Propiedades y configuración · cierre en estudio
 
+[Bibliotecas de propiedades nativas ejecutadas](../reports/android16-native-property-libraries/validation.json):
+ambos módulos originales completos se construyen con clang21, Bionic y libc++ de
+plataforma; parser conserva stl:none y ambos conservan -Werror sin includes
+adicionales. CRT y lld originales permiten enlazar y ejecutar el wrapper de
+metadatos existente, con UID/GID10000, grupos/capacidades vacíos y NoNewPrivs,
+usando namespaces del enlazador generados y sin LD_PRELOAD/LD_LIBRARY_PATH.
+La dependencia libxml2 del lld anfitrión queda en su directorio privado, fuera
+del target. No se pasa ningún objeto glibc a Android.
+
+La generación nativa produce 1.384 entradas/102.112 bytes y se repite con hash
+idéntico. Su hash difiere del host en 115 bytes: la comparación completa del
+formato original identifica sólo otro orden entre prefijos de igual longitud
+del nodo ctl, permitido por el comparator original sin desempate. Los 740 nodos,
+contextos/tipos y entradas coinciden al normalizar ese orden; 4.145 consultas
+también coinciden mediante lectores originales cruzados. No se alteran los
+blobs para forzar el hash host. El rechazo de propietario no root sigue activo.
+Esto prueba serialización/lectura nativa de estos metadatos; no PropertyInit,
+áreas completas, servicio, mediación SELinux ni compatibilidad APK.
+
 [Dependencias nativas](../reports/android16-native-dependencies/validation.json):
 libcap está construido como archivo estático Bionic con sus seis fuentes originales
 y ambos encabezados generados por awk/_makenames originales. Se comprobaron los
