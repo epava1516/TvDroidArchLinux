@@ -1,0 +1,12 @@
+{
+  "com.android.ueventd.flags/libueventd_flags.a": "b98dfd375f3f57b6d5f28c1c8afd35c3ae96234470594c5f644df7373d3df86f",
+  "com.android.ueventd.flags/libueventd_flags.o": "356fcd21e298ebf366056981bf15e51a485d699cf5d579a30e4268ebe82704e1",
+  "com.android.ueventd.flags/cache.pb": "0bba6a5750bdd9c0daea5077ec58a73ba0cb5f385dbf23bd33cc6f04f4f04095",
+  "com.android.apex.flags/libapexd_flags.o": "30c18bd292e651942a45aace16be97ed06b35fd659565d58dc06aa63e82fbe35",
+  "com.android.apex.flags/libapexd_flags.a": "63fea411086e0070ec34af83c1600b19885c1ed3a3f8f70713744497ff2398e7",
+  "com.android.apex.flags/cache.pb": "7512d165ea8e25d1ddc5b0b4a23e8c4e2a57f142c77a78738a6e9ccf35db9112",
+  "com.android.apex.flags/generated/com_android_apex_flags.cc": "3eff1ce99fc2e4e5f494a98d4fc2ea998d396265277bb403833ee86cb61e5592",
+  "com.android.apex.flags/generated/include/com_android_apex_flags.h": "fff2588ebdeb4ae2837c96d6f4232a0b57f28acdfb8940d8e6b0f85dddabf2e1",
+  "com.android.ueventd.flags/generated/com_android_ueventd_flags.cc": "9c4f5fcf9899b6454e836d19e0df11554274131ab2932878b95f906f01077420",
+  "com.android.ueventd.flags/generated/include/com_android_ueventd_flags.h": "3bf90e272f90033c31a0932eaaed10dc9373093bac6482c36c1199703206dea5"
+}

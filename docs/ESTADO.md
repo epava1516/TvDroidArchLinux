@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-native-property-libraries/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-original-generators/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -70,6 +70,13 @@ capacidades y con identidad 10000 real. Nativo y host difieren en 115 bytes por
 orden de prefijos empatados; árbol completo equivalente y 4.145 consultas iguales,
 sin modificar artefactos ni debilitar el control de propietario. Los archivos
 estáticos y el wrapper no equivalen a PropertyInit o a un servidor de propiedades.
+
+[Flags originales](../reports/android16-original-generators/validation.json):
+generador fijado por Git blob, declaraciones y cadena fuente BP4A; dos módulos
+compilados, sin constantes propias. Paridad de configuración con GSI no probada;
+no inferir valores de paquetes ausentes del inventario system. Símbolos privados
+de init localizados en minidebug y región leída mediante REA MCP/GDB, sin arrancar
+init y con debugger cerrado. Protoc69923 es el único build largo a revalidar.
 
 app_process original termina 0 sin readiness: fuente y diagnóstico muestran
 retorno temprano de startVm por ro.product.cpu.abilist64 ausente, antes de crear

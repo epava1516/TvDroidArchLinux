@@ -1,0 +1,115 @@
+{
+  "observed_at": "2026-10-31T02:20:00.593025+00:00",
+  "contract": "A16-QPR2-1",
+  "objective": "Complete unmodified arbitrary APK incl TV, Linux Rust/Smithay; native coherent AOSP16 QPR2, SF\u2192Wayland first hypothesis; no Waydroid/full Android. Preserve compatibility/isolation/stability/lightweight/install/update.",
+  "branch": "main",
+  "source_base_commit": "780e67b65a01f6a44e076415c397699ad4e8562c",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "relation_to_local_origin_tracking": "0\t0",
+  "pending_own": {
+    "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+    "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+    "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+    "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+  },
+  "pending_other_hashes": {
+    "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+  },
+  "own_milestone": "Original file/blob acquisition, ACONFIG source-profile generation and static MCP init observation; old pending work preserved",
+  "terminal_exec_handles": [
+    84820,
+    57632,
+    13591,
+    60796
+  ],
+  "evidence_root": "reports/android16-original-generators",
+  "recovery_snapshot": "/home/tv/recuperacion-archtv/20261031T021219Z-native-flag-generators",
+  "tests": "Exact Git-blob/permission/budget/error tests; original source flag codegen/native compilation; static init mini-debug REA, debugger closed with no inferior",
+  "next": "Poll original host protoc69923; verify generated original schemas and complete grouped native libinit construction, retaining explicit source-profile vs GSI parity gap. Do not use private-address injection or fake headers/values.",
+  "not_done": "No PropertyInit/service/libinit or APK acceptance; original host protoc build69923 still active",
+  "restart_policy": "No VM/client restart or Android full boot",
+  "process_observation": {
+    "observed_at": "2026-10-31T02:21:56.686218+00:00",
+    "source": "Host ps and /proc ticks, no arguments/environment",
+    "processes": [
+      {
+        "pid": 181298,
+        "ppid": 1,
+        "state": "Ssl",
+        "comm": "node-MainThread",
+        "start_ticks": "4923686"
+      },
+      {
+        "pid": 181308,
+        "ppid": 181298,
+        "state": "Sl",
+        "comm": "codex",
+        "start_ticks": "4923705"
+      },
+      {
+        "pid": 181453,
+        "ppid": 181308,
+        "state": "Sl",
+        "comm": "codex-code-mode",
+        "start_ticks": "4928150"
+      },
+      {
+        "pid": 209136,
+        "ppid": 181308,
+        "state": "Ss",
+        "comm": "codex-linux-san",
+        "start_ticks": "6523492"
+      },
+      {
+        "pid": 209141,
+        "ppid": 209140,
+        "state": "Ss",
+        "comm": "codex",
+        "start_ticks": "6523500"
+      },
+      {
+        "pid": 209154,
+        "ppid": 209142,
+        "state": "S",
+        "comm": "python",
+        "start_ticks": "6523508"
+      },
+      {
+        "pid": 209155,
+        "ppid": 209154,
+        "state": "S",
+        "comm": "ninja",
+        "start_ticks": "6523517"
+      },
+      {
+        "pid": 212746,
+        "ppid": 209155,
+        "state": "R",
+        "comm": "clang++",
+        "start_ticks": "6727982"
+      },
+      {
+        "pid": 212749,
+        "ppid": 212748,
+        "state": "S",
+        "comm": "python",
+        "start_ticks": "6728176"
+      }
+    ],
+    "protoc_pid209155_active": true,
+    "GDB_session": "016876ff-902c-4cba-ad98-4c550d743370 closed via MCP, target_state none_observed; no inferior started",
+    "graphify_session91443": "terminal exit0",
+    "Android_init_or_APK_started": false
+  },
+  "active_exec_handles": [
+    {
+      "session_id": 69923,
+      "operation": "Original protobuf/Abseil host generator build, one job",
+      "host_pid": 209155,
+      "namespace_pid": 15,
+      "state": "dist/aosp16/protoc-host-2/build-state.json",
+      "log": "dist/aosp16/protoc-host-2/build.log"
+    }
+  ]
+}

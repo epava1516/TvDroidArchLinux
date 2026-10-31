@@ -1,5 +1,12 @@
 # Índice de evidencias
 
+- [Generadores originales y contraste estático init](../reports/android16-original-generators/validation.json):
+  adquisición de archivos con Git blob, errores/presupuesto/permisos probados;
+  dos módulos ACONFIG generados con declaraciones/valores BP4A y compilados para
+  Bionic. Paridad GSI desconocida. REA MCP/GDB observa región estática mediante
+  minidebug, con avisos BFD conservados; sesión cerrada sin inferior. No ejecución
+  de init/servicios/APK. [Checkpoint](../reports/android16-original-generators/checkpoint.json).
+
 - [Bibliotecas originales de metadatos, ejecución Bionic](../reports/android16-native-property-libraries/validation.json):
   cinco fuentes de dos módulos, CRT y linker originales, wrapper existente
   ejecutado sin capacidades con UID10000 y namespaces originales. Generación

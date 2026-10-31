@@ -1,0 +1,13 @@
+{
+  "source_binary_sha256": "a313fbe59e122d21b491495f0ca9877c9c52f509ad4b4af50bf46860fbe4e5e3",
+  "mini_debugdata_sha256": "b54c5f1190015f629ac7af8f55184a85a0bbeeabcfacc88c51b5e4893de0be7a",
+  "decompressed_elf_sha256": "72eb83cfd0e5ccce5a88a7f3f3a2fba3225e7765ec96db2dffeed00e03a28ba3",
+  "bytes": 363936,
+  "scope": "Static private symbols from shipped mini-debug data, not dynamic exports/callable public interfaces or runtime execution",
+  "matched_symbols": [
+    "   968: 000000000010c0b0 11752 FUNC    GLOBAL DEFAULT    1 _ZN7android4init24PropertyLoadBootDefaultsEv",
+    "   970: 0000000000110490  1735 FUNC    GLOBAL DEFAULT    1 _ZZN7android4init24PropertyLoadBootDefaultsEvENK3$_4clERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEi",
+    "   974: 00000000001111a0  5626 FUNC    GLOBAL DEFAULT    1 _ZN7android4init12PropertyInitEv",
+    "   980: 0000000000113300  1145 FUNC    GLOBAL DEFAULT    1 _ZN7android4init20StartPropertyServiceEPi"
+  ]
+}

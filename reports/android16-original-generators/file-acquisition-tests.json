@@ -1,0 +1,8 @@
+{
+  "exact_blob_and_permissions": "passed",
+  "wrong-blob_not_executable_and_failure_retained": "passed",
+  "budget_not_executable_and_failure_retained": "passed",
+  "symlink_rejected_before_output": "passed",
+  "existing_evidence_preserved": "passed",
+  "unsafe_paths_rejected": "passed"
+}

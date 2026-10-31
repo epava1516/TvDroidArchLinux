@@ -1,0 +1,25 @@
+{
+  "source_base_commit": "780e67b65a01f6a44e076415c397699ad4e8562c",
+  "scope": "Verified original generator acquisition/source-profile codegen and static MCP inspection, not GSI profile equivalence or runtime/APK acceptance",
+  "artifacts": {
+    "reports/android16-original-generators/GSI-system-package-inventory.json": "f7d8323f4859d7b758aa6bd879f3a7fb010ae2cf82967225552056f3dadc8a53",
+    "reports/android16-original-generators/aconfig-host-provenance.json": "563d520e6761027acb65812a31f8c5a299d1bdb548b624a1117b5ad1a500efe9",
+    "reports/android16-original-generators/aconfig-source-provenance.json": "30d231b299f2f3cf6718db69c408b6bcd12b435cf036add5a7633a37abef5230",
+    "reports/android16-original-generators/build-release-provenance.json": "5596b4d74b8de006e58ec401b0bc19e86fe40a34aa648058eb80396cdfec2f0a",
+    "reports/android16-original-generators/checkpoint.json": "dd26198c93f27819ef021e48fee770eacff403adef9b68a09b30cb67dbc16a3e",
+    "reports/android16-original-generators/com.android.apex.flags/com_android_apex_flags.cc": "3eff1ce99fc2e4e5f494a98d4fc2ea998d396265277bb403833ee86cb61e5592",
+    "reports/android16-original-generators/com.android.apex.flags/include/com_android_apex_flags.h": "fff2588ebdeb4ae2837c96d6f4232a0b57f28acdfb8940d8e6b0f85dddabf2e1",
+    "reports/android16-original-generators/com.android.ueventd.flags/com_android_ueventd_flags.cc": "9c4f5fcf9899b6454e836d19e0df11554274131ab2932878b95f906f01077420",
+    "reports/android16-original-generators/com.android.ueventd.flags/include/com_android_ueventd_flags.h": "3bf90e272f90033c31a0932eaaed10dc9373093bac6482c36c1199703206dea5",
+    "reports/android16-original-generators/file-acquisition-tests.json": "571c97950d1968bc28371311eb4a24e97719516bf899f49ae81ed109a6bc8d05",
+    "reports/android16-original-generators/init-mini-debug-identity.json": "1526cddc85f6c79388fff913c86741d612b98ece879ac33787b3506fc24fe1dd",
+    "reports/android16-original-generators/local-generated-artifacts.json": "068dfeb4522fe589dc1447db96b553a6cf65fafddab363ec97f1a02e613a4381",
+    "reports/android16-original-generators/native-compile.json": "29cb7d77325ce34304b481611359838563ba8ede55d093e76338f80b06998e7a",
+    "reports/android16-original-generators/rea-gdb-close.json": "ad74a8711f61aec9e638eada51f9c1ad8c910fe8fb979a10cf012541c5ae0fec",
+    "reports/android16-original-generators/rea-gdb-file.json": "774d19fc3b70859e7500aa3633efe894dfefe90da87b85cb3f05a44721e6158b",
+    "reports/android16-original-generators/rea-gdb-propertyinit-region.json": "97c1780d70eeed48c63b8644145a033a23642f5c2f5ca8ada51461c316b7d3db",
+    "reports/android16-original-generators/source-profile-generation.json": "4ae20c61ff18b945df703a2f3fc57713a8c5de5f237965ea4dddf287f1a2c5cd",
+    "reports/android16-original-generators/validation.json": "17ed01f4258c4260cbe05e9cc8e04d85bd4bc29c1a0c0b67f9aeba3d189a1a99",
+    "tools/aosp/fetch_locked_sources.py": "f94b18c083afcff7e6ff27100ff71bda726ca7fb7cbe319e612cefa6f9b39e66"
+  }
+}

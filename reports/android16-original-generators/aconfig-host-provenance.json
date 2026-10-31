@@ -1,0 +1,15 @@
+{
+  "project": "prebuilts/build-tools",
+  "file": "linux-x86/bin/aconfig",
+  "commit": "412724a805835d89234d67c363f7ada7f5f8a67f",
+  "url": "https://android.googlesource.com/platform/prebuilts/build-tools/+/412724a805835d89234d67c363f7ada7f5f8a67f/linux-x86/bin/aconfig?format=TEXT",
+  "lock_sha256": "06c6fcc779cb0e115f4515a0c38a67c31151dc8b55bd335ff2f0987e3db3eb58",
+  "status": "complete",
+  "expected_git_blob": "84105cb7347ec5b1acb5a1b9814016fc782c48a0",
+  "signature_verified": false,
+  "git_blob_verified": "84105cb7347ec5b1acb5a1b9814016fc782c48a0",
+  "sha256": "a93ef1ecfe1bf88aa64bfa60e0cb0682df11f06de8d478e4f2614224580e196e",
+  "bytes": 2454296,
+  "artifact": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/aconfig-host/aconfig",
+  "original_file_modified": false
+}

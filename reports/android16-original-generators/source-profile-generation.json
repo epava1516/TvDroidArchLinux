@@ -1,0 +1,129 @@
+{
+  "release_chain": [
+    {
+      "name": "ap3a",
+      "file": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/build-release/source/build/release/release_configs/ap3a.textproto",
+      "sha256": "294bdf7325f0898cc7afa7a3c0658aacae0274cd2707d40b5e376259e4eab2e1"
+    },
+    {
+      "name": "ap4a",
+      "file": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/build-release/source/build/release/release_configs/ap4a.textproto",
+      "sha256": "2f04b554c480c6fa33f2dafbf601e7a9a383bb24aab82c869ade6fa5cbc8e4be"
+    },
+    {
+      "name": "bp1a",
+      "file": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/build-release/source/build/release/release_configs/bp1a.textproto",
+      "sha256": "8631d71910fa7ea83239004de68b5985c0e209a9388065146bff8c76053a4bc6"
+    },
+    {
+      "name": "bp2a",
+      "file": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/build-release/source/build/release/release_configs/bp2a.textproto",
+      "sha256": "ec6eff13fe0f08bed831f59a50bc33289efdcbb5136a618dfae18cee0cda9e5f"
+    },
+    {
+      "name": "bp3a",
+      "file": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/build-release/source/build/release/release_configs/bp3a.textproto",
+      "sha256": "31b921df4dc487f4aa4dcb5ff3a019db1899817a1d134506541066b35cd2810b"
+    },
+    {
+      "name": "bp4a",
+      "file": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/build-release/source/build/release/release_configs/bp4a.textproto",
+      "sha256": "3f0a1de927826a70b2165ea6b2b378b87a78995d30645b44e741d82b5792871a"
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/aconfig-host/aconfig",
+        "create-cache",
+        "--package",
+        "com.android.apex.flags",
+        "--container",
+        "system",
+        "--declarations",
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-apex/source/system/apex/apexd/apexd.aconfig",
+        "--cache",
+        "/home/tv/repositorio-principal/dist/aosp16/aconfig-original-1/com.android.apex.flags/cache.pb",
+        "--values",
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/build-release/source/build/release/aconfig/bp2a/com.android.apex.flags/enable_brand_new_apex_flag_values.textproto"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/aconfig-host/aconfig",
+        "dump-cache",
+        "--cache",
+        "/home/tv/repositorio-principal/dist/aosp16/aconfig-original-1/com.android.apex.flags/cache.pb",
+        "--format",
+        "textproto"
+      ],
+      "exit_code": 0,
+      "stdout": "parsed_flag {\n  package: \"com.android.apex.flags\"\n  name: \"mount_before_data\"\n  namespace: \"treble\"\n  description: \"This flag controls if allowing mounting APEXes before the data partition\"\n  bug: \"361701397\"\n  state: DISABLED\n  permission: READ_ONLY\n  trace {\n    source: \"/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-apex/source/system/apex/apexd/apexd.aconfig\"\n    state: DISABLED\n    permission: READ_ONLY\n  }\n  is_fixed_read_only: true\n  is_exported: false\n  container: \"system\"\n  metadata {\n    purpose: PURPOSE_UNSPECIFIED\n    storage: NONE\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/aconfig-host/aconfig",
+        "create-cpp-lib",
+        "--cache",
+        "/home/tv/repositorio-principal/dist/aosp16/aconfig-original-1/com.android.apex.flags/cache.pb",
+        "--out",
+        "/home/tv/repositorio-principal/dist/aosp16/aconfig-original-1/com.android.apex.flags/generated",
+        "--mode",
+        "force-read-only"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/aconfig-host/aconfig",
+        "create-cache",
+        "--package",
+        "com.android.ueventd.flags",
+        "--container",
+        "system",
+        "--declarations",
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/init/ueventd.aconfig",
+        "--cache",
+        "/home/tv/repositorio-principal/dist/aosp16/aconfig-original-1/com.android.ueventd.flags/cache.pb"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/aconfig-host/aconfig",
+        "dump-cache",
+        "--cache",
+        "/home/tv/repositorio-principal/dist/aosp16/aconfig-original-1/com.android.ueventd.flags/cache.pb",
+        "--format",
+        "textproto"
+      ],
+      "exit_code": 0,
+      "stdout": "parsed_flag {\n  package: \"com.android.ueventd.flags\"\n  name: \"enable_threadpool_coldboot\"\n  namespace: \"system_performance\"\n  description: \"Handle coldboot uevents in a thread pool instead of forked subprocesses to improve performance\"\n  bug: \"421025789\"\n  state: DISABLED\n  permission: READ_ONLY\n  trace {\n    source: \"/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/init/ueventd.aconfig\"\n    state: DISABLED\n    permission: READ_ONLY\n  }\n  is_fixed_read_only: true\n  is_exported: false\n  container: \"system\"\n  metadata {\n    purpose: PURPOSE_UNSPECIFIED\n    storage: NONE\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/aconfig-host/aconfig",
+        "create-cpp-lib",
+        "--cache",
+        "/home/tv/repositorio-principal/dist/aosp16/aconfig-original-1/com.android.ueventd.flags/cache.pb",
+        "--out",
+        "/home/tv/repositorio-principal/dist/aosp16/aconfig-original-1/com.android.ueventd.flags/generated",
+        "--mode",
+        "production"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "profile": "Source BP4A inherited value sets only. GSI package values absent from system metadata; source/binary config parity NOT proven. No trunk_staging override applied."
+}

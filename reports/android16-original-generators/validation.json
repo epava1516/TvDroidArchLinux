@@ -1,0 +1,58 @@
+{
+  "observed_at": "2026-10-31T02:20:00.593025+00:00",
+  "source_base_commit": "780e67b65a01f6a44e076415c397699ad4e8562c",
+  "contract": "A16-QPR2-1",
+  "file_acquisition_tests": {
+    "exact_blob_and_permissions": "passed",
+    "wrong-blob_not_executable_and_failure_retained": "passed",
+    "budget_not_executable_and_failure_retained": "passed",
+    "symlink_rejected_before_output": "passed",
+    "existing_evidence_preserved": "passed",
+    "unsafe_paths_rejected": "passed"
+  },
+  "aconfig_host_original_git_blob_verified": true,
+  "generated_native_modules": [
+    "libapexd_flags:force-read-only",
+    "libueventd_flags:production"
+  ],
+  "source_profile": "Exact BP4A inherited values in locked build/release, original declarations and original generator; no trunk_staging enabled override or hand-written flags",
+  "source_profile_GSI_config_parity": "not proven; selected packages absent from consulted system metadata only. Source/binary/build equivalence remains a gate. Do not infer absent=disabled. Generated DISABLED comes from original source/cache trace, not absent artifact package.",
+  "original_source_or_generated_code_modified": false,
+  "REA_MCP_static": {
+    "session_id": "016876ff-902c-4cba-ad98-4c550d743370",
+    "closed": true,
+    "close_target_state": "none_observed",
+    "inferior_started": false,
+    "mini_debug_static_private_symbols": "PropertyInit@0x1111a0,size5626; PropertyLoadBootDefaults and StartPropertyService also located",
+    "region_disassembled": "0x1111a0..0x111260 only, complete in requested region",
+    "evidence_ids": [
+      "ev_556276d4e758cabee457334d5b0ba7773f2b51bc683ba63b1267da3deb9a9339",
+      "ev_70d077335ab88ffd90e6f8f4c74fa7f41d2edb5b13da0da8edfa73626cdf8d50"
+    ],
+    "limitations": "BFD warns unsupported Android relocation metadata and missing sections in mini-debug ELF; do not claim relocation/import resolution or full function semantics. Static symbols are not exports/public callable interfaces. No init execution, code injection, client/VM restart."
+  },
+  "protoc_host_build": {
+    "session_id": 69923,
+    "host_pid": 209155,
+    "state": "dist/aosp16/protoc-host-2/build-state.json",
+    "log": "dist/aosp16/protoc-host-2/build.log",
+    "status": "active at prior poll; revalidate current handle before use"
+  },
+  "not_done": [
+    "Whole libinit build and PropertyInit execution",
+    "Live services, mediation, callbacks, persistence and APK lifecycle",
+    "Broad API/Bionic-JNI/ISA or CTS acceptance"
+  ],
+  "next": "Poll original host protoc69923; verify generated original schemas and complete grouped native libinit construction, retaining explicit source-profile vs GSI parity gap. Do not use private-address injection or fake headers/values.",
+  "graphify": {
+    "nodes": 2603,
+    "edges": 5024,
+    "communities": 229,
+    "exit_code": 0,
+    "scope": "AST-only isolated staged worktree, old pending source excluded"
+  },
+  "local_links_checked": 158,
+  "broken_links": 0,
+  "pending_own_and_other_files_preserved": true,
+  "whitespace_check": "Code/docs/JSON checked; original generated .cc/.h files in two report package directories excluded to preserve generator bytes unchanged"
+}

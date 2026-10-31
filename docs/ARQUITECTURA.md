@@ -62,6 +62,23 @@ DEX/APK ni integración gráfica se ha demostrado en este hito.
 
 ## Propiedades y configuración · cierre en estudio
 
+[Generadores originales](../reports/android16-original-generators/validation.json):
+la adquisición admite archivos regulares con verificación del objeto Git antes
+de darles el modo ejecutable original; errores de identidad/presupuesto, enlaces
+y sobrescritura se prueban. Aconfig original genera libapexd_flags/libueventd_flags
+desde declaraciones y valores de la cadena fuente BP4A, con sus modos originales;
+ambos archivos estáticos compilan para Bionic. No se aplica el override habilitado
+de trunk_staging. Esto es configuración fuente explícita, no una respuesta de API
+ni prueba de equivalencia con la GSI: esos paquetes no están en el inventario
+system consultado y su ausencia no establece valores ni ausencia en todo el sistema.
+
+Los minidatos .gnu_debugdata del init original contienen símbolos privados de
+PropertyInit/PropertyLoadBootDefaults/StartPropertyService. REA MCP/GDB leyó sólo
+una región estática de PropertyInit y cerró sin iniciar inferior; los avisos BFD
+de relocalización Android limitan el análisis. Símbolos estáticos no son exports
+ni una interfaz ejecutable independiente. No se adopta inyección por direcciones
+privadas ni se arranca init; sigue pendiente construir/enlazar la entrada supervisada.
+
 [Bibliotecas de propiedades nativas ejecutadas](../reports/android16-native-property-libraries/validation.json):
 ambos módulos originales completos se construyen con clang21, Bionic y libc++ de
 plataforma; parser conserva stl:none y ambos conservan -Werror sin includes

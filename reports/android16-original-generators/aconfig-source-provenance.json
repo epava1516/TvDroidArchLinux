@@ -1,0 +1,18 @@
+{
+  "project": "build/make",
+  "subtree": "tools/aconfig",
+  "commit": "b815dded1eafbf06191a6ae306956bb6ed6fb415",
+  "url": "https://android.googlesource.com/platform/build/+archive/b815dded1eafbf06191a6ae306956bb6ed6fb415/tools/aconfig.tar.gz",
+  "lock_sha256": "06c6fcc779cb0e115f4515a0c38a67c31151dc8b55bd335ff2f0987e3db3eb58",
+  "status": "complete",
+  "signature_verified": false,
+  "original_source_modified": false,
+  "archive_bytes": 162104,
+  "archive_sha256": "5f4e018d1a42f5a7e0ec06783c07dbb0e5df3699b9a780259cf614a530ceae1b",
+  "regular_files": 205,
+  "relative_source_root": "source/build/make/tools/aconfig",
+  "unresolved_symlinks": [
+    "build/make/tools/aconfig/rustfmt.toml"
+  ],
+  "completeness": "Original subtree only; sibling sources/generated inputs must be supplied before build"
+}

@@ -1,0 +1,16 @@
+{
+  "project": "build/release",
+  "subtree": ".",
+  "commit": "0998133091794b56253fd6bd5c33ed0e0e5bd9de",
+  "url": "https://android.googlesource.com/platform/build/release/+archive/0998133091794b56253fd6bd5c33ed0e0e5bd9de.tar.gz",
+  "lock_sha256": "06c6fcc779cb0e115f4515a0c38a67c31151dc8b55bd335ff2f0987e3db3eb58",
+  "status": "complete",
+  "signature_verified": false,
+  "original_source_modified": false,
+  "archive_bytes": 995521,
+  "archive_sha256": "78e118bc91a716f336f52341689f0a1481f5aa99a4a2fdaa09bb4f37c9aeb37a",
+  "regular_files": 14107,
+  "relative_source_root": "source/build/release",
+  "unresolved_symlinks": [],
+  "completeness": "Original subtree only; sibling sources/generated inputs must be supplied before build"
+}
