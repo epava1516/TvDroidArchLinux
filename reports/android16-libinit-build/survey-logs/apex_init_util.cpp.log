@@ -1,0 +1,7 @@
+In file included from /home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/apex_init_util.cpp:30:
+In file included from /home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/action_manager.h:25:
+In file included from /home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/action.h:30:
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/subcontext.h:28:10: fatal error: 'system/core/init/subcontext.pb.h' file not found
+   28 | #include "system/core/init/subcontext.pb.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.

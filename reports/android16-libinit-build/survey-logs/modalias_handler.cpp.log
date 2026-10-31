@@ -1,0 +1,5 @@
+In file included from /home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/modalias_handler.cpp:17:
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/modalias_handler.h:19:10: fatal error: 'modprobe/modprobe.h' file not found
+   19 | #include <modprobe/modprobe.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~
+1 error generated.

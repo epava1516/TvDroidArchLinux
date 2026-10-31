@@ -1,0 +1,4 @@
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/reboot_utils.cpp:29:10: fatal error: 'cutils/android_reboot.h' file not found
+   29 | #include <cutils/android_reboot.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.

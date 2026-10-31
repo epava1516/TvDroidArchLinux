@@ -1,0 +1,111 @@
+{
+  "observed_at": "2026-10-31T01:48:56.439362+00:00",
+  "source_base_commit": "49ff099be779ad436ca5a175d9a6c4021909a452",
+  "original_compiler": {
+    "commit": "9916fb51ccb914d62d35ad9a7b9b21d2ef046928",
+    "url": "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+/9916fb51ccb914d62d35ad9a7b9b21d2ef046928/clang-r563880c/bin/clang-21?format=TEXT",
+    "git_blob_verified": "e75bab5e4336b5f6bf824351f3449831b24d21bc",
+    "sha256": "7202556a0ecae7ab00c67c1221e502692c7a46cf1531262fc62f597820078eef",
+    "bytes": 145094344,
+    "scope": "Original host build compiler, not Android runtime"
+  },
+  "target_compile": {
+    "original_clang21": true,
+    "standard": "gnu++20 per pinned Soong",
+    "x86_64_ELF_relocatable": true,
+    "original_Bionic_and_platform_libcxx_headers": true,
+    "host_headers_excluded": true,
+    "elapsed_seconds": 5.2310159810003825,
+    "max_rss_kib": 180144,
+    "scope": "One unchanged source object; not complete libinit/link/runtime/API proof"
+  },
+  "platform_libcxx": {
+    "GSI_and_selected_prebuilt_build_id": "c12cf3b742247f2e6b5aad0ac3fd30b54f62a2aa",
+    "text_rodata_dynstr_hashes_match": true,
+    "whole_ELF_sha256_different": true,
+    "REA_MCP_static_evidence": [
+      "ev_41600b0e2f1e85d9616db7cb9bc6d5f83ea159c68a0f4aefb339d3f868fda017",
+      "ev_f3ebe92085126863a1f7e617bb8dd216998f15381cf8e5188ca1ee16e5b5d568"
+    ],
+    "legacy_external_libcxx_not_platform_implementation": true,
+    "full_source_binary_build_equivalence": false
+  },
+  "whole_source_survey": {
+    "translation_units": 52,
+    "objects": 14,
+    "failures": 38,
+    "compiler": "Hostclang23 explicitly experimental, not selected original21; missing generated/include/product flags",
+    "status": "Incomplete subsystem construction, no source excluded or replaced",
+    "errors_grouped": {
+      "'system/core/init/subcontext.pb.h' file not found": 6,
+      "See original log": 1,
+      "object produced": 14,
+      "'cutils/iosched_policy.h' file not found": 4,
+      "'cutils/sockets.h' file not found": 1,
+      "'fs_mgr.h' file not found": 3,
+      "'bootloader_message/bootloader_message.h' file not found": 3,
+      "'com_android_ueventd_flags.h' file not found": 1,
+      "'selinux/android.h' file not found": 2,
+      "'selinux/label.h' file not found": 2,
+      "'exthandler/exthandler.h' file not found": 1,
+      "'android/avf_cc_flags.h' file not found": 3,
+      "'cutils/properties.h' file not found": 1,
+      "'liblmkd_utils.h' file not found": 1,
+      "'modprobe/modprobe.h' file not found": 1,
+      "'com_android_apex_flags.h' file not found": 1,
+      "'system/core/init/persistent_properties.pb.h' file not found": 1,
+      "'cutils/android_reboot.h' file not found": 1,
+      "'selinux/selinux.h' file not found": 1,
+      "'procinfo/process.h' file not found": 1,
+      "'libsnapshot/snapshot.h' file not found": 1,
+      "'cutils/uevent.h' file not found": 1,
+      "'fstab/fstab.h' file not found": 1
+    }
+  },
+  "source_acquisition_tests": {
+    "original_payload_and_bounded_cross_subtree_link": "passed",
+    "existing_evidence_not_overwritten": "passed",
+    "escape_rejected_and_failure_recorded": "passed",
+    "invalid_selection_before_output_creation": "passed"
+  },
+  "init_full_project_comparison": {
+    "regular_files": 203,
+    "identical": true
+  },
+  "new_host_build_packages": [
+    "cmake 4.4.5-1",
+    "cppdap 1.58.0-3",
+    "jsoncpp 1.9.8-1",
+    "rhash 1.4.6-1"
+  ],
+  "host_protoc_build": {
+    "session_id": 69923,
+    "status_at_snapshot": "running, confirm handle/process and build-state before reuse",
+    "source": "Original protobuf25.8 and Abseil exact locked commits",
+    "compiler": "Host clang23/glibc, build-time generator only",
+    "frontier": "Generated .pb.cc/.pb.h files, no host pointers/objects/libraries cross into target",
+    "parallelism": 1,
+    "log": "dist/aosp16/protoc-host-2/build.log",
+    "state": "dist/aosp16/protoc-host-2/build-state.json",
+    "first_configure": "protoc-host-1 selected compiler21 installed incompletely as host tool; feature probes failed; no runtime issue inferred. Retained, never built."
+  },
+  "not_done": [
+    "Whole libinit build/link/execution",
+    "PropertyInit/StartPropertyService/original derivations",
+    "API/Bionic-JNI/ISA broad compatibility; no ARM or32-bit acceptance",
+    "Markor and all APK nine stages",
+    "SELinux mediation and original property service",
+    "CTS/security/distribution acceptance"
+  ],
+  "next": "Poll live protoc build69923; verify generator and generated schemas, then close whole original target libinit include/generated/static dependency groups with selected compiler21. Do not run second_stage or add stubs.",
+  "graphify": {
+    "nodes": 2601,
+    "edges": 5017,
+    "communities": 224,
+    "exit_code": 0,
+    "scope": "AST-only isolated staged worktree, old pending sources excluded"
+  },
+  "local_links_checked": 145,
+  "broken_local_links": 0,
+  "pending_file_hashes_preserved": true
+}

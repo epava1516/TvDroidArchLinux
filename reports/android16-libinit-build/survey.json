@@ -1,0 +1,509 @@
+{
+  "source_groups": {
+    "init_common_sources": [
+      "action.cpp",
+      "action_manager.cpp",
+      "action_parser.cpp",
+      "capabilities.cpp",
+      "epoll.cpp",
+      "import_parser.cpp",
+      "interprocess_fifo.cpp",
+      "keychords.cpp",
+      "parser.cpp",
+      "property_type.cpp",
+      "rlimit_parser.cpp",
+      "service.cpp",
+      "service_list.cpp",
+      "service_parser.cpp",
+      "service_utils.cpp",
+      "subcontext.cpp",
+      "subcontext.proto",
+      "tokenizer.cpp",
+      "util.cpp"
+    ],
+    "init_device_sources": [
+      "apex_init_util.cpp",
+      "block_dev_initializer.cpp",
+      "bootchart.cpp",
+      "builtins.cpp",
+      "coldboot.cpp",
+      "coldboot_runner_subprocess.cpp",
+      "coldboot_runner_thread_pool.cpp",
+      "devices.cpp",
+      "firmware_handler.cpp",
+      "first_stage_console.cpp",
+      "first_stage_init.cpp",
+      "first_stage_mount.cpp",
+      "fscrypt_init_extensions.cpp",
+      "init.cpp",
+      "lmkd_service.cpp",
+      "modalias_handler.cpp",
+      "mount_handler.cpp",
+      "mount_namespace.cpp",
+      "persistent_properties.cpp",
+      "persistent_properties.proto",
+      "property_service.cpp",
+      "property_service.proto",
+      "reboot.cpp",
+      "reboot_utils.cpp",
+      "security.cpp",
+      "selabel.cpp",
+      "selinux.cpp",
+      "sigchld_handler.cpp",
+      "snapuserd_transition.cpp",
+      "switch_root.cpp",
+      "tradeinmode.cpp",
+      "thread_pool.cpp",
+      "uevent_listener.cpp",
+      "uevent_dependency_graph.cpp",
+      "ueventd.cpp",
+      "ueventd_parser.cpp"
+    ]
+  },
+  "compiler": "clang version 23.1.4\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /usr/bin\n",
+  "common_argv": [
+    "clang++",
+    "--target=x86_64-linux-android36",
+    "-std=gnu++20",
+    "-nostdinc",
+    "-nostdinc++",
+    "-fPIC",
+    "-O0",
+    "-g0",
+    "-isystem",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/platform-libcxx-x86_64/source/prebuilts/clang/host/linux-x86/clang-r563880c/android_libc++/platform/x86_64/include/c++/v1",
+    "-isystem",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/platform-libcxx-headers/source/prebuilts/clang/host/linux-x86/clang-r563880c/include/c++/v1",
+    "-isystem",
+    "/usr/lib/clang/23/include",
+    "-isystem",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/include",
+    "-isystem",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/kernel/uapi/asm-x86",
+    "-isystem",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/kernel/uapi",
+    "-isystem",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/kernel/android/uapi",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/property-study/libbase-regular/include",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/fmt-include/source/external/fmtlib/include"
+  ],
+  "scope": "Whole declared libinit source-set build survey only; hostclang23 vs selected21, incomplete include/generated/product flags. Not Soong equivalence, no link, no execution or subsystem/API acceptance. Original files unchanged. No source omitted from survey.",
+  "results": [
+    {
+      "source": "action.cpp",
+      "source_sha256": "5925e6533887fe2cda21bc01fe5521ae6aa4fc5da4bc555cc8c3930f7e76e68c",
+      "exit_code": 1,
+      "seconds": 5.968,
+      "log": "logs/action.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/subcontext.h:28:10: fatal error: 'system/core/init/subcontext.pb.h' file not found"
+    },
+    {
+      "source": "action_manager.cpp",
+      "source_sha256": "d58d307c5e678330e842e3da146c8f39ee014954f5656a69508b1bc14e184048",
+      "exit_code": 1,
+      "seconds": 5.912,
+      "log": "logs/action_manager.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/subcontext.h:28:10: fatal error: 'system/core/init/subcontext.pb.h' file not found"
+    },
+    {
+      "source": "action_parser.cpp",
+      "source_sha256": "667c9280a1ad542e2a175546fbf0ddf57d9ca740dd2c702d626cbf40a257042d",
+      "exit_code": 1,
+      "seconds": 6.244,
+      "log": "logs/action_parser.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/subcontext.h:28:10: fatal error: 'system/core/init/subcontext.pb.h' file not found"
+    },
+    {
+      "source": "capabilities.cpp",
+      "source_sha256": "4d7f9289a1b63467fa5f9577037e0abc72b83037f876f7eddfe138efa8b285a4",
+      "exit_code": 1,
+      "seconds": 5.787,
+      "log": "logs/capabilities.cpp.log",
+      "first_fatal_error": "See original log"
+    },
+    {
+      "source": "epoll.cpp",
+      "source_sha256": "b26742c312222828d6c3079ac9344f5540780a658bb2d3378fa2e058bbe67212",
+      "exit_code": 0,
+      "seconds": 7.819,
+      "log": "logs/epoll.cpp.log",
+      "object_sha256": "030308995bc4d8e8f2a45b79201af40e5f167587c0b1fd9f9744474d15201eb2"
+    },
+    {
+      "source": "import_parser.cpp",
+      "source_sha256": "a5abcc4638f548fa1a489edbe4dba19a28065cac8a26ad6d370bf9f6b0bc2bf8",
+      "exit_code": 0,
+      "seconds": 7.224,
+      "log": "logs/import_parser.cpp.log",
+      "object_sha256": "919543b8b8cafe5f5d0846111d9b7e25848c1526528561a441bd4e4f7f0a2395"
+    },
+    {
+      "source": "interprocess_fifo.cpp",
+      "source_sha256": "8d919191893532bf392e2d4e5fcf2ba6675dd7e5f8782d6b51ca571cae18106e",
+      "exit_code": 0,
+      "seconds": 7.18,
+      "log": "logs/interprocess_fifo.cpp.log",
+      "object_sha256": "177cc181bc283d6605ed6df4405f052e86d61638939eba534cee3badea2e1115"
+    },
+    {
+      "source": "keychords.cpp",
+      "source_sha256": "f51964779726adfc05b148dfe93d95b9739c56fcd923479d064fd24519477cd4",
+      "exit_code": 0,
+      "seconds": 7.874,
+      "log": "logs/keychords.cpp.log",
+      "object_sha256": "191226e4c1874a18998463fa81de2b2bf51fcb40226908536812383668aeac3c"
+    },
+    {
+      "source": "parser.cpp",
+      "source_sha256": "ee3b904aaafdb9a5be829b0506c8c42e4605429b42efcc0c383320051c5e128d",
+      "exit_code": 0,
+      "seconds": 7.745,
+      "log": "logs/parser.cpp.log",
+      "object_sha256": "ac60ba61a258ad0739d21201ef5dc1a7b5a16c5a787992cc71776c5c646798e4"
+    },
+    {
+      "source": "property_type.cpp",
+      "source_sha256": "09e9a74d5432dfa849dc1f835fa0e8239eb729fe19fe4f7d40b6ddcf94f54d85",
+      "exit_code": 0,
+      "seconds": 5.431,
+      "log": "logs/property_type.cpp.log",
+      "object_sha256": "c3739da854d2ac2ddd494d831f16da57f36e9e62932d4ac44367b0015cb5a8c2"
+    },
+    {
+      "source": "rlimit_parser.cpp",
+      "source_sha256": "a95b9ce83024d98fe983fb0b6d6ef883a2851b581d3e61d86d3c5c7b8fd66c60",
+      "exit_code": 0,
+      "seconds": 6.541,
+      "log": "logs/rlimit_parser.cpp.log",
+      "object_sha256": "28380485609f83382319d35c299e9b84dbf2b40bcb7d2b82d2708a02796bd558"
+    },
+    {
+      "source": "service.cpp",
+      "source_sha256": "d0d758cc6a87ebebf05c76d28026582cbac9a1e1ecd756987eeb96de7230e726",
+      "exit_code": 1,
+      "seconds": 5.795,
+      "log": "logs/service.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/service.h:31:10: fatal error: 'cutils/iosched_policy.h' file not found"
+    },
+    {
+      "source": "service_list.cpp",
+      "source_sha256": "fa0e3da053a7fecd95e3b903bfdbbfc5d9ed5bb710a0228413baf0ecdb8526b5",
+      "exit_code": 1,
+      "seconds": 5.435,
+      "log": "logs/service_list.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/service.h:31:10: fatal error: 'cutils/iosched_policy.h' file not found"
+    },
+    {
+      "source": "service_parser.cpp",
+      "source_sha256": "ec75b1d70f286eb5bb47002fad51ac4032d7e4464b2f4d548679e1c2951dd730",
+      "exit_code": 1,
+      "seconds": 7.501,
+      "log": "logs/service_parser.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/service.h:31:10: fatal error: 'cutils/iosched_policy.h' file not found"
+    },
+    {
+      "source": "service_utils.cpp",
+      "source_sha256": "e2b1103a96e5b1c4b09fa226679bb81bee6e21fe2e73e1c7fdf62cf72ea96929",
+      "exit_code": 1,
+      "seconds": 5.091,
+      "log": "logs/service_utils.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/service_utils.h:27:10: fatal error: 'cutils/iosched_policy.h' file not found"
+    },
+    {
+      "source": "subcontext.cpp",
+      "source_sha256": "32b2657201d1e8d2da687de9b63294e665603a12a095ae6cf35a3123e04d81b1",
+      "exit_code": 1,
+      "seconds": 6.173,
+      "log": "logs/subcontext.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/subcontext.h:28:10: fatal error: 'system/core/init/subcontext.pb.h' file not found"
+    },
+    {
+      "source": "tokenizer.cpp",
+      "source_sha256": "628de10a21b99a8bfd51be97082d6e7cb0accd0914917dc343de630cddf4dab9",
+      "exit_code": 0,
+      "seconds": 0.509,
+      "log": "logs/tokenizer.cpp.log",
+      "object_sha256": "5154c565d2da3900062fe49b48fc7a19f7b5371ccbdeaabba662016ca8137cb0"
+    },
+    {
+      "source": "util.cpp",
+      "source_sha256": "15715717581e7864af46569d42e1f1dfa8050c4175f290edf68e4744c1d2efd0",
+      "exit_code": 1,
+      "seconds": 6.118,
+      "log": "logs/util.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/util.cpp:44:10: fatal error: 'cutils/sockets.h' file not found"
+    },
+    {
+      "source": "apex_init_util.cpp",
+      "source_sha256": "2a3d3867300ce42b768347ed8ae0e6c77b768e45cf572b50fb021d45da38cb94",
+      "exit_code": 1,
+      "seconds": 5.993,
+      "log": "logs/apex_init_util.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/subcontext.h:28:10: fatal error: 'system/core/init/subcontext.pb.h' file not found"
+    },
+    {
+      "source": "block_dev_initializer.cpp",
+      "source_sha256": "0f3aa868b685dec98c43b788ab599decb4e9d0274d1cf31436ab0bf9c6b6668e",
+      "exit_code": 1,
+      "seconds": 5.068,
+      "log": "logs/block_dev_initializer.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/block_dev_initializer.cpp:22:10: fatal error: 'fs_mgr.h' file not found"
+    },
+    {
+      "source": "bootchart.cpp",
+      "source_sha256": "08945d6ca120b04f29eca8c7b6a52b2840b1d738757b9e06762da2e5084cd5de",
+      "exit_code": 0,
+      "seconds": 6.684,
+      "log": "logs/bootchart.cpp.log",
+      "object_sha256": "fe6b1fe2b53283d0c683427e3c08713f7dd87fc23121904bc5fed5905bd022fb"
+    },
+    {
+      "source": "builtins.cpp",
+      "source_sha256": "0aba1d30bba00131c6de0960d51ae52b46cf42ccc2787f3616656c35d2fff506",
+      "exit_code": 1,
+      "seconds": 7.995,
+      "log": "logs/builtins.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/builtins.cpp:59:10: fatal error: 'bootloader_message/bootloader_message.h' file not found"
+    },
+    {
+      "source": "coldboot.cpp",
+      "source_sha256": "7aedc24e3c84e21c0b26f9bc8af2cb1a392a465ceb062cc2183b5ffd835fc2bc",
+      "exit_code": 1,
+      "seconds": 6.016,
+      "log": "logs/coldboot.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/coldboot.cpp:19:10: fatal error: 'com_android_ueventd_flags.h' file not found"
+    },
+    {
+      "source": "coldboot_runner_subprocess.cpp",
+      "source_sha256": "87a51fcce0a4e5a0ab36e29730582ec9c14a5aed6f040048935f4ad953363b28",
+      "exit_code": 1,
+      "seconds": 5.309,
+      "log": "logs/coldboot_runner_subprocess.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/coldboot_runner_subprocess.cpp:21:10: fatal error: 'selinux/android.h' file not found"
+    },
+    {
+      "source": "coldboot_runner_thread_pool.cpp",
+      "source_sha256": "a2140047f517d50b570a21b5ab0cbb63decc527b1b9ed957b787c2b401f026df",
+      "exit_code": 0,
+      "seconds": 5.153,
+      "log": "logs/coldboot_runner_thread_pool.cpp.log",
+      "object_sha256": "2e5d47a7302bad0dee82291de561414052244425c7afc05419e94813db583d97"
+    },
+    {
+      "source": "devices.cpp",
+      "source_sha256": "6924a30cde01eb045042559342430bb0c968c9cb45bc22b3d457c98e2bbf9b5e",
+      "exit_code": 1,
+      "seconds": 4.87,
+      "log": "logs/devices.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/devices.h:32:10: fatal error: 'selinux/label.h' file not found"
+    },
+    {
+      "source": "firmware_handler.cpp",
+      "source_sha256": "c3d3fb437c83ff9af649dd5444616c9c24980c7006eb329f64d0e28bf5d21ae2",
+      "exit_code": 1,
+      "seconds": 5.874,
+      "log": "logs/firmware_handler.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/firmware_handler.cpp:40:10: fatal error: 'exthandler/exthandler.h' file not found"
+    },
+    {
+      "source": "first_stage_console.cpp",
+      "source_sha256": "e063a2d93ffd96b02e547795b71df82291447469e08fe7419af9af29e551ac30",
+      "exit_code": 0,
+      "seconds": 4.658,
+      "log": "logs/first_stage_console.cpp.log",
+      "object_sha256": "8e8a40bfb50ea7f58fb319ce1fddadf8b1a0e6cc4d512d068dd0f9c29eff5068"
+    },
+    {
+      "source": "first_stage_init.cpp",
+      "source_sha256": "dd69639b649c49aaa8513f05f2cf0dc7bf2695d564018ae1f31ec31ea2d769a1",
+      "exit_code": 1,
+      "seconds": 5.607,
+      "log": "logs/first_stage_init.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/first_stage_init.cpp:41:10: fatal error: 'android/avf_cc_flags.h' file not found"
+    },
+    {
+      "source": "first_stage_mount.cpp",
+      "source_sha256": "5cdaa5586361a920db456c4ef97c4fac8d7e35eac0c4643888ecb22b4b64f1c3",
+      "exit_code": 1,
+      "seconds": 6.051,
+      "log": "logs/first_stage_mount.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/first_stage_mount.cpp:37:10: fatal error: 'android/avf_cc_flags.h' file not found"
+    },
+    {
+      "source": "fscrypt_init_extensions.cpp",
+      "source_sha256": "4fa35131611b1d145436045ef9bf16a0ed934de176dfa57d87dce50130824034",
+      "exit_code": 1,
+      "seconds": 4.444,
+      "log": "logs/fscrypt_init_extensions.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/fscrypt_init_extensions.cpp:34:10: fatal error: 'cutils/properties.h' file not found"
+    },
+    {
+      "source": "init.cpp",
+      "source_sha256": "018e17b870f6ef3a637230e3d73dd182be315cbaee04b95aa96881e8a2cfb93b",
+      "exit_code": 1,
+      "seconds": 6.837,
+      "log": "logs/init.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/subcontext.h:28:10: fatal error: 'system/core/init/subcontext.pb.h' file not found"
+    },
+    {
+      "source": "lmkd_service.cpp",
+      "source_sha256": "6a331541a889c72fabcd0ffd982c879302c919a6394bf48cf23c7ec0c5e411c3",
+      "exit_code": 1,
+      "seconds": 5.719,
+      "log": "logs/lmkd_service.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/lmkd_service.cpp:22:10: fatal error: 'liblmkd_utils.h' file not found"
+    },
+    {
+      "source": "modalias_handler.cpp",
+      "source_sha256": "6137995fa38ce13c46f1d501518f24b1461beb83ee0c1b68d7e51d55671e4470",
+      "exit_code": 1,
+      "seconds": 2.936,
+      "log": "logs/modalias_handler.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/modalias_handler.h:19:10: fatal error: 'modprobe/modprobe.h' file not found"
+    },
+    {
+      "source": "mount_handler.cpp",
+      "source_sha256": "a4a23a2395a2d1964f211e4943acb176343d60385aabf5f1637469e7dea5fd17",
+      "exit_code": 1,
+      "seconds": 5.921,
+      "log": "logs/mount_handler.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/mount_handler.cpp:38:10: fatal error: 'fs_mgr.h' file not found"
+    },
+    {
+      "source": "mount_namespace.cpp",
+      "source_sha256": "aca16a8acd8b49776714f6e40ffcd5ef4879a2bfeb68e3e681fea5af3ea35f7f",
+      "exit_code": 1,
+      "seconds": 7.245,
+      "log": "logs/mount_namespace.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/mount_namespace.cpp:29:10: fatal error: 'com_android_apex_flags.h' file not found"
+    },
+    {
+      "source": "persistent_properties.cpp",
+      "source_sha256": "667cd4f7de005d29bd7ebee62a3926cc1bc02d2985cbc74b7ebc3528bfc18255",
+      "exit_code": 1,
+      "seconds": 6.107,
+      "log": "logs/persistent_properties.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/persistent_properties.h:23:10: fatal error: 'system/core/init/persistent_properties.pb.h' file not found"
+    },
+    {
+      "source": "property_service.cpp",
+      "source_sha256": "ac68c4c4de5ef26366498d39d0945ba2ab06b022e24a7a157853b66a4b8a3b3c",
+      "exit_code": 1,
+      "seconds": 7.455,
+      "log": "logs/property_service.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/property_service.cpp:57:10: fatal error: 'fs_mgr.h' file not found"
+    },
+    {
+      "source": "reboot.cpp",
+      "source_sha256": "a7ee670de7a44af3869b935d19ef5b00f3c5c00d696244bc3b571fc769052230",
+      "exit_code": 1,
+      "seconds": 5.522,
+      "log": "logs/reboot.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/reboot.cpp:55:10: fatal error: 'bootloader_message/bootloader_message.h' file not found"
+    },
+    {
+      "source": "reboot_utils.cpp",
+      "source_sha256": "abc9e85acfb684997f929b9b481639a09915910808415de660b849e3a8331f2b",
+      "exit_code": 1,
+      "seconds": 5.501,
+      "log": "logs/reboot_utils.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/reboot_utils.cpp:29:10: fatal error: 'cutils/android_reboot.h' file not found"
+    },
+    {
+      "source": "security.cpp",
+      "source_sha256": "07b49fabeec0f52108d85018eedaae03ed0eb049ea18bbcd26eec92406152763",
+      "exit_code": 1,
+      "seconds": 6.24,
+      "log": "logs/security.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/security.cpp:24:10: fatal error: 'selinux/selinux.h' file not found"
+    },
+    {
+      "source": "selabel.cpp",
+      "source_sha256": "25f0f2c75cb13a6b63055c05b3dc10b4df8a401ecc8639b5359052d0a088c525",
+      "exit_code": 1,
+      "seconds": 3.146,
+      "log": "logs/selabel.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/selabel.cpp:19:10: fatal error: 'selinux/android.h' file not found"
+    },
+    {
+      "source": "selinux.cpp",
+      "source_sha256": "1c729e6c6beaa028ac35d3144df2fe94499ac7e38b70ae731fddb080ac61f46b",
+      "exit_code": 1,
+      "seconds": 6.539,
+      "log": "logs/selinux.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/selinux.cpp:70:10: fatal error: 'android/avf_cc_flags.h' file not found"
+    },
+    {
+      "source": "sigchld_handler.cpp",
+      "source_sha256": "821367f0c3b2e8188c9b28b8f385f9426dc3bfb8fc69999166603e2c34dbaea5",
+      "exit_code": 1,
+      "seconds": 6.014,
+      "log": "logs/sigchld_handler.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/sigchld_handler.cpp:32:10: fatal error: 'procinfo/process.h' file not found"
+    },
+    {
+      "source": "snapuserd_transition.cpp",
+      "source_sha256": "f5245af0c5c47b4660ceec06d63582b7c15bcc4ff4b32ba7fd8a7cf70486da5c",
+      "exit_code": 1,
+      "seconds": 4.698,
+      "log": "logs/snapuserd_transition.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/snapuserd_transition.h:25:10: fatal error: 'libsnapshot/snapshot.h' file not found"
+    },
+    {
+      "source": "switch_root.cpp",
+      "source_sha256": "45a68a861d071e1ec55cf2aabdf78fc22b7b92629fc2c925119da4509a5680dc",
+      "exit_code": 0,
+      "seconds": 4.889,
+      "log": "logs/switch_root.cpp.log",
+      "object_sha256": "7559b326db43eab657b5100f4e9e5afc2081363d65c515666037f8f41bf0a4f6"
+    },
+    {
+      "source": "tradeinmode.cpp",
+      "source_sha256": "7b674efca6213b9c0171c8c48ac7c50f0483fc32f4b7e0b1b4e3f6924f29ee22",
+      "exit_code": 1,
+      "seconds": 4.312,
+      "log": "logs/tradeinmode.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/tradeinmode.cpp:26:10: fatal error: 'bootloader_message/bootloader_message.h' file not found"
+    },
+    {
+      "source": "thread_pool.cpp",
+      "source_sha256": "c4fe84404b1b0694dcb34a394a9fc2a8421a821fba8a7999e352c974c803bb51",
+      "exit_code": 0,
+      "seconds": 4.93,
+      "log": "logs/thread_pool.cpp.log",
+      "object_sha256": "43dbc834b6b4dcd2fc9b2e3ca76a66d4ecc462ca87d26bc35feadb2f74868dce"
+    },
+    {
+      "source": "uevent_listener.cpp",
+      "source_sha256": "d2ede42c102b67c29e4da35878be1d5a6796e6d957cffec24b0b76774f79b4f5",
+      "exit_code": 1,
+      "seconds": 4.987,
+      "log": "logs/uevent_listener.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/uevent_listener.cpp:27:10: fatal error: 'cutils/uevent.h' file not found"
+    },
+    {
+      "source": "uevent_dependency_graph.cpp",
+      "source_sha256": "8cc87a22a1b1e3a98166fbb38008365f86bc0d9b38fd8d8ac1912185b070e3de",
+      "exit_code": 0,
+      "seconds": 5.428,
+      "log": "logs/uevent_dependency_graph.cpp.log",
+      "object_sha256": "0be3e2cc0d6e50208c28cfda5137b73fb7dcc85f099e2a0acb06906c5acda30f"
+    },
+    {
+      "source": "ueventd.cpp",
+      "source_sha256": "b3eac4e887aeead1fb6066c01c28d45f6778edb8e55ad7ca202335dcd3ef6799",
+      "exit_code": 1,
+      "seconds": 6.56,
+      "log": "logs/ueventd.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/ueventd.cpp:36:10: fatal error: 'fstab/fstab.h' file not found"
+    },
+    {
+      "source": "ueventd_parser.cpp",
+      "source_sha256": "6edfbfec4b24ba84edcd902db3bc211de9c69792d4bb87d81944e31eaad83647",
+      "exit_code": 1,
+      "seconds": 5.444,
+      "log": "logs/ueventd_parser.cpp.log",
+      "first_fatal_error": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/devices.h:32:10: fatal error: 'selinux/label.h' file not found"
+    }
+  ]
+}

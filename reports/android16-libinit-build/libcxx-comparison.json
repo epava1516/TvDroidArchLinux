@@ -1,0 +1,22 @@
+{
+  "prebuilt": {
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/platform-libcxx-x86_64/source/prebuilts/clang/host/linux-x86/clang-r563880c/android_libc++/platform/x86_64/lib/libc++.so",
+    "sha256": "07ff0bd165d5c7cb6e1c8f79820ffb7b307e04def111160bcbeb75af975a9d1d",
+    "notes": "\nDisplaying notes found in: .note.android.ident\n  Owner                Data size \tDescription\n  Android              0x00000084\tNT_VERSION (version)\n   description data: 1e 00 00 00 72 32 38 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 31 33 30 30 34 31 30 38 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 \n\nDisplaying notes found in: .note.gnu.build-id\n  Owner                Data size \tDescription\n  GNU                  0x00000014\tNT_GNU_BUILD_ID (unique build ID bitstring)\n    Build ID: c12cf3b742247f2e6b5aad0ac3fd30b54f62a2aa\n",
+    "sections": {
+      ".text": "a78cc4b43749fbe76776f2a423bd57f19915ede90b2be4985e6f98337f5f2ff4",
+      ".rodata": "4555a64f4556ecfc2bf1311222828594c2e23da04ee0e1aee9131b6d7c4f5619",
+      ".dynstr": "433324ce37a3a404dbd734ffa7a03f8ed8696d9859cc422ebad480dd2b3d1891"
+    }
+  },
+  "GSI": {
+    "path": "dist/aosp16/factory-inputs-3/root/system/lib64/libc++.so",
+    "sha256": "dc8cfbe728fcec370d576cf014a6c236ba56c56d3519678598a0e98adee5b477",
+    "notes": "\nDisplaying notes found in: .note.android.ident\n  Owner                Data size \tDescription\n  Android              0x00000084\tNT_VERSION (version)\n   description data: 1e 00 00 00 72 32 38 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 31 33 30 30 34 31 30 38 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 \n\nDisplaying notes found in: .note.gnu.build-id\n  Owner                Data size \tDescription\n  GNU                  0x00000014\tNT_GNU_BUILD_ID (unique build ID bitstring)\n    Build ID: c12cf3b742247f2e6b5aad0ac3fd30b54f62a2aa\n",
+    "sections": {
+      ".text": "a78cc4b43749fbe76776f2a423bd57f19915ede90b2be4985e6f98337f5f2ff4",
+      ".rodata": "4555a64f4556ecfc2bf1311222828594c2e23da04ee0e1aee9131b6d7c4f5619",
+      ".dynstr": "433324ce37a3a404dbd734ffa7a03f8ed8696d9859cc422ebad480dd2b3d1891"
+    }
+  }
+}

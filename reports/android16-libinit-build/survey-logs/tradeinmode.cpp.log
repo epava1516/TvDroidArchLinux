@@ -1,0 +1,4 @@
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/tradeinmode.cpp:26:10: fatal error: 'bootloader_message/bootloader_message.h' file not found
+   26 | #include <bootloader_message/bootloader_message.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.

@@ -62,6 +62,24 @@ DEX/APK ni integración gráfica se ha demostrado en este hito.
 
 ## Propiedades y configuración · cierre en estudio
 
+[Construcción original en curso](../reports/android16-libinit-build/validation.json):
+se adquirió system/core completo del lock; los 203 archivos regulares de init
+coinciden con su extracción independiente. Soong selecciona por defecto
+clang-r563880c/21 y libc++ precompilado de plataforma. external/libcxx del mismo
+manifiesto conserva cabeceras antiguas para Trusty: estar fijado en el manifiesto
+no lo convierte en la implementación de plataforma. No se usa para este target.
+Libc++ de plataforma y GSI comparten build-id y hashes de .text/.rodata/.dynstr;
+los ELF completos difieren. Esto no demuestra equivalencia total de builds.
+
+El compilador original, verificado contra su objeto Git, produce epoll.o Bionic
+x86_64 con cabeceras originales y estándar gnu++20: 5,23s/180.144 KiB RSS para
+ese objeto, sin extrapolar al subsistema/runtime. El sondeo previo con hostclang23
+cubrió las 52 unidades declaradas: 14 objetos y 38 fallos por cierre/configuración
+incompletos, sin excluir fuentes. No acredita libinit construido. Se prepara
+protoc25.8/Abseil originales con clang anfitrión/glibc: herramienta de build cuya
+frontera son archivos generados, ninguna biblioteca anfitriona entra al target.
+Su proceso y handle están en el checkpoint; confirmar estado antes de reutilizar.
+
 El [inventario de entradas completas](../reports/android16-boot-profile/input-audit.json)
 verifica dos extracciones independientes: system101, system_ext21 y product58
 declaraciones; tres archivos de contextos presentes. El serializador original,

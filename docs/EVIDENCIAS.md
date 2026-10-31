@@ -1,5 +1,13 @@
 # Índice de evidencias
 
+- [Construcción nativa libinit, parcial](../reports/android16-libinit-build/validation.json):
+  adquisición desde lock, igualdad de 203 archivos init, compilador original21
+  verificado por Git blob y objeto x86_64 con cabeceras Bionic/plataforma.
+  Identidad libc++ mediante fuentes de selección, secciones y REA MCP; ELF
+  completos distintos. Sondeo de las 52 unidades con hostclang23: 14 objetos,
+  38 fallos; no aceptación del subsistema. Generador protobuf host en construcción,
+  [handles y recuperación](../reports/android16-libinit-build/checkpoint.json).
+
 - [Configuración boot original: inventario y decisión de unidad](../reports/android16-boot-profile/validation.json):
   tres prop files (101/21/58 declaraciones), tres contextos, dos raíces idénticas;
   metadatos originales idénticos al incluir todos los contextos presentes.

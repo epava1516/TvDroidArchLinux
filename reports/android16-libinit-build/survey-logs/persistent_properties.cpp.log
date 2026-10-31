@@ -1,0 +1,5 @@
+In file included from /home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/persistent_properties.cpp:17:
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/persistent_properties.h:23:10: fatal error: 'system/core/init/persistent_properties.pb.h' file not found
+   23 | #include "system/core/init/persistent_properties.pb.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.

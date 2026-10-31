@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-boot-profile/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-libinit-build/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -49,6 +49,14 @@ las entradas presentes y su clausura directa de build está en
 dependencias transitivas, callbacks/control reales, persistencia y mediación;
 no añadir sólo la propiedad que permita superar el siguiente guard ni duplicar
 las derivaciones originales en un mapa propio. No hay nuevo perfil ejecutable.
+
+Primero comprobar el build **protoc host** registrado como sesión69923 en el
+checkpoint: original protobuf25.8/Abseil, ninja -j1, log y estado bajo
+dist/aosp16/protoc-host-2. No relanzar por perder una observación. Después generar
+los esquemas originales y cerrar los grupos de dependencias target con clang21.
+[Resultado actual](../reports/android16-libinit-build/validation.json): compilador
+original verificado y un objeto Bionic, no libinit enlazado ni framework arrancado.
+El sondeo completo de fuentes continúa siendo evidencia parcial de construcción.
 
 app_process original termina 0 sin readiness: fuente y diagnóstico muestran
 retorno temprano de startVm por ro.product.cpu.abilist64 ausente, antes de crear

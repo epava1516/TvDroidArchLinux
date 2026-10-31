@@ -1,0 +1,4 @@
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/security.cpp:24:10: fatal error: 'selinux/selinux.h' file not found
+   24 | #include <selinux/selinux.h>
+      |          ^~~~~~~~~~~~~~~~~~~
+1 error generated.

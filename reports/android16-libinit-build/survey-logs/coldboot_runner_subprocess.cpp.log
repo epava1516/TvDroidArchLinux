@@ -1,0 +1,4 @@
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/coldboot_runner_subprocess.cpp:21:10: fatal error: 'selinux/android.h' file not found
+   21 | #include <selinux/android.h>
+      |          ^~~~~~~~~~~~~~~~~~~
+1 error generated.

@@ -1,0 +1,219 @@
+{
+  "evidence_id": "ev_41600b0e2f1e85d9616db7cb9bc6d5f83ea159c68a0f4aefb339d3f868fda017",
+  "subject": {
+    "name": "libc++.so",
+    "digest": {
+      "sha256": "07ff0bd165d5c7cb6e1c8f79820ffb7b307e04def111160bcbeb75af975a9d1d"
+    },
+    "local_path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/platform-libcxx-x86_64/source/prebuilts/clang/host/linux-x86/clang-r563880c/android_libc++/platform/x86_64/lib/libc++.so",
+    "format": "elf",
+    "architecture": "x86_64"
+  },
+  "provider": {
+    "id": "rea-elf-notes",
+    "name": "REA ELF note parser",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.analysis",
+  "operation": "inspect_elf_notes",
+  "parameters": {
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/platform-libcxx-x86_64/source/prebuilts/clang/host/linux-x86/clang-r563880c/android_libc++/platform/x86_64/lib/libc++.so",
+    "max_file_bytes": 67108864,
+    "max_entries": 32
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "artifact": {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/platform-libcxx-x86_64/source/prebuilts/clang/host/linux-x86/clang-r563880c/android_libc++/platform/x86_64/lib/libc++.so",
+      "sha256": "07ff0bd165d5c7cb6e1c8f79820ffb7b307e04def111160bcbeb75af975a9d1d",
+      "bytes": 7561848
+    },
+    "format": "elf64",
+    "byte_order": "little",
+    "machine": 62,
+    "type": 3,
+    "type_name": "shared",
+    "tables": [
+      {
+        "kind": "program",
+        "index": 10,
+        "name": null,
+        "location": {
+          "offset": 680,
+          "bytes": 188
+        },
+        "alignment": 4
+      },
+      {
+        "kind": "section",
+        "index": 1,
+        "name": ".note.android.ident",
+        "location": {
+          "offset": 680,
+          "bytes": 152
+        },
+        "alignment": 4
+      },
+      {
+        "kind": "section",
+        "index": 2,
+        "name": ".note.gnu.build-id",
+        "location": {
+          "offset": 832,
+          "bytes": 36
+        },
+        "alignment": 4
+      }
+    ],
+    "entries": [
+      {
+        "index": 0,
+        "table_kind": "program",
+        "table_index": 10,
+        "location": {
+          "offset": 680,
+          "bytes": 152
+        },
+        "namesz": 8,
+        "descsz": 132,
+        "type": 1,
+        "type_name": "unknown",
+        "owner": "Android",
+        "owner_bytes_hex": "416e64726f696400",
+        "descriptor": {
+          "location": {
+            "offset": 700,
+            "bytes": 132
+          },
+          "bytes": 132,
+          "sha256": "afa1c4d1bd703844315355e5c0d52438ab13c20c649f55088c3ded629d3f946d",
+          "hex": null
+        },
+        "gnu": null
+      },
+      {
+        "index": 1,
+        "table_kind": "program",
+        "table_index": 10,
+        "location": {
+          "offset": 832,
+          "bytes": 36
+        },
+        "namesz": 4,
+        "descsz": 20,
+        "type": 3,
+        "type_name": "gnu_build_id",
+        "owner": "GNU",
+        "owner_bytes_hex": "474e5500",
+        "descriptor": {
+          "location": {
+            "offset": 848,
+            "bytes": 20
+          },
+          "bytes": 20,
+          "sha256": "9e9f4c13c30d402cc1f68e1ef3914381030dcaef319c04391526787bf34df6ac",
+          "hex": "c12cf3b742247f2e6b5aad0ac3fd30b54f62a2aa"
+        },
+        "gnu": {
+          "build_id_hex": "c12cf3b742247f2e6b5aad0ac3fd30b54f62a2aa",
+          "abi_tag": null,
+          "gold_version": null
+        }
+      },
+      {
+        "index": 2,
+        "table_kind": "section",
+        "table_index": 1,
+        "location": {
+          "offset": 680,
+          "bytes": 152
+        },
+        "namesz": 8,
+        "descsz": 132,
+        "type": 1,
+        "type_name": "unknown",
+        "owner": "Android",
+        "owner_bytes_hex": "416e64726f696400",
+        "descriptor": {
+          "location": {
+            "offset": 700,
+            "bytes": 132
+          },
+          "bytes": 132,
+          "sha256": "afa1c4d1bd703844315355e5c0d52438ab13c20c649f55088c3ded629d3f946d",
+          "hex": null
+        },
+        "gnu": null
+      },
+      {
+        "index": 3,
+        "table_kind": "section",
+        "table_index": 2,
+        "location": {
+          "offset": 832,
+          "bytes": 36
+        },
+        "namesz": 4,
+        "descsz": 20,
+        "type": 3,
+        "type_name": "gnu_build_id",
+        "owner": "GNU",
+        "owner_bytes_hex": "474e5500",
+        "descriptor": {
+          "location": {
+            "offset": 848,
+            "bytes": 20
+          },
+          "bytes": 20,
+          "sha256": "9e9f4c13c30d402cc1f68e1ef3914381030dcaef319c04391526787bf34df6ac",
+          "hex": "c12cf3b742247f2e6b5aad0ac3fd30b54f62a2aa"
+        },
+        "gnu": {
+          "build_id_hex": "c12cf3b742247f2e6b5aad0ac3fd30b54f62a2aa",
+          "abi_tag": null,
+          "gold_version": null
+        }
+      }
+    ],
+    "coverage": {
+      "status": "complete",
+      "examined_tables": 3,
+      "examined_entries": 4
+    },
+    "limitations": [
+      "This workflow does not execute the image, resolve runtime notes, or verify GNU build-id uniqueness against package catalogs.",
+      "PT_NOTE and SHT_NOTE are examined independently; the same file range may appear twice when both tables declare it."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "This workflow does not execute the image, resolve runtime notes, or verify GNU build-id uniqueness against package catalogs.",
+    "PT_NOTE and SHT_NOTE are examined independently; the same file range may appear twice when both tables declare it."
+  ],
+  "relationship_coverage": null,
+  "locations": [
+    {
+      "kind": "artifact-path",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/platform-libcxx-x86_64/source/prebuilts/clang/host/linux-x86/clang-r563880c/android_libc++/platform/x86_64/lib/libc++.so"
+    },
+    {
+      "kind": "file-offset-range",
+      "start": 680,
+      "end": 868
+    },
+    {
+      "kind": "file-offset-range",
+      "start": 680,
+      "end": 832
+    },
+    {
+      "kind": "file-offset-range",
+      "start": 832,
+      "end": 868
+    }
+  ],
+  "evidence_links": []
+}

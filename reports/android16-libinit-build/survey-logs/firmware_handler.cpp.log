@@ -1,0 +1,4 @@
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/firmware_handler.cpp:40:10: fatal error: 'exthandler/exthandler.h' file not found
+   40 | #include "exthandler/exthandler.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.

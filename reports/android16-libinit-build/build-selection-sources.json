@@ -1,0 +1,35 @@
+{
+  "build/soong/cc/config/global.go": {
+    "commit": "f389fa2a2a768a93bc99957e2288f3fbee032bff",
+    "url": "https://android.googlesource.com/platform/build/soong/+/f389fa2a2a768a93bc99957e2288f3fbee032bff/cc/config/global.go?format=TEXT",
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-study/build__soong__cc__config__global.go",
+    "sha256": "4f480f21059dc067823e5cec0d3cc19acced992f0d34233e17ed4d81d0259881"
+  },
+  "build/soong/cc/config/clang.go": {
+    "commit": "f389fa2a2a768a93bc99957e2288f3fbee032bff",
+    "url": "https://android.googlesource.com/platform/build/soong/+/f389fa2a2a768a93bc99957e2288f3fbee032bff/cc/config/clang.go?format=TEXT",
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-study/build__soong__cc__config__clang.go",
+    "sha256": "1868b612aa805c61e0bb690c65e3569a9d507579834e9f9ffd9b84802a75bbd3"
+  },
+  "build/soong/cc/stl.go": {
+    "commit": "f389fa2a2a768a93bc99957e2288f3fbee032bff",
+    "url": "https://android.googlesource.com/platform/build/soong/+/f389fa2a2a768a93bc99957e2288f3fbee032bff/cc/stl.go?format=TEXT",
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-study/build__soong__cc__stl.go",
+    "sha256": "31b30a2c75457df7076aa588760cb2e64b73f1880e2b19092eb805e682daacea"
+  },
+  "external/libcxx/Android.bp": {
+    "commit": "88894a62bb97313ed9bf79a546f1486de4b2e723",
+    "url": "https://android.googlesource.com/platform/external/libcxx/+/88894a62bb97313ed9bf79a546f1486de4b2e723/Android.bp?format=TEXT",
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-study/external__libcxx__Android.bp",
+    "sha256": "62aebe1aef2385ce1b233c3675bb570f328fa1c2feb5ad266d2087a8699f1c50"
+  },
+  "prebuilts/clang/host/linux-x86/Android.bp": {
+    "commit": "9916fb51ccb914d62d35ad9a7b9b21d2ef046928",
+    "url": "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+/9916fb51ccb914d62d35ad9a7b9b21d2ef046928/Android.bp?format=TEXT",
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-study/prebuilts__clang__host__linux-x86__Android.bp",
+    "sha256": "67f87399d1674ac8f477f3b223da2bc55debd16876c74b4a5963452770ba77d7"
+  },
+  "prebuilts/clang/host/linux-x86/BUILD.bazel": {
+    "error": "HTTP Error 404: Not Found"
+  }
+}

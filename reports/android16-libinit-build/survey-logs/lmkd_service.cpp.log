@@ -1,0 +1,4 @@
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/lmkd_service.cpp:22:10: fatal error: 'liblmkd_utils.h' file not found
+   22 | #include <liblmkd_utils.h>
+      |          ^~~~~~~~~~~~~~~~~
+1 error generated.

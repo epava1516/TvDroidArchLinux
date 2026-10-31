@@ -1,0 +1,4 @@
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/selinux.cpp:70:10: fatal error: 'android/avf_cc_flags.h' file not found
+   70 | #include <android/avf_cc_flags.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.

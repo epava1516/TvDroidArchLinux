@@ -1,0 +1,10 @@
+{
+  "epoll-clang21.o": {
+    "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-build-1/epoll-clang21.o",
+    "sha256": "d78ad8f8eaae247d6ebc688a8683fabbf7a392b46b93cab8717f5fc8e7972eda"
+  },
+  "epoll.o": {
+    "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-build-1/epoll.o",
+    "sha256": "030308995bc4d8e8f2a45b79201af40e5f167587c0b1fd9f9744474d15201eb2"
+  }
+}

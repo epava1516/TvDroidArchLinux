@@ -1,0 +1,5 @@
+In file included from /home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/devices.cpp:17:
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/devices.h:32:10: fatal error: 'selinux/label.h' file not found
+   32 | #include <selinux/label.h>
+      |          ^~~~~~~~~~~~~~~~~
+1 error generated.

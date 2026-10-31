@@ -1,0 +1,4 @@
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/mount_namespace.cpp:29:10: fatal error: 'com_android_apex_flags.h' file not found
+   29 | #include <com_android_apex_flags.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.

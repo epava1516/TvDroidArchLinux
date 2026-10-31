@@ -1,0 +1,4 @@
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/epoll.cpp:58:13: warning: nested designators are a C99 extension [-Wc99-designator]
+   58 |             .data.fd = fd,
+      |             ^~~~~~~~
+1 warning generated.

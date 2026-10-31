@@ -1,0 +1,4 @@
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/fscrypt_init_extensions.cpp:34:10: fatal error: 'cutils/properties.h' file not found
+   34 | #include <cutils/properties.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~
+1 error generated.

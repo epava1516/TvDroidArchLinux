@@ -1,0 +1,53 @@
+In file included from /home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/capabilities.cpp:15:
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/capabilities.h:29:21: error: unknown type name 'cap_t'
+   29 |     void operator()(cap_t caps) const { cap_free(caps); }
+      |                     ^
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/capabilities.h:33:56: error: use of undeclared identifier 'cap_t'
+   33 | using ScopedCaps = std::unique_ptr<std::remove_pointer<cap_t>::type, CapDeleter>;
+      |                                                        ^~~~~
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/capabilities.cpp:111:13: error: use of undeclared identifier 'cap_drop_bound'
+  111 |         if (cap_drop_bound(cap) == -1) {
+      |             ^~~~~~~~~~~~~~
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/capabilities.cpp:120:5: error: unknown type name 'ScopedCaps'
+  120 |     ScopedCaps caps(cap_init());
+      |     ^
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/capabilities.cpp:120:21: error: use of undeclared identifier 'cap_init'
+  120 |     ScopedCaps caps(cap_init());
+      |                     ^~~~~~~~
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/capabilities.cpp:123:5: error: unknown type name 'cap_value_t'
+  123 |     cap_value_t value[1];
+      |     ^
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/capabilities.cpp:127:42: error: use of undeclared identifier 'CAP_INHERITABLE'
+  127 |             if (cap_set_flag(caps.get(), CAP_INHERITABLE, arraysize(value), value, CAP_SET) != 0 ||
+      |                                          ^~~~~~~~~~~~~~~
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/capabilities.cpp:127:84: error: use of undeclared identifier 'CAP_SET'
+  127 |             if (cap_set_flag(caps.get(), CAP_INHERITABLE, arraysize(value), value, CAP_SET) != 0 ||
+      |                                                                                    ^~~~~~~
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/capabilities.cpp:128:42: error: use of undeclared identifier 'CAP_PERMITTED'
+  128 |                 cap_set_flag(caps.get(), CAP_PERMITTED, arraysize(value), value, CAP_SET) != 0) {
+      |                                          ^~~~~~~~~~~~~
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/capabilities.cpp:128:82: error: use of undeclared identifier 'CAP_SET'
+  128 |                 cap_set_flag(caps.get(), CAP_PERMITTED, arraysize(value), value, CAP_SET) != 0) {
+      |                                                                                  ^~~~~~~
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/capabilities.cpp:137:38: error: use of undeclared identifier 'CAP_PERMITTED'
+  137 |         if (cap_set_flag(caps.get(), CAP_PERMITTED, arraysize(value), value, CAP_SET) != 0 ||
+      |                                      ^~~~~~~~~~~~~
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/capabilities.cpp:137:78: error: use of undeclared identifier 'CAP_SET'
+  137 |         if (cap_set_flag(caps.get(), CAP_PERMITTED, arraysize(value), value, CAP_SET) != 0 ||
+      |                                                                              ^~~~~~~
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/capabilities.cpp:138:38: error: use of undeclared identifier 'CAP_EFFECTIVE'
+  138 |             cap_set_flag(caps.get(), CAP_EFFECTIVE, arraysize(value), value, CAP_SET) != 0) {
+      |                                      ^~~~~~~~~~~~~
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/capabilities.cpp:138:78: error: use of undeclared identifier 'CAP_SET'
+  138 |             cap_set_flag(caps.get(), CAP_EFFECTIVE, arraysize(value), value, CAP_SET) != 0) {
+      |                                                                              ^~~~~~~
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/capabilities.cpp:210:5: error: unknown type name 'ScopedCaps'
+  210 |     ScopedCaps caps(cap_get_proc());
+      |     ^
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/capabilities.cpp:210:21: error: use of undeclared identifier 'cap_get_proc'
+  210 |     ScopedCaps caps(cap_get_proc());
+      |                     ^~~~~~~~~~~~
+/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/init-2/source/system/core/init/capabilities.cpp:211:36: error: use of undeclared identifier 'CAP_INHERITABLE'
+  211 |     if (cap_clear_flag(caps.get(), CAP_INHERITABLE) == -1) {
+      |                                    ^~~~~~~~~~~~~~~
+17 errors generated.
