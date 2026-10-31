@@ -1,0 +1,28 @@
+{
+  "argv": [
+    "sudo",
+    "-n",
+    "prlimit",
+    "--cpu=20",
+    "--as=68719476736",
+    "--core=0",
+    "--",
+    "unshare",
+    "--mount",
+    "--pid",
+    "--fork",
+    "--kill-child=SIGKILL",
+    "--net",
+    "--ipc",
+    "--uts",
+    "--cgroup",
+    "python",
+    "/tmp/archtv-property-profile-client-3.py",
+    "framework"
+  ],
+  "exit_code": 1,
+  "seconds": 0.5271357589954278,
+  "scope": "Optional original liblog logger diagnostic, LD_PRELOAD only transports logs; not production or app launch",
+  "known": "JNI_CreateJavaVM path not yet traced; no proof VM creation succeeded; absence of log text is not success",
+  "next": "Use REA MCP/GDB or syscall capture to distinguish VM initialization failure and missing logging transport. Do not claim ActivityThread/Markor loaded."
+}

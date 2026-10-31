@@ -68,6 +68,22 @@ namespaces privados; esto no acredita aislamiento de aplicaciones ni SELinux.
 Siguiente: contrastar generación y selección original del perfil vendor/política,
 sin fabricar valores, omitir comprobaciones o iniciar Android completo.
 
+
+## Perfil original de propiedades · resultado vigente
+
+[Pruebas](../reports/android16-property-profile/validation.json): la regla original
+sepolicy_vers y la herencia BP4A derivan el valor202504 del perfil fuente. Con esa
+entrada, PropertyInit original retorna0; getprop original lee los mismos170 valores
+con UID10000/capacidades0. El inicializador fue UID0, separado del lector. No se
+acreditan vendor de hardware, paridad de configuración GSI, sockets ni SELinux.
+
+App_process termina1. REA MCP/GDB observa JNI_CreateJavaVM→Runtime::Create→
+ParseOptions→ParsedOptions::Usage→runtime_exit(1): falla al analizar opciones,
+antes de disponibilidad de VM. La traza tiene símbolos originales ajustados a
+mapeos observados; breakpoint pendiente por sí solo no habría probado esa entrada.
+Debugger cerrado e inferior terminado. Próximo paso: estudiar fuentes y lista real
+de opciones del arranque; no declarar ActivityThread/Markor ejecutados.
+
 ## Historia · etapas anteriores, no prioridad vigente
 
 

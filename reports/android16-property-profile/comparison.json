@@ -1,0 +1,7 @@
+{
+  "count": 170,
+  "all170_original_values_equal": true,
+  "uid": 10000,
+  "capabilities": 0,
+  "scope": "Unprivileged read of initialized readonly areas, not property service or policy enforcement"
+}

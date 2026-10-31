@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "sudo",
+    "-n",
+    "unshare",
+    "--mount",
+    "--pid",
+    "--fork",
+    "--net",
+    "--ipc",
+    "--uts",
+    "--cgroup",
+    "python",
+    "/tmp/archtv-propertyinit-execute-2.py"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.5058420459972695,
+  "scope": "Original privileged PropertyInit configuration unit, source-derived BP4A vendor-version input; not service/app isolation/policy acceptance"
+}

@@ -1,0 +1,76 @@
+{
+  "scope": "Source-derived BP4A platform profile diagnostic; not original vendor binary, hardware vendor parity or policy enforcement",
+  "release_chain": [
+    "ap3a",
+    "ap4a",
+    "bp1a",
+    "bp2a",
+    "bp3a",
+    "bp4a"
+  ],
+  "flag_trace": [
+    {
+      "release": "ap3a",
+      "value": "202404"
+    },
+    {
+      "release": "bp2a",
+      "value": "202504"
+    }
+  ],
+  "resolved_value": "202504",
+  "original_rule": "sepolicy_vers version vendor -> BoardSepolicyVers; echo version",
+  "inputs": [
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/build-release/source/build/release/release_configs/bp4a.textproto",
+      "sha256": "3f0a1de927826a70b2165ea6b2b378b87a78995d30645b44e741d82b5792871a"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/build-release/source/build/release/release_configs/bp3a.textproto",
+      "sha256": "31b921df4dc487f4aa4dcb5ff3a019db1899817a1d134506541066b35cd2810b"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/build-release/source/build/release/release_configs/bp2a.textproto",
+      "sha256": "ec6eff13fe0f08bed831f59a50bc33289efdcbb5136a618dfae18cee0cda9e5f"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/build-release/source/build/release/release_configs/bp1a.textproto",
+      "sha256": "8631d71910fa7ea83239004de68b5985c0e209a9388065146bff8c76053a4bc6"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/build-release/source/build/release/release_configs/ap4a.textproto",
+      "sha256": "2f04b554c480c6fa33f2dafbf601e7a9a383bb24aab82c869ade6fa5cbc8e4be"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/build-release/source/build/release/release_configs/ap3a.textproto",
+      "sha256": "294bdf7325f0898cc7afa7a3c0658aacae0274cd2707d40b5e376259e4eab2e1"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/build-release/source/build/release/flag_values/ap3a/RELEASE_BOARD_API_LEVEL.textproto",
+      "sha256": "31a51a97fd22b7cf52833a19932bb473526eb59e594f6f06878e2480540b316c"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/build-release/source/build/release/flag_values/bp2a/RELEASE_BOARD_API_LEVEL.textproto",
+      "sha256": "4e5da206bf3642d5c43689744162d5a1307270b63e69d05544b6999d0bc10f36"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/make-core-config/config.mk",
+      "sha256": "90b6b8fc9fa8f9f62a43baa97a3f88c5f7f88a540bc10d16a98513534bb18cfb"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/make-board-config/board_config.mk",
+      "sha256": "87152604d75cff8e62149573665861d762901115418d2ed3d13e3dae88a66ddf"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/sepolicy/source/system/sepolicy/Android.bp",
+      "sha256": "cef111533b761048f10a53bd968cd02e0641bf1f009db4a8aa380ccff10a8b2d"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/sepolicy/source/system/sepolicy/build/soong/sepolicy_vers.go",
+      "sha256": "4c5af9ddb7d37d8a20bbbf921389fb42ee22f2f5a2ba2b5af74aaaf0482dc9d1"
+    }
+  ],
+  "generated_file": "/home/tv/repositorio-principal/dist/aosp16/propertyinit-execution-2/vendor/etc/selinux/plat_sepolicy_vers.txt",
+  "sha256": "ce5b095f33cfad2ece2557566ec55c87dcb81fb1a275fdc6f032369f1ea4fb9d",
+  "open": "Source/GSI/product configuration parity, actual vendor interfaces/policy and SELinux mediation remain unproved"
+}

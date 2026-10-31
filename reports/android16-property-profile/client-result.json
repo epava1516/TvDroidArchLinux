@@ -1,0 +1,25 @@
+{
+  "argv": [
+    "sudo",
+    "-n",
+    "prlimit",
+    "--cpu=20",
+    "--as=68719476736",
+    "--core=0",
+    "--",
+    "unshare",
+    "--mount",
+    "--pid",
+    "--fork",
+    "--kill-child=SIGKILL",
+    "--net",
+    "--ipc",
+    "--uts",
+    "--cgroup",
+    "python",
+    "/tmp/archtv-property-profile-client-2.py",
+    "getprop"
+  ],
+  "exit_code": 0,
+  "seconds": 0.32226206999621354
+}

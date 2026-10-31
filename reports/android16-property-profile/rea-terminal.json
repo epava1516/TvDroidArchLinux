@@ -1,0 +1,69 @@
+{
+  "evidence_id": "ev_fad2b4ec00773d821aa13143d9f1a45c36ef34430529179a2d6c9f597fc67c3d",
+  "subject": null,
+  "provider": {
+    "id": "gnu.gdb",
+    "name": "GNU GDB",
+    "version": null
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.debugger.console-observation",
+  "operation": "gdb_console",
+  "parameters": {
+    "session_id": "cabe1a20-4d41-427e-8f02-550634d4228c",
+    "command": "python [gdb.execute(c) for c in ['disable 3','continue']]"
+  },
+  "raw_result": {
+    "command": "python [gdb.execute(c) for c in ['disable 3','continue']]",
+    "mi": "9^running",
+    "records": [
+      "=breakpoint-modified,bkpt={number=\"3\",type=\"catchpoint\",disp=\"keep\",enabled=\"n\",what=\"exit_group\",catch-type=\"syscall\",thread-groups=[\"i1\"],times=\"1\"}",
+      "9^running",
+      "*running,thread-id=\"all\"",
+      "(gdb) ",
+      "~\"[Inferior 1 (process 218084) exited with code 01]\\n\"",
+      "=thread-exited,id=\"1\",group-id=\"i1\"",
+      "=thread-group-exited,id=\"i1\",exit-code=\"01\"",
+      "*stopped,reason=\"exited\",exit-code=\"01\"",
+      "(gdb) ",
+      "10^done,value=\"off\""
+    ],
+    "console": "~\"[Inferior 1 (process 218084) exited with code 01]\\n\"",
+    "target": "",
+    "log": "",
+    "output_truncated": false,
+    "completion_status": "complete"
+  },
+  "normalized_result": {
+    "command": "python [gdb.execute(c) for c in ['disable 3','continue']]",
+    "mi": "9^running",
+    "records": [
+      "=breakpoint-modified,bkpt={number=\"3\",type=\"catchpoint\",disp=\"keep\",enabled=\"n\",what=\"exit_group\",catch-type=\"syscall\",thread-groups=[\"i1\"],times=\"1\"}",
+      "9^running",
+      "*running,thread-id=\"all\"",
+      "(gdb) ",
+      "~\"[Inferior 1 (process 218084) exited with code 01]\\n\"",
+      "=thread-exited,id=\"1\",group-id=\"i1\"",
+      "=thread-group-exited,id=\"i1\",exit-code=\"01\"",
+      "*stopped,reason=\"exited\",exit-code=\"01\"",
+      "(gdb) ",
+      "10^done,value=\"off\""
+    ],
+    "console": "~\"[Inferior 1 (process 218084) exited with code 01]\\n\"",
+    "target": "",
+    "log": "",
+    "output_truncated": false,
+    "completion_status": "complete"
+  },
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "The active GDB inferior identity is not established by the debugger session identifier.",
+    "MI records are returned as decoded text; their semantics depend on GDB version and target.",
+    "The unrestricted GDB console can access local shell, filesystem, network, and target controls."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

@@ -1,0 +1,121 @@
+{
+  "base_commit": "60fc1dc",
+  "scope": "Original property initialization source profile and unprivileged readers; framework VM creation remains failed",
+  "source_profile": "BP4A release chain, BOARD_API_LEVEL202504 via original sepolicy_vers rule; not hardware vendor or GSI source config parity",
+  "PropertyInit_exit": 0,
+  "property_count": 170,
+  "unprivileged_getprop_exit": 0,
+  "all_values_equal": true,
+  "reader_uid": 10000,
+  "reader_capabilities": 0,
+  "framework_exit": 1,
+  "REA_MCP_dynamic": "Original target attached via root gdbserver stdio; GDB reads original ELF symbols at observed mappings. Backtrace reaches JNI_CreateJavaVM -> Runtime::Create -> ParseOptions -> ParsedOptions::Usage -> runtime_exit(1). Pending JNI breakpoint alone was inconclusive; stack supplies dynamic evidence. Source/options failure detail pending.",
+  "debugger_session": "cabe1a20-4d41-427e-8f02-550634d4228c",
+  "debugger_final_state": "closed, none_observed inferior; process218084 terminal1, exec63859 terminal0",
+  "limits": "Initial AS2GiB prevented original Scudo/CFI reservations; preserved failure. AS64GiB virtual ceiling then CPU20s/wall30s/heap256MiB; debugger CPU30s/wall240s. Virtual reservation is not RAM demand.",
+  "not_proven": [
+    "VM creation success",
+    "ActivityThread executed",
+    "Markor loaded or executed",
+    "property sockets",
+    "SELinux active or app policy enforcement",
+    "wide APK compatibility",
+    "original product/GSI parity"
+  ],
+  "evidence": [
+    {
+      "path": "reports/android16-property-profile/client-result.json",
+      "sha256": "ba9c945b5ca6754857c95a0b452f8fe9a391df8d0606d8882ec5bbe2a577fafc"
+    },
+    {
+      "path": "reports/android16-property-profile/comparison.json",
+      "sha256": "316efdeade35157b4c7a19cfeb67bed7a0b009dc0ab5c006a58277470aaa7868"
+    },
+    {
+      "path": "reports/android16-property-profile/framework.stderr",
+      "sha256": "89906dde057466b32980f49214586a4016afc2bf8e328bf42774acccd6cb5fcb"
+    },
+    {
+      "path": "reports/android16-property-profile/init-result.json",
+      "sha256": "7c8bd1eb2e756b812855038491793ffac1e0ad4aa3c6ab070ee16edd7711cf1e"
+    },
+    {
+      "path": "reports/android16-property-profile/framework-diagnostic.json",
+      "sha256": "1c289c433d1aae77f7f4b6ca0a95c37bcab0cb8da3c83c76104c5a42b2c0496b"
+    },
+    {
+      "path": "reports/android16-property-profile/framework-result.json",
+      "sha256": "22b31197cee91b6b69c16f6a41be8221ebb5f97bff76c00f8cb5a11fca7482c4"
+    },
+    {
+      "path": "reports/android16-property-profile/client.stdout",
+      "sha256": "f22b712e679fddc3a9cf77839b139d069e7f2e1abc31b9cf0effdc2637247257"
+    },
+    {
+      "path": "reports/android16-property-profile/rea-backtrace.json",
+      "sha256": "111ec9575cf0330909cf586e3866a46f5e43736a753f1f2a33353c724e6037e0"
+    },
+    {
+      "path": "reports/android16-property-profile/init.stdout",
+      "sha256": "fdc81a65bafe7614100a93bbc2c6c7d7118815b84028ad0721e46464526175bd"
+    },
+    {
+      "path": "reports/android16-property-profile/generation.json",
+      "sha256": "bfabd3f50d768646c7dacd00224fba882f1e1b429ca764a77ce3e04b29d5afde"
+    },
+    {
+      "path": "reports/android16-property-profile/properties.json",
+      "sha256": "e54d99ffa7b1e026867ba2d6688947c452b21034ac5622371530980cef26af57"
+    },
+    {
+      "path": "reports/android16-property-profile/init.stderr",
+      "sha256": "c7ee2efab5a83941f9e5f1a3df6483be84480e1b145a4f2857bd1b881a41a551"
+    },
+    {
+      "path": "reports/android16-property-profile/rea-terminal.json",
+      "sha256": "f964828e442bea6a83fb7b886175729f8d986c36b703b887802772102328a41b"
+    },
+    {
+      "path": "reports/android16-property-profile/reproduce/property-profile-client-2-reproduce.py",
+      "sha256": "7bc25cd2d9f5962bcc7b15ce4f88b9c4a9f2926f36bb98d0c5cda6a636bca906"
+    },
+    {
+      "path": "reports/android16-property-profile/reproduce/propertyinit-execution-2-reproduce.py",
+      "sha256": "977dacf2d483619733d19504f82525ce889bf68bd7601774a9e364897d58587c"
+    },
+    {
+      "path": "reports/android16-property-profile/reproduce/property-profile-client-3-reproduce.py",
+      "sha256": "0bb3156a467411624579b0a0d67e49cc6c2d77f29e38969619c4c23e55de1034"
+    },
+    {
+      "path": "reports/android16-property-profile/reproduce/property-profile-gdb-1-reproduce.py",
+      "sha256": "318fa3ad2db754fdbe90ed7ad9168fe472e1e4985db1c30c164441b290db6873"
+    },
+    {
+      "path": "reports/android16-property-profile/reproduce/propertyinit-execution-2-generate-profile.py",
+      "sha256": "f6c5375d9ba7ab2f63d834202e65c9558f633de0c6c1efdbce7d960f5e9c29cc"
+    }
+  ],
+  "local_artifacts": [
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/property-profile-gdb-1/gdb_profile_exit_maps.json",
+      "sha256": "9e34e96ae345c44e8e72ba5256a85a4adaf50760c35c3ac528ceb062d2a373ec",
+      "scope": "local original diagnostic, not acceptance"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/property-profile-gdb-1/gdb_profile_jni.json",
+      "sha256": "4fa3b6a3f8fb2be33e8847dfcc95d46854ade2af1411525e703afbe77c280412",
+      "scope": "local original diagnostic, not acceptance"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/property-profile-client-1/getprop.json",
+      "sha256": "696f30e2872b278aecd007bb22b9d3684d0f8121157356cd6e4c03bc8cb6c49c",
+      "scope": "local original diagnostic, not acceptance"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/property-profile-client-1/framework.json",
+      "sha256": "e23e5b2b27146661634061cf38d8b4cffa43dbc8c96ec6fe1e307e25c6a42237",
+      "scope": "local original diagnostic, not acceptance"
+    }
+  ]
+}

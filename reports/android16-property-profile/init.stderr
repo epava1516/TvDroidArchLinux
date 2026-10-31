@@ -1,0 +1,16 @@
+PROPERTY_INIT_BEGIN
+SELinux: SELinux is disabled, skipping restorecon10-31 03:24:23.460     1     1 I entry   : boot_config.cpp:46 [libfstab] Using Android DT directory /proc/device-tree/firmware/android/
+10-31 03:24:23.467     1     1 W entry   : property_service.cpp:794 Overriding previous property 'ro.cp_system_other_odex':'1' with new value '0'
+10-31 03:24:23.469     1     1 W entry   : property_service.cpp:794 Overriding previous property 'ro.build.flavor':'mainline-user' with new value 'aosp_x86_64-user'
+10-31 03:24:23.469     1     1 W entry   : property_service.cpp:794 Overriding previous property 'ro.build.description':'mainline-user 16 BP4A.251205.006 14401865 release-keys' with new value 'aosp_x86_64-user 16 BP4A.251205.006 14401865 release-keys'
+10-31 03:24:23.470     1     1 I entry   : property_service.cpp:924 Setting product property ro.product.brand to 'Android' (from ro.product.product.brand)
+10-31 03:24:23.470     1     1 I entry   : property_service.cpp:924 Setting product property ro.product.device to 'generic_x86_64' (from ro.product.product.device)
+10-31 03:24:23.470     1     1 I entry   : property_service.cpp:924 Setting product property ro.product.manufacturer to 'unknown' (from ro.product.product.manufacturer)
+10-31 03:24:23.470     1     1 I entry   : property_service.cpp:924 Setting product property ro.product.model to 'AOSP on x86_64' (from ro.product.product.model)
+10-31 03:24:23.470     1     1 I entry   : property_service.cpp:924 Setting product property ro.product.name to 'aosp_x86_64' (from ro.product.product.name)
+10-31 03:24:23.471     1     1 I entry   : property_service.cpp:1001 Setting property 'ro.build.fingerprint' to 'Android/aosp_x86_64/generic_x86_64:16/BP4A.251205.006/14401865:user/release-keys'
+10-31 03:24:23.471     1     1 I entry   : property_service.cpp:1063 Setting property 'ro.product.cpu.abilist' to 'x86_64,x86'
+10-31 03:24:23.471     1     1 I entry   : property_service.cpp:1063 Setting property 'ro.product.cpu.abilist32' to 'x86'
+10-31 03:24:23.471     1     1 I entry   : property_service.cpp:1063 Setting property 'ro.product.cpu.abilist64' to 'x86_64'
+PROPERTY_INIT_RETURNED
+PROPERTY_ENUMERATION_RESULT 0

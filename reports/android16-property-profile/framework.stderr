@@ -1,0 +1,5 @@
+10-31 03:26:04.754     1     1 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 10000 <<<<<<
+
+10-31 03:26:04.760     1     1 I AndroidRuntime: Using default boot image
+10-31 03:26:04.761     1     1 I AndroidRuntime: Leaving lock profiling enabled
+10-31 03:26:04.762     1     1 E cutils-trace: Error opening trace file: No such file or directory (2)

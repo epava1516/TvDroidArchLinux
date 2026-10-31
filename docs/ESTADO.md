@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-propertyinit-entry/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-property-profile/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -46,6 +46,22 @@ No readiness, sockets ni APK. El inicializador es UID0 con capacidades root en
 namespaces privados; esto no acredita aislamiento de aplicaciones ni SELinux.
 Siguiente: contrastar generación y selección original del perfil vendor/política,
 sin fabricar valores, omitir comprobaciones o iniciar Android completo.
+
+
+## Perfil original de propiedades · resultado vigente
+
+[Pruebas](../reports/android16-property-profile/validation.json): la regla original
+sepolicy_vers y la herencia BP4A derivan el valor202504 del perfil fuente. Con esa
+entrada, PropertyInit original retorna0; getprop original lee los mismos170 valores
+con UID10000/capacidades0. El inicializador fue UID0, separado del lector. No se
+acreditan vendor de hardware, paridad de configuración GSI, sockets ni SELinux.
+
+App_process termina1. REA MCP/GDB observa JNI_CreateJavaVM→Runtime::Create→
+ParseOptions→ParsedOptions::Usage→runtime_exit(1): falla al analizar opciones,
+antes de disponibilidad de VM. La traza tiene símbolos originales ajustados a
+mapeos observados; breakpoint pendiente por sí solo no habría probado esa entrada.
+Debugger cerrado e inferior terminado. Próximo paso: estudiar fuentes y lista real
+de opciones del arranque; no declarar ActivityThread/Markor ejecutados.
 
 ## Checkpoint y siguiente acción
 
