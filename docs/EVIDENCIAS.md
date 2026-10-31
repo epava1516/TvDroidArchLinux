@@ -362,3 +362,7 @@ verifica notas/identidad ELF, no observa esa ejecución. No se arrancó Android.
 ## MC1 funcional permisivo · 2026-10-31
 
 [Resultados](../reports/android16-mc1-functional-candidate/findings.json), [checkpoint](../reports/android16-mc1-functional-candidate/checkpoint.json) y [REA ejecución6](../reports/android16-mc1-functional-candidate/execution-6-mcp.json). Hashes policy/payload en findings y manifiesto; fuentes se fijan por este commit. Cliente original lista manager, cierre0; no enforcing, APK ni aislamiento probado. Fallos previos conservados con su alcance.
+
+## Markor · verificador apksig original
+
+[Receta y alcance](../reports/android16-markor-original-signature/README.md), [compilación original](../reports/android16-markor-original-signature/core-build.json) y [positivo/negativo](../reports/android16-markor-original-signature/verification.json). APK original inalterado, firma v2 API36 válida y copia manipulada rechazada. No confianza externa del productor, instalación ni ejecución de APK.

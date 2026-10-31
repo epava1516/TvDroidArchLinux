@@ -1,0 +1,36 @@
+{
+  "aosp_revision": "ba8f1f1c74b62b8742c9946b09d4a9c6ac7446ae",
+  "platform_checked": 36,
+  "results": [
+    {
+      "case": "intact",
+      "argv": [
+        "java",
+        "-cp",
+        "/home/tv/.cache/archtv/aosp16-qpr2/apksig-original-1/core-classes",
+        "VerifyMarkor",
+        "/home/tv/.cache/archtv/apk/real-app-candidates/net.gsantner.markor-v164-2026.10.0-flavorDefault-release.apk"
+      ],
+      "sha256": "c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440",
+      "exit": 0,
+      "stdout": "AOSP_APK_VERIFIER verified=true v1=false v2=true\nSIGNER_CERT_SHA256 57d106d0cfa8763442b3645ef2741c38bb820bd56fd4612bf40a23b6d998be5e\n",
+      "stderr": ""
+    },
+    {
+      "case": "tampered_negative_copy",
+      "argv": [
+        "java",
+        "-cp",
+        "/home/tv/.cache/archtv/aosp16-qpr2/apksig-original-1/core-classes",
+        "VerifyMarkor",
+        "/home/tv/.cache/archtv/aosp16-qpr2/apksig-original-1/markor-tampered-negative-not-installable.apk"
+      ],
+      "sha256": "d9a6c259ef4a8c912a5c4b50b071fd22e9dd46eab049d3d18eb6363e08666933",
+      "exit": 1,
+      "stdout": "AOSP_APK_VERIFIER verified=false v1=false v2=false\nV2_ERROR APK integrity check failed. CHUNKED_SHA256 digest mismatch. Expected: <6cacfeb61a7092cbf8e2dec00a0f2873671bc687847d3d9bd6d8344a7c65e562>, actual: <c7f5b1eb2afd05e49c17133168d3ac9bf0c82e187cf625351e6a60073d46efa3>\n",
+      "stderr": ""
+    }
+  ],
+  "REA_static_evidence": "ev_71453fb05eb5c390b71096fbf3e41ec8da4dda7f0466b54da17dfda79c2f5114",
+  "scope": "Original apksig cryptographic verification only; signer provenance/authenticity not externally trusted, no PackageManager installation/Android launch performed. Original unchanged. Negative copy cache only."
+}

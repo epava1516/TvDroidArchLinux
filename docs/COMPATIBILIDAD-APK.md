@@ -90,3 +90,7 @@ Los tres recorridos originales siguen abiertos; las nueve etapas sobre A16 son n
 de Markor local es una primera vertical, no reducción del objetivo a archivos
 locales ni una acreditación de todos sus proveedores. El [contrato](CONTRATO-APK.md)
 y [la arquitectura](ARQUITECTURA.md) fijan aceptación y alternativas.
+
+### Markor · firma original verificada (API36)
+
+[Verificación](../reports/android16-markor-original-signature/verification.json): apksig de la revisión AOSP bloqueada verifica firma v2 del APK intacto; copia negativa alterada falla por digest. Certificado y hashes registrados. REA MCP sólo aporta estructura declarada, no verifica criptografía. Las nueve etapas funcionales permanecen no probadas: esto no es instalación por PackageManager ni lanzamiento.
