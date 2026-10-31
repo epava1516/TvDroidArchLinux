@@ -1,0 +1,7 @@
+POLICY_LOAD_BEFORE {"before": {"enforce": "0", "context": "kernel"}, "sha256": "57931f747437842ab8a5e5bbf4f3f1315c830c9c5f0614370925b12abfd9fca4", "bytes": 3458526}
+POLICY_LOAD_RESULT {"return": -1, "errno": 30, "enforce": "0", "context": "kernel"}
+Traceback (most recent call last):
+  File "/home/tv/repositorio-principal/reports/android16-mc1-functional-candidate/load-permissive.py", line 21, in <module>
+    assert ret==0
+           ^^^^^^
+AssertionError

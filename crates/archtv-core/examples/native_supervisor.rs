@@ -36,7 +36,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         process.pid(),
         process.pidfd()
     );
-    if let Err(error) = process.wait_started(expected, Duration::from_secs(10)) {
+    // Original property + manager + oneshot-client startup each has a bounded
+    // native phase. Permit their combined MC1 deadline without masking it.
+    if let Err(error) = process.wait_started(expected, Duration::from_secs(20)) {
         if error.get_ref().is_some_and(|e| e.is::<NativeFailure>()) {
             let status = process.wait_failed(Duration::from_secs(10))?;
             eprintln!("NATIVE_COMPONENT_FAILED cause={error} actual_exit={status}");

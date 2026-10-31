@@ -2,6 +2,7 @@
 #include "init.h"
 #include "linux-child-reaper.h"
 #include "linux-shutdown-sink.h"
+#include "linux-mc1-cohort.h"
 #include "property_service.h"
 #include "proto_utils.h"
 #include "system/core/init/property_service.pb.h"
@@ -40,7 +41,8 @@ static bool close_actions(Epoll& epoll) {
 }
 int main(int argc,char** argv) {
     android::base::InitLogging(argv,android::base::StderrLogger);
-    bool mac_integration=argc==2 && std::strcmp(argv[1],"--mac-integration")==0;
+    bool mc1=argc==2 && std::strcmp(argv[1],"--mc1-integration")==0;
+    bool mac_integration=mc1 || (argc==2 && std::strcmp(argv[1],"--mac-integration")==0);
     bool diagnostic=mac_integration || (argc==2 && std::strcmp(argv[1],"--diagnostic")==0);
     if(argc!=1 && !diagnostic)return 64;
     const char* inherited=getenv("ARCHTV_NATIVE_CONTROL_FD");
@@ -53,6 +55,10 @@ int main(int argc,char** argv) {
        getsockopt(control.get(),SOL_SOCKET,SO_PEERCRED,&peer,&peer_size)!=0 || peer.uid!=getuid())return 77;
     int flags=fcntl(control.get(),F_GETFL);
     if(flags<0 || fcntl(control.get(),F_SETFL,flags|O_NONBLOCK)<0 || fcntl(control.get(),F_SETFD,FD_CLOEXEC)<0)return 74;
+    Epoll epoll;
+    if(!epoll.Open().ok())return 70;
+    archtv::aosp::LinuxChildReaper children(epoll);
+    if(!children.Attach().ok())return 70; // Before SELinux/AVC/property calls that may start threads.
     if(!diagnostic || mac_integration) {
         char* context=nullptr;
         int enforcing=security_getenforce();
@@ -61,22 +67,21 @@ int main(int argc,char** argv) {
             context && std::strcmp(context,"u:r:init:s0")==0;
         for(const char* name: {"process","binder","property_service","service_manager"})
             valid=valid && string_to_security_class(name)!=0;
+        std::fprintf(stderr,"PROPERTY_WORKER_IDENTITY observed=%s enforcing=%d mc1=%d\n",context?context:"not-observed",enforcing,mc1);
         if(context)freecon(context);
         if(!valid) { std::fprintf(stderr,"PROPERTY_WORKER_REFUSED: loaded policy classes and u:r:init:s0 required (normal mode also requires enforcing); no startup acknowledgment\n");return 78; }
     }
     if(mkdir("/data/property",0700)!=0 && errno!=EEXIST)return 74;
     struct stat property_dir{};
     if(lstat("/data/property",&property_dir)!=0 || !S_ISDIR(property_dir.st_mode) || property_dir.st_uid!=getuid() || (property_dir.st_mode&0077))return 77;
-    PropertyInit();
-    Epoll epoll;
-    if(!epoll.Open().ok())return 70;
-    archtv::aosp::LinuxChildReaper children(epoll);
-    if(!children.Attach().ok())return 70; // Before any property worker thread.
     archtv::aosp::LinuxShutdownSink shutdown;
     if(!shutdown.Install().ok())return 70;
+    PropertyInit(); // SIGCHLD is attached before any original AVC/property threads.
     auto setup=StartLinuxPropertyActions(&epoll);
     if(!setup.ok())return 70;
     bool stop=false,peer_gone=false,invalid=false;std::string input;
+    archtv::aosp::LinuxMc1Cohort cohort(stop);
+    auto tick=[&]{return PollLinuxPropertyActions(&epoll,std::chrono::milliseconds(50)).ok() && children.healthy() && !shutdown.failed();};
     auto registered=epoll.RegisterHandler(control.get(),[&]{
         char bytes[64];
         for(int turn=0;turn<4;++turn) {
@@ -103,9 +108,16 @@ int main(int argc,char** argv) {
         if(__system_property_get("ro.persistent_properties.ready",phase)>0 && std::strcmp(phase,"true")==0)break;
     }
     healthy=healthy && !stop && std::strcmp(phase,"true")==0;
+    if(healthy && mc1) {
+        auto admitted=cohort.Start(tick);
+        if(!admitted.ok())std::fprintf(stderr,"MC1_FAILED %s\n",admitted.error().message().c_str());
+        healthy=admitted.ok();
+    }
     if(healthy)healthy=send_status(control.get(),diagnostic?"ARCHTV_NATIVE_V1 DIAGNOSTIC_STARTED\n":"ARCHTV_NATIVE_V1 STARTED\n");
-    while(healthy && !stop)healthy=PollLinuxPropertyActions(&epoll,std::chrono::milliseconds(250)).ok() && children.healthy() && !shutdown.failed();
-    bool closed=close_actions(epoll);init_socket.reset();
+    while(healthy && !stop)healthy=PollLinuxPropertyActions(&epoll,std::chrono::milliseconds(250)).ok() && children.healthy() && !shutdown.failed() && (!mc1 || cohort.healthy());
+    auto cohort_closed=cohort.Close(tick);
+    if(!cohort_closed.ok())std::fprintf(stderr,"MC1_CLOSE_FAILED %s\n",cohort_closed.error().message().c_str());
+    bool closed=close_actions(epoll) && cohort_closed.ok();init_socket.reset();
     auto unregistered=epoll.UnregisterHandler(control.get());
     auto children_closed=children.Close();
     if(shutdown.failed()) {

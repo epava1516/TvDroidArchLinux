@@ -20,7 +20,7 @@ contexto seapp real y filtros efectivos: retorno0 en permisivo no es aislamiento
 Aplica el [contrato actualizado](CONTRATO-APK.md). Android16 QPR2, Bionic nativo y
 primera hipótesis SurfaceFlinger→Wayland reemplazan la selección A/B/C y API33
 anteriores. La base nueva se mantiene aislada; no se descartan el compositor,
-instalación, herramientas o regresiones útiles. No reiniciar VM ni cliente.
+instalación, herramientas o regresiones útiles. Reinicios necesarios autorizados expresamente; checkpoint y recuperación antes de interrupciones.
 
 ## Camino crítico vigente · Markor completo
 
@@ -29,20 +29,16 @@ El hito auxiliar en curso quedó guardado aparte en311c25f. No ampliar herramien
 ni fixtures como prioridad: cada experimento debe desbloquear una fila de esta
 secuencia y conducir a integración o a una decisión explícita.
 
-[Candidato de entrada](../reports/android16-mc1-exec-handoff/findings.json): payload
-RO y frontera Linux/glibc→Bionic por procesos preparados; diagnóstico directo0,
-MAC guard78 sin política. No basta para MC1. Siguiente cambio concreto: integrar
-parser/Service::Start/oneshot cliente/reaper originales en el coordinador, no
-ampliar herramientas. Después congelar receta y hashes, clasificar lo no probado
-como hipótesis del ensayo y solicitar aprobación específica de carga permisiva.
-Snapshot/consola confirmadas; restauración no ensayada, enforcing sin autorización.
-
-**Bloqueo inmediato demostrado:** el servicio de propiedades original, con
-SELinux genuino visible y sin política, rechaza `property_service` desconocida,
-no publica su versión/readiness y sale1 sin ACK. El gestor por separado alcanza
-espera de eventos, pero el cliente espera `servicemanager.ready`: no demuestra
-servicios disponibles. El -95 anterior es histórico;2f31032 y sus diez evidencias
-contrastados, nueve pruebas limitadas al comprobador y Binder SID/transacción.
+[Hito funcional actual](../reports/android16-mc1-functional-candidate/findings.json):
+MC1 recorre propiedades originales → servicemanager registrado → cliente original
+lista `android.os.IServiceManager`, con cierre real0, en **permisivo con política**.
+Entrada Linux/glibc→Bionic y NNP1 reales; imágenes originales RO conservan etiquetas.
+No es autorización/aislamiento ni APK compatible. Antiguos bloqueos sin política
+superados para esta cohorte; avisos de recursos conservados. Autorización expresa
+actual cubre pruebas de seguridad/reinicio; no falta permiso. Antes de enforcing,
+contrastar AVC del recorrido, completar permisos/transiciones específicos y preparar
+rollback verificable con checkpoint. Después MC2 original framework/paquetes para
+Markor; no ampliar sondas ajenas a ese camino. ARM/GMS/DRM continúan separados.
 
 | Paso | Integración y resultado funcional exigido | Estado/evidencia y límite |
 | --- | --- | --- |

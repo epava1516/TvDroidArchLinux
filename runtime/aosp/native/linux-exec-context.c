@@ -9,6 +9,8 @@
 #include <string.h>
 #include <sys/stat.h>
 #include <sys/statvfs.h>
+#include <sys/vfs.h>
+#include <linux/magic.h>
 #include <unistd.h>
 
 extern char **environ;
@@ -24,7 +26,11 @@ int main(int argc, char **argv) {
     int integration = argc == 2 && !strcmp(argv[1], "--permissive-integration");
     if (argc != 1 && !integration) return 64;
     int enforcing = security_getenforce();
-    if (is_selinux_enabled() != 1 || enforcing < 0 || (!integration && enforcing != 1))
+    struct statfs selinux_fs;
+    // Linux is_selinux_enabled also tests /etc configuration presence. Check
+    // genuine kernel state here, not that Linux installation heuristic.
+    if (statfs("/sys/fs/selinux", &selinux_fs) || selinux_fs.f_type != SELINUX_MAGIC ||
+        enforcing < 0 || (!integration && enforcing != 1))
         return refused("SELinux-mode");
     const char *classes[] = {"process", "binder", "property_service", "service_manager"};
     for (size_t i = 0; i < sizeof(classes)/sizeof(classes[0]); ++i)
@@ -50,8 +56,8 @@ int main(int argc, char **argv) {
     // It does not assign current SID; do not add selinuxfs write grants just for
     // a redundant pre-validation or mistake a library cache for kernel readback.
     if (setexeccon_raw(target) < 0) return refused("setexeccon");
-    fprintf(stderr, "LINUX_EXEC_CONTEXT_REQUESTED target=%s enforcing=%d NOT_STARTUP\n", target, enforcing);
-    char *child_args[] = {(char *)image, integration ? "--mac-integration" : NULL, NULL};
+    fprintf(stderr, "LINUX_EXEC_CONTEXT_REQUESTED source=%s target=%s enforcing=%d NOT_STARTUP\n", actor, target, enforcing);
+    char *child_args[] = {(char *)image, integration ? "--mc1-integration" : NULL, NULL};
     fexecve(fd, child_args, environ);
     return refused("fexecve");
 }

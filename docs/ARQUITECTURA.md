@@ -2077,3 +2077,7 @@ mediación libselinux completa y denegaciones, conservando aserciones. No otorga
 dyntransition global ni convertir dominios en permisivos para pasar pruebas.
 Validar también despliegue/recuperación antes de carga. Doce cálculos y doce
 consultas no prueban exec/enforcement/servicios/APK ni equivalencia general.
+
+## MC1 ejecutado con política cargada · 2026-10-31
+
+La cohorte original de propiedades/init Service/servicemanager/cliente ya ejecuta sobre imágenes GSI+APEX RO, puente por exec entre Linux libselinux/glibc y Android libselinux/Bionic. No mezcla de DSO. Cgroup v2 real en subárbol de la sesión: fuera de la raíz del namespace nsdelegate falla; dentro funciona. Perfiles de recursos incompletos. Permisivo no acredita autorización; R1-MAC abierto. Autorización actual cubre pruebas, no prueba su corrección.

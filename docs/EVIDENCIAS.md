@@ -358,3 +358,7 @@ estático. ART aborta 134 antes de la fixture por configuración pública ausent
 en el harness, con namespaces generados todavía pendientes. No demuestra
 compatibilidad de aplicaciones, servicios ni inviabilidad de Bionic. REA MCP
 verifica notas/identidad ELF, no observa esa ejecución. No se arrancó Android.
+
+## MC1 funcional permisivo · 2026-10-31
+
+[Resultados](../reports/android16-mc1-functional-candidate/findings.json), [checkpoint](../reports/android16-mc1-functional-candidate/checkpoint.json) y [REA ejecución6](../reports/android16-mc1-functional-candidate/execution-6-mcp.json). Hashes policy/payload en findings y manifiesto; fuentes se fijan por este commit. Cliente original lista manager, cierre0; no enforcing, APK ni aislamiento probado. Fallos previos conservados con su alcance.

@@ -1,0 +1,30 @@
+{
+  "evidence_id": "ev_1adb4987e6e5df00cb6ad88b6688590bfc3afb1c03598ed9a7364f24524d2ba8",
+  "exit": {
+    "code": 1,
+    "signal": 0,
+    "reason": "exited"
+  },
+  "cleanup": {
+    "owned_process_group": "verified",
+    "temporary_root": "removed",
+    "unverified_processes": [
+      {
+        "pid": 18395,
+        "reason": "EACCES: permission denied, open '/proc/18395/environ'"
+      }
+    ]
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "The executable digest is a prelaunch file sample; matching path metadata immediately after spawn does not prove an atomic operating-system image binding.",
+    "Process trees are sampled and may omit short-lived descendants.",
+    "Process-tree sampling ended with an incomplete observation.",
+    "Filesystem observations are before/after snapshots, not syscall traces.",
+    "Inherited host environment variables are not recorded and may affect results.",
+    "No filesystem observation paths were selected; filesystem effects remain unknown.",
+    "Process sampling has incomplete observations: /proc/18378/environ: EACCES: Error: EACCES: permission denied, open '/proc/18378/environ'. See truncation_details.process."
+  ],
+  "truncated": true,
+  "output": "Traceback (most recent call last):\r\n  File \"/home/tv/repositorio-principal/reports/android16-mc1-functional-candidate/execute.py\", line 46, in <module>\r\n    for n in dirs+files:label(Path(base)/n)\r\n                        ~~~~~^^^^^^^^^^^^^^\r\n  File \"/home/tv/repositorio-principal/reports/android16-mc1-functional-candidate/execute.py\", line 39, in label\r\n    assert ret==0,(logical,ctypes.get_errno())\r\n           ^^^^^^\r\nAssertionError: ('/apex/com.android.mediaprovider', 2)\r\n"
+}

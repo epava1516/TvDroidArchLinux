@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-mc1-exec-handoff/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-mc1-functional-candidate/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -17,36 +17,26 @@ Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCC
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
 
-## Candidato MC1 · estado de ejecución
+## MC1 · integración funcional en permisivo
 
-[Checkpoint](../reports/android16-mc1-exec-handoff/checkpoint.json) y
-[artefactos/resultados](../reports/android16-mc1-exec-handoff/findings.json).
-Payload RO con supervisor Rust, helper Linux y coordinador Bionic: ejecución
-real de diagnóstico por ruta definitiva y cierre directo0. No es MAC: los modos
-MAC rechazan política/identidad ausentes con78 y no anuncian arranque. Política
-experimental con aserciones activas/44 consultas offline; ninguna carga realizada.
-La carencia técnica siguiente es cablear Service::Start y cliente originales en
-el coordinador; resolverla antes de pedir carga. Snapshot y consola confirmadas
-por el usuario, restauración no ensayada; tampoco autorización de carga/enforcing.
+[Checkpoint](../reports/android16-mc1-functional-candidate/checkpoint.json),
+[resultados](../reports/android16-mc1-functional-candidate/findings.json) y
+[ejecución REA MCP](../reports/android16-mc1-functional-candidate/execution-6-mcp.json).
+Política compuesta cargada en esta VM: propiedades originales → gestor original
+con contexto `u:r:servicemanager:s0`, UID1000/caps0/NNP1 → cliente original lista
+`manager: [android.os.IServiceManager]` y sale0 → cierre y recolección originales.
+No readiness manual ni arranque de Android completo. **Permisivo; R1-MAC abierto**.
 
-## Prioridad vigente · recorrido Markor
+El usuario autoriza expresamente carga, etiquetado, enforcing y reinicios necesarios;
+las esperas de permiso anteriores son históricas. Snapshot/consola confirmadas,
+restauración no ensayada. Recuperación exacta en el checkpoint. No enforcing aún.
+Siguiente: resolver accesos reales y recuperación antes de enforcing; continuar
+framework/instalación y lanzamiento Markor → gráficos/entrada → nota persistente →
+cierre/reapertura. Markor mantiene nueve etapas no probadas. ARM/GMS/DRM separados.
 
-[Checkpoint](../reports/android16-markor-critical-path/checkpoint.json),
-[resultado actual](../reports/android16-markor-critical-path/findings.json) y
-[camino crítico](ROADMAP-A.md#camino-crítico-vigente--markor-completo).
-Bloqueo demostrado: propiedades originales, con SELinux visible/sin política,
-rechazan clase property_service y salen1 sin startup. Gestor aislado en epoll
-no acredita registro; cliente espera readiness original. No es Binder -95.
-
-Siguiente resultado funcional: propiedades→registro/consulta de gestores
-originales, con integración MAC/metadata/identidades y recuperación admisibles,
-antes de framework/lanzamiento→gráficos/entrada→nota/persistencia→cierre/reapertura.
-La imagen GSI original conserva etiquetas; propuesta de reutilizarla RO en lugar
-de reetiquetar extracción/host. No cargar ni activar enforcing: falta S0–S2 y
-aprobación específica del candidato. ARM/GMS/DRM siguen fuera del camino inicial.
-Hito auxiliar en curso guardado/subido en311c25f; no continuar ampliándolo como
-entregable principal. Historial posterior de esta página conserva su alcance,
-pero el orden vigente es MC0–MC5. Markor sigue con nueve etapas no probadas.
+El bloqueo property_service sin política y Binder -95 quedan como resultados
+históricos. Permanecen avisos reales de perfiles memory/blkio/cpuset, alcance de
+UID/cgroups y aislamiento pendientes. Los experimentos anteriores se conservan.
 
 ## Hito anterior · mensajes de fallo Rust conservados
 

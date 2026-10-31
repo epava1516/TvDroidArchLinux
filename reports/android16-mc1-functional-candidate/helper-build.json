@@ -1,0 +1,25 @@
+{
+  "argv": [
+    "/usr/bin/cc",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-Wformat=2",
+    "-fstack-protector-strong",
+    "-D_FORTIFY_SOURCE=3",
+    "-I/home/tv/repositorio-principal/dist/aosp16/linux-selinux-handoff-2/libselinux-3.11/include",
+    "/home/tv/repositorio-principal/runtime/aosp/native/linux-exec-context.c",
+    "/home/tv/repositorio-principal/dist/aosp16/linux-selinux-handoff-2/libselinux-3.11/src/libselinux.a",
+    "-lpcre2-8",
+    "-ldl",
+    "-pthread",
+    "-Wl,-z,relro,-z,now",
+    "-Wl,--dynamic-linker=/archtv/lib/ld-linux-x86-64.so.2",
+    "-Wl,-rpath,/archtv/lib",
+    "-o",
+    "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-candidate-1/linux-exec-context-image"
+  ],
+  "exit": 0,
+  "stderr": ""
+}

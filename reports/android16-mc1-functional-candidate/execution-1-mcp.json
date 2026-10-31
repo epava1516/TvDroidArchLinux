@@ -1,0 +1,86 @@
+{
+  "evidence_id": "ev_d3370096206f72cdd8a3c542b8e8ce62f561f8ff2bf1de460def94d76fac685d",
+  "authority": "controlled-replay",
+  "confidence": "observed",
+  "exit": {
+    "code": 1,
+    "signal": 0,
+    "reason": "exited"
+  },
+  "cleanup": {
+    "owned_process_group": "verified",
+    "temporary_root": "removed",
+    "unverified_processes": [
+      {
+        "pid": 18231,
+        "reason": "EACCES: permission denied, open '/proc/18231/environ'"
+      },
+      {
+        "pid": 18232,
+        "reason": "EACCES: permission denied, open '/proc/18232/environ'"
+      },
+      {
+        "pid": 18236,
+        "reason": "EACCES: permission denied, open '/proc/18236/environ'"
+      },
+      {
+        "pid": 18241,
+        "reason": "EACCES: permission denied, open '/proc/18241/environ'"
+      }
+    ]
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "The executable digest is a prelaunch file sample; matching path metadata immediately after spawn does not prove an atomic operating-system image binding.",
+    "Process trees are sampled and may omit short-lived descendants.",
+    "Process-tree sampling ended with an incomplete observation.",
+    "Filesystem observations are before/after snapshots, not syscall traces.",
+    "Inherited host environment variables are not recorded and may affect results.",
+    "No filesystem observation paths were selected; filesystem effects remain unknown.",
+    "Process sampling has incomplete observations: /proc/18223/environ: EACCES: Error: EACCES: permission denied, open '/proc/18223/environ'. See truncation_details.process."
+  ],
+  "residual_unknowns": [
+    {
+      "scope": "process",
+      "reason": "Process trees are sampled and may omit short-lived descendants."
+    },
+    {
+      "scope": "process",
+      "reason": "The executable digest is a prelaunch file sample; operating-system image binding is not atomically observed."
+    },
+    {
+      "scope": "environment",
+      "reason": "Inherited host environment variables are not recorded."
+    },
+    {
+      "scope": "network",
+      "reason": "Network activity is not observed by this capture."
+    },
+    {
+      "scope": "filesystem",
+      "reason": "No filesystem observation paths were selected; filesystem effects remain unknown."
+    },
+    {
+      "scope": "process",
+      "reason": "Process sampling has incomplete observations: /proc/18223/environ: EACCES: Error: EACCES: permission denied, open '/proc/18223/environ'. See truncation_details.process."
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 18231 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/18231/environ'"
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 18232 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/18232/environ'"
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 18236 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/18236/environ'"
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 18241 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/18241/environ'"
+    }
+  ],
+  "truncated": true,
+  "output": "Traceback (most recent call last):\r\n  File \"/home/tv/repositorio-principal/reports/android16-mc1-functional-candidate/execute.py\", line 39, in <module>\r\n    for n in dirs+files:label(Path(base)/n)\r\n                        ~~~~~^^^^^^^^^^^^^^\r\n  File \"/home/tv/repositorio-principal/reports/android16-mc1-functional-candidate/execute.py\", line 32, in label\r\n    assert ret==0,(logical,ctypes.get_errno())\r\n           ^^^^^^\r\nAssertionError: ('/archtv', 2)\r\n"
+}

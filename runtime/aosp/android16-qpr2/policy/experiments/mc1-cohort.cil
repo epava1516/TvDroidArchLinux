@@ -1,0 +1,6 @@
+; Only the reserved device name in the private MC1 binderfs instance. Preserve
+; Linux/default binderfs labels and other instances' existing device names.
+(genfscon binder /archtv-mc1-binder (u object_r binder_device ((s0) (s0))))
+; Parent directory traversal for the genuine SELinux filesystem in Android root.
+(allow linux.init_t sysfs (dir (getattr search)))
+(allow archtv_launcher sysfs (dir (getattr search)))

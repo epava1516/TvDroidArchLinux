@@ -1,0 +1,29 @@
+{
+  "status": "functional_prefix_observed_permissive_only",
+  "policy_sha256": "57931f747437842ab8a5e5bbf4f3f1315c830c9c5f0614370925b12abfd9fca4",
+  "payload_sha256": "07a4bfb4779a5c559018240f44982e99978e4757ce3dd5b0a2ce177b18f3f827",
+  "execution_evidence": "execution-6-mcp.json",
+  "observed": [
+    "security_load_policy returned0; enforce0; current Linux init_t",
+    "Rust labelled actor -> original Linux libselinux setexeccon/fexecve -> Bionic init actual context",
+    "original properties initialized and sockets published",
+    "original servicemanager.rc parsed; original Service::Start/reaper/stop used",
+    "manager actual u:r:servicemanager:s0 UID/GID1000 effective/permitted caps0 NNP1",
+    "original shell/service list UID2000 returned0; manager interface listed",
+    "real output shell_data_file UID/GID2000 mode0600 checked",
+    "manager killed and reaped during requested close; coordinator0; no host matching runtime process afterwards"
+  ],
+  "limitations": [
+    "Permissive only; no authorization/isolation demonstrated; R1-MAC OPEN",
+    "Original task resource profiles partly unavailable: memory activation, blkio/cpuset warnings retained",
+    "Shared host UID1000; no resource limits/security closure claimed",
+    "REA process observations incomplete EACCES/truncated rendering, captured output retained; no atomic image binding",
+    "Markor installation, app launch, graphics/input/persistence/close/reopen not tested; ARM/GMS/DRM independent"
+  ],
+  "decisions": [
+    "EROFS first load: selinuxfs shared superblock retained RO from historical diagnostics; explicit remount RW fixed it, no policy data edits",
+    "Original libprocessgroup uses cgroups here: first missing hierarchy then nsdelegate outside namespace root rejected; dedicated subtree within current service succeeded",
+    "No fake readiness, second-stage Android boot, cloned service manager or local Binder protocol implementation"
+  ],
+  "next": "Audit actual access failures and prepare bounded recoverable enforcing integration; then original framework/package/application path for Markor."
+}

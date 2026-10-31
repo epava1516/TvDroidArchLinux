@@ -1,0 +1,82 @@
+{
+  "evidence_id": "ev_4aeded67efdd6d190b04e151e844b7dd57bd617a0852304b6a4ea54785767718",
+  "exit": {
+    "code": 1,
+    "signal": 0,
+    "reason": "exited"
+  },
+  "cleanup": {
+    "owned_process_group": "verified",
+    "temporary_root": "removed",
+    "unverified_processes": [
+      {
+        "pid": 18762,
+        "reason": "EACCES: permission denied, open '/proc/18762/environ'"
+      },
+      {
+        "pid": 18846,
+        "reason": "EACCES: permission denied, open '/proc/18846/environ'"
+      },
+      {
+        "pid": 18905,
+        "reason": "EACCES: permission denied, open '/proc/18905/environ'"
+      },
+      {
+        "pid": 18906,
+        "reason": "EACCES: permission denied, open '/proc/18906/environ'"
+      },
+      {
+        "pid": 18907,
+        "reason": "EACCES: permission denied, open '/proc/18907/environ'"
+      },
+      {
+        "pid": 18913,
+        "reason": "EACCES: permission denied, open '/proc/18913/environ'"
+      },
+      {
+        "pid": 18914,
+        "reason": "EACCES: permission denied, open '/proc/18914/environ'"
+      },
+      {
+        "pid": 18915,
+        "reason": "EACCES: permission denied, open '/proc/18915/environ'"
+      },
+      {
+        "pid": 18916,
+        "reason": "EACCES: permission denied, open '/proc/18916/environ'"
+      },
+      {
+        "pid": 18917,
+        "reason": "EACCES: permission denied, open '/proc/18917/environ'"
+      },
+      {
+        "pid": 18918,
+        "reason": "EACCES: permission denied, open '/proc/18918/environ'"
+      },
+      {
+        "pid": 18919,
+        "reason": "EACCES: permission denied, open '/proc/18919/environ'"
+      },
+      {
+        "pid": 18920,
+        "reason": "EACCES: permission denied, open '/proc/18920/environ'"
+      },
+      {
+        "pid": 18921,
+        "reason": "EACCES: permission denied, open '/proc/18921/environ'"
+      }
+    ]
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "The executable digest is a prelaunch file sample; matching path metadata immediately after spawn does not prove an atomic operating-system image binding.",
+    "Process trees are sampled and may omit short-lived descendants.",
+    "Process-tree sampling ended with an incomplete observation.",
+    "Filesystem observations are before/after snapshots, not syscall traces.",
+    "Inherited host environment variables are not recorded and may affect results.",
+    "No filesystem observation paths were selected; filesystem effects remain unknown.",
+    "Process sampling has incomplete observations: /proc/18747/environ: EACCES: Error: EACCES: permission denied, open '/proc/18747/environ'. See truncation_details.process."
+  ],
+  "truncated": true,
+  "output": "MC1_PREPARED original_GSI_and_36_APEX_RO NNP1 private_binder actual_context=linux.system_u:linux.system_r:linux.init_t:s0\r\nMC1_RESULT {\"exit\": 1, \"stdout\": \"NATIVE_PROCESS_OWNED pid=97 pidfd=5\\n\", \"stderr\": \"LINUX_EXEC_CONTEXT_REQUESTED source=linux.system_u:archtv_launcher_r:archtv_launcher:s0 target=u:r:init:s0 enforcing=0 NOT_STARTUP\\nPROPERTY_WORKER_IDENTITY observed=u:r:init:s0 enforcing=0 mc1=1\\nSELinux: Loaded file context from:\\n\\t\\t/system/etc/selinux/plat_file_contexts\\n\\t\\t/system_ext/etc/selinux/system_ext_file_contexts\\n\\t\\t/product/etc/selinux/product_file_contexts\\n10-31 16:01:58.239    97    97 I property-coordinator: boot_config.cpp:46 [libfstab] Using Android DT directory /proc/device-tree/firmware/android/\\n10-31 16:01:58.242    97    97 W property-coordinator: property_service.cpp:827 Overriding previous property 'ro.cp_system_other_odex':'1' with new value '0'\\n10-31 16:01:58.243    97    97 W property-coordinator: property_service.cpp:827 Overriding previous property 'ro.build.flavor':'mainline-user' with new value 'aosp_x86_64-user'\\n10-31 16:01:58.243    97    97 W property-coordinator: property_service.cpp:827 Overriding previous property 'ro.build.description':'mainline-user 16 BP4A.251205.006 14401865 release-keys' with new value 'aosp_x86_64-user 16 BP4A.251205.006 14401865 release-keys'\\n10-31 16:01:58.245    97    97 I property-coordinator: property_service.cpp:957 Setting product property ro.product.brand to 'Android' (from ro.product.product.brand)\\n10-31 16:01:58.245    97    97 I property-coordinator: property_service.cpp:957 Setting product property ro.product.device to 'generic_x86_64' (from ro.product.product.device)\\n10-31 16:01:58.245    97    97 I property-coordinator: property_service.cpp:957 Setting product property ro.product.manufacturer to 'unknown' (from ro.product.product.manufacturer)\\n10-31 16:01:58.245    97    97 I property-coordinator: property_service.cpp:957 Setting product property ro.product.model to 'AOSP on x86_64' (from ro.product.product.model)\\n10-31 16:01:58.245    97    97 I property-coordinator: property_service.cpp:957 Setting product property ro.product.name to 'aosp_x86_64' (from ro.product.product.name)\\n10-31 16:01:58.245    97    97 I property-coordinator: property_service.cpp:1034 Setting property 'ro.build.fingerprint' to 'Android/aosp_x86_64/generic_x86_64:16/BP4A.251205.006/14401865:user/release-keys'\\n10-31 16:01:58.245    97    97 I property-coordinator: property_service.cpp:1096 Setting property 'ro.product.cpu.abilist' to 'x86_64,x86'\\n10-31 16:01:58.245    97    97 I property-coordinator: property_service.cpp:1096 Setting property 'ro.product.cpu.abilist32' to 'x86'\\n10-31 16:01:58.245    97    97 I property-coordinator: property_service.cpp:1096 Setting property 'ro.product.cpu.abilist64' to 'x86_64'\\n10-31 16:01:58.246    97    97 I property-coordinator: util.cpp:156 Created socket '/dev/socket/property_service_for_system', mode 660, user 0, group 1000\\n10-31 16:01:58.247    97    97 I property-coordinator: util.cpp:156 Created socket '/dev/socket/property_service', mode 666, user 0, group 0\\n10-31 16:01:58.248    97    98 E property-coordinator: persistent_properties.cpp:268 Could not load single persistent property file, trying legacy directory: Unable to read persistent property file: open() failed: No such file or directory\\n10-31 16:01:58.250    97    97 I property-coordinator: parser.cpp:145 Parsing file /system/etc/init/servicemanager.rc...\\n10-31 16:01:58.251    97    97 I property-coordinator: service.cpp:668 starting service 'servicemanager'...\\n10-31 16:01:58.251    97    97 I property-coordinator: service.cpp:683 Could not open file '/dev/kmsg': Failed to open file '/dev/kmsg': No such file or directory\\n10-31 16:01:58.259    97    97 W property-coordinator: util.cpp:246 Activation of cgroup controller +memory failed in path /sys/fs/cgroup/system/uid_1000: No such file or directory\\n10-31 16:01:58.299    97    97 E libprocessgroup: processgroup.cpp:725 Failed to write '100' to /sys/fs/cgroup/system/uid_1000/pid_100/cgroup.procs: No such file or directory\\nMC1_FAILED createProcessGroup(1000, 100, 0) failed for service 'servicemanager': No such file or directory\\n10-31 16:01:58.299    97    97 I property-coordinator: service.cpp:207 Sending SIGKILL to service 'servicemanager' (pid 100) process group...\\n10-31 16:01:58.300    97    97 I libprocessgroup: processgroup.cpp:656 Removed cgroup /sys/fs/cgroup/system/uid_1000/pid_100\\n10-31 16:01:58.301   100   100 F property-coordinator: service.cpp:559 Service 'servicemanager' failed to start due to a fatal error\\nlibc: failed to connect to tombstoned: No such file or directory\\n10-31 16:01:58.603    97    97 I property-coordinator: sigchld_handler.cpp:116 Service 'servicemanager' (pid 100) received SIGABRT\\n10-31 16:01:58.603    97    97 I property-coordinator: service.cpp:207 Sending SIGKILL to service 'servicemanager' (pid 100) process group...\\n10-31 16:01:58.603    97    97 E libprocessgroup: processgroup.cpp:450 Failed to open /sys/fs/cgroup/system/uid_1000/pid_100/cgroup.procs: No such file or directory\\nMC1_MANAGER_EXIT pid=100 code=3 status=6\\n10-31 16:01:58.606    97    97 E property-coordinator: sigchld_handler.cpp:56 waitid failed: No child processes\\nError: Custom { kind: UnexpectedEof, error: \\\"native lifetime channel closed\\\" }\\n\"}\r\nTraceback (most recent call last):\r\n  File \"/home/tv/repositorio-principal/reports/android16-mc1-functional-candidate/execute.py\", line 77, in <module>\r\nAssertionError\r\n"
+}
