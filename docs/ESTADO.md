@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-policy-manager-selinux/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-policy-builder/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -439,3 +439,12 @@ reglas recuperan consultas de estado/access en el modelo;28 controles nuevos,
 exportado de3 reglas, sin cambios de atributos. Siguiente: clausura real de
 contexto/etiquetas/montajes/Binder del gestor; ningún endpoint/servicio/APK
 ejecutado o aprobado por estas pruebas, ni política cargada.
+
+## Último avance: constructor reproducible del artefacto
+
+[Herramienta y controles](../reports/android16-policy-builder/validation.json):
+genera/compila el mismo candidato sin scripts temporales; binario idéntico,
+deriva/sobrescritura rechazadas y cancelación acotada comprobada.
+[Comando y requisitos](ARQUITECTURA.md#artefacto-reproducible-de-política-experimental).
+No instala/carga política ni acepta servicios/APK. La activación real del host
+sigue pendiente bajo el contrato sin reinicio ni introducción de VM.

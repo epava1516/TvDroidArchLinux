@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "contract": "A16-QPR2-1",
+  "status": "compiled_offline",
+  "scope": "Experimental artifact only; no installation/load/live policy/service/APK approval",
+  "profile_sha256": "0f3d801ad0d0436503da03865a623f79d18314f760a767bfed590bffba53a6e0",
+  "input_sha256": {
+    "aosp": "3b063948a16dcd365b4ff4cb1eeda22b1580c6e0a3500e755ba8c358a0565559",
+    "linux": "61862f73f13738ee5f27f0d0b09912d8d87498d4cdb3ca01236aa486cd8b85f2"
+  },
+  "input_paths": {
+    "aosp": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/etc/selinux/plat_sepolicy.cil",
+    "linux": "/home/tv/repositorio-principal/dist/aosp16/refpolicy-baseline-1/source/policy.cil"
+  },
+  "modules": {
+    "runtime/aosp/android16-qpr2/policy/linux-proc.cil": "b7bb19bb97deb6baf41c177825520af525d08a68ec93ac462f7ba91a4d9f528e",
+    "runtime/aosp/android16-qpr2/policy/linux-servicemanager-selinux.cil": "7dfdc007d743dca10b838e78ef869cbdad3f4845da07ce7353124b60bf3145bd"
+  },
+  "combined_cil_sha256": "22dfd54c17f3b4258421b08b99ad0cd5cc3faedd6eaae5c625ce7dec0a0cafab",
+  "limitations": [
+    "No live kernel/host/service/APK acceptance",
+    "Shared label/class mapping and full original-policy projections incomplete",
+    "100 Linux binary attributes absent already in standalone compiler control",
+    "No distribution/security approval inferred"
+  ],
+  "compiler_sha256": "b164c77d935a46c5191b24648df724f3e5b6da70478d37313afc15d024dae130",
+  "compiler_exit_code": 0,
+  "binary_sha256": "1234463a2f52e3a8628a1e65be13a9b951f4754b323f41e14d1921263b2bc9c9"
+}

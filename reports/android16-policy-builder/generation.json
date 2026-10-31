@@ -1,0 +1,28 @@
+{
+  "scope": "Generator regression against original tested sparse composition, not runtime/APK acceptance",
+  "combined_cil_sha256": "22dfd54c17f3b4258421b08b99ad0cd5cc3faedd6eaae5c625ce7dec0a0cafab",
+  "byte_identical": true,
+  "composition_summary": {
+    "type_counts": {
+      "aosp": 1937,
+      "linux": 4590
+    },
+    "wrapped_expressions": {
+      "aosp": 1092,
+      "linux": 25
+    },
+    "assertion_counts": {
+      "aosp": 5330,
+      "linux": 30
+    },
+    "class_count": 145
+  },
+  "explicit_replacements": {
+    "resources": 47,
+    "sids": 27
+  },
+  "audit_artifact": {
+    "path": "dist/aosp16/linux-policy-builder-generate-1/composition.json",
+    "sha256": "3174d5228a58215436af3e7ff04f35cc414a983b0055adcf12725ead384a0d97"
+  }
+}

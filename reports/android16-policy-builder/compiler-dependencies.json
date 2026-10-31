@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "readelf",
+    "-d",
+    "dist/aosp16/selinux-tools-host-4/source/secilc/secilc"
+  ],
+  "exit_code": 0,
+  "needed_entries": [
+    "0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]"
+  ],
+  "scope": "Host tool ELF dynamic dependencies, not Bionic APK linkage or complete host libc parity"
+}

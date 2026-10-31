@@ -719,6 +719,33 @@ Aún faltan kernel SELinux activo, etiquetas/transiciones, montaje genuino de
 status/access/class, getcon/getpidcon, identidad Binder, denegaciones y caída
 del gestor ejecutados. Ningún host/servicio/APK aceptado por estos modelos.
 
+## Artefacto reproducible de política experimental
+
+El [constructor](../tools/aosp/build_linux_policy.py) y su
+[perfil fijado](../runtime/aosp/android16-qpr2/policy/build-profile.json) sustituyen
+la edición manual de scripts temporales para generar este candidato. Requieren
+las dos entradas CIL verificadas y el compilador host original ya construido;
+no descargan, instalan ni cargan políticas. El perfil fija hashes/revisiones,
+orden de145 clases y módulos. Sólo admite estas entradas conocidas.
+
+```sh
+python tools/aosp/build_linux_policy.py --output dist/aosp16/linux-policy-candidate-1 --compile
+```
+
+Sin --compile genera únicamente las entradas. La salida debe ser una carpeta
+nueva. Conserva snapshots de módulos, CIL, auditoría de sustituciones, manifiesto
+con hashes, PID/estado del compilador en su vista de procesos y logs; el
+checkpoint registra también handles de herramientas. El compilador tiene límites
+de recursos y el timeout termina su grupo de procesos. Nunca invoca load_policy,
+setenforce, montaje, cambios de etiquetas o arranque.
+
+[Validación](../reports/android16-policy-builder/validation.json): CIL y binario
+completos idénticos a la evidencia anterior; rechazo de deriva de entrada/tool
+y de sobrescritura; timeout real sin hijo restante. El artefacto conserva los
+límites semánticos y de despliegue del candidato. No es un paquete de distro
+ni una decisión final de política. La prohibición contractual de introducir VM
+o reiniciar VM/cliente se mantiene; no se ha usado una VM de pruebas.
+
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 
 

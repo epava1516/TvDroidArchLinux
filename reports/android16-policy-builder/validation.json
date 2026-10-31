@@ -1,0 +1,75 @@
+{
+  "scope": "Reproducible generation and offline compilation of the existing experimental candidate, not installation/load/VM/SELinux service or APK acceptance",
+  "generator_byte_identical": true,
+  "complete_binary_byte_identical_to_tested_manager_candidate": true,
+  "cli_refusal_controls": 3,
+  "wall_budget_own_child_cleanup_verified": true,
+  "writes": "Fresh explicit output directory only; input hashes validated from the exact byte snapshots parsed; copied module bytes and original compiler digest recorded",
+  "artifact_contents": [
+    "combined.cil",
+    "adapter module snapshots",
+    "composition.json",
+    "artifact.json",
+    "compiler.json",
+    "process.json",
+    "stdout.log",
+    "stderr.log",
+    "policy.bin",
+    "file_contexts"
+  ],
+  "limitations": "Original-policy projection limitations and real host labels/identity/mounts/enforcement/Binder/manager/APK journeys remain open. Artifact is not a production policy, distro package or approved runtime. Contract forbids introducing a VM or restarting current VM/client; none used.",
+  "source_files": [
+    {
+      "path": "tools/aosp/build_linux_policy.py",
+      "sha256": "de35b1f25fc26f5c83582d76a45dfd096bfc2517d6edcef00993a34775ad790d"
+    },
+    {
+      "path": "runtime/aosp/android16-qpr2/policy/build-profile.json",
+      "sha256": "0f3d801ad0d0436503da03865a623f79d18314f760a767bfed590bffba53a6e0"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "reports/android16-policy-builder/artifact.json",
+      "sha256": "1aaa61349edf527a667516b33bd8189a0f7ef993fa0f91330a856eddc5b862be"
+    },
+    {
+      "path": "reports/android16-policy-builder/budget-control.json",
+      "sha256": "dc91d46d10ff164033069feebc7e22e4b5fc7d7cd4ae4d2cf6dc54d66c49165d"
+    },
+    {
+      "path": "reports/android16-policy-builder/comparison.json",
+      "sha256": "65104ee21f99ee50e3960aec1549dea689dea87e6f42d54869d51b23a0b086bb"
+    },
+    {
+      "path": "reports/android16-policy-builder/compiler-dependencies.json",
+      "sha256": "5845a760ca42703fe383afcbb3eb5f6e2d393d2e60e1e59684f8ec496ae738b0"
+    },
+    {
+      "path": "reports/android16-policy-builder/compiler.json",
+      "sha256": "cf6ba3f47ee499c547eb1709e6236171dda82a6facaceefb703169fc4e643596"
+    },
+    {
+      "path": "reports/android16-policy-builder/generation.json",
+      "sha256": "cfe33ef7877b64b24d00d36194e6980e14ef58ca22088f664dfe43ee2bad2f68"
+    },
+    {
+      "path": "reports/android16-policy-builder/negative-controls.json",
+      "sha256": "75c9f358eb630e656f6a1df9f3f282ecd479517976f74630dce44bce043c9e1f"
+    }
+  ],
+  "artifact_paths": [
+    {
+      "path": "dist/aosp16/linux-policy-builder-compile-1/policy.bin",
+      "sha256": "1234463a2f52e3a8628a1e65be13a9b951f4754b323f41e14d1921263b2bc9c9"
+    },
+    {
+      "path": "dist/aosp16/linux-policy-builder-compile-1/combined.cil",
+      "sha256": "22dfd54c17f3b4258421b08b99ad0cd5cc3faedd6eaae5c625ce7dec0a0cafab"
+    },
+    {
+      "path": "dist/aosp16/linux-policy-builder-compile-1/composition.json",
+      "sha256": "3174d5228a58215436af3e7ff04f35cc414a983b0055adcf12725ead384a0d97"
+    }
+  ]
+}

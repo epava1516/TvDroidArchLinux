@@ -1,0 +1,9 @@
+{
+  "scope": "Whole generated CIL and whole compiled binary byte equality against accepted experimental evidence, not deployment/SELinux/APK compatibility",
+  "generated_cil_identical": true,
+  "compiled_binary_identical": true,
+  "binary_sha256": "1234463a2f52e3a8628a1e65be13a9b951f4754b323f41e14d1921263b2bc9c9",
+  "reference_binary": "dist/aosp16/policy-manager-selinux-1/combined.bin",
+  "new_binary": "dist/aosp16/linux-policy-builder-compile-1/policy.bin",
+  "tool_runtime_dependency_check": "readelf reports libc.so.6 only; original libsepol linked inside pinned host tool, no dynamic libsepol substitution observed"
+}

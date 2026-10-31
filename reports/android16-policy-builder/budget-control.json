@@ -1,0 +1,25 @@
+{
+  "scope": "Actual original compiler wall-budget cancellation and own-child cleanup, not live policy execution",
+  "argv": [
+    "python",
+    "tools/aosp/build_linux_policy.py",
+    "--compile",
+    "--output",
+    "/home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-budget-1",
+    "--wall-seconds",
+    "1",
+    "--cpu-seconds",
+    "2"
+  ],
+  "cli_exit_code": 1,
+  "stdout": "Compiler did not pass: 124; evidence: /home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-budget-1\n",
+  "stderr": "",
+  "artifact_status": "compiler_failed",
+  "compiler_exit_code": 124,
+  "process": {
+    "pid": 16,
+    "status": "terminal",
+    "exit_code": 124
+  },
+  "child_still_exists_in_same_pid_view": false
+}

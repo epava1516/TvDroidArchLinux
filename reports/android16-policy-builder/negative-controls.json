@@ -1,0 +1,50 @@
+{
+  "scope": "Real CLI input/compiler drift and overwrite refusal, no policy execution",
+  "results": [
+    {
+      "case": "input_drift",
+      "argv": [
+        "python",
+        "/home/tv/repositorio-principal/tools/aosp/build_linux_policy.py",
+        "--output",
+        "/tmp/archtv-policy-input-ucbbbok6/bad-input-output",
+        "--aosp-cil",
+        "/tmp/archtv-policy-input-ucbbbok6/changed.cil"
+      ],
+      "exit_code": 2,
+      "stderr": "Input hash mismatch: no output written\n",
+      "output_exists": false,
+      "expected_output_exists": false
+    },
+    {
+      "case": "compiler_drift",
+      "argv": [
+        "python",
+        "/home/tv/repositorio-principal/tools/aosp/build_linux_policy.py",
+        "--output",
+        "/tmp/archtv-policy-input-ucbbbok6/bad-compiler-output",
+        "--compile",
+        "--secilc",
+        "/tmp/archtv-policy-input-ucbbbok6/not-the-compiler"
+      ],
+      "exit_code": 2,
+      "stderr": "Compiler hash mismatch: no output written\n",
+      "output_exists": false,
+      "expected_output_exists": false
+    },
+    {
+      "case": "existing_output",
+      "argv": [
+        "python",
+        "/home/tv/repositorio-principal/tools/aosp/build_linux_policy.py",
+        "--output",
+        "/home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-generate-1"
+      ],
+      "exit_code": 2,
+      "stderr": "Output already exists; preserve it and choose a new directory\n",
+      "output_exists": true,
+      "expected_output_exists": true
+    }
+  ],
+  "existing_generated_output_unchanged": true
+}
