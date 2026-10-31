@@ -1,6 +1,8 @@
 # Índice de evidencias
 
-- [R1: persistencia original ejecutada](../reports/android16-persistence-native/findings.json): escritura/actualización y lecturas en execs separados, negativo EACCES con función void que registra/retorna y valor previo conservado; captura REA MCP0. No ACK de servidor, MAC, reinicio de servicio, pérdida de energía ni persistencia APK. [Checkpoint actual](../reports/android16-persistence-native/checkpoint.json).
+- [R1: adaptación de errores persistentes](../reports/android16-property-errors/findings.json): parche local tres archivos, replay sin fuzz, unidades/callers enlazadas; MCP0 en positivos, EACCES real y EIO fsync inyectados, incluido error tras rename con dato visible. No ACK/socket/MAC, rollback/durabilidad general ni APK. [Checkpoint actual](../reports/android16-property-errors/checkpoint.json).
+
+- [R1: persistencia original ejecutada](../reports/android16-persistence-native/findings.json): escritura/actualización y lecturas en execs separados, negativo EACCES con función void que registra/retorna y valor previo conservado; captura REA MCP0. No ACK de servidor, MAC, reinicio de servicio, pérdida de energía ni persistencia APK. [Checkpoint del hito](../reports/android16-persistence-native/checkpoint.json).
 
 - [R1: clausura estática del servicio de propiedades](../reports/android16-property-service-closure/findings.json): raíz StartPropertyService enlaza; delta268 símbolos, SecondStageMain ausente, ninguna ejecución nueva. Fuentes originales contrastadas, fronteras supervisor/MAC/persistencia y riesgo ACK/durabilidad identificados. Mapa histórico regenerado tras redirección accidental, ejecutable original idéntico; hash histórico del mapa desconocido. [Checkpoint del hito](../reports/android16-property-service-closure/checkpoint.json).
 

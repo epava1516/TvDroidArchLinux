@@ -1,0 +1,36 @@
+{
+  "source_commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+  "patch": "runtime/aosp/android16-qpr2/patches/0001-property-persistence-errors.patch",
+  "patch_sha256": "5d283110c20af3b01743d4ed6cc8bae856213087bbe1f9c8c6d8032ad44fd888",
+  "argv": [
+    "/usr/bin/patch",
+    "--batch",
+    "--fuzz=0",
+    "-p1",
+    "-d",
+    "dist/aosp16/property-errors-patch-replay-1",
+    "-i",
+    "/home/tv/repositorio-principal/runtime/aosp/android16-qpr2/patches/0001-property-persistence-errors.patch"
+  ],
+  "exit": 0,
+  "stdout": "patching file init/persistent_properties.h\npatching file init/persistent_properties.cpp\npatching file init/property_service.cpp\n",
+  "files": [
+    {
+      "name": "property_service.cpp",
+      "original_sha256": "ac68c4c4de5ef26366498d39d0945ba2ab06b022e24a7a157853b66a4b8a3b3c",
+      "adapted_sha256": "8136e94e8202224f041fd3199f3e8a80238a8f583801e3a47a466ae3e5430925"
+    },
+    {
+      "name": "persistent_properties.h",
+      "original_sha256": "225358b392ca563fa8adf3f6d14ab0a4748870d1d48f9cc6c1878513095c961f",
+      "adapted_sha256": "677763b82fc9411a21dc17aa2212691ca4090b9b58a7f7ff6ba74ca79e0686f9"
+    },
+    {
+      "name": "persistent_properties.cpp",
+      "original_sha256": "667cd4f7de005d29bd7ebee62a3926cc1bc02d2985cbc74b7ebc3528bfc18255",
+      "adapted_sha256": "a524fc8754578bc7c670263b009011f50afe4e699b4179f28c2e5db1b074d804"
+    }
+  ],
+  "replay_matches_compiled_overlay": true,
+  "original_cache_unchanged": true
+}

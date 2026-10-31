@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-persistence-native/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-property-errors/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -17,7 +17,18 @@ Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCC
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
 
-## Última regresión nativa · persistencia original
+## Última adaptación probada · errores de persistencia
+
+[Parche y pruebas](../reports/android16-property-errors/findings.json): adaptación
+local de tres archivos AOSP, fuente original intacta. API TryWritePersistentProperty
+propaga errores; llamadores síncrono/asíncrono compilan/enlazan con respuesta de fallo.
+REA MCP observa positivos y EACCES real, más EIO explícitamente inyectado en fsync
+archivo/directorio. Tras fallo de directorio post-rename hay dato visible y error,
+sin prometer rollback/durabilidad. Parche aplicado sin fuzz reproduce el overlay.
+ACK real por socket, ENOSPC/rename/crash, supervisor y MAC siguen pendientes.
+No runtime instalado ni etapa APK aceptada.
+
+## Regresión anterior · persistencia original
 
 [Prueba positiva y negativa](../reports/android16-persistence-native/findings.json):
 REA MCP observa salida0 al escribir/actualizar con funciones originales y leer

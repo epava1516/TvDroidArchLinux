@@ -1,0 +1,100 @@
+--- a/init/persistent_properties.h
++++ b/init/persistent_properties.h
+@@ -26,6 +26,7 @@
+ namespace init {
+ 
+ PersistentProperties LoadPersistentProperties();
++Result<void> TryWritePersistentProperty(const std::string& name, const std::string& value);
+ void WritePersistentProperty(const std::string& name, const std::string& value);
+ PersistentProperties LoadPersistentPropertiesFromMemory();
+ 
+--- a/init/persistent_properties.cpp
++++ b/init/persistent_properties.cpp
+@@ -182,7 +182,11 @@
+     if (!WriteStringToFd(serialized_string, fd)) {
+         return ErrnoError() << "Unable to write file contents";
+     }
+-    fsync(fd.get());
++    if (fsync(fd.get()) != 0) {
++        int saved_errno = errno;
++        unlink(temp_filename.c_str());
++        return Error(saved_errno) << "Unable to fsync persistent property file";
++    }
+     fd.reset();
+ 
+     if (rename(temp_filename.c_str(), persistent_property_filename.c_str())) {
+@@ -200,7 +204,9 @@
+     if (dir_fd < 0) {
+         return ErrnoError() << "Unable to open persistent properties directory for fsync()";
+     }
+-    fsync(dir_fd.get());
++    if (fsync(dir_fd.get()) != 0) {
++        return ErrnoError() << "Unable to fsync persistent properties directory";
++    }
+ 
+     return {};
+ }
+@@ -225,7 +231,7 @@
+ 
+ // Persistent properties are not written often, so we rather not keep any data in memory and read
+ // then rewrite the persistent property file for each update.
+-void WritePersistentProperty(const std::string& name, const std::string& value) {
++Result<void> TryWritePersistentProperty(const std::string& name, const std::string& value) {
+     auto persistent_properties = LoadPersistentPropertyFile();
+ 
+     if (!persistent_properties.ok()) {
+@@ -238,7 +244,7 @@
+                            [&name](const auto& record) { return record.name() == name; });
+     if (it != persistent_properties->mutable_properties()->end()) {
+         if (it->value() == value) {
+-            return;
++            return {};
+         }
+         it->set_name(name);
+         it->set_value(value);
+@@ -246,7 +252,11 @@
+         AddPersistentProperty(name, value, &persistent_properties.value());
+     }
+ 
+-    if (auto result = WritePersistentPropertyFile(*persistent_properties); !result.ok()) {
++    return WritePersistentPropertyFile(*persistent_properties);
++}
++
++void WritePersistentProperty(const std::string& name, const std::string& value) {
++    if (auto result = TryWritePersistentProperty(name, value); !result.ok()) {
+         LOG(ERROR) << "Could not store persistent property: " << result.error();
+     }
+ }
+--- a/init/property_service.cpp
++++ b/init/property_service.cpp
+@@ -419,7 +419,10 @@
+                 persist_write_thread->Write(name, value, std::move(*socket));
+                 return {};
+             }
+-            WritePersistentProperty(name, value);
++            if (auto result = TryWritePersistentProperty(name, value); !result.ok()) {
++                *error = result.error().message();
++                return {PROP_ERROR_SET_FAILED};
++            }
+         }
+     }
+ 
+@@ -1483,11 +1486,15 @@
+         }
+ 
+         // Perform write/fsync outside the lock.
+-        WritePersistentProperty(std::get<0>(item), std::get<1>(item));
+-        NotifyPropertyChange(std::get<0>(item), std::get<1>(item));
++        auto result = TryWritePersistentProperty(std::get<0>(item), std::get<1>(item));
++        if (result.ok()) {
++            NotifyPropertyChange(std::get<0>(item), std::get<1>(item));
++        } else {
++            LOG(ERROR) << "Could not store persistent property: " << result.error();
++        }
+ 
+         SocketConnection& socket = std::get<2>(item);
+-        socket.SendUint32(PROP_SUCCESS);
++        socket.SendUint32(result.ok() ? PROP_SUCCESS : PROP_ERROR_SET_FAILED);
+     }
+ }
+ 

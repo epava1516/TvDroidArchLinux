@@ -1,0 +1,39 @@
+{
+  "observed_at": "2026-10-31T09:24:13.217231+00:00",
+  "base_commit": "f6cb24c98a53697b007c5f2b65548685ecf0ce1f",
+  "branch": "main",
+  "previous_checkpoint": "reports/android16-persistence-native/checkpoint.json",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "terminal_exec_handles": [
+    10794,
+    47016
+  ],
+  "active_exec_handles": [],
+  "mcp_status": "Terminal exit0, owned-group cleanup verified; sampled child process coverage incomplete, no persistent target opened",
+  "result": "Three-file adaptation of original AOSP property persistence and real callers; native checked-function regression, not socket-server or APK acceptance",
+  "tests": "adapted-build.json, fault-test-build.json, patch-application.json, native-mcp.json",
+  "next": "Exercise failure responses through original property-service socket under real MAC/supervisor integration; broaden storage errors with ENOSPC/rename and crash/restart recovery. Keep kernel/LSM deployment gate explicit; do not bypass it.",
+  "evidence": {
+    "reports/android16-property-errors/fsync-fault.cpp": "3e58d3d650afefe0b6ba009f459c0210d09f8115d2f5a38da081fa12b4499ebe",
+    "reports/android16-property-errors/findings.json": "f5848388f4e6f53d9dd7c9bba780540ecd4442ed74a1c71feed654c1e3f8b940",
+    "reports/android16-property-errors/native-launcher.py": "4f19405a71debf1df7f1d4ff6e2c8c522d4a2068651ed3ae37880083788dd8aa",
+    "reports/android16-property-errors/extend-fsync-test.py": "32e610d5a393753e73a39f1bbb7f92ded10d1ab465078edf4d070ea22515b180",
+    "reports/android16-property-errors/build.py": "b44668d5f58eed1a70c7deaa3a5f9e579a11668ce6406962186186952749d4cf",
+    "reports/android16-property-errors/adapted-build.json": "f874ce70b500d3ea6d369ab5ef132c4a03b9cf00cf20f6682dc9e592b050f370",
+    "reports/android16-property-errors/fault-test-build.json": "face3bec1b91b019b82497c15295be7328f8a3b71ce96b1f113807c7047518df",
+    "reports/android16-property-errors/native-mcp.json": "6c6e082c76c41cddcd54e9bcad8f1310b0848775cf400be045a8ec1a3e0271a0",
+    "reports/android16-property-errors/patch-application.json": "73e7e9f6dc49535304270cc459a695f695946b842acee7a4f82d9ec2a403acd6",
+    "reports/android16-property-errors/probe.cpp": "67e39fc80627b6b28e79c48ed671097558c4fa456715829b7eb0078e845ac8cc"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "scope": "Three-file adaptation of original AOSP property persistence and real callers; native checked-function regression, not socket-server or APK acceptance",
+  "base_source_commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+  "patch": "runtime/aosp/android16-qpr2/patches/0001-property-persistence-errors.patch",
+  "changes": [
+    "New TryWritePersistentProperty returns Result<void>; original void function retained as logging compatibility wrapper",
+    "Synchronous property-service caller returns PROP_ERROR_SET_FAILED on persistence error",
+    "Async writer sends failure instead of success and suppresses success notification on failed write",
+    "Check file and directory fsync returns; file failure removes temporary file and preserves prior file; directory failure after rename reports error without pretending rollback"
+  ],
+  "compile_link": "Both adapted original units compile; regression and StartPropertyService retained-root link pass strict undefined checks. Original source cache unchanged.",
+  "patch_application": "Zero-fuzz patch replay exactly matches compiled overlay; see patch-application.json",
+  "runtime_evidence": "ev_67ac77fb72679a8c766016df5ebbf3f2848e4e65a5de17b6b4e8eaa9e28400cb",
+  "runtime_exit": 0,
+  "artifacts": [
+    {
+      "path": "dist/aosp16/property-errors-fsync-test-1/persistence-probe",
+      "sha256": "e2c922840212523ad34284fd792bb6bee109ec5cc151c064f915d2544029300f",
+      "executed_copy": "dist/aosp16/property-errors-fsync-execution-1/data/persistence-probe",
+      "copy_hash_matches_after_run": true
+    },
+    {
+      "path": "dist/aosp16/property-errors-fsync-test-1/fsync-fault.so",
+      "sha256": "85447d13dd70a4e91410b04b3d6ba4fe604665c29af6f711c929e123cc5f539f",
+      "executed_copy": "dist/aosp16/property-errors-fsync-execution-1/data/fsync-fault.so",
+      "copy_hash_matches_after_run": true
+    }
+  ],
+  "observed": [
+    "Positive write/update and separate exec reads",
+    "Actual filesystem EACCES propagated by checked API; legacy wrapper logs/returns, previous data retained",
+    "Explicit LD_PRELOAD test shim injects EIO into regular-file fsync: checked API reports EIO, previous data retained",
+    "Explicit shim injects EIO into directory fsync after rename: checked API reports EIO, new data visible but durability not accepted"
+  ],
+  "limits": [
+    "No real service socket ACK execution; caller behavior is source/compile/link evidence only",
+    "No actual disk EIO/power-loss test; injected cases explicitly controlled diagnostic",
+    "No ENOSPC, rename failure, crash recovery or service restart tested",
+    "Property memory can already have changed before persistence fails; no memory/disk atomicity or rollback claimed",
+    "Legacy void wrapper still logs/returns by compatibility; checked path required in changed callers",
+    "SELinux active policy/peer SID/supervisor callbacks/readiness unresolved, no APK stages accepted",
+    "Diagnostic inherited build profile not full original Soong equivalence",
+    "MCP process/environment/filesystem/image-identity limitations preserved; projection not complete authenticated Evidence"
+  ],
+  "next": "Exercise failure responses through original property-service socket under real MAC/supervisor integration; broaden storage errors with ENOSPC/rename and crash/restart recovery. Keep kernel/LSM deployment gate explicit; do not bypass it."
+}

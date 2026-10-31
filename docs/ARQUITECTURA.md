@@ -1171,6 +1171,33 @@ seguridad de cada hijo ni aislamiento por aplicación. Captura derivada saneada 
 límites de identidad/entorno/filesystem se conservan; hashes de copias coinciden
 tras ejecución, sin vinculación atómica de imagen. R1-MAC permanece pendiente.
 
+## R1 · adaptación local para propagar errores persistentes
+
+[Parche separado](../runtime/aosp/android16-qpr2/patches/0001-property-persistence-errors.patch)
+y [pruebas](../reports/android16-property-errors/findings.json). Sobre system/core
+fijado, tres archivos se adaptan en copia aislada; la caché original no cambia.
+TryWritePersistentProperty devuelve Result<void>; el wrapper void permanece para
+compatibilidad. Los llamadores originales síncrono/asíncrono usan el resultado y
+responden PROP_ERROR_SET_FAILED ante fallo. El writer no emite notificación de éxito
+si falla. Se comprueban retornos fsync de archivo y directorio; fallo de archivo
+elimina temporal, fallo de directorio post-rename devuelve error sin fingir rollback.
+Ambas unidades originales adaptadas y raíz de servidor compilan/enlazan estrictamente;
+replay del parche sin fuzz coincide con el overlay compilado. No runtime desplegado.
+
+REA MCP observa salida0 de regresión: escritura/lectura entre execs, EACCES real y
+EIO explícito mediante shim diagnóstico fsync. Archivo: conserva previo y error;
+directorio: valor nuevo visible tras rename y error. No es prueba de avería física
+ni energía. Tampoco prueba ACK por socket: cambios de llamadores son evidencia
+fuente/compilación/enlace. Memoria de propiedades puede haber cambiado antes del
+fallo de persistencia; no se promete atomicidad memoria/disco. El wrapper heredado
+sigue registrando/retornando; consumidores que necesiten resultado usan API comprobable.
+
+Pendientes ENOSPC/rename/crash/reinicio, permisos/SID/MAC y supervisor real. Conservar
+la implementación original de protobuf/protocolo/sockets; no reemplazarla por otra
+plataforma. El parche es mantenimiento local que exige reevaluar cada actualización
+AOSP; perfil de build diagnóstico no equivale a Soong completo. Ninguna etapa APK
+se acepta por estas regresiones.
+
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 
 
