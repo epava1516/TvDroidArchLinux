@@ -1,0 +1,21 @@
+[
+  "/usr/bin/clang",
+  "--target=x86_64-linux-android36",
+  "-fuse-ld=lld",
+  "-shared",
+  "-fPIC",
+  "-ffreestanding",
+  "-fno-stack-protector",
+  "-nostdlib",
+  "-nostdinc",
+  "-Wl,-z,defs",
+  "-Wl,-soname,property-area-probe.so",
+  "-Wall",
+  "-Wextra",
+  "-Werror",
+  "-O2",
+  "/home/tv/repositorio-principal/tools/aosp/property_area_probe.c",
+  "/home/tv/repositorio-principal/dist/aosp16/native-inputs-2/apex/com.android.runtime/lib64/bionic/libc.so",
+  "-o",
+  "/home/tv/repositorio-principal/dist/aosp16/property-area-1/property-area-probe.so"
+]

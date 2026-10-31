@@ -1,0 +1,4 @@
+IDENTITY ruid=10000 euid=10000 rgid=10000 egid=10000
+OPEN_WRITE fd=-1 errno=13
+SET_WITHOUT_SERVER result=2 errno=2
+FOREACH result=-1 count=0

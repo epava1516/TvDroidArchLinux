@@ -1,0 +1,25 @@
+{
+  "command": [
+    "sudo",
+    "-n",
+    "/usr/bin/prlimit",
+    "--cpu=10",
+    "--core=0",
+    "--",
+    "/usr/bin/unshare",
+    "--mount",
+    "--pid",
+    "--fork",
+    "--kill-child=SIGKILL",
+    "--net",
+    "--ipc",
+    "--uts",
+    "--cgroup",
+    "/usr/bin/python",
+    "/tmp/archtv-a16-getprop-contexts.py"
+  ],
+  "exit_code": 0,
+  "entries": 101,
+  "ro.build.version.sdk": "u:object_r:build_prop:s0",
+  "scope": "Original getprop typed/context metadata under UID10000/no capabilities. Metadata labels/types are not proof of SELinux enforcement or property server semantics."
+}

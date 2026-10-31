@@ -1,0 +1,2 @@
+IDENTITY ruid=0 euid=0 rgid=0 egid=0
+AREA_INIT result=-1 errno=2

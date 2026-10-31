@@ -87,11 +87,41 @@ La [prueba del kernel](../reports/android16-configuration/kernel-property-prereq
 distingue datos y enforcement: SELinux compilado pero no activo; crear una etiqueta
 falla para UID1000 y pasa para UID0. Eso permite explorar bootstrap privilegiado
 original, pero no acredita autorización SELinux ni aislamiento de aplicaciones.
-La siguiente prueba conserva funciones Bionic originales de áreas, escritor
-supervisado y clientes sin privilegios, sin ignorar errores. La política/IPC
-necesita su propia decisión probada: integración Linux compatible con mediación
-original o adaptación explícita equivalente en identidad/denegaciones. Ninguna
-está aceptada, y no se activa mediante un reinicio bajo este contrato.
+La [prueba de áreas Bionic](../reports/android16-property-area/validation.json)
+crea áreas con funciones originales, importa el build.prop exacto y lee 101 valores,
+incluidos 309 bytes en una propiedad larga. El [wrapper target](../tools/aosp/property_area_probe.c)
+es diagnóstico: sólo enlaza Bionic libc.so y símbolos LIBC_PLATFORM; no implementa
+propiedades ni ejecuta ART main. El contraste es getprop original sin preload,
+que también lee tipos/contextos generados en el host. 364 archivos repiten
+contenido en dos escritores; eso no es persistencia de datos de una APK.
+
+Frontera demostrada: setup Linux configura montajes sólo lectura y namespaces
+de montaje/PID/red/IPC/UTS/cgroup, limpia grupos, baja UID/GID10000, confirma cero
+capacidades permitidas/efectivas y activa no_new_privs antes de exec. Python/glibc
+son herramientas del supervisor; el target usa Bionic. No se pasan punteros ni
+objetos entre entornos. El escritor bootstrap privilegiado está separado: sin
+capacidades falla con EPERM de etiquetado y se aborta el ensayo; sólo se acepta
+el snapshot de la ejecución privilegiada. Las aplicaciones no obtienen esos permisos.
+
+El namespace de un solo UID muestra property_info como 65534:65534; el lector
+original exige root:root. El intento con mapa completo falla en el cambio de GID
+de bwrap y no se acepta. La prueba final conserva identidades Linux reales sin
+namespace de usuario. Son funciones y límites de aislamiento, no un Android
+oculto ni una aceptación de seguridad general.
+
+El servicio de propiedades sigue ausente. Bionic deriva protocolo antiguo al
+faltar ro.property_service.version y devuelve 2/ENOENT sin conexión; las fuentes y
+[REA MCP estático](../reports/android16-property-area/rea-property-set-disassembly.json)
+separan ese comportamiento de un fallo de ABI. No se añade una versión para
+fingir el servidor. Su aceptación futura requiere readback/callbacks/denegaciones,
+no sólo retorno 0, incluso donde el protocolo legacy original devuelve 0 tras timeout.
+
+El snapshot no carga todos los defaults/imports/propiedades derivadas de init
+ni política de particiones ausentes. SELinux sigue inactivo: tipos y etiquetas
+no son mediación. La política/IPC precisa integrar mediación original con Linux
+o una adaptación equivalente probada: ninguna se acepta aquí. No se activa
+mediante un reinicio bajo este contrato. Sigue APEX/listas/metadatos y generador
+original de namespaces, después classpaths/ART; no métodos individuales.
 
 ## Subsistemas y fronteras elegidas
 

@@ -1,0 +1,59 @@
+{
+  "observed_at": "2026-10-31T00:29:47.627953+00:00",
+  "source_base_commit": "4121fd2e3598887517f254f87da225d0750c205a",
+  "helper_source_sha256": "fff42c3db575f43f00c2b0052b0d110f83b588a060a2c1b0bfd359a107ffdf5a",
+  "helper_elf_sha256": "f75248c7400e2a25302efc43a139f9f7de0f480234724789b57b7fa804b25be6",
+  "helper_ABI": "x86_64 Android36 compiler target, linked only to exact A16QPR2 Bionic libc.so; LIBC_PLATFORM methods; no GLIBC dependency",
+  "snapshot": {
+    "build_prop_sha256": "8190df2d4debcb3f2271543435ec49b9951acd59c5ba67dc7556f76fd30be1a0",
+    "properties": 101,
+    "all_values_equal_original": true,
+    "longest_value_bytes": 309
+  },
+  "original_areas": {
+    "files": 364,
+    "two_writer_runs_byte_identical": true,
+    "writer_privileged_exit": 0,
+    "writer_capless_exit": 10,
+    "capless_failure": "Real fsetxattr EPERM recorded; failed areas not treated as success"
+  },
+  "clients": {
+    "real_uid_gid": 10000,
+    "permitted_and_effective_caps": "0",
+    "no_new_privileges": true,
+    "helper_read_exit": 0,
+    "unmodified_getprop_exit": 0,
+    "getprop_types_and_contexts": 101,
+    "write_open_errno": 13,
+    "set_without_server_result": 2,
+    "set_without_server_errno": 2
+  },
+  "REA_MCP_static_only": {
+    "evidence_id": "ev_0485c2ce4f9758cfa20e2b7cb5cb68e577c3a65c69817b8c698b350ebe64c216",
+    "operation": "symbol-scoped GNU objdump disassembly of original __system_property_set",
+    "status": "complete",
+    "no_runtime_observation_claim": true
+  },
+  "matrix_sha256": "1db1df142c1a686c4692350fdd2e5ac5491f8c52d4a74542d9987b7d3149c52e",
+  "all_three_APKs_all_nine_stages": "not_tested",
+  "pending_own_other_hashes_preserved": true,
+  "limitations": [
+    "Static system build.prop snapshot only, not full boot defaults/derived hardware/import/persistence behavior",
+    "Only platform contexts; absent partition policy not invented",
+    "No property service running; no successful client write/permission semantics/callback/concurrency tested",
+    "SELinux inactive; labels/types are metadata, not enforcement; DAC/readonly mount are narrow negatives only",
+    "User namespace original single-ID configuration unusable for root metadata; new full-map path not accepted after GID setup failure",
+    "R1 remains open: coherent APEX/namespaces/classpaths, ART semantic execution, Binder/app/services/graphics/Markor absent"
+  ],
+  "scope": "Original native property/configuration components, not runtime or APK compatibility acceptance",
+  "local_links_checked": 121,
+  "broken_links": 0,
+  "graphify": {
+    "isolated_staged_worktree": true,
+    "nodes": 2578,
+    "edges": 4956,
+    "communities": 224,
+    "scope": "AST update, no semantic LLM relabeling"
+  },
+  "whitespace_check": "Passed excluding raw readelf output, whose original whitespace is retained"
+}

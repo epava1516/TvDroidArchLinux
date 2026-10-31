@@ -1,0 +1,15 @@
+{
+  "holder_pid": 202595,
+  "command": [
+    "/usr/bin/unshare",
+    "--user",
+    "--map-users=0:0:65536",
+    "--map-groups=0:0:65536",
+    "--",
+    "/usr/bin/sleep",
+    "60"
+  ],
+  "uid_map": "         0          0      65536\n",
+  "gid_map": "         0          0      65536\n",
+  "terminal_returncode": -15
+}

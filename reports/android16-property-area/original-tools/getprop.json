@@ -1,0 +1,26 @@
+{
+  "command": [
+    "sudo",
+    "-n",
+    "/usr/bin/prlimit",
+    "--cpu=10",
+    "--core=0",
+    "--",
+    "/usr/bin/unshare",
+    "--mount",
+    "--pid",
+    "--fork",
+    "--kill-child=SIGKILL",
+    "--net",
+    "--ipc",
+    "--uts",
+    "--cgroup",
+    "/usr/bin/python",
+    "/tmp/archtv-a16-original-getprop.py"
+  ],
+  "exit_code": 0,
+  "seconds": 0.3132814420023351,
+  "properties": 101,
+  "all_values_equal_original_snapshot": true,
+  "scope": "Unmodified original GSI toolbox getprop with Bionic; UID10000/zero caps before exec, no preload. Original read-only property snapshot; not property server, ART, DEX or APK acceptance."
+}

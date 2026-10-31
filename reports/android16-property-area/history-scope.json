@@ -1,0 +1,6 @@
+{
+  "initial_mount_failure": "Target never executed because /probe mountpoint absent. Initial helper remains local; source improved later. Not final-source execution evidence.",
+  "initial_helper_sha256": "0f56a31f1f4aafaa1d69ffc96b7dba8fdbe7733ee9c59796bd6d975b93aa6282",
+  "final_source_execution": "areas-final/clients-final use the final helper. Original getprop has no preload.",
+  "identity_failures": "All retained as failures; namespace helper terminated."
+}

@@ -1,0 +1,13 @@
+{
+  "root": "/tmp/archtv-a16-property-area-1/properties-privileged",
+  "files": {
+    "property_info": {
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o444",
+      "bytes": 102112,
+      "sha256": "9d2012f1007d00631201c4a6d4888b07ba1cede60af2882096c382b13a9c2f4a",
+      "selinux_label": null
+    }
+  }
+}

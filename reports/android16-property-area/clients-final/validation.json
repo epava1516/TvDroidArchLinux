@@ -1,0 +1,9 @@
+{
+  "area_files": 364,
+  "two_writer_runs_content_identical": true,
+  "helper_sha256": "f75248c7400e2a25302efc43a139f9f7de0f480234724789b57b7fa804b25be6",
+  "only_DT_NEEDED": "libc.so",
+  "host_glibc_runtime_dependency": false,
+  "original_platform_symbols_version": "LIBC_PLATFORM",
+  "scope": "Target helper/platform ABI binding and repeated area bytes; not production configuration or app compatibility"
+}

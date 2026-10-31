@@ -1,12 +1,25 @@
 # Índice de evidencias
 
+## Áreas de propiedades Bionic A16 · componentes ejecutados
+
+[Validación](../reports/android16-property-area/validation.json),
+[fuentes](../reports/android16-property-area/source-findings.json),
+[escritor y errores](../reports/android16-property-area/areas-final/writer-privileged.json),
+[getprop original](../reports/android16-property-area/clients-final/getprop.json),
+[REA estático](../reports/android16-property-area/rea-property-set-disassembly.json) y
+[checkpoint actual](../reports/android16-property-area/checkpoint.json).
+101 valores exactos y tipos/contextos del snapshot oficial; UID10000 sin capacidades
+antes de exec; 364 archivos repetidos. Se conservan fallos sin capacidades y de
+namespace. Escritura por servicio falla por servidor ausente. No se acreditan
+ART/DEX/APK ni enforcement SELinux.
+
 ## Configuración A16 · metadatos host y frontera de seguridad
 
 [Validación](../reports/android16-configuration/validation.json),
 [fuentes y dependencias](../reports/android16-configuration/source-findings.json),
 [REA libc](../reports/android16-configuration/rea-libc-exports.json),
 [kernel/identidades](../reports/android16-configuration/kernel-property-prerequisites.json) y
-[checkpoint actual](../reports/android16-configuration/checkpoint.json).
+[checkpoint de metadatos](../reports/android16-configuration/checkpoint.json).
 Siete tests originales pasan; 1.384 contextos generan bytes reproducibles y el
 lector original aplica su control de propietario. REA acredita exports, no su
 ejecución. Los ensayos host muestran etiquetado UID1000 denegado/UID0 permitido,

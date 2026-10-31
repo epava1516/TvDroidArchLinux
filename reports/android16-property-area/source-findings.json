@@ -1,0 +1,42 @@
+{
+  "files": {
+    "bionic/libc/bionic/system_property_api.cpp": {
+      "url": "https://android.googlesource.com/platform/bionic/+/f22516cbc67e81c13cf943ce02f01b8929a98726/libc/bionic/system_property_api.cpp",
+      "commit": "f22516cbc67e81c13cf943ce02f01b8929a98726",
+      "cache": "/home/tv/.cache/archtv/aosp16-qpr2/property-study/bionic__libc_bionic_system_property_api.cpp",
+      "sha256": "da7341d1b77f1d6dabbce7e09681d9aca30197a8ccd0eb69e17dba02e014ea77"
+    },
+    "bionic/libc/include/sys/system_properties.h": {
+      "url": "https://android.googlesource.com/platform/bionic/+/f22516cbc67e81c13cf943ce02f01b8929a98726/libc/include/sys/system_properties.h",
+      "commit": "f22516cbc67e81c13cf943ce02f01b8929a98726",
+      "cache": "/home/tv/.cache/archtv/aosp16-qpr2/property-study/bionic__libc_include_sys_system_properties.h",
+      "sha256": "f588e614548a5143906f3f1a58aaf273be4c6ed2f42599ed9472ad317245d5e3"
+    },
+    "bionic/libc/system_properties/prop_area.cpp": {
+      "url": "https://android.googlesource.com/platform/bionic/+/f22516cbc67e81c13cf943ce02f01b8929a98726/libc/system_properties/prop_area.cpp",
+      "commit": "f22516cbc67e81c13cf943ce02f01b8929a98726",
+      "cache": "/home/tv/.cache/archtv/aosp16-qpr2/property-study/bionic__libc_system_properties_prop_area.cpp",
+      "sha256": "27121b05773ab093038eafda9a851f6f74c8b15c280209d9688af2e1af410065"
+    },
+    "bionic/libc/bionic/system_property_set.cpp": {
+      "url": "https://android.googlesource.com/platform/bionic/+/f22516cbc67e81c13cf943ce02f01b8929a98726/libc/bionic/system_property_set.cpp",
+      "commit": "f22516cbc67e81c13cf943ce02f01b8929a98726",
+      "cache": "/home/tv/.cache/archtv/aosp16-qpr2/property-study/bionic__libc_bionic_system_property_set.cpp",
+      "sha256": "71eec3750e593e72b9f88f589b9a1eafed4624105462be6be99eca2ff6ebb001"
+    },
+    "system/core/toolbox/getprop.cpp": {
+      "url": "https://android.googlesource.com/platform/system/core/+/e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1/toolbox/getprop.cpp",
+      "commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+      "cache": "/home/tv/.cache/archtv/aosp16-qpr2/property-study/system_core__toolbox_getprop.cpp",
+      "sha256": "13a31378a8cfacd5c41f60eaab50f4d4936c77447cd42eebd342e7073c009460"
+    }
+  },
+  "observations": [
+    "Original area_init returns -1 if context-file labeling failed; capless run logs actual EPERM and exits10, not used as an approved area. Privileged isolated writer succeeds with original Bionic.",
+    "Original native getprop enumerates via __system_property_foreach/read_callback and uses original PropertyInfoAreaFile for -T/-Z. All 101 values and metadata are read in the target under real UID10000.",
+    "Absent ro.property_service.version triggers original old protocol; send_prop_msg returns connection last error. Observed return2/ENOENT is failure, not JNI/ABI mismatch. No service-version property added to pretend a server exists.",
+    "Legacy source includes a timeout-return0 path; future service acceptance must verify readback/callback/denial, not just zero return. This experiment never connects to a server.",
+    "Failed single-ID user namespace exposes metadata as 65534:65534 with uid_map10000->0 count1; original reader root-owner check does not accept it. Full-map bwrap trial failed GID switch, not Bionic. Linux pre-exec real UID drop succeeds, with zero permitted/effective capabilities."
+  ],
+  "scope": "Exact-source study plus separate captured execution; no ART/DEX/APK or full property server policy acceptance."
+}

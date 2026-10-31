@@ -1,0 +1,3 @@
+linker: Warning: failed to find generated linker configuration from "/linkerconfig/ld.config.txt"
+WARNING: linker: Warning: failed to find generated linker configuration from "/linkerconfig/ld.config.txt"
+libc: Using old property service protocol ("ro.property_service.version" is not set)

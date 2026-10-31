@@ -1,0 +1,26 @@
+{
+  "command": [
+    "sudo",
+    "-n",
+    "/usr/bin/prlimit",
+    "--cpu=10",
+    "--core=0",
+    "--",
+    "/usr/bin/unshare",
+    "--mount",
+    "--pid",
+    "--fork",
+    "--kill-child=SIGKILL",
+    "--net",
+    "--ipc",
+    "--uts",
+    "--cgroup",
+    "/usr/bin/python",
+    "/tmp/archtv-a16-property-supervised-client-2.py"
+  ],
+  "exit_code": 0,
+  "seconds": 0.2896444910002174,
+  "properties": 101,
+  "all_values_match_original": true,
+  "scope": "UID/GID10000 no capabilities/no-new-privileges before exec. Original Bionic mapping, readonly snapshot; getprop is unmodified/no preload. Diagnostic client also tests write denial and absent server. No ART/DEX/APK or full policy acceptance."
+}

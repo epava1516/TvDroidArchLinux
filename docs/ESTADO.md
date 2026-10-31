@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-configuration/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-property-area/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -29,30 +29,37 @@ no equivalen automáticamente a Android completo; estudiar cierres reales.
 | Procedencia fijada | Manifiesto fuente/derivado y registro de las 1.013 revisiones exactas; reproducción offline y diez objetos principales verificados. GSI oficial x86_64 del mismo build/SDK36.1 verificada; linker y ayuda ART ejecutados de forma aislada. No equivalencia fuente/binario completa ni R1 aceptada. |
 | Se conserva | Compositor/shell Rust, instalación/herramientas y regresiones previas útiles; H7–H9 permanecen abiertos. |
 | Históricos Android13 | ART host/glibc y fixtures propias; mezcla de jars/core/JNI; loader Bionic parcial y cierre de bibliotecas. No se trasladan como validación de A16. |
-| Pendiente separado | Cuatro archivos propios de JNI/bootstrap host conservados sin commit. Ensayos API33 de propiedades/configuración pausados; no área de propiedades nueva ejecutada ni cambio a producción. |
-| Configuración parcial A16 | Metadatos host originales reproducibles; propiedad root validada. Servicio/área Bionic/política SELinux pendientes. |
+| Pendiente separado | Cuatro archivos propios de JNI/bootstrap host conservados sin commit. Ensayos API33 de propiedades/configuración pausados, sin área ejecutada en esa línea ni cambio a producción. |
+| Configuración parcial A16 | Metadatos originales y áreas Bionic probados: 101 valores/tipos/contextos con getprop original, UID10000 sin capacidades. Servicio/IPC/política SELinux pendientes. |
 | Herramientas | REA MCP respondió realmente; análisis ELF/APK estático previo y estado actual, sin presentarlos como ejecución ni CLI como conexión. |
 | No probado | Nueve etapas de las APK sobre A16; SF→Wayland, aceleración/entrada/AV/TV, aislamiento por app/Binder, GMS/DRM/OEM/WebView, traducción ISA/32/64, presupuestos, instalación/actualización/seguridad actualizada. |
 
 ## Checkpoint y siguiente acción
 
-Base del nuevo hito: `1c284ad`, main; contrato y manifiesto publicados. Consultar Git para HEAD/origin actuales. El snapshot local
-`/home/tv/recuperacion-archtv/20261031T000306Z-a16-configuration` guarda parches,
+Base del nuevo hito: `4121fd2`, main; contrato y manifiesto publicados. Consultar Git para HEAD/origin actuales. El snapshot local
+`/home/tv/recuperacion-archtv/20261031T001525Z-bionic-property-area` guarda parches,
 archivos nuevos y scripts de estudio. Los logs ajenos H9 permanecen intactos.
 El checkpoint registra procesos/handles y resultados; no hay ART/bwrap/build activo
 observado tras las pruebas A16. No restaurar parches sin contrastar Git.
 
-Siguiente acción: probar inicialización privilegiada aislada de áreas con Bionic
-original y los metadatos generados; registrar errores reales y acceso de clientes
-sin privilegios. Se han validado el serializador/lector host originales (7 tests)
-y 1.384 contextos de plataforma, no el servicio ni el área Bionic.
-SELinux está compilado pero inactivo: etiquetado UID1000 falla, UID0 pasa; guardar
-etiquetas no prueba mediación del kernel. La clausura de `PropertyInit` y
-`StartPropertyService` dentro de libinit y sus callbacks/política sigue pendiente.
-[Pruebas y límites](../reports/android16-configuration/validation.json).
-Después: APEX/namespaces/classpaths originales, DEX y Markor de nueve etapas.
-La ayuda ART pasa con StatsD original; rutas aplanadas aún diagnósticas. No Android
-arrancado, no reinicio ni ampliación de API33 por métodos. R1 completo permanece abierto.
+Siguiente acción: preparar coherentemente los APEX originales y metadatos de
+activación de fábrica, completar listas/configuraciones y ejecutar el generador
+original de namespaces con el snapshot de propiedades probado. Después classpaths
+y ART semántico antes de Markor. No implementar métodos aislados de API33.
+
+Áreas Bionic originales: 101 propiedades/tipos/contextos leídos con getprop sin
+preload, UID/GID10000, capacidades cero y no_new_privs. 364 archivos repiten hashes
+en dos escritores. El bootstrap requiere privilegios: sin capacidades falla y
+se conserva ese resultado. Sólo es un snapshot de build.prop, no PropertyInit
+completo: el servicio/socket falta y set devuelve error 2.
+[Validación y límites](../reports/android16-property-area/validation.json).
+
+El namespace de un solo UID muestra propietario 65534, incompatible con el check
+root de Bionic; el mapa completo falló antes de ejecutar el cliente. El supervisor
+Linux probado conserva namespaces de montaje/PID/red/IPC/UTS/cgroup, baja
+credenciales antes de exec y no usa namespace de usuario. No acredita aislamiento
+completo, Binder ni política SELinux: SELinux sigue inactivo. No se arrancó Android
+ni se reinició nada. R1 y las nueve etapas APK siguen abiertos.
 
 ## Historial conservado · no es el estado vigente
 

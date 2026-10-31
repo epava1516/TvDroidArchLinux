@@ -1,0 +1,21 @@
+{
+  "image_sha256": "c4989f703ac23bbd3bb3da2e33a3633d373bf763afcfcbed3cccc73d5049d656",
+  "files": {
+    "toybox": {
+      "sha256": "5934b7fd16031f57ceaa94bff1eb5013cc9e08c76d057457eff36b330477cf86",
+      "bytes": 611200,
+      "extraction_stdout": "",
+      "extraction_stderr": "debugfs 1.47.4 (6-Mar-2025)\n"
+    },
+    "toolbox": {
+      "sha256": "98ccaa1619a5d3b21e597d19203d860a50608c8642937acba30e6b517411c41f",
+      "bytes": 169864,
+      "extraction_stdout": "",
+      "extraction_stderr": "debugfs 1.47.4 (6-Mar-2025)\n"
+    },
+    "getprop": {
+      "original_symlink": "toolbox",
+      "scope": "Original symlink observed via read-only debugfs stat"
+    }
+  }
+}
