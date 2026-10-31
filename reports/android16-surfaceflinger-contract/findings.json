@@ -1,0 +1,65 @@
+{
+  "scope": "R3 original-source contracts and static binary inventory only; no SurfaceFlinger/HAL/Wayland or APK execution",
+  "observed_at": "2026-10-31T06:50:15.297578+00:00",
+  "base_commit": "86e9e731a1ed602c36cc2eee63859bbd2e2dd395",
+  "source_commit": "fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103",
+  "source_findings": [
+    {
+      "file": "main_surfaceflinger.cpp",
+      "contract": "Optional passthrough allocator startup is property-conditioned; original main configures Binder/HIDL threadpools, init then publishes SurfaceFlinger/SurfaceFlingerAIDL through original registry. Not a standalone Wayland client."
+    },
+    {
+      "file": "SurfaceFlinger.cpp:931",
+      "contract": "RenderEngine initialized before HWComposer. Composer callback and initial display configuration required; LOG_ALWAYS_FATAL_IF(!configureLocked()) rejects missing initial hotplug. Virtual display-only bypass not established."
+    },
+    {
+      "file": "DisplayHardware/ComposerHal.cpp",
+      "contract": "Select AIDL when namesAnAidlComposerService; otherwise HIDL. Do not presume AIDL3-only requirement."
+    },
+    {
+      "file": "DisplayHardware/AidlComposerHal.cpp:242",
+      "contract": "Declared AIDL or fully qualified name; waitForService then createClient. Failure fatal."
+    },
+    {
+      "file": "DisplayHardware/HidlComposerHal.cpp:222",
+      "contract": "Original HIDL2.1 getService and composer client creation required; missing service fatal."
+    }
+  ],
+  "binary": {
+    "direct_needed_candidates_present": 48,
+    "elf_mcp_exports": 736,
+    "mcp_evidence": "ev_aa94ef3daa266aeedf245c04dbf09435b322c4af533c72100fc714b87bda379f",
+    "limits": "Presence in three bounded library directories only; transitive dependencies, symbols, runtime namespaces, HAL availability and source/binary equivalence unproven"
+  },
+  "bridge_decision": {
+    "state": "Hypothesis, unimplemented",
+    "preserve": "Original SurfaceFlinger/BufferQueue/RenderEngine/Composer contracts; Linux/Smithay own devices, desktop and focus",
+    "output": "Evaluate Composer display backed by a Wayland surface; do not let Android claim KMS master or Linux desktop",
+    "must_prove": [
+      "Original registry/identity prerequisite R1-MAC",
+      "Allocator/mapper and graphic handle format/stride/modifier ownership across Bionic/Linux",
+      "Acquire/present/release fence FDs; no success before real completion",
+      "Hotplug/configuration/vsync and resize/reconnect/error paths",
+      "EGL/Vulkan implementation and matching gralloc/mapper; Bionic/GPU driver ABI",
+      "Protected content/DRM unavailable until actual hardware/backend contract demonstrated",
+      "Original WM/input route and Markor complete journey, not a static rendered buffer"
+    ],
+    "alternatives": [
+      "AIDL Composer service adapted to Wayland",
+      "Existing HIDL/legacy Composer adapter with proven A16 closure",
+      "Virtual-display consumer only if original initial display requirement is separately met; not demonstrated"
+    ]
+  },
+  "reuse_candidates": [
+    {
+      "url": "https://github.com/waydroid/android_hardware_waydroid",
+      "scope": "Existing hardware component source candidate identified; not audited/built/installed or accepted for A16. Reuse of isolated code would need explicit dependency/license review and must not introduce Waydroid/full Android runtime."
+    },
+    {
+      "url": "https://android.googlesource.com/platform/external/drm_hwcomposer/",
+      "scope": "Original existing Composer candidate identified; assess Linux desktop/device ownership before choosing. No execution or Wayland backend support claimed."
+    }
+  ],
+  "official_graphics_reference": "https://source.android.com/docs/core/graphics/implement-hwc",
+  "next": "Inspect existing Composer implementation candidates and exact allocator/mapper/EGL closure against our source lock; choose minimal vertical hotplug→buffer→fence→Smithay presentation experiment. R1-MAC remains required before original service path can execute."
+}

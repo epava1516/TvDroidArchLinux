@@ -812,6 +812,32 @@ No prueba separación entre UID, MAC, callbacks ni recursos gráficos. No se ret
 la solicitud SID del gestor original para eludir el fallo. R1-MAC continúa abierto:
 hace falta despliegue Linux SELinux verificable con activación y recuperación.
 
+## R3: frontera Composer original hacia Smithay
+
+[Fuentes originales fijadas e inventario estático](../reports/android16-surfaceflinger-contract/validation.json).
+Siete fuentes verificadas por blob Git; REA MCP inspeccionó el ejecutable original,
+736 exports. Sus48 dependencias directas tienen candidatos presentes: no prueba
+cierre transitivo, namespaces, símbolos, GPU o disponibilidad HAL. No se ejecutó SF.
+
+La revisión original selecciona Composer AIDL si está declarado o se pide nombre
+AIDL completo; de lo contrario usa HIDL. Ambas rutas requieren servicio y cliente
+reales. SurfaceFlinger inicializa RenderEngine y Composer y aborta si no configura
+el display inicial mediante hotplug. Un consumidor de display virtual por sí solo
+no demuestra que pueda saltarse esa condición. Publicar SF requiere el registro
+Binder original; el fallo SID de R1-MAC permanece vigente.
+
+Hipótesis: Composer respaldado por superficie Wayland, conservando SF/BufferQueue/
+RenderEngine y sin ceder a Android el escritorio ni KMS del host. Antes de código
+propio, auditar adaptadores existentes (drm_hwcomposer y código de HAL Wayland
+identificado, sin introducir Waydroid). Elegir por fuente/licencia y cierre A16,
+no por demos en otras versiones. Ningún candidato está aceptado aún.
+
+El experimento debe cubrir hotplug/configuración/vsync, allocator/mapper compatible,
+formatos/stride/modifiers, EGL/Vulkan Bionic, propiedad de buffers y FD/fences de
+adquisición/presentación/liberación, resize/desconexión y errores honestos. No
+sustituir fences por éxito inmediato ni prometer contenido protegido/DRM. Después
+validar WM/entrada y Markor completo sobre esa misma salida, no sólo un frame.
+
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 
 

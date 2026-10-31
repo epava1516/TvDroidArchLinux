@@ -1,0 +1,81 @@
+{
+  "scope": "Bounded extracted GSI file inventory, not active HAL service observation or full filesystem absence proof",
+  "paths": [
+    {
+      "path": "system/lib64/hw",
+      "state": "absent"
+    },
+    {
+      "path": "system/etc/vintf/compatibility_matrix.device.xml",
+      "sha256": "433c146ed25435ca49c21e7f9a8778c994446b8198537bef37fc4a6cd1d2d7a7"
+    },
+    {
+      "path": "system/etc/vintf/compatibility_matrix.8.xml",
+      "sha256": "81effff226fab476871a04623d3286351c9f055e0ace004f13d3bc30fd68aba0"
+    },
+    {
+      "path": "system/etc/vintf/compatibility_matrix.6.xml",
+      "sha256": "a15d308215dcb240e0da8e245037295770977a70bdf0cc8858d6075713d0e6d3"
+    },
+    {
+      "path": "system/etc/vintf/compatibility_matrix.5.xml",
+      "sha256": "487b4643b772420a17728faa180b4da00bc775e39770ca79284e5d95b967fad6"
+    },
+    {
+      "path": "system/etc/vintf/compatibility_matrix.202404.xml",
+      "sha256": "b9a30f43d35b1eb6486a685bd0fa6cf2b94f087b707b94296b2fb25cb4ce41af"
+    },
+    {
+      "path": "system/etc/vintf/compatibility_matrix.7.xml",
+      "sha256": "e0dab89c44306c6e990de0d6fd7833513031039aa2079482f65d210be41c77a0"
+    },
+    {
+      "path": "system/etc/vintf/compatibility_matrix.202504.xml",
+      "sha256": "a21eba5d7ccf35458f3ca2e8205ea0be5105c4206537b4c95eb32ec4ca10d3c8"
+    },
+    {
+      "path": "system/etc/vintf/manifest.xml",
+      "sha256": "cd5ae373388bd38d3d481a0b4a0b71f475d55f9a5221bbdf91c5b4da474560d3"
+    },
+    {
+      "path": "system/etc/vintf/manifest/manifest_services_android.frameworks.location.xml",
+      "sha256": "fd47c69a3f5298243fcfc21ff33dbf6cc24a68cd28eb219ddf75c3123323ece9"
+    },
+    {
+      "path": "system/etc/vintf/manifest/manifest_media_c2_software.xml",
+      "sha256": "cbaa11c32288bbf1dee215e77e31a37b0575ff1555ae42a005058b6eca075089"
+    },
+    {
+      "path": "system/etc/vintf/manifest/android.frameworks.stats-service.xml",
+      "sha256": "895ff115df7cd358c573335989a5c005874a4ec5eaa3ee4eb5b70cbe5b19b2e9"
+    },
+    {
+      "path": "system/etc/vintf/manifest/android.system.net.netd-service.xml",
+      "sha256": "341b514fec4eba4685925ac4e6734bae6061f2a4f9d0254b88ae39ee004f218f"
+    },
+    {
+      "path": "system/etc/vintf/manifest/manifest_android.frameworks.cameraservice.service.xml",
+      "sha256": "997a729b5836499a0d4e6387a6019916070264fcf85645035e3b426b7a344d56"
+    },
+    {
+      "path": "system/etc/vintf/manifest/manifest_services_android.frameworks.devicestate.xml",
+      "sha256": "cc09de50d211dfc2e707ffc9148c85bb854f350c212b94ab8fb0972d254ad898"
+    },
+    {
+      "path": "system/etc/vintf/manifest/android.system.keystore2-service.xml",
+      "sha256": "d6721ece03ccc4924e7ba3b5f2679cb6453e2368f89b95a6243b84be15525a40"
+    },
+    {
+      "path": "system/etc/vintf/manifest/android.system.vold-service.xml",
+      "sha256": "a211b21a679093c11afde045b54113268af6135edfa0d70ecb806a93e5fddd93"
+    },
+    {
+      "path": "system/etc/vintf/manifest/manifest_services_android.frameworks.vibrator.xml",
+      "sha256": "7cb3d23f37270e284f3979bb8c39316e4b3d58518cfd337d3fe5dd4718fdae85"
+    },
+    {
+      "path": "system/etc/vintf/manifest/android.system.suspend-service.xml",
+      "sha256": "1653a85ea1a7be52399855cd6f6dd19e56074799ff2f108bb6890ed5b138d723"
+    }
+  ]
+}

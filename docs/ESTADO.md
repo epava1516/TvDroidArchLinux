@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-binder-secctx-probe/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-surfaceflinger-contract/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -465,3 +465,7 @@ conservando la prohibición de introducir VM o reiniciar.
 ## Contraste SID del driver
 
 [Resultado nativo](../reports/android16-binder-secctx-probe/validation.json): transacción síncrona sin SID con PID/UID correctos; solicitando SID falla BR_FAILED_REPLY, error extendido -95/EOPNOTSUPP. Sonda propia, sin aceptación de gestor/MAC/APK ni cambios al host.
+
+## R3: SurfaceFlinger original estudiado
+
+[Contrato gráfico](../reports/android16-surfaceflinger-contract/validation.json): Composer real y hotplug inicial obligatorios por fuentes;48 dependencias directas presentes sólo estáticamente. Ningún SF/HAL/puente ejecutado. R1-MAC conserva el fallo SID probado.

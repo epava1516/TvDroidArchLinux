@@ -1,0 +1,551 @@
+{
+  "artifact": "/system/bin/surfaceflinger",
+  "sha256": "8ff9acf6a4cf4d51823a2ee9c7830336dfd0428506071008011d7aa475062330",
+  "direct_needed": [
+    {
+      "soname": "libpowermanager.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libpowermanager.so",
+          "resolved_path": "system/lib64/libpowermanager.so",
+          "sha256": "c393945f46b61ea7772f6b0043566e80365fac282ea1b2097f6e994594bdfab5"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "android.adpf.sessionmanager_aidl-ndk.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/android.adpf.sessionmanager_aidl-ndk.so",
+          "resolved_path": "system/lib64/android.adpf.sessionmanager_aidl-ndk.so",
+          "sha256": "ef0331b95c842e5e50b9c5f6d2a79badd32635b56a0c6eac1b839528ed1f222e"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "libtimestats_atoms_proto.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libtimestats_atoms_proto.so",
+          "resolved_path": "system/lib64/libtimestats_atoms_proto.so",
+          "sha256": "c9b5aeae861799c7bc28ec77a7e72faff72de498bce7d90e24385ddc42097e88"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "libtracing_perfetto.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libtracing_perfetto.so",
+          "resolved_path": "system/lib64/libtracing_perfetto.so",
+          "sha256": "9073d06ce4740d6ac0bc3d761b5e8d5f979486d6706625548ca79b0c8802abdb"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "server_configurable_flags.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/server_configurable_flags.so",
+          "resolved_path": "system/lib64/server_configurable_flags.so",
+          "sha256": "7b7bb6a7010792d35ca0207233cf13fa42ac3f82eb16a8fbb455073951cb9ce8"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "libpng.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libpng.so",
+          "resolved_path": "system/lib64/libpng.so",
+          "sha256": "1f41132e261d433f05946b6384be803ccc2f389edc8bbca3e293a3037a9fc4db"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "libz.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libz.so",
+          "resolved_path": "system/lib64/libz.so",
+          "sha256": "975b579497a84ff181982cfa0f39e37dec19f00293dfdc258ab2bb1630a63553"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "libcrypto.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libcrypto.so",
+          "resolved_path": "system/lib64/libcrypto.so",
+          "sha256": "094f9c11d132a36c331a35fe4082438806b8aad6eb4724468d4f65941cab2dc9"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "android.hardware.common-V2-ndk.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/android.hardware.common-V2-ndk.so",
+          "resolved_path": "system/lib64/android.hardware.common-V2-ndk.so",
+          "sha256": "2684dbd3fdd07f6efb8abbb731010a7a0c46d237f8e0813b44a441503b7d7e3c"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "android.hardware.common.fmq-V1-ndk.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/android.hardware.common.fmq-V1-ndk.so",
+          "resolved_path": "system/lib64/android.hardware.common.fmq-V1-ndk.so",
+          "sha256": "eac8ccbc8a3edfeef63c2d6308e32dc9a528bcb9a9f16c7f0e83734c9cb7b6d5"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "android.hardware.configstore@1.1.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/android.hardware.configstore@1.1.so",
+          "resolved_path": "system/lib64/android.hardware.configstore@1.1.so",
+          "sha256": "a0b71c6e5c06e629a1c593e89aa48f01137c969f645514e2f0818ba72c3771f2"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "android.hardware.graphics.common@1.2.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/android.hardware.graphics.common@1.2.so",
+          "resolved_path": "system/lib64/android.hardware.graphics.common@1.2.so",
+          "sha256": "70d162a9a165d3506bd1a0e0a4330a30b04848d662b783336be1d1fc456f8190"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "android.hardware.graphics.composer@2.1.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/android.hardware.graphics.composer@2.1.so",
+          "resolved_path": "system/lib64/android.hardware.graphics.composer@2.1.so",
+          "sha256": "e00136db7072f65ed35019daa6589ad585547e987a8091ee3412f0dd981b3cc5"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "android.hardware.graphics.composer@2.2.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/android.hardware.graphics.composer@2.2.so",
+          "resolved_path": "system/lib64/android.hardware.graphics.composer@2.2.so",
+          "sha256": "6a5bbe4a49d756834f9c12afc0ae7e4025a234ec8613fad04a5ffe8e469901f9"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "android.hardware.graphics.composer@2.3.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/android.hardware.graphics.composer@2.3.so",
+          "resolved_path": "system/lib64/android.hardware.graphics.composer@2.3.so",
+          "sha256": "03cdaa7e0e68a5fe80df5f93544fa6cc7b6fe0099a1f379af2073755f42f041e"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "android.hardware.graphics.composer@2.4.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/android.hardware.graphics.composer@2.4.so",
+          "resolved_path": "system/lib64/android.hardware.graphics.composer@2.4.so",
+          "sha256": "c245a7a583b9e30b2040f472fe1b8bfb4159634d5b6bd7e8ba35063788532704"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "android.os.flags-aconfig-cc-host.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/android.os.flags-aconfig-cc-host.so",
+          "resolved_path": "system/lib64/android.os.flags-aconfig-cc-host.so",
+          "sha256": "b08ff2b04d22ec0e5f1200efdfe7f26799da575083c7d333d7de508fb533bc4f"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "libGLESv1_CM.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libGLESv1_CM.so",
+          "resolved_path": "system/lib64/libGLESv1_CM.so",
+          "sha256": "e1a596ab453deb22c77c519827a37cda31fd3f68249a643a7567c843c614a16b"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "libaconfig_storage_read_api_cc.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libaconfig_storage_read_api_cc.so",
+          "resolved_path": "system/lib64/libaconfig_storage_read_api_cc.so",
+          "sha256": "4c9e8e98ddc5f420dd3781e16f1f69da7603e735baba6110ed45072a87d1ff47"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "libbase.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libbase.so",
+          "resolved_path": "system/lib64/libbase.so",
+          "sha256": "831da8050c1a4702c56d304a6bb8ae9530eb46dd4a0efdec2e905679eb02a69f"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "libbinder_ndk.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libbinder_ndk.so",
+          "resolved_path": "system/lib64/libbinder_ndk.so",
+          "sha256": "02522958590df89d15f9663671e2a1456a36b273db4c452d71e58f8d88103b88"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "libfmq.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libfmq.so",
+          "resolved_path": "system/lib64/libfmq.so",
+          "sha256": "005a712dc7f2bf68d14aee500f29ac1c0afeeeeddc1b0ade4ffc9d4b4221e259"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "libgui.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libgui.so",
+          "resolved_path": "system/lib64/libgui.so",
+          "sha256": "1ca3e8e4bb08769e8e5e0a0db793ae838a59da4180e9963b6c6a4be25f23ccdd"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "libprotobuf-cpp-lite.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libprotobuf-cpp-lite.so",
+          "resolved_path": "system/lib64/libprotobuf-cpp-lite.so",
+          "sha256": "6cb402407810066c032e0b073e2ce18268726c05f90515627008a608778e71a1"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "libstatslog_surfaceflinger_bootstrap.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libstatslog_surfaceflinger_bootstrap.so",
+          "resolved_path": "system/lib64/libstatslog_surfaceflinger_bootstrap.so",
+          "sha256": "dee2c5f59e21a06ebbb708ea7a1898fdd149fb19c286d545b89071dfd35edb0b"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "libui.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libui.so",
+          "resolved_path": "system/lib64/libui.so",
+          "sha256": "e3ee9f7dfaed5dc5783b5b10654c2be97b34079cd4e831b1e44edbb722be7d58"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "android.hardware.configstore-utils.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/android.hardware.configstore-utils.so",
+          "resolved_path": "system/lib64/android.hardware.configstore-utils.so",
+          "sha256": "badc3f0da9ba82404c26536e23afc0504f14bb3ce71d6983e6494a03f76c301b"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "android.hardware.configstore@1.0.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/android.hardware.configstore@1.0.so",
+          "resolved_path": "system/lib64/android.hardware.configstore@1.0.so",
+          "sha256": "f5d8929f73addecb6a7cb0b4e98246bbc70fe71bcc62e1d64f84cc74782c7119"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "android.hardware.graphics.allocator@2.0.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/android.hardware.graphics.allocator@2.0.so",
+          "resolved_path": "system/lib64/android.hardware.graphics.allocator@2.0.so",
+          "sha256": "df249f7e29f6bbf293fc28aed52a5e36bf10c8ddc6742c2862783e16907e9c40"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "android.hardware.graphics.allocator@3.0.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/android.hardware.graphics.allocator@3.0.so",
+          "resolved_path": "system/lib64/android.hardware.graphics.allocator@3.0.so",
+          "sha256": "b0fc753f3a1e0ea5e950828b12fe68a4274d0f514273d42f4060e172786fff13"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "libbinder.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libbinder.so",
+          "resolved_path": "system/lib64/libbinder.so",
+          "sha256": "184ef6000d17e6ce011e5b595a00b24cadbec5915a4eed5f4b16b0c172a45e49"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "libcutils.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libcutils.so",
+          "resolved_path": "system/lib64/libcutils.so",
+          "sha256": "ed53b0a8de029f738ccfe346242371c50addc6c41435647ec55468a87a62b1eb"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "libhidlbase.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libhidlbase.so",
+          "resolved_path": "system/lib64/libhidlbase.so",
+          "sha256": "e68f67115ad7eb55c511d20d852e929c5326e06f15211b3db32069af5d037dc7"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "liblog.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/liblog.so",
+          "resolved_path": "system/lib64/liblog.so",
+          "sha256": "d19efa76e39bc458a0f9125d1665185ce95af9153bfe695e0c9519937ea9bc0a"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "libprocessgroup.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libprocessgroup.so",
+          "resolved_path": "system/lib64/libprocessgroup.so",
+          "sha256": "cbe6767c5acfd6e672bb6722bd2918fdf43ef1eb99f5c85ae6e5ea43aba53e63"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "libsync.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libsync.so",
+          "resolved_path": "system/lib64/libsync.so",
+          "sha256": "c260512fe6de68b3dfabfed53ac636b479b92f35a14f27affd2e22dadcb6c979"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "libutils.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libutils.so",
+          "resolved_path": "system/lib64/libutils.so",
+          "sha256": "5b01ecd8fc3b23ef14f34dc49cb7b42b9fe4a036e33e1de08b557598bcc4a7a2"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "libSurfaceFlingerProp.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libSurfaceFlingerProp.so",
+          "resolved_path": "system/lib64/libSurfaceFlingerProp.so",
+          "sha256": "241ad22dd20dc8cb9f17ab48c51d81ef6456a3e2ca29107d33ae7e04ace28d3b"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "android.hardware.drm.common-V1-ndk.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/android.hardware.drm.common-V1-ndk.so",
+          "resolved_path": "system/lib64/android.hardware.drm.common-V1-ndk.so",
+          "sha256": "a5d5ad9bfe8aaac2681e2d6b478ab678a75af454c91e2d89c65f640911533231"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "android.hardware.graphics.composer3-V4-ndk.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/android.hardware.graphics.composer3-V4-ndk.so",
+          "resolved_path": "system/lib64/android.hardware.graphics.composer3-V4-ndk.so",
+          "sha256": "2c48f03f05f22703b0371012738fde35f8028521ef51cdde550f4390b76b205c"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "libEGL.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libEGL.so",
+          "resolved_path": "system/lib64/libEGL.so",
+          "sha256": "a40abc4921cce1bfc7612bbab5bfa0c91d10972ff1b632cf4724f20790823d1a"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "libGLESv2.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libGLESv2.so",
+          "resolved_path": "system/lib64/libGLESv2.so",
+          "sha256": "a67c9158f108661f42298489291cd87bcff3d4c9ccfb1e8db57d85ff83711bee"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "libvulkan.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libvulkan.so",
+          "resolved_path": "system/lib64/libvulkan.so",
+          "sha256": "58555ea65c5e3345bd3da98a1b2d4b4fa63b65ed90bf0c057b3d3d4d73954649"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "libnativewindow.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libnativewindow.so",
+          "resolved_path": "system/lib64/libnativewindow.so",
+          "sha256": "9e8eb733f2e169e63accc4fb6afef9655ed3fce49181af544b69de9b380bb4d4"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "libc++.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libc++.so",
+          "resolved_path": "system/lib64/libc++.so",
+          "sha256": "dc8cfbe728fcec370d576cf014a6c236ba56c56d3519678598a0e98adee5b477"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "libc.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libc.so",
+          "resolved_path": "apex/com.android.runtime/lib64/bionic/libc.so",
+          "sha256": "c743999d121b9cdaaa2fc1eaae386cd51eaeed063423f26d89f29590a3e24723"
+        },
+        {
+          "logical_path": "/apex/com.android.runtime/lib64/bionic/libc.so",
+          "resolved_path": "apex/com.android.runtime/lib64/bionic/libc.so",
+          "sha256": "c743999d121b9cdaaa2fc1eaae386cd51eaeed063423f26d89f29590a3e24723"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "libm.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libm.so",
+          "resolved_path": "apex/com.android.runtime/lib64/bionic/libm.so",
+          "sha256": "51ba6fe4e0628c069274ecba60c864fe9b84ae288e7f2c6cf79fe3d75ad54638"
+        },
+        {
+          "logical_path": "/apex/com.android.runtime/lib64/bionic/libm.so",
+          "resolved_path": "apex/com.android.runtime/lib64/bionic/libm.so",
+          "sha256": "51ba6fe4e0628c069274ecba60c864fe9b84ae288e7f2c6cf79fe3d75ad54638"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    },
+    {
+      "soname": "libdl.so",
+      "candidates": [
+        {
+          "logical_path": "/system/lib64/libdl.so",
+          "resolved_path": "apex/com.android.runtime/lib64/bionic/libdl.so",
+          "sha256": "976f432c4e1a1ada8542534caac3905cfd8ad37a72756412a20ebfc6017f582e"
+        },
+        {
+          "logical_path": "/apex/com.android.runtime/lib64/bionic/libdl.so",
+          "resolved_path": "apex/com.android.runtime/lib64/bionic/libdl.so",
+          "sha256": "976f432c4e1a1ada8542534caac3905cfd8ad37a72756412a20ebfc6017f582e"
+        }
+      ],
+      "scope": "Candidate presence only, not linker namespace/symbol closure"
+    }
+  ],
+  "interpreter": "/system/bin/linker64",
+  "scope": "Static readelf direct dependency inventory; no native execution or HAL service discovery. Search directories explicitly bounded."
+}
