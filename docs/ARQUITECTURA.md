@@ -1058,6 +1058,33 @@ JNI general ni APK aceptados. La matriz real sigue no probada y R1-MAC pendiente
 Siguiente: enlace coherente del servicio original y pruebas reales del recorrido
 dispositivo/buffer/fence/presentación, antes del vertical completo Markor.
 
+## R3 · Composer enlazado y dependencia de gestores observada
+
+[Resultado y captura MCP](../reports/android16-composer-link/findings.json):
+service.cpp, ComposerResources.cpp y HWC2OnFbAdapter.cpp originales compilan;
+servicio, recursos y adaptador enlazan con comprobación estricta. Se reutilizan
+libui fuente y HWC2On1 previo, con el resto de proveedores GSI originales. Esto no
+acredita perfil Soong/vendor/namespace completo ni reconstrucción de cada proveedor.
+
+La ejecución privada usa tres dispositivos Binder distintos, no alias. Antes de
+exec comprueba UID/GID10000, grupos/capacidades0 y NNP1. Un LD_PRELOAD diagnóstico
+usa __android_log_set_logger para enviar mensajes originales a stderr; no intercepta
+servicios ni cambia propiedades. Se observa ausencia de vndservicemanager, EPERM
+para SCHED_FIFO y espera repetida hwservicemanager.ready. Termina por límite y señal9,
+no por disponibilidad. El origen preciso de la señal entre wrapper/limpieza no se
+atribuye sin observación adicional. La limpieza del grupo es verificada; muestreo
+incompleto no demuestra cobertura global de procesos ni efectos de filesystem.
+
+Utils.cpp de libhwbinder original, revisión0e0fd15c90a55a45d2cc49b032c25b581d085912,
+confirma esa espera; blob y hash se contrastan. No hay evidencia de llegar a cargar
+un HAL, registrar Composer, importar buffers o presentar frames. No se falsifica
+hwservicemanager.ready. El diagnóstico host sólo lectura sigue fallando: R1-MAC y
+supervisión de gestores reales son prioridad antes de otra prueba gráfica. Elegir
+Composer AIDL por sí solo tampoco acredita servicemanager/MAC; cualquier alternativa
+necesita su cierre original, no una excepción silenciosa de permisos/identidad.
+El contrato conserva no reiniciar VM/cliente ni activar política sin plan probado;
+la matriz de APK permanece no probada y el objetivo completo sigue abierto.
+
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 
 

@@ -1,0 +1,21 @@
+from pathlib import Path
+import json,subprocess,hashlib,importlib.util,re,time
+r=Path('/home/tv/repositorio-principal');out=r/'dist/aosp16/composer-link-1';out.mkdir();d=out/'link-libs';d.mkdir();cache=Path('/home/tv/.cache/archtv/graphics-candidates-1');composer=cache/'hardware-interfaces/graphics/composer/2.1';old=json.loads((r/'reports/android16-libui-link/native-compile.json').read_text())['results'][0]['argv'];flags=old[:old.index('-MMD')];rec={'scope':'Original Composer2.1 service and resources/framebuffer adapter complete source compile/strict link; no HAL or service runtime acceptance','compile':[],'providers':[]};obj={}
+for src in [composer/'utils/hwc2onfbadapter/HWC2OnFbAdapter.cpp',composer/'utils/resources/ComposerResources.cpp',composer/'default/service.cpp']:
+ o=out/(src.stem+'.o');cmd=flags+['-c',str(src),'-o',str(o)];t=time.monotonic();x=subprocess.run(cmd,capture_output=True,text=True,timeout=150);rec['compile'].append({'source':str(src),'source_sha256':hashlib.sha256(src.read_bytes()).hexdigest(),'argv':cmd,'exit':x.returncode,'seconds':time.monotonic()-t,'stderr':x.stderr});(out/'state.json').write_text(json.dumps(rec,indent=2)+'\n');print(src.name,x.returncode,x.stderr[:1800],flush=True);assert x.returncode==0;obj[src.stem]=str(o)
+sp=importlib.util.spec_from_file_location('audit',r/'tools/aosp/audit_boot_inputs.py');m=importlib.util.module_from_spec(sp);sp.loader.exec_module(m);root=r/'dist/aosp16/factory-inputs-3/root';direct=['android.hardware.graphics.composer@2.1.so','libbase.so','libbinder.so','libcutils.so','libfmq.so','libhardware.so','libhidlbase.so','liblog.so','libsync.so','libutils.so','libc++.so','libc.so','libm.so','libdl.so'];queue=direct+['libui.so'];seen=set()
+while queue:
+ name=queue.pop(0)
+ if name in seen:continue
+ seen.add(name);logical=('/apex/com.android.runtime/lib64/bionic/' if name in ['libc.so','libdl.so','libm.so'] else '/system/lib64/')+name;f=m.inside(root,logical)
+ if not f.is_file():raise RuntimeError('Missing provider '+logical)
+ text=subprocess.check_output(['readelf','-d',str(f)],text=True);needed=re.findall(r'\(NEEDED\).*?\[([^]]+)\]',text);queue+=needed
+ if name=='libui.so':f=r/'dist/aosp16/libui-link-2/libui.so'
+ (d/name).symlink_to(f);rec['providers'].append({'logical':logical,'selected':str(f),'sha256':hashlib.sha256(f.read_bytes()).hexdigest()})
+(d/'libhwc2on1adapter.so').symlink_to(r/'dist/aosp16/hwc2on1-build-1/libhwc2on1adapter.so')
+ld='/home/tv/.cache/archtv/aosp16-qpr2/native-toolchain-1/bin/ld.lld';crt=r/'dist/aosp16/hwc2on1-build-1';builtins='/home/tv/.cache/archtv/graphics-candidates-1/compiler-builtins/libclang_rt.builtins-x86_64-android.a';base=[ld,'--no-undefined','--no-allow-shlib-undefined','-z','relro','-z','now','--rpath-link='+str(d)];rec['links']=[]
+for name,objects,deps in [('libhwc2onfbadapter.so',[obj['HWC2OnFbAdapter']],['liblog.so','libsync.so','libc++.so','libc.so','libm.so','libdl.so']),('android.hardware.graphics.composer@2.1-resources.so',[obj['ComposerResources']],['android.hardware.graphics.composer@2.1.so','libcutils.so','libhardware.so','libhidlbase.so','liblog.so','libui.so','libutils.so','libc++.so','libc.so','libm.so','libdl.so']),('android.hardware.graphics.composer@2.1-service',[obj['service']],direct+['android.hardware.graphics.composer@2.1-resources.so','libhwc2on1adapter.so','libhwc2onfbadapter.so'])]:
+ shared=name.endswith('.so');crtbegin=str(crt/'crtbegin_so.c.o') if shared else str(r/'dist/aosp16/crt-native-1/crtbegin_dynamic.o');crtend=str(crt/'crtend_so.S.o') if shared else str(r/'dist/aosp16/crt-native-1/crtend_android.o');cmd=base+(['-shared','--soname='+name] if shared else ['-pie','--dynamic-linker=/system/bin/linker64'])+[crtbegin]+objects+['-L'+str(d)]+['-l:'+n for n in deps]+[builtins,crtend,'-o',str(out/name)];x=subprocess.run(cmd,capture_output=True,text=True,timeout=90);rec['links'].append({'name':name,'argv':cmd,'exit':x.returncode,'stderr':x.stderr});(out/'state.json').write_text(json.dumps(rec,indent=2)+'\n');print('LINK',name,x.returncode,x.stderr[:5000],flush=True)
+ if x.returncode:raise SystemExit(1)
+ (d/name).symlink_to(out/name)
+rec['terminal']=True;(out/'state.json').write_text(json.dumps(rec,indent=2)+'\n')

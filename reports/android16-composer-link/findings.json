@@ -1,0 +1,72 @@
+{
+  "scope": "Original Composer2.1 whole service plus resources and framebuffer adapter strict link; actual original startup blocked on manager readiness, not service acceptance",
+  "compile_units": 3,
+  "strict_links": 3,
+  "original_providers": 34,
+  "original_service_source_unchanged": true,
+  "runtime": {
+    "evidence_id": "ev_5d6757b714a568adade9b2c63f19973d8beedb8f89adc1659ce50750a8dd4bc6",
+    "exit": {
+      "code": null,
+      "signal": 9,
+      "reason": "exited"
+    },
+    "interpretation": "Observed repeating hwservicemanager.ready wait until bounded wrapper/cleanup kill. Not successful startup, not independently localized timeout signal ownership. No HAL lookup/device/hotplug observed.",
+    "observed": [
+      "Three distinct private Binder devices",
+      "UID/GID10000 groups/caps0 NNP1 before exec",
+      "Diagnostic log observer constructor runs",
+      "Original ProcessState reports vndservicemanager absent",
+      "SCHED_FIFO fails EPERM",
+      "Repeated original hwservicemanager.ready wait"
+    ],
+    "observer": "Own LD_PRELOAD constructor only routes real liblog messages to stderr with public __android_log_set_logger; no modified service answers/properties or readiness",
+    "artifacts": [
+      {
+        "executed_copy": "dist/aosp16/composer-native-execution-1/data/android.hardware.graphics.composer@2.1-resources.so",
+        "sha256": "863204812b6140be04f1c4a4048290b550bf6c33ef61cf5c6a5216bc24b79619"
+      },
+      {
+        "executed_copy": "dist/aosp16/composer-native-execution-1/data/android.hardware.graphics.composer@2.1-service",
+        "sha256": "7adf931c9e9d261641de100b027b3fc3545eb1156d2fad9eeaf1ab3fea8a6b7c"
+      },
+      {
+        "executed_copy": "dist/aosp16/composer-native-execution-1/data/libhwc2on1adapter.so",
+        "sha256": "41b99c758e81d69306bebc6ff2f48e283a7356b97c18fde3e16a65be0bc52cd9"
+      },
+      {
+        "executed_copy": "dist/aosp16/composer-native-execution-1/data/libhwc2onfbadapter.so",
+        "sha256": "911b0151add6d5af005e4f8cad07a4e289bb6eca47f53cd84b19ebd46107f392"
+      },
+      {
+        "executed_copy": "dist/aosp16/composer-native-execution-1/data/libui.so",
+        "sha256": "c98806f67f4f61bb5b8bef55eb4cb39580be5220b3a8dffa9685dfffd1df93fd"
+      },
+      {
+        "executed_copy": "dist/aosp16/composer-native-execution-1/data/log-observer.so",
+        "sha256": "243d3ee8e5b6b1288ec54c3def9ffe2cb091d7e1217b8a396cdf7ea7cbb67161"
+      }
+    ],
+    "mcp_scope": "Derived sanitized projection; incomplete process/tree/environment/fs/image binding retained in MCP report, owned-group cleanup verified"
+  },
+  "source_contract": {
+    "project": "system/libhwbinder",
+    "commit": "0e0fd15c90a55a45d2cc49b032c25b581d085912",
+    "path": "Utils.cpp",
+    "sha256": "27d18b6e44218f16d73eaa68a9d87d73097554dca3a50f5084c17bba3bae4b4f",
+    "lines": [
+      30,
+      59
+    ],
+    "behavior": "waitForHwServiceManager waits for actual hwservicemanager.ready; no fabricated readiness accepted"
+  },
+  "limitations": [
+    "Link staging/providers are not vendor runtime namespace/Soong parity",
+    "Source-built service/resources/fb adapter/libui plus previously built hwc2on1, remaining providers original GSI",
+    "No real allocator/mapper/HAL/buffer/fence/frame/Smithay/APK acceptance",
+    "No manager registration, SID/MAC, Binder permission or isolation acceptance",
+    "Host read-only preflight still fails prerequisites; runtime_ready false",
+    "Virtual AS64GiB/CPU/wall bounds are not physical RAM/performance acceptance"
+  ],
+  "next": "Resolve real R1-MAC/manager deployment prerequisites and supervisor graph. Do not set readiness to skip original wait. Preserve no VM/client restart and no policy activation without verified host deployment/rollback; continue source work on Linux policy and original managers as possible."
+}

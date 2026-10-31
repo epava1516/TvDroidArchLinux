@@ -1,0 +1,36 @@
+{
+  "observed_at": "2026-10-31T09:09:24.093721+00:00",
+  "base_commit": "fca6fbd699287e04ab86544519d9134a0f17d393",
+  "branch": "main",
+  "previous_checkpoint": "reports/android16-libui-link/checkpoint.json",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "terminal_exec_handles": [
+    82328
+  ],
+  "active_exec_handles": [],
+  "mcp_status": "Terminal signal9; owned-group cleanup verified with incomplete process observations; no persistent target opened",
+  "tests": "build.json, native-start-mcp.json, host-security.json",
+  "next": "Resolve real R1-MAC/manager deployment prerequisites and supervisor graph. Do not set readiness to skip original wait. Preserve no VM/client restart and no policy activation without verified host deployment/rollback; continue source work on Linux policy and original managers as possible.",
+  "evidence": {
+    "reports/android16-composer-link/build.json": "0258c47ca60597806c7636586ed8459add7d99f5feb445b9a3fbbfd2c277960e",
+    "reports/android16-composer-link/findings.json": "064ba38fa17eb0c0ac53622e7b8420125b688ac2397a0135cc2313edd60a620b",
+    "reports/android16-composer-link/native-start-mcp.json": "267bdda6d17b559c4b8e62f3ad5b2b0198757abd2b65e6e3f714db657089ec01",
+    "reports/android16-composer-link/log-observer.cpp": "9ea9f6ade82183bca231d7e2385826e1371db3d1d3a7e30611d659ef97aa7648",
+    "reports/android16-composer-link/observer-build.json": "c254890eab17d02d0e5d9eb1195d149c824e1191e5f7906d0cf75ec1038b87c8",
+    "reports/android16-composer-link/native-launcher.py": "429ebd49b639c05e0c324f02ceccd4cc82dfd6bebca95d87376da9e79ab07ab2",
+    "reports/android16-composer-link/host-security.json": "8115371b6796f5cc3706a52b02c6ad663d408498091172a49aea4ee2c255e7c3",
+    "reports/android16-composer-link/build.py": "a5ff5c339fbfec894a0e353570aaf9095cdd5e1b9ecae044238c9096d32684d3",
+    "reports/android16-composer-link/prepare-runtime.py": "c3d338f4cf3098cb5abff85fec98b6ab57b71ec4c9fa8e0609b53aa8ad6af150"
+  }
+}

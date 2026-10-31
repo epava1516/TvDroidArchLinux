@@ -1,6 +1,8 @@
 # Índice de evidencias
 
-- [R3: enlace libui y ejecución nativa](../reports/android16-libui-link/findings.json):23 unidades recompiladas con -fno-rtti original y dos dependencias estáticas; enlace estricto con30 proveedores originales GSI. REA MCP observa salida0 y libui fuente mapeada, regiones/transformación/sentinel NO_FENCE. No buffers, fence real, servicio, frames ni APK. [Checkpoint actual](../reports/android16-libui-link/checkpoint.json).
+- [R3: Composer original enlazado y espera de gestor](../reports/android16-composer-link/findings.json): tres unidades/tres enlaces estrictos; REA MCP observa espera real hwservicemanager.ready hasta límite/señal9, no disponibilidad. Binder privado separado y logs observados, sin HAL/registro/buffers/frames/APK. Preflight host aún falla. [Checkpoint actual](../reports/android16-composer-link/checkpoint.json).
+
+- [R3: enlace libui y ejecución nativa](../reports/android16-libui-link/findings.json):23 unidades recompiladas con -fno-rtti original y dos dependencias estáticas; enlace estricto con30 proveedores originales GSI. REA MCP observa salida0 y libui fuente mapeada, regiones/transformación/sentinel NO_FENCE. No buffers, fence real, servicio, frames ni APK. [Checkpoint del hito](../reports/android16-libui-link/checkpoint.json).
 
 - [R3: implementación original libui](../reports/android16-libui-implementation/findings.json):23 unidades fuente intactas compilan; siete familias HIDL allocator/mapper, diez hashes congelados y allocator AIDL V2. No enlace, equivalencia Soong, buffers, servicio ni APK probados. [Checkpoint del hito](../reports/android16-libui-implementation/checkpoint.json).
 
