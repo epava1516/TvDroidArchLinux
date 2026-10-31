@@ -1,0 +1,54 @@
+{
+  "scope": "Narrow Linux-owned action coordinator over original init ActionManager/eventfd/property callbacks; native regression with own commands, not complete supervisor/service control/MAC or APK acceptance",
+  "patch": "runtime/aosp/android16-qpr2/patches/0003-linux-property-action-coordinator.patch",
+  "base": "system/core e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1 after0001/0002",
+  "adaptation": [
+    "Start/Poll/StopLinuxPropertyActions reuse original InstallInitNotifier, ActionManager queue and ExecuteOneCommand",
+    "Start only before property service begins; lifecycle serialized by owning coordinator",
+    "Reject duplicate start and Poll/Stop through an Epoll other than stored owner; reject polling after close",
+    "Stop closes property workers, reports pending actions instead of discarding them; caller polls then retries completion",
+    "New opt-in mode explicitly denies ctl/service/power controls without backend after original permission checks; normal original mode remains on original path"
+  ],
+  "runtime": {
+    "evidence_id": "ev_fd91be79be12d38832728e170e510d6889fb2b2a52605ff2fb2829ec3bddb1d9",
+    "exit": 0,
+    "artifacts": [
+      {
+        "path": "dist/aosp16/property-actions-build-2/property-actions-probe",
+        "sha256": "eedc57e5696cb266d1f27327d70b525bef3f96ceb4943688a35d3d9eda44a61f",
+        "executed_copy": "dist/aosp16/property-actions-execution-2/data/property-actions-probe",
+        "copy_matches_after_run": true
+      },
+      {
+        "path": "dist/aosp16/property-actions-build-3/property-actions-probe",
+        "sha256": "8c389724793bf710b8fba61d75233c072d507413fae1b9a3529adc65f42ba300",
+        "executed_copy": "dist/aosp16/property-actions-execution-3/data/property-actions-probe",
+        "copy_matches_after_run": true
+      }
+    ],
+    "observed": [
+      "Original load property causes actual ActionManager dispatch; original argument expansion supplies loaded value to own regression callback, writes expected file",
+      "Explicit programmatic action only: no RC parser or full builtin-function map claim",
+      "Duplicate-start and wrong-owner Poll/Stop return errors",
+      "Queued shutdown regression action causes Stop error, Poll executes it and writes second file, retry closes successfully",
+      "Negative UID10000 DAC/getpeercon cases preserved; original phase signal not fabricated",
+      "Thread/fd counts4\u21921 and4\u21924; normal coordinator return"
+    ]
+  },
+  "static": {
+    "patch_replay": "All3 patches zero-fuzz from verified archive,6 files match compiled overlay",
+    "second_stage_main_defined_in_linked_probe": false,
+    "power_control_rejection": "Source/compile only; no real authorized peer request or power action executed"
+  },
+  "retained_failure": "Own regression initially used nonexistent android::init::Result alias; corrected to original android::base::Result. Native source units compiled; old fixture/report retained.",
+  "limits": [
+    "Native Bionic component, not a glibc/Rust in-process ABI mixture or finished Rust supervisor integration",
+    "No complete Linux process/service backend, RC parsing, full builtins, imports, restart or update/install lifecycle accepted",
+    "ctl/power unsupported in opt-in action mode is explicit limitation, not removed product objective",
+    "No active SELinux policy/authorized property write/storage-error ACK, manager readiness, Binder MAC or per-app isolation accepted",
+    "Root trusted initializer and own regression actions do not demonstrate APK compatibility",
+    "No queued persistence/active restorecon drain or blocked-I/O deadline acceptance",
+    "MCP process/environment/filesystem/image-binding limitations retained; projection not complete authenticated Evidence"
+  ],
+  "next": "Connect original service/control lifecycle through a Linux-owned backend with exact allowed service configuration and real error/FD ownership, retaining full source subsystems and R1-MAC prerequisite. Continue toward manager/Composer and complete Markor, not fixture-based acceptance."
+}

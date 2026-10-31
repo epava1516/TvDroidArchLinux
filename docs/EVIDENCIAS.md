@@ -1,6 +1,8 @@
 # Índice de evidencias
 
-- [R1: cierre coordinado de propiedades](../reports/android16-property-shutdown/findings.json): parche local de lifecycle, replay cadena sin fuzz; MCP idle0/inflight0, hilos4→1/FD4→4, sockets eliminados y ownership del endpoint conservado. Fallos iniciales compilación y assertion5000 conservados; timeout original5000/cierre5006. Sin colas/restorecon activo, plazo I/O, supervisor/MAC ni APK aceptados. [Checkpoint actual](../reports/android16-property-shutdown/checkpoint.json).
+- [R1: coordinador de acciones original adaptado](../reports/android16-property-actions/findings.json): MCP0 en cambio→acción/expansión→archivo y cola pendiente→error→procesar→cerrar; guardas de orden/Epoll y recursos4→1/4→4. Tres parches replay sin fuzz; SecondStageMain ausente del ELF. Comandos de regresión, no RC/builtins completos, backend ctl/power/MAC ni APK. [Checkpoint actual](../reports/android16-property-actions/checkpoint.json).
+
+- [R1: cierre coordinado de propiedades](../reports/android16-property-shutdown/findings.json): parche local de lifecycle, replay cadena sin fuzz; MCP idle0/inflight0, hilos4→1/FD4→4, sockets eliminados y ownership del endpoint conservado. Fallos iniciales compilación y assertion5000 conservados; timeout original5000/cierre5006. Sin colas/restorecon activo, plazo I/O, supervisor/MAC ni APK aceptados. [Checkpoint del hito](../reports/android16-property-shutdown/checkpoint.json).
 
 - [R1: fase original de carga persistente](../reports/android16-property-load/findings.json): InitMessage real, carga de protobuf, señal ro.persistent_properties.ready original y espera serial Bionic observadas mediante MCP0; rechazos de cliente conservados. No reinicio, supervisor completo, MAC, readiness de gestores ni APK. [Checkpoint del hito](../reports/android16-property-load/checkpoint.json).
 

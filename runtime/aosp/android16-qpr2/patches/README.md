@@ -20,3 +20,12 @@ base permanece fijada en el manifiesto; conservar licencias y procedencia AOSP.
   cierre idle y petición incompleta, hilos4→1/FD4→4. Colas pendientes/restorecon
   activo y bloqueo I/O aún no probados; sin plazo de cierre garantizado. Directorio
   de sockets privado/exclusivo requerido; no es supervisor completo ni MAC aceptado.
+
+- `0003-linux-property-action-coordinator.patch`: después de0001/0002; reutiliza
+  eventfd/ActionManager originales en entrada Linux explícita. No carga RC generales
+  ni SecondStageMain. API serializada con Epoll propietario; reporta acciones
+  pendientes antes de completar cierre. En modo opt-in, ctl/power sin backend se
+  rechazan tras checks originales; no éxito ficticio ni backend implementado.
+  [Pruebas](../../../../reports/android16-property-actions/findings.json): acción
+  programática/expansión y drenaje pendientes observados con comandos de regresión,
+  ownership y recursos. No supervisor completo, mapa builtin/RC, MAC ni APK aceptados.

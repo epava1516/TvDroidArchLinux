@@ -1,0 +1,120 @@
+--- a/init/init.cpp
++++ b/init/init.cpp
+@@ -120,6 +120,8 @@
+ namespace init {
+ 
+ static int property_triggers_enabled = 0;
++static bool linux_property_action_mode = false;
++static Epoll* linux_property_action_epoll = nullptr;
+ 
+ static int sigterm_fd = -1;
+ static int property_fd = -1;
+@@ -1045,6 +1047,49 @@
+     monitor_thread.detach();
+ }
+ 
++
++bool IsLinuxPropertyActionMode() { return linux_property_action_mode; }
++
++Result<void> StartLinuxPropertyActions(Epoll* epoll) {
++    if (!epoll || linux_property_action_mode || wake_main_thread_fd >= 0 || PropertyServiceHasStarted()) {
++        return Error() << "Invalid or duplicate Linux property action coordinator";
++    }
++    if (auto result = epoll->Open(); !result.ok()) return result;
++    InstallInitNotifier(epoll);
++    linux_property_action_epoll = epoll;
++    linux_property_action_mode = true;
++    property_triggers_enabled = 1;
++    // Caller supplies explicit actions. Never load Android boot scripts here.
++    return {};
++}
++
++Result<int> PollLinuxPropertyActions(Epoll* epoll, std::optional<std::chrono::milliseconds> timeout) {
++    if (!epoll || epoll != linux_property_action_epoll || !linux_property_action_mode || wake_main_thread_fd < 0) {
++        return Error() << "Linux property action coordinator is not active";
++    }
++    auto& actions = ActionManager::GetInstance();
++    if (actions.HasMoreCommands()) actions.ExecuteOneCommand();
++    if (actions.HasMoreCommands()) timeout = 0ms;
++    return epoll->Wait(timeout);
++}
++
++Result<void> StopLinuxPropertyActions(Epoll* epoll) {
++    if (!epoll || epoll != linux_property_action_epoll || !linux_property_action_mode || wake_main_thread_fd < 0) {
++        return Error() << "Linux property action coordinator is not active";
++    }
++    if (auto result = StopPropertyService(); !result.ok()) return result;
++    if (ActionManager::GetInstance().HasMoreCommands()) {
++        return Error() << "Property actions remain; poll them before completing shutdown";
++    }
++    property_triggers_enabled = 0;
++    if (auto result = epoll->UnregisterHandler(wake_main_thread_fd); !result.ok()) return result;
++    close(wake_main_thread_fd);
++    wake_main_thread_fd = -1;
++    linux_property_action_mode = false;
++    linux_property_action_epoll = nullptr;
++    return {};
++}
++
+ int SecondStageMain(int argc, char** argv) {
+     if (REBOOT_BOOTLOADER_ON_PANIC) {
+         InstallRebootSignalHandlers();
+--- a/init/init.h
++++ b/init/init.h
+@@ -21,6 +21,7 @@
+ #include <string>
+ 
+ #include "action.h"
++#include "epoll.h"
+ #include "action_manager.h"
+ #include "parser.h"
+ #include "service_list.h"
+@@ -42,6 +43,13 @@
+ void PropertyChanged(const std::string& name, const std::string& value);
+ bool QueueControlMessage(const std::string& message, const std::string& name, pid_t pid, int fd);
+ 
++// Linux-owned serialized coordinator. Explicit actions only; caller owns Epoll.
++// Does not load boot scripts or process service/power controls.
++bool IsLinuxPropertyActionMode();
++Result<void> StartLinuxPropertyActions(Epoll* epoll);
++Result<int> PollLinuxPropertyActions(Epoll* epoll, std::optional<std::chrono::milliseconds> timeout);
++Result<void> StopLinuxPropertyActions(Epoll* epoll);
++
+ int SecondStageMain(int argc, char** argv);
+ 
+ int StopServicesFromApex(const std::string& apex_name);
+--- a/init/property_service.cpp
++++ b/init/property_service.cpp
+@@ -566,6 +566,13 @@
+         return {ret};
+     }
+ 
++    if (IsLinuxPropertyActionMode() &&
++        (StartsWith(name, "ctl.") || name == "sys.powerctl" || name == "sys.shutdown.requested")) {
++        *error = "Linux property action coordinator has no service/power control backend";
++        return {StartsWith(name, "ctl.") ? PROP_ERROR_HANDLE_CONTROL_MESSAGE
++                                         : PROP_ERROR_PERMISSION_DENIED};
++    }
++
+     if (StartsWith(name, "ctl.")) {
+         return {SendControlMessage(name.c_str() + 4, value, cr.pid, socket, error)};
+     }
+@@ -1563,6 +1570,8 @@
+     t.swap(new_thread);
+ }
+ 
++bool PropertyServiceHasStarted() { return property_service_ever_started; }
++
+ void StartPropertyService(int* epoll_socket) {
+     CHECK(!property_service_ever_started) << "Restart requires a new supervised process";
+     property_service_ever_started = true;
+--- a/init/property_service.h
++++ b/init/property_service.h
+@@ -34,6 +34,7 @@
+ bool CanReadProperty(const std::string& source_context, const std::string& name);
+ 
+ void PropertyInit();
++bool PropertyServiceHasStarted();
+ void StartPropertyService(int* epoll_socket);
+ // Linux-only integration. Serialized coordinator call, not a worker callback.
+ // Joins socket workers and drains the writer; errors report incomplete shutdown.

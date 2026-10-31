@@ -1274,6 +1274,38 @@ La adaptación facilita integración de lifetime, sin sustituir el supervisor en
 ni invocar SecondStageMain. Se mantienen fuentes originales intactas y parches
 versionados con obligaciones de revisión al actualizar AOSP.
 
+## R1 · coordinador Linux de acciones reutilizando init
+
+[Parche0003](../runtime/aosp/android16-qpr2/patches/0003-linux-property-action-coordinator.patch)
+y [evidencias](../reports/android16-property-actions/findings.json). Start/Poll/Stop
+LinuxPropertyActions exponen el notifier/eventfd y ActionManager originales; no
+clonan su cola, disparadores ni expansión. Llamadas serializadas, inicio antes del
+servicio, Epoll propietario comprobado y rechazo de duplicados/uso tras cierre.
+No se cargan scripts de arranque ni mapa completo de builtins; SecondStageMain no
+queda definido en el ELF enlazado (estático, separado de prueba de invocación).
+Stop cierra workers; si hay acciones pendientes devuelve error y exige procesarlas
+antes de completar cierre. Permite usar el módulo nativo Bionic como componente
+supervisado por Linux, sin mezclar ABI glibc/Rust en el mismo proceso.
+
+En modo opt-in, ctl.* y propiedades de energía sin backend reciben error tras las
+comprobaciones originales. Es límite explícito de la implementación actual: no
+servicios/reinicio/energía aceptados ni eliminación de esos requisitos del producto.
+Esa rama tiene evidencia fuente/compilación, no petición autorizada ejecutada. El
+backend Linux real y la integración con el supervisor Rust siguen pendientes.
+
+REA MCP observa cambio cargado por servidor→ActionManager original→expansión de
+propiedad→archivo esperado. Acción construida programáticamente, comando propio
+de regresión; no prueba parser RC ni builtins de producto. Una acción pendiente
+hace fallar Stop, Poll la ejecuta y la siguiente parada libera recursos; hilos4→1,
+FD4→4 y retorno normal. Negativos UID10000/DAC/contexto permanecen. Guardas de orden
+y Epoll ajeno también probadas. Primer fallo del alias Result en sonda conservado.
+Tres parches sin fuzz reproducen seis archivos compilados; cachés originales intactas.
+
+No MAC válido, gestor disponible, controles/FDs de servicios completos, colas de
+persistencia/restorecon activo, plazo I/O, instalación/actualización ni APK aceptados.
+Root confiado y fixtures siguen evidencias parciales; se conserva el vertical Markor
+y matriz real sin etapas aprobadas por este hito.
+
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 
 

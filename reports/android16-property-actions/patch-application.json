@@ -1,0 +1,82 @@
+{
+  "source_commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+  "patches": [
+    {
+      "path": "/home/tv/repositorio-principal/runtime/aosp/android16-qpr2/patches/0001-property-persistence-errors.patch",
+      "sha256": "5d283110c20af3b01743d4ed6cc8bae856213087bbe1f9c8c6d8032ad44fd888",
+      "argv": [
+        "/usr/bin/patch",
+        "--batch",
+        "--fuzz=0",
+        "-p2",
+        "-d",
+        "/home/tv/repositorio-principal/dist/aosp16/property-actions-patch-replay-1",
+        "-i",
+        "/home/tv/repositorio-principal/runtime/aosp/android16-qpr2/patches/0001-property-persistence-errors.patch"
+      ],
+      "exit": 0,
+      "stdout": "patching file persistent_properties.h\npatching file persistent_properties.cpp\npatching file property_service.cpp\n",
+      "stderr": ""
+    },
+    {
+      "path": "/home/tv/repositorio-principal/runtime/aosp/android16-qpr2/patches/0002-property-service-shutdown.patch",
+      "sha256": "b891fb2ac59344366b3981f987d329f3d8f19cab66f2a1673ae94c6852bd9ba7",
+      "argv": [
+        "/usr/bin/patch",
+        "--batch",
+        "--fuzz=0",
+        "-p2",
+        "-d",
+        "/home/tv/repositorio-principal/dist/aosp16/property-actions-patch-replay-1",
+        "-i",
+        "/home/tv/repositorio-principal/runtime/aosp/android16-qpr2/patches/0002-property-service-shutdown.patch"
+      ],
+      "exit": 0,
+      "stdout": "patching file property_service.cpp\npatching file property_service.h\n",
+      "stderr": ""
+    },
+    {
+      "path": "/home/tv/repositorio-principal/runtime/aosp/android16-qpr2/patches/0003-linux-property-action-coordinator.patch",
+      "sha256": "43c517a983c14436655aa4b66c48e4b968ccc2491a95ac8e22332053ddc539b4",
+      "argv": [
+        "/usr/bin/patch",
+        "--batch",
+        "--fuzz=0",
+        "-p2",
+        "-d",
+        "/home/tv/repositorio-principal/dist/aosp16/property-actions-patch-replay-1",
+        "-i",
+        "/home/tv/repositorio-principal/runtime/aosp/android16-qpr2/patches/0003-linux-property-action-coordinator.patch"
+      ],
+      "exit": 0,
+      "stdout": "patching file init.cpp\npatching file init.h\npatching file property_service.cpp\npatching file property_service.h\n",
+      "stderr": ""
+    }
+  ],
+  "files": [
+    {
+      "name": "persistent_properties.h",
+      "sha256": "677763b82fc9411a21dc17aa2212691ca4090b9b58a7f7ff6ba74ca79e0686f9"
+    },
+    {
+      "name": "persistent_properties.cpp",
+      "sha256": "a524fc8754578bc7c670263b009011f50afe4e699b4179f28c2e5db1b074d804"
+    },
+    {
+      "name": "property_service.cpp",
+      "sha256": "bef92e63c88d8acdd19ed2e5d67d7f7a32dd724d0da969c58dc77e7d3dcf2368"
+    },
+    {
+      "name": "property_service.h",
+      "sha256": "2a4c1b8caa532a335c34ff95165d6a2c51b240d1255bb3dcd8193a1ae292374e"
+    },
+    {
+      "name": "init.cpp",
+      "sha256": "2707bc9605ea957e353e8f6a0538946a7d9e1097c853618f296dcf1585bcfa3a"
+    },
+    {
+      "name": "init.h",
+      "sha256": "23c84cc919f600db79cfbde4e8d37578ec75b242792a055b7a6d559749eea261"
+    }
+  ]
+}

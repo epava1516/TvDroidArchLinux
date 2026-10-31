@@ -1,0 +1,46 @@
+{
+  "observed_at": "2026-10-31T09:56:41.145718+00:00",
+  "base_commit": "e52c808de181637dc4d2766e91ea2f074613b74b",
+  "branch": "main",
+  "previous_checkpoint": "reports/android16-property-shutdown/checkpoint.json",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "terminal_exec_handles": [
+    41288,
+    77189,
+    62383
+  ],
+  "active_exec_handles": [],
+  "mcp_status": "Two captures terminal0; owned-group cleanup verified, no persistent target opened; no host-wide liveness coverage claimed",
+  "result": "Narrow Linux-owned action coordinator over original init ActionManager/eventfd/property callbacks; native regression with own commands, not complete supervisor/service control/MAC or APK acceptance",
+  "tests": "compile-attempt-1.json, initial-build.json, build.json, patch-application.json, linked-boundary-symbols.json, native-initial-mcp.json and native-mcp.json",
+  "next": "Connect original service/control lifecycle through a Linux-owned backend with exact allowed service configuration and real error/FD ownership, retaining full source subsystems and R1-MAC prerequisite. Continue toward manager/Composer and complete Markor, not fixture-based acceptance.",
+  "evidence": {
+    "reports/android16-property-actions/build.json": "202622a7c975434a93fbe509c981084b406e68da81df576a17dfb8cf1a47d453",
+    "reports/android16-property-actions/probe-before-owner-checks.cpp": "1cbad3af4938d49c7ebb21e811c990db52e40e02da44b5091799b2a5daffd6b3",
+    "reports/android16-property-actions/findings.json": "f8c1ec95c3d04b6553cb488e61003813da30dfccfe197414d2f68e7ede4edb4b",
+    "reports/android16-property-actions/apply-patch-chain.py": "9fd80a263bd1c1a766c24279b5c7b9eed78dbc2b3d3f15a01a7402d6153d2ea5",
+    "reports/android16-property-actions/compile-attempt-1.json": "a3645a68e776ff4b729c87b2b46aa711fcd646fe776b0fd034a09fcd590f79a4",
+    "reports/android16-property-actions/build-owner-checks.py": "e476cac6a38be67b751aa974d302c54d7f3cad38fb52fd283b4ad48a3531dc44",
+    "reports/android16-property-actions/native-launcher.py": "b114eca1c48c5c700aa0bed435c37164021153864ef58b031f96fdfb9958c653",
+    "reports/android16-property-actions/build.py": "95083af00bf8965cd94cb90b31a9fd2f26886153d0737eafa0d285e79abd1fb1",
+    "reports/android16-property-actions/native-initial-mcp.json": "fd46410b7320c60d7bab3323de191ed3f743ea24e7ad39eb20d43e486d7e2153",
+    "reports/android16-property-actions/initial-build.json": "5434419f0c81629fef9bcc86bd7da5c30046d89cd7a133c7c41c515ae24b773f",
+    "reports/android16-property-actions/native-mcp.json": "dce048bc50a21555ba96eae6ccd530334063be3f3e7d0ff07b7df606fbd9952a",
+    "reports/android16-property-actions/patch-application.json": "3058433709f1b34d1d97812b79d1d6282ab9af4a3a9a9b3ad900f5bcc9cfab40",
+    "reports/android16-property-actions/probe-attempt-1.cpp": "46b4fe621ccad670176a8e31d6a30c8f52cff1d290e943ffdade5d7811b06b78",
+    "reports/android16-property-actions/probe.cpp": "a6455ccaba5b2be0fa0f06385017f78c12197b56408cfc799f3e04fe831f51ea",
+    "reports/android16-property-actions/build-attempt-2.py": "9b1bb1cf84a9987c06a4da49af0c9872c05d55ab3270946bc48e1c347310b7ff",
+    "reports/android16-property-actions/linked-boundary-symbols.json": "f6f66f045fa7e5d317106ef7bb5f40a638ae8444ff8c7fd9ae30a3e4a39fd76d"
+  }
+}

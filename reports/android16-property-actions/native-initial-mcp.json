@@ -1,0 +1,149 @@
+{
+  "projection": "Selected derived terminal fields, not complete authenticated MCP Evidence. Raw OSC host identifiers omitted.",
+  "evidence_id": "ev_11bf8e45659540fc998f960842c8ca4c02a35b8ecf33dcfc9b721eb6fb62a17b",
+  "operation": "capture_process_scenario",
+  "authority": "controlled-replay",
+  "confidence": "observed",
+  "exit": {
+    "code": 0,
+    "signal": 0,
+    "reason": "exited"
+  },
+  "observations": [
+    "INITIALIZER_SECURITY {\"Uid\": \"0\\t0\\t0\\t0\", \"Gid\": \"0\\t0\\t0\\t0\", \"Groups\": \"\", \"CapPrm\": \"000001ffffffffff\", \"CapEff\": \"000001ffffffffff\", \"NoNewPrivs\": \"1\"}",
+    "SELinux: SELinux is disabled, skipping restorecon10-31 09:53:30.758     1     1 I property-actions-probe: boot_config.cpp:46 [libfstab] Using Android DT directory /proc/device-tree/firmware/android/",
+    "10-31 09:53:30.760     1     1 W property-actions-probe: property_service.cpp:827 Overriding previous property 'ro.cp_system_other_odex':'1' with new value '0'",
+    "10-31 09:53:30.762     1     1 W property-actions-probe: property_service.cpp:827 Overriding previous property 'ro.build.flavor':'mainline-user' with new value 'aosp_x86_64-user'",
+    "10-31 09:53:30.762     1     1 W property-actions-probe: property_service.cpp:827 Overriding previous property 'ro.build.description':'mainline-user 16 BP4A.251205.006 14401865 release-keys' with new value 'aosp_x86_64-user 16 BP4A.251205.006 14401865 release-keys'",
+    "10-31 09:53:30.763     1     1 I property-actions-probe: property_service.cpp:957 Setting product property ro.product.brand to 'Android' (from ro.product.product.brand)",
+    "10-31 09:53:30.763     1     1 I property-actions-probe: property_service.cpp:957 Setting product property ro.product.device to 'generic_x86_64' (from ro.product.product.device)",
+    "10-31 09:53:30.763     1     1 I property-actions-probe: property_service.cpp:957 Setting product property ro.product.manufacturer to 'unknown' (from ro.product.product.manufacturer)",
+    "10-31 09:53:30.763     1     1 I property-actions-probe: property_service.cpp:957 Setting product property ro.product.model to 'AOSP on x86_64' (from ro.product.product.model)",
+    "10-31 09:53:30.764     1     1 I property-actions-probe: property_service.cpp:957 Setting product property ro.product.name to 'aosp_x86_64' (from ro.product.product.name)",
+    "10-31 09:53:30.764     1     1 I property-actions-probe: property_service.cpp:1034 Setting property 'ro.build.fingerprint' to 'Android/aosp_x86_64/generic_x86_64:16/BP4A.251205.006/14401865:user/release-keys'",
+    "10-31 09:53:30.764     1     1 I property-actions-probe: property_service.cpp:1096 Setting property 'ro.product.cpu.abilist' to 'x86_64,x86'",
+    "10-31 09:53:30.764     1     1 I property-actions-probe: property_service.cpp:1096 Setting property 'ro.product.cpu.abilist32' to 'x86'",
+    "10-31 09:53:30.764     1     1 I property-actions-probe: property_service.cpp:1096 Setting property 'ro.product.cpu.abilist64' to 'x86_64'",
+    "TRUSTED_TEST_INITIALIZER_CONFIGURES_ASYNC_WRITER_NOT_PEER_WRITE",
+    "10-31 09:53:30.764     1     1 I property-actions-probe: util.cpp:156 Created socket '/dev/socket/property_service_for_system', mode 660, user 0, group 1000",
+    "10-31 09:53:30.766     1     1 I property-actions-probe: util.cpp:156 Created socket '/dev/socket/property_service', mode 666, user 0, group 0",
+    "ORIGINAL_INITMESSAGE_LOAD_AND_BIONIC_SERIAL_WAIT_OK",
+    "PERSISTENT_FILE_VALUE_LOADED_IN_ORIGINAL_PROPERTY_AREA",
+    "10-31 09:53:30.768     1     1 I property-actions-probe: action_manager.cpp:90 processing action (persist.archtv.loaded=original-init-message) from (/data/explicit-test-action:1)",
+    "ORIGINAL_PROPERTY_ACTION_DISPATCH_AND_EXPANSION_OK_NO_BOOT_SCRIPT",
+    "ORIGINAL_PROPERTY_SERVICE_THREADS_AND_SOCKETS_STARTED_NOT_MANAGER_READINESS",
+    "CLIENT_SECURITY Uid:\t10000\t10000\t10000\t10000",
+    "CLIENT_SECURITY Gid:\t10000\t10000\t10000\t10000",
+    "CLIENT_SECURITY Groups:\t ",
+    "CLIENT_SECURITY CapPrm:\t0000000000000000",
+    "CLIENT_SECURITY CapEff:\t0000000000000000",
+    "CLIENT_SECURITY NoNewPrivs:\t1",
+    "SYSTEM_PROPERTY_SOCKET_DAC_EACCES_OK",
+    "10-31 09:53:30.823     1    14 E property-actions-probe: property_service.cpp:690 Unable to set property 'persist.archtv.rejected': getpeercon() failed: Protocol not available",
+    "ORIGINAL_SOCKET_REPLY code=24 expected=24",
+    "10-31 09:53:30.824     1    14 E property-actions-probe: property_service.cpp:690 Unable to set property 'persist.archtv.rejected': getpeercon() failed: Protocol not available",
+    "libc: Unable to set property \"persist.archtv.rejected\" to \"not-accepted\": PROP_ERROR_PERMISSION_DENIED (0x18)",
+    "ORIGINAL_BIONIC_CLIENT_RESULT -1",
+    "REJECTED_PROPERTY_ABSENT_AFTER_REAL_SOCKET_REQUESTS",
+    "COORDINATOR_REFUSED_COMPLETION_WITH_PENDING_ACTION",
+    "10-31 09:53:30.829     1     1 I property-actions-probe: action_manager.cpp:90 processing action (explicit-shutdown-regression) from (<Builtin Action>:0)",
+    "ORIGINAL_ACTION_QUEUE_DRAINED_BEFORE_COORDINATOR_CLOSE",
+    "SHUTDOWN_COUNTS threads_before=1 active=4 after=1 fds_before=4 after=4",
+    "PROPERTY_SOCKET_WORKERS_AND_IDLE_WRITER_JOINED_SOCKETS_REMOVED_CALLER_FD_OWNERSHIP_OK"
+  ],
+  "cleanup": {
+    "owned_process_group": "verified",
+    "temporary_root": "removed"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "The executable digest is a prelaunch file sample; matching path metadata immediately after spawn does not prove an atomic operating-system image binding.",
+    "Process trees are sampled and may omit short-lived descendants.",
+    "Process-tree sampling ended with an incomplete observation.",
+    "Filesystem observations are before/after snapshots, not syscall traces.",
+    "Inherited host environment variables are not recorded and may affect results.",
+    "No filesystem observation paths were selected; filesystem effects remain unknown.",
+    "Cumulative rendered state and visible-line bytes exceeded output_bytes; whole rendered frames were omitted. Raw PTY coverage is reported separately. See truncation_details.rendered_terminal.",
+    "Process sampling has incomplete observations: /proc/251087/environ: EACCES: Error: EACCES: permission denied, open '/proc/251087/environ'. See truncation_details.process."
+  ],
+  "residual_unknowns": [
+    {
+      "scope": "process",
+      "reason": "Process trees are sampled and may omit short-lived descendants."
+    },
+    {
+      "scope": "process",
+      "reason": "The executable digest is a prelaunch file sample; operating-system image binding is not atomically observed."
+    },
+    {
+      "scope": "environment",
+      "reason": "Inherited host environment variables are not recorded."
+    },
+    {
+      "scope": "network",
+      "reason": "Network activity is not observed by this capture."
+    },
+    {
+      "scope": "filesystem",
+      "reason": "No filesystem observation paths were selected; filesystem effects remain unknown."
+    },
+    {
+      "scope": "process",
+      "reason": "Process sampling has incomplete observations: /proc/251087/environ: EACCES: Error: EACCES: permission denied, open '/proc/251087/environ'. See truncation_details.process."
+    }
+  ],
+  "truncated": true,
+  "truncation_details": {
+    "raw_terminal": {
+      "budget_bytes": 50000,
+      "observed_bytes": 4830,
+      "retained_bytes": 4830,
+      "observed_frames": 17,
+      "retained_frames": 17
+    },
+    "rendered_terminal": {
+      "budget_bytes": 50000,
+      "observed_bytes": 45823,
+      "retained_bytes": 45823,
+      "observed_frames": 17,
+      "retained_frames": 13,
+      "unknown_size_frames": 4
+    },
+    "normalized_terminal": {
+      "budget_bytes": 50000,
+      "retained_bytes": 4829,
+      "omitted_frames": 0
+    },
+    "filesystem_before": {
+      "files_limit": 10000,
+      "depth_limit": 16,
+      "enumeration_truncated": false,
+      "enumeration_reasons": [],
+      "enumeration_omissions": [],
+      "unobserved_subtrees": [],
+      "hash_budget_bytes": 10000000,
+      "hashed_bytes": 0,
+      "hash_omissions": []
+    },
+    "filesystem_after": {
+      "files_limit": 10000,
+      "depth_limit": 16,
+      "enumeration_truncated": false,
+      "enumeration_reasons": [],
+      "enumeration_omissions": [],
+      "unobserved_subtrees": [],
+      "hash_budget_bytes": 10000000,
+      "hashed_bytes": 0,
+      "hash_omissions": []
+    },
+    "process": {
+      "sample_limit": 50,
+      "sampling_partial": true,
+      "retained_samples": 0,
+      "sample_limit_reached": false,
+      "sampling_failures": 9,
+      "first_sampling_failure": "/proc/251087/environ: EACCES: Error: EACCES: permission denied, open '/proc/251087/environ'",
+      "coverage": "sampled"
+    }
+  }
+}

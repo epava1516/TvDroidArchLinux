@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-property-shutdown/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-property-actions/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -17,7 +17,19 @@ Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCC
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
 
-## Última adaptación · cierre del servicio de propiedades
+## Última integración · coordinador nativo de acciones
+
+[Parche y pruebas](../reports/android16-property-actions/findings.json): entrada
+Linux explícita reutiliza eventfd/ActionManager y callbacks originales sin cargar
+boot scripts ni SecondStageMain. MCP0: cambio persistente real dispara acción
+programática, expansión original y archivo; cierre con acción pendiente devuelve
+error hasta procesarla. Inicio duplicado/Epoll ajeno/poll tras cierre rechazados;
+hilos4→1/FD4→4. Comandos propios de regresión, no mapa builtin/RC ni compatibilidad APK.
+Modo opt-in rechaza ctl/power sin backend tras permisos originales; rechazo de esos
+controles sólo fuente/compilación, no petición autorizada. Siguiente: backend real
+de servicios/controles y supervisor Rust por frontera explícita; R1-MAC pendiente.
+
+## Adaptación anterior · cierre del servicio de propiedades
 
 [Parche y pruebas](../reports/android16-property-shutdown/findings.json): API local
 StopPropertyService despierta receptores, une hilos y cierra recursos propios;
