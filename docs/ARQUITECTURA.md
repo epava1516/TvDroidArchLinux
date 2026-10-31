@@ -667,6 +667,29 @@ Se generó, sin compilar, una variante que intersecta sólo expresiones not/all
 prototipo completo. No se selecciona por asumir que la variante más rápida
 conserva semántica.
 
+## Adaptador de directorios proc · verificación offline
+
+[Fuente canónica](../runtime/aosp/android16-qpr2/policy/linux-proc.cil) y
+[evidencias](../reports/android16-policy-proc-adapter/validation.json). La variante
+selectiva de universos compila0 en127,7s y produce el mismo binario/exportación
+que la completa. El adaptador es un cambio separado: reproduce los ocho permisos
+originales domain→proc:dir para linux.proc_t. No añade permisos a archivos
+regulares ni a todos los tipos Linux; proc_t es el tipo de respaldo y puede
+etiquetar más directorios que la raíz, por lo que requiere pruebas reales.
+
+El compilador conserva aserciones. El modelo original concede los ocho permisos;
+seis controles negativos siguen denegados, los nueve casos originales válidos
+y todos los atributos binarios permanecen iguales. La diferencia multiconjunto
+de toda la exportación es exactamente una regla allow añadida, sin eliminaciones
+u otros cambios. Esto verifica el cambio de política offline, no syscalls,
+aislamiento efectivo ni APK. No hay instalación/carga automática del adaptador.
+
+El gestor original aún tiene tres denegaciones modeladas sobre Linux security_t:
+lectura/mmap de selinuxfs y security.compute_av. La siguiente frontera debe
+contrastar fuentes libselinux/servicemanager y mapear por clase/permiso; no
+traducir kernel→security_t globalmente, ni conceder escritura/administración
+de política por comodidad. Readiness de gestores y recorridos APK pendientes.
+
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 
 

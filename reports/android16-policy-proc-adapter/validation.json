@@ -1,0 +1,80 @@
+{
+  "scope": "Offline original compiler+libsepol model+complete binary export delta only, not live kernel/syscalls/services/APK acceptance",
+  "canonical_adapter": {
+    "path": "runtime/aosp/android16-qpr2/policy/linux-proc.cil",
+    "sha256": "b7bb19bb97deb6baf41c177825520af525d08a68ec93ac462f7ba91a4d9f528e",
+    "compiled_rule_exactly_matches": true
+  },
+  "sparse_optimization": {
+    "compiler_exit_code": 0,
+    "elapsed_seconds": 127.6976307270088,
+    "binary_and_export_byte_identical_to_full_baseline": true
+  },
+  "adapter": {
+    "compiler_exit_code": 0,
+    "elapsed_seconds": 130.4038765430014,
+    "neverallow_disabled": false,
+    "proc_directory_permissions_recovered": 8,
+    "negative_controls_still_denied": 6,
+    "original_valid_decisions_preserved": 9,
+    "full_attribute_memberships_unchanged": true,
+    "whole_binary_export_delta": "Exactly one expected allow statement added;0 removed;0 non-allow changes"
+  },
+  "unresolved": "Three model denials remain for original manager read/map of Linux SELinux interfaces and compute_av. No live SELinux or proc syscall proof, no service readiness, no APK journey. Broader shared-resource mediation and complete policy projections still pending.",
+  "evidence": [
+    {
+      "path": "reports/android16-policy-proc-adapter/after.json",
+      "sha256": "f11611c40acd90537267c7ea309c5b924193e743b426fe15e5b6e01e68c44875"
+    },
+    {
+      "path": "reports/android16-policy-proc-adapter/before.json",
+      "sha256": "06e207612f26414537ddef05317f3b762bf77ccb1f29a972606907480f63beb9"
+    },
+    {
+      "path": "reports/android16-policy-proc-adapter/compare-access.py",
+      "sha256": "9bc37f6727a11c0926af326b0351131d16abf477761f18418d45ad8b656f519f"
+    },
+    {
+      "path": "reports/android16-policy-proc-adapter/comparison.json",
+      "sha256": "ec460a372637280072c3eabf6ce6ba955066202be2b0001ff3a838ccd67a3609"
+    },
+    {
+      "path": "reports/android16-policy-proc-adapter/compile.json",
+      "sha256": "1b7a884113f7d460a4d28d39d8cce645da1f63685bdb707681293c53b33ba08a"
+    },
+    {
+      "path": "reports/android16-policy-proc-adapter/reproduce.py",
+      "sha256": "0e2a65bf4a9139cf70adaa5d5a22049e01cd259d7d31fb61c6a5f7fc06b19d90"
+    },
+    {
+      "path": "reports/android16-policy-proc-adapter/sparse-comparison.json",
+      "sha256": "88110b3c391a921e86fb633b75e806997d61cf96d53ed1e09be321af3ec85dc0"
+    },
+    {
+      "path": "reports/android16-policy-proc-adapter/sparse-compile.json",
+      "sha256": "2b8194a9a9f7007c196a21f6d716846c30ffb863d9a4aad0689b9aac46abc7da"
+    },
+    {
+      "path": "reports/android16-policy-proc-adapter/sparse-input.json",
+      "sha256": "2c711ebb6a61c08a34a61d0d0b9654e380c45311169047086bcb9c246e568f6f"
+    },
+    {
+      "path": "reports/android16-policy-proc-adapter/verify.py",
+      "sha256": "035541f561e7a099d5d5e0463a6dd96150030a78396db57d9193a6c8f5a7a67d"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "dist/aosp16/policy-proc-adapter-1/combined.bin",
+      "sha256": "31fe3b6fe66ae9a03ad314e6a83cbe74df1f4a3731f8a59c6995d0107b347d9a"
+    },
+    {
+      "path": "dist/aosp16/policy-proc-adapter-1/export.cil",
+      "sha256": "305592c506a148c4b01f91619f2b5212d9999bef33e6b9112861945c2118ebb2"
+    },
+    {
+      "path": "dist/aosp16/policy-type-universe-sparse-linux-1/combined.bin",
+      "sha256": "3eed74613fdeafcac3411118e6e542c99d6844692b6fea0111b3ffafa9d710b1"
+    }
+  ]
+}

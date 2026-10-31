@@ -1,0 +1,18 @@
+{
+  "scope": "Byte equality of complete original compiler binary export is stronger than selected membership checks, but not live enforcement/full original source equivalence/APK acceptance",
+  "binary_equal": true,
+  "export_equal": true,
+  "full_binary_sha256": "3eed74613fdeafcac3411118e6e542c99d6844692b6fea0111b3ffafa9d710b1",
+  "sparse_binary_sha256": "3eed74613fdeafcac3411118e6e542c99d6844692b6fea0111b3ffafa9d710b1",
+  "full_export_sha256": "be5f3682263e5bb1a1f03f46e51da1d26638ebbfe4823f0a777ca4d740807fb1",
+  "sparse_export_sha256": "be5f3682263e5bb1a1f03f46e51da1d26638ebbfe4823f0a777ca4d740807fb1",
+  "export_argv": [
+    "/home/tv/repositorio-principal/dist/aosp16/checkpolicy-host-2/source/checkpolicy",
+    "-M",
+    "-b",
+    "-C",
+    "-o",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-type-universe-sparse-linux-1/export.cil",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-type-universe-sparse-linux-1/combined.bin"
+  ]
+}

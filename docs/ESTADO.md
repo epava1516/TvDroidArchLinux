@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-policy-type-universe/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-policy-proc-adapter/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -422,3 +422,11 @@ se mantienen.100 atributos Linux faltaban ya en el control aislado; semántica
 completa pendiente. La app Android no puede buscar la raíz proc con etiqueta
 Linux. Siguiente: mediación precisa de etiquetas y revisión de proyecciones;
 ningún servicio/APK aceptado ni política cargada.
+
+## Último resultado: adaptador proc offline
+
+[Compilación/comparación](../reports/android16-policy-proc-adapter/validation.json):
+se recuperan ocho permisos de directorio; seis denegaciones y nueve casos
+originales se conservan. La exportación completa añade sólo la regla prevista.
+Pendiente: contratos SELinux del gestor, tres denegaciones modeladas y pruebas
+reales. Ningún host/servicio/APK aceptado; no se cargó la política.

@@ -1,0 +1,3 @@
+; Experimental Linux-owned proc directory adapter, verified offline only.
+; Original Android domain -> proc directory contract; no regular-file access.
+(allow domain linux.proc_t (dir (ioctl read getattr lock open watch watch_reads search)))

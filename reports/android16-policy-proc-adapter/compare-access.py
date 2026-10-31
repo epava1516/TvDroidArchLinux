@@ -1,0 +1,8 @@
+from pathlib import Path
+import subprocess,json,sys,hashlib
+r=Path('/home/tv/repositorio-principal');policy=Path(sys.argv[1]);dest=Path(sys.argv[2]);tool=r/'dist/aosp16/policy-access-host-1/source/sepol_check_access';app='u:r:untrusted_app:s0:c512,c768';manager='u:r:servicemanager:s0';proc='linux.system_u:linux.object_r:linux.proc_t:s0';security='linux.system_u:linux.object_r:linux.security_t:s0';cases=[]
+for permission in ('ioctl','read','getattr','lock','open','watch','watch_reads','search'):cases.append(('proc_directory_'+permission,app,proc,'dir',permission))
+cases += [('proc_file_write_denied',app,proc,'file','write'),('proc_directory_add_name_denied',app,proc,'dir','add_name'),('shadow_read_denied',app,'linux.system_u:linux.object_r:linux.shadow_t:s0','file','read'),('activity_register_denied',app,'u:object_r:activity_service:s0','service_manager','add'),('default_property_set_denied',app,'u:object_r:default_prop:s0','property_service','set'),('init_ptrace_denied',app,'linux.system_u:linux.system_r:linux.init_t:s0','process','ptrace'),('manager_linux_selinuxfs_read',manager,security,'file','read'),('manager_linux_selinuxfs_map',manager,security,'file','map'),('manager_linux_compute_av',manager,security,'security','compute_av')];rows=[]
+for name,src,tgt,cls,perm in cases:
+ cmd=[str(tool),str(policy),src,tgt,cls,perm];p=subprocess.run(cmd,capture_output=True,text=True,timeout=10);rows.append({'case':name,'argv':cmd,'exit_code':p.returncode,'stdout':p.stdout,'stderr':p.stderr});print(name,p.returncode,flush=True)
+dest.write_text(json.dumps({'scope':'Offline single-permission libsepol decisions, not actual syscall/service/APK execution','policy_sha256':hashlib.sha256(policy.read_bytes()).hexdigest(),'results':rows},indent=2)+'\n')

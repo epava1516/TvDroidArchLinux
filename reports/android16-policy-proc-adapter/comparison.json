@@ -1,0 +1,282 @@
+{
+  "scope": "Offline original tools:17 control decisions,9 original valid queries, full binary-export statement delta and attribute memberships. Not live MAC/services/APK acceptance",
+  "policy_sha256": "31fe3b6fe66ae9a03ad314e6a83cbe74df1f4a3731f8a59c6995d0107b347d9a",
+  "checks": [
+    {
+      "case": "proc_directory_ioctl",
+      "before": 7,
+      "after": 0,
+      "expected": 0,
+      "matches": true
+    },
+    {
+      "case": "proc_directory_read",
+      "before": 7,
+      "after": 0,
+      "expected": 0,
+      "matches": true
+    },
+    {
+      "case": "proc_directory_getattr",
+      "before": 7,
+      "after": 0,
+      "expected": 0,
+      "matches": true
+    },
+    {
+      "case": "proc_directory_lock",
+      "before": 7,
+      "after": 0,
+      "expected": 0,
+      "matches": true
+    },
+    {
+      "case": "proc_directory_open",
+      "before": 7,
+      "after": 0,
+      "expected": 0,
+      "matches": true
+    },
+    {
+      "case": "proc_directory_watch",
+      "before": 7,
+      "after": 0,
+      "expected": 0,
+      "matches": true
+    },
+    {
+      "case": "proc_directory_watch_reads",
+      "before": 7,
+      "after": 0,
+      "expected": 0,
+      "matches": true
+    },
+    {
+      "case": "proc_directory_search",
+      "before": 7,
+      "after": 0,
+      "expected": 0,
+      "matches": true
+    },
+    {
+      "case": "proc_file_write_denied",
+      "before": 7,
+      "after": 7,
+      "expected": 7,
+      "matches": true
+    },
+    {
+      "case": "proc_directory_add_name_denied",
+      "before": 7,
+      "after": 7,
+      "expected": 7,
+      "matches": true
+    },
+    {
+      "case": "shadow_read_denied",
+      "before": 7,
+      "after": 7,
+      "expected": 7,
+      "matches": true
+    },
+    {
+      "case": "activity_register_denied",
+      "before": 7,
+      "after": 7,
+      "expected": 7,
+      "matches": true
+    },
+    {
+      "case": "default_property_set_denied",
+      "before": 7,
+      "after": 7,
+      "expected": 7,
+      "matches": true
+    },
+    {
+      "case": "init_ptrace_denied",
+      "before": 7,
+      "after": 7,
+      "expected": 7,
+      "matches": true
+    },
+    {
+      "case": "manager_linux_selinuxfs_read",
+      "before": 7,
+      "after": 7,
+      "expected": 7,
+      "matches": true
+    },
+    {
+      "case": "manager_linux_selinuxfs_map",
+      "before": 7,
+      "after": 7,
+      "expected": 7,
+      "matches": true
+    },
+    {
+      "case": "manager_linux_compute_av",
+      "before": 7,
+      "after": 7,
+      "expected": 7,
+      "matches": true
+    }
+  ],
+  "all_controls_match": true,
+  "original_valid_cases": [
+    {
+      "case": "manager_add",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-proc-adapter-1/combined.bin",
+        "u:r:servicemanager:s0",
+        "u:object_r:service_manager_service:s0",
+        "service_manager",
+        "add"
+      ],
+      "expected": 0,
+      "exit_code": 0,
+      "stdout": "requested permission add allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "system_server_activity_add",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-proc-adapter-1/combined.bin",
+        "u:r:system_server:s0",
+        "u:object_r:activity_service:s0",
+        "service_manager",
+        "add"
+      ],
+      "expected": 0,
+      "exit_code": 0,
+      "stdout": "requested permission add allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "app_activity_find",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-proc-adapter-1/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "u:object_r:activity_service:s0",
+        "service_manager",
+        "find"
+      ],
+      "expected": 0,
+      "exit_code": 0,
+      "stdout": "requested permission find allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "app_activity_add_denied",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-proc-adapter-1/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "u:object_r:activity_service:s0",
+        "service_manager",
+        "add"
+      ],
+      "expected": 7,
+      "exit_code": 7,
+      "stdout": "requested permission add denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "app_property_write_denied",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-proc-adapter-1/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "u:object_r:default_prop:s0",
+        "property_service",
+        "set"
+      ],
+      "expected": 7,
+      "exit_code": 7,
+      "stdout": "requested permission set denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "app_manager_call",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-proc-adapter-1/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "u:r:servicemanager:s0",
+        "binder",
+        "call"
+      ],
+      "expected": 0,
+      "exit_code": 0,
+      "stdout": "requested permission call allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "linux_init_fork",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-proc-adapter-1/combined.bin",
+        "linux.system_u:linux.system_r:linux.init_t:s0",
+        "linux.system_u:linux.system_r:linux.init_t:s0",
+        "process",
+        "fork"
+      ],
+      "expected": 0,
+      "exit_code": 0,
+      "stdout": "requested permission fork allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "linux_init_etc_read",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-proc-adapter-1/combined.bin",
+        "linux.system_u:linux.system_r:linux.init_t:s0",
+        "linux.system_u:linux.object_r:linux.etc_t:s0",
+        "file",
+        "read"
+      ],
+      "expected": 0,
+      "exit_code": 0,
+      "stdout": "requested permission read allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "linux_user_shadow_denied",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-proc-adapter-1/combined.bin",
+        "linux.user_u:linux.user_r:linux.user_t:s0",
+        "linux.system_u:linux.object_r:linux.shadow_t:s0",
+        "file",
+        "read"
+      ],
+      "expected": 7,
+      "exit_code": 7,
+      "stdout": "requested permission read denied by te-rule\n",
+      "stderr": ""
+    }
+  ],
+  "all_original_valid_preserved": true,
+  "export_argv": [
+    "/home/tv/repositorio-principal/dist/aosp16/checkpolicy-host-2/source/checkpolicy",
+    "-M",
+    "-b",
+    "-C",
+    "-o",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-proc-adapter-1/export.cil",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-proc-adapter-1/combined.bin"
+  ],
+  "attribute_memberships_identical": true,
+  "statement_delta": {
+    "scope": "Complete original binary-to-CIL statement multiset difference, order-independent; still not a live syscall/API guarantee",
+    "added": [
+      "(allow domain linux.proc_t (dir (ioctl read getattr lock open watch watch_reads search)))"
+    ],
+    "removed": [],
+    "non_allow_changes": []
+  }
+}

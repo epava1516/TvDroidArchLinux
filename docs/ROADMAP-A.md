@@ -172,6 +172,12 @@ coinciden con controles. Pendientes100 atributos eliminados en el control,
 proyecciones completas y mediación: app Android→proc Linux denegado7.
 No hay política de despliegue ni readiness de servicios/APK.
 
+R1-MAC: [adaptador proc offline](../reports/android16-policy-proc-adapter/validation.json)
+compila con aserciones; ocho permisos recuperados, seis denegaciones y nueve
+casos originales conservados; delta binario exportado de una sola regla.
+Siguiente: contratos SELinux del gestor y mediación por clase/permiso, junto
+a pruebas reales de identidad, denegaciones y transición. No readiness/APK.
+
 ## Historia · etapas anteriores, no prioridad vigente
 
 

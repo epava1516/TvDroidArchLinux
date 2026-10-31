@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+- [Adaptador proc offline](../reports/android16-policy-proc-adapter/validation.json): ocho permisos recuperados, seis denegaciones conservadas, nueve decisiones originales iguales; atributos sin cambios y exportación con una regla añadida. Tres interfaces SELinux del gestor siguen denegadas; sin syscalls/servicios/APK aceptados. [Checkpoint actual](../reports/android16-policy-proc-adapter/checkpoint.json).
+
 - [Composición con universos explícitos](../reports/android16-policy-type-universe/validation.json): compilador0 con aserciones;439 atributos retenidos y nueve decisiones válidas coinciden con controles.100 atributos Linux ausentes ya en control aislado; búsqueda de proc Linux por app Android denegada. No política de despliegue ni APK. [Checkpoint actual](../reports/android16-policy-type-universe/checkpoint.json).
 
 - [Universos de tipos y aserciones](../reports/android16-policy-global-labels/validation.json): 47 sustituciones de etiquetas y27 SID declaradas; compilador emite14 marcadores neverallow antes del límite90s. Namespace insuficiente para not/all; sin política aceptada ni APK. [Checkpoint actual](../reports/android16-policy-global-labels/checkpoint.json).

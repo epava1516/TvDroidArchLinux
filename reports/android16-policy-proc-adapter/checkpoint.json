@@ -1,0 +1,35 @@
+{
+  "observed_at": "2026-10-31T05:06:47.337119+00:00",
+  "base_commit": "252e10219fc12180e6e148de9b916969d62c77a8",
+  "scope": "First validate sparse universe optimization, then separately derive generic original proc directory contract for Linux-owned proc label. Offline only.",
+  "previous_checkpoint": "reports/android16-policy-type-universe/checkpoint.json",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "terminal_exec_handles": [
+    43921,
+    56992,
+    68656,
+    57411,
+    31595
+  ],
+  "live_exec_handles": [],
+  "next": "Review original libselinux/servicemanager status and access computation source contracts for Linux-owned selinuxfs/security labels. Establish class-specific mapping and negative controls without granting policy modification or broad cross-domain access. No policy load/restart, no original service/APK acceptance.",
+  "results": "Sparse compiler0, byte-identical to full baseline. Proc adapter compiler0;8 recovered directory permissions,6 negative controls remain7,3 manager SELinux interface controls remain7 unresolved. Original9 valid decisions and all binary attributes unchanged. Entire export delta exactly one expected allow rule.",
+  "observed_processes": {},
+  "validated_independent_progress": {
+    "original_binary_exports": "Both0 via original checkpolicy-M-b-C",
+    "aosp_retained_binary_attributes": 199,
+    "linux_retained_binary_attributes": 340,
+    "attribute_set_exports_all_flat_explicit": true
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "scope": "Offline generic proc-directory label adapter derived from original domain->proc contract; no real syscall/host/APK acceptance",
+  "original_source_sha256": "3b063948a16dcd365b4ff4cb1eeda22b1580c6e0a3500e755ba8c358a0565559",
+  "base_cil_sha256": "22dfd54c17f3b4258421b08b99ad0cd5cc3faedd6eaae5c625ce7dec0a0cafab",
+  "adapter": "(allow domain linux.proc_t (dir (ioctl read getattr lock open watch watch_reads search)))",
+  "target_label_basis": "Linux-owned exact genfscon proc / context retained by composition; proc_t is fallback type, not all Linux labels",
+  "argv": [
+    "prlimit",
+    "--as=2147483648",
+    "--cpu=120",
+    "--",
+    "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/source/secilc/secilc",
+    "-m",
+    "-M",
+    "true",
+    "-G",
+    "-c",
+    "30",
+    "-o",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-proc-adapter-1/combined.bin",
+    "-f",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-proc-adapter-1/combined.fc",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-type-universe-sparse-linux-1/combined.cil",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-proc-adapter-1/adapter.cil"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "elapsed_seconds": 130.4038765430014,
+  "cpu_user_seconds": 100.809819,
+  "cpu_system_seconds": 29.347902,
+  "max_rss_kib": 449804
+}
