@@ -1,0 +1,13 @@
+{
+  "original_schemas_modified": false,
+  "generated_sources_modified": false,
+  "source_sets": [
+    "property_service.proto",
+    "persistent_properties.proto",
+    "subcontext.proto"
+  ],
+  "selected_original_clang21_Bionic_platform_headers": true,
+  "no_rtti_no_exceptions_target_config": true,
+  "archive_sha256": "c026e503cadb626dc89aabfa7e96c616e25a79c2695024d98242f43585943603",
+  "scope": "All three generated init schema source sets compiled target-only; no link/IPC/persistence/service or APK compatibility proof"
+}

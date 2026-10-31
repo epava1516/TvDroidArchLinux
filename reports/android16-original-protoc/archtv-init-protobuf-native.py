@@ -1,0 +1,8 @@
+from pathlib import Path
+import json,subprocess,hashlib
+r=Path('/home/tv/repositorio-principal');inputs=Path('/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs');out=r/'dist/aosp16/init-protobuf-1';(out/'objects').mkdir();base=json.loads((r/'dist/aosp16/libinit-build-1/epoll-compile-clang21.json').read_text())['argv'];common=base[:base.index('-c')]+['-fno-rtti','-fno-exceptions','-I'+str(out/'generated'),'-I'+str(inputs/'protobuf/source/external/protobuf/src'),'-I'+str(inputs/'abseil/source/external/abseil-cpp')];records=[];objects=[]
+for name in ['property_service','persistent_properties','subcontext']:
+ source=out/'generated/system/core/init'/(name+'.pb.cc');obj=out/'objects'/(name+'.o');argv=common+['-c',str(source),'-o',str(obj)];p=subprocess.run(argv,capture_output=True,text=True);records.append({'argv':argv,'exit_code':p.returncode,'stdout':p.stdout,'stderr':p.stderr});(out/'native-compile.json').write_text(json.dumps(records,indent=2)+'\n');print(name,p.returncode,flush=True)
+ if p.returncode:raise SystemExit(p.stderr)
+ objects.append(str(obj))
+subprocess.run(['ar','rcs',str(out/'libinit_messages.a'),*objects],check=True);(out/'native-validation.json').write_text(json.dumps({'original_schemas_modified':False,'generated_sources_modified':False,'source_sets':['property_service.proto','persistent_properties.proto','subcontext.proto'],'selected_original_clang21_Bionic_platform_headers':True,'no_rtti_no_exceptions_target_config':True,'archive_sha256':hashlib.sha256((out/'libinit_messages.a').read_bytes()).hexdigest(),'scope':'All three generated init schema source sets compiled target-only; no link/IPC/persistence/service or APK compatibility proof'},indent=2)+'\n');print('Original generated schema group compiled')

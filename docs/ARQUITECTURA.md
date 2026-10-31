@@ -124,7 +124,10 @@ cubrió las 52 unidades declaradas: 14 objetos y 38 fallos por cierre/configurac
 incompletos, sin excluir fuentes. No acredita libinit construido. Se prepara
 protoc25.8/Abseil originales con clang anfitrión/glibc: herramienta de build cuya
 frontera son archivos generados, ninguna biblioteca anfitriona entra al target.
-Su proceso y handle están en el checkpoint; confirmar estado antes de reutilizar.
+El [build original terminó 0](../reports/android16-original-protoc/validation.json):
+protoc25.8 generó los tres esquemas init, cuyas fuentes se compilaron para Bionic
+con clang21. No se ha enlazado libinit ni ejecutado IPC/persistencia por este hecho.
+La sesión69923 es terminal; no relanzar ese build.
 
 El [inventario de entradas completas](../reports/android16-boot-profile/input-audit.json)
 verifica dos extracciones independientes: system101, system_ext21 y product58

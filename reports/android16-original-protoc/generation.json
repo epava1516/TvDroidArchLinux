@@ -1,0 +1,49 @@
+{
+  "argv": [
+    "/home/tv/repositorio-principal/dist/aosp16/protoc-host-2/protoc",
+    "--proto_path=/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source",
+    "--cpp_out=/home/tv/repositorio-principal/dist/aosp16/init-protobuf-1/generated",
+    "--descriptor_set_out=/home/tv/repositorio-principal/dist/aosp16/init-protobuf-1/schemas.pb",
+    "--include_imports",
+    "system/core/init/property_service.proto",
+    "system/core/init/persistent_properties.proto",
+    "system/core/init/subcontext.proto"
+  ],
+  "cwd": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source",
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "version": "libprotoc 25.8\n",
+  "tool_sha256": "bddad87f4c02deda3b63e6e5e49b9e161c9d2ef6cd99a90360cab001c2f1474d",
+  "source_hashes": {
+    "system/core/init/property_service.proto": "59c9b004ecf539270ccd3ec7dff12ebc33068ea7f32af7ad19ec30b282c14c17",
+    "system/core/init/persistent_properties.proto": "d3e12208f6826ecb255b17a4e4d4874766237d41f328108ae5de641373a78fee",
+    "system/core/init/subcontext.proto": "73ddddc1aa9d2e2c4aae46a090bfbf279df6c07835123921841a397cf2383bcb"
+  },
+  "generated_hashes": {
+    "generated/system/core/init/persistent_properties.pb.cc": "7eb3a5aeaa82f71dd2ebf5b2f671bbe2ecb1b1d6222fea424f5094f828eb2663",
+    "generated/system/core/init/persistent_properties.pb.h": "b28d9f3ff39e2de37474dfac1b5ee0a1ec0971534d6fdb4c0c246c81286385bb",
+    "generated/system/core/init/property_service.pb.cc": "b1e6f422cee8c956118fe260f0be7cca07c0961cde00560b8644b56280565797",
+    "generated/system/core/init/property_service.pb.h": "3b45a44d25f7bbbf4435e1e9d3658004a56bbcb6c37eae7bb1f3c0be451e2715",
+    "generated/system/core/init/subcontext.pb.cc": "e502a395e2cd5950c84f89d4b0f088dd59f21bfcd7d3377b32e390918023dbb9",
+    "generated/system/core/init/subcontext.pb.h": "d1daa49449a7d3bc5f30c9ceda75087709201823437d8c541053713bd9861505",
+    "schemas.pb": "0a0d385fb74bdd9c8215b0bc1126c9dc8fee0ddc4fadee7e167fd40edb0570e1"
+  },
+  "scope": "Original source schemas to generated C++/descriptors, build-time host tool only. No property service/IPC/persistence callback execution or APK acceptance",
+  "host_build": {
+    "argv": [
+      "ninja",
+      "-C",
+      "dist/aosp16/protoc-host-2",
+      "-j1",
+      "protoc"
+    ],
+    "started_at": "2026-10-31T01:47:49.984904+00:00",
+    "scope": "Original pinned protobuf/Abseil host generator only; no glibc Android runtime, no tests/CTS/APK acceptance",
+    "pid": 15,
+    "ppid": 14,
+    "status": "terminal",
+    "exit_code": 0,
+    "elapsed_seconds": 2124.8708442740026
+  }
+}

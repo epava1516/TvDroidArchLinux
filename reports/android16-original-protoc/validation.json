@@ -1,0 +1,53 @@
+{
+  "observed_at": "2026-10-31T02:26:06.669549+00:00",
+  "source_base_commit": "ea69b3efcf611d3b677d8bebec668e6359d81062",
+  "contract": "A16-QPR2-1",
+  "host_build_exit": 0,
+  "host_build_session_69923": "terminal",
+  "host_build_seconds": 2124.8708442740026,
+  "protoc_version": "libprotoc 25.8",
+  "protoc_sha256": "bddad87f4c02deda3b63e6e5e49b9e161c9d2ef6cd99a90360cab001c2f1474d",
+  "host_build_log": {
+    "path": "/home/tv/repositorio-principal/dist/aosp16/protoc-host-2/build.log",
+    "sha256": "6aed0dd4217c2090872d73696035fdb009793bbb51ad868836b3b34cf14793b9",
+    "scope": "Whole original protobuf/Abseil host build log, including compiler warnings; not copied to summaries"
+  },
+  "native_generation": {
+    "schemas": [
+      "property_service",
+      "persistent_properties",
+      "subcontext"
+    ],
+    "original_schema_modified": false,
+    "generated_source_modified": false,
+    "source_generated_files": 6,
+    "descriptor_sets": 1,
+    "all_generated_native_source_sets_compiled": true,
+    "target": "Original clang21, Bionic/platform libc++ headers, gnu++20, no RTTI/exceptions target setting",
+    "archive_sha256": "c026e503cadb626dc89aabfa7e96c616e25a79c2695024d98242f43585943603",
+    "verified_ELF_members": {
+      "persistent_properties.o": "ELF64 x86_64 REL",
+      "property_service.o": "ELF64 x86_64 REL",
+      "subcontext.o": "ELF64 x86_64 REL"
+    }
+  },
+  "frontier": "Host glibc build tool produces .pb.cc/.pb.h/descriptors; no host objects, libraries or pointers enter Bionic target",
+  "not_done": [
+    "Whole libinit build/link/PropertyInit",
+    "Property service IPC/identity/policy/callbacks/persistence",
+    "Source-profile and GSI complete config parity",
+    "Markor and every complete APK workflow",
+    "Broad API/Bionic-JNI/ISA/CTS/distribution acceptance"
+  ],
+  "next": "Build whole original libinit source set with native property/capability/flag/schema groups now available; close exported headers, actual ACONFIG/XSD/Rust generated dependencies and original static libraries as units. No method replacements, fake flags, direct private-address calls or second_stage.",
+  "graphify": {
+    "nodes": 2603,
+    "edges": 5024,
+    "communities": 229,
+    "exit_code": 0,
+    "scope": "AST-only isolated staged worktree, pending source excluded"
+  },
+  "local_links_checked": 161,
+  "broken_links": 0,
+  "pending_files_preserved": true
+}

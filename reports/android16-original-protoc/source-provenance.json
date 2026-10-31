@@ -1,0 +1,34 @@
+{
+  "protobuf": {
+    "project": "external/protobuf",
+    "subtree": ".",
+    "commit": "31fc4250f78631cf8f4f1cc48b200acf11e9c884",
+    "url": "https://android.googlesource.com/platform/external/protobuf/+archive/31fc4250f78631cf8f4f1cc48b200acf11e9c884.tar.gz",
+    "lock_sha256": "06c6fcc779cb0e115f4515a0c38a67c31151dc8b55bd335ff2f0987e3db3eb58",
+    "status": "complete",
+    "signature_verified": false,
+    "original_source_modified": false,
+    "archive_bytes": 6163633,
+    "archive_sha256": "4257ced2b7220057afd5df8db6882c0ebf6f84e62244b370e75f1047244dafba",
+    "regular_files": 2818,
+    "relative_source_root": "source/external/protobuf",
+    "unresolved_symlinks": [],
+    "completeness": "Original subtree only; sibling sources/generated inputs must be supplied before build"
+  },
+  "abseil": {
+    "project": "external/abseil-cpp",
+    "subtree": ".",
+    "commit": "2bf8472a92b84fe4617eeb50053e7a942edcb1b3",
+    "url": "https://android.googlesource.com/platform/external/abseil-cpp/+archive/2bf8472a92b84fe4617eeb50053e7a942edcb1b3.tar.gz",
+    "lock_sha256": "06c6fcc779cb0e115f4515a0c38a67c31151dc8b55bd335ff2f0987e3db3eb58",
+    "status": "complete",
+    "signature_verified": false,
+    "original_source_modified": false,
+    "archive_bytes": 2312242,
+    "archive_sha256": "12a9028637220cbc9a9256279a8e2ae7525b69191fb395cccc5af4c70342d525",
+    "regular_files": 1537,
+    "relative_source_root": "source/external/abseil-cpp",
+    "unresolved_symlinks": [],
+    "completeness": "Original subtree only; sibling sources/generated inputs must be supplied before build"
+  }
+}

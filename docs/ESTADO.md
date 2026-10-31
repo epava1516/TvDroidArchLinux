@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-original-generators/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-original-protoc/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -50,19 +50,18 @@ dependencias transitivas, callbacks/control reales, persistencia y mediación;
 no añadir sólo la propiedad que permita superar el siguiente guard ni duplicar
 las derivaciones originales en un mapa propio. No hay nuevo perfil ejecutable.
 
-Primero comprobar el build **protoc host** registrado como sesión69923 en el
-checkpoint: original protobuf25.8/Abseil, ninja -j1, log y estado bajo
-dist/aosp16/protoc-host-2. No relanzar por perder una observación. Después generar
-los esquemas originales y cerrar los grupos de dependencias target con clang21.
-[Resultado actual](../reports/android16-libinit-build/validation.json): compilador
-original verificado y un objeto Bionic, no libinit enlazado ni framework arrancado.
-El sondeo completo de fuentes continúa siendo evidencia parcial de construcción.
+El build **protoc host** terminó 0 (sesión69923, 393 pasos); su resultado y los
+esquemas están en [la validación](../reports/android16-original-protoc/validation.json).
+Protoc25.8 original generó los tres esquemas init y sus fuentes compilaron para
+Bionic; no relanzar ese build. Siguiente unidad: libinit completo con sus grupos
+nativos, cabeceras exportadas y dependencias generadas reales. Los módulos
+parciales no acreditan un servidor ni un recorrido APK.
 
 [Avance de dependencias](../reports/android16-native-dependencies/validation.json):
 libcap estático original construido, seis fuentes/miembros ELF y generadores
 originales. No ejecutado ni prueba de permisos. Las fuentes de los otros grupos
-ya adquiridas no son servicios disponibles. Protoc69923 sigue siendo el proceso
-que debe comprobarse antes de generar esquemas y repetir el build de libinit.
+ya adquiridas no son servicios disponibles. Protoc69923 terminó; los esquemas originales ya están generados/compilados.
+Usarlos al cerrar el build de libinit, sin volver a construir el generador.
 
 [Metadatos nativos ejecutados](../reports/android16-native-property-libraries/validation.json):
 ambos módulos completos, CRT y linker originales; generación y lectura sin
@@ -76,7 +75,8 @@ generador fijado por Git blob, declaraciones y cadena fuente BP4A; dos módulos
 compilados, sin constantes propias. Paridad de configuración con GSI no probada;
 no inferir valores de paquetes ausentes del inventario system. Símbolos privados
 de init localizados en minidebug y región leída mediante REA MCP/GDB, sin arrancar
-init y con debugger cerrado. Protoc69923 es el único build largo a revalidar.
+init y con debugger cerrado. Protoc69923 ya terminó; consultar el checkpoint
+vigente para procesos actuales, sin asumir actividad por sus PIDs históricos.
 
 app_process original termina 0 sin readiness: fuente y diagnóstico muestran
 retorno temprano de startVm por ro.product.cpu.abilist64 ausente, antes de crear

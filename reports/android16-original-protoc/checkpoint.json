@@ -1,0 +1,92 @@
+{
+  "observed_at": "2026-10-31T02:26:06.669549+00:00",
+  "contract": "A16-QPR2-1",
+  "objective": "Complete unmodified arbitrary APK incl TV, Linux Rust/Smithay; native coherent AOSP16 QPR2, SF\u2192Wayland first hypothesis; no Waydroid/full Android. Preserve compatibility/isolation/stability/lightweight/install/update.",
+  "branch": "main",
+  "source_base_commit": "ea69b3efcf611d3b677d8bebec668e6359d81062",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "relation_to_local_origin_tracking": "0\t0",
+  "pending_own": {
+    "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+    "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+    "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+    "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+  },
+  "pending_other_hashes": {
+    "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+  },
+  "own_milestone": "Original host protoc completed and all three init schema groups generated/compiled target-only; old pending work untouched",
+  "terminal_exec_handles": [
+    69923,
+    90970
+  ],
+  "evidence_root": "reports/android16-original-protoc",
+  "recovery_snapshot": "/home/tv/recuperacion-archtv/20261031T021219Z-native-flag-generators",
+  "tests": "Original host build393 steps exit0, protoc25.8, original3 schemas and native objects; no runtime service acceptance",
+  "next": "Build whole original libinit source set with native property/capability/flag/schema groups now available; close exported headers, actual ACONFIG/XSD/Rust generated dependencies and original static libraries as units. No method replacements, fake flags, direct private-address calls or second_stage.",
+  "not_done": "Whole libinit/service and APK acceptance not achieved; no host generator build active now",
+  "restart_policy": "No VM/client restart or Android full boot",
+  "process_observation": {
+    "observed_at": "2026-10-31T02:27:05.155326+00:00",
+    "source": "Host ps and /proc ticks, no command arguments/environment",
+    "processes": [
+      {
+        "pid": 181298,
+        "ppid": 1,
+        "state": "Ssl",
+        "comm": "node-MainThread",
+        "start_ticks": "4923686"
+      },
+      {
+        "pid": 181308,
+        "ppid": 181298,
+        "state": "Sl",
+        "comm": "codex",
+        "start_ticks": "4923705"
+      },
+      {
+        "pid": 181453,
+        "ppid": 181308,
+        "state": "Sl",
+        "comm": "codex-code-mode",
+        "start_ticks": "4928150"
+      },
+      {
+        "pid": 213147,
+        "ppid": 181308,
+        "state": "Ss",
+        "comm": "codex-linux-san",
+        "start_ticks": "6758714"
+      },
+      {
+        "pid": 213152,
+        "ppid": 213151,
+        "state": "Ss",
+        "comm": "codex",
+        "start_ticks": "6758721"
+      },
+      {
+        "pid": 213169,
+        "ppid": 213153,
+        "state": "R",
+        "comm": "graphify",
+        "start_ticks": "6758749"
+      },
+      {
+        "pid": 213180,
+        "ppid": 213179,
+        "state": "S",
+        "comm": "python",
+        "start_ticks": "6759023"
+      }
+    ],
+    "protoc_host_pid209155_active": false,
+    "source_schema_native_compile90970": "terminal exit0",
+    "protoc_host69923": "terminal exit0, 393 steps",
+    "GDB_MCP": "Closed, none_observed inferior; never run init",
+    "graphify": "session8167 terminal exit0; no task build observed active",
+    "Android_init_or_APK_started": false
+  },
+  "active_exec_handles": []
+}

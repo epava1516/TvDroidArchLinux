@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "ninja",
+    "-C",
+    "dist/aosp16/protoc-host-2",
+    "-j1",
+    "protoc"
+  ],
+  "started_at": "2026-10-31T01:47:49.984904+00:00",
+  "scope": "Original pinned protobuf/Abseil host generator only; no glibc Android runtime, no tests/CTS/APK acceptance",
+  "pid": 15,
+  "ppid": 14,
+  "status": "terminal",
+  "exit_code": 0,
+  "elapsed_seconds": 2124.8708442740026
+}

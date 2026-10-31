@@ -1,0 +1,14 @@
+{
+  "source_base_commit": "ea69b3efcf611d3b677d8bebec668e6359d81062",
+  "scope": "Original host generator build plus native original schema source group; no libinit/runtime/APK acceptance",
+  "artifacts": {
+    "reports/android16-original-protoc/archtv-init-protobuf-native.py": "50732a3b5a7d85edaaf06faf80197f7846a65fbe50cc077c4b84513b49afa202",
+    "reports/android16-original-protoc/checkpoint.json": "faa2ec1f3e8c8ebe3cacfa09f39abcb7a7ae1f9ab3cafe5c2eb12ef865bdd871",
+    "reports/android16-original-protoc/generation.json": "60fbedfab925a65211800edccaf8fb1fbf6cfbf01b716885d9a16554012a7d7d",
+    "reports/android16-original-protoc/host-build-result.json": "55e393415d51f6d09dd8d249eaaf4726abbad53eaba5ea7117f66e1ad183957e",
+    "reports/android16-original-protoc/native-compile.json": "0ad6a6104e6a355f077e70cea3378d2a34204ba9565f31ef42c966f58f2f6dd0",
+    "reports/android16-original-protoc/native-validation.json": "2155c532ff96ec3cb20386a9cb2e4046bead06e38457aace4a4e4a8cea57a4de",
+    "reports/android16-original-protoc/source-provenance.json": "29030691f454e57813d1237b1970773312c4d432a967aec02f710f1734b52b03",
+    "reports/android16-original-protoc/validation.json": "27d63ec03d3459173af58fb91d79f834da53bf9727ec93b9fa96707b1caded4a"
+  }
+}

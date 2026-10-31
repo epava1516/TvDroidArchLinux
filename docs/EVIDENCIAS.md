@@ -1,5 +1,12 @@
 # Índice de evidencias
 
+- [Protoc original y esquemas init nativos](../reports/android16-original-protoc/validation.json):
+  393 pasos del build anfitrión, salida0; protoc25.8 genera tres esquemas originales
+  y descriptor, y sus fuentes C++ compilan para Bionic con clang21. Frontera por
+  archivos, sin objetos glibc en target. El log completo conserva hash/ruta local.
+  No enlazado de libinit ni IPC/persistencia/APK ejecutados. La sesión69923 terminó;
+  [checkpoint actual](../reports/android16-original-protoc/checkpoint.json).
+
 - [Generadores originales y contraste estático init](../reports/android16-original-generators/validation.json):
   adquisición de archivos con Git blob, errores/presupuesto/permisos probados;
   dos módulos ACONFIG generados con declaraciones/valores BP4A y compilados para
