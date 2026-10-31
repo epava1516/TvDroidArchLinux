@@ -21,6 +21,11 @@ ejes API-servicios/ABI/ISA y requisitos remotos/hardware. No parchear APK para
 eludir diferencias. La primera vertical es Markor, después R5/TV/multimedia;
 el [contrato](CONTRATO-APK.md) y [roadmap](ROADMAP-A.md) definen la aceptación.
 
+La [evaluación R6 de traductores](TRADUCCION-ARM.md) no modifica esta matriz.
+Fijar variantes ARM originales del editor (sin repack ni fallback x86), motor y
+guest bundle por separado antes de evaluar las mismas nueve etapas. Identificar
+NativeBridgeItf o ejecutar una fixture no aprueba ninguna aplicación.
+
 ## Inventario de artefactos y evidencia previa
 
 

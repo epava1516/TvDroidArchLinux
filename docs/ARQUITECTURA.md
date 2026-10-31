@@ -532,6 +532,18 @@ reales, caída/recuperación, actualización/rollback. No cargar directamente un
 política Android sobre la VM actual ni confundir una carpeta/mount namespace con
 una política SELinux independiente. La prohibición actual de reinicio se conserva.
 
+## Investigación R6 separada: Native Bridge y motores existentes
+
+La decisión y evidencia detalladas están en [TRADUCCION-ARM.md](TRADUCCION-ARM.md).
+Se conserva el contrato Native Bridge/Native Loader original de nuestra revisión:
+soporte de namespaces, zygote, JNI y linker invitado, sin implementar un motor.
+libndk_translation y Houdini no están validados para nuestro build ni tienen una
+concesión de redistribución del bundle acreditada. QEMU user-mode es una frontera
+de proceso experimental distinta del bridge en ART x86_64. Berberis público y el
+candidato abierto Digitalis deben evaluarse con fuente/licencias y artefactos fijados.
+No se ha demostrado insuficiencia de las opciones existentes: no procede un motor
+propio. Esta investigación no altera R1/R1-MAC ni aprueba etapas de APK reales.
+
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 
 

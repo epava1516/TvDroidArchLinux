@@ -1,0 +1,24 @@
+{
+  "observed_at": "2026-10-31T04:19:09.320685+00:00",
+  "branch": "main",
+  "source_base_commit": "5d990047540138632b12048a626c67a4856c6fb3",
+  "objective": "R6 separate research requested before any ARM translator implementation; main objective complete APK on Linux/Rust/Smithay without Waydroid/full Android remains unchanged",
+  "main_resume_checkpoint": "reports/android16-policy-base-comparison/checkpoint.json",
+  "main_later_local_checkpoint": "dist/aosp16/sepolicy-analyze-host-1/checkpoint.json",
+  "main_work_not_mixed": "Original policy analyzer build/queries remain local, untouched and outside this ARM documentation commit",
+  "pending_own": {
+    "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+    "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+    "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+    "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+  },
+  "pending_other_hashes": {
+    "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+  },
+  "active_exec_handles": [],
+  "processes": "No target/provider execution or build launched; source acquisition handles terminal; REA target-free export inspection only",
+  "tests": "Pinned source and metadata review; REA static ELF export table only. No JNI/ISA/real-app execution test claimed.",
+  "next": "Resume x86_64 policy semantic baseline checkpoint. R6 supplier/license/guest closure experiments independent; do not implement a custom translator on current evidence.",
+  "restrictions": "No VM/client restart, no images booted, no provider redistribution approved"
+}

@@ -1,0 +1,18 @@
+{
+  "url": "https://dl.google.com/android/repository/sys-img/google_apis/sys-img2-3.xml",
+  "sha256": "b1261b4f645125367bc74d5e0881a55cb489cf13bae26a3c9d61bdef287d228e",
+  "scope": "Official package metadata only; does not prove translator payload or Android16QPR2/BP4A version; no archive downloaded",
+  "matching_packages": [
+    "<remotePackage xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" path=\"system-images;android-36;google_apis;x86_64\">\n    <type-details xsi:type=\"sys-img:sysImgDetailsType\">\n      <api-level>36</api-level>\n      <extension-level>17</extension-level>\n      <base-extension>true</base-extension>\n      <tag>\n        <id>google_apis</id>\n        <display>Google APIs</display>\n      </tag>\n      <vendor>\n        <id>google</id>\n        <display>Google Inc.</display>\n      </vendor>\n      <abi>x86_64</abi>\n    </type-details>\n    <revision>\n      <major>7</major>\n    </revision>\n    <display-name>Google APIs Intel x86_64 Atom System Image</display-name>\n    <uses-license ref=\"android-sdk-license\" />\n    <dependencies>\n      <dependency path=\"emulator\">\n        <min-revision>\n          <major>35</major>\n          <minor>4</minor>\n          <micro>9</micro>\n        </min-revision>\n      </dependency>\n    </dependencies>\n    <channelRef ref=\"channel-0\" />\n    <archives>\n      <archive>\n        <complete>\n          <size>1895447397</size>\n          <checksum type=\"sha1\">c6bf44bdcd885bb902b4ba752d111a073ad7a817</checksum>\n          <url>x86_64-36_r07.zip</url>\n        </complete>\n      </archive>\n    </archives>\n  </remotePackage>\n  "
+  ],
+  "license_ids": [
+    "android-sdk-license",
+    "android-sdk-preview-license",
+    "intel-android-sysimage-license",
+    "mips-android-sysimage-license",
+    "android-googletv-license",
+    "android-googlexr-license",
+    "android-sdk-arm-dbt-license",
+    "microxr-sysimage-license"
+  ]
+}

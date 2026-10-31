@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+- [Investigación ARM/Native Bridge separada](../reports/arm-native-bridge-research/validation.json): contrato A16, ELF original mediante REA MCP y fuentes/metadatos de candidatos/licencias. Sin proveedor o ARM ejecutado, sin cambios x86_64 ni APK aprobada. [Detalle R6](TRADUCCION-ARM.md).
+
 - [Comparación de política AOSP/Linux](../reports/android16-policy-base-comparison/validation.json): refpolicy fijada y compilada offline;136 clases contrastadas contra CIL. Composición global directa rechazada, sin descartar estrategias adaptadas. No política elegida/cargada ni APK. [Checkpoint vigente](../reports/android16-policy-base-comparison/checkpoint.json).
 
 - [Requisitos Linux y política offline original](../reports/android16-host-security-preflight/validation.json): ocho regresiones del diagnóstico; VM no apta para gestores originales todavía. Herramientas SELinux host y CIL platform compilados, neverallow activo; sin carga/instalación/etiquetado ni APK. [Checkpoint vigente](../reports/android16-host-security-preflight/checkpoint.json).

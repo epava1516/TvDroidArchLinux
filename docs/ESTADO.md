@@ -13,6 +13,10 @@ los resúmenes; no se ha completado compatibilidad amplia.
 3. [Matriz real](COMPATIBILIDAD-APK.md) e [índice de evidencias](EVIDENCIAS.md).
 4. Continuar R0→R1 sobre Android16 QPR2 nativo, sin ampliar API33 por métodos.
 
+Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCCION-ARM.md).
+No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
+sigue siendo el punto de recuperación del runtime.
+
 ## Objetivo y decisiones
 
 APK completas sin modificar, plataforma general con compatibilidad amplia para

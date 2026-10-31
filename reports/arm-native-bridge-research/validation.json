@@ -1,0 +1,208 @@
+{
+  "observed_at": "2026-10-31T04:19:09.320685+00:00",
+  "base_commit": "5d990047540138632b12048a626c67a4856c6fb3",
+  "scope": "Separated R6 research only. No provider/guest binary downloaded, built, installed or run; no x86_64 runtime change and no real APK acceptance",
+  "aosp_art_commit": "1690c6912a7972c9e62c39b48c706de9b8b18b4a",
+  "native_bridge_contract": {
+    "namespace_compatibility_minimum_requested": 3,
+    "highest_declared_extension": 8,
+    "version8_not_unconditional_requirement": true,
+    "provider_symbol": "NativeBridgeItf",
+    "host_namespace": "system",
+    "zygote_JNI_guest_linker_required": true
+  },
+  "root_scoped_artifact_inventory": {
+    "libnativebridge.so": [
+      "apex/com.android.art/lib64/libnativebridge.so",
+      "apex/com.android.art/lib/libnativebridge.so"
+    ],
+    "libndk_translation.so": [],
+    "libhoudini.so": []
+  },
+  "candidates": {
+    "native_bridge_aosp": {
+      "kind": "runtime integration API, not ARM translator",
+      "source_reviewed": true,
+      "elf_static_REA": true,
+      "translation_executed": false,
+      "license": "Source Apache2.0; independent provider/bundle licenses not inherited"
+    },
+    "libndk_translation": {
+      "android16qpr2": "not_verified",
+      "artifact": "No exact binary/build/license-specific grant inspected; official API36.1 metadata is not translator payload proof",
+      "runtime_tested": false,
+      "redistribution_grant_verified": false
+    },
+    "houdini": {
+      "android16qpr2": "not_verified",
+      "artifact": "No lawful current binary fixed or inspected; historical Intel notice in third-party mirror not current license grant",
+      "runtime_tested": false,
+      "redistribution_grant_verified": false
+    },
+    "qemu_linux_user": {
+      "kind": "Process ISA/syscall emulator, not NativeBridgeItf integration",
+      "android16qpr2": "guest Bionic/linker/JNI/Binder cases untested",
+      "runtime_tested": false,
+      "license": "GPLv2 plus component-specific licenses/obligations; no candidate binary installed"
+    },
+    "berberis_aosp": {
+      "source_commit": "e5ab6a1be847f9490db91789f4a5af9d0dffa58d",
+      "published_guest": "riscv64 in pinned README; does not establish ARM backend",
+      "runtime_tested": false
+    },
+    "digitalis": {
+      "readme_license_commit": "e81431d67766f9a827b568b9137da131daecfa87",
+      "manifest_commit": "c04ff674ee0926fe79e690b20493c7b2f0e380b4",
+      "claimed_base": "AOSP16 QPR2",
+      "manifest_observed": "AOSP default revision android16-qpr2-release, Digitalis forks revision android16; not immutable whole-project lock",
+      "license": "Entry repo Apache2.0 observed; engine/guest/bundle third-party audit incomplete",
+      "runtime_tested": false,
+      "bundle_rights_audit_complete": false
+    }
+  },
+  "source_files": [
+    {
+      "project": "art",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/native-bridge-original/source/art/libnativebridge/README.md",
+      "sha256": "f7f65df32321e93d601c35bae02f2c1003f3d82c0640f69361105815271ace6a"
+    },
+    {
+      "project": "art",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/native-bridge-original/source/art/libnativebridge/native_bridge.cc",
+      "sha256": "88664f8af6dbc4c16210b4d286fd855f2dc36c7e88ab438c7424072cc4b195a2"
+    },
+    {
+      "project": "art",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/native-bridge-original/source/art/libnativebridge/include/nativebridge/native_bridge.h",
+      "sha256": "81df946fd09fbe2fd0f2f62fa468ff2644c94402d2bec4448730d2cb5e8a4847"
+    },
+    {
+      "project": "art",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/native-loader-original/source/art/libnativeloader/native_loader.cpp",
+      "sha256": "fbbaab41040146d991e9ab39325f671527c36bba241367453a2ee48246520826"
+    },
+    {
+      "project": "frameworks/libs/binary_translation",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/berberis-readme/README.md",
+      "sha256": "6bdd846993ce9ec653ba360b33c77985eb0dc718da96d3b08a2a1b87ddacb1f0"
+    }
+  ],
+  "local_artifacts": [
+    {
+      "path": "/home/tv/.cache/archtv/arm-bridge-study-1/android-sdk-arm-dbt-license.txt",
+      "sha256": "0682da42e0ca119ce29503c265587f8ae17277094f9262b54c1d2bb99557c6f5",
+      "bytes": 17327
+    },
+    {
+      "path": "/home/tv/.cache/archtv/arm-bridge-study-1/android-sdk-license.txt",
+      "sha256": "1f8729233617b193fd619213792ae16a41b95d2bbbf525dfe66998252ba68b16",
+      "bytes": 16962
+    },
+    {
+      "path": "/home/tv/.cache/archtv/arm-bridge-study-1/digitalis-LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    },
+    {
+      "path": "/home/tv/.cache/archtv/arm-bridge-study-1/digitalis-README.md",
+      "sha256": "8e405499d52a90d0ce953bfc629256d4027ac36214dff93de916ac1abff299a0",
+      "bytes": 4316
+    },
+    {
+      "path": "/home/tv/.cache/archtv/arm-bridge-study-1/digitalis-overlay-provenance.json",
+      "sha256": "12a1f0532ddd37f4d4ab800bc6b05869d21e00037396bfa19138732c42032226",
+      "bytes": 262
+    },
+    {
+      "path": "/home/tv/.cache/archtv/arm-bridge-study-1/digitalis-provenance.json",
+      "sha256": "04ae110f02c9f735299f3a8fe7208a7ede7bf6594c2849896c08a43fdc5f66c2",
+      "bytes": 1425
+    },
+    {
+      "path": "/home/tv/.cache/archtv/arm-bridge-study-1/digitalis.xml",
+      "sha256": "d613deeb3b2129169eb770621e61048d5da48249e9ee066ba33cb89b2347b631",
+      "bytes": 825
+    },
+    {
+      "path": "/home/tv/.cache/archtv/arm-bridge-study-1/google-apis-system-images.xml",
+      "sha256": "b1261b4f645125367bc74d5e0881a55cb489cf13bae26a3c9d61bdef287d228e",
+      "bytes": 237654
+    },
+    {
+      "path": "/home/tv/.cache/archtv/arm-bridge-study-1/manifest-default.xml",
+      "sha256": "b7b1f34bcb08da45405498576a0a9252fe754f5e1b1e838d6828cfb4797e7c3a",
+      "bytes": 102918
+    },
+    {
+      "path": "/home/tv/.cache/archtv/arm-bridge-study-1/official-36-1-packages.json",
+      "sha256": "9cbbb563429fc485f0388d2623dd88876a5b010523fbc9f4519a010490fa20e3",
+      "bytes": 7585
+    },
+    {
+      "path": "/home/tv/.cache/archtv/arm-bridge-study-1/official-image-metadata.json",
+      "sha256": "fb7f781fd9be9c17b65411dc56ed24b70435aa3c225cfe67acd8cd86cadc6559",
+      "bytes": 1930
+    }
+  ],
+  "acquisition_limitations": [
+    "native_bridge_support README file acquisition rejected as non-regular/missing; not used to establish behavior",
+    "Intel official commercial-license forum URL404 and BlackHat PDF timeout; not treated as current license evidence",
+    "Web raw GitHub cache misses resolved by pinned HTTPS fetch; signatures/Git object hashes for those individual files not verified"
+  ],
+  "decision": {
+    "develop_own_translator": false,
+    "existing_options_proven_insufficient": false,
+    "next": "Resolve exact candidate source/bundle/rights and ABI closure; reuse original Native Bridge and existing engines. ARM64 and ARM32 separate. JNI regressions followed by unmodified publisher ARM APK journey; no x86 fallback/fixtures as broad acceptance."
+  },
+  "external_sources": [
+    {
+      "url": "https://android-developers.googleblog.com/2020/03/run-arm-apps-on-android-emulator.html"
+    },
+    {
+      "url": "https://developer.android.com/studio/terms"
+    },
+    {
+      "url": "https://dl.google.com/android/repository/sys-img/google_apis/sys-img2-3.xml"
+    },
+    {
+      "url": "https://www.qemu.org/docs/master/user/main.html"
+    },
+    {
+      "url": "https://www.qemu.org/docs/master/about/license.html"
+    },
+    {
+      "url": "https://github.com/KernelBK/android_vendor_intel_houdini"
+    },
+    {
+      "url": "https://www.android-x86.org/releases/releasenote-9-0-r2.html"
+    },
+    {
+      "url": "https://github.com/DigitalisX64/digitalis"
+    },
+    {
+      "url": "https://github.com/DigitalisX64/manifest"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "reports/arm-native-bridge-research/official-image-metadata.json",
+      "sha256": "fb7f781fd9be9c17b65411dc56ed24b70435aa3c225cfe67acd8cd86cadc6559"
+    },
+    {
+      "path": "reports/arm-native-bridge-research/rea-nativebridge-exports.json",
+      "sha256": "60e08acb76b967c0b99ea5c74bad1d50abc12122ea40c3bd48c01b63c8806f38"
+    },
+    {
+      "path": "reports/arm-native-bridge-research/digitalis-provenance.json",
+      "sha256": "04ae110f02c9f735299f3a8fe7208a7ede7bf6594c2849896c08a43fdc5f66c2"
+    },
+    {
+      "path": "reports/arm-native-bridge-research/digitalis-overlay-provenance.json",
+      "sha256": "12a1f0532ddd37f4d4ab800bc6b05869d21e00037396bfa19138732c42032226"
+    },
+    {
+      "path": "reports/arm-native-bridge-research/official-36-1-packages.json",
+      "sha256": "9cbbb563429fc485f0388d2623dd88876a5b010523fbc9f4519a010490fa20e3"
+    }
+  ]
+}

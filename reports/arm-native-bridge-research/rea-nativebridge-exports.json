@@ -1,0 +1,326 @@
+{
+  "evidence_id": "ev_1d270d499f7ce7d0f9c80a1f2f3b21f4c649bcd167d22f0d0e07f3e0123bede2",
+  "subject": {
+    "name": "libnativebridge.so",
+    "digest": {
+      "sha256": "12449cfe7f46f66948c21e39053e50b5757aaeff6f8ea4d648a434396b1b2cfb"
+    },
+    "local_path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/apex/com.android.art/lib64/libnativebridge.so",
+    "format": "elf",
+    "architecture": null
+  },
+  "provider": {
+    "id": "rea-native-exports",
+    "name": "REA PE/ELF export table reader",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.analysis",
+  "operation": "inspect_native_exports",
+  "parameters": {
+    "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/apex/com.android.art/lib64/libnativebridge.so",
+    "max_file_bytes": 268435456
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "artifact": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/apex/com.android.art/lib64/libnativebridge.so",
+      "sha256": "12449cfe7f46f66948c21e39053e50b5757aaeff6f8ea4d648a434396b1b2cfb",
+      "bytes": 51336
+    },
+    "format": "elf",
+    "architecture": "amd64",
+    "bits": 64,
+    "byte_order": "little",
+    "exports": [
+      {
+        "name": "NativeBridgeNameAcceptable",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x40e0",
+        "size": "166",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "NeedsNativeBridge",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x4490",
+        "size": "72",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "NativeBridgeGetTrampoline",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x4b20",
+        "size": "140",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "NativeBridgeGetTrampoline2",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x4bb0",
+        "size": "161",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "NativeBridgeGetTrampolineForFunctionPointer",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x4c60",
+        "size": "148",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "NativeBridgeIsPathSupported",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x4e90",
+        "size": "112",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "NativeBridgeCreateNamespace",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x4f00",
+        "size": "178",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "OpenSystemLibrary",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x4030",
+        "size": "162",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "LoadNativeBridge",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x4190",
+        "size": "767",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "NativeBridgeIsSupported",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x4d00",
+        "size": "22",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "NativeBridgeLoadLibraryExt",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x50f0",
+        "size": "139",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "PreInitializeNativeBridge",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x44e0",
+        "size": "225",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "PreZygoteForkNativeBridge",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x4680",
+        "size": "96",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "NativeBridgeLoadLibrary",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x4b00",
+        "size": "25",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "NativeBridgeIsNativeBridgeFunctionPointer",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x5180",
+        "size": "115",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "NativeBridgeInitialized",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x46e0",
+        "size": "11",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "InitializeNativeBridge",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x46f0",
+        "size": "912",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "NativeBridgeGetVersion",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x4d20",
+        "size": "25",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "NativeBridgeUnloadLibrary",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x4db0",
+        "size": "115",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "NativeBridgeLinkNamespaces",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x4fc0",
+        "size": "139",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "NativeBridgeGetExportedNamespace",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x5050",
+        "size": "157",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "UnloadNativeBridge",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x4a80",
+        "size": "93",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "NativeBridgeAvailable",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x4af0",
+        "size": "15",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "NativeBridgeError",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x4ae0",
+        "size": "8",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "NativeBridgeGetSignalHandler",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x4d40",
+        "size": "110",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "NativeBridgeGetError",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x4e30",
+        "size": "95",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      }
+    ],
+    "coverage": {
+      "status": "complete",
+      "reason": null,
+      "examined_entries": 45,
+      "exports": 26
+    },
+    "issues": [],
+    "limitations": [
+      "Rows list defined default- or protected-visibility global, weak and unique dynamic symbols; local, hidden, internal and undefined symbols are not exports.",
+      "A hidden symbol version is not the default version that a by-name dlsym lookup selects.",
+      "Rows reproduce the dynamic symbol table; they do not establish that a symbol is reachable, safe to call or loaded at runtime."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "Rows list defined default- or protected-visibility global, weak and unique dynamic symbols; local, hidden, internal and undefined symbols are not exports.",
+    "A hidden symbol version is not the default version that a by-name dlsym lookup selects.",
+    "Rows reproduce the dynamic symbol table; they do not establish that a symbol is reachable, safe to call or loaded at runtime."
+  ],
+  "relationship_coverage": null,
+  "locations": [
+    {
+      "kind": "artifact-path",
+      "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/apex/com.android.art/lib64/libnativebridge.so"
+    }
+  ],
+  "evidence_links": []
+}

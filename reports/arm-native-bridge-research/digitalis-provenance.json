@@ -1,0 +1,29 @@
+{
+  "scope": "Pinned public source metadata, HTTPS/SHA only; no binaries downloaded/built/installed; no signature or functional compatibility claim",
+  "files": [
+    {
+      "repository": "digitalis",
+      "commit": "e81431d67766f9a827b568b9137da131daecfa87",
+      "url": "https://raw.githubusercontent.com/DigitalisX64/digitalis/e81431d67766f9a827b568b9137da131daecfa87/README.md",
+      "status": "acquired",
+      "path": "/home/tv/.cache/archtv/arm-bridge-study-1/digitalis-README.md",
+      "sha256": "8e405499d52a90d0ce953bfc629256d4027ac36214dff93de916ac1abff299a0"
+    },
+    {
+      "repository": "digitalis",
+      "commit": "e81431d67766f9a827b568b9137da131daecfa87",
+      "url": "https://raw.githubusercontent.com/DigitalisX64/digitalis/e81431d67766f9a827b568b9137da131daecfa87/LICENSE",
+      "status": "acquired",
+      "path": "/home/tv/.cache/archtv/arm-bridge-study-1/digitalis-LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "repository": "manifest",
+      "commit": "c04ff674ee0926fe79e690b20493c7b2f0e380b4",
+      "url": "https://raw.githubusercontent.com/DigitalisX64/manifest/c04ff674ee0926fe79e690b20493c7b2f0e380b4/default.xml",
+      "status": "acquired",
+      "path": "/home/tv/.cache/archtv/arm-bridge-study-1/manifest-default.xml",
+      "sha256": "b7b1f34bcb08da45405498576a0a9252fe754f5e1b1e838d6828cfb4797e7c3a"
+    }
+  ]
+}

@@ -218,6 +218,16 @@ Guarda la revisión contractual y arquitectónica en un commit separado. Conserv
 
 Continúa autónomamente con la estrategia sustentada por las pruebas. Si la evidencia contradice una hipótesis, revisa la decisión de forma explícita; no alteres el objetivo ni declares compatibilidad por superar únicamente pruebas parciales.
 
+## Ampliación vigente R6 · instrucción del 2026-10-31
+
+Antes de implementar traducción ARM, evaluar Native Bridge original de AOSP y
+traductores existentes, especialmente libndk_translation y Houdini, frente a
+Android16 QPR2, JNI, bibliotecas invitadas, licencias y redistribución. QEMU
+user-mode es una alternativa experimental y no un Native Bridge integrado.
+No desarrollar un traductor propio sin demostrar primero la insuficiencia de
+las opciones existentes. Mantener esta investigación separada del avance x86_64.
+[Evaluación y puertas](TRADUCCION-ARM.md), sin aceptación ARM por estudio estático.
+
 # Historia preservada · no establece requisitos vigentes
 
 # Contrato anterior BASE-AOSP-1 · histórico
