@@ -1,0 +1,36 @@
+{
+  "commit": "67b44bb0f7d1df962e737cfe9baf716bab45792e",
+  "files": [
+    {
+      "path": "include_all/hardware/hardware.h",
+      "sha256": "05cc2f0108d6c87e36384380559943d34acd104e3c2ade9aeba4415cfb23aee8",
+      "git_blob": "bf076f6c34cddcd352c241c93147d56604f4a581",
+      "verified": true
+    },
+    {
+      "path": "include_all/hardware/hwcomposer.h",
+      "sha256": "e7632e93e090e3d0321315766abde924bbfd7f405471cbd188545b1a80e1298a",
+      "git_blob": "9eb1aafbed0c0cb4dbd5c71613c0dd179b4aead9",
+      "verified": true
+    },
+    {
+      "path": "include_all/hardware/hwcomposer_defs.h",
+      "sha256": "231a19dc77192167118007157e83ab40f825857e7a9cee497111fb45e4b3c46e",
+      "git_blob": "3823765f8d23d1814c9f31603c3b07ed5fd456e1",
+      "verified": true
+    },
+    {
+      "path": "include_all/hardware/hwcomposer2.h",
+      "sha256": "b9692465ab7cf6991841a60b90cccbd32fe534ca93f48721d665f8a0f3d47260",
+      "git_blob": "76122a57d8e3467a9a0914318b873aec276cd3e4",
+      "verified": true
+    },
+    {
+      "path": "include_all/hardware/gralloc.h",
+      "sha256": "bd4610235a828b30c8d850be07e51375744ba2f6133f16cd7e10d7fe618806e6",
+      "git_blob": "10a153c01217083a63f622cdc099f80745bf00d8",
+      "verified": true
+    }
+  ],
+  "scope": "Selected original hardware headers, full header closure not individually Git-verified"
+}

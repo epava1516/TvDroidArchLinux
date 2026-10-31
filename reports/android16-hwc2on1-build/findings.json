@@ -1,0 +1,52 @@
+{
+  "scope": "Complete original HWC2On1Adapter/MiniFence build and loader-initializer regression only, not HAL/device/display/APK compatibility",
+  "observed_at": "2026-10-31T06:58:36.319684+00:00",
+  "base_commit": "82481a5a36d23b93402381fe30c7083a90855005",
+  "original_adapter_commit": "aa229558cbf04bc997ed27465c5e7ad497123d1b",
+  "libhardware_commit": "67b44bb0f7d1df962e737cfe9baf716bab45792e",
+  "source_modified": false,
+  "compile_units": 2,
+  "strict_shared_link": {
+    "result": 0,
+    "no_undefined": true,
+    "no_allow_shlib_undefined": true,
+    "crt": "Original Bionic crtbegin_so/crtend_so compiled, not glibc or executable CRT"
+  },
+  "artifacts": [
+    {
+      "path": "dist/aosp16/hwc2on1-build-1/load-probe",
+      "sha256": "0bcfab7f1c0b19bf18ae9c1be96943abce7d6a8546e67018b9175197dcfeb248",
+      "bytes": 6280
+    },
+    {
+      "path": "dist/aosp16/hwc2on1-build-1/libhwc2on1adapter.so",
+      "sha256": "41b99c758e81d69306bebc6ff2f48e283a7356b97c18fde3e16a65be0bc52cd9",
+      "bytes": 176160
+    }
+  ],
+  "runtime": {
+    "evidence_id": "ev_63a6166c652691c9213d0ca0ab139ab27adbbb390cdb7d20a0aea26c33afa55b",
+    "result": "dlopen RTLD_NOW and dlclose return success; individual static constructors/destructors not instrumented and no fence synchronization test",
+    "identity": {
+      "Uid": "10000\t10000\t10000\t10000",
+      "Gid": "10000\t10000\t10000\t10000",
+      "Groups": "",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "CapInh": "0000000000000000",
+      "CapAmb": "0000000000000000",
+      "NoNewPrivs": "1"
+    },
+    "namespace": "Original GSI system/APEX and original linkerconfig mounted read-only in private namespace. Reused harness creates private Binder; loader probe issues no Binder calls.",
+    "abi_scope": "Platform original GSI library load at /probe; NOT vendor linker namespace, full Soong/product/vendor profile equivalence, actual HAL selection or HWC1.5 device opening."
+  },
+  "limitations": [
+    "Source profile inherits previously recorded global/test flags with adapter include paths and Wno-sign-compare; not exact vendor Soong equivalence",
+    "Partial process sampling and non-atomic image binding limitations retained from MCP; sanitized projection not full authenticated Evidence",
+    "Inherited environment not recorded, no network or filesystem observation by capture",
+    "AS64GiB is virtual address budget, not physical RAM consumption",
+    "No actual HwcLoader/HIDL service, HWC1.5 device, callbacks, buffers, acquire/release/present fences, allocator/mapper/GPU, Wayland/Smithay frame, DRM, isolation between apps or APK journey tested"
+  ],
+  "decision": "Do not replace original adapter based on presumed A16 removal or compilation incompatibility; tested platform build/load viable within explicit ABI scope. Continue original HIDL loader/vendor closure and isolate existing Wayland HAL dependencies before alternative frontend decision.",
+  "next": "Build original HwcLoader/HIDL passthrough closure, measure exact vendor ABI needs and missing own Wayland interfaces; retain original SID and real Composer service requirements. R1-MAC host limitation remains."
+}

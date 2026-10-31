@@ -1,0 +1,148 @@
+{
+  "scope": "Complete original adapter strict shared link to original GSI platform libraries; not vendor namespace/Soong build equivalence or runtime acceptance",
+  "crt": [
+    {
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/arch-common/bionic/crtbegin_so.c",
+      "sha256": "7339e128550f8f90a254fef776c8a23b96a13190e93981cb20a588a2e6342bf3",
+      "argv": [
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-toolchain-1/bin/clang-21",
+        "--target=x86_64-linux-android36",
+        "-std=gnu23",
+        "-nostdinc",
+        "-fPIC",
+        "-O2",
+        "-g0",
+        "-D_GNU_SOURCE",
+        "-isystem",
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/clang21-builtins/source/prebuilts/clang/host/linux-x86/clang-r563880c/lib/clang/21/include",
+        "-isystem",
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/include",
+        "-isystem",
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/kernel/uapi/asm-x86",
+        "-isystem",
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/kernel/uapi",
+        "-isystem",
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/kernel/android/uapi",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/bionic",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/private",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/arch-common/bionic",
+        "-fno-stack-protector",
+        "-Wall",
+        "-Werror",
+        "-Wno-gcc-compat",
+        "-c",
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/arch-common/bionic/crtbegin_so.c",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/hwc2on1-build-1/crtbegin_so.c.o"
+      ],
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/arch-common/bionic/crtend_so.S",
+      "sha256": "bb9e63f580f756b7cddb5a36e53c2545df7bcea681a248c647f090ee2c05ef29",
+      "argv": [
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-toolchain-1/bin/clang-21",
+        "--target=x86_64-linux-android36",
+        "-std=gnu23",
+        "-nostdinc",
+        "-fPIC",
+        "-O2",
+        "-g0",
+        "-D_GNU_SOURCE",
+        "-isystem",
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/clang21-builtins/source/prebuilts/clang/host/linux-x86/clang-r563880c/lib/clang/21/include",
+        "-isystem",
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/include",
+        "-isystem",
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/kernel/uapi/asm-x86",
+        "-isystem",
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/kernel/uapi",
+        "-isystem",
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/kernel/android/uapi",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/bionic",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/private",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/arch-common/bionic",
+        "-fno-stack-protector",
+        "-Wall",
+        "-Werror",
+        "-Wno-gcc-compat",
+        "-c",
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/arch-common/bionic/crtend_so.S",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/hwc2on1-build-1/crtend_so.S.o"
+      ],
+      "exit_code": 0,
+      "stderr": ""
+    }
+  ],
+  "libraries": [
+    {
+      "logical": "/system/lib64/libutils.so",
+      "sha256": "5b01ecd8fc3b23ef14f34dc49cb7b42b9fe4a036e33e1de08b557598bcc4a7a2"
+    },
+    {
+      "logical": "/system/lib64/libcutils.so",
+      "sha256": "ed53b0a8de029f738ccfe346242371c50addc6c41435647ec55468a87a62b1eb"
+    },
+    {
+      "logical": "/system/lib64/liblog.so",
+      "sha256": "d19efa76e39bc458a0f9125d1665185ce95af9153bfe695e0c9519937ea9bc0a"
+    },
+    {
+      "logical": "/system/lib64/libhardware.so",
+      "sha256": "9b885c95439d96bf5a397f366809bff51b978106fced74d65cc211e3a8d2bca5"
+    },
+    {
+      "logical": "/system/lib64/libc++.so",
+      "sha256": "dc8cfbe728fcec370d576cf014a6c236ba56c56d3519678598a0e98adee5b477"
+    },
+    {
+      "logical": "/apex/com.android.runtime/lib64/bionic/libc.so",
+      "sha256": "c743999d121b9cdaaa2fc1eaae386cd51eaeed063423f26d89f29590a3e24723"
+    },
+    {
+      "logical": "/apex/com.android.runtime/lib64/bionic/libdl.so",
+      "sha256": "976f432c4e1a1ada8542534caac3905cfd8ad37a72756412a20ebfc6017f582e"
+    },
+    {
+      "logical": "/apex/com.android.runtime/lib64/bionic/libm.so",
+      "sha256": "51ba6fe4e0628c069274ecba60c864fe9b84ae288e7f2c6cf79fe3d75ad54638"
+    },
+    {
+      "logical": "/system/lib64/libvndksupport.so",
+      "sha256": "ac4e2cc821957fc90c739b1414520e006ef51b6031e83f9163db177b710fbc6c"
+    }
+  ],
+  "argv": [
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-toolchain-1/bin/ld.lld",
+    "-shared",
+    "--soname=libhwc2on1adapter.so",
+    "--no-undefined",
+    "--no-allow-shlib-undefined",
+    "-z",
+    "relro",
+    "-z",
+    "now",
+    "--rpath-link=/home/tv/repositorio-principal/dist/aosp16/hwc2on1-build-1/link-libs",
+    "/home/tv/repositorio-principal/dist/aosp16/hwc2on1-build-1/crtbegin_so.c.o",
+    "/home/tv/repositorio-principal/dist/aosp16/hwc2on1-build-1/HWC2On1Adapter.o",
+    "/home/tv/repositorio-principal/dist/aosp16/hwc2on1-build-1/MiniFence.o",
+    "-L/home/tv/repositorio-principal/dist/aosp16/hwc2on1-build-1/link-libs",
+    "-lutils",
+    "-lcutils",
+    "-llog",
+    "-lhardware",
+    "-lc++",
+    "-lc",
+    "-lm",
+    "-ldl",
+    "/home/tv/repositorio-principal/dist/aosp16/hwc2on1-build-1/crtend_so.S.o",
+    "-o",
+    "/home/tv/repositorio-principal/dist/aosp16/hwc2on1-build-1/libhwc2on1adapter.so"
+  ],
+  "exit_code": 0,
+  "stderr": ""
+}

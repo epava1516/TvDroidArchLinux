@@ -1,0 +1,11 @@
+from pathlib import Path
+import json,subprocess,hashlib,importlib.util
+r=Path('/home/tv/repositorio-principal');p=r/'reports/android16-hwc2on1-build';out=r/'dist/aosp16/hwc2on1-build-1';crt=json.loads((r/'dist/aosp16/crt-native-1/commands.json').read_text())[0]['argv'];base=crt[:crt.index('-c')];src=Path('/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/arch-common/bionic');records=[]
+for n in ['crtbegin_so.c','crtend_so.S']:
+ cmd=base+['-c',str(src/n),'-o',str(out/(n+'.o'))];x=subprocess.run(cmd,capture_output=True,text=True,timeout=60);records.append({'source':str(src/n),'sha256':hashlib.sha256((src/n).read_bytes()).hexdigest(),'argv':cmd,'exit_code':x.returncode,'stderr':x.stderr});print(n,x.returncode,x.stderr[:1000]);assert x.returncode==0
+spec=importlib.util.spec_from_file_location('a',r/'tools/aosp/audit_boot_inputs.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);root=r/'dist/aosp16/factory-inputs-3/root';d=out/'link-libs';d.mkdir(exist_ok=True);libs=[]
+for n in ['libutils.so','libcutils.so','liblog.so','libhardware.so','libc++.so','libc.so','libdl.so','libm.so','libvndksupport.so']:
+ logical=('/apex/com.android.runtime/lib64/bionic/' if n in ['libc.so','libdl.so','libm.so'] else '/system/lib64/')+n;f=m.inside(root,logical);assert f.is_file(),logical;q=d/n
+ if not q.exists():q.symlink_to(f)
+ libs.append({'logical':logical,'sha256':hashlib.sha256(f.read_bytes()).hexdigest()})
+ld='/home/tv/.cache/archtv/aosp16-qpr2/native-toolchain-1/bin/ld.lld';cmd=[ld,'-shared','--soname=libhwc2on1adapter.so','--no-undefined','--no-allow-shlib-undefined','-z','relro','-z','now','--rpath-link='+str(d),str(out/'crtbegin_so.c.o'),str(out/'HWC2On1Adapter.o'),str(out/'MiniFence.o'),'-L'+str(d),'-lutils','-lcutils','-llog','-lhardware','-lc++','-lc','-lm','-ldl',str(out/'crtend_so.S.o'),'-o',str(out/'libhwc2on1adapter.so')];x=subprocess.run(cmd,capture_output=True,text=True,timeout=60);print('link',x.returncode,x.stderr[:2500]);(p/'link.json').write_text(json.dumps({'scope':'Complete original adapter strict shared link to original GSI platform libraries; not vendor namespace/Soong build equivalence or runtime acceptance','crt':records,'libraries':libs,'argv':cmd,'exit_code':x.returncode,'stderr':x.stderr},indent=2)+'\n')

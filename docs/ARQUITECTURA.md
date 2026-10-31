@@ -860,7 +860,26 @@ a reutilizar frontend HWC3 con salida Wayland adaptada. No escribir Composer des
 cero ni introducir servicios ficticios antes de probar esas vías. Reutilizar fuente
 separada no autoriza ni requiere instalar Waydroid. Núcleos examinados Apache2.0,
 helper de gralloc MIT; conservar notices y auditar dependencias antes de distribuir.
-Ningún candidato está construido o ejecutado; R1-MAC y Markor siguen pendientes.
+Este estudio de fuentes no construyó candidatos; la construcción posterior del
+adaptador se distingue abajo. R1-MAC y Markor siguen pendientes.
+
+## R3: adaptador original construido y cargado con Bionic
+
+[Construcción y captura REA MCP](../reports/android16-hwc2on1-build/validation.json).
+Las dos unidades originales completas HWC2On1Adapter/MiniFence, sin modificaciones,
+compilan con cabeceras A16 y libc++/Bionic originales. Biblioteca compartida enlazada
+con --no-undefined y --no-allow-shlib-undefined, CRT Bionic de biblioteca compartida
+y bibliotecas GSI originales. Un proceso UID10000, sin grupos/capacidades y NNP1,
+ejecutó dlopen(RTLD_NOW|RTLD_LOCAL) y dlclose con retorno correcto, observado por MCP.
+Hashes de las copias ejecutadas contrastados; muestreo de procesos parcial.
+
+Es viable construir/cargar este componente en el namespace de plataforma probado.
+No equivale al perfil vendor/Soong completo ni a cargar un dispositivo HWC1.5:
+no se ejecutaron HwcLoader/servicio HIDL, callbacks, allocator/mapper, buffers,
+fences, GPU ni superficie Wayland. Constructores/destructores individuales no
+instrumentados. Siguiente paso: cargador/passthrough original y cierre ABI vendor,
+separando dependencias del HAL Wayland antes de decidir un frontend alternativo.
+El fallo SID del anfitrión sigue bloqueando aceptación del gestor; no se omite.
 
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 

@@ -1,0 +1,52 @@
+{
+  "scope": "Complete original HWC2On1Adapter/MiniFence build and loader-initializer regression only, not HAL/device/display/APK compatibility",
+  "assertions": {
+    "both_original_source_units_hash_match_verified_provenance": true,
+    "compile_and_strict_link_exit_zero": true,
+    "copied_binary_hashes_match_after_run": true,
+    "actual_mcp_dlopen_now_dlclose_exit_zero_uid10000_caps_zero": true,
+    "six_pending_files_preserved": true
+  },
+  "evidence": [
+    {
+      "path": "reports/android16-hwc2on1-build/compile.json",
+      "sha256": "5debf568b138e2c45c7a6fb46780f7d072126260bd3081a84b36de6828e94ddc"
+    },
+    {
+      "path": "reports/android16-hwc2on1-build/findings.json",
+      "sha256": "c37c90e6f2fcfd5f63dec44ced84799bf7e909773e1904d77d09832b212eab8b"
+    },
+    {
+      "path": "reports/android16-hwc2on1-build/libhardware-provenance.json",
+      "sha256": "96ae462d8a2ab04412be3186a23494dfd24d5afcac4390909d028407ab695dc6"
+    },
+    {
+      "path": "reports/android16-hwc2on1-build/link.json",
+      "sha256": "2846bb92bfa96e25525eac8260996c8684409ccd78e2050dfb00f3891f873d02"
+    },
+    {
+      "path": "reports/android16-hwc2on1-build/load-capture-summary.json",
+      "sha256": "21572d94d4c540cb0353c5e642a45e2a1353976ec8ddb0d11030c61dfb49d1f1"
+    },
+    {
+      "path": "reports/android16-hwc2on1-build/load-probe-build.json",
+      "sha256": "1761a009c53032736748b7f6b9cdff51d8943d28a303fd5722fb4e57ba34b73d"
+    },
+    {
+      "path": "reports/android16-hwc2on1-build/load-probe.cpp",
+      "sha256": "7affea6d210bb385cb80ee664172f55c27aeeea5cf1e9db3145d9072a119be0e"
+    },
+    {
+      "path": "reports/android16-hwc2on1-build/native-launcher.py",
+      "sha256": "0cc7f618c0ca27476414f678c08ae9dd45f164b9796054b9e4f8639a26f6af6e"
+    },
+    {
+      "path": "reports/android16-hwc2on1-build/reproduce-compile.py",
+      "sha256": "f080641a42420e0bb40b77867a76fad8f8d0acbdfbe34b4719afd192c236b17e"
+    },
+    {
+      "path": "reports/android16-hwc2on1-build/reproduce-link.py",
+      "sha256": "d1cae6472221f3a6f2f3ce3f5f8fdd887dd7a802c54ed53209662003ce26bf14"
+    }
+  ]
+}
