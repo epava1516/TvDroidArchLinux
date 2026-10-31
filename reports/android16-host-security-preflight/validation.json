@@ -1,0 +1,112 @@
+{
+  "base_commit": "91baee7289845574da7c8ac5b37af45253a9bb3b",
+  "scope": "Read-only prerequisite diagnostic and original offline host policy tools; not runtime/security/APK acceptance",
+  "source_commit": "085c131ad1b984bfa8ffdafee7a976e9d89f403c",
+  "source_archive_sha256": "6c1e41609cba688dabec0885704f1314d11af3410c62319c9e1e1417464447fd",
+  "tests": {
+    "checker_regressions": 8,
+    "host_user_exit": 2,
+    "host_root_exit": 2,
+    "compiler_original_platform_policy_exit": 0,
+    "neverallow_disabled": false
+  },
+  "boundaries": "Compiler is host/glibc, artifact handoff only. No host objects injected into Bionic. Original Makefile source superset/profile construction is not full Soong equivalence. Compiler help exits1 by original usage implementation; original options -m -M true -G -c30 compile platform alone. No policy loaded, installed or labeled.",
+  "checker_limit": "Filesystem/status diagnostic only, not original libselinux API or policy semantic replacement. Status snapshot observation tested x86_64 only; ARM64 ordering/native API validation pending. Offline snapshots never kernel-prerequisite success.",
+  "policy_comparison": "AOSP complete policy plus Linux domains vs Linux/refpolicy with original AOSP contracts remain unevaluated; no winner claimed",
+  "reference_sources": [
+    "https://wiki.archlinux.org/title/SELinux",
+    "https://github.com/SELinuxProject/refpolicy",
+    "https://kernel.org/doc/html/latest/admin-guide/kernel-parameters.html"
+  ],
+  "local_artifacts": [
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/build.log",
+      "sha256": "00b71c7210419dfbc0bef7935c8381b5ff805222538f226ba62762ef0e39bb0c",
+      "bytes": 185874
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/source/libsepol/src/libsepol.a",
+      "sha256": "4a1b23f286a15d71d6da2680b9ee6ce689dff7a12168b31dcdfb2c91b5ec0a57",
+      "bytes": 1622936
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/source/secilc/secilc",
+      "sha256": "b164c77d935a46c5191b24648df724f3e5b6da70478d37313afc15d024dae130",
+      "bytes": 613584
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/platform-policy-original-options.bin",
+      "sha256": "cf26368b0cbb9b921e78ae3830c7bfbd6b900dc2676f6a97f71ba83df611e296",
+      "bytes": 617830
+    }
+  ],
+  "rejected_attempts": [
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-1/build-state.json",
+      "sha256": "bf04047bb5ebc7e46e64cbaa1feaddf6cb074975fd192ed326082df4ec7ab045",
+      "reason": "Upstream Makefile lacks common AOSP warning profile, unused original function fatal"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-2/build-state.json",
+      "sha256": "3a79eb366fdb4e555d4a1495849ed0fbe4e5600bd45c83a3840eab6f885e673e",
+      "reason": "External path compiler groups absent, unused-but-set-variable fatal"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-3/state.json",
+      "sha256": "8af7aff56e477f3d217fc1cbe84278331bda466d39ed17b31ffdb457c5bf40c9",
+      "reason": "Own flag extractor incorrectly included nonempty later groups for empty host/C-only arrays; rejected, no artifact used. Fixed by exact empty-array detection and assertions before attempt4."
+    }
+  ],
+  "evidence": [
+    {
+      "path": "reports/android16-host-security-preflight/regressions.log",
+      "sha256": "1cb68d0b2a4b3780d787dbd931fea6f16ce3be8ed56d32f9a0c84fe5d975f157"
+    },
+    {
+      "path": "reports/android16-host-security-preflight/libsepol-build.json",
+      "sha256": "31400f7f6871ed72a002ec5d76e0adc881b654540d2ecde6f4d56c7373f2a885"
+    },
+    {
+      "path": "reports/android16-host-security-preflight/secilc-build-incomplete-exports.json",
+      "sha256": "b978e4068b589e66cc03c93b8f775febc1169d0499d70d064265aaba6d21cf15"
+    },
+    {
+      "path": "reports/android16-host-security-preflight/host-user.json",
+      "sha256": "8115371b6796f5cc3706a52b02c6ad663d408498091172a49aea4ee2c255e7c3"
+    },
+    {
+      "path": "reports/android16-host-security-preflight/platform-policy.json",
+      "sha256": "e50d23b2ed9a6cecfe3ec64dc54224f2bd390745260fc0bfb3d24018620219ee"
+    },
+    {
+      "path": "reports/android16-host-security-preflight/host-root.json",
+      "sha256": "8115371b6796f5cc3706a52b02c6ad663d408498091172a49aea4ee2c255e7c3"
+    },
+    {
+      "path": "reports/android16-host-security-preflight/compiler-profile.json",
+      "sha256": "8a495ac67fde7e8d611d10d8ae85e0d75c6ecc4ac3f5a07a9ea34ada719c33b1"
+    },
+    {
+      "path": "reports/android16-host-security-preflight/build-original-host-tools.py",
+      "sha256": "6b5e22513ed0a899bf224b2d770cdb03893d5887057c48dfacc75eeb338e9665"
+    },
+    {
+      "path": "reports/android16-host-security-preflight/secilc-build.json",
+      "sha256": "7548b8eada4d8e6ab9b2b26ab573e48e52bf7ca5a3ad77262c77512df0f89592"
+    },
+    {
+      "path": "reports/android16-host-security-preflight/initial-tool-runs.json",
+      "sha256": "426d9aac9909e5f16604592e55f653811f371919c97c13e19e9da8d0b542522b"
+    }
+  ],
+  "source_tools": [
+    {
+      "path": "tools/aosp/check_host_security.py",
+      "sha256": "466545a6092a258cc208dd1284fa151273954214d4381fa3047e7c123ce450d1"
+    },
+    {
+      "path": "tools/aosp/test_host_security.py",
+      "sha256": "e815523137e8df2aed7bf4d4ad5981d0dbaba1841f363a771463a2516f95e73d"
+    }
+  ]
+}

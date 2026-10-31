@@ -1,0 +1,32 @@
+{
+  "scope": "Host original compiler only, offline original platform policy; not loaded or runtime enforcement",
+  "binary_sha256": "b164c77d935a46c5191b24648df724f3e5b6da70478d37313afc15d024dae130",
+  "attempts": [
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/source/secilc/secilc",
+        "-h"
+      ],
+      "exit_code": 1,
+      "stdout": "Usage: /home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/source/secilc/secilc [OPTION]... FILE...\n\nOptions:\n  -o, --output=<file>            write binary policy to <file>\n                                 (default: policy.<version>)\n  -f, --filecontext=<file>       write file contexts to <file>\n                                 (default: file_contexts)\n  -t, --target=<type>            specify target architecture. may be selinux or\n                                 xen. (default: selinux)\n  -M, --mls true|false           build an mls policy. Must be true or false.\n                                 This will override the (mls boolean) statement\n                                 if present in the policy\n  -c, --policyvers=<version>     build a binary policy with a given <version>\n                                 (default: 33)\n  -U, --handle-unknown=<action>  how to handle unknown classes or permissions.\n                                 may be deny, allow, or reject. (default: deny)\n                                 This will override the (handleunknown action)\n                                 statement if present in the policy\n  -D, --disable-dontaudit        do not add dontaudit rules to the binary policy\n  -P, --preserve-tunables        treat tunables as booleans\n  -Q, --qualified-names          Allow names containing dots (qualified names).\n                                 Blocks, blockinherits, blockabstracts, and\n                                 in-statements will not be allowed.\n  -m, --multiple-decls           allow some statements to be re-declared\n  -N, --disable-neverallow       do not check neverallow rules\n  -G, --expand-generated         Expand and remove auto-generated attributes\n  -X, --expand-size <SIZE>       Expand type attributes with fewer than <SIZE>\n                                 members.\n  -O, --optimize                 optimize final policy\n  -v, --verbose                  increment verbosity level\n  -h, --help                     display usage information\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/source/secilc/secilc",
+        "-M",
+        "true",
+        "-c",
+        "30",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/aosp-platform-policy.bin",
+        "-f",
+        "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/aosp-platform-file-contexts",
+        "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/etc/selinux/plat_sepolicy.cil"
+      ],
+      "exit_code": 255,
+      "stdout": "",
+      "stderr": "Re-declaration of typeattribute system_and_vendor_property_type\nPrevious declaration of typeattribute at /home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/etc/selinux/plat_sepolicy.cil:78117\nBad typeattribute declaration at /home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/etc/selinux/plat_sepolicy.cil:78117\nFailed to build AST\nFailed to compile cildb: -1\n"
+    }
+  ]
+}

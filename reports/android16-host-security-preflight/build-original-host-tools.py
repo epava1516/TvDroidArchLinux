@@ -1,0 +1,13 @@
+from pathlib import Path
+import json,re,subprocess,shutil,hashlib
+r=Path('/home/tv/repositorio-principal');out=r/'dist/aosp16/selinux-tools-host-4';out.mkdir();src=Path('/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/selinux-original-full/source/external/selinux');shutil.copytree(src,out/'source');global_src=Path('/home/tv/.cache/archtv/aosp16-qpr2/native-build-study/build__soong__cc__config__global.go');text=global_src.read_text();groups={}
+for name in ['commonGlobalCflags','hostGlobalCflags','commonGlobalConlyflags','extraExternalCflags','noOverrideGlobalCflags','noOverrideExternalGlobalCflags']:
+ if re.search(r'\b'+name+r' = \[\]string\{\}',text):groups[name]=[];continue
+ block=re.search(r'\b'+name+r' = \[\]string\{(.*?)\n\s*\}',text,re.S)
+ if not block:
+  assert re.search(r'\b'+name+r' = \[\]string\{\}',text);groups[name]=[];continue
+ body=re.sub(r'//[^\n]*','',block[1]);groups[name]=re.findall(r'"([^"]+)"',body);assert all(x.startswith('-') for x in groups[name]),name
+assert groups['hostGlobalCflags']==[] and groups['commonGlobalConlyflags']==[]
+bp=(src/'libsepol/Android.bp').read_text();module=re.findall(r'"([^"]+)"',re.search(r'name: "libsepol_defaults".*?cflags: \[(.*?)\]',bp,re.S)[1]);flags=sum((groups[n] for n in ['commonGlobalCflags','hostGlobalCflags','commonGlobalConlyflags','extraExternalCflags']),[])+module+groups['noOverrideGlobalCflags']+groups['noOverrideExternalGlobalCflags'];cc='/home/tv/.cache/archtv/aosp16-qpr2/native-toolchain-1/bin/clang-21 -resource-dir /home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/clang21-builtins/source/prebuilts/clang/host/linux-x86/clang-r563880c/lib/clang/21';cmd=['make','-j1','-C',str(out/'source/libsepol/src'),'CC='+cc,'CFLAGS='+' '.join(flags),'libsepol.a'];profile={'global_source':str(global_src),'global_sha256':hashlib.sha256(global_src.read_bytes()).hexdigest(),'groups':groups,'module_cflags':module,'scope':'Original common/host/external C compiler groups; original Makefile driver is scoped construction, not full Soong equivalence'};(out/'profile.json').write_text(json.dumps(profile,indent=2)+'\n');log=(out/'build.log').open('w');p=subprocess.Popen(cmd,stdout=log,stderr=subprocess.STDOUT);(out/'state.json').write_text(json.dumps({'status':'running','pid_in_namespace':p.pid,'argv':cmd},indent=2)+'\n');code=p.wait();log.close();state={'status':'terminal','exit_code':code,'argv':cmd,'log_sha256':hashlib.sha256((out/'build.log').read_bytes()).hexdigest()}
+if code==0:state['archive_sha256']=hashlib.sha256((out/'source/libsepol/src/libsepol.a').read_bytes()).hexdigest()
+(out/'state.json').write_text(json.dumps(state,indent=2)+'\n');print(code,(out/'build.log').read_text()[-1600:])

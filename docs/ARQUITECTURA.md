@@ -487,6 +487,34 @@ la VM: preparar y validar fuentes/build/instalación y pruebas independientes;
 la activación y enforcement en esta VM quedan pendientes de un arranque permitido.
 No se ha cambiado el boot ni arrancado Android.
 
+### Preparación verificable de política y despliegue
+
+`python tools/aosp/check_host_security.py` sólo lee el kernel de la vista de
+montajes actual; salida2 significa requisitos incumplidos o desconocidos. No cambia
+LSM, política, etiquetas ni arranque. El estado compilado es informativo: se exige
+SELinux activo, página status consistente, política cargada/enforcing e interfaces
+de clases/permisos Binder, service_manager, hwservice_manager y property_service.
+Una captura offline queda identificada como tal. Incluso si pasa, no acredita
+semántica de política, servicios, aislamiento ni APK; el runtime sigue utilizando
+libselinux original, sin delegar sus comprobaciones a este diagnóstico.
+
+Antes de una política propia se consideran [refpolicy original](https://github.com/SELinuxProject/refpolicy)
+y la [integración Arch existente](https://wiki.archlinux.org/title/SELinux), además
+de la política AOSP completa fijada. Ninguna está elegida por mera disponibilidad.
+Contrastar offline dos bases: política AOSP con integración de dominios Linux, y
+base Linux/refpolicy con los contratos AOSP originales incorporados. Fijar revisiones,
+clases/orden, MLS, roles/usuarios, tipos/contextos esperados y neverallow; registrar
+conflictos sin eliminar reglas para conseguir compilación. Herramientas anfitrionas
+originales pueden generar políticas por archivos, sin introducir objetos glibc en
+procesos Bionic. Una compilación offline no demuestra carga o enforcement.
+
+La decisión necesita después un arranque Linux permitido y recuperable con su
+política: boot/servicios Linux funcionales, etiquetas persistentes, transiciones
+del supervisor y servicios/app originales, Binder con identidad y denegaciones
+reales, caída/recuperación, actualización/rollback. No cargar directamente una
+política Android sobre la VM actual ni confundir una carpeta/mount namespace con
+una política SELinux independiente. La prohibición actual de reinicio se conserva.
+
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 
 

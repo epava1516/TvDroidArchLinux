@@ -1,0 +1,24 @@
+{
+  "scope": "Offline platform CIL only, no vendor or Linux host integration/load/enforcement tested",
+  "argv": [
+    "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/source/secilc/secilc",
+    "-m",
+    "-M",
+    "true",
+    "-G",
+    "-c",
+    "30",
+    "-o",
+    "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/platform-policy-original-options.bin",
+    "-f",
+    "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/platform-file-contexts-original-options",
+    "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/etc/selinux/plat_sepolicy.cil"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "input_sha256": "3b063948a16dcd365b4ff4cb1eeda22b1580c6e0a3500e755ba8c358a0565559",
+  "neverallow_disabled": false,
+  "original_options_source": "system/sepolicy/build/soong/policy.go lines526-530",
+  "output_sha256": "cf26368b0cbb9b921e78ae3830c7bfbd6b900dc2676f6a97f71ba83df611e296"
+}

@@ -1,0 +1,13 @@
+test_compiled_library_or_missing_interfaces_cannot_pass (test_host_security.HostSecurityReporting.test_compiled_library_or_missing_interfaces_cannot_pass) ... ok
+test_malformed_status_is_unknown (test_host_security.HostSecurityReporting.test_malformed_status_is_unknown) ... ok
+test_missing_android_userspace_class_is_explicit (test_host_security.HostSecurityReporting.test_missing_android_userspace_class_is_explicit) ... ok
+test_odd_sequence_is_unknown_not_accepted_as_status (test_host_security.HostSecurityReporting.test_odd_sequence_is_unknown_not_accepted_as_status) ... ok
+test_offline_complete_snapshot_never_claims_runtime_or_live_host (test_host_security.HostSecurityReporting.test_offline_complete_snapshot_never_claims_runtime_or_live_host) ... ok
+test_permissive_is_not_enforcement (test_host_security.HostSecurityReporting.test_permissive_is_not_enforcement) ... ok
+test_policy_not_loaded_cannot_pass (test_host_security.HostSecurityReporting.test_policy_not_loaded_cannot_pass) ... ok
+test_unreadable_interface_is_unknown_not_absent (test_host_security.HostSecurityReporting.test_unreadable_interface_is_unknown_not_absent) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.035s
+
+OK

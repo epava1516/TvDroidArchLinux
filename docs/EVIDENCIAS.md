@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+- [Requisitos Linux y política offline original](../reports/android16-host-security-preflight/validation.json): ocho regresiones del diagnóstico; VM no apta para gestores originales todavía. Herramientas SELinux host y CIL platform compilados, neverallow activo; sin carga/instalación/etiquetado ni APK. [Checkpoint vigente](../reports/android16-host-security-preflight/checkpoint.json).
+
 - [Binder privado y puerta de política original](../reports/android16-binder-service-gate/validation.json): dispositivos distintos/protocolo8; ART llega a ActivityThread.main, sin Markor. Servicemanager original aborta por SELinux inactivo. No transacciones/servicios/política/APK aceptados. [Checkpoint vigente](../reports/android16-binder-service-gate/checkpoint.json).
 
 - [Perfil original y creación VM fallida](../reports/android16-property-profile/validation.json): PropertyInit0, 170 valores iguales con lector UID10000/caps0; REA MCP/GDB prueba fallo de análisis de opciones dentro de JNI_CreateJavaVM, sin VM lista ni APK. [Checkpoint vigente](../reports/android16-property-profile/checkpoint.json).

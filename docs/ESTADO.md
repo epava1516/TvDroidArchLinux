@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-binder-service-gate/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-host-security-preflight/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -88,6 +88,17 @@ sustituir comprobaciones por permisos ficticios. El contrato actual impide reini
 la VM: preparar y validar fuentes/build/instalación y pruebas independientes;
 la activación y enforcement en esta VM quedan pendientes de un arranque permitido.
 No se ha cambiado el boot ni arrancado Android.
+
+
+## Preparación de seguridad · herramienta y compilación offline
+
+[Validación](../reports/android16-host-security-preflight/validation.json): diagnóstico
+de sólo lectura, ocho regresiones y comprobaciones con/sin permisos elevados;
+la VM no satisface los requisitos de SELinux. Las capturas offline no acreditan
+un kernel vivo. Host libsepol/secilc originales construidos; política platform CIL
+de la GSI compilada con opciones originales y neverallow activo. Nada instalado,
+cargado o reetiquetado, ni host/servicios/APK aceptados. Siguiente: comparar las
+bases de política AOSP+Linux y refpolicy+contratos AOSP antes de elegir/desplegar.
 
 ## Checkpoint y siguiente acción
 

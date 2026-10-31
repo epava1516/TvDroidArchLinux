@@ -1,0 +1,45 @@
+{
+  "observed_at": "2026-10-31T03:51:26.616347+00:00",
+  "contract": "A16-QPR2-1",
+  "objective": "Complete unmodified arbitrary APK incl TV, Linux Rust/Smithay; native coherent AOSP16 QPR2, SF\u2192Wayland first hypothesis; no Waydroid/full Android. Preserve compatibility/isolation/stability/lightweight/install/update.",
+  "branch": "main",
+  "source_base_commit": "91baee7289845574da7c8ac5b37af45253a9bb3b",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "relation_to_local_origin_tracking": "0\t0",
+  "pending_own": {
+    "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+    "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+    "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+    "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+  },
+  "pending_other_hashes": {
+    "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+  },
+  "own_milestone": "Read-only kernel prerequisites with8 regressions; original host libsepol/secilc built, original platform CIL compiled with neverallow checks, no host installation or loading",
+  "terminal_exec_handles": [
+    44925,
+    63817,
+    53304,
+    34386,
+    43137
+  ],
+  "evidence_root": "reports/android16-host-security-preflight",
+  "recovery_snapshot": "/home/tv/recuperacion-archtv/20261031T021219Z-native-flag-generators",
+  "tests": {
+    "checker_regressions": 8,
+    "host_user_exit": 2,
+    "host_root_exit": 2,
+    "compiler_original_platform_policy_exit": 0,
+    "neverallow_disabled": false
+  },
+  "next": "Pin/review existing Linux/refpolicy integration; compare offline original AOSP policy + Linux domains and Linux host policy + original AOSP contracts (classes/MLS/contexts/neverallow). Choose by tested semantics and recoverable Linux boot. No VM restart under current contract. Continue independent roadmap work where possible.",
+  "not_done": "Active SELinux unavailable; manager/real APK paths remain blocked in current VM. Offline platform compile is not host policy or loaded enforcement.",
+  "restart_policy": "No VM/client restart or Android full boot",
+  "process_observation": {
+    "observed_at": "2026-10-31T03:51:26.616525+00:00",
+    "task_builds": "All named exec handles terminal; last host ps found no compiler/python task process",
+    "runtime_or_vm_started": false
+  },
+  "active_exec_handles": []
+}
