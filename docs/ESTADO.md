@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-surfaceflinger-contract/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-composer-reuse/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -469,3 +469,7 @@ conservando la prohibición de introducir VM o reiniciar.
 ## R3: SurfaceFlinger original estudiado
 
 [Contrato gráfico](../reports/android16-surfaceflinger-contract/validation.json): Composer real y hotplug inicial obligatorios por fuentes;48 dependencias directas presentes sólo estáticamente. Ningún SF/HAL/puente ejecutado. R1-MAC conserva el fallo SID probado.
+
+## R3: rutas de reutilización
+
+[Comparación de fuentes](../reports/android16-composer-reuse/validation.json): A16 conserva HWC2On1; HAL Wayland1.5 tiene acoplamiento a interfaces propias y sync por demostrar. Composer DRM AIDL del manifiesto requiere KMS master. Probar adaptación/reutilización antes de Composer propio; sin ejecución gráfica aceptada.

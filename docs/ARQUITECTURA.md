@@ -838,6 +838,30 @@ adquisición/presentación/liberación, resize/desconexión y errores honestos. 
 sustituir fences por éxito inmediato ni prometer contenido protegido/DRM. Después
 validar WM/entrada y Markor completo sobre esa misma salida, no sólo un frame.
 
+## R3: reutilización de Composer antes de implementar otro
+
+[Comparación fijada de fuentes](../reports/android16-composer-reuse/validation.json).
+Android16 conserva HWC2On1Adapter y el cargador HIDL2.1 adapta HWC1 con minor>=1.
+Por tanto el HAL Wayland HWC1.5 existente no se descarta por antigüedad de interfaz.
+Su revisión lineage20 fijada usa bibliotecas vendor propias de task/window/display/
+clipboard y obtiene IWaydroidTask en create_display. Copiar su .so no proporciona
+un Composer independiente. Sus fuentes dejan pendiente sincronización explícita
+por capa: releaseFenceFd=-1, espera de acquire y timeline software de retire.
+Son límites del diseño inspeccionado; no pruebas de fallo runtime ni de A16.
+
+El drm_hwcomposer de nuestro manifiesto ofrece frontend AIDL HWC3 original, pero
+abre card*, pide DRM master y hace commits KMS. El backend client sólo cambia
+composición y no elimina DrmDisplayPipeline; no convierte la salida en Wayland.
+No entregar a Android el escritorio del host para que funcione sin adaptación.
+
+Siguiente comparación funcional: compilar el adaptador/cargador original A16 y
+cerrar ABI, después medir aislamiento de dependencias/sync del HAL Wayland frente
+a reutilizar frontend HWC3 con salida Wayland adaptada. No escribir Composer desde
+cero ni introducir servicios ficticios antes de probar esas vías. Reutilizar fuente
+separada no autoriza ni requiere instalar Waydroid. Núcleos examinados Apache2.0,
+helper de gralloc MIT; conservar notices y auditar dependencias antes de distribuir.
+Ningún candidato está construido o ejecutado; R1-MAC y Markor siguen pendientes.
+
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 
 

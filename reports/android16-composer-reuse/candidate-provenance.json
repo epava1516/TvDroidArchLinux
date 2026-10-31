@@ -1,0 +1,116 @@
+[
+  {
+    "name": "wayland-hal",
+    "url": "https://github.com/waydroid/android_hardware_waydroid",
+    "commit": "5af0c114a19fc916de837ad553524cd2aade2719",
+    "files": [
+      {
+        "path": "hwcomposer/Android.bp",
+        "sha256": "3d09c518af922074c21ccfa764aebc46e8bd3e47c4507737520841f6b51358b3",
+        "git_blob": "f057bdaf4659b0a64b99584627822ab2cccf1f13",
+        "verified": true
+      },
+      {
+        "path": "hwcomposer/hwcomposer.cpp",
+        "sha256": "728a6e95adf43a159371fe385b216f959d1479108aa9553f686f3dc4acc31d81",
+        "git_blob": "d24b0358cd0d8028e0c443dfc4daad1b97a177d4",
+        "verified": true
+      },
+      {
+        "path": "hwcomposer/wayland-hwc.cpp",
+        "sha256": "49b4bd0f17bb9e8a6c8d4342544e6e16bb0d6ea6f5198a48181e094269540953",
+        "git_blob": "c75d93ccc51560a20e845e33d8bd622486f93494",
+        "verified": true
+      },
+      {
+        "path": "hwcomposer/gralloc_handler.cpp",
+        "sha256": "fb86f0d39c8c61898e26f942880c1ebbec15c77bcfa7d2b260e7c737e53dba8f",
+        "git_blob": "d2b405eb341468feaca3eb200a0688fbea02365b",
+        "verified": true
+      },
+      {
+        "path": "hwcomposer/gralloc_handler.h",
+        "sha256": "a22aabe7dfc18de0b0caac2cb1f1f80ae744ef40dfa52a3c4f96161788a11a98",
+        "git_blob": "1d045e38ffdfab183bedc633535c0c2d97b193ec",
+        "verified": true
+      }
+    ],
+    "execution": "None. Source inspection only; no hooks or build scripts run",
+    "signature_verification": "not performed"
+  },
+  {
+    "name": "drm-hwcomposer",
+    "url": "https://android.googlesource.com/platform/external/drm_hwcomposer",
+    "commit": "423951fda2f3d74538b1db5c56f321178ac4c053",
+    "files": [
+      {
+        "path": "Android.bp",
+        "sha256": "0b362a847216ac4923063b6f999196fbe4d11341a297e9a728773d41fa29d0cb",
+        "git_blob": "2562fc50c58b55721e946495b099006207b08fe6",
+        "verified": true
+      },
+      {
+        "path": "README.md",
+        "sha256": "d6238bf9795afb8834cf9ddc6c7ed46bd79c73f77defea694e9f172e73dd0de2",
+        "git_blob": "76cfd6cf5294e26361d006be1dc71da93cbb8783",
+        "verified": true
+      },
+      {
+        "path": "LICENSE",
+        "sha256": "ebdb70f58fa8708044dcbba80f51dd7c31973a7fa15ae83fa50ed7da6cf8d7a8",
+        "git_blob": "e094fc762f9505d91b8f53c8edfc492029a191e9",
+        "verified": true
+      },
+      {
+        "path": "hwc3/service.cpp",
+        "sha256": "7613b55dd395b8fef3a949fb042ba216cd17959c697865dde61467a9c780a52e",
+        "git_blob": "4f69f1e01031fbaaf79cb1a47b80790910e378aa",
+        "verified": true
+      },
+      {
+        "path": "hwc3/Composer.cpp",
+        "sha256": "ef23a93b28b111ee6b4fdf30a591c85c9fb21f37a72e8e540c255088c92bdc1a",
+        "git_blob": "c369f49ff2814ed05deabf16e6b075f738c665bb",
+        "verified": true
+      },
+      {
+        "path": "hwc3/ComposerClient.cpp",
+        "sha256": "1d4d9ec0af51383ea31e04080cef2521caa75fc0a16e6e41d215e21c5b225b25",
+        "git_blob": "eeb457390916927b22b134c897bebda0f25ef6e1",
+        "verified": true
+      },
+      {
+        "path": "hwc/HwcDisplay.h",
+        "sha256": "049b9f669134fade64a21eaed0d23dd48b267cfe94aa2f2f62aca733cdf18a35",
+        "git_blob": "c6f6c541eb02fdc9c32c4bb2a0c83649252d6d88",
+        "verified": true
+      },
+      {
+        "path": "backend/BackendClient.cpp",
+        "sha256": "20b3dc199eaf8a059378efdcd046e25f01f9b1dff195778432c036f1c6554710",
+        "git_blob": "6ade9dc0e61408c0993690d92e8c6e38b6a46a34",
+        "verified": true
+      },
+      {
+        "path": "drm/ResourceManager.cpp",
+        "sha256": "5120ed208f359c9594aa06ce82d5f84f58d328dabf43d0cbde956df74896ad81",
+        "git_blob": "c202c24910fbdd68159535aa75e03feba3a8100b",
+        "verified": true
+      },
+      {
+        "path": "drm/DrmDevice.cpp",
+        "sha256": "de98a7fa21f2f3b2cac75ccfb6f36eb1058a54b46ce51c69fc2665ee3a676564",
+        "git_blob": "21926e8866b8a4b6116c7f6bc570db47f20af020",
+        "verified": true
+      },
+      {
+        "path": "drm/DrmAtomicStateManager.cpp",
+        "sha256": "129e6da089b06e56bc41edbfc7f64122b971d0e414ba8d6f5d60e0cdb177dd33",
+        "git_blob": "2aad05f32206a7a635157ccaae082109df2690fc",
+        "verified": true
+      }
+    ],
+    "execution": "None. Source inspection only; no hooks or build scripts run",
+    "signature_verification": "not performed"
+  }
+]

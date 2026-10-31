@@ -1,0 +1,21 @@
+{
+  "scope": "R3 source reuse assessment only; no build/runtime acceptance of candidates, no Waydroid installation or Android/VM boot",
+  "assertions": {
+    "candidate_git_revisions_and_selected_blobs_verified": true,
+    "six_prior_pending_files_preserved": true
+  },
+  "evidence": [
+    {
+      "path": "reports/android16-composer-reuse/candidate-provenance.json",
+      "sha256": "1aa3e496a486bd898a87b5591b36de2ebd86ae0d912e28f5f9f9bdbc7bab60f6"
+    },
+    {
+      "path": "reports/android16-composer-reuse/findings.json",
+      "sha256": "fff3672118270e399329a3ac5ac501f1c0895a380a6a8213b11b650883da086b"
+    },
+    {
+      "path": "reports/android16-composer-reuse/original-adapter-provenance.json",
+      "sha256": "a7bcd6b331603557cc19648cd848c614256146ac0ca20e068defc96e154bafed"
+    }
+  ]
+}

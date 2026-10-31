@@ -1,0 +1,52 @@
+{
+  "scope": "R3 source reuse assessment only; no build/runtime acceptance of candidates, no Waydroid installation or Android/VM boot",
+  "observed_at": "2026-10-31T06:54:41.427215+00:00",
+  "base_commit": "5103a77c9edb65db2c67518de6eb8f3bcfc624ea",
+  "candidates": {
+    "wayland_hal": {
+      "commit": "5af0c114a19fc916de837ad553524cd2aade2719",
+      "original_interface": "HWC_DEVICE_API_VERSION_1_5, source hwcomposer.cpp:717",
+      "native_wayland": "wl_display_connect, xdg-shell/shm/dmabuf paths present",
+      "dependencies": "Android.bp vendor.waydroid clipboard/display/task/window libraries; create_display unconditionally calls IWaydroidTask::getService after Wayland setup. Cannot copy one .so as standalone generic Composer.",
+      "sync": "Source explicitly TODO per-layer explicit synchronization; releaseFenceFd=-1, sync_wait acquire fence; software timeline retire fence. Runtime correctness/performance not verified. Do not claim arbitrary sync failure from TODO alone.",
+      "license": "Inspected core files Apache2.0, gralloc_handler.cpp MIT-style permission with notice preservation. No top-level license file found in tracked filename search. Full transitive/license audit incomplete.",
+      "reuse": "Candidate source for existing Wayland/allocator paths, not adoption of Waydroid runtime. Isolate dependencies and prove adapter first."
+    },
+    "aosp_hwc2on1": {
+      "commit": "aa229558cbf04bc997ed27465c5e7ad497123d1b",
+      "sources": 8,
+      "verified_blobs": true,
+      "loader": "Original HwcLoader.h adapts major!=2 devices, rejects HWC1 minor<1; HWC1.5 not automatically incompatible. libhwc2on1adapter and HIDL2.1 passthrough targets remain defined in Android16 source.",
+      "scope": "Source availability/load path, not compiled or executed compatibility. vendor ABI/libraries/mapper/SELinux/hwbinder still required.",
+      "license": "Original source/module Apache2.0, retain applicable notices; dependencies independent."
+    },
+    "aosp_drm_composer": {
+      "commit": "423951fda2f3d74538b1db5c56f321178ac4c053",
+      "coherent_with_manifest": true,
+      "frontend": "Original HWC3 AIDL service implementation and client available",
+      "output": "ResourceManager defaults /dev/dri/card%; DrmDevice requests atomic and DRM master, fails if not master; DrmAtomicStateManager commits KMS",
+      "client_backend": "BackendClient flattens composition but HwcDisplay retains DrmDisplayPipeline. Selecting client composition does not establish Wayland output.",
+      "conflict": "Unmodified route would contend for desktop KMS ownership rather than act as Smithay Wayland client",
+      "license": "Project README/LICENSE Apache2.0; third-party/bundle audit not complete",
+      "reuse": "Evaluate frontend and metadata/command handling reuse; replacing physical output is substantive adaptation, not an environment flag."
+    }
+  },
+  "decision": {
+    "new_composer_from_scratch": false,
+    "existing_candidates_proven_insufficient": false,
+    "next_experiment": "Compile original HWC2On1Adapter and HIDL loader against exact A16 headers/libraries, identify ABI closure. Separately isolate Wayland HAL task/display/sync dependencies before adopting code. Compare measured adaptation cost with reusing HWC3 frontend plus Wayland backend. No fake services to satisfy missing dependencies.",
+    "gates": [
+      "Original Binder SID/SELinux path remains failed on current host",
+      "Matching allocator/mapper/graphic handle ABI and Bionic EGL/Vulkan closure",
+      "Acquire/release/present FD ownership and real completion tests under Smithay",
+      "Hotplug/config/vsync/resize/reconnect/error and per-app input/WM",
+      "Markor complete unmodified APK journey remains not_tested"
+    ]
+  },
+  "limitations": [
+    "Pinned-source static inspection only; actual REA MCP artifact evidence remains in prior SF milestone",
+    "No candidate built or run; no benchmark, GPU/DRM/protected-content/API acceptance",
+    "Lineage20 source is not Android16 build compatibility proof",
+    "No general SDK/Android service, JNI/Bionic ABI or ARM ISA compatibility follows from this assessment"
+  ]
+}

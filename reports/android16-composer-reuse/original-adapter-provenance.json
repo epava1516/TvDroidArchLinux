@@ -1,0 +1,53 @@
+{
+  "commit": "aa229558cbf04bc997ed27465c5e7ad497123d1b",
+  "files": [
+    {
+      "path": "graphics/composer/2.1/utils/hwc2on1adapter/Android.bp",
+      "git_blob": "fd002975bb1047e56cb7c3691bc47d543044f195",
+      "sha256": "605f5ed75262f91ec14fb75ccca2f6d059052c25d20defdc7810eef6ac25de85",
+      "url": "https://android.googlesource.com/platform/hardware/interfaces/+/aa229558cbf04bc997ed27465c5e7ad497123d1b/graphics/composer/2.1/utils/hwc2on1adapter/Android.bp?format=TEXT"
+    },
+    {
+      "path": "graphics/composer/2.1/utils/hwc2on1adapter/HWC2On1Adapter.cpp",
+      "git_blob": "f14cbc77e5d8845972024a5872f5458e13c4cfd2",
+      "sha256": "37b7bd82612f480946eb1ce292c9d7f486625cb384a28a5b36ddabe862ddad19",
+      "url": "https://android.googlesource.com/platform/hardware/interfaces/+/aa229558cbf04bc997ed27465c5e7ad497123d1b/graphics/composer/2.1/utils/hwc2on1adapter/HWC2On1Adapter.cpp?format=TEXT"
+    },
+    {
+      "path": "graphics/composer/2.1/utils/hwc2on1adapter/MiniFence.cpp",
+      "git_blob": "dfbe4d63cc046a17eb0e5a6f7db6fc593cb2485e",
+      "sha256": "1bad3ad6c7df0bf3d4d289581061fbb65478babd85746dba6ba2e347346aece5",
+      "url": "https://android.googlesource.com/platform/hardware/interfaces/+/aa229558cbf04bc997ed27465c5e7ad497123d1b/graphics/composer/2.1/utils/hwc2on1adapter/MiniFence.cpp?format=TEXT"
+    },
+    {
+      "path": "graphics/composer/2.1/utils/hwc2on1adapter/include/hwc2on1adapter/HWC2On1Adapter.h",
+      "git_blob": "6f1fb70c1d0ba72d980f9e373be20e6de5f6f047",
+      "sha256": "7bd5a6c59820e8b3fbd171de694ef1a93400260a739da7f6a6d7f688bc6f3f3d",
+      "url": "https://android.googlesource.com/platform/hardware/interfaces/+/aa229558cbf04bc997ed27465c5e7ad497123d1b/graphics/composer/2.1/utils/hwc2on1adapter/include/hwc2on1adapter/HWC2On1Adapter.h?format=TEXT"
+    },
+    {
+      "path": "graphics/composer/2.1/utils/hwc2on1adapter/include/hwc2on1adapter/MiniFence.h",
+      "git_blob": "75de764d2c951ac8f1a855627a7efe09951fe5a1",
+      "sha256": "967cb0c56dec7287ed76922f4eb51026a97f32e7b82772d584d8f8f5605066ee",
+      "url": "https://android.googlesource.com/platform/hardware/interfaces/+/aa229558cbf04bc997ed27465c5e7ad497123d1b/graphics/composer/2.1/utils/hwc2on1adapter/include/hwc2on1adapter/MiniFence.h?format=TEXT"
+    },
+    {
+      "path": "graphics/composer/2.1/utils/passthrough/Android.bp",
+      "git_blob": "7bc32c06b7981c91a22550a0da5cc293841adb07",
+      "sha256": "a6497bda0891469aaf521cec2a82a58817dc46ce9e999c8103114b3936200214",
+      "url": "https://android.googlesource.com/platform/hardware/interfaces/+/aa229558cbf04bc997ed27465c5e7ad497123d1b/graphics/composer/2.1/utils/passthrough/Android.bp?format=TEXT"
+    },
+    {
+      "path": "graphics/composer/2.1/utils/passthrough/include/composer-passthrough/2.1/HwcHal.h",
+      "git_blob": "5826b126bb5a80a4c05b5eb67dd5405a6830bce1",
+      "sha256": "c6f9ce8b96f2049b753be4f79a1f697fbc6e7bd6dd7bcb8d38624b477affbd46",
+      "url": "https://android.googlesource.com/platform/hardware/interfaces/+/aa229558cbf04bc997ed27465c5e7ad497123d1b/graphics/composer/2.1/utils/passthrough/include/composer-passthrough/2.1/HwcHal.h?format=TEXT"
+    },
+    {
+      "path": "graphics/composer/2.1/utils/passthrough/include/composer-passthrough/2.1/HwcLoader.h",
+      "git_blob": "33c914dde18c5a795c529827be82e623e9b91777",
+      "sha256": "e8bb9c65f12adaaa4da702711b060140e0d83b6e0f30c79ffe1532598cac96f0",
+      "url": "https://android.googlesource.com/platform/hardware/interfaces/+/aa229558cbf04bc997ed27465c5e7ad497123d1b/graphics/composer/2.1/utils/passthrough/include/composer-passthrough/2.1/HwcLoader.h?format=TEXT"
+    }
+  ]
+}
