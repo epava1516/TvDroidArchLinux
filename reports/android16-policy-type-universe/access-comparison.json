@@ -1,0 +1,275 @@
+{
+  "scope": "Original libsepol offline selected baseline/cross-label computations only, not full semantic preservation/live enforcement/APK acceptance",
+  "policy_sha256": "3eed74613fdeafcac3411118e6e542c99d6844692b6fea0111b3ffafa9d710b1",
+  "results": [
+    {
+      "case": "manager_add",
+      "scope": "selected baseline, not full projection",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-type-universe-linux-2/combined.bin",
+        "u:r:servicemanager:s0",
+        "u:object_r:service_manager_service:s0",
+        "service_manager",
+        "add"
+      ],
+      "previous_exit_code": 0,
+      "exit_code": 0,
+      "stdout": "requested permission add allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "system_server_activity_add",
+      "scope": "selected baseline, not full projection",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-type-universe-linux-2/combined.bin",
+        "u:r:system_server:s0",
+        "u:object_r:activity_service:s0",
+        "service_manager",
+        "add"
+      ],
+      "previous_exit_code": 0,
+      "exit_code": 0,
+      "stdout": "requested permission add allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "app_activity_find",
+      "scope": "selected baseline, not full projection",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-type-universe-linux-2/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "u:object_r:activity_service:s0",
+        "service_manager",
+        "find"
+      ],
+      "previous_exit_code": 0,
+      "exit_code": 0,
+      "stdout": "requested permission find allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "app_activity_add_denied",
+      "scope": "selected baseline, not full projection",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-type-universe-linux-2/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "u:object_r:activity_service:s0",
+        "service_manager",
+        "add"
+      ],
+      "previous_exit_code": 7,
+      "exit_code": 7,
+      "stdout": "requested permission add denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "app_property_write_denied",
+      "scope": "selected baseline, not full projection",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-type-universe-linux-2/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "u:object_r:default_prop:s0",
+        "property_service",
+        "set"
+      ],
+      "previous_exit_code": 7,
+      "exit_code": 7,
+      "stdout": "requested permission set denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "app_manager_call",
+      "scope": "selected baseline, not full projection",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-type-universe-linux-2/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "u:r:servicemanager:s0",
+        "binder",
+        "call"
+      ],
+      "previous_exit_code": 0,
+      "exit_code": 0,
+      "stdout": "requested permission call allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "invalid_type_is_error",
+      "scope": "selected baseline, not full projection",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-type-universe-linux-2/combined.bin",
+        "u:r:archtv_nonexistent:s0",
+        "u:r:servicemanager:s0",
+        "binder",
+        "call"
+      ],
+      "previous_exit_code": 1,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "libsepol.context_from_record: type archtv_nonexistent is not defined\nlibsepol.context_from_record: could not create context structure\nlibsepol.context_from_string: could not create context structure\nlibsepol.sepol_context_to_sid: could not convert u:r:archtv_nonexistent:s0 to sid\nInvalid source context u:r:archtv_nonexistent:s0\n"
+    },
+    {
+      "case": "invalid_perm_is_error",
+      "scope": "selected baseline, not full projection",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-type-universe-linux-2/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "u:r:servicemanager:s0",
+        "binder",
+        "archtv_nonexistent"
+      ],
+      "previous_exit_code": 1,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "libsepol.sepol_string_to_av_perm: could not convert archtv_nonexistent to av bit\nInvalid permission archtv_nonexistent for security class binder:  Success\n"
+    },
+    {
+      "case": "linux_init_fork",
+      "scope": "selected baseline, not full projection",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-type-universe-linux-2/combined.bin",
+        "linux.system_u:linux.system_r:linux.init_t:s0",
+        "linux.system_u:linux.system_r:linux.init_t:s0",
+        "process",
+        "fork"
+      ],
+      "previous_exit_code": 0,
+      "exit_code": 0,
+      "stdout": "requested permission fork allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "linux_init_etc_read",
+      "scope": "selected baseline, not full projection",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-type-universe-linux-2/combined.bin",
+        "linux.system_u:linux.system_r:linux.init_t:s0",
+        "linux.system_u:linux.object_r:linux.etc_t:s0",
+        "file",
+        "read"
+      ],
+      "previous_exit_code": 0,
+      "exit_code": 0,
+      "stdout": "requested permission read allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "linux_user_shadow_denied",
+      "scope": "selected baseline, not full projection",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-type-universe-linux-2/combined.bin",
+        "linux.user_u:linux.user_r:linux.user_t:s0",
+        "linux.system_u:linux.object_r:linux.shadow_t:s0",
+        "file",
+        "read"
+      ],
+      "previous_exit_code": 7,
+      "exit_code": 7,
+      "stdout": "requested permission read denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "linux_missing_android_class_error",
+      "scope": "selected baseline, not full projection",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-type-universe-linux-2/combined.bin",
+        "linux.system_u:linux.system_r:linux.init_t:s0",
+        "linux.system_u:linux.object_r:linux.etc_t:s0",
+        "service_manager",
+        "find"
+      ],
+      "previous_exit_code": 1,
+      "exit_code": 7,
+      "stdout": "requested permission find denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "aosp_context_not_linux_context",
+      "scope": "selected baseline, not full projection",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-type-universe-linux-2/combined.bin",
+        "linux.u:linux.r:linux.servicemanager:s0",
+        "linux.system_u:linux.object_r:linux.etc_t:s0",
+        "file",
+        "read"
+      ],
+      "previous_exit_code": 1,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "libsepol.context_from_record: user linux.u is not defined\nlibsepol.context_from_record: could not create context structure\nlibsepol.context_from_string: could not create context structure\nlibsepol.sepol_context_to_sid: could not convert linux.u:linux.r:linux.servicemanager:s0 to sid\nInvalid source context linux.u:linux.r:linux.servicemanager:s0\n"
+    },
+    {
+      "case": "linux_context_not_aosp_context",
+      "scope": "selected baseline, not full projection",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-type-universe-linux-2/combined.bin",
+        "system_u:system_r:init_t:s0",
+        "u:r:servicemanager:s0",
+        "binder",
+        "call"
+      ],
+      "previous_exit_code": 1,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "libsepol.context_from_record: user system_u is not defined\nlibsepol.context_from_record: could not create context structure\nlibsepol.context_from_string: could not create context structure\nlibsepol.sepol_context_to_sid: could not convert system_u:system_r:init_t:s0 to sid\nInvalid source context system_u:system_r:init_t:s0\n"
+    },
+    {
+      "case": "app_original_proc_search",
+      "scope": "cross-label diagnostic, not actual syscall/APK",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-type-universe-linux-2/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "u:object_r:proc:s0",
+        "dir",
+        "search"
+      ],
+      "exit_code": 0,
+      "stdout": "requested permission search allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "app_linux_proc_search",
+      "scope": "cross-label diagnostic, not actual syscall/APK",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-type-universe-linux-2/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "linux.system_u:linux.object_r:linux.proc_t:s0",
+        "dir",
+        "search"
+      ],
+      "exit_code": 7,
+      "stdout": "requested permission search denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "app_original_meminfo_read",
+      "scope": "cross-label diagnostic, not actual syscall/APK",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-type-universe-linux-2/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "u:object_r:proc_meminfo:s0",
+        "file",
+        "read"
+      ],
+      "exit_code": 0,
+      "stdout": "requested permission read allowed\n",
+      "stderr": ""
+    }
+  ]
+}

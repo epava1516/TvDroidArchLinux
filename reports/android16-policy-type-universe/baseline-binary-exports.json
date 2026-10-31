@@ -1,0 +1,38 @@
+{
+  "scope": "Original MLS kernel policy binary-to-CIL export for comparison, not live policy/acceptance",
+  "tool_sha256": "563a44a6c425cc920f559e1db16183c53ee3a8b285b1ec339d2f6e8a2e6c25b4",
+  "results": [
+    {
+      "name": "aosp",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/checkpolicy-host-2/source/checkpolicy",
+        "-M",
+        "-b",
+        "-C",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-binary-projection-2/aosp.cil",
+        "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/platform-policy-original-options.bin"
+      ],
+      "exit_code": 0,
+      "input_sha256": "cf26368b0cbb9b921e78ae3830c7bfbd6b900dc2676f6a97f71ba83df611e296",
+      "output_sha256": "3575952f5595429c850ec8482bdad34e5c42033a4dd14f8e95eb5beb6e908e1e",
+      "stderr": ""
+    },
+    {
+      "name": "linux",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/checkpolicy-host-2/source/checkpolicy",
+        "-M",
+        "-b",
+        "-C",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-binary-projection-2/linux.cil",
+        "/home/tv/repositorio-principal/dist/aosp16/refpolicy-baseline-1/source/policy.30"
+      ],
+      "exit_code": 0,
+      "input_sha256": "c7753e80682533ab3522feb8432df928a0cbfa0517627b951f6274f6ccb2be84",
+      "output_sha256": "ef7c633c49f6bbcb8dd8ce3ecfc63f46b15d2e8a47dcc85dc32e5b1ab96792f0",
+      "stderr": ""
+    }
+  ]
+}

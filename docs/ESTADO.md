@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-policy-global-labels/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-policy-type-universe/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -413,3 +413,12 @@ Siguiente: integración explícita del etiquetado Linux/AOSP; ninguna base elegi
 el compilador emitió fallos neverallow antes del límite90s. not/all incluye
 tipos ajenos pese a namespaces. Siguiente: delimitar universos preservando
 proyecciones originales y comprobar mediación; no omitir aserciones.
+
+## Último resultado: compilación con universos explícitos
+
+[Compilación0 y comparaciones](../reports/android16-policy-type-universe/validation.json):
+439 atributos conservados coinciden con sus controles y nueve decisiones válidas
+se mantienen.100 atributos Linux faltaban ya en el control aislado; semántica
+completa pendiente. La app Android no puede buscar la raíz proc con etiqueta
+Linux. Siguiente: mediación precisa de etiquetas y revisión de proyecciones;
+ningún servicio/APK aceptado ni política cargada.

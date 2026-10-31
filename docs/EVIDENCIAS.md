@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+- [Composición con universos explícitos](../reports/android16-policy-type-universe/validation.json): compilador0 con aserciones;439 atributos retenidos y nueve decisiones válidas coinciden con controles.100 atributos Linux ausentes ya en control aislado; búsqueda de proc Linux por app Android denegada. No política de despliegue ni APK. [Checkpoint actual](../reports/android16-policy-type-universe/checkpoint.json).
+
 - [Universos de tipos y aserciones](../reports/android16-policy-global-labels/validation.json): 47 sustituciones de etiquetas y27 SID declaradas; compilador emite14 marcadores neverallow antes del límite90s. Namespace insuficiente para not/all; sin política aceptada ni APK. [Checkpoint actual](../reports/android16-policy-global-labels/checkpoint.json).
 
 - [Hipótesis de SID y etiquetas globales](../reports/android16-policy-sid-ownership/validation.json): dos elecciones explícitas, ambas255 en genfscon;29 coincidencias literales de contexto. Reglas/aserciones conservadas, sin base seleccionada ni host/servicios/APK aceptados. [Checkpoint actual](../reports/android16-policy-sid-ownership/checkpoint.json).

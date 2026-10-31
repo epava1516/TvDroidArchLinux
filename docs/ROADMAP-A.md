@@ -166,6 +166,12 @@ R1-MAC: [la composición de etiquetas](../reports/android16-policy-global-labels
 alcanza fallos neverallow: el namespace no acota not/all. Exigir universos
 explícitos y proyección semántica original antes de aprobar política.
 
+R1-MAC: [universos explícitos](../reports/android16-policy-type-universe/validation.json)
+compilan0 con aserciones;439 atributos retenidos y nueve decisiones válidas
+coinciden con controles. Pendientes100 atributos eliminados en el control,
+proyecciones completas y mediación: app Android→proc Linux denegado7.
+No hay política de despliegue ni readiness de servicios/APK.
+
 ## Historia · etapas anteriores, no prioridad vigente
 
 

@@ -1,0 +1,37 @@
+{
+  "observed_at": "2026-10-31T04:58:37.604655+00:00",
+  "base_commit": "23d83dca9ece94e54022014af57ed65013dbb4c8",
+  "scope": "Explicit original type universes in CIL attribute sets, original compiler/assertions, offline hypothesis not deployment or APK acceptance",
+  "previous_checkpoint": "reports/android16-policy-global-labels/checkpoint.json",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "terminal_exec_handles": [
+    5656,
+    94893,
+    95424,
+    75325,
+    46650,
+    46689,
+    18012
+  ],
+  "live_exec_handles": [],
+  "next": "Resolve Android-facing access to Linux-owned shared pseudo-filesystem labels with precise original service/application contracts, MLS and denial/isolation tests. Review100 removed Linux attributes and full rule/constraint/transition projection before any deployment. Sparse variant generated only (not compiled); no restart/load or APK acceptance.",
+  "results": "Compound compile0 with neverallow intact;199 AOSP memberships identical,240 Linux control memberships identical;100 Linux attrs absent already in standalone source/compiler control. Nine original valid access decisions preserved; Android app->Linux proc root search denied7.",
+  "observed_processes": {},
+  "validated_independent_progress": {
+    "original_binary_exports": "Both0 via original checkpolicy-M-b-C",
+    "aosp_retained_binary_attributes": 199,
+    "linux_retained_binary_attributes": 340,
+    "attribute_set_exports_all_flat_explicit": true
+  }
+}

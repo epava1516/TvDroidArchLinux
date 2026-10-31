@@ -1,0 +1,86 @@
+{
+  "scope": "Original offline CIL compiler and policy-model computations only; no installed/loaded policy, live enforcement, boot, original-service readiness or APK journey accepted",
+  "compile": {
+    "exit_code": 0,
+    "neverallow_disabled": false,
+    "elapsed_seconds": 369.3569913990068,
+    "reported_child_cpu_user_seconds": 289.711235,
+    "reported_child_cpu_system_seconds": 77.489289,
+    "max_rss_kib": 463676,
+    "limits_note": "Configured prlimit CPU300 and wall420; observed reported CPU total exceeds300. Preserve actual measurements; do not claim precise CPU-cap enforcement."
+  },
+  "attribute_projection": {
+    "aosp_original_binary_attributes_identical": 199,
+    "linux_retained_control_attributes_identical": 240,
+    "linux_original_binary_attributes_missing_in_both_control_and_compound": 100,
+    "not_proved": "Removal equivalence and full rules/constraints/transitions projection remain unproved. Binary attr comparisons not general policy equivalence."
+  },
+  "selected_access_queries": {
+    "original_valid_cases": 9,
+    "valid_results_preserved": 9,
+    "original_invalid_cases": 5,
+    "invalid_case_changed": "Linux query service_manager: class now exists in shared union; error1 becomes TE denial7, distinct from old valid permission regression"
+  },
+  "demonstrated_limitation": "Original Android untrusted_app can search original proc label (0), but Linux-owned proc root label denies search (7); original meminfo label read0. No shared-label mediation implemented, policy not ready for runtime.",
+  "sparse_variant": "Only source generation tested:1092 AOSP and25 Linux expressions with direct not/all wrapped, vs1296/44282 all-expression variant. No sparse compilation or equivalence claimed.",
+  "evidence": [
+    {
+      "path": "reports/android16-policy-type-universe/access-comparison.json",
+      "sha256": "d2a3cad5118e20e12358a60ea8356b4c86c9e2cd439a16ce0b8ef5a94aa883ed"
+    },
+    {
+      "path": "reports/android16-policy-type-universe/attribute-comparison.json",
+      "sha256": "f352589419c159b22fe02409eebc1dc2ae2c6d2e1d70986088d6920cef7a1474"
+    },
+    {
+      "path": "reports/android16-policy-type-universe/baseline-binary-exports.json",
+      "sha256": "44eb986d72e6a59065ddc7d2eedac1dee18522b567087b3c5a429a6d2362c33b"
+    },
+    {
+      "path": "reports/android16-policy-type-universe/compare-access.py",
+      "sha256": "e6a3a86e715bc60bf3f1ccfd6af54efcf5e718a5549987ab38872d7f3bf4c7e9"
+    },
+    {
+      "path": "reports/android16-policy-type-universe/compare-attributes.py",
+      "sha256": "4c645e976bf87ca99d34547a7a3839993b21a9a71c78924b803ff1f062747376"
+    },
+    {
+      "path": "reports/android16-policy-type-universe/compile-retry.json",
+      "sha256": "c8e5ad96891c86de9e04b345b82a46070daaca5efa1f7463def224c0428e0b8e"
+    },
+    {
+      "path": "reports/android16-policy-type-universe/composition-input.json",
+      "sha256": "93ca7d8884bb92948c871b7370685357f4c4c2276e8371b0cc34a629daef416d"
+    },
+    {
+      "path": "reports/android16-policy-type-universe/first-compile-result.json",
+      "sha256": "89f50486052b60467e53f45c08735e1ae2407668cc2a084ee11c95d86b670671"
+    },
+    {
+      "path": "reports/android16-policy-type-universe/linux-control-comparison.json",
+      "sha256": "dbaf2dbba8f0dbe1c76b2851bdbf863069a61bdda624e51713a123d2d2d6f92a"
+    },
+    {
+      "path": "reports/android16-policy-type-universe/reproduce.py",
+      "sha256": "1cb27f5b247c5996e775cf173777fc83172713286af1fac6d0eca313f76e5ad2"
+    },
+    {
+      "path": "reports/android16-policy-type-universe/sparse-experimental.py",
+      "sha256": "81238f177a609228d1e14875f941c2e46caba5217b03cc24597b24a93f056223"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "dist/aosp16/policy-type-universe-linux-1/combined.cil",
+      "sha256": "99f2e66a7b4e1d20b309269db0bc278a3e84375b3c4876fdbbc2890189647bc9"
+    },
+    {
+      "path": "dist/aosp16/policy-type-universe-linux-2/combined.bin",
+      "sha256": "3eed74613fdeafcac3411118e6e542c99d6844692b6fea0111b3ffafa9d710b1"
+    },
+    {
+      "path": "dist/aosp16/policy-binary-projection-2/combined.cil",
+      "sha256": "be5f3682263e5bb1a1f03f46e51da1d26638ebbfe4823f0a777ca4d740807fb1"
+    }
+  ]
+}

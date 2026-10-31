@@ -1,0 +1,1092 @@
+{
+  "scope": "All retained binary attribute memberships and concrete type names compared through original compiler export; NOT full access/constraints/transition equivalence, live enforcement, boot/services/APK proof",
+  "combined_export_argv": [
+    "/home/tv/repositorio-principal/dist/aosp16/checkpolicy-host-2/source/checkpolicy",
+    "-M",
+    "-b",
+    "-C",
+    "-o",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-binary-projection-2/combined.cil",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-type-universe-linux-2/combined.bin"
+  ],
+  "inputs": {
+    "/home/tv/repositorio-principal/dist/aosp16/policy-binary-projection-2/aosp.cil": "3575952f5595429c850ec8482bdad34e5c42033a4dd14f8e95eb5beb6e908e1e",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-binary-projection-2/linux.cil": "ef7c633c49f6bbcb8dd8ce3ecfc63f46b15d2e8a47dcc85dc32e5b1ab96792f0",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-binary-projection-2/combined.cil": "be5f3682263e5bb1a1f03f46e51da1d26638ebbfe4823f0a777ca4d740807fb1",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-type-universe-linux-2/combined.bin": "3eed74613fdeafcac3411118e6e542c99d6844692b6fea0111b3ffafa9d710b1"
+  },
+  "results": [
+    {
+      "policy": "aosp",
+      "original_types": 1937,
+      "original_binary_attributes": 199,
+      "missing_types": [],
+      "attribute_differences": [],
+      "all_binary_attribute_memberships_identical_under_prefix": true
+    },
+    {
+      "policy": "linux",
+      "original_types": 4590,
+      "original_binary_attributes": 340,
+      "missing_types": [],
+      "attribute_differences": [
+        {
+          "attribute": "auditadm_file_type",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "auth_file_type",
+          "missing": true,
+          "lost": [
+            "linux.shadow_history_t",
+            "linux.shadow_t",
+            "linux.systemd_homed_record_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "can_write_binary_policy",
+          "missing": true,
+          "lost": [
+            "linux.checkpolicy_t",
+            "linux.dpkg_t",
+            "linux.rpm_t",
+            "linux.secadm_t",
+            "linux.semanage_t",
+            "linux.sysadm_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "dbadm_application_exec_domain",
+          "missing": true,
+          "lost": [
+            "linux.dbadm_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "dbadm_file_type",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "guest_application_exec_domain",
+          "missing": true,
+          "lost": [
+            "linux.guest_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "guest_file_type",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "hadoop_init_script_file",
+          "missing": true,
+          "lost": [
+            "linux.hadoop_datanode_initrc_exec_t",
+            "linux.hadoop_jobtracker_initrc_exec_t",
+            "linux.hadoop_namenode_initrc_exec_t",
+            "linux.hadoop_secondarynamenode_initrc_exec_t",
+            "linux.hadoop_tasktracker_initrc_exec_t",
+            "linux.zookeeper_server_initrc_exec_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "hadoop_lock_file",
+          "missing": true,
+          "lost": [
+            "linux.hadoop_datanode_lock_t",
+            "linux.hadoop_jobtracker_lock_t",
+            "linux.hadoop_namenode_lock_t",
+            "linux.hadoop_secondarynamenode_lock_t",
+            "linux.hadoop_tasktracker_lock_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "hadoop_log_file",
+          "missing": true,
+          "lost": [
+            "linux.hadoop_datanode_log_t",
+            "linux.hadoop_jobtracker_log_t",
+            "linux.hadoop_log_t",
+            "linux.hadoop_namenode_log_t",
+            "linux.hadoop_secondarynamenode_log_t",
+            "linux.hadoop_tasktracker_log_t",
+            "linux.zookeeper_log_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "hadoop_pid_file",
+          "missing": true,
+          "lost": [
+            "linux.hadoop_datanode_initrc_runtime_t",
+            "linux.hadoop_jobtracker_initrc_runtime_t",
+            "linux.hadoop_namenode_initrc_runtime_t",
+            "linux.hadoop_runtime_t",
+            "linux.hadoop_secondarynamenode_initrc_runtime_t",
+            "linux.hadoop_tasktracker_initrc_runtime_t",
+            "linux.zookeeper_server_runtime_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "hadoop_tmp_file",
+          "missing": true,
+          "lost": [
+            "linux.hadoop_datanode_tmp_t",
+            "linux.hadoop_jobtracker_tmp_t",
+            "linux.hadoop_namenode_tmp_t",
+            "linux.hadoop_secondarynamenode_tmp_t",
+            "linux.hadoop_tasktracker_tmp_t",
+            "linux.hadoop_tmp_t",
+            "linux.zookeeper_server_tmp_t",
+            "linux.zookeeper_tmp_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "hadoop_var_lib_file",
+          "missing": true,
+          "lost": [
+            "linux.hadoop_datanode_var_lib_t",
+            "linux.hadoop_jobtracker_var_lib_t",
+            "linux.hadoop_namenode_var_lib_t",
+            "linux.hadoop_secondarynamenode_var_lib_t",
+            "linux.hadoop_tasktracker_var_lib_t",
+            "linux.hadoop_var_lib_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "ibendport_type",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "ibpkey_type",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "initrc_transition_domain",
+          "missing": true,
+          "lost": [
+            "linux.NetworkManager_t",
+            "linux.certmonger_t",
+            "linux.cobblerd_t",
+            "linux.ctdbd_t",
+            "linux.devicekit_power_t",
+            "linux.dhcpc_t",
+            "linux.dpkg_script_t",
+            "linux.dpkg_t",
+            "linux.gnomeclock_t",
+            "linux.init_t",
+            "linux.ipsec_mgmt_t",
+            "linux.logrotate_t",
+            "linux.ncftool_t",
+            "linux.pppd_t",
+            "linux.puppet_t",
+            "linux.realmd_t",
+            "linux.system_dbusd_t",
+            "linux.virtd_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "logadm_application_exec_domain",
+          "missing": true,
+          "lost": [
+            "linux.logadm_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "logadm_file_type",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mailserver_sender",
+          "missing": true,
+          "lost": [
+            "linux.postfix_smtp_t",
+            "linux.qmail_remote_t",
+            "linux.sendmail_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mcskillall",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mcsptraceall",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mcsreadall",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mcssetcats",
+          "missing": true,
+          "lost": [
+            "linux.condor_startd_t",
+            "linux.getty_t",
+            "linux.init_t",
+            "linux.initrc_t",
+            "linux.kernel_t",
+            "linux.oddjob_t",
+            "linux.sepgsql_ranged_proc_t",
+            "linux.virtd_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mcswriteall",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mlsdbdowngrade",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mlsdbread",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mlsdbreadtoclr",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mlsdbupgrade",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mlsdbusrecv",
+          "missing": true,
+          "lost": [
+            "linux.setroubleshootd_t",
+            "linux.system_dbusd_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mlsdbussend",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mlsdbwrite",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mlsdbwriteinrange",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mlsdbwritetoclr",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mlsfdshare",
+          "missing": true,
+          "lost": [
+            "linux.cockpit_session_t",
+            "linux.crond_t",
+            "linux.inetd_t",
+            "linux.initrc_t",
+            "linux.local_login_t",
+            "linux.newrole_t",
+            "linux.seatd_t",
+            "linux.sshd_t",
+            "linux.virtd_t",
+            "linux.xdm_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mlsfduse",
+          "missing": true,
+          "lost": [
+            "linux.cupsd_t",
+            "linux.init_t",
+            "linux.staff_wm_t",
+            "linux.sysadm_wm_t",
+            "linux.system_dbusd_t",
+            "linux.systemd_cgroups_t",
+            "linux.user_wm_t",
+            "linux.xguest_wm_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mlsfiledowngrade",
+          "missing": true,
+          "lost": [
+            "linux.cockpit_session_t",
+            "linux.cupsd_t",
+            "linux.local_login_t",
+            "linux.newrole_t",
+            "linux.passwd_t",
+            "linux.rpm_t",
+            "linux.secadm_t",
+            "linux.setfiles_t",
+            "linux.sshd_t",
+            "linux.sysadm_t",
+            "linux.udev_t",
+            "linux.xdm_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mlsfileread",
+          "missing": true,
+          "lost": [
+            "linux.NetworkManager_t",
+            "linux.auditctl_t",
+            "linux.auditd_t",
+            "linux.bootloader_t",
+            "linux.cockpit_session_t",
+            "linux.consoletype_t",
+            "linux.crond_t",
+            "linux.cupsd_t",
+            "linux.devicekit_disk_t",
+            "linux.dmidecode_t",
+            "linux.dpkg_script_t",
+            "linux.dpkg_t",
+            "linux.fsadm_t",
+            "linux.fsdaemon_t",
+            "linux.getty_t",
+            "linux.init_t",
+            "linux.initrc_t",
+            "linux.iptables_t",
+            "linux.kernel_t",
+            "linux.klogd_t",
+            "linux.load_policy_t",
+            "linux.local_login_t",
+            "linux.logrotate_t",
+            "linux.lvm_t",
+            "linux.mcelog_t",
+            "linux.mdadm_t",
+            "linux.mount_t",
+            "linux.newrole_t",
+            "linux.pam_console_t",
+            "linux.quota_t",
+            "linux.rpm_script_t",
+            "linux.rpm_t",
+            "linux.secadm_t",
+            "linux.semanage_t",
+            "linux.setfiles_t",
+            "linux.setrans_t",
+            "linux.sshd_t",
+            "linux.staff_wm_t",
+            "linux.sysadm_t",
+            "linux.sysadm_wm_t",
+            "linux.system_dbusd_t",
+            "linux.tmpreaper_t",
+            "linux.udev_t",
+            "linux.user_wm_t",
+            "linux.vbetool_t",
+            "linux.xdm_t",
+            "linux.xguest_wm_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mlsfilereadtoclr",
+          "missing": true,
+          "lost": [
+            "linux.container_engine_t",
+            "linux.crio_t",
+            "linux.dockerd_t",
+            "linux.dockerd_user_t",
+            "linux.incusd_t",
+            "linux.ksmtuned_t",
+            "linux.logwatch_t",
+            "linux.podman_t",
+            "linux.podman_user_t",
+            "linux.rootlesskit_t",
+            "linux.sssd_t",
+            "linux.system_cronjob_t",
+            "linux.virtd_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mlsfilerelabel",
+          "missing": true,
+          "lost": [
+            "linux.rpm_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mlsfilerelabeltoclr",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mlsfileupgrade",
+          "missing": true,
+          "lost": [
+            "linux.cockpit_session_t",
+            "linux.dpkg_t",
+            "linux.local_login_t",
+            "linux.logrotate_t",
+            "linux.newrole_t",
+            "linux.rpm_t",
+            "linux.secadm_t",
+            "linux.setfiles_t",
+            "linux.sshd_t",
+            "linux.sysadm_t",
+            "linux.udev_t",
+            "linux.useradd_t",
+            "linux.xdm_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mlsfilewrite",
+          "missing": true,
+          "lost": [
+            "linux.audisp_t",
+            "linux.auditadm_su_t",
+            "linux.auditd_t",
+            "linux.bootloader_t",
+            "linux.cockpit_session_t",
+            "linux.consoletype_t",
+            "linux.crond_t",
+            "linux.cupsd_t",
+            "linux.dpkg_script_t",
+            "linux.dpkg_t",
+            "linux.fsadm_t",
+            "linux.getty_t",
+            "linux.init_t",
+            "linux.initrc_t",
+            "linux.kernel_t",
+            "linux.kmod_t",
+            "linux.local_login_t",
+            "linux.logrotate_t",
+            "linux.mdadm_t",
+            "linux.mount_t",
+            "linux.newrole_t",
+            "linux.pam_console_t",
+            "linux.passwd_t",
+            "linux.rpm_script_t",
+            "linux.rpm_t",
+            "linux.samhain_t",
+            "linux.samhaind_t",
+            "linux.secadm_su_t",
+            "linux.secadm_t",
+            "linux.semanage_t",
+            "linux.setfiles_t",
+            "linux.setrans_t",
+            "linux.sshd_t",
+            "linux.staff_su_t",
+            "linux.staff_wm_t",
+            "linux.sysadm_su_t",
+            "linux.sysadm_wm_t",
+            "linux.syslogd_t",
+            "linux.tmpreaper_t",
+            "linux.udev_t",
+            "linux.user_su_t",
+            "linux.user_wm_t",
+            "linux.vbetool_t",
+            "linux.vlock_t",
+            "linux.xdm_t",
+            "linux.xguest_wm_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mlsfilewriteinrange",
+          "missing": true,
+          "lost": [
+            "linux.printer_device_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mlsfilewritetoclr",
+          "missing": true,
+          "lost": [
+            "linux.container_engine_t",
+            "linux.crio_t",
+            "linux.devicekit_disk_t",
+            "linux.dockerd_t",
+            "linux.dockerd_user_t",
+            "linux.incusd_t",
+            "linux.lvm_t",
+            "linux.podman_t",
+            "linux.podman_user_t",
+            "linux.rootlesskit_t",
+            "linux.shutdown_t",
+            "linux.virtd_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mlsipcread",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mlsipcreadtoclr",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mlsipcwrite",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mlsipcwritetoclr",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mlskeywrite",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mlskeywritetoclr",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mlsnetdowngrade",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mlsnetinbound",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mlsnetoutbound",
+          "missing": true,
+          "lost": [
+            "linux.inetd_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mlsnetread",
+          "missing": true,
+          "lost": [
+            "linux.setrans_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mlsnetreadtoclr",
+          "missing": true,
+          "lost": [
+            "linux.inetd_t",
+            "linux.init_t",
+            "linux.sssd_t",
+            "linux.system_dbusd_t",
+            "linux.virtd_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mlsnetrecvall",
+          "missing": true,
+          "lost": [
+            "linux.setrans_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mlsnetupgrade",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mlsnetwrite",
+          "missing": true,
+          "lost": [
+            "linux.cupsd_t",
+            "linux.init_t",
+            "linux.setrans_t",
+            "linux.system_dbusd_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mlsnetwriteranged",
+          "missing": true,
+          "lost": [
+            "linux.virtd_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mlsnetwritetoclr",
+          "missing": true,
+          "lost": [
+            "linux.inetd_t",
+            "linux.initrc_t",
+            "linux.sssd_t",
+            "linux.virtd_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mlsprocread",
+          "missing": true,
+          "lost": [
+            "linux.initrc_t",
+            "linux.kernel_t",
+            "linux.secadm_t",
+            "linux.setrans_t",
+            "linux.sysadm_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mlsprocreadtoclr",
+          "missing": true,
+          "lost": [
+            "linux.virtd_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mlsprocsetsl",
+          "missing": true,
+          "lost": [
+            "linux.cockpit_session_t",
+            "linux.crond_t",
+            "linux.inetd_t",
+            "linux.init_t",
+            "linux.kernel_t",
+            "linux.local_login_t",
+            "linux.newrole_t",
+            "linux.sepgsql_ranged_proc_t",
+            "linux.sshd_t",
+            "linux.xdm_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mlsprocwrite",
+          "missing": true,
+          "lost": [
+            "linux.init_t",
+            "linux.initrc_t",
+            "linux.kernel_t",
+            "linux.udev_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mlsprocwritetoclr",
+          "missing": true,
+          "lost": [
+            "linux.logrotate_t",
+            "linux.virtd_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mlsrangetrans",
+          "missing": true,
+          "lost": [
+            "linux.container_init_t",
+            "linux.container_kvm_t",
+            "linux.container_t",
+            "linux.cupsd_t",
+            "linux.qemu_t",
+            "linux.svirt_prot_exec_t",
+            "linux.svirt_t",
+            "linux.system_dbusd_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mlstrustedobject",
+          "missing": true,
+          "lost": [
+            "linux.container_engine_t",
+            "linux.crio_t",
+            "linux.crond_t",
+            "linux.cupsd_runtime_t",
+            "linux.cupsd_t",
+            "linux.devlog_t",
+            "linux.devtty_t",
+            "linux.dockerd_t",
+            "linux.dockerd_user_t",
+            "linux.initctl_t",
+            "linux.null_device_t",
+            "linux.podman_t",
+            "linux.podman_user_t",
+            "linux.ptmx_t",
+            "linux.rootlesskit_t",
+            "linux.security_t",
+            "linux.setrans_runtime_t",
+            "linux.sssd_t",
+            "linux.sssd_var_lib_t",
+            "linux.svirt_runtime_t",
+            "linux.virt_log_t",
+            "linux.zero_device_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mlstrustedsocket",
+          "missing": true,
+          "lost": [
+            "linux.syslogd_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mlsxwinread",
+          "missing": true,
+          "lost": [
+            "linux.staff_wm_t",
+            "linux.sysadm_wm_t",
+            "linux.user_wm_t",
+            "linux.xguest_wm_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mlsxwinreadcolormap",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mlsxwinreadproperty",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mlsxwinreadselection",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mlsxwinreadtoclr",
+          "missing": true,
+          "lost": [
+            "linux.xserver_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mlsxwinwrite",
+          "missing": true,
+          "lost": [
+            "linux.staff_wm_t",
+            "linux.sysadm_wm_t",
+            "linux.user_wm_t",
+            "linux.xguest_wm_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mlsxwinwritecolormap",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mlsxwinwriteproperty",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mlsxwinwriteselection",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mlsxwinwritetoclr",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mlsxwinwritexinput",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "mmap_low_domain_type",
+          "missing": true,
+          "lost": [
+            "linux.chromium_naclhelper_t",
+            "linux.spc_t",
+            "linux.vbetool_t",
+            "linux.wine_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "mono_domain",
+          "missing": true,
+          "lost": [
+            "linux.mono_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "munin_plugin_tmp_content",
+          "missing": true,
+          "lost": [
+            "linux.disk_munin_plugin_tmp_t",
+            "linux.mail_munin_plugin_tmp_t",
+            "linux.selinux_munin_plugin_tmp_t",
+            "linux.services_munin_plugin_tmp_t",
+            "linux.system_munin_plugin_tmp_t",
+            "linux.unconfined_munin_plugin_tmp_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "privrangetrans",
+          "missing": true,
+          "lost": [
+            "linux.initrc_t",
+            "linux.kernel_t",
+            "linux.run_init_t",
+            "linux.virtd_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "secadm_file_type",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "security_file_type",
+          "missing": true,
+          "lost": [
+            "linux.audit_spool_t",
+            "linux.auditd_etc_t",
+            "linux.auditd_log_t",
+            "linux.dkim_milter_private_key_t",
+            "linux.dnssec_t",
+            "linux.fapolicyd_compiled_rules_t",
+            "linux.krb5_keytab_t",
+            "linux.monit_conf_t",
+            "linux.openarc_milter_private_key_t",
+            "linux.policy_config_t",
+            "linux.shadow_history_t",
+            "linux.shadow_t",
+            "linux.systemd_homed_record_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "serial_device",
+          "missing": true,
+          "lost": [
+            "linux.tty_device_t",
+            "linux.usbtty_device_t",
+            "linux.user_tty_device_t",
+            "linux.virtio_device_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "server_ptynode",
+          "missing": true,
+          "lost": [
+            "linux.sshd_devpts_t",
+            "linux.systemd_machined_devpts_t",
+            "linux.systemd_nspawn_devpts_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "set_curr_context",
+          "missing": true,
+          "lost": [
+            "linux.anaconda_t",
+            "linux.apt_t",
+            "linux.chromium_t",
+            "linux.dpkg_script_t",
+            "linux.dpkg_t",
+            "linux.firstboot_t",
+            "linux.httpd_unconfined_script_t",
+            "linux.inetd_child_t",
+            "linux.init_t",
+            "linux.initrc_t",
+            "linux.kernel_t",
+            "linux.ldconfig_t",
+            "linux.livecd_t",
+            "linux.mono_t",
+            "linux.nagios_unconfined_plugin_t",
+            "linux.puppet_t",
+            "linux.samba_unconfined_script_t",
+            "linux.sepgsql_ranged_proc_t",
+            "linux.spc_t",
+            "linux.spc_user_t",
+            "linux.unconfined_cronjob_t",
+            "linux.unconfined_execmem_t",
+            "linux.unconfined_java_t",
+            "linux.unconfined_mount_t",
+            "linux.unconfined_munin_plugin_t",
+            "linux.unconfined_qemu_t",
+            "linux.unconfined_sendmail_t",
+            "linux.unconfined_t",
+            "linux.wine_t",
+            "linux.xdm_t",
+            "linux.xserver_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "spoolfile",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "staff_file_type",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "sysadm_file_type",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "telepathy_executable",
+          "missing": true,
+          "lost": [
+            "linux.telepathy_gabble_exec_t",
+            "linux.telepathy_idle_exec_t",
+            "linux.telepathy_logger_exec_t",
+            "linux.telepathy_mission_control_exec_t",
+            "linux.telepathy_msn_exec_t",
+            "linux.telepathy_salut_exec_t",
+            "linux.telepathy_sofiasip_exec_t",
+            "linux.telepathy_stream_engine_exec_t",
+            "linux.telepathy_sunshine_exec_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "tls_privkey_type",
+          "missing": true,
+          "lost": [
+            "linux.tls_privkey_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "unconfined_file_type",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "user_file_type",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "usercanread",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "wayland_client_sandboxed",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "webadm_application_exec_domain",
+          "missing": true,
+          "lost": [
+            "linux.webadm_t"
+          ],
+          "gained": []
+        },
+        {
+          "attribute": "webadm_file_type",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        },
+        {
+          "attribute": "xguest_file_type",
+          "missing": true,
+          "lost": [],
+          "gained": []
+        }
+      ],
+      "all_binary_attribute_memberships_identical_under_prefix": false
+    }
+  ]
+}

@@ -636,6 +636,37 @@ clases y permisos globales y accesos entre ambos lados. No desactivar neverallow
 ni declarar equivalencia por conservar textos o unas consultas. Este fallo
 descarta la composición actual, no las dos estrategias adaptadas completas.
 
+## Universos explícitos: compilación y límite de mediación
+
+[Resultados reproducibles](../reports/android16-policy-type-universe/validation.json):
+las expresiones de atributos se intersectan con1937 tipos AOSP y4590 Linux.
+El primer presupuesto180s se agota; el reintento del mismo CIL termina0 en369s
+con neverallow habilitado y máximo RSS informado463676KiB. Los límites CPU
+configurados y tiempos informados se conservan sin afirmar enforcement exacto
+del presupuesto. No se cargó la política.
+
+La exportación original checkpolicy compara todos los atributos retenidos:
+199 AOSP coinciden;100 de los340 Linux originales ya faltan en el control
+CIL/compilador aislado, y los240 conservados coinciden en la composición.
+Esto no prueba equivalencia de los100 eliminados, reglas, restricciones MLS,
+transiciones ni decisiones generales. Nueve consultas originales válidas
+conservan permiso/denegación. La consulta Linux a service_manager cambia de
+error de clase inexistente a denegación porque la unión incorpora esa clase;
+no confundir un error antiguo con un permiso original.
+
+Hay un límite demostrado: untrusted_app puede buscar el directorio proc con
+la etiqueta Android, pero se le deniega la búsqueda del proc_t Linux global.
+La lectura del proc_meminfo original sigue permitida. Compilar con aserciones
+no aporta por sí solo mediación de etiquetas compartidas. Resolver accesos
+precisos de servicios/apps a recursos Linux preservando denegaciones y MLS;
+no conceder acceso global para superar este caso. El host, gestores originales
+y todas las etapas APK permanecen sin aceptar.
+
+Se generó, sin compilar, una variante que intersecta sólo expresiones not/all
+(1092 AOSP/25 Linux); es experimental y no sustituye los resultados del
+prototipo completo. No se selecciona por asumir que la variante más rápida
+conserva semántica.
+
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 
 

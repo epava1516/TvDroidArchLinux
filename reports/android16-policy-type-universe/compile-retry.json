@@ -1,0 +1,28 @@
+{
+  "argv": [
+    "prlimit",
+    "--as=2147483648",
+    "--cpu=300",
+    "--",
+    "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/source/secilc/secilc",
+    "-m",
+    "-M",
+    "true",
+    "-G",
+    "-c",
+    "30",
+    "-o",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-type-universe-linux-2/combined.bin",
+    "-f",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-type-universe-linux-2/combined.fc",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-type-universe-linux-1/combined.cil"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 369.3569913990068,
+  "cpu_user_seconds": 289.711235,
+  "cpu_system_seconds": 77.489289,
+  "max_rss_kib": 463676,
+  "input_sha256": "99f2e66a7b4e1d20b309269db0bc278a3e84375b3c4876fdbbc2890189647bc9",
+  "stderr": "",
+  "stdout": ""
+}

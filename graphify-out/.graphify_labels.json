@@ -9,8 +9,6 @@
   "20": "common.sh",
   "21": "72-anvil-smoke.sh",
   "22": "82-rust-smoke.sh",
-  "24": "Base actual y herramientas conservadas",
-  "25": "Desarrollo del compositor Rust",
   "27": "68-graphify.sh",
   "28": "graphify.sh",
   "31": "archtv-core",
