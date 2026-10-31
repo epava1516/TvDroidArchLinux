@@ -981,3 +981,27 @@ qué contexto global representa cada SID y cómo conservar la mediación Android
 y Linux, junto a restricciones MLS y accesos entre dominios. No eliminar
 contextos/asserts para aceptar una compilación. Ninguna política elegida, cargada
 o validada con servicios/APK; no se reinició la VM.
+
+## SID y pseudoarchivos: conflicto de etiquetado compartido
+
+[Dos hipótesis ejecutadas offline](../reports/android16-policy-sid-ownership/validation.json):
+seleccionar explícitamente los contextos SID originales Linux o AOSP conserva
+las reglas y aserciones, pero sustituye27 mapeos iniciales de la otra fuente.
+Es una hipótesis de integración, sin equivalencia semántica demostrada. Ambas
+fallan después (255) en el procesamiento original genfscon. Se registran29
+coincidencias exactas de sistema/ruta/selector con contextos diferentes; no es
+un análisis exhaustivo de precedencias y subrutas.
+
+El código original cil_post.c compara sistema de archivos/ruta y rechaza
+contextos distintos para la misma clave. Ni namespaces de tipos ni seleccionar
+SID separan automáticamente el etiquetado compartido. Debe diseñarse una tabla
+global coherente para pseudoarchivos Linux con mediación y accesos Android
+explícitos, conservando las comprobaciones; no retirar etiquetas en silencio.
+La elección de base sigue abierta hasta probar transiciones/denegaciones y
+servicios originales, además de arranque y recuperación del host. No se ha
+cargado política ni alterado el arranque de esta VM.
+
+El [proyecto SELinux](https://github.com/SELinuxProject/selinux-notebook/blob/main/src/computing_security_contexts.md)
+describe herencia desde el contexto kernel y transiciones de init durante exec;
+la política refpolicy fijada define kernel_t/init_t y la AOSP kernel/unlabeled.
+Es fundamento de la decisión pendiente, no una prueba de nuestro arranque.

@@ -1,0 +1,47 @@
+{
+  "scope": "Offline initial SID ownership hypotheses, not selected policy, boot, enforcement, services or APK acceptance",
+  "outcomes": {
+    "linux": 255,
+    "aosp": 255
+  },
+  "retained_assertions": "All access rules/neverallow/neverallowx retained;27 initial SID mappings from non-owner explicitly replaced and recorded, not equivalence preservation",
+  "next_conflict": "Both variants reach original compiler genfscon postprocessing failure;29 exact original filesystem/path/class keys have different context literals, not exhaustive prefix/precedence conflicts",
+  "source_explanation": "cil_post.c303 compares genfscon filesystem/path;2277 context-rule processor rejects duplicate keys with different contexts even with multiple_decls;2392 returns observed failure. Warn-level detailed conflicts suppressed at default logging. Source review, not kernel execution.",
+  "decision": "No owner selected for deployment. Linux-managed boot/labels require explicit source integration with Android-facing accesses and original service contracts preserved; do not strip conflicting label maps to obtain compile success.",
+  "sources": [
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/selinux-original-full/source/external/selinux/libsepol/cil/src/cil_post.c",
+      "sha256": "3df0fff4909bed16d840956558ad54debaac248dee59c3630ff5d3b8c6eb372c"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/sepolicy/source/system/sepolicy/private/initial_sid_contexts",
+      "sha256": "c6062ea3690f13c60c665063d58bcc246a736c103e770bc7008cfb25606e3f16"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/refpolicy-review-1/source/policy/modules/kernel/kernel.te",
+      "sha256": "4fb424c1da4b76cd242065f972d4989a61364c4e4dc95e9efaeaff17135d613f"
+    }
+  ],
+  "external_reference": {
+    "url": "https://github.com/SELinuxProject/selinux-notebook/blob/main/src/computing_security_contexts.md",
+    "scope": "Primary project documentation context for kernel/init inheritance and exec transitions; not exact running kernel verification"
+  },
+  "evidence": [
+    {
+      "path": "reports/android16-policy-sid-ownership/aosp-owner.json",
+      "sha256": "444b3277ec52bf5b48ccbe09d5fa5d8989e4efdc07c6865b50981da3afa8b29f"
+    },
+    {
+      "path": "reports/android16-policy-sid-ownership/genfs-literal-conflicts.json",
+      "sha256": "5b2cd5394c67f1bc4636b25774c50f31ff9c572cb1a6385a263d44e97b0b7336"
+    },
+    {
+      "path": "reports/android16-policy-sid-ownership/linux-owner.json",
+      "sha256": "5702b5ef5d51a26d61c1c78b424a738aa6e7a64c22d4d269c84cd07024c23149"
+    },
+    {
+      "path": "reports/android16-policy-sid-ownership/reproduce.py",
+      "sha256": "067c3518a0733112f72fb974c03275942b4cb313d8b31250167c1fd9d9286222"
+    }
+  ]
+}

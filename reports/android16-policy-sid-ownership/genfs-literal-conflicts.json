@@ -1,0 +1,209 @@
+{
+  "scope": "Exact original genfscon key intersections, not all path precedence/overlap conflicts; namespace Linux contexts also differ",
+  "count": 29,
+  "conflicts": [
+    {
+      "filesystem": "binfmt_misc",
+      "path": "\"/\"",
+      "class_selector": "",
+      "aosp_context": "(u object_r binfmt_miscfs ((s0) (s0)))",
+      "linux_original_context": "(system_u object_r binfmt_misc_fs_t ((s0) (s0)))"
+    },
+    {
+      "filesystem": "bpf",
+      "path": "\"/\"",
+      "class_selector": "",
+      "aosp_context": "(u object_r fs_bpf ((s0) (s0)))",
+      "linux_original_context": "(system_u object_r bpf_t ((s0) (s0)))"
+    },
+    {
+      "filesystem": "cgroup",
+      "path": "\"/\"",
+      "class_selector": "",
+      "aosp_context": "(u object_r cgroup ((s0) (s0)))",
+      "linux_original_context": "(system_u object_r cgroup_t ((s0) (s0)))"
+    },
+    {
+      "filesystem": "cgroup2",
+      "path": "\"/\"",
+      "class_selector": "",
+      "aosp_context": "(u object_r cgroup_v2 ((s0) (s0)))",
+      "linux_original_context": "(system_u object_r cgroup_t ((s0) (s0)))"
+    },
+    {
+      "filesystem": "configfs",
+      "path": "\"/\"",
+      "class_selector": "",
+      "aosp_context": "(u object_r configfs ((s0) (s0)))",
+      "linux_original_context": "(system_u object_r configfs_t ((s0) (s0)))"
+    },
+    {
+      "filesystem": "debugfs",
+      "path": "\"/\"",
+      "class_selector": "",
+      "aosp_context": "(u object_r debugfs ((s0) (s0)))",
+      "linux_original_context": "(system_u object_r debugfs_t ((s0) (s0)))"
+    },
+    {
+      "filesystem": "exfat",
+      "path": "\"/\"",
+      "class_selector": "",
+      "aosp_context": "(u object_r exfat ((s0) (s0)))",
+      "linux_original_context": "(system_u object_r dosfs_t ((s0) (s0)))"
+    },
+    {
+      "filesystem": "functionfs",
+      "path": "\"/\"",
+      "class_selector": "",
+      "aosp_context": "(u object_r functionfs ((s0) (s0)))",
+      "linux_original_context": "(system_u object_r usbfs_t ((s0) (s0)))"
+    },
+    {
+      "filesystem": "fuse",
+      "path": "\"/\"",
+      "class_selector": "",
+      "aosp_context": "(u object_r fuse ((s0) (s0)))",
+      "linux_original_context": "(system_u object_r fusefs_t ((s0) (s0)))"
+    },
+    {
+      "filesystem": "fuseblk",
+      "path": "\"/\"",
+      "class_selector": "",
+      "aosp_context": "(u object_r fuseblk ((s0) (s0)))",
+      "linux_original_context": "(system_u object_r fusefs_t ((s0) (s0)))"
+    },
+    {
+      "filesystem": "fusectl",
+      "path": "\"/\"",
+      "class_selector": "",
+      "aosp_context": "(u object_r fusectlfs ((s0) (s0)))",
+      "linux_original_context": "(system_u object_r fusefs_t ((s0) (s0)))"
+    },
+    {
+      "filesystem": "inotifyfs",
+      "path": "\"/\"",
+      "class_selector": "",
+      "aosp_context": "(u object_r inotify ((s0) (s0)))",
+      "linux_original_context": "(system_u object_r inotifyfs_t ((s0) (s0)))"
+    },
+    {
+      "filesystem": "proc",
+      "path": "\"/sys/vm/overcommit_memory\"",
+      "class_selector": "",
+      "aosp_context": "(u object_r proc_overcommit_memory ((s0) (s0)))",
+      "linux_original_context": "(system_u object_r sysctl_vm_overcommit_t ((s0) (s0)))"
+    },
+    {
+      "filesystem": "proc",
+      "path": "\"/sys/kernel/modprobe\"",
+      "class_selector": "",
+      "aosp_context": "(u object_r usermodehelper ((s0) (s0)))",
+      "linux_original_context": "(system_u object_r sysctl_modprobe_t ((s0) (s0)))"
+    },
+    {
+      "filesystem": "proc",
+      "path": "\"/sys/kernel/hotplug\"",
+      "class_selector": "",
+      "aosp_context": "(u object_r usermodehelper ((s0) (s0)))",
+      "linux_original_context": "(system_u object_r sysctl_hotplug_t ((s0) (s0)))"
+    },
+    {
+      "filesystem": "proc",
+      "path": "\"/kallsyms\"",
+      "class_selector": "",
+      "aosp_context": "(u object_r proc_kallsyms ((s0) (s0)))",
+      "linux_original_context": "(system_u object_r system_map_t ((s0) (s0)))"
+    },
+    {
+      "filesystem": "proc",
+      "path": "\"/sys/net\"",
+      "class_selector": "",
+      "aosp_context": "(u object_r proc_net ((s0) (s0)))",
+      "linux_original_context": "(system_u object_r sysctl_net_t ((s0) (s0)))"
+    },
+    {
+      "filesystem": "proc",
+      "path": "\"/kmsg\"",
+      "class_selector": "",
+      "aosp_context": "(u object_r proc_kmsg ((s0) (s0)))",
+      "linux_original_context": "(system_u object_r proc_kmsg_t ((s0) (s0)))"
+    },
+    {
+      "filesystem": "proc",
+      "path": "\"/net\"",
+      "class_selector": "",
+      "aosp_context": "(u object_r proc_net ((s0) (s0)))",
+      "linux_original_context": "(system_u object_r proc_net_t ((s0) (s0)))"
+    },
+    {
+      "filesystem": "proc",
+      "path": "\"/\"",
+      "class_selector": "",
+      "aosp_context": "(u object_r proc ((s0) (s0)))",
+      "linux_original_context": "(system_u object_r proc_t ((s0) (s0)))"
+    },
+    {
+      "filesystem": "pstore",
+      "path": "\"/\"",
+      "class_selector": "",
+      "aosp_context": "(u object_r pstorefs ((s0) (s0)))",
+      "linux_original_context": "(system_u object_r pstore_t ((s0) (s0)))"
+    },
+    {
+      "filesystem": "rootfs",
+      "path": "\"/\"",
+      "class_selector": "",
+      "aosp_context": "(u object_r rootfs ((s0) (s0)))",
+      "linux_original_context": "(system_u object_r root_t ((s0) (s0)))"
+    },
+    {
+      "filesystem": "securityfs",
+      "path": "\"/\"",
+      "class_selector": "",
+      "aosp_context": "(u object_r securityfs ((s0) (s0)))",
+      "linux_original_context": "(system_u object_r security_t ((s0) (s0)))"
+    },
+    {
+      "filesystem": "selinuxfs",
+      "path": "\"/\"",
+      "class_selector": "",
+      "aosp_context": "(u object_r selinuxfs ((s0) (s0)))",
+      "linux_original_context": "(system_u object_r security_t ((s0) (s0)))"
+    },
+    {
+      "filesystem": "sysfs",
+      "path": "\"/kernel/mm/transparent_hugepage\"",
+      "class_selector": "",
+      "aosp_context": "(u object_r sysfs_transparent_hugepage ((s0) (s0)))",
+      "linux_original_context": "(system_u object_r transparent_hugepage_sysfs_t ((s0) (s0)))"
+    },
+    {
+      "filesystem": "sysfs",
+      "path": "\"/\"",
+      "class_selector": "",
+      "aosp_context": "(u object_r sysfs ((s0) (s0)))",
+      "linux_original_context": "(system_u object_r sysfs_t ((s0) (s0)))"
+    },
+    {
+      "filesystem": "tracefs",
+      "path": "\"/\"",
+      "class_selector": "",
+      "aosp_context": "(u object_r debugfs_tracing_debug ((s0) (s0)))",
+      "linux_original_context": "(system_u object_r tracefs_t ((s0) (s0)))"
+    },
+    {
+      "filesystem": "usbfs",
+      "path": "\"/\"",
+      "class_selector": "",
+      "aosp_context": "(u object_r usbfs ((s0) (s0)))",
+      "linux_original_context": "(system_u object_r usbfs_t ((s0) (s0)))"
+    },
+    {
+      "filesystem": "vfat",
+      "path": "\"/\"",
+      "class_selector": "",
+      "aosp_context": "(u object_r vfat ((s0) (s0)))",
+      "linux_original_context": "(system_u object_r dosfs_t ((s0) (s0)))"
+    }
+  ]
+}

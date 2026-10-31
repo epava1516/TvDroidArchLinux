@@ -1,0 +1,26 @@
+{
+  "observed_at": "2026-10-31T04:40:51.220904+00:00",
+  "base_commit": "5a587dcd708d22a916079a62af8003ff49339e11",
+  "scope": "Explicit initial SID ownership hypotheses only; preserve all access rules/assertions, no load or host acceptance",
+  "previous_checkpoint": "reports/android16-linux-policy-namespace/checkpoint.json",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "terminal_exec_handles": [
+    82494,
+    34324,
+    41538
+  ],
+  "live_exec_handles": [],
+  "next": "Use original compiler diagnostics/source to identify exact genfscon collision rejection; explicit Linux-owned pseudo-filesystem label integration and Android-facing mediation required. Do not discard conflicting contexts merely to compile; no live policy deployment.",
+  "results": "Both explicit SID ownership variants rejected255 during genfscon handling; access rules/assertions retained. Literal genfs overlap count 29"
+}

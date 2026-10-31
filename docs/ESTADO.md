@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-linux-policy-namespace/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-policy-sid-ownership/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -399,3 +399,10 @@ qué contexto global representa cada SID y cómo conservar la mediación Android
 y Linux, junto a restricciones MLS y accesos entre dominios. No eliminar
 contextos/asserts para aceptar una compilación. Ninguna política elegida, cargada
 o validada con servicios/APK; no se reinició la VM.
+
+## Resultado más reciente de integración de política
+
+[SID/etiquetas](../reports/android16-policy-sid-ownership/validation.json): ambas
+hipótesis de SID fallan255 en genfscon;29 coincidencias literales de etiqueta.
+Siguiente: integración explícita del etiquetado Linux/AOSP; ninguna base elegida.
+[Decisión y límites](ARQUITECTURA.md#sid-y-pseudoarchivos-conflicto-de-etiquetado-compartido).

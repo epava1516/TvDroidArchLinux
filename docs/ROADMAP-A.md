@@ -529,3 +529,8 @@ qué contexto global representa cada SID y cómo conservar la mediación Android
 y Linux, junto a restricciones MLS y accesos entre dominios. No eliminar
 contextos/asserts para aceptar una compilación. Ninguna política elegida, cargada
 o validada con servicios/APK; no se reinició la VM.
+
+R1-MAC: las dos hipótesis de SID alcanzan conflicto genfscon (255), con29
+coincidencias de etiquetas originales. Requiere tabla global justificada y
+pruebas de mediación/transiciones; no omitir mapeos para compilar.
+[Evidencia](../reports/android16-policy-sid-ownership/validation.json).
