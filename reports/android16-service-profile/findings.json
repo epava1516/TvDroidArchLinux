@@ -1,0 +1,86 @@
+{
+  "scope": "Original AOSP service/action parser preflight at canonical paths; original runtime builtin map used only for name/arity lookup, NEVER invoked. No service/action execution or backend acceptance.",
+  "artifact": {
+    "path": "dist/aosp16/service-profile-build-3/verify-service-profile",
+    "sha256": "704a46badccfd24712c610c4d9bbc56741afe1dd2550644ac183b38d935011a9",
+    "bytes": 1055912
+  },
+  "canonical_evidence": "ev_be47347547701db80fd8bbfa05710007c1b72d287791e8fa1003ac5c69327137",
+  "services": [
+    {
+      "name": "servicemanager",
+      "executable": "/system/bin/servicemanager",
+      "uid": 1000,
+      "gid": 1000,
+      "pid": 0,
+      "flags": 2080,
+      "supplementary_gids": [
+        3009
+      ]
+    },
+    {
+      "name": "vndservicemanager",
+      "executable": "/vendor/bin/vndservicemanager",
+      "uid": 1000,
+      "gid": 1000,
+      "pid": 0,
+      "flags": 2048,
+      "supplementary_gids": [
+        3009
+      ]
+    },
+    {
+      "name": "hwservicemanager",
+      "executable": "/system/system_ext/bin/hwservicemanager",
+      "uid": 1000,
+      "gid": 1000,
+      "pid": 0,
+      "flags": 2209,
+      "supplementary_gids": [
+        3009
+      ]
+    },
+    {
+      "name": "vendor.hwcomposer-2-1",
+      "executable": "/vendor/bin/hw/android.hardware.graphics.composer@2.1-service",
+      "uid": 1000,
+      "gid": 1003,
+      "pid": 0,
+      "flags": 0,
+      "supplementary_gids": [
+        1026
+      ]
+    }
+  ],
+  "checks": [
+    "Four original RC hashes verified against source archives/Git; system/system_ext RC also match actual GSI bytes",
+    "Canonical-path native parse UID10000/caps0/NNP1 exits0:4services,1action,parse_errors0",
+    "Unknown service option and bad action arity return read_ok1 but parse_errors1 and exit2; partial parsed entries must not be activated",
+    "Absent file returns read_ok0/parse_errors0 and exit2; IO success and semantic error count both required",
+    "Missing vendor source-profile value abort127 retained; verified BP4A-derived202504 file supplied read-only, not hardware/policy certification"
+  ],
+  "source_decisions": [
+    "Use complete original ServiceParser/ActionParser/ServiceList and keyword/arity table; do not implement another RC grammar",
+    "Command::CheckCommand invokes func_; full runtime map cannot be passed to CheckAllCommands in static verifier. Initial prototype linked but NEVER executed; corrected wrapper omits it and declares builtin_value_checks=not_performed",
+    "Official host_init_verifier uses separate check_builtins/generated stub maps, not an executable runtime or all-value validation. No generated verifier success is claimed as service compatibility",
+    "Original liblmkd_utils entire source compiled; original GSI libxml2/libbootloader_message added for full runtime-table link. No lmkd/recovery operation executed"
+  ],
+  "backend_gates": [
+    "Reject whole configuration on file/parse errors; never activate partial ServiceList",
+    "Create original SIGCHLD fd while ThreadCount()==1, before property threads, and drive original reaper",
+    "Service::Start returns after fork/cgroup/launch setup, not manager registration/API readiness; parent can still observe subsequent child failure",
+    "Original context/UID/groups/capabilities/cgroups/task_profiles/mount-namespace and environment semantics required",
+    "Original critical/onrestart/reboot_on_failure actions need explicit Linux-owned failure/control policy; no host reboot or broad Android boot scripts",
+    "Android UID1000 in parsed profiles numerically equals current Linux session UID1000; execution requires proven namespace/host identity mapping and MAC, not naive name mapping"
+  ],
+  "limits": [
+    "No actual Service::Start/Stop, daemon registration/reaping/restart or complete service controller implemented",
+    "No builtin argument-value checks, task-profile existence/implementation, executable availability/signatures or service target closure accepted",
+    "Local CreateParser has no initialized vendor subcontext; canonical filenames do not establish full subcontext/SELinux mediation",
+    "Vendor RC staged only, no vendor service binaries installed; GSI/source build equivalence not complete",
+    "PID0 output is source object metadata; no claim of exhaustive syscall/process trace. Wrapper source contains no Start/action invocation",
+    "Native unprivileged parser regression not APK compatibility or app isolation",
+    "MCP sampling/image/environment/filesystem limitations retained; projections not complete authenticated Evidence"
+  ],
+  "next": "Implement the Linux-owned original-service lifecycle with SIGCHLD/reaper initialized before property workers, strict immutable profiles and explicit failure/control handling. Require R1-MAC and identity mapping before actual original manager/Composer service acceptance; continue full Markor/real-APK gates."
+}

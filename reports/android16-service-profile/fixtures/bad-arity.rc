@@ -1,0 +1,2 @@
+on property:persist.archtv.test=1
+    restart

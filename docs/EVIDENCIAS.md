@@ -1,6 +1,8 @@
 # Índice de evidencias
 
-- [R1: supervisor Rust↔worker Bionic](../reports/android16-rust-supervisor/findings.json): canal heredado/pidfd, MCP diagnóstico0 y rechazo normal1 sin SELinux;13 pruebas Rust, check compositor y clippy0. ACK y salida real requeridos, modo diagnóstico diferenciado. Logs restringidos/solapados históricos; rust-tests-final.log es verificación final. No supervisor completo, MAC, instalación ni APK. [Checkpoint actual](../reports/android16-rust-supervisor/checkpoint.json).
+- [R1/R2: perfiles originales de servicios](../reports/android16-service-profile/findings.json): MCP canonical0/staged0, cuatro RC con procedencia; negativos opción/arity/archivo2 y aborto inicial vendor127 conservados. Source parser y mapa sólo lookup, no CheckAllCommands/ejecución ni validación de valores builtin. Gate SIGCHLD/identidad/readiness/fallos Linux documentado. [Checkpoint actual](../reports/android16-service-profile/checkpoint.json).
+
+- [R1: supervisor Rust↔worker Bionic](../reports/android16-rust-supervisor/findings.json): canal heredado/pidfd, MCP diagnóstico0 y rechazo normal1 sin SELinux;13 pruebas Rust, check compositor y clippy0. ACK y salida real requeridos, modo diagnóstico diferenciado. Logs restringidos/solapados históricos; rust-tests-final.log es verificación final. No supervisor completo, MAC, instalación ni APK. [Checkpoint del hito](../reports/android16-rust-supervisor/checkpoint.json).
 
 - [R1: coordinador de acciones original adaptado](../reports/android16-property-actions/findings.json): MCP0 en cambio→acción/expansión→archivo y cola pendiente→error→procesar→cerrar; guardas de orden/Epoll y recursos4→1/4→4. Tres parches replay sin fuzz; SecondStageMain ausente del ELF. Comandos de regresión, no RC/builtins completos, backend ctl/power/MAC ni APK. [Checkpoint del hito](../reports/android16-property-actions/checkpoint.json).
 

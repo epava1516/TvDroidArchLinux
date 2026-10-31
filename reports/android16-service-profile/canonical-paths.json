@@ -1,0 +1,26 @@
+[
+  {
+    "logical": "/system/etc/init/servicemanager.rc",
+    "resolved": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/etc/init/servicemanager.rc",
+    "sha256": "36b87b60901affd28b0c500190fac30f1b7ebb9c8db63c0d14a08094ed756460",
+    "matches_source": true
+  },
+  {
+    "logical": "/system_ext/etc/init/hwservicemanager.rc",
+    "resolved": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/system_ext/etc/init/hwservicemanager.rc",
+    "sha256": "fec3f3312b7cb0f5c22438b62cca189964878874f8aabd47396ae1f4faf8c4f9",
+    "matches_source": true
+  },
+  {
+    "logical": "/vendor/etc/init/vndservicemanager.rc",
+    "sha256": "6fe6a33e67975bda8690e6fe568d66d3c29a528ba8bd9e8b386f5ec014eded38",
+    "matches_source": true,
+    "binary_installed": false
+  },
+  {
+    "logical": "/vendor/etc/init/android.hardware.graphics.composer@2.1-service.rc",
+    "sha256": "d2921d484721517b901b22d5334d9ed2c61a4c97f80a32f605926aff326e08a4",
+    "matches_source": true,
+    "binary_installed": false
+  }
+]

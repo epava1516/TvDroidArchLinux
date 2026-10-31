@@ -1,0 +1,6 @@
+{
+  "source": "reports/android16-property-profile/generation.json",
+  "sha256": "ce5b095f33cfad2ece2557566ec55c87dcb81fb1a275fdc6f032369f1ea4fb9d",
+  "value": "202504",
+  "scope": "Source-derived profile required by original parser, no hardware vendor/policy/runtime acceptance"
+}

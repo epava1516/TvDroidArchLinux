@@ -1346,6 +1346,47 @@ instalación/update/rollback o integración de compositor aceptados. Inicializad
 privilegiado de diagnóstico no acredita aislamiento de app, operación MAC válida,
 Binder/Composer/frames/Markor ni APK. ISA y servicios propietarios siguen aparte.
 
+## R1/R2 · configuración original antes del backend de servicios
+
+[Verificador nativo](../runtime/aosp/native/verify-service-profile.cpp) y
+[evidencias](../reports/android16-service-profile/findings.json). Reutiliza
+CreateParser/ServiceParser/ActionParser/ServiceList originales y mapa de nombres/
+arity; no otra gramática RC. Cuatro archivos originales se contrastan con archivos
+fuente/Git; servicemanager/hwservicemanager coinciden además con GSI. Parse nativo
+sin capacidades, UID10000:4servicios/1acción/0errores, PID lógico0. Rutas system,
+system_ext y vendor conservadas; vendor RC sólo staged, sin binarios instalados.
+
+Negativos observados por MCP: opción y arity inválidas dan read_ok1/parse_errors1,
+con lista parcial posible; archivo ausente da read_ok0/parse_errors0. El consumidor
+debe rechazar todo el perfil si falla lectura o hay errores, no activar la parte
+parseada. Sin versión vendor el parser aborta127; se suministra sólo el dato
+BP4A202504 ya derivado/verificado de fuente, no un vendor/política de hardware.
+
+Revisión previa a ejecutar evitó usar CheckAllCommands con mapa runtime: Command::
+CheckCommand llama func_. El host_init_verifier oficial usa otro mapa de checkers/
+stubs; sus éxitos tampoco equivalen a implementación. El prototipo inicial sólo
+compiló/enlazó, nunca se ejecutó. Wrapper corregido no llama handlers y declara
+builtin_value_checks=not_performed. No valida existencia de task_profiles, targets
+onrestart, ejecutables o semántica completa de valores. Full builtin map enlaza con
+liblmkd_utils original completo y libxml2/libbootloader_message originales GSI;
+no se ejecutan lmkd, recuperación, acciones ni servicios.
+
+Gates antes de activar el backend: Service::GetSigchldFd exige un solo hilo y debe
+prepararse antes de PropertyService; usar reaper original. Service::Start retorna
+tras fork/cgroups/preparación, no demuestra registro ni readiness del daemon. Stop
+necesita recolección/estado real. Conservar UID/GID/suplementarios/capacidades,
+contextos, task_profiles, cgroups, namespaces y entorno; no inferir GID del UID.
+Perfiles usan UID Android1000, igual numéricamente al usuario de desarrollo Linux:
+se exige mapear identidades/aislamiento/MAC de forma demostrada, sin renumerar API
+Android silenciosamente ni asumir separación por chroot.
+
+Critical/onrestart/reboot_on_failure requieren política explícita de fallo/control
+propiedad de Linux; no ejecutar boot scripts generales ni reiniciar el host como
+sustituto. Vendor subcontext no inicializado en este parser diagnóstico; rutas
+canónicas no prueban mediación de subcontext/SELinux. No Service::Start/Stop,
+registro, reinicio, aislamiento ni etapa APK aceptados. Siguiente: backend original
+supervisado con esos gates y R1-MAC, antes de gestores/Composer/Markor completos.
+
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 
 

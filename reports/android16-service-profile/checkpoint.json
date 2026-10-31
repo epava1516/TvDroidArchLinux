@@ -1,0 +1,75 @@
+{
+  "observed_at": "2026-10-31T10:43:32.979672+00:00",
+  "base_commit": "071852fd3b4501426f79b7687e604c6b72723f5b",
+  "branch": "main",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "relation_to_local_origin_tracking": "0\t0",
+  "objective": "Complete unmodified APK on Linux Rust/Smithay with coherent original AOSP16QPR2/Bionic, no Waydroid or complete Android boot; broad compatibility, isolation, stability, lightness, installation/update.",
+  "constraints": [
+    "A16-QPR2-1",
+    "No VM introduction or VM/client restart",
+    "No host boot/policy activation changes; R1-MAC gate remains",
+    "Fixtures/compilation/diagnostic startup are partial evidence, never real-APK acceptance"
+  ],
+  "canonical_entry": "docs/ESTADO.md",
+  "previous_checkpoint": "reports/android16-rust-supervisor/checkpoint.json",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "terminal_exec_handles": [
+    63100,
+    7632,
+    88163,
+    50639,
+    94603
+  ],
+  "active_exec_handles": [],
+  "mcp_status": "Six captures terminal: vendor missing127, staged/canonical0, three negatives2; owned-group cleanup verified, no persistent target opened. No host-wide process coverage claimed.",
+  "result": "Original AOSP service/action parser preflight at canonical paths; original runtime builtin map used only for name/arity lookup, NEVER invoked. No service/action execution or backend acceptance.",
+  "tests": "build.json, complete-modules-link.json, profile/canonical/source provenance and six MCP reports",
+  "next": "Implement the Linux-owned original-service lifecycle with SIGCHLD/reaper initialized before property workers, strict immutable profiles and explicit failure/control handling. Require R1-MAC and identity mapping before actual original manager/Composer service acceptance; continue full Markor/real-APK gates.",
+  "evidence": {
+    "reports/android16-service-profile/build.json": "5ad39196a33ea37a20c28043a4b49133dc4e41ce97614f2401f7354a388dca8b",
+    "reports/android16-service-profile/native-staged-mcp.json": "3725d4c410d6f0cb7fa920b4e1a3b5ad2e8f5fecc8d4745ebe059bebeef1cb40",
+    "reports/android16-service-profile/launcher-canonical.py": "46f05bca9731dc20bce35061eb1369fb1dcebf214e709f7f64f83b64f6e641fe",
+    "reports/android16-service-profile/findings.json": "6ebb143059553fff5f9b0d55f035d24a0d998f8383c6de93fbbdd46934e95f7b",
+    "reports/android16-service-profile/profile-provenance.json": "abc1f41e463f081d919e4878afb37653a8ed59e2d029e2309ff7823a47c33bf7",
+    "reports/android16-service-profile/native-missing-file-mcp.json": "cec5c11c9515a88c41e1e58c9907e270ca67d46c3aec6bf9a1038da76300658f",
+    "reports/android16-service-profile/native-canonical-mcp.json": "fac1a3ef05ba093c08ed9cdd36a02d3804f76f579ec7dcfc18685113ef35d3c1",
+    "reports/android16-service-profile/link-complete-modules.py": "992998b0e236aa86fd7c6f28ecdc17c6039707aabb732bb87d54ca9545cbd3a9",
+    "reports/android16-service-profile/complete-modules-link.json": "49601ed4374fabedff902c792edebfb593465d00690ad7a79498bfc3fda087b8",
+    "reports/android16-service-profile/launcher-bad-option.py": "b0b0a3716401a3a50fc55229c213f47a277f52138bd275043682d84402ea4b49",
+    "reports/android16-service-profile/verifier-initial-not-executed.cpp": "7db8b7b8ebb3d3a72f30f39e9d206f946d9b5da96da49c574844b29b94364094",
+    "reports/android16-service-profile/launcher-good.py": "4471cdc5e13af7bd7e8edfe23e329ecda1bb469bb4d352a34b187bfa50ba80d6",
+    "reports/android16-service-profile/vendor-profile.json": "534060147ea470c20028ec9d3dbe5fc5b3859660d45912cba1dc17ba28611867",
+    "reports/android16-service-profile/source-contract-provenance.json": "f92781dc8fa5ce7e980d8bb8271ee83ed3345eff98157ec9dd794b253b51b28e",
+    "reports/android16-service-profile/native-missing-vendor-mcp.json": "3dde6723b8d1b5d4db9de40544fbe4fec8ab59bb5452a3bc432585da5634c2b1",
+    "reports/android16-service-profile/launcher-missing-vendor-profile.py": "4d8492b3a438bc64b1073bc442bb4ed404f843be37986f33aae1f19bb7c7248d",
+    "reports/android16-service-profile/build.py": "03c0a273e780a488cd1b5544618478086f133370c926130ad90b8326453d6699",
+    "reports/android16-service-profile/canonical-paths.json": "4083d62c08b6d246a8a67fe016035c676cc072fb36575b7185555ba3474455f0",
+    "reports/android16-service-profile/native-bad-arity-mcp.json": "d9e989ff124b6be0db0d036e2bef823c9aadebe570484427bab8118cdc9e9aca",
+    "reports/android16-service-profile/link-attempt-1.json": "12e6d59ae3cb59bb08c8c0e571ce6f2762f8fb2a95e058c990bec0a2f2a231b6",
+    "reports/android16-service-profile/launcher-bad-arity.py": "8cf0485309550c1f265687c4f8cbf035c16cd2d2fffa874c01d7404400858832",
+    "reports/android16-service-profile/host-identity.json": "a939f3084f052bef5aed9351cc50227f0e86db563ee3e578532ee305f7fcef9c",
+    "reports/android16-service-profile/preparation-check.json": "b80b716e6a32f0a946f5730ab01088a35fe0a91deb2c120d99b1e157b9a042ad",
+    "reports/android16-service-profile/launcher-missing.py": "f422fc8230fb17b42d1b50da2b2f05cf333bd06b6a8fab45a243bd9f9e14f934",
+    "reports/android16-service-profile/launcher-bad-arity-vendor-profile.py": "8f0d5e48e213ba373c141cd73ee03231ffa8681ae33891df3a257885bf11ec18",
+    "reports/android16-service-profile/launcher-bad-option-vendor-profile.py": "7d8a0b374a103168d2abd3eb45f9e3dadc445b85c1e31b429785929b0f016f27",
+    "reports/android16-service-profile/prepare-case.py": "eb4dfe21950dffb01efdd2889abfc7484194feef466f4c4c2d005b7e5c1f4452",
+    "reports/android16-service-profile/launcher-good-vendor-profile.py": "df3ce14de01b49d51b80d45038358db6e7b2946a94e2b0895b35e23cba343017",
+    "reports/android16-service-profile/build-parse-only.py": "ad1ce3708d38149130282f33fb063404e1789ff9d0ecbd90714a434a57447142",
+    "reports/android16-service-profile/native-bad-option-mcp.json": "71d498010785d1261f3a400ddf90ff81f19b79d53c2dbcb6bedbcea2e970c5e6",
+    "reports/android16-service-profile/fixtures/bad-arity.rc": "4a2a0d3142e8b1f3261814254da0c6f7b1a3ca89f4f4455a9244d26aeaf461ba",
+    "reports/android16-service-profile/fixtures/bad-option.rc": "16ff100ac264aeac66d0df07a2b648b6abe5a60ffa732eb02c571cdafd48e22c"
+  },
+  "graphify": "Isolated AST update finished0,2786nodes/5339edges; tracked outputs copied only"
+}

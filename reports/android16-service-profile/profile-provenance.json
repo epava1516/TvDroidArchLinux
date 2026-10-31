@@ -1,0 +1,33 @@
+[
+  {
+    "name": "servicemanager.rc",
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/original-servicemanager/source/frameworks/native/cmds/servicemanager/servicemanager.rc",
+    "project": "frameworks/native",
+    "commit": "fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103",
+    "sha256": "36b87b60901affd28b0c500190fac30f1b7ebb9c8db63c0d14a08094ed756460",
+    "matches_verified_archive": true
+  },
+  {
+    "name": "vndservicemanager.rc",
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/original-servicemanager/source/frameworks/native/cmds/servicemanager/vndservicemanager.rc",
+    "project": "frameworks/native",
+    "commit": "fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103",
+    "sha256": "6fe6a33e67975bda8690e6fe568d66d3c29a528ba8bd9e8b386f5ec014eded38",
+    "matches_verified_archive": true
+  },
+  {
+    "name": "hwservicemanager.rc",
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/original-hwservicemanager/source/system/hwservicemanager/hwservicemanager.rc",
+    "project": "system/hwservicemanager",
+    "commit": "21b593ef1d78e8fd23140bac5255bcbc51d5aea0",
+    "sha256": "fec3f3312b7cb0f5c22438b62cca189964878874f8aabd47396ae1f4faf8c4f9",
+    "matches_verified_archive": true
+  },
+  {
+    "name": "composer.rc",
+    "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/2.1/default/android.hardware.graphics.composer@2.1-service.rc",
+    "commit": "aa229558cbf04bc997ed27465c5e7ad497123d1b",
+    "sha256": "d2921d484721517b901b22d5334d9ed2c61a4c97f80a32f605926aff326e08a4",
+    "matches_git_blob": true
+  }
+]

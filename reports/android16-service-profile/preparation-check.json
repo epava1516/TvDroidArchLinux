@@ -1,0 +1,9 @@
+{
+  "scope": "Preparation recipe verified without executing replay; actual native cases are the captured earlier runs",
+  "fresh_output": "dist/aosp16/service-profile-replay-prepared-1",
+  "launcher_parses": true,
+  "fixture_hashes": {
+    "reports/android16-service-profile/fixtures/bad-arity.rc": "4a2a0d3142e8b1f3261814254da0c6f7b1a3ca89f4f4455a9244d26aeaf461ba",
+    "reports/android16-service-profile/fixtures/bad-option.rc": "16ff100ac264aeac66d0df07a2b648b6abe5a60ffa732eb02c571cdafd48e22c"
+  }
+}

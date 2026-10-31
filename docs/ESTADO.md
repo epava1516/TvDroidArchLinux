@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-rust-supervisor/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-service-profile/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -17,7 +17,19 @@ Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCC
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
 
-## Última integración · supervisor Rust y worker Bionic
+## Último preflight · perfiles originales de servicios
+
+[Resultados y límites](../reports/android16-service-profile/findings.json): parser
+AOSP nativo UID10000/caps0 acepta cuatro RC originales en rutas de instalación;
+perfiles de sistema coinciden con GSI, vendor sólo preparado, no instalado.
+Opciones/arity inválidas y archivo ausente devuelven2. read_ok puede ser1 con
+parse_errors1 y ServiceList parcial: no promover ese resultado a perfil activo.
+No se ejecutan servicios/acciones ni CheckAllCommands con mapa runtime; valores de
+builtins no comprobados. Fuente exige SIGCHLD antes de hilos y diferencia Start de
+readiness. Pendientes identidad Android1000 vs host1000, contextos/cgroups/perfiles,
+fallos críticos/onrestart y backend Linux real; ninguna etapa APK aceptada.
+
+## Integración anterior · supervisor Rust y worker Bionic
 
 [Implementación y pruebas](../reports/android16-rust-supervisor/findings.json):
 archtv-core posee Child/pidfd y canal Unix heredado; worker Bionic reutiliza

@@ -1,0 +1,51 @@
+[
+  {
+    "project": "system/memory/lmkd",
+    "commit": "5352c3c8c9e26cadaf31a80b1223019b2898a385",
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/lmkd/source/system/memory/lmkd/liblmkd_utils.cpp",
+    "sha256": "3f22441d13cc223eadc8b322e9b0344daa25a4b3661acedcf9a1dd72d6d4b120",
+    "matches_verified_archive": true
+  },
+  {
+    "project": "system/memory/lmkd",
+    "commit": "5352c3c8c9e26cadaf31a80b1223019b2898a385",
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/lmkd/source/system/memory/lmkd/Android.bp",
+    "sha256": "eda1259eea0ed0f80dce28dde2576bb00060a3a3d90b5174f63123fc7859ab8e",
+    "matches_verified_archive": true
+  },
+  {
+    "project": "system/core",
+    "commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/init/service.cpp",
+    "sha256": "d0d758cc6a87ebebf05c76d28026582cbac9a1e1ecd756987eeb96de7230e726",
+    "matches_verified_archive": true
+  },
+  {
+    "project": "system/core",
+    "commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/init/service_parser.cpp",
+    "sha256": "ec75b1d70f286eb5bb47002fad51ac4032d7e4464b2f4d548679e1c2951dd730",
+    "matches_verified_archive": true
+  },
+  {
+    "project": "system/core",
+    "commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/init/parser.cpp",
+    "sha256": "ee3b904aaafdb9a5be829b0506c8c42e4605429b42efcc0c383320051c5e128d",
+    "matches_verified_archive": true
+  },
+  {
+    "project": "system/core",
+    "commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/init/action.cpp",
+    "sha256": "5925e6533887fe2cda21bc01fe5521ae6aa4fc5da4bc555cc8c3930f7e76e68c",
+    "matches_verified_archive": true
+  },
+  {
+    "project": "system/core",
+    "commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/init/init.cpp",
+    "sha256": "018e17b870f6ef3a637230e3d73dd182be315cbaee04b95aa96881e8a2cfb93b",
+    "matches_verified_archive": true
+  }
+]

@@ -1,0 +1,3 @@
+service rejected /system/bin/true
+    user system
+    unknown_option yes

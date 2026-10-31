@@ -1,0 +1,6 @@
+{
+  "observation_mode": "current_tool_process",
+  "uid": 1000,
+  "euid": 1000,
+  "scope": "Numeric identity comparison only, not host MAC/namespace mediation or execution of parsed services"
+}
