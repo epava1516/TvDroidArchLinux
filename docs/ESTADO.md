@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-service-effect-audit/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-linux-failure-sink/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -16,6 +16,17 @@ los resúmenes; no se ha completado compatibilidad amplia.
 Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCCION-ARM.md).
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
+
+## Última integración · fallos originales entregados a Rust
+
+[Pruebas](../reports/android16-linux-failure-sink/findings.json): trigger_shutdown
+original tiene receptor Linux serializado, sin ejecutar la petición. Service::Start
+falla getcon y su reboot_on_failure llega como fallo tipado; Rust recoge salida
+real69, wrapper1, sin ACK de arranque. Petición mayor de24 bytes falla explícitamente;
+no se trunca como válida. Worker diagnóstico conserva arranque/cierre0;17 pruebas
+Rust, clippy y check compositor pasan. Ensayo inicial de argumento inválido
+conservado aparte. No cubre LOG(FATAL)/critical, monitor asíncrono, watchdog,
+recovery, MAC ni servicio/APK disponible. Siguiente: política de cohorte y controles.
 
 ## Última frontera · efectos de perfiles originales auditados
 

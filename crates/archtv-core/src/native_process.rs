@@ -18,11 +18,64 @@ pub enum Startup {
     Diagnostic,
 }
 
+/// An original Android shutdown request is a component failure, never a host reboot.
+#[derive(Debug, PartialEq, Eq)]
+pub enum NativeFailure {
+    ShutdownRequested(Vec<u8>),
+    ShutdownRequestTooLong,
+}
+impl std::fmt::Display for NativeFailure {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            Self::ShutdownRequested(bytes) => {
+                write!(f, "original Android shutdown requested: {bytes:02x?}")
+            }
+            Self::ShutdownRequestTooLong => {
+                f.write_str("original Android shutdown request exceeds wire limit")
+            }
+        }
+    }
+}
+impl std::error::Error for NativeFailure {}
+
+fn check_failure(frame: &[u8]) -> io::Result<()> {
+    if frame == b"ARCHTV_NATIVE_V1 FAILED_SHUTDOWN_OVERSIZE\n" {
+        return Err(io::Error::other(NativeFailure::ShutdownRequestTooLong));
+    }
+    if let Some(hex) = frame.strip_prefix(b"ARCHTV_NATIVE_V1 FAILED_SHUTDOWN ") {
+        let hex = hex.strip_suffix(b"\n").unwrap_or(hex);
+        if hex.len() > 48 || !hex.len().is_multiple_of(2) {
+            return Err(io::Error::new(
+                io::ErrorKind::InvalidData,
+                "invalid shutdown request encoding",
+            ));
+        }
+        let nibble = |c: u8| match c {
+            b'0'..=b'9' => Some(c - b'0'),
+            b'a'..=b'f' => Some(c - b'a' + 10),
+            _ => None,
+        };
+        let mut bytes = Vec::new();
+        for pair in hex.chunks_exact(2) {
+            let (Some(a), Some(b)) = (nibble(pair[0]), nibble(pair[1])) else {
+                return Err(io::Error::new(
+                    io::ErrorKind::InvalidData,
+                    "invalid shutdown request encoding",
+                ));
+            };
+            bytes.push((a << 4) | b);
+        }
+        return Err(io::Error::other(NativeFailure::ShutdownRequested(bytes)));
+    }
+    Ok(())
+}
+
 pub struct NativeProcess {
     child: Option<Child>,
     pidfd: OwnedFd,
     control: UnixStream,
     started: bool,
+    failure_observed: bool,
 }
 
 fn until(fd: i32, events: i16, deadline: Instant) -> io::Result<()> {
@@ -89,6 +142,7 @@ impl NativeProcess {
             pidfd: unsafe { OwnedFd::from_raw_fd(raw as i32) },
             control,
             started: false,
+            failure_observed: false,
         })
     }
 
@@ -113,6 +167,11 @@ impl NativeProcess {
                 Ok(_) => {
                     line.push(byte[0]);
                     if byte[0] == b'\n' {
+                        if let Err(error) = check_failure(&line) {
+                            self.failure_observed =
+                                error.get_ref().is_some_and(|e| e.is::<NativeFailure>());
+                            return Err(error);
+                        }
                         return Ok(line);
                     }
                     if line.len() >= 96 {
@@ -132,6 +191,9 @@ impl NativeProcess {
     }
 
     pub fn wait_started(&mut self, expected: Startup, timeout: Duration) -> io::Result<()> {
+        if self.failure_observed {
+            return Err(io::Error::other("native component already failed"));
+        }
         if self.started {
             return Err(io::Error::other("native startup already acknowledged"));
         }
@@ -147,6 +209,27 @@ impl NativeProcess {
         }
         self.started = true;
         Ok(())
+    }
+
+    /// Collects the actual failed exit after a typed startup failure. The request
+    /// string is diagnostic data; this API never executes a reboot or command.
+    pub fn wait_failed(mut self, timeout: Duration) -> io::Result<ExitStatus> {
+        if !self.failure_observed {
+            return Err(io::Error::other("no typed native failure observed"));
+        }
+        until(
+            self.pidfd.as_raw_fd(),
+            libc::POLLIN,
+            Instant::now() + timeout,
+        )?;
+        let status = self.child.as_mut().expect("owned child").wait()?;
+        self.child.take();
+        if status.success() {
+            return Err(io::Error::other(
+                "native failure reported with successful exit",
+            ));
+        }
+        Ok(status)
     }
 
     /// Waits for cooperative completion and then the actual child exit. On an

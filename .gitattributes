@@ -42,3 +42,6 @@ runtime/aosp/android16-qpr2/patches/*.patch whitespace=-blank-at-eol,-blank-at-e
 
 # Preserve raw Rust output, including historical restricted/overlapped captures.
 reports/android16-rust-supervisor/*.log -whitespace
+
+# Preserve the final newline block emitted by Cargo in failure-boundary evidence.
+reports/android16-linux-failure-sink/*.log whitespace=-blank-at-eof

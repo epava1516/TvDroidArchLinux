@@ -1,6 +1,8 @@
 # Índice de evidencias
 
-- [R1/R2: efectos originales de perfiles](../reports/android16-service-effect-audit/findings.json): observador delegado sin nuevo parser ni parche AOSP; cinco capturas MCP, tokens/import/override verificados y rechazo inválido sin manifiesto. Cuatro referencias directas no resueltas y alcance de clases pendiente; sin admisión/ejecución/APK. [Checkpoint actual](../reports/android16-service-effect-audit/checkpoint.json).
+- [R1/R2: receptor Linux de fallo original](../reports/android16-linux-failure-sink/findings.json): MCP Start→getcon error→reboot_on_failure→fallo Rust y salida real69/wrapper1; overflow explícito, worker normal diagnóstico0;17 pruebas Rust/clippy/check0. Ensayo inválido conservado. Sin reboot anfitrión ni servicio/APK listo. [Checkpoint actual](../reports/android16-linux-failure-sink/checkpoint.json).
+
+- [R1/R2: efectos originales de perfiles](../reports/android16-service-effect-audit/findings.json): observador delegado sin nuevo parser ni parche AOSP; cinco capturas MCP, tokens/import/override verificados y rechazo inválido sin manifiesto. Cuatro referencias directas no resueltas y alcance de clases pendiente; sin admisión/ejecución/APK. [Checkpoint del hito](../reports/android16-service-effect-audit/checkpoint.json).
 
 - [R1/R2: rechazo de Start original sin contexto](../reports/android16-service-start-gate/findings.json): perfil servicemanager GSI, error nativo real antes de fork, PID0/no running/ECHILD/FD4→4. MCP0 acredita prueba negativa, no servicio disponible ni aislamiento. [Checkpoint del hito](../reports/android16-service-start-gate/checkpoint.json).
 

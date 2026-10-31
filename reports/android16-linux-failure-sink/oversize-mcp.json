@@ -1,0 +1,79 @@
+{
+  "evidence_id": "ev_0d7f790ac97beb814281bb64d3801410d3782be6d0cbe7e4832670dac0d8c526",
+  "operation": "capture_process_scenario",
+  "authority": "controlled-replay",
+  "confidence": "observed",
+  "exit": {
+    "code": 1,
+    "signal": 0,
+    "reason": "exited"
+  },
+  "observations": [
+    "NATIVE_PROCESS_OWNED pid=260371 pidfd=5",
+    "INITIALIZER_SECURITY {\"Uid\": \"0\\t0\\t0\\t0\", \"Gid\": \"0\\t0\\t0\\t0\", \"Groups\": \"\", \"CapPrm\": \"000001ffffffffff\", \"CapEff\": \"000001ffffffffff\", \"NoNewPrivs\": \"1\"}",
+    "10-31 11:08:58.620     1     1 I failure-probe: parser.cpp:145 Parsing file /data/profiles/service.rc...",
+    "10-31 11:08:58.621     1     1 E failure-probe: parser.cpp:117 /data/profiles/service.rc: 3: reboot_on_failure commands must begin with either 'shutdown' or 'reboot'",
+    "FAILED parser.ParseConfigFile(\"/data/profiles/service.rc\").ok() && parser.parse_error_count()==0 errno=0",
+    "Error: Custom { kind: UnexpectedEof, error: \"native lifetime channel closed\" }"
+  ],
+  "cleanup": {
+    "owned_process_group": "verified",
+    "temporary_root": "removed",
+    "unverified_processes": [
+      {
+        "pid": 260367,
+        "reason": "EACCES: permission denied, open '/proc/260367/environ'"
+      },
+      {
+        "pid": 260368,
+        "reason": "EACCES: permission denied, open '/proc/260368/environ'"
+      }
+    ]
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "The executable digest is a prelaunch file sample; matching path metadata immediately after spawn does not prove an atomic operating-system image binding.",
+    "Process trees are sampled and may omit short-lived descendants.",
+    "Process-tree sampling ended with an incomplete observation.",
+    "Filesystem observations are before/after snapshots, not syscall traces.",
+    "Inherited host environment variables are not recorded and may affect results.",
+    "No filesystem observation paths were selected; filesystem effects remain unknown.",
+    "Process sampling has incomplete observations: /proc/260359/environ: EACCES: Error: EACCES: permission denied, open '/proc/260359/environ'. See truncation_details.process."
+  ],
+  "residual_unknowns": [
+    {
+      "scope": "process",
+      "reason": "Process trees are sampled and may omit short-lived descendants."
+    },
+    {
+      "scope": "process",
+      "reason": "The executable digest is a prelaunch file sample; operating-system image binding is not atomically observed."
+    },
+    {
+      "scope": "environment",
+      "reason": "Inherited host environment variables are not recorded."
+    },
+    {
+      "scope": "network",
+      "reason": "Network activity is not observed by this capture."
+    },
+    {
+      "scope": "filesystem",
+      "reason": "No filesystem observation paths were selected; filesystem effects remain unknown."
+    },
+    {
+      "scope": "process",
+      "reason": "Process sampling has incomplete observations: /proc/260359/environ: EACCES: Error: EACCES: permission denied, open '/proc/260359/environ'. See truncation_details.process."
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 260367 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/260367/environ'"
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 260368 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/260368/environ'"
+    }
+  ],
+  "truncated": true,
+  "note": "Sanitized derived projection; not complete authenticated MCP Evidence. Exit of sudo/Rust wrapper distinct from child exit observed by Rust pidfd/wait."
+}

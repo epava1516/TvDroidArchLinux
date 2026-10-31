@@ -1,0 +1,61 @@
+{
+  "evidence_id": "ev_19c8df3f49f783c5173d34a603f4e41d38f05a4977ff718098254441dfe8dc93",
+  "operation": "capture_process_scenario",
+  "authority": "controlled-replay",
+  "confidence": "observed",
+  "exit": {
+    "code": 1,
+    "signal": 0,
+    "reason": "exited"
+  },
+  "observations": [
+    "NATIVE_PROCESS_OWNED pid=260602 pidfd=5",
+    "INITIALIZER_SECURITY {\"Uid\": \"0\\t0\\t0\\t0\", \"Gid\": \"0\\t0\\t0\\t0\", \"Groups\": \"\", \"CapPrm\": \"000001ffffffffff\", \"CapEff\": \"000001ffffffffff\", \"NoNewPrivs\": \"1\"}",
+    "10-31 11:09:37.526     1     1 I failure-probe: parser.cpp:145 Parsing file /data/profiles/service.rc...",
+    "ORIGINAL_START_FAILED: Could not get security context; Linux captured request, no child",
+    "NATIVE_COMPONENT_FAILED cause=original Android shutdown request exceeds wire limit actual_exit=exit status: 69",
+    "Error: Custom { kind: Other, error: ShutdownRequestTooLong }"
+  ],
+  "cleanup": {
+    "owned_process_group": "verified",
+    "temporary_root": "removed"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "The executable digest is a prelaunch file sample; matching path metadata immediately after spawn does not prove an atomic operating-system image binding.",
+    "Process trees are sampled and may omit short-lived descendants.",
+    "Process-tree sampling ended with an incomplete observation.",
+    "Filesystem observations are before/after snapshots, not syscall traces.",
+    "Inherited host environment variables are not recorded and may affect results.",
+    "No filesystem observation paths were selected; filesystem effects remain unknown.",
+    "Process sampling has incomplete observations: /proc/260592/environ: EACCES: Error: EACCES: permission denied, open '/proc/260592/environ'. See truncation_details.process."
+  ],
+  "residual_unknowns": [
+    {
+      "scope": "process",
+      "reason": "Process trees are sampled and may omit short-lived descendants."
+    },
+    {
+      "scope": "process",
+      "reason": "The executable digest is a prelaunch file sample; operating-system image binding is not atomically observed."
+    },
+    {
+      "scope": "environment",
+      "reason": "Inherited host environment variables are not recorded."
+    },
+    {
+      "scope": "network",
+      "reason": "Network activity is not observed by this capture."
+    },
+    {
+      "scope": "filesystem",
+      "reason": "No filesystem observation paths were selected; filesystem effects remain unknown."
+    },
+    {
+      "scope": "process",
+      "reason": "Process sampling has incomplete observations: /proc/260592/environ: EACCES: Error: EACCES: permission denied, open '/proc/260592/environ'. See truncation_details.process."
+    }
+  ],
+  "truncated": true,
+  "note": "Sanitized derived projection, not complete authenticated MCP Evidence. Wrapper1 and actual child69 distinct."
+}

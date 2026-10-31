@@ -1,0 +1,78 @@
+{
+  "branch": "main",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "objective": "Complete unmodified APK on Linux Rust/Smithay with coherent original AOSP16QPR2/Bionic, no Waydroid or complete Android boot; broad compatibility, isolation, stability, lightness, installation/update.",
+  "constraints": [
+    "A16-QPR2-1",
+    "No VM introduction or VM/client restart",
+    "No host boot/policy activation changes; R1-MAC gate remains",
+    "Fixtures/compilation/diagnostic startup are partial evidence, never real-APK acceptance"
+  ],
+  "canonical_entry": "docs/ESTADO.md",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "observed_at": "2026-10-31T11:14:59.093415+00:00",
+  "base_commit": "829cd721d023368f046a33a387fda6d47591b3e3",
+  "previous_checkpoint": "reports/android16-service-effect-audit/checkpoint.json",
+  "relation_to_local_origin_tracking": "0\t0",
+  "terminal_exec_handles": [
+    33410,
+    89343,
+    90569,
+    75185,
+    74664,
+    68924
+  ],
+  "missing_exec_handles": [
+    {
+      "session_id": 64603,
+      "current_state": "handle no longer present; compositor-check.log records Finished4.35s; no active build process visible in current process namespace; no global process coverage claim"
+    }
+  ],
+  "active_exec_handles": [],
+  "mcp_status": "Four captures terminal, owned groups cleaned, no persistent target opened; process sampling limitations retained",
+  "next": "Implement approved Linux service cohort/control policy with original parser, scoped classes/onrestart and restart/failure budgets, immutable source closure and Android identity/cgroup/MAC prerequisites. Original manager availability and Markor full nine-stage journey still open.",
+  "tests": [
+    "Install serialized bounded Linux callback before service operations; rejects duplicate/foreign owner, restores null pointer after producers stop, never executes original request text",
+    "Original Service::Start on native Bionic with reboot_on_failure reboot fails getcon then invokes original scopeguard; Linux captures request, no service child. Actual MCP: Rust typed ShutdownRequested bytes reboot, pidfd/wait exit69, wrapper1, no startup ACK",
+    "Original valid long reboot target captures explicit ShutdownRequestTooLong; actual exit69/wrapper1, no truncation presented as supported request",
+    "Native property worker uses sink, fails without STOPPED success if request occurs. Existing diagnostic startup/STOP/actual exit0 MCP regression passes",
+    "17 Rust tests (6 unit+11 lifetime), native probe/worker strict compile/link0, clippy all targets0, example build0 and compositor check0"
+  ],
+  "evidence": {
+    "reports/android16-linux-failure-sink/rust-clippy-final.log": "11410c283c9998f6a187d20ccaccbcf08bd95ace3a4a53f38016af153a2ba8dc",
+    "reports/android16-linux-failure-sink/rust-build.log": "6a981e4e2a0c9af6dead9afee0224555ade213f42082f62ec9b38c4d1fc0dd36",
+    "reports/android16-linux-failure-sink/launcher-worker.py": "a674b7f22aeae5e37e0c366410f2f612d62326fe55d422f7d4b75bb6b987c317",
+    "reports/android16-linux-failure-sink/build.json": "f01f56225ab2e662d0c33989dac475048c63a0d55177c7034aed101fd389b8be",
+    "reports/android16-linux-failure-sink/fixture-oversize-final.rc": "916ac4957209e2a08d73140c6dd04a9e3f4ac0400ab6d0689f909d5d6fe01487",
+    "reports/android16-linux-failure-sink/findings.json": "d11a8356fe9bfd382782c07d561e0739de8a1f91d810658c281dc7314cac92b1",
+    "reports/android16-linux-failure-sink/oversize-mcp.json": "2f5bcde64dedd11809f3585f62adecc50f6b9ae08e7b8560c64d0a97e95d9dce",
+    "reports/android16-linux-failure-sink/rust-build-final.log": "6a981e4e2a0c9af6dead9afee0224555ade213f42082f62ec9b38c4d1fc0dd36",
+    "reports/android16-linux-failure-sink/normal-mcp.json": "622dd95c1e0c8154fdbfc3c32ca586f3ce6330b5eb27fc76bbf3b606afb838c3",
+    "reports/android16-linux-failure-sink/fixture-oversize-initial-invalid.rc": "23d552c231132004ff3ceed8833878a59667ad071000164d0b70fbf04b4dc225",
+    "reports/android16-linux-failure-sink/rust-tests-final.log": "5820a3cbb3a735d369c11a87d52ba614c195169e27c197d3bfd636a13527113f",
+    "reports/android16-linux-failure-sink/build.py": "466ba5e09e25e59056d55ca7b7454019e7332c8b2a94cac0dad752c0a7a5b79e",
+    "reports/android16-linux-failure-sink/worker-mcp.json": "d11b0c1c0e75aea6252afd1fc79db3cdea337e8b4c60bc383331155ad66ca2c0",
+    "reports/android16-linux-failure-sink/fixture-normal.rc": "17a556c0d7b54da2ef1a1fd1e1b5b564dc6902d29b538c83156d808d8592ec73",
+    "reports/android16-linux-failure-sink/fixture-oversize.rc": "23d552c231132004ff3ceed8833878a59667ad071000164d0b70fbf04b4dc225",
+    "reports/android16-linux-failure-sink/launcher-oversize-final.py": "b61a6249a27cab24dcd0e9ada0973da2bc8238d96700b09bb59c982a22608647",
+    "reports/android16-linux-failure-sink/probe.cpp": "bc2700c91a0344e079a5a19a0791b2ca7dfce986e4130d835af71edbd9e7e8fd",
+    "reports/android16-linux-failure-sink/oversize-final-mcp.json": "9e1b3881a52ee1f8063abbd9dbaef1204734c2c6d1b126b2c3416a3f65746020",
+    "reports/android16-linux-failure-sink/rust-tests.log": "8f95675d99307564db187421fa52db5a27e9f8301fb1e238ecc2f5c3aefb21d1",
+    "reports/android16-linux-failure-sink/launcher-normal.py": "5b26bb2ee3aff46ba2e071e7b9e184099c0552e6d7957ef20ee85ad42a5996bb",
+    "reports/android16-linux-failure-sink/launcher-oversize.py": "8d289d3cef5d9666469cd187e78ead1e6f1402905915c4ead841b99eedbef7cd",
+    "reports/android16-linux-failure-sink/compositor-check.log": "c4b7bf5697ccfffe1cc7a73a747d19cd29b6249cccb479a336ada7d4983682e1",
+    "reports/android16-linux-failure-sink/rust-clippy.log": "77377daaf93d12f28f590d686e287694bf74f43b4c1956053ce37b4080b4e16c"
+  },
+  "graphify": "Isolated staged AST update terminal0,2879 nodes/5496 edges; tracked outputs copied"
+}

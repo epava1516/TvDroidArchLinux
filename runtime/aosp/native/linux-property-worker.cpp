@@ -1,6 +1,7 @@
 // Linux-supervised Bionic component. Does not dispatch Android init or certify APK readiness.
 #include "init.h"
 #include "linux-child-reaper.h"
+#include "linux-shutdown-sink.h"
 #include "property_service.h"
 #include "proto_utils.h"
 #include "system/core/init/property_service.pb.h"
@@ -65,6 +66,8 @@ int main(int argc,char** argv) {
     if(!epoll.Open().ok())return 70;
     archtv::aosp::LinuxChildReaper children(epoll);
     if(!children.Attach().ok())return 70; // Before any property worker thread.
+    archtv::aosp::LinuxShutdownSink shutdown;
+    if(!shutdown.Install().ok())return 70;
     auto setup=StartLinuxPropertyActions(&epoll);
     if(!setup.ok())return 70;
     bool stop=false,peer_gone=false,invalid=false;std::string input;
@@ -90,15 +93,20 @@ int main(int argc,char** argv) {
     auto deadline=std::chrono::steady_clock::now()+std::chrono::seconds(5);
     char phase[PROP_VALUE_MAX]={};
     while(healthy && !stop && std::chrono::steady_clock::now()<deadline) {
-        auto polled=PollLinuxPropertyActions(&epoll,std::chrono::milliseconds(50));healthy=polled.ok() && children.healthy();
+        auto polled=PollLinuxPropertyActions(&epoll,std::chrono::milliseconds(50));healthy=polled.ok() && children.healthy() && !shutdown.failed();
         if(__system_property_get("ro.persistent_properties.ready",phase)>0 && std::strcmp(phase,"true")==0)break;
     }
     healthy=healthy && !stop && std::strcmp(phase,"true")==0;
     if(healthy)healthy=send_status(control.get(),diagnostic?"ARCHTV_NATIVE_V1 DIAGNOSTIC_STARTED\n":"ARCHTV_NATIVE_V1 STARTED\n");
-    while(healthy && !stop)healthy=PollLinuxPropertyActions(&epoll,std::chrono::milliseconds(250)).ok() && children.healthy();
+    while(healthy && !stop)healthy=PollLinuxPropertyActions(&epoll,std::chrono::milliseconds(250)).ok() && children.healthy() && !shutdown.failed();
     bool closed=close_actions(epoll);init_socket.reset();
     auto unregistered=epoll.UnregisterHandler(control.get());
     auto children_closed=children.Close();
+    if(shutdown.failed()) {
+        auto frame=shutdown.Frame();
+        if(!send_status(control.get(),frame.c_str()))return 74;
+        return 69; // Failure event, never STOPPED or successful component exit.
+    }
     if(!healthy || !closed || !unregistered.ok() || !children_closed.ok() || peer_gone || invalid)return 1;
     if(!send_status(control.get(),"ARCHTV_NATIVE_V1 STOPPED\n"))return 74;
     std::fprintf(stderr,"PROPERTY_WORKER_STOPPED: original actions drained and workers joined; not APK readiness\n");

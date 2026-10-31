@@ -597,3 +597,17 @@ gatekeeperd y surfaceflinger ausentes de esta cohorte no deben borrarse ni darse
 por satisfechas. Evaluar grupos completos originales con MAC/identidades/cgroups
 y readiness real; no arrancar init Android general. Pruebas de auditoría propias
 no cierran etapas APK ni sustituyen el recorrido Markor.
+
+## R1/R2 · fallo original con receptor Linux
+
+[Integración y límites](../reports/android16-linux-failure-sink/findings.json):
+Linux instala trigger_shutdown antes de operaciones de servicios; retiene primer
+fallo y entrega datos hex acotados al canal Rust, nunca ejecuta el texto. Petición
+mayor de24 bytes tiene error explícito. Rust no permite que un ACK posterior
+convierta el fallo en arranque; wait_failed recoge salida no cero con pidfd/wait.
+MCP verifica scopeguard original de Start por getcon y salida69; worker diagnóstico
+conserva cierre0. Receptor sólo serializado; envío/protocolo no constituye monitor
+asíncrono ni política de recuperación. LOG(FATAL) crítico no recorre este callback
+y sigue pendiente. No quitar critical/onrestart ni aceptar cohortes antes de
+resolver identidades/cgroups/MAC y dependencias originales. Fixtures de fallo no
+acreditan servicios/APK completos; Markor y matriz real siguen abiertos.

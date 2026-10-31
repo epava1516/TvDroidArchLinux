@@ -1,0 +1,3 @@
+service audit.failure /system/bin/servicemanager
+    user system
+    reboot_on_failure reboot,xxxxxxxxxxxxxxxxxxxxxxxxx

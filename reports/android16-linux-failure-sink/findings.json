@@ -1,0 +1,58 @@
+{
+  "observed_at": "2026-10-31T11:14:59.093415+00:00",
+  "base_commit": "829cd721d023368f046a33a387fda6d47591b3e3",
+  "scope": "Linux failure boundary for original trigger_shutdown callback; not host shutdown, Android service readiness or APK acceptance",
+  "original_commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+  "original_source": [
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/init/util.h",
+      "sha256": "aea21b5e3e35a5bc4de6a2220cf0c835e139f09602bd28a9e4e0d090e1f38a8b"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/init/util.cpp",
+      "sha256": "15715717581e7864af46569d42e1f1dfa8050c4175f290edf68e4744c1d2efd0"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/init/service.cpp",
+      "sha256": "d0d758cc6a87ebebf05c76d28026582cbac9a1e1ecd756987eeb96de7230e726"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/init/service_parser.cpp",
+      "sha256": "ec75b1d70f286eb5bb47002fad51ac4032d7e4464b2f4d548679e1c2951dd730"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/linux-failure-sink-build-1/failure-probe",
+      "sha256": "4f30eacdd655713bf65ba4fecf9e89626143d9fcae4e67c6d337f3734b10b404"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/linux-failure-sink-build-1/linux-property-worker",
+      "sha256": "5f1572b0cd2424bb6bcb3332483f44760e01dee6ce56396cbfd1bf36008901d4"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/target/debug/examples/native_supervisor",
+      "sha256": "4c8bc6524e0f6d15c1ac79717e73a92461650a6b76b9d47ae1053e30065c1ac7"
+    }
+  ],
+  "results": [
+    "Install serialized bounded Linux callback before service operations; rejects duplicate/foreign owner, restores null pointer after producers stop, never executes original request text",
+    "Original Service::Start on native Bionic with reboot_on_failure reboot fails getcon then invokes original scopeguard; Linux captures request, no service child. Actual MCP: Rust typed ShutdownRequested bytes reboot, pidfd/wait exit69, wrapper1, no startup ACK",
+    "Original valid long reboot target captures explicit ShutdownRequestTooLong; actual exit69/wrapper1, no truncation presented as supported request",
+    "Native property worker uses sink, fails without STOPPED success if request occurs. Existing diagnostic startup/STOP/actual exit0 MCP regression passes",
+    "17 Rust tests (6 unit+11 lifetime), native probe/worker strict compile/link0, clippy all targets0, example build0 and compositor check0"
+  ],
+  "historical_failed_attempt": "oversize-mcp.json/fixture-oversize-initial-invalid.rc: original parser rejected arbitrary x target not starting reboot/shutdown; UnexpectedEof is not sink compatibility evidence. Corrected target reboot,xxx in fresh execution-2, oversize-final-mcp.json authoritative",
+  "limitations": [
+    "24 original command bytes maximum in current wire frame; longer request is explicit component failure. Not broad shutdown command support; no host reboot semantics implemented",
+    "Sink requires serialized coordinator operations and quiescent producers before destruction; not thread-safe for arbitrary callbacks",
+    "No asynchronous runtime monitoring loop, recovery/restart/critical crash policy or descendant lifecycle acceptance. Original LOG(FATAL)/SetFatalRebootTarget path is not trigger_shutdown and is not covered",
+    "Normal enforcing-SELinux guard unchanged/not rerun; native probe requires disabled SELinux to stay in reviewed pre-fork failure path. Initializer runs root, no per-app security acceptance",
+    "Delivery is handled while reading startup/stop protocol; write failure/disconnected peer may prevent delivery. Native send failure is nonzero exit, never success",
+    "Rust wait_failed after typed startup failure collects actual nonzero exit. Drop on errors may block on uninterruptible I/O; no hard watchdog guarantee",
+    "Original native parser and callbacks exercised with own service regression fixture referencing original servicemanager binary; no real Android service launched, no APK stages accepted",
+    "Prepared hashes do not atomically bind executing image; owned group cleanup and sampled process observations bounded as MCP reports",
+    "No AOSP original source cache edited, no policy activation, no host/VM/client restart, no ARM translator installed"
+  ],
+  "next": "Implement approved Linux service cohort/control policy with original parser, scoped classes/onrestart and restart/failure budgets, immutable source closure and Android identity/cgroup/MAC prerequisites. Original manager availability and Markor full nine-stage journey still open."
+}

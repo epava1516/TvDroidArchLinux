@@ -1,5 +1,5 @@
 #![cfg(target_os = "linux")]
-use archtv_core::native_process::{NativeProcess, Startup};
+use archtv_core::native_process::{NativeFailure, NativeProcess, Startup};
 use std::{
     io,
     os::fd::{AsRawFd, FromRawFd, OwnedFd},
@@ -135,4 +135,79 @@ fn successful_exit_without_shutdown_ack_is_rejected() {
         io::ErrorKind::UnexpectedEof
     );
     assert_exited(&watched);
+}
+
+#[test]
+fn original_shutdown_is_typed_failure_and_actual_exit_is_collected() {
+    let mut process = NativeProcess::spawn(helper(
+        "os.write(fd,b'ARCHTV_NATIVE_V1 FAILED_SHUTDOWN 7265626f6f74\\n')\nos._exit(69)",
+    ))
+    .unwrap();
+    let error = process
+        .wait_started(Startup::Diagnostic, Duration::from_secs(2))
+        .unwrap_err();
+    assert_eq!(
+        error.get_ref().unwrap().downcast_ref::<NativeFailure>(),
+        Some(&NativeFailure::ShutdownRequested(b"reboot".to_vec()))
+    );
+    assert_eq!(
+        process.wait_failed(Duration::from_secs(2)).unwrap().code(),
+        Some(69)
+    );
+}
+#[test]
+fn malformed_failure_payload_cannot_be_a_typed_original_request() {
+    let mut process = NativeProcess::spawn(helper(
+        "os.write(fd,b'ARCHTV_NATIVE_V1 FAILED_SHUTDOWN zz\\n')\ntime.sleep(20)",
+    ))
+    .unwrap();
+    let watched = watch(&process);
+    assert_eq!(
+        process
+            .wait_started(Startup::Diagnostic, Duration::from_secs(2))
+            .unwrap_err()
+            .kind(),
+        io::ErrorKind::InvalidData
+    );
+    drop(process);
+    assert_exited(&watched);
+}
+#[test]
+fn oversize_request_is_explicit_failure_never_truncated_success() {
+    let mut process = NativeProcess::spawn(helper(
+        "os.write(fd,b'ARCHTV_NATIVE_V1 FAILED_SHUTDOWN_OVERSIZE\\n')\nos._exit(69)",
+    ))
+    .unwrap();
+    let error = process
+        .wait_started(Startup::Diagnostic, Duration::from_secs(2))
+        .unwrap_err();
+    assert_eq!(
+        error.get_ref().unwrap().downcast_ref::<NativeFailure>(),
+        Some(&NativeFailure::ShutdownRequestTooLong)
+    );
+    assert_eq!(
+        process.wait_failed(Duration::from_secs(2)).unwrap().code(),
+        Some(69)
+    );
+}
+
+#[test]
+fn failure_cannot_be_overridden_by_later_startup_ack() {
+    let mut process=NativeProcess::spawn(helper("os.write(fd,b'ARCHTV_NATIVE_V1 FAILED_SHUTDOWN 7265626f6f74\\nARCHTV_NATIVE_V1 DIAGNOSTIC_STARTED\\n')\nos._exit(69)")).unwrap();
+    assert!(
+        process
+            .wait_started(Startup::Diagnostic, Duration::from_secs(2))
+            .is_err()
+    );
+    assert_eq!(
+        process
+            .wait_started(Startup::Diagnostic, Duration::from_secs(2))
+            .unwrap_err()
+            .to_string(),
+        "native component already failed"
+    );
+    assert_eq!(
+        process.wait_failed(Duration::from_secs(2)).unwrap().code(),
+        Some(69)
+    );
 }

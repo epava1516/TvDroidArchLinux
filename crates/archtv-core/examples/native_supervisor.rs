@@ -1,5 +1,5 @@
 //! Internal lifetime exerciser; component startup is not runtime readiness.
-use archtv_core::native_process::{NativeProcess, Startup};
+use archtv_core::native_process::{NativeFailure, NativeProcess, Startup};
 use std::{process::Command, time::Duration};
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut args = std::env::args_os().skip(1);
@@ -20,7 +20,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         process.pid(),
         process.pidfd()
     );
-    process.wait_started(expected, Duration::from_secs(10))?;
+    if let Err(error) = process.wait_started(expected, Duration::from_secs(10)) {
+        if error.get_ref().is_some_and(|e| e.is::<NativeFailure>()) {
+            let status = process.wait_failed(Duration::from_secs(10))?;
+            eprintln!("NATIVE_COMPONENT_FAILED cause={error} actual_exit={status}");
+        }
+        return Err(error.into());
+    }
     println!("NATIVE_COMPONENT_STARTUP mode={expected:?} NOT_APK_READINESS");
     let exit = process.stop(Duration::from_secs(10))?;
     println!("NATIVE_COMPONENT_STOPPED exit={exit}");
