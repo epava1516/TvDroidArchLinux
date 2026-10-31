@@ -1,0 +1,13 @@
+{
+  "utc": "2026-10-31T18:02:30.465860+00:00",
+  "base_head": "6dffd0df00a444e87af72b4f9fec542443924d4f",
+  "branch": "main",
+  "authorization": "Explicit VM packages/SELinux/labels/config/enforcing/reboots authorized; checkpoint before disruptive operations, no new permission wait",
+  "recovery": "/home/tv/recuperacion-archtv/20261031T175154Z-hwmanager-enforcing/RETOMAR.txt",
+  "host": "6.18.59 LTS, hwmanager policy1 loaded, enforcing window restored0, no reboot/persistent policy loader. Audit restored disabled/inactive; post checks no runtime processes/image loops; 32 empty cgroup directories removed.",
+  "processes": "All build/capture handles in this milestone terminal, no native persistent service. Numeric PIDs in capture refer only to that capture; recheck on resume.",
+  "pending": "Six older files preserved and excluded: four Android13 source experiments, unknown H9 qemu/serial logs. New milestone source/reports separately staged.",
+  "evidence": "findings.json, execution8 positive, execution7 debug FD MAC negative, original inputs/hashes in payload-descriptor.json/profile.json/build JSON, host-post-run.json/audit-restore.txt. Earlier negatives retained.",
+  "next": "Use the available original manager cohort to test the complete Composer/SurfaceFlinger path; review original AIDL/HWC3 frontend versus the legacy HIDL2.1 path before choosing final FCM and packaging. Keep actual frames/input/PMS/AMS/zygote/Markor path as acceptance.",
+  "goal_status": "Broad APK runtime and all real-app journeys still incomplete; goal remains active."
+}

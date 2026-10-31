@@ -1,0 +1,17 @@
+; Extend the already-tested original cohort only to the admitted HIDL manager.
+; Original daemon/RC/client and original policy/neverallows remain unchanged.
+(genfscon binder /archtv-mc1-hwbinder (u object_r hwbinder_device ((s0) (s0))))
+(typeattributeset archtv_mc1_android (hwservicemanager))
+(allow init hwservicemanager (process2 (nnp_transition)))
+(allow hwservicemanager linux.init_t (fd (use)))
+(allow hwservicemanager linux.init_t (fifo_file (write)))
+; Original Android libselinux status/access transactions on Linux's mount type.
+(allow hwservicemanager linux.security_t (filesystem (getattr)))
+(allow hwservicemanager linux.security_t (dir (read open getattr search)))
+(allow hwservicemanager linux.security_t (file (read getattr map open write)))
+(allow hwservicemanager linux.security_t (security (compute_av)))
+; Privileged Linux-side observation; never add CAP_SYS_PTRACE to Android init.
+(allow linux.init_t hwservicemanager (process (getattr)))
+(allow linux.init_t hwservicemanager (dir (search)))
+(allow linux.init_t hwservicemanager (file (read open getattr)))
+(allow linux.init_t hwbinder_device (chr_file (getattr)))

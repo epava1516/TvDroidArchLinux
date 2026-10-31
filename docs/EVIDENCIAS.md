@@ -387,3 +387,19 @@ ni loops de imágenes del runtime. Ensayo4s, no host enforcing sostenido/R1-MAC/
 [SystemServer original y display antes de PMS](../reports/android16-markor-original-bootstrap/decision.json)
 es inspección de fuente fijada; cambia orden MC2/MC3, no demuestra ejecución ni
 imposibilidad general de otro cierre headless. No se inicia SystemServer completo.
+
+## Cohorte original con hwservicemanager
+
+[Checkpoint](../reports/android16-hwmanager-cohort/checkpoint.json), [alcance y fuentes](../reports/android16-hwmanager-cohort/findings.json),
+[positivo enforcing8](../reports/android16-hwmanager-cohort/execution-8-enforcing-descriptor-mcp.json)
+y [negativo FD7](../reports/android16-hwmanager-cohort/execution-7-enforcing-direct-query-mcp.json).
+Gestores originales y lookup/descriptor con GSI lshal, instancia ausente128, identidades
+reales y cierre en kernel1, recuperación0. No frame/display ni APK. Política
+`689ca90e0ac97b9d5f4c800b7035868db551db3670f0cebc19898e8ef6926c66`, payload
+`9b2399434a186327605fba0d1e555cf7c2a9b703f6de87a7ece63be3a3b0dcbc`.
+[Fallos e interpretaciones](../reports/android16-hwmanager-cohort/README.md): VINTF
+propio duplicado retirado, crash lshal list por datos faltantes, diagnóstico de
+estadísticas incompleto, error256 truncado detectado, FD denegado conservado.
+[Estado posterior](../reports/android16-hwmanager-cohort/host-post-run.json) sin procesos
+ni loops; las limitaciones REA/audit siguen aplicándose. FCM desconocido/max-level8
+no acredita perfil moderno; fuentes originales fijadas y decisión gráfica pendiente.

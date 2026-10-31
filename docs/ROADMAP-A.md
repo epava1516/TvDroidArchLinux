@@ -28,15 +28,15 @@ No es autorización/aislamiento ni APK compatible. Antiguos bloqueos sin políti
 superados para esta cohorte; avisos de recursos conservados. Autorización expresa
 actual cubre pruebas de seguridad/reinicio; no falta permiso. Antes de enforcing,
 mantener recuperación y verificar los negativos de cada nueva cohorte. El prefijo
-actual ya pasa con rollback probado; siguiente hwservicemanager/Composer y display
+actual ya pasa con rollback probado; siguiente Composer y display
 real intercalado con MC2 original, no más sondas ajenas a ese camino. ARM/GMS/DRM continúan separados.
 
 | Paso | Integración y resultado funcional exigido | Estado/evidencia y límite |
 | --- | --- | --- |
 | MC0 · admisión MAC recuperable | Candidato coherente de política original Linux/AOSP, imágenes/etiquetas/UID/roles/NNP/capacidades, dispositivos/cgroups/FD y recuperación; prueba real y recuperación antes de cada operación disruptiva | Política compuesta cargada; entrada real Linux/glibc→Bionic y propiedades ya ejecutan en enforcing en ventana acotada. Autorización actual expresa; recuperación automática probada. R1-MAC sigue abierto: recorrido completo enforcing y negativos pendientes |
-| MC1 · cohorte original disponible | Propiedades originales publican versión y readiness por sus controles reales; servicemanager se registra y cliente original legítimo lo consulta; después hwservicemanager para la ruta Composer elegida. Identidad/SID y negativos reales, muerte/cierre sin alterar host | Propiedades→gestor registrado→cliente original→cierre0 probado en permisivo con identidades y etiquetas reales. El mismo prefijo pasa enforcing1, directo-helper denegado y cierre real, en ensayo4s recuperado0 (ejecución23). Hwservicemanager pendiente; R1-MAC no cerrado. No readiness manual ni APK disponible |
+| MC1 · cohorte original disponible | Propiedades originales publican versión y readiness por sus controles reales; servicemanager se registra y cliente original legítimo lo consulta; después hwservicemanager para la ruta Composer elegida. Identidad/SID y negativos reales, muerte/cierre sin alterar host | Propiedades→gestor registrado→cliente original→cierre0 probado en permisivo con identidades y etiquetas reales. El mismo prefijo pasa enforcing1, directo-helper denegado y cierre real, en ensayo4s recuperado0 (ejecución23). Hwservicemanager original consultado en enforcing y cerrado (REA8 hwmanager-cohort), instancia ausente128; R1-MAC no cerrado. No readiness manual ni APK disponible |
 | MC2 · instalación y lanzamiento reales | Reutilizar PackageManager/permisos/instalación/datos, AMS/ATMS y proceso ART/zygote/framework originales como subsistemas. Resolver cierre real de system_server y auxiliares (p.ej. installd/artd/almacenamiento) por fuentes/ejecución; instalar APK Markor intacta y lanzar Activity/Application originales | ART llega a ActivityThread.main; no lanzamiento Markor. Lista mínima exacta y separación de system_server aún por demostrar; no asumir que todas sus dependencias puedan omitirse. Firma criptográfica v2 API36 verificada con apksig original y negativo; splits/UID/seinfo/datos siguen pendientes. SystemServer original espera display antes de PMS: intercalar MC3, no asumir instalación headless |
-| MC3 · interfaz e entrada | Completar Composer/allocator/mapper→SF original→Wayland/Smithay, WMS/Display/Input originales; presentar frames de Markor y entregar entrada al editor/foco | Composer espera gestor; no buffers/fences ni frame original acreditados. Reutilizar subsistemas completos; no reconstruir widgets de Markor. Empaquetado de cierre gráfico exacto pendiente, no bloqueo atribuido sin prueba |
+| MC3 · interfaz e entrada | Completar Composer/allocator/mapper→SF original→Wayland/Smithay, WMS/Display/Input originales; presentar frames de Markor y entregar entrada al editor/foco | Gestor HIDL original ya disponible en ensayo enforcing; no buffers/fences ni frame original acreditados. FCM/dispositivo final no definido: metadatos GSI limitan gestor a max-level8 y fallback desconocido. Evaluar frontend AIDL/HWC3 coherente antes de ampliar ruta HIDL2.1. Reutilizar subsistemas completos; no reconstruir widgets de Markor. Empaquetado de cierre gráfico exacto pendiente, no bloqueo atribuido sin prueba |
 | MC4 · función, persistencia y servicios | Crear/editar nota con entrada real, guardar por la ruta/proveedor elegido y permisos originales; verificar bytes, callbacks y almacenamiento efectivo | No probado. Proveedores/actividades de selección y auxiliares que exija el recorrido se integran, no respuestas vacías ni ruta cambiada silenciosamente |
 | MC5 · cierre y reapertura | Cerrar desde shell, recoger procesos/recursos, reabrir APK intacta y recuperar nota; repetir con límites/aislamiento y control horizontal Calculator | Nueve etapas canónicas siguen no probadas. Pruebas del supervisor sólo respaldan infraestructura de ciclo de vida |
 
@@ -45,6 +45,17 @@ en [arquitectura](ARQUITECTURA.md#integración-inmediata-de-propiedades-y-gestor
 El arranque histórico por sí solo no autorizaba cambios; la autorización expresa actual sí cubre carga, etiquetas, enforcing y reinicios necesarios. ARM, GMS,
 multimedia propietaria/DRM siguen en R5–R7 y la matriz amplia, fuera de este primer
 camino Markor. La secuencia completa no se cierra con MC1 ni con una ventana vacía.
+
+### Decisión gráfica tras la cohorte real
+
+[Resultado original](../reports/android16-hwmanager-cohort/findings.json): la espera
+histórica de hwservicemanager ya no exige readiness simulada. Probar el cierre
+original Composer/SF→salida Wayland real, contrastando HIDL2.1 existente y frontend
+AIDL/HWC3 antes de fijar el FCM del dispositivo Linux. No silenciar requisito
+max-level8 con un nivel inventado ni tomar fallback desconocido como conformidad.
+La consulta IPC y los negativos no cierran R3 ni instalación Markor. El backend
+`ctl` aún falla cerrado y deberá conectarse al despacho original de servicios
+admitidos cuando el recorrido requiera arranque perezoso/control.
 
 ## Puertas de seguridad y antecedentes
 

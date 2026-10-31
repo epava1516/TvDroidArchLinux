@@ -1,0 +1,72 @@
+{
+  "scope": "Original hardware manager cohort lookup, descriptor, missing instance and close in bounded enforcing; NOT display/Composer/HAL/APK compatibility.",
+  "base_head": "6dffd0df00a444e87af72b4f9fec542443924d4f",
+  "current_evidence": "execution-8-enforcing-descriptor-mcp.json",
+  "policy_sha256": "689ca90e0ac97b9d5f4c800b7035868db551db3670f0cebc19898e8ef6926c66",
+  "payload_sha256": "9b2399434a186327605fba0d1e555cf7c2a9b703f6de87a7ece63be3a3b0dcbc",
+  "observed": [
+    "Original GSI servicemanager and hwservicemanager, original RCs, original Service lifecycle; no SecondStageMain/Android boot",
+    "Original property publication/readiness; actual manager contexts, UID/GID1000, caps0, NNP1 asserted externally",
+    "Original lshal debug -E uses manager1.0 get and actual interfaceDescriptor, skips subclass debug by its original semantics",
+    "Missing manager1.2 instance gives original NO_INTERFACE128 and actual message; this is absence, not proof of general authorization",
+    "Original close/reap with kernel1 at hardware query completion and close; watchdog restores0; original property socket lstat ENOENT",
+    "Original GSI manifests unchanged; no no_max overlay or experimental device profile in current path",
+    "Separate hwbinder private device with actual hwbinder_device label"
+  ],
+  "historical_failures": [
+    {
+      "evidence": "execution-1-permissive-mcp.json",
+      "result": "Own additional VINTF fragment duplicated original system_ext manifest entry; original disabled property/RC stop correctly rejected candidate."
+    },
+    {
+      "evidence": "execution-2-observed-logs-permissive-mcp.json",
+      "result": "Requested environment flag was filtered by sudo; passive observer not enabled. No log absence inference."
+    },
+    {
+      "evidence": "execution-3-effective-log-observer-mcp.json",
+      "result": "Actual credentialled liblog packets localize duplicate VINTF; diagnostic socket only in permissive, no API/readiness response or preload."
+    },
+    {
+      "evidence": "execution-4-original-manifests-permissive-mcp.json",
+      "result": "Original manifests enable hardware manager, but lshal list crashes with missing device manifest; source getVintfInfo dereferences absent objects."
+    },
+    {
+      "evidence": "execution-5-explicit-profile-permissive-mcp.json",
+      "result": "Diagnostic manifest/matrix avoid null, list receives real registered rows then fails absent Binder process statistics. Profile archived, not applied to current route."
+    },
+    {
+      "evidence": "execution-7-enforcing-direct-query-mcp.json",
+      "result": "Original full debug FD transfer denied hwservicemanager->shell:fd use; preserved original policy. lshal TRANSACTION_ERROR256 truncates to exit0, output validation correctly fails candidate."
+    }
+  ],
+  "remaining": [
+    "R1-MAC and host sustained enforcing/identity installation/admission/resource profiles/real APK isolation remain open",
+    "hwservicemanager original framework declaration max-level8; current missing device manifest triggers original unspecified/old-device fallback. No final vendor FCM or VINTF conformity established",
+    "Do not silently choose legacy FCM merely to retain HIDL; evaluate original AIDL/HWC3 for coherent final graphics base against existing HIDL2.1 experiment",
+    "No valid lazy/service/power control backend yet: original unimplemented ctl handler fails closed, observed on missing-instance lazy start. Availability of direct-start profiles does not prove ctl operations",
+    "lshal list VINTF/Binder statistics limitations retained; full debug FD permission negative retained; no broad utility compatibility claim",
+    "No Composer HAL device/surface/frame/input or Markor install/launch/persistence yet",
+    "REA process sampling incomplete and audit loss limits coverage; absence of AVC is not authorization",
+    "Descriptor operation interpreted from pinned original lshal source plus command/result; raw HIDL payload not captured. Full source/binary reproducibility remains R0 open."
+  ],
+  "next": "Use the available original manager cohort to test the complete Composer/SurfaceFlinger path; review original AIDL/HWC3 frontend versus the legacy HIDL2.1 path before choosing final FCM and packaging. Keep actual frames/input/PMS/AMS/zygote/Markor path as acceptance.",
+  "source_revisions": {
+    "hwservicemanager": "21b593ef1d78e8fd23140bac5255bcbc51d5aea0",
+    "frameworks_native": "fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103",
+    "libvintf": "69c456ea4aa2f503a2904cfbc11f279a3b2efb09"
+  },
+  "source_sha256": {
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/original-hwservicemanager/source/system/hwservicemanager/service.cpp": "45d5a1fbf9917f6db681a24dc641927cba4f758581db29d4ce1693fa96d2d5cf",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/original-hwservicemanager/source/system/hwservicemanager/Vintf.cpp": "ecdd95969e82c647c56ddd11cec652cb7f0736097aafa51f02082a0d3399189c",
+    "/home/tv/.cache/archtv/aosp16-qpr2/framework-entry-study/VintfObject.cpp": "400516d6679d96f102915dd7c0a14ddb0e45098b189ece42cb15136e220d04cb",
+    "/home/tv/.cache/archtv/aosp16-qpr2/framework-entry-study/LshalListCommand.cpp": "b9cd6ca7bbd227e1981066d892fbf0e9842334616e6c5024600eac69cce5dbb9",
+    "/home/tv/.cache/archtv/aosp16-qpr2/framework-entry-study/Lshal.cpp": "dbd9180ea0f7dce848460eb6e26150b953b54228eb41273b082e09af4f88609c",
+    "/home/tv/.cache/archtv/aosp16-qpr2/framework-entry-study/LshalUtils.h": "b4a769b649259788444a001ac5148f292fbfa12f48ac3abdafa52c37cc4d8347"
+  },
+  "current_original_client": {
+    "command": "/system/bin/lshal debug -E android.hidl.manager@1.0::IServiceManager/default",
+    "expected_exit": 0,
+    "expected_stdout_stderr": "empty; rejects original transaction-error text whose status256 truncates to0",
+    "meaning": "Original get/descriptor path on parent interface; no debug FD requested. Not full manager dump/API compatibility."
+  }
+}

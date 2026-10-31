@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-mc1-functional-candidate/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-hwmanager-cohort/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -17,34 +17,35 @@ Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCC
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
 
-## MC1 · recorrido original probado en enforcing acotado
+## Cohorte original · hardware manager consultado en enforcing
 
-[Checkpoint](../reports/android16-mc1-functional-candidate/checkpoint.json),
-[resultados](../reports/android16-mc1-functional-candidate/findings.json) y
-[REA positivo/negativo](../reports/android16-mc1-functional-candidate/execution-23-enforcing-positive-negative-mcp.json).
-Propiedades originales → servicemanager original registrado → cliente original
-lista `manager: [android.os.IServiceManager]` → cierre/recolección y ausencia real
-del socket. Kernel enforcing1 comprobado al terminar cliente y cierre; gestor
-`u:r:servicemanager:s0`, UID/GID1000, caps efectivas0, NNP1. Negativo: el kernel
-impide saltarse Rust ejecutando directamente el helper. Ensayo global de4s con
-watchdog externo recuperado0; **el anfitrión queda permisivo con política cargada**.
+[Checkpoint](../reports/android16-hwmanager-cohort/checkpoint.json),
+[resultados](../reports/android16-hwmanager-cohort/findings.json) y
+[ejecución REA8](../reports/android16-hwmanager-cohort/execution-8-enforcing-descriptor-mcp.json).
+Propiedades originales → servicemanager → hwservicemanager con RCs originales →
+cliente GSI `lshal` obtiene interfaz/descriptor → instancia ausente128 → cierre.
+Kernel1 hasta consulta/cierre, ambos UID/GID1000/caps0/NNP1 y SID reales; watchdog
+recupera0. Anfitrión en permisivo con política cargada; audit inactivo restaurado,
+sin procesos ni loops del runtime. No readiness manual ni Android completo.
 
-R1-MAC abierto: no aislamiento de APK, perfiles completos de recursos, integridad
-de instalación ni estabilidad sostenida de host enforcing acreditados. El ensayo
-usa supervisor de vida acotada, no un runtime de APK instalado. Backing images en
-cache de desarrollo; almacén de admisión protegido/aliases pendientes. Avisos de
-memory/blkio/cpuset conservados. Auditoría perdió eventos; no se infiere autorización
-por ausencia de AVC. Audit volvió a inactivo/enabled0; sin procesos/loops propios.
+El cliente usa `debug -E` de interfaz padre1.0 para consultar el descriptor real
+sin pedir volcado de la implementación1.2. El volcado completo sigue denegado por
+la política original en FD use (ejecución7). Un error de transacción256 de lshal
+trunca a exit0: la salida también se valida y rechaza errores. `lshal list` conserva
+fallos reales por VINTF incompleto y estadísticas Binder ausentes; no se declara
+compatibilidad general de la herramienta ni se falsifican esos datos.
 
-Autorización expresa vigente cubre operaciones necesarias, con checkpoint antes
-de interrupciones; no otra espera por permisos históricos. Snapshot y consola
-confirmadas, restauración no ensayada. Ningún reboot/loader persistente instalado.
-Siguiente: hwservicemanager/Composer/SF y display real, junto al cierre PMS/AMS/zygote
-original para Markor: [orden fuente](../reports/android16-markor-original-bootstrap/decision.json).
-El SystemServer normal espera display antes de PMS y arranca muchas otras familias;
-no ejecutarlo como Android completo oculto ni falsear fase/display. Firma v2 de
-Markor verificada con apksig original; nueve etapas funcionales aún no probadas.
-ARM/GMS/DRM independientes. Binder -95 y fallo property_service sin política históricos.
+Siguiente: conectar Composer/SurfaceFlinger a Wayland/Smithay y cerrar display real
+para PMS/AMS/zygote y Markor. La declaración GSI de hwservicemanager tiene max-level8;
+el ensayo usa fallback original de nivel dispositivo desconocido. Elegir FCM y
+backend gráfico final con evidencia (evaluar AIDL/HWC3), sin imponer un nivel viejo
+sólo para conservar HIDL ni añadir manifiestos que declaren hardware inexistente.
+
+R1-MAC/aislamiento/perfiles recursos/admisión de imágenes/host enforcing sostenido
+siguen abiertos. Control `ctl` de servicios/potencia aún falla cerrado sin backend;
+arranque directo probado no acredita esos comandos. Markor tiene firma verificada,
+pero nueve etapas funcionales siguen no probadas. ARM/GMS/DRM separados. Autorización
+expresa vigente cubre operaciones necesarias con checkpoint antes de interrupciones.
 
 ## Hito anterior · mensajes de fallo Rust conservados
 

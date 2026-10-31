@@ -1,0 +1,157 @@
+{
+  "evidence_id": "ev_d4da4c10ba143a8e3953a74f99cf90f461c875282349a3d3bc01688093daaa1b",
+  "exit": {
+    "code": 1,
+    "signal": 0,
+    "reason": "exited"
+  },
+  "cleanup": {
+    "owned_process_group": "verified",
+    "temporary_root": "removed",
+    "unverified_processes": [
+      {
+        "pid": 29113,
+        "reason": "EACCES: permission denied, open '/proc/29113/environ'"
+      },
+      {
+        "pid": 29257,
+        "reason": "EACCES: permission denied, open '/proc/29257/environ'"
+      },
+      {
+        "pid": 29258,
+        "reason": "EACCES: permission denied, open '/proc/29258/environ'"
+      },
+      {
+        "pid": 29259,
+        "reason": "EACCES: permission denied, open '/proc/29259/environ'"
+      },
+      {
+        "pid": 29260,
+        "reason": "EACCES: permission denied, open '/proc/29260/environ'"
+      },
+      {
+        "pid": 29261,
+        "reason": "EACCES: permission denied, open '/proc/29261/environ'"
+      },
+      {
+        "pid": 29262,
+        "reason": "EACCES: permission denied, open '/proc/29262/environ'"
+      },
+      {
+        "pid": 29263,
+        "reason": "EACCES: permission denied, open '/proc/29263/environ'"
+      },
+      {
+        "pid": 29268,
+        "reason": "EACCES: permission denied, open '/proc/29268/environ'"
+      },
+      {
+        "pid": 29269,
+        "reason": "EACCES: permission denied, open '/proc/29269/environ'"
+      },
+      {
+        "pid": 29270,
+        "reason": "EACCES: permission denied, open '/proc/29270/environ'"
+      },
+      {
+        "pid": 29271,
+        "reason": "EACCES: permission denied, open '/proc/29271/environ'"
+      },
+      {
+        "pid": 29273,
+        "reason": "EACCES: permission denied, open '/proc/29273/environ'"
+      }
+    ]
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "The executable digest is a prelaunch file sample; matching path metadata immediately after spawn does not prove an atomic operating-system image binding.",
+    "Process trees are sampled and may omit short-lived descendants.",
+    "Process-tree sampling ended with an incomplete observation.",
+    "Filesystem observations are before/after snapshots, not syscall traces.",
+    "Inherited host environment variables are not recorded and may affect results.",
+    "No filesystem observation paths were selected; filesystem effects remain unknown.",
+    "Cumulative rendered state and visible-line bytes exceeded output_bytes; whole rendered frames were omitted. Raw PTY coverage is reported separately. See truncation_details.rendered_terminal.",
+    "Process sampling has incomplete observations: /proc/29097/environ: EACCES: Error: EACCES: permission denied, open '/proc/29097/environ'. See truncation_details.process."
+  ],
+  "residual_unknowns": [
+    {
+      "scope": "process",
+      "reason": "Process trees are sampled and may omit short-lived descendants."
+    },
+    {
+      "scope": "process",
+      "reason": "The executable digest is a prelaunch file sample; operating-system image binding is not atomically observed."
+    },
+    {
+      "scope": "environment",
+      "reason": "Inherited host environment variables are not recorded."
+    },
+    {
+      "scope": "network",
+      "reason": "Network activity is not observed by this capture."
+    },
+    {
+      "scope": "filesystem",
+      "reason": "No filesystem observation paths were selected; filesystem effects remain unknown."
+    },
+    {
+      "scope": "process",
+      "reason": "Process sampling has incomplete observations: /proc/29097/environ: EACCES: Error: EACCES: permission denied, open '/proc/29097/environ'. See truncation_details.process."
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 29113 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/29113/environ'"
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 29257 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/29257/environ'"
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 29258 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/29258/environ'"
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 29259 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/29259/environ'"
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 29260 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/29260/environ'"
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 29261 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/29261/environ'"
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 29262 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/29262/environ'"
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 29263 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/29263/environ'"
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 29268 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/29268/environ'"
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 29269 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/29269/environ'"
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 29270 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/29270/environ'"
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 29271 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/29271/environ'"
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 29273 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/29273/environ'"
+    }
+  ],
+  "truncated": true,
+  "output": "PASSIVE_LOG_OBSERVER_ENABLED diagnostic_only\r\nHWMANAGER_ORIGINAL_VINTF_FRAGMENT d4b18a56c98367abb972bc05e586a6e8e41bb534605776b3f21f14551cf09644\r\nMC1_FACTORY_PLACED_IN_PRIVATE_CGROUP /sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc1-live-1793468100045618562\r\nMC1_PREPARED original_GSI_and_36_APEX_RO NNP1 private_binder actual_context=linux.system_u:linux.system_r:linux.init_t:s0\r\nMC1_LINUX_FACTORY_STATUS [\"Uid:\\t0\\t0\\t0\\t0\", \"Gid:\\t0\\t0\\t0\\t0\", \"CapPrm:\\t000001ffffffffff\", \"CapEff:\\t000001ffffffffff\", \"NoNewPrivs:\\t1\"]\r\nMC1_RESULT {\"exit\": 1, \"stdout\": \"NATIVE_PROCESS_OWNED pid=103 pidfd=5\\n\", \"stderr\": \"LINUX_EXEC_CONTEXT_REQUESTED source=linux.system_u:archtv_launcher_r:archtv_launcher:s0 target=u:r:init:s0 enforcing=0 NOT_STARTUP\\nPROPERTY_WORKER_IDENTITY observed=u:r:init:s0 enforcing=0 mc1=1\\nSELinux: Loaded file context from:\\n\\t\\t/system/etc/selinux/plat_file_contexts\\n\\t\\t/system_ext/etc/selinux/system_ext_file_contexts\\n\\t\\t/product/etc/selinux/product_file_contexts\\n10-31 17:35:02.041   103   103 I property-coordinator: boot_config.cpp:46 [libfstab] Using Android DT directory /proc/device-tree/firmware/android/\\n10-31 17:35:02.044   103   103 W property-coordinator: property_service.cpp:827 Overriding previous property 'ro.cp_system_other_odex':'1' with new value '0'\\n10-31 17:35:02.046   103   103 W property-coordinator: property_service.cpp:827 Overriding previous property 'ro.build.flavor':'mainline-user' with new value 'aosp_x86_64-user'\\n10-31 17:35:02.046   103   103 W property-coordinator: property_service.cpp:827 Overriding previous property 'ro.build.description':'mainline-user 16 BP4A.251205.006 14401865 release-keys' with new value 'aosp_x86_64-user 16 BP4A.251205.006 14401865 release-keys'\\n10-31 17:35:02.048   103   103 I property-coordinator: property_service.cpp:957 Setting product property ro.product.brand to 'Android' (from ro.product.product.brand)\\n10-31 17:35:02.048   103   103 I property-coordinator: property_service.cpp:957 Setting product property ro.product.device to 'generic_x86_64' (from ro.product.product.device)\\n10-31 17:35:02.048   103   103 I property-coordinator: property_service.cpp:957 Setting product property ro.product.manufacturer to 'unknown' (from ro.product.product.manufacturer)\\n10-31 17:35:02.048   103   103 I property-coordinator: property_service.cpp:957 Setting product property ro.product.model to 'AOSP on x86_64' (from ro.product.product.model)\\n10-31 17:35:02.048   103   103 I property-coordinator: property_service.cpp:957 Setting product property ro.product.name to 'aosp_x86_64' (from ro.product.product.name)\\n10-31 17:35:02.048   103   103 I property-coordinator: property_service.cpp:1034 Setting property 'ro.build.fingerprint' to 'Android/aosp_x86_64/generic_x86_64:16/BP4A.251205.006/14401865:user/release-keys'\\n10-31 17:35:02.048   103   103 I property-coordinator: property_service.cpp:1096 Setting property 'ro.product.cpu.abilist' to 'x86_64,x86'\\n10-31 17:35:02.048   103   103 I property-coordinator: property_service.cpp:1096 Setting property 'ro.product.cpu.abilist32' to 'x86'\\n10-31 17:35:02.048   103   103 I property-coordinator: property_service.cpp:1096 Setting property 'ro.product.cpu.abilist64' to 'x86_64'\\n10-31 17:35:02.049   103   103 I property-coordinator: util.cpp:156 Created socket '/dev/socket/property_service_for_system', mode 660, user 0, group 1000\\n10-31 17:35:02.050   103   103 I property-coordinator: util.cpp:156 Created socket '/dev/socket/property_service', mode 666, user 0, group 0\\n10-31 17:35:02.052   103   104 E property-coordinator: persistent_properties.cpp:268 Could not load single persistent property file, trying legacy directory: Unable to read persistent property file: open() failed: No such file or directory\\nMC1_PROPERTY_SOCKET_LABEL path=/dev/socket/property_service actual=u:object_r:property_socket:s0\\nMC1_PROPERTY_SOCKET_LABEL path=/dev/socket/property_service_for_system actual=u:object_r:property_socket:s0\\n10-31 17:35:02.053   103   103 I property-coordinator: parser.cpp:145 Parsing file /system/etc/init/servicemanager.rc...\\n10-31 17:35:02.055   103   103 I property-coordinator: service.cpp:668 starting service 'servicemanager'...\\n10-31 17:35:02.055   103   103 I property-coordinator: service.cpp:683 Could not open file '/dev/kmsg': Failed to open file '/dev/kmsg': No such file or directory\\n10-31 17:35:02.061   103   103 W property-coordinator: util.cpp:246 Activation of cgroup controller +memory failed in path /sys/fs/cgroup/system/uid_1000: No such file or directory\\n10-31 17:35:02.103   103   103 W libprocessgroup: task_profiles.cpp:984 A JoinCgroup action in the SystemMemoryProcess profile is used for controller memory in the cgroup v2 hierarchy and will be ignored\\n10-31 17:35:02.104   103   103 W libprocessgroup: task_profiles.cpp:383 SetCgroup::ExecuteForProcess: failed to open /dev/blkio//cgroup.procs: No such file or directory\\n10-31 17:35:02.104   103   103 W libprocessgroup: task_profiles.cpp:1217 Failed to apply NormalIoPriority process profile\\n10-31 17:35:02.108   106   106 W libprocessgroup: task_profiles.cpp:984 A JoinCgroup action in the SystemMemoryProcess profile is used for controller memory in the cgroup v2 hierarchy and will be ignored\\n10-31 17:35:02.109   106   106 W libprocessgroup: task_profiles.cpp:383 SetCgroup::ExecuteForProcess: failed to open /dev/cpuset/foreground/cgroup.procs: No such file or directory\\n10-31 17:35:02.109   106   106 W libprocessgroup: task_profiles.cpp:1217 Failed to apply ProcessCapacityHigh process profile\\n10-31 17:35:02.109   106   106 E property-coordinator: service.cpp:573 failed to set task profiles\\n10-31 17:35:02.109   103   103 I property-coordinator: service.cpp:801 ... started service 'servicemanager' has pid 106\\nMC1_MANAGER_STARTED pid=106 uid=1000 gid=1000\\n10-31 17:35:02.168   103   103 I property-coordinator: service.cpp:668 starting service 'exec 1 (/system/bin/sh -c /system/bin/service list > /data/local/tmp/archtv-mc1/service-list.txt 2>&1)'...\\n10-31 17:35:02.176   103   103 W property-coordinator: util.cpp:246 Activation of cgroup controller +memory failed in path /sys/fs/cgroup/system/uid_2000: No such file or directory\\n10-31 17:35:02.212   103   103 W libprocessgroup: task_profiles.cpp:383 SetCgroup::ExecuteForProcess: failed to open /dev/blkio//cgroup.procs: No such file or directory\\n10-31 17:35:02.212   103   103 W libprocessgroup: task_profiles.cpp:1217 Failed to apply NormalIoPriority process profile\\n10-31 17:35:02.212   103   103 I property-coordinator: service.cpp:801 ... started service 'exec 1 (/system/bin/sh -c /system/bin/service list > /data/local/tmp/archtv-mc1/service-list.txt 2>&1)' has pid 108\\n10-31 17:35:02.212   103   103 I property-coordinator: service.cpp:449 SVC_EXEC service 'exec 1 (/system/bin/sh -c /system/bin/service list > /data/local/tmp/archtv-mc1/service-list.txt 2>&1)' pid 108 (uid 2000 gid 2000+0 context u:r:shell:s0) started; waiting...\\n10-31 17:35:02.268   103   103 I property-coordinator: sigchld_handler.cpp:114 Service 'exec 1 (/system/bin/sh -c /system/bin/service list > /data/local/tmp/archtv-mc1/service-list.txt 2>&1)' (pid 108) exited with status 0 waiting took 0.093000 seconds\\n10-31 17:35:02.269   103   103 I property-coordinator: service.cpp:207 Sending SIGKILL to service 'exec 1 (/system/bin/sh -c /system/bin/service list > /data/local/tmp/archtv-mc1/service-list.txt 2>&1)' (pid 108) process group...\\n10-31 17:35:02.270   103   103 I libprocessgroup: processgroup.cpp:656 Removed cgroup /sys/fs/cgroup/system/uid_2000/pid_108\\nMC1_CLIENT_EXIT pid=108 code=1 status=0\\nMC1_ORIGINAL_CLIENT_EXIT0_REQUIRES_EXTERNAL_VERIFICATION enforcing=0\\n10-31 17:35:02.273   103   103 I property-coordinator: parser.cpp:145 Parsing file /system/system_ext/etc/init/hwservicemanager.rc...\\n10-31 17:35:02.276   103   103 I property-coordinator: service.cpp:668 starting service 'hwservicemanager'...\\n10-31 17:35:02.284   103   103 W property-coordinator: util.cpp:246 Activation of cgroup controller +memory failed in path /sys/fs/cgroup/system/uid_1000: No such file or directory\\n10-31 17:35:02.318   103   103 W libprocessgroup: task_profiles.cpp:383 SetCgroup::ExecuteForProcess: failed to open /dev/blkio//cgroup.procs: No such file or directory\\n10-31 17:35:02.318   103   103 W libprocessgroup: task_profiles.cpp:1217 Failed to apply NormalIoPriority process profile\\n10-31 17:35:02.319   103   103 I property-coordinator: service.cpp:801 ... started service 'hwservicemanager' has pid 110\\n10-31 17:35:02.319   110   110 W libprocessgroup: task_profiles.cpp:383 SetCgroup::ExecuteForProcess: failed to open /dev/cpuset/system-background/cgroup.procs: No such file or directory\\nMC1_HWMANAGER_STARTED pid=110 uid=1000 gid=1000\\n10-31 17:35:02.320   110   110 W libprocessgroup: task_profiles.cpp:1217 Failed to apply ServiceCapacityLow process profile\\n10-31 17:35:02.320   110   110 W libprocessgroup: task_profiles.cpp:383 SetCgroup::ExecuteForProcess: failed to open /dev/cpuctl/foreground/cgroup.procs: No such file or directory\\n10-31 17:35:02.320   110   110 W libprocessgroup: task_profiles.cpp:1217 Failed to apply HighPerformance process profile\\n10-31 17:35:02.320   110   110 E property-coordinator: service.cpp:573 failed to set task profiles\\n10-31 17:35:02.365   103   103 I property-coordinator: action_manager.cpp:90 processing action (hwservicemanager.disabled=true) from (/system/system_ext/etc/init/hwservicemanager.rc:14)\\n10-31 17:35:02.365   103   103 I property-coordinator: service.cpp:207 Sending SIGKILL to service 'hwservicemanager' (pid 110) process group...\\n10-31 17:35:02.368   103   103 I libprocessgroup: processgroup.cpp:656 Removed cgroup /sys/fs/cgroup/system/uid_1000/pid_110\\n10-31 17:35:02.368   103   103 I property-coordinator: sigchld_handler.cpp:116 Service 'hwservicemanager' (pid 110) received SIGKILL\\n10-31 17:35:02.368   103   103 I property-coordinator: service.cpp:207 Sending SIGKILL to service 'hwservicemanager' (pid 110) process group...\\n10-31 17:35:02.368   103   103 E libprocessgroup: processgroup.cpp:450 Failed to open /sys/fs/cgroup/system/uid_1000/pid_110/cgroup.procs: No such file or directory\\nMC1_HWMANAGER_EXIT pid=110 code=2 status=9\\nMC1_FAILED MC1 stopped or manager exited\\n10-31 17:35:02.369   103   103 I property-coordinator: service.cpp:207 Sending SIGKILL to service 'servicemanager' (pid 106) process group...\\n10-31 17:35:02.371   103   103 I libprocessgroup: processgroup.cpp:656 Removed cgroup /sys/fs/cgroup/system/uid_1000/pid_106\\n10-31 17:35:02.371   103   103 I property-coordinator: sigchld_handler.cpp:116 Service 'servicemanager' (pid 106) received SIGKILL\\n10-31 17:35:02.371   103   103 I property-coordinator: service.cpp:207 Sending SIGKILL to service 'servicemanager' (pid 106) process group...\\n10-31 17:35:02.371   103   103 E libprocessgroup: processgroup.cpp:450 Failed to open /sys/fs/cgroup/system/uid_1000/pid_106/cgroup.procs: No such file or directory\\nMC1_MANAGER_EXIT pid=106 code=2 status=9\\n10-31 17:35:02.372   103   103 E property-coordinator: sigchld_handler.cpp:56 waitid failed: No child processes\\nMC1_CLOSE_OBSERVED enforcing=0 expected=0\\nError: Custom { kind: UnexpectedEof, error: \\\"native lifetime channel closed\\\" }\\n\", \"external_Linux_identity_observation\": [{\"kind\": \"MANAGER\", \"pid_namespace_pid\": 106, \"getpidcon_raw_return\": 0, \"actual_context\": \"u:r:servicemanager:s0\", \"contexts_observed_in_order\": [\"u:r:init:s0\", \"u:r:servicemanager:s0\"], \"errno_observed\": [], \"status\": [\"Uid:\\t1000\\t1000\\t1000\\t1000\", \"Gid:\\t1000\\t1000\\t1000\\t1000\", \"Groups:\\t3009 \", \"CapPrm:\\t0000000000000000\", \"CapEff:\\t0000000000000000\", \"CapBnd:\\t000001ffffffffff\", \"NoNewPrivs:\\t1\"]}, {\"kind\": \"HWMANAGER\", \"pid_namespace_pid\": 110, \"getpidcon_raw_return\": 0, \"actual_context\": \"u:r:hwservicemanager:s0\", \"contexts_observed_in_order\": [\"u:r:init:s0\", \"u:r:hwservicemanager:s0\"], \"errno_observed\": [], \"status\": [\"Uid:\\t1000\\t1000\\t1000\\t1000\", \"Gid:\\t1000\\t1000\\t1000\\t1000\", \"Groups:\\t3009 \", \"CapPrm:\\t0000000000000000\", \"CapEff:\\t0000000000000000\", \"CapBnd:\\t000001ffffffffff\", \"NoNewPrivs:\\t1\"]}], \"passive_log_observer_diagnostic_only\": [{\"tag\": \"cutils-trace\", \"message\": \"Error opening trace file: No such file or directory (2)\", \"actual_sender_pid_uid_gid\": [109, 2000, 2000]}, {\"tag\": \"libbinder.BackendUnifiedServiceManager\", \"message\": \"Thread Pool max thread count is 0. Cannot cache binder as linkToDeath cannot be implemented. serviceName: manager\", \"actual_sender_pid_uid_gid\": [109, 2000, 2000]}, {\"tag\": \"hwservicemanager\", \"message\": \"libvintf-usage-violation: Executable /system/system_ext/bin/hwservicemanager should not use libvintf. It should query VINTF metadata via servicemanager\", \"actual_sender_pid_uid_gid\": [110, 1000, 1000]}, {\"tag\": \"hwservicemanager\", \"message\": \"getFrameworkHalManifest: Reading VINTF information.\", \"actual_sender_pid_uid_gid\": [110, 1000, 1000]}, {\"tag\": \"hwservicemanager\", \"message\": \"getFrameworkHalManifest: status from fetching VINTF information: -2147483648\", \"actual_sender_pid_uid_gid\": [110, 1000, 1000]}, {\"tag\": \"hwservicemanager\", \"message\": \"getFrameworkHalManifest: -2147483648 VINTF parse error: Cannot add /system_ext/etc/vintf/manifest.xml:HAL \\\"android.hidl.manager\\\" has a conflict: Conflicting FqInstance: @1.2::IServiceManager/default (from /system/etc/vintf/manifest/archtv-hwservicemanager.xml) vs. @1.2::IServiceManager/default (from /system_ext/etc/vintf/manifest.xml). Check whether or not multiple modules providing the same HAL are installed.\", \"actual_sender_pid_uid_gid\": [110, 1000, 1000]}, {\"tag\": \"hwservicemanager\", \"message\": \"getDeviceHalManifest: Reading VINTF information.\", \"actual_sender_pid_uid_gid\": [110, 1000, 1000]}, {\"tag\": \"hwservicemanager\", \"message\": \"getDeviceHalManifest: status from fetching VINTF information: -2\", \"actual_sender_pid_uid_gid\": [110, 1000, 1000]}, {\"tag\": \"hwservicemanager\", \"message\": \"getDeviceHalManifest: -2 VINTF parse error: Cannot read /vendor/manifest.xml: No such file or directory\", \"actual_sender_pid_uid_gid\": [110, 1000, 1000]}, {\"tag\": \"hwservicemanager\", \"message\": \"getTransport: Cannot find entry android.hidl.manager@1.2::IServiceManager/default in either framework or device VINTF manifest.\", \"actual_sender_pid_uid_gid\": [110, 1000, 1000]}, {\"tag\": \"hwservicemanager\", \"message\": \"HIDL is not supported on this device so hwservicemanager is not needed\", \"actual_sender_pid_uid_gid\": [110, 1000, 1000]}, {\"tag\": \"hwservicemanager\", \"message\": \"Waiting on init to shut this process down.\", \"actual_sender_pid_uid_gid\": [110, 1000, 1000]}]}\r\n"
+}

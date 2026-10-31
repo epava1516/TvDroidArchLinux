@@ -42,7 +42,8 @@ static bool close_actions(Epoll& epoll) {
 }
 int main(int argc,char** argv) {
     android::base::InitLogging(argv,android::base::StderrLogger);
-    bool mc1=argc==2 && std::strcmp(argv[1],"--mc1-integration")==0;
+    bool hardware=argc==2 && std::strcmp(argv[1],"--mc1-hardware-integration")==0;
+    bool mc1=hardware || (argc==2 && std::strcmp(argv[1],"--mc1-integration")==0);
     bool mac_integration=mc1 || (argc==2 && std::strcmp(argv[1],"--mac-integration")==0);
     bool diagnostic=mac_integration || (argc==2 && std::strcmp(argv[1],"--diagnostic")==0);
     if(argc!=1 && !diagnostic)return 64;
@@ -89,7 +90,7 @@ int main(int argc,char** argv) {
     auto setup=StartLinuxPropertyActions(&epoll);
     if(!setup.ok())return 70;
     bool stop=false,peer_gone=false,invalid=false;std::string input;
-    archtv::aosp::LinuxMc1Cohort cohort(stop,launch_enforcing);
+    archtv::aosp::LinuxMc1Cohort cohort(stop,launch_enforcing,hardware);
     auto tick=[&]{return PollLinuxPropertyActions(&epoll,std::chrono::milliseconds(50)).ok() && children.healthy() && !shutdown.failed();};
     auto registered=epoll.RegisterHandler(control.get(),[&]{
         char bytes[64];

@@ -2132,3 +2132,31 @@ audit (35→107) limita cobertura; el readback binario se reserializa en kernel 
 exports CIL completos normalizados coinciden con el candidato cargado, según
 [comparación](../reports/android16-mc1-functional-candidate/policy-readback-comparison.json).
 Esto contrasta política, no acredita compatibilidad APK ni seguridad global.
+
+## Hwservicemanager original · consulta y límite de perfil
+
+[Ensayo](../reports/android16-hwmanager-cohort/findings.json): se amplía la cohorte
+con el RC y binario GSI originales, hwbinder privado separado y permisos de frontera
+Linux equivalentes a los ya probados para el gestor Binder. NNP1 y neverallows
+originales conservados. Ambos gestores tienen SID/UID/caps reales y cierre en
+kernel enforcing1. No log observer/preload/ptrace en la prueba de autorización.
+
+El fragmento VINTF adicional investigado duplicaba la declaración system_ext y se
+retiró; los manifiestos GSI finales están intactos. Perfil diagnóstico de dispositivo
+archivado en reports sólo para reproducir la limitación de `lshal list`; no integrado
+ni usado en la ruta final. No se afirma conformidad VINTF: el nivel dispositivo es
+desconocido y el original trata ese caso como antiguo. Su hwservicemanager max-level8
+obliga a decidir FCM y Composer final explícitamente. AIDL/HWC3 es alternativa por
+evaluar, no un proveedor probado ni cambio de objetivo/API del runtime.
+
+`lshal debug -E` consulta get/descriptor de la interfaz padre1.0 real; omite el dump
+de la implementación1.2 mediante su propia opción. Full debug queda denegado por
+FD use original: no añadir permisos sólo para hacer pasar una herramienta. La
+instancia ausente da128 y texto original; es negativo de ausencia, no autorización
+general. TRANSACTION_ERROR256 de ese CLI trunca a0 al salir: salida vacía de éxito
+se exige además del código, para no aceptar errores como disponibilidad.
+
+Arranque perezoso por `ctl.interface_start` conserva error real: el adaptador de
+acciones todavía no tiene backend de servicio/potencia. Las llamadas directas
+Service::Start probadas no acreditan ese control. Se conserva como dependencia
+funcional futura del recorrido original, sin éxitos sustitutos.

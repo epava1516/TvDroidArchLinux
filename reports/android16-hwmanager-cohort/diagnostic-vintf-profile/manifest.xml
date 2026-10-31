@@ -1,0 +1,5 @@
+<!-- Experimental Linux service cohort, not a certified Android device profile.
+     No device HAL is implemented or declared here. FCM remains unselected;
+     libvintf's unspecified-level fallback is not compliance evidence. -->
+<manifest version="1.0" type="device">
+</manifest>
