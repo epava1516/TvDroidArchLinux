@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Read-only Linux SELinux prerequisites; never certifies APK or policy semantics."""
 import argparse
+import ctypes
 import gzip
 import json
 import mmap
@@ -25,23 +26,53 @@ def read_text(root, path):
         return {"state": "unknown", "error": type(exc).__name__, "errno": getattr(exc, 'errno', None)}
 
 
+def status_snapshot(read):
+    # Kernel status uses a seqlock. Never accept an inconsistent snapshot.
+    for _ in range(20):
+        before = struct.unpack('=I', read(4, 4))[0]
+        if before & 1:
+            continue
+        values = struct.unpack('=5I', read(0, 20))
+        after = struct.unpack('=I', read(4, 4))[0]
+        if before == after == values[1] and not after & 1:
+            return {"state": "observed", **dict(zip(
+                ['version', 'sequence', 'enforcing', 'policyload', 'deny_unknown'], values))}
+    return {"state": "unknown", "reason": "status changed throughout bounded snapshot"}
+
+
+def zero_size_selinux_status(stream):
+    # Python mmap rejects a page beyond st_size=0. selinuxfs intentionally has
+    # zero-sized virtual files. Check its filesystem before native mapping so an
+    # empty regular file can never cause SIGBUS when dereferenced.
+    libc = ctypes.CDLL(None, use_errno=True)
+    stat = ctypes.create_string_buffer(256)  # Linux statfs fits; f_type is first long.
+    libc.fstatfs.argtypes = [ctypes.c_int, ctypes.c_void_p]
+    if libc.fstatfs(stream.fileno(), stat) != 0:
+        raise OSError(ctypes.get_errno(), "fstatfs status")
+    if ctypes.c_long.from_buffer(stat).value & 0xffffffff != 0xf97cff8c:
+        raise ValueError("zero-sized status is not on selinuxfs")
+    libc.mmap.argtypes = [ctypes.c_void_p, ctypes.c_size_t, ctypes.c_int,
+                          ctypes.c_int, ctypes.c_int, ctypes.c_long]
+    libc.mmap.restype = ctypes.c_void_p
+    libc.munmap.argtypes = [ctypes.c_void_p, ctypes.c_size_t]
+    address = libc.mmap(None, mmap.PAGESIZE, mmap.PROT_READ, mmap.MAP_SHARED, stream.fileno(), 0)
+    if address == ctypes.c_void_p(-1).value:
+        raise OSError(ctypes.get_errno(), "mmap selinux status")
+    try:
+        return status_snapshot(lambda offset, size: ctypes.string_at(address + offset, size))
+    finally:
+        libc.munmap(address, mmap.PAGESIZE)
+
+
 def read_status(root):
     path = root / 'sys/fs/selinux/status'
     try:
         with path.open('rb') as stream:
+            if os.fstat(stream.fileno()).st_size == 0:
+                return zero_size_selinux_status(stream)
             with mmap.mmap(stream.fileno(), mmap.PAGESIZE, flags=mmap.MAP_SHARED,
                            prot=mmap.PROT_READ) as area:
-                # Kernel status uses a seqlock. Never accept an inconsistent snapshot.
-                for _ in range(20):
-                    before = struct.unpack_from('=I', area, 4)[0]
-                    if before & 1:
-                        continue
-                    values = struct.unpack_from('=5I', area)
-                    after = struct.unpack_from('=I', area, 4)[0]
-                    if before == after == values[1] and not after & 1:
-                        return {"state": "observed", **dict(zip(
-                            ['version', 'sequence', 'enforcing', 'policyload', 'deny_unknown'], values))}
-                return {"state": "unknown", "reason": "status changed throughout bounded snapshot"}
+                return status_snapshot(lambda offset, size: area[offset:offset + size])
     except FileNotFoundError:
         return {"state": "absent"}
     except (OSError, ValueError, struct.error) as exc:

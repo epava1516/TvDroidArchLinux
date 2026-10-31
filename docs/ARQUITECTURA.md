@@ -206,7 +206,7 @@ fingir el servidor. Su aceptación futura requiere readback/callbacks/denegacion
 no sólo retorno 0, incluso donde el protocolo legacy original devuelve 0 tras timeout.
 
 El snapshot no carga todos los defaults/imports/propiedades derivadas de init
-ni política de particiones ausentes. SELinux sigue inactivo: tipos y etiquetas
+ni política de particiones ausentes. En aquella observación SELinux estaba inactivo (arranque posterior verificado al final de este documento): tipos y etiquetas
 no son mediación. La política/IPC precisa integrar mediación original con Linux
 o una adaptación equivalente probada: ninguna se acepta aquí. No se activa
 mediante un reinicio bajo este contrato. Sigue APEX/listas/metadatos y generador
@@ -792,7 +792,7 @@ del archivo al abrir: respetar fork, cambio de UID y apertura; no heredar una
 inicialización privilegiada como si fuera identidad de app. PID cero para mensajes
 one-way/respuestas puede ser comportamiento original. La ruta security_secid_to_secctx
 puede devolver error sin proveedor adecuado; es un riesgo demostrado por fuente,
-no un fallo transaccional observado. SELinux sigue inactivo en el anfitrión.
+no un fallo transaccional observado. SELinux estaba inactivo en esa observación; el arranque permisivo posterior se documenta al final.
 La siguiente puerta exige identidad y denegación reales, sin contexto sintético.
 
 ## Contraste nativo de transacciones con contexto de seguridad
@@ -1107,7 +1107,7 @@ una zona de propiedades inicializada de sólo lectura.
 Orden de aceptación: host LSM/política/etiquetas/transiciones y recuperación probados;
 servicio de propiedades real/supervisión; gestor original con VINTF y Binder privado;
 publicación original de readiness; registro Composer y recorrido HAL/buffers/fences.
-El host tiene SELinux compilado pero inactivo; namespaces y copiar políticas no
+En el arranque de esa prueba SELinux estaba compilado pero inactivo; namespaces y copiar políticas no
 activan un LSM ausente de la lista activa. El contrato no permite reiniciar VM/cliente,
 introducir VM o Android completo. Se mantiene explícita esa tensión y no se declara
 registro/IPC/MAC/APK aceptado. Se puede avanzar offline en unidades originales,
@@ -1834,3 +1834,16 @@ asíncrono ni política de recuperación. LOG(FATAL) crítico no recorre este ca
 y sigue pendiente. No quitar critical/onrestart ni aceptar cohortes antes de
 resolver identidades/cgroups/MAC y dependencias originales. Fixtures de fallo no
 acreditan servicios/APK completos; Markor y matriz real siguen abiertos.
+
+## R1-MAC · estado posterior al arranque SELinux autorizado
+
+[Verificación actual](../reports/android16-selinux-permissive-boot/findings.json):
+LTS6.18.59 con SELinux LSM activo, permisivo, policyload0, formato soportado35 y
+contexto inicial kernel. Host sin selinuxfs; montajes privados de lectura permiten
+observar página virtual y repetir sonda Binder idéntica. MCP control/SID0 ahora
+recibe BR_TRANSACTION_SEC_CTX y respuesta con PID/UID correctos; no inspecciona
+el texto SID. El fallo-95 previo con LSM inactivo queda como evidencia histórica.
+No hay política/etiquetas/transiciones/enforcement ni gestor/APK aceptado.
+Revalidar cada arranque: selección puntual no equivale a despliegue persistente.
+Política Linux compatible y rollback requieren validación antes de cualquier
+carga; no se carga política ni se inventan contextos en esta verificación.

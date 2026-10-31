@@ -78,6 +78,13 @@ class HostSecurityReporting(unittest.TestCase):
         self.assertEqual(result['observations']['classes']['binder']['call']['state'], 'unknown')
         self.assertFalse(result['kernel_prerequisites_passed'])
 
+    def test_empty_regular_status_is_unknown_and_not_native_dereferenced(self):
+        self.snapshot()
+        self.put('sys/fs/selinux/status', b'')
+        result = module.inspect(self.root)
+        self.assertEqual(result['observations']['status']['state'], 'unknown')
+        self.assertFalse(result['kernel_prerequisites_passed'])
+
     def test_malformed_status_is_unknown(self):
         self.snapshot()
         self.put('sys/fs/selinux/status', b'truncated')

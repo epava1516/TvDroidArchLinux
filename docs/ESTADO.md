@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-linux-failure-sink/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-selinux-permissive-boot/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -16,6 +16,21 @@ los resúmenes; no se ha completado compatibilidad amplia.
 Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCCION-ARM.md).
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
+
+## Arranque actual · LTS con SELinux permisivo, sin política
+
+[Verificación posterior al reinicio autorizado](../reports/android16-selinux-permissive-boot/findings.json):
+LTS6.18.59, LSM SELinux activo, enforce0, policyload0 y policyvers35 soportada.
+Contexto inicial kernel, sin dominios Android. Selinuxfs no montado en el host;
+sólo se montó en privado/lectura para comprobar estado y sonda. Comprobador
+corregido para página virtual de tamaño cero, nueve pruebas y lectura real pasan.
+Mismo ELF Binder que antes: control y petición SID ahora completan transacción y
+respuesta0, con BR_TRANSACTION_SEC_CTX/PID/UID observados. No se lee el texto del
+SID ni se acredita identidad/MAC. Resultados previos «LSM inactivo / SID-95» son
+históricos de otro arranque. Todos los handles pre-reinicio son históricos.
+R1-MAC sigue abierto: política, etiquetas/transiciones, enforcement, denegaciones,
+gestores originales y aislamiento no probados. No se cargó política ni se cambió
+el modo; selección de arranque sólo para esta vez, revalidar tras otro reinicio.
 
 ## Última integración · fallos originales entregados a Rust
 
@@ -239,7 +254,7 @@ no equivalen automáticamente a Android completo; estudiar cierres reales.
 | Se conserva | Compositor/shell Rust, instalación/herramientas y regresiones previas útiles; H7–H9 permanecen abiertos. |
 | Históricos Android13 | ART host/glibc y fixtures propias; mezcla de jars/core/JNI; loader Bionic parcial y cierre de bibliotecas. No se trasladan como validación de A16. |
 | Pendiente separado | Cuatro archivos propios de JNI/bootstrap host conservados sin commit. Ensayos API33 de propiedades/configuración pausados, sin área ejecutada en esa línea ni cambio a producción. |
-| Configuración parcial A16 | Propiedades originales170 leídas sin capacidades. ART original y RuntimeInit.main ejecutados; Binder privado permite llamar ActivityThread.main. Gestores bloqueados por SELinux inactivo; no APK aceptada. |
+| Configuración parcial A16 | Propiedades originales170 leídas sin capacidades. ART original y RuntimeInit.main ejecutados; Binder privado permite llamar ActivityThread.main. Histórico previo al reinicio: gestores bloqueados por SELinux inactivo; estado actual permisivo/sin política descrito arriba, sin APK aceptada. |
 | Herramientas | REA MCP respondió realmente; análisis ELF/APK estático previo y estado actual, sin presentarlos como ejecución ni CLI como conexión. |
 | No probado | Nueve etapas de las APK sobre A16; SF→Wayland, aceleración/entrada/AV/TV, aislamiento por app/Binder, GMS/DRM/OEM/WebView, traducción ISA/32/64, presupuestos, instalación/actualización/seguridad actualizada. |
 
@@ -669,7 +684,7 @@ conservando la prohibición de introducir VM o reiniciar.
 
 ## Contraste SID del driver
 
-[Resultado nativo](../reports/android16-binder-secctx-probe/validation.json): transacción síncrona sin SID con PID/UID correctos; solicitando SID falla BR_FAILED_REPLY, error extendido -95/EOPNOTSUPP. Sonda propia, sin aceptación de gestor/MAC/APK ni cambios al host.
+[Resultado nativo](../reports/android16-binder-secctx-probe/validation.json): transacción síncrona sin SID con PID/UID correctos; solicitando SID fallaba BR_FAILED_REPLY, error extendido -95/EOPNOTSUPP en el arranque previo sin LSM activo; la sonda posterior al reinicio descrita arriba supera ese transporte. Sonda propia, sin aceptación de gestor/MAC/APK ni cambios al host.
 
 ## R3: SurfaceFlinger original estudiado
 

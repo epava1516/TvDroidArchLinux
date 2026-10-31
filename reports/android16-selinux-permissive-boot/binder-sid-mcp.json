@@ -1,0 +1,74 @@
+{
+  "evidence_id": "ev_31573587f0b4fcad5fa90db99dd013b96ed71bdce694d499f4b28903690d9130",
+  "operation": "capture_process_scenario",
+  "authority": "controlled-replay",
+  "confidence": "observed",
+  "exit": {
+    "code": 0,
+    "signal": 0,
+    "reason": "exited"
+  },
+  "observations": [
+    "PRIVATE_BINDER {\"major\": 242, \"minor\": 1}",
+    "PREEXEC_SECURITY {\"Uid\": \"10000\\t10000\\t10000\\t10000\", \"Gid\": \"10000\\t10000\\t10000\\t10000\", \"Groups\": \"\", \"CapEff\": \"0000000000000000\", \"CapPrm\": \"0000000000000000\", \"CapInh\": \"0000000000000000\", \"CapAmb\": \"0000000000000000\", \"NoNewPrivs\": \"1\"}",
+    "{\"event\":\"context_node\",\"request_sid\":true,\"ioctl_rc\":0,\"errno\":0,\"uid\":10000}",
+    "{\"event\":\"server_transaction\",\"security_command\":true,\"sender_pid\":19,\"expected_child_pid\":19,\"sender_uid\":10000,\"expected_uid\":10000,\"code\":287454020}",
+    "{\"event\":\"client_command\",\"command\":29196,\"pid\":19,\"uid\":10000}",
+    "{\"event\":\"client_command\",\"command\":29190,\"pid\":19,\"uid\":10000}",
+    "{\"event\":\"client_command\",\"command\":2151707139,\"pid\":19,\"uid\":10000}",
+    "{\"event\":\"reply\",\"size\":0}",
+    "{\"event\":\"result\",\"request_sid\":true,\"received_transaction\":true,\"child_exit\":0,\"child_reaped\":true}"
+  ],
+  "cleanup": {
+    "owned_process_group": "verified",
+    "temporary_root": "removed",
+    "unverified_processes": [
+      {
+        "pid": 1817,
+        "reason": "EACCES: permission denied, open '/proc/1817/environ'"
+      }
+    ]
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "The executable digest is a prelaunch file sample; matching path metadata immediately after spawn does not prove an atomic operating-system image binding.",
+    "Process trees are sampled and may omit short-lived descendants.",
+    "Process-tree sampling ended with an incomplete observation.",
+    "Filesystem observations are before/after snapshots, not syscall traces.",
+    "Inherited host environment variables are not recorded and may affect results.",
+    "No filesystem observation paths were selected; filesystem effects remain unknown.",
+    "Process sampling has incomplete observations: /proc/1787/environ: EACCES: Error: EACCES: permission denied, open '/proc/1787/environ'. See truncation_details.process."
+  ],
+  "residual_unknowns": [
+    {
+      "scope": "process",
+      "reason": "Process trees are sampled and may omit short-lived descendants."
+    },
+    {
+      "scope": "process",
+      "reason": "The executable digest is a prelaunch file sample; operating-system image binding is not atomically observed."
+    },
+    {
+      "scope": "environment",
+      "reason": "Inherited host environment variables are not recorded."
+    },
+    {
+      "scope": "network",
+      "reason": "Network activity is not observed by this capture."
+    },
+    {
+      "scope": "filesystem",
+      "reason": "No filesystem observation paths were selected; filesystem effects remain unknown."
+    },
+    {
+      "scope": "process",
+      "reason": "Process sampling has incomplete observations: /proc/1787/environ: EACCES: Error: EACCES: permission denied, open '/proc/1787/environ'. See truncation_details.process."
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 1817 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/1817/environ'"
+    }
+  ],
+  "truncated": true,
+  "note": "Sanitized derived projection; not complete authenticated MCP Evidence."
+}

@@ -1,0 +1,74 @@
+{
+  "observed_at": "2026-10-31T11:21:36.641506+00:00",
+  "base_commit": "c03ad34c661031d3392636e1851269851c1b8518",
+  "scope": "Authorized one-shot LTS/SELinux boot verification, read-only private selinuxfs and bounded original Bionic Binder diagnostic; not deployed policy/Android service/APK acceptance",
+  "recovery_instructions": {
+    "path": "/home/tv/recuperacion-archtv/20261031T110826Z-selinux-authorized-boot/RETOMAR.txt",
+    "sha256": "8cc029be30b1f1de201c6718230984998dd9e35487e2c666f6285ca37470ea4a"
+  },
+  "boot_flags_verified": [
+    "lsm=landlock,lockdown,yama,integrity,selinux,bpf",
+    "selinux=1",
+    "enforcing=0"
+  ],
+  "kernel": "6.18.59-1-lts",
+  "current_security": {
+    "observed_at": "2026-10-31T11:19:05.171845+00:00",
+    "scope": "Read-only private mount of current kernel selinuxfs; no load/enforce/relabel operation",
+    "kernel": "6.18.59-1-lts",
+    "active_lsm": {
+      "state": "observed",
+      "value": "capability,landlock,lockdown,yama,selinux,bpf"
+    },
+    "enforce": {
+      "state": "observed",
+      "value": "0"
+    },
+    "policyvers": {
+      "state": "observed",
+      "value": "35"
+    },
+    "current_context": {
+      "state": "observed",
+      "value": "kernel\u0000"
+    },
+    "class_directory_exists": true,
+    "status": {
+      "state": "observed",
+      "version": 1,
+      "sequence": 0,
+      "enforcing": 0,
+      "policyload": 0,
+      "deny_unknown": 1
+    },
+    "private_mounts": "{\n   \"filesystems\": [\n      {\n         \"target\": \"/home/tv/repositorio-principal/dist/aosp16/selinux-permissive-observation-3/sys/fs/selinux\",\n         \"source\": \"selinuxfs\",\n         \"fstype\": \"selinuxfs\",\n         \"options\": \"ro,relatime\"\n      }\n   ]\n}\n"
+  },
+  "host_selinuxfs_mount": "Absent before verification; only private read-only mounts introduced, namespace lifetime limited",
+  "checker_fix": "Python mmap rejects zero-st_size virtual file. Native read-only mmap only after Linux fstatfs verifies SELINUX_MAGIC; existing seqlock check retained. Empty regular file stays unknown, never dereferenced. Nine tests and actual virtual-page check pass. Native mapping path tested only Linux x86_64, ARM64 portable design not executed.",
+  "initial_failure": "observe-initial.py Python mmap ValueError: mmap length is greater than file size; no kernel/policy state changed. Private native mapping success then checker integration success recorded separately.",
+  "binder_probe": {
+    "path": "/home/tv/repositorio-principal/dist/aosp16/selinux-permissive-binder-sid-1/app/driver-probe",
+    "sha256": "bc0c970b631ebae6257cec3fcac15dc6465d7283d659c0ee356fa5be25335a3e",
+    "same_binary_as_preboot": true,
+    "old_sid_result": "BR_FAILED_REPLY/-95 under inactive SELinux",
+    "current_plain_result": "transaction/reply0, PID/UID matches, caps0 UID10000",
+    "current_sid_result": "BR_TRANSACTION_SEC_CTX observed, transaction/reply0, PID/UID matches, caps0 UID10000"
+  },
+  "limitations": [
+    "No policy loaded (policyload0), no enforcement (0), initial context kernel not Android identity or transition",
+    "Policyvers35 is supported kernel format, not policy version loaded",
+    "Unchanged diagnostic checks security command and PID/UID, DOES NOT inspect SID pointer/string content; no claim of validated per-message SID",
+    "Same UID only, no cross-UID authorization, denials, callbacks/death, original manager registration or APK acceptance",
+    "SELinuxfs mounts private/read-only; host remains without mount. An original libselinux process outside private mount may still report disabled; active LSM and userspace mount visibility are separate",
+    "Old preboot inactive-LSM/-95 evidence is historical and retained; existing no-SELinux negative fixtures not valid current positive criteria",
+    "One-shot boot does not establish persistent deployment, update or rollback readiness; revalidate after every boot",
+    "User authorized and completed this boot externally. No further reboot or policy load/relabel/enforcing change performed",
+    "REA actual MCP captures are bounded sanitized projections, not full authenticated Evidence; no host-wide process completeness claimed"
+  ],
+  "next": "Use current kernel activation to validate Linux-compatible policy deployment design, required labels/transitions and rollback before any loading; keep userspace mount visibility explicit. Then original properties/managers/Composer and real Markor journey; no blanket policy or fake contexts.",
+  "post_test_host_mount_check": {
+    "command": "sudo -n findmnt -J -t selinuxfs",
+    "exit": 0,
+    "filesystems": []
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "branch": "main",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "objective": "Complete unmodified APK on Linux Rust/Smithay with coherent original AOSP16QPR2/Bionic, no Waydroid or complete Android boot; broad compatibility, isolation, stability, lightness, installation/update.",
+  "canonical_entry": "docs/ESTADO.md",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "observed_at": "2026-10-31T11:21:36.641506+00:00",
+  "base_commit": "c03ad34c661031d3392636e1851269851c1b8518",
+  "constraints": [
+    "A16-QPR2-1 remains; specific one-shot SELinux boot authorized by user and now completed",
+    "No further reboot/VM/client restart performed or requested",
+    "No policy load, relabel or enforcing change performed; permissive/no policy is not R1-MAC acceptance",
+    "Fixtures/diagnostics not real APK acceptance"
+  ],
+  "previous_checkpoint": "reports/android16-linux-failure-sink/checkpoint.json",
+  "relation_to_local_origin_tracking": "0\t0",
+  "historical_preboot_handles": "All pre-reboot process/session IDs are historical; do not poll/restart using them",
+  "active_exec_handles": [],
+  "mcp_status": "Two captures terminal0, owned groups cleaned; no persistent binary target opened",
+  "tests": [
+    "9 checker tests0",
+    "actual private selinuxfs status: enforcing0 policyload0",
+    "same Bionic Binder binary plain/SID captures0"
+  ],
+  "next": "Use current kernel activation to validate Linux-compatible policy deployment design, required labels/transitions and rollback before any loading; keep userspace mount visibility explicit. Then original properties/managers/Composer and real Markor journey; no blanket policy or fake contexts.",
+  "evidence": {
+    "reports/android16-selinux-permissive-boot/private-observation.json": "e1321c7dbbf0360a9f30517c83a51838968625cff348fbc8239bd12e1c7d4652",
+    "reports/android16-selinux-permissive-boot/checker-tests.log": "e7868349f80d90e9674de9c2df12e50a116d24331e4cdf921e14d11d317a3981",
+    "reports/android16-selinux-permissive-boot/findings.json": "bc2945dd047a508e501c6bbd7a469e00e26cebba469988ca21c9d87b95c925b5",
+    "reports/android16-selinux-permissive-boot/observe-private.py": "7dae2f7ab8601471cbc5f41263f6958a6db41e9cac8085b62b5eed238b63dda9",
+    "reports/android16-selinux-permissive-boot/binder-sid-launcher.py": "367a524fdf05c4f6086023180c73d647daa5feea198b2e0af91a162a9def1685",
+    "reports/android16-selinux-permissive-boot/binder-sid-mcp.json": "417c37f75ab7a11bb0ab244fa4a5ecbb5e53402b79016a35cad244ff30ee845d",
+    "reports/android16-selinux-permissive-boot/binder-plain-launcher.py": "a50beb6dbd2a888fe117ab41cddde385c9ae8aef40419928ee24fc8c60bde1a4",
+    "reports/android16-selinux-permissive-boot/checker-private-observation.json": "a2a702aecd45252138aa08fd02d2e4751265773749c5e2f2fbd259c0102f4849",
+    "reports/android16-selinux-permissive-boot/binder-plain-mcp.json": "115c45e708823bb05f2bdc6e4ac6978cd91d5db2edd3bc6fe5292851f768e3a4",
+    "reports/android16-selinux-permissive-boot/observe-initial.py": "d40635350a8caffe8aa90d4f60d5f4d215191c916956e376d4bf79c943ffa8dc"
+  },
+  "graphify": "Isolated staged AST update terminal0,2886 nodes/5510 edges; tracked outputs copied",
+  "terminal_exec_handles": [
+    20321,
+    66293
+  ]
+}

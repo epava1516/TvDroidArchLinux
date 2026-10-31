@@ -1,0 +1,31 @@
+{
+  "observed_at": "2026-10-31T11:19:05.171845+00:00",
+  "scope": "Read-only private mount of current kernel selinuxfs; no load/enforce/relabel operation",
+  "kernel": "6.18.59-1-lts",
+  "active_lsm": {
+    "state": "observed",
+    "value": "capability,landlock,lockdown,yama,selinux,bpf"
+  },
+  "enforce": {
+    "state": "observed",
+    "value": "0"
+  },
+  "policyvers": {
+    "state": "observed",
+    "value": "35"
+  },
+  "current_context": {
+    "state": "observed",
+    "value": "kernel\u0000"
+  },
+  "class_directory_exists": true,
+  "status": {
+    "state": "observed",
+    "version": 1,
+    "sequence": 0,
+    "enforcing": 0,
+    "policyload": 0,
+    "deny_unknown": 1
+  },
+  "private_mounts": "{\n   \"filesystems\": [\n      {\n         \"target\": \"/home/tv/repositorio-principal/dist/aosp16/selinux-permissive-observation-3/sys/fs/selinux\",\n         \"source\": \"selinuxfs\",\n         \"fstype\": \"selinuxfs\",\n         \"options\": \"ro,relatime\"\n      }\n   ]\n}\n"
+}
