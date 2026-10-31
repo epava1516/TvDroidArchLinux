@@ -1,0 +1,38 @@
+{
+  "scope": "Original persistent-property implementation native multi-process regression; own harness, no property server/MAC/ACK or general persistence acceptance",
+  "source_commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+  "original_provenance": "reports/android16-property-service-closure/findings.json",
+  "harness_sha256": "f2f86e7aed08c1423ad7952c13d08288211be09e1382e7a0a4ae9ac5e6622def",
+  "artifact": {
+    "path": "dist/aosp16/persistence-native-build-1/persistence-probe",
+    "sha256": "f6810f250877760f2b03386530defc17090e38bde36a2de63806db491bdf8611",
+    "executed_copy": "dist/aosp16/persistence-native-execution-1/data/persistence-probe",
+    "copy_hash_after_matches": true
+  },
+  "strict_compile_link_exit": 0,
+  "runtime_evidence": "ev_3c53f5b56f20334b179e10a048b33aaaa45ea756bdf5d97ffa9ef9683770e1c2",
+  "runtime_exit": 0,
+  "observations": [
+    "Original WritePersistentPropertyFile serializes initial protobuf",
+    "Separate exec reads first value",
+    "Original WritePersistentProperty updates existing value; separate exec reads second",
+    "chmod0555 on private property directory under UID10000 makes direct writer return EACCES",
+    "Original void WritePersistentProperty logs permission denied and returns",
+    "Separate exec still reads second; failed update did not replace original file"
+  ],
+  "interpretation": "Confirms one write-failure path and data preservation, not a server ACK test. Source relation to unconditional success reply remains separate evidence.",
+  "profile": {
+    "identity": "UID/GID10000, no groups/caps, NNP1 observed before exec; children fork/exec inherit profile, no full per-child security sampling acceptance",
+    "storage": "private diagnostic /data/property; standard original filename, no source changes",
+    "libraries": "Original GSI/Bionic providers and previous original source archives; no Android boot",
+    "boundaries": "No service socket, SELinux peer/MAC enforcement or property change/action supervisor invoked",
+    "limits": "CPU10/wall20/AS64GiB virtual; not measured physical memory/performance acceptance"
+  },
+  "not_tested": [
+    "Power-loss/crash recovery/durable hardware flush",
+    "ENOSPC, fsync/rename failure injection",
+    "Property server async/sync socket ACK under real MAC",
+    "Service restart, app persistence, manager readiness or any APK stage"
+  ],
+  "next": "Implement narrow adaptation to propagate original write/storage errors through property-service callers, preserving protobuf/protocol and original subsystem. Check fsync/rename failure and positive behavior; integrate with actual Linux supervisor only under R1-MAC prerequisites."
+}

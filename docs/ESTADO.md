@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-property-service-closure/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-persistence-native/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -17,7 +17,18 @@ Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCC
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
 
-## Último análisis verificado · servicio de propiedades original
+## Última regresión nativa · persistencia original
+
+[Prueba positiva y negativa](../reports/android16-persistence-native/findings.json):
+REA MCP observa salida0 al escribir/actualizar con funciones originales y leer
+valores desde execs separados. Directorio0555 bajo UID10000: escritura directa
+retorna EACCES; WritePersistentProperty void registra fallo y retorna; lectura
+posterior conserva valor previo. No servidor/socket ACK, reinicio de servicio,
+pérdida de energía ni persistencia APK aceptados. Siguiente: adaptación acotada
+para propagar errores reales, comprobar fsync/rename/ENOSPC y conservar subsistema
+original; supervisión y R1-MAC siguen pendientes.
+
+## Análisis anterior · servicio de propiedades original
 
 [Clausura y límites](../reports/android16-property-service-closure/findings.json):
 retener StartPropertyService enlaza sin ejecutar Android init;268 símbolos definidos

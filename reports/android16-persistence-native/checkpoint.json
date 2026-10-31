@@ -1,0 +1,34 @@
+{
+  "observed_at": "2026-10-31T09:19:47.754225+00:00",
+  "base_commit": "e89a75286cfdcf0e0809fb01a456fb21b33a268d",
+  "branch": "main",
+  "previous_checkpoint": "reports/android16-property-service-closure/checkpoint.json",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "terminal_exec_handles": [
+    51296
+  ],
+  "active_exec_handles": [],
+  "mcp_status": "Capture exit0; owned-group cleanup verified. No persistent target opened; residual limitations retained in native-mcp.json.",
+  "result": "Original persistent-property implementation native multi-process regression; own harness, no property server/MAC/ACK or general persistence acceptance",
+  "tests": "build.json, native-mcp.json, findings.json",
+  "next": "Implement narrow adaptation to propagate original write/storage errors through property-service callers, preserving protobuf/protocol and original subsystem. Check fsync/rename failure and positive behavior; integrate with actual Linux supervisor only under R1-MAC prerequisites.",
+  "evidence": {
+    "reports/android16-persistence-native/build.json": "e177e96331db650cbb12e224faecdc292bac0e755a539bf965411750c641aefb",
+    "reports/android16-persistence-native/findings.json": "6ba660f0706c738dbaefb014d7874609a1084cdd32343d3f06c443ef9c15f785",
+    "reports/android16-persistence-native/native-launcher.py": "7db3c9311fd037f5230d5c8cb0bfdae1d1e942c313cb7751d2fa2740c0614ba5",
+    "reports/android16-persistence-native/build.py": "b57a9e3b1f206a12205566b85f3f69f713916451d60383b532a7dbdcf0f501b4",
+    "reports/android16-persistence-native/native-mcp.json": "425657fcf8b0398f1b917ccfaab8f3ff591aa5b0ce210e056c87b1e4a4cd7174",
+    "reports/android16-persistence-native/probe.cpp": "f2f86e7aed08c1423ad7952c13d08288211be09e1382e7a0a4ae9ac5e6622def"
+  }
+}

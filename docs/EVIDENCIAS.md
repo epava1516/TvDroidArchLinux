@@ -1,6 +1,8 @@
 # Índice de evidencias
 
-- [R1: clausura estática del servicio de propiedades](../reports/android16-property-service-closure/findings.json): raíz StartPropertyService enlaza; delta268 símbolos, SecondStageMain ausente, ninguna ejecución nueva. Fuentes originales contrastadas, fronteras supervisor/MAC/persistencia y riesgo ACK/durabilidad identificados. Mapa histórico regenerado tras redirección accidental, ejecutable original idéntico; hash histórico del mapa desconocido. [Checkpoint actual](../reports/android16-property-service-closure/checkpoint.json).
+- [R1: persistencia original ejecutada](../reports/android16-persistence-native/findings.json): escritura/actualización y lecturas en execs separados, negativo EACCES con función void que registra/retorna y valor previo conservado; captura REA MCP0. No ACK de servidor, MAC, reinicio de servicio, pérdida de energía ni persistencia APK. [Checkpoint actual](../reports/android16-persistence-native/checkpoint.json).
+
+- [R1: clausura estática del servicio de propiedades](../reports/android16-property-service-closure/findings.json): raíz StartPropertyService enlaza; delta268 símbolos, SecondStageMain ausente, ninguna ejecución nueva. Fuentes originales contrastadas, fronteras supervisor/MAC/persistencia y riesgo ACK/durabilidad identificados. Mapa histórico regenerado tras redirección accidental, ejecutable original idéntico; hash histórico del mapa desconocido. [Checkpoint del hito](../reports/android16-property-service-closure/checkpoint.json).
 
 - [R1-MAC: hwservicemanager original ejecutado](../reports/android16-hwmanager-start/findings.json): identidad/grupos RC, binario GSI y cuatro fuentes/config contrastados; captura REA MCP salida127 por contexto SELinux propio ausente, tras leer contextos hwservice. VINTF vendor incompleto y advertencia libvintf diferenciados del fatal. Sin registro/readiness/IPC/APK aceptados. [Checkpoint del hito](../reports/android16-hwmanager-start/checkpoint.json).
 

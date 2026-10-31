@@ -1147,6 +1147,30 @@ bit a bit idéntico, restaurando el mapa; el hash anterior del mapa es desconoci
 El experimento corregido usa salida aislada y conserva recetas/resultados. No se
 modificaron fuentes ni el ejecutable histórico. R1-MAC sigue pendiente.
 
+## R1 · persistencia original: ejecución positiva y fallo EACCES
+
+[Captura MCP y límites](../reports/android16-persistence-native/findings.json).
+Una sonda propia enlaza las funciones originales, protobuf y proveedores Bionic;
+no copia su implementación ni arranca servidor/init. En namespaces privados, con
+UID/GID10000/caps0/grupos vacíos/NNP1, escribe valor inicial mediante
+WritePersistentPropertyFile; otro exec usa LoadPersistentPropertyFile y compara.
+Actualiza con WritePersistentProperty; otro exec confirma el valor nuevo.
+
+Con directorio privado /data/property en0555, la API directa retorna EACCES;
+WritePersistentProperty void registra permiso denegado y retorna, y un lector exec
+posterior confirma que el archivo conserva el valor anterior. Captura salida0
+significa que la regresión observó lo esperado, no éxito de la escritura denegada.
+No se probó ACK por socket; el vínculo con envío de PROP_SUCCESS es evidencia
+fuente del hito anterior, no una observación de servidor. Tampoco prueba fsync
+bajo fallo, ENOSPC, rename, reinicio de servidor, energía ni persistencia de APK.
+
+Siguiente: preservar subsistema original con adaptación acotada de errores a sus
+llamadores, y comprobar positivos/negativos antes de integración supervisor/MAC.
+Los execs heredan la identidad de la sonda; no se afirma muestreo completo de
+seguridad de cada hijo ni aislamiento por aplicación. Captura derivada saneada y
+límites de identidad/entorno/filesystem se conservan; hashes de copias coinciden
+tras ejecución, sin vinculación atómica de imagen. R1-MAC permanece pendiente.
+
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 
 
