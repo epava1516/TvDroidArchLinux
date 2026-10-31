@@ -1,12 +1,15 @@
 # Índice de evidencias
 
+- [Framing del supervisor](../reports/android16-supervisor-framing/findings.json): fallo previo reproducido y19 pruebas Linux pasan tras corrección; errores EPERM del sandbox conservados. Revisión de seapp/seccomp original separada de ejecución. Sin monitor continuo ni APK aceptada. [Checkpoint](../reports/android16-supervisor-framing/checkpoint.json).
+
+
 - [Contrato original de zygote](../reports/android16-zygote-security-contract/findings.json): fuentes AOSP fijadas/hash y rangos; seccomp antes de perder capacidades, tensión NNP/SELinux y filtros omitidos en ramas permisivas. Inspección, no ejecución ni autorización. [Checkpoint del hito](../reports/android16-zygote-security-contract/checkpoint.json).
 
 
-- [Bootstrap original offline](../reports/android16-launcher-bootstrap/findings.json): cuatro compilaciones con neverallow activas, 51 consultas (21 cálculos/permisos,30 denegaciones). Seis denegaciones NNP de gestores pendientes; alias INIT/kernel contrastado con fuente de referencia. Sin carga, etiquetas ni servicios ejecutados. [Checkpoint](../reports/android16-zygote-security-contract/checkpoint.json), hashes y variantes conservados.
+- [Bootstrap original offline](../reports/android16-launcher-bootstrap/findings.json): cuatro compilaciones con neverallow activas, 51 consultas (21 cálculos/permisos,30 denegaciones). Seis denegaciones NNP de gestores pendientes; alias INIT/kernel contrastado con fuente de referencia. Sin carga, etiquetas ni servicios ejecutados. [Checkpoint del hito](../reports/android16-launcher-bootstrap/checkpoint.json), hashes y variantes conservados.
 
 
-- [R1-MAC/S1: permisos heredados y productor ausente](../reports/android16-launcher-permission-audit/findings.json):152.494 AV/657 xperm del export original analizados sintácticamente;54 potenciales salida/633 entrada,27 decisiones originales sin errores. Condiciones, capacidades, permisos sensibles e inbound separados de runtime; no cambios de política ni APK aceptada. Export/delta local con hash. [Checkpoint actual](../reports/android16-launcher-bootstrap/checkpoint.json).
+- [R1-MAC/S1: permisos heredados y productor ausente](../reports/android16-launcher-permission-audit/findings.json):152.494 AV/657 xperm del export original analizados sintácticamente;54 potenciales salida/633 entrada,27 decisiones originales sin errores. Condiciones, capacidades, permisos sensibles e inbound separados de runtime; no cambios de política ni APK aceptada. Export/delta local con hash. [Checkpoint del hito](../reports/android16-launcher-permission-audit/checkpoint.json).
 
 - [R1-MAC/S1: alternativas de entrada originales](../reports/android16-policy-launcher-entry/findings.json): dos políticas finales compilan con neverallow activas; automática deja identidad Linux y falla contexto posterior; explícita de rol exclusivo conserva cálculos Android y AV/MLS/RBAC seleccionados. Denegaciones y cuatro sujetos Linux antes/después, error de rol separado. Sin exec/carga/servicios/APK; perfil base intacto. [Checkpoint del hito](../reports/android16-policy-launcher-entry/checkpoint.json).
 

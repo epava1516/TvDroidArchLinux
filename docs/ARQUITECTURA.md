@@ -17,6 +17,15 @@ actuales hasta justificar/probar una alternativa completa, sin cambiar seguridad
 del anfitrión. Próximo inventario: seapp/seccomp, RC/capabilities de gestores,
 stdio/dispositivos, FD y cgroups; luego S0–S2 y pruebas autorizadas.
 
+[Supervisión Rust](../reports/android16-supervisor-framing/findings.json): los
+fragmentos del canal sobreviven a timeouts y un protocolo inválido impide aceptar
+un ACK posterior. Regresión Linux verificada; no hay monitor continuo todavía.
+No confundir retorno0 de selinux_android_setcontext con contexto asignado: el
+original omite trabajo si SELinux está deshabilitado y el lookup sin coincidencia
+puede continuar en permisivo. La aceptación exige contexto/UID/seinfo observados,
+reglas de firma/privilegio originales y denegaciones efectivas. Bionic instala
+seccomp con CAP_SYS_ADMIN o NNP, sin establecer automáticamente este último.
+
 ## Entrada de supervisor · modelo vigente y límites
 
 [Resultados](../reports/android16-launcher-bootstrap/findings.json) y

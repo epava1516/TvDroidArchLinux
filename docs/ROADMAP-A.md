@@ -9,6 +9,12 @@ actuales hasta justificar/probar una alternativa completa, sin cambiar seguridad
 del anfitrión. Próximo inventario: seapp/seccomp, RC/capabilities de gestores,
 stdio/dispositivos, FD y cgroups; luego S0–S2 y pruebas autorizadas.
 
+R1/R2: [framing del supervisor corregido](../reports/android16-supervisor-framing/findings.json),
+19 regresiones Linux pasan; mensajes parciales y fallo terminal preservados.
+Pendiente monitor de fallos posteriores al arranque/salida con pidfd y canal,
+incluso si un descendiente conserva FD. No acredita servicio o APK. Exigir
+contexto seapp real y filtros efectivos: retorno0 en permisivo no es aislamiento.
+
 ## Prioridad vigente · A16-QPR2-1
 
 Aplica el [contrato actualizado](CONTRATO-APK.md). Android16 QPR2, Bionic nativo y

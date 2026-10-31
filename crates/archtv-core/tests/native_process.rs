@@ -211,3 +211,49 @@ fn failure_cannot_be_overridden_by_later_startup_ack() {
         Some(69)
     );
 }
+
+#[test]
+fn partial_failure_survives_observation_timeout() {
+    let mut process = NativeProcess::spawn(helper(
+        "os.write(fd,b'ARCHTV_NATIVE_V1 FAILED_SHUTDOWN ')\ntime.sleep(0.3)\nos.write(fd,b'7265626f6f74\\n')\nos._exit(69)",
+    )).unwrap();
+    assert_eq!(
+        process
+            .wait_started(Startup::Diagnostic, Duration::from_millis(100))
+            .unwrap_err()
+            .kind(),
+        io::ErrorKind::TimedOut
+    );
+    let error = process
+        .wait_started(Startup::Diagnostic, Duration::from_secs(2))
+        .unwrap_err();
+    assert_eq!(
+        error
+            .get_ref()
+            .and_then(|e| e.downcast_ref::<NativeFailure>()),
+        Some(&NativeFailure::ShutdownRequested(b"reboot".to_vec()))
+    );
+    assert_eq!(
+        process.wait_failed(Duration::from_secs(2)).unwrap().code(),
+        Some(69)
+    );
+}
+
+#[test]
+fn malformed_status_cannot_be_replaced_by_later_ack() {
+    let mut process = NativeProcess::spawn(helper(
+        "os.write(fd,b'ARCHTV_NATIVE_V1 FAILED_SHUTDOWN zz\\nARCHTV_NATIVE_V1 DIAGNOSTIC_STARTED\\n')\ntime.sleep(20)",
+    )).unwrap();
+    assert_eq!(
+        process
+            .wait_started(Startup::Diagnostic, Duration::from_secs(2))
+            .unwrap_err()
+            .kind(),
+        io::ErrorKind::InvalidData
+    );
+    assert!(
+        process
+            .wait_started(Startup::Diagnostic, Duration::from_secs(2))
+            .is_err()
+    );
+}

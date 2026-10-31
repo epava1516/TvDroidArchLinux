@@ -76,6 +76,8 @@ pub struct NativeProcess {
     control: UnixStream,
     started: bool,
     failure_observed: bool,
+    partial_frame: Vec<u8>,
+    protocol_failed: bool,
 }
 
 fn until(fd: i32, events: i16, deadline: Instant) -> io::Result<()> {
@@ -143,6 +145,8 @@ impl NativeProcess {
             control,
             started: false,
             failure_observed: false,
+            partial_frame: Vec::new(),
+            protocol_failed: false,
         })
     }
 
@@ -154,7 +158,19 @@ impl NativeProcess {
     }
 
     fn line(&mut self, deadline: Instant) -> io::Result<Vec<u8>> {
-        let mut line = Vec::new();
+        let result = self.read_line(deadline);
+        if result
+            .as_ref()
+            .is_err_and(|e| e.kind() != io::ErrorKind::TimedOut)
+        {
+            self.protocol_failed = true;
+        }
+        result
+    }
+
+    // A deadline ends an observation, not the incoming frame. Keep its bounded
+    // prefix until completion; otherwise a fragmented failure can lose its type.
+    fn read_line(&mut self, deadline: Instant) -> io::Result<Vec<u8>> {
         loop {
             let mut byte = [0];
             match self.control.read(&mut byte) {
@@ -165,8 +181,9 @@ impl NativeProcess {
                     ));
                 }
                 Ok(_) => {
-                    line.push(byte[0]);
+                    self.partial_frame.push(byte[0]);
                     if byte[0] == b'\n' {
+                        let line = std::mem::take(&mut self.partial_frame);
                         if let Err(error) = check_failure(&line) {
                             self.failure_observed =
                                 error.get_ref().is_some_and(|e| e.is::<NativeFailure>());
@@ -174,7 +191,7 @@ impl NativeProcess {
                         }
                         return Ok(line);
                     }
-                    if line.len() >= 96 {
+                    if self.partial_frame.len() >= 96 {
                         return Err(io::Error::new(
                             io::ErrorKind::InvalidData,
                             "native status frame too long",
@@ -194,6 +211,9 @@ impl NativeProcess {
         if self.failure_observed {
             return Err(io::Error::other("native component already failed"));
         }
+        if self.protocol_failed {
+            return Err(io::Error::other("native protocol already failed"));
+        }
         if self.started {
             return Err(io::Error::other("native startup already acknowledged"));
         }
@@ -202,6 +222,7 @@ impl NativeProcess {
             Startup::Diagnostic => b"ARCHTV_NATIVE_V1 DIAGNOSTIC_STARTED\n".as_slice(),
         };
         if self.line(Instant::now() + timeout)? != expected {
+            self.protocol_failed = true;
             return Err(io::Error::new(
                 io::ErrorKind::InvalidData,
                 "unexpected native startup mode or protocol",

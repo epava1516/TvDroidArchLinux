@@ -1,0 +1,24 @@
+   Compiling archtv-core v0.1.0 (/home/tv/repositorio-principal/crates/archtv-core)
+    Finished `test` profile [unoptimized] target(s) in 4.88s
+     Running tests/native_process.rs (target/debug/deps/native_process-55a9c6fd22149656)
+
+running 1 test
+test partial_failure_survives_observation_timeout ... FAILED
+
+failures:
+
+---- partial_failure_survives_observation_timeout stdout ----
+
+thread 'partial_failure_survives_observation_timeout' (74) panicked at crates/archtv-core/tests/native_process.rs:222:5:
+assertion `left == right` failed
+  left: None
+ right: Some(ShutdownRequested([114, 101, 98, 111, 111, 116]))
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    partial_failure_survives_observation_timeout
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 12 filtered out; finished in 0.34s
+
+error: test failed, to rerun pass `-p archtv-core --test native_process`

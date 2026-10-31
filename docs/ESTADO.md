@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-zygote-security-contract/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-supervisor-framing/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -16,6 +16,20 @@ los resúmenes; no se ha completado compatibilidad amplia.
 Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCCION-ARM.md).
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
+
+## Avance vigente · mensajes de fallo Rust conservados
+
+[Resultados](../reports/android16-supervisor-framing/findings.json): una regresión
+reproduce la pérdida de mensajes parciales al agotar una observación. El canal
+ahora conserva el prefijo acotado entre timeouts y rechaza permanentemente
+protocolos inválidos aunque llegue después un ACK. Seis pruebas unitarias y13
+de procesos pasan en el anfitrión; cuatro EPERM del sandbox conservados aparte.
+No hay aún monitor continuo de pidfd/canal, servicios originales ni APK aceptada.
+La revisión de seapp original añade dos controles necesarios: un retorno0 con
+SELinux deshabilitado o sin coincidencia en permisivo no acredita dominio asignado.
+La instalación de filtros Bionic necesita capacidades o NNP; no los establece.
+Siguiente: observar fallos y salida tras startup con pidfd/canal, manteniendo las
+puertas MAC y el inventario de identidades/dispositivos/cgroups abiertos.
 
 ## Revisión vigente · aislamiento original de zygote
 

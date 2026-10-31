@@ -1,0 +1,55 @@
+{
+  "observed_at": "2026-10-31T13:17:11.547866+00:00",
+  "base_commit": "58975169ade763dbad7ac32b3e794dbddf0d2459",
+  "scope": "Linux supervisor framing correctness, not APK/service compatibility or MAC execution. Additional original-source inspection only.",
+  "change": [
+    "Retain at most96 bytes across observation timeouts instead of dropping incomplete frame; preserve typed original shutdown failure on retry.",
+    "Protocol errors and startup mode mismatch terminal for startup; later ACK cannot hide malformed failure. Typed failure still requires actual nonzero exit collection."
+  ],
+  "verification": {
+    "before.log": "New fragmentation regression fails before change: expected typed shutdown request, got none.",
+    "tests.log": "Sandbox run: 6 unit pass, 9 lifetime pass/4 fail with EPERM on Unix send; not asserted to be functional pass.",
+    "tests-host.log": "Same test suite outside sandbox: 6 unit +13 lifetime pass, including two new process regressions.",
+    "clippy.log": "All targets archtv-core, warnings denied, exit0.",
+    "code_changed": [
+      "crates/archtv-core/src/native_process.rs",
+      "crates/archtv-core/tests/native_process.rs"
+    ]
+  },
+  "source_inventory": [
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/seccomp/seccomp_policy.cpp",
+      "sha256": "ca8b2270bc0f1ab4f108ee13185ae81b22245bbf9036c33628d97e857363a35b",
+      "revision": "f22516cbc67e81c13cf943ce02f01b8929a98726",
+      "url": "https://android.googlesource.com/platform/bionic/+/f22516cbc67e81c13cf943ce02f01b8929a98726/libc/seccomp/seccomp_policy.cpp"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/selinux/source/external/selinux/libselinux/src/android/android_seapp.c",
+      "sha256": "da6b62fa5b25029b1a588ea65758e65280762c0b33d328a9ca2f2e2e4d2de00c",
+      "revision": "085c131ad1b984bfa8ffdafee7a976e9d89f403c"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/selinux/source/external/selinux/libselinux/src/android/android_device.c",
+      "sha256": "12dc2d96db59202fa5a672c6e1c96c5e9f8f815eb6c5011f58b3fb4171e8481b",
+      "revision": "085c131ad1b984bfa8ffdafee7a976e9d89f403c"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/etc/selinux/plat_seapp_contexts",
+      "sha256": "7a4d14a898fb234d87cd49ae106e245324ad365d9029230d2a6306e6d4aa7a7a",
+      "build": "BP4A.251205.006 /14401865"
+    }
+  ],
+  "source_conclusions": [
+    "Original Bionic seccomp install_filter requires CAP_SYS_ADMIN or NNP; it does not set NNP itself. This is source analysis, not successful filter execution.",
+    "Original selinux_android_setcontext returns0 when SELinux is disabled; otherwise computes seapp, validates context and setcon then reinitializes property mappings. A successful return alone is insufficient evidence of an assigned application domain.",
+    "Original seapp no-match path errors in enforcing, can return0 in permissive; verify actual context/domain and properties independently.",
+    "GSI plat_seapp_contexts selects untrusted_app for ordinary targetSDK>=34, levelFrom=all. Markor target35 suggests this branch only if real PackageManager signature/seinfo, UID, privilege flags and rule precedence agree; no UID or context allocated, no app launched."
+  ],
+  "limitations": [
+    "No continuous asynchronous monitor yet; lifecycle caller must still observe control/pidfd, descendant handling and recovery remain open.",
+    "Drop can wait on uninterruptible child; no hard watchdog guarantee.",
+    "No original services started, no policy load/enforcing/relabel/reboot or changes to default policy.",
+    "No APK stage, external-service/DRM or ARM compatibility claim. Regression helper is Python, not an application."
+  ],
+  "next": "Implement bounded post-start lifetime observation of both pidfd and control channel, including failures after startup and descendants holding a channel; keep coherent service identity/capability/NNP/stdio/device/cgroup inventory and S0\u2013S2 gates open. Do not launch original service cohort under a permissive success assumption."
+}
