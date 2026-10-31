@@ -1,0 +1,75 @@
+{
+  "branch": "main",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "objective": "Complete unmodified APK on Linux Rust/Smithay with coherent original AOSP16QPR2/Bionic, no Waydroid or complete Android boot; broad compatibility, isolation, stability, lightness, installation/update.",
+  "canonical_entry": "docs/ESTADO.md",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "constraints": [
+    "User reaffirmed no reboot/security state changes based on historical authorization",
+    "No policy load, relabel, setenforce or host setup modification in this hito",
+    "A16-QPR2-1; full unmodified APK on Linux Rust/Smithay, no Waydroid/full Android; broad compatibility/isolation/stability/lightness/install/update",
+    "ARM/external services/DRM separate; own fixtures/probes not compatibility acceptance"
+  ],
+  "observed_at": "2026-10-31T13:12:55.413096+00:00",
+  "base_commit": "d0711f4a6955807b4ab8df923b9f3e3fe597070a",
+  "previous_checkpoint": "reports/android16-launcher-bootstrap/checkpoint.json",
+  "relation_to_local_origin_tracking": "0\t0",
+  "terminal_exec_handles": [
+    97565
+  ],
+  "active_exec_handles": [],
+  "process_scope": "Push97565 terminal0. Synchronous source retrieval and inspections terminal; no native runtime target or persistent process started. Preboot handles not reused.",
+  "tests": {
+    "scope": "Source inspection, no new runtime tests; previous 51 offline decisions and four assertion-enabled compiles unchanged",
+    "APK_stages_accepted": 0
+  },
+  "next": "Trace original zygote app seapp selection and libseccomp installation plus init manager capability/RC requirements. Build a whole-cohort identity/FD/device/cgroup transition inventory before another policy variant. Then S0\u2013S2 and separately authorized live MAC; Markor nine stages remain untested.",
+  "evidence": {
+    "reports/android16-zygote-security-contract/findings.json": "8942f9b43024359d4a5ea407136943226df50a073e771d0eeb8a5f624d9abe4f"
+  },
+  "local_artifact": {
+    "scope": "Final original binary export, not live policy",
+    "argv": [
+      "/home/tv/repositorio-principal/dist/aosp16/checkpolicy-host-2/source/checkpolicy",
+      "-M",
+      "-b",
+      "-C",
+      "-o",
+      "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-4/export.cil",
+      "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-4/policy.bin"
+    ],
+    "exit": 0,
+    "path": "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-4/export.cil",
+    "sha256": "33564688f0304edf2c7ea64b60efee8a0e90943ffbb06d426e38158725146a0e",
+    "typebounds": [],
+    "policycaps": [
+      "(policycap cgroup_seclabel)",
+      "(policycap extended_socket_class)",
+      "(policycap functionfs_seclabel)",
+      "(policycap genfs_seclabel_symlinks)",
+      "(policycap ioctl_skip_cloexec)",
+      "(policycap network_peer_controls)",
+      "(policycap nnp_nosuid_transition)",
+      "(policycap open_perms)",
+      "(policycap userspace_initial_context)"
+    ],
+    "initial_sid_contexts": [
+      "(sidcontext kernel (linux.system_u linux.system_r linux.kernel_t ((s0) (s0))))",
+      "(sidcontext init (linux.system_u linux.system_r linux.init_t ((s0) (s0))))"
+    ]
+  },
+  "graphify": {
+    "scope": "Codebase query before source review; isolated AST update completed in previous hito d0711f4. This follow-up changes only documentation/JSON, no code."
+  }
+}

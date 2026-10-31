@@ -1,6 +1,9 @@
 # Índice de evidencias
 
-- [Bootstrap original offline](../reports/android16-launcher-bootstrap/findings.json): cuatro compilaciones con neverallow activas, 51 consultas (21 cálculos/permisos,30 denegaciones). Seis denegaciones NNP de gestores pendientes; alias INIT/kernel contrastado con fuente de referencia. Sin carga, etiquetas ni servicios ejecutados. [Checkpoint](../reports/android16-launcher-bootstrap/checkpoint.json), hashes y variantes conservados.
+- [Contrato original de zygote](../reports/android16-zygote-security-contract/findings.json): fuentes AOSP fijadas/hash y rangos; seccomp antes de perder capacidades, tensión NNP/SELinux y filtros omitidos en ramas permisivas. Inspección, no ejecución ni autorización. [Checkpoint del hito](../reports/android16-zygote-security-contract/checkpoint.json).
+
+
+- [Bootstrap original offline](../reports/android16-launcher-bootstrap/findings.json): cuatro compilaciones con neverallow activas, 51 consultas (21 cálculos/permisos,30 denegaciones). Seis denegaciones NNP de gestores pendientes; alias INIT/kernel contrastado con fuente de referencia. Sin carga, etiquetas ni servicios ejecutados. [Checkpoint](../reports/android16-zygote-security-contract/checkpoint.json), hashes y variantes conservados.
 
 
 - [R1-MAC/S1: permisos heredados y productor ausente](../reports/android16-launcher-permission-audit/findings.json):152.494 AV/657 xperm del export original analizados sintácticamente;54 potenciales salida/633 entrada,27 decisiones originales sin errores. Condiciones, capacidades, permisos sensibles e inbound separados de runtime; no cambios de política ni APK aceptada. Export/delta local con hash. [Checkpoint actual](../reports/android16-launcher-bootstrap/checkpoint.json).

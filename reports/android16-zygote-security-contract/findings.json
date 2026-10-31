@@ -1,0 +1,67 @@
+{
+  "observed_at": "2026-10-31T13:12:55.413096+00:00",
+  "base_commit": "d0711f4a6955807b4ab8df923b9f3e3fe597070a",
+  "scope": "Pinned original source inspection only. No native execution, seccomp activation, policy loading or application acceptance. HTTPS source retrieval is not signed host/GSI equivalence.",
+  "sources": [
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/zygote-security-study/Zygote.cpp",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/core/jni/com_android_internal_os_Zygote.cpp",
+      "revision": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+      "sha256": "9d830cb551fa6dec9254c5874d12f08626bec6e6326b707cbf9c098655c3487f"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/init/service.cpp",
+      "url": "https://android.googlesource.com/platform/system/core/+/e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1/init/service.cpp",
+      "revision": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+      "sha256": "d0d758cc6a87ebebf05c76d28026582cbac9a1e1ecd756987eeb96de7230e726"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/init/service_utils.cpp",
+      "url": "https://android.googlesource.com/platform/system/core/+/e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1/init/service_utils.cpp",
+      "revision": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+      "sha256": "e2b1103a96e5b1c4b09fa226679bb81bee6e21fe2e73e1c7fdf62cf72ea96929"
+    }
+  ],
+  "observations": [
+    {
+      "source": 0,
+      "lines": "1898\u20131948,1980\u20132035,2130\u20132178",
+      "finding": "SpecializeCommon prepares inheritable/bounding caps, storage/native-bridge prerequisites, groups/rlimits, gid; installs seccomp while privileged before uid drop, later sets capabilities and original seapp context. Explicit comment rejects NNP alternative because of SELinux transition. No executed proof."
+    },
+    {
+      "source": 0,
+      "lines": "639\u2013655,2780\u20132792,2866\u20132870",
+      "finding": "Cached security_getenforce selects whether app/system and UID/GID seccomp filters run. Permissive branch returns without installing these filters; not an acceptable isolation demonstration. Failure/error edge still requires full call-path review."
+    },
+    {
+      "source": 1,
+      "lines": "224\u2013262,533\u2013588",
+      "finding": "Service path enters namespaces, publishes descriptors, waits for cgroup activation, applies profiles, credentials/context/caps, then exec. setexeccon is explicit only for nonempty seclabel. Functions examined do not themselves establish NNP; absence in selected files is not a whole-system absence proof."
+    },
+    {
+      "source": 2,
+      "lines": "156\u2013175,263\u2013323",
+      "finding": "Original non-console service setup replaces stdio via /dev/null or kmsg_debug, creates process group, applies rlimits, primary/supplemental groups, uid and priority. Device labels, capabilities and cgroup ordering are prerequisites, not fixed by process2 grants."
+    }
+  ],
+  "decision": {
+    "selected": "No placement change yet. Keep current NNP controls and selected-prefix model experimental. Evaluate coherent cohort alternatives before implementation.",
+    "alternatives": [
+      {
+        "mode": "Inherit NNP1 throughout trusted cohort",
+        "requires": "Enumerate original exec/dyntransition paths, process2/bounds/constraints and caps retained across exec, including app specialization. Six current manager process2 denials unresolved; prefix permissions insufficient."
+      },
+      {
+        "mode": "Trusted original cohort without inherited NNP, tighten application boundary later",
+        "requires": "Demonstrate minimal credentials/capabilities and mount/device/cgroup containment, original seccomp/seapp transitions, host protection and recovery. Would change established security design; not implemented or implicitly authorized."
+      }
+    ],
+    "not_equivalent": "NNP, SELinux enforcing, UID/caps, seccomp and namespaces have distinct contracts; one cannot stand in for another."
+  },
+  "next": "Trace original zygote app seapp selection and libseccomp installation plus init manager capability/RC requirements. Build a whole-cohort identity/FD/device/cgroup transition inventory before another policy variant. Then S0\u2013S2 and separately authorized live MAC; Markor nine stages remain untested.",
+  "limitations": [
+    "Original comment explains design intent, not proof that every current kernel path fails under NNP. Reference kernel process2 model remains separate.",
+    "No filters or contexts have been assigned, no services available, no Markor launch.",
+    "No ARM translation, external-service or DRM compatibility result."
+  ]
+}

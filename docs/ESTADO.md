@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-launcher-bootstrap/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-zygote-security-contract/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -16,6 +16,17 @@ los resúmenes; no se ha completado compatibilidad amplia.
 Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCCION-ARM.md).
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
+
+## Revisión vigente · aislamiento original de zygote
+
+[Fuente y límites](../reports/android16-zygote-security-contract/findings.json):
+zygote instala seccomp antes de perder capacidades y documenta la tensión entre
+NNP y transiciones SELinux. En permisivo omite filtros de aplicación/sistema y
+UID/GID en las ramas examinadas. No hay ejecución nueva ni aislamiento acreditado.
+Evaluar NNP heredado frente a una cohorte privilegiada acotada con frontera de
+aplicación original; ninguna alternativa seleccionada ni implementada todavía.
+Inventariar todas las identidades, capacidades, FD, dispositivos y cgroups antes
+de otra variante de política. Markor sigue sin etapas aceptadas.
 
 ## Avance vigente · bootstrap original, sólo offline
 

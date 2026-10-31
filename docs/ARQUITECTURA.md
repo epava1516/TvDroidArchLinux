@@ -8,6 +8,15 @@ fáciles ni se mantienen adaptaciones particulares por APK como estrategia.
 La vía principal **es Bionic/AOSP nativo**; es una decisión contractual, todavía
 sin validación funcional de la base nueva. El host Linux puede conservar glibc.
 
+La [revisión de zygote original](../reports/android16-zygote-security-contract/findings.json)
+obliga a evaluar NNP y capacidades como contrato de cohorte: seccomp se instala
+antes de perder privilegios; la fuente advierte de transiciones SELinux al usar
+NNP como alternativa. Las ramas permisivas examinadas omiten filtros. No basta
+un arranque permisivo exitoso ni añadir process2 a cada fallo. Mantener controles
+actuales hasta justificar/probar una alternativa completa, sin cambiar seguridad
+del anfitrión. Próximo inventario: seapp/seccomp, RC/capabilities de gestores,
+stdio/dispositivos, FD y cgroups; luego S0–S2 y pruebas autorizadas.
+
 ## Entrada de supervisor · modelo vigente y límites
 
 [Resultados](../reports/android16-launcher-bootstrap/findings.json) y
