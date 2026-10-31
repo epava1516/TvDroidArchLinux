@@ -1,0 +1,53 @@
+{
+  "scope": "Original native sphal-loader regression, not HwcLoader/HIDL/device/SF/Wayland or APK acceptance",
+  "assertions": {
+    "sphal_namespace_visible_and_original_load_fails": true,
+    "equivalent_direct_namespace_error_libutils": true,
+    "original_namespace_not_relaxed": true,
+    "same_adapter_hash_as_prior_platform_control": true,
+    "uid10000_no_capabilities_observed": true,
+    "six_prior_pending_hashes_preserved": true
+  },
+  "evidence": [
+    {
+      "path": "reports/android16-hwc-vendor-load/attempted-build-1.py",
+      "sha256": "b280d188f698857ad188e9f372d7c952971ba6fcb84081b249223fc0ee4996fb"
+    },
+    {
+      "path": "reports/android16-hwc-vendor-load/attempted-build-2.py",
+      "sha256": "9420ee8b00ddc83781119c3cb1a31d8e29f5222158eac4cabebad876a2e1ca32"
+    },
+    {
+      "path": "reports/android16-hwc-vendor-load/build.json",
+      "sha256": "6ea8c9a0c7e080339317e3a22a11b59fda27e660a55dfd9fe3b07686f606ed2e"
+    },
+    {
+      "path": "reports/android16-hwc-vendor-load/capture-summary.json",
+      "sha256": "6e9382a92ac5d0b585c4a5a9881017531ff6ff757a21b03bfc2809e038ce89bc"
+    },
+    {
+      "path": "reports/android16-hwc-vendor-load/findings.json",
+      "sha256": "29677c8ccfcd8d10cc92db7d35f03b7a4775301b1758c6513d4de4608d878f38"
+    },
+    {
+      "path": "reports/android16-hwc-vendor-load/initial-capture-summary.json",
+      "sha256": "622ee822b1e7ba9efb6baee68ab2d04cd4b8e3d1a413ce5b9aaea08278d59528"
+    },
+    {
+      "path": "reports/android16-hwc-vendor-load/native-launcher.py",
+      "sha256": "1b4b172805878b6957fe270c98be3bf846981dc32f49befa0b6e4c020928a8a8"
+    },
+    {
+      "path": "reports/android16-hwc-vendor-load/reproduce-build.py",
+      "sha256": "3e434ab25704d994db0dae34f199eb5370971d6ccca1d7909d67f3a6c671f36e"
+    },
+    {
+      "path": "reports/android16-hwc-vendor-load/source-contract.json",
+      "sha256": "91da51e4f02539c6b714b3de3843dd7afc97a07c850a709d310c3398a38dbc88"
+    },
+    {
+      "path": "reports/android16-hwc-vendor-load/vendor-load-probe.cpp",
+      "sha256": "12cc10955c1eff339c10c9e20777a3fea91f6d78a98543d65358963990daf766"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "projection": "Sanitized derived metadata only, not complete authenticated MCP Evidence; native launcher did not exist after build failure, not native execution.",
+  "evidence_id": "ev_b6f8a81bed79220237fe8d4d8f79c2efc85ace56906456eedcf2ff8c70f9a9b5",
+  "exit": {
+    "code": 2,
+    "signal": 0,
+    "reason": "exited"
+  },
+  "cleanup": {
+    "owned_process_group": "verified",
+    "temporary_root": "removed",
+    "unverified_processes": [
+      {
+        "pid": 236650,
+        "reason": "EACCES: permission denied, open '/proc/236650/environ'"
+      }
+    ]
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "The executable digest is a prelaunch file sample; matching path metadata immediately after spawn does not prove an atomic operating-system image binding.",
+    "Process trees are sampled and may omit short-lived descendants.",
+    "Process-tree sampling ended with an incomplete observation.",
+    "Filesystem observations are before/after snapshots, not syscall traces.",
+    "Inherited host environment variables are not recorded and may affect results.",
+    "No filesystem observation paths were selected; filesystem effects remain unknown.",
+    "Process sampling has incomplete observations: /proc/236637/environ: EACCES: Error: EACCES: permission denied, open '/proc/236637/environ'. See truncation_details.process."
+  ]
+}

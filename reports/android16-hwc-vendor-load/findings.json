@@ -1,0 +1,53 @@
+{
+  "scope": "Original native sphal-loader regression, not HwcLoader/HIDL/device/SF/Wayland or APK acceptance",
+  "observed_at": "2026-10-31T07:04:28.204496+00:00",
+  "base_commit": "ac68643dc547188fef7d10ca182f157158e1f078",
+  "execution": {
+    "evidence_id": "ev_1890af4c0f282b2a3cb1071e1da1cf3e8533c91f0e0f5280f0a316f9230bdf38",
+    "exit": 2,
+    "sphal_visible": true,
+    "wrapper": "Original GSI android_load_sphal_library",
+    "path": "/data/libhwc2on1adapter.so; /data is permitted by original sphal configuration and diagnostic executable selects system section",
+    "result": "Original load fails; equivalent direct original android_dlopen_ext call to same sphal namespace retrieves missing libutils.so error. No namespace relaxation or successful fallback.",
+    "error": "DIRECT_SPHAL_ERROR=dlopen failed: library \"libutils.so\" not found: needed by /data/libhwc2on1adapter.so in namespace sphal",
+    "identity": {
+      "Uid": "10000\t10000\t10000\t10000",
+      "Gid": "10000\t10000\t10000\t10000",
+      "Groups": "",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "CapInh": "0000000000000000",
+      "CapAmb": "0000000000000000",
+      "NoNewPrivs": "1"
+    },
+    "artifacts": [
+      {
+        "path": "dist/aosp16/hwc-vendor-load-build-3/vendor-load-probe",
+        "sha256": "47813ec05c7e720fc78469fcb4fec9af3d2c429a870033973c6bb74ee76d7666"
+      },
+      {
+        "path": "dist/aosp16/hwc-vendor-load-execution-1/data/vendor-load-probe",
+        "sha256": "47813ec05c7e720fc78469fcb4fec9af3d2c429a870033973c6bb74ee76d7666"
+      },
+      {
+        "path": "dist/aosp16/hwc-vendor-load-execution-1/data/libhwc2on1adapter.so",
+        "sha256": "41b99c758e81d69306bebc6ff2f48e283a7356b97c18fde3e16a65be0bc52cd9"
+      }
+    ]
+  },
+  "source_interpretation": "Earlier platform dlopen success does not prove vendor/sphal ABI closure. Exact generated sphal link to default excludes libutils.so. Original libutils has vendor-available/double-loadable whole implementation; coherent vendor package must be built and resolved, not assumed from platform presence.",
+  "build_iterations": [
+    "Initial diagnostic links failed: android_get_exported_namespace requires explicit original libdl_android; first capture found missing launcher after build failure and is not native execution.",
+    "Second diagnostic link attempted absolute extracted-image symlink from host: failed path resolution; not an original library incompatibility.",
+    "Third build resolves symlink within image root and links original libdl_android; native process ran and observed actual namespace failure."
+  ],
+  "limitations": [
+    "No full HwcLoader/HIDL passthrough source built/executed yet",
+    "No vendor libutils/library graph built; no copying arbitrary platform variants or patching namespace to hide failure",
+    "Probe issues no explicit Binder calls; original SID/SELinux service gate remains failed",
+    "No graphics device, allocator/mapper, buffers/fences, GPU/Wayland/Smithay frame, cross-app isolation or APK journey accepted",
+    "MCP process sampling partial, no filesystem/network observation or atomic executable image binding; sanitized selection is not complete authenticated Evidence",
+    "Limits CPU10/wall20(+kill3)/virtual AS64GiB, not measured physical memory budget"
+  ],
+  "next": "Derive/build whole original vendor library graph (libutils with libutils_binder, libcutils/libhardware dependencies) and original generated HIDL headers against our exact lock before rerunning sphal. Keep original namespaces and original service identity. Compare effort against original HWC3 frontend adaptation, without new Composer from scratch."
+}

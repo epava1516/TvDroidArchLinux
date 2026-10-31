@@ -1,0 +1,35 @@
+{
+  "files": [
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/libvndksupport/linker.cpp",
+      "sha256": "82ea0c72e793fe571ba428e9b5afa150a283c6d55dc67e7db82638201ac19183"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/libvndksupport/Android.bp",
+      "sha256": "fc72ba0b719beb5cb4b28ac11cbd3721679c43546fc80708b9b1017e08f4580e"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/libutils/Android.bp",
+      "sha256": "08abccc38bd1a1326710c193e8ab14ad41649e6b9f4be99c3498f223753d0c5e"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/libutils/binder/Android.bp",
+      "sha256": "1c1bcefb169866bbec2182a9c312302154461880ea264d5ff09cdc1770878ef3"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/graphics-candidates-1/libhardware/hardware.c",
+      "sha256": "1651205b1a8192a826eec4678fb456eb291064ad899ca29f43cda2e81bc3072a"
+    }
+  ],
+  "linkerconfig": {
+    "path": "dist/aosp16/linkerconfig-2/generated/ld.config.txt",
+    "sha256": "cb2d787018f3c4c2c8d500c8a12cc31e49c132c5c724c73a39fa7a8e603beaf7",
+    "sphal_default_shared_libs": "namespace.sphal.link.default.shared_libs = libft2.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libRS.so:libandroid_net.so:libapexsupport.so:libbinder_ndk.so:libc.so:libcgrouprc.so:libclang_rt.asan-i686-android.so:libclang_rt.asan-x86_64-android.so:libdl.so:liblog.so:libm.so:libmediandk.so:libnativewindow.so:libselinux.so:libsync.so:libvendorsupport.so:libvndksupport.so:libvulkan.so:libdl_android.so:libclang_rt.ubsan_standalone-i686-android.so:libclang_rt.ubsan_standalone-x86_64-android.so",
+    "scope": "Original generated configuration, not modified for probe"
+  },
+  "facts": [
+    "libhardware uses android_load_sphal_library for non-system modules in the normal Android build",
+    "libvndksupport selects sphal/vendor/default exported namespace in that order; absent namespace permits dlopen fallback, which this probe rejects",
+    "libutils vendor_available=true, double_loadable=true; original target includes complete implementation plus whole_static libutils_binder; availability does not prove built ABI or namespace closure"
+  ]
+}

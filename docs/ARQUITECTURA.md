@@ -881,6 +881,26 @@ instrumentados. Siguiente paso: cargador/passthrough original y cierre ABI vendo
 separando dependencias del HAL Wayland antes de decidir un frontend alternativo.
 El fallo SID del anfitrión sigue bloqueando aceptación del gestor; no se omite.
 
+## R3: la carga de plataforma no cierra el namespace vendor
+
+[Contraste nativo sphal](../reports/android16-hwc-vendor-load/validation.json).
+Con el mismo adaptador original cuyo dlopen de plataforma pasó, una sonda Bionic
+UID10000/caps0 usa android_load_sphal_library original. sphal está visible; no se
+permite fallback a namespace abierto. La carga falla. La repetición directa
+con android_dlopen_ext y el mismo namespace obtiene: libutils.so no encontrada.
+La configuración linker original permite /data pero no exporta libutils.so por
+el enlace sphal→default. El resultado demuestra este cierre incompleto, no que
+el adaptador original sea incompatible con A16.
+
+libhardware usa esa ruta en módulos fuera de system. libutils declara variante
+vendor y double_loadable e incluye su implementación completa y libutils_binder;
+no basta que exista su variante platform. Siguiente paso: derivar/construir el
+grafo vendor original coherente y cabeceras HIDL generadas, manteniendo namespaces
+originales. No copiar variantes arbitrarias ni abrir el namespace para aprobar.
+Errores previos del arnés (dependencia libdl_android omitida y symlink absoluto
+resuelto fuera de imagen) conservados aparte; no son fallos del componente.
+Ningún dispositivo HWC/HIDL/SF/Wayland/APK se considera probado por esta sonda.
+
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 
 
