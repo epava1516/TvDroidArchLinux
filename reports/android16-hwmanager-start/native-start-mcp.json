@@ -1,0 +1,136 @@
+{
+  "projection": "Selected derived non-sensitive terminal fields; not complete authenticated MCP Evidence. Raw OSC host identifiers omitted.",
+  "evidence_id": "ev_02a39b0d090439ddd43fda5854422f473dc593ca17e8e08257572f7333f614e7",
+  "operation": "capture_process_scenario",
+  "authority": "controlled-replay",
+  "confidence": "observed",
+  "exit": {
+    "code": 127,
+    "signal": 0,
+    "reason": "exited"
+  },
+  "observations": [
+    "PRIVATE_BINDER {\"name\": \"binder\", \"major\": 242, \"minor\": 1}",
+    "PRIVATE_BINDER {\"name\": \"vndbinder\", \"major\": 242, \"minor\": 2}",
+    "PRIVATE_BINDER {\"name\": \"hwbinder\", \"major\": 242, \"minor\": 3}",
+    "PREEXEC_SECURITY {\"Uid\": \"1000\\t1000\\t1000\\t1000\", \"Gid\": \"1000\\t1000\\t1000\\t1000\", \"Groups\": \"1000 3009\", \"CapEff\": \"0000000000000000\", \"CapPrm\": \"0000000000000000\", \"CapInh\": \"0000000000000000\", \"CapAmb\": \"0000000000000000\", \"NoNewPrivs\": \"1\"}",
+    "DIAGNOSTIC_LOG_OBSERVER_INSTALLED",
+    "ANDROID_LOG priority=6 tag=hwservicemanager message=libvintf-usage-violation: Executable /system/system_ext/bin/hwservicemanager should not use libvintf. It should query VINTF metadata via servicemanager",
+    "ANDROID_LOG priority=4 tag=hwservicemanager message=getFrameworkHalManifest: Reading VINTF information.",
+    "ANDROID_LOG priority=4 tag=hwservicemanager message=getDeviceHalManifest: Reading VINTF information.",
+    "ANDROID_LOG priority=6 tag=hwservicemanager message=getDeviceHalManifest: status from fetching VINTF information: -2",
+    "ANDROID_LOG priority=6 tag=hwservicemanager message=getDeviceHalManifest: -2 VINTF parse error: Cannot read /vendor/manifest.xml: No such file or directory",
+    "ANDROID_LOG priority=5 tag=hwservicemanager message=Cannot fetch device manifest to determine target FCM version to filter framework manifest HALs properly. Treating as infinitely old device.",
+    "ANDROID_LOG priority=4 tag=hwservicemanager message=getFrameworkHalManifest: Successfully processed VINTF information",
+    "SELinux: Loaded hwservice context from:",
+    "\t\t/system/etc/selinux/plat_hwservice_contexts",
+    "\t\t/system_ext/etc/selinux/system_ext_hwservice_contexts",
+    "\t\t/product/etc/selinux/product_hwservice_contexts",
+    "Failed to acquire hwservicemanager context.",
+    "ANDROID_LOG priority=7 tag=hwservicemanager message=Failed to acquire hwservicemanager context.",
+    "libc: failed to connect to tombstoned: No such file or directory"
+  ],
+  "cleanup": {
+    "owned_process_group": "verified",
+    "temporary_root": "removed",
+    "unverified_processes": [
+      {
+        "pid": 246858,
+        "reason": "EACCES: permission denied, open '/proc/246858/environ'"
+      }
+    ]
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "The executable digest is a prelaunch file sample; matching path metadata immediately after spawn does not prove an atomic operating-system image binding.",
+    "Process trees are sampled and may omit short-lived descendants.",
+    "Process-tree sampling ended with an incomplete observation.",
+    "Filesystem observations are before/after snapshots, not syscall traces.",
+    "Inherited host environment variables are not recorded and may affect results.",
+    "No filesystem observation paths were selected; filesystem effects remain unknown.",
+    "Process sampling has incomplete observations: /proc/246830/environ: EACCES: Error: EACCES: permission denied, open '/proc/246830/environ'. See truncation_details.process."
+  ],
+  "residual_unknowns": [
+    {
+      "scope": "process",
+      "reason": "Process trees are sampled and may omit short-lived descendants."
+    },
+    {
+      "scope": "process",
+      "reason": "The executable digest is a prelaunch file sample; operating-system image binding is not atomically observed."
+    },
+    {
+      "scope": "environment",
+      "reason": "Inherited host environment variables are not recorded."
+    },
+    {
+      "scope": "network",
+      "reason": "Network activity is not observed by this capture."
+    },
+    {
+      "scope": "filesystem",
+      "reason": "No filesystem observation paths were selected; filesystem effects remain unknown."
+    },
+    {
+      "scope": "process",
+      "reason": "Process sampling has incomplete observations: /proc/246830/environ: EACCES: Error: EACCES: permission denied, open '/proc/246830/environ'. See truncation_details.process."
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 246858 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/246858/environ'"
+    }
+  ],
+  "truncated": true,
+  "truncation_details": {
+    "raw_terminal": {
+      "budget_bytes": 40000,
+      "observed_bytes": 2137,
+      "retained_bytes": 2137,
+      "observed_frames": 10,
+      "retained_frames": 10
+    },
+    "rendered_terminal": {
+      "budget_bytes": 40000,
+      "observed_bytes": 19600,
+      "retained_bytes": 19600,
+      "observed_frames": 10,
+      "retained_frames": 10
+    },
+    "normalized_terminal": {
+      "budget_bytes": 40000,
+      "retained_bytes": 2136,
+      "omitted_frames": 0
+    },
+    "filesystem_before": {
+      "files_limit": 10000,
+      "depth_limit": 16,
+      "enumeration_truncated": false,
+      "enumeration_reasons": [],
+      "enumeration_omissions": [],
+      "unobserved_subtrees": [],
+      "hash_budget_bytes": 10000000,
+      "hashed_bytes": 0,
+      "hash_omissions": []
+    },
+    "filesystem_after": {
+      "files_limit": 10000,
+      "depth_limit": 16,
+      "enumeration_truncated": false,
+      "enumeration_reasons": [],
+      "enumeration_omissions": [],
+      "unobserved_subtrees": [],
+      "hash_budget_bytes": 10000000,
+      "hashed_bytes": 0,
+      "hash_omissions": []
+    },
+    "process": {
+      "sample_limit": 40,
+      "sampling_partial": true,
+      "retained_samples": 0,
+      "sample_limit_reached": false,
+      "sampling_failures": 15,
+      "first_sampling_failure": "/proc/246830/environ: EACCES: Error: EACCES: permission denied, open '/proc/246830/environ'",
+      "coverage": "sampled"
+    }
+  }
+}

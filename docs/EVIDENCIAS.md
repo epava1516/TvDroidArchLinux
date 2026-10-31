@@ -1,6 +1,8 @@
 # Índice de evidencias
 
-- [R3: Composer original enlazado y espera de gestor](../reports/android16-composer-link/findings.json): tres unidades/tres enlaces estrictos; REA MCP observa espera real hwservicemanager.ready hasta límite/señal9, no disponibilidad. Binder privado separado y logs observados, sin HAL/registro/buffers/frames/APK. Preflight host aún falla. [Checkpoint actual](../reports/android16-composer-link/checkpoint.json).
+- [R1-MAC: hwservicemanager original ejecutado](../reports/android16-hwmanager-start/findings.json): identidad/grupos RC, binario GSI y cuatro fuentes/config contrastados; captura REA MCP salida127 por contexto SELinux propio ausente, tras leer contextos hwservice. VINTF vendor incompleto y advertencia libvintf diferenciados del fatal. Sin registro/readiness/IPC/APK aceptados. [Checkpoint actual](../reports/android16-hwmanager-start/checkpoint.json).
+
+- [R3: Composer original enlazado y espera de gestor](../reports/android16-composer-link/findings.json): tres unidades/tres enlaces estrictos; REA MCP observa espera real hwservicemanager.ready hasta límite/señal9, no disponibilidad. Binder privado separado y logs observados, sin HAL/registro/buffers/frames/APK. Preflight host aún falla. [Checkpoint del hito](../reports/android16-composer-link/checkpoint.json).
 
 - [R3: enlace libui y ejecución nativa](../reports/android16-libui-link/findings.json):23 unidades recompiladas con -fno-rtti original y dos dependencias estáticas; enlace estricto con30 proveedores originales GSI. REA MCP observa salida0 y libui fuente mapeada, regiones/transformación/sentinel NO_FENCE. No buffers, fence real, servicio, frames ni APK. [Checkpoint del hito](../reports/android16-libui-link/checkpoint.json).
 

@@ -1085,6 +1085,34 @@ necesita su cierre original, no una excepción silenciosa de permisos/identidad.
 El contrato conserva no reiniciar VM/cliente ni activar política sin plan probado;
 la matriz de APK permanece no probada y el objetivo completo sigue abierto.
 
+## R1-MAC · hwservicemanager original y orden de despliegue
+
+[Captura y procedencia](../reports/android16-hwmanager-start/findings.json).
+El binario original GSI se ejecuta en namespaces privados con UID/GID1000 y
+suplementarios1000/3009 del RC; capacidades0/NNP1 comprobados. No equivale a desplegar
+task_profiles, transiciones SELinux o acciones critical/restart del init original.
+REA MCP observa framework VINTF procesado y vendor manifest ausente (-2), advertencia
+libvintf de uso directo y carga de contextos hwservice system/system_ext/product.
+El evento fatal es getcon de AccessControl: no obtiene contexto propio, salida127;
+no se atribuye a VINTF ni a la advertencia anterior. Tombstoned también está ausente.
+
+service.cpp, AccessControl.cpp, Vintf.cpp y RC originales se contrastan con el
+archivo fuente de hash fijado, revisión21b593ef1d78e8fd23140bac5255bcbc51d5aea0.
+El gestor requiere contexto propio/permisos, solicita SID y se registra como gestor
+antes de publicar hwservicemanager.ready mediante property_set. Los ficheros de
+contextos existentes no aportan por sí solos etiquetas de procesos o enforcement.
+El servicio real de propiedades y su socket/permisos son otra dependencia; no basta
+una zona de propiedades inicializada de sólo lectura.
+
+Orden de aceptación: host LSM/política/etiquetas/transiciones y recuperación probados;
+servicio de propiedades real/supervisión; gestor original con VINTF y Binder privado;
+publicación original de readiness; registro Composer y recorrido HAL/buffers/fences.
+El host tiene SELinux compilado pero inactivo; namespaces y copiar políticas no
+activan un LSM ausente de la lista activa. El contrato no permite reiniciar VM/cliente,
+introducir VM o Android completo. Se mantiene explícita esa tensión y no se declara
+registro/IPC/MAC/APK aceptado. Se puede avanzar offline en unidades originales,
+paquetización, configuración e instalación/rollback sin repetir el mismo arranque.
+
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 
 

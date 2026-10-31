@@ -1,0 +1,29 @@
+{
+  "observed_at": "2026-10-31T09:12:42.429482+00:00",
+  "base_commit": "8d0056fc8f87d5616da36a7a4d56c1f673310281",
+  "branch": "main",
+  "previous_checkpoint": "reports/android16-composer-link/checkpoint.json",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "active_exec_handles": [],
+  "mcp_status": "Capture exit127, owned-group cleanup verified; incomplete process observations, no persistent target opened",
+  "result": "Original hwservicemanager fatal getcon gate, upstream sources/config verified against archive",
+  "tests": "native-start-mcp.json and source-provenance.json; host-security prerequisite snapshot in prior Composer milestone",
+  "next": "Audit complete original property-service and manager supervision/deployment unit, recording required Linux kernel/boot/policy boundary and safe installation/rollback gates before any activation. Continue reusable original subsystems without rerunning unchanged graphics startup.",
+  "evidence": {
+    "reports/android16-hwmanager-start/findings.json": "8386c5c9c058e52c366d991af2f8745f3b1a363d99b71f17bedf18d5956b3e13",
+    "reports/android16-hwmanager-start/native-start-mcp.json": "7017ef61d0ceb3be2e6d3a196d5b7b5cefb1cb422dc14f1f02a10888f5801fb8",
+    "reports/android16-hwmanager-start/source-provenance.json": "72f9f998f6b13162d36e53f68bbe04856bfbe9547c09e3f8d34b84893544316a",
+    "reports/android16-hwmanager-start/native-launcher.py": "23d10fe647a3794b87b72bdf9a56a1afc504ae6b63603762d20e6bdec8996bef"
+  }
+}

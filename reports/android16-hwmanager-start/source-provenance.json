@@ -1,0 +1,43 @@
+{
+  "original_provenance": {
+    "project": "system/hwservicemanager",
+    "subtree": ".",
+    "commit": "21b593ef1d78e8fd23140bac5255bcbc51d5aea0",
+    "url": "https://android.googlesource.com/platform/system/hwservicemanager/+archive/21b593ef1d78e8fd23140bac5255bcbc51d5aea0.tar.gz",
+    "lock_sha256": "06c6fcc779cb0e115f4515a0c38a67c31151dc8b55bd335ff2f0987e3db3eb58",
+    "status": "complete",
+    "signature_verified": false,
+    "original_source_modified": false,
+    "archive_bytes": 22946,
+    "archive_sha256": "f11eaecf1cc2c620bfcc64f6619797877641b30a65bbad7d9e057fbba90df13a",
+    "regular_files": 20,
+    "relative_source_root": "source/system/hwservicemanager",
+    "unresolved_symlinks": [
+      "system/hwservicemanager/.clang-format"
+    ],
+    "completeness": "Original subtree only; sibling sources/generated inputs must be supplied before build"
+  },
+  "verified_files": [
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/original-hwservicemanager/source/system/hwservicemanager/service.cpp",
+      "sha256": "45d5a1fbf9917f6db681a24dc641927cba4f758581db29d4ce1693fa96d2d5cf",
+      "matches_pinned_archive": true
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/original-hwservicemanager/source/system/hwservicemanager/AccessControl.cpp",
+      "sha256": "82fdfdbf4b1842b970164609cf4c16b2e40034228c4afcfa5c399d9b653f9df9",
+      "matches_pinned_archive": true
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/original-hwservicemanager/source/system/hwservicemanager/Vintf.cpp",
+      "sha256": "ecdd95969e82c647c56ddd11cec652cb7f0736097aafa51f02082a0d3399189c",
+      "matches_pinned_archive": true
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/original-hwservicemanager/source/system/hwservicemanager/hwservicemanager.rc",
+      "sha256": "fec3f3312b7cb0f5c22438b62cca189964878874f8aabd47396ae1f4faf8c4f9",
+      "matches_pinned_archive": true
+    }
+  ],
+  "signature_or_git_object_verification": false
+}

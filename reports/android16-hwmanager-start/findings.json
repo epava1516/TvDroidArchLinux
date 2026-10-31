@@ -1,0 +1,54 @@
+{
+  "scope": "Original hwservicemanager native startup with original RC UID/groups; observed fatal SELinux context gate, not registry/IPC acceptance",
+  "runtime_evidence": "ev_02a39b0d090439ddd43fda5854422f473dc593ca17e8e08257572f7333f614e7",
+  "exit": {
+    "code": 127,
+    "signal": 0,
+    "reason": "exited"
+  },
+  "artifacts": [
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/system_ext/bin/hwservicemanager",
+      "sha256": "5bba119c487c61384c0295ddf519a9f694e8eb07c7fe7d867079de56b011a479",
+      "role": "original GSI executable, not rebuilt or patched"
+    },
+    {
+      "path": "dist/aosp16/hwmanager-native-execution-1/data/log-observer.so",
+      "sha256": "243d3ee8e5b6b1288ec54c3def9ffe2cb091d7e1217b8a396cdf7ea7cbb67161",
+      "role": "diagnostic public log callback only; from Composer milestone"
+    }
+  ],
+  "observed_order": [
+    "Three distinct Binder devices; UID/GID1000 groups1000,3009 caps0 NNP1 before exec",
+    "Diagnostic log callback initialized",
+    "Original libvintf emits usage violation warning for hwservicemanager; not the fatal event",
+    "Original framework VINTF processed; vendor manifest absent status-2 logged",
+    "Original hwservice context files from system/system_ext/product loaded",
+    "Failed to acquire hwservicemanager context: fatal log; exit127",
+    "No tombstoned endpoint for crash report"
+  ],
+  "source_match": {
+    "commit": "21b593ef1d78e8fd23140bac5255bcbc51d5aea0",
+    "service": "service.cpp requests SID and context-manager registration, then property_set hwservicemanager.ready",
+    "access": "AccessControl constructor loads hwservice contexts then getcon; failure is fatal",
+    "vintf": "Vintf.cpp chooses transport from actual framework/device manifests",
+    "rc": "system UID/GID1000, group readproc3009; source files match pinned archive"
+  },
+  "not_accepted": [
+    "Full init RC equivalence (task profiles, transitions, critical restart actions not deployed)",
+    "SELinux labels/enforcement/caller SID/permissions/context manager registration",
+    "VINTF complete vendor hardware profile",
+    "Property service/readiness mutation or persistence",
+    "Manager callbacks/death/IPC/isolation",
+    "Composer HAL, buffers/fences/presentation, APK stages"
+  ],
+  "deployment_dependency_order": [
+    "Host SELinux active with compatible verified policy/labels/transitions and recovery; current host inactive",
+    "Real property service with original contexts/permissions and supervisor socket ownership",
+    "Original hwservicemanager/VINTF configuration and private hwbinder manager SID/registration",
+    "Readiness only published by successfully started original manager through real property service",
+    "Composer original uses actual manager, then loads real HAL and registers; validate buffers/fences/Smithay"
+  ],
+  "contract_tension": "Current host SELinux inactive; source/binary availability and namespace mounting cannot activate a missing active LSM. No VM/client restart or hidden Android/VM permitted. No runtime enforcement/deployment claim and no readiness workaround; further offline packaging/configuration work remains possible.",
+  "next": "Audit complete original property-service and manager supervision/deployment unit, recording required Linux kernel/boot/policy boundary and safe installation/rollback gates before any activation. Continue reusable original subsystems without rerunning unchanged graphics startup."
+}

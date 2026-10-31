@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-composer-link/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-hwmanager-start/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -17,7 +17,19 @@ Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCC
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
 
-## Último hito verificado · Composer enlazado, espera real de gestor
+## Último diagnóstico verificado · hwservicemanager original
+
+[Resultado](../reports/android16-hwmanager-start/findings.json): binario GSI original,
+UID/GID1000 y grupos system/readproc según RC, Binder privado separado. REA MCP
+observa lectura de contextos de servicios y aborto al obtener contexto SELinux propio
+(salida127). Falta manifiesto vendor y se registra advertencia libvintf; no son
+la causa fatal observada. No registro, readiness ni IPC de gestor aceptados.
+Cadena pendiente: LSM/política/etiquetas→servicio de propiedades real→gestor/VINTF→
+readiness original→Composer/HAL. No activar readiness manualmente. El host actual
+sin SELinux activo y el contrato sin reinicios impiden aceptar esa ejecución aún;
+continúa trabajo independiente de configuración/instalación y subsistemas originales.
+
+## Hito anterior · Composer enlazado, espera real de gestor
 
 [Resultados](../reports/android16-composer-link/findings.json): servicio Composer2.1,
 recursos y adaptador framebuffer originales compilan/enlazan estrictamente.
