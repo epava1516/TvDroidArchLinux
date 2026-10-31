@@ -1,0 +1,67 @@
+; Evidence: execution-10-enforcing-mcp.json / audit-avc-after-enforcing.log.
+; Only admitted process types may consume the factory-created lifetime/output
+; descriptors. No host sockets, files, ptrace or policy administration granted.
+(allow archtv_launcher linux.init_t (fd (use)))
+(allow archtv_launcher linux.init_t (fifo_file (write)))
+(allow init linux.init_t (fd (use)))
+(allow init linux.init_t (fifo_file (write)))
+(allow servicemanager linux.init_t (fd (use)))
+(allow servicemanager linux.init_t (fifo_file (write)))
+(allow shell linux.init_t (fd (use)))
+(allow shell linux.init_t (fifo_file (write)))
+; Stdin now uses private real /dev/null instead of the external host PTY.
+(allow archtv_launcher null_device (chr_file (read getattr open)))
+; Original helper needs genuine filesystem metadata and Bionic interpreter
+; traversal before the exec credential commit. All backing images remain RO.
+(allow archtv_launcher self (process (getsched)))
+(allow archtv_launcher linux.security_t (filesystem (getattr)))
+(allow archtv_launcher linux.fs_t (filesystem (getattr)))
+(allow archtv_launcher rootfs (lnk_file (read)))
+(allow archtv_launcher system_file (dir (search)))
+(allow archtv_launcher apex_mnt_dir (dir (search)))
+(allow archtv_launcher system_linker_exec (lnk_file (read)))
+(allow archtv_launcher system_linker_exec (file (read open execute)))
+; Full admitted Bionic cohort uses original GSI/APEX filesystem metadata and
+; /proc/self aliases, while this composition keeps Linux-owned FS/proc labels.
+(typeattribute archtv_mc1_android)
+(typeattributeset archtv_mc1_android (init servicemanager shell))
+(allow archtv_mc1_android linux.fs_t (filesystem (getattr)))
+(allow archtv_mc1_android linux.proc_t (lnk_file (read)))
+(allow init linux.security_t (filesystem (getattr)))
+(allow servicemanager linux.security_t (filesystem (getattr)))
+(allow init linux.security_t (dir (read open)))
+(allow servicemanager linux.security_t (dir (read open)))
+
+; The original policy intentionally prohibits init CAP_SYS_PTRACE and reading
+; shell-owned contents. Keep diagnostics in the privileged Linux factory.
+(allow linux.init_t servicemanager (process (getattr)))
+(allow linux.init_t shell_data_file (file (read open getattr)))
+(allow linux.init_t binder_device (chr_file (getattr)))
+(allow init archtv_bundle_dir (dir (read open)))
+; Preserve NNP and admit only the two original service edges actually exercised.
+(allow init servicemanager (process2 (nnp_transition)))
+(allow init shell (process2 (nnp_transition)))
+; Linux-owned tmpfs filesystem semantics inherit the directory's device type.
+; Keep original WriteStringToFile -> restorecon, with only the required source
+; relabel permission. Original init -> property_info relabelto stays unchanged.
+(allow init properties_device (file (relabelfrom)))
+; Linux proc exposes /proc/mounts as a symlink; original libprocessgroup opens
+; it to discover controllers. File read was already allowed by original policy.
+(allow init proc_mounts (lnk_file (read)))
+; The external privileged factory's actual getpidcon/status/output checks need
+; traversal and reads, not ptrace or Android init privileges. Static checks
+; against policy5 deny these exact operations used by execute.py.
+(allow linux.init_t servicemanager (dir (search)))
+(allow linux.init_t servicemanager (file (read open getattr)))
+(allow linux.init_t system_data_root_file (dir (search)))
+(allow linux.init_t system_data_file (dir (search)))
+(allow linux.init_t shell_data_file (dir (search)))
+(allow linux.init_t device (dir (search)))
+; execution17: the dedicated genfs prefix correctly creates cgroup_v2 objects,
+; but Linux owns the underlying cgroup2 filesystem identity. Permit that exact
+; association, without giving Android access to Linux-labelled host cgroups.
+(allow cgroup_v2 linux.cgroup_t (filesystem (associate)))
+; execution22: runtime/query/identity/close pass in enforcing; final Linux
+; cleanup lstat needs traversal of the private socket directory. No socket
+; connect/read/write, creation or relabel permission is added.
+(allow linux.init_t socket_device (dir (search)))

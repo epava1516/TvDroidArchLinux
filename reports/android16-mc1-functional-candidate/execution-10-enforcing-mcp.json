@@ -1,0 +1,38 @@
+{
+  "evidence_id": "ev_32340e69a81f3f5a6b09c388f0c07c87a1d7fe0b7c6bacbd6af509c1c8a51cbb",
+  "exit": {
+    "code": 0,
+    "signal": 0,
+    "reason": "exited"
+  },
+  "cleanup": {
+    "owned_process_group": "verified",
+    "temporary_root": "removed",
+    "unverified_processes": [
+      {
+        "pid": 20992,
+        "reason": "EACCES: permission denied, open '/proc/20992/environ'"
+      },
+      {
+        "pid": 21005,
+        "reason": "EACCES: permission denied, open '/proc/21005/environ'"
+      },
+      {
+        "pid": 21009,
+        "reason": "EACCES: permission denied, open '/proc/21009/environ'"
+      }
+    ]
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "The executable digest is a prelaunch file sample; matching path metadata immediately after spawn does not prove an atomic operating-system image binding.",
+    "Process trees are sampled and may omit short-lived descendants.",
+    "Process-tree sampling ended with an incomplete observation.",
+    "Filesystem observations are before/after snapshots, not syscall traces.",
+    "Inherited host environment variables are not recorded and may affect results.",
+    "No filesystem observation paths were selected; filesystem effects remain unknown.",
+    "Process sampling has incomplete observations: /proc/20841/environ: EACCES: Error: EACCES: permission denied, open '/proc/20841/environ'. See truncation_details.process."
+  ],
+  "truncated": true,
+  "output": "ENFORCING_WINDOW_ARMED seconds=4 watchdog_outside_candidate_pid_namespace\r\nENFORCING_WINDOW_ACTIVE observed=1\r\nENFORCING_CANDIDATE {\"exit\": 1, \"output\": \"MC1_PREPARED original_GSI_and_36_APEX_RO NNP1 private_binder actual_context=linux.system_u:linux.system_r:linux.init_t:s0\\nMC1_RESULT {\\\"exit\\\": -11, \\\"stdout\\\": \\\"\\\", \\\"stderr\\\": \\\"\\\"}\\nTraceback (most recent call last):\\n  File \\\"/home/tv/repositorio-principal/reports/android16-mc1-functional-candidate/execute.py\\\", line 81, in <module>\\nPermissionError: [Errno 13] Permission denied: '/dev/binder'\\n\"}\r\nENFORCING_WINDOW_RECOVERED {\"enforce\": \"0\", \"watchdog_status\": 0}\r\n"
+}

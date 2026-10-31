@@ -1,0 +1,986 @@
+{
+  "scope": "Historical inputs retained once by content hash, exact compiler commands/results, binaries and hashes. Full original metadata referenced at immutable cache paths/hashes. No runtime acceptance inferred from compile.",
+  "common_profile": {
+    "schema": 1,
+    "contract": "A16-QPR2-1",
+    "status": "experimental_offline_candidate_not_deployment_approved",
+    "source_revisions": {
+      "aosp_manifest": "15128c9e27cfa599c48d294babd39286ee8f1426",
+      "selinux": "085c131ad1b984bfa8ffdafee7a976e9d89f403c",
+      "refpolicy": "878b00a2db5b2ae490aa8cabb4b67ab19368f9d7"
+    },
+    "input_sha256": {
+      "aosp": "3b063948a16dcd365b4ff4cb1eeda22b1580c6e0a3500e755ba8c358a0565559",
+      "linux": "61862f73f13738ee5f27f0d0b09912d8d87498d4cdb3ca01236aa486cd8b85f2"
+    },
+    "secilc_sha256": "b164c77d935a46c5191b24648df724f3e5b6da70478d37313afc15d024dae130",
+    "class_order": [
+      "security",
+      "process",
+      "system",
+      "capability",
+      "filesystem",
+      "file",
+      "anon_inode",
+      "dir",
+      "fd",
+      "lnk_file",
+      "chr_file",
+      "blk_file",
+      "sock_file",
+      "fifo_file",
+      "socket",
+      "tcp_socket",
+      "udp_socket",
+      "rawip_socket",
+      "node",
+      "netif",
+      "netlink_socket",
+      "packet_socket",
+      "key_socket",
+      "unix_stream_socket",
+      "unix_dgram_socket",
+      "sem",
+      "msg",
+      "msgq",
+      "shm",
+      "ipc",
+      "netlink_route_socket",
+      "netlink_tcpdiag_socket",
+      "netlink_nflog_socket",
+      "netlink_xfrm_socket",
+      "netlink_selinux_socket",
+      "netlink_audit_socket",
+      "netlink_dnrt_socket",
+      "association",
+      "netlink_kobject_uevent_socket",
+      "appletalk_socket",
+      "packet",
+      "key",
+      "dccp_socket",
+      "memprotect",
+      "peer",
+      "capability2",
+      "kernel_service",
+      "tun_socket",
+      "binder",
+      "netlink_iscsi_socket",
+      "netlink_fib_lookup_socket",
+      "netlink_connector_socket",
+      "netlink_netfilter_socket",
+      "netlink_generic_socket",
+      "netlink_scsitransport_socket",
+      "netlink_rdma_socket",
+      "netlink_crypto_socket",
+      "infiniband_pkey",
+      "infiniband_endport",
+      "cap_userns",
+      "cap2_userns",
+      "sctp_socket",
+      "icmp_socket",
+      "ax25_socket",
+      "ipx_socket",
+      "netrom_socket",
+      "atmpvc_socket",
+      "x25_socket",
+      "rose_socket",
+      "decnet_socket",
+      "atmsvc_socket",
+      "rds_socket",
+      "irda_socket",
+      "pppox_socket",
+      "llc_socket",
+      "can_socket",
+      "tipc_socket",
+      "bluetooth_socket",
+      "iucv_socket",
+      "rxrpc_socket",
+      "isdn_socket",
+      "phonet_socket",
+      "ieee802154_socket",
+      "caif_socket",
+      "alg_socket",
+      "nfc_socket",
+      "vsock_socket",
+      "kcm_socket",
+      "qipcrtr_socket",
+      "smc_socket",
+      "xdp_socket",
+      "mctp_socket",
+      "process2",
+      "bpf",
+      "perf_event",
+      "io_uring",
+      "lockdown",
+      "user_namespace",
+      "property_service",
+      "service_manager",
+      "hwservice_manager",
+      "keystore_key",
+      "keystore2",
+      "keystore2_key",
+      "diced",
+      "drmservice",
+      "tee_service",
+      "passwd",
+      "x_drawable",
+      "x_screen",
+      "x_gc",
+      "x_font",
+      "x_colormap",
+      "x_property",
+      "x_selection",
+      "x_cursor",
+      "x_client",
+      "x_device",
+      "x_server",
+      "x_extension",
+      "x_resource",
+      "x_event",
+      "x_synthetic_event",
+      "obsolete_netlink_firewall_socket",
+      "obsolete_netlink_ip6fw_socket",
+      "dbus",
+      "nscd",
+      "context",
+      "db_database",
+      "db_table",
+      "db_procedure",
+      "db_column",
+      "db_tuple",
+      "db_blob",
+      "db_exception",
+      "db_datatype",
+      "x_application_data",
+      "x_pointer",
+      "x_keyboard",
+      "db_schema",
+      "db_view",
+      "db_sequence",
+      "db_language",
+      "service",
+      "memfd_file"
+    ],
+    "global_label_owner": "linux",
+    "binary_policy_version": 30,
+    "modules": [
+      "runtime/aosp/android16-qpr2/policy/linux-proc.cil",
+      "runtime/aosp/android16-qpr2/policy/linux-servicemanager-selinux.cil",
+      "runtime/aosp/android16-qpr2/policy/experiments/launcher-explicit.cil",
+      "runtime/aosp/android16-qpr2/policy/experiments/launcher-bootstrap.cil",
+      "runtime/aosp/android16-qpr2/policy/experiments/exec-context-helper.cil",
+      "runtime/aosp/android16-qpr2/policy/experiments/mc1-cohort.cil",
+      "runtime/aosp/android16-qpr2/policy/experiments/mc1-inherited-io.cil"
+    ],
+    "limitations": [
+      "No live kernel/host/service/APK acceptance",
+      "Shared label/class mapping and full original-policy projections incomplete",
+      "100 Linux binary attributes absent already in standalone compiler control",
+      "No distribution/security approval inferred"
+    ],
+    "kernel_contract": {
+      "path": "runtime/aosp/android16-qpr2/policy/kernel-6.18.59-contract.json",
+      "sha256": "fc8e95e7d07d494c59be6e7e783df9404c967d759d9c710128412451a4032af5"
+    }
+  },
+  "unique_adapter_contents": {
+    "b7bb19bb97deb6baf41c177825520af525d08a68ec93ac462f7ba91a4d9f528e": {
+      "text": "; Experimental Linux-owned proc directory adapter, verified offline only.\n; Original Android domain -> proc directory contract; no regular-file access.\n(allow domain linux.proc_t (dir (ioctl read getattr lock open watch watch_reads search)))\n"
+    },
+    "7dfdc007d743dca10b838e78ef869cbdad3f4845da07ce7353124b60bf3145bd": {
+      "text": "; Experimental, offline only: original status mmap and access query contract.\n; file.write is needed for transactional /access; security.load_policy/setenforce\n; and other administration permissions are not granted by these rules.\n(allow servicemanager linux.security_t (dir (getattr search)))\n(allow servicemanager linux.security_t (file (read getattr map open write)))\n(allow servicemanager linux.security_t (security (compute_av)))\n"
+    },
+    "077dd8ec4f944b20361a6740d2edd0aa55ec4b2b063bfa5ed63591e5b56fec35": {
+      "text": "; Offline candidate only, not host policy or an admitted launcher.\n; Explicit exec context u:r:init:s0, preserving original Android identity downstream.\n(type archtv_launcher)\n(role archtv_launcher_r)\n(userrole linux.system_u archtv_launcher_r)\n(roletype archtv_launcher_r archtv_launcher)\n(typeattributeset linux.domain (archtv_launcher))\n; Original Linux process constraints otherwise forbid the cross-user/role edge.\n; This exception grants no AV permission; only this new actor gets it.\n(typeattributeset linux.process_uncond_exempt (archtv_launcher))\n(roleallow archtv_launcher_r r)\n(allow archtv_launcher self (process (setexec)))\n(allow archtv_launcher init_exec (file (getattr open read execute)))\n(allow archtv_launcher init (process (transition siginh rlimitinh)))\n; The original coordinator inherits the host lifetime channel, not arbitrary host IPC.\n(allow init archtv_launcher (fd (use)))\n(allow init archtv_launcher (unix_stream_socket (read write getattr getopt setopt shutdown)))\n; Genuine original libselinux status/access/create/context interfaces on Linux labels.\n(allow init linux.security_t (dir (getattr search)))\n(allow init linux.security_t (file (read getattr map open write)))\n(allow init linux.security_t (security (compute_av compute_create check_context)))\n; New cross-boundary assertions remain enabled alongside all original assertions.\n(typeattribute archtv_not_init)\n(typeattributeset archtv_not_init (not init))\n(neverallow archtv_launcher archtv_not_init (process (transition)))\n(typeattribute archtv_all_types)\n(typeattributeset archtv_all_types (all))\n(neverallow archtv_launcher archtv_all_types (process (dyntransition)))\n(neverallow archtv_launcher init_exec (file (write append relabelto relabelfrom)))\n(neverallow init linux.security_t (security (load_policy setenforce setbool setsecparam setcheckreqprot)))\n(neverallow appdomain linux.security_t (file (write)))\n"
+    },
+    "dae1e9785700f256d4faa83710ea3965c190fc9ea14e0d21d52167aabe9ba71e": {
+      "text": "; Offline bootstrap model: Linux-owned userspace initial-SID subject only.\n; Intended entry file is a verified root-owned 0700 Rust supervisor image.\n; No host file is labelled or installed by this module.\n(type archtv_launcher_exec)\n(roletype linux.object_r archtv_launcher_exec)\n(typetransition linux.init_t archtv_launcher_exec process archtv_launcher)\n(roletransition linux.system_r archtv_launcher_exec process archtv_launcher_r)\n(roleallow linux.system_r archtv_launcher_r)\n(allow linux.init_t archtv_launcher (process (transition siginh rlimitinh)))\n(allow linux.init_t archtv_launcher_exec (file (read getattr map open execute)))\n(allow archtv_launcher archtv_launcher_exec (file (read getattr map open execute entrypoint)))\n; Linux labels own the backing xattr filesystem. Actual label/install path unproved.\n(allow archtv_launcher_exec linux.fs_t (filesystem (associate)))\n; Bound producers independently of generic Linux role membership.\n(typeattribute archtv_not_bootstrap_creator)\n(typeattributeset archtv_not_bootstrap_creator (not linux.init_t))\n(neverallow archtv_not_bootstrap_creator archtv_launcher (process (transition dyntransition)))\n(typeattribute archtv_bootstrap_accessors)\n(typeattributeset archtv_bootstrap_accessors (linux.init_t archtv_launcher))\n(typeattribute archtv_not_bootstrap_accessor)\n(typeattributeset archtv_not_bootstrap_accessor (not archtv_bootstrap_accessors))\n(neverallow archtv_not_bootstrap_accessor archtv_launcher_exec (file (execute execute_no_trans)))\n(neverallow archtv_not_bootstrap_creator archtv_launcher_exec (file (write append create relabelto relabelfrom)))\n\n; Preserve NNP/nosuid flags using the original targeted process2 mechanism.\n; This affects SELinux label transitions, not Unix setuid/file capability semantics.\n(allow linux.init_t archtv_launcher (process2 (nnp_transition nosuid_transition)))\n(allow archtv_launcher init (process2 (nnp_transition nosuid_transition)))\n(neverallow archtv_not_bootstrap_creator archtv_launcher (process2 (nnp_transition nosuid_transition)))\n(neverallow archtv_launcher archtv_not_init (process2 (nnp_transition nosuid_transition)))\n\n; Existing NativeProcess::Drop uses Child::kill for failed startup/timeout.\n; Only the original coordinator, not other services/host domains, is admitted.\n(allow archtv_launcher init (process (sigkill)))\n(neverallow archtv_launcher archtv_not_init (process (sigkill)))\n\n; Creator SID may be shared by surviving pre-policy userspace tasks.\n; It must not mint or mutate the trusted entry label on writable files.\n; A verified prelabelled immutable bundle/installer trust chain is still required.\n(neverallow archtv_all_types archtv_launcher_exec (file (create write append setattr relabelto relabelfrom)))\n"
+    },
+    "118a45a0ea5adcdb939695ce660b523de63327601fb2449264a82e43a62fb58c": {
+      "text": "; Separate immutable helper entry, executable only inside the Rust actor domain.\n; Do not permit the initial creator to skip the Rust parent/channel via this file.\n(type archtv_exec_context_exec)\n(roletype linux.object_r archtv_exec_context_exec)\n(allow archtv_launcher archtv_exec_context_exec (file (read getattr open map execute execute_no_trans)))\n(allow archtv_exec_context_exec linux.fs_t (filesystem (associate)))\n(typeattribute archtv_not_exec_context_actor)\n(typeattributeset archtv_not_exec_context_actor (not archtv_launcher))\n(neverallow archtv_not_exec_context_actor archtv_exec_context_exec (file (execute execute_no_trans)))\n(neverallow archtv_all_types archtv_exec_context_exec (file (entrypoint create write append setattr relabelto relabelfrom)))\n; Immutable payload traversal, separate from the host or APK data directories.\n(type archtv_bundle_dir)\n(roletype linux.object_r archtv_bundle_dir)\n(allow archtv_bundle_dir linux.fs_t (filesystem (associate)))\n(allow linux.init_t archtv_bundle_dir (dir (getattr search)))\n(allow archtv_launcher archtv_bundle_dir (dir (getattr search)))\n(allow init archtv_bundle_dir (dir (getattr search)))\n(typeattribute archtv_not_bundle_traverser)\n(typeattributeset archtv_not_bundle_traverser (not (linux.init_t archtv_launcher init)))\n(neverallow archtv_not_bundle_traverser archtv_bundle_dir (dir (search)))\n(neverallow archtv_all_types archtv_bundle_dir (dir (create write add_name remove_name rmdir reparent setattr relabelto relabelfrom)))\n; Original Android root in the private process filesystem view; not host root.\n(allow linux.init_t rootfs (dir (getattr search)))\n(allow archtv_launcher rootfs (dir (getattr search)))\n; Original host libselinux reads genuine kernel mode/class metadata. No writes\n; to selinuxfs and no policy-management operations are needed by this actor.\n(allow archtv_launcher linux.security_t (dir (read open getattr search)))\n(allow archtv_launcher linux.security_t (file (read open getattr)))\n(neverallow archtv_launcher linux.security_t (file (write append)))\n(neverallow archtv_launcher linux.security_t (security (load_policy setenforce setbool setsecparam setcheckreqprot)))\n"
+    },
+    "bfadeac5144527abc4ac27623f9b5aea90a023dada8fc81f06dc81e2a9b3a36a": {
+      "text": "; Only the reserved device name in the private MC1 binderfs instance. Preserve\n; Linux/default binderfs labels and other instances' existing device names.\n(genfscon binder /archtv-mc1-binder (u object_r binder_device ((s0) (s0))))\n; Parent directory traversal for the genuine SELinux filesystem in Android root.\n(allow linux.init_t sysfs (dir (getattr search)))\n(allow archtv_launcher sysfs (dir (getattr search)))\n"
+    },
+    "3444ead645c6c08a8fd700a409c325990f1010c2761995ce174a7fa34da96750": {
+      "text": "; Evidence: execution-10-enforcing-mcp.json / audit-avc-after-enforcing.log.\n; Only admitted process types may consume the factory-created lifetime/output\n; descriptors. No host sockets, files, ptrace or policy administration granted.\n(allow archtv_launcher linux.init_t (fd (use)))\n(allow archtv_launcher linux.init_t (fifo_file (write)))\n(allow init linux.init_t (fd (use)))\n(allow init linux.init_t (fifo_file (write)))\n(allow servicemanager linux.init_t (fd (use)))\n(allow servicemanager linux.init_t (fifo_file (write)))\n(allow shell linux.init_t (fd (use)))\n(allow shell linux.init_t (fifo_file (write)))\n; Stdin now uses private real /dev/null instead of the external host PTY.\n(allow archtv_launcher null_device (chr_file (read getattr open)))\n; Original helper needs genuine filesystem metadata and Bionic interpreter\n; traversal before the exec credential commit. All backing images remain RO.\n(allow archtv_launcher self (process (getsched)))\n(allow archtv_launcher linux.security_t (filesystem (getattr)))\n(allow archtv_launcher linux.fs_t (filesystem (getattr)))\n(allow archtv_launcher rootfs (lnk_file (read)))\n(allow archtv_launcher system_file (dir (search)))\n(allow archtv_launcher apex_mnt_dir (dir (search)))\n(allow archtv_launcher system_linker_exec (lnk_file (read)))\n(allow archtv_launcher system_linker_exec (file (read open execute)))\n"
+    },
+    "fce904618880eda8dae09723a4f74d12b2e2597e5eaa8752db766d1726c2fbf2": {
+      "text": "; Evidence: execution-10-enforcing-mcp.json / audit-avc-after-enforcing.log.\n; Only admitted process types may consume the factory-created lifetime/output\n; descriptors. No host sockets, files, ptrace or policy administration granted.\n(allow archtv_launcher linux.init_t (fd (use)))\n(allow archtv_launcher linux.init_t (fifo_file (write)))\n(allow init linux.init_t (fd (use)))\n(allow init linux.init_t (fifo_file (write)))\n(allow servicemanager linux.init_t (fd (use)))\n(allow servicemanager linux.init_t (fifo_file (write)))\n(allow shell linux.init_t (fd (use)))\n(allow shell linux.init_t (fifo_file (write)))\n; Stdin now uses private real /dev/null instead of the external host PTY.\n(allow archtv_launcher null_device (chr_file (read getattr open)))\n; Original helper needs genuine filesystem metadata and Bionic interpreter\n; traversal before the exec credential commit. All backing images remain RO.\n(allow archtv_launcher self (process (getsched)))\n(allow archtv_launcher linux.security_t (filesystem (getattr)))\n(allow archtv_launcher linux.fs_t (filesystem (getattr)))\n(allow archtv_launcher rootfs (lnk_file (read)))\n(allow archtv_launcher system_file (dir (search)))\n(allow archtv_launcher apex_mnt_dir (dir (search)))\n(allow archtv_launcher system_linker_exec (lnk_file (read)))\n(allow archtv_launcher system_linker_exec (file (read open execute)))\n; Full admitted Bionic cohort uses original GSI/APEX filesystem metadata and\n; /proc/self aliases, while this composition keeps Linux-owned FS/proc labels.\n(typeattribute archtv_mc1_android)\n(typeattributeset archtv_mc1_android (init servicemanager shell))\n(allow archtv_mc1_android linux.fs_t (filesystem (getattr)))\n(allow archtv_mc1_android linux.proc_t (lnk_file (read)))\n(allow init linux.security_t (filesystem (getattr)))\n(allow servicemanager linux.security_t (filesystem (getattr)))\n(allow init linux.security_t (dir (read open)))\n(allow servicemanager linux.security_t (dir (read open)))\n"
+    },
+    "4449f249707b4ca675e83908b2afc014e02b15d0240a0987a804ca49f7d62719": {
+      "text": "; Only the reserved device name in the private MC1 binderfs instance. Preserve\n; Linux/default binderfs labels and other instances' existing device names.\n(genfscon binder /archtv-mc1-binder (u object_r binder_device ((s0) (s0))))\n; Parent directory traversal for the genuine SELinux filesystem in Android root.\n(allow linux.init_t sysfs (dir (getattr search)))\n(allow archtv_launcher sysfs (dir (getattr search)))\n\n; Only the dedicated development subtree, not the host cgroup hierarchy.\n(genfscon cgroup2 /system.slice/codex-remote.service/archtv-mc1 (u object_r cgroup_v2 ((s0) (s0))))\n"
+    },
+    "dda05bae9a936d695bcd146c1abd37426792de9b9ad73e8d0ce84924bf7b5ec4": {
+      "text": "; Evidence: execution-10-enforcing-mcp.json / audit-avc-after-enforcing.log.\n; Only admitted process types may consume the factory-created lifetime/output\n; descriptors. No host sockets, files, ptrace or policy administration granted.\n(allow archtv_launcher linux.init_t (fd (use)))\n(allow archtv_launcher linux.init_t (fifo_file (write)))\n(allow init linux.init_t (fd (use)))\n(allow init linux.init_t (fifo_file (write)))\n(allow servicemanager linux.init_t (fd (use)))\n(allow servicemanager linux.init_t (fifo_file (write)))\n(allow shell linux.init_t (fd (use)))\n(allow shell linux.init_t (fifo_file (write)))\n; Stdin now uses private real /dev/null instead of the external host PTY.\n(allow archtv_launcher null_device (chr_file (read getattr open)))\n; Original helper needs genuine filesystem metadata and Bionic interpreter\n; traversal before the exec credential commit. All backing images remain RO.\n(allow archtv_launcher self (process (getsched)))\n(allow archtv_launcher linux.security_t (filesystem (getattr)))\n(allow archtv_launcher linux.fs_t (filesystem (getattr)))\n(allow archtv_launcher rootfs (lnk_file (read)))\n(allow archtv_launcher system_file (dir (search)))\n(allow archtv_launcher apex_mnt_dir (dir (search)))\n(allow archtv_launcher system_linker_exec (lnk_file (read)))\n(allow archtv_launcher system_linker_exec (file (read open execute)))\n; Full admitted Bionic cohort uses original GSI/APEX filesystem metadata and\n; /proc/self aliases, while this composition keeps Linux-owned FS/proc labels.\n(typeattribute archtv_mc1_android)\n(typeattributeset archtv_mc1_android (init servicemanager shell))\n(allow archtv_mc1_android linux.fs_t (filesystem (getattr)))\n(allow archtv_mc1_android linux.proc_t (lnk_file (read)))\n(allow init linux.security_t (filesystem (getattr)))\n(allow servicemanager linux.security_t (filesystem (getattr)))\n(allow init linux.security_t (dir (read open)))\n(allow servicemanager linux.security_t (dir (read open)))\n\n; The original policy intentionally prohibits init CAP_SYS_PTRACE and reading\n; shell-owned contents. Keep diagnostics in the privileged Linux factory.\n(allow linux.init_t servicemanager (process (getattr)))\n(allow linux.init_t shell_data_file (file (read open getattr)))\n(allow linux.init_t binder_device (chr_file (getattr)))\n(allow init archtv_bundle_dir (dir (read open)))\n; Preserve NNP and admit only the two original service edges actually exercised.\n(allow init servicemanager (process2 (nnp_transition)))\n(allow init shell (process2 (nnp_transition)))\n; Original writer then restorecon target: create the fixed metadata filename\n; directly in its original type, avoiding a broad relabelfrom grant on devices.\n(typetransition init properties_device file \"property_info\" property_info)\n"
+    },
+    "5613e14e3b5946b8414fe7db8990a7597e9b7aea2e37ef22dd81b2a760e70c94": {
+      "text": "; Evidence: execution-10-enforcing-mcp.json / audit-avc-after-enforcing.log.\n; Only admitted process types may consume the factory-created lifetime/output\n; descriptors. No host sockets, files, ptrace or policy administration granted.\n(allow archtv_launcher linux.init_t (fd (use)))\n(allow archtv_launcher linux.init_t (fifo_file (write)))\n(allow init linux.init_t (fd (use)))\n(allow init linux.init_t (fifo_file (write)))\n(allow servicemanager linux.init_t (fd (use)))\n(allow servicemanager linux.init_t (fifo_file (write)))\n(allow shell linux.init_t (fd (use)))\n(allow shell linux.init_t (fifo_file (write)))\n; Stdin now uses private real /dev/null instead of the external host PTY.\n(allow archtv_launcher null_device (chr_file (read getattr open)))\n; Original helper needs genuine filesystem metadata and Bionic interpreter\n; traversal before the exec credential commit. All backing images remain RO.\n(allow archtv_launcher self (process (getsched)))\n(allow archtv_launcher linux.security_t (filesystem (getattr)))\n(allow archtv_launcher linux.fs_t (filesystem (getattr)))\n(allow archtv_launcher rootfs (lnk_file (read)))\n(allow archtv_launcher system_file (dir (search)))\n(allow archtv_launcher apex_mnt_dir (dir (search)))\n(allow archtv_launcher system_linker_exec (lnk_file (read)))\n(allow archtv_launcher system_linker_exec (file (read open execute)))\n; Full admitted Bionic cohort uses original GSI/APEX filesystem metadata and\n; /proc/self aliases, while this composition keeps Linux-owned FS/proc labels.\n(typeattribute archtv_mc1_android)\n(typeattributeset archtv_mc1_android (init servicemanager shell))\n(allow archtv_mc1_android linux.fs_t (filesystem (getattr)))\n(allow archtv_mc1_android linux.proc_t (lnk_file (read)))\n(allow init linux.security_t (filesystem (getattr)))\n(allow servicemanager linux.security_t (filesystem (getattr)))\n(allow init linux.security_t (dir (read open)))\n(allow servicemanager linux.security_t (dir (read open)))\n\n; The original policy intentionally prohibits init CAP_SYS_PTRACE and reading\n; shell-owned contents. Keep diagnostics in the privileged Linux factory.\n(allow linux.init_t servicemanager (process (getattr)))\n(allow linux.init_t shell_data_file (file (read open getattr)))\n(allow linux.init_t binder_device (chr_file (getattr)))\n(allow init archtv_bundle_dir (dir (read open)))\n; Preserve NNP and admit only the two original service edges actually exercised.\n(allow init servicemanager (process2 (nnp_transition)))\n(allow init shell (process2 (nnp_transition)))\n; Linux-owned tmpfs filesystem semantics inherit the directory's device type.\n; Keep original WriteStringToFile -> restorecon, with only the required source\n; relabel permission. Original init -> property_info relabelto stays unchanged.\n(allow init properties_device (file (relabelfrom)))\n"
+    },
+    "c063f3232b0c7c91d0eb853e3a41905b1e42bcaff0fa738e136467d9df07215f": {
+      "text": "; Evidence: execution-10-enforcing-mcp.json / audit-avc-after-enforcing.log.\n; Only admitted process types may consume the factory-created lifetime/output\n; descriptors. No host sockets, files, ptrace or policy administration granted.\n(allow archtv_launcher linux.init_t (fd (use)))\n(allow archtv_launcher linux.init_t (fifo_file (write)))\n(allow init linux.init_t (fd (use)))\n(allow init linux.init_t (fifo_file (write)))\n(allow servicemanager linux.init_t (fd (use)))\n(allow servicemanager linux.init_t (fifo_file (write)))\n(allow shell linux.init_t (fd (use)))\n(allow shell linux.init_t (fifo_file (write)))\n; Stdin now uses private real /dev/null instead of the external host PTY.\n(allow archtv_launcher null_device (chr_file (read getattr open)))\n; Original helper needs genuine filesystem metadata and Bionic interpreter\n; traversal before the exec credential commit. All backing images remain RO.\n(allow archtv_launcher self (process (getsched)))\n(allow archtv_launcher linux.security_t (filesystem (getattr)))\n(allow archtv_launcher linux.fs_t (filesystem (getattr)))\n(allow archtv_launcher rootfs (lnk_file (read)))\n(allow archtv_launcher system_file (dir (search)))\n(allow archtv_launcher apex_mnt_dir (dir (search)))\n(allow archtv_launcher system_linker_exec (lnk_file (read)))\n(allow archtv_launcher system_linker_exec (file (read open execute)))\n; Full admitted Bionic cohort uses original GSI/APEX filesystem metadata and\n; /proc/self aliases, while this composition keeps Linux-owned FS/proc labels.\n(typeattribute archtv_mc1_android)\n(typeattributeset archtv_mc1_android (init servicemanager shell))\n(allow archtv_mc1_android linux.fs_t (filesystem (getattr)))\n(allow archtv_mc1_android linux.proc_t (lnk_file (read)))\n(allow init linux.security_t (filesystem (getattr)))\n(allow servicemanager linux.security_t (filesystem (getattr)))\n(allow init linux.security_t (dir (read open)))\n(allow servicemanager linux.security_t (dir (read open)))\n\n; The original policy intentionally prohibits init CAP_SYS_PTRACE and reading\n; shell-owned contents. Keep diagnostics in the privileged Linux factory.\n(allow linux.init_t servicemanager (process (getattr)))\n(allow linux.init_t shell_data_file (file (read open getattr)))\n(allow linux.init_t binder_device (chr_file (getattr)))\n(allow init archtv_bundle_dir (dir (read open)))\n; Preserve NNP and admit only the two original service edges actually exercised.\n(allow init servicemanager (process2 (nnp_transition)))\n(allow init shell (process2 (nnp_transition)))\n; Linux-owned tmpfs filesystem semantics inherit the directory's device type.\n; Keep original WriteStringToFile -> restorecon, with only the required source\n; relabel permission. Original init -> property_info relabelto stays unchanged.\n(allow init properties_device (file (relabelfrom)))\n; Linux proc exposes /proc/mounts as a symlink; original libprocessgroup opens\n; it to discover controllers. File read was already allowed by original policy.\n(allow init proc_mounts (lnk_file (read)))\n"
+    },
+    "2bb3ddf555566f229232ec19ccc4d7bbbf80f7a9e368a8ed8352c9e54a3ecffb": {
+      "text": "; Evidence: execution-10-enforcing-mcp.json / audit-avc-after-enforcing.log.\n; Only admitted process types may consume the factory-created lifetime/output\n; descriptors. No host sockets, files, ptrace or policy administration granted.\n(allow archtv_launcher linux.init_t (fd (use)))\n(allow archtv_launcher linux.init_t (fifo_file (write)))\n(allow init linux.init_t (fd (use)))\n(allow init linux.init_t (fifo_file (write)))\n(allow servicemanager linux.init_t (fd (use)))\n(allow servicemanager linux.init_t (fifo_file (write)))\n(allow shell linux.init_t (fd (use)))\n(allow shell linux.init_t (fifo_file (write)))\n; Stdin now uses private real /dev/null instead of the external host PTY.\n(allow archtv_launcher null_device (chr_file (read getattr open)))\n; Original helper needs genuine filesystem metadata and Bionic interpreter\n; traversal before the exec credential commit. All backing images remain RO.\n(allow archtv_launcher self (process (getsched)))\n(allow archtv_launcher linux.security_t (filesystem (getattr)))\n(allow archtv_launcher linux.fs_t (filesystem (getattr)))\n(allow archtv_launcher rootfs (lnk_file (read)))\n(allow archtv_launcher system_file (dir (search)))\n(allow archtv_launcher apex_mnt_dir (dir (search)))\n(allow archtv_launcher system_linker_exec (lnk_file (read)))\n(allow archtv_launcher system_linker_exec (file (read open execute)))\n; Full admitted Bionic cohort uses original GSI/APEX filesystem metadata and\n; /proc/self aliases, while this composition keeps Linux-owned FS/proc labels.\n(typeattribute archtv_mc1_android)\n(typeattributeset archtv_mc1_android (init servicemanager shell))\n(allow archtv_mc1_android linux.fs_t (filesystem (getattr)))\n(allow archtv_mc1_android linux.proc_t (lnk_file (read)))\n(allow init linux.security_t (filesystem (getattr)))\n(allow servicemanager linux.security_t (filesystem (getattr)))\n(allow init linux.security_t (dir (read open)))\n(allow servicemanager linux.security_t (dir (read open)))\n\n; The original policy intentionally prohibits init CAP_SYS_PTRACE and reading\n; shell-owned contents. Keep diagnostics in the privileged Linux factory.\n(allow linux.init_t servicemanager (process (getattr)))\n(allow linux.init_t shell_data_file (file (read open getattr)))\n(allow linux.init_t binder_device (chr_file (getattr)))\n(allow init archtv_bundle_dir (dir (read open)))\n; Preserve NNP and admit only the two original service edges actually exercised.\n(allow init servicemanager (process2 (nnp_transition)))\n(allow init shell (process2 (nnp_transition)))\n; Linux-owned tmpfs filesystem semantics inherit the directory's device type.\n; Keep original WriteStringToFile -> restorecon, with only the required source\n; relabel permission. Original init -> property_info relabelto stays unchanged.\n(allow init properties_device (file (relabelfrom)))\n; Linux proc exposes /proc/mounts as a symlink; original libprocessgroup opens\n; it to discover controllers. File read was already allowed by original policy.\n(allow init proc_mounts (lnk_file (read)))\n; The external privileged factory's actual getpidcon/status/output checks need\n; traversal and reads, not ptrace or Android init privileges. Static checks\n; against policy5 deny these exact operations used by execute.py.\n(allow linux.init_t servicemanager (dir (search)))\n(allow linux.init_t servicemanager (file (read open getattr)))\n(allow linux.init_t system_data_root_file (dir (search)))\n(allow linux.init_t system_data_file (dir (search)))\n(allow linux.init_t shell_data_file (dir (search)))\n(allow linux.init_t device (dir (search)))\n"
+    },
+    "31c3d0fffacd3966bb5bba6401c57b3d58bfda095d57cdc9357f2e8378edc0ed": {
+      "text": "; Evidence: execution-10-enforcing-mcp.json / audit-avc-after-enforcing.log.\n; Only admitted process types may consume the factory-created lifetime/output\n; descriptors. No host sockets, files, ptrace or policy administration granted.\n(allow archtv_launcher linux.init_t (fd (use)))\n(allow archtv_launcher linux.init_t (fifo_file (write)))\n(allow init linux.init_t (fd (use)))\n(allow init linux.init_t (fifo_file (write)))\n(allow servicemanager linux.init_t (fd (use)))\n(allow servicemanager linux.init_t (fifo_file (write)))\n(allow shell linux.init_t (fd (use)))\n(allow shell linux.init_t (fifo_file (write)))\n; Stdin now uses private real /dev/null instead of the external host PTY.\n(allow archtv_launcher null_device (chr_file (read getattr open)))\n; Original helper needs genuine filesystem metadata and Bionic interpreter\n; traversal before the exec credential commit. All backing images remain RO.\n(allow archtv_launcher self (process (getsched)))\n(allow archtv_launcher linux.security_t (filesystem (getattr)))\n(allow archtv_launcher linux.fs_t (filesystem (getattr)))\n(allow archtv_launcher rootfs (lnk_file (read)))\n(allow archtv_launcher system_file (dir (search)))\n(allow archtv_launcher apex_mnt_dir (dir (search)))\n(allow archtv_launcher system_linker_exec (lnk_file (read)))\n(allow archtv_launcher system_linker_exec (file (read open execute)))\n; Full admitted Bionic cohort uses original GSI/APEX filesystem metadata and\n; /proc/self aliases, while this composition keeps Linux-owned FS/proc labels.\n(typeattribute archtv_mc1_android)\n(typeattributeset archtv_mc1_android (init servicemanager shell))\n(allow archtv_mc1_android linux.fs_t (filesystem (getattr)))\n(allow archtv_mc1_android linux.proc_t (lnk_file (read)))\n(allow init linux.security_t (filesystem (getattr)))\n(allow servicemanager linux.security_t (filesystem (getattr)))\n(allow init linux.security_t (dir (read open)))\n(allow servicemanager linux.security_t (dir (read open)))\n\n; The original policy intentionally prohibits init CAP_SYS_PTRACE and reading\n; shell-owned contents. Keep diagnostics in the privileged Linux factory.\n(allow linux.init_t servicemanager (process (getattr)))\n(allow linux.init_t shell_data_file (file (read open getattr)))\n(allow linux.init_t binder_device (chr_file (getattr)))\n(allow init archtv_bundle_dir (dir (read open)))\n; Preserve NNP and admit only the two original service edges actually exercised.\n(allow init servicemanager (process2 (nnp_transition)))\n(allow init shell (process2 (nnp_transition)))\n; Linux-owned tmpfs filesystem semantics inherit the directory's device type.\n; Keep original WriteStringToFile -> restorecon, with only the required source\n; relabel permission. Original init -> property_info relabelto stays unchanged.\n(allow init properties_device (file (relabelfrom)))\n; Linux proc exposes /proc/mounts as a symlink; original libprocessgroup opens\n; it to discover controllers. File read was already allowed by original policy.\n(allow init proc_mounts (lnk_file (read)))\n; The external privileged factory's actual getpidcon/status/output checks need\n; traversal and reads, not ptrace or Android init privileges. Static checks\n; against policy5 deny these exact operations used by execute.py.\n(allow linux.init_t servicemanager (dir (search)))\n(allow linux.init_t servicemanager (file (read open getattr)))\n(allow linux.init_t system_data_root_file (dir (search)))\n(allow linux.init_t system_data_file (dir (search)))\n(allow linux.init_t shell_data_file (dir (search)))\n(allow linux.init_t device (dir (search)))\n; execution17: the dedicated genfs prefix correctly creates cgroup_v2 objects,\n; but Linux owns the underlying cgroup2 filesystem identity. Permit that exact\n; association, without giving Android access to Linux-labelled host cgroups.\n(allow cgroup_v2 linux.cgroup_t (filesystem (associate)))\n"
+    },
+    "43130266ece4b1f0c6ab8eab8dcafd861b3ac46e5f468ee5a7f387b40f6aabc0": {
+      "text": "; Evidence: execution-10-enforcing-mcp.json / audit-avc-after-enforcing.log.\n; Only admitted process types may consume the factory-created lifetime/output\n; descriptors. No host sockets, files, ptrace or policy administration granted.\n(allow archtv_launcher linux.init_t (fd (use)))\n(allow archtv_launcher linux.init_t (fifo_file (write)))\n(allow init linux.init_t (fd (use)))\n(allow init linux.init_t (fifo_file (write)))\n(allow servicemanager linux.init_t (fd (use)))\n(allow servicemanager linux.init_t (fifo_file (write)))\n(allow shell linux.init_t (fd (use)))\n(allow shell linux.init_t (fifo_file (write)))\n; Stdin now uses private real /dev/null instead of the external host PTY.\n(allow archtv_launcher null_device (chr_file (read getattr open)))\n; Original helper needs genuine filesystem metadata and Bionic interpreter\n; traversal before the exec credential commit. All backing images remain RO.\n(allow archtv_launcher self (process (getsched)))\n(allow archtv_launcher linux.security_t (filesystem (getattr)))\n(allow archtv_launcher linux.fs_t (filesystem (getattr)))\n(allow archtv_launcher rootfs (lnk_file (read)))\n(allow archtv_launcher system_file (dir (search)))\n(allow archtv_launcher apex_mnt_dir (dir (search)))\n(allow archtv_launcher system_linker_exec (lnk_file (read)))\n(allow archtv_launcher system_linker_exec (file (read open execute)))\n; Full admitted Bionic cohort uses original GSI/APEX filesystem metadata and\n; /proc/self aliases, while this composition keeps Linux-owned FS/proc labels.\n(typeattribute archtv_mc1_android)\n(typeattributeset archtv_mc1_android (init servicemanager shell))\n(allow archtv_mc1_android linux.fs_t (filesystem (getattr)))\n(allow archtv_mc1_android linux.proc_t (lnk_file (read)))\n(allow init linux.security_t (filesystem (getattr)))\n(allow servicemanager linux.security_t (filesystem (getattr)))\n(allow init linux.security_t (dir (read open)))\n(allow servicemanager linux.security_t (dir (read open)))\n\n; The original policy intentionally prohibits init CAP_SYS_PTRACE and reading\n; shell-owned contents. Keep diagnostics in the privileged Linux factory.\n(allow linux.init_t servicemanager (process (getattr)))\n(allow linux.init_t shell_data_file (file (read open getattr)))\n(allow linux.init_t binder_device (chr_file (getattr)))\n(allow init archtv_bundle_dir (dir (read open)))\n; Preserve NNP and admit only the two original service edges actually exercised.\n(allow init servicemanager (process2 (nnp_transition)))\n(allow init shell (process2 (nnp_transition)))\n; Linux-owned tmpfs filesystem semantics inherit the directory's device type.\n; Keep original WriteStringToFile -> restorecon, with only the required source\n; relabel permission. Original init -> property_info relabelto stays unchanged.\n(allow init properties_device (file (relabelfrom)))\n; Linux proc exposes /proc/mounts as a symlink; original libprocessgroup opens\n; it to discover controllers. File read was already allowed by original policy.\n(allow init proc_mounts (lnk_file (read)))\n; The external privileged factory's actual getpidcon/status/output checks need\n; traversal and reads, not ptrace or Android init privileges. Static checks\n; against policy5 deny these exact operations used by execute.py.\n(allow linux.init_t servicemanager (dir (search)))\n(allow linux.init_t servicemanager (file (read open getattr)))\n(allow linux.init_t system_data_root_file (dir (search)))\n(allow linux.init_t system_data_file (dir (search)))\n(allow linux.init_t shell_data_file (dir (search)))\n(allow linux.init_t device (dir (search)))\n; execution17: the dedicated genfs prefix correctly creates cgroup_v2 objects,\n; but Linux owns the underlying cgroup2 filesystem identity. Permit that exact\n; association, without giving Android access to Linux-labelled host cgroups.\n(allow cgroup_v2 linux.cgroup_t (filesystem (associate)))\n; execution22: runtime/query/identity/close pass in enforcing; final Linux\n; cleanup lstat needs traversal of the private socket directory. No socket\n; connect/read/write, creation or relabel permission is added.\n(allow linux.init_t socket_device (dir (search)))\n"
+    }
+  },
+  "candidates": [
+    {
+      "candidate": 1,
+      "binary_sha256": "57931f747437842ab8a5e5bbf4f3f1315c830c9c5f0614370925b12abfd9fca4",
+      "binary_bytes": 3458526,
+      "cached_source_dir": "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-1",
+      "compiler": {
+        "argv": [
+          "prlimit",
+          "--as=2147483648",
+          "--cpu=180",
+          "--",
+          "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/source/secilc/secilc",
+          "-m",
+          "-M",
+          "true",
+          "-G",
+          "-c",
+          "30",
+          "-o",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-1/policy.bin",
+          "-f",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-1/file_contexts",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-1/combined.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-1/adapter-0-linux-proc.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-1/adapter-1-linux-servicemanager-selinux.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-1/adapter-2-launcher-explicit.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-1/adapter-3-launcher-bootstrap.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-1/adapter-4-exec-context-helper.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-1/adapter-5-mc1-cohort.cil"
+        ],
+        "exit_code": 0,
+        "elapsed_seconds": 133.777553721,
+        "cpu_user_seconds": 71.126339,
+        "cpu_system_seconds": 61.851876,
+        "max_rss_kib": 449772,
+        "neverallow_disabled": false,
+        "limits": {
+          "cpu_seconds_requested": 180,
+          "wall_seconds": 240,
+          "address_space_bytes": 2147483648
+        }
+      },
+      "metadata": {
+        "artifact.json": {
+          "path": "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-1/artifact.json",
+          "sha256": "28143b9537b7443613e313e35217ed43d4118312c042828c6020172570d2c576"
+        },
+        "composition.json": {
+          "path": "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-1/composition.json",
+          "sha256": "e8b41c0f851ab15fa04202db30c9b024a3fbbce458c590f30d6b75a2876d0665"
+        }
+      },
+      "adapters": [
+        {
+          "name": "adapter-0-linux-proc.cil",
+          "sha256": "b7bb19bb97deb6baf41c177825520af525d08a68ec93ac462f7ba91a4d9f528e"
+        },
+        {
+          "name": "adapter-1-linux-servicemanager-selinux.cil",
+          "sha256": "7dfdc007d743dca10b838e78ef869cbdad3f4845da07ce7353124b60bf3145bd"
+        },
+        {
+          "name": "adapter-2-launcher-explicit.cil",
+          "sha256": "077dd8ec4f944b20361a6740d2edd0aa55ec4b2b063bfa5ed63591e5b56fec35"
+        },
+        {
+          "name": "adapter-3-launcher-bootstrap.cil",
+          "sha256": "dae1e9785700f256d4faa83710ea3965c190fc9ea14e0d21d52167aabe9ba71e"
+        },
+        {
+          "name": "adapter-4-exec-context-helper.cil",
+          "sha256": "118a45a0ea5adcdb939695ce660b523de63327601fb2449264a82e43a62fb58c"
+        },
+        {
+          "name": "adapter-5-mc1-cohort.cil",
+          "sha256": "bfadeac5144527abc4ac27623f9b5aea90a023dada8fc81f06dc81e2a9b3a36a"
+        }
+      ]
+    },
+    {
+      "candidate": 2,
+      "binary_sha256": "cd5178c33e3e1e662ddde7f2e49ffed71fac7aa7bfd27ea185fd012c28c33c7b",
+      "binary_bytes": 3458718,
+      "cached_source_dir": "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-2",
+      "compiler": {
+        "argv": [
+          "prlimit",
+          "--as=2147483648",
+          "--cpu=180",
+          "--",
+          "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/source/secilc/secilc",
+          "-m",
+          "-M",
+          "true",
+          "-G",
+          "-c",
+          "30",
+          "-o",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-2/policy.bin",
+          "-f",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-2/file_contexts",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-2/combined.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-2/adapter-0-linux-proc.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-2/adapter-1-linux-servicemanager-selinux.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-2/adapter-2-launcher-explicit.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-2/adapter-3-launcher-bootstrap.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-2/adapter-4-exec-context-helper.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-2/adapter-5-mc1-cohort.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-2/adapter-6-mc1-inherited-io.cil"
+        ],
+        "exit_code": 0,
+        "elapsed_seconds": 145.25766964800277,
+        "cpu_user_seconds": 39.046949,
+        "cpu_system_seconds": 104.911662,
+        "max_rss_kib": 449800,
+        "neverallow_disabled": false,
+        "limits": {
+          "cpu_seconds_requested": 180,
+          "wall_seconds": 240,
+          "address_space_bytes": 2147483648
+        }
+      },
+      "metadata": {
+        "artifact.json": {
+          "path": "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-2/artifact.json",
+          "sha256": "3b9f1041d8dc41b0f0938505d55c51bc67d0459fe0b01cc7ac5e6da840b28944"
+        },
+        "composition.json": {
+          "path": "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-2/composition.json",
+          "sha256": "e8b41c0f851ab15fa04202db30c9b024a3fbbce458c590f30d6b75a2876d0665"
+        }
+      },
+      "adapters": [
+        {
+          "name": "adapter-0-linux-proc.cil",
+          "sha256": "b7bb19bb97deb6baf41c177825520af525d08a68ec93ac462f7ba91a4d9f528e"
+        },
+        {
+          "name": "adapter-1-linux-servicemanager-selinux.cil",
+          "sha256": "7dfdc007d743dca10b838e78ef869cbdad3f4845da07ce7353124b60bf3145bd"
+        },
+        {
+          "name": "adapter-2-launcher-explicit.cil",
+          "sha256": "077dd8ec4f944b20361a6740d2edd0aa55ec4b2b063bfa5ed63591e5b56fec35"
+        },
+        {
+          "name": "adapter-3-launcher-bootstrap.cil",
+          "sha256": "dae1e9785700f256d4faa83710ea3965c190fc9ea14e0d21d52167aabe9ba71e"
+        },
+        {
+          "name": "adapter-4-exec-context-helper.cil",
+          "sha256": "118a45a0ea5adcdb939695ce660b523de63327601fb2449264a82e43a62fb58c"
+        },
+        {
+          "name": "adapter-5-mc1-cohort.cil",
+          "sha256": "bfadeac5144527abc4ac27623f9b5aea90a023dada8fc81f06dc81e2a9b3a36a"
+        },
+        {
+          "name": "adapter-6-mc1-inherited-io.cil",
+          "sha256": "3444ead645c6c08a8fd700a409c325990f1010c2761995ce174a7fa34da96750"
+        }
+      ]
+    },
+    {
+      "candidate": 3,
+      "binary_sha256": "c8b0442e361aada7a59933dc9c1c4e8e4f50d25e150390bb2a3a32e3e5b6afeb",
+      "binary_bytes": 3458836,
+      "cached_source_dir": "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-3",
+      "compiler": {
+        "argv": [
+          "prlimit",
+          "--as=2147483648",
+          "--cpu=180",
+          "--",
+          "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/source/secilc/secilc",
+          "-m",
+          "-M",
+          "true",
+          "-G",
+          "-c",
+          "30",
+          "-o",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-3/policy.bin",
+          "-f",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-3/file_contexts",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-3/combined.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-3/adapter-0-linux-proc.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-3/adapter-1-linux-servicemanager-selinux.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-3/adapter-2-launcher-explicit.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-3/adapter-3-launcher-bootstrap.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-3/adapter-4-exec-context-helper.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-3/adapter-5-mc1-cohort.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-3/adapter-6-mc1-inherited-io.cil"
+        ],
+        "exit_code": 0,
+        "elapsed_seconds": 154.18328484499943,
+        "cpu_user_seconds": 136.048011,
+        "cpu_system_seconds": 9.710602,
+        "max_rss_kib": 449840,
+        "neverallow_disabled": false,
+        "limits": {
+          "cpu_seconds_requested": 180,
+          "wall_seconds": 240,
+          "address_space_bytes": 2147483648
+        }
+      },
+      "metadata": {
+        "artifact.json": {
+          "path": "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-3/artifact.json",
+          "sha256": "de8e1719f618ae0e85a9b44539a9879858b031a4d2735d0275aca996a1e3a9f2"
+        },
+        "composition.json": {
+          "path": "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-3/composition.json",
+          "sha256": "e8b41c0f851ab15fa04202db30c9b024a3fbbce458c590f30d6b75a2876d0665"
+        }
+      },
+      "adapters": [
+        {
+          "name": "adapter-0-linux-proc.cil",
+          "sha256": "b7bb19bb97deb6baf41c177825520af525d08a68ec93ac462f7ba91a4d9f528e"
+        },
+        {
+          "name": "adapter-1-linux-servicemanager-selinux.cil",
+          "sha256": "7dfdc007d743dca10b838e78ef869cbdad3f4845da07ce7353124b60bf3145bd"
+        },
+        {
+          "name": "adapter-2-launcher-explicit.cil",
+          "sha256": "077dd8ec4f944b20361a6740d2edd0aa55ec4b2b063bfa5ed63591e5b56fec35"
+        },
+        {
+          "name": "adapter-3-launcher-bootstrap.cil",
+          "sha256": "dae1e9785700f256d4faa83710ea3965c190fc9ea14e0d21d52167aabe9ba71e"
+        },
+        {
+          "name": "adapter-4-exec-context-helper.cil",
+          "sha256": "118a45a0ea5adcdb939695ce660b523de63327601fb2449264a82e43a62fb58c"
+        },
+        {
+          "name": "adapter-5-mc1-cohort.cil",
+          "sha256": "bfadeac5144527abc4ac27623f9b5aea90a023dada8fc81f06dc81e2a9b3a36a"
+        },
+        {
+          "name": "adapter-6-mc1-inherited-io.cil",
+          "sha256": "fce904618880eda8dae09723a4f74d12b2e2597e5eaa8752db766d1726c2fbf2"
+        }
+      ]
+    },
+    {
+      "candidate": 4,
+      "binary_sha256": "05e414bd26cad081663cfcd9f7861fda08aee76f518c615bdaf5007b843a2b6c",
+      "binary_bytes": 3459014,
+      "cached_source_dir": "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-4",
+      "compiler": {
+        "argv": [
+          "prlimit",
+          "--as=2147483648",
+          "--cpu=180",
+          "--",
+          "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/source/secilc/secilc",
+          "-m",
+          "-M",
+          "true",
+          "-G",
+          "-c",
+          "30",
+          "-o",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-4/policy.bin",
+          "-f",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-4/file_contexts",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-4/combined.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-4/adapter-0-linux-proc.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-4/adapter-1-linux-servicemanager-selinux.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-4/adapter-2-launcher-explicit.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-4/adapter-3-launcher-bootstrap.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-4/adapter-4-exec-context-helper.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-4/adapter-5-mc1-cohort.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-4/adapter-6-mc1-inherited-io.cil"
+        ],
+        "exit_code": 0,
+        "elapsed_seconds": 139.70055127700107,
+        "cpu_user_seconds": 96.862477,
+        "cpu_system_seconds": 42.120704,
+        "max_rss_kib": 449780,
+        "neverallow_disabled": false,
+        "limits": {
+          "cpu_seconds_requested": 180,
+          "wall_seconds": 240,
+          "address_space_bytes": 2147483648
+        }
+      },
+      "metadata": {
+        "artifact.json": {
+          "path": "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-4/artifact.json",
+          "sha256": "8d8c30567c8f37ca6653c8332fb7e4c39dd49d4b0de7240e1f92086c4e911e92"
+        },
+        "composition.json": {
+          "path": "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-4/composition.json",
+          "sha256": "e8b41c0f851ab15fa04202db30c9b024a3fbbce458c590f30d6b75a2876d0665"
+        }
+      },
+      "adapters": [
+        {
+          "name": "adapter-0-linux-proc.cil",
+          "sha256": "b7bb19bb97deb6baf41c177825520af525d08a68ec93ac462f7ba91a4d9f528e"
+        },
+        {
+          "name": "adapter-1-linux-servicemanager-selinux.cil",
+          "sha256": "7dfdc007d743dca10b838e78ef869cbdad3f4845da07ce7353124b60bf3145bd"
+        },
+        {
+          "name": "adapter-2-launcher-explicit.cil",
+          "sha256": "077dd8ec4f944b20361a6740d2edd0aa55ec4b2b063bfa5ed63591e5b56fec35"
+        },
+        {
+          "name": "adapter-3-launcher-bootstrap.cil",
+          "sha256": "dae1e9785700f256d4faa83710ea3965c190fc9ea14e0d21d52167aabe9ba71e"
+        },
+        {
+          "name": "adapter-4-exec-context-helper.cil",
+          "sha256": "118a45a0ea5adcdb939695ce660b523de63327601fb2449264a82e43a62fb58c"
+        },
+        {
+          "name": "adapter-5-mc1-cohort.cil",
+          "sha256": "4449f249707b4ca675e83908b2afc014e02b15d0240a0987a804ca49f7d62719"
+        },
+        {
+          "name": "adapter-6-mc1-inherited-io.cil",
+          "sha256": "dda05bae9a936d695bcd146c1abd37426792de9b9ad73e8d0ce84924bf7b5ec4"
+        }
+      ]
+    },
+    {
+      "candidate": 5,
+      "binary_sha256": "d69aec0f8273b61725f810f7239d08bd3c5a6ad7de09971ff93eec5c4ae01c55",
+      "binary_bytes": 3458981,
+      "cached_source_dir": "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-5",
+      "compiler": {
+        "argv": [
+          "prlimit",
+          "--as=2147483648",
+          "--cpu=180",
+          "--",
+          "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/source/secilc/secilc",
+          "-m",
+          "-M",
+          "true",
+          "-G",
+          "-c",
+          "30",
+          "-o",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-5/policy.bin",
+          "-f",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-5/file_contexts",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-5/combined.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-5/adapter-0-linux-proc.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-5/adapter-1-linux-servicemanager-selinux.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-5/adapter-2-launcher-explicit.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-5/adapter-3-launcher-bootstrap.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-5/adapter-4-exec-context-helper.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-5/adapter-5-mc1-cohort.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-5/adapter-6-mc1-inherited-io.cil"
+        ],
+        "exit_code": 0,
+        "elapsed_seconds": 157.65932878699823,
+        "cpu_user_seconds": 142.181641,
+        "cpu_system_seconds": 8.511336,
+        "max_rss_kib": 449832,
+        "neverallow_disabled": false,
+        "limits": {
+          "cpu_seconds_requested": 180,
+          "wall_seconds": 240,
+          "address_space_bytes": 2147483648
+        }
+      },
+      "metadata": {
+        "artifact.json": {
+          "path": "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-5/artifact.json",
+          "sha256": "73b512dfa68870e96ed914d022956cf741dcb8c03af8b13665aa73b5f2f09b70"
+        },
+        "composition.json": {
+          "path": "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-5/composition.json",
+          "sha256": "e8b41c0f851ab15fa04202db30c9b024a3fbbce458c590f30d6b75a2876d0665"
+        }
+      },
+      "adapters": [
+        {
+          "name": "adapter-0-linux-proc.cil",
+          "sha256": "b7bb19bb97deb6baf41c177825520af525d08a68ec93ac462f7ba91a4d9f528e"
+        },
+        {
+          "name": "adapter-1-linux-servicemanager-selinux.cil",
+          "sha256": "7dfdc007d743dca10b838e78ef869cbdad3f4845da07ce7353124b60bf3145bd"
+        },
+        {
+          "name": "adapter-2-launcher-explicit.cil",
+          "sha256": "077dd8ec4f944b20361a6740d2edd0aa55ec4b2b063bfa5ed63591e5b56fec35"
+        },
+        {
+          "name": "adapter-3-launcher-bootstrap.cil",
+          "sha256": "dae1e9785700f256d4faa83710ea3965c190fc9ea14e0d21d52167aabe9ba71e"
+        },
+        {
+          "name": "adapter-4-exec-context-helper.cil",
+          "sha256": "118a45a0ea5adcdb939695ce660b523de63327601fb2449264a82e43a62fb58c"
+        },
+        {
+          "name": "adapter-5-mc1-cohort.cil",
+          "sha256": "4449f249707b4ca675e83908b2afc014e02b15d0240a0987a804ca49f7d62719"
+        },
+        {
+          "name": "adapter-6-mc1-inherited-io.cil",
+          "sha256": "5613e14e3b5946b8414fe7db8990a7597e9b7aea2e37ef22dd81b2a760e70c94"
+        }
+      ]
+    },
+    {
+      "candidate": 6,
+      "binary_sha256": "1777ae2eb82f23ab5cf826aa72058eb6e2876f188a16fcbf74e109fd6352cb41",
+      "binary_bytes": 3458993,
+      "cached_source_dir": "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-6",
+      "compiler": {
+        "argv": [
+          "prlimit",
+          "--as=2147483648",
+          "--cpu=180",
+          "--",
+          "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/source/secilc/secilc",
+          "-m",
+          "-M",
+          "true",
+          "-G",
+          "-c",
+          "30",
+          "-o",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-6/policy.bin",
+          "-f",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-6/file_contexts",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-6/combined.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-6/adapter-0-linux-proc.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-6/adapter-1-linux-servicemanager-selinux.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-6/adapter-2-launcher-explicit.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-6/adapter-3-launcher-bootstrap.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-6/adapter-4-exec-context-helper.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-6/adapter-5-mc1-cohort.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-6/adapter-6-mc1-inherited-io.cil"
+        ],
+        "exit_code": 0,
+        "elapsed_seconds": 169.38489081300213,
+        "cpu_user_seconds": 156.733899,
+        "cpu_system_seconds": 0.170613,
+        "max_rss_kib": 449724,
+        "neverallow_disabled": false,
+        "limits": {
+          "cpu_seconds_requested": 180,
+          "wall_seconds": 240,
+          "address_space_bytes": 2147483648
+        }
+      },
+      "metadata": {
+        "artifact.json": {
+          "path": "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-6/artifact.json",
+          "sha256": "27374397c38dfd2e706dfe7a6128becf861fac646174332e03352675a8ab2ea2"
+        },
+        "composition.json": {
+          "path": "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-6/composition.json",
+          "sha256": "e8b41c0f851ab15fa04202db30c9b024a3fbbce458c590f30d6b75a2876d0665"
+        }
+      },
+      "adapters": [
+        {
+          "name": "adapter-0-linux-proc.cil",
+          "sha256": "b7bb19bb97deb6baf41c177825520af525d08a68ec93ac462f7ba91a4d9f528e"
+        },
+        {
+          "name": "adapter-1-linux-servicemanager-selinux.cil",
+          "sha256": "7dfdc007d743dca10b838e78ef869cbdad3f4845da07ce7353124b60bf3145bd"
+        },
+        {
+          "name": "adapter-2-launcher-explicit.cil",
+          "sha256": "077dd8ec4f944b20361a6740d2edd0aa55ec4b2b063bfa5ed63591e5b56fec35"
+        },
+        {
+          "name": "adapter-3-launcher-bootstrap.cil",
+          "sha256": "dae1e9785700f256d4faa83710ea3965c190fc9ea14e0d21d52167aabe9ba71e"
+        },
+        {
+          "name": "adapter-4-exec-context-helper.cil",
+          "sha256": "118a45a0ea5adcdb939695ce660b523de63327601fb2449264a82e43a62fb58c"
+        },
+        {
+          "name": "adapter-5-mc1-cohort.cil",
+          "sha256": "4449f249707b4ca675e83908b2afc014e02b15d0240a0987a804ca49f7d62719"
+        },
+        {
+          "name": "adapter-6-mc1-inherited-io.cil",
+          "sha256": "c063f3232b0c7c91d0eb853e3a41905b1e42bcaff0fa738e136467d9df07215f"
+        }
+      ]
+    },
+    {
+      "candidate": 7,
+      "binary_sha256": "31f2492fa8f2800c6bd3b40fe913105ed9dd27ac0dc8522780772479ac602b2e",
+      "binary_bytes": 3459065,
+      "cached_source_dir": "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-7",
+      "compiler": {
+        "argv": [
+          "prlimit",
+          "--as=2147483648",
+          "--cpu=180",
+          "--",
+          "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/source/secilc/secilc",
+          "-m",
+          "-M",
+          "true",
+          "-G",
+          "-c",
+          "30",
+          "-o",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-7/policy.bin",
+          "-f",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-7/file_contexts",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-7/combined.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-7/adapter-0-linux-proc.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-7/adapter-1-linux-servicemanager-selinux.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-7/adapter-2-launcher-explicit.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-7/adapter-3-launcher-bootstrap.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-7/adapter-4-exec-context-helper.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-7/adapter-5-mc1-cohort.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-7/adapter-6-mc1-inherited-io.cil"
+        ],
+        "exit_code": 0,
+        "elapsed_seconds": 149.8459804970007,
+        "cpu_user_seconds": 142.53999,
+        "cpu_system_seconds": 3.04107,
+        "max_rss_kib": 449668,
+        "neverallow_disabled": false,
+        "limits": {
+          "cpu_seconds_requested": 180,
+          "wall_seconds": 240,
+          "address_space_bytes": 2147483648
+        }
+      },
+      "metadata": {
+        "artifact.json": {
+          "path": "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-7/artifact.json",
+          "sha256": "19a4bb2ef9a95e6eb7b5bdbc243b45455bbafdfc96b795b1734a2d9b4f87eefb"
+        },
+        "composition.json": {
+          "path": "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-7/composition.json",
+          "sha256": "e8b41c0f851ab15fa04202db30c9b024a3fbbce458c590f30d6b75a2876d0665"
+        }
+      },
+      "adapters": [
+        {
+          "name": "adapter-0-linux-proc.cil",
+          "sha256": "b7bb19bb97deb6baf41c177825520af525d08a68ec93ac462f7ba91a4d9f528e"
+        },
+        {
+          "name": "adapter-1-linux-servicemanager-selinux.cil",
+          "sha256": "7dfdc007d743dca10b838e78ef869cbdad3f4845da07ce7353124b60bf3145bd"
+        },
+        {
+          "name": "adapter-2-launcher-explicit.cil",
+          "sha256": "077dd8ec4f944b20361a6740d2edd0aa55ec4b2b063bfa5ed63591e5b56fec35"
+        },
+        {
+          "name": "adapter-3-launcher-bootstrap.cil",
+          "sha256": "dae1e9785700f256d4faa83710ea3965c190fc9ea14e0d21d52167aabe9ba71e"
+        },
+        {
+          "name": "adapter-4-exec-context-helper.cil",
+          "sha256": "118a45a0ea5adcdb939695ce660b523de63327601fb2449264a82e43a62fb58c"
+        },
+        {
+          "name": "adapter-5-mc1-cohort.cil",
+          "sha256": "4449f249707b4ca675e83908b2afc014e02b15d0240a0987a804ca49f7d62719"
+        },
+        {
+          "name": "adapter-6-mc1-inherited-io.cil",
+          "sha256": "2bb3ddf555566f229232ec19ccc4d7bbbf80f7a9e368a8ed8352c9e54a3ecffb"
+        }
+      ]
+    },
+    {
+      "candidate": 8,
+      "binary_sha256": "1144a36a6392dd95cc6eeb55085c64dea4c863013c69fe4426b6146c0d787410",
+      "binary_bytes": 3459077,
+      "cached_source_dir": "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-8",
+      "compiler": {
+        "argv": [
+          "prlimit",
+          "--as=2147483648",
+          "--cpu=180",
+          "--",
+          "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/source/secilc/secilc",
+          "-m",
+          "-M",
+          "true",
+          "-G",
+          "-c",
+          "30",
+          "-o",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-8/policy.bin",
+          "-f",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-8/file_contexts",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-8/combined.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-8/adapter-0-linux-proc.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-8/adapter-1-linux-servicemanager-selinux.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-8/adapter-2-launcher-explicit.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-8/adapter-3-launcher-bootstrap.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-8/adapter-4-exec-context-helper.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-8/adapter-5-mc1-cohort.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-8/adapter-6-mc1-inherited-io.cil"
+        ],
+        "exit_code": 0,
+        "elapsed_seconds": 139.39747527200234,
+        "cpu_user_seconds": 132.025672,
+        "cpu_system_seconds": 6.4918759999999995,
+        "max_rss_kib": 449764,
+        "neverallow_disabled": false,
+        "limits": {
+          "cpu_seconds_requested": 180,
+          "wall_seconds": 240,
+          "address_space_bytes": 2147483648
+        }
+      },
+      "metadata": {
+        "artifact.json": {
+          "path": "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-8/artifact.json",
+          "sha256": "7d6eef82ad99099db5e38ff5a598fb7f99c2372b4cffd70dd85949354d5c0e3e"
+        },
+        "composition.json": {
+          "path": "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-8/composition.json",
+          "sha256": "e8b41c0f851ab15fa04202db30c9b024a3fbbce458c590f30d6b75a2876d0665"
+        }
+      },
+      "adapters": [
+        {
+          "name": "adapter-0-linux-proc.cil",
+          "sha256": "b7bb19bb97deb6baf41c177825520af525d08a68ec93ac462f7ba91a4d9f528e"
+        },
+        {
+          "name": "adapter-1-linux-servicemanager-selinux.cil",
+          "sha256": "7dfdc007d743dca10b838e78ef869cbdad3f4845da07ce7353124b60bf3145bd"
+        },
+        {
+          "name": "adapter-2-launcher-explicit.cil",
+          "sha256": "077dd8ec4f944b20361a6740d2edd0aa55ec4b2b063bfa5ed63591e5b56fec35"
+        },
+        {
+          "name": "adapter-3-launcher-bootstrap.cil",
+          "sha256": "dae1e9785700f256d4faa83710ea3965c190fc9ea14e0d21d52167aabe9ba71e"
+        },
+        {
+          "name": "adapter-4-exec-context-helper.cil",
+          "sha256": "118a45a0ea5adcdb939695ce660b523de63327601fb2449264a82e43a62fb58c"
+        },
+        {
+          "name": "adapter-5-mc1-cohort.cil",
+          "sha256": "4449f249707b4ca675e83908b2afc014e02b15d0240a0987a804ca49f7d62719"
+        },
+        {
+          "name": "adapter-6-mc1-inherited-io.cil",
+          "sha256": "31c3d0fffacd3966bb5bba6401c57b3d58bfda095d57cdc9357f2e8378edc0ed"
+        }
+      ]
+    },
+    {
+      "candidate": 9,
+      "binary_sha256": "40b4018343f4127bcdfbe06036c8614aa5a31f9bcd518a09fadd4cbd1a973057",
+      "binary_bytes": 3459089,
+      "cached_source_dir": "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-9",
+      "compiler": {
+        "argv": [
+          "prlimit",
+          "--as=2147483648",
+          "--cpu=180",
+          "--",
+          "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/source/secilc/secilc",
+          "-m",
+          "-M",
+          "true",
+          "-G",
+          "-c",
+          "30",
+          "-o",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-9/policy.bin",
+          "-f",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-9/file_contexts",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-9/combined.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-9/adapter-0-linux-proc.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-9/adapter-1-linux-servicemanager-selinux.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-9/adapter-2-launcher-explicit.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-9/adapter-3-launcher-bootstrap.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-9/adapter-4-exec-context-helper.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-9/adapter-5-mc1-cohort.cil",
+          "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-9/adapter-6-mc1-inherited-io.cil"
+        ],
+        "exit_code": 0,
+        "elapsed_seconds": 146.5145984519986,
+        "cpu_user_seconds": 132.870456,
+        "cpu_system_seconds": 9.902017,
+        "max_rss_kib": 449856,
+        "neverallow_disabled": false,
+        "limits": {
+          "cpu_seconds_requested": 180,
+          "wall_seconds": 240,
+          "address_space_bytes": 2147483648
+        }
+      },
+      "metadata": {
+        "artifact.json": {
+          "path": "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-9/artifact.json",
+          "sha256": "a5f798afa17f29e5fa02394b4e4d7bb1f69bba683b3570ea96f9f1439e6ade75"
+        },
+        "composition.json": {
+          "path": "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-9/composition.json",
+          "sha256": "e8b41c0f851ab15fa04202db30c9b024a3fbbce458c590f30d6b75a2876d0665"
+        }
+      },
+      "adapters": [
+        {
+          "name": "adapter-0-linux-proc.cil",
+          "sha256": "b7bb19bb97deb6baf41c177825520af525d08a68ec93ac462f7ba91a4d9f528e"
+        },
+        {
+          "name": "adapter-1-linux-servicemanager-selinux.cil",
+          "sha256": "7dfdc007d743dca10b838e78ef869cbdad3f4845da07ce7353124b60bf3145bd"
+        },
+        {
+          "name": "adapter-2-launcher-explicit.cil",
+          "sha256": "077dd8ec4f944b20361a6740d2edd0aa55ec4b2b063bfa5ed63591e5b56fec35"
+        },
+        {
+          "name": "adapter-3-launcher-bootstrap.cil",
+          "sha256": "dae1e9785700f256d4faa83710ea3965c190fc9ea14e0d21d52167aabe9ba71e"
+        },
+        {
+          "name": "adapter-4-exec-context-helper.cil",
+          "sha256": "118a45a0ea5adcdb939695ce660b523de63327601fb2449264a82e43a62fb58c"
+        },
+        {
+          "name": "adapter-5-mc1-cohort.cil",
+          "sha256": "4449f249707b4ca675e83908b2afc014e02b15d0240a0987a804ca49f7d62719"
+        },
+        {
+          "name": "adapter-6-mc1-inherited-io.cil",
+          "sha256": "43130266ece4b1f0c6ab8eab8dcafd861b3ac46e5f468ee5a7f387b40f6aabc0"
+        }
+      ]
+    }
+  ]
+}

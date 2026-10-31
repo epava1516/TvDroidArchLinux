@@ -1,19 +1,10 @@
 # Roadmap A · plataforma APK general sobre Linux
 
-La [revisión de zygote original](../reports/android16-zygote-security-contract/findings.json)
-obliga a evaluar NNP y capacidades como contrato de cohorte: seccomp se instala
-antes de perder privilegios; la fuente advierte de transiciones SELinux al usar
-NNP como alternativa. Las ramas permisivas examinadas omiten filtros. No basta
-un arranque permisivo exitoso ni añadir process2 a cada fallo. Mantener controles
-actuales hasta justificar/probar una alternativa completa, sin cambiar seguridad
-del anfitrión. Próximo inventario: seapp/seccomp, RC/capabilities de gestores,
-stdio/dispositivos, FD y cgroups; luego S0–S2 y pruebas autorizadas.
-
-R1/R2: [framing del supervisor corregido](../reports/android16-supervisor-framing/findings.json),
-19 regresiones Linux pasan; mensajes parciales y fallo terminal preservados.
-Pendiente monitor de fallos posteriores al arranque/salida con pidfd y canal,
-incluso si un descendiente conserva FD. No acredita servicio o APK. Exigir
-contexto seapp real y filtros efectivos: retorno0 en permisivo no es aislamiento.
+Estado vigente: prefijo MC1 original probado en enforcing acotado, con negativo
+de bypass y cierre real; anfitrión devuelto automáticamente a permisivo. El hito de firma Markor usa apksig
+original y negativo de manipulación. No hay APK instalada ni aplicación lanzada.
+El usuario autoriza operaciones necesarias en esta VM; la corrección y recuperación
+se verifican por candidato, sin nuevas esperas por permisos históricos.
 
 ## Prioridad vigente · A16-QPR2-1
 
@@ -36,59 +27,39 @@ Entrada Linux/glibc→Bionic y NNP1 reales; imágenes originales RO conservan et
 No es autorización/aislamiento ni APK compatible. Antiguos bloqueos sin política
 superados para esta cohorte; avisos de recursos conservados. Autorización expresa
 actual cubre pruebas de seguridad/reinicio; no falta permiso. Antes de enforcing,
-contrastar AVC del recorrido, completar permisos/transiciones específicos y preparar
-rollback verificable con checkpoint. Después MC2 original framework/paquetes para
-Markor; no ampliar sondas ajenas a ese camino. ARM/GMS/DRM continúan separados.
+mantener recuperación y verificar los negativos de cada nueva cohorte. El prefijo
+actual ya pasa con rollback probado; siguiente hwservicemanager/Composer y display
+real intercalado con MC2 original, no más sondas ajenas a ese camino. ARM/GMS/DRM continúan separados.
 
 | Paso | Integración y resultado funcional exigido | Estado/evidencia y límite |
 | --- | --- | --- |
-| MC0 · admisión MAC recuperable | Candidato coherente de política original Linux/AOSP, imágenes/etiquetas/UID/roles/NNP/capacidades, dispositivos/cgroups/FD y recuperación; S0–S2 del plan canónico antes de pedir carga | Activo/permisivo/policyload0 confirmado. Propiedades fallan por clase desconocida. Bootstrap sólo offline; seis transiciones NNP de gestores denegadas. Falta admisión completa, ninguna carga autorizada |
-| MC1 · cohorte original disponible | Propiedades originales publican versión y readiness por sus controles reales; servicemanager se registra y cliente original legítimo lo consulta; después hwservicemanager para la ruta Composer elegida. Identidad/SID y negativos reales, muerte/cierre sin alterar host | **Siguiente experimento funcional seleccionado**, depende de MC0/carga autorizada. No editar ready ni sustituir check_access. Conservar diagnóstico fallido actual como negativo |
-| MC2 · instalación y lanzamiento reales | Reutilizar PackageManager/permisos/instalación/datos, AMS/ATMS y proceso ART/zygote/framework originales como subsistemas. Resolver cierre real de system_server y auxiliares (p.ej. installd/artd/almacenamiento) por fuentes/ejecución; instalar APK Markor intacta y lanzar Activity/Application originales | ART llega a ActivityThread.main; no lanzamiento Markor. Lista mínima exacta y separación de system_server aún por demostrar; no asumir que todas sus dependencias puedan omitirse. Firma criptográfica/splits/UID/seinfo y datos siguen pendientes |
+| MC0 · admisión MAC recuperable | Candidato coherente de política original Linux/AOSP, imágenes/etiquetas/UID/roles/NNP/capacidades, dispositivos/cgroups/FD y recuperación; prueba real y recuperación antes de cada operación disruptiva | Política compuesta cargada; entrada real Linux/glibc→Bionic y propiedades ya ejecutan en enforcing en ventana acotada. Autorización actual expresa; recuperación automática probada. R1-MAC sigue abierto: recorrido completo enforcing y negativos pendientes |
+| MC1 · cohorte original disponible | Propiedades originales publican versión y readiness por sus controles reales; servicemanager se registra y cliente original legítimo lo consulta; después hwservicemanager para la ruta Composer elegida. Identidad/SID y negativos reales, muerte/cierre sin alterar host | Propiedades→gestor registrado→cliente original→cierre0 probado en permisivo con identidades y etiquetas reales. El mismo prefijo pasa enforcing1, directo-helper denegado y cierre real, en ensayo4s recuperado0 (ejecución23). Hwservicemanager pendiente; R1-MAC no cerrado. No readiness manual ni APK disponible |
+| MC2 · instalación y lanzamiento reales | Reutilizar PackageManager/permisos/instalación/datos, AMS/ATMS y proceso ART/zygote/framework originales como subsistemas. Resolver cierre real de system_server y auxiliares (p.ej. installd/artd/almacenamiento) por fuentes/ejecución; instalar APK Markor intacta y lanzar Activity/Application originales | ART llega a ActivityThread.main; no lanzamiento Markor. Lista mínima exacta y separación de system_server aún por demostrar; no asumir que todas sus dependencias puedan omitirse. Firma criptográfica v2 API36 verificada con apksig original y negativo; splits/UID/seinfo/datos siguen pendientes. SystemServer original espera display antes de PMS: intercalar MC3, no asumir instalación headless |
 | MC3 · interfaz e entrada | Completar Composer/allocator/mapper→SF original→Wayland/Smithay, WMS/Display/Input originales; presentar frames de Markor y entregar entrada al editor/foco | Composer espera gestor; no buffers/fences ni frame original acreditados. Reutilizar subsistemas completos; no reconstruir widgets de Markor. Empaquetado de cierre gráfico exacto pendiente, no bloqueo atribuido sin prueba |
 | MC4 · función, persistencia y servicios | Crear/editar nota con entrada real, guardar por la ruta/proveedor elegido y permisos originales; verificar bytes, callbacks y almacenamiento efectivo | No probado. Proveedores/actividades de selección y auxiliares que exija el recorrido se integran, no respuestas vacías ni ruta cambiada silenciosamente |
 | MC5 · cierre y reapertura | Cerrar desde shell, recoger procesos/recursos, reabrir APK intacta y recuperar nota; repetir con límites/aislamiento y control horizontal Calculator | Nueve etapas canónicas siguen no probadas. Pruebas del supervisor sólo respaldan infraestructura de ciclo de vida |
 
 La propuesta concreta de MC0/MC1 y sus condiciones de prueba/recuperación están
 en [arquitectura](ARQUITECTURA.md#integración-inmediata-de-propiedades-y-gestores).
-No se autoriza carga, relabel ni enforcing por el arranque histórico. ARM, GMS,
+El arranque histórico por sí solo no autorizaba cambios; la autorización expresa actual sí cubre carga, etiquetas, enforcing y reinicios necesarios. ARM, GMS,
 multimedia propietaria/DRM siguen en R5–R7 y la matriz amplia, fuera de este primer
 camino Markor. La secuencia completa no se cierra con MC1 ni con una ventana vacía.
 
 ## Puertas de seguridad y antecedentes
 
-Seguir el [plan canónico de seguridad y recuperación](ARQUITECTURA.md#plan-de-seguridad-y-recuperación-del-anfitrión):
-S0 recuperación → S1 contrato completo offline → S2 preflight anfitrión → S3 carga
-permisiva sólo con autorización explícita → S4 enforcing sólo tras pruebas y nueva
-autorización → S5 gestores y recorrido Markor. S0–S2 aún abiertos; no hay solicitud
-de carga/enforcing preparada. El arranque anterior no los autoriza.
-El [prototipo de entrada S1](../reports/android16-policy-launcher-entry/findings.json)
-compila offline con aserciones activas: rol exclusivo y contexto exec Android
-conservan transiciones de gestores y denegaciones seleccionadas; la variante
-automática conserva identidad Linux y no valida el contexto del servicio siguiente.
-No hay carga/exec real ni bootstrap de host, ni sustitución del perfil base.
-
-La [auditoría del actor](../reports/android16-launcher-permission-audit/findings.json)
-distingue54 potenciales reglas de salida/633 de entrada de27 decisiones concretas.
-S1 sigue abierto. El [bootstrap offline](../reports/android16-launcher-bootstrap/findings.json)
-modela productor init_t, entrada tipada/rol y supervisor Rust padre: 51 consultas,
-cuatro compilaciones con aserciones. No hay productor real probado. Seis permisos
-NNP/nosuid hacia gestores siguen denegados. Revisar el contrato completo
-init/servicios/zygote y la colocación de credenciales/NNP; no desactivarlo ni
-sumar excepciones aisladas. Procedencia/instalación del ejecutable, FD/stdio/pidfd,
-etiquetas/dispositivos/cgroups y recuperación siguen pendientes de S0–S2.
-
-La [inspección nativa actual](../reports/android16-postboot-mac-readiness/findings.json)
-confirma getcon kernel, getfilecon ENODATA sin demostrar etiqueta efectiva y lectura status real sólo
-tras configurar montaje RO explícito. Systemd -SELINUX exige integración de host.
-Mantener controles originales/RC/cohortes; avance independiente de lectura/offline
-permitido. Las nueve etapas Markor y todas las aplicaciones reales siguen abiertas.
+Vigente: autorización expresa actual cubre carga, etiquetas, enforcing y reinicios.
+Política cargada y ventanas recuperables ejecutadas, no sólo preparación offline.
+R1-MAC permanece abierto: las pruebas de la cohorte no acreditan aislamiento de
+APK ni operación estable del anfitrión en enforcing sostenido. El plan S0–S5 de
+[arquitectura](ARQUITECTURA.md#plan-de-seguridad-y-recuperación-del-anfitrión)
+se aplica con resultados reales del [checkpoint actual](../reports/android16-mc1-functional-candidate/checkpoint.json).
 
 | Puerta | Dependencias y trabajo | Evidencia de salida | Estado |
 | --- | --- | --- | --- |
 | R0 · procedencia | Verificar versión/rama/tag/build, resolver todos los repositorios, elegir target y artefactos coherentes; revisar licencias y mantenimiento | Manifiesto con revisiones exactas/procedencia, hashes de binarios y configuración; separación referencia vs parches de seguridad | Tag/rama/build y manifiesto de 1.013 commits fijados/reproducidos; diez objetos principales contrastados. GSI x86_64 coincidente y preparación de 36 APEX/4.395 archivos reproducida. Configuración parcial ejecutada; equivalencia fuente/binario completa, licencias y seguridad pendientes |
 | R1 · runtime Bionic coherente | R0; Bionic/linker/ART/libcore/APEX/framework/JNI/recursos y configuración original; bootclasspath/classloaders/namespaces/propiedades y kernel | Ejecución reproducible del motor, cierre de dependencias/configuración/identidad y fallos honestos; no mezclar Android13/host sin frontera probada | Parcial A16: ART alcanza ActivityThread.main sin Markor; BCP46 y170 propiedades originales comprobados. Servicio de propiedades original tiene carga persistente, rechazo por socket y [adaptaciones de errores/cierre/acciones](../reports/android16-property-actions/findings.json) con ejecuciones MCP acotadas. Coordinador reutiliza ActionManager/eventfd, no SecondStageMain; comandos de regresión no acreditan APK. [Supervisión Rust↔Bionic](../reports/android16-rust-supervisor/findings.json) ejecutada en diagnóstico con cierre cooperativo/pidfd; normal sin SELinux se rechaza. Backend Linux de servicios/ctl/power, operaciones autorizadas/MAC, integración compositor/restart/watchdog, durabilidad general, cierre global libdexfiled.so y equivalencia Soong/GSI pendientes. [Historial y alcance por resultado](EVIDENCIAS.md). |
-| R1-MAC · política Linux e IPC original | R0/R1; SELinux activo, política/etiquetas/transiciones compatibles con Linux anfitrión, Binder/HIDL/vendor privados y gestores originales, propiedades/VINTF | Registro y descubrimiento reales, identidad/denegación/callbacks/muerte; host funcional y apps separadas; instalación/activación/rollback de política probados | Parcial: Binder privado/protocolo8 y [13 regresiones originales nativas](../reports/android16-binder-kernel-contract/validation.json); cinco casos de gestor excluidos. SID obligatorio durante transacciones; [sonda propia](../reports/android16-binder-secctx-probe/validation.json) sin SID recibe transacción/respuesta y PID/UID correctos, con SID fallaba -95 antes del reinicio. [Arranque autorizado posterior](../reports/android16-selinux-permissive-boot/findings.json): LSM activo/permisivo/sin política; mismo ELF con SID y control completa transacción/respuesta0, sin validar texto SID ni autorización. [hwservicemanager original](../reports/android16-hwmanager-start/findings.json) con identidad/grupos RC lee contextos y aborta al obtener contexto SELinux propio (MCP salida127); vendor VINTF incompleto. Cadena real LSM/política/etiquetas→propiedades→gestor/VINTF→readiness→Composer pendiente; no saltar puertas. Sin IPC de gestor/MAC/aislamiento aceptados. Candidato compuesto con universos/adaptadores compila con aserciones; modelos y delta completo verificados. Constructor reproducible con [contrato upstream96 clases/1694 permisos](../reports/android16-kernel-policy-contract/validation.json);11 SID numéricos coinciden. No equivalencia con build/kernel activo, política de despliegue, etiquetas/transiciones/montajes/IPC/gestores/rollback ni APK probados. No VM; reinicio puntual autorizado ya verificado, no nuevas operaciones de arranque |
+| R1-MAC · política Linux e IPC original | R0/R1; SELinux activo, política/etiquetas/transiciones compatibles con Linux anfitrión, Binder/HIDL/vendor privados y gestores originales, propiedades/VINTF | Registro y descubrimiento reales, identidad/denegación/callbacks/muerte; host funcional y apps separadas; instalación/activación/rollback de política probados | Política compuesta cargada; original Linux→Bionic/propiedades/gestor/cliente/cierre probados en permisivo y progresión enforcing con rollback automático. Evidencia vigente en android16-mc1-functional-candidate. Puerta ABI/kernel/seguridad de APK, negativos completos y anfitrión enforcing sostenido permanecen abiertos; permisos históricos no bloquean pruebas autorizadas |
 | R2 · comportamiento y servicios | R1; evaluar unidades originales completas de paquetes/permisos/Activity/Binder/Content/servicios/segundo plano; conservar agrupaciones grandes si conviene | Semántica real, callbacks/concurrencia/error/persistencia/muerte/IPC y separación por app; cierre transitivo. Conflicto con Android completo documentado antes de cambiar alcance | Entrada parcial original RuntimeInit/ActivityThread.main alcanzada (R1); [Cuatro perfiles de servicio originales parseados](../reports/android16-service-profile/findings.json) en rutas canónicas, con negativos de configuración; sin activar servicios. Backend debe rechazar listas parciales, inicializar SIGCHLD antes de hilos y preservar contextos/identidad/cgroups/reaper/fallos. Paquetes/permisos/lifecycle/Content/servicios aún sin recorridos reales verificados. No asumir separación fácil de system_server ni usar main directo como lanzamiento APK |
 | R3 · salida gráfica y entrada | R1/R2; contrastar primero SF original, WM/Surface/BufferQueue/HWC/RenderEngine y puente Wayland hacia Smithay | Buffers/fences/ownership, aceleración/composición/ventanas/escalado/foco; teclado/ratón/táctil/mando; multimedia con superficie y sync AV | [Contrato fuente/ELF estudiado](../reports/android16-surfaceflinger-contract/validation.json): Composer AIDL o HIDL real y hotplug inicial necesarios;48 dependencias directas con candidatos, cierre GPU/allocator/mapper pendiente. [Reutilización estudiada](../reports/android16-composer-reuse/validation.json): HWC2On1 sigue en A16; HAL Wayland con dependencias propias/sync, HWC3 DRM con KMS master. [HWC2On1 original compila/enlaza y carga Bionic](../reports/android16-hwc2on1-build/validation.json); [conjunto vendor original carga en sphal](../reports/android16-vendor-libutils/validation.json):69 fuentes, cinco bibliotecas y libc++ prebuilt AOSP, seis paths vendor mapeados. Perfil experimental sin equivalencia Soong/ABI completa; [hidl-gen host66 unidades,9 hashes y39 archivos generados](../reports/android16-hidl-generator/validation.json), [14 objetos Bionic y servicio/HwcLoader compilan](../reports/android16-hidl-native-bindings/validation.json), fallo inicial de recursos por libui conservado. [Entradas originales libui y codecs](../reports/android16-libui-source-closure/validation.json): AIDL fuente SDK36,31 IDL/124 archivos,32 objetos incluido ComposerResources; dos codecs enlazan y regresión AParcel local FD/metadata termina0 mediante REA MCP. No transferencia Binder. [23 unidades originales libui/libui-types compilan](../reports/android16-libui-implementation/findings.json) tras generar allocator/mapper y suministrar exports originales; [Enlace estricto libui y ejecución nativa de geometría/sentinel](../reports/android16-libui-link/findings.json) pasan tras aplicar -fno-rtti original a23 unidades y dos dependencias estáticas. Sin equivalencia Soong completa ni allocator/mapper/buffers/fence real/Composer aceptados. Agrupación original libhidlbase/hwbinder identificada; enlace/HIDL funcional/dispositivo/sync pendientes. Adaptar candidatos antes de Composer nuevo. [Servicio Composer2.1, recursos y framebuffer enlazan](../reports/android16-composer-link/findings.json); arranque MCP queda esperando hwservicemanager.ready hasta límite/señal9, sin carga HAL acreditada. Prioridad gestores reales/R1-MAC, no readiness ficticia. Hipótesis SF→Wayland no ejecutada; R1-MAC sigue requerido. No sustituir por widgets propios |
 | R4 · vertical Markor | R0–R3 e instalación/firmas/datos; APK intacta y recorrido de nota ya definido | Instalar→lanzar→UI original→entrada/editar→guardar/proveedor elegido→servicios→cerrar→reabrir; bytes/eventos/frames y fallos trazables | Nueve etapas no probadas sobre A16 |
@@ -718,3 +689,49 @@ mediación libselinux completa y denegaciones, conservando aserciones. No otorga
 dyntransition global ni convertir dominios en permisivos para pasar pruebas.
 Validar también despliegue/recuperación antes de carga. Doce cálculos y doce
 consultas no prueban exec/enforcement/servicios/APK ni equivalencia general.
+
+## Evolución previa de la priorización (histórico)
+
+La [revisión de zygote original](../reports/android16-zygote-security-contract/findings.json)
+obliga a evaluar NNP y capacidades como contrato de cohorte: seccomp se instala
+antes de perder privilegios; la fuente advierte de transiciones SELinux al usar
+NNP como alternativa. Las ramas permisivas examinadas omiten filtros. No basta
+un arranque permisivo exitoso ni añadir process2 a cada fallo. Mantener controles
+actuales hasta justificar/probar una alternativa completa, sin cambiar seguridad
+del anfitrión. Próximo inventario: seapp/seccomp, RC/capabilities de gestores,
+stdio/dispositivos, FD y cgroups; luego S0–S2 y pruebas autorizadas.
+
+R1/R2: [framing del supervisor corregido](../reports/android16-supervisor-framing/findings.json),
+19 regresiones Linux pasan; mensajes parciales y fallo terminal preservados.
+Pendiente monitor de fallos posteriores al arranque/salida con pidfd y canal,
+incluso si un descendiente conserva FD. No acredita servicio o APK. Exigir
+contexto seapp real y filtros efectivos: retorno0 en permisivo no es aislamiento.
+
+### Preparación de seguridad anterior (histórico; no estado vigente)
+
+Seguir el [plan canónico de seguridad y recuperación](ARQUITECTURA.md#plan-de-seguridad-y-recuperación-del-anfitrión):
+S0 recuperación → S1 contrato completo offline → S2 preflight anfitrión → S3 carga
+permisiva sólo con autorización explícita → S4 enforcing sólo tras pruebas y nueva
+autorización → S5 gestores y recorrido Markor. En aquella revisión S0–S2 aún abiertos; no había solicitud
+de carga/enforcing preparada. El arranque anterior no los autoriza.
+El [prototipo de entrada S1](../reports/android16-policy-launcher-entry/findings.json)
+compila offline con aserciones activas: rol exclusivo y contexto exec Android
+conservan transiciones de gestores y denegaciones seleccionadas; la variante
+automática conserva identidad Linux y no valida el contexto del servicio siguiente.
+No hay carga/exec real ni bootstrap de host, ni sustitución del perfil base.
+
+La [auditoría del actor](../reports/android16-launcher-permission-audit/findings.json)
+distingue54 potenciales reglas de salida/633 de entrada de27 decisiones concretas.
+S1 sigue abierto. El [bootstrap offline](../reports/android16-launcher-bootstrap/findings.json)
+modela productor init_t, entrada tipada/rol y supervisor Rust padre: 51 consultas,
+cuatro compilaciones con aserciones. No hay productor real probado. Seis permisos
+NNP/nosuid hacia gestores siguen denegados. Revisar el contrato completo
+init/servicios/zygote y la colocación de credenciales/NNP; no desactivarlo ni
+sumar excepciones aisladas. Procedencia/instalación del ejecutable, FD/stdio/pidfd,
+etiquetas/dispositivos/cgroups y recuperación siguen pendientes de S0–S2.
+
+La [inspección nativa actual](../reports/android16-postboot-mac-readiness/findings.json)
+confirma getcon kernel, getfilecon ENODATA sin demostrar etiqueta efectiva y lectura status real sólo
+tras configurar montaje RO explícito. Systemd -SELINUX exige integración de host.
+Mantener controles originales/RC/cohortes; avance independiente de lectura/offline
+permitido. Las nueve etapas Markor y todas las aplicaciones reales siguen abiertas.

@@ -1,0 +1,38 @@
+{
+  "argv": [
+    "prlimit",
+    "--as=2147483648",
+    "--cpu=180",
+    "--",
+    "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/source/secilc/secilc",
+    "-m",
+    "-M",
+    "true",
+    "-G",
+    "-c",
+    "30",
+    "-o",
+    "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-4/policy.bin",
+    "-f",
+    "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-4/file_contexts",
+    "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-4/combined.cil",
+    "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-4/adapter-0-linux-proc.cil",
+    "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-4/adapter-1-linux-servicemanager-selinux.cil",
+    "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-4/adapter-2-launcher-explicit.cil",
+    "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-4/adapter-3-launcher-bootstrap.cil",
+    "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-4/adapter-4-exec-context-helper.cil",
+    "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-4/adapter-5-mc1-cohort.cil",
+    "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-4/adapter-6-mc1-inherited-io.cil"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 139.70055127700107,
+  "cpu_user_seconds": 96.862477,
+  "cpu_system_seconds": 42.120704,
+  "max_rss_kib": 449780,
+  "neverallow_disabled": false,
+  "limits": {
+    "cpu_seconds_requested": 180,
+    "wall_seconds": 240,
+    "address_space_bytes": 2147483648
+  }
+}

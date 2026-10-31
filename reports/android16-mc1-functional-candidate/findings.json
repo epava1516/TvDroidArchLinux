@@ -1,5 +1,5 @@
 {
-  "status": "functional_prefix_observed_permissive_only",
+  "status": "mc1_original_functional_prefix_verified_bounded_enforcing_trial",
   "policy_sha256": "57931f747437842ab8a5e5bbf4f3f1315c830c9c5f0614370925b12abfd9fca4",
   "payload_sha256": "07a4bfb4779a5c559018240f44982e99978e4757ce3dd5b0a2ce177b18f3f827",
   "execution_evidence": "execution-6-mcp.json",
@@ -25,5 +25,46 @@
     "Original libprocessgroup uses cgroups here: first missing hierarchy then nsdelegate outside namespace root rejected; dedicated subtree within current service succeeded",
     "No fake readiness, second-stage Android boot, cloned service manager or local Binder protocol implementation"
   ],
-  "next": "Audit actual access failures and prepare bounded recoverable enforcing integration; then original framework/package/application path for Markor."
+  "next": "Admit original hwservicemanager for the selected Composer/SurfaceFlinger path; integrate real display (SystemServer expects it before PMS), and original PMS/AMS/zygote closure toward intact Markor. No full Android boot or fake display/phase.",
+  "current_status": "mc1_original_functional_prefix_verified_bounded_enforcing_trial",
+  "current_evidence": "execution-23-enforcing-positive-negative-mcp.json",
+  "current_policy_sha256": "40b4018343f4127bcdfbe06036c8614aa5a31f9bcd518a09fadd4cbd1a973057",
+  "current_payload_sha256": "5bbf7ed969206b233688ce9895029f8dd96586c1c8b207325da5fb33fac8e86d",
+  "enforcing_observed": [
+    "Kernel enforce1 at launcher and Bionic init guard",
+    "Original PropertyInit, live property_socket labels, real readiness",
+    "Original servicemanager registers; original shell/service list exit0",
+    "External original getpidcon observes smgr actual SID, UID/GID1000/caps0/NNP1 after transient pre-exec EACCES",
+    "Original client real output manager android.os.IServiceManager read externally",
+    "Original Stop/reap and coordinator0; client stage and close both observe enforce1",
+    "Watchdog outside runtime PID namespace returns enforce0, actual status0"
+  ],
+  "kernel_cgroup_decision": {
+    "source": "https://raw.githubusercontent.com/gregkh/linux/v6.18.59/kernel/cgroup/cgroup.c",
+    "sha256": "a7854ee6ff51deb721a69150680645851d99c5daacdb8c779ca9529d5ed0849b",
+    "lines": "5322-5366",
+    "observed": "cgroup_may_write checks common ancestor with inode_permission(MAY_WRITE); nsdelegate also confines source and destination",
+    "integration": "Trusted Linux factory places its whole cohort into new dedicated subtree before transition; unshare CLONE_NEWCGROUP afterwards. Original init then migrates only within subtree. No write grant on Linux.cgroup_t files added.",
+    "superseded_hypothesis": "Explicit parent xattr alone in execution20 did not resolve denial; preserved negative."
+  },
+  "harness_limitations": [
+    "Execution10..17 outer0 represented recovered window only; nested candidate failures explicitly retained. Current wrapper propagates actual candidate exit.",
+    "Execution18 timed out after complete functional output; separate host ps and image loop check found no remaining runtime process or associated loop; timeout cause not proved.",
+    "No durable process handles from before boot reused; child PIDs refer to individual finite captures.",
+    "Enforcing return to0 before end is now rejected by worker mode guards; no post-watchdog success accepted."
+  ],
+  "historical_initial_status": "functional_prefix_observed_permissive_only",
+  "historical_last_failed_assertion": "Final external lstat of removed property socket denied directory traversal; overall execution22 remains exit1. Candidate9 adds only Linux factory search of socket_device. No general app isolation or long-running host enforcing claim.",
+  "overall_current_exit": 0,
+  "current_negative": "Direct helper bypass kernel-denied execute/EACCES in enforcing; actual AVC in negative-direct-helper-avc.log. Direct helper own refusal is not counted.",
+  "current_close": "Original Stop/reap, worker0, socket actual lstat ENOENT and host image/process checks passed. Kernel mode1 checked at original client completion and close; restored0 afterwards.",
+  "current_kernel_cgroup_integration": "Whole cohort placed into dedicated cgroup by trusted Linux factory, then CLONE_NEWCGROUP; common ancestor now inside original-labelled subtree. Explicit parent xattr experiment20 did not fix migration and was removed.",
+  "remaining": [
+    "R1-MAC stays open: APK seapp/seccomp, app isolation, complete negative authorization set, resource profiles and sustained host enforcing not validated",
+    "Original memory/blkio/cpuset profiles partly unavailable; warnings retained, no resource-control success asserted",
+    "Backing images remain in development cache; root-owned admission store/writable-alias integrity and production installer/update not yet validated",
+    "Temporary global enforcing impacts host access: audit lost counter35->107, no absence-of-AVC claims; audit restored disabled/inactive",
+    "REA runtime process snapshots incomplete; execution18 teardown timeout unresolved, subsequent host checks no runtime residuals",
+    "Markor v2 signature verified; no PackageManager install/activity/graphics/input/note/persistence/reopen. All application journeys remain untested"
+  ]
 }

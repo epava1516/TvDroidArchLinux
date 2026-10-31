@@ -4,3 +4,6 @@
 ; Parent directory traversal for the genuine SELinux filesystem in Android root.
 (allow linux.init_t sysfs (dir (getattr search)))
 (allow archtv_launcher sysfs (dir (getattr search)))
+
+; Only the dedicated development subtree, not the host cgroup hierarchy.
+(genfscon cgroup2 /system.slice/codex-remote.service/archtv-mc1 (u object_r cgroup_v2 ((s0) (s0))))

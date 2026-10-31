@@ -1,13 +1,23 @@
 {
-  "utc": "2026-10-31T16:04:00.205476+00:00",
-  "base_head": "cd71ae58bce3838c88ea282aa1b3a744708fd80c",
+  "utc": "2026-10-31T17:05:23.035502+00:00",
+  "base_head": "5b54bc5fc8a343ba8c87a4e44d801f8914f9a478",
   "branch": "main",
-  "origin_relation_at_start": "0 ahead / 0 behind cached origin/main",
-  "authorization": "Current user expressly authorizes VM packages/policy loads/labels/config/enforcing/reboot; preserve checkpoint before disconnect. Supersedes historical approval waits.",
-  "recovery": "/home/tv/recuperacion-archtv/20261031T155826Z-mc1-policy-load/RETOMAR.txt",
-  "host": "LTS6.18.59; composed policy now LOADED, permissive0; Linux initial user SID observed init_t. No enforcing or reboot performed. No persistent policy loader installed.",
-  "processes": "Builds completed; sessions28212 load terminal0; REA six captures terminal, final0; no runtime matches in host ps afterwards. Historical handles not reused. Empty experiment cgroups removed separately after checking cgroup.procs.",
-  "existing_pending": "Preserved Android13 files (OriginalBootstrapProbe.java, verify_isolated_bootstrap.py, original-resources-host.cpp, build_original_resources.py) and unknown H9 qemu/serial logs; excluded from milestone.",
-  "evidence": "findings.json; policy-load*.log; execution-1..6-mcp.json; payload.json; worker-build-current.json; helper-build.json; rust-build.log; kernel AVC tail. Sanitized MCP projections, not complete authenticated bundles.",
-  "next": "Audit actual access failures and prepare bounded recoverable enforcing integration; then original framework/package/application path for Markor."
+  "cached_origin_relation": "0\t0",
+  "objective": "Complete unchanged APK on Linux/Rust/Smithay, no Waydroid/full Android. Broad compatibility; ARM/GMS/DRM independent.",
+  "authorization": "Current explicit authorization covers necessary packages/policies/labels/config/enforcing/reboots; no historical permission wait. Checkpoint before disconnect operations.",
+  "recovery": "/home/tv/recuperacion-archtv/20261031T165614Z-mc1-final-window/RETOMAR.txt",
+  "host": "6.18.59-1-lts; policy9 loaded (counter8); permissive0 restored; no SELinux host mount or runtime image loops; audit disabled/inactive restored. No reboot or persistent policy loader installed.",
+  "processes": "All compile and REA23 capture handles terminal. No runtime process matches in root ps; all associated runtime image loops empty; 54 empty experiment cgroup directories removed after checking no processes. Keep empty archtv-mc1 base for next bounded experiment; do not treat prior numeric PID as active.",
+  "milestones": "20c0673 original functional prefix permissive; 5b54bc5 Markor original cryptographic verification, both pushed. Current security/handoff integration milestone staged separately after checks.",
+  "pending_preserved": "Six old pending files retained byte-for-byte: Android13 own four and unknown H9 logs two. Not staged with current work. Graph built from isolated staged snapshot.",
+  "tests_and_evidence": "findings.json, execution23 full assertions; negative-direct-helper-avc.log; live-host-security.json; policy-readback-comparison.json; post-run-host-checks.json; policy-history.json. REA static/actual execution distinguished; audit loss and timeout18 explicit. Markor signature report separate.",
+  "remaining": [
+    "R1-MAC stays open: APK seapp/seccomp, app isolation, complete negative authorization set, resource profiles and sustained host enforcing not validated",
+    "Original memory/blkio/cpuset profiles partly unavailable; warnings retained, no resource-control success asserted",
+    "Backing images remain in development cache; root-owned admission store/writable-alias integrity and production installer/update not yet validated",
+    "Temporary global enforcing impacts host access: audit lost counter35->107, no absence-of-AVC claims; audit restored disabled/inactive",
+    "REA runtime process snapshots incomplete; execution18 teardown timeout unresolved, subsequent host checks no runtime residuals",
+    "Markor v2 signature verified; no PackageManager install/activity/graphics/input/note/persistence/reopen. All application journeys remain untested"
+  ],
+  "next": "Admit original hwservicemanager for the selected Composer/SurfaceFlinger path; integrate real display (SystemServer expects it before PMS), and original PMS/AMS/zygote closure toward intact Markor. No full Android boot or fake display/phase."
 }

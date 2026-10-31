@@ -1,0 +1,1 @@
+type=AVC msg=audit(1793465846.164:10165): avc:  denied  { execute } for  pid=26606 comm="python" name="linux-exec-context" dev="loop37" ino=13 scontext=linux.system_u:linux.system_r:linux.init_t:s0 tcontext=linux.system_u:linux.object_r:archtv_exec_context_exec:s0 tclass=file permissive=0

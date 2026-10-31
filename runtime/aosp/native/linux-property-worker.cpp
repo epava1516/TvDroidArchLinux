@@ -4,6 +4,7 @@
 #include "linux-shutdown-sink.h"
 #include "linux-mc1-cohort.h"
 #include "property_service.h"
+#include "selabel.h"
 #include "proto_utils.h"
 #include "system/core/init/property_service.pb.h"
 #include <android-base/logging.h>
@@ -59,9 +60,10 @@ int main(int argc,char** argv) {
     if(!epoll.Open().ok())return 70;
     archtv::aosp::LinuxChildReaper children(epoll);
     if(!children.Attach().ok())return 70; // Before SELinux/AVC/property calls that may start threads.
+    const int launch_enforcing=security_getenforce();
     if(!diagnostic || mac_integration) {
         char* context=nullptr;
-        int enforcing=security_getenforce();
+        int enforcing=launch_enforcing;
         bool valid=is_selinux_enabled()==1 && enforcing>=0 &&
             (enforcing==1 || mac_integration) && getcon(&context)==0 &&
             context && std::strcmp(context,"u:r:init:s0")==0;
@@ -76,11 +78,18 @@ int main(int argc,char** argv) {
     if(lstat("/data/property",&property_dir)!=0 || !S_ISDIR(property_dir.st_mode) || property_dir.st_uid!=getuid() || (property_dir.st_mode&0077))return 77;
     archtv::aosp::LinuxShutdownSink shutdown;
     if(!shutdown.Install().ok())return 70;
+    // Same original initialization used before services in SecondStageMain,
+    // without dispatching Android boot. util::CreateSocket must have its handle.
+    SelabelInitialize();
+    std::string socket_context;
+    if((!diagnostic || mac_integration) &&
+       (!SelabelLookupFileContext("/dev/socket/property_service",S_IFSOCK,&socket_context) ||
+        socket_context!="u:object_r:property_socket:s0"))return 78;
     PropertyInit(); // SIGCHLD is attached before any original AVC/property threads.
     auto setup=StartLinuxPropertyActions(&epoll);
     if(!setup.ok())return 70;
     bool stop=false,peer_gone=false,invalid=false;std::string input;
-    archtv::aosp::LinuxMc1Cohort cohort(stop);
+    archtv::aosp::LinuxMc1Cohort cohort(stop,launch_enforcing);
     auto tick=[&]{return PollLinuxPropertyActions(&epoll,std::chrono::milliseconds(50)).ok() && children.healthy() && !shutdown.failed();};
     auto registered=epoll.RegisterHandler(control.get(),[&]{
         char bytes[64];
@@ -108,6 +117,16 @@ int main(int argc,char** argv) {
         if(__system_property_get("ro.persistent_properties.ready",phase)>0 && std::strcmp(phase,"true")==0)break;
     }
     healthy=healthy && !stop && std::strcmp(phase,"true")==0;
+    if(healthy && mc1) {
+        for(const char* path:{"/dev/socket/property_service","/dev/socket/property_service_for_system"}) {
+            char* label=nullptr;
+            bool labelled=getfilecon(path,&label)>=0 && label &&
+                std::strcmp(label,"u:object_r:property_socket:s0")==0;
+            std::fprintf(stderr,"MC1_PROPERTY_SOCKET_LABEL path=%s actual=%s\n",path,label?label:"unknown");
+            if(label)freecon(label);
+            healthy=healthy && labelled;
+        }
+    }
     if(healthy && mc1) {
         auto admitted=cohort.Start(tick);
         if(!admitted.ok())std::fprintf(stderr,"MC1_FAILED %s\n",admitted.error().message().c_str());

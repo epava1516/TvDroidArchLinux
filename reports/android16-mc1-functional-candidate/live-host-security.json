@@ -1,0 +1,15 @@
+{
+  "kernel": "6.18.59-1-lts",
+  "status": {
+    "state": "observed",
+    "version": 1,
+    "sequence": 60,
+    "enforcing": 0,
+    "policyload": 8,
+    "deny_unknown": 1
+  },
+  "current_context": "linux.system_u:linux.system_r:linux.init_t:s0",
+  "policy_input_sha256": "40b4018343f4127bcdfbe06036c8614aa5a31f9bcd518a09fadd4cbd1a973057",
+  "kernel_policy_readback_sha256": "e0db0b778d2810860fda3c3ce49411dc2006a00a193ba7430864ae54e0add90b",
+  "readback_matches_input": false
+}

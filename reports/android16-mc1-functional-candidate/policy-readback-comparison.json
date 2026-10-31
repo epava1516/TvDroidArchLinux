@@ -1,0 +1,37 @@
+{
+  "compiler_exports": [
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/checkpolicy-host-2/source/checkpolicy",
+        "-M",
+        "-b",
+        "-C",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/kernel-policy-readback-1/input.cil",
+        "/home/tv/repositorio-principal/dist/aosp16/mc1-functional-policy-9/policy.bin"
+      ],
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/checkpolicy-host-2/source/checkpolicy",
+        "-M",
+        "-b",
+        "-C",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/kernel-policy-readback-1/kernel.cil",
+        "/home/tv/repositorio-principal/dist/aosp16/kernel-policy-readback-1/policy.bin"
+      ],
+      "exit": 0,
+      "stderr": ""
+    }
+  ],
+  "kernel_read_policy_reference": "linux6.18.59 services.c3896-3909 calls policydb_write; readback is serialized database, not original byte buffer",
+  "sorted_CIL_export_equal": true,
+  "input_lines": 208631,
+  "kernel_lines": 208631,
+  "input_canonical_sha256": "f0c29dd9863c84db14e84d368560b163a36819980eee1ed7f30d319e96f2f916",
+  "kernel_canonical_sha256": "f0c29dd9863c84db14e84d368560b163a36819980eee1ed7f30d319e96f2f916",
+  "scope": "Original checkpolicy binary->CIL exports; sorted complete lines compare representation without outer statement order. Not a proof of broad APK/security compatibility."
+}

@@ -1,0 +1,31 @@
+{
+  "runtime_processes": {
+    "matches": []
+  },
+  "payload_loops": {
+    "exit": 0,
+    "stdout": "{\n   \"loopdevices\": [\n\n   ]\n}\n",
+    "stderr": ""
+  },
+  "GSI_loops": {
+    "exit": 0,
+    "stdout": "{\n   \"loopdevices\": [\n\n   ]\n}\n",
+    "stderr": ""
+  },
+  "host_selinux_mounts": {
+    "exit": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "all_runtime_images_associated_loop_check": {
+    "matches": [],
+    "scope": "all loop back-file records, only original APEX inputs/GSI and MC1 candidate images selected"
+  },
+  "audit_restored": {
+    "service": "inactive, stopped using auditctl --signal stop (systemd unit refuses manual stop)",
+    "enabled": 0,
+    "lost_before": 35,
+    "lost_after": 107,
+    "limitation": "Audit coverage incomplete; lost counter increased during trials. Positive and negative assertions are tied to runtime observations, not absence of AVC."
+  }
+}

@@ -25,7 +25,7 @@ namespace archtv::aosp {
 class LinuxMc1Cohort {
  public:
     using Tick = std::function<bool()>;
-    explicit LinuxMc1Cohort(const bool& stop) : stop_(stop) {}
+    LinuxMc1Cohort(const bool& stop,int expected_mode) : stop_(stop),expected_mode_(expected_mode) {}
     android::base::Result<void> Start(const Tick& tick) {
         using namespace android::init;
         auto& services=ServiceList::GetInstance();
@@ -56,20 +56,9 @@ class LinuxMc1Cohort {
             return __system_property_get("servicemanager.ready",value)>0 && std::string(value)=="true";
         });
         if(!waiting.ok()) return waiting;
-        char* manager_context=nullptr;
-        if(getpidcon(manager_->pid(),&manager_context)<0)
-            return android::base::Error()<<"MC1 cannot observe manager context";
-        bool manager_context_ok=manager_context && std::string(manager_context)=="u:r:servicemanager:s0";
-        std::fprintf(stderr,"MC1_MANAGER_CONTEXT pid=%d context=%s\n",manager_->pid(),manager_context?manager_context:"unknown");
-        freecon(manager_context);
-        if(!manager_context_ok)return android::base::Error()<<"MC1 wrong actual manager context";
-        std::string status;
-        if(android::base::ReadFileToString("/proc/"+std::to_string(manager_->pid())+"/status",&status)) {
-            for(const auto& prefix: {"Uid:","Gid:","Groups:","CapEff:","CapPrm:","CapBnd:","NoNewPrivs:"}) {
-                auto start=status.find(prefix);
-                if(start!=std::string::npos)std::fprintf(stderr,"MC1_MANAGER_STATUS %s\n",status.substr(start,status.find('\n',start)-start).c_str());
-            }
-        }
+        // External Linux diagnostic observes identity through original getpidcon.
+        // Android init's original neverallow forbids CAP_SYS_PTRACE; do not
+        // weaken it merely to inspect a different-UID child's /proc attrs.
         // Original shell/CLI, explicit original shell context and UID. The shell
         // writes its real output to fresh private shell_data_file storage.
         auto client=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","shell","shell","--",
@@ -94,12 +83,9 @@ class LinuxMc1Cohort {
         bool label_ok=context && std::string(context)=="u:object_r:shell_data_file:s0";
         freecon(context);
         if(!label_ok)return android::base::Error()<<"MC1 unexpected real client output label";
-        std::string text;
-        if(!android::base::ReadFileToString(path,&text) || text.find("manager:")==std::string::npos ||
-            text.find("android.os.IServiceManager")==std::string::npos)
-            return android::base::Error()<<"MC1 client did not observe original manager registration";
-        std::fprintf(stderr,"MC1_ORIGINAL_CLIENT_OUTPUT_BEGIN\n%sMC1_ORIGINAL_CLIENT_OUTPUT_END\n",text.c_str());
-        std::fprintf(stderr,"MC1_FUNCTIONAL_PREFIX_OBSERVED NOT_AUTHORIZATION_OR_APK_READINESS\n");
+        int observed_mode=security_getenforce();
+        if(observed_mode!=expected_mode_)return android::base::Error()<<"MC1 security mode changed during startup";
+        std::fprintf(stderr,"MC1_ORIGINAL_CLIENT_EXIT0_REQUIRES_EXTERNAL_VERIFICATION enforcing=%d\n",observed_mode);
         return {};
     }
     bool healthy() const { return !manager_failed_ && (!manager_ || manager_->IsRunning()); }
@@ -120,6 +106,9 @@ class LinuxMc1Cohort {
         manager_=nullptr;
         services.RemoveServiceIf([](const auto& service){return !service->IsRunning();});
         active_=false;
+        int observed_mode=security_getenforce();
+        std::fprintf(stderr,"MC1_CLOSE_OBSERVED enforcing=%d expected=%d\n",observed_mode,expected_mode_);
+        if(observed_mode!=expected_mode_)return android::base::Error()<<"MC1 security mode changed during close";
         return {};
     }
  private:
@@ -133,6 +122,7 @@ class LinuxMc1Cohort {
         }
     }
     const bool& stop_;
+    const int expected_mode_;
     android::init::Service* manager_=nullptr;
     bool active_=false,closing_=false,manager_failed_=false,client_done_=false,client_ok_=false;
 };

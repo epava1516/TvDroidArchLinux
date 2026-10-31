@@ -366,3 +366,24 @@ verifica notas/identidad ELF, no observa esa ejecución. No se arrancó Android.
 ## Markor · verificador apksig original
 
 [Receta y alcance](../reports/android16-markor-original-signature/README.md), [compilación original](../reports/android16-markor-original-signature/core-build.json) y [positivo/negativo](../reports/android16-markor-original-signature/verification.json). APK original inalterado, firma v2 API36 válida y copia manipulada rechazada. No confianza externa del productor, instalación ni ejecución de APK.
+
+## MC1 original · enforcing positivo/negativo y recuperación
+
+[Ejecución23](../reports/android16-mc1-functional-candidate/execution-23-enforcing-positive-negative-mcp.json)
+observa consulta del servicio original, SID/UID/caps/NNP reales y cierre con kernel1,
+negativo directo-helper EACCES y ausencia del socket; candidato y controlador0.
+[AVC negativo](../reports/android16-mc1-functional-candidate/negative-direct-helper-avc.log),
+[estado anfitrión](../reports/android16-mc1-functional-candidate/live-host-security.json),
+[limpieza](../reports/android16-mc1-functional-candidate/post-run-host-checks.json),
+[artefactos](../reports/android16-mc1-functional-candidate/policy-history.json) y
+[readback normalizado](../reports/android16-mc1-functional-candidate/policy-readback-comparison.json).
+Política9 SHA256 `40b4018343f4127bcdfbe06036c8614aa5a31f9bcd518a09fadd4cbd1a973057`,
+payload5 `5bbf7ed969206b233688ce9895029f8dd96586c1c8b207325da5fb33fac8e86d`.
+Fuentes de este hito fijadas por su commit; binarios cacheados y hashes conservados.
+Capturas previas fallidas y timeout18 no borrados. Auditoría incompleta (lost35→107),
+REA sin observación completa de procesos; comprobación root posterior sin procesos
+ni loops de imágenes del runtime. Ensayo4s, no host enforcing sostenido/R1-MAC/APK.
+
+[SystemServer original y display antes de PMS](../reports/android16-markor-original-bootstrap/decision.json)
+es inspección de fuente fijada; cambia orden MC2/MC3, no demuestra ejecución ni
+imposibilidad general de otro cierre headless. No se inicia SystemServer completo.

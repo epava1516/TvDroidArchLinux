@@ -1,5 +1,12 @@
 # Arquitectura vigente · A16-QPR2-1
 
+Estado de integración vigente: [MC1 original positivo/negativo en enforcing](../reports/android16-mc1-functional-candidate/findings.json),
+con kernel1 durante consulta y cierre y retorno automático0. Es un ensayo acotado,
+no instalación del runtime ni cierre R1-MAC. Las secciones de resultados anteriores
+conservan su alcance histórico; el [checkpoint](../reports/android16-mc1-functional-candidate/checkpoint.json)
+fija el siguiente paso. La autorización actual permite operaciones necesarias en
+la VM; los bloqueos de autorización previos han quedado superados.
+
 Esta revisión aplica el [contrato del usuario](CONTRATO-APK.md) recibido el
 2026-10-30 y sustituye BASE-AOSP-1. Objetivo: plataforma general para APK completas
 sin modificar, incluidas Android TV, en nuestro Linux/Rust/Smithay; sin Waydroid,
@@ -2078,6 +2085,50 @@ dyntransition global ni convertir dominios en permisivos para pasar pruebas.
 Validar también despliegue/recuperación antes de carga. Doce cálculos y doce
 consultas no prueban exec/enforcement/servicios/APK ni equivalencia general.
 
-## MC1 ejecutado con política cargada · 2026-10-31
+## Primer MC1 con política cargada (histórico) · 2026-10-31
 
 La cohorte original de propiedades/init Service/servicemanager/cliente ya ejecuta sobre imágenes GSI+APEX RO, puente por exec entre Linux libselinux/glibc y Android libselinux/Bionic. No mezcla de DSO. Cgroup v2 real en subárbol de la sesión: fuera de la raíz del namespace nsdelegate falla; dentro funciona. Perfiles de recursos incompletos. Permisivo no acredita autorización; R1-MAC abierto. Autorización actual cubre pruebas, no prueba su corrección.
+
+## Frontera de diagnóstico y cierre original hacia Markor
+
+`init` original prohíbe CAP_SYS_PTRACE: se conserva. getpidcon/estado y lectura
+del resultado del cliente se realizan desde Linux/glibc externo, no ampliando
+privilegios Android. SELabelInitialize original fija property_socket; payload
+Linux lleva tipos cualificados linux.ld_so_t/linux.lib_t. Tmpfs nuevo privado
+con fscontext Android conserva asociaciones originales sin cambiar tmpfs host.
+Cgroup genfs se limita al subárbol dedicado de la sesión; NNP1 se conserva con
+las dos transiciones originales efectivamente admitidas. Denegación noatsecure
+no se transforma en permiso: mantener secureexec. Supervisor sin TTY controladora.
+
+[Orden original SystemServer](../reports/android16-markor-original-bootstrap/decision.json):
+Installer→ATM/AMS→DisplayManager/espera de display→PMS. Su main arranca también
+servicios core/other/APEX, por lo que no es un lanzador mínimo autorizado. La ruta
+MC2/MC3 debe integrar display real o demostrar otro cierre headless original;
+no falsear display/boot phase ni arrancar Android completo bajo Smithay.
+
+## Resultado de integración MC1 · alcance y fronteras
+
+El coordinador usa PropertyInit/StartPropertyService, SelabelInitialize, parser RC,
+Service::Start/ExecStart/Stop y reaper originales. Sin SecondStageMain/boot de Android,
+readiness escrita a mano ni reemplazos de servicios. Linux/glibc y Android/Bionic
+permanecen en ejecutables separados. Se admite sólo la cohorte de este experimento.
+
+La raíz RAM usa tmpfs nuevo con fscontext Android; las imágenes originales GSI y
+36 APEX siguen RO con xattrs. Cgroup2 mantiene identidad Linux de filesystem y genfs
+Android sólo en subárbol propio. La fábrica Linux coloca primero toda la cohorte
+y después crea namespace cgroup: el kernel exige acceso al ancestro común para
+migración. No se concede init→Linux.cgroup_t:file write. Asociar cgroup_v2 a ese
+filesystem concreto no concede acceso a grupos fuera del namespace.
+
+Original init conserva neverallow CAP_SYS_PTRACE y no lee contenidos shell. El
+observador Linux externo consulta SID real tras exec (EACCES transitorio previo
+no es SID final), UID/caps/NNP y salida original. Negativo real de ejecución directa
+del helper y positivo a través de Rust; modo de kernel debe mantenerse hasta cerrar.
+
+No se prueba aislamiento de aplicaciones, admisión de backing images sin alias
+escribibles, actualización, perfiles memory/cpuset/IO completos ni host enforcing
+sostenido. No exposición de APK no confiable en esta cohorte. La pérdida de eventos
+audit (35→107) limita cobertura; el readback binario se reserializa en kernel y sus
+exports CIL completos normalizados coinciden con el candidato cargado, según
+[comparación](../reports/android16-mc1-functional-candidate/policy-readback-comparison.json).
+Esto contrasta política, no acredita compatibilidad APK ni seguridad global.

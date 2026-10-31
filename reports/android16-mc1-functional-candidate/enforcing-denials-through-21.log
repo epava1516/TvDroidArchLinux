@@ -1,0 +1,3 @@
+type=AVC msg=audit(1793465338.738:9365): avc:  denied  { noatsecure } for  pid=25823 comm="linux-exec-cont" scontext=linux.system_u:archtv_launcher_r:archtv_launcher:s0 tcontext=u:r:init:s0 tclass=process permissive=0
+type=AVC msg=audit(1793465338.968:9366): avc:  denied  { search } for  pid=25686 comm=5468726561642D312028636F6C6C65 name="101" dev="proc" ino=150788 scontext=linux.system_u:linux.system_r:linux.init_t:s0 tcontext=u:r:init:s0 tclass=dir permissive=0
+type=AVC msg=audit(1793465338.968:9367): avc:  denied  { search } for  pid=25686 comm=5468726561642D312028636F6C6C65 name="101" dev="proc" ino=150788 scontext=linux.system_u:linux.system_r:linux.init_t:s0 tcontext=u:r:init:s0 tclass=dir permissive=0

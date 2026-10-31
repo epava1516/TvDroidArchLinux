@@ -1,0 +1,27 @@
+{
+  "aosp_revision": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+  "source": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/java/com/android/server/SystemServer.java",
+  "source_sha256": "b36c352ec50695a2284cd1b6ce2f980d77b6305eed7a3243ca7f3077131df426",
+  "scope": "Source inspection, not runtime execution or service availability.",
+  "observed_source_edges": [
+    {
+      "lines": "1027-1034",
+      "edge": "run invokes bootstrap + core + other + APEX services; not a minimal application launcher"
+    },
+    {
+      "lines": "1229,1276-1281",
+      "edge": "Installer before ATM/AMS; installer assigned to AMS"
+    },
+    {
+      "lines": "1340-1368",
+      "edge": "DisplayManager PHASE_WAIT_FOR_DEFAULT_DISPLAY before PackageManagerService.main"
+    }
+  ],
+  "decision": "Do not execute SystemServer.main as a hidden complete Android boot or assume PMS can be independently installed without proving its closure. Interleave MC2 bootstrap and MC3 real display before PMS/Markor installation, or demonstrate a supported original headless PMS path. No fake default display or manually released boot phase.",
+  "next_vertical": "After MC1 MAC gate, admit original hwservicemanager for the already selected original Composer/SF path, then original display bridge to Smithay; map original PMS/AMS bootstrap closure alongside it.",
+  "limitations": [
+    "This source order does not prove an alternative headless entry impossible.",
+    "Markor signature verified separately, no package install or activity launch.",
+    "No complete SystemServer execution authorized by architecture; individual original subsystems remain permitted."
+  ]
+}

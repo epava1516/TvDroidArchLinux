@@ -17,26 +17,34 @@ Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCC
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
 
-## MC1 · integración funcional en permisivo
+## MC1 · recorrido original probado en enforcing acotado
 
 [Checkpoint](../reports/android16-mc1-functional-candidate/checkpoint.json),
 [resultados](../reports/android16-mc1-functional-candidate/findings.json) y
-[ejecución REA MCP](../reports/android16-mc1-functional-candidate/execution-6-mcp.json).
-Política compuesta cargada en esta VM: propiedades originales → gestor original
-con contexto `u:r:servicemanager:s0`, UID1000/caps0/NNP1 → cliente original lista
-`manager: [android.os.IServiceManager]` y sale0 → cierre y recolección originales.
-No readiness manual ni arranque de Android completo. **Permisivo; R1-MAC abierto**.
+[REA positivo/negativo](../reports/android16-mc1-functional-candidate/execution-23-enforcing-positive-negative-mcp.json).
+Propiedades originales → servicemanager original registrado → cliente original
+lista `manager: [android.os.IServiceManager]` → cierre/recolección y ausencia real
+del socket. Kernel enforcing1 comprobado al terminar cliente y cierre; gestor
+`u:r:servicemanager:s0`, UID/GID1000, caps efectivas0, NNP1. Negativo: el kernel
+impide saltarse Rust ejecutando directamente el helper. Ensayo global de4s con
+watchdog externo recuperado0; **el anfitrión queda permisivo con política cargada**.
 
-El usuario autoriza expresamente carga, etiquetado, enforcing y reinicios necesarios;
-las esperas de permiso anteriores son históricas. Snapshot/consola confirmadas,
-restauración no ensayada. Recuperación exacta en el checkpoint. No enforcing aún.
-Siguiente: resolver accesos reales y recuperación antes de enforcing; continuar
-framework/instalación y lanzamiento Markor → gráficos/entrada → nota persistente →
-cierre/reapertura. Markor mantiene nueve etapas no probadas. ARM/GMS/DRM separados.
+R1-MAC abierto: no aislamiento de APK, perfiles completos de recursos, integridad
+de instalación ni estabilidad sostenida de host enforcing acreditados. El ensayo
+usa supervisor de vida acotada, no un runtime de APK instalado. Backing images en
+cache de desarrollo; almacén de admisión protegido/aliases pendientes. Avisos de
+memory/blkio/cpuset conservados. Auditoría perdió eventos; no se infiere autorización
+por ausencia de AVC. Audit volvió a inactivo/enabled0; sin procesos/loops propios.
 
-El bloqueo property_service sin política y Binder -95 quedan como resultados
-históricos. Permanecen avisos reales de perfiles memory/blkio/cpuset, alcance de
-UID/cgroups y aislamiento pendientes. Los experimentos anteriores se conservan.
+Autorización expresa vigente cubre operaciones necesarias, con checkpoint antes
+de interrupciones; no otra espera por permisos históricos. Snapshot y consola
+confirmadas, restauración no ensayada. Ningún reboot/loader persistente instalado.
+Siguiente: hwservicemanager/Composer/SF y display real, junto al cierre PMS/AMS/zygote
+original para Markor: [orden fuente](../reports/android16-markor-original-bootstrap/decision.json).
+El SystemServer normal espera display antes de PMS y arranca muchas otras familias;
+no ejecutarlo como Android completo oculto ni falsear fase/display. Firma v2 de
+Markor verificada con apksig original; nueve etapas funcionales aún no probadas.
+ARM/GMS/DRM independientes. Binder -95 y fallo property_service sin política históricos.
 
 ## Hito anterior · mensajes de fallo Rust conservados
 

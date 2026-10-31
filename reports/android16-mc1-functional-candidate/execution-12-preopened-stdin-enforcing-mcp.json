@@ -1,0 +1,24 @@
+{
+  "evidence_id": "ev_d8ab7a564682a4131394886ceb285f7ba2a9aa494f68c2a0b86d5059ee4c0030",
+  "exit": {
+    "code": 0,
+    "signal": 0,
+    "reason": "exited"
+  },
+  "cleanup": {
+    "owned_process_group": "verified",
+    "temporary_root": "removed"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "The executable digest is a prelaunch file sample; matching path metadata immediately after spawn does not prove an atomic operating-system image binding.",
+    "Process trees are sampled and may omit short-lived descendants.",
+    "Process-tree sampling ended with an incomplete observation.",
+    "Filesystem observations are before/after snapshots, not syscall traces.",
+    "Inherited host environment variables are not recorded and may affect results.",
+    "No filesystem observation paths were selected; filesystem effects remain unknown.",
+    "Process sampling has incomplete observations: /proc/21717/environ: EACCES: Error: EACCES: permission denied, open '/proc/21717/environ'. See truncation_details.process."
+  ],
+  "truncated": true,
+  "output": "ENFORCING_WINDOW_ARMED seconds=4 watchdog_outside_candidate_pid_namespace\r\nENFORCING_WINDOW_ACTIVE observed=1\r\nENFORCING_CANDIDATE {\"exit\": 1, \"output\": \"MC1_PREPARED original_GSI_and_36_APEX_RO NNP1 private_binder actual_context=linux.system_u:linux.system_r:linux.init_t:s0\\nMC1_RESULT {\\\"exit\\\": 1, \\\"stdout\\\": \\\"NATIVE_PROCESS_OWNED pid=97 pidfd=5\\\\n\\\", \\\"stderr\\\": \\\"LINUX_EXEC_CONTEXT_REQUESTED source=linux.system_u:archtv_launcher_r:archtv_launcher:s0 target=u:r:init:s0 enforcing=1 NOT_STARTUP\\\\nlinker: CANNOT LINK EXECUTABLE \\\\\\\"/archtv/bin/property-coordinator\\\\\\\": unable to fstatfs file for the library \\\\\\\"libbase.so\\\\\\\": Permission denied\\\\nCANNOT LINK EXECUTABLE \\\\\\\"/archtv/bin/property-coordinator\\\\\\\": unable to fstatfs file for the library \\\\\\\"libbase.so\\\\\\\": Permission denied\\\\nError: Custom { kind: UnexpectedEof, error: \\\\\\\"native lifetime channel closed\\\\\\\" }\\\\n\\\"}\\n\"}\r\nENFORCING_WINDOW_RECOVERED {\"enforce\": \"0\", \"watchdog_status\": 0}\r\n"
+}

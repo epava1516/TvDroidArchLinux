@@ -1,0 +1,2 @@
+POLICY_LOAD_BEFORE {"before": {"enforce": "0", "context": "linux.system_u:linux.system_r:linux.init_t:s0"}, "sha256": "05e414bd26cad081663cfcd9f7861fda08aee76f518c615bdaf5007b843a2b6c", "bytes": 3459014}
+POLICY_LOAD_RESULT {"return": 0, "errno": 0, "enforce": "0", "context": "linux.system_u:linux.system_r:linux.init_t:s0"}
