@@ -1,17 +1,17 @@
-# Graph Report - policy-launcher-entry-20261031  (2026-10-31)
+# Graph Report - launcher-permission-audit-20261031  (2026-10-31)
 
 ## Corpus Check
-- 317 files · ~274,739 words
+- 317 files · ~275,201 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 25 file(s) not represented in the graph (top: .xml 8, (none) 6, .cil 4)
 
 ## Summary
-- 2895 nodes · 5519 edges · 240 communities (123 shown, 117 thin omitted)
+- 2896 nodes · 5520 edges · 230 communities (120 shown, 110 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 95 edges (avg confidence: 0.83)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `0bd112bb`
+- Built from commit: `45917ac3`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -31,7 +31,7 @@
 - LinuxContext
 - Roadmap · Arch TV nativo en Rust
 - 95-kernel-lts.sh
-- backend.rs
+- .onCreate
 - Estudio de Smithay y Anvil
 - Roadmap A · compatibilidad APK mínima sobre Linux
 - Referencias Fire TV para Arch TV
@@ -91,7 +91,7 @@
 - View
 - Client
 - archtv-android/src/lib.rs
-- hashlib
+- lock_release_manifest.py
 - Reference
 - Checkpoint y recuperación
 - aosp-critical-host/native-probe.cpp
@@ -107,7 +107,6 @@
 - RuntimeProbe
 - APK original en el compositor propio
 - ART host para la capa APK
-- lock_release_manifest.py
 - Constructor original de View con recursos del APK
 - Activity
 - identity.rs
@@ -125,7 +124,7 @@
 - Inicio del port de vistas originales
 - Port selectivo del framework original a Linux
 - View
-- logging.rs
+- audit_boot_inputs.py
 - clock
 - ContextAction
 - .metafactory
@@ -133,12 +132,11 @@
 - archtv-aosp-linux
 - Contrato vigente de ejecución APK
 - Métricas de Resources y ventana Wayland
-- ClockNativeProbe.java
+- QueueSemanticsProbe.java
 - JNI_OnLoad
-- src/native_process.rs
-- Handler y Looper originales ejecutan mensajes en Linux
 - tests/native_process.rs
-- HostSecurityReporting
+- Handler y Looper originales ejecutan mensajes en Linux
+- ResourcesProbe
 - Java_android_os_Binder_getNativeBBinderHolder
 - desktop.rs
 - ThrowableLogProbe.java
@@ -169,13 +167,13 @@
 - Log original de AOSP con JNI Linux
 - Recursos de sistema AOSP junto a los del APK
 - android.rs
-- pathlib
+- hashlib
 - Action
 - verify_counter_headless.py
 - Consultas IWindowManager respaldadas por Wayland
 - ErrorKind
 - Port gráfico original: frontera RenderNode
-- dex_inventory
+- signal
 - Adaptación tipada de CriticalNative a funciones host HWUI
 - build_skia_host.py
 - Traducción ARM · investigación R6 separada
@@ -190,12 +188,11 @@
 - Arquitectura vigente · A16-QPR2-1
 - FrameworkSpaceProbe
 - ClientState
-- window_policy.rs
 - Key
 - .initialize
 - Log original con excepciones y líneas largas
 - Matriz de aplicaciones reales
-- extract_platform_modules.py
+- zipfile
 - Roadmap A · plataforma APK general sobre Linux
 - check_host_security.py
 - AppId
@@ -204,19 +201,17 @@
 - Puerta vigente: Binder privado y política del Linux anfitrión
 - OriginalBootstrapProbe.java
 - AppState
-- SystemResourcesChecks.java
+- SystemResourcesChecks
 - Historial conservado · no es el estado vigente
 - patches/README.md
 - LocalContextProbe.java
 - duration
-- NativeFailure
-- HandlerDispatchProbe
 - experiments/README.md
 
 ## God Nodes (most connected - your core abstractions)
 1. `LinuxWindowService` - 140 edges
 2. `LinuxContext` - 110 edges
-3. `Estado actual y punto de entrada` - 63 edges
+3. `Estado actual y punto de entrada` - 64 edges
 4. `State` - 54 edges
 5. `Arquitectura vigente · A16-QPR2-1` - 51 edges
 6. `Client` - 48 edges
@@ -232,15 +227,15 @@
   runtime/aosp/native/linux-property-worker.cpp → fixtures/aosp-critical-host/native-probe.cpp
 - `probe()` --calls--> `read()`  [INFERRED]
   tools/aosp/property_area_probe.c → fixtures/aosp-critical-host/native-probe.cpp
-- `MainActivity` --references--> `TextView`  [EXTRACTED]
-  fixtures/apk/context-metrics/src/org/archtv/metrics/MainActivity.java → runtime/apk/java/android/widget/TextView.java
+- `MainActivity` --inherits--> `Activity`  [EXTRACTED]
+  fixtures/apk/context-metrics/src/org/archtv/metrics/MainActivity.java → runtime/apk/java/android/app/Activity.java
 - `MainActivity` --inherits--> `Activity`  [EXTRACTED]
   fixtures/apk/counter/src/org/archtv/probe/MainActivity.java → runtime/apk/java/android/app/Activity.java
 
 ## Import Cycles
 - None detected.
 
-## Communities (240 total, 117 thin omitted)
+## Communities (230 total, 110 thin omitted)
 
 ### Community 0 - "worker.rs"
 Cohesion: 0.10
@@ -259,24 +254,24 @@ Cohesion: 0.08
 Nodes (4): Backend, init(), Result, Scanout
 
 ### Community 10 - "archtv-aosp-linux/src/lib.rs"
-Cohesion: 0.13
-Nodes (20): guard(), Java_android_os_MessageQueue_nativeDestroy(), Java_android_os_MessageQueue_nativeInit(), Java_android_os_MessageQueue_nativeIsPolling(), Java_android_os_MessageQueue_nativePollOnce(), Java_android_os_MessageQueue_nativeSetFileDescriptorEvents(), Java_android_os_MessageQueue_nativeWake(), lookup() (+12 more)
+Cohesion: 0.05
+Nodes (33): guard(), Java_android_os_MessageQueue_nativeDestroy(), Java_android_os_MessageQueue_nativeInit(), Java_android_os_MessageQueue_nativeIsPolling(), Java_android_os_MessageQueue_nativePollOnce(), Java_android_os_MessageQueue_nativeSetFileDescriptorEvents(), Java_android_os_MessageQueue_nativeWake(), lookup() (+25 more)
 
 ### Community 11 - "session.rs"
 Cohesion: 0.19
 Nodes (3): Result, start(), Supervisor
 
 ### Community 12 - "json"
-Cohesion: 0.08
-Nodes (10): audit(), inside(), inventory(), main(), fetch(), fetch_file(), main(), main() (+2 more)
+Cohesion: 0.06
+Nodes (5): main(), fetch(), fetch_file(), main(), main()
 
 ### Community 14 - "Roadmap · Arch TV nativo en Rust"
 Cohesion: 0.12
 Nodes (17): Alcance inicial, Evolución A · compatibilidad APK mínima sobre Linux, H0 · Limpieza y base documental, H1 · Rust y Anvil como laboratorio, H2 · Compositor mínimo propio, H3 · Salida directa y decisión de renderizado, H4 · Comportamiento de televisión y sesión, H5 · Interfaz Rust con referencia Fire TV 2026 (+9 more)
 
-### Community 16 - "backend.rs"
-Cohesion: 0.15
-Nodes (3): Backend, Launch, Update
+### Community 16 - ".onCreate"
+Cohesion: 0.22
+Nodes (3): MainActivity, MainActivity, TextView
 
 ### Community 17 - "Estudio de Smithay y Anvil"
 Cohesion: 0.40
@@ -307,7 +302,7 @@ Cohesion: 0.18
 Nodes (8): Comparación de composición con Fire TV 2026, Composición medida, Decisión provisional, Primer resultado del renderer optimizado, Reproducción, Shell Rust: interfaz y mediciones, Validación interactiva, Fuentes técnicas
 
 ### Community 24 - "re"
-Cohesion: 0.14
+Cohesion: 0.12
 Nodes (15): audit_kernel_contract(), classes(), compile_policy(), compose(), digest(), forms(), keyword(), main() (+7 more)
 
 ### Community 25 - "Desarrollo del compositor Rust"
@@ -359,7 +354,7 @@ Cohesion: 0.14
 Nodes (13): APP_HEIGHT, APP_STEP, APP_WIDTH, APP_Y, BANNER_HEIGHT, BANNER_Y, FEATURE_HEIGHT, FEATURE_STEP (+5 more)
 
 ### Community 59 - "time"
-Cohesion: 0.09
+Cohesion: 0.10
 Nodes (20): key(), text(), wait_for(), capture_matching(), key(), wait(), wait_frame_after(), event() (+12 more)
 
 ### Community 60 - "DISTRIBUCION.md"
@@ -399,16 +394,16 @@ Cohesion: 0.25
 Nodes (7): Aceptación A0, Adaptador de estado implementado, Contrato anterior de proveedores Android · borrador sin congelar, Identidad y negociación, Operaciones y resultados, Plazos y errores, Transporte y adaptación pendientes
 
 ### Community 76 - "View"
-Cohesion: 0.12
-Nodes (7): MainActivity, OnClickListener, View, ViewGroup, Button, LinearLayout, TextView
+Cohesion: 0.13
+Nodes (5): OnClickListener, View, ViewGroup, Button, LinearLayout
 
 ### Community 78 - "archtv-android/src/lib.rs"
 Cohesion: 0.08
 Nodes (12): command_deadline_and_output_limit_do_not_wait_for_pipe_eof(), drain(), error(), Process, run(), status_requires_exact_boot_value_and_rejects_stale_boot_for_stopped_session(), unsupported(), Waydroid (+4 more)
 
-### Community 79 - "hashlib"
-Cohesion: 0.11
-Nodes (10): verify(), sha(), main(), sha(), original(), sha(), sha(), sha() (+2 more)
+### Community 79 - "lock_release_manifest.py"
+Cohesion: 0.13
+Nodes (9): main(), parse_ref(), resolve_project(), sha(), run(), verify(), original(), sha() (+1 more)
 
 ### Community 80 - "Reference"
 Cohesion: 0.15
@@ -440,7 +435,7 @@ Nodes (5): Alcance y recursos, APK propia preparada, Capa de compatibilidad APK 
 
 ### Community 88 - "Capa de compatibilidad APK propia sobre Linux"
 Cohesion: 0.03
-Nodes (62): Adaptación anterior · cierre del servicio de propiedades, Adaptación anterior · errores de persistencia, Alcance y recursos, Análisis anterior · servicio de propiedades original, APK propia preparada, Arranque actual · LTS con SELinux permisivo, sin política, ART host ejecuta DEX en Linux, Binder original: nuevo resultado parcial (+54 more)
+Nodes (63): Adaptación anterior · cierre del servicio de propiedades, Adaptación anterior · errores de persistencia, Alcance y recursos, Análisis anterior · servicio de propiedades original, APK propia preparada, Arranque actual · LTS con SELinux permisivo, sin política, ART host ejecuta DEX en Linux, Binder original: nuevo resultado parcial (+55 more)
 
 ### Community 89 - "APK mínima: contador"
 Cohesion: 0.50
@@ -465,10 +460,6 @@ Nodes (3): APK original en el compositor propio, Límites y siguiente dirección
 ### Community 95 - "ART host para la capa APK"
 Cohesion: 0.33
 Nodes (5): ART host para la capa APK, Fuentes y alcance, Investigación modular de la plataforma original, Pruebas separadas, Resultado del primer experimento
-
-### Community 96 - "lock_release_manifest.py"
-Cohesion: 0.33
-Nodes (4): main(), parse_ref(), resolve_project(), sha()
 
 ### Community 97 - "Constructor original de View con recursos del APK"
 Cohesion: 0.33
@@ -499,8 +490,8 @@ Cohesion: 0.50
 Nodes (3): Construcción y prueba, Límites actuales, Primer runtime APK: ART y API mínima
 
 ### Community 109 - "NativeQueueProbe.java"
-Cohesion: 0.16
-Nodes (4): NativeQueueProbe, MessageQueue.OnFileDescriptorEventListener, Runnable, ResourcesProbe
+Cohesion: 0.14
+Nodes (3): NativeQueueProbe, MessageQueue.OnFileDescriptorEventListener, Runnable
 
 ### Community 111 - "Inicio del port de vistas originales"
 Cohesion: 0.40
@@ -511,12 +502,12 @@ Cohesion: 0.18
 Nodes (10): Base de estudio fijada, Compilación inicial de vistas, Fronteras concretas, Integración en la APK, JNI Linux verificado, Port selectivo del framework original a Linux, Primer conjunto original compilado, Primer despacho original (+2 more)
 
 ### Community 113 - "View"
-Cohesion: 0.13
+Cohesion: 0.14
 Nodes (6): Main, Runnable, Runnable, Runnable, Runnable, UiShutdown
 
-### Community 114 - "logging.rs"
-Cohesion: 0.32
-Nodes (8): Java_android_util_Log_isLoggable(), Java_android_util_Log_logger_1entry_1max_1payload_1native(), Java_android_util_Log_println_1native(), level(), PAYLOAD, prefix(), string(), threshold()
+### Community 114 - "audit_boot_inputs.py"
+Cohesion: 0.53
+Nodes (4): audit(), inside(), inventory(), main()
 
 ### Community 115 - "clock"
 Cohesion: 0.45
@@ -538,17 +529,13 @@ Nodes (5): Alcance y frontera con Android completo, Contrato anterior BASE-AOSP-
 Cohesion: 0.40
 Nodes (4): Evidencia, Métricas de Resources y ventana Wayland, Pendientes, Sincronización de las capturas
 
-### Community 124 - "src/native_process.rs"
-Cohesion: 0.17
-Nodes (6): check_failure(), NativeProcess, Startup, Component, Diagnostic, until()
+### Community 124 - "tests/native_process.rs"
+Cohesion: 0.09
+Nodes (23): check_failure(), NativeFailure, ShutdownRequested, ShutdownRequestTooLong, NativeProcess, Startup, Component, Diagnostic (+15 more)
 
 ### Community 125 - "Handler y Looper originales ejecutan mensajes en Linux"
 Cohesion: 0.50
 Nodes (3): Handler y Looper originales ejecutan mensajes en Linux, Implementación y fronteras, Pruebas y evidencia
-
-### Community 126 - "tests/native_process.rs"
-Cohesion: 0.33
-Nodes (14): acknowledgment_does_not_hide_failed_exit(), assert_exited(), cooperative_exit_requires_ack_and_actual_exit(), failure_cannot_be_overridden_by_later_startup_ack(), helper(), malformed_failure_payload_cannot_be_a_typed_original_request(), original_shutdown_is_typed_failure_and_actual_exit_is_collected(), oversize_request_is_explicit_failure_never_truncated_success() (+6 more)
 
 ### Community 128 - "Java_android_os_Binder_getNativeBBinderHolder"
 Cohesion: 0.46
@@ -561,6 +548,10 @@ Nodes (9): Application, collect(), discover(), exec_keeps_arguments_and_shell_me
 ### Community 131 - "La APK usa el Looper principal original de AOSP"
 Cohesion: 0.40
 Nodes (4): Ensamblado y ejecución, Evidencia, Hilo y cierre, La APK usa el Looper principal original de AOSP
+
+### Community 133 - "Main.java"
+Cohesion: 0.14
+Nodes (3): HandlerDispatchProbe, Runnable, ViewConstructorProbe
 
 ### Community 134 - "winit.rs"
 Cohesion: 0.13
@@ -591,8 +582,8 @@ Cohesion: 0.29
 Nodes (6): Abi, Arm64V8a, ArmeabiV7a, X86, X86_64, ProviderInfo
 
 ### Community 148 - "prepare_factory_inputs.py"
-Cohesion: 0.14
-Nodes (7): digest(), main(), digest(), fields(), manifest(), run(), varint()
+Cohesion: 0.38
+Nodes (5): digest(), fields(), manifest(), run(), varint()
 
 ### Community 152 - "runtime.rs"
 Cohesion: 0.06
@@ -618,17 +609,17 @@ Nodes (3): Construcción y carga explícita, Evidencia y frontera siguiente, Rec
 Cohesion: 0.24
 Nodes (6): CONTRACT_VERSION, InstallPolicy, NewOnly, Replace, InstallReceipt, ProviderError
 
-### Community 160 - "pathlib"
-Cohesion: 0.05
-Nodes (8): inspect(), run(), run(), source_inputs(), run(), run(), sha(), rgb()
+### Community 160 - "hashlib"
+Cohesion: 0.08
+Nodes (12): sha(), main(), sha(), sha(), main(), sha256(), run(), sha() (+4 more)
 
 ### Community 161 - "Action"
 Cohesion: 0.18
 Nodes (11): Action, AndroidStart, AndroidStop, Launch, Mute, Quit, Refresh, Resume (+3 more)
 
 ### Community 162 - "verify_counter_headless.py"
-Cohesion: 0.10
-Nodes (6): execute(), kill_group(), ready(), service_check(), start(), wait_for()
+Cohesion: 0.13
+Nodes (4): ready(), service_check(), start(), wait_for()
 
 ### Community 163 - "Consultas IWindowManager respaldadas por Wayland"
 Cohesion: 0.33
@@ -642,9 +633,9 @@ Nodes (11): ErrorKind, BackendFailure, Conflict, IncompatibleAbi, InvalidRequest
 Cohesion: 0.12
 Nodes (13): Construcción nativa, Ejecución y límite actual, RenderNode original ejecutado en ART sobre Linux, Construcción de objetos host, Dependencias identificadas, Evidencia y decisión, Port gráfico original: frontera RenderNode, Próximas comprobaciones necesarias (+5 more)
 
-### Community 182 - "dex_inventory"
-Cohesion: 0.23
-Nodes (9): dex_inventory(), string(), table(), uint(), digest(), decode(), fields(), inventory() (+1 more)
+### Community 182 - "signal"
+Cohesion: 0.09
+Nodes (12): dex_inventory(), string(), table(), uint(), inspect(), digest(), decode(), fields() (+4 more)
 
 ### Community 196 - "Adaptación tipada de CriticalNative a funciones host HWUI"
 Cohesion: 0.50
@@ -690,10 +681,6 @@ Nodes (50): Adaptador de directorios proc · verificación offline, Arquitectura
 Cohesion: 0.20
 Nodes (10): Key, Back, Backspace, Character, Down, Enter, Left, Menu (+2 more)
 
-### Community 213 - ".initialize"
-Cohesion: 0.09
-Nodes (3): MetadataProbe, AppEnvironment, HostProfile
-
 ### Community 214 - "Log original con excepciones y líneas largas"
 Cohesion: 0.50
 Nodes (3): Avance del layout, Log original con excepciones y líneas largas, Pruebas
@@ -702,17 +689,17 @@ Nodes (3): Avance del layout, Log original con excepciones y líneas largas, Pru
 Cohesion: 0.50
 Nodes (4): Dependencias y selección de base BASE-AOSP-1, Estado vigente A16-QPR2-1, Inventario de artefactos y evidencia previa, Matriz de aplicaciones reales
 
-### Community 217 - "extract_platform_modules.py"
-Cohesion: 0.29
-Nodes (7): digest(), main(), checked_hash(), main(), command(), dump(), entries()
+### Community 217 - "zipfile"
+Cohesion: 0.13
+Nodes (11): digest(), main(), run(), source_inputs(), digest(), main(), checked_hash(), main() (+3 more)
 
 ### Community 218 - "Roadmap A · plataforma APK general sobre Linux"
 Cohesion: 0.18
 Nodes (11): Control experimental de namespaces de política, Decisiones offline con herramientas originales, Diagnóstico previo de PropertyInit · superado por el perfil fuente, Historia · etapas anteriores, no prioridad vigente, Integración de política · namespace Linux y conflicto de SID, Orden vigente tras el arranque permisivo, Perfil de propiedades y diagnóstico previo de opciones, Prioridad vigente · A16-QPR2-1 (+3 more)
 
 ### Community 219 - "check_host_security.py"
-Cohesion: 0.23
-Nodes (6): inspect(), main(), read_status(), read_text(), status_snapshot(), zero_size_selinux_status()
+Cohesion: 0.13
+Nodes (6): inspect(), read_status(), read_text(), status_snapshot(), zero_size_selinux_status(), HostSecurityReporting
 
 ### Community 220 - "AppId"
 Cohesion: 0.33
@@ -730,26 +717,22 @@ Nodes (6): SessionState, Running, Starting, Stopped, Suspended, Unknown
 Cohesion: 0.40
 Nodes (5): App, AppState, Running, Stopped, Unknown
 
-### Community 235 - "NativeFailure"
-Cohesion: 0.40
-Nodes (3): NativeFailure, ShutdownRequested, ShutdownRequestTooLong
-
 ## Knowledge Gaps
 - **129 isolated node(s):** `archtv-aosp-linux`, `archtv-apk-host`, `archtv-compositor`, `Home`, `Resume` (+124 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1080 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **117 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1081 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **110 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `LinuxWindowService` connect `LinuxWindowService` to `IBinder`, `.state`, `LinuxServiceRegistry`, `.addShellRoot`, `Rect`, `.verifyDisplayHash`, `.overridePendingAppTransitionMultiThumbFuture`, `.registerCrossWindowBlurEnabledListener`, `.registerDisplayFoldListener`, `.registerDisplayWindowListener`, `.addKeyguardLockedStateListener`, `.getWindowInsets`, `.removeRotationWatcher`, `.registerSystemGestureExclusionListener`, `.registerTaskFpsCallback`, `.registerWallpaperVisibilityListener`, `.openSession`, `.screenshotWallpaper`, `.getPossibleDisplayInfo`, `.requestAssistScreenshot`, `.setDisplayWindowInsetsController`, `.setDisplayWindowRotationController`, `.dismissKeyguard`, `.updateDisplayWindowRequestedVisibilities`, `.exitKeyguardSecurely`, `.registerPinnedTaskListener`, `.requestAppKeyboardShortcuts`, `.registerShortcutKey`, `.getCurrentImeTouchRegion`, `.overridePendingAppTransitionRemote`, `.setTaskTransitionSpec`?**
-  _High betweenness centrality (0.091) - this node is a cross-community bridge._
+  _High betweenness centrality (0.092) - this node is a cross-community bridge._
 - **What connects `archtv-aosp-linux`, `archtv-apk-host`, `archtv-compositor` to the rest of the system?**
   _129 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `worker.rs` be split into smaller, more focused modules?**
   _Cohesion score 0.0960960960960961 - nodes in this community are weakly interconnected._
 - **Why does `TvCompositor` connect `TvCompositor` to `xdg_shell.rs`, `winit.rs`, `mod.rs`, `input.rs`, `drm.rs`, `session.rs`, `.process_input_event`?**
-  _High betweenness centrality (0.056) - this node is a cross-community bridge._
+  _High betweenness centrality (0.061) - this node is a cross-community bridge._
 - **Should `resources-jni.cpp` be split into smaller, more focused modules?**
   _Cohesion score 0.12145390070921985 - nodes in this community are weakly interconnected._
 - **Why does `WindowPolicyState` connect `.state` to `WindowPolicyState.java`, `LinuxWindowService`?**

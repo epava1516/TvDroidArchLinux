@@ -34,6 +34,25 @@ base, no asigna contextos reales y no cierra S1: bootstrap, permisos heredados,
 etiquetas y mediación completa requieren pruebas. No usar el rol genérico
 Linux system_r para conceder la entrada a Android.
 
+La [auditoría de permisos heredados](../reports/android16-launcher-permission-audit/findings.json)
+recorre el export binario completo:54 reglas AV potenciales de salida (tres
+condicionales),633 de entrada y ninguna xperm aplicable al actor. No son permisos
+efectivos. Veintisiete decisiones originales concretas distinguen defaults de
+booleans/constraints: urandom está en rama potencial pero denegado por defecto;
+lockdown/textrel execmod heredados resultan permitidos offline y aún necesitan
+justificación. El actor carece de permisos MAC de administración/UID examinados;
+la preparación privilegiada debe resolverse antes de entrar a él. Linux
+init/kernel/unconfined pueden ptrace al actor en esa capa, a diferencia de sshd y
+app; DAC/capabilities/Yama y supervisión real no probados. No afirmar protección
+frente a administrador anfitrión ni aislamiento completo por esas consultas.
+El proceso anfitrión que debe iniciar al lanzador aún no está implementado: los cuatro dominios Linux examinados no entran
+al rol. Evaluar transición original de tipo/rol condicionada al ejecutable
+inmutable y productor explícito, con archivo root y controles negativos; no un
+permiso de rol genérico hacia cualquier contexto Android. La falta de soporte
+SELinux en systemd no se suple fingiendo éxito: elegir/probar integración de host
+o entrada kernel explícita, sin asignar contextos ni cargar política ahora.
+
+
 
 | Frontera | Requisito y prueba necesarios | Estado verificable |
 | --- | --- | --- |

@@ -1,0 +1,45 @@
+{
+  "observed_at": "2026-10-31T12:11:06.338737+00:00",
+  "base_commit": "45917ac3224f4b8bbac893ae067ff6aade4a7131",
+  "scope": "Source-available offline original compiler export and libsepol decisions. No live role assignment, policy load, xattrs, services or APK acceptance",
+  "policy": "dist/aosp16/policy-launcher-explicit-2/policy.bin",
+  "policy_sha256": "b7e9cd4f0232cad48ad96fcf1d307d0883962596aefe5d3bcd547e1c20a4f862",
+  "export_provenance": "export.json",
+  "coverage": {
+    "standard_AV_rules_parsed": 152494,
+    "extended_AV_rules_parsed": 657,
+    "actor_source_potential_rules": 54,
+    "actor_conditional_source_rules": 3,
+    "actor_potential_target_types": 57,
+    "actor_incoming_potential_rules": 633,
+    "actor_extended_source_or_target_rules": 0,
+    "scope": "Syntactic potential rules in whole binary export; conditional branches retained, no reimplementation of SELinux decisions"
+  },
+  "original_decisions": {
+    "count": 27,
+    "allowed": 7,
+    "denied": 20,
+    "errors": 0,
+    "defaults": "Original exported allow_ptrace=false/global_ssp=false; not running kernel booleans"
+  },
+  "findings": [
+    "New actor inherits Linux rules, not only explicit module AVs. Potential grants include loader/cache/tty/self IPC and lockdown/textrel execmod; latter selected concrete decisions allowed offline, not justified as needed or proof of actual kernel/hardware bypass",
+    "Conditional urandom read present in potential rules but denied by original libsepol at default global_ssp=false; static inventory cannot be reported as effective permission",
+    "Actor MAC capability checks sys_admin/setuid/setgid/sys_ptrace/net_admin/mac_admin denied. Privileged preparation must be resolved in trusted parent stage before restricted actor, not silently granted to actor",
+    "Four modeled existing Linux subjects (init/kernel/sshd/unconfined) still cannot enter actor; producer bootstrap remains absent. No subject actually assigned these contexts on host",
+    "Original Linux init/kernel/unconfined domains can ptrace actor at SELinux decision layer in selected contexts; sshd and Android app denied. DAC/Yama/caps/other LSM may further deny, no syscall proof",
+    "Actor ptrace to all four host domains denied. Host recovery supervision is distinct from app isolation and protection against a privileged host administrator",
+    "Full syntactic delta is27 added/2 removed statements. Only3 added standard AV rows not naming actor are original init\u2192Linux security_t; other additions/attribute extensions still require semantic review, not equivalent to no impact"
+  ],
+  "limitations": [
+    "No complete effective AV matrix across all users/roles/MLS/conditions; parser inventories standard/extended rule membership only. Bounds/transitions/constraints/DAC/kernel operations remain separate",
+    "Incoming potential list633 includes attribute and conditional rules, not633 effective grants or actual applications",
+    "Original library decisions cover27 specific context/permission cases; no universal isolation, minimal privilege, policy semantic equivalence or runtime acceptance inferred",
+    "Lockdown/textrel allowances inherited from refpolicy not newly granted by this audit; no domain membership or rule changed to make tests pass",
+    "Kernel initial SID\u2192Linux domain mapping and executable-specific bootstrap must be verified before use; do not authorize arbitrary host roles/domains into Android",
+    "Default build profile and experimental modules unchanged; no labels or security state changed. No REA MCP connection claimed from CLI tools; source available",
+    "Complete CIL exports/delta live only at recorded local artifact paths/hashes; reproduce with original exporter if cache absent. Summaries link those artifacts rather than embed huge logs"
+  ],
+  "decision": "Do not declare actor least-privileged or runnable merely from bounded Android entry tests. Retain original refpolicy reuse but require inheritance justification and complete actual exec/namespace/credential/FD contract.",
+  "next": "Evaluate an executable-specific original kernel type/role transition into the dedicated launcher, with immutable root-owned entry file and explicit producer restrictions/neverallow, against current Linux-owned initial-SID model. Include prerequisite preparation in parent, inherited grants/inbound supervision and negative controls; no broad role\u2192Android edge or live state change. Keep S0\u2013S2 and eventual explicitly approved deployment before original managers and Markor full journey."
+}

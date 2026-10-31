@@ -1,0 +1,86 @@
+{
+  "branch": "main",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "objective": "Complete unmodified APK on Linux Rust/Smithay with coherent original AOSP16QPR2/Bionic, no Waydroid or complete Android boot; broad compatibility, isolation, stability, lightness, installation/update.",
+  "canonical_entry": "docs/ESTADO.md",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "constraints": [
+    "User reaffirmed no reboot/security state changes based on historical authorization",
+    "No policy load, relabel, setenforce or host setup modification in this hito",
+    "A16-QPR2-1; full unmodified APK on Linux Rust/Smithay, no Waydroid/full Android; broad compatibility/isolation/stability/lightness/install/update",
+    "ARM/external services/DRM separate; own fixtures/probes not compatibility acceptance"
+  ],
+  "observed_at": "2026-10-31T12:11:06.338737+00:00",
+  "base_commit": "45917ac3224f4b8bbac893ae067ff6aade4a7131",
+  "previous_checkpoint": "reports/android16-policy-launcher-entry/checkpoint.json",
+  "relation_to_local_origin_tracking": "0\t0",
+  "terminal_exec_handles": [
+    39667,
+    77599,
+    77108,
+    90364,
+    64465,
+    43212,
+    42137
+  ],
+  "active_exec_handles": [],
+  "process_scope": "Current-turn export/audit/decision handles terminal; no preboot handle reused, no persistent REA session opened",
+  "tests": {
+    "static_rule_coverage": {
+      "standard_AV_rules_parsed": 152494,
+      "extended_AV_rules_parsed": 657,
+      "actor_source_potential_rules": 54,
+      "actor_conditional_source_rules": 3,
+      "actor_potential_target_types": 57,
+      "actor_incoming_potential_rules": 633,
+      "actor_extended_source_or_target_rules": 0,
+      "scope": "Syntactic potential rules in whole binary export; conditional branches retained, no reimplementation of SELinux decisions"
+    },
+    "concrete_decisions": {
+      "count": 27,
+      "allowed": 7,
+      "denied": 20,
+      "errors": 0,
+      "defaults": "Original exported allow_ptrace=false/global_ssp=false; not running kernel booleans"
+    }
+  },
+  "next": "Evaluate an executable-specific original kernel type/role transition into the dedicated launcher, with immutable root-owned entry file and explicit producer restrictions/neverallow, against current Linux-owned initial-SID model. Include prerequisite preparation in parent, inherited grants/inbound supervision and negative controls; no broad role\u2192Android edge or live state change. Keep S0\u2013S2 and eventual explicitly approved deployment before original managers and Markor full journey.",
+  "evidence": {
+    "reports/android16-launcher-permission-audit/actor-potential-allows.json": "bb375edd99b9bc117064d739e296b6e0d31197a64e60cbab24770cb714f0af99",
+    "reports/android16-launcher-permission-audit/audit.py": "1da1c879616809fb02a6758ea17784c42cdac6d37e6e7fff57b6723274fbe770",
+    "reports/android16-launcher-permission-audit/findings.json": "08178be78d6ddd633a016348b04f3eb608cfa7ec60935bc890efa363d72684a7",
+    "reports/android16-launcher-permission-audit/export.py": "763fa189f4ea55794efbfcb6d0bfa674508747742e7559b087ea26bcd552249b",
+    "reports/android16-launcher-permission-audit/statement-delta-index.json": "8f4a0edcc0748e0d658e991a604769209e8905185de266c34a2bf5ad5923f7e2",
+    "reports/android16-launcher-permission-audit/decisions.json": "d7e941f3df51c0d68bac273d08d405215935f8d0a49c453b6570e05bc46d3101",
+    "reports/android16-launcher-permission-audit/boolean-defaults.json": "55f9fa356081926fb7315e7b49f74e4c7167f3e555389fdae7dd63a92fc86181",
+    "reports/android16-launcher-permission-audit/verify.py": "027bf7ba5a92fa71a1d12f25c12c4910de8c7f53b658f3f8dde0e5914ee12989",
+    "reports/android16-launcher-permission-audit/export.json": "64c226d9e6fbba20f02cabb80ddfd71076e7060da2d4374eb4fa4c741af93ac1",
+    "reports/android16-launcher-permission-audit/decisions.py": "6e3886ad6500b97447052ba9626e86bcb89750f8bc7b2be73d5aa39fb0bb07ad"
+  },
+  "local_artifacts": [
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/launcher-permission-audit-1/base.cil",
+      "sha256": "16b3eb7272f13af978ff0876952e5d65d37be879a0e6df87a3372508ccd6e2b6"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/launcher-permission-audit-1/entry.cil",
+      "sha256": "62f31678f0efe5a4b1e46d593f942809c9df08442548af9d68894e7d50fea98e"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/launcher-permission-audit-1/statement-delta.json",
+      "sha256": "b0a052ab29e1247d3d3d00c6282b2ee952a9b9614acd52711cea1b4ed8120848"
+    }
+  ],
+  "graphify": "Isolated staged AST update terminal0,2896 nodes/5520 edges; tracked outputs copied, no policy semantics inferred"
+}

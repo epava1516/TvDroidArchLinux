@@ -1,0 +1,40 @@
+{
+  "scope": "Original binary-to-CIL static export, not loaded/effective kernel authorization",
+  "tool_sha256": "563a44a6c425cc920f559e1db16183c53ee3a8b285b1ec339d2f6e8a2e6c25b4",
+  "results": [
+    {
+      "policy": "base",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/checkpolicy-host-2/source/checkpolicy",
+        "-M",
+        "-b",
+        "-C",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/launcher-permission-audit-1/base.cil",
+        "/home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-compile-1/policy.bin"
+      ],
+      "exit": 0,
+      "stdout": "libsepol.policydb_index_others: security:  10 users, 19 roles, 6968 types, 414 bools\nlibsepol.policydb_index_others: security: 1 sens, 1024 cats\nlibsepol.policydb_index_others: security:  145 classes, 158780 rules, 22758 cond rules\n",
+      "stderr": "",
+      "input_sha256": "1234463a2f52e3a8628a1e65be13a9b951f4754b323f41e14d1921263b2bc9c9",
+      "export_sha256": "16b3eb7272f13af978ff0876952e5d65d37be879a0e6df87a3372508ccd6e2b6"
+    },
+    {
+      "policy": "entry",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/checkpolicy-host-2/source/checkpolicy",
+        "-M",
+        "-b",
+        "-C",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/launcher-permission-audit-1/entry.cil",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-launcher-explicit-2/policy.bin"
+      ],
+      "exit": 0,
+      "stdout": "libsepol.policydb_index_others: security:  10 users, 20 roles, 6971 types, 414 bools\nlibsepol.policydb_index_others: security: 1 sens, 1024 cats\nlibsepol.policydb_index_others: security:  145 classes, 158795 rules, 22758 cond rules\n",
+      "stderr": "",
+      "input_sha256": "b7e9cd4f0232cad48ad96fcf1d307d0883962596aefe5d3bcd547e1c20a4f862",
+      "export_sha256": "62f31678f0efe5a4b1e46d593f942809c9df08442548af9d68894e7d50fea98e"
+    }
+  ]
+}

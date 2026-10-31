@@ -20,6 +20,13 @@ conservan transiciones de gestores y denegaciones seleccionadas; la variante
 automática conserva identidad Linux y no valida el contexto del servicio siguiente.
 No hay carga/exec real ni bootstrap de host, ni sustitución del perfil base.
 
+La [auditoría del actor](../reports/android16-launcher-permission-audit/findings.json)
+distingue54 potenciales reglas de salida/633 de entrada de27 decisiones concretas.
+S1 sigue abierto: productor del rol inexistente, preparación privilegiada previa
+y grants heredados por justificar. Siguiente experimento offline: entrada por
+archivo de confianza/tipo/rol y productor restringido mediante kernel original,
+sin conceder una transición global a Android ni asumir systemd con SELinux.
+
 La [inspección nativa actual](../reports/android16-postboot-mac-readiness/findings.json)
 confirma getcon kernel, etiqueta de ejecutable ausente y lectura status real sólo
 tras configurar montaje RO explícito. Systemd -SELINUX exige integración de host.

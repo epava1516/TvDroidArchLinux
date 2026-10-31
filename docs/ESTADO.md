@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-policy-launcher-entry/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-launcher-permission-audit/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -16,6 +16,20 @@ los resúmenes; no se ha completado compatibilidad amplia.
 Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCCION-ARM.md).
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
+
+## Última auditoría · herencia y productor del lanzador
+
+[Resultados](../reports/android16-launcher-permission-audit/findings.json): export
+original completo152.494 AV/657 xperm;54 reglas potenciales de salida,633 de entrada,
+ninguna xperm del actor. No equivalen a concesiones efectivas. Veintisiete consultas
+libsepol: capacidades administrativas/UID examinadas denegadas; urandom condicional
+denegado por defecto, lockdown/execmod heredados permitidos offline sin justificar
+necesidad. Tres dominios Linux de control pueden ptrace en esa capa; no prueba
+syscall/DAC/capabilities ni aislamiento de administrador anfitrión. Actores Linux
+examinados no pueden entrar al rol. Módulos y perfil base intactos; no carga/labels.
+Siguiente: entrada por ejecutable/tipo/rol original con productor explícito y
+preparación previa, sin permisos globales ni bootstrap supuesto. R1-MAC y Markor
+siguen abiertos; export/delta grande enlazado por ruta/hash, no pegado al resumen.
 
 ## Último experimento · rol exclusivo y exec Android explícito
 

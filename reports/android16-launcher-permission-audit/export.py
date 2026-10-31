@@ -1,0 +1,5 @@
+from pathlib import Path
+import subprocess,json,hashlib
+r=Path('/home/tv/repositorio-principal');d=r/'reports/android16-launcher-permission-audit';out=r/'dist/aosp16/launcher-permission-audit-1';out.mkdir();tool=r/'dist/aosp16/checkpolicy-host-2/source/checkpolicy';record=[]
+for name,path in [('base',r/'dist/aosp16/linux-policy-builder-compile-1/policy.bin'),('entry',r/'dist/aosp16/policy-launcher-explicit-2/policy.bin')]:
+ cmd=[str(tool),'-M','-b','-C','-o',str(out/(name+'.cil')),str(path)];p=subprocess.run(cmd,capture_output=True,text=True,timeout=60);record.append({'policy':name,'argv':cmd,'exit':p.returncode,'stdout':p.stdout,'stderr':p.stderr,'input_sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'export_sha256':hashlib.sha256((out/(name+'.cil')).read_bytes()).hexdigest() if p.returncode==0 else None});(d/'export.json').write_text(json.dumps({'scope':'Original binary-to-CIL static export, not loaded/effective kernel authorization','tool_sha256':hashlib.sha256(tool.read_bytes()).hexdigest(),'results':record},indent=2)+'\n');print(name,p.returncode,p.stderr[:300],flush=True);assert p.returncode==0

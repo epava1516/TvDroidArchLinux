@@ -1,0 +1,9 @@
+{
+  "scope": "Full syntactic statement delta, not effective AV equivalence",
+  "path": "/home/tv/repositorio-principal/dist/aosp16/launcher-permission-audit-1/statement-delta.json",
+  "sha256": "b0a052ab29e1247d3d3d00c6282b2ee952a9b9614acd52711cea1b4ed8120848",
+  "added": 27,
+  "removed": 2,
+  "actor_standard_AV_rules": 54,
+  "conditional_actor_rules": 3
+}

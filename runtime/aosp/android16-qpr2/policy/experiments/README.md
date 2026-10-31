@@ -32,3 +32,11 @@ systemd anfitrión -SELINUX, labels efectivos y control de quién puede solicita
 Declarar un contexto válido offline no lo asigna a ningún proceso del anfitrión.
 La política sigue siendo global: aplicar S0–S2 y solicitar autorización específica
 antes de carga, y otra para enforcing según el plan canónico de arquitectura.
+
+La [auditoría de herencia](../../../../../reports/android16-launcher-permission-audit/findings.json)
+distingue potenciales reglas de salida/entrada de decisiones originales concretas.
+No se ha justificado aún necesidad de lockdown/textrel execmod heredados ni
+validado el conjunto en ejecución; no quitar atributos sólo para aparentar
+mínimo privilegio. El actor no puede realizar administración privilegiada
+examinada: resolver preparación en padre de confianza y entrada específica por
+ejecutable/rol, con original kernel, antes de cualquier aprobación de despliegue.

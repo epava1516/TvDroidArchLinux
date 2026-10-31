@@ -1,0 +1,5 @@
+{
+  "scope": "Defaults in original binary export only, no running kernel boolean values",
+  "allow_ptrace": "false",
+  "global_ssp": "false"
+}
