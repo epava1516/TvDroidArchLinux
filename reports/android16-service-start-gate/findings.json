@@ -1,0 +1,38 @@
+{
+  "observed_at": "2026-10-31T10:57:42.695970+00:00",
+  "source_base_commit": "09f2ebda56a43d5c1b8ff1e75b629f71fcfb7bd5",
+  "scope": "Original AOSP Service::Start negative lifecycle integration, not service availability or APK acceptance",
+  "profile": {
+    "logical": "/system/etc/init/servicemanager.rc",
+    "resolved": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/etc/init/servicemanager.rc",
+    "sha256": "36b87b60901affd28b0c500190fac30f1b7ebb9c8db63c0d14a08094ed756460",
+    "matches_source": true
+  },
+  "source": {
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/init/service.cpp",
+    "sha256": "d0d758cc6a87ebebf05c76d28026582cbac9a1e1ecd756987eeb96de7230e726",
+    "commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1"
+  },
+  "artifact": {
+    "path": "/home/tv/repositorio-principal/dist/aosp16/service-start-gate-build-1/service-start-gate",
+    "sha256": "8c82dda264c76e9b154a841d7f20afedaec033084bfcdd03e632caf403addcce"
+  },
+  "results": [
+    "Original native parser accepts GSI servicemanager.rc in global original ServiceList, no action executed",
+    "Actual Service::Start called with original args and blank explicit seclabel under disabled SELinux, UID10000/caps0/NNP1",
+    "Actual failure Could not get security context in ComputeContextFromExecutable, before source fork branch",
+    "PID0/not running; waitpid ECHILD, FIFOs released, FD4 to4; MCP test exit0 means expected rejection, never service success"
+  ],
+  "limitations": [
+    "Probe explicitly requires inactive SELinux to restrict to reviewed pre-fork failure path, never production permission policy",
+    "Test asserts no live/unreaped children after Start; transient descendants not excluded by sampled process capture alone. Original source failure precedes fork",
+    "Does not prove service UID mapping, exec, daemon initialization, Binder registration, Service::Reap callbacks, restart or critical/onrestart behavior",
+    "No substitution of seclabel/getcon/security_compute_create, host MAC untouched; managers and original services remain behind R1-MAC",
+    "Original Start may invoke reboot_on_failure on early error via scopeguard for other profiles. This canonical servicemanager profile has no reboot_on_failure; cannot accept arbitrary profile unchanged into Linux supervisor",
+    "Native original Start resets flags before validation; failure is not a transactional no-op. Linux must preserve truthful failed state and never report running from parser/Start success alone",
+    "Prepared artifact hash not atomic operating-system image binding; MCP truncated process/environment observation explicitly retained",
+    "Original compile flags/link closure inherited from source-derived prior builds, not complete Soong parity",
+    "All nine stages for real APK remain not_tested; ARM/provider studies independent"
+  ],
+  "next": "Define explicit Linux failure/control policy and original service cohort lifecycle including original process identities/cgroups and MAC prerequisites; do not introduce fake context or per-app framework substitutes."
+}

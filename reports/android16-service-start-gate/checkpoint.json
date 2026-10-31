@@ -1,0 +1,51 @@
+{
+  "branch": "main",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "objective": "Complete unmodified APK on Linux Rust/Smithay with coherent original AOSP16QPR2/Bionic, no Waydroid or complete Android boot; broad compatibility, isolation, stability, lightness, installation/update.",
+  "constraints": [
+    "A16-QPR2-1",
+    "No VM introduction or VM/client restart",
+    "No host boot/policy activation changes; R1-MAC gate remains",
+    "Fixtures/compilation/diagnostic startup are partial evidence, never real-APK acceptance"
+  ],
+  "canonical_entry": "docs/ESTADO.md",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "observed_at": "2026-10-31T10:57:42.695970+00:00",
+  "base_commit": "09f2ebda56a43d5c1b8ff1e75b629f71fcfb7bd5",
+  "previous_checkpoint": "reports/android16-child-reaper/checkpoint.json",
+  "relation_to_local_origin_tracking": "0\t0",
+  "terminal_exec_handles": [
+    30157,
+    77733,
+    42355
+  ],
+  "active_exec_handles": [],
+  "mcp_status": "Capture terminal0, owned group cleanup verified; not full host process coverage. No persistent REA binary target opened.",
+  "next": "Define explicit Linux failure/control policy and original service cohort lifecycle including original process identities/cgroups and MAC prerequisites; do not introduce fake context or per-app framework substitutes.",
+  "tests": [
+    "Original native parser accepts GSI servicemanager.rc in global original ServiceList, no action executed",
+    "Actual Service::Start called with original args and blank explicit seclabel under disabled SELinux, UID10000/caps0/NNP1",
+    "Actual failure Could not get security context in ComputeContextFromExecutable, before source fork branch",
+    "PID0/not running; waitpid ECHILD, FIFOs released, FD4 to4; MCP test exit0 means expected rejection, never service success"
+  ],
+  "evidence": {
+    "reports/android16-service-start-gate/build.json": "21db16977e9b07410ab2143bb0ccebe01463df6f106d06e7a308a33f176019e1",
+    "reports/android16-service-start-gate/findings.json": "f6d369182a7472e0e4650f4e554444027a5abefd60fb1df4a7514b4cce83e078",
+    "reports/android16-service-start-gate/build.py": "90587d66086a271f77cb74ddc118ca5bfeb65abd0272f6ec25fd2a8e4d5e2308",
+    "reports/android16-service-start-gate/launcher.py": "82f55cdd0718e02165959781250464be6ea76a012b3679d23f86bf4055292cc3",
+    "reports/android16-service-start-gate/native-mcp.json": "670b98d9fd1d532d8d15a0abf8c5c98dbf8b36677e486e685804b762a6e921bf",
+    "reports/android16-service-start-gate/probe.cpp": "ca8c33f7c0c9fc47addc62f99f0bd805a733aa5d8c263070f0545f77ecb05410"
+  },
+  "graphify": "Isolated staged update terminal0,2813 nodes/5379 edges; tracked outputs only"
+}

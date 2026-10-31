@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-child-reaper/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-service-start-gate/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -16,6 +16,16 @@ los resúmenes; no se ha completado compatibilidad amplia.
 Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCCION-ARM.md).
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
+
+## Último contraste · Start original rechaza falta de contexto
+
+[Prueba y alcance](../reports/android16-service-start-gate/findings.json): perfil
+servicemanager original en ServiceList global; llamada nativa Service::Start
+devuelve «Could not get security context» antes del fork. REA MCP confirma PID0,
+no running, waitpid ECHILD y FD4→4. Éxito de prueba negativa, no servicio lanzado.
+No usar seclabel inventado para saltar R1-MAC. Start modifica flags antes de fallar;
+otros perfiles con reboot_on_failure pueden disparar shutdown incluso en error
+temprano: requieren política Linux explícita antes de admitirlos.
 
 ## Última integración · SIGCHLD original antes de los workers
 

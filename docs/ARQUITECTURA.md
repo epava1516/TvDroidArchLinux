@@ -1793,3 +1793,14 @@ Pendientes: hijos registrados ServiceList/Service::Reap, colas ctl autorizadas,
 clases, cgroups, mapeo UID, critical/onrestart/reinicio y gestión de descendientes.
 No ejecutar cohortes originales como aceptadas hasta resolver R1-MAC; Start o
 SIGCHLD funcional no prueban readiness. Matriz APK y R6 ARM sin cambios.
+
+## R1/R2 · fallo original de Start antes de fork
+
+[Contraste nativo](../reports/android16-service-start-gate/findings.json): el perfil
+servicemanager original llega a Service::Start y falla por getcon antes de fork;
+PID0/no running/ECHILD, FD4→4. No omitir MAC ni suplir etiquetas. Linux necesita
+política explícita de fallos: Start resetea flags antes de validar y su scopeguard
+puede ejecutar reboot_on_failure en otros perfiles. Un error no es rollback
+transaccional y un Start correcto tampoco prueba exec/Binder/readiness.
+Pendientes originales: identidades/cgroups/contextos, hijo registrado y Reap,
+restart/critical/onrestart y cohortes autorizadas; recorrido completo Markor abierto.
