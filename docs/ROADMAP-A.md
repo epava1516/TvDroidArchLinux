@@ -1,5 +1,9 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+## Puerta inmediata · cliente Composer de SurfaceFlinger
+
+El [experimento vertical](../reports/android16-software-renderer/renderer-decision.json) ya ejecuta el SurfaceFlinger original con driver Bionic original: Vulkan directo exige SYNC_FD que este SwiftShader no implementa; GL original sobre ANGLE inicializa. Bloqueo inmediato demostrado: creación de AidlComposerClient falla. Obtener el estado real del transporte/servidor y corregir la frontera con HWC3, sin reemplazar errores por éxito. Aceptación siguiente: ambos servicios SF consultables por cliente original y frame original capturado en DRM; no basta inicializar EGL. MAC/fences/Markor completos permanecen abiertos.
+
 ## Siguiente hito funcional tras allocator/HWC3
 
 MC3 avanza con [buffer/presentación nativa completos en permisivo](../reports/android16-hwc3-wayland/findings.json), no se cierra: allocator/mapper reales y HWC3 original ya llegan a captura DRM mediante Wayland/Smithay. Ahora integrar **SurfaceFlinger original + renderer Bionic coherente**, conservando errores reales, sin NoOp ni respuesta falsa. Resolver permisos/negativos MAC y contratos de fences/callbacks/capacidades antes de aceptar esa frontera. Después display original permite instalación/PMS/AMS/zygote y recorrido íntegro de Markor: lanzamiento, UI/entrada, nota, servicios, cierre/reapertura. ARM/GMS/DRM siguen separados y abiertos. No repetir el transporte o las consultas de gestor como sustituto de ese avance.

@@ -1,0 +1,106 @@
+{
+  "evidence_id": "ev_88b3351725ff66d81b2a04a6b87187fad567a1a992bc37d0f6cf09fde0b7cf55",
+  "subject": {
+    "name": "vulkan.pastel.so",
+    "digest": {
+      "sha256": "dd923b5296ce8bd23c89ac6c874f04cda76a8bc8765fa8160d762b747a1a5117"
+    },
+    "local_path": "/home/tv/repositorio-principal/dist/aosp16/swiftshader-link-2/vulkan.pastel.so",
+    "format": "elf",
+    "architecture": null
+  },
+  "provider": {
+    "id": "rea-native-exports",
+    "name": "REA PE/ELF export table reader",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.analysis",
+  "operation": "inspect_native_exports",
+  "parameters": {
+    "path": "/home/tv/repositorio-principal/dist/aosp16/swiftshader-link-2/vulkan.pastel.so",
+    "max_file_bytes": 268435456
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "artifact": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/swiftshader-link-2/vulkan.pastel.so",
+      "sha256": "dd923b5296ce8bd23c89ac6c874f04cda76a8bc8765fa8160d762b747a1a5117",
+      "bytes": 38467608
+    },
+    "format": "elf",
+    "architecture": "amd64",
+    "bits": 64,
+    "byte_order": "little",
+    "exports": [
+      {
+        "name": "vk_icdGetInstanceProcAddr",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x9301e0",
+        "size": "75",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "vk_icdNegotiateLoaderICDInterfaceVersion",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x930230",
+        "size": "31",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "vk_icdGetPhysicalDeviceProcAddr",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x930250",
+        "size": "23",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "HMI",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x1e8ecf0",
+        "size": "248",
+        "type": "object",
+        "binding": "global",
+        "version": null
+      }
+    ],
+    "coverage": {
+      "status": "complete",
+      "reason": null,
+      "examined_entries": 345,
+      "exports": 4
+    },
+    "issues": [],
+    "limitations": [
+      "Rows list defined default- or protected-visibility global, weak and unique dynamic symbols; local, hidden, internal and undefined symbols are not exports.",
+      "A hidden symbol version is not the default version that a by-name dlsym lookup selects.",
+      "Rows reproduce the dynamic symbol table; they do not establish that a symbol is reachable, safe to call or loaded at runtime."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "Rows list defined default- or protected-visibility global, weak and unique dynamic symbols; local, hidden, internal and undefined symbols are not exports.",
+    "A hidden symbol version is not the default version that a by-name dlsym lookup selects.",
+    "Rows reproduce the dynamic symbol table; they do not establish that a symbol is reachable, safe to call or loaded at runtime."
+  ],
+  "relationship_coverage": null,
+  "locations": [
+    {
+      "kind": "artifact-path",
+      "path": "/home/tv/repositorio-principal/dist/aosp16/swiftshader-link-2/vulkan.pastel.so"
+    }
+  ],
+  "evidence_links": []
+}

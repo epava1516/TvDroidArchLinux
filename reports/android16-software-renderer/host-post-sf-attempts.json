@@ -1,0 +1,15 @@
+{
+  "boot_id": "4409f88d-366a-4ccf-80a0-e143452b78f5",
+  "selinux": [
+    1,
+    2,
+    0,
+    1,
+    1
+  ],
+  "units": "",
+  "loops": "",
+  "vt": "1",
+  "getty2_mask_exists": false,
+  "runtime_processes": []
+}

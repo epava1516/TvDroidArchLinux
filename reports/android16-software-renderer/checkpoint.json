@@ -1,20 +1,15 @@
 {
-  "utc": "2026-10-31T22:20:23.575074+00:00",
+  "utc": "2026-10-31T23:17:34.066002+00:00",
   "objective": "Complete unchanged APK compatibility on Linux/Rust/Smithay, no Waydroid/full Android. Markor first; no fixture/compile acceptance.",
   "git_head": "250aa0eced02d4897ad810b87c7f114f48d1f356",
   "branch": "main",
   "origin_relation_cached": "0\t0",
-  "pending": "Six historical files preserved/excluded. Own renderer build recipes/source/MCP evidence checkpointed as WIP, no SF/renderer acceptance.",
-  "runtime": "Last host-root check belongs to proven250aa0e: LTS6.18.59,permissive,policyload1 policy9f9afb63. No changes to security/kernel/reboot or runtime service start in current source/build work. Recheck host before next runtime operation.",
+  "pending": "Six historical files preserved/excluded. Own GUI protocol/flags/client build scripts and linux-surfaceflinger-client.cpp remain separate uncommitted experiments; failures sf-original-client-1/2 preserved in dist and not used by current original bootanimation route.",
+  "runtime": "LTS6.18.59, permissive policyload1 unchanged; host-post-sf-attempts.json records current cleanup. No reboot/enforcing/policy operation this milestone.",
   "handles": {
-    "llvm_build_tool_session": 46162,
-    "ninja_pid_namespace": 36,
-    "note": "PID36 is inside the exec namespace, not a reusable host PID; session46162 confirmed live by write_stdin, logs advancing. Do not restart from process.json alone.",
-    "other_jobs": "Clones60652/checkout23860, source23157/20648/37514/42010, hostgen56131 terminal; no retained binary engine opened by inspect_native_exports.",
-    "native_build_tool_session": 30461,
-    "native_ninja_pid_namespace": 36,
-    "gui_source_clone": "54044 terminal0; original fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103 headers/AIDL hydrated",
-    "host_pid_observation": "build-host-observation.json is a time-bound sample, revalidate actual command/boot before using PIDs."
+    "builds": "LLVM46162/native30461 and SF-cohort40515 terminal0; no live build handle",
+    "runtime": "Native attempts terminal1; exact transient units stopped, no processes/loops, VT1/getty restored in root host-post evidence. Old tool20222 handle missing on final poll; never reuse it.",
+    "REA": "Stateless exports Evidence ev_88b3351725ff66d81b2a04a6b87187fad567a1a992bc37d0f6cf09fde0b7cf55; no binary engine opened"
   },
   "paths": {
     "llvm": "dist/aosp16/swiftshader-llvm16-1",
@@ -25,8 +20,10 @@
     "source_study": "/home/tv/.cache/archtv/aosp16-qpr2/software-renderer-study-1",
     "native": "dist/aosp16/swiftshader-native-1",
     "native_log": "dist/aosp16/swiftshader-native-1/build.log",
-    "gui_headers": "/home/tv/.cache/archtv/aosp16-qpr2/frameworks-native-gui-source-1"
+    "gui_headers": "/home/tv/.cache/archtv/aosp16-qpr2/frameworks-native-gui-source-1",
+    "link": "dist/aosp16/swiftshader-link-2/link.json",
+    "recovery": "/home/tv/recuperacion-archtv/20261031T231239Z-original-surfaceflinger/RETOMAR.txt"
   },
-  "next": "Poll46162 and30461; do not restart on timeout. If successful run prepared link-native.py with a new output directory; preserve failures and diagnose actual unresolved symbols/header/resource issue. Then REA inspect original ICD/HMI, actual Vulkan/AHB execution and original SF with native SurfaceComposerClient. Header/AIDL source for GUI prepared, bindings/client not yet implemented. No placeholder/nonnull-parent violation.",
+  "next": "Inspect actual Composer createClient transport/server error using original SF+HAL. Original GL renderer now initializes, but SF Binder registration/UI absent. Markor unchanged and uninstalled. Native supervisor still startup20s, not a completed app lifecycle.",
   "recovery": "No disruptive operation or reboot programmed. Prior graphics recovery /home/tv/recuperacion-archtv/20261031T212325Z-graphics-cohort-first-run/RETOMAR.txt. Before runtime/security changes save fresh candidate checkpoint; blanket authorization persists."
 }

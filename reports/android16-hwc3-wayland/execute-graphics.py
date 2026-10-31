@@ -72,5 +72,20 @@ assert os.getxattr(report,'security.selinux').rstrip(b'\\0')==b'u:object_r:surfa
 observed=report.read_text();assert 'MC3_COMMANDS_ACCEPTED physical_timing_not_proven' in observed
 print('MC3_EXPERIMENTAL_CLIENT_FILE_OBSERVED '+json.dumps(observed),flush=True)
 """
+if '--surfaceflinger' in sys.argv[1:]:
+    base = base.replace('dist/aosp16/graphics-cohort-build-5/payload-2.ext4', 'dist/aosp16/sf-cohort-build-4/payload-2.ext4')
+    base = base.replace("'--graphics-integration'", "'--surfaceflinger-integration'")
+    base = base.replace("'--observe-ms','150'", "'--observe-ms','60000'")
+    # The API harness report is inapplicable to original clients. Retain the
+    # manager assertions and check the original Binder CLI outputs instead.
+    base = base[:base.index("\nreport=Path('/data/misc/surfaceflinger/archtv-integration.txt')")]
+    base += """
+for name, expected in [('sf-query.txt','Service SurfaceFlinger: found\\n'),('sf-aidl-query.txt','Service SurfaceFlingerAIDL: found\\n')]:
+ report=Path('/data/local/tmp/archtv-mc1')/name;info=report.lstat()
+ assert stat.S_ISREG(info.st_mode) and info.st_uid==2000 and info.st_gid==2000 and stat.S_IMODE(info.st_mode)==0o600 and info.st_size<1024
+ assert os.getxattr(report,'security.selinux').rstrip(b'\\0')==b'u:object_r:shell_data_file:s0'
+ observed=report.read_text();print('MC3_ORIGINAL_SF_QUERY '+json.dumps(observed),flush=True);assert observed==expected
+print('MC3_ORIGINAL_SF_QUERIES_VERIFIED NOT_PIXEL_MAC_OR_APK_ACCEPTANCE',flush=True)
+"""
 compile(base, '<materialized graphics factory>', 'exec')
 exec(compile(base, '<materialized graphics factory>', 'exec'), {'__name__': '__main__'})

@@ -1,6 +1,10 @@
 # Estado actual y punto de entrada
 
-## En curso · renderer Bionic para SurfaceFlinger
+## SurfaceFlinger original · renderer iniciado, integración abierta
+
+El driver SwiftShader Bionic enlazado exporta sus cuatro entradas originales ([REA MCP estático](../reports/android16-software-renderer/link-2-exports-mcp.json)). La [ejecución original](../reports/android16-software-renderer/renderer-decision.json) demuestra que RenderEngine Vulkan rechaza SYNC_FD ausente; RenderEngine GL sí inicializa ANGLE/SwiftShader, pero SurfaceFlinger falla al crear AidlComposerClient. No registro SF, frame ni APK aceptados. [Estado posterior](../reports/android16-software-renderer/host-post-sf-attempts.json); [checkpoint vigente](../reports/android16-software-renderer/checkpoint.json). Siguiente: localizar el error real de esa transacción y resolver la integración HWC; después Markor completo.
+
+## Histórico · compilación renderer Bionic para SurfaceFlinger
 
 [Checkpoint y handles reales](../reports/android16-software-renderer/checkpoint.json): compilación de módulos Android originales SwiftShader/LLVM16, fuentes y generadores verificados; [REA MCP de libgui](../reports/android16-software-renderer/libgui-selected-exports-mcp.json) estático. No renderer, SurfaceFlinger ni APK ejecutados por este trabajo. El último hito funcional sigue siendo250aa0e, abajo.
 
@@ -28,7 +32,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-wayland-client/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-software-renderer/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).

@@ -15,6 +15,7 @@ assert not (out / 'payload.json').exists(), 'Preserve existing artifacts'
 vendor = out / ('vendor-inputs-' + (sys.argv[2] if len(sys.argv)>2 else '1'))
 vendor.mkdir()
 files = {}
+surfaceflinger = '--surfaceflinger' in sys.argv[2:]
 
 
 def add(logical, source, label, mode=0o644):
@@ -22,6 +23,13 @@ def add(logical, source, label, mode=0o644):
     files[logical] = {'source': str(source), 'context': 'u:object_r:' + label + ':s0',
                       'mode': mode, 'sha256': hashlib.sha256(source.read_bytes()).hexdigest()}
 
+
+if surfaceflinger:
+    properties = vendor / 'build.prop'
+    backend = 'skiagl' if '--renderengine-gl' in sys.argv[2:] else 'skiavk'
+    properties.write_text('ro.hardware.egl=angle\nro.hardware.vulkan=pastel\ndebug.renderengine.backend=' + backend + '\n')
+    add('/vendor/build.prop', properties, 'vendor_file')
+    add('/vendor/lib64/hw/vulkan.pastel.so', ROOT / 'dist/aosp16/swiftshader-link-2/vulkan.pastel.so', 'same_process_hal_file')
 
 sp = 'same_process_hal_file'
 mg = ROOT / 'dist/aosp16/minigbm-native-link-5'
@@ -55,6 +63,8 @@ while queue:
     if source in seen:
         continue
     seen.add(source)
+    if not source.read_bytes().startswith(b'\x7fELF'):
+        continue
     needed = re.findall(r'\(NEEDED\).*?\[([^]]+)\]', subprocess.check_output(['readelf', '-d', str(source)], text=True))
     providers.append({'source': str(source), 'needed': needed, 'sha256': hashlib.sha256(source.read_bytes()).hexdigest()})
     for name in needed:
@@ -79,7 +89,7 @@ while queue:
 
 needed_by_name = {Path(p['source']).name: p['needed'] for p in providers}
 mapper_closure = set()
-pending = ['mapper.minigbm.so']
+pending = ['mapper.minigbm.so'] + (['vulkan.pastel.so'] if surfaceflinger else [])
 while pending:
     name = pending.pop()
     if name in mapper_closure or name in shared:
@@ -108,7 +118,7 @@ add('/vendor/etc/selinux/vendor_file_contexts', contexts, 'file_contexts_file')
 (out / 'vendor-inputs.json').write_text(json.dumps({'files': files, 'providers': providers,
     'shared_names': sorted(shared), 'linkerconfig_sha256': hashlib.sha256(config.encode()).hexdigest(),
     'limitations': ['Experimental provider selection, not full Soong/vendor product equivalence.',
-                    'SP-HAL labels limited to ELF mapper dependency closure; loader/runtime and enforcing access still untested.',
+                    'SP-HAL labels limited to ELF mapper/selected Vulkan driver dependency closure; loader/runtime and enforcing access still untested.',
                     'Harness surfaceflinger_exec explicitly does not identify an original SurfaceFlinger binary.',
                     'No namespace, driver, GPU isolation, registration, buffer or timing acceptance by packaging.']}, indent=2) + '\n')
 

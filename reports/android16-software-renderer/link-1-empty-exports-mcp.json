@@ -1,0 +1,65 @@
+{
+  "evidence_id": "ev_5ae555daafc70d326364d7a9284254c470575d7859d9d511bfea49312ccebd63",
+  "subject": {
+    "name": "vulkan.pastel.so",
+    "digest": {
+      "sha256": "adb6ba218d9d7bf55b1a3ccda0d9e0cb0004e7cfac6545acd96b2415bd5660d9"
+    },
+    "local_path": "/home/tv/repositorio-principal/dist/aosp16/swiftshader-link-1/vulkan.pastel.so",
+    "format": "elf",
+    "architecture": null
+  },
+  "provider": {
+    "id": "rea-native-exports",
+    "name": "REA PE/ELF export table reader",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.analysis",
+  "operation": "inspect_native_exports",
+  "parameters": {
+    "path": "/home/tv/repositorio-principal/dist/aosp16/swiftshader-link-1/vulkan.pastel.so",
+    "max_file_bytes": 268435456
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "artifact": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/swiftshader-link-1/vulkan.pastel.so",
+      "sha256": "adb6ba218d9d7bf55b1a3ccda0d9e0cb0004e7cfac6545acd96b2415bd5660d9",
+      "bytes": 4088
+    },
+    "format": "elf",
+    "architecture": "amd64",
+    "bits": 64,
+    "byte_order": "little",
+    "exports": [],
+    "coverage": {
+      "status": "complete",
+      "reason": null,
+      "examined_entries": 3,
+      "exports": 0
+    },
+    "issues": [],
+    "limitations": [
+      "Rows list defined default- or protected-visibility global, weak and unique dynamic symbols; local, hidden, internal and undefined symbols are not exports.",
+      "A hidden symbol version is not the default version that a by-name dlsym lookup selects.",
+      "Rows reproduce the dynamic symbol table; they do not establish that a symbol is reachable, safe to call or loaded at runtime."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "Rows list defined default- or protected-visibility global, weak and unique dynamic symbols; local, hidden, internal and undefined symbols are not exports.",
+    "A hidden symbol version is not the default version that a by-name dlsym lookup selects.",
+    "Rows reproduce the dynamic symbol table; they do not establish that a symbol is reachable, safe to call or loaded at runtime."
+  ],
+  "relationship_coverage": null,
+  "locations": [
+    {
+      "kind": "artifact-path",
+      "path": "/home/tv/repositorio-principal/dist/aosp16/swiftshader-link-1/vulkan.pastel.so"
+    }
+  ],
+  "evidence_links": []
+}

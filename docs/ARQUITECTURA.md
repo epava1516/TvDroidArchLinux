@@ -1,5 +1,9 @@
 # Arquitectura vigente · A16-QPR2-1
 
+## Elección gráfica contrastada en ejecución
+
+[SwiftShader original Android/LLVM16 y GSI ANGLE](../reports/android16-software-renderer/renderer-decision.json): binario Bionic, no biblioteca glibc ni SDK stub. El Vulkan RenderEngine original exige semáforos externos SYNC_FD; el driver ofrece semáforos OPAQUE_FD basados en memfd/pthread, que su fuente distingue de sync_file. No se anuncian funciones inexistentes. La alternativa original skiagl inicializa GLES3.1 sobre ANGLE/SwiftShader y avanza hasta IComposer::createClient, aún fallido. Esta combinación es experimental: no frame, producto Soong equivalente, aislamiento o APK aceptados. Conservar namespaces vendor/sphal y las identidades de RC; resolver el estado real de Binder antes de ampliar controles.
+
 ## Frontera gráfica nativa observada
 
 [Cohorte ejecutada](../reports/android16-hwc3-wayland/findings.json): RCs/Service/identidades originales, allocatorV2 y mapper stable-C minigbm; adaptación vmwgfx al dumb-driver original, nodos privados y subárbol **real** de GPU sysfs RO; HWC3 conserva Composer/Client/Display/Layer y cambia fábrica/FrameComposer/descubrimiento hacia Wayland Bionic. Libui/mapper respetan vendor/sphal y manifiestos reales; proveedores y variantes explícitos en [inventario](../reports/android16-hwc3-wayland/vendor-inputs.json), sin equivalencia Soong/producto presumida. Cliente experimental en dominio SF, no binario SF: escribe GraphicBuffer, presenta y cierra; captura DRM completa correcta. Política original vendor compuesta y cargada **en permisivo**; no autorización ni aislamiento probado. No fence ficticio: sin present-fence nativo, timing/VTS abiertos. Próxima frontera: SF original/renderer Bionic y después aplicación real.

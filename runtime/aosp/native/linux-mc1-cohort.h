@@ -25,8 +25,8 @@ namespace archtv::aosp {
 class LinuxMc1Cohort {
  public:
     using Tick = std::function<bool()>;
-    LinuxMc1Cohort(const bool& stop,int expected_mode,bool hardware=false,bool graphics=false)
-        : stop_(stop),expected_mode_(expected_mode),hardware_requested_(hardware),graphics_requested_(graphics) {}
+    LinuxMc1Cohort(const bool& stop,int expected_mode,bool hardware=false,bool graphics=false,bool surfaceflinger=false)
+        : stop_(stop),expected_mode_(expected_mode),hardware_requested_(hardware),graphics_requested_(graphics),surfaceflinger_requested_(surfaceflinger) {}
     android::base::Result<void> Start(const Tick& tick) {
         using namespace android::init;
         auto& services=ServiceList::GetInstance();
@@ -90,7 +90,7 @@ class LinuxMc1Cohort {
         if(hardware_requested_)return StartHardware(tick);
         return {};
     }
-    bool healthy() const { return !manager_failed_ && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()); }
+    bool healthy() const { return !manager_failed_ && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && bootanimation_->IsRunning())); }
     android::base::Result<void> Close(const Tick& tick) {
         using namespace android::init;
         if(!active_) return {};
@@ -109,6 +109,9 @@ class LinuxMc1Cohort {
         hardware_=nullptr;
         allocator_=nullptr;
         composer_=nullptr;
+        surfaceflinger_=nullptr;
+        bootanimation_=nullptr;
+        bootanimation_started_=false;
         services.RemoveServiceIf([](const auto& service){return !service->IsRunning();});
         active_=false;
         int observed_mode=security_getenforce();
@@ -198,6 +201,7 @@ class LinuxMc1Cohort {
             std::fprintf(stderr,"MC3_GRAPHICS_SERVICE_STARTED name=%s pid=%d uid=%u gid=%u NOT_REGISTERED\n",
                          service->name().c_str(),service->pid(),service->uid(),service->gid());
         }
+        if(surfaceflinger_requested_)return StartSurfaceFlinger(tick);
         client_done_=false;client_ok_=false;
         // Explicit experimental API client in the original SF client domain;
         // this is not SurfaceFlinger or an APK. No readiness property is set.
@@ -216,8 +220,59 @@ class LinuxMc1Cohort {
         if(security_getenforce()!=expected_mode_)return android::base::Error()<<"MC3 security mode changed";
         return {};
     }
-    android::base::Result<void> Wait(const Tick& tick,const std::function<bool()>& done) {
-        const auto end=std::chrono::steady_clock::now()+std::chrono::seconds(5);
+    android::base::Result<void> StartSurfaceFlinger(const Tick& tick) {
+        using namespace android::init;
+        auto& services=ServiceList::GetInstance();
+        auto parser=CreateParser(ActionManager::GetInstance(),services);
+        for(const char* path:{"/system/etc/init/surfaceflinger.rc","/system/etc/init/bootanim.rc"}) {
+            auto parsed=parser.ParseConfigFile(path);
+            if(!parsed.ok() || parser.parse_error_count()!=0)
+                return android::base::Error()<<"MC3 original SF/client RC rejected: "<<path;
+        }
+        surfaceflinger_=services.FindService("surfaceflinger");
+        bootanimation_=services.FindService("bootanim");
+        if(!surfaceflinger_ || !bootanimation_ ||
+           surfaceflinger_->args()!=std::vector<std::string>{"/system/bin/surfaceflinger"} ||
+           bootanimation_->args()!=std::vector<std::string>{"/system/bin/bootanimation"})
+            return android::base::Error()<<"MC3 unexpected original SF/client executable";
+        for(auto* service:{surfaceflinger_,bootanimation_}) {
+            service->AddReapCallback([this](const siginfo_t& info) {
+                std::fprintf(stderr,"MC3_SF_SERVICE_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
+                if(!closing_)manager_failed_=true;
+            });
+        }
+        if(auto result=surfaceflinger_->Start();!result.ok())return result;
+        std::fprintf(stderr,"MC3_ORIGINAL_SF_STARTED pid=%d NOT_REGISTERED\n",surfaceflinger_->pid());
+        client_done_=false;client_ok_=false;
+        // Poll actual original Binder CLI results, not the CLI exit code alone.
+        // ctl.start/lazy-service backend remains fail-closed; this cohort starts
+        // the original RC services explicitly, without Android boot dispatch.
+        auto client=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","shell","shell","--",
+            "/system/bin/sh","-c",
+            "umask 077; i=0; while [ $i -lt 30 ]; do "
+            "/system/bin/service check SurfaceFlinger > /data/local/tmp/archtv-mc1/sf-query.txt 2>&1; "
+            "/system/bin/service check SurfaceFlingerAIDL > /data/local/tmp/archtv-mc1/sf-aidl-query.txt 2>&1; "
+            "if /system/bin/grep -qx 'Service SurfaceFlinger: found' /data/local/tmp/archtv-mc1/sf-query.txt && "
+            "/system/bin/grep -qx 'Service SurfaceFlingerAIDL: found' /data/local/tmp/archtv-mc1/sf-aidl-query.txt; then exit 0; fi; "
+            "i=$((i+1)); /system/bin/sleep 1; done; exit 1"});
+        if(!client.ok())return client.error();
+        auto* process=client->get();
+        process->AddReapCallback([this](const siginfo_t& info) {
+            client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;
+            std::fprintf(stderr,"MC3_ORIGINAL_SF_QUERY_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
+        });
+        services.AddService(std::move(*client));
+        if(auto result=process->ExecStart();!result.ok())return result;
+        if(auto result=Wait(tick,[this]{return client_done_;},35);!result.ok())return result;
+        if(!client_ok_)return android::base::Error()<<"MC3 original SF service queries failed";
+        if(auto result=bootanimation_->Start();!result.ok())return result;
+        bootanimation_started_=true;
+        std::fprintf(stderr,"MC3_ORIGINAL_BOOTANIMATION_STARTED pid=%d NOT_PIXEL_ACCEPTANCE\n",bootanimation_->pid());
+        if(security_getenforce()!=expected_mode_)return android::base::Error()<<"MC3 security mode changed";
+        return {};
+    }
+    android::base::Result<void> Wait(const Tick& tick,const std::function<bool()>& done,int seconds=5) {
+        const auto end=std::chrono::steady_clock::now()+std::chrono::seconds(seconds);
         for(;;) {
             if(stop_ || !healthy())return android::base::Error()<<"MC1 stopped or manager exited";
             if(done())return {};
@@ -229,10 +284,14 @@ class LinuxMc1Cohort {
     const int expected_mode_;
     const bool hardware_requested_;
     const bool graphics_requested_;
+    const bool surfaceflinger_requested_;
     android::init::Service* manager_=nullptr;
     android::init::Service* hardware_=nullptr;
     android::init::Service* allocator_=nullptr;
     android::init::Service* composer_=nullptr;
+    android::init::Service* surfaceflinger_=nullptr;
+    android::init::Service* bootanimation_=nullptr;
+    bool bootanimation_started_=false;
     bool missing_done_=false,missing_ok_=false;
     bool active_=false,closing_=false,manager_failed_=false,client_done_=false,client_ok_=false;
 };

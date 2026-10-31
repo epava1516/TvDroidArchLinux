@@ -1,0 +1,14 @@
+{
+  "driver_sha256": "dd923b5296ce8bd23c89ac6c874f04cda76a8bc8765fa8160d762b747a1a5117",
+  "source_commit": "d70203d9df3c70c4fc63fb29325d24e9c12dc43f",
+  "original_source": {
+    "src/Vulkan/VkSemaphore.cpp": "8998ea34274a7ca4e8b5ea612aa6785ffb30171cda08d5eafaedb1827e3b7a3c",
+    "src/Vulkan/VkSemaphoreExternalLinux.hpp": "bc767f166b650b8fb7262ea4cb76b8d0184edbb93aeb28e185cf1615888328f1"
+  },
+  "observation": "Original SF Vulkan RenderEngine rejects missing SYNC_FD external semaphore features. No Binder SF readiness/pixels/APK acceptance. Source VkSemaphore kSupportedTypes implements OPAQUE_FD (when enabled), not Linux SYNC_FD. memfd/pthread payload explicitly not interoperable with Linux sync files.",
+  "decision": "Test existing original skiagl RenderEngine + GSI ANGLE over same Vulkan driver, with real API checks; do not lie about Vk features or emulate fence FDs. Kernel/driver fence integration stays open even if GL initializes.",
+  "runtime": "Permissive policy9f9afb63; diagnostic ordinary execution, not REA runtime. Original shell query aborted6, SF stopped by coordinator on failure; real liblog sender credentials retained.",
+  "limits": "No rendering, authorization, isolation or Markor demonstrated. Native build/link and MCP exports static only.",
+  "gl_observation": "Original skiagl initialized OpenGL ES3.1 using original GSI ANGLE2.1 ab6a82e0 and newly built SwiftShader LLVM16. Then original SurfaceFlinger reports Cannot create AidlComposerClient and no SF service/readiness is accepted.",
+  "next": "Diagnose actual IComposer createClient transaction/status against original SF ABI and original server; do not add fake return. ANGLE GL initialization is partial, no completed frame."
+}

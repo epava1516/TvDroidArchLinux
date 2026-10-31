@@ -57,11 +57,18 @@ def main():
     crt = ROOT / 'dist/aosp16/hwc2on1-build-1'
     script = SOURCE / 'src/Vulkan/android_vk_swiftshader.lds'
     target = out / 'vulkan.pastel.so'
+    driver_archive = str(native / 'libswiftshader-driver.a')
+    support_archives = [a for a in inputs['archives'] if a != driver_archive]
+    assert len(support_archives) == 5
     command = [ld, '--no-undefined', '--no-allow-shlib-undefined', '--as-needed',
         '-shared', '--soname=vulkan.pastel.so', '--gc-sections', '-Bsymbolic',
         '--version-script=' + str(script), '-z', 'relro', '-z', 'now',
         '--rpath-link=' + str(lib), str(crt / 'crtbegin_so.c.o'),
-        '--start-group', *inputs['archives'], artifact['path'], '--end-group',
+        # The original cc_library_shared driver units are direct inputs, not
+        # lazy static dependencies. Force their archive members in, then resolve
+        # their real dependencies from the remaining original static modules.
+        '--start-group', '--whole-archive', driver_archive, '--no-whole-archive',
+        *support_archives, artifact['path'], '--end-group',
         '-L' + str(lib), *['-l:' + name for name in direct],
         '/home/tv/.cache/archtv/graphics-candidates-1/compiler-builtins/libclang_rt.builtins-x86_64-android.a',
         str(crt / 'crtend_so.S.o'), '-o', str(target)]
@@ -71,9 +78,16 @@ def main():
               'scope': 'Strict native linkage only; not loaded ICD, Vulkan device/AHB/draw, SF, MAC or APK acceptance.'}
     if result.returncode == 0:
         record['binary_sha256'] = hashlib.sha256(target.read_bytes()).hexdigest()
+        symbols = subprocess.check_output(['readelf', '--dyn-syms', '--wide', str(target)], text=True)
+        defined = {fields[7].split('@')[0] for line in symbols.splitlines()
+                   if len(fields := line.split()) >= 8 and fields[6] != 'UND'}
+        required = {'HMI', 'vk_icdGetInstanceProcAddr', 'vk_icdNegotiateLoaderICDInterfaceVersion',
+                    'vk_icdGetPhysicalDeviceProcAddr'}
+        record['required_exports'] = sorted(required)
+        record['missing_exports'] = sorted(required - defined)
     (out / 'link.json').write_text(json.dumps(record, indent=2) + '\n')
     print('Original SwiftShader Android strict link', result.returncode, out)
-    raise SystemExit(result.returncode)
+    raise SystemExit(result.returncode or (1 if record.get('missing_exports') else 0))
 
 
 if __name__ == '__main__':
