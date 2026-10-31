@@ -1,0 +1,19 @@
+{
+  "method": "ordinary root execution, unshare mount namespace; not REA MCP runtime evidence",
+  "before_context": "kernel",
+  "before_enforce": 0,
+  "return": 0,
+  "errno": 0,
+  "after_enforce": 0,
+  "after_context": "linux.system_u:linux.system_r:linux.init_t:s0",
+  "sha256": "9f9afb630a950a4ef79367901b74a9414c14066eb8e4ef8ceee6dcc61b537221",
+  "bytes": 3465711,
+  "status_post_first_session": [
+    1,
+    2,
+    0,
+    1,
+    1
+  ],
+  "scope": "Actual global policy load in permissive only, no authorization/isolation or service availability by this result."
+}

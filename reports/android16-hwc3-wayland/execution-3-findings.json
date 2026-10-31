@@ -1,0 +1,7 @@
+{
+  "native_exit": 0,
+  "coordinator": "Client exited0 through original allocator/mapper and HWC APIs; all services reaped, coordinator/Rust close0. Detailed client stdout was discarded by original service stdio handling; no claim of direct observation of that text.",
+  "screenshot": "Negative: all1024000 RGB pixels were background(10,12,20). --capture-after is elapsed seconds, not frame count; captured before TOPLEVEL_MAPPED. Cannot accept pixel presentation on this evidence.",
+  "change": "Client writes actual observations into original-labelled private /data/misc/surfaceflinger file with O_EXCL; it holds real target3seconds to permit independent capture after4seconds, then closes. No service readiness property, fake fence or substituted API response.",
+  "security": "Permissive only; actual four service SIDs/identities/caps/NNP observed. No authorization/isolation acceptance."
+}

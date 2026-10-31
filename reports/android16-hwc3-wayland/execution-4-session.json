@@ -1,0 +1,6 @@
+{
+  "output": "/home/tv/repositorio-principal/dist/aosp16/graphics-session-1793482301687638760",
+  "unit": "archtv-mc3-graphics-1793482301687960395",
+  "initial_vt": "1",
+  "scope": "Original allocator/composer/coordinator integration candidate, permissive only; inspect real logs and pixels; not APK acceptance"
+}

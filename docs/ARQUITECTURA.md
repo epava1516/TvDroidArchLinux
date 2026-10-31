@@ -1,6 +1,10 @@
 # Arquitectura vigente · A16-QPR2-1
 
-## Candidato gráfico actual · integración pendiente
+## Frontera gráfica nativa observada
+
+[Cohorte ejecutada](../reports/android16-hwc3-wayland/findings.json): RCs/Service/identidades originales, allocatorV2 y mapper stable-C minigbm; adaptación vmwgfx al dumb-driver original, nodos privados y subárbol **real** de GPU sysfs RO; HWC3 conserva Composer/Client/Display/Layer y cambia fábrica/FrameComposer/descubrimiento hacia Wayland Bionic. Libui/mapper respetan vendor/sphal y manifiestos reales; proveedores y variantes explícitos en [inventario](../reports/android16-hwc3-wayland/vendor-inputs.json), sin equivalencia Soong/producto presumida. Cliente experimental en dominio SF, no binario SF: escribe GraphicBuffer, presenta y cierra; captura DRM completa correcta. Política original vendor compuesta y cargada **en permisivo**; no autorización ni aislamiento probado. No fence ficticio: sin present-fence nativo, timing/VTS abiertos. Próxima frontera: SF original/renderer Bionic y después aplicación real.
+
+## Histórico · Candidato gráfico actual · integración pendiente
 
 La base plataforma GSI carece de tipos concretos vendor `hal_graphics_allocator_default` y `hal_graphics_composer_default`. Reutilizar sus TE y macros originales, no dominios ficticios: añadirlos a CIL AOSP antes de componer con Linux preserva el universo y sus aserciones. HWC3/Device/Composer y minigbm allocatorV2/stable-C mapper están enlazados experimentalmente, no ejecutados como cohorte. vmwgfx usa adaptación al dumb-driver original aún sin prueba real de BO/export/import. La política anterior dejó de estar cargada tras el reinicio ([estado](../reports/android16-hwc3-wayland/host-after-reboot.json)).
 
@@ -9,12 +13,12 @@ La base plataforma GSI carece de tipos concretos vendor `hal_graphics_allocator_
 [LinuxWaylandOutput](../reports/android16-wayland-client/findings.json) valida la frontera Bionic→socket Unix→Smithay mediante libwayland/libffi originales, sin glibc en el ejecutable nativo. Dos buffers SHM privados se reutilizan sólo tras release real; callback de frame no se exporta como fence. Sólo XRGB8888/un output, resize antiguo falla cerrado. Falta conectar HWC3, mapper/allocator/renderizador/input y perfil de namespaces/MAC: prueba usa SID Linux init_t permisivo y linkerconfig ausente. No modifica política ni permite afirmar aislamiento.
 
 
-## Integración HWC3 · frontera de backend
+## Histórico · Integración HWC3 · frontera de backend
 
 La [separación comprobada del frontend](../reports/android16-hwc3-frontend/findings.json) conserva cuerpos y firmas originales, eliminando sólo includes concretos innecesarios y adelantando DrmClient. El enlace completo exige todavía Device y findDisplays (siete símbolos); no se permite resolverlos con NoOp o respuestas ficticias. La importación graphics-common actualV7 no es frozenV7. HDCP y brillo siguen Unsupported originales; no hay aceptación DRM.
 
 
-## Recuperación y siguiente integración gráfica
+## Histórico · Recuperación y siguiente integración gráfica
 
 La comparación adicional de [Goldfish HWC3 original](../reports/android16-graphics-resume/findings.json) identifica una frontera FrameComposer para adaptar salida Wayland conservando el frontend AIDL completo. Se elige como próximo experimento, no como base probada. Client/Guest siguen ligados a DRM, Host al emulador y NoOp no acredita presentación. Fábrica y descubrimiento de displays necesitan adaptación real, junto a allocator/mapper, RenderEngine Bionic y sincronización. Linux/Smithay conserva KMS; no hay aceptación gráfica ni FCM final.
 

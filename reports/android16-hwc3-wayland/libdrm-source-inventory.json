@@ -1,0 +1,171 @@
+{
+  "revision": "abd25312f278da5cbeeca6a9b5fc1c5ea6dabc23",
+  "files": [
+    {
+      "path": "Android.bp",
+      "git_blob": "149aed68b3e485f3c1a4e3a421b03823d95ff7f6",
+      "sha256": "f92516f4b0c9da8fd2117120bd539e73d6fe496d4bc8aaf2fb68def98691caf4"
+    },
+    {
+      "path": "LICENSE",
+      "git_blob": "917b95c38bfa9b3f1707f197bf83175adf969fcf",
+      "sha256": "fbbcddffe97266ce2282a39cb6ad0528c5c47e5eba0c9b0106c00425ad6d2adc"
+    },
+    {
+      "path": "generated_static_table_fourcc.h",
+      "git_blob": "a8d014d0600923f565bc826a2cd3ffa2a7edbf6c",
+      "sha256": "b711df3d456753aa0a87d3ba937a9e479058cb5754f68257dd3bce261eeb50b4"
+    },
+    {
+      "path": "libdrm_lists.h",
+      "git_blob": "7f55fc0d44fe4e5b9d2b78e637b24b7995bf67d2",
+      "sha256": "4082f33572984041a3579bf785eccdca5919252817c229f6d9c1cc1854527488"
+    },
+    {
+      "path": "libdrm_macros.h",
+      "git_blob": "5caaa8014343de8df22ec49fbc9b17c328646a94",
+      "sha256": "64055ff78eb4dc819ca4c67a9e878bc1673d8d5425e4b599a7c4cd9b09cc0ec1"
+    },
+    {
+      "path": "libsync.h",
+      "git_blob": "c6b64ed330cc6eae3f6042db0d381c85a505daba",
+      "sha256": "0c681ebeb5ff98b61261a3240baa9cf855efb105231985c5a717d26383fe02fd"
+    },
+    {
+      "path": "util_double_list.h",
+      "git_blob": "9bdca137009eab20eabbf1156f832cdddd5ef562",
+      "sha256": "c8bbb222a9737a10da59209403d180559c4cd49e1af0f73a94ec295d501eee6c"
+    },
+    {
+      "path": "util_math.h",
+      "git_blob": "35bf451294fd8943593e02deb625a77151d0063c",
+      "sha256": "5b36dddf7bdbbb219d62f77278c7dd05b18a77b8918ee7c2ef76dd711d1843ea"
+    },
+    {
+      "path": "xf86atomic.h",
+      "git_blob": "c19e493ba7007057a84fc28cf990dbd6a35a1814",
+      "sha256": "447d9a2e6937928997e612d5fb0c20b39a295ee9759a4830d8c305d649201134"
+    },
+    {
+      "path": "xf86drm.h",
+      "git_blob": "6d91dfbd92ba040273e6e5d5fa5dec6776db0867",
+      "sha256": "ca8c9d7a8685ae0b3951515b666acd927c2289cbc025a5be541cd19c4206ad46"
+    },
+    {
+      "path": "xf86drmHash.h",
+      "git_blob": "38fd84b7046419bf08be4c8096062f723f7f7510",
+      "sha256": "eb1a84cf55b56e7772fb67da456f6404f1450a7083296c357f04c0b01cd1334f"
+    },
+    {
+      "path": "xf86drmMode.h",
+      "git_blob": "0848788799a36d73232a1edbb5cf05a09ba2cd13",
+      "sha256": "96d7da4829bd41f41a3e26011c7cf9a63a597d66407f3348aa9bb2bd3712e2e2"
+    },
+    {
+      "path": "xf86drmRandom.h",
+      "git_blob": "43b730ce01ff95e52a3532b0cfc39269f3478ef4",
+      "sha256": "65ae85c0e392ec2e24585df684e278d565299598c689bac73a63ebbec894da89"
+    },
+    {
+      "path": "include/drm/amdgpu_drm.h",
+      "git_blob": "ae3f4e275f20e1a2d27d9c746d3de3e9bceaa395",
+      "sha256": "7a98d4ca5ffa31bb9398abcc580ea9479a55e32b08de9536e5bc416dbbad6cc6"
+    },
+    {
+      "path": "include/drm/drm.h",
+      "git_blob": "4e4f7c2c39e4fac04080a070e14f72d382328bf2",
+      "sha256": "6b80aff056e2ac2e126e5144a3ce2c750292edb4d080d4689ac487dc17e4dae8"
+    },
+    {
+      "path": "include/drm/drm_fourcc.h",
+      "git_blob": "8a9c54b56b0624eb4eb5582fe6889e3d08873e66",
+      "sha256": "b9eb43e81c809d1faa517c67fa0ed69bf4f9e8a16c423dac8bd284c52af062fb"
+    },
+    {
+      "path": "include/drm/drm_mode.h",
+      "git_blob": "d390011b89b49546bd4ebf47b71567cb1bc958ce",
+      "sha256": "9f448400da792096a0eb253e7b88b410afd571ee94a0d6c6f11cdcec82d768da"
+    },
+    {
+      "path": "include/drm/drm_sarea.h",
+      "git_blob": "93025be8bdca5647de11892bbe7d7164efcd9f31",
+      "sha256": "fd1a9f523738de090ab5018fc6776b83d18e43ad84f2a0825f6a72d6278c542a"
+    },
+    {
+      "path": "include/drm/i915_drm.h",
+      "git_blob": "1de0433f9a2d226d9ddaaea54ef8649928f3cb55",
+      "sha256": "1eae436196e69c1653004519ec1bc20060959526cf1826f1b60647dc5134cbeb"
+    },
+    {
+      "path": "include/drm/mach64_drm.h",
+      "git_blob": "1f5fd84288e95f1914d1bc33bb868c016fb786df",
+      "sha256": "26cc4affc11d34748724a2b619fd166f162c6215837d0660271c56f4b50e44e5"
+    },
+    {
+      "path": "include/drm/mga_drm.h",
+      "git_blob": "793001114821e7f9850764457bfb96d6f7d7fea7",
+      "sha256": "20be6c1c32101d66c08a5741dfd7ea834221199a5921ac0e4b4698c432dafc0f"
+    },
+    {
+      "path": "include/drm/msm_drm.h",
+      "git_blob": "c06d0a5bdd808235850c2d3ac54c2eb07ef561b1",
+      "sha256": "90305a6fae34d7d5f7f74d043523aaf5d84c94e4691219166060ad36debb53c0"
+    },
+    {
+      "path": "include/drm/nouveau_drm.h",
+      "git_blob": "4f9414890d7cd0b51d5e11a7afedefaa6c70bb8c",
+      "sha256": "7757e4a836b1c6e36944c686477dca664aacb9ca44cc6ce7841bcf2ebfd13cf9"
+    },
+    {
+      "path": "include/drm/qxl_drm.h",
+      "git_blob": "880999d2d8630dd1408807342d0f127a4185e2be",
+      "sha256": "548e963e52309e741c413a2d1918e6f8e31399a350f98b5fd46c38155546ba6e"
+    },
+    {
+      "path": "include/drm/r128_drm.h",
+      "git_blob": "bf431a02333d7208ea9b03068a2a100fd54cda56",
+      "sha256": "5ee8a4d8dc2f8529bc3082ae99e19b836b9241d3ec8380d6e544165c2468ce2c"
+    },
+    {
+      "path": "include/drm/radeon_drm.h",
+      "git_blob": "a1e385d6efd31d73c83353709bda17a7c772226c",
+      "sha256": "1dfa3a4185a75b3963eba9e4ba757cdf7aca503bea7708cf301197366faa5b8d"
+    },
+    {
+      "path": "include/drm/savage_drm.h",
+      "git_blob": "1a91234e675100d31d0a1813f18217a5c833e79c",
+      "sha256": "09f5f47769f6365b2e321ece9e83ce1e4d6aef6ae727dacd33d02d2fd64cb26e"
+    },
+    {
+      "path": "include/drm/sis_drm.h",
+      "git_blob": "8e51bb9a5caca70fbff072a9931005ed5e9e8a14",
+      "sha256": "981da0746aedd980fc2c3bb4357a400ff2b35df2e214a582b58488ffd469fa7c"
+    },
+    {
+      "path": "include/drm/tegra_drm.h",
+      "git_blob": "94cfc306d50abd6f13568ccaec067562f9d238da",
+      "sha256": "84969d7efe2d983090d0b4b0f47f0dcf0f5853b830808677005b1af9d1f954c9"
+    },
+    {
+      "path": "include/drm/vc4_drm.h",
+      "git_blob": "31f50de39acb684596fed89aeb893be670e804fe",
+      "sha256": "f1ffa366621a643e4f81d4b0c15db46a8405a94a45cc08708cc8a702abdb3053"
+    },
+    {
+      "path": "include/drm/via_drm.h",
+      "git_blob": "8b69e8197eb3246d03acb7e86c467f2b221a04e3",
+      "sha256": "ace3ddd33488b86f8171b8622762be2816598236777b6a88afd053a89a7e22d7"
+    },
+    {
+      "path": "include/drm/virtgpu_drm.h",
+      "git_blob": "a13e20cc66b45bf0c31e52d0e327b0ce624c6195",
+      "sha256": "e34c2b7d2beba0e7b50b4b8c227fadaf6816a550b0ac1d3aaadccf75fbec68b3"
+    },
+    {
+      "path": "include/drm/vmwgfx_drm.h",
+      "git_blob": "2b8d47ea3c7b61a2145ec37b7510ba1ffeab0544",
+      "sha256": "b134ec8e4212cda56a57f5eb3de5e43ffa72cd79cf8e5d10a3d33fa8d1eec4ae"
+    }
+  ],
+  "scope": "Original headers matched to selected GSI libdrm provider revision by manifest; no Soong binary equivalence or driver execution implied"
+}

@@ -1,0 +1,386 @@
+{
+  "revision": "b7c93249f685222a524c51403719493cc114ff5d",
+  "files": [
+    {
+      "path": "Android.bp",
+      "git_blob": "c1a69ebade6d028a48ccdade259f46007718a7de",
+      "sha256": "44e83048b371bc4bb940683f6f119d08c91ab2ed2e69477cdc84ad08401d2600"
+    },
+    {
+      "path": "LICENSE",
+      "git_blob": "3bd5095873dc6a78265e3d9ae2e7418e46596d34",
+      "sha256": "8610954adbca6c6b85d8b1ae5613b44b0014e437d32fcad6683bb27541411686"
+    },
+    {
+      "path": "amdgpu.c",
+      "git_blob": "85b34e9341b913d2f9be32441efa64de641ab472",
+      "sha256": "02ce0ca979356bd31155400f57c2ad29febae7d97ea722f32cc3a17df3dcf6b6"
+    },
+    {
+      "path": "backend_mock.c",
+      "git_blob": "67012ad1e11d333b4e80cb7a07f564e5bd67bb40",
+      "sha256": "6add3e4fea5707b25b4a39e1ef47959ef1b387252199b82311a86fe9cdd428a0"
+    },
+    {
+      "path": "dri.c",
+      "git_blob": "bf980be6e8225058ad95f44644eb9eeb42c88ac6",
+      "sha256": "ba1fefa439832300d62a1d3d5e3744d15b905e87f60449f472cbe6adbf2a16cc"
+    },
+    {
+      "path": "dri.h",
+      "git_blob": "955b950639cab2bfca6c66416083d8972e28b7b6",
+      "sha256": "6cfcd087c687a986f5321dd26a9f2b277f91e7dfa5b049a62ead8a3567fc89ae"
+    },
+    {
+      "path": "drv.c",
+      "git_blob": "c1f9c4fe9a5ae4b91a9f7531b9e760e0fdb337cf",
+      "sha256": "6655bfd5e9fa2760601bf3acdae8cfef184dae383a4afb29eaf08813e6a65a60"
+    },
+    {
+      "path": "drv.h",
+      "git_blob": "9150ec60c7bfe686d248e05153f8732994a5c987",
+      "sha256": "8caec709ac016773d813924c94f8162302a3468f2cc4ea2886f46b559dab1a8f"
+    },
+    {
+      "path": "drv_array_helpers.c",
+      "git_blob": "b4e77501d13a335a6dbf5d1de8c0de994b592cc7",
+      "sha256": "abc56607bbddc138e38c6bc92d208f53826ad68b539cf1383b2115aba980b6bf"
+    },
+    {
+      "path": "drv_array_helpers.h",
+      "git_blob": "77544d313e6f3f3afa1f5a8f147576726f5109f0",
+      "sha256": "92fc46e7fc0accbec402cee3b11c9a39755eed27ab570a90e672b7a7624d2cf1"
+    },
+    {
+      "path": "drv_helpers.c",
+      "git_blob": "b0979d1a2e017fdb84c1cf3f7e4fd5095fc48df5",
+      "sha256": "17c4a5dcea63e97df369b0d0377b3e44f34d6bd73d43a9240bcfbd416b791ecd"
+    },
+    {
+      "path": "drv_helpers.h",
+      "git_blob": "1c347f8b77ff631005cbeb24c612454b6448ceb4",
+      "sha256": "05c3e3890380cc16836fbf8fdd9d9503d4879f645d0acf431f52ac53af392b4c"
+    },
+    {
+      "path": "drv_priv.h",
+      "git_blob": "337b58e9172dd5376e57e990925522b3f95c0fa8",
+      "sha256": "ff73206a03047b238088648560761f6869d96899972d7321fbfd6920389c1a55"
+    },
+    {
+      "path": "dumb_driver.c",
+      "git_blob": "f74d2378088ccce375dbca7adfa221195928e7cc",
+      "sha256": "2b23803e32ffcce0210d8e0d23fdb003f3b215f81c9b2a3816d3b457f1ce4584"
+    },
+    {
+      "path": "gbm.c",
+      "git_blob": "408fb985cdbcbbbd7e75f7586226bad6acd11049",
+      "sha256": "7f1d541783a0ed94ffaf40f31d574b107613e7c624d6a662c0b2f96934d873a0"
+    },
+    {
+      "path": "gbm.h",
+      "git_blob": "197324cfcba949d0524de6ad5dbe28288e5ca589",
+      "sha256": "afdddf953608006bb337b020c18c959d1fade7e0f899bc712348b006f37e56ef"
+    },
+    {
+      "path": "gbm_helpers.c",
+      "git_blob": "e5bcb40de59ceea0795cd6741daa870ab8376678",
+      "sha256": "72c43f9ef764da5330242a8410a76037c990129c452e8d252dfe40abed2e7831"
+    },
+    {
+      "path": "gbm_helpers.h",
+      "git_blob": "4d625c52dc92fab2c512c049be829985e462cfed",
+      "sha256": "dc08e74ef5a43f70df5f5afbcd1ef15c2fd95a24250631e7258c796a05c1f481"
+    },
+    {
+      "path": "gbm_priv.h",
+      "git_blob": "3dc1e5944584f17554346fa2394e1e2f54bd245d",
+      "sha256": "41dc5f4d7672f8a286777f2c16e391aab93a6eeb2f18a97cc65c752ae632e7cb"
+    },
+    {
+      "path": "gbm_unittest.cc",
+      "git_blob": "bad568f669b868e653675ee9851fc4affe044e49",
+      "sha256": "522dd55c72c68c2dd98e7bb6e0c3ac43af433619a918b1e4f85f43a80dd3bea6"
+    },
+    {
+      "path": "i915.c",
+      "git_blob": "d0584f00ab521f4c5a7d635c358b365aa6936321",
+      "sha256": "77b501eeb1f9c0bf03064bf9b73cf5f66930d6ac3cbf8063daa3e711aea53c6b"
+    },
+    {
+      "path": "intel_defines.h",
+      "git_blob": "be7bcff01263c3e650f174b367993fea983076f8",
+      "sha256": "9f1188ad70eb2cb98dbc7dd1adf845f6a83813733c6f260f418445394d2adcd7"
+    },
+    {
+      "path": "mediatek.c",
+      "git_blob": "a0268f7d3f339819c627d27f041e3f1609d2bdd4",
+      "sha256": "a9946b53e52759da6b5fc140f7bd8998c4bab915a5019b13208d312e54334121"
+    },
+    {
+      "path": "minigbm_helpers.c",
+      "git_blob": "d1da7c4435e2f07b1931db8b7410cd9b0d59bf5e",
+      "sha256": "fb38690faf452e9172ac1ca82cb154731a4b9f3879ac47e7c6f5bf1ffbe1928b"
+    },
+    {
+      "path": "minigbm_helpers.h",
+      "git_blob": "dbbb644b6c1643d3d8741e638360afe8d4a5d432",
+      "sha256": "c52501b5b8a3029a6d90c39f80fe5a673917e7f9c5281da8021c6325ec5d9a03"
+    },
+    {
+      "path": "msm.c",
+      "git_blob": "ee585c7807277ec95f27c58e47c9c08dee65a25a",
+      "sha256": "991257af464f0c52b4aa8957365b648b14bf80c76e7b1468ded09c2dd91e6882"
+    },
+    {
+      "path": "rockchip.c",
+      "git_blob": "4b32fc5b945dc72dfaa282b5125d254257b03dfa",
+      "sha256": "2f931a25cfb84339c25d129ff042b68452a6b6c19808b23b3658192947687d3e"
+    },
+    {
+      "path": "testrunner.cc",
+      "git_blob": "37a858f3ffcb1be55df70ad72d3d349b003edf8a",
+      "sha256": "d450161d7350d401760aecd0976ba4a2f4a42769bf201554bd83740be120c53f"
+    },
+    {
+      "path": "util.h",
+      "git_blob": "b45224a9d5b65ef54b8aac83b245a1fee3945cc9",
+      "sha256": "7032ba2c5557c31bfc05be21bb14e72c2b7df6eb4b61e5629ccd2d03167fe688"
+    },
+    {
+      "path": "vc4.c",
+      "git_blob": "ab8e43e6c56ac8b1a6007698c06a49e412ee54d5",
+      "sha256": "c11dc32e9f15b4087632ae80b862446856406a36681a47527ae24be3dfd49f29"
+    },
+    {
+      "path": "virtgpu.c",
+      "git_blob": "2f4b8dbc4467ab756bd1b0fc1ed2e9a09bd94313",
+      "sha256": "7361c5127f257d7d500f15d5f76d5165ae409a674fc26fde4ff0d7d0dcd66979"
+    },
+    {
+      "path": "virtgpu.h",
+      "git_blob": "e74afd23f465dd35d2fdf62f076ae01e11f5f441",
+      "sha256": "a59afc81fe96bdc84072dbacaf019b986ea3961fb8ffff786eea29b4e3cf4b0c"
+    },
+    {
+      "path": "virtgpu_cross_domain.c",
+      "git_blob": "02e5f1316c396cb60da66fab2f478d4671823396",
+      "sha256": "4c26117cd878c4f47103f8950a3d767e9b3b4880a2ea7797df8788c6af7ccf50"
+    },
+    {
+      "path": "virtgpu_virgl.c",
+      "git_blob": "ac8fbc22688694ea3015ce6605bcdd8c3603cd35",
+      "sha256": "4c1210cc91c483909c4e4b41c52a4269167cb5bc5cd225a60a1975ec36e00458"
+    },
+    {
+      "path": "xe.c",
+      "git_blob": "fd8b1f3cc88c2734f2444f3d079e0d6b8e06f104",
+      "sha256": "7873a8ff2d26c29d01e9e32c392e1edc3c7cc1f4a2ba3cea077dc90e725e3970"
+    },
+    {
+      "path": "cros_gralloc/cros_gralloc_arm.h",
+      "git_blob": "6389714696105c6afe9c92b9e89d9b22ca027f20",
+      "sha256": "17b11fc1b0e6b84e815804bcf31e765da0d3813bf5bc345b0ef2172299d5f62c"
+    },
+    {
+      "path": "cros_gralloc/cros_gralloc_buffer.cc",
+      "git_blob": "03ebf613d6edc015e7d5fee147e93c97e6d5b56f",
+      "sha256": "903f24b81730f78c141520a9bb710196770da181a85d3da17bf69f0a4b6dcf9d"
+    },
+    {
+      "path": "cros_gralloc/cros_gralloc_buffer.h",
+      "git_blob": "c769e2e8222be1801efa5a00dba43433f773e654",
+      "sha256": "3e4148fe5a1dd9b4db633a88d156644f42fb633809840a4618865b3f9647e28f"
+    },
+    {
+      "path": "cros_gralloc/cros_gralloc_buffer_metadata.h",
+      "git_blob": "66c921a0d0cb3fabc7fe9418a18586be6f1906aa",
+      "sha256": "22e0e62e41a69a15e626d7a6925847a99f1ee369bb89ca51079d91228a98c447"
+    },
+    {
+      "path": "cros_gralloc/cros_gralloc_driver.cc",
+      "git_blob": "b17c8c725681c9bc809fcdb5eb9d12a3a3068780",
+      "sha256": "655c328d8d9cfb06436a3953226c5b86b8aae1f271d2c722148f3cc6aa5fbd6e"
+    },
+    {
+      "path": "cros_gralloc/cros_gralloc_driver.h",
+      "git_blob": "4e1fdf2c4789080ca47641117c1230ce382a35ed",
+      "sha256": "96dd6fa83d79613e86f3ab55163b1205d2e91810b8a5498aa11df1d177ce3e9c"
+    },
+    {
+      "path": "cros_gralloc/cros_gralloc_handle.h",
+      "git_blob": "167972eed07ea0f730c04ce11f94beb5b153981a",
+      "sha256": "56853aa4a27cef2c49cc10bcdb66c5daf57ffa9d57d34bfc3792cceff2e1bdc9"
+    },
+    {
+      "path": "cros_gralloc/cros_gralloc_helpers.cc",
+      "git_blob": "230bb35d48f1a96210f6240240f6ae3c56a65945",
+      "sha256": "fe3324182f93c609651638d86d9762729363f06c848c1dc08134c3f0c35278e1"
+    },
+    {
+      "path": "cros_gralloc/cros_gralloc_helpers.h",
+      "git_blob": "ba024d795ad5ec62d42e183ab3f15d53bfc04e8c",
+      "sha256": "4dd103d7dc453985b64fd27afcb81985d96cba28b252c4f202d18fc6be7b14a3"
+    },
+    {
+      "path": "cros_gralloc/aidl/Allocator.cpp",
+      "git_blob": "199c7f1a5b47f9ee0f8ad1f916e805ebd3ab99ff",
+      "sha256": "38431cbd4142ce009f146b4f85d71410516c2281a5b0933c1b56eca9a0b8a9e7"
+    },
+    {
+      "path": "cros_gralloc/aidl/Allocator.h",
+      "git_blob": "3454aab6ed5de8755b97b96e89a5a17f043b941f",
+      "sha256": "a05e226e6de1b264bc1afe636c443a0fa9d564f28aecd772628d3b793ae70dbb"
+    },
+    {
+      "path": "cros_gralloc/aidl/Android.bp",
+      "git_blob": "b52f806275cc36257c9cba7831a180420445ee0e",
+      "sha256": "96a5ae53d00e97a050e00c9aed79211c83b3b5da22eaea959b19142875d3e2c1"
+    },
+    {
+      "path": "cros_gralloc/aidl/Main.cpp",
+      "git_blob": "c2c4c5c575509d60ed457b517102948eb68f1e14",
+      "sha256": "669ebb19fa05ae59810c0ee5b7b67d116e26da14325adf9c7a4b09f8a8a4e180"
+    },
+    {
+      "path": "cros_gralloc/aidl/allocator.rc",
+      "git_blob": "24a7c45fba98f729b603b59afc5a3f2b2547f259",
+      "sha256": "6399fd2e6ab2b4297a64eac9d3593d9c4dd9c0cfd12094ac75f3858f1ff7ad4e"
+    },
+    {
+      "path": "cros_gralloc/aidl/allocator.xml",
+      "git_blob": "74ed38225f5618ae81783a599e07ebb4d30e7f08",
+      "sha256": "35476a3d2e05a5e53b0620c2f7a8c2f38d9632abde27d5afd5fd5c931d791001"
+    },
+    {
+      "path": "cros_gralloc/mapper_stablec/Android.bp",
+      "git_blob": "401c17775d9dae762c499636db67eb35d974dae9",
+      "sha256": "58e34acc9a0e0152d5f4414ea4c712eac265644aa2f4d094fc04a4c34da15ce0"
+    },
+    {
+      "path": "cros_gralloc/mapper_stablec/Mapper.cpp",
+      "git_blob": "ad4258dcc4294f53b9ce26f7cbe9b9af405f460d",
+      "sha256": "f4bbf43fd435a11d33c9cb8396ba5a583cf04e95ba6769a179be14c38755f305"
+    },
+    {
+      "path": "cros_gralloc/mapper_stablec/mapper.minigbm.xml",
+      "git_blob": "282f7c8c0f219a2519a161aa648b9f74a9c9c67b",
+      "sha256": "f0ac3ccce6dc2c0e9e129cad271c92192f7e19d8b3efa7c8f88e2eb80574819f"
+    },
+    {
+      "path": "cros_gralloc/gralloc4/Android.bp",
+      "git_blob": "34e3ee0d8122bdbfa603897305e823a031af3b3c",
+      "sha256": "81a04e0a4d738a097e2312c55692fc6ad7b46b94460ab4966fbbd2d6fd9f8404"
+    },
+    {
+      "path": "cros_gralloc/gralloc4/CrosGralloc4Allocator.cc",
+      "git_blob": "852df88d79a087960f6d6f593fbaea973a060ee9",
+      "sha256": "ab65e7b89d220f3e1f966a41d6e65a61b0c304f6a603b8a157fe336b26900c40"
+    },
+    {
+      "path": "cros_gralloc/gralloc4/CrosGralloc4Allocator.h",
+      "git_blob": "f2febbadb0792980c419437cf70f31628b271c1c",
+      "sha256": "91b42516dc64ca60e6401d4721ddd6c83c6073dc85b53473b07126f72862f6e5"
+    },
+    {
+      "path": "cros_gralloc/gralloc4/CrosGralloc4AllocatorService.cc",
+      "git_blob": "99bc92ede3cf4ce848a7b1ec1c989c9c96f00533",
+      "sha256": "e79c44ca1bdf39a2c1d952a39fd405481d5a0ff239f22578d9e2eb6570851038"
+    },
+    {
+      "path": "cros_gralloc/gralloc4/CrosGralloc4Mapper.cc",
+      "git_blob": "56b92d3d5910d4e7553de31c7a247ad98e273302",
+      "sha256": "56ee45a086c475ed062b9fd1743b9d85ae15205bbb282c8fa74ba5a75b763ac1"
+    },
+    {
+      "path": "cros_gralloc/gralloc4/CrosGralloc4Mapper.h",
+      "git_blob": "c8f4afe7ec4fdb7e1a1c69bdd70144da92eb01e8",
+      "sha256": "74513806020020ab14db0d723feb5839c423ff8ba93bc6acaf64273b6ebc7395"
+    },
+    {
+      "path": "cros_gralloc/gralloc4/CrosGralloc4Utils.cc",
+      "git_blob": "703e50fe9fcc292f12ba2b7c919ed8bbc0a21817",
+      "sha256": "7ae4687678fb5415f2696418e17c9189eb158c19460258c744a3c42cf470a036"
+    },
+    {
+      "path": "cros_gralloc/gralloc4/CrosGralloc4Utils.h",
+      "git_blob": "d0320f2f1f9970c3361ab3788ead4a3cf67de7c2",
+      "sha256": "81cbd64aa2cd7694c81434bee5e1a62a47230b972358b50ea2fcbf48ddc7b421"
+    },
+    {
+      "path": "cros_gralloc/gralloc4/android.hardware.graphics.allocator@4.0-service.minigbm.rc",
+      "git_blob": "4f8680bc985b07a40b46f6e99bbd5735b1d3b54b",
+      "sha256": "f146a52aba7655a5c567847e437380ae0760d658860d854cfe328a7f94532126"
+    },
+    {
+      "path": "cros_gralloc/gralloc4/android.hardware.graphics.allocator@4.0-service.minigbm_arcvm.rc",
+      "git_blob": "4e8818a9f8e127a376dad9c5ceccc9aedf799dd1",
+      "sha256": "557ae63b26fedd0887696b0594014ec0e2e08ac545cb876bde75d47d30343254"
+    },
+    {
+      "path": "cros_gralloc/gralloc4/android.hardware.graphics.allocator@4.0-service.minigbm_intel.rc",
+      "git_blob": "9a3512fb42ba00618b7556bd6c55d115825dba57",
+      "sha256": "905fd60379db2dab9f27ea1d3a7b8ffa3ac116143781b1601b05d00730024d04"
+    },
+    {
+      "path": "cros_gralloc/gralloc4/android.hardware.graphics.allocator@4.0-service.minigbm_msm.rc",
+      "git_blob": "8ecc94be8b45076d5bdd46dbf91a0aa1732927b4",
+      "sha256": "fc90bd42f9b9224db8eec689f6d0ddefb993abd8ce0c44e73587b79b5e14c13f"
+    },
+    {
+      "path": "cros_gralloc/gralloc4/android.hardware.graphics.allocator@4.0.xml",
+      "git_blob": "04695efc2165ad6013043099dad61a851dc8454d",
+      "sha256": "d3b46b69254f065057d30d4f473abb62f0232d1f316171deef8e0aa99cdd22bf"
+    },
+    {
+      "path": "cros_gralloc/gralloc4/android.hardware.graphics.mapper@4.0.xml",
+      "git_blob": "3160c7727a09565dfb9b064939259f86a1517c46",
+      "sha256": "a797e1ce2e0b37aeb7f6dcdfe6f7e287029541fc61776ae69c7e674c6efeae83"
+    },
+    {
+      "path": "external/dma-heap.h",
+      "git_blob": "a4cf716a49fa6871abab6ac0a92f0b0325bda52a",
+      "sha256": "e037225265b26062508a8c4b8903f966c548ab5b7123ba3f51ce1aa110833488"
+    },
+    {
+      "path": "external/i915_drm.h",
+      "git_blob": "e009a9ea5a0a2b8501fbd95d23ca4b31e629ddc1",
+      "sha256": "134dc60e74d2f2a04cb06de87433521fce860f8fac586ac28c13fd94ddeb894e"
+    },
+    {
+      "path": "external/mediatek_drm.h",
+      "git_blob": "51c5dc18fbbd26494640724c1945d20ba83aa77c",
+      "sha256": "1f80a5a82cbd1ac5a6b691093a583a5ffc0af7126783395a3569408574565b93"
+    },
+    {
+      "path": "external/virgl_hw.h",
+      "git_blob": "4527ced258d7aa84cb9f29e1b4e06dd4cf840a3a",
+      "sha256": "ebc92d3ccb44ddaa2e9e7db012eab8ec53d4da78b7ccf3a84226b31cc7c3fe16"
+    },
+    {
+      "path": "external/virgl_protocol.h",
+      "git_blob": "d9884dfbcdbcf185c55ee34b415c5c3d63d84de4",
+      "sha256": "8ba0a48e74307ef98ee66726893f5199f0bce7a69dd21c91d4bed46e9480681e"
+    },
+    {
+      "path": "external/virtgpu_cross_domain_protocol.h",
+      "git_blob": "afae541d06f0ac5f478882b5b7902d3dbb72b3fc",
+      "sha256": "947a70044561f7139ae7fa75e0c22f4ea3b0a3ee5ffc3fcb8dfa9499c410a90e"
+    },
+    {
+      "path": "external/virtgpu_drm.h",
+      "git_blob": "77209009caf68e17839399c02b3796cb435e5dbf",
+      "sha256": "0bdcd0d8a67d92f8cdf8ed660a30b3e1aeb7e788e62ca0fec19049ac252633cc"
+    },
+    {
+      "path": "external/virtgpu_gfxstream_protocol.h",
+      "git_blob": "8253e642f0eb91d3216d2ca6de22c63e04714ad8",
+      "sha256": "9745031a32cb07f68505708e66318f5215e5f4c278513c1dea2a7c79216e4030"
+    },
+    {
+      "path": "external/xe_drm.h",
+      "git_blob": "ba48da5505e22a5576661a7ac12cd2b8be5dd4f3",
+      "sha256": "2ec679fb87f4079f4f7b5053af197af7a24c9e49d8c95474a27336dbe8acb938"
+    }
+  ],
+  "scope": "Selected original core/AIDL/stable-C module sources and local external headers; other project dependencies remain independently inventoried"
+}

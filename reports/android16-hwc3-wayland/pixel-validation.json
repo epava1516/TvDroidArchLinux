@@ -1,0 +1,10 @@
+{
+  "width": 1280,
+  "height": 800,
+  "pixels_checked": 1024000,
+  "mismatches": 0,
+  "ppm": "/home/tv/repositorio-principal/dist/aosp16/graphics-session-1793482301687638760/screen.ppm",
+  "ppm_sha256": "bcbdae0c5e5e9740f718be5f33101974617faa378f5eca2ce5d21d6faac9195b",
+  "expected": "GraphicBuffer RGBA red/green/blue/white quadrants, all actual captured RGB bytes.",
+  "scope": "Original allocator/mapper + HWC3 CPU/Wayland through Rust/Smithay DRM; not fence timing or APK compatibility."
+}

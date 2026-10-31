@@ -1,0 +1,14 @@
+{
+  "fgconsole": "1",
+  "units": "",
+  "runtime_mask_exists": false,
+  "selinux_status": [
+    1,
+    2,
+    0,
+    1,
+    1
+  ],
+  "loops": "",
+  "runtime_processes": []
+}

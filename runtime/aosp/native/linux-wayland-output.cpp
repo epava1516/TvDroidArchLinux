@@ -24,7 +24,7 @@ struct LinuxWaylandOutput::Impl {
     bool configured=false,closed=false;
     bool shm_xrgb=false;
     uint32_t output_name=0;
-    int w=0,h=0,output_w=0,output_h=0;
+    int w=0,h=0,output_w=0,output_h=0,refresh_mhz=0,mm_w=0,mm_h=0;
     struct Buffer {wl_buffer* object=nullptr;void* data=MAP_FAILED;size_t bytes=0;int width=0,height=0;bool released=true;};
     Buffer buffers[2];
     bool Pump(const std::function<bool()>& done) {
@@ -49,6 +49,20 @@ struct LinuxWaylandOutput::Impl {
         }
         errno=ENODEV;return false;
     }
+    bool Poll() {
+        if(!display || closed){errno=ENODEV;return false;}
+        if(wl_display_dispatch_pending(display)<0)return false;
+        while(wl_display_prepare_read(display)!=0)if(wl_display_dispatch_pending(display)<0)return false;
+        int flushed=wl_display_flush(display);
+        if(flushed<0 && errno!=EAGAIN){wl_display_cancel_read(display);return false;}
+        pollfd p{wl_display_get_fd(display),POLLIN,0};int n=poll(&p,1,0);
+        if(n<0){wl_display_cancel_read(display);return errno==EINTR;}
+        if(n==0){wl_display_cancel_read(display);return !closed;}
+        if(p.revents&(POLLERR|POLLHUP|POLLNVAL)){wl_display_cancel_read(display);closed=true;errno=EPIPE;return false;}
+        if(p.revents&POLLIN){if(wl_display_read_events(display)<0)return false;}
+        else wl_display_cancel_read(display);
+        return wl_display_dispatch_pending(display)>=0 && !closed;
+    }
     bool Sync() {
         bool done=false;auto* cb=wl_display_sync(display);
         if(!cb)return false;
@@ -71,8 +85,8 @@ struct LinuxWaylandOutput::Impl {
         } else if(!std::strcmp(interface,"wl_output") && !s.output && version>=2) {
             s.output_name=name;s.output=static_cast<wl_output*>(wl_registry_bind(r,name,&wl_output_interface,2));
             static const wl_output_listener listener{
-                [](void*,wl_output*,int32_t,int32_t,int32_t,int32_t,int32_t,const char*,const char*,int32_t){},
-                [](void* p,wl_output*,uint32_t flags,int32_t w,int32_t h,int32_t){if(flags&WL_OUTPUT_MODE_CURRENT){auto& s=*static_cast<Impl*>(p);s.output_w=w;s.output_h=h;}},
+                [](void* p,wl_output*,int32_t,int32_t,int32_t mmw,int32_t mmh,int32_t,const char*,const char*,int32_t){auto& s=*static_cast<Impl*>(p);s.mm_w=mmw;s.mm_h=mmh;},
+                [](void* p,wl_output*,uint32_t flags,int32_t w,int32_t h,int32_t refresh){if(flags&WL_OUTPUT_MODE_CURRENT){auto& s=*static_cast<Impl*>(p);s.output_w=w;s.output_h=h;s.refresh_mhz=refresh;}},
                 [](void*,wl_output*){},[](void*,wl_output*,int32_t){},nullptr,nullptr};
             if(!s.output){s.closed=true;return;}
             wl_output_add_listener(s.output,&listener,&s);
@@ -130,5 +144,9 @@ LinuxWaylandOutput::~LinuxWaylandOutput()=default;
 bool LinuxWaylandOutput::Connect(int fd){if(impl_->display){close(fd);errno=EALREADY;return false;}return impl_->Connect(fd);}
 int LinuxWaylandOutput::width()const{return impl_->w;}
 int LinuxWaylandOutput::height()const{return impl_->h;}
+int LinuxWaylandOutput::refresh_millihz()const{return impl_->refresh_mhz;}
+int LinuxWaylandOutput::dpi_x()const{return impl_->mm_w>0?int(impl_->output_w*25.4/impl_->mm_w):-1;}
+int LinuxWaylandOutput::dpi_y()const{return impl_->mm_h>0?int(impl_->output_h*25.4/impl_->mm_h):-1;}
+bool LinuxWaylandOutput::Poll(){return impl_->Poll();}
 bool LinuxWaylandOutput::CommitCpu(const uint32_t* p,int w,int h,int stride){return impl_->Commit(p,w,h,stride);}
 }

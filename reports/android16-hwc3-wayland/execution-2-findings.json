@@ -1,0 +1,7 @@
+{
+  "observed": "Original property/SM/HWSM prefix completed; allocator and composer launched with real default vendor SIDs,UID1000/GID1003,drmrpc1026,CAP_SYS_NICE only,NNP1. Allocator exited1 init_driver; supervisor stopped all services/client and exited1. No allocation or rendering accepted.",
+  "source_requirement": "Original libdrm xf86drm.c drmNodeIsDRM checks /sys/dev/char/major:minor/device/drm. Private view omitted sysfs GPU subtree; vmwgfx profile calls drmGetNodeTypeFromFd. This is a concrete missing input, not proof all later DRM operations work.",
+  "source_revision": "abd25312f278da5cbeeca6a9b5fc1c5ea6dabc23",
+  "source_sha256": "e39bfcf6a2a6be84f120261f9b85e7675124f4acc09c9aa3d3d3a4379d57376d",
+  "next": "Expose only the actual GPU sysfs subtree read-only with original char-device symlink, then rerun same candidate; no predicate bypass or fake sysfs entries."
+}

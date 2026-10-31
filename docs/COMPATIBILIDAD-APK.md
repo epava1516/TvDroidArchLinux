@@ -1,5 +1,9 @@
 # Matriz de aplicaciones reales
 
+## Evidencia de subsistemas · sin cambiar aceptación APK
+
+[Recorrido nativo gráfico probado](../reports/android16-hwc3-wayland/findings.json): allocator/mapper/HWC3 originales llegan a captura DRM por Wayland/Smithay, con un cliente experimental. Es una dependencia funcional previa; **no modifica el estado de instalación/lanzamiento/UI/entrada/persistencia/servicios/cierre/reapertura de Markor ni de otra APK**. SurfaceFlinger y renderer Bionic siguen pendientes; permisivo no acredita aislamiento.
+
 La prioridad actual es el [camino crítico Markor](ROADMAP-A.md#camino-crítico-vigente--markor-completo).
 La integración negativa de propiedades/gestores no acepta ninguna de las nueve
 etapas. ARM/GMS/DRM conservan sus ejes y requisitos; no bloquean este primer

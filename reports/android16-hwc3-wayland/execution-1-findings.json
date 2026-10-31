@@ -1,0 +1,8 @@
+{
+  "exit": 1,
+  "main_failure": "Original init SelabelInitialize requires vendor/etc/selinux/plat_sepolicy_vers.txt; missing in replacement vendor image. No managers/graphics service started.",
+  "scope": "Negative execution, permissive policyload1, real loaded graphics policy. No API or frame acceptance.",
+  "cleanup": "VT1 restored; runtime getty mask absent; transient unit terminal/collected. Root status tuple(1,2,0,1,1).",
+  "correction": "Restore previously used explicit vendor mapping202504 marker; raw original GSI policies and platform mapping retained. New image separately verified by EAs, owner/mode/content and e2fsck0; no prior image overwritten.",
+  "next_payload": "575505c69cb0d651fa57450eafb62992b4ece7bc0871f2245ac03510d901f041"
+}

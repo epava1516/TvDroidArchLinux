@@ -25,8 +25,8 @@ namespace archtv::aosp {
 class LinuxMc1Cohort {
  public:
     using Tick = std::function<bool()>;
-    LinuxMc1Cohort(const bool& stop,int expected_mode,bool hardware=false)
-        : stop_(stop),expected_mode_(expected_mode),hardware_requested_(hardware) {}
+    LinuxMc1Cohort(const bool& stop,int expected_mode,bool hardware=false,bool graphics=false)
+        : stop_(stop),expected_mode_(expected_mode),hardware_requested_(hardware),graphics_requested_(graphics) {}
     android::base::Result<void> Start(const Tick& tick) {
         using namespace android::init;
         auto& services=ServiceList::GetInstance();
@@ -90,7 +90,7 @@ class LinuxMc1Cohort {
         if(hardware_requested_)return StartHardware(tick);
         return {};
     }
-    bool healthy() const { return !manager_failed_ && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()); }
+    bool healthy() const { return !manager_failed_ && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()); }
     android::base::Result<void> Close(const Tick& tick) {
         using namespace android::init;
         if(!active_) return {};
@@ -107,6 +107,8 @@ class LinuxMc1Cohort {
         }
         manager_=nullptr;
         hardware_=nullptr;
+        allocator_=nullptr;
+        composer_=nullptr;
         services.RemoveServiceIf([](const auto& service){return !service->IsRunning();});
         active_=false;
         int observed_mode=security_getenforce();
@@ -167,6 +169,51 @@ class LinuxMc1Cohort {
         int observed_mode=security_getenforce();
         if(observed_mode!=expected_mode_)return android::base::Error()<<"MC1 hardware security mode changed";
         std::fprintf(stderr,"MC1_HARDWARE_CLIENT_EXIT0_REQUIRES_EXTERNAL_VERIFICATION enforcing=%d\n",observed_mode);
+        if(graphics_requested_)return StartGraphics(tick);
+        return {};
+    }
+    android::base::Result<void> StartGraphics(const Tick& tick) {
+        using namespace android::init;
+        auto& services=ServiceList::GetInstance();
+        // Parse the upstream RCs intact: the payload supplies their executable
+        // paths. Original Service owns UID/groups/caps, transitions and cgroups.
+        auto parser=CreateParser(ActionManager::GetInstance(),services);
+        for(const char* path:{"/vendor/etc/init/allocator.rc","/vendor/etc/init/hwcomposer3.rc"}) {
+            auto parsed=parser.ParseConfigFile(path);
+            if(!parsed.ok() || parser.parse_error_count()!=0)
+                return android::base::Error()<<"MC3 original graphics RC rejected: "<<path;
+        }
+        allocator_=services.FindService("vendor.graphics.allocator");
+        composer_=services.FindService("vendor.hwcomposer-3");
+        if(!allocator_ || !composer_ ||
+           allocator_->args()!=std::vector<std::string>{"/vendor/bin/hw/android.hardware.graphics.allocator-service.minigbm"} ||
+           composer_->args()!=std::vector<std::string>{"/vendor/bin/hw/android.hardware.graphics.composer3-service.ranchu"})
+            return android::base::Error()<<"MC3 unexpected original graphics service profile";
+        for(auto* service:{allocator_,composer_}) {
+            service->AddReapCallback([this](const siginfo_t& info) {
+                std::fprintf(stderr,"MC3_GRAPHICS_SERVICE_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
+                if(!closing_)manager_failed_=true;
+            });
+            if(auto result=service->Start();!result.ok())return result;
+            std::fprintf(stderr,"MC3_GRAPHICS_SERVICE_STARTED name=%s pid=%d uid=%u gid=%u NOT_REGISTERED\n",
+                         service->name().c_str(),service->pid(),service->uid(),service->gid());
+        }
+        client_done_=false;client_ok_=false;
+        // Explicit experimental API client in the original SF client domain;
+        // this is not SurfaceFlinger or an APK. No readiness property is set.
+        auto client=Service::MakeTemporaryOneshotService({"exec","u:r:surfaceflinger:s0","system","graphics","--",
+            "/vendor/bin/hw/archtv-graphics-client"});
+        if(!client.ok())return client.error();
+        auto* process=client->get();
+        process->AddReapCallback([this](const siginfo_t& info) {
+            client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;
+            std::fprintf(stderr,"MC3_GRAPHICS_CLIENT_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
+        });
+        services.AddService(std::move(*client));
+        if(auto result=process->ExecStart();!result.ok())return result;
+        if(auto result=Wait(tick,[this]{return client_done_;});!result.ok())return result;
+        if(!client_ok_)return android::base::Error()<<"MC3 graphics client failed";
+        if(security_getenforce()!=expected_mode_)return android::base::Error()<<"MC3 security mode changed";
         return {};
     }
     android::base::Result<void> Wait(const Tick& tick,const std::function<bool()>& done) {
@@ -181,8 +228,11 @@ class LinuxMc1Cohort {
     const bool& stop_;
     const int expected_mode_;
     const bool hardware_requested_;
+    const bool graphics_requested_;
     android::init::Service* manager_=nullptr;
     android::init::Service* hardware_=nullptr;
+    android::init::Service* allocator_=nullptr;
+    android::init::Service* composer_=nullptr;
     bool missing_done_=false,missing_ok_=false;
     bool active_=false,closing_=false,manager_failed_=false,client_done_=false,client_ok_=false;
 };

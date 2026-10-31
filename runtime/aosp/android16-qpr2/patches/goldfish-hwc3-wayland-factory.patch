@@ -1,0 +1,77 @@
+--- a/Device.cpp
++++ b/Device.cpp
+@@ -20,20 +20,15 @@
+ #include <android-base/properties.h>
+ #include <json/json.h>
+ 
+-#include "ClientFrameComposer.h"
++#include "linux-wayland-frame-composer.h"
+ #include "FrameComposer.h"
+-#include "GuestFrameComposer.h"
+-#include "HostFrameComposer.h"
+-#include "NoOpFrameComposer.h"
+ 
+ ANDROID_SINGLETON_STATIC_INSTANCE(aidl::android::hardware::graphics::composer3::impl::Device);
+ 
+ namespace aidl::android::hardware::graphics::composer3::impl {
+ namespace {
+ 
+-bool shouldUseGuestComposer() {
+-    return ::android::base::GetProperty("ro.hardware.vulkan", "") == "pastel";
+-}
++
+ 
+ std::string getPmemPath() { return ::android::base::GetProperty("ro.vendor.hwcomposer.pmem", ""); }
+ 
+@@ -89,19 +84,7 @@
+     std::unique_lock<std::mutex> lock(mMutex);
+ 
+     if (mComposer == nullptr) {
+-        if (IsInNoOpCompositionMode()) {
+-            DEBUG_LOG("%s: using NoOpFrameComposer", __FUNCTION__);
+-            mComposer = std::make_unique<NoOpFrameComposer>();
+-        } else if (IsInClientCompositionMode()) {
+-            DEBUG_LOG("%s: using ClientFrameComposer", __FUNCTION__);
+-            mComposer = std::make_unique<ClientFrameComposer>();
+-        } else if (shouldUseGuestComposer()) {
+-            DEBUG_LOG("%s: using GuestFrameComposer", __FUNCTION__);
+-            mComposer = std::make_unique<GuestFrameComposer>();
+-        } else {
+-            DEBUG_LOG("%s: using HostFrameComposer", __FUNCTION__);
+-            mComposer = std::make_unique<HostFrameComposer>();
+-        }
++        mComposer = std::make_unique<LinuxWaylandFrameComposer>();
+         if (!mComposer) {
+             ALOGE("%s failed to allocate FrameComposer", __FUNCTION__);
+             return HWC3::Error::NoResources;
+@@ -110,6 +93,7 @@
+         HWC3::Error error = mComposer->init();
+         if (error != HWC3::Error::None) {
+             ALOGE("%s failed to init FrameComposer", __FUNCTION__);
++            mComposer.reset();
+             return error;
+         }
+     }
+--- a/ComposerClient.cpp
++++ b/ComposerClient.cpp
+@@ -102,6 +102,9 @@
+ 
+ ComposerClient::~ComposerClient() {
+     DEBUG_LOG("%s", __FUNCTION__);
++
++    // Drain backend callbacks before taking the display lock or freeing this.
++    if (mComposer) mComposer->unregisterOnHotplugCallback();
+ 
+     std::lock_guard<std::mutex> lock(mDisplaysMutex);
+ 
+--- a/Composer.cpp
++++ b/Composer.cpp
+@@ -96,7 +96,7 @@
+ 
+     caps->clear();
+     caps->emplace_back(Capability::PRESENT_FENCE_IS_NOT_RELIABLE);
+-    caps->emplace_back(Capability::BOOT_DISPLAY_CONFIG);
++    // No verified persistent boot-mode backend is admitted in this profile.
+ 
+     return ndk::ScopedAStatus::ok();
+ }

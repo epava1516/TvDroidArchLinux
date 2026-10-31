@@ -1,5 +1,9 @@
 # Contrato vigente · AOSP Android 16 QPR2
 
+## Alcance de la evidencia gráfica parcial
+
+El [recorrido nativo allocator/mapper/HWC3→Smithay](../reports/android16-hwc3-wayland/findings.json) permite avanzar hacia SurfaceFlinger y aplicaciones. Un cliente de integración, aunque asigne y presente píxeles reales, no acredita ejecución de APK ni sustituye los recorridos completos de la matriz. Permisivo, ausencia de present-fence nativo y mezcla de proveedores experimental no cierran autorización, aislamiento, timing o equivalencia de producto.
+
 Versión contractual: A16-QPR2-1 · 2026-10-30. Instrucción vigente del usuario;
 reemplaza las elecciones de base y restricciones gráficas de BASE-AOSP-1.
 La verificación de versión/revisiones, decisiones de implementación y evidencia

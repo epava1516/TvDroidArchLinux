@@ -1,0 +1,55 @@
+--- a/Display.cpp
++++ b/Display.cpp
+@@ -87,7 +87,8 @@
+ 
+ Display::Display(FrameComposer* composer, int64_t id)
+     : mComposer(composer), mId(id), mVsyncThread(id) {
+-    setLegacyEdid();
++    mName = "ArchTV Wayland output";
++    // Wayland does not provide a monitor EDID; do not claim emulator hardware.
+ }
+ 
+ Display::~Display() {}
+@@ -241,6 +242,7 @@
+ 
+     const DisplayConfig& config = it->second;
+     *outValue = config.getAttribute(attribute);
++    if (*outValue < 0) return HWC3::Error::Unsupported;
+     DEBUG_LOG("%s: display:%" PRId64 " attribute:%s value is %" PRIi32, __FUNCTION__, mId,
+               attributeString.c_str(), *outValue);
+     return HWC3::Error::None;
+@@ -261,8 +263,7 @@
+     DEBUG_LOG("%s: display:%" PRId64, __FUNCTION__, mId);
+ 
+     outCapabilities->clear();
+-    outCapabilities->push_back(DisplayCapability::SKIP_CLIENT_COLOR_TRANSFORM);
+-    outCapabilities->push_back(DisplayCapability::MULTI_THREADED_PRESENT);
++    // No backend color transform or concurrent present capability is verified.
+ 
+     return HWC3::Error::None;
+ }
+@@ -318,6 +319,8 @@
+         return HWC3::Error::BadParameter;
+     }
+ 
++    if (mEdid.empty()) return HWC3::Error::Unsupported;
++
+     outIdentification->port = static_cast<int8_t>(mId);
+     outIdentification->data = mEdid;
+ 
+@@ -420,6 +423,7 @@
+         return HWC3::Error::BadParameter;
+     }
+ 
++    if (mColorModes.count(mode) == 0) return HWC3::Error::Unsupported;
+     outIntents->push_back(RenderIntent::COLORIMETRIC);
+ 
+     return HWC3::Error::None;
+@@ -648,6 +652,7 @@
+         return HWC3::Error::Unsupported;
+     }
+ 
++    if (intent != RenderIntent::COLORIMETRIC) return HWC3::Error::Unsupported;
+     mActiveColorMode = mode;
+     return HWC3::Error::None;
+ }

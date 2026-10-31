@@ -1,0 +1,19 @@
+{
+  "method": "Only exact experiment names obtained from own logs; remove empty directories with kernel rmdir, no process termination or broad deletion.",
+  "removed": [
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793481852125178089/system",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793481852125178089",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793481947596223435/system/uid_2000",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793481947596223435/system/uid_1000",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793481947596223435/system",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793481947596223435",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793482106900054954/system/uid_2000",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793482106900054954/system/uid_1000",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793482106900054954/system",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793482106900054954",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793482303612908083/system/uid_2000",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793482303612908083/system/uid_1000",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793482303612908083/system",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793482303612908083"
+  ]
+}

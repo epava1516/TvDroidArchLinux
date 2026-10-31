@@ -1,6 +1,10 @@
 # Estado actual y punto de entrada
 
-## Reinicio actual · 31 octubre 21:07 UTC
+## Gráficos nativos originales · recorrido probado en permisivo
+
+[Hito funcional](../reports/android16-hwc3-wayland/findings.json): propiedades/gestores originales → minigbm allocatorV2/mapper → HWC3 original con backend Wayland → Rust/Smithay → DRM. [Todos los1.024.000 píxeles coinciden](../reports/android16-hwc3-wayland/pixel-validation.json); [captura](../reports/android16-hwc3-wayland/screen.png). Cliente/coordinador/cierre0; [sin procesos/unidades/loops,VT1](../reports/android16-hwc3-wayland/host-post-run.json). LTS, permisivo, policyload1 con política gráfica9f9afb63. No SurfaceFlinger, APK ni MAC/fences aceptados. [Checkpoint](../reports/android16-hwc3-wayland/checkpoint-in-progress.json). Siguiente: SurfaceFlinger y renderer Bionic coherente sobre este camino; después display/PMS/AMS/zygote y Markor completo.
+
+## Histórico · Reinicio actual · 31 octubre 21:07 UTC
 
 [Estado del nuevo arranque](../reports/android16-hwc3-wayland/host-after-reboot.json): LTS6.18.59, SELinux activo/permisivo y **policyload0**. Los resultados policyload1 y enforcing de abajo son históricos de arranques anteriores; no hay servicios del runtime activos acreditados. Pendientes conservados. [Checkpoint de trabajo](../reports/android16-hwc3-wayland/checkpoint-in-progress.json). Siguiente integración: dominios vendor originales allocator/composer antes de cargar política y arrancar la cohorte gráfica; compilación/enlace no acreditan servicios ni Markor.
 
@@ -9,7 +13,7 @@
 [Salida Bionic→Smithay comprobada](../reports/android16-wayland-client/findings.json): cliente Wayland/libffi originales AOSP y transporte SHM producen tres commits reales; captura DRM1280×800,1.024.000 píxeles coinciden. Cliente/cierre0 y consola/máscara/unidades/loops recuperados. SID Linux init_t en permisivo, no Android/MAC. Ejecución final ordinaria, MCP anterior parcial por cleanup EACCES. Es regresión del transporte, no Activity/APK ni HWC3/SF; [checkpoint](../reports/android16-wayland-client/checkpoint.json). Siguiente: conectar salida a Device/findDisplays/FrameComposer originales, allocator/mapper y renderer Bionic; resolver fences/capacidades reales antes de display para PMS/Markor.
 
 
-## Integración HWC3 · frontera de backend
+## Histórico · Integración HWC3 · frontera de backend
 
 [Frontend HWC3 preparado](../reports/android16-hwc3-frontend/findings.json): nueve unidades originales compilan tras un parche sólo de includes/declaraciones adelantadas. El enlace estricto falla en siete símbolos de Device/findDisplays: fábrica, opciones persistentes y salida real siguen sin integrar. No ejecutable, servicio o frame aceptado. Graphics-common es currentV7/notfrozen; ComposerV4 y DRM-commonV1 sí congelados. Siguiente: libwayland Bionic + FrameComposer/fábrica/descubrimiento, buffers y finalización reales antes de SurfaceFlinger/Markor.
 
@@ -31,7 +35,7 @@ Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCC
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
 
-## Tras reinicio · anfitrión y frontera gráfica
+## Histórico · Tras reinicio · anfitrión y frontera gráfica
 
 [Checkpoint vigente](../reports/android16-graphics-resume/checkpoint.json),
 [estado real](../reports/android16-graphics-resume/host.json) y

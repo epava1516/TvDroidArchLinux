@@ -1,0 +1,55 @@
+{
+  "status": "functional_native_graphics_in_permissive_not_apk",
+  "utc": "2026-10-31T21:33:37.956149+00:00",
+  "last_base_commit": "a2c6274",
+  "execution": "Ordinary root bounded systemd/PAM/namespace session, NOT REA MCP runtime capture. REA connection checked separately last milestone.",
+  "observed_path": [
+    "Original properties",
+    "Original servicemanager/hwservicemanager, original RC and original client prefix",
+    "Original minigbm AIDL allocatorV2 registered, exact interface hash",
+    "Original stable-C mapper loaded by original libui namespace machinery",
+    "Original HWC3 Composer/ComposerClient/Device/Display/Layer frontend plus LinuxWaylandFrameComposer adapter",
+    "Experimental generated-AIDL/libui client allocates real GraphicBuffer, imports/maps/writes/unlocks, executes setClientTarget/validate/accept/present",
+    "Wayland/libffi original Bionic source to native Rust/Smithay/Pixman DRM",
+    "All1024000 captured RGB pixels match; client/coordinator/Rust exit0, toplevel destroyed;4 DRM pageflips; no processes/units/loops and VT1 restored"
+  ],
+  "security": {
+    "enforcing": 0,
+    "policyload": 1,
+    "policy_sha256": "9f9afb630a950a4ef79367901b74a9414c14066eb8e4ef8ceee6dcc61b537221",
+    "service_ids": "Actual getpidcon/status observed for original managers and HALs. HAL uid1000,gid1003,drmrpc1026,CAP_SYS_NICE only,NNP1. Experimental client actual surfaceflinger SID,UID1000,GID1003,caps0,NNP1; not original SF binary.",
+    "acceptance": "Functionality only; no enforcement/authorization or complete device isolation acceptance."
+  },
+  "artifacts": {
+    "payload_sha256": "31af8cbfb4da836b075be1e62c8a58ed1f31f61d2ff5edf70f64161cb12623bd",
+    "capture_sha256": "bcbdae0c5e5e9740f718be5f33101974617faa378f5eca2ce5d21d6faac9195b",
+    "sources": {
+      "runtime/aosp/native/linux-graphics-client.cpp": "37fca85a6be4fa09e42a9c5b80b3def00388d0889152551d7d20b17afc673ec7",
+      "runtime/aosp/native/linux-mc1-cohort.h": "6b6138708f56720b59c9881e827cb6393f2bcfcb8f128e5fbbaa1769bb7b402a",
+      "runtime/aosp/native/linux-property-worker.cpp": "e4813b65cda49eae55e67bb1b4f3f023660b2b93859cfe23d3564c2a50c78ca8",
+      "runtime/aosp/native/linux-exec-context.c": "c93fda3007502eed378800bfa0e510bcce0e45f4c0833ff6ff2926fbbd34f3cf",
+      "runtime/aosp/native/linux-wayland-frame-composer.cpp": "dffb28f04cd6be8057b6f9c506f72c4cca16b3b44ad36289798a04ecbc389c9b",
+      "runtime/aosp/native/linux-wayland-display-finder.cpp": "13673a454f5d3c23249c1ea35f536f20bf2da4eed9470cea27a17014ba02e85c",
+      "runtime/aosp/native/linux-wayland-output.cpp": "8d268c8cd113026acea4c3f0d0c5b4dc0e5e31e80a991ab00925f4920cbf7979"
+    }
+  },
+  "negative_evidence": [
+    "Attempt1: missing mandatory vendor policy-version marker; original init aborted, no service acceptance.",
+    "Attempt2: allocator real init failed; native view omitted sysfs required by original libdrm. Fixed with actual GPU subtree RO plus original symlinks, no stub driver.",
+    "Attempt3: native client/cohort0 but screenshot background; capture-after interpreted seconds. Not accepted as presentation; independent pixels verified only attempt4."
+  ],
+  "limitations": [
+    "Native integration client is not SurfaceFlinger, Activity, Markor or compatibility matrix acceptance.",
+    "CPU packedRGBA/RGBX/BGRA only; reject protected/nonpacked formats. No GPU/codec/DRM capability inferred.",
+    "No native sync_file present-fence/physical timing/VTS conformance; frame callback is not a hardware fence.",
+    "Exact pinned source/binary provider mixes recorded; platform-prototype/source-built libui/vendor provider combination not full Soong or product/ABI equivalence.",
+    "Readonly image bytes/metadata recorded, backing files owner-writable development cache; production admission/immutability remains open.",
+    "Private GPU nodes expose real host GPU without proven ioctl/device isolation. Linux owns KMS; no DRM master capabilities granted to Android.",
+    "Original service Stop kills group; actual reaping observed, not graceful vendor shutdown acceptance.",
+    "No input/resize/reconnect/callback death stress or full persistence test.",
+    "FCM remains unselected; device-manifest fragments are actual implemented candidates, not certified Android device.",
+    "Original ctl lazy-service backend continues fail-closed; no fake lazy-service success.",
+    "ARM/GMS/DRM remain separate and open."
+  ],
+  "next": "Integrate original SurfaceFlinger with coherent original Bionic software renderer through this HWC3 path, while closing concrete graphics MAC/negative/fence requirements. Then original display/PMS/AMS/zygote, unchanged Markor install/launch/input/note/close/reopen."
+}

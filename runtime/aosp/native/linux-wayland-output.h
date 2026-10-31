@@ -14,6 +14,11 @@ class LinuxWaylandOutput {
     bool Connect(int connected_fd);
     int width() const;
     int height() const;
+    int refresh_millihz() const;
+    int dpi_x() const;
+    int dpi_y() const;
+    // Nonblocking dispatch; serialize with Connect/CommitCpu on the caller.
+    bool Poll();
     // Copies packed XRGB8888 rows into a released private SHM buffer, commits,
     // and waits up to 3s for the real callback. Never returns a synthetic fence.
     bool CommitCpu(const uint32_t* pixels,int width,int height,int stride_pixels);
