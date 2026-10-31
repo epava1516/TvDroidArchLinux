@@ -1,0 +1,8 @@
+from pathlib import Path
+import urllib.request,json,base64,hashlib,os,subprocess
+root=Path('/home/tv/.cache/archtv/graphics-candidates-1/aidl-prebuilt16');root.mkdir();commit='8c36435476cbaea0a4170a327e55dd4775cd60b9';base='https://android.googlesource.com/platform/prebuilts/sdk/+/'+commit+'/';records=[]
+for directory,names in [('tools/linux/bin',['aidl','NOTICE.txt']),('tools/linux/lib64',['libc++.so'])]:
+ j=json.loads(urllib.request.urlopen(base+directory+'/?format=JSON',timeout=40).read()[4:])
+ for name in names:
+  e=next(x for x in j['entries'] if x['name']==name);path=directory+'/'+name;url=base+path+'?format=TEXT';encoded=urllib.request.urlopen(url,timeout=60).read(64*1024*1024+1);assert len(encoded)<=64*1024*1024;data=base64.b64decode(encoded);assert hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()==e['id'];f=root/name;f.write_bytes(data);f.chmod(0o700 if name=='aidl' else 0o600);records.append({'path':path,'local':str(f),'url':url,'git_blob':e['id'],'sha256':hashlib.sha256(data).hexdigest(),'bytes':len(data),'git_blob_verified':True})
+(root/'provenance.json').write_text(json.dumps({'repository':'platform/prebuilts/sdk','commit':commit,'signature_verified':False,'source_binary_equivalence':'Not verified with system/tools/aidl source commit; original locked official prebuilt host tool only','files':records},indent=2)+'\n');env=dict(os.environ,LD_LIBRARY_PATH=str(root));x=subprocess.run([str(root/'aidl'),'--version'],capture_output=True,text=True,env=env,timeout=20);(root/'version.json').write_text(json.dumps({'argv':[str(root/'aidl'),'--version'],'exit_code':x.returncode,'stdout':x.stdout,'stderr':x.stderr,'LD_LIBRARY_PATH':str(root)},indent=2)+'\n');print(x.returncode,x.stdout,x.stderr)

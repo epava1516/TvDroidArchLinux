@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-hidl-native-bindings/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-libui-source-closure/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -16,6 +16,18 @@ los resúmenes; no se ha completado compatibilidad amplia.
 Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCCION-ARM.md).
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
+
+## Último hito verificado · codecs gráficos originales
+
+[Resultados y límites](../reports/android16-libui-source-closure/findings.json):
+AIDL construido desde la revisión original con SDK36 genera31 entradas/124 archivos.
+Compilan32 unidades Bionic, incluido ComposerResources. Dos bibliotecas de codecs
+originales enlazan y una regresión nativa observada por REA MCP termina0: NativeHandle
+con FD real y PlaneLayout anidado mediante AParcel; ambas bibliotecas fuente aparecen
+mapeadas. Es duplicación local de FD, no transferencia Binder entre procesos.
+No libui completo, HAL, buffers gráficos, frames ni APK aceptados.
+Siguiente: completar módulos originales libui/allocator/mapper y agrupación HIDL;
+R1-MAC sigue pendiente. La matriz real conserva sus nueve etapas no probadas.
 
 ## Objetivo y decisiones
 

@@ -1,0 +1,131 @@
+{
+  "scope": "Original UI input/module closure, AIDL source compiler and native codecs regression; NOT complete libui/mapper, HAL, rendering, APK or product compatibility",
+  "assertions": {
+    "aidl_source_tool36_objects_and26_support_link": true,
+    "31_original_aidl_inputs_generate124_files": true,
+    "frozen_v2_original_hash_algorithm_matches": true,
+    "32_native_objects_including_resources_compile": true,
+    "both_source_codec_libraries_link_strictly": true,
+    "actual_native_local_fd_and_metadata_roundtrip_exit_zero": true,
+    "mapped_source_codecs_and_prepared_hashes_verified_separately": true,
+    "six_pending_files_preserved": true
+  },
+  "evidence": [
+    {
+      "path": "reports/android16-libui-source-closure/acquire-official-aidl-prebuilt.py",
+      "sha256": "0b1ae6e3f78656b848628e611976b328a2945bb9f722ae4ae25feb5d63367b35"
+    },
+    {
+      "path": "reports/android16-libui-source-closure/aidl-build-attempt-1.json",
+      "sha256": "4f28b4f05d44700ae9a19dfc87e735bb7c9ebf2b11460d5ccfc0571d604512b7"
+    },
+    {
+      "path": "reports/android16-libui-source-closure/aidl-build-attempt-1.py",
+      "sha256": "86e59da7f13d3af08cc2a562196c7a08c18907bba16a90ce179d98fd3d5bb0ac"
+    },
+    {
+      "path": "reports/android16-libui-source-closure/aidl-build-attempt-2.json",
+      "sha256": "c3f610cab85cd153f6452dcd9388224b1fa6c64479fc70ed1a65a09fb73ca203"
+    },
+    {
+      "path": "reports/android16-libui-source-closure/aidl-build-attempt-2.py",
+      "sha256": "8d3b93efefa41da4e1200c095af84faf5cf053ff451ef96dc957848eb8fefeda"
+    },
+    {
+      "path": "reports/android16-libui-source-closure/aidl-build-attempt-3.json",
+      "sha256": "63044ef95ed20d609195e6b83c97ac223b5929b2e004db9823afacde01271006"
+    },
+    {
+      "path": "reports/android16-libui-source-closure/aidl-build-attempt-3.py",
+      "sha256": "161ce532c34f6efbc109ad09d699ead2d69014164dd51976ad53bc1f4204013a"
+    },
+    {
+      "path": "reports/android16-libui-source-closure/aidl-frozen-api-integrity.json",
+      "sha256": "d2413caa6123ed7a956c3be08fc1d74785be37febeadfaa4a7b738cb984f54fa"
+    },
+    {
+      "path": "reports/android16-libui-source-closure/aidl-generation-attempt-1.py",
+      "sha256": "aa09085b15e99c4c0954b9273ffdcb56ac89d7d0f96b85900125686c7f14c8a8"
+    },
+    {
+      "path": "reports/android16-libui-source-closure/aidl-host-build.json",
+      "sha256": "3380f54ea0171c77f2f5552a4f9a5983a02a4b1658c464453001cf978a6eb833"
+    },
+    {
+      "path": "reports/android16-libui-source-closure/aidl-prebuilt-help-probe.json",
+      "sha256": "df99fc7eca7dd8f12dcfa93a559466c22ffbb22eaefc7fb98d18c72d31e1d04e"
+    },
+    {
+      "path": "reports/android16-libui-source-closure/aidl-prebuilt-provenance.json",
+      "sha256": "747667808cac51d1f219245ed6ff0bf9c68c0842e76838a0381da6d29366d52a"
+    },
+    {
+      "path": "reports/android16-libui-source-closure/aidl-source-help-mcp.json",
+      "sha256": "835804ee81ba938fe4f21865cc6cafc1ca7ddd27173cb907ec3fb967a4092899"
+    },
+    {
+      "path": "reports/android16-libui-source-closure/codec-roundtrip-mcp.json",
+      "sha256": "d50b9857d810335b4f51a44f0f5a9fe27ec590b44806d2befdeefaa5f1139dd4"
+    },
+    {
+      "path": "reports/android16-libui-source-closure/codecs-link.json",
+      "sha256": "7441eae81a09fb61f2eb05b81791cbc1a0b11de4e50b9b31ba63230ab351c940"
+    },
+    {
+      "path": "reports/android16-libui-source-closure/findings.json",
+      "sha256": "84b88cdbc5fd383a29f8e6075d8830f357bcd86058de01a4c3eefde06c81ec28"
+    },
+    {
+      "path": "reports/android16-libui-source-closure/graphics-aidl-generation.json",
+      "sha256": "16699f97b63b929548f744ccd9641e2b6ff07467014e17fe2146ca135498dad0"
+    },
+    {
+      "path": "reports/android16-libui-source-closure/historical-aidl-tool.json",
+      "sha256": "1591687133dd678928a70121c889ad0d0e8f1172f10e35660627da69622efb8b"
+    },
+    {
+      "path": "reports/android16-libui-source-closure/native-compile-attempt-1.json",
+      "sha256": "cff9fdc53a69f10c6a26acc9780e10e5954fd8256276bbcf2715f479f4c50978"
+    },
+    {
+      "path": "reports/android16-libui-source-closure/native-compile-attempt-1.py",
+      "sha256": "921db2af4fd595edfd67599616cc2650af93ef809c6dca5e6ea05fa87c127a60"
+    },
+    {
+      "path": "reports/android16-libui-source-closure/native-compile.json",
+      "sha256": "bd6bd026704f0dc21d68c73b7495dc72bbb095fe36d9eec5ef3c50efe1951694"
+    },
+    {
+      "path": "reports/android16-libui-source-closure/native-launcher.py",
+      "sha256": "a232240e83a4f8fc01e2776fab449350797a0b952f046c9740556dcbdeadc3ad"
+    },
+    {
+      "path": "reports/android16-libui-source-closure/original-libui-needed.json",
+      "sha256": "5a576dd36dc4ef50a1eeb98311e50f46547daa24e42565208e200437f3f8c6be"
+    },
+    {
+      "path": "reports/android16-libui-source-closure/parcel-roundtrip.cpp",
+      "sha256": "da10bb5c9fa49aa320ba92fd1297f0efbbeec4e4e06f0f00c517448fced0c533"
+    },
+    {
+      "path": "reports/android16-libui-source-closure/reproduce-aidl-generation.py",
+      "sha256": "5dd09414da7e6c765ced84e5b89a5b0f4b2644d2ac8887b34e211f5d09428f0d"
+    },
+    {
+      "path": "reports/android16-libui-source-closure/reproduce-aidl-host.py",
+      "sha256": "4c649872514deac76a915d3ad00690596f3bcb3e5546b51cf7916c44134050ab"
+    },
+    {
+      "path": "reports/android16-libui-source-closure/reproduce-codec-link.py",
+      "sha256": "df04614293d5708d3a094db484b290b2cbd580e005a04bff1fd9c6e00c717ee1"
+    },
+    {
+      "path": "reports/android16-libui-source-closure/reproduce-native-inputs.py",
+      "sha256": "901570afc1659548b6d02fe39264cc632f10f910d733d6a325f25a61dfc47815"
+    },
+    {
+      "path": "reports/android16-libui-source-closure/source-provenance.json",
+      "sha256": "a19862e0296f99f76591641bbd2adc2c875a5110f8a44934f847c60e1aaebe6e"
+    }
+  ]
+}

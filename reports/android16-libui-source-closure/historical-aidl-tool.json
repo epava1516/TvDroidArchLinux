@@ -1,0 +1,7 @@
+{
+  "scope": "Historical Android13 tool, retained unmodified and excluded from current native A16 generation",
+  "manifest": "runtime/aosp/aidl-toolchain.json",
+  "manifest_sha256": "b0af090eebccf258a4e9f261a0a78d2cc8495f9d7816164b95acc13e7a0477d4",
+  "reported_platform_sdk": 32,
+  "all_cached_artifact_hashes_match": true
+}

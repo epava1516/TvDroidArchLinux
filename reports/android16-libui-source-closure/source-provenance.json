@@ -1,0 +1,109 @@
+[
+  {
+    "repository": "/home/tv/.cache/archtv/graphics-candidates-1/frameworks-native",
+    "commit": "fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103",
+    "signature_verified": false,
+    "selected_files": [
+      {
+        "path": "libs/ui/Android.bp",
+        "kind": "regular",
+        "git_blob": "cb2e23297d5bde76c4448965adb03397a0a58099",
+        "verified": true,
+        "content_sha256": "53d7a69ea080e39d9167ba0e94d54a571d7ed23a038aec01f5ac7903c3874cbf"
+      },
+      {
+        "path": "libs/ui/include/ui/GraphicBufferMapper.h",
+        "kind": "regular",
+        "git_blob": "91aabe9f12d7fcde4965e7fd1695ed825df798b2",
+        "verified": true,
+        "content_sha256": "6faecaa97eb56480828a6beeaff7b9441d158ec336aee5c1b25d1ac9823155be"
+      },
+      {
+        "path": "libs/ui/include_vndk/ui/GraphicTypes.h",
+        "kind": "symlink",
+        "git_blob": "b1859e0f514b9d685d3d21aeac80918a9d8b95fb",
+        "verified": true,
+        "content_sha256": "c125249635396d87386dc330c74f0ef4be34c84e67657caf131d1208f33c785e",
+        "target": "../../include/ui/GraphicTypes.h"
+      },
+      {
+        "path": "libs/ui/include_vndk/ui/Rect.h",
+        "kind": "symlink",
+        "git_blob": "01ed6891e9bdb1ab3784dd4eaaef16d30c156e40",
+        "verified": true,
+        "content_sha256": "ba858108b36dc8af8c9697a60e9e19dfb5ba960b0172309d311550309793fbab",
+        "target": "../../include/ui/Rect.h"
+      },
+      {
+        "path": "libs/arect/include/android/rect.h",
+        "kind": "regular",
+        "git_blob": "d52861add0a2c4bcbe2552a061510d6a9687c1e4",
+        "verified": true,
+        "content_sha256": "38c24c9f3e08b8e5a577e32d0a17fa55c3a50b5820128b2663972704b4c07706"
+      }
+    ]
+  },
+  {
+    "repository": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces",
+    "commit": "aa229558cbf04bc997ed27465c5e7ad497123d1b",
+    "signature_verified": false,
+    "selected_files": [
+      {
+        "path": "graphics/common/aidl/Android.bp",
+        "kind": "regular",
+        "git_blob": "7729b8745cb9020a44a9c33eecf417c0ae78e2c5",
+        "verified": true,
+        "content_sha256": "04295979b99bf6e297ce8670d2fa945b3345db01973b775e3ae1a97a02475230"
+      },
+      {
+        "path": "common/aidl/aidl_api/android.hardware.common/2/.hash",
+        "kind": "regular",
+        "git_blob": "5ef5e089a718b570c709d6db161e9b11706572ca",
+        "verified": true,
+        "content_sha256": "5cd1df05b160665bdd2b5ed5d800cc8308ddb9ccd8c9eb33a8b2f2dfaeac57eb"
+      },
+      {
+        "path": "graphics/composer/2.1/utils/resources/ComposerResources.cpp",
+        "kind": "regular",
+        "git_blob": "80bfb7a26ae1b4945d57f60bbedd64d5f6527db8",
+        "verified": true,
+        "content_sha256": "6ebe3b849a51b7c0e15aac04097e7d41649b89df725ac679fa12442cb57607a5"
+      }
+    ]
+  },
+  {
+    "repository": "/home/tv/.cache/archtv/graphics-candidates-1/aidl-tools",
+    "commit": "3747384b876442e7ea0c355fe5adc75b29362833",
+    "signature_verified": false,
+    "selected_files": [
+      {
+        "path": "Android.bp",
+        "kind": "regular",
+        "git_blob": "32178a9ae54bd2f5f8d639a86d19624ccd92aa48",
+        "verified": true,
+        "content_sha256": "32c9fbacf78a91e117b6f9e8e87cb790bb005d7b2e106173cbd7d1811ee675d4"
+      },
+      {
+        "path": "include/aidl/transaction_ids.h",
+        "kind": "regular",
+        "git_blob": "5c292840c61e246137a4d1ce8ab27971f2ac1140",
+        "verified": true,
+        "content_sha256": "3d1d0481e76e69d041693ab80dff6c9bdb7a64fc8e1587421024e93d15de40e8"
+      },
+      {
+        "path": "build/hash_gen.sh",
+        "kind": "regular",
+        "git_blob": "536cdedc65f03070a3af5443b1755182da0431b6",
+        "verified": true,
+        "content_sha256": "e06724bf1e17a0bd6c2ef0754f034c875db6661c512029095235bd5490bf2308"
+      },
+      {
+        "path": "build/aidl_api.go",
+        "kind": "regular",
+        "git_blob": "d319f4279e750d08e58ed60cf26a4c6c1d305583",
+        "verified": true,
+        "content_sha256": "27162af0a81c5c498e6d1a6feb287e686a0b1e49bb9798fad5837a67d2e01b29"
+      }
+    ]
+  }
+]

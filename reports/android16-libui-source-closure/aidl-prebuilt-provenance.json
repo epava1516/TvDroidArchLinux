@@ -1,0 +1,35 @@
+{
+  "repository": "platform/prebuilts/sdk",
+  "commit": "8c36435476cbaea0a4170a327e55dd4775cd60b9",
+  "signature_verified": false,
+  "source_binary_equivalence": "Not verified with system/tools/aidl source commit; original locked official prebuilt host tool only",
+  "files": [
+    {
+      "path": "tools/linux/bin/aidl",
+      "local": "/home/tv/.cache/archtv/graphics-candidates-1/aidl-prebuilt16/aidl",
+      "url": "https://android.googlesource.com/platform/prebuilts/sdk/+/8c36435476cbaea0a4170a327e55dd4775cd60b9/tools/linux/bin/aidl?format=TEXT",
+      "git_blob": "557811cfce39400b32d99c07c8cb4c1fa9b79576",
+      "sha256": "7873f04fb7b58cd3871d56756be1ee23e137b4b2e2e584dbfc8113826fa9771d",
+      "bytes": 4808224,
+      "git_blob_verified": true
+    },
+    {
+      "path": "tools/linux/bin/NOTICE.txt",
+      "local": "/home/tv/.cache/archtv/graphics-candidates-1/aidl-prebuilt16/NOTICE.txt",
+      "url": "https://android.googlesource.com/platform/prebuilts/sdk/+/8c36435476cbaea0a4170a327e55dd4775cd60b9/tools/linux/bin/NOTICE.txt?format=TEXT",
+      "git_blob": "5b547b1e7350aba4264cb292d2474771d5a1e706",
+      "sha256": "cc869e8f8d5668267842fb5840e7a28c914dfc5a9b3944f5b58408641cf859b5",
+      "bytes": 1057294,
+      "git_blob_verified": true
+    },
+    {
+      "path": "tools/linux/lib64/libc++.so",
+      "local": "/home/tv/.cache/archtv/graphics-candidates-1/aidl-prebuilt16/libc++.so",
+      "url": "https://android.googlesource.com/platform/prebuilts/sdk/+/8c36435476cbaea0a4170a327e55dd4775cd60b9/tools/linux/lib64/libc++.so?format=TEXT",
+      "git_blob": "ddc0bb60a119a0c651e3923e41a393559ef3fd54",
+      "sha256": "a7292b027ec262cefed580771f063f12d06bf9f40ccd50b3d1f57ffedc1d962e",
+      "bytes": 1405904,
+      "git_blob_verified": true
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "scope": "Original UI input/module closure, AIDL source compiler and native codecs regression; NOT complete libui/mapper, HAL, rendering, APK or product compatibility",
+  "observed_at": "2026-10-31T08:49:39.323463+00:00",
+  "base_commit": "bd84c11e9c6f8a513d91a99d27eeaebe8da10fed",
+  "tool_versions": {
+    "historical_sdk32": "Android13 aidl artifact hashes match old manifest; retained and excluded",
+    "locked_official_prebuilt_sdk35": "Original prebuilts/sdk commit from A16 manifest verified; reports35 in argument-validation help. --version without interface argument is invalid, not an AIDL codegen failure. No source equivalence or generation accepted.",
+    "source_sdk36": "Exact original system/tools/aidl source commit compiled:36 new units including generated parser and original GTest,26 reused host-support objects. PLATFORM_SDK_VERSION36 explicit from base profile. Host Clang21/frontend with original resource headers, Clang23 prebuilt support objects, host libstdc++16; not full Soong host binary equivalence. Host-only, not mixed into Bionic runtime."
+  },
+  "generated_native": {
+    "source_packages": "Hardware common frozenV2 and graphics common currentV7, matching imports and observed original libui dependencies",
+    "input_aidl_files": 31,
+    "generated_files": 124,
+    "native_objects_compiled": 32,
+    "note": "31 complete generated codec units plus original ComposerResources.cpp; whole libui implementations and driver plugins not compiled in this milestone.",
+    "frozen_integrity": "Original hash_gen.sh with versionForHashGen2→1 reproduces commonV2 .hash: version-salted SHA1, distinct from raw HIDL SHA256. Graphics currentV7 uses explicit notfrozen, not a falsely frozen hash."
+  },
+  "native_regression": {
+    "evidence_id": "ev_54411aa93dfc7fbf4c92a0df2fc8a77a9309b52cd51e63b07e9c7cc4f4700e6d",
+    "exit": 0,
+    "identity": {
+      "Uid": "10000\t10000\t10000\t10000",
+      "Gid": "10000\t10000\t10000\t10000",
+      "Groups": "",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "CapInh": "0000000000000000",
+      "CapAmb": "0000000000000000",
+      "NoNewPrivs": "1"
+    },
+    "tests": [
+      "NativeHandle ints and real memfd payload serialize/read; closing original descriptor and deleting Parcel preserve decoded fd/data; receiver final close yields EBADF",
+      "PlaneLayout nested components/string/type/64-bit metadata serialize/read and compare equal",
+      "Both source-built AIDL codec library paths mapped under /data, so original GSI copies are not substituted"
+    ],
+    "limits": "Local Parcel memory/FD duplication in one process, NOT kernel Binder FD transfer, cross-UID permission/identity, real buffer import/allocation or application persistence",
+    "artifacts": [
+      {
+        "path": "dist/aosp16/graphics-codecs-native-link-1/parcel-roundtrip",
+        "sha256": "a7564de07dde5ce7d7eeb34cc2694321ba3964ce656301ae8329cdc8a81aed07",
+        "executed_copy": "dist/aosp16/graphics-codecs-native-execution-1/data/parcel-roundtrip",
+        "copy_hash_matches_after_run": true
+      },
+      {
+        "path": "dist/aosp16/graphics-codecs-native-link-1/android.hardware.common-V2-ndk.so",
+        "sha256": "111536646f0be5586a8c5c1961b8846c858d7f9ead4fc71099be622db9c2bc2d",
+        "executed_copy": "dist/aosp16/graphics-codecs-native-execution-1/data/android.hardware.common-V2-ndk.so",
+        "copy_hash_matches_after_run": true
+      },
+      {
+        "path": "dist/aosp16/graphics-codecs-native-link-1/android.hardware.graphics.common-V7-ndk.so",
+        "sha256": "d2588ea5bdf182115ff3a66445fb1db5381615f8dd22b3a3651ca66ec569ce6f",
+        "executed_copy": "dist/aosp16/graphics-codecs-native-execution-1/data/android.hardware.graphics.common-V7-ndk.so",
+        "copy_hash_matches_after_run": true
+      }
+    ],
+    "source_sha256": "da10bb5c9fa49aa320ba92fd1297f0efbbeec4e4e06f0f00c517448fced0c533",
+    "library_selection": "Original linkerconfig unchanged; LD_LIBRARY_PATH=/data scoped to private diagnostic with only two codec libraries, mappings asserted. Link staging not runtime namespace flattening.",
+    "mcp_limits": [
+      "Artifact identity is unavailable for this observation.",
+      "The executable digest is a prelaunch file sample; matching path metadata immediately after spawn does not prove an atomic operating-system image binding.",
+      "Process trees are sampled and may omit short-lived descendants.",
+      "Process-tree sampling ended with an incomplete observation.",
+      "Filesystem observations are before/after snapshots, not syscall traces.",
+      "Inherited host environment variables are not recorded and may affect results.",
+      "No filesystem observation paths were selected; filesystem effects remain unknown.",
+      "Process sampling has incomplete observations: /proc/243363/environ: EACCES: Error: EACCES: permission denied, open '/proc/243363/environ'. See truncation_details.process."
+    ],
+    "projection": "Selected derived non-sensitive fields; not complete authenticated Evidence; prepared hashes and mapped paths are separate observations, not atomic kernel image binding."
+  },
+  "architecture_axes": {
+    "api_services": "No actual service registration/lifecycle/HWC/WM/app API compatibility accepted",
+    "bionic_binary": "Native x86_64 original NDK Parcel plus two generated codec cases functional under stated profile; not broad ABI/JNI acceptance",
+    "isa_translation": "No ARM translation implemented or tested; R6 separate"
+  },
+  "remaining": [
+    "Build original whole libui/gralloctypes/mapper/allocator implementation and original HIDL runtime grouping, then link actual Composer service",
+    "Exact product/min-SDK/Soong/sanitizer/AFDO, export/ABI dump and licensing/update parity still unverified",
+    "No hardware buffers, fences, GPU composition, protected content/DRM or Smithay presentation observed",
+    "R1-MAC original SID/SELinux deployment remains pending; all real APK stages unchanged not_tested"
+  ],
+  "next": "Use complete original libui/allocator/mapper module graph and generated families to build implementation units; preserve original driver/registry requirements and pursue real hotplug→buffer/fence→Smithay presentation, followed by complete Markor journey."
+}

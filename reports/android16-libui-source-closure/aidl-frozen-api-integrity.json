@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "bash",
+    "/home/tv/.cache/archtv/graphics-candidates-1/aidl-tools/build/hash_gen.sh",
+    "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/common/aidl/aidl_api/android.hardware.common/2",
+    "1",
+    "/home/tv/repositorio-principal/dist/aosp16/common-v2-hash-check-1.txt"
+  ],
+  "exit_code": 0,
+  "hash": "c32ddfdeb69c6e4a8a45519e6f9a39c4b66fd99f",
+  "matches_original_hash_file": true,
+  "scope": "Original hash_gen.sh and versionForHashGen2\u21921 rule: version-salted SHA1 over sorted snapshot AIDL files, not HIDL raw SHA256 or runtime compatibility"
+}

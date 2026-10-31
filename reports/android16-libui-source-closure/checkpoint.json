@@ -1,0 +1,74 @@
+{
+  "observed_at": "2026-10-31T08:49:39.323463+00:00",
+  "base_commit": "bd84c11e9c6f8a513d91a99d27eeaebe8da10fed",
+  "scope": "Original UI input/module closure, AIDL source compiler and native codecs regression; NOT complete libui/mapper, HAL, rendering, APK or product compatibility",
+  "previous_checkpoint": "reports/android16-hidl-native-bindings/checkpoint.json",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "terminal_exec_handles": [
+    3406,
+    10999,
+    13906,
+    19458,
+    19638,
+    20806,
+    23664,
+    33205,
+    48305,
+    49513,
+    52787,
+    54094,
+    61558,
+    64356,
+    67317,
+    82434,
+    89126
+  ],
+  "live_exec_handles": [],
+  "next": "Use complete original libui/allocator/mapper module graph and generated families to build implementation units; preserve original driver/registry requirements and pursue real hotplug→buffer/fence→Smithay presentation, followed by complete Markor journey.",
+  "results": "Source-built AIDL36 tool and 31 original IDLs generate124 files;32 native codec/resource units compile. Strict codec link and native original Parcel regression exit0, real fd ownership/nested metadata plus source library mappings observed by MCP. No whole libui/HAL/frame/APK acceptance.",
+  "observed_processes": {},
+  "validated_independent_progress": {
+    "original_binary_exports": "Both0 via original checkpolicy-M-b-C",
+    "aosp_retained_binary_attributes": 199,
+    "linux_retained_binary_attributes": 340,
+    "attribute_set_exports_all_flat_explicit": true
+  },
+  "objective": "Complete unmodified APK including TV on Linux Rust/Smithay, coherent native AOSP16QPR2/Bionic; no Waydroid, full Android or introduced VM; preserve compatibility/isolation/stability/lightness/install/update.",
+  "constraints": [
+    "A16-QPR2-1",
+    "No VM introduction or VM/client restart",
+    "No policy load/host relabeling without verified deployment plan",
+    "Fixtures/static policy checks are partial, not APK acceptance"
+  ],
+  "branch": "main",
+  "head_before_milestone_commit": "bd84c11e9c6f8a513d91a99d27eeaebe8da10fed",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "relation_to_local_origin_tracking": "0\t0",
+  "own_staged_milestone_paths": [],
+  "process_snapshot": {
+    "scope": "MCP owned-group cleanup verified; process samples partial, not current host liveness proof."
+  },
+  "rea_session_status": "Actual source aidl help capture SDK36 exit0 and native Bionic codec capture exit0, owned groups cleaned; retained process/environment/network limitations. No persistent target started.",
+  "tests": {
+    "tool": "aidl-host-build.json",
+    "generation": "graphics-aidl-generation.json",
+    "integrity": "aidl-frozen-api-integrity.json",
+    "native": "native-compile.json",
+    "link": "codecs-link.json",
+    "mcp": "codec-roundtrip-mcp.json",
+    "scope": "findings.json"
+  },
+  "evidence_root": "reports/android16-libui-source-closure",
+  "active_exec_handles": []
+}

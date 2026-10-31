@@ -974,6 +974,44 @@ El servicio original inicia /dev/vndbinder y configura HIDL, cuyo hwbinder abre
 actual del host sigue sin SELinux activo. No hay link/registro del servicio,
 dispositivo abierto, buffers/fences, frame Smithay ni recorrido APK aceptados.
 
+## R3 · entradas libui y codecs AIDL originales
+
+[Resultados](../reports/android16-libui-source-closure/findings.json) y
+[procedencia](../reports/android16-libui-source-closure/source-provenance.json).
+Este hito supera el fallo inicial de ComposerResources por cabeceras ausentes:
+se suministran los exports originales, incluido libarect; compilan31 codecs y
+ComposerResources. No se ha construido la implementación completa de libui.
+El ELF GSI original depende de graphics.common AIDL V7 y allocator V2, además
+de familias HIDL de allocator/mapper; identificar dependencias no las implementa.
+
+Se conservan y excluyen los artefactos host anteriores SDK32 y el prebuilt oficial
+que informa SDK35. La herramienta original system/tools/aidl se compila desde
+3747384b876442e7ea0c355fe5adc75b29362833 con PLATFORM_SDK_VERSION=36 explícito:
+36 unidades nuevas y26 objetos de soporte reutilizados. Clang21 en el frontend,
+Clang23 en soporte previo y GNU libstdc++16 son una mezcla exclusivamente host;
+no equivalencia Soong ni mezcla del runtime Bionic. La ayuda real por MCP informa36.
+El probe --version sin argumento del prebuilt es inválido; su salida1 no demuestra
+fallo de generación. No se aceptó generación con ese prebuilt.
+
+Hardware common congelado V2 y graphics common actual V7 generan124 archivos
+para31 IDL. El script original reproduce el hash de API congelada: SHA1 con versión,
+distinto de SHA256 crudo de HIDL. V7 usa notfrozen, sin atribuirle congelación.
+Dos bibliotecas con SONAME original enlazan estrictamente contra proveedores GSI.
+REA MCP observa ejecución Bionic0 con UID/GID10000, sin grupos/capacidades, NNP1:
+NativeHandle con memfd y ownership tras destruir Parcel; PlaneLayout anidado igual.
+Los mapas confirman ambas bibliotecas fuente bajo /data. LD_LIBRARY_PATH se limita
+al diagnóstico privado; linkerconfig original permanece intacto. La captura
+publicada es una proyección derivada saneada, no Evidence autenticada completa;
+los límites del muestreo y la asociación no atómica de hashes quedan conservados.
+
+Esto prueba codecs concretos y duplicación local de FD, no transferencia Binder,
+JNI general, allocator/mapper, importación de buffers, fences, HAL, frames,
+Smithay ni compatibilidad APK. API/servicios, ABI Bionic e ISA siguen separados;
+R1-MAC y todas las etapas de APK reales permanecen abiertas. Las recetas preservan
+intentos fallidos y requieren directorios nuevos; no se afirma replay completo.
+Siguiente: módulos originales completos libui/allocator/mapper y runtime HIDL,
+servicio Composer real, hotplug/buffers/fences y presentación hacia Smithay.
+
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 
 

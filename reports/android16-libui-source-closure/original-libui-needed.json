@@ -1,0 +1,31 @@
+{
+  "artifact": "/system/lib64/libui.so",
+  "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libui.so",
+  "sha256": "e3ee9f7dfaed5dc5783b5b10654c2be97b34079cd4e831b1e44edbb722be7d58",
+  "needed": [
+    "android.hardware.graphics.allocator@2.0.so",
+    "android.hardware.graphics.allocator@3.0.so",
+    "android.hardware.graphics.allocator@4.0.so",
+    "android.hardware.graphics.common@1.2.so",
+    "android.hardware.graphics.mapper@2.0.so",
+    "android.hardware.graphics.mapper@2.1.so",
+    "android.hardware.graphics.mapper@3.0.so",
+    "android.hardware.graphics.mapper@4.0.so",
+    "libbase.so",
+    "libbinder_ndk.so",
+    "libcutils.so",
+    "libgralloctypes.so",
+    "libhidlbase.so",
+    "libsync.so",
+    "libutils.so",
+    "liblog.so",
+    "libvndksupport.so",
+    "android.hardware.graphics.common-V7-ndk.so",
+    "android.hardware.graphics.allocator-V2-ndk.so",
+    "libc++.so",
+    "libc.so",
+    "libm.so",
+    "libdl.so"
+  ],
+  "scope": "Static direct dependencies from original ELF; no live HAL/service availability or runtime/linker closure accepted"
+}

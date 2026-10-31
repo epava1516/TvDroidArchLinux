@@ -1,0 +1,831 @@
+{
+  "scope": "Original structured NDK AIDL families from exact source, common frozenV2 and graphics currentV7 observed in original ELF. Source generation only; no native/ABI/service acceptance",
+  "tool_sha256": "58f06576a1c3a8df96afee4f0434135d0cbe298fd071de3951b7dcdfb9f3b1b0",
+  "commands": [
+    {
+      "package": "android.hardware.common",
+      "version": 2,
+      "hash_argument": "c32ddfdeb69c6e4a8a45519e6f9a39c4b66fd99f",
+      "inputs": [
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/common/aidl/aidl_api/android.hardware.common/2/android/hardware/common/Ashmem.aidl",
+          "sha256": "7774bdcbd4b31c4cfcfc2a35ad1caa60fb7e0ba3f33247e43bc679bc0526333b"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/common/aidl/aidl_api/android.hardware.common/2/android/hardware/common/MappableFile.aidl",
+          "sha256": "37e571f98c75f7567f1c9e7ea22baf1d1280024d2b872294dc161a09c3efe834"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/common/aidl/aidl_api/android.hardware.common/2/android/hardware/common/NativeHandle.aidl",
+          "sha256": "bda89ace51cfb22a84c6a9d6836776a459706debb2f2a4f398a768fcc5935976"
+        }
+      ],
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/aidl-host-build-4/aidl",
+        "--lang=ndk",
+        "--structured",
+        "--stability=vintf",
+        "--version=2",
+        "--hash=c32ddfdeb69c6e4a8a45519e6f9a39c4b66fd99f",
+        "--min_sdk_version=29",
+        "--omit_invocation",
+        "--out=/home/tv/repositorio-principal/dist/aosp16/graphics-aidl-v7-generated-2/src",
+        "--header_out=/home/tv/repositorio-principal/dist/aosp16/graphics-aidl-v7-generated-2/include",
+        "-I/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/common/aidl/aidl_api/android.hardware.common/2",
+        "-I/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/common/aidl/aidl_api/android.hardware.common/2/android/hardware/common/Ashmem.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/common/aidl/aidl_api/android.hardware.common/2/android/hardware/common/MappableFile.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/common/aidl/aidl_api/android.hardware.common/2/android/hardware/common/NativeHandle.aidl"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "package": "android.hardware.graphics.common",
+      "version": 7,
+      "hash_argument": "notfrozen",
+      "inputs": [
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/AlphaInterpretation.aidl",
+          "sha256": "dc8812bf1453ca6c41cf3c87a34cb537ac3d286b0f28ab8e1788e7c365f0ac39"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/BlendMode.aidl",
+          "sha256": "4021692b6bdb0bc746315481b01f66c1aeb1be02c2eedd72e26e201a19929a20"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/BufferUsage.aidl",
+          "sha256": "a6226c99ccea53ed72c0337e15b88f434ab2a2e0549f02a079f4c2e6f02b42ac"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/ChromaSiting.aidl",
+          "sha256": "d226ee1ff246ee7674e8c141ec54130c5b4d96857056ac995474812227f0fc9f"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/ColorTransform.aidl",
+          "sha256": "6d2ec22223d7310c8c33d85559f623728dcf42be5316ba0f35c03b51780857cf"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/Compression.aidl",
+          "sha256": "71babd5bbb506f43c4a709bbcb092ae618acb3feefb152fda7024c72bdb98726"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/Cta861_3.aidl",
+          "sha256": "26ac8ae9e782a29e1e0a6a6ec8c911528043764b1afe9fce9b4f86724a66a3ce"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/Dataspace.aidl",
+          "sha256": "db0940b100e126bbf22ab47df2b9839f2c7476a0b9b884e58954dece7d1ef283"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/DisplayDecorationSupport.aidl",
+          "sha256": "78ac6848a42fc33d0bf14b50429a3fec3d72d2cd6f7b3db305008789d0f203d8"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/DisplayHotplugEvent.aidl",
+          "sha256": "cedd0ffce311a9994995709f4fc2db8474608842b2bbc29cf7b19b15ffa4cd45"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/ExtendableType.aidl",
+          "sha256": "ad77b68e96d488b4c70e2f2c7052a6dcecdb47cb3f10615e48b65372b1d29f67"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/FRect.aidl",
+          "sha256": "e4d055686d0986a345f2d44b38bed12d677599f06b15f28acb9981aed1222d78"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/HardwareBuffer.aidl",
+          "sha256": "9607a98aba5b3a5ffd6d569ca404087ea9fa583b1465c63c483acc40394a021f"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/HardwareBufferDescription.aidl",
+          "sha256": "d65aa8476ccf3ff6cb82db467513fda763dcdcfc0458c0e2bd398a452b66f6c3"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/Hdr.aidl",
+          "sha256": "fd4f162779aec309d1c0dc039defc7dbd50b818e0221116ccb95d591b1585c0d"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/HdrConversionCapability.aidl",
+          "sha256": "7ebdb56dcf890d60416720987cecb33b473d5d9e066d8e202716fb1c208f046b"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/HdrConversionStrategy.aidl",
+          "sha256": "c829e39f041ec4a0eb5cc3aa65b5835c0b236a5746f119b2ef687026f8181d0c"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/Interlaced.aidl",
+          "sha256": "8c337d4dd0878d5019470d066561335952fe501fc6ac67c48be929a1f50e86d9"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/PixelFormat.aidl",
+          "sha256": "806386c3a5cbec4c1baabac3841e0fa5e972310710b148d9349b80bf1b754ab7"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/PlaneLayout.aidl",
+          "sha256": "ddc624d2aac6e71feea513f7909e0df278f1c3ab203f43860099c51291c5a0bd"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/PlaneLayoutComponent.aidl",
+          "sha256": "83043be9aa45b8d210647604276dad6de1a9a4a9b88e2bf1f2022dc0780dfd92"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/PlaneLayoutComponentType.aidl",
+          "sha256": "21b1c8608f2b3ffa87004e7255030b84521274b288cba2cbdf8c2d7910b731ff"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/Point.aidl",
+          "sha256": "59b1b46a93b6ebcca8332f238daa943700034258cc3f65be52f5b91c796f4241"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/Rect.aidl",
+          "sha256": "083c1435a0517f961bd0aa12825cb2c7a0020b97ff41074185c8c786e392edf3"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/Smpte2086.aidl",
+          "sha256": "489fdaa71e7fd7761a7e2deef3aba348a732297e2358632b47504f19df44017e"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/StandardMetadataType.aidl",
+          "sha256": "87557b7b53bc1b6df7efcdaf72f5d0962efbab39b96dacab80ec0512ad303655"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/Transform.aidl",
+          "sha256": "4ee8ee4637a52d9568bf09a6906c0ba69191b1d2687a926b95ee0637b978f175"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/XyColor.aidl",
+          "sha256": "549bdcfddff72ed0ac234b161e62402483b25c6f0da2a1b4a28714d3a5fd0852"
+        }
+      ],
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/aidl-host-build-4/aidl",
+        "--lang=ndk",
+        "--structured",
+        "--stability=vintf",
+        "--version=7",
+        "--hash=notfrozen",
+        "--min_sdk_version=29",
+        "--omit_invocation",
+        "--out=/home/tv/repositorio-principal/dist/aosp16/graphics-aidl-v7-generated-2/src",
+        "--header_out=/home/tv/repositorio-principal/dist/aosp16/graphics-aidl-v7-generated-2/include",
+        "-I/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/common/aidl/aidl_api/android.hardware.common/2",
+        "-I/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/AlphaInterpretation.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/BlendMode.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/BufferUsage.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/ChromaSiting.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/ColorTransform.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/Compression.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/Cta861_3.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/Dataspace.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/DisplayDecorationSupport.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/DisplayHotplugEvent.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/ExtendableType.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/FRect.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/HardwareBuffer.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/HardwareBufferDescription.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/Hdr.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/HdrConversionCapability.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/HdrConversionStrategy.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/Interlaced.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/PixelFormat.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/PlaneLayout.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/PlaneLayoutComponent.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/PlaneLayoutComponentType.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/Point.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/Rect.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/Smpte2086.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/StandardMetadataType.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/Transform.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl/android/hardware/graphics/common/XyColor.aidl"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "files": [
+    {
+      "path": "include/aidl/android/hardware/common/Ashmem.h",
+      "sha256": "cdd1f3bc00e07a71102e1fe4f28fd8eae163e6983a4c9daadc1e46493147ecc1",
+      "bytes": 2007
+    },
+    {
+      "path": "include/aidl/android/hardware/common/BnAshmem.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/common/BnMappableFile.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/common/BnNativeHandle.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/common/BpAshmem.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/common/BpMappableFile.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/common/BpNativeHandle.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/common/MappableFile.h",
+      "sha256": "34c01740f5532353cfea3dda586dfebe4b22da88c7c3a1a48addad7e7ef68528",
+      "bytes": 2326
+    },
+    {
+      "path": "include/aidl/android/hardware/common/NativeHandle.h",
+      "sha256": "56aa9c9a7a4a5e806fc4145799aac40a7fd2beece4c1ade4b12ef35812292c6d",
+      "bytes": 2083
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/AlphaInterpretation.h",
+      "sha256": "3a218275ee9324ebb40564dd785b6c639a67078da64ae3991e8896c170696a9e",
+      "bytes": 1867
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BlendMode.h",
+      "sha256": "ae676a334745b1b5394d4a1dea84f811816feedf1a283ae284504cc7382da5a2",
+      "bytes": 2069
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BnAlphaInterpretation.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4",
+      "bytes": 339
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BnBlendMode.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4",
+      "bytes": 339
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BnBufferUsage.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4",
+      "bytes": 339
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BnChromaSiting.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4",
+      "bytes": 339
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BnColorTransform.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4",
+      "bytes": 339
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BnCompression.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4",
+      "bytes": 339
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BnCta861_3.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BnDataspace.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4",
+      "bytes": 339
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BnDisplayDecorationSupport.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BnDisplayHotplugEvent.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4",
+      "bytes": 339
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BnExtendableType.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BnFRect.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BnHardwareBuffer.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BnHardwareBufferDescription.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BnHdr.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4",
+      "bytes": 339
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BnHdrConversionCapability.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BnHdrConversionStrategy.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BnInterlaced.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4",
+      "bytes": 339
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BnPixelFormat.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4",
+      "bytes": 339
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BnPlaneLayout.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BnPlaneLayoutComponent.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BnPlaneLayoutComponentType.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4",
+      "bytes": 339
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BnPoint.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BnRect.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BnSmpte2086.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BnStandardMetadataType.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4",
+      "bytes": 339
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BnTransform.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4",
+      "bytes": 339
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BnXyColor.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BpAlphaInterpretation.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e",
+      "bytes": 339
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BpBlendMode.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e",
+      "bytes": 339
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BpBufferUsage.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e",
+      "bytes": 339
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BpChromaSiting.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e",
+      "bytes": 339
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BpColorTransform.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e",
+      "bytes": 339
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BpCompression.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e",
+      "bytes": 339
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BpCta861_3.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BpDataspace.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e",
+      "bytes": 339
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BpDisplayDecorationSupport.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BpDisplayHotplugEvent.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e",
+      "bytes": 339
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BpExtendableType.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BpFRect.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BpHardwareBuffer.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BpHardwareBufferDescription.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BpHdr.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e",
+      "bytes": 339
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BpHdrConversionCapability.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BpHdrConversionStrategy.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BpInterlaced.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e",
+      "bytes": 339
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BpPixelFormat.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e",
+      "bytes": 339
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BpPlaneLayout.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BpPlaneLayoutComponent.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BpPlaneLayoutComponentType.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e",
+      "bytes": 339
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BpPoint.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BpRect.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BpSmpte2086.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BpStandardMetadataType.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e",
+      "bytes": 339
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BpTransform.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e",
+      "bytes": 339
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BpXyColor.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5",
+      "bytes": 347
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/BufferUsage.h",
+      "sha256": "b67dfb6267a3b002c3b5c33f9d8034d253bc542ca5119ea5ec57db4b2017da09",
+      "bytes": 6002
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/ChromaSiting.h",
+      "sha256": "47573bc9db32b56383356e4e08c8bd6364e0d67849138f47621f2278c1eb40d2",
+      "bytes": 2497
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/ColorTransform.h",
+      "sha256": "46befd8c11b959bcf7ce5de5778d726b78d9639bd887ea7dfb972a879dbc4b2b",
+      "bytes": 2742
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/Compression.h",
+      "sha256": "0adf3ff5b5fe8a2ff05738cc1f8a0f874e96a652f49ae51b2aa73b46c3ddf20c",
+      "bytes": 1877
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/Cta861_3.h",
+      "sha256": "fddb6977399409c3e7ca479c6111cae18fc13c271b6a612cb9904ed55e4b373b",
+      "bytes": 2337
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/Dataspace.h",
+      "sha256": "848f45e78646a80432711a1c114eb739d0f367b00e8bc2608a8168201116cdd7",
+      "bytes": 11480
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/DisplayDecorationSupport.h",
+      "sha256": "595f4e627f6b79e146591f3054e29b50301c82f1c0e6dbb3db24bf984971489f",
+      "bytes": 2677
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/DisplayHotplugEvent.h",
+      "sha256": "a9321ffd220918f1f94cfe53d184b8ee2ca3cdd34ec02dcb3d269ff36a826f08",
+      "bytes": 2707
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/ExtendableType.h",
+      "sha256": "ba91f066f43234c6b39d60a137d20b6113580b8baf09af4cec8e24062b870b3e",
+      "bytes": 2122
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/FRect.h",
+      "sha256": "4a76b322325ca478d003cc3305f93fe18f846dfc9e6b15b5bee36c19417d32b8",
+      "bytes": 2322
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/HardwareBuffer.h",
+      "sha256": "23d997f99bd16d9a9c9d5868bb69e1cd5fd759f74a9176884ba172e5d753405f",
+      "bytes": 2757
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/HardwareBufferDescription.h",
+      "sha256": "13edb00215ef383a9d5fca8ddbf88866e45695e9259d621abd3a46c151eeacbf",
+      "bytes": 3119
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/Hdr.h",
+      "sha256": "8008debd1cc476bf9580a80b0ec402743f6a7b480ce4fe1a22ea18d1062782f5",
+      "bytes": 2263
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/HdrConversionCapability.h",
+      "sha256": "b8dbbb1d322831deb633161dd656b6e8ad7990693fe8bcb3fec38a49e213f3a4",
+      "bytes": 2678
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/HdrConversionStrategy.h",
+      "sha256": "9bbc068948e7706e6ec1453506b20b5a7df5c7b1cca8f9dea2130eb4bd36f138",
+      "bytes": 6350
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/Interlaced.h",
+      "sha256": "a73f4559fa23e39cd6a99bdf8b4e25ab00c0495d813f1537ededa269fec47a66",
+      "bytes": 1949
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/PixelFormat.h",
+      "sha256": "350e6d6f3e2f8bfcff67c6507076f01f3c5b6a25cab2a19bb5ca7437c2cafa75",
+      "bytes": 7685
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/PlaneLayout.h",
+      "sha256": "73d6d8699c5abdba5b8b399086f2377f528f16c558a7dcd521467da8f4d2de23",
+      "bytes": 3966
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/PlaneLayoutComponent.h",
+      "sha256": "1538e839a89b88cd6a920b96337996eb4b5b2dae986971f4f8f93012d585f6eb",
+      "bytes": 2631
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/PlaneLayoutComponentType.h",
+      "sha256": "3766946243e343cb3be28f31bdf17f28dd06b57a0d0e8bc360d01435cd80907c",
+      "bytes": 2725
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/Point.h",
+      "sha256": "0457bf769d135f5b0e4a5259acabcb41f0818cd13041f643f64226f99ef74284",
+      "bytes": 2000
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/Rect.h",
+      "sha256": "e6d5e1ddfc1a44f89dc67f2f75609455d0236d98abf32e60d74eccfe7f2af796",
+      "bytes": 2290
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/Smpte2086.h",
+      "sha256": "99ad85b253253178f8b771fb14b3611bea675a7aae1eb75a7cf5876de0f4acf2",
+      "bytes": 3221
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/StandardMetadataType.h",
+      "sha256": "3a424e7759db8bcbbddaedeca29071806e2436f5fa18455f67989698f800f238",
+      "bytes": 5604
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/Transform.h",
+      "sha256": "2c947625b39fbb86ef6a3355e979599eaddb62c4f380d041ce0b20366e5133e1",
+      "bytes": 2287
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/common/XyColor.h",
+      "sha256": "4a582cc66ac6a050c148aae1d7b5b7e3b56320e8b1febb981c109fdaf2c6bba6",
+      "bytes": 2028
+    },
+    {
+      "path": "src/android/hardware/common/Ashmem.cpp",
+      "sha256": "bd1a75c427d4043212971763749f41bfd355d6dac5a690a2543caa03a14eed96",
+      "bytes": 2821
+    },
+    {
+      "path": "src/android/hardware/common/MappableFile.cpp",
+      "sha256": "ac4dc11114b677c4d43ad7a2bb992e475db38c66bb0ff5532aa9ab1985f0c185",
+      "bytes": 3793
+    },
+    {
+      "path": "src/android/hardware/common/NativeHandle.cpp",
+      "sha256": "982336603d74fb1d769d2cdcaa988584f5f1630ea05a1c58c9ec2428b282c98a",
+      "bytes": 2853
+    },
+    {
+      "path": "src/android/hardware/graphics/common/AlphaInterpretation.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb",
+      "bytes": 363
+    },
+    {
+      "path": "src/android/hardware/graphics/common/BlendMode.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb",
+      "bytes": 363
+    },
+    {
+      "path": "src/android/hardware/graphics/common/BufferUsage.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb",
+      "bytes": 363
+    },
+    {
+      "path": "src/android/hardware/graphics/common/ChromaSiting.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb",
+      "bytes": 363
+    },
+    {
+      "path": "src/android/hardware/graphics/common/ColorTransform.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb",
+      "bytes": 363
+    },
+    {
+      "path": "src/android/hardware/graphics/common/Compression.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb",
+      "bytes": 363
+    },
+    {
+      "path": "src/android/hardware/graphics/common/Cta861_3.cpp",
+      "sha256": "12362d3fd0a89139e694368a420d01bb03119d6c71bee7ff9fd6ac5de0d16888",
+      "bytes": 2973
+    },
+    {
+      "path": "src/android/hardware/graphics/common/Dataspace.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb",
+      "bytes": 363
+    },
+    {
+      "path": "src/android/hardware/graphics/common/DisplayDecorationSupport.cpp",
+      "sha256": "c68eda64a56ba8d60578ff53d36eacf98ab0452a109817766e19a930d557e40c",
+      "bytes": 3013
+    },
+    {
+      "path": "src/android/hardware/graphics/common/DisplayHotplugEvent.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb",
+      "bytes": 363
+    },
+    {
+      "path": "src/android/hardware/graphics/common/ExtendableType.cpp",
+      "sha256": "91b1b9901b12dae06010fbd6d37912635075cb0b004ed00dbbafa0136437dea9",
+      "bytes": 2931
+    },
+    {
+      "path": "src/android/hardware/graphics/common/FRect.cpp",
+      "sha256": "4af6b18670d7819eca3071fbe954d8571c893a3cb81b43fd45f3bd80418b0df0",
+      "bytes": 3822
+    },
+    {
+      "path": "src/android/hardware/graphics/common/HardwareBuffer.cpp",
+      "sha256": "bbbe58bd4c414696c098bd8db44c724a24a2d6432a38075f9b7c2cc303d40588",
+      "bytes": 2947
+    },
+    {
+      "path": "src/android/hardware/graphics/common/HardwareBufferDescription.cpp",
+      "sha256": "0fb17e350dfd37987ebec1fe5a881fa8927cfa17216a36d37069faa07f289bf5",
+      "bytes": 4872
+    },
+    {
+      "path": "src/android/hardware/graphics/common/Hdr.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb",
+      "bytes": 363
+    },
+    {
+      "path": "src/android/hardware/graphics/common/HdrConversionCapability.cpp",
+      "sha256": "e6a5a98c8ed27faec04c3286313a676e37e3031691e8208a286aa560e7fbd36c",
+      "bytes": 3479
+    },
+    {
+      "path": "src/android/hardware/graphics/common/HdrConversionStrategy.cpp",
+      "sha256": "8376cb473e3b697594489bfeca144f016ad24bcb43a80ec2c1649ecd80a3187a",
+      "bytes": 3191
+    },
+    {
+      "path": "src/android/hardware/graphics/common/Interlaced.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb",
+      "bytes": 363
+    },
+    {
+      "path": "src/android/hardware/graphics/common/PixelFormat.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb",
+      "bytes": 363
+    },
+    {
+      "path": "src/android/hardware/graphics/common/PlaneLayout.cpp",
+      "sha256": "b10565ebe98434cd0f30bb4af30638ec5db5bfe21d6ba9dfef059d99f42d9aab",
+      "bytes": 6395
+    },
+    {
+      "path": "src/android/hardware/graphics/common/PlaneLayoutComponent.cpp",
+      "sha256": "40b693b2e945d61e97b1bef33033ec11bc7a226efcf52512f727a26d6033f718",
+      "bytes": 3454
+    },
+    {
+      "path": "src/android/hardware/graphics/common/PlaneLayoutComponentType.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb",
+      "bytes": 363
+    },
+    {
+      "path": "src/android/hardware/graphics/common/Point.cpp",
+      "sha256": "7d3ad25b139644b2447f539070c4779d96de2b676dee37454e9883579a394521",
+      "bytes": 2872
+    },
+    {
+      "path": "src/android/hardware/graphics/common/Rect.cpp",
+      "sha256": "7e431476f1d32ab1d698adcd5d846eafccd9f9f5970b8d9b2c29b604398925ca",
+      "bytes": 3817
+    },
+    {
+      "path": "src/android/hardware/graphics/common/Smpte2086.cpp",
+      "sha256": "29dd48469fae7492b36561b90990575b763086975bae8f7fa16943c2764bb94c",
+      "bytes": 4858
+    },
+    {
+      "path": "src/android/hardware/graphics/common/StandardMetadataType.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb",
+      "bytes": 363
+    },
+    {
+      "path": "src/android/hardware/graphics/common/Transform.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb",
+      "bytes": 363
+    },
+    {
+      "path": "src/android/hardware/graphics/common/XyColor.cpp",
+      "sha256": "be4576b09a62d2ede42ca37e6f873092a15a72b6d371f8bd729f8641d01bab71",
+      "bytes": 2882
+    }
+  ]
+}
