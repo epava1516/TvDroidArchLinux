@@ -1,0 +1,175 @@
+{
+  "scope": "Offline original sepol_check_access, one permission per invocation; code7 is denial, errors separate; no running policy or kernel execution proof",
+  "policy_sha256": "1234463a2f52e3a8628a1e65be13a9b951f4754b323f41e14d1921263b2bc9c9",
+  "tool_sha256": "4dad592b85401d1182d02ba157ff3174c7008f51e5eb619d478637105bdc22da",
+  "results": [
+    {
+      "case": "init_security_dir_search",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-compile-1/policy.bin",
+        "u:r:init:s0",
+        "linux.system_u:linux.object_r:linux.security_t:s0",
+        "dir",
+        "search"
+      ],
+      "exit": 7,
+      "stdout": "requested permission search denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "init_security_file_open",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-compile-1/policy.bin",
+        "u:r:init:s0",
+        "linux.system_u:linux.object_r:linux.security_t:s0",
+        "file",
+        "open"
+      ],
+      "exit": 7,
+      "stdout": "requested permission open denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "init_security_file_write",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-compile-1/policy.bin",
+        "u:r:init:s0",
+        "linux.system_u:linux.object_r:linux.security_t:s0",
+        "file",
+        "write"
+      ],
+      "exit": 7,
+      "stdout": "requested permission write denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "init_security_status_map",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-compile-1/policy.bin",
+        "u:r:init:s0",
+        "linux.system_u:linux.object_r:linux.security_t:s0",
+        "file",
+        "map"
+      ],
+      "exit": 7,
+      "stdout": "requested permission map denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "init_compute_create",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-compile-1/policy.bin",
+        "u:r:init:s0",
+        "linux.system_u:linux.object_r:linux.security_t:s0",
+        "security",
+        "compute_create"
+      ],
+      "exit": 7,
+      "stdout": "requested permission compute_create denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "init_compute_av",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-compile-1/policy.bin",
+        "u:r:init:s0",
+        "linux.system_u:linux.object_r:linux.security_t:s0",
+        "security",
+        "compute_av"
+      ],
+      "exit": 7,
+      "stdout": "requested permission compute_av denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "init_manager_transition",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-compile-1/policy.bin",
+        "u:r:init:s0",
+        "u:r:servicemanager:s0",
+        "process",
+        "transition"
+      ],
+      "exit": 0,
+      "stdout": "requested permission transition allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "init_manager_entrypoint",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-compile-1/policy.bin",
+        "u:r:servicemanager:s0",
+        "u:object_r:servicemanager_exec:s0",
+        "file",
+        "entrypoint"
+      ],
+      "exit": 0,
+      "stdout": "requested permission entrypoint allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "linux_init_android_init_transition",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-compile-1/policy.bin",
+        "linux.system_u:linux.system_r:linux.init_t:s0",
+        "u:r:init:s0",
+        "process",
+        "transition"
+      ],
+      "exit": 7,
+      "stdout": "requested permission transition denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "linux_kernel_android_init_transition",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-compile-1/policy.bin",
+        "linux.system_u:linux.system_r:linux.kernel_t:s0",
+        "u:r:init:s0",
+        "process",
+        "transition"
+      ],
+      "exit": 7,
+      "stdout": "requested permission transition denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "manager_compute_create",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-compile-1/policy.bin",
+        "u:r:servicemanager:s0",
+        "linux.system_u:linux.object_r:linux.security_t:s0",
+        "security",
+        "compute_create"
+      ],
+      "exit": 7,
+      "stdout": "requested permission compute_create denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "manager_load_policy",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-compile-1/policy.bin",
+        "u:r:servicemanager:s0",
+        "linux.system_u:linux.object_r:linux.security_t:s0",
+        "security",
+        "load_policy"
+      ],
+      "exit": 7,
+      "stdout": "requested permission load_policy denied by te-rule\n",
+      "stderr": ""
+    }
+  ]
+}

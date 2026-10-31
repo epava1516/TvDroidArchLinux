@@ -1,0 +1,155 @@
+{
+  "scope": "Offline libsepol_transition_sid only. Context calculation not permission or kernel exec evidence. Errors not denials.",
+  "policies": {
+    "candidate": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-compile-1/policy.bin",
+      "sha256": "1234463a2f52e3a8628a1e65be13a9b951f4754b323f41e14d1921263b2bc9c9"
+    },
+    "aosp": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/platform-policy-original-options.bin",
+      "sha256": "cf26368b0cbb9b921e78ae3830c7bfbd6b900dc2676f6a97f71ba83df611e296"
+    }
+  },
+  "results": [
+    {
+      "policy": "candidate",
+      "case": "android_init_to_manager",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-launch-transitions-1/sepol_compute_transition",
+        "/home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-compile-1/policy.bin",
+        "u:r:init:s0",
+        "u:object_r:servicemanager_exec:s0",
+        "process"
+      ],
+      "exit": 0,
+      "stdout": "u:r:servicemanager:s0\n",
+      "stderr": ""
+    },
+    {
+      "policy": "candidate",
+      "case": "android_init_to_hwmanager",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-launch-transitions-1/sepol_compute_transition",
+        "/home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-compile-1/policy.bin",
+        "u:r:init:s0",
+        "u:object_r:hwservicemanager_exec:s0",
+        "process"
+      ],
+      "exit": 0,
+      "stdout": "u:r:hwservicemanager:s0\n",
+      "stderr": ""
+    },
+    {
+      "policy": "candidate",
+      "case": "android_kernel_to_init",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-launch-transitions-1/sepol_compute_transition",
+        "/home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-compile-1/policy.bin",
+        "u:r:kernel:s0",
+        "u:object_r:init_exec:s0",
+        "process"
+      ],
+      "exit": 0,
+      "stdout": "u:r:init:s0\n",
+      "stderr": ""
+    },
+    {
+      "policy": "candidate",
+      "case": "linux_init_to_android_init",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-launch-transitions-1/sepol_compute_transition",
+        "/home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-compile-1/policy.bin",
+        "linux.system_u:linux.system_r:linux.init_t:s0",
+        "u:object_r:init_exec:s0",
+        "process"
+      ],
+      "exit": 0,
+      "stdout": "linux.system_u:linux.system_r:linux.init_t:s0\n",
+      "stderr": ""
+    },
+    {
+      "policy": "candidate",
+      "case": "linux_kernel_to_android_init",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-launch-transitions-1/sepol_compute_transition",
+        "/home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-compile-1/policy.bin",
+        "linux.system_u:linux.system_r:linux.kernel_t:s0",
+        "u:object_r:init_exec:s0",
+        "process"
+      ],
+      "exit": 0,
+      "stdout": "linux.system_u:linux.system_r:linux.kernel_t:s0\n",
+      "stderr": ""
+    },
+    {
+      "policy": "aosp",
+      "case": "android_init_to_manager",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-launch-transitions-1/sepol_compute_transition",
+        "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/platform-policy-original-options.bin",
+        "u:r:init:s0",
+        "u:object_r:servicemanager_exec:s0",
+        "process"
+      ],
+      "exit": 0,
+      "stdout": "u:r:servicemanager:s0\n",
+      "stderr": ""
+    },
+    {
+      "policy": "aosp",
+      "case": "android_init_to_hwmanager",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-launch-transitions-1/sepol_compute_transition",
+        "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/platform-policy-original-options.bin",
+        "u:r:init:s0",
+        "u:object_r:hwservicemanager_exec:s0",
+        "process"
+      ],
+      "exit": 0,
+      "stdout": "u:r:hwservicemanager:s0\n",
+      "stderr": ""
+    },
+    {
+      "policy": "aosp",
+      "case": "android_kernel_to_init",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-launch-transitions-1/sepol_compute_transition",
+        "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/platform-policy-original-options.bin",
+        "u:r:kernel:s0",
+        "u:object_r:init_exec:s0",
+        "process"
+      ],
+      "exit": 0,
+      "stdout": "u:r:init:s0\n",
+      "stderr": ""
+    },
+    {
+      "policy": "aosp",
+      "case": "linux_init_to_android_init",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-launch-transitions-1/sepol_compute_transition",
+        "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/platform-policy-original-options.bin",
+        "linux.system_u:linux.system_r:linux.init_t:s0",
+        "u:object_r:init_exec:s0",
+        "process"
+      ],
+      "exit": 1,
+      "stdout": "",
+      "stderr": "libsepol.context_from_record: user linux.system_u is not defined\nlibsepol.context_from_record: could not create context structure\nlibsepol.context_from_string: could not create context structure\nlibsepol.sepol_context_to_sid: could not convert linux.system_u:linux.system_r:linux.init_t:s0 to sid\nInvalid source context linux.system_u:linux.system_r:linux.init_t:s0\n"
+    },
+    {
+      "policy": "aosp",
+      "case": "linux_kernel_to_android_init",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-launch-transitions-1/sepol_compute_transition",
+        "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/platform-policy-original-options.bin",
+        "linux.system_u:linux.system_r:linux.kernel_t:s0",
+        "u:object_r:init_exec:s0",
+        "process"
+      ],
+      "exit": 1,
+      "stdout": "",
+      "stderr": "libsepol.context_from_record: user linux.system_u is not defined\nlibsepol.context_from_record: could not create context structure\nlibsepol.context_from_string: could not create context structure\nlibsepol.sepol_context_to_sid: could not convert linux.system_u:linux.system_r:linux.kernel_t:s0 to sid\nInvalid source context linux.system_u:linux.system_r:linux.kernel_t:s0\n"
+    }
+  ]
+}

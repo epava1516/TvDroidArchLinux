@@ -1,0 +1,13 @@
+--- original/sepol_compute_member.c
++++ adapted/sepol_compute_transition.c
+@@ -47,8 +47,8 @@
+ 		return 1;
+ 	}
+ 
+-	if (sepol_member_sid(ssid, tsid, tclass, &out_sid) < 0) {
+-		fprintf(stderr, "Failed to compute member sid:  %s\n", strerror(errno));
++	if (sepol_transition_sid(ssid, tsid, tclass, &out_sid) < 0) {
++		fprintf(stderr, "Failed to compute transition sid:  %s\n", strerror(errno));
+ 		return 1;
+ 	}
+ 

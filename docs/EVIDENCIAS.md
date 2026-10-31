@@ -1,6 +1,8 @@
 # Índice de evidencias
 
-- [R1-MAC: arranque SELinux autorizado verificado](../reports/android16-selinux-permissive-boot/findings.json): activo/permisivo, policyload0, política no cargada; selinuxfs sólo privado/lectura. Checker corregido (9 pruebas y página real). Mismo ELF Binder, MCP control/SID0 con BR_TRANSACTION_SEC_CTX; no texto SID ni autorización entre apps. Evidencia preboot -95 histórica. [Checkpoint actual](../reports/android16-selinux-permissive-boot/checkpoint.json).
+- [R1-MAC: contrato de entrada Linux→Android ausente](../reports/android16-policy-launch-transitions/findings.json):12 cálculos offline con libsepol original y12 consultas de acceso; tres transiciones Android conservadas, dominios Linux quedan iguales y coordinador no accede a selinuxfs Linux. Dos errores de contexto separados de10 denegaciones; sin carga/MAC/servicios/APK. [Checkpoint actual](../reports/android16-policy-launch-transitions/checkpoint.json).
+
+- [R1-MAC: arranque SELinux autorizado verificado](../reports/android16-selinux-permissive-boot/findings.json): activo/permisivo, policyload0, política no cargada; selinuxfs sólo privado/lectura. Checker corregido (9 pruebas y página real). Mismo ELF Binder, MCP control/SID0 con BR_TRANSACTION_SEC_CTX; no texto SID ni autorización entre apps. Evidencia preboot -95 histórica. [Checkpoint del hito](../reports/android16-selinux-permissive-boot/checkpoint.json).
 
 - [R1/R2: receptor Linux de fallo original](../reports/android16-linux-failure-sink/findings.json): MCP Start→getcon error→reboot_on_failure→fallo Rust y salida real69/wrapper1; overflow explícito, worker normal diagnóstico0;17 pruebas Rust/clippy/check0. Ensayo inválido conservado. Sin reboot anfitrión ni servicio/APK listo. [Checkpoint del hito](../reports/android16-linux-failure-sink/checkpoint.json).
 

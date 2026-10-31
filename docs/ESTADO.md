@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-selinux-permissive-boot/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-policy-launch-transitions/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -16,6 +16,18 @@ los resúmenes; no se ha completado compatibilidad amplia.
 Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCCION-ARM.md).
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
+
+## Última evaluación · falta la entrada Linux al coordinador Android
+
+[Resultados offline](../reports/android16-policy-launch-transitions/findings.json):
+libsepol original conserva tres transiciones Android seleccionadas, pero el
+candidato deja los dominios Linux examinados sin cambio al calcular contexto para
+init_exec/servicemanager_exec. El init Android tampoco puede usar selinuxfs con
+etiqueta Linux (compute_create/compute_av y accesos de archivo denegados).
+Doce cálculos de contexto y doce consultas de acceso; errores de contexto
+separados de denegaciones. No se cargó ni amplió política. Compilación anterior
+no acreditaba entrada al runtime; diseñar lanzamiento y mediación juntos antes
+de despliegue. Arranque permisivo y compatibilidad APK siguen sin equivalencia.
 
 ## Arranque actual · LTS con SELinux permisivo, sin política
 

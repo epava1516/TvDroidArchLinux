@@ -45,3 +45,7 @@ reports/android16-rust-supervisor/*.log -whitespace
 
 # Preserve the final newline block emitted by Cargo in failure-boundary evidence.
 reports/android16-linux-failure-sink/*.log whitespace=-blank-at-eof
+
+# Preserve upstream license bytes and original tabbed unified-patch context.
+reports/android16-policy-launch-transitions/LICENSE.libsepol -whitespace
+reports/android16-policy-launch-transitions/source-adaptation.patch -whitespace

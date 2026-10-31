@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-toolchain-1/bin/clang-21",
+    "-resource-dir",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/clang21-builtins/source/prebuilts/clang/host/linux-x86/clang-r563880c/lib/clang/21",
+    "-O2",
+    "-I/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/source/libsepol/include",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-launch-transitions-1/sepol_compute_transition.c",
+    "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/source/libsepol/src/libsepol.a",
+    "-o",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-launch-transitions-1/sepol_compute_transition"
+  ],
+  "exit": 0,
+  "stderr": "",
+  "original_source_sha256": "b9364ec9fe4026abea40deda593046000ed0e3b8e1601981a583e7360583dcab",
+  "library_sha256": "4a1b23f286a15d71d6da2680b9ee6ce689dff7a12168b31dcdfb2c91b5ec0a57",
+  "scope": "Original libsepol evaluator; two textual utility adaptations only, not original unchanged utility or custom policy evaluator"
+}

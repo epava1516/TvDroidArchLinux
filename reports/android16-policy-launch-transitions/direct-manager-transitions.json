@@ -1,0 +1,30 @@
+{
+  "scope": "Offline context computation for original Service::Start executable label; unchanged source context, not process execution or denials",
+  "policy_sha256": "1234463a2f52e3a8628a1e65be13a9b951f4754b323f41e14d1921263b2bc9c9",
+  "results": [
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-launch-transitions-1/sepol_compute_transition",
+        "/home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-compile-1/policy.bin",
+        "linux.system_u:linux.system_r:linux.init_t:s0",
+        "u:object_r:servicemanager_exec:s0",
+        "process"
+      ],
+      "exit": 0,
+      "stdout": "linux.system_u:linux.system_r:linux.init_t:s0\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-launch-transitions-1/sepol_compute_transition",
+        "/home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-compile-1/policy.bin",
+        "linux.system_u:linux.system_r:linux.kernel_t:s0",
+        "u:object_r:servicemanager_exec:s0",
+        "process"
+      ],
+      "exit": 0,
+      "stdout": "linux.system_u:linux.system_r:linux.kernel_t:s0\n",
+      "stderr": ""
+    }
+  ]
+}

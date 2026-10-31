@@ -1,0 +1,68 @@
+{
+  "branch": "main",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "objective": "Complete unmodified APK on Linux Rust/Smithay with coherent original AOSP16QPR2/Bionic, no Waydroid or complete Android boot; broad compatibility, isolation, stability, lightness, installation/update.",
+  "canonical_entry": "docs/ESTADO.md",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "constraints": [
+    "A16-QPR2-1 remains; specific one-shot SELinux boot authorized by user and now completed",
+    "No further reboot/VM/client restart performed or requested",
+    "No policy load, relabel or enforcing change performed; permissive/no policy is not R1-MAC acceptance",
+    "Fixtures/diagnostics not real APK acceptance"
+  ],
+  "observed_at": "2026-10-31T11:28:01.547561+00:00",
+  "base_commit": "2f31032f1b602d88a5d4038169f18a531d23aab7",
+  "previous_checkpoint": "reports/android16-selinux-permissive-boot/checkpoint.json",
+  "relation_to_local_origin_tracking": "0\t0",
+  "terminal_exec_handles": [
+    62876,
+    76675,
+    30120,
+    5588
+  ],
+  "active_exec_handles": [],
+  "tests": {
+    "context_computations": 12,
+    "context_computation_successes": 10,
+    "invalid_context_queries": 2,
+    "access_queries": 12,
+    "allowed": 2,
+    "denied": 10,
+    "preserved_selected_original_transitions": [
+      "kernel\u2192init",
+      "init\u2192servicemanager",
+      "init\u2192hwservicemanager"
+    ],
+    "missing_linux_entry": "Both tested Linux domains remain unchanged when computing process context for Android init_exec and servicemanager_exec; no Linux\u2192Android type transition selected",
+    "missing_init_security_interfaces": "Android init denied search/open/write/map on Linux security_t and compute_create/compute_av; original Service::Start needs genuine security_compute_create endpoint",
+    "positive_android_service_contract": "Original Android init\u2192servicemanager transition and servicemanager_exec entrypoint are allowed offline",
+    "privilege_negative_controls": "Original manager still denied compute_create and load_policy against Linux security_t"
+  },
+  "next": "Define an explicit least-privilege Linux launcher\u2192original Android coordinator entry contract (user/role/type/MLS, exec label, namespace/capabilities/FD ownership) plus complete genuine libselinux interface permissions. Validate positive and negative offline transitions with neverallow retained, then prepare recoverable deployment before loading; continue original services and full Markor journey.",
+  "evidence": {
+    "reports/android16-policy-launch-transitions/access.py": "57f3bef10dec96c0a4466ab993cee26a3fcf467a8239fe91908c20bb108b9241",
+    "reports/android16-policy-launch-transitions/build.json": "487cf67fce3673ee7f911fd035e8efb52293b29ab254438ecaf45fd151beace8",
+    "reports/android16-policy-launch-transitions/findings.json": "530e9a00a534ee7151d6d4982ade68cf9c98e3a14099d1056ac590a716a1cbb3",
+    "reports/android16-policy-launch-transitions/sepol_compute_transition.c": "e2e2d080a427277b8bdf25375a42ece381f1bc9a7a33669c3de380c3151788bb",
+    "reports/android16-policy-launch-transitions/transitions.json": "1dcbd3850eaa27a90ca71e0885eada8bf7860ef9cca2b570c6c09a21c933cba3",
+    "reports/android16-policy-launch-transitions/NOTICE.md": "29902858ac24c468d60a7dbb0f23becc59ad153ec1eb10ac2939dbd44de3f099",
+    "reports/android16-policy-launch-transitions/access.json": "e5105fdbfd6f642d58378713925d7edcb55e1a04c780193a9859e17e767ee877",
+    "reports/android16-policy-launch-transitions/LICENSE.libsepol": "6095e9ffa777dd22839f7801aa845b31c9ed07f3d6bf8a26dc5d2dec8ccc0ef3",
+    "reports/android16-policy-launch-transitions/run.py": "bc37c14f7e9d7c249a7834550f0ab759cf8d00fb5b370f47fc0bec88b89b5df9",
+    "reports/android16-policy-launch-transitions/source-adaptation.patch": "afc315a715193a77f639f67b977d6ff4872c27795f28e68853a23017016aaa08",
+    "reports/android16-policy-launch-transitions/direct-manager-transitions.json": "7e853811f037ab8b71998097b24257593e7d8e1fdedb4f51ef31f32357ef071d"
+  },
+  "current_boot": "Most recent verified current boot SELinux active/permissive, no loaded policy; no load/enforce/relabel operation performed this hito; see prior checkpoint actual boot evidence",
+  "graphify": "Isolated staged AST update terminal0,2889 nodes/5513 edges; tracked outputs copied"
+}

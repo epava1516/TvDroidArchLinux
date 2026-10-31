@@ -1847,3 +1847,20 @@ No hay política/etiquetas/transiciones/enforcement ni gestor/APK aceptado.
 Revalidar cada arranque: selección puntual no equivale a despliegue persistente.
 Política Linux compatible y rollback requieren validación antes de cualquier
 carga; no se carga política ni se inventan contextos en esta verificación.
+
+## R1-MAC · entrada Linux→coordinador original no resuelta
+
+[Evaluación original offline](../reports/android16-policy-launch-transitions/findings.json):
+la política candidata conserva tres cálculos Android originales seleccionados,
+pero no selecciona transición desde Linux init_t/kernel_t hacia init_exec o
+servicemanager_exec Android. Contexto calculado igual al emisor no es denegación;
+Service::ComputeContextFromExecutable original lo rechazaría antes de fork.
+El init Android además tiene denegados compute_create/compute_av y accesos al
+security_t Linux. Transición y entrypoint Android init→servicemanager sí permitidos
+en las consultas; el acceso desde Linux y la interfaz real siguen ausentes.
+Puerta siguiente: definir sujeto Linux real y entrada explícita al coordinador
+Android (usuario/rol/tipo/MLS, etiqueta ejecutable, FD/capacidades/namespaces),
+mediación libselinux completa y denegaciones, conservando aserciones. No otorgar
+dyntransition global ni convertir dominios en permisivos para pasar pruebas.
+Validar también despliegue/recuperación antes de carga. Doce cálculos y doce
+consultas no prueban exec/enforcement/servicios/APK ni equivalencia general.
