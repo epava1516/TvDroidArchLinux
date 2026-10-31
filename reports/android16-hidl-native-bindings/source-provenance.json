@@ -1,0 +1,102 @@
+[
+  {
+    "repository": "hardware-interfaces",
+    "commit": "aa229558cbf04bc997ed27465c5e7ad497123d1b",
+    "selected_files": [
+      {
+        "path": "Android.bp",
+        "sha256": "32bf5d5e9e591a16873394e50e0adba16ccd4951917d2041767c8253cc8122ea",
+        "git_blob": "baf3291f608c14dc5e7bc1dfd437fc5684916060",
+        "verified": true
+      },
+      {
+        "path": "graphics/composer/2.1/default/service.cpp",
+        "sha256": "b7b02b8d5f58709a5ae61b4885bb16ea8309cecb2cd8221c0cac229dd1f94772",
+        "git_blob": "1276d2df7ee940bf55f5833d11edeeceb4b81bd5",
+        "verified": true
+      },
+      {
+        "path": "graphics/composer/2.1/default/Android.bp",
+        "sha256": "ca5f948e5a44478037cff02d7d69538a796726a0ca7572d7b9353f4d140ab276",
+        "git_blob": "91d9b0d4dbf4457114f88c1ba3ff6b319aa9e513",
+        "verified": true
+      },
+      {
+        "path": "graphics/composer/2.1/utils/resources/ComposerResources.cpp",
+        "sha256": "6ebe3b849a51b7c0e15aac04097e7d41649b89df725ac679fa12442cb57607a5",
+        "git_blob": "80bfb7a26ae1b4945d57f60bbedd64d5f6527db8",
+        "verified": true
+      },
+      {
+        "path": "graphics/composer/2.1/utils/resources/Android.bp",
+        "sha256": "3765973e563ce088353e6c0ada51dfbb9fc9081f52c7743c9043f3aac97bc49a",
+        "git_blob": "776bf28ba7bfbb16bca306bd4303f8b7f230211c",
+        "verified": true
+      },
+      {
+        "path": "graphics/composer/2.1/utils/hwc2onfbadapter/HWC2OnFbAdapter.cpp",
+        "sha256": "ed3af167aec8e75f0b684440f92d8745c399c4c798b3f072699bd9193d8ed6a2",
+        "git_blob": "0f5057756ecfcbcfff91f3c1ef1c4dd892d2fd52",
+        "verified": true
+      },
+      {
+        "path": "graphics/composer/2.1/utils/passthrough/include/composer-passthrough/2.1/HwcLoader.h",
+        "sha256": "e8bb9c65f12adaaa4da702711b060140e0d83b6e0f30c79ffe1532598cac96f0",
+        "git_blob": "33c914dde18c5a795c529827be82e623e9b91777",
+        "verified": true
+      }
+    ],
+    "scope": "Selected source contract blobs verified; clean checkout, no signatures verified"
+  },
+  {
+    "repository": "libhidl",
+    "commit": "d063c3a2bf981d8dab2ca60ea471f940d71167a6",
+    "selected_files": [
+      {
+        "path": "Android.bp",
+        "sha256": "391bd323142282e2c3297f4c8268f1817353e6b190db89e961af0a31b5a86a1a",
+        "git_blob": "961f47f73224150a8886da4abe32750c1ad7778d",
+        "verified": true
+      },
+      {
+        "path": "transport/HidlTransportSupport.cpp",
+        "sha256": "8acbd0ea1d668d84a72cf452c5b4aa5d09dede64b9f850c069c627ae9d2ed5f0",
+        "git_blob": "d0ac2432c735104460262bbf8a4106c1276cc5bf",
+        "verified": true
+      }
+    ],
+    "scope": "Selected source contract blobs verified; clean checkout, no signatures verified"
+  },
+  {
+    "repository": "libhwbinder",
+    "commit": "0e0fd15c90a55a45d2cc49b032c25b581d085912",
+    "selected_files": [
+      {
+        "path": "ProcessState.cpp",
+        "sha256": "8d2e2e8b743fce32772b323fa5dde238825538beeb47fa78f59554c11f03bae7",
+        "git_blob": "4b2f4fcc3ef4baca118eb18f6457587f82e238d6",
+        "verified": true
+      }
+    ],
+    "scope": "Selected source contract blobs verified; clean checkout, no signatures verified"
+  },
+  {
+    "repository": "libfmq",
+    "commit": "99d47692bc5fb1a967a0e5345164ffd9b4cf0c5b",
+    "selected_files": [
+      {
+        "path": "Android.bp",
+        "sha256": "e6fbf6b09f75293f19d929d70eac8ca2e421c8bdc3e6565992ff435c8b5282bb",
+        "git_blob": "c1dce7bf7d932ebd2579c7ed706d405f8fb048eb",
+        "verified": true
+      },
+      {
+        "path": "base/fmq/MQDescriptorBase.h",
+        "sha256": "70f67c3673f52cee62211bd11461fe3879769188ee4f82710dbfcc4e2ae29e14",
+        "git_blob": "d82413197f00da57553965d95a51717db56edcca",
+        "verified": true
+      }
+    ],
+    "scope": "Selected source contract blobs verified; clean checkout, no signatures verified"
+  }
+]

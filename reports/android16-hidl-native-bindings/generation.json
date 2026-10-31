@@ -1,0 +1,430 @@
+{
+  "scope": "Original manager package source generation for complete native closure, NOT native service execution",
+  "commands": [
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lhash",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hidl-generation-inputs",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "android.hidl.manager@1.0"
+      ],
+      "exit_code": 0,
+      "stdout": "85394f8a0d15e7fb2ee45c52d1fb8b8fd3c13c333e63c78c4aa1ff86840cf6dc android.hidl.manager@1.0::IServiceManager\nfcde1d0788066a62d5766f4dc19d4c1ec76967d5ddb636f59ccc66603460bcf8 android.hidl.manager@1.0::IServiceNotification\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lc++-headers",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hidl-generation-inputs",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-generated-native-closure-1",
+        "android.hidl.manager@1.0"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lc++-sources",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hidl-generation-inputs",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-generated-native-closure-1",
+        "android.hidl.manager@1.0"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lhash",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hidl-generation-inputs",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "android.hidl.manager@1.1"
+      ],
+      "exit_code": 0,
+      "stdout": "0b94dc876f749ed24a98f61c41d46ad75a27511163f1968a084213a33c684ef6 android.hidl.manager@1.1::IServiceManager\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lc++-headers",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hidl-generation-inputs",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-generated-native-closure-1",
+        "android.hidl.manager@1.1"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lc++-sources",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hidl-generation-inputs",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-generated-native-closure-1",
+        "android.hidl.manager@1.1"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lhash",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hidl-generation-inputs",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "android.hidl.manager@1.2"
+      ],
+      "exit_code": 0,
+      "stdout": "a570fd436aed5eeeea2495b9267e7f9c4808d51efd4c9ba0913b9102eb93aeed android.hidl.manager@1.2::IClientCallback\n6f3a8a3fd4bfbd02e4e61c732d2df616ff69434a1ed83cda337303adc6d714df android.hidl.manager@1.2::IServiceManager\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lc++-headers",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hidl-generation-inputs",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-generated-native-closure-1",
+        "android.hidl.manager@1.2"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lc++-sources",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hidl-generation-inputs",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-generated-native-closure-1",
+        "android.hidl.manager@1.2"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "hash_matches": [
+    {
+      "hash": "85394f8a0d15e7fb2ee45c52d1fb8b8fd3c13c333e63c78c4aa1ff86840cf6dc",
+      "fqname": "android.hidl.manager@1.0::IServiceManager",
+      "matches_original_current_and_raw_sha256": true
+    },
+    {
+      "hash": "fcde1d0788066a62d5766f4dc19d4c1ec76967d5ddb636f59ccc66603460bcf8",
+      "fqname": "android.hidl.manager@1.0::IServiceNotification",
+      "matches_original_current_and_raw_sha256": true
+    },
+    {
+      "hash": "0b94dc876f749ed24a98f61c41d46ad75a27511163f1968a084213a33c684ef6",
+      "fqname": "android.hidl.manager@1.1::IServiceManager",
+      "matches_original_current_and_raw_sha256": true
+    },
+    {
+      "hash": "a570fd436aed5eeeea2495b9267e7f9c4808d51efd4c9ba0913b9102eb93aeed",
+      "fqname": "android.hidl.manager@1.2::IClientCallback",
+      "matches_original_current_and_raw_sha256": true
+    },
+    {
+      "hash": "6f3a8a3fd4bfbd02e4e61c732d2df616ff69434a1ed83cda337303adc6d714df",
+      "fqname": "android.hidl.manager@1.2::IServiceManager",
+      "matches_original_current_and_raw_sha256": true
+    }
+  ],
+  "generated_files": [
+    {
+      "path": "android/hardware/graphics/common/1.0/hwtypes.h",
+      "sha256": "cd6e509ed1d680b21f4e247d663c8e95e66c3d1d37cd9ee076141862943f8d7a"
+    },
+    {
+      "path": "android/hardware/graphics/common/1.0/types.cpp",
+      "sha256": "340df8f648e133ec578bf0b5dffb4cf9218e113b52f22406e9677f4a9a28e43c"
+    },
+    {
+      "path": "android/hardware/graphics/common/1.0/types.h",
+      "sha256": "048d6891c3e2a4287f652a425384d0cac2a9f44afc5645571c2a988e89eb8726"
+    },
+    {
+      "path": "android/hardware/graphics/common/1.1/hwtypes.h",
+      "sha256": "8ec52b62003523cd275996e014a26d5e54c152cb6360253d176ee1df8026a055"
+    },
+    {
+      "path": "android/hardware/graphics/common/1.1/types.cpp",
+      "sha256": "8110ca1dad690b23e8abc38b8103b4f39d086bcd677da02064017f5a5cc14d15"
+    },
+    {
+      "path": "android/hardware/graphics/common/1.1/types.h",
+      "sha256": "4bfc0fa25dcce5149c8f57be8012b71d0fc344d3ce0489bf05efbe9fd55c14fc"
+    },
+    {
+      "path": "android/hardware/graphics/common/1.2/hwtypes.h",
+      "sha256": "36ef5b71392898491038a33e032c5c9cd83d9798fca781f970039fe5bbc5009e"
+    },
+    {
+      "path": "android/hardware/graphics/common/1.2/types.cpp",
+      "sha256": "7bc5a98d5523a87f1209d1af695922dc75519da7afcf7447790df7170f5d89f9"
+    },
+    {
+      "path": "android/hardware/graphics/common/1.2/types.h",
+      "sha256": "7fd182e490f2913501b243a1b2d37eff94d0082b8b7fad0f4de2de28aea3de78"
+    },
+    {
+      "path": "android/hardware/graphics/composer/2.1/BnHwComposer.h",
+      "sha256": "ecc886f5406d0e835439cbfe37bb8a5d6d11e7857e64c765c5de6ddf563d5b7c"
+    },
+    {
+      "path": "android/hardware/graphics/composer/2.1/BnHwComposerCallback.h",
+      "sha256": "4fc7136a49a16772919c515c160a71d78fb095e8eb3629cd84f0acf29c27efda"
+    },
+    {
+      "path": "android/hardware/graphics/composer/2.1/BnHwComposerClient.h",
+      "sha256": "f3f66bb946a1d310d61129dd210ad48a65fbaa9a21da6b3b8c6c14393365d28f"
+    },
+    {
+      "path": "android/hardware/graphics/composer/2.1/BpHwComposer.h",
+      "sha256": "07bf03c7740dbd10d0338440eada5fee541873d2834dae76e755cc220ac9980f"
+    },
+    {
+      "path": "android/hardware/graphics/composer/2.1/BpHwComposerCallback.h",
+      "sha256": "8d9daa1b9182093919ec823d36770444591e5161d33bb32453f149ae2586f693"
+    },
+    {
+      "path": "android/hardware/graphics/composer/2.1/BpHwComposerClient.h",
+      "sha256": "fc3ebbd7bd7c655fa8488ec2c9aee3dbd5c530ab697bf16be775f186e8b6f544"
+    },
+    {
+      "path": "android/hardware/graphics/composer/2.1/BsComposer.h",
+      "sha256": "f084d549dc5335f18e9f91666261da866862e87622b82a65990c59fdf4c0afa4"
+    },
+    {
+      "path": "android/hardware/graphics/composer/2.1/BsComposerCallback.h",
+      "sha256": "ce22618eae547ee0978b60f7bdd80c4d692c3c9760b35f153447cd7d1685b176"
+    },
+    {
+      "path": "android/hardware/graphics/composer/2.1/BsComposerClient.h",
+      "sha256": "7a303a60ea0f04d3a3bd2029257f418c566c5214b813d92843864b032fe7db11"
+    },
+    {
+      "path": "android/hardware/graphics/composer/2.1/ComposerAll.cpp",
+      "sha256": "4687bd753333be0f6f97d245b55861249f2b7bd186842537ed7f4da4a96f8dfc"
+    },
+    {
+      "path": "android/hardware/graphics/composer/2.1/ComposerCallbackAll.cpp",
+      "sha256": "5d8e74932d68650cdb555797b9d04194fe6d6319bb71dfb32cfeb66e94602c89"
+    },
+    {
+      "path": "android/hardware/graphics/composer/2.1/ComposerClientAll.cpp",
+      "sha256": "378b599c8fc747294a779f68507434e102cc66a451a8c3e84fa7abd8fcbc67de"
+    },
+    {
+      "path": "android/hardware/graphics/composer/2.1/IComposer.h",
+      "sha256": "3e55f5d675ca02a6c8cc8b8c7a78ae5a4be161caa6eb21a379d0e3a2156c22d0"
+    },
+    {
+      "path": "android/hardware/graphics/composer/2.1/IComposerCallback.h",
+      "sha256": "f8f82bba048af1525b17006d6f66fe7a26224cd36360b467e6f6118eb621a10c"
+    },
+    {
+      "path": "android/hardware/graphics/composer/2.1/IComposerClient.h",
+      "sha256": "7b2491b1c5d77361653c198de574f566582c43a22359ef0586f4a3c205ff6842"
+    },
+    {
+      "path": "android/hardware/graphics/composer/2.1/IHwComposer.h",
+      "sha256": "e3b7613d83bbe335c65c7b1f1fbaad81497c8049a9f8e02ce4e21292a97d3e2d"
+    },
+    {
+      "path": "android/hardware/graphics/composer/2.1/IHwComposerCallback.h",
+      "sha256": "a307af0267af8a564b956925b19925af66ee60f2f6078b2bd503a9db3669862b"
+    },
+    {
+      "path": "android/hardware/graphics/composer/2.1/IHwComposerClient.h",
+      "sha256": "ab4a46e6e59de4718a8cd077180f82496e52d4d097a381f22a5df95c44f64b38"
+    },
+    {
+      "path": "android/hardware/graphics/composer/2.1/hwtypes.h",
+      "sha256": "556154a0cf41826e9ca201dbfaeb2137eaefa52eb6cbf81bee2c6858b04e79a0"
+    },
+    {
+      "path": "android/hardware/graphics/composer/2.1/types.cpp",
+      "sha256": "ec8131e609c83891f433883dae8f58b07b01510dbd78044ed5609cc9a41a35d6"
+    },
+    {
+      "path": "android/hardware/graphics/composer/2.1/types.h",
+      "sha256": "d68662d814624d980538b845f17edead3a4d771c7b90daaa0e19c55871658b93"
+    },
+    {
+      "path": "android/hidl/base/1.0/BaseAll.cpp",
+      "sha256": "26fddaa18eec86726c43663debd46309dcf8fee4a42a5bfb8323d76342e60fc0"
+    },
+    {
+      "path": "android/hidl/base/1.0/BnHwBase.h",
+      "sha256": "82e75b2bd2dbf738f01df0c5b2387e67821724d0313d558236df7f5ce254c564"
+    },
+    {
+      "path": "android/hidl/base/1.0/BpHwBase.h",
+      "sha256": "1852fe9b420d3f637616f6602ef3ebcc81bd84dc98359937045b46997e63bc87"
+    },
+    {
+      "path": "android/hidl/base/1.0/BsBase.h",
+      "sha256": "7cc423f01fc284246f248066c46805371c98d5a382c01a38a5527026265776ee"
+    },
+    {
+      "path": "android/hidl/base/1.0/IBase.h",
+      "sha256": "0717087eed32d712a31c337bebf53da3ddf650c0183140a57cbad0e69cdaff80"
+    },
+    {
+      "path": "android/hidl/base/1.0/IHwBase.h",
+      "sha256": "b0c01fbe8a382259e521dd20713785d17347f48b4aa727ef8a9c966dd6daa47b"
+    },
+    {
+      "path": "android/hidl/base/1.0/hwtypes.h",
+      "sha256": "9afab3180b42afbd1a88f2f68fa3ae7c96de08af6e11e3703211047c6a1e88b5"
+    },
+    {
+      "path": "android/hidl/base/1.0/types.cpp",
+      "sha256": "2172641fd5caa1e6cc89a5f558b70d194fdcc3b30af3145a5f8c23df60898c11"
+    },
+    {
+      "path": "android/hidl/base/1.0/types.h",
+      "sha256": "93cb25725b03778640e3f39e6bef49778be9d4f91c1cffc1a842cb39b7b0551e"
+    },
+    {
+      "path": "android/hidl/manager/1.0/BnHwServiceManager.h",
+      "sha256": "2707c73a44d520f0b82062fe3d9006b19402bd3032683b42c7c525e6b7d6542c"
+    },
+    {
+      "path": "android/hidl/manager/1.0/BnHwServiceNotification.h",
+      "sha256": "b04dc4a29e3026d07cd3cbf91305e10f4b2039433e0355b5d6bd94dc391cbd57"
+    },
+    {
+      "path": "android/hidl/manager/1.0/BpHwServiceManager.h",
+      "sha256": "e8cf073f6c014d75ef6d4fdf86a6eda7da80b89d3700372e2390bb82344cd9f3"
+    },
+    {
+      "path": "android/hidl/manager/1.0/BpHwServiceNotification.h",
+      "sha256": "b50735c333657159d37867bcb5528d05b8dd5be6a843e39167bb63243dfdf626"
+    },
+    {
+      "path": "android/hidl/manager/1.0/BsServiceManager.h",
+      "sha256": "e055c618176266e2c3af0cab95a5699d403a2332403f0f3151a6e2936fb5cd39"
+    },
+    {
+      "path": "android/hidl/manager/1.0/BsServiceNotification.h",
+      "sha256": "096c5b9d885837e5bbd2803553c721e59bf7f1fe9cea63d69dd1e663622e9899"
+    },
+    {
+      "path": "android/hidl/manager/1.0/IHwServiceManager.h",
+      "sha256": "acfbea1be134932b85294130a9b3ffb0fa751506d34c94d7fc70065561a048c3"
+    },
+    {
+      "path": "android/hidl/manager/1.0/IHwServiceNotification.h",
+      "sha256": "0fbb4c6fe67cd5b58302c5e0ae94d4874431d204098789db97f06188f7d96983"
+    },
+    {
+      "path": "android/hidl/manager/1.0/IServiceManager.h",
+      "sha256": "56e9cc202f420e9d1a56e0783dc6dd57000eb8716223cec9220d9b2fbd051c67"
+    },
+    {
+      "path": "android/hidl/manager/1.0/IServiceNotification.h",
+      "sha256": "ccca51f78af3114e3d0c54206a66c681ce791a551dce25820d43cedebf861ece"
+    },
+    {
+      "path": "android/hidl/manager/1.0/ServiceManagerAll.cpp",
+      "sha256": "778705e34aa83812583b34161b16adcac8ea992f6452b2b07ee7edeff5023dd1"
+    },
+    {
+      "path": "android/hidl/manager/1.0/ServiceNotificationAll.cpp",
+      "sha256": "f2ad7b21e1afb09ca78f06e5a41e461c6d8130c22cc8014709159b9b837ea728"
+    },
+    {
+      "path": "android/hidl/manager/1.1/BnHwServiceManager.h",
+      "sha256": "e2d7ee56e2718ddf0663e1ea1b3eb5c2aa358e83f504376fc580a26afaa8415c"
+    },
+    {
+      "path": "android/hidl/manager/1.1/BpHwServiceManager.h",
+      "sha256": "9e959272ee2c2044b59d0fa770465e01d4ca75033f89c9264c102dbf23e0a77a"
+    },
+    {
+      "path": "android/hidl/manager/1.1/BsServiceManager.h",
+      "sha256": "a8f52b86693baf617d304fad1f887a10d9da3e6cdfa457ec7d1ec8250a6d7d91"
+    },
+    {
+      "path": "android/hidl/manager/1.1/IHwServiceManager.h",
+      "sha256": "53cdfa48f8e7ceadfaa3b3bd3ef443554c70df9208e0ab68857b36f462982591"
+    },
+    {
+      "path": "android/hidl/manager/1.1/IServiceManager.h",
+      "sha256": "179a35d627f3c1b7acd32073d283e8190225add3b421c939e8937332765ad1f2"
+    },
+    {
+      "path": "android/hidl/manager/1.1/ServiceManagerAll.cpp",
+      "sha256": "e6e5948e659ef2aef009b868ce1ee942a73a38bfed044ab9bb384075127c3bbe"
+    },
+    {
+      "path": "android/hidl/manager/1.2/BnHwClientCallback.h",
+      "sha256": "f1d01131ce34684e541b5d79662f3509d5a964155be675034bc7b31b459656a3"
+    },
+    {
+      "path": "android/hidl/manager/1.2/BnHwServiceManager.h",
+      "sha256": "904b16432572b62359f550560d129d5a520da9cfe60b4d3da63d75aa1e990407"
+    },
+    {
+      "path": "android/hidl/manager/1.2/BpHwClientCallback.h",
+      "sha256": "bd32924a400be8dc145ff2afdb20280ee718b543fccef19b692c0c27909e2e7d"
+    },
+    {
+      "path": "android/hidl/manager/1.2/BpHwServiceManager.h",
+      "sha256": "4c285e9d55251d708e7cc4e1282a804bef172548e45942380ec6acf6791c9c30"
+    },
+    {
+      "path": "android/hidl/manager/1.2/BsClientCallback.h",
+      "sha256": "475943df2628ec914fa40c79aca45ca9714fc26aa42002a394afbd23648b02c2"
+    },
+    {
+      "path": "android/hidl/manager/1.2/BsServiceManager.h",
+      "sha256": "d752db5ffafcf2b8cd4fbd59b6fb29f4ab61832cec995b3efd4a148001cba3b1"
+    },
+    {
+      "path": "android/hidl/manager/1.2/ClientCallbackAll.cpp",
+      "sha256": "bd31bff1bffbff5c4c45b5979d290ba68b9410632f206e266ec48c9d7c743de9"
+    },
+    {
+      "path": "android/hidl/manager/1.2/IClientCallback.h",
+      "sha256": "2fac529ce0edeb4e3d14619500e8714b914451d8021d9634c45b4ab676196e81"
+    },
+    {
+      "path": "android/hidl/manager/1.2/IHwClientCallback.h",
+      "sha256": "4c969d3b8ede272df9616265dbf360f029ecc454992be72805716ff7b1918683"
+    },
+    {
+      "path": "android/hidl/manager/1.2/IHwServiceManager.h",
+      "sha256": "e8ed3642ffa0b06d3a45fc41b1f8fcc16704e821c7a91a1623f68ddac3abf40a"
+    },
+    {
+      "path": "android/hidl/manager/1.2/IServiceManager.h",
+      "sha256": "696d6fbaf71308990929a3d17bf49ea233db762d5d8c58ed7b3be2bc2fe3cb04"
+    },
+    {
+      "path": "android/hidl/manager/1.2/ServiceManagerAll.cpp",
+      "sha256": "183de853ec54679e8bfa7f27c4d8972054179e4d20c591ae2d72386d54884afc"
+    }
+  ]
+}

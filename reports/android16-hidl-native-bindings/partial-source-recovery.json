@@ -1,0 +1,66 @@
+{
+  "scope": "Original graphics sparse checkout replaces incomplete source acquisition for use, retains all old files unchanged",
+  "commit": "aa229558cbf04bc997ed27465c5e7ad497123d1b",
+  "retained_matches": [
+    {
+      "path": "graphics/composer/2.1/default/service.cpp",
+      "sha256": "b7b02b8d5f58709a5ae61b4885bb16ea8309cecb2cd8221c0cac229dd1f94772",
+      "matches_retained_partial": true
+    },
+    {
+      "path": "graphics/composer/2.1/default/android.hardware.graphics.composer@2.1-service.rc",
+      "sha256": "d2921d484721517b901b22d5334d9ed2c61a4c97f80a32f605926aff326e08a4",
+      "matches_retained_partial": true
+    },
+    {
+      "path": "graphics/composer/2.1/default/Android.bp",
+      "sha256": "ca5f948e5a44478037cff02d7d69538a796726a0ca7572d7b9353f4d140ab276",
+      "matches_retained_partial": true
+    },
+    {
+      "path": "graphics/composer/2.1/utils/hal/Android.bp",
+      "sha256": "3c9547b054e541148ff8f5ebe075dc667d4c203ba3b2df2a53231f18bf6c3252",
+      "matches_retained_partial": true
+    },
+    {
+      "path": "graphics/composer/2.1/utils/hal/include/composer-hal/2.1/ComposerHal.h",
+      "sha256": "899219ff53630a9870b27ce9293997aeda092693328f648ca76ada41276d5929",
+      "matches_retained_partial": true
+    },
+    {
+      "path": "graphics/composer/2.1/utils/hal/include/composer-hal/2.1/ComposerClient.h",
+      "sha256": "5b6562fbd96f2324e2e3a1cdb68237eb11b4e374f3ea7d941f7c31f8d8bcd8bf",
+      "matches_retained_partial": true
+    },
+    {
+      "path": "graphics/composer/2.1/utils/hal/include/composer-hal/2.1/ComposerCommandEngine.h",
+      "sha256": "957c74db3c35d69c6fce4e672747c80a7b09a44f99a2d9751749b3be016f3fbc",
+      "matches_retained_partial": true
+    },
+    {
+      "path": "graphics/composer/2.1/utils/hal/include/composer-hal/2.1/Composer.h",
+      "sha256": "672da20d0b21dbedd4c2717a40a4f6da70d537a89480e40e70a85a0e662f27d4",
+      "matches_retained_partial": true
+    },
+    {
+      "path": "graphics/composer/2.1/utils/command-buffer/Android.bp",
+      "sha256": "89db240e3824840dda47fcdccd39fc04262997d58ea0586b8cd2ee1182ada4ef",
+      "matches_retained_partial": true
+    },
+    {
+      "path": "graphics/composer/2.1/utils/command-buffer/include/composer-command-buffer/2.1/ComposerCommandBuffer.h",
+      "sha256": "cbac75a1280e427a0beb7b5bbbe08d88298ccd05cee0a1ce5463af7a014e103a",
+      "matches_retained_partial": true
+    },
+    {
+      "path": "graphics/composer/2.1/utils/resources/ComposerResources.cpp",
+      "sha256": "6ebe3b849a51b7c0e15aac04097e7d41649b89df725ac679fa12442cb57607a5",
+      "matches_retained_partial": true
+    },
+    {
+      "path": "graphics/composer/2.1/utils/resources/Android.bp",
+      "sha256": "3765973e563ce088353e6c0ada51dfbb9fc9081f52c7743c9043f3aac97bc49a",
+      "matches_retained_partial": true
+    }
+  ]
+}

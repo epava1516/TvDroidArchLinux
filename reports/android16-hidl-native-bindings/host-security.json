@@ -1,0 +1,81 @@
+{
+  "scope": "Kernel prerequisites only. Does not prove service readiness, labels, transitions, AVC decisions, Binder caller identity, app isolation or APK compatibility.",
+  "observation_mode": "current_mount_view",
+  "observation_root": "/",
+  "euid": 0,
+  "observations": {
+    "active_lsm": {
+      "state": "observed",
+      "value": "capability,landlock,lockdown,yama,bpf"
+    },
+    "enforce": {
+      "state": "absent"
+    },
+    "status": {
+      "state": "absent"
+    },
+    "policy_version": {
+      "state": "absent"
+    },
+    "classes": {
+      "binder": {
+        "impersonate": {
+          "state": "absent"
+        },
+        "call": {
+          "state": "absent"
+        },
+        "transfer": {
+          "state": "absent"
+        },
+        "set_context_mgr": {
+          "state": "absent"
+        }
+      },
+      "service_manager": {
+        "add": {
+          "state": "absent"
+        },
+        "find": {
+          "state": "absent"
+        },
+        "list": {
+          "state": "absent"
+        }
+      },
+      "hwservice_manager": {
+        "add": {
+          "state": "absent"
+        },
+        "find": {
+          "state": "absent"
+        },
+        "list": {
+          "state": "absent"
+        }
+      },
+      "property_service": {
+        "set": {
+          "state": "absent"
+        }
+      }
+    },
+    "optional_build_config": {
+      "CONFIG_ANDROID_BINDER_IPC_RUST": "y",
+      "CONFIG_SECURITY_SELINUX": "y",
+      "CONFIG_LSM": "\"landlock,lockdown,yama,integrity,bpf\""
+    }
+  },
+  "checks": {
+    "selinux_active_lsm": false,
+    "enforcing": false,
+    "status_v1_consistent": false,
+    "policy_loaded": false,
+    "policy_version_exposed": false,
+    "required_class_permissions_exposed": false
+  },
+  "observed_checks_passed": false,
+  "kernel_prerequisites_passed": false,
+  "policy_semantics_verified": false,
+  "runtime_ready": false
+}

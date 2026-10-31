@@ -1,0 +1,82 @@
+{
+  "scope": "Native generated HIDL object compilation and original service source compilation, NOT linked/registered HAL, device, graphics or APK compatibility",
+  "assertions": {
+    "fourteen_native_generated_objects_compile": true,
+    "original_service_and_fb_adapter_compile": true,
+    "resource_failure_missing_libui_header_preserved": true,
+    "all_old39_generated_files_preserved_in_expanded69": true,
+    "five_additional_original_frozen_raw_hashes_match": true,
+    "selected_source_blobs_verified": true,
+    "six_pending_file_hashes_preserved": true
+  },
+  "evidence": [
+    {
+      "path": "reports/android16-hidl-native-bindings/compile-attempt-1.json",
+      "sha256": "d082af45de16e2083c493c03a228c0768211edb754208e8d3b51166e622b64d8"
+    },
+    {
+      "path": "reports/android16-hidl-native-bindings/compile-attempt-1.py",
+      "sha256": "49b53bf88aaba2919567bbf3ce420440a7053376a5ffee420f9dfe10c5dea27b"
+    },
+    {
+      "path": "reports/android16-hidl-native-bindings/compile-attempt-2.json",
+      "sha256": "ae61374b8ddf96e7e1422ffa5c3a11f9bba2b9aa25d7e6f30aa512b9c81540c2"
+    },
+    {
+      "path": "reports/android16-hidl-native-bindings/compile-attempt-2.py",
+      "sha256": "14451f3124988d944b7701c34b40083b4e3744ccdd2bdd0007f131d377f791c8"
+    },
+    {
+      "path": "reports/android16-hidl-native-bindings/compile.json",
+      "sha256": "e283beed9a6276abc29eee638457b7054318150ad571cabae862533161112c42"
+    },
+    {
+      "path": "reports/android16-hidl-native-bindings/findings.json",
+      "sha256": "9b11921f216e47eb516e31d0850e1e3f1987691acd4ed7276d7d72e223289c5c"
+    },
+    {
+      "path": "reports/android16-hidl-native-bindings/generation.json",
+      "sha256": "714e552d57bf0dac62447fc68bbd3abad2e108c9a30f650660598362f6eab32b"
+    },
+    {
+      "path": "reports/android16-hidl-native-bindings/host-security.json",
+      "sha256": "cd8b573ccfb2cf901b343b465091b64fda95cc708b8c03a1cc298bf1df9de8ed"
+    },
+    {
+      "path": "reports/android16-hidl-native-bindings/libhidlbase-exports-mcp.json",
+      "sha256": "7f8a15a7583e69e8a5d3ea3b6ac2dd9e9c4792570eebf613d5615ed24f45663c"
+    },
+    {
+      "path": "reports/android16-hidl-native-bindings/loader-attempt-1.py",
+      "sha256": "78caf43df8e53518c2a9488f884ef1a4c3c6dec32e8dcecad5712df0a4ccb628"
+    },
+    {
+      "path": "reports/android16-hidl-native-bindings/loader-compile-attempt-1.json",
+      "sha256": "0f822802f6e30c438d53116faec17d3e1a59606818853508587c1b176ccf268c"
+    },
+    {
+      "path": "reports/android16-hidl-native-bindings/loader-compile.json",
+      "sha256": "6c4efc70da285c83bd97bd3d1bb1c3ca2197d8c223d2878a33e24d28e1c7a68e"
+    },
+    {
+      "path": "reports/android16-hidl-native-bindings/partial-source-recovery.json",
+      "sha256": "57d3d281e7af8fe67186ebeaedd4511b764c61f6841993ac8d23b254caca0082"
+    },
+    {
+      "path": "reports/android16-hidl-native-bindings/reproduce-generation.py",
+      "sha256": "9e807f587553d87352c8fdf335f15661c641e2905d4a2850340675939444ebda"
+    },
+    {
+      "path": "reports/android16-hidl-native-bindings/reproduce-loader-compile.py",
+      "sha256": "5a43b5ab04e998b4b9280d685250bd8f859fd6bf0282aedf00f766b725ff60e2"
+    },
+    {
+      "path": "reports/android16-hidl-native-bindings/reproduce-native-compile.py",
+      "sha256": "211c3596e07bb66028055c122f931a66af223d478cdf170fe535e4fd58469152"
+    },
+    {
+      "path": "reports/android16-hidl-native-bindings/source-provenance.json",
+      "sha256": "fe10911941bf824ab6088d60cee0af38adb73a0573e0de4cca5657fd9fabd5b3"
+    }
+  ]
+}

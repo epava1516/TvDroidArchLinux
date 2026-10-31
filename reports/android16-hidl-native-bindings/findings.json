@@ -1,0 +1,116 @@
+{
+  "scope": "Native generated HIDL object compilation and original service source compilation, NOT linked/registered HAL, device, graphics or APK compatibility",
+  "observed_at": "2026-10-31T08:01:32.740647+00:00",
+  "base_commit": "287509d0ff6df6681acb6bcb9a81a1789e8f1aad",
+  "source_recovery": "Git sparse checkout exact hardware/interfaces commit recovers source formerly HTTP429; twelve retained partial files byte-match and remain untouched. FMQ exact lock selected.",
+  "native_bindings": {
+    "generated_files": 69,
+    "additional_manager_frozen_and_independent_raw_hashes": 5,
+    "source_units_compiled": 14,
+    "profile": "Bionic/libc++ original vendor macro/source profile202504, not full Soong/product/min-SDK/sanitizer/ABI equivalence",
+    "artifacts": [
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/hidl-native-bindings-build-3/android__hardware__graphics__common__1.0__types.cpp.o",
+        "sha256": "02f601e43d7c0e0f91921ac628f4508b4da238a49738796af9305a1576ad826c",
+        "bytes": 904
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/hidl-native-bindings-build-3/android__hardware__graphics__common__1.1__types.cpp.o",
+        "sha256": "02f601e43d7c0e0f91921ac628f4508b4da238a49738796af9305a1576ad826c",
+        "bytes": 904
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/hidl-native-bindings-build-3/android__hardware__graphics__common__1.2__types.cpp.o",
+        "sha256": "2e066edbd29ad9eaab4dea5e339dd4f97f41eb3f6bc9c75f4ec44785d481cda9",
+        "bytes": 2032
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/hidl-native-bindings-build-3/android__hardware__graphics__composer__2.1__ComposerAll.cpp.o",
+        "sha256": "7f31dd919a7567a4c7f25cd28db1d90f472b7f510bf58d31222b7ccacdfc7dbf",
+        "bytes": 260904
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/hidl-native-bindings-build-3/android__hardware__graphics__composer__2.1__ComposerCallbackAll.cpp.o",
+        "sha256": "78baef55772b57fa6745ff945fd1b2e9093fa8164c410f9bafc64c0955649844",
+        "bytes": 199360
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/hidl-native-bindings-build-3/android__hardware__graphics__composer__2.1__ComposerClientAll.cpp.o",
+        "sha256": "e24c6f93dec49ae8f9035f6bad9ed8461ae79e9cf3b34fb35ccc32f3ae84b586",
+        "bytes": 594152
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/hidl-native-bindings-build-3/android__hardware__graphics__composer__2.1__types.cpp.o",
+        "sha256": "02f601e43d7c0e0f91921ac628f4508b4da238a49738796af9305a1576ad826c",
+        "bytes": 904
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/hidl-native-bindings-build-3/android__hidl__base__1.0__BaseAll.cpp.o",
+        "sha256": "db389e9e1871b39a3cbce51119c6f77b5b00a12ff70c8d2ddbdf1ae4ad3ca018",
+        "bytes": 236640
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/hidl-native-bindings-build-3/android__hidl__base__1.0__types.cpp.o",
+        "sha256": "02f601e43d7c0e0f91921ac628f4508b4da238a49738796af9305a1576ad826c",
+        "bytes": 904
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/hidl-native-bindings-build-3/android__hidl__manager__1.0__ServiceManagerAll.cpp.o",
+        "sha256": "7e91962b02a586b1701adee842530abad558062707bd7fa24c32fa2074c9b3c1",
+        "bytes": 296048
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/hidl-native-bindings-build-3/android__hidl__manager__1.0__ServiceNotificationAll.cpp.o",
+        "sha256": "68b924cc4b7d0c83eb3de1d08f3188601615da7f8658c51064cabbc71dbcb6d2",
+        "bytes": 182208
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/hidl-native-bindings-build-3/android__hidl__manager__1.1__ServiceManagerAll.cpp.o",
+        "sha256": "29ce885ad2af4d98aa52487e3e1bfca7a8f415e08410608283b6d7813e532761",
+        "bytes": 233648
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/hidl-native-bindings-build-3/android__hidl__manager__1.2__ClientCallbackAll.cpp.o",
+        "sha256": "7a70b85d03f64ea62a0f1c1556625407ea5a0fd31dab8401f5dc68268f90a647",
+        "bytes": 183360
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/hidl-native-bindings-build-3/android__hidl__manager__1.2__ServiceManagerAll.cpp.o",
+        "sha256": "a11f90135a73d7e898c70da2cc552089fb53ed6d85a84a1f079a15c2ba6701e4",
+        "bytes": 300912
+      }
+    ]
+  },
+  "original_component_sources": {
+    "HWC2OnFbAdapter.cpp": 0,
+    "service.cpp_with_inline_HwcLoader": 0,
+    "ComposerResources.cpp": 1,
+    "failure": "ui/GraphicBufferMapper.h not supplied in build input graph; not an original AOSP incompatibility. No replacement header or fake mapper introduced.",
+    "profile_correction": "hidl-module-defaults Wextra-semi applies to generated modules; original service hidl_defaults has Wall/Werror, so inherited generated-only warning removed. Original source untouched."
+  },
+  "original_link_grouping": {
+    "libhidlbase": "Original combined implementation includes seven generated base/manager source units, plus runtime and hwbinder implementation. Do not link them as ad hoc duplicate libraries.",
+    "graphics_common": "Three generated types units, one per original package",
+    "composer_2_1": "Four generated transport source units; resource/service modules separate"
+  },
+  "driver_contract": "Original service explicitly starts /dev/vndbinder Binder; configureRpcThreadpool delegates HIDL to original libhwbinder whose source opens /dev/hwbinder. Preserve private driver identities and managers; no aliasing/fake success.",
+  "mcp_static": {
+    "evidence_id": "ev_08dbe3c75ac28baa4293fb560603b9ade1f19b47c761a7d127b4479abbd3f4bc",
+    "artifact": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libhidlbase.so",
+      "sha256": "e68f67115ad7eb55c511d20d852e929c5326e06f15211b3db32069af5d037dc7",
+      "bytes": 711768
+    },
+    "exports": 1037,
+    "scope": "Original GSI libhidlbase export table includes manager1.2, consistent with source grouping. Static only, no native load/service execution claim."
+  },
+  "host_current": "Read-only security check exit2, SELinux not in active LSM list; original SID/manager readiness remains unaccepted. No policy load/relabel/restart/VM.",
+  "limitations": [
+    "Compilation is not link, service startup, marshaling behavior, callback/fence/FD correctness or hardware compatibility",
+    "Missing whole libui/mapper header/source/generated dependency graph remains explicit; do not resolve by SDK stub or per-method recreation",
+    "No original runtime libhidlbase/hwbinder vendor graph linked in this milestone",
+    "No actual allocator/mapper, HWC device, buffers, fences, GPU/Wayland/Smithay frame or real APK stage accepted",
+    "No installation/update/security/redistribution equivalence accepted"
+  ],
+  "next": "Derive and provide whole original libui/mapper dependency graph and compile ComposerResources; build original combined libhidlbase+hwbinder with its seven generated units, then link original service following module grouping. R1-MAC remains prerequisite for actual registry/IPC acceptance."
+}

@@ -947,6 +947,33 @@ Siguiente puerta: completar fuente verificada, compilar bindings/passthrough
 originales con el conjunto vendor y probar dispositivo/buffers/fences/Smithay.
 El requisito de SID/SELinux y los recorridos APK permanecen abiertos.
 
+## R3: transporte nativo y fuente del servicio Composer
+
+[Compilación Bionic y fronteras pendientes](../reports/android16-hidl-native-bindings/validation.json).
+Las fuentes parciales de la descarga HTTP429 se recuperan mediante Git al mismo
+commit; los doce archivos retenidos coinciden y no se descartan. FMQ se fija al
+lock y se usa su export original libfmq-base. Manager HIDL1.0/1.1/1.2 se genera
+como paquetes completos: cinco hashes adicionales coinciden con current.txt y
+SHA256 independiente, con el alcance de archivo ya descrito. Se preservan los39
+archivos anteriores; el conjunto ampliado contiene69 y sus14 unidades C++ compilan
+con Bionic/libc++ y el perfil vendor experimental.
+
+También compilan HWC2OnFbAdapter.cpp y service.cpp original, que instancia el
+HwcLoader/ComposerHal inline. ComposerResources.cpp no compila: falta suministrar
+el conjunto original de cabeceras libui/GraphicBufferMapper. Es una dependencia
+del arnés, no prueba de incompatibilidad A16; no se sustituye por un mapper ficticio.
+Los flags de módulo siguen la separación original hidl-module-defaults frente a
+hidl_defaults del servicio, sin cambiar fuentes para ocultar advertencias.
+
+El link debe conservar la agrupación AOSP: los siete objetos generados base/manager
+forman parte de libhidlbase junto a su runtime y hwbinder, no bibliotecas duplicadas
+inventadas. REA MCP inspeccionó estáticamente el ELF original libhidlbase (1037
+exports, incluido manager1.2), consistente con esa agrupación; no observó ejecución.
+El servicio original inicia /dev/vndbinder y configura HIDL, cuyo hwbinder abre
+/dev/hwbinder: preservar drivers/gestores privados y sus identidades. El chequeo
+actual del host sigue sin SELinux activo. No hay link/registro del servicio,
+dispositivo abierto, buffers/fences, frame Smithay ni recorrido APK aceptados.
+
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 
 
