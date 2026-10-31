@@ -1,0 +1,41 @@
+{
+  "utc": "2026-10-31T19:26:57.611069+00:00",
+  "base_commit": "5ffce73521df3d0365b83fd1911cbe7c835fd82e",
+  "source_inventory_sha256": "0eab5446ae55ac65191df1deb0d8546c2039cb1a346cb8f440e691aba8bc927c",
+  "original_source_files": 71,
+  "original_source_bytes": 402974,
+  "scope": "Pinned original source inspection and host recovery, not graphics execution",
+  "candidate": "Goldfish original AIDL HWC3 at f3487b53aafe47000f08501243f5924526f1809a",
+  "evidence": {
+    "FrameComposer.h": "Explicit init, hotplug, display create/destroy/client-target, validate, present, active-config hooks; present transfers actual display/layer fence FDs. Header still includes DrmClient, so dependency separation is substantive.",
+    "Device.cpp": "Original factory selects NoOp/Client/Guest/Host implementations then calls init; use a real adapted provider, never NoOp.",
+    "ClientFrameComposer.cpp": "CLIENT validation retained as reference; init/target import/present route to real DrmClient, not Wayland.",
+    "GuestFrameComposer.cpp": "Software layer composition exists, but init and display output still use DrmClient. Software does not establish Wayland output.",
+    "HostFrameComposer.cpp": "Requires original host renderControl/HostConnection, optionally DRM; not a generic Linux-local driver.",
+    "DisplayFinder.cpp": "Original choices are placeholder, DRM or emulator queries; Wayland output/config discovery needs a real adaptation. Placeholder/noop is not acceptable.",
+    "Android.bp": "Complete original frontend source list plus original binder_ndk, libui, HIDL resource, graphics common, gralloc/minigbm/libyuv/libdrm/emulator provider dependencies. Not one drop-in shared object."
+  },
+  "decision": {
+    "next_vertical_base": "Evaluate/build complete original Goldfish AIDL frontend with real Wayland FrameComposer and display discovery adaptations; preserve original Composer/ComposerClient/Display/Layer/resources/command validation rather than write another Composer protocol.",
+    "why": "Explicit backend interface narrower than DrmHwcThree display pipeline and avoids carrying Waydroid application task/window/control services into the runtime. This is a testable engineering choice, not demonstrated runtime compatibility.",
+    "retained_alternatives": [
+      "HIDL2.1 original assembled loader + HWC2On1Adapter and Wayland HAL source remain historical usable candidates; final FCM not chosen",
+      "DRM-HWC3 remains reference frontend/metadata implementation; no Android KMS takeover",
+      "gfxstream renderer transport remains separate candidate, not automatically emulator-free"
+    ],
+    "must_prove": [
+      "Full native Bionic frontend links against coherent AIDL/common/provider ABI; no glibc DSO mixing",
+      "Real allocator/mapper metadata/import/map and Bionic RenderEngine EGL/Vulkan provider closure",
+      "Wayland output/config and actual client-target pixels delivered to Smithay; no NoOp success",
+      "Acquire/present/release completion, FD ownership, resize/disconnect and negative failures",
+      "Original managers and Composer service/client discovery through coordinator with MAC identity checks",
+      "SurfaceFlinger real display then original display-before-PMS bootstrap toward full Markor journey"
+    ]
+  },
+  "acquisition": "First parallel download hit HTTP429; 70 verified blobs retained. Sequential missing-file completion and full Git blob revalidation: 71/71 pass. No source edits.",
+  "limits": [
+    "No frontend build, Wayland adapter, frame, benchmark or app execution in this milestone",
+    "No license closure beyond original per-file notices; transitive dependencies independently audited before redistribution",
+    "ARM/GMS/DRM not solved or on initial Markor critical path"
+  ]
+}

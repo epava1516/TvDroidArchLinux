@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-hwmanager-cohort/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-graphics-resume/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -17,6 +17,20 @@ Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCC
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
 
+## Tras reinicio · anfitrión y frontera gráfica
+
+[Checkpoint vigente](../reports/android16-graphics-resume/checkpoint.json),
+[estado real](../reports/android16-graphics-resume/host.json) y
+[comparación Goldfish HWC3](../reports/android16-graphics-resume/findings.json).
+LTS6.18.59, SELinux permisivo y política exacta anterior recargada (`policyload=1`);
+no hay carga persistente ni nuevo ensayo enforcing. El anfitrión sí expone card0 y
+renderD128 con vmwgfx: la ausencia observada en sandbox no acreditaba ausencia física.
+La cohorte anterior se conserva como evidencia histórica; sus procesos murieron al reiniciar.
+Siguiente experimento: frontend AIDL HWC3 original Goldfish, conservando Composer/
+cliente/Display/Layer y adaptando FrameComposer y descubrimiento a salida Wayland real.
+Los backends originales Client/Guest usan DRM; Host usa emulador; NoOp queda excluido.
+Allocator/mapper/renderizador Bionic y fences siguen abiertos; no se ha mostrado frame.
+
 ## Cohorte original · hardware manager consultado en enforcing
 
 [Checkpoint](../reports/android16-hwmanager-cohort/checkpoint.json),
@@ -25,7 +39,7 @@ sigue siendo el punto de recuperación del runtime.
 Propiedades originales → servicemanager → hwservicemanager con RCs originales →
 cliente GSI `lshal` obtiene interfaz/descriptor → instancia ausente128 → cierre.
 Kernel1 hasta consulta/cierre, ambos UID/GID1000/caps0/NNP1 y SID reales; watchdog
-recupera0. Anfitrión en permisivo con política cargada; audit inactivo restaurado,
+recupera0. Al cerrar ese hito: anfitrión en permisivo con política cargada; audit inactivo restaurado,
 sin procesos ni loops del runtime. No readiness manual ni Android completo.
 
 El cliente usa `debug -E` de interfaz padre1.0 para consultar el descriptor real

@@ -1,0 +1,434 @@
+{
+  "revision": "f3487b53aafe47000f08501243f5924526f1809a",
+  "url": "https://android.googlesource.com/device/generic/goldfish/+/f3487b53aafe47000f08501243f5924526f1809a/hals/hwc3/",
+  "files": [
+    {
+      "path": "AlternatingImageStorage.cpp",
+      "git_blob": "c4a1d85c83ac0057d7a90fe8a7f239e640ea14af",
+      "sha256": "18038f81b4756ccf773b215e774b011327bf4530a536e30a0267e89dd5aa6a42",
+      "bytes": 1534
+    },
+    {
+      "path": "AlternatingImageStorage.h",
+      "git_blob": "aa17bc702bc839d6becc0d684cd2448a575a438b",
+      "sha256": "ebf17636e3361546f0c86f61a655733af7d2e6870050b6c18cbc179977272c38",
+      "bytes": 1689
+    },
+    {
+      "path": "Android.bp",
+      "git_blob": "f956d5a78e0d7cbac4ab0c81de2db82a65815043",
+      "sha256": "758527c4b8ef4b51604d2692120c528f8ced60f089b29d6e0b3c141065cc929e",
+      "bytes": 3454
+    },
+    {
+      "path": "ClientFrameComposer.cpp",
+      "git_blob": "10c6ce89221c6d314bddb3ec1734e71ca99b0994",
+      "sha256": "64a87a6ed55f43afcd87703d61c37db1f83c90bb23710ff7ccb538f15c9489f0",
+      "bytes": 5442
+    },
+    {
+      "path": "ClientFrameComposer.h",
+      "git_blob": "186035051e29c09e14624f59365c56f7c46e3626",
+      "sha256": "67be98ae103e0803f85f5d9692d7ad565e602b89be15dea00874c9663b97b16e",
+      "bytes": 2695
+    },
+    {
+      "path": "Common.cpp",
+      "git_blob": "4e0a11809959b843a2da42f82e76b3ba6662a122",
+      "sha256": "1bf12d5734b5e1ef56e239b02f0c68c587e0c8e04c53f04742bf55e7b07bdb6e",
+      "bytes": 3514
+    },
+    {
+      "path": "Common.h",
+      "git_blob": "7c3bcfa7e4b7ee9e90617854d07016e34a0bc0d8",
+      "sha256": "075b1be8b3138de5382da2f529d8de8742f4babe0d5311eb39f91f8c67f79e86",
+      "bytes": 3891
+    },
+    {
+      "path": "Composer.cpp",
+      "git_blob": "aa70b3b13b8ae9301fb741e347b8a8b210ae25d3",
+      "sha256": "2cdc6758fb27932de272f1b6ff76c6c83c8a805685a90d97457928ad1afc7cc3",
+      "bytes": 3695
+    },
+    {
+      "path": "Composer.h",
+      "git_blob": "a628643847845efaba1e4b6daa126d65eafd9068",
+      "sha256": "a3c1c3950adc2aa35054fdfda7c9b01138311c483228028a82b78c6b809022f2",
+      "bytes": 1701
+    },
+    {
+      "path": "ComposerClient.cpp",
+      "git_blob": "5dd0dddbeb20e43f932e7381d08b7ac94fa0c669",
+      "sha256": "46e9786d80f0c7fe683357aeb5a88d99b9b332f6714bf83303ea07f7efd313e9",
+      "bytes": 52727
+    },
+    {
+      "path": "ComposerClient.h",
+      "git_blob": "87a4eb01c26666ce61eb44fba5694ba507133a32",
+      "sha256": "e7499091ea5da8cd7b81c20492ff576600781d5767dfbc99a3d87d20411c5639",
+      "bytes": 15982
+    },
+    {
+      "path": "ComposerResources.cpp",
+      "git_blob": "8083b45d4c03ab8bcd6d279e1c3f10900c5618fe",
+      "sha256": "feae48c44e1196bff23ef2e1ec23a7652011d92be69a4f1dd54f30236821702b",
+      "bytes": 10400
+    },
+    {
+      "path": "ComposerResources.h",
+      "git_blob": "2f79dc88085616ed22429cd50807da9f79bdc022",
+      "sha256": "cd88cb2e79aa9dc2e0568bfcf1c86681c1c26fd8cf379668089906a23068df2e",
+      "bytes": 3966
+    },
+    {
+      "path": "Device.cpp",
+      "git_blob": "2f03f6ab4b1f29bcc8e11d1087031f0871c81039",
+      "sha256": "32e06640c34d028c1bfe9b0e0c24aae03bf48ce00fbabdaed912f7fa2d4a9dbb",
+      "bytes": 5458
+    },
+    {
+      "path": "Device.h",
+      "git_blob": "196f51b7fd5a462b551862fba79791d5515b1f6d",
+      "sha256": "da4adee223155cde0582de1638f6b4a281d6a6529a906a70d95e11806e94b349",
+      "bytes": 1606
+    },
+    {
+      "path": "Display.cpp",
+      "git_blob": "08b7a46a4ce99f21841f37f4a4d69c560b588b7a",
+      "sha256": "bdf8763eb16bca2bf02c17ee7f9e1bdfc3605f4171f234b6e0261aa8533f4826",
+      "bytes": 36269
+    },
+    {
+      "path": "Display.h",
+      "git_blob": "9f89b221ad8ac604e7ce6425db631b4c383755af",
+      "sha256": "99a715db73fe225a47b06501a698cc7fde9e42d3fb0056c081aafaa5dd7906e8",
+      "bytes": 9039
+    },
+    {
+      "path": "DisplayChanges.h",
+      "git_blob": "7c4b5d183a770881e46076f0de726be0d718640c",
+      "sha256": "55cd21b3f40fa7e5f5431f7c7ef64fdec22a68a200e54d1fb2c7e97a73f83f32",
+      "bytes": 2040
+    },
+    {
+      "path": "DisplayConfig.cpp",
+      "git_blob": "c17fa9525bfed4accf3c0b55ad454cba0caab37b",
+      "sha256": "20717e460704ae8937b93fc78cb7039989c5c421c27997afb65f0829fea0e1a5",
+      "bytes": 4289
+    },
+    {
+      "path": "DisplayConfig.h",
+      "git_blob": "1abd992ca2d0e9da5464f4efe181cbc21b5e2ae5",
+      "sha256": "457888b7cd13c8f28d91ce498a35269e04993a98ae214724ce69fcba61f23d1a",
+      "bytes": 2866
+    },
+    {
+      "path": "DisplayFinder.cpp",
+      "git_blob": "0dd5922419ad2156e47950e91ae36f651c4555c8",
+      "sha256": "4c0333739e2571c199d2cac66dadf7afce59355f7e9467eaab67fae01d296cdf",
+      "bytes": 9823
+    },
+    {
+      "path": "DisplayFinder.h",
+      "git_blob": "c124c8051a464879f6368cff972a4e55aa7ff14d",
+      "sha256": "a7204784a5254fbd42c65eeec72c7398c789a5cdf35341bf162828508be0df4a",
+      "bytes": 1298
+    },
+    {
+      "path": "Drm.cpp",
+      "git_blob": "1ac9051aa025aee0851097bd2f4a333a24893bf0",
+      "sha256": "c6b457cf88b00f601a98e3c5bcd9ba8d68773eeca78991ff4ed411c9b7e19b53",
+      "bytes": 6218
+    },
+    {
+      "path": "Drm.h",
+      "git_blob": "7b82255283130bcc1f21a70f6860d21aa4db8998",
+      "sha256": "c61dc14439211e9701d9d9279b1f3b3d36feb3b0ab976abf21f2b3f40320fde0",
+      "bytes": 996
+    },
+    {
+      "path": "DrmAtomicRequest.cpp",
+      "git_blob": "63e5c10a336f15632b55ccea59825ddb04a19764",
+      "sha256": "f87ea35d47bdc2ea41f714148321fe782708ed03389ea1ae5bbb794e6bfd0753",
+      "bytes": 1906
+    },
+    {
+      "path": "DrmAtomicRequest.h",
+      "git_blob": "862ea2f2a2938c4b2ead0d6aa29397de058ac949",
+      "sha256": "59d0450261e2ce99f4d4aaba657b5a19cb0357d5babdeb6a6a97056344199497",
+      "bytes": 1397
+    },
+    {
+      "path": "DrmBuffer.cpp",
+      "git_blob": "68b5457a14d5b3401f53fdcf7a46f0bfe38a2e61",
+      "sha256": "b784bbb267430c6762ee91f059185e1e5dd041c3d3d901c6c666949e19f735ca",
+      "bytes": 936
+    },
+    {
+      "path": "DrmBuffer.h",
+      "git_blob": "5107250e51f5cabb441988a4af617ef211edd2b8",
+      "sha256": "e2a9663a54e71e7b5ceecf86dfa05c2938f5e695357ce1690503ea879bde94f5",
+      "bytes": 1725
+    },
+    {
+      "path": "DrmClient.cpp",
+      "git_blob": "a55e94bd21889960f24aa3189d000951bbaf74fa",
+      "sha256": "ec344e434c9045da3f22c898c293989dc514405da1799fa7ee0317586fc65c70",
+      "bytes": 12334
+    },
+    {
+      "path": "DrmClient.h",
+      "git_blob": "3c8fd41b3300a02753a77d14feefbaa9887de9a6",
+      "sha256": "e516dcd34a5f6aa00cf5620e016e7b6e356dec27445a4ba0e192a9bfcdd19453",
+      "bytes": 3484
+    },
+    {
+      "path": "DrmConnector.cpp",
+      "git_blob": "a7b67299a285e62796db0cbe39953fb6d5bd72d1",
+      "sha256": "02b6d6b55b4f028024c72fe97700398bf16bd724bfa4333355e6d46bb1088922",
+      "bytes": 5716
+    },
+    {
+      "path": "DrmConnector.h",
+      "git_blob": "f908631d25e69b4272171d967fd93dc979de49db",
+      "sha256": "cfe57764a87a04c2ce19c437c5ec303032ea4fbb6aa495d00fbfc4bdaa0213e7",
+      "bytes": 2730
+    },
+    {
+      "path": "DrmCrtc.cpp",
+      "git_blob": "4648a9fbe38326c1c97d6bda76dfe1ce45f6f4ef",
+      "sha256": "572f7aaf119564e667fa2d6101070e694fea09d92e28684e73ce2fa62b02686a",
+      "bytes": 1326
+    },
+    {
+      "path": "DrmCrtc.h",
+      "git_blob": "6dcd93bdc8081b8caafdcdbdebae739b33bce2c0",
+      "sha256": "02f1a3114679d67d4cf65572781aa37c52892e16d43590a3187d3393a6835aba",
+      "bytes": 2098
+    },
+    {
+      "path": "DrmDisplay.cpp",
+      "git_blob": "182fce5e0c8c2edad35e81f48d1227b69215eef9",
+      "sha256": "0e28c2d84b9f803d7d4bf4c462c8c9e9c5c23bc4b819cbe8cb7118e1ef937032",
+      "bytes": 6971
+    },
+    {
+      "path": "DrmDisplay.h",
+      "git_blob": "0a349c7b5d0696fa024afe9ca9681927ea94fd15",
+      "sha256": "2b9af3c1ef8d68642b73cadef692d44024dcddc983385ba9875e1c5700f99756",
+      "bytes": 3102
+    },
+    {
+      "path": "DrmEventListener.cpp",
+      "git_blob": "e56f50c3349d3b678ec0852e11611ea6ed8a0b01",
+      "sha256": "e1b0670f0b770762ce77d097385120735f809537c7e567e97b7aedce6c5a7eac",
+      "bytes": 3352
+    },
+    {
+      "path": "DrmEventListener.h",
+      "git_blob": "4ab29b61a23e06b01115e828c50e0aaae6c8c585",
+      "sha256": "4a32f020daf9dc5398cfc65322156d1803452310ddf9f68a4a6e9d1d5d788896",
+      "bytes": 1597
+    },
+    {
+      "path": "DrmMode.cpp",
+      "git_blob": "d65f0cc9d898075070f5fc93b06f2697be94c3b2",
+      "sha256": "0b964fd1525c777200c6f2b271ccf47dd6c151b575639d53ff8154e9e1d5fc85",
+      "bytes": 1291
+    },
+    {
+      "path": "DrmMode.h",
+      "git_blob": "23b170dea5f999cf76bf3b998689670a37aacfe0",
+      "sha256": "2fb2deaeb3a7ea735689feb5faa1e9d859c7f0e195ac29e92f38fcf18b72d6c5",
+      "bytes": 2235
+    },
+    {
+      "path": "DrmPlane.cpp",
+      "git_blob": "f2027ee28231884d34cd5dfc0bdd4914c5dbbc23",
+      "sha256": "79e2602ff18a54fb1bce1ee12525360f5bfb82f82ee92cdb2e9d12f57ae55938",
+      "bytes": 1737
+    },
+    {
+      "path": "DrmPlane.h",
+      "git_blob": "b24475666c96143f88c45c11503a8a58bfe48ac4",
+      "sha256": "f950b49ef87d5ca84c4446b603cfa7df359bdd2b7ce47157c62d55fa04548129",
+      "bytes": 3209
+    },
+    {
+      "path": "DrmProperty.h",
+      "git_blob": "d52cd9deaadeb117a39a2b2da95a13cbf2262dc7",
+      "sha256": "5c43a38b4024ed9933136b3fd7f1becb9986e2be48a29e7b7d9ebfe2334a8160",
+      "bytes": 3158
+    },
+    {
+      "path": "DrmSwapchain.cpp",
+      "git_blob": "ae89125599b8f302a047e61d1b0a31dc0ae7faaa",
+      "sha256": "62442ac30297a8766ec212e87a14f7c8ab4e70fcebb4cd9b06deb608fdbf8e7b",
+      "bytes": 3751
+    },
+    {
+      "path": "DrmSwapchain.h",
+      "git_blob": "a26031c2ffe645eda8654bff871d0da97d42d912",
+      "sha256": "90ea2e8965cbb8f877cfcb3576b8ac59361b1c8e5582f864514af625d2e56278",
+      "bytes": 1866
+    },
+    {
+      "path": "EdidInfo.cpp",
+      "git_blob": "e4b63fa61f39f64b6d79fad01aafd1431a507750",
+      "sha256": "7b37836e889c29049c6063d7df23ec566441fb3fabafc553c3273bfb157c80dc",
+      "bytes": 1106
+    },
+    {
+      "path": "EdidInfo.h",
+      "git_blob": "bcccebfddb509643e392fa18211c0e0136385072",
+      "sha256": "eb967bb6975d300a033d226162523c5717eb72fbb71fc08a04895da9f7a3c62b",
+      "bytes": 372
+    },
+    {
+      "path": "FencedBuffer.h",
+      "git_blob": "03f71f4279221add912beeac4032397bfc3b6ae0",
+      "sha256": "c3d16cefced18a816a7746890f601f845a9209d4d37a373776b7b4458390ceb1",
+      "bytes": 1791
+    },
+    {
+      "path": "FrameComposer.h",
+      "git_blob": "5e54561b29fc5f160611dc0d05b08f776c7a80a9",
+      "sha256": "81f343edbb110ff1de22b98ea098e618af0907ca9edfb62bc4d97408e5b9f506",
+      "bytes": 2659
+    },
+    {
+      "path": "Gralloc.cpp",
+      "git_blob": "1b364cd5925bb4a4e940da4ef8b8ccc1421da59a",
+      "sha256": "18ffa0a1b01bc3465a0156e6c419d1b53a5cc7b423573d4600029217fd0f4ede",
+      "bytes": 11485
+    },
+    {
+      "path": "Gralloc.h",
+      "git_blob": "a759089c680af17d450fcd75f27bd0318ed33203",
+      "sha256": "b8188a27b9a7650242587f7862eb9d23dbb951e0273b269e08bebc75f44a61a3",
+      "bytes": 4890
+    },
+    {
+      "path": "GuestFrameComposer.cpp",
+      "git_blob": "9fc0b3c8d6e07ef61874f2cf57a07184e265d929",
+      "sha256": "4d3a769edc832b069e53a06a11788b0547d1207014ea31f867cfff5bc8a00b18",
+      "bytes": 49181
+    },
+    {
+      "path": "GuestFrameComposer.h",
+      "git_blob": "9a054f1081b03d4a67b64a32ff3fb412d6d57723",
+      "sha256": "eb0f833d63fc33fc19071f67a052759400e1d66569536936606676c315f7f240",
+      "bytes": 4191
+    },
+    {
+      "path": "HostFrameComposer.cpp",
+      "git_blob": "cf2a8fdd677b5bcbe8c3fd93d341823223ce9e3c",
+      "sha256": "32335ca55d224a3408d63964a31e03dc6dcab5a080e19b79a66902a9d8299956",
+      "bytes": 29910
+    },
+    {
+      "path": "HostFrameComposer.h",
+      "git_blob": "79d987837bda9eef770b5f3d60261b60709e1712",
+      "sha256": "2a0aa1a8a16aac661b7c50863af47f1a902ae2cff04de19e43a22a79bcffc414",
+      "bytes": 3234
+    },
+    {
+      "path": "HostUtils.cpp",
+      "git_blob": "0ed178fb2e38e01dd7fe7ccb0aa671435e514f17",
+      "sha256": "b1f23134fbfc38fd1fa01284a70bef4a08597b91263c96696d55697741b8ad5e",
+      "bytes": 1009
+    },
+    {
+      "path": "HostUtils.h",
+      "git_blob": "95d8b1d445d89f07a24125217ee6f13e6defc113",
+      "sha256": "8a202ade80e1c2c87494dcc43253db0d16e745822983c02667d14b5394567cce",
+      "bytes": 2230
+    },
+    {
+      "path": "Layer.cpp",
+      "git_blob": "d391f2b5d419a8456ae34767eb833358ccc73e5a",
+      "sha256": "19b80fbf7f9943b63fe8c2d558f3e185cef6b9af38d4ad63d06e95f8e9233228",
+      "bytes": 10515
+    },
+    {
+      "path": "Layer.h",
+      "git_blob": "22ac4e9648e594c275cb9285748daeeb560a9ee3",
+      "sha256": "f8259b10631f250195ff9c736dbe6263e0e1bed6097c6dbd8fae07459ba49ad8",
+      "bytes": 4102
+    },
+    {
+      "path": "LruCache.h",
+      "git_blob": "f5b8f986f5878bf9c98b565f729eca8d8735c515",
+      "sha256": "6fedc4fad21bd57a3b2a4f63b81748478227d5b7acddf9d75e36a32292b32e7b",
+      "bytes": 2392
+    },
+    {
+      "path": "Main.cpp",
+      "git_blob": "811d5f8a71392fb537c8892591b72f08acd2d3ed",
+      "sha256": "ac39a156f288c0b8c915d1c51dfa65db77394cd3bbc16e94ecb26255852c00e5",
+      "bytes": 1780
+    },
+    {
+      "path": "NoOpFrameComposer.cpp",
+      "git_blob": "b665d99ba6b96eeff0c01c71d4bc212b0fb71a53",
+      "sha256": "08a95bb0b43a594aa8d5cb81a3a055ad5039ec9c712e553819de029c70d7a9bd",
+      "bytes": 2146
+    },
+    {
+      "path": "NoOpFrameComposer.h",
+      "git_blob": "a8b2acb5c4ae69a15cb4d8fda40b7a3347a9ccf8",
+      "sha256": "07814b5ba9bcb163024616ecc833805c36b8e4eb727f2be790c8d8fc384b34c2",
+      "bytes": 2265
+    },
+    {
+      "path": "OWNERS",
+      "git_blob": "a6930b998136708969cf5293240d40448f2c5635",
+      "sha256": "ca0e9ef09dcdb3e964b66ad5635bc9792460fcffd75ceddae9891ac42db3dd03",
+      "bytes": 131
+    },
+    {
+      "path": "Time.h",
+      "git_blob": "f05e965afe8370b928fcd01eaa48b11659e345e2",
+      "sha256": "786fd72f332f37b23852d70bdcddc519b2b0f30faeaa55ee249a4bb4fdd29117",
+      "bytes": 1526
+    },
+    {
+      "path": "VsyncThread.cpp",
+      "git_blob": "0ec1b23e640aaabad13e13706ba5656292735ddb",
+      "sha256": "4134c1d08ab912c3fb31f3959e992ecbe89610cffb7237244bd7ff23774b9228",
+      "bytes": 6056
+    },
+    {
+      "path": "VsyncThread.h",
+      "git_blob": "0c477632bcbe73d5c9bb26446c37dd30d6177354",
+      "sha256": "983e2bf5ae19d2215c38dfb73bb00ac6a6b12279b265d92f065f277ea8e64e94",
+      "bytes": 2539
+    },
+    {
+      "path": "apex_file_contexts",
+      "git_blob": "1af970fc7750e090b3b2f06e876861e3f9c32a27",
+      "sha256": "75aadbbb6da639886187079c2b80a056903077eec84ae95b5a96205733352b64",
+      "bytes": 301
+    },
+    {
+      "path": "apex_manifest.json",
+      "git_blob": "fa9e626b1075a0946e85ddc6c2414a8b78c90107",
+      "sha256": "2c53190f72f78bcdc9a435b0de974e48661968201a0a1eec7f2234c4245cf3d3",
+      "bytes": 103
+    },
+    {
+      "path": "hwc3.rc",
+      "git_blob": "ebb29483bce04ff36ae63715df8d918ac3387edb",
+      "sha256": "4ebfc0c9606ebaa5191c487d28c51226b1bd5b1ade0e711d8d8643a5b1e1821c",
+      "bytes": 259
+    },
+    {
+      "path": "hwc3.xml",
+      "git_blob": "4c4fb95eada00f72537156e57a7439a8956d8102",
+      "sha256": "1451a07287ac74c88af5b15538a43d046b7c0d8052bc563398418910d55ae35b",
+      "bytes": 288
+    }
+  ],
+  "scope": "Original pinned source, Git blob verified; not build or execution evidence",
+  "prior_acquisition": "Parallel first attempt HTTP429; retained only individually hash-verified files; sequential completion verifies every file again"
+}

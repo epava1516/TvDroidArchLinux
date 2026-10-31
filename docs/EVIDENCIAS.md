@@ -1,5 +1,10 @@
 # Índice de evidencias
 
+## Recuperación y siguiente integración gráfica
+
+[Recuperación y comparación gráfica](../reports/android16-graphics-resume/findings.json): [anfitrión](../reports/android16-graphics-resume/host.json), [71 fuentes Goldfish verificadas por blob Git/SHA256](../reports/android16-graphics-resume/goldfish-source-inventory.json) y [checkpoint](../reports/android16-graphics-resume/checkpoint.json). Política exacta recargada en permisivo, página de estado policyload1; lectura fuera de sandbox confirma vmwgfx/card0/renderD128. Inspección de fuentes solamente: no build/frame/APK ni nueva prueba enforcing.
+
+
 - [Candidato Linux→Bionic MC1](../reports/android16-mc1-exec-handoff/findings.json): payload32MiB/metadata/contenido/e2fsck; REA guardas78 y diagnóstico directo0. Dos fallos de empaquetado/namespace conservados, adaptación de directorio sin aplanar APEX;44 decisiones offline, aserciones activas. Sin asignación MAC ni registro de gestor. [Checkpoint](../reports/android16-mc1-exec-handoff/checkpoint.json).
 
 

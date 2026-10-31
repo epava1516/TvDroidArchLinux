@@ -1,5 +1,10 @@
 # Arquitectura vigente · A16-QPR2-1
 
+## Recuperación y siguiente integración gráfica
+
+La comparación adicional de [Goldfish HWC3 original](../reports/android16-graphics-resume/findings.json) identifica una frontera FrameComposer para adaptar salida Wayland conservando el frontend AIDL completo. Se elige como próximo experimento, no como base probada. Client/Guest siguen ligados a DRM, Host al emulador y NoOp no acredita presentación. Fábrica y descubrimiento de displays necesitan adaptación real, junto a allocator/mapper, RenderEngine Bionic y sincronización. Linux/Smithay conserva KMS; no hay aceptación gráfica ni FCM final.
+
+
 Estado de integración vigente: [MC1 original positivo/negativo en enforcing](../reports/android16-mc1-functional-candidate/findings.json),
 con kernel1 durante consulta y cierre y retorno automático0. Es un ensayo acotado,
 no instalación del runtime ni cierre R1-MAC. Las secciones de resultados anteriores

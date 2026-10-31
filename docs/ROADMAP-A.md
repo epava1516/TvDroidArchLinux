@@ -1,5 +1,10 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+## Recuperación y siguiente integración gráfica
+
+Próximo experimento MC3: frontend AIDL original Goldfish a la revisión fijada, con adaptación acotada FrameComposer/fábrica/descubrimiento a Wayland. [Decisión y puertas](../reports/android16-graphics-resume/findings.json). Primero cierre nativo/ABI y allocator/mapper/renderizador coherentes; después cliente real/SurfaceFlinger, pixels sobre Smithay y fences/errores/resize; finalmente display original requerido antes de PMS y Markor. NoOp, compilación, registro de servicio o placeholder no cierran MC3. HIDL y DRM-HWC3 permanecen alternativas documentadas; no imponer FCM antiguo. Anfitrión recuperado LTS/permisivo/policyload1, no disponibilidad actual de servicios.
+
+
 Estado vigente: prefijo MC1 original probado en enforcing acotado, con negativo
 de bypass y cierre real; anfitrión devuelto automáticamente a permisivo. El hito de firma Markor usa apksig
 original y negativo de manipulación. No hay APK instalada ni aplicación lanzada.

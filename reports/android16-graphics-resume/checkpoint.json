@@ -1,0 +1,11 @@
+{
+  "utc": "2026-10-31T19:26:57.611069+00:00",
+  "base_head": "5ffce73521df3d0365b83fd1911cbe7c835fd82e",
+  "branch": "main",
+  "host": "See host.json: LTS, permissive, policyload1; no persistent services or loader",
+  "process_handles": "Source acquisition14606 terminated HTTP429; continuation3007 terminated0. All pre-reboot handles/PIDs historical; no active build/capture handle.",
+  "pending": "Six historical files unchanged/excluded; snapshot in restore-lts-selinux recovery. This milestone source inventory/host recovery/docs only.",
+  "previous_recovery": "/home/tv/recuperacion-archtv/20261031T192541Z-reload-proven-policy/RETOMAR.txt",
+  "next": "Build complete original Goldfish AIDL frontend against pinned generated/common ABI and native providers; adapt only FrameComposer/factory/display discovery to actual Wayland, while explicitly resolving allocator/render/fence closure. Actual frame, not compilation, is next functional acceptance.",
+  "remaining": "All nine Markor stages untested; original manager enforcing evidence5ffce73 remains historical not current service availability."
+}

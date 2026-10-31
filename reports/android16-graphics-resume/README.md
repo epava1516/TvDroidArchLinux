@@ -1,0 +1,1 @@
+Original Goldfish HWC3 comparison and post-reboot host recovery. See findings.json, goldfish-source-inventory.json and host.json. Source availability is not execution. No frame or APK compatibility claimed. Canonical ordering remains docs/ROADMAP-A.md.
