@@ -1,0 +1,22 @@
+{
+  "status": "terminal",
+  "exit_code": 2,
+  "elapsed_seconds": 11.12853900999471,
+  "argv": [
+    "make",
+    "-j1",
+    "-C",
+    "/home/tv/repositorio-principal/dist/aosp16/refpolicy-baseline-1/source",
+    "MONOLITHIC=y",
+    "TYPE=mcs",
+    "SYSTEMD=y",
+    "OUTPUT_POLICY=30",
+    "CHECKPOLICY=/home/tv/repositorio-principal/dist/aosp16/checkpolicy-host-2/source/checkpolicy",
+    "CHECKMODULE=/home/tv/repositorio-principal/dist/aosp16/checkpolicy-host-2/source/checkmodule",
+    "DESTDIR=/home/tv/repositorio-principal/dist/aosp16/refpolicy-baseline-1/staging",
+    "conf",
+    "policy"
+  ],
+  "log_sha256": "4acd77c263206dd6c61674ff21b6d18500d43b3fd16c1f966198380868fdeca0",
+  "scope": "Offline baseline contrast, not supported toolchain/host policy readiness"
+}

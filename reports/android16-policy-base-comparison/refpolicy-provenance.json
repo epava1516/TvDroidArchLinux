@@ -1,0 +1,8 @@
+{
+  "source": "https://github.com/SELinuxProject/refpolicy.git",
+  "commit": "878b00a2db5b2ae490aa8cabb4b67ab19368f9d7",
+  "archive_sha256": "fb2d7c171bcc835bbf1019631e9f94fd6e1cb9121bf11433e0a145be1547e896",
+  "git_fsck": "strict passes",
+  "signature_verified": false,
+  "scope": "Pinned official Linux reference policy source, offline study only, no host installation/labeling/loading"
+}

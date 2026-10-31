@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-host-security-preflight/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-policy-base-comparison/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -99,6 +99,17 @@ un kernel vivo. Host libsepol/secilc originales construidos; política platform 
 de la GSI compilada con opciones originales y neverallow activo. Nada instalado,
 cargado o reetiquetado, ni host/servicios/APK aceptados. Siguiente: comparar las
 bases de política AOSP+Linux y refpolicy+contratos AOSP antes de elegir/desplegar.
+
+
+## Comparación de bases de política · pendiente de elección
+
+[Resultados](../reports/android16-policy-base-comparison/validation.json): refpolicy
+fijada por commit y verificada, baseline Linux MCS/systemd/formato30 compila offline.
+Las136 clases y permisos coinciden con el CIL del compilador; AOSP platform tiene107.
+Tres clases de registro/propiedades Android faltan en refpolicy. La composición
+global sin adaptar falla por role object_r repetido; no prueba imposibilidad de
+integración. Siguiente: herramientas semánticas existentes y fronteras de política
+antes de transformar. Ningún host reetiquetado, política cargada, reinicio o APK.
 
 ## Checkpoint y siguiente acción
 

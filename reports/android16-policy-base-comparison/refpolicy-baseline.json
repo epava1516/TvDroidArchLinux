@@ -1,0 +1,21 @@
+{
+  "status": "terminal",
+  "exit_code": 0,
+  "timeout": false,
+  "seconds": 24.42421239700343,
+  "argv": [
+    "make",
+    "-j1",
+    "-C",
+    "/home/tv/repositorio-principal/dist/aosp16/refpolicy-baseline-1/source",
+    "MONOLITHIC=y",
+    "TYPE=mcs",
+    "SYSTEMD=y",
+    "OUTPUT_POLICY=30",
+    "CHECKPOLICY=/home/tv/repositorio-principal/dist/aosp16/checkpolicy-host-2/source/checkpolicy",
+    "CHECKMODULE=/home/tv/repositorio-principal/dist/aosp16/checkpolicy-host-2/source/checkmodule",
+    "DESTDIR=/home/tv/repositorio-principal/dist/aosp16/refpolicy-baseline-1/staging",
+    "policy"
+  ],
+  "log_sha256": "16346e4b570078eaf4a1f79b81344b68bc54532b926d7acfef37be3b7dea10c1"
+}

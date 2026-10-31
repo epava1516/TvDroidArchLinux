@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+- [Comparación de política AOSP/Linux](../reports/android16-policy-base-comparison/validation.json): refpolicy fijada y compilada offline;136 clases contrastadas contra CIL. Composición global directa rechazada, sin descartar estrategias adaptadas. No política elegida/cargada ni APK. [Checkpoint vigente](../reports/android16-policy-base-comparison/checkpoint.json).
+
 - [Requisitos Linux y política offline original](../reports/android16-host-security-preflight/validation.json): ocho regresiones del diagnóstico; VM no apta para gestores originales todavía. Herramientas SELinux host y CIL platform compilados, neverallow activo; sin carga/instalación/etiquetado ni APK. [Checkpoint vigente](../reports/android16-host-security-preflight/checkpoint.json).
 
 - [Binder privado y puerta de política original](../reports/android16-binder-service-gate/validation.json): dispositivos distintos/protocolo8; ART llega a ActivityThread.main, sin Markor. Servicemanager original aborta por SELinux inactivo. No transacciones/servicios/política/APK aceptados. [Checkpoint vigente](../reports/android16-binder-service-gate/checkpoint.json).

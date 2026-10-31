@@ -1,0 +1,146 @@
+{
+  "base_commit": "fb20daa0034d9064625dee81df4eb2dcb97adf13",
+  "scope": "Two separate offline policy baselines and static contracts, no selected deployment policy or live enforcement/APK acceptance",
+  "source_refpolicy_commit": "878b00a2db5b2ae490aa8cabb4b67ab19368f9d7",
+  "class_counts": {
+    "aosp": 107,
+    "refpolicy": 136
+  },
+  "observed": {
+    "binder_contract_equal": true,
+    "refpolicy_missing_android_registry_classes": [
+      "service_manager",
+      "hwservice_manager",
+      "property_service"
+    ],
+    "shared_literal_attributes": [
+      "domain",
+      "exec_type",
+      "file_type",
+      "mlstrustedobject",
+      "proc_type"
+    ],
+    "refpolicy_binary_compile": 0,
+    "refpolicy_CIL_compile": 0,
+    "unmodified_global_merge": 255
+  },
+  "tool_boundary": "Host/glibc original AOSP checkpolicy/checkmodule, static libsepol. No host runtime injected. Source libsepol3.7, upstream refpolicy declares3.9+; tested MCS/systemd/format30 passes but full supported-toolchain matrix remains unproved. Generated policy_parse.h from original grammar required by original lexer; source unchanged.",
+  "limits": "AOSP baseline is original GSI platform CIL only, not full vendor/hardware policy; Linux baseline full selected default modules. Different scope must not imply equal host/device coverage. Merely differing class/permission order is not a proved ABI failure; mappings need evaluation. Shared literal attributes are a collision risk, not a demonstrated access leak.",
+  "negative_control": "Both original CIL inputs in global namespace fail role object_r redeclaration, despite -m; no neverallow bypass. This rejects only naive unmodified composition, not either adapted strategy.",
+  "rejected_inventory": "First own access-vector regex omitted inherited classes without explicit braces (74/136). Never accepted; retained local. Corrected token parser verifies every security_classes declaration and all136 permission lists/orders against independent original compiler CIL.",
+  "next_experiment": "Use existing semantic policy tools before transformations; compare complete original AOSP platform policy plus Linux domain integration against Linux/refpolicy plus original AOSP policy contracts. Resolve global classes/order, role/user contexts, attribute namespaces, MLS/constraints and initial SIDs explicitly. Preserve assertions and require actual boot/service/denial tests before selection.",
+  "sources": [
+    {
+      "path": "/home/tv/.cache/archtv/refpolicy-review-1/source/AGENTS.md",
+      "sha256": "3ca043a379538aa3842559bac7901591bbc92e826d773dd679f5ba97d9c0cc2a"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/refpolicy-review-1/source/doc/BUILD_INSTALL.md",
+      "sha256": "e0ed268cb87dff3e503eeed14ba81d6b2372a19a85828eaf2014a2935d3a4b4c"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/refpolicy-review-1/source/build.conf",
+      "sha256": "dd49e30164c2aa14a9ca29c08c0ae8afce16d6abc7be5ba2592a9395887aca92"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/refpolicy-review-1/source/policy/flask/security_classes",
+      "sha256": "25b41676f0d735fee6aa01f7797d1c98aa96842f2f6d1605d23f88704c607f06"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/refpolicy-review-1/source/policy/flask/access_vectors",
+      "sha256": "d29f9853330db3c0e3e9ef8a68812dd1037a656295c0f6a066d9950adc62db29"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/refpolicy-review-1/source/policy/modules/system/init.fc",
+      "sha256": "f492fbe2125e9c374d5b03c5fbbe723a61bdd25a194b99ccdbf8cdbb3f3fbcc7"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/selinux-original-full/source/external/selinux/libsepol/VERSION",
+      "sha256": "e69adfdeaa200c3eb6e41838fdc46e05d2430296d51adbe29a45f84084e8b385"
+    }
+  ],
+  "local_artifacts": [
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/refpolicy-baseline-1/source/policy.30",
+      "sha256": "c7753e80682533ab3522feb8432df928a0cbfa0517627b951f6274f6ccb2be84",
+      "bytes": 2279196
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/refpolicy-baseline-1/source/policy.cil",
+      "sha256": "61862f73f13738ee5f27f0d0b09912d8d87498d4cdb3ca01236aa486cd8b85f2",
+      "bytes": 54716109
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/refpolicy-baseline-1/source/policy.conf",
+      "sha256": "b3fd4b93f373c69ef2411a6405d435037be94a54072aa8cb345bf39c98b14610",
+      "bytes": 53449771
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/refpolicy-baseline-1/source/policy/modules.conf",
+      "sha256": "87da4dbfa4eeaae2543329a6fbd74523c99da0fc0fc41d9bd0f6ae331ca43b0c",
+      "bytes": 41379
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/refpolicy-baseline-1/build.log",
+      "sha256": "4acd77c263206dd6c61674ff21b6d18500d43b3fd16c1f966198380868fdeca0",
+      "bytes": 17354
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/refpolicy-baseline-1/policy-build-2.log",
+      "sha256": "16346e4b570078eaf4a1f79b81344b68bc54532b926d7acfef37be3b7dea10c1",
+      "bytes": 17007
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/refpolicy-baseline-1/cil-build.json",
+      "sha256": "e111403bd994f598976e14ebb733686d1a2fbe1ba89a569f1c3537efd624dd94",
+      "bytes": 1027
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/policy-contract-comparison-1/comparison.json",
+      "sha256": "8a21b2e146a41794cd2489ee6708c6dd573ac99eed6070c08d64967fafc45a32",
+      "bytes": 63035
+    }
+  ],
+  "evidence": [
+    {
+      "path": "reports/android16-policy-base-comparison/refpolicy-initial-build.json",
+      "sha256": "1d9b34747daafc22c1fb5d583088a42fa90ff1edc83e3e320a6888d22ecae6ed"
+    },
+    {
+      "path": "reports/android16-policy-base-comparison/refpolicy-baseline.json",
+      "sha256": "bb44ff5131fb8fe42528640eb0e54fa9822d29a7f64b9252f2978aa9571e64ca"
+    },
+    {
+      "path": "reports/android16-policy-base-comparison/comparison.json",
+      "sha256": "e36403d44ed603a1ba8f64fee092245370bd86a65d8bbd48ca033c33a08806ef"
+    },
+    {
+      "path": "reports/android16-policy-base-comparison/checkpolicy-build.json",
+      "sha256": "301d5051aa6b4827457f5ff659b3b709350b86b18c9bc26342049e1caee33b7b"
+    },
+    {
+      "path": "reports/android16-policy-base-comparison/checkmodule-version.json",
+      "sha256": "dbd29c8216e9bb5b58f77e5e6593e122326bf93d963eaef4e9beba6cf9066367"
+    },
+    {
+      "path": "reports/android16-policy-base-comparison/negative-global-merge.json",
+      "sha256": "82a6b39523194843353e53360f2bbc1236650a7befd30916dbfb13358732b7d2"
+    },
+    {
+      "path": "reports/android16-policy-base-comparison/checkpolicy-version.json",
+      "sha256": "096d587e916e35430a082ba2dbf3f1f42f349f28b6994dd227c37c2b8632af27"
+    },
+    {
+      "path": "reports/android16-policy-base-comparison/refpolicy-provenance.json",
+      "sha256": "85e4e28601d006bbd945d1791dd177b23e74de386d9af53fb02760c47bf90874"
+    },
+    {
+      "path": "reports/android16-policy-base-comparison/reproduce/refpolicy-baseline.py",
+      "sha256": "a13db2f21d37ee353f3e368767e6a343a58825a06178b3a4a0872669ddbc13c5"
+    },
+    {
+      "path": "reports/android16-policy-base-comparison/reproduce/compare-source-contracts.py",
+      "sha256": "4475c06070ea2673833ac8e69d0df448f70ae95550886a77da9ca7e2a415ffe6"
+    }
+  ]
+}

@@ -508,6 +508,23 @@ conflictos sin eliminar reglas para conseguir compilación. Herramientas anfitri
 originales pueden generar políticas por archivos, sin introducir objetos glibc en
 procesos Bionic. Una compilación offline no demuestra carga o enforcement.
 
+[Comparación fijada y ensayos](../reports/android16-policy-base-comparison/validation.json):
+refpolicy878b00a2 y AOSP original. No se ha seleccionado política de despliegue.
+
+| Base de política | Evidencia disponible | Adaptación y prueba pendientes |
+| --- | --- | --- |
+| AOSP con integración Linux | Platform CIL original de GSI compila offline, formato30, neverallow activo;107 clases y contratos Android presentes | No es vendor completo ni política de host validada. Añadir/integrar dominios, etiquetas, SID iniciales, servicios y administración Linux conservando semántica Android; boot, transiciones y denegaciones reales |
+| Linux/refpolicy con contratos AOSP | Revisión exacta, baseline MCS/systemd/formato30 y CIL compilan;136 clases contrastadas contra el compilador original | Faltan service_manager, hwservice_manager y property_service; incorporar contratos originales sin mezclar inadvertidamente atributos/roles/usuarios, y probar servicios AOSP |
+| Composición de ambas | Control negativo con ambos CIL sin adaptar falla en redeclaración de object_r; Binder comparte cuatro permisos | El fallo sólo descarta la composición global directa. Necesita fronteras justificadas de clases/orden, tipos/atributos, roles/usuarios/contextos y MLS, con herramientas semánticas existentes antes de transformar |
+
+Las clases/órdenes distintos no son por sí solos fallo ABI probado; revisar los
+mapeos de kernel/libselinux. Ambas fuentes usan atributos literales domain,
+exec_type, file_type, mlstrustedobject y proc_type: el riesgo de unión accidental
+requiere contrastar decisiones efectivas, no renombrar a ciegas ni quitar neverallow.
+El ensayo con herramientas AOSP cuya libsepol declara3.7 pasa, aunque refpolicy
+requiere upstream3.9+; una configuración compilada no acredita toda esa matriz.
+No elegir por tamaño del binario ni convertir inventario estático en enforcement.
+
 La decisión necesita después un arranque Linux permitido y recuperable con su
 política: boot/servicios Linux funcionales, etiquetas persistentes, transiciones
 del supervisor y servicios/app originales, Binder con identidad y denegaciones

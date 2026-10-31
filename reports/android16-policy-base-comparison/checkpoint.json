@@ -1,0 +1,59 @@
+{
+  "observed_at": "2026-10-31T04:05:33.382887+00:00",
+  "contract": "A16-QPR2-1",
+  "objective": "Complete unmodified arbitrary APK incl TV, Linux Rust/Smithay; native coherent AOSP16 QPR2, SF\u2192Wayland first hypothesis; no Waydroid/full Android. Preserve compatibility/isolation/stability/lightweight/install/update.",
+  "branch": "main",
+  "source_base_commit": "fb20daa0034d9064625dee81df4eb2dcb97adf13",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "relation_to_local_origin_tracking": "0\t0",
+  "pending_own": {
+    "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+    "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+    "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+    "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+  },
+  "pending_other_hashes": {
+    "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+  },
+  "own_milestone": "Pinned Linux refpolicy, both offline baselines compile; all136 source class inventories cross-check original compiler; naive composition rejected",
+  "terminal_exec_handles": [
+    89884,
+    58483,
+    33303,
+    84169,
+    23709,
+    24726,
+    81013
+  ],
+  "evidence_root": "reports/android16-policy-base-comparison",
+  "recovery_snapshot": "/home/tv/recuperacion-archtv/20261031T021219Z-native-flag-generators",
+  "tests": {
+    "binder_contract_equal": true,
+    "refpolicy_missing_android_registry_classes": [
+      "service_manager",
+      "hwservice_manager",
+      "property_service"
+    ],
+    "shared_literal_attributes": [
+      "domain",
+      "exec_type",
+      "file_type",
+      "mlstrustedobject",
+      "proc_type"
+    ],
+    "refpolicy_binary_compile": 0,
+    "refpolicy_CIL_compile": 0,
+    "unmodified_global_merge": 255
+  },
+  "next": "Use existing semantic policy tools before transformations; compare complete original AOSP platform policy plus Linux domain integration against Linux/refpolicy plus original AOSP policy contracts. Resolve global classes/order, role/user contexts, attribute namespaces, MLS/constraints and initial SIDs explicitly. Preserve assertions and require actual boot/service/denial tests before selection.",
+  "not_done": "No policy winner, merging semantics, Linux boot or active MAC validation. Original service/APK journeys remain pending; no VM restart authorized.",
+  "restart_policy": "No VM/client restart or Android full boot",
+  "process_observation": {
+    "observed_at": "2026-10-31T04:05:33.382986+00:00",
+    "build_handles": "All named handles terminal",
+    "policy_loaded_or_host_relabelled": false,
+    "Android_started": false
+  },
+  "active_exec_handles": []
+}

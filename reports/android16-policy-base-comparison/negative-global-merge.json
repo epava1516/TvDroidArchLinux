@@ -1,0 +1,31 @@
+{
+  "exit_code": 255,
+  "stdout": "",
+  "stderr": "Re-declaration of role object_r\nPrevious declaration of role at /home/tv/repositorio-principal/dist/aosp16/refpolicy-baseline-1/source/policy.cil:1\nBad role declaration at /home/tv/repositorio-principal/dist/aosp16/refpolicy-baseline-1/source/policy.cil:1\nFailed to build AST\nFailed to compile cildb: -1\n",
+  "argv": [
+    "prlimit",
+    "--as=2147483648",
+    "--cpu=20",
+    "--",
+    "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/source/secilc/secilc",
+    "-m",
+    "-M",
+    "true",
+    "-G",
+    "-c",
+    "30",
+    "-o",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-contract-comparison-2/unmodified-global-merge.bin",
+    "-f",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-contract-comparison-2/unmodified-global-merge.fc",
+    "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/etc/selinux/plat_sepolicy.cil",
+    "/home/tv/repositorio-principal/dist/aosp16/refpolicy-baseline-1/source/policy.cil"
+  ],
+  "seconds": 4.3932404139923165,
+  "scope": "Negative control only: two unmodified complete policies in global namespace. Failure does not reject either adapted strategy or prove policy impossibility.",
+  "neverallow_disabled": false,
+  "input_hashes": [
+    "3b063948a16dcd365b4ff4cb1eeda22b1580c6e0a3500e755ba8c358a0565559",
+    "61862f73f13738ee5f27f0d0b09912d8d87498d4cdb3ca01236aa486cd8b85f2"
+  ]
+}
