@@ -1,0 +1,40 @@
+; Offline bootstrap model: Linux-owned userspace initial-SID subject only.
+; Intended entry file is a verified root-owned 0700 Rust supervisor image.
+; No host file is labelled or installed by this module.
+(type archtv_launcher_exec)
+(roletype linux.object_r archtv_launcher_exec)
+(typetransition linux.init_t archtv_launcher_exec process archtv_launcher)
+(roletransition linux.system_r archtv_launcher_exec process archtv_launcher_r)
+(roleallow linux.system_r archtv_launcher_r)
+(allow linux.init_t archtv_launcher (process (transition siginh rlimitinh)))
+(allow linux.init_t archtv_launcher_exec (file (read getattr map open execute)))
+(allow archtv_launcher archtv_launcher_exec (file (read getattr map open execute entrypoint)))
+; Linux labels own the backing xattr filesystem. Actual label/install path unproved.
+(allow archtv_launcher_exec linux.fs_t (filesystem (associate)))
+; Bound producers independently of generic Linux role membership.
+(typeattribute archtv_not_bootstrap_creator)
+(typeattributeset archtv_not_bootstrap_creator (not linux.init_t))
+(neverallow archtv_not_bootstrap_creator archtv_launcher (process (transition dyntransition)))
+(typeattribute archtv_bootstrap_accessors)
+(typeattributeset archtv_bootstrap_accessors (linux.init_t archtv_launcher))
+(typeattribute archtv_not_bootstrap_accessor)
+(typeattributeset archtv_not_bootstrap_accessor (not archtv_bootstrap_accessors))
+(neverallow archtv_not_bootstrap_accessor archtv_launcher_exec (file (execute execute_no_trans)))
+(neverallow archtv_not_bootstrap_creator archtv_launcher_exec (file (write append create relabelto relabelfrom)))
+
+; Preserve NNP/nosuid flags using the original targeted process2 mechanism.
+; This affects SELinux label transitions, not Unix setuid/file capability semantics.
+(allow linux.init_t archtv_launcher (process2 (nnp_transition nosuid_transition)))
+(allow archtv_launcher init (process2 (nnp_transition nosuid_transition)))
+(neverallow archtv_not_bootstrap_creator archtv_launcher (process2 (nnp_transition nosuid_transition)))
+(neverallow archtv_launcher archtv_not_init (process2 (nnp_transition nosuid_transition)))
+
+; Existing NativeProcess::Drop uses Child::kill for failed startup/timeout.
+; Only the original coordinator, not other services/host domains, is admitted.
+(allow archtv_launcher init (process (sigkill)))
+(neverallow archtv_launcher archtv_not_init (process (sigkill)))
+
+; Creator SID may be shared by surviving pre-policy userspace tasks.
+; It must not mint or mutate the trusted entry label on writable files.
+; A verified prelabelled immutable bundle/installer trust chain is still required.
+(neverallow archtv_all_types archtv_launcher_exec (file (create write append setattr relabelto relabelfrom)))

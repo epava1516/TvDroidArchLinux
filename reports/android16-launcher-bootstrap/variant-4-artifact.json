@@ -1,0 +1,376 @@
+{
+  "schema": 1,
+  "contract": "A16-QPR2-1",
+  "status": "compiled_offline",
+  "scope": "Experimental artifact only; no installation/load/live policy/service/APK approval",
+  "profile_sha256": "82ff01317024fe09d50485b0670426f827f3c21ace532ecbfd1c338b9edd2050",
+  "input_sha256": {
+    "aosp": "3b063948a16dcd365b4ff4cb1eeda22b1580c6e0a3500e755ba8c358a0565559",
+    "linux": "61862f73f13738ee5f27f0d0b09912d8d87498d4cdb3ca01236aa486cd8b85f2"
+  },
+  "input_paths": {
+    "aosp": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/etc/selinux/plat_sepolicy.cil",
+    "linux": "/home/tv/repositorio-principal/dist/aosp16/refpolicy-baseline-1/source/policy.cil"
+  },
+  "modules": {
+    "runtime/aosp/android16-qpr2/policy/linux-proc.cil": "b7bb19bb97deb6baf41c177825520af525d08a68ec93ac462f7ba91a4d9f528e",
+    "runtime/aosp/android16-qpr2/policy/linux-servicemanager-selinux.cil": "7dfdc007d743dca10b838e78ef869cbdad3f4845da07ce7353124b60bf3145bd",
+    "runtime/aosp/android16-qpr2/policy/experiments/launcher-explicit.cil": "077dd8ec4f944b20361a6740d2edd0aa55ec4b2b063bfa5ed63591e5b56fec35",
+    "runtime/aosp/android16-qpr2/policy/experiments/launcher-bootstrap.cil": "dae1e9785700f256d4faa83710ea3965c190fc9ea14e0d21d52167aabe9ba71e"
+  },
+  "combined_cil_sha256": "22dfd54c17f3b4258421b08b99ad0cd5cc3faedd6eaae5c625ce7dec0a0cafab",
+  "limitations": [
+    "No live kernel/host/service/APK acceptance",
+    "Shared label/class mapping and full original-policy projections incomplete",
+    "100 Linux binary attributes absent already in standalone compiler control",
+    "No distribution/security approval inferred"
+  ],
+  "kernel_contract": {
+    "path": "runtime/aosp/android16-qpr2/policy/kernel-6.18.59-contract.json",
+    "sha256": "fc8e95e7d07d494c59be6e7e783df9404c967d759d9c710128412451a4032af5",
+    "coverage": {
+      "scope": "Upstream class/permission names only; not running kernel mapping/enforcement",
+      "reference": "Linux upstream6.18.59",
+      "source_commit": "1253a6aa5d104312bf0992afacc15220ae35bdf9",
+      "kernel_classes": 96,
+      "kernel_permissions": 1694,
+      "all_names_present": true,
+      "class_ordinal_differences": {
+        "process2": {
+          "kernel": 3,
+          "policy": 93
+        },
+        "system": {
+          "kernel": 4,
+          "policy": 3
+        },
+        "capability": {
+          "kernel": 5,
+          "policy": 4
+        },
+        "filesystem": {
+          "kernel": 6,
+          "policy": 5
+        },
+        "file": {
+          "kernel": 7,
+          "policy": 6
+        },
+        "netlink_iscsi_socket": {
+          "kernel": 36,
+          "policy": 50
+        },
+        "netlink_audit_socket": {
+          "kernel": 37,
+          "policy": 36
+        },
+        "netlink_fib_lookup_socket": {
+          "kernel": 38,
+          "policy": 51
+        },
+        "netlink_connector_socket": {
+          "kernel": 39,
+          "policy": 52
+        },
+        "netlink_netfilter_socket": {
+          "kernel": 40,
+          "policy": 53
+        },
+        "netlink_dnrt_socket": {
+          "kernel": 41,
+          "policy": 37
+        },
+        "association": {
+          "kernel": 42,
+          "policy": 38
+        },
+        "netlink_kobject_uevent_socket": {
+          "kernel": 43,
+          "policy": 39
+        },
+        "netlink_generic_socket": {
+          "kernel": 44,
+          "policy": 54
+        },
+        "netlink_scsitransport_socket": {
+          "kernel": 45,
+          "policy": 55
+        },
+        "netlink_rdma_socket": {
+          "kernel": 46,
+          "policy": 56
+        },
+        "netlink_crypto_socket": {
+          "kernel": 47,
+          "policy": 57
+        },
+        "appletalk_socket": {
+          "kernel": 48,
+          "policy": 40
+        },
+        "packet": {
+          "kernel": 49,
+          "policy": 41
+        },
+        "key": {
+          "kernel": 50,
+          "policy": 42
+        },
+        "memprotect": {
+          "kernel": 51,
+          "policy": 44
+        },
+        "peer": {
+          "kernel": 52,
+          "policy": 45
+        },
+        "capability2": {
+          "kernel": 53,
+          "policy": 46
+        },
+        "kernel_service": {
+          "kernel": 54,
+          "policy": 47
+        },
+        "tun_socket": {
+          "kernel": 55,
+          "policy": 48
+        },
+        "binder": {
+          "kernel": 56,
+          "policy": 49
+        },
+        "cap_userns": {
+          "kernel": 57,
+          "policy": 60
+        },
+        "cap2_userns": {
+          "kernel": 58,
+          "policy": 61
+        },
+        "sctp_socket": {
+          "kernel": 59,
+          "policy": 62
+        },
+        "icmp_socket": {
+          "kernel": 60,
+          "policy": 63
+        },
+        "ax25_socket": {
+          "kernel": 61,
+          "policy": 64
+        },
+        "ipx_socket": {
+          "kernel": 62,
+          "policy": 65
+        },
+        "netrom_socket": {
+          "kernel": 63,
+          "policy": 66
+        },
+        "atmpvc_socket": {
+          "kernel": 64,
+          "policy": 67
+        },
+        "x25_socket": {
+          "kernel": 65,
+          "policy": 68
+        },
+        "rose_socket": {
+          "kernel": 66,
+          "policy": 69
+        },
+        "decnet_socket": {
+          "kernel": 67,
+          "policy": 70
+        },
+        "atmsvc_socket": {
+          "kernel": 68,
+          "policy": 71
+        },
+        "rds_socket": {
+          "kernel": 69,
+          "policy": 72
+        },
+        "irda_socket": {
+          "kernel": 70,
+          "policy": 73
+        },
+        "pppox_socket": {
+          "kernel": 71,
+          "policy": 74
+        },
+        "llc_socket": {
+          "kernel": 72,
+          "policy": 75
+        },
+        "can_socket": {
+          "kernel": 73,
+          "policy": 76
+        },
+        "tipc_socket": {
+          "kernel": 74,
+          "policy": 77
+        },
+        "bluetooth_socket": {
+          "kernel": 75,
+          "policy": 78
+        },
+        "iucv_socket": {
+          "kernel": 76,
+          "policy": 79
+        },
+        "rxrpc_socket": {
+          "kernel": 77,
+          "policy": 80
+        },
+        "isdn_socket": {
+          "kernel": 78,
+          "policy": 81
+        },
+        "phonet_socket": {
+          "kernel": 79,
+          "policy": 82
+        },
+        "ieee802154_socket": {
+          "kernel": 80,
+          "policy": 83
+        },
+        "caif_socket": {
+          "kernel": 81,
+          "policy": 84
+        },
+        "alg_socket": {
+          "kernel": 82,
+          "policy": 85
+        },
+        "nfc_socket": {
+          "kernel": 83,
+          "policy": 86
+        },
+        "vsock_socket": {
+          "kernel": 84,
+          "policy": 87
+        },
+        "kcm_socket": {
+          "kernel": 85,
+          "policy": 88
+        },
+        "qipcrtr_socket": {
+          "kernel": 86,
+          "policy": 89
+        },
+        "smc_socket": {
+          "kernel": 87,
+          "policy": 90
+        },
+        "infiniband_pkey": {
+          "kernel": 88,
+          "policy": 58
+        },
+        "infiniband_endport": {
+          "kernel": 89,
+          "policy": 59
+        },
+        "bpf": {
+          "kernel": 90,
+          "policy": 94
+        },
+        "perf_event": {
+          "kernel": 93,
+          "policy": 95
+        },
+        "anon_inode": {
+          "kernel": 94,
+          "policy": 7
+        },
+        "io_uring": {
+          "kernel": 95,
+          "policy": 96
+        },
+        "user_namespace": {
+          "kernel": 96,
+          "policy": 98
+        }
+      },
+      "permission_bit_differences": {
+        "file": {
+          "watch_mountns": {
+            "kernel_bit": 33554432,
+            "policy_bit": 134217728
+          },
+          "execute_no_trans": {
+            "kernel_bit": 67108864,
+            "policy_bit": 33554432
+          },
+          "entrypoint": {
+            "kernel_bit": 134217728,
+            "policy_bit": 67108864
+          }
+        },
+        "dir": {
+          "watch_mountns": {
+            "kernel_bit": 33554432,
+            "policy_bit": 1073741824
+          },
+          "add_name": {
+            "kernel_bit": 67108864,
+            "policy_bit": 33554432
+          },
+          "remove_name": {
+            "kernel_bit": 134217728,
+            "policy_bit": 67108864
+          },
+          "reparent": {
+            "kernel_bit": 268435456,
+            "policy_bit": 134217728
+          },
+          "search": {
+            "kernel_bit": 536870912,
+            "policy_bit": 268435456
+          },
+          "rmdir": {
+            "kernel_bit": 1073741824,
+            "policy_bit": 536870912
+          }
+        },
+        "chr_file": {
+          "watch_mountns": {
+            "kernel_bit": 33554432,
+            "policy_bit": 134217728
+          }
+        },
+        "netlink_route_socket": {
+          "nlmsg": {
+            "kernel_bit": 8388608,
+            "policy_bit": 33554432
+          }
+        },
+        "capability2": {
+          "bpf": {
+            "kernel_bit": 128,
+            "policy_bit": 256
+          },
+          "checkpoint_restore": {
+            "kernel_bit": 256,
+            "policy_bit": 128
+          }
+        },
+        "cap2_userns": {
+          "bpf": {
+            "kernel_bit": 128,
+            "policy_bit": 256
+          },
+          "checkpoint_restore": {
+            "kernel_bit": 256,
+            "policy_bit": 128
+          }
+        }
+      },
+      "mapping": "Original kernel maps by class and permission name; ordinal differences are not rejected"
+    }
+  },
+  "compiler_sha256": "b164c77d935a46c5191b24648df724f3e5b6da70478d37313afc15d024dae130",
+  "compiler_exit_code": 0,
+  "binary_sha256": "396d566edd03bec970b8befbbfe4bf07a44a7bb63feacaacdd547ff91758efc6"
+}

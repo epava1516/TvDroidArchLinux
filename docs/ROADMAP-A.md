@@ -22,13 +22,16 @@ No hay carga/exec real ni bootstrap de host, ni sustitución del perfil base.
 
 La [auditoría del actor](../reports/android16-launcher-permission-audit/findings.json)
 distingue54 potenciales reglas de salida/633 de entrada de27 decisiones concretas.
-S1 sigue abierto: productor del rol inexistente, preparación privilegiada previa
-y grants heredados por justificar. Siguiente experimento offline: entrada por
-archivo de confianza/tipo/rol y productor restringido mediante kernel original,
-sin conceder una transición global a Android ni asumir systemd con SELinux.
+S1 sigue abierto. El [bootstrap offline](../reports/android16-launcher-bootstrap/findings.json)
+modela productor init_t, entrada tipada/rol y supervisor Rust padre: 51 consultas,
+cuatro compilaciones con aserciones. No hay productor real probado. Seis permisos
+NNP/nosuid hacia gestores siguen denegados. Revisar el contrato completo
+init/servicios/zygote y la colocación de credenciales/NNP; no desactivarlo ni
+sumar excepciones aisladas. Procedencia/instalación del ejecutable, FD/stdio/pidfd,
+etiquetas/dispositivos/cgroups y recuperación siguen pendientes de S0–S2.
 
 La [inspección nativa actual](../reports/android16-postboot-mac-readiness/findings.json)
-confirma getcon kernel, etiqueta de ejecutable ausente y lectura status real sólo
+confirma getcon kernel, getfilecon ENODATA sin demostrar etiqueta efectiva y lectura status real sólo
 tras configurar montaje RO explícito. Systemd -SELINUX exige integración de host.
 Mantener controles originales/RC/cohortes; avance independiente de lectura/offline
 permitido. Las nueve etapas Markor y todas las aplicaciones reales siguen abiertas.

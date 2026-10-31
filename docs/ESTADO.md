@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-launcher-permission-audit/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-launcher-bootstrap/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -17,7 +17,22 @@ Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCC
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
 
-## Última auditoría · herencia y productor del lanzador
+## Avance vigente · bootstrap original, sólo offline
+
+[Resultados](../reports/android16-launcher-bootstrap/findings.json) y
+[checkpoint](../reports/android16-launcher-bootstrap/checkpoint.json): cuatro
+variantes compilan con aserciones activas; 51 consultas originales verifican
+21 cálculos/permisos y 30 denegaciones. El prefijo creador→supervisor Rust→init
+conserva las identidades previstas. Seis consultas NNP/nosuid de los gestores
+siguen denegadas; no hay cadena completa disponible ni ejecución etiquetada.
+La fuente kernel de referencia muestra que «kernel» antes de cargar política
+puede representar INIT: el modelo usa linux.init_t, sin afirmar su SID real.
+El ejecutable de entrada no puede crearse, modificarse ni reetiquetarse mediante
+los permisos del candidato; procedencia, instalación y confianza del inode siguen
+sin demostrar. El supervisor Rust debe crear el canal como padre, después de la
+preparación privilegiada. R1-MAC y las nueve etapas de Markor siguen abiertas.
+
+## Auditoría anterior · herencia y productor del lanzador
 
 [Resultados](../reports/android16-launcher-permission-audit/findings.json): export
 original completo152.494 AV/657 xperm;54 reglas potenciales de salida,633 de entrada,

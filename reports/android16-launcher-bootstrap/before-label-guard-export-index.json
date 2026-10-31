@@ -1,0 +1,31 @@
+{
+  "scope": "Original final binary export, no live kernel state. No bounds means bounded-SID fallback cannot be assumed in model.",
+  "argv": [
+    "/home/tv/repositorio-principal/dist/aosp16/checkpolicy-host-2/source/checkpolicy",
+    "-M",
+    "-b",
+    "-C",
+    "-o",
+    "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-3/export.cil",
+    "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-3/policy.bin"
+  ],
+  "exit": 0,
+  "path": "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-3/export.cil",
+  "sha256": "dcb78d073d6e883618e236432252270571a4ea0828a9d594188b7ccdb0406cd7",
+  "typebounds": [],
+  "policycaps": [
+    "(policycap cgroup_seclabel)",
+    "(policycap extended_socket_class)",
+    "(policycap functionfs_seclabel)",
+    "(policycap genfs_seclabel_symlinks)",
+    "(policycap ioctl_skip_cloexec)",
+    "(policycap network_peer_controls)",
+    "(policycap nnp_nosuid_transition)",
+    "(policycap open_perms)",
+    "(policycap userspace_initial_context)"
+  ],
+  "initial_sid_contexts": [
+    "(sidcontext kernel (linux.system_u linux.system_r linux.kernel_t ((s0) (s0))))",
+    "(sidcontext init (linux.system_u linux.system_r linux.init_t ((s0) (s0))))"
+  ]
+}

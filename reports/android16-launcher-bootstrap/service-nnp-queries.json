@@ -1,0 +1,83 @@
+{
+  "scope": "Offline original manager exec-boundary control, not service execution",
+  "results": [
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-2/policy.bin",
+        "u:r:init:s0",
+        "u:r:servicemanager:s0",
+        "process2",
+        "nnp_transition"
+      ],
+      "exit": 7,
+      "stdout": "requested permission nnp_transition denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-2/policy.bin",
+        "u:r:init:s0",
+        "u:r:servicemanager:s0",
+        "process2",
+        "nosuid_transition"
+      ],
+      "exit": 7,
+      "stdout": "requested permission nosuid_transition denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-2/policy.bin",
+        "u:r:init:s0",
+        "u:r:hwservicemanager:s0",
+        "process2",
+        "nnp_transition"
+      ],
+      "exit": 7,
+      "stdout": "requested permission nnp_transition denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-2/policy.bin",
+        "u:r:init:s0",
+        "u:r:hwservicemanager:s0",
+        "process2",
+        "nosuid_transition"
+      ],
+      "exit": 7,
+      "stdout": "requested permission nosuid_transition denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-2/policy.bin",
+        "u:r:init:s0",
+        "u:r:vndservicemanager:s0",
+        "process2",
+        "nnp_transition"
+      ],
+      "exit": 7,
+      "stdout": "requested permission nnp_transition denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-2/policy.bin",
+        "u:r:init:s0",
+        "u:r:vndservicemanager:s0",
+        "process2",
+        "nosuid_transition"
+      ],
+      "exit": 7,
+      "stdout": "requested permission nosuid_transition denied by te-rule\n",
+      "stderr": ""
+    }
+  ]
+}

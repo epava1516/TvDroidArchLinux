@@ -1,0 +1,13 @@
+{
+  "scope": "Original libsepol computation for socket created by actor, not actual socket/exec",
+  "argv": [
+    "/home/tv/repositorio-principal/dist/aosp16/policy-launch-transitions-1/sepol_compute_transition",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-launcher-explicit-2/policy.bin",
+    "linux.system_u:archtv_launcher_r:archtv_launcher:s0",
+    "linux.system_u:archtv_launcher_r:archtv_launcher:s0",
+    "unix_stream_socket"
+  ],
+  "exit": 0,
+  "stdout": "linux.system_u:object_r:archtv_launcher:s0\n",
+  "stderr": ""
+}

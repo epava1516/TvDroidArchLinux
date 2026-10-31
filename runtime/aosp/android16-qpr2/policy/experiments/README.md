@@ -40,3 +40,12 @@ validado el conjunto en ejecución; no quitar atributos sólo para aparentar
 mínimo privilegio. El actor no puede realizar administración privilegiada
 examinada: resolver preparación en padre de confianza y entrada específica por
 ejecutable/rol, con original kernel, antes de cualquier aprobación de despliegue.
+
+`launcher-bootstrap.cil` añade entrada offline desde linux.init_t por archivo y
+rol exclusivo, permisos NNP/nosuid sólo en el prefijo y SIGKILL del padre hacia
+init. Prohíbe globalmente crear/modificar/reetiquetar el tipo del ejecutable.
+[Resultados](../../../../../reports/android16-launcher-bootstrap/findings.json):
+fuente INIT/kernel alias, 51 consultas, cuatro compilaciones. No está instalado;
+productor, identidad/inode y confianza de instalación sin demostrar. Seis permisos
+NNP/nosuid de gestores siguen denegados. No eliminar NNP ni cargar política como
+consecuencia de este modelo. Perfil canónico intacto.

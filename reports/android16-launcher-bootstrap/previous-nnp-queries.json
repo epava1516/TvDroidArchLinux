@@ -1,0 +1,61 @@
+{
+  "scope": "Offline previous candidate process2 only, no kernel exec inference without policycap/source conditions",
+  "results": [
+    {
+      "case": "actor_to_init_nnp_transition",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "linux.system_u:archtv_launcher_r:archtv_launcher:s0",
+        "u:r:init:s0",
+        "process2",
+        "nnp_transition"
+      ],
+      "exit": 7,
+      "stdout": "requested permission nnp_transition denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "actor_to_init_nosuid_transition",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "linux.system_u:archtv_launcher_r:archtv_launcher:s0",
+        "u:r:init:s0",
+        "process2",
+        "nosuid_transition"
+      ],
+      "exit": 7,
+      "stdout": "requested permission nosuid_transition denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "kernel_to_actor_nnp_transition",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "linux.system_u:linux.system_r:linux.kernel_t:s0",
+        "linux.system_u:archtv_launcher_r:archtv_launcher:s0",
+        "process2",
+        "nnp_transition"
+      ],
+      "exit": 7,
+      "stdout": "requested permission nnp_transition denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "kernel_to_actor_nosuid_transition",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-launcher-explicit-2/policy.bin",
+        "linux.system_u:linux.system_r:linux.kernel_t:s0",
+        "linux.system_u:archtv_launcher_r:archtv_launcher:s0",
+        "process2",
+        "nosuid_transition"
+      ],
+      "exit": 7,
+      "stdout": "requested permission nosuid_transition denied by te-rule\n",
+      "stderr": ""
+    }
+  ]
+}

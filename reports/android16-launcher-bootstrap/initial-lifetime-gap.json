@@ -1,0 +1,33 @@
+{
+  "scope": "Offline SIGKILL/SIGCHLD permissions. SIGKILL traced to reference task_kill; SIGCHLD-to-wait requirement not established for this kernel, not added to policy.",
+  "results": [
+    {
+      "case": "kill",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-2/policy.bin",
+        "linux.system_u:archtv_launcher_r:archtv_launcher:s0",
+        "u:r:init:s0",
+        "process",
+        "sigkill"
+      ],
+      "exit": 7,
+      "stdout": "requested permission sigkill denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "sigchld_probe",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-2/policy.bin",
+        "u:r:init:s0",
+        "linux.system_u:archtv_launcher_r:archtv_launcher:s0",
+        "process",
+        "sigchld"
+      ],
+      "exit": 7,
+      "stdout": "requested permission sigchld denied by te-rule\n",
+      "stderr": ""
+    }
+  ]
+}

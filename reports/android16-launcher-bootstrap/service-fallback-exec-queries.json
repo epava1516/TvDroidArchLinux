@@ -1,0 +1,47 @@
+{
+  "scope": "Offline reference kernel automatic-transition fallback permission only; not actual exec or inferred child SID",
+  "results": [
+    {
+      "case": "servicemanager",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-3/policy.bin",
+        "u:r:init:s0",
+        "u:object_r:servicemanager_exec:s0",
+        "file",
+        "execute_no_trans"
+      ],
+      "exit": 7,
+      "stdout": "requested permission execute_no_trans denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "hwservicemanager",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-3/policy.bin",
+        "u:r:init:s0",
+        "u:object_r:hwservicemanager_exec:s0",
+        "file",
+        "execute_no_trans"
+      ],
+      "exit": 7,
+      "stdout": "requested permission execute_no_trans denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "vndservicemanager",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-3/policy.bin",
+        "u:r:init:s0",
+        "u:object_r:vndservicemanager_exec:s0",
+        "file",
+        "execute_no_trans"
+      ],
+      "exit": 1,
+      "stdout": "",
+      "stderr": "libsepol.context_from_record: type vndservicemanager_exec is not defined\nlibsepol.context_from_record: could not create context structure\nlibsepol.context_from_string: could not create context structure\nlibsepol.sepol_context_to_sid: could not convert u:object_r:vndservicemanager_exec:s0 to sid\nInvalid target context u:object_r:vndservicemanager_exec:s0\n"
+    }
+  ]
+}

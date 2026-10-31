@@ -1,0 +1,121 @@
+{
+  "branch": "main",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "objective": "Complete unmodified APK on Linux Rust/Smithay with coherent original AOSP16QPR2/Bionic, no Waydroid or complete Android boot; broad compatibility, isolation, stability, lightness, installation/update.",
+  "canonical_entry": "docs/ESTADO.md",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "constraints": [
+    "User reaffirmed no reboot/security state changes based on historical authorization",
+    "No policy load, relabel, setenforce or host setup modification in this hito",
+    "A16-QPR2-1; full unmodified APK on Linux Rust/Smithay, no Waydroid/full Android; broad compatibility/isolation/stability/lightness/install/update",
+    "ARM/external services/DRM separate; own fixtures/probes not compatibility acceptance"
+  ],
+  "observed_at": "2026-10-31T13:10:38.224608+00:00",
+  "base_commit": "acaa842a973c057e5e487bc01688a90b1ab3a88d",
+  "previous_checkpoint": "reports/android16-launcher-permission-audit/checkpoint.json",
+  "relation_to_local_origin_tracking": "0\t0",
+  "terminal_exec_handles": [
+    39749,
+    6839,
+    93454,
+    36578,
+    94354,
+    37306,
+    38143,
+    33995,
+    82131
+  ],
+  "active_exec_handles": [],
+  "process_scope": "Offline compile/query/export jobs completed; no persistent runtime or REA target opened. Preboot handles remain historical. Unknown export command handle not reused; completed export verified by file/hash.",
+  "tests": {
+    "neverallow_disabled": false,
+    "queries": 51,
+    "allowed_or_computed": 21,
+    "denied": 30,
+    "errors": 0,
+    "checked_edges": "creator\u2192actor\u2192coordinator selected TE/MLS/RBAC and process2 NNP/nosuid permissions; source context preserved appropriately, socket context and control rights computed",
+    "recovery": "NativeProcess Child::kill has source-justified sigkill only toward coordinator, not manager/host; actual kill/wait/pidfd under labels untested",
+    "producer_controls": "Other modeled kernel_t/sshd/unconfined/app contexts denied enter/execute; model does not distinguish Unix UID, root DAC0700 still mandatory",
+    "cohort_gap": "Six original manager exec process2 NNP/nosuid checks denied. Final export has no typebounds, so bounded fallback not supplied in model. With inherited flags and enforcing reference checks, do not assume managers execute despite passing first two edges.",
+    "four_offline_compiles": 0,
+    "label_guard": "Six creator create/write/append/setattr/relabelto/relabelfrom decisions denied; global neverallow assertions compile. No live labelling or exploit tested."
+  },
+  "next": "Review full original init/service/zygote execution contract and NNP/credential placement; resolve coherent cohort mode and all supervisor descriptor/host-root requirements, rather than adding constructor/manager-specific exceptions. Prepare recoverable S0\u2013S2 artifact and enforce source/label/identity checks before any separately authorized live load; then original managers and Markor.",
+  "evidence": {
+    "reports/android16-launcher-bootstrap/before-label-guard-export-index.json": "b797fcf77dcee779a3cc26775e5c1faa215c839be165203ec7d83bd45db79fe5",
+    "reports/android16-launcher-bootstrap/bootstrap-before-kill.cil": "cd61be2ba1e0bd1de3376a417f7c8f5cfe2b14775a7f34145cc84c920e778fb8",
+    "reports/android16-launcher-bootstrap/bootstrap-before-label-guard.cil": "20a5a431ba76b2eeed01236bb8ec893cff96f4ff5452f431f5e3de1e7e142e73",
+    "reports/android16-launcher-bootstrap/bootstrap-initial-kernel-subject.cil": "7d6c2e6e7c1d01bf91cf8fd9d64ed18024a95e87a218cfaa96a18e4764a4fabf",
+    "reports/android16-launcher-bootstrap/final-export-index.json": "ce53c38da7cd6156c2b0f1cae1fa1459ced24fbe7f8f57706768efb2866b779d",
+    "reports/android16-launcher-bootstrap/findings.json": "2dac8399ea913cf8cb76eedbdf3cb326bc5125d9e529bcd2df313d36908e6050",
+    "reports/android16-launcher-bootstrap/initial-entry-label-forgery-surface.json": "b96ed32e55839947d0754fcd5e432689785d52cab4a3a286ac642f09c8984439",
+    "reports/android16-launcher-bootstrap/initial-lifetime-gap.json": "6ba89188f3f2b540713add121b53ff89570bff9ef78b7826ba8c927951d9dc03",
+    "reports/android16-launcher-bootstrap/kernel-source.json": "05346b3f1392ff4bd306352f0eccf10934fc2785798ee8519a3ff4279146665c",
+    "reports/android16-launcher-bootstrap/previous-channel-object-context.json": "fbb2cb6fab59ac9118f0473dbf0b241f9d8a8c4f22d751067b4488cce53e2638",
+    "reports/android16-launcher-bootstrap/previous-nnp-queries.json": "0305d8843128c08f209b94b3388233397dd74ee4c4fb452cfe3d330428696627",
+    "reports/android16-launcher-bootstrap/profile.json": "82ff01317024fe09d50485b0670426f827f3c21ace532ecbfd1c338b9edd2050",
+    "reports/android16-launcher-bootstrap/queries.json": "e24e690ff214b00323fe9047f7104774f1ea5c7b03c0dba3966baca6d5f7868d",
+    "reports/android16-launcher-bootstrap/query.py": "efdaea90af780fcfdbd1e01c553950f18560533fa0d76868c0552c0959beeca6",
+    "reports/android16-launcher-bootstrap/service-fallback-exec-queries.json": "7f58e02c29b9c3e9ee99865932a7fa3aee607e02f995e8c9b8e28f29a23b0a33",
+    "reports/android16-launcher-bootstrap/service-nnp-queries.json": "377b62ae41dc68387ad045f83f6be4ee631f5a2308b2abbaeb78ccbcd1eb591e",
+    "reports/android16-launcher-bootstrap/variant-1-artifact.json": "45adbe600db15a5571dd82d72e85a9fb0199aa4379c50baf5449f537dfdb05fb",
+    "reports/android16-launcher-bootstrap/variant-1-compiler.json": "d65801ee84362f04ef4c0d5d7aeed7edc9d5b08e4dd6e139762860a48990316d",
+    "reports/android16-launcher-bootstrap/variant-2-artifact.json": "9486169d27e39b6a4698ac2f4d935b1d6598310f66c2ac25d2a373d8d55f0a30",
+    "reports/android16-launcher-bootstrap/variant-2-compiler.json": "74548275ba18b95a4ef0856a726f8c91595ceb7fa43455ec67d5976a5ded7194",
+    "reports/android16-launcher-bootstrap/variant-3-artifact.json": "0225c7798b631305eb46f19367a8ad8e7b76b201b358190e4186794383c170b3",
+    "reports/android16-launcher-bootstrap/variant-3-compiler.json": "6ced41fbd48bd989d8c91219145ae98af34c9e9d0f33ea2625a5fa599515a6d5",
+    "reports/android16-launcher-bootstrap/variant-4-artifact.json": "46ef1480483440753b7bf7f283615cf06ee876909949adc3d420ccfb3829edea",
+    "reports/android16-launcher-bootstrap/variant-4-compiler.json": "019a7826f6ac247b86ff30ac280aaedcb46b1ab41bfab6352758db72f784c87c",
+    "reports/android16-launcher-bootstrap/verify.py": "9fdafbd9d4ec727f5174d9016116152ea596d0703cf0f4d101e282b8bc7c83cc"
+  },
+  "local_artifact": {
+    "scope": "Final original binary export, not live policy",
+    "argv": [
+      "/home/tv/repositorio-principal/dist/aosp16/checkpolicy-host-2/source/checkpolicy",
+      "-M",
+      "-b",
+      "-C",
+      "-o",
+      "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-4/export.cil",
+      "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-4/policy.bin"
+    ],
+    "exit": 0,
+    "path": "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-4/export.cil",
+    "sha256": "33564688f0304edf2c7ea64b60efee8a0e90943ffbb06d426e38158725146a0e",
+    "typebounds": [],
+    "policycaps": [
+      "(policycap cgroup_seclabel)",
+      "(policycap extended_socket_class)",
+      "(policycap functionfs_seclabel)",
+      "(policycap genfs_seclabel_symlinks)",
+      "(policycap ioctl_skip_cloexec)",
+      "(policycap network_peer_controls)",
+      "(policycap nnp_nosuid_transition)",
+      "(policycap open_perms)",
+      "(policycap userspace_initial_context)"
+    ],
+    "initial_sid_contexts": [
+      "(sidcontext kernel (linux.system_u linux.system_r linux.kernel_t ((s0) (s0))))",
+      "(sidcontext init (linux.system_u linux.system_r linux.init_t ((s0) (s0))))"
+    ]
+  },
+  "graphify": {
+    "mode": "AST-only isolated staged worktree",
+    "worktree": "/home/tv/.cache/archtv/worktrees/bootstrap-final",
+    "terminal_exec_handle": 14227,
+    "nodes": 2898,
+    "edges": 5522,
+    "communities": 237
+  }
+}

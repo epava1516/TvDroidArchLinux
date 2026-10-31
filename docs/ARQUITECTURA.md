@@ -8,6 +8,38 @@ fáciles ni se mantienen adaptaciones particulares por APK como estrategia.
 La vía principal **es Bionic/AOSP nativo**; es una decisión contractual, todavía
 sin validación funcional de la base nueva. El host Linux puede conservar glibc.
 
+## Entrada de supervisor · modelo vigente y límites
+
+[Resultados](../reports/android16-launcher-bootstrap/findings.json) y
+[checkpoint](../reports/android16-launcher-bootstrap/checkpoint.json): cuatro
+variantes compilan con aserciones activas; 51 consultas originales verifican
+21 cálculos/permisos y 30 denegaciones. El prefijo creador→supervisor Rust→init
+conserva las identidades previstas. Seis consultas NNP/nosuid de los gestores
+siguen denegadas; no hay cadena completa disponible ni ejecución etiquetada.
+La fuente kernel de referencia muestra que «kernel» antes de cargar política
+puede representar INIT: el modelo usa linux.init_t, sin afirmar su SID real.
+El ejecutable de entrada no puede crearse, modificarse ni reetiquetarse mediante
+los permisos del candidato; procedencia, instalación y confianza del inode siguen
+sin demostrar. El supervisor Rust debe crear el canal como padre, después de la
+preparación privilegiada. R1-MAC y las nueve etapas de Markor siguen abiertas.
+
+El alias prepolítica no identifica el SID numérico. Con policycap
+userspace_initial_context, la referencia asigna INIT a exec de usuarios; falta
+contrastar fuente/build Arch y observar identidades tras una carga autorizada.
+Los sujetos iniciales pueden compartir init_t: no equivale a UID root ni acredita
+un productor confiable. La guarda global del tipo de entrada impide fabricarlo
+por AV normales, pero no sustituye instalación autenticada, DAC, origen de FS,
+xattrs e inode estable. Probar estas fronteras antes de cualquier despliegue.
+
+Las consultas process2 no prueban exec. La referencia kernel contempla fallback
+a dominio anterior para transición automática rechazada por NNP; execute_no_trans
+sigue denegado para dos gestores examinados, y el tipo vndservicemanager_exec
+no existe en ese candidato (error, no denegación). En permisivo estos controles
+no demuestran autorización. No hay typebounds en el export final. Revisar la
+cohorte y el límite de aplicaciones antes de decidir adaptaciones. SIGKILL hacia
+init respalda Child::kill del padre; no acredita pidfd, wait, stdio ni cierre
+completo. Una denegación SIGCHLD no prueba fallo de waitpid.
+
 ## Plan de seguridad y recuperación del anfitrión
 
 Vigente tras el arranque autorizado: [revisión y ejecución original](../reports/android16-postboot-mac-readiness/findings.json).

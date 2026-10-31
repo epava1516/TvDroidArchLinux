@@ -1,0 +1,21 @@
+{
+  "reference": "Upstream Linux6.18.59",
+  "commit": "1253a6aa5d104312bf0992afacc15220ae35bdf9",
+  "sources": [
+    {
+      "path": "/home/tv/.cache/archtv/linux-bootstrap-hooks-1/hooks.c",
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/security/selinux/hooks.c",
+      "sha256": "d39f3b81a355f8ae04cd7e4e9915e3bbd9f52727065fc5b177b735e4957bb846"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/linux-selinux-contract-1/security/selinux/ss/services.c",
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/security/selinux/ss/services.c",
+      "sha256": "a3dc132fceec9f42a8d1728cef1b45685d5d2e0f3b5dcb812bec4049c5c19f67"
+    }
+  ],
+  "signature_verified": false,
+  "host_package_build_equivalence_verified": false,
+  "scope": "Reference source behavior, not traced live Arch kernel execution",
+  "initial_sid": "Reference pre-policy exec assigns SECINITSID_INIT; security_sid_to_context translates INIT to kernel before initial load. Candidate capability userspace_initial_context and SID init context select Linux init_t; observed kernel string alone cannot identify actual numeric SID.",
+  "nnp": "Reference check_nnp_nosuid checks process2 nnp/nosuid permissions when capability enabled, or bounded SID fallback. Explicit exec context fails on refusal; automatic transition may retain old SID. Enforcing effect not tested live."
+}

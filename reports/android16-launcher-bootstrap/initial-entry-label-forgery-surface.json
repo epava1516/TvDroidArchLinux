@@ -1,0 +1,44 @@
+{
+  "scope": "MAC role/type permissions do not distinguish Unix UID. Broad creator create/relabel is not proof of trusted executable provenance; no exploit or host label change attempted",
+  "results": [
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-3/policy.bin",
+        "linux.system_u:linux.system_r:linux.init_t:s0",
+        "linux.system_u:linux.object_r:archtv_launcher_exec:s0",
+        "file",
+        "create"
+      ],
+      "exit": 0,
+      "stdout": "requested permission create allowed\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-3/policy.bin",
+        "linux.system_u:linux.system_r:linux.init_t:s0",
+        "linux.system_u:linux.object_r:archtv_launcher_exec:s0",
+        "file",
+        "write"
+      ],
+      "exit": 0,
+      "stdout": "requested permission write allowed\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-3/policy.bin",
+        "linux.system_u:linux.system_r:linux.init_t:s0",
+        "linux.system_u:linux.object_r:archtv_launcher_exec:s0",
+        "file",
+        "relabelto"
+      ],
+      "exit": 0,
+      "stdout": "requested permission relabelto allowed\n",
+      "stderr": ""
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "observed_at": "2026-10-31T13:10:38.224608+00:00",
+  "base_commit": "acaa842a973c057e5e487bc01688a90b1ab3a88d",
+  "scope": "Offline original executable/type/role bootstrap model and original-kernel source review. Not actual context assignment, syscall, service readiness, policy loading or APK acceptance",
+  "default_profile_unchanged": {
+    "path": "runtime/aosp/android16-qpr2/policy/build-profile.json",
+    "sha256": "22178f2ec8d9bb7d84bf834f9a41fbd4e162fd63edaf806a595e6803d3dfb0ee"
+  },
+  "module": {
+    "path": "runtime/aosp/android16-qpr2/policy/experiments/launcher-bootstrap.cil",
+    "sha256": "dae1e9785700f256d4faa83710ea3965c190fc9ea14e0d21d52167aabe9ba71e"
+  },
+  "kernel_source": "kernel-source.json",
+  "initial_control": "Variant1 assumed kernel_t from displayed kernel string. Reference source shows INIT alias; initial compiled control retained, final model strictly init_t. Numeric live SID and post-load creator still require observation.",
+  "model": {
+    "creator": "linux.system_u:linux.system_r:linux.init_t:s0",
+    "trusted_entry_file": "linux.system_u:linux.object_r:archtv_launcher_exec:s0",
+    "actor": "linux.system_u:archtv_launcher_r:archtv_launcher:s0",
+    "coordinator": "u:r:init:s0",
+    "file_contract": "Intended immutable root-owned0700 Rust supervisor, not installed or verified. Global neverallow forbids every type creating, modifying or relabelling this entry type; separate authenticated installation/provenance remains unresolved.",
+    "mechanism": "Original type/role transition through labelled entry file, then explicit original exec context toward Android. No dependency on PID1 SELinuxContext property claimed.",
+    "ordering": "Linux creator performs privileged namespace/root/credential preparation before Rust supervisor actor. Existing NativeProcess then creates channel in actor before child exec, so original coordinator uses actor-opened FD. No extra SCM_RIGHTS or lifetime protocol invented."
+  },
+  "results": {
+    "neverallow_disabled": false,
+    "queries": 51,
+    "allowed_or_computed": 21,
+    "denied": 30,
+    "errors": 0,
+    "checked_edges": "creator\u2192actor\u2192coordinator selected TE/MLS/RBAC and process2 NNP/nosuid permissions; source context preserved appropriately, socket context and control rights computed",
+    "recovery": "NativeProcess Child::kill has source-justified sigkill only toward coordinator, not manager/host; actual kill/wait/pidfd under labels untested",
+    "producer_controls": "Other modeled kernel_t/sshd/unconfined/app contexts denied enter/execute; model does not distinguish Unix UID, root DAC0700 still mandatory",
+    "cohort_gap": "Six original manager exec process2 NNP/nosuid checks denied. Final export has no typebounds, so bounded fallback not supplied in model. With inherited flags and enforcing reference checks, do not assume managers execute despite passing first two edges.",
+    "four_offline_compiles": 0,
+    "label_guard": "Six creator create/write/append/setattr/relabelto/relabelfrom decisions denied; global neverallow assertions compile. No live labelling or exploit tested."
+  },
+  "acceptance": {
+    "selected_prefix_model_verified": true,
+    "actual_exec_verified": false,
+    "cohort_nnp_mode_compatible": false,
+    "deployment_approved": false,
+    "APK_stages_accepted": 0
+  },
+  "limitations": [
+    "Before-policy kernel string is an alias and not proof of a real kernel_t producer. Final source init_t model is reference-derived; actual Arch package source/build equivalence and post-load identity not proved",
+    "Typed root entry DAC/hash/inode stability, filesystem association/labels installation, credentials/caps/secure-exec/NNP flags and actual root layout have not been tested. No inode is labelled or package installed",
+    "Actor must remain the Rust parent that creates control channel; preceding diagnostic supervisor\u2192unshare pipeline cannot be reused unchanged after actor role because administrative MAC checks denied",
+    "Normal stdio/other inherited FDs, PIDFD and cgroup operations/labels, expected context guard and actor host-library view need complete contract/testing, not just a computed socket context",
+    "SIGCHLD probe was denied, but no task_wait hook found in reviewed reference; do not claim waitpid fails solely from that permission or add it as a guessed fix. Only source-backed sigkill bridge added",
+    "Targeted process2 permissions do not turn off Unix NNP or nosuid semantics; original flags remain. Passing those permissions offline is not actual execution, and downstream cohort checks are unmet",
+    "No per-manager NNP workaround or silent NoNewPrivileges removal. Evaluate original init/service/zygote lifecycle as whole, including app boundary, before choosing further adaptation",
+    "Source utilities run as host tools, not REA MCP. Source-available analysis needs no opaque target; no CLI invocation presented as connection",
+    "Default policy profile, earlier six pending changes and original caches preserved. New source snapshot separate. No load/enforce/relabel/reboot or Android boot",
+    "ARM, external services/DRM, Markor full nine-stage matrix remain unchanged"
+  ],
+  "next": "Review full original init/service/zygote execution contract and NNP/credential placement; resolve coherent cohort mode and all supervisor descriptor/host-root requirements, rather than adding constructor/manager-specific exceptions. Prepare recoverable S0\u2013S2 artifact and enforce source/label/identity checks before any separately authorized live load; then original managers and Markor."
+}
