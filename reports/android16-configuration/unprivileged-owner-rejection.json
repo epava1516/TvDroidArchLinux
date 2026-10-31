@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/home/tv/repositorio-principal/dist/aosp16/property-info-host-1/property-info",
+    "--inspect",
+    "/home/tv/repositorio-principal/dist/aosp16/property-info-host-1/property_info",
+    "ro.build.id",
+    "ro.build.version.sdk",
+    "ro.debuggable",
+    "persist.sys.dalvik.vm.lib.2",
+    "ro.vndk.version",
+    "archtv.unknown.property"
+  ],
+  "exit_code": 2,
+  "stdout": "",
+  "stderr": "Original PropertyInfoAreaFile rejected input\n",
+  "scope": "Original file loader rejects metadata not owned root:root; not app property access proof"
+}

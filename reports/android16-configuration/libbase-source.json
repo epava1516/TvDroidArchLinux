@@ -1,0 +1,9 @@
+{
+  "commit": "bdf0f4db82fae78492c92a55d473aacc4e963e79",
+  "url": "https://android.googlesource.com/platform/system/libbase/+archive/bdf0f4db82fae78492c92a55d473aacc4e963e79.tar.gz",
+  "sha256": "07a9d3fb9893c73df9cd217d17f523870aa4011e3d5461c2e05ec44038301c74",
+  "skipped_nonregular": [
+    ".clang-format"
+  ],
+  "initial_extraction": "data filter refused external .clang-format symlink; no unsafe follow permitted"
+}

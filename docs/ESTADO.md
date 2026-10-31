@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-native-base/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-configuration/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -30,26 +30,29 @@ no equivalen automáticamente a Android completo; estudiar cierres reales.
 | Se conserva | Compositor/shell Rust, instalación/herramientas y regresiones previas útiles; H7–H9 permanecen abiertos. |
 | Históricos Android13 | ART host/glibc y fixtures propias; mezcla de jars/core/JNI; loader Bionic parcial y cierre de bibliotecas. No se trasladan como validación de A16. |
 | Pendiente separado | Cuatro archivos propios de JNI/bootstrap host conservados sin commit. Ensayos API33 de propiedades/configuración pausados; no área de propiedades nueva ejecutada ni cambio a producción. |
+| Configuración parcial A16 | Metadatos host originales reproducibles; propiedad root validada. Servicio/área Bionic/política SELinux pendientes. |
 | Herramientas | REA MCP respondió realmente; análisis ELF/APK estático previo y estado actual, sin presentarlos como ejecución ni CLI como conexión. |
 | No probado | Nueve etapas de las APK sobre A16; SF→Wayland, aceleración/entrada/AV/TV, aislamiento por app/Binder, GMS/DRM/OEM/WebView, traducción ISA/32/64, presupuestos, instalación/actualización/seguridad actualizada. |
 
 ## Checkpoint y siguiente acción
 
-Base del nuevo hito: `2830ad8`, main; contrato y manifiesto publicados. Consultar Git para HEAD/origin actuales. El snapshot local
-`/home/tv/recuperacion-archtv/20261030T235001Z-a16-artifact-selection` guarda parches,
+Base del nuevo hito: `1c284ad`, main; contrato y manifiesto publicados. Consultar Git para HEAD/origin actuales. El snapshot local
+`/home/tv/recuperacion-archtv/20261031T000306Z-a16-configuration` guarda parches,
 archivos nuevos y scripts de estudio. Los logs ajenos H9 permanecen intactos.
 El checkpoint registra procesos/handles y resultados; no hay ART/bwrap/build activo
 observado tras las pruebas A16. No restaurar parches sin contrastar Git.
 
-Siguiente acción: cerrar la configuración original A16 de propiedades, namespaces
-APEX/enlazador y bootclasspath/classloaders antes de ejecutar DEX y el vertical.
-El ZIP GSI y su build.prop coinciden con build/SDK publicados; todavía faltan
-configuración de producto/compilador y equivalencia binaria/fuente completa.
-La ayuda ART pasa tras incorporar el módulo StatsD original completo del mismo
-build: su ausencia producía un fallo real de JNI invocation. Las rutas aplanadas
-no son configuración de producción. [Evidencia](../reports/android16-native-base/validation.json).
-Los targets TV/phone están declarados en fuentes; no se ha arrancado Android.
-R1 completo y Markor de nueve etapas siguen pendientes. No ampliar API33 por métodos.
+Siguiente acción: probar inicialización privilegiada aislada de áreas con Bionic
+original y los metadatos generados; registrar errores reales y acceso de clientes
+sin privilegios. Se han validado el serializador/lector host originales (7 tests)
+y 1.384 contextos de plataforma, no el servicio ni el área Bionic.
+SELinux está compilado pero inactivo: etiquetado UID1000 falla, UID0 pasa; guardar
+etiquetas no prueba mediación del kernel. La clausura de `PropertyInit` y
+`StartPropertyService` dentro de libinit y sus callbacks/política sigue pendiente.
+[Pruebas y límites](../reports/android16-configuration/validation.json).
+Después: APEX/namespaces/classpaths originales, DEX y Markor de nueve etapas.
+La ayuda ART pasa con StatsD original; rutas aplanadas aún diagnósticas. No Android
+arrancado, no reinicio ni ampliación de API33 por métodos. R1 completo permanece abierto.
 
 ## Historial conservado · no es el estado vigente
 

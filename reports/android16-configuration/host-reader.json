@@ -1,0 +1,8 @@
+{
+  "exit_code": 0,
+  "stdout": "ro.build.id\tu:object_r:build_prop:s0\tstring\nro.build.version.sdk\tu:object_r:build_prop:s0\tint\nro.debuggable\tu:object_r:userdebug_or_eng_prop:s0\tbool\npersist.sys.dalvik.vm.lib.2\tu:object_r:dalvik_runtime_prop:s0\tstring\nro.vndk.version\tu:object_r:vndk_prop:s0\tstring\narchtv.unknown.property\tu:object_r:default_prop:s0\tstring\n",
+  "stderr": "",
+  "file_uid": 0,
+  "file_gid": 0,
+  "scope": "Host process outside filesystem UID remapping; original root-owned-file checks"
+}

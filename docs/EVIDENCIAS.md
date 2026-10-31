@@ -1,5 +1,18 @@
 # Índice de evidencias
 
+## Configuración A16 · metadatos host y frontera de seguridad
+
+[Validación](../reports/android16-configuration/validation.json),
+[fuentes y dependencias](../reports/android16-configuration/source-findings.json),
+[REA libc](../reports/android16-configuration/rea-libc-exports.json),
+[kernel/identidades](../reports/android16-configuration/kernel-property-prerequisites.json) y
+[checkpoint actual](../reports/android16-configuration/checkpoint.json).
+Siete tests originales pasan; 1.384 contextos generan bytes reproducibles y el
+lector original aplica su control de propietario. REA acredita exports, no su
+ejecución. Los ensayos host muestran etiquetado UID1000 denegado/UID0 permitido,
+con SELinux inactivo: no se infiere enforcement. Servicio y áreas Bionic, generador
+target, DEX, APK y aislamiento amplio siguen sin probar en este hito.
+
 ## Primeros componentes nativos A16 · ejecución parcial
 
 [Procedencia GSI](../reports/android16-native-base/gsi-provenance.json),
@@ -7,7 +20,7 @@
 [fuentes contrastadas](../reports/android16-native-base/source-study.json),
 [REA linker](../reports/android16-native-base/rea-linker-notes.json),
 [REA ART](../reports/android16-native-base/rea-art-notes.json) y
-[checkpoint actual](../reports/android16-native-base/checkpoint.json).
+[checkpoint de carga nativa](../reports/android16-native-base/checkpoint.json).
 Archivo oficial/build/SDK36.1 y SHA coinciden. Linker help/list y ayuda ART pasan
 tras añadir el APEX StatsD original entero; las primeras pruebas fallidas se
 conservan. REA identifica ELF estáticamente; no observó ejecución. Los logs del

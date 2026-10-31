@@ -1,0 +1,53 @@
+{
+  "observed_at": "2026-10-31T00:13:02.478270+00:00",
+  "contract": "A16-QPR2-1",
+  "objective": "Complete unmodified arbitrary APK incl TV, Linux Rust/Smithay; native coherent AOSP16 QPR2, SF\u2192Wayland first hypothesis; no Waydroid/full Android. Preserve compatibility/isolation/stability/lightweight/install/update.",
+  "branch": "main",
+  "source_base_commit": "1c284adc90cd06d67c3689c924254dcc80d52a60",
+  "origin_relation": "0\t0",
+  "pending_own": {
+    "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+    "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+    "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+    "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+  },
+  "pending_other_hashes": {
+    "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+  },
+  "own_milestone": "Original A16 property metadata host wrapper, source/kernel/identity study, upstream tests, canonical docs. No Android13 sources/H9 logs included.",
+  "processes": {
+    "observed_at": "2026-10-31T00:14:34.512345+00:00",
+    "host_ps": [
+      {
+        "pid": 181308,
+        "ppid": 181298,
+        "state": "Sl",
+        "comm": "codex"
+      },
+      {
+        "pid": 181453,
+        "ppid": 181308,
+        "state": "Sl",
+        "comm": "codex-code-mode"
+      }
+    ],
+    "scope": "Filtered host ps; comm is recorded, not inferred as an application role. No runtime/build process matched after checks."
+  },
+  "terminal_handles": [
+    50493,
+    80035,
+    81641,
+    47987,
+    8145,
+    85694,
+    16060,
+    58697
+  ],
+  "evidence_root": "reports/android16-configuration",
+  "tests": "7 original upstream tests pass;1384 platform contexts,102112 bytes,3 identical metadata generations; malformed/duplicate entries and bad ownership refused. Host label UID1000 EPERM/UID0 success; no SELinux enforcement active. REA MCP ELF exports observed.",
+  "limitations": "Host metadata only, not property server/Bionic area/DEX/APK or complete isolation. Platform contexts alone are not full partition policy. No standalone property-only init CLI route observed; internal entry APIs require closure.",
+  "recovery_snapshot": "/home/tv/recuperacion-archtv/20261031T000306Z-a16-configuration",
+  "next": "Prototype isolated root-only bootstrap using original Bionic property-area functions and generated original metadata; preserve every real error and verify root/client identity/access separately. Then coherent APEX/linkerconfig/classpaths before semantic ART/Markor. Service IPC/policy remains an independent gate; no generic allow or per-APK shim.",
+  "restart_policy": "No VM/client restart; no Android boot"
+}

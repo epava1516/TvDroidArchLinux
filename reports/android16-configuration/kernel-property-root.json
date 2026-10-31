@@ -1,0 +1,24 @@
+{
+  "observed_at": "2026-10-31T00:12:17.888856+00:00",
+  "effective_uid": 0,
+  "effective_gid": 0,
+  "kernel": "6.18.59-1-lts",
+  "active_lsm": "capability,landlock,lockdown,yama,bpf",
+  "selected_config": [
+    "CONFIG_NAMESPACES=y",
+    "CONFIG_MEMFD_CREATE=y",
+    "CONFIG_ANDROID_BINDER_IPC_RUST=y",
+    "CONFIG_ANDROID_BINDER_DEVICES=\"\"",
+    "CONFIG_SECURITY_SELINUX=y",
+    "CONFIG_SECURITY_SELINUX_BOOTPARAM=y",
+    "CONFIG_SECURITY_SELINUX_DEVELOP=y",
+    "CONFIG_SECURITY_SELINUX_AVC_STATS=y",
+    "CONFIG_SECURITY_SELINUX_SIDTAB_HASH_BITS=9",
+    "CONFIG_SECURITY_SELINUX_SID2STR_CACHE_SIZE=256",
+    "CONFIG_LSM=\"landlock,lockdown,yama,integrity,bpf\""
+  ],
+  "selinux_label_private_file": {
+    "success": true
+  },
+  "scope": "Read-only host config plus label syscall on a private disposable file. No policy/kernel changes, no Android property-area or service execution, no complete isolation acceptance."
+}

@@ -1,0 +1,29 @@
+{
+  "source_base_commit": "1c284adc90cd06d67c3689c924254dcc80d52a60",
+  "scope": "Configuration evidence only; no runtime acceptance. Self excluded; generated property_info remains local dist artifact identified by hash in validation.",
+  "artifacts": {
+    "reports/android16-configuration/checkpoint.json": "490583b14ef448d6db092d655b173d88e8cc1933617914ff4668d9819a084e1f",
+    "reports/android16-configuration/command.json": "3127552c391ceac2a3af2ad0eb47771468b63fd97eab5f3181fb7eba37d0a3e7",
+    "reports/android16-configuration/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/android16-configuration/generate.stdout": "fac4e6ca7eb430c13d93d111f293dc13da75db8e0ad84c70aa6aed656ba0710b",
+    "reports/android16-configuration/host-reader.json": "29d486500ea9ce4a1beb1bcc9617aa1c8e961d52d8e3e9889c7ac5b9e0b1e74c",
+    "reports/android16-configuration/kernel-property-prerequisites.json": "b17b7a5d98063b285dc4b651625a596d78ceda7c7bedb37bbbf8094071437d7f",
+    "reports/android16-configuration/kernel-property-probe.py": "24327b462860935a06476de4d2af34d6a3d9edcbfb2f3117140a1d04708f9ce9",
+    "reports/android16-configuration/kernel-property-root.json": "95da4581c85e8d3545ca2d8b7071fde710e0a2a6151eee45710b20bdc19b7b06",
+    "reports/android16-configuration/kernel-property-user.json": "d99686c5d90f7546a654458cabca310e4af66d534a8667cd6d5044e40e2ec6df",
+    "reports/android16-configuration/libbase-source.json": "6bbc177fd94957af02cd0ed7f741d245cfc3290a6d19c8ec95e70939a226c67b",
+    "reports/android16-configuration/linkerconfig-source.json": "9fd35ee9f68dc4f53b9fcd1803bd6dc0661bf7b838d8b2492ab3cc0f9ad7903f",
+    "reports/android16-configuration/negative-cases.json": "a2c18d769fa9ecc73ac0d4c47a962441a3a0183607a836c56c6938df6aee2cef",
+    "reports/android16-configuration/property-source-index.json": "b748937e3310893e578f9cc58ed81fece4f235f9734f255e2234c79fd1742870",
+    "reports/android16-configuration/rea-libc-exports.json": "030f90a570a9d9fb227568cb8f17b678032fc08edbce6269fc51810c79508f20",
+    "reports/android16-configuration/source-findings.json": "2a7a1f28e2e4995e1029cf3a63f04dc1414faf05ede2cebf893aff3598206ff0",
+    "reports/android16-configuration/source-inputs.json": "42a261c5da82e2e4667dde85b18707dbf9cafe4ac212934561aaf42df25277f9",
+    "reports/android16-configuration/unprivileged-owner-rejection.json": "3075d7af3812dbd667db549259053c085d22c68309a94f30cc66653b56824776",
+    "reports/android16-configuration/upstream-compile-command.json": "583cb6016277149bff1de8685793a69c7a55d3bb1ca9ff4c3022d0e1020cfac1",
+    "reports/android16-configuration/upstream-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/android16-configuration/upstream-tests.json": "fb90a1185f327cee77b2c8e35e6b0ed299be5cbe806dc2561b750074cbfd1f9e",
+    "reports/android16-configuration/upstream-tests.log": "3a358987c2df7bf2e3eb674e4760f758735a89bd172bb4686ae2722a3a4d8e1d",
+    "reports/android16-configuration/validation.json": "3d2b5d90df0f9545bde9921a4045738e512727d5f41a85298a8f33a6d2fad4ac",
+    "tools/aosp/property_info_tool.cpp": "c02b8deea9816a895a8df733dbd2f57aee3c0f0fe04c1fe829ebe5853cb4f43a"
+  }
+}

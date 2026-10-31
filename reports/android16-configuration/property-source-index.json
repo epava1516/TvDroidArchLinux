@@ -1,0 +1,42 @@
+[
+  {
+    "path": "bionic/libc/system_properties/system_properties.cpp",
+    "commit": "f22516cbc67e81c13cf943ce02f01b8929a98726",
+    "url": "https://android.googlesource.com/platform/bionic/+/f22516cbc67e81c13cf943ce02f01b8929a98726/libc/system_properties/system_properties.cpp?format=TEXT",
+    "local_cache": "/home/tv/.cache/archtv/aosp16-qpr2/property-study/bionic__libc_system_properties_system_properties.cpp",
+    "sha256": "533637ad454b733c220657639db5c3119957ff34affd1c02339aea1c085c781d",
+    "bytes": 17519
+  },
+  {
+    "path": "bionic/libc/system_properties/contexts_serialized.cpp",
+    "commit": "f22516cbc67e81c13cf943ce02f01b8929a98726",
+    "url": "https://android.googlesource.com/platform/bionic/+/f22516cbc67e81c13cf943ce02f01b8929a98726/libc/system_properties/contexts_serialized.cpp?format=TEXT",
+    "local_cache": "/home/tv/.cache/archtv/aosp16-qpr2/property-study/bionic__libc_system_properties_contexts_serialized.cpp",
+    "sha256": "0b24b0f2d634cdef5071e745a685a5ab5e9e45ae264030375501ef9b224e5df5",
+    "bytes": 6298
+  },
+  {
+    "path": "system/core/init/property_service.cpp",
+    "commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+    "url": "https://android.googlesource.com/platform/system/core/+/e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1/init/property_service.cpp?format=TEXT",
+    "local_cache": "/home/tv/.cache/archtv/aosp16-qpr2/property-study/system_core__init_property_service.cpp",
+    "sha256": "ac68c4c4de5ef26366498d39d0945ba2ab06b022e24a7a157853b66a4b8a3b3c",
+    "bytes": 58648
+  },
+  {
+    "path": "system/core/property_service/libpropertyinfoserializer/property_info_serializer.cpp",
+    "commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+    "url": "https://android.googlesource.com/platform/system/core/+/e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1/property_service/libpropertyinfoserializer/property_info_serializer.cpp?format=TEXT",
+    "local_cache": "/home/tv/.cache/archtv/aosp16-qpr2/property-study/system_core__property_service_libpropertyinfoserializer_property_info_serializer.cpp",
+    "sha256": "437b15d25c3c0c67cc81b46619058e8ffdee3aa4d988d07a46fafe4313740377",
+    "bytes": 1532
+  },
+  {
+    "path": "system/core/init/Android.bp",
+    "commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+    "url": "https://android.googlesource.com/platform/system/core/+/e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1/init/Android.bp?format=TEXT",
+    "local_cache": "/home/tv/.cache/archtv/aosp16-qpr2/property-study/system_core__init_Android.bp",
+    "sha256": "af76a828f1e528e8e9ea09dd1ecb12e3cddccbc00eabc2dc13227a64b2991074",
+    "bytes": 18364
+  }
+]

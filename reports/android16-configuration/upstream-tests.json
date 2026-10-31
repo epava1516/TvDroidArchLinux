@@ -1,0 +1,92 @@
+{
+  "tests": 7,
+  "failures": 0,
+  "disabled": 0,
+  "errors": 0,
+  "timestamp": "2026-10-31T00:08:01Z",
+  "time": "0.001s",
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "propertyinfoserializer",
+      "tests": 7,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-31T00:08:01Z",
+      "time": "0.001s",
+      "testsuite": [
+        {
+          "name": "TrieNodeCheck",
+          "file": "\/home\/tv\/.cache\/archtv\/aosp16-qpr2\/property-study\/libpropertyinfoserializer\/property_info_serializer_test.cpp",
+          "line": 26,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-31T00:08:01Z",
+          "time": "0s",
+          "classname": "propertyinfoserializer"
+        },
+        {
+          "name": "GetPropertyInfo",
+          "file": "\/home\/tv\/.cache\/archtv\/aosp16-qpr2\/property-study\/libpropertyinfoserializer\/property_info_serializer_test.cpp",
+          "line": 126,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-31T00:08:01Z",
+          "time": "0s",
+          "classname": "propertyinfoserializer"
+        },
+        {
+          "name": "RealProperties",
+          "file": "\/home\/tv\/.cache\/archtv\/aosp16-qpr2\/property-study\/libpropertyinfoserializer\/property_info_serializer_test.cpp",
+          "line": 251,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-31T00:08:01Z",
+          "time": "0s",
+          "classname": "propertyinfoserializer"
+        },
+        {
+          "name": "GetPropertyInfo_prefix_without_dot",
+          "file": "\/home\/tv\/.cache\/archtv\/aosp16-qpr2\/property-study\/libpropertyinfoserializer\/property_info_serializer_test.cpp",
+          "line": 767,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-31T00:08:01Z",
+          "time": "0s",
+          "classname": "propertyinfoserializer"
+        },
+        {
+          "name": "GetPropertyInfo_prefix_with_dot_vs_without",
+          "file": "\/home\/tv\/.cache\/archtv\/aosp16-qpr2\/property-study\/libpropertyinfoserializer\/property_info_serializer_test.cpp",
+          "line": 811,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-31T00:08:01Z",
+          "time": "0s",
+          "classname": "propertyinfoserializer"
+        },
+        {
+          "name": "GetPropertyInfo_empty_context_and_type",
+          "file": "\/home\/tv\/.cache\/archtv\/aosp16-qpr2\/property-study\/libpropertyinfoserializer\/property_info_serializer_test.cpp",
+          "line": 847,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-31T00:08:01Z",
+          "time": "0s",
+          "classname": "propertyinfoserializer"
+        },
+        {
+          "name": "BuildTrie_Simple",
+          "file": "\/home\/tv\/.cache\/archtv\/aosp16-qpr2\/property-study\/libpropertyinfoserializer\/trie_builder_test.cpp",
+          "line": 24,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-31T00:08:01Z",
+          "time": "0s",
+          "classname": "propertyinfoserializer"
+        }
+      ]
+    }
+  ]
+}

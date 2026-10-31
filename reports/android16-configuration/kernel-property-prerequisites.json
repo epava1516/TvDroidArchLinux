@@ -1,0 +1,33 @@
+{
+  "kernel": "6.18.59-1-lts",
+  "active_lsm": "capability,landlock,lockdown,yama,bpf",
+  "selected_config": [
+    "CONFIG_NAMESPACES=y",
+    "CONFIG_MEMFD_CREATE=y",
+    "CONFIG_ANDROID_BINDER_IPC_RUST=y",
+    "CONFIG_ANDROID_BINDER_DEVICES=\"\"",
+    "CONFIG_SECURITY_SELINUX=y",
+    "CONFIG_SECURITY_SELINUX_BOOTPARAM=y",
+    "CONFIG_SECURITY_SELINUX_DEVELOP=y",
+    "CONFIG_SECURITY_SELINUX_AVC_STATS=y",
+    "CONFIG_SECURITY_SELINUX_SIDTAB_HASH_BITS=9",
+    "CONFIG_SECURITY_SELINUX_SID2STR_CACHE_SIZE=256",
+    "CONFIG_LSM=\"landlock,lockdown,yama,integrity,bpf\""
+  ],
+  "label_probes": [
+    {
+      "uid": 1000,
+      "gid": 1000,
+      "success": false,
+      "errno": 1,
+      "error": "Operation not permitted"
+    },
+    {
+      "uid": 0,
+      "gid": 0,
+      "success": true
+    }
+  ],
+  "conclusion": "SELinux compiled but not active. Label set fails UID1000, succeeds UID0. Does not prove SELinux enforcement, nor block all privileged original property-area bootstrap experiments.",
+  "scope": "Host kernel/identity boundary probes only; property area/service still unexecuted."
+}

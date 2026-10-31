@@ -60,6 +60,39 @@ La configuración generada del enlazador falta y ART lo advierte; conservarla y
 validarla junto con propiedades/APEX/classpaths es la siguiente puerta. Ningún
 DEX/APK ni integración gráfica se ha demostrado en este hito.
 
+## Propiedades y configuración · cierre en estudio
+
+Se reutilizan las bibliotecas originales `libpropertyinfoserializer` y
+`libpropertyinfoparser` con soporte host declarado por AOSP, más sus utilidades
+originales de libbase. El [wrapper de herramienta](../tools/aosp/property_info_tool.cpp)
+sólo genera/consulta metadatos; glibc aquí corresponde al build anfitrión, no a un
+port de Bionic ni a una implementación de APIs Android. No se cambia código
+original: includes estándar forzados son configuración del compilador. La frontera
+host/Bionic aquí es un archivo serializado con el formato original; no se pasan
+punteros ni objetos glibc al runtime. ABI/endianness ARM64 siguen sin validar.
+[Validación](../reports/android16-configuration/validation.json): siete tests AOSP,
+1.384 entradas de plataforma y tres generaciones idénticas; errores de sintaxis,
+duplicados y propietario no root rechazados. Contextos de particiones ausentes
+no se inventan. Esto no sustituye el servicio ni acredita áreas Bionic.
+
+`PropertyInit`/`StartPropertyService` son APIs internas de libinit; el dispatcher
+original no ofrece modo CLI exclusivo para propiedades. Integrar un entrypoint
+supervisado exige cerrar callbacks, socket con init, persistencia, propiedades
+boot/derivadas y política. Arrancar `second_stage` no se adopta como atajo.
+El generador original de namespaces también necesita propiedades/APEX/listas;
+`--root` prefija rutas y no importa por sí solo un build.prop.
+[Fuentes fijadas](../reports/android16-configuration/source-findings.json).
+
+La [prueba del kernel](../reports/android16-configuration/kernel-property-prerequisites.json)
+distingue datos y enforcement: SELinux compilado pero no activo; crear una etiqueta
+falla para UID1000 y pasa para UID0. Eso permite explorar bootstrap privilegiado
+original, pero no acredita autorización SELinux ni aislamiento de aplicaciones.
+La siguiente prueba conserva funciones Bionic originales de áreas, escritor
+supervisado y clientes sin privilegios, sin ignorar errores. La política/IPC
+necesita su propia decisión probada: integración Linux compatible con mediación
+original o adaptación explícita equivalente en identidad/denegaciones. Ninguna
+está aceptada, y no se activa mediante un reinicio bajo este contrato.
+
 ## Subsistemas y fronteras elegidas
 
 ```mermaid

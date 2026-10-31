@@ -1,0 +1,16 @@
+[
+  {
+    "name": "bad-match",
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "/home/tv/repositorio-principal/dist/aosp16/property-info-host-1/bad-match.contexts: Match operation 'invalid' is not valid: must be either 'prefix' or 'exact'\n",
+    "output_exists": false
+  },
+  {
+    "name": "duplicate",
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "Duplicate exact match detected for 'archtv.test'\n",
+    "output_exists": false
+  }
+]

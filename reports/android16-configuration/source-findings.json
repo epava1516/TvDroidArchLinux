@@ -1,0 +1,42 @@
+{
+  "property_files": {
+    "system_core__init_main.cpp": {
+      "cache": "/home/tv/.cache/archtv/aosp16-qpr2/property-study/system_core__init_main.cpp",
+      "sha256": "46c7e672734760a1deb2223900fd1e378111ba94a00ba100f627a949b3d9add0"
+    },
+    "system_core__init_property_service.h": {
+      "cache": "/home/tv/.cache/archtv/aosp16-qpr2/property-study/system_core__init_property_service.h",
+      "sha256": "9e62e2edd068cbffa20544cf6570606f8e2cc0d0ec2c71fdc52a80623eabe5f7"
+    },
+    "system_core__init_Android.bp": {
+      "cache": "/home/tv/.cache/archtv/aosp16-qpr2/property-study/system_core__init_Android.bp",
+      "sha256": "af76a828f1e528e8e9ea09dd1ecb12e3cddccbc00eabc2dc13227a64b2991074"
+    },
+    "system_core__init_property_service.cpp": {
+      "cache": "/home/tv/.cache/archtv/aosp16-qpr2/property-study/system_core__init_property_service.cpp",
+      "sha256": "ac68c4c4de5ef26366498d39d0945ba2ab06b022e24a7a157853b66a4b8a3b3c"
+    },
+    "bionic__libc_system_properties_contexts_serialized.cpp": {
+      "cache": "/home/tv/.cache/archtv/aosp16-qpr2/property-study/bionic__libc_system_properties_contexts_serialized.cpp",
+      "sha256": "0b24b0f2d634cdef5071e745a685a5ab5e9e45ae264030375501ef9b224e5df5"
+    },
+    "bionic__libc_system_properties_system_properties.cpp": {
+      "cache": "/home/tv/.cache/archtv/aosp16-qpr2/property-study/bionic__libc_system_properties_system_properties.cpp",
+      "sha256": "533637ad454b733c220657639db5c3119957ff34affd1c02339aea1c085c781d"
+    }
+  },
+  "linkerconfig_files": {
+    "main.cc": "b2ed6e15e81a7c4a1e62d5b518607b610edf87e241edad807223639253681acb",
+    "generator/variableloader.cc": "febcc4aaf9881331e8bc23d289f47baf54125e493ec30920ca07271bcab7afd9",
+    "modules/variables.cc": "0a78f739e7fe70df440d0633787b8523fba36af36fc96a6fd1efaecae2e708e3",
+    "Android.bp": "1b9a7c4c41e61011342c54d72746fe3c7be16514a7471a93a6fbcc551add98c7"
+  },
+  "findings": [
+    "init main dispatches ueventd/subcontext/selinux_setup/second_stage/first-stage; no property-only CLI route in that dispatcher. Internal PropertyInit and StartPropertyService APIs exist; libinit closure, callbacks/init socket/persistence and SELinux require study.",
+    "Generated metadata uses original BuildTrie/ParsePropertyInfoFile defaults and only platform contexts. Missing vendor/product/system_ext policy is not inferred.",
+    "Original reader enforces root:root and no writable group/other; host glibc test validates that check, not Bionic mapping or property IPC.",
+    "linkerconfig --root prefixes filesystem paths, not property-file importing: Variables::GetValue still queries original GetProperty. Host-only VNDK/treble arguments are distinct from Android target behavior.",
+    "Host labeling failed UID1000 but succeeded UID0; SELinux compiled yet inactive. Privileged area bootstrap may be feasible; mediation/enforcement must be validated separately and not replaced by blanket allow."
+  ],
+  "scope": "Exact-source static study and separate host metadata tests; no target property service or linkerconfig generation execution."
+}

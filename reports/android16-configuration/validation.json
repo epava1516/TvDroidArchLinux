@@ -1,0 +1,72 @@
+{
+  "observed_at": "2026-10-31T00:11:10.501043+00:00",
+  "build": {
+    "exit_code": 0,
+    "compiler": "clang version 23.1.4\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /usr/bin\n",
+    "host": "glibc configuration tool, not Android runtime",
+    "binary_sha256": "4796583ff2df0563d3892ea32a99e1c1f26d24522e9aa55e4adc623725d3596e"
+  },
+  "upstream_tests": {
+    "tests": 7,
+    "passed": 7,
+    "source": "Unchanged original trie_builder_test.cpp/property_info_serializer_test.cpp; installed gtest"
+  },
+  "generated": {
+    "input": "/home/tv/repositorio-principal/dist/aosp16/native-inputs-2/system/etc/selinux/plat_property_contexts",
+    "input_sha256": "43954f454c147665682b12be0b3a7ea298ab676f7640f689af46791532fd8a6c",
+    "entries": 1384,
+    "bytes": 102112,
+    "sha256": "9d2012f1007d00631201c4a6d4888b07ba1cede60af2882096c382b13a9c2f4a",
+    "three_generations_identical": true,
+    "context_scope": "Original platform-only GSI contexts; no vendor/product policy inferred"
+  },
+  "original_reader": {
+    "exit_code": 0,
+    "stdout": "ro.build.id\tu:object_r:build_prop:s0\tstring\nro.build.version.sdk\tu:object_r:build_prop:s0\tint\nro.debuggable\tu:object_r:userdebug_or_eng_prop:s0\tbool\npersist.sys.dalvik.vm.lib.2\tu:object_r:dalvik_runtime_prop:s0\tstring\nro.vndk.version\tu:object_r:vndk_prop:s0\tstring\narchtv.unknown.property\tu:object_r:default_prop:s0\tstring\n",
+    "stderr": "",
+    "file_uid": 0,
+    "file_gid": 0,
+    "scope": "Host process outside filesystem UID remapping; original root-owned-file checks"
+  },
+  "unprivileged_owner_rejected": true,
+  "negative_cases": [
+    {
+      "name": "bad-match",
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "/home/tv/repositorio-principal/dist/aosp16/property-info-host-1/bad-match.contexts: Match operation 'invalid' is not valid: must be either 'prefix' or 'exact'\n",
+      "output_exists": false
+    },
+    {
+      "name": "duplicate",
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "Duplicate exact match detected for 'archtv.test'\n",
+      "output_exists": false
+    }
+  ],
+  "missing_inspect_arguments_rejected": true,
+  "host_UID_boundary": "A read inside filesystem sandbox rejected remapped root=nobody; host retry succeeded with actual uid0/gid0. Original controls unchanged.",
+  "not_executed": [
+    "Bionic property-area initialization",
+    "Android property service IPC",
+    "target linkerconfig generation",
+    "DEX/VM semantic workload",
+    "APK nine-stage workflows"
+  ],
+  "compatibility_claim": false,
+  "local_links_checked": 112,
+  "broken_links": 0,
+  "pending_own_and_other_hashes_preserved": true,
+  "property_area_MCP_exports": {
+    "evidence_id": "ev_719595d09c953fefcc74eb9f1fbda2f87fae63b210272de64e5c58891f0900ad",
+    "writer_symbols": "__system_property_area_init/add/update exported as LIBC_PLATFORM, not public NDK API guarantee",
+    "scope": "ELF symbols only, not execution"
+  },
+  "graphify": {
+    "nodes": 2572,
+    "edges": 4950,
+    "communities": 227,
+    "scope": "AST update on isolated staged worktree; no semantic LLM relabeling"
+  }
+}
