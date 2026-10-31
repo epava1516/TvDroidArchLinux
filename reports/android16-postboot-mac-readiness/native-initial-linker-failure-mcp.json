@@ -1,0 +1,59 @@
+{
+  "evidence_id": "ev_d82cc0d840588ab7a4a3caa71ec656c77865995351c83c8f18fcb9d284f4d59d",
+  "operation": "capture_process_scenario",
+  "authority": "controlled-replay",
+  "confidence": "observed",
+  "exit": {
+    "code": 1,
+    "signal": 0,
+    "reason": "exited"
+  },
+  "observations": [
+    "PRIVATE_BINDER {\"major\": 242, \"minor\": 1}",
+    "PREEXEC_SECURITY {\"Uid\": \"10000\\t10000\\t10000\\t10000\", \"Gid\": \"10000\\t10000\\t10000\\t10000\", \"Groups\": \"\", \"CapEff\": \"0000000000000000\", \"CapPrm\": \"0000000000000000\", \"CapInh\": \"0000000000000000\", \"CapAmb\": \"0000000000000000\", \"NoNewPrivs\": \"1\"}",
+    "linker: CANNOT LINK EXECUTABLE \"/probe/native-inspect\": library \"libandroidicu.so\" not found: needed by /system/lib64/libxml2.so in namespace (default)",
+    "CANNOT LINK EXECUTABLE \"/probe/native-inspect\": library \"libandroidicu.so\" not found: needed by /system/lib64/libxml2.so in namespace (default)"
+  ],
+  "cleanup": {
+    "owned_process_group": "verified",
+    "temporary_root": "removed"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "The executable digest is a prelaunch file sample; matching path metadata immediately after spawn does not prove an atomic operating-system image binding.",
+    "Process trees are sampled and may omit short-lived descendants.",
+    "Process-tree sampling ended with an incomplete observation.",
+    "Filesystem observations are before/after snapshots, not syscall traces.",
+    "Inherited host environment variables are not recorded and may affect results.",
+    "No filesystem observation paths were selected; filesystem effects remain unknown.",
+    "Process sampling has incomplete observations: /proc/3262/environ: EACCES: Error: EACCES: permission denied, open '/proc/3262/environ'. See truncation_details.process."
+  ],
+  "residual_unknowns": [
+    {
+      "scope": "process",
+      "reason": "Process trees are sampled and may omit short-lived descendants."
+    },
+    {
+      "scope": "process",
+      "reason": "The executable digest is a prelaunch file sample; operating-system image binding is not atomically observed."
+    },
+    {
+      "scope": "environment",
+      "reason": "Inherited host environment variables are not recorded."
+    },
+    {
+      "scope": "network",
+      "reason": "Network activity is not observed by this capture."
+    },
+    {
+      "scope": "filesystem",
+      "reason": "No filesystem observation paths were selected; filesystem effects remain unknown."
+    },
+    {
+      "scope": "process",
+      "reason": "Process sampling has incomplete observations: /proc/3262/environ: EACCES: Error: EACCES: permission denied, open '/proc/3262/environ'. See truncation_details.process."
+    }
+  ],
+  "truncated": true,
+  "note": "Sanitized derived projection; not complete authenticated MCP Evidence. Native inspection executes, export inspection remains static."
+}

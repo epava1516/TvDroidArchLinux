@@ -46,6 +46,11 @@ control del escritorio anfitrión. ART host/glibc y API33 conservan evidencia
 histórica, sin fijar la base nueva ni prohibir servicios originales individuales.
 No se arranca Android completo ni se reinicia VM/cliente para este contrato.
 
+La secuencia de seguridad posterior al arranque permisivo está en el
+[plan canónico](docs/ARQUITECTURA.md#plan-de-seguridad-y-recuperación-del-anfitrión):
+recuperación/contrato offline/preflight antes de pedir carga, y enforcing con
+autorización separada. Kernel activo o Binder con SID no cierran R1-MAC.
+
 La vertical inicial es Markor completa; después categorías distintas, incluidas
 Android TV/mando, sin adaptaciones particulares por APK. La matriz registra nueve
 etapas, API/servicios externos, ABI e ISA/32/64 por separado. GMS/microG, WebView,

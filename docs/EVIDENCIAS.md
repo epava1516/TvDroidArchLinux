@@ -1,6 +1,8 @@
 # Índice de evidencias
 
-- [R1-MAC: contrato de entrada Linux→Android ausente](../reports/android16-policy-launch-transitions/findings.json):12 cálculos offline con libsepol original y12 consultas de acceso; tres transiciones Android conservadas, dominios Linux quedan iguales y coordinador no accede a selinuxfs Linux. Dos errores de contexto separados de10 denegaciones; sin carga/MAC/servicios/APK. [Checkpoint actual](../reports/android16-policy-launch-transitions/checkpoint.json).
+- [R1-MAC: retoma y observación original](../reports/android16-postboot-mac-readiness/findings.json): checkpoints/hashes contrastados, kernel permisivo/sin política; REA estático51 exports y ejecución Bionic UID10000/caps0 getcon kernel/getfilecon ENODATA/status mmap0 con montaje RO explícito. Systemd -SELINUX; plan de recuperación/autorizaciones en arquitectura, sin carga ni APK aceptada. [Checkpoint actual](../reports/android16-postboot-mac-readiness/checkpoint.json).
+
+- [R1-MAC: contrato de entrada Linux→Android ausente](../reports/android16-policy-launch-transitions/findings.json):12 cálculos offline con libsepol original y12 consultas de acceso; tres transiciones Android conservadas, dominios Linux quedan iguales y coordinador no accede a selinuxfs Linux. Dos errores de contexto separados de10 denegaciones; sin carga/MAC/servicios/APK. [Checkpoint del hito](../reports/android16-policy-launch-transitions/checkpoint.json).
 
 - [R1-MAC: arranque SELinux autorizado verificado](../reports/android16-selinux-permissive-boot/findings.json): activo/permisivo, policyload0, política no cargada; selinuxfs sólo privado/lectura. Checker corregido (9 pruebas y página real). Mismo ELF Binder, MCP control/SID0 con BR_TRANSACTION_SEC_CTX; no texto SID ni autorización entre apps. Evidencia preboot -95 histórica. [Checkpoint del hito](../reports/android16-selinux-permissive-boot/checkpoint.json).
 

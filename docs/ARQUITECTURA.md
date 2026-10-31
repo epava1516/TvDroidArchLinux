@@ -8,6 +8,71 @@ fáciles ni se mantienen adaptaciones particulares por APK como estrategia.
 La vía principal **es Bionic/AOSP nativo**; es una decisión contractual, todavía
 sin validación funcional de la base nueva. El host Linux puede conservar glibc.
 
+## Plan de seguridad y recuperación del anfitrión
+
+Vigente tras el arranque autorizado: [revisión y ejecución original](../reports/android16-postboot-mac-readiness/findings.json).
+LTS6.18.59, SELinux activo/permisivo, policyload0. El transporte Binder con petición
+SID pasó en la sonda concreta; no se inspeccionó su texto ni autorización entre UID.
+La evidencia previa de LSM inactivo/-95 es histórica. R1-MAC permanece abierto.
+`systemd` anfitrión262 está compilado con `-SELINUX`, sin paquete anfitrión
+libselinux instalado. No asumir que cargar una política dota al host de integración
+SELinux ni que PID1 y las sesiones obtendrán dominios apropiados automáticamente.
+
+La base continúa siendo política AOSP original + refpolicy fijada, con aserciones
+y universos conservados por el constructor existente. Los adaptadores proc y
+servicemanager son candidatos offline: no se sustituyen políticas por una lista
+de permisos fabricada. La [carencia de entrada al coordinador](../reports/android16-policy-launch-transitions/findings.json)
+impide declarar desplegable el candidato compilado. Definir la cohorte funcional
+completa antes de sumar permisos aislados o borrar dependencias de los RC.
+
+| Frontera | Requisito y prueba necesarios | Estado verificable |
+| --- | --- | --- |
+| Dominio coordinador | Elegir sujeto Linux de lanzamiento real; contexto original Android de supervisión, usuario/rol/tipo/MLS, entrada exec explícita y denegación de rutas alternativas | Cálculos offline conservan kernel→init y init→gestores Android seleccionados; entrada Linux ausente |
+| Etiquetas | Contextos originales de ejecutables/APEX/datos/propiedades/servicios y pseudoarchivos Linux; verificar contexto efectivo y transición, no sólo ficheros de reglas | getfilecon del servicemanager GSI devuelve ENODATA; no se aplicaron etiquetas |
+| Identidades | AID Android vs UID/GID anfitrión, rangos reservados, supplementary groups, mapeo Binder y control positivo/negativo entre usuarios | UID10000/caps0 probado sólo en sondas; Android1000 no debe dar acceso al usuario Linux1000 |
+| Binder/HIDL | Dispositivos/contextos privados, contenido SID real, transacciones entre UID, registro/descubrimiento/callback/muerte y denegaciones originales | Sonda misma UID con BR_TRANSACTION_SEC_CTX/respuesta0; gestores e identidad MAC no aceptados |
+| Propiedades/libselinux | Área y etiquetas originales; leer status genuino y permitir sólo transacciones necesarias de access/create/context; denegar administración a apps/gestores | Status real mmap0 tras set_selinuxmnt explícito; montaje RO no autodetectado. init carece de permisos Linux necesarios offline |
+| Dispositivos/gráficos | Cohorte Composer/SF, FD/capabilities mínimos, buffers/fences/entrada reales y mediación hacia Smithay | Dependencias/RC originales estudiados; sin frame ni UI APK |
+| Cgroups/vida | Subárbol delegado y límites comprobados, PID/fd propios, Start distinto de readiness; restart/onrestart/critical y descendientes bajo Linux | Reaper y fallo tipado parciales; no cgroup ni política completa de recuperación aceptados |
+| Anfitrión | Política global/initial SID/MLS/booleans y etiquetas compatibles con PID1, login, SSH, red, almacenamiento, compositor y herramientas | Política no cargada; systemd -SELINUX requiere estrategia explícita de integración |
+
+La API Android exporta status_open/status_updated/set_selinuxmnt, no todos los
+helpers de cabeceras genéricas. Fuente y REA estático coinciden. La selección
+explícita de un selinuxfs real RO permitió observarlo, no implementar consultas de
+escritura. Producto: diseñar exposición genuina de endpoints junto con permisos,
+DAC/capabilities e identidad; ni página de status ficticia ni selinux_check_access
+reemplazado por éxito. No exponer administración global a una APK.
+
+La política SELinux y enforcing afectan al kernel global. Namespaces de montaje,
+PID o usuario no convierten una carga en local; cambiar xattrs afecta al inode
+compartido. No reetiquetar la caché montada ni el host como si fueran copias
+privadas. Tras la primera carga no se presupone una operación que restaure
+«ninguna política»: recargar otra política no equivale a deshacerla.
+
+| Fase | Evidencia exigida antes de avanzar | Situación/autorización |
+| --- | --- | --- |
+| S0 · preservar y recuperar | Snapshot/hash de política, labels/xattrs/permisos/configuración y host; entrada original comprobada y acceso de recuperación externo; explicar pérdida de sesión y recuperación desde primera carga | Checkpoints y entrada de recuperación existen; ensayo integral de recuperación pendiente. No reiniciar ahora |
+| S1 · validar offline | Asserts/neverallow activas, nombres/clases/SID/kernel, MLS/roles, transiciones/AV/condiciones/denegaciones y delta completo del adaptador, fuentes/hashes/licencias | Compilación/consultas seleccionadas parciales; contrato de entrada y mediación sin resolver |
+| S2 · preflight host de lectura | Inventario de sujetos/labels/montajes/capabilities/UID/cgroups, loader/anfitrión compatibles, impacto global y criterios de parada; artefacto instalable reproducible con plan de retirada | Inventario inicial actual y fuentes disponibles; no preparación completa ni autorización de carga |
+| S3 · carga permisiva supervisada | Sólo tras S0–S2 y aprobación explícita del artefacto/operación; status/policy hash, labels/transiciones reales, estabilidad de host/SSH/sesión y servicios, denegaciones registradas, salida de emergencia verificada | No autorizada por el arranque anterior. Aún no realizada; permisos en permisivo no prueban enforcement |
+| S4 · enforcing | Tras resultados S3, otra aprobación explícita de la operación; positivos y denegaciones reales entre apps/host, supervivencia de recuperación, carga de trabajo y rollback ensayados | Pendiente; no ejecutar como continuación implícita de S3 |
+| S5 · servicio y APK | Gestores originales disponibles y propiedades/VINTF/cohorte coherentes; luego Markor firmado original en nueve etapas y control horizontal con otra APK | Sin aceptación; matriz canónica conserva no probado |
+
+S3/S4 requieren pruebas vivas que no pueden darse por superadas con S1; la tabla
+separa condiciones previas de pruebas posteriores a cada aprobación. No pedir una
+autorización abstracta ahora: completar primero candidato, preflight e informe de
+impacto concretos. Mientras tanto avanzar con fuentes, herramientas originales,
+consultas offline y observación nativa de lectura. No repetir Binder/checker que
+siguen válidos ni interpretar API ausente o error de contexto como denegación.
+
+Orden siguiente: cerrar contrato de entrada y mediación; integrar requisitos de
+host/cgroups y preparar S0–S2; después S3/S4 autorizadas y gestores originales.
+R2/R3 de cohortes, recursos, Composer/SF→Wayland pueden avanzar independientemente
+cuando no muten seguridad. Markor: verificar firma/splits/instalación, lanzamiento,
+UI visible en Smithay, entrada, crear/editar nota, persistencia tras cierre,
+servicios/URI/permisos reales, cierre y reapertura. ARM, servicios externos, WebView,
+media/DRM conservan sus puertas y evidencias separadas; sin éxitos ficticios.
+
 ## Base de ingeniería y procedencia
 
 Android 16 QPR2 y `android-16.0.0_r4` están vinculados oficialmente a

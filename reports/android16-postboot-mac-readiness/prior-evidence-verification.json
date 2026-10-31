@@ -1,0 +1,16 @@
+{
+  "scope": "Hashes and recorded test/source scope, not re-execution or broad compatibility",
+  "verified": [
+    {
+      "checkpoint": "reports/android16-selinux-permissive-boot/checkpoint.json",
+      "evidence_files_verified": 10
+    },
+    {
+      "checkpoint": "reports/android16-policy-launch-transitions/checkpoint.json",
+      "evidence_files_verified": 11
+    }
+  ],
+  "checker_source_matches_2f31032": true,
+  "nine_tests": "prerequisite reporter tests only, not kernel policy/manager/APK tests",
+  "origin_main_observed": "1407908230ce56614df00d0d60cd044d1a517b4e"
+}

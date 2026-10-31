@@ -1,0 +1,62 @@
+{
+  "evidence_id": "ev_cf6a891a32c671a695bb63deed8ff07c12e1ac56e7f2fb984bd3097bef27ada6",
+  "operation": "inspect_native_exports",
+  "authority": "shipped-artifact",
+  "confidence": "observed",
+  "artifact": {
+    "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libselinux.so",
+    "sha256": "98ce9fdd07dc571014dccf5b5ca0e7a10ac24b2339b103f8cb64d1b2d1bcf81f",
+    "bytes": 135448
+  },
+  "coverage": {
+    "status": "complete",
+    "reason": null,
+    "examined_entries": 170,
+    "exports": 51
+  },
+  "status_exports": [
+    {
+      "name": "selinux_status_open",
+      "name_bytes_base64": null,
+      "name_utf8_decodable": true,
+      "value": "0x15950",
+      "size": "581",
+      "type": "function",
+      "binding": "global",
+      "version": {
+        "index": 2,
+        "name": "LIBSELINUX_R",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "hidden": false
+      }
+    },
+    {
+      "name": "selinux_status_updated",
+      "name_bytes_base64": null,
+      "name_utf8_decodable": true,
+      "value": "0x15840",
+      "size": "270",
+      "type": "function",
+      "binding": "global",
+      "version": {
+        "index": 2,
+        "name": "LIBSELINUX_R",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "hidden": false
+      }
+    }
+  ],
+  "limitations": [
+    "Rows list defined default- or protected-visibility global, weak and unique dynamic symbols; local, hidden, internal and undefined symbols are not exports.",
+    "A hidden symbol version is not the default version that a by-name dlsym lookup selects.",
+    "Rows reproduce the dynamic symbol table; they do not establish that a symbol is reachable, safe to call or loaded at runtime."
+  ],
+  "native_limitations": [
+    "Rows list defined default- or protected-visibility global, weak and unique dynamic symbols; local, hidden, internal and undefined symbols are not exports.",
+    "A hidden symbol version is not the default version that a by-name dlsym lookup selects.",
+    "Rows reproduce the dynamic symbol table; they do not establish that a symbol is reachable, safe to call or loaded at runtime."
+  ],
+  "note": "Selected export rows from complete returned inventory; static evidence, no execution."
+}

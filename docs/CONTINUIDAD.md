@@ -7,6 +7,11 @@ El punto de entrada único es [ESTADO.md](ESTADO.md). Arquitectura explica decis
 ROADMAP y ROADMAP-A definen requisitos/aceptación; [EVIDENCIAS.md](EVIDENCIAS.md)
 indexa resultados. Git conserva versiones. No hay RAG ni otro gestor de memoria.
 
+La autorización de un arranque no autoriza cargar política, reetiquetar ni activar
+enforcing. Aplicar el [plan canónico](ARQUITECTURA.md#plan-de-seguridad-y-recuperación-del-anfitrión).
+Después de reinicio todos los handles/PID previos son historia; no relanzar trabajos
+ni restaurar cambios basándose sólo en sus ficheros de estado.
+
 ## Al cerrar un hito o antes de interrumpir/reiniciar
 
 1. Registrar objetivo/restricciones y siguiente acción concreta. Clasificar lo

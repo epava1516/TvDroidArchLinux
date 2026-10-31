@@ -7,6 +7,19 @@ primera hipótesis SurfaceFlinger→Wayland reemplazan la selección A/B/C y API
 anteriores. La base nueva se mantiene aislada; no se descartan el compositor,
 instalación, herramientas o regresiones útiles. No reiniciar VM ni cliente.
 
+## Orden vigente tras el arranque permisivo
+
+Seguir el [plan canónico de seguridad y recuperación](ARQUITECTURA.md#plan-de-seguridad-y-recuperación-del-anfitrión):
+S0 recuperación → S1 contrato completo offline → S2 preflight anfitrión → S3 carga
+permisiva sólo con autorización explícita → S4 enforcing sólo tras pruebas y nueva
+autorización → S5 gestores y recorrido Markor. S0–S2 aún abiertos; no hay solicitud
+de carga/enforcing preparada. El arranque anterior no los autoriza.
+La [inspección nativa actual](../reports/android16-postboot-mac-readiness/findings.json)
+confirma getcon kernel, etiqueta de ejecutable ausente y lectura status real sólo
+tras configurar montaje RO explícito. Systemd -SELINUX exige integración de host.
+Mantener controles originales/RC/cohortes; avance independiente de lectura/offline
+permitido. Las nueve etapas Markor y todas las aplicaciones reales siguen abiertas.
+
 | Puerta | Dependencias y trabajo | Evidencia de salida | Estado |
 | --- | --- | --- | --- |
 | R0 · procedencia | Verificar versión/rama/tag/build, resolver todos los repositorios, elegir target y artefactos coherentes; revisar licencias y mantenimiento | Manifiesto con revisiones exactas/procedencia, hashes de binarios y configuración; separación referencia vs parches de seguridad | Tag/rama/build y manifiesto de 1.013 commits fijados/reproducidos; diez objetos principales contrastados. GSI x86_64 coincidente y preparación de 36 APEX/4.395 archivos reproducida. Configuración parcial ejecutada; equivalencia fuente/binario completa, licencias y seguridad pendientes |

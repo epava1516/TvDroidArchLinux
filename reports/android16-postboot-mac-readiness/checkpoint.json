@@ -1,0 +1,77 @@
+{
+  "branch": "main",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "objective": "Complete unmodified APK on Linux Rust/Smithay with coherent original AOSP16QPR2/Bionic, no Waydroid or complete Android boot; broad compatibility, isolation, stability, lightness, installation/update.",
+  "canonical_entry": "docs/ESTADO.md",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "observed_at": "2026-10-31T11:38:12.352926+00:00",
+  "base_commit": "1407908230ce56614df00d0d60cd044d1a517b4e",
+  "previous_checkpoint": "reports/android16-policy-launch-transitions/checkpoint.json",
+  "relation_to_origin": "queried git ls-remote main1407908230ce56614df00d0d60cd044d1a517b4e, equals local HEAD at start",
+  "constraints": [
+    "User reaffirmed no reboot/security state changes based on historical authorization",
+    "No policy load, relabel, setenforce or host setup modification in this hito",
+    "A16-QPR2-1; full unmodified APK on Linux Rust/Smithay, no Waydroid/full Android; broad compatibility/isolation/stability/lightness/install/update",
+    "ARM/external services/DRM separate; own fixtures/probes not compatibility acceptance"
+  ],
+  "preserved_local_uncommitted_cache": {
+    "dist/aosp16/sepolicy-analyze-host-1/checkpoint.json": "historical preboot offline analyzer work preserved, no active process inferred from saved handles",
+    "scope": "No local JNI/H9/cache work mixed or discarded"
+  },
+  "historical_handles": "All before reboot are historical and not polled/reused. Prior hito handles already terminal, not assumed active.",
+  "terminal_exec_handles": [
+    23047,
+    47722,
+    1687
+  ],
+  "active_exec_handles": [],
+  "mcp_status": "One static export inventory, one initial failed native link capture and two inspection captures terminal; owned groups cleanup recorded; no persistent target opened",
+  "tests": [
+    "HEAD/tracking and queried origin main1407908 match; existing six pending file hashes preserved",
+    "2f31032 checker source unchanged; nine recorded tests are prerequisite reporter regressions, not live authorization or APK compatibility. Prior checkpoint evidence hashes verified, tests not needlessly repeated",
+    "Source and static REA ELF exports agree on Android subset: status_open/status_updated/set_selinuxmnt available, getenforce/policyload/close status helpers not dynamic exports. Generic upstream src/libselinux.map not Android exported.map.txt",
+    "Actual REA native Bionic UID10000/caps0/NNP1: getcon kernel; GSI servicemanager executable getfilecon ENODATA",
+    "Autodetection intentionally ignores read-only selinuxfs (original init.c); explicit original set_selinuxmnt after statfs validates real RO selinuxfs then enabled1/enforce0 and genuine original status mmap0, no fallback",
+    "Process/binder/service_manager/property_service class IDs0 with no policy loaded, no Android context/type/decision validity established",
+    "Host systemd262 built -SELINUX, no installed host libselinux package; userspace integration must be designed rather than inferred from kernel LSM",
+    "New launch/security readiness plan lives only in canonical ARQUITECTURA/ROADMAP, not a second policy source of truth"
+  ],
+  "next": "Implement and test offline an explicit launch/security contract for original Bionic coordinator, with host userspace integration/labels/identity/cgroups and recoverable global policy loading plan. Require separate explicit load/enforcing authorization only once concrete prereqs ready. In parallel original binder/service/profile/storage/graphics experiments that do not mutate host security; advance original services then Markor full journey.",
+  "evidence": {
+    "reports/android16-postboot-mac-readiness/current-kernel.json": "8cfde73afc289631e23892be04474548df0faba6da3362bc244c6ae8b795f766",
+    "reports/android16-postboot-mac-readiness/build.json": "4aa9f67ffb8cc41ad1594f29eec5c7d6af150963f4f0e1a577dd14f01ec53f9e",
+    "reports/android16-postboot-mac-readiness/host-inventory.json": "bae81ac512b6526ead0ef5245377e3408f33d03282aa2f0290eb58bebc21599c",
+    "reports/android16-postboot-mac-readiness/findings.json": "ad8bae817e4127cc714b8f46ba5fbdcafd43fa45a1df1e13f445a993caf94190",
+    "reports/android16-postboot-mac-readiness/prior-evidence-verification.json": "016cb1a5a5df2d48a8da9a91be6ba9ed03b17de61f74f9ddff5133fbb6ceb79a",
+    "reports/android16-postboot-mac-readiness/build-attempt-1.json": "7a0a11528e22484e6adffd91d66f34ca0f0c75b26c7d2e27f09fcb8b106819bf",
+    "reports/android16-postboot-mac-readiness/selinux-exports-mcp.json": "1e660ff3c87d82eeb0b46c55e78bf59cd5dbed3b90923b54bcdf824a7b3a0842",
+    "reports/android16-postboot-mac-readiness/native-inspect.cpp": "5e32010bdd9cad82b5c33054c2d1266eb0a76921d2ea705164befa59fabca35c",
+    "reports/android16-postboot-mac-readiness/build-attempt-2.json": "a8c5c65162ec58e31d325e93f6b155b2e4a7e3d64736f7551f4e03fae16fac32",
+    "reports/android16-postboot-mac-readiness/native-explicit-mount-mcp.json": "795ab7bf63f360b5960d08a98e84b64d243c801edbbcb97c2807c4e3f08a0787",
+    "reports/android16-postboot-mac-readiness/native-initial-linker-failure-mcp.json": "dfaa7aaa7f92ac1227080ab4ab1c5c721694eb8d635262cfdc63c76a5c02f7ea",
+    "reports/android16-postboot-mac-readiness/native-final-mcp.json": "26390f8745841ccf80fbcebadb32b8dab4a7ba3f71c7ca6f22bfd90ebd9ebe21",
+    "reports/android16-postboot-mac-readiness/native-launcher.py": "49abf3a00027ac3acbc533b25afa99b56689118b2a588b4ca479ce584f37e783",
+    "reports/android16-postboot-mac-readiness/minimal-link.json": "7ecb45a250d97b4892ba6f66817a85110032dd727d179a9455f4ec08907a32fb",
+    "reports/android16-postboot-mac-readiness/build.py": "07db2fb9c7ce6681fbc4fa04eee88899301e2f035b37d5a15a97f26ae34f0d6a",
+    "reports/android16-postboot-mac-readiness/observe-current.py": "8e68ed9af3df020a8bf0a1733508b132e848e144b7d573a9c9dc40bb7208475c",
+    "reports/android16-postboot-mac-readiness/native-inspect-before-export-check.cpp": "3bf25ba136357200ddb036f215f09d6899df387b6d27a0aa8aa42501d9606151",
+    "reports/android16-postboot-mac-readiness/native-launcher-explicit-mount.py": "9fc81d20b68e8cb5f3e2b3cca4d901b9bc1d9bfd9968044ef66661e8db71f312",
+    "reports/android16-postboot-mac-readiness/build-final.json": "73579bae11ceb731f22b46cab889c742cbe443b1a2f3bc3417c0c4089308f5c8",
+    "reports/android16-postboot-mac-readiness/native-launcher-final.py": "74750cfcb8d983c29894864ee76a9db3be552fef8a945c3d925ef9724f2df27e",
+    "reports/android16-postboot-mac-readiness/selinux-export-inventory.json": "ef46b553669af970ea50d77c6f4c7a78d856c18d63d46501e18e25d9ea7e67fe",
+    "reports/android16-postboot-mac-readiness/native-inspect-readonly-autodetect.cpp": "df47e30d8b1ebf90e25ec5178aa9d17568ab630db60198cac6483f361186cf59",
+    "reports/android16-postboot-mac-readiness/native-inspect-initial.cpp": "25649398fd372df24b1651ea7f3b9d0ffea364d0523640e1cad2ed231edf76ba"
+  },
+  "graphify": "Isolated staged AST update terminal0,2892 nodes/5517 edges; tracked outputs copied"
+}

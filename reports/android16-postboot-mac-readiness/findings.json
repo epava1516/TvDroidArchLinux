@@ -1,0 +1,96 @@
+{
+  "observed_at": "2026-10-31T11:38:12.352926+00:00",
+  "base_commit": "1407908230ce56614df00d0d60cd044d1a517b4e",
+  "scope": "Postboot readiness review and real original libselinux observation, no security-state mutation or policy admission",
+  "current_kernel": {
+    "observed_at": "2026-10-31T11:36:04.911339+00:00",
+    "scope": "Read-only private mount of current kernel selinuxfs; no load/enforce/relabel operation",
+    "kernel": "6.18.59-1-lts",
+    "active_lsm": {
+      "state": "observed",
+      "value": "capability,landlock,lockdown,yama,selinux,bpf"
+    },
+    "enforce": {
+      "state": "observed",
+      "value": "0"
+    },
+    "policyvers": {
+      "state": "observed",
+      "value": "35"
+    },
+    "current_context": {
+      "state": "observed",
+      "value": "kernel\u0000"
+    },
+    "class_directory_exists": true,
+    "status": {
+      "state": "observed",
+      "version": 1,
+      "sequence": 0,
+      "enforcing": 0,
+      "policyload": 0,
+      "deny_unknown": 1
+    },
+    "private_mounts": "{\n   \"filesystems\": [\n      {\n         \"target\": \"/home/tv/repositorio-principal/dist/aosp16/postboot-mac-current-observation-1/sys/fs/selinux\",\n         \"source\": \"selinuxfs\",\n         \"fstype\": \"selinuxfs\",\n         \"options\": \"ro,relatime\"\n      }\n   ]\n}\n"
+  },
+  "prior_evidence_verification": "prior-evidence-verification.json",
+  "host_inventory": "host-inventory.json",
+  "original_sources": [
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/selinux/source/external/selinux/libselinux/Android.bp",
+      "sha256": "bc1af4f87d938749eff4c5a6b9b468f80e8672ed4a491ff5dd70a45b10951c7d"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/selinux/source/external/selinux/libselinux/exported.map.txt",
+      "sha256": "ba2a9b0c4d540ea67731a972d9d02436a80c77caa66a8f3cb033919df0dbe60d"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/selinux/source/external/selinux/libselinux/src/init.c",
+      "sha256": "23041c9d811ec971301214292505d104058253a9c58d2d619aabcb57e56d2c3a"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/selinux/source/external/selinux/libselinux/src/sestatus.c",
+      "sha256": "fdb7af8c91773b3ede3bc6ed73b22b7d268a1b2e4645ff5d3cde1699272c311c"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/selinux/source/external/selinux/libselinux/src/enabled.c",
+      "sha256": "557b02313c6c846e41badf3e88b82dfa154d5c91ce97924bac896efe6598fe21"
+    }
+  ],
+  "probe_artifact": {
+    "path": "/home/tv/repositorio-principal/dist/aosp16/postboot-mac-readiness-build-5/native-inspect",
+    "sha256": "419a1fd8582e4003283986e4935a00b022a61730620e4fb63c578931f28b734f"
+  },
+  "results": [
+    "HEAD/tracking and queried origin main1407908 match; existing six pending file hashes preserved",
+    "2f31032 checker source unchanged; nine recorded tests are prerequisite reporter regressions, not live authorization or APK compatibility. Prior checkpoint evidence hashes verified, tests not needlessly repeated",
+    "Source and static REA ELF exports agree on Android subset: status_open/status_updated/set_selinuxmnt available, getenforce/policyload/close status helpers not dynamic exports. Generic upstream src/libselinux.map not Android exported.map.txt",
+    "Actual REA native Bionic UID10000/caps0/NNP1: getcon kernel; GSI servicemanager executable getfilecon ENODATA",
+    "Autodetection intentionally ignores read-only selinuxfs (original init.c); explicit original set_selinuxmnt after statfs validates real RO selinuxfs then enabled1/enforce0 and genuine original status mmap0, no fallback",
+    "Process/binder/service_manager/property_service class IDs0 with no policy loaded, no Android context/type/decision validity established",
+    "Host systemd262 built -SELINUX, no installed host libselinux package; userspace integration must be designed rather than inferred from kernel LSM",
+    "New launch/security readiness plan lives only in canonical ARQUITECTURA/ROADMAP, not a second policy source of truth"
+  ],
+  "historical_attempts": [
+    "Initial compiler needs initializer_list header (recorded before correction)",
+    "Second link references nonexported upstream status helpers; no new implementation added, source/map/REA confirmed Android ABI",
+    "Full service-link closure unnecessarily pulled XML/ICU into tiny inspection executable; initial runtime linker failure retained. Minimal as-needed link uses genuine required libraries and original namespace, no copied substitute library",
+    "Read-only autodetection case is a valid negative observation, not claim SELinux LSM inactive. Explicit-mount case separately records positive status mapping"
+  ],
+  "limitations": [
+    "Actual inspection is read-only with no service Start, policy query write, load/relabel/enforce change or host restart",
+    "Explicit mount selection is diagnostic configuration for real RO filesystem, not product support for full original access/create/context transactions. Whole RO mount cannot support these writable request endpoints",
+    "Status helper map remains library-owned until process exit as Android public ABI does not export close; no long-lived mapping cleanup accepted",
+    "Same UID inspection not app authorization. Class0/getfilecon ENODATA/current kernel initial context cannot support manager readiness claim",
+    "Static ELF exports are not execution; native probe executes original APIs; old -95 Binder is historical in concrete same-binary case, not blanket Binder acceptance",
+    "Host SELinux policy is global, not isolated by mount/PID/user namespaces; first policy load has no inverse unload-to-no-policy rollback assumed",
+    "No architecture-translation/GMS/DRM acceptance changed; Markor nine-stage matrix untouched",
+    "Initial process sampling/artifact binding limits of MCP retained; no host-wide process completeness inferred"
+  ],
+  "next": "Implement and test offline an explicit launch/security contract for original Bionic coordinator, with host userspace integration/labels/identity/cgroups and recoverable global policy loading plan. Require separate explicit load/enforcing authorization only once concrete prereqs ready. In parallel original binder/service/profile/storage/graphics experiments that do not mutate host security; advance original services then Markor full journey.",
+  "post_test_host_mount_check": {
+    "command": "sudo -n findmnt -J -t selinuxfs",
+    "exit": 0,
+    "filesystems": []
+  }
+}

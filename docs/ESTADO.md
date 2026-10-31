@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-policy-launch-transitions/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-postboot-mac-readiness/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -16,6 +16,23 @@ los resúmenes; no se ha completado compatibilidad amplia.
 Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCCION-ARM.md).
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
+
+## Retoma actual · requisitos de host y montaje original
+
+[Contraste y ejecución](../reports/android16-postboot-mac-readiness/findings.json):
+Git y origin consultado coinciden al inicio en1407908; seis pendientes anteriores
+con hashes conservados. Checkpoints/evidencias anteriores verificados; nueve
+pruebas de2f31032 pertenecen al comprobador, no a MAC/APK. Handles preboot históricos.
+Kernel actual activo/permisivo/policyload0. REA nativo UID10000/caps0 obtiene kernel
+como contexto y ENODATA en ejecutable; status original mmap0 sólo tras API explícita
+sobre montaje genuino RO. Autodetección rechaza RO por diseño. Clases consultadas0.
+Fuente/exports REA separan ABI Android de cabeceras genéricas. Anfitrión systemd
+-SELINUX y sin libselinux instalado: integración pendiente, no inferida del LSM.
+
+Orden y criterios de autorización únicos en el [plan canónico](ARQUITECTURA.md#plan-de-seguridad-y-recuperación-del-anfitrión).
+No cargar, reetiquetar, activar enforcing ni reiniciar; completar entrada/mediación,
+recuperación y preflight, continuar experimentos independientes y luego gestores
+originales/Markor. No se repitió Binder ni se alteró matriz de APK para aparentar avance.
 
 ## Última evaluación · falta la entrada Linux al coordinador Android
 

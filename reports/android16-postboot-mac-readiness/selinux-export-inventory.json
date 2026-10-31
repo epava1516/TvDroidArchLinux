@@ -1,0 +1,853 @@
+{
+  "evidence_id": "ev_cf6a891a32c671a695bb63deed8ff07c12e1ac56e7f2fb984bd3097bef27ada6",
+  "operation": "inspect_native_exports",
+  "authority": "shipped-artifact",
+  "confidence": "observed",
+  "normalized_result": {
+    "artifact": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libselinux.so",
+      "sha256": "98ce9fdd07dc571014dccf5b5ca0e7a10ac24b2339b103f8cb64d1b2d1bcf81f",
+      "bytes": 135448
+    },
+    "format": "elf",
+    "architecture": "amd64",
+    "bits": 64,
+    "byte_order": "little",
+    "exports": [
+      {
+        "name": "selinux_android_service_context_handle",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x8580",
+        "size": "236",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "selinux_set_callback",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0xd260",
+        "size": "22",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "security_policyvers",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x145a0",
+        "size": "289",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "selinux_android_setcon",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x17a00",
+        "size": "21",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "security_get_initial_context",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0xe920",
+        "size": "121",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "getfilecon",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0xec80",
+        "size": "145",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "getpeercon",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0xed20",
+        "size": "298",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "getcon",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x14950",
+        "size": "149",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "setsockcreatecon",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x14e40",
+        "size": "125",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "setfilecon",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x15d90",
+        "size": "234",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "selinux_log_callback",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x8f80",
+        "size": "294",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "selabel_lookup",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0xf840",
+        "size": "174",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "freecon",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0xe550",
+        "size": "5",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "selinux_android_context_with_level",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x17960",
+        "size": "145",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 3,
+          "name": "LIBSELINUX_S",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "selinux_android_load_policy",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x188b0",
+        "size": "95",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "selinux_android_seapp_context_init",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0xa600",
+        "size": "60",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "fgetfilecon_raw",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0xe230",
+        "size": "221",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "selinux_android_restorecon_pkgdir",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x18890",
+        "size": "8",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "selinux_android_vendor_service_context_handle",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x8760",
+        "size": "236",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "selinux_status_open",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x15950",
+        "size": "581",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "lgetfilecon",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x14110",
+        "size": "145",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "lsetfilecon",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x143f0",
+        "size": "111",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "selinux_android_hw_service_context_handle",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x8670",
+        "size": "236",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "security_getenforce",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0xe9a0",
+        "size": "273",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "string_to_security_class",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x17330",
+        "size": "1014",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "selabel_close",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0xf780",
+        "size": "182",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "setfscreatecon",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x14d80",
+        "size": "125",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "setsockcreatecon_raw",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x14e00",
+        "size": "49",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "getpidcon",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x14ec0",
+        "size": "137",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "security_setenforce",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x15c70",
+        "size": "282",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "selinux_android_keystore2_key_context_handle",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x8850",
+        "size": "236",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 3,
+          "name": "LIBSELINUX_S",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "selinux_vendor_log_callback",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x90b0",
+        "size": "280",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "selinux_check_access",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0xd280",
+        "size": "575",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "set_selinuxmnt",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0xf0e0",
+        "size": "21",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "selinux_android_set_sehandle",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x188a0",
+        "size": "8",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "security_compute_create",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0xd9b0",
+        "size": "673",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "selinux_android_restorecon",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x17d00",
+        "size": "14",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "selinux_android_tee_service_context_handle",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x8940",
+        "size": "236",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 4,
+          "name": "LIBSELINUX_36",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "setcon",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x14bf0",
+        "size": "125",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "selinux_android_setcontext",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x17a20",
+        "size": "620",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "selabel_open",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0xf610",
+        "size": "361",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "selinux_status_updated",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x15840",
+        "size": "270",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "is_selinux_enabled",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0xe210",
+        "size": "17",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "getprevcon",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x14c70",
+        "size": "132",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 4,
+          "name": "LIBSELINUX_36",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "setexeccon",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x14d00",
+        "size": "125",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "selinux_android_file_context_handle",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x92b0",
+        "size": "282",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "fgetfilecon",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0xe400",
+        "size": "145",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "fsetfilecon",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0xe560",
+        "size": "410",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "selabel_lookup_best_match",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0xf910",
+        "size": "208",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "security_load_policy",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x141b0",
+        "size": "196",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      },
+      {
+        "name": "selinux_android_load_policy_from_fd",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x18910",
+        "size": "95",
+        "type": "function",
+        "binding": "global",
+        "version": {
+          "index": 2,
+          "name": "LIBSELINUX_R",
+          "name_bytes_base64": null,
+          "name_utf8_decodable": true,
+          "hidden": false
+        }
+      }
+    ],
+    "coverage": {
+      "status": "complete",
+      "reason": null,
+      "examined_entries": 170,
+      "exports": 51
+    },
+    "issues": [],
+    "limitations": [
+      "Rows list defined default- or protected-visibility global, weak and unique dynamic symbols; local, hidden, internal and undefined symbols are not exports.",
+      "A hidden symbol version is not the default version that a by-name dlsym lookup selects.",
+      "Rows reproduce the dynamic symbol table; they do not establish that a symbol is reachable, safe to call or loaded at runtime."
+    ]
+  },
+  "limitations": [
+    "Rows list defined default- or protected-visibility global, weak and unique dynamic symbols; local, hidden, internal and undefined symbols are not exports.",
+    "A hidden symbol version is not the default version that a by-name dlsym lookup selects.",
+    "Rows reproduce the dynamic symbol table; they do not establish that a symbol is reachable, safe to call or loaded at runtime."
+  ],
+  "note": "Complete normalized native export inventory; static shipped artifact observation, no execution. Evidence envelope not reproduced in full."
+}
