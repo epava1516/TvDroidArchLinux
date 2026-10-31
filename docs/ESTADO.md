@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-property-area/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-linkerconfig/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -26,7 +26,7 @@ no equivalen automáticamente a Android completo; estudiar cierres reales.
 | Clasificación | Estado verificable |
 | --- | --- |
 | Base elegida por contrato | Android16 QPR2/r4, x86_64 primero y diseño ARM64. Tag/rama/build y API verificados en fuentes oficiales. Elección no equivale a implementación funcionando. |
-| Procedencia fijada | Manifiesto fuente/derivado y registro de las 1.013 revisiones exactas; reproducción offline y diez objetos principales verificados. GSI oficial x86_64 del mismo build/SDK36.1 verificada; linker y ayuda ART ejecutados de forma aislada. No equivalencia fuente/binario completa ni R1 aceptada. |
+| Procedencia fijada | Manifiesto fuente/derivado y registro de las 1.013 revisiones exactas; reproducción offline y diez objetos principales verificados. GSI oficial x86_64 del mismo build/SDK36.1 verificada; linker, ayuda ART y regresión DEX ejecutados con componentes originales y configuración generada. No equivalencia fuente/binario completa ni R1 aceptada. |
 | Se conserva | Compositor/shell Rust, instalación/herramientas y regresiones previas útiles; H7–H9 permanecen abiertos. |
 | Históricos Android13 | ART host/glibc y fixtures propias; mezcla de jars/core/JNI; loader Bionic parcial y cierre de bibliotecas. No se trasladan como validación de A16. |
 | Pendiente separado | Cuatro archivos propios de JNI/bootstrap host conservados sin commit. Ensayos API33 de propiedades/configuración pausados, sin área ejecutada en esa línea ni cambio a producción. |
@@ -36,30 +36,35 @@ no equivalen automáticamente a Android completo; estudiar cierres reales.
 
 ## Checkpoint y siguiente acción
 
-Base del nuevo hito: `4121fd2`, main; contrato y manifiesto publicados. Consultar Git para HEAD/origin actuales. El snapshot local
-`/home/tv/recuperacion-archtv/20261031T001525Z-bionic-property-area` guarda parches,
+Base del nuevo hito: `b26ec62`, main; contrato y manifiesto publicados. Consultar Git para HEAD/origin actuales. El snapshot local
+`/home/tv/recuperacion-archtv/20261031T003432Z-a16-linkerconfig` guarda parches,
 archivos nuevos y scripts de estudio. Los logs ajenos H9 permanecen intactos.
 El checkpoint registra procesos/handles y resultados; no hay ART/bwrap/build activo
 observado tras las pruebas A16. No restaurar parches sin contrastar Git.
 
-Siguiente acción: preparar coherentemente los APEX originales y metadatos de
-activación de fábrica, completar listas/configuraciones y ejecutar el generador
-original de namespaces con el snapshot de propiedades probado. Después classpaths
-y ART semántico antes de Markor. No implementar métodos aislados de API33.
+Siguiente acción: reconciliar requisitos/proveedores del build original (estricto
+global reclama libdexfiled.so ausente) y estudiar app_process/AndroidRuntime JNI,
+Binder privado y cierre de servicios/política para lanzar Markor íntegro. No
+continuar resolviendo métodos API33 ni tomar otra fixture como compatibilidad.
 
-Áreas Bionic originales: 101 propiedades/tipos/contextos leídos con getprop sin
-preload, UID/GID10000, capacidades cero y no_new_privs. 364 archivos repiten hashes
-en dos escritores. El bootstrap requiere privilegios: sin capacidades falla y
-se conserva ese resultado. Sólo es un snapshot de build.prop, no PropertyInit
-completo: el servicio/socket falta y set devuelve error 2.
-[Validación y límites](../reports/android16-property-area/validation.json).
+Preparación reproducible: 36 APEX y 4.395 archivos (4.394 originales más el XML derivado); XML de selección
+de fábrica validado con el XSD A16. Es una configuración derivada de investigación,
+sin apexd ni firmas/actualizaciones verificadas. La primera extracción se truncó
+por cuota tmpfs y quedó preservada; la herramienta ahora comprueba espacio y
+errores de extracción, y usa disco. [Pruebas](../reports/android16-linkerconfig/validation.json).
 
-El namespace de un solo UID muestra propietario 65534, incompatible con el check
-root de Bionic; el mapa completo falló antes de ejecutar el cliente. El supervisor
-Linux probado conserva namespaces de montaje/PID/red/IPC/UTS/cgroup, baja
-credenciales antes de exec y no usa namespace de usuario. No acredita aislamiento
-completo, Binder ni política SELinux: SELinux sigue inactivo. No se arrancó Android
-ni se reinició nada. R1 y las nueve etapas APK siguen abiertos.
+Generador normal y estricto del APEX ART pasan; el estricto global falla. El archivo
+ART coincide en ambos perfiles, pero el normal puede ignorar requisitos ausentes.
+Con configuración original generada pasan linker list, ayuda ART y getprop sin
+LD_LIBRARY_PATH/preload. derive_classpath original produce listas 46/14/14/9;
+69 jars únicos contienen DEX original, sin stubs SDK añadidos. La regresión DEX
+existente ejecuta semántica Java en ART Bionic16 con el bootclasspath46 completo.
+No se han ejecutado recorridos de APK: las nueve etapas continúan no probadas.
+
+Se conserva snapshot de 101 propiedades, UID/GID10000 y capacidades cero antes
+de exec. Servicio de propiedades y política/SELinux siguen pendientes. No hay
+Android arrancado, reinicios ni ART host en este hito. R1 y el objetivo global
+siguen abiertos; el siguiente trabajo debe acercar el recorrido real de Markor.
 
 ## Historial conservado · no es el estado vigente
 

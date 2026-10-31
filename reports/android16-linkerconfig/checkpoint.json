@@ -1,0 +1,68 @@
+{
+  "observed_at": "2026-10-31T01:03:07.631535+00:00",
+  "contract": "A16-QPR2-1",
+  "objective": "Complete unmodified arbitrary APK incl TV, Linux Rust/Smithay; native coherent AOSP16 QPR2, SF\u2192Wayland first hypothesis; no Waydroid/full Android. Preserve compatibility/isolation/stability/lightweight/install/update.",
+  "branch": "main",
+  "source_base_commit": "b26ec626bb15669792aaf857f9a9639ccee96520",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "relation_to_local_origin_tracking": "0\t0",
+  "pending_own": {
+    "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+    "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+    "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+    "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+  },
+  "pending_other_hashes": {
+    "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+  },
+  "own_milestone": "Pinned static factory preparation tool, original namespaces/classpaths and pure Java engine regression; no previous pending source or H9 logs included",
+  "terminal_exec_handles": [
+    93821,
+    15982,
+    95724,
+    28246,
+    86004,
+    62152,
+    23206,
+    30200,
+    32631,
+    75320,
+    25360,
+    65237,
+    8105,
+    31008
+  ],
+  "evidence_root": "reports/android16-linkerconfig",
+  "recovery_snapshot": "/home/tv/recuperacion-archtv/20261031T003432Z-a16-linkerconfig",
+  "files_only_inputs": {
+    "factory_root": "dist/aosp16/factory-inputs-3/root",
+    "equivalent_tested_root": "dist/aosp16/factory-inputs-2/root",
+    "generated_namespaces": "dist/aosp16/linkerconfig-2/generated",
+    "native_classpaths": "dist/aosp16/classpath-native-1/data/classpath",
+    "properties": "/tmp/archtv-a16-property-area-3/properties-privileged",
+    "scope": "Verify hashes/ownership; these are files, not live services"
+  },
+  "tests": "36 APEX,4395 files reproducible/XSD valid;default generator and per-ART strict pass;global strict fails honestly;no flattened LD paths;native classpaths46/14/14/9;pure Java DEX regression passes",
+  "open_failure": "Global strict missing libdexfiled.so; default generation is not proof all requirements resolved. Property server/SELinux/original Android framework JNI/Binder/app journeys not proven.",
+  "next": "Reconcile global provider discrepancy using exact original build/config artifacts; proceed with original app_process/AndroidRuntime, private Binder and service/policy closure needed for the complete Markor launch path. No more per-class API33 adaptations; no claims of completion from fixture.",
+  "restart_policy": "No VM/client restart or Android image/VM boot",
+  "processes": {
+    "observed_at": "2026-10-31T01:07:50.310891+00:00",
+    "host_ps": [
+      {
+        "pid": 181308,
+        "ppid": 181298,
+        "state": "Sl",
+        "comm": "codex"
+      },
+      {
+        "pid": 181453,
+        "ppid": 181308,
+        "state": "Sl",
+        "comm": "codex-code-mode"
+      }
+    ],
+    "scope": "Filtered host process observation; filesystem inputs are not active runtime sessions"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "command": [
+    "sudo",
+    "-n",
+    "/usr/bin/prlimit",
+    "--cpu=15",
+    "--core=0",
+    "--",
+    "/usr/bin/unshare",
+    "--mount",
+    "--pid",
+    "--fork",
+    "--kill-child=SIGKILL",
+    "--net",
+    "--ipc",
+    "--uts",
+    "--cgroup",
+    "/usr/bin/python",
+    "/tmp/archtv-a16-generated-namespace-probe.py",
+    "linker-list"
+  ],
+  "exit_code": 0,
+  "seconds": 0.31902309299766785,
+  "LD_LIBRARY_PATH": null,
+  "LD_PRELOAD": null,
+  "scope": "Original generated default/per-APEX config and original GSI components;UID10000/zero caps/no-new-privileges. Global strict unresolved debug library remains open; no semantic ART/DEX/APK or full isolation acceptance."
+}

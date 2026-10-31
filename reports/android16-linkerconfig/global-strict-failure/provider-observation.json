@@ -1,0 +1,6 @@
+{
+  "system_config_sha256": "3cd61d372987873fcf4a2a04372382fd69c1f4cffaf99826d3524cf7df5ba370",
+  "mentions_libdexfiled": true,
+  "debug_library_files_found": [],
+  "scope": "Bounded byte presence/file absence and strict generator error; full field/provider reconciliation remains open, not a compatibility conclusion"
+}

@@ -1,5 +1,20 @@
 # Índice de evidencias
 
+## Configuración nativa A16 · namespaces, classpaths y motor
+
+[Validación](../reports/android16-linkerconfig/validation.json),
+[procedencia de fábrica](../reports/android16-linkerconfig/factory-provenance.json),
+[fuentes](../reports/android16-linkerconfig/source-findings.json),
+[estricto global fallido](../reports/android16-linkerconfig/global-strict-failure/result.json),
+[classpaths nativos](../reports/android16-linkerconfig/native-classpath/classpath),
+[regresión DEX](../reports/android16-linkerconfig/semantic-regression/result.json) y
+[checkpoint actual](../reports/android16-linkerconfig/checkpoint.json).
+36 módulos/4.395 archivos reproducidos; namespaces usados sin LD_LIBRARY_PATH ni
+preload; 46 jars boot y 69 únicos de ejecución. ART estricto por APEX pasa, global
+no: el modo normal ignora requisitos no resueltos. Fixture Java pasa, sin acreditar
+ninguna etapa APK. REA identifica estáticamente los binarios, no observó su ejecución.
+La extracción truncada por cuota se conserva con su causa y traslado verificado.
+
 ## Áreas de propiedades Bionic A16 · componentes ejecutados
 
 [Validación](../reports/android16-property-area/validation.json),
@@ -7,7 +22,7 @@
 [escritor y errores](../reports/android16-property-area/areas-final/writer-privileged.json),
 [getprop original](../reports/android16-property-area/clients-final/getprop.json),
 [REA estático](../reports/android16-property-area/rea-property-set-disassembly.json) y
-[checkpoint actual](../reports/android16-property-area/checkpoint.json).
+[checkpoint de áreas](../reports/android16-property-area/checkpoint.json).
 101 valores exactos y tipos/contextos del snapshot oficial; UID10000 sin capacidades
 antes de exec; 364 archivos repetidos. Se conservan fallos sin capacidades y de
 namespace. Escritura por servicio falla por servidor ausente. No se acreditan

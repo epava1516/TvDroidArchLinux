@@ -123,6 +123,49 @@ o una adaptación equivalente probada: ninguna se acepta aquí. No se activa
 mediante un reinicio bajo este contrato. Sigue APEX/listas/metadatos y generador
 original de namespaces, después classpaths/ART; no métodos individuales.
 
+## Namespaces y classpaths originales · ejecución parcial
+
+La [herramienta de preparación](../tools/aosp/prepare_factory_inputs.py) verifica
+la imagen fijada y extrae el sistema y sus 36 módulos originales, sin montar ni
+arrancar Android. 4.394 archivos originales y el XML derivado se repiten idénticos en dos
+extracciones completas. Rechaza espacio insuficiente antes de escribir y errores
+debugfs que antes podían dejar archivos vacíos con retorno 0. La extracción no
+restaura propietarios: el layout de investigación no es un instalador seguro.
+La selección de fábrica usa el esquema A16 con partición explícita; no acredita
+apexd, firmas, activación segura ni actualización.
+[Evidencia](../reports/android16-linkerconfig/validation.json).
+
+El generador original normal produce configuración base y por APEX; el estricto
+dirigido a ART pasa y su archivo coincide con el normal. Estricto global aborta
+por libdexfiled.so requerida en system y ausente: no se inventa un proveedor ni
+se elimina su requisito. La fuente original permite ignorar requisitos en modo
+normal y restringe la validación estricta por APEX a su ámbito. Por eso la salida
+normal no demuestra cierre global; hay que reconciliar el build/config original.
+[Fuentes y alcance](../reports/android16-linkerconfig/source-findings.json).
+
+La frontera de configuración ya evita aplanar rutas en los ensayos consumidores:
+linker list, ayuda ART y getprop funcionan con los namespaces originales generados
+sin LD_LIBRARY_PATH/preload. Sólo el bootstrap del generador usó rutas explícitas;
+no se adopta esa excepción para las aplicaciones. Sigue siendo UID10000 sin
+capacidades con credenciales comprobadas antes de exec, no un Android iniciado.
+
+derive_classpath original consume sus fragmentos/properties sin overrides y
+genera 46 entradas BOOTCLASSPATH, 14 DEX2OATBOOTCLASSPATH, 14 SYSTEMSERVERCLASSPATH y 9
+jars standalone. Los 69 jars únicos contienen DEX y pertenecen al mismo GSI;
+no se sustituyen por stubs SDK ni clases propias. La regresión DEX preexistente
+(pura Java, referencia API28 sólo de compilación) pasa en ART16 con ese BCP46:
+no hay runtime Android13, ART host o glibc dentro del proceso target.
+Eso verifica ejecución del motor, no APIs Android completas, JNI de una APK,
+servicios, UI, instalación ni compatibilidad general. Los classloaders de
+paquetes/splits siguen pendientes.
+
+La siguiente unidad para Markor será el arranque original app_process/AndroidRuntime
+y sus registros JNI, Binder/identidad y la clausura de servicios. System_server
+no se presupone separable ni aceptado por iniciar una clase; sus dependencias y
+cualquier conflicto con el contrato se estudian antes de arrancar conjuntos.
+La semántica de propiedades/IPC, mediación SELinux y el fallo estricto global
+permanecen puertas abiertas, junto con SF/Wayland y las nueve etapas reales.
+
 ## Subsistemas y fronteras elegidas
 
 ```mermaid

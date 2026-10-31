@@ -1,0 +1,54 @@
+{
+  "sources": {
+    "system/apex/proto/apex_manifest.proto": {
+      "commit": "97548ed51112062a4d1762a7dffa0cadcc09bda9",
+      "url": "https://android.googlesource.com/platform/system/apex/+/97548ed51112062a4d1762a7dffa0cadcc09bda9/proto/apex_manifest.proto",
+      "local_cache": "/home/tv/.cache/archtv/aosp16-qpr2/apex-study/proto_apex_manifest.proto",
+      "sha256": "36b43d714e654f8cbad50bb0c65645054ba8d88385e793c58411a4ec2800e64e"
+    },
+    "system/apex/apexd/ApexInfoList.xsd": {
+      "commit": "97548ed51112062a4d1762a7dffa0cadcc09bda9",
+      "url": "https://android.googlesource.com/platform/system/apex/+/97548ed51112062a4d1762a7dffa0cadcc09bda9/apexd/ApexInfoList.xsd",
+      "local_cache": "/home/tv/.cache/archtv/aosp16-qpr2/apex-study/ApexInfoList.xsd",
+      "sha256": "d02e30bc40b826186800d12ba2345171c97573417751c87bc87e2b868a8883fc"
+    },
+    "system/apex/libs/libapexutil/apexutil.cpp": {
+      "commit": "97548ed51112062a4d1762a7dffa0cadcc09bda9",
+      "url": "https://android.googlesource.com/platform/system/apex/+/97548ed51112062a4d1762a7dffa0cadcc09bda9/libs/libapexutil/apexutil.cpp",
+      "local_cache": "/home/tv/.cache/archtv/aosp16-qpr2/apex-study/libs_libapexutil_apexutil.cpp",
+      "sha256": "5be6c19e3bb9eb2874900f37d99562ab52ee79695d598120e19fb58a802ca37f"
+    },
+    "system/core/init/init.cpp": {
+      "commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+      "url": "https://android.googlesource.com/platform/system/core/+/e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1/init/init.cpp",
+      "local_cache": "/home/tv/.cache/archtv/aosp16-qpr2/property-study/system_core__init_init.cpp",
+      "sha256": "018e17b870f6ef3a637230e3d73dd182be315cbaee04b95aa96881e8a2cfb93b"
+    },
+    "packages/modules/SdkExtensions/derive_classpath/derive_classpath.cpp": {
+      "commit": "4d10e57070bb9c6edcd13bf74e9d01717b2a5ecf",
+      "url": "https://android.googlesource.com/platform/packages/modules/SdkExtensions/+/4d10e57070bb9c6edcd13bf74e9d01717b2a5ecf/derive_classpath/derive_classpath.cpp",
+      "local_cache": "/home/tv/.cache/archtv/aosp16-qpr2/classpath-study/derive_classpath_derive_classpath.cpp",
+      "sha256": "1892f95c73807076867748f3395d4d8fa38ff09bb926fc52219a017301c68db1"
+    },
+    "packages/modules/SdkExtensions/derive_classpath/main.cpp": {
+      "commit": "4d10e57070bb9c6edcd13bf74e9d01717b2a5ecf",
+      "url": "https://android.googlesource.com/platform/packages/modules/SdkExtensions/+/4d10e57070bb9c6edcd13bf74e9d01717b2a5ecf/derive_classpath/main.cpp",
+      "local_cache": "/home/tv/.cache/archtv/aosp16-qpr2/classpath-study/main.cpp",
+      "sha256": "a105644a119aa32738d9fc2c859a4c9df51f82b4775be46c92f7a37676b61fc6"
+    }
+  },
+  "linkerconfig_source_files": {
+    "main.cc": "b2ed6e15e81a7c4a1e62d5b518607b610edf87e241edad807223639253681acb",
+    "modules/section.cc": "940bbb75d701188fb5a833e23eb091cf0b36ddf04793c354f6b56428eea16e91",
+    "modules/apex.cc": "7e7b283f7650fac78f3cd0a92530fb7d099085547907cc356378a4043d18d912",
+    "modules/tests/section_test.cc": "c2be0ab6d1ce1153b9688b1658a43d27af8341445f6ac3474928c7a9986210c9"
+  },
+  "observations": [
+    "AOSP16 XSD requires partition; derived factory XML validates against it. Selection of36 physical payload directories, no apexd activation/signature/update verification.",
+    "GetActivePackages reads unversioned directories and inner manifests. All36 payload manifests match outer original archives after complete disk extraction.",
+    "Original resolver default ignores unmet constraints; strict mode rejects them. Per-target APEX strict limits validation scope by original design; its config bytes match default ART output. Global failure libdexfiled.so remains open.",
+    "Native derive_classpath uses actual SDK properties and original fragments, no overrides; generates46 boot,14 dex2oat,14 systemserver,9 standalone paths. All69 unique jars contain executable DEX and originate in the same GSI.",
+    "Existing regression DEX executes on original ART16 with these inputs, UID10000/zero caps, no LD_LIBRARY_PATH/preload/host ART/SDK runtime stubs. It is not a real APK journey."
+  ],
+  "scope": "Exact-source and separate execution evidence; full source/binary equivalence, service/isolation/graphics/app compatibility still not accepted"
+}

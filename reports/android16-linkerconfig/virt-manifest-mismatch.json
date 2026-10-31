@@ -1,0 +1,195 @@
+{
+  "outer": {
+    "sha256": "10e0d8490e116d123c3b97bd956ab3a5c22d8e4184b79e204dff4e5f49aec5cc",
+    "bytes": 370,
+    "fields": [
+      [
+        1,
+        2,
+        {
+          "bytes": 16,
+          "text": "com.android.virt"
+        }
+      ],
+      [
+        2,
+        0,
+        3
+      ],
+      [
+        7,
+        2,
+        {
+          "bytes": 9,
+          "text": "libavf.so"
+        }
+      ],
+      [
+        8,
+        2,
+        {
+          "bytes": 9,
+          "text": "libEGL.so"
+        }
+      ],
+      [
+        8,
+        2,
+        {
+          "bytes": 12,
+          "text": "libGLESv2.so"
+        }
+      ],
+      [
+        8,
+        2,
+        {
+          "bytes": 12,
+          "text": "libvulkan.so"
+        }
+      ],
+      [
+        8,
+        2,
+        {
+          "bytes": 13,
+          "text": "libandroid.so"
+        }
+      ],
+      [
+        8,
+        2,
+        {
+          "bytes": 12,
+          "text": "libaaudio.so"
+        }
+      ],
+      [
+        8,
+        2,
+        {
+          "bytes": 16,
+          "text": "libandroidicu.so"
+        }
+      ],
+      [
+        8,
+        2,
+        {
+          "bytes": 16,
+          "text": "libbinder_ndk.so"
+        }
+      ],
+      [
+        8,
+        2,
+        {
+          "bytes": 25,
+          "text": "libbinder_rpc_unstable.so"
+        }
+      ],
+      [
+        8,
+        2,
+        {
+          "bytes": 7,
+          "text": "libc.so"
+        }
+      ],
+      [
+        8,
+        2,
+        {
+          "bytes": 8,
+          "text": "libdl.so"
+        }
+      ],
+      [
+        8,
+        2,
+        {
+          "bytes": 9,
+          "text": "liblog.so"
+        }
+      ],
+      [
+        8,
+        2,
+        {
+          "bytes": 7,
+          "text": "libm.so"
+        }
+      ],
+      [
+        8,
+        2,
+        {
+          "bytes": 18,
+          "text": "libnativehelper.so"
+        }
+      ],
+      [
+        8,
+        2,
+        {
+          "bytes": 18,
+          "text": "libnativewindow.so"
+        }
+      ],
+      [
+        8,
+        2,
+        {
+          "bytes": 13,
+          "text": "libselinux.so"
+        }
+      ],
+      [
+        8,
+        2,
+        {
+          "bytes": 15,
+          "text": "libstatspull.so"
+        }
+      ],
+      [
+        8,
+        2,
+        {
+          "bytes": 17,
+          "text": "libstatssocket.so"
+        }
+      ],
+      [
+        8,
+        2,
+        {
+          "bytes": 17,
+          "text": "libvndksupport.so"
+        }
+      ],
+      [
+        9,
+        2,
+        {
+          "bytes": 31,
+          "text": "libvirtualizationservice_jni.so"
+        }
+      ],
+      [
+        9,
+        2,
+        {
+          "bytes": 24,
+          "text": "libvirtualmachine_jni.so"
+        }
+      ]
+    ]
+  },
+  "inner": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0,
+    "fields": []
+  },
+  "scope": "Static raw manifest comparison only; no acceptance or execution"
+}

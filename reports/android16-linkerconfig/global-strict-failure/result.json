@@ -1,0 +1,24 @@
+{
+  "command": [
+    "sudo",
+    "-n",
+    "/usr/bin/prlimit",
+    "--cpu=20",
+    "--core=0",
+    "--",
+    "/usr/bin/unshare",
+    "--mount",
+    "--pid",
+    "--fork",
+    "--kill-child=SIGKILL",
+    "--net",
+    "--ipc",
+    "--uts",
+    "--cgroup",
+    "/usr/bin/python",
+    "/tmp/archtv-a16-linkerconfig-1.py"
+  ],
+  "exit_code": 127,
+  "seconds": 0.6307397649943596,
+  "scope": "Original A16 generator strict mode, derived factory APEX selection and validated static property snapshot, UID10000/no caps/no-new-privileges, private logger sink. Bootstrap LD_LIBRARY_PATH only; no service, Android boot, ART/DEX/APK or signatures/security acceptance."
+}

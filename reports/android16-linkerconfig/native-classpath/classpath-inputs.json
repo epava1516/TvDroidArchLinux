@@ -1,0 +1,656 @@
+{
+  "exports": {
+    "BOOTCLASSPATH": [
+      "/apex/com.android.art/javalib/core-oj.jar",
+      "/apex/com.android.art/javalib/core-libart.jar",
+      "/apex/com.android.art/javalib/okhttp.jar",
+      "/apex/com.android.art/javalib/bouncycastle.jar",
+      "/apex/com.android.art/javalib/apache-xml.jar",
+      "/system/framework/framework.jar",
+      "/system/framework/framework-graphics.jar",
+      "/system/framework/framework-location.jar",
+      "/system/framework/ext.jar",
+      "/system/framework/telephony-common.jar",
+      "/system/framework/voip-common.jar",
+      "/system/framework/ims-common.jar",
+      "/system/framework/framework-ondeviceintelligence-platform.jar",
+      "/apex/com.android.i18n/javalib/core-icu4j.jar",
+      "/apex/com.android.adservices/javalib/framework-adservices.jar",
+      "/apex/com.android.adservices/javalib/framework-sdksandbox.jar",
+      "/apex/com.android.appsearch/javalib/framework-appsearch.jar",
+      "/apex/com.android.bt/javalib/framework-bluetooth.jar",
+      "/apex/com.android.configinfrastructure/javalib/framework-configinfrastructure.jar",
+      "/apex/com.android.conscrypt/javalib/conscrypt.jar",
+      "/apex/com.android.crashrecovery/javalib/framework-crashrecovery.jar",
+      "/apex/com.android.devicelock/javalib/framework-devicelock.jar",
+      "/apex/com.android.healthfitness/javalib/framework-healthfitness.jar",
+      "/apex/com.android.ipsec/javalib/android.net.ipsec.ike.jar",
+      "/apex/com.android.media/javalib/updatable-media.jar",
+      "/apex/com.android.mediaprovider/javalib/framework-mediaprovider.jar",
+      "/apex/com.android.mediaprovider/javalib/framework-pdf.jar",
+      "/apex/com.android.mediaprovider/javalib/framework-pdf-v.jar",
+      "/apex/com.android.mediaprovider/javalib/framework-photopicker.jar",
+      "/apex/com.android.nfcservices/javalib/framework-nfc.jar",
+      "/apex/com.android.ondevicepersonalization/javalib/framework-ondevicepersonalization.jar",
+      "/apex/com.android.os.statsd/javalib/framework-statsd.jar",
+      "/apex/com.android.permission/javalib/framework-permission.jar",
+      "/apex/com.android.permission/javalib/framework-permission-s.jar",
+      "/apex/com.android.profiling/javalib/framework-profiling.jar",
+      "/apex/com.android.scheduling/javalib/framework-scheduling.jar",
+      "/apex/com.android.sdkext/javalib/framework-sdkextensions.jar",
+      "/apex/com.android.telephonycore/javalib/framework-telephony.jar",
+      "/apex/com.android.tethering/javalib/framework-connectivity.jar",
+      "/apex/com.android.tethering/javalib/framework-connectivity-b.jar",
+      "/apex/com.android.tethering/javalib/framework-connectivity-t.jar",
+      "/apex/com.android.tethering/javalib/framework-tethering.jar",
+      "/apex/com.android.uwb/javalib/framework-ranging.jar",
+      "/apex/com.android.uwb/javalib/framework-uwb.jar",
+      "/apex/com.android.virt/javalib/framework-virtualization.jar",
+      "/apex/com.android.wifi/javalib/framework-wifi.jar"
+    ],
+    "DEX2OATBOOTCLASSPATH": [
+      "/apex/com.android.art/javalib/core-oj.jar",
+      "/apex/com.android.art/javalib/core-libart.jar",
+      "/apex/com.android.art/javalib/okhttp.jar",
+      "/apex/com.android.art/javalib/bouncycastle.jar",
+      "/apex/com.android.art/javalib/apache-xml.jar",
+      "/system/framework/framework.jar",
+      "/system/framework/framework-graphics.jar",
+      "/system/framework/framework-location.jar",
+      "/system/framework/ext.jar",
+      "/system/framework/telephony-common.jar",
+      "/system/framework/voip-common.jar",
+      "/system/framework/ims-common.jar",
+      "/system/framework/framework-ondeviceintelligence-platform.jar",
+      "/apex/com.android.i18n/javalib/core-icu4j.jar"
+    ],
+    "SYSTEMSERVERCLASSPATH": [
+      "/system/framework/com.android.location.provider.jar",
+      "/system/framework/services.jar",
+      "/apex/com.android.adservices/javalib/service-adservices.jar",
+      "/apex/com.android.adservices/javalib/service-sdksandbox.jar",
+      "/apex/com.android.appsearch/javalib/service-appsearch.jar",
+      "/apex/com.android.art/javalib/service-art.jar",
+      "/apex/com.android.configinfrastructure/javalib/service-configinfrastructure.jar",
+      "/apex/com.android.crashrecovery/javalib/service-crashrecovery.jar",
+      "/apex/com.android.healthfitness/javalib/service-healthfitness.jar",
+      "/apex/com.android.media/javalib/service-media-s.jar",
+      "/apex/com.android.ondevicepersonalization/javalib/service-ondevicepersonalization.jar",
+      "/apex/com.android.permission/javalib/service-permission.jar",
+      "/apex/com.android.rkpd/javalib/service-rkp.jar",
+      "/apex/com.android.virt/javalib/service-virtualization.jar"
+    ],
+    "STANDALONE_SYSTEMSERVER_JARS": [
+      "/apex/com.android.bt/javalib/service-bluetooth.jar",
+      "/apex/com.android.devicelock/javalib/service-devicelock.jar",
+      "/apex/com.android.os.statsd/javalib/service-statsd.jar",
+      "/apex/com.android.profiling/javalib/service-profiling.jar",
+      "/apex/com.android.scheduling/javalib/service-scheduling.jar",
+      "/apex/com.android.tethering/javalib/service-connectivity.jar",
+      "/apex/com.android.uwb/javalib/service-uwb.jar",
+      "/apex/com.android.uwb/javalib/service-ranging.jar",
+      "/apex/com.android.wifi/javalib/service-wifi.jar"
+    ]
+  },
+  "jars": {
+    "/apex/com.android.adservices/javalib/framework-adservices.jar": {
+      "sha256": "374b918841b1923daefd72fd78db95401a790c4646c5e29acd901f232c1b15f0",
+      "bytes": 570281,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.adservices/javalib/framework-sdksandbox.jar": {
+      "sha256": "bfb8b345d1ed934f773f2eb1f79588f481fd0cf4efd1cce0ea6bc7a4e17af83b",
+      "bytes": 103821,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.adservices/javalib/service-adservices.jar": {
+      "sha256": "c9abcdd8cff6015a6422fcc435cee2a6ba3f1c87227f6214bc1ef9b7b5fc069d",
+      "bytes": 111713,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.adservices/javalib/service-sdksandbox.jar": {
+      "sha256": "25c499c4528b4ce3fabbbd0a173d19201ec2dcf91d0a5bb8dd4013dc557e4961",
+      "bytes": 419578,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.appsearch/javalib/framework-appsearch.jar": {
+      "sha256": "a20daf2e7249fc2f488d654d4b84719fbbe45272b85a2940605addedb781a885",
+      "bytes": 388153,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.appsearch/javalib/service-appsearch.jar": {
+      "sha256": "a6919b7adab4eede71d960ad22090fbf3f70c10d288bfd5d3f2fb4307bfefc62",
+      "bytes": 859230,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.art/javalib/apache-xml.jar": {
+      "sha256": "dedd4e7341a3b1d9c5a3df76c474b83fd227412600bcff6f1b20f65c38ff66ca",
+      "bytes": 1058167,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.art/javalib/bouncycastle.jar": {
+      "sha256": "d8fc5c51189a257eddeb2fc4ba13803d94fcce5280a26486b1ab8a5fa3b638a5",
+      "bytes": 1032745,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.art/javalib/core-libart.jar": {
+      "sha256": "1fe7067e6da3875e0c53283b4cbd9e44e30a18dbc4c5e970ff50aaa064b5f895",
+      "bytes": 638989,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.art/javalib/core-oj.jar": {
+      "sha256": "bb0853c56c4092a41d2a8a6b4a88d16f0876bace56d2cd307e29e0c3fce03c23",
+      "bytes": 6035840,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.art/javalib/okhttp.jar": {
+      "sha256": "d52475aad51e24b361b625ef8927ff9b2a1e33e29e57d287423c1e0f65d45e93",
+      "bytes": 370873,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.art/javalib/service-art.jar": {
+      "sha256": "17d44eafadfae9616ff3a90620342933a14531eb1c924523b4dc40ed2893139b",
+      "bytes": 581566,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.bt/javalib/framework-bluetooth.jar": {
+      "sha256": "422e3c66d3cc527186446544cb3a47c16de1c31efc3f3cf7af9be385208cc9e8",
+      "bytes": 1442045,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.bt/javalib/service-bluetooth.jar": {
+      "sha256": "f42f1e6c9c60b10197c767a31580928b07deb9482ce62c8b963a2d25cb74fcf5",
+      "bytes": 485464,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.configinfrastructure/javalib/framework-configinfrastructure.jar": {
+      "sha256": "01f92dc6190e83df495adba2589ae1db1d2555ccb480135f27ab884a7b597be6",
+      "bytes": 178104,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.configinfrastructure/javalib/service-configinfrastructure.jar": {
+      "sha256": "aac3a159411f74a309c76fd55603c7a8d36ba5ba7eb18688c04196374b6d91f3",
+      "bytes": 305638,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.conscrypt/javalib/conscrypt.jar": {
+      "sha256": "32e12efc5c66aab31f92b5dbc9c4015f1671e987e24e9760f9a5bc73c7d88aeb",
+      "bytes": 559317,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.crashrecovery/javalib/framework-crashrecovery.jar": {
+      "sha256": "40fed2b3b2e985954a64485d830e6e90858d86ed309f02c84f9ad6592f4be661",
+      "bytes": 23793,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.crashrecovery/javalib/service-crashrecovery.jar": {
+      "sha256": "29ef6ce2f14777515e5626674e48ee798a7d49173ee6842807ff9620f781c384",
+      "bytes": 225354,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.devicelock/javalib/framework-devicelock.jar": {
+      "sha256": "d87148d32c1758549f4c78973aeff1a24c9febcbebf9d0c1ec5a059c3f139372",
+      "bytes": 41365,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.devicelock/javalib/service-devicelock.jar": {
+      "sha256": "b03c3b0821ee2472e65f403289cb8db3446684b1998626f5ba531de09aa927f0",
+      "bytes": 94798,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.healthfitness/javalib/framework-healthfitness.jar": {
+      "sha256": "3214028f4cfe3d46e3108547fdb0fcee674fe9bae8a88b7462a106b91128909e",
+      "bytes": 911341,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.healthfitness/javalib/service-healthfitness.jar": {
+      "sha256": "720bef10b062b13498ee6462b5b9221954739afd18254e92cbe9f32654861b15",
+      "bytes": 787845,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.i18n/javalib/core-icu4j.jar": {
+      "sha256": "c9848d773947bc63834936e692bfaa0963aed9decdc63d3241ec6e1a7b910cc5",
+      "bytes": 3041921,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.ipsec/javalib/android.net.ipsec.ike.jar": {
+      "sha256": "986e4d80cff32b50735a1c67cf3d01135492f9078e2f775b0bb603dad86e9898",
+      "bytes": 757653,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.media/javalib/service-media-s.jar": {
+      "sha256": "6f76e371697dcdaa3f5e784a0e44403ca940dae33a9a80bf2549351960904933",
+      "bytes": 21890,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.media/javalib/updatable-media.jar": {
+      "sha256": "3b45367903a9b33fb885a9dfdd8d41303997cdbe435572ef340630af79dd3b4a",
+      "bytes": 765308,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.mediaprovider/javalib/framework-mediaprovider.jar": {
+      "sha256": "7bc31408ea1ead913f9e531749f9e141349a6f58ec72b2f3e9e1418e15e08712",
+      "bytes": 185389,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.mediaprovider/javalib/framework-pdf-v.jar": {
+      "sha256": "5042dc9c658a9cf892ae210da279241f2718b1011e9b256988567174d9292d99",
+      "bytes": 14885,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.mediaprovider/javalib/framework-pdf.jar": {
+      "sha256": "35ae2be917ac22c14f11422eae3974ca702e9b560675262249dbbf8548fc7ce4",
+      "bytes": 129041,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.mediaprovider/javalib/framework-photopicker.jar": {
+      "sha256": "d191e91cedd9dd97210e9230b567f71a57f446b81ddb5870f91b706a1316ee56",
+      "bytes": 40745,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.nfcservices/javalib/framework-nfc.jar": {
+      "sha256": "82fc15dc2da3576cf8a22a187f53118e64e8348f1f00a2a80fbf95ce91ba690e",
+      "bytes": 430957,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.ondevicepersonalization/javalib/framework-ondevicepersonalization.jar": {
+      "sha256": "d70910fcaab79f270e5c0db1b8fc1b373e445f87f1956b2a673efda25f9fb5a3",
+      "bytes": 307461,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.ondevicepersonalization/javalib/service-ondevicepersonalization.jar": {
+      "sha256": "c6ae851f27e08fdd793a683bad5f675edc2f560434a2cf25a3ad5c8cbf222386",
+      "bytes": 3306,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.os.statsd/javalib/framework-statsd.jar": {
+      "sha256": "8fe755f10b710ba9a4cdaa2d3d259a17c5c5d24f9cd4975890532729035ccdd0",
+      "bytes": 114297,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.os.statsd/javalib/service-statsd.jar": {
+      "sha256": "56de22446a4ac3c1a09353b0301d3166a373b58744b21cd2327d8580d00b8692",
+      "bytes": 42250,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.permission/javalib/framework-permission-s.jar": {
+      "sha256": "74bc9d76297162507f36c38c2f627f5e10a0486534ba1b065e532c673d9cd99f",
+      "bytes": 296665,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.permission/javalib/framework-permission.jar": {
+      "sha256": "16c241028e042f6eea03995d72406eea6bb845549a408a950c79c4a3eb147ce4",
+      "bytes": 1093,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.permission/javalib/service-permission.jar": {
+      "sha256": "8647c4ae54b6cfa66c29fb6b064f262724b1d3acd8be71908c67856f011f7fc9",
+      "bytes": 633170,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.profiling/javalib/framework-profiling.jar": {
+      "sha256": "ba9c5a71f60a4bda7b2168e91e4882f194f5ebaa1a8cadbed8e1c36b1b94f26a",
+      "bytes": 43617,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.profiling/javalib/service-profiling.jar": {
+      "sha256": "39856cf1648c116bc2da3be1f695bb61d963d037470cca21a73e60f6481a1a74",
+      "bytes": 564874,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.rkpd/javalib/service-rkp.jar": {
+      "sha256": "cd4ef3f6a19e3aee0509942963551ddb133e68f22502874a5231db1ea257524a",
+      "bytes": 32310,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.scheduling/javalib/framework-scheduling.jar": {
+      "sha256": "5a6715bdf1ce43e9a08fe4e8fffbb69f2bfc95cff763d793afeb7c0c06d7b2e0",
+      "bytes": 13317,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.scheduling/javalib/service-scheduling.jar": {
+      "sha256": "aba87f31325d9d5aa021c8c7b57344bfded2946b76937d9fc93a75e57005a70a",
+      "bytes": 40821,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.sdkext/javalib/framework-sdkextensions.jar": {
+      "sha256": "5273a5bb3fde0918d5122314c33af44b58f6c423cf5daafc011873b629d776fb",
+      "bytes": 7877,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.telephonycore/javalib/framework-telephony.jar": {
+      "sha256": "306c37e1ecd90060758cc7269d056c51c5d36f67f240c5af523b898aea059110",
+      "bytes": 432189,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.tethering/javalib/framework-connectivity-b.jar": {
+      "sha256": "bb3c512aba6bb1d5259d70ba52971078ae59a6c990fc40e9f55853100dce660a",
+      "bytes": 125329,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.tethering/javalib/framework-connectivity-t.jar": {
+      "sha256": "d3fab972ce2644ef45e7abe3fe29283ca0d169d4dcaac46e54c2d213255e4f56",
+      "bytes": 518621,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.tethering/javalib/framework-connectivity.jar": {
+      "sha256": "c7cb8c0f504fc32458867102cd7eaade5b80ce858e62b6865c2983a7e7c71c08",
+      "bytes": 2237439,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.tethering/javalib/framework-tethering.jar": {
+      "sha256": "1c16e08d8e5b9d2901c55e090d0d0e66674b15ebcf6e7875c0535f02f6435784",
+      "bytes": 98369,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.tethering/javalib/service-connectivity.jar": {
+      "sha256": "37369322856b3e77d711e11c7d21ec971d7037d6eac9f01b51aed9e41fe3be05",
+      "bytes": 2235660,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.uwb/javalib/framework-ranging.jar": {
+      "sha256": "0f2bae203088d7af4d0292501ab11455234a4f3512af1cb9bb464d7e29638bb3",
+      "bytes": 141789,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.uwb/javalib/framework-uwb.jar": {
+      "sha256": "5edd1de0bc995df69130605b9e5fb0110119ff8727d49365af1ba527fef11832",
+      "bytes": 195501,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.uwb/javalib/service-ranging.jar": {
+      "sha256": "1b7e85390799c11d82a3036841f83b3406f0100ff2a0f9d53781f9ecda559d1f",
+      "bytes": 712459,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.uwb/javalib/service-uwb.jar": {
+      "sha256": "eabc5b11494d1be4057b08302828fa5e8953517a0b6041e091138af046f49331",
+      "bytes": 1056012,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.virt/javalib/framework-virtualization.jar": {
+      "sha256": "e96cdb243fde0177467af670c96c48760353c73395794a41f34b69e74510c57b",
+      "bytes": 197869,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.virt/javalib/service-virtualization.jar": {
+      "sha256": "89dd42f52c8b56815949e0e65d9c775487bdf304755328d30c4291950ddc89d5",
+      "bytes": 22142,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.wifi/javalib/framework-wifi.jar": {
+      "sha256": "c52231692affd82d5555213bf70a4ba6b07ea79fadab77189e5caa9822aee726",
+      "bytes": 1505845,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/apex/com.android.wifi/javalib/service-wifi.jar": {
+      "sha256": "a5fcbe77e3a0da4a04cb7ab4f22e59bade538ee23369e4972d89ade91d6f31c2",
+      "bytes": 5401269,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/system/framework/com.android.location.provider.jar": {
+      "sha256": "cd243dc8aa3227376ef4526906de7bbe3b5328ef92921ed8c20a14b3fc515818",
+      "bytes": 32282,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/system/framework/ext.jar": {
+      "sha256": "d51283dc75dc5b462e733a139f927a063a71f015f79df43256509f2314189eed",
+      "bytes": 2295282,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/system/framework/framework-graphics.jar": {
+      "sha256": "189ef95f98102ef3f517c109a0a7c139a38773a581c52086e1463b85660bab19",
+      "bytes": 4073,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/system/framework/framework-location.jar": {
+      "sha256": "ebda584d6e79365ca65a9665a9a94d2f0cbf0459f06a52e9715a3a3fa0715c86",
+      "bytes": 535213,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/system/framework/framework-ondeviceintelligence-platform.jar": {
+      "sha256": "326bf3427c60b9e1df14677edb8a2cdf944361cab40c8c3e7eefaa609e4a5e04",
+      "bytes": 148145,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/system/framework/framework.jar": {
+      "sha256": "2b23e9b8b4eaf2fd706fb10ac8a2e439379c0e2f68ac50af5ae8836d466cffa0",
+      "bytes": 47966222,
+      "dex_members": [
+        "classes.dex",
+        "classes2.dex",
+        "classes3.dex",
+        "classes4.dex",
+        "classes5.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/system/framework/ims-common.jar": {
+      "sha256": "ac72ac5154d4ed23658014bcba271c2202dcd75ff7cd566859419b81ce52f73b",
+      "bytes": 545305,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/system/framework/services.jar": {
+      "sha256": "5840117856bec0fc282cf7ce0991de56ef3b20d83f9c951f6d671f435818b383",
+      "bytes": 22829549,
+      "dex_members": [
+        "classes.dex",
+        "classes2.dex",
+        "classes3.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/system/framework/telephony-common.jar": {
+      "sha256": "3735e13ef52e87ba543297f24777d00eae4b3a636e26960ea0085617ea43467b",
+      "bytes": 4937127,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    },
+    "/system/framework/voip-common.jar": {
+      "sha256": "7b45bb193d3571fdcc9b497a1475e75fae02a911a6e9c44599c3ab997a8645be",
+      "bytes": 826637,
+      "dex_members": [
+        "classes.dex"
+      ],
+      "scope": "Original GSI classpath input; executable DEX presence/preopt artifact role, not proof its methods/services work"
+    }
+  },
+  "scope": "Native-derived lists, no SDK stubs substituted; main fixture compiles against older API only and runtime uses these A16 inputs"
+}

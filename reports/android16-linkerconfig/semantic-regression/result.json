@@ -1,0 +1,27 @@
+{
+  "command": [
+    "sudo",
+    "-n",
+    "/usr/bin/prlimit",
+    "--cpu=30",
+    "--core=0",
+    "--",
+    "/usr/bin/unshare",
+    "--mount",
+    "--pid",
+    "--fork",
+    "--kill-child=SIGKILL",
+    "--net",
+    "--ipc",
+    "--uts",
+    "--cgroup",
+    "/usr/bin/python",
+    "/tmp/archtv-a16-art-semantic-1.py",
+    "semantic"
+  ],
+  "exit_code": 0,
+  "seconds": 3.047211213000992,
+  "dex_sha256": "829fd9f1387c069ee075558b3f8238eecb1eb1c5e3259be3e1bd99f2fa5e2d66",
+  "passed": true,
+  "scope": "Existing unchanged pure-Java regression DEX, compile-only API28 tooling; runtime all original A16 GSI 46-jar classpath and generated namespaces, no SDK stubs/host ART/LD_LIBRARY_PATH/preload. Fixture is not APK acceptance; no application framework/JNI/service/UI/CTS acceptance."
+}

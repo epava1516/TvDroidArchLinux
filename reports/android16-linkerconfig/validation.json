@@ -1,0 +1,79 @@
+{
+  "observed_at": "2026-10-31T01:03:07.631535+00:00",
+  "source_base_commit": "b26ec626bb15669792aaf857f9a9639ccee96520",
+  "factory_inputs": {
+    "modules": 36,
+    "regular_files": 4395,
+    "two_complete_extractions_identical": true,
+    "apex_info_xsd": "Official A16 schema, xmllint passes",
+    "apex_manifest_outer_inner_match": 36,
+    "ownership_restored": false,
+    "activation_signature_verified": false,
+    "symlinks_equal": 343,
+    "all_entry_modes_equal": true,
+    "original_regular_files": 4394,
+    "derived_xml_files": 1
+  },
+  "resource_failure": {
+    "first_extraction": "tmpfs quota caused truncated manifest; no source mismatch accepted",
+    "preservation": "4373 files relocated to disk and hashes verified before tmp source removed",
+    "guard": "Actual tmpfs staging rejected before extraction; disk has sufficient headroom"
+  },
+  "generator": {
+    "global_strict_exit": 127,
+    "global_strict_failure": "libdexfiled.so required by default in [system], absent from original factory input",
+    "default_exit": 0,
+    "art_target_strict_exit": 0,
+    "art_config_bytes_equal": true,
+    "scope": "Default can ignore unresolved constraints; not an all-provider closure acceptance"
+  },
+  "namespace_execution": {
+    "linker_list_exit": 0,
+    "art_help_exit": 0,
+    "getprop_exit": 0,
+    "LD_LIBRARY_PATH": null,
+    "LD_PRELOAD": null,
+    "uid_gid": 10000,
+    "effective_and_permitted_capabilities": "0",
+    "no_new_privileges": true
+  },
+  "native_classpaths": {
+    "boot": 46,
+    "dex2oat_boot": 14,
+    "systemserver": 14,
+    "standalone_systemserver": 9,
+    "unique_jars_with_DEX": 69,
+    "sdk_overrides": false
+  },
+  "regression": {
+    "dex_sha256": "829fd9f1387c069ee075558b3f8238eecb1eb1c5e3259be3e1bd99f2fa5e2d66",
+    "exit": 0,
+    "message": "DEX_SEMANTICS_OK total=9",
+    "scope": "Pure Java fixture only; compile-only API28 references not runtime components"
+  },
+  "matrix_sha256": "1db1df142c1a686c4692350fdd2e5ac5491f8c52d4a74542d9987b7d3149c52e",
+  "real_APK_nine_stage_coverage": "all not_tested, unchanged",
+  "REA_MCP": "Actual ELF-note inspections of generator and derive_classpath; identity only, not execution proof",
+  "pending_work_preserved": true,
+  "open_gates": [
+    "Global strict provider discrepancy and full build/source equivalence",
+    "Original app_process/AndroidRuntime JNI, private Binder/service closure and identity/policy for Markor",
+    "Property server IPC, SELinux enforcement, package/install/classloader/lifecycle semantics",
+    "SF/Wayland, input, AV, TV, external/proprietary/ARM and all nine real-app stages",
+    "CTS/security/performance/install/update product acceptance"
+  ],
+  "scope": "Partial original A16 native engine/configuration milestone; R1 and full goal remain open",
+  "preparer_source_sha256": "f5865e7ec4aeb1e67b36f73814b22d4bd96baf31ff3111adc22449001b76916e",
+  "local_extraction_logs": {
+    "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-1/debugfs.log": "5184230bf1878231b7742c093ed0afe4b5a4fcd262f6ea751871a7bffff8a965",
+    "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/debugfs.log": "e95d79493bfa137baa5ef961475dee6a7f8300538e6ff63021f94843881e0316"
+  },
+  "local_links_checked": 131,
+  "broken_local_links": 0,
+  "graphify": {
+    "nodes": 2587,
+    "edges": 4980,
+    "communities": 221,
+    "scope": "AST update in isolated staged worktree; no LLM semantic relabeling"
+  }
+}

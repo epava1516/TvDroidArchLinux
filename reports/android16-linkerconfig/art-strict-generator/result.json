@@ -1,0 +1,25 @@
+{
+  "command": [
+    "sudo",
+    "-n",
+    "/usr/bin/prlimit",
+    "--cpu=20",
+    "--core=0",
+    "--",
+    "/usr/bin/unshare",
+    "--mount",
+    "--pid",
+    "--fork",
+    "--kill-child=SIGKILL",
+    "--net",
+    "--ipc",
+    "--uts",
+    "--cgroup",
+    "/usr/bin/python",
+    "/tmp/archtv-a16-linkerconfig-art-strict-1.py"
+  ],
+  "exit_code": 0,
+  "seconds": 0.38730403200315777,
+  "profile": "linkerconfig-art-strict-1",
+  "scope": "Original generator, UID10000/zero caps/no-new-privileges. Default may ignore unmet requirements; per-ART strict checks only its target scope. Global strict failure remains open. No ART/DEX/APK, signature/security acceptance."
+}

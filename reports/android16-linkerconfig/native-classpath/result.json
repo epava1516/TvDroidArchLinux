@@ -1,0 +1,27 @@
+{
+  "command": [
+    "sudo",
+    "-n",
+    "/usr/bin/prlimit",
+    "--cpu=15",
+    "--core=0",
+    "--",
+    "/usr/bin/unshare",
+    "--mount",
+    "--pid",
+    "--fork",
+    "--kill-child=SIGKILL",
+    "--net",
+    "--ipc",
+    "--uts",
+    "--cgroup",
+    "/usr/bin/python",
+    "/tmp/archtv-a16-classpath-native-1.py",
+    "derive"
+  ],
+  "exit_code": 0,
+  "seconds": 0.45296545299788704,
+  "LD_LIBRARY_PATH": null,
+  "LD_PRELOAD": null,
+  "scope": "Unmodified target derive_classpath consumes original fragments/properties/config without SDK overrides;UID10000/zero caps instead of Android init service invocation. Output only, no ART VM/DEX/APK or complete classloader acceptance."
+}

@@ -1,0 +1,5 @@
+{
+  "no_content_io_errors": true,
+  "ownership_warnings_retained": 4145,
+  "scope": "debugfs stat output is ordinary data, not an error; ownership not restored in research extraction"
+}

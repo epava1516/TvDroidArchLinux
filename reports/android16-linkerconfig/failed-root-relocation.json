@@ -1,0 +1,8 @@
+{
+  "original": "/tmp/archtv-a16-factory-root-1",
+  "preserved": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-1/failed-root",
+  "regular_files_verified": 4373,
+  "original_removed_after_hash_verification": true,
+  "reason": "debugfs disk quota exceeded in tmpfs; empty inner manifest was truncated extraction, not an original APEX mismatch",
+  "scope": "Only our failed generated directory relocated; user/repo pending sources untouched"
+}

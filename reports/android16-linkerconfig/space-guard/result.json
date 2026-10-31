@@ -1,0 +1,7 @@
+{
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Insufficient staging space; use a disk with at least three image sizes free, not the small tmpfs\n",
+  "destination_created": false,
+  "scope": "Real tmpfs capacity preflight after previous quota failure; no extraction attempted"
+}
