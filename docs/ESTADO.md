@@ -1,12 +1,17 @@
 # Estado actual y punto de entrada
 
+## Integración HWC3 · frontera de backend
+
+[Frontend HWC3 preparado](../reports/android16-hwc3-frontend/findings.json): nueve unidades originales compilan tras un parche sólo de includes/declaraciones adelantadas. El enlace estricto falla en siete símbolos de Device/findDisplays: fábrica, opciones persistentes y salida real siguen sin integrar. No ejecutable, servicio o frame aceptado. Graphics-common es currentV7/notfrozen; ComposerV4 y DRM-commonV1 sí congelados. Siguiente: libwayland Bionic + FrameComposer/fábrica/descubrimiento, buffers y finalización reales antes de SurfaceFlinger/Markor.
+
+
 Vigente: contrato **A16-QPR2-1**, recibido el 2026-10-30. Sustituye BASE-AOSP-1 en
 base, estrategia nativa y prioridad gráfica. Git y artefactos prevalecen sobre
 los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-graphics-resume/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-hwc3-frontend/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).

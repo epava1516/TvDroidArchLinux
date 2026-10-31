@@ -1,0 +1,20 @@
+{
+  "revision": "aa229558cbf04bc997ed27465c5e7ad497123d1b",
+  "files": [
+    {
+      "path": "drm/common/aidl/aidl_api/android.hardware.drm.common/1/.hash",
+      "git_blob": "66690e1a7e93cf4c324e98b90a55f3b09ff84316",
+      "sha256": "386b9cc6d1e3a77d8b87b74c729eaac5724b83d4d541c373b24fc58a5b0da9f3"
+    },
+    {
+      "path": "drm/common/aidl/aidl_api/android.hardware.drm.common/1/android/hardware/drm/HdcpLevel.aidl",
+      "git_blob": "118bef68c3f5c07819ea2b680da6edb1dba746c7",
+      "sha256": "f5b2569f9779eb01dea68f80c633919a88b30a77d406b5670a9790d730d0ea28"
+    },
+    {
+      "path": "drm/common/aidl/aidl_api/android.hardware.drm.common/1/android/hardware/drm/HdcpLevels.aidl",
+      "git_blob": "a6f86ace67b47f83ac2a32456be9a93ed6990521",
+      "sha256": "6f24f642bf408a653ed9e5e79c60162ae793d7661712b86ce81157897b5398fa"
+    }
+  ]
+}

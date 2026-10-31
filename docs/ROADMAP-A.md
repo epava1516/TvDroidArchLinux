@@ -1,5 +1,10 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+## Integración HWC3 · frontera de backend
+
+MC3: [frontend AIDL original compilado, enlace aún rechazado](../reports/android16-hwc3-frontend/findings.json). Siguiente entregable funcional: libwayland cliente/Bionic y adaptación FrameComposer/Device/findDisplays con salida real/configuración/buffer/completion en Smithay; después cliente/SurfaceFlinger con allocator/mapper/render coherentes. Siete símbolos pendientes son frontera explícita, no un runtime listo. No repetir fixtures de codecs o gestor para cerrar presentación.
+
+
 ## Recuperación y siguiente integración gráfica
 
 Próximo experimento MC3: frontend AIDL original Goldfish a la revisión fijada, con adaptación acotada FrameComposer/fábrica/descubrimiento a Wayland. [Decisión y puertas](../reports/android16-graphics-resume/findings.json). Primero cierre nativo/ABI y allocator/mapper/renderizador coherentes; después cliente real/SurfaceFlinger, pixels sobre Smithay y fences/errores/resize; finalmente display original requerido antes de PMS y Markor. NoOp, compilación, registro de servicio o placeholder no cierran MC3. HIDL y DRM-HWC3 permanecen alternativas documentadas; no imponer FCM antiguo. Anfitrión recuperado LTS/permisivo/policyload1, no disponibilidad actual de servicios.

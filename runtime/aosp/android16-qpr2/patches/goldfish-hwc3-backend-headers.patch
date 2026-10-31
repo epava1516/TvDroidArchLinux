@@ -1,0 +1,41 @@
+--- a/FrameComposer.h
++++ b/FrameComposer.h
+@@ -26,9 +26,11 @@
+ 
+ #include "Common.h"
+ #include "DisplayChanges.h"
+-#include "DrmClient.h"
++
+ 
+ namespace aidl::android::hardware::graphics::composer3::impl {
++
++class DrmClient;
+ 
+ class Display;
+ 
+--- a/DisplayFinder.h
++++ b/DisplayFinder.h
+@@ -22,9 +22,11 @@
+ 
+ #include "Common.h"
+ #include "DisplayConfig.h"
+-#include "DrmClient.h"
++
+ 
+ namespace aidl::android::hardware::graphics::composer3::impl {
++
++class DrmClient;
+ 
+ struct DisplayMultiConfigs {
+     int64_t displayId;
+--- a/ComposerClient.cpp
++++ b/ComposerClient.cpp
+@@ -21,8 +21,6 @@
+ 
+ #include "Common.h"
+ #include "Device.h"
+-#include "GuestFrameComposer.h"
+-#include "HostFrameComposer.h"
+ #include "Time.h"
+ 
+ namespace aidl::android::hardware::graphics::composer3::impl {

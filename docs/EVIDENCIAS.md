@@ -1,5 +1,10 @@
 # Índice de evidencias
 
+## Integración HWC3 · frontera de backend
+
+[Frontend HWC3](../reports/android16-hwc3-frontend/findings.json): [generación](../reports/android16-hwc3-frontend/generation.json), [build completo](../reports/android16-hwc3-frontend/build.json), [enlace estricto negativo](../reports/android16-hwc3-frontend/strict-link.json), [primer fallo conservado](../reports/android16-hwc3-frontend/build-attempt-1.json) y [parche mínimo](../runtime/aosp/android16-qpr2/patches/goldfish-hwc3-backend-headers.patch). Reproducción exacta del parche sobre tres archivos originales verificada; sólo compile/link, sin REA/runtime/frame/APK.
+
+
 ## Recuperación y siguiente integración gráfica
 
 [Recuperación y comparación gráfica](../reports/android16-graphics-resume/findings.json): [anfitrión](../reports/android16-graphics-resume/host.json), [71 fuentes Goldfish verificadas por blob Git/SHA256](../reports/android16-graphics-resume/goldfish-source-inventory.json) y [checkpoint](../reports/android16-graphics-resume/checkpoint.json). Política exacta recargada en permisivo, página de estado policyload1; lectura fuera de sandbox confirma vmwgfx/card0/renderD128. Inspección de fuentes solamente: no build/frame/APK ni nueva prueba enforcing.

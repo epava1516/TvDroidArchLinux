@@ -1,0 +1,1337 @@
+{
+  "scope": "Original A16 frozen ComposerV4/DRM commonV1 generation; graphics common currentV7 import is NOT frozenV7; reuse previous commonV2/graphicsV7 generated headers. Not linked/executed ABI acceptance.",
+  "tool_sha256": "58f06576a1c3a8df96afee4f0434135d0cbe298fd071de3951b7dcdfb9f3b1b0",
+  "results": [
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/aidl-host-build-4/aidl",
+        "--lang=ndk",
+        "--structured",
+        "--stability=vintf",
+        "--version=1",
+        "--hash=1b5e9159609b3aa05e2c7158f3a1488fda2250d1",
+        "--min_sdk_version=29",
+        "--omit_invocation",
+        "--out=/home/tv/repositorio-principal/dist/aosp16/hwc3-aidl-v4-1/src",
+        "--header_out=/home/tv/repositorio-principal/dist/aosp16/hwc3-aidl-v4-1/include",
+        "-I/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/common/aidl/aidl_api/android.hardware.common/2",
+        "-I/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl",
+        "-I/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/drm/common/aidl/aidl_api/android.hardware.drm.common/1",
+        "-I/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/drm/common/aidl/aidl_api/android.hardware.drm.common/1/android/hardware/drm/HdcpLevel.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/drm/common/aidl/aidl_api/android.hardware.drm.common/1/android/hardware/drm/HdcpLevels.aidl"
+      ],
+      "version": 1,
+      "hash_argument": "1b5e9159609b3aa05e2c7158f3a1488fda2250d1",
+      "inputs": [
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/drm/common/aidl/aidl_api/android.hardware.drm.common/1/android/hardware/drm/HdcpLevel.aidl",
+          "sha256": "f5b2569f9779eb01dea68f80c633919a88b30a77d406b5670a9790d730d0ea28"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/drm/common/aidl/aidl_api/android.hardware.drm.common/1/android/hardware/drm/HdcpLevels.aidl",
+          "sha256": "6f24f642bf408a653ed9e5e79c60162ae793d7661712b86ce81157897b5398fa"
+        }
+      ],
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/aidl-host-build-4/aidl",
+        "--lang=ndk",
+        "--structured",
+        "--stability=vintf",
+        "--version=4",
+        "--hash=aba56b3f763c2762a7929fe39b8c6b386b0ccb94",
+        "--min_sdk_version=29",
+        "--omit_invocation",
+        "--out=/home/tv/repositorio-principal/dist/aosp16/hwc3-aidl-v4-1/src",
+        "--header_out=/home/tv/repositorio-principal/dist/aosp16/hwc3-aidl-v4-1/include",
+        "-I/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/common/aidl/aidl_api/android.hardware.common/2",
+        "-I/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl",
+        "-I/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/drm/common/aidl/aidl_api/android.hardware.drm.common/1",
+        "-I/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/Buffer.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/Capability.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ChangedCompositionLayer.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ChangedCompositionTypes.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ClientTarget.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ClientTargetProperty.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ClientTargetPropertyWithBrightness.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ClockMonotonicTimestamp.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/Color.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ColorMode.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/CommandError.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/CommandResultPayload.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/Composition.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ContentType.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/DimmingStage.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/DisplayAttribute.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/DisplayBrightness.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/DisplayCapability.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/DisplayCommand.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/DisplayConfiguration.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/DisplayConnectionType.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/DisplayContentSample.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/DisplayContentSamplingAttributes.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/DisplayIdentification.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/DisplayLuts.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/DisplayRequest.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/FormatColorComponent.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/HdrCapabilities.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/IComposer.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/IComposerCallback.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/IComposerClient.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/LayerBrightness.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/LayerCommand.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/LayerLifecycleBatchCommandType.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/LutProperties.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/Luts.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/OutputType.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/OverlayProperties.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ParcelableBlendMode.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ParcelableComposition.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ParcelableDataspace.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ParcelableTransform.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/PerFrameMetadata.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/PerFrameMetadataBlob.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/PerFrameMetadataKey.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/PlaneAlpha.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/PowerMode.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/PresentFence.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/PresentOrValidate.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ReadbackBufferAttributes.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/RefreshRateChangedDebugData.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ReleaseFences.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/RenderIntent.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ScreenPartStatus.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/VirtualDisplay.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/VrrConfig.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/VsyncPeriodChangeConstraints.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/VsyncPeriodChangeTimeline.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ZOrder.aidl"
+      ],
+      "version": 4,
+      "hash_argument": "aba56b3f763c2762a7929fe39b8c6b386b0ccb94",
+      "inputs": [
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/Buffer.aidl",
+          "sha256": "5cce4e5ceca19845be3281182cc537be9c1d1de51a3d145122f8e20da343feac"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/Capability.aidl",
+          "sha256": "fa7bec5c1d503588c7c1f8f5adc5c350c13a6e95bb30984356bf1a86ae13e6e4"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ChangedCompositionLayer.aidl",
+          "sha256": "b9cc0848c25b5ad8965f882756a0c9b25b37c769ec68ead5658ecfe6c265b7da"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ChangedCompositionTypes.aidl",
+          "sha256": "56ae3905de95010db0afcc16c5a81ce5a288b8867214c0037fb53ed9b4279578"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ClientTarget.aidl",
+          "sha256": "774d0bb11ba65d03dd2174df872e343557fe2d003b09148dd17dd00a5d1adb47"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ClientTargetProperty.aidl",
+          "sha256": "7c93e793aac0a67b245d128bac8faa072618f67f8871ccbbe0e2551e3e478681"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ClientTargetPropertyWithBrightness.aidl",
+          "sha256": "6da818558d115be4040be70e847cf0b864bc12580b7aed140ecff60cfa95cd5e"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ClockMonotonicTimestamp.aidl",
+          "sha256": "68c02f0d9de0954e9ee4052283d01f429c059fd930bcc1876f60a415d779f40f"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/Color.aidl",
+          "sha256": "259723a07522325392fe2488806c667b1197a861b86db40a8a930ce91f758621"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ColorMode.aidl",
+          "sha256": "853af56b6a6d16017c92c3039721297b56d17d8728fe1cd6c4cae14cf026a5aa"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/CommandError.aidl",
+          "sha256": "edf9dc38c6166d99589975e0843d4057af5d1794bed70b54b602c1a3011fb0c6"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/CommandResultPayload.aidl",
+          "sha256": "0e7a747b2a107871ec26e0a4c07560434565a06844b88838269d6fdeeabc93d8"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/Composition.aidl",
+          "sha256": "2dbe304846c4e6cd0aeae2fb2655f5a18c230df9a7b46d9211cf2424d52adb81"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ContentType.aidl",
+          "sha256": "8cd66168b54fd9fecaab9e4a6f48700eac14f395b421e06a4119958e85048245"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/DimmingStage.aidl",
+          "sha256": "f171e511d33881ea2ba8d14f05cd7b30fab8b4a972477834dd4f734187481133"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/DisplayAttribute.aidl",
+          "sha256": "8c08f1dd315ebeac789e5e36df7a777c51fce2800f81cd3473ce36103d6437f1"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/DisplayBrightness.aidl",
+          "sha256": "8f7e694ad94bf2d4dd00d51477e9fc8f072770c7a1a9f8e15cc4d09b4bb0d07f"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/DisplayCapability.aidl",
+          "sha256": "007c23f6c1c6db903dfde3a208287422bc6b252a0ba32580a2574e819c9c38c8"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/DisplayCommand.aidl",
+          "sha256": "f0e55607dc1b302af1e76f558903602a8ef188b7461dca8f27a16172e42fc51e"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/DisplayConfiguration.aidl",
+          "sha256": "618f9b8ad501f60b9011f46e75662665a87f585c606c4023c62a901c9c7d236f"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/DisplayConnectionType.aidl",
+          "sha256": "97a568a7faec09e4449e53b814b441eb9ec321266fcb1ea01c53bf72a0c0f59c"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/DisplayContentSample.aidl",
+          "sha256": "1a570f0c0fff590445173d38d3cca4e675d33145634eda3eb827929476975236"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/DisplayContentSamplingAttributes.aidl",
+          "sha256": "69b20a5fd5ab99af2378419abd4c2bbabdd452d38372527ed231568c56c152ff"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/DisplayIdentification.aidl",
+          "sha256": "5d2541a224760087c45356cee3f2043ce6a5009efbd4e9b2c8cab0857e77b5f4"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/DisplayLuts.aidl",
+          "sha256": "2f058f5be4f97eb79d0e7b4dd4971ad4cb488289caa9cc5f80736541d96fd890"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/DisplayRequest.aidl",
+          "sha256": "bac2ada951e7273ab48ca69e781ae8ed8eeb87a25943fb93e78f295a850f485c"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/FormatColorComponent.aidl",
+          "sha256": "b6ecc6b15e8de212b5a3f5808bb68a3b393e03972a3fca88fc010f7ee9ead13e"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/HdrCapabilities.aidl",
+          "sha256": "8fd7c91f6aa238a37ca4257827dd7e8cabdf6034b84e13b3753aa2cfe32b5c44"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/IComposer.aidl",
+          "sha256": "d4705002440512384642b89b7219f56b8a47e7cb01f88ccd297b3160116bc84d"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/IComposerCallback.aidl",
+          "sha256": "b6a8233ea605cf1324d5a22f7e5b570a89a19bc4c72faaae22f9a64f0d82f952"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/IComposerClient.aidl",
+          "sha256": "5223342d5d202b16ccf26d192c1b3e4410e1c7f49a7864c472401459c96f312d"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/LayerBrightness.aidl",
+          "sha256": "ae3ef7883ff9cfe4bebb9f8446a233a280080de299ea98f347d1a434c5e07090"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/LayerCommand.aidl",
+          "sha256": "6d716210e357a24b3dd1cd8bbe176637a65e30407f310fff9ba6085f455e08e2"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/LayerLifecycleBatchCommandType.aidl",
+          "sha256": "b388c8b5099c1d139306619e8bca9992fe6523e6b272d045adee8d7d6cf87c30"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/LutProperties.aidl",
+          "sha256": "5b7b4de0e715b196e0f83d6441c37f2cda81ce59990a357cbd037f2a520d6463"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/Luts.aidl",
+          "sha256": "1927f567940994b279a9415b55a9a909e27252daa87caead75519a740760ae9a"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/OutputType.aidl",
+          "sha256": "05b6c6b1881f15b8c87f4d40e0c3ec2634a87f55f3f6435457ba70c8120b8cfe"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/OverlayProperties.aidl",
+          "sha256": "1ed00830aaa7b1fe75e0963933457c43902534bc657c0965a8f3f36e779249d5"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ParcelableBlendMode.aidl",
+          "sha256": "6d4920e770021a7533409a158e2ce28e6ea6990a6e69433809a15ba09ca1279f"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ParcelableComposition.aidl",
+          "sha256": "0e091a5a5948f3790e6b374537a56e7b9f4a3516903090e9d37ad6f75a49208b"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ParcelableDataspace.aidl",
+          "sha256": "af4e1ebce1b59b031ba371b3b064f0b3a65f5294205acd7870493737987c90c6"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ParcelableTransform.aidl",
+          "sha256": "2af2ea1cee6eab477a8b49b3f97c543123519772044094f9decc4c3138da9f07"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/PerFrameMetadata.aidl",
+          "sha256": "349b7a0d0dc166eafe89a067069f5ff7d2f9dc3834467738e0d2d35322547a4c"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/PerFrameMetadataBlob.aidl",
+          "sha256": "663b4c82d3450f0deb9bbc8e1c355f52369947932659a48d361c9ffc45be32ac"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/PerFrameMetadataKey.aidl",
+          "sha256": "9e4d46c3eb36c0e880019e618940bd1ef0107f8f5ba772505d8b72a18e5da0a6"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/PlaneAlpha.aidl",
+          "sha256": "bdd62051d15f0e50c83a819546e433e668e2b24760d1ba6ffcf1e024552eed65"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/PowerMode.aidl",
+          "sha256": "44d676d617ae1a2f2ffb0aeb95807765b2f713a4492f68c251738420dbec079c"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/PresentFence.aidl",
+          "sha256": "0e725e651deea606cc14a4269fe18c66b41b8b3e2df68010d3a6190cef380117"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/PresentOrValidate.aidl",
+          "sha256": "64d537260e6a62416c610b1f485c1a03b06c9d599f806af5bcc1d64b31797920"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ReadbackBufferAttributes.aidl",
+          "sha256": "b93a2c599ba10c68be3d305e477f05cb6330308f0de3c78cf0f518d6d9081fee"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/RefreshRateChangedDebugData.aidl",
+          "sha256": "6a486d81c6feddf4327958e8a9a209fbb887f08c10e8e2da56f67b881b1418cc"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ReleaseFences.aidl",
+          "sha256": "bb9959265bafd0a05fe559f9dc61799681f4330e18b5136f532661967ad132e1"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/RenderIntent.aidl",
+          "sha256": "1c5dfb0e14f81c63da26cbdfc7ff5d01f30ddf8803864c93775807bea9c22b63"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ScreenPartStatus.aidl",
+          "sha256": "de5593e16cd102d91bb2b505f9941c730b81cc5cde88c3cd649f6ab0ef76342e"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/VirtualDisplay.aidl",
+          "sha256": "d293be47000bd1b560041cfdbedb3aa9b03db007ad8d163443c77e87254487be"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/VrrConfig.aidl",
+          "sha256": "026719b848203be0302f3a7667a1aa5b0ccc6112fce8e16ac1b371b9623ba7fc"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/VsyncPeriodChangeConstraints.aidl",
+          "sha256": "fc8b21556eb11f67ebb1ad33083a2a55d82ea5aaadbb2b7726d6aad8130350d8"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/VsyncPeriodChangeTimeline.aidl",
+          "sha256": "2b492888c2f74745ba848c09889f139a6744aa183ae6c592611db51e738c38fd"
+        },
+        {
+          "path": "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/composer/aidl/aidl_api/android.hardware.graphics.composer3/4/android/hardware/graphics/composer3/ZOrder.aidl",
+          "sha256": "9505947e991c8b03dca451b6e4f15ca981121bb338e493a36459376a531a813a"
+        }
+      ],
+      "exit": 0,
+      "stderr": ""
+    }
+  ],
+  "generated_files": [
+    {
+      "path": "include/aidl/android/hardware/drm/BnHdcpLevel.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4"
+    },
+    {
+      "path": "include/aidl/android/hardware/drm/BnHdcpLevels.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/drm/BpHdcpLevel.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e"
+    },
+    {
+      "path": "include/aidl/android/hardware/drm/BpHdcpLevels.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/drm/HdcpLevel.h",
+      "sha256": "82fe036af30cdfdd78d429a66e8c6db59f8b7ff0ba0d0693c8de9654a717e349"
+    },
+    {
+      "path": "include/aidl/android/hardware/drm/HdcpLevels.h",
+      "sha256": "d0251e33dbef9e4c6cd3d223aecb6146beda5c4e6be644cad4309f988898e9ed"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnBuffer.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnCapability.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnChangedCompositionLayer.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnChangedCompositionTypes.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnClientTarget.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnClientTargetProperty.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnClientTargetPropertyWithBrightness.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnClockMonotonicTimestamp.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnColor.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnColorMode.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnCommandError.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnCommandResultPayload.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnComposer.h",
+      "sha256": "d3a776a9b8b988164cd2e5e3a57a60f6f94997fdd8f7affe714b51382c34392a"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnComposerCallback.h",
+      "sha256": "465902d69913f3dbb98679d2be846425eb1b1c6f950c474f4304cbb34257b4c7"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnComposerClient.h",
+      "sha256": "8551bb651a19d44200adef75c997c129c7b4ebc40a5120151d19a27c80ccd5d7"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnComposition.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnContentType.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnDimmingStage.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnDisplayAttribute.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnDisplayBrightness.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnDisplayCapability.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnDisplayCommand.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnDisplayConfiguration.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnDisplayConnectionType.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnDisplayContentSample.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnDisplayContentSamplingAttributes.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnDisplayIdentification.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnDisplayLuts.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnDisplayRequest.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnFormatColorComponent.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnHdrCapabilities.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnLayerBrightness.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnLayerCommand.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnLayerLifecycleBatchCommandType.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnLutProperties.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnLuts.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnOutputType.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnOverlayProperties.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnParcelableBlendMode.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnParcelableComposition.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnParcelableDataspace.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnParcelableTransform.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnPerFrameMetadata.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnPerFrameMetadataBlob.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnPerFrameMetadataKey.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnPlaneAlpha.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnPowerMode.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnPresentFence.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnPresentOrValidate.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnReadbackBufferAttributes.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnRefreshRateChangedDebugData.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnReleaseFences.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnRenderIntent.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnScreenPartStatus.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnVirtualDisplay.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnVrrConfig.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnVsyncPeriodChangeConstraints.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnVsyncPeriodChangeTimeline.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BnZOrder.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpBuffer.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpCapability.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpChangedCompositionLayer.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpChangedCompositionTypes.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpClientTarget.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpClientTargetProperty.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpClientTargetPropertyWithBrightness.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpClockMonotonicTimestamp.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpColor.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpColorMode.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpCommandError.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpCommandResultPayload.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpComposer.h",
+      "sha256": "9c049b663162a8d835ca5c8f8f19c4246d75ae7dee85d8e4e9ef3bcab88d216b"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpComposerCallback.h",
+      "sha256": "96e1a6acffd02c3b5701ec9855c90a505cec93312e6ec1f2b640d85e95f813df"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpComposerClient.h",
+      "sha256": "9f85e51a03734481cd13def96cba97df4281bca5e50b8bfff1b60352033dec44"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpComposition.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpContentType.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpDimmingStage.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpDisplayAttribute.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpDisplayBrightness.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpDisplayCapability.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpDisplayCommand.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpDisplayConfiguration.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpDisplayConnectionType.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpDisplayContentSample.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpDisplayContentSamplingAttributes.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpDisplayIdentification.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpDisplayLuts.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpDisplayRequest.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpFormatColorComponent.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpHdrCapabilities.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpLayerBrightness.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpLayerCommand.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpLayerLifecycleBatchCommandType.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpLutProperties.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpLuts.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpOutputType.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpOverlayProperties.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpParcelableBlendMode.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpParcelableComposition.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpParcelableDataspace.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpParcelableTransform.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpPerFrameMetadata.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpPerFrameMetadataBlob.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpPerFrameMetadataKey.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpPlaneAlpha.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpPowerMode.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpPresentFence.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpPresentOrValidate.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpReadbackBufferAttributes.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpRefreshRateChangedDebugData.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpReleaseFences.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpRenderIntent.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpScreenPartStatus.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpVirtualDisplay.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpVrrConfig.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpVsyncPeriodChangeConstraints.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpVsyncPeriodChangeTimeline.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/BpZOrder.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/Buffer.h",
+      "sha256": "c70711de3280e7834b77eee6240cc759d586fc30b971ffab987847884fecf81a"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/Capability.h",
+      "sha256": "5ce5719bc52683b90d04f63ab7add17d2ccdfc47933fb303277d0c96aaddc910"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/ChangedCompositionLayer.h",
+      "sha256": "f428a3c6878b843f441c1c1dc756becb8abe8adf3cf6477640758ac6897607ca"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/ChangedCompositionTypes.h",
+      "sha256": "4d4b55cb2fd382d4893eced935776ef98a6dd72d50b92fef7cc197f32a2df29f"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/ClientTarget.h",
+      "sha256": "ffd841d4fbf01576c2dfdd0ea5f939cbdbbb04cb62d09fa3664da8c475ad12b6"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/ClientTargetProperty.h",
+      "sha256": "70575037ccb78917a25dbada358a1a517a6fb118fe2f93cfcc1d8d4211b7f84c"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/ClientTargetPropertyWithBrightness.h",
+      "sha256": "e839ba562f597c6be965a2b1d9c484cad1be351d4055cdf87efcb0e41043b13b"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/ClockMonotonicTimestamp.h",
+      "sha256": "c42cbbf8968b9666807db6f85bddf15ec39ae2b32d3179c1c46f2dcbd94b44d1"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/Color.h",
+      "sha256": "ab2a02b2142c4feb215a3b889fa7ea3e40ab2b6da61eb400d6a4840d9db8e3c6"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/ColorMode.h",
+      "sha256": "f1f84743a3f8249139da6f4e0a34c0e93d35c1b8708942141d627898017cf87c"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/CommandError.h",
+      "sha256": "9a9842b9726e4cdf5f063cb90608fa0ab8f9453ee87de584ff247117b92823a8"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/CommandResultPayload.h",
+      "sha256": "624a99c3ee4ffe4cd6f64619dab4ceec0e86195e41612b6a289361c476fd5125"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/Composition.h",
+      "sha256": "afd12dba4163b098adf1c284714f0cf7a0d5539a31870f57aef00fd9646f07c3"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/ContentType.h",
+      "sha256": "0bbe881b11e9e671b522d4018e2a913cc0230693a90500671c1899e458e664e8"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/DimmingStage.h",
+      "sha256": "e9dbdb686f51d44995d41a143e31c193450e61a213242a852430f8b66f819c72"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/DisplayAttribute.h",
+      "sha256": "96b67f3c6d3f5a19c0a79b29c6d001b45d6f542018fdd2dc46dfd9c0386c11ed"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/DisplayBrightness.h",
+      "sha256": "c7fa7ab6c3f6e8117473d005fea0b06ffd5aca9c6cfb965c0071a4445b57950a"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/DisplayCapability.h",
+      "sha256": "f6df67e6b42419886f0e9cf8fc5a0a208e91606db1b547d254e8c0e0eda80476"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/DisplayCommand.h",
+      "sha256": "360248993552383edb9fc59a166eb4167e871140b97a12284db8b80fc59f6dd0"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/DisplayConfiguration.h",
+      "sha256": "6f65b9c410af368dcf705d952cbe20fd25a843c0c0b2bacee3518770dea16dcb"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/DisplayConnectionType.h",
+      "sha256": "9825e04e1d33f61ca188c8c8f125405f502dbdc10f4ecf5f0c7a8cc76aaba281"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/DisplayContentSample.h",
+      "sha256": "0d90624df944f0d95d21ce846a6f326886dbc2ef077bbc8e9b7dd36c48e5aa8b"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/DisplayContentSamplingAttributes.h",
+      "sha256": "d5d7cd2b024657f75b2d2e06506a1404873878184c17f100dfa91590d8fddb60"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/DisplayIdentification.h",
+      "sha256": "df51f7ddd81399d07faf02cf8f5715afc51f85e8e1d37a385c31c0b2c47b16b7"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/DisplayLuts.h",
+      "sha256": "da2ea5cddc9cc1c223128adb45a99fb81f6578ee193609326b54ff1727df201e"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/DisplayRequest.h",
+      "sha256": "984f836bf1415a385a49cbeff430f6cfe973c46736341231eaf700f7c5a4dc77"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/FormatColorComponent.h",
+      "sha256": "635973073746add8c2ca5c911de44efa25f7e9f6759bc39db4fd0d5ba688589e"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/HdrCapabilities.h",
+      "sha256": "b74bf8b8cf368536cf358bdd72b423d0c3e0f1d2b517eb405ebb16b5ee280cc0"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/IComposer.h",
+      "sha256": "1b8ea8b51c8bda745e144905767b3957826746b0925348e47dda735930befa95"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/IComposerCallback.h",
+      "sha256": "c2e31bda073bae04fff37cc82e71f0095dbcc80a438f44a89132f0a71409c768"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/IComposerClient.h",
+      "sha256": "a2956652f5f032ab617d844e2cfee5925eaee1a578edfa150e7ebde991cdf5b8"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/LayerBrightness.h",
+      "sha256": "17a15bfc639adf34e5771e4bd19d04430ca11365c8096b98067325c95cea72c2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/LayerCommand.h",
+      "sha256": "1f6c68edd8419a6aa950910517ccabd8c74f023c67fe2f7ef0d7d89f53cdfef2"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/LayerLifecycleBatchCommandType.h",
+      "sha256": "1e2c00ff0c71e8ce3bc3285894e439cee86f344fcabc498884e252c79141e499"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/LutProperties.h",
+      "sha256": "030e5a943475ec131636055e473a91a4a0de1e478078393a6d6dd91262342a63"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/Luts.h",
+      "sha256": "c5c02cde980fec139b0dde1f1ddd43804299125fb05f7be770ce17147ed57705"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/OutputType.h",
+      "sha256": "d7904adcfb1e9b0bc718934b7982e8aa7f5522a5f10d566b24538c9c9e16fd5a"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/OverlayProperties.h",
+      "sha256": "1a4a08a5b687517c993a03ba05d8138e0c9176d22fedbd67109dee354ccc09ec"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/ParcelableBlendMode.h",
+      "sha256": "a80400b9cc6045171eaae255824a78b35551ecf3216d9878aba704962b42b1cf"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/ParcelableComposition.h",
+      "sha256": "2dcc6b51fba930433caa8d550131057ce3b6c77bca2f9f9ac7cf6182215ae98c"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/ParcelableDataspace.h",
+      "sha256": "675ea75dc3ca193af468f359b5429a2a9a492719ef827feca87acf800f848296"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/ParcelableTransform.h",
+      "sha256": "0dd4b99cfb165ad313819697c47ff35297d042955556c7a18e18f43f2ce8cb83"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/PerFrameMetadata.h",
+      "sha256": "0e1295c1dbbcd14de3aad8a7a11b35aef5d74703bb102ba9d64354204daf9b1a"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/PerFrameMetadataBlob.h",
+      "sha256": "fcf72e7cbca0e35eea2801e90f1aad07c393d497377d1890daad094d2ce0caca"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/PerFrameMetadataKey.h",
+      "sha256": "5d2fff5d716e9dd7b8d2803c22f1a2f71faab88e5249040b62312db199dacf97"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/PlaneAlpha.h",
+      "sha256": "0ec07b7685e733d6896cab45da7f8149198d7201e4fffcbf97a3d0110304cdaa"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/PowerMode.h",
+      "sha256": "c8f35beb179f18513ed3b2561bc7097f9d1af41449fce8210b9b524c91bbbd28"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/PresentFence.h",
+      "sha256": "e6c1e30394d552b563b4c86b88bbf270d32acdcf4aa5b31d6505011a166859bd"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/PresentOrValidate.h",
+      "sha256": "d90edcb6a073d905d38be426abf316d91c5897d48d6c53511d1ecd18a22ea9e8"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/ReadbackBufferAttributes.h",
+      "sha256": "37856ffbda63b4dc716b01ad2894e839ab4ae4566959a36cfb32bca65b1f79f6"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/RefreshRateChangedDebugData.h",
+      "sha256": "3284ae205c7815ab48ea510d102734ea03952af717f55e671ecd06f111c081b6"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/ReleaseFences.h",
+      "sha256": "d155d75a9826d68def5f72f838f73ab82f9e62b69352c97b415906cf27194c32"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/RenderIntent.h",
+      "sha256": "5095aff5c8c4c920315b590272d0d7397236164d1e4ca88c91d91d3bef2bf051"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/ScreenPartStatus.h",
+      "sha256": "c3f685822f96cb0cacff0386f6141f967321ac4436de9758178552a8de01c7f6"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/VirtualDisplay.h",
+      "sha256": "c15f22a73206b10d1f1d403312a318eb4a182bfeb492f11e8e2db859338818e3"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/VrrConfig.h",
+      "sha256": "a8f0b1c5c244192a431af81c07333def4010e228f07f56931f6b1bb3eba2eea4"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/VsyncPeriodChangeConstraints.h",
+      "sha256": "ad614d1c545354e5e56d539570e40c2f7143396e54387b3fc2a326d4d48f359c"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/VsyncPeriodChangeTimeline.h",
+      "sha256": "b641e8f9bcb71efecc301db4d6a40447aa3498325e58789d7100dbf7838deaf8"
+    },
+    {
+      "path": "include/aidl/android/hardware/graphics/composer3/ZOrder.h",
+      "sha256": "ff1dc9a806c41c3a259ad05d19641c5090d77333057935ba761412c0dcbbb892"
+    },
+    {
+      "path": "src/android/hardware/drm/HdcpLevel.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb"
+    },
+    {
+      "path": "src/android/hardware/drm/HdcpLevels.cpp",
+      "sha256": "918714286c0baca9a81971bded9e46e1098879f2a40f475c0aa3c1ba6faaca7e"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/Buffer.cpp",
+      "sha256": "e8a7aa971525aa949d36d629bc04e0cbcc70a9313795054d652b2c4d8ac52d60"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/Capability.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/ChangedCompositionLayer.cpp",
+      "sha256": "567ab4ea581528bdfc5a3125a8ca30d81057f26b562a0c21a2bcbf39813d0507"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/ChangedCompositionTypes.cpp",
+      "sha256": "7bd4dcf57927dff5126d22d47efc0b8a9cc54203ab06323e760d8a1f54e9d4fa"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/ClientTarget.cpp",
+      "sha256": "bffd90c5acd2176b0ee2a38baf499b431fe4a099f9e814f8985594e98b78d9b0"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/ClientTargetProperty.cpp",
+      "sha256": "ec438d31714ad0a2f40991c89c65d6f1e47e842f97a313224a410a75321567fe"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/ClientTargetPropertyWithBrightness.cpp",
+      "sha256": "6824bb05c75c09123d77cac32ff300a9c5aa29e7ebe09f6d8b24c8ae167d9ebc"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/ClockMonotonicTimestamp.cpp",
+      "sha256": "3d75b0fe2931da04e1f9384a8dbd968db28d25e73d20cb13c729ee80132916fc"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/Color.cpp",
+      "sha256": "31b36270b48d0f7e8351b3d7d1a8c0a6979b87e0411d5c22c0e7604d7f3d017e"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/ColorMode.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/CommandError.cpp",
+      "sha256": "e38ab94d5dc3aa0295b48f82c837999fa3062741820594ba4b27eb62e684c1d0"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/CommandResultPayload.cpp",
+      "sha256": "10539c20d94dfacc48d660d595fd4074c56483a92f55bc011636b51269926c10"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/Composition.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/ContentType.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/DimmingStage.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/DisplayAttribute.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/DisplayBrightness.cpp",
+      "sha256": "414c8c6a30b44f579f4d2ca039fa56363f2bdd648036508a0b97eeb01f53cd1b"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/DisplayCapability.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/DisplayCommand.cpp",
+      "sha256": "12986e50b2ba16dd5d385e6e9892637084cfcd62b70601c49f7fc031075f1cf7"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/DisplayConfiguration.cpp",
+      "sha256": "d4a3c75b07148b55a2fd93d83af088221e301b695f8c9a06741ac0c50bb8576f"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/DisplayConnectionType.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/DisplayContentSample.cpp",
+      "sha256": "689877876419719cec4fb7938e1a518f23a1e695dbbe3ea10b33896f88b35c97"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/DisplayContentSamplingAttributes.cpp",
+      "sha256": "cd13da9e6aa4f9ec3415e0e1975555d93b8aa84c23af315f08a12dd0d7e3e694"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/DisplayIdentification.cpp",
+      "sha256": "815f03224b9db3de4a909a085b7168f47f217a55a2c66c326afce2fa28eb8f60"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/DisplayLuts.cpp",
+      "sha256": "219301d91d1d5622e7c61acdf66e40debe79fc6846a85416d2266f150780626b"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/DisplayRequest.cpp",
+      "sha256": "17a29749579118b9a03f5434dab313550bc797726b6a1e307844753ef613c047"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/FormatColorComponent.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/HdrCapabilities.cpp",
+      "sha256": "10aad7c2a1fbb49e75691542545e28a7403f2af52b86a03c18a0b66ca0f4fa4b"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/IComposer.cpp",
+      "sha256": "9a546977e8dffd61fe6a146652306354a871a85da1750187e27bc215d8e80c56"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/IComposerCallback.cpp",
+      "sha256": "37b7bd27921923cd4e959964052a2e31912da0bb4d5da565ce103ef0e3ee3113"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/IComposerClient.cpp",
+      "sha256": "ba8f7fcb400721f052fe893ed1eccc23975cb325ae356d729dd03ba5ffd4f7b0"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/LayerBrightness.cpp",
+      "sha256": "0705f05c34e385beb97eb92bfdf8d802e89c8c0da53f540b4f8c876b1bc25abe"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/LayerCommand.cpp",
+      "sha256": "d0d37c52f9eae6e316f8cb5fc9298a2a065838ecce8d61a79f8e3ea2e350ce00"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/LayerLifecycleBatchCommandType.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/LutProperties.cpp",
+      "sha256": "20999efa411c381a577f9d39dd8b76ebfbcdebb7e06a063980a9f50b48dc5bd3"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/Luts.cpp",
+      "sha256": "f60369e521d9f641ce935e79a77f8bc9b87031dc7faae1880b62372b5d02bf18"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/OutputType.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/OverlayProperties.cpp",
+      "sha256": "a7b0557831904c3bf52e6dfad3db239705e78e767304822d9bbef8a8265e046b"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/ParcelableBlendMode.cpp",
+      "sha256": "64e88db321f23a7237f54a2b306d34086a3d7f0a3288f6429df2beb1e76d64a0"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/ParcelableComposition.cpp",
+      "sha256": "1f679aab1c316a2eabc1a896b775571c03e2d02704d68c4a176a136d01f1092b"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/ParcelableDataspace.cpp",
+      "sha256": "7c8fea709351a176f40aeec33a48490f596e1f329d6a57a8c1bb84ebc1862bc4"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/ParcelableTransform.cpp",
+      "sha256": "d63f9e88cad54d29c90ee3d7324ca2d84fcbefa14e5df303ee8286ad61a68729"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/PerFrameMetadata.cpp",
+      "sha256": "f2eb2d4cebda89758ce2df0152d3fcc74c6ca805b1b3cf4c38f9312d4e201e07"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/PerFrameMetadataBlob.cpp",
+      "sha256": "07c9943c6ff40c89bc243b79a9abb81eb16449b195c3f14ae7d612f320c23547"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/PerFrameMetadataKey.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/PlaneAlpha.cpp",
+      "sha256": "cf75c543b646ba1504e4cc2dff2d59dd71547366e2210d260b5bc057d938f3e5"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/PowerMode.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/PresentFence.cpp",
+      "sha256": "015535958a750a667b976e435c0a2b415538a48e979ca4fc820688aa9725a29b"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/PresentOrValidate.cpp",
+      "sha256": "c461b913c3144441920978a224aab601590925a6edb4380af1b28b4dededd7db"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/ReadbackBufferAttributes.cpp",
+      "sha256": "874039f73f37364d5823ba376d7d00d6e7048bae037ff9ca4d8238986307c2eb"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/RefreshRateChangedDebugData.cpp",
+      "sha256": "6a11b71d1f8af5cb11e5dda01921a0ebe07bd1e6f3950784680795bacd048fe6"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/ReleaseFences.cpp",
+      "sha256": "6a30b3d1e4fd991402f7edeecb1adbed24b482538e7ace49b9237bca2a40b2e8"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/RenderIntent.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/ScreenPartStatus.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/VirtualDisplay.cpp",
+      "sha256": "ae7f6199c3190fcd26ad57284f9923bfe8cb424fe1ea1e36683496ff6b168ea2"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/VrrConfig.cpp",
+      "sha256": "83e7925a640d8466031c861b04940a2a9c470f5e2eb82b7346cd2e5973fe2cec"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/VsyncPeriodChangeConstraints.cpp",
+      "sha256": "e77fbe23317cb7ff82e1eca7b8b93b0ef06b3a4271d5878273415c475d8cdf20"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/VsyncPeriodChangeTimeline.cpp",
+      "sha256": "ca04dc27f8f274dd1519117ce11b86fada0586b1cea1cdd1ed1a88a0229c5725"
+    },
+    {
+      "path": "src/android/hardware/graphics/composer3/ZOrder.cpp",
+      "sha256": "bd3be4359170806c15be64c3c53afa5a3b1611ad03340429358f9a83397b039d"
+    }
+  ]
+}

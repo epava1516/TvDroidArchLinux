@@ -1,5 +1,10 @@
 # Arquitectura vigente · A16-QPR2-1
 
+## Integración HWC3 · frontera de backend
+
+La [separación comprobada del frontend](../reports/android16-hwc3-frontend/findings.json) conserva cuerpos y firmas originales, eliminando sólo includes concretos innecesarios y adelantando DrmClient. El enlace completo exige todavía Device y findDisplays (siete símbolos); no se permite resolverlos con NoOp o respuestas ficticias. La importación graphics-common actualV7 no es frozenV7. HDCP y brillo siguen Unsupported originales; no hay aceptación DRM.
+
+
 ## Recuperación y siguiente integración gráfica
 
 La comparación adicional de [Goldfish HWC3 original](../reports/android16-graphics-resume/findings.json) identifica una frontera FrameComposer para adaptar salida Wayland conservando el frontend AIDL completo. Se elige como próximo experimento, no como base probada. Client/Guest siguen ligados a DRM, Host al emulador y NoOp no acredita presentación. Fábrica y descubrimiento de displays necesitan adaptación real, junto a allocator/mapper, RenderEngine Bionic y sincronización. Linux/Smithay conserva KMS; no hay aceptación gráfica ni FCM final.

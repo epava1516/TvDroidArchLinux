@@ -1,0 +1,12 @@
+{
+  "utc": "2026-10-31T19:36:59.677411+00:00",
+  "base_head": "7107a01",
+  "host": "LTS6.18.59, policy689ca90e loaded permissive in prior milestone; no changes/reboot/enforcing in this milestone",
+  "pending": "Same six historical files excluded, plus own new frontend patch/build evidence/docs",
+  "handles": "generation terminal0; build29386 terminal0 with one unit failed recorded; build72744 terminal0 all9 passed; provider-link37768 terminal1 lookup; strict-link28680 script0 but LLD1 recorded explicitly, recipe now propagates LLD status; no active build/runtime handle",
+  "evidence": "build-attempt-1.json, build.json, generation.json, drm-common-inputs.json, strict-link.json, findings.json, canonical patch with exact byte replay verified",
+  "next": "Integrate real original libwayland client/Bionic closure and Wayland FrameComposer + factory + real output discovery. Resolve mapper/allocator/render provider and actual completion semantics, then whole strict link/service/client/frame on Smithay. No NoOp backend or fake fences.",
+  "recovery": "/home/tv/recuperacion-archtv/20261031T192541Z-reload-proven-policy/RETOMAR.txt",
+  "acceptance": "No frame/app available; broad runtime incomplete",
+  "recipe_status": "Initial recording scripts terminated0 while preserving per-unit/LLD errors. Current recipes propagate nonzero compile/link status; acceptance here independently requires all nine unit exits0 and explicitly preserves LLD1. No runtime success claimed."
+}

@@ -1,0 +1,54 @@
+{
+  "utc": "2026-10-31T19:36:59.677411+00:00",
+  "base_commit": "7107a01",
+  "scope": "Original HWC3 frontend source adaptation and native compile/strict link diagnostic, NOT service or graphics execution",
+  "frontend_units": [
+    "Main.cpp",
+    "Composer.cpp",
+    "ComposerClient.cpp",
+    "ComposerResources.cpp",
+    "Common.cpp",
+    "Display.cpp",
+    "DisplayConfig.cpp",
+    "Layer.cpp",
+    "VsyncThread.cpp"
+  ],
+  "compiled_successfully": 9,
+  "adaptation": "Only forward declare pointer type DrmClient in FrameComposer/DisplayFinder headers, remove two unused concrete backend includes from ComposerClient. No signatures, implementation bodies, success responses or security checks altered.",
+  "patch_sha256": "0ec4532061b1c74b4bd133b01437b5d4d21056054d259171f51d7067a410e580",
+  "patch_replay": "Fresh original three-file copy plus canonical patch exactly equals compiled source bytes",
+  "generated_contracts": {
+    "composer": "FrozenV4 + original .hash",
+    "drm_common": "FrozenV1 + original .hash",
+    "common": "Reused frozenV2 source-generated headers",
+    "graphics_common": "Reused CURRENT V7/notfrozen, not nonexistent frozenV7; earlier commentary saying all imports frozen was imprecise",
+    "tool": "Previously source-built original A16 SDK36 AIDL compiler, not SDK35 prebuilt or historical API33 tool"
+  },
+  "strict_link": {
+    "exit": 1,
+    "provider_count": 36,
+    "remaining_symbols": [
+      "android::Singleton<aidl::android::hardware::graphics::composer3::impl::Device>::sLock",
+      "android::Singleton<aidl::android::hardware::graphics::composer3::impl::Device>::sInstance",
+      "aidl::android::hardware::graphics::composer3::impl::Device::getComposer(aidl::android::hardware::graphics::composer3::impl::FrameComposer**)",
+      "aidl::android::hardware::graphics::composer3::impl::findDisplays(aidl::android::hardware::graphics::composer3::impl::DrmClient const*, std::__1::vector<aidl::android::hardware::graphics::composer3::impl::DisplayMultiConfigs, std::__1::allocator<aidl::android::hardware::graphics::composer3::impl::DisplayMultiConfigs>>*)",
+      "aidl::android::hardware::graphics::composer3::impl::Device::persistentKeyValueEnabled() const",
+      "aidl::android::hardware::graphics::composer3::impl::Device::getPersistentKeyValue(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>*)",
+      "aidl::android::hardware::graphics::composer3::impl::Device::setPersistentKeyValue(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&)"
+    ],
+    "interpretation": "All seven unresolved names belong to Device factory/persistent settings and findDisplays backend integration; no suppressed unresolved symbols and no executable accepted. This localizes remaining linkage for this selected frontend, not all runtime dependencies.",
+    "initial_setup_failure": "libdl_android.so provider was searched in system/lib64; corrected to original runtime APEX before actual strict link. This was provider lookup failure, not LLD/runtime failure."
+  },
+  "original_limitations_checked": {
+    "HDCP": "ComposerClient::startHdcpNegotiation returns original Unsupported; contract presence not DRM/HDCP success",
+    "brightness": "Display::setBrightness returns original Unsupported for nonnegative input, BadParameter negative",
+    "deprecated_callback": "Original source still invokes onHotplug; compiler warns. No behavior patched for a green build."
+  },
+  "next": "Integrate real original libwayland client/Bionic closure and Wayland FrameComposer + factory + real output discovery. Resolve mapper/allocator/render provider and actual completion semantics, then whole strict link/service/client/frame on Smithay. No NoOp backend or fake fences.",
+  "limits": [
+    "No HWC3 executable, Binder service/client, display, buffer, fence or APK executed in this milestone",
+    "Build/evidence inspect source/compiler/linker directly; no REA MCP execution claimed",
+    "Platform-profile linkage of GSI/source-built libui/resource providers does not prove vendor namespace or admission",
+    "Full unmodified Markor journey remains untested; ARM/GMS/DRM separate"
+  ]
+}
