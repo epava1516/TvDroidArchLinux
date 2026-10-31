@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-policy-proc-adapter/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-policy-manager-selinux/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -430,3 +430,12 @@ se recuperan ocho permisos de directorio; seis denegaciones y nueve casos
 originales se conservan. La exportación completa añade sólo la regla prevista.
 Pendiente: contratos SELinux del gestor, tres denegaciones modeladas y pruebas
 reales. Ningún host/servicio/APK aceptado; no se cargó la política.
+
+## Último resultado: consultas SELinux del gestor offline
+
+[Resultados](../reports/android16-policy-manager-selinux/validation.json): tres
+reglas recuperan consultas de estado/access en el modelo;28 controles nuevos,
+17 previos y9 originales concuerdan. Administración sigue denegada. Delta
+exportado de3 reglas, sin cambios de atributos. Siguiente: clausura real de
+contexto/etiquetas/montajes/Binder del gestor; ningún endpoint/servicio/APK
+ejecutado o aprobado por estas pruebas, ni política cargada.

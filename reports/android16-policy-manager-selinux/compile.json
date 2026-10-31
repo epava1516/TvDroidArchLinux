@@ -1,0 +1,36 @@
+{
+  "scope": "Original compiler offline source-derived manager label contracts only; no live kernel/status/query/service/APK execution",
+  "original_source_sha256": "3b063948a16dcd365b4ff4cb1eeda22b1580c6e0a3500e755ba8c358a0565559",
+  "base_cil_sha256": "22dfd54c17f3b4258421b08b99ad0cd5cc3faedd6eaae5c625ce7dec0a0cafab",
+  "modules": {
+    "/home/tv/repositorio-principal/runtime/aosp/android16-qpr2/policy/linux-proc.cil": "b7bb19bb97deb6baf41c177825520af525d08a68ec93ac462f7ba91a4d9f528e",
+    "/home/tv/repositorio-principal/runtime/aosp/android16-qpr2/policy/linux-servicemanager-selinux.cil": "7dfdc007d743dca10b838e78ef869cbdad3f4845da07ce7353124b60bf3145bd"
+  },
+  "argv": [
+    "prlimit",
+    "--as=2147483648",
+    "--cpu=120",
+    "--",
+    "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/source/secilc/secilc",
+    "-m",
+    "-M",
+    "true",
+    "-G",
+    "-c",
+    "30",
+    "-o",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/combined.bin",
+    "-f",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/combined.fc",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-type-universe-sparse-linux-1/combined.cil",
+    "/home/tv/repositorio-principal/runtime/aosp/android16-qpr2/policy/linux-proc.cil",
+    "/home/tv/repositorio-principal/runtime/aosp/android16-qpr2/policy/linux-servicemanager-selinux.cil"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "elapsed_seconds": 135.80412264399638,
+  "cpu_user_seconds": 73.165612,
+  "cpu_system_seconds": 62.679027,
+  "max_rss_kib": 449740
+}

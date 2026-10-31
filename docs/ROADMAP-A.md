@@ -178,6 +178,11 @@ casos originales conservados; delta binario exportado de una sola regla.
 Siguiente: contratos SELinux del gestor y mediación por clase/permiso, junto
 a pruebas reales de identidad, denegaciones y transición. No readiness/APK.
 
+R1-MAC: [consultas SELinux del gestor](../reports/android16-policy-manager-selinux/validation.json)
+compilan con aserciones y delta de3 reglas; administración sigue denegada en
+el modelo. Exigir endpoints/contextos/montajes/Binder/denegaciones reales,
+no convertir28+17+9 consultas offline en readiness ni compatibilidad APK.
+
 ## Historia · etapas anteriores, no prioridad vigente
 
 

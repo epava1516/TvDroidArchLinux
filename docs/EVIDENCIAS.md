@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+- [Consultas SELinux del gestor offline](../reports/android16-policy-manager-selinux/validation.json): tres reglas;28 casos especializados,17 previos y9 originales concuerdan;12 operaciones security restantes denegadas. Exportación completa añade sólo3 reglas, atributos iguales. Sin kernel/endpoints/servicio/APK aceptados. [Checkpoint actual](../reports/android16-policy-manager-selinux/checkpoint.json).
+
 - [Adaptador proc offline](../reports/android16-policy-proc-adapter/validation.json): ocho permisos recuperados, seis denegaciones conservadas, nueve decisiones originales iguales; atributos sin cambios y exportación con una regla añadida. Tres interfaces SELinux del gestor siguen denegadas; sin syscalls/servicios/APK aceptados. [Checkpoint actual](../reports/android16-policy-proc-adapter/checkpoint.json).
 
 - [Composición con universos explícitos](../reports/android16-policy-type-universe/validation.json): compilador0 con aserciones;439 atributos retenidos y nueve decisiones válidas coinciden con controles.100 atributos Linux ausentes ya en control aislado; búsqueda de proc Linux por app Android denegada. No política de despliegue ni APK. [Checkpoint actual](../reports/android16-policy-type-universe/checkpoint.json).

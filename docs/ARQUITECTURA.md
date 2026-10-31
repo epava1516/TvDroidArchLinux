@@ -690,6 +690,35 @@ contrastar fuentes libselinux/servicemanager y mapear por clase/permiso; no
 traducir kernel→security_t globalmente, ni conceder escritura/administración
 de política por comodidad. Readiness de gestores y recorridos APK pendientes.
 
+## Gestor original: consulta SELinux sobre etiquetas Linux
+
+[Adaptador canónico](../runtime/aosp/android16-qpr2/policy/linux-servicemanager-selinux.cil),
+[contratos fuente](../reports/android16-policy-manager-selinux/source-contract.json) y
+[pruebas](../reports/android16-policy-manager-selinux/validation.json). El gestor
+conserva Access original: contexto Binder del llamante o getpidcon, lookup de
+service_contexts y selinux_check_access, sin sustituir la identidad por la suya.
+
+La página status se consulta mediante mmap de lectura. La consulta access
+requiere O_RDWR y escritura transaccional de la petición; file.write no implica
+security.load_policy o setenforce. La [fuente upstream6.18.59](https://raw.githubusercontent.com/gregkh/linux/v6.18.59/security/selinux/selinuxfs.c)
+separa esas comprobaciones y rechaza mapas de estado escribibles. Su hash
+está fijado; equivalencia con parches/build del paquete instalado no verificada.
+
+Tres reglas por clase para servicemanager→Linux security_t permiten búsqueda
+y getattr de directorio, read/getattr/map/open/write de archivo y únicamente
+security.compute_av. No es una traducción global kernel→security_t ni permiso
+por ruta: file.write alcanza ese tipo de archivo; la administración necesita
+controles security separados, DAC y montaje supervisado. No atribuir a una
+consulta de política el comportamiento de un endpoint ejecutado.
+
+Compila con aserciones.28 casos especializados (8 permisos y20 denegaciones),
+17 controles previos y9 casos originales concuerdan. Las otras12 operaciones
+security siguen denegadas, junto a controles de aplicaciones. Todos los atributos
+permanecen iguales y la exportación completa añade exactamente las3 reglas.
+Aún faltan kernel SELinux activo, etiquetas/transiciones, montaje genuino de
+status/access/class, getcon/getpidcon, identidad Binder, denegaciones y caída
+del gestor ejecutados. Ningún host/servicio/APK aceptado por estos modelos.
+
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 
 

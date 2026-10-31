@@ -1,0 +1,438 @@
+{
+  "scope": "Original offline compiler/libsepol decisions and complete binary-to-CIL statement delta; no kernel endpoint calls/status mapping/original manager execution/APK acceptance",
+  "policy_sha256": "1234463a2f52e3a8628a1e65be13a9b951f4754b323f41e14d1921263b2bc9c9",
+  "special_cases": 28,
+  "all_special_cases_match": true,
+  "proc_regressions": [
+    {
+      "case": "proc_directory_ioctl",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "linux.system_u:linux.object_r:linux.proc_t:s0",
+        "dir",
+        "ioctl"
+      ],
+      "previous_exit_code": 0,
+      "expected": 0,
+      "exit_code": 0,
+      "stdout": "requested permission ioctl allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "proc_directory_read",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "linux.system_u:linux.object_r:linux.proc_t:s0",
+        "dir",
+        "read"
+      ],
+      "previous_exit_code": 0,
+      "expected": 0,
+      "exit_code": 0,
+      "stdout": "requested permission read allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "proc_directory_getattr",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "linux.system_u:linux.object_r:linux.proc_t:s0",
+        "dir",
+        "getattr"
+      ],
+      "previous_exit_code": 0,
+      "expected": 0,
+      "exit_code": 0,
+      "stdout": "requested permission getattr allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "proc_directory_lock",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "linux.system_u:linux.object_r:linux.proc_t:s0",
+        "dir",
+        "lock"
+      ],
+      "previous_exit_code": 0,
+      "expected": 0,
+      "exit_code": 0,
+      "stdout": "requested permission lock allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "proc_directory_open",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "linux.system_u:linux.object_r:linux.proc_t:s0",
+        "dir",
+        "open"
+      ],
+      "previous_exit_code": 0,
+      "expected": 0,
+      "exit_code": 0,
+      "stdout": "requested permission open allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "proc_directory_watch",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "linux.system_u:linux.object_r:linux.proc_t:s0",
+        "dir",
+        "watch"
+      ],
+      "previous_exit_code": 0,
+      "expected": 0,
+      "exit_code": 0,
+      "stdout": "requested permission watch allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "proc_directory_watch_reads",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "linux.system_u:linux.object_r:linux.proc_t:s0",
+        "dir",
+        "watch_reads"
+      ],
+      "previous_exit_code": 0,
+      "expected": 0,
+      "exit_code": 0,
+      "stdout": "requested permission watch_reads allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "proc_directory_search",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "linux.system_u:linux.object_r:linux.proc_t:s0",
+        "dir",
+        "search"
+      ],
+      "previous_exit_code": 0,
+      "expected": 0,
+      "exit_code": 0,
+      "stdout": "requested permission search allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "proc_file_write_denied",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "linux.system_u:linux.object_r:linux.proc_t:s0",
+        "file",
+        "write"
+      ],
+      "previous_exit_code": 7,
+      "expected": 7,
+      "exit_code": 7,
+      "stdout": "requested permission write denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "proc_directory_add_name_denied",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "linux.system_u:linux.object_r:linux.proc_t:s0",
+        "dir",
+        "add_name"
+      ],
+      "previous_exit_code": 7,
+      "expected": 7,
+      "exit_code": 7,
+      "stdout": "requested permission add_name denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "shadow_read_denied",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "linux.system_u:linux.object_r:linux.shadow_t:s0",
+        "file",
+        "read"
+      ],
+      "previous_exit_code": 7,
+      "expected": 7,
+      "exit_code": 7,
+      "stdout": "requested permission read denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "activity_register_denied",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "u:object_r:activity_service:s0",
+        "service_manager",
+        "add"
+      ],
+      "previous_exit_code": 7,
+      "expected": 7,
+      "exit_code": 7,
+      "stdout": "requested permission add denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "default_property_set_denied",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "u:object_r:default_prop:s0",
+        "property_service",
+        "set"
+      ],
+      "previous_exit_code": 7,
+      "expected": 7,
+      "exit_code": 7,
+      "stdout": "requested permission set denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "init_ptrace_denied",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "linux.system_u:linux.system_r:linux.init_t:s0",
+        "process",
+        "ptrace"
+      ],
+      "previous_exit_code": 7,
+      "expected": 7,
+      "exit_code": 7,
+      "stdout": "requested permission ptrace denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "manager_linux_selinuxfs_read",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/combined.bin",
+        "u:r:servicemanager:s0",
+        "linux.system_u:linux.object_r:linux.security_t:s0",
+        "file",
+        "read"
+      ],
+      "previous_exit_code": 7,
+      "expected": 0,
+      "exit_code": 0,
+      "stdout": "requested permission read allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "manager_linux_selinuxfs_map",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/combined.bin",
+        "u:r:servicemanager:s0",
+        "linux.system_u:linux.object_r:linux.security_t:s0",
+        "file",
+        "map"
+      ],
+      "previous_exit_code": 7,
+      "expected": 0,
+      "exit_code": 0,
+      "stdout": "requested permission map allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "manager_linux_compute_av",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/combined.bin",
+        "u:r:servicemanager:s0",
+        "linux.system_u:linux.object_r:linux.security_t:s0",
+        "security",
+        "compute_av"
+      ],
+      "previous_exit_code": 7,
+      "expected": 0,
+      "exit_code": 0,
+      "stdout": "requested permission compute_av allowed\n",
+      "stderr": ""
+    }
+  ],
+  "all_proc_regressions_match": true,
+  "original_valid_cases": [
+    {
+      "case": "manager_add",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/combined.bin",
+        "u:r:servicemanager:s0",
+        "u:object_r:service_manager_service:s0",
+        "service_manager",
+        "add"
+      ],
+      "expected": 0,
+      "exit_code": 0,
+      "stdout": "requested permission add allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "system_server_activity_add",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/combined.bin",
+        "u:r:system_server:s0",
+        "u:object_r:activity_service:s0",
+        "service_manager",
+        "add"
+      ],
+      "expected": 0,
+      "exit_code": 0,
+      "stdout": "requested permission add allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "app_activity_find",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "u:object_r:activity_service:s0",
+        "service_manager",
+        "find"
+      ],
+      "expected": 0,
+      "exit_code": 0,
+      "stdout": "requested permission find allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "app_activity_add_denied",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "u:object_r:activity_service:s0",
+        "service_manager",
+        "add"
+      ],
+      "expected": 7,
+      "exit_code": 7,
+      "stdout": "requested permission add denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "app_property_write_denied",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "u:object_r:default_prop:s0",
+        "property_service",
+        "set"
+      ],
+      "expected": 7,
+      "exit_code": 7,
+      "stdout": "requested permission set denied by te-rule\n",
+      "stderr": ""
+    },
+    {
+      "case": "app_manager_call",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/combined.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "u:r:servicemanager:s0",
+        "binder",
+        "call"
+      ],
+      "expected": 0,
+      "exit_code": 0,
+      "stdout": "requested permission call allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "linux_init_fork",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/combined.bin",
+        "linux.system_u:linux.system_r:linux.init_t:s0",
+        "linux.system_u:linux.system_r:linux.init_t:s0",
+        "process",
+        "fork"
+      ],
+      "expected": 0,
+      "exit_code": 0,
+      "stdout": "requested permission fork allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "linux_init_etc_read",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/combined.bin",
+        "linux.system_u:linux.system_r:linux.init_t:s0",
+        "linux.system_u:linux.object_r:linux.etc_t:s0",
+        "file",
+        "read"
+      ],
+      "expected": 0,
+      "exit_code": 0,
+      "stdout": "requested permission read allowed\n",
+      "stderr": ""
+    },
+    {
+      "case": "linux_user_shadow_denied",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/combined.bin",
+        "linux.user_u:linux.user_r:linux.user_t:s0",
+        "linux.system_u:linux.object_r:linux.shadow_t:s0",
+        "file",
+        "read"
+      ],
+      "expected": 7,
+      "exit_code": 7,
+      "stdout": "requested permission read denied by te-rule\n",
+      "stderr": ""
+    }
+  ],
+  "all_original_valid_preserved": true,
+  "export_argv": [
+    "/home/tv/repositorio-principal/dist/aosp16/checkpolicy-host-2/source/checkpolicy",
+    "-M",
+    "-b",
+    "-C",
+    "-o",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/export.cil",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-manager-selinux-1/combined.bin"
+  ],
+  "attribute_memberships_identical": true,
+  "statement_delta": {
+    "added": [
+      "(allow servicemanager linux.security_t (dir (getattr search)))",
+      "(allow servicemanager linux.security_t (file (read write getattr map open)))",
+      "(allow servicemanager linux.security_t (security (compute_av)))"
+    ],
+    "removed": [],
+    "exactly_three_expected_rules": true
+  }
+}

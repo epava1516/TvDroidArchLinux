@@ -1,0 +1,71 @@
+{
+  "scope": "Offline compiler/libsepol computations and exact binary export delta; not kernel endpoints/status mmap/AVC/Binder/original manager execution or APK compatibility",
+  "compiler_exit_code": 0,
+  "neverallow_disabled": false,
+  "source_contract": "Original status PROT_READ mmap and /access O_RDWR transaction; per-operation security checks from upstream6.18.59 source, package build equivalence not verified",
+  "special_cases": {
+    "count": 28,
+    "allowed": 8,
+    "denied": 20,
+    "security_operations_still_denied": 12
+  },
+  "previous_proc_cases": 17,
+  "original_valid_cases": 9,
+  "all_expected_results_match": true,
+  "full_binary_export_delta": "Exactly3 expected allow rules added;0 removed;all attribute memberships unchanged",
+  "limits": "All controls offline. file.write covers Linux security_t file label, not a path-specific capability; administration denied separately in security class and DAC/reference source. Actual mounts must expose genuine writable transaction access alongside read-only status, preserve kernel/Binder identity and enforce denials. No fake status page or simulated API success.",
+  "modules": [
+    {
+      "path": "runtime/aosp/android16-qpr2/policy/linux-proc.cil",
+      "sha256": "b7bb19bb97deb6baf41c177825520af525d08a68ec93ac462f7ba91a4d9f528e"
+    },
+    {
+      "path": "runtime/aosp/android16-qpr2/policy/linux-servicemanager-selinux.cil",
+      "sha256": "7dfdc007d743dca10b838e78ef869cbdad3f4845da07ce7353124b60bf3145bd"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "reports/android16-policy-manager-selinux/after.json",
+      "sha256": "6164bc1626a97cdddec4f89c1dd8e102af3206f6e65e253cf8c904910d525318"
+    },
+    {
+      "path": "reports/android16-policy-manager-selinux/before.json",
+      "sha256": "1bb5c4e2bab603a856081e688e5f104f927e23a8bb83e40b110ea5878496efb7"
+    },
+    {
+      "path": "reports/android16-policy-manager-selinux/cases.py",
+      "sha256": "be9637345b8b667782072ac01b81c6e7887be40b0d0dad77bf338632de561889"
+    },
+    {
+      "path": "reports/android16-policy-manager-selinux/comparison.json",
+      "sha256": "a16f317f8392984a29852411d38cf2a1eda13177fd69ba580c2b457af3d6c84e"
+    },
+    {
+      "path": "reports/android16-policy-manager-selinux/compile.json",
+      "sha256": "ddad720a3dbc83e2870e1783c39ad14f111f026e7fcaad3ec11cd8648b8be068"
+    },
+    {
+      "path": "reports/android16-policy-manager-selinux/reproduce.py",
+      "sha256": "b774a7778de0c839c4459e3251f3b81f4966e3696a8bdb75ef30190debdb7f29"
+    },
+    {
+      "path": "reports/android16-policy-manager-selinux/source-contract.json",
+      "sha256": "bdd903da6c1cbb8f915bf3f6f8f71e62daeb4f5ab4e840b51c7e38b6e5c70a01"
+    },
+    {
+      "path": "reports/android16-policy-manager-selinux/verify.py",
+      "sha256": "9cb607f5bf980343772aa65f31ca5c38a05c92d02b61cae5c3a91589e1d1466a"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "dist/aosp16/policy-manager-selinux-1/combined.bin",
+      "sha256": "1234463a2f52e3a8628a1e65be13a9b951f4754b323f41e14d1921263b2bc9c9"
+    },
+    {
+      "path": "dist/aosp16/policy-manager-selinux-1/export.cil",
+      "sha256": "16b3eb7272f13af978ff0876952e5d65d37be879a0e6df87a3372508ccd6e2b6"
+    }
+  ]
+}

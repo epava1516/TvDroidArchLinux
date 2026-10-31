@@ -1,0 +1,38 @@
+{
+  "scope": "Original source inspection, not runtime execution",
+  "sources": [
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/selinux-original-full/source/external/selinux/libselinux/src/sestatus.c",
+      "sha256": "fdb7af8c91773b3ede3bc6ed73b22b7d268a1b2e4645ff5d3cde1699272c311c"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/selinux-original-full/source/external/selinux/libselinux/src/compute_av.c",
+      "sha256": "600ea0038657facef5dc9a2d38deddcf791fbea81929e390df703af882b08ef7"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/original-servicemanager/source/frameworks/native/cmds/servicemanager/Access.cpp",
+      "sha256": "387dafd4f5c4af055c92ab323e07d067cc7959e0469786aa475319b38c9a335f"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/linux-selinux-reference-1/selinuxfs-v6.18.59.c",
+      "sha256": "e9814f116535bb3418dc3207c9f87a45c74529e5ee194dd329e0b7f560a6aec5"
+    }
+  ],
+  "status_contract": "sestatus.c278+: open status O_RDONLY+CLOEXEC, mmap one page PROT_READ MAP_SHARED; fallback original netlink path not executed here",
+  "query_contract": "compute_av.c: open access O_RDWR+CLOEXEC; write context/class/permission request, read decision; class/permission mapping retained",
+  "caller_identity": "Access.cpp uses Binder calling SID or original getpidcon fallback and passes caller context into original selinux_check_access; not replace with manager identity",
+  "kernel_reference": {
+    "url": "https://raw.githubusercontent.com/gregkh/linux/v6.18.59/security/selinux/selinuxfs.c",
+    "retrieved_at": "2026-10-31T05:11:19.992710+00:00",
+    "sha256": "e9814f116535bb3418dc3207c9f87a45c74529e5ee194dd329e0b7f560a6aec5",
+    "scope": "Upstream version source, package patches/build equivalence still unverified"
+  },
+  "kernel_checks": {
+    "access": "security.compute_av",
+    "load": "security.load_policy",
+    "enforce": "security.setenforce",
+    "booleans": "security.setbool",
+    "status_mapping": "sel_mmap_handle_status rejects VM_WRITE and clears VM_MAYWRITE"
+  },
+  "deployment_requirements": "Real active/enforcing Linux SELinux, genuine status and class mapping, transaction access file writable through supervisor mount layout. Class-specific security SID target Linux security_t, not global kernel type rewrite. UID/caps/caller identity/labels/denials must be tested live. Host package source/build equivalence not established by upstream version source."
+}

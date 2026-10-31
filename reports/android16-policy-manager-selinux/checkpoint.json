@@ -1,0 +1,33 @@
+{
+  "observed_at": "2026-10-31T05:14:23.668331+00:00",
+  "base_commit": "44f0c5aa17f07d838cdb49602c96a624a4d61d0c",
+  "scope": "Offline original manager/libselinux class-specific SELinux query adapter; file write to transaction endpoint not policy administration",
+  "previous_checkpoint": "reports/android16-policy-proc-adapter/checkpoint.json",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "terminal_exec_handles": [
+    83042,
+    63650,
+    17120
+  ],
+  "live_exec_handles": [],
+  "next": "Establish actual original manager runtime closure: genuine active Linux SELinux/labels, source-backed status+access/class mount exposure, process context/getcon/getpidcon and Binder calling SID. Audit shared-label/class mapping and Linux host policy projection. No restart/load/full Android, no readiness/APK acceptance from model.",
+  "results": "Compiler0;28 specialized queries match (8 allowed,20 denied),17 previous controls and9 original valid decisions match; full export adds exactly3 expected rules and preserves all attributes. Real status/query/kernel/Binder/service execution not demonstrated.",
+  "observed_processes": {},
+  "validated_independent_progress": {
+    "original_binary_exports": "Both0 via original checkpolicy-M-b-C",
+    "aosp_retained_binary_attributes": 199,
+    "linux_retained_binary_attributes": 340,
+    "attribute_set_exports_all_flat_explicit": true
+  }
+}

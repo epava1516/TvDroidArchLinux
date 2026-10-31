@@ -1,0 +1,6 @@
+; Experimental, offline only: original status mmap and access query contract.
+; file.write is needed for transactional /access; security.load_policy/setenforce
+; and other administration permissions are not granted by these rules.
+(allow servicemanager linux.security_t (dir (getattr search)))
+(allow servicemanager linux.security_t (file (read getattr map open write)))
+(allow servicemanager linux.security_t (security (compute_av)))
