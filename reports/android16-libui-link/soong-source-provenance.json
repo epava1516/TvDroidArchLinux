@@ -1,0 +1,12 @@
+[
+  {
+    "commit": "f389fa2a2a768a93bc99957e2288f3fbee032bff",
+    "url": "https://android.googlesource.com/platform/build/soong/+/f389fa2a2a768a93bc99957e2288f3fbee032bff/cc/compiler.go?format=TEXT",
+    "sha256": "8b9bd15157e5ec48a98339700df678b07223013a7ae2ba6a68152c3cd4061956"
+  },
+  {
+    "commit": "f389fa2a2a768a93bc99957e2288f3fbee032bff",
+    "url": "https://android.googlesource.com/platform/build/soong/+/f389fa2a2a768a93bc99957e2288f3fbee032bff/cc/config/global.go?format=TEXT",
+    "sha256": "4f480f21059dc067823e5cec0d3cc19acced992f0d34233e17ed4d81d0259881"
+  }
+]

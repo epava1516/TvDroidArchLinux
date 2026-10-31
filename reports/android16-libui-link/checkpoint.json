@@ -1,0 +1,46 @@
+{
+  "observed_at": "2026-10-31T09:04:35.706566+00:00",
+  "base_commit": "16e4f8eafc6df47dae58e8e360b1c3f59f9d7c12",
+  "branch": "main",
+  "previous_checkpoint": "reports/android16-libui-implementation/checkpoint.json",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "terminal_exec_handles": [
+    54966,
+    72075,
+    17714,
+    50208,
+    30358,
+    98509
+  ],
+  "active_exec_handles": [],
+  "mcp": "capture terminal0, owned-group cleanup verified; process samples incomplete, not host-wide liveness proof; no persistent target opened",
+  "result": "Complete original libui implementation strict link plus selected native geometry and NO_FENCE sentinel regression. Not allocator/mapper service, real sync file, frame or APK acceptance.",
+  "tests": "findings.json and native-runtime-mcp.json",
+  "next": "Link original Composer service against coherent source-built dependencies; retain original registry/driver requirements. Prove real allocator/mapper/device and buffer/fence/Wayland flow, then complete Markor journey; resolve R1-MAC deployment without VM/client restart.",
+  "evidence": {
+    "reports/android16-libui-link/native-runtime-mcp.json": "d400d28c98b22025609f286ecebfe46d270cb433be6e463275e8bbf8c532d0fc",
+    "reports/android16-libui-link/ui-runtime-probe.cpp": "f66f715344211665f3cfa7e1ec4c0651723082ef65e639178d90bb79250232a1",
+    "reports/android16-libui-link/compile-rtti-profile.py": "38aef7652cd78b05b523a25347d33f5cb1098251b540d2497a8ac0deb346e522",
+    "reports/android16-libui-link/findings.json": "76b6f5e3c514270b01d625f2a8e3c1cfbfd392c98a1fa5f2ee9f1a4304d01d40",
+    "reports/android16-libui-link/soong-source-provenance.json": "52fdcdcbd271c516f4d8cd2abee7157e3911f3b190103f9fbf0429a85087ae5e",
+    "reports/android16-libui-link/native-launcher.py": "dab4fa810763f18cec05453e3fa1d6062a1d337627745061cfd39ec60a3d66a2",
+    "reports/android16-libui-link/build-link.py": "0d7aa6545543c824c1cfff44dc04c6deecabb01eee8177b0112f9fb5852ab4e6",
+    "reports/android16-libui-link/probe-build.json": "547e781a3ec48b074efe43c209f6f9ff1840d2ac14186f911b1353289b4f0911",
+    "reports/android16-libui-link/link-attempt-1.json": "40c2990eefdbbf2cabed2d015d53a7e694debf52ce1edb2ac27ba52903b10374",
+    "reports/android16-libui-link/prepare-runtime.py": "fc2a6cc9b2c726ad9eefc01a4793c4df674f7a8662b0d0ea6d0ba600bd43b9c7",
+    "reports/android16-libui-link/native-compile.json": "a6fb59f4710000fd979b67ba7c33b174e9b8d490fd35eee11fdf6275937eebf1",
+    "reports/android16-libui-link/build-link-rtti.py": "103d8ac39dcb6b23d25f440d2cd072c8e01e322cd4fb757373af6af91eccc1ff",
+    "reports/android16-libui-link/link-success.json": "660cbc80311d6860e3032e8baa15f57b136672a1c6506bcc901f4e60335d01bd"
+  }
+}

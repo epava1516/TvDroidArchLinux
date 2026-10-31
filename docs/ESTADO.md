@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-libui-implementation/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-libui-link/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -17,7 +17,18 @@ Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCC
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
 
-## Último hito verificado · implementación original libui
+## Último hito verificado · libui enlazada y ejecución acotada
+
+[Resultados](../reports/android16-libui-link/findings.json): libui completa enlaza
+estrictamente con proveedores originales GSI y dos dependencias estáticas fuente.
+Se corrigió el perfil diagnóstico según Soong original (-fno-rtti); se conservaron
+los fallos RTTI previos. REA MCP observa salida0, UID10000/caps0/NNP1 y libui fuente
+mapeada: operaciones de regiones, transformación inversa y sentinel NO_FENCE.
+No allocator/mapper funcional, fence real, Composer, frames o APK aceptados.
+Siguiente: enlace del servicio original y cierre real de dispositivos/buffers;
+R1-MAC y recorrido completo Markor siguen pendientes.
+
+## Hito anterior · implementación original libui
 
 [Resultados](../reports/android16-libui-implementation/findings.json): las23 unidades
 originales de libui y libui-types compilan sin modificar fuentes. Siete familias

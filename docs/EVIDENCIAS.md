@@ -1,6 +1,8 @@
 # Índice de evidencias
 
-- [R3: implementación original libui](../reports/android16-libui-implementation/findings.json):23 unidades fuente intactas compilan; siete familias HIDL allocator/mapper, diez hashes congelados y allocator AIDL V2. No enlace, equivalencia Soong, buffers, servicio ni APK probados. [Checkpoint actual](../reports/android16-libui-implementation/checkpoint.json).
+- [R3: enlace libui y ejecución nativa](../reports/android16-libui-link/findings.json):23 unidades recompiladas con -fno-rtti original y dos dependencias estáticas; enlace estricto con30 proveedores originales GSI. REA MCP observa salida0 y libui fuente mapeada, regiones/transformación/sentinel NO_FENCE. No buffers, fence real, servicio, frames ni APK. [Checkpoint actual](../reports/android16-libui-link/checkpoint.json).
+
+- [R3: implementación original libui](../reports/android16-libui-implementation/findings.json):23 unidades fuente intactas compilan; siete familias HIDL allocator/mapper, diez hashes congelados y allocator AIDL V2. No enlace, equivalencia Soong, buffers, servicio ni APK probados. [Checkpoint del hito](../reports/android16-libui-implementation/checkpoint.json).
 
 - [R3: entradas libui y codecs originales](../reports/android16-libui-source-closure/validation.json): herramienta fuente AIDL SDK36;31 IDL/124 archivos,32 objetos nativos incluido ComposerResources, dos bibliotecas enlazadas estrictamente y regresión AParcel local con FD/metadata ejecutada0 mediante REA MCP. Sin transferencia Binder, libui completo, HAL, frames ni APK. [Checkpoint del hito](../reports/android16-libui-source-closure/checkpoint.json).
 

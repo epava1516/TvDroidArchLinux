@@ -1,0 +1,51 @@
+{
+  "scope": "Complete original libui implementation strict link plus selected native geometry and NO_FENCE sentinel regression. Not allocator/mapper service, real sync file, frame or APK acceptance.",
+  "original_rtti_rule": {
+    "source_commit": "f389fa2a2a768a93bc99957e2288f3fbee032bff",
+    "path": "cc/compiler.go",
+    "lines": [
+      573,
+      577
+    ],
+    "observation": "Soong uses -fno-rtti unless module Rtti true; libui source does not enable RTTI. Prior inherited diagnostic profile omitted this option, causing two undefined typeinfo symbols from original libutils. Full23 units recompiled -fno-rtti; no source edits or substitute symbols.",
+    "source_identity_limit": "Pinned HTTPS source and content hashes; full Git object/signature verification not performed for downloaded Soong files."
+  },
+  "native_objects": 25,
+  "strict_link_exit": 0,
+  "providers": 30,
+  "runtime": {
+    "evidence_id": "ev_a4b76a4934635e8d8b93aff1362b456b6bd3275dfed1a93883ecb70e7d50217b",
+    "exit": 0,
+    "tests": [
+      "Region subtraction/containment/bounds/translation",
+      "Transform translation/inverse",
+      "NO_FENCE invalid sentinel wait0 and invalid signal-time, NOT real kernel/GPU synchronization",
+      "Source libui /data/libui.so mapped"
+    ],
+    "identity": "UID/GID10000, empty groups/caps, NNP1 observed before exec",
+    "artifacts": [
+      {
+        "path": "dist/aosp16/libui-link-2/libui.so",
+        "sha256": "c98806f67f4f61bb5b8bef55eb4cb39580be5220b3a8dffa9685dfffd1df93fd",
+        "executed_copy": "dist/aosp16/libui-native-execution-1/data/libui.so",
+        "copy_matches_after_execution": true
+      },
+      {
+        "path": "dist/aosp16/libui-link-2/ui-runtime-probe",
+        "sha256": "00a35be33c3ef89d950f39ded62b7fde648b3b9f223bead2b90f5f6cb965a589",
+        "executed_copy": "dist/aosp16/libui-native-execution-1/data/ui-runtime-probe",
+        "copy_matches_after_execution": true
+      }
+    ]
+  },
+  "limits": [
+    "Original GSI provider libraries reused; source-built libui plus two original static source dependencies. Not complete source build of every transport/provider.",
+    "Inherited diagnostic flags not complete Soong/sanitizer/AFDO/export-map/min-SDK equivalence.",
+    "Explicit LD_LIBRARY_PATH=/data diagnostic only, original linkerconfig unchanged. Link staging does not establish runtime namespace parity.",
+    "AS64GiB virtual and CPU/wall limits, no physical RAM/performance budget accepted.",
+    "MCP sampled processes/identity binding/filesystem observation incomplete; projection is not complete authenticated Evidence.",
+    "No allocator/mapper registration, hardware buffer, real fence, Composer, hotplug, Smithay presentation, ART APK or general JNI acceptance.",
+    "R1-MAC and all real APK matrix stages remain open; ARM research separate."
+  ],
+  "next": "Link original Composer service against coherent source-built dependencies; retain original registry/driver requirements. Prove real allocator/mapper/device and buffer/fence/Wayland flow, then complete Markor journey; resolve R1-MAC deployment without VM/client restart."
+}

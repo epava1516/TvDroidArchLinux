@@ -1030,6 +1030,34 @@ No se ha enlazado libui completo, ni ejecutado allocator/mapper/buffers/fences,
 servicio Composer o APK. El siguiente paso es cerrar dependencias originales y
 el enlace estricto antes de pruebas funcionales; R1-MAC sigue requerido.
 
+## R3 · enlace libui y ejecución Bionic acotada
+
+[Resultados y límites](../reports/android16-libui-link/findings.json).
+El primer enlace falla por typeinfo de RefBase/SortedVectorImpl. Soong original
+f389fa2a2a768a93bc99957e2288f3fbee032bff, cc/compiler.go573–577, aplica
+-fno-rtti salvo Rtti true; libui no lo habilita. Las23 unidades se recompilan con
+esa opción; no se cambian fuentes ni se inventan símbolos. NativeHandle.cpp y
+GrallocUsageConversion.cpp originales aportan las dos dependencias estáticas con
+fuente; libmath/libarect son módulos sin srcs. El enlace compartido con
+--no-undefined/--no-allow-shlib-undefined pasa contra30 proveedores transitivos GSI
+originales. No es reconstrucción fuente de todos ellos ni equivalencia Soong,
+sanitizadores, AFDO, export-map o perfil mínimo SDK completo.
+
+REA MCP observa salida0 de sonda propia Bionic: regiones (resta/contención/límites/
+traslación), transformación e inversa, NO_FENCE inválido con wait0 y tiempo inválido.
+/proc/self/maps confirma /data/libui.so fuente. UID/GID10000, grupos/capacidades0,
+NNP1 se comprueban antes de exec. Hashes preparados y copias tras ejecución coinciden;
+la asociación de imagen no es atómica. El límite AS64GiB es virtual, no presupuesto
+RAM medido. LD_LIBRARY_PATH=/data pertenece sólo al diagnóstico privado; configuración
+original del linker intacta. Se conserva proyección saneada y límites MCP de muestreo,
+entorno y efectos de filesystem, sin presentarla como Evidence autenticada completa.
+
+NO_FENCE es un sentinel, no un sync_file kernel/GPU real. No allocator/mapper,
+registro de servicios, buffer importado/asignado, Composer/hotplug/fences/Smithay,
+JNI general ni APK aceptados. La matriz real sigue no probada y R1-MAC pendiente.
+Siguiente: enlace coherente del servicio original y pruebas reales del recorrido
+dispositivo/buffer/fence/presentación, antes del vertical completo Markor.
+
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 
 
