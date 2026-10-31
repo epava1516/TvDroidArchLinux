@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+    "/home/tv/repositorio-principal/dist/aosp16/policy-namespace-control-2/aosp-long.bin",
+    "aosp.u:aosp.r:aosp.servicemanager:s0",
+    "aosp.u:aosp.object_r:aosp.service_manager_service:s0",
+    "service_manager",
+    "add"
+  ],
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "libsepol.sepol_string_to_security_class: unrecognized class service_manager\nInvalid security class service_manager\n"
+}

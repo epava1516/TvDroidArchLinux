@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-policy-semantic-baselines/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-policy-namespace-controls/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -369,3 +369,16 @@ un compositor completo: omite construcciones y nunca debe sustituir las asercion
 neverallow originales. La siguiente unidad debe conservar las fuentes completas,
 resolver clases, atributos, usuarios/roles y MLS explícitamente y contrastar
 semántica global; catorce casos no demuestran equivalencia. Ninguna base elegida.
+
+## Control experimental de namespaces de política
+
+[Resultados](../reports/android16-policy-namespace-controls/validation.json): el
+compilador original rechaza sensibilidad/categorías dentro de bloques. Mover sólo
+esas declaraciones al nivel global permite compilar AOSP (salida0 en29,8s tras
+un primer límite de25s). Nueve consultas seleccionadas conservan su resultado
+con nombres prefijados; no acreditan equivalencia completa. La clase original
+service_manager deja de existir y aosp.service_manager no conserva su contrato
+de nombre. Usuarios/roles/tipos/contextos también cambian. No es una política
+de despliegue ni composición Linux/AOSP aprobada. Siguiente: preservar contratos
+Android de clases/contextos y resolver explícitamente los globales MLS/SID y
+la integración Linux, conservando todas las aserciones. Nada cargado o reiniciado.

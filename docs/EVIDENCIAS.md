@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+- [Control experimental de namespaces](../reports/android16-policy-namespace-controls/validation.json): AOSP con MLS global compila; nueve consultas renombradas coinciden, pero el nombre original service_manager falla. Sin política integrada ni aceptación de servicios/APK. [Checkpoint actual](../reports/android16-policy-namespace-controls/checkpoint.json).
+
 - [Decisiones offline con herramientas originales](../reports/android16-policy-semantic-baselines/validation.json): 10 inventarios y 14 accesos (6 permitidos, 3 denegados, 5 errores); límites de sepolicy-check/seamendc documentados. Sin enforcement ni APK. [Checkpoint actual](../reports/android16-policy-semantic-baselines/checkpoint.json).
 
 - [Investigación ARM/Native Bridge separada](../reports/arm-native-bridge-research/validation.json): contrato A16, ELF original mediante REA MCP y fuentes/metadatos de candidatos/licencias. Sin proveedor o ARM ejecutado, sin cambios x86_64 ni APK aprobada. [Detalle R6](TRADUCCION-ARM.md).

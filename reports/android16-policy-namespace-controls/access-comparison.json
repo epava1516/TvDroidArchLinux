@@ -1,0 +1,137 @@
+[
+  {
+    "case": "manager_add",
+    "argv": [
+      "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+      "/home/tv/repositorio-principal/dist/aosp16/policy-namespace-control-2/aosp-long.bin",
+      "aosp.u:aosp.r:aosp.servicemanager:s0",
+      "aosp.u:aosp.object_r:aosp.service_manager_service:s0",
+      "aosp.service_manager",
+      "add"
+    ],
+    "expected": 0,
+    "exit_code": 0,
+    "stdout": "requested permission add allowed\n",
+    "stderr": ""
+  },
+  {
+    "case": "system_server_activity_add",
+    "argv": [
+      "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+      "/home/tv/repositorio-principal/dist/aosp16/policy-namespace-control-2/aosp-long.bin",
+      "aosp.u:aosp.r:aosp.system_server:s0",
+      "aosp.u:aosp.object_r:aosp.activity_service:s0",
+      "aosp.service_manager",
+      "add"
+    ],
+    "expected": 0,
+    "exit_code": 0,
+    "stdout": "requested permission add allowed\n",
+    "stderr": ""
+  },
+  {
+    "case": "app_activity_find",
+    "argv": [
+      "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+      "/home/tv/repositorio-principal/dist/aosp16/policy-namespace-control-2/aosp-long.bin",
+      "aosp.u:aosp.r:aosp.untrusted_app:s0:c512,c768",
+      "aosp.u:aosp.object_r:aosp.activity_service:s0",
+      "aosp.service_manager",
+      "find"
+    ],
+    "expected": 0,
+    "exit_code": 0,
+    "stdout": "requested permission find allowed\n",
+    "stderr": ""
+  },
+  {
+    "case": "app_activity_add_denied",
+    "argv": [
+      "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+      "/home/tv/repositorio-principal/dist/aosp16/policy-namespace-control-2/aosp-long.bin",
+      "aosp.u:aosp.r:aosp.untrusted_app:s0:c512,c768",
+      "aosp.u:aosp.object_r:aosp.activity_service:s0",
+      "aosp.service_manager",
+      "add"
+    ],
+    "expected": 7,
+    "exit_code": 7,
+    "stdout": "requested permission add denied by te-rule\n",
+    "stderr": ""
+  },
+  {
+    "case": "app_property_write_denied",
+    "argv": [
+      "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+      "/home/tv/repositorio-principal/dist/aosp16/policy-namespace-control-2/aosp-long.bin",
+      "aosp.u:aosp.r:aosp.untrusted_app:s0:c512,c768",
+      "aosp.u:aosp.object_r:aosp.default_prop:s0",
+      "aosp.property_service",
+      "set"
+    ],
+    "expected": 7,
+    "exit_code": 7,
+    "stdout": "requested permission set denied by te-rule\n",
+    "stderr": ""
+  },
+  {
+    "case": "app_manager_call",
+    "argv": [
+      "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+      "/home/tv/repositorio-principal/dist/aosp16/policy-namespace-control-2/aosp-long.bin",
+      "aosp.u:aosp.r:aosp.untrusted_app:s0:c512,c768",
+      "aosp.u:aosp.r:aosp.servicemanager:s0",
+      "aosp.binder",
+      "call"
+    ],
+    "expected": 0,
+    "exit_code": 0,
+    "stdout": "requested permission call allowed\n",
+    "stderr": ""
+  },
+  {
+    "case": "invalid_type_is_error",
+    "argv": [
+      "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+      "/home/tv/repositorio-principal/dist/aosp16/policy-namespace-control-2/aosp-long.bin",
+      "aosp.u:aosp.r:aosp.archtv_nonexistent:s0",
+      "aosp.u:aosp.r:aosp.servicemanager:s0",
+      "aosp.binder",
+      "call"
+    ],
+    "expected": 1,
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "libsepol.context_from_record: type aosp.archtv_nonexistent is not defined\nlibsepol.context_from_record: could not create context structure\nlibsepol.context_from_string: could not create context structure\nlibsepol.sepol_context_to_sid: could not convert aosp.u:aosp.r:aosp.archtv_nonexistent:s0 to sid\nInvalid source context aosp.u:aosp.r:aosp.archtv_nonexistent:s0\n"
+  },
+  {
+    "case": "invalid_perm_is_error",
+    "argv": [
+      "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+      "/home/tv/repositorio-principal/dist/aosp16/policy-namespace-control-2/aosp-long.bin",
+      "aosp.u:aosp.r:aosp.untrusted_app:s0:c512,c768",
+      "aosp.u:aosp.r:aosp.servicemanager:s0",
+      "aosp.binder",
+      "archtv_nonexistent"
+    ],
+    "expected": 1,
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "libsepol.sepol_string_to_av_perm: could not convert archtv_nonexistent to av bit\nInvalid permission archtv_nonexistent for security class aosp.binder:  Success\n"
+  },
+  {
+    "case": "linux_context_not_aosp_context",
+    "argv": [
+      "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+      "/home/tv/repositorio-principal/dist/aosp16/policy-namespace-control-2/aosp-long.bin",
+      "aosp.system_u:aosp.system_r:aosp.init_t:s0",
+      "aosp.u:aosp.r:aosp.servicemanager:s0",
+      "aosp.binder",
+      "call"
+    ],
+    "expected": 1,
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "libsepol.context_from_record: user aosp.system_u is not defined\nlibsepol.context_from_record: could not create context structure\nlibsepol.context_from_string: could not create context structure\nlibsepol.sepol_context_to_sid: could not convert aosp.system_u:aosp.system_r:aosp.init_t:s0 to sid\nInvalid source context aosp.system_u:aosp.system_r:aosp.init_t:s0\n"
+  }
+]

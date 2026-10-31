@@ -1,0 +1,27 @@
+{
+  "observed_at": "2026-10-31T04:34:22.732024+00:00",
+  "base_commit": "5715d6df2f2404cbe0f2ce0ef5d2d814dd2cf73d",
+  "scope": "Original CIL namespace integration offline, not loaded policy/APK acceptance",
+  "previous_checkpoint": "reports/android16-policy-semantic-baselines/checkpoint.json",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "terminal_exec_handles": [
+    11065,
+    98002,
+    20878,
+    21867
+  ],
+  "live_exec_handles": [],
+  "next": "Preserve original Android class and context contracts explicitly; evaluate Linux-side namespace and shared global class/MLS/SID integration, with complete assertions and semantic comparisons. No silent renaming of service contracts.",
+  "results": "Complete namespace enclosure needs global MLS declarations. Hoisted variant compiles but changes users/roles/types/classes, including service_manager -> aosp.service_manager. Preserved selected decisions under renamed inputs do not preserve original service API or full semantics. Not deployment-ready."
+}

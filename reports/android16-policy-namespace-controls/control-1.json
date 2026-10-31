@@ -1,0 +1,62 @@
+{
+  "scope": "Negative control: complete unchanged CIL enclosed in namespace; no rules removed, no policy load",
+  "tool_sha256": "b164c77d935a46c5191b24648df724f3e5b6da70478d37313afc15d024dae130",
+  "results": [
+    {
+      "name": "aosp",
+      "input": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/etc/selinux/plat_sepolicy.cil",
+      "input_sha256": "3b063948a16dcd365b4ff4cb1eeda22b1580c6e0a3500e755ba8c358a0565559",
+      "wrapped_sha256": "03152dabb59cef0e106c9007571ae5213120d181de5d6489ac50744d3b9ed25c",
+      "argv": [
+        "prlimit",
+        "--as=2147483648",
+        "--cpu=20",
+        "--",
+        "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/source/secilc/secilc",
+        "-m",
+        "-M",
+        "true",
+        "-G",
+        "-c",
+        "30",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-namespace-control-1/aosp.bin",
+        "-f",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-namespace-control-1/aosp.fc",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-namespace-control-1/aosp-wrapped.cil"
+      ],
+      "exit_code": 255,
+      "stdout": "",
+      "stderr": "sensitivity is not allowed in block at /home/tv/repositorio-principal/dist/aosp16/policy-namespace-control-1/aosp-wrapped.cil:5437\nFailed to resolve AST\nFailed to compile cildb: -1\n",
+      "elapsed_seconds": 0.2473468550015241
+    },
+    {
+      "name": "linux",
+      "input": "/home/tv/repositorio-principal/dist/aosp16/refpolicy-baseline-1/source/policy.cil",
+      "input_sha256": "61862f73f13738ee5f27f0d0b09912d8d87498d4cdb3ca01236aa486cd8b85f2",
+      "wrapped_sha256": "f1efce9654b1a4a3292c240b1130af51652d2bec73e6dc84bb015969dc11f4d7",
+      "argv": [
+        "prlimit",
+        "--as=2147483648",
+        "--cpu=20",
+        "--",
+        "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/source/secilc/secilc",
+        "-m",
+        "-M",
+        "true",
+        "-G",
+        "-c",
+        "30",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-namespace-control-1/linux.bin",
+        "-f",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-namespace-control-1/linux.fc",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-namespace-control-1/linux-wrapped.cil"
+      ],
+      "exit_code": 255,
+      "stdout": "",
+      "stderr": "sensitivity is not allowed in block at /home/tv/repositorio-principal/dist/aosp16/policy-namespace-control-1/linux-wrapped.cil:12787\nFailed to resolve AST\nFailed to compile cildb: -1\n",
+      "elapsed_seconds": 7.328420666002785
+    }
+  ]
+}

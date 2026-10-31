@@ -1,0 +1,65 @@
+{
+  "scope": "Experimental namespace relocation, only sensitivity/category declarations hoisted; not policy selected or loaded",
+  "results": [
+    {
+      "name": "aosp",
+      "input_sha256": "3b063948a16dcd365b4ff4cb1eeda22b1580c6e0a3500e755ba8c358a0565559",
+      "output_cil_sha256": "8c98e4ec986e62ec87abf8f4a97388e0ab230cb9f1c05615961c5437d00d1232",
+      "top_level_statements": 27088,
+      "hoisted_statements": 1025,
+      "retained_statements": 26063,
+      "argv": [
+        "prlimit",
+        "--as=2147483648",
+        "--cpu=20",
+        "--",
+        "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/source/secilc/secilc",
+        "-m",
+        "-M",
+        "true",
+        "-G",
+        "-c",
+        "30",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-namespace-control-2/aosp.bin",
+        "-f",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-namespace-control-2/aosp.fc",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-namespace-control-2/aosp.cil"
+      ],
+      "exit_code": 124,
+      "stdout": "",
+      "stderr": "\nObservation: wall-time limit25s reached; no compilation conclusion",
+      "elapsed_seconds": 30.118440563004697
+    },
+    {
+      "name": "linux",
+      "input_sha256": "61862f73f13738ee5f27f0d0b09912d8d87498d4cdb3ca01236aa486cd8b85f2",
+      "output_cil_sha256": "89d9c2035ff7514cac5dc5ece28ae1daa2f6c163e2766d0986264209e2e3ec48",
+      "top_level_statements": 321909,
+      "hoisted_statements": 1025,
+      "retained_statements": 320884,
+      "argv": [
+        "prlimit",
+        "--as=2147483648",
+        "--cpu=20",
+        "--",
+        "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/source/secilc/secilc",
+        "-m",
+        "-M",
+        "true",
+        "-G",
+        "-c",
+        "30",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-namespace-control-2/linux.bin",
+        "-f",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-namespace-control-2/linux.fc",
+        "/home/tv/repositorio-principal/dist/aosp16/policy-namespace-control-2/linux.cil"
+      ],
+      "exit_code": 124,
+      "stdout": "",
+      "stderr": "\nObservation: wall-time limit25s reached; no compilation conclusion",
+      "elapsed_seconds": 40.49696340599621
+    }
+  ]
+}

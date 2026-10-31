@@ -1,0 +1,44 @@
+{
+  "scope": "Offline experimental namespace control, not selected/merged/loaded policy, services or APK acceptance",
+  "aosp_retry_exit_code": 0,
+  "nine_selected_queries_match": true,
+  "unmodified_class_name_query_exit_code": 1,
+  "finding": "Complete namespace enclosure needs global MLS declarations. Hoisted variant compiles but changes users/roles/types/classes, including service_manager -> aosp.service_manager. Preserved selected decisions under renamed inputs do not preserve original service API or full semantics. Not deployment-ready.",
+  "next": "Preserve original Android class and context contracts explicitly; evaluate Linux-side namespace and shared global class/MLS/SID integration, with complete assertions and semantic comparisons. No silent renaming of service contracts.",
+  "artifacts": [
+    {
+      "path": "dist/aosp16/policy-namespace-control-2/aosp.cil",
+      "sha256": "8c98e4ec986e62ec87abf8f4a97388e0ab230cb9f1c05615961c5437d00d1232"
+    },
+    {
+      "path": "dist/aosp16/policy-namespace-control-2/aosp-long.bin",
+      "sha256": "3b2939fb7697814465d37b37523e312378b8d250e58f68e41d81d1aa0fc74699"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "reports/android16-policy-namespace-controls/access-comparison.json",
+      "sha256": "72a1590adff1135586867dca59c6bb222fdcd3ebf0a57d1ec7add57438f5aa29"
+    },
+    {
+      "path": "reports/android16-policy-namespace-controls/aosp-retry.json",
+      "sha256": "bfcec1c332a13c211efa1846c6bee7a69e0fbc55e8ea12f0caa7fde94bca9029"
+    },
+    {
+      "path": "reports/android16-policy-namespace-controls/control-1.json",
+      "sha256": "34768deb893854a0570d5bd6fd6eb03c4ff39ed3e98bc9543143e7cf1aea62ea"
+    },
+    {
+      "path": "reports/android16-policy-namespace-controls/control-2.json",
+      "sha256": "03ee3f807f5d2ad22f19bb1e8d776c75ff965bfadb6aec8175fa7ce945f618ba"
+    },
+    {
+      "path": "reports/android16-policy-namespace-controls/original-class-query.json",
+      "sha256": "aeb3bbfa5b336d5e333e988ec7eaeb80b7ddeff52a3a1dc3f8f4d9aec161eb06"
+    },
+    {
+      "path": "reports/android16-policy-namespace-controls/reproduce-control-2.py",
+      "sha256": "5d35f26934c562fac61f883f3ae8ca468a3a77c76045d7e41f083cf5eec6ad02"
+    }
+  ]
+}
