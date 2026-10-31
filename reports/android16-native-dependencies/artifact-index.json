@@ -1,0 +1,13 @@
+{
+  "source_base_commit": "3d81347a5e907965f1232871e3ed22df4d7906ec",
+  "scope": "Native dependency archive built, not runtime/API/permissions acceptance; protobuf host still active",
+  "artifacts": {
+    "reports/android16-native-dependencies/cap_names.h": "79dc8364f4268ac14aa2be9373d95024068515d23380a59b62d9f9d37b4eb18d",
+    "reports/android16-native-dependencies/cap_names.list.h": "602682a1dfa9268469d62df2c9ebee1d06858034e8512758bb7b4b2f79688dc3",
+    "reports/android16-native-dependencies/checkpoint.json": "90ab4d31566ac6097c9e7b85e6ea937d416e37d2ef190dc586eb2fa39fe004a3",
+    "reports/android16-native-dependencies/libcap-commands.json": "b6b3f548a01031a3c4260207b5f96b7e21c750a2a8f9eb5bf6e7be1649d4db4c",
+    "reports/android16-native-dependencies/libcap-validation.json": "7cccebbb12536346422638ba2c7d8028c5a1488233bc009fe1b599b81dd6bf9c",
+    "reports/android16-native-dependencies/source-acquisition.json": "cedfabf7fc955aa13e695db499969922518638f763faf327979836e00030f56b",
+    "reports/android16-native-dependencies/validation.json": "3d77f4819e583d93ff61019bc028f8bb6eb1f49e87b4e03872598498ef5ad3ff"
+  }
+}

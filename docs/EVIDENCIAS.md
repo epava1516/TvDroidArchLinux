@@ -1,5 +1,11 @@
 # Índice de evidencias
 
+- [Dependencias originales de libinit](../reports/android16-native-dependencies/validation.json):
+  libcap nativo estático, sus seis fuentes y generadores originales; miembros
+  ELF64 x86_64 verificados. Fuentes adicionales y fallo acotado de adquisición
+  conservados. Sin ejecución libcap/libinit/servicio ni aceptación de permisos/APK;
+  [checkpoint y build activo](../reports/android16-native-dependencies/checkpoint.json).
+
 - [Construcción nativa libinit, parcial](../reports/android16-libinit-build/validation.json):
   adquisición desde lock, igualdad de 203 archivos init, compilador original21
   verificado por Git blob y objeto x86_64 con cabeceras Bionic/plataforma.

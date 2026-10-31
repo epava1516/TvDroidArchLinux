@@ -1,0 +1,37 @@
+{
+  "source_base_commit": "3d81347a5e907965f1232871e3ed22df4d7906ec",
+  "observed_at": "2026-10-31T01:55:42.035105+00:00",
+  "contract": "A16-QPR2-1",
+  "original_libcap_complete_source_set": 6,
+  "static_archive_built": true,
+  "no_original_source_modified": true,
+  "host_generated_header_boundary": "Original awk and original _makenames.c generate names from original bundled UAPI; no host objects linked into target",
+  "target": "Original selected clang21, API36 x86_64 Bionic, ELF64 REL six members verified",
+  "libcap_runtime_permission_or_APK_acceptance": false,
+  "additional_original_units_acquired": [
+    "selinux",
+    "bootloader_message",
+    "lmkd",
+    "libprocinfo",
+    "system/apex"
+  ],
+  "extras_acquisition_failure": "Original full system/extras archive exceeded128MiB budget; incomplete archive retained, never extracted/used. exthandler needed by init is actually in already acquired system/core/libmodprobe; no need to enlarge/retry extras for that header.",
+  "protoc_host_build": "69923 remains active, one job; poll handle and host PID209155/start ticks, never infer completion from log alone",
+  "not_done": [
+    "No target libinit linked/executed",
+    "No native property runtime/bootstrap/service accepted",
+    "No SELinux mediation or Binder/API/ISA/APK acceptance",
+    "No real APK nine-stage result changed"
+  ],
+  "next": "Finish original protoc host build; verify native schemas, then compile whole original libinit with original exported include/generated groups and compiler21; no fake flags/headers/empty services.",
+  "graphify": {
+    "nodes": 2601,
+    "edges": 5017,
+    "communities": 224,
+    "exit_code": 0,
+    "scope": "AST-only isolated staged worktree; no pending historical source included"
+  },
+  "local_links_checked": 141,
+  "broken_local_links": 0,
+  "pending_file_hashes_preserved": true
+}

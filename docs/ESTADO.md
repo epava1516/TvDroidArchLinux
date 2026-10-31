@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-libinit-build/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-native-dependencies/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -57,6 +57,12 @@ los esquemas originales y cerrar los grupos de dependencias target con clang21.
 [Resultado actual](../reports/android16-libinit-build/validation.json): compilador
 original verificado y un objeto Bionic, no libinit enlazado ni framework arrancado.
 El sondeo completo de fuentes continúa siendo evidencia parcial de construcción.
+
+[Avance de dependencias](../reports/android16-native-dependencies/validation.json):
+libcap estático original construido, seis fuentes/miembros ELF y generadores
+originales. No ejecutado ni prueba de permisos. Las fuentes de los otros grupos
+ya adquiridas no son servicios disponibles. Protoc69923 sigue siendo el proceso
+que debe comprobarse antes de generar esquemas y repetir el build de libinit.
 
 app_process original termina 0 sin readiness: fuente y diagnóstico muestran
 retorno temprano de startVm por ro.product.cpu.abilist64 ausente, antes de crear

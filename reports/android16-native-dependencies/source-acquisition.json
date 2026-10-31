@@ -1,0 +1,99 @@
+{
+  "selinux": {
+    "project": "external/selinux",
+    "subtree": ".",
+    "commit": "085c131ad1b984bfa8ffdafee7a976e9d89f403c",
+    "url": "https://android.googlesource.com/platform/external/selinux/+archive/085c131ad1b984bfa8ffdafee7a976e9d89f403c.tar.gz",
+    "lock_sha256": "06c6fcc779cb0e115f4515a0c38a67c31151dc8b55bd335ff2f0987e3db3eb58",
+    "status": "complete",
+    "signature_verified": false,
+    "original_source_modified": false,
+    "archive_bytes": 6169123,
+    "archive_sha256": "1f75dc52eb1c795b4ba7d8092a10b6a9e92da1548a2d1e9a7ee926e8807195fc",
+    "regular_files": 1834,
+    "relative_source_root": "source/external/selinux",
+    "unresolved_symlinks": [],
+    "completeness": "Original subtree only; sibling sources/generated inputs must be supplied before build"
+  },
+  "bootloader-message": {
+    "project": "bootable/recovery",
+    "subtree": "bootloader_message",
+    "commit": "c33fecc2cdcd3f4f1c1eb628a194ff2a115a76e4",
+    "url": "https://android.googlesource.com/platform/bootable/recovery/+archive/c33fecc2cdcd3f4f1c1eb628a194ff2a115a76e4/bootloader_message.tar.gz",
+    "lock_sha256": "06c6fcc779cb0e115f4515a0c38a67c31151dc8b55bd335ff2f0987e3db3eb58",
+    "status": "complete",
+    "signature_verified": false,
+    "original_source_modified": false,
+    "archive_bytes": 6753,
+    "archive_sha256": "5a9b27e0786d04cb8b748e3b745418104363a8de1f87ef492da0399386142c6a",
+    "regular_files": 5,
+    "relative_source_root": "source/bootable/recovery/bootloader_message",
+    "unresolved_symlinks": [],
+    "completeness": "Original subtree only; sibling sources/generated inputs must be supplied before build"
+  },
+  "lmkd": {
+    "project": "system/memory/lmkd",
+    "subtree": ".",
+    "commit": "5352c3c8c9e26cadaf31a80b1223019b2898a385",
+    "url": "https://android.googlesource.com/platform/system/memory/lmkd/+archive/5352c3c8c9e26cadaf31a80b1223019b2898a385.tar.gz",
+    "lock_sha256": "06c6fcc779cb0e115f4515a0c38a67c31151dc8b55bd335ff2f0987e3db3eb58",
+    "status": "complete",
+    "signature_verified": false,
+    "original_source_modified": false,
+    "archive_bytes": 61227,
+    "archive_sha256": "5f05887e4e39810250d52595b8c7ae8dd4fdc31351476bff95d56efd7b8b2668",
+    "regular_files": 27,
+    "relative_source_root": "source/system/memory/lmkd",
+    "unresolved_symlinks": [
+      "system/memory/lmkd/.clang-format"
+    ],
+    "completeness": "Original subtree only; sibling sources/generated inputs must be supplied before build"
+  },
+  "libprocinfo": {
+    "project": "system/libprocinfo",
+    "subtree": ".",
+    "commit": "f29c3352895ef664ef31fcf6d1cfcd281297a4b1",
+    "url": "https://android.googlesource.com/platform/system/libprocinfo/+archive/f29c3352895ef664ef31fcf6d1cfcd281297a4b1.tar.gz",
+    "lock_sha256": "06c6fcc779cb0e115f4515a0c38a67c31151dc8b55bd335ff2f0987e3db3eb58",
+    "status": "complete",
+    "signature_verified": false,
+    "original_source_modified": false,
+    "archive_bytes": 39225,
+    "archive_sha256": "fe639064c90286da6112fe47af6ee937bdc9ee732c595507368db5e52443c778",
+    "regular_files": 10,
+    "relative_source_root": "source/system/libprocinfo",
+    "unresolved_symlinks": [
+      "system/libprocinfo/.clang-format"
+    ],
+    "completeness": "Original subtree only; sibling sources/generated inputs must be supplied before build"
+  },
+  "system-extras": {
+    "project": "system/extras",
+    "subtree": ".",
+    "commit": "3f52a5ab49ba53bc463de658db1d112e001c0280",
+    "url": "https://android.googlesource.com/platform/system/extras/+archive/3f52a5ab49ba53bc463de658db1d112e001c0280.tar.gz",
+    "lock_sha256": "06c6fcc779cb0e115f4515a0c38a67c31151dc8b55bd335ff2f0987e3db3eb58",
+    "status": "incomplete",
+    "signature_verified": false,
+    "original_source_modified": false,
+    "error": "compressed source archive exceeds explicit budget"
+  },
+  "system-apex": {
+    "project": "system/apex",
+    "subtree": ".",
+    "commit": "97548ed51112062a4d1762a7dffa0cadcc09bda9",
+    "url": "https://android.googlesource.com/platform/system/apex/+archive/97548ed51112062a4d1762a7dffa0cadcc09bda9.tar.gz",
+    "lock_sha256": "06c6fcc779cb0e115f4515a0c38a67c31151dc8b55bd335ff2f0987e3db3eb58",
+    "status": "complete",
+    "signature_verified": false,
+    "original_source_modified": false,
+    "archive_bytes": 5475890,
+    "archive_sha256": "1771d7ee644585f4e860de71ca5b8b54a54868d7e04cf75f3583eddb424e4b65",
+    "regular_files": 542,
+    "relative_source_root": "source/system/apex",
+    "unresolved_symlinks": [
+      "system/apex/rustfmt.toml"
+    ],
+    "completeness": "Original subtree only; sibling sources/generated inputs must be supplied before build"
+  }
+}

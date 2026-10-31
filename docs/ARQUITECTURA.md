@@ -62,6 +62,16 @@ DEX/APK ni integración gráfica se ha demostrado en este hito.
 
 ## Propiedades y configuración · cierre en estudio
 
+[Dependencias nativas](../reports/android16-native-dependencies/validation.json):
+libcap está construido como archivo estático Bionic con sus seis fuentes originales
+y ambos encabezados generados por awk/_makenames originales. Se comprobaron los
+seis miembros ELF64 x86_64; no se ha enlazado/ejecutado ni validado política de
+capacidades por este hecho. SELinux, bootloader_message, lmkd, libprocinfo y APEX
+tienen fuentes originales adquiridas; ello tampoco acredita ejecución de servicios.
+El intento de adquirir extras completo excedió el límite explícito de 128 MiB:
+se conserva incompleto y no se usa. exthandler pertenece a libmodprobe del core
+ya adquirido, no exige ampliar ese límite ni inventar una cabecera.
+
 [Construcción original en curso](../reports/android16-libinit-build/validation.json):
 se adquirió system/core completo del lock; los 203 archivos regulares de init
 coinciden con su extracción independiente. Soong selecciona por defecto

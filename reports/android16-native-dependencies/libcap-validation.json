@@ -1,0 +1,43 @@
+{
+  "original_sources_modified": false,
+  "selected_original_compiler21": true,
+  "original_AOSP_generated_headers": true,
+  "module_sources": "All six source units declared by pinned libcap Android.bp",
+  "archive_sha256": "e22e12771bd05477e0f8e89f8efa5b6a01a20bfc148b695e8295138d9b560773",
+  "scope": "Whole original target libcap static archive built; no link/run/libinit/permission/APK compatibility acceptance",
+  "host_target_frontier": "Original host _makenames generator emits cap_names.h; target uses only pinned Bionic headers, no host objects",
+  "archive_members": [
+    "cap_alloc.o",
+    "cap_extint.o",
+    "cap_file.o",
+    "cap_flag.o",
+    "cap_proc.o",
+    "cap_text.o"
+  ],
+  "objects": {
+    "cap_alloc.o": {
+      "sha256": "8b1bc8cdb4a7c1795eda1a1336cd57bfb468ce40f61e0f3a09671dd4a16ade10",
+      "ELF64_x86_64_relocatable": true
+    },
+    "cap_file.o": {
+      "sha256": "007dfa29c48fa64c3c6c14bf9fd5fac9670ddaebd439dcc950f8a022b6a7af32",
+      "ELF64_x86_64_relocatable": true
+    },
+    "cap_flag.o": {
+      "sha256": "65097494a5d349e141b9512faa794457e9289d3c89136f45f05e64ca4615db6a",
+      "ELF64_x86_64_relocatable": true
+    },
+    "cap_proc.o": {
+      "sha256": "c68452d7f9f785f0fb9b76b295f5bf7a1911301e6d291f69f681d2a11d87d2d6",
+      "ELF64_x86_64_relocatable": true
+    },
+    "cap_extint.o": {
+      "sha256": "8faab7d9a65fccd55a14f0fb0cc8dc7dd5ca1c36661499d688b085b525204a62",
+      "ELF64_x86_64_relocatable": true
+    },
+    "cap_text.o": {
+      "sha256": "87dc412be6179f01cd1a5366cac5a533753df902ba548408a847e1c036eb5c1f",
+      "ELF64_x86_64_relocatable": true
+    }
+  }
+}
