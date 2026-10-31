@@ -1,0 +1,125 @@
+{
+  "scope": "Original HIDL host generator build and Composer/common/base source generation; NOT native Android HIDL/service/HWC/frame/APK compatibility",
+  "assertions": {
+    "all66_host_objects_compile_and_tool_links": true,
+    "original_hidl_source_units_git_verified": 38,
+    "nine_raw_hashes_match_original_current": true,
+    "four_hashes_observed_via_actual_mcp_match_generation": true,
+    "39_generated_file_hashes_verified": true,
+    "six_prior_pending_files_preserved": true
+  },
+  "evidence": [
+    {
+      "path": "reports/android16-hidl-generator/acquire-hal-inputs.py",
+      "sha256": "26f8b4b5168377216e4dc66f4594c956ee7a790f1e24334178251ab708ba932b"
+    },
+    {
+      "path": "reports/android16-hidl-generator/attempted-loader-prefetch.py",
+      "sha256": "429a1d54a6c12ed4e9a328ffaba2982b9724b993191006b226e31f272df41eb0"
+    },
+    {
+      "path": "reports/android16-hidl-generator/build-attempt-1.json",
+      "sha256": "536765cc9695709be2faace0a6b672a5056aeff3cc6cb896b8fefbb889f52b5d"
+    },
+    {
+      "path": "reports/android16-hidl-generator/build-attempt-1.py",
+      "sha256": "073aee0c788cb763ee8ee279d17860d97c33cbd693c849c60076b3d679f9aa1e"
+    },
+    {
+      "path": "reports/android16-hidl-generator/build-attempt-2.json",
+      "sha256": "f6f9b1dbfd2825c465a0e1863c684218f288e715a0456f8af34cdec5f0e5ad88"
+    },
+    {
+      "path": "reports/android16-hidl-generator/build-attempt-2.py",
+      "sha256": "bab75c3c04d554c940fbad0d3f5a57529499cc6b8b3d8089027727a2f7d39b7c"
+    },
+    {
+      "path": "reports/android16-hidl-generator/build-attempt-3.json",
+      "sha256": "e9d82a686739dfad2f9eff58710eab80a7e83e52c4b303706a5bde0e951af227"
+    },
+    {
+      "path": "reports/android16-hidl-generator/build-attempt-3.py",
+      "sha256": "35ec43b24b9423989ce4f4480b2cd1399ac8cce46bb6249ebc9e1cbf8c77ce40"
+    },
+    {
+      "path": "reports/android16-hidl-generator/build-attempt-4.json",
+      "sha256": "688461f107d5a4d077d044c8e98285d985ebf0da637728427ea76ba7f67896ba"
+    },
+    {
+      "path": "reports/android16-hidl-generator/build-attempt-4.py",
+      "sha256": "a6d58db828c5e556aef713e9c50e6a249fa86fc20b8f7841308fb24a1a34bb30"
+    },
+    {
+      "path": "reports/android16-hidl-generator/build-attempt-5.json",
+      "sha256": "4019f9c4f7b4caeb49b729ba7de4f6ae0cf5fb868141ca4b524ec471df6d099a"
+    },
+    {
+      "path": "reports/android16-hidl-generator/build-attempt-5.py",
+      "sha256": "a622fd1d6f485c970e4b6bb3515f47176304805b7f66ec7c37278bbe08631efa"
+    },
+    {
+      "path": "reports/android16-hidl-generator/build-attempt-6.json",
+      "sha256": "10a7ec6b5a127ea7a28229a8b64ab8c9e0e39295a2c1ae00db4076dd80fd38f5"
+    },
+    {
+      "path": "reports/android16-hidl-generator/build-attempt-6.py",
+      "sha256": "5d76066dd816764a2e2633abffdac3cedfa1e9639f6aaece1c7430503c5f175c"
+    },
+    {
+      "path": "reports/android16-hidl-generator/build-attempt-7.json",
+      "sha256": "d2915d98224213543b5993bb61382870e3fa0ab26c6a5434bd2d0ce4ec73eb53"
+    },
+    {
+      "path": "reports/android16-hidl-generator/build-attempt-7.py",
+      "sha256": "0faba0d2daf780a17b16006b561d75e28d79e1623f99669a694e856870bb6232"
+    },
+    {
+      "path": "reports/android16-hidl-generator/build.json",
+      "sha256": "f623105a79347998851d1d40efa0fc485e6b75227533853b50fb4aa1cf0877a3"
+    },
+    {
+      "path": "reports/android16-hidl-generator/findings.json",
+      "sha256": "8e2d41c103d04dd1404b9881cf5d67e31463b13ffea27973842b916b4a45055c"
+    },
+    {
+      "path": "reports/android16-hidl-generator/generation.json",
+      "sha256": "600ed65a344063a966dbfd469090293f7ec251d201b2373e51e09317fc2f8f39"
+    },
+    {
+      "path": "reports/android16-hidl-generator/hal-input-provenance.json",
+      "sha256": "d28e300da06e151662f5e3e4c1cbfcb29697b4af0ef47d8ccaf8f0a5f7c595fc"
+    },
+    {
+      "path": "reports/android16-hidl-generator/hash-capture-summary.json",
+      "sha256": "07fc25c7dd7353428e53f7b71a1cba6ca1717ac1f0469f673dbc3a51a89b0b06"
+    },
+    {
+      "path": "reports/android16-hidl-generator/hash-source-contract.json",
+      "sha256": "f1c501becf0da0c627bfbf5413153c9f688652b19a91e6a997cb904e99dad371"
+    },
+    {
+      "path": "reports/android16-hidl-generator/host-tools.json",
+      "sha256": "e27bd79e9cb368518d9508107bf02db7337eaa215898b4a6e9859ec491aae00a"
+    },
+    {
+      "path": "reports/android16-hidl-generator/loader-prefetch.json",
+      "sha256": "42bdf1cdb79997c16775ed3598e1dd5ba40a4853d7f6d82090f16ab117c88f1d"
+    },
+    {
+      "path": "reports/android16-hidl-generator/posix-profile-check.json",
+      "sha256": "21cdfe46403af7866a6abb13c76cfed677ee0ed1d558e03ddb30f3f71e2cc736"
+    },
+    {
+      "path": "reports/android16-hidl-generator/reproduce-generation.py",
+      "sha256": "a7eaf750aeea982c77f40edd2fd819769ebeaad5ab42cbe269d900afa498d110"
+    },
+    {
+      "path": "reports/android16-hidl-generator/reproduce-host-build.py",
+      "sha256": "8688de6444804a3b585a236ba12cf07a562d5913ad34124eb97ad07df4860c6f"
+    },
+    {
+      "path": "reports/android16-hidl-generator/source-repositories.json",
+      "sha256": "914f7c327518ab665829302a97c3c6bf1d6604e5d5aa088acc6725b865abc110"
+    }
+  ]
+}

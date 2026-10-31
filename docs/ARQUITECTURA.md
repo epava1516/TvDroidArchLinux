@@ -924,6 +924,29 @@ No prueba HwcLoader/HIDL, dispositivo HWC1.5, allocator/mapper/GPU, buffers/fenc
 frame Wayland ni APK. Seguir con generador/interfaces HIDL y passthrough originales,
 sin omitir SID/SELinux para servicios ni iniciar otro Android o VM.
 
+## R3: generador HIDL e interfaces originales preparadas
+
+[Construcción host, hashes y generación](../reports/android16-hidl-generator/validation.json).
+El hidl-gen de nuestro lock se construye con66 unidades del generador y soporte,
+incluido parser generado desde gramática original. Herramienta Linux/glibc con
+Clang/STL/JSONCpp/OpenSSL del host: no se mezcla con el runtime A16/Bionic ni se
+atribuye equivalencia al binario host de Soong. El perfil GNU++20 y las cabeceras
+estándar explícitas sólo afectan al generador; fuentes AOSP intactas.
+
+Se generan39 cabeceras/fuentes de transporte para Composer2.1, graphics common
+1.0/1.1/1.2 y base HIDL1.0. Nueve hashes coinciden con current.txt original y SHA256
+Python independiente; REA MCP observa la ejecución host y los cuatro hashes de
+Composer. La fuente Hash.cpp calcula SHA256 de bytes .hal: esa coincidencia
+confirma entradas/hash, no certifica semántica del parser ni ABI/marshaling C++.
+Los archivos generados aún no se compilaron como interfaz nativa; no implementan
+por sí solos el HAL ni demuestran servicio, dispositivo, fence o frame.
+
+La descarga opcional de unidades del loader recibió HTTP429, está parcial y
+preservada; no es un resultado de incompatibilidad ni se usó como fuente completa.
+Siguiente puerta: completar fuente verificada, compilar bindings/passthrough
+originales con el conjunto vendor y probar dispositivo/buffers/fences/Smithay.
+El requisito de SID/SELinux y los recorridos APK permanecen abiertos.
+
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 
 

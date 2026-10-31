@@ -1,0 +1,20 @@
+[
+  {
+    "path": "/home/tv/.cache/archtv/graphics-candidates-1/hidl-tools",
+    "commit": "9ea202c0fba585c2884a6bb2b1ba2dab46e98a8f",
+    "working_tree": "clean",
+    "signature_verified": false
+  },
+  {
+    "path": "/home/tv/.cache/archtv/graphics-candidates-1/libhidl",
+    "commit": "d063c3a2bf981d8dab2ca60ea471f940d71167a6",
+    "working_tree": "clean",
+    "signature_verified": false
+  },
+  {
+    "path": "/home/tv/.cache/archtv/graphics-candidates-1/libhwbinder",
+    "commit": "0e0fd15c90a55a45d2cc49b032c25b581d085912",
+    "working_tree": "clean",
+    "signature_verified": false
+  }
+]

@@ -1,0 +1,69 @@
+{
+  "scope": "Hash.cpp sha256File reads raw .hal bytes; main generateHashOutput emits that digest. Hash agreement confirms input/hash consistency, NOT full parser/codegen semantic or ABI correctness. Generation exits/files are separate partial evidence.",
+  "source_files": [
+    {
+      "path": "/home/tv/.cache/archtv/graphics-candidates-1/hidl-tools/hashing/Hash.cpp",
+      "sha256": "af771ccfe220ef19345d7ef60c590441aa0130e941e3f08b894d3d31d2320256"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/graphics-candidates-1/hidl-tools/main.cpp",
+      "sha256": "06ce93746c4cfbfb5aab23515aa16f5d2f060aa8ed120798eafa304d87716c6b"
+    }
+  ],
+  "independent_python_raw_hash_checks": [
+    {
+      "path": "/home/tv/.cache/archtv/graphics-candidates-1/hidl-generation-inputs/graphics/common/1.0/types.hal",
+      "sha256": "4f6dedbcdd21c309dfc650acea81a096d6b242493ffe49c8d61bd3c43aad354e",
+      "fqname": "android.hardware.graphics.common@1.0::types",
+      "matches_tool_and_original_current": true
+    },
+    {
+      "path": "/home/tv/.cache/archtv/graphics-candidates-1/hidl-generation-inputs/graphics/common/1.1/types.hal",
+      "sha256": "7d2cef99c838fb58038de8bbfd3cdb76ff4797241987077721715297f8d45e34",
+      "fqname": "android.hardware.graphics.common@1.1::types",
+      "matches_tool_and_original_current": true
+    },
+    {
+      "path": "/home/tv/.cache/archtv/graphics-candidates-1/hidl-generation-inputs/graphics/common/1.2/types.hal",
+      "sha256": "42abd285a4293dadb8c89bc63b90cae2872fbffe90c4517aa3ea4965e8aecff7",
+      "fqname": "android.hardware.graphics.common@1.2::types",
+      "matches_tool_and_original_current": true
+    },
+    {
+      "path": "/home/tv/.cache/archtv/graphics-candidates-1/hidl-generation-inputs/graphics/composer/2.1/types.hal",
+      "sha256": "e205dd30f5ff99445b706a901de8ebc46c379e9d7c1921d6a327ed2082cfa83d",
+      "fqname": "android.hardware.graphics.composer@2.1::types",
+      "matches_tool_and_original_current": true
+    },
+    {
+      "path": "/home/tv/.cache/archtv/graphics-candidates-1/hidl-generation-inputs/graphics/composer/2.1/IComposer.hal",
+      "sha256": "b3aac6c3817f039964fcd62268274b3039e17bd7d0d5b40b4d1d1c7b19a1f866",
+      "fqname": "android.hardware.graphics.composer@2.1::IComposer",
+      "matches_tool_and_original_current": true
+    },
+    {
+      "path": "/home/tv/.cache/archtv/graphics-candidates-1/hidl-generation-inputs/graphics/composer/2.1/IComposerCallback.hal",
+      "sha256": "b19d00eb8a8b3b0034a0321f22e8f32162bf4c2aebbce6da22c025f56e459ea2",
+      "fqname": "android.hardware.graphics.composer@2.1::IComposerCallback",
+      "matches_tool_and_original_current": true
+    },
+    {
+      "path": "/home/tv/.cache/archtv/graphics-candidates-1/hidl-generation-inputs/graphics/composer/2.1/IComposerClient.hal",
+      "sha256": "d4fea995378bb4f421b4e24ccf68cad2734ab07fe4f874a126ba558b99df5766",
+      "fqname": "android.hardware.graphics.composer@2.1::IComposerClient",
+      "matches_tool_and_original_current": true
+    },
+    {
+      "path": "/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport/base/1.0/types.hal",
+      "sha256": "500ec34f1b0826a93c4abe45b23c4d85565d8041acaf3cf9fb23c09702967567",
+      "fqname": "android.hidl.base@1.0::types",
+      "matches_tool_and_original_current": true
+    },
+    {
+      "path": "/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport/base/1.0/IBase.hal",
+      "sha256": "ec7fd79ed02dfa85bc499426adae3ebe23ef0524f3cd6957139324b83b18ca4c",
+      "fqname": "android.hidl.base@1.0::IBase",
+      "matches_tool_and_original_current": true
+    }
+  ]
+}

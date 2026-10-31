@@ -1,0 +1,61 @@
+{
+  "commit": "aa229558cbf04bc997ed27465c5e7ad497123d1b",
+  "files": [
+    {
+      "path": "current.txt",
+      "url": "https://android.googlesource.com/platform/hardware/interfaces/+/aa229558cbf04bc997ed27465c5e7ad497123d1b/current.txt?format=TEXT",
+      "git_blob": "bb8fdb6338b74d40b22398b272bc82cca0974283",
+      "sha256": "5b1e8691d2b8aa79c69c9ba2057f678335db436e009d786a37a9033055f98d8c",
+      "git_blob_verified": true
+    },
+    {
+      "path": "graphics/common/1.0/types.hal",
+      "url": "https://android.googlesource.com/platform/hardware/interfaces/+/aa229558cbf04bc997ed27465c5e7ad497123d1b/graphics/common/1.0/types.hal?format=TEXT",
+      "git_blob": "3369fad50f240b4e2bd45a6bca09d2c4193a5267",
+      "sha256": "4f6dedbcdd21c309dfc650acea81a096d6b242493ffe49c8d61bd3c43aad354e",
+      "git_blob_verified": true
+    },
+    {
+      "path": "graphics/common/1.1/types.hal",
+      "url": "https://android.googlesource.com/platform/hardware/interfaces/+/aa229558cbf04bc997ed27465c5e7ad497123d1b/graphics/common/1.1/types.hal?format=TEXT",
+      "git_blob": "423cf449d1a96ae0265143669e48f0081c1d41ce",
+      "sha256": "7d2cef99c838fb58038de8bbfd3cdb76ff4797241987077721715297f8d45e34",
+      "git_blob_verified": true
+    },
+    {
+      "path": "graphics/common/1.2/types.hal",
+      "url": "https://android.googlesource.com/platform/hardware/interfaces/+/aa229558cbf04bc997ed27465c5e7ad497123d1b/graphics/common/1.2/types.hal?format=TEXT",
+      "git_blob": "07e988241a92a4b71584b1576d66fbbf94e07f18",
+      "sha256": "42abd285a4293dadb8c89bc63b90cae2872fbffe90c4517aa3ea4965e8aecff7",
+      "git_blob_verified": true
+    },
+    {
+      "path": "graphics/composer/2.1/IComposer.hal",
+      "url": "https://android.googlesource.com/platform/hardware/interfaces/+/aa229558cbf04bc997ed27465c5e7ad497123d1b/graphics/composer/2.1/IComposer.hal?format=TEXT",
+      "git_blob": "e2aa5cd2343d48a84179c670f97e09282829af5d",
+      "sha256": "b3aac6c3817f039964fcd62268274b3039e17bd7d0d5b40b4d1d1c7b19a1f866",
+      "git_blob_verified": true
+    },
+    {
+      "path": "graphics/composer/2.1/IComposerCallback.hal",
+      "url": "https://android.googlesource.com/platform/hardware/interfaces/+/aa229558cbf04bc997ed27465c5e7ad497123d1b/graphics/composer/2.1/IComposerCallback.hal?format=TEXT",
+      "git_blob": "ab74c301821095f629997d5ec90b61af35c691bb",
+      "sha256": "b19d00eb8a8b3b0034a0321f22e8f32162bf4c2aebbce6da22c025f56e459ea2",
+      "git_blob_verified": true
+    },
+    {
+      "path": "graphics/composer/2.1/IComposerClient.hal",
+      "url": "https://android.googlesource.com/platform/hardware/interfaces/+/aa229558cbf04bc997ed27465c5e7ad497123d1b/graphics/composer/2.1/IComposerClient.hal?format=TEXT",
+      "git_blob": "e036ce974b82d7e79e6c0c5ee2b93deb7c07bfcb",
+      "sha256": "d4fea995378bb4f421b4e24ccf68cad2734ab07fe4f874a126ba558b99df5766",
+      "git_blob_verified": true
+    },
+    {
+      "path": "graphics/composer/2.1/types.hal",
+      "url": "https://android.googlesource.com/platform/hardware/interfaces/+/aa229558cbf04bc997ed27465c5e7ad497123d1b/graphics/composer/2.1/types.hal?format=TEXT",
+      "git_blob": "eb0a73bb6aadf3a3a88c56c2cf6d568bbada770d",
+      "sha256": "e205dd30f5ff99445b706a901de8ebc46c379e9d7c1921d6a327ed2082cfa83d",
+      "git_blob_verified": true
+    }
+  ]
+}

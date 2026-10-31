@@ -1,0 +1,70 @@
+{
+  "observed_at": "2026-10-31T07:46:49.988771+00:00",
+  "base_commit": "5cf367cbcb657b9322a0b6ec1fc9a41d3feaa6bd",
+  "scope": "Original HIDL host generator build and Composer/common/base source generation; NOT native Android HIDL/service/HWC/frame/APK compatibility",
+  "previous_checkpoint": "reports/android16-vendor-libutils/checkpoint.json",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "terminal_exec_handles": [
+    3382,
+    13528,
+    19103,
+    36178,
+    38615,
+    38700,
+    38904,
+    39944,
+    43026,
+    53472,
+    54506,
+    57472,
+    60869,
+    75920,
+    77582
+  ],
+  "live_exec_handles": [],
+  "next": "Complete original loader/hal source acquisition with verified Git objects after provider throttle, build native generated bindings and whole original passthrough closure against vendor graph. Keep original service identity and actual buffer/fence/Smithay vertical as requirements.",
+  "results": "Host original generator66 units links0;9 original frozen/raw hashes match,39 generated transport files. Actual MCP observes4 Composer hashes. No native HIDL/service/APK acceptance.",
+  "observed_processes": {},
+  "validated_independent_progress": {
+    "original_binary_exports": "Both0 via original checkpolicy-M-b-C",
+    "aosp_retained_binary_attributes": 199,
+    "linux_retained_binary_attributes": 340,
+    "attribute_set_exports_all_flat_explicit": true
+  },
+  "objective": "Complete unmodified APK including TV on Linux Rust/Smithay, coherent native AOSP16QPR2/Bionic; no Waydroid, full Android or introduced VM; preserve compatibility/isolation/stability/lightness/install/update.",
+  "constraints": [
+    "A16-QPR2-1",
+    "No VM introduction or VM/client restart",
+    "No policy load/host relabeling without verified deployment plan",
+    "Fixtures/static policy checks are partial, not APK acceptance"
+  ],
+  "branch": "main",
+  "head_before_milestone_commit": "5cf367cbcb657b9322a0b6ec1fc9a41d3feaa6bd",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "relation_to_local_origin_tracking": "0\t0",
+  "own_staged_milestone_paths": [],
+  "process_snapshot": {
+    "scope": "MCP owned-group cleanup verified; process samples partial, not current host liveness proof."
+  },
+  "rea_session_status": "Actual capture_process_scenario of host generator exited0 and cleanup verified; retained limitations in hash-capture-summary.json. No persistent target started.",
+  "tests": {
+    "build": "build.json",
+    "generation": "generation.json",
+    "raw_hash_scope": "hash-source-contract.json",
+    "mcp": "hash-capture-summary.json",
+    "limits": "findings.json"
+  },
+  "evidence_root": "reports/android16-hidl-generator",
+  "active_exec_handles": []
+}

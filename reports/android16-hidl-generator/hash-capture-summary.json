@@ -1,0 +1,100 @@
+{
+  "projection": "Derived selected fields, NOT complete authenticated MCP Evidence; retained parent evidence identifies actual host-tool execution, not Android runtime.",
+  "evidence_id": "ev_2ebcc70ec61093b56fafb38677fcd18f46094930017b1a868e6e51e264a6d94e",
+  "operation": "capture_process_scenario",
+  "authority": "controlled-replay",
+  "confidence": "observed",
+  "exit": {
+    "code": 0,
+    "signal": 0,
+    "reason": "exited"
+  },
+  "output": "e205dd30f5ff99445b706a901de8ebc46c379e9d7c1921d6a327ed2082cfa83d android.hardware.graphics.composer@2.1::types\r\nb3aac6c3817f039964fcd62268274b3039e17bd7d0d5b40b4d1d1c7b19a1f866 android.hardware.graphics.composer@2.1::IComposer\r\nb19d00eb8a8b3b0034a0321f22e8f32162bf4c2aebbce6da22c025f56e459ea2 android.hardware.graphics.composer@2.1::IComposerCallback\r\nd4fea995378bb4f421b4e24ccf68cad2734ab07fe4f874a126ba558b99df5766 android.hardware.graphics.composer@2.1::IComposerClient\r\n",
+  "cleanup": {
+    "owned_process_group": "verified",
+    "temporary_root": "removed"
+  },
+  "truncated": false,
+  "truncation_details": {
+    "raw_terminal": {
+      "budget_bytes": 30000,
+      "observed_bytes": 474,
+      "retained_bytes": 474,
+      "observed_frames": 3,
+      "retained_frames": 3
+    },
+    "rendered_terminal": {
+      "budget_bytes": 30000,
+      "observed_bytes": 1881,
+      "retained_bytes": 1881,
+      "observed_frames": 3,
+      "retained_frames": 3
+    },
+    "normalized_terminal": {
+      "budget_bytes": 30000,
+      "retained_bytes": 474,
+      "omitted_frames": 0
+    },
+    "filesystem_before": {
+      "files_limit": 10000,
+      "depth_limit": 16,
+      "enumeration_truncated": false,
+      "enumeration_reasons": [],
+      "enumeration_omissions": [],
+      "unobserved_subtrees": [],
+      "hash_budget_bytes": 10000000,
+      "hashed_bytes": 0,
+      "hash_omissions": []
+    },
+    "filesystem_after": {
+      "files_limit": 10000,
+      "depth_limit": 16,
+      "enumeration_truncated": false,
+      "enumeration_reasons": [],
+      "enumeration_omissions": [],
+      "unobserved_subtrees": [],
+      "hash_budget_bytes": 10000000,
+      "hashed_bytes": 0,
+      "hash_omissions": []
+    },
+    "process": {
+      "sample_limit": 15,
+      "sampling_partial": false,
+      "retained_samples": 1,
+      "sample_limit_reached": false,
+      "sampling_failures": 0,
+      "first_sampling_failure": null,
+      "coverage": "sampled"
+    }
+  },
+  "residual_unknowns": [
+    {
+      "scope": "process",
+      "reason": "Process trees are sampled and may omit short-lived descendants."
+    },
+    {
+      "scope": "process",
+      "reason": "The executable digest is a prelaunch file sample; operating-system image binding is not atomically observed."
+    },
+    {
+      "scope": "environment",
+      "reason": "Inherited host environment variables are not recorded."
+    },
+    {
+      "scope": "network",
+      "reason": "Network activity is not observed by this capture."
+    },
+    {
+      "scope": "filesystem",
+      "reason": "No filesystem observation paths were selected; filesystem effects remain unknown."
+    }
+  ],
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "The executable digest is a prelaunch file sample; matching path metadata immediately after spawn does not prove an atomic operating-system image binding.",
+    "Process trees are sampled and may omit short-lived descendants.",
+    "Filesystem observations are before/after snapshots, not syscall traces.",
+    "Inherited host environment variables are not recorded and may affect results.",
+    "No filesystem observation paths were selected; filesystem effects remain unknown."
+  ]
+}

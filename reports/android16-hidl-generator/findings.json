@@ -1,0 +1,46 @@
+{
+  "scope": "Original HIDL host generator build and Composer/common/base source generation; NOT native Android HIDL/service/HWC/frame/APK compatibility",
+  "observed_at": "2026-10-31T07:46:49.988771+00:00",
+  "base_commit": "5cf367cbcb657b9322a0b6ec1fc9a41d3feaa6bd",
+  "host_tool": {
+    "path": "dist/aosp16/hidl-host-build-8/hidl-gen",
+    "sha256": "cacb805e60baa74dfa97fd9b1d225fe262df3e5544c2b7394f8b05c77c142702",
+    "source_units": 66,
+    "original_sources_modified": false,
+    "hidl_original_units_git_blobs_verified": 38,
+    "profile": "Linux glibc host, system Clang23/libstdc++/JSONCpp/OpenSSL; not AOSP prebuilt/Soong host binary equivalence. Bison3.8.2/Flex2.6.4 generate parser.",
+    "adaptation": "Original common/noOverride flags; GNU++20 dialect; explicit algorithm/cstdint/cstring only for HIDL generator modules under host STL. Non-HIDL source feature macros preserved. Original host target O0 used for HIDL modules; g0 instead of full original debug config.",
+    "boundary": "Host tooling only. Native A16 Bionic/runtime vendor graph unchanged."
+  },
+  "generation": {
+    "targets": 5,
+    "commands": 15,
+    "exit_codes_all_zero": true,
+    "original_current_hash_matches": 9,
+    "independent_raw_hashes_match": true,
+    "files": 39,
+    "scope": "Original .hal raw SHA256 and frozen current entries; not proof of full parser semantics. Generated transport code/headers not compiled/linked or exercised as Android service."
+  },
+  "mcp": {
+    "evidence_id": "ev_2ebcc70ec61093b56fafb38677fcd18f46094930017b1a868e6e51e264a6d94e",
+    "scope": "Actual host hidl-gen execution yields4 Composer hashes; not Android runtime execution. Matches standalone generation output.",
+    "projection": "Selected derived fields, not complete authenticated Evidence",
+    "limitations": [
+      "Artifact identity is unavailable for this observation.",
+      "The executable digest is a prelaunch file sample; matching path metadata immediately after spawn does not prove an atomic operating-system image binding.",
+      "Process trees are sampled and may omit short-lived descendants.",
+      "Filesystem observations are before/after snapshots, not syscall traces.",
+      "Inherited host environment variables are not recorded and may affect results.",
+      "No filesystem observation paths were selected; filesystem effects remain unknown."
+    ]
+  },
+  "optional_loader_source_prefetch": "Incomplete HTTP429, retained and indexed; not used in generator or accepted as complete. No restart/VM/service introduced.",
+  "limitations": [
+    "Host dependency versions differ from AOSP product; no host prebuilt equivalence or full generator regression/grammar test suite accepted",
+    "Frozen/raw file hash matches do not certify generated C++ ABI, marshaling behavior, services, permissions, buffers or fences",
+    "No original HwcLoader/passthrough or HIDL runtime compiled/executed here",
+    "R1-MAC real caller SID/SELinux still pending; all real APK stages remain not_tested",
+    "No installation/update/redistribution or broad compatibility acceptance"
+  ],
+  "next": "Complete original loader/hal source acquisition with verified Git objects after provider throttle, build native generated bindings and whole original passthrough closure against vendor graph. Keep original service identity and actual buffer/fence/Smithay vertical as requirements."
+}

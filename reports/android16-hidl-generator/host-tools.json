@@ -1,0 +1,57 @@
+{
+  "clang++": {
+    "path": "/usr/bin/clang-23",
+    "sha256": "5cb1c0c669bf0d2655933374723967259e78704338c370101843575f524c91bb",
+    "version_line": "clang version 23.1.4"
+  },
+  "bison": {
+    "path": "/usr/bin/bison",
+    "sha256": "3b7cbabfaa9a79cf906ec179ee495cfd415d8ef6ddcd6a75292e0cd65434dc38",
+    "version_line": "bison (GNU Bison) 3.8.2"
+  },
+  "flex": {
+    "path": "/usr/bin/flex",
+    "sha256": "54394d1d32f47a116ecfa108a65736a048f31a4625816b70d024ee1b7a75531a",
+    "version_line": "flex 2.6.4"
+  },
+  "pkg-config": {
+    "path": "/usr/bin/pkgconf",
+    "sha256": "998694c643efb51d0fca9cbf7f809ccf34338ad7e4d3470a6317ead835a9c877",
+    "version_line": "3.0.10"
+  },
+  "jsoncpp": {
+    "system_host_package_version": "1.9.8",
+    "scope": "Host generator dependency only; not Android runtime"
+  },
+  "openssl": {
+    "system_host_package_version": "3.6.5",
+    "scope": "Host generator dependency only; not Android runtime"
+  },
+  "host_dynamic_libraries": [
+    {
+      "path": "/usr/lib/libjsoncpp.so.27",
+      "sha256": "dea8064ec318af63e0ee53880b54c5061c81ced71e1f5ac671566602dbef951c",
+      "scope": "System glibc host generator support only, not AOSP/Bionic app runtime"
+    },
+    {
+      "path": "/usr/lib/libcrypto.so.3",
+      "sha256": "a75a864dcda6ef9e4dc29fad4b7988ca832b904c3915a63c920062c40763dae1",
+      "scope": "System glibc host generator support only, not AOSP/Bionic app runtime"
+    },
+    {
+      "path": "/usr/lib/libssl.so.3",
+      "sha256": "f6409e9f083faae79a622c9534be6ed2456d0102cd8ea2b52eb18c9d72f1f41e",
+      "scope": "System glibc host generator support only, not AOSP/Bionic app runtime"
+    },
+    {
+      "path": "/usr/lib/libstdc++.so.6.0.36",
+      "sha256": "f5fc7380f2ae46fa4053a64be04e7b98109f1066a4bbfff3c37042488aa0be0e",
+      "scope": "System glibc host generator support only, not AOSP/Bionic app runtime"
+    },
+    {
+      "path": "/usr/lib/libgcc_s.so.1",
+      "sha256": "e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a",
+      "scope": "System glibc host generator support only, not AOSP/Bionic app runtime"
+    }
+  ]
+}

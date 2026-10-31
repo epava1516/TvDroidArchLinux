@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-vendor-libutils/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-hidl-generator/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -485,3 +485,7 @@ conservando la prohibición de introducir VM o reiniciar.
 ## R3: conjunto vendor original carga en sphal
 
 [69 fuentes originales y carga nativa](../reports/android16-vendor-libutils/validation.json): cinco bibliotecas enlazadas estrictamente más libc++ prebuilt elegido por AOSP. Carga/descarga originales0 y seis paths vendor mapeados mediante REA MCP, namespace intacto. Es un perfil experimental, sin equivalencia Soong/ABI completa ni HAL, buffers/fences, frames o APK aceptados.
+
+## R3: herramienta HIDL y transporte generado
+
+[Generación original](../reports/android16-hidl-generator/validation.json): herramienta host66 unidades enlaza, nueve hashes .hal congelados y SHA256 independiente coinciden;39 fuentes/cabeceras generadas. MCP observa cuatro hashes Composer. Hash de archivo no certifica parser/ABI; bindings nativos/servicio/HWC/frames/APK pendientes. Fuente opcional loader parcial por HTTP429, preservada.
