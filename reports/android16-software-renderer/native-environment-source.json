@@ -1,0 +1,6 @@
+{
+  "url": "https://android.googlesource.com/platform/system/core/+/android-16.0.0_r4/rootdir/init.environ.rc.in",
+  "sha256": "193f5f89e7efa65952b42ffd045060dc8f324570f0343f4b2c3ce7d8c1cde997",
+  "content": "# set up the global environment\non early-init\n    export ANDROID_BOOTLOGO 1\n    export ANDROID_ROOT /system\n    export ANDROID_ASSETS /system/app\n    export ANDROID_DATA /data\n    export ANDROID_STORAGE /storage\n    export ANDROID_ART_ROOT /apex/com.android.art\n    export ANDROID_I18N_ROOT /apex/com.android.i18n\n    export ANDROID_TZDATA_ROOT /apex/com.android.tzdata\n    export EXTERNAL_STORAGE /sdcard\n    export ASEC_MOUNTPOINT /mnt/asec\n    # Additional environment variables will be appended here during build (see Android.bp).\n    # DO NOT ADD additional sections like 'on <event>' here.\n",
+  "adaptation": "Set only ANDROID_ROOT=/system, ANDROID_ASSETS=/system/app, ANDROID_DATA=/data before native services. Each path must be an actual private directory. Supervisor host env_clear stays. No invented BOOTCLASSPATH or Android init triggers."
+}

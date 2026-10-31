@@ -88,6 +88,18 @@ int main(int argc,char** argv) {
     if((!diagnostic || mac_integration) &&
        (!SelabelLookupFileContext("/dev/socket/property_service",S_IFSOCK,&socket_context) ||
         socket_context!="u:object_r:property_socket:s0"))return 78;
+    // Native paths from original rootdir/init.environ.rc.in. The Linux
+    // supervisor deliberately clears the host environment; these refer only
+    // to actual private mounted roots. No Java classpath or boot dispatch.
+    if(surfaceflinger) {
+        for(const auto& entry: {std::pair{"ANDROID_ROOT","/system"},
+                               std::pair{"ANDROID_ASSETS","/system/app"},
+                               std::pair{"ANDROID_DATA","/data"}}) {
+            struct stat directory{};
+            if(stat(entry.second,&directory)!=0 || !S_ISDIR(directory.st_mode) ||
+               setenv(entry.first,entry.second,1)!=0)return 74;
+        }
+    }
     PropertyInit(); // SIGCHLD is attached before any original AVC/property threads.
     auto setup=StartLinuxPropertyActions(&epoll);
     if(!setup.ok())return 70;

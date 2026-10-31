@@ -1,0 +1,868 @@
+{
+  "exit": 1,
+  "stdout": "NATIVE_PROCESS_OWNED pid=107 pidfd=5\n",
+  "stderr": "LINUX_EXEC_CONTEXT_REQUESTED source=linux.system_u:archtv_launcher_r:archtv_launcher:s0 target=u:r:init:s0 enforcing=0 NOT_STARTUP\nPROPERTY_WORKER_IDENTITY observed=u:r:init:s0 enforcing=0 mc1=1\nSELinux: Loaded file context from:\n\t\t/system/etc/selinux/plat_file_contexts\n\t\t/system_ext/etc/selinux/system_ext_file_contexts\n\t\t/product/etc/selinux/product_file_contexts\n\t\t/vendor/etc/selinux/vendor_file_contexts\n10-31 23:20:11.972   107   107 I property-coordinator: boot_config.cpp:46 [libfstab] Using Android DT directory /proc/device-tree/firmware/android/\n10-31 23:20:11.975   107   107 W property-coordinator: property_service.cpp:827 Overriding previous property 'ro.cp_system_other_odex':'1' with new value '0'\n10-31 23:20:11.976   107   107 W property-coordinator: property_service.cpp:827 Overriding previous property 'ro.build.flavor':'mainline-user' with new value 'aosp_x86_64-user'\n10-31 23:20:11.978   107   107 W property-coordinator: property_service.cpp:827 Overriding previous property 'ro.build.description':'mainline-user 16 BP4A.251205.006 14401865 release-keys' with new value 'aosp_x86_64-user 16 BP4A.251205.006 14401865 release-keys'\n10-31 23:20:11.979   107   107 I property-coordinator: property_service.cpp:957 Setting product property ro.product.brand to 'Android' (from ro.product.product.brand)\n10-31 23:20:11.979   107   107 I property-coordinator: property_service.cpp:957 Setting product property ro.product.device to 'generic_x86_64' (from ro.product.product.device)\n10-31 23:20:11.979   107   107 I property-coordinator: property_service.cpp:957 Setting product property ro.product.manufacturer to 'unknown' (from ro.product.product.manufacturer)\n10-31 23:20:11.979   107   107 I property-coordinator: property_service.cpp:957 Setting product property ro.product.model to 'AOSP on x86_64' (from ro.product.product.model)\n10-31 23:20:11.979   107   107 I property-coordinator: property_service.cpp:957 Setting product property ro.product.name to 'aosp_x86_64' (from ro.product.product.name)\n10-31 23:20:11.979   107   107 I property-coordinator: property_service.cpp:1034 Setting property 'ro.build.fingerprint' to 'Android/aosp_x86_64/generic_x86_64:16/BP4A.251205.006/14401865:user/release-keys'\n10-31 23:20:11.979   107   107 I property-coordinator: property_service.cpp:1096 Setting property 'ro.product.cpu.abilist' to 'x86_64,x86'\n10-31 23:20:11.979   107   107 I property-coordinator: property_service.cpp:1096 Setting property 'ro.product.cpu.abilist32' to 'x86'\n10-31 23:20:11.979   107   107 I property-coordinator: property_service.cpp:1096 Setting property 'ro.product.cpu.abilist64' to 'x86_64'\n10-31 23:20:11.980   107   107 I property-coordinator: util.cpp:156 Created socket '/dev/socket/property_service_for_system', mode 660, user 0, group 1000\n10-31 23:20:11.982   107   107 I property-coordinator: util.cpp:156 Created socket '/dev/socket/property_service', mode 666, user 0, group 0\n10-31 23:20:11.983   107   108 E property-coordinator: persistent_properties.cpp:268 Could not load single persistent property file, trying legacy directory: Unable to read persistent property file: open() failed: No such file or directory\nMC1_PROPERTY_SOCKET_LABEL path=/dev/socket/property_service actual=u:object_r:property_socket:s0\nMC1_PROPERTY_SOCKET_LABEL path=/dev/socket/property_service_for_system actual=u:object_r:property_socket:s0\n10-31 23:20:11.984   107   107 I property-coordinator: parser.cpp:145 Parsing file /system/etc/init/servicemanager.rc...\n10-31 23:20:11.986   107   107 I property-coordinator: service.cpp:668 starting service 'servicemanager'...\n10-31 23:20:11.986   107   107 I property-coordinator: service.cpp:683 Could not open file '/dev/kmsg': Failed to open file '/dev/kmsg': No such file or directory\n10-31 23:20:11.996   107   107 W property-coordinator: util.cpp:246 Activation of cgroup controller +memory failed in path /sys/fs/cgroup/system/uid_1000: No such file or directory\n10-31 23:20:12.039   107   107 W libprocessgroup: task_profiles.cpp:984 A JoinCgroup action in the SystemMemoryProcess profile is used for controller memory in the cgroup v2 hierarchy and will be ignored\n10-31 23:20:12.041   107   107 W libprocessgroup: task_profiles.cpp:383 SetCgroup::ExecuteForProcess: failed to open /dev/blkio//cgroup.procs: No such file or directory\n10-31 23:20:12.041   107   107 W libprocessgroup: task_profiles.cpp:1217 Failed to apply NormalIoPriority process profile\n10-31 23:20:12.046   110   110 W libprocessgroup: task_profiles.cpp:984 A JoinCgroup action in the SystemMemoryProcess profile is used for controller memory in the cgroup v2 hierarchy and will be ignored\n10-31 23:20:12.047   110   110 W libprocessgroup: task_profiles.cpp:383 SetCgroup::ExecuteForProcess: failed to open /dev/cpuset/foreground/cgroup.procs: No such file or directory\n10-31 23:20:12.047   110   110 W libprocessgroup: task_profiles.cpp:1217 Failed to apply ProcessCapacityHigh process profile\n10-31 23:20:12.047   110   110 E property-coordinator: service.cpp:573 failed to set task profiles\n10-31 23:20:12.048   107   107 I property-coordinator: service.cpp:801 ... started service 'servicemanager' has pid 110\nMC1_MANAGER_STARTED pid=110 uid=1000 gid=1000\n10-31 23:20:12.102   107   107 I property-coordinator: service.cpp:668 starting service 'exec 1 (/system/bin/sh -c /system/bin/service list > /data/local/tmp/archtv-mc1/service-list.txt 2>&1)'...\n10-31 23:20:12.109   107   107 W property-coordinator: util.cpp:246 Activation of cgroup controller +memory failed in path /sys/fs/cgroup/system/uid_2000: No such file or directory\n10-31 23:20:12.141   107   107 W libprocessgroup: task_profiles.cpp:383 SetCgroup::ExecuteForProcess: failed to open /dev/blkio//cgroup.procs: No such file or directory\n10-31 23:20:12.141   107   107 W libprocessgroup: task_profiles.cpp:1217 Failed to apply NormalIoPriority process profile\n10-31 23:20:12.142   107   107 I property-coordinator: service.cpp:801 ... started service 'exec 1 (/system/bin/sh -c /system/bin/service list > /data/local/tmp/archtv-mc1/service-list.txt 2>&1)' has pid 112\n10-31 23:20:12.142   107   107 I property-coordinator: service.cpp:449 SVC_EXEC service 'exec 1 (/system/bin/sh -c /system/bin/service list > /data/local/tmp/archtv-mc1/service-list.txt 2>&1)' pid 112 (uid 2000 gid 2000+0 context u:r:shell:s0) started; waiting...\n10-31 23:20:12.200   107   107 I property-coordinator: sigchld_handler.cpp:114 Service 'exec 1 (/system/bin/sh -c /system/bin/service list > /data/local/tmp/archtv-mc1/service-list.txt 2>&1)' (pid 112) exited with status 0 waiting took 0.095000 seconds\n10-31 23:20:12.200   107   107 I property-coordinator: service.cpp:207 Sending SIGKILL to service 'exec 1 (/system/bin/sh -c /system/bin/service list > /data/local/tmp/archtv-mc1/service-list.txt 2>&1)' (pid 112) process group...\n10-31 23:20:12.200   107   107 I libprocessgroup: processgroup.cpp:656 Removed cgroup /sys/fs/cgroup/system/uid_2000/pid_112\nMC1_CLIENT_EXIT pid=112 code=1 status=0\nMC1_ORIGINAL_CLIENT_EXIT0_REQUIRES_EXTERNAL_VERIFICATION enforcing=0\n10-31 23:20:12.201   107   107 I property-coordinator: parser.cpp:145 Parsing file /system/system_ext/etc/init/hwservicemanager.rc...\n10-31 23:20:12.204   107   107 I property-coordinator: service.cpp:668 starting service 'hwservicemanager'...\n10-31 23:20:12.207   107   107 W property-coordinator: util.cpp:246 Activation of cgroup controller +memory failed in path /sys/fs/cgroup/system/uid_1000: No such file or directory\n10-31 23:20:12.241   107   107 W libprocessgroup: task_profiles.cpp:383 SetCgroup::ExecuteForProcess: failed to open /dev/blkio//cgroup.procs: No such file or directory\n10-31 23:20:12.241   107   107 W libprocessgroup: task_profiles.cpp:1217 Failed to apply NormalIoPriority process profile\n10-31 23:20:12.242   114   114 W libprocessgroup: task_profiles.cpp:383 SetCgroup::ExecuteForProcess: failed to open /dev/cpuset/system-background/cgroup.procs: No such file or directory\n10-31 23:20:12.242   114   114 W libprocessgroup: task_profiles.cpp:1217 Failed to apply ServiceCapacityLow process profile\n10-31 23:20:12.242   114   114 W libprocessgroup: task_profiles.cpp:383 SetCgroup::ExecuteForProcess: failed to open /dev/cpuctl/foreground/cgroup.procs: No such file or directory\n10-31 23:20:12.242   114   114 W libprocessgroup: task_profiles.cpp:1217 Failed to apply HighPerformance process profile\n10-31 23:20:12.242   114   114 E property-coordinator: service.cpp:573 failed to set task profiles\n10-31 23:20:12.245   107   107 I property-coordinator: service.cpp:801 ... started service 'hwservicemanager' has pid 114\nMC1_HWMANAGER_STARTED pid=114 uid=1000 gid=1000\n10-31 23:20:12.294   107   107 I property-coordinator: service.cpp:668 starting service 'exec 2 (/system/bin/sh -c /system/bin/lshal debug -E android.hidl.manager@1.0::IServiceManager/default > /data/local/tmp/archtv-mc1/hardware-query.txt 2>&1)'...\n10-31 23:20:12.295   107   107 W property-coordinator: util.cpp:246 Activation of cgroup controller +memory failed in path /sys/fs/cgroup/system/uid_2000: No such file or directory\n10-31 23:20:12.315   107   107 W libprocessgroup: task_profiles.cpp:383 SetCgroup::ExecuteForProcess: failed to open /dev/blkio//cgroup.procs: No such file or directory\n10-31 23:20:12.315   107   107 W libprocessgroup: task_profiles.cpp:1217 Failed to apply NormalIoPriority process profile\n10-31 23:20:12.316   107   107 I property-coordinator: service.cpp:801 ... started service 'exec 2 (/system/bin/sh -c /system/bin/lshal debug -E android.hidl.manager@1.0::IServiceManager/default > /data/local/tmp/archtv-mc1/hardware-query.txt 2>&1)' has pid 115\n10-31 23:20:12.316   107   107 I property-coordinator: service.cpp:449 SVC_EXEC service 'exec 2 (/system/bin/sh -c /system/bin/lshal debug -E android.hidl.manager@1.0::IServiceManager/default > /data/local/tmp/archtv-mc1/hardware-query.txt 2>&1)' pid 115 (uid 2000 gid 2000+0 context u:r:shell:s0) started; waiting...\n10-31 23:20:12.378   107   107 I property-coordinator: sigchld_handler.cpp:114 Service 'exec 2 (/system/bin/sh -c /system/bin/lshal debug -E android.hidl.manager@1.0::IServiceManager/default > /data/local/tmp/archtv-mc1/hardware-query.txt 2>&1)' (pid 115) exited with status 0 waiting took 0.083000 seconds\n10-31 23:20:12.379   107   107 I property-coordinator: service.cpp:207 Sending SIGKILL to service 'exec 2 (/system/bin/sh -c /system/bin/lshal debug -E android.hidl.manager@1.0::IServiceManager/default > /data/local/tmp/archtv-mc1/hardware-query.txt 2>&1)' (pid 115) process group...\n10-31 23:20:12.379   107   107 I libprocessgroup: processgroup.cpp:656 Removed cgroup /sys/fs/cgroup/system/uid_2000/pid_115\nMC1_HARDWARE_CLIENT_EXIT pid=115 code=1 status=0\n10-31 23:20:12.379   107   107 I property-coordinator: service.cpp:668 starting service 'exec 3 (/system/bin/sh -c /system/bin/lshal debug android.hidl.manager@1.2::IServiceManager/archtv-missing > /data/local/tmp/archtv-mc1/hardware-missing.txt 2>&1)'...\n10-31 23:20:12.381   107   107 W property-coordinator: util.cpp:246 Activation of cgroup controller +memory failed in path /sys/fs/cgroup/system/uid_2000: No such file or directory\n10-31 23:20:12.412   107   107 W libprocessgroup: task_profiles.cpp:383 SetCgroup::ExecuteForProcess: failed to open /dev/blkio//cgroup.procs: No such file or directory\n10-31 23:20:12.412   107   107 W libprocessgroup: task_profiles.cpp:1217 Failed to apply NormalIoPriority process profile\n10-31 23:20:12.412   107   107 I property-coordinator: service.cpp:801 ... started service 'exec 3 (/system/bin/sh -c /system/bin/lshal debug android.hidl.manager@1.2::IServiceManager/archtv-missing > /data/local/tmp/archtv-mc1/hardware-missing.txt 2>&1)' has pid 117\n10-31 23:20:12.412   107   107 I property-coordinator: service.cpp:449 SVC_EXEC service 'exec 3 (/system/bin/sh -c /system/bin/lshal debug android.hidl.manager@1.2::IServiceManager/archtv-missing > /data/local/tmp/archtv-mc1/hardware-missing.txt 2>&1)' pid 117 (uid 2000 gid 2000+0 context u:r:shell:s0) started; waiting...\n10-31 23:20:12.465   107   109 E property-coordinator: property_service.cpp:704 Unable to set property 'ctl.interface_start' from uid:1000 gid:1000 pid:114: Linux property action coordinator has no service/power control backend\n10-31 23:20:12.472   107   107 I property-coordinator: sigchld_handler.cpp:114 Service 'exec 3 (/system/bin/sh -c /system/bin/lshal debug android.hidl.manager@1.2::IServiceManager/archtv-missing > /data/local/tmp/archtv-mc1/hardware-missing.txt 2>&1)' (pid 117) exited with status 128 waiting took 0.091000 seconds\n10-31 23:20:12.472   107   107 I property-coordinator: service.cpp:207 Sending SIGKILL to service 'exec 3 (/system/bin/sh -c /system/bin/lshal debug android.hidl.manager@1.2::IServiceManager/archtv-missing > /data/local/tmp/archtv-mc1/hardware-missing.txt 2>&1)' (pid 117) process group...\n10-31 23:20:12.473   107   107 I libprocessgroup: processgroup.cpp:656 Removed cgroup /sys/fs/cgroup/system/uid_2000/pid_117\nMC1_HARDWARE_MISSING_INSTANCE_EXIT pid=117 code=1 status=128\nMC1_HARDWARE_CLIENT_EXIT0_REQUIRES_EXTERNAL_VERIFICATION enforcing=0\n10-31 23:20:12.473   107   107 I property-coordinator: parser.cpp:145 Parsing file /vendor/etc/init/allocator.rc...\n10-31 23:20:12.474   107   107 I property-coordinator: parser.cpp:145 Parsing file /vendor/etc/init/hwcomposer3.rc...\n10-31 23:20:12.475   107   107 I property-coordinator: service.cpp:668 starting service 'vendor.graphics.allocator'...\n10-31 23:20:12.478   107   107 W property-coordinator: util.cpp:246 Activation of cgroup controller +memory failed in path /sys/fs/cgroup/system/uid_1000: No such file or directory\n10-31 23:20:12.495   107   107 W libprocessgroup: task_profiles.cpp:383 SetCgroup::ExecuteForProcess: failed to open /dev/blkio//cgroup.procs: No such file or directory\n10-31 23:20:12.495   107   107 W libprocessgroup: task_profiles.cpp:1217 Failed to apply NormalIoPriority process profile\n10-31 23:20:12.496   120   120 W libprocessgroup: task_profiles.cpp:383 SetCgroup::ExecuteForProcess: failed to open /dev/cpuset/system-background/cgroup.procs: No such file or directory\n10-31 23:20:12.496   120   120 W libprocessgroup: task_profiles.cpp:1217 Failed to apply ServiceCapacityLow process profile\n10-31 23:20:12.496   120   120 E property-coordinator: service.cpp:573 failed to set task profiles\n10-31 23:20:12.499   107   107 I property-coordinator: service.cpp:801 ... started service 'vendor.graphics.allocator' has pid 120\nMC3_GRAPHICS_SERVICE_STARTED name=vendor.graphics.allocator pid=120 uid=1000 gid=1003 NOT_REGISTERED\n10-31 23:20:12.499   107   107 I property-coordinator: service.cpp:668 starting service 'vendor.hwcomposer-3'...\n10-31 23:20:12.502   107   107 W property-coordinator: util.cpp:246 Activation of cgroup controller +memory failed in path /sys/fs/cgroup/system/uid_1000: No such file or directory\n10-31 23:20:12.513   107   107 W libprocessgroup: task_profiles.cpp:383 SetCgroup::ExecuteForProcess: failed to open /dev/blkio//cgroup.procs: No such file or directory\n10-31 23:20:12.514   107   107 W libprocessgroup: task_profiles.cpp:1217 Failed to apply NormalIoPriority process profile\n10-31 23:20:12.514   121   121 W libprocessgroup: task_profiles.cpp:383 SetCgroup::ExecuteForProcess: failed to open /dev/cpuset/system-background/cgroup.procs: No such file or directory\n10-31 23:20:12.515   121   121 W libprocessgroup: task_profiles.cpp:1217 Failed to apply ServiceCapacityLow process profile\n10-31 23:20:12.515   121   121 E property-coordinator: service.cpp:573 failed to set task profiles\n10-31 23:20:12.523   107   107 I property-coordinator: service.cpp:801 ... started service 'vendor.hwcomposer-3' has pid 121\nMC3_GRAPHICS_SERVICE_STARTED name=vendor.hwcomposer-3 pid=121 uid=1000 gid=1003 NOT_REGISTERED\n10-31 23:20:12.524   107   107 I property-coordinator: parser.cpp:145 Parsing file /system/etc/init/surfaceflinger.rc...\n10-31 23:20:12.524   107   107 I property-coordinator: parser.cpp:145 Parsing file /system/etc/init/bootanim.rc...\n10-31 23:20:12.524   107   107 I property-coordinator: service.cpp:668 starting service 'surfaceflinger'...\n10-31 23:20:12.526   107   107 W property-coordinator: util.cpp:246 Activation of cgroup controller +memory failed in path /sys/fs/cgroup/system/uid_1000: No such file or directory\n10-31 23:20:12.531   107   107 W libprocessgroup: task_profiles.cpp:383 SetCgroup::ExecuteForProcess: failed to open /dev/blkio//cgroup.procs: No such file or directory\n10-31 23:20:12.531   107   107 W libprocessgroup: task_profiles.cpp:1217 Failed to apply NormalIoPriority process profile\n10-31 23:20:12.532   122   122 W libprocessgroup: task_profiles.cpp:383 SetCgroup::ExecuteForProcess: failed to open /dev/cpuctl/foreground/cgroup.procs: No such file or directory\n10-31 23:20:12.532   122   122 W libprocessgroup: task_profiles.cpp:1217 Failed to apply HighPerformance process profile\n10-31 23:20:12.532   122   122 E property-coordinator: service.cpp:573 failed to set task profiles\n10-31 23:20:12.532   107   107 I property-coordinator: service.cpp:801 ... started service 'surfaceflinger' has pid 122\nMC3_ORIGINAL_SF_STARTED pid=122 NOT_REGISTERED\n10-31 23:20:12.532   107   107 I property-coordinator: service.cpp:668 starting service 'exec 4 (/system/bin/sh -c umask 077; i=0; while [ $i -lt 30 ]; do /system/bin/service check SurfaceFlinger > /data/local/tmp/archtv-mc1/sf-query.txt 2>&1; /system/bin/service check SurfaceFlingerAIDL > /data/local/tmp/archtv-mc1/sf-aidl-query.txt 2>&1; if /system/bin/grep -qx 'Service SurfaceFlinger: found' /data/local/tmp/archtv-mc1/sf-query.txt && /system/bin/grep -qx 'Service SurfaceFlingerAIDL: found' /data/local/tmp/archtv-mc1/sf-aidl-query.txt; then exit 0; fi; i=$((i+1)); /system/bin/sleep 1; done; exit 1)'...\n10-31 23:20:12.533   107   107 W property-coordinator: util.cpp:246 Activation of cgroup controller +memory failed in path /sys/fs/cgroup/system/uid_2000: No such file or directory\n10-31 23:20:12.538   107   107 W libprocessgroup: task_profiles.cpp:383 SetCgroup::ExecuteForProcess: failed to open /dev/blkio//cgroup.procs: No such file or directory\n10-31 23:20:12.539   107   107 W libprocessgroup: task_profiles.cpp:1217 Failed to apply NormalIoPriority process profile\n10-31 23:20:12.542   107   107 I property-coordinator: service.cpp:801 ... started service 'exec 4 (/system/bin/sh -c umask 077; i=0; while [ $i -lt 30 ]; do /system/bin/service check SurfaceFlinger > /data/local/tmp/archtv-mc1/sf-query.txt 2>&1; /system/bin/service check SurfaceFlingerAIDL > /data/local/tmp/archtv-mc1/sf-aidl-query.txt 2>&1; if /system/bin/grep -qx 'Service SurfaceFlinger: found' /data/local/tmp/archtv-mc1/sf-query.txt && /system/bin/grep -qx 'Service SurfaceFlingerAIDL: found' /data/local/tmp/archtv-mc1/sf-aidl-query.txt; then exit 0; fi; i=$((i+1)); /system/bin/sleep 1; done; exit 1)' has pid 123\n10-31 23:20:12.542   107   107 I property-coordinator: service.cpp:449 SVC_EXEC service 'exec 4 (/system/bin/sh -c umask 077; i=0; while [ $i -lt 30 ]; do /system/bin/service check SurfaceFlinger > /data/local/tmp/archtv-mc1/sf-query.txt 2>&1; /system/bin/service check SurfaceFlingerAIDL > /data/local/tmp/archtv-mc1/sf-aidl-query.txt 2>&1; if /system/bin/grep -qx 'Service SurfaceFlinger: found' /data/local/tmp/archtv-mc1/sf-query.txt && /system/bin/grep -qx 'Service SurfaceFlingerAIDL: found' /data/local/tmp/archtv-mc1/sf-aidl-query.txt; then exit 0; fi; i=$((i+1)); /system/bin/sleep 1; done; exit 1)' pid 123 (uid 2000 gid 2000+0 context u:r:shell:s0) started; waiting...\n10-31 23:20:12.912   107   107 I property-coordinator: sigchld_handler.cpp:116 Service 'exec 4 (/system/bin/sh -c umask 077; i=0; while [ $i -lt 30 ]; do /system/bin/service check SurfaceFlinger > /data/local/tmp/archtv-mc1/sf-query.txt 2>&1; /system/bin/service check SurfaceFlingerAIDL > /data/local/tmp/archtv-mc1/sf-aidl-query.txt 2>&1; if /system/bin/grep -qx 'Service SurfaceFlinger: found' /data/local/tmp/archtv-mc1/sf-query.txt && /system/bin/grep -qx 'Service SurfaceFlingerAIDL: found' /data/local/tmp/archtv-mc1/sf-aidl-query.txt; then exit 0; fi; i=$((i+1)); /system/bin/sleep 1; done; exit 1)' (pid 123) received SIGABRT waiting took 0.378000 seconds\n10-31 23:20:12.912   107   107 I property-coordinator: service.cpp:207 Sending SIGKILL to service 'exec 4 (/system/bin/sh -c umask 077; i=0; while [ $i -lt 30 ]; do /system/bin/service check SurfaceFlinger > /data/local/tmp/archtv-mc1/sf-query.txt 2>&1; /system/bin/service check SurfaceFlingerAIDL > /data/local/tmp/archtv-mc1/sf-aidl-query.txt 2>&1; if /system/bin/grep -qx 'Service SurfaceFlinger: found' /data/local/tmp/archtv-mc1/sf-query.txt && /system/bin/grep -qx 'Service SurfaceFlingerAIDL: found' /data/local/tmp/archtv-mc1/sf-aidl-query.txt; then exit 0; fi; i=$((i+1)); /system/bin/sleep 1; done; exit 1)' (pid 123) process group...\n10-31 23:20:12.912   107   107 I libprocessgroup: processgroup.cpp:656 Removed cgroup /sys/fs/cgroup/system/uid_2000/pid_123\nMC3_ORIGINAL_SF_QUERY_EXIT pid=123 code=3 status=6\nMC1_FAILED MC3 original SF service queries failed\n10-31 23:20:12.912   107   107 I property-coordinator: service.cpp:207 Sending SIGKILL to service 'servicemanager' (pid 110) process group...\n10-31 23:20:12.917   107   107 I libprocessgroup: processgroup.cpp:656 Removed cgroup /sys/fs/cgroup/system/uid_1000/pid_110\n10-31 23:20:12.918   107   107 I property-coordinator: service.cpp:207 Sending SIGKILL to service 'hwservicemanager' (pid 114) process group...\n10-31 23:20:12.926   107   107 I libprocessgroup: processgroup.cpp:656 Removed cgroup /sys/fs/cgroup/system/uid_1000/pid_114\n10-31 23:20:12.928   107   107 I property-coordinator: service.cpp:207 Sending SIGKILL to service 'vendor.graphics.allocator' (pid 120) process group...\n10-31 23:20:12.933   107   107 I libprocessgroup: processgroup.cpp:656 Removed cgroup /sys/fs/cgroup/system/uid_1000/pid_120\n10-31 23:20:12.935   107   107 I property-coordinator: service.cpp:207 Sending SIGKILL to service 'vendor.hwcomposer-3' (pid 121) process group...\n10-31 23:20:12.940   107   107 I libprocessgroup: processgroup.cpp:656 Removed cgroup /sys/fs/cgroup/system/uid_1000/pid_121\n10-31 23:20:12.943   107   107 I property-coordinator: service.cpp:207 Sending SIGKILL to service 'surfaceflinger' (pid 122) process group...\n10-31 23:20:12.950   107   107 I libprocessgroup: processgroup.cpp:656 Removed cgroup /sys/fs/cgroup/system/uid_1000/pid_122\n10-31 23:20:12.953   107   107 I property-coordinator: sigchld_handler.cpp:116 Service 'servicemanager' (pid 110) received SIGKILL\n10-31 23:20:12.953   107   107 I property-coordinator: service.cpp:207 Sending SIGKILL to service 'servicemanager' (pid 110) process group...\n10-31 23:20:12.953   107   107 E libprocessgroup: processgroup.cpp:450 Failed to open /sys/fs/cgroup/system/uid_1000/pid_110/cgroup.procs: No such file or directory\nMC1_MANAGER_EXIT pid=110 code=2 status=9\n10-31 23:20:12.956   107   107 I property-coordinator: sigchld_handler.cpp:116 Service 'hwservicemanager' (pid 114) received SIGKILL\n10-31 23:20:12.956   107   107 I property-coordinator: service.cpp:207 Sending SIGKILL to service 'hwservicemanager' (pid 114) process group...\n10-31 23:20:12.956   107   107 E libprocessgroup: processgroup.cpp:450 Failed to open /sys/fs/cgroup/system/uid_1000/pid_114/cgroup.procs: No such file or directory\nMC1_HWMANAGER_EXIT pid=114 code=2 status=9\n10-31 23:20:12.959   107   107 I property-coordinator: sigchld_handler.cpp:116 Service 'vendor.graphics.allocator' (pid 120) received SIGKILL\n10-31 23:20:12.959   107   107 I property-coordinator: service.cpp:207 Sending SIGKILL to service 'vendor.graphics.allocator' (pid 120) process group...\n10-31 23:20:12.959   107   107 E libprocessgroup: processgroup.cpp:450 Failed to open /sys/fs/cgroup/system/uid_1000/pid_120/cgroup.procs: No such file or directory\nMC3_GRAPHICS_SERVICE_EXIT pid=120 code=2 status=9\n10-31 23:20:12.962   107   107 I property-coordinator: sigchld_handler.cpp:116 Service 'vendor.hwcomposer-3' (pid 121) received SIGKILL\n10-31 23:20:12.962   107   107 I property-coordinator: service.cpp:207 Sending SIGKILL to service 'vendor.hwcomposer-3' (pid 121) process group...\n10-31 23:20:12.962   107   107 E libprocessgroup: processgroup.cpp:450 Failed to open /sys/fs/cgroup/system/uid_1000/pid_121/cgroup.procs: No such file or directory\nMC3_GRAPHICS_SERVICE_EXIT pid=121 code=2 status=9\n10-31 23:20:12.964   107   107 I property-coordinator: sigchld_handler.cpp:116 Service 'surfaceflinger' (pid 122) received SIGKILL\n10-31 23:20:12.964   107   107 I property-coordinator: service.cpp:207 Sending SIGKILL to service 'surfaceflinger' (pid 122) process group...\n10-31 23:20:12.964   107   107 E libprocessgroup: processgroup.cpp:450 Failed to open /sys/fs/cgroup/system/uid_1000/pid_122/cgroup.procs: No such file or directory\nMC3_SF_SERVICE_EXIT pid=122 code=2 status=9\n10-31 23:20:12.967   107   107 E property-coordinator: sigchld_handler.cpp:56 waitid failed: No child processes\nMC1_CLOSE_OBSERVED enforcing=0 expected=0\nError: Custom { kind: UnexpectedEof, error: \"native lifetime channel closed\" }\n",
+  "external_Linux_identity_observation": [
+    {
+      "kind": "MANAGER",
+      "pid_namespace_pid": 110,
+      "getpidcon_raw_return": 0,
+      "actual_context": "u:r:servicemanager:s0",
+      "contexts_observed_in_order": [
+        "u:r:servicemanager:s0"
+      ],
+      "errno_observed": [],
+      "status": [
+        "Uid:\t1000\t1000\t1000\t1000",
+        "Gid:\t1000\t1000\t1000\t1000",
+        "Groups:\t3009 ",
+        "CapPrm:\t0000000000000000",
+        "CapEff:\t0000000000000000",
+        "CapBnd:\t000001ffffffffff",
+        "NoNewPrivs:\t1"
+      ]
+    },
+    {
+      "kind": "HWMANAGER",
+      "pid_namespace_pid": 114,
+      "getpidcon_raw_return": 0,
+      "actual_context": "u:r:hwservicemanager:s0",
+      "contexts_observed_in_order": [
+        "u:r:hwservicemanager:s0"
+      ],
+      "errno_observed": [],
+      "status": [
+        "Uid:\t1000\t1000\t1000\t1000",
+        "Gid:\t1000\t1000\t1000\t1000",
+        "Groups:\t3009 ",
+        "CapPrm:\t0000000000000000",
+        "CapEff:\t0000000000000000",
+        "CapBnd:\t000001ffffffffff",
+        "NoNewPrivs:\t1"
+      ]
+    },
+    {
+      "kind": "ALLOCATOR",
+      "pid_namespace_pid": 120,
+      "getpidcon_raw_return": 0,
+      "actual_context": "u:r:hal_graphics_allocator_default:s0",
+      "contexts_observed_in_order": [
+        "u:r:hal_graphics_allocator_default:s0"
+      ],
+      "errno_observed": [],
+      "status": [
+        "Uid:\t1000\t1000\t1000\t1000",
+        "Gid:\t1003\t1003\t1003\t1003",
+        "Groups:\t1026 ",
+        "CapPrm:\t0000000000800000",
+        "CapEff:\t0000000000800000",
+        "CapBnd:\t0000000000800000",
+        "NoNewPrivs:\t1"
+      ]
+    },
+    {
+      "kind": "COMPOSER",
+      "pid_namespace_pid": 121,
+      "getpidcon_raw_return": 0,
+      "actual_context": "u:r:hal_graphics_composer_default:s0",
+      "contexts_observed_in_order": [
+        "u:r:hal_graphics_composer_default:s0"
+      ],
+      "errno_observed": [],
+      "status": [
+        "Uid:\t1000\t1000\t1000\t1000",
+        "Gid:\t1003\t1003\t1003\t1003",
+        "Groups:\t1026 ",
+        "CapPrm:\t0000000000800000",
+        "CapEff:\t0000000000800000",
+        "CapBnd:\t0000000000800000",
+        "NoNewPrivs:\t1"
+      ]
+    }
+  ],
+  "passive_log_observer_diagnostic_only": [
+    {
+      "tag": "cutils-trace",
+      "message": "Error opening trace file: No such file or directory (2)",
+      "actual_sender_pid_uid_gid": [
+        113,
+        2000,
+        2000
+      ]
+    },
+    {
+      "tag": "libbinder.BackendUnifiedServiceManager",
+      "message": "Thread Pool max thread count is 0. Cannot cache binder as linkToDeath cannot be implemented. serviceName: manager",
+      "actual_sender_pid_uid_gid": [
+        113,
+        2000,
+        2000
+      ]
+    },
+    {
+      "tag": "hwservicemanager",
+      "message": "libvintf-usage-violation: Executable /system/system_ext/bin/hwservicemanager should not use libvintf. It should query VINTF metadata via servicemanager",
+      "actual_sender_pid_uid_gid": [
+        114,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "hwservicemanager",
+      "message": "getFrameworkHalManifest: Reading VINTF information.",
+      "actual_sender_pid_uid_gid": [
+        114,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "hwservicemanager",
+      "message": "getDeviceHalManifest: Reading VINTF information.",
+      "actual_sender_pid_uid_gid": [
+        114,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "hwservicemanager",
+      "message": "getDeviceHalManifest: Successfully processed VINTF information",
+      "actual_sender_pid_uid_gid": [
+        114,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "hwservicemanager",
+      "message": "Cannot filter framework manifest HALs properly because target FCM version is unspecified in the device manifest. Treating as infinitely old device.",
+      "actual_sender_pid_uid_gid": [
+        114,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "hwservicemanager",
+      "message": "getFrameworkHalManifest: Successfully processed VINTF information",
+      "actual_sender_pid_uid_gid": [
+        114,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "hwservicemanager",
+      "message": "hwservicemanager is ready now.",
+      "actual_sender_pid_uid_gid": [
+        114,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "cutils-trace",
+      "message": "Error opening trace file: No such file or directory (2)",
+      "actual_sender_pid_uid_gid": [
+        116,
+        2000,
+        2000
+      ]
+    },
+    {
+      "tag": "cutils-trace",
+      "message": "Error opening trace file: No such file or directory (2)",
+      "actual_sender_pid_uid_gid": [
+        114,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "cutils-trace",
+      "message": "Error opening trace file: No such file or directory (2)",
+      "actual_sender_pid_uid_gid": [
+        118,
+        2000,
+        2000
+      ]
+    },
+    {
+      "tag": "hwservicemanager",
+      "message": "Since android.hidl.manager@1.2::IServiceManager/archtv-missing is not registered, trying to start it as a lazy HAL (if it's not configured to be a lazy HAL, it may be stuck starting or still starting).",
+      "actual_sender_pid_uid_gid": [
+        114,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "lshal",
+      "message": "android.hidl.manager@1.2::IServiceManager/archtv-missing does not exist, or no permission to connect.",
+      "actual_sender_pid_uid_gid": [
+        118,
+        2000,
+        2000
+      ]
+    },
+    {
+      "tag": "libc",
+      "message": "Unable to set property \"ctl.interface_start\" to \"android.hidl.manager@1.2::IServiceManager/archtv-missing\": PROP_ERROR_HANDLE_CONTROL_MESSAGE (0x20)",
+      "actual_sender_pid_uid_gid": [
+        114,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "hwservicemanager",
+      "message": "Tried to start android.hidl.manager@1.2::IServiceManager/archtv-missing as a lazy service, but was unable to. Usually this happens when a service is not installed, but if the service is intended to be used as a lazy service, then it may be configured incorrectly.",
+      "actual_sender_pid_uid_gid": [
+        114,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "libc",
+      "message": "failed to connect to tombstoned: No such file or directory",
+      "actual_sender_pid_uid_gid": [
+        123,
+        2000,
+        2000
+      ]
+    },
+    {
+      "tag": "android.hardware.graphics.allocator-service.minigbm",
+      "message": "Minigbm AIDL allocator starting up...",
+      "actual_sender_pid_uid_gid": [
+        120,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "cutils-trace",
+      "message": "Error opening trace file: No such file or directory (2)",
+      "actual_sender_pid_uid_gid": [
+        120,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "libbinder.BackendUnifiedServiceManager",
+      "message": "Thread Pool max thread count is 0. Cannot cache binder as linkToDeath cannot be implemented. serviceName: android.hardware.graphics.allocator.IAllocator/default",
+      "actual_sender_pid_uid_gid": [
+        120,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "RanchuHwc",
+      "message": "RanchuHWC (HWComposer3/HWC3) starting up...",
+      "actual_sender_pid_uid_gid": [
+        121,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "cutils-trace",
+      "message": "Error opening trace file: No such file or directory (2)",
+      "actual_sender_pid_uid_gid": [
+        121,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "libbinder.BackendUnifiedServiceManager",
+      "message": "Thread Pool max thread count is 0. Cannot cache binder as linkToDeath cannot be implemented. serviceName: android.hardware.graphics.composer3.IComposer/default",
+      "actual_sender_pid_uid_gid": [
+        121,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***\n",
+      "actual_sender_pid_uid_gid": [
+        123,
+        2000,
+        2000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "Build fingerprint: 'unknown'\n",
+      "actual_sender_pid_uid_gid": [
+        123,
+        2000,
+        2000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "Kernel Release: '6.18.59-1-lts'\n",
+      "actual_sender_pid_uid_gid": [
+        123,
+        2000,
+        2000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "Revision: 'unknown'\n",
+      "actual_sender_pid_uid_gid": [
+        123,
+        2000,
+        2000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "ABI: 'x86_64'\n",
+      "actual_sender_pid_uid_gid": [
+        123,
+        2000,
+        2000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "Timestamp: 2026-10-31 23:20:12.547564048+0000\n",
+      "actual_sender_pid_uid_gid": [
+        123,
+        2000,
+        2000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "Process uptime: 1s\n",
+      "actual_sender_pid_uid_gid": [
+        123,
+        2000,
+        2000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "Executable: /archtv/bin/property-coordinator\n",
+      "actual_sender_pid_uid_gid": [
+        123,
+        2000,
+        2000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "Cmdline: /archtv/bin/property-coordinator --mc3-surfaceflinger-integration\n",
+      "actual_sender_pid_uid_gid": [
+        123,
+        2000,
+        2000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "pid: 123, tid: 123, name: property-coordi  >>> /archtv/bin/property-coordinator <<<\n",
+      "actual_sender_pid_uid_gid": [
+        123,
+        2000,
+        2000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "uid: 2000\n",
+      "actual_sender_pid_uid_gid": [
+        123,
+        2000,
+        2000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "Abort message: '/system/bin/sh: cannot expand arguments': using deprecated syntax for specifying property 'i -lt 30 ]; do /system/bin/service check SurfaceFlinger > /data/local/tmp/archtv-mc1/sf-query.txt 2>&1; /system/bin/service check SurfaceFlingerAIDL > /data/local/tmp/archtv-mc1/sf-aidl-query.txt 2>&1; if /system/bin/grep -qx 'Service SurfaceFlinger: found' /data/local/tmp/archtv-mc1/sf-query.txt && /system/bin/grep -qx 'Service SurfaceFlingerAIDL: found' /data/local/tmp/archtv-mc1/sf-aidl-query.txt; then exit 0; fi; i=$((i+1)); /system/bin/sleep 1; done; exit 1', use ${name} instead'\n",
+      "actual_sender_pid_uid_gid": [
+        123,
+        2000,
+        2000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "    rax 0000000000000000  rbx 000000000000007b  rcx 00007f3bb508fce4  rdx 0000000000000006\n",
+      "actual_sender_pid_uid_gid": [
+        123,
+        2000,
+        2000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "    r8  0000000000000006  r9  0000000000000006  r10 00007ffc92c40660  r11 0000000000000217\n",
+      "actual_sender_pid_uid_gid": [
+        123,
+        2000,
+        2000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "    r12 00007f39b0a11910  r13 0000000000000249  r14 000000000000007b  r15 00007f3ae0a06110\n",
+      "actual_sender_pid_uid_gid": [
+        123,
+        2000,
+        2000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "    rdi 000000000000007b  rsi 000000000000007b\n",
+      "actual_sender_pid_uid_gid": [
+        123,
+        2000,
+        2000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "    rbp 00007ffc92c40700  rsp 00007ffc92c40660  rip 00007f3bb508fce4  err 0000000000000000\n",
+      "actual_sender_pid_uid_gid": [
+        123,
+        2000,
+        2000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "5 total frames\n",
+      "actual_sender_pid_uid_gid": [
+        123,
+        2000,
+        2000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "backtrace:\n",
+      "actual_sender_pid_uid_gid": [
+        123,
+        2000,
+        2000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "  NOTE: Function names and BuildId information is missing for some frames due\n  NOTE: to unreadable libraries. For unwinds of apps, only shared libraries\n  NOTE: found under the lib/ directory are readable.\n  NOTE: On this device, run setenforce 0 to make the libraries readable.\n  NOTE: Unreadable libraries:\n  NOTE:   /archtv/bin/property-coordinator\n",
+      "actual_sender_pid_uid_gid": [
+        123,
+        2000,
+        2000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "      #00 pc 000000000006fce4  /apex/com.android.runtime/lib64/bionic/libc.so (abort+196) (BuildId: 3f8afd2a8485f380e843af6d787a9af4)\n",
+      "actual_sender_pid_uid_gid": [
+        123,
+        2000,
+        2000
+      ]
+    },
+    {
+      "tag": "cutils-trace",
+      "message": "Error opening trace file: No such file or directory (2)",
+      "actual_sender_pid_uid_gid": [
+        122,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "hwservicemanager",
+      "message": "getTransport: Cannot find entry android.hardware.configstore@1.0::ISurfaceFlingerConfigs/default in either framework or device VINTF manifest.",
+      "actual_sender_pid_uid_gid": [
+        114,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "SurfaceFlinger",
+      "message": "ro.sf.lcd_density must be defined as a build property",
+      "actual_sender_pid_uid_gid": [
+        122,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "SurfaceFlinger",
+      "message": "Using HWComposer service: default",
+      "actual_sender_pid_uid_gid": [
+        122,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "SurfaceFlinger",
+      "message": "SurfaceFlinger is starting",
+      "actual_sender_pid_uid_gid": [
+        122,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "SurfaceFlinger",
+      "message": "Enabling backpressure for GPU composition",
+      "actual_sender_pid_uid_gid": [
+        122,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "SurfaceFlinger",
+      "message": "Disabling blur effects, they are not supported.",
+      "actual_sender_pid_uid_gid": [
+        122,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "libprocessgroup",
+      "message": "A JoinCgroup action in the SystemMemoryProcess profile is used for controller memory in the cgroup v2 hierarchy and will be ignored",
+      "actual_sender_pid_uid_gid": [
+        122,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "SurfaceFlinger",
+      "message": "SurfaceFlinger's main thread ready to run. Initializing graphics H/W...",
+      "actual_sender_pid_uid_gid": [
+        122,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "SurfaceFlinger",
+      "message": "RenderEngine with SkiaGL Backend (Ganesh)",
+      "actual_sender_pid_uid_gid": [
+        122,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "SurfaceFlinger",
+      "message": "Non-threaded RenderEngine not supported, please update or remove debug.renderengine.backend to use a supported backend",
+      "actual_sender_pid_uid_gid": [
+        122,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "libprocessgroup",
+      "message": "SetCgroup::ExecuteForTask: failed to open /dev/cpuset/system-background/tasks: No such file or directory",
+      "actual_sender_pid_uid_gid": [
+        122,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "libprocessgroup",
+      "message": "Failed to apply SFRenderEnginePolicy task profile",
+      "actual_sender_pid_uid_gid": [
+        122,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "SurfaceFlinger",
+      "message": "Failed to set render-engine task profile!",
+      "actual_sender_pid_uid_gid": [
+        122,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "libEGL",
+      "message": "ANGLE Warn:vulkan_icd.cpp:388 (ChoosePhysicalDevice): Preferred device ICD not found. Using default physicalDevice instead.",
+      "actual_sender_pid_uid_gid": [
+        122,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "ANGLE",
+      "message": "Version (2.1 git hash: ab6a82e0ed1425316da0ba9a0b1c715a58a0b725), Renderer (Vulkan 1.3.0 (SwiftShader Device (LLVM 16.0.0) (0x0000C0DE)))",
+      "actual_sender_pid_uid_gid": [
+        122,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "SurfaceFlinger",
+      "message": "Realtime priority unsupported, degrading gracefully to high priority",
+      "actual_sender_pid_uid_gid": [
+        122,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "SurfaceFlinger",
+      "message": "Background Blurs Disabled",
+      "actual_sender_pid_uid_gid": [
+        122,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "SurfaceFlinger",
+      "message": "OpenGL ES informations:",
+      "actual_sender_pid_uid_gid": [
+        122,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "SurfaceFlinger",
+      "message": "vendor    : Google Inc. (Google)",
+      "actual_sender_pid_uid_gid": [
+        122,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "SurfaceFlinger",
+      "message": "renderer  : ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (LLVM 16.0.0) (0x0000C0DE)), SwiftShader driver-5.0.0)",
+      "actual_sender_pid_uid_gid": [
+        122,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "SurfaceFlinger",
+      "message": "version   : OpenGL ES 3.1.0 (ANGLE 2.1 git hash: ab6a82e0ed1425316da0ba9a0b1c715a58a0b725)",
+      "actual_sender_pid_uid_gid": [
+        122,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "SurfaceFlinger",
+      "message": "extensions: GL_AMD_performance_monitor GL_ANGLE_base_vertex_base_instance_shader_builtin GL_ANGLE_blob_cache GL_ANGLE_client_arrays GL_ANGLE_clip_cull_distance GL_ANGLE_compressed_texture_etc GL_ANGLE_copy_texture_3d GL_ANGLE_depth_texture GL_ANGLE_framebuffer_blit GL_ANGLE_framebuffer_multisample GL_ANGLE_get_image GL_ANGLE_get_serialized_context_string GL_ANGLE_get_tex_level_parameter GL_ANGLE_instanced_arrays GL_ANGLE_memory_object_flags GL_ANGLE_memory_size GL_ANGLE_multi_draw GL_ANGLE_pack_reverse_row_order GL_ANGLE_polygon_mode GL_ANGLE_program_binary_readiness_query GL_ANGLE_program_cache_control GL_ANGLE_read_only_depth_stencil_feedback_loops GL_ANGLE_relaxed_vertex_attribute_type GL_ANGLE_renderability_validation GL_ANGLE_request_extension GL_ANGLE_rgbx_internal_format GL_ANGLE_robust_client_memory GL_ANGLE_robust_fragment_shader_output GL_ANGLE_shader_pixel_local_storage GL_ANGLE_shader_pixel_local_storage_coherent GL_ANGLE_stencil_texturing GL_ANGLE_texture_compression_dxt3 GL_ANGLE_texture_compre",
+      "actual_sender_pid_uid_gid": [
+        122,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "SurfaceFlinger",
+      "message": "GL_MAX_TEXTURE_SIZE = 8192",
+      "actual_sender_pid_uid_gid": [
+        122,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "SurfaceFlinger",
+      "message": "GL_MAX_VIEWPORT_DIMS = 8192",
+      "actual_sender_pid_uid_gid": [
+        122,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "libprocessgroup",
+      "message": "SetCgroup::ExecuteForTask: failed to open /dev/cpuset/system-background/tasks: No such file or directory",
+      "actual_sender_pid_uid_gid": [
+        122,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "libprocessgroup",
+      "message": "Failed to apply SFMainPolicy task profile",
+      "actual_sender_pid_uid_gid": [
+        122,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "SurfaceFlinger",
+      "message": "Failed to set main task profile",
+      "actual_sender_pid_uid_gid": [
+        122,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "RanchuHwc",
+      "message": "ARCHTV_COMPOSER_CREATE_CLIENT_ENTER",
+      "actual_sender_pid_uid_gid": [
+        121,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "libbinder.ServiceManagerCppClient",
+      "message": "Failed to get isDeclared for mapper/minigbm: Status(-129, EX_TRANSACTION_FAILED): 'DEAD_OBJECT: '",
+      "actual_sender_pid_uid_gid": [
+        121,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "Gralloc5",
+      "message": "Failed to load mapper.minigbm.so",
+      "actual_sender_pid_uid_gid": [
+        121,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "cutils-trace",
+      "message": "Error opening trace file: No such file or directory (2)",
+      "actual_sender_pid_uid_gid": [
+        121,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "hwservicemanager",
+      "message": "getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.",
+      "actual_sender_pid_uid_gid": [
+        114,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "HidlServiceManagement",
+      "message": "getService: defaultServiceManager()->getTransport returns Status(EX_TRANSACTION_FAILED): 'DEAD_OBJECT: '",
+      "actual_sender_pid_uid_gid": [
+        121,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "Gralloc4",
+      "message": "mapper 4.x is not supported",
+      "actual_sender_pid_uid_gid": [
+        121,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "HidlServiceManagement",
+      "message": "getService: defaultServiceManager()->getTransport returns Status(EX_TRANSACTION_FAILED): 'DEAD_OBJECT: '",
+      "actual_sender_pid_uid_gid": [
+        121,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "Gralloc3",
+      "message": "mapper 3.x is not supported",
+      "actual_sender_pid_uid_gid": [
+        121,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "HidlServiceManagement",
+      "message": "getService: defaultServiceManager()->getTransport returns Status(EX_TRANSACTION_FAILED): 'DEAD_OBJECT: '",
+      "actual_sender_pid_uid_gid": [
+        121,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "Gralloc2",
+      "message": "mapper 2.x is not supported",
+      "actual_sender_pid_uid_gid": [
+        121,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "GraphicBufferMapper",
+      "message": "gralloc-mapper is missing",
+      "actual_sender_pid_uid_gid": [
+        121,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "libc",
+      "message": "failed to connect to tombstoned: No such file or directory",
+      "actual_sender_pid_uid_gid": [
+        121,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "SurfaceFlinger",
+      "message": "Can't create AidlComposerClient",
+      "actual_sender_pid_uid_gid": [
+        122,
+        1000,
+        1003
+      ]
+    },
+    {
+      "tag": "libc",
+      "message": "failed to connect to tombstoned: No such file or directory",
+      "actual_sender_pid_uid_gid": [
+        122,
+        1000,
+        1003
+      ]
+    }
+  ]
+}

@@ -9,6 +9,6 @@
   "decision": "Test existing original skiagl RenderEngine + GSI ANGLE over same Vulkan driver, with real API checks; do not lie about Vk features or emulate fence FDs. Kernel/driver fence integration stays open even if GL initializes.",
   "runtime": "Permissive policy9f9afb63; diagnostic ordinary execution, not REA runtime. Original shell query aborted6, SF stopped by coordinator on failure; real liblog sender credentials retained.",
   "limits": "No rendering, authorization, isolation or Markor demonstrated. Native build/link and MCP exports static only.",
-  "gl_observation": "Original skiagl initialized OpenGL ES3.1 using original GSI ANGLE2.1 ab6a82e0 and newly built SwiftShader LLVM16. Then original SurfaceFlinger reports Cannot create AidlComposerClient and no SF service/readiness is accepted.",
-  "next": "Diagnose actual IComposer createClient transaction/status against original SF ABI and original server; do not add fake return. ANGLE GL initialization is partial, no completed frame."
+  "gl_observation": "Original skiagl initializes GLES3.1 with GSI ANGLE and SwiftShader LLVM16. Earlier createClient error happened during manager teardown caused by unescaped init argument expansion, not an independently established HWC block. Escaped original client subsequently finds both SF services and starts original bootanimation, which aborts without ANDROID_ROOT.",
+  "next": "Actual SF+bootanimation integration with original native environment paths, confirm Binder outputs/identities and real DRM frame, then original framework services for Markor. MAC/fence acceptance remains open."
 }

@@ -249,12 +249,12 @@ class LinuxMc1Cohort {
         // the original RC services explicitly, without Android boot dispatch.
         auto client=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","shell","shell","--",
             "/system/bin/sh","-c",
-            "umask 077; i=0; while [ $i -lt 30 ]; do "
+            "umask 077; i=0; while [ $$i -lt 30 ]; do "
             "/system/bin/service check SurfaceFlinger > /data/local/tmp/archtv-mc1/sf-query.txt 2>&1; "
             "/system/bin/service check SurfaceFlingerAIDL > /data/local/tmp/archtv-mc1/sf-aidl-query.txt 2>&1; "
             "if /system/bin/grep -qx 'Service SurfaceFlinger: found' /data/local/tmp/archtv-mc1/sf-query.txt && "
             "/system/bin/grep -qx 'Service SurfaceFlingerAIDL: found' /data/local/tmp/archtv-mc1/sf-aidl-query.txt; then exit 0; fi; "
-            "i=$((i+1)); /system/bin/sleep 1; done; exit 1"});
+            "i=$$((i+1)); /system/bin/sleep 1; done; exit 1"});
         if(!client.ok())return client.error();
         auto* process=client->get();
         process->AddReapCallback([this](const siginfo_t& info) {

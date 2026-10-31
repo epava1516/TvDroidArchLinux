@@ -1,5 +1,9 @@
 # Arquitectura vigente · A16-QPR2-1
 
+## Frontera ejecutada · SurfaceFlinger y cliente originales
+
+[Prueba funcional](../reports/android16-software-renderer/sf-original-functional-findings.json): originales GSI SurfaceFlinger/bootanimation, RenderEngine skiagl y ANGLE; driver original SwiftShader/LLVM16 Bionic, frontend HWC3 original con adaptación Wayland y minigbm. Dos errores del coordinador se corrigieron por contratos originales: `$$` literal antes de expansión de argumentos de init y tres rutas de entorno nativas tras env_clear del supervisor. No se cambia libbinder, se fabrica registro ni se ejecutan triggers de arranque/SystemServer completos. Bootanimation es aquí un cliente gráfico nativo. Consultas Binder, seis UID/GID/caps/NNP/SID, captura DRM y cierre comprobados. Es una combinación ejecutada en permisivo, aún experimental en variantes/proveedores, seguridad, fences y formatos. El supuesto bloqueo Composer anterior era consecuencia del cierre temprano de gestores; se conserva su evidencia y corrección.
+
 ## Elección gráfica contrastada en ejecución
 
 [SwiftShader original Android/LLVM16 y GSI ANGLE](../reports/android16-software-renderer/renderer-decision.json): binario Bionic, no biblioteca glibc ni SDK stub. El Vulkan RenderEngine original exige semáforos externos SYNC_FD; el driver ofrece semáforos OPAQUE_FD basados en memfd/pthread, que su fuente distingue de sync_file. No se anuncian funciones inexistentes. La alternativa original skiagl inicializa GLES3.1 sobre ANGLE/SwiftShader y avanza hasta IComposer::createClient, aún fallido. Esta combinación es experimental: no frame, producto Soong equivalente, aislamiento o APK aceptados. Conservar namespaces vendor/sphal y las identidades de RC; resolver el estado real de Binder antes de ampliar controles.

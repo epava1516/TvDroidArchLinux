@@ -1,0 +1,7 @@
+--- a/Composer.cpp
++++ b/Composer.cpp
+@@ -27 +27 @@
+-    DEBUG_LOG("%s", __FUNCTION__);
++    ALOGE("ARCHTV_COMPOSER_CREATE_CLIENT_ENTER");
+@@ -45,0 +46 @@
++    ALOGE("ARCHTV_COMPOSER_CLIENT_INIT_RESULT %d", static_cast<int>(error));

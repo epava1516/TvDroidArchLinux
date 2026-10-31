@@ -1,15 +1,15 @@
 {
-  "utc": "2026-10-31T23:17:34.066002+00:00",
+  "utc": "2026-10-31T23:26:50.651375+00:00",
   "objective": "Complete unchanged APK compatibility on Linux/Rust/Smithay, no Waydroid/full Android. Markor first; no fixture/compile acceptance.",
-  "git_head": "250aa0eced02d4897ad810b87c7f114f48d1f356",
+  "git_head": "c499535",
   "branch": "main",
   "origin_relation_cached": "0\t0",
   "pending": "Six historical files preserved/excluded. Own GUI protocol/flags/client build scripts and linux-surfaceflinger-client.cpp remain separate uncommitted experiments; failures sf-original-client-1/2 preserved in dist and not used by current original bootanimation route.",
-  "runtime": "LTS6.18.59, permissive policyload1 unchanged; host-post-sf-attempts.json records current cleanup. No reboot/enforcing/policy operation this milestone.",
+  "runtime": "Original SF+bootanimation native graphics, original service queries,455 DRM frames and visual capture, all in permissive. Six original identities verified; native/coordinator/supervisor/session exit0; host cleanup verified. No Android full boot, APK or MAC acceptance.",
   "handles": {
-    "builds": "LLVM46162/native30461 and SF-cohort40515 terminal0; no live build handle",
-    "runtime": "Native attempts terminal1; exact transient units stopped, no processes/loops, VT1/getty restored in root host-post evidence. Old tool20222 handle missing on final poll; never reuse it.",
-    "REA": "Stateless exports Evidence ev_88b3351725ff66d81b2a04a6b87187fad567a1a992bc37d0f6cf09fde0b7cf55; no binary engine opened"
+    "builds": "41864/78221 terminal0; immutable cohort7/payload and diagnostic HWC preserved",
+    "runtime": "63656 terminal0; no live runtime handles, six services reaped; root cleanup evidence current",
+    "REA": "Stateless export evidence retained, no engine opened"
   },
   "paths": {
     "llvm": "dist/aosp16/swiftshader-llvm16-1",
@@ -22,8 +22,9 @@
     "native_log": "dist/aosp16/swiftshader-native-1/build.log",
     "gui_headers": "/home/tv/.cache/archtv/aosp16-qpr2/frameworks-native-gui-source-1",
     "link": "dist/aosp16/swiftshader-link-2/link.json",
-    "recovery": "/home/tv/recuperacion-archtv/20261031T231239Z-original-surfaceflinger/RETOMAR.txt"
+    "recovery": "/home/tv/recuperacion-archtv/20261031T232007Z-composer-client/RETOMAR.txt",
+    "functional": "reports/android16-software-renderer/sf-original-functional-findings.json"
   },
-  "next": "Inspect actual Composer createClient transport/server error using original SF+HAL. Original GL renderer now initializes, but SF Binder registration/UI absent. Markor unchanged and uninstalled. Native supervisor still startup20s, not a completed app lifecycle.",
+  "next": "Review and integrate original native ART/app_process and selected display/package/activity/window services for unchanged Markor. Do not return to historical ART-host/API33 fixtures or expand classes individually. Preserve security/fence gaps and explicit startup20s/observe60s scope.",
   "recovery": "No disruptive operation or reboot programmed. Prior graphics recovery /home/tv/recuperacion-archtv/20261031T212325Z-graphics-cohort-first-run/RETOMAR.txt. Before runtime/security changes save fresh candidate checkpoint; blanket authorization persists."
 }

@@ -1,0 +1,40 @@
+{
+  "utc": "2026-10-31T23:26:50.650028+00:00",
+  "result": "Original SF+bootanimation functional native graphics in permissive",
+  "base_commit": "c499535",
+  "execution": "Ordinary bounded VM runtime; not REA runtime capture",
+  "original_components": [
+    "GSI SurfaceFlinger and bootanimation executables/RCs",
+    "original init PropertyInit, RC parser, Service::Start and SIGCHLD reap",
+    "GSI ANGLE EGL/GLES3.1",
+    "AOSP SwiftShader LLVM16 Bionic driver",
+    "Goldfish HWC3 original frontend with scoped Linux Wayland backend",
+    "original minigbm AIDLallocator/stable-C mapper with vmwgfx dumb adaptation"
+  ],
+  "actual_queries": [
+    "Service SurfaceFlinger: found\n",
+    "Service SurfaceFlingerAIDL: found\n"
+  ],
+  "native_exit": 0,
+  "supervisor_stop": 0,
+  "outer_session_exit": 0,
+  "frames_presented": 455,
+  "capture_sha256": "d9bf8581067cefbc3577ba17aded7332975d49dc69685c14c520a2b74a3d987c",
+  "capture_visual_inspection": "Centered original android animation logo on black background at1280x800, lossless DRM capture viewed directly. Not an Android OS boot.",
+  "actual_identity_evidence": "sf-original-functional-result.json: external_Linux_identity_observation, six original services UID/GID/caps/NNP and SID verified by Linux observer; live sample sf-live-identities.json",
+  "cleanup_evidence": "host-post-original-functional.json",
+  "corrections": [
+    "$$ shell escaping per original init ExpandProps",
+    "Three real native environment roots from original init.environ.rc.in; host env_clear retained"
+  ],
+  "limitations": [
+    "Permissive only: no MAC authorization/isolation accepted",
+    "No native present fence; physical timing/VTS pending",
+    "Diagnostic HWC adds only two logs; original return values retained",
+    "RC services started explicitly, control/lazy backend still fails closed",
+    "CPU buffers/unprotected graphics only; unsupported formats logged honestly during optional shader priming",
+    "No APK installation/zygote/PMS/AMS/WMS/input or persistence accepted",
+    "No Markor stage closed; ARM/GMS/DRM remain independent open axes"
+  ],
+  "next": "Preserve tested graphics milestone; inspect current original native ART/app_process/framework-service bootstrap against complete Markor lifecycle. Integrate selected original display/package/activity services without dispatching full Android SystemServer boot."
+}

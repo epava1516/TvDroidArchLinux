@@ -1,6 +1,10 @@
 # Estado actual y punto de entrada
 
-## SurfaceFlinger original · renderer iniciado, integración abierta
+## Gráficos originales funcionales · siguiente: servicios de Markor
+
+[Recorrido ejecutado](../reports/android16-software-renderer/sf-original-functional-findings.json): propiedades/gestores originales → SurfaceFlinger → ANGLE/SwiftShader Bionic → allocator/mapper/HWC3 → Wayland/Smithay/DRM. Bootanimation original dibuja el logotipo; [captura real](../reports/android16-software-renderer/sf-bootanimation-screen.png),455 frames, ambas interfaces SF consultadas por cliente original, seis identidades verificadas y cierre0. [Anfitrión limpio](../reports/android16-software-renderer/host-post-original-functional.json). Permisivo: no autorización/aislamiento/fences aceptados; no se arranca Android completo ni se instala/ejecuta Markor. [Checkpoint vigente](../reports/android16-software-renderer/checkpoint.json). Continuar con ART/app_process y servicios originales seleccionados de display/paquetes/actividades/ventanas para la vertical de Markor.
+
+## Histórico · SurfaceFlinger original · renderer iniciado
 
 El driver SwiftShader Bionic enlazado exporta sus cuatro entradas originales ([REA MCP estático](../reports/android16-software-renderer/link-2-exports-mcp.json)). La [ejecución original](../reports/android16-software-renderer/renderer-decision.json) demuestra que RenderEngine Vulkan rechaza SYNC_FD ausente; RenderEngine GL sí inicializa ANGLE/SwiftShader, pero SurfaceFlinger falla al crear AidlComposerClient. No registro SF, frame ni APK aceptados. [Estado posterior](../reports/android16-software-renderer/host-post-sf-attempts.json); [checkpoint vigente](../reports/android16-software-renderer/checkpoint.json). Siguiente: localizar el error real de esa transacción y resolver la integración HWC; después Markor completo.
 

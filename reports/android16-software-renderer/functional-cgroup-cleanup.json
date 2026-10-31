@@ -1,0 +1,31 @@
+[
+  {
+    "path": "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793488810011977837",
+    "empty_directories_removed": [
+      "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793488810011977837/system/uid_2000",
+      "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793488810011977837/system/uid_1000",
+      "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793488810011977837/system",
+      "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793488810011977837"
+    ]
+  },
+  {
+    "path": "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793488917191622238",
+    "empty_directories_removed": [
+      "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793488917191622238/system/uid_1003",
+      "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793488917191622238/system/uid_2000",
+      "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793488917191622238/system/uid_1000",
+      "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793488917191622238/system",
+      "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793488917191622238"
+    ]
+  },
+  {
+    "path": "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793489067191765531",
+    "empty_directories_removed": [
+      "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793489067191765531/system/uid_1003",
+      "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793489067191765531/system/uid_2000",
+      "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793489067191765531/system/uid_1000",
+      "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793489067191765531/system",
+      "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793489067191765531"
+    ]
+  }
+]

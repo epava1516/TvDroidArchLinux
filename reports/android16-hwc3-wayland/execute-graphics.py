@@ -73,9 +73,27 @@ observed=report.read_text();assert 'MC3_COMMANDS_ACCEPTED physical_timing_not_pr
 print('MC3_EXPERIMENTAL_CLIENT_FILE_OBSERVED '+json.dumps(observed),flush=True)
 """
 if '--surfaceflinger' in sys.argv[1:]:
-    base = base.replace('dist/aosp16/graphics-cohort-build-5/payload-2.ext4', 'dist/aosp16/sf-cohort-build-4/payload-2.ext4')
+    base = base.replace('dist/aosp16/graphics-cohort-build-5/payload-2.ext4', 'dist/aosp16/sf-cohort-build-7/payload-2.ext4')
     base = base.replace("'--graphics-integration'", "'--surfaceflinger-integration'")
     base = base.replace("'--observe-ms','150'", "'--observe-ms','60000'")
+    base = base.replace("pid=(\\d+)',line)", "pid=(\\d+)|MC3_ORIGINAL_(SF|BOOTANIMATION)_STARTED pid=(\\d+)',line)")
+    base = base.replace("('ALLOCATOR' if match[3]=='vendor.graphics.allocator' else 'COMPOSER')", "(('ALLOCATOR' if match[3]=='vendor.graphics.allocator' else 'COMPOSER') if match[3] else match[5])")
+    base = base.replace("int(match[2] or match[4])", "int(match[2] or match[4] or match[6])")
+    base = base.replace("'COMPOSER':'u:r:hal_graphics_composer_default:s0'", "'COMPOSER':'u:r:hal_graphics_composer_default:s0','SF':'u:r:surfaceflinger:s0','BOOTANIMATION':'u:r:bootanim:s0'")
+    base = base.replace("['ALLOCATOR','COMPOSER']", "['ALLOCATOR','COMPOSER','SF']")
+    base = base.replace("[1000]*4 and", "[1003 if identity['kind']=='BOOTANIMATION' else 1000]*4 and")
+    base = base.replace("[1003 if identity['kind'] in ['ALLOCATOR','COMPOSER','SF'] else 1000]*4", "[1003 if identity['kind'] in ['ALLOCATOR','COMPOSER','SF','BOOTANIMATION'] else 1000]*4")
+    # Retain real query output even when a later native client fails. These are
+    # evidence files, never readiness signals or substitutes for Binder calls.
+    base = base.replace("if p.returncode!=0:\n failed_output=", """for name in ['sf-query.txt','sf-aidl-query.txt']:
+ report=Path('/data/local/tmp/archtv-mc1')/name
+ if report.is_file():
+  info=report.lstat();assert stat.S_ISREG(info.st_mode) and info.st_uid==2000 and info.st_gid==2000 and stat.S_IMODE(info.st_mode)==0o600 and info.st_size<1024
+  assert os.getxattr(report,'security.selinux').rstrip(b'\\0')==b'u:object_r:shell_data_file:s0'
+  print('MC3_ORIGINAL_QUERY_FILE_OBSERVED '+name+' '+json.dumps(report.read_text()),flush=True)
+if p.returncode!=0:
+ failed_output=""")
+
     # The API harness report is inapplicable to original clients. Retain the
     # manager assertions and check the original Binder CLI outputs instead.
     base = base[:base.index("\nreport=Path('/data/misc/surfaceflinger/archtv-integration.txt')")]

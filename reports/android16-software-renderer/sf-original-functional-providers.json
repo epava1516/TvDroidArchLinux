@@ -1,0 +1,808 @@
+{
+  "files": {
+    "/vendor/build.prop": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-7/vendor-inputs-1/build.prop",
+      "context": "u:object_r:vendor_file:s0",
+      "mode": 420,
+      "sha256": "249d375aeb237e0ec1be2460f3bef96ea317cccc73a09f062bcecc16aeeefaa9"
+    },
+    "/vendor/lib64/hw/vulkan.pastel.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/swiftshader-link-2/vulkan.pastel.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "mode": 420,
+      "sha256": "dd923b5296ce8bd23c89ac6c874f04cda76a8bc8765fa8160d762b747a1a5117"
+    },
+    "/vendor/bin/hw/android.hardware.graphics.allocator-service.minigbm": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-link-5/android.hardware.graphics.allocator-service.minigbm",
+      "context": "u:object_r:hal_graphics_allocator_default_exec:s0",
+      "mode": 493,
+      "sha256": "6fce78422eeac88aed47dab7b7bebe9534f44a60fe75aa94ca1e927af1b1ac6d"
+    },
+    "/vendor/bin/hw/android.hardware.graphics.composer3-service.ranchu": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/hwc3-client-diagnostic-1/android.hardware.graphics.composer3-service.archtv-trace",
+      "context": "u:object_r:hal_graphics_composer_default_exec:s0",
+      "mode": 493,
+      "sha256": "eb1538ccff1added51afe9ff1d64d950ae0735ef9bdf42e4c0de55e6792c3d7c"
+    },
+    "/vendor/bin/hw/archtv-graphics-client": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-7/graphics-client",
+      "context": "u:object_r:surfaceflinger_exec:s0",
+      "mode": 493,
+      "sha256": "c80cadd3def27c37bfd61e0755f482b16eea841aa444dfe7da95e5411520a2a0"
+    },
+    "/vendor/lib64/libminigbm_gralloc.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-link-5/libminigbm_gralloc.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "mode": 420,
+      "sha256": "6cf1a4812b2980bb676444d0f6ae08e463e1207432c5c63f5b74659f8643ee49"
+    },
+    "/vendor/lib64/libminigbm_gralloc4_utils.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-link-5/libminigbm_gralloc4_utils.so",
+      "context": "u:object_r:vendor_file:s0",
+      "mode": 420,
+      "sha256": "f4f4351d3681f4dc513d2ae8574ec85860751ff0df76d9051207696935b10a69"
+    },
+    "/vendor/lib64/hw/mapper.minigbm.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-link-5/mapper.minigbm.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "mode": 420,
+      "sha256": "502463e9c12aeed5b2dea6abdeea1d650c305447186d8dd767231399d6463159"
+    },
+    "/vendor/lib64/libc++.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/vendor-native-link-2/vendor/lib64/libc++.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "mode": 420,
+      "sha256": "07ff0bd165d5c7cb6e1c8f79820ffb7b307e04def111160bcbeb75af975a9d1d"
+    },
+    "/vendor/lib64/libbase.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/vendor-native-link-2/vendor/lib64/libbase.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "mode": 420,
+      "sha256": "cb052cc362f6754b6444c2236abb0247d60294f08601a8d55163a1d2933b687f"
+    },
+    "/vendor/lib64/libcutils.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/vendor-native-link-2/vendor/lib64/libcutils.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "mode": 420,
+      "sha256": "b6677895aa0422823f9bf9082693f1cb5d6c5a8f526fada73ca36ed58037d2a5"
+    },
+    "/vendor/lib64/libgralloctypes.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libgralloctypes.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "mode": 420,
+      "sha256": "16dbd975389e3ff6b1ea69bbc9084db655bc6bea9450cd542d3231a751e69fcd"
+    },
+    "/vendor/lib64/libhidlbase.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libhidlbase.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "mode": 420,
+      "sha256": "e68f67115ad7eb55c511d20d852e929c5326e06f15211b3db32069af5d037dc7"
+    },
+    "/vendor/lib64/android.hardware.graphics.allocator-V2-ndk.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.allocator-V2-ndk.so",
+      "context": "u:object_r:vendor_file:s0",
+      "mode": 420,
+      "sha256": "3b31e9a65c7fda7777d40b454ea1991fafd7ab17191db7d7a78d8378cb836527"
+    },
+    "/vendor/lib64/android.hardware.graphics.composer3-V4-ndk.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.composer3-V4-ndk.so",
+      "context": "u:object_r:vendor_file:s0",
+      "mode": 420,
+      "sha256": "2c48f03f05f22703b0371012738fde35f8028521ef51cdde550f4390b76b205c"
+    },
+    "/vendor/lib64/android.hardware.graphics.common-V7-ndk.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.common-V7-ndk.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "mode": 420,
+      "sha256": "65e820925b74119f86448b8319af53a0bed811ca23a06c9e972656e85a37e9f7"
+    },
+    "/vendor/lib64/android.hardware.common-V2-ndk.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.common-V2-ndk.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "mode": 420,
+      "sha256": "2684dbd3fdd07f6efb8abbb731010a7a0c46d237f8e0813b44a441503b7d7e3c"
+    },
+    "/vendor/lib64/android.hardware.drm.common-V1-ndk.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.drm.common-V1-ndk.so",
+      "context": "u:object_r:vendor_file:s0",
+      "mode": 420,
+      "sha256": "a5d5ad9bfe8aaac2681e2d6b478ab678a75af454c91e2d89c65f640911533231"
+    },
+    "/vendor/lib64/android.hardware.graphics.composer@2.1-resources.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/composer-link-1/android.hardware.graphics.composer@2.1-resources.so",
+      "context": "u:object_r:vendor_file:s0",
+      "mode": 420,
+      "sha256": "863204812b6140be04f1c4a4048290b550bf6c33ef61cf5c6a5216bc24b79619"
+    },
+    "/vendor/lib64/libui.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/libui-link-2/libui.so",
+      "context": "u:object_r:vendor_file:s0",
+      "mode": 420,
+      "sha256": "c98806f67f4f61bb5b8bef55eb4cb39580be5220b3a8dffa9685dfffd1df93fd"
+    },
+    "/vendor/lib64/libutils.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/vendor-native-link-2/vendor/lib64/libutils.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "mode": 420,
+      "sha256": "85285defaf764681a836f2c1ce404e0d689a7d45a072450b522b11aa232cd181"
+    },
+    "/vendor/lib64/libjsoncpp.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libjsoncpp.so",
+      "context": "u:object_r:vendor_file:s0",
+      "mode": 420,
+      "sha256": "d942799ac830d8f2633cc4b489157a041665146f8b262bdc9883dcf6f2b34f5c"
+    },
+    "/vendor/lib64/libdrm.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libdrm.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "mode": 420,
+      "sha256": "82222613b82586e965bd69457a276f795d8afdf55cc9709f563c435f69f307a9"
+    },
+    "/vendor/lib64/android.hardware.graphics.mapper@4.0.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.mapper@4.0.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "mode": 420,
+      "sha256": "8d4f8e02f5daa54b3583495c88031069c4a7a8bd1808d7cb10b04444762d0aae"
+    },
+    "/vendor/lib64/android.hardware.graphics.composer@2.1.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.composer@2.1.so",
+      "context": "u:object_r:vendor_file:s0",
+      "mode": 420,
+      "sha256": "e00136db7072f65ed35019daa6589ad585547e987a8091ee3412f0dd981b3cc5"
+    },
+    "/vendor/lib64/libhardware.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/vendor-native-link-2/vendor/lib64/libhardware.so",
+      "context": "u:object_r:vendor_file:s0",
+      "mode": 420,
+      "sha256": "4360b97b5367a4deba6c4dc1f1bdca46d20b3b321265df938bdcfa523babe7c1"
+    },
+    "/vendor/lib64/android.hardware.graphics.allocator@2.0.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.allocator@2.0.so",
+      "context": "u:object_r:vendor_file:s0",
+      "mode": 420,
+      "sha256": "df249f7e29f6bbf293fc28aed52a5e36bf10c8ddc6742c2862783e16907e9c40"
+    },
+    "/vendor/lib64/android.hardware.graphics.allocator@3.0.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.allocator@3.0.so",
+      "context": "u:object_r:vendor_file:s0",
+      "mode": 420,
+      "sha256": "b0fc753f3a1e0ea5e950828b12fe68a4274d0f514273d42f4060e172786fff13"
+    },
+    "/vendor/lib64/android.hardware.graphics.allocator@4.0.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.allocator@4.0.so",
+      "context": "u:object_r:vendor_file:s0",
+      "mode": 420,
+      "sha256": "97ad2ff97cb7a1dbedadd1d942820cbe7789929b3f79db7954e55ed234742462"
+    },
+    "/vendor/lib64/android.hardware.graphics.common@1.2.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.common@1.2.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "mode": 420,
+      "sha256": "70d162a9a165d3506bd1a0e0a4330a30b04848d662b783336be1d1fc456f8190"
+    },
+    "/vendor/lib64/android.hardware.graphics.mapper@2.0.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.mapper@2.0.so",
+      "context": "u:object_r:vendor_file:s0",
+      "mode": 420,
+      "sha256": "4b002081bbfc56e282f0a017c528e567a20a0e87cd57387ba57d02d800858c84"
+    },
+    "/vendor/lib64/android.hardware.graphics.mapper@2.1.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.mapper@2.1.so",
+      "context": "u:object_r:vendor_file:s0",
+      "mode": 420,
+      "sha256": "dc3831bd07607a072fe280eefa194e990bf9178666f8cad91b894f0d08ab595f"
+    },
+    "/vendor/lib64/android.hardware.graphics.mapper@3.0.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.mapper@3.0.so",
+      "context": "u:object_r:vendor_file:s0",
+      "mode": 420,
+      "sha256": "765c6c3f0320e9c9ee199edacbec70d3cc7d6fe418c52efe4546ee9232deaf47"
+    },
+    "/vendor/lib64/android.hardware.graphics.common@1.0.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.common@1.0.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "mode": 420,
+      "sha256": "7f79e99ace059b7473d08cb7743bbeec1490f8dbc26b2ddccf17dbf0c84c70ca"
+    },
+    "/vendor/lib64/android.hardware.graphics.common@1.1.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.common@1.1.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "mode": 420,
+      "sha256": "c4b0e11c1d6323ebaeee04df2081c911eff27901766b0eea107c26b8b6ee5c10"
+    },
+    "/vendor/etc/selinux/plat_sepolicy_vers.txt": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/linux-failure-sink-worker-1/vendor/etc/selinux/plat_sepolicy_vers.txt",
+      "context": "u:object_r:vendor_configs_file:s0",
+      "mode": 420,
+      "sha256": "ce5b095f33cfad2ece2557566ec55c87dcb81fb1a275fdc6f032369f1ea4fb9d"
+    },
+    "/vendor/etc/init/allocator.rc": {
+      "source": "/home/tv/.cache/archtv/graphics-candidates-1/minigbm/cros_gralloc/aidl/allocator.rc",
+      "context": "u:object_r:vendor_configs_file:s0",
+      "mode": 420,
+      "sha256": "6399fd2e6ab2b4297a64eac9d3593d9c4dd9c0cfd12094ac75f3858f1ff7ad4e"
+    },
+    "/vendor/etc/init/hwcomposer3.rc": {
+      "source": "/home/tv/.cache/archtv/graphics-candidates-1/goldfish-hwc3/hwc3.rc",
+      "context": "u:object_r:vendor_configs_file:s0",
+      "mode": 420,
+      "sha256": "4ebfc0c9606ebaa5191c487d28c51226b1bd5b1ade0e711d8d8643a5b1e1821c"
+    },
+    "/vendor/etc/vintf/manifest/allocator.xml": {
+      "source": "/home/tv/.cache/archtv/graphics-candidates-1/minigbm/cros_gralloc/aidl/allocator.xml",
+      "context": "u:object_r:vendor_configs_file:s0",
+      "mode": 420,
+      "sha256": "35476a3d2e05a5e53b0620c2f7a8c2f38d9632abde27d5afd5fd5c931d791001"
+    },
+    "/vendor/etc/vintf/manifest/composer.xml": {
+      "source": "/home/tv/.cache/archtv/graphics-candidates-1/goldfish-hwc3/hwc3.xml",
+      "context": "u:object_r:vendor_configs_file:s0",
+      "mode": 420,
+      "sha256": "1451a07287ac74c88af5b15538a43d046b7c0d8052bc563398418910d55ae35b"
+    },
+    "/vendor/etc/vintf/manifest/mapper.xml": {
+      "source": "/home/tv/.cache/archtv/graphics-candidates-1/minigbm/cros_gralloc/mapper_stablec/mapper.minigbm.xml",
+      "context": "u:object_r:vendor_configs_file:s0",
+      "mode": 420,
+      "sha256": "f0ac3ccce6dc2c0e9e129cad271c92192f7e19d8b3efa7c8f88e2eb80574819f"
+    },
+    "/vendor/etc/vintf/manifest.xml": {
+      "source": "/home/tv/repositorio-principal/reports/android16-hwmanager-cohort/diagnostic-vintf-profile/manifest.xml",
+      "context": "u:object_r:vendor_configs_file:s0",
+      "mode": 420,
+      "sha256": "f36e16edb3b6f81dd112fe85c98fef9562d78d5b4af7f2af1dc2764c7fc57ffe"
+    },
+    "/vendor/etc/vintf/compatibility_matrix.xml": {
+      "source": "/home/tv/repositorio-principal/reports/android16-hwmanager-cohort/diagnostic-vintf-profile/compatibility_matrix.xml",
+      "context": "u:object_r:vendor_configs_file:s0",
+      "mode": 420,
+      "sha256": "077edbc08ac997c0a045038ba2224e9c56f18ce2035a1283cfd0730f11108064"
+    },
+    "/vendor/etc/selinux/vendor_file_contexts": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-7/vendor-inputs-1/vendor_file_contexts",
+      "context": "u:object_r:file_contexts_file:s0",
+      "mode": 420,
+      "sha256": "57c6cebc38e2c72bdcd59a90ec59a98f762522070bc0182423051bd5a09ceb49"
+    }
+  },
+  "providers": [
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/swiftshader-link-2/vulkan.pastel.so",
+      "needed": [
+        "libnativewindow.so",
+        "libsync.so",
+        "liblog.so",
+        "libc++.so",
+        "libc.so",
+        "libm.so",
+        "libdl.so"
+      ],
+      "sha256": "dd923b5296ce8bd23c89ac6c874f04cda76a8bc8765fa8160d762b747a1a5117"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-link-5/android.hardware.graphics.allocator-service.minigbm",
+      "needed": [
+        "libbase.so",
+        "libbinder_ndk.so",
+        "libcutils.so",
+        "libgralloctypes.so",
+        "libhidlbase.so",
+        "liblog.so",
+        "android.hardware.graphics.allocator-V2-ndk.so",
+        "libc++.so",
+        "libc.so",
+        "libminigbm_gralloc.so",
+        "libminigbm_gralloc4_utils.so"
+      ],
+      "sha256": "6fce78422eeac88aed47dab7b7bebe9534f44a60fe75aa94ca1e927af1b1ac6d"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/hwc3-client-diagnostic-1/android.hardware.graphics.composer3-service.archtv-trace",
+      "needed": [
+        "android.hardware.graphics.composer3-V4-ndk.so",
+        "android.hardware.graphics.common-V7-ndk.so",
+        "android.hardware.common-V2-ndk.so",
+        "android.hardware.drm.common-V1-ndk.so",
+        "android.hardware.graphics.composer@2.1-resources.so",
+        "libbase.so",
+        "libbinder_ndk.so",
+        "libcutils.so",
+        "libhidlbase.so",
+        "liblog.so",
+        "libsync.so",
+        "libui.so",
+        "libutils.so",
+        "libc++.so",
+        "libc.so",
+        "libm.so",
+        "libdl.so",
+        "libjsoncpp.so"
+      ],
+      "sha256": "eb1538ccff1added51afe9ff1d64d950ae0735ef9bdf42e4c0de55e6792c3d7c"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-7/graphics-client",
+      "needed": [
+        "android.hardware.graphics.composer3-V4-ndk.so",
+        "libbinder_ndk.so",
+        "libcutils.so",
+        "libui.so",
+        "libutils.so",
+        "libc++.so",
+        "libc.so",
+        "android.hardware.graphics.allocator-V2-ndk.so"
+      ],
+      "sha256": "c80cadd3def27c37bfd61e0755f482b16eea841aa444dfe7da95e5411520a2a0"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-link-5/libminigbm_gralloc.so",
+      "needed": [
+        "libcutils.so",
+        "libdrm.so",
+        "liblog.so",
+        "libsync.so",
+        "libc++.so",
+        "libc.so"
+      ],
+      "sha256": "6cf1a4812b2980bb676444d0f6ae08e463e1207432c5c63f5b74659f8643ee49"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-link-5/libminigbm_gralloc4_utils.so",
+      "needed": [
+        "libcutils.so",
+        "libhidlbase.so",
+        "liblog.so",
+        "libc++.so",
+        "libc.so",
+        "libminigbm_gralloc.so"
+      ],
+      "sha256": "f4f4351d3681f4dc513d2ae8574ec85860751ff0df76d9051207696935b10a69"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-link-5/mapper.minigbm.so",
+      "needed": [
+        "libcutils.so",
+        "libgralloctypes.so",
+        "libhidlbase.so",
+        "liblog.so",
+        "libutils.so",
+        "android.hardware.graphics.mapper@4.0.so",
+        "libc++.so",
+        "libc.so",
+        "libminigbm_gralloc.so"
+      ],
+      "sha256": "502463e9c12aeed5b2dea6abdeea1d650c305447186d8dd767231399d6463159"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/vendor-native-link-2/vendor/lib64/libc++.so",
+      "needed": [
+        "libc.so",
+        "libm.so",
+        "libdl.so"
+      ],
+      "sha256": "07ff0bd165d5c7cb6e1c8f79820ffb7b307e04def111160bcbeb75af975a9d1d"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/vendor-native-link-2/vendor/lib64/libbase.so",
+      "needed": [
+        "liblog.so",
+        "libc++.so",
+        "libc.so",
+        "libm.so",
+        "libdl.so"
+      ],
+      "sha256": "cb052cc362f6754b6444c2236abb0247d60294f08601a8d55163a1d2933b687f"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/vendor-native-link-2/vendor/lib64/libcutils.so",
+      "needed": [
+        "libbase.so",
+        "liblog.so",
+        "libc++.so",
+        "libc.so",
+        "libm.so",
+        "libdl.so"
+      ],
+      "sha256": "b6677895aa0422823f9bf9082693f1cb5d6c5a8f526fada73ca36ed58037d2a5"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libgralloctypes.so",
+      "needed": [
+        "android.hardware.graphics.mapper@4.0.so",
+        "libhidlbase.so",
+        "liblog.so",
+        "android.hardware.graphics.common-V7-ndk.so",
+        "libc++.so",
+        "libc.so",
+        "libm.so",
+        "libdl.so"
+      ],
+      "sha256": "16dbd975389e3ff6b1ea69bbc9084db655bc6bea9450cd542d3231a751e69fcd"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libhidlbase.so",
+      "needed": [
+        "libbase.so",
+        "liblog.so",
+        "libutils.so",
+        "libcutils.so",
+        "libvndksupport.so",
+        "libc++.so",
+        "libc.so",
+        "libm.so",
+        "libdl.so"
+      ],
+      "sha256": "e68f67115ad7eb55c511d20d852e929c5326e06f15211b3db32069af5d037dc7"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.allocator-V2-ndk.so",
+      "needed": [
+        "libbinder_ndk.so",
+        "android.hardware.common-V2-ndk.so",
+        "android.hardware.graphics.common-V7-ndk.so",
+        "libc++.so",
+        "libc.so",
+        "libm.so",
+        "libdl.so"
+      ],
+      "sha256": "3b31e9a65c7fda7777d40b454ea1991fafd7ab17191db7d7a78d8378cb836527"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.composer3-V4-ndk.so",
+      "needed": [
+        "libbinder_ndk.so",
+        "android.hardware.graphics.common-V7-ndk.so",
+        "android.hardware.common-V2-ndk.so",
+        "android.hardware.drm.common-V1-ndk.so",
+        "libc++.so",
+        "libc.so",
+        "libm.so",
+        "libdl.so"
+      ],
+      "sha256": "2c48f03f05f22703b0371012738fde35f8028521ef51cdde550f4390b76b205c"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.common-V7-ndk.so",
+      "needed": [
+        "libbinder_ndk.so",
+        "android.hardware.common-V2-ndk.so",
+        "libc++.so",
+        "libc.so",
+        "libm.so",
+        "libdl.so"
+      ],
+      "sha256": "65e820925b74119f86448b8319af53a0bed811ca23a06c9e972656e85a37e9f7"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.common-V2-ndk.so",
+      "needed": [
+        "libbinder_ndk.so",
+        "libc++.so",
+        "libc.so",
+        "libm.so",
+        "libdl.so"
+      ],
+      "sha256": "2684dbd3fdd07f6efb8abbb731010a7a0c46d237f8e0813b44a441503b7d7e3c"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.drm.common-V1-ndk.so",
+      "needed": [
+        "libbinder_ndk.so",
+        "libc++.so",
+        "libc.so",
+        "libm.so",
+        "libdl.so"
+      ],
+      "sha256": "a5d5ad9bfe8aaac2681e2d6b478ab678a75af454c91e2d89c65f640911533231"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/composer-link-1/android.hardware.graphics.composer@2.1-resources.so",
+      "needed": [
+        "android.hardware.graphics.composer@2.1.so",
+        "libcutils.so",
+        "libhardware.so",
+        "libhidlbase.so",
+        "liblog.so",
+        "libui.so",
+        "libutils.so",
+        "libc++.so",
+        "libc.so",
+        "libm.so",
+        "libdl.so"
+      ],
+      "sha256": "863204812b6140be04f1c4a4048290b550bf6c33ef61cf5c6a5216bc24b79619"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/libui-link-2/libui.so",
+      "needed": [
+        "android.hardware.graphics.allocator@2.0.so",
+        "android.hardware.graphics.allocator@3.0.so",
+        "android.hardware.graphics.allocator@4.0.so",
+        "android.hardware.graphics.common@1.2.so",
+        "android.hardware.graphics.mapper@2.0.so",
+        "android.hardware.graphics.mapper@2.1.so",
+        "android.hardware.graphics.mapper@3.0.so",
+        "android.hardware.graphics.mapper@4.0.so",
+        "libbase.so",
+        "libbinder_ndk.so",
+        "libcutils.so",
+        "libgralloctypes.so",
+        "libhidlbase.so",
+        "libsync.so",
+        "libutils.so",
+        "liblog.so",
+        "libvndksupport.so",
+        "android.hardware.graphics.common-V7-ndk.so",
+        "android.hardware.graphics.allocator-V2-ndk.so",
+        "libc++.so",
+        "libc.so",
+        "libm.so",
+        "libdl.so"
+      ],
+      "sha256": "c98806f67f4f61bb5b8bef55eb4cb39580be5220b3a8dffa9685dfffd1df93fd"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/vendor-native-link-2/vendor/lib64/libutils.so",
+      "needed": [
+        "libcutils.so",
+        "liblog.so",
+        "libvndksupport.so",
+        "libc++.so",
+        "libc.so",
+        "libm.so",
+        "libdl.so"
+      ],
+      "sha256": "85285defaf764681a836f2c1ce404e0d689a7d45a072450b522b11aa232cd181"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libjsoncpp.so",
+      "needed": [
+        "libc++.so",
+        "libc.so",
+        "libm.so",
+        "libdl.so"
+      ],
+      "sha256": "d942799ac830d8f2633cc4b489157a041665146f8b262bdc9883dcf6f2b34f5c"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libdrm.so",
+      "needed": [
+        "libc++.so",
+        "libc.so",
+        "libm.so",
+        "libdl.so"
+      ],
+      "sha256": "82222613b82586e965bd69457a276f795d8afdf55cc9709f563c435f69f307a9"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.mapper@4.0.so",
+      "needed": [
+        "android.hardware.graphics.common@1.0.so",
+        "android.hardware.graphics.common@1.1.so",
+        "android.hardware.graphics.common@1.2.so",
+        "libhidlbase.so",
+        "liblog.so",
+        "libutils.so",
+        "libcutils.so",
+        "libc++.so",
+        "libc.so",
+        "libm.so",
+        "libdl.so"
+      ],
+      "sha256": "8d4f8e02f5daa54b3583495c88031069c4a7a8bd1808d7cb10b04444762d0aae"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.composer@2.1.so",
+      "needed": [
+        "android.hardware.graphics.common@1.0.so",
+        "libhidlbase.so",
+        "liblog.so",
+        "libutils.so",
+        "libcutils.so",
+        "libc++.so",
+        "libc.so",
+        "libm.so",
+        "libdl.so"
+      ],
+      "sha256": "e00136db7072f65ed35019daa6589ad585547e987a8091ee3412f0dd981b3cc5"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/vendor-native-link-2/vendor/lib64/libhardware.so",
+      "needed": [
+        "libcutils.so",
+        "liblog.so",
+        "libvndksupport.so",
+        "libc++.so",
+        "libc.so",
+        "libm.so",
+        "libdl.so"
+      ],
+      "sha256": "4360b97b5367a4deba6c4dc1f1bdca46d20b3b321265df938bdcfa523babe7c1"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.allocator@2.0.so",
+      "needed": [
+        "android.hardware.graphics.common@1.0.so",
+        "android.hardware.graphics.mapper@2.0.so",
+        "libhidlbase.so",
+        "liblog.so",
+        "libutils.so",
+        "libcutils.so",
+        "libc++.so",
+        "libc.so",
+        "libm.so",
+        "libdl.so"
+      ],
+      "sha256": "df249f7e29f6bbf293fc28aed52a5e36bf10c8ddc6742c2862783e16907e9c40"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.allocator@3.0.so",
+      "needed": [
+        "android.hardware.graphics.common@1.0.so",
+        "android.hardware.graphics.common@1.1.so",
+        "android.hardware.graphics.common@1.2.so",
+        "android.hardware.graphics.mapper@3.0.so",
+        "libhidlbase.so",
+        "liblog.so",
+        "libutils.so",
+        "libcutils.so",
+        "libc++.so",
+        "libc.so",
+        "libm.so",
+        "libdl.so"
+      ],
+      "sha256": "b0fc753f3a1e0ea5e950828b12fe68a4274d0f514273d42f4060e172786fff13"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.allocator@4.0.so",
+      "needed": [
+        "android.hardware.graphics.common@1.0.so",
+        "android.hardware.graphics.common@1.1.so",
+        "android.hardware.graphics.common@1.2.so",
+        "android.hardware.graphics.mapper@4.0.so",
+        "libhidlbase.so",
+        "liblog.so",
+        "libutils.so",
+        "libcutils.so",
+        "libc++.so",
+        "libc.so",
+        "libm.so",
+        "libdl.so"
+      ],
+      "sha256": "97ad2ff97cb7a1dbedadd1d942820cbe7789929b3f79db7954e55ed234742462"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.common@1.2.so",
+      "needed": [
+        "android.hardware.graphics.common@1.0.so",
+        "android.hardware.graphics.common@1.1.so",
+        "libhidlbase.so",
+        "liblog.so",
+        "libutils.so",
+        "libcutils.so",
+        "libc++.so",
+        "libc.so",
+        "libm.so",
+        "libdl.so"
+      ],
+      "sha256": "70d162a9a165d3506bd1a0e0a4330a30b04848d662b783336be1d1fc456f8190"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.mapper@2.0.so",
+      "needed": [
+        "android.hardware.graphics.common@1.0.so",
+        "libhidlbase.so",
+        "liblog.so",
+        "libutils.so",
+        "libcutils.so",
+        "libc++.so",
+        "libc.so",
+        "libm.so",
+        "libdl.so"
+      ],
+      "sha256": "4b002081bbfc56e282f0a017c528e567a20a0e87cd57387ba57d02d800858c84"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.mapper@2.1.so",
+      "needed": [
+        "android.hardware.graphics.common@1.0.so",
+        "android.hardware.graphics.common@1.1.so",
+        "android.hardware.graphics.mapper@2.0.so",
+        "libhidlbase.so",
+        "liblog.so",
+        "libutils.so",
+        "libcutils.so",
+        "libc++.so",
+        "libc.so",
+        "libm.so",
+        "libdl.so"
+      ],
+      "sha256": "dc3831bd07607a072fe280eefa194e990bf9178666f8cad91b894f0d08ab595f"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.mapper@3.0.so",
+      "needed": [
+        "android.hardware.graphics.common@1.0.so",
+        "android.hardware.graphics.common@1.1.so",
+        "android.hardware.graphics.common@1.2.so",
+        "libhidlbase.so",
+        "liblog.so",
+        "libutils.so",
+        "libcutils.so",
+        "libc++.so",
+        "libc.so",
+        "libm.so",
+        "libdl.so"
+      ],
+      "sha256": "765c6c3f0320e9c9ee199edacbec70d3cc7d6fe418c52efe4546ee9232deaf47"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.common@1.0.so",
+      "needed": [
+        "libhidlbase.so",
+        "liblog.so",
+        "libutils.so",
+        "libcutils.so",
+        "libc++.so",
+        "libc.so",
+        "libm.so",
+        "libdl.so"
+      ],
+      "sha256": "7f79e99ace059b7473d08cb7743bbeec1490f8dbc26b2ddccf17dbf0c84c70ca"
+    },
+    {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.common@1.1.so",
+      "needed": [
+        "android.hardware.graphics.common@1.0.so",
+        "libhidlbase.so",
+        "liblog.so",
+        "libutils.so",
+        "libcutils.so",
+        "libc++.so",
+        "libc.so",
+        "libm.so",
+        "libdl.so"
+      ],
+      "sha256": "c4b0e11c1d6323ebaeee04df2081c911eff27901766b0eea107c26b8b6ee5c10"
+    }
+  ],
+  "shared_names": [
+    "libEGL.so",
+    "libGLESv1_CM.so",
+    "libGLESv2.so",
+    "libGLESv3.so",
+    "libRS.so",
+    "libRS_internal.so",
+    "libandroid_net.so",
+    "libapexsupport.so",
+    "libavf.so",
+    "libbinder_ndk.so",
+    "libc.so",
+    "libcgrouprc.so",
+    "libclang_rt.asan-i686-android.so",
+    "libclang_rt.asan-x86_64-android.so",
+    "libclang_rt.ubsan_standalone-i686-android.so",
+    "libclang_rt.ubsan_standalone-x86_64-android.so",
+    "libcom.android.tethering.connectivity_native.so",
+    "libdl.so",
+    "libdl_android.so",
+    "libft2.so",
+    "liblog.so",
+    "libm.so",
+    "libmediandk.so",
+    "libnativewindow.so",
+    "libneuralnetworks.so",
+    "libselinux.so",
+    "libsync.so",
+    "libvendorsupport.so",
+    "libvndksupport.so",
+    "libvulkan.so"
+  ],
+  "linkerconfig_sha256": "6c89f0932e64daea515a6e121e0625efb49744b3f8b678c5be6a9000405d3155",
+  "limitations": [
+    "Experimental provider selection, not full Soong/vendor product equivalence.",
+    "SP-HAL labels limited to ELF mapper/selected Vulkan driver dependency closure; loader/runtime and enforcing access still untested.",
+    "Harness surfaceflinger_exec explicitly does not identify an original SurfaceFlinger binary.",
+    "No namespace, driver, GPU isolation, registration, buffer or timing acceptance by packaging."
+  ]
+}

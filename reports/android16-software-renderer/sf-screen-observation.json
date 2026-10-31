@@ -1,0 +1,53 @@
+{
+  "capture": "dist/aosp16/sf-session-1793489065249495370/screen.ppm",
+  "sha256": "d9bf8581067cefbc3577ba17aded7332975d49dc69685c14c520a2b74a3d987c",
+  "png_sha256": "de24ace5edb84202785b409ef87d42fe1ee9001957753e895a0f1cc4d8a1e9c2",
+  "dimensions": [
+    1280,
+    800
+  ],
+  "distinct_colors": 1018,
+  "most_common": [
+    [
+      [
+        0,
+        0,
+        0
+      ],
+      1007209
+    ],
+    [
+      [
+        102,
+        102,
+        102
+      ],
+      681
+    ],
+    [
+      [
+        104,
+        104,
+        104
+      ],
+      453
+    ],
+    [
+      [
+        103,
+        103,
+        103
+      ],
+      376
+    ],
+    [
+      [
+        134,
+        134,
+        134
+      ],
+      196
+    ]
+  ],
+  "scope": "Actual DRM capture, lossless PNG preview. Nonuniformity alone does not prove expected content; visual inspection required. No timing/MAC/APK/input acceptance."
+}

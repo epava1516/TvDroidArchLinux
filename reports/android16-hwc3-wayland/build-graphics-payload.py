@@ -37,7 +37,7 @@ hwc = ROOT / 'dist/aosp16/hwc3-wayland-1'
 add('/vendor/bin/hw/android.hardware.graphics.allocator-service.minigbm',
     mg / 'android.hardware.graphics.allocator-service.minigbm', 'hal_graphics_allocator_default_exec', 0o755)
 add('/vendor/bin/hw/android.hardware.graphics.composer3-service.ranchu',
-    hwc / 'android.hardware.graphics.composer3-service.archtv-display-2', 'hal_graphics_composer_default_exec', 0o755)
+    (ROOT / 'dist/aosp16/hwc3-client-diagnostic-1/android.hardware.graphics.composer3-service.archtv-trace' if '--composer-trace' in sys.argv[2:] else hwc / 'android.hardware.graphics.composer3-service.archtv-display-2'), 'hal_graphics_composer_default_exec', 0o755)
 # Explicit harness in the original SF client domain, not the original SF binary.
 add('/vendor/bin/hw/archtv-graphics-client', out / 'graphics-client', 'surfaceflinger_exec', 0o755)
 for name in ['libminigbm_gralloc.so', 'libminigbm_gralloc4_utils.so', 'mapper.minigbm.so']:

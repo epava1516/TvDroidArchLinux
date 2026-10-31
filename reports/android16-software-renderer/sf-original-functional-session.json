@@ -1,0 +1,6 @@
+{
+  "output": "/home/tv/repositorio-principal/dist/aosp16/sf-session-1793489065249495370",
+  "unit": "archtv-mc3-sf-1793489065249918113",
+  "initial_vt": "1",
+  "scope": "Original allocator/composer/coordinator integration candidate, permissive only; inspect real logs and pixels; not APK acceptance"
+}

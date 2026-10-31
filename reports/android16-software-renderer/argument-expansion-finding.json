@@ -1,0 +1,15 @@
+{
+  "root_cause": "Original init expands every service argument with ExpandProps before exec. Shell $i and arithmetic expansion were unescaped, causing child abort before /system/bin/sh; coordinator then stops original managers and HWC observes DEAD_OBJECT.",
+  "source": {
+    "util.cpp": {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/init/util.cpp",
+      "sha256": "15715717581e7864af46569d42e1f1dfa8050c4175f290edf68e4744c1d2efd0"
+    },
+    "service.cpp": {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/init/service.cpp",
+      "sha256": "d0d758cc6a87ebebf05c76d28026582cbac9a1e1ecd756987eeb96de7230e726"
+    }
+  },
+  "correction": "Original ExpandProps documents $$ as literal $. Escape both shell variable and arithmetic expansion; no original service/library changes needed.",
+  "limitation": "Composer error from prior GL runs is not yet independent of teardown; only renderer initialization is established. Vulkan SYNC_FD negative remains valid. Diagnostic log proves createClient entered server, not successful init."
+}

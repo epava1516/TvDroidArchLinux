@@ -1,0 +1,31 @@
+{
+  "scope": "Time-bound runtime sample, not process handles for reuse; permissive does not establish authorization",
+  "processes": [
+    {
+      "pid": 19690,
+      "name": "surfaceflinger",
+      "context": "u:r:surfaceflinger:s0",
+      "status": [
+        "Uid:\t1000\t1000\t1000\t1000",
+        "Gid:\t1003\t1003\t1003\t1003",
+        "Groups:\t1026 3009 ",
+        "CapPrm:\t0000000000800000",
+        "CapEff:\t0000000000800000",
+        "NoNewPrivs:\t1"
+      ]
+    },
+    {
+      "pid": 19732,
+      "name": "bootanimation",
+      "context": "u:r:bootanim:s0",
+      "status": [
+        "Uid:\t1003\t1003\t1003\t1003",
+        "Gid:\t1003\t1003\t1003\t1003",
+        "Groups:\t1005 ",
+        "CapPrm:\t0000000000000000",
+        "CapEff:\t0000000000000000",
+        "NoNewPrivs:\t1"
+      ]
+    }
+  ]
+}
