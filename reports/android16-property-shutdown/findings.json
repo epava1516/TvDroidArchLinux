@@ -1,0 +1,55 @@
+{
+  "scope": "Local shutdown adaptation of original property service, native idle and incomplete-request lifecycle regression; not complete Linux supervisor/runtime/APK acceptance.",
+  "patch": "runtime/aosp/android16-qpr2/patches/0002-property-service-shutdown.patch",
+  "requires": "0001-property-persistence-errors.patch on system/core e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+  "changes": [
+    "Original socket workers own listening fds and can be woken by separate eventfds",
+    "StopPropertyService stops dispatch, joins receiver threads, joins restorecon worker and drains/joins persistence writer, removes socket paths and closes owned endpoint/eventfds",
+    "Returned init socket remains caller-owned; idempotent Stop tested; restart explicitly requires fresh process",
+    "Restorecon no longer detached; incomplete-work error retained, but blocking I/O join has no time bound"
+  ],
+  "patch_chain_replay": "Verified source archive SHA, both patches apply without fuzz; all4 files match compiled overlay, originals unchanged",
+  "runtime": {
+    "idle_evidence": "ev_fcadb7e68e3913661c673c29c1f2cc21c7a1a71ef36f3669ff662aba09dab563",
+    "inflight_evidence": "ev_b6b8672be786d013449171b71f2ff4222c0f954a3093960ee4b7c1da3da8b261",
+    "exit": 0,
+    "counts": "SHUTDOWN_COUNTS threads_before=1 active=4 after=1 fds_before=4 after=4",
+    "incomplete_request_shutdown_ms": 5006,
+    "observed": [
+      "Trusted private initializer configures async writer via original property-area mutator, not a peer permission test",
+      "Original load phase and negative UID10000 client cases retained",
+      "Idle writer plus2receivers join; process threads4\u21921, fds4\u21924 after closing caller-owned endpoint; sockets absent",
+      "Accepted incomplete request reaches original5000ms timeout; Stop then completes and main returns normally, no success-path _exit",
+      "Second Stop succeeds idempotently, caller endpoint valid until caller closes it"
+    ],
+    "artifacts": [
+      {
+        "path": "dist/aosp16/property-shutdown-build-2/property-shutdown-probe",
+        "sha256": "d64637fe93f5cd980edcca6cfc6889675e5083c8d9fbab099a07752ce4e349d6",
+        "executed_copy": "dist/aosp16/property-shutdown-execution-2/data/property-shutdown-probe",
+        "copy_matches_after_run": true
+      },
+      {
+        "path": "dist/aosp16/property-shutdown-build-4/property-shutdown-probe",
+        "sha256": "e396e04dcf28f0c592ef40ed15d149d776a459d84490b9a938601efc2679fb0a",
+        "executed_copy": "dist/aosp16/property-shutdown-execution-4/data/property-shutdown-probe",
+        "copy_matches_after_run": true
+      }
+    ]
+  },
+  "retained_failures": [
+    "First compile signed/unsigned comparison fixed",
+    "Initial inflight assertion<5000 failed at5004ms; original source timeout is5000, corrected diagnostic allowance<7000; final5006. No production latency budget accepted."
+  ],
+  "limits": [
+    "Pending persistence queue and active restorecon drain not executed; only idle writer case accepted",
+    "No bounded shutdown under blocked filesystem/restorecon; future Linux supervisor timeout/failure recovery remains required",
+    "Start/Stop serialized coordinator only, not worker callback or concurrent lifecycle use; no in-process restart support",
+    "Private socket directory must remain exclusive to supervised instance; no shared-host endpoint ownership/race acceptance",
+    "No callback/control queue integration, authorized MAC/property operation or storage-error ACK accepted",
+    "Root initializer with capabilities is not app isolation or least-privilege deployment",
+    "MCP process/environment/filesystem/image-binding limitations retained; derived projection not complete authenticated Evidence",
+    "No full Android, VM/client restart, policy activation or APK stages accepted"
+  ],
+  "next": "Integrate explicit Linux-owned callback/control dispatch and supervisor lifetime with this close API; test queued writes/restorecon and supervisor deadline recovery, while keeping R1-MAC and full Markor/real-APK gates explicit."
+}

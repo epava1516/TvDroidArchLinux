@@ -1,0 +1,50 @@
+{
+  "observed_at": "2026-10-31T09:45:30.448439+00:00",
+  "base_commit": "9e524468c6f688697c8c2b0b08bbed4e256c78e6",
+  "branch": "main",
+  "previous_checkpoint": "reports/android16-property-load/checkpoint.json",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "terminal_exec_handles": [
+    14753,
+    59706,
+    86853,
+    58236,
+    22893
+  ],
+  "active_exec_handles": [],
+  "mcp_status": "Three captures terminal (idle0/inflight-first1/final0), owned-group cleanup verified; no persistent target opened",
+  "result": "Local shutdown adaptation of original property service, native idle and incomplete-request lifecycle regression; not complete Linux supervisor/runtime/APK acceptance.",
+  "tests": "patch-application.json, compile-attempt-1.json, idle-build.json, build.json and three native MCP reports",
+  "next": "Integrate explicit Linux-owned callback/control dispatch and supervisor lifetime with this close API; test queued writes/restorecon and supervisor deadline recovery, while keeping R1-MAC and full Markor/real-APK gates explicit.",
+  "evidence": {
+    "reports/android16-property-shutdown/build.json": "07dbc30aeea560fc785a40b57961938d3e037d0689681ae20dd32639a6f707f7",
+    "reports/android16-property-shutdown/inflight-first-build.json": "08a4e597b228d480ed28be31fdfb37d709a764e226454604b7778c423782022e",
+    "reports/android16-property-shutdown/findings.json": "a5147182ae6c8c7d1201134c4393721a541419780b7442be63aafb282cc0eb20",
+    "reports/android16-property-shutdown/apply-patch-chain.py": "be0f2c0642e5d50c678a8d7798d329e028d57429e7f6f293b271c850d7ee7ff3",
+    "reports/android16-property-shutdown/compile-attempt-1.json": "2a88160fdaf9c6af4de63fb320b5f82a8c069b7d4d92a1218bf8414aa827e1a5",
+    "reports/android16-property-shutdown/idle-build.json": "c4780f3249661960a2e32c12afd9dce780cdc1435e840130e2bddfd8d2334ec1",
+    "reports/android16-property-shutdown/build-test-corrected.py": "9f900f13904cc6a86073caa0ff47b40f28d36cde3cd7153b79741cefb05383b5",
+    "reports/android16-property-shutdown/native-launcher.py": "d4992306b93acbe0dd50cc400253ce347a9563d3d01c6e20c1252e8ff581bee5",
+    "reports/android16-property-shutdown/build.py": "c58d53fa01c6154c37b2c77a69f74c2b57587767ab8e0b0dd06ff7fe0479302b",
+    "reports/android16-property-shutdown/native-mcp.json": "7257cd7af4946b5af3c7bd3523b36a47252fc1570c1736b62dfb1f158ff4fb4f",
+    "reports/android16-property-shutdown/probe-inflight-first.cpp": "f32f0b9548d0cf9a415e8f2dd5becea33b86ba2cd66a1a76d5d9c89081924274",
+    "reports/android16-property-shutdown/patch-application.json": "9f8f4446f77495ea57e95cd9fa3fd9e967841aa6aa533d2d69dd0892a588fb00",
+    "reports/android16-property-shutdown/build-incomplete-request.py": "14634a12afb20c0fe785b876caaf4ec118e7760708300de33b84187fb6b63195",
+    "reports/android16-property-shutdown/probe-idle.cpp": "19174445bf6d7d09e1c52ed3dee76b7852bd0a0509b8aa282b6a6cf08c4a3f22",
+    "reports/android16-property-shutdown/native-idle-mcp.json": "71de77cfde42ba9199861469eba4b39ec542769ecd87c8cc2cefb7287e1ebad8",
+    "reports/android16-property-shutdown/probe.cpp": "b7e4f661edc420309cf6b09acf4160001d2d9bceaed9a10f2a2b49bbfe954fc7",
+    "reports/android16-property-shutdown/build-attempt-2.py": "e672f730f14cda3c7baec3803461142b6336568f8d564614231b280ee7576460",
+    "reports/android16-property-shutdown/native-inflight-first-mcp.json": "e43b79e9b59bc831de9cc48d282939cc831dbec3644523648303c7c610f2420a"
+  }
+}

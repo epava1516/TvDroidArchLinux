@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-property-load/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-property-shutdown/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -17,7 +17,19 @@ Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCC
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
 
-## Última fase nativa · carga original de persistentes
+## Última adaptación · cierre del servicio de propiedades
+
+[Parche y pruebas](../reports/android16-property-shutdown/findings.json): API local
+StopPropertyService despierta receptores, une hilos y cierra recursos propios;
+writer/restorecon dejan de depender de hilos sin cierre coordinado. Cadena de dos
+parches reproduce exactamente el overlay desde archivo AOSP verificado.
+MCP0 idle y petición incompleta: hilos4→1/FD4→4, sockets ausentes, descriptor del
+coordinador conserva ownership y retorno normal del servidor. Timeout original de
+petición5000ms observado; cierre5006ms, sin plazo garantizado ante I/O bloqueado.
+No colas de escritura/restorecon activo probadas, callbacks/ctl integrados, MAC,
+APK o supervisor completo aceptados. Reinicio requiere proceso nuevo.
+
+## Fase anterior · carga original de persistentes
 
 [Prueba](../reports/android16-property-load/findings.json): StartPropertyService
 recibe InitMessage original, carga valor del protobuf y publica él mismo

@@ -1,0 +1,249 @@
+--- a/init/property_service.cpp
++++ b/init/property_service.cpp
+@@ -29,6 +29,8 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <sys/mman.h>
++#include <sys/eventfd.h>
++#include <atomic>
+ #include <sys/poll.h>
+ #include <sys/select.h>
+ #include <sys/system_properties.h>
+@@ -104,6 +106,13 @@
+ namespace init {
+ 
+ static bool persistent_properties_loaded = false;
++// Linux coordinator owns Start/Stop calls; service workers only observe this flag.
++static std::atomic<bool> property_service_stopping{false};
++static std::atomic<size_t> pending_restorecon_operations{0};
++static bool property_service_ever_started = false;
++static bool property_service_closed = false;
++[[clang::no_destroy]] static unique_fd property_service_stop_fd;
++[[clang::no_destroy]] static unique_fd property_system_stop_fd;
+ 
+ static int from_init_socket = -1;
+ static int init_socket = -1;
+@@ -189,11 +198,17 @@
+     void TriggerRestorecon(const std::string& path) {
+         auto guard = std::lock_guard{mutex_};
+         paths_.emplace(path);
++        pending_restorecon_operations.fetch_add(1);
+ 
+         if (!thread_started_) {
+             thread_started_ = true;
+-            std::thread{&AsyncRestorecon::ThreadFunction, this}.detach();
+-        }
++            if (thread_.joinable()) thread_.join();
++            thread_ = std::thread{&AsyncRestorecon::ThreadFunction, this};
++        }
++    }
++
++    void Join() {
++        if (thread_.joinable()) thread_.join();
+     }
+ 
+   private:
+@@ -209,6 +224,7 @@
+                 LOG(ERROR) << "Asynchronous restorecon of '" << path << "' failed'";
+             }
+             android::base::SetProperty(kRestoreconProperty, path);
++            pending_restorecon_operations.fetch_sub(1);
+             lock.lock();
+         }
+ 
+@@ -218,7 +234,13 @@
+     std::mutex mutex_;
+     std::queue<std::string> paths_;
+     bool thread_started_ = false;
++    std::thread thread_;
+ };
++
++static AsyncRestorecon& GetAsyncRestorecon() {
++    [[clang::no_destroy]] static AsyncRestorecon worker;
++    return worker;
++}
+ 
+ class SocketConnection {
+   public:
+@@ -361,12 +383,14 @@
+ class PersistWriteThread {
+   public:
+     PersistWriteThread();
++    ~PersistWriteThread();
+     void Write(std::string name, std::string value, SocketConnection socket);
+ 
+   private:
+     void Work();
+ 
+   private:
++    bool stopping_ = false;
+     std::thread thread_;
+     std::mutex mutex_;
+     std::condition_variable cv_;
+@@ -570,8 +594,7 @@
+     // We use a thread to do this restorecon operation to prevent holding up init, as it may take
+     // a long time to complete.
+     if (name == kRestoreconProperty && cr.pid != 1 && !value.empty()) {
+-        [[clang::no_destroy]] static AsyncRestorecon async_restorecon;
+-        async_restorecon.TriggerRestorecon(value);
++        GetAsyncRestorecon().TriggerRestorecon(value);
+         return {PROP_SUCCESS};
+     }
+ 
+@@ -1439,24 +1462,31 @@
+     }
+ }
+ 
+-static void PropertyServiceThread(int fd, bool listen_init) {
++static void PropertyServiceThread(int fd, bool listen_init, int stop_fd) {
++    unique_fd owned_socket(fd);
+     Epoll epoll;
+     if (auto result = epoll.Open(); !result.ok()) {
+         LOG(FATAL) << result.error();
+     }
+ 
+-    if (auto result = epoll.RegisterHandler(fd, std::bind(handle_property_set_fd, fd));
++    if (auto result = epoll.RegisterHandler(fd, [fd] { if (!property_service_stopping.load()) handle_property_set_fd(fd); });
+         !result.ok()) {
+         LOG(FATAL) << result.error();
+     }
+ 
+     if (listen_init) {
+-        if (auto result = epoll.RegisterHandler(init_socket, HandleInitSocket); !result.ok()) {
++        if (auto result = epoll.RegisterHandler(init_socket, [] { if (!property_service_stopping.load()) HandleInitSocket(); }); !result.ok()) {
+             LOG(FATAL) << result.error();
+         }
+     }
+ 
+-    while (true) {
++    if (auto result = epoll.RegisterHandler(stop_fd, [stop_fd] {
++            uint64_t value;
++            CHECK_EQ(TEMP_FAILURE_RETRY(read(stop_fd, &value, sizeof(value))), static_cast<ssize_t>(sizeof(value)));
++        }); !result.ok()) {
++        LOG(FATAL) << result.error();
++    }
++    while (!property_service_stopping.load()) {
+         auto epoll_result = epoll.Wait(std::nullopt);
+         if (!epoll_result.ok()) {
+             LOG(ERROR) << epoll_result.error();
+@@ -1469,6 +1499,15 @@
+     thread_.swap(new_thread);
+ }
+ 
++PersistWriteThread::~PersistWriteThread() {
++    {
++        std::lock_guard<std::mutex> lock(mutex_);
++        stopping_ = true;
++    }
++    cv_.notify_one();
++    if (thread_.joinable()) thread_.join();
++}
++
+ void PersistWriteThread::Work() {
+     while (true) {
+         std::tuple<std::string, std::string, SocketConnection> item;
+@@ -1477,10 +1516,11 @@
+         {
+             std::unique_lock<std::mutex> lock(mutex_);
+ 
+-            while (work_.empty()) {
++            while (work_.empty() && !stopping_) {
+                 cv_.wait(lock);
+             }
+ 
++            if (work_.empty() && stopping_) return;
+             item = std::move(work_.front());
+             work_.pop_front();
+         }
+@@ -1506,7 +1546,7 @@
+     cv_.notify_all();
+ }
+ 
+-void StartThread(const char* name, int mode, int gid, std::thread& t, bool listen_init) {
++void StartThread(const char* name, int mode, int gid, std::thread& t, bool listen_init, int stop_fd) {
+     int fd = -1;
+     if (auto result = CreateSocket(name, SOCK_STREAM | SOCK_CLOEXEC | SOCK_NONBLOCK,
+                                    /*passcred=*/false, /*should_listen=*/false, mode, /*uid=*/0,
+@@ -1519,11 +1559,17 @@
+ 
+     listen(fd, 8);
+ 
+-    auto new_thread = std::thread(PropertyServiceThread, fd, listen_init);
++    auto new_thread = std::thread(PropertyServiceThread, fd, listen_init, stop_fd);
+     t.swap(new_thread);
+ }
+ 
+ void StartPropertyService(int* epoll_socket) {
++    CHECK(!property_service_ever_started) << "Restart requires a new supervised process";
++    property_service_ever_started = true;
++    property_service_stopping.store(false);
++    property_service_stop_fd.reset(eventfd(0, EFD_CLOEXEC | EFD_NONBLOCK));
++    property_system_stop_fd.reset(eventfd(0, EFD_CLOEXEC | EFD_NONBLOCK));
++    CHECK(property_service_stop_fd.ok() && property_system_stop_fd.ok());
+     InitPropertySet("ro.property_service.version", "2");
+ 
+     int sockets[2];
+@@ -1535,8 +1581,8 @@
+     StartSendingMessages();
+ 
+     StartThread(PROP_SERVICE_FOR_SYSTEM_NAME, 0660, AID_SYSTEM, property_service_for_system_thread,
+-                true);
+-    StartThread(PROP_SERVICE_NAME, 0666, 0, property_service_thread, false);
++                true, property_system_stop_fd.get());
++    StartThread(PROP_SERVICE_NAME, 0666, 0, property_service_thread, false, property_service_stop_fd.get());
+ 
+     auto async_persist_writes =
+             android::base::GetBoolProperty("ro.property_service.async_persist_writes", false);
+@@ -1546,5 +1592,39 @@
+     }
+ }
+ 
++
++Result<void> StopPropertyService() {
++    if (!property_service_ever_started || property_service_closed) return {};
++    StopSendingMessages();
++    property_service_stopping.store(true);
++    uint64_t value = 1;
++    for (int fd : {property_system_stop_fd.get(), property_service_stop_fd.get()}) {
++        if (TEMP_FAILURE_RETRY(write(fd, &value, sizeof(value))) != static_cast<ssize_t>(sizeof(value))) {
++            return ErrnoError() << "Unable to wake property service for shutdown";
++        }
++    }
++    if (property_service_for_system_thread.joinable()) property_service_for_system_thread.join();
++    if (property_service_thread.joinable()) property_service_thread.join();
++    // No socket thread can enqueue additional persistence writes after these joins.
++    GetAsyncRestorecon().Join();
++    persist_write_thread.reset();
++    if (pending_restorecon_operations.load() != 0) {
++        return Error() << "Restorecon work remains; shutdown is incomplete";
++    }
++    for (const char* name : {PROP_SERVICE_FOR_SYSTEM_NAME, PROP_SERVICE_NAME}) {
++        const std::string path = std::string("/dev/socket/") + name;
++        if (unlink(path.c_str()) != 0 && errno != ENOENT) {
++            return ErrnoError() << "Unable to remove property service socket " << path;
++        }
++    }
++    if (init_socket >= 0) close(init_socket);
++    init_socket = -1;
++    from_init_socket = -1; // The caller owns and closes the returned endpoint.
++    property_system_stop_fd.reset();
++    property_service_stop_fd.reset();
++    property_service_closed = true;
++    return {};
++}
++
+ }  // namespace init
+ }  // namespace android
+--- a/init/property_service.h
++++ b/init/property_service.h
+@@ -35,6 +35,10 @@
+ 
+ void PropertyInit();
+ void StartPropertyService(int* epoll_socket);
++// Linux-only integration. Serialized coordinator call, not a worker callback.
++// Joins socket workers and drains the writer; errors report incomplete shutdown.
++// Caller closes its init socket endpoint. Restart uses a fresh process.
++Result<void> StopPropertyService();
+ 
+ void StartSendingMessages();
+ void StopSendingMessages();

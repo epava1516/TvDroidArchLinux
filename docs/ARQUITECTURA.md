@@ -1245,6 +1245,35 @@ frontera con supervisor Linux. Adaptar explícitamente eventos/controles/cierre 
 propiedad de recursos, sin invocar SecondStageMain, sin no-ops de éxito y conservando
 MAC/errores originales. La sonda finaliza por _exit; no es supervisor instalado.
 
+## R1 · cierre local del servicio original
+
+[Parche0002](../runtime/aosp/android16-qpr2/patches/0002-property-service-shutdown.patch)
+sobre0001 y [pruebas](../reports/android16-property-shutdown/findings.json).
+Dos eventfds despiertan receptores de epoll; stop impide despachar nuevas solicitudes,
+une receptores y espera writer/restorecon antes de retirar sockets y cerrar recursos.
+El writer drena su cola al cerrar; restorecon usa hilo unible en lugar de detach.
+No se altera MAC ni se declara trabajo pendiente como terminado. Stop es llamada
+serializada del coordinador, idempotente; no callback de worker. Reinicio exige
+proceso nuevo, no reusar estado global init. Endpoint devuelto permanece propiedad
+del llamador, que lo cierra después. Directorio de sockets privado/exclusivo requerido.
+
+REA MCP observa cierre idle y petición incompleta con writer asíncrono habilitado
+por inicializador confiado de prueba: hilos4→1, FD4→4, sockets ausentes, endpoint
+válido hasta cierre del llamador y main retorna normalmente. Se conserva carga
+persistente original y negativos DAC/contexto. Primera assertion de inflight falló
+a5004ms al exigir<5000; fuente original permite5000ms de lectura. Con margen de
+planificación explícito<7000, resultado5006ms. No se cambia ese timeout ni se acepta
+presupuesto de latencia de producto. Primer fallo de comparación signed/unsigned
+se conserva. Replay sin fuzz de ambos parches coincide con archivos compilados.
+
+No se ejecutaron colas persistentes pendientes ni restorecon activo; el drenaje en
+esos casos sólo tiene evidencia fuente/compilación. Un join puede bloquear por I/O:
+no plazo garantizado, cancelación ni recuperación de supervisor aceptados. Tampoco
+callbacks/controles de Linux, permisos MAC válidos, reinicio de servicio o APK.
+La adaptación facilita integración de lifetime, sin sustituir el supervisor entero
+ni invocar SecondStageMain. Se mantienen fuentes originales intactas y parches
+versionados con obligaciones de revisión al actualizar AOSP.
+
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 
 
