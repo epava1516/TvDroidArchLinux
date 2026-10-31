@@ -1,0 +1,83 @@
+{
+  "base_commit": "5b0f315a6c1ad379d77d98101086afa9f71a7ddc",
+  "scope": "Offline original policy analysis/access decisions, not live MAC, merged policy, app isolation or APK acceptance",
+  "original_analyzer_sources": 8,
+  "original_libsepol_utils_built": 5,
+  "inventory_queries": 10,
+  "access_queries": 14,
+  "computed_outcomes": {
+    "allowed": 6,
+    "denied": 3,
+    "query_error": 5
+  },
+  "permissive_domain_bits": {
+    "aosp": 0,
+    "linux": 0
+  },
+  "boolean_count": {
+    "aosp": 0,
+    "linux": 414
+  },
+  "domain_attribute_members": {
+    "aosp": 221,
+    "linux": 818
+  },
+  "not_inferred": "No permissive-domain bits does not mean current kernel enforcing. Source attributes and14 access cases do not prove full semantic equivalence; synthetic queries are not real application compatibility.",
+  "architecture_effect": "Use original source-checked access engine for explicit baseline comparisons and full source assertions before transforming classes/namespace/users/roles/constraints. Do not select or use seamendc as complete policy merger, or sepolicy-check as broad access oracle. No policy winner yet.",
+  "sources": [
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/selinux-original-full/source/external/selinux/libsepol/utils/sepol_check_access.c",
+      "sha256": "3e4e1f6d4bffaf6941a32d75bfb589126fba2bf95794be745262f0d64963f998"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/selinux-original-full/source/external/selinux/libsepol/utils/sepol_compute_av.c",
+      "sha256": "7cf982f5401cba70e69e0dafaf55ce42e9cc58ec0a8588ccb78fa8fc7375e4b4"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/selinux-original-full/source/external/selinux/libsepol/cil/src/android.c",
+      "sha256": "d7b1d766494b699b672afaa0220b54bd17685eb6bb950c5dcd6fc5a997426254"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/sepolicy/source/system/sepolicy/tools/sepolicy-check.c",
+      "sha256": "c5be207dd6c0f44a66e49390f76d549ad71155c4b7853219657185145f712e45"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/sepolicy/source/system/sepolicy/tools/seamendc.c",
+      "sha256": "c5dc3016002db0e7edfda38a24f93a205e738cfb67ee0728212c3feef1c07c2f"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/sepolicy/source/system/sepolicy/tools/sepolicy-analyze/README",
+      "sha256": "b4acc0cc6d8dc8c30f6cf2234f9e0b60bf74f1aced690abce96037511e2e6465"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/sepolicy/source/system/sepolicy/private/servicemanager.te",
+      "sha256": "57bb759a024d38c9800da9dd12946dbab658740f3db0b085b35e335ac71db60c"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "reports/android16-policy-semantic-baselines/source-findings.json",
+      "sha256": "92f2640841617039592d9a22f19d1e8788810c4ea8bebfa2d71ba7295f31be63"
+    },
+    {
+      "path": "reports/android16-policy-semantic-baselines/analyzer-build.json",
+      "sha256": "4589af3867d346bc6ec8f8f4534fd50fa230ecad43716442320bdcea0da53f43"
+    },
+    {
+      "path": "reports/android16-policy-semantic-baselines/reproduce-access-baselines.py",
+      "sha256": "8e55c1862b0a58a4c0c45cee1265f43921a07a55a1fe2eea1a63fbad928c3999"
+    },
+    {
+      "path": "reports/android16-policy-semantic-baselines/access-baselines.json",
+      "sha256": "a5a19a27d0e8d9dbe53dec8753bb21830ecb2ae56c0ed49cb11140bb8d6c677e"
+    },
+    {
+      "path": "reports/android16-policy-semantic-baselines/analyzer-queries.json",
+      "sha256": "9ed294a88534612dcd05068e129514a26c41e3b63ffaddfe9c1e1ac441dc903d"
+    },
+    {
+      "path": "reports/android16-policy-semantic-baselines/access-tools-build.json",
+      "sha256": "99b947c74184b8e12bb0838679906cfda566251ec65459c878a84fda85d993d4"
+    }
+  ]
+}

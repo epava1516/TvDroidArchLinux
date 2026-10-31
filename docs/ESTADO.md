@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-policy-base-comparison/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-policy-semantic-baselines/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -352,3 +352,20 @@ original genfslabelsversion se enlaza y ejecuta en cuatro casos reales: ausente,
 válido, malformado y permiso denegado. UID10000, sin grupos/capacidades, NNP1.
 El fallback original 202404 no demuestra mediación SELinux. No servidor, boot
 Android, aplicación ni etapa de la matriz aceptados por estas pruebas.
+
+
+## Decisiones offline con herramientas originales
+
+[Evidencias](../reports/android16-policy-semantic-baselines/validation.json): diez
+consultas de inventario y catorce consultas de acceso mediante libsepol original:
+seis permisos concedidos, tres denegaciones y cinco errores de contexto/clase/permiso.
+Los errores no se contabilizan como denegaciones. Un permiso por invocación evita
+el límite identificado en el bucle original de argumentos. No hay enforcement
+vivo, política compuesta ni aceptación de aplicaciones.
+
+Se descarta usar sepolicy-check como oráculo general: no representa todas las
+condiciones efectivas y su máscara de permisos es limitada. seamendc tampoco es
+un compositor completo: omite construcciones y nunca debe sustituir las aserciones
+neverallow originales. La siguiente unidad debe conservar las fuentes completas,
+resolver clases, atributos, usuarios/roles y MLS explícitamente y contrastar
+semántica global; catorce casos no demuestran equivalencia. Ninguna base elegida.

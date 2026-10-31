@@ -1,0 +1,21 @@
+{
+  "scope": "Public original source review, no policy transformation or amended policy accepted",
+  "sepol_check_access": {
+    "used": "One permission per invocation, original libsepol computes default conditional/TE/constraint/RBAC decisions",
+    "exit_codes": {
+      "0": "allowed in offline model",
+      "7": "denied in offline model",
+      "1": "invalid query/input/error, not denial"
+    },
+    "limitation": "Original multi-permission loop assigns av instead of accumulating, so these tests use exactly one permission; not a kernel decision/enforcement claim"
+  },
+  "sepolicy_check": {
+    "not_used_for_access_acceptance": true,
+    "reason": "Source presence scanner includes conditional avtab and uint16 permission mask; not an effective full-policy access decision oracle"
+  },
+  "seamendc": {
+    "not_used_for_whole_policy_merge": true,
+    "reason": "Original cil_amend_policydb defines types/attributes but skips role/user/bool/sensitivity symbols and multiple rule kinds; neverallow logs warning instead of being installed as a check in apply_rules. Binary policy lacks full original assertions. Source is insufficient for treating it as a full safe policy composer without complete external source assertions and unsupported constructs handled.",
+    "source_locations": "libsepol/cil/src/android.c define_symbols/expand_symbols/apply_rules, about940-1045; system/sepolicy/tools/seamendc.c main"
+  }
+}

@@ -1,0 +1,254 @@
+{
+  "scope": "Original libsepol offline access computation with single permission and default policy conditionals; not live kernel/AVC enforcement, syscall success or APK acceptance",
+  "tool_sha256": "4dad592b85401d1182d02ba157ff3174c7008f51e5eb619d478637105bdc22da",
+  "input_sha256": {
+    "aosp": "cf26368b0cbb9b921e78ae3830c7bfbd6b900dc2676f6a97f71ba83df611e296",
+    "linux": "c7753e80682533ab3522feb8432df928a0cbfa0517627b951f6274f6ccb2be84"
+  },
+  "return_codes": {
+    "0": "computed allowed",
+    "7": "computed denied",
+    "1": "invalid query/input or other tool error, NOT a denial"
+  },
+  "results": [
+    {
+      "case": "manager_add",
+      "policy": "aosp",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/platform-policy-original-options.bin",
+        "u:r:servicemanager:s0",
+        "u:object_r:service_manager_service:s0",
+        "service_manager",
+        "add"
+      ],
+      "expected_from_source_review": 0,
+      "exit_code": 0,
+      "stdout": "requested permission add allowed\n",
+      "stderr": "",
+      "matches_expectation": true
+    },
+    {
+      "case": "system_server_activity_add",
+      "policy": "aosp",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/platform-policy-original-options.bin",
+        "u:r:system_server:s0",
+        "u:object_r:activity_service:s0",
+        "service_manager",
+        "add"
+      ],
+      "expected_from_source_review": 0,
+      "exit_code": 0,
+      "stdout": "requested permission add allowed\n",
+      "stderr": "",
+      "matches_expectation": true
+    },
+    {
+      "case": "app_activity_find",
+      "policy": "aosp",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/platform-policy-original-options.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "u:object_r:activity_service:s0",
+        "service_manager",
+        "find"
+      ],
+      "expected_from_source_review": 0,
+      "exit_code": 0,
+      "stdout": "requested permission find allowed\n",
+      "stderr": "",
+      "matches_expectation": true
+    },
+    {
+      "case": "app_activity_add_denied",
+      "policy": "aosp",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/platform-policy-original-options.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "u:object_r:activity_service:s0",
+        "service_manager",
+        "add"
+      ],
+      "expected_from_source_review": 7,
+      "exit_code": 7,
+      "stdout": "requested permission add denied by te-rule\n",
+      "stderr": "",
+      "matches_expectation": true
+    },
+    {
+      "case": "app_property_write_denied",
+      "policy": "aosp",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/platform-policy-original-options.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "u:object_r:default_prop:s0",
+        "property_service",
+        "set"
+      ],
+      "expected_from_source_review": 7,
+      "exit_code": 7,
+      "stdout": "requested permission set denied by te-rule\n",
+      "stderr": "",
+      "matches_expectation": true
+    },
+    {
+      "case": "app_manager_call",
+      "policy": "aosp",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/platform-policy-original-options.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "u:r:servicemanager:s0",
+        "binder",
+        "call"
+      ],
+      "expected_from_source_review": 0,
+      "exit_code": 0,
+      "stdout": "requested permission call allowed\n",
+      "stderr": "",
+      "matches_expectation": true
+    },
+    {
+      "case": "invalid_type_is_error",
+      "policy": "aosp",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/platform-policy-original-options.bin",
+        "u:r:archtv_nonexistent:s0",
+        "u:r:servicemanager:s0",
+        "binder",
+        "call"
+      ],
+      "expected_from_source_review": 1,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "libsepol.context_from_record: type archtv_nonexistent is not defined\nlibsepol.context_from_record: could not create context structure\nlibsepol.context_from_string: could not create context structure\nlibsepol.sepol_context_to_sid: could not convert u:r:archtv_nonexistent:s0 to sid\nInvalid source context u:r:archtv_nonexistent:s0\n",
+      "matches_expectation": true
+    },
+    {
+      "case": "invalid_perm_is_error",
+      "policy": "aosp",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/platform-policy-original-options.bin",
+        "u:r:untrusted_app:s0:c512,c768",
+        "u:r:servicemanager:s0",
+        "binder",
+        "archtv_nonexistent"
+      ],
+      "expected_from_source_review": 1,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "libsepol.sepol_string_to_av_perm: could not convert archtv_nonexistent to av bit\nInvalid permission archtv_nonexistent for security class binder:  Success\n",
+      "matches_expectation": true
+    },
+    {
+      "case": "linux_init_fork",
+      "policy": "linux",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/refpolicy-baseline-1/source/policy.30",
+        "system_u:system_r:init_t:s0",
+        "system_u:system_r:init_t:s0",
+        "process",
+        "fork"
+      ],
+      "expected_from_source_review": 0,
+      "exit_code": 0,
+      "stdout": "requested permission fork allowed\n",
+      "stderr": "",
+      "matches_expectation": true
+    },
+    {
+      "case": "linux_init_etc_read",
+      "policy": "linux",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/refpolicy-baseline-1/source/policy.30",
+        "system_u:system_r:init_t:s0",
+        "system_u:object_r:etc_t:s0",
+        "file",
+        "read"
+      ],
+      "expected_from_source_review": 0,
+      "exit_code": 0,
+      "stdout": "requested permission read allowed\n",
+      "stderr": "",
+      "matches_expectation": true
+    },
+    {
+      "case": "linux_user_shadow_denied",
+      "policy": "linux",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/refpolicy-baseline-1/source/policy.30",
+        "user_u:user_r:user_t:s0",
+        "system_u:object_r:shadow_t:s0",
+        "file",
+        "read"
+      ],
+      "expected_from_source_review": 7,
+      "exit_code": 7,
+      "stdout": "requested permission read denied by te-rule\n",
+      "stderr": "",
+      "matches_expectation": true
+    },
+    {
+      "case": "linux_missing_android_class_error",
+      "policy": "linux",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/refpolicy-baseline-1/source/policy.30",
+        "system_u:system_r:init_t:s0",
+        "system_u:object_r:etc_t:s0",
+        "service_manager",
+        "find"
+      ],
+      "expected_from_source_review": 1,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "libsepol.sepol_string_to_security_class: unrecognized class service_manager\nInvalid security class service_manager\n",
+      "matches_expectation": true
+    },
+    {
+      "case": "aosp_context_not_linux_context",
+      "policy": "linux",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/refpolicy-baseline-1/source/policy.30",
+        "u:r:servicemanager:s0",
+        "system_u:object_r:etc_t:s0",
+        "file",
+        "read"
+      ],
+      "expected_from_source_review": 1,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "libsepol.context_from_record: user u is not defined\nlibsepol.context_from_record: could not create context structure\nlibsepol.context_from_string: could not create context structure\nlibsepol.sepol_context_to_sid: could not convert u:r:servicemanager:s0 to sid\nInvalid source context u:r:servicemanager:s0\n",
+      "matches_expectation": true
+    },
+    {
+      "case": "linux_context_not_aosp_context",
+      "policy": "aosp",
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/policy-access-host-1/source/sepol_check_access",
+        "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/platform-policy-original-options.bin",
+        "system_u:system_r:init_t:s0",
+        "u:r:servicemanager:s0",
+        "binder",
+        "call"
+      ],
+      "expected_from_source_review": 1,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "libsepol.context_from_record: user system_u is not defined\nlibsepol.context_from_record: could not create context structure\nlibsepol.context_from_string: could not create context structure\nlibsepol.sepol_context_to_sid: could not convert system_u:system_r:init_t:s0 to sid\nInvalid source context system_u:system_r:init_t:s0\n",
+      "matches_expectation": true
+    }
+  ],
+  "all_match_expectations": true
+}

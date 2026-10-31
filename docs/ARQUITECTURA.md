@@ -934,3 +934,20 @@ Linux e integrado con Rust/Smithay. Waydroid sirve de backend inicial y referenc
 funcional. El contrato de aplicaciones deberá permitir sustituirlo sin rehacer
 el shell. Véase [AOSP-NATIVO.md](AOSP-NATIVO.md) para etapas, requisitos de ART,
 Binder/framework/HAL, ABIs y criterios para retirar la dependencia.
+
+
+## Decisiones offline con herramientas originales
+
+[Evidencias](../reports/android16-policy-semantic-baselines/validation.json): diez
+consultas de inventario y catorce consultas de acceso mediante libsepol original:
+seis permisos concedidos, tres denegaciones y cinco errores de contexto/clase/permiso.
+Los errores no se contabilizan como denegaciones. Un permiso por invocación evita
+el límite identificado en el bucle original de argumentos. No hay enforcement
+vivo, política compuesta ni aceptación de aplicaciones.
+
+Se descarta usar sepolicy-check como oráculo general: no representa todas las
+condiciones efectivas y su máscara de permisos es limitada. seamendc tampoco es
+un compositor completo: omite construcciones y nunca debe sustituir las aserciones
+neverallow originales. La siguiente unidad debe conservar las fuentes completas,
+resolver clases, atributos, usuarios/roles y MLS explícitamente y contrastar
+semántica global; catorce casos no demuestran equivalencia. Ninguna base elegida.

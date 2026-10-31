@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+- [Decisiones offline con herramientas originales](../reports/android16-policy-semantic-baselines/validation.json): 10 inventarios y 14 accesos (6 permitidos, 3 denegados, 5 errores); límites de sepolicy-check/seamendc documentados. Sin enforcement ni APK. [Checkpoint actual](../reports/android16-policy-semantic-baselines/checkpoint.json).
+
 - [Investigación ARM/Native Bridge separada](../reports/arm-native-bridge-research/validation.json): contrato A16, ELF original mediante REA MCP y fuentes/metadatos de candidatos/licencias. Sin proveedor o ARM ejecutado, sin cambios x86_64 ni APK aprobada. [Detalle R6](TRADUCCION-ARM.md).
 
 - [Comparación de política AOSP/Linux](../reports/android16-policy-base-comparison/validation.json): refpolicy fijada y compilada offline;136 clases contrastadas contra CIL. Composición global directa rechazada, sin descartar estrategias adaptadas. No política elegida/cargada ni APK. [Checkpoint vigente](../reports/android16-policy-base-comparison/checkpoint.json).
