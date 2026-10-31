@@ -1,0 +1,154 @@
+{
+  "evidence_id": "ev_1cc3782eab56dac09bc39b3f6796bf9453fc20b8fb7b78f379a6bcc78ecd6c9a",
+  "subject": {
+    "name": "linker64",
+    "digest": {
+      "sha256": "9fcc1c6a1353a9d646339f152e2c8720729d248c4cb2d4a04582db982e5f62c4"
+    },
+    "local_path": "/home/tv/repositorio-principal/dist/aosp16/native-inputs-2/apex/com.android.runtime/bin/linker64",
+    "format": "elf",
+    "architecture": "x86_64"
+  },
+  "provider": {
+    "id": "rea-elf-notes",
+    "name": "REA ELF note parser",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.analysis",
+  "operation": "inspect_elf_notes",
+  "parameters": {
+    "path": "/home/tv/repositorio-principal/dist/aosp16/native-inputs-2/apex/com.android.runtime/bin/linker64",
+    "max_file_bytes": 67108864,
+    "max_entries": 32
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "artifact": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/native-inputs-2/apex/com.android.runtime/bin/linker64",
+      "sha256": "9fcc1c6a1353a9d646339f152e2c8720729d248c4cb2d4a04582db982e5f62c4",
+      "bytes": 2253664
+    },
+    "format": "elf64",
+    "byte_order": "little",
+    "machine": 62,
+    "type": 3,
+    "type_name": "shared",
+    "tables": [
+      {
+        "kind": "program",
+        "index": 9,
+        "name": null,
+        "location": {
+          "offset": 624,
+          "bytes": 32
+        },
+        "alignment": 4
+      },
+      {
+        "kind": "section",
+        "index": 1,
+        "name": ".note.gnu.build-id",
+        "location": {
+          "offset": 624,
+          "bytes": 32
+        },
+        "alignment": 4
+      }
+    ],
+    "entries": [
+      {
+        "index": 0,
+        "table_kind": "program",
+        "table_index": 9,
+        "location": {
+          "offset": 624,
+          "bytes": 32
+        },
+        "namesz": 4,
+        "descsz": 16,
+        "type": 3,
+        "type_name": "gnu_build_id",
+        "owner": "GNU",
+        "owner_bytes_hex": "474e5500",
+        "descriptor": {
+          "location": {
+            "offset": 640,
+            "bytes": 16
+          },
+          "bytes": 16,
+          "sha256": "9bf9dfa88e19f25ce7957e0e5e65f5c6f25d7bf920c443e2106ccfe5c46c63f7",
+          "hex": "3629990ada17f9a962ea59d88cfd9edc"
+        },
+        "gnu": {
+          "build_id_hex": "3629990ada17f9a962ea59d88cfd9edc",
+          "abi_tag": null,
+          "gold_version": null
+        }
+      },
+      {
+        "index": 1,
+        "table_kind": "section",
+        "table_index": 1,
+        "location": {
+          "offset": 624,
+          "bytes": 32
+        },
+        "namesz": 4,
+        "descsz": 16,
+        "type": 3,
+        "type_name": "gnu_build_id",
+        "owner": "GNU",
+        "owner_bytes_hex": "474e5500",
+        "descriptor": {
+          "location": {
+            "offset": 640,
+            "bytes": 16
+          },
+          "bytes": 16,
+          "sha256": "9bf9dfa88e19f25ce7957e0e5e65f5c6f25d7bf920c443e2106ccfe5c46c63f7",
+          "hex": "3629990ada17f9a962ea59d88cfd9edc"
+        },
+        "gnu": {
+          "build_id_hex": "3629990ada17f9a962ea59d88cfd9edc",
+          "abi_tag": null,
+          "gold_version": null
+        }
+      }
+    ],
+    "coverage": {
+      "status": "complete",
+      "examined_tables": 2,
+      "examined_entries": 2
+    },
+    "limitations": [
+      "This workflow does not execute the image, resolve runtime notes, or verify GNU build-id uniqueness against package catalogs.",
+      "PT_NOTE and SHT_NOTE are examined independently; the same file range may appear twice when both tables declare it."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "This workflow does not execute the image, resolve runtime notes, or verify GNU build-id uniqueness against package catalogs.",
+    "PT_NOTE and SHT_NOTE are examined independently; the same file range may appear twice when both tables declare it."
+  ],
+  "relationship_coverage": null,
+  "locations": [
+    {
+      "kind": "artifact-path",
+      "path": "/home/tv/repositorio-principal/dist/aosp16/native-inputs-2/apex/com.android.runtime/bin/linker64"
+    },
+    {
+      "kind": "file-offset-range",
+      "start": 624,
+      "end": 656
+    },
+    {
+      "kind": "file-offset-range",
+      "start": 624,
+      "end": 656
+    }
+  ],
+  "evidence_links": []
+}

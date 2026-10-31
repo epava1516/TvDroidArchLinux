@@ -1,0 +1,72 @@
+{
+  "checked_at": "2026-10-31T00:00:16.359020+00:00",
+  "published_archive_sha256_matches": true,
+  "internal_build_id": "BP4A.251205.006",
+  "internal_sdk_full": "36.1",
+  "positive_extraction_matches_independent_whitelist": true,
+  "negative_tests": [
+    {
+      "case": "wrong-hash",
+      "returncode": 1,
+      "output_exists": false,
+      "stderr": "Archive SHA256 mismatch; nothing extracted\n"
+    },
+    {
+      "case": "wrong-build",
+      "returncode": 1,
+      "output_exists": false,
+      "stderr": "Internal build ID mismatch; nothing extracted\n"
+    }
+  ],
+  "probe4_exit_codes": {
+    "linker-help": 0,
+    "linker-list": 0,
+    "art-help": 0
+  },
+  "probe3_art_help_exit_code": 1,
+  "static_ART_closure": {
+    "candidate_sonames": 30,
+    "missing_after_statsd": [],
+    "missing_before_statsd": [
+      "libstatspull.so",
+      "libstatssocket.so"
+    ]
+  },
+  "rea_mcp": "Two actual inspect_elf_notes calls; identities match extracted linker/libart. Static evidence, not runtime observer.",
+  "pending_source_hashes_preserved": true,
+  "other_pending_hashes": {
+    "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+  },
+  "known_failed_attempts": [
+    "native-inputs-1 expected JSON manifest absent; retained under dist",
+    "probe1/2 unable to bind through private home/proc-fd; no Android target execution",
+    "probe3 JNI invocation failed without StatsD libraries",
+    "first wrong-build negative test timed out30sec during archive hashing; rerun completed with120sec limit"
+  ],
+  "official_catalogs": {
+    "aosp-sysimg.xml": {
+      "cache": "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/aosp-sysimg.xml",
+      "sha256": "7b119fdc282a65432aab52e8bbc64546f7fb6ec74e79e235633c60d06564b111"
+    },
+    "google-sysimg.xml": {
+      "cache": "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/google-sysimg.xml",
+      "sha256": "b1261b4f645125367bc74d5e0881a55cb489cf13bae26a3c9d61bdef287d228e"
+    },
+    "gsi-releases.html": {
+      "cache": "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-releases.html",
+      "sha256": "f9766036a19bbed4146c4d10335e900dd77e00ae8543ec1fd14d6f753ec6a958"
+    }
+  },
+  "scope": "Archive identity and original linker/help component execution only; flattened LD_LIBRARY_PATH; no complete generated linker config, VM/DEX/APK/CTS/graphics/security/per-app isolation acceptance.",
+  "local_links_checked": 105,
+  "broken_local_links": 0,
+  "graphify": {
+    "isolated_staged_worktree": true,
+    "nodes": 2562,
+    "edges": 4936,
+    "communities": 219,
+    "scope": "AST update only; no LLM semantic relabeling"
+  },
+  "whitespace_validation": "git diff --cached --check passes excluding unchanged raw ART stdout whitespace; original output retained for integrity"
+}

@@ -1,0 +1,112 @@
+{
+  "image_sha256": "c4989f703ac23bbd3bb3da2e33a3633d373bf763afcfcbed3cccc73d5049d656",
+  "commands": [
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.os.statsd.apex /home/tv/repositorio-principal/dist/aosp16/statsd-inputs-1/com.android.os.statsd.apex",
+      "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "rdump / /home/tv/repositorio-principal/dist/aosp16/statsd-inputs-1/com.android.os.statsd",
+      "/home/tv/repositorio-principal/dist/aosp16/statsd-inputs-1/payload.img"
+    ]
+  ],
+  "files": {
+    "payload.img": {
+      "sha256": "ff0d1c8206d7c8668a112e08272c25fdba1a53dff3994a27fe9128155e0f1637",
+      "bytes": 3530752
+    },
+    "apex_manifest.pb": {
+      "sha256": "8093e935a84c83513ad1924bc40c4d4d83431f3f379190fcb895c040eda42e0d",
+      "bytes": 181
+    },
+    "com.android.os.statsd.apex": {
+      "sha256": "589049a2f5a5b67b1d402e411ab2a378f9f66c0eb9c9c39a4f88801726561b73",
+      "bytes": 3710976
+    },
+    "debugfs.log": {
+      "sha256": "089c0f8c017a94999c28c3c31c6b1c823eb99285ee662180d286af3e42db47b4",
+      "bytes": 1251
+    },
+    "com.android.os.statsd/apex_manifest.pb": {
+      "sha256": "8093e935a84c83513ad1924bc40c4d4d83431f3f379190fcb895c040eda42e0d",
+      "bytes": 181
+    },
+    "com.android.os.statsd/lib64/libstats_jni.so": {
+      "sha256": "3dd6a6b537e9aed817fad727a302a1f036ae9de0610cd31ecb27075d1cf2c8dd",
+      "bytes": 35376
+    },
+    "com.android.os.statsd/lib64/libstatssocket.so": {
+      "sha256": "f374ac91baf56ae7d66cbe4aaf1846e7734cc58b8720c159a01feb7d99ec3594",
+      "bytes": 103576
+    },
+    "com.android.os.statsd/lib64/libstatspull.so": {
+      "sha256": "58ede89af4a3e9eb8c8f2caf156b48752567015cad2db18bb3340561191d2732",
+      "bytes": 139256
+    },
+    "com.android.os.statsd/bin/statsd": {
+      "sha256": "69a7243277ed22847583a2d72665a2277affc3c82e2be52a441b42b8ba657fd5",
+      "bytes": 2824000
+    },
+    "com.android.os.statsd/javalib/service-statsd.jar": {
+      "sha256": "56de22446a4ac3c1a09353b0301d3166a373b58744b21cd2327d8580d00b8692",
+      "bytes": 42250
+    },
+    "com.android.os.statsd/javalib/framework-statsd.jar": {
+      "sha256": "8fe755f10b710ba9a4cdaa2d3d259a17c5c5d24f9cd4975890532729035ccdd0",
+      "bytes": 114297
+    },
+    "com.android.os.statsd/lib/libstats_jni.so": {
+      "sha256": "6da2e9012d8e7892ec66753c5804ca42d6fb36e537d882fd51d1712455dbadf9",
+      "bytes": 4004
+    },
+    "com.android.os.statsd/lib/libstatssocket.so": {
+      "sha256": "7dc1c5000b217d994cbea11ec8533dba2ee3825682c45c81a812cedeb4aca4af",
+      "bytes": 56728
+    },
+    "com.android.os.statsd/lib/libstatspull.so": {
+      "sha256": "7e61227653ac8dea19f7955a35ed084eb70de8c0d1b1b63c2a8c297575adebaa",
+      "bytes": 117652
+    },
+    "com.android.os.statsd/etc/flag.map": {
+      "sha256": "43c1feb4d5ee0304eaaa894d160f45b60d64679802574dc30cce8a66ec1f0dc3",
+      "bytes": 510
+    },
+    "com.android.os.statsd/etc/flag.info": {
+      "sha256": "7597bb3c12bda89de54e7a956bbaabfe4e829ca43f113117f47de63e83bfc5f0",
+      "bytes": 51
+    },
+    "com.android.os.statsd/etc/sdkinfo.pb": {
+      "sha256": "8cc9ce257862fcf6e3697359b34e49114d1bde37e43cbdcf62755a282ba90bad",
+      "bytes": 2
+    },
+    "com.android.os.statsd/etc/package.map": {
+      "sha256": "8b5370cf2d0231a6be66409b06dbcb5df039085d9499e048d8f5b9428278ddc3",
+      "bytes": 125
+    },
+    "com.android.os.statsd/etc/init.rc": {
+      "sha256": "8001e87f8e1c6f6df7119f2262c1ba4eb96a66e2462d4e089d1ed09af3fefd1b",
+      "bytes": 815
+    },
+    "com.android.os.statsd/etc/aconfig_flags.pb": {
+      "sha256": "558f3146f98e2bf31db8bc3e95d71a2d29cbae0f77ae7e78faf6eca123b40b69",
+      "bytes": 2728
+    },
+    "com.android.os.statsd/etc/flag.val": {
+      "sha256": "0ccc26fb021c7814a757fdf967f781b2f68be97d51663588b73ea6a23a8f3df9",
+      "bytes": 51
+    },
+    "com.android.os.statsd/etc/classpaths/bootclasspath.pb": {
+      "sha256": "1429938d3f67c92765e8e8ee6e2e43866d27d2564fc9735d8daa8a83ea6b87d6",
+      "bytes": 66
+    },
+    "com.android.os.statsd/etc/classpaths/systemserverclasspath.pb": {
+      "sha256": "768a981e9b42b32d43d339b77fd27aa7630cb4f5e9d48536f34c01d1735c6d7f",
+      "bytes": 60
+    }
+  },
+  "scope": "Whole original StatsD APEX extracted unchanged; static dependency candidates only, statsd service not run, no signature verification"
+}

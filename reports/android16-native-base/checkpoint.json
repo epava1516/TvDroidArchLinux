@@ -1,0 +1,46 @@
+{
+  "observed_at": "2026-10-31T00:00:16.359020+00:00",
+  "contract": "A16-QPR2-1",
+  "objective": "Complete unmodified arbitrary APK incl TV, Linux Rust/Smithay; native coherent AOSP16 QPR2, SF\u2192Wayland first hypothesis; no Waydroid/full Android. Preserve compatibility/isolation/stability/lightweight/install/update.",
+  "branch": "main",
+  "source_base_commit": "2830ad8be88d7ba2385cc08e85ddc115fdb3f5e8",
+  "origin_relation": "0\t0",
+  "pending_own": {
+    "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+    "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+    "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+    "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+  },
+  "pending_other_hashes": {
+    "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+  },
+  "own_milestone": "A16 official binary selection/extraction, isolated original linker/help experiment, scoped evidence and canonical docs; exclude pending Android13 and H9 logs",
+  "process_observation": {
+    "codex_pid": 181308,
+    "code_mode_pid": 181453,
+    "matched_art_bwrap_qemu_linkerconfig_clang_graphify": [],
+    "scope": "Host ps observed after probe4; no restart"
+  },
+  "terminal_handles": [
+    43171,
+    52509,
+    60412,
+    25071,
+    12792,
+    83623,
+    64158,
+    73580,
+    6935,
+    62114,
+    95848,
+    35726
+  ],
+  "terminal_handles_scope": "exec/write_stdin observed completed; handle73580 timeout is a terminated negative-test process, successful rerun62114 retained",
+  "tests": "Matching official archive SHA+build+SDK36.1; positive extractor reproducible; wrong hash/build refused; original linker help/list and ART help pass after whole StatsD module added; initial harness and JNI failures retained",
+  "evidence_root": "reports/android16-native-base",
+  "recovery_snapshot": "/home/tv/recuperacion-archtv/20261030T235001Z-a16-artifact-selection",
+  "open_failures": "Generated linker configuration absent; flattened LD_LIBRARY_PATH diagnostic; properties/APEX namespace/classpath/kernel/VM semantic acceptance pending; no full source/binary equivalence or production license/security acceptance",
+  "next": "Study pinned property service/bootstrap, APEX configuration and linkerconfig whole subsystem; derive and test original namespace/classpath/boot environment before DEX and complete Markor. Do not resume per-method API33 development.",
+  "restart_policy": "No VM/client restart; no Android image/VM boot"
+}

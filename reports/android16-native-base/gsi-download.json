@@ -1,0 +1,27 @@
+{
+  "url": "https://dl.google.com/developers/android/baklava/images/gsi/aosp_x86_64-exp-BP4A.251205.006-14401865-aa5d832e.zip",
+  "local": "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/aosp_x86_64-exp-BP4A.251205.006-14401865-aa5d832e.zip",
+  "bytes": 956034415,
+  "sha256": "aa5d832edfb7e4c05138b459b21a219039048f65bc103ac38e25e410fa561512",
+  "seconds": 96.63,
+  "headers": {
+    "Accept-Ranges": "bytes",
+    "Cache-Control": "no-transform",
+    "Content-Disposition": "attachment",
+    "Content-Length": "956034415",
+    "Content-Security-Policy": "default-src 'none'",
+    "Content-Type": "application/zip",
+    "Etag": "\"5283b70\"",
+    "Last-Modified": "Thu, 04 Dec 2025 21:44:09 GMT",
+    "Server": "downloads",
+    "Vary": "Accept-Encoding",
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "SAMEORIGIN",
+    "X-Identity-Content-Length": "956034415",
+    "X-Xss-Protection": "0",
+    "Date": "Fri, 30 Oct 2026 23:50:17 GMT",
+    "Alt-Svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "Connection": "close"
+  },
+  "scope": "Download and digest only; not installed or booted"
+}

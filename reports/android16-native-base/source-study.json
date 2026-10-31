@@ -1,0 +1,41 @@
+{
+  "files": {
+    "bionic/build/run-on-host.sh": {
+      "commit": "f22516cbc67e81c13cf943ce02f01b8929a98726",
+      "url": "https://android.googlesource.com/platform/bionic/+/f22516cbc67e81c13cf943ce02f01b8929a98726/build/run-on-host.sh",
+      "local_cache": "/home/tv/.cache/archtv/aosp16-qpr2/source-check/bionic__build_run-on-host.sh",
+      "sha256": "5e5f80a53f97372f24de664676afa159b8e6d15cacb8e0198975c133fe6fdeeb"
+    },
+    "system/linkerconfig/README.md": {
+      "commit": "12743643593c9f13784ed30424db2ea09a7bc65f",
+      "url": "https://android.googlesource.com/platform/system/linkerconfig/+/12743643593c9f13784ed30424db2ea09a7bc65f/README.md",
+      "local_cache": "/home/tv/.cache/archtv/aosp16-qpr2/source-check/system_linkerconfig__README.md",
+      "sha256": "44906447aaec5c856eb41046606e4395aedc897eb64335ebdfe6f911ce6ff4ca"
+    },
+    "frameworks/native/services/surfaceflinger/Android.bp": {
+      "commit": "fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103",
+      "url": "https://android.googlesource.com/platform/frameworks/native/+/fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103/services/surfaceflinger/Android.bp",
+      "local_cache": "/home/tv/.cache/archtv/aosp16-qpr2/source-check/frameworks_native__services_surfaceflinger_Android.bp",
+      "sha256": "7ae0bbbbde867ac84d7284c090a1e891a518f07c9c6ea7355e6ed2e2c83b99e2"
+    },
+    "art/dalvikvm/dalvikvm.cc": {
+      "commit": "1690c6912a7972c9e62c39b48c706de9b8b18b4a",
+      "url": "https://android.googlesource.com/platform/art/+/1690c6912a7972c9e62c39b48c706de9b8b18b4a/dalvikvm/dalvikvm.cc",
+      "local_cache": "/home/tv/.cache/archtv/aosp16-qpr2/source-check/art__dalvikvm_dalvikvm.cc",
+      "sha256": "840583bf5bc9b55e5b1ddb57ff3642af5d4ecaf9040a2c84fa374be3fb6b9259"
+    },
+    "libnativehelper/JniInvocation.c": {
+      "commit": "2d584ec2da2c5271ed1576593c6590d652806f0d",
+      "url": "https://android.googlesource.com/platform/libnativehelper/+/2d584ec2da2c5271ed1576593c6590d652806f0d/JniInvocation.c",
+      "local_cache": "/home/tv/.cache/archtv/aosp16-qpr2/source-check/libnativehelper__JniInvocation.c",
+      "sha256": "91ad6561df481bf063fcbadd5960149d3c36b62f3d8b3ed670db165ffc94e56a"
+    }
+  },
+  "findings": [
+    "Original nativehelper defaults to libart.so and returns false on dlopen failure; original dalvikvm reports invocation failure before JNI_CreateJavaVM. Missing StatsD libraries observed statically; adding full same-build module changes art-help exit1 to0. No fake JNI implementation added.",
+    "dalvikvm -help is handled by runtime option processing; success does not demonstrate completed VM initialization or DEX execution.",
+    "Bionic run-on-host source builds and exposes original native target libs; not used as installer: its host /system mutation avoided by readonly isolated namespace.",
+    "SurfaceFlinger build definitions depend on graphics composer3/HIDL, Binder, EGL/GLES, RenderEngine, buffers and sync; build declarations only, not a complete runtime closure or Wayland bridge."
+  ],
+  "scope": "Exact pinned source study; binary equivalence with published GSI not fully proven"
+}

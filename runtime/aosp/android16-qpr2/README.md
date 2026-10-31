@@ -29,6 +29,9 @@ verificar primero su manifiesto/identidad y registrar su SHA-256, no actualizar
 el tag por su número ni prometer seguridad vigente por reproducibilidad.
 
 Los tests de reproducción, inputs rechazados y objetos principales contrastados
-se guardan en reports/android16-source-lock/. La selección de artefactos binarios,
-correspondencia de build, seguridad, licencias y ejecución siguen pendientes;
+se guardan en reports/android16-source-lock/. La GSI oficial x86_64 de build coincidente ya está verificada y sus componentes
+originales se han extraído sin montar ni arrancar la imagen. La trazabilidad
+binaria está en `release.json` y reports/android16-native-base/. `linker --help`,
+`--list dalvikvm64` y `dalvikvm64 -help` pasan en un harness aislado con rutas
+aplanadas; configuración original, DEX, APK, seguridad y licencias siguen pendientes;
 ver [contrato](../../../docs/CONTRATO-APK.md) y [estado](../../../docs/ESTADO.md).

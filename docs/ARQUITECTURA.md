@@ -40,6 +40,26 @@ arquitectura de ejecución. Android-x86 es otro proyecto independiente. Extraer
 artefactos no es arrancarlos. La primera ISA es x86_64; interfaces portables a
 ARM64. Compatibilidad 32/64 bits y traducción ARM→x86_64 se prueban aparte.
 
+## Primer artefacto nativo verificado · alcance parcial
+
+La [GSI oficial x86_64](https://developer.android.com/topic/generic-system-image/releases)
+`BP4A.251205.006/14401865` coincide con build/API36.1 y SHA-256 publicado.
+Se extraen componentes originales sin montar/arrancar la imagen; GSI es una
+entrada de investigación, no una distribución adoptada ni autorización de
+redistribución. Correspondencia completa de compilador/configuración/fuentes,
+licencias por componente y mantenimiento siguen pendientes.
+
+El [ensayo aislado](../reports/android16-native-base/validation.json) ejecuta
+linker help/list y ayuda ART. Reutiliza enteros Runtime, ART, I18N, Conscrypt y
+StatsD del mismo archivo. ART requiere bibliotecas del APEX StatsD: la selección
+inicial de cuatro módulos falló en JNI invocation; incluir el quinto permite ayuda.
+No se ejecutó el servicio statsd. El cierre estático de libart encuentra 30 SONAMEs
+con candidatos, pero no acredita servicios, namespaces ni carga dinámica general.
+`LD_LIBRARY_PATH` aplanado es un diagnóstico explícito, no una frontera aceptada.
+La configuración generada del enlazador falta y ART lo advierte; conservarla y
+validarla junto con propiedades/APEX/classpaths es la siguiente puerta. Ningún
+DEX/APK ni integración gráfica se ha demostrado en este hito.
+
 ## Subsistemas y fronteras elegidas
 
 ```mermaid

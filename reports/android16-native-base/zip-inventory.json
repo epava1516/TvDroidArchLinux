@@ -1,0 +1,20 @@
+[
+  {
+    "name": "system.img",
+    "bytes": 2050646016,
+    "compressed_bytes": 956029984,
+    "crc32": "0x33eb3a59"
+  },
+  {
+    "name": "vbmeta.img",
+    "bytes": 4096,
+    "compressed_bytes": 2274,
+    "crc32": "0xdc55a13f"
+  },
+  {
+    "name": "build.prop",
+    "bytes": 5006,
+    "compressed_bytes": 1691,
+    "crc32": "0x9cf5bb6e"
+  }
+]

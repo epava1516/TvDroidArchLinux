@@ -1,0 +1,14 @@
+[
+  {
+    "case": "wrong-hash",
+    "returncode": 1,
+    "output_exists": false,
+    "stderr": "Archive SHA256 mismatch; nothing extracted\n"
+  },
+  {
+    "case": "wrong-build",
+    "returncode": 1,
+    "output_exists": false,
+    "stderr": "Internal build ID mismatch; nothing extracted\n"
+  }
+]

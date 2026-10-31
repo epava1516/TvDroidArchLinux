@@ -1,0 +1,284 @@
+{
+  "evidence_id": "ev_c290b78351804c67bdeb536985180bc96ffda87090616a400a227130f4643796",
+  "subject": {
+    "name": "libart.so",
+    "digest": {
+      "sha256": "6c50a967dafe41f9b035ebd2f1da8e10eba0bda42e7236808a69d9672edf68dd"
+    },
+    "local_path": "/home/tv/repositorio-principal/dist/aosp16/native-inputs-2/apex/com.android.art/lib64/libart.so",
+    "format": "elf",
+    "architecture": "x86_64"
+  },
+  "provider": {
+    "id": "rea-elf-notes",
+    "name": "REA ELF note parser",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.analysis",
+  "operation": "inspect_elf_notes",
+  "parameters": {
+    "path": "/home/tv/repositorio-principal/dist/aosp16/native-inputs-2/apex/com.android.art/lib64/libart.so",
+    "max_file_bytes": 67108864,
+    "max_entries": 32
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "artifact": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/native-inputs-2/apex/com.android.art/lib64/libart.so",
+      "sha256": "6c50a967dafe41f9b035ebd2f1da8e10eba0bda42e7236808a69d9672edf68dd",
+      "bytes": 14879016
+    },
+    "format": "elf64",
+    "byte_order": "little",
+    "machine": 62,
+    "type": 3,
+    "type_name": "shared",
+    "tables": [
+      {
+        "kind": "program",
+        "index": 10,
+        "name": null,
+        "location": {
+          "offset": 680,
+          "bytes": 80
+        },
+        "alignment": 4
+      },
+      {
+        "kind": "section",
+        "index": 1,
+        "name": ".note.android.ident",
+        "location": {
+          "offset": 680,
+          "bytes": 24
+        },
+        "alignment": 4
+      },
+      {
+        "kind": "section",
+        "index": 2,
+        "name": ".note.android.pad_segment",
+        "location": {
+          "offset": 704,
+          "bytes": 24
+        },
+        "alignment": 4
+      },
+      {
+        "kind": "section",
+        "index": 3,
+        "name": ".note.gnu.build-id",
+        "location": {
+          "offset": 728,
+          "bytes": 32
+        },
+        "alignment": 4
+      }
+    ],
+    "entries": [
+      {
+        "index": 0,
+        "table_kind": "program",
+        "table_index": 10,
+        "location": {
+          "offset": 680,
+          "bytes": 24
+        },
+        "namesz": 8,
+        "descsz": 4,
+        "type": 1,
+        "type_name": "unknown",
+        "owner": "Android",
+        "owner_bytes_hex": "416e64726f696400",
+        "descriptor": {
+          "location": {
+            "offset": 700,
+            "bytes": 4
+          },
+          "bytes": 4,
+          "sha256": "de6d696c194fb883fd153e435f68d0283ebcf1a28c46cba524df6a8c0807084a",
+          "hex": "24000000"
+        },
+        "gnu": null
+      },
+      {
+        "index": 1,
+        "table_kind": "program",
+        "table_index": 10,
+        "location": {
+          "offset": 704,
+          "bytes": 24
+        },
+        "namesz": 8,
+        "descsz": 4,
+        "type": 5,
+        "type_name": "unknown",
+        "owner": "Android",
+        "owner_bytes_hex": "416e64726f696400",
+        "descriptor": {
+          "location": {
+            "offset": 724,
+            "bytes": 4
+          },
+          "bytes": 4,
+          "sha256": "67abdd721024f0ff4e0b3f4c2fc13bc5bad42d0b7851d456d88d203d15aaa450",
+          "hex": "01000000"
+        },
+        "gnu": null
+      },
+      {
+        "index": 2,
+        "table_kind": "program",
+        "table_index": 10,
+        "location": {
+          "offset": 728,
+          "bytes": 32
+        },
+        "namesz": 4,
+        "descsz": 16,
+        "type": 3,
+        "type_name": "gnu_build_id",
+        "owner": "GNU",
+        "owner_bytes_hex": "474e5500",
+        "descriptor": {
+          "location": {
+            "offset": 744,
+            "bytes": 16
+          },
+          "bytes": 16,
+          "sha256": "595719929ca2d1a664bea7df082a1e28f659bb790e7a7fb89a547095193216e1",
+          "hex": "93ef28a2af01633f9b9b60fbefa51f87"
+        },
+        "gnu": {
+          "build_id_hex": "93ef28a2af01633f9b9b60fbefa51f87",
+          "abi_tag": null,
+          "gold_version": null
+        }
+      },
+      {
+        "index": 3,
+        "table_kind": "section",
+        "table_index": 1,
+        "location": {
+          "offset": 680,
+          "bytes": 24
+        },
+        "namesz": 8,
+        "descsz": 4,
+        "type": 1,
+        "type_name": "unknown",
+        "owner": "Android",
+        "owner_bytes_hex": "416e64726f696400",
+        "descriptor": {
+          "location": {
+            "offset": 700,
+            "bytes": 4
+          },
+          "bytes": 4,
+          "sha256": "de6d696c194fb883fd153e435f68d0283ebcf1a28c46cba524df6a8c0807084a",
+          "hex": "24000000"
+        },
+        "gnu": null
+      },
+      {
+        "index": 4,
+        "table_kind": "section",
+        "table_index": 2,
+        "location": {
+          "offset": 704,
+          "bytes": 24
+        },
+        "namesz": 8,
+        "descsz": 4,
+        "type": 5,
+        "type_name": "unknown",
+        "owner": "Android",
+        "owner_bytes_hex": "416e64726f696400",
+        "descriptor": {
+          "location": {
+            "offset": 724,
+            "bytes": 4
+          },
+          "bytes": 4,
+          "sha256": "67abdd721024f0ff4e0b3f4c2fc13bc5bad42d0b7851d456d88d203d15aaa450",
+          "hex": "01000000"
+        },
+        "gnu": null
+      },
+      {
+        "index": 5,
+        "table_kind": "section",
+        "table_index": 3,
+        "location": {
+          "offset": 728,
+          "bytes": 32
+        },
+        "namesz": 4,
+        "descsz": 16,
+        "type": 3,
+        "type_name": "gnu_build_id",
+        "owner": "GNU",
+        "owner_bytes_hex": "474e5500",
+        "descriptor": {
+          "location": {
+            "offset": 744,
+            "bytes": 16
+          },
+          "bytes": 16,
+          "sha256": "595719929ca2d1a664bea7df082a1e28f659bb790e7a7fb89a547095193216e1",
+          "hex": "93ef28a2af01633f9b9b60fbefa51f87"
+        },
+        "gnu": {
+          "build_id_hex": "93ef28a2af01633f9b9b60fbefa51f87",
+          "abi_tag": null,
+          "gold_version": null
+        }
+      }
+    ],
+    "coverage": {
+      "status": "complete",
+      "examined_tables": 4,
+      "examined_entries": 6
+    },
+    "limitations": [
+      "This workflow does not execute the image, resolve runtime notes, or verify GNU build-id uniqueness against package catalogs.",
+      "PT_NOTE and SHT_NOTE are examined independently; the same file range may appear twice when both tables declare it."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "This workflow does not execute the image, resolve runtime notes, or verify GNU build-id uniqueness against package catalogs.",
+    "PT_NOTE and SHT_NOTE are examined independently; the same file range may appear twice when both tables declare it."
+  ],
+  "relationship_coverage": null,
+  "locations": [
+    {
+      "kind": "artifact-path",
+      "path": "/home/tv/repositorio-principal/dist/aosp16/native-inputs-2/apex/com.android.art/lib64/libart.so"
+    },
+    {
+      "kind": "file-offset-range",
+      "start": 680,
+      "end": 760
+    },
+    {
+      "kind": "file-offset-range",
+      "start": 680,
+      "end": 704
+    },
+    {
+      "kind": "file-offset-range",
+      "start": 704,
+      "end": 728
+    },
+    {
+      "kind": "file-offset-range",
+      "start": 728,
+      "end": 760
+    }
+  ],
+  "evidence_links": []
+}

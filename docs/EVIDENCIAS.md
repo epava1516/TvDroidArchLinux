@@ -1,12 +1,26 @@
 # Índice de evidencias
 
+## Primeros componentes nativos A16 · ejecución parcial
+
+[Procedencia GSI](../reports/android16-native-base/gsi-provenance.json),
+[validación](../reports/android16-native-base/validation.json),
+[fuentes contrastadas](../reports/android16-native-base/source-study.json),
+[REA linker](../reports/android16-native-base/rea-linker-notes.json),
+[REA ART](../reports/android16-native-base/rea-art-notes.json) y
+[checkpoint actual](../reports/android16-native-base/checkpoint.json).
+Archivo oficial/build/SDK36.1 y SHA coinciden. Linker help/list y ayuda ART pasan
+tras añadir el APEX StatsD original entero; las primeras pruebas fallidas se
+conservan. REA identifica ELF estáticamente; no observó ejecución. Los logs del
+harness acreditan sólo esos comandos, con rutas aplanadas y configuración
+original aún ausente. No hay DEX, APK completa, SF, CTS ni validación de seguridad.
+
 ## Fuente completa fijada · A16-QPR2-1
 
 [Registro](../runtime/aosp/android16-qpr2/release.json),
 [lock](../runtime/aosp/android16-qpr2/manifest.lock.xml),
 [refs/procedencia](../runtime/aosp/android16-qpr2/manifest.lock.json),
 [validación](../reports/android16-source-lock/validation.json) y
-[checkpoint actual](../reports/android16-source-lock/checkpoint.json).
+[checkpoint del hito de fuentes](../reports/android16-source-lock/checkpoint.json).
 1.013 proyectos con commits exactos; XML repetido offline idéntico, input/caché
 inválidos no aprueban lock. Diez objetos commit contrastados; build ID, main SF
 y targets TV leídos a esas revisiones. No hay fuente completa sincronizada,

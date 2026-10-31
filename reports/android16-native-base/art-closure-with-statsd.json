@@ -1,0 +1,675 @@
+{
+  "libraries": {
+    "libart.so": [
+      {
+        "path": "/apex/com.android.art/lib/libart.so",
+        "needed": [
+          "libartpalette.so",
+          "libbase.so",
+          "liblog.so",
+          "liblz4.so",
+          "liblzma.so",
+          "libnativebridge.so",
+          "libnativeloader.so",
+          "libsigchain.so",
+          "libunwindstack.so",
+          "libartbase.so",
+          "libdexfile.so",
+          "libprofile.so",
+          "libdl_android.so",
+          "libstatspull.so",
+          "libstatssocket.so",
+          "libz.so",
+          "heapprofd_client_api.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.art/lib64/libart.so",
+        "needed": [
+          "libartpalette.so",
+          "libbase.so",
+          "liblog.so",
+          "liblz4.so",
+          "liblzma.so",
+          "libnativebridge.so",
+          "libnativeloader.so",
+          "libsigchain.so",
+          "libunwindstack.so",
+          "libartbase.so",
+          "libdexfile.so",
+          "libprofile.so",
+          "libdl_android.so",
+          "libstatspull.so",
+          "libstatssocket.so",
+          "libz.so",
+          "heapprofd_client_api.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      }
+    ],
+    "libartpalette.so": [
+      {
+        "path": "/apex/com.android.art/lib/libartpalette.so",
+        "needed": [
+          "liblog.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.art/lib64/libartpalette.so",
+        "needed": [
+          "liblog.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      }
+    ],
+    "libbase.so": [
+      {
+        "path": "/system/lib64/libbase.so",
+        "needed": [
+          "liblog.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.art/lib/libbase.so",
+        "needed": [
+          "liblog.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.art/lib64/libbase.so",
+        "needed": [
+          "liblog.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      }
+    ],
+    "liblog.so": [
+      {
+        "path": "/system/lib64/liblog.so",
+        "needed": [
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      }
+    ],
+    "liblz4.so": [
+      {
+        "path": "/system/lib64/liblz4.so",
+        "needed": [
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.art/lib/liblz4.so",
+        "needed": [
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.art/lib64/liblz4.so",
+        "needed": [
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      }
+    ],
+    "liblzma.so": [
+      {
+        "path": "/system/lib64/liblzma.so",
+        "needed": [
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.art/lib/liblzma.so",
+        "needed": [
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.art/lib64/liblzma.so",
+        "needed": [
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      }
+    ],
+    "libnativebridge.so": [
+      {
+        "path": "/apex/com.android.art/lib/libnativebridge.so",
+        "needed": [
+          "liblog.so",
+          "libdl_android.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.art/lib64/libnativebridge.so",
+        "needed": [
+          "liblog.so",
+          "libdl_android.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      }
+    ],
+    "libnativeloader.so": [
+      {
+        "path": "/apex/com.android.art/lib/libnativeloader.so",
+        "needed": [
+          "libnativebridge.so",
+          "libbase.so",
+          "liblog.so",
+          "libdl_android.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.art/lib64/libnativeloader.so",
+        "needed": [
+          "libnativebridge.so",
+          "libbase.so",
+          "liblog.so",
+          "libdl_android.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      }
+    ],
+    "libsigchain.so": [
+      {
+        "path": "/apex/com.android.art/lib/libsigchain.so",
+        "needed": [
+          "libunwindstack.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.art/lib64/libsigchain.so",
+        "needed": [
+          "libunwindstack.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      }
+    ],
+    "libunwindstack.so": [
+      {
+        "path": "/system/lib64/libunwindstack.so",
+        "needed": [
+          "libbase.so",
+          "liblog.so",
+          "liblzma.so",
+          "libz.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.art/lib/libunwindstack.so",
+        "needed": [
+          "libbase.so",
+          "liblog.so",
+          "liblzma.so",
+          "libz.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.art/lib64/libunwindstack.so",
+        "needed": [
+          "libbase.so",
+          "liblog.so",
+          "liblzma.so",
+          "libz.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      }
+    ],
+    "libartbase.so": [
+      {
+        "path": "/apex/com.android.art/lib/libartbase.so",
+        "needed": [
+          "libz.so",
+          "liblog.so",
+          "libartpalette.so",
+          "libbase.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.art/lib64/libartbase.so",
+        "needed": [
+          "libz.so",
+          "liblog.so",
+          "libartpalette.so",
+          "libbase.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      }
+    ],
+    "libdexfile.so": [
+      {
+        "path": "/apex/com.android.art/lib/libdexfile.so",
+        "needed": [
+          "libz.so",
+          "libartpalette.so",
+          "liblog.so",
+          "libbase.so",
+          "libartbase.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.art/lib64/libdexfile.so",
+        "needed": [
+          "libz.so",
+          "libartpalette.so",
+          "liblog.so",
+          "libbase.so",
+          "libartbase.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      }
+    ],
+    "libprofile.so": [
+      {
+        "path": "/apex/com.android.art/lib/libprofile.so",
+        "needed": [
+          "libartpalette.so",
+          "libbase.so",
+          "libz.so",
+          "libartbase.so",
+          "libdexfile.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.art/lib64/libprofile.so",
+        "needed": [
+          "libartpalette.so",
+          "libbase.so",
+          "libz.so",
+          "libartbase.so",
+          "libdexfile.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      }
+    ],
+    "libdl_android.so": [
+      {
+        "path": "/system/lib64/bootstrap/libdl_android.so",
+        "needed": [
+          "ld-android.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.runtime/lib64/bionic/libdl_android.so",
+        "needed": [
+          "ld-android.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.runtime/lib/bionic/libdl_android.so",
+        "needed": [
+          "ld-android.so"
+        ]
+      }
+    ],
+    "libstatspull.so": [
+      {
+        "path": "/apex/com.android.os.statsd/lib/libstatspull.so",
+        "needed": [
+          "libbinder_ndk.so",
+          "liblog.so",
+          "libstatssocket.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.os.statsd/lib64/libstatspull.so",
+        "needed": [
+          "libbinder_ndk.so",
+          "liblog.so",
+          "libstatssocket.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      }
+    ],
+    "libstatssocket.so": [
+      {
+        "path": "/apex/com.android.os.statsd/lib/libstatssocket.so",
+        "needed": [
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.os.statsd/lib64/libstatssocket.so",
+        "needed": [
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      }
+    ],
+    "libz.so": [
+      {
+        "path": "/system/lib64/libz.so",
+        "needed": [
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      }
+    ],
+    "heapprofd_client_api.so": [
+      {
+        "path": "/system/lib64/heapprofd_client_api.so",
+        "needed": [
+          "libbase.so",
+          "libprocinfo.so",
+          "libunwindstack.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      }
+    ],
+    "libc++.so": [
+      {
+        "path": "/system/lib64/libc++.so",
+        "needed": [
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.art/lib/libc++.so",
+        "needed": [
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.art/lib64/libc++.so",
+        "needed": [
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.conscrypt/lib/libc++.so",
+        "needed": [
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.conscrypt/lib64/libc++.so",
+        "needed": [
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      }
+    ],
+    "libc.so": [
+      {
+        "path": "/system/lib64/bootstrap/libc.so",
+        "needed": [
+          "ld-android.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.runtime/lib64/bionic/libc.so",
+        "needed": [
+          "ld-android.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.runtime/lib/bionic/libc.so",
+        "needed": [
+          "ld-android.so",
+          "libdl.so"
+        ]
+      }
+    ],
+    "libm.so": [
+      {
+        "path": "/system/lib64/bootstrap/libm.so",
+        "needed": [
+          "libc.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.runtime/lib64/bionic/libm.so",
+        "needed": [
+          "libc.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.runtime/lib/bionic/libm.so",
+        "needed": [
+          "libc.so"
+        ]
+      }
+    ],
+    "libdl.so": [
+      {
+        "path": "/system/lib64/bootstrap/libdl.so",
+        "needed": [
+          "ld-android.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.runtime/lib64/bionic/libdl.so",
+        "needed": [
+          "ld-android.so"
+        ]
+      },
+      {
+        "path": "/apex/com.android.runtime/lib/bionic/libdl.so",
+        "needed": [
+          "ld-android.so"
+        ]
+      }
+    ],
+    "ld-android.so": [
+      {
+        "path": "/system/lib64/ld-android.so",
+        "needed": []
+      }
+    ],
+    "libbinder_ndk.so": [
+      {
+        "path": "/system/lib64/libbinder_ndk.so",
+        "needed": [
+          "libbinder.so",
+          "liblog.so",
+          "libutils.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      }
+    ],
+    "libprocinfo.so": [
+      {
+        "path": "/system/lib64/libprocinfo.so",
+        "needed": [
+          "libbase.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      }
+    ],
+    "libbinder.so": [
+      {
+        "path": "/system/lib64/libbinder.so",
+        "needed": [
+          "libcutils.so",
+          "liblog.so",
+          "libutils.so",
+          "libapexsupport.so",
+          "libvndksupport.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      }
+    ],
+    "libutils.so": [
+      {
+        "path": "/system/lib64/libutils.so",
+        "needed": [
+          "libcutils.so",
+          "liblog.so",
+          "libvndksupport.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      }
+    ],
+    "libcutils.so": [
+      {
+        "path": "/system/lib64/libcutils.so",
+        "needed": [
+          "liblog.so",
+          "libbase.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      }
+    ],
+    "libapexsupport.so": [
+      {
+        "path": "/system/lib64/libapexsupport.so",
+        "needed": [
+          "libdl_android.so",
+          "liblog.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      }
+    ],
+    "libvndksupport.so": [
+      {
+        "path": "/system/lib64/libvndksupport.so",
+        "needed": [
+          "libdl_android.so",
+          "liblog.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      }
+    ]
+  },
+  "missing": [],
+  "scope": "Static DT_NEEDED candidates from same build, duplicates retained; not namespace resolution, dynamic-service closure or execution"
+}

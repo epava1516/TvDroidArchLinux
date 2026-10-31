@@ -18,9 +18,22 @@
   "locked_manifest_sha256": "0e7b599cce00d491bf56b63a62c7d0f5b5944067d372210e367ee123db1ef77e",
   "all_project_provenance": "manifest.lock.json",
   "project_count": 1013,
-  "compiled_artifacts": null,
-  "compiled_artifact_status": "not_selected_not_executed",
+  "compiled_artifacts": {
+    "type": "official_AOSP_x86_64_GSI_archive_for_component_research",
+    "build_id": "BP4A.251205.006",
+    "incremental": "14401865",
+    "fingerprint": "Android/aosp_x86_64/generic_x86_64:16/BP4A.251205.006/14401865:user/release-keys",
+    "sdk_full": "36.1",
+    "url": "https://dl.google.com/developers/android/baklava/images/gsi/aosp_x86_64-exp-BP4A.251205.006-14401865-aa5d832e.zip",
+    "published_sha256": "aa5d832edfb7e4c05138b459b21a219039048f65bc103ac38e25e410fa561512",
+    "bytes": 956034415,
+    "system_image_sha256": "c4989f703ac23bbd3bb3da2e33a3633d373bf763afcfcbed3cccc73d5049d656",
+    "evidence": "../../../reports/android16-native-base/gsi-provenance.json",
+    "source_binary_equivalence": "release/build identity matched; full compiler/config/per-project binary-source equivalence unproven",
+    "distribution": "Research input only. Component licenses/modifications/security and reproducible production build remain acceptance gates; no blanket GSI redistribution approval."
+  },
+  "compiled_artifact_status": "archive_verified_original_components_extracted_linker_and_art_help_executed_not_booted",
   "security_acceptance": "not_current_by_tag_alone; identify corrections and test before distribution",
   "tag_signature_verification": "not_performed",
-  "limits": "Exact source refs only. No full source sync/build, binary equivalence, Linux/kernel closure, A16 runtime/app functionality or CTS certification demonstrated."
+  "limits": "Exact source refs plus matching published GSI identity. Isolated linker/help passes using flattened LD_LIBRARY_PATH; ART runtime/configuration/DEX and APK workflows not accepted. No CTS, current-security or production distribution acceptance."
 }

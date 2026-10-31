@@ -1,0 +1,4242 @@
+{
+  "image_sha256": "c4989f703ac23bbd3bb3da2e33a3633d373bf763afcfcbed3cccc73d5049d656",
+  "commands": [
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.runtime.apex /home/tv/repositorio-principal/dist/aosp16/native-inputs-2/archives/com.android.runtime.apex",
+      "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "rdump / /home/tv/repositorio-principal/dist/aosp16/native-inputs-2/apex/com.android.runtime",
+      "/home/tv/repositorio-principal/dist/aosp16/native-inputs-2/archives/com.android.runtime.payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.art.capex /home/tv/repositorio-principal/dist/aosp16/native-inputs-2/archives/com.android.art.capex",
+      "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "rdump / /home/tv/repositorio-principal/dist/aosp16/native-inputs-2/apex/com.android.art",
+      "/home/tv/repositorio-principal/dist/aosp16/native-inputs-2/archives/com.android.art.payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.i18n.apex /home/tv/repositorio-principal/dist/aosp16/native-inputs-2/archives/com.android.i18n.apex",
+      "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "rdump / /home/tv/repositorio-principal/dist/aosp16/native-inputs-2/apex/com.android.i18n",
+      "/home/tv/repositorio-principal/dist/aosp16/native-inputs-2/archives/com.android.i18n.payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/apex/com.android.conscrypt.capex /home/tv/repositorio-principal/dist/aosp16/native-inputs-2/archives/com.android.conscrypt.capex",
+      "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "rdump / /home/tv/repositorio-principal/dist/aosp16/native-inputs-2/apex/com.android.conscrypt",
+      "/home/tv/repositorio-principal/dist/aosp16/native-inputs-2/archives/com.android.conscrypt.payload.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "rdump /system/lib64 /home/tv/repositorio-principal/dist/aosp16/native-inputs-2/system",
+      "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "rdump /system/etc/classpaths /home/tv/repositorio-principal/dist/aosp16/native-inputs-2/system/etc",
+      "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "rdump /system/etc/selinux /home/tv/repositorio-principal/dist/aosp16/native-inputs-2/system/etc",
+      "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "stat /system/build.prop",
+      "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/build.prop /home/tv/repositorio-principal/dist/aosp16/native-inputs-2/system/build.prop",
+      "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "stat /system/etc/public.libraries.txt",
+      "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/etc/public.libraries.txt /home/tv/repositorio-principal/dist/aosp16/native-inputs-2/system/etc/public.libraries.txt",
+      "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "stat /system/etc/linker.config.pb",
+      "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/etc/linker.config.pb /home/tv/repositorio-principal/dist/aosp16/native-inputs-2/system/etc/linker.config.pb",
+      "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "stat /system/bin/linker64",
+      "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "stat /system/bin/dalvikvm64",
+      "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "stat /system/bin/surfaceflinger",
+      "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /system/bin/surfaceflinger /home/tv/repositorio-principal/dist/aosp16/native-inputs-2/system/bin/surfaceflinger",
+      "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "stat /init.environ.rc",
+      "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img"
+    ],
+    [
+      "debugfs",
+      "-R",
+      "dump /init.environ.rc /home/tv/repositorio-principal/dist/aosp16/native-inputs-2/init.environ.rc",
+      "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img"
+    ]
+  ],
+  "files": {
+    "symlinks.txt": {
+      "bytes": 683,
+      "sha256": "ce18c6e9942d563ce43ff4bc78f8af0127baa59a565fb5de2d8485b5735a3ccf"
+    },
+    "init.environ.rc": {
+      "bytes": 621,
+      "sha256": "460eecf019489a02ad7be82a9cc2234784f561b644f8f2bf1741e43514593060"
+    },
+    "debugfs.log": {
+      "bytes": 122571,
+      "sha256": "9969071173ae1bf673ce9514896283b4f6be1ac6f62fcff79cc66d2b2881b0d2"
+    },
+    "archives/com.android.runtime.apex": {
+      "bytes": 11014144,
+      "sha256": "a0f5a84ee0ae57b88f5b4509ac72054f1f96b78bd51509e4c014edaef4b2698c"
+    },
+    "archives/com.android.runtime.payload.img": {
+      "bytes": 10895360,
+      "sha256": "dc39c553719b3dd149858c65b8089d87139a0cc644ffb76b43960cda87b7ed2c"
+    },
+    "archives/com.android.art.payload.img": {
+      "bytes": 48160768,
+      "sha256": "5242109556d44a2b7f6967cdefe7c2688d0e9025002c362e86245b76d3e37ead"
+    },
+    "archives/com.android.conscrypt.original.apex": {
+      "bytes": 9326592,
+      "sha256": "c33fc4060d8e8fe59cd57c4a4cfcbbf7a930383bad72af7358cb05dece0a8d9d"
+    },
+    "archives/com.android.i18n.payload.img": {
+      "bytes": 42852352,
+      "sha256": "656f3d386f0b7f4694d8b2e1e6b9a9884131426241d0becb4573191342de717c"
+    },
+    "archives/com.android.conscrypt.capex": {
+      "bytes": 3850240,
+      "sha256": "d5ccbd78a6fb29bb9fded6ef52373c4442873618e487480d0159b35b2e025148"
+    },
+    "archives/com.android.conscrypt.payload.img": {
+      "bytes": 9195520,
+      "sha256": "77a4b6c96ab5a41d37cd8af7002b474e544296d45df1958266e07cf883788337"
+    },
+    "archives/com.android.i18n.apex": {
+      "bytes": 42987520,
+      "sha256": "57ca73c55258b215a2e7b8547f226347b10d3c302c7b86f94f5c1c77e16c4153"
+    },
+    "archives/com.android.art.capex": {
+      "bytes": 19996672,
+      "sha256": "3c3511e3dd027092e7181962e04306a6750d60a5f3f60b193e796c1afe7c57d0"
+    },
+    "archives/com.android.art.original.apex": {
+      "bytes": 48349184,
+      "sha256": "40cb50a4b426fa49d1475f246af832a4f5c127a4295e9025cc9e0c4d32c8dad2"
+    },
+    "system/build.prop": {
+      "bytes": 5006,
+      "sha256": "8190df2d4debcb3f2271543435ec49b9951acd59c5ba67dc7556f76fd30be1a0"
+    },
+    "system/lib64/android.hidl.token@1.0.so": {
+      "bytes": 118744,
+      "sha256": "207eae7b20a4c3008bd3b018e3aac38e639f594733e745e571efe9361ec20a4e"
+    },
+    "system/lib64/android.hardware.security.sharedsecret-V1-ndk.so": {
+      "bytes": 85592,
+      "sha256": "c8c9e23ee1985518b9fc14a64c43abca350da98d5e611d28b1f70e1ad9111af8"
+    },
+    "system/lib64/libaudiohal@6.0.so": {
+      "bytes": 258784,
+      "sha256": "9a0e945f9c78e4081afbc4d90ba3a755b1d907c328d5eecd71330fa4e779805b"
+    },
+    "system/lib64/liblp.so": {
+      "bytes": 217344,
+      "sha256": "c4f223b13ed885f30b9ac7fafa3eca19329d163598dc413f719a079a71f1b030"
+    },
+    "system/lib64/libvintf.so": {
+      "bytes": 720928,
+      "sha256": "777f3bfe3bacce418db4e0201e6bc54a0538c4e5fbeb12047d020144c1b73421"
+    },
+    "system/lib64/libclcore.bc": {
+      "bytes": 328396,
+      "sha256": "e66a979924bde5e54babfb4948381dc4efef5ccc35d66e334afe37647278a931"
+    },
+    "system/lib64/libbytes.dylib.so": {
+      "bytes": 54952,
+      "sha256": "8286af82df37cacd812ea95cc2d823674ab7a6035bf74cc0970082df66209529"
+    },
+    "system/lib64/libnetd_client.so": {
+      "bytes": 52296,
+      "sha256": "4dca39ac1040e39d0f71f109e9ae44ed9d8881e0b8979a9e3654bfde50624bf1"
+    },
+    "system/lib64/libcombine.dylib.so": {
+      "bytes": 19400,
+      "sha256": "c46dd1352492ce13f55c4f0a6a8d32c3f67f010492d88046bd0a5ef44d70f935"
+    },
+    "system/lib64/android.hardware.media.c2@1.1.so": {
+      "bytes": 185960,
+      "sha256": "4531c314aeeea9d6ab8654b0f72f4b075a178f08fa316ec4aa93df8d0d58f2c6"
+    },
+    "system/lib64/android.hardware.audio.common-util.so": {
+      "bytes": 51736,
+      "sha256": "81ec469fbd2a7822ddb97d71b3de0090d0b9364a0f88c0680d17f006f895d817"
+    },
+    "system/lib64/android.hardware.keymaster@3.0.so": {
+      "bytes": 187672,
+      "sha256": "f46cb2a526ea04572774f1d529247f423a6daec6bda90c6015f0f82e5c0b0103"
+    },
+    "system/lib64/android.hardware.common.fmq-V1-cpp.so": {
+      "bytes": 35560,
+      "sha256": "4eb818a547f77f1b526414657b48948e2c858d20b05d97df1d18c7e4f15deed4"
+    },
+    "system/lib64/libhardware_legacy.so": {
+      "bytes": 52136,
+      "sha256": "4eed1aadd02d8566fd831d12cba3e93abfffc07d06b9b2bd1b75d398e31593a9"
+    },
+    "system/lib64/android.hardware.security.rkp-V3-ndk.so": {
+      "bytes": 85840,
+      "sha256": "81f5bc670ba12d0fa7eeab0d00e6a9ac77761124d1d3f13d1b65ff1c317271b8"
+    },
+    "system/lib64/libstdc++.so": {
+      "bytes": 35560,
+      "sha256": "4bf7d2f813deeaad79ef8fd15874918f6831d88682b6c88b97fb9e68b670d8fa"
+    },
+    "system/lib64/libwebviewchromium_plat_support.so": {
+      "bytes": 52152,
+      "sha256": "ec40d47eb542a99867407f7dc6630131bf48cedc66944c6f06c4b8ca14371255"
+    },
+    "system/lib64/libstagefright_xmlparser.so": {
+      "bytes": 135920,
+      "sha256": "950fa048a2165054f2a3a86ff3e14e14f557dfba344526569c656460d2069ab0"
+    },
+    "system/lib64/android.os.flags-aconfig-cc.so": {
+      "bytes": 51560,
+      "sha256": "3b5c186a20b8b023d8c4aecf18d8d33b21126f8ceb2fbdb927952941adda47d1"
+    },
+    "system/lib64/libc++.so": {
+      "bytes": 1070120,
+      "sha256": "87df302ebea224686cdc4fb5cfd45a978cc2bd04cb0ef961dd124e128a004d14"
+    },
+    "system/lib64/libparameter.so": {
+      "bytes": 744080,
+      "sha256": "aaf254ed9c377621b4aa9430de3e275bd58932bcabcf374201f88bbc7ccbc276"
+    },
+    "system/lib64/libtombstoned_client.so": {
+      "bytes": 36392,
+      "sha256": "2e86c43ce8c12109e5a06154132c26c43487c8896bd7c88ad67bf527eb46a14b"
+    },
+    "system/lib64/android.system.net.netd-V1-ndk.so": {
+      "bytes": 68760,
+      "sha256": "3bf379fc2153874fe319aba1aa783911699f8f42ca312db1809162785adf9b7d"
+    },
+    "system/lib64/libstagefright_bufferpool@2.0.1.so": {
+      "bytes": 287592,
+      "sha256": "01fdc0c0c6614f5a629711b59421979387b8503c7e6bdc71523618f4d4e7fb18"
+    },
+    "system/lib64/libaudiohal@aidl.so": {
+      "bytes": 1712912,
+      "sha256": "25b7b408457ad68f2648f16203d2d778de96c8b0c3efd7f5cdcc8bf270c6ad48"
+    },
+    "system/lib64/libperfetto.so": {
+      "bytes": 1523912,
+      "sha256": "d9a08b8acbce18fc4ccb6020d7b62bc364827127bca526fa73b7a58d734f1943"
+    },
+    "system/lib64/android.hardware.broadcastradio@1.1.so": {
+      "bytes": 319760,
+      "sha256": "ebea4ceb76984044ad8d2314689c232ceb0a8c8d4682353051e0a858cc56a199"
+    },
+    "system/lib64/libaudiospdif.so": {
+      "bytes": 51880,
+      "sha256": "9034634835da84165d7f239c99507fc23eed589067b49ec35a3c99603bb0a40a"
+    },
+    "system/lib64/libsensor.so": {
+      "bytes": 118624,
+      "sha256": "57fe5fca2dbd1647023da54b66c6750733b1672aa1e24750c7cc670c1a56f2bc"
+    },
+    "system/lib64/mediametricsservice-aidl-cpp.so": {
+      "bytes": 51816,
+      "sha256": "222ba58772842b1271f7d15f3804206fef63622668276192d66b1069c2528577"
+    },
+    "system/lib64/libbpf_minimal.so": {
+      "bytes": 84352,
+      "sha256": "1a7c65ac74f75e8bc50e889eacfa8932661f8d287d2013499e19f10f03497b68"
+    },
+    "system/lib64/libext2_blkid.so": {
+      "bytes": 72408,
+      "sha256": "87e1af030424a47e560b3e04d0bae8d3f4aa2ab4736a26bc649d999693c6c48d"
+    },
+    "system/lib64/libbpf_android_bindgen.dylib.so": {
+      "bytes": 18792,
+      "sha256": "4fb6e08172028ceb2768efe12d7f99a146a3ce49e681aba5558d49ca939a7b1e"
+    },
+    "system/lib64/libdrm.so": {
+      "bytes": 117352,
+      "sha256": "82222613b82586e965bd69457a276f795d8afdf55cc9709f563c435f69f307a9"
+    },
+    "system/lib64/libcutils_bindgen.dylib.so": {
+      "bytes": 18792,
+      "sha256": "f1bd4e271b2505a2834f8e5a7ed2821e2cd8c1c43bd7ddd5cb7acc6954c607ba"
+    },
+    "system/lib64/liblogwrap.so": {
+      "bytes": 51504,
+      "sha256": "bc27ecf042ce411dc64e7664dd3ba26f88b4a326336c2572e21c4e4a10279800"
+    },
+    "system/lib64/libhwbinder.so": {
+      "bytes": 35160,
+      "sha256": "eeae683261b0d80ed568c18c1f4113893a33e4e6c1dd7f1640d162f272bb2187"
+    },
+    "system/lib64/libvsprintf_wrapper.so": {
+      "bytes": 35184,
+      "sha256": "2cfc3f76a81dfd510297087d746ac0121d783639db8a06ad0532b7b88bd5a216"
+    },
+    "system/lib64/ld-android.so": {
+      "bytes": 34080,
+      "sha256": "d9a68e657eda767a73c3418638190856606d3d6a3a65e0029021b5e97d7b2532"
+    },
+    "system/lib64/libshmemutil.so": {
+      "bytes": 35328,
+      "sha256": "9dc721a76cb435563fe6d2f84e0387e672a110a8e5ca216d96402218659cd114"
+    },
+    "system/lib64/media_permission-aidl-cpp.so": {
+      "bytes": 35608,
+      "sha256": "c6f963cd74f05d66c8f3f982fb3600c87de4d3b1f62f4e4f5fa3cd4d1bf1de49"
+    },
+    "system/lib64/libdrmframeworkcommon.so": {
+      "bytes": 118120,
+      "sha256": "a29211d1ac4df7c2a98aba03478853650dcfa6b91939fcd380146961369884d6"
+    },
+    "system/lib64/libcameracompatbilityinfo.so": {
+      "bytes": 35504,
+      "sha256": "026d3b691b02a951d956a5c40e157f95da98eefd4769831bba3f2a522d12a869"
+    },
+    "system/lib64/libinputservice.so": {
+      "bytes": 151768,
+      "sha256": "bcdda7da73513843b06152263c1af92491fe03242d587b0aea665eed4de6f2a3"
+    },
+    "system/lib64/libclcore_g.bc": {
+      "bytes": 1124700,
+      "sha256": "3c6a81d55a685e04e5fe9403f7b2be148266bc01b3a824c4a20da6702702cb9a"
+    },
+    "system/lib64/libstagefright_foundation.so": {
+      "bytes": 252768,
+      "sha256": "0400e58e8452f283cfbd22b1223115534f07cfa2e8319a6851586c2c76b9f75e"
+    },
+    "system/lib64/libaudiopolicyenginedefault.so": {
+      "bytes": 338528,
+      "sha256": "da2e4907c1daa372b417de4b5735defa2c39e46cfccf4e336a62f9757a4c6f7b"
+    },
+    "system/lib64/libprintspooler_jni.so": {
+      "bytes": 35696,
+      "sha256": "941d7621359196b37e6253983bd65daec82564fd7f556b417cad5c2ce650358f"
+    },
+    "system/lib64/libbase.so": {
+      "bytes": 234856,
+      "sha256": "831da8050c1a4702c56d304a6bb8ae9530eb46dd4a0efdec2e905679eb02a69f"
+    },
+    "system/lib64/android.hardware.media.omx@1.0.so": {
+      "bytes": 436016,
+      "sha256": "a69a915487267bc4f64ecb705893c4735a7c4e5e76bfe33b0449d0e28702fd43"
+    },
+    "system/lib64/libcompiler_rt.so": {
+      "bytes": 68440,
+      "sha256": "fbc9ad4b163ed8453c084afc209ef3a7ce6522c081c0c8cfe490ce8d11a839aa"
+    },
+    "system/lib64/libsync.so": {
+      "bytes": 51232,
+      "sha256": "c260512fe6de68b3dfabfed53ac636b479b92f35a14f27affd2e22dadcb6c979"
+    },
+    "system/lib64/android.companion.virtual.virtualdevice_aidl-cpp.so": {
+      "bytes": 51744,
+      "sha256": "f2b610b080ff4f4666322b8c13676ca7183dbe8a84da3f645db114dcdb015f52"
+    },
+    "system/lib64/liblibbpf_rs.dylib.so": {
+      "bytes": 151840,
+      "sha256": "1f9246690c2034b71926ddfe4a0de4ff5acf3b19088f1eb5a50b0a9b0116d702"
+    },
+    "system/lib64/libtracingproxy.so": {
+      "bytes": 51776,
+      "sha256": "a26d97d7e2e3b6b30681f0f345ee74a1c3d242f152e999860343fc8c253f38ff"
+    },
+    "system/lib64/libperfetto_android_internal.so": {
+      "bytes": 52720,
+      "sha256": "dace8f76014cb96bdcbcdb6a24129142550bdd00b12eb5f9f94de9e02882544d"
+    },
+    "system/lib64/libboot_control_client.so": {
+      "bytes": 68752,
+      "sha256": "1ff2ee082cd1ce978e8ee3a9e82d324ba607a761599f3f8493880ea952fb2f2c"
+    },
+    "system/lib64/libf2fs_sparseblock.so": {
+      "bytes": 86784,
+      "sha256": "be057f15a94afdc760208fb002afd5b13c00c25a13c8ac334674d4f4d45a1f40"
+    },
+    "system/lib64/libaudiopermission.so": {
+      "bytes": 153176,
+      "sha256": "72a92e65af1517a0da267e813b5d15f86ced3e698523bddadd2ca830f45fcc4d"
+    },
+    "system/lib64/libperfetto_c.so": {
+      "bytes": 894352,
+      "sha256": "55845fb7966cff0e7c331077928c8f298fe61975fa02e7d558f58f28c55239cf"
+    },
+    "system/lib64/libkernlog.dylib.so": {
+      "bytes": 20184,
+      "sha256": "ad18e3425d6c8595f8521710ed468f54af7beb8a79508ce7703b838e435991c2"
+    },
+    "system/lib64/android.hardware.graphics.composer3-V4-ndk.so": {
+      "bytes": 252368,
+      "sha256": "2c48f03f05f22703b0371012738fde35f8028521ef51cdde550f4390b76b205c"
+    },
+    "system/lib64/android.hardware.radio@1.4.so": {
+      "bytes": 1205984,
+      "sha256": "5b9955243873fc234d7ff5d4aeee57d86574547322706fd0c81489fd0471a639"
+    },
+    "system/lib64/android.hardware.common-V2-cpp.so": {
+      "bytes": 36120,
+      "sha256": "98c96df182520fc453f6140cd8df8ca9c24c1bbcaf02877dd7cb94938df05c9f"
+    },
+    "system/lib64/liblazy_static.dylib.so": {
+      "bytes": 18792,
+      "sha256": "86e4ec4d015ca4012f971a9e78e88a77b60f3655bbb42b86100053aab29a5c3d"
+    },
+    "system/lib64/android.hardware.memtrack@1.0.so": {
+      "bytes": 85912,
+      "sha256": "8e3df0827f313bfd6f39559c2387817ee04f8832e61615aaffd27a27097ec0f5"
+    },
+    "system/lib64/libaconfig_storage_protos.dylib.so": {
+      "bytes": 105048,
+      "sha256": "9c002e20246d4d7c0add9240a12db62ced946d0ca43c04790fc285e669d28ba6"
+    },
+    "system/lib64/libbinderwrapper.so": {
+      "bytes": 51832,
+      "sha256": "51af9044c6eaa62c01b94bbd73c200607e18b5d6aa0469e9911a77c5c81136c3"
+    },
+    "system/lib64/libstagefright_omx.so": {
+      "bytes": 367280,
+      "sha256": "27a394b02390e55d5712adcf7864f60e9da4005cd13d37a57f5e3355da3434f0"
+    },
+    "system/lib64/android.hardware.audio.common@6.0.so": {
+      "bytes": 35496,
+      "sha256": "fae05ab50ffbb788a54c47438e6c597d5ec6c2e1c25624ac1bf7d79c529ad81d"
+    },
+    "system/lib64/android.hardware.biometrics.fingerprint@2.1.so": {
+      "bytes": 185312,
+      "sha256": "6be4b0f4d863720d9a8b81ddfa9ad5edb32963424f9c7055e8e7118c3df10f6e"
+    },
+    "system/lib64/libcodec2_aidl_client.so": {
+      "bytes": 171784,
+      "sha256": "4b1f73d6460ab91228144eeb37c214ce6deeca5af15c339c85561cea824f771c"
+    },
+    "system/lib64/libhidcommand_jni.so": {
+      "bytes": 52144,
+      "sha256": "920f32036d91cfc952ef2176c5e3d1402e11846dc3eb2dbb1d8352e1b311649b"
+    },
+    "system/lib64/device_policy_aconfig_flags_c_lib.so": {
+      "bytes": 51576,
+      "sha256": "e414d33d67b7a93921bc88613e88cd2cb2512946d91c29c88e121c1d684cc22c"
+    },
+    "system/lib64/android.hardware.radio.config@1.0.so": {
+      "bytes": 185560,
+      "sha256": "b8f9ec423c3095cc87ee46ab6faa530dab7094d4662f28ec204b55f608020525"
+    },
+    "system/lib64/libkeymaster_portable.so": {
+      "bytes": 568768,
+      "sha256": "52cad7c069c2267d6fde91d8c0a9ee0327fb3ec05e59361373ed8d29ba6bb90b"
+    },
+    "system/lib64/android.media.audio.common.types-V4-cpp.so": {
+      "bytes": 140864,
+      "sha256": "90032cfa8b007c11be838cdf7ad58c6e6d39976293ba7e77b91b6b04b2029285"
+    },
+    "system/lib64/android.hardware.boot@1.0.so": {
+      "bytes": 118880,
+      "sha256": "b73abbabce85af6f290551b2f8a1caf49ac4f8f93bcf7a29526153bde87ae7f0"
+    },
+    "system/lib64/android.hardware.graphics.bufferqueue@2.0.so": {
+      "bytes": 202952,
+      "sha256": "d5d0dd7eb119f1765e183ec042c695c4759e067b74ea7fe7c08cc462fae1eaea"
+    },
+    "system/lib64/android.hardware.radio.deprecated@1.0.so": {
+      "bytes": 201928,
+      "sha256": "747874cd94d53fa9e8af53460101ce10da93705bec4e19bdeff2a986b14fcc6f"
+    },
+    "system/lib64/libnativebridge_lazy.so": {
+      "bytes": 51424,
+      "sha256": "46dc326d1dab97c97b5838301f22a2df46f0e1b233bc320d3b0bd8b446f85bb5"
+    },
+    "system/lib64/libregex.dylib.so": {
+      "bytes": 71360,
+      "sha256": "737dec541c965641a41958bdb62d0bb7142e2eeaef84f726d2207f765731267a"
+    },
+    "system/lib64/android.hardware.tv.tuner-V3-ndk.so": {
+      "bytes": 407480,
+      "sha256": "13ab5905763c976341b4b7755a7205f08f24eaf20faf8adb046baf09bb6460aa"
+    },
+    "system/lib64/aconfig_mediacodec_flags_c_lib.so": {
+      "bytes": 51704,
+      "sha256": "7719571b529e242a0d140527911270d7af1062e8d46a14aaa101c5006e50ed35"
+    },
+    "system/lib64/libgralloctypes.so": {
+      "bytes": 101472,
+      "sha256": "16dbd975389e3ff6b1ea69bbc9084db655bc6bea9450cd542d3231a751e69fcd"
+    },
+    "system/lib64/libandroid_servers.so": {
+      "bytes": 914720,
+      "sha256": "7fb332e36a0633f3b018b0410bf2efc01ab3e171f0dc4214a6935ad536139f62"
+    },
+    "system/lib64/com.android.server.inputflinger-ndk.so": {
+      "bytes": 101840,
+      "sha256": "01f9c70f914e2d473f61c4fddee5ba540815db1a12b57535993a84dec5b43482"
+    },
+    "system/lib64/libsqlite.so": {
+      "bytes": 1604584,
+      "sha256": "f656dd453e50bd9068216d5f1dd2b41a00aab68e148a731d3db1ed545efff9af"
+    },
+    "system/lib64/libbinder_rpc_unstable.so": {
+      "bytes": 36680,
+      "sha256": "46b71e8ff4a3962c4217b53c51fc4c8672e8d8c35df53cc4af4433175dc40a00"
+    },
+    "system/lib64/libshmemcompat.so": {
+      "bytes": 35976,
+      "sha256": "6dc6551e1006e317725668a7c42aaa987db369f2fdc8c6b95b7037134b2c3558"
+    },
+    "system/lib64/android.security.apc-ndk.so": {
+      "bytes": 85520,
+      "sha256": "8245fe1d1ad2ca1555c859fd15d0dab74b561a0286da2ddcbd24aadbd78bcc9e"
+    },
+    "system/lib64/libaudio_aidl_conversion_core_ndk.so": {
+      "bytes": 51632,
+      "sha256": "fd001c8c71c14f71387891dfca7bd640ee5e472f13d60d3f49ac5604b3e057a5"
+    },
+    "system/lib64/libOpenMAXAL.so": {
+      "bytes": 35800,
+      "sha256": "97798377a0990266dd82231ff4bc9da4fc4fd842d42a8d2d29da7eb1100e3029"
+    },
+    "system/lib64/libaudio_aidl_conversion_common_ndk_cpp.so": {
+      "bytes": 138720,
+      "sha256": "31a17b932c5343a6510ae844c5679ead489661901e2b8e426e89df3481b1ccd3"
+    },
+    "system/lib64/android.hardware.input.common-V1-ndk.so": {
+      "bytes": 51680,
+      "sha256": "fb9d63909715ca9179b39b941e2a59689aa23598cda053ec2cd229e7505c81b8"
+    },
+    "system/lib64/libbattery.so": {
+      "bytes": 35784,
+      "sha256": "71d4a4d89b6fa561ce04cfeb3ff7544c64b92598764dd264b42790e8ef4075dc"
+    },
+    "system/lib64/android.hardware.graphics.mapper@3.0.so": {
+      "bytes": 119224,
+      "sha256": "765c6c3f0320e9c9ee199edacbec70d3cc7d6fe418c52efe4546ee9232deaf47"
+    },
+    "system/lib64/liblog_rust.dylib.so": {
+      "bytes": 52520,
+      "sha256": "05aaadcd19829554d215d203d944751075c84e79617321e36433eb68f4eb6a22"
+    },
+    "system/lib64/libmemtrack.so": {
+      "bytes": 51768,
+      "sha256": "879eb42d380d300dee10f8ea905f50e565d5e7754c81005e3a8624e56354b1e7"
+    },
+    "system/lib64/android.adpf.sessionmanager_aidl-ndk.so": {
+      "bytes": 52304,
+      "sha256": "ef0331b95c842e5e50b9c5f6d2a79badd32635b56a0c6eac1b839528ed1f222e"
+    },
+    "system/lib64/libnl.so": {
+      "bytes": 286352,
+      "sha256": "2e055b4aaa9dec4347a8e92d4c9dd12f8f2c5ccbaf4039e337af92ab15d883d2"
+    },
+    "system/lib64/libjni_sys.dylib.so": {
+      "bytes": 18792,
+      "sha256": "f8cec0558c0104f75285d190d7e8804057a70dc2025342b911868b2d407c1eee"
+    },
+    "system/lib64/android.hardware.boot@1.1.so": {
+      "bytes": 118632,
+      "sha256": "64aeaabc324b02df6a516263c2bd2e1d361e15f9a917381ca4296c1ebb8681ab"
+    },
+    "system/lib64/heapprofd_client.so": {
+      "bytes": 51568,
+      "sha256": "40adaad9b3105b3cc07955c4789fa4c9fc8be6140986cace0586b854009261bc"
+    },
+    "system/lib64/android.media.audio-aconfig-cc.so": {
+      "bytes": 52336,
+      "sha256": "c09270f840b41e15a17c2939ef54033e4b8c36557c005c39b1661a94340a5a6f"
+    },
+    "system/lib64/android.hardware.boot-V1-ndk.so": {
+      "bytes": 68760,
+      "sha256": "6918d4c7f5b678aa53b22c7e51d7f6589e8c071f1f2cc78a1f47a2c2459fa067"
+    },
+    "system/lib64/android.hardware.audio.common@6.0-util.so": {
+      "bytes": 35616,
+      "sha256": "b92cfe62c6497eb9a74491ace1960a22086b00a0345af81bf6a64ef584340d62"
+    },
+    "system/lib64/graphicbuffersource-aidl-ndk.so": {
+      "bytes": 102176,
+      "sha256": "097aafb0076e99cef737cd715f5b16956a36e3007de1b72fe9bebf079de334c1"
+    },
+    "system/lib64/libclcore_x86.bc": {
+      "bytes": 327480,
+      "sha256": "016037bcaff825f8e9396ea3d792ffca10768c0f8d9b60c49300ad5af7c92163"
+    },
+    "system/lib64/libinputflinger.so": {
+      "bytes": 5559480,
+      "sha256": "6e466c8164635b85940cf6b86727ae8776286d83215c8e439c8bab36eb39ed17"
+    },
+    "system/lib64/monkey_aidl-ndk.so": {
+      "bytes": 52096,
+      "sha256": "7a5c56809028dbced97b875e77f7de9c17b1477e9ec763a4bc3abbe9be373431"
+    },
+    "system/lib64/android.hardware.ir@1.0.so": {
+      "bytes": 85936,
+      "sha256": "581e7a6e5a86af986e9f408c449b13d251b36e863efa7dc2eea92d81252cdf80"
+    },
+    "system/lib64/libsquashfs_utils.so": {
+      "bytes": 35304,
+      "sha256": "aa5a70f81651c480ee93a26651b9da668c4f413324e71fa554e3c76833844b82"
+    },
+    "system/lib64/android.hardware.power@1.3.so": {
+      "bytes": 118832,
+      "sha256": "121fb4488146231e1e85db04b8fffdf28fa50cec0cd85be385eaec46a4a3101d"
+    },
+    "system/lib64/libpin_project_lite.dylib.so": {
+      "bytes": 18792,
+      "sha256": "87b1583b42bffa4f3ba53e46a552937633e33ebebbf43be693d3e2c6c0c29ba9"
+    },
+    "system/lib64/libandroid_ids.dylib.so": {
+      "bytes": 18792,
+      "sha256": "90d771dde257737d2c78a85368629b3bdcaed33e103e80a78aa43222669f5278"
+    },
+    "system/lib64/libcodec2_hal_common.so": {
+      "bytes": 119600,
+      "sha256": "9db912c5f8bb4e38019a6825025bf751330dd507889aebb363115f5601f940e9"
+    },
+    "system/lib64/libmediaextractorservice.so": {
+      "bytes": 38184,
+      "sha256": "9f7247bfbedaf87f4f8ba940d81907b63e027863f2aa724dd840401e33e1b93f"
+    },
+    "system/lib64/libstagefright_httplive.so": {
+      "bytes": 565912,
+      "sha256": "760f1897ac2eb252d77942c02cf3de60a1d377aa2c82202c9e1f11373711ad9f"
+    },
+    "system/lib64/libcodec2_vndk.so": {
+      "bytes": 823312,
+      "sha256": "1d33e6c33271ffa440da5e9b539e600e9724ec1963f2e31291ed446e4b49f1f5"
+    },
+    "system/lib64/libcxx.dylib.so": {
+      "bytes": 142240,
+      "sha256": "df5384bab49c3c0f2adce7012b86c8e7de74c2b29fd1a2a8f5345a3289bcbf30"
+    },
+    "system/lib64/libadbd_auth.so": {
+      "bytes": 307056,
+      "sha256": "dafd75cac4664ad3061be40c3f54f6f9e3333f1e2a737d2b75708679bc199796"
+    },
+    "system/lib64/libgatekeeper.so": {
+      "bytes": 36344,
+      "sha256": "7207cdc42dfee9ca0ffce789b60f4e0dd35721024a09d064e3e740303030cefa"
+    },
+    "system/lib64/libnetutils.so": {
+      "bytes": 68592,
+      "sha256": "5fe81e4f69eee5f4c2cf29f84ebc749a2553c0c2c96e763cab801c7875ca008c"
+    },
+    "system/lib64/libaaudio_internal.so": {
+      "bytes": 550936,
+      "sha256": "06494f5bc74ca927be4757a6a0f0ad01af4be35a7b94ad8150de7a9537435d57"
+    },
+    "system/lib64/libvulkan.so": {
+      "bytes": 239992,
+      "sha256": "58555ea65c5e3345bd3da98a1b2d4b4fa63b65ed90bf0c057b3d3d4d73954649"
+    },
+    "system/lib64/libyuv.so": {
+      "bytes": 773280,
+      "sha256": "7170d6960230cdb063ccf45c4f0738005152e3c083a36946eadd750d81647ada"
+    },
+    "system/lib64/android.system.net.netd@1.0.so": {
+      "bytes": 85920,
+      "sha256": "f10e9869fefcca9c460caf18076859c66cf7d342e005f823e7a626774d7326ca"
+    },
+    "system/lib64/dropboxmanager_aidl-cpp.so": {
+      "bytes": 68168,
+      "sha256": "2c68b51e6faee33cd96b09fb9f92585beb45ed31d2f137db4d884b99a411b2bb"
+    },
+    "system/lib64/android.os.flags-aconfig-cc-host.so": {
+      "bytes": 51560,
+      "sha256": "b08ff2b04d22ec0e5f1200efdfe7f26799da575083c7d333d7de508fb533bc4f"
+    },
+    "system/lib64/libregex_automata.dylib.so": {
+      "bytes": 898672,
+      "sha256": "e8f793b9d63d31cebf79cba6dc33d6387d23a92c782e06113762ca0a4d5f8197"
+    },
+    "system/lib64/libandroid_logger.dylib.so": {
+      "bytes": 52512,
+      "sha256": "ed0f0975f6cdf76129aad3d7d4f25e45610b9806446072209d17b82318915c6c"
+    },
+    "system/lib64/android.hardware.input.processor-V1-ndk.so": {
+      "bytes": 52296,
+      "sha256": "05037020b63fce990e506bdd5a4f88f7efc84499ca268035b91a08a93c107f1c"
+    },
+    "system/lib64/heapprofd_client_api.so": {
+      "bytes": 85856,
+      "sha256": "2f0c3106d7e9a9ab2b9e147172aeec47fb90ca6d350290579c153bb51341408a"
+    },
+    "system/lib64/audiopolicy-aidl-cpp.so": {
+      "bytes": 366160,
+      "sha256": "e396039ba239edf279474c296e1427102902eecdea304def29335ef75388c5fd"
+    },
+    "system/lib64/libbpf_bcc.so": {
+      "bytes": 84592,
+      "sha256": "f36d1c085e987a64b3ba92fa8c4acbc61269ed895ac263697d4281dd40bb4718"
+    },
+    "system/lib64/libgui_aidl_types_rs.dylib.so": {
+      "bytes": 35856,
+      "sha256": "003ecc73f5ac319e025e3cc4344d9c689329f786434548c1c917ba42bf4d4e77"
+    },
+    "system/lib64/libharfbuzz_ng.so": {
+      "bytes": 1153600,
+      "sha256": "b366ed800539384384c44f6426e2039714c9e3d1a1a2656f4e2273c26088435c"
+    },
+    "system/lib64/libpdfium.so": {
+      "bytes": 5128360,
+      "sha256": "f1af9740fb98d3074feae3f20c3b0df31b8206d0785d6ed1b4b75c32ec50726d"
+    },
+    "system/lib64/libaconfig_new_storage_flags_rust.dylib.so": {
+      "bytes": 18864,
+      "sha256": "818bf08dce021dceca4e6841bb121c33d3b48b6ca965857fba0108528dd15d96"
+    },
+    "system/lib64/libmediandk.so": {
+      "bytes": 306264,
+      "sha256": "35157e969084b7f46ddf78b75080d675de990268bb4a89ec863d9b13adc0853c"
+    },
+    "system/lib64/android.hardware.power@1.1.so": {
+      "bytes": 118880,
+      "sha256": "7c68b7caa0cb68479a3c4d5e5976997532838fb7b47c5c905511932279a23855"
+    },
+    "system/lib64/android.hardware.power.stats@1.0.so": {
+      "bytes": 119352,
+      "sha256": "61d38b7ed9fac7cc687e7f124a11f6a521f942582eeb8afe3115664a6b0adbbe"
+    },
+    "system/lib64/libcts_flags_tests_rust.dylib.so": {
+      "bytes": 18864,
+      "sha256": "bf1c229b478f89f6939716208506a14e0ca139a2ee1cf15ac2b9750a4526fab2"
+    },
+    "system/lib64/libfdtrack.so": {
+      "bytes": 573568,
+      "sha256": "60e598e59dc946e5cf19a5f87c4b45342910c647ad8f8e7ec059195cc1ac175c"
+    },
+    "system/lib64/android.hardware.camera.metadata@3.6.so": {
+      "bytes": 35288,
+      "sha256": "6bee8c633111424a6c478c7707d6432c802119925fbd00e5f094847c29f52c1a"
+    },
+    "system/lib64/libidmap2.so": {
+      "bytes": 253184,
+      "sha256": "2b03ee49e89441e1774f7a82d6ecaa83e3ea94949a28abc79aac4b46b3535bf0"
+    },
+    "system/lib64/android.hardware.graphics.allocator-V2-ndk.so": {
+      "bytes": 68992,
+      "sha256": "3b31e9a65c7fda7777d40b454ea1991fafd7ab17191db7d7a78d8378cb836527"
+    },
+    "system/lib64/libdumputils.so": {
+      "bytes": 51920,
+      "sha256": "dd1a1e53644ac695c24ac4141d1cfdf9f41a17fa6749ff1745a61736018e9dd5"
+    },
+    "system/lib64/libmedia_jni.so": {
+      "bytes": 590576,
+      "sha256": "51a446017b7c1ee46df76ce9637ed25ae3936b924297b8366de6f8228cc22232"
+    },
+    "system/lib64/librs_jni.so": {
+      "bytes": 102472,
+      "sha256": "71c0e49ba2358749206b8a69a84c1b163bfa3d5bdf8c9c3f9e3a65c6bf816534"
+    },
+    "system/lib64/libstagefright_http_support.so": {
+      "bytes": 35520,
+      "sha256": "4c1fa4e91237c8f59e20bb60aaacb63b3c45af5babbda4aa40fafd5c72a10397"
+    },
+    "system/lib64/com.android.media.audioclient-aconfig-cc.so": {
+      "bytes": 51688,
+      "sha256": "bcbb01e2c183eaf8cdf5d0421d92a6293e6a9ce751f7a6b9c598991f6a60dcf4"
+    },
+    "system/lib64/android.frameworks.stats@1.0.so": {
+      "bytes": 135632,
+      "sha256": "c35051e9b52763d8f41d5646afcf7a87db7c2d4592c5c68e354fd5c819d858b4"
+    },
+    "system/lib64/packagemanager_aidl-cpp.so": {
+      "bytes": 85248,
+      "sha256": "19c7a12f38370abfd63ca0d083f6e12948dfb7e9dc00bb1421437fcb3cb6aab1"
+    },
+    "system/lib64/libpermission.so": {
+      "bytes": 101688,
+      "sha256": "6bc9444659c2b52fe13f05f7aa4408b319262286bf7450bc20cb572fbca1b648"
+    },
+    "system/lib64/libbcc.so": {
+      "bytes": 285704,
+      "sha256": "ae013c15f8803eb7eb5f7dad110b74e7020890f51fd619195295973a18da29fe"
+    },
+    "system/lib64/libcgrouprc.so": {
+      "bytes": 86416,
+      "sha256": "4a463b242cb577d76973815ec19f3dd095cbb2cde0cba3cc610473e2c776cd81"
+    },
+    "system/lib64/dynamic_instrumentation_manager_aidl-cpp.so": {
+      "bytes": 68344,
+      "sha256": "1c808a0d8793283463e6a9289a5f7659509712107208edfb002b5c3ef567b762"
+    },
+    "system/lib64/libincidentpriv.so": {
+      "bytes": 134632,
+      "sha256": "10d787bf87b6d4216926c473df0c55ea0ed6df73b22b29aac17671b2424817ee"
+    },
+    "system/lib64/android.hardware.keymaster@4.1.so": {
+      "bytes": 153144,
+      "sha256": "332bb434ba5c6f9d60b4fd3f196b8cd3d0514a1698af18aa02ee5558e93efe29"
+    },
+    "system/lib64/libdng_sdk.so": {
+      "bytes": 2298208,
+      "sha256": "ee952634ddf652d30f23c6c2065ad5e238135d90e5903101a581c2dbea312e4e"
+    },
+    "system/lib64/libimg_utils.so": {
+      "bytes": 134512,
+      "sha256": "ea7c8e35e1314b2cc74639b5449b420be803154b6e1cab457e226489820702d7"
+    },
+    "system/lib64/android.hardware.media.bufferpool2-V2-ndk.so": {
+      "bytes": 102408,
+      "sha256": "be7488919cc51a403deaf5c6fb9094f775a4312f2eadb9070e2cf35724029f84"
+    },
+    "system/lib64/android.hardware.security.secureclock-V1-cpp.so": {
+      "bytes": 68456,
+      "sha256": "561ba557c702e77cde84b4b24851e138e3a39ccd12148e88940803a44295bf6d"
+    },
+    "system/lib64/libgraphicsenv.so": {
+      "bytes": 85704,
+      "sha256": "49bcfc68777fd270eb1c84ee83fa03627234bb05845943ac413537b43c0ff0ad"
+    },
+    "system/lib64/libGLESv2.so": {
+      "bytes": 117144,
+      "sha256": "a67c9158f108661f42298489291cd87bcff3d4c9ccfb1e8db57d85ff83711bee"
+    },
+    "system/lib64/libhidltransport.so": {
+      "bytes": 35160,
+      "sha256": "87663b744f522333c2cc61814acd6f687d6db0b6eee3056a143391894b389039"
+    },
+    "system/lib64/android.hardware.power.stats-V1-cpp.so": {
+      "bytes": 85168,
+      "sha256": "1ec4febd22adde14cadef5a5f01a3661e286767ebaa4657d1e1d09a87c62bde5"
+    },
+    "system/lib64/android.hardware.media.bufferpool@2.0.so": {
+      "bytes": 219240,
+      "sha256": "d504f43d3395337ae601bd2636178651d075fde5e57ba3af6ff0fc8c2bda9220"
+    },
+    "system/lib64/android.frameworks.sensorservice-V1-ndk.so": {
+      "bytes": 101976,
+      "sha256": "563ec45020abc5b93652d46bf70abcd07cfc08ee8bee2a94b9eeec7d01c58fbc"
+    },
+    "system/lib64/libcamera2ndk.so": {
+      "bytes": 356088,
+      "sha256": "cf3d10440777c41f202bce56c3a7fc559e0242ad5dd417bc88c5ed14399ebe96"
+    },
+    "system/lib64/libhardware.so": {
+      "bytes": 35512,
+      "sha256": "9b885c95439d96bf5a397f366809bff51b978106fced74d65cc211e3a8d2bca5"
+    },
+    "system/lib64/libsystem_properties_bindgen_sys.dylib.so": {
+      "bytes": 18784,
+      "sha256": "8fc9a69e81d8538cabc0df88f50c61c9e7a4cea1b93ccf2679fb140d38d1199a"
+    },
+    "system/lib64/libkobject_uevent.dylib.so": {
+      "bytes": 20448,
+      "sha256": "813611f0bd1389b83cf39017b703c4eee9426a7269286bf017176f80fb662017"
+    },
+    "system/lib64/libcrypto.so": {
+      "bytes": 1856976,
+      "sha256": "094f9c11d132a36c331a35fe4082438806b8aad6eb4724468d4f65941cab2dc9"
+    },
+    "system/lib64/android.hardware.cas@1.0.so": {
+      "bytes": 268024,
+      "sha256": "e50b5c12067c0eb44bb6d036debff1ff4ab0bfbefe88cb58e6e32754bbb9d01d"
+    },
+    "system/lib64/libfec.so": {
+      "bytes": 117968,
+      "sha256": "54ee8e78d4ba2acb5c8e4478dd267bb306f4ff2a542361bcfcf3d49ecf0d15e4"
+    },
+    "system/lib64/android.hardware.graphics.mapper@2.1.so": {
+      "bytes": 119000,
+      "sha256": "dc3831bd07607a072fe280eefa194e990bf9178666f8cad91b894f0d08ab595f"
+    },
+    "system/lib64/libwebviewchromium_loader.so": {
+      "bytes": 51376,
+      "sha256": "b84f09b0f9d0dd4b735ae15478bbf80e43cc0d508893038eec51dc13cfb60a7c"
+    },
+    "system/lib64/libamidi.so": {
+      "bytes": 52584,
+      "sha256": "5396bab79e3076f978f2628f4560794cda5f56dbbd66918380ad4a97997b5df5"
+    },
+    "system/lib64/libziparchive.so": {
+      "bytes": 102968,
+      "sha256": "66db48f20dd789e27a974e8f874d39e35c83477966a90669284cec73d952419e"
+    },
+    "system/lib64/libclang_rt.ubsan_standalone-x86_64-android.so": {
+      "bytes": 798008,
+      "sha256": "3d00f08948b49a78eb6fcebdbf23314ae0ae5daab4cfb49b87730b19f6dba03a"
+    },
+    "system/lib64/libstd.dylib.so": {
+      "bytes": 899744,
+      "sha256": "eafa92b8eaa08bae7618f27781a8e1544ecbc99a29887878ad217e530a86888f"
+    },
+    "system/lib64/libukey2_jni.so": {
+      "bytes": 321952,
+      "sha256": "cf7c32cbcb3ebd688dbc2621c4511c4757123a90a98ec50b08c2724397f3d3eb"
+    },
+    "system/lib64/libmedia_codeclist_capabilities.so": {
+      "bytes": 236328,
+      "sha256": "6be6256c50e141cd328b2d20727a3bd25167fffe7bb9f1bf05d3fe43dc88a175"
+    },
+    "system/lib64/android.hardware.camera.metadata@3.2.so": {
+      "bytes": 35224,
+      "sha256": "5fc3444a90930df70406524858a9be378235317285932127d11448c7920e009b"
+    },
+    "system/lib64/libanstyle.dylib.so": {
+      "bytes": 19776,
+      "sha256": "7f8bd6954068bb4cd1881fb12e4bd7e135327a530a403bea7e79f657acbf01a7"
+    },
+    "system/lib64/libmediaplayerservice.so": {
+      "bytes": 1490296,
+      "sha256": "f0a40061469b69b1d45eaed91683de78ebbf904096ba164565d46e23bdd94910"
+    },
+    "system/lib64/media_quality_aidl_interface-cpp.so": {
+      "bytes": 183680,
+      "sha256": "75df6afe9116d50808b6f7c8bf9fa623f36c27fbec6ab364da8f403481f2b91d"
+    },
+    "system/lib64/android.hardware.camera.device@3.2.so": {
+      "bytes": 219336,
+      "sha256": "886d974d551dd59721d1fbf143694857b05d339cf9e695a96f2a12c091031e35"
+    },
+    "system/lib64/libprocessgroup.so": {
+      "bytes": 383496,
+      "sha256": "cbe6767c5acfd6e672bb6722bd2918fdf43ef1eb99f5c85ae6e5ea43aba53e63"
+    },
+    "system/lib64/libbootloader_message.so": {
+      "bytes": 151880,
+      "sha256": "1fff3c57a2941af30ae351f17b2164dca01ffb6b6ca96c270401690875c97dda"
+    },
+    "system/lib64/libpiex.so": {
+      "bytes": 119168,
+      "sha256": "fdcc56a05b9edddb7b1016180ef433f11e18e3bb89f8c6280b68ab6ec4d25fb3"
+    },
+    "system/lib64/netd_event_listener_interface-V1-cpp.so": {
+      "bytes": 68240,
+      "sha256": "d6f23ff2fc5e8730e6a0f4d3ee4873e988e6cf594a7a8700b37c4e228ed537b5"
+    },
+    "system/lib64/liblogger.dylib.so": {
+      "bytes": 35448,
+      "sha256": "f6c34593b61d6629b68cd9da497e80cb27da077ca057503edd34916c7822d709"
+    },
+    "system/lib64/android.hardware.graphics.composer@2.3.so": {
+      "bytes": 286984,
+      "sha256": "03cdaa7e0e68a5fe80df5f93544fa6cc7b6fe0099a1f379af2073755f42f041e"
+    },
+    "system/lib64/libtimestats_atoms_proto.so": {
+      "bytes": 104096,
+      "sha256": "c9b5aeae861799c7bc28ec77a7e72faff72de498bce7d90e24385ddc42097e88"
+    },
+    "system/lib64/android.system.suspend.control.internal-cpp.so": {
+      "bytes": 68488,
+      "sha256": "d076828515cf1c4633b8dcb65788142c4c71f599c4f6a89d06a94eeeadcffe16"
+    },
+    "system/lib64/android.hardware.gnss@2.1.so": {
+      "bytes": 531976,
+      "sha256": "68085e1322d05a890ba1493a8715ad45fad2224b3965d00c9c7c1c744a8ada74"
+    },
+    "system/lib64/libenv_logger.dylib.so": {
+      "bytes": 85848,
+      "sha256": "534c20e4ff1a56b3a3712723b8451c283c6a85d9d0c181f215fbadd3466d3300"
+    },
+    "system/lib64/android.hardware.graphics.composer@2.2.so": {
+      "bytes": 236552,
+      "sha256": "6a5bbe4a49d756834f9c12afc0ae7e4025a234ec8613fad04a5ffe8e469901f9"
+    },
+    "system/lib64/libGLESv3.so": {
+      "bytes": 117144,
+      "sha256": "e1700e1c7ddf1f3a31c473415fa61b96778d2d4090e150be782f80fc59304ef6"
+    },
+    "system/lib64/libmemmap2.dylib.so": {
+      "bytes": 35200,
+      "sha256": "0c511715f8b948466f9fe53f14f405047fc99b3be1fe1865a19eb257e906f437"
+    },
+    "system/lib64/android.hardware.configstore-utils.so": {
+      "bytes": 35720,
+      "sha256": "badc3f0da9ba82404c26536e23afc0504f14bb3ce71d6983e6494a03f76c301b"
+    },
+    "system/lib64/libvndksupport.so": {
+      "bytes": 51352,
+      "sha256": "ac4e2cc821957fc90c739b1414520e006ef51b6031e83f9163db177b710fbc6c"
+    },
+    "system/lib64/android.hardware.thermal-V3-ndk.so": {
+      "bytes": 101952,
+      "sha256": "73368d32a31c76bb3b08d38960e99d725da83d1b2336479c941223d297d632dd"
+    },
+    "system/lib64/android.hardware.graphics.common@1.2.so": {
+      "bytes": 35272,
+      "sha256": "70d162a9a165d3506bd1a0e0a4330a30b04848d662b783336be1d1fc456f8190"
+    },
+    "system/lib64/android.hardware.gnss@1.1.so": {
+      "bytes": 334120,
+      "sha256": "ef44489424f16cab3bd23fabbf432afc32dfedb83687e787c799c7bdba8ce321"
+    },
+    "system/lib64/libkeymaster_messages.so": {
+      "bytes": 134624,
+      "sha256": "50dd8028286742193cdd0dd0747193e0e6e4f5ded60b289c0f8b68a6bf346399"
+    },
+    "system/lib64/com.android.media.audioserver-aconfig-cc.so": {
+      "bytes": 51864,
+      "sha256": "737ab8056fbb1a6d640248813c00d8cc71d88729cc8aaedb5c12017e63bd2f32"
+    },
+    "system/lib64/libartpalette-system.so": {
+      "bytes": 51792,
+      "sha256": "bf724f43e421769a4bb06e7052f5f61c77768cf12ed3f4366f8652fd77acdb51"
+    },
+    "system/lib64/liblpdump_interface-cpp.so": {
+      "bytes": 52064,
+      "sha256": "94fac91c071407f6f5a2fc0eb3d08f63136aedf036127972bbf8c8513dca3847"
+    },
+    "system/lib64/android.media.audio.eraser.types-V1-ndk.so": {
+      "bytes": 85456,
+      "sha256": "702df66e55acd923fb9baf4eef0b3fa8818d07f9ca42c2d3c6c424adad3cbd71"
+    },
+    "system/lib64/libinputreporter.so": {
+      "bytes": 35936,
+      "sha256": "11d1344cbc5d435f65c56883e90239f18b9d40cfc1ebd25c436eda4c5f168c5b"
+    },
+    "system/lib64/libLLVM_android.so": {
+      "bytes": 21380448,
+      "sha256": "09d0710fbdb4179c8bbb6f3f8eda33e449f223641f0fb31f86bc5221a15dda44"
+    },
+    "system/lib64/libmemunreachable.so": {
+      "bytes": 358568,
+      "sha256": "f69f0432af0f560839ecf4ba033d435005214ac10293360e561a11571cb5845a"
+    },
+    "system/lib64/android.hidl.memory.token@1.0.so": {
+      "bytes": 85824,
+      "sha256": "60e6faa246eb4e11dfb5ca55f8cfdc2e114af647426abed84d1c908151d3b642"
+    },
+    "system/lib64/libaconfigd_rust.dylib.so": {
+      "bytes": 226488,
+      "sha256": "071816cba964aa350f21e0cdc45c2329d41a13035b1a0160c1f956acc85193ed"
+    },
+    "system/lib64/android.hardware.tv.input-V3-ndk.so": {
+      "bytes": 85808,
+      "sha256": "83c080447fc02908a4fe801ed79d4ea322c95637a14e8cbe93c6d88c7e0f98d8"
+    },
+    "system/lib64/libbinder_rs.dylib.so": {
+      "bytes": 134312,
+      "sha256": "97e9a6c3b8a6215442199822f43924e1ed42ba068d5f440142187e3c0df82243"
+    },
+    "system/lib64/libsonic.so": {
+      "bytes": 35352,
+      "sha256": "ce290f87a3b228963710c08225f3162af1050d897ab3089158d989537535d7d9"
+    },
+    "system/lib64/libtimeinstate.so": {
+      "bytes": 85264,
+      "sha256": "b7401db357fdb6a7e41c79e5d9a1309a4fcfd0930f4c809885236e9547a29ed4"
+    },
+    "system/lib64/android.hardware.health@1.0.so": {
+      "bytes": 35240,
+      "sha256": "89b6cf6706dbab96b3aa7f40998a85f58ffa6a76aad427965e0ceb3d0757cf34"
+    },
+    "system/lib64/libmedia_quality_include.so": {
+      "bytes": 183680,
+      "sha256": "aed2b76f8bc498cb8b3f5703f8858b6992af57464a4945f3f603f2f8cdfd2205"
+    },
+    "system/lib64/android.hardware.memtrack-V1-ndk.so": {
+      "bytes": 52408,
+      "sha256": "a1d14c5d53758491bdcc61c55da255dd4b448fd1351d12f026f2bf1107043d52"
+    },
+    "system/lib64/libconfiginfra_framework_flags_rust.dylib.so": {
+      "bytes": 18864,
+      "sha256": "1ceba50cc292557a36fb507214e0e7d630964f1791c63782b95b0061ffc44c0c"
+    },
+    "system/lib64/libpcre2.so": {
+      "bytes": 445480,
+      "sha256": "a363c7fc1312ed7456e27e48e76b6c32113e1ee6db7997348fe00126bd94d042"
+    },
+    "system/lib64/android.hardware.gatekeeper@1.0.so": {
+      "bytes": 118760,
+      "sha256": "115d71e27bb639473875f019091c8a5ab5065875863dd05f4bcd8a1dc74bc584"
+    },
+    "system/lib64/android.hardware.confirmationui@1.0.so": {
+      "bytes": 152016,
+      "sha256": "880e1d76bafc1a5503f5c3163e4b9183786451fb70a5b0b198dbdba4d155f603"
+    },
+    "system/lib64/libgatekeeper_aidl.so": {
+      "bytes": 68312,
+      "sha256": "af73fc2ac9b60302cc0043c681814f4fc96e219da9e830fff446d72096f102c6"
+    },
+    "system/lib64/android.hardware.radio@1.2.so": {
+      "bytes": 1104480,
+      "sha256": "216851faba7e5ed48836fa786440ee8a9d7159700dfcd23a82c8069553e25a05"
+    },
+    "system/lib64/android.os.vibrator.flags-aconfig-cc.so": {
+      "bytes": 51576,
+      "sha256": "9599e3facc6630e06451f339492b55c297c6da68787bb8bcc22f73fa7af70292"
+    },
+    "system/lib64/libcfg_if.dylib.so": {
+      "bytes": 18792,
+      "sha256": "30efe1bbe1044f0d313769967fcdaf0de37db63d59a8e4fc8aeccbfc63b8ba89"
+    },
+    "system/lib64/android.hardware.gnss@1.0.so": {
+      "bytes": 1029112,
+      "sha256": "fac5a61dca048d9c18610ff91a53bbcc576803399dd8ec368de669b90e700655"
+    },
+    "system/lib64/libnetlink.so": {
+      "bytes": 51528,
+      "sha256": "0806c315ff77ea70c2b457a262d89f099d47398a83f87dcbe3a27fe37751e826"
+    },
+    "system/lib64/libdataloader.so": {
+      "bytes": 102144,
+      "sha256": "6af59f1179f076129862e1bc9c9d06d0134951ec098202f87cfc393055f03c3c"
+    },
+    "system/lib64/liblog.so": {
+      "bytes": 102408,
+      "sha256": "d19efa76e39bc458a0f9125d1665185ce95af9153bfe695e0c9519937ea9bc0a"
+    },
+    "system/lib64/libonce_cell.dylib.so": {
+      "bytes": 19184,
+      "sha256": "47b765ac5cc55d78da0d2ab6b56bfb13478ac24354a14c66ac7c7dfc247680e9"
+    },
+    "system/lib64/libext2_uuid.so": {
+      "bytes": 51376,
+      "sha256": "477ed565189e8768b644e62b06ba1426ee1806883c3d186827e70f138bd197b7"
+    },
+    "system/lib64/libdumpstateutil.so": {
+      "bytes": 51920,
+      "sha256": "5db51e337e7f2f7a78aadb3c9afa8cf3986ed4f0b1af6dbfb2fa8e55881388d8"
+    },
+    "system/lib64/libstagefright_graphicbuffersource_aidl.so": {
+      "bytes": 37352,
+      "sha256": "477250fbe273f5dfc2240df2cf7ecef33aef56fd351bf6abf549fc7c0998ad38"
+    },
+    "system/lib64/libpng.so": {
+      "bytes": 235248,
+      "sha256": "1f41132e261d433f05946b6384be803ccc2f389edc8bbca3e293a3037a9fc4db"
+    },
+    "system/lib64/libcamera_metadata.so": {
+      "bytes": 90456,
+      "sha256": "52761470d0c8d15a580dc6d3b1857d73446365d8a6b5de2b2641a8affb66084f"
+    },
+    "system/lib64/libcodec2_hidl_client@1.0.so": {
+      "bytes": 138552,
+      "sha256": "333f03a0e1ea0f1af59467f6f888612782c4839628e1c7dd80ed2e813d475d99"
+    },
+    "system/lib64/libvibratorservice.so": {
+      "bytes": 152624,
+      "sha256": "780a038173c3aaa8005dae664ac6794a7bbb017601b16d3679024e1cca05ed17"
+    },
+    "system/lib64/libaudiousecasevalidation.so": {
+      "bytes": 36184,
+      "sha256": "912d6ba5d50fb708216a9878d89a69b8be16ceeda0f0e625858948ee192430ab"
+    },
+    "system/lib64/dnsresolver_aidl_interface-V7-cpp.so": {
+      "bytes": 85072,
+      "sha256": "423decef5a536c9c6055ec1bf040987250f2b3e6494a00045d4b3def111c2d8b"
+    },
+    "system/lib64/framework-permission-aidl-cpp.so": {
+      "bytes": 68536,
+      "sha256": "c466874397ccae65802bc25f643d5ed8b60a15bfe2ab5cc1ec194cdbfc953a27"
+    },
+    "system/lib64/libRSCacheDir.so": {
+      "bytes": 51536,
+      "sha256": "d9a586051237c1a0ed963db07fd8faf96dc533103be5315a974c74f2670c9092"
+    },
+    "system/lib64/libmtp.so": {
+      "bytes": 250208,
+      "sha256": "3834a320bf9b6abfdd745ddea35e5e6a37745ee3337c08118c8a5bdbefa2a732"
+    },
+    "system/lib64/libdmabufheap.so": {
+      "bytes": 118600,
+      "sha256": "6e1c9ecfa87468828ccc0479c4daa91587feffb9dc4e3dab6ae2a4a63e0bb2a3"
+    },
+    "system/lib64/libclang_rt.asan-x86_64-android.so": {
+      "bytes": 2574024,
+      "sha256": "b953062dde9b5480c4e6779055ab69f6544e6447eba4eac8212adbbcf8917362"
+    },
+    "system/lib64/android.hardware.graphics.mapper@2.0.so": {
+      "bytes": 118928,
+      "sha256": "4b002081bbfc56e282f0a017c528e567a20a0e87cd57387ba57d02d800858c84"
+    },
+    "system/lib64/libfmq.so": {
+      "bytes": 35928,
+      "sha256": "005a712dc7f2bf68d14aee500f29ac1c0afeeeeddc1b0ade4ffc9d4b4221e259"
+    },
+    "system/lib64/libminikin.so": {
+      "bytes": 2294856,
+      "sha256": "cff732c9b4c9c11941903b324ba9466aac4434f53cdd0376249d9ca7cf9ff782"
+    },
+    "system/lib64/libdebugstore_cxx.so": {
+      "bytes": 201976,
+      "sha256": "e1c5c9a29cadc8455bf7b7905f2d3cd30919f6dbbfc0d67e96d6b94e61bb819a"
+    },
+    "system/lib64/libsnapshot.so": {
+      "bytes": 2364704,
+      "sha256": "6b57106f01827dd192866b7cbad54aeb4c2d68b11d7af817107824cc0ad0c0e2"
+    },
+    "system/lib64/android.hardware.health-V2-ndk.so": {
+      "bytes": 85560,
+      "sha256": "bde5929357149e63a92ced82a95a6fd2d5b7a8dcbb4fb79bb3485a23a2826890"
+    },
+    "system/lib64/lib-platform-compat-native-api.so": {
+      "bytes": 51728,
+      "sha256": "908743215b8299047a6545b7b6e5a075eed2eaf40a4e9fc2fd8844f9b6548b5b"
+    },
+    "system/lib64/libchrome.so": {
+      "bytes": 1239952,
+      "sha256": "eaa2b695c7c72848c3b0955e76f9c87ebe2d49c461decf9fbb84f88c1ad5e2b7"
+    },
+    "system/lib64/libEGL_angle.so": {
+      "bytes": 696808,
+      "sha256": "ee9cd0b2df2e2eb7f66911dfb705e13ca203e73b339196952694e6e1beee8ed4"
+    },
+    "system/lib64/libunwindstack.so": {
+      "bytes": 820344,
+      "sha256": "8edefabd2a53fd86da4d1e41aa3cbf425239d2fc623d06f1832b3330c1d782ac"
+    },
+    "system/lib64/libcppbor.so": {
+      "bytes": 103192,
+      "sha256": "b6141b5e2d396c995ce10f4cfc8b9ed3591ff43cb6dc7757acc220f3d73b9dbf"
+    },
+    "system/lib64/libFFTEm.so": {
+      "bytes": 428856,
+      "sha256": "d06107194839a2cdd4c85243a287499440a90b0a8987b2b3caec21b655b64c7b"
+    },
+    "system/lib64/libaudioprocessing.so": {
+      "bytes": 879248,
+      "sha256": "b2a93972d99ca2f7e78123f99f9a2bce13cedde41c145674ff21349d289d950d"
+    },
+    "system/lib64/libwilhelm.so": {
+      "bytes": 291224,
+      "sha256": "1a6d90a551c82c4b47b44abd8b500d8aa77405c1112cd48ec56eef1ca8a172f8"
+    },
+    "system/lib64/libext2_com_err.so": {
+      "bytes": 51488,
+      "sha256": "b225e7a8e5ba7a2f6107869aa166f6a07e7433978abeccb62343f22c74bb7e97"
+    },
+    "system/lib64/libandroid_log_sys.dylib.so": {
+      "bytes": 18792,
+      "sha256": "5fa61395459f0632935e5aee087fb195f9b96d7fdc0668f53e918edfae46199b"
+    },
+    "system/lib64/libprotobuf_support.dylib.so": {
+      "bytes": 70960,
+      "sha256": "15db0a33c1ad7169c7d92736d2ca738316146ddf74e9bf3d7084b38d5536a876"
+    },
+    "system/lib64/libmediandk_utils.so": {
+      "bytes": 35360,
+      "sha256": "8319275478977c86ea1b5b59a0484359ac5ade91d95387acbadf7bf0fba0c819"
+    },
+    "system/lib64/libaconfig_storage_read_api.dylib.so": {
+      "bytes": 37976,
+      "sha256": "bdc33ed078c226669345ee6cc769573118217332e8b035f07b973d8ab07ba086"
+    },
+    "system/lib64/libserde.dylib.so": {
+      "bytes": 53128,
+      "sha256": "b1893860e49139839f1691e20c2b30df3717ef8edc354807d14efc35ce653b2f"
+    },
+    "system/lib64/libcutils.so": {
+      "bytes": 101840,
+      "sha256": "ed53b0a8de029f738ccfe346242371c50addc6c41435647ec55468a87a62b1eb"
+    },
+    "system/lib64/libmediametricsservice.so": {
+      "bytes": 628792,
+      "sha256": "3e62ea06e0fbaabed9d266a6d2a8e7c88ba0e9d1ece1ce5020d4e26c08f309ba"
+    },
+    "system/lib64/libiprouteutil.so": {
+      "bytes": 135968,
+      "sha256": "93081339304f21138eb64a250c500794ad51fedc7996cf657c220a1541152a2e"
+    },
+    "system/lib64/libstagefright_omx_utils.so": {
+      "bytes": 51592,
+      "sha256": "9b94a5a35b06083c88c4514b15fcbac702a885699f7ceb64578ccaa85e51c014"
+    },
+    "system/lib64/libbinderdebug.so": {
+      "bytes": 102616,
+      "sha256": "173ea28db85aa810f30b53ed97e95e429d94d42740a16952ee7ca09dcb507136"
+    },
+    "system/lib64/libaudiohal.so": {
+      "bytes": 52480,
+      "sha256": "985e3bcd3224979dcca58cfa5696f5675b48ac543b2e59f810fe7a9c66269bfe"
+    },
+    "system/lib64/libaconfig_storage_read_api_cc.so": {
+      "bytes": 122288,
+      "sha256": "4c9e8e98ddc5f420dd3781e16f1f69da7603e735baba6110ed45072a87d1ff47"
+    },
+    "system/lib64/libstagefright_codecbase.so": {
+      "bytes": 85632,
+      "sha256": "d86dd7d1faefc60941ee86bbdc9f823c262100eb40f6df4ba5cf8f239019dd5f"
+    },
+    "system/lib64/libavservices_minijail.so": {
+      "bytes": 36288,
+      "sha256": "146ddb4a7152502b9bc341c561ef712cc4ebf8693a8c73491d7414ebf6367cf0"
+    },
+    "system/lib64/libbrillo-binder.so": {
+      "bytes": 35936,
+      "sha256": "0d8ed4bf543135892732d56354b1d3e515945cdbcb74e41815fee852d54a6da9"
+    },
+    "system/lib64/libcodec2.so": {
+      "bytes": 35160,
+      "sha256": "43c1ab8165f1a19e5130be591622083c70394ccda1e8056300fed78cf69d9435"
+    },
+    "system/lib64/android.hardware.thermal@1.0.so": {
+      "bytes": 118872,
+      "sha256": "cb5fd0a495b60599b8b4cdc40a9a13a7705c06dbcbc5935aff4a54689438d291"
+    },
+    "system/lib64/android.hardware.graphics.allocator@3.0.so": {
+      "bytes": 102432,
+      "sha256": "b0fc753f3a1e0ea5e950828b12fe68a4274d0f514273d42f4060e172786fff13"
+    },
+    "system/lib64/android.hardware.cas.native@1.0.so": {
+      "bytes": 102496,
+      "sha256": "338a38f889e7bca2012174f9f69825181dec3d1469f392f862fe58cc02932f63"
+    },
+    "system/lib64/android.hardware.gnss.measurement_corrections@1.1.so": {
+      "bytes": 102136,
+      "sha256": "87ab5f5e98a26dd32ad1718284b5540b42a39ab83fc9105387c8c0a763c104b2"
+    },
+    "system/lib64/libstagefright_framecapture_utils.so": {
+      "bytes": 220568,
+      "sha256": "23cb3d99021157a856c7b4a84ba8fe01b40705a5cac6ebb0feddc00d054a6fda"
+    },
+    "system/lib64/libnativeloader_lazy.so": {
+      "bytes": 51512,
+      "sha256": "bf6755857f91af648840a2a4e2bc3bd76016017df4350443db54604a1050b0e5"
+    },
+    "system/lib64/libusb4_policies_jni.so": {
+      "bytes": 35456,
+      "sha256": "271968274e0896cc209bdadf377bccd263ea6d6516845bb36666f0f691d7ea5f"
+    },
+    "system/lib64/libheadtracking.so": {
+      "bytes": 104328,
+      "sha256": "8d0f006548a5a82e25ad23011123bd16d68bcf50e67c4848daa6bcc79a07ae90"
+    },
+    "system/lib64/libssl.so": {
+      "bytes": 637416,
+      "sha256": "d6a769ea6e2db0d029685dc48876aa7c307311792b65b59de23e6bc0c3ad8215"
+    },
+    "system/lib64/libaudio_aidl_conversion_effect_ndk.so": {
+      "bytes": 140088,
+      "sha256": "d12df927c5d00eecd4fb52ea36cec845a7d0dab3841d24b00eb8ce1543c5c3bd"
+    },
+    "system/lib64/libjsoncpp.so": {
+      "bytes": 216952,
+      "sha256": "d942799ac830d8f2633cc4b489157a041665146f8b262bdc9883dcf6f2b34f5c"
+    },
+    "system/lib64/libaudiohal@7.0.so": {
+      "bytes": 1854040,
+      "sha256": "3880b8ed22ffd482366206399e4241a5270bd22d18c3893716e44e6729928a31"
+    },
+    "system/lib64/libandroidfw.so": {
+      "bytes": 1223880,
+      "sha256": "95d5a4a485d1279eb0ec43978893e3d2bbde88cdea8e5e5c7b2717e4d9536d3f"
+    },
+    "system/lib64/libjpegencoder.so": {
+      "bytes": 51992,
+      "sha256": "351bbf1b3fabade45b2afaf4dc4812d197ab97a0a54f7f3c0660d178854be4d9"
+    },
+    "system/lib64/libhidl-gen-hash.so": {
+      "bytes": 119184,
+      "sha256": "7549581b8af5c1015c23c8733e81f0eec5351bdf235aa00ceb33ef3c65329249"
+    },
+    "system/lib64/libservices.so": {
+      "bytes": 68320,
+      "sha256": "5244c3c9b5a7dc2ba5575b4ee19bbcda88c739f0524d07aba85553cac53047b9"
+    },
+    "system/lib64/android.media.audio.common.types-V1-ndk.so": {
+      "bytes": 85576,
+      "sha256": "7b9208889f2b1a0632c7b177a056d26b522caca96bde65d2b2e1415f6b92cedc"
+    },
+    "system/lib64/libmeminfo.so": {
+      "bytes": 186088,
+      "sha256": "0fa319b52f1536b350c14937be5be0a1c162ec35d067beda8be030ee9875b2ca"
+    },
+    "system/lib64/android.hardware.graphics.bufferqueue@1.0.so": {
+      "bytes": 236408,
+      "sha256": "38b518946c5d2dcf6c15afa685d3c83e495063bad4e8353e92f6d7ebc07b795b"
+    },
+    "system/lib64/libcppcose_rkp.so": {
+      "bytes": 119008,
+      "sha256": "5850742df7a86962e07bde45bdfe2a988d3ed2c42dcdde8d70a01442453cb174"
+    },
+    "system/lib64/libmedia_helper.so": {
+      "bytes": 138352,
+      "sha256": "5b38088839a4e7d4406e928ddb684c80e7fcecb67d796e10df03a6b1a83cc899"
+    },
+    "system/lib64/android.hardware.audio.common-V4-ndk.so": {
+      "bytes": 52296,
+      "sha256": "97b56efaa46d630cde71d18ee2f8dadab90d47366b25b78f385a70c07069ece5"
+    },
+    "system/lib64/libcap.so": {
+      "bytes": 68024,
+      "sha256": "c9c8cf793402ea2507e6c3520265186558c54393c8fd89eb24c8779e6e157eab"
+    },
+    "system/lib64/libjni.dylib.so": {
+      "bytes": 250160,
+      "sha256": "abb22809a760996216706551684c42ebac29668079005c38a5eb2d868bdc6993"
+    },
+    "system/lib64/libkeystore2_apc_compat.so": {
+      "bytes": 69320,
+      "sha256": "201e291c5724077a55817394c747a6053ae5abc404b010cab483fe886872f60a"
+    },
+    "system/lib64/android.hardware.tv.input@1.0.so": {
+      "bytes": 152304,
+      "sha256": "8df2f17b30b5bcabd068752538e16d4dfdbfd89e55a53061d938e10546c3c953"
+    },
+    "system/lib64/android.frameworks.sensorservice@1.0.so": {
+      "bytes": 252480,
+      "sha256": "97bf0aa8ee9e53c9f1b6c1ea08e36abea7ee36add60c6527a7b207d2c3bc3ada"
+    },
+    "system/lib64/libmio.dylib.so": {
+      "bytes": 70192,
+      "sha256": "8213f7d6b5bbe7a5f50357c60982caa0e60055fe05287d2cf65064f702642c95"
+    },
+    "system/lib64/android.hardware.security.keymint-V1-cpp.so": {
+      "bytes": 152880,
+      "sha256": "75ec40ddb0b2106c2cceab74c46abb2b3026ad4600004d4acbbc6150fcb89286"
+    },
+    "system/lib64/libclcore_debug.bc": {
+      "bytes": 351784,
+      "sha256": "e195d3fa23f6b6822f299097bdfdf536be5e0d699e6766a5db0b6685f668ce50"
+    },
+    "system/lib64/libaaudio.so": {
+      "bytes": 85896,
+      "sha256": "e9a6bb6c4211c8fbc59365e62c7ec3b282fede6ec94d891a87c0efa8013924fd"
+    },
+    "system/lib64/liballoctop.dylib.so": {
+      "bytes": 71600,
+      "sha256": "91ef3ab5038d8588ca39cb923e988b19ce7c59a7a8de050bca06431aaacff857"
+    },
+    "system/lib64/libandroid_runtime_lazy.so": {
+      "bytes": 51320,
+      "sha256": "5db541b54fee4d736259fda1e3c30cb55f9a87f1e3761ea9655d598937391887"
+    },
+    "system/lib64/libstatslog_inputflinger.so": {
+      "bytes": 35296,
+      "sha256": "577cc5360fecc2336429fd5b757f3d52cfb59c3e42377a1b0851dc1d3d0d8446"
+    },
+    "system/lib64/libaudioflinger_utils.so": {
+      "bytes": 52752,
+      "sha256": "80e89d64851db32965057963134e4afda50affce4552d004bce33a83364be5d7"
+    },
+    "system/lib64/android.hardware.gatekeeper-V1-ndk.so": {
+      "bytes": 68856,
+      "sha256": "efaf026f9c4fbfc27bec2ab70b64c7423ab103cf748284ef377fdf5fc3cd1ecb"
+    },
+    "system/lib64/android.hardware.audio.common@2.0.so": {
+      "bytes": 35264,
+      "sha256": "9a57cdb2a23711262d0d8d2724d421fba2446ad01efb1878325c29d58d0a9b6a"
+    },
+    "system/lib64/libhwui.so": {
+      "bytes": 12990656,
+      "sha256": "0831e4f4dcac65e4a3d2c499b5ee3e0cf949e12b10c46748729bd210b4717fba"
+    },
+    "system/lib64/libutilscallstack.so": {
+      "bytes": 51888,
+      "sha256": "323b9259ce474a2d770966056e0fcab57572ae402f71d01069aa658bc2e2b4f5"
+    },
+    "system/lib64/libjni_deviceAsWebcam.so": {
+      "bytes": 796880,
+      "sha256": "736f60301f70e4b1d691e15abf81b15954b4e6061876f3e5acd7553820e4b90a"
+    },
+    "system/lib64/libuevent-framework.dylib.so": {
+      "bytes": 40944,
+      "sha256": "46e159e45f23a2b8682972654b310da2cc8a960b71605b3897c173af5d5d711c"
+    },
+    "system/lib64/android.hardware.drm-V2-ndk.so": {
+      "bytes": 201672,
+      "sha256": "eb75c30dbf8842883d406d3b12107687d6d3d5074020222f38fee51560f676cb"
+    },
+    "system/lib64/libdowncast_rs.dylib.so": {
+      "bytes": 18792,
+      "sha256": "7966c1ed1ac8ce200ab4ed3016687c61ee34320d8b304fe348ade22c17546c2d"
+    },
+    "system/lib64/libuinputcommand_jni.so": {
+      "bytes": 52312,
+      "sha256": "83cf32b7b3e7b1d430fe12dba4b39907c5986ad496a4e540f4bb285bab7dc202"
+    },
+    "system/lib64/libegl_flags.so": {
+      "bytes": 51568,
+      "sha256": "217ca57661d3c197723816d870dd5448af070b0b9ec32f8b71124f54330705a0"
+    },
+    "system/lib64/libbinder_ndk.so": {
+      "bytes": 187768,
+      "sha256": "02522958590df89d15f9663671e2a1456a36b273db4c452d71e58f8d88103b88"
+    },
+    "system/lib64/spatializer-aidl-cpp.so": {
+      "bytes": 134480,
+      "sha256": "77465b9dd389916061976d20fbe0db1a8eb5c62a74426da47d5921d50ae47d60"
+    },
+    "system/lib64/android.hardware.media.c2@1.2.so": {
+      "bytes": 202288,
+      "sha256": "84adcafde9e27bc221604b391aa8f384c29e94daabdbfe1a78c87bbef141076d"
+    },
+    "system/lib64/android_location_flags_c_lib.so": {
+      "bytes": 51576,
+      "sha256": "ffeddad18150c33d904a791a24ae83ebd7e9e6acda00d642552c7f5d37b4797e"
+    },
+    "system/lib64/libapexsupport.so": {
+      "bytes": 186040,
+      "sha256": "533c4c56e19ad3ea94031f3fd543e233a33441732c48b71c18f6eac491bde8d1"
+    },
+    "system/lib64/android.hardware.camera.metadata@3.4.so": {
+      "bytes": 35256,
+      "sha256": "affda0b1808b8aca8ece34e660f7113efb214e63233c8194682df0cb5671f47f"
+    },
+    "system/lib64/libstagefright_aidl_bufferpool2.so": {
+      "bytes": 252280,
+      "sha256": "c92aa4dfaad7ade8f53a62d1dd0a1dc01f891350e25134d22ac7efa64208631c"
+    },
+    "system/lib64/libpsi.so": {
+      "bytes": 35440,
+      "sha256": "da5674d5d2e38342d7f706ce0dae400c6a12297fd838a9a2e33cede58cb9b7d8"
+    },
+    "system/lib64/libstatslog_gpustats.so": {
+      "bytes": 35280,
+      "sha256": "78592645fe41fd266fc01b22ce1b11d80f635cd9b8f574b82038d3657920271d"
+    },
+    "system/lib64/oemnetd_aidl_interface-cpp.so": {
+      "bytes": 68224,
+      "sha256": "a991003834928d05a02e422522ec6d95f65c68df4a2fc57c1d91588f14073ef7"
+    },
+    "system/lib64/libsoft_attestation_cert.so": {
+      "bytes": 51576,
+      "sha256": "620c384e3f0d985aadaf926a0144def6d2ddfb07e747b88491366c03d85b1a7e"
+    },
+    "system/lib64/libimage_io.so": {
+      "bytes": 482336,
+      "sha256": "9e8215c0b54df1a78f8d4a2c91ac7dd56c626a466690be440fe8d84e39731288"
+    },
+    "system/lib64/android.security.authorization-ndk.so": {
+      "bytes": 85560,
+      "sha256": "f203e2e30077ac9a23d429911d76b87d656736d7a400b98f3029e380f900d7bc"
+    },
+    "system/lib64/android.hardware.gnss.visibility_control@1.0.so": {
+      "bytes": 151992,
+      "sha256": "b897e83f4204bb95c87fb3eba50bb91609692ea1c6ad1b7c9c728f69cdb4ef47"
+    },
+    "system/lib64/android.hardware.graphics.mapper@4.0.so": {
+      "bytes": 152352,
+      "sha256": "8d4f8e02f5daa54b3583495c88031069c4a7a8bd1808d7cb10b04444762d0aae"
+    },
+    "system/lib64/android.security.compat-ndk.so": {
+      "bytes": 52408,
+      "sha256": "da162fcc726e7bb9b62fb74e03783c80f3c1c46c9eac83c0bfc9c1753a324279"
+    },
+    "system/lib64/capture_state_listener-aidl-cpp.so": {
+      "bytes": 51816,
+      "sha256": "5721a81baf3035781c318fcfdde89a99e911046eb3bbec6ba32fc59d1bfc0c7e"
+    },
+    "system/lib64/android.hidl.safe_union@1.0.so": {
+      "bytes": 35224,
+      "sha256": "879710b3ba81eb709c419134e53a9290c740d529b7d8fc80c7a33196eaa98479"
+    },
+    "system/lib64/libminui.so": {
+      "bytes": 234544,
+      "sha256": "6adb04b5d133e5b78287f822c28f7ceeb8e78d0e6b5bcf332279bd374f60c4e9"
+    },
+    "system/lib64/libext2_misc.so": {
+      "bytes": 35968,
+      "sha256": "162f87762a6ed9cd748efaaa8bffcdabb7df7941e57648c45680b2555d1fc237"
+    },
+    "system/lib64/libandroid.so": {
+      "bytes": 319184,
+      "sha256": "c7f1018ac367fe5c9877bafe62a9ca859e74712bb9124fa2022debbb1a839e9c"
+    },
+    "system/lib64/libmemchr.dylib.so": {
+      "bytes": 68400,
+      "sha256": "9d9d41c3a12849ff05da7e4a3640ff313a24b5df7b02f998a944739f365c70fa"
+    },
+    "system/lib64/libandroid_net.so": {
+      "bytes": 35288,
+      "sha256": "aaad67703df6d563b3af02f33265d1a4612605ce996036eda7daeaec84c23bfc"
+    },
+    "system/lib64/android.security.aaid_aidl-cpp.so": {
+      "bytes": 68440,
+      "sha256": "1c812fbd47452250e04b9ee6a7e3f83c9cf6e32ef0971e91b4b63dab4312059e"
+    },
+    "system/lib64/libprocessgroup_setup.so": {
+      "bytes": 53176,
+      "sha256": "1ef137558a5b347e2623e74f3119c6b4ce223a49399da17fa2d57af36ae516b1"
+    },
+    "system/lib64/libguiflags.so": {
+      "bytes": 51576,
+      "sha256": "e16726da1338b77d94c6250b78481b07632c0967dcad47555645e5e724e6598b"
+    },
+    "system/lib64/libcurl.so": {
+      "bytes": 713240,
+      "sha256": "2d45fe0d487aa152af472fdfea652b0e8324bf01f774bbc51cdec4ffa1681153"
+    },
+    "system/lib64/libmedia_omx_client.so": {
+      "bytes": 36896,
+      "sha256": "ce1ef966e5fe80459b8209d2c0e39b1212d3c3f745ed2300fe3f8407b229df55"
+    },
+    "system/lib64/libspeexresampler.so": {
+      "bytes": 51616,
+      "sha256": "f1d05ff65d30d910fb013717259549d004af849630f6b712b810c7b9665d8e2d"
+    },
+    "system/lib64/android.hardware.drm@1.3.so": {
+      "bytes": 152328,
+      "sha256": "82f18c0f2193463fd88d947e0d923a71ecab11b7b788a22f42b93ced3780d451"
+    },
+    "system/lib64/android.hardware.media.c2-V1-ndk.so": {
+      "bytes": 284488,
+      "sha256": "4fe0dc83ae55b6718449a24ccc765151bd78cee7eb34e1499427805458671e03"
+    },
+    "system/lib64/mdns_aidl_interface-V1-cpp.so": {
+      "bytes": 84992,
+      "sha256": "17ad9df4aba40a37e1b0d6cfd16e3d085c1b4d4adea55adf372c751732a53885"
+    },
+    "system/lib64/android.hardware.audio.sounddose-V3-ndk.so": {
+      "bytes": 52288,
+      "sha256": "36911238f945fd4f2b11ed274c351ea00a0082710f401bcba51cf7a6f971671f"
+    },
+    "system/lib64/liblzma.so": {
+      "bytes": 200168,
+      "sha256": "efb50d82dbafa5c5e1be2c13acadde6dbea12cbf10120bbfb3a2f1577c9f5103"
+    },
+    "system/lib64/libmedia_jni_utils.so": {
+      "bytes": 35704,
+      "sha256": "bf78891a12aba1a6b2398f42275d24368f33d503d79be972aaaebdb7a2e8599d"
+    },
+    "system/lib64/libmediametrics.so": {
+      "bytes": 104552,
+      "sha256": "aa7e146cd1d50b119184ece7ccefd7842fd9bfd295523ad4424e2e8e9ba5eb57"
+    },
+    "system/lib64/libwifi-system-iface.so": {
+      "bytes": 36008,
+      "sha256": "93b170332bf7e615610a30e832809a93199cbe4123a299b23dd63774b0ac89fd"
+    },
+    "system/lib64/libaudiopolicycomponents.so": {
+      "bytes": 705600,
+      "sha256": "a50e102f335c4722b285863954c2793a3fab6639551e3ab1c67d90bdc5efdda8"
+    },
+    "system/lib64/libaudioeffect_jni.so": {
+      "bytes": 85984,
+      "sha256": "32e8be230ac76ae41b54f52637f640e7d6e97096c277480bda9753eb174e3052"
+    },
+    "system/lib64/android.hardware.audio.core-V4-ndk.so": {
+      "bytes": 318064,
+      "sha256": "4c07952e418e0e537e2ff7af792c9a794862904e9b1e8f8917de53df2b4698a3"
+    },
+    "system/lib64/libmemoffset.dylib.so": {
+      "bytes": 18792,
+      "sha256": "2d565bd5dca66a79ffb8b4ee61c7534168b0fc9819682f8bc0bb646c0f48aa89"
+    },
+    "system/lib64/libinput.so": {
+      "bytes": 3475680,
+      "sha256": "7040fae5ab8598d81b0d3e5e6aed06e624922996089f907fe7e05634619ad6fe"
+    },
+    "system/lib64/libaconfig_storage_file.dylib.so": {
+      "bytes": 144352,
+      "sha256": "ae48940467abb1c67e2985587ac84de1e65ac631413cd406e37b288fd623b402"
+    },
+    "system/lib64/libdumpstateaidl.so": {
+      "bytes": 68376,
+      "sha256": "eba249ba5408c9ce857a66b5070a792e0a68bb4063cc8d270daefa5a3bd3822f"
+    },
+    "system/lib64/android.hardware.boot@1.2.so": {
+      "bytes": 118640,
+      "sha256": "0a1d4334e60453c9f5714203be76fb42c4c8af7116e336570b2a74a646cbe888"
+    },
+    "system/lib64/libaudiopolicymanagerdefault.so": {
+      "bytes": 783888,
+      "sha256": "ed8e145929757660be75c9217a017ea67d2d941ccec4d4c555e941e10cfb07f7"
+    },
+    "system/lib64/libmediadrm.so": {
+      "bytes": 600352,
+      "sha256": "a40ac87e08dc0721e6afb6ad2cd6d0d184618da468e4f1f869ecc261751c90c9"
+    },
+    "system/lib64/android.hardware.audio@6.0-util.so": {
+      "bytes": 35728,
+      "sha256": "459508975ce9a65cdfbf2eb3d6d42aa92632ca3cd39cfe35c0f833d25ec86483"
+    },
+    "system/lib64/libprotoutil.so": {
+      "bytes": 84392,
+      "sha256": "facb625e8b2f3a99f1feccb956e4b19248604d08d5ae2a808b6d8be65f835463"
+    },
+    "system/lib64/libmediautils.so": {
+      "bytes": 661568,
+      "sha256": "3346114fd54327253ffde9833218db4de0e1aec8b79f189fd3fa6f1024ed5b40"
+    },
+    "system/lib64/android.hardware.sensors@2.0.so": {
+      "bytes": 169224,
+      "sha256": "479caf80ebcf30ac98ef1d520148512cba0594bd851f7af5ded8fefd0b26b38a"
+    },
+    "system/lib64/libtracing_perfetto.so": {
+      "bytes": 69896,
+      "sha256": "9073d06ce4740d6ac0bc3d761b5e8d5f979486d6706625548ca79b0c8802abdb"
+    },
+    "system/lib64/libsfplugin_ccodec.so": {
+      "bytes": 975328,
+      "sha256": "498365f3578b2f261d7062a84071387722d2c2567dd7e9b3eac8eb50ac15c5e4"
+    },
+    "system/lib64/libcups.so": {
+      "bytes": 413080,
+      "sha256": "bfdbf3e2b008b660d3731f21ab464a698b4bd00bcc438f7b959387825d833e96"
+    },
+    "system/lib64/libRS_internal.so": {
+      "bytes": 348224,
+      "sha256": "a8b768d787454366fb5b21659dc7224f2158db3578f7f6937a0f4a09e31d631d"
+    },
+    "system/lib64/libsparse.so": {
+      "bytes": 52408,
+      "sha256": "b9795700c2451d850014f15e8d8a1067af58a76485c9fb60bd0979c6697f74fe"
+    },
+    "system/lib64/libkeymint_support.so": {
+      "bytes": 157464,
+      "sha256": "cd48d8b530bf8c755eb89ceb53d8fea4bf1d1760a76d3b33c748214848f75ad5"
+    },
+    "system/lib64/libaudioflinger_fastpath.so": {
+      "bytes": 101888,
+      "sha256": "9d08fd536d2fc058969d0d64269247ab43b6f9875a9b83e8a0abf2d1e8d8c68c"
+    },
+    "system/lib64/android.hidl.allocator@1.0.so": {
+      "bytes": 102384,
+      "sha256": "49bc521bbb77aba817638f71fa665b2b6cabfffbd5295cb61713d1d86723af79"
+    },
+    "system/lib64/libaudiopolicyengineconfigurable.so": {
+      "bytes": 439264,
+      "sha256": "1a64a2184a83cb8770f5ace3b1b7bb895490b7a1bfbcd238c72e2a9fa1916d6e"
+    },
+    "system/lib64/libharfbuzz_subset.so": {
+      "bytes": 1185912,
+      "sha256": "6f619fad38c8fb7b10e79c030d217504d0c352de53c7e4b78b7a7e771094fad8"
+    },
+    "system/lib64/libaudioflinger_timing.so": {
+      "bytes": 35288,
+      "sha256": "a899b054cfd95725ed247c202ddbe0b1b692cc6f0d99365f0b4a81bc8d3cc756"
+    },
+    "system/lib64/process_info_service_aidl-cpp.so": {
+      "bytes": 51832,
+      "sha256": "849f27105ff5077e57b916280849670d8ba66c26a6af701a6f7bbdbf9b065df4"
+    },
+    "system/lib64/libstatshidl.so": {
+      "bytes": 51848,
+      "sha256": "2730adb81ca085c7086ec458e54243f2fc76289cfcc99e216879ae8493ccf6ab"
+    },
+    "system/lib64/libresourcemanagerservice.so": {
+      "bytes": 285552,
+      "sha256": "c52f3414faeed586c738e5c1639ac39a297ffd62a61c02b7bf39c058cfa9090e"
+    },
+    "system/lib64/libsensorserviceaidl.so": {
+      "bytes": 85240,
+      "sha256": "3d5d37701daeb089c8b563efbbd393be66411311fc7a5aa9ff67f0c9082d46a6"
+    },
+    "system/lib64/libaudiohal@7.1.so": {
+      "bytes": 2306432,
+      "sha256": "ade61b8f639e1c93ed5a8375ceb89e488aa3a2cd8422948057f3ff96cf8f835d"
+    },
+    "system/lib64/libselinux.so": {
+      "bytes": 135448,
+      "sha256": "98ce9fdd07dc571014dccf5b5ca0e7a10ac24b2339b103f8cb64d1b2d1bcf81f"
+    },
+    "system/lib64/libETC1.so": {
+      "bytes": 35408,
+      "sha256": "42b9f5129f26a25244e2d62a519820e540a7465fc16d1d39edcbd51022b70f0a"
+    },
+    "system/lib64/libsensorservicehidl.so": {
+      "bytes": 56080,
+      "sha256": "3ce8b25ad1152fde10d37415e42bdccee2bbb3d0ce2f4479482748c7d198f308"
+    },
+    "system/lib64/libpcap.so": {
+      "bytes": 364960,
+      "sha256": "978780182d003ada1d8a88375da5b1771b4a328068cfa1bca57dcf41c0b0b01c"
+    },
+    "system/lib64/android.hardware.camera.device@3.6.so": {
+      "bytes": 268480,
+      "sha256": "ca4ae8939d3bdbe90880877a774d72ce9033a8f846f0e40452de580a7c8b4f9a"
+    },
+    "system/lib64/libusbhost.so": {
+      "bytes": 35808,
+      "sha256": "a5fe41849787ed43db119a96870f76b172303ea3c3016a5c8c66633302d83203"
+    },
+    "system/lib64/libmonkey_jni.so": {
+      "bytes": 36216,
+      "sha256": "de88c9ca9180f804ceec2520bec484d1950c641f001cc0c3189b80b22ab50e59"
+    },
+    "system/lib64/libservices.core-gnss.so": {
+      "bytes": 497808,
+      "sha256": "17d3043a120c886c75766ba91b361c72d8d20f96340ffb67b0c96bc79e604feb"
+    },
+    "system/lib64/libstatsbootstrap.so": {
+      "bytes": 51512,
+      "sha256": "18acc58c611bdffc932bbf10e2ad8c4bccf7e39501b15e15331bf4dbdf36c2cd"
+    },
+    "system/lib64/libOpenSLES.so": {
+      "bytes": 35896,
+      "sha256": "e194c52efb60074a99b1ba1ffee78e958ae79512582982e294072b0a1c99e482"
+    },
+    "system/lib64/libtokio.dylib.so": {
+      "bytes": 569160,
+      "sha256": "da98eb3a920a801e765cf482072bdd95b53156b542df3764c46f68b090a762f0"
+    },
+    "system/lib64/audioclient-types-aidl-cpp.so": {
+      "bytes": 89296,
+      "sha256": "de12482bb732267841663abb1ff487310179c340d4d67a7c4bdfea6a562ea41d"
+    },
+    "system/lib64/libaudio_aidl_conversion_common_cpp.so": {
+      "bytes": 309232,
+      "sha256": "e6934caaa894cedcf5f0c9effb59e7f40facc81ee48f8a41e04844b98b363059"
+    },
+    "system/lib64/logd_flags_c_lib.so": {
+      "bytes": 51544,
+      "sha256": "9132776dad9823fd60d566a73fbea7ae1bd663fe3e677d1b8c3d3306f12938d4"
+    },
+    "system/lib64/libhidlallocatorutils.so": {
+      "bytes": 35360,
+      "sha256": "05022a605c0b1a051e2aad763a0e81322057242e9fc0bfe1805266af684c817f"
+    },
+    "system/lib64/libtinyalsa.so": {
+      "bytes": 68520,
+      "sha256": "a114da88cddef4b43932f544cd5815519e570fc98d3beb9ff898dc357a504da0"
+    },
+    "system/lib64/libheadtracking-binding.so": {
+      "bytes": 37296,
+      "sha256": "2713dede9561cd558c274974db2830ad010f80409bde98a15d95ac33a6dc4d1a"
+    },
+    "system/lib64/android.hardware.configstore@1.1.so": {
+      "bytes": 118912,
+      "sha256": "a0b71c6e5c06e629a1c593e89aa48f01137c969f645514e2f0818ba72c3771f2"
+    },
+    "system/lib64/android.hardware.gnss-V7-cpp.so": {
+      "bytes": 695680,
+      "sha256": "026d27c065208c73eb372fed57ba84e45b219fcb9cece960a561aa9b37b96a1d"
+    },
+    "system/lib64/libpowermanager.so": {
+      "bytes": 366272,
+      "sha256": "c393945f46b61ea7772f6b0043566e80365fac282ea1b2097f6e994594bdfab5"
+    },
+    "system/lib64/libhidlbase.so": {
+      "bytes": 711768,
+      "sha256": "e68f67115ad7eb55c511d20d852e929c5326e06f15211b3db32069af5d037dc7"
+    },
+    "system/lib64/apex_aidl_interface-cpp.so": {
+      "bytes": 84928,
+      "sha256": "a6c67ab22a2abcdcada304619ad0f23bf358320c6ce1d127761f193a9d6ac064"
+    },
+    "system/lib64/android.system.keystore2-V5-ndk.so": {
+      "bytes": 119392,
+      "sha256": "1efdb4b2e9baeabec09f1f7c95f731649d56307063b3e1f59ec23b9db3e53e93"
+    },
+    "system/lib64/android.hardware.dumpstate-V1-ndk.so": {
+      "bytes": 52448,
+      "sha256": "fc9455f8acdbcf07dc67a5bad11867be26f4819302a6ba102e07fe82b0410f63"
+    },
+    "system/lib64/libcodec2_hidl_client@1.2.so": {
+      "bytes": 35504,
+      "sha256": "3ae15e30fe19b3377fff8c3953dcb2e8eae77a8fa1a2dae7b5225e73ff597359"
+    },
+    "system/lib64/android.hardware.gnss@2.0.so": {
+      "bytes": 681896,
+      "sha256": "ff74d2645ec440688a63c31e3f8c1a37ca24e8b41db31cb47f30ea103861791f"
+    },
+    "system/lib64/android.hardware.power@1.0.so": {
+      "bytes": 118728,
+      "sha256": "109e65a8909f7aa78c9e41cf0742d0e774837f0f753338b2f5a1b35e0a35bf1f"
+    },
+    "system/lib64/libeffectsconfig.so": {
+      "bytes": 69000,
+      "sha256": "e2d896c18769ca77096389757e28061e8081bdb13ffd4d1f20dd2be6bff9a444"
+    },
+    "system/lib64/libanyhow.dylib.so": {
+      "bytes": 38096,
+      "sha256": "180dcf05685715edf27d54ff2b7507431d4dc98ad119d7126b593925df8541b9"
+    },
+    "system/lib64/libnetdutils.so": {
+      "bytes": 119744,
+      "sha256": "64d5ab6e1b9eb0843cfb13ea1905defde7bd9f290edc6d7915468d7887834b98"
+    },
+    "system/lib64/aconfig_text_flags_c_lib.so": {
+      "bytes": 51576,
+      "sha256": "ed6c130b9b502b9128950209cedca3923e9082b917163370ca35577f01b89df0"
+    },
+    "system/lib64/libmediadrmmetrics_lite.so": {
+      "bytes": 104304,
+      "sha256": "9565fb531517d10e55562aa67f0b25ae78b113a5e6c192e81ac0d588ec4ef230"
+    },
+    "system/lib64/android.hardware.drm@1.0.so": {
+      "bytes": 419304,
+      "sha256": "9965bfe203027d00084963f8edee3ad38d8947f4cd8174e6504c6b54b4068f5b"
+    },
+    "system/lib64/libcrypto_utils.so": {
+      "bytes": 35328,
+      "sha256": "2da226f3e54ef7fb1b99e7049af27f7bf8db1853e81a89acf75ccff08af9066f"
+    },
+    "system/lib64/libvintf_jni.so": {
+      "bytes": 69128,
+      "sha256": "afbb0bdfda8f67f3d532d14d5d0bedc319fb0f18aaab108971616e4fbffbfebd"
+    },
+    "system/lib64/android.hardware.security.keymint-V4-ndk.so": {
+      "bytes": 154024,
+      "sha256": "bc7d6597904d192815dce0ab2abfe90f5e24832147d2951c40174a1617d05fec"
+    },
+    "system/lib64/android.hardware.keymaster@4.0.so": {
+      "bytes": 204920,
+      "sha256": "697baa59712e63cadb9b5728124266a8b4b4c73167fae69cda7c067e81aea7d8"
+    },
+    "system/lib64/libgsi.so": {
+      "bytes": 35752,
+      "sha256": "70c455eb60fa865a29454301651fd0169e9430c3c1885cbbe260ac792478eadb"
+    },
+    "system/lib64/android.hardware.secure_element@1.0.so": {
+      "bytes": 152520,
+      "sha256": "a54185c7e06ce8715c74c27fca7332687fb09ca1d4514efa646468f25c2d1854"
+    },
+    "system/lib64/libion.so": {
+      "bytes": 51232,
+      "sha256": "647d74d3270fda92a7502ff3cc6e0b1cb18575869b59073ade4185560e4d63d1"
+    },
+    "system/lib64/libnativedisplay.so": {
+      "bytes": 101624,
+      "sha256": "3f9f2f44c7828a4d9f41ba16c4d34663b10b681a261aba2f56ecda2c2945d2d7"
+    },
+    "system/lib64/libasyncio.so": {
+      "bytes": 35168,
+      "sha256": "eb6113d14f19d490ab43037a25404b5baefb2f4a2cc211acde1eebf3b9606d31"
+    },
+    "system/lib64/libdrmframework.so": {
+      "bytes": 68200,
+      "sha256": "f61008e4618dc73fb747792ff8ede3ede2e9c15279746b6f7fd62a333c1ab160"
+    },
+    "system/lib64/libaudioflinger_datapath.so": {
+      "bytes": 36896,
+      "sha256": "74bd09ccd13fcd58aa73a65bd12f4dcbaa51c0a743e0e40045118d917052a8b5"
+    },
+    "system/lib64/aaudio-aidl-cpp.so": {
+      "bytes": 134672,
+      "sha256": "069ddfa1971885edf5daaaa14152c9591c65063b6d5d96a669eafbbb5b8c56c7"
+    },
+    "system/lib64/libthiserror.dylib.so": {
+      "bytes": 18792,
+      "sha256": "b0751a9364f5ce1008e0135378b4ce32509b3b19f4f94c5dc08682db5b486fc2"
+    },
+    "system/lib64/libevent.so": {
+      "bytes": 349072,
+      "sha256": "42c3e0755d336aac87ea24f552860b78b7997c948453a420f7e66628c0c616b2"
+    },
+    "system/lib64/libexpresslog.so": {
+      "bytes": 35976,
+      "sha256": "191a4e5707e59ae45d7f6bce3c2baa9f8c6df9e688c3e654946725a50f16ca5e"
+    },
+    "system/lib64/libjpegdecoder.so": {
+      "bytes": 36008,
+      "sha256": "20d6d91097e48b915427a6b688d253d6668487a8ce18b6b2887bfb6228e8cb5c"
+    },
+    "system/lib64/libmedia_codeclist.so": {
+      "bytes": 102120,
+      "sha256": "9f27ddbae6b81dad785e367fc2236453afc66b06c7a86a8c274145b93b2c0453"
+    },
+    "system/lib64/android.hardware.power.stats-V1-ndk.so": {
+      "bytes": 85472,
+      "sha256": "10cbad8d3c18a676fdfb3a1a60e2ca738233b20985f47f578df328652b36e530"
+    },
+    "system/lib64/libaudio-resampler.so": {
+      "bytes": 51728,
+      "sha256": "0427211756ce056d84b262a1a6c6f54eabaecaef65494a79d297d3cee78808bd"
+    },
+    "system/lib64/android.system.net.netd@1.1.so": {
+      "bytes": 118648,
+      "sha256": "43e5fa504a1c453360aab0aeaa344c0bc155c5093d7f39ac9e3e30b15b1a5cae"
+    },
+    "system/lib64/libaudiomanager.so": {
+      "bytes": 51976,
+      "sha256": "0169d63fe4ba92fc2a79a3f5b1b6810b5fe662f5bf9924301d63a9cbac9cd93a"
+    },
+    "system/lib64/libjnigraphics.so": {
+      "bytes": 36368,
+      "sha256": "a320761f2c28b3d2dcd269d51648cb83e179244d5bdc59b41ab5ec550542b950"
+    },
+    "system/lib64/android.hardware.graphics.common-V7-ndk.so": {
+      "bytes": 51992,
+      "sha256": "65e820925b74119f86448b8319af53a0bed811ca23a06c9e972656e85a37e9f7"
+    },
+    "system/lib64/libstagefright_bufferqueue_helper.so": {
+      "bytes": 118960,
+      "sha256": "73f590ecd9a6368fe4420534071381e571dd05fa6b3d23c3f2e1c17d47b58824"
+    },
+    "system/lib64/android.hardware.audio.effect@6.0-util.so": {
+      "bytes": 35288,
+      "sha256": "890c40bbdcd9e0753e89d9584d393c9c7d242089f729f8c1177bde8543754e86"
+    },
+    "system/lib64/libRSCpuRef.so": {
+      "bytes": 447464,
+      "sha256": "382d4e2da1555b49f1d83ef6d2ff6581b49575f3f41b0ebf9d340f25577ef3a9"
+    },
+    "system/lib64/libclcore_debug_g.bc": {
+      "bytes": 1147008,
+      "sha256": "5c2ffe0abf32fe8090a543d29a1bd992331de2435db8df583d1b3bbbf901ac2d"
+    },
+    "system/lib64/android.companion.virtualdevice.flags-aconfig-cc.so": {
+      "bytes": 69336,
+      "sha256": "23859c8ae38ec1d340d21ca67bbb08ed2911398db90926a5712b8c25542c8cd7"
+    },
+    "system/lib64/liblibbpf_sys.dylib.so": {
+      "bytes": 35376,
+      "sha256": "c24b0ad57f99fd0b32f6fce10f2e6b79034dea8182b2094d5b380a8cb807b87d"
+    },
+    "system/lib64/libkm_compat_service.so": {
+      "bytes": 51864,
+      "sha256": "f24d41f40ce1ec3c8544c64bab6c5bfcc8eb4357276e871c684f95fe020e296a"
+    },
+    "system/lib64/libsounddose.so": {
+      "bytes": 119184,
+      "sha256": "3078db36422b524d51ceaa5bd9b009acd1e502dd98aa610838ce7bc88138680d"
+    },
+    "system/lib64/libsysutils.so": {
+      "bytes": 69712,
+      "sha256": "b63105769398a47c5f275ec044cd034226cc568572de822c9b928293fceaa1cd"
+    },
+    "system/lib64/android.hidl.memory@1.0.so": {
+      "bytes": 152088,
+      "sha256": "b060186758c637e93178793c4380a4ee35972c9dca4e6975fa11cbce652183ff"
+    },
+    "system/lib64/android.hardware.dumpstate@1.1.so": {
+      "bytes": 102136,
+      "sha256": "ac2fbbe6eb7d266a05ff8bec0d1d3740de6606e825ded2d61becfb92dde002b4"
+    },
+    "system/lib64/libbpf_android.so": {
+      "bytes": 85480,
+      "sha256": "5274dd00689abc5afebe8e293ef93c4d6dd026a37ae87a15bb03a16944ba86d7"
+    },
+    "system/lib64/libext2fs.so": {
+      "bytes": 415752,
+      "sha256": "6644abec40f9f24241b46beb1915442fe2817449d44af2bb0c3bedc7252e919d"
+    },
+    "system/lib64/libnix.dylib.so": {
+      "bytes": 314384,
+      "sha256": "b21c07a51aac287f9eab7fee60c6e018a873f4a53b666dbdbcd00eff08f7a3f2"
+    },
+    "system/lib64/volumegroupcallback-aidl-cpp.so": {
+      "bytes": 51832,
+      "sha256": "f3656730d3d454ee61116e1d194810b350d92f8c3c679c2d078d6898c64bbf85"
+    },
+    "system/lib64/libEGL.so": {
+      "bytes": 270512,
+      "sha256": "a40abc4921cce1bfc7612bbab5bfa0c91d10972ff1b632cf4724f20790823d1a"
+    },
+    "system/lib64/shared-file-region-aidl-cpp.so": {
+      "bytes": 35736,
+      "sha256": "7fd30f096e2e3ccb5c105dce8f8e8c07770ba571f10a8f9b2f502f17b0b43499"
+    },
+    "system/lib64/android.hardware.common.fmq-V1-ndk.so": {
+      "bytes": 51240,
+      "sha256": "eac8ccbc8a3edfeef63c2d6308e32dc9a528bcb9a9f16c7f0e83734c9cb7b6d5"
+    },
+    "system/lib64/libui.so": {
+      "bytes": 444616,
+      "sha256": "e3ee9f7dfaed5dc5783b5b10654c2be97b34079cd4e831b1e44edbb722be7d58"
+    },
+    "system/lib64/libradio_metadata.so": {
+      "bytes": 35600,
+      "sha256": "e071e3626690b8707b1e09d68183940330d905c9c580ead81dcc16ff94dbe260"
+    },
+    "system/lib64/librustutils.dylib.so": {
+      "bytes": 69312,
+      "sha256": "8b589ac07ea18438820035d5c97f18ac1b454de840e45364c4a0f10a7f2b3e2d"
+    },
+    "system/lib64/libperfetto_framework_jni.so": {
+      "bytes": 70072,
+      "sha256": "a996b5a136b48251c3efa67df58a079a59900448bcd4b790a2f096713940d5f5"
+    },
+    "system/lib64/android.hardware.drm@1.4.so": {
+      "bytes": 335080,
+      "sha256": "1a5ec65f0ca84d1f3500b72a5e278c83bc2438dc2c03e80c899a04032320e7b8"
+    },
+    "system/lib64/android.hardware.atrace@1.0.so": {
+      "bytes": 102240,
+      "sha256": "2a40fa53ec5c955c778a2803f0b5cf13301241bab9fb3e033f5f5087f3b1a0d1"
+    },
+    "system/lib64/android.hardware.audio.core.sounddose-V3-ndk.so": {
+      "bytes": 69024,
+      "sha256": "f59230bcbeeea8672f91bd2beebb61be07a7938143db50a360fe8e6c0a83e6df"
+    },
+    "system/lib64/libaudiohal_deathhandler.so": {
+      "bytes": 51952,
+      "sha256": "d0000519a9b9457b9ef5d229f930d15b10423e46cf86bb75d6474d92cc985ecc"
+    },
+    "system/lib64/android.hidl.token@1.0-utils.so": {
+      "bytes": 51888,
+      "sha256": "b4edf2a4b12db319f6d161ea92d0555101ec72042de357017ad836a7f429cf24"
+    },
+    "system/lib64/libfoldhash.dylib.so": {
+      "bytes": 35264,
+      "sha256": "1f2f79a1c3d8f90df8f1f1689fee1a13baab3ee98b66e77ae3b05a4c642f2ed4"
+    },
+    "system/lib64/android.hardware.audio.effect-V3-ndk.so": {
+      "bytes": 329776,
+      "sha256": "2580cae30f1b728941db183508d5ac3a84979589b321dffd6b11da134d6b9b24"
+    },
+    "system/lib64/liblibc.dylib.so": {
+      "bytes": 54416,
+      "sha256": "210a04c696b04668440b856e6e20326c73e83b90cd7e39593cd3f7ae4d633726"
+    },
+    "system/lib64/libhidl-gen-utils.so": {
+      "bytes": 69152,
+      "sha256": "6f630435505d2ac69ee75099c5631416519cc02eda6fa0b3c75a8e049c960b87"
+    },
+    "system/lib64/libstatslog_surfaceflinger.so": {
+      "bytes": 35296,
+      "sha256": "a124342cb904322278d6dc205aa0bb82a8b330f9a1a5dc4284becca6365d7cc4"
+    },
+    "system/lib64/libft2.so": {
+      "bytes": 704288,
+      "sha256": "753ba8e9d187d2e6875da225d912850e6b496519b2a7587ad570834e85c3a1d7"
+    },
+    "system/lib64/libRS.so": {
+      "bytes": 103184,
+      "sha256": "e75ccf62bae003ae619545d883f9414bd1f7e4fb2e3e404abb06bfd313d4522c"
+    },
+    "system/lib64/libkll.so": {
+      "bytes": 102832,
+      "sha256": "4b652c27e9228385e62f93a259e15ca138664f58800a3f600b7a529bde98d932"
+    },
+    "system/lib64/libkeystore-attestation-application-id.so": {
+      "bytes": 51928,
+      "sha256": "f02cc652c770a4428d053580bb1ce42a31190394be03403d92e853718ba7745c"
+    },
+    "system/lib64/libutils.so": {
+      "bytes": 168288,
+      "sha256": "5b01ecd8fc3b23ef14f34dc49cb7b42b9fe4a036e33e1de08b557598bcc4a7a2"
+    },
+    "system/lib64/libbinder_ndk_sys.dylib.so": {
+      "bytes": 19232,
+      "sha256": "f95b393c05610a6f434a324cd3ec5cb5882c8743cea8167a947979fe1f5340a8"
+    },
+    "system/lib64/android.hardware.media@1.0.so": {
+      "bytes": 35256,
+      "sha256": "57b67b134fb1baaed02c06fab490ac1b8004c4fe521db221ac94cd73599f5014"
+    },
+    "system/lib64/libpackagelistparser.so": {
+      "bytes": 51464,
+      "sha256": "d63f3f99683a83f89f8590af83e52e6da48e47f5e1df81ae977712179814053e"
+    },
+    "system/lib64/libmemevents.so": {
+      "bytes": 68856,
+      "sha256": "b621d1e8d40a875a6d8af5d228e3968d3c0f807ff020f5405b321ec722e07d31"
+    },
+    "system/lib64/libmemtrackproxy.so": {
+      "bytes": 52008,
+      "sha256": "59ee5d950fda9e62134be8c6184f5d65450d9062b9ad1bc523fa1007d86547f4"
+    },
+    "system/lib64/lib_android_keymaster_keymint_utils_fake_latest.so": {
+      "bytes": 37392,
+      "sha256": "8713cf684901b69a823a337320df1cdfb02fa0d1362774e5448c3836da11a174"
+    },
+    "system/lib64/android.hardware.health@2.0.so": {
+      "bytes": 169544,
+      "sha256": "9b19ddc2bf7b429a448ef702ec73387783e4dc8d3e1e68fc7df341b814bb3b4a"
+    },
+    "system/lib64/liblz4.so": {
+      "bytes": 199776,
+      "sha256": "4d54121e16f588dc248aa3096076c00aee6fa74b51ec8530f269a9076a890e6d"
+    },
+    "system/lib64/libGLESv1_CM.so": {
+      "bytes": 51768,
+      "sha256": "e1a596ab453deb22c77c519827a37cda31fd3f68249a643a7567c843c614a16b"
+    },
+    "system/lib64/libstatslog_surfaceflinger_bootstrap.so": {
+      "bytes": 36352,
+      "sha256": "dee2c5f59e21a06ebbb708ea7a1898fdd149fb19c286d545b89071dfd35edb0b"
+    },
+    "system/lib64/libsignal_hook_registry.dylib.so": {
+      "bytes": 52360,
+      "sha256": "7610422516884d68c9c0d4b07104d6ef8ea7d662e85560437804d4049b8153d3"
+    },
+    "system/lib64/libext2_e2p.so": {
+      "bytes": 51448,
+      "sha256": "6825e0d4e8012315ba1f0467e023218433bc4b46ff0250606bfed5a70d0ab372"
+    },
+    "system/lib64/audiopolicy-types-aidl-cpp.so": {
+      "bytes": 53784,
+      "sha256": "3e90ce92bc4d7e2b76019a75b46d2020d6a839801d22535142720bfaa528e9f3"
+    },
+    "system/lib64/libtinyxml2.so": {
+      "bytes": 150824,
+      "sha256": "830557737c75a37e7753fc1ffd6af4e54bee8e4df09b4f1fd341e2e7aacc9206"
+    },
+    "system/lib64/libsoundpool.so": {
+      "bytes": 103464,
+      "sha256": "b100978dc152c5191b1c0516612d1fd963f610b0a598e4f6d75e0bd0f3e05701"
+    },
+    "system/lib64/libsonivox.so": {
+      "bytes": 612840,
+      "sha256": "aa11725277c3beee1fb15556d7c546af140871f365ef04a01a107cef9d878977"
+    },
+    "system/lib64/libcesu8.dylib.so": {
+      "bytes": 19720,
+      "sha256": "8e25a2d04684a94105cd1e9c28ebeb2062fbbd136de17f473c9ad796ff0eab78"
+    },
+    "system/lib64/libPlatformProperties.so": {
+      "bytes": 119040,
+      "sha256": "b6a4a27568bc0b1b8807e67ebdfad3bb994afe5287826ee5139cdcd5093369b3"
+    },
+    "system/lib64/android.hardware.camera.device@3.5.so": {
+      "bytes": 268664,
+      "sha256": "8704ca9220fbb8b8183e65b4910d018ebea422ffd67f17421096c822c57ada08"
+    },
+    "system/lib64/libstagefright_surface_utils.so": {
+      "bytes": 51832,
+      "sha256": "9ad8cce9c30c532f7cdf2821babac5da22ce7198b0fecbffe6914d7b8ea0b136"
+    },
+    "system/lib64/android.hardware.broadcastradio@1.0.so": {
+      "bytes": 286088,
+      "sha256": "eb9da6243958d6d47876f51ba136c3ccf2a7e8413e3abcdaa1c42e6f551c3765"
+    },
+    "system/lib64/libgpuwork.so": {
+      "bytes": 69128,
+      "sha256": "88d30da60328564d781cd72d922d2f093f4d529d84acd43ba7b483cc31d051fc"
+    },
+    "system/lib64/libadbd_fs.so": {
+      "bytes": 69176,
+      "sha256": "e0af64c8eaa3a6fe8abf50650275ef16b032387400370fbdbe237ccb38a7af7e"
+    },
+    "system/lib64/libkeymaster4support.so": {
+      "bytes": 107384,
+      "sha256": "1b92eac79f6d772c0d0ac5f797adbacc3d3d44f0a04bbf740448402e639489f4"
+    },
+    "system/lib64/android.hardware.sensors@1.0.so": {
+      "bytes": 135520,
+      "sha256": "2ffbbc8b9fc929d663084e8bc0ea42cf58c10a51fd2e191547cfac251d563e0b"
+    },
+    "system/lib64/libpolicy-subsystem.so": {
+      "bytes": 52936,
+      "sha256": "7bde7ab3afd24353ca0c62c9e291cfdcab1d35c7898483f3d33855457ef4e5b3"
+    },
+    "system/lib64/aconfig_view_accessibility_flags_c_lib.so": {
+      "bytes": 51584,
+      "sha256": "db8fcbcfd7d8e2b9a3356e66b95d6ab29ef99ab99a393135a12d99b30022f69a"
+    },
+    "system/lib64/android.hardware.radio@1.3.so": {
+      "bytes": 1022184,
+      "sha256": "838922df9f2a38ba902b37e1363c92801d033a8483f10e7e1c1cd314cba77a46"
+    },
+    "system/lib64/libgui.so": {
+      "bytes": 1827392,
+      "sha256": "1ca3e8e4bb08769e8e5e0a0db793ae838a59da4180e9963b6c6a4be25f23ccdd"
+    },
+    "system/lib64/server_configurable_flags.so": {
+      "bytes": 36288,
+      "sha256": "7b7bb6a7010792d35ca0207233cf13fa42ac3f82eb16a8fbb455073951cb9ce8"
+    },
+    "system/lib64/android.hardware.power-V6-ndk.so": {
+      "bytes": 118976,
+      "sha256": "7337210cc61f634781088032cce316fd4a3dc460ed403b5de725323d510692f2"
+    },
+    "system/lib64/libaudioutils.so": {
+      "bytes": 513560,
+      "sha256": "7029d67c0c1b32a63e4c058eb3cc6e9989be554bd0e0d36a486e51186600ba2a"
+    },
+    "system/lib64/libwfds.so": {
+      "bytes": 711312,
+      "sha256": "d8a592bc693b194ab257a27f037f990fc4edef1f87fce7553d7b1b8484f9deeb"
+    },
+    "system/lib64/libfsverity.so": {
+      "bytes": 51512,
+      "sha256": "5edd96f2c39e1019fbfda05d763b9c1aa59cd96c29bd658b481ed728bb968fbc"
+    },
+    "system/lib64/av-audio-types-aidl-ndk.so": {
+      "bytes": 85888,
+      "sha256": "2bd1deb419292c19a59c871ac7442af410b7c314d6a0c0c4137b6d46d5f1586a"
+    },
+    "system/lib64/android.hardware.camera.device@1.0.so": {
+      "bytes": 317712,
+      "sha256": "5e94b1e71f3f6991113b7c37c8d2a081eb8256b176b236048674d09ad47a0865"
+    },
+    "system/lib64/android.hardware.renderscript@1.0.so": {
+      "bytes": 351016,
+      "sha256": "b8b7319d08b9dea08b1d4ed7bfed3c51340432bf49d370b9557f402bbea080ab"
+    },
+    "system/lib64/android.hardware.audio@6.0.so": {
+      "bytes": 802680,
+      "sha256": "7e82ec1c1423f42d63c9f3568a4c2d2901549543246ade365417b6aae8b72d4a"
+    },
+    "system/lib64/android.hardware.sensors-V3-ndk.so": {
+      "bytes": 118712,
+      "sha256": "0a1ed15d29b141318e60b2092b92cf512fc66a9d8a5fc04caa3731d06519d9a2"
+    },
+    "system/lib64/android.system.suspend.control-V1-cpp.so": {
+      "bytes": 68472,
+      "sha256": "1222fb00d984bbdd1d2efbf3a9e7f13cd4511c8bb90823d97c199dd0c63d7f71"
+    },
+    "system/lib64/android.database.sqlite-aconfig-cc.so": {
+      "bytes": 51584,
+      "sha256": "469c8e88755bc7ec2df90b60bcccc823add74ebf6daec1ecb67212b50d7dd024"
+    },
+    "system/lib64/libSurfaceFlingerProp.so": {
+      "bytes": 118152,
+      "sha256": "241ad22dd20dc8cb9f17ab48c51d81ef6456a3e2ca29107d33ae7e04ace28d3b"
+    },
+    "system/lib64/libsensorservice.so": {
+      "bytes": 464576,
+      "sha256": "f6dc8e915fca6fba389bb10f84c3456bef0a5c6620b8e135d40ee23b88849520"
+    },
+    "system/lib64/libstagefright_amrnb_common.so": {
+      "bytes": 102480,
+      "sha256": "4079e8e10e5281d4015ec6bdd47021e9146b726b78246ae3f990319f5e20e1db"
+    },
+    "system/lib64/android.hardware.camera.device@3.4.so": {
+      "bytes": 169048,
+      "sha256": "af27944ef007471a56a2e67610c4d83a213a496907b492f5ef056c3877c25ad6"
+    },
+    "system/lib64/android.hardware.radio@1.0.so": {
+      "bytes": 1445104,
+      "sha256": "ca4e28c032dd903953b05a1a570948f9334f023160b7569414629d3593861bba"
+    },
+    "system/lib64/libbitflags.dylib.so": {
+      "bytes": 19136,
+      "sha256": "c5f10080b909dbd285f66b39b10a02f098bd1c9bf11cb63968240245b8fef31e"
+    },
+    "system/lib64/android.hardware.graphics.allocator@2.0.so": {
+      "bytes": 102432,
+      "sha256": "df249f7e29f6bbf293fc28aed52a5e36bf10c8ddc6742c2862783e16907e9c40"
+    },
+    "system/lib64/libfilterfw.so": {
+      "bytes": 183640,
+      "sha256": "2e0b5b54e5334a94709c2072608d269027378a550f083e618ccff644ba6b8dbc"
+    },
+    "system/lib64/android.hardware.power@1.2.so": {
+      "bytes": 102384,
+      "sha256": "a879a17d1f8ec46e58a003db495d4fac25c9a167fb89d28e96b4350eaffc4bb9"
+    },
+    "system/lib64/gsi_aidl_interface-cpp.so": {
+      "bytes": 117792,
+      "sha256": "bde32303fed2fa160b444625a8fa94a22c3a3eac925d6d4c9a9fcca377ab7865"
+    },
+    "system/lib64/android.hardware.camera.common@1.0.so": {
+      "bytes": 35264,
+      "sha256": "5182cd6d4c74284ea16cfaba9e055ebe649a67bf9c8ebcf96cbecacd6d3c49ce"
+    },
+    "system/lib64/android.system.suspend-V1-ndk.so": {
+      "bytes": 68768,
+      "sha256": "3a7fe0bc6b17c6ea5ee6fe84885e36cae47e2970de3d5d956d4e73fc870a640f"
+    },
+    "system/lib64/android.hardware.configstore@1.0.so": {
+      "bytes": 135656,
+      "sha256": "f5d8929f73addecb6a7cb0b4e98246bbc70fe71bcc62e1d64f84cc74782c7119"
+    },
+    "system/lib64/libstats_media_metrics.so": {
+      "bytes": 36000,
+      "sha256": "bdc36cd6b6cbdbf8255955e3e6a59d8db457a04d4a662f6112a379990137061d"
+    },
+    "system/lib64/liburingutils.so": {
+      "bytes": 52496,
+      "sha256": "0217a47eb9c71a7f5221c3a6db74abbd0af673d050d4b1ac283fd59de207f09a"
+    },
+    "system/lib64/libexpat.so": {
+      "bytes": 201112,
+      "sha256": "49f495528dd2426ebc12d6b106c54110c55e2a2a00d6803e719d81f845f6ed08"
+    },
+    "system/lib64/libbatterystats_aidl.so": {
+      "bytes": 51904,
+      "sha256": "5ca9a3c60eaafe5df0cee9d43e0f5c2a7136a309e79c8956777f979647affc39"
+    },
+    "system/lib64/libblas.so": {
+      "bytes": 1630584,
+      "sha256": "7af6d3a18dc7369d6915f8fcb92382f8ed60f22a08fe662bb2c25c159526db22"
+    },
+    "system/lib64/libkeymaster4_1support.so": {
+      "bytes": 162632,
+      "sha256": "44210617e3d4328e7c4003ea73473cfe0f58dcda213ec6efa134017016925b44"
+    },
+    "system/lib64/libprotobuf-cpp-lite.so": {
+      "bytes": 1347400,
+      "sha256": "6cb402407810066c032e0b073e2ce18268726c05f90515627008a608778e71a1"
+    },
+    "system/lib64/libaconfigd_protos_rust.dylib.so": {
+      "bytes": 18792,
+      "sha256": "a32caf4eda76fb01a5d50bc4ec686b61dc480153d78c1b53ef3100c26b8ecfa9"
+    },
+    "system/lib64/android.hardware.camera.device@3.7.so": {
+      "bytes": 301648,
+      "sha256": "ce079375c209b9992ea97ccdd00be1564070999061e6112cd18e9a306fd5ef68"
+    },
+    "system/lib64/android.hardware.drm@1.2.so": {
+      "bytes": 402888,
+      "sha256": "3cf0e53567fec9894abd7160cfdbf6c081b1a51b28081230934174cd5e0678e2"
+    },
+    "system/lib64/libstrsim.dylib.so": {
+      "bytes": 38544,
+      "sha256": "68f608e15280d919d77ff6a83f1a80584dcf43be57c921dfdb87eab6ff6dee4b"
+    },
+    "system/lib64/android.hardware.drm@1.1.so": {
+      "bytes": 285688,
+      "sha256": "30ca0b49224f75e76554200ac6f8b5b078e7243e4be7101db064dbf8f5cfb5a3"
+    },
+    "system/lib64/libdrmframework_jni.so": {
+      "bytes": 68896,
+      "sha256": "78d9b87f6263bcc13af46fc29f253de02223c836e68d47399dae167148e5350b"
+    },
+    "system/lib64/libaudioaidlcommon.so": {
+      "bytes": 35968,
+      "sha256": "7115cd6030acf33d7534be9321cba3f81294d0bdec9e9a4e0c15b65c5ca109dd"
+    },
+    "system/lib64/android.hardware.vibrator-V3-ndk.so": {
+      "bytes": 135104,
+      "sha256": "e3a1a69f3ab96f7180cea649f45055289c59009a42226814373be9f04f129bd1"
+    },
+    "system/lib64/libusb4_policies.dylib.so": {
+      "bytes": 91760,
+      "sha256": "51a14c87c278cc52adbb17f608fb145aaedb2cb471a1a5f44f1c9c1f012ed1e6"
+    },
+    "system/lib64/libremote-processor.so": {
+      "bytes": 136088,
+      "sha256": "96a304a0029375766dffb3bae1fc269051cd2fefa66431f1f0afe5282785f89b"
+    },
+    "system/lib64/com.android.window.flags.window-aconfig_flags_c_lib.so": {
+      "bytes": 84344,
+      "sha256": "907df463a29d724adbc1d1bee35ef18473d886788ae84161ce11e8a0f14a1d72"
+    },
+    "system/lib64/com.android.media.aaudio-aconfig-cc.so": {
+      "bytes": 51712,
+      "sha256": "fd6480cd8df861d4557a15819cd66cc81fe0445d81d5fe3cc73f58f81339cdba"
+    },
+    "system/lib64/android.hardware.confirmationui-V1-ndk.so": {
+      "bytes": 68896,
+      "sha256": "dd2d9aa53b151b5130bb32cfa5dd023aa16e17a4056d75527b4e50525cbfd9bb"
+    },
+    "system/lib64/android.hardware.graphics.composer@2.1.so": {
+      "bytes": 286912,
+      "sha256": "e00136db7072f65ed35019daa6589ad585547e987a8091ee3412f0dd981b3cc5"
+    },
+    "system/lib64/android.hardware.graphics.composer@2.4.so": {
+      "bytes": 336792,
+      "sha256": "c245a7a583b9e30b2040f472fe1b8bfb4159634d5b6bd7e8ba35063788532704"
+    },
+    "system/lib64/libfilterpack_imageproc.so": {
+      "bytes": 35320,
+      "sha256": "44875f29b8ea826dcb2017ecae11a8b9cf5d6d5c3cd27d310c1488f5beabfdb0"
+    },
+    "system/lib64/libsmapinfo.so": {
+      "bytes": 168640,
+      "sha256": "ff3d254f33faf33fa506a70a893984e9b7e269c4403647b44b8bcf48256fb946"
+    },
+    "system/lib64/libvsprintf.dylib.so": {
+      "bytes": 18792,
+      "sha256": "0ae25eba2eecadfbf9a436bc660721aee5761ac3b0340535d6f5503291629b3d"
+    },
+    "system/lib64/libxml2.so": {
+      "bytes": 1175888,
+      "sha256": "238b1387ff0d8956b44a0eca5410c491944cd997343f5a7ff366e2fa589c7cc8"
+    },
+    "system/lib64/effect-aidl-cpp.so": {
+      "bytes": 84840,
+      "sha256": "899f5f1c28a2dd2cbb921fafdfaa405370589a83f38818bf3c243a26c8d6866d"
+    },
+    "system/lib64/libaudiofoundation.so": {
+      "bytes": 324712,
+      "sha256": "8b9d8beaf4b32b57e1d45592f3f6e92d45e019f3d8ae5bde72d74c01a39c6efa"
+    },
+    "system/lib64/libincfs.so": {
+      "bytes": 218560,
+      "sha256": "26c5a9c0fccc220c03de1008bd402d8308f6ca745dfeb9d0bd2c01bca412bdb9"
+    },
+    "system/lib64/libclap_builder.dylib.so": {
+      "bytes": 465984,
+      "sha256": "100fc6c98ee5e8ec7b0e37e4764fdc7b67c90b57cce6d1d3caac416edb53b039"
+    },
+    "system/lib64/libregex_syntax.dylib.so": {
+      "bytes": 690168,
+      "sha256": "e3cf737fc81d3f2e59e8628c00629baf0c4c5a3f16c51e855123281523c3d965"
+    },
+    "system/lib64/libaudiopolicy.so": {
+      "bytes": 108248,
+      "sha256": "8dcdf149cd5126db4ce77849122c9083c9e3808b5e483ecfb3133b6c6ad32ed6"
+    },
+    "system/lib64/libexif.so": {
+      "bytes": 150096,
+      "sha256": "333a6bad5f3ca5157c9a09fd12955e1ab13c564c3f0e4f23278958db15072adc"
+    },
+    "system/lib64/librtp_jni.so": {
+      "bytes": 266104,
+      "sha256": "b7221f1057d82a1235bb5f0f2da76c9a1f923a87e9e16ce4536cc3644b5fbf75"
+    },
+    "system/lib64/libnblog.so": {
+      "bytes": 251664,
+      "sha256": "040f128517ff57bf9126e19bbb1b75a46af176580c8ecccfcd87f1c483a20bc1"
+    },
+    "system/lib64/android.hardware.common-V2-ndk.so": {
+      "bytes": 51552,
+      "sha256": "2684dbd3fdd07f6efb8abbb731010a7a0c46d237f8e0813b44a441503b7d7e3c"
+    },
+    "system/lib64/libenv_filter.dylib.so": {
+      "bytes": 55136,
+      "sha256": "20221a6448c54d90d7c551064e8cd1bb42f096deb0610c19b5cfc6d0e4649a63"
+    },
+    "system/lib64/libincident.so": {
+      "bytes": 35592,
+      "sha256": "f7cccede8aae7c2d97776d83bdbe5122b038324cdf105c8124219d6f0daf36b8"
+    },
+    "system/lib64/libmediadrmmetrics_consumer.so": {
+      "bytes": 37136,
+      "sha256": "3f73fa87d0be30393da71bdd3a99fc3eed43a6e2c61bc9c1aa1ba777fb97333c"
+    },
+    "system/lib64/libupdate_engine_stable-V3-cpp.so": {
+      "bytes": 68480,
+      "sha256": "ff23a5b799ad8b931d551a47f37a489b261e22452e1ee36ef6c812e09aa84f3d"
+    },
+    "system/lib64/android.hardware.contexthub@1.0.so": {
+      "bytes": 168680,
+      "sha256": "d13f6cf49c087dabcdcf70c211a21a96caa463b8dcae32ca25a81ec0a1a1565d"
+    },
+    "system/lib64/libext4_utils.so": {
+      "bytes": 51376,
+      "sha256": "ce689c6f4adc4f3e3e1cae64f5a5fb00f16170204467c6373f2e32428377bf1d"
+    },
+    "system/lib64/libclap.dylib.so": {
+      "bytes": 18792,
+      "sha256": "a61da96ba12edefbd66d060a36d07b8dfd828d265d0f8c7d6c15d6c459875de5"
+    },
+    "system/lib64/liblpdump.so": {
+      "bytes": 170864,
+      "sha256": "68e85781e624e133b89131aec0d8d0d86d0e485a65bcb408d92a6fbc396e38c4"
+    },
+    "system/lib64/av-types-aidl-cpp.so": {
+      "bytes": 68792,
+      "sha256": "a46fa346c76c2b156a8c8d38c4f001adfdb20c5949cd9c7e3922cb38a4058046"
+    },
+    "system/lib64/android.media.audio.common.types-V4-ndk.so": {
+      "bytes": 168960,
+      "sha256": "901955ca25ed1f395108a34646fe69b130d139e35aad0ada5f5ebd1cba257b1e"
+    },
+    "system/lib64/libalarm_jni.so": {
+      "bytes": 35872,
+      "sha256": "bca42b65bf7fe535dc5a9d52406bf193208e40ed20151c809efef437c91ad8f9"
+    },
+    "system/lib64/android.hardware.audio.effect@6.0.so": {
+      "bytes": 1332856,
+      "sha256": "ecb61d7eee08e3395cbdccbde1d804bc035ad310908d3f23a357c0b6a2e827f5"
+    },
+    "system/lib64/libcamera_client.so": {
+      "bytes": 665456,
+      "sha256": "1289ee8c1fc5e931390e4bce0582da553ca7a9604aafb743c94be970e755d558"
+    },
+    "system/lib64/libcodec2_hidl_client@1.1.so": {
+      "bytes": 35472,
+      "sha256": "2332cb09057be024a6a9c70ad4fb6975bc3e07ffbb2686dd87ce2f3e22b37187"
+    },
+    "system/lib64/libvibrator.so": {
+      "bytes": 68568,
+      "sha256": "ecc8cfe4b306210ccc869cbae610b8ee083fff5bbce9587f769e90145df84a7b"
+    },
+    "system/lib64/libactivitymanager_aidl.so": {
+      "bytes": 85288,
+      "sha256": "98f83a2da158a32e015455506629c2785ba50cb19cbeaca9a87b0bb0be7b9b7d"
+    },
+    "system/lib64/android.hardware.usb.gadget-V1-ndk.so": {
+      "bytes": 68800,
+      "sha256": "b7d96dcbbab6b879851da75da8a90feca454d80b3e6684bac355ec250c831411"
+    },
+    "system/lib64/service.incremental.so": {
+      "bytes": 1678632,
+      "sha256": "d67007b0724b41c55e52156b8d9f44d86dc5e2e6a946b0aa2615e1c41b3e165c"
+    },
+    "system/lib64/libRSDriver.so": {
+      "bytes": 232240,
+      "sha256": "9531d25f8194db980e5fe92370cd8121eda4ef86d13ca3a303adea8a0fa70294"
+    },
+    "system/lib64/android.hardware.graphics.common@1.1.so": {
+      "bytes": 35240,
+      "sha256": "c4b0e11c1d6323ebaeee04df2081c911eff27901766b0eea107c26b8b6ee5c10"
+    },
+    "system/lib64/libmedia_omx.so": {
+      "bytes": 235136,
+      "sha256": "f757be53de122f153b4d41987754d10a79a62788e94c2ac2f7c994a92d97f8e8"
+    },
+    "system/lib64/libmedia.so": {
+      "bytes": 685624,
+      "sha256": "62e22e80e977c9696782b5e2b5b6da3cbcda8f364e3ef5858764dd2c3dace974"
+    },
+    "system/lib64/libhidlmemory.so": {
+      "bytes": 52168,
+      "sha256": "a01e6d1dd273584781ba64fa481a3e51b996c0085848d1daefe4fb700c3c747d"
+    },
+    "system/lib64/com.android.media.audio-aconfig-cc.so": {
+      "bytes": 52088,
+      "sha256": "597fae5d3a0855b18adfd5d4d56f34dbb2c6bb67480b1c4d6445d16d1a38c16e"
+    },
+    "system/lib64/libbrillo-stream.so": {
+      "bytes": 135544,
+      "sha256": "684fbde097580d904fec16a44dd57f778275642590f69c36017db3639655016c"
+    },
+    "system/lib64/libprotobuf.dylib.so": {
+      "bytes": 1599904,
+      "sha256": "5b889d8ec271765905923debf5f2c9ddb96966ea76a5bf05eb30ed0addf15cac"
+    },
+    "system/lib64/libsocket2.dylib.so": {
+      "bytes": 86336,
+      "sha256": "930a0e9b49c6133a0277d9378b4f4ab088bebf2cb1d4893ebe33b74532258f15"
+    },
+    "system/lib64/libmediadrmmetrics_full.so": {
+      "bytes": 121560,
+      "sha256": "15cdd3afa1de7559ccb751822478c65659d822c8dec31eb08100955ebae7b5fd"
+    },
+    "system/lib64/libkeymint_fake_latest.so": {
+      "bytes": 171128,
+      "sha256": "1bf54da87d541d353a7b6d8e11dfc7f407a61c0d5185e42ab6d182d7b8502360"
+    },
+    "system/lib64/libultrahdr.so": {
+      "bytes": 316360,
+      "sha256": "97f01f88454d4c80fc01a50840a38bdc0f4c4dd02b78ef4447abcc7e11424c57"
+    },
+    "system/lib64/libandroid_gui.dylib.so": {
+      "bytes": 547472,
+      "sha256": "2b3f44dd2e5daf8bd0375a4cdc4373be99e2a4e3d298018730e6c041df452385"
+    },
+    "system/lib64/libnbaio.so": {
+      "bytes": 70792,
+      "sha256": "83f9b1b5ce9359c8fb31d647c3e4556ec6faf871446dfe0a78378a008ec051a2"
+    },
+    "system/lib64/libjxl.so": {
+      "bytes": 6728000,
+      "sha256": "cadd447500ef3c4f155df953f5056e45179f8183d7dca4c40adbc4ce1e0e0558"
+    },
+    "system/lib64/android.hardware.health-V4-ndk.so": {
+      "bytes": 85680,
+      "sha256": "21770d04b662da74adad6b469569b564b8cf93e0c810a7cc17afdb84078777ee"
+    },
+    "system/lib64/libfs_mgr_binder.so": {
+      "bytes": 778792,
+      "sha256": "165ea02c85e849f1a1d03e52c5f01f65c3a2aabcc009c5a5f735db42b9af60de"
+    },
+    "system/lib64/libGLESv2_angle.so": {
+      "bytes": 6336208,
+      "sha256": "aad5c554127b99e556e4fc756b29c569b1356793a5439354bea7f9ca7e7cc1e5"
+    },
+    "system/lib64/libext2_quota.so": {
+      "bytes": 101288,
+      "sha256": "b3a89270f0f02e25838e845d55b94e826ea411675b31733154809e8fafe1eb03"
+    },
+    "system/lib64/android.hardware.health@2.1.so": {
+      "bytes": 169384,
+      "sha256": "7a12c829b9298766f8bd56a1b44ac8cac26b064fbfc72f2e13f3d91a9914462c"
+    },
+    "system/lib64/libbinder.so": {
+      "bytes": 918584,
+      "sha256": "184ef6000d17e6ce011e5b595a00b24cadbec5915a4eed5f4b16b0c172a45e49"
+    },
+    "system/lib64/libaho_corasick.dylib.so": {
+      "bytes": 267504,
+      "sha256": "2f66847e28e7c9fd644d4ef7906b4d9d552ba342c598f34dae791ec267a4d9d1"
+    },
+    "system/lib64/android.hardware.graphics.allocator@4.0.so": {
+      "bytes": 102336,
+      "sha256": "97ad2ff97cb7a1dbedadd1d942820cbe7789929b3f79db7954e55ed234742462"
+    },
+    "system/lib64/android.frameworks.stats-V2-ndk.so": {
+      "bytes": 86048,
+      "sha256": "3bb71d60ba165b1c2e075ab741ad9b80fa8742b83355d6bf57374349a1e9e0a0"
+    },
+    "system/lib64/libopenssl.dylib.so": {
+      "bytes": 481640,
+      "sha256": "9b736b101c83cd605570353ec671cfd505e2fab1a8246ce3a0ad85b538e4d903"
+    },
+    "system/lib64/android.media.audiopolicy-aconfig-cc.so": {
+      "bytes": 51800,
+      "sha256": "82aaba407a5f7d271f67b8d2c503b88d52a5789b192b9eac3e355619099defd9"
+    },
+    "system/lib64/libfs_mgr.so": {
+      "bytes": 646928,
+      "sha256": "18eeabdadf78360b8827b95560c0143132a8427d2e4f4886968ff087b9a57edf"
+    },
+    "system/lib64/android.hardware.usb.gadget@1.0.so": {
+      "bytes": 152248,
+      "sha256": "1c5a5d46414402006366935f68f06c114cf9adef21b58c76b175602c0b369b13"
+    },
+    "system/lib64/android.hardware.camera.metadata@3.5.so": {
+      "bytes": 35272,
+      "sha256": "75157417253edc0a6f6816892725c9233d10edba026a882a6e730966ca038105"
+    },
+    "system/lib64/camera_platform_flags_c_lib.so": {
+      "bytes": 52144,
+      "sha256": "adeed89136cc8973a81f936fb404282ce086fde423c2fdae0cc5f07962eea980"
+    },
+    "system/lib64/libnativewindow.so": {
+      "bytes": 68240,
+      "sha256": "9e8eb733f2e169e63accc4fb6afef9655ed3fce49181af544b69de9b380bb4d4"
+    },
+    "system/lib64/libprotobuf-cpp-full.so": {
+      "bytes": 3212728,
+      "sha256": "2d248b6194ddcdc6e51ef1729bed16a959fcb27f451072df63667c5ce3af15fe"
+    },
+    "system/lib64/libaconfigd_rust_proto.dylib.so": {
+      "bytes": 151808,
+      "sha256": "f4930cd4f56eddd04f52e68c3c97b3bede82a82360886d1906cba17075a6acc4"
+    },
+    "system/lib64/libneuralnetworks_packageinfo.so": {
+      "bytes": 35832,
+      "sha256": "1ab6fa9e74548b4aa22f2ed9b36ea9ff40dbf6b803a3aa6810f3b0f02fa842dd"
+    },
+    "system/lib64/audio-permission-aidl-cpp.so": {
+      "bytes": 84936,
+      "sha256": "c8aa4f1ecb1742bb484c5ce47b16f262a76e810a4d34272406d458a846e83c1f"
+    },
+    "system/lib64/android.system.keystore2-V1-cpp.so": {
+      "bytes": 118872,
+      "sha256": "72ca21556b67e4e603ae6ba75eb6b773beb368a70870b4e752620e46272e8d56"
+    },
+    "system/lib64/libjpeg.so": {
+      "bytes": 648904,
+      "sha256": "e4984079eca641a2b9cbfb2d5bf5b92293a7a5c2bc4c5cc7833d544782cdb139"
+    },
+    "system/lib64/libdatasource.so": {
+      "bytes": 168528,
+      "sha256": "d59e4e2bc082a53dfd35900817e2ce8978d7c096b060a2d85a0c054ee1e129b2"
+    },
+    "system/lib64/android.hardware.security.secureclock-V1-ndk.so": {
+      "bytes": 52656,
+      "sha256": "2a670bf70b1620b6ce5356e41148eb2bd62ecaf23a5a1eb1f017bd7d79c3d5b2"
+    },
+    "system/lib64/libsensorprivacy.so": {
+      "bytes": 84960,
+      "sha256": "7e753b232d2b9725d7290d5f02a57f7371b75a6c1c4174924d90e59a0461be18"
+    },
+    "system/lib64/netd_aidl_interface-V18-cpp.so": {
+      "bytes": 430008,
+      "sha256": "a1acd8e1361e3369ea919789e3b8f54187e3dc05afc9f8d7a7964f27d673c4b8"
+    },
+    "system/lib64/libsfplugin_ccodec_utils.so": {
+      "bytes": 818192,
+      "sha256": "a93a549e5d87035939c7dd71a4bb2e26368fdeea6dc9bb6cd62cdfac4c1d7304"
+    },
+    "system/lib64/libmediautils_delayed.so": {
+      "bytes": 51416,
+      "sha256": "beee469100610bc7871e454a67ae9afad356af4a9cbf1df1acbba641dcef7468"
+    },
+    "system/lib64/android.hardware.radio@1.1.so": {
+      "bytes": 1003392,
+      "sha256": "f3c63c0170b60fb7b7a1b3872067f10dac4a4c777a56c3766ed385a11d905511"
+    },
+    "system/lib64/libbpf.so": {
+      "bytes": 1138160,
+      "sha256": "18a5df7900460d5fccff409356153a21a8a9a267ef9658cdc9b9c80cd277c19c"
+    },
+    "system/lib64/libpower.so": {
+      "bytes": 52136,
+      "sha256": "8b54b7fbb4cb281748e987d536cf02dd10473c4c4bc022cd1ca39d1f00100b21"
+    },
+    "system/lib64/libdebuggerd_client.so": {
+      "bytes": 37064,
+      "sha256": "3a24a85213bb5679af24b7029759998905b73cb3f7bec74a9a8a742de829d073"
+    },
+    "system/lib64/android.hardware.drm.common-V1-ndk.so": {
+      "bytes": 51240,
+      "sha256": "a5d5ad9bfe8aaac2681e2d6b478ab678a75af454c91e2d89c65f640911533231"
+    },
+    "system/lib64/libpuresoftkeymasterdevice.so": {
+      "bytes": 135928,
+      "sha256": "ca933e01865068975ade2fbbecee0f68bba994b9c44cc70857ea76b87b820b7f"
+    },
+    "system/lib64/libaudioclient_aidl_conversion.so": {
+      "bytes": 410936,
+      "sha256": "723c3681e26224d0f2b9fddab0e2583fdc4f5e206ab348a292877d788324319b"
+    },
+    "system/lib64/android.hardware.gnss.measurement_corrections@1.0.so": {
+      "bytes": 151960,
+      "sha256": "e5802e279024e44a6655a34df4571c845f4b341ca9f0c96dc2ca8d52f504516f"
+    },
+    "system/lib64/libbootanimation.so": {
+      "bytes": 134464,
+      "sha256": "84291474898a33e8023101544352dc7c37dc8aaa2db969195552c59ecbc6aa48"
+    },
+    "system/lib64/libz.so": {
+      "bytes": 134184,
+      "sha256": "975b579497a84ff181982cfa0f39e37dec19f00293dfdc258ab2bb1630a63553"
+    },
+    "system/lib64/libandroid_runtime.so": {
+      "bytes": 2941128,
+      "sha256": "96e45bd33910d2a3f26d2bba7709ecc886b38184723b1959582589ab76cdaf2f"
+    },
+    "system/lib64/libstagefright.so": {
+      "bytes": 2344856,
+      "sha256": "ab5761264f54b12c262a8d311e21cefc2ea794f05d417839ba72a4913cf87dbd"
+    },
+    "system/lib64/android.hardware.light@2.0.so": {
+      "bytes": 85856,
+      "sha256": "876639a68cf8900fac808265e5e3778678d8b98e67abc5bceda7766f1c4fe395"
+    },
+    "system/lib64/android.hardware.dumpstate@1.0.so": {
+      "bytes": 85664,
+      "sha256": "0c2ba6b5f8aba25b927b5f08512e8db096a3e09b436bb33ac59262d672cf4803"
+    },
+    "system/lib64/libkeystore2_crypto.so": {
+      "bytes": 37944,
+      "sha256": "478aa2a9ea0a5d87e9c71433190167906997a5b0fd2e0ade656e0689e085bd22"
+    },
+    "system/lib64/libcodec2_client.so": {
+      "bytes": 422760,
+      "sha256": "9695f155f949e6652a1148f9bfc6a8b91f707ca018c77bf32e6167656b716cd0"
+    },
+    "system/lib64/audioflinger-aidl-cpp.so": {
+      "bytes": 465328,
+      "sha256": "da3b7f08551fd6522755b0e666fe1cb04328b3cd071916b857f71ca07e437543"
+    },
+    "system/lib64/android.hardware.graphics.common@1.0.so": {
+      "bytes": 35224,
+      "sha256": "7f79e99ace059b7473d08cb7743bbeec1490f8dbc26b2ddccf17dbf0c84c70ca"
+    },
+    "system/lib64/libaudioclient.so": {
+      "bytes": 1157976,
+      "sha256": "5e312080fc187169182c9969c2355710e6580d4107bd9232e156f3d81e4b0a73"
+    },
+    "system/lib64/lib-camera-compatibility-info-api.so": {
+      "bytes": 35176,
+      "sha256": "a1e587cef09bfeca6f0b46a97cd62708f884106da27829da924121f386f4aa09"
+    },
+    "system/lib64/android.hardware.camera.device@3.3.so": {
+      "bytes": 119000,
+      "sha256": "ffd3b8a950e6db01cd58b2baef681dce0f15d64c2381435097e32dac4706867e"
+    },
+    "system/lib64/libaudio_aidl_conversion_common_ndk.so": {
+      "bytes": 325680,
+      "sha256": "61648ddaf42e851b1ae5daf7c1b21cc212c826f243c6c35a797e3a34de31ae90"
+    },
+    "system/lib64/libGLESv1_CM_angle.so": {
+      "bytes": 52880,
+      "sha256": "73f00f8718e795a7dc01c5eb2b72969b7a82c2457f66b62553708484c3ce737b"
+    },
+    "system/lib64/libappfuse.so": {
+      "bytes": 68896,
+      "sha256": "14725fb3f3e24c09abfa00925f9cd6c6191af5e00857977a23f95430004ea14e"
+    },
+    "system/lib64/libstatic_assertions.dylib.so": {
+      "bytes": 18792,
+      "sha256": "df968d08adfd10ecad8a59b671bfc7a9f311bddb316f60934feaf004dfe3899b"
+    },
+    "system/lib64/libbcinfo.so": {
+      "bytes": 1041544,
+      "sha256": "835607bee1fb8be7cd0b4f32f2c405b9121f350b88913fb8e45941febf1042fc"
+    },
+    "system/lib64/libvendorsupport.so": {
+      "bytes": 35304,
+      "sha256": "f351569f532f17c9314781807d0906f0066eb92ad24a0a83fbf15aa16a3de41b"
+    },
+    "system/lib64/android.hardware.camera.metadata@3.3.so": {
+      "bytes": 35240,
+      "sha256": "da3d3c9a2efa1d5863ad8027494d13428672a55eb7355664f83ea4be79f33584"
+    },
+    "system/lib64/libkm_compat.so": {
+      "bytes": 241992,
+      "sha256": "066f8b07d4f34aa2ab02046e83db65dc3bff241234389cf541b37c70529b02a0"
+    },
+    "system/lib64/libkeystore2_aaid.so": {
+      "bytes": 35328,
+      "sha256": "b4263653adc2f7672c73f9e3014ffd920d2e38b4feba43a411decbb2fe1f4bef"
+    },
+    "system/lib64/libzerocopy.dylib.so": {
+      "bytes": 18792,
+      "sha256": "c293b37b180f93f3f52d2d456524647bb5665c46239194b060aa830b696540bb"
+    },
+    "system/lib64/android.hardware.media.c2@1.0.so": {
+      "bytes": 568392,
+      "sha256": "b191229d99a7450ecd4788239b285e480a1ff915b8e096c862bfb3751def4da4"
+    },
+    "system/lib64/libbrillo.so": {
+      "bytes": 353240,
+      "sha256": "826dd655914ac7c31d3a90420badfa1bff655f5ee8c56b3cf77a93a43c7456c5"
+    },
+    "system/lib64/libclap_lex.dylib.so": {
+      "bytes": 20024,
+      "sha256": "6a616b430c6b7fbb7d4439ba90d38d14656afd212f900542b4912fcb35857f49"
+    },
+    "system/lib64/libaconfig_storage_write_api.dylib.so": {
+      "bytes": 21136,
+      "sha256": "95f528c66f715bb422b11181447da75e21a7dcc685129a358717a4dbc69eb83c"
+    },
+    "system/lib64/libprocinfo.so": {
+      "bytes": 35944,
+      "sha256": "42d4663ee52f2b3e74fcf307d976e5646613ead3288b74b9f30e73503544526d"
+    },
+    "system/lib64/libminijail.so": {
+      "bytes": 182976,
+      "sha256": "4d00b1acbde33d42846a407c64b4ac4b7146eeb2618ede1ae9fdd2d8b8fac8de"
+    },
+    "system/lib64/android.hardware.sensors@2.1.so": {
+      "bytes": 169256,
+      "sha256": "ec5c5dfbeb6c2c8a08ed955a4a25d28195058bac5ae22837970b25967eae650b"
+    },
+    "system/bin/surfaceflinger": {
+      "bytes": 9870440,
+      "sha256": "8ff9acf6a4cf4d51823a2ee9c7830336dfd0428506071008011d7aa475062330"
+    },
+    "system/etc/linker.config.pb": {
+      "bytes": 1587,
+      "sha256": "3cd61d372987873fcf4a2a04372382fd69c1f4cffaf99826d3524cf7df5ba370"
+    },
+    "system/etc/public.libraries.txt": {
+      "bytes": 549,
+      "sha256": "63522af72a927a5edb7df539f0f3643f44a91fa11b64cac977796b8ee50bd96f"
+    },
+    "system/etc/selinux/plat_seapp_contexts": {
+      "bytes": 4488,
+      "sha256": "7a4d14a898fb234d87cd49ae106e245324ad365d9029230d2a6306e6d4aa7a7a"
+    },
+    "system/etc/selinux/ashmem_compat_memfd_context.txt": {
+      "bytes": 34,
+      "sha256": "80093179ca026051e2a011fa3e764d312fc47998246ae87ee7433d9079ba3f73"
+    },
+    "system/etc/selinux/plat_sepolicy_and_mapping.sha256": {
+      "bytes": 65,
+      "sha256": "7c2e6a7f47c76618ebf58857301dc49749715beca6e9835fa421e49ebde955b4"
+    },
+    "system/etc/selinux/plat_tee_service_contexts": {
+      "bytes": 1585,
+      "sha256": "ad1217cf879e49a6a0afc2dc21fa047bfd6d1218c911479df999219c72ea8226"
+    },
+    "system/etc/selinux/plat_sepolicy_genfs_202604.cil": {
+      "bytes": 303,
+      "sha256": "3bdfcfba699936cb12d007fee7bca2feb1a88c75cc947f98b14c55fe4932b0d3"
+    },
+    "system/etc/selinux/plat_property_contexts": {
+      "bytes": 124114,
+      "sha256": "43954f454c147665682b12be0b3a7ea298ab676f7640f689af46791532fd8a6c"
+    },
+    "system/etc/selinux/plat_mac_permissions.xml": {
+      "bytes": 16506,
+      "sha256": "67f265e22e80f86e55450bbc16cf2c9a7e870743379f86883f8bb8fb479a3ec3"
+    },
+    "system/etc/selinux/plat_sepolicy.cil": {
+      "bytes": 3008181,
+      "sha256": "3b063948a16dcd365b4ff4cb1eeda22b1580c6e0a3500e755ba8c358a0565559"
+    },
+    "system/etc/selinux/plat_service_contexts": {
+      "bytes": 43169,
+      "sha256": "f50794b6a89e6be5cf1d2e8300d777d0ea60c618d98c1e34233e556c754f1865"
+    },
+    "system/etc/selinux/plat_sepolicy_genfs_202504.cil": {
+      "bytes": 142,
+      "sha256": "480d503e7730236b659230d16b3946b628394d529dabfef67c679281fd98357b"
+    },
+    "system/etc/selinux/plat_file_contexts": {
+      "bytes": 48981,
+      "sha256": "24b3d7e47bb1d7ae083f529e6e6812d4f6d42390505fb13db54e90c7da71dc05"
+    },
+    "system/etc/selinux/bug_map": {
+      "bytes": 1481,
+      "sha256": "30cf3d6b915d8d1382246aac8e5554f2bd413e51f3f3e82745efe9508d095b19"
+    },
+    "system/etc/selinux/plat_keystore2_key_contexts": {
+      "bytes": 2184,
+      "sha256": "ece08d255fca87084a49288aa059bad5106c9d24ec1af25ebb5487140bba8c97"
+    },
+    "system/etc/selinux/plat_hwservice_contexts": {
+      "bytes": 8865,
+      "sha256": "e9f9f83ce1dfec4b036e09baa3b5cedeb27e8855b59164d42979ef5903f10668"
+    },
+    "system/etc/classpaths/bootclasspath.pb": {
+      "bytes": 822,
+      "sha256": "da823fff03c9f98031372ff1699f7916c13a12166b946b6ad8a95423ffcea03f"
+    },
+    "system/etc/classpaths/systemserverclasspath.pb.fsv_meta": {
+      "bytes": 268,
+      "sha256": "062d31f27c52f4d26690b5d0c4f2224f3824620afd1be0c244bf087e759aee94"
+    },
+    "system/etc/classpaths/systemserverclasspath.pb": {
+      "bytes": 93,
+      "sha256": "4c93144d7ee0d12a19dd9ffbdebe5a4cd9e816ccf401225b8ad378a91dddc494"
+    },
+    "system/etc/classpaths/bootclasspath.pb.fsv_meta": {
+      "bytes": 268,
+      "sha256": "ffff01bce7d4e9bacc96a78bc026f5f9b46cfd63234430ba2da42cf56ab87238"
+    },
+    "system/etc/selinux/mapping/31.0.cil": {
+      "bytes": 142120,
+      "sha256": "327d0cdde1196bffea379dcd442cff3cf28223ceae72cc3bc8ff155001815f15"
+    },
+    "system/etc/selinux/mapping/29.0.cil": {
+      "bytes": 113029,
+      "sha256": "c9b24c853a1336a586a709283df4e1fbfe10c1f368f47dd6058bcddc4a276502"
+    },
+    "system/etc/selinux/mapping/32.0.compat.cil": {
+      "bytes": 156,
+      "sha256": "59648b120ec76f9e4540b9d656e58a353ead9ebac3c69be778532354f84d0c9d"
+    },
+    "system/etc/selinux/mapping/30.0.compat.cil": {
+      "bytes": 2526,
+      "sha256": "2b40198379e1bb65ca2af156b25562381273144d94c5ae223b5ed9905d7437cc"
+    },
+    "system/etc/selinux/mapping/33.0.cil": {
+      "bytes": 150113,
+      "sha256": "8f686832ceee3a3fb318d4f33a1bcb92d01ec4d3ac305422390e904887fc9bee"
+    },
+    "system/etc/selinux/mapping/33.0.compat.cil": {
+      "bytes": 899,
+      "sha256": "3b546217889ed461903551b008c23d77cba3b34d97eec1cb979ca6e74d744385"
+    },
+    "system/etc/selinux/mapping/202404.compat.cil": {
+      "bytes": 381,
+      "sha256": "894306fc43e65914167097a9edc97bd3a14ea95f6c65ef8bb385ba1aa93f9b45"
+    },
+    "system/etc/selinux/mapping/29.0.compat.cil": {
+      "bytes": 2470,
+      "sha256": "db46612f24c75bcd5ddf6d574fa62a7163bc4951620217973d1000a91371d38e"
+    },
+    "system/etc/selinux/mapping/202404.cil": {
+      "bytes": 167299,
+      "sha256": "43db2e1852dc8b2e15e8f1efabcfd73c963626814c8dd7bf111b41ecfb97a6a7"
+    },
+    "system/etc/selinux/mapping/30.0.cil": {
+      "bytes": 126277,
+      "sha256": "a6c77f838dbbccd7c4310add36c7231c5f71771545cd65efa5bdb7b2bff685f9"
+    },
+    "system/etc/selinux/mapping/31.0.compat.cil": {
+      "bytes": 156,
+      "sha256": "adddc30714cef2ec2beb4eecdc24df86acb145e390a708bd2ae5ac41b6fd7630"
+    },
+    "system/etc/selinux/mapping/32.0.cil": {
+      "bytes": 142228,
+      "sha256": "764dba9f081c1e47a827251560fb1da1dfd1823bf7f2e16bfd515cbb2053f31f"
+    },
+    "system/etc/selinux/mapping/34.0.cil": {
+      "bytes": 156485,
+      "sha256": "da068c35785bfc43c6bd750ea16a903ae4c3634261db05095f1d5669193527db"
+    },
+    "system/etc/selinux/mapping/34.0.compat.cil": {
+      "bytes": 1126,
+      "sha256": "96535de6961473ec5191e879e8547820dff5011fb5e0409c3df75b6dc0395834"
+    },
+    "system/etc/selinux/mapping/202504.cil": {
+      "bytes": 229237,
+      "sha256": "a98f4b8479aa64e7d2b5a4146e6edc89fc50d62c80d37200258ff719dfced03b"
+    },
+    "system/lib64/bootstrap/libm.so": {
+      "bytes": 281744,
+      "sha256": "51ba6fe4e0628c069274ecba60c864fe9b84ae288e7f2c6cf79fe3d75ad54638"
+    },
+    "system/lib64/bootstrap/libdl_android.so": {
+      "bytes": 34672,
+      "sha256": "20c51c782b17eebe04ad168d0a4ad23403e8696212d5d3027c191b8d865c57b2"
+    },
+    "system/lib64/bootstrap/libdl.so": {
+      "bytes": 50760,
+      "sha256": "976f432c4e1a1ada8542534caac3905cfd8ad37a72756412a20ebfc6017f582e"
+    },
+    "system/lib64/bootstrap/libc.so": {
+      "bytes": 1186584,
+      "sha256": "c743999d121b9cdaaa2fc1eaae386cd51eaeed063423f26d89f29590a3e24723"
+    },
+    "system/lib64/drm/libfwdlockengine.so": {
+      "bytes": 85016,
+      "sha256": "5fc7e108f2aeb20054f8e51d32c98c90b332e11b840d0ad7f8009ac376578539"
+    },
+    "apex/com.android.art/apex_manifest.pb": {
+      "bytes": 400,
+      "sha256": "b5d52139f0d1178de1a8f835b3055cc3ce5181e898254e1ceda163badca251a8"
+    },
+    "apex/com.android.runtime/apex_manifest.pb": {
+      "bytes": 104,
+      "sha256": "de3e3fbdc709c48105215c7eab4606070ec11445364693c477f5f92fed3ae84b"
+    },
+    "apex/com.android.i18n/apex_manifest.pb": {
+      "bytes": 151,
+      "sha256": "b3f750cc2e929d6a665f734411052cce2b035780d2e8539fb0df5d7b681cbf58"
+    },
+    "apex/com.android.conscrypt/apex_manifest.pb": {
+      "bytes": 103,
+      "sha256": "f2f185fd37ea2f729a598a222a2b613532b955c2fc6074b9774c61593066d10d"
+    },
+    "apex/com.android.conscrypt/lib64/libc++.so": {
+      "bytes": 1070120,
+      "sha256": "87df302ebea224686cdc4fb5cfd45a978cc2bd04cb0ef961dd124e128a004d14"
+    },
+    "apex/com.android.conscrypt/lib64/libcrypto.so": {
+      "bytes": 1856976,
+      "sha256": "45f7c9ae094eb20624addf537941c6a063d1978174b8123dfbe567be918dcefc"
+    },
+    "apex/com.android.conscrypt/lib64/libssl.so": {
+      "bytes": 637416,
+      "sha256": "d6a769ea6e2db0d029685dc48876aa7c307311792b65b59de23e6bc0c3ad8215"
+    },
+    "apex/com.android.conscrypt/lib64/libjavacrypto.so": {
+      "bytes": 245864,
+      "sha256": "381474ea1d8e42df54c36ea0dd59111ee53e658658fc37dc2ed7a3eb217abcaf"
+    },
+    "apex/com.android.conscrypt/bin/boringssl_self_test64": {
+      "bytes": 51080,
+      "sha256": "c71a8f40448f3c223a312efc9e7df4d570d036f7408c28fa88202c30af21aaf0"
+    },
+    "apex/com.android.conscrypt/bin/boringssl_self_test32": {
+      "bytes": 2736,
+      "sha256": "7cd2d3fef43252c810d873706b9f7728ba802b76bee60b6f7f961527508e52c8"
+    },
+    "apex/com.android.conscrypt/cacerts/10531352.0": {
+      "bytes": 4614,
+      "sha256": "94c9553fc82da55fcc5b5383208737cdb5b4bb080320509332add36d205619ab"
+    },
+    "apex/com.android.conscrypt/cacerts/1e8e7201.0": {
+      "bytes": 4332,
+      "sha256": "5cbad7251a3973f3aa484726d94627f2fbc4ccf34da54fa94c107c226e846ad6"
+    },
+    "apex/com.android.conscrypt/cacerts/f013ecaf.0": {
+      "bytes": 7060,
+      "sha256": "f18118de35653f4fcae71797b2dfc91131f1617cd8c225b08f9a536afe2bf3b6"
+    },
+    "apex/com.android.conscrypt/cacerts/869fbf79.0": {
+      "bytes": 2608,
+      "sha256": "8dd5746085cd99da1305daef85a78a71e2e93c7dc6cb1be7914f5c69b8950485"
+    },
+    "apex/com.android.conscrypt/cacerts/8f6cd7bb.0": {
+      "bytes": 2620,
+      "sha256": "8bbdc0e520a1cdc2e3fdb520ec8fa3e2d111bfdea51ce759412a370cbb96c010"
+    },
+    "apex/com.android.conscrypt/cacerts/c7f1359b.0": {
+      "bytes": 2650,
+      "sha256": "18d75d58e3c9cfe0b3217be2783d446a3d1e534e0177f03941922b2d337ec727"
+    },
+    "apex/com.android.conscrypt/cacerts/ee532fd5.0": {
+      "bytes": 2572,
+      "sha256": "7e609e8207d1cd741b1c346a36f2183bcd07c0d8b61d6f696438835d535f65e5"
+    },
+    "apex/com.android.conscrypt/cacerts/7a819ef2.0": {
+      "bytes": 7345,
+      "sha256": "477030d670fbdca986cbe9350c465fca816a76475cf50c44423bf03ea98d088c"
+    },
+    "apex/com.android.conscrypt/cacerts/0d69c7e1.0": {
+      "bytes": 2263,
+      "sha256": "b4312f5a6a875c97e3888c25aff094f068645662a7305c55b0238a6154b5689b"
+    },
+    "apex/com.android.conscrypt/cacerts/1b0f7e5c.0": {
+      "bytes": 7077,
+      "sha256": "bd8daf02f28b241bc9f1c9306b68015ae07ad49ce55477cf135185c3681e4f01"
+    },
+    "apex/com.android.conscrypt/cacerts/9576d26b.0": {
+      "bytes": 7064,
+      "sha256": "71dc66d2735209c37e0173a5eecd907f6569a3729817490412631553fd42847b"
+    },
+    "apex/com.android.conscrypt/cacerts/9591a472.0": {
+      "bytes": 7294,
+      "sha256": "21a3462824bb64bd68251a8d77432414c43cf09b5c8694d8cc952ab86579968b"
+    },
+    "apex/com.android.conscrypt/cacerts/6b03dec0.0": {
+      "bytes": 2564,
+      "sha256": "8e9bb833110a1f644749d45cc52adaf43dd3504b808bb571a68167b2340f3149"
+    },
+    "apex/com.android.conscrypt/cacerts/04f60c28.0": {
+      "bytes": 2838,
+      "sha256": "eece282427080b316fe3a781709d4dcef1e97088aa4bdec36e9d97993db01e62"
+    },
+    "apex/com.android.conscrypt/cacerts/c44cc0c0.0": {
+      "bytes": 7101,
+      "sha256": "e3c1ffbdbc2b01d311fe286587aa9e52700c80914ec4e343699cff921177b60d"
+    },
+    "apex/com.android.conscrypt/cacerts/83e9984f.0": {
+      "bytes": 2563,
+      "sha256": "488bcef6760f8fb956c44d2f6bc9c6b1fd9f12c7a3bdbb37a860db9649b4ff85"
+    },
+    "apex/com.android.conscrypt/cacerts/583d0756.0": {
+      "bytes": 7474,
+      "sha256": "44254568c095e7c71956bc0e1cc35dac7a53308e7aa8a0ac418bb2f66f6c65d4"
+    },
+    "apex/com.android.conscrypt/cacerts/dbff3a01.0": {
+      "bytes": 4363,
+      "sha256": "0fd83ae33042bd443a71817de7cf8b8bb9e787f02ded4297f834c3358e9aa140"
+    },
+    "apex/com.android.conscrypt/cacerts/ccc52f49.0": {
+      "bytes": 2513,
+      "sha256": "ca2c23b0711c8ea55bd0c0b0ab8472fdc755e701329175ab3c540f39f9caf3d2"
+    },
+    "apex/com.android.conscrypt/cacerts/f459871d.0": {
+      "bytes": 4442,
+      "sha256": "9c27780237593a4d04bcec114041ca170dd4730cdc93a647bf455b2fcc0bea10"
+    },
+    "apex/com.android.conscrypt/cacerts/a9d40e02.0": {
+      "bytes": 6997,
+      "sha256": "74a21f6c83ad2a4d59cc27d6b67916521d94a1f6531a9393827f369b3501510e"
+    },
+    "apex/com.android.conscrypt/cacerts/1ec40989.0": {
+      "bytes": 7237,
+      "sha256": "41244373d9a5031f0e2764431848228224a5b30d674274d2b91887f03fbffc54"
+    },
+    "apex/com.android.conscrypt/cacerts/1f58a078.0": {
+      "bytes": 7076,
+      "sha256": "f5386fe32b78a6d2ad15092a29513561afbdae07ac0811b5627b3d55aa6b09b2"
+    },
+    "apex/com.android.conscrypt/cacerts/1ae85e5e.0": {
+      "bytes": 2522,
+      "sha256": "96e78cc7a582c60bb95e37f4ff6eae615615cfd941b717cf78d809521d9bef95"
+    },
+    "apex/com.android.conscrypt/cacerts/ed39abd0.0": {
+      "bytes": 2684,
+      "sha256": "43dde799ca86588f68ccd31832d089fd865d5d399ea890ed35ecb3c9bccfa817"
+    },
+    "apex/com.android.conscrypt/cacerts/2add47b6.0": {
+      "bytes": 2603,
+      "sha256": "b5fbc981298916af0a96698ec88e38016dc7a36d319cdc29e977775970f5161a"
+    },
+    "apex/com.android.conscrypt/cacerts/c559d742.0": {
+      "bytes": 7060,
+      "sha256": "e121c1d6c0d3bf5253733101bc4dfa9c0798267aacc703680f276194f38812ed"
+    },
+    "apex/com.android.conscrypt/cacerts/fb5fa911.0": {
+      "bytes": 7022,
+      "sha256": "8e525fe4dc27e91d566b0ad334a9786b1902b413769d59119bc7af2b3c2c2293"
+    },
+    "apex/com.android.conscrypt/cacerts/1df5a75f.0": {
+      "bytes": 4923,
+      "sha256": "0b2583522b4b7f1bd0e93994281b544a8dfa7ae7bd76544cb2120b7cc8381c71"
+    },
+    "apex/com.android.conscrypt/cacerts/985c1f52.0": {
+      "bytes": 7246,
+      "sha256": "fb645af0cebd45765372d441773b7cdc026322e0a53813902dd4800d37cdd725"
+    },
+    "apex/com.android.conscrypt/cacerts/e7c037b4.0": {
+      "bytes": 2578,
+      "sha256": "cc9d3879c503fa98d126c4fd45040f2139b8cd2956ce49e21b11a0ce02fae3e0"
+    },
+    "apex/com.android.conscrypt/cacerts/60afe812.0": {
+      "bytes": 4826,
+      "sha256": "46a841b557da90c3837852d1b0b8d628ce56aa2d7630e48c70cff47d09dbb380"
+    },
+    "apex/com.android.conscrypt/cacerts/53a1b57a.0": {
+      "bytes": 7113,
+      "sha256": "8975e1ab3febda6da04b0679ca924a0779f347d22253b3e9ad32e0edc25e2c42"
+    },
+    "apex/com.android.conscrypt/cacerts/48a195d8.0": {
+      "bytes": 7453,
+      "sha256": "4f65a7c8509307e811ae93a821fe27d51dbaad0c30b1805ddb9df3db0c85e5be"
+    },
+    "apex/com.android.conscrypt/cacerts/1e1eab7c.0": {
+      "bytes": 4527,
+      "sha256": "d9a0822f8d80ee1dc45a675c6789fc94a6fd2af4d85c329fcdbe54ce64856b2a"
+    },
+    "apex/com.android.conscrypt/cacerts/e8651083.0": {
+      "bytes": 4860,
+      "sha256": "31dc07e8e536ce7a65cd0483641509e9961063a8d2de4ec942fe8fdc0c34d50d"
+    },
+    "apex/com.android.conscrypt/cacerts/85cde254.0": {
+      "bytes": 4571,
+      "sha256": "cad78ac7859750b40a883b5e9f17d6ab665ad507ca70bafe2d9946293dae5a6e"
+    },
+    "apex/com.android.conscrypt/cacerts/4c3982f2.0": {
+      "bytes": 2743,
+      "sha256": "0c3b5f9e94d20620e471a01b3f293cd6a3cc5a10eee60ba2189f7891af49c7d8"
+    },
+    "apex/com.android.conscrypt/cacerts/3c860d51.0": {
+      "bytes": 7432,
+      "sha256": "37cf51086b5a65503602274236cb0282b8f5a210c97be6b4cace4fe383829e78"
+    },
+    "apex/com.android.conscrypt/cacerts/d4c339cb.0": {
+      "bytes": 7323,
+      "sha256": "68376fa7f0181e34aeabfa191a70b58b61a555b4ac38902b320321ecd1384dc1"
+    },
+    "apex/com.android.conscrypt/cacerts/8d6437c3.0": {
+      "bytes": 4479,
+      "sha256": "b5ed1767db9e7a0e374b0d29974f733f2e62a3d1a2934a71d8eba354417e0b6f"
+    },
+    "apex/com.android.conscrypt/cacerts/5f47b495.0": {
+      "bytes": 7356,
+      "sha256": "3d06a57499992e9a8fa85368e751babdc7a6747ea6b34fc57ffad16acdb00447"
+    },
+    "apex/com.android.conscrypt/cacerts/31188b5e.0": {
+      "bytes": 4888,
+      "sha256": "cfaf6bc523e4eb689fc7b6650c0766712d28fe515644fb1a8cdd5aee31734382"
+    },
+    "apex/com.android.conscrypt/cacerts/82223c44.0": {
+      "bytes": 7016,
+      "sha256": "e6ab986307a910c9d54459689586cdb96daf4f896cd8f07b4e29b5610052799a"
+    },
+    "apex/com.android.conscrypt/cacerts/52b525c7.0": {
+      "bytes": 7076,
+      "sha256": "fcd539483bc27a0471a7a370a1009aa5ce2fe1fdab01d7776776ca96d6b396ca"
+    },
+    "apex/com.android.conscrypt/cacerts/cb1c3204.0": {
+      "bytes": 7319,
+      "sha256": "86b1136c92a3796d2294691d715014311c4eae82cc3dc73aded8364a567b2988"
+    },
+    "apex/com.android.conscrypt/cacerts/93851c9e.0": {
+      "bytes": 7502,
+      "sha256": "b5a455c3b16131b061fc3520b1467442626920d7a90565804fd800f1b2d93ab1"
+    },
+    "apex/com.android.conscrypt/cacerts/a716d4ed.0": {
+      "bytes": 3160,
+      "sha256": "da5e383f7071cc4b3b48a7d99c991bd3ee70723ce9a838720e00a9f8cbcac0df"
+    },
+    "apex/com.android.conscrypt/cacerts/edcbddb5.0": {
+      "bytes": 7321,
+      "sha256": "ce05fc30b0810f346ff0f1a18cc5d57996b6b3121e5f14803a61d010ee6d99f8"
+    },
+    "apex/com.android.conscrypt/cacerts/bd43e1dd.0": {
+      "bytes": 7408,
+      "sha256": "e5c5e7b2c7b73475cd32ffa2db964762cd9d9999d440e2c28ee96899cfc40235"
+    },
+    "apex/com.android.conscrypt/cacerts/86212b19.0": {
+      "bytes": 4281,
+      "sha256": "529922b67efad40153b98f4ddf16a8bbdf32162d4ced2615e0d2e109586fece5"
+    },
+    "apex/com.android.conscrypt/cacerts/e7dd1bc4.0": {
+      "bytes": 7104,
+      "sha256": "6e3369cb2d79af75f5e32ebe47a682fc13f310f68159f29b202cfd2ae2fab804"
+    },
+    "apex/com.android.conscrypt/cacerts/dbc54cab.0": {
+      "bytes": 6999,
+      "sha256": "a10dd57eeb02d0eea40c273cc1e9e64f3456d7407e8a5ac20a865a75867d90db"
+    },
+    "apex/com.android.conscrypt/cacerts/9339512a.0": {
+      "bytes": 8001,
+      "sha256": "fd34e2d89a14de02d093fa84152ff05421cc3a8b49518652bd6145b08fc90993"
+    },
+    "apex/com.android.conscrypt/cacerts/b0ed035a.0": {
+      "bytes": 6863,
+      "sha256": "45ed7c6552abe47ffe908bb7fdd5747e849d1f44c9c5e22420a0a9851c7406f2"
+    },
+    "apex/com.android.conscrypt/cacerts/34d996fb.0": {
+      "bytes": 2603,
+      "sha256": "f46f78bd926226d020bdb4ff2f6d279920a55a92c3640cd9d36d6c241d774f87"
+    },
+    "apex/com.android.conscrypt/cacerts/b872f2b4.0": {
+      "bytes": 4566,
+      "sha256": "830543de384a302d1fa32b82403f738e8beff6a1e7b4abbe0cf219840181f122"
+    },
+    "apex/com.android.conscrypt/cacerts/8794b4e3.0": {
+      "bytes": 2592,
+      "sha256": "6fc6f2a610e0cad9bcbecee8a8da61326b8d1345d03cd0f01505de461d2adaa2"
+    },
+    "apex/com.android.conscrypt/cacerts/f8fc53da.0": {
+      "bytes": 7282,
+      "sha256": "994dad1dc1c57b041d4a482f4697ac3aa1ffa0c32b4b1aad359c645417733a26"
+    },
+    "apex/com.android.conscrypt/cacerts/b7db1890.0": {
+      "bytes": 4355,
+      "sha256": "b79ea4ac41022b68d83ca5443a320d705076878f7fa70672ce807c74254c1ef7"
+    },
+    "apex/com.android.conscrypt/cacerts/89c02a45.0": {
+      "bytes": 2824,
+      "sha256": "873914a2eae447b6d85b4adea3c48b36ebc1eb8f92dc00b4c272d6441744496f"
+    },
+    "apex/com.android.conscrypt/cacerts/b30d5fda.0": {
+      "bytes": 3160,
+      "sha256": "5934924fbc98b84bd079fde0150ecb5dc94d8e8cc23e20b63357c5e877a2f529"
+    },
+    "apex/com.android.conscrypt/cacerts/b92fd57f.0": {
+      "bytes": 7249,
+      "sha256": "6442376819576f2779ff4fce3847bf58635de2890e93a221e688de01b5ffd179"
+    },
+    "apex/com.android.conscrypt/cacerts/81b9768f.0": {
+      "bytes": 4679,
+      "sha256": "20e3a3883aa975c7e4a96532233ab0cd609e4c99a56c30241793a6838d16b902"
+    },
+    "apex/com.android.conscrypt/cacerts/f058632f.0": {
+      "bytes": 7211,
+      "sha256": "0ca31896382ad13c3bab3c0753644bb583e758a3f8b0df441e2c90eef72b505e"
+    },
+    "apex/com.android.conscrypt/cacerts/073bfcc5.0": {
+      "bytes": 2833,
+      "sha256": "72f14256af20242d3cd75e9ae492b7f55d611d964403144a2be7c679dddae477"
+    },
+    "apex/com.android.conscrypt/cacerts/1e44ef15.0": {
+      "bytes": 7319,
+      "sha256": "f9dbc023c0a94166d199f00ed5e17e0b112f838bbf292b1fd9de42e97ce61c33"
+    },
+    "apex/com.android.conscrypt/cacerts/dc99f41e.0": {
+      "bytes": 7418,
+      "sha256": "c90588144b8ac49656b37d9a82715b83bca8f5d3984cdf280c83c2d965d280d8"
+    },
+    "apex/com.android.conscrypt/cacerts/fde84897.0": {
+      "bytes": 4687,
+      "sha256": "08cda41e8c0df9cb3b65582279045548bf491dfb3e05ab3d7e674c0e3d0145c4"
+    },
+    "apex/com.android.conscrypt/cacerts/bdacca6f.0": {
+      "bytes": 4718,
+      "sha256": "493308ec2f18486958f84ed6e86f455a5e2c395f983e352f9aba29be528c39aa"
+    },
+    "apex/com.android.conscrypt/cacerts/b74d2bd5.0": {
+      "bytes": 2690,
+      "sha256": "780b4313a0198dd600452627de43639e24f45f9a0d013e0b869aedfb3aa2d0d9"
+    },
+    "apex/com.android.conscrypt/cacerts/9479c8c3.0": {
+      "bytes": 2932,
+      "sha256": "0a2d50f2c51b3bec03dbc2b2e802a9d3abe2f522df9d711b612518b9fe99f6d4"
+    },
+    "apex/com.android.conscrypt/cacerts/b3fb433b.0": {
+      "bytes": 3077,
+      "sha256": "5fdf7c35fedca21f63485e41ac830c46b97d172cd811f312f21e7c2f25a31d37"
+    },
+    "apex/com.android.conscrypt/cacerts/7892ad52.0": {
+      "bytes": 2957,
+      "sha256": "d4cb233d6f4687a18cdd7198212d83a9d7d20ea594e1bfc6e0b0b8c0461a10fa"
+    },
+    "apex/com.android.conscrypt/cacerts/d41b5e2a.0": {
+      "bytes": 2523,
+      "sha256": "f438d1797befa78fe6b6bb636f029b2b79da6d15fd842a99a125b71e085dbc28"
+    },
+    "apex/com.android.conscrypt/cacerts/c90bc37d.0": {
+      "bytes": 4459,
+      "sha256": "786ac5ca580373d43931c8c26982009f8c53444c882d0b219fc1c80ad73fe8fc"
+    },
+    "apex/com.android.conscrypt/cacerts/e13665f9.0": {
+      "bytes": 7369,
+      "sha256": "11b54674cf2af6e0ebc860da642e793f395cf2f4756d388cde65992ca8e15734"
+    },
+    "apex/com.android.conscrypt/cacerts/5acf816d.0": {
+      "bytes": 2564,
+      "sha256": "c97f3e2797ef3509bacb9fd4a1b7268fdf352ee889dbce5554457d6c04dc771f"
+    },
+    "apex/com.android.conscrypt/cacerts/5d139d02.0": {
+      "bytes": 4395,
+      "sha256": "2cfd59ab18b5a6ae6262ea89fecfb455d984dc51793cd7ffe68a8a4a3109bb0e"
+    },
+    "apex/com.android.conscrypt/cacerts/cf701eeb.0": {
+      "bytes": 4710,
+      "sha256": "6e63d51a09f1a6d4c98cbbf94e8fa9e10bf2478d2d35bf5ee7e7675291cbb108"
+    },
+    "apex/com.android.conscrypt/cacerts/6c85d883.0": {
+      "bytes": 7319,
+      "sha256": "3bfc139a548a86a831cb0023150a14973154179933ca0d55a15a0531a754ba5e"
+    },
+    "apex/com.android.conscrypt/cacerts/a81e292b.0": {
+      "bytes": 4395,
+      "sha256": "053b458b0c0225ebc8a8d43969a10676ca56ef8836af66d697d5465278a919ef"
+    },
+    "apex/com.android.conscrypt/cacerts/99e1b953.0": {
+      "bytes": 7054,
+      "sha256": "815b0686ec06903347c3196ce281427152ac757b019cd5202b142ff7df9ada28"
+    },
+    "apex/com.android.conscrypt/cacerts/d96b65e2.0": {
+      "bytes": 7010,
+      "sha256": "34a96f7a3faf0df8aabe23946f50bfabd2f32eaa9fba02588d037126a5ee2df1"
+    },
+    "apex/com.android.conscrypt/cacerts/9282e51c.0": {
+      "bytes": 7245,
+      "sha256": "55264c16fc7e09ee78879f7cc64db45110a04b44d22c9ef3ff38ed5e21fd3d40"
+    },
+    "apex/com.android.conscrypt/cacerts/d7746a63.0": {
+      "bytes": 4957,
+      "sha256": "e0429f7e31a5c19a5438bfa2203e8e0195fb7166704ce80092a446ccc9804ac5"
+    },
+    "apex/com.android.conscrypt/cacerts/7a7c655d.0": {
+      "bytes": 2191,
+      "sha256": "2b9cf7e4431c5437975e778713c5f3f552dc5693f19325a464c2ee7e881e1124"
+    },
+    "apex/com.android.conscrypt/cacerts/3c9a4d3b.0": {
+      "bytes": 8642,
+      "sha256": "8185030a938257e9c7ff89e6bfc585f8344df8a5d1406157ce3cefd92a1e1e8b"
+    },
+    "apex/com.android.conscrypt/cacerts/c491639e.0": {
+      "bytes": 2701,
+      "sha256": "049c9be5f460a817e72692063aa064c92c6e6147bc22fd8482afe2af7f3d6693"
+    },
+    "apex/com.android.conscrypt/cacerts/ffa7f1eb.0": {
+      "bytes": 7117,
+      "sha256": "2c4253943d6f927c7a91557fb210377a14c8bad42f364dc29feb7e8156e8c3fa"
+    },
+    "apex/com.android.conscrypt/cacerts/6b483515.0": {
+      "bytes": 2682,
+      "sha256": "4d3f24533a924daa4f2ca4d04b34c84b708b50633073e66bfa833a5b8913b50a"
+    },
+    "apex/com.android.conscrypt/cacerts/d18e9066.0": {
+      "bytes": 7068,
+      "sha256": "7d595b78445c85dbef04cc031e6c92519d95ba0c19331346a72ecb6b5f12782a"
+    },
+    "apex/com.android.conscrypt/cacerts/2d21b73c.0": {
+      "bytes": 2597,
+      "sha256": "9e28f0c3a47f95c670800ec05ea6f3b06df03d7638b6886d0d137aec487cf30b"
+    },
+    "apex/com.android.conscrypt/cacerts/595e996b.0": {
+      "bytes": 2606,
+      "sha256": "65453bbfe7f36bc988333ef367950c3d48a5f6de38c6fc013847785ccdb53dfa"
+    },
+    "apex/com.android.conscrypt/cacerts/dfc0fe80.0": {
+      "bytes": 4582,
+      "sha256": "dfaf4ea3c17a1b73ba94942e155a180cf6bc9e49a16ffb3692ab3de9f80fa53b"
+    },
+    "apex/com.android.conscrypt/cacerts/63a2c897.0": {
+      "bytes": 6979,
+      "sha256": "763bf81790df8359d4f698a0495b4fbcac39dbdbe83092aebb2c54e8d8232206"
+    },
+    "apex/com.android.conscrypt/cacerts/252252d2.0": {
+      "bytes": 2609,
+      "sha256": "44a65b2f5d96284e7c9c8f4a58f77a537b2b1667c4213fd5158baf123685cf13"
+    },
+    "apex/com.android.conscrypt/cacerts/882de061.0": {
+      "bytes": 4262,
+      "sha256": "a816c2ce1cccca82f61f8b3016e74fddddf16269ea68b7a3c72ea0b8a2513830"
+    },
+    "apex/com.android.conscrypt/cacerts/128f4b91.0": {
+      "bytes": 7099,
+      "sha256": "f9ec92882aff41327465982320852ab6ef46137732379701f5e29e2f1c459190"
+    },
+    "apex/com.android.conscrypt/cacerts/33ee480d.0": {
+      "bytes": 7442,
+      "sha256": "c4691c23e708082283f65457b0c1be94f38d244ecbf5514c8ee2f121c5a715dc"
+    },
+    "apex/com.android.conscrypt/cacerts/2d9dafe4.0": {
+      "bytes": 7016,
+      "sha256": "e2986dbe2d0093e583d518e59f173ef37fe452e51ab9b8f327e5012fef803a17"
+    },
+    "apex/com.android.conscrypt/cacerts/5fdd185d.0": {
+      "bytes": 2507,
+      "sha256": "7743018b0578b3fc4908ce24a64ac8f2b6203c13677e39b77da82765699192de"
+    },
+    "apex/com.android.conscrypt/cacerts/ab59055e.0": {
+      "bytes": 7173,
+      "sha256": "045008ac171b0f7d1617a7fb3550c61cbddff4c67418dd3115fa4994bed0a627"
+    },
+    "apex/com.android.conscrypt/cacerts/5a3f0ff8.0": {
+      "bytes": 4834,
+      "sha256": "f8f1e26dd278b8c2eda773042237aef9ec94bb25d92f09838e667f0274c0b4a8"
+    },
+    "apex/com.android.conscrypt/cacerts/47b283f6.0": {
+      "bytes": 7258,
+      "sha256": "4b2d2c5f8159cecf9e3a09ad75b0e8a92a9747c0f0f8b9c8a25df92e1d32ba76"
+    },
+    "apex/com.android.conscrypt/cacerts/9aef356c.0": {
+      "bytes": 2862,
+      "sha256": "e626afc53c10bb5fa5b380e71b159b378adab959702f6302ee1acce04a446625"
+    },
+    "apex/com.android.conscrypt/cacerts/8761519c.0": {
+      "bytes": 7119,
+      "sha256": "cf17c72a83b8649ce9cfe552885d6df79564f961cf708b8c95969d4b8d2bbe52"
+    },
+    "apex/com.android.conscrypt/cacerts/3c899c73.0": {
+      "bytes": 2800,
+      "sha256": "399fd6d39f57bef6aaaf70f01cc4d43eb17dd940a571f26f39bfcd2525facfe6"
+    },
+    "apex/com.android.conscrypt/cacerts/fd08c599.0": {
+      "bytes": 4294,
+      "sha256": "6c7a82cee152a548b41eb5969f462a26dcb6de03b0bc01107add64728367e112"
+    },
+    "apex/com.android.conscrypt/cacerts/88950faa.0": {
+      "bytes": 2936,
+      "sha256": "6053b72a0df9f5383006ec5aee487696f0f75b8515c19501f1636c5ee4fc5796"
+    },
+    "apex/com.android.conscrypt/cacerts/d39b0a2c.0": {
+      "bytes": 7232,
+      "sha256": "bd82195828ab8c9b127a5242afe0525d40a830cb502a412eaaf7fa8680f843e4"
+    },
+    "apex/com.android.conscrypt/cacerts/41a3f684.0": {
+      "bytes": 2755,
+      "sha256": "5826d99f319bde67845effe72e59824845fa48c6098e20eaddd4c61326a7bff5"
+    },
+    "apex/com.android.conscrypt/cacerts/d16a5865.0": {
+      "bytes": 7543,
+      "sha256": "ad2a0c63bb3ba312e33876f3beb1151d8c21a935bce21b81e421f8bd47c6a4ac"
+    },
+    "apex/com.android.conscrypt/cacerts/8d10a21f.0": {
+      "bytes": 7104,
+      "sha256": "47a0f527a764d8c209b8ce9626e4effd5e705785541a046a80904f721f247508"
+    },
+    "apex/com.android.conscrypt/cacerts/d59297b8.0": {
+      "bytes": 4359,
+      "sha256": "ff296992375c4512aa2727ef7d36331a60f77ec9cad734ce51c8b5731b264928"
+    },
+    "apex/com.android.conscrypt/cacerts/302904dd.0": {
+      "bytes": 7934,
+      "sha256": "13ff661fdc8ffebc17335e8e756477e44170b8f782164427c11d33dddae6e8ce"
+    },
+    "apex/com.android.conscrypt/cacerts/6187b673.0": {
+      "bytes": 7094,
+      "sha256": "8b4f7db170110ae526284e6f875940c2d731e760c59652744bc65d9ac1167eb1"
+    },
+    "apex/com.android.conscrypt/cacerts/e442e424.0": {
+      "bytes": 7076,
+      "sha256": "5b1740dc0bbd32d994ec3139269b2a2cb9ca6465b2b1255cf2158be564e13f9e"
+    },
+    "apex/com.android.conscrypt/cacerts/5f9a69fa.0": {
+      "bytes": 2777,
+      "sha256": "0b48c43a449421e85436f0bf7a570e42adca0679e7c6a227fa2ad70ed08b3758"
+    },
+    "apex/com.android.conscrypt/cacerts/ee37c333.0": {
+      "bytes": 7361,
+      "sha256": "13ef932b72ea9e146f4591f9ff4eebee3503a73fca0947829f159e6a6675c60d"
+    },
+    "apex/com.android.conscrypt/cacerts/b936d1c6.0": {
+      "bytes": 7222,
+      "sha256": "819a59d3a6fa987adcb63fe3303efba0f8897739b951d5c80a5f110603e5898d"
+    },
+    "apex/com.android.conscrypt/cacerts/3afde786.0": {
+      "bytes": 2684,
+      "sha256": "37fd224524c3d1f681965189153fd35fb51d496211583e7dceb16fef41e90f43"
+    },
+    "apex/com.android.conscrypt/cacerts/9d6523ce.0": {
+      "bytes": 7223,
+      "sha256": "404c63fe9fb5ab42a6414c72d89970cbec7d34aed1e5d7768603bb07da70a12b"
+    },
+    "apex/com.android.conscrypt/cacerts/bf64f35b.0": {
+      "bytes": 5192,
+      "sha256": "c395b76ec8a15456a84c5ed5df6268bbf5598a0f52055bc2b70dca9f1c8376f8"
+    },
+    "apex/com.android.conscrypt/cacerts/068570d1.0": {
+      "bytes": 2911,
+      "sha256": "9006e30d7cc226ace083cde4a0a692fe4394f4739babe7e27219fa6a4762a265"
+    },
+    "apex/com.android.conscrypt/cacerts/7e067d03.0": {
+      "bytes": 2618,
+      "sha256": "c739c18d9c7c774bb264451274958ea4f488a0669e950a9f81b219c65abc2436"
+    },
+    "apex/com.android.conscrypt/cacerts/95aff9e3.0": {
+      "bytes": 4511,
+      "sha256": "658b070c3b6d5ef52ffc6a438a595095375e96e7e474866216ed12c6dbffb462"
+    },
+    "apex/com.android.conscrypt/cacerts/4be590e0.0": {
+      "bytes": 7082,
+      "sha256": "a1224ebe3f4bb048ca0e182b3f22908488882ea3ef5677dc46e23996b0764149"
+    },
+    "apex/com.android.conscrypt/cacerts/01419da9.0": {
+      "bytes": 2795,
+      "sha256": "cc3e78e8ab5489417c5839714f6742779c7ca6d0d9e07b538fc7bf5f3a71febf"
+    },
+    "apex/com.android.conscrypt/cacerts/e48193cf.0": {
+      "bytes": 4285,
+      "sha256": "e42728bae0cb74753d0919f5bac8effa31065fb0d775fbde434807ff7d49e57a"
+    },
+    "apex/com.android.conscrypt/cacerts/35105088.0": {
+      "bytes": 7337,
+      "sha256": "b012c2b85b2485b625c61664b82e60efb8694c4eb0fdafb6f2e20c1b0e259102"
+    },
+    "apex/com.android.conscrypt/cacerts/69105f4f.0": {
+      "bytes": 4648,
+      "sha256": "99be339b37260de2f83b8892110a8cc40405af4bafd95c3c256ab6a6ce919274"
+    },
+    "apex/com.android.conscrypt/cacerts/455f1b52.0": {
+      "bytes": 4817,
+      "sha256": "d4154239b61791d158fb584b9fecccf3406969a2c0dc0880fe6d84664f21904e"
+    },
+    "apex/com.android.conscrypt/cacerts/bc3f2570.0": {
+      "bytes": 4515,
+      "sha256": "8ae7c8ef73167e73a5fa58c924af9721abbf1115e7ee6e4c9cffc5fd756889e9"
+    },
+    "apex/com.android.conscrypt/cacerts/2c63f966.0": {
+      "bytes": 7281,
+      "sha256": "861c80f86a262005b53a76cbb2dbd7ae5a539f1490d2675d6bc82a972a298c25"
+    },
+    "apex/com.android.conscrypt/cacerts/da7377f6.0": {
+      "bytes": 7073,
+      "sha256": "cacfb923927188961b4f7762fa47c186686e709b6da88dcfd23a468dc1323eb8"
+    },
+    "apex/com.android.conscrypt/cacerts/98aaf404.0": {
+      "bytes": 7335,
+      "sha256": "b3429eb3746a6d1a2a158386bcb64c7defc1549589e31c32fbc76a004925c961"
+    },
+    "apex/com.android.conscrypt/cacerts/a2c66da8.0": {
+      "bytes": 7188,
+      "sha256": "aef387543b58702a50dcd9eb0e96b09e1d1e35c780cc8f27674de32351874476"
+    },
+    "apex/com.android.conscrypt/cacerts/cbb3f32b.0": {
+      "bytes": 2782,
+      "sha256": "ceec2bc793f615e8a9550fbac3d6b6788bb2f8cad454c1b8ae8eb1c1b8ff67be"
+    },
+    "apex/com.android.conscrypt/cacerts/e071171e.0": {
+      "bytes": 7186,
+      "sha256": "1d3e83feec61f9bcf6eacbaf927b0f6d0efb9bd39695e125062c1a7691c4f20e"
+    },
+    "apex/com.android.conscrypt/cacerts/399e7759.0": {
+      "bytes": 4628,
+      "sha256": "9890f7ec2ddfcc817fe17ea6c5c10f07e07dbc50874884913a5040fbc802a312"
+    },
+    "apex/com.android.conscrypt/cacerts/d06393bb.0": {
+      "bytes": 4527,
+      "sha256": "502d617cf8b062aa559478e79cbc02937d445fa233a6e5405e7e0c4dbabd9932"
+    },
+    "apex/com.android.conscrypt/cacerts/304d27c3.0": {
+      "bytes": 7010,
+      "sha256": "dcd5e5586dc34206bdf20a1c961eae213318efd8f621e2f2b47a4fb09e9e18fe"
+    },
+    "apex/com.android.conscrypt/javalib/conscrypt.jar": {
+      "bytes": 559317,
+      "sha256": "32e12efc5c66aab31f92b5dbc9c4015f1671e987e24e9760f9a5bc73c7d88aeb"
+    },
+    "apex/com.android.conscrypt/lib/libc++.so": {
+      "bytes": 1052080,
+      "sha256": "fe2f26c0cf65542ae5629216aaaf4ac3725b1ff2ca34827255a2cf2d9d35c80e"
+    },
+    "apex/com.android.conscrypt/lib/libcrypto.so": {
+      "bytes": 1662896,
+      "sha256": "f7472518724a475aac2adbd6c2c26787702be16759887e7cec0491fdb77217b8"
+    },
+    "apex/com.android.conscrypt/lib/libssl.so": {
+      "bytes": 656196,
+      "sha256": "e18f0545252be2c787539e8feb403e1ad384dc05e2992f6f0ce951f96d35f0b4"
+    },
+    "apex/com.android.conscrypt/lib/libjavacrypto.so": {
+      "bytes": 204668,
+      "sha256": "e07ff5d59f7a760d329229f85e663acdd9d56a722c76a8d822d46fe842161cf1"
+    },
+    "apex/com.android.conscrypt/etc/flag.map": {
+      "bytes": 443,
+      "sha256": "4b2e69f06a538cc11f040f46ce3efcbae40c9f3c3dc67241b2d37911ba1dc56f"
+    },
+    "apex/com.android.conscrypt/etc/flag.info": {
+      "bytes": 49,
+      "sha256": "9066edfc2b70b876b529188d2063ebfc3d95708aa7d245d57c60d2eaa30bef2d"
+    },
+    "apex/com.android.conscrypt/etc/sdkinfo.pb": {
+      "bytes": 2,
+      "sha256": "8cc9ce257862fcf6e3697359b34e49114d1bde37e43cbdcf62755a282ba90bad"
+    },
+    "apex/com.android.conscrypt/etc/package.map": {
+      "bytes": 188,
+      "sha256": "2ca376dc688b47da1b9daa19d77bde13490d5df9e0ce18613a3010a31421504e"
+    },
+    "apex/com.android.conscrypt/etc/aconfig_flags.pb": {
+      "bytes": 2357,
+      "sha256": "2a03318fcbfa2fd94127eb14d876609985930527ad64fa4449161f6473e93484"
+    },
+    "apex/com.android.conscrypt/etc/flag.val": {
+      "bytes": 49,
+      "sha256": "52340c227b4eed1a590114a26b6e11b96944a43f6f508351f0ba8816c177c844"
+    },
+    "apex/com.android.conscrypt/etc/ld.config.txt": {
+      "bytes": 2432,
+      "sha256": "bb523848be5c34d30984c33dbd288bdf6815d906ea34c0109149c1484c603e2b"
+    },
+    "apex/com.android.conscrypt/etc/classpaths/bootclasspath.pb": {
+      "bytes": 55,
+      "sha256": "f6c16d2dd91452d2a8c148546c7fb796274d4e794f751d86694b561ef443efc0"
+    },
+    "apex/com.android.i18n/lib64/libicuuc.so": {
+      "bytes": 2019072,
+      "sha256": "c2a8ff1b026502334c71bd20b52c2bd78020623433e00d76d1090bffea48dbc2"
+    },
+    "apex/com.android.i18n/lib64/libandroidicu.so": {
+      "bytes": 52720,
+      "sha256": "f4411bdf6cf616edeea67b68bc978ccf315aa6af680d40a312e51d55296ad1dc"
+    },
+    "apex/com.android.i18n/lib64/libicu.so": {
+      "bytes": 70520,
+      "sha256": "8bcdb0e31d0c16c2822f244105b02bf189ef464aa3474bcfd8379fc9a7f99070"
+    },
+    "apex/com.android.i18n/lib64/libicu_jni.so": {
+      "bytes": 121352,
+      "sha256": "f95d303261d674c13f49240c9d5e14cdadb5ccf88f3086409f90d9276ccd8f73"
+    },
+    "apex/com.android.i18n/lib64/libicui18n.so": {
+      "bytes": 2878496,
+      "sha256": "64c03827a9ba5514d3791c4bb581d82da9691112b51af488758e09e96392ecc7"
+    },
+    "apex/com.android.i18n/javalib/core-icu4j.jar": {
+      "bytes": 3041921,
+      "sha256": "c9848d773947bc63834936e692bfaa0963aed9decdc63d3241ec6e1a7b910cc5"
+    },
+    "apex/com.android.i18n/lib/libicuuc.so": {
+      "bytes": 2030112,
+      "sha256": "e76b6aea1b9d0f99a8ee11b5769d8034b45e9c68be7f557a6a3c8e442aa98870"
+    },
+    "apex/com.android.i18n/lib/libandroidicu.so": {
+      "bytes": 28188,
+      "sha256": "53750762bff0b204ab3ffc7a40916d49867525dd99c575363cec1d9fda796baf"
+    },
+    "apex/com.android.i18n/lib/libicu.so": {
+      "bytes": 63504,
+      "sha256": "feeba6e21dc9c6ab71d93dc57eb4fe19cd9889a383287bb5ec513bf7690283be"
+    },
+    "apex/com.android.i18n/lib/libicu_jni.so": {
+      "bytes": 83088,
+      "sha256": "bb3662b6690685d550973f278dc220bda2abc1569c6e6386fac8fad7017d3a8a"
+    },
+    "apex/com.android.i18n/lib/libicui18n.so": {
+      "bytes": 2945440,
+      "sha256": "b3f8d630db79dc197566585554d07727cca2dec9d5154abeab980605cbbb2e2b"
+    },
+    "apex/com.android.i18n/etc/flag.map": {
+      "bytes": 168,
+      "sha256": "22ea3fcae8815e73ca48818fe9deb5bdf372c1c87f0a72276599c14e2feb16ae"
+    },
+    "apex/com.android.i18n/etc/flag.info": {
+      "bytes": 40,
+      "sha256": "b05b40cf80e6470ee8517f7692bf23d70f5a9608a10bfd0caf1cacfd661fb9f5"
+    },
+    "apex/com.android.i18n/etc/package.map": {
+      "bytes": 108,
+      "sha256": "bba5f64e644929b8b550b5c7e9fb0cae932c876bf4acab00cd5d8bdf304e5c4c"
+    },
+    "apex/com.android.i18n/etc/aconfig_flags.pb": {
+      "bytes": 1038,
+      "sha256": "148be82d1733795a8d09518f9792af861c930e574f8dc5d07d9e0fba0e8f5519"
+    },
+    "apex/com.android.i18n/etc/flag.val": {
+      "bytes": 40,
+      "sha256": "3025d3110b3af612b3dc47df24fcfb2a335522f4a2c858acdf69293d1bd9250b"
+    },
+    "apex/com.android.i18n/etc/icu/icudt76l.dat": {
+      "bytes": 29131840,
+      "sha256": "658eb1cf9a22003ed205819f9bbbab7749d815c90e4b99c89710d809d94b5dd0"
+    },
+    "apex/com.android.runtime/lib64/libc_malloc_debug.so": {
+      "bytes": 664736,
+      "sha256": "209f5717d6fad809ee6a63502a56efb0dc9e457a3daa70b0bbd6d76303455b98"
+    },
+    "apex/com.android.runtime/lib64/libc_malloc_hooks.so": {
+      "bytes": 51456,
+      "sha256": "90434bd7a63f619940290c07cb903e82a3c72b6280b42914c0b654c2d736b19e"
+    },
+    "apex/com.android.runtime/bin/linker64": {
+      "bytes": 2253664,
+      "sha256": "9fcc1c6a1353a9d646339f152e2c8720729d248c4cb2d4a04582db982e5f62c4"
+    },
+    "apex/com.android.runtime/bin/linker": {
+      "bytes": 2413088,
+      "sha256": "911a01dccb0d4aab969918662bb34f375dcf6af8523b196b2a948640edd43d48"
+    },
+    "apex/com.android.runtime/bin/crash_dump32": {
+      "bytes": 712152,
+      "sha256": "4f7de770c4e4a399252456fe6bf88e307537ebf5d3cda88b1b735a0c356654a9"
+    },
+    "apex/com.android.runtime/bin/linkerconfig": {
+      "bytes": 512256,
+      "sha256": "0c214a7ef0c9efe4aa12c648ef6445673e4938d8cb1af88a34d82aa2a6ca786b"
+    },
+    "apex/com.android.runtime/bin/crash_dump64": {
+      "bytes": 670768,
+      "sha256": "7e0282cec596c27a043b9582a86bd406e77244772b11106e4209c9306dbe0747"
+    },
+    "apex/com.android.runtime/lib/libc_malloc_debug.so": {
+      "bytes": 649244,
+      "sha256": "acba41ca2e29905ee21fc77b4a85a02d38722ab66bc65c1a708c6e7d3f11273a"
+    },
+    "apex/com.android.runtime/lib/libc_malloc_hooks.so": {
+      "bytes": 7292,
+      "sha256": "f152a624ab39915ecc65fbc87f0c00bd660e95f8f43c6822659245fcfbd774f7"
+    },
+    "apex/com.android.runtime/etc/linker.config.pb": {
+      "bytes": 2,
+      "sha256": "27c24fcb8474773e2af799d0848495ff053272d33c432dc26277993df45c9276"
+    },
+    "apex/com.android.runtime/lib/bionic/libm.so": {
+      "bytes": 165460,
+      "sha256": "305812620fde4d20d6d5014a15e2e490368221de2f5139c6344c4c3b890c2079"
+    },
+    "apex/com.android.runtime/lib/bionic/libdl_android.so": {
+      "bytes": 3924,
+      "sha256": "de78cd772c4de0c8dc5c7eb74cc8dd4db86823c2a4d5695287f35ac5b57c6368"
+    },
+    "apex/com.android.runtime/lib/bionic/libdl.so": {
+      "bytes": 9376,
+      "sha256": "92a2fd1ecd0e44cc5edf316fd4017bd855d8e475b039c2873e11f26db3c34f67"
+    },
+    "apex/com.android.runtime/lib/bionic/libc.so": {
+      "bytes": 1197764,
+      "sha256": "0f2873aecb660a538bd87e68ee5a85c4c8d83ac1687b1d9b40cdbcaa6e27c092"
+    },
+    "apex/com.android.runtime/lib64/bionic/libm.so": {
+      "bytes": 281744,
+      "sha256": "51ba6fe4e0628c069274ecba60c864fe9b84ae288e7f2c6cf79fe3d75ad54638"
+    },
+    "apex/com.android.runtime/lib64/bionic/libdl_android.so": {
+      "bytes": 34672,
+      "sha256": "20c51c782b17eebe04ad168d0a4ad23403e8696212d5d3027c191b8d865c57b2"
+    },
+    "apex/com.android.runtime/lib64/bionic/libdl.so": {
+      "bytes": 50760,
+      "sha256": "976f432c4e1a1ada8542534caac3905cfd8ad37a72756412a20ebfc6017f582e"
+    },
+    "apex/com.android.runtime/lib64/bionic/libc.so": {
+      "bytes": 1186584,
+      "sha256": "c743999d121b9cdaaa2fc1eaae386cd51eaeed063423f26d89f29590a3e24723"
+    },
+    "apex/com.android.art/lib64/libc++.so": {
+      "bytes": 1070120,
+      "sha256": "87df302ebea224686cdc4fb5cfd45a978cc2bd04cb0ef961dd124e128a004d14"
+    },
+    "apex/com.android.art/lib64/libdt_fd_forward.so": {
+      "bytes": 36832,
+      "sha256": "1be0c626a83435e493375365e96dc4cb1809061f04be2b074b82ac72cf8ca817"
+    },
+    "apex/com.android.art/lib64/libsigchain.so": {
+      "bytes": 68208,
+      "sha256": "4d10d10290d7545a435ce2cad1173ac0759c6c299c005aa5f4212ed8cfb7b921"
+    },
+    "apex/com.android.art/lib64/libartservice.so": {
+      "bytes": 36360,
+      "sha256": "4889d4f1ff1da361a798cc14f4556b9d1dd0fe5c49dfce9c9b0f4503ee25314c"
+    },
+    "apex/com.android.art/lib64/libartbase.so": {
+      "bytes": 399544,
+      "sha256": "84bc9a8cd52507ab1efe8c48c7c2979e69496c7ccb6e9abc661c47f03dce7616"
+    },
+    "apex/com.android.art/lib64/libbase.so": {
+      "bytes": 234856,
+      "sha256": "831da8050c1a4702c56d304a6bb8ae9530eb46dd4a0efdec2e905679eb02a69f"
+    },
+    "apex/com.android.art/lib64/libandroidio.so": {
+      "bytes": 51536,
+      "sha256": "02a7585e9992a30babcab74e59ff40b1a3edcd50f1fa804d6fb1b9c7882ef561"
+    },
+    "apex/com.android.art/lib64/libart-disassembler.so": {
+      "bytes": 54464,
+      "sha256": "222ee82486d21df1a6f6eeac5f4a8e84efb33d6a7efbf2d624af9a6acd0bcbde"
+    },
+    "apex/com.android.art/lib64/libdt_socket.so": {
+      "bytes": 51720,
+      "sha256": "adaf35b5da8382bae73b431b4f1215a3bde2dfd8d5c8537403d13c4851ed36fd"
+    },
+    "apex/com.android.art/lib64/libperfetto_hprof.so": {
+      "bytes": 554096,
+      "sha256": "f5d74cc38e08aabcd01feeab92a35f99f7d5c639d37122a5340c9a1a1d3e5c0b"
+    },
+    "apex/com.android.art/lib64/libopenjdk.so": {
+      "bytes": 255584,
+      "sha256": "f389e1bd07cdd16c317f690e5a6590d96573f566680319130d8dd0b980ad69b1"
+    },
+    "apex/com.android.art/lib64/libunwindstack.so": {
+      "bytes": 820344,
+      "sha256": "90cda21d25c909234cf0b8efcf06bfcd16680f5068ec4b077e268580c7dc4648"
+    },
+    "apex/com.android.art/lib64/libnativebridge.so": {
+      "bytes": 51336,
+      "sha256": "12449cfe7f46f66948c21e39053e50b5757aaeff6f8ea4d648a434396b1b2cfb"
+    },
+    "apex/com.android.art/lib64/libadbconnection.so": {
+      "bytes": 118240,
+      "sha256": "f3d6df3a8a3045f3b8044a12252b20b09df450f4ed884073c76c4d2218d5cb75"
+    },
+    "apex/com.android.art/lib64/libprofile.so": {
+      "bytes": 200704,
+      "sha256": "f690888fb0e7f4cb99553e3e0a635c52884bb7fa079842502901ae5916c0cad9"
+    },
+    "apex/com.android.art/lib64/libarttools.so": {
+      "bytes": 235472,
+      "sha256": "86180b3d1d35e40c6fc17900dafaa46013a3ebd31ea9322e313c7651fbeffa16"
+    },
+    "apex/com.android.art/lib64/libartpalette.so": {
+      "bytes": 51384,
+      "sha256": "8f374b5e5dea1b028fb4ead818c7c2a0ecfded268c888537db9574d4b73c160b"
+    },
+    "apex/com.android.art/lib64/libart.so": {
+      "bytes": 14879016,
+      "sha256": "6c50a967dafe41f9b035ebd2f1da8e10eba0bda42e7236808a69d9672edf68dd"
+    },
+    "apex/com.android.art/lib64/liblzma.so": {
+      "bytes": 200176,
+      "sha256": "45182f55e457dfb4e9a8036097dfae0233659b540a9983479ff9eaffd59202bd"
+    },
+    "apex/com.android.art/lib64/libnativehelper.so": {
+      "bytes": 51368,
+      "sha256": "6a01bf6f0aee5daa0d900252c73572da35dd574a32471b2c17f194b4632dcc73"
+    },
+    "apex/com.android.art/lib64/libjavacore.so": {
+      "bytes": 275968,
+      "sha256": "9ec0dbe359ef7ca0a7f31cd6f2bf899cd1e5d3a95be001fb0d859d9cd6cda9bd"
+    },
+    "apex/com.android.art/lib64/liblz4.so": {
+      "bytes": 199776,
+      "sha256": "4d54121e16f588dc248aa3096076c00aee6fa74b51ec8530f269a9076a890e6d"
+    },
+    "apex/com.android.art/lib64/libnativeloader.so": {
+      "bytes": 170416,
+      "sha256": "293babe4fef89c918fdfe618fce04bbcdd8a570ab5c1b71bf850b0bbbbfe2535"
+    },
+    "apex/com.android.art/lib64/libexpat.so": {
+      "bytes": 201112,
+      "sha256": "23897f43d85ec87ddd52e67bfe215760533c594b45ab5ae337b7076cafa5b6da"
+    },
+    "apex/com.android.art/lib64/libnpt.so": {
+      "bytes": 35656,
+      "sha256": "1d5de6e1f2ee8ef08302e8e0569d3e200f946e6e6fa4fdd617200fa1c44a0bba"
+    },
+    "apex/com.android.art/lib64/libdexfile.so": {
+      "bytes": 282912,
+      "sha256": "3ca19cb97456cfcdf9db9546941d5e8e7ff882756ef5fa7865bccd14cccbfc70"
+    },
+    "apex/com.android.art/lib64/libjdwp.so": {
+      "bytes": 317296,
+      "sha256": "d30ab029ff8b79a8d3301a2366022bca8b42ae8f4fbb229c1a28a1ea0fb8effb"
+    },
+    "apex/com.android.art/lib64/libopenjdkjvmti.so": {
+      "bytes": 1031712,
+      "sha256": "e6472f89b685c3c8be8e0483de2eee7843978b1c2b17dffd6db8de42267ad7e4"
+    },
+    "apex/com.android.art/lib64/libopenjdkjvm.so": {
+      "bytes": 36360,
+      "sha256": "1c48cda30d27eb09fb4e21e03be6e6c1bd3e67e1593b2ad5dae7b26071c38351"
+    },
+    "apex/com.android.art/bin/dexoptanalyzer": {
+      "bytes": 52400,
+      "sha256": "c7faab3e978b48e179b269da0549dd738ecb5717d988e3f22c7c647c5cc61db6"
+    },
+    "apex/com.android.art/bin/dalvikvm64": {
+      "bytes": 51440,
+      "sha256": "5e8a9c85f96ea8805b4c3d9eabc48247f1b3342f338c8cc9fcf97b2a15d05952"
+    },
+    "apex/com.android.art/bin/art_boot": {
+      "bytes": 51672,
+      "sha256": "a866501fd7f38ee086ed6609f71f8c91a0b428ea7bcc5ec4e468ed6cada2ab30"
+    },
+    "apex/com.android.art/bin/dexdump": {
+      "bytes": 151040,
+      "sha256": "560f751a57833144887fabb3e8f617803493201f8f2df1202277f334033d1ab2"
+    },
+    "apex/com.android.art/bin/dexopt_chroot_setup": {
+      "bytes": 170280,
+      "sha256": "9dd960444cae00be55ab884807b672a8b8d2c0e53805249aec93eda953656a79"
+    },
+    "apex/com.android.art/bin/oatdump": {
+      "bytes": 383744,
+      "sha256": "4b4f5b8e8c395753e3f40a05aad0ede18ba42b6d1f06d28b26d45259176313b7"
+    },
+    "apex/com.android.art/bin/dalvikvm32": {
+      "bytes": 10528,
+      "sha256": "5bdee7a2a85509fff5ce1af942eeedf3053befa15dcad4c1af2557f145b9f094"
+    },
+    "apex/com.android.art/bin/dexlist": {
+      "bytes": 51864,
+      "sha256": "c3f942b98d824bd39dd84b0a91b3f00b333b47e8ca4eaea6e4db96fd300f9325"
+    },
+    "apex/com.android.art/bin/profman": {
+      "bytes": 168936,
+      "sha256": "e5c64ed9ac4cafa71db5e487a642bf115c40ff7c72d3363ce6d0d57b07a55030"
+    },
+    "apex/com.android.art/bin/dex2oat32": {
+      "bytes": 1366568,
+      "sha256": "29a6652457c0da122b7789976a358fb2209c49a067d39a41a4c92c68a6d7d14e"
+    },
+    "apex/com.android.art/bin/art_exec": {
+      "bytes": 69424,
+      "sha256": "2a06c73f801b68529401e83e38643704d6d65aeb7ca1c29ac3f5aaaca6107896"
+    },
+    "apex/com.android.art/bin/dex2oat64": {
+      "bytes": 1351960,
+      "sha256": "d7e064465f1e5d69b5696751be7abb516dd431dab3a7c0dc6f48fefa64b3a075"
+    },
+    "apex/com.android.art/bin/artd": {
+      "bytes": 373088,
+      "sha256": "5f23700fad10d55829c497cf56c8862bff528f5aa67a09bfbcb034a47a8e3b61"
+    },
+    "apex/com.android.art/bin/odrefresh": {
+      "bytes": 369408,
+      "sha256": "9576c9a7c4afea8d094a57b1be0a9ea12b70c84e3078eb8a1c9f19b91463b4b1"
+    },
+    "apex/com.android.art/javalib/okhttp.jar": {
+      "bytes": 370873,
+      "sha256": "d52475aad51e24b361b625ef8927ff9b2a1e33e29e57d287423c1e0f65d45e93"
+    },
+    "apex/com.android.art/javalib/service-art.jar.prof": {
+      "bytes": 30,
+      "sha256": "17c10427264db61e43f37be47631972bc16d7dc33b319006904536487fc9acb3"
+    },
+    "apex/com.android.art/javalib/apache-xml.jar": {
+      "bytes": 1058167,
+      "sha256": "dedd4e7341a3b1d9c5a3df76c474b83fd227412600bcff6f1b20f65c38ff66ca"
+    },
+    "apex/com.android.art/javalib/service-art.jar": {
+      "bytes": 581566,
+      "sha256": "17d44eafadfae9616ff3a90620342933a14531eb1c924523b4dc40ed2893139b"
+    },
+    "apex/com.android.art/javalib/core-oj.jar": {
+      "bytes": 6035840,
+      "sha256": "bb0853c56c4092a41d2a8a6b4a88d16f0876bace56d2cd307e29e0c3fce03c23"
+    },
+    "apex/com.android.art/javalib/bouncycastle.jar": {
+      "bytes": 1032745,
+      "sha256": "d8fc5c51189a257eddeb2fc4ba13803d94fcce5280a26486b1ab8a5fa3b638a5"
+    },
+    "apex/com.android.art/javalib/core-libart.jar": {
+      "bytes": 638989,
+      "sha256": "1fe7067e6da3875e0c53283b4cbd9e44e30a18dbc4c5e970ff50aaa064b5f895"
+    },
+    "apex/com.android.art/lib/libc++.so": {
+      "bytes": 1052080,
+      "sha256": "fe2f26c0cf65542ae5629216aaaf4ac3725b1ff2ca34827255a2cf2d9d35c80e"
+    },
+    "apex/com.android.art/lib/libdt_fd_forward.so": {
+      "bytes": 30980,
+      "sha256": "88477a4481ac16099566f6bdae4a8be475f9e2a1d296c0e002673d0ca56793d4"
+    },
+    "apex/com.android.art/lib/libsigchain.so": {
+      "bytes": 28152,
+      "sha256": "e7495f601454bc37f65140ad0802271ddca9cadd592ab2f75ace2311da244c65"
+    },
+    "apex/com.android.art/lib/libartbase.so": {
+      "bytes": 383628,
+      "sha256": "3d2108b173609e6be79f0beb61cd7cfd4015eb0d8f454e34ef9efd7648920bc1"
+    },
+    "apex/com.android.art/lib/libbase.so": {
+      "bytes": 197668,
+      "sha256": "e4ec87691f517b7ed12b4a9fe21f67621167e3b18f2688056d719fa55d0e44ce"
+    },
+    "apex/com.android.art/lib/libandroidio.so": {
+      "bytes": 5084,
+      "sha256": "420049b222bda8a5dcf89943def22eef3f7594171f2ad0cea0d55f3d1bb71341"
+    },
+    "apex/com.android.art/lib/libart-disassembler.so": {
+      "bytes": 46864,
+      "sha256": "8820c54ee9f795e297efee79120e8382a40f10a7e8978e48b39efeac76bd9690"
+    },
+    "apex/com.android.art/lib/libdt_socket.so": {
+      "bytes": 18760,
+      "sha256": "a359b3035cb1b9d3ce476f3d93d13373a7d3c7c77381e8acda5d49fac889a555"
+    },
+    "apex/com.android.art/lib/libperfetto_hprof.so": {
+      "bytes": 595288,
+      "sha256": "16655c4fb19a9b9bc5c4985d173386f9e892f2745c1e05d170a1a605da28519a"
+    },
+    "apex/com.android.art/lib/libopenjdk.so": {
+      "bytes": 208292,
+      "sha256": "28a92f1b9eeb32fabcbb9d08f76605e3aceb2c54b04eb022e36fd3b52c6d9fdc"
+    },
+    "apex/com.android.art/lib/libunwindstack.so": {
+      "bytes": 846216,
+      "sha256": "74da9eda1efd6b5d0bd42a22c71280fc5bced1dc75934182e4b95c7a628f50d0"
+    },
+    "apex/com.android.art/lib/libnativebridge.so": {
+      "bytes": 13232,
+      "sha256": "5d3226835919d710a174897796c5f87de2da27d18f9693422ef6a51acd2e251f"
+    },
+    "apex/com.android.art/lib/libadbconnection.so": {
+      "bytes": 102108,
+      "sha256": "4623df01035b7d532edc79c5ec765c2a04306a2d56753e3dc81715d19da9f115"
+    },
+    "apex/com.android.art/lib/libprofile.so": {
+      "bytes": 175240,
+      "sha256": "817c36fffe55122bafc95af6adc91fd7d58d70a06fe50ab0bf4e4bbc8f1e3b86"
+    },
+    "apex/com.android.art/lib/libartpalette.so": {
+      "bytes": 10076,
+      "sha256": "6980c2f462533c7d98865a2cd76a0410fc07535edc1dc3a73adcb68ff551189c"
+    },
+    "apex/com.android.art/lib/libart.so": {
+      "bytes": 10569472,
+      "sha256": "927ee81f3fb86caabf8d96ba42826a1a89dbdffa38b8bc9e8bcd84639f8dcc80"
+    },
+    "apex/com.android.art/lib/liblzma.so": {
+      "bytes": 177764,
+      "sha256": "1f04af0c8dc1087d56b9614d06f8a624e84915a25d883d1030efffde3cf41377"
+    },
+    "apex/com.android.art/lib/libnativehelper.so": {
+      "bytes": 19468,
+      "sha256": "f8308530777e078d6eff85b85112c9cf928178bfab1c5f5031b13dfb42b0bc1d"
+    },
+    "apex/com.android.art/lib/libjavacore.so": {
+      "bytes": 227916,
+      "sha256": "83fe24274beaf3409f61019ccd98cabf3c2f2639d65f39b16bc57f3f81b4870d"
+    },
+    "apex/com.android.art/lib/liblz4.so": {
+      "bytes": 170000,
+      "sha256": "4c006ce97d21954c317c3c8a546858fcffc6a1ade97667db107ceac0b121b802"
+    },
+    "apex/com.android.art/lib/libnativeloader.so": {
+      "bytes": 155052,
+      "sha256": "b4e6d6b570069741e1f1376ca9a63c9b1deb15eb95d20cf82c3b941495e393d9"
+    },
+    "apex/com.android.art/lib/libexpat.so": {
+      "bytes": 171172,
+      "sha256": "d62869367af466abbc2316e6055f15359673914f2b1a0dbea90006899cee8077"
+    },
+    "apex/com.android.art/lib/libnpt.so": {
+      "bytes": 8948,
+      "sha256": "c045554fdf69c46377b5f8836aa63d0c22c7a91bfb853cd09ea3c8fae2108cf0"
+    },
+    "apex/com.android.art/lib/libdexfile.so": {
+      "bytes": 244800,
+      "sha256": "2e07846cc04bac2c0108e7603bf2501491a79771e230e5d663dec8794038f41f"
+    },
+    "apex/com.android.art/lib/libjdwp.so": {
+      "bytes": 293408,
+      "sha256": "5a74ab00284e2a69b2526b584206687685877333588d4f6261915302e729f444"
+    },
+    "apex/com.android.art/lib/libopenjdkjvmti.so": {
+      "bytes": 1111904,
+      "sha256": "ead6b97208dbe524db36bc1190f0821d18c522b8c9696aa6907dd3f3f8a72394"
+    },
+    "apex/com.android.art/lib/libopenjdkjvm.so": {
+      "bytes": 28380,
+      "sha256": "cf19117b96014c285705bcc2b2c9ffb86bb63d579da3de935041206ea0e582ea"
+    },
+    "apex/com.android.art/etc/boot-image.prof": {
+      "bytes": 19296,
+      "sha256": "1ce9393846be47a9d6eb721ffd63dd66fd07f8d7a13c08e74a5aac44c2138653"
+    },
+    "apex/com.android.art/etc/linker.config.pb": {
+      "bytes": 38,
+      "sha256": "eda54d659ce1b15244635053a5f6bccb101ae56ceabef342bcd8f528b862bd8b"
+    },
+    "apex/com.android.art/etc/flag.map": {
+      "bytes": 2351,
+      "sha256": "dd04389f9961c152b2dea95616f6853557b52cc118989435a98a64c82c3c27b6"
+    },
+    "apex/com.android.art/etc/flag.info": {
+      "bytes": 84,
+      "sha256": "f0ea48e66c5c60761ded43406d12884368646fed891133ef9a1c846e0fb0b31f"
+    },
+    "apex/com.android.art/etc/sdkinfo.pb": {
+      "bytes": 2,
+      "sha256": "8cc9ce257862fcf6e3697359b34e49114d1bde37e43cbdcf62755a282ba90bad"
+    },
+    "apex/com.android.art/etc/package.map": {
+      "bytes": 204,
+      "sha256": "697ed2220fa658fcdf2864b607506028ca4789b168e48e016f757cdf9c04cda4"
+    },
+    "apex/com.android.art/etc/init.rc": {
+      "bytes": 2662,
+      "sha256": "c699c78d0c7937c39d333b52967eea18ea05054fc5f45a3d1e93ded1f85d48a6"
+    },
+    "apex/com.android.art/etc/aconfig_flags.pb": {
+      "bytes": 12676,
+      "sha256": "bf65ec0d583ac437184afbf24109867189beb1b6ff832615b33895887fae906c"
+    },
+    "apex/com.android.art/etc/flag.val": {
+      "bytes": 84,
+      "sha256": "f5021aa845721a852d889f5f95fbd79c1ca40e36e51b2ac83279c6d760efc3d0"
+    },
+    "apex/com.android.art/etc/dirty-image-objects": {
+      "bytes": 37342,
+      "sha256": "3373e437a52432a90eb02b5a78ab7b3aebf73cbe767e84b78e1fafd8d0bd7a7e"
+    },
+    "apex/com.android.art/etc/compatconfig/libcore-platform-compat-config.xml": {
+      "bytes": 1902,
+      "sha256": "8ec01208ebcf8dab52786f995395f904b02b36a3f6bfb2a86af1dd306673323b"
+    },
+    "apex/com.android.art/etc/classpaths/bootclasspath.pb": {
+      "bytes": 492,
+      "sha256": "a18712f5be9a8d29a1a1a8b5914abcf672b83923025c50af891fdfbe3f439bf9"
+    },
+    "apex/com.android.art/etc/classpaths/systemserverclasspath.pb": {
+      "bytes": 55,
+      "sha256": "08275fa9f8a8e69bdc71eb2821c7940df15a7d3521c1d5463935ca50fc233674"
+    }
+  },
+  "scope": "Read-only debugfs extraction, ZIP CRC, original files; no mounts, boot, signature verification or app execution. Symlink entries are evidence, not blanket host access."
+}
