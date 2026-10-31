@@ -1113,6 +1113,40 @@ introducir VM o Android completo. Se mantiene explícita esa tensión y no se de
 registro/IPC/MAC/APK aceptado. Se puede avanzar offline en unidades originales,
 paquetización, configuración e instalación/rollback sin repetir el mismo arranque.
 
+## R1 · reutilización del servicio de propiedades y frontera Linux
+
+[Auditoría fuente y enlace](../reports/android16-property-service-closure/findings.json).
+La implementación original de StartPropertyService enlaza al retener su raíz con
+--undefined. Son268 símbolos definidos nuevos respecto al ELF PropertyInit anterior;
+PropertyChanged ya estaba presente y SecondStageMain sigue ausente. El candidato
+no se ejecuta: su main sigue llamando sólo PropertyInit. Ni retención ni enlace son
+prueba de sockets, permisos, persistencia, readiness o APK.
+
+Se reutilizarán completos el protocolo/memoria Bionic, información/tipos de propiedades,
+SO_PEERCRED/getpeercon y checks SELinux, sockets/epoll, protobuf persistente y writer.
+La fuente original necesita integración real: PropertyChanged despacha cambios y
+controles de apagado; QueueControlMessage encola y despierta el bucle de init;
+StartPropertyService abre socketpair y dos sockets con permisos distintos; un
+InitMessage carga persistentes antes de habilitar escritura durable. No basta
+invocar la función y dejar callbacks sin consumidor. Linux conserva supervisión y
+boot; no se invocará SecondStageMain ni se ejecutarán RC generales de Android.
+La frontera futura debe conservar errores/control/identidad, restringir acciones al
+ámbito autorizado y responder honestamente donde falte implementación. No no-ops.
+
+Riesgo de durabilidad por fuente: WritePersistentProperty devuelve void y registra
+fallos; el writer asíncrono envía después PROP_SUCCESS, y la ruta síncrona tampoco
+propaga ese fallo. WritePersistentPropertyFile no comprueba retornos fsync en esta
+revisión. No se ha reproducido el fallo en ejecución. Antes de aceptar persistencia:
+lectura tras reiniciar/reabrir y negativos RO/ENOSPC/fsync/rename, manteniendo errores
+observables. Si hace falta adaptar, preservar subsistema original y justificar un
+parche acotado; no construir otro protocolo ni equiparar ACK a durabilidad.
+
+Incidente del experimento: una opción --Map heredada redirigió el primer mapa a una
+ruta histórica. Se regeneró con el enlace original en salida nueva y ejecutable
+bit a bit idéntico, restaurando el mapa; el hash anterior del mapa es desconocido.
+El experimento corregido usa salida aislada y conserva recetas/resultados. No se
+modificaron fuentes ni el ejecutable histórico. R1-MAC sigue pendiente.
+
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 
 

@@ -1,6 +1,8 @@
 # Índice de evidencias
 
-- [R1-MAC: hwservicemanager original ejecutado](../reports/android16-hwmanager-start/findings.json): identidad/grupos RC, binario GSI y cuatro fuentes/config contrastados; captura REA MCP salida127 por contexto SELinux propio ausente, tras leer contextos hwservice. VINTF vendor incompleto y advertencia libvintf diferenciados del fatal. Sin registro/readiness/IPC/APK aceptados. [Checkpoint actual](../reports/android16-hwmanager-start/checkpoint.json).
+- [R1: clausura estática del servicio de propiedades](../reports/android16-property-service-closure/findings.json): raíz StartPropertyService enlaza; delta268 símbolos, SecondStageMain ausente, ninguna ejecución nueva. Fuentes originales contrastadas, fronteras supervisor/MAC/persistencia y riesgo ACK/durabilidad identificados. Mapa histórico regenerado tras redirección accidental, ejecutable original idéntico; hash histórico del mapa desconocido. [Checkpoint actual](../reports/android16-property-service-closure/checkpoint.json).
+
+- [R1-MAC: hwservicemanager original ejecutado](../reports/android16-hwmanager-start/findings.json): identidad/grupos RC, binario GSI y cuatro fuentes/config contrastados; captura REA MCP salida127 por contexto SELinux propio ausente, tras leer contextos hwservice. VINTF vendor incompleto y advertencia libvintf diferenciados del fatal. Sin registro/readiness/IPC/APK aceptados. [Checkpoint del hito](../reports/android16-hwmanager-start/checkpoint.json).
 
 - [R3: Composer original enlazado y espera de gestor](../reports/android16-composer-link/findings.json): tres unidades/tres enlaces estrictos; REA MCP observa espera real hwservicemanager.ready hasta límite/señal9, no disponibilidad. Binder privado separado y logs observados, sin HAL/registro/buffers/frames/APK. Preflight host aún falla. [Checkpoint del hito](../reports/android16-composer-link/checkpoint.json).
 

@@ -1,0 +1,31 @@
+{
+  "observed_at": "2026-10-31T09:16:33.838273+00:00",
+  "base_commit": "e2ae4092c10cb50b1542b3e29253f0d8f841b177",
+  "branch": "main",
+  "previous_checkpoint": "reports/android16-hwmanager-start/checkpoint.json",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "active_exec_handles": [],
+  "process_state": "All link commands synchronous terminal0; no target started, no persistent REA session opened",
+  "result": "Original property-service link closure and source supervisor/durability boundary audited; not runtime acceptance",
+  "next": "Design and implement a narrowly scoped supervisor boundary preserving real callbacks, controls, persistence loading and errors; first meaningful acceptance is permission-aware cross-process property transaction plus durable restart. Preserve R1-MAC deployment gate and no-VM/no-restart contract.",
+  "evidence": {
+    "reports/android16-property-service-closure/audit-link.py": "70fa7601a8d8aeafb6654be123166b980ef961e42143632b927db9368c10c2fa",
+    "reports/android16-property-service-closure/findings.json": "f850eca0705ee5a661012030db412e61bac1175da42d56c587faa4f77609583e",
+    "reports/android16-property-service-closure/map-recovery.json": "6370283e2b8d34ea3c1ce6b42ee1a24aa2cc93784a174be237f171158e39c102",
+    "reports/android16-property-service-closure/link.json": "4948d304767966eda4de48ffbbc5c934c7e7782b032354d23e8a8e2c515dc8fa",
+    "reports/android16-property-service-closure/why-extract.tsv": "3031e5584b62de2405de25789d1d75a25e703e3bb56f7bd8f70996eb7c59e54b",
+    "reports/android16-property-service-closure/audit-link-corrected.py": "4098b7713513c5d62f899abb1c2d83f7561166eb8412aa630660bb8be9e553b3",
+    "reports/android16-property-service-closure/symbol-delta.json": "8c6a03c70f0526bf4348f5534e83d566b6860d5f63d4c85f95e863c2bfe3b789"
+  }
+}

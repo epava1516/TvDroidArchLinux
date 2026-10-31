@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-hwmanager-start/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-property-service-closure/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -17,7 +17,20 @@ Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCC
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
 
-## Último diagnóstico verificado · hwservicemanager original
+## Último análisis verificado · servicio de propiedades original
+
+[Clausura y límites](../reports/android16-property-service-closure/findings.json):
+retener StartPropertyService enlaza sin ejecutar Android init;268 símbolos definidos
+adicionales, SecondStageMain ausente. No se ejecutó el candidato: su entrada sigue
+llamando sólo PropertyInit. La fuente exige sockets, credenciales/SID/MAC, epoll,
+mensajes de carga persistente y callbacks reales al supervisor. PropertyChanged ya
+estaba en el enlace anterior; no se atribuye al nuevo delta.
+La fuente no propaga todos los fallos de escritura persistente al ACK; falta probar
+RO/ENOSPC/fsync/rename y recuperación antes de aceptar durabilidad. Siguiente:
+frontera mínima explícita con supervisor Linux, sin ejecutar init completo ni
+responder éxito a controles ausentes. R1-MAC y toda compatibilidad APK siguen abiertos.
+
+## Diagnóstico anterior · hwservicemanager original
 
 [Resultado](../reports/android16-hwmanager-start/findings.json): binario GSI original,
 UID/GID1000 y grupos system/readproc según RC, Binder privado separado. REA MCP

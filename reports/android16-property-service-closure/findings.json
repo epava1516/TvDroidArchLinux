@@ -1,0 +1,90 @@
+{
+  "scope": "Static source and strict link reachability audit of original property service; never executed or installed, no property/IPC/persistence/APK acceptance",
+  "source_commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+  "archive_sha256": "4babe45eb994e8469b767b7775a1553ce0b9fed0e0a4c37797124fc764fdfde1",
+  "verified_source_files": [
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/init/property_service.cpp",
+      "sha256": "ac68c4c4de5ef26366498d39d0945ba2ab06b022e24a7a157853b66a4b8a3b3c",
+      "matches_archive": true
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/init/persistent_properties.cpp",
+      "sha256": "667cd4f7de005d29bd7ebee62a3926cc1bc02d2985cbc74b7ebc3528bfc18255",
+      "matches_archive": true
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/init/init.cpp",
+      "sha256": "018e17b870f6ef3a637230e3d73dd182be315cbaee04b95aa96881e8a2cfb93b",
+      "matches_archive": true
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/init/property_service.h",
+      "sha256": "9e62e2edd068cbffa20544cf6570606f8e2cc0d0ec2c71fdc52a80623eabe5f7",
+      "matches_archive": true
+    }
+  ],
+  "link_exit": 0,
+  "artifacts": [
+    {
+      "path": "dist/aosp16/property-service-closure-2/entry-link-only",
+      "sha256": "f032d8fe268299faf6c0de36e47e9e2a338f44c47cf9988fc0de199e191079b4",
+      "bytes": 867632
+    },
+    {
+      "path": "dist/aosp16/property-service-closure-2/link.map",
+      "sha256": "c3a997e403ffcd108e3444daf735895ce23327844fe6e8fe97f5a3ff6d63e0d8",
+      "bytes": 1307618
+    },
+    {
+      "path": "dist/aosp16/property-service-closure-2/why-extract.tsv",
+      "sha256": "3031e5584b62de2405de25789d1d75a25e703e3bb56f7bd8f70996eb7c59e54b",
+      "bytes": 59011
+    },
+    {
+      "path": "dist/aosp16/libinit-native-archive-1/libinit-native-prototype.a",
+      "sha256": "f4b85c1d835c6c34f831bc5584e337577cf7639f9ab072664da6499da2ad3c81",
+      "bytes": 4744786
+    }
+  ],
+  "symbol_delta": {
+    "baseline": 1971,
+    "candidate": 2239,
+    "added": 268,
+    "PropertyChanged_already_in_baseline": true,
+    "SecondStageMain_defined": false
+  },
+  "reusable_original_units": [
+    "Original Bionic property memory/protocol and type validation",
+    "SO_PEERCRED plus getpeercon plus SELinux property_service:set checks",
+    "Two sockets with original permissions, epoll and protocol error handling",
+    "Original protobuf persistence read/write, legacy recovery, notification and async writer"
+  ],
+  "supervisor_boundary_required": [
+    "PropertyChanged callbacks and control queue require actual event-loop/wakeup/action/service ownership",
+    "LoadPersistentProperties InitMessage via socketpair required before persistence is enabled",
+    "sys.powerctl/shutdown and ctl.* must have explicit Linux-owned handling/errors; no Android init SecondStageMain invocation or success no-ops",
+    "No wholesale RC execution/Android boot; authorized original services need supervised start/stop/restart, labels, identity, cgroups/task-profile policy and readiness ownership"
+  ],
+  "durability_source_risk": {
+    "observation": "WritePersistentProperty returns void and logs write failure; async writer subsequently sends PROP_SUCCESS; synchronous path also lacks propagated persistence error. WritePersistentPropertyFile calls fsync but does not check its return in this source.",
+    "classification": "Source evidence only; no disk-failure runtime reproduction yet. ACK alone not durability acceptance.",
+    "required_tests": [
+      "Permission denial and typed invalid property rejection",
+      "Cross-process peer UID/SID identity",
+      "readiness publication by actual manager only",
+      "Persistent value survive service restart and reopen",
+      "Read-only storage, ENOSPC, fsync/rename failures with honest result",
+      "ctl/shutdown fail explicitly when unsupported, never reboot Linux from guest property"
+    ]
+  },
+  "decision": "Reuse original property service implementation as a subsystem with explicit narrow Linux-supervisor integration, not boot init or clone its protocol. Full link succeeds, semantic execution still unproven; do not run link-only artifact as standalone server.",
+  "limits": [
+    "No original full Soong/source-binary equivalence",
+    "--undefined retains a function root but entry still only calls PropertyInit; no claim StartPropertyService executed",
+    "Referenced shutdown/control code does not mean those actions ran",
+    "SELinux host gate unresolved; no readiness bypass",
+    "Historical map overwrite repaired by original link replay; executable bit-identical, historical map pre-overwrite hash unknown; see map-recovery.json"
+  ],
+  "next": "Design and implement a narrowly scoped supervisor boundary preserving real callbacks, controls, persistence loading and errors; first meaningful acceptance is permission-aware cross-process property transaction plus durable restart. Preserve R1-MAC deployment gate and no-VM/no-restart contract."
+}
