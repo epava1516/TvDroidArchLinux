@@ -1,0 +1,55 @@
+{
+  "scope": "Original upstream host generator, not kernel build/execution or policy load",
+  "argv": [
+    "cc",
+    "-std=gnu11",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-I/home/tv/.cache/archtv/linux-selinux-contract-1/security/selinux/include",
+    "/home/tv/.cache/archtv/linux-selinux-contract-1/security/selinux/genheaders.c",
+    "-o",
+    "/home/tv/repositorio-principal/dist/aosp16/kernel-selinux-contract-1/genheaders"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "host_compiler": "cc (GCC) 16.2.1 20260810",
+  "source_provenance": {
+    "reference": "Linux6.18.59",
+    "tag_object": "16d7cd88b5357b25076bceaa37f011b79f4939d0",
+    "commit": "1253a6aa5d104312bf0992afacc15220ae35bdf9",
+    "signature_verified": false,
+    "scope": "Official upstream source, host package patches/build equivalence unverified",
+    "files": [
+      {
+        "path": "/home/tv/.cache/archtv/linux-selinux-contract-1/security/selinux/genheaders.c",
+        "upstream_path": "security/selinux/genheaders.c",
+        "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/security/selinux/genheaders.c",
+        "sha256": "6efe0d819e4ce85da20c705bbd1e292310dd56bb0f2457541f80edb5262cd87a",
+        "bytes": 3517
+      },
+      {
+        "path": "/home/tv/.cache/archtv/linux-selinux-contract-1/security/selinux/include/classmap.h",
+        "upstream_path": "security/selinux/include/classmap.h",
+        "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/security/selinux/include/classmap.h",
+        "sha256": "95c6c44516ba33f02e94458967e120e5319123f758d1a7e2da4c4c71f96de395",
+        "bytes": 8863
+      },
+      {
+        "path": "/home/tv/.cache/archtv/linux-selinux-contract-1/security/selinux/include/initial_sid_to_string.h",
+        "upstream_path": "security/selinux/include/initial_sid_to_string.h",
+        "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/security/selinux/include/initial_sid_to_string.h",
+        "sha256": "1c6121e1db480c4f2ea9ce01080c9e2342db24dc2eb6a737d7cc3ab340c8bccf",
+        "bytes": 1078
+      },
+      {
+        "path": "/home/tv/.cache/archtv/linux-selinux-contract-1/security/selinux/ss/services.c",
+        "upstream_path": "security/selinux/ss/services.c",
+        "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/security/selinux/ss/services.c",
+        "sha256": "a3dc132fceec9f42a8d1728cef1b45685d5d2e0f3b5dcb812bec4049c5c19f67",
+        "bytes": 96491
+      }
+    ]
+  }
+}

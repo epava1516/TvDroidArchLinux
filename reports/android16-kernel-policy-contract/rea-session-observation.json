@@ -1,0 +1,16 @@
+{
+  "tool": "mcp__rea__gdb_session_status",
+  "request": {
+    "session_id": "cabe1a20-4d41-427e-8f02-550634d4228c"
+  },
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"error\":{\"code\":\"invalid_request\",\"category\":\"invalid_input\",\"message\":\"Analysis input is invalid. Check the arguments and try again.\",\"retryable\":false,\"remediation\":{\"action\":\"Read the declared input schema or CLI usage for gdb_session_status; if using MCP and the catalog may be stale, call tools/list. Correct the listed fields, then retry. Do not repeat the unchanged call.\"},\"recovery\":{\"kind\":\"inspect_input_contract\",\"operation\":\"gdb_session_status\"}}}"
+      }
+    ],
+    "isError": true
+  },
+  "scope": "Actual MCP invocation returned invalid_input. Declared schema accepts session_id:string; exact rejection reason and current historical-session state remain unknown. No unchanged retry, no debugger/target action, no CLI connection claim."
+}

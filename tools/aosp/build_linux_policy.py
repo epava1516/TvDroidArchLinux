@@ -86,6 +86,41 @@ def resource_key(form):
     return None
 
 
+def audit_kernel_contract(policy_classes, class_order, contract):
+    """Check names, as the kernel mapper does; ordinal differences are evidence."""
+    if contract["schema"] != 1 or not contract["classes"]:
+        raise ValueError("Unsupported kernel class contract")
+    missing_classes, missing_permissions = [], {}
+    class_differences, permission_differences = {}, {}
+    positions = {name: index + 1 for index, name in enumerate(class_order)}
+    permission_count = 0
+    for name, entry in contract["classes"].items():
+        permission_count += len(entry["permissions"])
+        if name not in policy_classes:
+            missing_classes.append(name)
+            continue
+        permissions = policy_classes[name]
+        missing = [p for p in entry["permissions"] if p not in permissions]
+        if missing:
+            missing_permissions[name] = missing
+        if positions[name] != entry["kernel_class_value"]:
+            class_differences[name] = {"kernel": entry["kernel_class_value"], "policy": positions[name]}
+        differences = {p: {"kernel_bit": bit, "policy_bit": 1 << permissions.index(p)}
+                       for p, bit in entry["permissions"].items()
+                       if p in permissions and bit != 1 << permissions.index(p)}
+        if differences:
+            permission_differences[name] = differences
+    if missing_classes or missing_permissions:
+        raise ValueError("Kernel class contract missing names: " + json.dumps(
+            {"classes": missing_classes, "permissions": missing_permissions}, sort_keys=True))
+    return {"scope": "Upstream class/permission names only; not running kernel mapping/enforcement",
+            "reference": contract["reference"], "source_commit": contract["source_commit"],
+            "kernel_classes": len(contract["classes"]), "kernel_permissions": permission_count,
+            "all_names_present": True, "class_ordinal_differences": class_differences,
+            "permission_bit_differences": permission_differences,
+            "mapping": "Original kernel maps by class and permission name; ordinal differences are not rejected"}
+
+
 def compose(source, class_order):
     """The tested sparse-universe algorithm, with explicit Linux global labels."""
     inventories = {name: classes(value) for name, value in source.items()}
@@ -147,7 +182,7 @@ def compose(source, class_order):
             else:
                 local.append(form)
     audit["class_count"] = len(union)
-    return "\n".join(globals_) + "\n(block linux\n" + "\n".join(local) + "\n)\n", audit
+    return "\n".join(globals_) + "\n(block linux\n" + "\n".join(local) + "\n)\n", audit, union
 
 
 def compile_policy(tool, output, modules, wall_seconds, cpu_seconds):
@@ -204,7 +239,12 @@ def main():
             raise ValueError("Compiler hash mismatch: no output written")
         modules = [(ROOT / name).resolve() for name in profile["modules"]]
         module_bytes = {p: p.read_bytes() for p in modules}
-        combined, audit = compose({k: forms(data.decode()) for k, data in input_bytes.items()}, profile["class_order"])
+        contract_path = ROOT / profile["kernel_contract"]["path"]
+        contract_bytes = contract_path.read_bytes()
+        if hashlib.sha256(contract_bytes).hexdigest() != profile["kernel_contract"]["sha256"]:
+            raise ValueError("Kernel contract hash mismatch: no output written")
+        combined, audit, union = compose({k: forms(data.decode()) for k, data in input_bytes.items()}, profile["class_order"])
+        audit["kernel_contract"] = audit_kernel_contract(union, profile["class_order"], json.loads(contract_bytes))
         output.mkdir(parents=True, exist_ok=False)
         (output / "combined.cil").write_text(combined)
         local_modules = []
@@ -219,6 +259,7 @@ def main():
                     "input_paths": {k: str(p) for k, p in inputs.items()},
                     "modules": {str(p.relative_to(ROOT)): hashlib.sha256(data).hexdigest() for p, data in module_bytes.items()},
                     "combined_cil_sha256": digest(output / "combined.cil"), "limitations": profile["limitations"]}
+        manifest["kernel_contract"] = {**profile["kernel_contract"], "coverage": audit["kernel_contract"]}
         write_json(output / "artifact.json", manifest)
         if args.compile:
             code = compile_policy(args.secilc.resolve(), output, local_modules, args.wall_seconds, args.cpu_seconds)

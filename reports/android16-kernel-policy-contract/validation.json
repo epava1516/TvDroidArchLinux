@@ -1,0 +1,97 @@
+{
+  "scope": "Upstream source-generated class/permission contract and binary policy metadata only; no actual kernel policy load/mapping/LSM/AVC/manager/Binder/APK execution",
+  "kernel_reference": "Linux6.18.59",
+  "kernel_source_commit": "1253a6aa5d104312bf0992afacc15220ae35bdf9",
+  "original_generator_build_exit_code": 0,
+  "original_generator_execution_exit_code": 0,
+  "kernel_classes": 96,
+  "kernel_permission_entries": 1694,
+  "candidate_missing_classes": 0,
+  "candidate_missing_permission_entries": 0,
+  "original_aosp_missing_permission_entries": 9,
+  "candidate_permission_order_differing_classes": 6,
+  "candidate_class_ordinal_differences": 64,
+  "active_initial_sid_numbers_matching": 11,
+  "mapping_scope": "Original kernel selinux_set_mapping resolves class/permission names, so observed ordinals are not intrinsically ABI failures. SID numbers separately compared, not assumed name-mapped. Actual running build/package patches and runtime mapping remain unverified.",
+  "builder_kernel_contract_gate": {
+    "compiled_exit_code": 0,
+    "entire_cil_and_binary_unchanged": true,
+    "original_aosp_missing_names_rejected_by_audit": true,
+    "contract_hash_drift_refused_before_output": true
+  },
+  "source_files": [
+    {
+      "path": "tools/aosp/build_linux_policy.py",
+      "sha256": "445ea41c09c0e56bb6b1d7a3cf44b6de4ef21dc05750ba7aeadedef05aa84298"
+    },
+    {
+      "path": "runtime/aosp/android16-qpr2/policy/build-profile.json",
+      "sha256": "22178f2ec8d9bb7d84bf834f9a41fbd4e162fd63edaf806a595e6803d3dfb0ee"
+    },
+    {
+      "path": "runtime/aosp/android16-qpr2/policy/kernel-6.18.59-contract.json",
+      "sha256": "fc8e95e7d07d494c59be6e7e783df9404c967d759d9c710128412451a4032af5"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "reports/android16-kernel-policy-contract/artifact.json",
+      "sha256": "83a570a76fe4e2393f260005c0638137a1201a11b2da9dcfd740e4c72edd5635"
+    },
+    {
+      "path": "reports/android16-kernel-policy-contract/builder-regression.json",
+      "sha256": "0a792f164fb4c62d77f36383271de6c060c5f5eaf0a657a7630ca7adba861dfa"
+    },
+    {
+      "path": "reports/android16-kernel-policy-contract/comparison.json",
+      "sha256": "178e2a6dd3730e6a204d031937e0abe5c97883940b78c3846bc655bd538cc917"
+    },
+    {
+      "path": "reports/android16-kernel-policy-contract/compiler.json",
+      "sha256": "d89a8e3a1c76dc4759293c9188eeb1b7eafebba55ddf4c3b7f57734c3614e01f"
+    },
+    {
+      "path": "reports/android16-kernel-policy-contract/controls.json",
+      "sha256": "a6a9a5c478539b42ca23c629bf21b58248e4003a723c8207f1f4d9bab23a71f8"
+    },
+    {
+      "path": "reports/android16-kernel-policy-contract/controls.py",
+      "sha256": "7af02f2052c833dc9e526b9a0093acf1dde705fc3b631e1f4d4f71f086cf71e3"
+    },
+    {
+      "path": "reports/android16-kernel-policy-contract/generator-build.json",
+      "sha256": "69c7939e792ce40446ba404ed5c00c0b36629d3dc22cf092b080f6eab51b0e60"
+    },
+    {
+      "path": "reports/android16-kernel-policy-contract/generator-execution.json",
+      "sha256": "6bcc9b3bcc96ff6819311207b4a8edea0b6ffb34433a4d02d5923042f9c07d6b"
+    },
+    {
+      "path": "reports/android16-kernel-policy-contract/initial-sid-numbers.json",
+      "sha256": "b77739bad3a8334224ef62748b8438896a65b0fab6aca75f73dd7a434766189c"
+    },
+    {
+      "path": "reports/android16-kernel-policy-contract/rea-session-observation.json",
+      "sha256": "00588ff05fe0fe60199e362356b8777481e4397dae02ee91ac3f38c90e49b4dc"
+    },
+    {
+      "path": "reports/android16-kernel-policy-contract/reproduce-comparison.py",
+      "sha256": "fe571d0cb5f3d1c848b39ec0e3d924fc3d16a7c58ec5b3c136320d165971d375"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "dist/aosp16/kernel-selinux-contract-1/flask.h",
+      "sha256": "d9cd5c1f2b84241a785f4c559036ab6b940a206c4f53c41f0ac438f6a402181c"
+    },
+    {
+      "path": "dist/aosp16/kernel-selinux-contract-1/av_permissions.h",
+      "sha256": "5d29eaf02f0b09d6e2bb9f4fed2d1ab65d764c6faf197a06942fa3d2354ac263"
+    },
+    {
+      "path": "dist/aosp16/linux-policy-kernel-contract-1/policy.bin",
+      "sha256": "1234463a2f52e3a8628a1e65be13a9b951f4754b323f41e14d1921263b2bc9c9"
+    }
+  ],
+  "not_inferred": "Missing names in original AOSP do not prove a rejected load or an APK failure: original kernel unknown handling matters. Full policy projections, active host labels/transitions/identities and all real application stages remain pending."
+}

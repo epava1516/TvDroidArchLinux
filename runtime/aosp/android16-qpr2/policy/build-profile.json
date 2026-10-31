@@ -170,5 +170,9 @@
     "Shared label/class mapping and full original-policy projections incomplete",
     "100 Linux binary attributes absent already in standalone compiler control",
     "No distribution/security approval inferred"
-  ]
+  ],
+  "kernel_contract": {
+    "path": "runtime/aosp/android16-qpr2/policy/kernel-6.18.59-contract.json",
+    "sha256": "fc8e95e7d07d494c59be6e7e783df9404c967d759d9c710128412451a4032af5"
+  }
 }

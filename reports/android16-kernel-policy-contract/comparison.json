@@ -1,0 +1,372 @@
+{
+  "scope": "All class/permission strings from original upstream6.18.59 generator compared with original binary policy exports; not running kernel build equivalence, live mapping/AVC/enforcement, host/service/APK acceptance",
+  "kernel_class_count": 96,
+  "kernel_permission_count": 1694,
+  "kernel_source_provenance": {
+    "reference": "Linux6.18.59",
+    "tag_object": "16d7cd88b5357b25076bceaa37f011b79f4939d0",
+    "commit": "1253a6aa5d104312bf0992afacc15220ae35bdf9",
+    "signature_verified": false,
+    "scope": "Official upstream source, host package patches/build equivalence unverified",
+    "files": [
+      {
+        "path": "/home/tv/.cache/archtv/linux-selinux-contract-1/security/selinux/genheaders.c",
+        "upstream_path": "security/selinux/genheaders.c",
+        "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/security/selinux/genheaders.c",
+        "sha256": "6efe0d819e4ce85da20c705bbd1e292310dd56bb0f2457541f80edb5262cd87a",
+        "bytes": 3517
+      },
+      {
+        "path": "/home/tv/.cache/archtv/linux-selinux-contract-1/security/selinux/include/classmap.h",
+        "upstream_path": "security/selinux/include/classmap.h",
+        "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/security/selinux/include/classmap.h",
+        "sha256": "95c6c44516ba33f02e94458967e120e5319123f758d1a7e2da4c4c71f96de395",
+        "bytes": 8863
+      },
+      {
+        "path": "/home/tv/.cache/archtv/linux-selinux-contract-1/security/selinux/include/initial_sid_to_string.h",
+        "upstream_path": "security/selinux/include/initial_sid_to_string.h",
+        "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/security/selinux/include/initial_sid_to_string.h",
+        "sha256": "1c6121e1db480c4f2ea9ce01080c9e2342db24dc2eb6a737d7cc3ab340c8bccf",
+        "bytes": 1078
+      },
+      {
+        "path": "/home/tv/.cache/archtv/linux-selinux-contract-1/security/selinux/ss/services.c",
+        "upstream_path": "security/selinux/ss/services.c",
+        "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/security/selinux/ss/services.c",
+        "sha256": "a3dc132fceec9f42a8d1728cef1b45685d5d2e0f3b5dcb812bec4049c5c19f67",
+        "bytes": 96491
+      }
+    ]
+  },
+  "results": [
+    {
+      "policy": "candidate",
+      "binary": "/home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-compile-1/policy.bin",
+      "binary_sha256": "1234463a2f52e3a8628a1e65be13a9b951f4754b323f41e14d1921263b2bc9c9",
+      "export_argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/checkpolicy-host-2/source/checkpolicy",
+        "-M",
+        "-b",
+        "-C",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/kernel-selinux-contract-1/candidate-policy.cil",
+        "/home/tv/repositorio-principal/dist/aosp16/linux-policy-builder-compile-1/policy.bin"
+      ],
+      "export_sha256": "16b3eb7272f13af978ff0876952e5d65d37be879a0e6df87a3372508ccd6e2b6",
+      "policy_classes": 145,
+      "missing_kernel_classes": [],
+      "missing_kernel_permission_names": {},
+      "permission_bit_order_differences": {
+        "file": {
+          "watch_mountns": {
+            "kernel_bit": 33554432,
+            "policy_bit": 134217728
+          },
+          "execute_no_trans": {
+            "kernel_bit": 67108864,
+            "policy_bit": 33554432
+          },
+          "entrypoint": {
+            "kernel_bit": 134217728,
+            "policy_bit": 67108864
+          }
+        },
+        "dir": {
+          "watch_mountns": {
+            "kernel_bit": 33554432,
+            "policy_bit": 1073741824
+          },
+          "add_name": {
+            "kernel_bit": 67108864,
+            "policy_bit": 33554432
+          },
+          "remove_name": {
+            "kernel_bit": 134217728,
+            "policy_bit": 67108864
+          },
+          "reparent": {
+            "kernel_bit": 268435456,
+            "policy_bit": 134217728
+          },
+          "search": {
+            "kernel_bit": 536870912,
+            "policy_bit": 268435456
+          },
+          "rmdir": {
+            "kernel_bit": 1073741824,
+            "policy_bit": 536870912
+          }
+        },
+        "chr_file": {
+          "watch_mountns": {
+            "kernel_bit": 33554432,
+            "policy_bit": 134217728
+          }
+        },
+        "netlink_route_socket": {
+          "nlmsg": {
+            "kernel_bit": 8388608,
+            "policy_bit": 33554432
+          }
+        },
+        "capability2": {
+          "bpf": {
+            "kernel_bit": 128,
+            "policy_bit": 256
+          },
+          "checkpoint_restore": {
+            "kernel_bit": 256,
+            "policy_bit": 128
+          }
+        },
+        "cap2_userns": {
+          "bpf": {
+            "kernel_bit": 128,
+            "policy_bit": 256
+          },
+          "checkpoint_restore": {
+            "kernel_bit": 256,
+            "policy_bit": 128
+          }
+        }
+      },
+      "policy_only_classes": [
+        "context",
+        "db_blob",
+        "db_column",
+        "db_database",
+        "db_datatype",
+        "db_exception",
+        "db_language",
+        "db_procedure",
+        "db_schema",
+        "db_sequence",
+        "db_table",
+        "db_tuple",
+        "db_view",
+        "dbus",
+        "dccp_socket",
+        "diced",
+        "drmservice",
+        "hwservice_manager",
+        "keystore2",
+        "keystore2_key",
+        "keystore_key",
+        "lockdown",
+        "memfd_file",
+        "nscd",
+        "obsolete_netlink_firewall_socket",
+        "obsolete_netlink_ip6fw_socket",
+        "passwd",
+        "property_service",
+        "service",
+        "service_manager",
+        "tee_service",
+        "x_application_data",
+        "x_client",
+        "x_colormap",
+        "x_cursor",
+        "x_device",
+        "x_drawable",
+        "x_event",
+        "x_extension",
+        "x_font",
+        "x_gc",
+        "x_keyboard",
+        "x_pointer",
+        "x_property",
+        "x_resource",
+        "x_screen",
+        "x_selection",
+        "x_server",
+        "x_synthetic_event"
+      ]
+    },
+    {
+      "policy": "aosp",
+      "binary": "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/platform-policy-original-options.bin",
+      "binary_sha256": "cf26368b0cbb9b921e78ae3830c7bfbd6b900dc2676f6a97f71ba83df611e296",
+      "export_argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/checkpolicy-host-2/source/checkpolicy",
+        "-M",
+        "-b",
+        "-C",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/kernel-selinux-contract-1/aosp-policy.cil",
+        "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/platform-policy-original-options.bin"
+      ],
+      "export_sha256": "3575952f5595429c850ec8482bdad34e5c42033a4dd14f8e95eb5beb6e908e1e",
+      "policy_classes": 107,
+      "missing_kernel_classes": [],
+      "missing_kernel_permission_names": {
+        "file": [
+          "watch_mountns"
+        ],
+        "dir": [
+          "watch_mountns"
+        ],
+        "lnk_file": [
+          "watch_mountns"
+        ],
+        "chr_file": [
+          "watch_mountns"
+        ],
+        "blk_file": [
+          "watch_mountns"
+        ],
+        "sock_file": [
+          "watch_mountns"
+        ],
+        "fifo_file": [
+          "watch_mountns"
+        ],
+        "anon_inode": [
+          "watch_mountns"
+        ],
+        "io_uring": [
+          "allowed"
+        ]
+      },
+      "permission_bit_order_differences": {
+        "file": {
+          "execute_no_trans": {
+            "kernel_bit": 67108864,
+            "policy_bit": 33554432
+          },
+          "entrypoint": {
+            "kernel_bit": 134217728,
+            "policy_bit": 67108864
+          }
+        },
+        "dir": {
+          "add_name": {
+            "kernel_bit": 67108864,
+            "policy_bit": 33554432
+          },
+          "remove_name": {
+            "kernel_bit": 134217728,
+            "policy_bit": 67108864
+          },
+          "reparent": {
+            "kernel_bit": 268435456,
+            "policy_bit": 134217728
+          },
+          "search": {
+            "kernel_bit": 536870912,
+            "policy_bit": 268435456
+          },
+          "rmdir": {
+            "kernel_bit": 1073741824,
+            "policy_bit": 536870912
+          }
+        },
+        "netlink_route_socket": {
+          "nlmsg": {
+            "kernel_bit": 8388608,
+            "policy_bit": 33554432
+          }
+        },
+        "capability2": {
+          "bpf": {
+            "kernel_bit": 128,
+            "policy_bit": 256
+          },
+          "checkpoint_restore": {
+            "kernel_bit": 256,
+            "policy_bit": 128
+          }
+        },
+        "cap2_userns": {
+          "bpf": {
+            "kernel_bit": 128,
+            "policy_bit": 256
+          },
+          "checkpoint_restore": {
+            "kernel_bit": 256,
+            "policy_bit": 128
+          }
+        }
+      },
+      "policy_only_classes": [
+        "dccp_socket",
+        "diced",
+        "drmservice",
+        "hwservice_manager",
+        "keystore2",
+        "keystore2_key",
+        "keystore_key",
+        "lockdown",
+        "property_service",
+        "service_manager",
+        "tee_service"
+      ]
+    },
+    {
+      "policy": "linux",
+      "binary": "/home/tv/repositorio-principal/dist/aosp16/refpolicy-baseline-1/source/policy.30",
+      "binary_sha256": "c7753e80682533ab3522feb8432df928a0cbfa0517627b951f6274f6ccb2be84",
+      "export_argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/checkpolicy-host-2/source/checkpolicy",
+        "-M",
+        "-b",
+        "-C",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/kernel-selinux-contract-1/linux-policy.cil",
+        "/home/tv/repositorio-principal/dist/aosp16/refpolicy-baseline-1/source/policy.30"
+      ],
+      "export_sha256": "ef7c633c49f6bbcb8dd8ce3ecfc63f46b15d2e8a47dcc85dc32e5b1ab96792f0",
+      "policy_classes": 136,
+      "missing_kernel_classes": [],
+      "missing_kernel_permission_names": {},
+      "permission_bit_order_differences": {},
+      "policy_only_classes": [
+        "context",
+        "db_blob",
+        "db_column",
+        "db_database",
+        "db_datatype",
+        "db_exception",
+        "db_language",
+        "db_procedure",
+        "db_schema",
+        "db_sequence",
+        "db_table",
+        "db_tuple",
+        "db_view",
+        "dbus",
+        "dccp_socket",
+        "lockdown",
+        "memfd_file",
+        "nscd",
+        "obsolete_netlink_firewall_socket",
+        "obsolete_netlink_ip6fw_socket",
+        "passwd",
+        "service",
+        "x_application_data",
+        "x_client",
+        "x_colormap",
+        "x_cursor",
+        "x_device",
+        "x_drawable",
+        "x_event",
+        "x_extension",
+        "x_font",
+        "x_gc",
+        "x_keyboard",
+        "x_pointer",
+        "x_property",
+        "x_resource",
+        "x_screen",
+        "x_selection",
+        "x_server",
+        "x_synthetic_event"
+      ]
+    }
+  ],
+  "mapping_note": "Original services.c selinux_set_mapping uses string_to_security_class and string_to_av_perm. Bit-order differences recorded, not inherently ABI failure. Missing names depend on reject_unknown/allow_unknown handling; actual running kernel config/mapping remains untested.",
+  "kernel_contract_artifact": {
+    "path": "runtime/aosp/android16-qpr2/policy/kernel-6.18.59-contract.json",
+    "sha256": "fc8e95e7d07d494c59be6e7e783df9404c967d759d9c710128412451a4032af5"
+  }
+}

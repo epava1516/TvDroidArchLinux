@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-policy-builder/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-kernel-policy-contract/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -448,3 +448,12 @@ deriva/sobrescritura rechazadas y cancelación acotada comprobada.
 [Comando y requisitos](ARQUITECTURA.md#artefacto-reproducible-de-política-experimental).
 No instala/carga política ni acepta servicios/APK. La activación real del host
 sigue pendiente bajo el contrato sin reinicio ni introducción de VM.
+
+## Último avance: contrato kernel upstream
+
+[96 clases/1694 permisos](../reports/android16-kernel-policy-contract/validation.json)
+cubiertos por el candidato;11 SID activos con numeración coincidente. El
+constructor verifica el contrato fijado y produce el mismo binario. No es
+prueba del kernel del paquete, de mapeo activo ni de servicios/APK. Próximo:
+clausura real de contexto/identidad/montajes/Binder y trabajo independiente,
+conservando la prohibición de introducir VM o reiniciar.

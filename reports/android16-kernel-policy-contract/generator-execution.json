@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "/home/tv/repositorio-principal/dist/aosp16/kernel-selinux-contract-1/genheaders",
+    "/home/tv/repositorio-principal/dist/aosp16/kernel-selinux-contract-1/flask.h",
+    "/home/tv/repositorio-principal/dist/aosp16/kernel-selinux-contract-1/av_permissions.h"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "binary_sha256": "cde130f89ab338b3909dfc38ce4a8557728c9eb48a6170b12849a27d63b4aaa4",
+  "outputs": {
+    "flask.h": "d9cd5c1f2b84241a785f4c559036ab6b940a206c4f53c41f0ac438f6a402181c",
+    "av_permissions.h": "5d29eaf02f0b09d6e2bb9f4fed2d1ab65d764c6faf197a06942fa3d2354ac263"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "scope": "Active SID constants from original generator vs complete candidate binary export; context mediation/boot/live kernel remains unverified",
+  "active_kernel_sid_count": 11,
+  "all_numeric_values_match": true,
+  "results": [
+    {
+      "name": "kernel",
+      "kernel_value": 1,
+      "policy_value": 1
+    },
+    {
+      "name": "security",
+      "kernel_value": 2,
+      "policy_value": 2
+    },
+    {
+      "name": "unlabeled",
+      "kernel_value": 3,
+      "policy_value": 3
+    },
+    {
+      "name": "file",
+      "kernel_value": 5,
+      "policy_value": 5
+    },
+    {
+      "name": "init",
+      "kernel_value": 7,
+      "policy_value": 7
+    },
+    {
+      "name": "any_socket",
+      "kernel_value": 8,
+      "policy_value": 8
+    },
+    {
+      "name": "port",
+      "kernel_value": 9,
+      "policy_value": 9
+    },
+    {
+      "name": "netif",
+      "kernel_value": 10,
+      "policy_value": 10
+    },
+    {
+      "name": "netmsg",
+      "kernel_value": 11,
+      "policy_value": 11
+    },
+    {
+      "name": "node",
+      "kernel_value": 12,
+      "policy_value": 12
+    },
+    {
+      "name": "devnull",
+      "kernel_value": 27,
+      "policy_value": 27
+    }
+  ]
+}

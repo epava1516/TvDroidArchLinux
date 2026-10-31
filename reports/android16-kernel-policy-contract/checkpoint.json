@@ -1,0 +1,87 @@
+{
+  "observed_at": "2026-10-31T05:52:37.576775+00:00",
+  "base_commit": "06e00db2d50879452f3b77ef15c7004aef6020d0",
+  "scope": "Original upstream6.18.59 kernel class/permission build-tool contract vs compiled policy; no runtime enforcement claim",
+  "previous_checkpoint": "reports/android16-policy-builder/checkpoint.json",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "terminal_exec_handles": [
+    8829,
+    16776,
+    33143,
+    42988,
+    44972,
+    68598,
+    99404
+  ],
+  "live_exec_handles": [],
+  "next": "Retain kernel source vs host-package build distinction. Continue original Binder/manager context/identity/mount closure and independent R3/install work; no new VM, host reboot or policy load. Full policy projections and all real APK journeys remain pending.",
+  "results": "Original generator0;96 classes/1694 permissions covered;11 active initial SID numeric values match. Builder enforcing pinned contract compiles0 and produces identical CIL/binary. AOSP missing9 permission entries detected and contract drift rejected. No live kernel mapping/enforcement demonstrated.",
+  "observed_processes": {},
+  "validated_independent_progress": {
+    "original_binary_exports": "Both0 via original checkpolicy-M-b-C",
+    "aosp_retained_binary_attributes": 199,
+    "linux_retained_binary_attributes": 340,
+    "attribute_set_exports_all_flat_explicit": true
+  },
+  "objective": "Complete unmodified APK including TV on Linux Rust/Smithay, coherent native AOSP16QPR2/Bionic; no Waydroid, full Android or introduced VM; preserve compatibility/isolation/stability/lightness/install/update.",
+  "constraints": [
+    "A16-QPR2-1",
+    "No VM introduction or VM/client restart",
+    "No policy load/host relabeling without verified deployment plan",
+    "Fixtures/static policy checks are partial, not APK acceptance"
+  ],
+  "branch": "main",
+  "head_before_milestone_commit": "06e00db2d50879452f3b77ef15c7004aef6020d0",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "relation_to_local_origin_tracking": "0\t0",
+  "own_staged_milestone_paths": [
+    "docs/ARQUITECTURA.md",
+    "docs/ESTADO.md",
+    "docs/EVIDENCIAS.md",
+    "docs/ROADMAP-A.md",
+    "reports/android16-kernel-policy-contract/artifact.json",
+    "reports/android16-kernel-policy-contract/builder-regression.json",
+    "reports/android16-kernel-policy-contract/checkpoint.json",
+    "reports/android16-kernel-policy-contract/comparison.json",
+    "reports/android16-kernel-policy-contract/compiler.json",
+    "reports/android16-kernel-policy-contract/controls.json",
+    "reports/android16-kernel-policy-contract/controls.py",
+    "reports/android16-kernel-policy-contract/generator-build.json",
+    "reports/android16-kernel-policy-contract/generator-execution.json",
+    "reports/android16-kernel-policy-contract/initial-sid-numbers.json",
+    "reports/android16-kernel-policy-contract/rea-session-observation.json",
+    "reports/android16-kernel-policy-contract/reproduce-comparison.py",
+    "reports/android16-kernel-policy-contract/validation.json",
+    "runtime/aosp/android16-qpr2/policy/build-profile.json",
+    "runtime/aosp/android16-qpr2/policy/kernel-6.18.59-contract.json",
+    "tools/aosp/build_linux_policy.py"
+  ],
+  "process_snapshot": {
+    "path": "dist/aosp16/kernel-selinux-contract-1/host-processes.json",
+    "sha256": "57749d3c2b42669ecde5a440c8b2e3ae390a2ccf647a68614ebf68493f7e31f9",
+    "scope": "138 host processes sampled without args/env; no secilc/genheaders/servicemanager/app_process/qemu/gdb comm observed in selected names; Codex181308/181453 observed. Snapshot is historical, not proof of future state."
+  },
+  "rea_session_status": "Historical handle query returned invalid_input over MCP; current session lifecycle unknown. No CLI substituted, no repair/restart attempted. See rea-session-observation.json.",
+  "tests": {
+    "generator_build": 0,
+    "generator_execution": 0,
+    "candidate_class_names": 96,
+    "candidate_permission_entries": 1694,
+    "initial_sid_values": 11,
+    "builder_compile": 0,
+    "complete_binary_identical": true,
+    "control_source_and_drift": "controls.json"
+  },
+  "evidence_root": "reports/android16-kernel-policy-contract"
+}

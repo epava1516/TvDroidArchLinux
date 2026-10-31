@@ -746,6 +746,33 @@ límites semánticos y de despliegue del candidato. No es un paquete de distro
 ni una decisión final de política. La prohibición contractual de introducir VM
 o reiniciar VM/cliente se mantiene; no se ha usado una VM de pruebas.
 
+## Contrato de clases del kernel · referencia6.18.59
+
+El [generador original](https://github.com/gregkh/linux/blob/1253a6aa5d104312bf0992afacc15220ae35bdf9/security/selinux/genheaders.c)
+compila/ejecuta sin cambios contra classmap e initial_sid_to_string del mismo
+commit. Su [contrato generado](../runtime/aosp/android16-qpr2/policy/kernel-6.18.59-contract.json)
+contiene96 clases y1694 entradas de permiso. El perfil fija su hash y el
+constructor rechaza ausencias o deriva antes de crear el artefacto. Es una
+referencia upstream; parches/build del paquete y mapeo real del host no verificados.
+
+[Comparación de binarios originales](../reports/android16-kernel-policy-contract/validation.json):
+el candidato y refpolicy cubren todos esos nombres. AOSP platform aislada carece
+de watch_mountns en ocho clases y de io_uring.allowed. Eso no prueba carga
+rechazada ni APK fallida: el manejo kernel de desconocidos sigue siendo relevante.
+Se conserva el resultado sin descartar los enfoques adaptados.
+
+El [mapeo original](https://github.com/gregkh/linux/blob/1253a6aa5d104312bf0992afacc15220ae35bdf9/security/selinux/ss/services.c)
+resuelve nombres de clase y permiso.64 diferencias de número de clase y seis
+clases con posiciones de permiso distintas se registran sin convertirlas en
+un fallo ABI por sí solas. Los11 SID iniciales activos se contrastan aparte
+y sus números coinciden con la exportación del candidato; no se presupone
+que los SID usen el mismo mecanismo de mapeo.
+
+La nueva guarda del constructor compila y deja CIL/binario idénticos. Los
+controles detectan ausencias AOSP y deriva del contrato; no se carga política
+ni se ejecuta el mapeo del kernel. Esto no sustituye al diagnóstico de host
+activo ni acepta endpoints, Binder, gestores o etapas de aplicaciones.
+
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 
 
