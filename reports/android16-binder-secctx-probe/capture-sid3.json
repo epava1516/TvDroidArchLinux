@@ -1,0 +1,114 @@
+{
+  "projection": "Sanitized derived selection, NOT complete authenticated MCP Evidence. Raw OSC host identifiers omitted.",
+  "evidence_id": "ev_e93b36cc1435d4b539984aa450db33c35293ed2c2b094c111ee3a1347d338124",
+  "operation": "capture_process_scenario",
+  "authority": "controlled-replay",
+  "confidence": "observed",
+  "exit": {
+    "code": 20,
+    "signal": 0,
+    "reason": "exited"
+  },
+  "observations": [
+    "PRIVATE_BINDER {\"major\": 242, \"minor\": 1}",
+    "PREEXEC_SECURITY {\"Uid\": \"10000\\t10000\\t10000\\t10000\", \"Gid\": \"10000\\t10000\\t10000\\t10000\", \"Groups\": \"\", \"CapEff\": \"0000000000000000\", \"CapPrm\": \"0000000000000000\", \"CapInh\": \"0000000000000000\", \"CapAmb\": \"0000000000000000\", \"NoNewPrivs\": \"1\"}",
+    "{\"event\":\"context_node\",\"request_sid\":true,\"ioctl_rc\":0,\"errno\":0,\"uid\":10000}",
+    "{\"event\":\"client_command\",\"command\":29196,\"pid\":18,\"uid\":10000}",
+    "{\"event\":\"client_command\",\"command\":29201,\"pid\":18,\"uid\":10000}",
+    "{\"event\":\"extended_error\",\"ioctl_rc\":0,\"command\":29201,\"param\":-95}",
+    "{\"event\":\"result\",\"request_sid\":true,\"received_transaction\":false,\"child_exit\":10,\"child_reaped\":true}"
+  ],
+  "cleanup": {
+    "owned_process_group": "verified",
+    "temporary_root": "removed"
+  },
+  "truncated": true,
+  "truncation_details": {
+    "raw_terminal": {
+      "budget_bytes": 30000,
+      "observed_bytes": 936,
+      "retained_bytes": 936,
+      "observed_frames": 6,
+      "retained_frames": 6
+    },
+    "rendered_terminal": {
+      "budget_bytes": 30000,
+      "observed_bytes": 5119,
+      "retained_bytes": 5119,
+      "observed_frames": 6,
+      "retained_frames": 6
+    },
+    "normalized_terminal": {
+      "budget_bytes": 30000,
+      "retained_bytes": 935,
+      "omitted_frames": 0
+    },
+    "filesystem_before": {
+      "files_limit": 10000,
+      "depth_limit": 16,
+      "enumeration_truncated": false,
+      "enumeration_reasons": [],
+      "enumeration_omissions": [],
+      "unobserved_subtrees": [],
+      "hash_budget_bytes": 10000000,
+      "hashed_bytes": 0,
+      "hash_omissions": []
+    },
+    "filesystem_after": {
+      "files_limit": 10000,
+      "depth_limit": 16,
+      "enumeration_truncated": false,
+      "enumeration_reasons": [],
+      "enumeration_omissions": [],
+      "unobserved_subtrees": [],
+      "hash_budget_bytes": 10000000,
+      "hashed_bytes": 0,
+      "hash_omissions": []
+    },
+    "process": {
+      "sample_limit": 15,
+      "sampling_partial": true,
+      "retained_samples": 0,
+      "sample_limit_reached": false,
+      "sampling_failures": 10,
+      "first_sampling_failure": "/proc/234318/environ: EACCES: Error: EACCES: permission denied, open '/proc/234318/environ'",
+      "coverage": "sampled"
+    }
+  },
+  "residual_unknowns": [
+    {
+      "scope": "process",
+      "reason": "Process trees are sampled and may omit short-lived descendants."
+    },
+    {
+      "scope": "process",
+      "reason": "The executable digest is a prelaunch file sample; operating-system image binding is not atomically observed."
+    },
+    {
+      "scope": "environment",
+      "reason": "Inherited host environment variables are not recorded."
+    },
+    {
+      "scope": "network",
+      "reason": "Network activity is not observed by this capture."
+    },
+    {
+      "scope": "filesystem",
+      "reason": "No filesystem observation paths were selected; filesystem effects remain unknown."
+    },
+    {
+      "scope": "process",
+      "reason": "Process sampling has incomplete observations: /proc/234318/environ: EACCES: Error: EACCES: permission denied, open '/proc/234318/environ'. See truncation_details.process."
+    }
+  ],
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "The executable digest is a prelaunch file sample; matching path metadata immediately after spawn does not prove an atomic operating-system image binding.",
+    "Process trees are sampled and may omit short-lived descendants.",
+    "Process-tree sampling ended with an incomplete observation.",
+    "Filesystem observations are before/after snapshots, not syscall traces.",
+    "Inherited host environment variables are not recorded and may affect results.",
+    "No filesystem observation paths were selected; filesystem effects remain unknown.",
+    "Process sampling has incomplete observations: /proc/234318/environ: EACCES: Error: EACCES: permission denied, open '/proc/234318/environ'. See truncation_details.process."
+  ]
+}

@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-binder-kernel-contract/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-binder-secctx-probe/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -461,3 +461,7 @@ conservando la prohibición de introducir VM o reiniciar.
 ## Binder original: nuevo resultado parcial
 
 [13 regresiones nativas originales pasan](../reports/android16-binder-kernel-contract/validation.json); cinco casos de gestor excluidos. SID real obligatorio en transacciones entrantes; identidad/gestor/SELinux/APK aún no aceptados.
+
+## Contraste SID del driver
+
+[Resultado nativo](../reports/android16-binder-secctx-probe/validation.json): transacción síncrona sin SID con PID/UID correctos; solicitando SID falla BR_FAILED_REPLY, error extendido -95/EOPNOTSUPP. Sonda propia, sin aceptación de gestor/MAC/APK ni cambios al host.

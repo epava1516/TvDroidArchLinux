@@ -795,6 +795,23 @@ puede devolver error sin proveedor adecuado; es un riesgo demostrado por fuente,
 no un fallo transaccional observado. SELinux sigue inactivo en el anfitrión.
 La siguiente puerta exige identidad y denegación reales, sin contexto sintético.
 
+## Contraste nativo de transacciones con contexto de seguridad
+
+[Sonda local y capturas REA MCP](../reports/android16-binder-secctx-probe/validation.json).
+Mismo binario Bionic, dos procesos UID10000 sin capacidades, Binder privado:
+sin solicitar SID, llegan transacción y respuesta con PID/UID reales correctos;
+con TXN_SECURITY_CTX, el registro del nodo retorna0 pero la transacción falla con
+BR_FAILED_REPLY y BINDER_GET_EXTENDED_ERROR devuelve -95/EOPNOTSUPP. No llega al servidor.
+La relación con security_secid_to_secctx sin proveedor es inferencia de fuentes
+fijadas, consistente con el resultado; no se trazó la pila interna del kernel.
+
+La sonda es propia, no un gestor de servicios ni criterio de compatibilidad APK.
+El primer intento carecía de BC_ENTER_LOOPER y se conserva como fallo de arnés;
+el control corregido funciona y el contraste final añade consulta de error.
+No prueba separación entre UID, MAC, callbacks ni recursos gráficos. No se retira
+la solicitud SID del gestor original para eludir el fallo. R1-MAC continúa abierto:
+hace falta despliegue Linux SELinux verificable con activación y recuperación.
+
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 
 

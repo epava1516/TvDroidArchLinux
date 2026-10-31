@@ -1,0 +1,55 @@
+{
+  "assertions": {
+    "plain_transaction_pid_uid_reply": true,
+    "sid_failed_reply_extended_minus95": true,
+    "same_final_binary_both_modes": true,
+    "six_pending_files_unchanged": true
+  },
+  "scope": "Local diagnostic fixture using original Bionic and actual Rust Binder driver, not original AOSP regression or service registry/APK acceptance",
+  "evidence": [
+    {
+      "path": "reports/android16-binder-secctx-probe/build.json",
+      "sha256": "df3837297cea12f1e65f4a78449a15df8c20a1ca84a2dfd1a96293bbb76d6148"
+    },
+    {
+      "path": "reports/android16-binder-secctx-probe/capture-plain.json",
+      "sha256": "25c5018d08c3ee836a7ab1a11078e32b615af4c55017390eb48eae3af2e242c9"
+    },
+    {
+      "path": "reports/android16-binder-secctx-probe/capture-plain2.json",
+      "sha256": "a98097437842f2ce3473680ed1b35efa98121abfe2b9c0415abd9e25ce1297de"
+    },
+    {
+      "path": "reports/android16-binder-secctx-probe/capture-plain3.json",
+      "sha256": "f56942dd8937732b38445d08c581d7fe68c631f851db33f92c89cc6c0b8d4330"
+    },
+    {
+      "path": "reports/android16-binder-secctx-probe/capture-sid2.json",
+      "sha256": "5a90c79b9cfcace805535aefec9398f22a327df0ea4472561341493a8c920d78"
+    },
+    {
+      "path": "reports/android16-binder-secctx-probe/capture-sid3.json",
+      "sha256": "2c89d703f1b7c508e9fb0d052e7618b380384f836685e7822553c21549891b84"
+    },
+    {
+      "path": "reports/android16-binder-secctx-probe/driver-probe.cpp",
+      "sha256": "4d18314a124eebc56a0e8514cf995f41e44a7549d1be19a706c47d6cf26769e8"
+    },
+    {
+      "path": "reports/android16-binder-secctx-probe/findings.json",
+      "sha256": "2ce3805dab42727ad5089f974a58e2306ab8c7134368331912140c9970d46331"
+    },
+    {
+      "path": "reports/android16-binder-secctx-probe/launcher-plain.py",
+      "sha256": "327a0ab5c0096ba8621679ef7f23885089a68dd6c46dab3de193fe53d8146f52"
+    },
+    {
+      "path": "reports/android16-binder-secctx-probe/launcher-sid.py",
+      "sha256": "e664e94afe91101a3025fe66f6e96938ed9c53a49c6dd9fd45ecea2e1353c17a"
+    },
+    {
+      "path": "reports/android16-binder-secctx-probe/reproduce-build.py",
+      "sha256": "3a7dde67e2165f0e4333264da5191c7950ab49a0d372f734ae068400e10a3eca"
+    }
+  ]
+}

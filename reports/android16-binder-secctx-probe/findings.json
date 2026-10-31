@@ -1,0 +1,41 @@
+{
+  "scope": "Local diagnostic fixture using original Bionic and actual Rust Binder driver, not original AOSP regression or service registry/APK acceptance",
+  "observed_at": "2026-10-31T06:46:32.681146+00:00",
+  "base_commit": "3e32ff46a208be0ad48ab39e6c91f43241de3f82",
+  "binary_sha256": "bc0c970b631ebae6257cec3fcac15dc6465d7283d659c0ee356fa5be25335a3e",
+  "source_sha256": "4d18314a124eebc56a0e8514cf995f41e44a7549d1be19a706c47d6cf26769e8",
+  "control": {
+    "request_sid": false,
+    "context_ioctl": 0,
+    "transaction_received": true,
+    "synchronous_sender_pid_matches_child": true,
+    "sender_uid": 10000,
+    "reply_received": true,
+    "capture": "capture-plain3.json"
+  },
+  "sid_request": {
+    "request_sid": true,
+    "context_ioctl": 0,
+    "transaction_received": false,
+    "client_command": "BR_FAILED_REPLY",
+    "extended_error_ioctl": 0,
+    "extended_error_param": -95,
+    "meaning": "EOPNOTSUPP",
+    "capture": "capture-sid3.json"
+  },
+  "interpretation": "Observed failure is consistent with pinned source security_secid_to_secctx default EOPNOTSUPP and absent active SELinux. Internal call chain is source inference, not traced kernel stack. BINDER_SET_CONTEXT_MGR_EXT success does not prove delivery of security context. No fallback or fake SID introduced.",
+  "iterations": [
+    "plain1 had no BC_ENTER_LOOPER: no delivery, child killed/reaped by diagnostic, harness failure retained as capture-plain.json",
+    "plain2 adds required BC_ENTER_LOOPER; control succeeds, sid2 fails BR_FAILED_REPLY",
+    "plain3/sid3 same binary adds extended error observation; plain still succeeds, sid fails -95"
+  ],
+  "limitations": [
+    "Same UID two-process synchronous zero-payload case only; no cross-UID isolation or authorization accepted",
+    "Context node is diagnostic, not implementation/substitute for servicemanager",
+    "No SELinux active or kernel policy loaded; no VM or restart",
+    "No FD transfer, callback/death/freeze, framework/APK real journey accepted",
+    "MCP sanitized projections omit raw host OSC identifiers and are not full authenticated Evidence; process sampling partial; filesystem not observed",
+    "Virtual AS64GiB limit is not physical memory consumption"
+  ],
+  "next": "Keep original SID requirements. A verified Linux SELinux activation/deployment/rollback path is needed before original service-manager acceptance; advance independent original subsystems without claiming this gate closed."
+}
