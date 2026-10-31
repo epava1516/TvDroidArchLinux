@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-property-socket/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-property-load/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -17,7 +17,18 @@ Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCC
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
 
-## Última ejecución · servidor de propiedades y rechazo real
+## Última fase nativa · carga original de persistentes
+
+[Prueba](../reports/android16-property-load/findings.json): StartPropertyService
+recibe InitMessage original, carga valor del protobuf y publica él mismo
+ro.persistent_properties.ready=true. La espera de seriales Bionic detecta el cambio;
+no se escribe la señal manualmente. MCP0, con rechazos DAC/contexto conservados.
+No reinicio de servidor, permisos MAC, readiness de gestores ni APK aceptados.
+El canal de carga no transporta callbacks/controles actuales: se llaman directamente
+al bucle de init; campos proto stop/start sin rama implementada. Siguiente: frontera
+Linux explícita de callbacks/control/cierre, sin asumir que el socket la resuelve.
+
+## Ejecución anterior · servidor de propiedades y rechazo real
 
 [Prueba por socket](../reports/android16-property-socket/findings.json): se ejecutan
 PropertyInit y StartPropertyService originales con parche de persistencia; dos

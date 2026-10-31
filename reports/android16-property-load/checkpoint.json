@@ -1,0 +1,34 @@
+{
+  "observed_at": "2026-10-31T09:33:44.030182+00:00",
+  "base_commit": "2564a92c743ae55cc4afa97ca5d366728c020b99",
+  "branch": "main",
+  "previous_checkpoint": "reports/android16-property-socket/checkpoint.json",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "terminal_exec_handles": [
+    93976
+  ],
+  "active_exec_handles": [],
+  "mcp_status": "Terminal0, owned-group cleanup verified; no persistent target opened, no host-wide process coverage claimed",
+  "result": "Original property-service persistent-load phase via original InitMessage and Bionic serial wait, plus prior negative-client controls. Not complete Linux supervisor/readiness/MAC/APK acceptance.",
+  "tests": "build.json, native-mcp.json, findings.json",
+  "next": "Implement explicit Linux-owned callback/control and shutdown boundary for the original service; do not assume unused proto fields implement it. Require real SELinux/policy for authorized socket and manager tests, preserve complete Markor/real-APK acceptance gates.",
+  "evidence": {
+    "reports/android16-property-load/build.json": "d455451b47a86a4a8201834a2be2e78057a86394c64a8bf1e8977ee797181d8d",
+    "reports/android16-property-load/findings.json": "2ed6eeabeba85f903a35e56ef175682abcf709b24b40f92220b255a4e8598aa3",
+    "reports/android16-property-load/native-launcher.py": "a7536836ab9a1ba061fdc5533107c05226f39c38a357263d40febbf8a7a79bb8",
+    "reports/android16-property-load/build.py": "71d301d136155fb5c56af1d092d352eff4045c001224d3cf6f90f9f0f9b39a46",
+    "reports/android16-property-load/native-mcp.json": "e27377a90ef63bbb02731ea1f493dc226c9b1b8f4b49195f70268c319bc00165",
+    "reports/android16-property-load/probe.cpp": "2990bb04e60d1cec2815ca453dbe91556c11c5851f17b3d2c7145a6edbfc2df5"
+  }
+}

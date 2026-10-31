@@ -1,0 +1,34 @@
+{
+  "scope": "Original property-service persistent-load phase via original InitMessage and Bionic serial wait, plus prior negative-client controls. Not complete Linux supervisor/readiness/MAC/APK acceptance.",
+  "runtime_evidence": "ev_b0fe8014ba65fbc72b2669e3efd3c00411165adba27ff7462b610c8f84da5ddf",
+  "exit": 0,
+  "artifact": {
+    "path": "dist/aosp16/property-load-build-1/property-load-probe",
+    "sha256": "739d6bc6500d3aa20f8d3b7e6a366b33c0198228120ade2366610ffaa4f39154",
+    "executed_copy": "dist/aosp16/property-load-execution-1/data/property-load-probe",
+    "copy_hash_matches_after_run": true
+  },
+  "observations": [
+    "Seed original protobuf file using original writer; target property absent after PropertyInit before load",
+    "Actual StartPropertyService starts threads/sockets",
+    "SendMessage on returned socket sends original InitMessage.load_persistent_properties",
+    "Original handler loads file and publishes ro.persistent_properties.ready=true itself",
+    "Bionic __system_property_wait global serial wakes; loaded value matches file",
+    "UID10000 client still gets DAC EACCES/system socket and getpeercon-derived0x18/general socket; rejected property absent"
+  ],
+  "source_interface_findings": [
+    "PropertyMessage proto definitions alone are not active notifications; current property_service.cpp invokes PropertyChanged and QueueControlMessage directly",
+    "InitMessage handler has only load-persistent case; stop/start bool fields in proto are not handled branches in this revision",
+    "Returned init socket is not sufficient for full Linux supervision; callback/control queue/wakeup/ownership/shutdown remain actual integration work"
+  ],
+  "limits": [
+    "Root trusted initializer with full capabilities inside private namespaces, not unprivileged app or least-privilege deployment",
+    "Seed file created in same diagnostic run; no server restart/power-loss/backup migration demonstrated",
+    "Internal initialization uses original InitPropertySet; SELinux inactive, not permission-aware app write acceptance",
+    "ro.persistent_properties.ready is a phase flag, not hwservicemanager.ready or whole runtime readiness",
+    "Own finite harness uses _exit, no production graceful shutdown or complete supervisor",
+    "Persistence patch linked; storage error ACK not exercised over authorized socket",
+    "MCP sampled identity/environment/filesystem/image-binding limitations retained; sanitized projection not complete authenticated Evidence"
+  ],
+  "next": "Implement explicit Linux-owned callback/control and shutdown boundary for the original service; do not assume unused proto fields implement it. Require real SELinux/policy for authorized socket and manager tests, preserve complete Markor/real-APK acceptance gates."
+}

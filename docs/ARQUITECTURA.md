@@ -1222,6 +1222,29 @@ hilos diagnósticos, no shutdown ordenado de producción. El siguiente desarroll
 necesita frontera Linux real de eventos/controles/persistencia y R1-MAC; no se
 sustituyen contextos ni se publica readiness ficticia. Matriz APK sin cambios.
 
+## R1 · carga de persistentes y frontera real del canal original
+
+[Captura](../reports/android16-property-load/findings.json): sonda root privada
+crea protobuf con escritor original, inicializa zona nueva y comprueba que el valor
+aún no está en memoria. Invoca StartPropertyService y envía InitMessage original
+por el socket devuelto. El handler carga el archivo y publica por código original
+ro.persistent_properties.ready=true; __system_property_wait observa el serial y
+la lectura coincide. No se fabrica la señal. Se conservan negativos del cliente
+UID10000: DAC EACCES y falta de contexto0x18, propiedad rechazada ausente.
+
+Es fase de inicialización confiada, no transacción de app autorizada: SELinux sigue
+inactivo y el inicializador root conserva capacidades. El archivo se crea en esta
+misma prueba; no hay reinicio de servidor, energía, migración o recuperación probados.
+Tampoco readiness de hwservicemanager, callbacks/ctl ni cierre de producción.
+
+La fuente vigente llama PropertyChanged/QueueControlMessage directamente al bucle
+de init. PropertyMessage existe en proto, pero no significa que se esté enviando.
+El handler InitMessage sólo maneja carga persistente; los campos stop/start del
+proto no tienen ramas implementadas. Por tanto el canal no resuelve por sí solo la
+frontera con supervisor Linux. Adaptar explícitamente eventos/controles/cierre y
+propiedad de recursos, sin invocar SecondStageMain, sin no-ops de éxito y conservando
+MAC/errores originales. La sonda finaliza por _exit; no es supervisor instalado.
+
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 
 
