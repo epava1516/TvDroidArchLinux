@@ -1,0 +1,33 @@
+    Blocking waiting for file lock on build directory
+    Finished `test` profile [unoptimized] target(s) in 1m 18s
+     Running unittests src/lib.rs (target/debug/deps/archtv_core-6efd413ec5a13690)
+
+running 6 tests
+test desktop::tests::exec_keeps_arguments_and_shell_metacharacters_literal ... ok
+test android::tests::identity_rejects_commands_and_keeps_android_profiles_distinct .test android::tests::identity_rejects_commands_and_keeps_android_profiles_distinct ... ok
+test desktop::tests::locale_hidden_and_desktop_sections_are_respected ... ok
+test tests::repeated_activation_does_not_duplicate_a_window ... ok
+test android::tests::stale_boot_confirmation_cannot_make_a_stopped_session_ready ... ok
+test tests::home_returns_without_destroying_app_and_close_restores_focus ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     
+running 7 tests
+test acknowledgment_does_not_hide_failed_exit ... ok
+test oversized_status_is_rejected_and_cleaned ... ok
+test startup_mode_mismatch_kills_owned_child ... ok
+test cooperative_exit_requires_ack_and_actual_exit ... ok
+test shutdown_timeout_is_error_and_child_is_reaped ... ok
+test successful_exit_withotest shutdown_timeout_is_error_and_test startup_timeout_and_cleanup ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.16s
+
+   Doc-tests archtv_core
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

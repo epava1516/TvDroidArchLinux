@@ -1,0 +1,63 @@
+{
+  "scope": "Reusable Rust host lifetime supervisor and real Bionic original-property worker across inherited Unix channel; diagnostic integration only, no complete runtime/APK acceptance",
+  "implementation": {
+    "host": "crates/archtv-core/src/native_process.rs",
+    "native": "runtime/aosp/native/linux-property-worker.cpp",
+    "runner": "crates/archtv-core/examples/native_supervisor.rs",
+    "decision": "Reuse core module and existing compositor ownership patterns; existing shell Supervisor remains shell/Wayland-specific. No JNI/glibc-Bionic in-process bridge or duplicate shell manager."
+  },
+  "mechanism": [
+    "Inherited Unix capability FD, made CLOEXEC inside native worker; strict versioned bounded status/STOP/STOPPED frames",
+    "Rust owns Child plus pidfd; mode-specific startup acknowledgment; stop requires ACK and successful actual exit",
+    "Unexpected mode/EOF/oversized frame/timeouts and nonzero exit are errors; Drop kills/reaps owned direct child",
+    "Command consumed by spawn, so saved pre_exec descriptor closure cannot be reused on a second launch",
+    "Native worker runs original patched property/actions/load/close; normal mode checks active enforcing SELinux/context, diagnostic mode explicit and separately acknowledged",
+    "Root namespace wrapper uses unshare --kill-child; host example clears child environment except controlled PATH and inherited FD"
+  ],
+  "tests": {
+    "rust_unit": 6,
+    "rust_process_protocol": 7,
+    "cargo_test_exit": 0,
+    "cargo_check_compositor_exit": 0,
+    "clippy_all_core_targets_deny_warnings_exit": 0,
+    "native_compile_strict_link_exit": 0,
+    "proof_files": [
+      "rust-tests-final.log",
+      "compositor-check.log",
+      "clippy.log",
+      "native-build.json"
+    ]
+  },
+  "runtime": {
+    "diagnostic_evidence": "ev_bd84dd43640123b17f0b3ed9604d208255cbab82d77637c0a5aea53eacad431d",
+    "diagnostic_host_exit": 0,
+    "normal_refusal_evidence": "ev_ec254ac9c2028d994be2553b329db5da878a65697eb965662a75aea95e705aa2",
+    "normal_host_exit": 1,
+    "normal_native_exit_code": "78 from source; host capture observes refusal log and UnexpectedEof, not a separately sampled native exit code",
+    "observed": "Rust owns real PID/pidfd, accepts Diagnostic startup only, sends STOP, native original workers/actions close, acknowledgment then actual exit0. Normal host mode gets no startup acknowledgment on inactive SELinux.",
+    "artifacts": [
+      {
+        "path": "target/debug/examples/native_supervisor",
+        "sha256": "9b9cdcc1e93cc92c2108e7ab5c25408d1018cf7f0eac74febb08c1605279f14f",
+        "bytes": 646776
+      },
+      {
+        "path": "dist/aosp16/rust-supervisor-native-build-2/linux-property-worker",
+        "sha256": "22df01e5cc5e3727da16134a030c08bb2c6e9e9093574fbf5167590920959d02",
+        "bytes": 999416
+      }
+    ],
+    "artifact_binding_limit": "Post-run source/prepared-copy hashes and declared paths, not atomic kernel image binding; MCP executable identity is sudo wrapper."
+  },
+  "limits": [
+    "No compositor service integration or finished service/control backend, automatic restart policy, installation or upgrade/rollback accepted",
+    "Normal SELinux guard is prerequisite only, not policy/labels/SID or R1-MAC certification",
+    "Diagnostic worker is privileged initializer, not app isolation or permission-aware app write acceptance",
+    "NativeProcess is not sandbox, descendant manager or arbitrary command authorization; caller owns identities/namespaces/env policy",
+    "Protocol/pidfd deadlines do not bound forced kill/reap under uninterruptible kernel I/O; full watchdog/recovery still required",
+    "No queues under active persistence/restorecon fault, Binder manager, Composer/Smithay presentation or APK stage accepted",
+    "MCP observation/environment/process/filesystem/image limitations preserved; derived reports are not complete authenticated Evidence",
+    "ARM translation and external/proprietary API compatibility remain separate unresolved axes"
+  ],
+  "next": "Integrate real Linux service/control backend and restart/deadline recovery using this host/native boundary, verify installation/profile prerequisites without boot changes, then resume original managers\u2192Composer\u2192Smithay\u2192complete Markor journey. R1-MAC gate stays explicit."
+}

@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-property-actions/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-rust-supervisor/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -17,7 +17,20 @@ Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCC
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
 
-## Última integración · coordinador nativo de acciones
+## Última integración · supervisor Rust y worker Bionic
+
+[Implementación y pruebas](../reports/android16-rust-supervisor/findings.json):
+archtv-core posee Child/pidfd y canal Unix heredado; worker Bionic reutiliza
+propiedades/acciones/cierre originales adaptados. REA MCP observa modo diagnóstico
+arrancar→STOP→confirmación→salida real0. Modo normal se niega sin SELinux activo,
+sin confirmar arranque. No estado de runtime/APK listo por ese handshake.
+Pasan6 pruebas previas y7 de protocolo, check del compositor y clippy core.
+Ejecutor interno de ejemplo; no servicio instalado ni integración completa con
+compositor. Pendientes backend ctl/servicios, restart/watchdog/recuperación, MAC,
+instalación/actualización y recorridos APK. Cierre forzado puede esperar I/O kernel;
+plazos del protocolo no acreditan un watchdog completo.
+
+## Integración anterior · coordinador nativo de acciones
 
 [Parche y pruebas](../reports/android16-property-actions/findings.json): entrada
 Linux explícita reutiliza eventfd/ActionManager y callbacks originales sin cargar

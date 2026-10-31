@@ -75,3 +75,6 @@ mod tests {
 pub mod desktop;
 
 pub mod android;
+
+#[cfg(target_os = "linux")]
+pub mod native_process;

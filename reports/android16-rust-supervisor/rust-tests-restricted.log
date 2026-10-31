@@ -1,0 +1,46 @@
+   Compiling archtv-core v0.1.0 (/home/tv/repositorio-principal/crates/archtv-core)
+    Finished `test` profile [unoptimized] target(s) in 2.18s
+     Running unittests src/lib.rs (target/debug/deps/archtv_core-6efd413ec5a13690)
+
+running 6 tests
+test android::tests::identity_rejects_commands_and_keeps_android_profiles_distinct ... ok
+test desktop::tests::locale_hidden_and_desktop_sections_are_respected ... ok
+test android::tests::stale_boot_confirmation_cannot_make_a_stopped_session_ready ... ok
+test desktop::tests::exec_keeps_arguments_and_shell_metacharacters_literal ... ok
+test tests::home_returns_without_destroying_app_and_close_restores_focus ... ok
+test tests::repeated_activation_does_not_duplicate_a_window ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/native_process.rs (target/debug/deps/native_process-55a9c6fd22149656)
+
+running 5 tests
+test cooperative_exit_requires_ack_and_actual_exit ... FAILED
+test startup_mode_mismatch_kills_owned_child ... ok
+test shutdown_timeout_is_error_and_child_is_reaped ... FAILED
+test oversized_status_is_rejected_and_cleaned ... ok
+test startup_timeout_and_cleanup ... ok
+
+failures:
+
+---- cooperative_exit_requires_ack_and_actual_exit stdout ----
+
+thread 'cooperative_exit_requires_ack_and_actual_exit' (401) panicked at crates/archtv-core/tests/native_process.rs:41:50:
+called `Result::unwrap()` on an `Err` value: Os { code: 1, kind: PermissionDenied, message: "Operation not permitted" }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- shutdown_timeout_is_error_and_child_is_reaped stdout ----
+
+thread 'shutdown_timeout_is_error_and_child_is_reaped' (403) panicked at crates/archtv-core/tests/native_process.rs:87:5:
+assertion `left == right` failed
+  left: PermissionDenied
+ right: TimedOut
+
+
+failures:
+    cooperative_exit_requires_ack_and_actual_exit
+    shutdown_timeout_is_error_and_child_is_reaped
+
+test result: FAILED. 3 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s
+
+error: test failed, to rerun pass `-p archtv-core --test native_process`

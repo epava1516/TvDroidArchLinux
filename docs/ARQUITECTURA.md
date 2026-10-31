@@ -1306,6 +1306,46 @@ persistencia/restorecon activo, plazo I/O, instalación/actualización ni APK ac
 Root confiado y fixtures siguen evidencias parciales; se conserva el vertical Markor
 y matriz real sin etapas aprobadas por este hito.
 
+## R1 · frontera Rust host y worker Bionic por proceso
+
+[Implementación y evidencia](../reports/android16-rust-supervisor/findings.json).
+El Supervisor de session.rs sigue dedicado a shell/Wayland y sus capacidades.
+NativeProcess en archtv-core aporta lifetime de un componente nativo: Command
+consumido, canal Unix heredado, Child y pidfd poseídos. No se usa el crate JNI
+histórico API33 para alojar A16 ni se mezcla glibc con Bionic dentro del proceso.
+El worker Bionic reutiliza las unidades originales adaptadas y su coordinador;
+Linux conserva boot y la supervisión externa. El ejemplo es ejecutor interno,
+no servicio instalado ni integración terminada con el compositor.
+
+Protocolo de lifetime versionado y limitado: STARTED o DIAGNOSTIC_STARTED según
+modo esperado, STOP y STOPPED. Rust exige ACK y salida real exit0; timeout, EOF,
+modo incorrecto, frame excesivo o salida fallida son errores. Descriptor heredado
+se marca CLOEXEC al entrar en worker; SO_PEERCRED UID coincidente complementa la
+capacidad heredada, sin equivaler a Binder SID/MAC ni autoridad de aplicaciones.
+El ejemplo limpia entorno y la prueba usa namespace wrapper --kill-child. La
+biblioteca por sí sola no es sandbox, gestor de descendientes o autorización de
+comandos arbitrarios: el llamador proporciona configuración, identidades y aislamiento.
+
+REA MCP observa Rust→arranque diagnóstico del worker real→STOP→cierre original→
+ACK→exit0. El modo normal se niega en este host sin SELinux activo/enforcing y
+contexto propio, no confirma arranque; host exit1/EOF con razón del worker. Ese
+guard sólo es prerrequisito, no certificación de política/etiquetas/gestores. Startup
+de componente no significa runtime ni APK listo. El worker no contiene comandos
+de regresión ni carga scripts de boot; fase persistente y bucle originales, controles
+ctl/power aún explícitamente sin backend. No se alteran permisos de propiedades.
+
+Pasan13 pruebas core (6 previas,7 de proceso/protocolo), check compositor y clippy
+core/all-targets con warnings denegados. Pruebas iniciales fallaron EPERM dentro del
+perfil restringido; verificación final separada fuera de ese límite, sólo IPC local
+y Cargo offline. Logs solapados por bloqueo Cargo son históricos, no evidencia final.
+Primer fallo C++ unique_fd implícito se conserva; accesos explícitos corrigen build.
+
+Plazos cubren protocolo y espera pidfd; kill/reap puede bloquear por I/O kernel.
+No watchdog/restart completo, recuperación bajo bloqueo, backend servicios,
+instalación/update/rollback o integración de compositor aceptados. Inicializador
+privilegiado de diagnóstico no acredita aislamiento de app, operación MAC válida,
+Binder/Composer/frames/Markor ni APK. ISA y servicios propietarios siguen aparte.
+
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 
 

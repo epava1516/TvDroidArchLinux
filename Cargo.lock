@@ -99,6 +99,9 @@ dependencies = [
 [[package]]
 name = "archtv-core"
 version = "0.1.0"
+dependencies = [
+ "libc",
+]
 
 [[package]]
 name = "archtv-shell"

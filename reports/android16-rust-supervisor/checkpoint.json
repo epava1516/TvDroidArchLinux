@@ -1,0 +1,79 @@
+{
+  "observed_at": "2026-10-31T10:19:51.742449+00:00",
+  "base_commit": "80f3ac9d56a31bc4f398dcf219dc6b3fd4850dbb",
+  "branch": "main",
+  "previous_checkpoint": "reports/android16-property-actions/checkpoint.json",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "terminal_exec_handles": [
+    8552,
+    20274,
+    17066,
+    77582,
+    72101,
+    47773,
+    11057,
+    87562,
+    68729,
+    74210,
+    89113
+  ],
+  "active_exec_handles": [],
+  "process_state": "All captured commands terminal; diagnostic0/normal-refusal1 cleanup owned groups verified, no persistent target opened. Historical PID/pidfd observations not live handles.",
+  "tests": {
+    "rust_unit": 6,
+    "rust_process_protocol": 7,
+    "cargo_test_exit": 0,
+    "cargo_check_compositor_exit": 0,
+    "clippy_all_core_targets_deny_warnings_exit": 0,
+    "native_compile_strict_link_exit": 0,
+    "proof_files": [
+      "rust-tests-final.log",
+      "compositor-check.log",
+      "clippy.log",
+      "native-build.json"
+    ]
+  },
+  "result": "Reusable Rust host lifetime supervisor and real Bionic original-property worker across inherited Unix channel; diagnostic integration only, no complete runtime/APK acceptance",
+  "next": "Integrate real Linux service/control backend and restart/deadline recovery using this host/native boundary, verify installation/profile prerequisites without boot changes, then resume original managers\u2192Composer\u2192Smithay\u2192complete Markor journey. R1-MAC gate stays explicit.",
+  "evidence": {
+    "reports/android16-rust-supervisor/rust-build.log": "f694a9e074374d315f58b8a63ce849858b1b8708cf56b3d194218605bd2a9d6e",
+    "reports/android16-rust-supervisor/native-diagnostic-mcp.json": "37b413c024f14a8ad9c591cdd15900c718c60713ab23ac01f3ff329c9983127b",
+    "reports/android16-rust-supervisor/findings.json": "f096f6fb6a279413655145fcb5e817d29f68f81c4404f0b5b6ad14023a15f9e4",
+    "reports/android16-rust-supervisor/rust-tests-restricted.log": "34f9191e89cbe260ae67ac6d93d945c9a1d1f7af4ed4d443c7ea89b80b9f7d16",
+    "reports/android16-rust-supervisor/launcher-diagnostic.py": "729f5d1f9db4f2f08cf8d0e5d626ff6d3e83d481979800b2a3413f86612dbb5d",
+    "reports/android16-rust-supervisor/build-native-attempt-2.py": "9e1e5a1d07b0f75bff1491e8af6017f51db797841af3800650b773dc32693ff4",
+    "reports/android16-rust-supervisor/rust-tests-final.log": "3f66ee567b366c4a6bdcad7d9000e62b7f87262757d77d6a3bfc8acec89f32c3",
+    "reports/android16-rust-supervisor/clippy.log": "a0f9c2e47804c11fe01088077a88f3982fd913ff21bb2c24619cc16f334ae8ae",
+    "reports/android16-rust-supervisor/build-native.py": "568fd258993148346583f914aa4b60af56b50943d0ccf2ec4794845a301ca846",
+    "reports/android16-rust-supervisor/native-normal-refusal-mcp.json": "09c7f2668d83d8e65b340e9bb8882c41c556f79eea6cb0efc4507591c12a592a",
+    "reports/android16-rust-supervisor/worker-attempt-1.cpp": "b9af07601ba80dcfafb74d3d45c1ca67436df1e08e5c98134c917db4fb36a6cf",
+    "reports/android16-rust-supervisor/rust-tests-overlapped.log": "b29122765811b0f80c2997fe8125e7e8250c50cd505445459f0ee4d1e92b5d44",
+    "reports/android16-rust-supervisor/launcher-normal.py": "23e8fe0b7633f919aa7a5026e921de0da74f239f49ed7a503554d1f7bbe0adaa",
+    "reports/android16-rust-supervisor/attempts.json": "0d022b70fd3dca542e47ab7bfa65f47aa4827eecba61499a93ea5aabc24f21ce",
+    "reports/android16-rust-supervisor/compositor-check.log": "53c0fcc86bfa9140bd119caeb55ef91111faf46125fd102f740d370018600ce9",
+    "reports/android16-rust-supervisor/native-build.json": "e8b8745ffa0a99a55a878fc93ab04d56a33a7841a6a3d0221282ab5a2e9ed921"
+  },
+  "objective": "Complete unmodified APK on Linux Rust/Smithay with coherent original AOSP16QPR2/Bionic, no Waydroid or complete Android boot; broad compatibility, isolation, stability, lightness, installation/update.",
+  "constraints": [
+    "A16-QPR2-1",
+    "No VM introduction or VM/client restart",
+    "No host boot/policy activation changes; R1-MAC gate remains",
+    "Fixtures/compilation/diagnostic startup are partial evidence, never real-APK acceptance"
+  ],
+  "canonical_entry": "docs/ESTADO.md",
+  "contract": "docs/CONTRATO-APK.md",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "relation_to_local_origin_tracking": "0\t0",
+  "graphify": "Isolated AST update finished0:2780nodes/5332edges; tracked graph files copied only"
+}

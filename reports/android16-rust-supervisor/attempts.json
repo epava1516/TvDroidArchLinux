@@ -1,0 +1,25 @@
+{
+  "scope": "Historical attempts, not final verification",
+  "observed": [
+    {
+      "phase": "first native build",
+      "result": "Compilation rejected implicit unique_fd\u2192int conversions; corrected explicit get() access. First source retained worker-attempt-1.cpp; original tool output not retained as complete log."
+    },
+    {
+      "phase": "initial restricted Rust helpers",
+      "result": "Python reconstruction of inherited socket returned EPERM. Test helper now uses inherited FD read/write directly, no socket reconstruction."
+    },
+    {
+      "phase": "restricted Rust socket sends",
+      "result": "3 protocol tests passed,2 failed EPERM; see rust-tests-restricted.log. Outside restricted tool execution, unchanged protocol tests passed."
+    },
+    {
+      "phase": "test formatting",
+      "result": "Typo in added test function corrected before final unique verification."
+    },
+    {
+      "phase": "overlapping Cargo verification",
+      "result": "Two commands waiting on compositor Cargo lock shared an output file. rust-tests-overlapped.log retained as historical only; rust-tests-final.log is separate uncontested final evidence."
+    }
+  ]
+}
