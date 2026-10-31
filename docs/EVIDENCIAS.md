@@ -1,5 +1,13 @@
 # Índice de evidencias
 
+- [Configuración boot original: inventario y decisión de unidad](../reports/android16-boot-profile/validation.json):
+  tres prop files (101/21/58 declaraciones), tres contextos, dos raíces idénticas;
+  metadatos originales idénticos al incluir todos los contextos presentes.
+  [Decisión y cierre directo](../reports/android16-boot-profile/unit-decision.json),
+  [fuentes fijadas](../reports/android16-boot-profile/sources.json) y
+  [REA MCP exports de init](../reports/android16-boot-profile/rea-init-exports.json).
+  Inventario/lectura estática y metadatos ejecutados, sin libinit/servicio/APK ejecutados.
+
 ## Entrada original de framework · fallo demostrado
 
 [Validación](../reports/android16-framework-entry/validation.json),

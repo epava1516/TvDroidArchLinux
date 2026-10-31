@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "dist/aosp16/property-info-host-1/property-info",
+    "--inspect",
+    "dist/aosp16/boot-profile-1/property_info",
+    "ro.product.cpu.abilist64",
+    "ro.product.name",
+    "ro.hardware",
+    "ro.vendor.api_level",
+    "ro.boot.verifiedbootstate"
+  ],
+  "exit_code": 0,
+  "stdout": "ro.product.cpu.abilist64\tu:object_r:build_prop:s0\tstring\nro.product.name\tu:object_r:build_prop:s0\tstring\nro.hardware\tu:object_r:bootloader_prop:s0\tstring\nro.vendor.api_level\tu:object_r:build_vendor_prop:s0\tint\nro.boot.verifiedbootstate\tu:object_r:bootloader_prop:s0\tstring\n",
+  "stderr": ""
+}

@@ -1,0 +1,816 @@
+{
+  "evidence_id": "ev_a7cdf8629b2a1e6ce500c8f4e2fcc3b123492c12a7e75d070a3bd7eab6aee545",
+  "subject": {
+    "name": "init",
+    "digest": {
+      "sha256": "933e8c614c72207b4b78d2234a7d4cb7eb08e7ba5ec2ebdc4ee1807e5abfac0f"
+    },
+    "local_path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/bin/init",
+    "format": "elf",
+    "architecture": null
+  },
+  "provider": {
+    "id": "rea-native-exports",
+    "name": "REA PE/ELF export table reader",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.analysis",
+  "operation": "inspect_native_exports",
+  "parameters": {
+    "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/bin/init",
+    "max_file_bytes": 268435456
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "artifact": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/bin/init",
+      "sha256": "933e8c614c72207b4b78d2234a7d4cb7eb08e7ba5ec2ebdc4ee1807e5abfac0f",
+      "bytes": 3052280
+    },
+    "format": "elf",
+    "architecture": "amd64",
+    "bits": 64,
+    "byte_order": "little",
+    "exports": [
+      {
+        "name": "_ZNSt3__119piecewise_constructE",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x2bda8",
+        "size": "1",
+        "type": "object",
+        "binding": "weak",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr21GetEntryForMountPointEPNSt3__16vectorINS0_10FstabEntryENS1_9allocatorIS3_EEEERKNS1_12basic_stringIcNS1_11char_traitsIcEENS4_IcEEEE",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x170520",
+        "size": "108",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "uevent_bind",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x166230",
+        "size": "76",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_Z28fs_mgr_update_for_slotselectPNSt3__16vectorIN7android6fs_mgr10FstabEntryENS_9allocatorIS3_EEEE",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x1787d0",
+        "size": "691",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr15GetAndroidDtDirEv",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x176de0",
+        "size": "91",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr17ReadFstabFromFileERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEPNS1_6vectorINS0_10FstabEntryENS5_ISB_EEEE",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x16c720",
+        "size": "1475",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_Z23ext4_create_fs_aux_infov",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x24a070",
+        "size": "840",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr23GetBootconfigFromStringERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES9_PS7_",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x177730",
+        "size": "140",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "klog_write",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x165a40",
+        "size": "417",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_Z16bitmap_clear_bitPhj",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x249ea0",
+        "size": "21",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "setjmp_env",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x2da230",
+        "size": "88",
+        "type": "object",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "inflate",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x22d8d0",
+        "size": "9683",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr15GetBootPartUuidEv",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x171660",
+        "size": "314",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "uevent_open_socket",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x166280",
+        "size": "120",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "socket_local_client_connect",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x165750",
+        "size": "154",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "bitmap_get_bit",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x249e80",
+        "size": "21",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr21GetEntryForMountPointEPKNSt3__16vectorINS0_10FstabEntryENS1_9allocatorIS3_EEEERKNS1_12basic_stringIcNS1_11char_traitsIcEENS4_IcEEEE",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x170590",
+        "size": "108",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_Z16is_dt_compatiblev",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x171a80",
+        "size": "559",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_Z28fs_mgr_get_other_slot_suffixv",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x178630",
+        "size": "261",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "socket_local_client",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x1657f0",
+        "size": "215",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "force",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x2da168",
+        "size": "4",
+        "type": "object",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr23ReadFstabFromProcMountsEPNSt3__16vectorINS0_10FstabEntryENS1_9allocatorIS3_EEEE",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x16d240",
+        "size": "231",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZN7android3gsi12kDsuUserdataE",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x2e942",
+        "size": "13",
+        "type": "object",
+        "binding": "weak",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr26GetKernelCmdlineFromStringERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES9_PS7_",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x177ed0",
+        "size": "140",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_Z23socket_make_sockaddr_unPKciP11sockaddr_unPj",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x165650",
+        "size": "250",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_Z21ext4_free_fs_aux_infov",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x24a3c0",
+        "size": "113",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZTVNSt3__110__function6__funcIPFvPKcENS_9allocatorIS5_EES4_EE",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x2d1870",
+        "size": "72",
+        "type": "object",
+        "binding": "weak",
+        "version": null
+      },
+      {
+        "name": "aux_info",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x2da1c0",
+        "size": "112",
+        "type": "object",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr19GetVerityDeviceNameERKNS0_10FstabEntryE",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x1717a0",
+        "size": "725",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "read_ext",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x24a720",
+        "size": "1067",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr20ParseFstabFromStringERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEbPNS1_6vectorINS0_10FstabEntryENS5_ISB_EEEE",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x166880",
+        "size": "5776",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_Z22fs_mgr_get_boot_configRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEPS5_",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x1781a0",
+        "size": "714",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr16GetKernelCmdlineERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEPS7_",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x178040",
+        "size": "346",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "inflateInit_",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x22d8c0",
+        "size": "15",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "uevent_kernel_multicast_recv",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x165f60",
+        "size": "61",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "klog_set_level",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x165960",
+        "size": "7",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "ext4_parse_sb",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x24ab50",
+        "size": "136",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr26ImportBootconfigFromStringERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERKNS1_8functionIFvS7_S7_EEE",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x177110",
+        "size": "1568",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr14GetBootDevicesEv",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x170600",
+        "size": "4184",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr19ImportKernelCmdlineERKNSt3__18functionIFvNS1_12basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES8_EEE",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x177f60",
+        "size": "218",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr16ImportBootconfigERKNSt3__18functionIFvNS1_12basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES8_EEE",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x1777c0",
+        "size": "159",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "uevent_kernel_recv",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x165fb0",
+        "size": "358",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "ext4_bg_has_super_block",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x249ec0",
+        "size": "222",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "is_block_device_fd",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x24a580",
+        "size": "141",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr12GetFstabPathEv",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x166570",
+        "size": "730",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "get_block_device_size",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x24a520",
+        "size": "86",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr20EnableMandatoryFlagsEPNSt3__16vectorINS0_10FstabEntryENS1_9allocatorIS3_EEEE",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x16c3d0",
+        "size": "839",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "android_set_ioprio",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x1658d0",
+        "size": "50",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr22SkipMountingPartitionsEPNSt3__16vectorINS0_10FstabEntryENS1_9allocatorIS3_EEEEb",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x16d0e0",
+        "size": "348",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "android_get_control_file",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x165d30",
+        "size": "549",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "android_get_ioprio",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x165910",
+        "size": "76",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_Z7read_sbiP16ext4_super_block",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x249fa0",
+        "size": "194",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "get_file_size",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x24a610",
+        "size": "268",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr21GetEntryForMountPointEPNSt3__16vectorINS0_10FstabEntryENS1_9allocatorIS3_EEEENS1_17basic_string_viewIcNS1_11char_traitsIcEEEESB_",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x1700a0",
+        "size": "610",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr29ImportKernelCmdlineFromStringERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERKNS1_8functionIFvS7_S7_EEE",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x177960",
+        "size": "1381",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr16ReadDefaultFstabEPNSt3__16vectorINS0_10FstabEntryENS1_9allocatorIS3_EEEE",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x16f4b0",
+        "size": "3055",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr15ReadFstabFromDtEPNSt3__16vectorINS0_10FstabEntryENS1_9allocatorIS3_EEEEb",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x16d330",
+        "size": "6805",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "uevent_kernel_multicast_uid_recv",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x165fa0",
+        "size": "13",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr20GetRecoveryFstabPathEv",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x166300",
+        "size": "614",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr23GetEntriesForMountPointEPKNSt3__16vectorINS0_10FstabEntryENS1_9allocatorIS3_EEEERKNS1_12basic_stringIcNS1_11char_traitsIcEENS4_IcEEEE",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x170310",
+        "size": "520",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr15OtherSlotSuffixERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x178a90",
+        "size": "112",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "inflateEnd",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x22ffd0",
+        "size": "124",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_Z22fs_mgr_get_slot_suffixv",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x178740",
+        "size": "133",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "klog_writev",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x165970",
+        "size": "126",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr10InRecoveryEv",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x166850",
+        "size": "47",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZN11unwindstack20AndroidLocalUnwinder15kUnwindstackLibE",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x2d3320",
+        "size": "8",
+        "type": "object",
+        "binding": "weak",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr23GetEntriesForMountPointEPNSt3__16vectorINS0_10FstabEntryENS1_9allocatorIS3_EEEERKNS1_12basic_stringIcNS1_11char_traitsIcEENS4_IcEEEE",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x16c1c0",
+        "size": "520",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZN7android3gsi11kDsuScratchE",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x2e936",
+        "size": "12",
+        "type": "object",
+        "binding": "weak",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr20TransformFstabForDsuEPNSt3__16vectorINS0_10FstabEntryENS1_9allocatorIS3_EEEERKNS1_12basic_stringIcNS1_11char_traitsIcEENS4_IcEEEERKNS2_ISC_NS4_ISC_EEEE",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x16a550",
+        "size": "7278",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr13GetBootconfigERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEPS7_",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x177860",
+        "size": "254",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "uevent_create_socket",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x166120",
+        "size": "269",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_Z18ext4_parse_sb_infoP16ext4_super_block",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x24a440",
+        "size": "217",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "info",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x2da170",
+        "size": "80",
+        "type": "object",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "_ZN7android6fs_mgr19SkipMountWithConfigERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEPNS1_6vectorINS0_10FstabEntryENS5_ISB_EEEEb",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x16ee70",
+        "size": "1594",
+        "type": "function",
+        "binding": "global",
+        "version": null
+      },
+      {
+        "name": "__llvm_fs_discriminator__",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "value": "0x30d4a",
+        "size": "1",
+        "type": "object",
+        "binding": "weak",
+        "version": null
+      }
+    ],
+    "coverage": {
+      "status": "complete",
+      "reason": null,
+      "examined_entries": 653,
+      "exports": 75
+    },
+    "issues": [],
+    "limitations": [
+      "Rows list defined default- or protected-visibility global, weak and unique dynamic symbols; local, hidden, internal and undefined symbols are not exports.",
+      "A hidden symbol version is not the default version that a by-name dlsym lookup selects.",
+      "Rows reproduce the dynamic symbol table; they do not establish that a symbol is reachable, safe to call or loaded at runtime."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "Rows list defined default- or protected-visibility global, weak and unique dynamic symbols; local, hidden, internal and undefined symbols are not exports.",
+    "A hidden symbol version is not the default version that a by-name dlsym lookup selects.",
+    "Rows reproduce the dynamic symbol table; they do not establish that a symbol is reachable, safe to call or loaded at runtime."
+  ],
+  "relationship_coverage": null,
+  "locations": [
+    {
+      "kind": "artifact-path",
+      "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/bin/init"
+    }
+  ],
+  "evidence_links": []
+}

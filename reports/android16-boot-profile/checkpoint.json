@@ -1,0 +1,82 @@
+{
+  "observed_at": "2026-10-31T01:35:57.621265+00:00",
+  "contract": "A16-QPR2-1",
+  "objective": "Complete unmodified arbitrary APK incl TV, Linux Rust/Smithay; native coherent AOSP16 QPR2, SF\u2192Wayland first hypothesis; no Waydroid/full Android. Preserve compatibility/isolation/stability/lightweight/install/update.",
+  "branch": "main",
+  "source_base_commit": "894c0aae120cb701f90ebe1d45d829205bfa0473",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "relation_to_local_origin_tracking": "0\t0",
+  "pending_own": {
+    "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+    "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+    "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+    "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+  },
+  "pending_other_hashes": {
+    "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+  },
+  "own_milestone": "Read-only original boot-input inventory, metadata closure and unit/build decision; no runtime profile or older pending source included",
+  "terminal_exec_handles": [
+    24150
+  ],
+  "evidence_root": "reports/android16-boot-profile",
+  "recovery_snapshot": "/home/tv/recuperacion-archtv/20261031T013340Z-boot-profile-review",
+  "tests": "Two original roots identical; all contexts produce same original metadata; root-local symlink/escape/cycle tests; actual REA init dynamic exports; original metadata reader",
+  "next": "Native Bionic supervised entrypoint linked to original whole libinit; begin bounded PropertyInit bootstrap, then retain service semantics with explicit Linux supervisor boundary. Preserve original internal code unless demonstrated integration need. Do not launch original init dispatcher/second_stage.",
+  "not_done": "No libinit/property service build/run; no runtime profile; APK nine stages unchanged",
+  "restart_policy": "No VM/client restart or Android full boot",
+  "process_observation": {
+    "observed_at": "2026-10-31T01:36:35.223063+00:00",
+    "source": "host ps and /proc start_ticks; arguments/environment excluded",
+    "processes": [
+      {
+        "pid": 181298,
+        "ppid": 1,
+        "state": "Ssl",
+        "comm": "node-MainThread",
+        "start_ticks": "4923686"
+      },
+      {
+        "pid": 181308,
+        "ppid": 181298,
+        "state": "Sl",
+        "comm": "codex",
+        "start_ticks": "4923705"
+      },
+      {
+        "pid": 181453,
+        "ppid": 181308,
+        "state": "Sl",
+        "comm": "codex-code-mode",
+        "start_ticks": "4928150"
+      },
+      {
+        "pid": 207528,
+        "ppid": 181308,
+        "state": "Ss",
+        "comm": "codex-linux-san",
+        "start_ticks": "6454688"
+      },
+      {
+        "pid": 207533,
+        "ppid": 207532,
+        "state": "Ss",
+        "comm": "codex",
+        "start_ticks": "6454696"
+      },
+      {
+        "pid": 207550,
+        "ppid": 207534,
+        "state": "R",
+        "comm": "graphify",
+        "start_ticks": "6454721"
+      }
+    ],
+    "runtime_processes_observed": false,
+    "source_fetch_session_24150": "terminal exit0",
+    "worktree_session_69891": "terminal exit0",
+    "graphify_session_19766": "terminal exit0, 2597 nodes/5000 edges/223 communities",
+    "REA": "target-free static export call terminal; no debugger or target execution started"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "source_base_commit": "894c0aae120cb701f90ebe1d45d829205bfa0473",
+  "observed_at": "2026-10-31T01:35:18.142939+00:00",
+  "input_inventory_two_independent_roots_identical": true,
+  "present_property_files": 3,
+  "declarations_by_file": [
+    101,
+    21,
+    58
+  ],
+  "present_context_files": 3,
+  "original_serializer_entries": 1384,
+  "metadata_bytes": 102112,
+  "metadata_sha256": "9d2012f1007d00631201c4a6d4888b07ba1cede60af2882096c382b13a9c2f4a",
+  "all_present_contexts_equal_previous_platform_only_output": true,
+  "two_generations_identical": true,
+  "root_local_absolute_symlink_test": "passed",
+  "symlink_escape_rejection": "passed",
+  "symlink_cycle_rejection": "passed",
+  "REA_MCP_evidence": "ev_a7cdf8629b2a1e6ce500c8f4e2fcc3b123492c12a7e75d070a3bd7eab6aee545",
+  "REA_scope": "Complete dynamic export inventory of original init ELF, not runtime execution; no PropertyInit/StartPropertyService/PropertyLoadBootDefaults exports among75/653examined",
+  "runtime_profile_generated": false,
+  "original_property_subsystem_executed": false,
+  "APK_stage_accepted": false,
+  "matrix_modified": false,
+  "next": "Build original target libinit with dedicated supervised entrypoint and explicit real callback/policy/persistence boundary; do not run second_stage or substitute property API. Confirm dependency/build feasibility before choosing narrower extraction.",
+  "graphify": {
+    "mode": "AST-only isolated milestone, pending sources excluded",
+    "nodes": 2597,
+    "edges": 5000,
+    "communities": 223,
+    "exit_code": 0
+  },
+  "local_links_checked": 141,
+  "broken_local_links": 0,
+  "original_metadata_reader_exit": 0
+}

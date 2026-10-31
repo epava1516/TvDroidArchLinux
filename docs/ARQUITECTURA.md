@@ -62,6 +62,28 @@ DEX/APK ni integración gráfica se ha demostrado en este hito.
 
 ## Propiedades y configuración · cierre en estudio
 
+El [inventario de entradas completas](../reports/android16-boot-profile/input-audit.json)
+verifica dos extracciones independientes: system101, system_ext21 y product58
+declaraciones; tres archivos de contextos presentes. El serializador original,
+con todos ellos, produce los mismos 102.112 bytes que plataforma sola. No faltan
+entradas de esos contextos en el metadato anterior; faltan carga/derivación y
+servicio. El auditor sólo inventaría, sin generar propiedades ejecutables.
+
+[Decisión de unidad](../reports/android16-boot-profile/unit-decision.json): evaluar
+un entrypoint Bionic supervisado por Linux enlazado con **libinit original completo**.
+La fuente declara libinit estático; REA MCP no encuentra exports de PropertyInit,
+StartPropertyService o PropertyLoadBootDefaults en init. No hay CLI exclusivo:
+no ejecutar second_stage ni inyectar direcciones privadas. El perfil declarativo
+que replique algoritmos queda descartado por ahora como implementación del runtime;
+la auditoría de procedencia sí se conserva. libinit_host y sus noop builtins no
+son un sustituto ejecutable del subsistema nativo.
+
+Es una puerta de construcción, no una integración aceptada: faltan cierre
+transitivo/build coherente, callbacks/control con el supervisor, persistencia y
+mediación efectiva. Conservar código de init al enlazar no obliga a ejecutar
+sus rutas de arranque; hay que demostrar qué se activa y medirlo. No se ha
+construido ni ejecutado esta unidad y no se declara compatibilidad APK.
+
 Se reutilizan las bibliotecas originales `libpropertyinfoserializer` y
 `libpropertyinfoparser` con soporte host declarado por AOSP, más sus utilidades
 originales de libbase. El [wrapper de herramienta](../tools/aosp/property_info_tool.cpp)

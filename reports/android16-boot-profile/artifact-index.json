@@ -1,0 +1,15 @@
+{
+  "source_base_commit": "894c0aae120cb701f90ebe1d45d829205bfa0473",
+  "scope": "Input inventory/build decision and metadata serialization; no original service or APK execution",
+  "artifacts": {
+    "reports/android16-boot-profile/checkpoint.json": "9a258ed60c058b8fffabb55b784d493af705293e40cf31fb25cb69496e494fcf",
+    "reports/android16-boot-profile/input-audit.json": "7c0f3204fc0dafa4507511e2c834ff469dc12618759fee2db1d2ac5dd94a3688",
+    "reports/android16-boot-profile/metadata-generation.json": "69fe671fab4770720a89dedd891c4eb233f120dc60553c9af227c951013ca844",
+    "reports/android16-boot-profile/metadata-reader.json": "a852578513133c536f49eac1196fc6a539479aac5d26d6670c5494e5cc49993d",
+    "reports/android16-boot-profile/rea-init-exports.json": "f74f2a9a9af733d853215fbbbb82a498bbe8ae6009b275591c3a712c33f5bc44",
+    "reports/android16-boot-profile/sources.json": "ba83231bc60c8c104d675ab92c3263e06b9b7f27bd0d46a92909f01fd9593422",
+    "reports/android16-boot-profile/unit-decision.json": "9b3780aabd4f06a5e417f1043dc8b4a0e1bb7e458602ab6d3ddbd61fed51aa11",
+    "reports/android16-boot-profile/validation.json": "4361345066dac35f76df3e7a6c39133112c1e78c81496ac6a893e5e6184ab8ea",
+    "tools/aosp/audit_boot_inputs.py": "50ba5b043b5cf40e6af26a03d962ffef071eca4e3b5feb0b65dccfcd040c5833"
+  }
+}

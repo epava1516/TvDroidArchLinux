@@ -1,0 +1,1060 @@
+{
+  "schema": 1,
+  "contract": "A16-QPR2-1",
+  "properties": [
+    {
+      "logical_path": "/second_stage_resources/system/etc/ramdisk/build.prop",
+      "physical_relative_path": "second_stage_resources/system/etc/ramdisk/build.prop",
+      "status": "absent"
+    },
+    {
+      "logical_path": "/system/build.prop",
+      "physical_relative_path": "system/build.prop",
+      "status": "present",
+      "sha256": "8190df2d4debcb3f2271543435ec49b9951acd59c5ba67dc7556f76fd30be1a0",
+      "bytes": 5006,
+      "entries": [
+        {
+          "name": "ro.product.system.brand",
+          "value": "Android",
+          "line": 5
+        },
+        {
+          "name": "ro.product.system.device",
+          "value": "generic",
+          "line": 6
+        },
+        {
+          "name": "ro.product.system.manufacturer",
+          "value": "Android",
+          "line": 7
+        },
+        {
+          "name": "ro.product.system.model",
+          "value": "mainline",
+          "line": 8
+        },
+        {
+          "name": "ro.product.system.name",
+          "value": "mainline",
+          "line": 9
+        },
+        {
+          "name": "ro.system.product.cpu.abilist",
+          "value": "x86_64,x86",
+          "line": 10
+        },
+        {
+          "name": "ro.system.product.cpu.abilist32",
+          "value": "x86",
+          "line": 11
+        },
+        {
+          "name": "ro.system.product.cpu.abilist64",
+          "value": "x86_64",
+          "line": 12
+        },
+        {
+          "name": "ro.system.build.date",
+          "value": "Fri Nov  7 12:38:20 UTC 2025",
+          "line": 13
+        },
+        {
+          "name": "ro.system.build.date.utc",
+          "value": "1762519100",
+          "line": 14
+        },
+        {
+          "name": "ro.system.build.fingerprint",
+          "value": "Android/aosp_x86_64/generic_x86_64:16/BP4A.251205.006/14401865:user/release-keys",
+          "line": 15
+        },
+        {
+          "name": "ro.system.build.id",
+          "value": "BP4A.251205.006",
+          "line": 16
+        },
+        {
+          "name": "ro.system.build.tags",
+          "value": "release-keys",
+          "line": 17
+        },
+        {
+          "name": "ro.system.build.type",
+          "value": "user",
+          "line": 18
+        },
+        {
+          "name": "ro.system.build.version.incremental",
+          "value": "14401865",
+          "line": 19
+        },
+        {
+          "name": "ro.system.build.version.release",
+          "value": "16",
+          "line": 20
+        },
+        {
+          "name": "ro.system.build.version.release_or_codename",
+          "value": "16",
+          "line": 21
+        },
+        {
+          "name": "ro.system.build.version.sdk",
+          "value": "36",
+          "line": 22
+        },
+        {
+          "name": "ro.system.build.version.sdk_full",
+          "value": "36.1",
+          "line": 23
+        },
+        {
+          "name": "ro.build.id",
+          "value": "BP4A.251205.006",
+          "line": 28
+        },
+        {
+          "name": "ro.build.display.id",
+          "value": "BP4A.251205.006",
+          "line": 29
+        },
+        {
+          "name": "ro.build.version.incremental",
+          "value": "14401865",
+          "line": 30
+        },
+        {
+          "name": "ro.build.version.sdk",
+          "value": "36",
+          "line": 31
+        },
+        {
+          "name": "ro.build.version.sdk_full",
+          "value": "36.1",
+          "line": 32
+        },
+        {
+          "name": "ro.build.version.preview_sdk",
+          "value": "0",
+          "line": 33
+        },
+        {
+          "name": "ro.build.version.preview_sdk_fingerprint",
+          "value": "REL",
+          "line": 34
+        },
+        {
+          "name": "ro.build.version.codename",
+          "value": "REL",
+          "line": 35
+        },
+        {
+          "name": "ro.build.version.all_codenames",
+          "value": "REL",
+          "line": 36
+        },
+        {
+          "name": "ro.build.version.known_codenames",
+          "value": "Base,Base11,Cupcake,Donut,Eclair,Eclair01,EclairMr1,Froyo,Gingerbread,GingerbreadMr1,Honeycomb,HoneycombMr1,HoneycombMr2,IceCreamSandwich,IceCreamSandwichMr1,JellyBean,JellyBeanMr1,JellyBeanMr2,Kitkat,KitkatWatch,Lollipop,LollipopMr1,M,N,NMr1,O,OMr1,P,Q,R,S,Sv2,Tiramisu,UpsideDownCake,VanillaIceCream,Baklava",
+          "line": 37
+        },
+        {
+          "name": "ro.build.version.release",
+          "value": "16",
+          "line": 38
+        },
+        {
+          "name": "ro.build.version.release_or_codename",
+          "value": "16",
+          "line": 39
+        },
+        {
+          "name": "ro.build.version.release_or_preview_display",
+          "value": "16",
+          "line": 40
+        },
+        {
+          "name": "ro.build.version.security_patch",
+          "value": "2025-12-05",
+          "line": 41
+        },
+        {
+          "name": "ro.build.version.base_os",
+          "value": "",
+          "line": 42
+        },
+        {
+          "name": "ro.build.version.min_supported_target_sdk",
+          "value": "28",
+          "line": 43
+        },
+        {
+          "name": "ro.build.date",
+          "value": "Fri Nov  7 12:38:20 UTC 2025",
+          "line": 44
+        },
+        {
+          "name": "ro.build.date.utc",
+          "value": "1762519100",
+          "line": 45
+        },
+        {
+          "name": "ro.build.type",
+          "value": "user",
+          "line": 46
+        },
+        {
+          "name": "ro.build.user",
+          "value": "android-build",
+          "line": 47
+        },
+        {
+          "name": "ro.build.host",
+          "value": "b48459a6324b",
+          "line": 48
+        },
+        {
+          "name": "ro.build.tags",
+          "value": "release-keys",
+          "line": 49
+        },
+        {
+          "name": "ro.build.flavor",
+          "value": "mainline-user",
+          "line": 50
+        },
+        {
+          "name": "ro.product.cpu.abi",
+          "value": "x86_64",
+          "line": 53
+        },
+        {
+          "name": "ro.product.locale",
+          "value": "en-US",
+          "line": 54
+        },
+        {
+          "name": "ro.wifi.channels",
+          "value": "",
+          "line": 55
+        },
+        {
+          "name": "ro.build.description",
+          "value": "mainline-user 16 BP4A.251205.006 14401865 release-keys",
+          "line": 57
+        },
+        {
+          "name": "ro.treble.enabled",
+          "value": "true",
+          "line": 62
+        },
+        {
+          "name": "ro.llndk.api_level",
+          "value": "202504",
+          "line": 63
+        },
+        {
+          "name": "ro.actionable_compatible_property.enabled",
+          "value": "true",
+          "line": 64
+        },
+        {
+          "name": "ro.postinstall.fstab.prefix",
+          "value": "/system",
+          "line": 65
+        },
+        {
+          "name": "ro.secure",
+          "value": "1",
+          "line": 66
+        },
+        {
+          "name": "security.perf_harden",
+          "value": "1",
+          "line": 67
+        },
+        {
+          "name": "ro.adb.secure",
+          "value": "1",
+          "line": 68
+        },
+        {
+          "name": "ro.allow.mock.location",
+          "value": "0",
+          "line": 69
+        },
+        {
+          "name": "ro.debuggable",
+          "value": "0",
+          "line": 70
+        },
+        {
+          "name": "net.bt.name",
+          "value": "Android",
+          "line": 71
+        },
+        {
+          "name": "ro.force.debuggable",
+          "value": "0",
+          "line": 72
+        },
+        {
+          "name": "debug.atrace.tags.enableflags",
+          "value": "0",
+          "line": 76
+        },
+        {
+          "name": "persist.traced.enable",
+          "value": "1",
+          "line": 77
+        },
+        {
+          "name": "ro.surface_flinger.game_default_frame_rate_override",
+          "value": "60",
+          "line": 78
+        },
+        {
+          "name": "dalvik.vm.image-dex2oat-Xms",
+          "value": "64m",
+          "line": 79
+        },
+        {
+          "name": "dalvik.vm.image-dex2oat-Xmx",
+          "value": "64m",
+          "line": 80
+        },
+        {
+          "name": "dalvik.vm.dex2oat-Xms",
+          "value": "64m",
+          "line": 81
+        },
+        {
+          "name": "dalvik.vm.dex2oat-Xmx",
+          "value": "512m",
+          "line": 82
+        },
+        {
+          "name": "dalvik.vm.usejit",
+          "value": "true",
+          "line": 83
+        },
+        {
+          "name": "dalvik.vm.dexopt.secondary",
+          "value": "true",
+          "line": 84
+        },
+        {
+          "name": "dalvik.vm.dexopt.thermal-cutoff",
+          "value": "2",
+          "line": 85
+        },
+        {
+          "name": "dalvik.vm.appimageformat",
+          "value": "lz4",
+          "line": 86
+        },
+        {
+          "name": "ro.dalvik.vm.native.bridge",
+          "value": "0",
+          "line": 87
+        },
+        {
+          "name": "pm.dexopt.post-boot",
+          "value": "verify",
+          "line": 88
+        },
+        {
+          "name": "pm.dexopt.first-boot",
+          "value": "verify",
+          "line": 89
+        },
+        {
+          "name": "pm.dexopt.boot-after-ota",
+          "value": "verify",
+          "line": 90
+        },
+        {
+          "name": "pm.dexopt.boot-after-mainline-update",
+          "value": "verify",
+          "line": 91
+        },
+        {
+          "name": "pm.dexopt.install",
+          "value": "speed-profile",
+          "line": 92
+        },
+        {
+          "name": "pm.dexopt.install-fast",
+          "value": "skip",
+          "line": 93
+        },
+        {
+          "name": "pm.dexopt.install-bulk",
+          "value": "speed-profile",
+          "line": 94
+        },
+        {
+          "name": "pm.dexopt.install-bulk-secondary",
+          "value": "verify",
+          "line": 95
+        },
+        {
+          "name": "pm.dexopt.install-bulk-downgraded",
+          "value": "verify",
+          "line": 96
+        },
+        {
+          "name": "pm.dexopt.install-bulk-secondary-downgraded",
+          "value": "verify",
+          "line": 97
+        },
+        {
+          "name": "pm.dexopt.bg-dexopt",
+          "value": "speed-profile",
+          "line": 98
+        },
+        {
+          "name": "pm.dexopt.ab-ota",
+          "value": "speed-profile",
+          "line": 99
+        },
+        {
+          "name": "pm.dexopt.inactive",
+          "value": "verify",
+          "line": 100
+        },
+        {
+          "name": "pm.dexopt.cmdline",
+          "value": "verify",
+          "line": 101
+        },
+        {
+          "name": "pm.dexopt.shared",
+          "value": "speed",
+          "line": 102
+        },
+        {
+          "name": "dalvik.vm.dex2oat-resolve-startup-strings",
+          "value": "true",
+          "line": 103
+        },
+        {
+          "name": "dalvik.vm.dex2oat-max-image-block-size",
+          "value": "524288",
+          "line": 104
+        },
+        {
+          "name": "dalvik.vm.minidebuginfo",
+          "value": "true",
+          "line": 105
+        },
+        {
+          "name": "dalvik.vm.dex2oat-minidebuginfo",
+          "value": "true",
+          "line": 106
+        },
+        {
+          "name": "dalvik.vm.madvise.vdexfile.size",
+          "value": "104857600",
+          "line": 107
+        },
+        {
+          "name": "dalvik.vm.madvise.odexfile.size",
+          "value": "104857600",
+          "line": 108
+        },
+        {
+          "name": "dalvik.vm.usap_pool_enabled",
+          "value": "false",
+          "line": 109
+        },
+        {
+          "name": "dalvik.vm.usap_refill_threshold",
+          "value": "1",
+          "line": 110
+        },
+        {
+          "name": "dalvik.vm.usap_pool_size_max",
+          "value": "3",
+          "line": 111
+        },
+        {
+          "name": "dalvik.vm.usap_pool_size_min",
+          "value": "1",
+          "line": 112
+        },
+        {
+          "name": "dalvik.vm.usap_pool_refill_delay_ms",
+          "value": "3000",
+          "line": 113
+        },
+        {
+          "name": "dalvik.vm.useartservice",
+          "value": "true",
+          "line": 114
+        },
+        {
+          "name": "dalvik.vm.enable_pr_dexopt",
+          "value": "true",
+          "line": 115
+        },
+        {
+          "name": "ro.cp_system_other_odex",
+          "value": "1",
+          "line": 116
+        },
+        {
+          "name": "ro.apex.updatable",
+          "value": "true",
+          "line": 117
+        },
+        {
+          "name": "apexd.config.compressed_apex",
+          "value": "true",
+          "line": 118
+        },
+        {
+          "name": "ro.build.backported_fixes.alias_bitset.long_list",
+          "value": "18",
+          "line": 129
+        }
+      ],
+      "unsupported_syntax": [],
+      "parsing_scope": "Inventory only; original init parser/permissions/derivations not executed"
+    },
+    {
+      "logical_path": "/system_ext/etc/build.prop",
+      "physical_relative_path": "system/system_ext/etc/build.prop",
+      "status": "present",
+      "sha256": "f543835c4b9d5780ad36dcbb1482a6e68e42d8b0d42f4719293fa1a10c6ce520",
+      "bytes": 1604,
+      "entries": [
+        {
+          "name": "ro.product.system_ext.brand",
+          "value": "Android",
+          "line": 5
+        },
+        {
+          "name": "ro.product.system_ext.device",
+          "value": "generic_x86_64",
+          "line": 6
+        },
+        {
+          "name": "ro.product.system_ext.manufacturer",
+          "value": "unknown",
+          "line": 7
+        },
+        {
+          "name": "ro.product.system_ext.model",
+          "value": "AOSP on x86_64",
+          "line": 8
+        },
+        {
+          "name": "ro.product.system_ext.name",
+          "value": "aosp_x86_64",
+          "line": 9
+        },
+        {
+          "name": "ro.system_ext.build.date",
+          "value": "Fri Nov  7 12:38:20 UTC 2025",
+          "line": 10
+        },
+        {
+          "name": "ro.system_ext.build.date.utc",
+          "value": "1762519100",
+          "line": 11
+        },
+        {
+          "name": "ro.system_ext.build.fingerprint",
+          "value": "Android/aosp_x86_64/generic_x86_64:16/BP4A.251205.006/14401865:user/release-keys",
+          "line": 12
+        },
+        {
+          "name": "ro.system_ext.build.id",
+          "value": "BP4A.251205.006",
+          "line": 13
+        },
+        {
+          "name": "ro.system_ext.build.tags",
+          "value": "release-keys",
+          "line": 14
+        },
+        {
+          "name": "ro.system_ext.build.type",
+          "value": "user",
+          "line": 15
+        },
+        {
+          "name": "ro.system_ext.build.version.incremental",
+          "value": "14401865",
+          "line": 16
+        },
+        {
+          "name": "ro.system_ext.build.version.release",
+          "value": "16",
+          "line": 17
+        },
+        {
+          "name": "ro.system_ext.build.version.release_or_codename",
+          "value": "16",
+          "line": 18
+        },
+        {
+          "name": "ro.system_ext.build.version.sdk",
+          "value": "36",
+          "line": 19
+        },
+        {
+          "name": "ro.system_ext.build.version.sdk_full",
+          "value": "36.1",
+          "line": 20
+        },
+        {
+          "name": "ro.cp_system_other_odex",
+          "value": "0",
+          "line": 25
+        },
+        {
+          "name": "ro.nnapi.extensions.deny_on_product",
+          "value": "true",
+          "line": 27
+        },
+        {
+          "name": "persist.sys.disable_rescue",
+          "value": "true",
+          "line": 29
+        },
+        {
+          "name": "ro.control_privapp_permissions",
+          "value": "disable",
+          "line": 31
+        },
+        {
+          "name": "ro.config.isolated_compilation_enabled",
+          "value": "true",
+          "line": 35
+        }
+      ],
+      "unsupported_syntax": [],
+      "parsing_scope": "Inventory only; original init parser/permissions/derivations not executed"
+    },
+    {
+      "logical_path": "/system_ext/default.prop",
+      "physical_relative_path": "system/system_ext/default.prop",
+      "status": "absent"
+    },
+    {
+      "logical_path": "/system_ext/build.prop",
+      "physical_relative_path": "system/system_ext/build.prop",
+      "status": "absent"
+    },
+    {
+      "logical_path": "/system_dlkm/etc/build.prop",
+      "physical_relative_path": "system_dlkm/etc/build.prop",
+      "status": "absent"
+    },
+    {
+      "logical_path": "/vendor/default.prop",
+      "physical_relative_path": "vendor/default.prop",
+      "status": "absent"
+    },
+    {
+      "logical_path": "/vendor/build.prop",
+      "physical_relative_path": "vendor/build.prop",
+      "status": "absent"
+    },
+    {
+      "logical_path": "/vendor_dlkm/etc/build.prop",
+      "physical_relative_path": "vendor_dlkm/etc/build.prop",
+      "status": "absent"
+    },
+    {
+      "logical_path": "/odm_dlkm/etc/build.prop",
+      "physical_relative_path": "odm_dlkm/etc/build.prop",
+      "status": "absent"
+    },
+    {
+      "logical_path": "/odm/etc/build.prop",
+      "physical_relative_path": "odm/etc/build.prop",
+      "status": "absent"
+    },
+    {
+      "logical_path": "/odm/default.prop",
+      "physical_relative_path": "odm/default.prop",
+      "status": "absent"
+    },
+    {
+      "logical_path": "/odm/build.prop",
+      "physical_relative_path": "odm/build.prop",
+      "status": "absent"
+    },
+    {
+      "logical_path": "/product/etc/build.prop",
+      "physical_relative_path": "system/product/etc/build.prop",
+      "status": "present",
+      "sha256": "693313b2cb99430d387e2abb6f3be8ca921eb993c0caa05dbed1691351482a1b",
+      "bytes": 3306,
+      "entries": [
+        {
+          "name": "ro.product.product.brand",
+          "value": "Android",
+          "line": 5
+        },
+        {
+          "name": "ro.product.product.device",
+          "value": "generic_x86_64",
+          "line": 6
+        },
+        {
+          "name": "ro.product.product.manufacturer",
+          "value": "unknown",
+          "line": 7
+        },
+        {
+          "name": "ro.product.product.model",
+          "value": "AOSP on x86_64",
+          "line": 8
+        },
+        {
+          "name": "ro.product.product.name",
+          "value": "aosp_x86_64",
+          "line": 9
+        },
+        {
+          "name": "ro.product.build.date",
+          "value": "Fri Nov  7 12:38:20 UTC 2025",
+          "line": 10
+        },
+        {
+          "name": "ro.product.build.date.utc",
+          "value": "1762519100",
+          "line": 11
+        },
+        {
+          "name": "ro.product.build.fingerprint",
+          "value": "Android/aosp_x86_64/generic_x86_64:16/BP4A.251205.006/14401865:user/release-keys",
+          "line": 12
+        },
+        {
+          "name": "ro.product.build.id",
+          "value": "BP4A.251205.006",
+          "line": 13
+        },
+        {
+          "name": "ro.product.build.tags",
+          "value": "release-keys",
+          "line": 14
+        },
+        {
+          "name": "ro.product.build.type",
+          "value": "user",
+          "line": 15
+        },
+        {
+          "name": "ro.product.build.version.incremental",
+          "value": "14401865",
+          "line": 16
+        },
+        {
+          "name": "ro.product.build.version.release",
+          "value": "16",
+          "line": 17
+        },
+        {
+          "name": "ro.product.build.version.release_or_codename",
+          "value": "16",
+          "line": 18
+        },
+        {
+          "name": "ro.product.build.version.sdk",
+          "value": "36",
+          "line": 19
+        },
+        {
+          "name": "ro.product.build.version.sdk_full",
+          "value": "36.1",
+          "line": 20
+        },
+        {
+          "name": "ro.build.id",
+          "value": "BP4A.251205.006",
+          "line": 25
+        },
+        {
+          "name": "ro.build.display.id",
+          "value": "BP4A.251205.006",
+          "line": 26
+        },
+        {
+          "name": "ro.build.version.incremental",
+          "value": "14401865",
+          "line": 27
+        },
+        {
+          "name": "ro.build.version.sdk",
+          "value": "36",
+          "line": 28
+        },
+        {
+          "name": "ro.build.version.sdk_full",
+          "value": "36.1",
+          "line": 29
+        },
+        {
+          "name": "ro.build.version.preview_sdk",
+          "value": "0",
+          "line": 30
+        },
+        {
+          "name": "ro.build.version.preview_sdk_fingerprint",
+          "value": "REL",
+          "line": 31
+        },
+        {
+          "name": "ro.build.version.codename",
+          "value": "REL",
+          "line": 32
+        },
+        {
+          "name": "ro.build.version.all_codenames",
+          "value": "REL",
+          "line": 33
+        },
+        {
+          "name": "ro.build.version.known_codenames",
+          "value": "Base,Base11,Cupcake,Donut,Eclair,Eclair01,EclairMr1,Froyo,Gingerbread,GingerbreadMr1,Honeycomb,HoneycombMr1,HoneycombMr2,IceCreamSandwich,IceCreamSandwichMr1,JellyBean,JellyBeanMr1,JellyBeanMr2,Kitkat,KitkatWatch,Lollipop,LollipopMr1,M,N,NMr1,O,OMr1,P,Q,R,S,Sv2,Tiramisu,UpsideDownCake,VanillaIceCream,Baklava",
+          "line": 34
+        },
+        {
+          "name": "ro.build.version.release",
+          "value": "16",
+          "line": 35
+        },
+        {
+          "name": "ro.build.version.release_or_codename",
+          "value": "16",
+          "line": 36
+        },
+        {
+          "name": "ro.build.version.release_or_preview_display",
+          "value": "16",
+          "line": 37
+        },
+        {
+          "name": "ro.build.version.security_patch",
+          "value": "2025-12-05",
+          "line": 38
+        },
+        {
+          "name": "ro.build.version.base_os",
+          "value": "",
+          "line": 39
+        },
+        {
+          "name": "ro.build.version.min_supported_target_sdk",
+          "value": "28",
+          "line": 40
+        },
+        {
+          "name": "ro.build.date",
+          "value": "Fri Nov  7 12:38:20 UTC 2025",
+          "line": 41
+        },
+        {
+          "name": "ro.build.date.utc",
+          "value": "1762519100",
+          "line": 42
+        },
+        {
+          "name": "ro.build.type",
+          "value": "user",
+          "line": 43
+        },
+        {
+          "name": "ro.build.user",
+          "value": "android-build",
+          "line": 44
+        },
+        {
+          "name": "ro.build.host",
+          "value": "b48459a6324b",
+          "line": 45
+        },
+        {
+          "name": "ro.build.tags",
+          "value": "release-keys",
+          "line": 46
+        },
+        {
+          "name": "ro.build.flavor",
+          "value": "aosp_x86_64-user",
+          "line": 47
+        },
+        {
+          "name": "ro.product.cpu.abi",
+          "value": "x86_64",
+          "line": 50
+        },
+        {
+          "name": "ro.product.locale",
+          "value": "en-US",
+          "line": 51
+        },
+        {
+          "name": "ro.wifi.channels",
+          "value": "",
+          "line": 52
+        },
+        {
+          "name": "ro.build.description",
+          "value": "aosp_x86_64-user 16 BP4A.251205.006 14401865 release-keys",
+          "line": 54
+        },
+        {
+          "name": "ro.product.build.16k_page.enabled",
+          "value": "false",
+          "line": 59
+        },
+        {
+          "name": "ro.product.page_size",
+          "value": "4096",
+          "line": 60
+        },
+        {
+          "name": "ro.build.characteristics",
+          "value": "default",
+          "line": 61
+        },
+        {
+          "name": "ro.product.ab_ota_partitions",
+          "value": "system",
+          "line": 62
+        },
+        {
+          "name": "ro.product.cpu.pagesize.max",
+          "value": "16384",
+          "line": 63
+        },
+        {
+          "name": "ro.product.build.no_bionic_page_size_macro",
+          "value": "true",
+          "line": 64
+        },
+        {
+          "name": "ro.dalvik.vm.enable_uffd_gc",
+          "value": "true",
+          "line": 66
+        },
+        {
+          "name": "persist.wm.extensions.enabled",
+          "value": "true",
+          "line": 70
+        },
+        {
+          "name": "traced.relay_producer_port",
+          "value": "vsock://-1:2010",
+          "line": 71
+        },
+        {
+          "name": "ro.config.ringtone",
+          "value": "Ring_Synth_04.ogg",
+          "line": 72
+        },
+        {
+          "name": "ro.config.notification_sound",
+          "value": "pixiedust.ogg",
+          "line": 73
+        },
+        {
+          "name": "ro.com.android.dataroaming",
+          "value": "true",
+          "line": 74
+        },
+        {
+          "name": "ro.crypto.metadata_init_delete_all_keys.enabled",
+          "value": "false",
+          "line": 75
+        },
+        {
+          "name": "debug.codec2.bqpool_dealloc_after_stop",
+          "value": "1",
+          "line": 76
+        },
+        {
+          "name": "persist.wm.extensions.activity_embedding_guard_with_android_15",
+          "value": "false",
+          "line": 77
+        }
+      ],
+      "unsupported_syntax": [],
+      "parsing_scope": "Inventory only; original init parser/permissions/derivations not executed"
+    },
+    {
+      "logical_path": "/product/default.prop",
+      "physical_relative_path": "system/product/default.prop",
+      "status": "absent"
+    },
+    {
+      "logical_path": "/product/build.prop",
+      "physical_relative_path": "system/product/build.prop",
+      "status": "absent"
+    },
+    {
+      "logical_path": "/debug_ramdisk/props.debug",
+      "physical_relative_path": "debug_ramdisk/props.debug",
+      "status": "absent"
+    },
+    {
+      "logical_path": "/system/etc/ramdisk/build.prop",
+      "physical_relative_path": "system/etc/ramdisk/build.prop",
+      "status": "absent"
+    },
+    {
+      "logical_path": "/prop.default",
+      "physical_relative_path": "prop.default",
+      "status": "absent"
+    }
+  ],
+  "contexts": [
+    {
+      "logical_path": "/system/etc/selinux/plat_property_contexts",
+      "physical_relative_path": "system/etc/selinux/plat_property_contexts",
+      "status": "present",
+      "sha256": "43954f454c147665682b12be0b3a7ea298ab676f7640f689af46791532fd8a6c",
+      "bytes": 124114
+    },
+    {
+      "logical_path": "/system_ext/etc/selinux/system_ext_property_contexts",
+      "physical_relative_path": "system/system_ext/etc/selinux/system_ext_property_contexts",
+      "status": "present",
+      "sha256": "3c4f77aaf19aa6e894a5dad4029c5ba6815111f5739568ac294989984cd6e94c",
+      "bytes": 934
+    },
+    {
+      "logical_path": "/vendor/etc/selinux/vendor_property_contexts",
+      "physical_relative_path": "vendor/etc/selinux/vendor_property_contexts",
+      "status": "absent"
+    },
+    {
+      "logical_path": "/product/etc/selinux/product_property_contexts",
+      "physical_relative_path": "system/product/etc/selinux/product_property_contexts",
+      "status": "present",
+      "sha256": "b88b42e155cc053d4ef0c6b9fe7c0031f2cbc7b583a9ca3bc64e20f63e5c8678",
+      "bytes": 931
+    },
+    {
+      "logical_path": "/odm/etc/selinux/odm_property_contexts",
+      "physical_relative_path": "odm/etc/selinux/odm_property_contexts",
+      "status": "absent"
+    }
+  ],
+  "runtime_properties_generated": false,
+  "original_init_executed": false,
+  "limitations": [
+    "Inventory, not loader equivalence or effective property values",
+    "No kernel/DT/bootconfig imports, derived defaults or live service",
+    "No ABI/API/ISA capability or security/certification acceptance",
+    "No signature or component source/binary equivalence validation"
+  ]
+}

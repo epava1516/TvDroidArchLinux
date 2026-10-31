@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-framework-entry/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-boot-profile/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -42,11 +42,13 @@ archivos nuevos y scripts de estudio. Los logs ajenos H9 permanecen intactos.
 El checkpoint registra procesos/handles y resultados; no hay ART/bwrap/build activo
 observado tras las pruebas A16. No restaurar parches sin contrastar Git.
 
-Siguiente unidad: configuración completa del producto/boot Linux, con fuentes
-de propiedades y contextos de todas las particiones presentes, derivaciones
-originales, decisiones propias explícitas y campos desconocidos. Comparar reutilizar
-la unidad original con generar un perfil declarativo Linux; no añadir sólo la
-propiedad que permita superar el siguiente guard.
+Siguiente unidad: construir/evaluar libinit original completo con un entrypoint
+Bionic supervisado por Linux, sin activar second_stage. El inventario de todas
+las entradas presentes y su clausura directa de build está en
+[la decisión](../reports/android16-boot-profile/unit-decision.json). Faltan
+dependencias transitivas, callbacks/control reales, persistencia y mediación;
+no añadir sólo la propiedad que permita superar el siguiente guard ni duplicar
+las derivaciones originales en un mapa propio. No hay nuevo perfil ejecutable.
 
 app_process original termina 0 sin readiness: fuente y diagnóstico muestran
 retorno temprano de startVm por ro.product.cpu.abilist64 ausente, antes de crear

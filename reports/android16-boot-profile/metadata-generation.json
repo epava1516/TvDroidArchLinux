@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "/home/tv/repositorio-principal/dist/aosp16/property-info-host-1/property-info",
+    "/home/tv/repositorio-principal/dist/aosp16/boot-profile-1/property_info",
+    "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/etc/selinux/plat_property_contexts",
+    "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/system_ext/etc/selinux/system_ext_property_contexts",
+    "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/product/etc/selinux/product_property_contexts"
+  ],
+  "exit_code": 0,
+  "stdout": "entries=1384 bytes=102112\n",
+  "stderr": ""
+}

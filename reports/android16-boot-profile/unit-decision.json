@@ -1,0 +1,118 @@
+{
+  "decision_status": "provisional, source/binary feasibility established only; no executable subsystem built",
+  "chosen_experiment": "Native Bionic supervised entrypoint linked to original whole libinit; begin bounded PropertyInit bootstrap, then retain service semantics with explicit Linux supervisor boundary. Preserve original internal code unless demonstrated integration need. Do not launch original init dispatcher/second_stage.",
+  "alternatives": [
+    {
+      "name": "original init executable",
+      "observation": "main.cpp dispatches first stage, second_stage, SELinux, subcontext or ueventd; no property-only entry. REA full ELF dynamic inventory has no property subsystem entry exports. libinit is static in original Soong build.",
+      "decision": "No supported direct standalone property executable observed; do not infer impossible reuse of source or use private address injection."
+    },
+    {
+      "name": "declarative Linux profile replacing boot loader",
+      "observation": "Would duplicate file order, import and partition legacy SDK conditions, caller checks, derived product/fingerprint/ABI/vendor API/USB, kernel exports, metadata and updates. A plain map would miss service behavior.",
+      "decision": "Not selected as runtime implementation. Audit/provenance tooling only; revisit with evidence if original unit integration fails."
+    },
+    {
+      "name": "whole libinit supervised entrypoint",
+      "observation": "Source exposes PropertyInit and StartPropertyService in private C++ header. Whole libinit brings broader init code at build/link time; retained runtime closure not measured. Callbacks and control messages couple it to supervisor.",
+      "decision": "Next source build experiment; not accepted or assumed lightweight/independent."
+    }
+  ],
+  "original_units": [
+    {
+      "unit": "boot configuration",
+      "entry": "PropertyInit -> CreateSerializedPropertyInfo / Bionic area / DT, bootconfig, cmdline / kernel exports / PropertyLoadBootDefaults / PropertyLoadDerivedDefaults",
+      "pending": "Second-stage/ramdisk artifact absent; Linux hardware, page size, ABI capabilities and boot provenance need explicit decisions, no Android verified boot/certification claim."
+    },
+    {
+      "unit": "service protocol and caller policy",
+      "entry": "StartPropertyService -> original two sockets/threads, credential and SELinux permission/type checks",
+      "pending": "Current host SELinux inactive. Enforcement gap remains, no permissive fake replacement or apps sharing supervisor privilege."
+    },
+    {
+      "unit": "callbacks/control",
+      "entry": "NotifyPropertyChange -> PropertyChanged; ctl.* -> QueueControlMessage; init socket InitMessage",
+      "pending": "Actual Linux-supervised control/action semantics and errors, not empty callback or success."
+    },
+    {
+      "unit": "persistence",
+      "entry": "LoadPersistentProperties / WritePersistentProperty / PersistWriteThread",
+      "pending": "Protocol timing, durable storage, async response and recovery must be executed/tested."
+    }
+  ],
+  "configuration_classification": {
+    "original_artifact_inputs": "Three prop files and three context files inventoried and hashed. Entries are raw declarations, not effective runtime properties or claimed capabilities.",
+    "source_derived": "Original algorithms located for product identity, fingerprint, ABI, vendor API and USB; none reimplemented or emitted here.",
+    "Linux_owned": "Supervisor-controlled startup/devices and kernel/page size/resource budgets; explicit values and tests still pending.",
+    "unknown_or_external": "Vendor/ODM/ramdisk props, Android DT/bootconfig, vendor API support, hardware secure state, service policy and 32-bit/ARM execution. Do not invent defaults as compatibility proof."
+  },
+  "build_closure": {
+    "source": "init/Android.bp at e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+    "module": "cc_library_static libinit -> libinit_defaults -> init_defaults",
+    "source_sets": [
+      "init_common_sources",
+      "init_device_sources"
+    ],
+    "generated": [
+      "apex-info-list",
+      "property_service.proto",
+      "persistent_properties.proto",
+      "subcontext.proto",
+      "selinux_policy_version"
+    ],
+    "whole_static": [
+      "libcap"
+    ],
+    "static_defaults": [
+      "libapexd_flags",
+      "libavb",
+      "libavf_cc_flags",
+      "libbootloader_message",
+      "liblmkd_utils",
+      "liblz4",
+      "libzstd",
+      "libmodprobe",
+      "libprocinfo",
+      "libprotobuf-cpp-lite",
+      "libpropertyinfoserializer",
+      "libpropertyinfoparser",
+      "libsnapshot_cow",
+      "libsnapshot_init",
+      "libxml2",
+      "update_metadata-protos",
+      "libgenfslabelsversion.ffi",
+      "libueventd_flags"
+    ],
+    "shared_defaults": [
+      "libbase",
+      "libcutils",
+      "libdl",
+      "libext4_utils",
+      "libfs_mgr",
+      "libgsi",
+      "liblog",
+      "liblogwrap",
+      "liblp",
+      "libprocessgroup",
+      "libprocessgroup_setup",
+      "libselinux",
+      "libunwindstack",
+      "libutils",
+      "libvendorsupport"
+    ],
+    "scope": "Direct source declaration inventory only; includes flags/selects/generated build variants and transitive dependencies not yet closed. libinit_host excludes device sources and uses noop builtins; not an execution substitute."
+  },
+  "acceptance": [
+    "Reproducible target-only coherent build, original source pin and deviations recorded",
+    "Original PropertyInit performs full configured bootstrap under Linux-owned supervisor, fields carry origin/derived/Linux/unknown provenance",
+    "Read-only unprivileged Bionic clients observe expected raw and derived values, no fabricated hardware/boot/security/ISA claims",
+    "Service tests check actual caller identity/permissions, readback, callbacks, persistence and truthful denial/error; SELinux or equivalent mediation demonstrated",
+    "Then repeat original framework startup using readiness evidence, not exit0; real Markor still needs packages/zygote/AMS/graphics/provider full workflow"
+  ],
+  "not_done": [
+    "No new runtime property emitted",
+    "No original libinit built/executed",
+    "No service/SELinux/CTS/APK acceptance",
+    "ARM,32-bit and API axes independent; no instruction translation from ABI property declarations"
+  ]
+}

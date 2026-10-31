@@ -1,0 +1,59 @@
+{
+  "init/Android.bp": {
+    "url": "https://android.googlesource.com/platform/system/core/+/e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1/init/Android.bp?format=TEXT",
+    "commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+    "sha256": "af76a828f1e528e8e9ea09dd1ecb12e3cddccbc00eabc2dc13227a64b2991074",
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/boot-profile-study/init__Android.bp"
+  },
+  "init/main.cpp": {
+    "url": "https://android.googlesource.com/platform/system/core/+/e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1/init/main.cpp?format=TEXT",
+    "commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+    "sha256": "46c7e672734760a1deb2223900fd1e378111ba94a00ba100f627a949b3d9add0",
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/boot-profile-study/init__main.cpp"
+  },
+  "init/property_service.h": {
+    "url": "https://android.googlesource.com/platform/system/core/+/e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1/init/property_service.h?format=TEXT",
+    "commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+    "sha256": "9e62e2edd068cbffa20544cf6570606f8e2cc0d0ec2c71fdc52a80623eabe5f7",
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/boot-profile-study/init__property_service.h"
+  },
+  "init/property_service.cpp": {
+    "url": "https://android.googlesource.com/platform/system/core/+/e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1/init/property_service.cpp?format=TEXT",
+    "commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+    "sha256": "ac68c4c4de5ef26366498d39d0945ba2ab06b022e24a7a157853b66a4b8a3b3c",
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/boot-profile-study/init__property_service.cpp"
+  },
+  "init/property_service_test.cpp": {
+    "url": "https://android.googlesource.com/platform/system/core/+/e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1/init/property_service_test.cpp?format=TEXT",
+    "commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+    "sha256": "b55fc2049dd36ef19b4dbc23e3ccf30920d159955502585dfe1c1ae0675bd033",
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/boot-profile-study/init__property_service_test.cpp"
+  },
+  "init/second_stage_resources.h": {
+    "url": "https://android.googlesource.com/platform/system/core/+/e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1/init/second_stage_resources.h?format=TEXT",
+    "commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+    "sha256": "ee1ed27621fce236af9b96f03a6a4c35c4f496646cc96aff93dd75313cdfa2ef",
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/boot-profile-study/init__second_stage_resources.h"
+  },
+  "init/second_stage_resources.cpp": {
+    "error": "HTTP Error 404: Not Found"
+  },
+  "init/property_service.proto": {
+    "url": "https://android.googlesource.com/platform/system/core/+/e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1/init/property_service.proto?format=TEXT",
+    "commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+    "sha256": "59c9b004ecf539270ccd3ec7dff12ebc33068ea7f32af7ad19ec30b282c14c17",
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/boot-profile-study/init__property_service.proto"
+  },
+  "init/persistent_properties.cpp": {
+    "url": "https://android.googlesource.com/platform/system/core/+/e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1/init/persistent_properties.cpp?format=TEXT",
+    "commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+    "sha256": "667cd4f7de005d29bd7ebee62a3926cc1bc02d2985cbc74b7ebc3528bfc18255",
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/boot-profile-study/init__persistent_properties.cpp"
+  },
+  "init/selinux.cpp": {
+    "url": "https://android.googlesource.com/platform/system/core/+/e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1/init/selinux.cpp?format=TEXT",
+    "commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+    "sha256": "1c729e6c6beaa028ac35d3144df2fe94499ac7e38b70ae731fddb080ac61f46b",
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/boot-profile-study/init__selinux.cpp"
+  }
+}
