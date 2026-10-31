@@ -1,0 +1,24 @@
+{
+  "status": "in_progress_source_build_not_renderer_execution",
+  "base_commit": "250aa0e",
+  "scope": "Whole original Bionic Vulkan renderer required before original SurfaceFlinger; no APK or SF acceptance by source or compile results.",
+  "source": "SwiftShader d70203d9df3c70c4fc63fb29325d24e9c12dc43f at android-16.0.0_r4; sparse Git checkout verified HEAD, original sources unmodified.",
+  "decision": "Use original Android.bp vulkan.pastel with LLVM16, Reactor, SPIRV-Tools/Headers, marl, astc and Android Hardware Buffer implementation. Preserve Android HAL HMI/export map and AHB path. CMake host/drop-in target is not interchangeable with the declared Android module.",
+  "evidence": [
+    "Original Android.bp target links libLLVM16_swiftshader and nativewindow/hardware/sync/log; compiles VkDeviceMemoryExternalAndroid.cpp.",
+    "Original VkGetProcAddress.cpp exports HMI for Android hardware loader.",
+    "Original SurfaceFlinger chooseRenderEngineType supports explicit skiavk; RenderEngine created before HWC. No SF executed yet.",
+    "GSI supplies ELF64 ANGLE/EGL/Vulkan loaders, no driver directory; loader/library presence does not establish executable renderer.",
+    "REA MCP inspected actual GSI libgui ELF:2598 exports; selected original createSurface/getPhysicalDisplayIds/getPhysicalDisplayToken exports present. Static only, no client executed.",
+    "NDK ASurfaceControl_create and createFromWindow require nonnull parents; use original privileged SurfaceComposerClient to establish top-level native integration, without pretending it is an Activity."
+  ],
+  "prebuilt_queries": "Two constructed public CI endpoints: HEAD404, GET501 UNIMPLEMENTED. These responses do not prove official binaries absent; no usable artifact obtained through those routes. Source build selected with pinned provenance instead of repeated speculative URLs.",
+  "build": "LLVM16 original Android x86_64 module1172units in session46162 (2workers,AS2GiB each) and remaining complete SwiftShader modules302units/six archives in session30461 (1worker,AS1GiB). Max compiler AS5GiB; actual root snapshot ~6GiB MemAvailable. Static link recipe prepared but not run; source/generation only. No ARM APK translation.",
+  "limits": [
+    "LLVM/static compilation is not an ICD or SF result.",
+    "No renderer binary, JIT/allocate/import/draw/fence or SurfaceFlinger execution accepted.",
+    "Prototype native flags recorded, not complete Soong/product equivalence.",
+    "ARM/GMS/DRM and broad APK matrix unchanged/open."
+  ],
+  "next": "Finish whole LLVM16 archive, build original remaining SwiftShader Android modules and strict-link vulkan.pastel.so. Inspect compiled ABI with REA MCP; test actual Vulkan device/AHB then original SurfaceFlinger and original native SurfaceComposerClient through existing HWC/Smithay. MAC/fences remain explicit open gates."
+}

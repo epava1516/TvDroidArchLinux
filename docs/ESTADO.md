@@ -1,5 +1,9 @@
 # Estado actual y punto de entrada
 
+## En curso · renderer Bionic para SurfaceFlinger
+
+[Checkpoint y handles reales](../reports/android16-software-renderer/checkpoint.json): compilación de módulos Android originales SwiftShader/LLVM16, fuentes y generadores verificados; [REA MCP de libgui](../reports/android16-software-renderer/libgui-selected-exports-mcp.json) estático. No renderer, SurfaceFlinger ni APK ejecutados por este trabajo. El último hito funcional sigue siendo250aa0e, abajo.
+
 ## Gráficos nativos originales · recorrido probado en permisivo
 
 [Hito funcional](../reports/android16-hwc3-wayland/findings.json): propiedades/gestores originales → minigbm allocatorV2/mapper → HWC3 original con backend Wayland → Rust/Smithay → DRM. [Todos los1.024.000 píxeles coinciden](../reports/android16-hwc3-wayland/pixel-validation.json); [captura](../reports/android16-hwc3-wayland/screen.png). Cliente/coordinador/cierre0; [sin procesos/unidades/loops,VT1](../reports/android16-hwc3-wayland/host-post-run.json). LTS, permisivo, policyload1 con política gráfica9f9afb63. No SurfaceFlinger, APK ni MAC/fences aceptados. [Checkpoint](../reports/android16-hwc3-wayland/checkpoint-in-progress.json). Siguiente: SurfaceFlinger y renderer Bionic coherente sobre este camino; después display/PMS/AMS/zygote y Markor completo.
@@ -848,7 +852,7 @@ conservando la prohibición de introducir VM o reiniciar.
 
 ## R3: SurfaceFlinger original estudiado
 
-[Contrato gráfico](../reports/android16-surfaceflinger-contract/validation.json): Composer real y hotplug inicial obligatorios por fuentes;48 dependencias directas presentes sólo estáticamente. Ningún SF/HAL/puente ejecutado. R1-MAC conserva el fallo SID probado.
+[Contrato gráfico](../reports/android16-surfaceflinger-contract/validation.json): Composer real y hotplug inicial obligatorios por fuentes;48 dependencias directas presentes sólo estáticamente. Ningún SF/HAL/puente ejecutado. En ese hito constaba el fallo SID histórico; el transporte se superó después. El estado vigente está al inicio.
 
 ## R3: rutas de reutilización
 

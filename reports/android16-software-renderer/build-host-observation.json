@@ -1,0 +1,40 @@
+{
+  "utc": "2026-10-31T22:14:20.228832+00:00",
+  "processes": [
+    {
+      "host_pid": 8044,
+      "host_parent_pid": 8006,
+      "rss_kib": 10628,
+      "comm": "ninja"
+    },
+    {
+      "host_pid": 8756,
+      "host_parent_pid": 8720,
+      "rss_kib": 6524,
+      "comm": "ninja"
+    },
+    {
+      "host_pid": 9207,
+      "host_parent_pid": 8044,
+      "rss_kib": 172884,
+      "comm": "clang-21"
+    },
+    {
+      "host_pid": 9213,
+      "host_parent_pid": 8044,
+      "rss_kib": 77584,
+      "comm": "clang-21"
+    },
+    {
+      "host_pid": 9215,
+      "host_parent_pid": 8756,
+      "rss_kib": 36040,
+      "comm": "clang-21"
+    }
+  ],
+  "memory": {
+    "MemTotal": "8105332 kB",
+    "MemAvailable": "6004808 kB"
+  },
+  "scope": "Read-only root observation of current compiler jobs; PID samples are historical after exit/reboot, not reusable handles."
+}

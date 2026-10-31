@@ -1,0 +1,171 @@
+{
+  "evidence_id": "ev_a5571568524004ba90a1c2de5ef09440714821e6ce84c3f8f5977b4e9433facc",
+  "subject": {
+    "name": "libgui.so",
+    "digest": {
+      "sha256": "1ca3e8e4bb08769e8e5e0a0db793ae838a59da4180e9963b6c6a4be25f23ccdd"
+    },
+    "local_path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libgui.so",
+    "format": "elf",
+    "architecture": null
+  },
+  "provider": {
+    "id": "rea-analysis-view",
+    "name": "REA analysis view projection",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.analysis-view",
+  "operation": "inspect_analysis_view",
+  "parameters": {
+    "parent_evidence_id": "ev_ff0dc3f2f4ec25073e047eb64ed9cc99ff73ea2ba935180827bb875c934c90c0",
+    "view": {
+      "kind": "native-exports",
+      "offset": 0,
+      "limit": 16,
+      "collection": "exports",
+      "names": [
+        "_ZN7android21SurfaceComposerClient20createSurfaceCheckedERKNS_7String8EjjiPNS_2spINS_14SurfaceControlEEEiRKNS4_INS_7IBinderEEENS_3gui13LayerMetadataEPj",
+        "_ZN7android21SurfaceComposerClient13createSurfaceERKNS_7String8EjjiiRKNS_2spINS_7IBinderEEENS_3gui13LayerMetadataEPj",
+        "_ZN7android3gui23BpSurfaceComposerClient13createSurfaceERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEiRKNS_2spINS_7IBinderEEERKNS0_13LayerMetadataEPNS0_19CreateSurfaceResultE",
+        "_ZN7android21SurfaceComposerClient21getPhysicalDisplayIdsEv",
+        "_ZN7android21SurfaceComposerClient23getPhysicalDisplayTokenENS_17PhysicalDisplayIdE"
+      ],
+      "fields": [
+        "name",
+        "type",
+        "binding",
+        "version"
+      ]
+    }
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "parent_evidence_id": "ev_ff0dc3f2f4ec25073e047eb64ed9cc99ff73ea2ba935180827bb875c934c90c0",
+    "parent_operation": "inspect_native_exports",
+    "parent_digest": "ff0dc3f2f4ec25073e047eb64ed9cc99ff73ea2ba935180827bb875c934c90c0",
+    "view_digest": "41fd85e3a7d32f85f5e4c0c83e06d08110ca3f223c722515a2a082d25362b3fe",
+    "artifact": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libgui.so",
+      "sha256": "1ca3e8e4bb08769e8e5e0a0db793ae838a59da4180e9963b6c6a4be25f23ccdd"
+    },
+    "coverage": {
+      "status": "page",
+      "examined": 5,
+      "total": 5,
+      "next_offset": null,
+      "exhausted": true
+    },
+    "limitations": [
+      "A hidden symbol version is not the default version that a by-name dlsym lookup selects.",
+      "Rows list defined default- or protected-visibility global, weak and unique dynamic symbols; local, hidden, internal and undefined symbols are not exports.",
+      "Rows reproduce the dynamic symbol table; they do not establish that a symbol is reachable, safe to call or loaded at runtime."
+    ],
+    "unknowns": [],
+    "kind": "native-exports",
+    "view": {
+      "kind": "native-exports",
+      "offset": 0,
+      "limit": 16,
+      "collection": "exports",
+      "names": [
+        "_ZN7android21SurfaceComposerClient20createSurfaceCheckedERKNS_7String8EjjiPNS_2spINS_14SurfaceControlEEEiRKNS4_INS_7IBinderEEENS_3gui13LayerMetadataEPj",
+        "_ZN7android21SurfaceComposerClient13createSurfaceERKNS_7String8EjjiiRKNS_2spINS_7IBinderEEENS_3gui13LayerMetadataEPj",
+        "_ZN7android3gui23BpSurfaceComposerClient13createSurfaceERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEiRKNS_2spINS_7IBinderEEERKNS0_13LayerMetadataEPNS0_19CreateSurfaceResultE",
+        "_ZN7android21SurfaceComposerClient21getPhysicalDisplayIdsEv",
+        "_ZN7android21SurfaceComposerClient23getPhysicalDisplayTokenENS_17PhysicalDisplayIdE"
+      ],
+      "fields": [
+        "name",
+        "type",
+        "binding",
+        "version"
+      ]
+    },
+    "exports": {
+      "artifact": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libgui.so",
+        "sha256": "1ca3e8e4bb08769e8e5e0a0db793ae838a59da4180e9963b6c6a4be25f23ccdd",
+        "bytes": 1827392
+      },
+      "format": "elf",
+      "architecture": "amd64",
+      "bits": 64,
+      "byte_order": "little",
+      "coverage": {
+        "status": "complete",
+        "reason": null,
+        "examined_entries": 3165,
+        "exports": 2598
+      },
+      "export_count": 2598,
+      "issue_count": 0,
+      "limitation_count": 3
+    },
+    "items": [
+      {
+        "name": "_ZN7android21SurfaceComposerClient20createSurfaceCheckedERKNS_7String8EjjiPNS_2spINS_14SurfaceControlEEEiRKNS4_INS_7IBinderEEENS_3gui13LayerMetadataEPj",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "type": "function",
+        "binding": "global",
+        "version": null,
+        "source_index": 535
+      },
+      {
+        "name": "_ZN7android21SurfaceComposerClient13createSurfaceERKNS_7String8EjjiiRKNS_2spINS_7IBinderEEENS_3gui13LayerMetadataEPj",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "type": "function",
+        "binding": "global",
+        "version": null,
+        "source_index": 1062
+      },
+      {
+        "name": "_ZN7android3gui23BpSurfaceComposerClient13createSurfaceERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEiRKNS_2spINS_7IBinderEEERKNS0_13LayerMetadataEPNS0_19CreateSurfaceResultE",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "type": "function",
+        "binding": "global",
+        "version": null,
+        "source_index": 1648
+      },
+      {
+        "name": "_ZN7android21SurfaceComposerClient21getPhysicalDisplayIdsEv",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "type": "function",
+        "binding": "global",
+        "version": null,
+        "source_index": 1765
+      },
+      {
+        "name": "_ZN7android21SurfaceComposerClient23getPhysicalDisplayTokenENS_17PhysicalDisplayIdE",
+        "name_bytes_base64": null,
+        "name_utf8_decodable": true,
+        "type": "function",
+        "binding": "global",
+        "version": null,
+        "source_index": 2298
+      }
+    ]
+  },
+  "confidence": "derived",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "A hidden symbol version is not the default version that a by-name dlsym lookup selects.",
+    "Rows list defined default- or protected-visibility global, weak and unique dynamic symbols; local, hidden, internal and undefined symbols are not exports.",
+    "Rows reproduce the dynamic symbol table; they do not establish that a symbol is reachable, safe to call or loaded at runtime."
+  ],
+  "relationship_coverage": null,
+  "locations": [
+    {
+      "kind": "artifact-path",
+      "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libgui.so"
+    }
+  ],
+  "evidence_links": [
+    "ev_ff0dc3f2f4ec25073e047eb64ed9cc99ff73ea2ba935180827bb875c934c90c0"
+  ]
+}

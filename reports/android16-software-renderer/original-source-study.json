@@ -1,0 +1,79 @@
+[
+  {
+    "project": "platform/external/swiftshader",
+    "revision": "d70203d9df3c70c4fc63fb29325d24e9c12dc43f",
+    "file": "Android.bp",
+    "blob": "99be594831ab2f09b2396004effbb450464c1c16",
+    "sha256": "6413c986f1be8a05d32b4834ec59ecbe3cd53ca10d102993909e502daa5c15c6"
+  },
+  {
+    "project": "platform/external/swiftshader",
+    "revision": "d70203d9df3c70c4fc63fb29325d24e9c12dc43f",
+    "file": "CMakeLists.txt",
+    "blob": "35003b46087698e9e034ea2fbf633b20af1a389a",
+    "sha256": "cb2ff83aac3d6dd62c1549ab9be6034131fd1761b93f73fe1906617ce5e1595e"
+  },
+  {
+    "project": "platform/external/swiftshader",
+    "revision": "d70203d9df3c70c4fc63fb29325d24e9c12dc43f",
+    "file": "src/Vulkan/Android.bp",
+    "status": "not_found",
+    "detail": ""
+  },
+  {
+    "project": "platform/external/swiftshader",
+    "revision": "d70203d9df3c70c4fc63fb29325d24e9c12dc43f",
+    "file": "src/Reactor/Android.bp",
+    "status": "not_found",
+    "detail": ""
+  },
+  {
+    "project": "platform/external/swiftshader",
+    "revision": "d70203d9df3c70c4fc63fb29325d24e9c12dc43f",
+    "file": "src/Reactor/CMakeLists.txt",
+    "blob": "3e301a174a6ded09346144a56fb7f896d7deec9e",
+    "sha256": "058430a17ab7f50d13d5fa1f41d16bc0f217fa8b7952b5e127ff86208452bd64"
+  },
+  {
+    "project": "device/google/cuttlefish",
+    "revision": "4d368849922b04124e66b1aad48f93b3209f3c8d",
+    "file": "shared/graphics/device_vendor.mk",
+    "blob": "14ba3ea42bda66275190cc861964f5dbfd909310",
+    "sha256": "aaca0033829b1c239e894146d91cf10d37c832915ce1f040a11be514945e8fe8"
+  },
+  {
+    "project": "device/google/cuttlefish",
+    "revision": "4d368849922b04124e66b1aad48f93b3209f3c8d",
+    "file": "shared/graphics/device_vendor_swiftshader.mk",
+    "status": "not_found",
+    "detail": ""
+  },
+  {
+    "project": "platform/external/swiftshader",
+    "revision": "d70203d9df3c70c4fc63fb29325d24e9c12dc43f",
+    "file": "src/Android.bp",
+    "blob": "3d56a27d479e0770ceea73e59af732b4bbdf4c55",
+    "sha256": "486efce8c67f8315cb314d4cca7200b98447ce6f91c8397f059deaf964baae6b"
+  },
+  {
+    "project": "device/google/cuttlefish",
+    "revision": "4d368849922b04124e66b1aad48f93b3209f3c8d",
+    "file": "guest/hals/vulkan/Android.bp",
+    "blob": "43f359efc789f507b1ccba9cf5d8600a68f8478d",
+    "sha256": "47c9045fb066a0cbdb219fb51991ee1dee0c659099a5da134dc6d88c79bb5369"
+  },
+  {
+    "project": "platform/frameworks/native",
+    "revision": "fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103",
+    "file": "vulkan/include/hardware/hwvulkan.h",
+    "blob": "98bc8e3c46aea1d7671da6c1ed61de280effb175",
+    "sha256": "c719f035ed301690d5688bf3378dde99ec398c4ceec1e5dce0983b4496a930e2"
+  },
+  {
+    "project": "platform/frameworks/native",
+    "revision": "fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103",
+    "file": "vulkan/include/vulkan/vk_android_native_buffer.h",
+    "blob": "159b2d53050c85712a6b27a8f9149b9226135c7f",
+    "sha256": "e7197e608685f77aa671a12d9669f48285a1d4c03cdac721ca62338ec339e844"
+  }
+]

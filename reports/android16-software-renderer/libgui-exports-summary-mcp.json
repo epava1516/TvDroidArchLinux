@@ -1,0 +1,92 @@
+{
+  "evidence_id": "ev_55d48fd8d27362d6df3e06ea56e1787d904fd94c4f5feb7aa1e9eeb9f207a6b1",
+  "subject": {
+    "name": "libgui.so",
+    "digest": {
+      "sha256": "1ca3e8e4bb08769e8e5e0a0db793ae838a59da4180e9963b6c6a4be25f23ccdd"
+    },
+    "local_path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libgui.so",
+    "format": "elf",
+    "architecture": null
+  },
+  "provider": {
+    "id": "rea-analysis-view",
+    "name": "REA analysis view projection",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.analysis-view",
+  "operation": "inspect_analysis_view",
+  "parameters": {
+    "parent_evidence_id": "ev_ff0dc3f2f4ec25073e047eb64ed9cc99ff73ea2ba935180827bb875c934c90c0",
+    "view": {
+      "kind": "summary"
+    }
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "kind": "summary",
+    "view": {
+      "kind": "summary"
+    },
+    "parent_evidence_id": "ev_ff0dc3f2f4ec25073e047eb64ed9cc99ff73ea2ba935180827bb875c934c90c0",
+    "parent_operation": "inspect_native_exports",
+    "parent_digest": "ff0dc3f2f4ec25073e047eb64ed9cc99ff73ea2ba935180827bb875c934c90c0",
+    "view_digest": "d1c8d7848428c3275d61df0ced9f2075d1dbd66fb3cc4a1218f538efce7cb730",
+    "artifact": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libgui.so",
+      "sha256": "1ca3e8e4bb08769e8e5e0a0db793ae838a59da4180e9963b6c6a4be25f23ccdd"
+    },
+    "coverage": {
+      "status": "complete-within-view",
+      "examined": 2598,
+      "total": 2598,
+      "next_offset": null,
+      "exhausted": true
+    },
+    "limitations": [
+      "A hidden symbol version is not the default version that a by-name dlsym lookup selects.",
+      "Rows list defined default- or protected-visibility global, weak and unique dynamic symbols; local, hidden, internal and undefined symbols are not exports.",
+      "Rows reproduce the dynamic symbol table; they do not establish that a symbol is reachable, safe to call or loaded at runtime."
+    ],
+    "unknowns": [],
+    "summary": {
+      "artifact": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libgui.so",
+        "sha256": "1ca3e8e4bb08769e8e5e0a0db793ae838a59da4180e9963b6c6a4be25f23ccdd",
+        "bytes": 1827392
+      },
+      "format": "elf",
+      "architecture": "amd64",
+      "bits": 64,
+      "byte_order": "little",
+      "coverage": {
+        "status": "complete",
+        "reason": null,
+        "examined_entries": 3165,
+        "exports": 2598
+      },
+      "export_count": 2598,
+      "issue_count": 0,
+      "limitation_count": 3
+    }
+  },
+  "confidence": "derived",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "A hidden symbol version is not the default version that a by-name dlsym lookup selects.",
+    "Rows list defined default- or protected-visibility global, weak and unique dynamic symbols; local, hidden, internal and undefined symbols are not exports.",
+    "Rows reproduce the dynamic symbol table; they do not establish that a symbol is reachable, safe to call or loaded at runtime."
+  ],
+  "relationship_coverage": null,
+  "locations": [
+    {
+      "kind": "artifact-path",
+      "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libgui.so"
+    }
+  ],
+  "evidence_links": [
+    "ev_ff0dc3f2f4ec25073e047eb64ed9cc99ff73ea2ba935180827bb875c934c90c0"
+  ]
+}
