@@ -1,0 +1,64 @@
+{
+  "utc": "2026-10-31T20:04:38.404531+00:00",
+  "base_commit": "b8497b2bf362fd72ab31136f20051cb7cbaeb633",
+  "scope": "Actual x86_64 Bionic original Wayland client\u2192Rust/Smithay\u2192DRM SHM pixels and close, diagnostic permissive only. NOT Android Activity, APK, HWC3, SurfaceFlinger, security/isolation or native-fence acceptance.",
+  "implementation": {
+    "original": "Pinned AOSP Wayland client4 units + generated core and full libffi x86_64 Android.bp10 units. Original scanner built host-only with system expat.59 Git blob/SHA256 source entries verified.",
+    "adapter": "LinuxWaylandOutput consumes a connected Unix stream FD, discovers real globals/output, creates xdg fullscreen surface, copies XRGB8888 into two private memfd SHM buffers, reuses only buffers released by real protocol event, bounded poll/frame callback, closes protocol objects and mappings. A frame callback is not a sync_file or general presentation timestamp.",
+    "current_limits": [
+      "Single output/window and XRGB8888 CPU-copy path only",
+      "Resize rejects old buffer geometry with EAGAIN; no same-area reinterpretation permitted. Resize/hotplug/reconnect negatives not fully tested.",
+      "No dmabuf/EGL/Vulkan/JNI/GraphicBufferMapper, acquire-fence integration, HWC3 factory/findDisplays/FrameComposer or input yet",
+      "No secure factory admission/Android SID transition: diagnostic factory preconnects FD as Linux root and passes it into UID10000 client in Linux init_t",
+      "Original linker warns missing generated /linkerconfig; diagnostic default platform namespace, not vendor-profile compatibility",
+      "Original .so strictly links, but executed producer selects the static .a; shared-library loading not tested",
+      "Cache/compiled backing files owner-writable; no installed immutable admission, packaging/update or distribution license closure"
+    ]
+  },
+  "functional": {
+    "final_run": "execution-5-final-frame.log",
+    "capture_validation": "pixel-validation.json",
+    "dimensions": [
+      1280,
+      800
+    ],
+    "commits": 3,
+    "all_pixels_checked": 1024000,
+    "kernel_callback_source": "Existing Smithay DRM backend invokes send_frame after pageflip handling; capture reads its current displayed buffer. This does not turn generic Wayland callbacks into portable native fences.",
+    "closed": "Native client0, toplevel destroyed, compositor stopped/DRM stopped5 frames; VT1 and mask/unit/loop postchecks restored.",
+    "identities": "Both factory preexec and actual Bionic /proc/self/status postexec: UID/GID10000, CapEff/Prm/Inh/Amb0, NNP1. Actual postexec SID linux.system_u:linux.system_r:linux.init_t:s0; no Android confinement or MAC authorization claim."
+  },
+  "failures_preserved": {
+    "compile1": "Original xdg_toplevel listener has only configure/close at pinned version; excessive initializer fields rejected. Corrected to actual generated type, not patched protocol.",
+    "session1": "REA ev_350defebddd1e9ea3d9ee29e7b8ba501f3167b697faea0d5b23458affb2fe4a7: getty activation race before compositor log. No graphics success.",
+    "session2": "MCP cleanup_incomplete partial observation: client failed preexec identity assertion, background captured only. Root checked candidate6136 gone, VT restored/mask absent; original negatives retained.",
+    "session3": "Ordinary root exec diagnostic exposed CapInh0000000800000000 (CAP_WAKE_ALARM), despite Eff/Prm0 after UID drop. Not accepted; setpriv now clears inherited/ambient caps before factory. Guards retained.",
+    "session4": "MCP partial capture root0 and pixels valid, but cleanup_incomplete EACCES process7033. Root postcheck showed PID absent and no units/loops; close_binary null. No Evidence ID invented for failed tool result.",
+    "final_session5": "Ordinary exec outside sandbox root0, actual Bionic postexec status, full-image match. Not presented as REA Evidence.",
+    "mask_scope": "getty@tty2 temporarily runtime-masked after confirming no sessions and no preexisting runtime override; unmasked in finally. No persistent logind/getty/security changes. Stop on collected unit returned not-loaded; root checks confirm unit gone."
+  },
+  "artifacts": [
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/wayland-output-3/wayland-output-client",
+      "sha256": "53f5a3d1d44411af1eb4608844a2fbac792b4f9fc2f9a353528ab76b9d61c531",
+      "bytes": 107992
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/wayland-client-1/libwayland-client-bionic.a",
+      "sha256": "83babb3e6d8ebe42af0657523b5ea75db859996b04f091247f76c8bf39eaf0af",
+      "bytes": 129154
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/wayland-client-1/libwayland-client-bionic.so",
+      "sha256": "5f6a6c84ed0a0ba79e0a4fec80d38d7cba062ea00f7cdd1074fb643bfdde90a3",
+      "bytes": 94232
+    },
+    {
+      "path": "/home/tv/.cache/archtv/compositor-native/debug/archtv-compositor",
+      "sha256": "4db18bd95daba277fad651a12bffb15f6c00ecb526afc3ca2014be7e313b386a",
+      "bytes": 30227504
+    }
+  ],
+  "next": "Wire this real output into original HWC3 Device/factory/findDisplays/FrameComposer and preserve original command/Display/Layer implementations. Use original allocator/mapper and coherent Bionic render provider; resolve actual acquire/present/release semantics/capabilities, then original SF\u2192real display\u2192PMS/AMS/zygote\u2192full unmodified Markor journey. Do not mark MC3 or APK complete for this producer fixture.",
+  "independent_axes": "ARM Native Bridge/translation, GMS/external services, multimedia and DRM remain separate and incomplete."
+}

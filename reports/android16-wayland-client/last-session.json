@@ -1,0 +1,6 @@
+{
+  "output": "/home/tv/repositorio-principal/dist/aosp16/wayland-session-1793476975251908260",
+  "unit": "archtv-wayland-native-1793476975252337876",
+  "initial_vt": "1",
+  "scope": "Actual native Wayland SHM transport, permissive diagnostic only; screenshot and errors must be validated separately"
+}

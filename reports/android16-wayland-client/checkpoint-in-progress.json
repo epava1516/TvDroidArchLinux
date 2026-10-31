@@ -1,0 +1,43 @@
+{
+  "utc": "2026-10-31T19:45:52.531089+00:00",
+  "HEAD": "b8497b2bf362fd72ab31136f20051cb7cbaeb633",
+  "status": "Historical in-progress checkpoint, superseded by checkpoint.json",
+  "milestone": "IN_PROGRESS: whole original AOSP Wayland client/libffi compiled and strictly linked to Bionic; runtime transport/frame integration not executed. No APK compatibility evidence.",
+  "source": "wayland bdb389207f7113c752e8e6fee1c2897168ba473b; libffi30e76ea6cdd84cbbaa5dd5e5bbfce29538328fb4; Git blob+SHA256 inventories saved",
+  "built_artifacts": [
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/wayland-client-1/wayland-scanner",
+      "sha256": "bae8626d4980118128e72c2c8418db723e841e3253fdea99a2c86541992d5188"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/wayland-client-1/libwayland-client-bionic.a",
+      "sha256": "83babb3e6d8ebe42af0657523b5ea75db859996b04f091247f76c8bf39eaf0af"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/wayland-client-1/libwayland-client-bionic.so",
+      "sha256": "5f6a6c84ed0a0ba79e0a4fec80d38d7cba062ea00f7cdd1074fb643bfdde90a3"
+    }
+  ],
+  "scope": "Source scanner compiled on host with system expat; Android library uses Bionic only. Wayland4 implementation units+generated core and all10 x86_64 libffi units. No source edits. Generated headers from original gen_ffi_header and original scanner. No ELF/runtime equivalence or redistributable admission claimed.",
+  "acquisition_failures": "HTTP400 was original linux-x86_64 symlink\u2192linux-x86, now preserved; subsequent HTTP429 retained verified cache and resumed missing files at reduced rate. All59 source entries verified on completion.",
+  "pending": "Six historical files unchanged; own untracked reports/android16-wayland-client contains work in progress; do not discard or mix. No commit of partial functional milestone yet.",
+  "host": "No reboot/policy/enforce/device/VT/service mutation this turn. Previous state LTS permissive loaded policy remains last verified, not retested.",
+  "terminal_handles": [
+    23155,
+    70280,
+    90486,
+    69224,
+    81412,
+    51174,
+    37598
+  ],
+  "next": "Poll Rust build80817. Then integrate real Bionic original Wayland client with Smithay and HWC3 factory/FrameComposer/discovery; validate real output/config and frame/completion before claiming functional display. Build full transport/renderer/allocator boundary, not fake provider symbols. Markor intact full journey remains acceptance.",
+  "recovery": "/home/tv/recuperacion-archtv/20261031T192541Z-reload-proven-policy/RETOMAR.txt",
+  "historical_build_handle": {
+    "type": "exec_command",
+    "session_id": 80817,
+    "command": "cargo build --locked --offline -j1 -p archtv-compositor --target-dir /home/tv/.cache/archtv/compositor-native",
+    "last_observation": "Confirmed running, dependency compilation; poll same handle before any restart. No old boot PID reused.",
+    "completion": "terminal0,6m26"
+  }
+}

@@ -1,5 +1,10 @@
 # Estado actual y punto de entrada
 
+## Salida gráfica Bionic · recorrido de transporte
+
+[Salida Bionic→Smithay comprobada](../reports/android16-wayland-client/findings.json): cliente Wayland/libffi originales AOSP y transporte SHM producen tres commits reales; captura DRM1280×800,1.024.000 píxeles coinciden. Cliente/cierre0 y consola/máscara/unidades/loops recuperados. SID Linux init_t en permisivo, no Android/MAC. Ejecución final ordinaria, MCP anterior parcial por cleanup EACCES. Es regresión del transporte, no Activity/APK ni HWC3/SF; [checkpoint](../reports/android16-wayland-client/checkpoint.json). Siguiente: conectar salida a Device/findDisplays/FrameComposer originales, allocator/mapper y renderer Bionic; resolver fences/capacidades reales antes de display para PMS/Markor.
+
+
 ## Integración HWC3 · frontera de backend
 
 [Frontend HWC3 preparado](../reports/android16-hwc3-frontend/findings.json): nueve unidades originales compilan tras un parche sólo de includes/declaraciones adelantadas. El enlace estricto falla en siete símbolos de Device/findDisplays: fábrica, opciones persistentes y salida real siguen sin integrar. No ejecutable, servicio o frame aceptado. Graphics-common es currentV7/notfrozen; ComposerV4 y DRM-commonV1 sí congelados. Siguiente: libwayland Bionic + FrameComposer/fábrica/descubrimiento, buffers y finalización reales antes de SurfaceFlinger/Markor.
@@ -11,7 +16,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-hwc3-frontend/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-wayland-client/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).

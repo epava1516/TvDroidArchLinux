@@ -1,0 +1,59 @@
+{
+  "scope": "Actual DRM scanout buffer capture pixels from Bionic SHM producer, not Android APK/HWC/SF or MAC acceptance",
+  "PPM_sha256": "bcbdae0c5e5e9740f718be5f33101974617faa378f5eca2ce5d21d6faac9195b",
+  "PNG_sha256": "eae7d6f09e9839ee4b302b08dc6adf74ec45559537ec191e55d339716ac49fdc",
+  "dimensions": [
+    1280,
+    800
+  ],
+  "sampled_quadrants": {
+    "top_left": [
+      255,
+      0,
+      0
+    ],
+    "top_right": [
+      0,
+      255,
+      0
+    ],
+    "bottom_left": [
+      0,
+      0,
+      255
+    ],
+    "bottom_right": [
+      255,
+      255,
+      255
+    ]
+  },
+  "expected": {
+    "top_left": [
+      255,
+      0,
+      0
+    ],
+    "top_right": [
+      0,
+      255,
+      0
+    ],
+    "bottom_left": [
+      0,
+      0,
+      255
+    ],
+    "bottom_right": [
+      255,
+      255,
+      255
+    ]
+  },
+  "all_pixels_match_expected_pattern": true,
+  "compared_pixels": 1024000,
+  "expected_RGB_sha256": "88f1c78a3aed87a5bb6e439ddb4f03c2bbc608b35ad98c7d5b3b5c6126aedb76",
+  "final_run_ppm": "/home/tv/repositorio-principal/dist/aosp16/wayland-session-1793476975251908260/screen.ppm",
+  "final_run_PPM_sha256": "bcbdae0c5e5e9740f718be5f33101974617faa378f5eca2ce5d21d6faac9195b",
+  "final_run_all_pixels_match": true
+}

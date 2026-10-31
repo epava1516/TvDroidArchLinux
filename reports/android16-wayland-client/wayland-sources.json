@@ -1,0 +1,147 @@
+{
+  "project": "platform/external/wayland",
+  "revision": "bdb389207f7113c752e8e6fee1c2897168ba473b",
+  "files": [
+    {
+      "path": "src/.gitignore",
+      "git_blob": "128e4f7ce7294b1ab21061580a5962b78594bafa",
+      "sha256": "c1375f12507993a2ff385934460d36a1d66b52fd39350006d18d614b1c589a15"
+    },
+    {
+      "path": "src/connection.c",
+      "git_blob": "110b61494cf4286d4a5d3be0b8a7cae9c1110695",
+      "sha256": "ec67600e974e0c29d6d39347597e63d736589e95edc817f7ba2e74491429a1c6"
+    },
+    {
+      "path": "src/embed.py",
+      "git_blob": "abebb157fce94b6766c803b6990f7352380ac79c",
+      "sha256": "d5e2862c0289d37045f3586e3dc51b5bf6ead6760164ec5e08925ac7cb7e678e"
+    },
+    {
+      "path": "src/event-loop.c",
+      "git_blob": "37cf95d3f2118086298f279e00208e94e786a5ee",
+      "sha256": "3e67a202df6ae5bb632b41f10de8bc64219656d6a1a8f8af50bb25643c5366bb"
+    },
+    {
+      "path": "src/meson.build",
+      "git_blob": "a8a1d2ba979411a09fd754ef9b8ddf44a6f74653",
+      "sha256": "20d6c1328df6fbf58258650acb274df76ec592b9a8cedd4b8abb675352441b33"
+    },
+    {
+      "path": "src/scanner.c",
+      "git_blob": "c512d23180034feb659d493977c693d1b67ce30c",
+      "sha256": "60a4760083d63489da68429c5dcc16fb71a081734e8e2c946238f7d3be5ec9fa"
+    },
+    {
+      "path": "src/wayland-client-core.h",
+      "git_blob": "af7c18461f898d842186b631e1df61fc815ecfab",
+      "sha256": "93a6a2da742898f890ae0ce6247f246896f6a61cba294dfb0f0026330bbf05e9"
+    },
+    {
+      "path": "src/wayland-client.c",
+      "git_blob": "d54e71529cd75491b4f05e37fca76ade097f1156",
+      "sha256": "a2432a5e64ee1649fd17cc9c814a822821b3b8a1334250e6c11c8828f8daff6c"
+    },
+    {
+      "path": "src/wayland-client.h",
+      "git_blob": "9f70fa3fbb1fc01d5603d851e3413e83e112b994",
+      "sha256": "e9dd1fb014aa6ad848cb7d241cc223b1a70fc0b17fed5997262024e4c05532f7"
+    },
+    {
+      "path": "src/wayland-egl.h",
+      "git_blob": "279dcb8bb8d2d13a1783445ea152799ca690270a",
+      "sha256": "e33be2aa8a700a508d175106c12ea5713faf1c9d9f189d6f8af951849a504abd"
+    },
+    {
+      "path": "src/wayland-os.c",
+      "git_blob": "a9066cae9c93b607ea92ad1da1746f3b37a2bcb3",
+      "sha256": "04c0c77016b83c5b3ef3f30fd811cbbc928152b0c875b0494ca7de34faa10cc9"
+    },
+    {
+      "path": "src/wayland-os.h",
+      "git_blob": "068fd2fea3da8e0a13a3ab993fcc7d4c609a366d",
+      "sha256": "b24a1824f28dc19f496eaecfb74484cf84788f771c601a7fa39ca0480fd8f4ef"
+    },
+    {
+      "path": "src/wayland-private.h",
+      "git_blob": "66fc78f8f3c3b5a61bd9592210a169d65f915b6f",
+      "sha256": "7ef4f6c154e9da65ff143a4b5aed5d9b11ffd91cc247e4b0c9c2d103861c72b5"
+    },
+    {
+      "path": "src/wayland-server-core.h",
+      "git_blob": "63c6a62db16fdfaf897053cae1acfc755c27e0b8",
+      "sha256": "1277bdf11f02b18e7d31fc3ace8b2d7936d25e1d94e2a633a7f2f62e169c4a11"
+    },
+    {
+      "path": "src/wayland-server-private.h",
+      "git_blob": "23fa4587689822d4c07dd95b75b1cf30f5e510a5",
+      "sha256": "227d90fd139d661a5bda19429b55b521bc06e3f1414c84463c415e6a7b36fbd6"
+    },
+    {
+      "path": "src/wayland-server.c",
+      "git_blob": "468322d451dd6b0d07fbb75da5bdec197c4266b1",
+      "sha256": "89084d3c511b9e9498619c699f98e9f1717fb9e7b53c346396efb9c7fc97eae5"
+    },
+    {
+      "path": "src/wayland-server.h",
+      "git_blob": "1be565f23f7bf57b853893576fdd8cd702d6121b",
+      "sha256": "4785d797f459b7baa32769af2c5a484b31251472d69544cf0665ea240e8a6d7e"
+    },
+    {
+      "path": "src/wayland-shm.c",
+      "git_blob": "8fb657aa508f95966770e549039410bdffa86928",
+      "sha256": "3bf35278dc14c5c183271e1ca0d0eac6761708eb01a210f5d9782edee29b482c"
+    },
+    {
+      "path": "src/wayland-util.c",
+      "git_blob": "bb2a1838f1e8d20289845ab8c0147ba1bfe42028",
+      "sha256": "9df12971a0070be2482241ebd43d1d5b78eb8ab1de835e251c1ea93cb18ebf55"
+    },
+    {
+      "path": "src/wayland-util.h",
+      "git_blob": "b4cdcfad3f1d186d9a86f9c7063e467972504d7b",
+      "sha256": "68ec583e3e4dee8a084f78dc33ee7a88c3ea4351d6f15d0b1933e74f2837d495"
+    },
+    {
+      "path": "src/wayland-version.h",
+      "git_blob": "34e860e42cacc97bfe7e3662dddd30486e1f2fed",
+      "sha256": "88370cdd579b03aa246845c90e397f36a27d2d693e8e0bc0493a6ff8438ff936"
+    },
+    {
+      "path": "src/wayland-version.h.in",
+      "git_blob": "c5d786e25b951a18ed77e80de505543110e9b761",
+      "sha256": "3d66b4a1c0cc3d04cae23b3c4d4914d8107f9e9ef797ebe9554a846d38920b73"
+    },
+    {
+      "path": "Android.bp",
+      "git_blob": "b3709e0c486a241f4abf7f2938516fc064b4fea6",
+      "sha256": "a416e5ecff5ef8bef72c54d1cbb59ef064f37bcbc85d468871780b104bee64d6"
+    },
+    {
+      "path": "config.h",
+      "git_blob": "96d00e1143670a7c98a8c369ed086e23995bcd37",
+      "sha256": "06da49b715cc5972942bc507e7d186e05206b02691d2e7cfb95b581482921833"
+    },
+    {
+      "path": "COPYING",
+      "git_blob": "843b84417256a8d0906638d948ad2a587214d6a6",
+      "sha256": "e789745d9c6f1ed8a9419223480db42b324b166da1e938ddc7b133abfa4d5281"
+    },
+    {
+      "path": "LICENSE",
+      "git_blob": "d24842f3cdcf2e447f9a7a26fa387ad63f5c4b91",
+      "sha256": "400d38e5cfee181230373a8b02d38f50271a5bf62c62410382efddb8e8b19e22"
+    },
+    {
+      "path": "protocol/wayland.xml",
+      "git_blob": "10e039d6eccea65542228ceaa41768756216ad4b",
+      "sha256": "053bdb354709893dbfb5cee4ee6fbb3eadb4fed78e6d761bb7dc8f30513d6541"
+    },
+    {
+      "path": "protocol/wayland.dtd",
+      "git_blob": "ee062eeab46fa9c57896ab449000dfd9345dcf54",
+      "sha256": "339043413a09f27b5db9165129067a12baeab07e00b1fbd88dff4ecf0c6f5d60"
+    }
+  ],
+  "scope": "Selected complete Android.bp client/x86_64 implementation source closure; not all project sources or execution"
+}

@@ -1,0 +1,76 @@
+{
+  "evidence_id": "ev_350defebddd1e9ea3d9ee29e7b8ba501f3167b697faea0d5b23458affb2fe4a7",
+  "output": "Running as unit: archtv-wayland-native-1793476353980625077.service\r\r\nFailed to stop archtv-wayland-native-1793476353980625077.service: Unit archtv-wayland-native-1793476353980625077.service not loaded.\r\r\nSESSION_OUTPUT /home/tv/repositorio-principal/dist/aosp16/wayland-session-1793476353979361723\r\n\r\nTraceback (most recent call last):\r\n  File \"/home/tv/repositorio-principal/reports/android16-wayland-client/run-session.py\", line 15, in <module>\r\n    assert 'BIONIC_WAYLAND_THREE_CALLBACKS' in log and 'DRM_CAPTURED' in log and 'TV_COMPOSITOR_STOPPED' in log and 'WAYLAND_COMMIT_FAILED' not in log and 'WAYLAND_CONNECT_FAILED' not in log\r\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nAssertionError\r\n",
+  "exit": {
+    "code": 1,
+    "signal": 0,
+    "reason": "exited"
+  },
+  "cleanup": {
+    "owned_process_group": "verified",
+    "temporary_root": "removed",
+    "unverified_processes": [
+      {
+        "pid": 5898,
+        "reason": "EACCES: permission denied, open '/proc/5898/environ'"
+      },
+      {
+        "pid": 5899,
+        "reason": "EACCES: permission denied, open '/proc/5899/environ'"
+      },
+      {
+        "pid": 5901,
+        "reason": "EACCES: permission denied, open '/proc/5901/environ'"
+      }
+    ]
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "The executable digest is a prelaunch file sample; matching path metadata immediately after spawn does not prove an atomic operating-system image binding.",
+    "Process trees are sampled and may omit short-lived descendants.",
+    "Process-tree sampling ended with an incomplete observation.",
+    "Filesystem observations are before/after snapshots, not syscall traces.",
+    "Inherited host environment variables are not recorded and may affect results.",
+    "No filesystem observation paths were selected; filesystem effects remain unknown.",
+    "Process sampling has incomplete observations: /proc/5880/environ: EACCES: Error: EACCES: permission denied, open '/proc/5880/environ'. See truncation_details.process."
+  ],
+  "residual_unknowns": [
+    {
+      "scope": "process",
+      "reason": "Process trees are sampled and may omit short-lived descendants."
+    },
+    {
+      "scope": "process",
+      "reason": "The executable digest is a prelaunch file sample; operating-system image binding is not atomically observed."
+    },
+    {
+      "scope": "environment",
+      "reason": "Inherited host environment variables are not recorded."
+    },
+    {
+      "scope": "network",
+      "reason": "Network activity is not observed by this capture."
+    },
+    {
+      "scope": "filesystem",
+      "reason": "No filesystem observation paths were selected; filesystem effects remain unknown."
+    },
+    {
+      "scope": "process",
+      "reason": "Process sampling has incomplete observations: /proc/5880/environ: EACCES: Error: EACCES: permission denied, open '/proc/5880/environ'. See truncation_details.process."
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 5898 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/5898/environ'"
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 5899 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/5899/environ'"
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 5901 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/5901/environ'"
+    }
+  ],
+  "truncated": true
+}

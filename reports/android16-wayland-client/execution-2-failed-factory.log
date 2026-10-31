@@ -1,0 +1,18 @@
+2026-10-31T19:54:34.191186Z  WARN smithay::backend::drm::device::fd: Unable to become drm master, assuming unprivileged mode
+2026-10-31T19:54:34.194089Z  INFO archtv_compositor::state: OUTPUT_CONFIGURED width=1280 height=800
+2026-10-31T19:54:34.505256Z  INFO archtv_compositor::drm: DRM_READY device=/dev/dri/card0 width=1280 height=800 refresh=60 format="XRGB8888" modifier="LINEAR" buffers=2 renderer="Pixman"
+2026-10-31T19:54:34.508626Z  INFO archtv_compositor::session: SESSION_CHILD_STARTED pid=6165 shell=false
+2026-10-31T19:54:34.508779Z  INFO archtv_compositor: TV_COMPOSITOR_READY socket="wayland-1"
+2026-10-31T19:54:34.509268Z  INFO archtv_compositor::input: INPUT_ADDED name="Video Bus"
+2026-10-31T19:54:34.509332Z  INFO archtv_compositor::input: INPUT_ADDED name="VirtualBox mouse integration"
+2026-10-31T19:54:34.509370Z  INFO archtv_compositor::input: INPUT_ADDED name="VirtualBox USB Tablet"
+2026-10-31T19:54:34.509410Z  INFO archtv_compositor::input: INPUT_ADDED name="AT Translated Set 2 keyboard"
+2026-10-31T19:54:34.509446Z  INFO archtv_compositor::input: INPUT_ADDED name="ImExPS/2 Generic Explorer Mouse"
+2026-10-31T19:54:34.584068Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=1
+Traceback (most recent call last):
+  File "/home/tv/repositorio-principal/reports/android16-wayland-client/native-launcher.py", line 10, in <module>
+AssertionError
+2026-10-31T19:54:35.274023Z  WARN archtv_compositor::session: SESSION_CHILD_EXITED status=ExitStatus(unix_wait_status(256)) shell=false
+2026-10-31T19:54:38.217470Z  INFO archtv_compositor::drm: DRM_CAPTURED path=/home/tv/repositorio-principal/dist/aosp16/wayland-session-1793476472319511155/screen.ppm
+2026-10-31T19:54:50.508578Z  INFO archtv_compositor: TV_COMPOSITOR_STOPPED
+2026-10-31T19:54:50.738688Z  INFO archtv_compositor::drm: DRM_STOPPED frames=1

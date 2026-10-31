@@ -1,0 +1,12 @@
+{
+  "utc": "2026-10-31T20:04:38.404531+00:00",
+  "base_head": "b8497b2bf362fd72ab31136f20051cb7cbaeb633",
+  "branch": "main",
+  "host": "LTS6.18.59 SELinux permissive policyload1; see host-post.json. No security mode/policy/reboot changes in this milestone. VT1 restored, no temporary mask/runtime unit/loop in root postchecks.",
+  "pending": "Six historical files preserved/excluded; current milestone only new native transport, its real regression/recipes/evidence/docs.",
+  "handles": "Rust build80817 terminal0 (6m26); output-build48509 terminal0; final client-build63885 terminal0; final session60715 terminal0. Other acquisition/build/capture handles terminal. No persistent client/compositor started; recheck live state on resume. REA cleanup exceptions/limits retained, no claim of complete process sampling.",
+  "recovery": "/home/tv/recuperacion-archtv/20261031T195207Z-wayland-native-drm/RETOMAR.txt",
+  "evidence": "findings.json, build.json, source inventories, output/client builds, MCP failure/partial projections, execution5 final log, pixel-validation.json and screen.png, host-post.json",
+  "next": "Wire this real output into original HWC3 Device/factory/findDisplays/FrameComposer and preserve original command/Display/Layer implementations. Use original allocator/mapper and coherent Bionic render provider; resolve actual acquire/present/release semantics/capabilities, then original SF\u2192real display\u2192PMS/AMS/zygote\u2192full unmodified Markor journey. Do not mark MC3 or APK complete for this producer fixture.",
+  "acceptance": "All Markor APK stages remain untested; broad runtime incomplete."
+}

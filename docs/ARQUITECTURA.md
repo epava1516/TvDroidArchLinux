@@ -1,5 +1,10 @@
 # Arquitectura vigente · A16-QPR2-1
 
+## Salida gráfica Bionic · recorrido de transporte
+
+[LinuxWaylandOutput](../reports/android16-wayland-client/findings.json) valida la frontera Bionic→socket Unix→Smithay mediante libwayland/libffi originales, sin glibc en el ejecutable nativo. Dos buffers SHM privados se reutilizan sólo tras release real; callback de frame no se exporta como fence. Sólo XRGB8888/un output, resize antiguo falla cerrado. Falta conectar HWC3, mapper/allocator/renderizador/input y perfil de namespaces/MAC: prueba usa SID Linux init_t permisivo y linkerconfig ausente. No modifica política ni permite afirmar aislamiento.
+
+
 ## Integración HWC3 · frontera de backend
 
 La [separación comprobada del frontend](../reports/android16-hwc3-frontend/findings.json) conserva cuerpos y firmas originales, eliminando sólo includes concretos innecesarios y adelantando DrmClient. El enlace completo exige todavía Device y findDisplays (siete símbolos); no se permite resolverlos con NoOp o respuestas ficticias. La importación graphics-common actualV7 no es frozenV7. HDCP y brillo siguen Unsupported originales; no hay aceptación DRM.

@@ -1,0 +1,113 @@
+{
+  "evidence_id": null,
+  "error": {
+    "code": "cleanup_incomplete",
+    "message": "owned_process_group: process ownership token could not be read for 1 live process(es): environment_errno_EACCES=1; live candidates 7033=environment_errno_EACCES; temporary_root: temporary root retained because owned process cleanup is unverified: process ownership token could not be read for 1 live process(es): environment_errno_EACCES=1; live candidates 7033=environment_errno_EACCES"
+  },
+  "output": "Created symlink '/run/systemd/system/getty@tty2.service' → '/dev/null'.\r\r\nRunning as unit: archtv-wayland-native-1793476659813403085.service\r\r\nFailed to stop archtv-wayland-native-1793476659813403085.service: Unit archtv-wayland-native-1793476659813403085.service not loaded.\r\r\nRemoved '/run/systemd/system/getty@tty2.service'.\r\r\nSESSION_OUTPUT /home/tv/repositorio-principal/dist/aosp16/wayland-session-1793476659812971416\r\n2026-10-31T19:57:41.561165Z  WARN smithay::backend::drm::device::fd: Unable to become drm master, assuming unprivileged mode\r\n2026-10-31T19:57:41.562451Z  INFO archtv_compositor::state: OUTPUT_CONFIGURED width=1280 height=800\r\n2026-10-31T19:57:41.731502Z  INFO archtv_compositor::drm: DRM_READY device=/dev/dri/card0 width=1280 height=800 refresh=60 format=\"XRGB8888\" modifier=\"LINEAR\" buffers=2 renderer=\"Pixman\"\r\n2026-10-31T19:57:41.734477Z  INFO archtv_compositor::session: SESSION_CHILD_STARTED pid=7061 shell=false\r\n2026-10-31T19:57:41.734636Z  INFO archtv_compositor: TV_COMPOSITOR_READY socket=\"wayland-1\"\r\n2026-10-31T19:57:41.734805Z  INFO archtv_compositor::input: INPUT_ADDED name=\"Video Bus\"\r\n2026-10-31T19:57:41.734852Z  INFO archtv_compositor::input: INPUT_ADDED name=\"VirtualBox mouse integration\"\r\n2026-10-31T19:57:41.734890Z  INFO archtv_compositor::input: INPUT_ADDED name=\"VirtualBox USB Tablet\"\r\n2026-10-31T19:57:41.734929Z  INFO archtv_compositor::input: INPUT_ADDED name=\"AT Translated Set 2 keyboard\"\r\n2026-10-31T19:57:41.734965Z  INFO archtv_compositor::input: INPUT_ADDED name=\"ImExPS/2 Generic Explorer Mouse\"\r\n2026-10-31T19:57:41.753385Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=1\r\nOBSERVED_BEFORE_ASSERT {\"Uid\": \"10000\\t10000\\t10000\\t10000\", \"Gid\": \"10000\\t10000\\t10000\\t10000\", \"Groups\": \"\", \"CapEff\": \"0000000000000000\", \"CapPrm\": \"0000000000000000\", \"CapInh\": \"0000000000000000\", \"CapAmb\": \"0000000000000000\", \"NoNewPrivs\": \"1\"}\r\nNATIVE_WAYLAND_DIAGNOSTIC_IDENTITY {\"Uid\": \"10000\\t10000\\t10000\\t10000\", \"Gid\": \"10000\\t10000\\t10000\\t10000\", \"Groups\": \"\", \"CapEff\": \"0000000000000000\", \"CapPrm\": \"0000000000000000\", \"NoNewPrivs\": \"1\"}\r\nACTUAL_SID linux.system_u:linux.system_r:linux.init_t:s0\r\nlinker: Warning: failed to find generated linker configuration from \"/linkerconfig/ld.config.txt\"\r\nWARNING: linker: Warning: failed to find generated linker configuration from \"/linkerconfig/ld.config.txt\"\r\n2026-10-31T19:57:42.188847Z  INFO archtv_compositor::state: TOPLEVEL_MAPPED\r\n2026-10-31T19:57:42.198022Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=2\r\n2026-10-31T19:57:42.234038Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=3\r\n2026-10-31T19:57:42.258333Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=4\r\nBIONIC_WAYLAND_THREE_CALLBACKS width=1280 height=800 NO_NATIVE_FENCE_OR_APK_ACCEPTANCE\r\n2026-10-31T19:57:45.682083Z  INFO archtv_compositor::drm: DRM_CAPTURED path=/home/tv/repositorio-principal/dist/aosp16/wayland-session-1793476659812971416/screen.ppm\r\n2026-10-31T19:57:50.262100Z  INFO archtv_compositor::handlers::xdg_shell: TOPLEVEL_DESTROYED\r\n2026-10-31T19:57:50.282801Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=5\r\n2026-10-31T19:57:50.487388Z  WARN archtv_compositor::session: SESSION_CHILD_EXITED status=ExitStatus(unix_wait_status(0)) shell=false\r\n2026-10-31T19:57:57.735024Z  INFO archtv_compositor: TV_COMPOSITOR_STOPPED\r\n2026-10-31T19:57:57.979145Z  INFO archtv_compositor::drm: DRM_STOPPED frames=5\r\n\r\n",
+  "exit": {
+    "code": 0,
+    "signal": 0,
+    "reason": "exited"
+  },
+  "cleanup": {
+    "owned_process_group": {
+      "state": "unverified",
+      "reason": "process ownership token could not be read for 1 live process(es): environment_errno_EACCES=1; live candidates 7033=environment_errno_EACCES",
+      "unverified_processes": [
+        {
+          "pid": 7035,
+          "reason": "EACCES: permission denied, open '/proc/7035/environ'"
+        },
+        {
+          "pid": 7036,
+          "reason": "EACCES: permission denied, open '/proc/7036/environ'"
+        },
+        {
+          "pid": 7216,
+          "reason": "EACCES: permission denied, open '/proc/7216/environ'"
+        },
+        {
+          "pid": 7217,
+          "reason": "EACCES: permission denied, open '/proc/7217/environ'"
+        },
+        {
+          "pid": 7218,
+          "reason": "EACCES: permission denied, open '/proc/7218/environ'"
+        },
+        {
+          "pid": 7219,
+          "reason": "EACCES: permission denied, open '/proc/7219/environ'"
+        },
+        {
+          "pid": 7220,
+          "reason": "EACCES: permission denied, open '/proc/7220/environ'"
+        },
+        {
+          "pid": 7221,
+          "reason": "EACCES: permission denied, open '/proc/7221/environ'"
+        },
+        {
+          "pid": 7222,
+          "reason": "EACCES: permission denied, open '/proc/7222/environ'"
+        },
+        {
+          "pid": 7223,
+          "reason": "EACCES: permission denied, open '/proc/7223/environ'"
+        },
+        {
+          "pid": 7224,
+          "reason": "EACCES: permission denied, open '/proc/7224/environ'"
+        },
+        {
+          "pid": 7273,
+          "reason": "EACCES: permission denied, open '/proc/7273/environ'"
+        }
+      ]
+    },
+    "terminal_renderer": {
+      "state": "cleaned",
+      "reason": null
+    },
+    "temporary_root": {
+      "state": "unverified",
+      "reason": "temporary root retained because owned process cleanup is unverified: process ownership token could not be read for 1 live process(es): environment_errno_EACCES=1; live candidates 7033=environment_errno_EACCES"
+    }
+  },
+  "limitations": [
+    "The executable digest is a prelaunch file sample; matching path metadata immediately after spawn does not prove an atomic operating-system image binding.",
+    "Process trees are sampled and may omit short-lived descendants.",
+    "Process-tree sampling ended with an incomplete observation.",
+    "Filesystem observations are before/after snapshots, not syscall traces.",
+    "Inherited host environment variables are not recorded and may affect results.",
+    "No filesystem observation paths were selected; filesystem effects remain unknown.",
+    "Process sampling has incomplete observations: /proc/6970/environ: EACCES: Error: EACCES: permission denied, open '/proc/6970/environ'. See truncation_details.process."
+  ],
+  "residual_unknowns": [
+    {
+      "scope": "process",
+      "reason": "Process trees are sampled and may omit short-lived descendants."
+    },
+    {
+      "scope": "process",
+      "reason": "The executable digest is a prelaunch file sample; operating-system image binding is not atomically observed."
+    },
+    {
+      "scope": "environment",
+      "reason": "Inherited host environment variables are not recorded."
+    },
+    {
+      "scope": "network",
+      "reason": "Network activity is not observed by this capture."
+    },
+    {
+      "scope": "filesystem",
+      "reason": "No filesystem observation paths were selected; filesystem effects remain unknown."
+    },
+    {
+      "scope": "process",
+      "reason": "Process sampling has incomplete observations: /proc/6970/environ: EACCES: Error: EACCES: permission denied, open '/proc/6970/environ'. See truncation_details.process."
+    }
+  ],
+  "truncated": true
+}

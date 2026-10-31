@@ -1,0 +1,162 @@
+{
+  "project": "platform/external/libffi",
+  "revision": "30e76ea6cdd84cbbaa5dd5e5bbfce29538328fb4",
+  "files": [
+    {
+      "path": "include/Makefile.am",
+      "git_blob": "c59df9fb3cd390dd5d1b07b191051cc4602d35e9",
+      "sha256": "43763a7deb601012459ba66e354160656c6b8659e2282b84d4239555a11e92bd"
+    },
+    {
+      "path": "include/ffi.h.in",
+      "git_blob": "71cc05c9d8a9ca52ef52535878e3e608a3a4d0c2",
+      "sha256": "c86413e56ef61322a67a6a61d773b62371137d1f9c1abc91e6aa6d4012b24e91"
+    },
+    {
+      "path": "include/ffi_cfi.h",
+      "git_blob": "244ce572be740e79b87d98229ef85d9c643cd3e5",
+      "sha256": "0eaf4c217034e3e96ae50125fed4255f2d0bdc07cdf84ccf8b8b19140aeebc35"
+    },
+    {
+      "path": "include/ffi_common.h",
+      "git_blob": "76b9dd6fafe5766524f2a2eddf3236287a4e3e65",
+      "sha256": "48348d32cd2c9e8a201e8095289d435f8638540e644c1eca92ad9db9854a2f20"
+    },
+    {
+      "path": "linux-x86/ffi.h",
+      "git_blob": "f11ee39ec7983e14a9a5976ab01a081e986cd75b",
+      "sha256": "8087278a39ec8875b86010d602cf809b6f067ecfda6977cb518412e9475348e3"
+    },
+    {
+      "path": "linux-x86/fficonfig.h",
+      "git_blob": "5b3aa8b373d7c432a3b817817a3b96849841ae20",
+      "sha256": "1d5b39ff5e04242293d8b3162f274483f65b887e1fb1942c24f847477c4117dc"
+    },
+    {
+      "path": "linux-x86/ffitarget.h",
+      "git_blob": "023945907e2b5ec58c55d1186e73425052ccba0d",
+      "sha256": "0c4afef77bf79b02c505cb5fb516542d6607ff6d6debe6ba0d8c8c4dd0cb5d83"
+    },
+    {
+      "path": "src/x86/asmnames.h",
+      "git_blob": "7551021e17ebab8f168b2b9359fb6f67ccc6f3b8",
+      "sha256": "b1a0c704a97aa9bb3a998f7d55cae8bf8181e355249da19a53269a10d03edb8e"
+    },
+    {
+      "path": "src/x86/ffi.c",
+      "git_blob": "9a592185a1d479ddd43b90f2fb3ae0710da73a77",
+      "sha256": "ddb0c29603a598e25a95564ca46c0cd530d7144d9065bcfcc7f9b4e216bfc2b9"
+    },
+    {
+      "path": "src/x86/ffi64.c",
+      "git_blob": "dec331c958c21d71643adc1bce205ca5e0f10035",
+      "sha256": "127a50fa60868bec1e58dcd3f5a1be83f1851a39b89b6d1a04e7f8648fcbb828"
+    },
+    {
+      "path": "src/x86/ffitarget.h",
+      "git_blob": "85ccedfedc3a493d573f6967bd1cabc86d1f23e7",
+      "sha256": "ce9a87677a9b9af9dcc6f8f632b62948214824174b65fe4361d3b662cc72aec0"
+    },
+    {
+      "path": "src/x86/ffiw64.c",
+      "git_blob": "b68f69ccf68a0c5e8d05b103561e9ac20b7deb07",
+      "sha256": "35a7c3fc69c5c641436dc1e976f09cee76e3ecd37c883c9175000638dea5c34f"
+    },
+    {
+      "path": "src/x86/freebsd.S",
+      "git_blob": "97e0b4eb81bcd3c4cff17027029d7dd97e6eed57",
+      "sha256": "50217ed2561c62464e34829d9625aa38b6573f5cd52b5957740f0b394e7c9333"
+    },
+    {
+      "path": "src/x86/internal.h",
+      "git_blob": "09771ba8cfb279e3f4b8bf60e7da89e5726f722e",
+      "sha256": "018cb0fece6cb2da70bc358d4138576fad87101c19b491ebe2fd8c3c37d6e30b"
+    },
+    {
+      "path": "src/x86/internal64.h",
+      "git_blob": "512e95523e92a7e8a3b75d7d328ad706ad5ee8bd",
+      "sha256": "31b46f18cbca82d79cc326c504df9f9d93fc744426fc128ba6bef5580066e796"
+    },
+    {
+      "path": "src/x86/sysv.S",
+      "git_blob": "7c9598c93c98467664332059cc08672b5d710fc7",
+      "sha256": "d2f187bea59ad70981820b952ba4a5ddbd4ebf487d867dfdc8c0fe1bacf40c58"
+    },
+    {
+      "path": "src/x86/sysv_intel.S",
+      "git_blob": "3cafd71ce18fcd9a7b2fdd0719a8600572e8e3fb",
+      "sha256": "4754da0aa4ace314e1d595132136f2c97dfa1572cfe4a8d284b9b8e9c476b1f4"
+    },
+    {
+      "path": "src/x86/unix64.S",
+      "git_blob": "41563f5c60f8c3e3e506ccee4320d7f25d52f856",
+      "sha256": "08516cbc32f419c1ffb17cfba1a3af7f4350114a0ef24326c2ea9e79b57388bf"
+    },
+    {
+      "path": "src/x86/win64.S",
+      "git_blob": "2c334c82f9b2df80494143aa18079e71cc4ea6af",
+      "sha256": "2759c24043af1c94561cd4aa081e773d3f766bcbb655b759b21355a17d13622c"
+    },
+    {
+      "path": "src/x86/win64_intel.S",
+      "git_blob": "7df78b30e42c6f72e2c3c952c4faffbcee8ad732",
+      "sha256": "a6b6e169c03d9b6336bf2a84d697e2bc3304131eccca24405b48c3441fcc8529"
+    },
+    {
+      "path": "Android.bp",
+      "git_blob": "97ec54d9c1b592ec70600d9c32e0e206763f23c8",
+      "sha256": "598e1c286f8573265d168f8d5e13f71e181a80b50499cb41df8f2a9c4fd33cc8"
+    },
+    {
+      "path": "linux-x86_64",
+      "git_blob": "6d2f2cc6bcc6abf9b5cad35c8e8bd99095644de8",
+      "sha256": "383f97fbdec3b5cc84d47c87b8e07a3fe252c424115a3ec0b97dc55bca5c6475"
+    },
+    {
+      "path": "LICENSE",
+      "git_blob": "acb2f7a07d7c5093f258ce7f6e8711fa63e68747",
+      "sha256": "deaf3a42effb551a5b140fa9afefed183a27f1341c6d1bf430d106a5e6931fc0"
+    },
+    {
+      "path": "LICENSE-BUILDTOOLS",
+      "git_blob": "d1d626e00859030061ed7b071e84f8f893d84d93",
+      "sha256": "e67978cd18816c0cb7d29aaaacde7b7447402c2fb321a051698890a8eaedda94"
+    },
+    {
+      "path": "gen_ffi_header.sh",
+      "git_blob": "1bca2d0e7253b4652e88957c51b79e864c815ad8",
+      "sha256": "6e02cd7aac3cce3da1b8be3da62d9e9148c7af6d01029c87d3144f410e4e3c96"
+    },
+    {
+      "path": "src/closures.c",
+      "git_blob": "512002165254dcd08d5e8b097c54056547b52752",
+      "sha256": "48acf6947e1c101d5bbf588618d6dc5d9f7560ab59531e8eb9858ec20a1a6a86"
+    },
+    {
+      "path": "src/debug.c",
+      "git_blob": "f3172b1ef6c9a9f04870cc76815984091de95da9",
+      "sha256": "5160a3877b65490aa30fa92a44a66c3bdf093d5ab75b9502adb729038efb3e5f"
+    },
+    {
+      "path": "src/java_raw_api.c",
+      "git_blob": "114d3e47fcdef36a29172a23e8b5acad30cdd584",
+      "sha256": "5c3886d8c20ba1238135835aa132ad9c017af5f9e5c55e2167d3ad047def1bd6"
+    },
+    {
+      "path": "src/prep_cif.c",
+      "git_blob": "06c65440361392007a24aee7d6d437cab2583197",
+      "sha256": "af9ea280d1eaa07c51148269d6793fef9d078693be3ab2a9aa37110c15cb1b91"
+    },
+    {
+      "path": "src/raw_api.c",
+      "git_blob": "be156116cb0d99fe1e635823e9fec93b782cd7ad",
+      "sha256": "d7ea1c81fc13e9fceb0dc431bc865e224d7be1e84483039eb4ad79144ef29c34"
+    },
+    {
+      "path": "src/types.c",
+      "git_blob": "9ec27f6cf37676d83bfb489bbe1bb7c7c7363378",
+      "sha256": "466735ab14f3f53b3f147c6f3ab245105e8c262e89daed8426e6e9fa569f792a"
+    }
+  ],
+  "scope": "Selected complete Android.bp client/x86_64 implementation source closure; not all project sources or execution"
+}

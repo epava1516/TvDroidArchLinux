@@ -1,0 +1,21 @@
+{
+  "utc": "2026-10-31T20:05:12.473727+00:00",
+  "SELinux_status": {
+    "version": 1,
+    "sequence": 2,
+    "enforcing": 0,
+    "policyload": 1,
+    "deny_unknown": 1
+  },
+  "VT": "1",
+  "getty_runtime_mask_exists": false,
+  "runtime_units": "",
+  "loop_backings": "",
+  "scope": "Root postchecks after final run outside sandbox. No listed unit/loop remains; REA process completeness remains limited.",
+  "empty_factory_scaffolds_removed": [
+    "archtv-wl-native-whru_fkb",
+    "archtv-wl-native-p6ayy74w",
+    "archtv-wl-native-ojzb7z8_",
+    "archtv-wl-native-uzus5lwf"
+  ]
+}

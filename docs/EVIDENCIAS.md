@@ -1,5 +1,10 @@
 # Índice de evidencias
 
+## Salida gráfica Bionic · recorrido de transporte
+
+[Transporte Bionic→Smithay](../reports/android16-wayland-client/findings.json): [ejecución final ordinaria](../reports/android16-wayland-client/execution-5-final-frame.log), [validación de todos los píxeles](../reports/android16-wayland-client/pixel-validation.json), [captura](../reports/android16-wayland-client/screen.png), [MCP parcial con error de cleanup](../reports/android16-wayland-client/execution-4-frame-partial-mcp.json), [estado posterior root](../reports/android16-wayland-client/host-post.json) y [checkpoint](../reports/android16-wayland-client/checkpoint.json). Capacidad heredable inesperada detectada/rechazada y limpiada con setpriv; postexec UID/GID10000,caps0,NNP1, SID Linux init_t. Permisivo, no MAC/aislamiento, HWC3, native-fence ni APK.
+
+
 ## Integración HWC3 · frontera de backend
 
 [Frontend HWC3](../reports/android16-hwc3-frontend/findings.json): [generación](../reports/android16-hwc3-frontend/generation.json), [build completo](../reports/android16-hwc3-frontend/build.json), [enlace estricto negativo](../reports/android16-hwc3-frontend/strict-link.json), [primer fallo conservado](../reports/android16-hwc3-frontend/build-attempt-1.json) y [parche mínimo](../runtime/aosp/android16-qpr2/patches/goldfish-hwc3-backend-headers.patch). Reproducción exacta del parche sobre tres archivos originales verificada; sólo compile/link, sin REA/runtime/frame/APK.

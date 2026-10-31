@@ -1,5 +1,10 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+## Salida gráfica Bionic · recorrido de transporte
+
+MC3 sigue abierto: [transporte SHM Bionic→Smithay con píxeles reales](../reports/android16-wayland-client/findings.json) demostrado, sin cerrar HWC3/SF/APK. Prioridad inmediata: integrar salida en frontend original Device/findDisplays/FrameComposer; reutilizar mapper/allocator y renderer Bionic coherentes, comprobar acquire/release/present y capacidades reales. Después display original habilita tramo de PMS/AMS/zygote y Markor. No encadenar más fixtures de codecs/constructores como aceptación. ARM/GMS/DRM fuera de este camino inicial, sin eliminarlos.
+
+
 ## Integración HWC3 · frontera de backend
 
 MC3: [frontend AIDL original compilado, enlace aún rechazado](../reports/android16-hwc3-frontend/findings.json). Siguiente entregable funcional: libwayland cliente/Bionic y adaptación FrameComposer/Device/findDisplays con salida real/configuración/buffer/completion en Smithay; después cliente/SurfaceFlinger con allocator/mapper/render coherentes. Siete símbolos pendientes son frontera explícita, no un runtime listo. No repetir fixtures de codecs o gestor para cerrar presentación.

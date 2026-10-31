@@ -1,0 +1,27 @@
+2026-10-31T19:57:41.561165Z  WARN smithay::backend::drm::device::fd: Unable to become drm master, assuming unprivileged mode
+2026-10-31T19:57:41.562451Z  INFO archtv_compositor::state: OUTPUT_CONFIGURED width=1280 height=800
+2026-10-31T19:57:41.731502Z  INFO archtv_compositor::drm: DRM_READY device=/dev/dri/card0 width=1280 height=800 refresh=60 format="XRGB8888" modifier="LINEAR" buffers=2 renderer="Pixman"
+2026-10-31T19:57:41.734477Z  INFO archtv_compositor::session: SESSION_CHILD_STARTED pid=7061 shell=false
+2026-10-31T19:57:41.734636Z  INFO archtv_compositor: TV_COMPOSITOR_READY socket="wayland-1"
+2026-10-31T19:57:41.734805Z  INFO archtv_compositor::input: INPUT_ADDED name="Video Bus"
+2026-10-31T19:57:41.734852Z  INFO archtv_compositor::input: INPUT_ADDED name="VirtualBox mouse integration"
+2026-10-31T19:57:41.734890Z  INFO archtv_compositor::input: INPUT_ADDED name="VirtualBox USB Tablet"
+2026-10-31T19:57:41.734929Z  INFO archtv_compositor::input: INPUT_ADDED name="AT Translated Set 2 keyboard"
+2026-10-31T19:57:41.734965Z  INFO archtv_compositor::input: INPUT_ADDED name="ImExPS/2 Generic Explorer Mouse"
+2026-10-31T19:57:41.753385Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=1
+OBSERVED_BEFORE_ASSERT {"Uid": "10000\t10000\t10000\t10000", "Gid": "10000\t10000\t10000\t10000", "Groups": "", "CapEff": "0000000000000000", "CapPrm": "0000000000000000", "CapInh": "0000000000000000", "CapAmb": "0000000000000000", "NoNewPrivs": "1"}
+NATIVE_WAYLAND_DIAGNOSTIC_IDENTITY {"Uid": "10000\t10000\t10000\t10000", "Gid": "10000\t10000\t10000\t10000", "Groups": "", "CapEff": "0000000000000000", "CapPrm": "0000000000000000", "NoNewPrivs": "1"}
+ACTUAL_SID linux.system_u:linux.system_r:linux.init_t:s0
+linker: Warning: failed to find generated linker configuration from "/linkerconfig/ld.config.txt"
+WARNING: linker: Warning: failed to find generated linker configuration from "/linkerconfig/ld.config.txt"
+2026-10-31T19:57:42.188847Z  INFO archtv_compositor::state: TOPLEVEL_MAPPED
+2026-10-31T19:57:42.198022Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=2
+2026-10-31T19:57:42.234038Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=3
+2026-10-31T19:57:42.258333Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=4
+BIONIC_WAYLAND_THREE_CALLBACKS width=1280 height=800 NO_NATIVE_FENCE_OR_APK_ACCEPTANCE
+2026-10-31T19:57:45.682083Z  INFO archtv_compositor::drm: DRM_CAPTURED path=/home/tv/repositorio-principal/dist/aosp16/wayland-session-1793476659812971416/screen.ppm
+2026-10-31T19:57:50.262100Z  INFO archtv_compositor::handlers::xdg_shell: TOPLEVEL_DESTROYED
+2026-10-31T19:57:50.282801Z DEBUG archtv_compositor::drm: DRM_PRESENTED frame=5
+2026-10-31T19:57:50.487388Z  WARN archtv_compositor::session: SESSION_CHILD_EXITED status=ExitStatus(unix_wait_status(0)) shell=false
+2026-10-31T19:57:57.735024Z  INFO archtv_compositor: TV_COMPOSITOR_STOPPED
+2026-10-31T19:57:57.979145Z  INFO archtv_compositor::drm: DRM_STOPPED frames=5

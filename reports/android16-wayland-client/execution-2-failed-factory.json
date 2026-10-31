@@ -1,0 +1,8 @@
+{
+  "REA_MCP": "capture returned cleanup_incomplete with partial observation, no Evidence ID assigned in error",
+  "root_exit": 1,
+  "result": "Rust/Smithay DRM started and captured background only. Native launcher failed credential assertion before exec. NOT Bionic frame success.",
+  "output": "/home/tv/repositorio-principal/dist/aosp16/wayland-session-1793476472319511155",
+  "error_cleanup": "Live candidate6136 inaccessible to REA; root postcheck showed PID absent. No unrelated processes killed. binary_session cleanup_pending=false, close_binary returned null after root check. This is not complete target-free process accounting.",
+  "restoration": "Observed console1, gettytty2 inactive and runtime mask absent; no enforcing or policy change"
+}
