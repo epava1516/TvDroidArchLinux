@@ -1,6 +1,7 @@
 # Índice de evidencias
 
-- [Contrato kernel upstream6.18.59](../reports/android16-kernel-policy-contract/validation.json): generador original;96 clases/1694 permisos cubiertos y11 SID numéricos coincidentes. Guarda del constructor, negativos AOSP/deriva y binario idéntico. Fuente/build/runtime del host diferenciados; no kernel/gestores/APK aceptados. [Checkpoint actual](../reports/android16-kernel-policy-contract/checkpoint.json).
+- [Binder Rust y 13 pruebas originales](../reports/android16-binder-kernel-contract/validation.json): ejecución nativa Bionic observada por REA MCP; cinco casos de gestor excluidos. SID de transacciones obligatorio por fuente. Sin aceptación de IPC/MAC/APK; límites del oráculo y muestreo explícitos. [Checkpoint actual](../reports/android16-binder-kernel-contract/checkpoint.json).
+- [Contrato kernel upstream6.18.59](../reports/android16-kernel-policy-contract/validation.json): generador original;96 clases/1694 permisos cubiertos y11 SID numéricos coincidentes. Guarda del constructor, negativos AOSP/deriva y binario idéntico. Fuente/build/runtime del host diferenciados; no kernel/gestores/APK aceptados. [Checkpoint del hito](../reports/android16-kernel-policy-contract/checkpoint.json).
 
 - [Constructor de política experimental](../reports/android16-policy-builder/validation.json): CIL/binario idénticos al candidato probado; tres rechazos CLI y timeout/limpieza de proceso verificados. Generación/compilación reproducible, sin instalación/carga/VM ni readiness de servicios/APK. [Checkpoint del hito](../reports/android16-policy-builder/checkpoint.json).
 

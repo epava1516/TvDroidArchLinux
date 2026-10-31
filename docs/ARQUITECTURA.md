@@ -695,7 +695,8 @@ de política por comodidad. Readiness de gestores y recorridos APK pendientes.
 [Adaptador canónico](../runtime/aosp/android16-qpr2/policy/linux-servicemanager-selinux.cil),
 [contratos fuente](../reports/android16-policy-manager-selinux/source-contract.json) y
 [pruebas](../reports/android16-policy-manager-selinux/validation.json). El gestor
-conserva Access original: contexto Binder del llamante o getpidcon, lookup de
+conserva Access original: SID Binder del llamante durante transacciones;
+getpidcon exige una pila de servicio nula y sólo sirve fuera de esa ruta. Lookup de
 service_contexts y selinux_check_access, sin sustituir la identidad por la suya.
 
 La página status se consulta mediante mmap de lectura. La consulta access
@@ -772,6 +773,27 @@ La nueva guarda del constructor compila y deja CIL/binario idénticos. Los
 controles detectan ausencias AOSP y deriva del contrato; no se carga política
 ni se ejecuta el mapeo del kernel. Esto no sustituye al diagnóstico de host
 activo ni acepta endpoints, Binder, gestores o etapas de aplicaciones.
+
+## Binder Rust original: regresiones y contrato de identidad
+
+[Fuentes, ejecución y límites](../reports/android16-binder-kernel-contract/validation.json).
+El kernel observado selecciona Binder Rust. Se estudiaron fuentes upstream6.18.59
+fijadas, sin asumir equivalencia de parches con el paquete del anfitrión.
+Trece pruebas originales de binderDriverInterfaceTest pasan con Bionic/libc++
+originales, UID/GID10000, grupos y capacidades vacíos, NNP1 y Binder privado.
+REA MCP observó la ejecución y el hash del resultado; su muestreo de procesos fue
+parcial por EACCES. Cinco casos dependientes del gestor no se ejecutaron.
+No se certifican mmap (el assert original no distingue MAP_FAILED), transacciones,
+SID, transferencia de FD, callbacks, registro de servicios ni APK completas.
+
+El gestor original solicita TXN_SECURITY_CTX; Access.cpp impide usar getpidcon
+como alternativa durante una transacción entrante. El driver conserva credenciales
+del archivo al abrir: respetar fork, cambio de UID y apertura; no heredar una
+inicialización privilegiada como si fuera identidad de app. PID cero para mensajes
+one-way/respuestas puede ser comportamiento original. La ruta security_secid_to_secctx
+puede devolver error sin proveedor adecuado; es un riesgo demostrado por fuente,
+no un fallo transaccional observado. SELinux sigue inactivo en el anfitrión.
+La siguiente puerta exige identidad y denegación reales, sin contexto sintético.
 
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 

@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-kernel-policy-contract/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-binder-kernel-contract/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -457,3 +457,7 @@ constructor verifica el contrato fijado y produce el mismo binario. No es
 prueba del kernel del paquete, de mapeo activo ni de servicios/APK. Próximo:
 clausura real de contexto/identidad/montajes/Binder y trabajo independiente,
 conservando la prohibición de introducir VM o reiniciar.
+
+## Binder original: nuevo resultado parcial
+
+[13 regresiones nativas originales pasan](../reports/android16-binder-kernel-contract/validation.json); cinco casos de gestor excluidos. SID real obligatorio en transacciones entrantes; identidad/gestor/SELinux/APK aún no aceptados.

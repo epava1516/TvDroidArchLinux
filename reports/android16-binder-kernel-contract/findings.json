@@ -1,0 +1,32 @@
+{
+  "scope": "Original native driver regressions and pinned source contracts; no manager/transaction/SID/MAC/APK acceptance",
+  "tests_passed": 13,
+  "tests_excluded": [
+    "SetContextMgrBusy",
+    "IncRefsAcquireReleaseDecRefs",
+    "Transaction",
+    "RequestDeathNotification",
+    "RequestFrozenNotification"
+  ],
+  "test_oracle_limits": [
+    "Idle NoTest cases accept EINVAL/unimplemented; some NULL cases permit multiple errors",
+    "Original mmap assertion checks nullptr, not MAP_FAILED; mapping validity not certified",
+    "Build uses original sources and platform Bionic/libc++; not full Soong/product flag equivalence"
+  ],
+  "source_findings": {
+    "caller_sid": "Original Access.cpp getPidcon CHECK requires null serving stack; incoming Binder callers require actual SID. PID lookup is not a transaction fallback.",
+    "manager": "Original ProcessState requests TXN_SECURITY_CTX with BINDER_SET_CONTEXT_MGR_EXT",
+    "selected_driver": "Current host CONFIG_ANDROID_BINDER_IPC_RUST=y; study original Rust driver, not C driver assumptions",
+    "secctx": "SecurityCtx::from_secid propagates security_secid_to_secctx errors; default no-provider hook EOPNOTSUPP is conditional source behavior, not observed transaction failure",
+    "credentials": "Driver open stores file credentials. Preserve post-fork UID-drop/open order, never assume pre-drop parent credentials safe.",
+    "pid": "sender_pid zero for one-way/reply is intended; EUID translated into receiver namespace"
+  },
+  "mcp": {
+    "evidence_id": "ev_040fcaacd7e51fbe6527f127461a8f8e2919bc7f327e73b16b96f1c49b59be26",
+    "projection": "native-tests-capture-summary.json is sanitized derived selection, not complete authenticated Evidence",
+    "process_sampling": "partial EACCES, no complete process-tree claim",
+    "native_result_sha256": "da24833e1947b291c3f9ca5ac69fe7c95dff6f0333c33f7d1d532d96b31d1e6f"
+  },
+  "real_apk_stages": "unchanged, not_tested",
+  "next": "Prove actual sender PID/UID/SID and enforcement with original manager under a verified Linux-compatible active SELinux deployment. Do not fake context or boot Android/VM."
+}

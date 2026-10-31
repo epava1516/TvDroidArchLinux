@@ -1,0 +1,255 @@
+{
+  "reference": "Linux6.18.59",
+  "source_commit": "1253a6aa5d104312bf0992afacc15220ae35bdf9",
+  "files": [
+    {
+      "path": "drivers/android/binder/Makefile",
+      "sha": "09eabb527fa092b659559367705fd3667db6cb2c",
+      "size": 250,
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/drivers/android/binder/Makefile",
+      "sha256": "bb10b7877a67416109acc6b9a1f093f49623c938c239af4b031a58018d70dda9",
+      "git_blob_verified": true
+    },
+    {
+      "path": "drivers/android/binder/allocation.rs",
+      "sha": "3aaeefef6bdd999b9d141f55b0dd2db511bbe29a",
+      "size": 21289,
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/drivers/android/binder/allocation.rs",
+      "sha256": "dce9eef4ad98cceed805df8eff316ff149853defcd03d9c3efdbe9e4564959a6",
+      "git_blob_verified": true
+    },
+    {
+      "path": "drivers/android/binder/context.rs",
+      "sha": "3d135ec03ca74d7dd6f3d67807375eadd4f70fe8",
+      "size": 5250,
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/drivers/android/binder/context.rs",
+      "sha256": "9b7a019fbc3d1984fa4a9545acd61c1ed7de1d9a6f03f3cd514ad5d6f3c9586c",
+      "git_blob_verified": true
+    },
+    {
+      "path": "drivers/android/binder/deferred_close.rs",
+      "sha": "ac895c04d0cb7e867a36ba583facdecef10ca224",
+      "size": 9334,
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/drivers/android/binder/deferred_close.rs",
+      "sha256": "13928f4102731f88dac91974d32fb740b517620abef8086c7c14ec21604f1dd1",
+      "git_blob_verified": true
+    },
+    {
+      "path": "drivers/android/binder/defs.rs",
+      "sha": "33f51b4139c7e03184369dc7cd3fc8b464dee012",
+      "size": 5498,
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/drivers/android/binder/defs.rs",
+      "sha256": "e3793ffe17625f4313fa64eabe7680a759974023e5624566f2b4b2a5192ffb58",
+      "git_blob_verified": true
+    },
+    {
+      "path": "drivers/android/binder/error.rs",
+      "sha": "fd9e9d9e5658b1c85689e5712f76f566ffe23a9c",
+      "size": 2417,
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/drivers/android/binder/error.rs",
+      "sha256": "6d412fef301a1c5d26fe56ba9e7399c5b68e228924da59f9b97a5e27d33af79b",
+      "git_blob_verified": true
+    },
+    {
+      "path": "drivers/android/binder/freeze.rs",
+      "sha": "e3b7aba2279f89130332b942f83d9a433df9798f",
+      "size": 15134,
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/drivers/android/binder/freeze.rs",
+      "sha256": "a235fa1f00524b7dff886e816db73effba787d388691123fed7a69af8299f537",
+      "git_blob_verified": true
+    },
+    {
+      "path": "drivers/android/binder/node.rs",
+      "sha": "ee798e9d6c6998d8a13242c3da2b723f0d42b8c1",
+      "size": 40081,
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/drivers/android/binder/node.rs",
+      "sha256": "8e361ea8238cd428c4dd55c99b1449f26c493da72f9bd404abdaf501f0473d0f",
+      "git_blob_verified": true
+    },
+    {
+      "path": "drivers/android/binder/node/wrapper.rs",
+      "sha": "aeda07ff7218bc6ad9772f7abead1829519acfae",
+      "size": 3178,
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/drivers/android/binder/node/wrapper.rs",
+      "sha256": "ea23d8fb209b0b0df4cc68b77a087a0d9ca3a10f3988e172ebc0aefc594ad14c",
+      "git_blob_verified": true
+    },
+    {
+      "path": "drivers/android/binder/page_range.rs",
+      "sha": "3d5bfaeda4a35d2e12ba9c6b68999bced74222a1",
+      "size": 29306,
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/drivers/android/binder/page_range.rs",
+      "sha256": "a06147a9b55bf5184c40a9abb827ed68c906ea7d9db55ff6c93ad0da7bdfac0c",
+      "git_blob_verified": true
+    },
+    {
+      "path": "drivers/android/binder/page_range_helper.c",
+      "sha": "496887723ee003e910d6ce67dbadd8c5286e39d1",
+      "size": 759,
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/drivers/android/binder/page_range_helper.c",
+      "sha256": "8892b24f8024925e075625a5431d0194c3e053f8c5141c52285c082448f2f837",
+      "git_blob_verified": true
+    },
+    {
+      "path": "drivers/android/binder/page_range_helper.h",
+      "sha": "18dd2dd117b253fcbac735b48032b8f2d53d11fe",
+      "size": 338,
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/drivers/android/binder/page_range_helper.h",
+      "sha256": "2c24bdbedca7adc1023799fe4fcc0959ff861253b51978d0d584bef1280fd587",
+      "git_blob_verified": true
+    },
+    {
+      "path": "drivers/android/binder/process.rs",
+      "sha": "7e2e8427c5fa2e3bbb185cd7a4da3cca28851981",
+      "size": 60312,
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/drivers/android/binder/process.rs",
+      "sha256": "b983ef3ebd2d31ac8c74ff2d5e28944d424899414f81bf384882d6c4e04660fc",
+      "git_blob_verified": true
+    },
+    {
+      "path": "drivers/android/binder/range_alloc/array.rs",
+      "sha": "081d19b09d4bb480e95af5fcfeaa84cd10c1ac0b",
+      "size": 9592,
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/drivers/android/binder/range_alloc/array.rs",
+      "sha256": "3221180e2c039d868e4eabee21ac25e5bc7c19afbf4ff4ba46c4570947f1072b",
+      "git_blob_verified": true
+    },
+    {
+      "path": "drivers/android/binder/range_alloc/mod.rs",
+      "sha": "1f4734468ff11f40bb0e4305e2e3d99e9ee452a6",
+      "size": 10770,
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/drivers/android/binder/range_alloc/mod.rs",
+      "sha256": "f0033d9f6fc65428108dbae65737a73b1edd94eaf104cb10c2afbf2167b3f88c",
+      "git_blob_verified": true
+    },
+    {
+      "path": "drivers/android/binder/range_alloc/tree.rs",
+      "sha": "27c451f73614a2ca7448b04e892b9d0737d4b8e9",
+      "size": 17057,
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/drivers/android/binder/range_alloc/tree.rs",
+      "sha256": "6f456bd49d00fcd318854715545fe418c1ef294515667137c2b392f94d56bac5",
+      "git_blob_verified": true
+    },
+    {
+      "path": "drivers/android/binder/rust_binder.h",
+      "sha": "31806890ed1a278793ae7178f9d76ca4d591a954",
+      "size": 531,
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/drivers/android/binder/rust_binder.h",
+      "sha256": "1fb92bc7dfa3eb239e842a77e8a4634142ec2370dedbd87424350bf386e2b548",
+      "git_blob_verified": true
+    },
+    {
+      "path": "drivers/android/binder/rust_binder_events.c",
+      "sha": "5792aa59cc82507b8fd1933ea8893b7cea031af2",
+      "size": 1311,
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/drivers/android/binder/rust_binder_events.c",
+      "sha256": "adb8e26ba009a90f0d2eef0d3eca7f61c7b2e49a4a302bc71ab8987d30eb8c92",
+      "git_blob_verified": true
+    },
+    {
+      "path": "drivers/android/binder/rust_binder_events.h",
+      "sha": "2f3efbf9dba68e6415f0f09ff5c8255dc5c5bc00",
+      "size": 846,
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/drivers/android/binder/rust_binder_events.h",
+      "sha256": "1591d83654d2b302570dbabdef05f9d6f219d1df4072f4cef9cd70b0111af043",
+      "git_blob_verified": true
+    },
+    {
+      "path": "drivers/android/binder/rust_binder_internal.h",
+      "sha": "78288fe7964d804205105889db3918bd7fa51623",
+      "size": 2919,
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/drivers/android/binder/rust_binder_internal.h",
+      "sha256": "586209857a8c51e5854db0867f449464740f110b10224afeb68a11c8460bb2d8",
+      "git_blob_verified": true
+    },
+    {
+      "path": "drivers/android/binder/rust_binder_main.rs",
+      "sha": "2b04e83835f6cf191cbadfe06ad0d4d3e986aa37",
+      "size": 19162,
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/drivers/android/binder/rust_binder_main.rs",
+      "sha256": "45d98834f5d53b98b7bd93492712ae71315de18c0209c6f3f613ab670987810b",
+      "git_blob_verified": true
+    },
+    {
+      "path": "drivers/android/binder/rust_binderfs.c",
+      "sha": "c7e26753f1df598b96c8aa3d765639ba4122fe01",
+      "size": 20943,
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/drivers/android/binder/rust_binderfs.c",
+      "sha256": "5ca32f9808fff0a8589ad1e65fe6cf39bf64bd95e850e088d927ffdac0b5ea51",
+      "git_blob_verified": true
+    },
+    {
+      "path": "drivers/android/binder/stats.rs",
+      "sha": "f7ee24dd387a9b7c8487b9d1cee0b7f25c9b164c",
+      "size": 3041,
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/drivers/android/binder/stats.rs",
+      "sha256": "3d37ec9be5109fa463f68d61b5d86caa00f1d1b52a987d38ad2ffd755f17a971",
+      "git_blob_verified": true
+    },
+    {
+      "path": "drivers/android/binder/thread.rs",
+      "sha": "e2320704c722e2332f65b6b7d9429e8b6e6fdf56",
+      "size": 63585,
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/drivers/android/binder/thread.rs",
+      "sha256": "d20dd6761b56c629a7ef24fba620d0f9b3535b7d04a0faa0031b2227f94d1ee9",
+      "git_blob_verified": true
+    },
+    {
+      "path": "drivers/android/binder/trace.rs",
+      "sha": "af0e4392805e7ef2a39b7c1e557ea233dcd810ab",
+      "size": 380,
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/drivers/android/binder/trace.rs",
+      "sha256": "b617bde942f73718d9de728f060a176079d8ce9fd56b5446a3515b193d37efa8",
+      "git_blob_verified": true
+    },
+    {
+      "path": "drivers/android/binder/transaction.rs",
+      "sha": "b5434a2ae8193ca8817b8c462b5a7cf3366d891e",
+      "size": 17037,
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/drivers/android/binder/transaction.rs",
+      "sha256": "4d98cd0ee5851f06fc0bd143d956e43647924027ee6e9e52faa15aebbceb1a1c",
+      "git_blob_verified": true
+    },
+    {
+      "path": "drivers/android/Kconfig",
+      "sha": "e2e402c9d1759c81591473ad02ab7ad011bc61d0",
+      "size": 2246,
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/drivers/android/Kconfig",
+      "sha256": "6a456777334ffccbe8fc646121494c068e4950482cb5c145062b892733ed9e68",
+      "git_blob_verified": true
+    },
+    {
+      "path": "drivers/android/Makefile",
+      "sha": "e0c650d3898edeefd66c7d04c28bd1d0f49a76c9",
+      "size": 319,
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/drivers/android/Makefile",
+      "sha256": "372d0be7d7552f8979568b93e1c0e761761c10ac952b8a4885e6216860154771",
+      "git_blob_verified": true
+    },
+    {
+      "path": "include/uapi/linux/android/binder.h",
+      "sha": "03ee4c7010d70bac5ac06b569073c25b9971767e",
+      "size": 17226,
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/include/uapi/linux/android/binder.h",
+      "sha256": "562ee8b8148c014d0f055224b81aebedb74e3df2aafd1e738eb6801282ed1221",
+      "git_blob_verified": true
+    },
+    {
+      "path": "rust/kernel/security.rs",
+      "sha": "9d271695265fb4635038e9e36c975cebb38d6782",
+      "sha256": "3a45a0f06a131f33a3b89e5678fa5c7f74e386b687e6b4ebb3a4f072ae6e2ee0",
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/rust/kernel/security.rs",
+      "git_blob_verified": true,
+      "size": 4147
+    },
+    {
+      "path": "include/linux/lsm_hook_defs.h",
+      "sha": "b4958167e38196b4ab79fa0231e1b43a60d8fb79",
+      "sha256": "6dbbd97f3fbf0371a0dda06cfbf1ac725afd86f11acabd361284b8e8870e7d4a",
+      "url": "https://raw.githubusercontent.com/gregkh/linux/1253a6aa5d104312bf0992afacc15220ae35bdf9/include/linux/lsm_hook_defs.h",
+      "git_blob_verified": true,
+      "size": 25084
+    }
+  ],
+  "scope": "Upstream Rust Binder source, not actual kernel package build equivalence or executed transactions"
+}

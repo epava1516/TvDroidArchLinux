@@ -1,0 +1,9 @@
+{
+  "scope": "Original unchanged AOSP driver tests, selected no-manager cases only; no transactions/registry/security-context/real APK acceptance",
+  "binary_sha256": "f6a7c69ec1eb2bda324dc16e9bfd46eeb02003ba760947f0673b5c01a26e2f61",
+  "launcher_sha256": "f1e5aa73307f86f85974ec851d506e60c65c85f63b5d6cf40651459bafb3d782",
+  "namespace": "Private mount/PID/network/IPC/UTS/cgroup, original system/APEX read-only, private Binder only",
+  "identity": "Real UID/GID10000,empty groups,zero effective/permitted/inheritable/ambient caps,NNP1 verified before native exec",
+  "limits": "CPU15/wall30(+kill3)/AS64GiB virtual only, not physical RAM budget",
+  "not_tested": "Five original manager-dependent cases excluded by explicit filter, no fake manager. Original mmap assertion checks nullptr rather than MAP_FAILED, so this subset alone will not certify mmap validity."
+}

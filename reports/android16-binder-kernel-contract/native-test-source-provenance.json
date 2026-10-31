@@ -1,0 +1,48 @@
+{
+  "files": [
+    {
+      "name": "native-headers",
+      "url": "https://android.googlesource.com/platform/frameworks/native/+archive/fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103/libs/binder/include.tar.gz",
+      "archive_sha256": "6a00ffc3552c0afe35cbf5adafd8bf7673983b267cfc373e6bdef05e6472e2ff",
+      "regular_files": 43,
+      "unmaterialized_symlinks": [],
+      "scope": "Pinned commit archive and bytes; individual blob verification not claimed for all headers"
+    },
+    {
+      "name": "googletest",
+      "url": "https://android.googlesource.com/platform/external/googletest/+archive/cbeab5d01811d23ea488efc07f2c31f7c53024e2/googletest.tar.gz",
+      "archive_sha256": "4c82673e0e2d69b90b3b91238db5f1e898891e1e4c074eeeaf9173504d323860",
+      "regular_files": 151,
+      "unmaterialized_symlinks": [
+        {
+          "path": "LICENSE",
+          "link": "../LICENSE"
+        },
+        {
+          "path": "NOTICE",
+          "link": "../LICENSE"
+        }
+      ],
+      "scope": "Pinned commit archive and bytes; individual blob verification not claimed for all headers"
+    },
+    {
+      "name": "binder_module",
+      "url": "https://android.googlesource.com/platform/frameworks/native/+/fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103/libs/binder/binder_module.h?format=TEXT",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/binder-native-tests-1/native/binder_module.h",
+      "sha256": "48f0e0a19af6fd6fdc5fc2a1a8cf47d119ee0c699d64187f013a9b437ac70272"
+    },
+    {
+      "name": "gtest_bp",
+      "url": "https://android.googlesource.com/platform/external/googletest/+/cbeab5d01811d23ea488efc07f2c31f7c53024e2/Android.bp?format=TEXT",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/binder-native-tests-1/googletest-Android.bp",
+      "sha256": "29a37f4e5add32415e1328e89e376fc032dd02f2ecc829c70c6d4b32d990266a"
+    },
+    {
+      "name": "gtest_license",
+      "url": "https://android.googlesource.com/platform/external/googletest/+/cbeab5d01811d23ea488efc07f2c31f7c53024e2/LICENSE?format=TEXT",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/binder-native-tests-1/LICENSE",
+      "sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138"
+    }
+  ],
+  "scope": "Original source inputs, code unchanged. License/NOTICE symlinks not followed; referenced original root LICENSE retained. No tests executed."
+}

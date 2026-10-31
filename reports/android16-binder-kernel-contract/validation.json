@@ -1,0 +1,71 @@
+{
+  "scope": "Original native driver regressions and pinned source contracts; no manager/transaction/SID/MAC/APK acceptance",
+  "assertions": {
+    "native_tests_13_passed": true,
+    "mcp_filesystem_result_hash_matches": true,
+    "six_existing_pending_hashes_preserved": true
+  },
+  "limitations": [
+    "Idle NoTest cases accept EINVAL/unimplemented; some NULL cases permit multiple errors",
+    "Original mmap assertion checks nullptr, not MAP_FAILED; mapping validity not certified",
+    "Build uses original sources and platform Bionic/libc++; not full Soong/product flag equivalence"
+  ],
+  "evidence": [
+    {
+      "path": "reports/android16-binder-kernel-contract/aosp-source-provenance.json",
+      "sha256": "fcd3d74337140df4c57abd839f694f6a3c1dd282d1832c87ffc364f5bb728a66"
+    },
+    {
+      "path": "reports/android16-binder-kernel-contract/findings.json",
+      "sha256": "5524c4ee6f00bbc1bc72b73439ba710c75c57befa5bbac6731e9130003872d49"
+    },
+    {
+      "path": "reports/android16-binder-kernel-contract/host-kernel.json",
+      "sha256": "fe35080f3fa8a36fcbaeefa63a0556ffaffff09cfd262c3f7157193715090cee"
+    },
+    {
+      "path": "reports/android16-binder-kernel-contract/kernel-source-provenance.json",
+      "sha256": "555bb25821f99d385457b9ce3b3e018d2dad69e1fc51420e1bdda04219347faa"
+    },
+    {
+      "path": "reports/android16-binder-kernel-contract/libbinder-exports-mcp.json",
+      "sha256": "2e1636543e9c81ffc4b19afe6f3998783dbb9f861f98955249e8563a908fc527"
+    },
+    {
+      "path": "reports/android16-binder-kernel-contract/native-build.json",
+      "sha256": "0e335ad549571d59f9e2f5515a8c0225056615628f10e12055a2c0bcc9beba61"
+    },
+    {
+      "path": "reports/android16-binder-kernel-contract/native-execution-input.json",
+      "sha256": "abfbec3aa3397afef9410f67af6c08a337081f8f2d88c34f34c69c83df38a6d0"
+    },
+    {
+      "path": "reports/android16-binder-kernel-contract/native-launcher.py",
+      "sha256": "f1e5aa73307f86f85974ec851d506e60c65c85f63b5d6cf40651459bafb3d782"
+    },
+    {
+      "path": "reports/android16-binder-kernel-contract/native-link.json",
+      "sha256": "baaf568f11ad4af366f3afc66f155464d5741b224d1fffd13b855d77d6be1547"
+    },
+    {
+      "path": "reports/android16-binder-kernel-contract/native-test-results.json",
+      "sha256": "da24833e1947b291c3f9ca5ac69fe7c95dff6f0333c33f7d1d532d96b31d1e6f"
+    },
+    {
+      "path": "reports/android16-binder-kernel-contract/native-test-source-provenance.json",
+      "sha256": "bfd78cb1ca1040586ef774d9bf57dbddffa4aae2eb345978df7a53130839aadc"
+    },
+    {
+      "path": "reports/android16-binder-kernel-contract/native-tests-capture-summary.json",
+      "sha256": "c081f5d6302bdf6cc1301be7030f515b11b4429ec5f2654cc3e7bd53e6c7c411"
+    },
+    {
+      "path": "reports/android16-binder-kernel-contract/reproduce-native-build.py",
+      "sha256": "c976ea298d7c7e3526f717f7ab39499a6e0634c0797d1ede5e1b374cbfe6ad8d"
+    },
+    {
+      "path": "reports/android16-binder-kernel-contract/reproduce-native-link.py",
+      "sha256": "a90c9f4c9f2bb506ef5e78a85f5fbbd0003bc8137fa1c0c57fc2c0edd1fc6d0d"
+    }
+  ]
+}

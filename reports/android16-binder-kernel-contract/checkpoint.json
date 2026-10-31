@@ -1,0 +1,64 @@
+{
+  "observed_at": "2026-10-31T06:41:13.129678+00:00",
+  "base_commit": "48195234916a167bc9a3b713877e2273abe7f321",
+  "scope": "Original6.18.59 Binder driver and AOSP16 original client/manager identity/transaction contracts, source first; not IPC or APK acceptance",
+  "previous_checkpoint": "reports/android16-kernel-policy-contract/checkpoint.json",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "terminal_exec_handles": [
+    16284,
+    38659,
+    26473,
+    89827,
+    24633,
+    85750,
+    60789
+  ],
+  "live_exec_handles": [],
+  "next": "Prove actual sender PID/UID/SID and enforcement with original manager under a verified Linux-compatible active SELinux deployment. Do not fake context or boot Android/VM.",
+  "results": "13 selected original native driver tests passed via actual REA MCP controlled replay; 5 manager-dependent cases excluded. Actual Binder SID/IPC/manager/APK readiness unproven.",
+  "observed_processes": {
+    "scope": "Native replay exited0 and owned group cleanup verified by MCP; process sampling partial. No persistent REA target started. Historical host snapshot below is not current liveness proof."
+  },
+  "validated_independent_progress": {
+    "original_binary_exports": "Both0 via original checkpolicy-M-b-C",
+    "aosp_retained_binary_attributes": 199,
+    "linux_retained_binary_attributes": 340,
+    "attribute_set_exports_all_flat_explicit": true
+  },
+  "objective": "Complete unmodified APK including TV on Linux Rust/Smithay, coherent native AOSP16QPR2/Bionic; no Waydroid, full Android or introduced VM; preserve compatibility/isolation/stability/lightness/install/update.",
+  "constraints": [
+    "A16-QPR2-1",
+    "No VM introduction or VM/client restart",
+    "No policy load/host relabeling without verified deployment plan",
+    "Fixtures/static policy checks are partial, not APK acceptance"
+  ],
+  "branch": "main",
+  "head_before_milestone_commit": "48195234916a167bc9a3b713877e2273abe7f321",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "relation_to_local_origin_tracking": "0\t0",
+  "own_staged_milestone_paths": [],
+  "process_snapshot": {
+    "path": "dist/aosp16/kernel-selinux-contract-1/host-processes.json",
+    "sha256": "57749d3c2b42669ecde5a440c8b2e3ae390a2ccf647a68614ebf68493f7e31f9",
+    "scope": "138 host processes sampled without args/env; no secilc/genheaders/servicemanager/app_process/qemu/gdb comm observed in selected names; Codex181308/181453 observed. Snapshot is historical, not proof of future state."
+  },
+  "rea_session_status": "Actual inspect_native_exports and capture_process_scenario succeeded; static export evidence separate from native execution.",
+  "tests": {
+    "native_result": "native-test-results.json",
+    "findings": "findings.json",
+    "capture": "native-tests-capture-summary.json"
+  },
+  "evidence_root": "reports/android16-binder-kernel-contract",
+  "active_exec_handles": []
+}

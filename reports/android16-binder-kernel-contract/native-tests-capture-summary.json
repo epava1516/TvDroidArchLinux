@@ -1,0 +1,144 @@
+{
+  "projection": "Selected non-sensitive fields from actual MCP Evidence; NOT complete authenticated Evidence. Raw capture with host OSC identifiers is not exported to Git.",
+  "parent_evidence_id": "ev_040fcaacd7e51fbe6527f127461a8f8e2919bc7f327e73b16b96f1c49b59be26",
+  "operation": "capture_process_scenario",
+  "authority": "controlled-replay",
+  "confidence": "observed",
+  "exit": {
+    "code": 0,
+    "signal": 0,
+    "reason": "exited"
+  },
+  "cleanup": {
+    "owned_process_group": "verified",
+    "temporary_root": "removed",
+    "unverified_processes": [
+      {
+        "pid": 233037,
+        "reason": "EACCES: permission denied, open '/proc/233037/environ'"
+      }
+    ]
+  },
+  "truncated": true,
+  "truncation_details": {
+    "raw_terminal": {
+      "budget_bytes": 200000,
+      "observed_bytes": 3636,
+      "retained_bytes": 3636,
+      "observed_frames": 9,
+      "retained_frames": 9
+    },
+    "rendered_terminal": {
+      "budget_bytes": 200000,
+      "observed_bytes": 37392,
+      "retained_bytes": 37392,
+      "observed_frames": 9,
+      "retained_frames": 9
+    },
+    "normalized_terminal": {
+      "budget_bytes": 200000,
+      "retained_bytes": 3635,
+      "omitted_frames": 0
+    },
+    "filesystem_before": {
+      "files_limit": 20,
+      "depth_limit": 2,
+      "enumeration_truncated": false,
+      "enumeration_reasons": [],
+      "enumeration_omissions": [],
+      "unobserved_subtrees": [],
+      "hash_budget_bytes": 262144,
+      "hashed_bytes": 0,
+      "hash_omissions": []
+    },
+    "filesystem_after": {
+      "files_limit": 20,
+      "depth_limit": 2,
+      "enumeration_truncated": false,
+      "enumeration_reasons": [],
+      "enumeration_omissions": [],
+      "unobserved_subtrees": [],
+      "hash_budget_bytes": 262144,
+      "hashed_bytes": 5607,
+      "hash_omissions": []
+    },
+    "process": {
+      "sample_limit": 30,
+      "sampling_partial": true,
+      "retained_samples": 0,
+      "sample_limit_reached": false,
+      "sampling_failures": 14,
+      "first_sampling_failure": "/proc/233009/environ: EACCES: Error: EACCES: permission denied, open '/proc/233009/environ'",
+      "coverage": "sampled"
+    }
+  },
+  "residual_unknowns": [
+    {
+      "scope": "process",
+      "reason": "Process trees are sampled and may omit short-lived descendants."
+    },
+    {
+      "scope": "process",
+      "reason": "The executable digest is a prelaunch file sample; operating-system image binding is not atomically observed."
+    },
+    {
+      "scope": "environment",
+      "reason": "Inherited host environment variables are not recorded."
+    },
+    {
+      "scope": "network",
+      "reason": "Network activity is not observed by this capture."
+    },
+    {
+      "scope": "process",
+      "reason": "Process sampling has incomplete observations: /proc/233009/environ: EACCES: Error: EACCES: permission denied, open '/proc/233009/environ'. See truncation_details.process."
+    },
+    {
+      "scope": "process",
+      "reason": "Ownership of unrelated process 233037 could not be verified; it was left untouched: EACCES: permission denied, open '/proc/233037/environ'"
+    }
+  ],
+  "files_before": [
+    {
+      "path": "root_0:.",
+      "mode": 16877,
+      "size": 4096,
+      "type": "directory",
+      "sha256": null,
+      "symlink_target": null
+    }
+  ],
+  "files_after": [
+    {
+      "path": "root_0:.",
+      "mode": 16877,
+      "size": 4096,
+      "type": "directory",
+      "sha256": null,
+      "symlink_target": null
+    },
+    {
+      "path": "root_0:tests.json",
+      "mode": 33188,
+      "size": 5607,
+      "type": "file",
+      "sha256": "da24833e1947b291c3f9ca5ac69fe7c95dff6f0333c33f7d1d532d96b31d1e6f",
+      "symlink_target": null
+    }
+  ],
+  "preexec_security": {
+    "Uid": "10000\t10000\t10000\t10000",
+    "Gid": "10000\t10000\t10000\t10000",
+    "Groups": "",
+    "CapEff": "0000000000000000",
+    "CapPrm": "0000000000000000",
+    "CapInh": "0000000000000000",
+    "CapAmb": "0000000000000000",
+    "NoNewPrivs": "1"
+  },
+  "private_binder": {
+    "major": 242,
+    "minor": 1
+  },
+  "scope": "Original filtered native tests only, not transaction/registry/SID/enforcement or APK acceptance."
+}

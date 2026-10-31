@@ -1,0 +1,152 @@
+{
+  "tests": 13,
+  "failures": 0,
+  "disabled": 0,
+  "errors": 0,
+  "timestamp": "2026-10-31T06:21:53Z",
+  "time": "0.029s",
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "BinderDriverInterfaceTest",
+      "tests": 13,
+      "failures": 0,
+      "disabled": 0,
+      "errors": 0,
+      "timestamp": "2026-10-31T06:21:53Z",
+      "time": "0.028s",
+      "testsuite": [
+        {
+          "name": "Version",
+          "file": "\/home\/tv\/.cache\/archtv\/aosp16-qpr2\/binder-contract-study-1\/libs\/binder\/tests\/binderDriverInterfaceTest.cpp",
+          "line": 151,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-31T06:21:53Z",
+          "time": "0s",
+          "classname": "BinderDriverInterfaceTest"
+        },
+        {
+          "name": "OpenNoMmap",
+          "file": "\/home\/tv\/.cache\/archtv\/aosp16-qpr2\/binder-contract-study-1\/libs\/binder\/tests\/binderDriverInterfaceTest.cpp",
+          "line": 157,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-31T06:21:53Z",
+          "time": "0.001s",
+          "classname": "BinderDriverInterfaceTest"
+        },
+        {
+          "name": "WriteReadNull",
+          "file": "\/home\/tv\/.cache\/archtv\/aosp16-qpr2\/binder-contract-study-1\/libs\/binder\/tests\/binderDriverInterfaceTest.cpp",
+          "line": 163,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-31T06:21:53Z",
+          "time": "0s",
+          "classname": "BinderDriverInterfaceTest"
+        },
+        {
+          "name": "SetIdleTimeoutNull",
+          "file": "\/home\/tv\/.cache\/archtv\/aosp16-qpr2\/binder-contract-study-1\/libs\/binder\/tests\/binderDriverInterfaceTest.cpp",
+          "line": 167,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-31T06:21:53Z",
+          "time": "0s",
+          "classname": "BinderDriverInterfaceTest"
+        },
+        {
+          "name": "SetMaxThreadsNull",
+          "file": "\/home\/tv\/.cache\/archtv\/aosp16-qpr2\/binder-contract-study-1\/libs\/binder\/tests\/binderDriverInterfaceTest.cpp",
+          "line": 171,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-31T06:21:53Z",
+          "time": "0s",
+          "classname": "BinderDriverInterfaceTest"
+        },
+        {
+          "name": "SetIdlePriorityNull",
+          "file": "\/home\/tv\/.cache\/archtv\/aosp16-qpr2\/binder-contract-study-1\/libs\/binder\/tests\/binderDriverInterfaceTest.cpp",
+          "line": 175,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-31T06:21:53Z",
+          "time": "0s",
+          "classname": "BinderDriverInterfaceTest"
+        },
+        {
+          "name": "VersionNull",
+          "file": "\/home\/tv\/.cache\/archtv\/aosp16-qpr2\/binder-contract-study-1\/libs\/binder\/tests\/binderDriverInterfaceTest.cpp",
+          "line": 179,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-31T06:21:53Z",
+          "time": "0s",
+          "classname": "BinderDriverInterfaceTest"
+        },
+        {
+          "name": "SetIdleTimeoutNoTest",
+          "file": "\/home\/tv\/.cache\/archtv\/aosp16-qpr2\/binder-contract-study-1\/libs\/binder\/tests\/binderDriverInterfaceTest.cpp",
+          "line": 183,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-31T06:21:53Z",
+          "time": "0s",
+          "classname": "BinderDriverInterfaceTest"
+        },
+        {
+          "name": "SetMaxThreads",
+          "file": "\/home\/tv\/.cache\/archtv\/aosp16-qpr2\/binder-contract-study-1\/libs\/binder\/tests\/binderDriverInterfaceTest.cpp",
+          "line": 188,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-31T06:21:53Z",
+          "time": "0s",
+          "classname": "BinderDriverInterfaceTest"
+        },
+        {
+          "name": "SetIdlePriorityNoTest",
+          "file": "\/home\/tv\/.cache\/archtv\/aosp16-qpr2\/binder-contract-study-1\/libs\/binder\/tests\/binderDriverInterfaceTest.cpp",
+          "line": 193,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-31T06:21:53Z",
+          "time": "0s",
+          "classname": "BinderDriverInterfaceTest"
+        },
+        {
+          "name": "ThreadExit",
+          "file": "\/home\/tv\/.cache\/archtv\/aosp16-qpr2\/binder-contract-study-1\/libs\/binder\/tests\/binderDriverInterfaceTest.cpp",
+          "line": 203,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-31T06:21:53Z",
+          "time": "0.02s",
+          "classname": "BinderDriverInterfaceTest"
+        },
+        {
+          "name": "WriteReadEmpty",
+          "file": "\/home\/tv\/.cache\/archtv\/aosp16-qpr2\/binder-contract-study-1\/libs\/binder\/tests\/binderDriverInterfaceTest.cpp",
+          "line": 209,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-31T06:21:53Z",
+          "time": "0s",
+          "classname": "BinderDriverInterfaceTest"
+        },
+        {
+          "name": "Read",
+          "file": "\/home\/tv\/.cache\/archtv\/aosp16-qpr2\/binder-contract-study-1\/libs\/binder\/tests\/binderDriverInterfaceTest.cpp",
+          "line": 214,
+          "status": "RUN",
+          "result": "COMPLETED",
+          "timestamp": "2026-10-31T06:21:53Z",
+          "time": "0.005s",
+          "classname": "BinderDriverInterfaceTest"
+        }
+      ]
+    }
+  ]
+}

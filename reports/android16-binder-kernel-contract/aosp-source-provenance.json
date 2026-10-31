@@ -1,0 +1,55 @@
+{
+  "source_commit": "fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103",
+  "files": [
+    {
+      "path": "libs/binder/ProcessState.cpp",
+      "url": "https://android.googlesource.com/platform/frameworks/native/+/fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103/libs/binder/ProcessState.cpp",
+      "sha256": "56f7cd3f88dd04605be08b5488dd1ac9de888a425a8011e5b07782f262fd9478",
+      "git_blob_sha1": "f7d53472a552afa390d3f679310cfa70568a85b3",
+      "git_blob_verified": true
+    },
+    {
+      "path": "libs/binder/IPCThreadState.cpp",
+      "url": "https://android.googlesource.com/platform/frameworks/native/+/fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103/libs/binder/IPCThreadState.cpp",
+      "sha256": "7d9bd8ce38d37d4e7a1f004ab2144fe69ff95799e0db24b7bdb5d0681af065a8",
+      "git_blob_sha1": "12c91aeaaf299a10d976dd0422dca94441b5739a",
+      "git_blob_verified": true
+    },
+    {
+      "path": "libs/binder/include/binder/ProcessState.h",
+      "url": "https://android.googlesource.com/platform/frameworks/native/+/fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103/libs/binder/include/binder/ProcessState.h",
+      "sha256": "6faa4362e1d9b102b5b422443abf63b26a361be3d2cb9eb55940ceb7677d7e1e",
+      "git_blob_sha1": "7c647d902b7a1645af9c53dd9078b23651f12fda",
+      "git_blob_verified": true
+    },
+    {
+      "path": "libs/binder/include/binder/IPCThreadState.h",
+      "url": "https://android.googlesource.com/platform/frameworks/native/+/fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103/libs/binder/include/binder/IPCThreadState.h",
+      "sha256": "4177f4d0f7ee80579e4881cead1fd6aa0bc784ba5f5c34720cdd4f04b2afd5ff",
+      "git_blob_sha1": "83f8b6037b9917ac80e0f1efbf5009b8a6de6071",
+      "git_blob_verified": true
+    },
+    {
+      "path": "libs/binder/tests/binderDriverInterfaceTest.cpp",
+      "url": "https://android.googlesource.com/platform/frameworks/native/+/fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103/libs/binder/tests/binderDriverInterfaceTest.cpp",
+      "sha256": "1faac7449fd1d2e0d8696b9406cb44ab0db126cfbddc92f531aebb92cccc1af3",
+      "git_blob_sha1": "af8286008f4f91012e4a630f6dd38d887543c3d8",
+      "git_blob_verified": true
+    },
+    {
+      "path": "libs/binder/tests/binderThroughputTest.cpp",
+      "url": "https://android.googlesource.com/platform/frameworks/native/+/fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103/libs/binder/tests/binderThroughputTest.cpp",
+      "sha256": "f9802a966e16f41bfd91e71c83fbd431979afc66e9ff79896ccf2c40a0c08a7e",
+      "git_blob_sha1": "f40062ab16be9f00e75c60e7544d4a75a615d6cd",
+      "git_blob_verified": true
+    },
+    {
+      "path": "libs/binder/tests/Android.bp",
+      "url": "https://android.googlesource.com/platform/frameworks/native/+/fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103/libs/binder/tests/Android.bp",
+      "sha256": "37f707167eeb1673009144716c94bdcf7feae5a03732b3a0418d3848f0b808bd",
+      "git_blob_sha1": "98c5b03e272fb00c00d624752bccd6285b1c703e",
+      "git_blob_verified": true
+    }
+  ],
+  "scope": "Original available AOSP source, not runtime execution"
+}

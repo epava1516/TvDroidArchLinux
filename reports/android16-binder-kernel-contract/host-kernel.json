@@ -1,0 +1,20 @@
+{
+  "observed_at": "2026-10-31T06:37:07.893151+00:00",
+  "uname_release": "6.18.59-1-lts",
+  "config": {
+    "CONFIG_ANDROID_BINDER_IPC": "# CONFIG_ANDROID_BINDER_IPC is not set",
+    "CONFIG_ANDROID_BINDER_IPC_RUST": "CONFIG_ANDROID_BINDER_IPC_RUST=y",
+    "CONFIG_ANDROID_BINDERFS": "unknown",
+    "CONFIG_ANDROID_BINDER_DEVICES": "CONFIG_ANDROID_BINDER_DEVICES=\"\"",
+    "CONFIG_SECURITY_SELINUX": "CONFIG_SECURITY_SELINUX=y",
+    "CONFIG_LSM": "CONFIG_LSM=\"landlock,lockdown,yama,integrity,bpf\""
+  },
+  "active_lsms": [
+    "capability",
+    "landlock",
+    "lockdown",
+    "yama",
+    "bpf"
+  ],
+  "scope": "Current host observations, not source-package equivalence or Binder LSM enforcement tests"
+}

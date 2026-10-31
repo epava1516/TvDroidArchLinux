@@ -1,0 +1,96 @@
+{
+  "scope": "Native link of original unmodified AOSP test/GTest to original GSI system/Bionic libraries; link staging is not runtime namespace flattening",
+  "argv": [
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-toolchain-1/bin/ld.lld",
+    "--eh-frame-hdr",
+    "-pie",
+    "--dynamic-linker",
+    "/system/bin/linker64",
+    "-z",
+    "relro",
+    "-z",
+    "now",
+    "--no-undefined",
+    "--no-allow-shlib-undefined",
+    "--rpath-link=/home/tv/repositorio-principal/dist/aosp16/binder-original-tests-build-1/link-libs",
+    "/home/tv/repositorio-principal/dist/aosp16/crt-native-1/crtbegin_dynamic.o",
+    "/home/tv/repositorio-principal/dist/aosp16/binder-original-tests-build-1/binderDriverInterfaceTest.o",
+    "/home/tv/repositorio-principal/dist/aosp16/binder-original-tests-build-1/gtest-all.o",
+    "-L/home/tv/repositorio-principal/dist/aosp16/binder-original-tests-build-1/link-libs",
+    "-lbinder",
+    "-lutils",
+    "-llog",
+    "-lc++",
+    "-lc",
+    "-lm",
+    "-ldl",
+    "/home/tv/repositorio-principal/dist/aosp16/crt-native-1/crtend_android.o",
+    "-o",
+    "/home/tv/repositorio-principal/dist/aosp16/binder-original-tests-build-1/binderDriverInterfaceTest"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "libraries": [
+    {
+      "name": "libbinder.so",
+      "logical_path": "/system/lib64/libbinder.so",
+      "physical_path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libbinder.so",
+      "sha256": "184ef6000d17e6ce011e5b595a00b24cadbec5915a4eed5f4b16b0c172a45e49"
+    },
+    {
+      "name": "libcutils.so",
+      "logical_path": "/system/lib64/libcutils.so",
+      "physical_path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libcutils.so",
+      "sha256": "ed53b0a8de029f738ccfe346242371c50addc6c41435647ec55468a87a62b1eb"
+    },
+    {
+      "name": "liblog.so",
+      "logical_path": "/system/lib64/liblog.so",
+      "physical_path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/liblog.so",
+      "sha256": "d19efa76e39bc458a0f9125d1665185ce95af9153bfe695e0c9519937ea9bc0a"
+    },
+    {
+      "name": "libutils.so",
+      "logical_path": "/system/lib64/libutils.so",
+      "physical_path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libutils.so",
+      "sha256": "5b01ecd8fc3b23ef14f34dc49cb7b42b9fe4a036e33e1de08b557598bcc4a7a2"
+    },
+    {
+      "name": "libapexsupport.so",
+      "logical_path": "/system/lib64/libapexsupport.so",
+      "physical_path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libapexsupport.so",
+      "sha256": "533c4c56e19ad3ea94031f3fd543e233a33441732c48b71c18f6eac491bde8d1"
+    },
+    {
+      "name": "libvndksupport.so",
+      "logical_path": "/system/lib64/libvndksupport.so",
+      "physical_path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libvndksupport.so",
+      "sha256": "ac4e2cc821957fc90c739b1414520e006ef51b6031e83f9163db177b710fbc6c"
+    },
+    {
+      "name": "libc++.so",
+      "logical_path": "/system/lib64/libc++.so",
+      "physical_path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libc++.so",
+      "sha256": "dc8cfbe728fcec370d576cf014a6c236ba56c56d3519678598a0e98adee5b477"
+    },
+    {
+      "name": "libc.so",
+      "logical_path": "/apex/com.android.runtime/lib64/bionic/libc.so",
+      "physical_path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/apex/com.android.runtime/lib64/bionic/libc.so",
+      "sha256": "c743999d121b9cdaaa2fc1eaae386cd51eaeed063423f26d89f29590a3e24723"
+    },
+    {
+      "name": "libm.so",
+      "logical_path": "/apex/com.android.runtime/lib64/bionic/libm.so",
+      "physical_path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/apex/com.android.runtime/lib64/bionic/libm.so",
+      "sha256": "51ba6fe4e0628c069274ecba60c864fe9b84ae288e7f2c6cf79fe3d75ad54638"
+    },
+    {
+      "name": "libdl.so",
+      "logical_path": "/apex/com.android.runtime/lib64/bionic/libdl.so",
+      "physical_path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/apex/com.android.runtime/lib64/bionic/libdl.so",
+      "sha256": "976f432c4e1a1ada8542534caac3905cfd8ad37a72756412a20ebfc6017f582e"
+    }
+  ]
+}
