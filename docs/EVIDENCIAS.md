@@ -1,5 +1,18 @@
 # Índice de evidencias
 
+## Entrada original de framework · fallo demostrado
+
+[Validación](../reports/android16-framework-entry/validation.json),
+[fuentes](../reports/android16-framework-entry/source-findings.json),
+[baseline](../reports/android16-framework-entry/baseline/result.json),
+[captura diagnóstica](../reports/android16-framework-entry/diagnostic-early-failure/entry.stderr),
+[REA estático](../reports/android16-framework-entry/rea-startvm-disassembly.json) y
+[checkpoint actual](../reports/android16-framework-entry/checkpoint.json).
+Retorno0 original no acredita readiness: startVm falla antes de crear la VM por
+ABI global ausente en el snapshot parcial. No JNI/framework ni APK aprobados.
+La auditoría explica el requisito debug original sin declararlo satisfecho.
+Markor sólo estuvo en classpath; la matriz mantiene las nueve etapas no probadas.
+
 ## Configuración nativa A16 · namespaces, classpaths y motor
 
 [Validación](../reports/android16-linkerconfig/validation.json),
@@ -8,7 +21,7 @@
 [estricto global fallido](../reports/android16-linkerconfig/global-strict-failure/result.json),
 [classpaths nativos](../reports/android16-linkerconfig/native-classpath/classpath),
 [regresión DEX](../reports/android16-linkerconfig/semantic-regression/result.json) y
-[checkpoint actual](../reports/android16-linkerconfig/checkpoint.json).
+[checkpoint de namespaces](../reports/android16-linkerconfig/checkpoint.json).
 36 módulos/4.395 archivos reproducidos; namespaces usados sin LD_LIBRARY_PATH ni
 preload; 46 jars boot y 69 únicos de ejecución. ART estricto por APEX pasa, global
 no: el modo normal ignora requisitos no resueltos. Fixture Java pasa, sin acreditar

@@ -1,0 +1,65 @@
+{
+  "observed_at": "2026-10-31T01:25:41.315804+00:00",
+  "contract": "A16-QPR2-1",
+  "objective": "Complete unmodified arbitrary APK incl TV, Linux Rust/Smithay; native coherent AOSP16 QPR2, SF\u2192Wayland first hypothesis; no Waydroid/full Android. Preserve compatibility/isolation/stability/lightweight/install/update.",
+  "branch": "main",
+  "source_base_commit": "e520093a6a75c18ec88d82cc3136d41f3ace59b0",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "relation_to_local_origin_tracking": "0\t0",
+  "pending_own": {
+    "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+    "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+    "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+    "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+  },
+  "pending_other_hashes": {
+    "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+  },
+  "own_milestone": "Original provider explanation and bounded app_process/configuration diagnostic; optional native log tool; no older pending source/H9 log included",
+  "terminal_exec_handles": [
+    24606,
+    42572,
+    80137,
+    34804,
+    59191,
+    49498
+  ],
+  "evidence_root": "reports/android16-framework-entry",
+  "recovery_snapshot": "/home/tv/recuperacion-archtv/20261031T010916Z-a16-framework-entry",
+  "tests": "41 original provider requirements explain debug absence; original app_process baseline0 does not imply readiness; real log/source show startVm ABI-property guard. Namespace correctly denied /probe diagnostic, permitted /data without config changes.",
+  "next": "Review/implement a complete coherent Linux product/boot profile with all original present partition inputs/contexts and provenance for derived/Linux-defined/unknown fields; evaluate original whole unit reuse. Then repeat original startup and resolve Binder/service lifecycle for real Markor through correct package/zygote/AMS path. No single-field/method workaround.",
+  "not_done": "No property/profile fix applied, no JNI registration/ActivityThread proven, no Markor installed/loaded/executed, no APK stage passed",
+  "restart_policy": "No VM/client restart or Android full boot",
+  "process_observation": {
+    "observed_at": "2026-10-31T01:32:28.238884+00:00",
+    "source": "host ps plus /proc start ticks, no arguments/environment captured",
+    "processes": [
+      {
+        "pid": 181298,
+        "ppid": 1,
+        "state": "Ssl",
+        "comm": "node-MainThread",
+        "start_ticks": "4923686"
+      },
+      {
+        "pid": 181308,
+        "ppid": 181298,
+        "state": "Sl",
+        "comm": "codex",
+        "start_ticks": "4923705"
+      },
+      {
+        "pid": 181453,
+        "ppid": 181308,
+        "state": "Sl",
+        "comm": "codex-code-mode",
+        "start_ticks": "4928150"
+      }
+    ],
+    "runtime_processes_observed": false,
+    "gdb_session_started": false,
+    "graphify_session_79875": "terminal, exit0, 2591 nodes/4983 edges/220 communities",
+    "old_exec_handles": "Historical terminal experiment handles; no assertion they remain active"
+  }
+}

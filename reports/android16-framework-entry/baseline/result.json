@@ -1,0 +1,30 @@
+{
+  "command": [
+    "sudo",
+    "-n",
+    "/usr/bin/prlimit",
+    "--cpu=30",
+    "--core=0",
+    "--",
+    "/usr/bin/unshare",
+    "--mount",
+    "--pid",
+    "--fork",
+    "--kill-child=SIGKILL",
+    "--net",
+    "--ipc",
+    "--uts",
+    "--cgroup",
+    "/usr/bin/python",
+    "/tmp/archtv-a16-framework-entry-1.py",
+    "framework"
+  ],
+  "exit_code": 0,
+  "seconds": 1.5958019879981293,
+  "LD_LIBRARY_PATH": null,
+  "LD_PRELOAD": null,
+  "entry": "Original app_process64 -> RuntimeInit -> ActivityThread prerequisite, no zygote/system_server",
+  "apk_sha256": "c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440",
+  "apk_scope": "Intact Markor supplied on classpath; not installed or proven loaded/executed, no real application launch claimed",
+  "scope": "Subsystem startup diagnostic only; original GSI runtime/JNI/classpaths;UID10000 no caps before exec; server/SELinux/native device contracts absent unless demonstrated"
+}

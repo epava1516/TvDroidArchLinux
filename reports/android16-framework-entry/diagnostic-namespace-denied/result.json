@@ -1,0 +1,26 @@
+{
+  "command": [
+    "sudo",
+    "-n",
+    "/usr/bin/prlimit",
+    "--cpu=30",
+    "--core=0",
+    "--",
+    "/usr/bin/unshare",
+    "--mount",
+    "--pid",
+    "--fork",
+    "--kill-child=SIGKILL",
+    "--net",
+    "--ipc",
+    "--uts",
+    "--cgroup",
+    "/usr/bin/python",
+    "/tmp/archtv-a16-framework-entry-log-1.py",
+    "framework"
+  ],
+  "exit_code": 1,
+  "seconds": 0.32634480099659413,
+  "instrumentation": "Optional preload calls original liblog set_logger/minimum_priority; does not implement or return results for runtime APIs",
+  "scope": "Diagnostic run only, not functional acceptance; Markor present on classpath but not installed or proven executed; no zygote/system_server/Android boot"
+}

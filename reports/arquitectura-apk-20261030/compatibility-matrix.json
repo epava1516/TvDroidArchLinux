@@ -507,5 +507,16 @@
     "demonstrated_failure": "Reproduced stage failure with evidence; distinguish app/runtime/env cause",
     "external_block": "Specific externally unmet condition evidenced, not generic uncertainty",
     "not_tested": "Not executed/insufficient evidence; no compatibility percentage inferred"
-  }
+  },
+  "runtime_bootstrap_observations_a16": [
+    {
+      "id": "a16-original-app-process-prerequisite",
+      "status": "demonstrated_failure",
+      "scope": "Framework bootstrap only; not an installed/launched APK journey",
+      "source_base_commit": "e520093",
+      "evidence": "../android16-framework-entry/validation.json",
+      "observation": "Original app_process returns0 but observed startVm ABI-list guard exits before VM; Markor only present on classpath",
+      "app_stage_results": "unchanged_not_tested"
+    }
+  ]
 }

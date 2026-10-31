@@ -1,0 +1,26 @@
+{
+  "command": [
+    "sudo",
+    "-n",
+    "/usr/bin/prlimit",
+    "--cpu=30",
+    "--core=0",
+    "--",
+    "/usr/bin/unshare",
+    "--mount",
+    "--pid",
+    "--fork",
+    "--kill-child=SIGKILL",
+    "--net",
+    "--ipc",
+    "--uts",
+    "--cgroup",
+    "/usr/bin/python",
+    "/tmp/archtv-a16-framework-entry-log-2.py",
+    "framework"
+  ],
+  "exit_code": 0,
+  "seconds": 0.6041426759984461,
+  "instrumentation": "Same original liblog logger API diagnostic, moved to permitted /data path; original namespace config unchanged",
+  "scope": "Observational preload only; not uninstrumented functional acceptance or APK launch. No zygote/system_server/Android boot."
+}

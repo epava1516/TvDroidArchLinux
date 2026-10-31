@@ -1,0 +1,49 @@
+{
+  "observed_at": "2026-10-31T01:25:41.315804+00:00",
+  "source_base_commit": "e520093a6a75c18ec88d82cc3136d41f3ace59b0",
+  "baseline_exit": 0,
+  "baseline_readiness_proven": false,
+  "diagnostic_exit": 0,
+  "observed_failure": "ro.product.cpu.abilist64 missing; original startVm returns before JNI_CreateJavaVM",
+  "status": "demonstrated_failure_of_framework_prerequisite",
+  "Markor_APK_sha256": "c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440",
+  "Markor_stage_pass": false,
+  "JNI_registration_or_ActivityThread_executed": false,
+  "original_namespace_preserved": true,
+  "diagnostic_not_production_preload": true,
+  "logger_source_sha256": "6b8d3398facbac0be1daf4c80d4fdb0426c43abb61ce53e2c91da67082f97220",
+  "logger_binary_sha256": "743076518302bce50e0f773c638e6a86a2f2d2a62525898cf701e813314cfca4",
+  "global_provider_audit": {
+    "requirements": 41,
+    "without_declared_provider": [
+      "libdexfiled.so"
+    ],
+    "unconditional_original_source_declaration": true,
+    "global_strict_still_failed": true,
+    "metadata_source_explanation_not_missing_implementation_fixed": true
+  },
+  "REA_MCP": {
+    "evidence_id": "ev_e0b24a6699d4e468e7da5c9b1e7dbfbd2784a2d4fda83aca1212bc150ba9c162",
+    "operation": "Actual symbol-scoped disassembly of compiled original AndroidRuntime.startVm",
+    "scope": "Static evidence, not a runtime observer or full semantic proof"
+  },
+  "pending_files_preserved": true,
+  "scope": "Whole-subsystem startup/configuration diagnosis; no fixture/class/constructor or exit code used as APK compatibility success",
+  "matrix_sha256": "ed54a4309e2adf8d6be867e9608fe7126c95b2fa277fda220bdc8e55a83496ca",
+  "real_APK_stage_results_unchanged": true,
+  "axes": {
+    "API_services": "No APK/framework lifecycle function accepted",
+    "binary_Bionic_JNI": "Original libandroid_runtime loads and executes a configuration guard; framework JNI registration not reached",
+    "ISA": "x86_64 execution observed, no ARM translation or 32-bit acceptance",
+    "ABI_properties": "Configuration declarations do not by themselves demonstrate any of the three axes"
+  },
+  "local_links_checked": 140,
+  "broken_local_links": 0,
+  "graphify": {
+    "mode": "AST-only isolated milestone worktree, excludes old pending sources",
+    "nodes": 2591,
+    "edges": 4983,
+    "communities": 220,
+    "exit_code": 0
+  }
+}

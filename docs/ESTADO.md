@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-linkerconfig/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-framework-entry/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -30,41 +30,44 @@ no equivalen automáticamente a Android completo; estudiar cierres reales.
 | Se conserva | Compositor/shell Rust, instalación/herramientas y regresiones previas útiles; H7–H9 permanecen abiertos. |
 | Históricos Android13 | ART host/glibc y fixtures propias; mezcla de jars/core/JNI; loader Bionic parcial y cierre de bibliotecas. No se trasladan como validación de A16. |
 | Pendiente separado | Cuatro archivos propios de JNI/bootstrap host conservados sin commit. Ensayos API33 de propiedades/configuración pausados, sin área ejecutada en esa línea ni cambio a producción. |
-| Configuración parcial A16 | Metadatos originales y áreas Bionic probados: 101 valores/tipos/contextos con getprop original, UID10000 sin capacidades. Servicio/IPC/política SELinux pendientes. |
+| Configuración parcial A16 | Namespaces/classpaths y Java del motor probados; app_process muestra configuración boot incompleta y no crea VM. Servicio/IPC/política SELinux y aplicaciones pendientes. |
 | Herramientas | REA MCP respondió realmente; análisis ELF/APK estático previo y estado actual, sin presentarlos como ejecución ni CLI como conexión. |
 | No probado | Nueve etapas de las APK sobre A16; SF→Wayland, aceleración/entrada/AV/TV, aislamiento por app/Binder, GMS/DRM/OEM/WebView, traducción ISA/32/64, presupuestos, instalación/actualización/seguridad actualizada. |
 
 ## Checkpoint y siguiente acción
 
-Base del nuevo hito: `b26ec62`, main; contrato y manifiesto publicados. Consultar Git para HEAD/origin actuales. El snapshot local
-`/home/tv/recuperacion-archtv/20261031T003432Z-a16-linkerconfig` guarda parches,
+Base del nuevo hito: `e520093`, main; contrato y manifiesto publicados. Consultar Git para HEAD/origin actuales. El snapshot local
+`/home/tv/recuperacion-archtv/20261031T010916Z-a16-framework-entry` guarda parches,
 archivos nuevos y scripts de estudio. Los logs ajenos H9 permanecen intactos.
 El checkpoint registra procesos/handles y resultados; no hay ART/bwrap/build activo
 observado tras las pruebas A16. No restaurar parches sin contrastar Git.
 
-Siguiente acción: reconciliar requisitos/proveedores del build original (estricto
-global reclama libdexfiled.so ausente) y estudiar app_process/AndroidRuntime JNI,
-Binder privado y cierre de servicios/política para lanzar Markor íntegro. No
-continuar resolviendo métodos API33 ni tomar otra fixture como compatibilidad.
+Siguiente unidad: configuración completa del producto/boot Linux, con fuentes
+de propiedades y contextos de todas las particiones presentes, derivaciones
+originales, decisiones propias explícitas y campos desconocidos. Comparar reutilizar
+la unidad original con generar un perfil declarativo Linux; no añadir sólo la
+propiedad que permita superar el siguiente guard.
 
-Preparación reproducible: 36 APEX y 4.395 archivos (4.394 originales más el XML derivado); XML de selección
-de fábrica validado con el XSD A16. Es una configuración derivada de investigación,
-sin apexd ni firmas/actualizaciones verificadas. La primera extracción se truncó
-por cuota tmpfs y quedó preservada; la herramienta ahora comprueba espacio y
-errores de extracción, y usa disco. [Pruebas](../reports/android16-linkerconfig/validation.json).
+app_process original termina 0 sin readiness: fuente y diagnóstico muestran
+retorno temprano de startVm por ro.product.cpu.abilist64 ausente, antes de crear
+la VM. El snapshot de 101 sólo aplica system/build.prop, mientras existen 21 valores
+system_ext y 58 product, además de los derivados por init.
+[Pruebas](../reports/android16-framework-entry/validation.json).
+El logger es instrumentación opcional mediante API original liblog: no una API
+sustituta ni un preload de producción. /probe fue denegado por el namespace;
+la captura en /data conserva sus restricciones.
 
-Generador normal y estricto del APEX ART pasan; el estricto global falla. El archivo
-ART coincide en ambos perfiles, pero el normal puede ignorar requisitos ausentes.
-Con configuración original generada pasan linker list, ayuda ART y getprop sin
-LD_LIBRARY_PATH/preload. derive_classpath original produce listas 46/14/14/9;
-69 jars únicos contienen DEX original, sin stubs SDK añadidos. La regresión DEX
-existente ejecuta semántica Java en ART Bionic16 con el bootclasspath46 completo.
-No se han ejecutado recorridos de APK: las nueve etapas continúan no probadas.
+El requisito libdexfiled.so está declarado sin condición en el JSON original.
+De 41 requisitos system es el único sin proveedor declarado en este artefacto.
+La fuente explica la discrepancia, pero la biblioteca sigue ausente y el estricto
+global sigue fallido. No se ha añadido un sustituto ni editado el requisito.
 
-Se conserva snapshot de 101 propiedades, UID/GID10000 y capacidades cero antes
-de exec. Servicio de propiedades y política/SELinux siguen pendientes. No hay
-Android arrancado, reinicios ni ART host en este hito. R1 y el objetivo global
-siguen abiertos; el siguiente trabajo debe acercar el recorrido real de Markor.
+Markor permanece intacto y sólo estuvo en CLASSPATH: no instalado, cargado o
+ejecutado de forma demostrada. La invocación directa no zygote de ActivityThread
+es exploratoria, no la ruta normal de lanzamiento APK. Seguir el ciclo original
+de paquetes/zygote/AMS exige Binder, identidad/política y grupos de servicios;
+todavía sólo se ha estudiado en fuentes. La matriz conserva nueve etapas no
+probadas. R1 y el objetivo global siguen abiertos; sin reinicios ni Android boot.
 
 ## Historial conservado · no es el estado vigente
 

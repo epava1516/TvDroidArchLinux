@@ -1,0 +1,246 @@
+{
+  "system_requirements": [
+    "libandroidicu.so",
+    "libdexfile.so",
+    "libdexfiled.so",
+    "libicu.so",
+    "libjdwp.so",
+    "libnativebridge.so",
+    "libnativehelper.so",
+    "libnativeloader.so",
+    "libsigchain.so",
+    "libicui18n.so",
+    "libicuuc.so",
+    "libnetd_resolv.so",
+    "libnetd_updatable.so",
+    "libstatspull.so",
+    "libstatssocket.so",
+    "libadb_pairing_auth.so",
+    "libadb_pairing_connection.so",
+    "libadb_pairing_server.so",
+    "libcom.android.media.swcodec.apexcodecs.so",
+    "libadb_pairing_auth.so",
+    "libadb_pairing_connection.so",
+    "libadb_pairing_server.so",
+    "libadbconnection_client.so",
+    "libandroidicu.so",
+    "libandroidio.so",
+    "libavf.so",
+    "libcom.android.media.swcodec.apexcodecs.so",
+    "libcom.android.tethering.connectivity_native.so",
+    "libcom.android.tethering.dns_helper.so",
+    "libdexfile.so",
+    "libicu.so",
+    "libnativebridge.so",
+    "libnativehelper.so",
+    "libnativeloader.so",
+    "libnetd_resolv.so",
+    "libnetd_updatable.so",
+    "libneuralnetworks.so",
+    "libsigchain.so",
+    "libstatspull.so",
+    "libstatssocket.so",
+    "libuprobestats_client.so"
+  ],
+  "provider_catalog": {
+    "libaptX_encoder.so": [
+      "system"
+    ],
+    "libaptXHD_encoder.so": [
+      "system"
+    ],
+    "libEGL.so": [
+      "system"
+    ],
+    "libGLESv2.so": [
+      "system"
+    ],
+    "heapprofd_client_api.so": [
+      "system"
+    ],
+    "libGLESv1_CM.so": [
+      "system"
+    ],
+    "libGLESv3.so": [
+      "system"
+    ],
+    "libRS.so": [
+      "system"
+    ],
+    "libaaudio.so": [
+      "system"
+    ],
+    "libadbd_auth.so": [
+      "system"
+    ],
+    "libadbd_fs.so": [
+      "system"
+    ],
+    "libandroid.so": [
+      "system"
+    ],
+    "libandroid_net.so": [
+      "system"
+    ],
+    "libapexsupport.so": [
+      "system"
+    ],
+    "libartpalette-system.so": [
+      "system"
+    ],
+    "libbinder_ndk.so": [
+      "system"
+    ],
+    "libbinder_rpc_unstable.so": [
+      "system"
+    ],
+    "libc.so": [
+      "system"
+    ],
+    "libcgrouprc.so": [
+      "system"
+    ],
+    "libclang_rt.asan-i686-android.so": [
+      "system"
+    ],
+    "libclang_rt.asan-x86_64-android.so": [
+      "system"
+    ],
+    "libdl.so": [
+      "system"
+    ],
+    "libdl_android.so": [
+      "system"
+    ],
+    "libft2.so": [
+      "system"
+    ],
+    "libincident.so": [
+      "system"
+    ],
+    "libjnigraphics.so": [
+      "system"
+    ],
+    "liblog.so": [
+      "system"
+    ],
+    "libm.so": [
+      "system"
+    ],
+    "libmediametrics.so": [
+      "system"
+    ],
+    "libmediandk.so": [
+      "system"
+    ],
+    "libnativewindow.so": [
+      "system"
+    ],
+    "libneuralnetworks_packageinfo.so": [
+      "system"
+    ],
+    "libselinux.so": [
+      "system"
+    ],
+    "libsync.so": [
+      "system"
+    ],
+    "libvendorsupport.so": [
+      "system"
+    ],
+    "libvndksupport.so": [
+      "system"
+    ],
+    "libvulkan.so": [
+      "system"
+    ],
+    "libz.so": [
+      "system"
+    ],
+    "libjdwp.so": [
+      "com.android.art"
+    ],
+    "libandroidio.so": [
+      "com.android.art"
+    ],
+    "libdexfile.so": [
+      "com.android.art"
+    ],
+    "libnativebridge.so": [
+      "com.android.art"
+    ],
+    "libnativehelper.so": [
+      "com.android.art"
+    ],
+    "libnativeloader.so": [
+      "com.android.art"
+    ],
+    "libsigchain.so": [
+      "com.android.art"
+    ],
+    "libcom.android.tethering.connectivity_native.so": [
+      "com.android.tethering"
+    ],
+    "libcom.android.tethering.dns_helper.so": [
+      "com.android.tethering"
+    ],
+    "libnetd_updatable.so": [
+      "com.android.tethering"
+    ],
+    "libadb_pairing_auth.so": [
+      "com.android.adbd"
+    ],
+    "libadb_pairing_connection.so": [
+      "com.android.adbd"
+    ],
+    "libadb_pairing_server.so": [
+      "com.android.adbd"
+    ],
+    "libadbconnection_client.so": [
+      "com.android.adbd"
+    ],
+    "libstatspull.so": [
+      "com.android.os.statsd"
+    ],
+    "libstatssocket.so": [
+      "com.android.os.statsd"
+    ],
+    "libcom.android.media.swcodec.apexcodecs.so": [
+      "com.android.media.swcodec"
+    ],
+    "libuprobestats_client.so": [
+      "com.android.uprobestats"
+    ],
+    "libavf.so": [
+      "com.android.virt"
+    ],
+    "libnetd_resolv.so": [
+      "com.android.resolv"
+    ],
+    "libneuralnetworks.so": [
+      "com.android.neuralnetworks"
+    ],
+    "libicui18n.so": [
+      "com.android.i18n"
+    ],
+    "libicuuc.so": [
+      "com.android.i18n"
+    ],
+    "libicu_jni.so": [
+      "com.android.i18n"
+    ],
+    "libandroidicu.so": [
+      "com.android.i18n"
+    ],
+    "libicu.so": [
+      "com.android.i18n"
+    ]
+  },
+  "requirements_without_declared_provider": [
+    "libdexfiled.so"
+  ],
+  "matching_files": {
+    "libdexfiled.so": []
+  },
+  "scope": "Exact schema fields from original system/APEX metadata, not full namespace solving or proof declared provider files can load. Global strict result remains red; no requirement edited."
+}

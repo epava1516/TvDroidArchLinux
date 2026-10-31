@@ -1,0 +1,52 @@
+[
+  {
+    "path": "/system/build.prop",
+    "present": true,
+    "sha256": "8190df2d4debcb3f2271543435ec49b9951acd59c5ba67dc7556f76fd30be1a0",
+    "properties": 101,
+    "import_lines": [],
+    "abi_fields": {
+      "ro.system.product.cpu.abilist": "x86_64,x86",
+      "ro.system.product.cpu.abilist32": "x86",
+      "ro.system.product.cpu.abilist64": "x86_64"
+    },
+    "scope": "Source inventory only; not Android init merge/import/derived-default execution",
+    "heap_fields": {}
+  },
+  {
+    "path": "/system/system_ext/etc/build.prop",
+    "present": true,
+    "sha256": "f543835c4b9d5780ad36dcbb1482a6e68e42d8b0d42f4719293fa1a10c6ce520",
+    "properties": 21,
+    "import_lines": [],
+    "abi_fields": {},
+    "scope": "Source inventory only; not Android init merge/import/derived-default execution",
+    "heap_fields": {}
+  },
+  {
+    "path": "/system/product/etc/build.prop",
+    "present": true,
+    "sha256": "693313b2cb99430d387e2abb6f3be8ca921eb993c0caa05dbed1691351482a1b",
+    "properties": 58,
+    "import_lines": [],
+    "abi_fields": {},
+    "scope": "Source inventory only; not Android init merge/import/derived-default execution",
+    "heap_fields": {}
+  },
+  {
+    "path": "/vendor/default.prop",
+    "present": false
+  },
+  {
+    "path": "/vendor/build.prop",
+    "present": false
+  },
+  {
+    "path": "/odm/etc/build.prop",
+    "present": false
+  },
+  {
+    "path": "/system_dlkm/etc/build.prop",
+    "present": false
+  }
+]

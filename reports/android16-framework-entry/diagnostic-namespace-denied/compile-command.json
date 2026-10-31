@@ -1,0 +1,19 @@
+[
+  "clang",
+  "--target=x86_64-linux-android36",
+  "-fuse-ld=lld",
+  "-shared",
+  "-fPIC",
+  "-ffreestanding",
+  "-nostdlib",
+  "-nostdinc",
+  "-fno-stack-protector",
+  "-Wl,-z,defs",
+  "-Wall",
+  "-Wextra",
+  "-Werror",
+  "/home/tv/repositorio-principal/tools/aosp/native_log_diagnostic.c",
+  "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/liblog.so",
+  "-o",
+  "/home/tv/repositorio-principal/dist/aosp16/framework-entry-log-1/native-log-diagnostic.so"
+]

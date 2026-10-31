@@ -1,0 +1,72 @@
+{
+  "sources": {
+    "build/soong/linkerconfig/proto/linker_config.proto": {
+      "commit": "f389fa2a2a768a93bc99957e2288f3fbee032bff",
+      "url": "https://android.googlesource.com/platform/build/soong/+/f389fa2a2a768a93bc99957e2288f3fbee032bff/linkerconfig/proto/linker_config.proto",
+      "local_cache": "/home/tv/.cache/archtv/aosp16-qpr2/framework-entry-study/build_soong__linkerconfig_proto_linker_config.proto",
+      "sha256": "af37aa5975eec9ed17f769784906b62590b77616d28587d119ed8800c3f2df42"
+    },
+    "build/make/core/Makefile": {
+      "commit": "b815dded1eafbf06191a6ae306956bb6ed6fb415",
+      "url": "https://android.googlesource.com/platform/build/+/b815dded1eafbf06191a6ae306956bb6ed6fb415/core/Makefile",
+      "local_cache": "/home/tv/.cache/archtv/aosp16-qpr2/framework-entry-study/build_make__core_Makefile",
+      "sha256": "f5a9fd34fdb52faa334e3f1d32a07540c8caad115c773db470c5ffddebbd4b9d"
+    },
+    "system/core/rootdir/etc/linker.config.json": {
+      "commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+      "url": "https://android.googlesource.com/platform/system/core/+/e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1/rootdir/etc/linker.config.json",
+      "local_cache": "/home/tv/.cache/archtv/aosp16-qpr2/framework-entry-study/system_core__rootdir_etc_linker.config.json",
+      "sha256": "81d8a344fb2887e36c1c96b3818ed97922dd5c7ae294ddee5d2041fcddc46341"
+    },
+    "frameworks/base/cmds/app_process/app_main.cpp": {
+      "commit": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/cmds/app_process/app_main.cpp",
+      "local_cache": "/home/tv/.cache/archtv/aosp16-qpr2/framework-entry-study/frameworks_base__cmds_app_process_app_main.cpp",
+      "sha256": "50e38aed3d9debefc075c5644306eeea17c335a0b1d37c4166a3685772a2d1d3"
+    },
+    "frameworks/base/core/jni/AndroidRuntime.cpp": {
+      "commit": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/core/jni/AndroidRuntime.cpp",
+      "local_cache": "/home/tv/.cache/archtv/aosp16-qpr2/framework-entry-study/frameworks_base__core_jni_AndroidRuntime.cpp",
+      "sha256": "97239ccf6eb58b83635b2693a851609516dc0b4759a791a15a99aae0e18d3a51"
+    },
+    "frameworks/base/core/java/com/android/internal/os/RuntimeInit.java": {
+      "commit": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/core/java/com/android/internal/os/RuntimeInit.java",
+      "local_cache": "/home/tv/.cache/archtv/aosp16-qpr2/framework-entry-study/frameworks_base__core_java_com_android_internal_os_RuntimeInit.java",
+      "sha256": "22f10128c46a4eeab5b19c633236f03e07668748fc0abc297fbaf9aef444a600"
+    },
+    "frameworks/base/core/java/android/app/ActivityThread.java": {
+      "commit": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/core/java/android/app/ActivityThread.java",
+      "local_cache": "/home/tv/.cache/archtv/aosp16-qpr2/framework-entry-study/frameworks_base__core_java_android_app_ActivityThread.java",
+      "sha256": "394e70067e4b4b675f7d38f924137837cf01daf062422217084b495e0efbec7a"
+    },
+    "system/logging/liblog/include/android/log.h": {
+      "commit": "58dac317ea08b8f275ebd01ce864acab2de30b93",
+      "url": "https://android.googlesource.com/platform/system/logging/+/58dac317ea08b8f275ebd01ce864acab2de30b93/liblog/include/android/log.h",
+      "local_cache": "/home/tv/.cache/archtv/aosp16-qpr2/framework-entry-study/system_logging__liblog_include_android_log.h",
+      "sha256": "ee10b13125564cfebd95b2a37e87d3f507b502eb426c6951985abe6299a8a17f"
+    },
+    "system/logging/liblog/logger_write.cpp": {
+      "commit": "58dac317ea08b8f275ebd01ce864acab2de30b93",
+      "url": "https://android.googlesource.com/platform/system/logging/+/58dac317ea08b8f275ebd01ce864acab2de30b93/liblog/logger_write.cpp",
+      "local_cache": "/home/tv/.cache/archtv/aosp16-qpr2/framework-entry-study/system_logging__liblog_logger_write.cpp",
+      "sha256": "3d745304470a3b88af30072637325b3bf4b1d06aa7de2352897926c1e5a1f3c9"
+    }
+  },
+  "observed": [
+    "System linker.config.json unconditionally declares libdexfiled.so. Same-build binary metadata has41 system requirements and only that name lacks a declared provider; no matching file in factory root. This explains strict/default difference without inventing a library or treating strict as passed.",
+    "Uninstrumented app_process exits0 with no readiness proof. AndroidRuntime.start is void and returns on startVm/startReg errors; main does not propagate these errors.",
+    "Diagnostic logger uses existing original API set_logger(stderr_logger)/minimum_priority. First /probe placement was denied by original namespace; /data placement loads without changing namespace permissions. No runtime/JNI API implemented by the diagnostic.",
+    "Instrumented original startup reports empty ro.product.cpu.abilist64. Exact source guard returns-1 before JNI_CreateJavaVM; no VM/JNI/ActivityThread success observed.",
+    "Original PropertyLoadBootDefaults loads partition props and derives ABI/identity/fingerprint/vendor API etc. Existing101-property snapshot is only system/build.prop; real system_ext21 and product58 inputs are present but not applied by it.",
+    "Original source route after VM creation includes onVmCreated/startReg/RuntimeInit/nativeFinishInit; nonzygote app runtime starts Binder thread pool; ActivityThread attach calls ActivityManager. These later stages are source-derived, not observed execution."
+  ],
+  "limitations": [
+    "Nonzygote direct ActivityThread invocation is an exploratory prerequisite test, not the canonical zygote/package-manager APK launch route.",
+    "Markor is merely intact on classpath, not proven installed, loaded or executed; all nine app stages remain not_tested.",
+    "No zygote/system_server, Android full boot, property service or SELinux policy was started or fabricated."
+  ],
+  "next_unit": "Complete explicit Linux product/boot configuration with original present partition inputs/contexts, source-derived vs Linux-owned vs unknown fields and honest ISA/hardware/security capabilities; compare whole original startup unit reuse before implementing. No scalar patch to just pass the next guard."
+}

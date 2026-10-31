@@ -1,0 +1,29 @@
+{
+  "source_base_commit": "e520093a6a75c18ec88d82cc3136d41f3ace59b0",
+  "scope": "Prerequisite failure and source/configuration audit only; index excludes itself; no APK compatibility pass",
+  "artifacts": {
+    "reports/android16-framework-entry/archtv-a16-framework-entry-1.py": "8714ff293c0beaf3cfb71c0511392008d20838e6a9484ec640ff97ab18dffb8c",
+    "reports/android16-framework-entry/archtv-a16-framework-entry-log-1.py": "be7be542815da43a2dd9db3066b76b851aa05f047e41c0630fb5fcba59c32e57",
+    "reports/android16-framework-entry/archtv-a16-framework-entry-log-2.py": "a1e6d361f36152fb84e970f914b81309dd0bfb803d65538933ad00c4e6ed76eb",
+    "reports/android16-framework-entry/baseline/boot-property-input-audit.json": "7198741faec38f567a618b28cdd7a8b7db8382acea066e78a59f1f123a9f65c9",
+    "reports/android16-framework-entry/baseline/entry.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/android16-framework-entry/baseline/entry.stdout": "58b31e8db4bd0995508a527ade6045f8376108ebfbdda50b713b77932ae3e354",
+    "reports/android16-framework-entry/baseline/private-kmsg": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/android16-framework-entry/baseline/result.json": "0447c1e8bd497fb3df4e288eb3f8623d1e9bc6c499a14bbf5f82d39eae655acb",
+    "reports/android16-framework-entry/checkpoint.json": "020279c8ee8d1fe445acc413d62889ec5a6bac3f093ec1b6fb7b3bd1f1c215cb",
+    "reports/android16-framework-entry/diagnostic-early-failure/entry.stderr": "8da7499c252ad2d1938a602f5a2b2ed792fef06ea1fd02efbe627f2ec3983be7",
+    "reports/android16-framework-entry/diagnostic-early-failure/entry.stdout": "58b31e8db4bd0995508a527ade6045f8376108ebfbdda50b713b77932ae3e354",
+    "reports/android16-framework-entry/diagnostic-early-failure/private-kmsg": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/android16-framework-entry/diagnostic-early-failure/result.json": "32a4e386e2726c6efff64076f4daee8004bb19ea27e504dea88ca704eb3138aa",
+    "reports/android16-framework-entry/diagnostic-namespace-denied/compile-command.json": "cd70afbc97fd945a3699fd9d27e10624f1d5cfb1e377e059e63256627dc99a6b",
+    "reports/android16-framework-entry/diagnostic-namespace-denied/entry.stderr": "f7e5e7f2c501a7db93c2bc549bdde87f3d9b6006c7bbc5fefbf28dcc8921f979",
+    "reports/android16-framework-entry/diagnostic-namespace-denied/entry.stdout": "58b31e8db4bd0995508a527ade6045f8376108ebfbdda50b713b77932ae3e354",
+    "reports/android16-framework-entry/diagnostic-namespace-denied/private-kmsg": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/android16-framework-entry/diagnostic-namespace-denied/result.json": "10593d19945aae349b627407c0085120fffe41c5d20a209b74d3b12a80c2ec8b",
+    "reports/android16-framework-entry/provider-audit/audit.json": "7bee6985a0c9ad2a7cb615d9b636511503a35bba9f200bcb3dfeee184ece5aca",
+    "reports/android16-framework-entry/rea-startvm-disassembly.json": "4958e9e61e9d6a59a846437a6e46e891888bb313ea413ed63405a7657ad0f5bf",
+    "reports/android16-framework-entry/source-findings.json": "e4045857f2961eac95a4bbc8a0e31ff15a007683bbcda6c1a17069ebf61c0ae2",
+    "reports/android16-framework-entry/validation.json": "d2a858cc19352c789448ea144b60e2350c2352d1367845840a49dd40fae64f21",
+    "tools/aosp/native_log_diagnostic.c": "6b8d3398facbac0be1daf4c80d4fdb0426c43abb61ce53e2c91da67082f97220"
+  }
+}

@@ -1,0 +1,5 @@
+10-31 01:15:33.909     1     1 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 10000 <<<<<<
+
+10-31 01:15:33.921     1     1 I AndroidRuntime: Using default boot image
+10-31 01:15:33.921     1     1 I AndroidRuntime: Leaving lock profiling enabled
+10-31 01:15:33.922     1     1 E AndroidRuntime: ro.product.cpu.abilist64 is not expected to be empty

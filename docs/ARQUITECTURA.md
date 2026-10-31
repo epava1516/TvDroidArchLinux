@@ -166,6 +166,61 @@ cualquier conflicto con el contrato se estudian antes de arrancar conjuntos.
 La semántica de propiedades/IPC, mediación SELinux y el fallo estricto global
 permanecen puertas abiertas, junto con SF/Wayland y las nueve etapas reales.
 
+## Entrada de framework y configuración de producto · puerta abierta
+
+La [auditoría](../reports/android16-framework-entry/provider-audit/audit.json)
+reconcilia metadatos, no implementaciones: el JSON original requiere libdexfiled.so
+sin condición; de 41 requisitos de sistema es el único sin proveedor declarado
+entre system/APEX. La biblioteca no está presente. Se conserva el fallo estricto
+global; el modo normal que ignora requisitos no convierte esa ausencia en éxito.
+
+El [ensayo app_process](../reports/android16-framework-entry/validation.json)
+usa código original, JNI/framework y classpaths del mismo build bajo UID10000
+sin capacidades. El retorno 0 no acredita arranque: AndroidRuntime.start es void
+y retorna cuando falla startVm/startReg; main no propaga esos errores.
+La captura mediante API original liblog muestra el guard
+ro.product.cpu.abilist64 vacío antes de JNI_CreateJavaVM. No se registraron los
+JNI Android ni se alcanzó ActivityThread de forma demostrada.
+
+[Instrumentación](../tools/aosp/native_log_diagnostic.c) sólo selecciona el logger
+stderr original y su prioridad; no reemplaza JNI, permisos ni servicios. El
+namespace rechazó la biblioteca bajo /probe; se usó /data ya permitido, sin
+cambiar configuración. Es un preload diagnóstico separado: retirar de aceptación
+funcional. REA MCP ha inspeccionado estáticamente el startVm compilado; ejecución,
+fuente e inferencias permanecen evidencias distintas.
+
+La carencia es una unidad de configuración, no una función Java a simular:
+PropertyLoadBootDefaults original carga particiones en orden, procesa imports y
+defaults y deriva identidad/ABI/fingerprint/vendor API. Nuestro snapshot de 101
+valores es sólo system; quedan sin aplicar 21 de system_ext y 58 de product, además
+de derivaciones y entradas hardware/boot. Se estudia primero la unidad completa
+y su cierre: PropertyInit/StartPropertyService no se exponen como una CLI aislada,
+y ejecutar init second_stage no se admite como atajo.
+
+La siguiente comparación será reutilizar una entrada nativa de la unidad original
+o preparar un perfil de producto declarativo propio de Linux con artefactos
+originales. No hay opción aceptada/implementada aún. Cada campo debe indicar
+original, derivado con regla/fuente, definido por Linux o desconocido; los imports
+o particiones ausentes no se completan con valores inventados. Separar ABIs
+candidatas del artefacto, ISA/backend realmente probado y JNI/API de aplicaciones.
+No anunciar ARM/traducción, 32 bits, hardware seguro, verified boot, GMS/certificación
+o servicios activos por declarar una propiedad. La política y el servidor real
+de propiedades siguen siendo puertas independientes.
+
+Aceptación de esa unidad: entradas/configuración reproducibles y trazables,
+validación de contexto/tipo con originales, errores explícitos, capacidades/ABI
+honestas, e inicio original que avance más allá del guard observado. Un retorno 0
+o un log no bastan; después repetir sin instrumentación y recorrer la aplicación.
+Preservar los namespaces y evitar cambios internos de AndroidRuntime para omitir
+sus checks.
+
+El ActivityThread directo no zygote sólo fue un diagnóstico de prerrequisitos:
+Markor intacto estuvo en CLASSPATH, sin prueba de instalación/carga/ejecución.
+La ruta APK real debe estudiar paquetes, fork/zygote o alternativa equivalente
+justificada, ActivityManager y callbacks originales. app_main muestra el pool
+Binder y ActivityThread llama attachApplication en AMS; son rutas de fuente,
+no servicios arrancados. No se ha iniciado zygote/system_server ni Android completo.
+
 ## Subsistemas y fronteras elegidas
 
 ```mermaid
