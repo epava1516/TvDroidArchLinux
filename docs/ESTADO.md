@@ -1,5 +1,9 @@
 # Estado actual y punto de entrada
 
+## Reinicio actual · 31 octubre 21:07 UTC
+
+[Estado del nuevo arranque](../reports/android16-hwc3-wayland/host-after-reboot.json): LTS6.18.59, SELinux activo/permisivo y **policyload0**. Los resultados policyload1 y enforcing de abajo son históricos de arranques anteriores; no hay servicios del runtime activos acreditados. Pendientes conservados. [Checkpoint de trabajo](../reports/android16-hwc3-wayland/checkpoint-in-progress.json). Siguiente integración: dominios vendor originales allocator/composer antes de cargar política y arrancar la cohorte gráfica; compilación/enlace no acreditan servicios ni Markor.
+
 ## Salida gráfica Bionic · recorrido de transporte
 
 [Salida Bionic→Smithay comprobada](../reports/android16-wayland-client/findings.json): cliente Wayland/libffi originales AOSP y transporte SHM producen tres commits reales; captura DRM1280×800,1.024.000 píxeles coinciden. Cliente/cierre0 y consola/máscara/unidades/loops recuperados. SID Linux init_t en permisivo, no Android/MAC. Ejecución final ordinaria, MCP anterior parcial por cleanup EACCES. Es regresión del transporte, no Activity/APK ni HWC3/SF; [checkpoint](../reports/android16-wayland-client/checkpoint.json). Siguiente: conectar salida a Device/findDisplays/FrameComposer originales, allocator/mapper y renderer Bionic; resolver fences/capacidades reales antes de display para PMS/Markor.

@@ -1,5 +1,9 @@
 # Arquitectura vigente · A16-QPR2-1
 
+## Candidato gráfico actual · integración pendiente
+
+La base plataforma GSI carece de tipos concretos vendor `hal_graphics_allocator_default` y `hal_graphics_composer_default`. Reutilizar sus TE y macros originales, no dominios ficticios: añadirlos a CIL AOSP antes de componer con Linux preserva el universo y sus aserciones. HWC3/Device/Composer y minigbm allocatorV2/stable-C mapper están enlazados experimentalmente, no ejecutados como cohorte. vmwgfx usa adaptación al dumb-driver original aún sin prueba real de BO/export/import. La política anterior dejó de estar cargada tras el reinicio ([estado](../reports/android16-hwc3-wayland/host-after-reboot.json)).
+
 ## Salida gráfica Bionic · recorrido de transporte
 
 [LinuxWaylandOutput](../reports/android16-wayland-client/findings.json) valida la frontera Bionic→socket Unix→Smithay mediante libwayland/libffi originales, sin glibc en el ejecutable nativo. Dos buffers SHM privados se reutilizan sólo tras release real; callback de frame no se exporta como fence. Sólo XRGB8888/un output, resize antiguo falla cerrado. Falta conectar HWC3, mapper/allocator/renderizador/input y perfil de namespaces/MAC: prueba usa SID Linux init_t permisivo y linkerconfig ausente. No modifica política ni permite afirmar aislamiento.

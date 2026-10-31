@@ -1,0 +1,768 @@
+{
+  "utc": "2026-10-31T21:12:28.784149+00:00",
+  "HEAD": "49cd9174dc6f3cae8a9b0714df29034c0c2b094c",
+  "status": " M fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java\n M graphify-out/.graphify_build_state.json\n M graphify-out/.graphify_labels.json.sig\n M graphify-out/.graphify_labels.pending.json\n M graphify-out/GRAPH_REPORT.md\n M graphify-out/GRAPH_TREE.html\n M graphify-out/graph.html\n M graphify-out/graph.json\n M graphify-out/manifest.json\n M runtime/aosp/native/linux-wayland-output.cpp\n M runtime/aosp/native/linux-wayland-output.h\n M tools/apk/verify_isolated_bootstrap.py\n?? reports/android16-hwc3-wayland/\n?? reports/h9-uefi-boot/qemu.log\n?? reports/h9-uefi-boot/serial.log\n?? runtime/aosp/android16-qpr2/patches/goldfish-hwc3-wayland-display.patch\n?? runtime/aosp/android16-qpr2/patches/goldfish-hwc3-wayland-factory.patch\n?? runtime/aosp/native/linux-wayland-display-finder.cpp\n?? runtime/aosp/native/linux-wayland-frame-composer.cpp\n?? runtime/aosp/native/linux-wayland-frame-composer.h\n?? runtime/aosp/native/original-resources-host.cpp\n?? tools/apk/build_original_resources.py\n",
+  "state": "IN_PROGRESS. Whole adapted original HWC3 frontend/factory + Wayland backend strict link0; NOT executed as service/client and no new HWC/Markor acceptance. Last functional commit remains49cd917.",
+  "own_work": [
+    "runtime/aosp/native/linux-wayland-output.* metadata/nonblocking dispatch changes",
+    "new linux-wayland-frame-composer.*, linux-wayland-display-finder.cpp",
+    "goldfish-hwc3-wayland-factory.patch and wayland-display.patch",
+    "reports/android16-hwc3-wayland recipes, source/build evidence",
+    "Graphify root update generated working-tree graph; must regenerate isolated staged snapshot before milestone commit to exclude historical source changes"
+  ],
+  "old_pending": "Six old files unchanged and excluded. Four Android13 experiments, two unknown H9 logs; do not discard or restore automatically. No stage/commit/push of this incomplete functional milestone yet.",
+  "build": {
+    "sources": 13,
+    "strict_link_exit": 0,
+    "executable": "/home/tv/repositorio-principal/dist/aosp16/hwc3-wayland-1/android.hardware.graphics.composer3-service.archtv-display-2",
+    "sha256": "727522178b21da4b3477a233c000c4ce240da6f0a9b01897255c3b8abf467508",
+    "scope": "Platform-profile build only. No native mapper availability, vendor namespace, service admission/MAC, buffering or callback lifetime runtime validation."
+  },
+  "changes": "Reuse original Device/Composer/Client/Display/Layer, actual Wayland configs/CPU-copy backend. Reset failed factory instance; unregister/drain callbacks before original client display lock/destruction. Disable unverified BOOT_DISPLAY_CONFIG, SKIP_CLIENT_COLOR_TRANSFORM, MULTI_THREADED_PRESENT; remove emulator GGL EDID and report unavailable EDID/attrs/intents Unsupported. These adaptations are compiled, not behaviorally validated.",
+  "main_dependency": {
+    "source_proven": "Original ComposerResources creates ComposerHandleImporter, which constructs GraphicBufferMapper and fatally rejects absent mapper5/4/3/2. No fabricated mapper or service readiness will be used.",
+    "provider_choice": "Original AOSP minigbm AIDL allocatorV2 plus stable-C mapper, preserving gralloc4 helpers; exact GSI allocatorV2 library and generated hash9499fec09c544e9de5be3c87125721600f8ade66 available. Do not force older FCM to retain HIDL.",
+    "driver_gap": "Experimental vmwgfx binding to original dumb-driver compiled; allocation/export/import not executed.",
+    "source_inventory": "/home/tv/.cache/archtv/graphics-candidates-1/minigbm/allocator-source-inventory.json",
+    "inputs": "Original minigbm76 files and libdrm33 headers verified. Four native modules strict link0; not execution.",
+    "vendor_policy": "Concrete allocator/composer default vendor types absent from previous composed policy; original vendor TE available, integration pending."
+  },
+  "timing": "Actual host GET_CAP SYNCOBJ0/TIMELINE0; source Linux SW_SYNC absent. Original Composer writer omits absent FDs and declares PRESENT_FENCE_IS_NOT_RELIABLE; experimental synchronous CPU backend currently leaves present fence absent. This is NOT physical timing/VTS conformance; native fence/completion gate remains OPEN, not solved by callback or arbitrary signaled FD. No kernel/security changes made.",
+  "host": {
+    "boot_id": "4409f88d-366a-4ccf-80a0-e143452b78f5",
+    "kernel": "6.18.59-1-lts",
+    "enforcing": 0,
+    "policyload": 0,
+    "observation": "Host selinuxfs status structure; /run/archtv-selinux-observe mounted for observation."
+  },
+  "handles": "checkmodule29793, policy64180 and Graphify82858 terminal0. No live HWC/allocator runtime handle. Preboot handles historical.",
+  "next": "Prepare whole native graphics payload with original RC/typed client, labels/namespace/private DRI/Wayland boundary. Before policy load save fresh checkpoint; then exercise real allocator registration/allocate and composer query/present, not standalone readiness.",
+  "recovery": "/home/tv/recuperacion-archtv/20261031T195207Z-wayland-native-drm/RETOMAR.txt; new operations still require fresh checkpoint before disruption; existing blanket VM authorization persists.",
+  "minigbm_link": {
+    "scope": "Whole minigbm modules strict linkage against real Bionic providers, platform-profile only; not vendor namespace, runtime allocation, HWC or APK acceptance",
+    "providers": [
+      {
+        "name": "libbase.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libbase.so",
+        "sha256": "831da8050c1a4702c56d304a6bb8ae9530eb46dd4a0efdec2e905679eb02a69f",
+        "needed": [
+          "liblog.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "name": "libbinder_ndk.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libbinder_ndk.so",
+        "sha256": "02522958590df89d15f9663671e2a1456a36b273db4c452d71e58f8d88103b88",
+        "needed": [
+          "libbinder.so",
+          "liblog.so",
+          "libutils.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "name": "libcutils.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libcutils.so",
+        "sha256": "ed53b0a8de029f738ccfe346242371c50addc6c41435647ec55468a87a62b1eb",
+        "needed": [
+          "liblog.so",
+          "libbase.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "name": "libdmabufheap.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libdmabufheap.so",
+        "sha256": "6e1c9ecfa87468828ccc0479c4daa91587feffb9dc4e3dab6ae2a4a63e0bb2a3",
+        "needed": [
+          "liblog.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "name": "libdrm.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libdrm.so",
+        "sha256": "82222613b82586e965bd69457a276f795d8afdf55cc9709f563c435f69f307a9",
+        "needed": [
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "name": "libgralloctypes.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libgralloctypes.so",
+        "sha256": "16dbd975389e3ff6b1ea69bbc9084db655bc6bea9450cd542d3231a751e69fcd",
+        "needed": [
+          "android.hardware.graphics.mapper@4.0.so",
+          "libhidlbase.so",
+          "liblog.so",
+          "android.hardware.graphics.common-V7-ndk.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "name": "libhidlbase.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libhidlbase.so",
+        "sha256": "e68f67115ad7eb55c511d20d852e929c5326e06f15211b3db32069af5d037dc7",
+        "needed": [
+          "libbase.so",
+          "liblog.so",
+          "libutils.so",
+          "libcutils.so",
+          "libvndksupport.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "name": "liblog.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/liblog.so",
+        "sha256": "d19efa76e39bc458a0f9125d1665185ce95af9153bfe695e0c9519937ea9bc0a",
+        "needed": [
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "name": "libnativewindow.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libnativewindow.so",
+        "sha256": "9e8eb733f2e169e63accc4fb6afef9655ed3fce49181af544b69de9b380bb4d4",
+        "needed": [
+          "libcutils.so",
+          "liblog.so",
+          "libutils.so",
+          "libui.so",
+          "libbinder.so",
+          "libbinder_ndk.so",
+          "android.hardware.graphics.common@1.1.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "name": "libsync.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libsync.so",
+        "sha256": "c260512fe6de68b3dfabfed53ac636b479b92f35a14f27affd2e22dadcb6c979",
+        "needed": [
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "name": "libutils.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libutils.so",
+        "sha256": "5b01ecd8fc3b23ef14f34dc49cb7b42b9fe4a036e33e1de08b557598bcc4a7a2",
+        "needed": [
+          "libcutils.so",
+          "liblog.so",
+          "libvndksupport.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "name": "android.hardware.graphics.allocator-V2-ndk.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.allocator-V2-ndk.so",
+        "sha256": "3b31e9a65c7fda7777d40b454ea1991fafd7ab17191db7d7a78d8378cb836527",
+        "needed": [
+          "libbinder_ndk.so",
+          "android.hardware.common-V2-ndk.so",
+          "android.hardware.graphics.common-V7-ndk.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "name": "android.hardware.graphics.mapper@4.0.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.mapper@4.0.so",
+        "sha256": "8d4f8e02f5daa54b3583495c88031069c4a7a8bd1808d7cb10b04444762d0aae",
+        "needed": [
+          "android.hardware.graphics.common@1.0.so",
+          "android.hardware.graphics.common@1.1.so",
+          "android.hardware.graphics.common@1.2.so",
+          "libhidlbase.so",
+          "liblog.so",
+          "libutils.so",
+          "libcutils.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "name": "android.hardware.common-V2-ndk.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.common-V2-ndk.so",
+        "sha256": "2684dbd3fdd07f6efb8abbb731010a7a0c46d237f8e0813b44a441503b7d7e3c",
+        "needed": [
+          "libbinder_ndk.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "name": "android.hardware.graphics.common-V7-ndk.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.common-V7-ndk.so",
+        "sha256": "65e820925b74119f86448b8319af53a0bed811ca23a06c9e972656e85a37e9f7",
+        "needed": [
+          "libbinder_ndk.so",
+          "android.hardware.common-V2-ndk.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "name": "libc++.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libc++.so",
+        "sha256": "dc8cfbe728fcec370d576cf014a6c236ba56c56d3519678598a0e98adee5b477",
+        "needed": [
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "name": "libc.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/apex/com.android.runtime/lib64/bionic/libc.so",
+        "sha256": "c743999d121b9cdaaa2fc1eaae386cd51eaeed063423f26d89f29590a3e24723",
+        "needed": [
+          "ld-android.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "name": "libm.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/apex/com.android.runtime/lib64/bionic/libm.so",
+        "sha256": "51ba6fe4e0628c069274ecba60c864fe9b84ae288e7f2c6cf79fe3d75ad54638",
+        "needed": [
+          "libc.so"
+        ]
+      },
+      {
+        "name": "libdl.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/apex/com.android.runtime/lib64/bionic/libdl.so",
+        "sha256": "976f432c4e1a1ada8542534caac3905cfd8ad37a72756412a20ebfc6017f582e",
+        "needed": [
+          "ld-android.so"
+        ]
+      },
+      {
+        "name": "libbinder.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libbinder.so",
+        "sha256": "184ef6000d17e6ce011e5b595a00b24cadbec5915a4eed5f4b16b0c172a45e49",
+        "needed": [
+          "libcutils.so",
+          "liblog.so",
+          "libutils.so",
+          "libapexsupport.so",
+          "libvndksupport.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "name": "libvndksupport.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libvndksupport.so",
+        "sha256": "ac4e2cc821957fc90c739b1414520e006ef51b6031e83f9163db177b710fbc6c",
+        "needed": [
+          "libdl_android.so",
+          "liblog.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "name": "libui.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/libui-link-2/libui.so",
+        "sha256": "c98806f67f4f61bb5b8bef55eb4cb39580be5220b3a8dffa9685dfffd1df93fd",
+        "needed": [
+          "android.hardware.graphics.allocator@2.0.so",
+          "android.hardware.graphics.allocator@3.0.so",
+          "android.hardware.graphics.allocator@4.0.so",
+          "android.hardware.graphics.common@1.2.so",
+          "android.hardware.graphics.mapper@2.0.so",
+          "android.hardware.graphics.mapper@2.1.so",
+          "android.hardware.graphics.mapper@3.0.so",
+          "android.hardware.graphics.mapper@4.0.so",
+          "libbase.so",
+          "libbinder_ndk.so",
+          "libcutils.so",
+          "libgralloctypes.so",
+          "libhidlbase.so",
+          "libsync.so",
+          "libutils.so",
+          "liblog.so",
+          "libvndksupport.so",
+          "android.hardware.graphics.common-V7-ndk.so",
+          "android.hardware.graphics.allocator-V2-ndk.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "name": "android.hardware.graphics.common@1.1.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.common@1.1.so",
+        "sha256": "c4b0e11c1d6323ebaeee04df2081c911eff27901766b0eea107c26b8b6ee5c10",
+        "needed": [
+          "android.hardware.graphics.common@1.0.so",
+          "libhidlbase.so",
+          "liblog.so",
+          "libutils.so",
+          "libcutils.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "name": "android.hardware.graphics.common@1.0.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.common@1.0.so",
+        "sha256": "7f79e99ace059b7473d08cb7743bbeec1490f8dbc26b2ddccf17dbf0c84c70ca",
+        "needed": [
+          "libhidlbase.so",
+          "liblog.so",
+          "libutils.so",
+          "libcutils.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "name": "android.hardware.graphics.common@1.2.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.common@1.2.so",
+        "sha256": "70d162a9a165d3506bd1a0e0a4330a30b04848d662b783336be1d1fc456f8190",
+        "needed": [
+          "android.hardware.graphics.common@1.0.so",
+          "android.hardware.graphics.common@1.1.so",
+          "libhidlbase.so",
+          "liblog.so",
+          "libutils.so",
+          "libcutils.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "name": "ld-android.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/ld-android.so",
+        "sha256": "d9a68e657eda767a73c3418638190856606d3d6a3a65e0029021b5e97d7b2532",
+        "needed": []
+      },
+      {
+        "name": "libapexsupport.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libapexsupport.so",
+        "sha256": "533c4c56e19ad3ea94031f3fd543e233a33441732c48b71c18f6eac491bde8d1",
+        "needed": [
+          "libdl_android.so",
+          "liblog.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "name": "libdl_android.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/apex/com.android.runtime/lib64/bionic/libdl_android.so",
+        "sha256": "20c51c782b17eebe04ad168d0a4ad23403e8696212d5d3027c191b8d865c57b2",
+        "needed": [
+          "ld-android.so"
+        ]
+      },
+      {
+        "name": "android.hardware.graphics.allocator@2.0.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.allocator@2.0.so",
+        "sha256": "df249f7e29f6bbf293fc28aed52a5e36bf10c8ddc6742c2862783e16907e9c40",
+        "needed": [
+          "android.hardware.graphics.common@1.0.so",
+          "android.hardware.graphics.mapper@2.0.so",
+          "libhidlbase.so",
+          "liblog.so",
+          "libutils.so",
+          "libcutils.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "name": "android.hardware.graphics.allocator@3.0.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.allocator@3.0.so",
+        "sha256": "b0fc753f3a1e0ea5e950828b12fe68a4274d0f514273d42f4060e172786fff13",
+        "needed": [
+          "android.hardware.graphics.common@1.0.so",
+          "android.hardware.graphics.common@1.1.so",
+          "android.hardware.graphics.common@1.2.so",
+          "android.hardware.graphics.mapper@3.0.so",
+          "libhidlbase.so",
+          "liblog.so",
+          "libutils.so",
+          "libcutils.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "name": "android.hardware.graphics.allocator@4.0.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.allocator@4.0.so",
+        "sha256": "97ad2ff97cb7a1dbedadd1d942820cbe7789929b3f79db7954e55ed234742462",
+        "needed": [
+          "android.hardware.graphics.common@1.0.so",
+          "android.hardware.graphics.common@1.1.so",
+          "android.hardware.graphics.common@1.2.so",
+          "android.hardware.graphics.mapper@4.0.so",
+          "libhidlbase.so",
+          "liblog.so",
+          "libutils.so",
+          "libcutils.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "name": "android.hardware.graphics.mapper@2.0.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.mapper@2.0.so",
+        "sha256": "4b002081bbfc56e282f0a017c528e567a20a0e87cd57387ba57d02d800858c84",
+        "needed": [
+          "android.hardware.graphics.common@1.0.so",
+          "libhidlbase.so",
+          "liblog.so",
+          "libutils.so",
+          "libcutils.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "name": "android.hardware.graphics.mapper@2.1.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.mapper@2.1.so",
+        "sha256": "dc3831bd07607a072fe280eefa194e990bf9178666f8cad91b894f0d08ab595f",
+        "needed": [
+          "android.hardware.graphics.common@1.0.so",
+          "android.hardware.graphics.common@1.1.so",
+          "android.hardware.graphics.mapper@2.0.so",
+          "libhidlbase.so",
+          "liblog.so",
+          "libutils.so",
+          "libcutils.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      },
+      {
+        "name": "android.hardware.graphics.mapper@3.0.so",
+        "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.mapper@3.0.so",
+        "sha256": "765c6c3f0320e9c9ee199edacbec70d3cc7d6fe418c52efe4546ee9232deaf47",
+        "needed": [
+          "android.hardware.graphics.common@1.0.so",
+          "android.hardware.graphics.common@1.1.so",
+          "android.hardware.graphics.common@1.2.so",
+          "libhidlbase.so",
+          "liblog.so",
+          "libutils.so",
+          "libcutils.so",
+          "libc++.so",
+          "libc.so",
+          "libm.so",
+          "libdl.so"
+        ]
+      }
+    ],
+    "links": [
+      {
+        "name": "libminigbm_gralloc.so",
+        "argv": [
+          "/home/tv/.cache/archtv/aosp16-qpr2/native-toolchain-1/bin/ld.lld",
+          "--no-undefined",
+          "--no-allow-shlib-undefined",
+          "--error-limit=0",
+          "-z",
+          "relro",
+          "-z",
+          "now",
+          "--rpath-link=/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/link-libs",
+          "-shared",
+          "--soname=libminigbm_gralloc.so",
+          "/home/tv/repositorio-principal/dist/aosp16/hwc2on1-build-1/crtbegin_so.c.o",
+          "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/core-amdgpu.o",
+          "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/core-backend_mock.o",
+          "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/core-drv.o",
+          "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/core-drv_array_helpers.o",
+          "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/core-drv_helpers.o",
+          "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/core-dumb_driver.o",
+          "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/core-i915.o",
+          "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/core-mediatek.o",
+          "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/core-msm.o",
+          "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/core-rockchip.o",
+          "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/core-vc4.o",
+          "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/core-virtgpu.o",
+          "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/core-virtgpu_cross_domain.o",
+          "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/core-virtgpu_virgl.o",
+          "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/core-xe.o",
+          "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/common-cros_gralloc_buffer.o",
+          "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/common-cros_gralloc_driver.o",
+          "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/common-cros_gralloc_helpers.o",
+          "-L/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/link-libs",
+          "-l:libbase.so",
+          "-l:libbinder_ndk.so",
+          "-l:libcutils.so",
+          "-l:libdmabufheap.so",
+          "-l:libdrm.so",
+          "-l:libgralloctypes.so",
+          "-l:libhidlbase.so",
+          "-l:liblog.so",
+          "-l:libnativewindow.so",
+          "-l:libsync.so",
+          "-l:libutils.so",
+          "-l:android.hardware.graphics.allocator-V2-ndk.so",
+          "-l:android.hardware.graphics.mapper@4.0.so",
+          "-l:android.hardware.common-V2-ndk.so",
+          "-l:android.hardware.graphics.common-V7-ndk.so",
+          "-l:libc++.so",
+          "-l:libc.so",
+          "-l:libm.so",
+          "-l:libdl.so",
+          "/home/tv/.cache/archtv/graphics-candidates-1/compiler-builtins/libclang_rt.builtins-x86_64-android.a",
+          "/home/tv/repositorio-principal/dist/aosp16/hwc2on1-build-1/crtend_so.S.o",
+          "-o",
+          "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/libminigbm_gralloc.so"
+        ],
+        "exit": 0,
+        "stderr": ""
+      },
+      {
+        "name": "libminigbm_gralloc4_utils.so",
+        "argv": [
+          "/home/tv/.cache/archtv/aosp16-qpr2/native-toolchain-1/bin/ld.lld",
+          "--no-undefined",
+          "--no-allow-shlib-undefined",
+          "--error-limit=0",
+          "-z",
+          "relro",
+          "-z",
+          "now",
+          "--rpath-link=/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/link-libs",
+          "-shared",
+          "--soname=libminigbm_gralloc4_utils.so",
+          "/home/tv/repositorio-principal/dist/aosp16/hwc2on1-build-1/crtbegin_so.c.o",
+          "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/utils-CrosGralloc4Utils.o",
+          "-L/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/link-libs",
+          "-l:libbase.so",
+          "-l:libbinder_ndk.so",
+          "-l:libcutils.so",
+          "-l:libdmabufheap.so",
+          "-l:libdrm.so",
+          "-l:libgralloctypes.so",
+          "-l:libhidlbase.so",
+          "-l:liblog.so",
+          "-l:libnativewindow.so",
+          "-l:libsync.so",
+          "-l:libutils.so",
+          "-l:android.hardware.graphics.allocator-V2-ndk.so",
+          "-l:android.hardware.graphics.mapper@4.0.so",
+          "-l:android.hardware.common-V2-ndk.so",
+          "-l:android.hardware.graphics.common-V7-ndk.so",
+          "-l:libc++.so",
+          "-l:libc.so",
+          "-l:libm.so",
+          "-l:libdl.so",
+          "-l:libminigbm_gralloc.so",
+          "/home/tv/.cache/archtv/graphics-candidates-1/compiler-builtins/libclang_rt.builtins-x86_64-android.a",
+          "/home/tv/repositorio-principal/dist/aosp16/hwc2on1-build-1/crtend_so.S.o",
+          "-o",
+          "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/libminigbm_gralloc4_utils.so"
+        ],
+        "exit": 0,
+        "stderr": ""
+      },
+      {
+        "name": "mapper.minigbm.so",
+        "argv": [
+          "/home/tv/.cache/archtv/aosp16-qpr2/native-toolchain-1/bin/ld.lld",
+          "--no-undefined",
+          "--no-allow-shlib-undefined",
+          "--error-limit=0",
+          "-z",
+          "relro",
+          "-z",
+          "now",
+          "--rpath-link=/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/link-libs",
+          "-shared",
+          "--soname=mapper.minigbm.so",
+          "/home/tv/repositorio-principal/dist/aosp16/hwc2on1-build-1/crtbegin_so.c.o",
+          "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/mapper-CrosGralloc4Mapper.o",
+          "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/mapper-Mapper.o",
+          "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/utils-CrosGralloc4Utils.o",
+          "-L/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/link-libs",
+          "-l:libbase.so",
+          "-l:libbinder_ndk.so",
+          "-l:libcutils.so",
+          "-l:libdmabufheap.so",
+          "-l:libdrm.so",
+          "-l:libgralloctypes.so",
+          "-l:libhidlbase.so",
+          "-l:liblog.so",
+          "-l:libnativewindow.so",
+          "-l:libsync.so",
+          "-l:libutils.so",
+          "-l:android.hardware.graphics.allocator-V2-ndk.so",
+          "-l:android.hardware.graphics.mapper@4.0.so",
+          "-l:android.hardware.common-V2-ndk.so",
+          "-l:android.hardware.graphics.common-V7-ndk.so",
+          "-l:libc++.so",
+          "-l:libc.so",
+          "-l:libm.so",
+          "-l:libdl.so",
+          "-l:libminigbm_gralloc.so",
+          "/home/tv/.cache/archtv/graphics-candidates-1/compiler-builtins/libclang_rt.builtins-x86_64-android.a",
+          "/home/tv/repositorio-principal/dist/aosp16/hwc2on1-build-1/crtend_so.S.o",
+          "-o",
+          "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/mapper.minigbm.so"
+        ],
+        "exit": 0,
+        "stderr": ""
+      },
+      {
+        "name": "android.hardware.graphics.allocator-service.minigbm",
+        "argv": [
+          "/home/tv/.cache/archtv/aosp16-qpr2/native-toolchain-1/bin/ld.lld",
+          "--no-undefined",
+          "--no-allow-shlib-undefined",
+          "--error-limit=0",
+          "-z",
+          "relro",
+          "-z",
+          "now",
+          "--rpath-link=/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/link-libs",
+          "-pie",
+          "--dynamic-linker=/system/bin/linker64",
+          "/home/tv/repositorio-principal/dist/aosp16/crt-native-1/crtbegin_dynamic.o",
+          "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/allocator-Allocator.o",
+          "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/allocator-Main.o",
+          "/home/tv/repositorio-principal/dist/aosp16/hwc3-frontend-2/NativeHandle.o",
+          "-L/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/link-libs",
+          "-l:libbase.so",
+          "-l:libbinder_ndk.so",
+          "-l:libcutils.so",
+          "-l:libdmabufheap.so",
+          "-l:libdrm.so",
+          "-l:libgralloctypes.so",
+          "-l:libhidlbase.so",
+          "-l:liblog.so",
+          "-l:libnativewindow.so",
+          "-l:libsync.so",
+          "-l:libutils.so",
+          "-l:android.hardware.graphics.allocator-V2-ndk.so",
+          "-l:android.hardware.graphics.mapper@4.0.so",
+          "-l:android.hardware.common-V2-ndk.so",
+          "-l:android.hardware.graphics.common-V7-ndk.so",
+          "-l:libc++.so",
+          "-l:libc.so",
+          "-l:libm.so",
+          "-l:libdl.so",
+          "-l:libminigbm_gralloc.so",
+          "-l:libminigbm_gralloc4_utils.so",
+          "/home/tv/.cache/archtv/graphics-candidates-1/compiler-builtins/libclang_rt.builtins-x86_64-android.a",
+          "/home/tv/repositorio-principal/dist/aosp16/crt-native-1/crtend_android.o",
+          "-o",
+          "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/android.hardware.graphics.allocator-service.minigbm"
+        ],
+        "exit": 0,
+        "stderr": ""
+      }
+    ],
+    "terminal": true,
+    "artifacts": [
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/libminigbm_gralloc.so",
+        "sha256": "153a0cb92db90078afd7ceed478478922fb6fb0ce8c7f449914622a5e06efec1"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/libminigbm_gralloc4_utils.so",
+        "sha256": "b6f46bd722893ecf735ff359230405d3d98193194327a963cf8fd5a6d27735a5"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/mapper.minigbm.so",
+        "sha256": "02ba828fa6e40622521c83c5f6a9adfcababb4284ea5265a6dd805d17a50b778"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-4/android.hardware.graphics.allocator-service.minigbm",
+        "sha256": "e29a9e8d4581652a262dff132b56756a912360f5fad017e288df3498541e02ae"
+      }
+    ]
+  },
+  "vendor_policy": {
+    "status": "offline_candidate_not_loaded",
+    "binary_sha256": "9f9afb630a950a4ef79367901b74a9414c14066eb8e4ef8ceee6dcc61b537221",
+    "compile_exit": 0,
+    "reproducibility": "Two original TE/macro expansions produced byte-identical merged CIL; cmp exit0.",
+    "new_concrete_types": 5,
+    "assertions": {
+      "aosp": 5330,
+      "linux": 30
+    },
+    "mcp": "REA binary_session actual MCP returned successfully after reboot; no runtime or static binary inspection claimed by that call.",
+    "scope": "Original two vendor TE files and original m4 macros compiled with original checkmodule, merged into original platform CIL BEFORE universe composition. Required external symbol declarations and role r membership are module integration metadata. No broad custom allow rules.",
+    "limitations": [
+      "No candidate loaded; host permissive policyload0.",
+      "No native HAL started, allocated buffer, registered service or presented frame.",
+      "GPU/device labels, namespaces, identities/caps/NNP, Unix socket policy, death and negative tests still needed.",
+      "Original published policy service attributes preserved; offline compile does not prove whole cohort permission sufficiency.",
+      "Markor complete path remains open."
+    ]
+  }
+}

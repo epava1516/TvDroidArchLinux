@@ -1,0 +1,33 @@
+{
+  "m4": [
+    "m4",
+    "-Dtarget_full_treble=true",
+    "-Dtarget_build_variant=user",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/sepolicy/source/system/sepolicy/public/global_macros",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/sepolicy/source/system/sepolicy/public/ioctl_defines",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/sepolicy/source/system/sepolicy/public/ioctl_macros",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/sepolicy/source/system/sepolicy/public/te_macros",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/sepolicy/source/system/sepolicy/vendor/hal_graphics_allocator_default.te",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/sepolicy/source/system/sepolicy/vendor/hal_graphics_composer_default.te"
+  ],
+  "inputs": {
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/sepolicy/source/system/sepolicy/public/global_macros": "7cfdf2ed290c1a867e6ccac6dfcecb840c475e73de4ee49c9c6da71218666c46",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/sepolicy/source/system/sepolicy/public/ioctl_defines": "5d083d7fb74eaf1c7b9b62ca053dd4124db9835878eee93d10dbfa6b98091a64",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/sepolicy/source/system/sepolicy/public/ioctl_macros": "ce21e4223cb7ca1e2351e1fdc6e3a6855468ead6dab2030f6006986bbead8c7b",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/sepolicy/source/system/sepolicy/public/te_macros": "b749c90e4ad0b7873eaa03192309846fddc7a33b06284e1925ad849c2d5111cd",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/sepolicy/source/system/sepolicy/vendor/hal_graphics_allocator_default.te": "672ad5b11ec7030357049cf5f460fe1499ebeae81e0513b8816331cca653654d",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/sepolicy/source/system/sepolicy/vendor/hal_graphics_composer_default.te": "9404529c6b78e3cddf2cb3e437b14adf2be905438c3561c38c318aa9ea6cb16f"
+  },
+  "argv": [
+    "/home/tv/repositorio-principal/dist/aosp16/selinux-tools-host-4/source/checkpolicy/checkmodule",
+    "-m",
+    "-M",
+    "-C",
+    "-o",
+    "/home/tv/repositorio-principal/dist/aosp16/graphics-vendor-policy-1/graphics_vendor.cil",
+    "/home/tv/repositorio-principal/dist/aosp16/graphics-vendor-policy-1/graphics_vendor.te"
+  ],
+  "exit": 0,
+  "stdout": "",
+  "stderr": ""
+}

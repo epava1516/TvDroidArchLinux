@@ -1,5 +1,9 @@
 # Índice de evidencias
 
+## Arranque actual y candidato gráfico en curso
+
+[Estado postreinicio](../reports/android16-hwc3-wayland/host-after-reboot.json) y [checkpoint](../reports/android16-hwc3-wayland/checkpoint-in-progress.json): LTS/LSM SELinux, permisivo/policyload0; no política ni servicios activos inferidos. [Preparación reproducible vendor](../reports/android16-hwc3-wayland/prepare-vendor-policy.py) usa TE/macros originales y checkmodule; sus artefactos offline se conservan en dist, pendientes de integración funcional. Los resultados gráficos/MAC anteriores conservan su alcance histórico; ninguna APK aceptada por este trabajo.
+
 ## Salida gráfica Bionic · recorrido de transporte
 
 [Transporte Bionic→Smithay](../reports/android16-wayland-client/findings.json): [ejecución final ordinaria](../reports/android16-wayland-client/execution-5-final-frame.log), [validación de todos los píxeles](../reports/android16-wayland-client/pixel-validation.json), [captura](../reports/android16-wayland-client/screen.png), [MCP parcial con error de cleanup](../reports/android16-wayland-client/execution-4-frame-partial-mcp.json), [estado posterior root](../reports/android16-wayland-client/host-post.json) y [checkpoint](../reports/android16-wayland-client/checkpoint.json). Capacidad heredable inesperada detectada/rechazada y limpiada con setpriv; postexec UID/GID10000,caps0,NNP1, SID Linux init_t. Permisivo, no MAC/aislamiento, HWC3, native-fence ni APK.

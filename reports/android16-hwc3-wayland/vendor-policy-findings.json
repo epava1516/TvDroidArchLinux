@@ -1,0 +1,20 @@
+{
+  "status": "offline_candidate_not_loaded",
+  "binary_sha256": "9f9afb630a950a4ef79367901b74a9414c14066eb8e4ef8ceee6dcc61b537221",
+  "compile_exit": 0,
+  "reproducibility": "Two original TE/macro expansions produced byte-identical merged CIL; cmp exit0.",
+  "new_concrete_types": 5,
+  "assertions": {
+    "aosp": 5330,
+    "linux": 30
+  },
+  "mcp": "REA binary_session actual MCP returned successfully after reboot; no runtime or static binary inspection claimed by that call.",
+  "scope": "Original two vendor TE files and original m4 macros compiled with original checkmodule, merged into original platform CIL BEFORE universe composition. Required external symbol declarations and role r membership are module integration metadata. No broad custom allow rules.",
+  "limitations": [
+    "No candidate loaded; host permissive policyload0.",
+    "No native HAL started, allocated buffer, registered service or presented frame.",
+    "GPU/device labels, namespaces, identities/caps/NNP, Unix socket policy, death and negative tests still needed.",
+    "Original published policy service attributes preserved; offline compile does not prove whole cohort permission sufficiency.",
+    "Markor complete path remains open."
+  ]
+}

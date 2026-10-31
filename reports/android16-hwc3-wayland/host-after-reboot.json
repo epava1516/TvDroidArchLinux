@@ -1,0 +1,20 @@
+{
+  "utc": "2026-10-31T21:11:25.461655+00:00",
+  "kernel": "6.18.59-1-lts",
+  "boot_id": "4409f88d-366a-4ccf-80a0-e143452b78f5",
+  "cmdline": "initrd=\\intel-ucode.img initrd=\\initramfs-linux-lts.img root=UUID=4f479cd5-85ab-4806-931d-792e6f0c860c rw lsm=landlock,lockdown,yama,integrity,selinux,bpf selinux=1 enforcing=0",
+  "selinux": {
+    "active": true,
+    "enforcing": 0,
+    "policyload": 0,
+    "source": "Root host: /sys/kernel/security/lsm and first20 bytes =5I of /run/archtv-selinux-observe/status",
+    "status_version": 1,
+    "sequence": 0,
+    "deny_unknown": 1
+  },
+  "changes": "One-shot reboot explicitly requested; default arch.conf unchanged. selinuxfs observer mounted at /run/archtv-selinux-observe. No policy load or enforcing change.",
+  "previous_results": "Historical policyload1 and cohort enforcing remain valid within previous boot only; no runtime service availability inferred.",
+  "git_head": "49cd9174dc6f3cae8a9b0714df29034c0c2b094c",
+  "recovery": "/home/tv/recuperacion-archtv/20261031T210440Z-reinicio-solicitado/RETOMAR.txt",
+  "pending": "Historical six files and current HWC/minigbm experiments retained; preboot processes/handles invalidated."
+}

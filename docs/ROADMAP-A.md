@@ -1,5 +1,9 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+## Orden tras el reinicio actual
+
+SELinux activo/permisivo sin política cargada ([observación](../reports/android16-hwc3-wayland/host-after-reboot.json)); policyload1 inferior es histórico. MC3: incorporar TE vendor original allocator/composer a la base AOSP **antes** de componer universos/neverallow; preparar etiquetas/RC/namespace y GPU/Wayland; cargar candidato con recuperación; exigir allocator real y cliente HWC original con buffer/present/cierre. Después SurfaceFlinger/display y recorrido íntegro Markor. No repetir MC1 aislado para sustituir ese avance. Fences físicos, autorización y aislamiento siguen abiertos.
+
 ## Salida gráfica Bionic · recorrido de transporte
 
 MC3 sigue abierto: [transporte SHM Bionic→Smithay con píxeles reales](../reports/android16-wayland-client/findings.json) demostrado, sin cerrar HWC3/SF/APK. Prioridad inmediata: integrar salida en frontend original Device/findDisplays/FrameComposer; reutilizar mapper/allocator y renderer Bionic coherentes, comprobar acquire/release/present y capacidades reales. Después display original habilita tramo de PMS/AMS/zygote y Markor. No encadenar más fixtures de codecs/constructores como aceptación. ARM/GMS/DRM fuera de este camino inicial, sin eliminarlos.
