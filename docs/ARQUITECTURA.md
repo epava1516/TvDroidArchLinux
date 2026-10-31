@@ -901,6 +901,29 @@ Errores previos del arnés (dependencia libdl_android omitida y symlink absoluto
 resuelto fuera de imagen) conservados aparte; no son fallos del componente.
 Ningún dispositivo HWC/HIDL/SF/Wayland/APK se considera probado por esta sonda.
 
+## R3: conjunto vendor original con carga sphal observada
+
+[Construcción completa de módulos y ejecución MCP](../reports/android16-vendor-libutils/validation.json).
+Se compilan69 fuentes originales sin modificar: libutils y su libutils_binder,
+libbase y fmtlib, libcutils/sockets/async_safe, libhardware y el adaptador HWC2On1.
+Cinco bibliotecas fuente enlazan sin indefinidos; libc++ es el prebuilt original
+que el módulo AOSP selecciona para Android y declara vendor_available/double_loadable.
+No se copiaron variantes platform de libutils/libcutils/libbase/libhardware.
+
+Con /vendor preparado en namespace privado de sólo lectura y la configuración
+linker original intacta, android_load_sphal_library y descarga retornan0. REA MCP
+observa sphal visible y los seis paths vendor mapeados en /proc/self/maps. La sonda
+UID10000 no tiene grupos/capacidades; sigue vigente su limitación de muestreo parcial.
+Los hashes de artefactos se verifican por separado, sin atribuir enlace atómico
+entre bytes e imagen del kernel a una observación de paths.
+
+Esto supera el fallo inicial de libutils ausente para este paquete experimental.
+El perfil vendor202504 deriva de configuración fuente BP4A; no certifica hardware,
+producto ni igualdad completa Soong/sanitizer/AFDO/ABI/exportaciones/min-SDK.
+No prueba HwcLoader/HIDL, dispositivo HWC1.5, allocator/mapper/GPU, buffers/fences,
+frame Wayland ni APK. Seguir con generador/interfaces HIDL y passthrough originales,
+sin omitir SID/SELinux para servicios ni iniciar otro Android o VM.
+
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 
 

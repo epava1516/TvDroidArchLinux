@@ -1,0 +1,87 @@
+{
+  "scope": "Whole original source modules with vendor macro source profile, strict link to source-selected libc++ prebuilt and original LLNDK libraries; not full Soong/sanitizer/AFDO/ABI product equivalence",
+  "libraries": [
+    {
+      "logical": "/system/lib64/liblog.so",
+      "sha256": "d19efa76e39bc458a0f9125d1665185ce95af9153bfe695e0c9519937ea9bc0a",
+      "scope": "Original LLNDK library available via original sphal links, not copied into vendor"
+    },
+    {
+      "logical": "/system/lib64/libvndksupport.so",
+      "sha256": "ac4e2cc821957fc90c739b1414520e006ef51b6031e83f9163db177b710fbc6c",
+      "scope": "Original LLNDK library available via original sphal links, not copied into vendor"
+    },
+    {
+      "logical": "/system/lib64/libdl_android.so",
+      "sha256": "20c51c782b17eebe04ad168d0a4ad23403e8696212d5d3027c191b8d865c57b2",
+      "scope": "Original LLNDK library available via original sphal links, not copied into vendor"
+    },
+    {
+      "logical": "/apex/com.android.runtime/lib64/bionic/libc.so",
+      "sha256": "c743999d121b9cdaaa2fc1eaae386cd51eaeed063423f26d89f29590a3e24723",
+      "scope": "Original LLNDK library available via original sphal links, not copied into vendor"
+    },
+    {
+      "logical": "/apex/com.android.runtime/lib64/bionic/libdl.so",
+      "sha256": "976f432c4e1a1ada8542534caac3905cfd8ad37a72756412a20ebfc6017f582e",
+      "scope": "Original LLNDK library available via original sphal links, not copied into vendor"
+    },
+    {
+      "logical": "/apex/com.android.runtime/lib64/bionic/libm.so",
+      "sha256": "51ba6fe4e0628c069274ecba60c864fe9b84ae288e7f2c6cf79fe3d75ad54638",
+      "scope": "Original LLNDK library available via original sphal links, not copied into vendor"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/platform-libcxx-x86_64/source/prebuilts/clang/host/linux-x86/clang-r563880c/android_libc++/platform/x86_64/lib/libc++.so",
+      "sha256": "07ff0bd165d5c7cb6e1c8f79820ffb7b307e04def111160bcbeb75af975a9d1d",
+      "scope": "Original toolchain prebuilt selected by original libc++ module for Android, vendor_available/double_loadable source checked; not arbitrary GSI platform copy"
+    }
+  ],
+  "results": [
+    {
+      "module": "libbase",
+      "argv": [
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-toolchain-1/bin/ld.lld",
+        "-shared",
+        "--soname=libbase.so",
+        "--no-undefined",
+        "--no-allow-shlib-undefined",
+        "-z",
+        "relro",
+        "-z",
+        "now",
+        "--rpath-link=/home/tv/repositorio-principal/dist/aosp16/vendor-native-link-1/link-libs",
+        "/home/tv/repositorio-principal/dist/aosp16/hwc2on1-build-1/crtbegin_so.c.o",
+        "/home/tv/repositorio-principal/dist/aosp16/vendor-native-deps-build-2/libbase-chrono_utils.o",
+        "/home/tv/repositorio-principal/dist/aosp16/vendor-native-deps-build-2/libbase-cmsg.o",
+        "/home/tv/repositorio-principal/dist/aosp16/vendor-native-deps-build-2/libbase-file.o",
+        "/home/tv/repositorio-principal/dist/aosp16/vendor-native-deps-build-2/libbase-hex.o",
+        "/home/tv/repositorio-principal/dist/aosp16/vendor-native-deps-build-2/libbase-logging.o",
+        "/home/tv/repositorio-principal/dist/aosp16/vendor-native-deps-build-2/libbase-mapped_file.o",
+        "/home/tv/repositorio-principal/dist/aosp16/vendor-native-deps-build-2/libbase-parsebool.o",
+        "/home/tv/repositorio-principal/dist/aosp16/vendor-native-deps-build-2/libbase-parsenetaddress.o",
+        "/home/tv/repositorio-principal/dist/aosp16/vendor-native-deps-build-2/libbase-posix_strerror_r.o",
+        "/home/tv/repositorio-principal/dist/aosp16/vendor-native-deps-build-2/libbase-process.o",
+        "/home/tv/repositorio-principal/dist/aosp16/vendor-native-deps-build-2/libbase-properties.o",
+        "/home/tv/repositorio-principal/dist/aosp16/vendor-native-deps-build-2/libbase-result.o",
+        "/home/tv/repositorio-principal/dist/aosp16/vendor-native-deps-build-2/libbase-stringprintf.o",
+        "/home/tv/repositorio-principal/dist/aosp16/vendor-native-deps-build-2/libbase-strings.o",
+        "/home/tv/repositorio-principal/dist/aosp16/vendor-native-deps-build-2/libbase-threads.o",
+        "/home/tv/repositorio-principal/dist/aosp16/vendor-native-deps-build-2/libbase-test_utils.o",
+        "/home/tv/repositorio-principal/dist/aosp16/vendor-native-deps-build-2/libbase-errors_unix.o",
+        "/home/tv/repositorio-principal/dist/aosp16/vendor-native-final-1/fmtlib-format.o",
+        "-L/home/tv/repositorio-principal/dist/aosp16/vendor-native-link-1/link-libs",
+        "-llog",
+        "-lc++",
+        "-lc",
+        "-lm",
+        "-ldl",
+        "/home/tv/repositorio-principal/dist/aosp16/hwc2on1-build-1/crtend_so.S.o",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/vendor-native-link-1/vendor/lib64/libbase.so"
+      ],
+      "exit_code": 1,
+      "stderr": "ld.lld: error: undefined symbol: __udivti3\n>>> referenced by format.cc\n>>>               /home/tv/repositorio-principal/dist/aosp16/vendor-native-final-1/fmtlib-format.o:(fmt::v11::basic_appender<char> fmt::v11::detail::write<char, fmt::v11::basic_appender<char>, __int128, 0>(fmt::v11::basic_appender<char>, __int128))\n>>> referenced by format.cc\n>>>               /home/tv/repositorio-principal/dist/aosp16/vendor-native-final-1/fmtlib-format.o:(char* fmt::v11::detail::do_format_decimal<char, unsigned __int128>(char*, unsigned __int128, int))\n>>> referenced by format.cc\n>>>               /home/tv/repositorio-principal/dist/aosp16/vendor-native-final-1/fmtlib-format.o:(char* fmt::v11::detail::do_format_decimal<char, unsigned __int128>(char*, unsigned __int128, int))\n>>> referenced 2 more times\n\nld.lld: error: undefined symbol: __unordtf2\n>>> referenced by format.cc\n>>>               /home/tv/repositorio-principal/dist/aosp16/vendor-native-final-1/fmtlib-format.o:(fmt::v11::basic_appender<char> fmt::v11::detail::write_float<char, fmt::v11::basic_appender<char>, __float128>(fmt::v11::basic_appender<char>, __float128, fmt::v11::format_specs, fmt::v11::detail::locale_ref))\n\nld.lld: error: undefined symbol: __netf2\n>>> referenced by format.cc\n>>>               /home/tv/repositorio-principal/dist/aosp16/vendor-native-final-1/fmtlib-format.o:(int fmt::v11::detail::format_float<__float128>(__float128, int, fmt::v11::format_specs const&, bool, fmt::v11::detail::buffer<char>&))\n\nld.lld: error: undefined symbol: __trunctfsf2\n>>> referenced by format.cc\n>>>               /home/tv/repositorio-principal/dist/aosp16/vendor-native-final-1/fmtlib-format.o:(int fmt::v11::detail::format_float<__float128>(__float128, int, fmt::v11::format_specs const&, bool, fmt::v11::detail::buffer<char>&))\n"
+    }
+  ]
+}

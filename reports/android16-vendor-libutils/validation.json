@@ -1,0 +1,121 @@
+{
+  "scope": "Original vendor-profile module graph prototype and native isolated sphal library load, NOT complete Soong target, HIDL/device/graphics or APK compatibility",
+  "assertions": {
+    "whole_source_modules_compile": true,
+    "five_source_libraries_strict_link": true,
+    "source_selected_libcxx_prebuilt_hash_matches": true,
+    "original_sphal_load_unload_zero_and_six_vendor_mappings": true,
+    "namespace_config_unchanged": true,
+    "six_pending_files_preserved": true
+  },
+  "evidence": [
+    {
+      "path": "reports/android16-vendor-libutils/attempted-compile-1.py",
+      "sha256": "42d3a7168e33b23871424d9fed97193a2248123ecd85781798412099c9755fbd"
+    },
+    {
+      "path": "reports/android16-vendor-libutils/compile-attempt-1.json",
+      "sha256": "a9d2bbe9726513805e7557ed90f19b6ddfd501f534089f90d650c1d4ebd72681"
+    },
+    {
+      "path": "reports/android16-vendor-libutils/compile.json",
+      "sha256": "6d03b651b81de46a0b69722e9db5a3a5448ffb5b162fd61c558ee364cc2c5b8b"
+    },
+    {
+      "path": "reports/android16-vendor-libutils/compiler-runtime-provenance.json",
+      "sha256": "51de408a9bfaed08f2e79523cf2054e59205f5e78a2a7c42312d817589bf16fb"
+    },
+    {
+      "path": "reports/android16-vendor-libutils/dependencies-attempt-1.json",
+      "sha256": "438803a1db9b2246e939f639dd2865061f79e91aecb34b5883432ac4aab35135"
+    },
+    {
+      "path": "reports/android16-vendor-libutils/dependencies-attempt-1.py",
+      "sha256": "41dd934b0b551f7da228d90de29929d283713ea13d9dc1d8f53211e765915fa0"
+    },
+    {
+      "path": "reports/android16-vendor-libutils/dependencies-compile.json",
+      "sha256": "3fff9e5a5320736b4359cf58a55a250b615e540a2c6619dfac9a6f1638f8cca4"
+    },
+    {
+      "path": "reports/android16-vendor-libutils/final-objects.json",
+      "sha256": "f6704c96f090960e7f84898947b9c26514d590e66e6367fb58717529f3bffaae"
+    },
+    {
+      "path": "reports/android16-vendor-libutils/findings.json",
+      "sha256": "adf47825c7fcc942d1f4f4dc89940dbc03e67c7b309def8e1ebab6d0601edcde"
+    },
+    {
+      "path": "reports/android16-vendor-libutils/fmtlib-provenance.json",
+      "sha256": "2a9c36a9c2f10295b71b4ace3a96432b0050f1c24de958012b38021109edd003"
+    },
+    {
+      "path": "reports/android16-vendor-libutils/initial-load-capture-summary.json",
+      "sha256": "d69415ae2069029646fc1e090fc432cbbeac2338ceb22b39d78d2b15218b663b"
+    },
+    {
+      "path": "reports/android16-vendor-libutils/link-attempt-1.json",
+      "sha256": "f3884cca3746ae196989affc771a695348922006181f8f5526b38872a55e313d"
+    },
+    {
+      "path": "reports/android16-vendor-libutils/link-attempt-1.py",
+      "sha256": "9085c17c745cbf1c030d748e5d6b66c7e046b7faad396db9e328e1cc96a287a2"
+    },
+    {
+      "path": "reports/android16-vendor-libutils/link.json",
+      "sha256": "cf4e7d49952f19d11f85fd4a60be00224d26192ac5369216b67da362513cd2eb"
+    },
+    {
+      "path": "reports/android16-vendor-libutils/load-capture-summary.json",
+      "sha256": "07a9c9262b26ba71db99d16d3df44e360e387fe0003080f9372e67aa6fd37aba"
+    },
+    {
+      "path": "reports/android16-vendor-libutils/load-probe-initial.cpp",
+      "sha256": "7252c78405de62a9fff89a6c664957d9886c17f70875a14ad5f734f9a5aa5285"
+    },
+    {
+      "path": "reports/android16-vendor-libutils/native-launcher-final.py",
+      "sha256": "b79089840660b476f4d9fe3ac4a828fd358cf3e9f0b8ff451800aa0639c1e38d"
+    },
+    {
+      "path": "reports/android16-vendor-libutils/native-launcher.py",
+      "sha256": "a0c094f1d868dde582cee295ce28538f6eb4716b201ee939c5a1fa31624f31d2"
+    },
+    {
+      "path": "reports/android16-vendor-libutils/probe-build-final.json",
+      "sha256": "62484073ea2f60e5f70429da41ed9fdc791453d9a4014c35c74fe3c48db944ec"
+    },
+    {
+      "path": "reports/android16-vendor-libutils/probe-build.json",
+      "sha256": "69defb2e81ebe1d1fee9903b8b0814fda03bfd20d11c38b3296ae9d29c16fe20"
+    },
+    {
+      "path": "reports/android16-vendor-libutils/reproduce-adapter-load.py",
+      "sha256": "921867e5a9c436a96630a1566c0fce27730d7697b3bac6afc89e13cba5a7af8d"
+    },
+    {
+      "path": "reports/android16-vendor-libutils/reproduce-dependencies-compile.py",
+      "sha256": "47333089c15845e335edeb26acadf9cdfe5fda0c701c13486d7f3fc87bef6402"
+    },
+    {
+      "path": "reports/android16-vendor-libutils/reproduce-libutils-compile.py",
+      "sha256": "31fcf49e243142de9d089de1edf0c3894245d83e428b43e2c8922c7f546ca8dc"
+    },
+    {
+      "path": "reports/android16-vendor-libutils/reproduce-link.py",
+      "sha256": "2d3849ebf747a46b6dd65183cdb90d3f2cd5e22cff68ec3345e3a64a808cfd68"
+    },
+    {
+      "path": "reports/android16-vendor-libutils/source-contract.json",
+      "sha256": "7613cf995fc7ef161ac4d59ffcb95bcd2c47e0ba47604b30034b63cdfac547a3"
+    },
+    {
+      "path": "reports/android16-vendor-libutils/vendor-adapter-build.json",
+      "sha256": "83d410715b614859e9f100eb399c05a0f73caacadcf91cf0175a0baf83185ac0"
+    },
+    {
+      "path": "reports/android16-vendor-libutils/vendor-load-probe.cpp",
+      "sha256": "bd0c7500ba0f3252940e88eb72a4d2b879d0764fd0e7952c25ca20e303a17add"
+    }
+  ]
+}

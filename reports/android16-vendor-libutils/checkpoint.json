@@ -1,0 +1,64 @@
+{
+  "observed_at": "2026-10-31T07:17:07.353745+00:00",
+  "base_commit": "06d13f5024b24ccf92f70b1ed380134e8a532127",
+  "scope": "Original vendor-profile module graph prototype and native isolated sphal library load, NOT complete Soong target, HIDL/device/graphics or APK compatibility",
+  "previous_checkpoint": "reports/android16-hwc-vendor-load/checkpoint.json",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "terminal_exec_handles": [
+    71894,
+    20085,
+    49477,
+    89084,
+    1909,
+    89542,
+    9867,
+    94938
+  ],
+  "live_exec_handles": [],
+  "next": "Build original HIDL generator/generated Composer interfaces and HwcLoader/passthrough against source-profile vendor graph. Then isolate existing Wayland HAL dependencies and actual buffer/fence/Smithay vertical. Original SID/SELinux remains prerequisite for service acceptance.",
+  "results": "69 complete original source units (including vendor adapter), strict link and actual original sphal load/unload0 with six vendor paths mapped. No namespace relaxation or platform module copying.",
+  "observed_processes": {},
+  "validated_independent_progress": {
+    "original_binary_exports": "Both0 via original checkpolicy-M-b-C",
+    "aosp_retained_binary_attributes": 199,
+    "linux_retained_binary_attributes": 340,
+    "attribute_set_exports_all_flat_explicit": true
+  },
+  "objective": "Complete unmodified APK including TV on Linux Rust/Smithay, coherent native AOSP16QPR2/Bionic; no Waydroid, full Android or introduced VM; preserve compatibility/isolation/stability/lightness/install/update.",
+  "constraints": [
+    "A16-QPR2-1",
+    "No VM introduction or VM/client restart",
+    "No policy load/host relabeling without verified deployment plan",
+    "Fixtures/static policy checks are partial, not APK acceptance"
+  ],
+  "branch": "main",
+  "head_before_milestone_commit": "06d13f5024b24ccf92f70b1ed380134e8a532127",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "relation_to_local_origin_tracking": "0\t0",
+  "own_staged_milestone_paths": [],
+  "process_snapshot": {
+    "scope": "MCP owned-group cleanup verified; process samples partial, not current host liveness proof."
+  },
+  "rea_session_status": "Two actual native MCP captures exited0; final observes six vendor mappings. Owned groups cleanup verified, process sampling partial. No persistent target started.",
+  "tests": {
+    "compile": "compile.json",
+    "dependencies": "dependencies-compile.json",
+    "final_objects": "final-objects.json",
+    "link": "link.json",
+    "native_capture": "load-capture-summary.json",
+    "scope": "findings.json"
+  },
+  "evidence_root": "reports/android16-vendor-libutils",
+  "active_exec_handles": []
+}

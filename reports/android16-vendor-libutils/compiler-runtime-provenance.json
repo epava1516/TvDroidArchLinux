@@ -1,0 +1,7 @@
+{
+  "commit": "9916fb51ccb914d62d35ad9a7b9b21d2ef046928",
+  "path": "clang-r563880c/lib/clang/21/lib/linux/libclang_rt.builtins-x86_64-android.a",
+  "git_blob": "9cf4339c569cfdc288ac461826784337d0155fbc",
+  "sha256": "c280aa2148423be3db0166b762287d10e354110582d2af3a268530b4254b1a0e",
+  "git_blob_verified": true
+}

@@ -1,0 +1,25 @@
+{
+  "commit": "d50695f04854e474766da7d713bf8242f4ceb4f8",
+  "files": [
+    {
+      "path": "Android.bp",
+      "sha256": "6b0cf7f197140c3e37be6aa97a07f30250166c10c4e988ad3144a0ecfc646083",
+      "git_blob": "14b9cfb4eb139d99e0797ff6e788686ee643c152"
+    },
+    {
+      "path": "src/format.cc",
+      "sha256": "c253dc156509a9cba330bbad3f3d7057d8de33acedbe64fc3e8c5a18bc171def",
+      "git_blob": "3ccd8068483cc73f543654cb19f0fd3a4d508a51"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "07580f2a3b35709ce703d523f447b242f6dfec7582a8c0df102c7fa2849375f8",
+      "git_blob": "1cd1ef92696b65b2ecb0e560e622f0a0e869dcf3"
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "560d39617dfb4b4e4088597291a070ed6c3a8d67668114ed475c673430c3e49a",
+      "git_blob": "eb6be6503e93cc384f912841c7c7cbc65e5aa709"
+    }
+  ]
+}

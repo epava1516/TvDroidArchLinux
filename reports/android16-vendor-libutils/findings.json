@@ -1,0 +1,103 @@
+{
+  "scope": "Original vendor-profile module graph prototype and native isolated sphal library load, NOT complete Soong target, HIDL/device/graphics or APK compatibility",
+  "observed_at": "2026-10-31T07:17:07.353745+00:00",
+  "base_commit": "06d13f5024b24ccf92f70b1ed380134e8a532127",
+  "sources_modified": false,
+  "whole_module_compile": {
+    "libutils_and_whole_binder": 21,
+    "libbase_libcutils_sockets_asyncsafe_libhardware": 45,
+    "fmtlib": 1,
+    "adapter_vendor_recompile": 2,
+    "unique_source_units": 69,
+    "note": "Two C units recompiled with ordinary original global hardening; earlier CRT-derived attempt is historical, not selected final objects."
+  },
+  "strict_link": [
+    "libbase.so",
+    "libcutils.so",
+    "libutils.so",
+    "libhardware.so",
+    "libhwc2on1adapter.so"
+  ],
+  "libcxx": "Exact source-selected original compiler prebuilt, vendor_available and double_loadable; provenance retained",
+  "bundle": [
+    {
+      "path": "dist/aosp16/vendor-native-link-2/vendor/lib64/libbase.so",
+      "sha256": "cb052cc362f6754b6444c2236abb0247d60294f08601a8d55163a1d2933b687f",
+      "bytes": 263088
+    },
+    {
+      "path": "dist/aosp16/vendor-native-link-2/vendor/lib64/libc++.so",
+      "sha256": "07ff0bd165d5c7cb6e1c8f79820ffb7b307e04def111160bcbeb75af975a9d1d",
+      "bytes": 7561848
+    },
+    {
+      "path": "dist/aosp16/vendor-native-link-2/vendor/lib64/libcutils.so",
+      "sha256": "b6677895aa0422823f9bf9082693f1cb5d6c5a8f526fada73ca36ed58037d2a5",
+      "bytes": 112512
+    },
+    {
+      "path": "dist/aosp16/vendor-native-link-2/vendor/lib64/libhardware.so",
+      "sha256": "4360b97b5367a4deba6c4dc1f1bdca46d20b3b321265df938bdcfa523babe7c1",
+      "bytes": 8632
+    },
+    {
+      "path": "dist/aosp16/vendor-native-link-2/vendor/lib64/libhwc2on1adapter.so",
+      "sha256": "41b99c758e81d69306bebc6ff2f48e283a7356b97c18fde3e16a65be0bc52cd9",
+      "bytes": 176160
+    },
+    {
+      "path": "dist/aosp16/vendor-native-link-2/vendor/lib64/libutils.so",
+      "sha256": "85285defaf764681a836f2c1ce404e0d689a7d45a072450b522b11aa232cd181",
+      "bytes": 154264
+    }
+  ],
+  "runtime": {
+    "evidence_id": "ev_a9aca98c883d59f86d49139167a6e3e4bc1b5802c90440782ed45f4bcdcf80db",
+    "exit": 0,
+    "sphal_visible": true,
+    "original_load_and_unload": true,
+    "mapped_vendor_libraries": [
+      "/vendor/lib64/libc++.so",
+      "/vendor/lib64/libhardware.so",
+      "/vendor/lib64/libhwc2on1adapter.so",
+      "/vendor/lib64/libbase.so",
+      "/vendor/lib64/libcutils.so",
+      "/vendor/lib64/libutils.so"
+    ],
+    "identity": {
+      "Uid": "10000\t10000\t10000\t10000",
+      "Gid": "10000\t10000\t10000\t10000",
+      "Groups": "",
+      "CapEff": "0000000000000000",
+      "CapPrm": "0000000000000000",
+      "CapInh": "0000000000000000",
+      "CapAmb": "0000000000000000",
+      "NoNewPrivs": "1"
+    },
+    "namespace_configuration_unchanged": true,
+    "scope": "Live /proc/self/maps pathname observations after original load; hashes of prepared/copied artifacts checked separately, not atomic kernel image/hash binding.",
+    "probe_artifact": {
+      "path": "dist/aosp16/vendor-native-probe-2/load-probe",
+      "sha256": "5c3ca92b4b304b4c555022235300c59c4e3548efc21920d766ec7f7785aabe90",
+      "executed_copy": "dist/aosp16/vendor-native-execution-2/data/vendor-load-probe",
+      "copy_hash_matches_after_run": true,
+      "source_sha256": "bd0c7500ba0f3252940e88eb72a4d2b879d0764fd0e7952c25ca20e303a17add",
+      "launcher_sha256": "b79089840660b476f4d9fe3ac4a828fd358cf3e9f0b8ff451800aa0639c1e38d"
+    }
+  },
+  "attempts": [
+    "libutils first stopped on omitted declared vndksupport header path; fixed include, original sources intact",
+    "Dependency first profile misplaced original noOverride flags before module Werror; original final ordering restores intended VLA warning control, sources intact",
+    "Initial strict link lacked original compiler arithmetic runtime used by fmtlib; pinned Android x86_64 builtins added, not host runtime or replacements",
+    "First load succeeded; final extended probe verifies six vendor paths mapped and original unload success"
+  ],
+  "limitations": [
+    "Vendor source-profile202504 is not proof of hardware/GSI vendor build equivalence",
+    "Direct clang/LLD build lacks full Soong graph evaluation, sanitizer/AFDO, version/export/ABI dump comparison, exact min-SDK/product flags and complete license/distribution audit",
+    "No generated HIDL headers, original HwcLoader service, HWC1.5 device opening, callbacks, allocator/mapper/GPU, real acquire/release/present fence behavior or Wayland frame tested",
+    "No service registry/SID/MAC identity gate, per-app isolation, install/update or complete APK stage accepted",
+    "Process sampling partial; inherited environment/network/filesystem not fully observed. Sanitized MCP selection is not complete authenticated Evidence",
+    "CPU10/wall20(+kill3)/AS64GiB virtual limits, not measured RAM or performance acceptance"
+  ],
+  "next": "Build original HIDL generator/generated Composer interfaces and HwcLoader/passthrough against source-profile vendor graph. Then isolate existing Wayland HAL dependencies and actual buffer/fence/Smithay vertical. Original SID/SELinux remains prerequisite for service acceptance."
+}

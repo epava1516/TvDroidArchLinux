@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-hwc-vendor-load/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-vendor-libutils/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -478,6 +478,10 @@ conservando la prohibición de introducir VM o reiniciar.
 
 [Enlace y carga Bionic](../reports/android16-hwc2on1-build/validation.json): dos unidades originales completas sin modificar, enlace estricto y dlopen NOW/dlclose0 reales mediante REA MCP con UID10000 sin capacidades. Namespace plataforma probado; vendor/HIDL/dispositivo/sync/frames/APK sin probar.
 
-## R3: cierre vendor aún incompleto
+## R3: fallo inicial de carga vendor · histórico
 
 [Prueba sphal real](../reports/android16-hwc-vendor-load/validation.json): namespace visible, carga original falla por libutils.so no disponible allí. El dlopen de plataforma anterior no acreditaba esa frontera. Construir variantes vendor originales; sin fallback ni namespaces relajados.
+
+## R3: conjunto vendor original carga en sphal
+
+[69 fuentes originales y carga nativa](../reports/android16-vendor-libutils/validation.json): cinco bibliotecas enlazadas estrictamente más libc++ prebuilt elegido por AOSP. Carga/descarga originales0 y seis paths vendor mapeados mediante REA MCP, namespace intacto. Es un perfil experimental, sin equivalencia Soong/ABI completa ni HAL, buffers/fences, frames o APK aceptados.

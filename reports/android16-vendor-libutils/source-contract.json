@@ -1,0 +1,59 @@
+{
+  "scope": "Original module/variant source facts; not automatic extraction of entire Soong graph or full product equivalence",
+  "sources": [
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/libutils/Android.bp",
+      "sha256": "08abccc38bd1a1326710c193e8ab14ad41649e6b9f4be99c3498f223753d0c5e"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/libutils/binder/Android.bp",
+      "sha256": "1c1bcefb169866bbec2182a9c312302154461880ea264d5ff09cdc1770878ef3"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/libcutils/Android.bp",
+      "sha256": "f67f553961de89e224c9d6435988d6757dac0a16701912dea15f8af61b603e88"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/property-study/libbase-regular/Android.bp",
+      "sha256": "82e86c47c01e9c1584c3c87c9ed77921456eaa104b8342b77e9e3518ebde850b"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/async_safe/Android.bp",
+      "sha256": "f0f54a7dcc34125aa69e41d047dcf6006ce1d31a1403a4ca6979fa701e577b0e"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/graphics-candidates-1/libhardware/Android.bp",
+      "sha256": "c610d25ff9f47f3f8eef2df94b5ec93c0c71b4ae5f3641991609f4c1ea25130c"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/soong-compiler-config/compiler.go",
+      "sha256": "8b9bd15157e5ec48a98339700df678b07223013a7ae2ba6a68152c3cd4061956"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/clang-soong/source/prebuilts/clang/host/linux-x86/soong/clangprebuilts.go",
+      "sha256": "53a814c58722f7daeba7e26b358d15d53911ec17b45f6b5439469829ed97b436"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-study/prebuilts__clang__host__linux-x86__Android.bp",
+      "sha256": "67f87399d1674ac8f477f3b223da2bc55debd16876c74b4a5963452770ba77d7"
+    },
+    {
+      "path": "reports/android16-property-profile/generation.json",
+      "sha256": "bfabd3f50d768646c7dacd00224fba882f1e1b429ca764a77ce3e04b29d5afde"
+    },
+    {
+      "path": "dist/aosp16/linkerconfig-2/generated/ld.config.txt",
+      "sha256": "cb2d787018f3c4c2c8d500c8a12cc31e49c132c5c724c73a39fa7a8e603beaf7"
+    }
+  ],
+  "facts": [
+    "libutils Android/Linux13 units and whole_static libutils_binder8 units retained",
+    "libbase17 units plus whole_static fmtlib src/format.cc retained",
+    "libcutils Android/Linux source union26 units includes whole sockets; vendor exclusion qtaguid retained; original async_safe_log.cpp retained",
+    "libhardware original hardware.c with original QEMU_HARDWARE build macro; no VM introduced",
+    "Compiler vendor flags __ANDROID_VNDK__, __ANDROID_VENDOR__, __ANDROID_VENDOR_API__ from original compiler.go; 202504 is existing BP4A source profile, not hardware vendor ABI proof",
+    "Original libc++ device-default is vendor_available and double_loadable; clangprebuilts.go selects android_libc++/platform/<arch>/lib/libc++.so for Android, exact prebuilt supplied",
+    "Original noOverride global flags applied after module flags for corrected dependency profile; original C module hardening replaces earlier CRT-only compile flag attempt",
+    "Original linkerconfig remains unchanged; original LLNDK libs used through its sphal links; no platform libutils/libcutils/libbase/libhardware copied into bundle"
+  ]
+}
