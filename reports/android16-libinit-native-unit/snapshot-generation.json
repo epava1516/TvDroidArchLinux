@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "/home/tv/repositorio-principal/dist/aosp16/protoc-host-2/protoc",
+    "--proto_path=/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/fs_mgr/libsnapshot",
+    "--cpp_out=/home/tv/repositorio-principal/dist/aosp16/snapshot-protobuf-1/generated",
+    "android/snapshot/snapshot.proto"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "source_sha256": "e7e171daf9216726396e0a35187a6b8b0212e1c286f068f7c5d31fa60b5b6a14",
+  "scope": "Original snapshot schema generation for source build only; no snapshot/mount/Android boot executed"
+}

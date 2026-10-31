@@ -1,0 +1,86 @@
+{
+  "scope": "Original libinit source unit prototype and real native Rust C-ABI execution; not subsystem readiness or APK acceptance",
+  "base_commit": "77cf067ce7132aaa9bf4738b5aa75319830adb27",
+  "sources_compiled": 52,
+  "objects_reused_after_preprocessor_equality_and_sha256": 51,
+  "archive_members": 63,
+  "rust_cases_passed": 4,
+  "evidence": [
+    {
+      "path": "reports/android16-libinit-native-unit/archive.json",
+      "sha256": "89895a15eae2b0ee08e264edbb4c19ed941c293ddc718d438890131552192330"
+    },
+    {
+      "path": "reports/android16-libinit-native-unit/global-profile.json",
+      "sha256": "8aff61142c92854bc1d6c69a22af479ca87bf60833ea1c5adf6401ab94c36cf0"
+    },
+    {
+      "path": "reports/android16-libinit-native-unit/policy-default.json",
+      "sha256": "7d6abe22554fd1ffb78b3a50b014a21fb0017a464f32ef3ba644f0a466ed9f6f"
+    },
+    {
+      "path": "reports/android16-libinit-native-unit/reproduce/archtv-genfs-native-execution.py",
+      "sha256": "ba21ccd7f781f3a73fa6fbae90de1c0fd5333814929a61b20918dc5d1d18ec46"
+    },
+    {
+      "path": "reports/android16-libinit-native-unit/reproduce/archtv-genfs-native-probe.c",
+      "sha256": "314d98e2bb3fa36ae11e3994ec812cac307ec4a6af56c4551b30b18b5bfbaa65"
+    },
+    {
+      "path": "reports/android16-libinit-native-unit/reproduce/archtv-genfs-native-test.py",
+      "sha256": "6912650877fc0089fdea1f5db1487e2dd074235f7b2e6976357aa15f0286752c"
+    },
+    {
+      "path": "reports/android16-libinit-native-unit/reproduce/archtv-libinit-native-finalize.py",
+      "sha256": "3271b66a6667b2a15f6ca609feb1ec2da9d787e646ee4310ba90240a2f138296"
+    },
+    {
+      "path": "reports/android16-libinit-native-unit/reproduce/archtv-libinit-native-group-build-5.py",
+      "sha256": "bc67b280616cfa60883996794c7df8660ba78bff6248d369103f2e7b9ba7de1e"
+    },
+    {
+      "path": "reports/android16-libinit-native-unit/rust-compile.json",
+      "sha256": "317f5467bb5ff222f32f42f0201124d6a58df1e43d406958db95ec0267472fb2"
+    },
+    {
+      "path": "reports/android16-libinit-native-unit/rust-execution.json",
+      "sha256": "055c25068b0ef81f4d611d67f4d14c60420675d88150cbe10cd96d3a0a395d0e"
+    },
+    {
+      "path": "reports/android16-libinit-native-unit/rust-version.json",
+      "sha256": "0ac3e3d25f6c950a304e4b2bef43e602e7f1e345bb19c09765d5fff681a53fc4"
+    },
+    {
+      "path": "reports/android16-libinit-native-unit/snapshot-generation.json",
+      "sha256": "378e10c25347aeed62cc89976c5cbc3ae7b00e1ba5cf21645a77a27803e51484"
+    },
+    {
+      "path": "reports/android16-libinit-native-unit/snapshot-native.json",
+      "sha256": "adc40ea0bfe58310478deacdb37a7f4ab44672d89bcd89284c921a93a5cbe976"
+    },
+    {
+      "path": "reports/android16-libinit-native-unit/source-build.json",
+      "sha256": "e6360acdb68a839d7aeb894ab47b8e9cd0fe588548f9cd2be188536fcb5b58fc"
+    },
+    {
+      "path": "reports/android16-libinit-native-unit/update-generation.json",
+      "sha256": "189bb1249d81b44e8fb0afa914678407c6d5c377639a6f00518a641bcb14e256"
+    },
+    {
+      "path": "reports/android16-libinit-native-unit/xsdc-generation.json",
+      "sha256": "a38f6caf8930a3457773a647c97b110cb8ac97df5763f306bc34132bd4c37044"
+    },
+    {
+      "path": "reports/android16-libinit-native-unit/xsdc-native.json",
+      "sha256": "a28038469b798f7df7f4ac6f319f57170b250231b5f0855905c997e6675473a9"
+    }
+  ],
+  "open": [
+    "Soong sanitizer/product equivalence",
+    "proto full native flag alignment",
+    "source/GSI flag parity",
+    "link closure and supervised PropertyInit execution",
+    "IPC/persistence/policy",
+    "all real APK stages"
+  ]
+}

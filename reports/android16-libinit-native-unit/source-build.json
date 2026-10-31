@@ -1,0 +1,919 @@
+{
+  "source_base_commit": "77cf067ce7132aaa9bf4738b5aa75319830adb27",
+  "common_argv": [
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-toolchain-1/bin/clang-21",
+    "--target=x86_64-linux-android36",
+    "-std=gnu++20",
+    "-nostdinc",
+    "-nostdinc++",
+    "-fPIC",
+    "-g0",
+    "-isystem",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/platform-libcxx-x86_64/source/prebuilts/clang/host/linux-x86/clang-r563880c/android_libc++/platform/x86_64/include/c++/v1",
+    "-isystem",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/platform-libcxx-headers/source/prebuilts/clang/host/linux-x86/clang-r563880c/include/c++/v1",
+    "-isystem",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/clang21-builtins/source/prebuilts/clang/host/linux-x86/clang-r563880c/lib/clang/21/include",
+    "-isystem",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/include",
+    "-isystem",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/kernel/uapi/asm-x86",
+    "-isystem",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/kernel/uapi",
+    "-isystem",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/kernel/android/uapi",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/property-study/libbase-regular/include",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/fmt-include/source/external/fmtlib/include",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Wpointer-arith",
+    "-Wunguarded-availability",
+    "-Werror=bool-operation",
+    "-Werror=date-time",
+    "-Werror=int-conversion",
+    "-Werror=multichar",
+    "-Werror=pragma-pack",
+    "-Werror=pragma-pack-suspicious-include",
+    "-Werror=sizeof-array-div",
+    "-Werror=sizeof-pointer-memaccess",
+    "-Werror=string-plus-int",
+    "-Werror=unreachable-code-loop-increment",
+    "-Wno-error=deprecated-declarations",
+    "-Wno-error=unused-variable",
+    "-Wno-c23-extensions",
+    "-Wno-c99-designator",
+    "-Wno-gnu-folding-constant",
+    "-Wno-inconsistent-missing-override",
+    "-Wno-error=reorder-init-list",
+    "-Wno-reorder-init-list",
+    "-Wno-sign-compare",
+    "-Wno-unused",
+    "-DANDROID",
+    "-DNDEBUG",
+    "-UDEBUG",
+    "-D__compiler_offsetof=__builtin_offsetof",
+    "-D__ANDROID_UNAVAILABLE_SYMBOLS_ARE_WEAK__",
+    "-faddrsig",
+    "-fdebug-default-version=5",
+    "-fcolor-diagnostics",
+    "-ffp-contract=off",
+    "-fno-exceptions",
+    "-fno-strict-aliasing",
+    "-fmessage-length=0",
+    "-gsimple-template-names",
+    "-gz=zstd",
+    "-no-canonical-prefixes",
+    "-ffunction-sections",
+    "-fdata-sections",
+    "-fno-short-enums",
+    "-funwind-tables",
+    "-fstack-protector-strong",
+    "-Wa,--noexecstack",
+    "-D_FORTIFY_SOURCE=3",
+    "-Werror=non-virtual-dtor",
+    "-Werror=address",
+    "-Werror=sequence-point",
+    "-Werror=format-security",
+    "-Wimplicit-fallthrough",
+    "-D_LIBCPP_ENABLE_THREAD_SAFETY_ANNOTATIONS",
+    "-Wno-gnu-include-next",
+    "-fvisibility-inlines-hidden",
+    "-fno-rtti",
+    "-DALLOW_FIRST_STAGE_CONSOLE=0",
+    "-DALLOW_LOCAL_PROP_OVERRIDE=0",
+    "-DALLOW_PERMISSIVE_SELINUX=0",
+    "-DANDROID_BASE_UNIQUE_FD_DISABLE_IMPLICIT_CONVERSION",
+    "-DDUMP_ON_UMOUNT_FAILURE=0",
+    "-DINIT_FULL_SOURCES",
+    "-DINSTALL_DEBUG_POLICY_TO_SYSTEM_EXT=0",
+    "-DLOG_UEVENTS=0",
+    "-DREBOOT_BOOTLOADER_ON_PANIC=0",
+    "-DSHUTDOWN_ZERO_TIMEOUT=0",
+    "-DWORLD_WRITABLE_KMSG=0",
+    "-Wall",
+    "-Werror",
+    "-Wextra",
+    "-Wno-unused-parameter",
+    "-Wthread-safety",
+    "-Werror=address-of-temporary",
+    "-Werror=dangling",
+    "-Werror=format-insufficient-args",
+    "-Werror=fortify-source",
+    "-Werror=incompatible-function-pointer-types",
+    "-Werror=int-in-bool-context",
+    "-Werror=int-to-pointer-cast",
+    "-Werror=null-dereference",
+    "-Werror=return-type",
+    "-Werror=xor-used-as-pow",
+    "-Wno-missing-field-initializers",
+    "-Wno-packed-non-pod",
+    "-Wno-error=tautological-constant-compare",
+    "-Wno-implicit-int-float-conversion",
+    "-Wno-tautological-overlap-compare",
+    "-Wno-deprecated-copy",
+    "-Wno-zero-as-null-pointer-constant",
+    "-Wno-deprecated-anon-enum-enum-conversion",
+    "-Wno-deprecated-enum-enum-conversion",
+    "-Wno-error=pessimizing-move",
+    "-Wno-non-c-typedef-for-linkage",
+    "-Wno-align-mismatch",
+    "-Wno-error=unused-but-set-parameter",
+    "-Wno-error=deprecated",
+    "-Wno-error=invalid-offsetof",
+    "-Wno-nontrivial-memcall",
+    "-Wno-invalid-specialization",
+    "-Wno-vla-cxx-extension",
+    "-Wno-cast-function-type-mismatch",
+    "-DSEPOLICY_VERSION=30",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/libcutils/include",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/libcutils/include_outside_system",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/libmodprobe/include",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/libprocessgroup/include",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/libutils/include",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/libvendorsupport/include",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/fs_mgr/include",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/fs_mgr/libfstab/include",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/fs_mgr/liblp/include",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/fs_mgr/libsnapshot/include",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/fs_mgr/libfiemap/include",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/fs_mgr/libdm/include",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/fs_mgr/libfs_avb/include",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/property_service/libpropertyinfoparser/include",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/property_service/libpropertyinfoserializer/include",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/selinux/source/external/selinux/libselinux/include",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/libprocinfo/source/system/libprocinfo/include",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bootloader-message/source/bootable/recovery/bootloader_message/include",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/lmkd/source/system/memory/lmkd/include",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/libcap/source/external/libcap/libcap/include",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/src",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp",
+    "-I/home/tv/repositorio-principal/dist/aosp16/init-protobuf-1/generated",
+    "-I/home/tv/repositorio-principal/dist/aosp16/aconfig-original-1/com.android.apex.flags/generated/include",
+    "-I/home/tv/repositorio-principal/dist/aosp16/aconfig-original-1/com.android.ueventd.flags/generated/include",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/platform",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/libsystem/include",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/avf-cc-flags/source/packages/modules/Virtualization/libs/libavf_cc_flags/include",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/libfscrypt/source/system/extras/libfscrypt/include",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/unwindstack-headers/source/system/unwinding/libunwindstack/include",
+    "-I/home/tv/repositorio-principal/dist/aosp16/snapshot-protobuf-1/generated",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/gsid/source/system/gsid/include",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/fs_mgr/libsnapshot/snapuserd/include",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/avb/source/external/avb",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/logging/source/system/logging/logwrapper/include",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/sepolicy/source/system/sepolicy/compat/libgenfslabelsversion/include",
+    "-I/home/tv/repositorio-principal/dist/aosp16/xsdc-host-1/generated/include",
+    "-I/home/tv/repositorio-principal/dist/aosp16/update-protobuf-2/generated",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/libprocessgroup/setup/include",
+    "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/libxml2-target/source/external/libxml2/include"
+  ],
+  "status": "terminal",
+  "scope": "All52source construction; reuse only after actual before/after compiler preprocessor byte equality and object SHA validation. Not full Soong/sanitizer/product equivalence or runtime acceptance. Generated source members and dependency graph tracked separately.",
+  "results": [
+    {
+      "source": "action.cpp",
+      "source_sha256": "5925e6533887fe2cda21bc01fe5521ae6aa4fc5da4bc555cc8c3930f7e76e68c",
+      "preprocessor_before_after_sha256": [
+        "30f67cce88d00f993fa1a107005fb4347818a1fe7e33f0f60178c74d4ce771dc",
+        "30f67cce88d00f993fa1a107005fb4347818a1fe7e33f0f60178c74d4ce771dc"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "51aae9fb43cf1f53a6d15c01e7983fe0f26eb7d7c78f92480791cf790eb32dcf"
+    },
+    {
+      "source": "action_manager.cpp",
+      "source_sha256": "d58d307c5e678330e842e3da146c8f39ee014954f5656a69508b1bc14e184048",
+      "preprocessor_before_after_sha256": [
+        "6f0351b2f3231a4c28f774c8da6c27435e2d250caafdf9af62a24fe8ad1a557d",
+        "6f0351b2f3231a4c28f774c8da6c27435e2d250caafdf9af62a24fe8ad1a557d"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "10bb99ef77621a4fc4f465fe17de82a3e50c8359b959e927f6b8c8f1ebf6a17f"
+    },
+    {
+      "source": "action_parser.cpp",
+      "source_sha256": "667c9280a1ad542e2a175546fbf0ddf57d9ca740dd2c702d626cbf40a257042d",
+      "preprocessor_before_after_sha256": [
+        "b9d2ab87cd58912a7ad8cdcb26be12d8d61db5492d1f8abee32a24ff5b8bae49",
+        "b9d2ab87cd58912a7ad8cdcb26be12d8d61db5492d1f8abee32a24ff5b8bae49"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "c5ad4b36024cd1d942caa77e014d5421ac8cf16940b942fffc4ae161d67f584a"
+    },
+    {
+      "source": "capabilities.cpp",
+      "source_sha256": "4d7f9289a1b63467fa5f9577037e0abc72b83037f876f7eddfe138efa8b285a4",
+      "preprocessor_before_after_sha256": [
+        "7997742e4e95dccb9793f7b9f3a7fdca166be96512c68b15a29fc52bfefb260e",
+        "7997742e4e95dccb9793f7b9f3a7fdca166be96512c68b15a29fc52bfefb260e"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "5fbf31e008edf752ff6a619c7cd9db63ae45985dbd0181bf25920a7d7e029239"
+    },
+    {
+      "source": "epoll.cpp",
+      "source_sha256": "b26742c312222828d6c3079ac9344f5540780a658bb2d3378fa2e058bbe67212",
+      "preprocessor_before_after_sha256": [
+        "bd825abfe2fd39e8b98330bd7ed7ff3905865c5d4aca58aee7a51cac39e1b7ec",
+        "bd825abfe2fd39e8b98330bd7ed7ff3905865c5d4aca58aee7a51cac39e1b7ec"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "5012d3e31550304c8240b82e8fe5987838222871b1b407452e6a4533d8b4f475"
+    },
+    {
+      "source": "import_parser.cpp",
+      "source_sha256": "a5abcc4638f548fa1a489edbe4dba19a28065cac8a26ad6d370bf9f6b0bc2bf8",
+      "preprocessor_before_after_sha256": [
+        "88bdce2b4e5cd72fcaf8c5f0f69c179afeaa16e9d47bfc249175c3289a49b778",
+        "88bdce2b4e5cd72fcaf8c5f0f69c179afeaa16e9d47bfc249175c3289a49b778"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "8a135a71b353e8e602fbbb2b02eb7416544ca58a9314a294c20f8a7ee2a2b31b"
+    },
+    {
+      "source": "interprocess_fifo.cpp",
+      "source_sha256": "8d919191893532bf392e2d4e5fcf2ba6675dd7e5f8782d6b51ca571cae18106e",
+      "preprocessor_before_after_sha256": [
+        "8a624067cdb52f4f9eadeca3d801f112288665fee2e7e6be14c20e3a38ce393f",
+        "8a624067cdb52f4f9eadeca3d801f112288665fee2e7e6be14c20e3a38ce393f"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "a000c1a3f239c92d6285f47de9bf6f56cace71cb5ef08b9684058331c6204b6b"
+    },
+    {
+      "source": "keychords.cpp",
+      "source_sha256": "f51964779726adfc05b148dfe93d95b9739c56fcd923479d064fd24519477cd4",
+      "preprocessor_before_after_sha256": [
+        "da8b7026b187115d1f2b7be63a1327e9490751bd96f6e951a17b0de7aead81b5",
+        "da8b7026b187115d1f2b7be63a1327e9490751bd96f6e951a17b0de7aead81b5"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "92f644abf6121413d80b50a762b1697ec7c8508b8501844ec6586d3e25de4c65"
+    },
+    {
+      "source": "parser.cpp",
+      "source_sha256": "ee3b904aaafdb9a5be829b0506c8c42e4605429b42efcc0c383320051c5e128d",
+      "preprocessor_before_after_sha256": [
+        "640859e8af6dd7dc445061259c1ae7a62a05105cfb0102480018c3202e6cbb84",
+        "640859e8af6dd7dc445061259c1ae7a62a05105cfb0102480018c3202e6cbb84"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "26ccc44f5b05f60e07ba3490784c8c5b12a778989a838c5d91c8f86c98aac0a8"
+    },
+    {
+      "source": "property_type.cpp",
+      "source_sha256": "09e9a74d5432dfa849dc1f835fa0e8239eb729fe19fe4f7d40b6ddcf94f54d85",
+      "preprocessor_before_after_sha256": [
+        "d2e16ce19f7a949761456fc3c4f1a81582108cbeec2f3703289103df3d3b3fb3",
+        "d2e16ce19f7a949761456fc3c4f1a81582108cbeec2f3703289103df3d3b3fb3"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "2f5b28b31d9ac000ed1b3c80a02fe4c8d79d188a3032249777bfa5b36e05c5e6"
+    },
+    {
+      "source": "rlimit_parser.cpp",
+      "source_sha256": "a95b9ce83024d98fe983fb0b6d6ef883a2851b581d3e61d86d3c5c7b8fd66c60",
+      "preprocessor_before_after_sha256": [
+        "65b71f4da5f8e1a93ad42c2743a0ff46b94d3f920cbe3ca3bc1c9140c78ae93a",
+        "65b71f4da5f8e1a93ad42c2743a0ff46b94d3f920cbe3ca3bc1c9140c78ae93a"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "b5892bfff7bb49593a3f70172f0d58e4309e9d46c9d9786bc864e63840f36820"
+    },
+    {
+      "source": "service.cpp",
+      "source_sha256": "d0d758cc6a87ebebf05c76d28026582cbac9a1e1ecd756987eeb96de7230e726",
+      "preprocessor_before_after_sha256": [
+        "b51f9635db2eabc7cc2cfa68ffbdc78584aea7427836c7d16a5a6bd59c34fa69",
+        "b51f9635db2eabc7cc2cfa68ffbdc78584aea7427836c7d16a5a6bd59c34fa69"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "723724c72ce49910da4b1941d0526736e76142a84a0b5d8c6ed64512074edd78"
+    },
+    {
+      "source": "service_list.cpp",
+      "source_sha256": "fa0e3da053a7fecd95e3b903bfdbbfc5d9ed5bb710a0228413baf0ecdb8526b5",
+      "preprocessor_before_after_sha256": [
+        "222cee7ec36e3b8663d25780d3c161c8e9088c46e3dd1f53b0ac052a8d1cd3ae",
+        "222cee7ec36e3b8663d25780d3c161c8e9088c46e3dd1f53b0ac052a8d1cd3ae"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "e249efcf08509d7b10d2588a39d11c89cd0f710faa8b31be927e1359237a3b5e"
+    },
+    {
+      "source": "service_parser.cpp",
+      "source_sha256": "ec75b1d70f286eb5bb47002fad51ac4032d7e4464b2f4d548679e1c2951dd730",
+      "preprocessor_before_after_sha256": [
+        "a92ed6fa46e1944b2dc91de8394695122486ce5dd72bd4391ebdb5d9e7083244",
+        "a92ed6fa46e1944b2dc91de8394695122486ce5dd72bd4391ebdb5d9e7083244"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "cd1fa826a1993d94c32fbbd0f06eb42a3179e85c17ca1cc93ed827374121a7f2"
+    },
+    {
+      "source": "service_utils.cpp",
+      "source_sha256": "e2b1103a96e5b1c4b09fa226679bb81bee6e21fe2e73e1c7fdf62cf72ea96929",
+      "preprocessor_before_after_sha256": [
+        "15071e5b46290d9697e470b48487a5bcc6c66845d5faa08dbe3918efd843a2c5",
+        "15071e5b46290d9697e470b48487a5bcc6c66845d5faa08dbe3918efd843a2c5"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "b5fed442935578305c2b80db4270b2b11af6d8baadf3fe580e3fc59f2f37dfd2"
+    },
+    {
+      "source": "subcontext.cpp",
+      "source_sha256": "32b2657201d1e8d2da687de9b63294e665603a12a095ae6cf35a3123e04d81b1",
+      "preprocessor_before_after_sha256": [
+        "825b01eec376503ecfd5e4fcf89fa8ca16c808bdf50a0d1f4ec7cb8cc1976eea",
+        "825b01eec376503ecfd5e4fcf89fa8ca16c808bdf50a0d1f4ec7cb8cc1976eea"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "c5da124eb32a0af3977753056272f75dd4125e96d8537416f833a59254a54670"
+    },
+    {
+      "source": "tokenizer.cpp",
+      "source_sha256": "628de10a21b99a8bfd51be97082d6e7cb0accd0914917dc343de630cddf4dab9",
+      "preprocessor_before_after_sha256": [
+        "1fcf859f63ca481201d00332c3d30329056ee5012c5f305872ee6ce518ebb9a7",
+        "1fcf859f63ca481201d00332c3d30329056ee5012c5f305872ee6ce518ebb9a7"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "d7d81c350b3b26a9cc8895e01a6022993db2b80ec66ed0f9131ee1ecb3916e13"
+    },
+    {
+      "source": "util.cpp",
+      "source_sha256": "15715717581e7864af46569d42e1f1dfa8050c4175f290edf68e4744c1d2efd0",
+      "preprocessor_before_after_sha256": [
+        "69c725689ea71d417d14606e300035dbe449b42ff30cb955fd12d7b6bf61aca6",
+        "69c725689ea71d417d14606e300035dbe449b42ff30cb955fd12d7b6bf61aca6"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "96699f4e40551c72512128293ab07e42786e268f00b1c6e87d710ad5c7259c53"
+    },
+    {
+      "source": "apex_init_util.cpp",
+      "source_sha256": "2a3d3867300ce42b768347ed8ae0e6c77b768e45cf572b50fb021d45da38cb94",
+      "preprocessor_before_after_sha256": [
+        "187e03f9a9ba09b648b129943cd4dcd800e577b1158c780148f5866163cdb75e",
+        "187e03f9a9ba09b648b129943cd4dcd800e577b1158c780148f5866163cdb75e"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "3b89f6de9d604d8b1f0b6c218f90e6dee9173a9e3f367b54ea6ce4cc3044c7bb"
+    },
+    {
+      "source": "block_dev_initializer.cpp",
+      "source_sha256": "0f3aa868b685dec98c43b788ab599decb4e9d0274d1cf31436ab0bf9c6b6668e",
+      "preprocessor_before_after_sha256": [
+        "dd547856c7db4e0777d5ccb8b937f305ed6392a845d152e00f43364a2e01d4f1",
+        "dd547856c7db4e0777d5ccb8b937f305ed6392a845d152e00f43364a2e01d4f1"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "aa4185d14686edffd235525577abb4fb4bc7cf9197d384781003a0d467dfcbf8"
+    },
+    {
+      "source": "bootchart.cpp",
+      "source_sha256": "08945d6ca120b04f29eca8c7b6a52b2840b1d738757b9e06762da2e5084cd5de",
+      "preprocessor_before_after_sha256": [
+        "2bd880239882e371070a47d6b97a604652dc34a6f3b143bffaebc6c46b288cf6",
+        "2bd880239882e371070a47d6b97a604652dc34a6f3b143bffaebc6c46b288cf6"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "ebe243dab868512fd5c9f69c9e53b5e40854c8be00b2b639a056bd0feed7d932"
+    },
+    {
+      "source": "builtins.cpp",
+      "source_sha256": "0aba1d30bba00131c6de0960d51ae52b46cf42ccc2787f3616656c35d2fff506",
+      "preprocessor_before_after_sha256": [
+        "b23a3cf905de95cefce80814ab9efb16e870d999570782a5c982d49ce1fa148e",
+        "b23a3cf905de95cefce80814ab9efb16e870d999570782a5c982d49ce1fa148e"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "a3dd0def85c5a4ee05d338be691886b75c785f85b2c701b68a795e3f195d6b52"
+    },
+    {
+      "source": "coldboot.cpp",
+      "source_sha256": "7aedc24e3c84e21c0b26f9bc8af2cb1a392a465ceb062cc2183b5ffd835fc2bc",
+      "preprocessor_before_after_sha256": [
+        "bbb5e0c1f30f0dbc1bd4f0ab936fc526f5ed307060335def5e7b2ed3521b2f7f",
+        "bbb5e0c1f30f0dbc1bd4f0ab936fc526f5ed307060335def5e7b2ed3521b2f7f"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "65b63f3328ac4149f132d4a97abde4061da54951f86c731df2a16077051265a0"
+    },
+    {
+      "source": "coldboot_runner_subprocess.cpp",
+      "source_sha256": "87a51fcce0a4e5a0ab36e29730582ec9c14a5aed6f040048935f4ad953363b28",
+      "preprocessor_before_after_sha256": [
+        "a1825121cf1d151487b008a133f08405c2854f8dad4fb3cf4c0df56afb875762",
+        "a1825121cf1d151487b008a133f08405c2854f8dad4fb3cf4c0df56afb875762"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "dacdb5d28f06c1ae424b5dc5a150bfd57bc160138b6525aee79f687b22914eed"
+    },
+    {
+      "source": "coldboot_runner_thread_pool.cpp",
+      "source_sha256": "a2140047f517d50b570a21b5ab0cbb63decc527b1b9ed957b787c2b401f026df",
+      "preprocessor_before_after_sha256": [
+        "882527a595056c4a2d5c5c05ca510ede5fff48c1225fcf69f6c81c13ed1aebe4",
+        "882527a595056c4a2d5c5c05ca510ede5fff48c1225fcf69f6c81c13ed1aebe4"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "6532796e439afc7472be322b0d5da06453bfe81ba04d9be72a81a442f76569fe"
+    },
+    {
+      "source": "devices.cpp",
+      "source_sha256": "6924a30cde01eb045042559342430bb0c968c9cb45bc22b3d457c98e2bbf9b5e",
+      "preprocessor_before_after_sha256": [
+        "0e295d99832c2687e33598195c595ead4f62249a93436f94842a7cc9985bb27b",
+        "0e295d99832c2687e33598195c595ead4f62249a93436f94842a7cc9985bb27b"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "6f2bb973a7c85ce8f89b96601221ae561470223e1c5b4b29b35678280a43be1e"
+    },
+    {
+      "source": "firmware_handler.cpp",
+      "source_sha256": "c3d3fb437c83ff9af649dd5444616c9c24980c7006eb329f64d0e28bf5d21ae2",
+      "preprocessor_before_after_sha256": [
+        "af64246030e5aaaa309cdba498887ad5eb36f53627d746af9dbcc790ceb98695",
+        "af64246030e5aaaa309cdba498887ad5eb36f53627d746af9dbcc790ceb98695"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "84d66e27d8a035d97e383bfdfa9d05332f6a249f6fbda625f18a9b198c85337e"
+    },
+    {
+      "source": "first_stage_console.cpp",
+      "source_sha256": "e063a2d93ffd96b02e547795b71df82291447469e08fe7419af9af29e551ac30",
+      "preprocessor_before_after_sha256": [
+        "aa860a78897ba7446c2f12fef8b2b22ed3b266a9e1d122bb4f872456ac357f7d",
+        "aa860a78897ba7446c2f12fef8b2b22ed3b266a9e1d122bb4f872456ac357f7d"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "d19d23298eda83993ff4216fe9c4daa5a74233c50f6e2a3c144f6b30a946b04d"
+    },
+    {
+      "source": "first_stage_init.cpp",
+      "source_sha256": "dd69639b649c49aaa8513f05f2cf0dc7bf2695d564018ae1f31ec31ea2d769a1",
+      "preprocessor_before_after_sha256": [
+        "7afd8f5d976c15338cdd9cc77a9a95c87ea114e44671d9ba4c62ac7242a4c387",
+        "7afd8f5d976c15338cdd9cc77a9a95c87ea114e44671d9ba4c62ac7242a4c387"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "d47f83469ec468c97083a2d7b8c4a7215e52163c8cc87c7f2e67944fa3c74ffe"
+    },
+    {
+      "source": "first_stage_mount.cpp",
+      "source_sha256": "5cdaa5586361a920db456c4ef97c4fac8d7e35eac0c4643888ecb22b4b64f1c3",
+      "preprocessor_before_after_sha256": [
+        "52e9ef207311b233c6483f5cd1e0798033ee7f524becccf12790f2948e82aae2",
+        "52e9ef207311b233c6483f5cd1e0798033ee7f524becccf12790f2948e82aae2"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "ea55ecf4f8db3950ecbfcb865bd8a567d87f15549d76ca731078153e45b69ac7"
+    },
+    {
+      "source": "fscrypt_init_extensions.cpp",
+      "source_sha256": "4fa35131611b1d145436045ef9bf16a0ed934de176dfa57d87dce50130824034",
+      "preprocessor_before_after_sha256": [
+        "4a7f2d308469c68f872c414e4780c784e93c1962080feed906841315501b5b00",
+        "4a7f2d308469c68f872c414e4780c784e93c1962080feed906841315501b5b00"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "3998261afbba57602cdb6058e74de96c0d6be61ff27f6c39ee95a09ef48d8248"
+    },
+    {
+      "source": "init.cpp",
+      "source_sha256": "018e17b870f6ef3a637230e3d73dd182be315cbaee04b95aa96881e8a2cfb93b",
+      "exit_code": 0,
+      "reused_after_token_equality": false,
+      "argv": [
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-toolchain-1/bin/clang-21",
+        "--target=x86_64-linux-android36",
+        "-std=gnu++20",
+        "-nostdinc",
+        "-nostdinc++",
+        "-fPIC",
+        "-g0",
+        "-isystem",
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/platform-libcxx-x86_64/source/prebuilts/clang/host/linux-x86/clang-r563880c/android_libc++/platform/x86_64/include/c++/v1",
+        "-isystem",
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/platform-libcxx-headers/source/prebuilts/clang/host/linux-x86/clang-r563880c/include/c++/v1",
+        "-isystem",
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/clang21-builtins/source/prebuilts/clang/host/linux-x86/clang-r563880c/lib/clang/21/include",
+        "-isystem",
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/include",
+        "-isystem",
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/kernel/uapi/asm-x86",
+        "-isystem",
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/kernel/uapi",
+        "-isystem",
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/kernel/android/uapi",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/property-study/libbase-regular/include",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/fmt-include/source/external/fmtlib/include",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Wpointer-arith",
+        "-Wunguarded-availability",
+        "-Werror=bool-operation",
+        "-Werror=date-time",
+        "-Werror=int-conversion",
+        "-Werror=multichar",
+        "-Werror=pragma-pack",
+        "-Werror=pragma-pack-suspicious-include",
+        "-Werror=sizeof-array-div",
+        "-Werror=sizeof-pointer-memaccess",
+        "-Werror=string-plus-int",
+        "-Werror=unreachable-code-loop-increment",
+        "-Wno-error=deprecated-declarations",
+        "-Wno-error=unused-variable",
+        "-Wno-c23-extensions",
+        "-Wno-c99-designator",
+        "-Wno-gnu-folding-constant",
+        "-Wno-inconsistent-missing-override",
+        "-Wno-error=reorder-init-list",
+        "-Wno-reorder-init-list",
+        "-Wno-sign-compare",
+        "-Wno-unused",
+        "-DANDROID",
+        "-DNDEBUG",
+        "-UDEBUG",
+        "-D__compiler_offsetof=__builtin_offsetof",
+        "-D__ANDROID_UNAVAILABLE_SYMBOLS_ARE_WEAK__",
+        "-faddrsig",
+        "-fdebug-default-version=5",
+        "-fcolor-diagnostics",
+        "-ffp-contract=off",
+        "-fno-exceptions",
+        "-fno-strict-aliasing",
+        "-fmessage-length=0",
+        "-gsimple-template-names",
+        "-gz=zstd",
+        "-no-canonical-prefixes",
+        "-ffunction-sections",
+        "-fdata-sections",
+        "-fno-short-enums",
+        "-funwind-tables",
+        "-fstack-protector-strong",
+        "-Wa,--noexecstack",
+        "-D_FORTIFY_SOURCE=3",
+        "-Werror=non-virtual-dtor",
+        "-Werror=address",
+        "-Werror=sequence-point",
+        "-Werror=format-security",
+        "-Wimplicit-fallthrough",
+        "-D_LIBCPP_ENABLE_THREAD_SAFETY_ANNOTATIONS",
+        "-Wno-gnu-include-next",
+        "-fvisibility-inlines-hidden",
+        "-fno-rtti",
+        "-DALLOW_FIRST_STAGE_CONSOLE=0",
+        "-DALLOW_LOCAL_PROP_OVERRIDE=0",
+        "-DALLOW_PERMISSIVE_SELINUX=0",
+        "-DANDROID_BASE_UNIQUE_FD_DISABLE_IMPLICIT_CONVERSION",
+        "-DDUMP_ON_UMOUNT_FAILURE=0",
+        "-DINIT_FULL_SOURCES",
+        "-DINSTALL_DEBUG_POLICY_TO_SYSTEM_EXT=0",
+        "-DLOG_UEVENTS=0",
+        "-DREBOOT_BOOTLOADER_ON_PANIC=0",
+        "-DSHUTDOWN_ZERO_TIMEOUT=0",
+        "-DWORLD_WRITABLE_KMSG=0",
+        "-Wall",
+        "-Werror",
+        "-Wextra",
+        "-Wno-unused-parameter",
+        "-Wthread-safety",
+        "-Werror=address-of-temporary",
+        "-Werror=dangling",
+        "-Werror=format-insufficient-args",
+        "-Werror=fortify-source",
+        "-Werror=incompatible-function-pointer-types",
+        "-Werror=int-in-bool-context",
+        "-Werror=int-to-pointer-cast",
+        "-Werror=null-dereference",
+        "-Werror=return-type",
+        "-Werror=xor-used-as-pow",
+        "-Wno-missing-field-initializers",
+        "-Wno-packed-non-pod",
+        "-Wno-error=tautological-constant-compare",
+        "-Wno-implicit-int-float-conversion",
+        "-Wno-tautological-overlap-compare",
+        "-Wno-deprecated-copy",
+        "-Wno-zero-as-null-pointer-constant",
+        "-Wno-deprecated-anon-enum-enum-conversion",
+        "-Wno-deprecated-enum-enum-conversion",
+        "-Wno-error=pessimizing-move",
+        "-Wno-non-c-typedef-for-linkage",
+        "-Wno-align-mismatch",
+        "-Wno-error=unused-but-set-parameter",
+        "-Wno-error=deprecated",
+        "-Wno-error=invalid-offsetof",
+        "-Wno-nontrivial-memcall",
+        "-Wno-invalid-specialization",
+        "-Wno-vla-cxx-extension",
+        "-Wno-cast-function-type-mismatch",
+        "-DSEPOLICY_VERSION=30",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/libcutils/include",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/libcutils/include_outside_system",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/libmodprobe/include",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/libprocessgroup/include",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/libutils/include",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/libvendorsupport/include",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/fs_mgr/include",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/fs_mgr/libfstab/include",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/fs_mgr/liblp/include",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/fs_mgr/libsnapshot/include",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/fs_mgr/libfiemap/include",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/fs_mgr/libdm/include",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/fs_mgr/libfs_avb/include",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/property_service/libpropertyinfoparser/include",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/property_service/libpropertyinfoserializer/include",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/selinux/source/external/selinux/libselinux/include",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/libprocinfo/source/system/libprocinfo/include",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bootloader-message/source/bootable/recovery/bootloader_message/include",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/lmkd/source/system/memory/lmkd/include",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/libcap/source/external/libcap/libcap/include",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/src",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp",
+        "-I/home/tv/repositorio-principal/dist/aosp16/init-protobuf-1/generated",
+        "-I/home/tv/repositorio-principal/dist/aosp16/aconfig-original-1/com.android.apex.flags/generated/include",
+        "-I/home/tv/repositorio-principal/dist/aosp16/aconfig-original-1/com.android.ueventd.flags/generated/include",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/bionic-libc/source/platform",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/libsystem/include",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/avf-cc-flags/source/packages/modules/Virtualization/libs/libavf_cc_flags/include",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/libfscrypt/source/system/extras/libfscrypt/include",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/unwindstack-headers/source/system/unwinding/libunwindstack/include",
+        "-I/home/tv/repositorio-principal/dist/aosp16/snapshot-protobuf-1/generated",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/gsid/source/system/gsid/include",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/fs_mgr/libsnapshot/snapuserd/include",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/avb/source/external/avb",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/logging/source/system/logging/logwrapper/include",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/sepolicy/source/system/sepolicy/compat/libgenfslabelsversion/include",
+        "-I/home/tv/repositorio-principal/dist/aosp16/xsdc-host-1/generated/include",
+        "-I/home/tv/repositorio-principal/dist/aosp16/update-protobuf-2/generated",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/libprocessgroup/setup/include",
+        "-I/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/libxml2-target/source/external/libxml2/include",
+        "-c",
+        "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/init/init.cpp",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/init.cpp.o"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "object_sha256": "1e8666f61be8249f819e41c32bd80eb4aab6642c4254fdd848026456ab1b8717"
+    },
+    {
+      "source": "lmkd_service.cpp",
+      "source_sha256": "6a331541a889c72fabcd0ffd982c879302c919a6394bf48cf23c7ec0c5e411c3",
+      "preprocessor_before_after_sha256": [
+        "3932f150e33cda8736a86de1e37f186a0dfc9a932180810ae1c38003a2677ff1",
+        "3932f150e33cda8736a86de1e37f186a0dfc9a932180810ae1c38003a2677ff1"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "4d25c73cc6bb2e565aec02693f32e3620a7c6151f2bbca7beeb5dfe71f2aaa3a"
+    },
+    {
+      "source": "modalias_handler.cpp",
+      "source_sha256": "6137995fa38ce13c46f1d501518f24b1461beb83ee0c1b68d7e51d55671e4470",
+      "preprocessor_before_after_sha256": [
+        "47d841b07a7c0d5494821e925c719637a179229aecccab1dd260671b9780eb98",
+        "47d841b07a7c0d5494821e925c719637a179229aecccab1dd260671b9780eb98"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "d60ae0d2f5b1f07efddb6c70ba61e1968ba3b4d05b97001ba1fdc8a56a2f4915"
+    },
+    {
+      "source": "mount_handler.cpp",
+      "source_sha256": "a4a23a2395a2d1964f211e4943acb176343d60385aabf5f1637469e7dea5fd17",
+      "preprocessor_before_after_sha256": [
+        "1944f1e35fd216a61168e3ae3a8c7674b7585d64065653cd79a79c35c2a23d49",
+        "1944f1e35fd216a61168e3ae3a8c7674b7585d64065653cd79a79c35c2a23d49"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "065b56e81f184c838da542a1b6dc858c8a34d77a28012361d4e314b4608fe550"
+    },
+    {
+      "source": "mount_namespace.cpp",
+      "source_sha256": "aca16a8acd8b49776714f6e40ffcd5ef4879a2bfeb68e3e681fea5af3ea35f7f",
+      "preprocessor_before_after_sha256": [
+        "62028777d66d97be7f44229c14719a165edc31e40a9795aad8c4c3f118c69227",
+        "62028777d66d97be7f44229c14719a165edc31e40a9795aad8c4c3f118c69227"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "624fc77eb9fa66a9fb6e66e1bf532cb426de505a4a327fe8b208b5817daa4846"
+    },
+    {
+      "source": "persistent_properties.cpp",
+      "source_sha256": "667cd4f7de005d29bd7ebee62a3926cc1bc02d2985cbc74b7ebc3528bfc18255",
+      "preprocessor_before_after_sha256": [
+        "d737ab9bd4d7024c6435a618c9d9cff931c27d4bcdde24d3fc91656e1328c4dd",
+        "d737ab9bd4d7024c6435a618c9d9cff931c27d4bcdde24d3fc91656e1328c4dd"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "00a8a1315466e8ad90f31e7a499ab3e6200eabbd2aff7a35d0c2c1fecd996899"
+    },
+    {
+      "source": "property_service.cpp",
+      "source_sha256": "ac68c4c4de5ef26366498d39d0945ba2ab06b022e24a7a157853b66a4b8a3b3c",
+      "preprocessor_before_after_sha256": [
+        "2e0f4ece0adc7e0b45b5a6ac096608e3210489bec5dfd56d385ce651b4ec88cd",
+        "2e0f4ece0adc7e0b45b5a6ac096608e3210489bec5dfd56d385ce651b4ec88cd"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "19abff2eeecca0d13eb99ff5bb56061f7d0657642d53064608d7a36e51fd7924"
+    },
+    {
+      "source": "reboot.cpp",
+      "source_sha256": "a7ee670de7a44af3869b935d19ef5b00f3c5c00d696244bc3b571fc769052230",
+      "preprocessor_before_after_sha256": [
+        "444c2cc406e604c5e316006a4a833c5cae19a8483e712aaff8bbbdf69abefb00",
+        "444c2cc406e604c5e316006a4a833c5cae19a8483e712aaff8bbbdf69abefb00"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "8f37178911f63f282e578baa1b927d87323d8821f85e23fb1973626c0087f9fa"
+    },
+    {
+      "source": "reboot_utils.cpp",
+      "source_sha256": "abc9e85acfb684997f929b9b481639a09915910808415de660b849e3a8331f2b",
+      "preprocessor_before_after_sha256": [
+        "fe6a55f9027ecf6b4288ca76459cb8d5a1ef1b1725372a3c211e69dcaa32da9c",
+        "fe6a55f9027ecf6b4288ca76459cb8d5a1ef1b1725372a3c211e69dcaa32da9c"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "23a9a5d5afc5bf22d697bdaf620c907fa27bc9c712259ae6d936724b74d4778a"
+    },
+    {
+      "source": "security.cpp",
+      "source_sha256": "07b49fabeec0f52108d85018eedaae03ed0eb049ea18bbcd26eec92406152763",
+      "preprocessor_before_after_sha256": [
+        "c928edd18500d65cbe4961235bf73c60c51fbd399fd5710b3237a4bb7cf34711",
+        "c928edd18500d65cbe4961235bf73c60c51fbd399fd5710b3237a4bb7cf34711"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "2753bbd992e7e57c2860d5a6f6eb82d518c0e5caae72f877e4e03e96200bdbe7"
+    },
+    {
+      "source": "selabel.cpp",
+      "source_sha256": "25f0f2c75cb13a6b63055c05b3dc10b4df8a401ecc8639b5359052d0a088c525",
+      "preprocessor_before_after_sha256": [
+        "a1ca89999bda16aa2982c084e0d2ce8de8927cef44a265c2f53644f5da758c38",
+        "a1ca89999bda16aa2982c084e0d2ce8de8927cef44a265c2f53644f5da758c38"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "7203f5eefff9433484484bc3fd26c953d3d04e13aa77124f99f92d2e5af09573"
+    },
+    {
+      "source": "selinux.cpp",
+      "source_sha256": "1c729e6c6beaa028ac35d3144df2fe94499ac7e38b70ae731fddb080ac61f46b",
+      "preprocessor_before_after_sha256": [
+        "941abbb5a4537fd24bc85966fe1f83983c692d7e9941b07348ba0ba7eb5fb379",
+        "941abbb5a4537fd24bc85966fe1f83983c692d7e9941b07348ba0ba7eb5fb379"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "dddc3bbb7a6324f36a27036171739af93f1749253dcac6b90efba0dbbbb76114"
+    },
+    {
+      "source": "sigchld_handler.cpp",
+      "source_sha256": "821367f0c3b2e8188c9b28b8f385f9426dc3bfb8fc69999166603e2c34dbaea5",
+      "preprocessor_before_after_sha256": [
+        "fe2e0826ff4d99d62d827720c99878c967c739ae4e08ee07396bea302d83f0fd",
+        "fe2e0826ff4d99d62d827720c99878c967c739ae4e08ee07396bea302d83f0fd"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "bfc0f3d26074ccfb35128f38252d153fba15996042fa1f2531b4700db6bc6307"
+    },
+    {
+      "source": "snapuserd_transition.cpp",
+      "source_sha256": "f5245af0c5c47b4660ceec06d63582b7c15bcc4ff4b32ba7fd8a7cf70486da5c",
+      "preprocessor_before_after_sha256": [
+        "0c33930ab9a8868efe5711b88e44285600479a8d10d18f91e48c583ad9e8dbcb",
+        "0c33930ab9a8868efe5711b88e44285600479a8d10d18f91e48c583ad9e8dbcb"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "196cced56de42f764883330783a61428e376f0fff21b44d3fc502a649fb9dbae"
+    },
+    {
+      "source": "switch_root.cpp",
+      "source_sha256": "45a68a861d071e1ec55cf2aabdf78fc22b7b92629fc2c925119da4509a5680dc",
+      "preprocessor_before_after_sha256": [
+        "af19fee462b254943bc0f29885c9638ab01d2fa91f194ec67ed7a0738a07ed17",
+        "af19fee462b254943bc0f29885c9638ab01d2fa91f194ec67ed7a0738a07ed17"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "84dea0b8d7a13c6d3b4a5253f22df4169ebf0c0c7cbcd8be45a3d8276dc8172c"
+    },
+    {
+      "source": "tradeinmode.cpp",
+      "source_sha256": "7b674efca6213b9c0171c8c48ac7c50f0483fc32f4b7e0b1b4e3f6924f29ee22",
+      "preprocessor_before_after_sha256": [
+        "1b27b540fc95b0d8f2a74a4f7657e2c4bbdcdded4df094fac8f756ff5fccd0a2",
+        "1b27b540fc95b0d8f2a74a4f7657e2c4bbdcdded4df094fac8f756ff5fccd0a2"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "182557cb9a1ba8050cf18550780ff6038ba8e3cd8dd082305f41d0af736b535b"
+    },
+    {
+      "source": "thread_pool.cpp",
+      "source_sha256": "c4fe84404b1b0694dcb34a394a9fc2a8421a821fba8a7999e352c974c803bb51",
+      "preprocessor_before_after_sha256": [
+        "201baf837772f9c10292c3b0cc8024011cd3fbb3de1d058be112fa662f8c0e6c",
+        "201baf837772f9c10292c3b0cc8024011cd3fbb3de1d058be112fa662f8c0e6c"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "6c4c981980cdf3f0c7c5a541bccb4fbc0b28b41249ce78a7a2c0e5ee5eb98c5c"
+    },
+    {
+      "source": "uevent_listener.cpp",
+      "source_sha256": "d2ede42c102b67c29e4da35878be1d5a6796e6d957cffec24b0b76774f79b4f5",
+      "preprocessor_before_after_sha256": [
+        "d2fc6234e9be285c236f785636e9cfaf3b15582613789542a88d29b4a6024d1e",
+        "d2fc6234e9be285c236f785636e9cfaf3b15582613789542a88d29b4a6024d1e"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "06caba94fa3b9d6cb986e57bdc6e53dd665eefbd1d922d869e29956715c5f0c9"
+    },
+    {
+      "source": "uevent_dependency_graph.cpp",
+      "source_sha256": "8cc87a22a1b1e3a98166fbb38008365f86bc0d9b38fd8d8ac1912185b070e3de",
+      "preprocessor_before_after_sha256": [
+        "616ac5b61b6c8e5ba7887cc99f0178af51dccccf82ca624bd8a52b0ca5b225f0",
+        "616ac5b61b6c8e5ba7887cc99f0178af51dccccf82ca624bd8a52b0ca5b225f0"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "77750a9d49036fbe5c1b6a2bf149d1269e597f2d9ee2818d34875d8236cfd18c"
+    },
+    {
+      "source": "ueventd.cpp",
+      "source_sha256": "b3eac4e887aeead1fb6066c01c28d45f6778edb8e55ad7ca202335dcd3ef6799",
+      "preprocessor_before_after_sha256": [
+        "6c44d6699586ed49d67ed67a7cf2415d728616d8fb48489532910693a4ac49ed",
+        "6c44d6699586ed49d67ed67a7cf2415d728616d8fb48489532910693a4ac49ed"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "42e4642b37ddd1ddd049bfd4d4b9acb8441da90a9c6fb98e64f5f41793f6a980"
+    },
+    {
+      "source": "ueventd_parser.cpp",
+      "source_sha256": "6edfbfec4b24ba84edcd902db3bc211de9c69792d4bb87d81944e31eaad83647",
+      "preprocessor_before_after_sha256": [
+        "24ce77c0d45eea94891d7b9f61f688f01e914453e187bc3c3636710b234e71a1",
+        "24ce77c0d45eea94891d7b9f61f688f01e914453e187bc3c3636710b234e71a1"
+      ],
+      "exit_code": 0,
+      "reused_after_token_equality": true,
+      "object_sha256": "f65661cea3dda7f177e17844ff0f75f0044cb459389b3eb2b072dcd9e8a959b0"
+    }
+  ],
+  "elapsed_seconds": 101.27744242700282,
+  "all52_sources_compiled": true
+}

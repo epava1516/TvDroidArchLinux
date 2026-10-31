@@ -804,3 +804,20 @@ Linux e integrado con Rust/Smithay. Waydroid sirve de backend inicial y referenc
 funcional. El contrato de aplicaciones deberá permitir sustituirlo sin rehacer
 el shell. Véase [AOSP-NATIVO.md](AOSP-NATIVO.md) para etapas, requisitos de ART,
 Binder/framework/HAL, ABIs y criterios para retirar la dependencia.
+
+## Unidad nativa libinit · evidencia parcial vigente
+
+[Validación](../reports/android16-libinit-native-unit/validation.json): las 52 fuentes
+originales compilan con clang21/Bionic y perfil global original. 51 objetos se
+reutilizan tras igualdad real del preprocesado y comprobación SHA; init.cpp se
+compila al añadir el include exportado original de libxml2. Archivo prototipo de
+63 miembros: 52 fuentes, tres protobuf, dos XSD y seis libcap. No equivale a Soong
+completo: sanitización/configuración de producto y alineación de flags de los
+protobuf siguen abiertas, junto al enlace y ejecución supervisada de PropertyInit.
+
+XSDC original genera el esquema APEX; sus dos fuentes C++ compilan para Bionic.
+Rust1.88 original usa su std Android x86_64, sin objetos glibc en target. La FFI
+original genfslabelsversion se enlaza y ejecuta en cuatro casos reales: ausente,
+válido, malformado y permiso denegado. UID10000, sin grupos/capacidades, NNP1.
+El fallback original 202404 no demuestra mediación SELinux. No servidor, boot
+Android, aplicación ni etapa de la matriz aceptados por estas pruebas.

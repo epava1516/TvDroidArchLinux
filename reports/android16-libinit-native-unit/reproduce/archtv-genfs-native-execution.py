@@ -1,0 +1,11 @@
+from pathlib import Path
+import subprocess,os,ctypes,json,sys
+r=Path('/home/tv/repositorio-principal');out=r/'dist/aosp16/genfslabelsversion-execution-1';name=sys.argv[1];root=out/('runtime-'+name);root.mkdir();original=r/'dist/aosp16/factory-inputs-3/root'
+for n in ['system','apex','linkerconfig','data','vendor','dev','proc']:(root/n).mkdir()
+def mount(*a):subprocess.run(['/usr/bin/mount',*map(str,a)],check=True,stdout=subprocess.DEVNULL)
+for n in ['system','apex']:
+ mount('--bind',original/n,root/n);mount('-o','remount,bind,ro',root/n)
+for n in ['product','system_ext']:(root/n).symlink_to('/system/'+n)
+mount('--bind',r/'dist/aosp16/linkerconfig-2/generated',root/'linkerconfig');mount('-o','remount,bind,ro',root/'linkerconfig');mount('--bind',out/'data',root/'data');mount('-o','remount,bind,ro',root/'data');mount('--bind',out/('vendor-'+name),root/'vendor');mount('-o','remount,bind,ro',root/'vendor');mount('-t','proc','proc',root/'proc');(root/'dev/null').touch();mount('--bind','/dev/null',root/'dev/null');(root/'dev/__properties__').mkdir();mount('--bind','/tmp/archtv-a16-property-area-3/properties-privileged',root/'dev/__properties__');mount('-o','remount,bind,ro',root/'dev/__properties__')
+os.chroot(root);os.chdir('/data');os.setgroups([]);os.setgid(10000);os.setuid(10000);libc=ctypes.CDLL(None,use_errno=True);assert libc.prctl(38,1,0,0,0)==0
+s={line.split(':',1)[0]:line.split(':',1)[1].strip() for line in Path('/proc/self/status').read_text().splitlines()};assert s['Uid'].split()==['10000']*4 and s['Gid'].split()==['10000']*4;assert s['Groups']=='' and int(s['CapPrm'],16)==0 and int(s['CapEff'],16)==0 and s['NoNewPrivs']=='1';print('PREEXEC_STATUS '+json.dumps({k:s[k] for k in ['Uid','Gid','Groups','CapPrm','CapEff','NoNewPrivs']}),flush=True);os.execve('/data/probe',['/data/probe'],{'ANDROID_ROOT':'/system','ANDROID_DATA':'/data'})

@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-original-protoc/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-libinit-native-unit/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -42,10 +42,10 @@ archivos nuevos y scripts de estudio. Los logs ajenos H9 permanecen intactos.
 El checkpoint registra procesos/handles y resultados; no hay ART/bwrap/build activo
 observado tras las pruebas A16. No restaurar parches sin contrastar Git.
 
-Siguiente unidad: construir/evaluar libinit original completo con un entrypoint
+Siguiente unidad: enlazar/evaluar el prototipo libinit original con un entrypoint
 Bionic supervisado por Linux, sin activar second_stage. El inventario de todas
 las entradas presentes y su clausura directa de build está en
-[la decisión](../reports/android16-boot-profile/unit-decision.json). Faltan
+[la decisión](../reports/android16-boot-profile/unit-decision.json). Las 52 fuentes ya compilan y el archivo prototipo contiene 63 miembros; faltan
 dependencias transitivas, callbacks/control reales, persistencia y mediación;
 no añadir sólo la propiedad que permita superar el siguiente guard ni duplicar
 las derivaciones originales en un mapa propio. No hay nuevo perfil ejecutable.
@@ -254,3 +254,20 @@ con las capturas DRM. Waydroid siguió inactivo y se liberaron sesión/procesos.
 Ver APK-LOOPER-AOSP.md y los informes aosp-ui-headless y aosp-main-ui-wayland.
 Activity/View/Bundle/recursos y preferencias siguen siendo propios; aún falta el
 redibujado por cambios asíncronos y el resto del port, seguridad y estabilidad.
+
+## Unidad nativa libinit · evidencia parcial vigente
+
+[Validación](../reports/android16-libinit-native-unit/validation.json): las 52 fuentes
+originales compilan con clang21/Bionic y perfil global original. 51 objetos se
+reutilizan tras igualdad real del preprocesado y comprobación SHA; init.cpp se
+compila al añadir el include exportado original de libxml2. Archivo prototipo de
+63 miembros: 52 fuentes, tres protobuf, dos XSD y seis libcap. No equivale a Soong
+completo: sanitización/configuración de producto y alineación de flags de los
+protobuf siguen abiertas, junto al enlace y ejecución supervisada de PropertyInit.
+
+XSDC original genera el esquema APEX; sus dos fuentes C++ compilan para Bionic.
+Rust1.88 original usa su std Android x86_64, sin objetos glibc en target. La FFI
+original genfslabelsversion se enlaza y ejecuta en cuatro casos reales: ausente,
+válido, malformado y permiso denegado. UID10000, sin grupos/capacidades, NNP1.
+El fallback original 202404 no demuestra mediación SELinux. No servidor, boot
+Android, aplicación ni etapa de la matriz aceptados por estas pruebas.

@@ -1,0 +1,338 @@
+{
+  "scope": "Prototype source archive, not complete Soong/product/sanitizer equivalence, linked subsystem or APK acceptance",
+  "source_base_commit": "77cf067ce7132aaa9bf4738b5aa75319830adb27",
+  "argv": [
+    "ar",
+    "rcsD",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-archive-1/libinit-native-prototype.a",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/action.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/action_manager.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/action_parser.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/capabilities.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/epoll.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/import_parser.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/interprocess_fifo.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/keychords.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/parser.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/property_type.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/rlimit_parser.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/service.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/service_list.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/service_parser.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/service_utils.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/subcontext.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/tokenizer.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/util.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/apex_init_util.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/block_dev_initializer.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/bootchart.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/builtins.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/coldboot.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/coldboot_runner_subprocess.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/coldboot_runner_thread_pool.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/devices.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/firmware_handler.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/first_stage_console.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/first_stage_init.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/first_stage_mount.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/fscrypt_init_extensions.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/init.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/lmkd_service.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/modalias_handler.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/mount_handler.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/mount_namespace.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/persistent_properties.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/property_service.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/reboot.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/reboot_utils.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/security.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/selabel.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/selinux.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/sigchld_handler.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/snapuserd_transition.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/switch_root.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/tradeinmode.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/thread_pool.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/uevent_listener.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/uevent_dependency_graph.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/ueventd.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/ueventd_parser.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/init-protobuf-1/objects/persistent_properties.o",
+    "/home/tv/repositorio-principal/dist/aosp16/init-protobuf-1/objects/property_service.o",
+    "/home/tv/repositorio-principal/dist/aosp16/init-protobuf-1/objects/subcontext.o",
+    "/home/tv/repositorio-principal/dist/aosp16/xsdc-host-1/native-objects/com_android_apex.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/xsdc-host-1/native-objects/com_android_apex_enums.cpp.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libcap-native-1/objects/cap_alloc.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libcap-native-1/objects/cap_extint.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libcap-native-1/objects/cap_file.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libcap-native-1/objects/cap_flag.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libcap-native-1/objects/cap_proc.o",
+    "/home/tv/repositorio-principal/dist/aosp16/libcap-native-1/objects/cap_text.o"
+  ],
+  "members": [
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/action.cpp.o",
+      "sha256": "51aae9fb43cf1f53a6d15c01e7983fe0f26eb7d7c78f92480791cf790eb32dcf"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/action_manager.cpp.o",
+      "sha256": "10bb99ef77621a4fc4f465fe17de82a3e50c8359b959e927f6b8c8f1ebf6a17f"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/action_parser.cpp.o",
+      "sha256": "c5ad4b36024cd1d942caa77e014d5421ac8cf16940b942fffc4ae161d67f584a"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/capabilities.cpp.o",
+      "sha256": "5fbf31e008edf752ff6a619c7cd9db63ae45985dbd0181bf25920a7d7e029239"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/epoll.cpp.o",
+      "sha256": "5012d3e31550304c8240b82e8fe5987838222871b1b407452e6a4533d8b4f475"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/import_parser.cpp.o",
+      "sha256": "8a135a71b353e8e602fbbb2b02eb7416544ca58a9314a294c20f8a7ee2a2b31b"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/interprocess_fifo.cpp.o",
+      "sha256": "a000c1a3f239c92d6285f47de9bf6f56cace71cb5ef08b9684058331c6204b6b"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/keychords.cpp.o",
+      "sha256": "92f644abf6121413d80b50a762b1697ec7c8508b8501844ec6586d3e25de4c65"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/parser.cpp.o",
+      "sha256": "26ccc44f5b05f60e07ba3490784c8c5b12a778989a838c5d91c8f86c98aac0a8"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/property_type.cpp.o",
+      "sha256": "2f5b28b31d9ac000ed1b3c80a02fe4c8d79d188a3032249777bfa5b36e05c5e6"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/rlimit_parser.cpp.o",
+      "sha256": "b5892bfff7bb49593a3f70172f0d58e4309e9d46c9d9786bc864e63840f36820"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/service.cpp.o",
+      "sha256": "723724c72ce49910da4b1941d0526736e76142a84a0b5d8c6ed64512074edd78"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/service_list.cpp.o",
+      "sha256": "e249efcf08509d7b10d2588a39d11c89cd0f710faa8b31be927e1359237a3b5e"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/service_parser.cpp.o",
+      "sha256": "cd1fa826a1993d94c32fbbd0f06eb42a3179e85c17ca1cc93ed827374121a7f2"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/service_utils.cpp.o",
+      "sha256": "b5fed442935578305c2b80db4270b2b11af6d8baadf3fe580e3fc59f2f37dfd2"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/subcontext.cpp.o",
+      "sha256": "c5da124eb32a0af3977753056272f75dd4125e96d8537416f833a59254a54670"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/tokenizer.cpp.o",
+      "sha256": "d7d81c350b3b26a9cc8895e01a6022993db2b80ec66ed0f9131ee1ecb3916e13"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/util.cpp.o",
+      "sha256": "96699f4e40551c72512128293ab07e42786e268f00b1c6e87d710ad5c7259c53"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/apex_init_util.cpp.o",
+      "sha256": "3b89f6de9d604d8b1f0b6c218f90e6dee9173a9e3f367b54ea6ce4cc3044c7bb"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/block_dev_initializer.cpp.o",
+      "sha256": "aa4185d14686edffd235525577abb4fb4bc7cf9197d384781003a0d467dfcbf8"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/bootchart.cpp.o",
+      "sha256": "ebe243dab868512fd5c9f69c9e53b5e40854c8be00b2b639a056bd0feed7d932"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/builtins.cpp.o",
+      "sha256": "a3dd0def85c5a4ee05d338be691886b75c785f85b2c701b68a795e3f195d6b52"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/coldboot.cpp.o",
+      "sha256": "65b63f3328ac4149f132d4a97abde4061da54951f86c731df2a16077051265a0"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/coldboot_runner_subprocess.cpp.o",
+      "sha256": "dacdb5d28f06c1ae424b5dc5a150bfd57bc160138b6525aee79f687b22914eed"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/coldboot_runner_thread_pool.cpp.o",
+      "sha256": "6532796e439afc7472be322b0d5da06453bfe81ba04d9be72a81a442f76569fe"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/devices.cpp.o",
+      "sha256": "6f2bb973a7c85ce8f89b96601221ae561470223e1c5b4b29b35678280a43be1e"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/firmware_handler.cpp.o",
+      "sha256": "84d66e27d8a035d97e383bfdfa9d05332f6a249f6fbda625f18a9b198c85337e"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/first_stage_console.cpp.o",
+      "sha256": "d19d23298eda83993ff4216fe9c4daa5a74233c50f6e2a3c144f6b30a946b04d"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/first_stage_init.cpp.o",
+      "sha256": "d47f83469ec468c97083a2d7b8c4a7215e52163c8cc87c7f2e67944fa3c74ffe"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/first_stage_mount.cpp.o",
+      "sha256": "ea55ecf4f8db3950ecbfcb865bd8a567d87f15549d76ca731078153e45b69ac7"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/fscrypt_init_extensions.cpp.o",
+      "sha256": "3998261afbba57602cdb6058e74de96c0d6be61ff27f6c39ee95a09ef48d8248"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/init.cpp.o",
+      "sha256": "1e8666f61be8249f819e41c32bd80eb4aab6642c4254fdd848026456ab1b8717"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/lmkd_service.cpp.o",
+      "sha256": "4d25c73cc6bb2e565aec02693f32e3620a7c6151f2bbca7beeb5dfe71f2aaa3a"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/modalias_handler.cpp.o",
+      "sha256": "d60ae0d2f5b1f07efddb6c70ba61e1968ba3b4d05b97001ba1fdc8a56a2f4915"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/mount_handler.cpp.o",
+      "sha256": "065b56e81f184c838da542a1b6dc858c8a34d77a28012361d4e314b4608fe550"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/mount_namespace.cpp.o",
+      "sha256": "624fc77eb9fa66a9fb6e66e1bf532cb426de505a4a327fe8b208b5817daa4846"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/persistent_properties.cpp.o",
+      "sha256": "00a8a1315466e8ad90f31e7a499ab3e6200eabbd2aff7a35d0c2c1fecd996899"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/property_service.cpp.o",
+      "sha256": "19abff2eeecca0d13eb99ff5bb56061f7d0657642d53064608d7a36e51fd7924"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/reboot.cpp.o",
+      "sha256": "8f37178911f63f282e578baa1b927d87323d8821f85e23fb1973626c0087f9fa"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/reboot_utils.cpp.o",
+      "sha256": "23a9a5d5afc5bf22d697bdaf620c907fa27bc9c712259ae6d936724b74d4778a"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/security.cpp.o",
+      "sha256": "2753bbd992e7e57c2860d5a6f6eb82d518c0e5caae72f877e4e03e96200bdbe7"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/selabel.cpp.o",
+      "sha256": "7203f5eefff9433484484bc3fd26c953d3d04e13aa77124f99f92d2e5af09573"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/selinux.cpp.o",
+      "sha256": "dddc3bbb7a6324f36a27036171739af93f1749253dcac6b90efba0dbbbb76114"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/sigchld_handler.cpp.o",
+      "sha256": "bfc0f3d26074ccfb35128f38252d153fba15996042fa1f2531b4700db6bc6307"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/snapuserd_transition.cpp.o",
+      "sha256": "196cced56de42f764883330783a61428e376f0fff21b44d3fc502a649fb9dbae"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/switch_root.cpp.o",
+      "sha256": "84dea0b8d7a13c6d3b4a5253f22df4169ebf0c0c7cbcd8be45a3d8276dc8172c"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/tradeinmode.cpp.o",
+      "sha256": "182557cb9a1ba8050cf18550780ff6038ba8e3cd8dd082305f41d0af736b535b"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/thread_pool.cpp.o",
+      "sha256": "6c4c981980cdf3f0c7c5a541bccb4fbc0b28b41249ce78a7a2c0e5ee5eb98c5c"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/uevent_listener.cpp.o",
+      "sha256": "06caba94fa3b9d6cb986e57bdc6e53dd665eefbd1d922d869e29956715c5f0c9"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/uevent_dependency_graph.cpp.o",
+      "sha256": "77750a9d49036fbe5c1b6a2bf149d1269e597f2d9ee2818d34875d8236cfd18c"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/ueventd.cpp.o",
+      "sha256": "42e4642b37ddd1ddd049bfd4d4b9acb8441da90a9c6fb98e64f5f41793f6a980"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-finalize-1/objects/ueventd_parser.cpp.o",
+      "sha256": "f65661cea3dda7f177e17844ff0f75f0044cb459389b3eb2b072dcd9e8a959b0"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/init-protobuf-1/objects/persistent_properties.o",
+      "sha256": "886fb5a25ca9b19f3d18f5cc50a14e9471632a98c433b6c664ce489b91b11c11"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/init-protobuf-1/objects/property_service.o",
+      "sha256": "46eeaa1965887376c353e19ea912121143528193f0219a8129179701629895e8"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/init-protobuf-1/objects/subcontext.o",
+      "sha256": "c50d37b52484372d0be873a39074ba27eb5d95acd4370b50c46dd66a121c5794"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/xsdc-host-1/native-objects/com_android_apex.cpp.o",
+      "sha256": "a29105855dd04201fd0eb490a22668de37fb146dbf878d5eac5652f38d6b9290"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/xsdc-host-1/native-objects/com_android_apex_enums.cpp.o",
+      "sha256": "43a97b3300b234caabb504ee5b39bc6b4622c616c4600917a50c71c6154da54c"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libcap-native-1/objects/cap_alloc.o",
+      "sha256": "8b1bc8cdb4a7c1795eda1a1336cd57bfb468ce40f61e0f3a09671dd4a16ade10"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libcap-native-1/objects/cap_extint.o",
+      "sha256": "8faab7d9a65fccd55a14f0fb0cc8dc7dd5ca1c36661499d688b085b525204a62"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libcap-native-1/objects/cap_file.o",
+      "sha256": "007dfa29c48fa64c3c6c14bf9fd5fac9670ddaebd439dcc950f8a022b6a7af32"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libcap-native-1/objects/cap_flag.o",
+      "sha256": "65097494a5d349e141b9512faa794457e9289d3c89136f45f05e64ca4615db6a"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libcap-native-1/objects/cap_proc.o",
+      "sha256": "c68452d7f9f785f0fb9b76b295f5bf7a1911301e6d291f69f681d2a11d87d2d6"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/libcap-native-1/objects/cap_text.o",
+      "sha256": "87dc412be6179f01cd1a5366cac5a533753df902ba548408a847e1c036eb5c1f"
+    }
+  ],
+  "archive": "/home/tv/repositorio-principal/dist/aosp16/libinit-native-archive-1/libinit-native-prototype.a",
+  "archive_sha256": "f4b85c1d835c6c34f831bc5584e337577cf7639f9ab072664da6499da2ad3c81",
+  "member_count": 63,
+  "open_gates": [
+    "original sanitizer configuration",
+    "generated proto compiler profile alignment",
+    "source/GSI configuration parity",
+    "ordinary static/shared dependency closure",
+    "supervised PropertyInit link and execution",
+    "property IPC/persistence/security",
+    "real APK journeys"
+  ]
+}

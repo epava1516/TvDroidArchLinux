@@ -1,0 +1,50 @@
+{
+  "observed_at": "2026-10-31T03:10:32.028208+00:00",
+  "contract": "A16-QPR2-1",
+  "objective": "Complete unmodified arbitrary APK incl TV, Linux Rust/Smithay; native coherent AOSP16 QPR2, SF\u2192Wayland first hypothesis; no Waydroid/full Android. Preserve compatibility/isolation/stability/lightweight/install/update.",
+  "branch": "main",
+  "source_base_commit": "77cf067ce7132aaa9bf4738b5aa75319830adb27",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "relation_to_local_origin_tracking": "0\t0",
+  "pending_own": {
+    "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+    "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+    "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+    "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+  },
+  "pending_other_hashes": {
+    "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+  },
+  "own_milestone": "52 original libinit sources compiled, 63-member prototype archive; original Rust1.88 Android std/FFI executes four filesystem cases under real UID10000 without capabilities",
+  "terminal_exec_handles": [
+    97466
+  ],
+  "evidence_root": "reports/android16-libinit-native-unit",
+  "recovery_snapshot": "/home/tv/recuperacion-archtv/20261031T021219Z-native-flag-generators",
+  "tests": "52 source objects SHA verified; 51 compiler preprocessor token streams equal; archive63 ordered unique members; original Rust native missing/valid/malformed/denied behavior 4/4 pass; no application readiness",
+  "next": "Link a bounded Linux-supervised Bionic entrypoint to original PropertyInit with this prototype and original dependencies; resolve full module closure without empty callbacks/private-address entry/second_stage. Audit sanitizer and generated source flags before production equivalence.",
+  "not_done": "No PropertyInit/service/APK executed. Full roadmap remains open.",
+  "restart_policy": "No VM/client restart or Android full boot",
+  "process_observation": {
+    "observed_at": "2026-10-31T03:10:32.037260+00:00",
+    "source": "Host ps elevated; no arguments/environment recorded",
+    "processes": [
+      {
+        "pid": 181308,
+        "ppid": 181298,
+        "comm": "codex",
+        "start_time_utc": "2026-10-30T21:21:11Z"
+      },
+      {
+        "pid": 181453,
+        "ppid": 181308,
+        "comm": "codex-code-mode",
+        "start_time_utc": "2026-10-30T21:21:55Z"
+      }
+    ],
+    "compiler_or_runtime_task_active": false,
+    "Android_init_or_APK_started": false
+  },
+  "active_exec_handles": []
+}

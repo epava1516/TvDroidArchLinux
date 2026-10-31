@@ -1,0 +1,33 @@
+{
+  "argv": [
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-rust-toolchain-1/bin/rustc",
+    "--sysroot",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-rust-toolchain-1",
+    "--target",
+    "x86_64-linux-android",
+    "--edition",
+    "2021",
+    "--crate-type",
+    "staticlib",
+    "--crate-name",
+    "genfslabelsversion",
+    "-C",
+    "opt-level=2",
+    "-C",
+    "panic=abort",
+    "-C",
+    "relocation-model=pic",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/sepolicy/source/system/sepolicy/compat/libgenfslabelsversion/src/lib.rs",
+    "-o",
+    "/home/tv/repositorio-principal/dist/aosp16/genfslabelsversion-native-1/libgenfslabelsversion.a"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "source_sha256": "aad466a38abfa8a37a5d99c4af8a76202c06e90035792f0d4335c1b270ff25dd",
+  "original_source_modified": false,
+  "host_LD_LIBRARY_PATH": "Private original host Rust libs only; no propagation into target execution",
+  "target_std": "Original x86_64-linux-android rust std from exact1.88 AOSP prebuilt",
+  "scope": "Original full Rust FFI source compiled target Bionic; no SELinux mediation/property-service/APK acceptance",
+  "archive_sha256": "8d88aca6ceb3dd9b84a4be26ed071fddc1bd3ae163efa4de63d239f6561f239f"
+}

@@ -1,0 +1,28 @@
+{
+  "argv": [
+    "java",
+    "-cp",
+    "/home/tv/repositorio-principal/dist/aosp16/xsdc-host-1/classes:/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/commons-cli-original/source/prebuilts/misc/common/commons-cli/commons-cli-1.2.jar",
+    "com.android.xsdc.Main",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-apex/source/system/apex/apexd/ApexInfoList.xsd",
+    "-p",
+    "com.android.apex",
+    "-o",
+    "/home/tv/repositorio-principal/dist/aosp16/xsdc-host-1/generated",
+    "-c",
+    "-w",
+    "-r",
+    "apex-info-list"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "schema_sha256": "d02e30bc40b826186800d12ba2345171c97573417751c87bc87e2b868a8883fc",
+  "generated_hashes": {
+    "generated/com_android_apex_enums.cpp": "ea8338d74e3274e89c3ed8b8ea1d4b02cd569e021e233ba03dab6d5f9ad5bc60",
+    "generated/com_android_apex.cpp": "d4dbb01f27717e2a038444830834f7c1e0d9dd5370eb3b5de7322bcaebdbaf19",
+    "generated/include/com_android_apex_enums.h": "98b0429fdadd51001d157acd60ce9776a427e8c7c9090fae106aa0c703bf4b77",
+    "generated/include/com_android_apex.h": "f2baa42f829b5299bf854b4da27f0bc775a78a98b2d3d9b54b454fbad0bace33"
+  },
+  "scope": "Original APEX XSD to C++ using original gen_writer/root/package settings, no APEX activation/Android boot"
+}

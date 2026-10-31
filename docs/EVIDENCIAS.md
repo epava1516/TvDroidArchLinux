@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+- [Unidad libinit nativa y FFI Rust ejecutada](../reports/android16-libinit-native-unit/validation.json): 52 fuentes originales, archivo prototipo63 miembros; cuatro casos nativos Rust/Bionic ejecutados. No equivalencia Soong completa ni servicio/APK. [Checkpoint vigente](../reports/android16-libinit-native-unit/checkpoint.json).
+
 - [Protoc original y esquemas init nativos](../reports/android16-original-protoc/validation.json):
   393 pasos del build anfitrión, salida0; protoc25.8 genera tres esquemas originales
   y descriptor, y sus fuentes C++ compilan para Bionic con clang21. Frontera por

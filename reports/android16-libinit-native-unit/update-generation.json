@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "/home/tv/repositorio-principal/dist/aosp16/protoc-host-2/protoc",
+    "--proto_path=/home/tv/repositorio-principal/dist/aosp16/update-protobuf-2/source",
+    "--cpp_out=lite:/home/tv/repositorio-principal/dist/aosp16/update-protobuf-2/generated",
+    "update_engine/update_metadata.proto"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "source_sha256": "09da1556e3edb9197ca88103b22ea07230a634c004605d4aa1efee6a6ed6e60d",
+  "source_build_context": "Original module srcs:update_engine/update_metadata.proto, canonical_path_from_root:false, type:lite. Original nested update_engine/update_metadata.proto is a symlink to ../update_metadata.proto (Git blob d33cea3dd160a8879611bbb51a08dff6676e6bf5), verified from pinned tree. No system/Android.bp manifest linkfile. Earlier canonical prototype1 retained and not used.",
+  "scope": "Exact original source schema/codegen mode, no update service/partition action"
+}

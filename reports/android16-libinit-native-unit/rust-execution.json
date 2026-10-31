@@ -1,0 +1,33 @@
+{
+  "scope": "Original Rust FFI/std Bionic filesystem read through C ABI; source-defined version fallback, NOT policy/SELinux success or APK compatibility",
+  "results": [
+    {
+      "case": "missing",
+      "expected_original_source_result": 202404,
+      "exit_code": 0,
+      "stdout": "PREEXEC_STATUS {\"Uid\": \"10000\\t10000\\t10000\\t10000\", \"Gid\": \"10000\\t10000\\t10000\\t10000\", \"Groups\": \"\", \"CapPrm\": \"0000000000000000\", \"CapEff\": \"0000000000000000\", \"NoNewPrivs\": \"1\"}\n202404\n",
+      "stderr": ""
+    },
+    {
+      "case": "valid",
+      "expected_original_source_result": 202512,
+      "exit_code": 0,
+      "stdout": "PREEXEC_STATUS {\"Uid\": \"10000\\t10000\\t10000\\t10000\", \"Gid\": \"10000\\t10000\\t10000\\t10000\", \"Groups\": \"\", \"CapPrm\": \"0000000000000000\", \"CapEff\": \"0000000000000000\", \"NoNewPrivs\": \"1\"}\n202512\n",
+      "stderr": ""
+    },
+    {
+      "case": "malformed",
+      "expected_original_source_result": 202404,
+      "exit_code": 0,
+      "stdout": "PREEXEC_STATUS {\"Uid\": \"10000\\t10000\\t10000\\t10000\", \"Gid\": \"10000\\t10000\\t10000\\t10000\", \"Groups\": \"\", \"CapPrm\": \"0000000000000000\", \"CapEff\": \"0000000000000000\", \"NoNewPrivs\": \"1\"}\n202404\n",
+      "stderr": ""
+    },
+    {
+      "case": "permission-denied",
+      "expected_original_source_result": 202404,
+      "exit_code": 0,
+      "stdout": "PREEXEC_STATUS {\"Uid\": \"10000\\t10000\\t10000\\t10000\", \"Gid\": \"10000\\t10000\\t10000\\t10000\", \"Groups\": \"\", \"CapPrm\": \"0000000000000000\", \"CapEff\": \"0000000000000000\", \"NoNewPrivs\": \"1\"}\n202404\n",
+      "stderr": ""
+    }
+  ]
+}

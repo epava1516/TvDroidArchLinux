@@ -1,0 +1,9 @@
+{
+  "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/sepolicy/source/system/sepolicy/Android.bp",
+  "source_sha256": "cef111533b761048f10a53bd968cd02e0641bf1f009db4a8aa380ccff10a8b2d",
+  "module": "selinux_policy_version",
+  "flags": [
+    "-DSEPOLICY_VERSION=30"
+  ],
+  "scope": "Original compile-time policy-format version default, not active Linux SELinux mediation or Android certification"
+}
