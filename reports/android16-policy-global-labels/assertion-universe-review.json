@@ -1,0 +1,28 @@
+{
+  "scope": "Literal source expression inventory only. Adding foreign types may change complement/all expansions; need effective assertion/access checks. Not proof of violation or preservation.",
+  "counts": {
+    "aosp": {
+      "literal_single_line_neverallow_rules": 5330,
+      "with_not_or_all_expression": 0
+    },
+    "linux": {
+      "literal_single_line_neverallow_rules": 30,
+      "with_not_or_all_expression": 0
+    }
+  },
+  "examples": {
+    "aosp": [],
+    "linux": []
+  },
+  "status": "Rejected as semantic inventory: searching only neverallow lines misses set algebra in referenced typeattributeset definitions; zero direct matches is NOT absence of complements.",
+  "source_definitions": {
+    "linux": [
+      "(typeattributeset base_typeattr_8 (not (can_load_kernmodule ) ))",
+      "(typeattributeset base_typeattr_7 (all))",
+      "(typeattributeset base_typeattr_6 (not (domain unlabeled_t ) ))"
+    ],
+    "aosp": [
+      "(typeattributeset base_typeattr_483 (not (apexd artd dnsmasq dumpstate heapprofd init installd lmkd netd recovery rss_hwm_reset sdcardd tee traced_perf traced_probes ueventd uncrypt vendor_init vold vold_prepare_subdirs zygote migrate_legacy_obb_data zygote_next ) ))"
+    ]
+  }
+}

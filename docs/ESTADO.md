@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-policy-sid-ownership/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-policy-global-labels/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -406,3 +406,10 @@ o validada con servicios/APK; no se reinició la VM.
 hipótesis de SID fallan255 en genfscon;29 coincidencias literales de etiqueta.
 Siguiente: integración explícita del etiquetado Linux/AOSP; ninguna base elegida.
 [Decisión y límites](ARQUITECTURA.md#sid-y-pseudoarchivos-conflicto-de-etiquetado-compartido).
+
+## Resultado vigente: universos de tipos
+
+[Composición actual](../reports/android16-policy-global-labels/validation.json):
+el compilador emitió fallos neverallow antes del límite90s. not/all incluye
+tipos ajenos pese a namespaces. Siguiente: delimitar universos preservando
+proyecciones originales y comprobar mediación; no omitir aserciones.

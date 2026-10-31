@@ -111,6 +111,61 @@ la VM: preparar y validar fuentes/build/instalación y pruebas independientes;
 la activación y enforcement en esta VM quedan pendientes de un arranque permitido.
 No se ha cambiado el boot ni arrancado Android.
 
+## Decisiones offline con herramientas originales
+
+[Evidencias](../reports/android16-policy-semantic-baselines/validation.json): diez
+consultas de inventario y catorce consultas de acceso mediante libsepol original:
+seis permisos concedidos, tres denegaciones y cinco errores de contexto/clase/permiso.
+Los errores no se contabilizan como denegaciones. Un permiso por invocación evita
+el límite identificado en el bucle original de argumentos. No hay enforcement
+vivo, política compuesta ni aceptación de aplicaciones.
+
+Se descarta usar sepolicy-check como oráculo general: no representa todas las
+condiciones efectivas y su máscara de permisos es limitada. seamendc tampoco es
+un compositor completo: omite construcciones y nunca debe sustituir las aserciones
+neverallow originales. La siguiente unidad debe conservar las fuentes completas,
+resolver clases, atributos, usuarios/roles y MLS explícitamente y contrastar
+semántica global; catorce casos no demuestran equivalencia. Ninguna base elegida.
+
+## Control experimental de namespaces de política
+
+[Resultados](../reports/android16-policy-namespace-controls/validation.json): el
+compilador original rechaza sensibilidad/categorías dentro de bloques. Mover sólo
+esas declaraciones al nivel global permite compilar AOSP (salida0 en29,8s tras
+un primer límite de25s). Nueve consultas seleccionadas conservan su resultado
+con nombres prefijados; no acreditan equivalencia completa. La clase original
+service_manager deja de existir y aosp.service_manager no conserva su contrato
+de nombre. Usuarios/roles/tipos/contextos también cambian. No es una política
+de despliegue ni composición Linux/AOSP aprobada. Siguiente: preservar contratos
+Android de clases/contextos y resolver explícitamente los globales MLS/SID y
+la integración Linux, conservando todas las aserciones. Nada cargado o reiniciado.
+
+## Integración de política · namespace Linux y conflicto de SID
+
+[Ensayos](../reports/android16-linux-policy-namespace/validation.json): refpolicy
+completa compila en namespace Linux con clases/common/MLS y nombres SID globales.
+Cinco consultas seleccionadas con clases originales mantienen sus resultados;
+no prueban equivalencia completa ni etiquetas/transiciones del host. Una unión
+explícita propuesta contiene145 clases y como máximo32 permisos por clase.
+
+El control de composición conserva reglas/aserciones de ambas fuentes, mantiene
+nombres Android y separa símbolos Linux; el compilador original lo rechaza
+porque un SID inicial no puede tener dos contextos. Hay27 contextos iniciales
+literalmente distintos entre las fuentes. La siguiente decisión debe justificar
+qué contexto global representa cada SID y cómo conservar la mediación Android
+y Linux, junto a restricciones MLS y accesos entre dominios. No eliminar
+contextos/asserts para aceptar una compilación. Ninguna política elegida, cargada
+o validada con servicios/APK; no se reinició la VM.
+
+R1-MAC: las dos hipótesis de SID alcanzan conflicto genfscon (255), con29
+coincidencias de etiquetas originales. Requiere tabla global justificada y
+pruebas de mediación/transiciones; no omitir mapeos para compilar.
+[Evidencia](../reports/android16-policy-sid-ownership/validation.json).
+
+R1-MAC: [la composición de etiquetas](../reports/android16-policy-global-labels/validation.json)
+alcanza fallos neverallow: el namespace no acota not/all. Exigir universos
+explícitos y proyección semántica original antes de aprobar política.
+
 ## Historia · etapas anteriores, no prioridad vigente
 
 
@@ -484,53 +539,4 @@ original y recorrido completo de Markor. El límite anterior de TetheringManager
 queda superado en este perfil, no mediante stubs. A4/A5 y H7–H9 siguen abiertos.
 
 
-## Decisiones offline con herramientas originales
-
-[Evidencias](../reports/android16-policy-semantic-baselines/validation.json): diez
-consultas de inventario y catorce consultas de acceso mediante libsepol original:
-seis permisos concedidos, tres denegaciones y cinco errores de contexto/clase/permiso.
-Los errores no se contabilizan como denegaciones. Un permiso por invocación evita
-el límite identificado en el bucle original de argumentos. No hay enforcement
-vivo, política compuesta ni aceptación de aplicaciones.
-
-Se descarta usar sepolicy-check como oráculo general: no representa todas las
-condiciones efectivas y su máscara de permisos es limitada. seamendc tampoco es
-un compositor completo: omite construcciones y nunca debe sustituir las aserciones
-neverallow originales. La siguiente unidad debe conservar las fuentes completas,
-resolver clases, atributos, usuarios/roles y MLS explícitamente y contrastar
-semántica global; catorce casos no demuestran equivalencia. Ninguna base elegida.
-
-## Control experimental de namespaces de política
-
-[Resultados](../reports/android16-policy-namespace-controls/validation.json): el
-compilador original rechaza sensibilidad/categorías dentro de bloques. Mover sólo
-esas declaraciones al nivel global permite compilar AOSP (salida0 en29,8s tras
-un primer límite de25s). Nueve consultas seleccionadas conservan su resultado
-con nombres prefijados; no acreditan equivalencia completa. La clase original
-service_manager deja de existir y aosp.service_manager no conserva su contrato
-de nombre. Usuarios/roles/tipos/contextos también cambian. No es una política
-de despliegue ni composición Linux/AOSP aprobada. Siguiente: preservar contratos
-Android de clases/contextos y resolver explícitamente los globales MLS/SID y
-la integración Linux, conservando todas las aserciones. Nada cargado o reiniciado.
-
-## Integración de política · namespace Linux y conflicto de SID
-
-[Ensayos](../reports/android16-linux-policy-namespace/validation.json): refpolicy
-completa compila en namespace Linux con clases/common/MLS y nombres SID globales.
-Cinco consultas seleccionadas con clases originales mantienen sus resultados;
-no prueban equivalencia completa ni etiquetas/transiciones del host. Una unión
-explícita propuesta contiene145 clases y como máximo32 permisos por clase.
-
-El control de composición conserva reglas/aserciones de ambas fuentes, mantiene
-nombres Android y separa símbolos Linux; el compilador original lo rechaza
-porque un SID inicial no puede tener dos contextos. Hay27 contextos iniciales
-literalmente distintos entre las fuentes. La siguiente decisión debe justificar
-qué contexto global representa cada SID y cómo conservar la mediación Android
-y Linux, junto a restricciones MLS y accesos entre dominios. No eliminar
-contextos/asserts para aceptar una compilación. Ninguna política elegida, cargada
-o validada con servicios/APK; no se reinició la VM.
-
-R1-MAC: las dos hipótesis de SID alcanzan conflicto genfscon (255), con29
-coincidencias de etiquetas originales. Requiere tabla global justificada y
-pruebas de mediación/transiciones; no omitir mapeos para compilar.
-[Evidencia](../reports/android16-policy-sid-ownership/validation.json).
+<!-- Fin del registro histórico conservado. -->

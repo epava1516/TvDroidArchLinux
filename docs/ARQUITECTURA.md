@@ -544,6 +544,98 @@ candidato abierto Digitalis deben evaluarse con fuente/licencias y artefactos fi
 No se ha demostrado insuficiencia de las opciones existentes: no procede un motor
 propio. Esta investigación no altera R1/R1-MAC ni aprueba etapas de APK reales.
 
+## Decisiones offline con herramientas originales
+
+[Evidencias](../reports/android16-policy-semantic-baselines/validation.json): diez
+consultas de inventario y catorce consultas de acceso mediante libsepol original:
+seis permisos concedidos, tres denegaciones y cinco errores de contexto/clase/permiso.
+Los errores no se contabilizan como denegaciones. Un permiso por invocación evita
+el límite identificado en el bucle original de argumentos. No hay enforcement
+vivo, política compuesta ni aceptación de aplicaciones.
+
+Se descarta usar sepolicy-check como oráculo general: no representa todas las
+condiciones efectivas y su máscara de permisos es limitada. seamendc tampoco es
+un compositor completo: omite construcciones y nunca debe sustituir las aserciones
+neverallow originales. La siguiente unidad debe conservar las fuentes completas,
+resolver clases, atributos, usuarios/roles y MLS explícitamente y contrastar
+semántica global; catorce casos no demuestran equivalencia. Ninguna base elegida.
+
+## Control experimental de namespaces de política
+
+[Resultados](../reports/android16-policy-namespace-controls/validation.json): el
+compilador original rechaza sensibilidad/categorías dentro de bloques. Mover sólo
+esas declaraciones al nivel global permite compilar AOSP (salida0 en29,8s tras
+un primer límite de25s). Nueve consultas seleccionadas conservan su resultado
+con nombres prefijados; no acreditan equivalencia completa. La clase original
+service_manager deja de existir y aosp.service_manager no conserva su contrato
+de nombre. Usuarios/roles/tipos/contextos también cambian. No es una política
+de despliegue ni composición Linux/AOSP aprobada. Siguiente: preservar contratos
+Android de clases/contextos y resolver explícitamente los globales MLS/SID y
+la integración Linux, conservando todas las aserciones. Nada cargado o reiniciado.
+
+## Integración de política · namespace Linux y conflicto de SID
+
+[Ensayos](../reports/android16-linux-policy-namespace/validation.json): refpolicy
+completa compila en namespace Linux con clases/common/MLS y nombres SID globales.
+Cinco consultas seleccionadas con clases originales mantienen sus resultados;
+no prueban equivalencia completa ni etiquetas/transiciones del host. Una unión
+explícita propuesta contiene145 clases y como máximo32 permisos por clase.
+
+El control de composición conserva reglas/aserciones de ambas fuentes, mantiene
+nombres Android y separa símbolos Linux; el compilador original lo rechaza
+porque un SID inicial no puede tener dos contextos. Hay27 contextos iniciales
+literalmente distintos entre las fuentes. La siguiente decisión debe justificar
+qué contexto global representa cada SID y cómo conservar la mediación Android
+y Linux, junto a restricciones MLS y accesos entre dominios. No eliminar
+contextos/asserts para aceptar una compilación. Ninguna política elegida, cargada
+o validada con servicios/APK; no se reinició la VM.
+
+## SID y pseudoarchivos: conflicto de etiquetado compartido
+
+[Dos hipótesis ejecutadas offline](../reports/android16-policy-sid-ownership/validation.json):
+seleccionar explícitamente los contextos SID originales Linux o AOSP conserva
+las reglas y aserciones, pero sustituye27 mapeos iniciales de la otra fuente.
+Es una hipótesis de integración, sin equivalencia semántica demostrada. Ambas
+fallan después (255) en el procesamiento original genfscon. Se registran29
+coincidencias exactas de sistema/ruta/selector con contextos diferentes; no es
+un análisis exhaustivo de precedencias y subrutas.
+
+El código original cil_post.c compara sistema de archivos/ruta y rechaza
+contextos distintos para la misma clave. Ni namespaces de tipos ni seleccionar
+SID separan automáticamente el etiquetado compartido. Debe diseñarse una tabla
+global coherente para pseudoarchivos Linux con mediación y accesos Android
+explícitos, conservando las comprobaciones; no retirar etiquetas en silencio.
+La elección de base sigue abierta hasta probar transiciones/denegaciones y
+servicios originales, además de arranque y recuperación del host. No se ha
+cargado política ni alterado el arranque de esta VM.
+
+El [proyecto SELinux](https://github.com/SELinuxProject/selinux-notebook/blob/main/src/computing_security_contexts.md)
+describe herencia desde el contexto kernel y transiciones de init durante exec;
+la política refpolicy fijada define kernel_t/init_t y la AOSP kernel/unlabeled.
+Es fundamento de la decisión pendiente, no una prueba de nuestro arranque.
+
+## Conjuntos globales: fallo probado de la composición actual
+
+[Evidencia del compilador original](../reports/android16-policy-global-labels/validation.json):
+la hipótesis Linux sustituye explícitamente27 mapeos SID,29 genfscon y18 fsuse
+duplicados. Conserva reglas y aserciones originales. Agota90s después de emitir
+14 marcadores de fallo neverallow; no hay compilación completa ni total exhaustivo
+de infracciones. El control no es una política aceptada.
+
+El namespace de CIL no limita el universo de las expresiones de tipos not/all.
+Las definiciones originales linux.base_typeattr_8 (not can_load_kernmodule),
+linux.base_typeattr_7 (all) y linux.base_typeattr_6 (not domain/unlabeled_t)
+incluyen tipos AOSP, y producen conflictos reales con sus reglas. También se
+observan aserciones Android que chocan con reglas Linux. Una búsqueda literal
+sólo en líneas neverallow omitía el álgebra de los atributos referenciados y
+se conserva marcada como insuficiente, sin convertir su cero en ausencia.
+
+La siguiente composición necesita universos de tipos explícitos y preservación
+de la proyección original de cada política, además de comprobar reglas, MLS,
+clases y permisos globales y accesos entre ambos lados. No desactivar neverallow
+ni declarar equivalencia por conservar textos o unas consultas. Este fallo
+descarta la composición actual, no las dos estrategias adaptadas completas.
+
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 
 
@@ -936,72 +1028,4 @@ el shell. Véase [AOSP-NATIVO.md](AOSP-NATIVO.md) para etapas, requisitos de ART
 Binder/framework/HAL, ABIs y criterios para retirar la dependencia.
 
 
-## Decisiones offline con herramientas originales
-
-[Evidencias](../reports/android16-policy-semantic-baselines/validation.json): diez
-consultas de inventario y catorce consultas de acceso mediante libsepol original:
-seis permisos concedidos, tres denegaciones y cinco errores de contexto/clase/permiso.
-Los errores no se contabilizan como denegaciones. Un permiso por invocación evita
-el límite identificado en el bucle original de argumentos. No hay enforcement
-vivo, política compuesta ni aceptación de aplicaciones.
-
-Se descarta usar sepolicy-check como oráculo general: no representa todas las
-condiciones efectivas y su máscara de permisos es limitada. seamendc tampoco es
-un compositor completo: omite construcciones y nunca debe sustituir las aserciones
-neverallow originales. La siguiente unidad debe conservar las fuentes completas,
-resolver clases, atributos, usuarios/roles y MLS explícitamente y contrastar
-semántica global; catorce casos no demuestran equivalencia. Ninguna base elegida.
-
-## Control experimental de namespaces de política
-
-[Resultados](../reports/android16-policy-namespace-controls/validation.json): el
-compilador original rechaza sensibilidad/categorías dentro de bloques. Mover sólo
-esas declaraciones al nivel global permite compilar AOSP (salida0 en29,8s tras
-un primer límite de25s). Nueve consultas seleccionadas conservan su resultado
-con nombres prefijados; no acreditan equivalencia completa. La clase original
-service_manager deja de existir y aosp.service_manager no conserva su contrato
-de nombre. Usuarios/roles/tipos/contextos también cambian. No es una política
-de despliegue ni composición Linux/AOSP aprobada. Siguiente: preservar contratos
-Android de clases/contextos y resolver explícitamente los globales MLS/SID y
-la integración Linux, conservando todas las aserciones. Nada cargado o reiniciado.
-
-## Integración de política · namespace Linux y conflicto de SID
-
-[Ensayos](../reports/android16-linux-policy-namespace/validation.json): refpolicy
-completa compila en namespace Linux con clases/common/MLS y nombres SID globales.
-Cinco consultas seleccionadas con clases originales mantienen sus resultados;
-no prueban equivalencia completa ni etiquetas/transiciones del host. Una unión
-explícita propuesta contiene145 clases y como máximo32 permisos por clase.
-
-El control de composición conserva reglas/aserciones de ambas fuentes, mantiene
-nombres Android y separa símbolos Linux; el compilador original lo rechaza
-porque un SID inicial no puede tener dos contextos. Hay27 contextos iniciales
-literalmente distintos entre las fuentes. La siguiente decisión debe justificar
-qué contexto global representa cada SID y cómo conservar la mediación Android
-y Linux, junto a restricciones MLS y accesos entre dominios. No eliminar
-contextos/asserts para aceptar una compilación. Ninguna política elegida, cargada
-o validada con servicios/APK; no se reinició la VM.
-
-## SID y pseudoarchivos: conflicto de etiquetado compartido
-
-[Dos hipótesis ejecutadas offline](../reports/android16-policy-sid-ownership/validation.json):
-seleccionar explícitamente los contextos SID originales Linux o AOSP conserva
-las reglas y aserciones, pero sustituye27 mapeos iniciales de la otra fuente.
-Es una hipótesis de integración, sin equivalencia semántica demostrada. Ambas
-fallan después (255) en el procesamiento original genfscon. Se registran29
-coincidencias exactas de sistema/ruta/selector con contextos diferentes; no es
-un análisis exhaustivo de precedencias y subrutas.
-
-El código original cil_post.c compara sistema de archivos/ruta y rechaza
-contextos distintos para la misma clave. Ni namespaces de tipos ni seleccionar
-SID separan automáticamente el etiquetado compartido. Debe diseñarse una tabla
-global coherente para pseudoarchivos Linux con mediación y accesos Android
-explícitos, conservando las comprobaciones; no retirar etiquetas en silencio.
-La elección de base sigue abierta hasta probar transiciones/denegaciones y
-servicios originales, además de arranque y recuperación del host. No se ha
-cargado política ni alterado el arranque de esta VM.
-
-El [proyecto SELinux](https://github.com/SELinuxProject/selinux-notebook/blob/main/src/computing_security_contexts.md)
-describe herencia desde el contexto kernel y transiciones de init durante exec;
-la política refpolicy fijada define kernel_t/init_t y la AOSP kernel/unlabeled.
-Es fundamento de la decisión pendiente, no una prueba de nuestro arranque.
+<!-- Fin del registro histórico conservado. -->

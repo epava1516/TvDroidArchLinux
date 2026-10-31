@@ -1,0 +1,14 @@
+[
+  {
+    "path": "docs/ARQUITECTURA.md",
+    "moved_current_sections_sha256": "28a5f302d101a5e4e20197c2d72d201ea6b782f30581a5a3dcd4bd4daae12a05",
+    "preserved_historical_section_sha256": "6ac62d040d5747c9db99566b3224c36fec23a8953a3b7087a2631071d0041cad",
+    "reason": "Recent A16 security sections had been appended below historical boundary; move intact into current part, preserve history verbatim"
+  },
+  {
+    "path": "docs/ROADMAP-A.md",
+    "moved_current_sections_sha256": "1a93c0124c03eab77d9ae001ad0bf98390d8a93d00c7b88b7d048e5f21c261b6",
+    "preserved_historical_section_sha256": "5a38efb43f71852b6aded225ccc2657ba3ed2a8cacf92fa545844694d72bdc76",
+    "reason": "Recent A16 security sections had been appended below historical boundary; move intact into current part, preserve history verbatim"
+  }
+]

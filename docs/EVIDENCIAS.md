@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+- [Universos de tipos y aserciones](../reports/android16-policy-global-labels/validation.json): 47 sustituciones de etiquetas y27 SID declaradas; compilador emite14 marcadores neverallow antes del límite90s. Namespace insuficiente para not/all; sin política aceptada ni APK. [Checkpoint actual](../reports/android16-policy-global-labels/checkpoint.json).
+
 - [Hipótesis de SID y etiquetas globales](../reports/android16-policy-sid-ownership/validation.json): dos elecciones explícitas, ambas255 en genfscon;29 coincidencias literales de contexto. Reglas/aserciones conservadas, sin base seleccionada ni host/servicios/APK aceptados. [Checkpoint actual](../reports/android16-policy-sid-ownership/checkpoint.json).
 
 - [Namespace Linux y conflicto de SID](../reports/android16-linux-policy-namespace/validation.json): compilación0 y cinco consultas seleccionadas conservadas; composición con nombres Android originales rechazada por contextos SID múltiples (27 diferencias literales). Sin política elegida/cargada ni servicios/APK. [Checkpoint actual](../reports/android16-linux-policy-namespace/checkpoint.json).
