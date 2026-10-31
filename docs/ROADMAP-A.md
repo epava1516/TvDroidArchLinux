@@ -22,7 +22,36 @@ primera hipótesis SurfaceFlinger→Wayland reemplazan la selección A/B/C y API
 anteriores. La base nueva se mantiene aislada; no se descartan el compositor,
 instalación, herramientas o regresiones útiles. No reiniciar VM ni cliente.
 
-## Orden vigente tras el arranque permisivo
+## Camino crítico vigente · Markor completo
+
+[Decisión y ejecución actual](../reports/android16-markor-critical-path/findings.json).
+El hito auxiliar en curso quedó guardado aparte en311c25f. No ampliar herramientas
+ni fixtures como prioridad: cada experimento debe desbloquear una fila de esta
+secuencia y conducir a integración o a una decisión explícita.
+
+**Bloqueo inmediato demostrado:** el servicio de propiedades original, con
+SELinux genuino visible y sin política, rechaza `property_service` desconocida,
+no publica su versión/readiness y sale1 sin ACK. El gestor por separado alcanza
+espera de eventos, pero el cliente espera `servicemanager.ready`: no demuestra
+servicios disponibles. El -95 anterior es histórico;2f31032 y sus diez evidencias
+contrastados, nueve pruebas limitadas al comprobador y Binder SID/transacción.
+
+| Paso | Integración y resultado funcional exigido | Estado/evidencia y límite |
+| --- | --- | --- |
+| MC0 · admisión MAC recuperable | Candidato coherente de política original Linux/AOSP, imágenes/etiquetas/UID/roles/NNP/capacidades, dispositivos/cgroups/FD y recuperación; S0–S2 del plan canónico antes de pedir carga | Activo/permisivo/policyload0 confirmado. Propiedades fallan por clase desconocida. Bootstrap sólo offline; seis transiciones NNP de gestores denegadas. Falta admisión completa, ninguna carga autorizada |
+| MC1 · cohorte original disponible | Propiedades originales publican versión y readiness por sus controles reales; servicemanager se registra y cliente original legítimo lo consulta; después hwservicemanager para la ruta Composer elegida. Identidad/SID y negativos reales, muerte/cierre sin alterar host | **Siguiente experimento funcional seleccionado**, depende de MC0/carga autorizada. No editar ready ni sustituir check_access. Conservar diagnóstico fallido actual como negativo |
+| MC2 · instalación y lanzamiento reales | Reutilizar PackageManager/permisos/instalación/datos, AMS/ATMS y proceso ART/zygote/framework originales como subsistemas. Resolver cierre real de system_server y auxiliares (p.ej. installd/artd/almacenamiento) por fuentes/ejecución; instalar APK Markor intacta y lanzar Activity/Application originales | ART llega a ActivityThread.main; no lanzamiento Markor. Lista mínima exacta y separación de system_server aún por demostrar; no asumir que todas sus dependencias puedan omitirse. Firma criptográfica/splits/UID/seinfo y datos siguen pendientes |
+| MC3 · interfaz e entrada | Completar Composer/allocator/mapper→SF original→Wayland/Smithay, WMS/Display/Input originales; presentar frames de Markor y entregar entrada al editor/foco | Composer espera gestor; no buffers/fences ni frame original acreditados. Reutilizar subsistemas completos; no reconstruir widgets de Markor. Empaquetado de cierre gráfico exacto pendiente, no bloqueo atribuido sin prueba |
+| MC4 · función, persistencia y servicios | Crear/editar nota con entrada real, guardar por la ruta/proveedor elegido y permisos originales; verificar bytes, callbacks y almacenamiento efectivo | No probado. Proveedores/actividades de selección y auxiliares que exija el recorrido se integran, no respuestas vacías ni ruta cambiada silenciosamente |
+| MC5 · cierre y reapertura | Cerrar desde shell, recoger procesos/recursos, reabrir APK intacta y recuperar nota; repetir con límites/aislamiento y control horizontal Calculator | Nueve etapas canónicas siguen no probadas. Pruebas del supervisor sólo respaldan infraestructura de ciclo de vida |
+
+La propuesta concreta de MC0/MC1 y sus condiciones de prueba/recuperación están
+en [arquitectura](ARQUITECTURA.md#integración-inmediata-de-propiedades-y-gestores).
+No se autoriza carga, relabel ni enforcing por el arranque histórico. ARM, GMS,
+multimedia propietaria/DRM siguen en R5–R7 y la matriz amplia, fuera de este primer
+camino Markor. La secuencia completa no se cierra con MC1 ni con una ventana vacía.
+
+## Puertas de seguridad y antecedentes
 
 Seguir el [plan canónico de seguridad y recuperación](ARQUITECTURA.md#plan-de-seguridad-y-recuperación-del-anfitrión):
 S0 recuperación → S1 contrato completo offline → S2 preflight anfitrión → S3 carga

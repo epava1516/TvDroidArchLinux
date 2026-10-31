@@ -1,0 +1,53 @@
+{
+  "evidence_id": "ev_ea2031098189828b489f941d0d553a78d566815097ceb44ce8ebcbcc3731967d",
+  "authority": "controlled-replay",
+  "confidence": "observed",
+  "exit": {
+    "code": null,
+    "signal": 9,
+    "reason": "exited"
+  },
+  "output": "",
+  "cleanup": {
+    "owned_process_group": "verified",
+    "temporary_root": "removed"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "The executable digest is a prelaunch file sample; matching path metadata immediately after spawn does not prove an atomic operating-system image binding.",
+    "Process trees are sampled and may omit short-lived descendants.",
+    "Process-tree sampling ended with an incomplete observation.",
+    "Filesystem observations are before/after snapshots, not syscall traces.",
+    "Inherited host environment variables are not recorded and may affect results.",
+    "No filesystem observation paths were selected; filesystem effects remain unknown.",
+    "Process sampling has incomplete observations: /proc/11300/environ: EACCES: Error: EACCES: permission denied, open '/proc/11300/environ'. See truncation_details.process."
+  ],
+  "residual_unknowns": [
+    {
+      "scope": "process",
+      "reason": "Process trees are sampled and may omit short-lived descendants."
+    },
+    {
+      "scope": "process",
+      "reason": "The executable digest is a prelaunch file sample; operating-system image binding is not atomically observed."
+    },
+    {
+      "scope": "environment",
+      "reason": "Inherited host environment variables are not recorded."
+    },
+    {
+      "scope": "network",
+      "reason": "Network activity is not observed by this capture."
+    },
+    {
+      "scope": "filesystem",
+      "reason": "No filesystem observation paths were selected; filesystem effects remain unknown."
+    },
+    {
+      "scope": "process",
+      "reason": "Process sampling has incomplete observations: /proc/11300/environ: EACCES: Error: EACCES: permission denied, open '/proc/11300/environ'. See truncation_details.process."
+    }
+  ],
+  "truncated": true,
+  "note": "Failed diagnostic integration; no availability claim. Sanitized derived projection, not complete authenticated evidence."
+}

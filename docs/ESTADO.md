@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-supervisor-framing/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-markor-critical-path/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -17,7 +17,26 @@ Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCC
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
 
-## Avance vigente · mensajes de fallo Rust conservados
+## Prioridad vigente · recorrido Markor
+
+[Checkpoint](../reports/android16-markor-critical-path/checkpoint.json),
+[resultado actual](../reports/android16-markor-critical-path/findings.json) y
+[camino crítico](ROADMAP-A.md#camino-crítico-vigente--markor-completo).
+Bloqueo demostrado: propiedades originales, con SELinux visible/sin política,
+rechazan clase property_service y salen1 sin startup. Gestor aislado en epoll
+no acredita registro; cliente espera readiness original. No es Binder -95.
+
+Siguiente resultado funcional: propiedades→registro/consulta de gestores
+originales, con integración MAC/metadata/identidades y recuperación admisibles,
+antes de framework/lanzamiento→gráficos/entrada→nota/persistencia→cierre/reapertura.
+La imagen GSI original conserva etiquetas; propuesta de reutilizarla RO en lugar
+de reetiquetar extracción/host. No cargar ni activar enforcing: falta S0–S2 y
+aprobación específica del candidato. ARM/GMS/DRM siguen fuera del camino inicial.
+Hito auxiliar en curso guardado/subido en311c25f; no continuar ampliándolo como
+entregable principal. Historial posterior de esta página conserva su alcance,
+pero el orden vigente es MC0–MC5. Markor sigue con nueve etapas no probadas.
+
+## Hito anterior · mensajes de fallo Rust conservados
 
 [Resultados](../reports/android16-supervisor-framing/findings.json): una regresión
 reproduce la pérdida de mensajes parciales al agotar una observación. El canal

@@ -58,6 +58,59 @@ cohorte y el límite de aplicaciones antes de decidir adaptaciones. SIGKILL haci
 init respalda Child::kill del padre; no acredita pidfd, wait, stdio ni cierre
 completo. Una denegación SIGCHLD no prueba fallo de waitpid.
 
+## Integración inmediata de propiedades y gestores
+
+Prevalece el [camino crítico MC0–MC5](ROADMAP-A.md#camino-crítico-vigente--markor-completo).
+[Ejecución MCP actual](../reports/android16-markor-critical-path/findings.json):
+propiedades originales rechazan `Unknown class property_service`, versión y
+readiness; salida1 sin ACK. El gestor aislado alcanza epoll, pero el cliente
+espera la propiedad original. No equivale a gestor disponible.2f31032 sigue
+válido para transporte Binder con SID, no autorización; no repetirlo sin causa.
+
+**Propuesta MC1, todavía no admitida para carga:** conservar la política AOSP y
+Linux fijadas/aserciones y montar imágenes originales GSI/APEX de sólo lectura,
+con sus xattrs/DAC. La GSI retenida contiene etiquetas originales de init,
+servicemanager, zygote y SF; seguir enlaces dentro de la raíz Android (hwmanager
+vive en system_ext). Completar manifiesto de imágenes, integridad/procedencia y
+montajes/metadata, no deducirlos de los directorios extraídos. Overlay inmutable
+separado para supervisor/coordinador propios, sin cambiar caché ni root del host.
+
+Antes de admisión, cerrar estas cuestiones concretas; no añadir otra sonda si
+no resuelve una de ellas:
+
+- **Entrada y confianza:** productor Linux real y transición por ejecutable/rol
+  exclusivo, fuente/kernel y SID tras carga, origen autenticado del overlay y
+  etiquetas efectivas. La guarda del candidato impide fabricar su tipo de entrada
+  por AV normales; no prueba instalación. Systemd -SELINUX no asignará el rol.
+- **Cohorte completa:** original init/coordinador→propiedades→gestores, contextos,
+  UID/grupos/caps/FD/stdio, nodos Binder/selinuxfs y propiedad, VINTF y cgroups
+  delegados. No conceder administración de política al coordinador ni apps.
+  Resolver NNP según el contrato original antes de cambiarlo: NNP1 heredado falla
+  seis consultas de gestores; la alternativa de cohorte confiable sin NNP heredado
+  requiere demostrar contención/caps y frontera de app original. Ninguna aprobada
+  ni implementada por esta revisión; no apagar NNP como arreglo implícito.
+- **Pruebas de salida MC1:** lectura de contexto/etiqueta/clases reales y control
+  de identidad; propiedades versión/readiness publicadas por servicio original;
+  auto-registro del manager y consulta mediante cliente original con rol/UID que
+  la política permita; rechazo de cliente/contexto/nombre no autorizado,
+  callbacks/muerte y cierre real. No usar `service list` vacío o proceso vivo
+  como prueba de registro. HIDL/Composer se incorpora después con sus mismos
+  requisitos. En permisivo sólo se observa integración; los negativos efectivos
+  requieren la fase enforcing separadamente autorizada.
+- **Efecto global y recuperación:** inventario/hashes/xattrs del host y candidato,
+  impacto en PID1/terminal/SSH/almacenamiento/herramientas, parada ante pérdida de
+  acceso o modificación inesperada; acceso externo y entrada original/snapshot
+  comprobados antes. Primera carga no se revierte a «sin política» descargándola.
+  Planificar restauración de labels/configuración y recuperación por entrada
+  original/reinicio sólo con autorización específica, sin reiniciar ahora.
+
+Aplicar S0–S2 de la tabla siguiente al artefacto exacto. Sólo después presentar
+operación, hash, pruebas y recuperación para aprobación S3; enforcing necesita
+otra aprobación S4. No está lista esa solicitud: bootstrap, etiquetas/overlay,
+cohorte NNP/caps y ensayo de recuperación siguen abiertos. El experimento actual
+es una integración negativa original que decide esta prioridad, no un nuevo
+sistema de auditorías ni un runtime aceptado.
+
 ## Plan de seguridad y recuperación del anfitrión
 
 Vigente tras el arranque autorizado: [revisión y ejecución original](../reports/android16-postboot-mac-readiness/findings.json).

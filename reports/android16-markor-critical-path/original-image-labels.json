@@ -1,0 +1,87 @@
+{
+  "scope": "Read-only ext4 metadata inspection, debugfs without -w. No mount/label change, not live MAC or source/bin equivalence.",
+  "image": "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img",
+  "sha256": "c4989f703ac23bbd3bb3da2e33a3633d373bf763afcfcbed3cccc73d5049d656",
+  "expected_factory_sha256": "c4989f703ac23bbd3bb3da2e33a3633d373bf763afcfcbed3cccc73d5049d656",
+  "results": [
+    {
+      "argv": [
+        "/usr/bin/debugfs",
+        "-R",
+        "ea_list /system/bin/servicemanager",
+        "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img"
+      ],
+      "exit": 0,
+      "stdout": "Extended attributes:\n  security.selinux (34) = \"u:object_r:servicemanager_exec:s0\\000\"\n",
+      "stderr": "debugfs 1.47.4 (6-Mar-2025)\n"
+    },
+    {
+      "argv": [
+        "/usr/bin/debugfs",
+        "-R",
+        "ea_list /system/bin/hwservicemanager",
+        "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img"
+      ],
+      "exit": 0,
+      "stdout": "Extended attributes:\n  security.selinux (26) = \"u:object_r:system_file:s0\\000\"\n",
+      "stderr": "debugfs 1.47.4 (6-Mar-2025)\n"
+    },
+    {
+      "argv": [
+        "/usr/bin/debugfs",
+        "-R",
+        "ea_list /system/bin/app_process64",
+        "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img"
+      ],
+      "exit": 0,
+      "stdout": "Extended attributes:\n  security.selinux (26) = \"u:object_r:zygote_exec:s0\\000\"\n",
+      "stderr": "debugfs 1.47.4 (6-Mar-2025)\n"
+    },
+    {
+      "argv": [
+        "/usr/bin/debugfs",
+        "-R",
+        "ea_list /system/bin/surfaceflinger",
+        "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img"
+      ],
+      "exit": 0,
+      "stdout": "Extended attributes:\n  security.selinux (34) = \"u:object_r:surfaceflinger_exec:s0\\000\"\n",
+      "stderr": "debugfs 1.47.4 (6-Mar-2025)\n"
+    },
+    {
+      "argv": [
+        "/usr/bin/debugfs",
+        "-R",
+        "ea_list /system/bin/init",
+        "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img"
+      ],
+      "exit": 0,
+      "stdout": "Extended attributes:\n  security.selinux (24) = \"u:object_r:init_exec:s0\\000\"\n",
+      "stderr": "debugfs 1.47.4 (6-Mar-2025)\n"
+    },
+    {
+      "argv": [
+        "/usr/bin/debugfs",
+        "-R",
+        "ea_list /system/etc/selinux/plat_service_contexts",
+        "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img"
+      ],
+      "exit": 0,
+      "stdout": "Extended attributes:\n  security.selinux (36) = \"u:object_r:service_contexts_file:s0\\000\"\n",
+      "stderr": "debugfs 1.47.4 (6-Mar-2025)\n"
+    },
+    {
+      "argv": [
+        "/usr/bin/debugfs",
+        "-R",
+        "ea_list /system/system_ext/bin/hwservicemanager",
+        "/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img"
+      ],
+      "exit": 0,
+      "stdout": "Extended attributes:\n  security.selinux (36) = \"u:object_r:hwservicemanager_exec:s0\\000\"\n",
+      "stderr": "debugfs 1.47.4 (6-Mar-2025)\n"
+    }
+  ],
+  "decision": "Prefer original read-only GSI/APEX filesystem mounts preserving original labels and Unix metadata over extracted unlabeled cache for live MAC candidate. Need full manifest/mount/AVB/provenance and candidate policy tests before deployment. Own supervisor/coordinator overlay requires independently justified immutable installation.",
+  "symlink_resolution": "Extracted system/bin/hwservicemanager is an absolute symlink to /system/system_ext/bin/hwservicemanager inside Android root, not host path. Symlink inode system_file differs from resolved target hwservicemanager_exec. Resolve all deployment links within original root."
+}

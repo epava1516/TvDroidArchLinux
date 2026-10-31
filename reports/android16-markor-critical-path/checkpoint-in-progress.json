@@ -1,0 +1,139 @@
+{
+  "branch": "main",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "objective": "Complete unmodified APK on Linux Rust/Smithay with coherent original AOSP16QPR2/Bionic, no Waydroid or complete Android boot; broad compatibility, isolation, stability, lightness, installation/update.",
+  "canonical_entry": "docs/ESTADO.md",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "constraints": [
+    "User reaffirmed no reboot/security state changes based on historical authorization",
+    "No policy load, relabel, setenforce or host setup modification in this hito",
+    "A16-QPR2-1; full unmodified APK on Linux Rust/Smithay, no Waydroid/full Android; broad compatibility/isolation/stability/lightness/install/update",
+    "ARM/external services/DRM separate; own fixtures/probes not compatibility acceptance"
+  ],
+  "observed_at": "2026-10-31T13:23:49.398096+00:00",
+  "base_commit": "1580ddf56d954649fbbd3578c8dcf92d1a8a7dfc",
+  "previous_checkpoint": "reports/android16-supervisor-framing/checkpoint.json",
+  "relation_to_local_origin_tracking": "0\t0",
+  "terminal_exec_handles": [
+    22230,
+    16698
+  ],
+  "active_exec_handles": [],
+  "process_scope": "Current Rust checks45534/tests34412/build55439 terminal. REA capture cell222 terminal0, cleanup verified within reported limitations. Historical preboot handles not reused.",
+  "tests": {
+    "before.log": "New fragmentation regression fails before change: expected typed shutdown request, got none.",
+    "tests.log": "Sandbox run: 6 unit pass, 9 lifetime pass/4 fail with EPERM on Unix send; not asserted to be functional pass.",
+    "tests-host.log": "Same test suite outside sandbox: 6 unit +13 lifetime pass, including two new process regressions.",
+    "clippy.log": "All targets archtv-core, warnings denied, exit0.",
+    "code_changed": [
+      "crates/archtv-core/src/native_process.rs",
+      "crates/archtv-core/tests/native_process.rs"
+    ]
+  },
+  "next": "Preserve in-progress supervisor milestone; verify current host read-only and run a bounded unmodified servicemanager diagnostic with genuine visible SELinux, private Binder, no policy changes, to distinguish actual manager registration blocker from assumptions. Prepare coherent MAC integration proposal, not more unrelated helper infrastructure.",
+  "evidence": {
+    "reports/android16-supervisor-framing/before.log": "7a9aa3728d43f0a0be5e2fdb0e71834b159231887af7cad73f681cfc1197fc57",
+    "reports/android16-supervisor-framing/clippy.log": "2c6e1414b038fce0e69624a981f862db1515ce3864e4be4bb3476a7880280c1b",
+    "reports/android16-supervisor-framing/findings.json": "a858543c56762158f0e8cb1ea9fec59dc67967b28b6b2d66cebc4aa75602ed5d",
+    "reports/android16-supervisor-framing/tests-host.log": "ffe24645ae718e8054c414040a94a5fce98a8e859538e9f51ade889530ea1737",
+    "reports/android16-supervisor-framing/tests.log": "c1afcac2123d03d32957aa96e2ba14a16cb2d7f74e9c4f6059158ec12661c153"
+  },
+  "local_artifact": {
+    "scope": "Final original binary export, not live policy",
+    "argv": [
+      "/home/tv/repositorio-principal/dist/aosp16/checkpolicy-host-2/source/checkpolicy",
+      "-M",
+      "-b",
+      "-C",
+      "-o",
+      "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-4/export.cil",
+      "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-4/policy.bin"
+    ],
+    "exit": 0,
+    "path": "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-4/export.cil",
+    "sha256": "33564688f0304edf2c7ea64b60efee8a0e90943ffbb06d426e38158725146a0e",
+    "typebounds": [],
+    "policycaps": [
+      "(policycap cgroup_seclabel)",
+      "(policycap extended_socket_class)",
+      "(policycap functionfs_seclabel)",
+      "(policycap genfs_seclabel_symlinks)",
+      "(policycap ioctl_skip_cloexec)",
+      "(policycap network_peer_controls)",
+      "(policycap nnp_nosuid_transition)",
+      "(policycap open_perms)",
+      "(policycap userspace_initial_context)"
+    ],
+    "initial_sid_contexts": [
+      "(sidcontext kernel (linux.system_u linux.system_r linux.kernel_t ((s0) (s0))))",
+      "(sidcontext init (linux.system_u linux.system_r linux.init_t ((s0) (s0))))"
+    ]
+  },
+  "graphify": {
+    "mode": "AST-only isolated staged worktree",
+    "path": "/home/tv/.cache/archtv/worktrees/supervisor-framing",
+    "terminal_exec_handle": 2432,
+    "nodes": 2903,
+    "edges": 5530,
+    "communities": 233
+  },
+  "pending_current": [
+    "crates/archtv-core/src/native_process.rs",
+    "crates/archtv-core/tests/native_process.rs",
+    "crates/archtv-core/examples/native_supervisor.rs",
+    "reports/android16-supervisor-observation/"
+  ],
+  "verified_2f31032_evidence": [
+    {
+      "path": "reports/android16-selinux-permissive-boot/private-observation.json",
+      "sha256": "e1321c7dbbf0360a9f30517c83a51838968625cff348fbc8239bd12e1c7d4652"
+    },
+    {
+      "path": "reports/android16-selinux-permissive-boot/checker-tests.log",
+      "sha256": "e7868349f80d90e9674de9c2df12e50a116d24331e4cdf921e14d11d317a3981"
+    },
+    {
+      "path": "reports/android16-selinux-permissive-boot/findings.json",
+      "sha256": "bc2945dd047a508e501c6bbd7a469e00e26cebba469988ca21c9d87b95c925b5"
+    },
+    {
+      "path": "reports/android16-selinux-permissive-boot/observe-private.py",
+      "sha256": "7dae2f7ab8601471cbc5f41263f6958a6db41e9cac8085b62b5eed238b63dda9"
+    },
+    {
+      "path": "reports/android16-selinux-permissive-boot/binder-sid-launcher.py",
+      "sha256": "367a524fdf05c4f6086023180c73d647daa5feea198b2e0af91a162a9def1685"
+    },
+    {
+      "path": "reports/android16-selinux-permissive-boot/binder-sid-mcp.json",
+      "sha256": "417c37f75ab7a11bb0ab244fa4a5ecbb5e53402b79016a35cad244ff30ee845d"
+    },
+    {
+      "path": "reports/android16-selinux-permissive-boot/binder-plain-launcher.py",
+      "sha256": "a50beb6dbd2a888fe117ab41cddde385c9ae8aef40419928ee24fc8c60bde1a4"
+    },
+    {
+      "path": "reports/android16-selinux-permissive-boot/checker-private-observation.json",
+      "sha256": "a2a702aecd45252138aa08fd02d2e4751265773749c5e2f2fbd259c0102f4849"
+    },
+    {
+      "path": "reports/android16-selinux-permissive-boot/binder-plain-mcp.json",
+      "sha256": "115c45e708823bb05f2bdc6e4ac6978cd91d5db2edd3bc6fe5292851f768e3a4"
+    },
+    {
+      "path": "reports/android16-selinux-permissive-boot/observe-initial.py",
+      "sha256": "d40635350a8caffe8aa90d4f60d5f4d215191c916956e376d4bf79c943ffa8dc"
+    }
+  ]
+}

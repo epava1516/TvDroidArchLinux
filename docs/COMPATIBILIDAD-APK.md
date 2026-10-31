@@ -1,5 +1,10 @@
 # Matriz de aplicaciones reales
 
+La prioridad actual es el [camino crítico Markor](ROADMAP-A.md#camino-crítico-vigente--markor-completo).
+La integración negativa de propiedades/gestores no acepta ninguna de las nueve
+etapas. ARM/GMS/DRM conservan sus ejes y requisitos; no bloquean este primer
+recorrido salvo dependencia real demostrada de la versión/función seleccionada.
+
 ## Estado vigente A16-QPR2-1
 
 La fuente canónica sigue siendo el JSON enlazado abajo, ahora schema 2. La base

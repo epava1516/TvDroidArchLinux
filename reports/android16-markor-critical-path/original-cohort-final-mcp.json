@@ -1,0 +1,54 @@
+{
+  "evidence_id": "ev_68e785c6eefe93a589f4203884b5d6fecd4bb6ff3120c79406762c4ef630ac0d",
+  "operation": "capture_process_scenario",
+  "authority": "controlled-replay",
+  "confidence": "observed",
+  "exit": {
+    "code": 0,
+    "signal": 0,
+    "reason": "exited"
+  },
+  "output": "COHORT_REJECTED original property worker closed before startup\r\nWORKER_ACTUAL_EXIT 1\r\nCOHORT_LOG_SUMMARY worker {\"lines\": 203, \"selected\": [\"SELinux: Could not set context for /dev/__properties__/property_info:  No data available\", \"Unknown class property_service10-31 13:28:43.803    26    26 E linux-property-worker: property_service.cpp:723 Init cannot set 'ro.bootmode' to 'unknown': SELinux permission check failed\", \"Unknown class property_service10-31 13:28:43.803    26    26 E linux-property-worker: property_service.cpp:723 Init cannot set 'ro.baseband' to 'unknown': SELinux permission check failed\", \"Unknown class property_service10-31 13:28:43.811    26    26 E linux-property-worker: property_service.cpp:832 Do not have permissions to set 'persist.wm.extensions.activity_embedding_guard_with_android_15' to 'false' in property file '/product/etc/build.prop': SELinux permission check failed\", \"Unknown class property_service10-31 13:28:43.811    26    26 E linux-property-worker: property_service.cpp:723 Init cannot set 'persist.sys.usb.config' to 'none': SELinux permission check failed\", \"Unknown class property_service10-31 13:28:43.811    26    26 E linux-property-worker: property_service.cpp:723 Init cannot set 'ro.property_service.version' to '2': SELinux permission check failed\", \"Unknown class property_service10-31 13:28:43.831    26    27 E linux-property-worker: property_service.cpp:723 Init cannot set 'ro.persistent_properties.ready' to 'true': SELinux permission check failed\"]}\r\nCOHORT_LOG_SUMMARY manager {\"lines\": 0, \"selected\": []}\r\nCOHORT_LOG_SUMMARY client {\"lines\": 0, \"selected\": []}\r\nSECURITY_UNCHANGED {\"state\": \"observed\", \"version\": 1, \"sequence\": 0, \"enforcing\": 0, \"policyload\": 0, \"deny_unknown\": 1}\r\n",
+  "cleanup": {
+    "owned_process_group": "verified",
+    "temporary_root": "removed"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "The executable digest is a prelaunch file sample; matching path metadata immediately after spawn does not prove an atomic operating-system image binding.",
+    "Process trees are sampled and may omit short-lived descendants.",
+    "Process-tree sampling ended with an incomplete observation.",
+    "Filesystem observations are before/after snapshots, not syscall traces.",
+    "Inherited host environment variables are not recorded and may affect results.",
+    "No filesystem observation paths were selected; filesystem effects remain unknown.",
+    "Process sampling has incomplete observations: /proc/11491/environ: EACCES: Error: EACCES: permission denied, open '/proc/11491/environ'. See truncation_details.process."
+  ],
+  "residual_unknowns": [
+    {
+      "scope": "process",
+      "reason": "Process trees are sampled and may omit short-lived descendants."
+    },
+    {
+      "scope": "process",
+      "reason": "The executable digest is a prelaunch file sample; operating-system image binding is not atomically observed."
+    },
+    {
+      "scope": "environment",
+      "reason": "Inherited host environment variables are not recorded."
+    },
+    {
+      "scope": "network",
+      "reason": "Network activity is not observed by this capture."
+    },
+    {
+      "scope": "filesystem",
+      "reason": "No filesystem observation paths were selected; filesystem effects remain unknown."
+    },
+    {
+      "scope": "process",
+      "reason": "Process sampling has incomplete observations: /proc/11491/environ: EACCES: Error: EACCES: permission denied, open '/proc/11491/environ'. See truncation_details.process."
+    }
+  ],
+  "truncated": true,
+  "note": "Expected negative integration, wrapper0 means observations collected. Not service readiness. Sanitized derived projection, not complete authenticated evidence."
+}

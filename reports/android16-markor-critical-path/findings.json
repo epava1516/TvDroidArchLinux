@@ -1,0 +1,91 @@
+{
+  "observed_at": "2026-10-31T13:36:02.117718+00:00",
+  "base_commit": "311c25f7c351880fabdc22bff5c749f97937484b",
+  "scope": "Priority correction and actual integration of original AOSP property service/manager/client prerequisites; no APK availability or MAC deployment acceptance.",
+  "current_host": "Read-only private status: LTS6.18.59, SELinux active/enforcing0/policyload0. Global state unchanged after live diagnostics.",
+  "verified_2f31032": "All ten evidence hashes in its checkpoint match current files AND git blobs at2f31032. Nine tests cover checker, Binder probe plain/SID real transaction/reply; SID string/cross-UID authorization not verified. Old -95 not current blocker. No redundant Binder rerun.",
+  "experiments": [
+    {
+      "evidence": "manager-mcp.json",
+      "result": "Unmodified GSI servicemanager UID1000/caps0/NNP1 with genuine visible SELinux/private Binder remains alive. Unmodified service list UID10000 times out; not service availability."
+    },
+    {
+      "evidence": "manager-stacks-mcp.json",
+      "result": "Manager do_epoll_wait with Binder/eventpoll/timerfd; client futex/no Binder FD. Original BackendUnifiedServiceManager source waits for servicemanager.ready. Decision: integrate original property service, do not manufacture ready."
+    },
+    {
+      "evidence": "original-cohort-initial-mcp.json",
+      "result": "Initial harness terminated with signal9 under outer22s and CPU12 limits; exact kill source not distinguished. Startup/cleanup recv loops mishandled EOF. No integration result accepted; native log retained. Corrected bounded EOF handling in final harness."
+    },
+    {
+      "evidence": "original-cohort-final-mcp.json",
+      "result": "Original property subsystem rejects initial properties, service version and persistent readiness: Unknown class property_service, context property_info ENODATA. Worker actual exit1 without startup ACK; manager/client not launched. Demonstrated immediate blocker is MAC class/context integration, not Binder -95. Diagnostic wrapper0 means observations recorded."
+    },
+    {
+      "evidence": "original-image-labels.json",
+      "result": "Original GSI ext4 hash matches retained factory input; read-only debugfs finds original init/manager/zygote/SF/service-context labels. hwmanager symlink label differs from resolved system_ext target. Prefer original filesystem images read-only with metadata preserved, not unlabeled debugfs extraction. No live mounting/label assignment or signature equivalence proven by this inspection."
+    }
+  ],
+  "decision": "Finish in-progress supervisor as separate311c25f (pushed), stop expanding helper APIs. Next functional experiment is MC1: coherent original properties+servicemanager+legitimate original client with real contexts/classes, before framework/Markor. Prepare original-image/overlay/identity/NNP/cgroup candidate and host recovery using canonical S0\u2013S2; no load/enforce without fresh authorization.",
+  "source_links": [
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/binder-contract-study-1/libs/binder/BackendUnifiedServiceManager.cpp",
+      "sha256": "2649c48c9583709e55889c930aec2317d1f7995bd193ad5091843ee0e64a6f1f",
+      "revision": "fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103",
+      "lines": "543\u2013550: actual original wait for servicemanager.ready"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/binder-contract-study-1/libs/binder/IServiceManager.cpp",
+      "sha256": "142e9567f3d6f940d6190db5e5bbc3216198abd56305d0fb13d6061da43a59e2",
+      "revision": "fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103",
+      "lines": "333\u2013340: backend selected by defaultServiceManager"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/selinux/source/external/selinux/libselinux/src/checkAccess.c",
+      "revision": "085c131ad1b984bfa8ffdafee7a976e9d89f403c",
+      "lines": "21\u201359: enabled gate, class lookup and deny_unknown",
+      "sha256": "32c555877b6ff1e801a5f2c826f87028f06d5f16fdd08476ac12ed9319c7758e"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/init/property_service.cpp",
+      "revision": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+      "lines": "162\u2013175,1519\u20131536: original permission check and property service startup",
+      "sha256": "ac68c4c4de5ef26366498d39d0945ba2ab06b022e24a7a157853b66a4b8a3b3c"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/bin/servicemanager",
+      "sha256": "7b501f2aa2c1ea1f2b036461bdadde576c9fff78d44bf6d7434faf5aac717996"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/bin/service",
+      "sha256": "3180b91354d8dccf5e12bc51f2849020f6de1e21439581fc967e05cf017931cd"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/linux-failure-sink-build-1/linux-property-worker",
+      "sha256": "5f1572b0cd2424bb6bcb3332483f44760e01dee6ce56396cbfd1bf36008901d4"
+    }
+  ],
+  "limitations": [
+    "Live trials use host Python namespace/bootstrap supervisor; not original init Service::Start/cohort integration, no Android boot.",
+    "Diagnostic root property initializer retains broad capabilities; real identities/least privilege, labels and recovery remain unverified.",
+    "Genuine SELinux filesystem is private and original-libselinux-visible; load/enforce/other controls bind-remounted read-only. This is not isolation of global SELinux policy.",
+    "Initial harness bounded signal9 termination retained; final direct worker failure1 authoritative. MCP projections retain incomplete sampling/identity/environment/filesystem limits.",
+    "Property class negative does not prove a loaded candidate will work or solve further dependencies. Original framework/services/graphics/Markor remain open.",
+    "ARM/GMS/DRM remain separate compatibility goals, not initial Markor blockers."
+  ],
+  "next": "Complete the concrete MC1 deployment candidate and S0\u2013S2 acceptance checks in ARQUITECTURA, preserving original read-only image labels. Resolve trusted bootstrap and whole-cohort NNP/capability/FD/device/cgroup contract; only then request authorization for the exact policy load. On approval execute original property publication\u2192manager registration/list\u2192denials; then MC2\u2013MC5 to full Markor.",
+  "external_logs": [
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/markor-original-cohort-1/worker.log",
+      "sha256": "8060676daf41c0439fff1673899ad35e42eb35501d26673f1b4a7ffed1fb04c9",
+      "bytes": 50583
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/markor-original-cohort-2/worker.log",
+      "sha256": "691f23a182b4ea9fa446c4ea3b300957ebf91e4f04f3bfe8b07f8b9a501b446b",
+      "bytes": 50583
+    }
+  ]
+}

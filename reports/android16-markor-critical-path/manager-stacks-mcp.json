@@ -1,0 +1,54 @@
+{
+  "evidence_id": "ev_b59b155968a060ad35b8967f4646291eb7f50ffd7639c5e1f0f1a9866854c06c",
+  "authority": "controlled-replay",
+  "confidence": "observed",
+  "exit": {
+    "code": 0,
+    "signal": 0,
+    "reason": "exited"
+  },
+  "output": "BLOCKED_PROCESS manager {\"wchan\": \"do_epoll_wait\", \"syscall\": \"281 0x7 0x7ffcb70a1880 0x10 0xffffffff 0x0 0x8 0x7ffcb70a1808 0x7f2b5a18e6da\\n\", \"status\": \"Name:\\tservicemanager\\nUmask:\\t0022\\nState:\\tS (sleeping)\\nTgid:\\t26\\nNgid:\\t0\\nPid:\\t26\\nPPid:\\t1\\nTracerPid:\\t0\\nUid:\\t1000\\t1000\\t1000\\t1000\\nGid:\\t1000\\t1000\\t1000\\t1000\\nFDSize:\\t64\\nGroups:\\t \\nNStgid:\\t26\\nNSpid:\\t26\\nNSpgid:\\t0\\nNSsid:\\t0\\nKthread:\\t0\\nVmPeak:\\t10895980 kB\\nVmSize:\\t10895980 kB\\nVmLck:\\t       0 kB\\nVmPin:\\t       0 kB\\nVmHWM:\\t    7076 kB\\nVmRSS:\\t    7076 kB\\nRssAnon:\\t    1112 kB\\nRssFile:\\t    5964 kB\\nRssShmem:\\t       0 kB\\nVmData:\\t    7652 kB\\nVmStk:\\t     132 kB\\nVmExe:\\t      60 kB\\nVmLib:\\t    5224 kB\\nVmPTE:\\t     204 kB\\nVmSwap:\\t       0 kB\\nHugetlbPages:\\t       0 kB\\nCoreDumping:\\t0\\nTHP_enabled:\\t1\\nuntag_mask:\\t0xffffffffffffffff\\nThreads:\\t2\\nSigQ:\\t0/31506\\nSigPnd:\\t0000000000000000\\nShdPnd:\\t0000000000000000\\nSigBlk:\\t0000000000000000\\nSigIgn:\\t0000002000000000\\nSigCgt:\\t0000004c400084f8\\nCapInh:\\t0000000000000000\\nCapPrm:\\t0000000000000000\\nCapEff:\\t0000000000000000\\nCapBnd:\\t000001ffffffffff\\nCapAmb:\\t0000000000000000\\nNoNewPrivs:\\t1\\nSeccomp:\\t0\\nSeccomp_filters:\\t0\\nSpeculation_Store_Bypass:\\tvulnerable\\nSpeculationIndirectBranch:\\talways enabled\\nCpus_allowed:\\tf\\nCpus_allowed_list:\\t0-3\\nMems_allowed:\\t00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001\\nMems_allowed_list:\\t0\\nvoluntary_ctxt_switches:\\t3\\nnonvoluntary_ctxt_switches:\\t5\\nx86_Thread_features:\\t\\nx86_Thread_features_locked:\\t\\n\", \"fds\": {\"0\": \"/dev/pts/1\", \"1\": \"/home/tv/repositorio-principal/dist/aosp16/markor-manager-current-host-2/manager.log\", \"2\": \"/home/tv/repositorio-principal/dist/aosp16/markor-manager-current-host-2/manager.log\", \"3\": \"anon_inode:[eventfd]\", \"4\": \"/dev/binderfs/binder\", \"5\": \"socket:[65594]\", \"6\": \"anon_inode:[eventfd]\", \"7\": \"anon_inode:[eventpoll]\", \"8\": \"anon_inode:[timerfd]\"}}\r\nBLOCKED_PROCESS client {\"wchan\": \"futex_do_wait\", \"syscall\": \"202 0x7f1bae897004 0x0 0xaa 0x7ffe64d5e7d0 0x0 0x7ffe00000000 0x7ffe64d5e768 0x7f1bacaf1478\\n\", \"status\": \"Name:\\tservice\\nUmask:\\t0022\\nState:\\tS (sleeping)\\nTgid:\\t27\\nNgid:\\t0\\nPid:\\t27\\nPPid:\\t1\\nTracerPid:\\t0\\nUid:\\t10000\\t10000\\t10000\\t10000\\nGid:\\t10000\\t10000\\t10000\\t10000\\nFDSize:\\t64\\nGroups:\\t \\nNStgid:\\t27\\nNSpid:\\t27\\nNSpgid:\\t0\\nNSsid:\\t0\\nKthread:\\t0\\nVmPeak:\\t10803308 kB\\nVmSize:\\t10803308 kB\\nVmLck:\\t       0 kB\\nVmPin:\\t       0 kB\\nVmHWM:\\t    5524 kB\\nVmRSS:\\t    5524 kB\\nRssAnon:\\t     724 kB\\nRssFile:\\t    4800 kB\\nRssShmem:\\t       0 kB\\nVmData:\\t    2728 kB\\nVmStk:\\t     132 kB\\nVmExe:\\t      28 kB\\nVmLib:\\t    3624 kB\\nVmPTE:\\t     116 kB\\nVmSwap:\\t       0 kB\\nHugetlbPages:\\t       0 kB\\nCoreDumping:\\t0\\nTHP_enabled:\\t1\\nuntag_mask:\\t0xffffffffffffffff\\nThreads:\\t1\\nSigQ:\\t0/31506\\nSigPnd:\\t0000000000000000\\nShdPnd:\\t0000000000000000\\nSigBlk:\\t0000000000000000\\nSigIgn:\\t0000002000000000\\nSigCgt:\\t0000004c400084f8\\nCapInh:\\t0000000000000000\\nCapPrm:\\t0000000000000000\\nCapEff:\\t0000000000000000\\nCapBnd:\\t000001ffffffffff\\nCapAmb:\\t0000000000000000\\nNoNewPrivs:\\t1\\nSeccomp:\\t0\\nSeccomp_filters:\\t0\\nSpeculation_Store_Bypass:\\tvulnerable\\nSpeculationIndirectBranch:\\talways enabled\\nCpus_allowed:\\tf\\nCpus_allowed_list:\\t0-3\\nMems_allowed:\\t00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001\\nMems_allowed_list:\\t0\\nvoluntary_ctxt_switches:\\t5\\nnonvoluntary_ctxt_switches:\\t4\\nx86_Thread_features:\\t\\nx86_Thread_features_locked:\\t\\n\", \"fds\": {\"0\": \"/dev/pts/1\", \"1\": \"/home/tv/repositorio-principal/dist/aosp16/markor-manager-current-host-2/client.log\", \"2\": \"/home/tv/repositorio-principal/dist/aosp16/markor-manager-current-host-2/client.log\", \"3\": \"socket:[64752]\"}}\r\nMANAGER_DIAGNOSTIC {\"client_exit\": -9, \"manager_exit_before_cleanup\": null, \"protected_controls\": [\"load\", \"enforce\", \"checkreqprot\", \"disable\", \"commit_pending_bools\"], \"status_before\": {\"state\": \"observed\", \"version\": 1, \"sequence\": 0, \"enforcing\": 0, \"policyload\": 0, \"deny_unknown\": 1}}\r\nORIGINAL_MANAGER_OUTPUT DIAGNOSTIC_IDENTITY {\"Uid\": \"1000\\t1000\\t1000\\t1000\", \"Gid\": \"1000\\t1000\\t1000\\t1000\", \"CapEff\": \"0000000000000000\", \"CapPrm\": \"0000000000000000\", \"NoNewPrivs\": \"1\"}\r\nlibc: Using old property service protocol (\"ro.property_service.version\" is not set)\r\n\r\nORIGINAL_CLIENT_OUTPUT DIAGNOSTIC_IDENTITY {\"Uid\": \"10000\\t10000\\t10000\\t10000\", \"Gid\": \"10000\\t10000\\t10000\\t10000\", \"CapEff\": \"0000000000000000\", \"CapPrm\": \"0000000000000000\", \"NoNewPrivs\": \"1\"}\r\n\r\nSECURITY_UNCHANGED {\"state\": \"observed\", \"version\": 1, \"sequence\": 0, \"enforcing\": 0, \"policyload\": 0, \"deny_unknown\": 1}\r\n",
+  "cleanup": {
+    "owned_process_group": "verified",
+    "temporary_root": "removed"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "The executable digest is a prelaunch file sample; matching path metadata immediately after spawn does not prove an atomic operating-system image binding.",
+    "Process trees are sampled and may omit short-lived descendants.",
+    "Process-tree sampling ended with an incomplete observation.",
+    "Filesystem observations are before/after snapshots, not syscall traces.",
+    "Inherited host environment variables are not recorded and may affect results.",
+    "No filesystem observation paths were selected; filesystem effects remain unknown.",
+    "Cumulative rendered state and visible-line bytes exceeded output_bytes; whole rendered frames were omitted. Raw PTY coverage is reported separately. See truncation_details.rendered_terminal.",
+    "Process sampling has incomplete observations: /proc/11100/environ: EACCES: Error: EACCES: permission denied, open '/proc/11100/environ'. See truncation_details.process."
+  ],
+  "residual_unknowns": [
+    {
+      "scope": "process",
+      "reason": "Process trees are sampled and may omit short-lived descendants."
+    },
+    {
+      "scope": "process",
+      "reason": "The executable digest is a prelaunch file sample; operating-system image binding is not atomically observed."
+    },
+    {
+      "scope": "environment",
+      "reason": "Inherited host environment variables are not recorded."
+    },
+    {
+      "scope": "network",
+      "reason": "Network activity is not observed by this capture."
+    },
+    {
+      "scope": "filesystem",
+      "reason": "No filesystem observation paths were selected; filesystem effects remain unknown."
+    },
+    {
+      "scope": "process",
+      "reason": "Process sampling has incomplete observations: /proc/11100/environ: EACCES: Error: EACCES: permission denied, open '/proc/11100/environ'. See truncation_details.process."
+    }
+  ],
+  "truncated": true,
+  "note": "Sanitized derived projection; observations only, not services ready."
+}

@@ -1,0 +1,54 @@
+{
+  "evidence_id": "ev_a1cf31a5bc02a0bc19a6ff8d4d14f849ed4d6796e79d6cb10909f83b88d4b986",
+  "operation": "capture_process_scenario",
+  "authority": "controlled-replay",
+  "confidence": "observed",
+  "exit": {
+    "code": 0,
+    "signal": 0,
+    "reason": "exited"
+  },
+  "output": "MANAGER_DIAGNOSTIC {\"client_exit\": -9, \"manager_exit_before_cleanup\": null, \"protected_controls\": [\"load\", \"enforce\", \"checkreqprot\", \"disable\", \"commit_pending_bools\"], \"status_before\": {\"state\": \"observed\", \"version\": 1, \"sequence\": 0, \"enforcing\": 0, \"policyload\": 0, \"deny_unknown\": 1}}\r\nORIGINAL_MANAGER_OUTPUT DIAGNOSTIC_IDENTITY {\"Uid\": \"1000\\t1000\\t1000\\t1000\", \"Gid\": \"1000\\t1000\\t1000\\t1000\", \"CapEff\": \"0000000000000000\", \"CapPrm\": \"0000000000000000\", \"NoNewPrivs\": \"1\"}\r\nlibc: Using old property service protocol (\"ro.property_service.version\" is not set)\r\n\r\nORIGINAL_CLIENT_OUTPUT DIAGNOSTIC_IDENTITY {\"Uid\": \"10000\\t10000\\t10000\\t10000\", \"Gid\": \"10000\\t10000\\t10000\\t10000\", \"CapEff\": \"0000000000000000\", \"CapPrm\": \"0000000000000000\", \"NoNewPrivs\": \"1\"}\r\n\r\nSECURITY_UNCHANGED {\"state\": \"observed\", \"version\": 1, \"sequence\": 0, \"enforcing\": 0, \"policyload\": 0, \"deny_unknown\": 1}\r\n",
+  "cleanup": {
+    "owned_process_group": "verified",
+    "temporary_root": "removed"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "The executable digest is a prelaunch file sample; matching path metadata immediately after spawn does not prove an atomic operating-system image binding.",
+    "Process trees are sampled and may omit short-lived descendants.",
+    "Process-tree sampling ended with an incomplete observation.",
+    "Filesystem observations are before/after snapshots, not syscall traces.",
+    "Inherited host environment variables are not recorded and may affect results.",
+    "No filesystem observation paths were selected; filesystem effects remain unknown.",
+    "Process sampling has incomplete observations: /proc/10866/environ: EACCES: Error: EACCES: permission denied, open '/proc/10866/environ'. See truncation_details.process."
+  ],
+  "residual_unknowns": [
+    {
+      "scope": "process",
+      "reason": "Process trees are sampled and may omit short-lived descendants."
+    },
+    {
+      "scope": "process",
+      "reason": "The executable digest is a prelaunch file sample; operating-system image binding is not atomically observed."
+    },
+    {
+      "scope": "environment",
+      "reason": "Inherited host environment variables are not recorded."
+    },
+    {
+      "scope": "network",
+      "reason": "Network activity is not observed by this capture."
+    },
+    {
+      "scope": "filesystem",
+      "reason": "No filesystem observation paths were selected; filesystem effects remain unknown."
+    },
+    {
+      "scope": "process",
+      "reason": "Process sampling has incomplete observations: /proc/10866/environ: EACCES: Error: EACCES: permission denied, open '/proc/10866/environ'. See truncation_details.process."
+    }
+  ],
+  "truncated": true,
+  "note": "Sanitized derived projection, not complete authenticated MCP evidence. Diagnostic wrapper exit0 means observations collected, never service availability."
+}

@@ -1,5 +1,9 @@
 # Índice de evidencias
 
+- [Prioridad Markor y cohorte original](../reports/android16-markor-critical-path/findings.json):2f31032/evidencias contrastadas; host actual permisivo/policyload0. Gestor aislado en epoll/cliente espera propiedad; integración real de propiedades falla por clase MAC desconocida, salida1 sin ACK. Imagen ext4 original conserva labels (metadatos offline). Propuesta MC0/MC1 sin carga/enforce; [checkpoint](../reports/android16-markor-critical-path/checkpoint.json).
+- [Hito de supervisor terminado al cambiar prioridad](../reports/android16-supervisor-observation/findings.json):25 pruebas Linux, clippy/build y MCP diagnóstico0; observación pidfd/canal tras arranque. Sin servicio/APK aceptada; no línea auxiliar prioritaria. [Checkpoint del hito](../reports/android16-supervisor-observation/checkpoint.json).
+
+
 - [Framing del supervisor](../reports/android16-supervisor-framing/findings.json): fallo previo reproducido y19 pruebas Linux pasan tras corrección; errores EPERM del sandbox conservados. Revisión de seapp/seccomp original separada de ejecución. Sin monitor continuo ni APK aceptada. [Checkpoint](../reports/android16-supervisor-framing/checkpoint.json).
 
 
