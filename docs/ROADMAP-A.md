@@ -10,7 +10,7 @@ instalación, herramientas o regresiones útiles. No reiniciar VM ni cliente.
 | Puerta | Dependencias y trabajo | Evidencia de salida | Estado |
 | --- | --- | --- | --- |
 | R0 · procedencia | Verificar versión/rama/tag/build, resolver todos los repositorios, elegir target y artefactos coherentes; revisar licencias y mantenimiento | Manifiesto con revisiones exactas/procedencia, hashes de binarios y configuración; separación referencia vs parches de seguridad | Tag/rama/build y manifiesto de 1.013 commits fijados/reproducidos; diez objetos principales contrastados. GSI x86_64 coincidente y preparación de 36 APEX/4.395 archivos reproducida. Configuración parcial ejecutada; equivalencia fuente/binario completa, licencias y seguridad pendientes |
-| R1 · runtime Bionic coherente | R0; Bionic/linker/ART/libcore/APEX/framework/JNI/recursos y configuración original; bootclasspath/classloaders/namespaces/propiedades y kernel | Ejecución reproducible del motor, cierre de dependencias/configuración/identidad y fallos honestos; no mezclar Android13/host sin frontera probada | Parcial A16: namespaces y classpaths originales generados; consumidores sin rutas aplanadas; regresión DEX ejecutada con BCP46. ART estricto por APEX pasa, global falla por libdexfiled.so ausente. App_process retorna temprano por configuración boot incompleta (ABI global); Inventario completo reproducido; compilador21 y cabeceras de plataforma contrastados, un objeto Bionic producido. Sondeo de52 fuentes con hostclang23 incompleto (14 objetos/38 fallos). Libpropertyinfo parser/serializer y CRT originales ejecutados en Bionic (metadatos, árbol y 4.145 lecturas cruzadas). Flags de dos módulos generados por aconfig original con perfil fuente BP4A; paridad con GSI sin probar. Protoc host original generó tres esquemas init, cuyas fuentes compilaron para Bionic; no servicio ejecutado. Libinit completo, entrada supervisada y fronteras reales de control/política/persistencia pendientes; sin second_stage. Servicio/política, cierre completo y aplicaciones pendientes; SELinux no activo |
+| R1 · runtime Bionic coherente | R0; Bionic/linker/ART/libcore/APEX/framework/JNI/recursos y configuración original; bootclasspath/classloaders/namespaces/propiedades y kernel | Ejecución reproducible del motor, cierre de dependencias/configuración/identidad y fallos honestos; no mezclar Android13/host sin frontera probada | Parcial A16: namespaces y classpaths originales generados; consumidores sin rutas aplanadas; regresión DEX ejecutada con BCP46. ART estricto por APEX pasa, global falla por libdexfiled.so ausente. App_process retorna temprano por configuración boot incompleta (ABI global); Inventario completo reproducido; compilador21 y cabeceras de plataforma contrastados, un objeto Bionic producido. Sondeo histórico hostclang23: 14 objetos/38 fallos. Recorrido nativo clang21 vigente:52 fuentes originales compiladas y archivo prototipo63 miembros; equivalencia Soong/sanitización pendiente. Libpropertyinfo parser/serializer y CRT originales ejecutados en Bionic (metadatos, árbol y 4.145 lecturas cruzadas). Flags de dos módulos generados por aconfig original con perfil fuente BP4A; paridad con GSI sin probar. Protoc host original generó tres esquemas init, cuyas fuentes compilaron para Bionic; no servicio ejecutado. Libinit completo, entrada supervisada y fronteras reales de control/política/persistencia pendientes; sin second_stage. Servicio/política, cierre completo y aplicaciones pendientes; SELinux no activo |
 | R2 · comportamiento y servicios | R1; evaluar unidades originales completas de paquetes/permisos/Activity/Binder/Content/servicios/segundo plano; conservar agrupaciones grandes si conviene | Semántica real, callbacks/concurrencia/error/persistencia/muerte/IPC y separación por app; cierre transitivo. Conflicto con Android completo documentado antes de cambiar alcance | Fuentes de RuntimeInit/ActivityThread/Binder identificadas; no ejecutadas. No asumir separación fácil de system_server ni usar main directo como lanzamiento APK |
 | R3 · salida gráfica y entrada | R1/R2; contrastar primero SF original, WM/Surface/BufferQueue/HWC/RenderEngine y puente Wayland hacia Smithay | Buffers/fences/ownership, aceleración/composición/ventanas/escalado/foco; teclado/ratón/táctil/mando; multimedia con superficie y sync AV | Hipótesis no ejecutada; no excluir SF por su nombre ni sustituirlo por widgets propios |
 | R4 · vertical Markor | R0–R3 e instalación/firmas/datos; APK intacta y recorrido de nota ya definido | Instalar→lanzar→UI original→entrada/editar→guardar/proveedor elegido→servicios→cerrar→reabrir; bytes/eventos/frames y fallos trazables | Nueve etapas no probadas sobre A16 |
@@ -38,7 +38,38 @@ no es certificación. Referencia Android externa cuando sea posible, sin arranca
 otro Android local sin autorización. GMS/microG/DRM/OEM/backends siguen con pruebas
 y requisitos externos separados en la matriz; entender una interfaz no las cierra.
 
+## Unidad nativa libinit · evidencia parcial vigente
+
+[Validación](../reports/android16-libinit-native-unit/validation.json): las 52 fuentes
+originales compilan con clang21/Bionic y perfil global original. 51 objetos se
+reutilizan tras igualdad real del preprocesado y comprobación SHA; init.cpp se
+compila al añadir el include exportado original de libxml2. Archivo prototipo de
+63 miembros: 52 fuentes, tres protobuf, dos XSD y seis libcap. No equivale a Soong
+completo: sanitización/configuración de producto y alineación de flags de los
+protobuf siguen abiertas, junto al enlace y ejecución supervisada de PropertyInit.
+
+XSDC original genera el esquema APEX; sus dos fuentes C++ compilan para Bionic.
+Rust1.88 original usa su std Android x86_64, sin objetos glibc en target. La FFI
+original genfslabelsversion se enlaza y ejecuta en cuatro casos reales: ausente,
+válido, malformado y permiso denegado. UID10000, sin grupos/capacidades, NNP1.
+El fallback original 202404 no demuestra mediación SELinux. No servidor, boot
+Android, aplicación ni etapa de la matriz aceptados por estas pruebas.
+
+
+## Entrada PropertyInit original · fallo vigente
+
+[Pruebas y alcance](../reports/android16-propertyinit-entry/validation.json):
+146 fuentes originales de protobuf/Abseil compilan para Bionic; sus dependencias
+cierran el enlace de la entrada supervisada PropertyInit (salida0). Ejecución real
+del inicializador original aborta (salida127) por faltar
+`/vendor/etc/selinux/plat_sepolicy_vers.txt` en el perfil GSI de sólo sistema.
+No readiness, sockets ni APK. El inicializador es UID0 con capacidades root en
+namespaces privados; esto no acredita aislamiento de aplicaciones ni SELinux.
+Siguiente: contrastar generación y selección original del perfil vendor/política,
+sin fabricar valores, omitir comprobaciones o iniciar Android completo.
+
 ## Historia · etapas anteriores, no prioridad vigente
+
 
 # Roadmap anterior · laboratorio Android13
 
@@ -408,20 +439,3 @@ ContextImpl se inicializa; PackageParser falla por nativeOpenXml sin enlazar.
 Prioridad: reutilizar JNI original de recursos/XML y continuar Application
 original y recorrido completo de Markor. El límite anterior de TetheringManager
 queda superado en este perfil, no mediante stubs. A4/A5 y H7–H9 siguen abiertos.
-
-## Unidad nativa libinit · evidencia parcial vigente
-
-[Validación](../reports/android16-libinit-native-unit/validation.json): las 52 fuentes
-originales compilan con clang21/Bionic y perfil global original. 51 objetos se
-reutilizan tras igualdad real del preprocesado y comprobación SHA; init.cpp se
-compila al añadir el include exportado original de libxml2. Archivo prototipo de
-63 miembros: 52 fuentes, tres protobuf, dos XSD y seis libcap. No equivale a Soong
-completo: sanitización/configuración de producto y alineación de flags de los
-protobuf siguen abiertas, junto al enlace y ejecución supervisada de PropertyInit.
-
-XSDC original genera el esquema APEX; sus dos fuentes C++ compilan para Bionic.
-Rust1.88 original usa su std Android x86_64, sin objetos glibc en target. La FFI
-original genfslabelsversion se enlaza y ejecuta en cuatro casos reales: ausente,
-válido, malformado y permiso denegado. UID10000, sin grupos/capacidades, NNP1.
-El fallback original 202404 no demuestra mediación SELinux. No servidor, boot
-Android, aplicación ni etapa de la matriz aceptados por estas pruebas.

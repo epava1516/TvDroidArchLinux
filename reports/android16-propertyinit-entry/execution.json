@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "sudo",
+    "-n",
+    "unshare",
+    "--mount",
+    "--pid",
+    "--fork",
+    "--net",
+    "--ipc",
+    "--uts",
+    "--cgroup",
+    "python",
+    "/tmp/archtv-propertyinit-execute.py"
+  ],
+  "exit_code": 127,
+  "elapsed_seconds": 0.4538926950044697,
+  "scope": "Actual original PropertyInit executed, fatal before area readiness because required original vendor policy version input is absent; root configuration initializer, not unprivileged app or policy mediation acceptance",
+  "readiness": false,
+  "Android_boot": false,
+  "APK_started": false
+}

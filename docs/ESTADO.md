@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-libinit-native-unit/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-propertyinit-entry/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -33,6 +33,19 @@ no equivalen automáticamente a Android completo; estudiar cierres reales.
 | Configuración parcial A16 | Namespaces/classpaths y Java del motor probados; app_process muestra configuración boot incompleta y no crea VM. Servicio/IPC/política SELinux y aplicaciones pendientes. |
 | Herramientas | REA MCP respondió realmente; análisis ELF/APK estático previo y estado actual, sin presentarlos como ejecución ni CLI como conexión. |
 | No probado | Nueve etapas de las APK sobre A16; SF→Wayland, aceleración/entrada/AV/TV, aislamiento por app/Binder, GMS/DRM/OEM/WebView, traducción ISA/32/64, presupuestos, instalación/actualización/seguridad actualizada. |
+
+
+## Entrada PropertyInit original · fallo vigente
+
+[Pruebas y alcance](../reports/android16-propertyinit-entry/validation.json):
+146 fuentes originales de protobuf/Abseil compilan para Bionic; sus dependencias
+cierran el enlace de la entrada supervisada PropertyInit (salida0). Ejecución real
+del inicializador original aborta (salida127) por faltar
+`/vendor/etc/selinux/plat_sepolicy_vers.txt` en el perfil GSI de sólo sistema.
+No readiness, sockets ni APK. El inicializador es UID0 con capacidades root en
+namespaces privados; esto no acredita aislamiento de aplicaciones ni SELinux.
+Siguiente: contrastar generación y selección original del perfil vendor/política,
+sin fabricar valores, omitir comprobaciones o iniciar Android completo.
 
 ## Checkpoint y siguiente acción
 

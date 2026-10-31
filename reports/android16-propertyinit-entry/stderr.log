@@ -1,0 +1,4 @@
+PROPERTY_INIT_BEGIN
+10-31 03:20:45.210     1     1 E entry   : selinux.cpp:188 Failed to read /vendor/etc/selinux/plat_sepolicy_vers.txt: No such file or directory
+10-31 03:20:45.212     1     1 F entry   : selinux.cpp:555 Could not read vendor SELinux version
+libc: failed to connect to tombstoned: No such file or directory

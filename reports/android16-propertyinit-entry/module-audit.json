@@ -1,0 +1,14 @@
+{
+  "scope": "Module closure and original copied header provenance, not binary equivalence or execution",
+  "abseil_module_count": 123,
+  "source_count": 146,
+  "unique_original_headers": 249,
+  "header_entries": 250,
+  "generated_headers_verified": true,
+  "host_objects_used_in_native_target": false,
+  "open_configuration": [
+    "Soong SDK/stl variant and target header selection parity",
+    "full product flags and sanitizer profile",
+    "linking and execution"
+  ]
+}

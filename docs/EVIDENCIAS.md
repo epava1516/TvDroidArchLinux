@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+- [PropertyInit original: enlace y fallo ejecutado](../reports/android16-propertyinit-entry/validation.json): 146 fuentes nativas protobuf/Abseil; enlace0, ejecución127 por entrada vendor de política ausente. No readiness, política o APK. [Checkpoint vigente](../reports/android16-propertyinit-entry/checkpoint.json).
+
 - [Unidad libinit nativa y FFI Rust ejecutada](../reports/android16-libinit-native-unit/validation.json): 52 fuentes originales, archivo prototipo63 miembros; cuatro casos nativos Rust/Bionic ejecutados. No equivalencia Soong completa ni servicio/APK. [Checkpoint vigente](../reports/android16-libinit-native-unit/checkpoint.json).
 
 - [Protoc original y esquemas init nativos](../reports/android16-original-protoc/validation.json):

@@ -1,0 +1,74 @@
+{
+  "base_commit": "2b24405",
+  "scope": "Original native dependency closure and actual supervised PropertyInit early failure; not ready service/APK",
+  "protobuf_abseil_sources_compiled": 146,
+  "abseil_modules": 123,
+  "original_headers_verified": 249,
+  "native_link_exit": 0,
+  "execution_exit": 127,
+  "readiness": false,
+  "failure": "original vendor SELinux mapping version input absent from system-only GSI profile",
+  "privilege": "UID0 configuration initializer with root capabilities in private namespaces and readonly system/APEX; not app isolation acceptance",
+  "evidence": [
+    {
+      "path": "reports/android16-propertyinit-entry/entry.cpp",
+      "sha256": "4b5f6acb64a0630602fa87bece8e302d43abb63ba39fc6ab832cc4fda161395e"
+    },
+    {
+      "path": "reports/android16-propertyinit-entry/execution.json",
+      "sha256": "3d869d12235ebbcddaf75391ce089b30b28f5dc879454710a49bba43eb6d7100"
+    },
+    {
+      "path": "reports/android16-propertyinit-entry/link.json",
+      "sha256": "71afce5bbb5f97c59e72c473c6e59f8869bb837485ce2d4a0620343faf0e1757"
+    },
+    {
+      "path": "reports/android16-propertyinit-entry/module-audit.json",
+      "sha256": "923e2c12959fe8b91626064e172a1704d5eeef4f89b64c44f3ca6ed990bb8065"
+    },
+    {
+      "path": "reports/android16-propertyinit-entry/native-module.json",
+      "sha256": "6355da60098ab71c96d2820d22fd6c26c4c23101f320ef1ba5312961bb46fad8"
+    },
+    {
+      "path": "reports/android16-propertyinit-entry/rea-rust-notes.json",
+      "sha256": "1855997d6e2c8b699616ade2e807e3c0b6830c565307a8f4d14bd4b24247f0b3"
+    },
+    {
+      "path": "reports/android16-propertyinit-entry/reproduce/archtv-build-native-protobuf.py",
+      "sha256": "3fe80fa34f1e4726b8a89cb09c3c3434161263a4ad37cecbb0074a6a8c27d0c5"
+    },
+    {
+      "path": "reports/android16-propertyinit-entry/reproduce/archtv-finalize-native-protobuf.py",
+      "sha256": "15bf21d9e6f16c4ede250cb8fa64639d2635ae71158800befc4111428be978bf"
+    },
+    {
+      "path": "reports/android16-propertyinit-entry/reproduce/archtv-propertyinit-execute.py",
+      "sha256": "767836d36fa7002d0f27fabc8f114a352c51ff2d4baff8e77654f74a10a0de99"
+    },
+    {
+      "path": "reports/android16-propertyinit-entry/reproduce/archtv-propertyinit-link-next.py",
+      "sha256": "1b0e5356cda1565a6cfa214fd0abe1650864a41fa26cff18a9aa255715a029b5"
+    },
+    {
+      "path": "reports/android16-propertyinit-entry/reproduce/archtv-propertyinit-link-study.py",
+      "sha256": "dce887ad86cec4a909b26f04ce1e9835b19745db712b198403283f6099ddac17"
+    },
+    {
+      "path": "reports/android16-propertyinit-entry/stderr.log",
+      "sha256": "c33455faecf04543fc0b9b3a34585787f8759f36156b1ba0c804b839e049594e"
+    },
+    {
+      "path": "reports/android16-propertyinit-entry/stdout.log",
+      "sha256": "bb0fa6fc42cf061292cf88a478016aac7a9b0997ba3f1407a8ac03e333dfcc53"
+    }
+  ],
+  "not_accepted": [
+    "SELinux enforcement",
+    "property IPC",
+    "persistence",
+    "unprivileged application isolation",
+    "any real APK stage",
+    "complete Soong/product equivalence"
+  ]
+}

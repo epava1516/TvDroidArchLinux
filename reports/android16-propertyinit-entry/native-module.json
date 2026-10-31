@@ -1,0 +1,1177 @@
+{
+  "source_results": [
+    {
+      "module": "absl_debugging_demangle_internal",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/debugging/internal/demangle.cc",
+      "source_sha256": "3cf7f537c318df3e34cfec21d267f960e2afc3c23cb9cd9e9ba7ecde5b0ec4da",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/000-demangle.cc.o",
+      "object_sha256": "1d89dbcf1b21a912a5bb24cfa4c2644f1b426af97e9ef250723f1d1205266cf8",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_debugging_demangle_rust",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/debugging/internal/demangle_rust.cc",
+      "source_sha256": "17d94a1e685cb2620ac796dccb860ae7c40931f31f91174174c43b4ef73a05a8",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/001-demangle_rust.cc.o",
+      "object_sha256": "f3ae90dca584e95c31ca306a3d43877473d17b00256d818885a4c4d6692b7857",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_debugging_decode_rust_punycode",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/debugging/internal/decode_rust_punycode.cc",
+      "source_sha256": "132ab8eb665d87542bae70d74d45ce543bbbd88a898323185eb3cade9ff78b97",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/002-decode_rust_punycode.cc.o",
+      "object_sha256": "e93a90976a0318ca31c1a1592c425458a07d20c18ffba3cb47a12565c0c683ea",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_base",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/base/internal/cycleclock.cc",
+      "source_sha256": "cdbc48ce60c991af83e28e575c709157f9d40698b0578575c1f7af5c91014a88",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/003-cycleclock.cc.o",
+      "object_sha256": "cccadd2189c6a4ea9b8b9510b94f216d407ce53ba3a22538fdf9cb2da940077b",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_base",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/base/internal/spinlock.cc",
+      "source_sha256": "66c31ac0da8dc5726f5343ab1c0cc34dc79fe702fcf7171200554cbc22fa1cda",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/004-spinlock.cc.o",
+      "object_sha256": "77cfd6cf6760a91efda0a9a89913f10b63311b865b5c9f3d7ae27c8dbe4f9f93",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_base",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/base/internal/sysinfo.cc",
+      "source_sha256": "ed3bc1ef89bbdb91d51d2d4164919ba635a9cf912e35ad1477940599890378d0",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/005-sysinfo.cc.o",
+      "object_sha256": "fd31c3266f837548b0d2c645cc6a1611e1e3c3422a032fe689c2829f11e14e20",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_base",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/base/internal/thread_identity.cc",
+      "source_sha256": "15add2981dd37bd509ddacd063745c339e0d15169a6d16effb8da91db5bd8b6c",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/006-thread_identity.cc.o",
+      "object_sha256": "985df1b21ee7ea1ed9fd7352b086be292836cf60b9a80f1751513d7435f5f691",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_base",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/base/internal/unscaledcycleclock.cc",
+      "source_sha256": "b225c8ec569f2551327e234af25bba3661449bf7196d5117d6d3b971c7764581",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/007-unscaledcycleclock.cc.o",
+      "object_sha256": "752adb3adbd4d6a8c42cedc3f376c2f2ecb312eff191cb1b3e145f2dbee80144",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_base_log_severity",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/base/log_severity.cc",
+      "source_sha256": "efaaf59cd5f5eca44f828b7c9c8743e65f4f2d57d22623679c9863091c28dfa5",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/008-log_severity.cc.o",
+      "object_sha256": "34795ac585b2db82d75e2aec5d74f61e3f5d0ddf1610cbcd829bc876fd9a9e24",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_base_raw_logging_internal",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/base/internal/raw_logging.cc",
+      "source_sha256": "d9963fd759bf19228a95fad38dc7866ee7807ee6b9bbec64d8cefbbbf1344d2a",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/009-raw_logging.cc.o",
+      "object_sha256": "c2c800c8e86c55ca70b44eff47d2873ed0a32e8793032ff4dea26ed5414eec9e",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_base_spinlock_wait",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/base/internal/spinlock_wait.cc",
+      "source_sha256": "e989b018a2f8b6d3d1d20140c9f91f06804a579e3ba21a1632772d193349f322",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/010-spinlock_wait.cc.o",
+      "object_sha256": "23637a2931e36584a6f7acd9dbeeac6bf2e25ab5e75b4d8a9d81c1ae648f41d7",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_debugging_utf8_for_code_point",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/debugging/internal/utf8_for_code_point.cc",
+      "source_sha256": "76be75bbe34f71139ee6b92c7e11ac075e0b7e0c0787ba24b19d20af79765c7a",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/011-utf8_for_code_point.cc.o",
+      "object_sha256": "f36b9b881bf653aad8fc0368675d3664bdcd9ca77e493a3387fafebce4875ada",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/ascii.cc",
+      "source_sha256": "a5ed5f807b8ab6c9af2fe711743cdb4eb86acca561958f5327463b212facad1e",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/012-ascii.cc.o",
+      "object_sha256": "84b67428918591d30a56303f628e729fec614deb01453f150407e3ca9992a697",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/charconv.cc",
+      "source_sha256": "e852b59ebf25876e6c3680153a4ba5eb4b018e276792eb0ea04668ca72ddafa9",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/013-charconv.cc.o",
+      "object_sha256": "a9b1af03e05aa2695a7ffee85aa367d4c46495cbc9fdab2153dc02611e4147f5",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/escaping.cc",
+      "source_sha256": "d3f4620807956e48dd7f7a2d0cb82be353fae270a7102ce75a508ebd1b90cb2c",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/014-escaping.cc.o",
+      "object_sha256": "1f92a2295ec6e71cfb161bf76374cd5b3b7151f534b7f9fca43bac1f01da963b",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/internal/charconv_bigint.cc",
+      "source_sha256": "985fe74bb62b6b3770e14d9962f846dedf25950ea69fa34dce5ebc267692f586",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/015-charconv_bigint.cc.o",
+      "object_sha256": "969cc045e34d4803e5c1ce26a16587ddbf7ca2a07d0c2a5e90b0055c8b903f0e",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/internal/charconv_parse.cc",
+      "source_sha256": "aaad316845801e6c8423cf7c280f1329ea9ee4d4380e7caf4f96d6895f33cff0",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/016-charconv_parse.cc.o",
+      "object_sha256": "03bf91556ef591bfcd14d3fcbb72197bf0d9e57eeb65ea5ea1016aa12fa39122",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/internal/damerau_levenshtein_distance.cc",
+      "source_sha256": "f344c1c9327c01935322342374aa0ada0bde64d36792e847f5d5b5f350163502",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/017-damerau_levenshtein_distance.cc.o",
+      "object_sha256": "e78e2d7be28e5530993503fc748813a86d4c47fd56364e7de1ced9c293c073cc",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/internal/memutil.cc",
+      "source_sha256": "0e9e67a98e122760ca370df801486f919c58a905ee0a79817e6f56835298e4b1",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/018-memutil.cc.o",
+      "object_sha256": "fd08099ede0acae6a5a502882b15bd4607768f96acdf90704193bec19e7f0c57",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/internal/stringify_sink.cc",
+      "source_sha256": "08519bca178ff4c5c3c56980d25c90115bb0ce7a2d7386646eb0577ea8caade4",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/019-stringify_sink.cc.o",
+      "object_sha256": "2207254e73209ce82a4261dcf0d39d8b418af17bbd1372fa98d28522bbce49e2",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/match.cc",
+      "source_sha256": "0b415798611eb145520fd2af277c7f61490e070d316dca45937e2409d44219bd",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/020-match.cc.o",
+      "object_sha256": "7e725d1afb7498997068e30da4c9e7aac8d56ce99b2444566d275d7752986560",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/numbers.cc",
+      "source_sha256": "56d3fa9bf8da441d8475aa437a38f51452c6a43087d32379423c35e6d07684f6",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/021-numbers.cc.o",
+      "object_sha256": "329f672ec4441d5aed444a71477d9ce91c025f7e0e2785a4ea7c5437ebf2b4e1",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/str_cat.cc",
+      "source_sha256": "fded8aaf44616b24a8a00ba3660f5f1ac815cac14c7e3e5153a7eb6051450bf1",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/022-str_cat.cc.o",
+      "object_sha256": "b2e46fdf1325659239079e085c9b9761bf6e451055289fe23bef39ed6e050ed6",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/str_replace.cc",
+      "source_sha256": "dd02636644c031af270e9ef9ead1734a5b38b4895803e86b19e6bd68369fa9d8",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/023-str_replace.cc.o",
+      "object_sha256": "7e9d1c90193afb8802ad5a1ed220c6d1d530d6b6c2db262a06e73a9605aff9b0",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/str_split.cc",
+      "source_sha256": "53bd29cd45464a8f78cb9fc8e1960a227455f0e4dcfefdcc0b862894fb4b6aef",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/024-str_split.cc.o",
+      "object_sha256": "273fa9df2544713cc416e9cd892c0c85618a43376ef9186286f6626bdd821d07",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/substitute.cc",
+      "source_sha256": "f207d30f12fc896672c577f093ae534caefcd2282c32a23349e94a377d5a9c23",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/025-substitute.cc.o",
+      "object_sha256": "fe665bda802c991c5757fc860c1d8c56668852f417509d1eaa212e8eb83b5a5c",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings_string_view",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/string_view.cc",
+      "source_sha256": "b54dd4b47bf968a4aa00ab8bb7ae743f87c5e37d86e4ae39610b074b02e392c7",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/026-string_view.cc.o",
+      "object_sha256": "d58607de44d41779876e878a8e913d91147773330ca92d99f5f9a4d13c86d791",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_base_throw_delegate",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/base/internal/throw_delegate.cc",
+      "source_sha256": "e151b0c7a5161f86f84478e5f1f8c337a34cdbc8e189ee17cbdbb4a5ed7d8ad0",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/027-throw_delegate.cc.o",
+      "object_sha256": "0343d6412a085fff8969bbfe999b4cab1bdc44337cd8363842e76c16caa39faf",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings_internal",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/internal/escaping.cc",
+      "source_sha256": "5563d56adfc39d88e19c55d070cffebffed37eb1526a357de23eacf23de9c1c2",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/028-escaping.cc.o",
+      "object_sha256": "626eabc2c7d64ef8281a214a79ef102277b15340297a59135458c7e52159ea0a",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings_internal",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/internal/ostringstream.cc",
+      "source_sha256": "8144b08eda95dd10d2b3e334447fb658c0c908a0746c97e571c292a78d61cf8c",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/029-ostringstream.cc.o",
+      "object_sha256": "811ad6c9a37c1ac08af03adcedd17d6c7bab22022cf003640171399ac6fa99f0",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings_internal",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/internal/utf8.cc",
+      "source_sha256": "7487250046419a305cc436e29616ebcdb425e4b5ed534efb5a45b8ca7604e02c",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/030-utf8.cc.o",
+      "object_sha256": "6165b7b25db1ea718fb1ab292a39269e5bc81f31c646dfadc7c8acf2236fb83f",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_numeric_int128",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/numeric/int128.cc",
+      "source_sha256": "32605487cdc03e3eea9e8619f898a1beba642469fbf16bef255cd1f3e3c7d9a1",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/031-int128.cc.o",
+      "object_sha256": "b71bbb70e7ea0eb47785fb35164d15e406ffa6efaba6ce41b4fbc814c16c9d24",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings_cord",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/cord.cc",
+      "source_sha256": "dca16524fc23dc322b723e035d2d81c82dd41e758b790e7f0474382b7bb32801",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/032-cord.cc.o",
+      "object_sha256": "b844d714741845e718beed627facbb369c5bb98bcac6edd0864cb8c7658e7e6e",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings_cord",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/cord_analysis.cc",
+      "source_sha256": "1f4ea5a16df24fd98f7940e535c88b53c62c23a5bfc506e5d02721c62ca4154b",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/033-cord_analysis.cc.o",
+      "object_sha256": "dc30c4649e492b0bf2c627316ee6e843603e46028f2e4371af98cead88d971bb",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings_cord_internal",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/internal/cord_internal.cc",
+      "source_sha256": "9975a6550cbba09a0a6183be25d7afa3442e835fe851a7084104e262e227738d",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/034-cord_internal.cc.o",
+      "object_sha256": "4a50c56f55d3d94319e2e0b8877bbd0867270da47051faf7d9f6cc0a68e03f07",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings_cord_internal",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/internal/cord_rep_btree.cc",
+      "source_sha256": "50f60b2d874d12866f7a6d7b5dbc2ae8a8b9611d1fa6eb5ace5a8d0985ef20ed",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/035-cord_rep_btree.cc.o",
+      "object_sha256": "8fc5bd351f29f09d8f56964dec23b9688ed5981721a2e4b55683aeda64489a17",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings_cord_internal",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/internal/cord_rep_btree_navigator.cc",
+      "source_sha256": "f51b1f0b9c4efc4f4ca74fd6954bbd94c76e493cbcacedb523b92355c21676be",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/036-cord_rep_btree_navigator.cc.o",
+      "object_sha256": "deab38fc922b98585ae5f5e0aea6c1234183bdca82a0ba081f5458c257b58855",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings_cord_internal",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/internal/cord_rep_btree_reader.cc",
+      "source_sha256": "88aa970f57a3fa1b930c565eaf8b4a8e349674b819501bd2a744af078757bee7",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/037-cord_rep_btree_reader.cc.o",
+      "object_sha256": "4fffae8c751faf7300931b06a50ba691a52dfaf3d3ed28a565f8c958fe1ff800",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings_cord_internal",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/internal/cord_rep_consume.cc",
+      "source_sha256": "2565665bb5bc7ec689a6deb134705aad6bcfdb0d7e462afacc926cbf4cc9f14d",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/038-cord_rep_consume.cc.o",
+      "object_sha256": "f70cd637ddf9810935326b5fd0a66466cfa2ac23fbc61b1321f9575a56d8ee52",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings_cord_internal",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/internal/cord_rep_crc.cc",
+      "source_sha256": "8172c9cf2609dd2dfbeefdee52e688223d0bc85ae1a77bdf4ba6bdd898de6716",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/039-cord_rep_crc.cc.o",
+      "object_sha256": "fe550d87f71ef7fa872fe0aeefbea5fb0026a64af07f6b0631372940f34bb1b1",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_crc_crc_cord_state",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/crc/internal/crc_cord_state.cc",
+      "source_sha256": "5ef86225285805f25d731d63a78c448dafd001c8ae9d7b148150adf7d6d20c1b",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/040-crc_cord_state.cc.o",
+      "object_sha256": "3830fb0bc8408391e9a142499dcbf77958b8ad678ea760c602e73e7ad2af5526",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_crc_crc32c",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/crc/crc32c.cc",
+      "source_sha256": "0c8ee663f612e7043f8d87e1e148a27ff26124796c956c2cbe1ba49d065700ec",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/041-crc32c.cc.o",
+      "object_sha256": "a29cb6b10a13613f7921647ad21e21dc28e52f95c736b6bdd09816a838071b99",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_crc_crc32c",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/crc/internal/crc_memcpy_fallback.cc",
+      "source_sha256": "7e8219db4cbbe9c61ffe8abbeb946e6636d459b5a2ea8f1463986393911c70f2",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/042-crc_memcpy_fallback.cc.o",
+      "object_sha256": "35739fa359a47b5c5193fb51d421528088045d03e7292fc0eb481445f9d5e2a8",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_crc_crc32c",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/crc/internal/crc_memcpy_x86_arm_combined.cc",
+      "source_sha256": "279a4fd0a1c56b7c6e7bfeed6a09a3062c774072524bb47aaf112543d33c7b1c",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/043-crc_memcpy_x86_arm_combined.cc.o",
+      "object_sha256": "dd30200699811d4ba424526dd670a7fb5b3090c11c2a38bed844fb3878e92558",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_crc_crc32c",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/crc/internal/crc_non_temporal_memcpy.cc",
+      "source_sha256": "69fdf6d1bba84d6e827e10c95bf816d31097f1056cdf9320507607ce8c1e2b9a",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/044-crc_non_temporal_memcpy.cc.o",
+      "object_sha256": "4598f3bf50053dbf83ae70616fb4a96135b44961443ca7f9f1aadb6d69d365f1",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_crc_cpu_detect",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/crc/internal/cpu_detect.cc",
+      "source_sha256": "2b4afebda9c74fe77be182b00e82fdb0a660a5eb2080c437313aa286cb80f112",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/045-cpu_detect.cc.o",
+      "object_sha256": "e9a2180f0b46554d5a028ded1cf2a30cfa97cb274fb3a2de4f8402fe6260ea91",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_crc_crc_internal",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/crc/internal/crc.cc",
+      "source_sha256": "ee3770bf51bc5b100db87f03a13d3656492ea1f568088dadc3131b8c5bdbf91d",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/046-crc.cc.o",
+      "object_sha256": "7759e3068174a174577d754017b7084af859d001d5b9ea9ae8a735e15b4f7104",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_crc_crc_internal",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/crc/internal/crc_x86_arm_combined.cc",
+      "source_sha256": "2520d0aebc302d8f1b79563276aaea0f0d7fdef8121559822e51dd19234b290f",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/047-crc_x86_arm_combined.cc.o",
+      "object_sha256": "64e3efe79055da5e199f445fb1ba124d2c64db1b8e28154646fb954f43b7ccfd",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings_str_format_internal",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/internal/str_format/arg.cc",
+      "source_sha256": "b8d3ee98fd39c75bfa29a7006c7946fd5f33d135dca3d0be5ed83969d03dea2c",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/048-arg.cc.o",
+      "object_sha256": "fe1f63de4798e30ecbf265ce961a2d97248bbf7f8eac23e1914d6f95e181d10d",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings_str_format_internal",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/internal/str_format/bind.cc",
+      "source_sha256": "a3a5122975f18cd671f27c4f6d8e3c96eedd91c9b938fd9ace1b7f46bc5c91ef",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/049-bind.cc.o",
+      "object_sha256": "0aefd7634489c91d505109fed32acf3995ea26c749dcfa3345e2adca6d89a5c5",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings_str_format_internal",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/internal/str_format/extension.cc",
+      "source_sha256": "dd4635b00f4b8ea7ce26445dc1be649076c8d5fd3a2889f801d4b3e884e95e12",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/050-extension.cc.o",
+      "object_sha256": "aa4c67f7e4e73020fae30581646c7e06bfd50ab84e71a5ef387f5784d485f3fc",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings_str_format_internal",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/internal/str_format/float_conversion.cc",
+      "source_sha256": "de4dced594fa65ff3579bcba6e7d17ddd3b6231e5cdc508ab716be46b664eab9",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/051-float_conversion.cc.o",
+      "object_sha256": "77c21a36ac2dfb0d169f4d7985fac7a8d1eb8cd49a954bf099ebb3a4a56312fb",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings_str_format_internal",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/internal/str_format/output.cc",
+      "source_sha256": "9bf53a434ad06e387e653fbb656d79307f59eee38655eff8174ee2a48b1b30cc",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/052-output.cc.o",
+      "object_sha256": "81486d82c40387f6dd2a58ed273e9543ae08df441792690e6ece9c1e7791d6ff",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings_str_format_internal",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/internal/str_format/parser.cc",
+      "source_sha256": "43b7728b823ce2b690c8a914d03a00f2caf3622ee42e93ba10c21dbef15fe61d",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/053-parser.cc.o",
+      "object_sha256": "0fe3aa6e03e12c4695d8919e17d95f3c837f157c847ab294d1c04c7088d5159b",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings_cordz_info",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/internal/cordz_info.cc",
+      "source_sha256": "2a66a6cc72e193cec300ea1943d1a0b183173c6958f5365af219b0fee8ecae75",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/054-cordz_info.cc.o",
+      "object_sha256": "97fdb37c34a9a619e8a95c11014c23ec1237e0f651ffa94e2ce2365c45f20d37",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings_cordz_functions",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/internal/cordz_functions.cc",
+      "source_sha256": "c5654f7d82706f71adf7e8f2391eb40202f273992a7f8827f116f7f54c57fbe6",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/055-cordz_functions.cc.o",
+      "object_sha256": "b0ce55ae376eb2287c66a7657a1a4e6d7926ce21fcc4edde28e66625752f9c41",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_profiling_exponential_biased",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/profiling/internal/exponential_biased.cc",
+      "source_sha256": "718aa40e5ab5efa1bb061bd80991d1cc6ab8d5727a268a9dcb77046308351e4c",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/056-exponential_biased.cc.o",
+      "object_sha256": "133c570321b05ba869ae025ef1f6f7e2057b9bf2e5a004cd8af848c9f93adeda",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_strings_cordz_handle",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/strings/internal/cordz_handle.cc",
+      "source_sha256": "2c1afdbba65527ed38b44f7f4791c955ae8b20e96e94efc4994ab26e29d9bd55",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/057-cordz_handle.cc.o",
+      "object_sha256": "38f7fa8398dc73c17857e2b074038a26d51341792ee43b0f6b2a63261893eae2",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_synchronization",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/synchronization/barrier.cc",
+      "source_sha256": "fed9ca2a31050232c88ad1653dc1625dabb358a5c0e5d444cee7e84bfd103fa7",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/058-barrier.cc.o",
+      "object_sha256": "53e684e3e042568563f9fcdbb7f5814f458df81cfe637d00e51be8fb4f85404f",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_synchronization",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/synchronization/blocking_counter.cc",
+      "source_sha256": "67119b1d622805a3805032c505ff8e5e0c9f0a231c9ece108624fea09542df87",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/059-blocking_counter.cc.o",
+      "object_sha256": "ef371e173496c6fc7d4a1efe7ed193f904055218de959adfa16f7fac9b2ad27e",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_synchronization",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/synchronization/internal/create_thread_identity.cc",
+      "source_sha256": "b79720ee203f80ab447bc93c5a21a39be902b0ec5899b177c41d6272728bf0c2",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/060-create_thread_identity.cc.o",
+      "object_sha256": "3241e9d77ad8c5cc96979509043fd79b55c6f24fd34b38e79bbc3e0187cb6d02",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_synchronization",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/synchronization/internal/futex_waiter.cc",
+      "source_sha256": "c082f4e0d690b214aa53177e2bddcd6fa290046a84b4068be40e6403498e3684",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/061-futex_waiter.cc.o",
+      "object_sha256": "39329752900a0e8d6daaf1be2792123467486b9574c4a28d0650b79fe6a3c20d",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_synchronization",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/synchronization/internal/per_thread_sem.cc",
+      "source_sha256": "157058c93c415feffb562002d51f9946e3a18f347d23e3c7423fba8dfcb32b43",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/062-per_thread_sem.cc.o",
+      "object_sha256": "a4443bf634224dd5f3b8fe3759fe28fe7ff6bc4fa79f3fd7df859a8d341af4ec",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_synchronization",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/synchronization/internal/pthread_waiter.cc",
+      "source_sha256": "e0885ec488d1c27e022b1787eed6e3e91016ffef7715a9cb0935c1b416768e83",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/063-pthread_waiter.cc.o",
+      "object_sha256": "39304a1c30812d3fc037f1720249e2749fe9e0565969da2ff3269b81c97cd8e1",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_synchronization",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/synchronization/internal/sem_waiter.cc",
+      "source_sha256": "e1632d6d40ff598c064491771c8d46bbeba753c20f1933d2e22fe3710e3fbbab",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/064-sem_waiter.cc.o",
+      "object_sha256": "7b460bdb69e8ec786ae388c2120a7c5fccaab70750b23b14d96a0897e9d0e454",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_synchronization",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/synchronization/internal/stdcpp_waiter.cc",
+      "source_sha256": "46a2b11d558b7da13918e1e3c937827d7dbb7d860a0af902c4cea938ed1babe9",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/065-stdcpp_waiter.cc.o",
+      "object_sha256": "21cb2eca166f75788327efc15de8b7e91f84ef64a288430f0a6146b1472f95af",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_synchronization",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/synchronization/internal/waiter_base.cc",
+      "source_sha256": "3bc421f38aca3393734b4f71b13829fd8e9d2e7834e2fe01262e9dcac044b73f",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/066-waiter_base.cc.o",
+      "object_sha256": "4c2013a3d66f01d73afa834ff431d0d176a943435b9c73541d11072c2f40087b",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_synchronization",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/synchronization/internal/win32_waiter.cc",
+      "source_sha256": "8ab262fec4937ba44e46994a1cea87b4ea9dd7e58afc85b1465f80b9dfc3c796",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/067-win32_waiter.cc.o",
+      "object_sha256": "78c86edcdacfa5ad69e2644cd328b85368819f1a9bf222a958cb66b8c9966c68",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_synchronization",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/synchronization/mutex.cc",
+      "source_sha256": "f885f93ae398b0c511bbd79497f2019603bf4880e267d01db4922c23bcad6740",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/068-mutex.cc.o",
+      "object_sha256": "3bbf12bc7df35f1c9ace535c80068634e564deb64a0b44f640264700ec172ffe",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_synchronization",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/synchronization/notification.cc",
+      "source_sha256": "6aab45f53d7ee441d7387da1a2c28b03779cb4bf6940a94066fc9c84092d9f28",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/069-notification.cc.o",
+      "object_sha256": "9541aa932814babc704b75648a4070296d7b12c79231eba686f580174eb4dec0",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_synchronization_graphcycles_internal",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/synchronization/internal/graphcycles.cc",
+      "source_sha256": "c2112640ca54cd900e0a6b6819528ce49dba9a5cbdc4410cc0f2419ad9a3efba",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/070-graphcycles.cc.o",
+      "object_sha256": "f92f41e4a0b504230b8380bb6c3df7297216188367d99a042c0cc03a734d6268",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_base_malloc_internal",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/base/internal/low_level_alloc.cc",
+      "source_sha256": "6b5456faca694a701ba98fc4e3db131c129a7fe8a00438e2b4e0897e0efc4af4",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/071-low_level_alloc.cc.o",
+      "object_sha256": "5acfea4ba20c0170d6c13909368e0999aa6af0bfc1504d862e0afe263d6f7607",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_synchronization_kernel_timeout_internal",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/synchronization/internal/kernel_timeout.cc",
+      "source_sha256": "24eb698bded18ece551b8dd16b23c89b84af88595ab2a8017230e9380063aa9b",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/072-kernel_timeout.cc.o",
+      "object_sha256": "429915da586642a3a4def75af638047cba5b6ca93d652548f0a46cbc8ad3cfcb",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_time",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/time/civil_time.cc",
+      "source_sha256": "4cb59f202f503bd60450ca60b30b18f907a7f010a354adc50e1b8fae8b808110",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/073-civil_time.cc.o",
+      "object_sha256": "2a6ab23c067f822e67d76917c931832aa79c5a16e38216a51eb2497f508f5108",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_time",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/time/clock.cc",
+      "source_sha256": "1435464fc131e9137454a16890a3970e037ab1aa0025d3d30c0e8cd6c8bf69e3",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/074-clock.cc.o",
+      "object_sha256": "b87525694a55726dc04be10863901d7826465a5a6c56cd794d6cf78cc7cec146",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_time",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/time/duration.cc",
+      "source_sha256": "8a3bd4daa13e40e5a87b2851a38b49ca8aec8c9602b8817b2974685e7c0dedde",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/075-duration.cc.o",
+      "object_sha256": "7005654b21999c2bdb56fb79e3d0f58c4709347110e07f18f59bd9ddd0e69c3e",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_time",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/time/format.cc",
+      "source_sha256": "286e519c43d8ddfb108674e14717af05b07fd7c6a37b967f9fde58598eb63be7",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/076-format.cc.o",
+      "object_sha256": "3e4dac4499126d83cc94ec643a991a20e54b180906945d6b40bd34cefc9aa5d8",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_time",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/time/time.cc",
+      "source_sha256": "93e8edece002a33cfceecfc9f281772648ec94d275e259822c06fa6f1e27bce0",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/077-time.cc.o",
+      "object_sha256": "5d920891af58e422593a1e1e098d2e45ecc86b18e55b188965b236250fa923f6",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_time_internal_cctz_civil_time",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/time/internal/cctz/src/civil_time_detail.cc",
+      "source_sha256": "c1777ec78e6e5459e7e981cda16e08094fb4faad2c441699286b162c73b284d8",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/078-civil_time_detail.cc.o",
+      "object_sha256": "b09e291d5adc4e52ec53f8adddeb27a869643b04059cdee137cf51583c933f0c",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_time_internal_cctz_time_zone",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/time/internal/cctz/src/time_zone_fixed.cc",
+      "source_sha256": "41dd7e8ab05929b4a5118559bb9c160f6d311bb6f0fbc540487877a8161302ad",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/079-time_zone_fixed.cc.o",
+      "object_sha256": "2e9056d65f21530e9909576fc8fb6ff385faf0b62a20395d4526f131f0dacc83",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_time_internal_cctz_time_zone",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/time/internal/cctz/src/time_zone_format.cc",
+      "source_sha256": "5d936e02a691844de8a0dc40db154e1da5f344df43ff0a6373e64c5e7848f336",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/080-time_zone_format.cc.o",
+      "object_sha256": "8952ff3c3214e14b5db4c6826a0265d10192f65f18142c10352a7df6b2600396",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_time_internal_cctz_time_zone",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/time/internal/cctz/src/time_zone_if.cc",
+      "source_sha256": "32f82be3a5ba500eb619e562f260d770c64d753ddde12386f5cc8af5240429a1",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/081-time_zone_if.cc.o",
+      "object_sha256": "2612a56338e7e76440825dc900bf5cfc8ec18ad9a0fca8a8b88e80408600c114",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_time_internal_cctz_time_zone",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/time/internal/cctz/src/time_zone_impl.cc",
+      "source_sha256": "a670f21c9663ef220311ceab57eaaff707e6f629d1c99ef4ee6ebcb5c410193f",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/082-time_zone_impl.cc.o",
+      "object_sha256": "646e91bd5c882c46947f3111cd714aa48db13cbe855ef2db35bad8ce0d49c58d",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_time_internal_cctz_time_zone",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/time/internal/cctz/src/time_zone_info.cc",
+      "source_sha256": "bbfa8d265801eed36de0459e904cd838e7dbe31e38f8b45595d548cc037b6252",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/083-time_zone_info.cc.o",
+      "object_sha256": "a46a7f6af63d6aa1e1a82be0e225f696d921084af5956d007e877bed7634cd7d",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_time_internal_cctz_time_zone",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/time/internal/cctz/src/time_zone_libc.cc",
+      "source_sha256": "498b80b48fe53f8812803873cdfddb5d3dee98a42c8b345fc47ca401de1b2bfd",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/084-time_zone_libc.cc.o",
+      "object_sha256": "597b57a91c702f384f6fffe59e5ebbf2fcf7d81f2bec129567bab46a1e9674e5",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_time_internal_cctz_time_zone",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/time/internal/cctz/src/time_zone_lookup.cc",
+      "source_sha256": "f2bfdcada5044746770f52f501e5b53b564ec0ce755390f7dd2143ba845defef",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/085-time_zone_lookup.cc.o",
+      "object_sha256": "106261d8605c3e9c6ccc44f7742b82d45676ae50096d73ae293e29b62d15b23d",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_time_internal_cctz_time_zone",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/time/internal/cctz/src/time_zone_posix.cc",
+      "source_sha256": "d84d38bc816f306743d427815f81e144dfaaa8f8e1e0cac829231dfb1cb85ee6",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/086-time_zone_posix.cc.o",
+      "object_sha256": "924da18c73f14b645ff7c4f1d010f65cc7239c8c2a5ee30b631dd16d470ca1c3",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_time_internal_cctz_time_zone",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/time/internal/cctz/src/zone_info_source.cc",
+      "source_sha256": "95bf6c27ec0e17953e901f74d9891c881175ddcd7243e9b5abdb7fec0f066bca",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/087-zone_info_source.cc.o",
+      "object_sha256": "c8fb4c9724b9bcc0bfc65722f22ffabacca7d1dce145203175bea33b5cd0af6a",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_base_tracing_internal",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/base/internal/tracing.cc",
+      "source_sha256": "889f4b56f3822e53fa2346d1b9aecbe16c5e9fb2ee581f061bafbca5dc818a89",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/088-tracing.cc.o",
+      "object_sha256": "ab8e0a8a787e51b3f69332f55cc908818fe5375b84bf833ed0b86f79766ae8c5",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_debugging_stacktrace",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/debugging/stacktrace.cc",
+      "source_sha256": "235037b154f616bf9274b3a55c4411e0646d2f4d439a6a3e0dadfcc785042152",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/089-stacktrace.cc.o",
+      "object_sha256": "79ea618e77c4f20efa111f500c4bdaa833aab9f70db5e46c3c239ad8b28f9331",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_debugging_debugging_internal",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/debugging/internal/address_is_readable.cc",
+      "source_sha256": "8bb6e133db6007fd094e6390b6174485e9ed125136b32753ce188d2adf15829d",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/090-address_is_readable.cc.o",
+      "object_sha256": "8d5ed6b011d53969016c8382807821423991a4abb4dbc657ec83fd0f816299d2",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_debugging_debugging_internal",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/debugging/internal/elf_mem_image.cc",
+      "source_sha256": "2a59a5ba164ebf3e4f85d6aa4ce67762de159a2d19f0ded49fe199399b7efeaa",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/091-elf_mem_image.cc.o",
+      "object_sha256": "edb1006bd624376abe799e34187ade05cac37259ec401f80518915cec6597743",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_debugging_debugging_internal",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/debugging/internal/vdso_support.cc",
+      "source_sha256": "5fc231545760bc686996ffacc7f633c515f96a43a293e8f3e129417d0a714e3e",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/092-vdso_support.cc.o",
+      "object_sha256": "b75e556d4f775e23aa418891ee1fc703e118d167b024bb409e4f715167a5bd7b",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_debugging_symbolize",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/debugging/symbolize.cc",
+      "source_sha256": "bd45f9ccc9a4388bbcaf47e60c1965e8a957c3b590b0be8acd2c0acb67acb3b0",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/093-symbolize.cc.o",
+      "object_sha256": "0dda277da75608928825883432b0df7740ca228604b7da5f80facd8a6d655984",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_hash",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/hash/internal/hash.cc",
+      "source_sha256": "e06d34aea8c384a602cfd477b1e9adc743010884656f273f7b69e37b406d19a1",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/094-hash.cc.o",
+      "object_sha256": "6d8dd43694e4cd254b3bfae12f6d237e37516a6d2ee984b590fda4e8a1091d13",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_hash_city",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/hash/internal/city.cc",
+      "source_sha256": "b1293c086b1d8b5f7a24e850c4939fbb0b19eb304e92c53e86dfc9d671f68200",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/095-city.cc.o",
+      "object_sha256": "9f2c9751e9170cc0361fb2211535d131c510a0d4977c3bd8395e8b68bd161cbc",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_hash_low_level_hash",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/hash/internal/low_level_hash.cc",
+      "source_sha256": "72771cf2624a6e6b23a706601b7e20bf3753113f340198897791e3fbb969eef9",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/096-low_level_hash.cc.o",
+      "object_sha256": "59b08ee95fe9a4c64e2b7284e74ea6d467d0e255140ac877eb2858804ff7ec97",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_container_raw_hash_set",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/container/internal/raw_hash_set.cc",
+      "source_sha256": "d955f394da825db1471b6c81bcb8dc101933973b023a09d6e2c48ff8a07d8739",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/097-raw_hash_set.cc.o",
+      "object_sha256": "95a63e77206cf10fcd6ca919f2157b0708b226fd7665e94e70bce6d4082dcc81",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_container_hashtablez_sampler",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/container/internal/hashtablez_sampler.cc",
+      "source_sha256": "6c2bf12d11f731ea778f0e712e8068349093ae3bfc1dfd53be93132ac784678f",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/098-hashtablez_sampler.cc.o",
+      "object_sha256": "06961ab1eb3500dd0bd1ec35cb84f5b04a0af9bb0a0a15d3e2b7a065478a21b9",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_container_hashtablez_sampler",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/container/internal/hashtablez_sampler_force_weak_definition.cc",
+      "source_sha256": "6c8f7bb25268819448783a2324c12dac6dd7315a6d4a389affc9be79f6569ef8",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/099-hashtablez_sampler_force_weak_definition.cc.o",
+      "object_sha256": "7d5f1d61494e2b79c7d0da5371d6d54007c4754ede48b47527eca9bbec8a6429",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_log_internal_check_op",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/log/internal/check_op.cc",
+      "source_sha256": "600f79cffb8862afd09e02d54a7d7bc0f942348394ac2743ac7f89d929913c0b",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/100-check_op.cc.o",
+      "object_sha256": "fcd051ea174aa33a6ac1f00ad22ddc80d834e9beb9a71597a448d71427ad9744",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_log_internal_nullguard",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/log/internal/nullguard.cc",
+      "source_sha256": "eb4de508d45248fe70181e74ad8face3e14090e11c610dbc7b6bd5ece7baa6ef",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/101-nullguard.cc.o",
+      "object_sha256": "692ae783f3d3e7e73631124d17889e692dc10ce59e7e750d33fa9f675516eef5",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_log_internal_log_message",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/log/internal/log_message.cc",
+      "source_sha256": "2a9b958e0f0258b31146520f133452cc71eb512fa253400de8f5fd2667060b27",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/102-log_message.cc.o",
+      "object_sha256": "1a4fbc6defa34caf05cc623c81ddac153dcecc5cc0644c880ac17ead6504bedb",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_log_internal_format",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/log/internal/log_format.cc",
+      "source_sha256": "0fc438873d35b2ec5bfaa6620cdc74633edfec9421139213ddecb543b1b9aa51",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/103-log_format.cc.o",
+      "object_sha256": "391fb7cb3fe864eb7b60e5e2496b3044787ab4718651a4515c3bb3148919fe5b",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_log_internal_globals",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/log/internal/globals.cc",
+      "source_sha256": "c33d0c657cb8b8cd674a77ac17bf45ef33da93820f380d70009950553df1953c",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/104-globals.cc.o",
+      "object_sha256": "bccea97866f5dbf805e1fd05d181ee042b5060447b19b917937a48cf52ff221d",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_log_internal_log_sink_set",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/log/internal/log_sink_set.cc",
+      "source_sha256": "dd5b981e785719ff547ab665be5b527ca917c7d2ebb05b8dabaae8a56af747f0",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/105-log_sink_set.cc.o",
+      "object_sha256": "af330b1d4e7b2390c18c07975e0394ccdbfdac55c2f2a69b2d710e2f6d6efbec",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_log_globals",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/log/globals.cc",
+      "source_sha256": "ea7ba7836de040fc23468fee679e2ad1da1bfe33b7a8906794e63f46784b4e54",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/106-globals.cc.o",
+      "object_sha256": "50d4a5693ac7969f2690425f7caf4a27b46679413823d8f12bf94b302d2ac825",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_log_internal_vlog_config",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/log/internal/vlog_config.cc",
+      "source_sha256": "2e5e2f743878268e79c6dce67bdc0a0f7aac3b7933a683dac1915609cc6be60a",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/107-vlog_config.cc.o",
+      "object_sha256": "dad79f3659914e4047df328f3c7372de01be7632438e54366433aa75bfe42ee3",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_log_internal_fnmatch",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/log/internal/fnmatch.cc",
+      "source_sha256": "320028e79531b9cb33b6ca60c97db3dff2b5f09137969e7b0b09c9e1267e5b89",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/108-fnmatch.cc.o",
+      "object_sha256": "3a92d8ce79b06f4a051e5c46a86f5c42aa05fbba6a50b462e52cadafcd2811d1",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_log_log_sink",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/log/log_sink.cc",
+      "source_sha256": "26d0cddecbc4fbee0c5cb1dad4ad05069b850ed7c768fc72a6d0c932247aa447",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/109-log_sink.cc.o",
+      "object_sha256": "07e13ad3ed55ebdec363704348e165d13b9dfccc07863678fd25d0f7787d203b",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_log_internal_proto",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/log/internal/proto.cc",
+      "source_sha256": "97b6ae9de3de79dc4276a422d499a8b3f3cda1751fee0eaeae122d974c8b3f99",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/110-proto.cc.o",
+      "object_sha256": "b045ab5dec5286be2181114a9ce0489f8aff07aaf23628a2c4acda6d64a4c2b5",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_log_internal_structured_proto",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/log/internal/structured_proto.cc",
+      "source_sha256": "46d5b04cf18f75cc5bbefd9f331e413ef86e578365d6104e986b6367590d4527",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/111-structured_proto.cc.o",
+      "object_sha256": "1f1045b8b70aa118e657d0ffa1e1a757da0cfb6c8a1222a69a79f949eb139298",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_base_strerror",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/base/internal/strerror.cc",
+      "source_sha256": "3036779c27a8ac5ea27f5e970fbeaefc3038e74e3507fc1e8cb1ad438dbc4553",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/112-strerror.cc.o",
+      "object_sha256": "b366092498d43ec083ea2231ab825195002adaf5e014d469745d9fd1f19b2781",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_debugging_examine_stack",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/debugging/internal/examine_stack.cc",
+      "source_sha256": "7f6754bffa6686271cbc5fbaff95056e0016368ec295bc022b90ca20c4ad6686",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/113-examine_stack.cc.o",
+      "object_sha256": "d7eafe78ee941c624c2a249601f6e4f863fea7f78e1b5ba50214f2be40b8fa29",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_debugging_leak_check",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/debugging/leak_check.cc",
+      "source_sha256": "4bb2947b2ef7fec87ae70e9322375724800e792da789ec79655631f6accdc428",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/114-leak_check.cc.o",
+      "object_sha256": "6985766f480fb7d0226e19369ffafb0879528703e43f9a0c82078945198d6960",
+      "exit_code": 0
+    },
+    {
+      "module": "absl_log_internal_conditions",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/abseil/source/external/abseil-cpp/absl/log/internal/conditions.cc",
+      "source_sha256": "4572ee87a770c154579d596dbf73430676868de905b5a685537b5543b4d2e35e",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/115-conditions.cc.o",
+      "object_sha256": "3005802d4a86516e80f305534df4c88a685f31ae29145a1743773d4a1356706d",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/src/google/protobuf/any_lite.cc",
+      "source_sha256": "5a8ca1d04dd8a7a0b86ffd3ca83e61b46cb672ef2e5cec79968f2edc7419bc9b",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/116-any_lite.cc.o",
+      "object_sha256": "cf431defe787542d0a00b453e97f1f669690077b4e60b6b4b51e9a4fe9804ff6",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/src/google/protobuf/arena.cc",
+      "source_sha256": "e19e1f5fc9a1125001c568f67575f52b42ab9c711343f47aafae0677807cc995",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/117-arena.cc.o",
+      "object_sha256": "91a8c2aff52c2749cb3db3121224b04639d371bbab28630c78be8908818c30fd",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/src/google/protobuf/arena_align.cc",
+      "source_sha256": "f46346722c0c4585898f38b2c9daa128a1cf75fbc807dbc0f1f1052ccab6a359",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/118-arena_align.cc.o",
+      "object_sha256": "c6a5649d1557e82bf700b4720bfc076a6ca39c159b9c80b052468a766d2f06da",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/src/google/protobuf/arenastring.cc",
+      "source_sha256": "df6cf1fc213dccc4686f725ef98be56c09bd3d0e46a09e09115af0390b71a03a",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/119-arenastring.cc.o",
+      "object_sha256": "98bce190f6ab0e5583296252dbcc4688db13fe3388bb8277e37595e7c9b5aa65",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/src/google/protobuf/arenaz_sampler.cc",
+      "source_sha256": "f53457e21e2852cf066653feab3790de936da813a154674f515578b7de43164f",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/120-arenaz_sampler.cc.o",
+      "object_sha256": "26292fabb33e3f63aabd96e063268b153dc413de4ec259f1bb01b3c9f1269395",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/src/google/protobuf/extension_set.cc",
+      "source_sha256": "43afee740748912d8491c4f092718ff33717cc6e15bfc607e01543b8a551bad1",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/121-extension_set.cc.o",
+      "object_sha256": "d637899b23b11ee3f895ae02e4acfd3ae1a67cabfe7ff29544c998e9f048efc3",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/src/google/protobuf/generated_enum_util.cc",
+      "source_sha256": "448cb658f4d8f210580cbc02c1ffdb82871286228748c70ef1114ac3ac64eb07",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/122-generated_enum_util.cc.o",
+      "object_sha256": "2dd0f430f46cb631bac989f6e6e9f489b9d8c674948df7033c8e955f5f277059",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/src/google/protobuf/generated_message_tctable_lite.cc",
+      "source_sha256": "d87c687fbf233ac820fc22e399b40981d0d4dac4c2429629316a12c622827b3c",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/123-generated_message_tctable_lite.cc.o",
+      "object_sha256": "50e0a0bb7d551a1af769d262d32a385d49bc2244bf1acff731da6bbc555c943e",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/src/google/protobuf/generated_message_util.cc",
+      "source_sha256": "55ab5de90c514c9b5116df56fc065ecfd2d8d0caebac969b1e175eb79afe814f",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/124-generated_message_util.cc.o",
+      "object_sha256": "b03902b961d19e9713ac1d760c0914bb948077f383fd8269add6eb7514e2e468",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/src/google/protobuf/implicit_weak_message.cc",
+      "source_sha256": "bd2a334b09e26296e027d6f5e22e7988fdbab0f744c9fe54d06838b2837176e7",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/125-implicit_weak_message.cc.o",
+      "object_sha256": "49e12658fff38dd676119ca641a8321f803838d9db0a23f4e1e6bb7f1e689696",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/src/google/protobuf/inlined_string_field.cc",
+      "source_sha256": "3eee149c1a4259492e9dc894f40596574369611185c69804e0f8b62ac7ed3c42",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/126-inlined_string_field.cc.o",
+      "object_sha256": "abf503c9f5dbffbaf6345e2ef4143b5039226e493b87191b2f96d9578bf10fa5",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/src/google/protobuf/io/coded_stream.cc",
+      "source_sha256": "3b8c30dbcbda5f1424582443143b638d0f4a0261a70fd7dd4f7c134ea4d58fc9",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/127-coded_stream.cc.o",
+      "object_sha256": "dca5b4816ef32c56e3d9e1fadeee7ace3b3c675b99c6b26b0583490727c64f4c",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/src/google/protobuf/io/io_win32.cc",
+      "source_sha256": "0885c92e1f2514721407273faf628ef4b4d1e271765def16335368ae77144325",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/128-io_win32.cc.o",
+      "object_sha256": "fcd5aa5a2b276eff7f3e4d56ee73fe2a87f9dff79bb8faf5ccb7e5b2212fe2d4",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/src/google/protobuf/io/zero_copy_sink.cc",
+      "source_sha256": "bf5a0f36691f9fe91fc94c5ab013e680124cee2c4e085ed33b9609e486f3c8fd",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/129-zero_copy_sink.cc.o",
+      "object_sha256": "12880dc813b93835fb53c579d6ece78470e82f295c31fee192230791f258c1a4",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/src/google/protobuf/io/zero_copy_stream.cc",
+      "source_sha256": "5a1ca2591bee05fac738cfba77387cc7515b4c53ea7c5460920c761151c10e18",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/130-zero_copy_stream.cc.o",
+      "object_sha256": "34b679f0ad2c6a6ea83783ff7688eedc6db71384c3e4dad0257c1b94d0e0fd27",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/src/google/protobuf/io/zero_copy_stream_impl.cc",
+      "source_sha256": "4ff2c8e78f65a69c85ebc286a17de84f64dcfaf7d1414eaa5df61ec66755fcc8",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/131-zero_copy_stream_impl.cc.o",
+      "object_sha256": "b8f393497d6889df7af766a33583ddbeb5652e438cc2fea222a93a2aa804dc94",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/src/google/protobuf/io/zero_copy_stream_impl_lite.cc",
+      "source_sha256": "8f30fc83e279e15cdf81b64030da07f726de50a6db41f92109a6ab3158443718",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/132-zero_copy_stream_impl_lite.cc.o",
+      "object_sha256": "a3b27d38a29587d0e10116d69fbe46cbb2f7336d7a64b4241d490a343b85ee02",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/src/google/protobuf/map.cc",
+      "source_sha256": "2c58f291c047f988b34c21d953dd20f915e316adbcd4ca23e639cb7d8d34a6ce",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/133-map.cc.o",
+      "object_sha256": "17b39c376401dc10418ebfe6da6ede2533c0a29f49dae6ae5d450304ff2e0640",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/src/google/protobuf/message_lite.cc",
+      "source_sha256": "3b468b89de4d7e5d9713628d4616d00397e3d0533172f80f0053af6a65519110",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/134-message_lite.cc.o",
+      "object_sha256": "80a53818a062c5884d96d59a84d557a92d381ecc5f429b9922396c260d981f63",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/src/google/protobuf/parse_context.cc",
+      "source_sha256": "2a0bcd1adcc2701b0cab5009a372ce533542a2618601f927bc1cfa43f19476ed",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/135-parse_context.cc.o",
+      "object_sha256": "eb6049de7cbd2f64cea4d4fca52f5e046e7daec833d4156039e4a2cc25139172",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/src/google/protobuf/port.cc",
+      "source_sha256": "5995229ed7245baf30e39f361b829f901fe61854e59c65db6291f0524b3fa8e9",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/136-port.cc.o",
+      "object_sha256": "4805e595147d1fc5ddef09e788a638109ca057c112c131f289fce95a21120ecc",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/src/google/protobuf/raw_ptr.cc",
+      "source_sha256": "a3fea905087609b678312541551b886c6764cdce7a6d5d997ebcd10ddb6f2d9f",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/137-raw_ptr.cc.o",
+      "object_sha256": "bc1888dfa42a5768e097f3ac9013d41615532a1fab0fde3b1d5e910aabfbd5e3",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/src/google/protobuf/repeated_field.cc",
+      "source_sha256": "b74878e81ff0ad61b2b46c4557f3ab47ee3dd8c0cbe1e0f72b0d32330fb19e27",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/138-repeated_field.cc.o",
+      "object_sha256": "6f0839c6b660dc10674812499dd66fdc39bc30357768b8843778e3a7b664c354",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/src/google/protobuf/repeated_ptr_field.cc",
+      "source_sha256": "b8001b4fbf24f54e18ae035bb3df9b368372ae6beda939f6bad8b91fd4fad537",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/139-repeated_ptr_field.cc.o",
+      "object_sha256": "21c9b499322e3603857b53ab886719e499d9e9b99fca0032eb862525e719300c",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/src/google/protobuf/stubs/common.cc",
+      "source_sha256": "b4ab1966e1ca1fd834985bb10861f8e12972965a4ad52825fa573ad03524369e",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/140-common.cc.o",
+      "object_sha256": "aa1d0903e110a65db88565dcaf5e635cab5d524e172e54dfee8bda39f9d5243c",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/src/google/protobuf/wire_format_lite.cc",
+      "source_sha256": "1d754877c63b80cace80973dd8a33fce0f8430b8dbaf440d56861b23c5e20979",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/141-wire_format_lite.cc.o",
+      "object_sha256": "fe06dc60c865cca6865f00b90267180677d623df8d09983b0889198814f245cc",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/third_party/utf8_range/naive.c",
+      "source_sha256": "cf4d1b2c768414126637a0e4b1f9d2aacc57aaf0e87e7d8210e90469ecc000ef",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/142-naive.c.o",
+      "object_sha256": "24edf1616773ca05e6be3d63673b2167d972f48f73a41812a3985c6bc553336a",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/third_party/utf8_range/range2-neon.c",
+      "source_sha256": "73f3982d69c77f76486c36f1f2ef82a877e87b714b427a5474029602953f9633",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/143-range2-neon.c.o",
+      "object_sha256": "01be6b91b69748d101efb950adb3599358a5b5184453d3330e37929fa90c2ce0",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/third_party/utf8_range/range2-sse.c",
+      "source_sha256": "007ea3b8ae4692a01cbb7e69419015eb0456671d450c80667e383e7ff991a693",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/144-range2-sse.c.o",
+      "object_sha256": "f8b1e6d68f87725071dc37c70f6849b9647e2dec0f7fbe2d48ccd8915ae95483",
+      "exit_code": 0
+    },
+    {
+      "module": "libprotobuf-cpp-lite",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/protobuf/source/external/protobuf/third_party/utf8_range/utf8_validity.cc",
+      "source_sha256": "4d8d3895ad3f2f3fee9f2cac704632376b94f22ad80582f1cb4cb40aa7e7440f",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/objects/145-utf8_validity.cc.o",
+      "object_sha256": "ac05b6d8a715b67fa0a11a5cd38566cba6f2c0fcde187f6b12a34ca89d66db2f",
+      "exit_code": 0
+    }
+  ],
+  "archive": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/libprotobuf-lite-with-original-absl-prototype.a",
+  "archive_sha256": "e0443710cedb5b0ec22ac8e52c6c6d78ff16ff19235e7e0eec2d346161e58b41",
+  "full_commands_local": "/home/tv/repositorio-principal/dist/aosp16/protobuf-native-2/state.json",
+  "full_commands_sha256": "944257eb1a66a7dbccaafd9413543d30baff1d864c932726e3511e491fb8c21c",
+  "scope": "Original protobuf/Abseil whole source closure prototype, original module liblog exported headers applied only to its consuming source; not full Soong equivalence or runtime readiness"
+}
