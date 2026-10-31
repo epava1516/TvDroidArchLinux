@@ -1,6 +1,8 @@
 # Índice de evidencias
 
-- [R1: adaptación de errores persistentes](../reports/android16-property-errors/findings.json): parche local tres archivos, replay sin fuzz, unidades/callers enlazadas; MCP0 en positivos, EACCES real y EIO fsync inyectados, incluido error tras rename con dato visible. No ACK/socket/MAC, rollback/durabilidad general ni APK. [Checkpoint actual](../reports/android16-property-errors/checkpoint.json).
+- [R1: servidor original y rechazo por socket](../reports/android16-property-socket/findings.json): StartPropertyService ejecutado; cliente UID10000 recibe EACCES en socket system y0x18 en general por getpeercon sin contexto, Bionic-1 y propiedad ausente. MCP0 negativo, no MAC autorizado/ACK de almacenamiento/readiness ni APK. Inicializador root, cierre diagnóstico. [Checkpoint actual](../reports/android16-property-socket/checkpoint.json).
+
+- [R1: adaptación de errores persistentes](../reports/android16-property-errors/findings.json): parche local tres archivos, replay sin fuzz, unidades/callers enlazadas; MCP0 en positivos, EACCES real y EIO fsync inyectados, incluido error tras rename con dato visible. No ACK/socket/MAC, rollback/durabilidad general ni APK. [Checkpoint del hito](../reports/android16-property-errors/checkpoint.json).
 
 - [R1: persistencia original ejecutada](../reports/android16-persistence-native/findings.json): escritura/actualización y lecturas en execs separados, negativo EACCES con función void que registra/retorna y valor previo conservado; captura REA MCP0. No ACK de servidor, MAC, reinicio de servicio, pérdida de energía ni persistencia APK. [Checkpoint del hito](../reports/android16-persistence-native/checkpoint.json).
 

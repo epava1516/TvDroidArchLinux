@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-property-errors/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-property-socket/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -17,7 +17,18 @@ Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCC
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
 
-## Última adaptación probada · errores de persistencia
+## Última ejecución · servidor de propiedades y rechazo real
+
+[Prueba por socket](../reports/android16-property-socket/findings.json): se ejecutan
+PropertyInit y StartPropertyService originales con parche de persistencia; dos
+sockets/hilos arrancan en namespace privado. Cliente exec UID10000/caps0/NNP1:
+socket system denegado EACCES; socket general responde0x18 al fallar getpeercon
+(Protocol not available), Bionic retorna-1 y la propiedad queda ausente. MCP salida0
+es éxito del diagnóstico negativo, no disponibilidad/MAC ni escritura autorizada.
+Inicializador root con capacidades; cierre por _exit diagnóstico, no supervisor de
+producción ni shutdown ordenado. Pendientes callbacks/ctl/carga persistente y R1-MAC.
+
+## Adaptación anterior · errores de persistencia
 
 [Parche y pruebas](../reports/android16-property-errors/findings.json): adaptación
 local de tres archivos AOSP, fuente original intacta. API TryWritePersistentProperty

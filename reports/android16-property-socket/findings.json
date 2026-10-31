@@ -1,0 +1,37 @@
+{
+  "scope": "Actual original property service startup and cross-process negative socket protocol regression with local persistence patch. No authorized write/MAC/readiness/APK acceptance.",
+  "evidence_id": "ev_fafb5ee32bf772b59f991549d26bb8e2e60241a87cb6f3b6fc58ea7483779711",
+  "exit": 0,
+  "artifact": {
+    "path": "dist/aosp16/property-socket-build-2/property-socket-probe",
+    "sha256": "8d05c0aa2ff07d9974ff745ae5f4ffd94f6594de2476e863fda72d1178ed6337",
+    "executed_copy": "dist/aosp16/property-socket-execution-2/data/property-socket-probe",
+    "copy_hash_matches_after_run": true
+  },
+  "archive": {
+    "path": "dist/aosp16/property-errors-build-1/libinit-adapted.a",
+    "sha256": "dbf3a1dcde81e941fb6671fb7ac105a2973051c75a32e890b3e25deff996854b",
+    "patch": "runtime/aosp/android16-qpr2/patches/0001-property-persistence-errors.patch"
+  },
+  "observed": [
+    "PropertyInit then StartPropertyService actually invoked; original threads and two Unix sockets created",
+    "Initializer UID/GID0 with root capabilities, NNP1; privileged private initialization, NOT app isolation",
+    "Separate exec client UID/GID10000, no groups, CapPrm/Eff0 and NNP1 observed",
+    "System socket0660 root:system connection EACCES for client; public socket0666 accepts",
+    "Raw original PROP_MSG_SETPROP2 request returns actual PROP_ERROR_PERMISSION_DENIED0x18",
+    "Original Bionic __system_property_set returns-1 after same reply",
+    "Server logs getpeercon Protocol not available; target property remains absent"
+  ],
+  "source_profile": "Original source-derived BP4A vendor sepolicy version reused; no hardware vendor policy/interface parity. New private mutable property area, no host global property socket or area modified.",
+  "limits": [
+    "MAC context retrieval fails; no SELinux policy allow/deny decision, authorized operation or caller SID accepted",
+    "Persistence patch code is linked but request rejected before its write path; no storage-error ACK test",
+    "Not a production Linux supervisor: returned init socket not consumed, no action/control handling implemented",
+    "No persistence-load InitMessage, property triggers, shutdown/ctl handling, service restart or manager readiness tested",
+    "Harness uses _exit after regression to end diagnostic threads, not graceful production shutdown",
+    "No Android init SecondStageMain or full Android boot",
+    "MCP incomplete image/process/environment/filesystem observations retained; derived sanitized report is not complete authenticated Evidence",
+    "Root initializer capabilities necessary for this diagnostic, not least-privilege deployment accepted"
+  ],
+  "next": "Implement real Linux supervisor boundary for original property callbacks/control queue/persistence loading and shutdown, preserving fail-closed behavior; authorized socket/storage-error replies require active SELinux and verified policy deployment. Do not fake contexts or readiness."
+}

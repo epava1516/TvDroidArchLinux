@@ -1198,6 +1198,30 @@ plataforma. El parche es mantenimiento local que exige reevaluar cada actualizac
 AOSP; perfil de build diagnóstico no equivale a Soong completo. Ninguna etapa APK
 se acepta por estas regresiones.
 
+## R1 · servidor original: sockets y rechazo nativo entre procesos
+
+[Capturas y alcance](../reports/android16-property-socket/findings.json).
+La sonda invoca de verdad PropertyInit y StartPropertyService, enlazando el archivo
+original con parche local de persistencia. Inicializador UID0 con capacidades root
+y NNP1 en namespaces privados; no equivalencia con aislamiento de app ni despliegue
+mínimo de privilegios. Usa zona de propiedades nueva y perfil fuente BP4A anterior;
+no modifica sockets/propiedades globales del host ni arranca SecondStageMain.
+
+Los dos sockets originales se crean con modos0660 root:system y0666 root:root.
+Cliente separado por exec, UID/GID10000, grupos vacíos, capacidades0 y NNP1 observado:
+conexión al primero falla EACCES; el segundo acepta conexión y el protocolo original
+SETPROP2 responde PROP_ERROR_PERMISSION_DENIED0x18. Logs del servidor atribuyen el
+rechazo a getpeercon: Protocol not available. El cliente Bionic original retorna-1;
+la propiedad sigue ausente. Esto demuestra DAC y fallo cerrado por falta de contexto,
+no una decisión de política MAC ni identidad SID válida.
+
+No operación autorizada ni ACK de fallo de almacenamiento: se rechaza antes de
+llegar al parche de escritura. La sonda no consume callbacks/control/init socket,
+no carga persistentes ni implementa supervisor. Usa _exit al finalizar y termina
+hilos diagnósticos, no shutdown ordenado de producción. El siguiente desarrollo
+necesita frontera Linux real de eventos/controles/persistencia y R1-MAC; no se
+sustituyen contextos ni se publica readiness ficticia. Matriz APK sin cambios.
+
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 
 
