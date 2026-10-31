@@ -1,0 +1,50 @@
+{
+  "branch": "main",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "objective": "Complete unmodified APK on Linux Rust/Smithay with coherent original AOSP16QPR2/Bionic, no Waydroid or complete Android boot; broad compatibility, isolation, stability, lightness, installation/update.",
+  "constraints": [
+    "A16-QPR2-1",
+    "No VM introduction or VM/client restart",
+    "No host boot/policy activation changes; R1-MAC gate remains",
+    "Fixtures/compilation/diagnostic startup are partial evidence, never real-APK acceptance"
+  ],
+  "canonical_entry": "docs/ESTADO.md",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "observed_at": "2026-10-31T10:54:15.729830+00:00",
+  "base_commit": "39724d8e4cce01a2aee18f8c9bb0e2a9cc2a270d",
+  "relation_to_local_origin_tracking": "0\t0",
+  "previous_checkpoint": "reports/android16-service-profile/checkpoint.json",
+  "terminal_exec_handles": [
+    92334,
+    55135,
+    55952,
+    65133
+  ],
+  "active_exec_handles": [],
+  "mcp_status": "Both captures terminal0, owned-group cleanup verified; no persistent binary target opened; no host-wide process coverage",
+  "result": "Original native SIGCHLD/reaper lifecycle integration only; no registered service, MAC, graphics, APK or broad runtime acceptance",
+  "next": "Implement strict Linux-owned registered-service lifecycle and control queue using original ServiceList/Start/Reap semantics, explicit class/critical/onrestart policy and UID mapping. Actual manager acceptance remains behind R1-MAC; then Markor full nine-stage journey. No per-method framework implementation.",
+  "evidence": {
+    "reports/android16-child-reaper/launcher-worker.py": "9b57d8666a1baef4af3f60efd775af12dbb5ea2acf407219ee8cd4cb3594e147",
+    "reports/android16-child-reaper/launcher-probe.py": "8dcc52e7bb59d5fcf8eb808636ebf681ced500914a9370a9214a8bd8be27b20d",
+    "reports/android16-child-reaper/findings.json": "d4512a033ff833e4181744d79f7d46ab8d2af496aafc62677c8397bee85114fd",
+    "reports/android16-child-reaper/build-attempt-1.json": "b877e1be76e2746db16f33e156762af0b793b5a62da94a8e020cc291ce9951a3",
+    "reports/android16-child-reaper/build-attempt-2.json": "a013b20eb08bcb0033146e28535d888053b31352e2b03cdaf91df0bc0505bbb6",
+    "reports/android16-child-reaper/build.py": "b1e8b3c8454bcb0e13b953982f999381d4ab226332705109bf8d49a8db6aa74c",
+    "reports/android16-child-reaper/probe-mcp.json": "39881c2a34e5c6f8aa3d679742cfd92629568d3c709f01aba03a3b6577f964fa",
+    "reports/android16-child-reaper/worker-mcp.json": "0ef5d5b3fd5890269743b117c18c0b3f8a6346f12646e7c3197a98e87b55958f",
+    "reports/android16-child-reaper/probe.cpp": "e9dd32b429f7bae64cfb454fb07dbee5f96d335ceac7ae6669e30d0f801bc799"
+  },
+  "graphify": "Isolated staged worktree AST update terminal0,2810 nodes/5376 edges; only tracked graph outputs copied"
+}

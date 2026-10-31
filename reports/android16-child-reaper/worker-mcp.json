@@ -1,0 +1,76 @@
+{
+  "evidence_id": "ev_c473e3be1bcf4a977d991f4acd0c0391eb19cc502dd7a6113f8706c45b8f7cc6",
+  "operation": "capture_process_scenario",
+  "authority": "controlled-replay",
+  "confidence": "observed",
+  "exit": {
+    "code": 0,
+    "signal": 0,
+    "reason": "exited"
+  },
+  "observations": [
+    "NATIVE_PROCESS_OWNED pid=257004 pidfd=5",
+    "INITIALIZER_SECURITY {\"Uid\": \"0\\t0\\t0\\t0\", \"Gid\": \"0\\t0\\t0\\t0\", \"Groups\": \"\", \"CapPrm\": \"000001ffffffffff\", \"CapEff\": \"000001ffffffffff\", \"NoNewPrivs\": \"1\"}",
+    "SELinux: SELinux is disabled, skipping restorecon10-31 10:53:21.110     1     1 I linux-property-worker: boot_config.cpp:46 [libfstab] Using Android DT directory /proc/device-tree/firmware/android/",
+    "10-31 10:53:21.111     1     1 W linux-property-worker: property_service.cpp:827 Overriding previous property 'ro.cp_system_other_odex':'1' with new value '0'",
+    "10-31 10:53:21.112     1     1 W linux-property-worker: property_service.cpp:827 Overriding previous property 'ro.build.flavor':'mainline-user' with new value 'aosp_x86_64-user'",
+    "10-31 10:53:21.112     1     1 W linux-property-worker: property_service.cpp:827 Overriding previous property 'ro.build.description':'mainline-user 16 BP4A.251205.006 14401865 release-keys' with new value 'aosp_x86_64-user 16 BP4A.251205.006 14401865 release-keys'",
+    "10-31 10:53:21.112     1     1 I linux-property-worker: property_service.cpp:957 Setting product property ro.product.brand to 'Android' (from ro.product.product.brand)",
+    "10-31 10:53:21.113     1     1 I linux-property-worker: property_service.cpp:957 Setting product property ro.product.device to 'generic_x86_64' (from ro.product.product.device)",
+    "10-31 10:53:21.113     1     1 I linux-property-worker: property_service.cpp:957 Setting product property ro.product.manufacturer to 'unknown' (from ro.product.product.manufacturer)",
+    "10-31 10:53:21.113     1     1 I linux-property-worker: property_service.cpp:957 Setting product property ro.product.model to 'AOSP on x86_64' (from ro.product.product.model)",
+    "10-31 10:53:21.113     1     1 I linux-property-worker: property_service.cpp:957 Setting product property ro.product.name to 'aosp_x86_64' (from ro.product.product.name)",
+    "10-31 10:53:21.113     1     1 I linux-property-worker: property_service.cpp:1034 Setting property 'ro.build.fingerprint' to 'Android/aosp_x86_64/generic_x86_64:16/BP4A.251205.006/14401865:user/release-keys'",
+    "10-31 10:53:21.113     1     1 I linux-property-worker: property_service.cpp:1096 Setting property 'ro.product.cpu.abilist' to 'x86_64,x86'",
+    "10-31 10:53:21.113     1     1 I linux-property-worker: property_service.cpp:1096 Setting property 'ro.product.cpu.abilist32' to 'x86'",
+    "10-31 10:53:21.113     1     1 I linux-property-worker: property_service.cpp:1096 Setting property 'ro.product.cpu.abilist64' to 'x86_64'",
+    "10-31 10:53:21.113     1     1 I linux-property-worker: util.cpp:156 Created socket '/dev/socket/property_service_for_system', mode 660, user 0, group 1000",
+    "10-31 10:53:21.114     1     1 I linux-property-worker: util.cpp:156 Created socket '/dev/socket/property_service', mode 666, user 0, group 0",
+    "10-31 10:53:21.115     1    13 E linux-property-worker: persistent_properties.cpp:268 Could not load single persistent property file, trying legacy directory: Unable to read persistent property file: open() failed: No such file or directory",
+    "NATIVE_COMPONENT_STARTUP mode=Diagnostic NOT_APK_READINESS",
+    "PROPERTY_WORKER_STOPPED: original actions drained and workers joined; not APK readiness",
+    "NATIVE_COMPONENT_STOPPED exit=exit status: 0"
+  ],
+  "cleanup": {
+    "owned_process_group": "verified",
+    "temporary_root": "removed"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "The executable digest is a prelaunch file sample; matching path metadata immediately after spawn does not prove an atomic operating-system image binding.",
+    "Process trees are sampled and may omit short-lived descendants.",
+    "Process-tree sampling ended with an incomplete observation.",
+    "Filesystem observations are before/after snapshots, not syscall traces.",
+    "Inherited host environment variables are not recorded and may affect results.",
+    "No filesystem observation paths were selected; filesystem effects remain unknown.",
+    "Process sampling has incomplete observations: /proc/256994/environ: EACCES: Error: EACCES: permission denied, open '/proc/256994/environ'. See truncation_details.process."
+  ],
+  "residual_unknowns": [
+    {
+      "scope": "process",
+      "reason": "Process trees are sampled and may omit short-lived descendants."
+    },
+    {
+      "scope": "process",
+      "reason": "The executable digest is a prelaunch file sample; operating-system image binding is not atomically observed."
+    },
+    {
+      "scope": "environment",
+      "reason": "Inherited host environment variables are not recorded."
+    },
+    {
+      "scope": "network",
+      "reason": "Network activity is not observed by this capture."
+    },
+    {
+      "scope": "filesystem",
+      "reason": "No filesystem observation paths were selected; filesystem effects remain unknown."
+    },
+    {
+      "scope": "process",
+      "reason": "Process sampling has incomplete observations: /proc/256994/environ: EACCES: Error: EACCES: permission denied, open '/proc/256994/environ'. See truncation_details.process."
+    }
+  ],
+  "truncated": true,
+  "note": "Sanitized derived projection; not complete authenticated MCP Evidence. Static identity and owned process group do not establish entire host coverage."
+}

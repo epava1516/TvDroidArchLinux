@@ -557,3 +557,16 @@ queda superado en este perfil, no mediante stubs. A4/A5 y H7–H9 siguen abierto
 
 
 <!-- Fin del registro histórico conservado. -->
+
+## R1/R2 · progreso del recolector, no aceptación de servicios
+
+[Hito y límites](../reports/android16-child-reaper/findings.json): el coordinador
+Bionic registra Service::GetSigchldFd antes de StartPropertyService y reutiliza
+ReapAnyOutstandingChildren. Una instancia por proceso y Epoll; cierre elimina el
+handler, cierra FD y restaura máscara después de unir workers. libprocinfo completo
+original enlazado, sin sustituir su consulta procfs. REA observa hijos getprop0 y
+false1 recogidos (ECHILD), FD4→4; supervisor Rust conserva su protocolo diagnóstico.
+Pendientes: hijos registrados ServiceList/Service::Reap, colas ctl autorizadas,
+clases, cgroups, mapeo UID, critical/onrestart/reinicio y gestión de descendientes.
+No ejecutar cohortes originales como aceptadas hasta resolver R1-MAC; Start o
+SIGCHLD funcional no prueban readiness. Matriz APK y R6 ARM sin cambios.

@@ -1,0 +1,77 @@
+{
+  "observed_at": "2026-10-31T10:54:15.729830+00:00",
+  "source_base_commit": "39724d8e4cce01a2aee18f8c9bb0e2a9cc2a270d",
+  "scope": "Original native SIGCHLD/reaper lifecycle integration only; no registered service, MAC, graphics, APK or broad runtime acceptance",
+  "source_provenance": [
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/init/service.h",
+      "sha256": "facd7d1f6ba66f718d3dad2f004e565e17163743ce0df136f5b11a2a1d02c8f6"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/init/service.cpp",
+      "sha256": "d0d758cc6a87ebebf05c76d28026582cbac9a1e1ecd756987eeb96de7230e726"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/init/sigchld_handler.cpp",
+      "sha256": "821367f0c3b2e8188c9b28b8f385f9426dc3bfb8fc69999166603e2c34dbaea5"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/libprocinfo/source/system/libprocinfo/Android.bp",
+      "sha256": "52efbf7418968a0616ea93bca78c97cd0cd2d45cbe6f38cde608c97b368aa5b1"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/libprocinfo/source/system/libprocinfo/process.cpp",
+      "sha256": "c98643f698afac00a14f0d379c001b8269e64fe25157cd265305ca3927e32ad1"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/child-reaper-build-2/child-reaper-probe",
+      "sha256": "6b5bd224839ea087d1c1dbc91c1541e8ad678296d81c48d3c5a1135b832d84b3"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/child-reaper-build-2/linux-property-worker",
+      "sha256": "af5651f2e4eb09232f5b701a7292b6338b85f2363203fadfd17794fe3350d923"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/child-reaper-build-2/procinfo.o",
+      "sha256": "f67c4bbbe300ab1d84181272cd55f79592be7c8c7e62bee732a68e7be7970862"
+    }
+  ],
+  "results": [
+    "Initial strict link failed on original libprocinfo GetProcessInfo; retained; complete original process.cpp module added unchanged, with its implicit unique_fd conversion allowed as in own module flags",
+    "Probe and worker compile and strict link0, original Bionic/AOSP x86_64 SDK36; not full Soong equivalence",
+    "Actual REA MCP UID10000/caps0/NNP1: original getprop exit0 prints36; original false exit1; original reaper removes both (waitpid ECHILD), mask restored, FD4 to4",
+    "Actual REA MCP Rust supervisor diagnostic worker startup/STOP/ACK/actual exit0 after SIGCHLD registration before property worker threads"
+  ],
+  "limitations": [
+    "Untracked native exec children only; no ServiceList registered Service::Reap, restart, critical, cgroup or descendant shutdown coverage",
+    "Original misleading untracked-process log says will not be reaped; scopeguard waitpid and ECHILD establish actual collection. Original final waitid ECHILD logs error; retained, not interpreted as failed test",
+    "Static original SIGCHLD FD cached, single coordinator life per process; restart requires new process; epoll disposed after Close",
+    "No host policy activation/reboot; normal SELinux refusal guard unchanged, not rerun in this hito",
+    "Worker private initializer is root, not application identity. Diagnostic does not accept original service readiness",
+    "CPU/virtual-address limits do not measure physical RAM. Prepared hashes do not atomically bind kernel executing image",
+    "ARM investigation independent; no translator installed or executed",
+    "All real APK nine-stage entries remain not_tested"
+  ],
+  "libprocinfo_provenance": {
+    "project": "system/libprocinfo",
+    "subtree": ".",
+    "commit": "f29c3352895ef664ef31fcf6d1cfcd281297a4b1",
+    "url": "https://android.googlesource.com/platform/system/libprocinfo/+archive/f29c3352895ef664ef31fcf6d1cfcd281297a4b1.tar.gz",
+    "lock_sha256": "06c6fcc779cb0e115f4515a0c38a67c31151dc8b55bd335ff2f0987e3db3eb58",
+    "status": "complete",
+    "signature_verified": false,
+    "original_source_modified": false,
+    "archive_bytes": 39225,
+    "archive_sha256": "fe639064c90286da6112fe47af6ee937bdc9ee732c595507368db5e52443c778",
+    "regular_files": 10,
+    "relative_source_root": "source/system/libprocinfo",
+    "unresolved_symlinks": [
+      "system/libprocinfo/.clang-format"
+    ],
+    "completeness": "Original subtree only; sibling sources/generated inputs must be supplied before build"
+  },
+  "libprocinfo_archive_replay_verified": true,
+  "epoll_open": "Original Epoll::Open is idempotent; explicit opening before SIGCHLD registration preserves subsequent StartLinuxPropertyActions call"
+}

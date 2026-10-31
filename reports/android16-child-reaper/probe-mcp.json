@@ -1,0 +1,65 @@
+{
+  "evidence_id": "ev_1145b1c7986cc476618404db2f7d62992a6ca229daadffb3f809a077f83bad1e",
+  "operation": "capture_process_scenario",
+  "authority": "controlled-replay",
+  "confidence": "observed",
+  "exit": {
+    "code": 0,
+    "signal": 0,
+    "reason": "exited"
+  },
+  "observations": [
+    "PRIVATE_BINDER {\"major\": 242, \"minor\": 1}",
+    "PREEXEC_SECURITY {\"Uid\": \"10000\\t10000\\t10000\\t10000\", \"Gid\": \"10000\\t10000\\t10000\\t10000\", \"Groups\": \"\", \"CapEff\": \"0000000000000000\", \"CapPrm\": \"0000000000000000\", \"CapInh\": \"0000000000000000\", \"CapAmb\": \"0000000000000000\", \"NoNewPrivs\": \"1\"}",
+    "36",
+    "10-31 10:53:10.859     1     1 I child-reaper-probe: sigchld_handler.cpp:114 Untracked process (pid: 19 name: (false) ppid: 1 pgrp: 0 state: Z) exited with status 1",
+    "10-31 10:53:10.859     1     1 I child-reaper-probe: sigchld_handler.cpp:120 Untracked process (pid: 19 name: (false) ppid: 1 pgrp: 0 state: Z) did not have an associated service entry and will not be reaped",
+    "10-31 10:53:10.860     1     1 I child-reaper-probe: sigchld_handler.cpp:114 Untracked process (pid: 18 name: (getprop) ppid: 1 pgrp: 0 state: Z) exited with status 0",
+    "10-31 10:53:10.860     1     1 I child-reaper-probe: sigchld_handler.cpp:120 Untracked process (pid: 18 name: (getprop) ppid: 1 pgrp: 0 state: Z) did not have an associated service entry and will not be reaped",
+    "10-31 10:53:10.860     1     1 E child-reaper-probe: sigchld_handler.cpp:56 waitid failed: No child processes",
+    "ORIGINAL_REAPER_COLLECTED_BOTH_EXEC_CHILDREN_WAITPID_ECHILD",
+    "REAPER_CLOSED_MASK_RESTORED_FDS_BEFORE=4_AFTER=4"
+  ],
+  "cleanup": {
+    "owned_process_group": "verified",
+    "temporary_root": "removed"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "The executable digest is a prelaunch file sample; matching path metadata immediately after spawn does not prove an atomic operating-system image binding.",
+    "Process trees are sampled and may omit short-lived descendants.",
+    "Process-tree sampling ended with an incomplete observation.",
+    "Filesystem observations are before/after snapshots, not syscall traces.",
+    "Inherited host environment variables are not recorded and may affect results.",
+    "No filesystem observation paths were selected; filesystem effects remain unknown.",
+    "Process sampling has incomplete observations: /proc/256927/environ: EACCES: Error: EACCES: permission denied, open '/proc/256927/environ'. See truncation_details.process."
+  ],
+  "residual_unknowns": [
+    {
+      "scope": "process",
+      "reason": "Process trees are sampled and may omit short-lived descendants."
+    },
+    {
+      "scope": "process",
+      "reason": "The executable digest is a prelaunch file sample; operating-system image binding is not atomically observed."
+    },
+    {
+      "scope": "environment",
+      "reason": "Inherited host environment variables are not recorded."
+    },
+    {
+      "scope": "network",
+      "reason": "Network activity is not observed by this capture."
+    },
+    {
+      "scope": "filesystem",
+      "reason": "No filesystem observation paths were selected; filesystem effects remain unknown."
+    },
+    {
+      "scope": "process",
+      "reason": "Process sampling has incomplete observations: /proc/256927/environ: EACCES: Error: EACCES: permission denied, open '/proc/256927/environ'. See truncation_details.process."
+    }
+  ],
+  "truncated": true,
+  "note": "Sanitized derived projection; not complete authenticated MCP Evidence. Static identity and owned process group do not establish entire host coverage."
+}

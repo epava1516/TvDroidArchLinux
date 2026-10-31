@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-service-profile/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-child-reaper/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -16,6 +16,16 @@ los resúmenes; no se ha completado compatibilidad amplia.
 Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCCION-ARM.md).
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
+
+## Última integración · SIGCHLD original antes de los workers
+
+[Resultados](../reports/android16-child-reaper/findings.json): descriptor original de
+SIGCHLD y ReapAnyOutstandingChildren integrados en el bucle Bionic antes de crear
+hilos. REA MCP: getprop0/false1 recogidos, waitpid ECHILD para ambos, máscara
+restaurada y FD4→4; worker bajo Rust arranca y cierra con salida0. Una sola vida
+por proceso; reinicio requiere proceso nuevo. Hijos sin ServiceList: no acredita
+Service::Reap registrado, restart, cgroups, cierre de descendientes ni APK.
+Siguiente: backend Linux de servicios/controles; R1-MAC sigue pendiente.
 
 ## Último preflight · perfiles originales de servicios
 
