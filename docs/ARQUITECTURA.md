@@ -1012,6 +1012,24 @@ intentos fallidos y requieren directorios nuevos; no se afirma replay completo.
 Siguiente: módulos originales completos libui/allocator/mapper y runtime HIDL,
 servicio Composer real, hotplug/buffers/fences y presentación hacia Smithay.
 
+## R3 · implementación libui compilada, enlace pendiente
+
+[23 unidades originales verificadas](../reports/android16-libui-implementation/compiled-units.json)
+compilan:19 de libui y cuatro de su módulo whole-static libui-types. Fuentes
+intactas contrastadas con blobs Git; siete familias allocator/mapper HIDL generan
+transportes y diez hashes coinciden con current.txt. Allocator AIDL V2 se genera
+desde snapshot congelado, con sus imports common V2/graphics common V7.
+Se suministran exports originales grallocusage, gralloctypes, mapper stable-C y
+common/support. El symlink original sync/sync.h→../android/sync.h se recupera en
+staging separado desde el archivo fuente cuyo SHA256 está verificado; la caché
+fuente previa queda intacta. Los intentos fallidos y comandos completos se conservan.
+
+Es compilación con perfil diagnóstico Bionic heredado: no equivalencia completa
+Soong, sanitizadores, AFDO ni Werror. Se conserva el aviso de API obsoleta original.
+No se ha enlazado libui completo, ni ejecutado allocator/mapper/buffers/fences,
+servicio Composer o APK. El siguiente paso es cerrar dependencias originales y
+el enlace estricto antes de pruebas funcionales; R1-MAC sigue requerido.
+
 ## Historia de decisiones anteriores · sustituida por A16-QPR2-1
 
 

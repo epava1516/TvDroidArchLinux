@@ -1,0 +1,621 @@
+{
+  "scope": "Complete original allocator/mapper transport families generation only, no native service/runtime acceptance",
+  "commands": [
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lhash",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "android.hardware.graphics.allocator@2.0"
+      ],
+      "exit": 0,
+      "stdout": "17971eb8a482893dadcfc16e0583f492d42a034ef95d9b0b709417af30838396 android.hardware.graphics.allocator@2.0::IAllocator\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lc++-headers",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/libui-interface-generated-1/hidl",
+        "android.hardware.graphics.allocator@2.0"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lc++-sources",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/libui-interface-generated-1/hidl",
+        "android.hardware.graphics.allocator@2.0"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lhash",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "android.hardware.graphics.allocator@3.0"
+      ],
+      "exit": 0,
+      "stdout": "6b2d8dfa3db505c34a3a19082d8737c86bd859ec00f0e6c5fd19cce3c1ef95d1 android.hardware.graphics.allocator@3.0::IAllocator\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lc++-headers",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/libui-interface-generated-1/hidl",
+        "android.hardware.graphics.allocator@3.0"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lc++-sources",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/libui-interface-generated-1/hidl",
+        "android.hardware.graphics.allocator@3.0"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lhash",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "android.hardware.graphics.allocator@4.0"
+      ],
+      "exit": 0,
+      "stdout": "a2dcf188b02102d3cf80ca0a280dce05d45a8df809751b3c52347426ed58ebbe android.hardware.graphics.allocator@4.0::IAllocator\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lc++-headers",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/libui-interface-generated-1/hidl",
+        "android.hardware.graphics.allocator@4.0"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lc++-sources",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/libui-interface-generated-1/hidl",
+        "android.hardware.graphics.allocator@4.0"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lhash",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "android.hardware.graphics.mapper@2.0"
+      ],
+      "exit": 0,
+      "stdout": "bd33ac23c57b4a07632691d2191bc2c93930f57e62f4ccf459748fdaa5c0f480 android.hardware.graphics.mapper@2.0::types\nf7d7cb747dc01a9fdb2d39a80003b4d8df9be733d65f5842198802eb6209db69 android.hardware.graphics.mapper@2.0::IMapper\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lc++-headers",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/libui-interface-generated-1/hidl",
+        "android.hardware.graphics.mapper@2.0"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lc++-sources",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/libui-interface-generated-1/hidl",
+        "android.hardware.graphics.mapper@2.0"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lhash",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "android.hardware.graphics.mapper@2.1"
+      ],
+      "exit": 0,
+      "stdout": "dd83be076b6b3f10ed62ab34d8c8b95f2415961fb785200eb842e7bfb2b0ee92 android.hardware.graphics.mapper@2.1::IMapper\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lc++-headers",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/libui-interface-generated-1/hidl",
+        "android.hardware.graphics.mapper@2.1"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lc++-sources",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/libui-interface-generated-1/hidl",
+        "android.hardware.graphics.mapper@2.1"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lhash",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "android.hardware.graphics.mapper@3.0"
+      ],
+      "exit": 0,
+      "stdout": "7183d9d9acfa41a61a64bdfed548e98299265a7bb1821a3ed204173b5c2cfd4a android.hardware.graphics.mapper@3.0::types\n033e096cb65e5093ee1d0e473892b9a487911d4611dbb65ebecb5cef18338923 android.hardware.graphics.mapper@3.0::IMapper\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lc++-headers",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/libui-interface-generated-1/hidl",
+        "android.hardware.graphics.mapper@3.0"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lc++-sources",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/libui-interface-generated-1/hidl",
+        "android.hardware.graphics.mapper@3.0"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lhash",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "android.hardware.graphics.mapper@4.0"
+      ],
+      "exit": 0,
+      "stdout": "b58a5e83a8ab04ff6e500f6afc17a1129a1f3de044b296b4b6bd34a085220f87 android.hardware.graphics.mapper@4.0::types\n4d674afdc4447f614c8cc466ed45c5955a0192fa3d3c70884b11dd3c88f0b468 android.hardware.graphics.mapper@4.0::IMapper\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lc++-headers",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/libui-interface-generated-1/hidl",
+        "android.hardware.graphics.mapper@4.0"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/hidl-host-build-8/hidl-gen",
+        "-Lc++-sources",
+        "-randroid.hardware:/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces",
+        "-randroid.hidl:/home/tv/.cache/archtv/graphics-candidates-1/libhidl/transport",
+        "-o",
+        "/home/tv/repositorio-principal/dist/aosp16/libui-interface-generated-1/hidl",
+        "android.hardware.graphics.mapper@4.0"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/tv/repositorio-principal/dist/aosp16/aidl-host-build-4/aidl",
+        "--lang=ndk",
+        "--structured",
+        "--stability=vintf",
+        "--version=2",
+        "--hash=9499fec09c544e9de5be3c87125721600f8ade66",
+        "--min_sdk_version=29",
+        "--omit_invocation",
+        "--out=/home/tv/repositorio-principal/dist/aosp16/libui-interface-generated-1/aidl/src",
+        "--header_out=/home/tv/repositorio-principal/dist/aosp16/libui-interface-generated-1/aidl/include",
+        "-I/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/common/aidl/aidl_api/android.hardware.common/2",
+        "-I/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/common/aidl",
+        "-I/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/allocator/aidl/aidl_api/android.hardware.graphics.allocator/2",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/allocator/aidl/aidl_api/android.hardware.graphics.allocator/2/android/hardware/graphics/allocator/AllocationError.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/allocator/aidl/aidl_api/android.hardware.graphics.allocator/2/android/hardware/graphics/allocator/AllocationResult.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/allocator/aidl/aidl_api/android.hardware.graphics.allocator/2/android/hardware/graphics/allocator/BufferDescriptorInfo.aidl",
+        "/home/tv/.cache/archtv/graphics-candidates-1/hardware-interfaces/graphics/allocator/aidl/aidl_api/android.hardware.graphics.allocator/2/android/hardware/graphics/allocator/IAllocator.aidl"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "hash_matches": [
+    [
+      "17971eb8a482893dadcfc16e0583f492d42a034ef95d9b0b709417af30838396",
+      "android.hardware.graphics.allocator@2.0::IAllocator"
+    ],
+    [
+      "6b2d8dfa3db505c34a3a19082d8737c86bd859ec00f0e6c5fd19cce3c1ef95d1",
+      "android.hardware.graphics.allocator@3.0::IAllocator"
+    ],
+    [
+      "a2dcf188b02102d3cf80ca0a280dce05d45a8df809751b3c52347426ed58ebbe",
+      "android.hardware.graphics.allocator@4.0::IAllocator"
+    ],
+    [
+      "bd33ac23c57b4a07632691d2191bc2c93930f57e62f4ccf459748fdaa5c0f480",
+      "android.hardware.graphics.mapper@2.0::types"
+    ],
+    [
+      "f7d7cb747dc01a9fdb2d39a80003b4d8df9be733d65f5842198802eb6209db69",
+      "android.hardware.graphics.mapper@2.0::IMapper"
+    ],
+    [
+      "dd83be076b6b3f10ed62ab34d8c8b95f2415961fb785200eb842e7bfb2b0ee92",
+      "android.hardware.graphics.mapper@2.1::IMapper"
+    ],
+    [
+      "7183d9d9acfa41a61a64bdfed548e98299265a7bb1821a3ed204173b5c2cfd4a",
+      "android.hardware.graphics.mapper@3.0::types"
+    ],
+    [
+      "033e096cb65e5093ee1d0e473892b9a487911d4611dbb65ebecb5cef18338923",
+      "android.hardware.graphics.mapper@3.0::IMapper"
+    ],
+    [
+      "b58a5e83a8ab04ff6e500f6afc17a1129a1f3de044b296b4b6bd34a085220f87",
+      "android.hardware.graphics.mapper@4.0::types"
+    ],
+    [
+      "4d674afdc4447f614c8cc466ed45c5955a0192fa3d3c70884b11dd3c88f0b468",
+      "android.hardware.graphics.mapper@4.0::IMapper"
+    ]
+  ],
+  "files": [
+    {
+      "path": "aidl/include/aidl/android/hardware/graphics/allocator/AllocationError.h",
+      "sha256": "91aa47a4b4dbf7a1a5e5745fd92f222cf8fd4c706c39ab770e756c6c26ae7127"
+    },
+    {
+      "path": "aidl/include/aidl/android/hardware/graphics/allocator/AllocationResult.h",
+      "sha256": "11010cb32f962f922959c24772eba21f4f0524a6926ab5c7a6f659829eb0531e"
+    },
+    {
+      "path": "aidl/include/aidl/android/hardware/graphics/allocator/BnAllocationError.h",
+      "sha256": "4e35526580071898f123d0429cc1bc43ba8782212f1c260da4b453a08bcf25a4"
+    },
+    {
+      "path": "aidl/include/aidl/android/hardware/graphics/allocator/BnAllocationResult.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "aidl/include/aidl/android/hardware/graphics/allocator/BnAllocator.h",
+      "sha256": "2fafd1be13eff1beb1440876447ee4184d5c68389e21b033acbd571747fa2ff2"
+    },
+    {
+      "path": "aidl/include/aidl/android/hardware/graphics/allocator/BnBufferDescriptorInfo.h",
+      "sha256": "cc2515745cb13d364f8794f1401866f4b76cc283575a9c9d513609e2dbee3af2"
+    },
+    {
+      "path": "aidl/include/aidl/android/hardware/graphics/allocator/BpAllocationError.h",
+      "sha256": "dbcd4bdcedac560e49199ee02dae7af319bce3d7d0b375f595f75bff2c19088e"
+    },
+    {
+      "path": "aidl/include/aidl/android/hardware/graphics/allocator/BpAllocationResult.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "aidl/include/aidl/android/hardware/graphics/allocator/BpAllocator.h",
+      "sha256": "6fdc4500b4bbc334d28b593609eb0ecad7c10742cdbdb4d0498325b0af4ed73c"
+    },
+    {
+      "path": "aidl/include/aidl/android/hardware/graphics/allocator/BpBufferDescriptorInfo.h",
+      "sha256": "b4eefc854cf8e60647b9414cc4985e35070d15f0ae59af165fea0cf609f76da5"
+    },
+    {
+      "path": "aidl/include/aidl/android/hardware/graphics/allocator/BufferDescriptorInfo.h",
+      "sha256": "26bd05b257d119c0f04f80248b5093c17754b175ddbb79a9beb102518167ba40"
+    },
+    {
+      "path": "aidl/include/aidl/android/hardware/graphics/allocator/IAllocator.h",
+      "sha256": "83f459fd1445528aba061d79a11fbe4c257639e506f3ce166d027d3e7ca9050f"
+    },
+    {
+      "path": "aidl/src/android/hardware/graphics/allocator/AllocationError.cpp",
+      "sha256": "d113a9d504520d11fe801a82f81564b9ce38b251e4a8ef5666bc226f043576eb"
+    },
+    {
+      "path": "aidl/src/android/hardware/graphics/allocator/AllocationResult.cpp",
+      "sha256": "fd6e34f9310ebe088de9a656ac79b0d8c96453a551222d662e2bd106f82cc0f2"
+    },
+    {
+      "path": "aidl/src/android/hardware/graphics/allocator/BufferDescriptorInfo.cpp",
+      "sha256": "ad7c6fd72b810f6183bfe62841aa303f501d87c4ee6e6fd34d50a471fbfb0413"
+    },
+    {
+      "path": "aidl/src/android/hardware/graphics/allocator/IAllocator.cpp",
+      "sha256": "94f4a7e62dd6332eca3aed29383f772659584d030ba14da7f406d75e1150cfa9"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/allocator/2.0/AllocatorAll.cpp",
+      "sha256": "8e0b6355e76850a18e10e3e2f651a6a5f96887272a0045903ce73c923e17e3f3"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/allocator/2.0/BnHwAllocator.h",
+      "sha256": "7ba1a0cb397ec111c4f3ff9a8ef002579a414e5184c3eb377a9a6c56bd4f9764"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/allocator/2.0/BpHwAllocator.h",
+      "sha256": "21e07ad14a218ae34196dde981852c8d958ec4e55bcf11a3812d0431336d8e19"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/allocator/2.0/BsAllocator.h",
+      "sha256": "c07e5a034b0a5c2d0f63ab1ae0b7a294fe26d0def06ca65b693ab2343b05d44f"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/allocator/2.0/IAllocator.h",
+      "sha256": "0a6b38641d7b523d2dac67da100bdc8d2b46a3785418c9f0643f33c3a4b45d6d"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/allocator/2.0/IHwAllocator.h",
+      "sha256": "d619f57f760a9f134a86cd822db0dbc3065ad2142e8281f6188578fcc7601e2b"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/allocator/3.0/AllocatorAll.cpp",
+      "sha256": "18bf71477ae891647b77df6df7e694742637c54be2d2ca34fcac3a71f222e3d7"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/allocator/3.0/BnHwAllocator.h",
+      "sha256": "53819c09a9fde880d8d1d4a214d6160bbe1c35fab15425f1d889f0b9a01f9006"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/allocator/3.0/BpHwAllocator.h",
+      "sha256": "9afe25c91b671cd389b18e081534e83b948702ed0113a2992cfb4cab5487cac4"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/allocator/3.0/BsAllocator.h",
+      "sha256": "d2206055ef0fb5e7f2eec2aad777a779bff421b45cdbd6fb211f6b7965ce3f0e"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/allocator/3.0/IAllocator.h",
+      "sha256": "588e425dad87dca43f1bdaa4987939f3b00df492170b3bb7464cdf312d60f595"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/allocator/3.0/IHwAllocator.h",
+      "sha256": "0d3fb34aa7710f9ed49bbd502af8c19cec3861cf64c2ea686c619e1d819fbde7"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/allocator/4.0/AllocatorAll.cpp",
+      "sha256": "d8b128ba1813f2ae3f2ef588dff181540eec589690b59202a2972d272e72c1e8"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/allocator/4.0/BnHwAllocator.h",
+      "sha256": "a71fa1c4c89de79ef2bd23ab29ad644483496732520990af6bff3e0d8110e637"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/allocator/4.0/BpHwAllocator.h",
+      "sha256": "90ce4133183f78503a4474420955a8daa9e276f0ebee83abe8dbd3514209ba71"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/allocator/4.0/BsAllocator.h",
+      "sha256": "baf8049a325a913aa64b97420ffb1d85187fd36d208d8152a6d5873f34ff53fb"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/allocator/4.0/IAllocator.h",
+      "sha256": "0e2548054e9b5cb5e1669d062da117fe9122199a157a40b8becd561c341eac6a"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/allocator/4.0/IHwAllocator.h",
+      "sha256": "5f10c7fdb202815801a4fce74053f6470afb84e1a8b878ce5981479ab448bbe7"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/2.0/BnHwMapper.h",
+      "sha256": "3b1ca6080c89c04b46fc2ca53e61a8a6735efa05cf2c1e2f6b6dd4e390f4b424"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/2.0/BpHwMapper.h",
+      "sha256": "37528777e40317e633e618fec84b716b3cf4a67cf2721e084db88ea8e2ccd9ed"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/2.0/BsMapper.h",
+      "sha256": "9bef3af60e1a939707ef935dda2b537e8c8930ff2ab352e5eeaa5eaa8972138e"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/2.0/IHwMapper.h",
+      "sha256": "1e4379ce139f881034f216850f8f286f5e532598ff2ea0effa198913a24ae14c"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/2.0/IMapper.h",
+      "sha256": "f4223624bb01f4d772a99fa2a73bc1ad477c6e6da8f3dc8a1a597d5e508a8c28"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/2.0/MapperAll.cpp",
+      "sha256": "fbb3b2e4c9f3483bb508b2c86d3015b16285c39396858c6ad18cec08391359e8"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/2.0/hwtypes.h",
+      "sha256": "fc79f3d0b83016cf7f06e796e1a7d2d6a135c148cf6d83ea4b5f8a43e525c879"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/2.0/types.cpp",
+      "sha256": "e8c416a5357e96e408164820ddd82fb6a29659cc3be643492bda1cade60129c0"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/2.0/types.h",
+      "sha256": "b69f2706112924cdfab1f38316f19227c0d85a626292920224f5ee1f43f97471"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/2.1/BnHwMapper.h",
+      "sha256": "fd0921a2be94805d16feaeb85e467d558dac6d8d9c52045ca2e0562be4627d1d"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/2.1/BpHwMapper.h",
+      "sha256": "8e60b38a81b18775cebf38da57617ad8364bc1d46c3e1169d26208429fe64301"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/2.1/BsMapper.h",
+      "sha256": "6e6c13e7d1802efdb0ebb71830e6d36ffc62bfea7a0b6f8bc25b5fbb82182960"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/2.1/IHwMapper.h",
+      "sha256": "8fe7e0b388a5a82ed5c886df29bcf240ed82ff3e7088a60d6b07964b8d4e0108"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/2.1/IMapper.h",
+      "sha256": "c05011f5a62074d89a1d653301b052829bd300f8f96297d8438436bf25f9d0cf"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/2.1/MapperAll.cpp",
+      "sha256": "7e7eeabbc9029fadf774021ddbbe3cc48cf8347d2de136cdf2554e5bfb6de992"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/3.0/BnHwMapper.h",
+      "sha256": "d96cf2ab0f7c8e5e6b31b3d8e1a3254fd7e3e8f0ade638794243a60b6d3a659b"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/3.0/BpHwMapper.h",
+      "sha256": "f8b54d1b5c8c7e826de6543ffdecc139251c4be22213fd40ae571060de7708df"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/3.0/BsMapper.h",
+      "sha256": "426be6bbc33bf9540e0ec97b0c68f01f0e42d1e4b116dc47fee879a7332055e1"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/3.0/IHwMapper.h",
+      "sha256": "2f367b53ea74fa039c81e294470202dd9cef7738f9c5c2cc43a3262a606020ad"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/3.0/IMapper.h",
+      "sha256": "5ff0c6432dd0d9c6c2f9f7ac7a1051fcc805abf620018e341a79a05a96ffcb93"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/3.0/MapperAll.cpp",
+      "sha256": "892da6d15df572da976d3c3dff06b47ab1ae641c7cfcdd8b004200c8c7d85d54"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/3.0/hwtypes.h",
+      "sha256": "190d9acfc0d15cdc9d35d185334e26a282d634a07ce777a05657cac5c00ffd14"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/3.0/types.cpp",
+      "sha256": "fe35a859c576a89bd2c6aefe24bc7a626a210b43c9dd8abf9e6e7348a6dc3030"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/3.0/types.h",
+      "sha256": "2e2c8911fc5ca5ce24e50835b1414f4dde359ebf031b44160ca1a1e0e4155e72"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/4.0/BnHwMapper.h",
+      "sha256": "2a9767f73fa6b9b2463ec6d546415d4ece78812fc54d45ad4957348c8eea4aee"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/4.0/BpHwMapper.h",
+      "sha256": "bf3c734e9d4d6e222ad0d0362baaaae64b932d79b1261b99d90cf07c8350b41d"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/4.0/BsMapper.h",
+      "sha256": "77afe46bd02ba30d9e4af8729ede5d51dd213cbb1240e4d3d90eba71739e04e0"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/4.0/IHwMapper.h",
+      "sha256": "298236e0755cce9bf4575d6e1bd89f7d2f2cb1ab0cca6fb1efc7146e8e858f46"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/4.0/IMapper.h",
+      "sha256": "52d51bdbdc32795f616dc3187954f176a29e77a0914c1e247d2aa9906fd3725a"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/4.0/MapperAll.cpp",
+      "sha256": "b5fcf6a45c01ce2ff8146e00aa5473200ae6417291f46e513d769ce6979514c2"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/4.0/hwtypes.h",
+      "sha256": "96a2307ffc67791af489e76bff6ed723f95ea8c3600724a850242c48c1006d90"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/4.0/types.cpp",
+      "sha256": "98009bea67acc847f74859da931131b9ca4eadc9961bc5f10fbd4bb782b72d32"
+    },
+    {
+      "path": "hidl/android/hardware/graphics/mapper/4.0/types.h",
+      "sha256": "60d8e5b782bda38d7eb2b25fadb0b405c5d8597a25c187a8e02fa0cb50012579"
+    }
+  ]
+}

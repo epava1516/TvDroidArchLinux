@@ -1,0 +1,12 @@
+{
+  "total_original_units": 23,
+  "compiled": 23,
+  "source_git_clean_and_blobs_match": true,
+  "hidl_frozen_hash_matches": 10,
+  "generated_files": 67,
+  "link_tested": false,
+  "runtime_tested": false,
+  "apk_accepted": false,
+  "profile_limits": "Inherited diagnostic Bionic flags, no complete Soong/sanitizer/AFDO/Werror profile equivalence. Original deprecated AServiceManager_getService warning retained; no source edits.",
+  "next": "Build required original static/shared dependencies and transport units; strict libui/Composer link, then actual buffer/mapper/HAL behavior. R1-MAC mandatory and unresolved."
+}

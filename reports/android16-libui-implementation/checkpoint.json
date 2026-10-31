@@ -1,0 +1,38 @@
+{
+  "observed_at": "2026-10-31T08:59:23.346600+00:00",
+  "head": "89a5a63e416aeaf9d72a715146490787e9950e2c",
+  "previous_checkpoint": "reports/android16-libui-source-closure/checkpoint.json",
+  "terminal_exec_handles": [
+    35656,
+    3571,
+    36357,
+    47193
+  ],
+  "active_exec_handles": [],
+  "results": {
+    "total_original_units": 23,
+    "compiled": 23,
+    "source_git_clean_and_blobs_match": true,
+    "hidl_frozen_hash_matches": 10,
+    "generated_files": 67,
+    "link_tested": false,
+    "runtime_tested": false,
+    "apk_accepted": false,
+    "profile_limits": "Inherited diagnostic Bionic flags, no complete Soong/sanitizer/AFDO/Werror profile equivalence. Original deprecated AServiceManager_getService warning retained; no source edits.",
+    "next": "Build required original static/shared dependencies and transport units; strict libui/Composer link, then actual buffer/mapper/HAL behavior. R1-MAC mandatory and unresolved."
+  },
+  "pending_changes": " M fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java\n M tools/apk/verify_isolated_bootstrap.py\n?? reports/android16-libui-implementation/\n?? reports/h9-uefi-boot/qemu.log\n?? reports/h9-uefi-boot/serial.log\n?? runtime/aosp/native/original-resources-host.cpp\n?? tools/apk/build_original_resources.py\n",
+  "evidence": {
+    "reports/android16-libui-implementation/compile-attempt-3.py": "1fc4a9b348c62d172df614afeb01619099110a4dd8a6e97f6b9a331c78a303d5",
+    "reports/android16-libui-implementation/findings.json": "2f851fb7638a3d6dcab898c196f8325918af5279bc0bcf06f1318ce29e3cb1cd",
+    "reports/android16-libui-implementation/compile-attempt-2.json": "8d80f67dd28e540cfce4ebe5a8e6d40b702429d3c65becdadaf8c6aa63036ebe",
+    "reports/android16-libui-implementation/compile-attempt-1.json": "21a0975bdecc8bba3a200f5e59e28a93ee96791076d57b0aa1e3bdbe220f91d1",
+    "reports/android16-libui-implementation/compiled-units.json": "69a6eb84b05430268c5d77ef4e98b0340bfcc3ef515f81988b50321541131227",
+    "reports/android16-libui-implementation/generate-original-families.py": "4ea0205ec4f688eb576989fa9e99497e907d1baed58c13071608a640b141ac84",
+    "reports/android16-libui-implementation/compile-original-ui.py": "0a6ed18e60864e403a4087760f966e87caa1b639169de5ed6beeeedca6c663f2",
+    "reports/android16-libui-implementation/libsync-header-provenance.json": "3fad3d6e1b37ea9fd4542cf7e66af58c75ceb6415b453deae175bcabef4deb98",
+    "reports/android16-libui-implementation/generation.json": "62580c617cf5c936d1766ad5f7c4778ed24019f95da59e9cfa58c1c3de16c3e6",
+    "reports/android16-libui-implementation/compile-attempt-3.json": "9a620babebbb4fcf960e318c7d1c5bd1a11c11f69f690f0ddc163c25db77a58c",
+    "reports/android16-libui-implementation/compile-attempt-2.py": "0f2277c986d1cc1c94b041a5a306f00a3e12fb82f1c0b9a38ea459da6738c8b8"
+  }
+}

@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-libui-source-closure/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-libui-implementation/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -17,7 +17,18 @@ Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCC
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
 
-## Último hito verificado · codecs gráficos originales
+## Último hito verificado · implementación original libui
+
+[Resultados](../reports/android16-libui-implementation/findings.json): las23 unidades
+originales de libui y libui-types compilan sin modificar fuentes. Siete familias
+HIDL allocator/mapper generan transportes; diez hashes congelados coinciden.
+Allocator AIDL V2 y exports originales permiten compilar Gralloc2–5; un symlink
+libsync omitido en la extracción se recupera del archivo original con hash verificado.
+No enlace completo, equivalencia Soong/sanitizadores/AFDO, ejecución de buffers,
+servicio Composer o APK aceptados. Siguiente: dependencias completas y enlace
+estricto antes de probar comportamiento; R1-MAC permanece pendiente.
+
+## Hito anterior · codecs gráficos originales
 
 [Resultados y límites](../reports/android16-libui-source-closure/findings.json):
 AIDL construido desde la revisión original con SDK36 genera31 entradas/124 archivos.

@@ -1,0 +1,7 @@
+{
+  "archive_sha256": "4babe45eb994e8469b767b7775a1553ce0b9fed0e0a4c37797124fc764fdfde1",
+  "commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+  "original_symlink": "libsync/include/sync/sync.h -> ../android/sync.h",
+  "staging": "dist/aosp16/libsync-original-headers-1",
+  "source_cache_unchanged": true
+}
