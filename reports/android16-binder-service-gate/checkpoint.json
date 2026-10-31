@@ -1,0 +1,36 @@
+{
+  "observed_at": "2026-10-31T03:39:21.224389+00:00",
+  "contract": "A16-QPR2-1",
+  "objective": "Complete unmodified arbitrary APK incl TV, Linux Rust/Smithay; native coherent AOSP16 QPR2, SF\u2192Wayland first hypothesis; no Waydroid/full Android. Preserve compatibility/isolation/stability/lightweight/install/update.",
+  "branch": "main",
+  "source_base_commit": "8587fa7ac45cf54501d3fd4854e7bae3fed0f870",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "relation_to_local_origin_tracking": "0\t0",
+  "pending_own": {
+    "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+    "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+    "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+    "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+  },
+  "pending_other_hashes": {
+    "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+  },
+  "own_milestone": "Original coherent runtime reaches ActivityThread.main on private Binder; manager startup actual failure establishes active host SELinux gate",
+  "terminal_exec_handles": [
+    6022
+  ],
+  "evidence_root": "reports/android16-binder-service-gate",
+  "recovery_snapshot": "/home/tv/recuperacion-archtv/20261031T021219Z-native-flag-generators",
+  "tests": "Private Binder allocate/version prototype; original native ART/ActivityThread call observed; original servicemanager fatal on status; old pending hashes unchanged",
+  "next": "Review and design coherent Linux MAC/policy/labels/transitions integration and installation/boot gate, preserving original AOSP service checks. Current VM restart forbidden; continue source/build/packaging and independent roadmap work. Group all original Binder contexts/managers and their readiness/identity tests; no individual method replacements.",
+  "not_done": "Service registry blocked on current inactive SELinux; not entire roadmap blocked because policy/source/packaging and independent compositor work remain. All real APK journeys untested.",
+  "restart_policy": "No VM/client restart or Android full boot",
+  "process_observation": {
+    "observed_at": "2026-10-31T03:39:21.224465+00:00",
+    "probe_contexts": "Namespace mounts destroyed at process exit",
+    "manager_and_framework": "terminal127",
+    "active_task_handles": []
+  },
+  "active_exec_handles": []
+}

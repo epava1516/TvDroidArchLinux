@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+- [Binder privado y puerta de política original](../reports/android16-binder-service-gate/validation.json): dispositivos distintos/protocolo8; ART llega a ActivityThread.main, sin Markor. Servicemanager original aborta por SELinux inactivo. No transacciones/servicios/política/APK aceptados. [Checkpoint vigente](../reports/android16-binder-service-gate/checkpoint.json).
+
 - [Perfil original y creación VM fallida](../reports/android16-property-profile/validation.json): PropertyInit0, 170 valores iguales con lector UID10000/caps0; REA MCP/GDB prueba fallo de análisis de opciones dentro de JNI_CreateJavaVM, sin VM lista ni APK. [Checkpoint vigente](../reports/android16-property-profile/checkpoint.json).
 
 - [PropertyInit original: enlace y fallo ejecutado](../reports/android16-propertyinit-entry/validation.json): 146 fuentes nativas protobuf/Abseil; enlace0, ejecución127 por entrada vendor de política ausente. No readiness, política o APK. [Checkpoint vigente](../reports/android16-propertyinit-entry/checkpoint.json).

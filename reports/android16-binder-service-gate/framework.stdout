@@ -1,0 +1,2 @@
+PRIVATE_BINDER {"major": 242, "minor": 1}
+PREEXEC_STATUS {"Uid": "10000\t10000\t10000\t10000", "Gid": "10000\t10000\t10000\t10000", "Groups": "", "CapPrm": "0000000000000000", "CapEff": "0000000000000000", "NoNewPrivs": "1"}

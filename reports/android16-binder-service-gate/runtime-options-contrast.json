@@ -1,0 +1,13 @@
+{
+  "scope": "Coherent original runtime option correction, main framework JNI init now reaches real Binder dependency; not canonical APK launch or compatibility",
+  "source_reason": "ART ParsedOptions rejects -Xint with -Xusejit:true; original profile dalvik.vm.usejit=true and AndroidRuntime forwards it",
+  "changed_harness": "Remove forced -Xint; use original -Xuse-stderr-logger. Keep original property values/runtime/Markor bytes. No preload.",
+  "actual_execution": "Original ART collector, core JNI loading and Java daemon threads observed; framework native registration aborts because /dev/binder unavailable",
+  "not_done": "No ActivityThread/Markor code execution or installed app demonstrated; Binder driver/session/service-manager/services and app route pending",
+  "log": "/home/tv/repositorio-principal/dist/aosp16/property-profile-client-4/stderr.log",
+  "log_sha256": "c315d6e1383638f073bc7c291714d1c1b3cb4b32cf7f81d87acb5954b592c5b4",
+  "source_paths": [
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/art-parsed-options/parsed_options.cc",
+    "/home/tv/.cache/archtv/aosp16-qpr2/framework-entry-study/frameworks_base__core_jni_AndroidRuntime.cpp"
+  ]
+}

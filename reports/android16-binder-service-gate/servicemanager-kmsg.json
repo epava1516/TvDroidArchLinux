@@ -1,0 +1,6 @@
+{
+  "original_path": "/home/tv/repositorio-principal/dist/aosp16/original-servicemanager-1/runtime-framework/dev/kmsg",
+  "original_sha256": "0249dfac6c228afcb5f9a923d1a7361131db22fa0f26c8f776ba9aaac8fa457a",
+  "raw_text": "<6>servicemanager: Starting sm instance on /dev/binder\n<2>servicemanager: Check failed: selinux_status_open(true ) >= 0 \n",
+  "scope": "Exact captured text in JSON to preserve trailing whitespace without altering original local evidence"
+}

@@ -1,0 +1,25 @@
+{
+  "argv": [
+    "sudo",
+    "-n",
+    "prlimit",
+    "--cpu=10",
+    "--as=68719476736",
+    "--core=0",
+    "--",
+    "unshare",
+    "--mount",
+    "--pid",
+    "--fork",
+    "--kill-child=SIGKILL",
+    "--net",
+    "--ipc",
+    "--uts",
+    "--cgroup",
+    "python",
+    "/tmp/archtv-original-servicemanager-1.py",
+    "framework"
+  ],
+  "exit_code": 127,
+  "seconds": 0.45029677099955734
+}

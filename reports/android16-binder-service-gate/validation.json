@@ -1,0 +1,134 @@
+{
+  "base_commit": "8587fa7ac45cf54501d3fd4854e7bae3fed0f870",
+  "scope": "Original runtime reaches ActivityThread entry on private Binder; original manager blocked by active host MAC, no APK launch/compatibility accepted",
+  "kernel": "6.18.59-1-lts",
+  "kernel_config": {
+    "CONFIG_ANDROID_BINDER_IPC_RUST": "y",
+    "CONFIG_SECURITY_SELINUX": "y",
+    "CONFIG_LSM": "landlock,lockdown,yama,integrity,bpf"
+  },
+  "active_LSMs": [
+    "capability",
+    "landlock",
+    "lockdown",
+    "yama",
+    "bpf"
+  ],
+  "probe1": "Two devices allocated; unprivileged path traversal denied before chroot, child1. Not protocol success.",
+  "probe2": "Two private binderfs mounts, different device major/minor pairs, UID10000/caps0/NNP1 child assertions pass. Actual BINDER_VERSION replies8 on both, observed tool output; child0. Not transaction or noninterference proof.",
+  "framework": "Remove conflicting harness -Xint, preserve original usejit=true; original ART stderr option, no preload. VM and RuntimeInit.main observed, with private binder ActivityThread.main invoked. Abort at absent hwbinder and no manager context. Not Markor code.",
+  "manager": "Original servicemanager, UID1000/groups1000,3009 as rc, caps0, private binder and private kmsg. Fatal selinux_status_open(true) >=0, exit127. No manager readiness.",
+  "architecture_gate": "Original service policy APIs depend on active Linux SELinux and a coherent policy/labels/transitions. CONFIG_SECURITY_SELINUX=y alone is insufficient. Current contract forbids VM restart, no reboot or boot-setting change performed. Plan/test integration of Linux-wide MAC before enabling service group. Do not fake status/context/AVC, use permissive success or boot hidden Android.",
+  "official_kernel_sources": [
+    "https://kernel.org/doc/html/latest/admin-guide/kernel-parameters.html",
+    "https://cdn.kernel.org/doc/html/latest/admin-guide/LSM/index.html"
+  ],
+  "sources": [
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/original-servicemanager/source/frameworks/native/cmds/servicemanager/main.cpp",
+      "sha256": "eb3047104069fc0971356d14df299a1f5186c0dc7ff2ef63d9c6eeab2cd2d78d"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/original-servicemanager/source/frameworks/native/cmds/servicemanager/Access.cpp",
+      "sha256": "387dafd4f5c4af055c92ab323e07d067cc7959e0469786aa475319b38c9a335f"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/original-servicemanager/source/frameworks/native/cmds/servicemanager/servicemanager.rc",
+      "sha256": "36b87b60901affd28b0c500190fac30f1b7ebb9c8db63c0d14a08094ed756460"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/original-hwservicemanager/source/system/hwservicemanager/service.cpp",
+      "sha256": "45d5a1fbf9917f6db681a24dc641927cba4f758581db29d4ce1693fa96d2d5cf"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/original-hwservicemanager/source/system/hwservicemanager/AccessControl.cpp",
+      "sha256": "82fdfdbf4b1842b970164609cf4c16b2e40034228c4afcfa5c399d9b653f9df9"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/original-hwservicemanager/source/system/hwservicemanager/hwservicemanager.rc",
+      "sha256": "fec3f3312b7cb0f5c22438b62cca189964878874f8aabd47396ae1f4faf8c4f9"
+    }
+  ],
+  "local_full_logs": [
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/property-profile-client-4/stderr.log",
+      "sha256": "c315d6e1383638f073bc7c291714d1c1b3cb4b32cf7f81d87acb5954b592c5b4",
+      "bytes": 27555
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/property-profile-client-5/stderr.log",
+      "sha256": "e74c36f36e1ee8f29ede1f80e4462b0b1e167c32dd21be2c450302a8e8d51512",
+      "bytes": 30690
+    }
+  ],
+  "evidence": [
+    {
+      "path": "reports/android16-binder-service-gate/framework.stdout",
+      "sha256": "f1304e775d07880f4e5e1a20541a0495df79b87a2560baa371a27d960320adaf"
+    },
+    {
+      "path": "reports/android16-binder-service-gate/servicemanager.stdout",
+      "sha256": "7e4a27d25e7468d3345f0b865b95ad0dad7431b23d7d288b44efa3b32b563831"
+    },
+    {
+      "path": "reports/android16-binder-service-gate/servicemanager.json",
+      "sha256": "6e2a7fd87ed8410cff358d1a2a0cc25363eb23ebd5dcdb96f122ed2a0baf68b3"
+    },
+    {
+      "path": "reports/android16-binder-service-gate/probe-1.json",
+      "sha256": "5b8caa960038fc9efed8f691fc8ee49c0b0ae9a1bc6c0841c9dd124f0b3d0802"
+    },
+    {
+      "path": "reports/android16-binder-service-gate/framework-private-binder.json",
+      "sha256": "b75adcd3ba41c0690788b98f4ad49db34983bdabb57c9c95fab9c0c3b7c09e6c"
+    },
+    {
+      "path": "reports/android16-binder-service-gate/runtime-options-contrast.json",
+      "sha256": "8b72a2e36b8be6b90c1d01d743c3b1bedd0308948a31e7cac48dcf160ac67245"
+    },
+    {
+      "path": "reports/android16-binder-service-gate/probe-2.json",
+      "sha256": "da8f1d3d553232c0a9bcd830a6da2817936791e3a29a4b3a9bbc74411d53a9b1"
+    },
+    {
+      "path": "reports/android16-binder-service-gate/servicemanager.stderr",
+      "sha256": "7255f6a934d59ede289a95248a659462115b8a8b70741ab4bc5c82e00071f5db"
+    },
+    {
+      "path": "reports/android16-binder-service-gate/framework-no-binder.json",
+      "sha256": "845276e6b2c6b585b83215b1a52730fee32110cd8b6ae7a782dcf04ccbf761d1"
+    },
+    {
+      "path": "reports/android16-binder-service-gate/reproduce/binderfs-probe-2.py",
+      "sha256": "9209c28a5a8634544cc166c8703933f7cd51b3f55f8f4f495f65d7735cb6d287"
+    },
+    {
+      "path": "reports/android16-binder-service-gate/reproduce/property-profile-client-5.py",
+      "sha256": "46f9a3a948db4e0d8f98be06df6a35ce1f4abb11dfc277f23b152751f6b42335"
+    },
+    {
+      "path": "reports/android16-binder-service-gate/reproduce/property-profile-client-4.py",
+      "sha256": "124e2ffc9b6c3edd06805c85fffe21ef5cd2e738415c03cc8f7840102a1de8fb"
+    },
+    {
+      "path": "reports/android16-binder-service-gate/reproduce/binderfs-probe-1.py",
+      "sha256": "79bc65a48eebc872e8525bf258b9d763c4c47be6c4d6e00b93fbf7a129a2502b"
+    },
+    {
+      "path": "reports/android16-binder-service-gate/reproduce/original-servicemanager-1.py",
+      "sha256": "ebf88bf358ac01dd3c535c9fc96378da5377cc812a49d251ed346fb55c6003c4"
+    },
+    {
+      "path": "reports/android16-binder-service-gate/servicemanager-kmsg.json",
+      "sha256": "067fd6c954516a9ea386e85466f8f018a71e80a5868338c87c717add62ec272a"
+    }
+  ],
+  "not_accepted": [
+    "Binder transactions/identity/death handling/isolation",
+    "service policy enforcement",
+    "AIDL/HIDL registry readiness",
+    "canonical APK route",
+    "all nine stages of real APK matrix",
+    "whole runtime readiness"
+  ]
+}

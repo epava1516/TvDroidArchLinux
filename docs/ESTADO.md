@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-property-profile/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-binder-service-gate/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -30,12 +30,12 @@ no equivalen automáticamente a Android completo; estudiar cierres reales.
 | Se conserva | Compositor/shell Rust, instalación/herramientas y regresiones previas útiles; H7–H9 permanecen abiertos. |
 | Históricos Android13 | ART host/glibc y fixtures propias; mezcla de jars/core/JNI; loader Bionic parcial y cierre de bibliotecas. No se trasladan como validación de A16. |
 | Pendiente separado | Cuatro archivos propios de JNI/bootstrap host conservados sin commit. Ensayos API33 de propiedades/configuración pausados, sin área ejecutada en esa línea ni cambio a producción. |
-| Configuración parcial A16 | Namespaces/classpaths y Java del motor probados; app_process muestra configuración boot incompleta y no crea VM. Servicio/IPC/política SELinux y aplicaciones pendientes. |
+| Configuración parcial A16 | Propiedades originales170 leídas sin capacidades. ART original y RuntimeInit.main ejecutados; Binder privado permite llamar ActivityThread.main. Gestores bloqueados por SELinux inactivo; no APK aceptada. |
 | Herramientas | REA MCP respondió realmente; análisis ELF/APK estático previo y estado actual, sin presentarlos como ejecución ni CLI como conexión. |
 | No probado | Nueve etapas de las APK sobre A16; SF→Wayland, aceleración/entrada/AV/TV, aislamiento por app/Binder, GMS/DRM/OEM/WebView, traducción ISA/32/64, presupuestos, instalación/actualización/seguridad actualizada. |
 
 
-## Entrada PropertyInit original · fallo vigente
+## Diagnóstico previo de PropertyInit · superado por el perfil fuente
 
 [Pruebas y alcance](../reports/android16-propertyinit-entry/validation.json):
 146 fuentes originales de protobuf/Abseil compilan para Bionic; sus dependencias
@@ -48,7 +48,7 @@ Siguiente: contrastar generación y selección original del perfil vendor/polít
 sin fabricar valores, omitir comprobaciones o iniciar Android completo.
 
 
-## Perfil original de propiedades · resultado vigente
+## Perfil de propiedades y diagnóstico previo de opciones
 
 [Pruebas](../reports/android16-property-profile/validation.json): la regla original
 sepolicy_vers y la herencia BP4A derivan el valor202504 del perfil fuente. Con esa
@@ -62,6 +62,32 @@ antes de disponibilidad de VM. La traza tiene símbolos originales ajustados a
 mapeos observados; breakpoint pendiente por sí solo no habría probado esa entrada.
 Debugger cerrado e inferior terminado. Próximo paso: estudiar fuentes y lista real
 de opciones del arranque; no declarar ActivityThread/Markor ejecutados.
+
+
+## Puerta vigente: Binder privado y política del Linux anfitrión
+
+[Resultados](../reports/android16-binder-service-gate/validation.json): kernel LTS
+6.18.59, Binder Rust integrado y montajes binderfs privados. Dos contextos asignan
+dispositivos distintos y responden protocolo8 con UID10000/capacidades0; esto no
+prueba transacciones o aislamiento completo. Corrigiendo el conflicto de opciones
+del harness, ART original ejecuta RuntimeInit.main y llega a llamar ActivityThread.main
+con Binder privado; faltan el gestor de contexto y HIDL. No Markor instalada/ejecutada.
+
+Servicemanager original, con UID/grupos de su rc y sin capacidades, aborta en
+selinux_status_open(true). SELinux está compilado pero no está entre los LSM activos.
+La [documentación del kernel](https://kernel.org/doc/html/latest/admin-guide/kernel-parameters.html)
+describe la selección inicial mediante CONFIG_LSM/lsm=; no confundir una biblioteca
+libselinux o un archivo status con política y mediación activas.
+
+Siguiente unidad: integrar la política, etiquetas y transiciones del runtime con
+la seguridad del Linux anfitrión, preservando las comprobaciones originales de
+servicios. Incluir contextos Binder/HIDL/vendor, gestores, propiedades/VINTF,
+identidades por servicio/app y pruebas de registro/descubrimiento/denegación/muerte.
+No cargar una política Android aislada como si sólo afectara a una carpeta ni
+sustituir comprobaciones por permisos ficticios. El contrato actual impide reiniciar
+la VM: preparar y validar fuentes/build/instalación y pruebas independientes;
+la activación y enforcement en esta VM quedan pendientes de un arranque permitido.
+No se ha cambiado el boot ni arrancado Android.
 
 ## Checkpoint y siguiente acción
 

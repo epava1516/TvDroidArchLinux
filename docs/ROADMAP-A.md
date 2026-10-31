@@ -11,6 +11,7 @@ instalación, herramientas o regresiones útiles. No reiniciar VM ni cliente.
 | --- | --- | --- | --- |
 | R0 · procedencia | Verificar versión/rama/tag/build, resolver todos los repositorios, elegir target y artefactos coherentes; revisar licencias y mantenimiento | Manifiesto con revisiones exactas/procedencia, hashes de binarios y configuración; separación referencia vs parches de seguridad | Tag/rama/build y manifiesto de 1.013 commits fijados/reproducidos; diez objetos principales contrastados. GSI x86_64 coincidente y preparación de 36 APEX/4.395 archivos reproducida. Configuración parcial ejecutada; equivalencia fuente/binario completa, licencias y seguridad pendientes |
 | R1 · runtime Bionic coherente | R0; Bionic/linker/ART/libcore/APEX/framework/JNI/recursos y configuración original; bootclasspath/classloaders/namespaces/propiedades y kernel | Ejecución reproducible del motor, cierre de dependencias/configuración/identidad y fallos honestos; no mezclar Android13/host sin frontera probada | Parcial A16: namespaces y classpaths originales generados; consumidores sin rutas aplanadas; regresión DEX ejecutada con BCP46. ART estricto por APEX pasa, global falla por libdexfiled.so ausente. App_process retorna temprano por configuración boot incompleta (ABI global); Inventario completo reproducido; compilador21 y cabeceras de plataforma contrastados, un objeto Bionic producido. Sondeo histórico hostclang23: 14 objetos/38 fallos. Recorrido nativo clang21 vigente:52 fuentes originales compiladas y archivo prototipo63 miembros; equivalencia Soong/sanitización pendiente. Libpropertyinfo parser/serializer y CRT originales ejecutados en Bionic (metadatos, árbol y 4.145 lecturas cruzadas). Flags de dos módulos generados por aconfig original con perfil fuente BP4A; paridad con GSI sin probar. Protoc host original generó tres esquemas init, cuyas fuentes compilaron para Bionic; no servicio ejecutado. Libinit completo, entrada supervisada y fronteras reales de control/política/persistencia pendientes; sin second_stage. Servicio/política, cierre completo y aplicaciones pendientes; SELinux no activo |
+| R1-MAC · política Linux e IPC original | R0/R1; SELinux activo, política/etiquetas/transiciones compatibles con Linux anfitrión, Binder/HIDL/vendor privados y gestores originales, propiedades/VINTF | Registro y descubrimiento reales, identidad/denegación/callbacks/muerte; host funcional y apps separadas; instalación/activación/rollback de política probados | Puerta nueva demostrada: protocolo Binder8 y entrada ActivityThread observados; servicemanager original aborta por SELinux inactivo. Preparación de política e instalación pendiente; no reiniciar VM bajo contrato actual |
 | R2 · comportamiento y servicios | R1; evaluar unidades originales completas de paquetes/permisos/Activity/Binder/Content/servicios/segundo plano; conservar agrupaciones grandes si conviene | Semántica real, callbacks/concurrencia/error/persistencia/muerte/IPC y separación por app; cierre transitivo. Conflicto con Android completo documentado antes de cambiar alcance | Fuentes de RuntimeInit/ActivityThread/Binder identificadas; no ejecutadas. No asumir separación fácil de system_server ni usar main directo como lanzamiento APK |
 | R3 · salida gráfica y entrada | R1/R2; contrastar primero SF original, WM/Surface/BufferQueue/HWC/RenderEngine y puente Wayland hacia Smithay | Buffers/fences/ownership, aceleración/composición/ventanas/escalado/foco; teclado/ratón/táctil/mando; multimedia con superficie y sync AV | Hipótesis no ejecutada; no excluir SF por su nombre ni sustituirlo por widgets propios |
 | R4 · vertical Markor | R0–R3 e instalación/firmas/datos; APK intacta y recorrido de nota ya definido | Instalar→lanzar→UI original→entrada/editar→guardar/proveedor elegido→servicios→cerrar→reabrir; bytes/eventos/frames y fallos trazables | Nueve etapas no probadas sobre A16 |
@@ -56,7 +57,7 @@ El fallback original 202404 no demuestra mediación SELinux. No servidor, boot
 Android, aplicación ni etapa de la matriz aceptados por estas pruebas.
 
 
-## Entrada PropertyInit original · fallo vigente
+## Diagnóstico previo de PropertyInit · superado por el perfil fuente
 
 [Pruebas y alcance](../reports/android16-propertyinit-entry/validation.json):
 146 fuentes originales de protobuf/Abseil compilan para Bionic; sus dependencias
@@ -69,7 +70,7 @@ Siguiente: contrastar generación y selección original del perfil vendor/polít
 sin fabricar valores, omitir comprobaciones o iniciar Android completo.
 
 
-## Perfil original de propiedades · resultado vigente
+## Perfil de propiedades y diagnóstico previo de opciones
 
 [Pruebas](../reports/android16-property-profile/validation.json): la regla original
 sepolicy_vers y la herencia BP4A derivan el valor202504 del perfil fuente. Con esa
@@ -83,6 +84,32 @@ antes de disponibilidad de VM. La traza tiene símbolos originales ajustados a
 mapeos observados; breakpoint pendiente por sí solo no habría probado esa entrada.
 Debugger cerrado e inferior terminado. Próximo paso: estudiar fuentes y lista real
 de opciones del arranque; no declarar ActivityThread/Markor ejecutados.
+
+
+## Puerta vigente: Binder privado y política del Linux anfitrión
+
+[Resultados](../reports/android16-binder-service-gate/validation.json): kernel LTS
+6.18.59, Binder Rust integrado y montajes binderfs privados. Dos contextos asignan
+dispositivos distintos y responden protocolo8 con UID10000/capacidades0; esto no
+prueba transacciones o aislamiento completo. Corrigiendo el conflicto de opciones
+del harness, ART original ejecuta RuntimeInit.main y llega a llamar ActivityThread.main
+con Binder privado; faltan el gestor de contexto y HIDL. No Markor instalada/ejecutada.
+
+Servicemanager original, con UID/grupos de su rc y sin capacidades, aborta en
+selinux_status_open(true). SELinux está compilado pero no está entre los LSM activos.
+La [documentación del kernel](https://kernel.org/doc/html/latest/admin-guide/kernel-parameters.html)
+describe la selección inicial mediante CONFIG_LSM/lsm=; no confundir una biblioteca
+libselinux o un archivo status con política y mediación activas.
+
+Siguiente unidad: integrar la política, etiquetas y transiciones del runtime con
+la seguridad del Linux anfitrión, preservando las comprobaciones originales de
+servicios. Incluir contextos Binder/HIDL/vendor, gestores, propiedades/VINTF,
+identidades por servicio/app y pruebas de registro/descubrimiento/denegación/muerte.
+No cargar una política Android aislada como si sólo afectara a una carpeta ni
+sustituir comprobaciones por permisos ficticios. El contrato actual impide reiniciar
+la VM: preparar y validar fuentes/build/instalación y pruebas independientes;
+la activación y enforcement en esta VM quedan pendientes de un arranque permitido.
+No se ha cambiado el boot ni arrancado Android.
 
 ## Historia · etapas anteriores, no prioridad vigente
 

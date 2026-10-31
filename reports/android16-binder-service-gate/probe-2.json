@@ -1,0 +1,31 @@
+{
+  "scope": "Private Binder device allocation and unprivileged version ioctl only, no transactions/services/policy/APK acceptance",
+  "kernel": "6.18.59-1-lts",
+  "uid": 10000,
+  "capabilities_after_setuid": "expected zero; full status asserted in later native framework test",
+  "devices": [
+    {
+      "mount": "a",
+      "major": 242,
+      "minor": 1,
+      "features": {
+        "freeze_notification": "1",
+        "extended_error": "1",
+        "oneway_spam_detection": "1"
+      }
+    },
+    {
+      "mount": "b",
+      "major": 242,
+      "minor": 3,
+      "features": {
+        "freeze_notification": "1",
+        "extended_error": "1",
+        "oneway_spam_detection": "1"
+      }
+    }
+  ],
+  "child_exit": 0,
+  "header_source": "original pinned Bionic linux/android/binderfs.h",
+  "namespaces": "Private mount/PID/network/IPC/UTS/cgroup, no Android boot; mounts vanish at namespace exit"
+}
