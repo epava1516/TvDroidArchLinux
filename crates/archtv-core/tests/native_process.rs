@@ -257,3 +257,107 @@ fn malformed_status_cannot_be_replaced_by_later_ack() {
             .is_err()
     );
 }
+
+#[test]
+fn quiet_observation_is_not_completion_and_stop_still_collects_exit() {
+    let mut process = NativeProcess::spawn(helper("os.write(fd,b'ARCHTV_NATIVE_V1 DIAGNOSTIC_STARTED\\n')\nos.read(fd,128)\nos.write(fd,b'ARCHTV_NATIVE_V1 STOPPED\\n')")).unwrap();
+    process
+        .wait_started(Startup::Diagnostic, Duration::from_secs(2))
+        .unwrap();
+    assert!(
+        process
+            .observe(Duration::from_millis(20))
+            .unwrap()
+            .is_none()
+    );
+    assert!(process.stop(Duration::from_secs(2)).unwrap().success());
+}
+
+#[test]
+fn post_start_failure_fragment_survives_quiet_observation() {
+    let mut process = NativeProcess::spawn(helper("os.write(fd,b'ARCHTV_NATIVE_V1 DIAGNOSTIC_STARTED\\nARCHTV_NATIVE_V1 FAILED_SHUTDOWN ')\ntime.sleep(0.2)\nos.write(fd,b'7265626f6f74\\n')\nos._exit(69)")).unwrap();
+    process
+        .wait_started(Startup::Diagnostic, Duration::from_secs(2))
+        .unwrap();
+    assert!(
+        process
+            .observe(Duration::from_millis(20))
+            .unwrap()
+            .is_none()
+    );
+    let error = process.observe(Duration::from_secs(2)).unwrap_err();
+    assert_eq!(
+        error
+            .get_ref()
+            .and_then(|e| e.downcast_ref::<NativeFailure>()),
+        Some(&NativeFailure::ShutdownRequested(b"reboot".to_vec()))
+    );
+    assert_eq!(
+        process.wait_failed(Duration::from_secs(2)).unwrap().code(),
+        Some(69)
+    );
+}
+
+#[test]
+fn direct_exit_detected_while_descendant_keeps_channel_open() {
+    let mut process = NativeProcess::spawn(helper("os.write(fd,b'ARCHTV_NATIVE_V1 DIAGNOSTIC_STARTED\\n')\npid=os.fork()\nif pid==0:\n time.sleep(0.5)\n os._exit(0)\nos._exit(17)")).unwrap();
+    let watched = watch(&process);
+    process
+        .wait_started(Startup::Diagnostic, Duration::from_secs(2))
+        .unwrap();
+    assert_exited(&watched);
+    assert_eq!(
+        process
+            .observe(Duration::from_millis(20))
+            .unwrap()
+            .unwrap()
+            .code(),
+        Some(17)
+    );
+    assert!(process.stop(Duration::from_secs(1)).is_err());
+}
+
+#[test]
+fn unsolicited_stop_ack_is_not_cooperative_completion() {
+    let mut process = NativeProcess::spawn(helper("os.write(fd,b'ARCHTV_NATIVE_V1 DIAGNOSTIC_STARTED\\nARCHTV_NATIVE_V1 STOPPED\\n')\ntime.sleep(20)")).unwrap();
+    let watched = watch(&process);
+    process
+        .wait_started(Startup::Diagnostic, Duration::from_secs(2))
+        .unwrap();
+    assert_eq!(
+        process.observe(Duration::from_secs(1)).unwrap_err().kind(),
+        io::ErrorKind::InvalidData
+    );
+    assert!(process.stop(Duration::from_secs(1)).is_err());
+    assert_exited(&watched);
+}
+
+#[test]
+fn incomplete_frame_at_real_exit_is_an_error() {
+    let mut process = NativeProcess::spawn(helper("os.write(fd,b'ARCHTV_NATIVE_V1 DIAGNOSTIC_STARTED\\nARCHTV_NATIVE_V1 FAILED_')\nos._exit(9)")).unwrap();
+    let watched = watch(&process);
+    process
+        .wait_started(Startup::Diagnostic, Duration::from_secs(2))
+        .unwrap();
+    assert_exited(&watched);
+    assert_eq!(
+        process.observe(Duration::from_secs(1)).unwrap_err().kind(),
+        io::ErrorKind::UnexpectedEof
+    );
+    drop(process);
+}
+
+#[test]
+fn unexpected_zero_exit_is_an_event_not_stop_success() {
+    let mut process = NativeProcess::spawn(helper(
+        "os.write(fd,b'ARCHTV_NATIVE_V1 DIAGNOSTIC_STARTED\\n')\nos._exit(0)",
+    ))
+    .unwrap();
+    let watched = watch(&process);
+    process
+        .wait_started(Startup::Diagnostic, Duration::from_secs(2))
+        .unwrap();
+    assert_exited(&watched);
+    assert!(process.observe(Duration::ZERO).unwrap().unwrap().success());
+    assert!(process.stop(Duration::from_secs(1)).is_err());
+}

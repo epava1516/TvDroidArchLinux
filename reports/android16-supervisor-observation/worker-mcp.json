@@ -1,0 +1,61 @@
+{
+  "evidence_id": "ev_f61c1dd643c4369354c5f77b6388b002e4b86da66124c048849d3c253b159bb0",
+  "operation": "capture_process_scenario",
+  "authority": "controlled-replay",
+  "confidence": "observed",
+  "exit": {
+    "code": 0,
+    "signal": 0,
+    "reason": "exited"
+  },
+  "observations": [
+    "NATIVE_PROCESS_OWNED pid=10561 pidfd=5",
+    "INITIALIZER_SECURITY {\"Uid\": \"0\\t0\\t0\\t0\", \"Gid\": \"0\\t0\\t0\\t0\", \"Groups\": \"\", \"CapPrm\": \"000001ffffffffff\", \"CapEff\": \"000001ffffffffff\", \"NoNewPrivs\": \"1\"}",
+    "NATIVE_COMPONENT_STARTUP mode=Diagnostic NOT_APK_READINESS",
+    "NATIVE_OBSERVATION_NO_EVENT NOT_HEALTH_OR_APK_READINESS",
+    "NATIVE_COMPONENT_STOPPED exit=exit status: 0"
+  ],
+  "cleanup": {
+    "owned_process_group": "verified",
+    "temporary_root": "removed"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "The executable digest is a prelaunch file sample; matching path metadata immediately after spawn does not prove an atomic operating-system image binding.",
+    "Process trees are sampled and may omit short-lived descendants.",
+    "Process-tree sampling ended with an incomplete observation.",
+    "Filesystem observations are before/after snapshots, not syscall traces.",
+    "Inherited host environment variables are not recorded and may affect results.",
+    "No filesystem observation paths were selected; filesystem effects remain unknown.",
+    "Cumulative rendered state and visible-line bytes exceeded output_bytes; whole rendered frames were omitted. Raw PTY coverage is reported separately. See truncation_details.rendered_terminal.",
+    "Process sampling has incomplete observations: /proc/10550/environ: EACCES: Error: EACCES: permission denied, open '/proc/10550/environ'. See truncation_details.process."
+  ],
+  "residual_unknowns": [
+    {
+      "scope": "process",
+      "reason": "Process trees are sampled and may omit short-lived descendants."
+    },
+    {
+      "scope": "process",
+      "reason": "The executable digest is a prelaunch file sample; operating-system image binding is not atomically observed."
+    },
+    {
+      "scope": "environment",
+      "reason": "Inherited host environment variables are not recorded."
+    },
+    {
+      "scope": "network",
+      "reason": "Network activity is not observed by this capture."
+    },
+    {
+      "scope": "filesystem",
+      "reason": "No filesystem observation paths were selected; filesystem effects remain unknown."
+    },
+    {
+      "scope": "process",
+      "reason": "Process sampling has incomplete observations: /proc/10550/environ: EACCES: Error: EACCES: permission denied, open '/proc/10550/environ'. See truncation_details.process."
+    }
+  ],
+  "truncated": true,
+  "note": "Sanitized derived projection, not complete authenticated evidence. Rust pidfd owns namespace wrapper; Bionic worker emits channel status, wrapper real exit is collected."
+}

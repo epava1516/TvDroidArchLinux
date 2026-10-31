@@ -168,9 +168,18 @@ impl NativeProcess {
         result
     }
 
-    // A deadline ends an observation, not the incoming frame. Keep its bounded
-    // prefix until completion; otherwise a fragmented failure can lose its type.
+    // A deadline ends an observation, not the incoming frame.
     fn read_line(&mut self, deadline: Instant) -> io::Result<Vec<u8>> {
+        loop {
+            if let Some(frame) = self.try_line()? {
+                return Ok(frame);
+            }
+            until(self.control.as_raw_fd(), libc::POLLIN, deadline)?;
+        }
+    }
+
+    // Reads available bytes only. Retains a bounded prefix between observations.
+    fn try_line(&mut self) -> io::Result<Option<Vec<u8>>> {
         loop {
             let mut byte = [0];
             match self.control.read(&mut byte) {
@@ -189,7 +198,7 @@ impl NativeProcess {
                                 error.get_ref().is_some_and(|e| e.is::<NativeFailure>());
                             return Err(error);
                         }
-                        return Ok(line);
+                        return Ok(Some(line));
                     }
                     if self.partial_frame.len() >= 96 {
                         return Err(io::Error::new(
@@ -198,11 +207,89 @@ impl NativeProcess {
                         ));
                     }
                 }
-                Err(e) if e.kind() == io::ErrorKind::WouldBlock => {
-                    until(self.control.as_raw_fd(), libc::POLLIN, deadline)?
-                }
+                Err(e) if e.kind() == io::ErrorKind::WouldBlock => return Ok(None),
                 Err(e) if e.kind() == io::ErrorKind::Interrupted => {}
                 Err(e) => return Err(e),
+            }
+        }
+    }
+
+    /// Observe a started component's channel and pidfd for at most `timeout`.
+    /// None means no complete event was observed, not a health/readiness claim.
+    /// Any exit (including zero) is unexpected here, never cooperative completion.
+    /// A typed shutdown error can be followed by wait_failed to collect its exit.
+    /// Direct child exit does not wait for a descendant to close the channel.
+    pub fn observe(&mut self, timeout: Duration) -> io::Result<Option<ExitStatus>> {
+        if !self.started || self.failure_observed || self.protocol_failed {
+            return Err(io::Error::other("native component not observable"));
+        }
+        let deadline = Instant::now() + timeout;
+        let result = self.observe_until(deadline);
+        if !matches!(&result, Ok(None)) {
+            self.protocol_failed = true;
+        }
+        result
+    }
+
+    fn observe_until(&mut self, deadline: Instant) -> io::Result<Option<ExitStatus>> {
+        loop {
+            // Drain a bounded frame before reporting exit, so a queued typed
+            // original failure is not replaced by a generic exit notification.
+            let incoming = self.try_line();
+            match incoming {
+                Ok(Some(_)) => {
+                    return Err(io::Error::new(
+                        io::ErrorKind::InvalidData,
+                        "unsolicited native status after startup",
+                    ));
+                }
+                Err(ref e) if e.kind() != io::ErrorKind::UnexpectedEof => {
+                    return Err(incoming.unwrap_err());
+                }
+                _ => {}
+            }
+            if let Some(status) = self.child.as_mut().expect("owned child").try_wait()? {
+                if !self.partial_frame.is_empty() {
+                    return Err(io::Error::new(
+                        io::ErrorKind::UnexpectedEof,
+                        format!("native child exited with incomplete frame: {status}"),
+                    ));
+                }
+                return Ok(Some(status));
+            }
+            incoming?;
+            let left = deadline.saturating_duration_since(Instant::now());
+            if left.is_zero() {
+                return Ok(None);
+            }
+            let mut descriptors = [
+                libc::pollfd {
+                    fd: self.control.as_raw_fd(),
+                    events: libc::POLLIN,
+                    revents: 0,
+                },
+                libc::pollfd {
+                    fd: self.pidfd.as_raw_fd(),
+                    events: libc::POLLIN,
+                    revents: 0,
+                },
+            ];
+            let millis = left.as_millis().saturating_add(1).min(i32::MAX as u128) as i32;
+            let count = unsafe {
+                libc::poll(
+                    descriptors.as_mut_ptr(),
+                    descriptors.len() as libc::nfds_t,
+                    millis,
+                )
+            };
+            if count < 0 {
+                let error = io::Error::last_os_error();
+                if error.kind() != io::ErrorKind::Interrupted {
+                    return Err(error);
+                }
+            }
+            if descriptors.iter().any(|p| p.revents & libc::POLLNVAL != 0) {
+                return Err(io::Error::other("invalid native lifetime descriptor"));
             }
         }
     }
@@ -257,8 +344,10 @@ impl NativeProcess {
     /// error Drop kills/reaps the owned child; descendants and uninterruptible
     /// kernel I/O require the caller's namespace/supervisor recovery policy.
     pub fn stop(mut self, timeout: Duration) -> io::Result<ExitStatus> {
-        if !self.started {
-            return Err(io::Error::other("native startup not acknowledged"));
+        if !self.started || self.failure_observed || self.protocol_failed {
+            return Err(io::Error::other(
+                "native component cannot stop cooperatively",
+            ));
         }
         let deadline = Instant::now() + timeout;
         let mut bytes = b"ARCHTV_NATIVE_V1 STOP\n".as_slice();

@@ -1,0 +1,32 @@
+{
+  "observed_at": "2026-10-31T13:29:49.368833+00:00",
+  "base_commit": "1580ddf56d954649fbbd3578c8dcf92d1a8a7dfc",
+  "scope": "In-progress milestone completed before priority correction. Linux lifetime observation, not runtime/APK availability. No additional monitor infrastructure scheduled as main deliverable.",
+  "results": [
+    "Observe both pidfd and control channel after startup; bounded partial frames retained; queued typed failure prioritized over generic exit. None means no complete event observed, not health.",
+    "Unexpected exit including0 cannot become cooperative STOP success; malformed/unsolicited frame is terminal. Direct child detected with descendant holding channel.",
+    "6 unit +19 process tests0; clippy all targets0; example build0. Six new lifecycle regressions use Python helpers, not APK compatibility.",
+    "Actual REA MCP unchanged original-property worker in diagnostic mode: startup\u2192150ms no event\u2192STOP ACK\u2192actual wrapper exit0. Direct Rust child is unshare wrapper, not Bionic PID. Root initialization with broad caps is diagnostic only."
+  ],
+  "artifacts": [
+    {
+      "path": "/home/tv/repositorio-principal/target/debug/examples/native_supervisor",
+      "sha256": "61dee49390052cbb9a5c51338c7af14db18669a443fe108f378ec5c0da280e9d"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/supervisor-observation-worker-1/data/linux-property-worker",
+      "sha256": "5f1572b0cd2424bb6bcb3332483f44760e01dee6ce56396cbfd1bf36008901d4"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/supervisor-observation-worker-1/launcher.py",
+      "sha256": "1ba0d749543fa0d65f1fa574c1bbf63c3df6bfaa048e0088dbf603046121bec2"
+    }
+  ],
+  "limitations": [
+    "No daemon integration/event loop or cgroup descendant termination; direct-child Drop can block on uninterruptible I/O.",
+    "Original worker unchanged; historical enforcing guard checks availability/enforcing/getcon only, actual expected init identity still needs deployment enforcement.",
+    "No host policy load/enforce/labels/reboot, no APK stage accepted.",
+    "MCP projection is sanitized and partial, original cleanup/sampling/environment/identity limits retained."
+  ],
+  "next": "Prioritize original properties/managers MAC integration and full Markor critical path in ROADMAP-A, rather than expanding monitoring APIs."
+}

@@ -1,0 +1,45 @@
+   Compiling archtv-core v0.1.0 (/home/tv/repositorio-principal/crates/archtv-core)
+    Finished `test` profile [unoptimized] target(s) in 1.73s
+     Running unittests src/lib.rs (target/debug/deps/archtv_core-6efd413ec5a13690)
+
+running 6 tests
+test android::tests::identity_rejects_commands_and_keeps_android_profiles_distinct ... ok
+test android::tests::stale_boot_confirmation_cannot_make_a_stopped_session_ready ... ok
+test tests::home_returns_without_destroying_app_and_close_restores_focus ... ok
+test desktop::tests::locale_hidden_and_desktop_sections_are_respected ... ok
+test desktop::tests::exec_keeps_arguments_and_shell_metacharacters_literal ... ok
+test tests::repeated_activation_does_not_duplicate_a_window ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/native_process.rs (target/debug/deps/native_process-55a9c6fd22149656)
+
+running 19 tests
+test acknowledgment_does_not_hide_failed_exit ... ok
+test cooperative_exit_requires_ack_and_actual_exit ... ok
+test direct_exit_detected_while_descendant_keeps_channel_open ... ok
+test failure_cannot_be_overridden_by_later_startup_ack ... ok
+test malformed_failure_payload_cannot_be_a_typed_original_request ... ok
+test incomplete_frame_at_real_exit_is_an_error ... ok
+test original_shutdown_is_typed_failure_and_actual_exit_is_collected ... ok
+test malformed_status_cannot_be_replaced_by_later_ack ... ok
+test oversize_request_is_explicit_failure_never_truncated_success ... ok
+test oversized_status_is_rejected_and_cleaned ... ok
+test quiet_observation_is_not_completion_and_stop_still_collects_exit ... ok
+test shutdown_timeout_is_error_and_child_is_reaped ... ok
+test startup_mode_mismatch_kills_owned_child ... ok
+test startup_timeout_and_cleanup ... ok
+test successful_exit_without_shutdown_ack_is_rejected ... ok
+test unsolicited_stop_ack_is_not_cooperative_completion ... ok
+test unexpected_zero_exit_is_an_event_not_stop_success ... ok
+test post_start_failure_fragment_survives_quiet_observation ... ok
+test partial_failure_survives_observation_timeout ... ok
+
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.44s
+
+   Doc-tests archtv_core
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

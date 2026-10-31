@@ -1,0 +1,90 @@
+{
+  "branch": "main",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "objective": "Complete unmodified APK on Linux Rust/Smithay with coherent original AOSP16QPR2/Bionic, no Waydroid or complete Android boot; broad compatibility, isolation, stability, lightness, installation/update.",
+  "canonical_entry": "docs/ESTADO.md",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "constraints": [
+    "User reaffirmed no reboot/security state changes based on historical authorization",
+    "No policy load, relabel, setenforce or host setup modification in this hito",
+    "A16-QPR2-1; full unmodified APK on Linux Rust/Smithay, no Waydroid/full Android; broad compatibility/isolation/stability/lightness/install/update",
+    "ARM/external services/DRM separate; own fixtures/probes not compatibility acceptance"
+  ],
+  "observed_at": "2026-10-31T13:29:49.368833+00:00",
+  "base_commit": "1580ddf56d954649fbbd3578c8dcf92d1a8a7dfc",
+  "previous_checkpoint": "reports/android16-supervisor-framing/checkpoint.json",
+  "relation_to_local_origin_tracking": "0\t0",
+  "terminal_exec_handles": [
+    45534,
+    34412,
+    55439
+  ],
+  "active_exec_handles": [],
+  "process_scope": "Current Rust jobs terminal. REA cell222 terminal0 and owned group cleanup verified within reported limits. No persistent native target; private mounts ended. No preboot PID reused.",
+  "tests": [
+    "Observe both pidfd and control channel after startup; bounded partial frames retained; queued typed failure prioritized over generic exit. None means no complete event observed, not health.",
+    "Unexpected exit including0 cannot become cooperative STOP success; malformed/unsolicited frame is terminal. Direct child detected with descendant holding channel.",
+    "6 unit +19 process tests0; clippy all targets0; example build0. Six new lifecycle regressions use Python helpers, not APK compatibility.",
+    "Actual REA MCP unchanged original-property worker in diagnostic mode: startup\u2192150ms no event\u2192STOP ACK\u2192actual wrapper exit0. Direct Rust child is unshare wrapper, not Bionic PID. Root initialization with broad caps is diagnostic only."
+  ],
+  "next": "Prioritize original properties/managers MAC integration and full Markor critical path in ROADMAP-A, rather than expanding monitoring APIs.",
+  "evidence": {
+    "reports/android16-supervisor-observation/build.log": "6739454f17b173525d8172b36a7824e43fefa8c87026c03a35970de366665a26",
+    "reports/android16-supervisor-observation/clippy-final.log": "e18e4b1db7ec7574e8bb61919e1d8dc5adbe609c8740256002d27026732ce05a",
+    "reports/android16-supervisor-observation/clippy.log": "112027bdb11e648b2afaad9117a72292bca85269764c5a69b635a0d3c0fe4169",
+    "reports/android16-supervisor-observation/findings.json": "bdcc3bb99ac5033eb278abd59909fef3d5f698676a6337d38bf03a8a38cdfa31",
+    "reports/android16-supervisor-observation/tests.log": "3591837929d039fb88604f24c05535fc5aa23290feda3cf9696eef35b4883407",
+    "reports/android16-supervisor-observation/worker-mcp.json": "388c9a95c3f1f28c202b516d4e35c9aacca0f2dbe27bb3fd0ab3d3c83fba48dd"
+  },
+  "local_artifact": {
+    "scope": "Final original binary export, not live policy",
+    "argv": [
+      "/home/tv/repositorio-principal/dist/aosp16/checkpolicy-host-2/source/checkpolicy",
+      "-M",
+      "-b",
+      "-C",
+      "-o",
+      "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-4/export.cil",
+      "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-4/policy.bin"
+    ],
+    "exit": 0,
+    "path": "/home/tv/repositorio-principal/dist/aosp16/launcher-bootstrap-4/export.cil",
+    "sha256": "33564688f0304edf2c7ea64b60efee8a0e90943ffbb06d426e38158725146a0e",
+    "typebounds": [],
+    "policycaps": [
+      "(policycap cgroup_seclabel)",
+      "(policycap extended_socket_class)",
+      "(policycap functionfs_seclabel)",
+      "(policycap genfs_seclabel_symlinks)",
+      "(policycap ioctl_skip_cloexec)",
+      "(policycap network_peer_controls)",
+      "(policycap nnp_nosuid_transition)",
+      "(policycap open_perms)",
+      "(policycap userspace_initial_context)"
+    ],
+    "initial_sid_contexts": [
+      "(sidcontext kernel (linux.system_u linux.system_r linux.kernel_t ((s0) (s0))))",
+      "(sidcontext init (linux.system_u linux.system_r linux.init_t ((s0) (s0))))"
+    ]
+  },
+  "graphify": {
+    "mode": "AST-only isolated staged worktree",
+    "worktree": "/home/tv/.cache/archtv/worktrees/supervisor-observation",
+    "terminal_handle": 53878,
+    "nodes": 2912,
+    "edges": 5559,
+    "communities": 230
+  },
+  "pending_other_current": "reports/android16-markor-critical-path: user-requested priority correction and actual cohort evidence, intentionally separate commit"
+}
