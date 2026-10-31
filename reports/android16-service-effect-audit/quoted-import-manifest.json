@@ -1,0 +1,125 @@
+{
+  "schema": 1,
+  "admission_status": "not_evaluated",
+  "sections": [
+    {
+      "kind": "service",
+      "filename": "/data/profiles/main.rc",
+      "line": 2,
+      "header": [
+        "service",
+        "audit.declared",
+        "/system/bin/false"
+      ],
+      "lines": [
+        {
+          "line": 3,
+          "tokens": [
+            "user",
+            "system"
+          ]
+        },
+        {
+          "line": 4,
+          "tokens": [
+            "disabled"
+          ]
+        },
+        {
+          "line": 5,
+          "tokens": [
+            "reboot_on_failure",
+            "reboot"
+          ]
+        },
+        {
+          "line": 6,
+          "tokens": [
+            "onrestart",
+            "setprop",
+            "persist.audit.text",
+            "value with spaces"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "on",
+      "filename": "/data/profiles/main.rc",
+      "line": 7,
+      "header": [
+        "on",
+        "property:audit.trigger=1"
+      ],
+      "lines": [
+        {
+          "line": 8,
+          "tokens": [
+            "setprop",
+            "persist.audit.expansion",
+            "${audit.source:-fallback value}"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "service",
+      "filename": "/data/profiles/imported.rc",
+      "line": 1,
+      "header": [
+        "service",
+        "audit.imported",
+        "/system/bin/getprop",
+        "ro.build.version.sdk"
+      ],
+      "lines": [
+        {
+          "line": 2,
+          "tokens": [
+            "user",
+            "system"
+          ]
+        },
+        {
+          "line": 3,
+          "tokens": [
+            "oneshot"
+          ]
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "name": "audit.declared",
+      "uid": 1000,
+      "gid": 0,
+      "flags": 129,
+      "pid": 0,
+      "source": "/data/profiles/main.rc",
+      "args": [
+        "/system/bin/false"
+      ],
+      "classes": [
+        "default"
+      ]
+    },
+    {
+      "name": "audit.imported",
+      "uid": 1000,
+      "gid": 0,
+      "flags": 2,
+      "pid": 0,
+      "source": "/data/profiles/imported.rc",
+      "args": [
+        "/system/bin/getprop",
+        "ro.build.version.sdk"
+      ],
+      "classes": [
+        "default"
+      ]
+    }
+  ],
+  "actions": 1,
+  "execution": "none"
+}

@@ -1804,3 +1804,19 @@ puede ejecutar reboot_on_failure en otros perfiles. Un error no es rollback
 transaccional y un Start correcto tampoco prueba exec/Binder/readiness.
 Pendientes originales: identidades/cgroups/contextos, hijo registrado y Reap,
 restart/critical/onrestart y cohortes autorizadas; recorrido completo Markor abierto.
+
+## R1/R2 · política de cohorte basada en declaraciones originales
+
+[Auditoría](../reports/android16-service-effect-audit/findings.json): observador
+SectionParser delega ServiceParser/ActionParser originales y conserva tokens, origen
+y orden sin invocar handlers; imports originales observados y override histórico
+separado de campos públicos finales. No parche adicional ni gramática RC propia.
+No es admisión ni política efectiva: admission_status=not_evaluated. Errores de
+parseo suprimen todo manifiesto aunque AOSP retenga ServiceList parcial.
+Puertas pendientes: fijar/hashar clausura de imports antes de admisión; establecer
+alcance de class_restart y fallos críticos/reboot_on_failure bajo Linux; preservar
+onrestart/setprop y perfiles/FD/capabilities. Referencias apexd, audioserver,
+gatekeeperd y surfaceflinger ausentes de esta cohorte no deben borrarse ni darse
+por satisfechas. Evaluar grupos completos originales con MAC/identidades/cgroups
+y readiness real; no arrancar init Android general. Pruebas de auditoría propias
+no cierran etapas APK ni sustituyen el recorrido Markor.

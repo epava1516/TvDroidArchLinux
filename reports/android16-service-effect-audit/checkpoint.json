@@ -1,0 +1,75 @@
+{
+  "branch": "main",
+  "origin": "git@github.com:epava1516/TvDroidArchLinux.git",
+  "objective": "Complete unmodified APK on Linux Rust/Smithay with coherent original AOSP16QPR2/Bionic, no Waydroid or complete Android boot; broad compatibility, isolation, stability, lightness, installation/update.",
+  "constraints": [
+    "A16-QPR2-1",
+    "No VM introduction or VM/client restart",
+    "No host boot/policy activation changes; R1-MAC gate remains",
+    "Fixtures/compilation/diagnostic startup are partial evidence, never real-APK acceptance"
+  ],
+  "canonical_entry": "docs/ESTADO.md",
+  "preserved_pending": {
+    "pending_own": {
+      "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": "d98ae656e1f452ab43ea15a75e98fbb2926d3815423878bbc978335d855eeb9b",
+      "tools/apk/verify_isolated_bootstrap.py": "30c6570ed950741f46f923427fbbc35f34dc3a2ad90cd458bb0665e278710777",
+      "runtime/aosp/native/original-resources-host.cpp": "55923a900d996c712b27b923f88071aa90202913e8f30f918b238033f5fa6a33",
+      "tools/apk/build_original_resources.py": "5cfb2384482cacd61a3b27a190932931e6a065723dda534a3e49da007bfe3dab"
+    },
+    "pending_other_hashes": {
+      "reports/h9-uefi-boot/qemu.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reports/h9-uefi-boot/serial.log": "d7a97af96d384d6cf48b50409a157bf11feeaf2db83677b835fc04304b0c4607"
+    }
+  },
+  "observed_at": "2026-10-31T11:03:49.971512+00:00",
+  "base_commit": "88ef832679a44eb0b5e8d1b66d20d27e1e218b2d",
+  "previous_checkpoint": "reports/android16-service-start-gate/checkpoint.json",
+  "relation_to_local_origin_tracking": "0\t0",
+  "terminal_exec_handles": [
+    67007,
+    26780,
+    97638,
+    33254
+  ],
+  "active_exec_handles": [],
+  "mcp_status": "Five captures terminal, owned groups cleaned; process sampling incomplete in evidence, no host-wide process coverage; no persistent target opened",
+  "next": "Implement Linux-cohort policy around these actual original effects, including failure sink, immutable source closure, scoped original restart/classes and original identities/MAC. Resolve original direct dependencies by coherent AOSP service groups, never boot Android init or trim them silently.",
+  "tests": [
+    "Observer delegates original SectionParser; no new RC grammar, no AOSP patch needed",
+    "Original parser accepted four pinned canonical service profiles, one property action; audit exports ordered original tokens, source lines, final public service fields",
+    "Five actual REA MCP executions: initial/final canonical0, quoted/import0, override0, invalidoption2/no manifest",
+    "Verification script checks quoted values/property templates, import source, original override final UID2000 and getprop args separately from historical declarations",
+    "Unresolved direct restart references apexd/audioserver/gatekeeperd/surfaceflinger; class restart cohort scope pending",
+    "No services started or action handlers invoked by source. Runtime map used only for original keyword/arity lookup, never CheckAllCommands"
+  ],
+  "evidence": {
+    "reports/android16-service-effect-audit/quoted-import-manifest.json": "757b767bb75f571c3a656092bb6091a314c094a0c6c2c3b08694a0db40b4f239",
+    "reports/android16-service-effect-audit/build.json": "e1a74f1b9b985a27d980ca65ede9928ca7ef1c3baf5677124cf19d6c04a22e3b",
+    "reports/android16-service-effect-audit/launcher-canonical.py": "d898bb333572e3b2957e06e27bf12d7bd860d13d749d492e0390cfb96691a3d4",
+    "reports/android16-service-effect-audit/findings.json": "a65042e575f0b3a7525a7324d6a092f72c851498b01fe99557db1c72a6b2191d",
+    "reports/android16-service-effect-audit/prepare-regressions.py": "b5532ea1ded0e08c6c130761a64290be3bd683ba58f8bec73029730cd26b3972",
+    "reports/android16-service-effect-audit/bad-option-mcp.json": "6e8d19b1bb6c855e12fa17da161b3ed7c2f2a2dc6864578039679dd371702935",
+    "reports/android16-service-effect-audit/audit-initial.cpp": "971f6cbeab7d9993fd6fbb7c53cb89a68186e480436c1bd526ea5de2c2a17b01",
+    "reports/android16-service-effect-audit/launcher-quoted-import.py": "45585f7c5a98df128d606c89c0e51e529cb3ee2aedba76f5daa86716ba0464e0",
+    "reports/android16-service-effect-audit/launcher-bad-option.py": "80f87f1485660e2ddea36171a4b209ef09fb52a0ca4981bd08043fd7489e6097",
+    "reports/android16-service-effect-audit/launcher-override.py": "0cede3465c18f73c5266ef8429fcf03a50098ddef962070c69149b7fcff115b6",
+    "reports/android16-service-effect-audit/effect-summary.json": "e6d0bef475e8c97d400989d05d9ab2a97ce2c7b06ffa601ff9d97fa6bbf361c6",
+    "reports/android16-service-effect-audit/canonical-final-manifest.json": "ec9a9afaa8389073db2abebae6e3e20e0d12eb5e23f6d50f96358d9360398ccf",
+    "reports/android16-service-effect-audit/canonical-mcp.json": "dd41633d24f81b4786cdbd49206c0c7302d91e9689c63b15c63b7b5e816cf8ba",
+    "reports/android16-service-effect-audit/override-mcp.json": "506a0747b8c79f18f4deb29494c43e3aa42ff68238d5aeeb412a51e7d523cfb2",
+    "reports/android16-service-effect-audit/override-manifest.json": "b2f8fc671e0ebd87075de45a260a8fa9cc7b9eae9e6f2837374a5189ed24cf02",
+    "reports/android16-service-effect-audit/build-final.py": "7335eaa195aeb6537bd6b4efb9a661fe4f4f9f4d71a11ca20bf4d06f4ba14163",
+    "reports/android16-service-effect-audit/canonical-final-mcp.json": "88dd82c528654ea9c84c39c9ff8514c92e8f3a45ded25aa1855fa2fc042f5c4c",
+    "reports/android16-service-effect-audit/build.py": "d5292a0bb91014a27a114354ec4905c7dae7e6340ba58fd8ce308dae3b8eff5e",
+    "reports/android16-service-effect-audit/launcher-canonical-final.py": "214656c6347c35054562f689b42b3ee76661600e9eb19ed349e3ebac8a1f4e8e",
+    "reports/android16-service-effect-audit/quoted-import-mcp.json": "74af0697f9baeae40bdf0e4a8feada6f2f7e6b0b54c9b1f9886bced7e9f3cc35",
+    "reports/android16-service-effect-audit/canonical-manifest.json": "b2985dcc5f25eff19b2212b0369046d6e36457e6bb00bda2154e4639d62692bd",
+    "reports/android16-service-effect-audit/build-final.json": "95f2d54364c955a97790ed5c3aceebe6e4564152f54a76a750e57accd8d085e9",
+    "reports/android16-service-effect-audit/verify-and-summarize.py": "dd609d9ec4ca7ba1864aefc61d9d404ca2c669b31819dd0da334d693b1bcccb1",
+    "reports/android16-service-effect-audit/fixtures/quoted-import/main.rc": "79defad1bac652ff2eb36091b25d029118c994faadb4e190e3f361f8b285b0fa",
+    "reports/android16-service-effect-audit/fixtures/quoted-import/imported.rc": "9e4e47e944da09a81ac797054ef476a792ec235ad8bc8ba8719628b813029dda",
+    "reports/android16-service-effect-audit/fixtures/override/main.rc": "f9df68c5ad03a69082234e3d32211614009aa33364df209c3a3c15b828deedbc",
+    "reports/android16-service-effect-audit/fixtures/bad-option/main.rc": "c6a9901549f1cda44fa2d44ec86761720975ae4876987c08bc88cbbcce0a7612"
+  },
+  "graphify": "Isolated staged AST update terminal0,2849 nodes/5446 edges; only tracked outputs copied"
+}

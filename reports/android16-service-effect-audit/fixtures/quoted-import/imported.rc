@@ -1,0 +1,3 @@
+service audit.imported /system/bin/getprop ro.build.version.sdk
+    user system
+    oneshot

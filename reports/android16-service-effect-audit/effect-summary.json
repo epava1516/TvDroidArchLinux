@@ -1,0 +1,481 @@
+{
+  "scope": "Declared original profile effects only; no policy admission or runtime handler execution",
+  "canonical_services": [
+    "hwservicemanager",
+    "servicemanager",
+    "vendor.hwcomposer-2-1",
+    "vndservicemanager"
+  ],
+  "direct_restart_references": [
+    {
+      "file": "/system/etc/init/servicemanager.rc",
+      "line": 8,
+      "tokens": [
+        "onrestart",
+        "restart",
+        "--only-if-running",
+        "apexd"
+      ],
+      "target": "apexd",
+      "declared_in_current_cohort": false,
+      "only_if_running": true,
+      "status": "runtime_semantics_not_tested"
+    },
+    {
+      "file": "/system/etc/init/servicemanager.rc",
+      "line": 9,
+      "tokens": [
+        "onrestart",
+        "restart",
+        "audioserver"
+      ],
+      "target": "audioserver",
+      "declared_in_current_cohort": false,
+      "only_if_running": false,
+      "status": "runtime_semantics_not_tested"
+    },
+    {
+      "file": "/system/etc/init/servicemanager.rc",
+      "line": 10,
+      "tokens": [
+        "onrestart",
+        "restart",
+        "gatekeeperd"
+      ],
+      "target": "gatekeeperd",
+      "declared_in_current_cohort": false,
+      "only_if_running": false,
+      "status": "runtime_semantics_not_tested"
+    },
+    {
+      "file": "/system/etc/init/servicemanager.rc",
+      "line": 11,
+      "tokens": [
+        "onrestart",
+        "class_restart",
+        "--only-enabled",
+        "main"
+      ],
+      "class": "main",
+      "members_in_current_cohort": [],
+      "only_enabled": true,
+      "status": "cohort_scope_not_approved"
+    },
+    {
+      "file": "/system/etc/init/servicemanager.rc",
+      "line": 12,
+      "tokens": [
+        "onrestart",
+        "class_restart",
+        "--only-enabled",
+        "hal"
+      ],
+      "class": "hal",
+      "members_in_current_cohort": [
+        "vendor.hwcomposer-2-1"
+      ],
+      "only_enabled": true,
+      "status": "cohort_scope_not_approved"
+    },
+    {
+      "file": "/system/etc/init/servicemanager.rc",
+      "line": 13,
+      "tokens": [
+        "onrestart",
+        "class_restart",
+        "--only-enabled",
+        "early_hal"
+      ],
+      "class": "early_hal",
+      "members_in_current_cohort": [],
+      "only_enabled": true,
+      "status": "cohort_scope_not_approved"
+    },
+    {
+      "file": "/vendor/etc/init/vndservicemanager.rc",
+      "line": 7,
+      "tokens": [
+        "onrestart",
+        "class_restart",
+        "main"
+      ],
+      "class": "main",
+      "members_in_current_cohort": [],
+      "only_enabled": false,
+      "status": "cohort_scope_not_approved"
+    },
+    {
+      "file": "/vendor/etc/init/vndservicemanager.rc",
+      "line": 8,
+      "tokens": [
+        "onrestart",
+        "class_restart",
+        "hal"
+      ],
+      "class": "hal",
+      "members_in_current_cohort": [
+        "vendor.hwcomposer-2-1"
+      ],
+      "only_enabled": false,
+      "status": "cohort_scope_not_approved"
+    },
+    {
+      "file": "/vendor/etc/init/vndservicemanager.rc",
+      "line": 9,
+      "tokens": [
+        "onrestart",
+        "class_restart",
+        "early_hal"
+      ],
+      "class": "early_hal",
+      "members_in_current_cohort": [],
+      "only_enabled": false,
+      "status": "cohort_scope_not_approved"
+    },
+    {
+      "file": "/system_ext/etc/init/hwservicemanager.rc",
+      "line": 7,
+      "tokens": [
+        "onrestart",
+        "class_restart",
+        "--only-enabled",
+        "main"
+      ],
+      "class": "main",
+      "members_in_current_cohort": [],
+      "only_enabled": true,
+      "status": "cohort_scope_not_approved"
+    },
+    {
+      "file": "/system_ext/etc/init/hwservicemanager.rc",
+      "line": 8,
+      "tokens": [
+        "onrestart",
+        "class_restart",
+        "--only-enabled",
+        "hal"
+      ],
+      "class": "hal",
+      "members_in_current_cohort": [
+        "vendor.hwcomposer-2-1"
+      ],
+      "only_enabled": true,
+      "status": "cohort_scope_not_approved"
+    },
+    {
+      "file": "/system_ext/etc/init/hwservicemanager.rc",
+      "line": 9,
+      "tokens": [
+        "onrestart",
+        "class_restart",
+        "--only-enabled",
+        "early_hal"
+      ],
+      "class": "early_hal",
+      "members_in_current_cohort": [],
+      "only_enabled": true,
+      "status": "cohort_scope_not_approved"
+    },
+    {
+      "file": "/vendor/etc/init/android.hardware.graphics.composer@2.1-service.rc",
+      "line": 7,
+      "tokens": [
+        "onrestart",
+        "restart",
+        "surfaceflinger"
+      ],
+      "target": "surfaceflinger",
+      "declared_in_current_cohort": false,
+      "only_if_running": false,
+      "status": "runtime_semantics_not_tested"
+    }
+  ],
+  "original_effect_declarations": [
+    {
+      "file": "/system/etc/init/servicemanager.rc",
+      "line": 5,
+      "tokens": [
+        "critical"
+      ]
+    },
+    {
+      "file": "/system/etc/init/servicemanager.rc",
+      "line": 6,
+      "tokens": [
+        "file",
+        "/dev/kmsg",
+        "w"
+      ]
+    },
+    {
+      "file": "/system/etc/init/servicemanager.rc",
+      "line": 7,
+      "tokens": [
+        "onrestart",
+        "setprop",
+        "servicemanager.ready",
+        "false"
+      ]
+    },
+    {
+      "file": "/system/etc/init/servicemanager.rc",
+      "line": 8,
+      "tokens": [
+        "onrestart",
+        "restart",
+        "--only-if-running",
+        "apexd"
+      ]
+    },
+    {
+      "file": "/system/etc/init/servicemanager.rc",
+      "line": 9,
+      "tokens": [
+        "onrestart",
+        "restart",
+        "audioserver"
+      ]
+    },
+    {
+      "file": "/system/etc/init/servicemanager.rc",
+      "line": 10,
+      "tokens": [
+        "onrestart",
+        "restart",
+        "gatekeeperd"
+      ]
+    },
+    {
+      "file": "/system/etc/init/servicemanager.rc",
+      "line": 11,
+      "tokens": [
+        "onrestart",
+        "class_restart",
+        "--only-enabled",
+        "main"
+      ]
+    },
+    {
+      "file": "/system/etc/init/servicemanager.rc",
+      "line": 12,
+      "tokens": [
+        "onrestart",
+        "class_restart",
+        "--only-enabled",
+        "hal"
+      ]
+    },
+    {
+      "file": "/system/etc/init/servicemanager.rc",
+      "line": 13,
+      "tokens": [
+        "onrestart",
+        "class_restart",
+        "--only-enabled",
+        "early_hal"
+      ]
+    },
+    {
+      "file": "/system/etc/init/servicemanager.rc",
+      "line": 14,
+      "tokens": [
+        "task_profiles",
+        "ProcessCapacityHigh"
+      ]
+    },
+    {
+      "file": "/system/etc/init/servicemanager.rc",
+      "line": 15,
+      "tokens": [
+        "shutdown",
+        "critical"
+      ]
+    },
+    {
+      "file": "/vendor/etc/init/vndservicemanager.rc",
+      "line": 5,
+      "tokens": [
+        "file",
+        "/dev/kmsg",
+        "w"
+      ]
+    },
+    {
+      "file": "/vendor/etc/init/vndservicemanager.rc",
+      "line": 6,
+      "tokens": [
+        "task_profiles",
+        "ServiceCapacityLow"
+      ]
+    },
+    {
+      "file": "/vendor/etc/init/vndservicemanager.rc",
+      "line": 7,
+      "tokens": [
+        "onrestart",
+        "class_restart",
+        "main"
+      ]
+    },
+    {
+      "file": "/vendor/etc/init/vndservicemanager.rc",
+      "line": 8,
+      "tokens": [
+        "onrestart",
+        "class_restart",
+        "hal"
+      ]
+    },
+    {
+      "file": "/vendor/etc/init/vndservicemanager.rc",
+      "line": 9,
+      "tokens": [
+        "onrestart",
+        "class_restart",
+        "early_hal"
+      ]
+    },
+    {
+      "file": "/vendor/etc/init/vndservicemanager.rc",
+      "line": 10,
+      "tokens": [
+        "shutdown",
+        "critical"
+      ]
+    },
+    {
+      "file": "/system_ext/etc/init/hwservicemanager.rc",
+      "line": 5,
+      "tokens": [
+        "critical"
+      ]
+    },
+    {
+      "file": "/system_ext/etc/init/hwservicemanager.rc",
+      "line": 6,
+      "tokens": [
+        "onrestart",
+        "setprop",
+        "hwservicemanager.ready",
+        "false"
+      ]
+    },
+    {
+      "file": "/system_ext/etc/init/hwservicemanager.rc",
+      "line": 7,
+      "tokens": [
+        "onrestart",
+        "class_restart",
+        "--only-enabled",
+        "main"
+      ]
+    },
+    {
+      "file": "/system_ext/etc/init/hwservicemanager.rc",
+      "line": 8,
+      "tokens": [
+        "onrestart",
+        "class_restart",
+        "--only-enabled",
+        "hal"
+      ]
+    },
+    {
+      "file": "/system_ext/etc/init/hwservicemanager.rc",
+      "line": 9,
+      "tokens": [
+        "onrestart",
+        "class_restart",
+        "--only-enabled",
+        "early_hal"
+      ]
+    },
+    {
+      "file": "/system_ext/etc/init/hwservicemanager.rc",
+      "line": 10,
+      "tokens": [
+        "task_profiles",
+        "ServiceCapacityLow",
+        "HighPerformance"
+      ]
+    },
+    {
+      "file": "/system_ext/etc/init/hwservicemanager.rc",
+      "line": 12,
+      "tokens": [
+        "shutdown",
+        "critical"
+      ]
+    },
+    {
+      "file": "/system_ext/etc/init/hwservicemanager.rc",
+      "line": 15,
+      "tokens": [
+        "stop",
+        "hwservicemanager"
+      ]
+    },
+    {
+      "file": "/vendor/etc/init/android.hardware.graphics.composer@2.1-service.rc",
+      "line": 2,
+      "tokens": [
+        "interface",
+        "android.hardware.graphics.composer@2.1::IComposer",
+        "default"
+      ]
+    },
+    {
+      "file": "/vendor/etc/init/android.hardware.graphics.composer@2.1-service.rc",
+      "line": 6,
+      "tokens": [
+        "capabilities",
+        "SYS_NICE"
+      ]
+    },
+    {
+      "file": "/vendor/etc/init/android.hardware.graphics.composer@2.1-service.rc",
+      "line": 7,
+      "tokens": [
+        "onrestart",
+        "restart",
+        "surfaceflinger"
+      ]
+    },
+    {
+      "file": "/vendor/etc/init/android.hardware.graphics.composer@2.1-service.rc",
+      "line": 8,
+      "tokens": [
+        "task_profiles",
+        "ServiceCapacityLow"
+      ]
+    }
+  ],
+  "unresolved_direct_targets": [
+    "apexd",
+    "audioserver",
+    "gatekeeperd",
+    "surfaceflinger"
+  ],
+  "required_linux_decisions": [
+    "Scope original class restart to explicitly managed cohort; preserve flags/enable state and dependencies, no arbitrary host service control",
+    "Define critical and reboot_on_failure behavior as explicit Linux-supervisor failure policy; do not silently clear flags or reboot host",
+    "Validate Android UID/GID/cgroups/device FDs/task profiles/capabilities and original SELinux transitions before Start",
+    "Preserve property action triggers and onrestart order/arguments. Tokens are unexpanded declarations, not completed side effects",
+    "Bind policy to approved immutable profile hashes and original parser results; import and override declarations need effective-profile/provenance handling",
+    "No CheckAllCommands with runtime builtin map; it invokes handlers"
+  ],
+  "regressions": [
+    "original canonical four-service and one-action declarations",
+    "original tokenizer preserves spaces/property template tokens",
+    "original ImportParser observed across imported profile",
+    "override declaration history separate from original final service UID/args",
+    "invalid option causes exit2 and no manifest even when partial original ServiceList exists"
+  ],
+  "limits": [
+    "Audit not complete resolved policy; raw options not substituted for original private/default state",
+    "Import targets not restricted by audit; production must constrain/hash them before admission",
+    "No native service/process/APK launched by audit; PID0 metadata alone not complete process-tree proof",
+    "Programmatic actions and mutable source files outside approved immutable profile set not admitted",
+    "GMS/DRM/ARM remain separate unresolved axes"
+  ]
+}

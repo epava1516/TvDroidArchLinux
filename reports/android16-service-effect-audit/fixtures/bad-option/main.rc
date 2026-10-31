@@ -1,0 +1,3 @@
+service audit.invalid /system/bin/false
+    user system
+    unsupported_linux_option yes

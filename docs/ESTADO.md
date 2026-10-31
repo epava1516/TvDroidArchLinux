@@ -6,7 +6,7 @@ los resúmenes; no se ha completado compatibilidad amplia.
 
 ## Retomar
 
-1. [Checkpoint](../reports/android16-service-start-gate/checkpoint.json) y contraste con
+1. [Checkpoint](../reports/android16-service-effect-audit/checkpoint.json) y contraste con
    Git/procesos/artefactos según [CONTINUIDAD.md](CONTINUIDAD.md).
 2. [Contrato íntegro vigente](CONTRATO-APK.md), [arquitectura](ARQUITECTURA.md),
    [roadmap APK](ROADMAP-A.md) y [general](../ROADMAP.md).
@@ -16,6 +16,17 @@ los resúmenes; no se ha completado compatibilidad amplia.
 Investigación R6 independiente: [traducción ARM y opciones existentes](TRADUCCION-ARM.md).
 No habilitada ni bloqueante del avance x86_64; el checkpoint principal anterior
 sigue siendo el punto de recuperación del runtime.
+
+## Última frontera · efectos de perfiles originales auditados
+
+[Resultados](../reports/android16-service-effect-audit/findings.json): observador
+delega los parsers AOSP, conserva tokens/archivos/líneas y separa declaraciones
+históricas de campos públicos finales tras override. Cuatro servicios y una acción
+originales inspeccionados; ninguna acción/servicio ejecutado ni admisión aprobada.
+MCP verifica comillas/import/override y rechazo de opción inválida sin manifiesto.
+Referencias directas aún fuera de cohorte: apexd, audioserver, gatekeeperd y
+surfaceflinger; clases main/hal/early_hal requieren alcance Linux explícito.
+No suprimir onrestart/critical ni considerar suficiente que un parser acepte RC.
 
 ## Último contraste · Start original rechaza falta de contexto
 

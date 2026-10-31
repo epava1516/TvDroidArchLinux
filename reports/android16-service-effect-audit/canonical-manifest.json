@@ -1,0 +1,423 @@
+{
+  "schema": 1,
+  "admission_status": "not_evaluated",
+  "sections": [
+    {
+      "kind": "service",
+      "filename": "/system/etc/init/servicemanager.rc",
+      "line": 1,
+      "header": [
+        "service",
+        "servicemanager",
+        "/system/bin/servicemanager"
+      ],
+      "lines": [
+        {
+          "line": 2,
+          "tokens": [
+            "class",
+            "core",
+            "animation"
+          ]
+        },
+        {
+          "line": 3,
+          "tokens": [
+            "user",
+            "system"
+          ]
+        },
+        {
+          "line": 4,
+          "tokens": [
+            "group",
+            "system",
+            "readproc"
+          ]
+        },
+        {
+          "line": 5,
+          "tokens": [
+            "critical"
+          ]
+        },
+        {
+          "line": 6,
+          "tokens": [
+            "file",
+            "/dev/kmsg",
+            "w"
+          ]
+        },
+        {
+          "line": 7,
+          "tokens": [
+            "onrestart",
+            "setprop",
+            "servicemanager.ready",
+            "false"
+          ]
+        },
+        {
+          "line": 8,
+          "tokens": [
+            "onrestart",
+            "restart",
+            "--only-if-running",
+            "apexd"
+          ]
+        },
+        {
+          "line": 9,
+          "tokens": [
+            "onrestart",
+            "restart",
+            "audioserver"
+          ]
+        },
+        {
+          "line": 10,
+          "tokens": [
+            "onrestart",
+            "restart",
+            "gatekeeperd"
+          ]
+        },
+        {
+          "line": 11,
+          "tokens": [
+            "onrestart",
+            "class_restart",
+            "--only-enabled",
+            "main"
+          ]
+        },
+        {
+          "line": 12,
+          "tokens": [
+            "onrestart",
+            "class_restart",
+            "--only-enabled",
+            "hal"
+          ]
+        },
+        {
+          "line": 13,
+          "tokens": [
+            "onrestart",
+            "class_restart",
+            "--only-enabled",
+            "early_hal"
+          ]
+        },
+        {
+          "line": 14,
+          "tokens": [
+            "task_profiles",
+            "ProcessCapacityHigh"
+          ]
+        },
+        {
+          "line": 15,
+          "tokens": [
+            "shutdown",
+            "critical"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "service",
+      "filename": "/vendor/etc/init/vndservicemanager.rc",
+      "line": 1,
+      "header": [
+        "service",
+        "vndservicemanager",
+        "/vendor/bin/vndservicemanager",
+        "/dev/vndbinder"
+      ],
+      "lines": [
+        {
+          "line": 2,
+          "tokens": [
+            "class",
+            "core"
+          ]
+        },
+        {
+          "line": 3,
+          "tokens": [
+            "user",
+            "system"
+          ]
+        },
+        {
+          "line": 4,
+          "tokens": [
+            "group",
+            "system",
+            "readproc"
+          ]
+        },
+        {
+          "line": 5,
+          "tokens": [
+            "file",
+            "/dev/kmsg",
+            "w"
+          ]
+        },
+        {
+          "line": 6,
+          "tokens": [
+            "task_profiles",
+            "ServiceCapacityLow"
+          ]
+        },
+        {
+          "line": 7,
+          "tokens": [
+            "onrestart",
+            "class_restart",
+            "main"
+          ]
+        },
+        {
+          "line": 8,
+          "tokens": [
+            "onrestart",
+            "class_restart",
+            "hal"
+          ]
+        },
+        {
+          "line": 9,
+          "tokens": [
+            "onrestart",
+            "class_restart",
+            "early_hal"
+          ]
+        },
+        {
+          "line": 10,
+          "tokens": [
+            "shutdown",
+            "critical"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "service",
+      "filename": "/system_ext/etc/init/hwservicemanager.rc",
+      "line": 1,
+      "header": [
+        "service",
+        "hwservicemanager",
+        "/system/system_ext/bin/hwservicemanager"
+      ],
+      "lines": [
+        {
+          "line": 2,
+          "tokens": [
+            "user",
+            "system"
+          ]
+        },
+        {
+          "line": 3,
+          "tokens": [
+            "disabled"
+          ]
+        },
+        {
+          "line": 4,
+          "tokens": [
+            "group",
+            "system",
+            "readproc"
+          ]
+        },
+        {
+          "line": 5,
+          "tokens": [
+            "critical"
+          ]
+        },
+        {
+          "line": 6,
+          "tokens": [
+            "onrestart",
+            "setprop",
+            "hwservicemanager.ready",
+            "false"
+          ]
+        },
+        {
+          "line": 7,
+          "tokens": [
+            "onrestart",
+            "class_restart",
+            "--only-enabled",
+            "main"
+          ]
+        },
+        {
+          "line": 8,
+          "tokens": [
+            "onrestart",
+            "class_restart",
+            "--only-enabled",
+            "hal"
+          ]
+        },
+        {
+          "line": 9,
+          "tokens": [
+            "onrestart",
+            "class_restart",
+            "--only-enabled",
+            "early_hal"
+          ]
+        },
+        {
+          "line": 10,
+          "tokens": [
+            "task_profiles",
+            "ServiceCapacityLow",
+            "HighPerformance"
+          ]
+        },
+        {
+          "line": 11,
+          "tokens": [
+            "class",
+            "animation"
+          ]
+        },
+        {
+          "line": 12,
+          "tokens": [
+            "shutdown",
+            "critical"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "on",
+      "filename": "/system_ext/etc/init/hwservicemanager.rc",
+      "line": 14,
+      "header": [
+        "on",
+        "property:hwservicemanager.disabled=true"
+      ],
+      "lines": [
+        {
+          "line": 15,
+          "tokens": [
+            "stop",
+            "hwservicemanager"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "service",
+      "filename": "/vendor/etc/init/android.hardware.graphics.composer@2.1-service.rc",
+      "line": 1,
+      "header": [
+        "service",
+        "vendor.hwcomposer-2-1",
+        "/vendor/bin/hw/android.hardware.graphics.composer@2.1-service"
+      ],
+      "lines": [
+        {
+          "line": 2,
+          "tokens": [
+            "interface",
+            "android.hardware.graphics.composer@2.1::IComposer",
+            "default"
+          ]
+        },
+        {
+          "line": 3,
+          "tokens": [
+            "class",
+            "hal",
+            "animation"
+          ]
+        },
+        {
+          "line": 4,
+          "tokens": [
+            "user",
+            "system"
+          ]
+        },
+        {
+          "line": 5,
+          "tokens": [
+            "group",
+            "graphics",
+            "drmrpc"
+          ]
+        },
+        {
+          "line": 6,
+          "tokens": [
+            "capabilities",
+            "SYS_NICE"
+          ]
+        },
+        {
+          "line": 7,
+          "tokens": [
+            "onrestart",
+            "restart",
+            "surfaceflinger"
+          ]
+        },
+        {
+          "line": 8,
+          "tokens": [
+            "task_profiles",
+            "ServiceCapacityLow"
+          ]
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "name": "servicemanager",
+      "uid": 1000,
+      "gid": 1000,
+      "flags": 2080,
+      "pid": 0
+    },
+    {
+      "name": "vndservicemanager",
+      "uid": 1000,
+      "gid": 1000,
+      "flags": 2048,
+      "pid": 0
+    },
+    {
+      "name": "hwservicemanager",
+      "uid": 1000,
+      "gid": 1000,
+      "flags": 2209,
+      "pid": 0
+    },
+    {
+      "name": "vendor.hwcomposer-2-1",
+      "uid": 1000,
+      "gid": 1003,
+      "flags": 0,
+      "pid": 0
+    }
+  ],
+  "actions": 1,
+  "execution": "none"
+}

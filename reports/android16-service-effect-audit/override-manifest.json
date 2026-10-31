@@ -1,0 +1,88 @@
+{
+  "schema": 1,
+  "admission_status": "not_evaluated",
+  "sections": [
+    {
+      "kind": "service",
+      "filename": "/data/profiles/main.rc",
+      "line": 1,
+      "header": [
+        "service",
+        "audit.overridden",
+        "/system/bin/false"
+      ],
+      "lines": [
+        {
+          "line": 2,
+          "tokens": [
+            "user",
+            "system"
+          ]
+        },
+        {
+          "line": 3,
+          "tokens": [
+            "onrestart",
+            "setprop",
+            "audit.old",
+            "value"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "service",
+      "filename": "/data/profiles/main.rc",
+      "line": 4,
+      "header": [
+        "service",
+        "audit.overridden",
+        "/system/bin/getprop",
+        "ro.build.version.sdk"
+      ],
+      "lines": [
+        {
+          "line": 5,
+          "tokens": [
+            "user",
+            "shell"
+          ]
+        },
+        {
+          "line": 6,
+          "tokens": [
+            "override"
+          ]
+        },
+        {
+          "line": 7,
+          "tokens": [
+            "onrestart",
+            "setprop",
+            "audit.new",
+            "value"
+          ]
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "name": "audit.overridden",
+      "uid": 2000,
+      "gid": 0,
+      "flags": 0,
+      "pid": 0,
+      "source": "/data/profiles/main.rc",
+      "args": [
+        "/system/bin/getprop",
+        "ro.build.version.sdk"
+      ],
+      "classes": [
+        "default"
+      ]
+    }
+  ],
+  "actions": 0,
+  "execution": "none"
+}

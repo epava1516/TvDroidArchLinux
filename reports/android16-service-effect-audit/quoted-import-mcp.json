@@ -1,0 +1,61 @@
+{
+  "evidence_id": "ev_17681cba9898e0edfeec659446619df95c1f1a76d57f2bc24f47492b6d422152",
+  "operation": "capture_process_scenario",
+  "authority": "controlled-replay",
+  "confidence": "observed",
+  "exit": {
+    "code": 0,
+    "signal": 0,
+    "reason": "exited"
+  },
+  "observations": [
+    "PRIVATE_BINDER {\"major\": 242, \"minor\": 1}",
+    "PREEXEC_SECURITY {\"Uid\": \"10000\\t10000\\t10000\\t10000\", \"Gid\": \"10000\\t10000\\t10000\\t10000\", \"Groups\": \"\", \"CapEff\": \"0000000000000000\", \"CapPrm\": \"0000000000000000\", \"CapInh\": \"0000000000000000\", \"CapAmb\": \"0000000000000000\", \"NoNewPrivs\": \"1\"}",
+    "10-31 11:02:02.626     1     1 I audit-service-profiles: parser.cpp:145 Parsing file /data/profiles/main.rc...",
+    "10-31 11:02:02.627     1     1 I audit-service-profiles: import_parser.cpp:37 Added '/data/profiles/imported.rc' to import list",
+    "10-31 11:02:02.627     1     1 I audit-service-profiles: parser.cpp:145 Parsing file /data/profiles/imported.rc...",
+    "PROFILE_AUDIT {\"schema\":1,\"admission_status\":\"not_evaluated\",\"sections\":[{\"kind\":\"service\",\"filename\":\"/data/profiles/main.rc\",\"line\":2,\"header\":[\"service\",\"audit.declared\",\"/system/bin/false\"],\"lines\":[{\"line\":3,\"tokens\":[\"user\",\"system\"]},{\"line\":4,\"tokens\":[\"disabled\"]},{\"line\":5,\"tokens\":[\"reboot_on_failure\",\"reboot\"]},{\"line\":6,\"tokens\":[\"onrestart\",\"setprop\",\"persist.audit.text\",\"value with spaces\"]}]},{\"kind\":\"on\",\"filename\":\"/data/profiles/main.rc\",\"line\":7,\"header\":[\"on\",\"property:audit.trigger=1\"],\"lines\":[{\"line\":8,\"tokens\":[\"setprop\",\"persist.audit.expansion\",\"${audit.source:-fallback value}\"]}]},{\"kind\":\"service\",\"filename\":\"/data/profiles/imported.rc\",\"line\":1,\"header\":[\"service\",\"audit.imported\",\"/system/bin/getprop\",\"ro.build.version.sdk\"],\"lines\":[{\"line\":2,\"tokens\":[\"user\",\"system\"]},{\"line\":3,\"tokens\":[\"oneshot\"]}]}],\"services\":[{\"name\":\"audit.declared\",\"uid\":1000,\"gid\":0,\"flags\":129,\"pid\":0,\"source\":\"/data/profiles/main.rc\",\"args\":[\"/system/bin/false\"],\"classes\":[\"default\"]},{\"name\":\"audit.imported\",\"uid\":1000,\"gid\":0,\"flags\":2,\"pid\":0,\"source\":\"/data/profiles/imported.rc\",\"args\":[\"/system/bin/getprop\",\"ro.build.version.sdk\"],\"classes\":[\"default\"]}],\"actions\":1,\"execution\":\"none\"}"
+  ],
+  "cleanup": {
+    "owned_process_group": "verified",
+    "temporary_root": "removed"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "The executable digest is a prelaunch file sample; matching path metadata immediately after spawn does not prove an atomic operating-system image binding.",
+    "Process trees are sampled and may omit short-lived descendants.",
+    "Process-tree sampling ended with an incomplete observation.",
+    "Filesystem observations are before/after snapshots, not syscall traces.",
+    "Inherited host environment variables are not recorded and may affect results.",
+    "No filesystem observation paths were selected; filesystem effects remain unknown.",
+    "Process sampling has incomplete observations: /proc/258358/environ: EACCES: Error: EACCES: permission denied, open '/proc/258358/environ'. See truncation_details.process."
+  ],
+  "residual_unknowns": [
+    {
+      "scope": "process",
+      "reason": "Process trees are sampled and may omit short-lived descendants."
+    },
+    {
+      "scope": "process",
+      "reason": "The executable digest is a prelaunch file sample; operating-system image binding is not atomically observed."
+    },
+    {
+      "scope": "environment",
+      "reason": "Inherited host environment variables are not recorded."
+    },
+    {
+      "scope": "network",
+      "reason": "Network activity is not observed by this capture."
+    },
+    {
+      "scope": "filesystem",
+      "reason": "No filesystem observation paths were selected; filesystem effects remain unknown."
+    },
+    {
+      "scope": "process",
+      "reason": "Process sampling has incomplete observations: /proc/258358/environ: EACCES: Error: EACCES: permission denied, open '/proc/258358/environ'. See truncation_details.process."
+    }
+  ],
+  "truncated": true,
+  "note": "Sanitized derived projection; not complete authenticated MCP Evidence."
+}

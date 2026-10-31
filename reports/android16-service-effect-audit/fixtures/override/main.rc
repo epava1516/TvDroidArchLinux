@@ -1,0 +1,7 @@
+service audit.overridden /system/bin/false
+    user system
+    onrestart setprop audit.old value
+service audit.overridden /system/bin/getprop ro.build.version.sdk
+    user shell
+    override
+    onrestart setprop audit.new value

@@ -1,0 +1,8 @@
+import /data/profiles/imported.rc
+service audit.declared /system/bin/false
+    user system
+    disabled
+    reboot_on_failure reboot
+    onrestart setprop persist.audit.text "value with spaces"
+on property:audit.trigger=1
+    setprop persist.audit.expansion "${audit.source:-fallback value}"
