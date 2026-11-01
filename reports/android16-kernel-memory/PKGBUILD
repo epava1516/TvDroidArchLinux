@@ -36,7 +36,9 @@ PY
 package() {
   # Recheck immediately before packaging; never use modules from the stock kernel.
   build
-  make -C "$_source" O="$_build" INSTALL_MOD_PATH="$pkgdir/usr" modules_install
+  # Kbuild strips debugging data before signing/compression; stripping an
+  # already signed module afterwards would invalidate its signature.
+  make -C "$_source" O="$_build" INSTALL_MOD_PATH="$pkgdir/usr" INSTALL_MOD_STRIP=1 modules_install
   local modules="$pkgdir/usr/lib/modules/$_release"
   test -d "$modules/kernel"
   # Runtime package must not publish links into the private build/signing directory.

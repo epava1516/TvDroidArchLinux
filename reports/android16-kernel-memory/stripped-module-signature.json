@@ -1,0 +1,14 @@
+{
+  "scope": "One staged stripped module signature verified against pinned public build certificate and tampered negative. No system CA trust, signature enforcement, loading, boot or APK acceptance.",
+  "module": "/home/tv/.cache/archtv/kernel-aosp16-1/package-2/pkg/linux-archtv-aosp16/usr/lib/modules/6.18.59-archtv-aosp16-1/kernel/fs/fat/msdos.ko.zst",
+  "module_sha256": "7747a2ee7b5e2f848c48e8a1eb7154ecf71a913d3ae319ac261f847a6e07e784",
+  "certificate_sha256": "f6dd2b54bd110823c42484aec0010d9f8c02eb470992940ab400b6d08e743e05",
+  "positive_exit": 0,
+  "tampered_negative_exit": 4,
+  "debug_sections_absent": true,
+  "btf_preserved": true,
+  "vermagic": "6.18.59-archtv-aosp16-1 SMP preempt mod_unload",
+  "recipe_sha256": "75fead040d626323d76ccf7eaede816eb10ddc066f98aea62f71695ee7712de6",
+  "original_kbuild_order": "install -> strip -> sign -> compress; source scripts/Makefile.modinst, signed Linux6.18.59 source",
+  "previous_attempt": "package-1 unstripped staging/log preserved; stopped deliberately, no kernel objects discarded/rebuilt"
+}
