@@ -1,0 +1,26 @@
+{
+  "utc": "2026-11-01T20:46:48.675562+00:00",
+  "kernel": "6.18.59-archtv-aosp16-1",
+  "boot_id": "4e18faf8-2b46-42e4-a6b2-269c34326b68",
+  "head_before": "1121ad035cc527da1de6b0ee96f86f66d8bc15bc",
+  "pending_preserved": true,
+  "wake_delivery": {
+    "utc": "2026-11-01T20:38:58.767001+00:00",
+    "boot_id": "4e18faf8-2b46-42e4-a6b2-269c34326b68",
+    "kernel": "6.18.59-archtv-aosp16-1",
+    "expected_kernel": "6.18.59-archtv-aosp16-1",
+    "scope": "Actual new boot notification only, not memory ABI, SELinux policy, services or APK acceptance",
+    "queue": {
+      "exit": 0,
+      "stdout": "Queued message 01a198d6-538f-7820-b219-eec951a71ce6 for thread 01a18926-b500-7753-ba90-54de57a6cbf2.\n",
+      "stderr": ""
+    }
+  },
+  "policy_sha256": "9f9afb630a950a4ef79367901b74a9414c14066eb8e4ef8ceee6dcc61b537221",
+  "policy_load_log": "POLICY_LOAD_BEFORE {\"before\": {\"enforce\": \"0\", \"context\": \"kernel\"}, \"sha256\": \"9f9afb630a950a4ef79367901b74a9414c14066eb8e4ef8ceee6dcc61b537221\", \"bytes\": 3465711}\nPOLICY_LOAD_RESULT {\"return\": 0, \"errno\": 0, \"enforce\": \"0\", \"context\": \"linux.system_u:linux.system_r:linux.init_t:s0\"}\n",
+  "original_bionic_admitted": true,
+  "cohort_exit": 1,
+  "log_path": "/home/tv/repositorio-principal/dist/aosp16/display-session-1793565892822220666/compositor.log",
+  "log_sha256": "7c5c2c37f49db4d89f16476b9a6e1474cd7b7227b2e73554407a3595b53bd820",
+  "result": "display absent at bounded deadline; no exception captured. Diagnose real wait stack next. Permissive only, no APK or MAC acceptance."
+}

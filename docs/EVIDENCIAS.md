@@ -1,5 +1,10 @@
 # Índice de evidencias
 
+## Actualización verificada · arranque 1 noviembre
+
+[Resultado real](../reports/android16-kernel-memory/boot-integration.json), [ABI Linux](../reports/android16-kernel-memory/boot-memory-abi.json): kernel separado arrancado y memoria Bionic original admitida. Política cargada en permisivo; no MAC aceptado. `display` ausente al plazo, siguiente decisión depende de localizar la espera original antes de añadir servicios. Markor completo sigue pendiente; ARM/GMS/DRM separados. Los resultados ENOTTY anteriores son históricos, no bloqueo vigente en este kernel.
+
+
 Kernel separado: [paquete/archivo verificado](../reports/android16-kernel-memory/package-verification.json), [muestra firmada sin DWARF y con BTF, positivo/negativo](../reports/android16-kernel-memory/stripped-module-signature.json), [instalación/initramfs y arranques originales preservados](../reports/android16-kernel-memory/installation.json), [evento único realmente recibido y atendido](../reports/android16-kernel-memory/package-event-wake.json). No hay candidato arrancado, ABI positiva, MAC, servicios ni APK acreditados por este hito.
 
 Kernel candidato Linux6.18.59 con shim ACK: [compilación completa terminal0](../reports/android16-kernel-memory/full-build.json), [log original con hash](../reports/android16-kernel-memory/full-build-log.json). Imagen/config/vmlinux contrastados;6.407 módulos y vermagic vmwgfx propio. No acredita instalación, arranque, ABI, MAC, servicios ni APK.

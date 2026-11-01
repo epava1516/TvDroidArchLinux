@@ -1,5 +1,10 @@
 # Arquitectura vigente · A16-QPR2-1
 
+## Actualización verificada · arranque 1 noviembre
+
+[Resultado real](../reports/android16-kernel-memory/boot-integration.json), [ABI Linux](../reports/android16-kernel-memory/boot-memory-abi.json): kernel separado arrancado y memoria Bionic original admitida. Política cargada en permisivo; no MAC aceptado. `display` ausente al plazo, siguiente decisión depende de localizar la espera original antes de añadir servicios. Markor completo sigue pendiente; ARM/GMS/DRM separados. Los resultados ENOTTY anteriores son históricos, no bloqueo vigente en este kernel.
+
+
 ## Memoria compartida · contrato Linux/AOSP demostrado
 
 [Resultados del bootstrap original](../reports/android16-selected-display/findings.json): namespace compartido original de system_server y parent boot resuelven el cierre JNI/APEX sin copiar libadb ni cambiar linkerconfig global. El proceso de servicios usa sólo SYS_NICE, necesario por error real de prioridad; SystemSuspend conserva RC/capacidad BLOCK_SUSPEND originales y su ruta upstream para hosts que administran la suspensión. No se exponen `/sys/power/state` ni wakeup_count; no se certifica inhibición logind ni energía global. ApplicationSharedMemory usa el backend original ashmem. Linux memfd/sealing disponible no implica ABI ioctl ashmem: el kernel stock ensayado rechaza GET_SIZE. El [candidato ACK sobre LTS separado está instalado](../reports/android16-kernel-memory/installation.json), todavía sin arranque ni ABI positiva, manteniendo la frontera Bionic/Linux y la validación de libcutils. El paquete usa strip original de Kbuild antes de firmar, conserva BTF y no incluye claves privadas; la firma de una muestra se comprueba con certificado fijado y negativo manipulado. Su código upstream tiene límites de protección read/exec y purge/unpin; ni habilitarlo ni pasar GET_SIZE cierra memoria, aislamiento o ABI legacy/compat32. No se reimplementan clases, cachés o métodos para simular disponibilidad.

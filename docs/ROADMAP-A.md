@@ -1,5 +1,10 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+## Actualización verificada · arranque 1 noviembre
+
+[Resultado real](../reports/android16-kernel-memory/boot-integration.json), [ABI Linux](../reports/android16-kernel-memory/boot-memory-abi.json): kernel separado arrancado y memoria Bionic original admitida. Política cargada en permisivo; no MAC aceptado. `display` ausente al plazo, siguiente decisión depende de localizar la espera original antes de añadir servicios. Markor completo sigue pendiente; ARM/GMS/DRM separados. Los resultados ENOTTY anteriores son históricos, no bloqueo vigente en este kernel.
+
+
 ## Candidato de kernel · instalado, pendiente de arranque/ABI
 
 [Fuente y límites](../reports/android16-kernel-memory/preparation.json), [parche ACK](../reports/android16-kernel-memory/linux-6.18.59-ack-ashmem.patch), [compilación completa](../reports/android16-kernel-memory/full-build.json), [paquete verificado](../reports/android16-kernel-memory/package-verification.json) e [instalación/initramfs](../reports/android16-kernel-memory/installation.json).6.407 módulos propios, sin reutilizar módulos stock bajo otro vermagic; depuración retirada antes de firmar y BTF conservado, con [firma real y negativo manipulado](../reports/android16-kernel-memory/stripped-module-signature.json). Imágenes/default/entradas originales preservados. Siguiente: checkpoint final, seleccionar entrada nueva sólo para un arranque, reiniciar con recuperación; contrastar kernel/boot/SELinux y comprobar ABI/protecciones reales. Sólo después admisión memfd original y Power/Display→Markor. No se cierra R1 ni compatibilidad por instalar el kernel. [Evento nativo de reanudación probado](../reports/android16-kernel-memory/package-event-wake.json), sin sondeos periódicos del modelo durante el empaquetado.

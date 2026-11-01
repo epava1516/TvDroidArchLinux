@@ -1,14 +1,12 @@
 # Estado actual y punto de entrada
 
-## Kernel candidato instalado · pendiente de arranque y ABI real
+## Kernel arrancado · memoria original admitida; Display pendiente
 
-[Paquete verificado](../reports/android16-kernel-memory/package-verification.json) e [instalación comprobada](../reports/android16-kernel-memory/installation.json): `linux-archtv-aosp16`6.18.59-1, imagen `6.18.59-archtv-aosp16-1` y6.407 módulos;187 MiB de paquete. Kbuild retira depuración antes de firmar/comprimir: [firma positiva y negativo manipulado, BTF conservado](../reports/android16-kernel-memory/stripped-module-signature.json). Initramfs generado con versión correcta y vmwgfx; imágenes, entradas y default originales sin cambios. Entrada nueva preparada para un arranque de prueba con SELinux permisivo. **Todavía no hay kernel candidato arrancado ni ABI/memoria, MAC, Power/Display o Markor aceptados.**
+[Arranque e integración reales](../reports/android16-kernel-memory/boot-integration.json): kernel `6.18.59-archtv-aosp16-1`, boot ID nuevo verificado y evento automático recibido. [ABI ejecutada](../reports/android16-kernel-memory/boot-memory-abi.json): tamaño/protección y negativos de escritura correctos. La cohorte16 admite memoria mediante libcutils Bionic original, con propiedad original publicada. El bloqueo anterior ENOTTY corresponde al kernel anterior y queda histórico.
 
-[Compilación original terminada](../reports/android16-kernel-memory/full-build.json), [hash del log](../reports/android16-kernel-memory/full-build-log.json). La [reanudación real por evento](../reports/android16-kernel-memory/package-event-wake.json) ya fue recibida y atendida; no acredita disponibilidad del runtime. Después del arranque contrastar boot ID/kernel/SELinux y ejecutar memoria real antes de la admisión Bionic y Power/Display; continuar después el recorrido completo de Markor.
+Política gráfica exacta9f9afb63 cargada correctamente, SELinux permisivo. La consulta original encuentra SurfaceFlinger y SurfaceFlingerAIDL; `display` permanece ausente al expirar el plazo. No se ha probado disponibilidad Power/Display, autorización MAC ni Markor. Siguiente: localizar la espera real del arranque seleccionado y resolver su dependencia original. No repetir compilación del kernel ni las sondas válidas sin causa.
 
-## Bloqueo vigente · ABI ashmem/memfd del kernel
-
-[Integración y resultados](../reports/android16-selected-display/findings.json): ART/app_process y classloader original compartido ya ejecutan el arranque seleccionado de servicios. DisplayManager requiere PowerManager; su memoria compartida real falla por ashmem ausente. [Prueba fuera del sandbox](../reports/android16-selected-display/linux-memfd-host-probe.json): memfd y sellos funcionan, `ASHMEM_GET_SIZE` devuelve ENOTTY. No basta activar una propiedad ni inventar nonces. Se prepara el shim original ACK sobre fuentes LTS6.18.59 [con firma verificada](../reports/android16-selected-display/kernel-source-verification.json), kernel candidato instalado, aún sin arrancar ni validar ABI. [Checkpoint vigente](../reports/android16-selected-display/checkpoint.json). Anfitrión limpio y política permisiva sin cambios. Markor sigue sin etapas probadas.
+Recuperación: `/home/tv/recuperacion-archtv/20261101T195453Z-kernel-install-boot/RETOMAR.txt`. Entradas originales conservadas. Pendientes históricos intactos; no reutilizar handles anteriores al reinicio.
 
 ## En curso · servicios originales de display para Markor
 

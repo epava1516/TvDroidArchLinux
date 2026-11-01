@@ -1,0 +1,33 @@
+{
+  "utc": "2026-11-01T20:44:19.869505+00:00",
+  "kernel": "6.18.59-archtv-aosp16-1",
+  "boot_id": "4e18faf8-2b46-42e4-a6b2-269c34326b68",
+  "scope": "Direct Linux x86_64 ABI execution, not original libcutils execution, MAC authorization or APK compatibility",
+  "checks": {
+    "future_write_seal": true,
+    "ashmem_get_size": {
+      "value": 4096,
+      "pass": true
+    },
+    "existing_mapping_writable": true,
+    "new_writable_mapping_denied": true,
+    "pwrite_denied": true,
+    "read_mapping_preserves_data": true,
+    "unknown_ioctl_denied": true,
+    "ashmem_protection_mask": {
+      "value": 5,
+      "pass": true
+    },
+    "ashmem_restore_write_denied": true
+  },
+  "limits": [
+    "No ARM/compat32 test",
+    "No legacy /dev/ashmem test",
+    "ACK shim retains read/execute mapping permissions; not full legacy ashmem semantics"
+  ],
+  "read_exec_removal_observation": {
+    "set_return": 0,
+    "remaining_mask": 5
+  },
+  "abi_gate_pass": true
+}
