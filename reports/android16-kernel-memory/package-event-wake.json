@@ -1,0 +1,14 @@
+{
+  "scope": "Real packaging completion -> native pidfd monitor -> supported codex queue acknowledgment -> actual matching user event received and acted on in this thread. No periodic model polls while waiting; not kernel/runtime/APK acceptance.",
+  "event_utc": "2026-11-01T20:23:45.179813+00:00",
+  "queue_exit": 0,
+  "queued_message_id": "01a198c8-4fa3-7950-b60f-16dbb8ee9c8a",
+  "thread_id": "01a18926-b500-7753-ba90-54de57a6cbf2",
+  "packaging_status": {
+    "ActiveState": "inactive",
+    "MainPID": "0",
+    "ExecMainStatus": "0"
+  },
+  "record_path": "/home/tv/.cache/archtv/kernel-aosp16-1/package-2/wake-delivery.json",
+  "actual_resumption": "This work turn was triggered by the matching Evento \u00fanico packaging user message; package/Git/checkpoint contrasted before proceeding."
+}

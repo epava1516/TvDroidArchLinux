@@ -1,7 +1,7 @@
-# Graph Report - kernel-full-build-milestone  (2026-11-01)
+# Graph Report - kernel-installed-milestone  (2026-11-01)
 
 ## Corpus Check
-- 328 files · ~287,133 words
+- 328 files · ~287,257 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 36 file(s) not represented in the graph (top: .cil 9, .xml 8, .patch 7)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e9b84e93`
+- Built from commit: `943e234d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -717,7 +717,7 @@ Nodes (6): Adaptaciones Linux, Evidencia y límites, Integración y perfil del c
 
 ### Community 218 - "Roadmap A · plataforma APK general sobre Linux"
 Cohesion: 0.09
-Nodes (22): Camino crítico vigente · Markor completo, Candidato de kernel · compilado, sin activar, Control experimental de namespaces de política, Decisiones offline con herramientas originales, Decisión gráfica tras la cohorte real, Diagnóstico previo de PropertyInit · superado por el perfil fuente, Historia · etapas anteriores, no prioridad vigente, Histórico · Integración HWC3 · frontera de backend (+14 more)
+Nodes (22): Camino crítico vigente · Markor completo, Candidato de kernel · instalado, pendiente de arranque/ABI, Control experimental de namespaces de política, Decisiones offline con herramientas originales, Decisión gráfica tras la cohorte real, Diagnóstico previo de PropertyInit · superado por el perfil fuente, Historia · etapas anteriores, no prioridad vigente, Histórico · Integración HWC3 · frontera de backend (+14 more)
 
 ### Community 219 - "check_host_security.py"
 Cohesion: 0.13

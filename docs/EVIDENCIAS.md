@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+Kernel separado: [paquete/archivo verificado](../reports/android16-kernel-memory/package-verification.json), [muestra firmada sin DWARF y con BTF, positivo/negativo](../reports/android16-kernel-memory/stripped-module-signature.json), [instalación/initramfs y arranques originales preservados](../reports/android16-kernel-memory/installation.json), [evento único realmente recibido y atendido](../reports/android16-kernel-memory/package-event-wake.json). No hay candidato arrancado, ABI positiva, MAC, servicios ni APK acreditados por este hito.
+
 Kernel candidato Linux6.18.59 con shim ACK: [compilación completa terminal0](../reports/android16-kernel-memory/full-build.json), [log original con hash](../reports/android16-kernel-memory/full-build-log.json). Imagen/config/vmlinux contrastados;6.407 módulos y vermagic vmwgfx propio. No acredita instalación, arranque, ABI, MAC, servicios ni APK.
 
 Admisión Bionic negativa ejecutada en c8c919f: [resultado y hashes de logs](../reports/android16-selected-display/memfd-negative-execution.json), [estado posterior del anfitrión](../reports/android16-selected-display/memfd-negative-host-post.json). Alcance: rechazo real del kernel stock antes de arrancar gestores y cierre; no camino positivo, autorización MAC, servicios ni APK.

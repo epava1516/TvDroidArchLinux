@@ -1,8 +1,8 @@
 # Roadmap A · plataforma APK general sobre Linux
 
-## Candidato de kernel · compilado, sin activar
+## Candidato de kernel · instalado, pendiente de arranque/ABI
 
-[Preparación fuente y límites](../reports/android16-kernel-memory/preparation.json), [parche original integrado](../reports/android16-kernel-memory/linux-6.18.59-ack-ashmem.patch) y [objeto compilado](../reports/android16-kernel-memory/object-build.json): no cambian kernel activo ni aceptación R1. [Imagen y6.407 módulos terminados con exit0](../reports/android16-kernel-memory/full-build.json), hashes contrastados y vermagic vmwgfx independiente. Comprobar/instalar de forma separada preservando rollback, guardar checkpoint antes de arranque. Sólo tras ABI/protecciones reales positivas configurar memoria original y continuar el recorrido de servicios/Markor. No reutilizar módulos stock bajo un vermagic distinto.
+[Fuente y límites](../reports/android16-kernel-memory/preparation.json), [parche ACK](../reports/android16-kernel-memory/linux-6.18.59-ack-ashmem.patch), [compilación completa](../reports/android16-kernel-memory/full-build.json), [paquete verificado](../reports/android16-kernel-memory/package-verification.json) e [instalación/initramfs](../reports/android16-kernel-memory/installation.json).6.407 módulos propios, sin reutilizar módulos stock bajo otro vermagic; depuración retirada antes de firmar y BTF conservado, con [firma real y negativo manipulado](../reports/android16-kernel-memory/stripped-module-signature.json). Imágenes/default/entradas originales preservados. Siguiente: checkpoint final, seleccionar entrada nueva sólo para un arranque, reiniciar con recuperación; contrastar kernel/boot/SELinux y comprobar ABI/protecciones reales. Sólo después admisión memfd original y Power/Display→Markor. No se cierra R1 ni compatibilidad por instalar el kernel. [Evento nativo de reanudación probado](../reports/android16-kernel-memory/package-event-wake.json), sin sondeos periódicos del modelo durante el empaquetado.
 
 ## Puerta inmediata · memoria compartida antes de Power/Display
 

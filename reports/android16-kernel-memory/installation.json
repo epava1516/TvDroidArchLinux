@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-01T20:29:38.721733+00:00",
+  "scope": "Separate package installed and initramfs/new loader entry checked. Candidate not yet selected or booted; no positive ABI/MAC/services/APK acceptance.",
+  "package_sha256": "47737239fce3de7127cfdf0b58d8c6939d247bac699a451624fcbe23be121931",
+  "package_check": "linux-archtv-aosp16: 7647 total files, 0 missing files",
+  "module_count": 6407,
+  "installed_image_sha256": "fb88ff8f17628eae0b148080754df72cbe9a7c33d061785b20d5490e1eadf636",
+  "initramfs_sha256": "d0fe7b2a534d0a5c34a0815372c9d74c33450f67d0ce42ff0627e5445766842f",
+  "initramfs_bytes": 16130511,
+  "initramfs_analysis": "==> Image: /boot/initramfs-linux-archtv-aosp16.img\n==> Created with mkinitcpio 42.2\n==> Kernel: 6.18.59-archtv-aosp16-1\n==> Early CPIO: 1.27 MiB\n==> Size: 14.11 MiB\n==> Compressed with: zstd\n  -> Uncompressed size: 42.64 MiB (.331 ratio)\n  -> Estimated decompression time: 0.238s\n\n==> Included modules (23):\n  ata_generic\t\t  lz4_compress\t\t  rpmb-core\n  ata_piix\t\t  mmc_block\t\t  serio_raw\n  cdrom\t\t\t  mmc_core\t\t  sr_mod\n  drm_ttm_helper\t  nvme\t\t\t  ttm\n  hkdf\t\t\t  nvme-auth\t\t  uas\n  intel-agp\t\t  nvme-core\t\t  usb-storage\n  intel-gtt\t\t  nvme-keyring\t\t  vmwgfx\n  lz4\t\t\t  pata_acpi\n\n==> Included binaries (17):\n  blkid\t\t\t  loadkeys\t\t  switch_root\n  busybox\t\t  mount\t\t\t  systemctl\n  e2fsck\t\t  setfont\t\t  systemd-tmpfiles\n  fsck\t\t\t  sulogin\t\t  udevadm\n  journalctl\t\t  swapoff\t\t  umount\n  kmod\t\t\t  swapon\n\n",
+  "original_images_entries_default_unchanged": true,
+  "new_entry": "/boot/loader/entries/archtv-aosp16-test.conf",
+  "new_entry_content": "title Arch TV AOSP16 LTS - memory shim SELinux permissive (one shot)\nlinux /vmlinuz-linux-archtv-aosp16\ninitrd /intel-ucode.img\ninitrd /initramfs-linux-archtv-aosp16.img\noptions root=UUID=4f479cd5-85ab-4806-931d-792e6f0c860c rw lsm=landlock,lockdown,yama,integrity,selinux,bpf selinux=1 enforcing=0\n",
+  "active_kernel": "6.18.59-1-lts",
+  "recovery": "/home/tv/recuperacion-archtv/20261101T195453Z-kernel-install-boot/RETOMAR.txt"
+}
