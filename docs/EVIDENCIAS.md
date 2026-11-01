@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+Admisión Bionic negativa ejecutada en c8c919f: [resultado y hashes de logs](../reports/android16-selected-display/memfd-negative-execution.json), [estado posterior del anfitrión](../reports/android16-selected-display/memfd-negative-host-post.json). Alcance: rechazo real del kernel stock antes de arrancar gestores y cierre; no camino positivo, autorización MAC, servicios ni APK.
+
 Sonda de memoria x86_64 y negativo stock: [resultado](../reports/android16-kernel-memory/stock-abi-negative.json), [ejecutor](../reports/android16-kernel-memory/probe-memory-abi.py). Alcance: ABI Linux ejecutada, no libcutils ni MAC/APK. Receta [PKGBUILD](../reports/android16-kernel-memory/PKGBUILD): validación sintáctica y rechazo real de estado `running`; empaquetado/instalación pendientes de terminar la compilación.
 
 ## Kernel de memoria · preparación y preflight sólo de compilación
