@@ -1,5 +1,7 @@
 # Matriz de aplicaciones reales
 
+La integración de soporte [memoria Bionic y display0](../reports/android16-selected-display/postboot-display-findings.json) no cambia la aceptación de Markor: instalación, lanzamiento, interfaz, entrada, función principal, persistencia, servicios, cierre y reapertura siguen sin recorrido completo probado. La consulta shell original no demuestra permisos ni comportamiento de una APK.
+
 La [integración actual de servicios originales](../reports/android16-selected-display/findings.json) falla aún en la ABI ashmem/memfd del kernel. No publica display ni modifica la aceptación de ninguna APK. ARM, servicios externos y DRM siguen siendo ejes separados.
 
 ## Evidencia de subsistemas · sin cambiar aceptación APK

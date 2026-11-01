@@ -24,6 +24,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     } else {
         Duration::ZERO
     };
+    let startup = if separator.as_deref() == Some(std::ffi::OsStr::new("--startup-ms")) {
+        let millis: u64 = args.next().ok_or("missing startup duration")?
+            .to_str().ok_or("invalid startup duration")?.parse()?;
+        if millis == 0 || millis > 60_000 { return Err("startup duration outside 1..60000ms".into()); }
+        separator = args.next();
+        Duration::from_millis(millis)
+    } else { Duration::from_secs(20) };
     if separator.as_deref() != Some(std::ffi::OsStr::new("--")) {
         return Err("expected --".into());
     }
@@ -38,7 +45,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     );
     // Original property + manager + oneshot-client startup each has a bounded
     // native phase. Permit their combined MC1 deadline without masking it.
-    if let Err(error) = process.wait_started(expected, Duration::from_secs(20)) {
+    if let Err(error) = process.wait_started(expected, startup) {
         if error.get_ref().is_some_and(|e| e.is::<NativeFailure>()) {
             let status = process.wait_failed(Duration::from_secs(10))?;
             eprintln!("NATIVE_COMPONENT_FAILED cause={error} actual_exit={status}");

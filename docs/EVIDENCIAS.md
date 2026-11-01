@@ -1,17 +1,9 @@
 # Índice de evidencias
 
-## Actualización verificada · arranque 1 noviembre
+## Vigente · memoria original y display0 consultable
 
-[Resultado real](../reports/android16-kernel-memory/boot-integration.json), [ABI Linux](../reports/android16-kernel-memory/boot-memory-abi.json): kernel separado arrancado y memoria Bionic original admitida. Política cargada en permisivo; no MAC aceptado. `display` ausente al plazo, siguiente decisión depende de localizar la espera original antes de añadir servicios. Markor completo sigue pendiente; ARM/GMS/DRM separados. Los resultados ENOTTY anteriores son históricos, no bloqueo vigente en este kernel.
+[Resultado funcional](../reports/android16-selected-display/postboot-display-findings.json): kernel separado y memoria Bionic real admitida; servicios originales Power/Thermal/Lights/Display alcanzan fase100 y el cliente original enumera display0 sobre SF/Wayland/Smithay. Permisivo, policyload1: sin autorización MAC ni compatibilidad APK aceptadas. `dumpsys display` conserva su rechazo DUMP; no se falsifica el permiso. Thermal HAL, brillo físico, suspensión del anfitrión y fences físicos siguen pendientes. El siguiente hito integra instalación/permisos/paquetes/actividad originales para Markor intacta. ARM/GMS/DRM separados.
 
-
-Kernel separado: [paquete/archivo verificado](../reports/android16-kernel-memory/package-verification.json), [muestra firmada sin DWARF y con BTF, positivo/negativo](../reports/android16-kernel-memory/stripped-module-signature.json), [instalación/initramfs y arranques originales preservados](../reports/android16-kernel-memory/installation.json), [evento único realmente recibido y atendido](../reports/android16-kernel-memory/package-event-wake.json). No hay candidato arrancado, ABI positiva, MAC, servicios ni APK acreditados por este hito.
-
-Kernel candidato Linux6.18.59 con shim ACK: [compilación completa terminal0](../reports/android16-kernel-memory/full-build.json), [log original con hash](../reports/android16-kernel-memory/full-build-log.json). Imagen/config/vmlinux contrastados;6.407 módulos y vermagic vmwgfx propio. No acredita instalación, arranque, ABI, MAC, servicios ni APK.
-
-Admisión Bionic negativa ejecutada en c8c919f: [resultado y hashes de logs](../reports/android16-selected-display/memfd-negative-execution.json), [estado posterior del anfitrión](../reports/android16-selected-display/memfd-negative-host-post.json). Alcance: rechazo real del kernel stock antes de arrancar gestores y cierre; no camino positivo, autorización MAC, servicios ni APK.
-
-Sonda de memoria x86_64 y negativo stock: [resultado](../reports/android16-kernel-memory/stock-abi-negative.json), [ejecutor](../reports/android16-kernel-memory/probe-memory-abi.py). Alcance: ABI Linux ejecutada, no libcutils ni MAC/APK. Receta [PKGBUILD](../reports/android16-kernel-memory/PKGBUILD): validación sintáctica y rechazo real de estado `running`; empaquetado/instalación pendientes de terminar la compilación.
 
 ## Kernel de memoria · preparación y preflight sólo de compilación
 

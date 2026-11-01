@@ -1,0 +1,54 @@
+{
+  "kernel": "6.18.59-archtv-aosp16-1",
+  "boot_id": "4e18faf8-2b46-42e4-a6b2-269c34326b68",
+  "base_commit": "37756a0",
+  "cohort": "sf-cohort-build-29",
+  "selected": "selected-display-13",
+  "native_exit": 0,
+  "frames_presented": 380,
+  "actual_queries": {
+    "SurfaceFlinger": "found",
+    "SurfaceFlingerAIDL": "found",
+    "display": "found",
+    "cmd display get-displays --ids-only": "0\n",
+    "dumpsys display": "Permission Denial: missing android.permission.DUMP"
+  },
+  "services": "Original SystemSuspend, Power, Thermal, Lights, Display and phase100; no full SystemServer.main or Android init boot dispatch",
+  "selinux": {
+    "enforcing": false,
+    "policyload": 1,
+    "scope": "Functional diagnostic only; no authorization or isolation acceptance"
+  },
+  "closure": "postboot-display-host-post.json",
+  "capture_limit": "Capture45s occurred after native stop and shows background only. No visible logo claimed from that image. Follow-up profile13 uses original bootstrap order and capture30s during live observation.",
+  "next": "Original installation/permission/package/activity subsystems for intact Markor; APK nine stages remain unproven. ARM/GMS/DRM separate.",
+  "first_run_log": "/home/tv/repositorio-principal/dist/aosp16/display-session-1793567206439335297/compositor.log",
+  "first_run_log_sha256": "30e53dc42d26294abd1c961ac9ac23ae82f497c38ecc59442a9636113da10bc2",
+  "log": "/home/tv/repositorio-principal/dist/aosp16/display-session-1793567423730543712/compositor.log",
+  "log_sha256": "078eb6cae39024a65146dd258b53e3c852ce3accd3ebb328ddeafc6a804f43d9",
+  "final_native_exit": 0,
+  "capture": {
+    "ppm": "/home/tv/repositorio-principal/dist/aosp16/display-session-1793567423730543712/screen.ppm",
+    "ppm_sha256": "6396d820ce540451fd1aad76c2a76b0eb17b1695337876f2632f3d0016e038f1",
+    "png": "postboot-display-screen.png",
+    "png_sha256": "3c0e28f315c8e9f494b6c6a52997772ce751178b14936c7ef0138de2429d2fa4",
+    "width": 1280,
+    "height": 800,
+    "visual_inspection": "Original android bootanimation logo on black, directly viewed. Not an APK or complete Android boot.",
+    "capture_after_seconds": 30
+  },
+  "final_original_order": [
+    "PowerManagerService",
+    "ThermalManagerService",
+    "LightsService",
+    "DisplayManagerService",
+    "PHASE_WAIT_FOR_DEFAULT_DISPLAY=100"
+  ],
+  "payload": "7744b5c58f8234a5a7cbc11d9c61e9f214a5d8038d3f1bb722b5407a8fca35c3",
+  "source_sha256": {
+    "runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java": "68752beea2472ab23b72243cbcf77f66c70f22d9d8d6fbc63bcc3ebaa3b9af65",
+    "runtime/aosp/native/linux-mc1-cohort.h": "a5626250ba9297fa35a42f9e82520239717b15de9e180e3fc82b69cf659e8671",
+    "crates/archtv-core/examples/native_supervisor.rs": "4bfb96bd7c08fb42dbac9a4a78fe0f5238212a7772179656b28f153361e0c0f9"
+  },
+  "outer_session_exit": 0
+}

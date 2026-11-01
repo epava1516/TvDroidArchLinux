@@ -1,15 +1,15 @@
 # Roadmap A · plataforma APK general sobre Linux
 
-## Actualización verificada · arranque 1 noviembre
+## Vigente · memoria original y display0 consultable
 
-[Resultado real](../reports/android16-kernel-memory/boot-integration.json), [ABI Linux](../reports/android16-kernel-memory/boot-memory-abi.json): kernel separado arrancado y memoria Bionic original admitida. Política cargada en permisivo; no MAC aceptado. `display` ausente al plazo, siguiente decisión depende de localizar la espera original antes de añadir servicios. Markor completo sigue pendiente; ARM/GMS/DRM separados. Los resultados ENOTTY anteriores son históricos, no bloqueo vigente en este kernel.
+[Resultado funcional](../reports/android16-selected-display/postboot-display-findings.json): kernel separado y memoria Bionic real admitida; servicios originales Power/Thermal/Lights/Display alcanzan fase100 y el cliente original enumera display0 sobre SF/Wayland/Smithay. Permisivo, policyload1: sin autorización MAC ni compatibilidad APK aceptadas. `dumpsys display` conserva su rechazo DUMP; no se falsifica el permiso. Thermal HAL, brillo físico, suspensión del anfitrión y fences físicos siguen pendientes. El siguiente hito integra instalación/permisos/paquetes/actividad originales para Markor intacta. ARM/GMS/DRM separados.
 
 
-## Candidato de kernel · instalado, pendiente de arranque/ABI
+## Histórico · candidato instalado antes del arranque probado
 
 [Fuente y límites](../reports/android16-kernel-memory/preparation.json), [parche ACK](../reports/android16-kernel-memory/linux-6.18.59-ack-ashmem.patch), [compilación completa](../reports/android16-kernel-memory/full-build.json), [paquete verificado](../reports/android16-kernel-memory/package-verification.json) e [instalación/initramfs](../reports/android16-kernel-memory/installation.json).6.407 módulos propios, sin reutilizar módulos stock bajo otro vermagic; depuración retirada antes de firmar y BTF conservado, con [firma real y negativo manipulado](../reports/android16-kernel-memory/stripped-module-signature.json). Imágenes/default/entradas originales preservados. Siguiente: checkpoint final, seleccionar entrada nueva sólo para un arranque, reiniciar con recuperación; contrastar kernel/boot/SELinux y comprobar ABI/protecciones reales. Sólo después admisión memfd original y Power/Display→Markor. No se cierra R1 ni compatibilidad por instalar el kernel. [Evento nativo de reanudación probado](../reports/android16-kernel-memory/package-event-wake.json), sin sondeos periódicos del modelo durante el empaquetado.
 
-## Puerta inmediata · memoria compartida antes de Power/Display
+## Histórico · puerta de memoria ya superada en el kernel candidato
 
 [Siete ejecuciones reales](../reports/android16-selected-display/findings.json) reducen la incertidumbre: classloader/IPC original ya ejecutan Java de servicios; el bloqueo inmediato es ashmem/memfd del kernel. Orden: preparar shim ACK original en LTS independiente → compilar/comprobar candidato y recuperación → instalar/arrancar sólo tras verificaciones → pruebas positivas/negativas de memoria real → configurar uso memfd mediante propiedad original cuando el guard real pase → Power/SystemSuspend/DisplayManager con consultas originales de display0 → instalación/lanzamiento original de Markor. No eludir el guard, devolver nonces falsos ni convertir inspectores/constructores en aceptación. Probar límites read/exec/purge/legacy y actualizar el kernel de forma reproducible; MAC/zygote y recorridos completos permanecen abiertos.
 

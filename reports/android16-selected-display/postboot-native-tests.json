@@ -1,0 +1,13 @@
+{
+  "sandbox": {
+    "path": "/home/tv/.cache/archtv/kernel-aosp16-1/native-process-tests.log",
+    "sha256": "82478f3ac8c003071b66f8270434b991c72f694dad8a698b380c86f0ad9218fd",
+    "result": "test result: FAILED. 14 passed; 5 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.45s"
+  },
+  "host": {
+    "path": "/home/tv/.cache/archtv/kernel-aosp16-1/native-process-tests-host.log",
+    "sha256": "7e7694c6900a4f865ac61a0f8e2e0b7367fe73f01445f6e9b888bd06d7c903cf",
+    "result": "test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.47s"
+  },
+  "scope": "Native lifetime regression suite; sandbox EPERM limitations distinguished from actual host19-pass run. No APK or MAC acceptance."
+}

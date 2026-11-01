@@ -1,18 +1,18 @@
 # Estado actual y punto de entrada
 
-## Kernel arrancado · memoria original admitida; Display pendiente
+## Kernel y display original · siguiente: instalación y actividad
 
-[Arranque e integración reales](../reports/android16-kernel-memory/boot-integration.json): kernel `6.18.59-archtv-aosp16-1`, boot ID nuevo verificado y evento automático recibido. [ABI ejecutada](../reports/android16-kernel-memory/boot-memory-abi.json): tamaño/protección y negativos de escritura correctos. La cohorte16 admite memoria mediante libcutils Bionic original, con propiedad original publicada. El bloqueo anterior ENOTTY corresponde al kernel anterior y queda histórico.
+[Resultado funcional](../reports/android16-selected-display/postboot-display-findings.json): kernel separado y memoria Bionic real admitida; servicios originales Power/Thermal/Lights/Display alcanzan fase100 y el cliente original enumera display0 sobre SF/Wayland/Smithay. Permisivo, policyload1: sin autorización MAC ni compatibilidad APK aceptadas. `dumpsys display` conserva su rechazo DUMP; no se falsifica el permiso. Thermal HAL, brillo físico, suspensión del anfitrión y fences físicos siguen pendientes. El siguiente hito integra instalación/permisos/paquetes/actividad originales para Markor intacta. ARM/GMS/DRM separados.
 
-Política gráfica exacta9f9afb63 cargada correctamente, SELinux permisivo. La consulta original encuentra SurfaceFlinger y SurfaceFlingerAIDL; `display` permanece ausente al expirar el plazo. No se ha probado disponibilidad Power/Display, autorización MAC ni Markor. Siguiente: localizar la espera real del arranque seleccionado y resolver su dependencia original. No repetir compilación del kernel ni las sondas válidas sin causa.
+[ABI real](../reports/android16-kernel-memory/boot-memory-abi.json), [arranque](../reports/android16-kernel-memory/boot-integration.json), [cierre comprobado](../reports/android16-selected-display/postboot-display-host-post.json). La captura inicial tardía sólo contiene fondo: no acredita un logo ni una APK. La repetición final captura durante la observación viva: [logo original a1280×800](../reports/android16-selected-display/postboot-display-screen.png),380 frames y cierre nativo0; no es Markor.
 
-Recuperación: `/home/tv/recuperacion-archtv/20261101T195453Z-kernel-install-boot/RETOMAR.txt`. Entradas originales conservadas. Pendientes históricos intactos; no reutilizar handles anteriores al reinicio.
+Recuperación: `/home/tv/recuperacion-archtv/20261101T195453Z-kernel-install-boot/RETOMAR.txt`. Entradas originales conservadas, pendientes históricos intactos. No reutilizar handles anteriores al reinicio. Markor no tiene etapas completas probadas.
 
-## En curso · servicios originales de display para Markor
+## Histórico · integración inicial de display
 
 [Checkpoint y experimento actual](../reports/android16-selected-display/checkpoint.json): ART/app_process y classloader original de system_server ejecutan el arranque seleccionado. Se integran SystemSuspend/PowerManager/DisplayManager originales y su inicialización común; todavía no se ha aceptado `display` ni una APK. Las pruebas negativas y sus causas se conservan; el hito gráfico cbff146 de abajo sigue válido.
 
-## Gráficos originales funcionales · siguiente: servicios de Markor
+## Histórico · primer recorrido gráfico original
 
 [Recorrido ejecutado](../reports/android16-software-renderer/sf-original-functional-findings.json): propiedades/gestores originales → SurfaceFlinger → ANGLE/SwiftShader Bionic → allocator/mapper/HWC3 → Wayland/Smithay/DRM. Bootanimation original dibuja el logotipo; [captura real](../reports/android16-software-renderer/sf-bootanimation-screen.png),455 frames, ambas interfaces SF consultadas por cliente original, seis identidades verificadas y cierre0. [Anfitrión limpio](../reports/android16-software-renderer/host-post-original-functional.json). Permisivo: no autorización/aislamiento/fences aceptados; no se arranca Android completo ni se instala/ejecuta Markor. [Checkpoint vigente](../reports/android16-software-renderer/checkpoint.json). Continuar con ART/app_process y servicios originales seleccionados de display/paquetes/actividades/ventanas para la vertical de Markor.
 

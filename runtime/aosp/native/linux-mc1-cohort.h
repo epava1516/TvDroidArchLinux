@@ -9,6 +9,7 @@
 #include "action.h"
 #include "action_manager.h"
 #include <android-base/file.h>
+#include <android-base/properties.h>
 #include <android-base/result.h>
 #include <selinux/selinux.h>
 #include <sys/stat.h>
@@ -275,6 +276,7 @@ class LinuxMc1Cohort {
         return {};
     }
     android::base::Result<void> StartSelectedDisplay(const Tick& tick) {
+        std::fprintf(stderr,"SELECTED_SHADER_PRIMING_PROPERTY actual=%s NO_RENDER_ACCEPTANCE\n",android::base::GetProperty("service.sf.prime_shader_cache", "unset").c_str());
         using namespace android::init;
         auto& services=ServiceList::GetInstance();
         auto parser=CreateParser(ActionManager::GetInstance(),services);
@@ -307,11 +309,12 @@ class LinuxMc1Cohort {
         client_done_=false;client_ok_=false;
         auto client=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","shell","shell","--",
             "/system/bin/sh","-c",
-            "umask 077; i=0; while [ $$i -lt 12 ]; do "
+            "umask 077; i=0; while [ $$i -lt 30 ]; do "
             "/system/bin/service check display > /data/local/tmp/archtv-mc1/display-query.txt 2>&1; "
             "if /system/bin/grep -qx 'Service display: found' /data/local/tmp/archtv-mc1/display-query.txt; then "
             "/system/bin/dumpsys display > /data/local/tmp/archtv-mc1/display-dump.txt 2>&1; "
-            "if /system/bin/grep -q 'mDisplayId=0' /data/local/tmp/archtv-mc1/display-dump.txt; then exit 0; fi; fi; "
+            "/system/bin/cmd display get-displays --ids-only > /data/local/tmp/archtv-mc1/display-ids.txt 2>&1; "
+            "if /system/bin/grep -qx '0' /data/local/tmp/archtv-mc1/display-ids.txt; then exit 0; fi; fi; "
             "i=$$((i+1)); /system/bin/sleep 1; done; exit 1"});
         if(!client.ok())return client.error();
         auto* process=client->get();
@@ -321,7 +324,7 @@ class LinuxMc1Cohort {
         });
         services.AddService(std::move(*client));
         if(auto result=process->ExecStart();!result.ok())return result;
-        if(auto result=Wait(tick,[this]{return client_done_;},15);!result.ok())return result;
+        if(auto result=Wait(tick,[this]{return client_done_;},35);!result.ok())return result;
         if(!client_ok_)return android::base::Error()<<"Original display CLI did not find default display";
         if(security_getenforce()!=expected_mode_)return android::base::Error()<<"Selected display security mode changed";
         return {};

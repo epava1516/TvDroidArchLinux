@@ -28,11 +28,13 @@ if surfaceflinger:
     properties = vendor / 'build.prop'
     backend = 'skiagl' if '--renderengine-gl' in sys.argv[2:] else 'skiavk'
     properties.write_text('ro.hardware.egl=angle\nro.hardware.vulkan=pastel\ndebug.renderengine.backend=' + backend + '\n')
+    if '--selected-display' in sys.argv[2:]:
+        with properties.open('a') as stream: stream.write('service.sf.prime_shader_cache=false\n')
     add('/vendor/build.prop', properties, 'vendor_file')
     add('/vendor/lib64/hw/vulkan.pastel.so', ROOT / 'dist/aosp16/swiftshader-link-2/vulkan.pastel.so', 'same_process_hal_file')
 
 if '--selected-display' in sys.argv[2:]:
-    selected = ROOT / 'dist/aosp16/selected-display-8'
+    selected = ROOT / 'dist/aosp16/selected-display-13'
     add('/vendor/framework/archtv-selected-services.jar', selected / 'archtv-selected-services.jar', 'vendor_framework_file')
     add('/vendor/etc/init/archtv-selected-services.rc', selected / 'selected-services.rc', 'vendor_configs_file')
 
@@ -132,6 +134,9 @@ add('/vendor/etc/selinux/vendor_file_contexts', contexts, 'file_contexts_file')
 base = (ROOT / 'reports/android16-hwmanager-cohort/build-payload-descriptor.py').read_text()
 base = base.replace("out=r/'dist/aosp16/hwmanager-cohort-4'", 'out=Path(' + repr(str(out)) + ')')
 base = base.replace("out/'cargo/debug/examples/native_supervisor'", "r/'dist/aosp16/hwmanager-cohort-4/cargo/debug/examples/native_supervisor'")
+if '--selected-display' in sys.argv[2:]:
+    base = base.replace("r/'dist/aosp16/hwmanager-cohort-4/cargo/debug/examples/native_supervisor'",
+        "out/'cargo/debug/examples/native_supervisor'")
 injection = '''
 vendor_files=json.loads((out/'vendor-inputs.json').read_text())['files']
 for path, entry in vendor_files.items():

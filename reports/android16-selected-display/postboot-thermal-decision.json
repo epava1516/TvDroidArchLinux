@@ -1,0 +1,70 @@
+{
+  "base_commit": "37756a0",
+  "kernel": "6.18.59-archtv-aosp16-1",
+  "execution": [
+    {
+      "log": "/home/tv/repositorio-principal/dist/aosp16/display-session-1793566018363309784/compositor.log",
+      "sha256": "f35a3241de242cb515880d774a5d96f2ecc2d9a3a0091672d363ebfb01c2ce12"
+    },
+    {
+      "log": "/home/tv/repositorio-principal/dist/aosp16/display-session-1793566178699194848/compositor.log",
+      "sha256": "87f57154c86907e10ab9067abe4f524c41d3b82fc98d76899b2392b586a00646"
+    }
+  ],
+  "observed": "Without ThermalManager, original PowerManager client factory throws ServiceNotFoundException for thermalservice and DMS constructor receives null PowerManager. With original ThermalManager started between Power and Display, original service check display finds the service; dumpsys display denies android.permission.DUMP. No default display or thermal hardware functionality accepted yet.",
+  "decision": "Preserve denied dumpsys evidence; additionally execute original cmd display get-displays --ids-only to test public display enumeration. No permission bypass, fabricated endpoint or manual readiness. Permission/PMS integration remains open for Markor.",
+  "source_commit": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+  "source_paths": [
+    "core/java/android/app/SystemServiceRegistry.java:694",
+    "services/core/java/com/android/server/power/thermal/ThermalManagerService.java:238",
+    "services/core/java/com/android/server/display/DisplayManagerShellCommand.java:335"
+  ],
+  "thermal_limit": "Original ThermalManager onStart publishes Binder. HAL connection occurs in PHASE_ACTIVITY_MANAGER_READY, not reached/accepted by phase100. No thermal sensors/status/hardware acceptance.",
+  "native_diagnostic": {
+    "kind": "Ordinary root GDB attachment with explicit detach, not REA MCP",
+    "log": "/home/tv/.cache/archtv/kernel-aosp16-1/sf45-correct-gdb.txt",
+    "sha256": "6275fc5e6ba23dac0ab0d449c9f0fe0a65109dccf57f3c16088277e85010ce13",
+    "observed": "RenderEngine waiting ANGLE/Vulkan fence; SwiftShader thread executing LLVM InstCombine. Main SF waiting future; binary SF internal frames unresolved, not proof of exact main future. Java DMS display thread waits nativeGetBootDisplayModeSupport; main DMS waits sync lock.",
+    "decision": "Evaluate original documented service.sf.prime_shader_cache=false for optional proactive shader priming. Real on-demand rendering, fences, return codes and MAC checks remain required; no rendering/default display acceptance from property."
+  },
+  "failed_preparations": [
+    "cohort17 missing copied Linux helper, retry refused existing tree; preserved",
+    "cohort22 supervisor ELF interpreter points to absent host /lib64; never entered Android",
+    "cohort23 target linker flags also affected host Cargo build script; build failed",
+    "cohort24 patchelf unavailable; build failed",
+    "cohort25 cargo rustc final-only linker arguments correct /archtv/lib entry, Android executes; default display client deadline still expires"
+  ],
+  "original_sources": [
+    {
+      "path": "core/java/android/app/SystemServiceRegistry.java",
+      "local": "/home/tv/.cache/archtv/aosp16-qpr2/selected-services-study-1/core__java__android__app__SystemServiceRegistry.java",
+      "sha256": "bcac18fa2dbea89020be2925c2e1bb67b254e00a97f57de257c4e1bb1e31af52",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/core/java/android/app/SystemServiceRegistry.java"
+    },
+    {
+      "path": "services/core/java/com/android/server/power/PowerManagerService.java",
+      "local": "/home/tv/.cache/archtv/aosp16-qpr2/selected-services-study-1/services__core__java__com__android__server__power__PowerManagerService.java",
+      "sha256": "398f55cdd9148e4f3396edc1f20dac0b782032825049ecb2bb0e8947e3da93ff",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/core/java/com/android/server/power/PowerManagerService.java"
+    },
+    {
+      "path": "services/core/java/com/android/server/power/thermal/ThermalManagerService.java",
+      "local": "/home/tv/.cache/archtv/aosp16-qpr2/selected-services-study-1/services__core__java__com__android__server__power__thermal__ThermalManagerService.java",
+      "sha256": "818b6b7fb4aed2cb3744be770cba35655496252bbbf9c9bed16b348e73a43f40",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/core/java/com/android/server/power/thermal/ThermalManagerService.java"
+    },
+    {
+      "path": "services/core/java/com/android/server/display/DisplayManagerShellCommand.java",
+      "local": "/home/tv/.cache/archtv/aosp16-qpr2/selected-services-study-1/services__core__java__com__android__server__display__DisplayManagerShellCommand.java",
+      "sha256": "49e8e92aa585df306fef7dc3166682eccef2d4fd9b3410bdcd1b2cc5cdf2772b",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/core/java/com/android/server/display/DisplayManagerShellCommand.java"
+    }
+  ],
+  "rea_mcp_static": {
+    "record": "/home/tv/.cache/archtv/kernel-aosp16-1/libcutils-rea-summary.json",
+    "artifact_sha256": "ed53b0a8de029f738ccfe346242371c50addc6c41435647ec55468a87a62b1eb",
+    "parent_evidence": "ev_cf81aabebf7a9a9cabee672bb137e14580a66660327b4233db00778e3318f758",
+    "scope": "Real MCP response after reboot, static export inventory only; not native execution."
+  },
+  "resolution": "Original property disabling optional SF shader precache was observed false; execution then exposed original LightsManager dependency. Adding original LightsService yields original phase100 and display0 queried by original cmd. Profile13 repeats original Power/Thermal/Lights/Display order with real logo capture. Permission DUMP remains denied, original thermal/light hardware not accepted."
+}

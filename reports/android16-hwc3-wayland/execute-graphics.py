@@ -106,8 +106,11 @@ for name, expected in [('sf-query.txt','Service SurfaceFlinger: found\\n'),('sf-
 print('MC3_ORIGINAL_SF_QUERIES_VERIFIED NOT_PIXEL_MAC_OR_APK_ACCEPTANCE',flush=True)
 """
 if '--selected-display' in sys.argv[1:]:
+    base = base.replace("'--observe-ms','60000'", "'--observe-ms','30000','--startup-ms','45000'")
+    # Keep bounded diagnostic frames after ART namespace messages.
+    base = base.replace('len(observed_logs)<256', 'len(observed_logs)<512')
     assert '--surfaceflinger' in sys.argv[1:]
-    base = base.replace('sf-cohort-build-7/payload-2.ext4', 'sf-cohort-build-16/payload-2.ext4')
+    base = base.replace('sf-cohort-build-7/payload-2.ext4', 'sf-cohort-build-29/payload-2.ext4')
     base = base.replace("'--surfaceflinger-integration'", "'--display-integration'")
     base = base.replace("args=['/archtv/bin/native-supervisor'", "assert not Path('/sys/power/state').exists() and not Path('/sys/power/wakeup_count').exists()\nprint('SELECTED_HOST_POWER_CONTROLS_ABSENT original_SystemSuspend_host_managed_path',flush=True)\nargs=['/archtv/bin/native-supervisor'")
 
@@ -120,7 +123,7 @@ if '--selected-display' in sys.argv[1:]:
     base = base.replace("(root/'data/misc/surfaceflinger').mkdir(parents=True,mode=0o700)", """(root/'data/system').mkdir(mode=0o775)
 os.chown(root/'data/system',1000,1000)
 (root/'data/misc/surfaceflinger').mkdir(parents=True,mode=0o700)""")
-    base = base.replace("for name in ['sf-query.txt','sf-aidl-query.txt']:", "for name in ['sf-query.txt','sf-aidl-query.txt','display-query.txt']:")
+    base = base.replace("for name in ['sf-query.txt','sf-aidl-query.txt']:", "for name in ['sf-query.txt','sf-aidl-query.txt','display-query.txt','display-ids.txt']:")
     # Retain a bounded original dump on failures too. A dumped display is
     # evidence, not an ACK or a synthesized result to the Android process.
     base = base.replace("if p.returncode!=0:\n failed_output=", """display=Path('/data/local/tmp/archtv-mc1/display-dump.txt')
@@ -132,8 +135,8 @@ if p.returncode!=0:
  failed_output=""")
     base += """
 query=Path('/data/local/tmp/archtv-mc1/display-query.txt').read_text()
-dump=Path('/data/local/tmp/archtv-mc1/display-dump.txt').read_text()
-assert query=='Service display: found\\n' and 'mDisplayId=0' in dump
+ids=Path('/data/local/tmp/archtv-mc1/display-ids.txt').read_text()
+assert query=='Service display: found\\n' and '0' in ids.splitlines()
 print('SELECTED_DISPLAY_QUERIES_VERIFIED NOT_APK_OR_MAC_ACCEPTANCE',flush=True)
 """
 compile(base, '<materialized graphics factory>', 'exec')

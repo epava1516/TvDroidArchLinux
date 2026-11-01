@@ -25,6 +25,13 @@ def main():
         print('BUILD', Path(argv[-1]).name, result.returncode, result.stderr[-2500:], flush=True)
         result.check_returncode()
 
+    # Linux/glibc supervisor runs from the explicit private /archtv closure,
+    # never through the Android/Bionic linker or a host /lib64 symlink.
+    execute(['/usr/bin/env', 'CARGO_TARGET_DIR=' + str(out / 'cargo'),
+             'cargo', 'rustc', '-p', 'archtv-core', '--example', 'native_supervisor', '--',
+             '-C', 'link-arg=-Wl,--dynamic-linker=/archtv/lib/ld-linux-x86-64.so.2',
+             '-C', 'link-arg=-Wl,-rpath,/archtv/lib'])
+
     old = json.loads((ROOT / 'reports/android16-hwmanager-cohort/worker-descriptor-build.json').read_text())
     worker = list(old[0]['argv'])
     previous_object = worker[worker.index('-o') + 1]
@@ -52,8 +59,11 @@ def main():
     link.insert(link.index('-o'), '-l:android.hardware.graphics.allocator-V2-ndk.so')
     link.insert(next(i for i,a in enumerate(link) if a.endswith('/NativeHandle.o')), str(out / 'graphics-client.o'))
     execute(link)
+    supervisor = out / 'cargo/debug/examples/native_supervisor'
+    elf_headers = subprocess.check_output(['readelf', '-l', str(supervisor)], text=True)
+    assert '[Requesting program interpreter: /archtv/lib/ld-linux-x86-64.so.2]' in elf_headers
     inventory = {name: hashlib.sha256((out / name).read_bytes()).hexdigest()
-                 for name in ['property-coordinator', 'linux-exec-context-image', 'graphics-client']}
+                 for name in ['property-coordinator', 'linux-exec-context-image', 'graphics-client', 'cargo/debug/examples/native_supervisor']}
     (out / 'artifacts.json').write_text(json.dumps(inventory, indent=2) + '\n')
 
 

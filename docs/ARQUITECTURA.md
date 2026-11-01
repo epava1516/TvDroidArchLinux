@@ -1,8 +1,11 @@
 # Arquitectura vigente · A16-QPR2-1
 
-## Actualización verificada · arranque 1 noviembre
+## Vigente · memoria original y display0 consultable
 
-[Resultado real](../reports/android16-kernel-memory/boot-integration.json), [ABI Linux](../reports/android16-kernel-memory/boot-memory-abi.json): kernel separado arrancado y memoria Bionic original admitida. Política cargada en permisivo; no MAC aceptado. `display` ausente al plazo, siguiente decisión depende de localizar la espera original antes de añadir servicios. Markor completo sigue pendiente; ARM/GMS/DRM separados. Los resultados ENOTTY anteriores son históricos, no bloqueo vigente en este kernel.
+[Resultado funcional](../reports/android16-selected-display/postboot-display-findings.json): kernel separado y memoria Bionic real admitida; servicios originales Power/Thermal/Lights/Display alcanzan fase100 y el cliente original enumera display0 sobre SF/Wayland/Smithay. Permisivo, policyload1: sin autorización MAC ni compatibilidad APK aceptadas. `dumpsys display` conserva su rechazo DUMP; no se falsifica el permiso. Thermal HAL, brillo físico, suspensión del anfitrión y fences físicos siguen pendientes. El siguiente hito integra instalación/permisos/paquetes/actividad originales para Markor intacta. ARM/GMS/DRM separados.
+
+
+El supervisor Linux conserva glibc y entrada ELF `/archtv/lib/ld-linux-x86-64.so.2`; los servicios Android conservan Bionic/APEX originales. El empaquetador verifica el intérprete y registra hashes. No se enruta ELF glibc por el enlazador Bionic. Inicio45s, observación30s, cierre10s y sesión DRM95s siguen acotados. La propiedad original `service.sf.prime_shader_cache=false` evita precalentamiento opcional sobre SwiftShader; el renderizado real bajo demanda sigue siendo obligatorio. Las pilas nativas y Java justifican la decisión, sin atribuir un deadlock al mero agotamiento del plazo.
 
 
 ## Memoria compartida · contrato Linux/AOSP demostrado

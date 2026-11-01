@@ -17,6 +17,21 @@ public final class SelectedServices {
     }
 
     public static void main(String[] args) {
+        Thread mainThread = Thread.currentThread();
+        Thread diagnostic = new Thread(() -> {
+            try { Thread.sleep(6000); } catch (InterruptedException stopped) { return; }
+            StringBuilder stack = new StringBuilder("SELECTED_MAIN_WAIT_STACK\n");
+            for (StackTraceElement frame : mainThread.getStackTrace()) stack.append("    at ").append(frame).append('\n');
+            System.err.println(stack.toString());
+            for (java.util.Map.Entry<Thread, StackTraceElement[]> entry : Thread.getAllStackTraces().entrySet()) {
+                if (!entry.getKey().getName().equals("android.display")) continue;
+                stack = new StringBuilder("SELECTED_DISPLAY_WAIT_STACK\n");
+                for (StackTraceElement frame : entry.getValue()) stack.append("    at ").append(frame).append('\n');
+                System.err.println(stack.toString());
+            }
+        }, "selected-wait-diagnostic");
+        diagnostic.setDaemon(true);
+        diagnostic.start();
         try {
             // Common original system-server IPC/scheduling setup. These calls
             // affect this trusted process, not the Linux host or tenant APKs.
@@ -51,6 +66,13 @@ public final class SelectedServices {
             // Original bootstrap order: power is required by LogicalDisplayMapper.
             call(managerType, manager, "startService", new Class<?>[]{Class.class},
                     Class.forName("com.android.server.power.PowerManagerService"));
+            // Original PowerManager client also requires IThermalService.
+            // Preserve SystemServer's Power -> Thermal -> Display order.
+            call(managerType, manager, "startService", new Class<?>[]{Class.class},
+                    Class.forName("com.android.server.power.thermal.ThermalManagerService"));
+            // Original LightsManager is consumed by LocalDisplayAdapter.
+            call(managerType, manager, "startService", new Class<?>[]{Class.class},
+                    Class.forName("com.android.server.lights.LightsService"));
             call(managerType, manager, "startService", new Class<?>[]{Class.class},
                     Class.forName("com.android.server.display.DisplayManagerService"));
             Class<?> traceType = Class.forName("com.android.server.utils.TimingsTraceAndSlog");
