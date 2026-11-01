@@ -1,0 +1,10 @@
+{
+  "version": "6.18.59",
+  "archive_sha256": "53a55ac9863a5547e292b8e381d4e4c2240dd1127d5428a7c44dbc550be23963",
+  "developer_signature_valid": true,
+  "fingerprint": "647F28654894E3BD457199BE38DBBDC86092693E",
+  "key_origin": "kernel.org WKD over TLS, exact fingerprint independently matched official kernel.org/signature.html",
+  "gpg_ownertrust": "undefined; not changed or claimed as web-of-trust certification",
+  "source_url": "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.18.59.tar.xz",
+  "state": "Source preparation only; no built/installed/booted custom kernel"
+}

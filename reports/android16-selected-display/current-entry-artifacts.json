@@ -1,0 +1,7 @@
+{
+  "jar_sha256": "7a81e3f057b60b83cd9cb0aa4a73eae9cde57cb347498eb71ba7d001fc3df0e3",
+  "rc_sha256": "74cba3ee8b3390bbff7f8575224f9855e06b3b3dd97f9d1706bb4d332654b04c",
+  "classpath_source": "/home/tv/repositorio-principal/dist/aosp16/property-profile-client-5/app/classpath",
+  "classpath_sha256": "00e268db7ddd484e4d3f05c245d2bbd2710ec2680bb8159bea8a0df1edffce73",
+  "limits": "Explicit diagnostic system UID/domain, not canonical zygote spawn or MAC acceptance; no full Android boot"
+}

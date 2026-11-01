@@ -25,8 +25,8 @@ namespace archtv::aosp {
 class LinuxMc1Cohort {
  public:
     using Tick = std::function<bool()>;
-    LinuxMc1Cohort(const bool& stop,int expected_mode,bool hardware=false,bool graphics=false,bool surfaceflinger=false)
-        : stop_(stop),expected_mode_(expected_mode),hardware_requested_(hardware),graphics_requested_(graphics),surfaceflinger_requested_(surfaceflinger) {}
+    LinuxMc1Cohort(const bool& stop,int expected_mode,bool hardware=false,bool graphics=false,bool surfaceflinger=false,bool selected=false)
+        : stop_(stop),expected_mode_(expected_mode),hardware_requested_(hardware),graphics_requested_(graphics),surfaceflinger_requested_(surfaceflinger),selected_requested_(selected) {}
     android::base::Result<void> Start(const Tick& tick) {
         using namespace android::init;
         auto& services=ServiceList::GetInstance();
@@ -90,7 +90,7 @@ class LinuxMc1Cohort {
         if(hardware_requested_)return StartHardware(tick);
         return {};
     }
-    bool healthy() const { return !manager_failed_ && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && bootanimation_->IsRunning())); }
+    bool healthy() const { return !manager_failed_ && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && bootanimation_->IsRunning())) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()); }
     android::base::Result<void> Close(const Tick& tick) {
         using namespace android::init;
         if(!active_) return {};
@@ -112,6 +112,8 @@ class LinuxMc1Cohort {
         surfaceflinger_=nullptr;
         bootanimation_=nullptr;
         bootanimation_started_=false;
+        selected_=nullptr;
+        suspend_=nullptr;
         services.RemoveServiceIf([](const auto& service){return !service->IsRunning();});
         active_=false;
         int observed_mode=security_getenforce();
@@ -268,7 +270,60 @@ class LinuxMc1Cohort {
         if(auto result=bootanimation_->Start();!result.ok())return result;
         bootanimation_started_=true;
         std::fprintf(stderr,"MC3_ORIGINAL_BOOTANIMATION_STARTED pid=%d NOT_PIXEL_ACCEPTANCE\n",bootanimation_->pid());
+        if(selected_requested_)return StartSelectedDisplay(tick);
         if(security_getenforce()!=expected_mode_)return android::base::Error()<<"MC3 security mode changed";
+        return {};
+    }
+    android::base::Result<void> StartSelectedDisplay(const Tick& tick) {
+        using namespace android::init;
+        auto& services=ServiceList::GetInstance();
+        auto parser=CreateParser(ActionManager::GetInstance(),services);
+        // Original upstream SystemSuspend keeps its own real wakelock counter
+        // when Linux owns host sleep. No /sys/power controls are exposed here.
+        auto native_parsed=parser.ParseConfigFile("/system/etc/init/android.system.suspend-service.rc");
+        if(!native_parsed.ok() || parser.parse_error_count()!=0)
+            return android::base::Error()<<"Original SystemSuspend RC rejected";
+        suspend_=services.FindService("system_suspend");
+        if(!suspend_ || suspend_->args()!=std::vector<std::string>{"/system/bin/hw/android.system.suspend-service"})
+            return android::base::Error()<<"Unexpected original SystemSuspend executable";
+        suspend_->AddReapCallback([this](const siginfo_t& info) {
+            std::fprintf(stderr,"SELECTED_SUSPEND_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
+            if(!closing_)manager_failed_=true;
+        });
+        if(auto result=suspend_->Start();!result.ok())return result;
+        std::fprintf(stderr,"SELECTED_SUSPEND_STARTED pid=%d NOT_REGISTERED\n",suspend_->pid());
+        auto parsed=parser.ParseConfigFile("/vendor/etc/init/archtv-selected-services.rc");
+        if(!parsed.ok() || parser.parse_error_count()!=0)
+            return android::base::Error()<<"Selected original service orchestration RC rejected";
+        selected_=services.FindService("archtv-selected-services");
+        if(!selected_ || selected_->args().empty() || selected_->args().front()!="/system/bin/app_process64")
+            return android::base::Error()<<"Unexpected selected service runtime";
+        selected_->AddReapCallback([this](const siginfo_t& info) {
+            std::fprintf(stderr,"SELECTED_SERVICES_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
+            if(!closing_)manager_failed_=true;
+        });
+        if(auto result=selected_->Start();!result.ok())return result;
+        std::fprintf(stderr,"SELECTED_SERVICES_STARTED pid=%d NOT_REGISTERED\n",selected_->pid());
+        client_done_=false;client_ok_=false;
+        auto client=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","shell","shell","--",
+            "/system/bin/sh","-c",
+            "umask 077; i=0; while [ $$i -lt 12 ]; do "
+            "/system/bin/service check display > /data/local/tmp/archtv-mc1/display-query.txt 2>&1; "
+            "if /system/bin/grep -qx 'Service display: found' /data/local/tmp/archtv-mc1/display-query.txt; then "
+            "/system/bin/dumpsys display > /data/local/tmp/archtv-mc1/display-dump.txt 2>&1; "
+            "if /system/bin/grep -q 'mDisplayId=0' /data/local/tmp/archtv-mc1/display-dump.txt; then exit 0; fi; fi; "
+            "i=$$((i+1)); /system/bin/sleep 1; done; exit 1"});
+        if(!client.ok())return client.error();
+        auto* process=client->get();
+        process->AddReapCallback([this](const siginfo_t& info) {
+            client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;
+            std::fprintf(stderr,"SELECTED_DISPLAY_CLIENT_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
+        });
+        services.AddService(std::move(*client));
+        if(auto result=process->ExecStart();!result.ok())return result;
+        if(auto result=Wait(tick,[this]{return client_done_;},15);!result.ok())return result;
+        if(!client_ok_)return android::base::Error()<<"Original display CLI did not find default display";
+        if(security_getenforce()!=expected_mode_)return android::base::Error()<<"Selected display security mode changed";
         return {};
     }
     android::base::Result<void> Wait(const Tick& tick,const std::function<bool()>& done,int seconds=5) {
@@ -285,12 +340,15 @@ class LinuxMc1Cohort {
     const bool hardware_requested_;
     const bool graphics_requested_;
     const bool surfaceflinger_requested_;
+    const bool selected_requested_;
     android::init::Service* manager_=nullptr;
     android::init::Service* hardware_=nullptr;
     android::init::Service* allocator_=nullptr;
     android::init::Service* composer_=nullptr;
     android::init::Service* surfaceflinger_=nullptr;
     android::init::Service* bootanimation_=nullptr;
+    android::init::Service* selected_=nullptr;
+    android::init::Service* suspend_=nullptr;
     bool bootanimation_started_=false;
     bool missing_done_=false,missing_ok_=false;
     bool active_=false,closing_=false,manager_failed_=false,client_done_=false,client_ok_=false;

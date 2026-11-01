@@ -1,0 +1,36 @@
+{
+  "commands": [
+    {
+      "argv": [
+        "javac",
+        "--release",
+        "8",
+        "-d",
+        "/home/tv/repositorio-principal/dist/aosp16/selected-display-8/classes",
+        "/home/tv/repositorio-principal/runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java",
+        "/home/tv/repositorio-principal/runtime/aosp/linux-services/org/archtv/aosplinux/ServiceLauncher.java"
+      ],
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "java",
+        "-cp",
+        "/home/tv/.cache/archtv/apk-build-tools/r8.jar",
+        "com.android.tools.r8.D8",
+        "--min-api",
+        "36",
+        "--output",
+        "/home/tv/repositorio-principal/dist/aosp16/selected-display-8/dex",
+        "/home/tv/repositorio-principal/dist/aosp16/selected-display-8/classes/org/archtv/aosplinux/ServiceLauncher.class",
+        "/home/tv/repositorio-principal/dist/aosp16/selected-display-8/classes/org/archtv/aosplinux/SelectedServices.class"
+      ],
+      "exit": 0,
+      "stderr": "Warning: An API level of 36 is not supported by this compiler. Please use an API level of 34 or earlier\n"
+    }
+  ],
+  "source_sha256": "44e386d71e1c1397bbea18c1835bccaf8eb3148e4f5aeeeaec4db900f3843210",
+  "launcher_sha256": "da79710d7c1133eb2b24e4aac3d7fbae2ff03c61b19ff97b4a3b224f76cc092c",
+  "scope": "Orchestration build only; no service, display, APK or MAC acceptance"
+}

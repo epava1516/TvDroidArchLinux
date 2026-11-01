@@ -1,0 +1,99 @@
+[
+  {
+    "path": "services/core/java/com/android/server/display/DisplayManagerService.java",
+    "local": "/home/tv/.cache/archtv/aosp16-qpr2/selected-services-study-1/services__core__java__com__android__server__display__DisplayManagerService.java",
+    "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/core/java/com/android/server/display/DisplayManagerService.java?format=TEXT",
+    "commit": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+    "sha256": "4094930264777b4a1e660c0f4198016b2db5d82772b74c99e6b723e318e40d4a"
+  },
+  {
+    "path": "services/core/java/com/android/server/display/LocalDisplayAdapter.java",
+    "local": "/home/tv/.cache/archtv/aosp16-qpr2/selected-services-study-1/services__core__java__com__android__server__display__LocalDisplayAdapter.java",
+    "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/core/java/com/android/server/display/LocalDisplayAdapter.java?format=TEXT",
+    "commit": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+    "sha256": "0937d94c4049f82a219240f34d2374479bf958c221ef7f12a0f7bcb6e8ca87d4"
+  },
+  {
+    "path": "services/core/java/com/android/server/SystemServiceManager.java",
+    "local": "/home/tv/.cache/archtv/aosp16-qpr2/selected-services-study-1/services__core__java__com__android__server__SystemServiceManager.java",
+    "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/core/java/com/android/server/SystemServiceManager.java?format=TEXT",
+    "commit": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+    "sha256": "5c016869540e2cc4b49dfd00b1ad1fb1a2b71c9549459adebca0358810884e98"
+  },
+  {
+    "path": "services/core/java/com/android/server/SystemService.java",
+    "local": "/home/tv/.cache/archtv/aosp16-qpr2/selected-services-study-1/services__core__java__com__android__server__SystemService.java",
+    "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/core/java/com/android/server/SystemService.java?format=TEXT",
+    "commit": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+    "sha256": "4c2e52867bc6acf90c4f6835a090c1af09258cb4a92d54a244abfe119ae28b89"
+  },
+  {
+    "path": "core/java/com/android/internal/os/ZygoteInit.java",
+    "commit": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+    "local": "/home/tv/.cache/archtv/aosp16-qpr2/selected-services-study-1/ZygoteInit.java",
+    "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/core/java/com/android/internal/os/ZygoteInit.java",
+    "sha256": "e2299c75b02bfe180deb346b14d80a71cafe5258a05f0ff6c3f39fc024441bae"
+  },
+  {
+    "path": "core/java/com/android/internal/os/ClassLoaderFactory.java",
+    "commit": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+    "local": "/home/tv/.cache/archtv/aosp16-qpr2/selected-services-study-1/ClassLoaderFactory.java",
+    "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/core/java/com/android/internal/os/ClassLoaderFactory.java",
+    "sha256": "64f547e7161be5ab21202667bb197b1819a4b4f66cfb477eefd47475b265b27a"
+  },
+  {
+    "path": "services/core/java/com/android/server/display/LogicalDisplay.java",
+    "commit": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+    "local": "/home/tv/.cache/archtv/aosp16-qpr2/selected-services-study-1/LogicalDisplay.java",
+    "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/core/java/com/android/server/display/LogicalDisplay.java",
+    "sha256": "153fc676530ac95d1fd22e4e87fb7c925d2308cc1b77bdfb13f031f9848bfeb1"
+  },
+  {
+    "path": "services/core/java/com/android/server/power/PowerManagerService.java",
+    "local": "/home/tv/.cache/archtv/aosp16-qpr2/selected-services-study-1/services__core__java__com__android__server__power__PowerManagerService.java",
+    "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/core/java/com/android/server/power/PowerManagerService.java?format=TEXT",
+    "sha256": "398f55cdd9148e4f3396edc1f20dac0b782032825049ecb2bb0e8947e3da93ff"
+  },
+  {
+    "path": "services/core/java/com/android/server/display/LogicalDisplayMapper.java",
+    "local": "/home/tv/.cache/archtv/aosp16-qpr2/selected-services-study-1/services__core__java__com__android__server__display__LogicalDisplayMapper.java",
+    "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/core/java/com/android/server/display/LogicalDisplayMapper.java?format=TEXT",
+    "sha256": "3fcb8603ddc56b36735d381d889e469902c4bfefaaeb4ed090a68edc8ba38b40"
+  },
+  {
+    "path": "services/core/jni/com_android_server_power_PowerManagerService.cpp",
+    "local": "/home/tv/.cache/archtv/aosp16-qpr2/selected-services-study-1/services__core__jni__com_android_server_power_PowerManagerService.cpp",
+    "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/core/jni/com_android_server_power_PowerManagerService.cpp?format=TEXT",
+    "sha256": "e27996520edd98406714bb5183d73f93632846ea166289fddb2144d8bfa0b75e"
+  },
+  {
+    "path": "suspend/1.0/default/main.cpp",
+    "local": "/home/tv/.cache/archtv/aosp16-qpr2/selected-services-study-1/suspend__1.0__default__main.cpp",
+    "url": "https://android.googlesource.com/platform/system/hardware/interfaces/+/8266ce79ba801eb1cb71f123651ab083ad1c1044/suspend/1.0/default/main.cpp?format=TEXT",
+    "sha256": "989bfe8ee455154cdb396050cf772883dd64de3904e211dad713e2c8a8a45386"
+  },
+  {
+    "path": "suspend/1.0/default/SystemSuspend.cpp",
+    "local": "/home/tv/.cache/archtv/aosp16-qpr2/selected-services-study-1/suspend__1.0__default__SystemSuspend.cpp",
+    "url": "https://android.googlesource.com/platform/system/hardware/interfaces/+/8266ce79ba801eb1cb71f123651ab083ad1c1044/suspend/1.0/default/SystemSuspend.cpp?format=TEXT",
+    "sha256": "9afe46ad9ed5ad35fae48934221c3930c30a172d01cdf7e6c4766ec4893966be"
+  },
+  {
+    "path": "suspend/1.0/default/SuspendControlService.cpp",
+    "local": "/home/tv/.cache/archtv/aosp16-qpr2/selected-services-study-1/suspend__1.0__default__SuspendControlService.cpp",
+    "url": "https://android.googlesource.com/platform/system/hardware/interfaces/+/8266ce79ba801eb1cb71f123651ab083ad1c1044/suspend/1.0/default/SuspendControlService.cpp?format=TEXT",
+    "sha256": "f74553134f68ce8d3aec92b2688c621b80fdab608cb7982e6db544a4ddf45980"
+  },
+  {
+    "path": "core/java/com/android/internal/os/ApplicationSharedMemory.java",
+    "local": "/home/tv/.cache/archtv/aosp16-qpr2/selected-services-study-1/core__java__com__android__internal__os__ApplicationSharedMemory.java",
+    "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/core/java/com/android/internal/os/ApplicationSharedMemory.java?format=TEXT",
+    "sha256": "efcf5a70a1764935cbc500cc6ef55bfc5c6cb6b56c6de76d5faee0a12d5d327f"
+  },
+  {
+    "path": "services/core/java/com/android/server/SystemServerInitThreadPool.java",
+    "local": "/home/tv/.cache/archtv/aosp16-qpr2/selected-services-study-1/services__core__java__com__android__server__SystemServerInitThreadPool.java",
+    "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/core/java/com/android/server/SystemServerInitThreadPool.java?format=TEXT",
+    "sha256": "bb5a7246c4dd281e31916e5f8a6085de1142161e707ed51c47738f0bab9dbff9"
+  }
+]

@@ -1,5 +1,9 @@
 # Contrato vigente · AOSP Android 16 QPR2
 
+## Criterio de memoria compartida · alcance de las evidencias
+
+La base Linux debe satisfacer y demostrar la ABI de memoria compartida usada por los componentes originales. [Fallo real actual](../reports/android16-selected-display/findings.json): memfd/sealing no basta para el guard ioctl ashmem de AOSP. Crear un nonce artificial, desactivar el guard o convertir un retorno nominal en éxito no satisface el contrato. Un shim original tampoco certifica por sí solo permisos/protecciones, legacy/compat32 ni aislamiento: conservar sus límites y exigir pruebas reales antes de aceptar cada ámbito. Esto concreta R1, sin modificar la exigencia de APK intactas ni permitir Android completo. El hito gráfico original SF/bootanimation no cierra ninguna etapa APK.
+
 ## Alcance de la evidencia gráfica parcial
 
 El [recorrido nativo allocator/mapper/HWC3→Smithay](../reports/android16-hwc3-wayland/findings.json) permite avanzar hacia SurfaceFlinger y aplicaciones. Un cliente de integración, aunque asigne y presente píxeles reales, no acredita ejecución de APK ni sustituye los recorridos completos de la matriz. Permisivo, ausencia de present-fence nativo y mezcla de proveedores experimental no cierran autorización, aislamiento, timing o equivalencia de producto.

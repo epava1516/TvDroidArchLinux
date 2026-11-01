@@ -1,0 +1,55 @@
+{
+  "initial": [
+    {
+      "path": "mm/memfd-ashmem-shim.c",
+      "local": "/home/tv/.cache/archtv/aosp16-qpr2/ashmem-kernel-study-1/mm__memfd-ashmem-shim.c",
+      "url": "https://android.googlesource.com/kernel/common/+/18290a0bb038a4db4d097f66a9c6bd6a14e1f320/mm/memfd-ashmem-shim.c?format=TEXT",
+      "commit": "18290a0bb038a4db4d097f66a9c6bd6a14e1f320",
+      "sha256": "c40e9d5a3feeea31fc2a21a31591803909c1599a9f18fa18d8b9536e8bfebad0",
+      "bytes": 6311
+    },
+    {
+      "path": "include/linux/memfd-ashmem-shim.h",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "path": "mm/Kconfig",
+      "local": "/home/tv/.cache/archtv/aosp16-qpr2/ashmem-kernel-study-1/mm__Kconfig",
+      "url": "https://android.googlesource.com/kernel/common/+/18290a0bb038a4db4d097f66a9c6bd6a14e1f320/mm/Kconfig?format=TEXT",
+      "commit": "18290a0bb038a4db4d097f66a9c6bd6a14e1f320",
+      "sha256": "17f4d8b4cca753da778cbe7a937142d806871d9d63d74083eef44c4761d5f77c",
+      "bytes": 29899
+    },
+    {
+      "path": "mm/Makefile",
+      "local": "/home/tv/.cache/archtv/aosp16-qpr2/ashmem-kernel-study-1/mm__Makefile",
+      "url": "https://android.googlesource.com/kernel/common/+/18290a0bb038a4db4d097f66a9c6bd6a14e1f320/mm/Makefile?format=TEXT",
+      "commit": "18290a0bb038a4db4d097f66a9c6bd6a14e1f320",
+      "sha256": "c35a7c9cbd30661fba7977746c90dd5764dcbb53f1d5a2a8a27cbaefb2dc2091",
+      "bytes": 4702
+    },
+    {
+      "path": "mm/shmem.c",
+      "local": "/home/tv/.cache/archtv/aosp16-qpr2/ashmem-kernel-study-1/mm__shmem.c",
+      "url": "https://android.googlesource.com/kernel/common/+/18290a0bb038a4db4d097f66a9c6bd6a14e1f320/mm/shmem.c?format=TEXT",
+      "commit": "18290a0bb038a4db4d097f66a9c6bd6a14e1f320",
+      "sha256": "9def9852c12d999a8181843e80411b224b895c5251fa68f3fce274eb005810d5",
+      "bytes": 113828
+    }
+  ],
+  "headers_correct_path": [
+    {
+      "path": "mm/memfd-ashmem-shim.h",
+      "local": "/home/tv/.cache/archtv/aosp16-qpr2/ashmem-kernel-study-1/mm__memfd-ashmem-shim.h",
+      "url": "https://android.googlesource.com/kernel/common/+/18290a0bb038a4db4d097f66a9c6bd6a14e1f320/mm/memfd-ashmem-shim.h?format=TEXT",
+      "sha256": "493f414cf379fb78167d6ffea191511c6391e57bb2232ffa7b2c14e0a050de66"
+    },
+    {
+      "path": "mm/memfd-ashmem-shim-internal.h",
+      "local": "/home/tv/.cache/archtv/aosp16-qpr2/ashmem-kernel-study-1/mm__memfd-ashmem-shim-internal.h",
+      "url": "https://android.googlesource.com/kernel/common/+/18290a0bb038a4db4d097f66a9c6bd6a14e1f320/mm/memfd-ashmem-shim-internal.h?format=TEXT",
+      "sha256": "83ff01d33eca8ec64a9df8b905da18261f0cc51231f7ebfdd26b3e876a5a2850"
+    }
+  ],
+  "note": "Initial include/linux path404 corrected to actual mm headers; not evidence of missing upstream shim. Inspection only; no kernel build/boot acceptance."
+}

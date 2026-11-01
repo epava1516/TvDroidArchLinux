@@ -31,6 +31,11 @@ if surfaceflinger:
     add('/vendor/build.prop', properties, 'vendor_file')
     add('/vendor/lib64/hw/vulkan.pastel.so', ROOT / 'dist/aosp16/swiftshader-link-2/vulkan.pastel.so', 'same_process_hal_file')
 
+if '--selected-display' in sys.argv[2:]:
+    selected = ROOT / 'dist/aosp16/selected-display-8'
+    add('/vendor/framework/archtv-selected-services.jar', selected / 'archtv-selected-services.jar', 'vendor_framework_file')
+    add('/vendor/etc/init/archtv-selected-services.rc', selected / 'selected-services.rc', 'vendor_configs_file')
+
 sp = 'same_process_hal_file'
 mg = ROOT / 'dist/aosp16/minigbm-native-link-5'
 hwc = ROOT / 'dist/aosp16/hwc3-wayland-1'

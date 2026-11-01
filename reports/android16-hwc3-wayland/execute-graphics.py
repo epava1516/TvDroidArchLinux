@@ -105,5 +105,36 @@ for name, expected in [('sf-query.txt','Service SurfaceFlinger: found\\n'),('sf-
  observed=report.read_text();print('MC3_ORIGINAL_SF_QUERY '+json.dumps(observed),flush=True);assert observed==expected
 print('MC3_ORIGINAL_SF_QUERIES_VERIFIED NOT_PIXEL_MAC_OR_APK_ACCEPTANCE',flush=True)
 """
+if '--selected-display' in sys.argv[1:]:
+    assert '--surfaceflinger' in sys.argv[1:]
+    base = base.replace('sf-cohort-build-7/payload-2.ext4', 'sf-cohort-build-14/payload-2.ext4')
+    base = base.replace("'--surfaceflinger-integration'", "'--display-integration'")
+    base = base.replace("args=['/archtv/bin/native-supervisor'", "assert not Path('/sys/power/state').exists() and not Path('/sys/power/wakeup_count').exists()\nprint('SELECTED_HOST_POWER_CONTROLS_ABSENT original_SystemSuspend_host_managed_path',flush=True)\nargs=['/archtv/bin/native-supervisor'")
+
+    base = base.replace("MC3_ORIGINAL_(SF|BOOTANIMATION)_STARTED pid=(\\d+)',line)", "MC3_ORIGINAL_(SF|BOOTANIMATION)_STARTED pid=(\\d+)|SELECTED_(SUSPEND|SERVICES)_STARTED pid=(\\d+)',line)")
+    base = base.replace("else match[5])", "else (match[5] or match[7]))")
+    base = base.replace("int(match[2] or match[4] or match[6])", "int(match[2] or match[4] or match[6] or match[8])")
+    base = base.replace("'BOOTANIMATION':'u:r:bootanim:s0'", "'BOOTANIMATION':'u:r:bootanim:s0','SUSPEND':'u:r:system_suspend:s0','SERVICES':'u:r:system_server:s0'")
+    base = base.replace("(1<<23 if identity['kind'] in ['ALLOCATOR','COMPOSER','SF'] else 0)", "(1<<36 if identity['kind']=='SUSPEND' else 1<<23 if identity['kind'] in ['ALLOCATOR','COMPOSER','SF','SERVICES'] else 0)")
+
+    base = base.replace("(root/'data/misc/surfaceflinger').mkdir(parents=True,mode=0o700)", """(root/'data/system').mkdir(mode=0o775)
+os.chown(root/'data/system',1000,1000)
+(root/'data/misc/surfaceflinger').mkdir(parents=True,mode=0o700)""")
+    base = base.replace("for name in ['sf-query.txt','sf-aidl-query.txt']:", "for name in ['sf-query.txt','sf-aidl-query.txt','display-query.txt']:")
+    # Retain a bounded original dump on failures too. A dumped display is
+    # evidence, not an ACK or a synthesized result to the Android process.
+    base = base.replace("if p.returncode!=0:\n failed_output=", """display=Path('/data/local/tmp/archtv-mc1/display-dump.txt')
+if display.is_file():
+ info=display.lstat();assert info.st_uid==2000 and info.st_gid==2000 and stat.S_IMODE(info.st_mode)==0o600 and info.st_size<524288
+ assert os.getxattr(display,'security.selinux').rstrip(b'\\0')==b'u:object_r:shell_data_file:s0'
+ print('SELECTED_DISPLAY_ORIGINAL_DUMP '+json.dumps(display.read_text()),flush=True)
+if p.returncode!=0:
+ failed_output=""")
+    base += """
+query=Path('/data/local/tmp/archtv-mc1/display-query.txt').read_text()
+dump=Path('/data/local/tmp/archtv-mc1/display-dump.txt').read_text()
+assert query=='Service display: found\\n' and 'mDisplayId=0' in dump
+print('SELECTED_DISPLAY_QUERIES_VERIFIED NOT_APK_OR_MAC_ACCEPTANCE',flush=True)
+"""
 compile(base, '<materialized graphics factory>', 'exec')
 exec(compile(base, '<materialized graphics factory>', 'exec'), {'__name__': '__main__'})

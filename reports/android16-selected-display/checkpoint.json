@@ -1,0 +1,28 @@
+{
+  "utc": "2026-11-01T11:10:32.736468+00:00",
+  "objective": "Unmodified complete APKs on Linux/Rust/Smithay, no Waydroid/full Android; Markor first. No fixture/class/constructor acceptance.",
+  "head": "cbff146",
+  "pending": "Six historical files and earlier GUI helper experiments preserved/excluded. Own selected-display Java/RC/build/coordinator changes uncommitted while real service integration runs.",
+  "last_proven": "Original SF+bootanimation455 DRMframes, both SF queries, six identities/clean close, permissive only, commitcbff146",
+  "handles": {
+    "service_runs": "All seven native attempts terminal1 and outer sessions inactive, original services reaped; no live runtime handle",
+    "source_download": "31466 terminal0; Linux6.18.59 archive/PGP/checksum fetched",
+    "signature": "23292 terminal0; VALIDSIG647F28654894E3BD457199BE38DBBDC86092693E matched official kernel.org/WKD key; own GPG helpers stopped",
+    "source_extract": "43455 terminal0; source-1/linux-6.18.59 extracted only after checksum/developer PGP signature verification; no live service/build handles"
+  },
+  "paths": {
+    "recovery": "/home/tv/recuperacion-archtv/20261101T102718Z-selected-display/RETOMAR.txt",
+    "candidate": "dist/aosp16/sf-cohort-build-14/payload.json",
+    "entry": "dist/aosp16/selected-display-8/artifacts.json",
+    "current_log": "/home/tv/.cache/archtv/selected-display-seventh-run.log",
+    "source_inventory": "reports/android16-selected-display/sources.json",
+    "kernel_preparation": "/home/tv/.cache/archtv/kernel-aosp16-1"
+  },
+  "source_hashes": {
+    "runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java": "44e386d71e1c1397bbea18c1835bccaf8eb3148e4f5aeeeaec4db900f3843210",
+    "runtime/aosp/linux-services/org/archtv/aosplinux/ServiceLauncher.java": "da79710d7c1133eb2b24e4aac3d7fbae2ff03c61b19ff97b4a3b224f76cc092c"
+  },
+  "demonstrated": "Original ART/complete system-server shared classloader enters Power/DMS. Original SystemSuspend process identity/capabilities observed, no host power controls. Missing original ApplicationSharedMemory setup corrected; its real allocation fails missing ashmem. Host-root memfd+F_SEAL_FUTURE_WRITE pass but ASHMEM_GET_SIZE ioctl returnsENOTTY.",
+  "current_experiment": "Prepare original ACK memfd-ashmem shim against signed stock Linux6.18.59 source, retaining own upstream limitations. No custom kernel built/installed/booted; do not claim display/Markor compatibility or turn sys.use_memfd true before real ABI pass.",
+  "next": "Prepare and compile original ACK memfd-ashmem shim integration against verified Linux6.18.59 source/config in separate candidate. No built/installed/custom kernel yet. Test real ABI/protections before setting original sys.use_memfd and retrying Power/DMS/Markor. Preserve upstream behavior limitations and original boot entries."
+}

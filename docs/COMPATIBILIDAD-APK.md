@@ -1,5 +1,7 @@
 # Matriz de aplicaciones reales
 
+La [integración actual de servicios originales](../reports/android16-selected-display/findings.json) falla aún en la ABI ashmem/memfd del kernel. No publica display ni modifica la aceptación de ninguna APK. ARM, servicios externos y DRM siguen siendo ejes separados.
+
 ## Evidencia de subsistemas · sin cambiar aceptación APK
 
 [Recorrido nativo gráfico original probado](../reports/android16-software-renderer/sf-original-functional-findings.json): SurfaceFlinger y bootanimation originales dibujan mediante ANGLE/SwiftShader, allocator/mapper/HWC3, Wayland/Smithay y DRM, con consultas/identidades/cierre reales. Es dependencia previa; **no cambia ninguna de las nueve etapas de Markor u otra APK**, todas siguen no probadas. Permisivo no acredita aislamiento; Android completo no se arranca.

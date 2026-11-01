@@ -1,0 +1,949 @@
+{
+  "scope": "Offline filesystem bytes only: no mount, host xattrs, policy load/enforce or runtime acceptance.",
+  "image": "/home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/payload-2.ext4",
+  "sha256": "617b79421c3c4e8b5787966ad60ce486fd166eed3e166300d2b19c711649e728",
+  "bytes": 134217728,
+  "mounted_at": "/archtv in a future prepared process filesystem view",
+  "entries": {
+    "/": {
+      "source": null,
+      "context": "linux.system_u:linux.object_r:archtv_bundle_dir:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o700",
+      "sha256": null
+    },
+    "/bin": {
+      "source": null,
+      "context": "linux.system_u:linux.object_r:archtv_bundle_dir:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o700",
+      "sha256": null
+    },
+    "/lib": {
+      "source": null,
+      "context": "linux.system_u:linux.object_r:archtv_bundle_dir:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o700",
+      "sha256": null
+    },
+    "/bin/native-supervisor": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/hwmanager-cohort-4/cargo/debug/examples/native_supervisor",
+      "context": "linux.system_u:linux.object_r:archtv_launcher_exec:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o700",
+      "sha256": "476047784756597d80fcc83761def82fa4f3a0684b60c977b8197c241c6e3afa"
+    },
+    "/bin/linux-exec-context": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/linux-exec-context-image",
+      "context": "linux.system_u:linux.object_r:archtv_exec_context_exec:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o700",
+      "sha256": "f119fb205b4d9b4767d9a7f3bbc44dd7a1d4ac926d86b323ca36e354e97a96b3"
+    },
+    "/bin/property-coordinator": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/property-coordinator",
+      "context": "u:object_r:init_exec:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o700",
+      "sha256": "f1c2fd42d37e4380ff976865394d4b500991c3d52b7dddcd9b88b246f7895beb"
+    },
+    "/lib/ld-linux-x86-64.so.2": {
+      "source": "/usr/lib/ld-linux-x86-64.so.2",
+      "context": "linux.system_u:linux.object_r:linux.ld_so_t:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o755",
+      "sha256": "f5e11cc62f8f2c24dff532982559f4303dba3b17e7450551372a88c8e7ea8757"
+    },
+    "/lib/libgcc_s.so.1": {
+      "source": "/usr/lib/libgcc_s.so.1",
+      "context": "linux.system_u:linux.object_r:linux.lib_t:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a"
+    },
+    "/lib/libc.so.6": {
+      "source": "/usr/lib/libc.so.6",
+      "context": "linux.system_u:linux.object_r:linux.lib_t:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "02c8c3d06180beee9c7d0392aa85736c7d19f274a81e7f8f0b3d9e28e0641524"
+    },
+    "/lib/libpcre2-8.so.0": {
+      "source": "/usr/lib/libpcre2-8.so.0.16.1",
+      "context": "linux.system_u:linux.object_r:linux.lib_t:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "bfe4fd9948f4ad1e907ec22525515f578eb9eeb181a44741948d99746d0f8e58"
+    },
+    "/vendor": {
+      "source": null,
+      "context": "u:object_r:vendor_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o755",
+      "sha256": null
+    },
+    "/vendor/build.prop": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/vendor-inputs-1/build.prop",
+      "context": "u:object_r:vendor_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "249d375aeb237e0ec1be2460f3bef96ea317cccc73a09f062bcecc16aeeefaa9"
+    },
+    "/vendor/lib64": {
+      "source": null,
+      "context": "u:object_r:vendor_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o755",
+      "sha256": null
+    },
+    "/vendor/lib64/hw": {
+      "source": null,
+      "context": "u:object_r:vendor_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o755",
+      "sha256": null
+    },
+    "/vendor/lib64/hw/vulkan.pastel.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/swiftshader-link-2/vulkan.pastel.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "dd923b5296ce8bd23c89ac6c874f04cda76a8bc8765fa8160d762b747a1a5117"
+    },
+    "/vendor/framework": {
+      "source": null,
+      "context": "u:object_r:vendor_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o755",
+      "sha256": null
+    },
+    "/vendor/framework/archtv-selected-services.jar": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/selected-display-8/archtv-selected-services.jar",
+      "context": "u:object_r:vendor_framework_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "7a81e3f057b60b83cd9cb0aa4a73eae9cde57cb347498eb71ba7d001fc3df0e3"
+    },
+    "/vendor/etc": {
+      "source": null,
+      "context": "u:object_r:vendor_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o755",
+      "sha256": null
+    },
+    "/vendor/etc/init": {
+      "source": null,
+      "context": "u:object_r:vendor_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o755",
+      "sha256": null
+    },
+    "/vendor/etc/init/archtv-selected-services.rc": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/selected-display-8/selected-services.rc",
+      "context": "u:object_r:vendor_configs_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "74cba3ee8b3390bbff7f8575224f9855e06b3b3dd97f9d1706bb4d332654b04c"
+    },
+    "/vendor/bin": {
+      "source": null,
+      "context": "u:object_r:vendor_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o755",
+      "sha256": null
+    },
+    "/vendor/bin/hw": {
+      "source": null,
+      "context": "u:object_r:vendor_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o755",
+      "sha256": null
+    },
+    "/vendor/bin/hw/android.hardware.graphics.allocator-service.minigbm": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-link-5/android.hardware.graphics.allocator-service.minigbm",
+      "context": "u:object_r:hal_graphics_allocator_default_exec:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o755",
+      "sha256": "6fce78422eeac88aed47dab7b7bebe9534f44a60fe75aa94ca1e927af1b1ac6d"
+    },
+    "/vendor/bin/hw/android.hardware.graphics.composer3-service.ranchu": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/hwc3-client-diagnostic-1/android.hardware.graphics.composer3-service.archtv-trace",
+      "context": "u:object_r:hal_graphics_composer_default_exec:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o755",
+      "sha256": "eb1538ccff1added51afe9ff1d64d950ae0735ef9bdf42e4c0de55e6792c3d7c"
+    },
+    "/vendor/bin/hw/archtv-graphics-client": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/graphics-client",
+      "context": "u:object_r:surfaceflinger_exec:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o755",
+      "sha256": "c80cadd3def27c37bfd61e0755f482b16eea841aa444dfe7da95e5411520a2a0"
+    },
+    "/vendor/lib64/libminigbm_gralloc.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-link-5/libminigbm_gralloc.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "6cf1a4812b2980bb676444d0f6ae08e463e1207432c5c63f5b74659f8643ee49"
+    },
+    "/vendor/lib64/libminigbm_gralloc4_utils.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-link-5/libminigbm_gralloc4_utils.so",
+      "context": "u:object_r:vendor_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "f4f4351d3681f4dc513d2ae8574ec85860751ff0df76d9051207696935b10a69"
+    },
+    "/vendor/lib64/hw/mapper.minigbm.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-link-5/mapper.minigbm.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "502463e9c12aeed5b2dea6abdeea1d650c305447186d8dd767231399d6463159"
+    },
+    "/vendor/lib64/libc++.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/vendor-native-link-2/vendor/lib64/libc++.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "07ff0bd165d5c7cb6e1c8f79820ffb7b307e04def111160bcbeb75af975a9d1d"
+    },
+    "/vendor/lib64/libbase.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/vendor-native-link-2/vendor/lib64/libbase.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "cb052cc362f6754b6444c2236abb0247d60294f08601a8d55163a1d2933b687f"
+    },
+    "/vendor/lib64/libcutils.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/vendor-native-link-2/vendor/lib64/libcutils.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "b6677895aa0422823f9bf9082693f1cb5d6c5a8f526fada73ca36ed58037d2a5"
+    },
+    "/vendor/lib64/libgralloctypes.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libgralloctypes.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "16dbd975389e3ff6b1ea69bbc9084db655bc6bea9450cd542d3231a751e69fcd"
+    },
+    "/vendor/lib64/libhidlbase.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libhidlbase.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "e68f67115ad7eb55c511d20d852e929c5326e06f15211b3db32069af5d037dc7"
+    },
+    "/vendor/lib64/android.hardware.graphics.allocator-V2-ndk.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.allocator-V2-ndk.so",
+      "context": "u:object_r:vendor_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "3b31e9a65c7fda7777d40b454ea1991fafd7ab17191db7d7a78d8378cb836527"
+    },
+    "/vendor/lib64/android.hardware.graphics.composer3-V4-ndk.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.composer3-V4-ndk.so",
+      "context": "u:object_r:vendor_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "2c48f03f05f22703b0371012738fde35f8028521ef51cdde550f4390b76b205c"
+    },
+    "/vendor/lib64/android.hardware.graphics.common-V7-ndk.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.common-V7-ndk.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "65e820925b74119f86448b8319af53a0bed811ca23a06c9e972656e85a37e9f7"
+    },
+    "/vendor/lib64/android.hardware.common-V2-ndk.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.common-V2-ndk.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "2684dbd3fdd07f6efb8abbb731010a7a0c46d237f8e0813b44a441503b7d7e3c"
+    },
+    "/vendor/lib64/android.hardware.drm.common-V1-ndk.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.drm.common-V1-ndk.so",
+      "context": "u:object_r:vendor_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "a5d5ad9bfe8aaac2681e2d6b478ab678a75af454c91e2d89c65f640911533231"
+    },
+    "/vendor/lib64/android.hardware.graphics.composer@2.1-resources.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/composer-link-1/android.hardware.graphics.composer@2.1-resources.so",
+      "context": "u:object_r:vendor_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "863204812b6140be04f1c4a4048290b550bf6c33ef61cf5c6a5216bc24b79619"
+    },
+    "/vendor/lib64/libui.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/libui-link-2/libui.so",
+      "context": "u:object_r:vendor_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "c98806f67f4f61bb5b8bef55eb4cb39580be5220b3a8dffa9685dfffd1df93fd"
+    },
+    "/vendor/lib64/libutils.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/vendor-native-link-2/vendor/lib64/libutils.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "85285defaf764681a836f2c1ce404e0d689a7d45a072450b522b11aa232cd181"
+    },
+    "/vendor/lib64/libjsoncpp.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libjsoncpp.so",
+      "context": "u:object_r:vendor_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "d942799ac830d8f2633cc4b489157a041665146f8b262bdc9883dcf6f2b34f5c"
+    },
+    "/vendor/lib64/libdrm.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libdrm.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "82222613b82586e965bd69457a276f795d8afdf55cc9709f563c435f69f307a9"
+    },
+    "/vendor/lib64/android.hardware.graphics.mapper@4.0.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.mapper@4.0.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "8d4f8e02f5daa54b3583495c88031069c4a7a8bd1808d7cb10b04444762d0aae"
+    },
+    "/vendor/lib64/android.hardware.graphics.composer@2.1.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.composer@2.1.so",
+      "context": "u:object_r:vendor_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "e00136db7072f65ed35019daa6589ad585547e987a8091ee3412f0dd981b3cc5"
+    },
+    "/vendor/lib64/libhardware.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/vendor-native-link-2/vendor/lib64/libhardware.so",
+      "context": "u:object_r:vendor_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "4360b97b5367a4deba6c4dc1f1bdca46d20b3b321265df938bdcfa523babe7c1"
+    },
+    "/vendor/lib64/android.hardware.graphics.allocator@2.0.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.allocator@2.0.so",
+      "context": "u:object_r:vendor_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "df249f7e29f6bbf293fc28aed52a5e36bf10c8ddc6742c2862783e16907e9c40"
+    },
+    "/vendor/lib64/android.hardware.graphics.allocator@3.0.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.allocator@3.0.so",
+      "context": "u:object_r:vendor_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "b0fc753f3a1e0ea5e950828b12fe68a4274d0f514273d42f4060e172786fff13"
+    },
+    "/vendor/lib64/android.hardware.graphics.allocator@4.0.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.allocator@4.0.so",
+      "context": "u:object_r:vendor_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "97ad2ff97cb7a1dbedadd1d942820cbe7789929b3f79db7954e55ed234742462"
+    },
+    "/vendor/lib64/android.hardware.graphics.common@1.2.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.common@1.2.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "70d162a9a165d3506bd1a0e0a4330a30b04848d662b783336be1d1fc456f8190"
+    },
+    "/vendor/lib64/android.hardware.graphics.mapper@2.0.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.mapper@2.0.so",
+      "context": "u:object_r:vendor_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "4b002081bbfc56e282f0a017c528e567a20a0e87cd57387ba57d02d800858c84"
+    },
+    "/vendor/lib64/android.hardware.graphics.mapper@2.1.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.mapper@2.1.so",
+      "context": "u:object_r:vendor_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "dc3831bd07607a072fe280eefa194e990bf9178666f8cad91b894f0d08ab595f"
+    },
+    "/vendor/lib64/android.hardware.graphics.mapper@3.0.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.mapper@3.0.so",
+      "context": "u:object_r:vendor_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "765c6c3f0320e9c9ee199edacbec70d3cc7d6fe418c52efe4546ee9232deaf47"
+    },
+    "/vendor/lib64/android.hardware.graphics.common@1.0.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.common@1.0.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "7f79e99ace059b7473d08cb7743bbeec1490f8dbc26b2ddccf17dbf0c84c70ca"
+    },
+    "/vendor/lib64/android.hardware.graphics.common@1.1.so": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.graphics.common@1.1.so",
+      "context": "u:object_r:same_process_hal_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "c4b0e11c1d6323ebaeee04df2081c911eff27901766b0eea107c26b8b6ee5c10"
+    },
+    "/vendor/etc/selinux": {
+      "source": null,
+      "context": "u:object_r:vendor_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o755",
+      "sha256": null
+    },
+    "/vendor/etc/selinux/plat_sepolicy_vers.txt": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/linux-failure-sink-worker-1/vendor/etc/selinux/plat_sepolicy_vers.txt",
+      "context": "u:object_r:vendor_configs_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "ce5b095f33cfad2ece2557566ec55c87dcb81fb1a275fdc6f032369f1ea4fb9d"
+    },
+    "/vendor/etc/init/allocator.rc": {
+      "source": "/home/tv/.cache/archtv/graphics-candidates-1/minigbm/cros_gralloc/aidl/allocator.rc",
+      "context": "u:object_r:vendor_configs_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "6399fd2e6ab2b4297a64eac9d3593d9c4dd9c0cfd12094ac75f3858f1ff7ad4e"
+    },
+    "/vendor/etc/init/hwcomposer3.rc": {
+      "source": "/home/tv/.cache/archtv/graphics-candidates-1/goldfish-hwc3/hwc3.rc",
+      "context": "u:object_r:vendor_configs_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "4ebfc0c9606ebaa5191c487d28c51226b1bd5b1ade0e711d8d8643a5b1e1821c"
+    },
+    "/vendor/etc/vintf": {
+      "source": null,
+      "context": "u:object_r:vendor_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o755",
+      "sha256": null
+    },
+    "/vendor/etc/vintf/manifest": {
+      "source": null,
+      "context": "u:object_r:vendor_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o755",
+      "sha256": null
+    },
+    "/vendor/etc/vintf/manifest/allocator.xml": {
+      "source": "/home/tv/.cache/archtv/graphics-candidates-1/minigbm/cros_gralloc/aidl/allocator.xml",
+      "context": "u:object_r:vendor_configs_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "35476a3d2e05a5e53b0620c2f7a8c2f38d9632abde27d5afd5fd5c931d791001"
+    },
+    "/vendor/etc/vintf/manifest/composer.xml": {
+      "source": "/home/tv/.cache/archtv/graphics-candidates-1/goldfish-hwc3/hwc3.xml",
+      "context": "u:object_r:vendor_configs_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "1451a07287ac74c88af5b15538a43d046b7c0d8052bc563398418910d55ae35b"
+    },
+    "/vendor/etc/vintf/manifest/mapper.xml": {
+      "source": "/home/tv/.cache/archtv/graphics-candidates-1/minigbm/cros_gralloc/mapper_stablec/mapper.minigbm.xml",
+      "context": "u:object_r:vendor_configs_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "f0ac3ccce6dc2c0e9e129cad271c92192f7e19d8b3efa7c8f88e2eb80574819f"
+    },
+    "/vendor/etc/vintf/manifest.xml": {
+      "source": "/home/tv/repositorio-principal/reports/android16-hwmanager-cohort/diagnostic-vintf-profile/manifest.xml",
+      "context": "u:object_r:vendor_configs_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "f36e16edb3b6f81dd112fe85c98fef9562d78d5b4af7f2af1dc2764c7fc57ffe"
+    },
+    "/vendor/etc/vintf/compatibility_matrix.xml": {
+      "source": "/home/tv/repositorio-principal/reports/android16-hwmanager-cohort/diagnostic-vintf-profile/compatibility_matrix.xml",
+      "context": "u:object_r:vendor_configs_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "077edbc08ac997c0a045038ba2224e9c56f18ce2035a1283cfd0730f11108064"
+    },
+    "/vendor/etc/selinux/vendor_file_contexts": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/vendor-inputs-1/vendor_file_contexts",
+      "context": "u:object_r:file_contexts_file:s0",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "sha256": "3158677f4b82cced9e98bfc04a530ea527927047d3c02a008d053d0fab1c795b"
+    }
+  },
+  "commands": [
+    {
+      "argv": [
+        "/usr/bin/mke2fs",
+        "-q",
+        "-t",
+        "ext4",
+        "-F",
+        "-O",
+        "^has_journal",
+        "-d",
+        "/home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/payload-tree-2",
+        "/home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/payload-2.ext4",
+        "128M"
+      ],
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/usr/bin/debugfs",
+        "-w",
+        "-f",
+        "/home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/payload-metadata.commands",
+        "/home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/payload-2.ext4"
+      ],
+      "exit": 0,
+      "stdout": "debugfs: set_inode_field / uid 0\ndebugfs: set_inode_field / gid 0\ndebugfs: set_inode_field / mode 040700\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-0 / security.selinux\ndebugfs: set_inode_field /bin uid 0\ndebugfs: set_inode_field /bin gid 0\ndebugfs: set_inode_field /bin mode 040700\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-1 /bin security.selinux\ndebugfs: set_inode_field /lib uid 0\ndebugfs: set_inode_field /lib gid 0\ndebugfs: set_inode_field /lib mode 040700\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-2 /lib security.selinux\ndebugfs: set_inode_field /bin/native-supervisor uid 0\ndebugfs: set_inode_field /bin/native-supervisor gid 0\ndebugfs: set_inode_field /bin/native-supervisor mode 0100700\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-3 /bin/native-supervisor security.selinux\ndebugfs: set_inode_field /bin/linux-exec-context uid 0\ndebugfs: set_inode_field /bin/linux-exec-context gid 0\ndebugfs: set_inode_field /bin/linux-exec-context mode 0100700\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-4 /bin/linux-exec-context security.selinux\ndebugfs: set_inode_field /bin/property-coordinator uid 0\ndebugfs: set_inode_field /bin/property-coordinator gid 0\ndebugfs: set_inode_field /bin/property-coordinator mode 0100700\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-5 /bin/property-coordinator security.selinux\ndebugfs: set_inode_field /lib/ld-linux-x86-64.so.2 uid 0\ndebugfs: set_inode_field /lib/ld-linux-x86-64.so.2 gid 0\ndebugfs: set_inode_field /lib/ld-linux-x86-64.so.2 mode 0100755\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-6 /lib/ld-linux-x86-64.so.2 security.selinux\ndebugfs: set_inode_field /lib/libgcc_s.so.1 uid 0\ndebugfs: set_inode_field /lib/libgcc_s.so.1 gid 0\ndebugfs: set_inode_field /lib/libgcc_s.so.1 mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-7 /lib/libgcc_s.so.1 security.selinux\ndebugfs: set_inode_field /lib/libc.so.6 uid 0\ndebugfs: set_inode_field /lib/libc.so.6 gid 0\ndebugfs: set_inode_field /lib/libc.so.6 mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-8 /lib/libc.so.6 security.selinux\ndebugfs: set_inode_field /lib/libpcre2-8.so.0 uid 0\ndebugfs: set_inode_field /lib/libpcre2-8.so.0 gid 0\ndebugfs: set_inode_field /lib/libpcre2-8.so.0 mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-9 /lib/libpcre2-8.so.0 security.selinux\ndebugfs: set_inode_field /vendor uid 0\ndebugfs: set_inode_field /vendor gid 0\ndebugfs: set_inode_field /vendor mode 040755\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-10 /vendor security.selinux\ndebugfs: set_inode_field /vendor/build.prop uid 0\ndebugfs: set_inode_field /vendor/build.prop gid 0\ndebugfs: set_inode_field /vendor/build.prop mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-11 /vendor/build.prop security.selinux\ndebugfs: set_inode_field /vendor/lib64 uid 0\ndebugfs: set_inode_field /vendor/lib64 gid 0\ndebugfs: set_inode_field /vendor/lib64 mode 040755\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-12 /vendor/lib64 security.selinux\ndebugfs: set_inode_field /vendor/lib64/hw uid 0\ndebugfs: set_inode_field /vendor/lib64/hw gid 0\ndebugfs: set_inode_field /vendor/lib64/hw mode 040755\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-13 /vendor/lib64/hw security.selinux\ndebugfs: set_inode_field /vendor/lib64/hw/vulkan.pastel.so uid 0\ndebugfs: set_inode_field /vendor/lib64/hw/vulkan.pastel.so gid 0\ndebugfs: set_inode_field /vendor/lib64/hw/vulkan.pastel.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-14 /vendor/lib64/hw/vulkan.pastel.so security.selinux\ndebugfs: set_inode_field /vendor/framework uid 0\ndebugfs: set_inode_field /vendor/framework gid 0\ndebugfs: set_inode_field /vendor/framework mode 040755\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-15 /vendor/framework security.selinux\ndebugfs: set_inode_field /vendor/framework/archtv-selected-services.jar uid 0\ndebugfs: set_inode_field /vendor/framework/archtv-selected-services.jar gid 0\ndebugfs: set_inode_field /vendor/framework/archtv-selected-services.jar mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-16 /vendor/framework/archtv-selected-services.jar security.selinux\ndebugfs: set_inode_field /vendor/etc uid 0\ndebugfs: set_inode_field /vendor/etc gid 0\ndebugfs: set_inode_field /vendor/etc mode 040755\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-17 /vendor/etc security.selinux\ndebugfs: set_inode_field /vendor/etc/init uid 0\ndebugfs: set_inode_field /vendor/etc/init gid 0\ndebugfs: set_inode_field /vendor/etc/init mode 040755\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-18 /vendor/etc/init security.selinux\ndebugfs: set_inode_field /vendor/etc/init/archtv-selected-services.rc uid 0\ndebugfs: set_inode_field /vendor/etc/init/archtv-selected-services.rc gid 0\ndebugfs: set_inode_field /vendor/etc/init/archtv-selected-services.rc mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-19 /vendor/etc/init/archtv-selected-services.rc security.selinux\ndebugfs: set_inode_field /vendor/bin uid 0\ndebugfs: set_inode_field /vendor/bin gid 0\ndebugfs: set_inode_field /vendor/bin mode 040755\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-20 /vendor/bin security.selinux\ndebugfs: set_inode_field /vendor/bin/hw uid 0\ndebugfs: set_inode_field /vendor/bin/hw gid 0\ndebugfs: set_inode_field /vendor/bin/hw mode 040755\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-21 /vendor/bin/hw security.selinux\ndebugfs: set_inode_field /vendor/bin/hw/android.hardware.graphics.allocator-service.minigbm uid 0\ndebugfs: set_inode_field /vendor/bin/hw/android.hardware.graphics.allocator-service.minigbm gid 0\ndebugfs: set_inode_field /vendor/bin/hw/android.hardware.graphics.allocator-service.minigbm mode 0100755\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-22 /vendor/bin/hw/android.hardware.graphics.allocator-service.minigbm security.selinux\ndebugfs: set_inode_field /vendor/bin/hw/android.hardware.graphics.composer3-service.ranchu uid 0\ndebugfs: set_inode_field /vendor/bin/hw/android.hardware.graphics.composer3-service.ranchu gid 0\ndebugfs: set_inode_field /vendor/bin/hw/android.hardware.graphics.composer3-service.ranchu mode 0100755\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-23 /vendor/bin/hw/android.hardware.graphics.composer3-service.ranchu security.selinux\ndebugfs: set_inode_field /vendor/bin/hw/archtv-graphics-client uid 0\ndebugfs: set_inode_field /vendor/bin/hw/archtv-graphics-client gid 0\ndebugfs: set_inode_field /vendor/bin/hw/archtv-graphics-client mode 0100755\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-24 /vendor/bin/hw/archtv-graphics-client security.selinux\ndebugfs: set_inode_field /vendor/lib64/libminigbm_gralloc.so uid 0\ndebugfs: set_inode_field /vendor/lib64/libminigbm_gralloc.so gid 0\ndebugfs: set_inode_field /vendor/lib64/libminigbm_gralloc.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-25 /vendor/lib64/libminigbm_gralloc.so security.selinux\ndebugfs: set_inode_field /vendor/lib64/libminigbm_gralloc4_utils.so uid 0\ndebugfs: set_inode_field /vendor/lib64/libminigbm_gralloc4_utils.so gid 0\ndebugfs: set_inode_field /vendor/lib64/libminigbm_gralloc4_utils.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-26 /vendor/lib64/libminigbm_gralloc4_utils.so security.selinux\ndebugfs: set_inode_field /vendor/lib64/hw/mapper.minigbm.so uid 0\ndebugfs: set_inode_field /vendor/lib64/hw/mapper.minigbm.so gid 0\ndebugfs: set_inode_field /vendor/lib64/hw/mapper.minigbm.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-27 /vendor/lib64/hw/mapper.minigbm.so security.selinux\ndebugfs: set_inode_field /vendor/lib64/libc++.so uid 0\ndebugfs: set_inode_field /vendor/lib64/libc++.so gid 0\ndebugfs: set_inode_field /vendor/lib64/libc++.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-28 /vendor/lib64/libc++.so security.selinux\ndebugfs: set_inode_field /vendor/lib64/libbase.so uid 0\ndebugfs: set_inode_field /vendor/lib64/libbase.so gid 0\ndebugfs: set_inode_field /vendor/lib64/libbase.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-29 /vendor/lib64/libbase.so security.selinux\ndebugfs: set_inode_field /vendor/lib64/libcutils.so uid 0\ndebugfs: set_inode_field /vendor/lib64/libcutils.so gid 0\ndebugfs: set_inode_field /vendor/lib64/libcutils.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-30 /vendor/lib64/libcutils.so security.selinux\ndebugfs: set_inode_field /vendor/lib64/libgralloctypes.so uid 0\ndebugfs: set_inode_field /vendor/lib64/libgralloctypes.so gid 0\ndebugfs: set_inode_field /vendor/lib64/libgralloctypes.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-31 /vendor/lib64/libgralloctypes.so security.selinux\ndebugfs: set_inode_field /vendor/lib64/libhidlbase.so uid 0\ndebugfs: set_inode_field /vendor/lib64/libhidlbase.so gid 0\ndebugfs: set_inode_field /vendor/lib64/libhidlbase.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-32 /vendor/lib64/libhidlbase.so security.selinux\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.allocator-V2-ndk.so uid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.allocator-V2-ndk.so gid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.allocator-V2-ndk.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-33 /vendor/lib64/android.hardware.graphics.allocator-V2-ndk.so security.selinux\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.composer3-V4-ndk.so uid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.composer3-V4-ndk.so gid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.composer3-V4-ndk.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-34 /vendor/lib64/android.hardware.graphics.composer3-V4-ndk.so security.selinux\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.common-V7-ndk.so uid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.common-V7-ndk.so gid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.common-V7-ndk.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-35 /vendor/lib64/android.hardware.graphics.common-V7-ndk.so security.selinux\ndebugfs: set_inode_field /vendor/lib64/android.hardware.common-V2-ndk.so uid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.common-V2-ndk.so gid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.common-V2-ndk.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-36 /vendor/lib64/android.hardware.common-V2-ndk.so security.selinux\ndebugfs: set_inode_field /vendor/lib64/android.hardware.drm.common-V1-ndk.so uid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.drm.common-V1-ndk.so gid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.drm.common-V1-ndk.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-37 /vendor/lib64/android.hardware.drm.common-V1-ndk.so security.selinux\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.composer@2.1-resources.so uid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.composer@2.1-resources.so gid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.composer@2.1-resources.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-38 /vendor/lib64/android.hardware.graphics.composer@2.1-resources.so security.selinux\ndebugfs: set_inode_field /vendor/lib64/libui.so uid 0\ndebugfs: set_inode_field /vendor/lib64/libui.so gid 0\ndebugfs: set_inode_field /vendor/lib64/libui.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-39 /vendor/lib64/libui.so security.selinux\ndebugfs: set_inode_field /vendor/lib64/libutils.so uid 0\ndebugfs: set_inode_field /vendor/lib64/libutils.so gid 0\ndebugfs: set_inode_field /vendor/lib64/libutils.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-40 /vendor/lib64/libutils.so security.selinux\ndebugfs: set_inode_field /vendor/lib64/libjsoncpp.so uid 0\ndebugfs: set_inode_field /vendor/lib64/libjsoncpp.so gid 0\ndebugfs: set_inode_field /vendor/lib64/libjsoncpp.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-41 /vendor/lib64/libjsoncpp.so security.selinux\ndebugfs: set_inode_field /vendor/lib64/libdrm.so uid 0\ndebugfs: set_inode_field /vendor/lib64/libdrm.so gid 0\ndebugfs: set_inode_field /vendor/lib64/libdrm.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-42 /vendor/lib64/libdrm.so security.selinux\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.mapper@4.0.so uid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.mapper@4.0.so gid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.mapper@4.0.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-43 /vendor/lib64/android.hardware.graphics.mapper@4.0.so security.selinux\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.composer@2.1.so uid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.composer@2.1.so gid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.composer@2.1.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-44 /vendor/lib64/android.hardware.graphics.composer@2.1.so security.selinux\ndebugfs: set_inode_field /vendor/lib64/libhardware.so uid 0\ndebugfs: set_inode_field /vendor/lib64/libhardware.so gid 0\ndebugfs: set_inode_field /vendor/lib64/libhardware.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-45 /vendor/lib64/libhardware.so security.selinux\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.allocator@2.0.so uid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.allocator@2.0.so gid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.allocator@2.0.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-46 /vendor/lib64/android.hardware.graphics.allocator@2.0.so security.selinux\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.allocator@3.0.so uid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.allocator@3.0.so gid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.allocator@3.0.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-47 /vendor/lib64/android.hardware.graphics.allocator@3.0.so security.selinux\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.allocator@4.0.so uid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.allocator@4.0.so gid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.allocator@4.0.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-48 /vendor/lib64/android.hardware.graphics.allocator@4.0.so security.selinux\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.common@1.2.so uid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.common@1.2.so gid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.common@1.2.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-49 /vendor/lib64/android.hardware.graphics.common@1.2.so security.selinux\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.mapper@2.0.so uid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.mapper@2.0.so gid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.mapper@2.0.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-50 /vendor/lib64/android.hardware.graphics.mapper@2.0.so security.selinux\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.mapper@2.1.so uid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.mapper@2.1.so gid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.mapper@2.1.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-51 /vendor/lib64/android.hardware.graphics.mapper@2.1.so security.selinux\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.mapper@3.0.so uid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.mapper@3.0.so gid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.mapper@3.0.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-52 /vendor/lib64/android.hardware.graphics.mapper@3.0.so security.selinux\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.common@1.0.so uid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.common@1.0.so gid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.common@1.0.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-53 /vendor/lib64/android.hardware.graphics.common@1.0.so security.selinux\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.common@1.1.so uid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.common@1.1.so gid 0\ndebugfs: set_inode_field /vendor/lib64/android.hardware.graphics.common@1.1.so mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-54 /vendor/lib64/android.hardware.graphics.common@1.1.so security.selinux\ndebugfs: set_inode_field /vendor/etc/selinux uid 0\ndebugfs: set_inode_field /vendor/etc/selinux gid 0\ndebugfs: set_inode_field /vendor/etc/selinux mode 040755\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-55 /vendor/etc/selinux security.selinux\ndebugfs: set_inode_field /vendor/etc/selinux/plat_sepolicy_vers.txt uid 0\ndebugfs: set_inode_field /vendor/etc/selinux/plat_sepolicy_vers.txt gid 0\ndebugfs: set_inode_field /vendor/etc/selinux/plat_sepolicy_vers.txt mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-56 /vendor/etc/selinux/plat_sepolicy_vers.txt security.selinux\ndebugfs: set_inode_field /vendor/etc/init/allocator.rc uid 0\ndebugfs: set_inode_field /vendor/etc/init/allocator.rc gid 0\ndebugfs: set_inode_field /vendor/etc/init/allocator.rc mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-57 /vendor/etc/init/allocator.rc security.selinux\ndebugfs: set_inode_field /vendor/etc/init/hwcomposer3.rc uid 0\ndebugfs: set_inode_field /vendor/etc/init/hwcomposer3.rc gid 0\ndebugfs: set_inode_field /vendor/etc/init/hwcomposer3.rc mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-58 /vendor/etc/init/hwcomposer3.rc security.selinux\ndebugfs: set_inode_field /vendor/etc/vintf uid 0\ndebugfs: set_inode_field /vendor/etc/vintf gid 0\ndebugfs: set_inode_field /vendor/etc/vintf mode 040755\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-59 /vendor/etc/vintf security.selinux\ndebugfs: set_inode_field /vendor/etc/vintf/manifest uid 0\ndebugfs: set_inode_field /vendor/etc/vintf/manifest gid 0\ndebugfs: set_inode_field /vendor/etc/vintf/manifest mode 040755\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-60 /vendor/etc/vintf/manifest security.selinux\ndebugfs: set_inode_field /vendor/etc/vintf/manifest/allocator.xml uid 0\ndebugfs: set_inode_field /vendor/etc/vintf/manifest/allocator.xml gid 0\ndebugfs: set_inode_field /vendor/etc/vintf/manifest/allocator.xml mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-61 /vendor/etc/vintf/manifest/allocator.xml security.selinux\ndebugfs: set_inode_field /vendor/etc/vintf/manifest/composer.xml uid 0\ndebugfs: set_inode_field /vendor/etc/vintf/manifest/composer.xml gid 0\ndebugfs: set_inode_field /vendor/etc/vintf/manifest/composer.xml mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-62 /vendor/etc/vintf/manifest/composer.xml security.selinux\ndebugfs: set_inode_field /vendor/etc/vintf/manifest/mapper.xml uid 0\ndebugfs: set_inode_field /vendor/etc/vintf/manifest/mapper.xml gid 0\ndebugfs: set_inode_field /vendor/etc/vintf/manifest/mapper.xml mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-63 /vendor/etc/vintf/manifest/mapper.xml security.selinux\ndebugfs: set_inode_field /vendor/etc/vintf/manifest.xml uid 0\ndebugfs: set_inode_field /vendor/etc/vintf/manifest.xml gid 0\ndebugfs: set_inode_field /vendor/etc/vintf/manifest.xml mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-64 /vendor/etc/vintf/manifest.xml security.selinux\ndebugfs: set_inode_field /vendor/etc/vintf/compatibility_matrix.xml uid 0\ndebugfs: set_inode_field /vendor/etc/vintf/compatibility_matrix.xml gid 0\ndebugfs: set_inode_field /vendor/etc/vintf/compatibility_matrix.xml mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-65 /vendor/etc/vintf/compatibility_matrix.xml security.selinux\ndebugfs: set_inode_field /vendor/etc/selinux/vendor_file_contexts uid 0\ndebugfs: set_inode_field /vendor/etc/selinux/vendor_file_contexts gid 0\ndebugfs: set_inode_field /vendor/etc/selinux/vendor_file_contexts mode 0100644\ndebugfs: ea_set -f /home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/label-66 /vendor/etc/selinux/vendor_file_contexts security.selinux\n",
+      "stderr": "debugfs 1.47.4 (6-Mar-2025)\n"
+    }
+  ],
+  "verification": [
+    {
+      "path": "/",
+      "label": "security.selinux (51) = \"linux.system_u:linux.object_r:archtv_bundle_dir:s0\\000\"\n\n",
+      "stat": "Inode: 2   Type: directory    Mode:  0700   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 1024\nFile ACL: 0\nLinks: 6   Blockcount: 2\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (51)\nInode checksum: 0x69b03875\nEXTENTS:\n(0):7971\n"
+    },
+    {
+      "path": "/bin",
+      "label": "security.selinux (51) = \"linux.system_u:linux.object_r:archtv_bundle_dir:s0\\000\"\n\n",
+      "stat": "Inode: 12   Type: directory    Mode:  0700   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 1024\nFile ACL: 0\nLinks: 2   Blockcount: 2\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (51)\nInode checksum: 0x9edf3f1e\nEXTENTS:\n(0):7985\n"
+    },
+    {
+      "path": "/lib",
+      "label": "security.selinux (51) = \"linux.system_u:linux.object_r:archtv_bundle_dir:s0\\000\"\n\n",
+      "stat": "Inode: 16   Type: directory    Mode:  0700   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 1024\nFile ACL: 0\nLinks: 2   Blockcount: 2\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (51)\nInode checksum: 0x1526a947\nEXTENTS:\n(0):11106\n"
+    },
+    {
+      "path": "/bin/native-supervisor",
+      "label": "security.selinux (54) = \"linux.system_u:linux.object_r:archtv_launcher_exec:s0\\000\"\n\n",
+      "stat": "Inode: 14   Type: regular    Mode:  0700   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 688560\nFile ACL: 0\nLinks: 1   Blockcount: 1338\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (54)\nInode checksum: 0x4744311a\nEXTENTS:\n(0-128):8064-8192, (129-469):8963-9303, (473-474):9304-9305, (476-672):9306-9502\n"
+    },
+    {
+      "path": "/bin/linux-exec-context",
+      "label": "security.selinux (58) = \"linux.system_u:linux.object_r:archtv_exec_context_exec:s0\\000\"\n\n",
+      "stat": "Inode: 13   Type: regular    Mode:  0700   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 82272\nFile ACL: 0\nLinks: 1   Blockcount: 156\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (58)\nInode checksum: 0xde15883d\nEXTENTS:\n(0-5):7986-7991, (8-60):7992-8044, (62-80):8045-8063\n"
+    },
+    {
+      "path": "/bin/property-coordinator",
+      "label": "security.selinux (24) = \"u:object_r:init_exec:s0\\000\"\n\n",
+      "stat": "Inode: 15   Type: regular    Mode:  0700   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 1644000\nFile ACL: 0\nLinks: 1   Blockcount: 3206\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (24) = \"u:object_r:init_exec:s0\\000\"\nInode checksum: 0x8969f074\nEXTENTS:\n(0-1132):9503-10635, (1134-1135):10636-10637, (1138-1605):10638-11105\n"
+    },
+    {
+      "path": "/lib/ld-linux-x86-64.so.2",
+      "label": "security.selinux (47) = \"linux.system_u:linux.object_r:linux.ld_so_t:s0\\000\"\n\n",
+      "stat": "Inode: 17   Type: regular    Mode:  0755   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 263152\nFile ACL: 0\nLinks: 1   Blockcount: 506\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (47)\nInode checksum: 0x0197f143\nEXTENTS:\n(0-180):11107-11287, (184-243):11288-11347, (245-256):11348-11359\n"
+    },
+    {
+      "path": "/lib/libgcc_s.so.1",
+      "label": "security.selinux (45) = \"linux.system_u:linux.object_r:linux.lib_t:s0\\000\"\n\n",
+      "stat": "Inode: 19   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 182512\nFile ACL: 0\nLinks: 1   Blockcount: 352\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (45)\nInode checksum: 0x5294b2c5\nEXTENTS:\n(0-14):13519-13533, (16-171):13534-13689, (174-178):13690-13694\n"
+    },
+    {
+      "path": "/lib/libc.so.6",
+      "label": "security.selinux (45) = \"linux.system_u:linux.object_r:linux.lib_t:s0\\000\"\n\n",
+      "stat": "Inode: 18   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 2215072\nFile ACL: 0\nLinks: 1   Blockcount: 4318\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (45)\nInode checksum: 0x592b2288\nEXTENTS:\n(ETB0):13503, (0-142):11360-11502, (144-1656):11503-13015, (1660-1730):13016-13086, (1732-2146):13087-13501, (2148):13502, (2149-2163):13504-13518\n"
+    },
+    {
+      "path": "/lib/libpcre2-8.so.0",
+      "label": "security.selinux (45) = \"linux.system_u:linux.object_r:linux.lib_t:s0\\000\"\n\n",
+      "stat": "Inode: 20   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 727336\nFile ACL: 0\nLinks: 1   Blockcount: 1416\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (45)\nInode checksum: 0x0c037ac4\nEXTENTS:\n(0-8):13695-13703, (12-710):13704-14402\n"
+    },
+    {
+      "path": "/vendor",
+      "label": "security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\n\n",
+      "stat": "Inode: 21   Type: directory    Mode:  0755   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 1024\nFile ACL: 0\nLinks: 6   Blockcount: 2\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\nInode checksum: 0x9de8d564\nEXTENTS:\n(0):14403\n"
+    },
+    {
+      "path": "/vendor/build.prop",
+      "label": "security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\n\n",
+      "stat": "Inode: 27   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 82\nFile ACL: 0\nLinks: 1   Blockcount: 2\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\nInode checksum: 0xdb4f37f1\nEXTENTS:\n(0):14879\n"
+    },
+    {
+      "path": "/vendor/lib64",
+      "label": "security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\n\n",
+      "stat": "Inode: 45   Type: directory    Mode:  0755   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 2048\nFile ACL: 0\nLinks: 3   Blockcount: 4\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\nInode checksum: 0x53b9790a\nEXTENTS:\n(0):14910, (1):62348\n"
+    },
+    {
+      "path": "/vendor/lib64/hw",
+      "label": "security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\n\n",
+      "stat": "Inode: 63   Type: directory    Mode:  0755   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 1024\nFile ACL: 0\nLinks: 2   Blockcount: 2\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\nInode checksum: 0xde5b7eff\nEXTENTS:\n(0):16155\n"
+    },
+    {
+      "path": "/vendor/lib64/hw/vulkan.pastel.so",
+      "label": "security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\n\n",
+      "stat": "Inode: 65   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 38467608\nFile ACL: 0\nLinks: 1   Blockcount: 74496\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\nInode checksum: 0x7f81ec3a\nEXTENTS:\n(ETB0):20365, (0-3952):16407-20359, (3955-3956):20360-20361, (3958):20362, (3961):20363, (3963):20364, (3964):20366, (3966-4108):20367-20509, (4110-4659):20510-21059, (4661-4816):21060-21215, (4818-4906):21216-21304, (4908-8179):21305-24576, (8180-24305):24835-40960, (24306-29988):41219-46901, (29991):46902, (29997-29998):46903-46904, (30015-30016):46905-46906, (30061-30084):46907-46930, (30090-30092):46931-46933, (30101):46934, (30192-30195):46935-46938, (30208-30209):46939-46940, (30223):46941, (30225):46942, (30233):46943, (30251):46944, (30256-30257):46945-46946, (30263):46947, (30266-30269):46948-46951, (30272-30274):46952-46954, (30280-30283):46955-46958, (30285-30286):46959-46960, (30288-30291):46961-46964, (30301-31168):46965-47832, (31170):47833, (31182-31202):47834-47854, (31204-31222):47855-47873, (31236):47874, (31240-31242):47875-47877, (31248):47878, (31270):47879, (31275-31281):47880-47886, (31283-37566):47887-54170\n"
+    },
+    {
+      "path": "/vendor/framework",
+      "label": "security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\n\n",
+      "stat": "Inode: 43   Type: directory    Mode:  0755   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 1024\nFile ACL: 0\nLinks: 2   Blockcount: 2\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\nInode checksum: 0x5308157b\nEXTENTS:\n(0):14903\n"
+    },
+    {
+      "path": "/vendor/framework/archtv-selected-services.jar",
+      "label": "security.selinux (36) = \"u:object_r:vendor_framework_file:s0\\000\"\n\n",
+      "stat": "Inode: 44   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 5876\nFile ACL: 0\nLinks: 1   Blockcount: 12\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (36) = \"u:object_r:vendor_framework_file:s0\\000\"\nInode checksum: 0xa9205f7d\nEXTENTS:\n(0-5):14904-14909\n"
+    },
+    {
+      "path": "/vendor/etc",
+      "label": "security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\n\n",
+      "stat": "Inode: 28   Type: directory    Mode:  0755   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 1024\nFile ACL: 0\nLinks: 5   Blockcount: 2\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\nInode checksum: 0x4c5d0140\nEXTENTS:\n(0):14880\n"
+    },
+    {
+      "path": "/vendor/etc/init",
+      "label": "security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\n\n",
+      "stat": "Inode: 29   Type: directory    Mode:  0755   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 1024\nFile ACL: 0\nLinks: 2   Blockcount: 2\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\nInode checksum: 0x7d0ebd90\nEXTENTS:\n(0):14881\n"
+    },
+    {
+      "path": "/vendor/etc/init/archtv-selected-services.rc",
+      "label": "security.selinux (34) = \"u:object_r:vendor_configs_file:s0\\000\"\n\n",
+      "stat": "Inode: 31   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 5196\nFile ACL: 0\nLinks: 1   Blockcount: 12\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (34) = \"u:object_r:vendor_configs_file:s0\\000\"\nInode checksum: 0xe241ca41\nEXTENTS:\n(0-5):14883-14888\n"
+    },
+    {
+      "path": "/vendor/bin",
+      "label": "security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\n\n",
+      "stat": "Inode: 22   Type: directory    Mode:  0755   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 1024\nFile ACL: 0\nLinks: 3   Blockcount: 2\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\nInode checksum: 0x72d1af4b\nEXTENTS:\n(0):14404\n"
+    },
+    {
+      "path": "/vendor/bin/hw",
+      "label": "security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\n\n",
+      "stat": "Inode: 23   Type: directory    Mode:  0755   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 1024\nFile ACL: 0\nLinks: 2   Blockcount: 2\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\nInode checksum: 0x668580a8\nEXTENTS:\n(0):14405\n"
+    },
+    {
+      "path": "/vendor/bin/hw/android.hardware.graphics.allocator-service.minigbm",
+      "label": "security.selinux (50) = \"u:object_r:hal_graphics_allocator_default_exec:s0\\000\"\n\n",
+      "stat": "Inode: 24   Type: regular    Mode:  0755   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 52424\nFile ACL: 0\nLinks: 1   Blockcount: 104\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (50)\nInode checksum: 0xacb5355f\nEXTENTS:\n(0-51):14406-14457\n"
+    },
+    {
+      "path": "/vendor/bin/hw/android.hardware.graphics.composer3-service.ranchu",
+      "label": "security.selinux (49) = \"u:object_r:hal_graphics_composer_default_exec:s0\\000\"\n\n",
+      "stat": "Inode: 25   Type: regular    Mode:  0755   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 341904\nFile ACL: 0\nLinks: 1   Blockcount: 666\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (49)\nInode checksum: 0xe143ef51\nEXTENTS:\n(0-218):14458-14676, (220-333):14677-14790\n"
+    },
+    {
+      "path": "/vendor/bin/hw/archtv-graphics-client",
+      "label": "security.selinux (34) = \"u:object_r:surfaceflinger_exec:s0\\000\"\n\n",
+      "stat": "Inode: 26   Type: regular    Mode:  0755   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 90088\nFile ACL: 0\nLinks: 1   Blockcount: 176\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (34) = \"u:object_r:surfaceflinger_exec:s0\\000\"\nInode checksum: 0xb6b61cfe\nEXTENTS:\n(0-87):14791-14878\n"
+    },
+    {
+      "path": "/vendor/lib64/libminigbm_gralloc.so",
+      "label": "security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\n\n",
+      "stat": "Inode: 74   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 116992\nFile ACL: 0\nLinks: 1   Blockcount: 228\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\nInode checksum: 0xa0f25a9b\nEXTENTS:\n(0-86):63206-63292, (88-114):63293-63319\n"
+    },
+    {
+      "path": "/vendor/lib64/libminigbm_gralloc4_utils.so",
+      "label": "security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\n\n",
+      "stat": "Inode: 75   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 45416\nFile ACL: 0\nLinks: 1   Blockcount: 90\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\nInode checksum: 0xfa898522\nEXTENTS:\n(0-44):63320-63364\n"
+    },
+    {
+      "path": "/vendor/lib64/hw/mapper.minigbm.so",
+      "label": "security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\n\n",
+      "stat": "Inode: 64   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 256864\nFile ACL: 0\nLinks: 1   Blockcount: 502\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\nInode checksum: 0x37dce2c1\nEXTENTS:\n(0-250):16156-16406\n"
+    },
+    {
+      "path": "/vendor/lib64/libc++.so",
+      "label": "security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\n\n",
+      "stat": "Inode: 67   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 7561848\nFile ACL: 0\nLinks: 1   Blockcount: 14770\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\nInode checksum: 0xf35b4464\nEXTENTS:\n(0-2916):54428-57344, (2917-7384):57603-62070\n"
+    },
+    {
+      "path": "/vendor/lib64/libbase.so",
+      "label": "security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\n\n",
+      "stat": "Inode: 66   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 263088\nFile ACL: 0\nLinks: 1   Blockcount: 514\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\nInode checksum: 0x50890746\nEXTENTS:\n(0-256):54171-54427\n"
+    },
+    {
+      "path": "/vendor/lib64/libcutils.so",
+      "label": "security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\n\n",
+      "stat": "Inode: 68   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 112512\nFile ACL: 0\nLinks: 1   Blockcount: 220\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\nInode checksum: 0xbbde9d1c\nEXTENTS:\n(0-109):62071-62180\n"
+    },
+    {
+      "path": "/vendor/lib64/libgralloctypes.so",
+      "label": "security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\n\n",
+      "stat": "Inode: 70   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 101472\nFile ACL: 0\nLinks: 1   Blockcount: 152\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\nInode checksum: 0xd47641e0\nEXTENTS:\n(0-27):62272-62299, (32-73):62300-62341, (80-81):62342-62343, (96-99):62344-62347\n"
+    },
+    {
+      "path": "/vendor/lib64/libhidlbase.so",
+      "label": "security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\n\n",
+      "stat": "Inode: 72   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 711768\nFile ACL: 0\nLinks: 1   Blockcount: 1330\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\nInode checksum: 0xc39f7dd5\nEXTENTS:\n(ETB0):62999, (0-240):62358-62598, (256-612):62599-62955, (624-659):62956-62991, (661-666):62992-62997, (672):62998, (673-695):63000-63022\n"
+    },
+    {
+      "path": "/vendor/lib64/android.hardware.graphics.allocator-V2-ndk.so",
+      "label": "security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\n\n",
+      "stat": "Inode: 48   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 68992\nFile ACL: 0\nLinks: 1   Blockcount: 82\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\nInode checksum: 0xf41a044c\nEXTENTS:\n(0-18):14931-14949, (32-46):14950-14964, (48-50):14965-14967, (64-67):14968-14971\n"
+    },
+    {
+      "path": "/vendor/lib64/android.hardware.graphics.composer3-V4-ndk.so",
+      "label": "security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\n\n",
+      "stat": "Inode: 56   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 252368\nFile ACL: 0\nLinks: 1   Blockcount: 446\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\nInode checksum: 0x95d07787\nEXTENTS:\n(0-99):15239-15338, (112-219):15339-15446, (224-231):15447-15454, (240-246):15455-15461\n"
+    },
+    {
+      "path": "/vendor/lib64/android.hardware.graphics.common-V7-ndk.so",
+      "label": "security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\n\n",
+      "stat": "Inode: 52   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 51992\nFile ACL: 0\nLinks: 1   Blockcount: 52\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\nInode checksum: 0x66bf2fd5\nEXTENTS:\n(0-11):15195-15206, (16-25):15207-15216, (32):15217, (48-50):15218-15220\n"
+    },
+    {
+      "path": "/vendor/lib64/android.hardware.common-V2-ndk.so",
+      "label": "security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\n\n",
+      "stat": "Inode: 46   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 51552\nFile ACL: 0\nLinks: 1   Blockcount: 26\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\nInode checksum: 0x09a9e71c\nEXTENTS:\n(0-4):14911-14915, (16-19):14916-14919, (32):14920, (48-50):14921-14923\n"
+    },
+    {
+      "path": "/vendor/lib64/android.hardware.drm.common-V1-ndk.so",
+      "label": "security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\n\n",
+      "stat": "Inode: 47   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 51240\nFile ACL: 0\nLinks: 1   Blockcount: 14\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n atime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\n mtime: 0x6ae719b4:00000000 -- Sun Nov  1 10:51:32 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\nInode checksum: 0x5ce62ca2\nEXTENTS:\n(0-1):14924-14925, (16):14926, (32):14927, (48-50):14928-14930\n"
+    },
+    {
+      "path": "/vendor/lib64/android.hardware.graphics.composer@2.1-resources.so",
+      "label": "security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\n\n",
+      "stat": "Inode: 57   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 49096\nFile ACL: 0\nLinks: 1   Blockcount: 96\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\nInode checksum: 0xfe4403da\nEXTENTS:\n(0-47):15462-15509\n"
+    },
+    {
+      "path": "/vendor/lib64/libui.so",
+      "label": "security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\n\n",
+      "stat": "Inode: 76   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 611584\nFile ACL: 0\nLinks: 1   Blockcount: 1186\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\nInode checksum: 0x88540368\nEXTENTS:\n(0-393):63365-63758, (399-597):63759-63957\n"
+    },
+    {
+      "path": "/vendor/lib64/libutils.so",
+      "label": "security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\n\n",
+      "stat": "Inode: 77   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 154264\nFile ACL: 0\nLinks: 1   Blockcount: 302\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\nInode checksum: 0x76a2336d\nEXTENTS:\n(0-150):63958-64108\n"
+    },
+    {
+      "path": "/vendor/lib64/libjsoncpp.so",
+      "label": "security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\n\n",
+      "stat": "Inode: 73   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 216952\nFile ACL: 0\nLinks: 1   Blockcount: 366\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\nInode checksum: 0x2b480ffb\nEXTENTS:\n(0-61):63023-63084, (64-177):63085-63198, (192-194):63199-63201, (208-211):63202-63205\n"
+    },
+    {
+      "path": "/vendor/lib64/libdrm.so",
+      "label": "security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\n\n",
+      "stat": "Inode: 69   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 117352\nFile ACL: 0\nLinks: 1   Blockcount: 182\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\nInode checksum: 0xb5425bbf\nEXTENTS:\n(0-30):62181-62211, (32-85):62212-62265, (96-98):62266-62268, (112-114):62269-62271\n"
+    },
+    {
+      "path": "/vendor/lib64/android.hardware.graphics.mapper@4.0.so",
+      "label": "security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\n\n",
+      "stat": "Inode: 62   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 152352\nFile ACL: 0\nLinks: 1   Blockcount: 242\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\nInode checksum: 0x255ebc4d\nEXTENTS:\n(0-50):16034-16084, (64-120):16085-16141, (128-135):16142-16149, (144-148):16150-16154\n"
+    },
+    {
+      "path": "/vendor/lib64/android.hardware.graphics.composer@2.1.so",
+      "label": "security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\n\n",
+      "stat": "Inode: 58   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 286912\nFile ACL: 0\nLinks: 1   Blockcount: 512\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\nInode checksum: 0x3004e32f\nEXTENTS:\n(0-94):15510-15604, (96-229):15605-15738, (240-257):15739-15756, (272-280):15757-15765\n"
+    },
+    {
+      "path": "/vendor/lib64/libhardware.so",
+      "label": "security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\n\n",
+      "stat": "Inode: 71   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 8632\nFile ACL: 0\nLinks: 1   Blockcount: 18\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\nInode checksum: 0xc7cd14e7\nEXTENTS:\n(0-8):62349-62357\n"
+    },
+    {
+      "path": "/vendor/lib64/android.hardware.graphics.allocator@2.0.so",
+      "label": "security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\n\n",
+      "stat": "Inode: 49   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 102432\nFile ACL: 0\nLinks: 1   Blockcount: 152\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\nInode checksum: 0x883bb214\nEXTENTS:\n(0-33):14972-15005, (48-78):15006-15036, (80-85):15037-15042, (96-100):15043-15047\n"
+    },
+    {
+      "path": "/vendor/lib64/android.hardware.graphics.allocator@3.0.so",
+      "label": "security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\n\n",
+      "stat": "Inode: 50   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 102432\nFile ACL: 0\nLinks: 1   Blockcount: 152\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\nInode checksum: 0x5c9c6e0c\nEXTENTS:\n(0-33):15048-15081, (48-78):15082-15112, (80-85):15113-15118, (96-100):15119-15123\n"
+    },
+    {
+      "path": "/vendor/lib64/android.hardware.graphics.allocator@4.0.so",
+      "label": "security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\n\n",
+      "stat": "Inode: 51   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 102336\nFile ACL: 0\nLinks: 1   Blockcount: 142\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\nInode checksum: 0xca8b3c24\nEXTENTS:\n(0-32):15124-15156, (48-75):15157-15184, (80-85):15185-15190, (96-99):15191-15194\n"
+    },
+    {
+      "path": "/vendor/lib64/android.hardware.graphics.common@1.2.so",
+      "label": "security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\n\n",
+      "stat": "Inode: 55   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 35272\nFile ACL: 0\nLinks: 1   Blockcount: 12\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\nInode checksum: 0xc1e4a01a\nEXTENTS:\n(0-1):15233-15234, (16):15235, (32-34):15236-15238\n"
+    },
+    {
+      "path": "/vendor/lib64/android.hardware.graphics.mapper@2.0.so",
+      "label": "security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\n\n",
+      "stat": "Inode: 59   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 118928\nFile ACL: 0\nLinks: 1   Blockcount: 170\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\nInode checksum: 0x1547a35b\nEXTENTS:\n(0-36):15766-15802, (48-83):15803-15838, (96-102):15839-15845, (112-116):15846-15850\n"
+    },
+    {
+      "path": "/vendor/lib64/android.hardware.graphics.mapper@2.1.so",
+      "label": "security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\n\n",
+      "stat": "Inode: 60   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 119000\nFile ACL: 0\nLinks: 1   Blockcount: 176\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\nInode checksum: 0xf4f20bea\nEXTENTS:\n(0-39):15851-15890, (48-83):15891-15926, (96-102):15927-15933, (112-116):15934-15938\n"
+    },
+    {
+      "path": "/vendor/lib64/android.hardware.graphics.mapper@3.0.so",
+      "label": "security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\n\n",
+      "stat": "Inode: 61   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 119224\nFile ACL: 0\nLinks: 1   Blockcount: 190\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\nInode checksum: 0x6c614c72\nEXTENTS:\n(0-40):15939-15979, (48-89):15980-16021, (96-102):16022-16028, (112-116):16029-16033\n"
+    },
+    {
+      "path": "/vendor/lib64/android.hardware.graphics.common@1.0.so",
+      "label": "security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\n\n",
+      "stat": "Inode: 53   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 35224\nFile ACL: 0\nLinks: 1   Blockcount: 12\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\nInode checksum: 0x559506d6\nEXTENTS:\n(0-1):15221-15222, (16):15223, (32-34):15224-15226\n"
+    },
+    {
+      "path": "/vendor/lib64/android.hardware.graphics.common@1.1.so",
+      "label": "security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\n\n",
+      "stat": "Inode: 54   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 35240\nFile ACL: 0\nLinks: 1   Blockcount: 12\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (36) = \"u:object_r:same_process_hal_file:s0\\000\"\nInode checksum: 0xdd28f935\nEXTENTS:\n(0-1):15227-15228, (16):15229, (32-34):15230-15232\n"
+    },
+    {
+      "path": "/vendor/etc/selinux",
+      "label": "security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\n\n",
+      "stat": "Inode: 33   Type: directory    Mode:  0755   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 1024\nFile ACL: 0\nLinks: 2   Blockcount: 2\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\nInode checksum: 0x98022509\nEXTENTS:\n(0):14890\n"
+    },
+    {
+      "path": "/vendor/etc/selinux/plat_sepolicy_vers.txt",
+      "label": "security.selinux (34) = \"u:object_r:vendor_configs_file:s0\\000\"\n\n",
+      "stat": "Inode: 34   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 7\nFile ACL: 0\nLinks: 1   Blockcount: 2\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (34) = \"u:object_r:vendor_configs_file:s0\\000\"\nInode checksum: 0xd421044b\nEXTENTS:\n(0):14891\n"
+    },
+    {
+      "path": "/vendor/etc/init/allocator.rc",
+      "label": "security.selinux (34) = \"u:object_r:vendor_configs_file:s0\\000\"\n\n",
+      "stat": "Inode: 30   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 266\nFile ACL: 0\nLinks: 1   Blockcount: 2\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (34) = \"u:object_r:vendor_configs_file:s0\\000\"\nInode checksum: 0xfb0d298d\nEXTENTS:\n(0):14882\n"
+    },
+    {
+      "path": "/vendor/etc/init/hwcomposer3.rc",
+      "label": "security.selinux (34) = \"u:object_r:vendor_configs_file:s0\\000\"\n\n",
+      "stat": "Inode: 32   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 259\nFile ACL: 0\nLinks: 1   Blockcount: 2\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (34) = \"u:object_r:vendor_configs_file:s0\\000\"\nInode checksum: 0x239406b3\nEXTENTS:\n(0):14889\n"
+    },
+    {
+      "path": "/vendor/etc/vintf",
+      "label": "security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\n\n",
+      "stat": "Inode: 36   Type: directory    Mode:  0755   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 1024\nFile ACL: 0\nLinks: 3   Blockcount: 2\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\nInode checksum: 0x569194b0\nEXTENTS:\n(0):14896\n"
+    },
+    {
+      "path": "/vendor/etc/vintf/manifest",
+      "label": "security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\n\n",
+      "stat": "Inode: 38   Type: directory    Mode:  0755   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 1024\nFile ACL: 0\nLinks: 2   Blockcount: 2\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (26) = \"u:object_r:vendor_file:s0\\000\"\nInode checksum: 0xee4c3997\nEXTENTS:\n(0):14898\n"
+    },
+    {
+      "path": "/vendor/etc/vintf/manifest/allocator.xml",
+      "label": "security.selinux (34) = \"u:object_r:vendor_configs_file:s0\\000\"\n\n",
+      "stat": "Inode: 39   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 290\nFile ACL: 0\nLinks: 1   Blockcount: 2\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (34) = \"u:object_r:vendor_configs_file:s0\\000\"\nInode checksum: 0x37662a9e\nEXTENTS:\n(0):14899\n"
+    },
+    {
+      "path": "/vendor/etc/vintf/manifest/composer.xml",
+      "label": "security.selinux (34) = \"u:object_r:vendor_configs_file:s0\\000\"\n\n",
+      "stat": "Inode: 40   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 288\nFile ACL: 0\nLinks: 1   Blockcount: 2\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (34) = \"u:object_r:vendor_configs_file:s0\\000\"\nInode checksum: 0xe2355a01\nEXTENTS:\n(0):14900\n"
+    },
+    {
+      "path": "/vendor/etc/vintf/manifest/mapper.xml",
+      "label": "security.selinux (34) = \"u:object_r:vendor_configs_file:s0\\000\"\n\n",
+      "stat": "Inode: 41   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 229\nFile ACL: 0\nLinks: 1   Blockcount: 2\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (34) = \"u:object_r:vendor_configs_file:s0\\000\"\nInode checksum: 0x81378ab7\nEXTENTS:\n(0):14901\n"
+    },
+    {
+      "path": "/vendor/etc/vintf/manifest.xml",
+      "label": "security.selinux (34) = \"u:object_r:vendor_configs_file:s0\\000\"\n\n",
+      "stat": "Inode: 42   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 282\nFile ACL: 0\nLinks: 1   Blockcount: 2\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (34) = \"u:object_r:vendor_configs_file:s0\\000\"\nInode checksum: 0x6b375118\nEXTENTS:\n(0):14902\n"
+    },
+    {
+      "path": "/vendor/etc/vintf/compatibility_matrix.xml",
+      "label": "security.selinux (34) = \"u:object_r:vendor_configs_file:s0\\000\"\n\n",
+      "stat": "Inode: 37   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 486\nFile ACL: 0\nLinks: 1   Blockcount: 2\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (34) = \"u:object_r:vendor_configs_file:s0\\000\"\nInode checksum: 0x8315712d\nEXTENTS:\n(0):14897\n"
+    },
+    {
+      "path": "/vendor/etc/selinux/vendor_file_contexts",
+      "label": "security.selinux (33) = \"u:object_r:file_contexts_file:s0\\000\"\n\n",
+      "stat": "Inode: 35   Type: regular    Mode:  0644   Flags: 0x80000\nGeneration: 0    Version: 0x00000000:00000000\nUser:     0   Group:     0   Project:     0   Size: 3546\nFile ACL: 0\nLinks: 1   Blockcount: 8\nFragment:  Address: 0    Number: 0    Size: 0\n ctime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n atime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\n mtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\ncrtime: 0x6ae719b5:00000000 -- Sun Nov  1 10:51:33 2026\nSize of extra inode fields: 32\nExtended attributes:\n  security.selinux (33) = \"u:object_r:file_contexts_file:s0\\000\"\nInode checksum: 0x2f54754c\nEXTENTS:\n(0-3):14892-14895\n"
+    }
+  ],
+  "e2fsck": {
+    "exit": 0,
+    "stdout": "Pass 1: Checking inodes, blocks, and sizes\nPass 2: Checking directory structure\nPass 3: Checking directory connectivity\nPass 4: Checking reference counts\nPass 5: Checking group summary information\n/home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/payload-2.ext4: 77/32768 files (6.5% non-contiguous), 64367/131072 blocks\n",
+    "stderr": "e2fsck 1.47.4 (6-Mar-2025)\n"
+  },
+  "Linux_dynamic_inventory": [
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/payload-tree-2/lib/ld-linux-x86-64.so.2",
+      "stdout": "\nElf file type is DYN (Shared object file)\nEntry point 0x217e0\nThere are 12 program headers, starting at offset 64\n\nProgram Headers:\n  Type           Offset             VirtAddr           PhysAddr\n                 FileSiz            MemSiz              Flags  Align\n  LOAD           0x0000000000000000 0x0000000000000000 0x0000000000000000\n                 0x0000000000000cf0 0x0000000000000cf0  R      0x1000\n  LOAD           0x0000000000001000 0x0000000000001000 0x0000000000001000\n                 0x000000000002c165 0x000000000002c165  R E    0x1000\n  LOAD           0x000000000002e000 0x000000000002e000 0x000000000002e000\n                 0x000000000000ec60 0x000000000000ec60  R      0x1000\n  LOAD           0x000000000003d620 0x000000000003d620 0x000000000003d620\n                 0x000000000000223c 0x0000000000002da0  RW     0x1000\n  DYNAMIC        0x000000000003ee60 0x000000000003ee60 0x000000000003ee60\n                 0x0000000000000170 0x0000000000000170  RW     0x8\n  NOTE           0x00000000000002e0 0x00000000000002e0 0x00000000000002e0\n                 0x0000000000000024 0x0000000000000024  R      0x4\n  NOTE           0x000000000003cc20 0x000000000003cc20 0x000000000003cc20\n                 0x0000000000000040 0x0000000000000040  R      0x8\n  GNU_PROPERTY   0x000000000003cc20 0x000000000003cc20 0x000000000003cc20\n                 0x0000000000000040 0x0000000000000040  R      0x8\n  GNU_EH_FRAME   0x0000000000034c6c 0x0000000000034c6c 0x0000000000034c6c\n                 0x0000000000000c14 0x0000000000000c14  R      0x4\n  GNU_SFRAME     0x0000000000039360 0x0000000000039360 0x0000000000039360\n                 0x00000000000038bf 0x00000000000038bf  R      0x8\n  GNU_STACK      0x0000000000000000 0x0000000000000000 0x0000000000000000\n                 0x0000000000000000 0x0000000000000000  RW     0x10\n  GNU_RELRO      0x000000000003d620 0x000000000003d620 0x000000000003d620\n                 0x00000000000019e0 0x00000000000019e0  R      0x1\n\n Section to Segment mapping:\n  Segment Sections...\n   00     .note.gnu.build-id .gnu.hash .dynsym .dynstr .gnu.version .gnu.version_d .rela.dyn .relr.dyn \n   01     .text \n   02     .rodata .stapsdt.base .eh_frame_hdr .eh_frame .sframe .note.gnu.property \n   03     .data.rel.ro .dynamic .got .data .bss \n   04     .dynamic \n   05     .note.gnu.build-id \n   06     .note.gnu.property \n   07     .note.gnu.property \n   08     .eh_frame_hdr \n   09     .sframe \n   10     \n   11     .data.rel.ro .dynamic .got \n\nDynamic section at offset 0x3ee60 contains 18 entries:\n  Tag        Type                         Name/Value\n 0x000000000000000e (SONAME)             Library soname: [ld-linux-x86-64.so.2]\n 0x000000006ffffef5 (GNU_HASH)           0x308\n 0x0000000000000005 (STRTAB)             0x8b0\n 0x0000000000000006 (SYMTAB)             0x4f0\n 0x000000000000000a (STRSZ)              709 (bytes)\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000007 (RELA)               0xcb8\n 0x0000000000000008 (RELASZ)             24 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x000000006ffffffc (VERDEF)             0xbc8\n 0x000000006ffffffd (VERDEFNUM)          7\n 0x000000000000001e (FLAGS)              BIND_NOW\n 0x000000006ffffffb (FLAGS_1)            Flags: NOW\n 0x000000006ffffff0 (VERSYM)             0xb76\n 0x0000000000000024 (RELR)               0xcd0\n 0x0000000000000023 (RELRSZ)             32 (bytes)\n 0x0000000000000025 (RELRENT)            8 (bytes)\n 0x0000000000000000 (NULL)               0x0\n"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/payload-tree-2/bin/linux-exec-context",
+      "stdout": "\nElf file type is DYN (Position-Independent Executable file)\nEntry point 0x29e0\nThere are 16 program headers, starting at offset 64\n\nProgram Headers:\n  Type           Offset             VirtAddr           PhysAddr\n                 FileSiz            MemSiz              Flags  Align\n  PHDR           0x0000000000000040 0x0000000000000040 0x0000000000000040\n                 0x0000000000000380 0x0000000000000380  R      0x8\n  INTERP         0x00000000000003e4 0x00000000000003e4 0x00000000000003e4\n                 0x0000000000000021 0x0000000000000021  R      0x1\n      [Requesting program interpreter: /archtv/lib/ld-linux-x86-64.so.2]\n  LOAD           0x0000000000000000 0x0000000000000000 0x0000000000000000\n                 0x00000000000017f0 0x00000000000017f0  R      0x1000\n  LOAD           0x0000000000002000 0x0000000000002000 0x0000000000002000\n                 0x0000000000009e4d 0x0000000000009e4d  R E    0x1000\n  LOAD           0x000000000000c000 0x000000000000c000 0x000000000000c000\n                 0x0000000000003060 0x0000000000003060  R      0x1000\n  LOAD           0x000000000000fb40 0x0000000000010b40 0x0000000000010b40\n                 0x0000000000000528 0x0000000000001710  RW     0x1000\n  DYNAMIC        0x000000000000fba8 0x0000000000010ba8 0x0000000000010ba8\n                 0x0000000000000220 0x0000000000000220  RW     0x8\n  NOTE           0x00000000000003c0 0x00000000000003c0 0x00000000000003c0\n                 0x0000000000000024 0x0000000000000024  R      0x4\n  NOTE           0x000000000000f000 0x000000000000f000 0x000000000000f000\n                 0x0000000000000040 0x0000000000000040  R      0x8\n  NOTE           0x000000000000f040 0x000000000000f040 0x000000000000f040\n                 0x0000000000000020 0x0000000000000020  R      0x4\n  TLS            0x000000000000fb40 0x0000000000010b40 0x0000000000010b40\n                 0x0000000000000028 0x0000000000000068  R      0x8\n  GNU_PROPERTY   0x000000000000f000 0x000000000000f000 0x000000000000f000\n                 0x0000000000000040 0x0000000000000040  R      0x8\n  GNU_EH_FRAME   0x000000000000cc10 0x000000000000cc10 0x000000000000cc10\n                 0x00000000000004c4 0x00000000000004c4  R      0x4\n  GNU_SFRAME     0x000000000000ef30 0x000000000000ef30 0x000000000000ef30\n                 0x00000000000000c0 0x00000000000000c0  R      0x8\n  GNU_STACK      0x0000000000000000 0x0000000000000000 0x0000000000000000\n                 0x0000000000000000 0x0000000000000000  RW     0x10\n  GNU_RELRO      0x000000000000fb40 0x0000000000010b40 0x0000000000010b40\n                 0x00000000000004c0 0x00000000000004c0  R      0x1\n\n Section to Segment mapping:\n  Segment Sections...\n   00     \n   01     .interp \n   02     .note.gnu.build-id .interp .gnu.hash .dynsym .dynstr .gnu.version .gnu.version_r .rela.dyn .rela.plt \n   03     .init .plt .plt.got .text .fini \n   04     .rodata .eh_frame_hdr .eh_frame .sframe .gcc_except_table .note.gnu.property .note.ABI-tag \n   05     .tdata .init_array .fini_array .data.rel.ro .dynamic .got .data .bss \n   06     .dynamic \n   07     .note.gnu.build-id \n   08     .note.gnu.property \n   09     .note.ABI-tag \n   10     .tdata .tbss \n   11     .note.gnu.property \n   12     .eh_frame_hdr \n   13     .sframe \n   14     \n   15     .tdata .init_array .fini_array .data.rel.ro .dynamic .got \n\nDynamic section at offset 0xfba8 contains 30 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000001 (NEEDED)             Shared library: [libpcre2-8.so.0]\n 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x000000000000001d (RUNPATH)            Library runpath: [/archtv/lib]\n 0x000000000000000c (INIT)               0x2000\n 0x000000000000000d (FINI)               0xbe40\n 0x0000000000000019 (INIT_ARRAY)         0x10b68\n 0x000000000000001b (INIT_ARRAYSZ)       16 (bytes)\n 0x000000000000001a (FINI_ARRAY)         0x10b78\n 0x000000000000001c (FINI_ARRAYSZ)       32 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x408\n 0x0000000000000005 (STRTAB)             0xb28\n 0x0000000000000006 (SYMTAB)             0x450\n 0x000000000000000a (STRSZ)              890 (bytes)\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000015 (DEBUG)              0x0\n 0x0000000000000003 (PLTGOT)             0x10dc8\n 0x0000000000000002 (PLTRELSZ)           1368 (bytes)\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000017 (JMPREL)             0x1298\n 0x0000000000000007 (RELA)               0xff8\n 0x0000000000000008 (RELASZ)             672 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x000000000000001e (FLAGS)              BIND_NOW\n 0x000000006ffffffb (FLAGS_1)            Flags: NOW PIE\n 0x000000006ffffffe (VERNEED)            0xf38\n 0x000000006fffffff (VERNEEDNUM)         2\n 0x000000006ffffff0 (VERSYM)             0xea2\n 0x000000006ffffff9 (RELACOUNT)          14\n 0x0000000000000000 (NULL)               0x0\n"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/payload-tree-2/lib/libgcc_s.so.1",
+      "stdout": "\nElf file type is DYN (Shared object file)\nEntry point 0x0\nThere are 12 program headers, starting at offset 64\n\nProgram Headers:\n  Type           Offset             VirtAddr           PhysAddr\n                 FileSiz            MemSiz              Flags  Align\n  LOAD           0x0000000000000000 0x0000000000000000 0x0000000000000000\n                 0x0000000000003920 0x0000000000003920  R      0x1000\n  LOAD           0x0000000000004000 0x0000000000004000 0x0000000000004000\n                 0x0000000000022f55 0x0000000000022f55  R E    0x1000\n  LOAD           0x0000000000027000 0x0000000000027000 0x0000000000027000\n                 0x0000000000003e80 0x0000000000003e80  R      0x1000\n  LOAD           0x000000000002bbb8 0x000000000002bbb8 0x000000000002bbb8\n                 0x0000000000000450 0x0000000000000630  RW     0x1000\n  DYNAMIC        0x000000000002bbd8 0x000000000002bbd8 0x000000000002bbd8\n                 0x0000000000000210 0x0000000000000210  RW     0x8\n  NOTE           0x00000000000002e0 0x00000000000002e0 0x00000000000002e0\n                 0x0000000000000024 0x0000000000000024  R      0x4\n  NOTE           0x000000000002ae40 0x000000000002ae40 0x000000000002ae40\n                 0x0000000000000040 0x0000000000000040  R      0x8\n  TLS            0x000000000002bbb8 0x000000000002bbb8 0x000000000002bbb8\n                 0x0000000000000000 0x0000000000000008  R      0x8\n  GNU_PROPERTY   0x000000000002ae40 0x000000000002ae40 0x000000000002ae40\n                 0x0000000000000040 0x0000000000000040  R      0x8\n  GNU_EH_FRAME   0x00000000000279e0 0x00000000000279e0 0x00000000000279e0\n                 0x000000000000086c 0x000000000000086c  R      0x4\n  GNU_STACK      0x0000000000000000 0x0000000000000000 0x0000000000000000\n                 0x0000000000000000 0x0000000000000000  RW     0x10\n  GNU_RELRO      0x000000000002bbb8 0x000000000002bbb8 0x000000000002bbb8\n                 0x0000000000000448 0x0000000000000448  R      0x1\n\n Section to Segment mapping:\n  Segment Sections...\n   00     .note.gnu.build-id .gnu.hash .dynsym .dynstr .gnu.version .gnu.version_d .gnu.version_r .rela.dyn .relr.dyn \n   01     .init .text .fini \n   02     .rodata .stapsdt.base .eh_frame_hdr .eh_frame .note.gnu.property \n   03     .init_array .fini_array .dynamic .got .data .bss \n   04     .dynamic \n   05     .note.gnu.build-id \n   06     .note.gnu.property \n   07     .tbss \n   08     .note.gnu.property \n   09     .eh_frame_hdr \n   10     \n   11     .init_array .fini_array .dynamic .got \n\nDynamic section at offset 0x2bbd8 contains 28 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [ld-linux-x86-64.so.2]\n 0x000000000000000e (SONAME)             Library soname: [libgcc_s.so.1]\n 0x000000000000000c (INIT)               0x4000\n 0x000000000000000d (FINI)               0x26f48\n 0x0000000000000019 (INIT_ARRAY)         0x2bbb8\n 0x000000000000001b (INIT_ARRAYSZ)       16 (bytes)\n 0x000000000000001a (FINI_ARRAY)         0x2bbc8\n 0x000000000000001c (FINI_ARRAYSZ)       16 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x308\n 0x0000000000000005 (STRTAB)             0x2278\n 0x0000000000000006 (SYMTAB)             0xd48\n 0x000000000000000a (STRSZ)              3066 (bytes)\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000007 (RELA)               0x3308\n 0x0000000000000008 (RELASZ)             1536 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x000000006ffffffc (VERDEF)             0x3038\n 0x000000006ffffffd (VERDEFNUM)          16\n 0x000000000000001e (FLAGS)              BIND_NOW\n 0x000000006ffffffb (FLAGS_1)            Flags: NOW\n 0x000000006ffffffe (VERNEED)            0x3268\n 0x000000006fffffff (VERNEEDNUM)         2\n 0x000000006ffffff0 (VERSYM)             0x2e72\n 0x0000000000000024 (RELR)               0x3908\n 0x0000000000000023 (RELRSZ)             24 (bytes)\n 0x0000000000000025 (RELRENT)            8 (bytes)\n 0x0000000000000000 (NULL)               0x0\n"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/payload-tree-2/lib/libc.so.6",
+      "stdout": "\nElf file type is DYN (Shared object file)\nEntry point 0x279c0\nThere are 16 program headers, starting at offset 64\n\nProgram Headers:\n  Type           Offset             VirtAddr           PhysAddr\n                 FileSiz            MemSiz              Flags  Align\n  PHDR           0x0000000000000040 0x0000000000000040 0x0000000000000040\n                 0x0000000000000380 0x0000000000000380  R      0x8\n  INTERP         0x00000000001c4be0 0x00000000001c4be0 0x00000000001c4be0\n                 0x000000000000001e 0x000000000000001e  R      0x10\n      [Requesting program interpreter: /usr/lib/ld-linux-x86-64.so.2]\n  LOAD           0x0000000000000000 0x0000000000000000 0x0000000000000000\n                 0x00000000000238a0 0x00000000000238a0  R      0x1000\n  LOAD           0x0000000000024000 0x0000000000024000 0x0000000000024000\n                 0x000000000017a0b9 0x000000000017a0b9  R E    0x1000\n  LOAD           0x000000000019f000 0x000000000019f000 0x000000000019f000\n                 0x0000000000075a80 0x0000000000075a80  R      0x1000\n  LOAD           0x0000000000214b98 0x0000000000215b98 0x0000000000215b98\n                 0x0000000000004af0 0x000000000000cfb8  RW     0x1000\n  DYNAMIC        0x0000000000217940 0x0000000000218940 0x0000000000218940\n                 0x0000000000000230 0x0000000000000230  RW     0x8\n  NOTE           0x00000000000003c0 0x00000000000003c0 0x00000000000003c0\n                 0x0000000000000024 0x0000000000000024  R      0x4\n  NOTE           0x0000000000214a10 0x0000000000214a10 0x0000000000214a10\n                 0x0000000000000050 0x0000000000000050  R      0x8\n  NOTE           0x0000000000214a60 0x0000000000214a60 0x0000000000214a60\n                 0x0000000000000020 0x0000000000000020  R      0x4\n  TLS            0x0000000000214b98 0x0000000000215b98 0x0000000000215b98\n                 0x0000000000000030 0x0000000000000080  R      0x8\n  GNU_PROPERTY   0x0000000000214a10 0x0000000000214a10 0x0000000000214a10\n                 0x0000000000000050 0x0000000000000050  R      0x8\n  GNU_EH_FRAME   0x00000000001c4c00 0x00000000001c4c00 0x00000000001c4c00\n                 0x0000000000007b74 0x0000000000007b74  R      0x4\n  GNU_SFRAME     0x00000000001f1050 0x00000000001f1050 0x00000000001f1050\n                 0x000000000002338a 0x000000000002338a  R      0x8\n  GNU_STACK      0x0000000000000000 0x0000000000000000 0x0000000000000000\n                 0x0000000000000000 0x0000000000000000  RW     0x10\n  GNU_RELRO      0x0000000000214b98 0x0000000000215b98 0x0000000000215b98\n                 0x0000000000003468 0x0000000000003468  R      0x1\n\n Section to Segment mapping:\n  Segment Sections...\n   00     \n   01     .interp \n   02     .note.gnu.build-id .gnu.hash .dynsym .dynstr .gnu.version .gnu.version_d .gnu.version_r .rela.dyn .rela.plt .relr.dyn \n   03     .plt .plt.sec .text \n   04     .rodata .stapsdt.base rodata.cst32 .interp .eh_frame_hdr .eh_frame .sframe .gcc_except_table .note.gnu.property .note.ABI-tag \n   05     .tdata .init_array .data.rel.ro .dynamic .got .data .bss \n   06     .dynamic \n   07     .note.gnu.build-id \n   08     .note.gnu.property \n   09     .note.ABI-tag \n   10     .tdata .tbss \n   11     .note.gnu.property \n   12     .eh_frame_hdr \n   13     .sframe \n   14     \n   15     .tdata .init_array .data.rel.ro .dynamic .got \n\nDynamic section at offset 0x217940 contains 30 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000001 (NEEDED)             Shared library: [ld-linux-x86-64.so.2]\n 0x000000000000000e (SONAME)             Library soname: [libc.so.6]\n 0x0000000000000019 (INIT_ARRAY)         0x215bc8\n 0x000000000000001b (INIT_ARRAYSZ)       24 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x3e8\n 0x0000000000000005 (STRTAB)             0x18030\n 0x0000000000000006 (SYMTAB)             0x5538\n 0x000000000000000a (STRSZ)              35268 (bytes)\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000070000000 (DT_X86_64_PLT)      0x241e0\n 0x0000000070000001 (DT_X86_64_PLTSZ)    0x1d0\n 0x0000000070000003 (DT_X86_64_PLTENT)   0x10\n 0x0000000000000003 (PLTGOT)             0x218b70\n 0x0000000000000002 (PLTRELSZ)           696 (bytes)\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000017 (JMPREL)             0x234d0\n 0x0000000000000007 (RELA)               0x229a8\n 0x0000000000000008 (RELASZ)             2856 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x000000006ffffffc (VERDEF)             0x222e0\n 0x000000006ffffffd (VERDEFNUM)          47\n 0x000000000000001e (FLAGS)              BIND_NOW STATIC_TLS\n 0x000000006ffffffb (FLAGS_1)            Flags: NOW\n 0x000000006ffffffe (VERNEED)            0x22958\n 0x000000006fffffff (VERNEEDNUM)         1\n 0x000000006ffffff0 (VERSYM)             0x209f4\n 0x0000000000000024 (RELR)               0x23788\n 0x0000000000000023 (RELRSZ)             280 (bytes)\n 0x0000000000000025 (RELRENT)            8 (bytes)\n 0x0000000000000000 (NULL)               0x0\n"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/payload-tree-2/lib/libpcre2-8.so.0",
+      "stdout": "\nElf file type is DYN (Shared object file)\nEntry point 0x0\nThere are 11 program headers, starting at offset 64\n\nProgram Headers:\n  Type           Offset             VirtAddr           PhysAddr\n                 FileSiz            MemSiz              Flags  Align\n  LOAD           0x0000000000000000 0x0000000000000000 0x0000000000000000\n                 0x00000000000020d0 0x00000000000020d0  R      0x1000\n  LOAD           0x0000000000003000 0x0000000000003000 0x0000000000003000\n                 0x0000000000081cb9 0x0000000000081cb9  R E    0x1000\n  LOAD           0x0000000000085000 0x0000000000085000 0x0000000000085000\n                 0x000000000002b868 0x000000000002b868  R      0x1000\n  LOAD           0x00000000000b0b10 0x00000000000b1b10 0x00000000000b1b10\n                 0x0000000000000608 0x00000000000006e8  RW     0x1000\n  DYNAMIC        0x00000000000b0ca0 0x00000000000b1ca0 0x00000000000b1ca0\n                 0x0000000000000200 0x0000000000000200  RW     0x8\n  NOTE           0x00000000000002a8 0x00000000000002a8 0x00000000000002a8\n                 0x0000000000000024 0x0000000000000024  R      0x4\n  NOTE           0x00000000000b0828 0x00000000000b0828 0x00000000000b0828\n                 0x0000000000000040 0x0000000000000040  R      0x8\n  GNU_PROPERTY   0x00000000000b0828 0x00000000000b0828 0x00000000000b0828\n                 0x0000000000000040 0x0000000000000040  R      0x8\n  GNU_EH_FRAME   0x00000000000ab878 0x00000000000ab878 0x00000000000ab878\n                 0x0000000000000964 0x0000000000000964  R      0x4\n  GNU_STACK      0x0000000000000000 0x0000000000000000 0x0000000000000000\n                 0x0000000000000000 0x0000000000000000  RW     0x10\n  GNU_RELRO      0x00000000000b0b10 0x00000000000b1b10 0x00000000000b1b10\n                 0x00000000000004f0 0x00000000000004f0  R      0x1\n\n Section to Segment mapping:\n  Segment Sections...\n   00     .note.gnu.build-id .gnu.hash .dynsym .dynstr .gnu.version .gnu.version_d .gnu.version_r .rela.dyn .relr.dyn \n   01     .init .text .fini \n   02     .rodata .eh_frame_hdr .eh_frame .note.gnu.property \n   03     .init_array .fini_array .data.rel.ro .dynamic .got .data .bss \n   04     .dynamic \n   05     .note.gnu.build-id \n   06     .note.gnu.property \n   07     .note.gnu.property \n   08     .eh_frame_hdr \n   09     \n   10     .init_array .fini_array .data.rel.ro .dynamic .got \n\nDynamic section at offset 0xb0ca0 contains 27 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x000000000000000e (SONAME)             Library soname: [libpcre2-8.so.0]\n 0x000000000000000c (INIT)               0x3000\n 0x000000000000000d (FINI)               0x84cac\n 0x0000000000000019 (INIT_ARRAY)         0xb1b10\n 0x000000000000001b (INIT_ARRAYSZ)       8 (bytes)\n 0x000000000000001a (FINI_ARRAY)         0xb1b18\n 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x2d0\n 0x0000000000000005 (STRTAB)             0x1100\n 0x0000000000000006 (SYMTAB)             0x6c8\n 0x000000000000000a (STRSZ)              2567 (bytes)\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000007 (RELA)               0x1cd8\n 0x0000000000000008 (RELASZ)             984 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x000000006ffffffc (VERDEF)             0x1be8\n 0x000000006ffffffd (VERDEFNUM)          4\n 0x000000000000001e (FLAGS)              BIND_NOW\n 0x000000006ffffffb (FLAGS_1)            Flags: NOW\n 0x000000006ffffffe (VERNEED)            0x1c68\n 0x000000006fffffff (VERNEEDNUM)         1\n 0x000000006ffffff0 (VERSYM)             0x1b08\n 0x0000000000000024 (RELR)               0x20b0\n 0x0000000000000023 (RELRSZ)             32 (bytes)\n 0x0000000000000025 (RELRENT)            8 (bytes)\n 0x0000000000000000 (NULL)               0x0\n"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/sf-cohort-build-14/payload-tree-2/bin/native-supervisor",
+      "stdout": "\nElf file type is DYN (Position-Independent Executable file)\nEntry point 0x20e60\nThere are 12 program headers, starting at offset 64\n\nProgram Headers:\n  Type           Offset             VirtAddr           PhysAddr\n                 FileSiz            MemSiz              Flags  Align\n  PHDR           0x0000000000000040 0x0000000000000040 0x0000000000000040\n                 0x00000000000002a0 0x00000000000002a0  R      0x8\n  INTERP         0x00000000000002e0 0x00000000000002e0 0x00000000000002e0\n                 0x0000000000000021 0x0000000000000021  R      0x1\n      [Requesting program interpreter: /archtv/lib/ld-linux-x86-64.so.2]\n  LOAD           0x0000000000000000 0x0000000000000000 0x0000000000000000\n                 0x000000000001fe60 0x000000000001fe60  R      0x1000\n  LOAD           0x000000000001fe60 0x0000000000020e60 0x0000000000020e60\n                 0x00000000000526b0 0x00000000000526b0  R E    0x1000\n  LOAD           0x0000000000072510 0x0000000000074510 0x0000000000074510\n                 0x00000000000042a0 0x0000000000004af0  RW     0x1000\n  LOAD           0x00000000000767b0 0x00000000000797b0 0x00000000000797b0\n                 0x0000000000000a48 0x0000000000000b22  RW     0x1000\n  TLS            0x0000000000072510 0x0000000000074510 0x0000000000074510\n                 0x0000000000000030 0x0000000000000050  R      0x8\n  DYNAMIC        0x0000000000075420 0x0000000000077420 0x0000000000077420\n                 0x00000000000001e0 0x00000000000001e0  RW     0x8\n  GNU_RELRO      0x0000000000072510 0x0000000000074510 0x0000000000074510\n                 0x00000000000042a0 0x0000000000004af0  R      0x1\n  GNU_EH_FRAME   0x0000000000014ecc 0x0000000000014ecc 0x0000000000014ecc\n                 0x0000000000001fdc 0x0000000000001fdc  R      0x4\n  GNU_STACK      0x0000000000000000 0x0000000000000000 0x0000000000000000\n                 0x0000000000000000 0x0000000000000000  RW     0x0\n  NOTE           0x0000000000000304 0x0000000000000304 0x0000000000000304\n                 0x0000000000000044 0x0000000000000044  R      0x4\n\n Section to Segment mapping:\n  Segment Sections...\n   00     \n   01     .interp \n   02     .interp .note.ABI-tag .note.gnu.build-id .dynsym .gnu.version .gnu.version_r .gnu.hash .dynstr .rela.dyn .rela.plt .rodata .gcc_except_table .eh_frame_hdr .eh_frame \n   03     .text .init .fini .plt \n   04     .tdata .fini_array .init_array .data.rel.ro .dynamic .got .got.plt .relro_padding \n   05     .tm_clone_table .data .bss \n   06     .tdata .tbss \n   07     .dynamic \n   08     .tdata .fini_array .init_array .data.rel.ro .dynamic .got .got.plt .relro_padding \n   09     .eh_frame_hdr \n   10     \n   11     .note.ABI-tag .note.gnu.build-id \n\nDynamic section at offset 0x75420 contains 30 entries:\n  Tag        Type                         Name/Value\n 0x000000000000001d (RUNPATH)            Library runpath: [/archtv/lib]\n 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x0000000000000001 (NEEDED)             Shared library: [ld-linux-x86-64.so.2]\n 0x000000000000001e (FLAGS)              BIND_NOW\n 0x000000006ffffffb (FLAGS_1)            Flags: NOW PIE\n 0x0000000000000015 (DEBUG)              0x0\n 0x0000000000000007 (RELA)               0x16a0\n 0x0000000000000008 (RELASZ)             29568 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x000000006ffffff9 (RELACOUNT)          1125\n 0x0000000000000017 (JMPREL)             0x8a20\n 0x0000000000000002 (PLTRELSZ)           72 (bytes)\n 0x0000000000000003 (PLTGOT)             0x78780\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000006 (SYMTAB)             0x348\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000005 (STRTAB)             0x1004\n 0x000000000000000a (STRSZ)              1687 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0xfe8\n 0x0000000000000019 (INIT_ARRAY)         0x74548\n 0x000000000000001b (INIT_ARRAYSZ)       16 (bytes)\n 0x000000000000001a (FINI_ARRAY)         0x74540\n 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)\n 0x000000000000000c (INIT)               0x73498\n 0x000000000000000d (FINI)               0x734b4\n 0x000000006ffffff0 (VERSYM)             0xd98\n 0x000000006ffffffe (VERNEED)            0xe74\n 0x000000006fffffff (VERNEEDNUM)         3\n 0x0000000000000000 (NULL)               0x0\n"
+    }
+  ],
+  "limitations": [
+    "Exact raw-image byte reproducibility not verified (filesystem UUID/timestamps). Source/binary/content hashes and metadata recorded.",
+    "Labels are offline xattr bytes, not live assigned contexts; source trust/RO aliasing/host impact and full factory policy admission remain unverified.",
+    "Rust example is a controlled lifetime exerciser, not installed production launcher. Android services/APK not available."
+  ]
+}

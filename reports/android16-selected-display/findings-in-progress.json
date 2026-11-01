@@ -1,0 +1,16 @@
+{
+  "observed": [
+    "Original app_process enters the orchestration entry",
+    "Original shared platform ClassLoaderFactory resolves libandroid_servers.so JNI closure; no copied APEX providers or linker config changes",
+    "DMS start with caps0 fails android.display priority -3",
+    "SYS_NICE original capability permits that thread and reaches concrete absent power service"
+  ],
+  "next": "Original SystemSuspend RC/executable first, original PowerManagerService then DisplayManagerService; preserve upstream host-managed-suspend fallback, no host /sys/power exposure or fake wake lock objects. Require actual display service/default display dump.",
+  "limits": [
+    "Display service not published by first five experiments; no Markor stage passed",
+    "SystemSuspend upstream socketpair fallback prevents Android controlling host sleep; this is not tested Linux logind inhibit or global host wake-lock semantics",
+    "Explicit diagnostic system UID/domain with NNP, not canonical zygote or MAC acceptance",
+    "APEX data-trust/OAT classloader-context mismatch, no dalvik-cache, and DEX alignment warnings are retained as prototype limitations, not hidden by flags"
+  ],
+  "status": "Historical note before shared-memory allocation was attempted; current canonical result is findings.json"
+}

@@ -1,0 +1,29 @@
+{
+  "base_commit": "cbff146",
+  "result": "Original selected service bootstrap executes, display remains unavailable: demonstrated kernel memory ABI gap",
+  "execution": "Seven ordinary bounded diagnostic VM runs in permissive, not REA runtime captures",
+  "partial_observations": [
+    "Original GSI app_process/ART runs Java orchestration without SDK implementations",
+    "Original shared ClassLoaderFactory resolves APEX libadb_pairing_server dependency without copied libraries or changed global linkerconfig",
+    "Original SYS_NICE requirement confirmed by caps0 SecurityException and its resolution",
+    "DMS requires original power; original SystemSuspend/Power/DMS order selected, no fake endpoints",
+    "Original ApplicationSharedMemory initialization required; actual nativeCreate fails due absent ashmem",
+    "Root-host memfd/sealing pass; actual ASHMEM_GET_SIZE returnsENOTTY, so merely setting sys.use_memfd cannot satisfy original libcutils gate"
+  ],
+  "current_gate": "Real ashmem/memfd kernel ABI, then original PowerManager/DisplayManager service/default display proof. No constructor/compile result closes a stage.",
+  "decision": "Evaluate original ACK C memfd-ashmem shim on separate signed-source LTS candidate, rather than replace original SharedMemory API or bypass the kernel support guard. Alternative original Rust/legacy ashmem driver remains to compare if full legacy char-device/protection behavior is required. No kernel installation/boot performed by this milestone.",
+  "source_urls": [
+    "https://android.googlesource.com/kernel/common/+/18290a0bb038a4db4d097f66a9c6bd6a14e1f320/mm/memfd-ashmem-shim.c",
+    "https://www.kernel.org/signature.html"
+  ],
+  "limits": [
+    "No display service or real APK accepted, Markor nine stages unchanged",
+    "Explicit diagnostic system UID/domain and NNP, not original zygote fork or MAC authorization/isolation",
+    "SystemSuspend host-managed fallback only; no Linux logind/global-host wakelock/suspend acceptance; physical power APIs must not be reported functional",
+    "Original ACK C shim itself ignores removal of read/exec permissions and deprecated purge/unpin requests; kernel enablement cannot certify full ashmem protection/legacy ABI. Require concrete positive/negative tests and expose limits before security/compatibility acceptance",
+    "No /dev/ashmem legacy char device, compat32 or ARM translation solved by memfd shim alone",
+    "Prototype ART APEX trust/OAT context/DEX alignment/dalvik-cache warnings preserved; no production Soong equivalence",
+    "ARM/GMS/DRM remain separate open axes"
+  ],
+  "cleanup": "host-post-experiments.json: no runtime processes/units/loops, VT1/mask restored,35 own empty cgroups removed, SELinux unchanged permissive/policyload1"
+}

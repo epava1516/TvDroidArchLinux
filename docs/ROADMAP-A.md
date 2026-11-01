@@ -1,5 +1,9 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+## Puerta inmediata · memoria compartida antes de Power/Display
+
+[Siete ejecuciones reales](../reports/android16-selected-display/findings.json) reducen la incertidumbre: classloader/IPC original ya ejecutan Java de servicios; el bloqueo inmediato es ashmem/memfd del kernel. Orden: preparar shim ACK original en LTS independiente → compilar/comprobar candidato y recuperación → instalar/arrancar sólo tras verificaciones → pruebas positivas/negativas de memoria real → configurar uso memfd mediante propiedad original cuando el guard real pase → Power/SystemSuspend/DisplayManager con consultas originales de display0 → instalación/lanzamiento original de Markor. No eludir el guard, devolver nonces falsos ni convertir inspectores/constructores en aceptación. Probar límites read/exec/purge/legacy y actualizar el kernel de forma reproducible; MAC/zygote y recorridos completos permanecen abiertos.
+
 ## Prioridad vigente · servicios originales para Markor
 
 [SF y cliente nativo original ya dibujan](../reports/android16-software-renderer/sf-original-functional-findings.json) sobre Smithay/DRM en permisivo, con consultas originales y cierre limpio. La puerta gráfica nativa funcional queda demostrada para esta configuración, sin cerrar MC3: faltan DisplayManager/WMS/Input, seguridad/fences y frames/eventos de APK. Siguiente experimento: integrar un bootstrap de servicios originales sobre ART/app_process Bionic coherente, con dependencias de display→PackageManager/instalación→AMS/ATMS y lanzamiento original de Markor; precisar qué auxiliares reales deben estar disponibles y mantener errores ausentes. Reutilizar servicios completos, no clases/métodos aislados ni Android completo oculto. Criterio vertical: instalación intacta, lanzamiento, UI/entrada, nota, persistencia/servicios, cierre y reapertura. ARM/GMS/DRM fuera del camino inicial, abiertos.

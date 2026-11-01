@@ -1,5 +1,13 @@
 # Estado actual y punto de entrada
 
+## Bloqueo vigente · ABI ashmem/memfd del kernel
+
+[Integración y resultados](../reports/android16-selected-display/findings.json): ART/app_process y classloader original compartido ya ejecutan el arranque seleccionado de servicios. DisplayManager requiere PowerManager; su memoria compartida real falla por ashmem ausente. [Prueba fuera del sandbox](../reports/android16-selected-display/linux-memfd-host-probe.json): memfd y sellos funcionan, `ASHMEM_GET_SIZE` devuelve ENOTTY. No basta activar una propiedad ni inventar nonces. Se prepara el shim original ACK sobre fuentes LTS6.18.59 [con firma verificada](../reports/android16-selected-display/kernel-source-verification.json), aún sin kernel compilado/instalado/arrancado. [Checkpoint vigente](../reports/android16-selected-display/checkpoint.json). Anfitrión limpio y política permisiva sin cambios. Markor sigue sin etapas probadas.
+
+## En curso · servicios originales de display para Markor
+
+[Checkpoint y experimento actual](../reports/android16-selected-display/checkpoint.json): ART/app_process y classloader original de system_server ejecutan el arranque seleccionado. Se integran SystemSuspend/PowerManager/DisplayManager originales y su inicialización común; todavía no se ha aceptado `display` ni una APK. Las pruebas negativas y sus causas se conservan; el hito gráfico cbff146 de abajo sigue válido.
+
 ## Gráficos originales funcionales · siguiente: servicios de Markor
 
 [Recorrido ejecutado](../reports/android16-software-renderer/sf-original-functional-findings.json): propiedades/gestores originales → SurfaceFlinger → ANGLE/SwiftShader Bionic → allocator/mapper/HWC3 → Wayland/Smithay/DRM. Bootanimation original dibuja el logotipo; [captura real](../reports/android16-software-renderer/sf-bootanimation-screen.png),455 frames, ambas interfaces SF consultadas por cliente original, seis identidades verificadas y cierre0. [Anfitrión limpio](../reports/android16-software-renderer/host-post-original-functional.json). Permisivo: no autorización/aislamiento/fences aceptados; no se arranca Android completo ni se instala/ejecuta Markor. [Checkpoint vigente](../reports/android16-software-renderer/checkpoint.json). Continuar con ART/app_process y servicios originales seleccionados de display/paquetes/actividades/ventanas para la vertical de Markor.

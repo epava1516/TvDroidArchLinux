@@ -1,0 +1,8 @@
+{
+  "memfd_create": true,
+  "seal_future_write": true,
+  "ASHMEM_GET_SIZE": {
+    "errno": 25,
+    "error": "Inappropriate ioctl for device"
+  }
+}
