@@ -63,6 +63,12 @@ public final class SelectedServices {
             Class<?> sharedType = Class.forName("com.android.internal.os.ApplicationSharedMemory");
             Object shared = call(sharedType, null, "create", new Class<?>[0]);
             call(sharedType, null, "setInstance", new Class<?>[]{sharedType}, shared);
+            Class<?> installerType = Class.forName("com.android.server.pm.Installer");
+            Object installer = call(managerType, manager, "startService", new Class<?>[]{Class.class}, installerType);
+            // Real original Binder operation; default Installer is not isolated.
+            // Its connection latch/remote exceptions remain intact.
+            call(installerType, installer, "invalidateMounts", new Class<?>[0]);
+            System.err.println("SELECTED_ORIGINAL_INSTALLER_INVALIDATE_RETURNED NOT_APK_INSTALLATION");
             // Original bootstrap order: power is required by LogicalDisplayMapper.
             call(managerType, manager, "startService", new Class<?>[]{Class.class},
                     Class.forName("com.android.server.power.PowerManagerService"));

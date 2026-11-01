@@ -8,6 +8,10 @@
 
 Recuperación: `/home/tv/recuperacion-archtv/20261101T195453Z-kernel-install-boot/RETOMAR.txt`. Entradas originales conservadas, pendientes históricos intactos. No reutilizar handles anteriores al reinicio. Markor no tiene etapas completas probadas.
 
+[Installer/installd originales integrados](../reports/android16-package-bootstrap/installer-functional.json): registro consultado por cliente original y `Installer.invalidateMounts` por Binder completado bajo UID1000; daemon original UID0, SID/capacidades/NNP observados, cierre nativo y externo0 y [anfitrión limpio](../reports/android16-package-bootstrap/host-post.json). Se restauró la exportación original `ASEC_MOUNTPOINT` con directorio privado real y se corrigió una muestra de registro prematura. No se acredita instalación, datos de APK, FBE, cuotas ni volúmenes ASEC. La cohorte está cerrada, no hay servicios de runtime activos acreditados.
+
+Siguiente: bootstrap original de paquetes/permisos/actividad como conjunto; ART manager y AccessChecking, AMS/ATMS, DomainVerification/PMS y sus pares originales. Las fuentes de ApexManager esperan `apexservice`: integrar/evaluar apexd original con su activación e inventario auténticos antes de declarar el cierre de paquetes. No falsear inventario, permisos ni disponibilidad y no arrancar SystemServer/Android completos. Este requisito procede del código; su integración todavía no está ejecutada.
+
 ## Histórico · integración inicial de display
 
 [Checkpoint y experimento actual](../reports/android16-selected-display/checkpoint.json): ART/app_process y classloader original de system_server ejecutan el arranque seleccionado. Se integran SystemSuspend/PowerManager/DisplayManager originales y su inicialización común; todavía no se ha aceptado `display` ni una APK. Las pruebas negativas y sus causas se conservan; el hito gráfico cbff146 de abajo sigue válido.

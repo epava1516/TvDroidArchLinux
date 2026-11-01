@@ -34,7 +34,7 @@ if surfaceflinger:
     add('/vendor/lib64/hw/vulkan.pastel.so', ROOT / 'dist/aosp16/swiftshader-link-2/vulkan.pastel.so', 'same_process_hal_file')
 
 if '--selected-display' in sys.argv[2:]:
-    selected = ROOT / 'dist/aosp16/selected-display-13'
+    selected = ROOT / 'dist/aosp16/selected-display-14'
     add('/vendor/framework/archtv-selected-services.jar', selected / 'archtv-selected-services.jar', 'vendor_framework_file')
     add('/vendor/etc/init/archtv-selected-services.rc', selected / 'selected-services.rc', 'vendor_configs_file')
 

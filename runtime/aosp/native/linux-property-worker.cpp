@@ -135,6 +135,13 @@ int main(int argc,char** argv) {
                setenv(entry.first,entry.second,1)!=0)return 74;
         }
     }
+    if(selected) {
+        // Required original init.environ export. Original installd globals pass
+        // getenv(ASEC_MOUNTPOINT) directly to std::string/strlen.
+        struct stat directory{};
+        if(stat("/mnt/asec",&directory)!=0 || !S_ISDIR(directory.st_mode) ||
+           setenv("ASEC_MOUNTPOINT","/mnt/asec",1)!=0)return 74;
+    }
     PropertyInit(); // SIGCHLD is attached before any original AVC/property threads.
     auto setup=StartLinuxPropertyActions(&epoll);
     if(!setup.ok())return 70;

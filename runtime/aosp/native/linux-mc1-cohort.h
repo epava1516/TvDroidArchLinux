@@ -91,7 +91,7 @@ class LinuxMc1Cohort {
         if(hardware_requested_)return StartHardware(tick);
         return {};
     }
-    bool healthy() const { return !manager_failed_ && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && bootanimation_->IsRunning())) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()); }
+    bool healthy() const { return !manager_failed_ && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && bootanimation_->IsRunning())) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()); }
     android::base::Result<void> Close(const Tick& tick) {
         using namespace android::init;
         if(!active_) return {};
@@ -115,6 +115,7 @@ class LinuxMc1Cohort {
         bootanimation_started_=false;
         selected_=nullptr;
         suspend_=nullptr;
+        installd_=nullptr;
         services.RemoveServiceIf([](const auto& service){return !service->IsRunning();});
         active_=false;
         int observed_mode=security_getenforce();
@@ -294,6 +295,18 @@ class LinuxMc1Cohort {
         });
         if(auto result=suspend_->Start();!result.ok())return result;
         std::fprintf(stderr,"SELECTED_SUSPEND_STARTED pid=%d NOT_REGISTERED\n",suspend_->pid());
+        auto installer_parsed=parser.ParseConfigFile("/system/etc/init/installd.rc");
+        if(!installer_parsed.ok() || parser.parse_error_count()!=0)
+            return android::base::Error()<<"Original installd RC rejected";
+        installd_=services.FindService("installd");
+        if(!installd_ || installd_->args()!=std::vector<std::string>{"/system/bin/installd"})
+            return android::base::Error()<<"Unexpected original installd executable";
+        installd_->AddReapCallback([this](const siginfo_t& info) {
+            std::fprintf(stderr,"SELECTED_INSTALLD_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
+            if(!closing_)manager_failed_=true;
+        });
+        if(auto result=installd_->Start();!result.ok())return result;
+        std::fprintf(stderr,"SELECTED_INSTALLD_STARTED pid=%d NOT_REGISTERED\n",installd_->pid());
         auto parsed=parser.ParseConfigFile("/vendor/etc/init/archtv-selected-services.rc");
         if(!parsed.ok() || parser.parse_error_count()!=0)
             return android::base::Error()<<"Selected original service orchestration RC rejected";
@@ -310,8 +323,10 @@ class LinuxMc1Cohort {
         auto client=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","shell","shell","--",
             "/system/bin/sh","-c",
             "umask 077; i=0; while [ $$i -lt 30 ]; do "
+            "/system/bin/service check installd > /data/local/tmp/archtv-mc1/installd-query.txt 2>&1; "
             "/system/bin/service check display > /data/local/tmp/archtv-mc1/display-query.txt 2>&1; "
-            "if /system/bin/grep -qx 'Service display: found' /data/local/tmp/archtv-mc1/display-query.txt; then "
+            "if /system/bin/grep -qx 'Service display: found' /data/local/tmp/archtv-mc1/display-query.txt && "
+            "/system/bin/grep -qx 'Service installd: found' /data/local/tmp/archtv-mc1/installd-query.txt; then "
             "/system/bin/dumpsys display > /data/local/tmp/archtv-mc1/display-dump.txt 2>&1; "
             "/system/bin/cmd display get-displays --ids-only > /data/local/tmp/archtv-mc1/display-ids.txt 2>&1; "
             "if /system/bin/grep -qx '0' /data/local/tmp/archtv-mc1/display-ids.txt; then exit 0; fi; fi; "
@@ -352,6 +367,7 @@ class LinuxMc1Cohort {
     android::init::Service* bootanimation_=nullptr;
     android::init::Service* selected_=nullptr;
     android::init::Service* suspend_=nullptr;
+    android::init::Service* installd_=nullptr;
     bool bootanimation_started_=false;
     bool missing_done_=false,missing_ok_=false;
     bool active_=false,closing_=false,manager_failed_=false,client_done_=false,client_ok_=false;

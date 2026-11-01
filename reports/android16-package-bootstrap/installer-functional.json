@@ -1,0 +1,100 @@
+{
+  "utc": "2026-11-01T21:30:50.144352+00:00",
+  "base_commit": "ad8bc90",
+  "scope": "Original installd/Installer Binder operation integrated with original selected display; bounded functional run in permissive, not APK install or compatibility.",
+  "kernel": "6.18.59-archtv-aosp16-1",
+  "boot_id": "4e18faf8-2b46-42e4-a6b2-269c34326b68",
+  "cohort": "sf-cohort-build-32",
+  "selected": "selected-display-14",
+  "binary": {
+    "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/bin/installd",
+    "sha256": "b259a057cba2a2a020acda1ed25d6a40b94c44dc7c3f8e219114244ea68909dd"
+  },
+  "payload_sha256": "f345312108ba91bbe4194934df2310478fbe23216b760ce05025772ecd8de9ac",
+  "log": {
+    "path": "/home/tv/repositorio-principal/dist/aosp16/display-session-1793568501838311954/compositor.log",
+    "sha256": "25bca4b11d4aff49d0ecf5c4e00b5c4c3b66b859ee5c950ac15ed7fd0fbb133f"
+  },
+  "native_exit": 0,
+  "outer_exit": 0,
+  "queries": [
+    "Service installd: found",
+    "Service display: found",
+    "display IDs=0",
+    "SurfaceFlinger: found",
+    "SurfaceFlingerAIDL: found"
+  ],
+  "client_operation": "Original Installer(context,false).onStart connects IInstalld; explicit original invalidateMounts returns under actual UID1000. Not app-data creation or APK installation.",
+  "identity": {
+    "kind": "INSTALLD",
+    "pid_namespace_pid": 156,
+    "getpidcon_raw_return": 0,
+    "actual_context": "u:r:installd:s0",
+    "contexts_observed_in_order": [
+      "u:r:installd:s0"
+    ],
+    "errno_observed": [],
+    "status": [
+      "Uid:\t0\t0\t0\t0",
+      "Gid:\t0\t0\t0\t0",
+      "Groups:\t ",
+      "CapPrm:\t00000000002000ff",
+      "CapEff:\t00000000002000ff",
+      "CapBnd:\t00000000002000ff",
+      "NoNewPrivs:\t1"
+    ]
+  },
+  "stop": "Original coordinator collects daemon SIGKILL while closing=true; supervisor/outer0. No claim of daemon exit0 or app persistence.",
+  "negative_history": [
+    {
+      "run": "display-session-1793567955292530930",
+      "result": "Original installd SIGSEGV; source globals uses missing getenv(ASEC_MOUNTPOINT) without null guard."
+    },
+    {
+      "run": "display-session-1793568284280503173",
+      "result": "ASEC export/private directory restores original daemon and Binder client; external one-time query sampled before registration and rejects. No success accepted from that sample."
+    }
+  ],
+  "adaptation": "Original ASEC_MOUNTPOINT=/mnt/asec exported only when actual private directory exists. Original init.rc directory modes/owners used; no ASEC volume, FBE, mount or quota functionality fabricated. Poll original service queries; no manually written readiness.",
+  "sources": [
+    {
+      "project": "platform/frameworks/native",
+      "commit": "fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103",
+      "path": "cmds/installd/installd.cpp",
+      "local": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/cmds__installd__installd.cpp",
+      "url": "https://android.googlesource.com/platform/frameworks/native/+/fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103/cmds/installd/installd.cpp?format=TEXT",
+      "sha256": "94b95110a4e9dad500672c9b65d5d913bde107a62a91ce9f2b03278526317c6c"
+    },
+    {
+      "project": "platform/frameworks/base",
+      "commit": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+      "path": "services/core/java/com/android/server/pm/Installer.java",
+      "local": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/services__core__java__com__android__server__pm__Installer.java",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/core/java/com/android/server/pm/Installer.java?format=TEXT",
+      "sha256": "ac735a2bf3740ff8f0f4b92963a2b1b90bffb2e54a13393d9c637b9761a42abc"
+    },
+    {
+      "project": "platform/frameworks/base",
+      "commit": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+      "path": "services/core/java/com/android/server/pm/PackageManagerService.java",
+      "local": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/services__core__java__com__android__server__pm__PackageManagerService.java",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/core/java/com/android/server/pm/PackageManagerService.java?format=TEXT",
+      "sha256": "19f12f146587df108b169ae826801910775fe2caa58e8a351eb1a5b89659bb8e"
+    },
+    {
+      "path": "cmds/installd/globals.cpp",
+      "commit": "fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103",
+      "local": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/cmds__installd__globals.cpp",
+      "sha256": "0482b26be718814cac9ef351b71fc9be80d7d40e35ee147998d7b13712369f70",
+      "url": "https://android.googlesource.com/platform/frameworks/native/+/fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103/cmds/installd/globals.cpp"
+    }
+  ],
+  "limits": [
+    "Permissive, no MAC authorization/isolation acceptance",
+    "No APK install/launch/UI/input/note/persistence/close/reopen accepted",
+    "No ASEC/FBE/quota/external storage acceptance",
+    "DUMP denial preserved; physical light/thermal/suspend/fences unresolved",
+    "ARM/GMS/DRM separate"
+  ],
+  "next": "Integrate coherent original package bootstrap: ART manager/AccessChecking, AMS/ATMS, DomainVerification/PMS with original peers. ApexManager source explicitly waits apexservice; original apexd not yet integrated or runtime-tested. No fake APEX inventory, permission service or SDK stubs."
+}

@@ -81,7 +81,7 @@ if '--surfaceflinger' in sys.argv[1:]:
     base = base.replace("int(match[2] or match[4])", "int(match[2] or match[4] or match[6])")
     base = base.replace("'COMPOSER':'u:r:hal_graphics_composer_default:s0'", "'COMPOSER':'u:r:hal_graphics_composer_default:s0','SF':'u:r:surfaceflinger:s0','BOOTANIMATION':'u:r:bootanim:s0'")
     base = base.replace("['ALLOCATOR','COMPOSER']", "['ALLOCATOR','COMPOSER','SF']")
-    base = base.replace("[1000]*4 and", "[1003 if identity['kind']=='BOOTANIMATION' else 1000]*4 and")
+    base = base.replace("[1000]*4 and", "[0 if identity['kind']=='INSTALLD' else 1003 if identity['kind']=='BOOTANIMATION' else 1000]*4 and")
     base = base.replace("[1003 if identity['kind'] in ['ALLOCATOR','COMPOSER','SF'] else 1000]*4", "[1003 if identity['kind'] in ['ALLOCATOR','COMPOSER','SF','BOOTANIMATION'] else 1000]*4")
     # Retain real query output even when a later native client fails. These are
     # evidence files, never readiness signals or substitutes for Binder calls.
@@ -110,20 +110,24 @@ if '--selected-display' in sys.argv[1:]:
     # Keep bounded diagnostic frames after ART namespace messages.
     base = base.replace('len(observed_logs)<256', 'len(observed_logs)<512')
     assert '--surfaceflinger' in sys.argv[1:]
-    base = base.replace('sf-cohort-build-7/payload-2.ext4', 'sf-cohort-build-29/payload-2.ext4')
+    base = base.replace('sf-cohort-build-7/payload-2.ext4', 'sf-cohort-build-32/payload-2.ext4')
     base = base.replace("'--surfaceflinger-integration'", "'--display-integration'")
     base = base.replace("args=['/archtv/bin/native-supervisor'", "assert not Path('/sys/power/state').exists() and not Path('/sys/power/wakeup_count').exists()\nprint('SELECTED_HOST_POWER_CONTROLS_ABSENT original_SystemSuspend_host_managed_path',flush=True)\nargs=['/archtv/bin/native-supervisor'")
 
-    base = base.replace("MC3_ORIGINAL_(SF|BOOTANIMATION)_STARTED pid=(\\d+)',line)", "MC3_ORIGINAL_(SF|BOOTANIMATION)_STARTED pid=(\\d+)|SELECTED_(SUSPEND|SERVICES)_STARTED pid=(\\d+)',line)")
+    base = base.replace("MC3_ORIGINAL_(SF|BOOTANIMATION)_STARTED pid=(\\d+)',line)", "MC3_ORIGINAL_(SF|BOOTANIMATION)_STARTED pid=(\\d+)|SELECTED_(SUSPEND|SERVICES|INSTALLD)_STARTED pid=(\\d+)',line)")
     base = base.replace("else match[5])", "else (match[5] or match[7]))")
     base = base.replace("int(match[2] or match[4] or match[6])", "int(match[2] or match[4] or match[6] or match[8])")
-    base = base.replace("'BOOTANIMATION':'u:r:bootanim:s0'", "'BOOTANIMATION':'u:r:bootanim:s0','SUSPEND':'u:r:system_suspend:s0','SERVICES':'u:r:system_server:s0'")
-    base = base.replace("(1<<23 if identity['kind'] in ['ALLOCATOR','COMPOSER','SF'] else 0)", "(1<<36 if identity['kind']=='SUSPEND' else 1<<23 if identity['kind'] in ['ALLOCATOR','COMPOSER','SF','SERVICES'] else 0)")
+    base = base.replace("'BOOTANIMATION':'u:r:bootanim:s0'", "'BOOTANIMATION':'u:r:bootanim:s0','SUSPEND':'u:r:system_suspend:s0','SERVICES':'u:r:system_server:s0','INSTALLD':'u:r:installd:s0'")
+    base = base.replace("[1003 if identity['kind'] in ['ALLOCATOR','COMPOSER','SF','BOOTANIMATION'] else 1000]*4", "[0 if identity['kind']=='INSTALLD' else 1003 if identity['kind'] in ['ALLOCATOR','COMPOSER','SF','BOOTANIMATION'] else 1000]*4")
+    base = base.replace("(1<<23 if identity['kind'] in ['ALLOCATOR','COMPOSER','SF'] else 0)", "(0x2000ff if identity['kind']=='INSTALLD' else 1<<36 if identity['kind']=='SUSPEND' else 1<<23 if identity['kind'] in ['ALLOCATOR','COMPOSER','SF','SERVICES'] else 0)")
 
-    base = base.replace("(root/'data/misc/surfaceflinger').mkdir(parents=True,mode=0o700)", """(root/'data/system').mkdir(mode=0o775)
+    base = base.replace("(root/'data/misc/surfaceflinger').mkdir(parents=True,mode=0o700)", """(root/'mnt/asec').mkdir(parents=True,mode=0o755)
+for name, mode, uid, gid in [('misc/installd',0o700,0,0),('misc/user',0o771,0,0),('user',0o511,1000,1000),('app',0o771,1000,1000),('app-staging',0o751,1000,1000)]:
+ p=root/'data'/name;p.mkdir(parents=True,mode=mode);os.chmod(p,mode);os.chown(p,uid,gid)
+(root/'data/system').mkdir(mode=0o775)
 os.chown(root/'data/system',1000,1000)
 (root/'data/misc/surfaceflinger').mkdir(parents=True,mode=0o700)""")
-    base = base.replace("for name in ['sf-query.txt','sf-aidl-query.txt']:", "for name in ['sf-query.txt','sf-aidl-query.txt','display-query.txt','display-ids.txt']:")
+    base = base.replace("for name in ['sf-query.txt','sf-aidl-query.txt']:", "for name in ['sf-query.txt','sf-aidl-query.txt','display-query.txt','display-ids.txt','installd-query.txt']:")
     # Retain a bounded original dump on failures too. A dumped display is
     # evidence, not an ACK or a synthesized result to the Android process.
     base = base.replace("if p.returncode!=0:\n failed_output=", """display=Path('/data/local/tmp/archtv-mc1/display-dump.txt')
@@ -136,6 +140,8 @@ if p.returncode!=0:
     base += """
 query=Path('/data/local/tmp/archtv-mc1/display-query.txt').read_text()
 ids=Path('/data/local/tmp/archtv-mc1/display-ids.txt').read_text()
+installer=Path('/data/local/tmp/archtv-mc1/installd-query.txt').read_text()
+assert installer=='Service installd: found\\n'
 assert query=='Service display: found\\n' and '0' in ids.splitlines()
 print('SELECTED_DISPLAY_QUERIES_VERIFIED NOT_APK_OR_MAC_ACCEPTANCE',flush=True)
 """

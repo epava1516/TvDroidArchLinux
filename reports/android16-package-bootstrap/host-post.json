@@ -1,0 +1,40 @@
+{
+  "utc": "2026-11-01T21:30:49.745980+00:00",
+  "boot_id": "4e18faf8-2b46-42e4-a6b2-269c34326b68",
+  "kernel": "6.18.59-archtv-aosp16-1",
+  "final_run": "display-session-1793568501838311954",
+  "runtime_units": "",
+  "sessions": "",
+  "loops": "",
+  "matched_runtime_pids": [],
+  "vt": "1",
+  "selinux_status": [
+    1,
+    2,
+    0,
+    1,
+    1
+  ],
+  "enforce": "0",
+  "empty_owned_cgroups_removed": [
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793567957351111441/system/uid_1003",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793567957351111441/system/uid_2000",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793567957351111441/system/uid_1000",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793567957351111441/system/uid_0",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793568286275694713/system/uid_1003",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793568286275694713/system/uid_2000",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793568286275694713/system/uid_1000",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793568286275694713/system/uid_0",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793568503710791738/system/uid_1003",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793568503710791738/system/uid_2000",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793568503710791738/system/uid_1000",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793568503710791738/system/uid_0",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793568503710791738/system",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793568286275694713/system",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793567957351111441/system",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793568503710791738",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793568286275694713",
+    "/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1/mc3-live-1793567957351111441"
+  ],
+  "scope": "Actual final closure, no current runtime service availability or MAC/APK acceptance."
+}
