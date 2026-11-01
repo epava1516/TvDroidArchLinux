@@ -1,0 +1,26 @@
+{
+  "utc": "2026-11-01T12:13:03.945096+00:00",
+  "scope": "Actual Bionic selected-mode negative execution on stock LTS, permissive policyload1; not MAC authorization or service/APK compatibility",
+  "session": {
+    "output": "/home/tv/repositorio-principal/dist/aosp16/display-session-1793535039957263367",
+    "unit": "archtv-mc3-display-1793535039958844564",
+    "initial_vt": "1",
+    "scope": "Original allocator/composer/coordinator integration candidate, permissive only; inspect real logs and pixels; not APK acceptance"
+  },
+  "tool_session": "91081 terminal1 expected because positive display assertions fail",
+  "native_result": {
+    "exit": 1,
+    "stdout": "NATIVE_PROCESS_OWNED pid=107 pidfd=5\n",
+    "stderr": "LINUX_EXEC_CONTEXT_REQUESTED source=linux.system_u:archtv_launcher_r:archtv_launcher:s0 target=u:r:init:s0 enforcing=0 NOT_STARTUP\nPROPERTY_WORKER_IDENTITY observed=u:r:init:s0 enforcing=0 mc1=1\nSELinux: Loaded file context from:\n\t\t/system/etc/selinux/plat_file_contexts\n\t\t/system_ext/etc/selinux/system_ext_file_contexts\n\t\t/product/etc/selinux/product_file_contexts\n\t\t/vendor/etc/selinux/vendor_file_contexts\n11-01 12:10:51.938   107   107 I property-coordinator: boot_config.cpp:46 [libfstab] Using Android DT directory /proc/device-tree/firmware/android/\n11-01 12:10:51.943   107   107 W property-coordinator: property_service.cpp:827 Overriding previous property 'ro.cp_system_other_odex':'1' with new value '0'\n11-01 12:10:51.944   107   107 W property-coordinator: property_service.cpp:827 Overriding previous property 'ro.build.flavor':'mainline-user' with new value 'aosp_x86_64-user'\n11-01 12:10:51.945   107   107 W property-coordinator: property_service.cpp:827 Overriding previous property 'ro.build.description':'mainline-user 16 BP4A.251205.006 14401865 release-keys' with new value 'aosp_x86_64-user 16 BP4A.251205.006 14401865 release-keys'\n11-01 12:10:51.946   107   107 I property-coordinator: property_service.cpp:957 Setting product property ro.product.brand to 'Android' (from ro.product.product.brand)\n11-01 12:10:51.946   107   107 I property-coordinator: property_service.cpp:957 Setting product property ro.product.device to 'generic_x86_64' (from ro.product.product.device)\n11-01 12:10:51.946   107   107 I property-coordinator: property_service.cpp:957 Setting product property ro.product.manufacturer to 'unknown' (from ro.product.product.manufacturer)\n11-01 12:10:51.946   107   107 I property-coordinator: property_service.cpp:957 Setting product property ro.product.model to 'AOSP on x86_64' (from ro.product.product.model)\n11-01 12:10:51.946   107   107 I property-coordinator: property_service.cpp:957 Setting product property ro.product.name to 'aosp_x86_64' (from ro.product.product.name)\n11-01 12:10:51.946   107   107 I property-coordinator: property_service.cpp:1034 Setting property 'ro.build.fingerprint' to 'Android/aosp_x86_64/generic_x86_64:16/BP4A.251205.006/14401865:user/release-keys'\n11-01 12:10:51.946   107   107 I property-coordinator: property_service.cpp:1096 Setting property 'ro.product.cpu.abilist' to 'x86_64,x86'\n11-01 12:10:51.947   107   107 I property-coordinator: property_service.cpp:1096 Setting property 'ro.product.cpu.abilist32' to 'x86'\n11-01 12:10:51.947   107   107 I property-coordinator: property_service.cpp:1096 Setting property 'ro.product.cpu.abilist64' to 'x86_64'\n11-01 12:10:51.948   107   107 I property-coordinator: util.cpp:156 Created socket '/dev/socket/property_service_for_system', mode 660, user 0, group 1000\n11-01 12:10:51.949   107   107 I property-coordinator: util.cpp:156 Created socket '/dev/socket/property_service', mode 666, user 0, group 0\n11-01 12:10:51.950   107   108 E property-coordinator: persistent_properties.cpp:268 Could not load single persistent property file, trying legacy directory: Unable to read persistent property file: open() failed: No such file or directory\nSELECTED_MEMFD_KERNEL_REJECTED errno=25\nError: Custom { kind: UnexpectedEof, error: \"native lifetime channel closed\" }\n",
+    "external_Linux_identity_observation": [],
+    "passive_log_observer_diagnostic_only": []
+  },
+  "log": "/home/tv/repositorio-principal/dist/aosp16/display-session-1793535039957263367/compositor.log",
+  "log_sha256": "12aea1f055bfa7fc3b87939ff6d38d7a60c9240d9b88e017ff886bbc2558943c",
+  "outer_log": "/home/tv/.cache/archtv/selected-display-memfd-negative-1.log",
+  "outer_log_sha256": "2a740bd2a7adb73eca4f8d1b0994b670a08df8e3e522db6af322ec1ea1e90995",
+  "payload_sha256": "d995bba227cd8198f645deb3469359999137e7b022626a1be4007446b288c07d",
+  "observed": "Kernel admission rejected before manager startup; no admitted marker. This branch returns before property SetProperty in the compiled source. No independent post-exit query of private property area, now gone.",
+  "cleanup": "reports/android16-selected-display/memfd-negative-host-post.json",
+  "pending": "Positive original libcutils guard and Power/Display integration after separately validated new kernel. Enforcing/Markor not tested."
+}

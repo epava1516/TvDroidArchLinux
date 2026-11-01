@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-01T12:12:36.395096+00:00",
+  "boot_id": "4409f88d-366a-4ccf-80a0-e143452b78f5",
+  "units": "",
+  "loops": [],
+  "runtime_processes": [],
+  "vt": "1",
+  "tty2_runtime_mask": false,
+  "selinux_status": [
+    1,
+    2,
+    0,
+    1,
+    1
+  ]
+}
