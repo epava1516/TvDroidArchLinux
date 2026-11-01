@@ -107,7 +107,7 @@ print('MC3_ORIGINAL_SF_QUERIES_VERIFIED NOT_PIXEL_MAC_OR_APK_ACCEPTANCE',flush=T
 """
 if '--selected-display' in sys.argv[1:]:
     assert '--surfaceflinger' in sys.argv[1:]
-    base = base.replace('sf-cohort-build-7/payload-2.ext4', 'sf-cohort-build-14/payload-2.ext4')
+    base = base.replace('sf-cohort-build-7/payload-2.ext4', 'sf-cohort-build-16/payload-2.ext4')
     base = base.replace("'--surfaceflinger-integration'", "'--display-integration'")
     base = base.replace("args=['/archtv/bin/native-supervisor'", "assert not Path('/sys/power/state').exists() and not Path('/sys/power/wakeup_count').exists()\nprint('SELECTED_HOST_POWER_CONTROLS_ABSENT original_SystemSuspend_host_managed_path',flush=True)\nargs=['/archtv/bin/native-supervisor'")
 

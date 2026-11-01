@@ -1,0 +1,12 @@
+{
+  "utc": "2026-11-01T12:07:08.978700+00:00",
+  "scope": "Offline ext4 creation and verification only; no mount/runtime/MAC/APK acceptance",
+  "payload": "dist/aosp16/sf-cohort-build-16/payload-2.ext4",
+  "sha256": "d995bba227cd8198f645deb3469359999137e7b022626a1be4007446b288c07d",
+  "descriptor_sha256": "b2a3aca84a69ad856642a3166abab1c3054b53c835434f05d1ff7fe41a99f6f2",
+  "build": "reports/android16-selected-display/memfd-admission-build.json",
+  "previous_preserved_payload": "dist/aosp16/sf-cohort-build-14/payload-2.ext4",
+  "selected_java": "dist/aosp16/selected-display-8",
+  "kernel_requirement": "New kernel not yet built/installed/booted; current stock kernel must reject the added memfd admission",
+  "next": "After verified separate kernel ABI, run display-session using updated execute-graphics selected-display candidate; require original queries and default display. No synthetic readiness."
+}
