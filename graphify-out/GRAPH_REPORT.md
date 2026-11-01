@@ -1,7 +1,7 @@
-# Graph Report - kernel-memory-preflight  (2026-11-01)
+# Graph Report - kernel-abi-package-1  (2026-11-01)
 
 ## Corpus Check
-- 328 files · ~286,771 words
+- 328 files · ~286,867 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 36 file(s) not represented in the graph (top: .cil 9, .xml 8, .patch 7)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `b70cbc12`
+- Built from commit: `af9bdec4`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

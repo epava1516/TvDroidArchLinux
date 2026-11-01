@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+Sonda de memoria x86_64 y negativo stock: [resultado](../reports/android16-kernel-memory/stock-abi-negative.json), [ejecutor](../reports/android16-kernel-memory/probe-memory-abi.py). Alcance: ABI Linux ejecutada, no libcutils ni MAC/APK. Receta [PKGBUILD](../reports/android16-kernel-memory/PKGBUILD): validación sintáctica y rechazo real de estado `running`; empaquetado/instalación pendientes de terminar la compilación.
+
 ## Kernel de memoria · preparación y preflight sólo de compilación
 
 [Fuentes/parche](../reports/android16-kernel-memory/preparation.json), [parche GPL original](../reports/android16-kernel-memory/linux-6.18.59-ack-ashmem.patch), [configuración base capturada](../reports/android16-kernel-memory/running-lts.config.gz), [herramientas y cambios](../reports/android16-kernel-memory/build-environment.json), [compilación objeto0](../reports/android16-kernel-memory/object-build.json), [log](../reports/android16-kernel-memory/object-build.log) y [checkpoint/handle](../reports/android16-kernel-memory/checkpoint.json). Tres cuerpos ACK/headers sin modificar, wiring Kbuild/Kconfig/shmem adaptado; no flags de seguridad deshabilitados. Build completo aún en curso. No instalación, reboot, ejecución de ioctl, autorización, display o APK acreditados por este resultado.

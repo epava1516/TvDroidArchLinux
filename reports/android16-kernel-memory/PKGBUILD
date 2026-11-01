@@ -1,0 +1,50 @@
+# Package only an already completed, hash-verified candidate. No boot activation.
+pkgname=linux-archtv-aosp16
+pkgver=6.18.59
+pkgrel=1
+pkgdesc='Separate experimental LTS kernel with original ACK memfd ashmem shim'
+arch=(x86_64)
+license=(GPL-2.0-only)
+depends=(coreutils kmod mkinitcpio)
+options=(!strip !debug !lto)
+_release=6.18.59-archtv-aosp16-1
+_build=${ARCHTV_KERNEL_BUILD:?Set ARCHTV_KERNEL_BUILD to the completed build directory}
+_source=${ARCHTV_KERNEL_SOURCE:?Set ARCHTV_KERNEL_SOURCE to the verified patched source directory}
+
+build() {
+  python - "$_build" "$_release" <<'PY'
+from pathlib import Path
+import hashlib, json, sys
+build = Path(sys.argv[1]).resolve()
+state = json.loads((build / 'full-build.json').read_text())
+assert state['state'] == 'terminal' and state['exit'] == 0
+assert state['kernel_release'] == sys.argv[2]
+def sha(path):
+    result = hashlib.sha256()
+    with path.open('rb') as stream:
+        for block in iter(lambda: stream.read(2 * 1024 * 1024), b''):
+            result.update(block)
+    return result.hexdigest()
+for path, field in [('arch/x86/boot/bzImage', 'image_sha256'),
+                    ('vmlinux', 'vmlinux_sha256'), ('.config', 'config_sha256')]:
+    assert sha(build / path) == state[field], path
+assert (build / 'include/config/kernel.release').read_text().strip() == sys.argv[2]
+assert state['module_count'] > 0
+PY
+}
+
+package() {
+  # Recheck immediately before packaging; never use modules from the stock kernel.
+  build
+  make -C "$_source" O="$_build" INSTALL_MOD_PATH="$pkgdir/usr" modules_install
+  local modules="$pkgdir/usr/lib/modules/$_release"
+  test -d "$modules/kernel"
+  # Runtime package must not publish links into the private build/signing directory.
+  rm -f "$modules/build" "$modules/source"
+  install -m644 "$_build/arch/x86/boot/bzImage" "$modules/vmlinuz"
+  printf '%s\n' "$pkgname" > "$modules/pkgbase"
+  install -Dm644 "$_build/.config" "$pkgdir/usr/share/$pkgname/config"
+  install -Dm644 "$_build/full-build.json" "$pkgdir/usr/share/$pkgname/build.json"
+  # Arch's installed mkinitcpio hook reads pkgbase/vmlinuz, creates the distinct
+  # preset and copies the image to /boot. It does not select a loader entry.
+}
