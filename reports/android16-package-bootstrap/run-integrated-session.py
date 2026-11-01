@@ -16,7 +16,7 @@ import hashlib
 own=['runtime/aosp/native/linux-exec-context.c','runtime/aosp/native/linux-property-worker.cpp','runtime/aosp/native/linux-mc1-cohort.h','runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java','reports/android16-apex-bootstrap/run.py','reports/android16-apex-bootstrap/execute.py']+[str(n.relative_to(r)) for n in (r/'reports/android16-package-bootstrap').glob('*.py')]+[str(n.relative_to(r)) for n in (r/'reports/android16-package-bootstrap').glob('*.sh')]
 for name in own:
  destination=cp/'code'/name;destination.parent.mkdir(parents=True,exist_ok=True);destination.write_bytes((r/name).read_bytes())
-before['own_code_sha256']={n:hashlib.sha256((r/n).read_bytes()).hexdigest() for n in own};before['payload_sha256']=hashlib.file_digest((r/'dist/aosp16/package-cohort-build-7/payload-2.ext4').open('rb'),'sha256').hexdigest();(cp/'before.json').write_text(json.dumps(before,indent=2)+'\n')
+before['own_code_sha256']={n:hashlib.sha256((r/n).read_bytes()).hexdigest() for n in own};before['payload_sha256']=hashlib.file_digest((r/'dist/aosp16/package-cohort-build-8/payload-2.ext4').open('rb'),'sha256').hexdigest();(cp/'before.json').write_text(json.dumps(before,indent=2)+'\n')
 assert not Path('/run/systemd/system/getty@tty2.service').exists() and not Path('/run/systemd/system/getty@tty2.service').is_symlink()
 subprocess.run(['systemctl','stop','getty@tty2.service'],check=True);subprocess.run(['systemctl','mask','--runtime','getty@tty2.service'],check=True)
 try:

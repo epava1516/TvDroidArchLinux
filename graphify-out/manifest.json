@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793574629.0047016,
-    "seen": 1793574640.588571,
-    "ast_hash": "581564b729a70417a1f2b2f343e9708e",
+    "mtime": 1793574987.886383,
+    "seen": 1793575000.0642998,
+    "ast_hash": "6f663efc3780b4dacefb638b5f1b8fd7",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793574629.0080352,
-    "seen": 1793574640.5890255,
-    "ast_hash": "781e0b409c2b1f962c0bdd98c7f2db54",
+    "mtime": 1793574987.8897166,
+    "seen": 1793575000.064793,
+    "ast_hash": "3477c318d96629dfaf75b9c08a94a4fd",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793574629.0113685,
-    "seen": 1793574640.5895524,
-    "ast_hash": "fc10760bd3b8bdb32a67df3842e414b9",
+    "mtime": 1793574987.8897166,
+    "seen": 1793575000.0653615,
+    "ast_hash": "85a2d2b978c72ef68f9434ff21ee7bba",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -1716,9 +1716,9 @@
     "semantic_hash": ""
   },
   "docs/EVIDENCIAS.md": {
-    "mtime": 1793574629.0080352,
-    "seen": 1793574640.589181,
-    "ast_hash": "c4d71191bc5b05ca46b865f63c6e1020",
+    "mtime": 1793574987.8897166,
+    "seen": 1793575000.0649989,
+    "ast_hash": "f1e722b8ce5faf195f6738ea6009d9ef",
     "semantic_hash": ""
   },
   "fixtures/aosp-framework-space/FrameworkSpaceProbe.java": {
@@ -1926,8 +1926,8 @@
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-property-worker.cpp": {
-    "mtime": 1793574629.0113685,
-    "seen": 1793574640.5772445,
+    "mtime": 1793574987.796382,
+    "seen": 1793575000.0532684,
     "ast_hash": "400c1271973b90def6bf28cf4a9f93ef",
     "semantic_hash": ""
   },
@@ -1968,15 +1968,15 @@
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-exec-context.c": {
-    "mtime": 1793574629.0113685,
-    "seen": 1793574640.577174,
+    "mtime": 1793574987.796382,
+    "seen": 1793575000.0531974,
     "ast_hash": "3b0921275df4d783257160671d43f0fd",
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-mc1-cohort.h": {
-    "mtime": 1793574629.0113685,
-    "seen": 1793574640.5772412,
-    "ast_hash": "02cf893cf785fb48ff9ce9c05a619ca4",
+    "mtime": 1793574987.89305,
+    "seen": 1793575000.0532649,
+    "ast_hash": "ad6ef70230a1293b83da2f181fb6ce6d",
     "semantic_hash": ""
   },
   "fixtures/aosp-wayland-output/client.cpp": {
@@ -2022,8 +2022,8 @@
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java": {
-    "mtime": 1793574629.0113685,
-    "seen": 1793574640.5766547,
+    "mtime": 1793574987.7930484,
+    "seen": 1793575000.0526352,
     "ast_hash": "a555356d65737aa583603a61b0699477",
     "semantic_hash": ""
   },

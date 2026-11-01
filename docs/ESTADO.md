@@ -1,6 +1,8 @@
 # Estado actual y punto de entrada
 
-[Integración real APEX + gestores Java: fallo PMS](../reports/android16-package-bootstrap/integrated-pms-negative.json). En una misma cohorte regresaron ART initializer, AccessChecking, AMS/ATMS, Installer por Binder y Display fase100; no acredita disponibilidad ni autorización. PMS falló por omitir `SystemServerInitThreadPool.start`, presente en la secuencia original. Próximo candidato lo inicia antes del bootstrap. Sin loops/dm activos al cerrar; ninguna etapa APK aceptada, R1-MAC abierto.
+[PMS original: listado funcional en cohorte integrada](../reports/android16-package-bootstrap/integrated-functional.json). APEX41, classpath/init original, ART initializer/AccessChecking/AMS/ATMS/DomainVerification/PMS, Display0 e Installer se ejecutaron juntos; PMS.main retornó y el cliente original listó paquetes. Identidades/capacidades/NNP y cierre comprobados. Persisten errores reales de datos de aplicaciones y permisos: resolver almacenamiento/ciclo original antes de instalación Markor. Ninguna etapa APK aceptada; R1-MAC abierto.
+
+[Histórico: integración real APEX + gestores Java, fallo PMS superado](../reports/android16-package-bootstrap/integrated-pms-negative.json). En una misma cohorte regresaron ART initializer, AccessChecking, AMS/ATMS, Installer por Binder y Display fase100; no acredita disponibilidad ni autorización. PMS falló por omitir `SystemServerInitThreadPool.start`, presente en la secuencia original. Próximo candidato lo inicia antes del bootstrap. Sin loops/dm activos al cerrar; ninguna etapa APK aceptada, R1-MAC abierto.
 
 [Classpath original completo](../reports/android16-package-bootstrap/original-classpath.json): `derive_classpath` ejecutado tras la activación real de41 APEX; incluye `service-compos.jar`, ausente en el perfil anterior. Todos los JAR emitidos existen. Esto corrige la entrada para la siguiente integración ART/permisos/actividad; no prueba aún carga de clases ni servicios Java.
 

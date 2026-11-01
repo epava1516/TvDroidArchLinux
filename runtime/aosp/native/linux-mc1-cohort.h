@@ -411,7 +411,7 @@ class LinuxMc1Cohort {
         if(apex_requested_) {
             client_done_=false;client_ok_=false;
             auto package_client=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","shell","shell","--",
-                "/system/bin/sh","-c","umask 077; i=0; while [ $$i -lt 30 ]; do /system/bin/service check package > /data/local/tmp/archtv-mc1/package-query.txt 2>&1; if /system/bin/grep -qx 'Service package: found' /data/local/tmp/archtv-mc1/package-query.txt; then exit 0; fi; i=$$((i+1)); /system/bin/sleep 1; done; exit 1"});
+                "/system/bin/sh","-c","umask 077; i=0; while [ $$i -lt 30 ]; do /system/bin/service check package > /data/local/tmp/archtv-mc1/package-query.txt 2>&1; if /system/bin/grep -qx 'Service package: found' /data/local/tmp/archtv-mc1/package-query.txt; then /system/bin/cmd package list packages --user 0 > /data/local/tmp/archtv-mc1/package-list.txt 2>&1; exit $$?; fi; i=$$((i+1)); /system/bin/sleep 1; done; exit 1"});
             if(!package_client.ok())return package_client.error();
             auto* peer=package_client->get();
             peer->AddReapCallback([this](const siginfo_t& info){client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;});

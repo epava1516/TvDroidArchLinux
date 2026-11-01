@@ -1,0 +1,31 @@
+{
+  "checkpoint": "/home/tv/recuperacion-archtv/20261101T231427Z-apex-activation",
+  "base_commit": "0e31f30d26e72a6c59b9add8fae75e3fe073ba42",
+  "kernel": "6.18.59-archtv-aosp16-1",
+  "boot_id": "4e18faf8-2b46-42e4-a6b2-269c34326b68",
+  "payload_sha256": "041c6c39118581f99e1b2bdc6e29b91aa897e852ce52c9fe6296be4ca6da4d25",
+  "log_sha256": "11fa986074e8c564ace881c261d8c3cdb42c56206010fd25ed764f352c93a3b7",
+  "result": {
+    "outer_exit": 0,
+    "elapsed_seconds": 41.949058055877686,
+    "native_complete_inventory_verified": true,
+    "active_loops": "",
+    "final_dm": []
+  },
+  "packages_listed": 133,
+  "operation": "Original shell UID2000 cmd package list packages --user 0; response includes package:android; original PMS.main returned. Not tenant APK operation.",
+  "scope": [
+    "Same cohort: original APEX activation41 + load_exports + ART module initializer + AccessChecking + AMS/ATMS + DomainVerification/PMS + graphics/display0 + Installer native Binder operation",
+    "Exact original Binder/XML APEX names/versions, actual mounts, all observed role UID/GID/capability/NNP checks pass",
+    "Native and outer0; explicit Linux cancellation, all workers collected; no loops/dm remain"
+  ],
+  "limits": [
+    "No APK installation/launch/UI/input/note/persistence accepted",
+    "Original app-data creation and permission persistence errors remain; do not infer storage compatibility from package listing",
+    "No fs-verity on current tmpfs, no working memevents listener accepted",
+    "SELinux permissive policyload1; R1-MAC open",
+    "ART manager initializer is not artd availability",
+    "ARM/GMS/DRM separate and open"
+  ],
+  "next": "Original lifecycle/storage/APEX data preparation and permission persistence, then unmodified Markor installation and original launch/UI/input/persistent note/close/reopen."
+}

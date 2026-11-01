@@ -2,6 +2,7 @@
 """Combine existing real APEX and original graphics factories; no Android boot."""
 from pathlib import Path
 import sys,ast
+import xml.etree.ElementTree
 r=Path(__file__).resolve().parents[2]
 socket=sys.argv[1];payload=Path(sys.argv[2]).resolve();store=Path(sys.argv[3]).resolve()
 # Materialize the existing graphics adapter, then add the tested APEX boundary.
@@ -39,7 +40,7 @@ text=text.replace("0x2000ff if identity['kind'] in ['INSTALLD','DAEMON','SNAPSHO
 text=text.replace("fields['Gid'].split()))==[0 if identity['kind'] in ['INSTALLD','DAEMON','SNAPSHOT']", "fields['Gid'].split()))==[0 if identity['kind']=='INSTALLD'")
 # Preserve actual APEX output on Java/bootstrap failures as well.
 marker="if p.returncode!=0:\n failed_output="
-text=text.replace(marker,"""for name in ['apex-query.txt','apex-active.txt','classpath','package-query.txt']:
+text=text.replace(marker,"""for name in ['apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt']:
  f=Path('/data/local/tmp/archtv-mc1')/name
  if f.is_file():print('PACKAGE_ORIGINAL_OUTPUT '+name+' '+json.dumps(f.read_text()),flush=True)
 if p.returncode!=0:
@@ -49,7 +50,7 @@ tree=ast.parse((r/'reports/android16-apex-bootstrap/execute.py').read_text())
 checks=next(n.value.right.value for n in tree.body if isinstance(n,ast.Assign) and isinstance(n.value,ast.BinOp) and isinstance(n.value.right,ast.Constant) and isinstance(n.value.right.value,str) and n.value.right.value.startswith('\nfor name in'))
 checks=checks.replace('for v in identities','for v in identities if v["kind"] in ["MANAGER","DAEMON","SNAPSHOT"]').replace('for identity in identities:','for identity in [v for v in identities if v["kind"] in ["MANAGER","DAEMON","SNAPSHOT"]]:')
 text+='\n'+checks
-text+="\nassert 'PACKAGES_ORIGINAL_PMS_RETURNED' in ''.join(errors), 'Original PMS has not returned'\nprint('PACKAGES_ORIGINAL_PMS_BOOTSTRAP_RETURNED NOT_APK_ACCEPTANCE',flush=True)\n"
+text+="\nassert Path('/data/local/tmp/archtv-mc1/package-query.txt').read_text()=='Service package: found\\n'\npackage_list=Path('/data/local/tmp/archtv-mc1/package-list.txt').read_text().splitlines()\nassert 'package:android' in package_list and all(v.startswith('package:') for v in package_list),package_list\nprint('PACKAGES_ORIGINAL_LIST_VERIFIED NOT_INSTALL_DATA_OR_APK_ACCEPTANCE',flush=True)\n"
 compile(text,'<integrated factory>','exec')
 if '--materialize-only' in saved:
  Path('/home/tv/.cache/archtv/integrated-factory-preview.py').write_text(text)

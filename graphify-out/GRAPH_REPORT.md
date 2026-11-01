@@ -1,7 +1,7 @@
 # Graph Report - apex-functional-milestone  (2026-11-01)
 
 ## Corpus Check
-- 328 files · ~290,191 words
+- 328 files · ~290,416 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 36 file(s) not represented in the graph (top: .cil 9, .xml 8, .patch 7)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `c73e6c8c`
+- Built from commit: `0e31f30d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -765,13 +765,13 @@ Nodes (12): BootState, Completed, Starting, Unknown, RuntimeStatus, SessionState
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `ready()` connect `ready` to `hashlib`, `re`?**
-  _High betweenness centrality (0.172) - this node is a cross-community bridge._
+  _High betweenness centrality (0.173) - this node is a cross-community bridge._
 - **What connects `archtv-aosp-linux`, `archtv-apk-host`, `archtv-compositor` to the rest of the system?**
   _188 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `worker.rs` be split into smaller, more focused modules?**
   _Cohesion score 0.1 - nodes in this community are weakly interconnected._
 - **Why does `LinuxWindowService` connect `LinuxWindowService` to `IBinder`, `.state`, `LinuxServiceRegistry`, `.addShellRoot`, `Rect`, `.verifyDisplayHash`, `.overridePendingAppTransitionMultiThumbFuture`, `.registerCrossWindowBlurEnabledListener`, `.registerDisplayFoldListener`, `.registerDisplayWindowListener`, `.addKeyguardLockedStateListener`, `.getWindowInsets`, `.removeRotationWatcher`, `.registerSystemGestureExclusionListener`, `.registerTaskFpsCallback`, `.registerWallpaperVisibilityListener`, `.openSession`, `.screenshotWallpaper`, `.getPossibleDisplayInfo`, `.requestAssistScreenshot`, `.setDisplayWindowInsetsController`, `.setDisplayWindowRotationController`, `.dismissKeyguard`, `.updateDisplayWindowRequestedVisibilities`, `.exitKeyguardSecurely`, `.registerPinnedTaskListener`, `.requestAppKeyboardShortcuts`, `.registerShortcutKey`, `.getCurrentImeTouchRegion`, `.overridePendingAppTransitionRemote`, `.setTaskTransitionSpec`?**
-  _High betweenness centrality (0.092) - this node is a cross-community bridge._
+  _High betweenness centrality (0.093) - this node is a cross-community bridge._
 - **Should `resources-jni.cpp` be split into smaller, more focused modules?**
   _Cohesion score 0.07596153846153846 - nodes in this community are weakly interconnected._
 - **Why does `Estado actual y punto de entrada` connect `Capa de compatibilidad APK propia sobre Linux` to `ready`, `ROADMAP.md`, `Historial conservado · no es el estado vigente`?**
