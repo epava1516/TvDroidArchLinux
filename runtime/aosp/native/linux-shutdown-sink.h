@@ -7,6 +7,7 @@
 #include <array>
 #include <algorithm>
 #include <string>
+#include <cstdio>
 namespace archtv::aosp {
 class LinuxShutdownSink {
  public:
@@ -23,6 +24,10 @@ class LinuxShutdownSink {
         android::init::trigger_shutdown=&Receive;
         return {};
     }
+    // Linux owns an explicit diagnostic STOP, not Android boot completion.
+    // Only the precise original apexd failure target may accompany that stop.
+    void ExpectApexdCancellation() { if(!failed_)expect_apex_cancel_=true; }
+    bool apexd_cancelled() const { return apex_cancelled_; }
     bool failed() const { return failed_; }
     std::string Frame() const {
         if(!failed_) return {};
@@ -35,6 +40,11 @@ class LinuxShutdownSink {
  private:
     static void Receive(const std::string& command) {
         auto& self=*installed_;
+        if(self.expect_apex_cancel_ && !self.failed_ && command=="reboot,apexd-failed") {
+            self.expect_apex_cancel_=false;self.apex_cancelled_=true;
+            std::fprintf(stderr,"LINUX_APEX_EXPLICIT_CANCELLATION original_request=reboot,apexd-failed NOT_ANDROID_CLEAN_EXIT\n");
+            return;
+        }
         // Keep the first failure, not a later consequence. Never execute the string.
         if(self.failed_) return;
         self.failed_=true;
@@ -44,6 +54,6 @@ class LinuxShutdownSink {
     inline static LinuxShutdownSink* installed_=nullptr;
     std::array<char,24> command_{};
     size_t size_=0;
-    bool failed_=false,oversize_=false;
+    bool failed_=false,oversize_=false,expect_apex_cancel_=false,apex_cancelled_=false;
 };
 }

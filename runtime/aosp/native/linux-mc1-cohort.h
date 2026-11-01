@@ -26,8 +26,8 @@ namespace archtv::aosp {
 class LinuxMc1Cohort {
  public:
     using Tick = std::function<bool()>;
-    LinuxMc1Cohort(const bool& stop,int expected_mode,bool hardware=false,bool graphics=false,bool surfaceflinger=false,bool selected=false)
-        : stop_(stop),expected_mode_(expected_mode),hardware_requested_(hardware),graphics_requested_(graphics),surfaceflinger_requested_(surfaceflinger),selected_requested_(selected) {}
+    LinuxMc1Cohort(const bool& stop,int expected_mode,bool hardware=false,bool graphics=false,bool surfaceflinger=false,bool selected=false,bool apex=false)
+        : stop_(stop),expected_mode_(expected_mode),hardware_requested_(hardware),graphics_requested_(graphics),surfaceflinger_requested_(surfaceflinger),selected_requested_(selected),apex_requested_(apex) {}
     android::base::Result<void> Start(const Tick& tick) {
         using namespace android::init;
         auto& services=ServiceList::GetInstance();
@@ -88,10 +88,12 @@ class LinuxMc1Cohort {
         int observed_mode=security_getenforce();
         if(observed_mode!=expected_mode_)return android::base::Error()<<"MC1 security mode changed during startup";
         std::fprintf(stderr,"MC1_ORIGINAL_CLIENT_EXIT0_REQUIRES_EXTERNAL_VERIFICATION enforcing=%d\n",observed_mode);
+        if(apex_requested_)return StartApex(tick);
         if(hardware_requested_)return StartHardware(tick);
         return {};
     }
-    bool healthy() const { return !manager_failed_ && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && bootanimation_->IsRunning())) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()); }
+    bool apex_cancelled() const { return apex_cancelled_; }
+    bool healthy() const { return !manager_failed_ && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && bootanimation_->IsRunning())) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning()); }
     android::base::Result<void> Close(const Tick& tick) {
         using namespace android::init;
         if(!active_) return {};
@@ -116,6 +118,7 @@ class LinuxMc1Cohort {
         selected_=nullptr;
         suspend_=nullptr;
         installd_=nullptr;
+        apexd_=nullptr;
         services.RemoveServiceIf([](const auto& service){return !service->IsRunning();});
         active_=false;
         int observed_mode=security_getenforce();
@@ -124,6 +127,58 @@ class LinuxMc1Cohort {
         return {};
     }
  private:
+    android::base::Result<void> StartApex(const Tick& tick) {
+        using namespace android::init;
+        auto& services=ServiceList::GetInstance();
+        if(!android::base::GetProperty("apexd.status","").empty())
+            return android::base::Error()<<"Refusing stale APEX status";
+        auto parser=CreateParser(ActionManager::GetInstance(),services);
+        auto parsed=parser.ParseConfigFile("/system/etc/init/apexd.rc");
+        if(!parsed.ok() || parser.parse_error_count()!=0)
+            return android::base::Error()<<"Original APEX service profile rejected";
+        apexd_=services.FindService("apexd");
+        if(!apexd_ || apexd_->args()!=std::vector<std::string>{"/system/bin/apexd"})
+            return android::base::Error()<<"Unexpected original apexd executable";
+        apexd_->AddReapCallback([this](const siginfo_t& info) {
+            std::fprintf(stderr,"APEX_DAEMON_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
+            if(closing_ && stop_ && info.si_code==CLD_KILLED && info.si_status==SIGKILL)apex_cancelled_=true;
+            if(!closing_)manager_failed_=true;
+        });
+        if(auto result=apexd_->Start();!result.ok())return result;
+        std::fprintf(stderr,"APEX_DAEMON_STARTED pid=%d NOT_REGISTERED\n",apexd_->pid());
+        if(auto result=Wait(tick,[]{return android::base::GetProperty("apexd.status","")=="activated";},100);!result.ok())return result;
+        // Original normal activation followed by original DE snapshot phase.
+        // Status and mount inventory are written exclusively by original apexd.
+        auto* snapshot=services.FindService("apexd-snapshotde");
+        if(!snapshot || snapshot->args()!=std::vector<std::string>{"/system/bin/apexd","--snapshotde"})
+            return android::base::Error()<<"Unexpected original APEX snapshot executable";
+        client_done_=false;client_ok_=false;
+        snapshot->AddReapCallback([this](const siginfo_t& info) {
+            client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;
+            std::fprintf(stderr,"APEX_SNAPSHOT_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
+        });
+        if(auto result=snapshot->Start();!result.ok())return result;
+        std::fprintf(stderr,"APEX_SNAPSHOT_STARTED pid=%d NOT_READY\n",snapshot->pid());
+        if(auto result=Wait(tick,[this]{return client_done_;},25);!result.ok())return result;
+        if(!client_ok_ || android::base::GetProperty("apexd.status","")!="ready")
+            return android::base::Error()<<"Original snapshot phase did not publish ready";
+        client_done_=false;client_ok_=false;
+        auto client=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","root","root","--",
+            "/system/bin/sh","-c",
+            "umask 077; /system/bin/service check apexservice > /data/local/tmp/archtv-mc1/apex-query.txt 2>&1; "
+            "/system/bin/cmd apexservice getActivePackages > /data/local/tmp/archtv-mc1/apex-active.txt 2>&1"});
+        if(!client.ok())return client.error();
+        auto* process=client->get();
+        process->AddReapCallback([this](const siginfo_t& info) {
+            client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;
+        });
+        services.AddService(std::move(*client));
+        if(auto result=process->ExecStart();!result.ok())return result;
+        if(auto result=Wait(tick,[this]{return client_done_;},10);!result.ok())return result;
+        if(!client_ok_)return android::base::Error()<<"Original APEX inventory client failed";
+        std::fprintf(stderr,"APEX_ORIGINAL_CLIENT_RETURNED REQUIRES_EXTERNAL_COMPLETE_INVENTORY_CHECK\n");
+        return {};
+    }
     android::base::Result<void> StartHardware(const Tick& tick) {
         using namespace android::init;
         auto& services=ServiceList::GetInstance();
@@ -359,6 +414,7 @@ class LinuxMc1Cohort {
     const bool graphics_requested_;
     const bool surfaceflinger_requested_;
     const bool selected_requested_;
+    const bool apex_requested_;
     android::init::Service* manager_=nullptr;
     android::init::Service* hardware_=nullptr;
     android::init::Service* allocator_=nullptr;
@@ -368,8 +424,10 @@ class LinuxMc1Cohort {
     android::init::Service* selected_=nullptr;
     android::init::Service* suspend_=nullptr;
     android::init::Service* installd_=nullptr;
+    android::init::Service* apexd_=nullptr;
     bool bootanimation_started_=false;
     bool missing_done_=false,missing_ok_=false;
+    bool apex_cancelled_=false;
     bool active_=false,closing_=false,manager_failed_=false,client_done_=false,client_ok_=false;
 };
 }

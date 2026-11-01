@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<apex-info-list>
+<apex-info moduleName="com.android.sdkext" modulePath="/system/apex/com.android.sdkext.apex" preinstalledModulePath="/system/apex/com.android.sdkext.apex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1230768000" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.nfcservices" modulePath="/data/apex/decompressed/com.android.nfcservices@361099999.decompressed.apex" preinstalledModulePath="/system/apex/com.android.nfcservices.capex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1793571510" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.i18n" modulePath="/system/apex/com.android.i18n.apex" preinstalledModulePath="/system/apex/com.android.i18n.apex" versionCode="1" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1230768000" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.healthfitness" modulePath="/system/apex/com.android.healthfitness.apex" preinstalledModulePath="/system/apex/com.android.healthfitness.apex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1230768000" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.scheduling" modulePath="/data/apex/decompressed/com.android.scheduling@361099999.decompressed.apex" preinstalledModulePath="/system/apex/com.android.scheduling.capex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1793571511" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.tethering" modulePath="/data/apex/decompressed/com.android.tethering@361099999.decompressed.apex" preinstalledModulePath="/system/apex/com.android.tethering.capex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1793571538" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.vndk.v32" modulePath="/system/system_ext/apex/com.android.vndk.v32.apex" preinstalledModulePath="/system/system_ext/apex/com.android.vndk.v32.apex" versionCode="1" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1230768000" provideSharedApexLibs="false" partition="SYSTEM_EXT">
+</apex-info>
+<apex-info moduleName="com.android.bt" modulePath="/data/apex/decompressed/com.android.bt@361099999.decompressed.apex" preinstalledModulePath="/system/apex/com.android.bt.capex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1793571561" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.ondevicepersonalization" modulePath="/data/apex/decompressed/com.android.ondevicepersonalization@361099999.decompressed.apex" preinstalledModulePath="/system/apex/com.android.ondevicepersonalization.capex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1793572323" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.crashrecovery" modulePath="/data/apex/decompressed/com.android.crashrecovery@361099999.decompressed.apex" preinstalledModulePath="/system/apex/com.android.crashrecovery.capex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1793572319" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.ipsec" modulePath="/data/apex/decompressed/com.android.ipsec@361099999.decompressed.apex" preinstalledModulePath="/system/apex/com.android.ipsec.capex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1793572319" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.virt" modulePath="/system/apex/com.android.virt.apex" preinstalledModulePath="/system/apex/com.android.virt.apex" versionCode="3" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1230768000" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.extservices" modulePath="/data/apex/decompressed/com.android.extservices@361099999.decompressed.apex" preinstalledModulePath="/system/apex/com.android.extservices.capex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1793572319" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.uwb" modulePath="/data/apex/decompressed/com.android.uwb@361099999.decompressed.apex" preinstalledModulePath="/system/apex/com.android.uwb.capex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1793572325" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.telephonycore" modulePath="/data/apex/decompressed/com.android.telephonycore@361099999.decompressed.apex" preinstalledModulePath="/system/apex/com.android.telephonycore.capex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1793572324" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.wifi" modulePath="/data/apex/decompressed/com.android.wifi@361099999.decompressed.apex" preinstalledModulePath="/system/apex/com.android.wifi.capex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1793572325" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.adbd" modulePath="/data/apex/decompressed/com.android.adbd@361099999.decompressed.apex" preinstalledModulePath="/system/apex/com.android.adbd.capex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1793572314" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.uprobestats" modulePath="/data/apex/decompressed/com.android.uprobestats@361099999.decompressed.apex" preinstalledModulePath="/system/apex/com.android.uprobestats.capex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1793572325" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.media.swcodec" modulePath="/data/apex/decompressed/com.android.media.swcodec@361099999.decompressed.apex" preinstalledModulePath="/system/apex/com.android.media.swcodec.capex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1793572321" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.vndk.v34" modulePath="/system/system_ext/apex/com.android.vndk.v34.apex" preinstalledModulePath="/system/system_ext/apex/com.android.vndk.v34.apex" versionCode="1" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1230768000" provideSharedApexLibs="false" partition="SYSTEM_EXT">
+</apex-info>
+<apex-info moduleName="com.android.appsearch" modulePath="/data/apex/decompressed/com.android.appsearch@361099999.decompressed.apex" preinstalledModulePath="/system/apex/com.android.appsearch.capex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1793572315" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.apex.cts.shim" modulePath="/system/apex/com.android.apex.cts.shim.apex" preinstalledModulePath="/system/apex/com.android.apex.cts.shim.apex" versionCode="1" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1230768000" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.profiling" modulePath="/data/apex/decompressed/com.android.profiling@361099999.decompressed.apex" preinstalledModulePath="/system/apex/com.android.profiling.capex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1793572324" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.neuralnetworks" modulePath="/data/apex/decompressed/com.android.neuralnetworks@361099999.decompressed.apex" preinstalledModulePath="/system/apex/com.android.neuralnetworks.capex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1793572322" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.cellbroadcast" modulePath="/data/apex/decompressed/com.android.cellbroadcast@361099999.decompressed.apex" preinstalledModulePath="/system/apex/com.android.cellbroadcast.capex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1793572318" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.vndk.v31" modulePath="/system/system_ext/apex/com.android.vndk.v31.apex" preinstalledModulePath="/system/system_ext/apex/com.android.vndk.v31.apex" versionCode="1" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1230768000" provideSharedApexLibs="false" partition="SYSTEM_EXT">
+</apex-info>
+<apex-info moduleName="com.android.adservices" modulePath="/data/apex/decompressed/com.android.adservices@361099999.decompressed.apex" preinstalledModulePath="/system/apex/com.android.adservices.capex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1793572315" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.devicelock" modulePath="/system/apex/com.android.devicelock.apex" preinstalledModulePath="/system/apex/com.android.devicelock.apex" versionCode="1" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1230768000" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.resolv" modulePath="/data/apex/decompressed/com.android.resolv@361099999.decompressed.apex" preinstalledModulePath="/system/apex/com.android.resolv.capex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1793572324" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.vndk.v33" modulePath="/system/system_ext/apex/com.android.vndk.v33.apex" preinstalledModulePath="/system/system_ext/apex/com.android.vndk.v33.apex" versionCode="1" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1230768000" provideSharedApexLibs="false" partition="SYSTEM_EXT">
+</apex-info>
+<apex-info moduleName="com.android.rkpd" modulePath="/system/apex/com.android.rkpd.apex" preinstalledModulePath="/system/apex/com.android.rkpd.apex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1230768000" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.os.statsd" modulePath="/system/apex/com.android.os.statsd.apex" preinstalledModulePath="/system/apex/com.android.os.statsd.apex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1230768000" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.media" modulePath="/data/apex/decompressed/com.android.media@361099999.decompressed.apex" preinstalledModulePath="/system/apex/com.android.media.capex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1793572320" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.mediaprovider" modulePath="/data/apex/decompressed/com.android.mediaprovider@361099999.decompressed.apex" preinstalledModulePath="/system/apex/com.android.mediaprovider.capex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1793572322" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.conscrypt" modulePath="/data/apex/decompressed/com.android.conscrypt@361099999.decompressed.apex" preinstalledModulePath="/system/apex/com.android.conscrypt.capex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1793572318" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.tzdata" modulePath="/system/apex/com.android.tzdata.apex" preinstalledModulePath="/system/apex/com.android.tzdata.apex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1230768000" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.compos" modulePath="/system/system_ext/apex/com.android.compos.apex" preinstalledModulePath="/system/system_ext/apex/com.android.compos.apex" versionCode="3" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1230768000" provideSharedApexLibs="false" partition="SYSTEM_EXT">
+</apex-info>
+<apex-info moduleName="com.android.permission" modulePath="/data/apex/decompressed/com.android.permission@361099999.decompressed.apex" preinstalledModulePath="/system/apex/com.android.permission.capex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1793572324" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.art" modulePath="/data/apex/decompressed/com.android.art@361099999.decompressed.apex" preinstalledModulePath="/system/apex/com.android.art.capex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1793572316" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.runtime" modulePath="/system/apex/com.android.runtime.apex" preinstalledModulePath="/system/apex/com.android.runtime.apex" versionCode="1" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1230768000" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+<apex-info moduleName="com.android.configinfrastructure" modulePath="/data/apex/decompressed/com.android.configinfrastructure@361099999.decompressed.apex" preinstalledModulePath="/system/apex/com.android.configinfrastructure.capex" versionCode="361099999" versionName="" isFactory="true" isActive="true" lastUpdateMillis="1793572318" provideSharedApexLibs="false" partition="SYSTEM">
+</apex-info>
+</apex-info-list>

@@ -76,11 +76,12 @@ static bool close_actions(Epoll& epoll) {
 }
 int main(int argc,char** argv) {
     android::base::InitLogging(argv,android::base::StderrLogger);
+    bool apex=argc==2 && std::strcmp(argv[1],"--mc1-apex-integration")==0;
     bool selected=argc==2 && std::strcmp(argv[1],"--mc3-display-integration")==0;
     bool surfaceflinger=selected || (argc==2 && std::strcmp(argv[1],"--mc3-surfaceflinger-integration")==0);
     bool graphics=surfaceflinger || (argc==2 && std::strcmp(argv[1],"--mc3-graphics-integration")==0);
     bool hardware=graphics || (argc==2 && std::strcmp(argv[1],"--mc1-hardware-integration")==0);
-    bool mc1=hardware || (argc==2 && std::strcmp(argv[1],"--mc1-integration")==0);
+    bool mc1=apex || hardware || (argc==2 && std::strcmp(argv[1],"--mc1-integration")==0);
     bool mac_integration=mc1 || (argc==2 && std::strcmp(argv[1],"--mac-integration")==0);
     bool diagnostic=mac_integration || (argc==2 && std::strcmp(argv[1],"--diagnostic")==0);
     if(argc!=1 && !diagnostic)return 64;
@@ -126,7 +127,7 @@ int main(int argc,char** argv) {
     // Native paths from original rootdir/init.environ.rc.in. The Linux
     // supervisor deliberately clears the host environment; these refer only
     // to actual private mounted roots. No Java classpath or boot dispatch.
-    if(surfaceflinger) {
+    if(surfaceflinger || apex) {
         for(const auto& entry: {std::pair{"ANDROID_ROOT","/system"},
                                std::pair{"ANDROID_ASSETS","/system/app"},
                                std::pair{"ANDROID_DATA","/data"}}) {
@@ -146,7 +147,7 @@ int main(int argc,char** argv) {
     auto setup=StartLinuxPropertyActions(&epoll);
     if(!setup.ok())return 70;
     bool stop=false,peer_gone=false,invalid=false;std::string input;
-    archtv::aosp::LinuxMc1Cohort cohort(stop,launch_enforcing,hardware,graphics,surfaceflinger,selected);
+    archtv::aosp::LinuxMc1Cohort cohort(stop,launch_enforcing,hardware,graphics,surfaceflinger,selected,apex);
     auto tick=[&]{return PollLinuxPropertyActions(&epoll,std::chrono::milliseconds(50)).ok() && children.healthy() && !shutdown.failed();};
     auto registered=epoll.RegisterHandler(control.get(),[&]{
         char bytes[64];
@@ -174,6 +175,8 @@ int main(int argc,char** argv) {
         if(__system_property_get("ro.persistent_properties.ready",phase)>0 && std::strcmp(phase,"true")==0)break;
     }
     healthy=healthy && !stop && std::strcmp(phase,"true")==0;
+    if(healthy && apex)healthy=android::base::SetProperty("apexd.config.boot_activation.threads","2") &&
+                              android::base::SetProperty("apexd.config.apex_file_open.threads","2");
     if(healthy && selected)healthy=admit_original_memfd();
     if(healthy && mc1) {
         for(const char* path:{"/dev/socket/property_service","/dev/socket/property_service_for_system"}) {
@@ -192,7 +195,12 @@ int main(int argc,char** argv) {
     }
     if(healthy)healthy=send_status(control.get(),diagnostic?"ARCHTV_NATIVE_V1 DIAGNOSTIC_STARTED\n":"ARCHTV_NATIVE_V1 STARTED\n");
     while(healthy && !stop)healthy=PollLinuxPropertyActions(&epoll,std::chrono::milliseconds(250)).ok() && children.healthy() && !shutdown.failed() && (!mc1 || cohort.healthy());
+    const bool intentional_apex_stop=apex && healthy && stop && !peer_gone && !invalid;
+    if(intentional_apex_stop)shutdown.ExpectApexdCancellation();
     auto cohort_closed=cohort.Close(tick);
+    if(intentional_apex_stop && (!shutdown.apexd_cancelled() || !cohort.apex_cancelled())) {
+        std::fprintf(stderr,"APEX_CANCEL_NOT_COLLECTED\n");healthy=false;
+    }
     if(!cohort_closed.ok())std::fprintf(stderr,"MC1_CLOSE_FAILED %s\n",cohort_closed.error().message().c_str());
     bool closed=close_actions(epoll) && cohort_closed.ok();init_socket.reset();
     auto unregistered=epoll.UnregisterHandler(control.get());

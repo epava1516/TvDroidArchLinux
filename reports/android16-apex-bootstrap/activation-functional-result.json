@@ -1,0 +1,1217 @@
+{
+  "utc": "2026-11-01T22:49:55.783284+00:00",
+  "unit": "archtv-apex-1793573369417811118",
+  "factory": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793573369744444455",
+  "outer_exit": 0,
+  "elapsed_seconds": 26.362265825271606,
+  "native_complete_inventory_verified": true,
+  "dm_cleanup": [
+    {
+      "name": "com.android.adbd",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "com.android.adservices",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "com.android.appsearch",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "com.android.art",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "com.android.bt",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "com.android.cellbroadcast",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "com.android.configinfrastructure",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "com.android.conscrypt",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "com.android.crashrecovery",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "com.android.extservices",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "com.android.ipsec",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "com.android.media",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "com.android.media.swcodec",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "com.android.mediaprovider",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "com.android.neuralnetworks",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "com.android.nfcservices",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "com.android.ondevicepersonalization",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "com.android.permission",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "com.android.profiling",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "com.android.resolv",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "com.android.scheduling",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "com.android.telephonycore",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "com.android.tethering",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "com.android.uprobestats",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "com.android.uwb",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "com.android.wifi",
+      "exit": 0,
+      "stderr": ""
+    }
+  ],
+  "devices": {
+    "allowed_dm_names": [
+      "com.android.adbd",
+      "com.android.adservices",
+      "com.android.apex.cts.shim",
+      "com.android.appsearch",
+      "com.android.art",
+      "com.android.bt",
+      "com.android.cellbroadcast",
+      "com.android.compos",
+      "com.android.configinfrastructure",
+      "com.android.conscrypt",
+      "com.android.crashrecovery",
+      "com.android.devicelock",
+      "com.android.extservices",
+      "com.android.healthfitness",
+      "com.android.i18n",
+      "com.android.ipsec",
+      "com.android.media",
+      "com.android.media.swcodec",
+      "com.android.mediaprovider",
+      "com.android.neuralnetworks",
+      "com.android.nfcservices",
+      "com.android.ondevicepersonalization",
+      "com.android.os.statsd",
+      "com.android.permission",
+      "com.android.profiling",
+      "com.android.resolv",
+      "com.android.rkpd",
+      "com.android.runtime",
+      "com.android.scheduling",
+      "com.android.sdkext",
+      "com.android.telephonycore",
+      "com.android.tethering",
+      "com.android.tzdata",
+      "com.android.uprobestats",
+      "com.android.uwb",
+      "com.android.virt",
+      "com.android.vndk.v31",
+      "com.android.vndk.v32",
+      "com.android.vndk.v33",
+      "com.android.vndk.v34",
+      "com.android.wifi"
+    ],
+    "loop_pool": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90
+    ],
+    "created_loop_ids": [
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90
+    ],
+    "occupied_factory_loops": [
+      0
+    ],
+    "dm_nodes": [
+      {
+        "name": "com.android.nfcservices",
+        "kernel_name": "dm-0",
+        "uuid": "2c0a0e63-fb3f-4ef4-ba16-128d58f54496",
+        "major": 252,
+        "minor": 0,
+        "label": "u:object_r:dm_device:s0"
+      },
+      {
+        "name": "com.android.scheduling",
+        "kernel_name": "dm-1",
+        "uuid": "80f740e2-3884-41b9-8eb8-3a393069f6f4",
+        "major": 252,
+        "minor": 1,
+        "label": "u:object_r:dm_device:s0"
+      },
+      {
+        "name": "com.android.tethering",
+        "kernel_name": "dm-2",
+        "uuid": "646ebfb1-d078-4291-b2db-d2144bc651f8",
+        "major": 252,
+        "minor": 2,
+        "label": "u:object_r:dm_device:s0"
+      },
+      {
+        "name": "com.android.bt",
+        "kernel_name": "dm-3",
+        "uuid": "708ea68c-d069-44a6-bf8e-6ddc7e863914",
+        "major": 252,
+        "minor": 3,
+        "label": "u:object_r:dm_device:s0"
+      },
+      {
+        "name": "com.android.ondevicepersonalization",
+        "kernel_name": "dm-4",
+        "uuid": "edb2b658-decb-48b4-a720-2c617d53d00c",
+        "major": 252,
+        "minor": 4,
+        "label": "u:object_r:dm_device:s0"
+      },
+      {
+        "name": "com.android.ipsec",
+        "kernel_name": "dm-6",
+        "uuid": "e12052d0-b820-43a9-9e49-902fb1a2192a",
+        "major": 252,
+        "minor": 6,
+        "label": "u:object_r:dm_device:s0"
+      },
+      {
+        "name": "com.android.crashrecovery",
+        "kernel_name": "dm-5",
+        "uuid": "bed2b1eb-4908-40d6-85b6-85d1cd75e812",
+        "major": 252,
+        "minor": 5,
+        "label": "u:object_r:dm_device:s0"
+      },
+      {
+        "name": "com.android.extservices",
+        "kernel_name": "dm-7",
+        "uuid": "9e057388-ff5a-428d-a6c2-48a92c4d2717",
+        "major": 252,
+        "minor": 7,
+        "label": "u:object_r:dm_device:s0"
+      },
+      {
+        "name": "com.android.uwb",
+        "kernel_name": "dm-8",
+        "uuid": "0040c349-b74c-4c9c-bb15-d6f459981443",
+        "major": 252,
+        "minor": 8,
+        "label": "u:object_r:dm_device:s0"
+      },
+      {
+        "name": "com.android.telephonycore",
+        "kernel_name": "dm-9",
+        "uuid": "808f6aa6-2ebb-469f-a14f-50b1ea037dc5",
+        "major": 252,
+        "minor": 9,
+        "label": "u:object_r:dm_device:s0"
+      },
+      {
+        "name": "com.android.wifi",
+        "kernel_name": "dm-10",
+        "uuid": "58f56833-c0b1-4e78-b952-81aa66a0e84c",
+        "major": 252,
+        "minor": 10,
+        "label": "u:object_r:dm_device:s0"
+      },
+      {
+        "name": "com.android.adbd",
+        "kernel_name": "dm-11",
+        "uuid": "a328a79f-157f-4bd6-b592-c403ffefec23",
+        "major": 252,
+        "minor": 11,
+        "label": "u:object_r:dm_device:s0"
+      },
+      {
+        "name": "com.android.uprobestats",
+        "kernel_name": "dm-12",
+        "uuid": "432c1dd5-3604-43fb-8849-97cdb6a05af0",
+        "major": 252,
+        "minor": 12,
+        "label": "u:object_r:dm_device:s0"
+      },
+      {
+        "name": "com.android.media.swcodec",
+        "kernel_name": "dm-13",
+        "uuid": "7190a983-2259-4e90-af20-21d6c58cd1bf",
+        "major": 252,
+        "minor": 13,
+        "label": "u:object_r:dm_device:s0"
+      },
+      {
+        "name": "com.android.appsearch",
+        "kernel_name": "dm-14",
+        "uuid": "459f5276-53cc-4e88-8d88-35cb1e8f5c70",
+        "major": 252,
+        "minor": 14,
+        "label": "u:object_r:dm_device:s0"
+      },
+      {
+        "name": "com.android.profiling",
+        "kernel_name": "dm-15",
+        "uuid": "4e360216-b56f-4a21-a89d-ef7492b23dfc",
+        "major": 252,
+        "minor": 15,
+        "label": "u:object_r:dm_device:s0"
+      },
+      {
+        "name": "com.android.neuralnetworks",
+        "kernel_name": "dm-16",
+        "uuid": "ae058b44-727b-4b50-9f00-d67f2d8ebef4",
+        "major": 252,
+        "minor": 16,
+        "label": "u:object_r:dm_device:s0"
+      },
+      {
+        "name": "com.android.cellbroadcast",
+        "kernel_name": "dm-17",
+        "uuid": "4dc966b1-0e5d-4d88-8072-adb01bd54a77",
+        "major": 252,
+        "minor": 17,
+        "label": "u:object_r:dm_device:s0"
+      },
+      {
+        "name": "com.android.adservices",
+        "kernel_name": "dm-18",
+        "uuid": "77e8bde8-49b1-43e7-98e1-5c20254c5a11",
+        "major": 252,
+        "minor": 18,
+        "label": "u:object_r:dm_device:s0"
+      },
+      {
+        "name": "com.android.resolv",
+        "kernel_name": "dm-19",
+        "uuid": "d0876864-873b-4abe-b3ac-42413412ad18",
+        "major": 252,
+        "minor": 19,
+        "label": "u:object_r:dm_device:s0"
+      },
+      {
+        "name": "com.android.media",
+        "kernel_name": "dm-20",
+        "uuid": "41f002a9-85d8-4681-a291-b412b47d608b",
+        "major": 252,
+        "minor": 20,
+        "label": "u:object_r:dm_device:s0"
+      },
+      {
+        "name": "com.android.mediaprovider",
+        "kernel_name": "dm-21",
+        "uuid": "def37402-f948-450b-812d-bea82d4e1ec6",
+        "major": 252,
+        "minor": 21,
+        "label": "u:object_r:dm_device:s0"
+      },
+      {
+        "name": "com.android.conscrypt",
+        "kernel_name": "dm-22",
+        "uuid": "e6720e61-0c3f-4179-ac78-6b7a859a45fa",
+        "major": 252,
+        "minor": 22,
+        "label": "u:object_r:dm_device:s0"
+      },
+      {
+        "name": "com.android.permission",
+        "kernel_name": "dm-23",
+        "uuid": "33b66d3b-3721-47a1-bf6c-5cff036e6796",
+        "major": 252,
+        "minor": 23,
+        "label": "u:object_r:dm_device:s0"
+      },
+      {
+        "name": "com.android.art",
+        "kernel_name": "dm-24",
+        "uuid": "a1fe8102-8844-4629-b71c-7e9db4d65dc3",
+        "major": 252,
+        "minor": 24,
+        "label": "u:object_r:dm_device:s0"
+      },
+      {
+        "name": "com.android.configinfrastructure",
+        "kernel_name": "dm-25",
+        "uuid": "dd88d6bd-ed8e-4e0d-808d-a70fba7cf8e9",
+        "major": 252,
+        "minor": 25,
+        "label": "u:object_r:dm_device:s0"
+      }
+    ],
+    "scope": "Real Linux devices; trusted diagnostic only, not MAC or APK acceptance",
+    "loop_controls": [
+      {
+        "id": 1,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 2,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 3,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 4,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 5,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 6,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 7,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 8,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 9,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 10,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 11,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 12,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 13,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 14,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 15,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 16,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 17,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 18,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 19,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 20,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 21,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 22,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 23,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 24,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 25,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 26,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 27,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 28,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 29,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 30,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 31,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 32,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 33,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 34,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 35,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 36,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 37,
+        "previous": "2560",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 38,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 39,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 40,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 41,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 42,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 43,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 44,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 45,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 46,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 47,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 48,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 49,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 50,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 51,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 52,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 53,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 54,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 55,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 56,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 57,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 58,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 59,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 60,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 61,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 62,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 63,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 64,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 65,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 66,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 67,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 68,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 69,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 70,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 71,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 72,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 73,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 74,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 75,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 76,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 77,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 78,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 79,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 80,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 81,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 82,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 83,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 84,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 85,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 86,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 87,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 88,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 89,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      },
+      {
+        "id": 90,
+        "previous": "128",
+        "attribute": "queue/read_ahead_kb"
+      }
+    ]
+  },
+  "loop_cleanup": [
+    {
+      "id": 90,
+      "removed": true
+    },
+    {
+      "id": 89,
+      "removed": true
+    },
+    {
+      "id": 88,
+      "removed": true
+    },
+    {
+      "id": 87,
+      "removed": true
+    },
+    {
+      "id": 86,
+      "removed": true
+    },
+    {
+      "id": 85,
+      "removed": true
+    },
+    {
+      "id": 84,
+      "removed": true
+    },
+    {
+      "id": 83,
+      "removed": true
+    },
+    {
+      "id": 82,
+      "removed": true
+    },
+    {
+      "id": 81,
+      "removed": true
+    },
+    {
+      "id": 80,
+      "removed": true
+    },
+    {
+      "id": 79,
+      "removed": true
+    },
+    {
+      "id": 78,
+      "removed": true
+    },
+    {
+      "id": 77,
+      "removed": true
+    },
+    {
+      "id": 76,
+      "removed": true
+    },
+    {
+      "id": 75,
+      "removed": true
+    },
+    {
+      "id": 74,
+      "removed": true
+    },
+    {
+      "id": 73,
+      "removed": true
+    },
+    {
+      "id": 72,
+      "removed": true
+    },
+    {
+      "id": 71,
+      "removed": true
+    },
+    {
+      "id": 70,
+      "removed": true
+    },
+    {
+      "id": 69,
+      "removed": true
+    },
+    {
+      "id": 68,
+      "removed": true
+    },
+    {
+      "id": 67,
+      "removed": true
+    },
+    {
+      "id": 66,
+      "removed": true
+    },
+    {
+      "id": 65,
+      "removed": true
+    },
+    {
+      "id": 64,
+      "removed": true
+    },
+    {
+      "id": 63,
+      "removed": true
+    },
+    {
+      "id": 62,
+      "removed": true
+    },
+    {
+      "id": 61,
+      "removed": true
+    },
+    {
+      "id": 60,
+      "removed": true
+    },
+    {
+      "id": 59,
+      "removed": true
+    },
+    {
+      "id": 58,
+      "removed": true
+    },
+    {
+      "id": 57,
+      "removed": true
+    },
+    {
+      "id": 56,
+      "removed": true
+    },
+    {
+      "id": 55,
+      "removed": true
+    },
+    {
+      "id": 54,
+      "removed": true
+    },
+    {
+      "id": 53,
+      "removed": true
+    },
+    {
+      "id": 52,
+      "removed": true
+    },
+    {
+      "id": 51,
+      "removed": true
+    },
+    {
+      "id": 50,
+      "removed": true
+    },
+    {
+      "id": 49,
+      "removed": true
+    },
+    {
+      "id": 48,
+      "removed": true
+    },
+    {
+      "id": 47,
+      "removed": true
+    },
+    {
+      "id": 46,
+      "removed": true
+    },
+    {
+      "id": 45,
+      "removed": true
+    },
+    {
+      "id": 44,
+      "removed": true
+    },
+    {
+      "id": 43,
+      "removed": true
+    },
+    {
+      "id": 42,
+      "removed": true
+    },
+    {
+      "id": 41,
+      "removed": true
+    },
+    {
+      "id": 40,
+      "removed": true
+    },
+    {
+      "id": 39,
+      "removed": true
+    },
+    {
+      "id": 38,
+      "removed": true
+    }
+  ],
+  "final_dm": [],
+  "final_dm_raw": "No devices found\n",
+  "active_loops": "",
+  "log_sha256": "70c5629b9c28374809f1da73dfdb834bd8b5b319ee13b168722f940533f41464",
+  "scope": "Execution evidence, not APK or MAC acceptance; inspect native results and errors."
+}

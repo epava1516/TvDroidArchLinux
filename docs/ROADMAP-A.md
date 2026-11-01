@@ -1,6 +1,13 @@
 # Roadmap A · plataforma APK general sobre Linux
 
-## Vigente · activación original APEX aún no aceptada
+## Vigente · activación APEX original verificada
+
+[Hito y límites](../reports/android16-apex-bootstrap/activation-functional.json): `apexd` original activó **41 módulos** del GSI; inventario Binder y XML originales coinciden en nombres/versiones, con montajes versionados y alias reales. Identidades/capacidades/NNP observados; cohorte cerrada y sin loops ni tablas dm activos. La caché conserva archivos `original_apex` intactos; el daemon revalida y genera su propio inventario. El STOP explícito Linux se registra como cancelación: el daemon recibe SIGKILL y solicita su `reboot_on_failure` original, sin ejecutar ese reinicio ni simular boot completo. No equivale a salida limpia Android.
+
+Siguiente: integrar esta activación con el bootstrap original de ART manager/AccessChecking, AMS/ATMS y DomainVerification/PMS, conservando gráficos/Installer ya probados. Derivar classpath mediante herramienta original sobre los 41 módulos, sin inventario ni permisos sintéticos. Markor aún no tiene ninguna etapa APK aceptada. SELinux sigue permisivo con política cargada; R1-MAC, ARM/GMS/DRM abiertos por separado.
+
+
+## Histórico · primer intento APEX, superado por el hito anterior
 
 [Resultado real y decisión](../reports/android16-apex-bootstrap/activation-negative.json): apexd original ejecutó su arranque y empezó a descomprimir; el límite100s se agota antes de disponer del inventario. Limpieza verificada, sin tablas dm o loops activos. El GSI contiene **41 módulos**, incluyendo5 de `system_ext`; la selección derivada histórica sólo cubría36. [Expectativas de archivos originales](../reports/android16-apex-bootstrap/complete-inputs.json) son metadatos de prueba, no inventario de runtime. Se exige respuesta original completa y montajes reales; `ready` o exit0 no bastan.
 

@@ -1,0 +1,37 @@
+{
+  "utc": "2026-11-01T22:50:53.943205+00:00",
+  "status": "Original activation, full inventory and controlled Linux cancellation verified; not APK or MAC acceptance",
+  "checkpoint": "/home/tv/recuperacion-archtv/20261101T224928Z-apex-activation",
+  "base_commit": "208532bfd0c355757cf56ac3aee7c00f88ab61e3",
+  "kernel": "6.18.59-archtv-aosp16-1",
+  "boot_id": "4e18faf8-2b46-42e4-a6b2-269c34326b68",
+  "payload_sha256": "b98b11a4c728189d1039ba08e85b5d2a4024e9d317072057a5d191e94d91e65e",
+  "apexd_sha256": "533764534569f94c99183d6874abc9c8109aea995ad3d4f6df727ccaf96b06d3",
+  "run_log_sha256": "70c5629b9c28374809f1da73dfdb834bd8b5b319ee13b168722f940533f41464",
+  "modules": 41,
+  "checks": [
+    "Original daemon validates/activates original archives; seeded compressed cache contains unchanged original_apex ZIP entries",
+    "Original root Binder client inventory matches all 41 exact names/versions",
+    "Original XML active names/versions match all 41",
+    "Every expected versioned and unversioned APEX path is an actual mount",
+    "Observed manager/apexd/snapshot identities, permitted/effective capabilities and NNP match RC",
+    "Native and outer exit 0; all workers collected; no loops or dm tables remain"
+  ],
+  "cancellation": "Linux supervisor explicit STOP causes original SIGKILL and reboot,apexd-failed request. Only exact request on healthy explicit stop is classified as cancellation, and exact daemon SIGKILL reap must also be observed. Not an Android graceful exit or boot completion. Other shutdowns remain failures.",
+  "limits": [
+    "SELinux permissive policyload1; R1-MAC open, Linux filesystem label association denials remain",
+    "Preinstalled uncompressed APEX inherits Android verified-system trust assumption; Linux GSI trust chain not certified",
+    "Root diagnostic Binder caller does not prove system_server or APK permissions",
+    "No vold checkpoint/FBE/update/rollback acceptance",
+    "No full Android boot; no APK installation or launch accepted",
+    "ARM/GMS/DRM remain independent open axes"
+  ],
+  "next": "Integrate genuine APEX activation before selected original ART manager/AccessChecking, AMS/ATMS, DomainVerification/PMS; derive classpath from original tool and full activated modules.",
+  "artifacts": {
+    "activation-functional-native.json": "478f7f0c6e97ffe159de5122384ac02f25676f661573fabd953e32593d1b8f0c",
+    "activation-functional-result.json": "2f265b39d3957cbb94cec171faa11ffbd64c4c55500bfc2b7d09e8397e1a74a1",
+    "original-active-packages.txt": "82c2778a8de20de07d40ef75378185b198814bee2ce48f1203cff2d19b6abf4c",
+    "original-apex-info-list.xml": "ade1c7df4fc77c8c21f722c2633f38652d9fe3b3b5f8edd322847308736bf9b3",
+    "complete-inputs.json": "181fc5b0987f23ff7ac509dbe8981411e3f74feefd8d637577fdad0b751fe69b"
+  }
+}
