@@ -1,0 +1,24 @@
+{
+  "utc": "2026-11-01T11:44:46.737775+00:00",
+  "boot_id": "4409f88d-366a-4ccf-80a0-e143452b78f5",
+  "tool_session": 38952,
+  "observed_live_process": {
+    "host_pid": 39412,
+    "host_pgid": 39412,
+    "namespace": "pid:[4026532298]",
+    "nspid": [
+      "39412",
+      "16"
+    ],
+    "argv": [
+      "make",
+      "-C",
+      "/home/tv/.cache/archtv/kernel-aosp16-1/source-1/linux-6.18.59",
+      "O=/home/tv/.cache/archtv/kernel-aosp16-1/build-1",
+      "-j2",
+      "bzImage",
+      "modules"
+    ]
+  },
+  "scope": "Time-bound build process evidence. Revalidate boot ID/PID namespace/argv before use; not kernel availability."
+}

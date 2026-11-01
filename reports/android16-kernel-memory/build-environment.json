@@ -1,0 +1,45 @@
+{
+  "packages": [
+    "bc 1.08.2-1",
+    "pahole 1:1.32-1",
+    "rust-bindgen 0.73.2-1",
+    "rust-src 1:1.99.1-1",
+    "gcc 16.2.1+r23+gd564253eb6c8-1",
+    "clang 23.1.4-1",
+    "rust 1:1.99.1-1",
+    "make 4.4.1-3",
+    "linux-lts 6.18.59-1"
+  ],
+  "base_config_sha256": "8eb6bd920a3f5226b711c00dd4246d9feefb7ed354c7101da8ec7a885f3a630a",
+  "build_config_sha256": "78731701d6d329f1f2710487dc2a89993694c53ac6c80c579b4d55dafa2a9ae3",
+  "object_sha256": "06d5e83e29573bdb58c03b35dd5586b6877c1f90f4483fb1cfd0f591866a5005",
+  "config_changes": {
+    "CONFIG_LOCALVERSION_AUTO": [
+      "y",
+      "n"
+    ],
+    "CONFIG_MEMFD_ASHMEM_SHIM": [
+      null,
+      "y"
+    ],
+    "CONFIG_LOCALVERSION": [
+      "\"\"",
+      "\"-archtv-aosp16-1\""
+    ]
+  },
+  "scope": "Host tools and compile input evidence only; not a booted kernel or ABI/service/APK acceptance",
+  "installer_log_evidence": [
+    {
+      "raw_path": "/home/tv/.cache/archtv/kernel-aosp16-1/build-dependencies-install.log",
+      "raw_sha256": "af4af29e9cd6888704cfaade7f02a314d09b0db5d4d977f567d87a01f819df68",
+      "committed_preview": "build-dependencies-install.log",
+      "normalization": "Trailing whitespace removed from text preview only; raw original preserved unchanged."
+    },
+    {
+      "raw_path": "/home/tv/.cache/archtv/kernel-aosp16-1/rust-source-install.log",
+      "raw_sha256": "9c6b6f49a8244c052a616c607898de7621991ba7d9483184a9894339f0ff96bb",
+      "committed_preview": "rust-source-install.log",
+      "normalization": "Trailing whitespace removed from text preview only; raw original preserved unchanged."
+    }
+  ]
+}

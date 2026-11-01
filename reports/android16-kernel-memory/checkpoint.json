@@ -1,0 +1,21 @@
+{
+  "utc": "2026-11-01T11:38:35.200898+00:00",
+  "goal": "Full unmodified APK runtime Linux/Rust/Smithay without Waydroid/full Android; Markor first, no compile/fixture acceptance",
+  "pending": "Kernel preparation/build helpers and evidence are own new work, separate from preserved historical six files and GUI helper experiments. No discard or mixing.",
+  "actual_host": "LTS6.18.59-1, permissive/policyload1; selected-service tests cleaned, no runtime services/units/loops,VT1 restored. No kernel installed or reboot programmed.",
+  "handles": {
+    "object": "13745 terminal0; original ACK object compiled, original Rust/SELinux/Binder flags kept",
+    "full_kernel": "38952 launched and confirmed live; do not restart on observation timeout or stale state files. Use same tool handle and actual processes/logs.",
+    "packages": "33673/63097 terminal0; bc,pahole,rust-bindgen,rust-src installed and versions recorded",
+    "crypto": "52463/23292/43455 terminal0; own GPG helper daemons stopped"
+  },
+  "source": "/home/tv/.cache/archtv/kernel-aosp16-1/source-1/linux-6.18.59",
+  "build": "/home/tv/.cache/archtv/kernel-aosp16-1/build-1",
+  "full_build_state": "/home/tv/.cache/archtv/kernel-aosp16-1/build-1/full-build.json",
+  "full_build_log": "/home/tv/.cache/archtv/kernel-aosp16-1/build-1/full-build.log",
+  "kernel_candidate": "6.18.59-archtv-aosp16-1; three config changes only: localversion,localversion_auto,memfd_ashmem_shim",
+  "next": "Poll full build; preserve real failures. On successful image+modules, verify release/dependencies/artifacts, prepare separate install/update and exact rollback/checkpoint retaining stock entries; only then install/one-shot boot if prepared. Recheck kernel/SELinux/processes, run positive/negative memory ABI and original libcutils guard. Configure sys.use_memfd via original init-owned property path only after real support, then retry original Power/DMS and complete Markor installation/launch/input/note/persistence/close/reopen.",
+  "limits": "Original ACK shim limitations read/exec/purge/unpin, legacy char-device/compat32 remain open; no full memory/security or APK claim. ARM/GMS/DRM separate.",
+  "base_commit": "b70cbc1 pushed",
+  "note": "Captured before the following WIP commit; Git/processes/artifacts remain authoritative when resuming."
+}

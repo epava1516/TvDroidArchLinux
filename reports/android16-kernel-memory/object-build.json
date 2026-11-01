@@ -1,0 +1,40 @@
+{
+  "scope": "Original ACK shim compile prerequisite only; not kernel link/install/boot, memory runtime, service or APK acceptance",
+  "commands": [
+    {
+      "argv": [
+        "nice",
+        "-n",
+        "10",
+        "make",
+        "-C",
+        "/home/tv/.cache/archtv/kernel-aosp16-1/source-1/linux-6.18.59",
+        "O=/home/tv/.cache/archtv/kernel-aosp16-1/build-1",
+        "-j2",
+        "olddefconfig"
+      ],
+      "exit": 0,
+      "seconds": 19.225968120998004,
+      "log": "/home/tv/.cache/archtv/kernel-aosp16-1/build-1/olddefconfig.log"
+    },
+    {
+      "argv": [
+        "nice",
+        "-n",
+        "10",
+        "make",
+        "-C",
+        "/home/tv/.cache/archtv/kernel-aosp16-1/source-1/linux-6.18.59",
+        "O=/home/tv/.cache/archtv/kernel-aosp16-1/build-1",
+        "-j2",
+        "mm/memfd-ashmem-shim.o"
+      ],
+      "exit": 0,
+      "seconds": 146.98748414200236,
+      "log": "/home/tv/.cache/archtv/kernel-aosp16-1/build-1/mm__memfd-ashmem-shim.o.log"
+    }
+  ],
+  "source": "/home/tv/.cache/archtv/kernel-aosp16-1/source-1/linux-6.18.59",
+  "build": "/home/tv/.cache/archtv/kernel-aosp16-1/build-1",
+  "active": null
+}

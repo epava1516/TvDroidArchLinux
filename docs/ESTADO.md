@@ -1,5 +1,9 @@
 # Estado actual y punto de entrada
 
+## En curso · kernel separado para memoria AOSP
+
+[Checkpoint de compilación](../reports/android16-kernel-memory/checkpoint.json): el shim ACK original compila contra Linux6.18.59 con Binder Rust/SELinux preservados; [sólo tres ajustes de configuración](../reports/android16-kernel-memory/build-environment.json), incluido el nombre independiente. Compilación completa de imagen/módulos en marcha, dos trabajos, [proceso observado](../reports/android16-kernel-memory/live-build-observation.json). **No kernel instalado/arrancado ni ABI en ejecución aceptada**. Mantener las entradas originales; antes de instalar/reiniciar preparar recuperación nueva con artefactos exactos. Después memoria real→Power/Display→Markor, sin cerrar etapas por compilar.
+
 ## Bloqueo vigente · ABI ashmem/memfd del kernel
 
 [Integración y resultados](../reports/android16-selected-display/findings.json): ART/app_process y classloader original compartido ya ejecutan el arranque seleccionado de servicios. DisplayManager requiere PowerManager; su memoria compartida real falla por ashmem ausente. [Prueba fuera del sandbox](../reports/android16-selected-display/linux-memfd-host-probe.json): memfd y sellos funcionan, `ASHMEM_GET_SIZE` devuelve ENOTTY. No basta activar una propiedad ni inventar nonces. Se prepara el shim original ACK sobre fuentes LTS6.18.59 [con firma verificada](../reports/android16-selected-display/kernel-source-verification.json), aún sin kernel compilado/instalado/arrancado. [Checkpoint vigente](../reports/android16-selected-display/checkpoint.json). Anfitrión limpio y política permisiva sin cambios. Markor sigue sin etapas probadas.

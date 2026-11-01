@@ -1,5 +1,9 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+## Candidato de kernel · compilación sin activar
+
+[Preparación fuente y límites](../reports/android16-kernel-memory/preparation.json), [parche original integrado](../reports/android16-kernel-memory/linux-6.18.59-ack-ashmem.patch) y [objeto compilado](../reports/android16-kernel-memory/object-build.json): no cambian kernel activo ni aceptación R1. Completar imagen+módulos con versión propia, comprobar/instalar de forma separada preservando rollback, guardar checkpoint antes de arranque. Sólo tras ABI/protecciones reales positivas configurar memoria original y continuar el recorrido de servicios/Markor. No reutilizar módulos stock bajo un vermagic distinto.
+
 ## Puerta inmediata · memoria compartida antes de Power/Display
 
 [Siete ejecuciones reales](../reports/android16-selected-display/findings.json) reducen la incertidumbre: classloader/IPC original ya ejecutan Java de servicios; el bloqueo inmediato es ashmem/memfd del kernel. Orden: preparar shim ACK original en LTS independiente → compilar/comprobar candidato y recuperación → instalar/arrancar sólo tras verificaciones → pruebas positivas/negativas de memoria real → configurar uso memfd mediante propiedad original cuando el guard real pase → Power/SystemSuspend/DisplayManager con consultas originales de display0 → instalación/lanzamiento original de Markor. No eludir el guard, devolver nonces falsos ni convertir inspectores/constructores en aceptación. Probar límites read/exec/purge/legacy y actualizar el kernel de forma reproducible; MAC/zygote y recorridos completos permanecen abiertos.

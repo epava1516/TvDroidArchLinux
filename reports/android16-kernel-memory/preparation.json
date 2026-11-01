@@ -1,0 +1,55 @@
+{
+  "scope": "Offline source adaptation only; not a compiled/installed/booted or accepted kernel",
+  "linux_source": "/home/tv/.cache/archtv/kernel-aosp16-1/source-1/linux-6.18.59",
+  "linux_verification": {
+    "version": "6.18.59",
+    "archive_sha256": "53a55ac9863a5547e292b8e381d4e4c2240dd1127d5428a7c44dbc550be23963",
+    "developer_signature_valid": true,
+    "fingerprint": "647F28654894E3BD457199BE38DBBDC86092693E",
+    "key_origin": "kernel.org WKD over TLS, exact fingerprint independently matched official kernel.org/signature.html",
+    "gpg_ownertrust": "undefined; not changed or claimed as web-of-trust certification",
+    "source_url": "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.18.59.tar.xz",
+    "state": "Source preparation only; no built/installed/booted custom kernel"
+  },
+  "ack_commit": "18290a0bb038a4db4d097f66a9c6bd6a14e1f320",
+  "ack_origin": "https://android.googlesource.com/kernel/common/",
+  "patch_sha256": "f0008dfef3cc0aad1fdfdcfb7aeade4633a0e19d9a09de779dbac7fc176b6fa2",
+  "files": {
+    "mm/memfd-ashmem-shim.c": {
+      "before_sha256": null,
+      "after_sha256": "c40e9d5a3feeea31fc2a21a31591803909c1599a9f18fa18d8b9536e8bfebad0",
+      "original_ACK_body_unchanged": true
+    },
+    "mm/memfd-ashmem-shim.h": {
+      "before_sha256": null,
+      "after_sha256": "493f414cf379fb78167d6ffea191511c6391e57bb2232ffa7b2c14e0a050de66",
+      "original_ACK_body_unchanged": true
+    },
+    "mm/memfd-ashmem-shim-internal.h": {
+      "before_sha256": null,
+      "after_sha256": "83ff01d33eca8ec64a9df8b905da18261f0cc51231f7ebfdd26b3e876a5a2850",
+      "original_ACK_body_unchanged": true
+    },
+    "mm/shmem.c": {
+      "before_sha256": "7266a5bf03d318f1c422b5ea02730ebdee49ff88ba07c8c7d8355051060512bc",
+      "after_sha256": "d164d7b98a43533d4655440adad3484227b497278682b54c945657733293d496",
+      "original_ACK_body_unchanged": false
+    },
+    "mm/Makefile": {
+      "before_sha256": "15dac05399b94fe5575d800ae4421e6991453c9ce82c6a6ab0b9728e49b57907",
+      "after_sha256": "700aed3ecbcfa4e780d106806f91665187cfa005143588caafc718f1468ff1aa",
+      "original_ACK_body_unchanged": false
+    },
+    "mm/Kconfig": {
+      "before_sha256": "3d71252af5a4fb412a06ae25735e4d8a8f4438441a5f51ca7b2e910399ba1df6",
+      "after_sha256": "23e631b0d7f69d5e770f621d46ce37185a287fe99a40899c87c4e2219674b10d",
+      "original_ACK_body_unchanged": false
+    }
+  },
+  "limits": [
+    "Original GPL-2.0 shim/headers preserved unchanged; only Kbuild/Kconfig/shmem wiring adapted.",
+    "Upstream read/exec removal and purge/unpin limitations remain; not full ashmem ABI/security acceptance.",
+    "No legacy /dev/ashmem character device or proven compat32/ARM support.",
+    "Require original memfd guard and shared-memory positive/negative runtime tests before admission."
+  ]
+}
