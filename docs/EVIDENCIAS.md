@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+[Classpath original completo](../reports/android16-package-bootstrap/original-classpath.json): `derive_classpath` ejecutado tras la activación real de41 APEX; incluye `service-compos.jar`, ausente en el perfil anterior. Todos los JAR emitidos existen. Esto corrige la entrada para la siguiente integración ART/permisos/actividad; no prueba aún carga de clases ni servicios Java.
+
 ## Vigente · activación APEX original verificada
 
 [Hito y límites](../reports/android16-apex-bootstrap/activation-functional.json): `apexd` original activó **41 módulos** del GSI; inventario Binder y XML originales coinciden en nombres/versiones, con montajes versionados y alias reales. Identidades/capacidades/NNP observados; cohorte cerrada y sin loops ni tablas dm activos. La caché conserva archivos `original_apex` intactos; el daemon revalida y genera su propio inventario. El STOP explícito Linux se registra como cancelación: el daemon recibe SIGKILL y solicita su `reboot_on_failure` original, sin ejecutar ese reinicio ni simular boot completo. No equivale a salida limpia Android.

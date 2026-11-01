@@ -166,7 +166,8 @@ class LinuxMc1Cohort {
         auto client=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","root","root","--",
             "/system/bin/sh","-c",
             "umask 077; /system/bin/service check apexservice > /data/local/tmp/archtv-mc1/apex-query.txt 2>&1; "
-            "/system/bin/cmd apexservice getActivePackages > /data/local/tmp/archtv-mc1/apex-active.txt 2>&1"});
+            "/system/bin/cmd apexservice getActivePackages > /data/local/tmp/archtv-mc1/apex-active.txt 2>&1 && "
+            "/apex/com.android.sdkext/bin/derive_classpath /data/local/tmp/archtv-mc1/classpath"});
         if(!client.ok())return client.error();
         auto* process=client->get();
         process->AddReapCallback([this](const siginfo_t& info) {

@@ -47,7 +47,7 @@ text=text.replace('len(observed_logs)<256','len(observed_logs)<512')
 text=text.replace("log_stop=True\n", "monitor.terminate();monitor.wait(timeout=3);monitor_log.close()\nlog_stop=True\n",1)
 boundary=text.index("\nif p.returncode!=0:\n failed_output=")
 text=text[:boundary]+'''
-for name in ['apex-query.txt','apex-active.txt']:
+for name in ['apex-query.txt','apex-active.txt','classpath']:
  result=Path('/data/local/tmp/archtv-mc1')/name
  if result.is_file():
   info=result.lstat();assert stat.S_ISREG(info.st_mode) and info.st_uid==0 and info.st_gid==0 and stat.S_IMODE(info.st_mode)==0o600 and info.st_size<=262144
@@ -81,6 +81,17 @@ assert from_xml==expected,{'xml':from_xml,'expected':expected}
 for name,version in expected.items():
  assert Path('/apex/'+name+'@'+str(version)).is_mount(),name
  assert Path('/apex/'+name).is_mount(),name
+classpath=Path('/data/local/tmp/archtv-mc1/classpath').read_text()
+classpath_names=set()
+for line in classpath.splitlines():
+ export,name,value=line.split(' ',2)
+ assert export=='export' and name in ['BOOTCLASSPATH','DEX2OATBOOTCLASSPATH','SYSTEMSERVERCLASSPATH','STANDALONE_SYSTEMSERVER_JARS']
+ assert name not in classpath_names
+ classpath_names.add(name)
+ for path in value.split(':'):
+  assert path.startswith(('/apex/','/system/')) and Path(path).is_file(),path
+assert len(classpath_names)==4
+print('APEX_ORIGINAL_CLASSPATH_PATHS_VERIFIED NOT_CLASSLOADER_OR_APK_ACCEPTANCE',flush=True)
 print('APEX_ORIGINAL_COMPLETE_INVENTORY_VERIFIED modules='+str(len(actual))+' NOT_APK_OR_MAC_ACCEPTANCE',flush=True)
 '''
 compile(text,'<materialized APEX factory>','exec')

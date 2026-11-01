@@ -1,7 +1,7 @@
 # Graph Report - apex-functional-milestone  (2026-11-01)
 
 ## Corpus Check
-- 328 files · ~289,541 words
+- 328 files · ~289,709 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 36 file(s) not represented in the graph (top: .cil 9, .xml 8, .patch 7)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `208532bf`
+- Built from commit: `64fd398c`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -759,7 +759,7 @@ Nodes (12): BootState, Completed, Starting, Unknown, RuntimeStatus, SessionState
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `ready()` connect `ready` to `re`, `verify_wayland_resize.py`?**
-  _High betweenness centrality (0.166) - this node is a cross-community bridge._
+  _High betweenness centrality (0.165) - this node is a cross-community bridge._
 - **What connects `archtv-aosp-linux`, `archtv-apk-host`, `archtv-compositor` to the rest of the system?**
   _188 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `worker.rs` be split into smaller, more focused modules?**
@@ -769,6 +769,6 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `resources-jni.cpp` be split into smaller, more focused modules?**
   _Cohesion score 0.13535353535353536 - nodes in this community are weakly interconnected._
 - **Why does `Estado actual y punto de entrada` connect `Capa de compatibilidad APK propia sobre Linux` to `ready`, `ROADMAP.md`, `Historial conservado · no es el estado vigente`?**
-  _High betweenness centrality (0.072) - this node is a cross-community bridge._
+  _High betweenness centrality (0.073) - this node is a cross-community bridge._
 - **Should `Client` be split into smaller, more focused modules?**
   _Cohesion score 0.0818452380952381 - nodes in this community are weakly interconnected._
