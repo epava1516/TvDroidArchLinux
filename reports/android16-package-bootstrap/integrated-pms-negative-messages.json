@@ -1,0 +1,191 @@
+[
+  {
+    "tag": "System.err",
+    "message": "PACKAGES_ORIGINAL_ART_MODULE_INITIALIZED NOT_ARTD_AVAILABILITY",
+    "actual_sender_pid_uid_gid": [
+      411,
+      1000,
+      1000
+    ]
+  },
+  {
+    "tag": "System.err",
+    "message": "SELECTED_ORIGINAL_INSTALLER_INVALIDATE_RETURNED NOT_APK_INSTALLATION",
+    "actual_sender_pid_uid_gid": [
+      411,
+      1000,
+      1000
+    ]
+  },
+  {
+    "tag": "System.err",
+    "message": "PACKAGES_ORIGINAL_ACCESS_CHECKING_STARTED NOT_PERMISSION_ACCEPTANCE",
+    "actual_sender_pid_uid_gid": [
+      411,
+      1000,
+      1000
+    ]
+  },
+  {
+    "tag": "System.err",
+    "message": "PACKAGES_ORIGINAL_AMS_ATMS_STARTED NOT_APP_LAUNCH",
+    "actual_sender_pid_uid_gid": [
+      411,
+      1000,
+      1000
+    ]
+  },
+  {
+    "tag": "System.err",
+    "message": "SELECTED_ORIGINAL_DISPLAY_PHASE_RETURNED requires_original_IPC_verification",
+    "actual_sender_pid_uid_gid": [
+      411,
+      1000,
+      1000
+    ]
+  },
+  {
+    "tag": "System.err",
+    "message": "SELECTED_MAIN_WAIT_STACK",
+    "actual_sender_pid_uid_gid": [
+      411,
+      1000,
+      1000
+    ]
+  },
+  {
+    "tag": "System.err",
+    "message": "    at com.android.server.pm.PackageSetting.modifyUserState(PackageSetting.java:908)",
+    "actual_sender_pid_uid_gid": [
+      411,
+      1000,
+      1000
+    ]
+  },
+  {
+    "tag": "System.err",
+    "message": "    at com.android.server.pm.PackageSetting.setFirstInstallTime(PackageSetting.java:427)",
+    "actual_sender_pid_uid_gid": [
+      411,
+      1000,
+      1000
+    ]
+  },
+  {
+    "tag": "System.err",
+    "message": "    at com.android.server.pm.ScanPackageUtils.scanPackageOnly(ScanPackageUtils.java:482)",
+    "actual_sender_pid_uid_gid": [
+      411,
+      1000,
+      1000
+    ]
+  },
+  {
+    "tag": "System.err",
+    "message": "    at com.android.server.pm.InstallPackageHelper.scanPackageNew(InstallPackageHelper.java:4339)",
+    "actual_sender_pid_uid_gid": [
+      411,
+      1000,
+      1000
+    ]
+  },
+  {
+    "tag": "System.err",
+    "message": "    at com.android.server.pm.InstallPackageHelper.scanPackageForInitLI(InstallPackageHelper.java:4595)",
+    "actual_sender_pid_uid_gid": [
+      411,
+      1000,
+      1000
+    ]
+  },
+  {
+    "tag": "System.err",
+    "message": "    at com.android.server.pm.InstallPackageHelper.addForInitLI(InstallPackageHelper.java:4103)",
+    "actual_sender_pid_uid_gid": [
+      411,
+      1000,
+      1000
+    ]
+  },
+  {
+    "tag": "System.err",
+    "message": "    at com.android.server.pm.InstallPackageHelper.processParseResult(InstallPackageHelper.java:3947)",
+    "actual_sender_pid_uid_gid": [
+      411,
+      1000,
+      1000
+    ]
+  },
+  {
+    "tag": "System.err",
+    "message": "    at com.android.server.pm.InstallPackageHelper.parallelInstallPackagesFromDirs(InstallPackageHelper.java:3855)",
+    "actual_sender_pid_uid_gid": [
+      411,
+      1000,
+      1000
+    ]
+  },
+  {
+    "tag": "System.err",
+    "message": "    at com.android.server.pm.InitAppsHelper.parallelScanDirTracedLI(InitAppsHelper.java:429)",
+    "actual_sender_pid_uid_gid": [
+      411,
+      1000,
+      1000
+    ]
+  },
+  {
+    "tag": "System.err",
+    "message": "    at com.android.server.pm.InitAppsHelper.scanSystemDirs(InitAppsHelper.java:392)",
+    "actual_sender_pid_uid_gid": [
+      411,
+      1000,
+      1000
+    ]
+  },
+  {
+    "tag": "System.err",
+    "message": "java.lang.IllegalStateException: Cannot get SystemServerInitThreadPool - it has been shut down",
+    "actual_sender_pid_uid_gid": [
+      411,
+      1000,
+      1000
+    ]
+  },
+  {
+    "tag": "System.err",
+    "message": "\tat com.android.internal.util.Preconditions.illegalStateException(Preconditions.java:880)",
+    "actual_sender_pid_uid_gid": [
+      411,
+      1000,
+      1000
+    ]
+  },
+  {
+    "tag": "System.err",
+    "message": "\tat com.android.internal.util.Preconditions.checkState(Preconditions.java:261)",
+    "actual_sender_pid_uid_gid": [
+      411,
+      1000,
+      1000
+    ]
+  },
+  {
+    "tag": "System.err",
+    "message": "\tat com.android.server.SystemServerInitThreadPool.getInstance(SystemServerInitThreadPool.java:80)",
+    "actual_sender_pid_uid_gid": [
+      411,
+      1000,
+      1000
+    ]
+  },
+  {
+    "tag": "System.err",
+    "message": "\tat com.android.server.SystemServerInitThreadPool.submit(SystemServerInitThreadPool.java:95)",
+    "actual_sender_pid_uid_gid": [
+      411,
+      1000,
+      1000
+    ]
+  }
+]

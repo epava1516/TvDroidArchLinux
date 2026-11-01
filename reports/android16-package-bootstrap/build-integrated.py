@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+"""Build a coherent experimental original APEX/graphics/package cohort, no boot."""
+from pathlib import Path
+import json,subprocess,shutil,hashlib,sys
+r=Path(__file__).resolve().parents[2];out=(r/sys.argv[1]).resolve();out.mkdir()
+entry=out/'entry'
+subprocess.run(['python',str(r/'reports/android16-selected-display/build-entry.py'),'--output',str(entry)],check=True)
+rc=(entry/'selected-services.rc').read_text();lines=rc.splitlines();lines[0]='service archtv-selected-services /system/bin/app_process64 -Xmx768m -Xnoimage-dex2oat /system/bin --application --nice-name=archtv-selected-services org.archtv.aosplinux.ServiceLauncher --packages'
+lines=[l for l in lines if not any(l.startswith('    setenv '+n+' ') for n in ['BOOTCLASSPATH','DEX2OATBOOTCLASSPATH','SYSTEMSERVERCLASSPATH','STANDALONE_SYSTEMSERVER_JARS'])];(entry/'selected-services.rc').write_text('\n'.join(lines)+'\n')
+old=r/'dist/aosp16/apex-cohort-build-6';commands=[]
+for n in ['graphics-client','cargo/debug/examples/native_supervisor']:
+ p=out/n;p.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(old/n,p)
+def run(argv):
+ p=subprocess.run(argv,capture_output=True,text=True);commands.append({'argv':argv,'exit':p.returncode,'stderr':p.stderr});(out/'build.json').write_text(json.dumps({'commands':commands},indent=2));assert p.returncode==0,p.stderr
+for c in json.loads((old/'build.json').read_text())['commands']:run([a.replace(str(old),str(out)) for a in c['argv']])
+argv=json.loads((r/'reports/android16-hwmanager-cohort/helper-build.json').read_text())['argv'];argv[argv.index('-o')+1]=str(out/'linux-exec-context-image');run(argv)
+(out/'artifacts.json').write_text(json.dumps({n:hashlib.sha256((out/n).read_bytes()).hexdigest() for n in ['graphics-client','cargo/debug/examples/native_supervisor','linux-exec-context-image','property-coordinator']},indent=2))
+base=r/'dist/aosp16/sf-cohort-build-32';vendor=json.loads((base/'vendor-inputs.json').read_text())
+for key,value in vendor['files'].items():
+ if key=='/vendor/framework/archtv-selected-services.jar':value['source']=str(entry/'archtv-selected-services.jar')
+ if key=='/vendor/etc/init/archtv-selected-services.rc':value['source']=str(entry/'selected-services.rc')
+(out/'vendor-inputs.json').write_text(json.dumps(vendor,indent=2))
+text=(base/'build-payload-expanded.py').read_text().replace(str(base),str(out));expected=out/'apex-expected.json';expected.write_text(json.dumps(json.loads((r/'reports/android16-apex-bootstrap/complete-inputs.json').read_text())['modules'],indent=2)+'\n');text=text.replace("image=out/'payload-2.ext4'", "record('/apex-expected.json',out/'apex-expected.json','u:object_r:vendor_configs_file:s0',0o600)\nimage=out/'payload-2.ext4'")
+recipe=out/'build-payload.py';recipe.write_text(text);subprocess.run(['python',str(recipe)],stdout=open(out/'packager.log','w'),stderr=subprocess.STDOUT,check=True)
+print(out,flush=True)

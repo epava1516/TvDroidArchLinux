@@ -1,5 +1,7 @@
 # Arquitectura vigente · A16-QPR2-1
 
+[Integración real APEX + gestores Java: fallo PMS](../reports/android16-package-bootstrap/integrated-pms-negative.json). En una misma cohorte regresaron ART initializer, AccessChecking, AMS/ATMS, Installer por Binder y Display fase100; no acredita disponibilidad ni autorización. PMS falló por omitir `SystemServerInitThreadPool.start`, presente en la secuencia original. Próximo candidato lo inicia antes del bootstrap. Sin loops/dm activos al cerrar; ninguna etapa APK aceptada, R1-MAC abierto.
+
 [Classpath original completo](../reports/android16-package-bootstrap/original-classpath.json): `derive_classpath` ejecutado tras la activación real de41 APEX; incluye `service-compos.jar`, ausente en el perfil anterior. Todos los JAR emitidos existen. Esto corrige la entrada para la siguiente integración ART/permisos/actividad; no prueba aún carga de clases ni servicios Java.
 
 ## Vigente · activación APEX original verificada

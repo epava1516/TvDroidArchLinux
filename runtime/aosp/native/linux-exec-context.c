@@ -23,8 +23,9 @@ static int refused(const char *stage) {
 }
 
 int main(int argc, char **argv) {
-    int apex = argc == 2 && !strcmp(argv[1], "--apex-integration");
-    int selected = argc == 2 && !strcmp(argv[1], "--display-integration");
+    int packages = argc == 2 && !strcmp(argv[1], "--packages-integration");
+    int apex = packages || (argc == 2 && !strcmp(argv[1], "--apex-integration"));
+    int selected = packages || (argc == 2 && !strcmp(argv[1], "--display-integration"));
     int surfaceflinger = selected || (argc == 2 && !strcmp(argv[1], "--surfaceflinger-integration"));
     int graphics = surfaceflinger || (argc == 2 && !strcmp(argv[1], "--graphics-integration"));
     int hardware = graphics || (argc == 2 && !strcmp(argv[1], "--hardware-integration"));
@@ -62,7 +63,7 @@ int main(int argc, char **argv) {
     // a redundant pre-validation or mistake a library cache for kernel readback.
     if (setexeccon_raw(target) < 0) return refused("setexeccon");
     fprintf(stderr, "LINUX_EXEC_CONTEXT_REQUESTED source=%s target=%s enforcing=%d NOT_STARTUP\n", actor, target, enforcing);
-    char *child_args[] = {(char *)image, apex ? "--mc1-apex-integration" : selected ? "--mc3-display-integration" : surfaceflinger ? "--mc3-surfaceflinger-integration" : graphics ? "--mc3-graphics-integration" : hardware ? "--mc1-hardware-integration" : integration ? "--mc1-integration" : NULL, NULL};
+    char *child_args[] = {(char *)image, packages ? "--mc3-packages-integration" : apex ? "--mc1-apex-integration" : selected ? "--mc3-display-integration" : surfaceflinger ? "--mc3-surfaceflinger-integration" : graphics ? "--mc3-graphics-integration" : hardware ? "--mc1-hardware-integration" : integration ? "--mc1-integration" : NULL, NULL};
     fexecve(fd, child_args, environ);
     return refused("fexecve");
 }

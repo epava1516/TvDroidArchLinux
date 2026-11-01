@@ -88,7 +88,7 @@ class LinuxMc1Cohort {
         int observed_mode=security_getenforce();
         if(observed_mode!=expected_mode_)return android::base::Error()<<"MC1 security mode changed during startup";
         std::fprintf(stderr,"MC1_ORIGINAL_CLIENT_EXIT0_REQUIRES_EXTERNAL_VERIFICATION enforcing=%d\n",observed_mode);
-        if(apex_requested_)return StartApex(tick);
+        if(apex_requested_) { if(auto result=StartApex(tick);!result.ok())return result; }
         if(hardware_requested_)return StartHardware(tick);
         return {};
     }
@@ -167,7 +167,8 @@ class LinuxMc1Cohort {
             "/system/bin/sh","-c",
             "umask 077; /system/bin/service check apexservice > /data/local/tmp/archtv-mc1/apex-query.txt 2>&1; "
             "/system/bin/cmd apexservice getActivePackages > /data/local/tmp/archtv-mc1/apex-active.txt 2>&1 && "
-            "/apex/com.android.sdkext/bin/derive_classpath /data/local/tmp/archtv-mc1/classpath"});
+            "/apex/com.android.sdkext/bin/derive_classpath /data/local/tmp/archtv-mc1/classpath && "
+            "/system/bin/chown 0:1000 /data/local/tmp/archtv-mc1/classpath && /system/bin/chmod 0640 /data/local/tmp/archtv-mc1/classpath"});
         if(!client.ok())return client.error();
         auto* process=client->get();
         process->AddReapCallback([this](const siginfo_t& info) {
@@ -178,6 +179,15 @@ class LinuxMc1Cohort {
         if(auto result=Wait(tick,[this]{return client_done_;},10);!result.ok())return result;
         if(!client_ok_)return android::base::Error()<<"Original APEX inventory client failed";
         std::fprintf(stderr,"APEX_ORIGINAL_CLIENT_RETURNED REQUIRES_EXTERNAL_COMPLETE_INVENTORY_CHECK\n");
+        if(selected_requested_) {
+            const std::vector<std::string> export_args={"load_exports","/data/local/tmp/archtv-mc1/classpath"};
+            auto loader=GetBuiltinFunctionMap().Find(export_args);
+            if(!loader.ok())return loader.error();
+            const std::string context="u:r:init:s0";
+            if(auto loaded=loader->function(BuiltinArguments{export_args,context});!loaded.ok())return loaded;
+            std::fprintf(stderr,"PACKAGES_ORIGINAL_LOAD_EXPORTS_RETURNED NOT_JAVA_SERVICE_AVAILABILITY\n");
+        }
+
         return {};
     }
     android::base::Result<void> StartHardware(const Tick& tick) {
@@ -188,8 +198,9 @@ class LinuxMc1Cohort {
            (__system_property_get("hwservicemanager.disabled",value)>0 && std::string(value)=="true"))
             return android::base::Error()<<"MC1 hardware manager stale ready or disabled by original configuration";
         auto parser=CreateParser(ActionManager::GetInstance(),services);
+        const auto existing_services=services.size();
         auto parsed=parser.ParseConfigFile("/system/system_ext/etc/init/hwservicemanager.rc");
-        if(!parsed.ok() || parser.parse_error_count()!=0 || services.size()!=2)
+        if(!parsed.ok() || parser.parse_error_count()!=0 || services.size()!=existing_services+1)
             return android::base::Error()<<"MC1 hardware manager original profile rejected";
         hardware_=services.FindService("hwservicemanager");
         if(!hardware_ || hardware_->args()!=std::vector<std::string>{"/system/system_ext/bin/hwservicemanager"})
@@ -367,7 +378,7 @@ class LinuxMc1Cohort {
         if(!parsed.ok() || parser.parse_error_count()!=0)
             return android::base::Error()<<"Selected original service orchestration RC rejected";
         selected_=services.FindService("archtv-selected-services");
-        if(!selected_ || selected_->args().empty() || selected_->args().front()!="/system/bin/app_process64")
+        if(!selected_ || selected_->args().empty() || (selected_->args().front()!="/system/bin/app_process64" && !(apex_requested_ && selected_->args().front()=="/system/bin/sh")))
             return android::base::Error()<<"Unexpected selected service runtime";
         selected_->AddReapCallback([this](const siginfo_t& info) {
             std::fprintf(stderr,"SELECTED_SERVICES_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
@@ -397,6 +408,19 @@ class LinuxMc1Cohort {
         if(auto result=process->ExecStart();!result.ok())return result;
         if(auto result=Wait(tick,[this]{return client_done_;},35);!result.ok())return result;
         if(!client_ok_)return android::base::Error()<<"Original display CLI did not find default display";
+        if(apex_requested_) {
+            client_done_=false;client_ok_=false;
+            auto package_client=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","shell","shell","--",
+                "/system/bin/sh","-c","umask 077; i=0; while [ $$i -lt 30 ]; do /system/bin/service check package > /data/local/tmp/archtv-mc1/package-query.txt 2>&1; if /system/bin/grep -qx 'Service package: found' /data/local/tmp/archtv-mc1/package-query.txt; then exit 0; fi; i=$$((i+1)); /system/bin/sleep 1; done; exit 1"});
+            if(!package_client.ok())return package_client.error();
+            auto* peer=package_client->get();
+            peer->AddReapCallback([this](const siginfo_t& info){client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;});
+            services.AddService(std::move(*package_client));
+            if(auto result=peer->ExecStart();!result.ok())return result;
+            if(auto result=Wait(tick,[this]{return client_done_;},35);!result.ok())return result;
+            if(!client_ok_)return android::base::Error()<<"Original package service not registered";
+            std::fprintf(stderr,"PACKAGES_ORIGINAL_BINDER_QUERY_RETURNED REQUIRES_INSTALL_LAUNCH\n");
+        }
         if(security_getenforce()!=expected_mode_)return android::base::Error()<<"Selected display security mode changed";
         return {};
     }

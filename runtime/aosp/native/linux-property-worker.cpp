@@ -76,8 +76,9 @@ static bool close_actions(Epoll& epoll) {
 }
 int main(int argc,char** argv) {
     android::base::InitLogging(argv,android::base::StderrLogger);
-    bool apex=argc==2 && std::strcmp(argv[1],"--mc1-apex-integration")==0;
-    bool selected=argc==2 && std::strcmp(argv[1],"--mc3-display-integration")==0;
+    bool packages=argc==2 && std::strcmp(argv[1],"--mc3-packages-integration")==0;
+    bool apex=packages || (argc==2 && std::strcmp(argv[1],"--mc1-apex-integration")==0);
+    bool selected=packages || (argc==2 && std::strcmp(argv[1],"--mc3-display-integration")==0);
     bool surfaceflinger=selected || (argc==2 && std::strcmp(argv[1],"--mc3-surfaceflinger-integration")==0);
     bool graphics=surfaceflinger || (argc==2 && std::strcmp(argv[1],"--mc3-graphics-integration")==0);
     bool hardware=graphics || (argc==2 && std::strcmp(argv[1],"--mc1-hardware-integration")==0);

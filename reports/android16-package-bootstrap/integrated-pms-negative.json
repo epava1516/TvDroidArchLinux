@@ -1,0 +1,32 @@
+{
+  "checkpoint": "/home/tv/recuperacion-archtv/20261101T230758Z-apex-activation",
+  "base_commit": "c73e6c8",
+  "run_log_sha256": "d5a61801c63e4622339a22d05629bf39bcb111f85b1aa08406cf944c749c78c7",
+  "payload": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-6/payload-2.ext4",
+  "payload_sha256": "63705c235876b70f1ced582782c5bc14ccbab66cac9f46310a4e0e016e47b85f",
+  "result": {
+    "outer_exit": 1,
+    "elapsed_seconds": 38.54273200035095,
+    "active_loops": "",
+    "final_dm": []
+  },
+  "execution": "Original APEX activation and init load_exports followed by graphics/Installer and Java bootstrap in same private cohort",
+  "observed_returns": [
+    "ART module initializer",
+    "Original Installer.invalidateMounts Binder operation",
+    "Original AccessChecking onStart",
+    "Original AMS/ATMS startup",
+    "Original Display phase100"
+  ],
+  "fatal": "IllegalStateException: Cannot get SystemServerInitThreadPool - it has been shut down; SystemServer.java starts it before bootstrap; our orchestrator omitted this step.",
+  "next_candidate": "package-cohort-build-7 initializes original SystemServerInitThreadPool.start before bootstrap; not yet accepted by this evidence",
+  "limitations": [
+    "No PMS availability accepted",
+    "No APK stage accepted",
+    "Callback returns are not service readiness, functional permissions or tenant isolation",
+    "SELinux permissive; R1-MAC open",
+    "fs-verity on tmpfs and memevents listener emit real errors; neither feature is claimed working",
+    "Unexpected Java exit remains runtime failure and original apexd failure request remains failure during diagnostic teardown",
+    "ARM/GMS/DRM separate and open"
+  ]
+}

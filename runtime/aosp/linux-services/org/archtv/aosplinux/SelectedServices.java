@@ -16,7 +16,17 @@ public final class SelectedServices {
         }
     }
 
+    private static Object start(Object manager, Class<?> managerType, String name) throws Exception {
+        return call(managerType, manager, "startService", new Class<?>[]{Class.class}, Class.forName(name));
+    }
+    private static void local(String name, String implementation) throws Exception {
+        call(Class.forName("com.android.server.LocalServices"), null, "addService",
+            new Class<?>[]{Class.class,Object.class}, Class.forName(name), Class.forName(implementation).getConstructor().newInstance());
+    }
     public static void main(String[] args) {
+        boolean packages = args.length==1 && args[0].equals("--packages");
+        Object platformCompat=null, activityManager=null;
+
         Thread mainThread = Thread.currentThread();
         Thread diagnostic = new Thread(() -> {
             try { Thread.sleep(6000); } catch (InterruptedException stopped) { return; }
@@ -53,6 +63,17 @@ public final class SelectedServices {
             call(contextType, context, "setTheme", new Class<?>[]{int.class}, theme);
             Object uiContext = call(activityThread, thread, "getSystemUiContext", new Class<?>[0]);
             call(contextType, uiContext, "setTheme", new Class<?>[]{int.class}, theme);
+            if(packages) {
+                // Original SystemServer creates this pool before bootstrap services.
+                Class<?> pool=Class.forName("com.android.server.SystemServerInitThreadPool");
+                java.lang.reflect.Method startPool=pool.getDeclaredMethod("start");
+                startPool.setAccessible(true);
+                startPool.invoke(null);
+                Class<?> artManager=Class.forName("android.os.ArtModuleServiceManager");
+                call(Class.forName("com.android.server.art.ArtModuleServiceInitializer"),null,
+                    "setArtModuleServiceManager",new Class<?>[]{artManager},artManager.getConstructor().newInstance());
+                System.err.println("PACKAGES_ORIGINAL_ART_MODULE_INITIALIZED NOT_ARTD_AVAILABILITY");
+            }
             call(activityThread, null, "initializeMainlineModules", new Class<?>[0]);
             Class<?> managerType = Class.forName("com.android.server.SystemServiceManager");
             Object manager = managerType.getConstructor(contextType).newInstance(context);
@@ -69,6 +90,29 @@ public final class SelectedServices {
             // Its connection latch/remote exceptions remain intact.
             call(installerType, installer, "invalidateMounts", new Class<?>[0]);
             System.err.println("SELECTED_ORIGINAL_INSTALLER_INVALIDATE_RETURNED NOT_APK_INSTALLATION");
+            if(packages) {
+                Class<?> compat=Class.forName("com.android.server.compat.PlatformCompat");
+                platformCompat=compat.getConstructor(contextType).newInstance(context);
+                Class<?> serviceManager=Class.forName("android.os.ServiceManager");
+                Class<?> binder=Class.forName("android.os.IBinder");
+                call(serviceManager,null,"addService",new Class<?>[]{String.class,binder},"platform_compat",platformCompat);
+                Object compatNative=Class.forName("com.android.server.compat.PlatformCompatNative").getConstructor(compat).newInstance(platformCompat);
+                call(serviceManager,null,"addService",new Class<?>[]{String.class,binder},"platform_compat_native",compatNative);
+                call(Class.forName("android.app.AppCompatCallbacks"),null,"install",new Class<?>[]{long[].class,long[].class,boolean.class},new long[0],new long[0],false);
+                start(manager,managerType,"com.android.server.flags.FeatureFlagsService");
+                start(manager,managerType,"com.android.server.uri.UriGrantsManagerService$Lifecycle");
+                local("com.android.server.pm.permission.PermissionMigrationHelper","com.android.server.pm.permission.PermissionMigrationHelperImpl");
+                local("com.android.server.appop.AppOpMigrationHelper","com.android.server.appop.AppOpMigrationHelperImpl");
+                start(manager,managerType,"com.android.server.permission.access.AccessCheckingService");
+                System.err.println("PACKAGES_ORIGINAL_ACCESS_CHECKING_STARTED NOT_PERMISSION_ACCEPTANCE");
+                Object atmLifecycle=start(manager,managerType,"com.android.server.wm.ActivityTaskManagerService$Lifecycle");
+                Object atm=call(atmLifecycle.getClass(),atmLifecycle,"getService",new Class<?>[0]);
+                activityManager=call(Class.forName("com.android.server.am.ActivityManagerService$Lifecycle"),null,"startService",
+                    new Class<?>[]{managerType,Class.forName("com.android.server.wm.ActivityTaskManagerService")},manager,atm);
+                call(activityManager.getClass(),activityManager,"setSystemServiceManager",new Class<?>[]{managerType},manager);
+                call(activityManager.getClass(),activityManager,"setInstaller",new Class<?>[]{installerType},installer);
+                System.err.println("PACKAGES_ORIGINAL_AMS_ATMS_STARTED NOT_APP_LAUNCH");
+            }
             // Original bootstrap order: power is required by LogicalDisplayMapper.
             call(managerType, manager, "startService", new Class<?>[]{Class.class},
                     Class.forName("com.android.server.power.PowerManagerService"));
@@ -88,6 +132,15 @@ public final class SelectedServices {
             call(managerType, manager, "startBootPhase", new Class<?>[]{traceType, int.class},
                     trace, phase);
             System.err.println("SELECTED_ORIGINAL_DISPLAY_PHASE_RETURNED requires_original_IPC_verification");
+            if(packages) {
+                Class<?> configType=Class.forName("com.android.server.SystemConfig");
+                Object config=call(configType,null,"getInstance",new Class<?>[0]);
+                Class<?> domainType=Class.forName("com.android.server.pm.verify.domain.DomainVerificationService");
+                Object domain=domainType.getConstructor(contextType,configType,Class.forName("com.android.server.compat.PlatformCompat")).newInstance(context,config,platformCompat);
+                call(managerType,manager,"startService",new Class<?>[]{Class.forName("com.android.server.SystemService")},domain);
+                call(Class.forName("com.android.server.pm.PackageManagerService"),null,"main",new Class<?>[]{contextType,installerType,domainType,boolean.class},context,installer,domain,false);
+                System.err.println("PACKAGES_ORIGINAL_PMS_RETURNED REQUIRES_INSTALL_LAUNCH_VERIFICATION");
+            }
             call(looper, null, "loop", new Class<?>[0]);
             throw new IllegalStateException("Original main looper returned unexpectedly");
         } catch (Throwable failure) {

@@ -20,12 +20,30 @@ def dm_names(result):
     return set() if raw=='No devices found' else {line.strip() for line in raw.splitlines() if line.strip()}
 assert not command(['losetup','-l','-n']).stdout.strip(),'Another loop workload exists'
 assert not command(['systemctl','list-units','archtv-mc3*','--all','--no-legend']).stdout.strip(),'Another cohort exists'
-assert not command(['loginctl','list-sessions','--no-legend']).stdout.strip(),'Interactive session present'
-before={'utc':stamp,'head':command(['runuser','-u','tv','--','git','-C',str(repo),'rev-parse','HEAD']).stdout.strip(),'pending':command(['runuser','-u','tv','--','git','-C',str(repo),'status','--short']).stdout,'boot_id':Path('/proc/sys/kernel/random/boot_id').read_text().strip(),'kernel':os.uname().release,'payload':str(payload),'data_store':str(data_store),'data_preparation_sha256':hashlib.sha256((data_store/'linux-preparation.json').read_bytes()).hexdigest(),'payload_sha256':hashlib.file_digest(payload.open('rb'),'sha256').hexdigest(),'allowed_dm_names':sorted(allowed),'modules_before':command(['lsmod']).stdout,'scope':'Trusted original APEX activation only. Permissive; no APK or MAC acceptance. No VM restart requested.'}
+integrated_socket=Path(sys.argv[3]) if len(sys.argv)==4 else None
+(recovery/'before.json').write_text(json.dumps({'phase':'preflight','argv':sys.argv,'boot_id':Path('/proc/sys/kernel/random/boot_id').read_text().strip(),'head':command(['runuser','-u','tv','--','git','-C',str(repo),'rev-parse','HEAD']).stdout.strip(),'pending':command(['runuser','-u','tv','--','git','-C',str(repo),'status','--short']).stdout},indent=2)+'\n')
+os.chown(recovery,1000,1000);os.chown(recovery/'before.json',1000,1000)
+sessions=command(['loginctl','list-sessions','--no-legend']).stdout.strip()
+if integrated_socket:
+    assert integrated_socket.parent==Path('/run/user/1000') and integrated_socket.is_socket()
+    console_found=False
+    for row in sessions.splitlines():
+        fields=row.split();assert len(fields)>2 and fields[1]=='1000',row
+        sid=fields[0]
+        info=command(['loginctl','show-session',sid,'-p','TTY','-p','Service','-p','Class']).stdout
+        if 'Class=manager' in info:
+            assert 'Service=systemd-user' in info and '\nTTY=\n' in '\n'+info,info
+        else:
+            assert 'TTY=tty2' in info and 'Service=login' in info,info
+            console_found=True
+    assert console_found,'Owned tty2 session missing'
+else:assert not sessions,'Interactive session present'
+
+before={'utc':stamp,'head':command(['runuser','-u','tv','--','git','-C',str(repo),'rev-parse','HEAD']).stdout.strip(),'pending':command(['runuser','-u','tv','--','git','-C',str(repo),'status','--short']).stdout,'boot_id':Path('/proc/sys/kernel/random/boot_id').read_text().strip(),'kernel':os.uname().release,'payload':str(payload),'data_store':str(data_store),'integrated_socket':str(integrated_socket) if integrated_socket else None,'data_preparation_sha256':hashlib.sha256((data_store/'linux-preparation.json').read_bytes()).hexdigest(),'payload_sha256':hashlib.file_digest(payload.open('rb'),'sha256').hexdigest(),'allowed_dm_names':sorted(allowed),'modules_before':command(['lsmod']).stdout,'scope':'Trusted original APEX activation only. Permissive; no APK or MAC acceptance. No VM restart requested.'}
 assert re.fullmatch('[0-9a-f]{40}',before['head']),before['head']
 (recovery/'before.json').write_text(json.dumps(before,indent=2)+'\n')
 (recovery/'pending.patch').write_bytes(subprocess.check_output(['runuser','-u','tv','--','git','-C',str(repo),'diff','--binary']))
-own=['runtime/aosp/native/linux-exec-context.c','runtime/aosp/native/linux-property-worker.cpp','runtime/aosp/native/linux-mc1-cohort.h','crates/archtv-core/examples/native_supervisor.rs','reports/android16-apex-bootstrap/run.py','reports/android16-apex-bootstrap/execute.py','reports/android16-apex-bootstrap/devices.py','reports/android16-apex-bootstrap/build-payload.py']
+own=['runtime/aosp/native/linux-exec-context.c','runtime/aosp/native/linux-property-worker.cpp','runtime/aosp/native/linux-mc1-cohort.h','crates/archtv-core/examples/native_supervisor.rs','reports/android16-apex-bootstrap/run.py','reports/android16-apex-bootstrap/execute.py','reports/android16-apex-bootstrap/devices.py','reports/android16-apex-bootstrap/build-payload.py','reports/android16-package-bootstrap/execute-integrated.py','reports/android16-package-bootstrap/build-integrated.py','runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java']
 before['own_code_sha256']={n:hashlib.sha256((repo/n).read_bytes()).hexdigest() for n in own}
 for name in own:
     destination=recovery/'code'/name;destination.parent.mkdir(parents=True,exist_ok=True);destination.write_bytes((repo/name).read_bytes())
@@ -41,7 +59,7 @@ before['unit']=unit;before['dm_before']=sorted(dm_before);(recovery/'before.json
 started=time.time();log=recovery/'run.log';exit_code=None;cleanup=[]
 try:
     with log.open('x') as stream:
-        result=subprocess.run(['systemd-run','--wait','--pipe','--collect','--unit='+unit,'--service-type=exec','--property=RuntimeMaxSec=210','--property=TimeoutStopSec=5','--property=KillMode=control-group','--property=MemoryMax=4G','--property=MemorySwapMax=1G','--property=CPUQuota=200%','--property=TasksMax=256','timeout','--kill-after=5','205','setpriv','--inh-caps=-all','--ambient-caps=-all','unshare','--mount','--pid','--fork','--kill-child=SIGKILL','--net','--ipc','--uts','/usr/bin/python',str(repo/'reports/android16-apex-bootstrap/execute.py'),'--payload',str(payload),'--data-store',str(data_store),'--observe-logs'],stdout=stream,stderr=subprocess.STDOUT,timeout=230)
+        result=subprocess.run(['systemd-run','--wait','--pipe','--collect','--unit='+unit,'--service-type=exec','--property=RuntimeMaxSec=210','--property=TimeoutStopSec=5','--property=KillMode=control-group','--property=MemoryMax=4G','--property=MemorySwapMax=1G','--property=CPUQuota=200%','--property=TasksMax=256','timeout','--kill-after=5','205','setpriv','--inh-caps=-all','--ambient-caps=-all','unshare','--mount','--pid','--fork','--kill-child=SIGKILL','--net','--ipc','--uts','/usr/bin/python',*([str(repo/'reports/android16-package-bootstrap/execute-integrated.py'),str(integrated_socket),str(payload),str(data_store)] if integrated_socket else [str(repo/'reports/android16-apex-bootstrap/execute.py'),'--payload',str(payload),'--data-store',str(data_store),'--observe-logs'])],stdout=stream,stderr=subprocess.STDOUT,timeout=230)
         exit_code=result.returncode
 finally:
     command(['systemctl','stop',unit+'.service'])

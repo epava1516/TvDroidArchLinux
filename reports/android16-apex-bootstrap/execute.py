@@ -50,7 +50,7 @@ text=text[:boundary]+'''
 for name in ['apex-query.txt','apex-active.txt','classpath']:
  result=Path('/data/local/tmp/archtv-mc1')/name
  if result.is_file():
-  info=result.lstat();assert stat.S_ISREG(info.st_mode) and info.st_uid==0 and info.st_gid==0 and stat.S_IMODE(info.st_mode)==0o600 and info.st_size<=262144
+  info=result.lstat();assert stat.S_ISREG(info.st_mode) and info.st_uid==0 and info.st_gid==(1000 if name=='classpath' else 0) and stat.S_IMODE(info.st_mode)==(0o640 if name=='classpath' else 0o600) and info.st_size<=262144
   print('APEX_ORIGINAL_OUTPUT '+name+' '+json.dumps(result.read_text()),flush=True)
 xml=Path('/apex/apex-info-list.xml')
 if xml.is_file():
