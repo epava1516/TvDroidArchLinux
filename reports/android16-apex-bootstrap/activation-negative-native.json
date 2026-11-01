@@ -1,0 +1,65 @@
+{
+  "exit": 1,
+  "stdout": "NATIVE_PROCESS_OWNED pid=105 pidfd=5\n",
+  "stderr": "LINUX_EXEC_CONTEXT_REQUESTED source=linux.system_u:archtv_launcher_r:archtv_launcher:s0 target=u:r:init:s0 enforcing=0 NOT_STARTUP\nPROPERTY_WORKER_IDENTITY observed=u:r:init:s0 enforcing=0 mc1=1\nSELinux: Loaded file context from:\n\t\t/system/etc/selinux/plat_file_contexts\n\t\t/system_ext/etc/selinux/system_ext_file_contexts\n\t\t/product/etc/selinux/product_file_contexts\n11-01 22:18:18.186   105   105 I property-coordinator: boot_config.cpp:46 [libfstab] Using Android DT directory /proc/device-tree/firmware/android/\n11-01 22:18:18.190   105   105 W property-coordinator: property_service.cpp:827 Overriding previous property 'ro.cp_system_other_odex':'1' with new value '0'\n11-01 22:18:18.191   105   105 W property-coordinator: property_service.cpp:827 Overriding previous property 'ro.build.flavor':'mainline-user' with new value 'aosp_x86_64-user'\n11-01 22:18:18.192   105   105 W property-coordinator: property_service.cpp:827 Overriding previous property 'ro.build.description':'mainline-user 16 BP4A.251205.006 14401865 release-keys' with new value 'aosp_x86_64-user 16 BP4A.251205.006 14401865 release-keys'\n11-01 22:18:18.193   105   105 I property-coordinator: property_service.cpp:957 Setting product property ro.product.brand to 'Android' (from ro.product.product.brand)\n11-01 22:18:18.194   105   105 I property-coordinator: property_service.cpp:957 Setting product property ro.product.device to 'generic_x86_64' (from ro.product.product.device)\n11-01 22:18:18.194   105   105 I property-coordinator: property_service.cpp:957 Setting product property ro.product.manufacturer to 'unknown' (from ro.product.product.manufacturer)\n11-01 22:18:18.194   105   105 I property-coordinator: property_service.cpp:957 Setting product property ro.product.model to 'AOSP on x86_64' (from ro.product.product.model)\n11-01 22:18:18.194   105   105 I property-coordinator: property_service.cpp:957 Setting product property ro.product.name to 'aosp_x86_64' (from ro.product.product.name)\n11-01 22:18:18.194   105   105 I property-coordinator: property_service.cpp:1034 Setting property 'ro.build.fingerprint' to 'Android/aosp_x86_64/generic_x86_64:16/BP4A.251205.006/14401865:user/release-keys'\n11-01 22:18:18.194   105   105 I property-coordinator: property_service.cpp:1096 Setting property 'ro.product.cpu.abilist' to 'x86_64,x86'\n11-01 22:18:18.194   105   105 I property-coordinator: property_service.cpp:1096 Setting property 'ro.product.cpu.abilist32' to 'x86'\n11-01 22:18:18.194   105   105 I property-coordinator: property_service.cpp:1096 Setting property 'ro.product.cpu.abilist64' to 'x86_64'\n11-01 22:18:18.195   105   105 I property-coordinator: util.cpp:156 Created socket '/dev/socket/property_service_for_system', mode 660, user 0, group 1000\n11-01 22:18:18.196   105   105 I property-coordinator: util.cpp:156 Created socket '/dev/socket/property_service', mode 666, user 0, group 0\n11-01 22:18:18.197   105   106 E property-coordinator: persistent_properties.cpp:268 Could not load single persistent property file, trying legacy directory: Unable to read persistent property file: open() failed: No such file or directory\nMC1_PROPERTY_SOCKET_LABEL path=/dev/socket/property_service actual=u:object_r:property_socket:s0\nMC1_PROPERTY_SOCKET_LABEL path=/dev/socket/property_service_for_system actual=u:object_r:property_socket:s0\n11-01 22:18:18.203   105   105 I property-coordinator: parser.cpp:145 Parsing file /system/etc/init/servicemanager.rc...\n11-01 22:18:18.204   105   105 I property-coordinator: service.cpp:668 starting service 'servicemanager'...\n11-01 22:18:18.223   105   105 W property-coordinator: util.cpp:246 Activation of cgroup controller +memory failed in path /sys/fs/cgroup/system/uid_1000: No such file or directory\n11-01 22:18:18.247   105   105 W libprocessgroup: task_profiles.cpp:984 A JoinCgroup action in the SystemMemoryProcess profile is used for controller memory in the cgroup v2 hierarchy and will be ignored\n11-01 22:18:18.249   105   105 W libprocessgroup: task_profiles.cpp:383 SetCgroup::ExecuteForProcess: failed to open /dev/blkio//cgroup.procs: No such file or directory\n11-01 22:18:18.249   105   105 W libprocessgroup: task_profiles.cpp:1217 Failed to apply NormalIoPriority process profile\n11-01 22:18:18.251   108   108 W libprocessgroup: task_profiles.cpp:984 A JoinCgroup action in the SystemMemoryProcess profile is used for controller memory in the cgroup v2 hierarchy and will be ignored\n11-01 22:18:18.252   108   108 W libprocessgroup: task_profiles.cpp:383 SetCgroup::ExecuteForProcess: failed to open /dev/cpuset/foreground/cgroup.procs: No such file or directory\n11-01 22:18:18.252   108   108 W libprocessgroup: task_profiles.cpp:1217 Failed to apply ProcessCapacityHigh process profile\n11-01 22:18:18.252   108   108 E property-coordinator: service.cpp:573 failed to set task profiles\n11-01 22:18:18.254   105   105 I property-coordinator: service.cpp:801 ... started service 'servicemanager' has pid 108\nMC1_MANAGER_STARTED pid=108 uid=1000 gid=1000\n11-01 22:18:18.338   105   105 I property-coordinator: service.cpp:668 starting service 'exec 1 (/system/bin/sh -c /system/bin/service list > /data/local/tmp/archtv-mc1/service-list.txt 2>&1)'...\n11-01 22:18:18.351   105   105 W property-coordinator: util.cpp:246 Activation of cgroup controller +memory failed in path /sys/fs/cgroup/system/uid_2000: No such file or directory\n11-01 22:18:18.387   105   105 W libprocessgroup: task_profiles.cpp:383 SetCgroup::ExecuteForProcess: failed to open /dev/blkio//cgroup.procs: No such file or directory\n11-01 22:18:18.387   105   105 W libprocessgroup: task_profiles.cpp:1217 Failed to apply NormalIoPriority process profile\n11-01 22:18:18.387   105   105 I property-coordinator: service.cpp:801 ... started service 'exec 1 (/system/bin/sh -c /system/bin/service list > /data/local/tmp/archtv-mc1/service-list.txt 2>&1)' has pid 110\n11-01 22:18:18.387   105   105 I property-coordinator: service.cpp:449 SVC_EXEC service 'exec 1 (/system/bin/sh -c /system/bin/service list > /data/local/tmp/archtv-mc1/service-list.txt 2>&1)' pid 110 (uid 2000 gid 2000+0 context u:r:shell:s0) started; waiting...\n11-01 22:18:18.464   105   105 I property-coordinator: sigchld_handler.cpp:114 Service 'exec 1 (/system/bin/sh -c /system/bin/service list > /data/local/tmp/archtv-mc1/service-list.txt 2>&1)' (pid 110) exited with status 0 waiting took 0.114000 seconds\n11-01 22:18:18.464   105   105 I property-coordinator: service.cpp:207 Sending SIGKILL to service 'exec 1 (/system/bin/sh -c /system/bin/service list > /data/local/tmp/archtv-mc1/service-list.txt 2>&1)' (pid 110) process group...\n11-01 22:18:18.464   105   105 I libprocessgroup: processgroup.cpp:656 Removed cgroup /sys/fs/cgroup/system/uid_2000/pid_110\nMC1_CLIENT_EXIT pid=110 code=1 status=0\nMC1_ORIGINAL_CLIENT_EXIT0_REQUIRES_EXTERNAL_VERIFICATION enforcing=0\n11-01 22:18:18.464   105   105 I property-coordinator: parser.cpp:145 Parsing file /system/etc/init/apexd.rc...\n11-01 22:18:18.468   105   105 I property-coordinator: service.cpp:668 starting service 'apexd'...\n11-01 22:18:18.476   105   105 W property-coordinator: util.cpp:246 Activation of cgroup controller +memory failed in path /sys/fs/cgroup/system/uid_0: No such file or directory\n11-01 22:18:18.500   105   105 W libprocessgroup: task_profiles.cpp:383 SetCgroup::ExecuteForProcess: failed to open /dev/blkio//cgroup.procs: No such file or directory\n11-01 22:18:18.500   105   105 W libprocessgroup: task_profiles.cpp:1217 Failed to apply NormalIoPriority process profile\n11-01 22:18:18.504   105   105 I property-coordinator: service.cpp:801 ... started service 'apexd' has pid 112\nAPEX_DAEMON_STARTED pid=112 NOT_REGISTERED\nMC1_FAILED MC1 original progress deadline/error\n11-01 22:19:58.533   105   105 I property-coordinator: service.cpp:207 Sending SIGKILL to service 'servicemanager' (pid 108) process group...\n11-01 22:19:58.543   105   105 I libprocessgroup: processgroup.cpp:656 Removed cgroup /sys/fs/cgroup/system/uid_1000/pid_108\n11-01 22:19:58.544   105   105 I property-coordinator: service.cpp:207 Sending SIGKILL to service 'apexd' (pid 112) process group...\n11-01 22:19:58.547   105   105 I libprocessgroup: processgroup.cpp:656 Removed cgroup /sys/fs/cgroup/system/uid_0/pid_112\n11-01 22:19:58.548   105   105 I property-coordinator: sigchld_handler.cpp:116 Service 'servicemanager' (pid 108) received SIGKILL\n11-01 22:19:58.550   105   105 I property-coordinator: service.cpp:207 Sending SIGKILL to service 'servicemanager' (pid 108) process group...\n11-01 22:19:58.550   105   105 E libprocessgroup: processgroup.cpp:450 Failed to open /sys/fs/cgroup/system/uid_1000/pid_108/cgroup.procs: No such file or directory\nMC1_MANAGER_EXIT pid=108 code=2 status=9\n11-01 22:19:58.551   105   105 I property-coordinator: sigchld_handler.cpp:116 Service 'apexd' (pid 112) received SIGKILL oneshot service took 100.080002 seconds in background\n11-01 22:19:58.552   105   105 I property-coordinator: service.cpp:207 Sending SIGKILL to service 'apexd' (pid 112) process group...\n11-01 22:19:58.552   105   105 E libprocessgroup: processgroup.cpp:450 Failed to open /sys/fs/cgroup/system/uid_0/pid_112/cgroup.procs: No such file or directory\nAPEX_DAEMON_EXIT pid=112 code=2 status=9\n11-01 22:19:58.552   105   105 E property-coordinator: service.cpp:289 Service apexd has 'reboot_on_failure' option and failed, shutting down system.\n11-01 22:19:58.554   105   105 E property-coordinator: sigchld_handler.cpp:56 waitid failed: No child processes\nMC1_CLOSE_FAILED MC1 services not collected during close\nNATIVE_COMPONENT_FAILED cause=original Android shutdown requested: [72, 65, 62, 6f, 6f, 74, 2c, 61, 70, 65, 78, 64, 2d, 66, 61, 69, 6c, 65, 64] actual_exit=exit status: 69\nError: Custom { kind: Other, error: ShutdownRequested([114, 101, 98, 111, 111, 116, 44, 97, 112, 101, 120, 100, 45, 102, 97, 105, 108, 101, 100]) }\n",
+  "external_Linux_identity_observation": [
+    {
+      "kind": "MANAGER",
+      "pid_namespace_pid": 108,
+      "getpidcon_raw_return": 0,
+      "actual_context": "u:r:servicemanager:s0",
+      "contexts_observed_in_order": [
+        "u:r:servicemanager:s0"
+      ],
+      "errno_observed": [],
+      "status": [
+        "Uid:\t1000\t1000\t1000\t1000",
+        "Gid:\t1000\t1000\t1000\t1000",
+        "Groups:\t3009 ",
+        "CapPrm:\t0000000000000000",
+        "CapEff:\t0000000000000000",
+        "CapBnd:\t000001ffffffffff",
+        "NoNewPrivs:\t1"
+      ]
+    },
+    {
+      "kind": "DAEMON",
+      "pid_namespace_pid": 112,
+      "getpidcon_raw_return": 0,
+      "actual_context": "u:r:apexd:s0",
+      "contexts_observed_in_order": [
+        "u:r:apexd:s0"
+      ],
+      "errno_observed": [],
+      "status": [
+        "Uid:\t0\t0\t0\t0",
+        "Gid:\t1000\t1000\t1000\t1000",
+        "Groups:\t ",
+        "CapPrm:\t000000000020000f",
+        "CapEff:\t000000000020000f",
+        "CapBnd:\t000000000020000f",
+        "NoNewPrivs:\t1"
+      ]
+    }
+  ],
+  "passive_log_observer_diagnostic_only": [
+    {
+      "tag": "cutils-trace",
+      "message": "Error opening trace file: No such file or directory (2)",
+      "actual_sender_pid_uid_gid": [
+        111,
+        2000,
+        2000
+      ]
+    },
+    {
+      "tag": "libbinder.BackendUnifiedServiceManager",
+      "message": "Thread Pool max thread count is 0. Cannot cache binder as linkToDeath cannot be implemented. serviceName: manager",
+      "actual_sender_pid_uid_gid": [
+        111,
+        2000,
+        2000
+      ]
+    }
+  ]
+}

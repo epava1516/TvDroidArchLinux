@@ -1,5 +1,11 @@
 # Índice de evidencias
 
+## Vigente · activación original APEX aún no aceptada
+
+[Resultado real y decisión](../reports/android16-apex-bootstrap/activation-negative.json): apexd original ejecutó su arranque y empezó a descomprimir; el límite100s se agota antes de disponer del inventario. Limpieza verificada, sin tablas dm o loops activos. El GSI contiene **41 módulos**, incluyendo5 de `system_ext`; la selección derivada histórica sólo cubría36. [Expectativas de archivos originales](../reports/android16-apex-bootstrap/complete-inputs.json) son metadatos de prueba, no inventario de runtime. Se exige respuesta original completa y montajes reales; `ready` o exit0 no bastan.
+
+Siguiente: preservar/revalidar caché original de descompresión y resolver su coste de I/O, extender el cierre a41 y obtener `apexservice` real antes de integrar PMS/permisos/actividad. La frontera de etiquetas de datos sobre filesystem Linux tiene denegaciones en permisivo: R1-MAC sigue abierto. Markor sigue sin recorrido completo probado.
+
 ## Vigente · memoria original y display0 consultable
 
 [Resultado funcional](../reports/android16-selected-display/postboot-display-findings.json): kernel separado y memoria Bionic real admitida; servicios originales Power/Thermal/Lights/Display alcanzan fase100 y el cliente original enumera display0 sobre SF/Wayland/Smithay. Permisivo, policyload1: sin autorización MAC ni compatibilidad APK aceptadas. `dumpsys display` conserva su rechazo DUMP; no se falsifica el permiso. Thermal HAL, brillo físico, suspensión del anfitrión y fences físicos siguen pendientes. El siguiente hito integra instalación/permisos/paquetes/actividad originales para Markor intacta. ARM/GMS/DRM separados.

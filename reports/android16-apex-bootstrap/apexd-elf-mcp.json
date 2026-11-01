@@ -1,0 +1,219 @@
+{
+  "evidence_id": "ev_167c27316abb8f0d8a8fbdbb193c0ec8dfc8b7fe3364d557ee5574ed94dc0de8",
+  "subject": {
+    "name": "apexd",
+    "digest": {
+      "sha256": "533764534569f94c99183d6874abc9c8109aea995ad3d4f6df727ccaf96b06d3"
+    },
+    "local_path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/bin/apexd",
+    "format": "elf",
+    "architecture": "x86_64"
+  },
+  "provider": {
+    "id": "rea-elf-notes",
+    "name": "REA ELF note parser",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.analysis",
+  "operation": "inspect_elf_notes",
+  "parameters": {
+    "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/bin/apexd",
+    "max_file_bytes": 67108864,
+    "max_entries": 12
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "artifact": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/bin/apexd",
+      "sha256": "533764534569f94c99183d6874abc9c8109aea995ad3d4f6df727ccaf96b06d3",
+      "bytes": 1128480
+    },
+    "format": "elf64",
+    "byte_order": "little",
+    "machine": 62,
+    "type": 3,
+    "type_name": "shared",
+    "tables": [
+      {
+        "kind": "program",
+        "index": 10,
+        "name": null,
+        "location": {
+          "offset": 712,
+          "bytes": 56
+        },
+        "alignment": 4
+      },
+      {
+        "kind": "section",
+        "index": 2,
+        "name": ".note.android.ident",
+        "location": {
+          "offset": 712,
+          "bytes": 24
+        },
+        "alignment": 4
+      },
+      {
+        "kind": "section",
+        "index": 3,
+        "name": ".note.gnu.build-id",
+        "location": {
+          "offset": 736,
+          "bytes": 32
+        },
+        "alignment": 4
+      }
+    ],
+    "entries": [
+      {
+        "index": 0,
+        "table_kind": "program",
+        "table_index": 10,
+        "location": {
+          "offset": 712,
+          "bytes": 24
+        },
+        "namesz": 8,
+        "descsz": 4,
+        "type": 1,
+        "type_name": "unknown",
+        "owner": "Android",
+        "owner_bytes_hex": "416e64726f696400",
+        "descriptor": {
+          "location": {
+            "offset": 732,
+            "bytes": 4
+          },
+          "bytes": 4,
+          "sha256": "de6d696c194fb883fd153e435f68d0283ebcf1a28c46cba524df6a8c0807084a",
+          "hex": "24000000"
+        },
+        "gnu": null
+      },
+      {
+        "index": 1,
+        "table_kind": "program",
+        "table_index": 10,
+        "location": {
+          "offset": 736,
+          "bytes": 32
+        },
+        "namesz": 4,
+        "descsz": 16,
+        "type": 3,
+        "type_name": "gnu_build_id",
+        "owner": "GNU",
+        "owner_bytes_hex": "474e5500",
+        "descriptor": {
+          "location": {
+            "offset": 752,
+            "bytes": 16
+          },
+          "bytes": 16,
+          "sha256": "fb6ba4d885db7e48673f5349f49b62714d32be40f93c1523f8c54b6663a2212c",
+          "hex": "f05bb82b0946c0a24443e8614f2afab9"
+        },
+        "gnu": {
+          "build_id_hex": "f05bb82b0946c0a24443e8614f2afab9",
+          "abi_tag": null,
+          "gold_version": null
+        }
+      },
+      {
+        "index": 2,
+        "table_kind": "section",
+        "table_index": 2,
+        "location": {
+          "offset": 712,
+          "bytes": 24
+        },
+        "namesz": 8,
+        "descsz": 4,
+        "type": 1,
+        "type_name": "unknown",
+        "owner": "Android",
+        "owner_bytes_hex": "416e64726f696400",
+        "descriptor": {
+          "location": {
+            "offset": 732,
+            "bytes": 4
+          },
+          "bytes": 4,
+          "sha256": "de6d696c194fb883fd153e435f68d0283ebcf1a28c46cba524df6a8c0807084a",
+          "hex": "24000000"
+        },
+        "gnu": null
+      },
+      {
+        "index": 3,
+        "table_kind": "section",
+        "table_index": 3,
+        "location": {
+          "offset": 736,
+          "bytes": 32
+        },
+        "namesz": 4,
+        "descsz": 16,
+        "type": 3,
+        "type_name": "gnu_build_id",
+        "owner": "GNU",
+        "owner_bytes_hex": "474e5500",
+        "descriptor": {
+          "location": {
+            "offset": 752,
+            "bytes": 16
+          },
+          "bytes": 16,
+          "sha256": "fb6ba4d885db7e48673f5349f49b62714d32be40f93c1523f8c54b6663a2212c",
+          "hex": "f05bb82b0946c0a24443e8614f2afab9"
+        },
+        "gnu": {
+          "build_id_hex": "f05bb82b0946c0a24443e8614f2afab9",
+          "abi_tag": null,
+          "gold_version": null
+        }
+      }
+    ],
+    "coverage": {
+      "status": "complete",
+      "examined_tables": 3,
+      "examined_entries": 4
+    },
+    "limitations": [
+      "This workflow does not execute the image, resolve runtime notes, or verify GNU build-id uniqueness against package catalogs.",
+      "PT_NOTE and SHT_NOTE are examined independently; the same file range may appear twice when both tables declare it."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "This workflow does not execute the image, resolve runtime notes, or verify GNU build-id uniqueness against package catalogs.",
+    "PT_NOTE and SHT_NOTE are examined independently; the same file range may appear twice when both tables declare it."
+  ],
+  "relationship_coverage": null,
+  "locations": [
+    {
+      "kind": "artifact-path",
+      "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/bin/apexd"
+    },
+    {
+      "kind": "file-offset-range",
+      "start": 712,
+      "end": 768
+    },
+    {
+      "kind": "file-offset-range",
+      "start": 712,
+      "end": 736
+    },
+    {
+      "kind": "file-offset-range",
+      "start": 736,
+      "end": 768
+    }
+  ],
+  "evidence_links": []
+}

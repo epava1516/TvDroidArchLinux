@@ -1,0 +1,332 @@
+[
+  {
+    "utc_us": "1793571498704316",
+    "tag": "apexd",
+    "message": "Started. subcommand = (null)"
+  },
+  {
+    "utc_us": "1793571503766989",
+    "tag": "apexd",
+    "message": "Could not retrieve vold service: Failed to retrieve vold service."
+  },
+  {
+    "utc_us": "1793571503767060",
+    "tag": "apexd",
+    "message": "Scanning /system/apex for pre-installed ApexFiles"
+  },
+  {
+    "utc_us": "1793571503767127",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.configinfrastructure.capex"
+  },
+  {
+    "utc_us": "1793571503767366",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.os.statsd.apex"
+  },
+  {
+    "utc_us": "1793571503767442",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.art.capex"
+  },
+  {
+    "utc_us": "1793571503768466",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.runtime.apex"
+  },
+  {
+    "utc_us": "1793571503768545",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.uprobestats.capex"
+  },
+  {
+    "utc_us": "1793571503768602",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.adservices.capex"
+  },
+  {
+    "utc_us": "1793571503768667",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.cellbroadcast.capex"
+  },
+  {
+    "utc_us": "1793571503768727",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.devicelock.apex"
+  },
+  {
+    "utc_us": "1793571503768785",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.profiling.capex"
+  },
+  {
+    "utc_us": "1793571503768953",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.mediaprovider.capex"
+  },
+  {
+    "utc_us": "1793571503769014",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.media.swcodec.capex"
+  },
+  {
+    "utc_us": "1793571503769158",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.uwb.capex"
+  },
+  {
+    "utc_us": "1793571503769225",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.permission.capex"
+  },
+  {
+    "utc_us": "1793571503769518",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.wifi.capex"
+  },
+  {
+    "utc_us": "1793571503769595",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.resolv.capex"
+  },
+  {
+    "utc_us": "1793571503769651",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.appsearch.capex"
+  },
+  {
+    "utc_us": "1793571503769703",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.media.capex"
+  },
+  {
+    "utc_us": "1793571503769909",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.telephonycore.capex"
+  },
+  {
+    "utc_us": "1793571503769983",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.tzdata.apex"
+  },
+  {
+    "utc_us": "1793571503770040",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.ipsec.capex"
+  },
+  {
+    "utc_us": "1793571503770722",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.crashrecovery.capex"
+  },
+  {
+    "utc_us": "1793571503770801",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.ondevicepersonalization.capex"
+  },
+  {
+    "utc_us": "1793571503770962",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.virt.apex"
+  },
+  {
+    "utc_us": "1793571503771036",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.neuralnetworks.capex"
+  },
+  {
+    "utc_us": "1793571503771113",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.bt.capex"
+  },
+  {
+    "utc_us": "1793571503771260",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.tethering.capex"
+  },
+  {
+    "utc_us": "1793571503771334",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.scheduling.capex"
+  },
+  {
+    "utc_us": "1793571503771461",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.apex.cts.shim.apex"
+  },
+  {
+    "utc_us": "1793571503771622",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.extservices.capex"
+  },
+  {
+    "utc_us": "1793571503771667",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.healthfitness.apex"
+  },
+  {
+    "utc_us": "1793571503772003",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.i18n.apex"
+  },
+  {
+    "utc_us": "1793571503772089",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.conscrypt.capex"
+  },
+  {
+    "utc_us": "1793571503773035",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.nfcservices.capex"
+  },
+  {
+    "utc_us": "1793571503773218",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.adbd.capex"
+  },
+  {
+    "utc_us": "1793571503774603",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.sdkext.apex"
+  },
+  {
+    "utc_us": "1793571503774661",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system/apex/com.android.rkpd.apex"
+  },
+  {
+    "utc_us": "1793571503775507",
+    "tag": "apexd",
+    "message": "Scanning /system_ext/apex for pre-installed ApexFiles"
+  },
+  {
+    "utc_us": "1793571503775587",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system_ext/apex/com.android.vndk.v32.apex"
+  },
+  {
+    "utc_us": "1793571503775648",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system_ext/apex/com.android.vndk.v34.apex"
+  },
+  {
+    "utc_us": "1793571503775692",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system_ext/apex/com.android.vndk.v33.apex"
+  },
+  {
+    "utc_us": "1793571503775958",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system_ext/apex/com.android.compos.apex"
+  },
+  {
+    "utc_us": "1793571503776114",
+    "tag": "apexd",
+    "message": "Found pre-installed APEX /system_ext/apex/com.android.vndk.v31.apex"
+  },
+  {
+    "utc_us": "1793571503776184",
+    "tag": "apexd",
+    "message": "Scanning /product/apex for pre-installed ApexFiles"
+  },
+  {
+    "utc_us": "1793571503776241",
+    "tag": "apexd",
+    "message": "/product/apex does not exist. Skipping"
+  },
+  {
+    "utc_us": "1793571503776295",
+    "tag": "apexd",
+    "message": "Scanning /vendor/apex for pre-installed ApexFiles"
+  },
+  {
+    "utc_us": "1793571503776433",
+    "tag": "apexd",
+    "message": "/vendor/apex does not exist. Skipping"
+  },
+  {
+    "utc_us": "1793571503776501",
+    "tag": "apexd",
+    "message": "Scanning /odm/apex for pre-installed ApexFiles"
+  },
+  {
+    "utc_us": "1793571503776552",
+    "tag": "apexd",
+    "message": "/odm/apex does not exist. Skipping"
+  },
+  {
+    "utc_us": "1793571504116727",
+    "tag": "apexd",
+    "message": "Populating APEX database from mounts..."
+  },
+  {
+    "utc_us": "1793571504119161",
+    "tag": "apexd",
+    "message": "0 packages restored."
+  },
+  {
+    "utc_us": "1793571504119256",
+    "tag": "apexd",
+    "message": "Marking APEXd as starting"
+  },
+  {
+    "utc_us": "1793571504119500",
+    "tag": "apexd",
+    "message": "No sessions to revert/activate."
+  },
+  {
+    "utc_us": "1793571504119579",
+    "tag": "apexd",
+    "message": "Scanning /data/apex/active for data ApexFiles"
+  },
+  {
+    "utc_us": "1793571504119640",
+    "tag": "apexd",
+    "message": "Processing compressed APEX /system/apex/com.android.nfcservices.capex"
+  },
+  {
+    "utc_us": "1793571504119700",
+    "tag": "apexd",
+    "message": "Decompressing/system/apex/com.android.nfcservices.capex to /data/apex/decompressed/com.android.nfcservices@361099999.decompressed.apex"
+  },
+  {
+    "utc_us": "1793571511146596",
+    "tag": "apexd",
+    "message": "Processing compressed APEX /system/apex/com.android.scheduling.capex"
+  },
+  {
+    "utc_us": "1793571511146610",
+    "tag": "apexd",
+    "message": "Decompressing/system/apex/com.android.scheduling.capex to /data/apex/decompressed/com.android.scheduling@361099999.decompressed.apex"
+  },
+  {
+    "utc_us": "1793571511411839",
+    "tag": "apexd",
+    "message": "Processing compressed APEX /system/apex/com.android.tethering.capex"
+  },
+  {
+    "utc_us": "1793571511411932",
+    "tag": "apexd",
+    "message": "Decompressing/system/apex/com.android.tethering.capex to /data/apex/decompressed/com.android.tethering@361099999.decompressed.apex"
+  },
+  {
+    "utc_us": "1793571538788738",
+    "tag": "apexd",
+    "message": "Processing compressed APEX /system/apex/com.android.bt.capex"
+  },
+  {
+    "utc_us": "1793571538789117",
+    "tag": "apexd",
+    "message": "Decompressing/system/apex/com.android.bt.capex to /data/apex/decompressed/com.android.bt@361099999.decompressed.apex"
+  },
+  {
+    "utc_us": "1793571561376851",
+    "tag": "apexd",
+    "message": "Processing compressed APEX /system/apex/com.android.ondevicepersonalization.capex"
+  },
+  {
+    "utc_us": "1793571561376978",
+    "tag": "apexd",
+    "message": "Decompressing/system/apex/com.android.ondevicepersonalization.capex to /data/apex/decompressed/com.android.ondevicepersonalization@361099999.decompressed.apex"
+  }
+]

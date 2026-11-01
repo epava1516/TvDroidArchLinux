@@ -1,0 +1,38 @@
+{
+  "base_commit": "bd6756c",
+  "execution": "Original GSI apexd, ordinary bounded native execution; not REA runtime capture",
+  "result": "Original daemon scans actual41 APEXs, starts original decompression; activation100s deadline expires after five files, no complete inventory accepted.",
+  "recovery": "/home/tv/recuperacion-archtv/20261101T221813Z-apex-activation",
+  "log_sha256": "04f76786619b776c58a8732a56f0f2a71d3e2aaf9fd8813618b920ff46846978",
+  "payload_sha256": "6cb3ba19736ec67fa6beea83a441de784569d50d892e27951bc5c2f20bd5d9b9",
+  "identity": {
+    "kind": "DAEMON",
+    "pid_namespace_pid": 112,
+    "getpidcon_raw_return": 0,
+    "actual_context": "u:r:apexd:s0",
+    "contexts_observed_in_order": [
+      "u:r:apexd:s0"
+    ],
+    "errno_observed": [],
+    "status": [
+      "Uid:\t0\t0\t0\t0",
+      "Gid:\t1000\t1000\t1000\t1000",
+      "Groups:\t ",
+      "CapPrm:\t000000000020000f",
+      "CapEff:\t000000000020000f",
+      "CapBnd:\t000000000020000f",
+      "NoNewPrivs:\t1"
+    ]
+  },
+  "observed_resource_use": "Inner service103.494s,6.895s CPU,195.4MiB peak; suggests I/O-bound decompression, not demonstrated CPU shortage.",
+  "input_correction": "Earlier derived factory selection only indexed36 /system/apex archives; original daemon also scans5 /system_ext/apex. Actual full archive expectations are41, all names/versions/hashes in complete-inputs.json. Do not silently accept36 as complete.",
+  "cleanup": {
+    "active_loops": "",
+    "final_dm": [],
+    "created_loop_ids_removed": true
+  },
+  "control": "Original reboot_on_failure request on bounded stop was caught as a failure by existing Linux shutdown boundary, exit69, not host reboot or fake STOPPED.",
+  "policy_limits": "Actual AVC association denials between Android data labels and Linux filesystem SID in permissive. R1-MAC open; no uncompressed-preinstalled GSI AVB-chain trust certified.",
+  "decision": "Preserve/reuse original decompression artifacts after original validation; evaluate disk-backed Linux directory to remove nested data-image I/O. Extend device allowlist/verifier to actual41 before another acceptance attempt. Keep original signature/dm-verity checks and real service state.",
+  "scope": "No apexservice availability, APK stages, or MAC/installation/update acceptance. ARM/GMS/DRM separate."
+}
