@@ -1,0 +1,58 @@
+{
+  "checkpoint": "/home/tv/recuperacion-archtv/20261101T232918Z-apex-activation",
+  "base_commit": "d325521aa77cdbeecfbf0e3e9b185e85f5f9484a",
+  "boot_id": "4e18faf8-2b46-42e4-a6b2-269c34326b68",
+  "kernel": "6.18.59-archtv-aosp16-1",
+  "payload_sha256": "bc9cfc62c1e355f6bad52f49754b637fe831509fbcdbf7b200c4479a0cf9914f",
+  "log_sha256": "4a8e66501b087875f21a9ee0932b285c83c296be8ab7f1a8c85b3d9ec498bd4b",
+  "result": {
+    "outer_exit": 0,
+    "native_complete_inventory_verified": true,
+    "active_loops": "",
+    "final_dm": []
+  },
+  "operations": [
+    "Original hwservicemanager ready before original vold",
+    "Original apexd41 inventory and original load_exports/perform_apex_config",
+    "Original vdc cryptfs init_user0 returned success; original vold_prepare_subdirs used",
+    "Original PMS list operation and Display/Installer cohort checks remain passing"
+  ],
+  "permission_files": [
+    {
+      "path": "/data/misc/apexdata/com.android.permission/access.abx",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o600",
+      "sha256": "937c8cd4b1d5d72f131c4b183d32c6861d0eff7437172c27d86f2010f0a42b42",
+      "context": "u:object_r:apex_system_server_data_file:s0"
+    },
+    {
+      "path": "/data/misc_de/0/apexdata/com.android.permission/access.abx",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o600",
+      "sha256": "a4e8854080249a70e411631b8f666e9dca001911eb4b309bad737f0c8716d595",
+      "context": "u:object_r:apex_system_server_data_file:s0"
+    },
+    {
+      "path": "/data/misc_de/0/apexdata/com.android.permission/runtime-permissions.xml",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o600",
+      "sha256": "daadca8538f17bcbe0dfa3d926bae1f7fd03e14e8c6154b286ba418dbf048b26",
+      "context": "u:object_r:apex_system_server_data_file:s0"
+    }
+  ],
+  "ce_mountinfo": [
+    "560 339 0:52 /data/data /data/user/0 rw,relatime - tmpfs tmpfs rw,fscontext=u:object_r:tmpfs:s0,rootcontext=u:object_r:rootfs:s0,seclabel,mode=755,inode64"
+  ],
+  "closure": "Both original reboot_on_failure requests on explicit diagnostic cancellation recorded, exact SIGKILL collection required; other failures remain failures.",
+  "limits": [
+    "Private tmpfs only; no persistence across namespace teardown/reopen",
+    "No FBE or fs-verity acceptance",
+    "Original vold inherits privileged root RC capabilities inside trusted diagnostic factory; not minimal privileges or tenant isolation",
+    "SELinux permissive; R1-MAC open",
+    "No APK installation or launch accepted; ARM/GMS/DRM separate"
+  ],
+  "next": "Install intact Markor through original PackageInstaller/PMS; require original outcome, signature and installed bytes before accepting installation."
+}

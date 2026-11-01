@@ -1,0 +1,233 @@
+[
+  {
+    "kind": "MANAGER",
+    "pid_namespace_pid": 294,
+    "getpidcon_raw_return": 0,
+    "actual_context": "u:r:servicemanager:s0",
+    "contexts_observed_in_order": [
+      "u:r:init:s0",
+      "u:r:servicemanager:s0"
+    ],
+    "errno_observed": [],
+    "status": [
+      "Uid:\t1000\t1000\t1000\t1000",
+      "Gid:\t1000\t1000\t1000\t1000",
+      "Groups:\t3009 ",
+      "CapPrm:\t0000000000000000",
+      "CapEff:\t0000000000000000",
+      "CapBnd:\t000001ffffffffff",
+      "NoNewPrivs:\t1"
+    ]
+  },
+  {
+    "kind": "HWMANAGER",
+    "pid_namespace_pid": 298,
+    "getpidcon_raw_return": 0,
+    "actual_context": "u:r:hwservicemanager:s0",
+    "contexts_observed_in_order": [
+      "u:r:hwservicemanager:s0"
+    ],
+    "errno_observed": [],
+    "status": [
+      "Uid:\t1000\t1000\t1000\t1000",
+      "Gid:\t1000\t1000\t1000\t1000",
+      "Groups:\t3009 ",
+      "CapPrm:\t0000000000000000",
+      "CapEff:\t0000000000000000",
+      "CapBnd:\t000001ffffffffff",
+      "NoNewPrivs:\t1"
+    ]
+  },
+  {
+    "kind": "VOLD",
+    "pid_namespace_pid": 304,
+    "getpidcon_raw_return": 0,
+    "actual_context": "u:r:vold:s0",
+    "contexts_observed_in_order": [
+      "u:r:init:s0",
+      "u:r:vold:s0"
+    ],
+    "errno_observed": [],
+    "status": [
+      "Uid:\t0\t0\t0\t0",
+      "Gid:\t0\t0\t0\t0",
+      "Groups:\t1065 ",
+      "CapPrm:\t000001ffffffffff",
+      "CapEff:\t000001ffffffffff",
+      "CapBnd:\t000001ffffffffff",
+      "NoNewPrivs:\t1"
+    ]
+  },
+  {
+    "kind": "DAEMON",
+    "pid_namespace_pid": 305,
+    "getpidcon_raw_return": 0,
+    "actual_context": "u:r:apexd:s0",
+    "contexts_observed_in_order": [
+      "u:r:apexd:s0"
+    ],
+    "errno_observed": [],
+    "status": [
+      "Uid:\t0\t0\t0\t0",
+      "Gid:\t1000\t1000\t1000\t1000",
+      "Groups:\t ",
+      "CapPrm:\t000000000020000f",
+      "CapEff:\t000000000020000f",
+      "CapBnd:\t000000000020000f",
+      "NoNewPrivs:\t1"
+    ]
+  },
+  {
+    "kind": "SNAPSHOT",
+    "pid_namespace_pid": 366,
+    "getpidcon_raw_return": 0,
+    "actual_context": "u:r:apexd:s0",
+    "contexts_observed_in_order": [
+      "u:r:apexd:s0"
+    ],
+    "errno_observed": [],
+    "status": [
+      "Uid:\t0\t0\t0\t0",
+      "Gid:\t1000\t1000\t1000\t1000",
+      "Groups:\t ",
+      "CapPrm:\t000000000000000f",
+      "CapEff:\t000000000000000f",
+      "CapBnd:\t000000000000000f",
+      "NoNewPrivs:\t1"
+    ]
+  },
+  {
+    "kind": "ALLOCATOR",
+    "pid_namespace_pid": 380,
+    "getpidcon_raw_return": 0,
+    "actual_context": "u:r:hal_graphics_allocator_default:s0",
+    "contexts_observed_in_order": [
+      "u:r:init:s0",
+      "u:r:hal_graphics_allocator_default:s0"
+    ],
+    "errno_observed": [],
+    "status": [
+      "Uid:\t1000\t1000\t1000\t1000",
+      "Gid:\t1003\t1003\t1003\t1003",
+      "Groups:\t1026 ",
+      "CapPrm:\t0000000000800000",
+      "CapEff:\t0000000000800000",
+      "CapBnd:\t0000000000800000",
+      "NoNewPrivs:\t1"
+    ]
+  },
+  {
+    "kind": "COMPOSER",
+    "pid_namespace_pid": 381,
+    "getpidcon_raw_return": 0,
+    "actual_context": "u:r:hal_graphics_composer_default:s0",
+    "contexts_observed_in_order": [
+      "u:r:hal_graphics_composer_default:s0"
+    ],
+    "errno_observed": [],
+    "status": [
+      "Uid:\t1000\t1000\t1000\t1000",
+      "Gid:\t1003\t1003\t1003\t1003",
+      "Groups:\t1026 ",
+      "CapPrm:\t0000000000800000",
+      "CapEff:\t0000000000800000",
+      "CapBnd:\t0000000000800000",
+      "NoNewPrivs:\t1"
+    ]
+  },
+  {
+    "kind": "SF",
+    "pid_namespace_pid": 382,
+    "getpidcon_raw_return": 0,
+    "actual_context": "u:r:surfaceflinger:s0",
+    "contexts_observed_in_order": [
+      "u:r:surfaceflinger:s0"
+    ],
+    "errno_observed": [],
+    "status": [
+      "Uid:\t1000\t1000\t1000\t1000",
+      "Gid:\t1003\t1003\t1003\t1003",
+      "Groups:\t1026 3009 ",
+      "CapPrm:\t0000000000800000",
+      "CapEff:\t0000000000800000",
+      "CapBnd:\t0000000000800000",
+      "NoNewPrivs:\t1"
+    ]
+  },
+  {
+    "kind": "BOOTANIMATION",
+    "pid_namespace_pid": 415,
+    "getpidcon_raw_return": 0,
+    "actual_context": "u:r:bootanim:s0",
+    "contexts_observed_in_order": [
+      "u:r:bootanim:s0"
+    ],
+    "errno_observed": [],
+    "status": [
+      "Uid:\t1003\t1003\t1003\t1003",
+      "Gid:\t1003\t1003\t1003\t1003",
+      "Groups:\t1005 ",
+      "CapPrm:\t0000000000000000",
+      "CapEff:\t0000000000000000",
+      "CapBnd:\t000001ffffffffff",
+      "NoNewPrivs:\t1"
+    ]
+  },
+  {
+    "kind": "SUSPEND",
+    "pid_namespace_pid": 416,
+    "getpidcon_raw_return": 0,
+    "actual_context": "u:r:system_suspend:s0",
+    "contexts_observed_in_order": [
+      "u:r:system_suspend:s0"
+    ],
+    "errno_observed": [],
+    "status": [
+      "Uid:\t1000\t1000\t1000\t1000",
+      "Gid:\t1000\t1000\t1000\t1000",
+      "Groups:\t3010 ",
+      "CapPrm:\t0000001000000000",
+      "CapEff:\t0000001000000000",
+      "CapBnd:\t0000001000000000",
+      "NoNewPrivs:\t1"
+    ]
+  },
+  {
+    "kind": "INSTALLD",
+    "pid_namespace_pid": 417,
+    "getpidcon_raw_return": 0,
+    "actual_context": "u:r:installd:s0",
+    "contexts_observed_in_order": [
+      "u:r:installd:s0"
+    ],
+    "errno_observed": [],
+    "status": [
+      "Uid:\t0\t0\t0\t0",
+      "Gid:\t0\t0\t0\t0",
+      "Groups:\t ",
+      "CapPrm:\t00000000002000ff",
+      "CapEff:\t00000000002000ff",
+      "CapBnd:\t00000000002000ff",
+      "NoNewPrivs:\t1"
+    ]
+  },
+  {
+    "kind": "SERVICES",
+    "pid_namespace_pid": 419,
+    "getpidcon_raw_return": 0,
+    "actual_context": "u:r:system_server:s0",
+    "contexts_observed_in_order": [
+      "u:r:system_server:s0"
+    ],
+    "errno_observed": [],
+    "status": [
+      "Uid:\t1000\t1000\t1000\t1000",
+      "Gid:\t1000\t1000\t1000\t1000",
+      "Groups:\t1003 ",
+      "CapPrm:\t0000000000800000",
+      "CapEff:\t0000000000800000",
+      "CapBnd:\t0000000000800000",
+      "NoNewPrivs:\t1"
+    ]
+  }
+]

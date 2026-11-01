@@ -198,9 +198,13 @@ int main(int argc,char** argv) {
     while(healthy && !stop)healthy=PollLinuxPropertyActions(&epoll,std::chrono::milliseconds(250)).ok() && children.healthy() && !shutdown.failed() && (!mc1 || cohort.healthy());
     const bool intentional_apex_stop=apex && healthy && stop && !peer_gone && !invalid;
     if(intentional_apex_stop)shutdown.ExpectApexdCancellation();
+    if(intentional_apex_stop && packages)shutdown.ExpectVoldCancellation();
     auto cohort_closed=cohort.Close(tick);
     if(intentional_apex_stop && (!shutdown.apexd_cancelled() || !cohort.apex_cancelled())) {
         std::fprintf(stderr,"APEX_CANCEL_NOT_COLLECTED\n");healthy=false;
+    }
+    if(intentional_apex_stop && packages && (!shutdown.vold_cancelled() || !cohort.vold_cancelled())) {
+        std::fprintf(stderr,"VOLD_CANCEL_NOT_COLLECTED\n");healthy=false;
     }
     if(!cohort_closed.ok())std::fprintf(stderr,"MC1_CLOSE_FAILED %s\n",cohort_closed.error().message().c_str());
     bool closed=close_actions(epoll) && cohort_closed.ok();init_socket.reset();

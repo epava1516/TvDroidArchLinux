@@ -88,12 +88,17 @@ class LinuxMc1Cohort {
         int observed_mode=security_getenforce();
         if(observed_mode!=expected_mode_)return android::base::Error()<<"MC1 security mode changed during startup";
         std::fprintf(stderr,"MC1_ORIGINAL_CLIENT_EXIT0_REQUIRES_EXTERNAL_VERIFICATION enforcing=%d\n",observed_mode);
+        if(apex_requested_ && selected_requested_) {
+            if(auto result=StartHardware(tick,true);!result.ok())return result;
+            if(auto result=StartVold(tick);!result.ok())return result;
+        }
         if(apex_requested_) { if(auto result=StartApex(tick);!result.ok())return result; }
-        if(hardware_requested_)return StartHardware(tick);
+        if(hardware_requested_)return apex_requested_ && selected_requested_ ? StartGraphics(tick) : StartHardware(tick);
         return {};
     }
+    bool vold_cancelled() const { return vold_cancelled_; }
     bool apex_cancelled() const { return apex_cancelled_; }
-    bool healthy() const { return !manager_failed_ && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && bootanimation_->IsRunning())) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning()); }
+    bool healthy() const { return !manager_failed_ && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && bootanimation_->IsRunning())) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning()); }
     android::base::Result<void> Close(const Tick& tick) {
         using namespace android::init;
         if(!active_) return {};
@@ -127,6 +132,23 @@ class LinuxMc1Cohort {
         return {};
     }
  private:
+    android::base::Result<void> StartVold(const Tick& tick) {
+        using namespace android::init;
+        auto& services=ServiceList::GetInstance();
+        auto parser=CreateParser(ActionManager::GetInstance(),services);
+        auto parsed=parser.ParseConfigFile("/system/etc/init/vold.rc");
+        if(!parsed.ok() || parser.parse_error_count()!=0)return android::base::Error()<<"Original vold RC rejected";
+        vold_=services.FindService("vold");
+        if(!vold_ || vold_->args().empty() || vold_->args().front()!="/system/bin/vold")return android::base::Error()<<"Original vold executable rejected";
+        vold_->AddReapCallback([this](const siginfo_t& info){
+            std::fprintf(stderr,"STORAGE_VOLD_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
+            if(closing_ && stop_ && info.si_code==CLD_KILLED && info.si_status==SIGKILL)vold_cancelled_=true;
+            if(!closing_)manager_failed_=true;
+        });
+        if(auto started=vold_->Start();!started.ok())return started;
+        std::fprintf(stderr,"SELECTED_VOLD_STARTED pid=%d NOT_REGISTERED\n",vold_->pid());
+        return {};
+    }
     android::base::Result<void> StartApex(const Tick& tick) {
         using namespace android::init;
         auto& services=ServiceList::GetInstance();
@@ -186,11 +208,26 @@ class LinuxMc1Cohort {
             const std::string context="u:r:init:s0";
             if(auto loaded=loader->function(BuiltinArguments{export_args,context});!loaded.ok())return loaded;
             std::fprintf(stderr,"PACKAGES_ORIGINAL_LOAD_EXPORTS_RETURNED NOT_JAVA_SERVICE_AVAILABILITY\n");
+            auto config=GetBuiltinFunctionMap().Find({"perform_apex_config"});
+            if(!config.ok())return config.error();
+            if(auto configured=config->function(BuiltinArguments{{"perform_apex_config"},context});!configured.ok())return configured;
+            client_done_=false;client_ok_=false;
+            auto storage=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","root","root","--","/system/bin/sh","-c",
+                "umask 077; /system/bin/service check vold > /data/local/tmp/archtv-mc1/vold-query.txt 2>&1; /system/bin/vdc cryptfs init_user0 > /data/local/tmp/archtv-mc1/vold-user0.txt 2>&1"});
+            if(!storage.ok())return storage.error();
+            auto* storage_peer=storage->get();
+            storage_peer->AddReapCallback([this](const siginfo_t& info){client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;});
+            services.AddService(std::move(*storage));
+            if(auto started=storage_peer->ExecStart();!started.ok())return started;
+            if(auto waited=Wait(tick,[this]{return client_done_;},25);!waited.ok())return waited;
+            if(!client_ok_)return android::base::Error()<<"Original vold init_user0 failed";
+            std::fprintf(stderr,"STORAGE_ORIGINAL_USER0_RETURNED REQUIRES_FILES_AND_PERMISSION_PERSISTENCE\n");
+
         }
 
         return {};
     }
-    android::base::Result<void> StartHardware(const Tick& tick) {
+    android::base::Result<void> StartHardware(const Tick& tick,bool defer_graphics=false) {
         using namespace android::init;
         auto& services=ServiceList::GetInstance();
         char value[PROP_VALUE_MAX]={};
@@ -243,7 +280,7 @@ class LinuxMc1Cohort {
         int observed_mode=security_getenforce();
         if(observed_mode!=expected_mode_)return android::base::Error()<<"MC1 hardware security mode changed";
         std::fprintf(stderr,"MC1_HARDWARE_CLIENT_EXIT0_REQUIRES_EXTERNAL_VERIFICATION enforcing=%d\n",observed_mode);
-        if(graphics_requested_)return StartGraphics(tick);
+        if(graphics_requested_ && !defer_graphics)return StartGraphics(tick);
         return {};
     }
     android::base::Result<void> StartGraphics(const Tick& tick) {
@@ -440,6 +477,7 @@ class LinuxMc1Cohort {
     const bool surfaceflinger_requested_;
     const bool selected_requested_;
     const bool apex_requested_;
+    android::init::Service* vold_=nullptr;
     android::init::Service* manager_=nullptr;
     android::init::Service* hardware_=nullptr;
     android::init::Service* allocator_=nullptr;
@@ -452,7 +490,7 @@ class LinuxMc1Cohort {
     android::init::Service* apexd_=nullptr;
     bool bootanimation_started_=false;
     bool missing_done_=false,missing_ok_=false;
-    bool apex_cancelled_=false;
+    bool apex_cancelled_=false,vold_cancelled_=false;
     bool active_=false,closing_=false,manager_failed_=false,client_done_=false,client_ok_=false;
 };
 }

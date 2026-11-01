@@ -27,6 +27,8 @@ class LinuxShutdownSink {
     // Linux owns an explicit diagnostic STOP, not Android boot completion.
     // Only the precise original apexd failure target may accompany that stop.
     void ExpectApexdCancellation() { if(!failed_)expect_apex_cancel_=true; }
+    void ExpectVoldCancellation() { if(!failed_)expect_vold_cancel_=true; }
+    bool vold_cancelled() const { return vold_cancelled_; }
     bool apexd_cancelled() const { return apex_cancelled_; }
     bool failed() const { return failed_; }
     std::string Frame() const {
@@ -45,6 +47,11 @@ class LinuxShutdownSink {
             std::fprintf(stderr,"LINUX_APEX_EXPLICIT_CANCELLATION original_request=reboot,apexd-failed NOT_ANDROID_CLEAN_EXIT\n");
             return;
         }
+        if(self.expect_vold_cancel_ && !self.failed_ && command=="reboot,vold-failed") {
+            self.expect_vold_cancel_=false;self.vold_cancelled_=true;
+            std::fprintf(stderr,"LINUX_VOLD_EXPLICIT_CANCELLATION original_request=reboot,vold-failed NOT_ANDROID_CLEAN_EXIT\n");
+            return;
+        }
         // Keep the first failure, not a later consequence. Never execute the string.
         if(self.failed_) return;
         self.failed_=true;
@@ -54,6 +61,6 @@ class LinuxShutdownSink {
     inline static LinuxShutdownSink* installed_=nullptr;
     std::array<char,24> command_{};
     size_t size_=0;
-    bool failed_=false,oversize_=false,expect_apex_cancel_=false,apex_cancelled_=false;
+    bool failed_=false,oversize_=false,expect_apex_cancel_=false,apex_cancelled_=false,expect_vold_cancel_=false,vold_cancelled_=false;
 };
 }
