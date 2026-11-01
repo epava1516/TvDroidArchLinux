@@ -8,10 +8,15 @@
 #include "proto_utils.h"
 #include "system/core/init/property_service.pb.h"
 #include <android-base/logging.h>
+#include <android-base/properties.h>
 #include <android-base/unique_fd.h>
+#include <cutils/ashmem.h>
 #include <selinux/selinux.h>
 #include <sys/socket.h>
 #include <sys/stat.h>
+#include <sys/ioctl.h>
+#include <sys/syscall.h>
+#include <linux/memfd.h>
 #include <sys/system_properties.h>
 #include <fcntl.h>
 #include <unistd.h>
@@ -24,6 +29,35 @@
 #include <string>
 using namespace android::init;
 using android::base::unique_fd;
+static bool admit_original_memfd() {
+    // Do not enable the property on kernels rejected by original libcutils.
+    // This is an ABI precondition, not a replacement for its cached guard.
+    unique_fd probe(syscall(__NR_memfd_create,"archtv_memfd_admission",
+                           MFD_CLOEXEC|MFD_ALLOW_SEALING));
+    const int size=getpagesize();
+    if(probe.get()<0 || fcntl(probe.get(),F_ADD_SEALS,F_SEAL_FUTURE_WRITE)<0 ||
+       ftruncate(probe.get(),size)<0 || ioctl(probe.get(),_IO(0x77,4),0)!=size) {
+        std::fprintf(stderr,"SELECTED_MEMFD_KERNEL_REJECTED errno=%d\n",errno);
+        return false;
+    }
+    // Send through the original property-service socket with real credentials
+    // and SELinux checks; do not synthesize init credentials or write its area.
+    if(!android::base::SetProperty("sys.use_memfd","true") ||
+       !android::base::GetBoolProperty("sys.use_memfd",false))return false;
+    // Original ashmem_create_region runs its own once-cached support guard.
+    // No earlier call may cache a false result before setting the property.
+    unique_fd actual(ashmem_create_region("archtv_original_memfd_admission",size));
+    struct stat memory{};
+    const int seals=actual.get()<0 ? -1 : fcntl(actual.get(),F_GET_SEALS);
+    if(actual.get()<0 || ashmem_get_size_region(actual.get())!=size ||
+       fstat(actual.get(),&memory)!=0 || !S_ISREG(memory.st_mode) || seals<0 ||
+       (seals&(F_SEAL_GROW|F_SEAL_SHRINK))!=(F_SEAL_GROW|F_SEAL_SHRINK)) {
+        std::fprintf(stderr,"SELECTED_ORIGINAL_MEMFD_REJECTED errno=%d\n",errno);
+        return false;
+    }
+    std::fprintf(stderr,"SELECTED_ORIGINAL_MEMFD_ADMITTED bytes=%d NOT_SERVICE_ACCEPTANCE\n",size);
+    return true;
+}
 static bool send_status(int fd,const char* status) {
     size_t size=std::strlen(status);
     return send(fd,status,size,MSG_NOSIGNAL|MSG_DONTWAIT)==static_cast<ssize_t>(size);
@@ -133,6 +167,7 @@ int main(int argc,char** argv) {
         if(__system_property_get("ro.persistent_properties.ready",phase)>0 && std::strcmp(phase,"true")==0)break;
     }
     healthy=healthy && !stop && std::strcmp(phase,"true")==0;
+    if(healthy && selected)healthy=admit_original_memfd();
     if(healthy && mc1) {
         for(const char* path:{"/dev/socket/property_service","/dev/socket/property_service_for_system"}) {
             char* label=nullptr;
