@@ -1,8 +1,8 @@
 # Roadmap A · plataforma APK general sobre Linux
 
-## Candidato de kernel · compilación sin activar
+## Candidato de kernel · compilado, sin activar
 
-[Preparación fuente y límites](../reports/android16-kernel-memory/preparation.json), [parche original integrado](../reports/android16-kernel-memory/linux-6.18.59-ack-ashmem.patch) y [objeto compilado](../reports/android16-kernel-memory/object-build.json): no cambian kernel activo ni aceptación R1. Completar imagen+módulos con versión propia, comprobar/instalar de forma separada preservando rollback, guardar checkpoint antes de arranque. Sólo tras ABI/protecciones reales positivas configurar memoria original y continuar el recorrido de servicios/Markor. No reutilizar módulos stock bajo un vermagic distinto.
+[Preparación fuente y límites](../reports/android16-kernel-memory/preparation.json), [parche original integrado](../reports/android16-kernel-memory/linux-6.18.59-ack-ashmem.patch) y [objeto compilado](../reports/android16-kernel-memory/object-build.json): no cambian kernel activo ni aceptación R1. [Imagen y6.407 módulos terminados con exit0](../reports/android16-kernel-memory/full-build.json), hashes contrastados y vermagic vmwgfx independiente. Comprobar/instalar de forma separada preservando rollback, guardar checkpoint antes de arranque. Sólo tras ABI/protecciones reales positivas configurar memoria original y continuar el recorrido de servicios/Markor. No reutilizar módulos stock bajo un vermagic distinto.
 
 ## Puerta inmediata · memoria compartida antes de Power/Display
 

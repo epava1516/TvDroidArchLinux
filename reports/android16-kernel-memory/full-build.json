@@ -1,0 +1,43 @@
+{
+  "started_utc": "2026-11-01T13:32:24.627150+00:00",
+  "scope": "Full candidate build only; no install/boot, kernel ABI runtime, services, security or APK acceptance",
+  "argv": [
+    "nice",
+    "-n",
+    "10",
+    "make",
+    "-C",
+    "/home/tv/.cache/archtv/kernel-aosp16-1/source-1/linux-6.18.59",
+    "O=/home/tv/.cache/archtv/kernel-aosp16-1/build-1",
+    "-j2",
+    "bzImage",
+    "modules"
+  ],
+  "config_changes": {
+    "CONFIG_LOCALVERSION": [
+      "\"\"",
+      "\"-archtv-aosp16-1\""
+    ],
+    "CONFIG_LOCALVERSION_AUTO": [
+      "y",
+      "n"
+    ],
+    "CONFIG_MEMFD_ASHMEM_SHIM": [
+      null,
+      "y"
+    ]
+  },
+  "config_sha256": "78731701d6d329f1f2710487dc2a89993694c53ac6c80c579b4d55dafa2a9ae3",
+  "shim_object_sha256": "06d5e83e29573bdb58c03b35dd5586b6877c1f90f4483fb1cfd0f591866a5005",
+  "pid_namespace": "pid:[4026531836]",
+  "state": "terminal",
+  "log": "/home/tv/.cache/archtv/kernel-aosp16-1/build-1/full-build.log",
+  "pid_in_tool_namespace": 109756,
+  "exit": 0,
+  "seconds": 21494.662859342003,
+  "active": false,
+  "image_sha256": "fb88ff8f17628eae0b148080754df72cbe9a7c33d061785b20d5490e1eadf636",
+  "vmlinux_sha256": "8417a6535d650f48d986ef91897a8f74964e6fb974b701ee95d7a79f9149c9f3",
+  "module_count": 6407,
+  "kernel_release": "6.18.59-archtv-aosp16-1"
+}

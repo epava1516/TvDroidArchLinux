@@ -1,2035 +1,2035 @@
 {
   "Cargo.toml": {
-    "mtime": 1793534841.946482,
-    "seen": 1793534867.4553707,
+    "mtime": 1793562903.1944575,
+    "seen": 1793562999.486447,
     "ast_hash": "e8e6b2b37412dd20bd55474e22c69e74",
     "semantic_hash": ""
   },
   "crates/archtv-compositor/Cargo.toml": {
-    "mtime": 1793534841.952493,
-    "seen": 1793534867.4554846,
+    "mtime": 1793562903.2744594,
+    "seen": 1793562999.4875765,
     "ast_hash": "e07235a9c36b0cb03cd3f0b36b5cfa14",
     "semantic_hash": "e07235a9c36b0cb03cd3f0b36b5cfa14"
   },
   "crates/archtv-compositor/src/drm.rs": {
-    "mtime": 1793534841.953434,
-    "seen": 1793534867.4554887,
+    "mtime": 1793562903.277793,
+    "seen": 1793562999.4875808,
     "ast_hash": "e78a849a855704b14258aecdfbca17a8",
     "semantic_hash": ""
   },
   "crates/archtv-compositor/src/handlers/compositor.rs": {
-    "mtime": 1793534841.953697,
-    "seen": 1793534867.4554923,
+    "mtime": 1793562903.2811263,
+    "seen": 1793562999.4875848,
     "ast_hash": "df1726db46efff90ea9ba3006a4fb6bd",
     "semantic_hash": "df1726db46efff90ea9ba3006a4fb6bd"
   },
   "crates/archtv-compositor/src/handlers/mod.rs": {
-    "mtime": 1793534841.9539125,
-    "seen": 1793534867.4554965,
+    "mtime": 1793562903.2811263,
+    "seen": 1793562999.4875884,
     "ast_hash": "a909bfd03e35815e3a5d80003d1118c7",
     "semantic_hash": "a909bfd03e35815e3a5d80003d1118c7"
   },
   "crates/archtv-compositor/src/handlers/xdg_shell.rs": {
-    "mtime": 1793534841.9539125,
-    "seen": 1793534867.4555,
+    "mtime": 1793562903.2844596,
+    "seen": 1793562999.4875917,
     "ast_hash": "928441b2a41d0065897a7336ffb804e8",
     "semantic_hash": "928441b2a41d0065897a7336ffb804e8"
   },
   "crates/archtv-compositor/src/input.rs": {
-    "mtime": 1793534841.9539125,
-    "seen": 1793534867.4555035,
+    "mtime": 1793562903.2911265,
+    "seen": 1793562999.487595,
     "ast_hash": "7783c5634fb6278d04255576f659fe25",
     "semantic_hash": "7783c5634fb6278d04255576f659fe25"
   },
   "crates/archtv-compositor/src/main.rs": {
-    "mtime": 1793534841.9539125,
-    "seen": 1793534867.4555068,
+    "mtime": 1793562903.2938457,
+    "seen": 1793562999.4875987,
     "ast_hash": "6acb6d71d08aa53330e3df50e5d3ffe4",
     "semantic_hash": ""
   },
   "crates/archtv-compositor/src/session.rs": {
-    "mtime": 1793534841.9539125,
-    "seen": 1793534867.45551,
+    "mtime": 1793562903.2944598,
+    "seen": 1793562999.4876025,
     "ast_hash": "087b619a5c70f4893c749a1f02672ca7",
     "semantic_hash": "087b619a5c70f4893c749a1f02672ca7"
   },
   "crates/archtv-compositor/src/state.rs": {
-    "mtime": 1793534841.9539125,
-    "seen": 1793534867.455514,
+    "mtime": 1793562903.2944598,
+    "seen": 1793562999.487606,
     "ast_hash": "25af09cc334739379ea9ba566d0ddb16",
     "semantic_hash": "25af09cc334739379ea9ba566d0ddb16"
   },
   "crates/archtv-compositor/src/winit.rs": {
-    "mtime": 1793534841.9539125,
-    "seen": 1793534867.4555175,
+    "mtime": 1793562903.2977934,
+    "seen": 1793562999.4876096,
     "ast_hash": "9a03f399d6c7b93e930f324c5fe49d8b",
     "semantic_hash": ""
   },
   "crates/archtv-core/Cargo.toml": {
-    "mtime": 1793534841.9539125,
-    "seen": 1793534867.455521,
+    "mtime": 1793562903.2977934,
+    "seen": 1793562999.4876132,
     "ast_hash": "3e40d147d2e2fd602fb2a6bd7260626d",
     "semantic_hash": ""
   },
   "crates/archtv-core/src/desktop.rs": {
-    "mtime": 1793534841.956901,
-    "seen": 1793534867.4555311,
+    "mtime": 1793562903.3077936,
+    "seen": 1793562999.4876287,
     "ast_hash": "e8bc21c7a1c4f0773d8b876c2055ef00",
     "semantic_hash": "e8bc21c7a1c4f0773d8b876c2055ef00"
   },
   "crates/archtv-core/src/lib.rs": {
-    "mtime": 1793534841.956901,
-    "seen": 1793534867.4555342,
+    "mtime": 1793562903.311127,
+    "seen": 1793562999.4876323,
     "ast_hash": "085ed7f10d3204f3cf6d486765a98b03",
     "semantic_hash": ""
   },
   "crates/archtv-shell/Cargo.toml": {
-    "mtime": 1793534841.956901,
-    "seen": 1793534867.4555478,
+    "mtime": 1793562903.3211272,
+    "seen": 1793562999.4876442,
     "ast_hash": "2fdf392fd0be275b96f235d4b3699b6d",
     "semantic_hash": ""
   },
   "crates/archtv-shell/src/main.rs": {
-    "mtime": 1793534841.9811912,
-    "seen": 1793534867.4555557,
+    "mtime": 1793562903.3877954,
+    "seen": 1793562999.4876516,
     "ast_hash": "34eba7094bc8e3630d2f76ecd099f425",
     "semantic_hash": ""
   },
   "crates/archtv-shell/src/model.rs": {
-    "mtime": 1793534841.9811912,
-    "seen": 1793534867.4555593,
+    "mtime": 1793562903.3911288,
+    "seen": 1793562999.487655,
     "ast_hash": "04ebf7aac306ca3e555bb1b2f7c52c41",
     "semantic_hash": ""
   },
   "crates/archtv-shell/src/render.rs": {
-    "mtime": 1793534841.9811912,
-    "seen": 1793534867.4555626,
+    "mtime": 1793562903.3911288,
+    "seen": 1793562999.4876583,
     "ast_hash": "0065ef264d5ee0cb9cd06405f00088bc",
     "semantic_hash": ""
   },
   "crates/archtv-shell/src/runtime.rs": {
-    "mtime": 1793534841.9811912,
-    "seen": 1793534867.455566,
+    "mtime": 1793562903.394462,
+    "seen": 1793562999.4876626,
     "ast_hash": "bb680dce3ed5944289248c1d28d54e82",
     "semantic_hash": ""
   },
   "crates/archtv-shell/src/view.rs": {
-    "mtime": 1793534841.9811912,
-    "seen": 1793534867.4555693,
+    "mtime": 1793562903.3977957,
+    "seen": 1793562999.4876661,
     "ast_hash": "1c345230e8282467066fe89834fb13b7",
     "semantic_hash": ""
   },
   "crates/archtv-shell/src/worker.rs": {
-    "mtime": 1793534841.9811912,
-    "seen": 1793534867.455573,
+    "mtime": 1793562903.3977957,
+    "seen": 1793562999.4876697,
     "ast_hash": "a0e1ffb6bec69661ae96bad7649f7234",
     "semantic_hash": ""
   },
   "crates/archtv-test-client/Cargo.toml": {
-    "mtime": 1793534841.9811912,
-    "seen": 1793534867.4555764,
+    "mtime": 1793562903.401129,
+    "seen": 1793562999.4876733,
     "ast_hash": "57b3a001e342c408d3d061c0f69ad345",
     "semantic_hash": "57b3a001e342c408d3d061c0f69ad345"
   },
   "crates/archtv-test-client/src/main.rs": {
-    "mtime": 1793534841.982967,
-    "seen": 1793534867.4555802,
+    "mtime": 1793562903.4048634,
+    "seen": 1793562999.4876766,
     "ast_hash": "acf70788171c19364d4b575cb334562d",
     "semantic_hash": "acf70788171c19364d4b575cb334562d"
   },
   "scripts/00-diagnostico.sh": {
-    "mtime": 1793534843.2077003,
-    "seen": 1793534867.456099,
+    "mtime": 1793562915.6147377,
+    "seen": 1793562999.4881263,
     "ast_hash": "6ca6076c238f1c6b119abe8ca4c8e0e4",
     "semantic_hash": "6ca6076c238f1c6b119abe8ca4c8e0e4"
   },
   "scripts/10-base.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.4561026,
+    "mtime": 1793562915.618071,
+    "seen": 1793562999.48813,
     "ast_hash": "51d81c8f8f6eaa179c8385b30d3c8ab7",
     "semantic_hash": "51d81c8f8f6eaa179c8385b30d3c8ab7"
   },
   "scripts/40-android.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.4561138,
+    "mtime": 1793562915.624738,
+    "seen": 1793562999.4881415,
     "ast_hash": "9449a75ee26c0d05c0252149f4f7659d",
     "semantic_hash": "9449a75ee26c0d05c0252149f4f7659d"
   },
   "scripts/41-android-software.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.456118,
+    "mtime": 1793562915.6314046,
+    "seen": 1793562999.4881454,
     "ast_hash": "fdcad407a147cabd3f02b269491c6c3f",
     "semantic_hash": "fdcad407a147cabd3f02b269491c6c3f"
   },
   "scripts/69-anvil-deps.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.4561253,
+    "mtime": 1793562915.6380715,
+    "seen": 1793562999.4881537,
     "ast_hash": "3506274f79a77626c5913b09561d7104",
     "semantic_hash": "3506274f79a77626c5913b09561d7104"
   },
   "scripts/70-anvil-prepare.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.4561288,
+    "mtime": 1793562915.6414049,
+    "seen": 1793562999.4881573,
     "ast_hash": "b4278c3c448b5e6dc8d271cf61d51379",
     "semantic_hash": "b4278c3c448b5e6dc8d271cf61d51379"
   },
   "scripts/71-anvil-build.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.4561327,
+    "mtime": 1793562915.6414049,
+    "seen": 1793562999.4881613,
     "ast_hash": "b7619cdd9d2854b879f22cd75606cbb7",
     "semantic_hash": "b7619cdd9d2854b879f22cd75606cbb7"
   },
   "scripts/72-anvil-smoke.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.4561362,
+    "mtime": 1793562915.6447384,
+    "seen": 1793562999.4881651,
     "ast_hash": "e697ad4bf8448343add10c0895abfd39",
     "semantic_hash": "e697ad4bf8448343add10c0895abfd39"
   },
   "scripts/80-rust-build.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.4561398,
+    "mtime": 1793562915.6480718,
+    "seen": 1793562999.4881687,
     "ast_hash": "0bca237b09290bd22018798d5aafdc05",
     "semantic_hash": "0bca237b09290bd22018798d5aafdc05"
   },
   "scripts/82-rust-smoke.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.456144,
+    "mtime": 1793562915.651405,
+    "seen": 1793562999.4881723,
     "ast_hash": "b83a131d876509ed1f42571922f598f4",
     "semantic_hash": "b83a131d876509ed1f42571922f598f4"
   },
   "scripts/83-drm-session.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.4561477,
+    "mtime": 1793562915.6547387,
+    "seen": 1793562999.4881759,
     "ast_hash": "55e81dad5aa8b53ad13ccebf8e037442",
     "semantic_hash": "55e81dad5aa8b53ad13ccebf8e037442"
   },
   "scripts/84-drm-smoke.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.4561512,
+    "mtime": 1793562915.658072,
+    "seen": 1793562999.4881794,
     "ast_hash": "7b3cfd9bcc2ce59aa64a3ada94e4c117",
     "semantic_hash": "7b3cfd9bcc2ce59aa64a3ada94e4c117"
   },
   "scripts/85-session-smoke.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.4561553,
+    "mtime": 1793562915.6614053,
+    "seen": 1793562999.4881833,
     "ast_hash": "daa4097bdd1cb98afe43ddd2c6cc6f45",
     "semantic_hash": "daa4097bdd1cb98afe43ddd2c6cc6f45"
   },
   "scripts/86-shell-render-probe.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.4561589,
+    "mtime": 1793562915.6614053,
+    "seen": 1793562999.4881868,
     "ast_hash": "577f47ff30b8d605d5f59c96424dfd85",
     "semantic_hash": "577f47ff30b8d605d5f59c96424dfd85"
   },
   "scripts/check.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.456208,
+    "mtime": 1793562915.7047396,
+    "seen": 1793562999.4882336,
     "ast_hash": "2db163276c55828d4def22286f7ad02d",
     "semantic_hash": ""
   },
   "scripts/lib/common.sh": {
-    "mtime": 1793534843.2166862,
-    "seen": 1793534867.4562263,
+    "mtime": 1793562915.7180734,
+    "seen": 1793562999.4882529,
     "ast_hash": "487d4a1d82d21eb8e95917098a56c5f5",
     "semantic_hash": "487d4a1d82d21eb8e95917098a56c5f5"
   },
   "scripts/lib/input-probe.py": {
-    "mtime": 1793534843.2166862,
-    "seen": 1793534867.45623,
+    "mtime": 1793562915.7214067,
+    "seen": 1793562999.4882565,
     "ast_hash": "34262136d0795012f6b088f398d4e90b",
     "semantic_hash": "34262136d0795012f6b088f398d4e90b"
   },
   "scripts/lib/measure-process.py": {
-    "mtime": 1793534843.2166862,
-    "seen": 1793534867.4562411,
+    "mtime": 1793562915.72474,
+    "seen": 1793562999.4882667,
     "ast_hash": "878eb724660de8705bae3c2ffddd40e6",
     "semantic_hash": "878eb724660de8705bae3c2ffddd40e6"
   },
   "scripts/lib/ppm-to-png.py": {
-    "mtime": 1793534843.2166862,
-    "seen": 1793534867.456245,
+    "mtime": 1793562915.7280736,
+    "seen": 1793562999.4882703,
     "ast_hash": "15d6b31993ef428a469a3b586f250f25",
     "semantic_hash": "15d6b31993ef428a469a3b586f250f25"
   },
   "scripts/lib/session-input.py": {
-    "mtime": 1793534843.2166862,
-    "seen": 1793534867.456249,
+    "mtime": 1793562915.731407,
+    "seen": 1793562999.4882736,
     "ast_hash": "85390f96b96b9118d7a9163d023a5280",
     "semantic_hash": "85390f96b96b9118d7a9163d023a5280"
   },
   "scripts/lib/waydroid-software.py": {
-    "mtime": 1793534843.2166862,
-    "seen": 1793534867.4562666,
+    "mtime": 1793562915.7447405,
+    "seen": 1793562999.4882915,
     "ast_hash": "365648efa17bd8768b58c15796c97c7b",
     "semantic_hash": "365648efa17bd8768b58c15796c97c7b"
   },
   "scripts/registrar-paquetes.sh": {
-    "mtime": 1793534843.2166862,
-    "seen": 1793534867.4562707,
+    "mtime": 1793562915.7447405,
+    "seen": 1793562999.488295,
     "ast_hash": "4683e35a774a756ce55b95c2b726c2ee",
     "semantic_hash": "4683e35a774a756ce55b95c2b726c2ee"
   },
   "AGENTS.md": {
-    "mtime": 1793534841.946482,
-    "seen": 1793534867.4565156,
+    "mtime": 1793562903.1877909,
+    "seen": 1793562999.4885147,
     "ast_hash": "d3821801816a9b23251984ce33676133",
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1793534841.946482,
-    "seen": 1793534867.4565191,
+    "mtime": 1793562903.2011244,
+    "seen": 1793562999.4885163,
     "ast_hash": "4db2450204f04cdf438636b807ad28ab",
     "semantic_hash": ""
   },
   "ROADMAP.md": {
-    "mtime": 1793534841.946482,
-    "seen": 1793534867.4565232,
+    "mtime": 1793562903.2077913,
+    "seen": 1793562999.488518,
     "ast_hash": "c8e5bea52883c17ced7ce7cd08a6113d",
     "semantic_hash": ""
   },
   "THIRD_PARTY.md": {
-    "mtime": 1793534841.946482,
-    "seen": 1793534867.456527,
+    "mtime": 1793562903.2077913,
+    "seen": 1793562999.4885197,
     "ast_hash": "4a81eac985414c24072d6b8b86e05ac8",
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4566286,
+    "mtime": 1793562903.491131,
+    "seen": 1793562999.4886127,
     "ast_hash": "3cc5b505818f119e609a522558e4d9dd",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4566548,
+    "mtime": 1793562903.5144649,
+    "seen": 1793562999.4886374,
     "ast_hash": "35a14cd2c8d2942af509a776f5d4c996",
     "semantic_hash": ""
   },
   "docs/DISENO-SHELL.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4566586,
+    "mtime": 1793562903.5177982,
+    "seen": 1793562999.488641,
     "ast_hash": "c1c456b505f3d3e7d88f86b213236485",
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4566662,
-    "ast_hash": "6bd447a37a2964585bfc579ce1c6d093",
+    "mtime": 1793562961.4932554,
+    "seen": 1793562999.4886484,
+    "ast_hash": "b566e4d3c524cafbc342d9e3a4330288",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4566736,
+    "mtime": 1793562903.5344653,
+    "seen": 1793562999.4886556,
     "ast_hash": "6688d2ca851bb5b6c65f7087a4d8fe26",
     "semantic_hash": ""
   },
   "docs/FUENTES.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4566805,
+    "mtime": 1793562903.5411322,
+    "seen": 1793562999.488663,
     "ast_hash": "5fdffab883316ac5d13672bd45acf7b0",
     "semantic_hash": ""
   },
   "docs/INSTALACION.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4566913,
+    "mtime": 1793562903.5477989,
+    "seen": 1793562999.4886742,
     "ast_hash": "e8d3aa3d1254af3210066812d7b3e88c",
     "semantic_hash": ""
   },
   "docs/REFERENCIAS-FIRE-TV.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4567027,
+    "mtime": 1793562903.5544658,
+    "seen": 1793562999.488685,
     "ast_hash": "cee8d413edd35ad58e3f902b45b56697",
     "semantic_hash": ""
   },
   "manifests/android.txt": {
-    "mtime": 1793534842.042949,
-    "seen": 1793534867.4567244,
+    "mtime": 1793562903.9911423,
+    "seen": 1793562999.4887078,
     "ast_hash": "af388e5b01fbfae10dc02ee3783fec78",
     "semantic_hash": ""
   },
   "manifests/anvil-lab.txt": {
-    "mtime": 1793534842.042949,
-    "seen": 1793534867.456728,
+    "mtime": 1793562903.9911423,
+    "seen": 1793562999.4887116,
     "ast_hash": "6d3e60815f037370214f33a2d351d871",
     "semantic_hash": ""
   },
   "manifests/base.txt": {
-    "mtime": 1793534842.042949,
-    "seen": 1793534867.456736,
+    "mtime": 1793562904.0011425,
+    "seen": 1793562999.4887197,
     "ast_hash": "8199cbd3c3f4a3595d2b42856f0f9fee",
     "semantic_hash": ""
   },
   "manifests/build.txt": {
-    "mtime": 1793534842.042949,
-    "seen": 1793534867.45674,
+    "mtime": 1793562904.0044758,
+    "seen": 1793562999.4887235,
     "ast_hash": "65625b76bc75441cc297d2aff400fbb4",
     "semantic_hash": ""
   },
   "manifests/checks.txt": {
-    "mtime": 1793534842.042949,
-    "seen": 1793534867.4567437,
+    "mtime": 1793562904.0044758,
+    "seen": 1793562999.488727,
     "ast_hash": "49a82aa6c1d78b63294833e430350616",
     "semantic_hash": ""
   },
   "manifests/compositor-runtime.txt": {
-    "mtime": 1793534842.042949,
-    "seen": 1793534867.4567473,
+    "mtime": 1793562904.0078094,
+    "seen": 1793562999.4887307,
     "ast_hash": "961fee843f4cde969a9a972c8a3461af",
     "semantic_hash": ""
   },
   "manifests/platform-candidates.txt": {
-    "mtime": 1793534842.042949,
-    "seen": 1793534867.456758,
+    "mtime": 1793562904.0178096,
+    "seen": 1793562999.4887428,
     "ast_hash": "2fcac99358cef4940f0c17b520d610b3",
     "semantic_hash": ""
   },
   "manifests/shell-runtime.txt": {
-    "mtime": 1793534842.042949,
-    "seen": 1793534867.4567616,
+    "mtime": 1793562904.0178096,
+    "seen": 1793562999.4887466,
     "ast_hash": "ba3878a593f4e203d1151dad5f2516f1",
     "semantic_hash": ""
   },
   "scripts/68-graphify.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.4561217,
+    "mtime": 1793562915.6347382,
+    "seen": 1793562999.4881494,
     "ast_hash": "15afe678791167f6cc06cd98094eb909",
     "semantic_hash": ""
   },
   "scripts/graphify.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.4562116,
+    "mtime": 1793562915.7080731,
+    "seen": 1793562999.4882371,
     "ast_hash": "519b86f384cefb2648dfce8589976a90",
     "semantic_hash": "519b86f384cefb2648dfce8589976a90"
   },
   "docs/GRAPHIFY.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.456684,
+    "mtime": 1793562903.5411322,
+    "seen": 1793562999.4886665,
     "ast_hash": "e3f2bf16a72bb6d58f32df59f80e03ba",
     "semantic_hash": ""
   },
   "scripts/87-shell-session.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.4561625,
+    "mtime": 1793562915.664739,
+    "seen": 1793562999.4881904,
     "ast_hash": "bbb1dff25d4524c8cbe5bedd9b3c0000",
     "semantic_hash": ""
   },
   "scripts/88-shell-smoke.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.4561665,
+    "mtime": 1793562915.6680722,
+    "seen": 1793562999.4881938,
     "ast_hash": "fe239a0dd9d4e184082148538b7363b5",
     "semantic_hash": ""
   },
   "scripts/lib/tv-ui-probe.py": {
-    "mtime": 1793534843.2166862,
-    "seen": 1793534867.4562526,
+    "mtime": 1793562915.731407,
+    "seen": 1793562999.4882772,
     "ast_hash": "06c2d681a4c2db8404716fd9ab505afe",
     "semantic_hash": ""
   },
   "crates/archtv-shell/src/layout.rs": {
-    "mtime": 1793534841.959891,
-    "seen": 1793534867.455552,
+    "mtime": 1793562903.3844619,
+    "seen": 1793562999.4876482,
     "ast_hash": "bf989a1449504a6d21356298b4d60c3f",
     "semantic_hash": ""
   },
   "scripts/89-shell-resolutions.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.45617,
+    "mtime": 1793562915.6714056,
+    "seen": 1793562999.4881973,
     "ast_hash": "b1dd990c4f59a49e98f6a68defb572f7",
     "semantic_hash": ""
   },
   "scripts/lib/layout-reference.py": {
-    "mtime": 1793534843.2166862,
-    "seen": 1793534867.4562335,
+    "mtime": 1793562915.72474,
+    "seen": 1793562999.48826,
     "ast_hash": "4e861f3734c5cab28851bf2a17795c23",
     "semantic_hash": ""
   },
   "scripts/lib/verify-shell-resolutions.py": {
-    "mtime": 1793534843.2166862,
-    "seen": 1793534867.4562595,
+    "mtime": 1793562915.7380738,
+    "seen": 1793562999.488284,
     "ast_hash": "292f409d07907a67a7a52f7df5fe61e0",
     "semantic_hash": ""
   },
   "docs/COMPARACION-FIRE-TV.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4566326,
+    "mtime": 1793562903.4977977,
+    "seen": 1793562999.4886162,
     "ast_hash": "657004732fcf7ee4f32e7bb54bd3d849",
     "semantic_hash": ""
   },
   "scripts/90-android-session.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.4561746,
+    "mtime": 1793562915.6714056,
+    "seen": 1793562999.4882014,
     "ast_hash": "8be87ec483fae876c70a22806e8dd74d",
     "semantic_hash": ""
   },
   "scripts/91-android-client.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.4561784,
+    "mtime": 1793562915.6747391,
+    "seen": 1793562999.488205,
     "ast_hash": "0f59d115c7d73540e32266d6e25f85fd",
     "semantic_hash": ""
   },
   "scripts/92-android-boot-probe.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.456182,
+    "mtime": 1793562915.6780725,
+    "seen": 1793562999.4882085,
     "ast_hash": "f82ca5d42d8e21dbda49b9cea8853e64",
     "semantic_hash": ""
   },
   "scripts/93-android-shell-session.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.4561858,
+    "mtime": 1793562915.6814058,
+    "seen": 1793562999.4882119,
     "ast_hash": "3a174e38eaabf336c700b7288e1961ce",
     "semantic_hash": ""
   },
   "scripts/lib/android-ui-probe.py": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.4562151,
+    "mtime": 1793562915.7114065,
+    "seen": 1793562999.488241,
     "ast_hash": "022ec88d64c91d0cca10ad448d09c603",
     "semantic_hash": ""
   },
   "docs/AOSP-NATIVO.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4565785,
+    "mtime": 1793562903.4544635,
+    "seen": 1793562999.488562,
     "ast_hash": "f178d90131878864ac14549dd589d71c",
     "semantic_hash": ""
   },
   "manifests/android-test-lab.txt": {
-    "mtime": 1793534842.0424335,
-    "seen": 1793534867.4567208,
+    "mtime": 1793562903.987809,
+    "seen": 1793562999.488704,
     "ast_hash": "4f33a43dd39b4d7c85a3e47472f9b62c",
     "semantic_hash": ""
   },
   "scripts/94-android-media-probe.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.4561896,
+    "mtime": 1793562915.6814058,
+    "seen": 1793562999.4882154,
     "ast_hash": "cc33898e0dedfee114ac3bd940e0951d",
     "semantic_hash": ""
   },
   "scripts/lib/clock-probe.py": {
-    "mtime": 1793534843.2166862,
-    "seen": 1793534867.456222,
+    "mtime": 1793562915.7180734,
+    "seen": 1793562999.4882488,
     "ast_hash": "97f58c0d191ce872a9aaed354f260d54",
     "semantic_hash": ""
   },
   "scripts/lib/verify-android-media.py": {
-    "mtime": 1793534843.2166862,
-    "seen": 1793534867.456256,
+    "mtime": 1793562915.7347403,
+    "seen": 1793562999.4882805,
     "ast_hash": "be748ed9f31928a295503a4e26f6ed26",
     "semantic_hash": ""
   },
   "scripts/lib/vlc-test-profile.py": {
-    "mtime": 1793534843.2166862,
-    "seen": 1793534867.4562628,
+    "mtime": 1793562915.7414072,
+    "seen": 1793562999.488288,
     "ast_hash": "604230f56fd314aae030300ba89173d8",
     "semantic_hash": ""
   },
   "docs/INCIDENTE-VM-20261030.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4566877,
+    "mtime": 1793562903.5444655,
+    "seen": 1793562999.4886703,
     "ast_hash": "58e439dbcc2645f98f773ac717685595",
     "semantic_hash": ""
   },
   "scripts/95-kernel-lts.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.4561932,
+    "mtime": 1793562915.6880727,
+    "seen": 1793562999.4882188,
     "ast_hash": "bdc7d9b84033ae493d502ed24b2db043",
     "semantic_hash": ""
   },
   "scripts/lib/lts-boot-entry.py": {
-    "mtime": 1793534843.2166862,
-    "seen": 1793534867.4562373,
+    "mtime": 1793562915.72474,
+    "seen": 1793562999.4882631,
     "ast_hash": "9cf8d83811f7b1fddd605340317b7f67",
     "semantic_hash": ""
   },
   "manifests/kernel-lab.txt": {
-    "mtime": 1793534842.042949,
-    "seen": 1793534867.4567544,
+    "mtime": 1793562904.014476,
+    "seen": 1793562999.4887383,
     "ast_hash": "38fe251794105e2daf2abf718dde2534",
     "semantic_hash": ""
   },
   "packaging/session/archtv-session": {
-    "mtime": 1793534842.0450997,
-    "seen": 1793534867.455834,
+    "mtime": 1793562904.0411434,
+    "seen": 1793562999.4879048,
     "ast_hash": "52a0580501ee8aa83772682bd7c6c81a",
     "semantic_hash": ""
   },
   "scripts/97-package-source.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.4561968,
+    "mtime": 1793562915.6880727,
+    "seen": 1793562999.4882221,
     "ast_hash": "8adf8bfe7774126d290c40b3cb5e516b",
     "semantic_hash": ""
   },
   "docs/PAQUETES.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4566956,
+    "mtime": 1793562903.5477989,
+    "seen": 1793562999.4886777,
     "ast_hash": "6184d2252ba0684d2b0e47de1f12898b",
     "semantic_hash": ""
   },
   "packaging/arch/cargo-license-inventory.py": {
-    "mtime": 1793534842.0444891,
-    "seen": 1793534867.4558148,
+    "mtime": 1793562904.0253453,
+    "seen": 1793562999.4878845,
     "ast_hash": "5cdb5edccd25974ab567ea87c71b82b7",
     "semantic_hash": ""
   },
   "scripts/98-package-build.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.4562001,
+    "mtime": 1793562915.691406,
+    "seen": 1793562999.4882264,
     "ast_hash": "2f04822d4e2285424957a52fb5d35023",
     "semantic_hash": ""
   },
   "packaging/arch/package-lifecycle.sh": {
-    "mtime": 1793534842.0444891,
-    "seen": 1793534867.455823,
+    "mtime": 1793562904.0353966,
+    "seen": 1793562999.4878924,
     "ast_hash": "14d3315f9b269fcefa142cca8e01ec21",
     "semantic_hash": ""
   },
   "manifests/distribution-lab.txt": {
-    "mtime": 1793534842.042949,
-    "seen": 1793534867.4567506,
+    "mtime": 1793562904.0078094,
+    "seen": 1793562999.4887345,
     "ast_hash": "259c3f65705db89edde6829a83250175",
     "semantic_hash": ""
   },
   "packaging/arch/local-repository.py": {
-    "mtime": 1793534842.0444891,
-    "seen": 1793534867.455819,
+    "mtime": 1793562904.0311432,
+    "seen": 1793562999.4878883,
     "ast_hash": "b185570b6afe5d11af64643dc20ab789",
     "semantic_hash": ""
   },
   "packaging/iso/prepare-profile.py": {
-    "mtime": 1793534842.0444891,
-    "seen": 1793534867.4558268,
+    "mtime": 1793562904.0353966,
+    "seen": 1793562999.4878962,
     "ast_hash": "58217f18da4e7715a723fc566c1be23e",
     "semantic_hash": ""
   },
   "docs/DISTRIBUCION.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4566624,
+    "mtime": 1793562903.5211318,
+    "seen": 1793562999.4886448,
     "ast_hash": "2f43ce422f7358cb002d655a9a9c1900",
     "semantic_hash": ""
   },
   "packaging/iso/verify-build.py": {
-    "mtime": 1793534842.0450997,
-    "seen": 1793534867.45583,
+    "mtime": 1793562904.0392506,
+    "seen": 1793562999.4879003,
     "ast_hash": "0a81307a6dd7392d7d1bbe8a48077b7d",
     "semantic_hash": ""
   },
   "scripts/99-iso-build.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.456204,
+    "mtime": 1793562915.7047396,
+    "seen": 1793562999.4882295,
     "ast_hash": "f8a1795025f3b3735ab90432d2190981",
     "semantic_hash": ""
   },
   "crates/archtv-core/src/android.rs": {
-    "mtime": 1793534841.9564836,
-    "seen": 1793534867.4555278,
+    "mtime": 1793562903.3077936,
+    "seen": 1793562999.4876254,
     "ast_hash": "ec80c3ca9660725428eb72575a98b835",
     "semantic_hash": ""
   },
   "docs/CONTRATO-ANDROID.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4566472,
+    "mtime": 1793562903.507798,
+    "seen": 1793562999.4886305,
     "ast_hash": "d3c5d183bbc35a788cf8157b78992c53",
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793534853.0202978,
-    "seen": 1793534867.4567065,
-    "ast_hash": "9b6956ff385fb769be81fd7cfdf409a1",
+    "mtime": 1793562961.4976103,
+    "seen": 1793562999.4886885,
+    "ast_hash": "d4db3c00158ee06d6eaa884175e4f97c",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
-    "mtime": 1793534841.9495077,
-    "seen": 1793534867.4553943,
+    "mtime": 1793562903.2118063,
+    "seen": 1793562999.4874766,
     "ast_hash": "a3f467e09e6ccf4b096164ae8477acbe",
     "semantic_hash": ""
   },
   "crates/archtv-android/examples/status.rs": {
-    "mtime": 1793534841.9498909,
-    "seen": 1793534867.4554071,
+    "mtime": 1793562903.2177916,
+    "seen": 1793562999.4874928,
     "ast_hash": "b0804ef961a9a6d2a8a9701c4be9176b",
     "semantic_hash": ""
   },
   "crates/archtv-android/src/lib.rs": {
-    "mtime": 1793534841.9498909,
-    "seen": 1793534867.4554145,
+    "mtime": 1793562903.221125,
+    "seen": 1793562999.487502,
     "ast_hash": "bb5cd678d08e15456b1b16189778c079",
     "semantic_hash": ""
   },
   "tools/apk/apk_inventory.py": {
-    "mtime": 1793534843.2212574,
-    "seen": 1793534867.4563148,
+    "mtime": 1793562915.778953,
+    "seen": 1793562999.4883416,
     "ast_hash": "68479cf0d399a2d4abdf885b6861f550",
     "semantic_hash": ""
   },
   "fixtures/apk/counter/src/org/archtv/probe/MainActivity.java": {
-    "mtime": 1793534842.0046315,
-    "seen": 1793534867.4558024,
+    "mtime": 1793562903.727803,
+    "seen": 1793562999.4878724,
     "ast_hash": "8c7b09d83e102792fe0c632f7daf124e",
     "semantic_hash": ""
   },
   "fixtures/apk/counter/toolchain.json": {
-    "mtime": 1793534842.0046315,
-    "seen": 1793534867.455806,
+    "mtime": 1793562903.7311363,
+    "seen": 1793562999.487876,
     "ast_hash": "6edb0fa0462225fdfb1058e25ff8fab3",
     "semantic_hash": ""
   },
   "tools/apk/build_fixture.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4563403,
+    "mtime": 1793562915.7914083,
+    "seen": 1793562999.4883666,
     "ast_hash": "1c77d3ee7d926bd184557ac2f464561c",
     "semantic_hash": ""
   },
   "tools/apk/fetch_fixture_tools.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.456386,
+    "mtime": 1793562915.821409,
+    "seen": 1793562999.4884083,
     "ast_hash": "fe4ec46aa439e3b07699ab1a0b63d117",
     "semantic_hash": ""
   },
   "fixtures/apk/counter/README.md": {
-    "mtime": 1793534842.0036595,
-    "seen": 1793534867.4567173,
+    "mtime": 1793562903.7163544,
+    "seen": 1793562999.4887006,
     "ast_hash": "f56fc45c96bb647b2085643836c740aa",
     "semantic_hash": ""
   },
   "manifests/apk-lab.txt": {
-    "mtime": 1793534842.042949,
-    "seen": 1793534867.4567318,
+    "mtime": 1793562903.9978092,
+    "seen": 1793562999.4887154,
     "ast_hash": "7ef713b09ed469b6b326ae8e105b3fdb",
     "semantic_hash": ""
   },
   "fixtures/art-host/RuntimeProbe.java": {
-    "mtime": 1793534842.0046315,
-    "seen": 1793534867.45581,
+    "mtime": 1793562903.7378032,
+    "seen": 1793562999.48788,
     "ast_hash": "1d65942ce8122ad82da3cc1f9c692066",
     "semantic_hash": ""
   },
   "tools/apk/build_art_probe.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4563327,
+    "mtime": 1793562915.788075,
+    "seen": 1793562999.4883592,
     "ast_hash": "050834c31c984dc6f76bd9b18914ba7b",
     "semantic_hash": ""
   },
   "tools/apk/fetch_art_host.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4563787,
+    "mtime": 1793562915.814742,
+    "seen": 1793562999.4884012,
     "ast_hash": "5a03deedf97877ac7722d78b366946ed",
     "semantic_hash": ""
   },
   "tools/apk/run_art_probe.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4564376,
+    "mtime": 1793562915.8647432,
+    "seen": 1793562999.4884603,
     "ast_hash": "9a96de1303b30f2e1447de0fc164165a",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-ART-HOST.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4566698,
+    "mtime": 1793562903.531132,
+    "seen": 1793562999.488652,
     "ast_hash": "d9ea73b6160f1d6f00951b49ebca09d8",
     "semantic_hash": ""
   },
   "tools/apk/art-host.json": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4563181,
+    "mtime": 1793562915.778953,
+    "seen": 1793562999.4883454,
     "ast_hash": "646b4acfe68d9380719db85981651ee5",
     "semantic_hash": ""
   },
   "runtime/apk/java/android/app/Activity.java": {
-    "mtime": 1793534843.2057576,
-    "seen": 1793534867.4560442,
+    "mtime": 1793562915.5647366,
+    "seen": 1793562999.4880724,
     "ast_hash": "68ce1095028e7c71ffd4874eb7641ae8",
     "semantic_hash": ""
   },
   "runtime/apk/java/android/content/SharedPreferences.java": {
-    "mtime": 1793534843.2057576,
-    "seen": 1793534867.4560478,
+    "mtime": 1793562915.56807,
+    "seen": 1793562999.4880757,
     "ast_hash": "bcf3c08ce5c0735499a18429d05d7588",
     "semantic_hash": ""
   },
   "runtime/apk/java/android/os/Bundle.java": {
-    "mtime": 1793534843.2057576,
-    "seen": 1793534867.4560518,
+    "mtime": 1793562915.5747368,
+    "seen": 1793562999.4880795,
     "ast_hash": "9bf9937efe9590a84953fbe748b40043",
     "semantic_hash": ""
   },
   "runtime/apk/java/android/view/View.java": {
-    "mtime": 1793534843.2057576,
-    "seen": 1793534867.4560554,
+    "mtime": 1793562915.5780702,
+    "seen": 1793562999.4880831,
     "ast_hash": "de09d892aedf9bd93514cb20436d3932",
     "semantic_hash": ""
   },
   "runtime/apk/java/android/view/ViewGroup.java": {
-    "mtime": 1793534843.206609,
-    "seen": 1793534867.4560595,
+    "mtime": 1793562915.5780702,
+    "seen": 1793562999.4880867,
     "ast_hash": "76faec21f45eced22f447141f2d72307",
     "semantic_hash": ""
   },
   "runtime/apk/java/android/widget/Button.java": {
-    "mtime": 1793534843.206609,
-    "seen": 1793534867.4560633,
+    "mtime": 1793562915.5814035,
+    "seen": 1793562999.48809,
     "ast_hash": "867c37f0f71ffc6aa9ac0847e6637a42",
     "semantic_hash": ""
   },
   "runtime/apk/java/android/widget/LinearLayout.java": {
-    "mtime": 1793534843.2069473,
-    "seen": 1793534867.4560668,
+    "mtime": 1793562915.584737,
+    "seen": 1793562999.4880936,
     "ast_hash": "edca082ea57ef672c7cdb92e7f5e15a5",
     "semantic_hash": ""
   },
   "runtime/apk/java/android/widget/TextView.java": {
-    "mtime": 1793534843.2069473,
-    "seen": 1793534867.4560702,
+    "mtime": 1793562915.5880704,
+    "seen": 1793562999.488097,
     "ast_hash": "2a1c225b80b7d7c019e5545b4de0dc66",
     "semantic_hash": ""
   },
   "runtime/apk/java/org/archtv/apkruntime/ApkResources.java": {
-    "mtime": 1793534843.2077003,
-    "seen": 1793534867.4560773,
+    "mtime": 1793562915.5947373,
+    "seen": 1793562999.4881043,
     "ast_hash": "1f07e1e49b3541ba7a28608ab6c86d67",
     "semantic_hash": ""
   },
   "runtime/apk/java/org/archtv/apkruntime/AppEnvironment.java": {
-    "mtime": 1793534843.2077003,
-    "seen": 1793534867.456081,
+    "mtime": 1793562915.5980706,
+    "seen": 1793562999.4881084,
     "ast_hash": "c80ca27ad0c520182220a1c8a660206b",
     "semantic_hash": ""
   },
   "runtime/apk/java/org/archtv/apkruntime/IntPreferences.java": {
-    "mtime": 1793534843.2077003,
-    "seen": 1793534867.4560878,
+    "mtime": 1793562915.6078777,
+    "seen": 1793562999.4881158,
     "ast_hash": "bc0e26050c2940ca5f2c1690aba8b12b",
     "semantic_hash": ""
   },
   "runtime/apk/java/org/archtv/apkruntime/Main.java": {
-    "mtime": 1793534843.2077003,
-    "seen": 1793534867.4560952,
+    "mtime": 1793562915.6114042,
+    "seen": 1793562999.4881227,
     "ast_hash": "f91d80f5f26089beb3e227004a39fd2a",
     "semantic_hash": ""
   },
   "tools/apk/build_apk_runtime.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.456329,
+    "mtime": 1793562915.7847414,
+    "seen": 1793562999.4883559,
     "ast_hash": "de83f8b2f417ff6bc6849c3ea087c8dd",
     "semantic_hash": ""
   },
   "tools/apk/verify_counter_headless.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.456467,
+    "mtime": 1793562915.8880773,
+    "seen": 1793562999.4884903,
     "ast_hash": "1f1c21a3971c5c18ed5db6e85ca5117f",
     "semantic_hash": ""
   },
   "docs/CONTRATO-APK.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4566514,
+    "mtime": 1793562903.5144649,
+    "seen": 1793562999.4886339,
     "ast_hash": "33bfc771500f1dc688b25b185d8aa6e0",
     "semantic_hash": ""
   },
   "runtime/apk/README.md": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.4567797,
+    "mtime": 1793562915.561403,
+    "seen": 1793562999.4887674,
     "ast_hash": "e7af5e5fd9089798e836c270a61f26bb",
     "semantic_hash": ""
   },
   "crates/archtv-apk-host/Cargo.toml": {
-    "mtime": 1793534841.951244,
-    "seen": 1793534867.4554613,
+    "mtime": 1793562903.254459,
+    "seen": 1793562999.4875512,
     "ast_hash": "f3ace28a9d17b4e1d632fb564640be9d",
     "semantic_hash": ""
   },
   "crates/archtv-apk-host/src/backend.rs": {
-    "mtime": 1793534841.9522884,
-    "seen": 1793534867.4554656,
+    "mtime": 1793562903.2577925,
+    "seen": 1793562999.487555,
     "ast_hash": "71f16b38ec3a3cb28e0febae0dc833f4",
     "semantic_hash": ""
   },
   "crates/archtv-apk-host/src/main.rs": {
-    "mtime": 1793534841.952493,
-    "seen": 1793534867.4554694,
+    "mtime": 1793562903.2577925,
+    "seen": 1793562999.4875586,
     "ast_hash": "d91454bc9994f718ffeb8ee73612ba4b",
     "semantic_hash": ""
   },
   "crates/archtv-apk-host/src/model.rs": {
-    "mtime": 1793534841.952493,
-    "seen": 1793534867.4554725,
+    "mtime": 1793562903.2644591,
+    "seen": 1793562999.4875634,
     "ast_hash": "bd0cdd71e3b8ced47bdf145cbe275717",
     "semantic_hash": ""
   },
   "crates/archtv-apk-host/src/render.rs": {
-    "mtime": 1793534841.952493,
-    "seen": 1793534867.4554763,
+    "mtime": 1793562903.2677927,
+    "seen": 1793562999.4875681,
     "ast_hash": "bcd3b73228def2c486c67400e8e05630",
     "semantic_hash": ""
   },
   "scripts/100-apk-session.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.4561064,
+    "mtime": 1793562915.618071,
+    "seen": 1793562999.488134,
     "ast_hash": "53a63a75f349814506e04dc410c51f18",
     "semantic_hash": ""
   },
   "scripts/101-apk-smoke.sh": {
-    "mtime": 1793534843.209291,
-    "seen": 1793534867.4561102,
+    "mtime": 1793562915.624738,
+    "seen": 1793562999.4881375,
     "ast_hash": "daad303af3d6658bc4c4ba21df133fdd",
     "semantic_hash": ""
   },
   "scripts/lib/apk-ui-probe.py": {
-    "mtime": 1793534843.2166862,
-    "seen": 1793534867.4562185,
+    "mtime": 1793562915.7147398,
+    "seen": 1793562999.488245,
     "ast_hash": "ffdbd245168cf49c79ab0c82b43cc72d",
     "semantic_hash": ""
   },
   "docs/APK-WAYLAND.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4566247,
+    "mtime": 1793562903.491131,
+    "seen": 1793562999.4886088,
     "ast_hash": "8834c16d5737559cc95ed624deee8b93",
     "semantic_hash": ""
   },
   "runtime/aosp/framework-study.json": {
-    "mtime": 1793534843.1811247,
-    "seen": 1793534867.4558997,
+    "mtime": 1793562915.398066,
+    "seen": 1793562999.4879363,
     "ast_hash": "68f4ddfc573b99d48cb2b5b2702067bd",
     "semantic_hash": ""
   },
   "tools/apk/study_framework.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4564412,
+    "mtime": 1793562915.8680768,
+    "seen": 1793562999.4884639,
     "ast_hash": "d45b2237620115dc4ada1366e256b40f",
     "semantic_hash": ""
   },
   "docs/PORT-FRAMEWORK-AOSP.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4566991,
+    "mtime": 1793562903.5511324,
+    "seen": 1793562999.4886813,
     "ast_hash": "37d587767d18c451f53389ffe16a6f14",
     "semantic_hash": ""
   },
   "fixtures/aosp-queue/QueueLinkProbe.java": {
-    "mtime": 1793534841.9980626,
-    "seen": 1793534867.4557414,
+    "mtime": 1793562903.6278007,
+    "seen": 1793562999.4878137,
     "ast_hash": "e0ca927c117320ded7881a0f171a651e",
     "semantic_hash": ""
   },
   "runtime/aosp/compile-reference.json": {
-    "mtime": 1793534843.1723313,
-    "seen": 1793534867.4558804,
+    "mtime": 1793562915.3847325,
+    "seen": 1793562999.487926,
     "ast_hash": "7f6390dc3ccd33640beb267946040c0d",
     "semantic_hash": ""
   },
   "runtime/aosp/compile-stubs/android/compat/annotation/UnsupportedAppUsage.java": {
-    "mtime": 1793534843.1804087,
-    "seen": 1793534867.4558847,
+    "mtime": 1793562915.3899403,
+    "seen": 1793562999.4879286,
     "ast_hash": "fe8dd4e012406ab8a2e95ab57e7b4e77",
     "semantic_hash": ""
   },
   "runtime/aosp/compile-stubs/java/io/FileDescriptor.java": {
-    "mtime": 1793534843.1807399,
-    "seen": 1793534867.4558883,
+    "mtime": 1793562915.3934305,
+    "seen": 1793562999.4879303,
     "ast_hash": "90d2cc86ed8bde5a1eecbfad06b82118",
     "semantic_hash": ""
   },
   "tools/apk/build_aosp_queue.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4563255,
+    "mtime": 1793562915.7847414,
+    "seen": 1793562999.4883523,
     "ast_hash": "8fe977876068e3351107eedebe7b7d8d",
     "semantic_hash": ""
   },
   "tools/apk/fetch_compile_reference.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.456382,
+    "mtime": 1793562915.8191204,
+    "seen": 1793562999.4884045,
     "ast_hash": "826f1457dce5e4190cb7d1f9eae5fdf8",
     "semantic_hash": ""
   },
   "tools/apk/probe_aosp_queue.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4564126,
+    "mtime": 1793562915.8414094,
+    "seen": 1793562999.488434,
     "ast_hash": "88644a6ad0e7d09ad6d213ef89940c7e",
     "semantic_hash": ""
   },
   "runtime/aosp/README.md": {
-    "mtime": 1793534843.165461,
-    "seen": 1793534867.4567652,
+    "mtime": 1793562915.2613964,
+    "seen": 1793562999.4887514,
     "ast_hash": "cb49f82cd2e894f15e934607c9f94285",
     "semantic_hash": ""
   },
   "crates/archtv-aosp-linux/Cargo.toml": {
-    "mtime": 1793534841.9498909,
-    "seen": 1793534867.4554217,
+    "mtime": 1793562903.2277918,
+    "seen": 1793562999.4875107,
     "ast_hash": "af26ba2a33c35844f7c5f28fdf6f6967",
     "semantic_hash": ""
   },
   "crates/archtv-aosp-linux/src/lib.rs": {
-    "mtime": 1793534841.951244,
-    "seen": 1793534867.4554377,
+    "mtime": 1793562903.239761,
+    "seen": 1793562999.4875278,
     "ast_hash": "102da8ec428c48a7f5c25f5a6898be63",
     "semantic_hash": ""
   },
   "crates/archtv-aosp-linux/src/queue.rs": {
-    "mtime": 1793534841.951244,
-    "seen": 1793534867.4554524,
+    "mtime": 1793562903.2477922,
+    "seen": 1793562999.4875417,
     "ast_hash": "5a07f5fecba9cd8597acfd6e988fc1ce",
     "semantic_hash": ""
   },
   "fixtures/aosp-queue/HandlerDispatchProbe.java": {
-    "mtime": 1793534841.9980626,
-    "seen": 1793534867.4557292,
+    "mtime": 1793562903.621134,
+    "seen": 1793562999.4877996,
     "ast_hash": "cf2aa7a7142f6dba6acc685126850074",
     "semantic_hash": ""
   },
   "fixtures/aosp-queue/NativeQueueProbe.java": {
-    "mtime": 1793534841.9980626,
-    "seen": 1793534867.4557374,
+    "mtime": 1793562903.6278007,
+    "seen": 1793562999.4878094,
     "ast_hash": "a59c4dff66e1e2cf32a1bac8067890cf",
     "semantic_hash": ""
   },
   "tools/apk/verify_aosp_jni.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4564521,
+    "mtime": 1793562915.878077,
+    "seen": 1793562999.4884753,
     "ast_hash": "add4e68f00abbba6286aa0c596baf500",
     "semantic_hash": ""
   },
   "docs/AOSP-JNI-LINUX.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4565604,
+    "mtime": 1793562903.4244628,
+    "seen": 1793562999.488544,
     "ast_hash": "6bf66889f90c54807d3100d069892727",
     "semantic_hash": ""
   },
   "crates/archtv-aosp-linux/src/clock.rs": {
-    "mtime": 1793534841.9509695,
-    "seen": 1793534867.455427,
+    "mtime": 1793562903.2344584,
+    "seen": 1793562999.487517,
     "ast_hash": "7248dc0daa9c238c63b965443231548b",
     "semantic_hash": ""
   },
   "crates/archtv-aosp-linux/src/identity.rs": {
-    "mtime": 1793534841.951244,
-    "seen": 1793534867.455432,
+    "mtime": 1793562903.237792,
+    "seen": 1793562999.4875224,
     "ast_hash": "ebdd498a19f6342745651513929bdb79",
     "semantic_hash": ""
   },
   "crates/archtv-aosp-linux/src/properties.rs": {
-    "mtime": 1793534841.951244,
-    "seen": 1793534867.455448,
+    "mtime": 1793562903.2444587,
+    "seen": 1793562999.4875376,
     "ast_hash": "5e77cf0e595c4fb8e8f802ec3f52376f",
     "semantic_hash": ""
   },
   "fixtures/aosp-queue/ClockNativeProbe.java": {
-    "mtime": 1793534841.9974883,
-    "seen": 1793534867.4557252,
+    "mtime": 1793562903.6178005,
+    "seen": 1793562999.4877949,
     "ast_hash": "dc1c4294f3e28fa6a1da4f9dd5035a5b",
     "semantic_hash": ""
   },
   "fixtures/aosp-queue/LocalContextProbe.java": {
-    "mtime": 1793534841.9980626,
-    "seen": 1793534867.4557338,
+    "mtime": 1793562903.6244674,
+    "seen": 1793562999.4878056,
     "ast_hash": "49ad33624c85b9a9dcf6c625347e5463",
     "semantic_hash": ""
   },
   "fixtures/aosp-queue/QueueSemanticsProbe.java": {
-    "mtime": 1793534841.9980626,
-    "seen": 1793534867.4557455,
+    "mtime": 1793562903.6311343,
+    "seen": 1793562999.487817,
     "ast_hash": "8ab891b2e265e64d66ba2fcffac796c5",
     "semantic_hash": ""
   },
   "runtime/aosp/compile-stubs/java/lang/invoke/LambdaMetafactory.java": {
-    "mtime": 1793534843.1811247,
-    "seen": 1793534867.4558926,
+    "mtime": 1793562915.3956146,
+    "seen": 1793562999.4879322,
     "ast_hash": "e1549719f6d7f8ed8b5f514d3ee68ae2",
     "semantic_hash": ""
   },
   "tools/apk/probe_handler_dispatch.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4564164,
+    "mtime": 1793562915.8447428,
+    "seen": 1793562999.4884377,
     "ast_hash": "4f7b4921c3526b8adbf2842cc641da1a",
     "semantic_hash": ""
   },
   "tools/apk/verify_aosp_foundations.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4564483,
+    "mtime": 1793562915.8747435,
+    "seen": 1793562999.4884715,
     "ast_hash": "dd516eeccd5d55f3ce768c63ab28e6ac",
     "semantic_hash": ""
   },
   "docs/AOSP-HANDLER-LINUX.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.456553,
+    "mtime": 1793562903.417796,
+    "seen": 1793562999.4885368,
     "ast_hash": "ccc5d0428f1bd2eacb5061ac2ca56d8b",
     "semantic_hash": ""
   },
   "tools/apk/verify_ui_scanout.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4565036,
+    "mtime": 1793562915.9147444,
+    "seen": 1793562999.4885094,
     "ast_hash": "5ed7791fdf3b66183f93c666e2afd0e2",
     "semantic_hash": ""
   },
   "docs/APK-LOOPER-AOSP.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4566207,
+    "mtime": 1793562903.4877975,
+    "seen": 1793562999.4886053,
     "ast_hash": "7eaf8d9878bb1351f2c3a0a10296286c",
     "semantic_hash": ""
   },
   "runtime/aosp/androidfw-build.json": {
-    "mtime": 1793534843.1723313,
-    "seen": 1793534867.4558647,
+    "mtime": 1793562915.364732,
+    "seen": 1793562999.4879189,
     "ast_hash": "5d411325062fba6f063fe0fc6ab08dda",
     "semantic_hash": ""
   },
   "runtime/aosp/androidfw-sources.json": {
-    "mtime": 1793534843.1723313,
-    "seen": 1793534867.4558685,
+    "mtime": 1793562915.371399,
+    "seen": 1793562999.4879205,
     "ast_hash": "331f024e87b4fad37dcbe45f8b846d0f",
     "semantic_hash": ""
   },
   "runtime/aosp/native/resource-probe.cpp": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.4559956,
+    "mtime": 1793562915.5247357,
+    "seen": 1793562999.4880252,
     "ast_hash": "6ceb76e8ed87d667df2e908b69476714",
     "semantic_hash": ""
   },
   "tools/apk/build_androidfw.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4563222,
+    "mtime": 1793562915.781408,
+    "seen": 1793562999.4883487,
     "ast_hash": "338016f2b63625d72d4dab91fb9f37bc",
     "semantic_hash": ""
   },
   "tools/apk/fetch_androidfw_sources.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.456375,
+    "mtime": 1793562915.814742,
+    "seen": 1793562999.4883978,
     "ast_hash": "b28e1ac52383d1993034c4f2fc3474c2",
     "semantic_hash": ""
   },
   "tools/apk/verify_androidfw.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4564447,
+    "mtime": 1793562915.8714101,
+    "seen": 1793562999.4884677,
     "ast_hash": "3d68992da31d95ab230744094877678f",
     "semantic_hash": ""
   },
   "docs/AOSP-RECURSOS-LINUX.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.456582,
+    "mtime": 1793562903.4544635,
+    "seen": 1793562999.4885654,
     "ast_hash": "34b4887dc061bcd0f1ba04767b47399c",
     "semantic_hash": ""
   },
   "fixtures/aosp-resources/ResourcesProbe.java": {
-    "mtime": 1793534841.9980626,
-    "seen": 1793534867.4557538,
+    "mtime": 1793562903.6444678,
+    "seen": 1793562999.4878247,
     "ast_hash": "b2bf9051782955d583984f8df891da0c",
     "semantic_hash": ""
   },
   "runtime/aosp/native/resources-jni.cpp": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.4559991,
+    "mtime": 1793562915.5247357,
+    "seen": 1793562999.488029,
     "ast_hash": "dfca646c91111040d0a8c38a88abdf1d",
     "semantic_hash": ""
   },
   "tools/apk/verify_resources_jni.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4564927,
+    "mtime": 1793562915.9080775,
+    "seen": 1793562999.4885044,
     "ast_hash": "372617458ae5fc6bbfb9ba589211e154",
     "semantic_hash": ""
   },
   "crates/archtv-aosp-linux/src/tracing.rs": {
-    "mtime": 1793534841.951244,
-    "seen": 1793534867.4554565,
+    "mtime": 1793562903.2511256,
+    "seen": 1793562999.4875467,
     "ast_hash": "5ee1e1cc0e9b0f6f5d1b716ef73e0b98",
     "semantic_hash": ""
   },
   "fixtures/aosp-public-resources/PublicResourcesProbe.java": {
-    "mtime": 1793534841.9974883,
-    "seen": 1793534867.455721,
+    "mtime": 1793562903.6144671,
+    "seen": 1793562999.48779,
     "ast_hash": "b11b698c7a8741a0ed924bdca5a65b00",
     "semantic_hash": ""
   },
   "runtime/aosp/compile-stubs/java/lang/ref/Reference.java": {
-    "mtime": 1793534843.1811247,
-    "seen": 1793534867.4558961,
+    "mtime": 1793562915.398066,
+    "seen": 1793562999.487934,
     "ast_hash": "8a16648b4d29de2f282ad5138197b62d",
     "semantic_hash": ""
   },
   "runtime/aosp/prebuilt-bindings.json": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.4560256,
+    "mtime": 1793562915.5447361,
+    "seen": 1793562999.4880543,
     "ast_hash": "29f47581fc9d24ce48b30456c16d1185",
     "semantic_hash": ""
   },
   "tools/apk/probe_public_resources.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4564238,
+    "mtime": 1793562915.8514097,
+    "seen": 1793562999.4884446,
     "ast_hash": "bb017d2bf1dd9e4240254d25e86398ea",
     "semantic_hash": ""
   },
   "docs/AOSP-RESOURCES-PUBLICO.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4565995,
+    "mtime": 1793562903.474464,
+    "seen": 1793562999.4885836,
     "ast_hash": "511ce6d5ff73b3e4fb414df9e5bf9049",
     "semantic_hash": ""
   },
   "runtime/apk/java/org/archtv/apkruntime/HostProfile.java": {
-    "mtime": 1793534843.2077003,
-    "seen": 1793534867.4560845,
+    "mtime": 1793562915.601404,
+    "seen": 1793562999.4881124,
     "ast_hash": "5b9291f119fb55a673f6873a235db1f8",
     "semantic_hash": ""
   },
   "docs/AOSP-METRICAS-WAYLAND.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.456575,
+    "mtime": 1793562903.4444633,
+    "seen": 1793562999.4885585,
     "ast_hash": "1afd4e730bb3ecf38d55d7d6e2624bed",
     "semantic_hash": ""
   },
   "tools/apk/verify_wayland_resize.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4565077,
+    "mtime": 1793562915.9180777,
+    "seen": 1793562999.4885113,
     "ast_hash": "e59d3921fe80fe9c721598c78149b90a",
     "semantic_hash": ""
   },
   "fixtures/aosp-context/ContextProbe.java": {
-    "mtime": 1793534841.9921963,
-    "seen": 1793534867.4556687,
+    "mtime": 1793562903.5677993,
+    "seen": 1793562999.4876847,
     "ast_hash": "e068d6b7e17c9f59a11ba0442e2b6275",
     "semantic_hash": ""
   },
   "runtime/apk/java/org/archtv/apkruntime/LinuxContext.java": {
-    "mtime": 1793534843.2077003,
-    "seen": 1793534867.4560916,
+    "mtime": 1793562915.6080709,
+    "seen": 1793562999.4881194,
     "ast_hash": "0cc395ae574f892a621b1c37d0bf488c",
     "semantic_hash": ""
   },
   "tools/apk/generate_linux_context.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4563975,
+    "mtime": 1793562915.8314092,
+    "seen": 1793562999.488419,
     "ast_hash": "e03fba1f07acfb93515c8cd9f40ef396",
     "semantic_hash": ""
   },
   "tools/apk/verify_context.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4564636,
+    "mtime": 1793562915.8847437,
+    "seen": 1793562999.4884868,
     "ast_hash": "32a33599de10ca1d8b263f6301d52397",
     "semantic_hash": ""
   },
   "docs/CONTEXTO-AOSP-LINUX.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4566402,
+    "mtime": 1793562903.4977977,
+    "seen": 1793562999.4886234,
     "ast_hash": "449780d915e1dcb19dc2ef4dddd7b8da",
     "semantic_hash": ""
   },
   "fixtures/apk/context-metrics/golden/metadata.json": {
-    "mtime": 1793534842.0024378,
-    "seen": 1793534867.455795,
+    "mtime": 1793562903.6978023,
+    "seen": 1793562999.4878647,
     "ast_hash": "491b9ab4d55c3882da4ebb77b378f438",
     "semantic_hash": ""
   },
   "fixtures/apk/context-metrics/src/org/archtv/metrics/MainActivity.java": {
-    "mtime": 1793534842.002966,
-    "seen": 1793534867.4557986,
+    "mtime": 1793562903.7111359,
+    "seen": 1793562999.4878688,
     "ast_hash": "be5bc4caf7fcb365cb958972936a6318",
     "semantic_hash": ""
   },
   "tools/apk/verify_metrics_apk.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.456482,
+    "mtime": 1793562915.8980775,
+    "seen": 1793562999.4884992,
     "ast_hash": "30b98b5e2cf6150446cafbe046b57309",
     "semantic_hash": ""
   },
   "fixtures/apk/context-metrics/README.md": {
-    "mtime": 1793534842.001989,
-    "seen": 1793534867.4567137,
+    "mtime": 1793562903.694469,
+    "seen": 1793562999.4886968,
     "ast_hash": "4500ce37a2481db572376ce40871ef62",
     "semantic_hash": ""
   },
   "fixtures/aosp-views/ViewLinkageProbe.java": {
-    "mtime": 1793534841.9999604,
-    "seen": 1793534867.4557745,
+    "mtime": 1793562903.671135,
+    "seen": 1793562999.4878438,
     "ast_hash": "35e5e317a96fc565c731958439232a49",
     "semantic_hash": ""
   },
   "tools/apk/diagnose_views.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4563594,
+    "mtime": 1793562915.8047419,
+    "seen": 1793562999.4883842,
     "ast_hash": "d8b035520506d5bc9bec8202d0c441fb",
     "semantic_hash": ""
   },
   "docs/AOSP-VISTAS-LINUX.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.456617,
+    "mtime": 1793562903.4877975,
+    "seen": 1793562999.4886017,
     "ast_hash": "550edaea0a34e446ce423cd5a9cbdc71",
     "semantic_hash": ""
   },
   "fixtures/aosp-view-bindings/ResourceBindingCheck.java": {
-    "mtime": 1793534841.9980626,
-    "seen": 1793534867.4557621,
+    "mtime": 1793562903.6511347,
+    "seen": 1793562999.487832,
     "ast_hash": "ed0f8285cf5e3448dda93c9bbb4fe23a",
     "semantic_hash": ""
   },
   "tools/apk/view_resource_bindings.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4565115,
+    "mtime": 1793562915.9247446,
+    "seen": 1793562999.4885128,
     "ast_hash": "df22e02c912a659ce615a062a3e6fa49",
     "semantic_hash": ""
   },
   "fixtures/aosp-view-constructor/ViewConstructorProbe.java": {
-    "mtime": 1793534841.9999604,
-    "seen": 1793534867.4557703,
+    "mtime": 1793562903.6611347,
+    "seen": 1793562999.4878392,
     "ast_hash": "bc99515c9744b0506b86e046ac3bda38",
     "semantic_hash": ""
   },
   "tools/apk/probe_view_constructor.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4564307,
+    "mtime": 1793562915.8580766,
+    "seen": 1793562999.4884527,
     "ast_hash": "3b283d6bbe8398116f3a42c15665f477",
     "semantic_hash": ""
   },
   "docs/AOSP-CONSTRUCTOR-VIEW.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.456542,
+    "mtime": 1793562903.4111304,
+    "seen": 1793562999.488527,
     "ast_hash": "78a0f35c6052b28f1fb223cdc26dc5c8",
     "semantic_hash": ""
   },
   "crates/archtv-aosp-linux/src/logging.rs": {
-    "mtime": 1793534841.951244,
-    "seen": 1793534867.4554427,
+    "mtime": 1793562903.2411253,
+    "seen": 1793562999.487533,
     "ast_hash": "f69ab99313f2af29ba15712bd9581f35",
     "semantic_hash": ""
   },
   "fixtures/aosp-log/LogProbe.java": {
-    "mtime": 1793534841.9956298,
-    "seen": 1793534867.4557006,
+    "mtime": 1793562903.5811331,
+    "seen": 1793562999.4877079,
     "ast_hash": "6b5856e4de6a4ad3e683b48655ae5873",
     "semantic_hash": ""
   },
   "tools/apk/verify_linux_log.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.456478,
+    "mtime": 1793562915.894744,
+    "seen": 1793562999.4884977,
     "ast_hash": "9330de84da0863d73413e543ed4ace6d",
     "semantic_hash": ""
   },
   "docs/AOSP-LOG-LINUX.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4565678,
+    "mtime": 1793562903.434463,
+    "seen": 1793562999.4885511,
     "ast_hash": "f53f6ee7978559244ac0130d44c861c8",
     "semantic_hash": ""
   },
   "fixtures/aosp-view-constructor/SystemResourcesChecks.java": {
-    "mtime": 1793534841.9980626,
-    "seen": 1793534867.455766,
+    "mtime": 1793562903.6602347,
+    "seen": 1793562999.4878356,
     "ast_hash": "abd0f81ce939fe13db73fe885ce51a87",
     "semantic_hash": ""
   },
   "tools/apk/build_system_resources.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.456352,
+    "mtime": 1793562915.8014085,
+    "seen": 1793562999.4883769,
     "ast_hash": "1fcebdfb5d67d9b630901122cb181334",
     "semantic_hash": ""
   },
   "docs/AOSP-RECURSOS-SISTEMA.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4565856,
+    "mtime": 1793562903.4611304,
+    "seen": 1793562999.488569,
     "ast_hash": "a400b245be5a1d6e31d0b2a7932e099b",
     "semantic_hash": ""
   },
   "fixtures/aosp-services/ServiceCacheProbe.java": {
-    "mtime": 1793534841.9980626,
-    "seen": 1793534867.4557579,
+    "mtime": 1793562903.6478012,
+    "seen": 1793562999.4878285,
     "ast_hash": "0ad19f55e8a7a74e6a086f7d3e26732f",
     "semantic_hash": ""
   },
   "runtime/aosp/aidl-toolchain.json": {
-    "mtime": 1793534843.1656923,
-    "seen": 1793534867.4558425,
+    "mtime": 1793562915.2680633,
+    "seen": 1793562999.4879088,
     "ast_hash": "567c079570941172062e8c45da9f9b40",
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/org/archtv/aosplinux/LocalServiceBinder.java": {
-    "mtime": 1793534843.1948214,
-    "seen": 1793534867.455916,
+    "mtime": 1793562915.4714012,
+    "seen": 1793562999.4879456,
     "ast_hash": "5b2e10fb2e5e280c8e289489dade4316",
     "semantic_hash": ""
   },
   "runtime/aosp/window-aidl-sources.json": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.4560401,
+    "mtime": 1793562915.5580697,
+    "seen": 1793562999.4880688,
     "ast_hash": "041896b0def0a14f4f401eb36ab640a4",
     "semantic_hash": ""
   },
   "tools/apk/fetch_aidl_tools.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4563713,
+    "mtime": 1793562915.8114088,
+    "seen": 1793562999.488394,
     "ast_hash": "b825aa3f31b87e4bb675bb5c577fb180",
     "semantic_hash": ""
   },
   "tools/apk/fetch_window_aidl_sources.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4563937,
+    "mtime": 1793562915.828076,
+    "seen": 1793562999.4884155,
     "ast_hash": "33bb2bb9f301281060e0dcfe2ddb448e",
     "semantic_hash": ""
   },
   "tools/apk/generate_window_aidl.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.456409,
+    "mtime": 1793562915.838076,
+    "seen": 1793562999.4884305,
     "ast_hash": "8f3d616396ff34cad214bea40f76e4c0",
     "semantic_hash": ""
   },
   "tools/apk/probe_service_cache.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4564273,
+    "mtime": 1793562915.8580766,
+    "seen": 1793562999.4884489,
     "ast_hash": "98ff4023ef7777d6cbc67cfe68cbf83f",
     "semantic_hash": ""
   },
   "docs/AOSP-SERVICIOS-LOCALES.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4566033,
+    "mtime": 1793562903.474464,
+    "seen": 1793562999.4885876,
     "ast_hash": "36ab86f921b35f98610e79e22c45980a",
     "semantic_hash": ""
   },
   "crates/archtv-apk-host/src/window_policy.rs": {
-    "mtime": 1793534841.952493,
-    "seen": 1793534867.4554799,
+    "mtime": 1793562903.271126,
+    "seen": 1793562999.4875722,
     "ast_hash": "9e97179d59afc66e8dcbee30bdbca30f",
     "semantic_hash": ""
   },
   "fixtures/aosp-window-service/WindowServiceProbe.java": {
-    "mtime": 1793534842.000613,
-    "seen": 1793534867.4557915,
+    "mtime": 1793562903.687802,
+    "seen": 1793562999.487861,
     "ast_hash": "1d2ccfbfe53b589bfdd087684c841d29",
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/org/archtv/aosplinux/LinuxWindowService.java": {
-    "mtime": 1793534843.1948214,
-    "seen": 1793534867.4559116,
+    "mtime": 1793562915.468766,
+    "seen": 1793562999.4879417,
     "ast_hash": "2b6c77d645c290992250b315743de4c5",
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/org/archtv/aosplinux/WindowPolicyState.java": {
-    "mtime": 1793534843.1948214,
-    "seen": 1793534867.4559278,
+    "mtime": 1793562915.4780679,
+    "seen": 1793562999.4879565,
     "ast_hash": "0737cf122abd100e5d3d89cf6b150e2f",
     "semantic_hash": ""
   },
   "tools/apk/build_window_service_probe.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4563556,
+    "mtime": 1793562915.8047419,
+    "seen": 1793562999.4883804,
     "ast_hash": "2fcd288e213ae30e78312fdf53326678",
     "semantic_hash": ""
   },
   "tools/apk/generate_linux_window_service.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4564013,
+    "mtime": 1793562915.8347425,
+    "seen": 1793562999.4884229,
     "ast_hash": "33930894e802fadbfe57db94dda9ac55",
     "semantic_hash": ""
   },
   "docs/AOSP-VENTANAS-WAYLAND.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4566104,
+    "mtime": 1793562903.4777973,
+    "seen": 1793562999.4885948,
     "ast_hash": "530d126404ac5bf81358e108ec91f6fa",
     "semantic_hash": ""
   },
   "fixtures/aosp-window-service/AnimationPolicyChecks.java": {
-    "mtime": 1793534841.9999604,
-    "seen": 1793534867.455783,
+    "mtime": 1793562903.6778018,
+    "seen": 1793562999.4878528,
     "ast_hash": "6efd1fe533c47c0d33bc9dc53e0490e2",
     "semantic_hash": ""
   },
   "docs/AOSP-ANIMACION-CONTEXTO.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4565344,
+    "mtime": 1793562903.4111304,
+    "seen": 1793562999.488523,
     "ast_hash": "5f084a9d15bc153f1d6d497f9e45e231",
     "semantic_hash": ""
   },
   "docs/AOSP-RENDERNODE-NATIVO.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4565961,
+    "mtime": 1793562903.4697049,
+    "seen": 1793562999.4885798,
     "ast_hash": "1653e49a71e0702ac5ab45f08bedf9bc",
     "semantic_hash": ""
   },
   "tools/apk/probe_hwui_host.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4564202,
+    "mtime": 1793562915.8480763,
+    "seen": 1793562999.488441,
     "ast_hash": "27d50198e07a02693c9b3a6d8654eeaa",
     "semantic_hash": ""
   },
   "runtime/aosp/native/skcms-clang-compat-probe.cpp": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.4560072,
+    "mtime": 1793562915.5314023,
+    "seen": 1793562999.4880362,
     "ast_hash": "5e754e61c617517495c0246dc2a14a42",
     "semantic_hash": ""
   },
   "runtime/aosp/native/skcms-clang-compat.h": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.4560108,
+    "mtime": 1793562915.534736,
+    "seen": 1793562999.4880397,
     "ast_hash": "22cabd6abf0655276b9bd08f7c9611b6",
     "semantic_hash": ""
   },
   "runtime/aosp/native/skia-raster-probe.cpp": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.4560146,
+    "mtime": 1793562915.5380692,
+    "seen": 1793562999.4880438,
     "ast_hash": "847d6da4b93b2e6ee15c5d7c0f1faf91",
     "semantic_hash": ""
   },
   "runtime/aosp/skia-extra-sources.json": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.4560332,
+    "mtime": 1793562915.5480695,
+    "seen": 1793562999.4880612,
     "ast_hash": "ac241c7f020143aaca0b8e6459c55350",
     "semantic_hash": ""
   },
   "runtime/aosp/skia-gn-tool.json": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.4560368,
+    "mtime": 1793562915.5547364,
+    "seen": 1793562999.488065,
     "ast_hash": "7178342e680cd8e017cebfbdd108222a",
     "semantic_hash": ""
   },
   "tools/apk/build_skia_host.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4563484,
+    "mtime": 1793562915.7980752,
+    "seen": 1793562999.4883735,
     "ast_hash": "0cc1115f5d9e067ca5287538bec13a0c",
     "semantic_hash": ""
   },
   "tools/apk/fetch_skia_gn.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4563897,
+    "mtime": 1793562915.8247423,
+    "seen": 1793562999.4884117,
     "ast_hash": "50636153c87a891978425ae24a81c3bd",
     "semantic_hash": ""
   },
   "tools/apk/verify_skcms_compat.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4564962,
+    "mtime": 1793562915.911411,
+    "seen": 1793562999.488506,
     "ast_hash": "1dbbc74be7af366a003354cfd7f04ffb",
     "semantic_hash": ""
   },
   "tools/apk/verify_skia_raster.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4565,
+    "mtime": 1793562915.9147444,
+    "seen": 1793562999.488508,
     "ast_hash": "d001d59989519dd808aaef426da74562",
     "semantic_hash": ""
   },
   "docs/AOSP-SKIA-HOST.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4566069,
+    "mtime": 1793562903.4777973,
+    "seen": 1793562999.4885912,
     "ast_hash": "e5f8fa76908331c1ff92cd3ebd2e3352",
     "semantic_hash": ""
   },
   "fixtures/aosp-native-interpolators/NativeInterpolatorsProbe.java": {
-    "mtime": 1793534841.9965582,
-    "seen": 1793534867.4557128,
+    "mtime": 1793562903.604467,
+    "seen": 1793562999.4877753,
     "ast_hash": "fa4ca23442dc2a3d61bfb198b946d107",
     "semantic_hash": ""
   },
   "fixtures/aosp-native-interpolators/native-probe.cpp": {
-    "mtime": 1793534841.9974883,
-    "seen": 1793534867.4557166,
+    "mtime": 1793562903.6111338,
+    "seen": 1793562999.4877834,
     "ast_hash": "2005f725220293fef6e884254b61489e",
     "semantic_hash": ""
   },
   "runtime/aosp/native/interpolators-jni.cpp": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.4559433,
+    "mtime": 1793562915.488068,
+    "seen": 1793562999.4879723,
     "ast_hash": "0117c08c3b00d62b0d45d057c29c6ef4",
     "semantic_hash": ""
   },
   "tools/apk/verify_native_interpolators.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4564857,
+    "mtime": 1793562915.8980775,
+    "seen": 1793562999.488501,
     "ast_hash": "57cf449f9190d04077dc0eb417c5ca42",
     "semantic_hash": ""
   },
   "docs/AOSP-INTERPOLADORES-NATIVOS.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4565568,
+    "mtime": 1793562903.4211295,
+    "seen": 1793562999.4885404,
     "ast_hash": "f11d07a433117291534847b09ee03275",
     "semantic_hash": ""
   },
   "fixtures/aosp-critical-host/CriticalHostProbe.java": {
-    "mtime": 1793534841.9932249,
-    "seen": 1793534867.4556756,
+    "mtime": 1793562903.571133,
+    "seen": 1793562999.4876888,
     "ast_hash": "00742f7b9566cc6b15ed3244fd0f40dc",
     "semantic_hash": ""
   },
   "fixtures/aosp-critical-host/native-probe.cpp": {
-    "mtime": 1793534841.994735,
-    "seen": 1793534867.4556813,
+    "mtime": 1793562903.5744662,
+    "seen": 1793562999.4876924,
     "ast_hash": "cad6e9bfd37f57bb1203281ce9ded4f7",
     "semantic_hash": ""
   },
   "runtime/aosp/native/critical-host-adapter.h": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.4559398,
+    "mtime": 1793562915.488068,
+    "seen": 1793562999.4879682,
     "ast_hash": "0a873c080004c1ceb4082c0f43e23eeb",
     "semantic_hash": ""
   },
   "tools/apk/verify_critical_host.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.456471,
+    "mtime": 1793562915.8914106,
+    "seen": 1793562999.4884937,
     "ast_hash": "0da9efaa0fe78adf7ea4f5cd66454560",
     "semantic_hash": ""
   },
   "docs/AOSP-CRITICAL-HOST.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4565456,
+    "mtime": 1793562903.4144626,
+    "seen": 1793562999.4885302,
     "ast_hash": "193d45b01645e24f12cbbd98581e1531",
     "semantic_hash": ""
   },
   "runtime/aosp/native/rendernode-jni.cpp": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.4559882,
+    "mtime": 1793562915.5180688,
+    "seen": 1793562999.488018,
     "ast_hash": "4c6298d6bd0c0377f0d08d817f57d8ea",
     "semantic_hash": ""
   },
   "runtime/aosp/native/rendernode-jni.json": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.4559917,
+    "mtime": 1793562915.5180688,
+    "seen": 1793562999.4880216,
     "ast_hash": "3a3c7db6319b6ee052670c8b8cba3d90",
     "semantic_hash": ""
   },
   "tools/apk/generate_rendernode_jni.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4564054,
+    "mtime": 1793562915.838076,
+    "seen": 1793562999.488427,
     "ast_hash": "98846885570c18d3e41987fff68cb1af",
     "semantic_hash": ""
   },
   "docs/AOSP-RENDERNODE-JNI.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4565928,
+    "mtime": 1793562903.4697049,
+    "seen": 1793562999.4885762,
     "ast_hash": "a966fd0fcbc0c0609053ddbb47d9c22c",
     "semantic_hash": ""
   },
   "fixtures/aosp-rendernode/RenderNodeProbe.java": {
-    "mtime": 1793534841.9980626,
-    "seen": 1793534867.4557498,
+    "mtime": 1793562903.637801,
+    "seen": 1793562999.4878209,
     "ast_hash": "8b04212f55beaff91d8982d7b49cbe3f",
     "semantic_hash": ""
   },
   "runtime/aosp/hwui-host-sources.json": {
-    "mtime": 1793534843.1811247,
-    "seen": 1793534867.455904,
+    "mtime": 1793562915.404733,
+    "seen": 1793562999.4879377,
     "ast_hash": "07d3ef1d424d49d6b068964a840f2281",
     "semantic_hash": ""
   },
   "tools/apk/build_rendernode_host.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4563441,
+    "mtime": 1793562915.7947416,
+    "seen": 1793562999.48837,
     "ast_hash": "d0ef713fc0ce21b579f5f7bcc4b2c34a",
     "semantic_hash": ""
   },
   "tools/apk/verify_rendernode_art.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4564888,
+    "mtime": 1793562915.9047441,
+    "seen": 1793562999.4885025,
     "ast_hash": "a8811f61d2dfc5b33b13400de651841e",
     "semantic_hash": ""
   },
   "docs/AOSP-RENDERNODE-ART.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4565895,
+    "mtime": 1793562903.4644637,
+    "seen": 1793562999.4885726,
     "ast_hash": "79cea81314b087e7183571d5f1f1174f",
     "semantic_hash": ""
   },
   "fixtures/aosp-metadata/MetadataProbe.java": {
-    "mtime": 1793534841.996244,
-    "seen": 1793534867.455709,
+    "mtime": 1793562903.59863,
+    "seen": 1793562999.4877155,
     "ast_hash": "b8f8c5630460a76493d77b2c520bec27",
     "semantic_hash": ""
   },
   "runtime/apk/java/org/archtv/apkruntime/ApkMetadata.java": {
-    "mtime": 1793534843.207339,
-    "seen": 1793534867.4560738,
+    "mtime": 1793562915.5914037,
+    "seen": 1793562999.488101,
     "ast_hash": "e1446a47245db4df8fc5af1b2dcb5424",
     "semantic_hash": ""
   },
   "tools/apk/verify_apk_metadata.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4564557,
+    "mtime": 1793562915.878077,
+    "seen": 1793562999.488479,
     "ast_hash": "0eae1e7380e1b9db559583cf4b4a8005",
     "semantic_hash": ""
   },
   "docs/AOSP-METADATOS-APK.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4565713,
+    "mtime": 1793562903.4377964,
+    "seen": 1793562999.488555,
     "ast_hash": "2ab250746aaf42c216ee0c3cb5f55f89",
     "semantic_hash": ""
   },
   "docs/AOSP-DRAWABLE-BOOTSTRAP.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4565494,
+    "mtime": 1793562903.417796,
+    "seen": 1793562999.4885335,
     "ast_hash": "74926c938525a3efc1a8308fabce1048",
     "semantic_hash": ""
   },
   "docs/AOSP-VIEW-MEDIDA.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4566138,
+    "mtime": 1793562903.4811308,
+    "seen": 1793562999.4885983,
     "ast_hash": "4ff9763077569591e5b64624d00ba58e",
     "semantic_hash": ""
   },
   "runtime/aosp/accessibility-aidl-sources.json": {
-    "mtime": 1793534843.1656923,
-    "seen": 1793534867.455838,
+    "mtime": 1793562915.2647297,
+    "seen": 1793562999.487907,
     "ast_hash": "735b18887e8bc0603055bb6eaf5290df",
     "semantic_hash": ""
   },
   "docs/AOSP-ACCESIBILIDAD-CLIENTE.md": {
-    "mtime": 1793534841.982967,
-    "seen": 1793534867.4565306,
+    "mtime": 1793562903.4077957,
+    "seen": 1793562999.488521,
     "ast_hash": "8b94755261a8e8dcf4bae902c90f6ca4",
     "semantic_hash": ""
   },
   "fixtures/aosp-binder-holder/holder-lifetime.cpp": {
-    "mtime": 1793534841.9921963,
-    "seen": 1793534867.4556592,
+    "mtime": 1793562903.564466,
+    "seen": 1793562999.4876804,
     "ast_hash": "1bd29a79cf520147ec0e86e121793584",
     "semantic_hash": ""
   },
   "runtime/aosp/binder-sources.json": {
-    "mtime": 1793534843.1723313,
-    "seen": 1793534867.4558725,
+    "mtime": 1793562915.3780656,
+    "seen": 1793562999.4879222,
     "ast_hash": "3ce6548aad6432081f2f1120b21f2a1b",
     "semantic_hash": ""
   },
   "runtime/aosp/native/binder-holder-jni.cpp": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.455936,
+    "mtime": 1793562915.4823437,
+    "seen": 1793562999.4879642,
     "ast_hash": "936483d73cd5c26f925640237f49ea65",
     "semantic_hash": ""
   },
   "tools/apk/build_binder_holder.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4563367,
+    "mtime": 1793562915.7914083,
+    "seen": 1793562999.488363,
     "ast_hash": "4ee2c7d3009fe6b4e1e46e08bbf3226a",
     "semantic_hash": ""
   },
   "tools/apk/verify_binder_holder.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4564595,
+    "mtime": 1793562915.8847437,
+    "seen": 1793562999.4884827,
     "ast_hash": "4b2793ee22193e7ceefc54dd0ada32f8",
     "semantic_hash": ""
   },
   "docs/AOSP-BINDER-HOLDER.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4565384,
+    "mtime": 1793562903.4111304,
+    "seen": 1793562999.488525,
     "ast_hash": "4afe05bdda47943083299d853aea4d7a",
     "semantic_hash": ""
   },
   "fixtures/aosp-log/ThrowableLogProbe.java": {
-    "mtime": 1793534841.995956,
-    "seen": 1793534867.4557052,
+    "mtime": 1793562903.5911334,
+    "seen": 1793562999.4877114,
     "ast_hash": "ac5cfd07093ae714d4ffc479b98e614e",
     "semantic_hash": ""
   },
   "docs/AOSP-LOG-EXCEPCIONES.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4565642,
+    "mtime": 1793562903.4311297,
+    "seen": 1793562999.4885478,
     "ast_hash": "f910ba068b9a97696c07e948d964f9ea",
     "semantic_hash": ""
   },
   "docs/CONTINUIDAD.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4566436,
+    "mtime": 1793562903.507798,
+    "seen": 1793562999.4886267,
     "ast_hash": "07ed8beca89dcb0ef2534a1c25f8955a",
     "semantic_hash": ""
   },
   "docs/EVIDENCIAS.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4566767,
-    "ast_hash": "0f4197babc976b2f9305d97847bbca52",
+    "mtime": 1793562961.4960907,
+    "seen": 1793562999.4886591,
+    "ast_hash": "1977eeac30777a94ce8bd28bdf7a5184",
     "semantic_hash": ""
   },
   "fixtures/aosp-framework-space/FrameworkSpaceProbe.java": {
-    "mtime": 1793534841.994735,
-    "seen": 1793534867.4556873,
+    "mtime": 1793562903.5744662,
+    "seen": 1793562999.4876962,
     "ast_hash": "c8911a06d2c62ce6e66dfe5da18276ac",
     "semantic_hash": ""
   },
   "docs/COMPATIBILIDAD-APK.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.4566362,
+    "mtime": 1793562903.4977977,
+    "seen": 1793562999.4886198,
     "ast_hash": "bf274ca83cfe366794d769f1f8296b65",
     "semantic_hash": ""
   },
   "fixtures/aosp-window-service/ServiceRegistryChecks.java": {
-    "mtime": 1793534842.000613,
-    "seen": 1793534867.4557874,
+    "mtime": 1793562903.6844687,
+    "seen": 1793562999.4878569,
     "ast_hash": "b79aa8268eb6e56fe755ec1eb17010bc",
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/org/archtv/aosplinux/LinuxServiceRegistry.java": {
-    "mtime": 1793534843.194501,
-    "seen": 1793534867.4559078,
+    "mtime": 1793562915.4663048,
+    "seen": 1793562999.4879396,
     "ast_hash": "09c608c222d810b5bc6554b4b1f6f07b",
     "semantic_hash": ""
   },
   "runtime/aosp/service-registry-aidl-sources.json": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.4560294,
+    "mtime": 1793562915.5447361,
+    "seen": 1793562999.4880579,
     "ast_hash": "ff089372299d7613a86b722fd7ab6b62",
     "semantic_hash": ""
   },
   "fixtures/aosp-isolated-bootstrap/NamespaceProbe.py": {
-    "mtime": 1793534841.994735,
-    "seen": 1793534867.4556913,
+    "mtime": 1793562903.5811331,
+    "seen": 1793562999.4877007,
     "ast_hash": "8b5b5fe16a6e269e91a9555294bc44ea",
     "semantic_hash": ""
   },
   "fixtures/aosp-isolated-bootstrap/OriginalBootstrapProbe.java": {
-    "mtime": 1793534841.9956298,
-    "seen": 1793534867.4556959,
+    "mtime": 1793562903.5811331,
+    "seen": 1793562999.4877045,
     "ast_hash": "0682310fd2f28024ed430b880c0b8b5e",
     "semantic_hash": ""
   },
   "runtime/aosp/bootstrap-study.json": {
-    "mtime": 1793534843.1723313,
-    "seen": 1793534867.4558768,
+    "mtime": 1793562915.3813992,
+    "seen": 1793562999.4879243,
     "ast_hash": "c0760a828864878129eebdf4f956c6c2",
     "semantic_hash": ""
   },
   "tools/apk/verify_isolated_bootstrap.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4564745,
+    "mtime": 1793562915.8914106,
+    "seen": 1793562999.4884956,
     "ast_hash": "ac5417bd92821d60e3bcfa5f7355fa1c",
     "semantic_hash": ""
   },
   "runtime/aosp/platform-image.json": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.456022,
+    "mtime": 1793562915.5446272,
+    "seen": 1793562999.4880507,
     "ast_hash": "e1aad539e473101c01bcfbbb8d5ee7a5",
     "semantic_hash": ""
   },
   "tools/apk/extract_platform_image.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.456363,
+    "mtime": 1793562915.8080754,
+    "seen": 1793562999.4883873,
     "ast_hash": "9183fc4e146f91e56538adf9f1e925f1",
     "semantic_hash": ""
   },
   "tools/apk/extract_platform_modules.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4563673,
+    "mtime": 1793562915.8114088,
+    "seen": 1793562999.4883907,
     "ast_hash": "2542ff68dc555a78fe0653ea6fbfccfc",
     "semantic_hash": ""
   },
   "tools/apk/read_platform_classpath.py": {
-    "mtime": 1793534843.2247756,
-    "seen": 1793534867.4564342,
+    "mtime": 1793562915.86141,
+    "seen": 1793562999.4884565,
     "ast_hash": "8d3581ee6da5ef81f8fd92c97562b1d2",
     "semantic_hash": ""
   },
   "runtime/aosp/android16-qpr2/manifest.lock.json": {
-    "mtime": 1793534843.1662383,
-    "seen": 1793534867.4558482,
+    "mtime": 1793562915.2813969,
+    "seen": 1793562999.487911,
     "ast_hash": "5d4afccdecf94c822cc2e3cb001ca733",
     "semantic_hash": ""
   },
   "runtime/aosp/android16-qpr2/release.json": {
-    "mtime": 1793534843.1723313,
-    "seen": 1793534867.4558601,
+    "mtime": 1793562915.3547318,
+    "seen": 1793562999.487917,
     "ast_hash": "8561119e7da9e8f1265af25a625b9551",
     "semantic_hash": ""
   },
   "tools/aosp/lock_release_manifest.py": {
-    "mtime": 1793534843.2212574,
-    "seen": 1793534867.456293,
+    "mtime": 1793562915.7614076,
+    "seen": 1793562999.4883196,
     "ast_hash": "2d9ee004d253374f794549a599c44336",
     "semantic_hash": ""
   },
   "runtime/aosp/android16-qpr2/README.md": {
-    "mtime": 1793534843.1656923,
-    "seen": 1793534867.456769,
+    "mtime": 1793562915.2704623,
+    "seen": 1793562999.4887557,
     "ast_hash": "d2f4759e9965509639581483d3da1bb7",
     "semantic_hash": ""
   },
   "tools/aosp/extract_gsi_archive.py": {
-    "mtime": 1793534843.2212574,
-    "seen": 1793534867.4562857,
+    "mtime": 1793562915.7580743,
+    "seen": 1793562999.488312,
     "ast_hash": "62f8e237123a7f5a113e1a0f7af0f43b",
     "semantic_hash": ""
   },
   "tools/aosp/property_info_tool.cpp": {
-    "mtime": 1793534843.2212574,
-    "seen": 1793534867.4563076,
+    "mtime": 1793562915.7714078,
+    "seen": 1793562999.4883344,
     "ast_hash": "1b773f6344edbb904b40c50c8a0d05ed",
     "semantic_hash": ""
   },
   "tools/aosp/property_area_probe.c": {
-    "mtime": 1793534843.2212574,
-    "seen": 1793534867.456304,
+    "mtime": 1793562915.7714078,
+    "seen": 1793562999.4883308,
     "ast_hash": "d8bfc5b47b411568768d562eaefcda61",
     "semantic_hash": ""
   },
   "tools/aosp/prepare_factory_inputs.py": {
-    "mtime": 1793534843.2212574,
-    "seen": 1793534867.4563005,
+    "mtime": 1793562915.7680745,
+    "seen": 1793562999.4883275,
     "ast_hash": "ac017a641fe1fed7233ee696dea0aa0c",
     "semantic_hash": ""
   },
   "tools/aosp/native_log_diagnostic.c": {
-    "mtime": 1793534843.2212574,
-    "seen": 1793534867.4562967,
+    "mtime": 1793562915.764741,
+    "seen": 1793562999.4883232,
     "ast_hash": "98404ac2890b3bc39dbfd8f1b439a8c4",
     "semantic_hash": ""
   },
   "tools/aosp/audit_boot_inputs.py": {
-    "mtime": 1793534843.2210577,
-    "seen": 1793534867.4562743,
+    "mtime": 1793562915.7514074,
+    "seen": 1793562999.4883,
     "ast_hash": "16ae00582c6c84c678ca07d4c1e53873",
     "semantic_hash": ""
   },
   "tools/aosp/fetch_locked_sources.py": {
-    "mtime": 1793534843.2212574,
-    "seen": 1793534867.4562895,
+    "mtime": 1793562915.7580743,
+    "seen": 1793562999.4883158,
     "ast_hash": "c76aa27e921f017a8a4577a97951e281",
     "semantic_hash": ""
   },
   "tools/aosp/check_host_security.py": {
-    "mtime": 1793534843.2212574,
-    "seen": 1793534867.456282,
+    "mtime": 1793562915.7547407,
+    "seen": 1793562999.488308,
     "ast_hash": "2c7adc13c8b9c337726af4c4fadcd479",
     "semantic_hash": ""
   },
   "tools/aosp/test_host_security.py": {
-    "mtime": 1793534843.2212574,
-    "seen": 1793534867.4563112,
+    "mtime": 1793562915.7747412,
+    "seen": 1793562999.488338,
     "ast_hash": "4de6ab28a23bd1c823f52eca80f06c92",
     "semantic_hash": ""
   },
   "docs/TRADUCCION-ARM.md": {
-    "mtime": 1793534841.9834096,
-    "seen": 1793534867.45671,
+    "mtime": 1793562903.557799,
+    "seen": 1793562999.4886928,
     "ast_hash": "3b1a657e91e0cee2e8482d4ddc72d18d",
     "semantic_hash": ""
   },
   "runtime/aosp/android16-qpr2/policy/build-profile.json": {
-    "mtime": 1793534843.170391,
-    "seen": 1793534867.4558523,
+    "mtime": 1793562915.314731,
+    "seen": 1793562999.4879131,
     "ast_hash": "418278aef3b9c81d4ff919d14279ce39",
     "semantic_hash": ""
   },
   "tools/aosp/build_linux_policy.py": {
-    "mtime": 1793534843.2212574,
-    "seen": 1793534867.456278,
+    "mtime": 1793562915.7547407,
+    "seen": 1793562999.4883041,
     "ast_hash": "161a5f8ee9ec50160da33d78d7855e81",
     "semantic_hash": ""
   },
   "runtime/aosp/android16-qpr2/policy/kernel-6.18.59-contract.json": {
-    "mtime": 1793534843.1723313,
-    "seen": 1793534867.4558563,
+    "mtime": 1793562915.3380647,
+    "seen": 1793562999.4879153,
     "ast_hash": "161e3c57262bc585ebcaf3f6bd38a1c1",
     "semantic_hash": ""
   },
   "runtime/aosp/android16-qpr2/patches/README.md": {
-    "mtime": 1793534843.170391,
-    "seen": 1793534867.4567723,
+    "mtime": 1793562915.3013973,
+    "seen": 1793562999.4887598,
     "ast_hash": "9af48a24cea575db8ac1a708a6e9acac",
     "semantic_hash": ""
   },
   "crates/archtv-core/examples/native_supervisor.rs": {
-    "mtime": 1793534841.9564836,
-    "seen": 1793534867.4555247,
+    "mtime": 1793562903.30446,
+    "seen": 1793562999.487621,
     "ast_hash": "9e148546059d03eae6c150bb8f18c16c",
     "semantic_hash": ""
   },
   "crates/archtv-core/src/native_process.rs": {
-    "mtime": 1793534841.956901,
-    "seen": 1793534867.455538,
+    "mtime": 1793562903.3144603,
+    "seen": 1793562999.4876359,
     "ast_hash": "04b1bdf1579853855a36ff1afec9969f",
     "semantic_hash": ""
   },
   "crates/archtv-core/tests/native_process.rs": {
-    "mtime": 1793534841.956901,
-    "seen": 1793534867.4555438,
+    "mtime": 1793562903.3177938,
+    "seen": 1793562999.4876401,
     "ast_hash": "016a39416c1539a6975d082264cf77b5",
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-property-worker.cpp": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.4559617,
+    "mtime": 1793562915.4980683,
+    "seen": 1793562999.4879909,
     "ast_hash": "70388abdb67f8ed87bca0fd393df51b5",
     "semantic_hash": ""
   },
   "runtime/aosp/native/verify-service-profile.cpp": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.4560184,
+    "mtime": 1793562915.5414026,
+    "seen": 1793562999.4880474,
     "ast_hash": "a1736b7c0537be65ee8af72331783db4",
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-child-reaper.h": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.455947,
+    "mtime": 1793562915.4914014,
+    "seen": 1793562999.4879758,
     "ast_hash": "621e60ae06dcbe4c9bb25c49c2186769",
     "semantic_hash": ""
   },
   "runtime/aosp/native/audit-service-profiles.cpp": {
-    "mtime": 1793534843.1948214,
-    "seen": 1793534867.455932,
+    "mtime": 1793562915.4780679,
+    "seen": 1793562999.4879603,
     "ast_hash": "2f52e1f39cd77f0b91346d2b789513af",
     "semantic_hash": ""
   },
   "runtime/aosp/native/service-profile-audit.h": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.4560027,
+    "mtime": 1793562915.528069,
+    "seen": 1793562999.4880326,
     "ast_hash": "87b0d492ee265b52f4922cd0511f6171",
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-shutdown-sink.h": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.4559653,
+    "mtime": 1793562915.5014017,
+    "seen": 1793562999.487995,
     "ast_hash": "543ec1f35e8a99a608ed207714a92dfb",
     "semantic_hash": ""
   },
   "runtime/aosp/android16-qpr2/policy/experiments/README.md": {
-    "mtime": 1793534843.1721082,
-    "seen": 1793534867.456776,
+    "mtime": 1793562915.3245802,
+    "seen": 1793562999.4887636,
     "ast_hash": "81c9ec4679b630795dafcfaa82dc4e38",
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-exec-context.c": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.4559505,
+    "mtime": 1793562915.4914014,
+    "seen": 1793562999.48798,
     "ast_hash": "9759688ae689c467a9ef5c443c385730",
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-mc1-cohort.h": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.4559577,
+    "mtime": 1793562915.4980683,
+    "seen": 1793562999.4879873,
     "ast_hash": "d87f716bca84e66a5ac5b86e6193c271",
     "semantic_hash": ""
   },
   "fixtures/aosp-wayland-output/client.cpp": {
-    "mtime": 1793534841.9999604,
-    "seen": 1793534867.4557788,
+    "mtime": 1793562903.6744685,
+    "seen": 1793562999.4878483,
     "ast_hash": "b8e97aa983900cf96712101929fa1dff",
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-wayland-output.cpp": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.4559805,
+    "mtime": 1793562915.5147355,
+    "seen": 1793562999.4880106,
     "ast_hash": "f198cdf7176386e3a0f9c49b654fa814",
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-wayland-output.h": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.4559846,
+    "mtime": 1793562915.5180688,
+    "seen": 1793562999.488014,
     "ast_hash": "234a9fc9a268850120ce28cef240cb62",
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-graphics-client.cpp": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.455954,
+    "mtime": 1793562915.494735,
+    "seen": 1793562999.4879837,
     "ast_hash": "ac28cd7a01fde04fe7b6a2ee577510b5",
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-wayland-display-finder.cpp": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.4559689,
+    "mtime": 1793562915.5047352,
+    "seen": 1793562999.4879985,
     "ast_hash": "b29174a8172ca35e5c01db937c37f23d",
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-wayland-frame-composer.cpp": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.4559731,
+    "mtime": 1793562915.5047352,
+    "seen": 1793562999.4880025,
     "ast_hash": "3b1eb6c9bcf1663a1e297e1654d1b23b",
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-wayland-frame-composer.h": {
-    "mtime": 1793534843.1961312,
-    "seen": 1793534867.4559772,
+    "mtime": 1793562915.5080686,
+    "seen": 1793562999.4880066,
     "ast_hash": "aa4c99d75b24510e5ae5bdf3df83fd2e",
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java": {
-    "mtime": 1793534843.1948214,
-    "seen": 1793534867.4559205,
+    "mtime": 1793562915.4714012,
+    "seen": 1793562999.4879491,
     "ast_hash": "d29a9cc4a361507692072ba5af4e99dd",
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/org/archtv/aosplinux/ServiceLauncher.java": {
-    "mtime": 1793534843.1948214,
-    "seen": 1793534867.4559243,
+    "mtime": 1793562915.4747345,
+    "seen": 1793562999.487953,
     "ast_hash": "a6d9e1cd1dc6b1148308da96937d6679",
     "semantic_hash": ""
   }
