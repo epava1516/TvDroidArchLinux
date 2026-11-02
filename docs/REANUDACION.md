@@ -87,3 +87,9 @@ propietario de captura. No repetir esa captura para forzar recuperación. Las
 inspecciones posteriores con GDB por CLI son diagnósticos distintos y no prueban
 conexión ni limpieza MCP. Evidencia original:
 `/home/tv/recuperacion-archtv/39fa340c-80ba-4ee1-a51f-13b8e0165df6-markor-launch/rea-process-capture-error.json`.
+
+## Nombre ligado al perfil de la ejecución
+
+El cliente captura una vez el tipo desde `build-options.json` del mismo directorio explícito que contiene el payload. Ese tipo determina conjuntamente el sufijo del checkpoint y el nombre del manifiesto inmutable: `keymint-component` / «KeyMint v4 software component» o `markor-launch` / «Markor integrated launch». No se consulta un puntero global ni se reutiliza un nombre de Markor para una prueba criptográfica.
+
+[Dos ejecuciones reales](../reports/android16-package-bootstrap/completion-profile-binding.json), con UUID distintos y resultados distintos, registraron callback `active_owned` y consumo `consumed`. Sus evidencias se conservan aunque no generan otra continuación. La puerta de envíos sigue desactivada; esto no prueba recepción en cola ni ejecución de una continuación remota. El resultado nativo, el del runner y la aceptación APK siguen separados.

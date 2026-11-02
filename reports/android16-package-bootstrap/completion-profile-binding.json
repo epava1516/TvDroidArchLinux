@@ -1,0 +1,37 @@
+{
+  "scope": "Actual native callbacks for two distinct executions; no queue delivery while active owner observes. Not APK execution or delivery-enabled test.",
+  "runs": [
+    {
+      "id": "fe78edc6-d29c-4dbe-8cd6-0f48fb52c83b",
+      "checkpoint": "/home/tv/recuperacion-archtv/fe78edc6-d29c-4dbe-8cd6-0f48fb52c83b-keymint-component",
+      "name": "KeyMint v4 software component",
+      "delivery_state": "active_owned",
+      "consumer_state": "consumed",
+      "artifacts": {
+        "completion-manifest.json": "6aa08db3ee4ba9d4ff3526363848b9ff89590fba087c9dc83c8fc19af885b98b",
+        "completion-delivery.json": "913efa624f51f416b9adb02dd8fbc7f01506272dfc1a7aa2b85c2a5e465ddeeb",
+        "completion-consumer.json": "ab209cdc271d3e4aae8e29f79f2db4878fc66ab2d8f079c8fff5e2805bea9d88",
+        "result.json": "37edcb916e4e8d31a2f9061d5d3f777df6648863380f64389ab3ce3d8de56233"
+      }
+    },
+    {
+      "id": "2b7ce94e-69df-4ee9-baa8-7d4bbe5d3ef3",
+      "checkpoint": "/home/tv/recuperacion-archtv/2b7ce94e-69df-4ee9-baa8-7d4bbe5d3ef3-keymint-component",
+      "name": "KeyMint v4 software component",
+      "delivery_state": "active_owned",
+      "consumer_state": "consumed",
+      "artifacts": {
+        "completion-manifest.json": "462ced68f6028a94c324292c0bddcc10dad7e0336857bc6ed1d7c20578e31723",
+        "completion-delivery.json": "a541b6f250b3bd5279a5f342664595d9228af0379c9718dbecfdcd1496c94987",
+        "completion-consumer.json": "9e58bf5766ac8792b170e1a5670bb5cb40388e25f9de15377a45dfabdaad036a",
+        "result.json": "bfaa1858be2265f5916847950ac96673671de0af0a88ceb3494f64bc5d5a388e"
+      }
+    }
+  ],
+  "notification_gate": "absent; not re-enabled",
+  "limits": [
+    "Native terminal result differs from outer runner and app acceptance",
+    "No new queued continuation sent; queued would not prove executed",
+    "Original consumed historical71fd event was not reprocessed"
+  ]
+}
