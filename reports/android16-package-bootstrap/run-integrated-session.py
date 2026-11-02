@@ -20,7 +20,7 @@ before['own_code_sha256']={n:hashlib.sha256((r/n).read_bytes()).hexdigest() for 
 assert not Path('/run/systemd/system/getty@tty2.service').exists() and not Path('/run/systemd/system/getty@tty2.service').is_symlink()
 subprocess.run(['systemctl','stop','getty@tty2.service'],check=True);subprocess.run(['systemctl','mask','--runtime','getty@tty2.service'],check=True)
 try:
- subprocess.run(['systemd-run','--unit='+unit,'--service-type=exec','--property=User=tv','--property=PAMName=login','--property=TTYPath=/dev/tty2','--property=StandardInput=tty','--property=TTYReset=yes','--property=TTYVHangup=yes','--property=KillMode=control-group','--property=RuntimeMaxSec=190','/usr/bin/bash',str(r/'reports/android16-package-bootstrap/integrated-session.sh'),str(out)],check=True)
+ subprocess.run(['systemd-run','--unit='+unit,'--service-type=exec','--setenv=ARCHTV_CODEX_REMOTE='+os.environ['ARCHTV_CODEX_REMOTE'],'--setenv=ARCHTV_CODEX_THREAD='+os.environ['ARCHTV_CODEX_THREAD'],'--property=User=tv','--property=PAMName=login','--property=TTYPath=/dev/tty2','--property=StandardInput=tty','--property=TTYReset=yes','--property=TTYVHangup=yes','--property=KillMode=control-group','--property=RuntimeMaxSec=190','/usr/bin/bash',str(r/'reports/android16-package-bootstrap/integrated-session.sh'),str(out)],check=True)
  subprocess.run(['chvt','2'],check=True)
  # Native bounded waiter only; no model wakeups while unchanged.
  end=time.monotonic()+200
@@ -30,8 +30,3 @@ try:
 finally:
  subprocess.run(['systemctl','stop',unit+'.service']);subprocess.run(['chvt',initial],check=True);subprocess.run(['systemctl','unmask','--runtime','getty@tty2.service'],check=True)
 log=(out/'compositor.log').read_text() if (out/'compositor.log').exists() else '';(cp/'session-result.json').write_text(json.dumps({'output':str(out),'unit':unit,'vt_restored':initial,'log_bytes':len(log),'scope':'Native session closed; inspect inner APEX/package results, no APK acceptance'},indent=2)+'\n');print(str(cp),flush=True)
-
-# If no inner runner started, deliver the actual session failure once. The
-# independent inner unit otherwise owns completion after device cleanup.
-if (cache/'apex-current-checkpoint').read_text().strip()==str(cp):
- subprocess.run(['/usr/bin/python',str(cache/'apex-completion.py')],check=True)

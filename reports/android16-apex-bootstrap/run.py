@@ -10,7 +10,9 @@ assert data_store.parent==Path("/home/tv/.cache/archtv/aosp16-qpr2") and data_st
 assert os.geteuid()==0 and payload.is_relative_to(repo/'dist/aosp16') and payload.is_file()
 lock=open('/home/tv/.cache/archtv/apex-cohort.lock','a');fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
 stamp=datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ')
-recovery=Path('/home/tv/recuperacion-archtv')/(stamp+'-apex-activation');recovery.mkdir(mode=0o700)
+recovery=Path(os.environ['ARCHTV_RUN_CHECKPOINT']) if os.environ.get('ARCHTV_RUN_CHECKPOINT') else Path('/home/tv/recuperacion-archtv')/(stamp+'-apex-activation')
+if os.environ.get('ARCHTV_RUN_CHECKPOINT'):assert (recovery/'completion-manifest.json').is_file()
+else:recovery.mkdir(mode=0o700)
 Path('/home/tv/.cache/archtv/kernel-aosp16-1/apex-current-checkpoint').write_text(str(recovery)+'\n')
 expected=json.loads((repo/'reports/android16-apex-bootstrap/complete-inputs.json').read_text())['modules'];allowed={m['name'] for m in expected}
 def command(args,**kw):return subprocess.run(args,text=True,capture_output=True,**kw)
