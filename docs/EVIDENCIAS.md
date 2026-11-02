@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+[Preparación real ART/PMS/Display y rechazo AppOps](../reports/android16-package-bootstrap/ams-ready-progress.json). Negativos [gestor DexUse ausente](../reports/android16-package-bootstrap/ams-art-readiness-negative.json) y [orden de ART](../reports/android16-package-bootstrap/ams-art-order-negative.json) conservados. [REA MCP manifiesto framework](../reports/android16-package-bootstrap/framework-ranging-mcp.json), completo y con hash; [JAR no admitido por MCP](../reports/android16-package-bootstrap/systemserver-jar-mcp-limit.json) y [análisis CLI compilado](../reports/android16-package-bootstrap/systemserver-compiled-app-config.json) diferenciados. No nueva aceptación APK ni disponibilidad general.
+
 [Grupo original de conectividad: fase500 y fallo real de AMS](../reports/android16-package-bootstrap/network-lifecycle-progress.json). Ejecución, hashes, fuentes bloqueadas y límite de `systemReady/goingCallback` diferenciados: la propuesta de callback aún no se ejecutó. No disponibilidad general de servicios ni etapa APK nueva.
 
 Verificación de enlaces 2026-11-02: faltan localmente dos artefactos históricos ya enlazados (`dist/apk/local-registry-final-wayland-1/result.json` y `dist/apk/binder-service-context-lifetime-1/result.json`). Su contenido actual queda **desconocido/no reverificado**; se conserva la referencia histórica y no se usa para aceptar este hito. Los enlaces nuevos de LMKD/red existen y sus hashes se contrastaron.

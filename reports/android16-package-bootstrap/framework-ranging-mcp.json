@@ -1,0 +1,30 @@
+{
+  "kind": "Projection of complete retained REA MCP static Evidence",
+  "parent_evidence_id": "ev_93f2da3756eb602e7656f0189dcb40a0cebe3b0a5e666f05fb58347cfd5b9817",
+  "subject": {
+    "name": "framework-res.apk",
+    "digest": {
+      "sha256": "e91bf9656aa48db3e858c32c7cbc8aea14475ba72de48f1e743d12168aac422d"
+    },
+    "local_path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/framework/framework-res.apk",
+    "format": "apk",
+    "architecture": null
+  },
+  "provider": {
+    "id": "jadx",
+    "name": "JADX headless",
+    "version": "0.7.1"
+  },
+  "operation": "inspect_android_package",
+  "manifest_status": "complete",
+  "excerpt": "on_enabled\"/>\n    <permission\n        android:label=\"@string/permlab_ranging\"\n        android:name=\"android.permission.RANGING\"\n        android:protectionLevel=\"dangerous\"\n        android:permissionGroup=\"android.permission-group.UNDEFINED\"\n        android:description=\"@string/permdesc_ranging\"\n        android:featureFlag=\"android.permission.flags.ranging_permission_enabled\"/>\n    <permission\n        android:name=\"android.permission.SUSPEND_APPS\"\n        android:protectionLevel=\"role|verifier|signature\"/>\n    <permission\n        android:name=\"android.permission.QUARANTINE_APPS\"\n        android:protectionLevel=\"verifier|signature\"\n        android:featureFlag=\"android.content.pm.quarantined_en",
+  "limitations": [
+    "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+    "Method signatures use provider display types; DEX prototypes come from frozen JADX metadata. Display names may be aliases, and overload indices are local to this engine and artifact.",
+    "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+    "Incoming reference totals count JADX using nodes. Direct invoke entries within a using method report raw DEX code-unit offsets and method indexes, but coverage is limited to those nodes and directly matched invokes; it does not establish every possible dynamic or reflective call site.",
+    "Manifest summaries are parsed once by REA's bridge from the exact root AndroidManifest.xml resource, using namespace-aware XML attributes; decoded XML is retained. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+  ],
+  "raw_evidence": "/home/tv/recuperacion-archtv/20261102T055326Z-ams-callback/framework-res-mcp.json",
+  "conclusion": "Original framework-res.apk declares RANGING under android.permission.flags.ranging_permission_enabled; no permission definition should be fabricated. Static declaration is not effective runtime registration."
+}

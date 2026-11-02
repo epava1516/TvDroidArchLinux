@@ -1,0 +1,23 @@
+{
+  "kind": "CLI static JADX inspection; NOT REA MCP analysis or application execution",
+  "target": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/framework/services.jar",
+  "class": "com.android.server.SystemServer",
+  "method": "startOtherServices",
+  "method_body_available": true,
+  "excerpt": "            timingsTraceAndSlog.traceBegin(\"StartUiModeManager\");\n            this.mSystemServiceManager.startService(UiModeManagerService.class);\n            timingsTraceAndSlog.traceEnd();\n            timingsTraceAndSlog.traceBegin(\"StartLocaleManagerService\");\n            try {\n                this.mSystemServiceManager.startService(LocaleManagerService.class);\n            } catch (Throwable th7) {\n                reportWtf(\"starting LocaleManagerService service\", th7);\n            }\n            timingsTraceAndSlog.traceEnd();\n            timingsTraceAndSlog.traceBegin(\"StartUAppWindowLayoutSettingsService\");\n            try {\n                this.mSystemServiceManager.startService(AppWindowLayoutSettingsService.class);\n            } catch (Throwable th8) {\n                reportWtf(\"starting AppWindowLayoutSettingsService service\", th8);\n            }\n            timingsTraceAndSlog.traceEnd();\n            timingsTraceAndSlog.traceBegin(\"StartGrammarInflectionService\");\n            try {\n                this.mSystemServiceManager.startService(GrammaticalInflectionService.class);\n            } catch (Throwable th9) {\n                reportWtf(\"starting GrammarInflectionService service\", th9);\n            }\n            timingsTraceAndSlog.traceEnd();\n            timingsTraceAndSlog.traceBegin(\"StartAppHibernationService\");\n            this.mSystemServiceManager.startService(AppHibernationService.class);\n            timingsTraceAndSlog.traceEnd();\n            timingsTraceAndSlog.traceBegin(\"ArtManagerLocal\");\n            DexOptHelper.initializeArtManagerLocal(context, this.mPackageManagerService);\n            timingsTraceAndSlog.traceEnd();\n",
+  "decision": "The pinned compiled method starts AppWindowLayoutSettingsService unconditionally. Adapt the trusted Linux orchestrator to that actual order, without reflecting an optimized-out source Flags class, inventing a flag implementation or overriding SDK/runtime values. No claim for other GSI builds.",
+  "limitations": [
+    "JADX warns about missing Android type hierarchies; warnings retained in run.log",
+    "Static inferred control flow, not execution or APK acceptance",
+    "REA MCP rejected JAR target as unsupported; raw error preserved in systemserver-jar-mcp-limit.json",
+    "No REA process capture resources reused; previous cleanup remains unconfirmed"
+  ],
+  "engine_version": "unknown; exact supplied engine JAR digest retained",
+  "hashes": {
+    "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/framework/services.jar": "5840117856bec0fc282cf7ce0991de56ef3b20d83f9c951f6d671f435818b383",
+    "/home/tv/.cache/archtv/systemserver-jadx-cli/InspectSystemServer.java": "2f01362d2de4036a633c01dbe85b8bb015c2d75d2a3bcb9a846f0e718dcc5d07",
+    "/home/tv/.cache/archtv/systemserver-jadx-cli/SystemServer.java": "5fc63f420373018cf2c0653f314452b4e25766bb957d46f0db1f956bfe6aa4f5",
+    "/home/tv/.cache/archtv/systemserver-jadx-cli/run.log": "94fab1e9bee15951e425621fdc6ba1221108d39754071b36a7bcda7868f297d8",
+    "/home/tv/.local/share/rea/android/jadx-headless-mcp-0.7.1-all.jar": "6e5eacf500b64292bfb73c49797c1958f6ee44646e43e868039ae7feb573ff75"
+  }
+}

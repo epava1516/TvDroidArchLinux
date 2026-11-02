@@ -1,17 +1,17 @@
-# Graph Report - network-ready-500  (2026-11-02)
+# Graph Report - ams-selected-readiness  (2026-11-02)
 
 ## Corpus Check
-- 332 files · ~295,532 words
+- 332 files · ~295,717 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 36 file(s) not represented in the graph (top: .cil 9, .xml 8, .patch 7)
 
 ## Summary
-- 3225 nodes · 6086 edges · 237 communities (126 shown, 111 thin omitted)
+- 3225 nodes · 6084 edges · 241 communities (125 shown, 116 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 116 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `89a854bf`
+- Built from commit: `c2b8c0ed`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -112,7 +112,7 @@
 - ART host para la capa APK
 - Main
 - Constructor original de View con recursos del APK
-- View
+- Activity
 - identity.rs
 - 100-apk-session.sh
 - 101-apk-smoke.sh
@@ -160,7 +160,7 @@
 - LocalContextProbe.java
 - Capability
 - .state
-- Reanudación y consumo por ejecución
+- View
 - RenderNodeProbe
 - Medida de View original y siguiente frontera de layout
 - context-metrics/README.md
@@ -194,6 +194,7 @@
 - Arquitectura vigente · A16-QPR2-1
 - FrameworkSpaceProbe
 - linux-wayland-output.cpp
+- Main.java
 - linux-wayland-frame-composer.cpp
 - Buffer
 - ApkMetadata
@@ -212,7 +213,8 @@
 - patches/README.md
 - SystemResourcesChecks.java
 - SessionState
-- WindowPolicyState.java
+- QueueSemanticsProbe.java
+- HandlerDispatchProbe.java
 - linux-mc1-cohort.h
 - WindowPolicy
 - experiments/README.md
@@ -247,7 +249,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (237 total, 111 thin omitted)
+## Communities (241 total, 116 thin omitted)
 
 ### Community 0 - "worker.rs"
 Cohesion: 0.09
@@ -338,8 +340,8 @@ Cohesion: 0.67
 Nodes (4): archtv-android, archtv-compositor, archtv-core, archtv-shell
 
 ### Community 36 - "AGENTS.md"
-Cohesion: 0.50
-Nodes (3): Continuidad de pruebas, Flujo de trabajo del proyecto, graphify
+Cohesion: 0.22
+Nodes (7): Continuidad de pruebas, Flujo de trabajo del proyecto, graphify, Avisos históricos y observación actual, Contrato vigente, Evidencias y límites, Reanudación y consumo por ejecución
 
 ### Community 51 - "89-shell-resolutions.sh"
 Cohesion: 0.20
@@ -394,7 +396,7 @@ Cohesion: 0.15
 Nodes (12): Compilación en entorno limpio, Fuentes y receta, Herramientas para la imagen de distribución, Inventario inicial de licencias Cargo, Paquetes Arch TV en preparación, Preferencias y recuperación entre versiones, Primera compilación e instalación comprobadas, Prueba del ciclo de paquetes preparada (+4 more)
 
 ### Community 72 - ".onClick"
-Cohesion: 0.16
+Cohesion: 0.17
 Nodes (4): Editor, SharedPreferences, IntPreferences, Transaction
 
 ### Community 73 - "linux-graphics-client.cpp"
@@ -414,7 +416,7 @@ Cohesion: 0.08
 Nodes (3): Client, main(), Starter
 
 ### Community 79 - ".current"
-Cohesion: 0.09
+Cohesion: 0.08
 Nodes (6): Attached, ContextProbe, MetadataProbe, ViewConstructorProbe, AppEnvironment, HostProfile
 
 ### Community 80 - "logging.rs"
@@ -470,16 +472,12 @@ Cohesion: 0.33
 Nodes (5): ART host para la capa APK, Fuentes y alcance, Investigación modular de la plataforma original, Pruebas separadas, Resultado del primer experimento
 
 ### Community 96 - "Main"
-Cohesion: 0.15
+Cohesion: 0.18
 Nodes (6): Main, Runnable, Runnable, Runnable, Runnable, UiShutdown
 
 ### Community 97 - "Constructor original de View con recursos del APK"
 Cohesion: 0.33
 Nodes (5): Constructor original de View con recursos del APK, Frontera final registrada, Fronteras observadas, Log nativo resuelto y siguiente recurso del sistema, Trabajo posterior
-
-### Community 98 - "View"
-Cohesion: 0.07
-Nodes (9): MainActivity, MainActivity, Activity, OnClickListener, View, ViewGroup, Button, LinearLayout (+1 more)
 
 ### Community 99 - "identity.rs"
 Cohesion: 0.23
@@ -613,9 +611,9 @@ Nodes (5): Frontera gráfica alcanzada, Identidad de display explícita, Políti
 Cohesion: 0.15
 Nodes (12): Abi, Arm64V8a, ArmeabiV7a, X86, X86_64, Capability, ForceStop, InstallApk (+4 more)
 
-### Community 148 - "Reanudación y consumo por ejecución"
-Cohesion: 0.50
-Nodes (4): Avisos históricos y observación actual, Contrato vigente, Evidencias y límites, Reanudación y consumo por ejecución
+### Community 148 - "View"
+Cohesion: 0.17
+Nodes (4): MainActivity, OnClickListener, View, TextView
 
 ### Community 153 - "LinuxServiceRegistry"
 Cohesion: 0.06
@@ -705,6 +703,10 @@ Nodes (3): Construcción, Holder Binder original en ART/Linux, Pruebas y límite
 Cohesion: 0.03
 Nodes (63): Adaptador de directorios proc · verificación offline, Arquitectura vigente · A16-QPR2-1, Artefacto reproducible de política experimental, Base de ingeniería y procedencia, Binder Rust original: regresiones y contrato de identidad, Cierre y comportamiento que hay que conservar, Conjuntos globales: fallo probado de la composición actual, Contraste nativo de transacciones con contexto de seguridad (+55 more)
 
+### Community 210 - "Main.java"
+Cohesion: 0.14
+Nodes (3): ViewGroup, Button, LinearLayout
+
 ### Community 211 - "linux-wayland-frame-composer.cpp"
 Cohesion: 0.08
 Nodes (8): LinuxWaylandFrameComposer, callback_, callback_mutex_, connected_, display_live_, mutex_, output_, stop_
@@ -745,10 +747,6 @@ Nodes (5): Histórico · primer intento APEX, superado por el hito anterior, His
 Cohesion: 0.33
 Nodes (6): SessionState, Running, Starting, Stopped, Suspended, Unknown
 
-### Community 233 - "WindowPolicyState.java"
-Cohesion: 0.05
-Nodes (4): ClockNativeProbe, HandlerDispatchProbe, Runnable, ResourceBindingCheck
-
 ### Community 241 - "Referencias Fire TV para Arch TV"
 Cohesion: 0.22
 Nodes (9): Capturas de referencia, Catálogo de fuentes, Comparación histórica, Inicio 2026 — Amazon, Material pendiente para una reproducción precisa, Películas 2026 — Amazon, Qué debe parecerse, Referencia principal y versiones (+1 more)
@@ -756,7 +754,7 @@ Nodes (9): Capturas de referencia, Catálogo de fuentes, Comparación histórica
 ## Knowledge Gaps
 - **195 isolated node(s):** `archtv-aosp-linux`, `archtv-apk-host`, `archtv-compositor`, `Home`, `Resume` (+190 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1264 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **111 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **116 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_

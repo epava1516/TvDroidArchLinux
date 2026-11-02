@@ -1,0 +1,84 @@
+{
+  "scope": "Original ART managers/configuration group and WMS/PMS/Display readiness executed; AMS rejects inconsistent permission inputs before its callback. No new Markor stage accepted",
+  "checkpoint": "/home/tv/recuperacion-archtv/41d948a9-975c-47e5-b412-f22c76c330be-markor-launch",
+  "payload": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-49/payload-2.ext4",
+  "payload_sha256": "84e4a5b0d668651da340a6a94125eb52249156f8dc2be1feb2d220bbd4b3020b",
+  "overall_exit": 1,
+  "observations": [
+    {
+      "tag": "System.err",
+      "message": "ORIGINAL_ART_MANAGERS_INITIALIZED NOT_ARTD_OPERATION_ACCEPTANCE",
+      "actual_sender_pid_uid_gid": [
+        505,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "System.err",
+      "message": "SELECTED_FAILURE_CAUSE depth=0 type=java.lang.IllegalStateException message=Missing permission definition for permission \"android.permission.RANGING\" associated with app op 151",
+      "actual_sender_pid_uid_gid": [
+        505,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "AconfigFlags",
+      "message": "Failed to load aconfig package android.permission.flags\nandroid.os.flagging.AconfigStorageReadException: ERROR_PACKAGE_NOT_FOUND: package android.permission.flags cannot be found on the device\n\tat android.os.flagging.AconfigPackage.load(AconfigPackage.java:160)\n\tat com.android.internal.pm.pkg.component.AconfigFlags.lambda$getFlagValueFromNewStorage$0(AconfigFlags.java:264)\n\tat com.android.internal.pm.pkg.component.AconfigFlags$$ExternalSyntheticLambda0.apply(D8$$SyntheticClass:0)\n\tat java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1713)\n\tat com.android.internal.pm.pkg.component.AconfigFlags.getFlagValueFromNewStorage(AconfigFlags.java:262)\n\tat com.android.internal.pm.pkg.component.AconfigFlags.getFlagValue(AconfigFlags.java:228)\n\tat com.android.internal.pm.pkg.component.AconfigFlags.skip(AconfigFlags.java:342)\n\tat com.android.internal.pm.pkg.component.AconfigFlags.skipCurrentElement(AconfigFlags.java:330)\n\tat com.android.server.SystemConfig.readSplitPermission(SystemConfig.java:2284)\n\tat com.android.server.SystemConfig.readSplitPermission(SystemConfig.java:1169)\n\tat com.android.server.SystemConfig.readPermissionsFromXml(SystemConfig.java:917)\n\tat com.android.server.SystemConfig.readPermissions(SystemConfig.java:837)\n\tat com.android.server.SystemConfig.readAllPermissionsFromXml(SystemConfig.java:692)\n\tat com.android.server.SystemConfig.readAllPermissions(SystemConfig.java:674)\n\tat com.android.server.SystemConfig.<init>(SystemConfig.java:666)\n\tat com.android.server.SystemConfig.getInstance(SystemConfig.java:426)\n\tat com.android.server.am.ProcessList.init(ProcessList.java:908)\n\tat com.android.server.am.ActivityManagerService.<init>(ActivityManagerService.java:2499)\n\tat com.android.server.am.ActivityManagerService$Lifecycle.<init>(ActivityManagerService.java:2228)\n\tat java.lang.reflect.Constructor.newInstance0(Native Method)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:343)\n\tat com.android.server.SystemServiceManager.startService(SystemServiceManager.java:242)\n\tat com.android.server.am.ActivityManagerService$Lifecycle.startService(ActivityManagerService.java:2234)\n\tat java.lang.reflect.Method.invoke(Native Method)\n\tat org.archtv.aosplinux.SelectedServices.call(SelectedServices.java:10)\n\tat org.archtv.aosplinux.SelectedServices.main(SelectedServices.java:123)\n\tat java.lang.reflect.Method.invoke(Native Method)\n\tat org.archtv.aosplinux.ServiceLauncher.main(ServiceLauncher.java:37)\n\tat com.android.internal.os.RuntimeInit.nativeFinishInit(Native Method)\n\tat com.android.internal.os.RuntimeInit.main(RuntimeInit.java:366)\n",
+      "actual_sender_pid_uid_gid": [
+        505,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "AconfigFlags",
+      "message": "Failed to load aconfig package android.permission.flags\nandroid.os.flagging.AconfigStorageReadException: ERROR_PACKAGE_NOT_FOUND: package android.permission.flags cannot be found on the device\n\tat android.os.flagging.AconfigPackage.load(AconfigPackage.java:160)\n\tat com.android.internal.pm.pkg.component.AconfigFlags.lambda$getFlagValueFromNewStorage$0(AconfigFlags.java:264)\n\tat com.android.internal.pm.pkg.component.AconfigFlags$$ExternalSyntheticLambda0.apply(D8$$SyntheticClass:0)\n\tat java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1713)\n\tat com.android.internal.pm.pkg.component.AconfigFlags.getFlagValueFromNewStorage(AconfigFlags.java:262)\n\tat com.android.internal.pm.pkg.component.AconfigFlags.getFlagValue(AconfigFlags.java:228)\n\tat com.android.internal.pm.pkg.component.AconfigFlags.skip(AconfigFlags.java:342)\n\tat com.android.internal.pm.pkg.component.AconfigFlags.skipCurrentElement(AconfigFlags.java:330)\n\tat com.android.server.SystemConfig.readSplitPermission(SystemConfig.java:2284)\n\tat com.android.server.SystemConfig.readSplitPermission(SystemConfig.java:1169)\n\tat com.android.server.SystemConfig.readPermissionsFromXml(SystemConfig.java:917)\n\tat com.android.server.SystemConfig.readPermissions(SystemConfig.java:837)\n\tat com.android.server.SystemConfig.readAllPermissionsFromXml(SystemConfig.java:692)\n\tat com.android.server.SystemConfig.readAllPermissions(SystemConfig.java:674)\n\tat com.android.server.SystemConfig.<init>(SystemConfig.java:666)\n\tat com.android.server.SystemConfig.getInstance(SystemConfig.java:426)\n\tat com.android.server.am.ProcessList.init(ProcessList.java:908)\n\tat com.android.server.am.ActivityManagerService.<init>(ActivityManagerService.java:2499)\n\tat com.android.server.am.ActivityManagerService$Lifecycle.<init>(ActivityManagerService.java:2228)\n\tat java.lang.reflect.Constructor.newInstance0(Native Method)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:343)\n\tat com.android.server.SystemServiceManager.startService(SystemServiceManager.java:242)\n\tat com.android.server.am.ActivityManagerService$Lifecycle.startService(ActivityManagerService.java:2234)\n\tat java.lang.reflect.Method.invoke(Native Method)\n\tat org.archtv.aosplinux.SelectedServices.call(SelectedServices.java:10)\n\tat org.archtv.aosplinux.SelectedServices.main(SelectedServices.java:123)\n\tat java.lang.reflect.Method.invoke(Native Method)\n\tat org.archtv.aosplinux.ServiceLauncher.main(ServiceLauncher.java:37)\n\tat com.android.internal.os.RuntimeInit.nativeFinishInit(Native Method)\n\tat com.android.internal.os.RuntimeInit.main(RuntimeInit.java:366)\n",
+      "actual_sender_pid_uid_gid": [
+        505,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "AconfigFlags",
+      "message": "Failed to load aconfig package android.permission.flags\nandroid.os.flagging.AconfigStorageReadException: ERROR_PACKAGE_NOT_FOUND: package android.permission.flags cannot be found on the device\n\tat android.os.flagging.AconfigPackage.load(AconfigPackage.java:160)\n\tat com.android.internal.pm.pkg.component.AconfigFlags.lambda$getFlagValueFromNewStorage$0(AconfigFlags.java:264)\n\tat com.android.internal.pm.pkg.component.AconfigFlags$$ExternalSyntheticLambda0.apply(D8$$SyntheticClass:0)\n\tat java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1713)\n\tat com.android.internal.pm.pkg.component.AconfigFlags.getFlagValueFromNewStorage(AconfigFlags.java:262)\n\tat com.android.internal.pm.pkg.component.AconfigFlags.getFlagValue(AconfigFlags.java:228)\n\tat com.android.internal.pm.pkg.component.AconfigFlags.skip(AconfigFlags.java:342)\n\tat com.android.internal.pm.pkg.component.AconfigFlags.skipCurrentElement(AconfigFlags.java:330)\n\tat com.android.server.SystemConfig.readSplitPermission(SystemConfig.java:2284)\n\tat com.android.server.SystemConfig.readSplitPermission(SystemConfig.java:1169)\n\tat com.android.server.SystemConfig.readPermissionsFromXml(SystemConfig.java:917)\n\tat com.android.server.SystemConfig.readPermissions(SystemConfig.java:837)\n\tat com.android.server.SystemConfig.readAllPermissionsFromXml(SystemConfig.java:692)\n\tat com.android.server.SystemConfig.readAllPermissions(SystemConfig.java:674)\n\tat com.android.server.SystemConfig.<init>(SystemConfig.java:666)\n\tat com.android.server.SystemConfig.getInstance(SystemConfig.java:426)\n\tat com.android.server.am.ProcessList.init(ProcessList.java:908)\n\tat com.android.server.am.ActivityManagerService.<init>(ActivityManagerService.java:2499)\n\tat com.android.server.am.ActivityManagerService$Lifecycle.<init>(ActivityManagerService.java:2228)\n\tat java.lang.reflect.Constructor.newInstance0(Native Method)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:343)\n\tat com.android.server.SystemServiceManager.startService(SystemServiceManager.java:242)\n\tat com.android.server.am.ActivityManagerService$Lifecycle.startService(ActivityManagerService.java:2234)\n\tat java.lang.reflect.Method.invoke(Native Method)\n\tat org.archtv.aosplinux.SelectedServices.call(SelectedServices.java:10)\n\tat org.archtv.aosplinux.SelectedServices.main(SelectedServices.java:123)\n\tat java.lang.reflect.Method.invoke(Native Method)\n\tat org.archtv.aosplinux.ServiceLauncher.main(ServiceLauncher.java:37)\n\tat com.android.internal.os.RuntimeInit.nativeFinishInit(Native Method)\n\tat com.android.internal.os.RuntimeInit.main(RuntimeInit.java:366)\n",
+      "actual_sender_pid_uid_gid": [
+        505,
+        1000,
+        1000
+      ]
+    }
+  ],
+  "readiness_reached": "Actual AMS.systemReady/controller stack follows returned WMS.systemReady, original PermissionPolicyService start, PMS.systemReady and Display.systemReady calls; source and payload pinned. This does not prove general availability or authorization.",
+  "callback_entered": false,
+  "native_complete_inventory_verified": true,
+  "bpf_cleanup_verified": true,
+  "final_loops": "",
+  "final_dm": [],
+  "native_close_accepted": false,
+  "decision": "Integrate original aconfig platform/Mainline initialization and FeatureFlagsService before package parsing, with exact original private metadata labels/identities, so the original parser can consume original RANGING permission flag. Do not add permissions, synthesize flag values or bypass AppOps checks.",
+  "evidence_type_separation": {
+    "original_sources": "Framework SystemServer/DexOptHelper/AndroidManifest source pins retained",
+    "REA_MCP": "framework-ranging-mcp.json: actual complete framework-res manifest declaration, static only",
+    "CLI": "systemserver-compiled-app-config.json: original compiled group recovered with local JADX, not MCP",
+    "REA_JAR_limit": "systemserver-jar-mcp-limit.json: actual connected MCP target-format rejection, not a decompilation",
+    "unused_build47": "Never executed; wrong reflected package caught before run, preserved in checkpoint"
+  },
+  "limitations": [
+    "No AMS callback/installer/Activity/UI/input/note/persistence accepted",
+    "Missing permission definition is a real rejection; no manually granted or invented permissions",
+    "Original close failure and outer resource cleanup remain distinct",
+    "R1-MAC permissive policyload2; ARM/GMS/DRM open"
+  ],
+  "hashes": {
+    "/home/tv/recuperacion-archtv/41d948a9-975c-47e5-b412-f22c76c330be-markor-launch/before.json": "34466b81251840fced20c02cc60bf712a8c810a485dc80db0bc9dab3c813717d",
+    "/home/tv/recuperacion-archtv/41d948a9-975c-47e5-b412-f22c76c330be-markor-launch/run.log": "e50b2e4392d1ef3620faa4117b052a0c10c6bcadfb86815ab032efec193039b1",
+    "/home/tv/recuperacion-archtv/41d948a9-975c-47e5-b412-f22c76c330be-markor-launch/result.json": "e9e7b2c0da0a2e51dfa834f2ec59c6cd3cd0641fea1ae9abb29936e8d2c4bbad",
+    "/home/tv/recuperacion-archtv/41d948a9-975c-47e5-b412-f22c76c330be-markor-launch/bpf-cleanup.json": "77cf559913e66b8a380067c0fbb2f2186dfd119b84023115c82a8819f19637a3",
+    "/home/tv/recuperacion-archtv/20261102T055326Z-ams-callback/framework-res-mcp.json": "02b9608a81e82f4f2ee65af25c07e12bf3a5ae85c89d66b3315e2e8f9ada935f",
+    "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/framework-AndroidManifest.xml": "201d8390999de22fc6363a40ffdda84c2ed1a4cbd3c4f18cab6d721b505797a9",
+    "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/DexOptHelper.java": "1f9187c65c20bdb869b1396625b4525690ed992d95869dacf8b15236d435df39"
+  }
+}

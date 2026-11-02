@@ -97,6 +97,7 @@ public final class SelectedServices {
             call(sharedType, null, "setInstance", new Class<?>[]{sharedType}, shared);
             Class<?> installerType = Class.forName("com.android.server.pm.Installer");
             Object installer = call(managerType, manager, "startService", new Class<?>[]{Class.class}, installerType);
+            if(packages)start(manager,managerType,"com.android.server.os.DeviceIdentifiersPolicyService");
             // Real original Binder operation; default Installer is not isolated.
             // Its connection latch/remote exceptions remain intact.
             call(installerType, installer, "invalidateMounts", new Class<?>[0]);
@@ -151,8 +152,14 @@ public final class SelectedServices {
                 Class<?> domainType=Class.forName("com.android.server.pm.verify.domain.DomainVerificationService");
                 Object domain=domainType.getConstructor(contextType,configType,Class.forName("com.android.server.compat.PlatformCompat")).newInstance(context,config,platformCompat);
                 call(managerType,manager,"startService",new Class<?>[]{Class.forName("com.android.server.SystemService")},domain);
-                call(Class.forName("com.android.server.pm.PackageManagerService"),null,"main",new Class<?>[]{contextType,installerType,domainType,boolean.class},context,installer,domain,false);
+                Object packagesService=call(Class.forName("com.android.server.pm.PackageManagerService"),null,"main",new Class<?>[]{contextType,installerType,domainType,boolean.class},context,installer,domain,false);
                 System.err.println("PACKAGES_ORIGINAL_PMS_RETURNED REQUIRES_INSTALL_LAUNCH_VERIFICATION");
+                // Original complete ART managers, after PackageManagerLocal registration.
+                Class<?> dexUseType=Class.forName("com.android.server.art.DexUseManagerLocal");
+                Object dexUse=call(dexUseType,null,"createInstance",new Class<?>[]{contextType},context);
+                call(Class.forName("com.android.server.LocalManagerRegistry"),null,"addManager",new Class<?>[]{Class.class,Object.class},dexUseType,dexUse);
+
+
                 if (Boolean.getBoolean("archtv.diagnose.wait")) diagnostic.start();
                 // Original post-PMS ordering: publish UserManager and system AMS,
                 // then bind the real storage services used by PackageInstaller.
@@ -233,6 +240,16 @@ public final class SelectedServices {
                     "com.android.server.stats.StatsCompanion$Lifecycle","/apex/com.android.os.statsd/javalib/service-statsd.jar");
                 start(manager,managerType,"com.android.server.DeviceIdleController");
                 start(manager,managerType,"com.android.server.UiModeManagerService");
+                // Original app configuration/hibernation/ART group and order.
+                start(manager,managerType,"com.android.server.locales.LocaleManagerService");
+                // Pinned GSI SystemServer starts this unconditionally: build-time
+                // flag optimization removed com.android.window.flags.Flags.
+                // See systemserver-compiled-app-config.json; no fabricated flag API.
+                start(manager,managerType,"com.android.server.appwindowlayout.AppWindowLayoutSettingsService");
+                start(manager,managerType,"com.android.server.grammaticalinflection.GrammaticalInflectionService");
+                start(manager,managerType,"com.android.server.apphibernation.AppHibernationService");
+                call(Class.forName("com.android.server.pm.DexOptHelper"),null,"initializeArtManagerLocal",new Class<?>[]{contextType,packagesService.getClass()},context,packagesService);
+                System.err.println("ORIGINAL_ART_MANAGERS_INITIALIZED NOT_ARTD_OPERATION_ACCEPTANCE");
                 start(manager,managerType,"com.android.server.dreams.DreamManagerService");
                 // Original SystemServer network subsystem ordering. Native netd
                 // and real original BPF maps must already exist; no local stub.
@@ -261,19 +278,37 @@ public final class SelectedServices {
                 call(managerType,manager,"startBootPhase",new Class<?>[]{traceType,int.class},trace,storagePhase);
                 System.err.println("ORIGINAL_SELECTED_PHASE500_RETURNED NOT_BOOT_COMPLETED_OR_APP_ACCEPTANCE");
                 System.err.println("PACKAGES_ORIGINAL_USER_AMS_STORAGE_STARTED REQUIRES_INSTALL_OPERATION");
-                // Run the real PackageInstaller client after dependency/lifecycle
-                // completion, while the original main looper can process work.
-                Thread installation=new Thread(() -> {
+                // Original SystemServer readiness order, retaining real checks.
+                call(wmType,wm,"systemReady",new Class<?>[0]);
+                start(manager,managerType,"com.android.server.policy.PermissionPolicyService");
+                call(packagesService.getClass(),packagesService,"systemReady",new Class<?>[0]);
+                call(display.getClass(),display,"systemReady",new Class<?>[]{boolean.class},false);
+                Runnable linuxApplicationLoop=() -> {
                     try {
-                        Process child=new ProcessBuilder("/system/bin/sh","-c",
-                            "umask 077; /system/bin/sh /vendor/bin/install-markor.sh > /data/local/tmp/archtv-mc1/markor-install.txt 2>&1").start();
-                        int result=child.waitFor();
-                        System.err.println("MARKOR_ORIGINAL_SESSION_CLIENT_EXIT actual="+result+" REQUIRES_INSTALLED_BYTES");
-                    } catch(Exception failure) {
-                        failure.printStackTrace(System.err);
-                    }
-                },"linux-markor-installer");
-                installation.start();
+                        int activityReady=Class.forName("com.android.server.SystemService").getField("PHASE_ACTIVITY_MANAGER_READY").getInt(null);
+                        call(managerType,manager,"startBootPhase",new Class<?>[]{traceType,int.class},trace,activityReady);
+                        System.err.println("LINUX_ORIGINAL_AMS_CALLBACK_ENTERED METHOD_NOT_RETURNED_NOT_BOOT_COMPLETED");
+
+                        // Run the real PackageInstaller client after dependency/lifecycle
+                        // completion, while the original main looper can process work.
+                        Thread installation=new Thread(() -> {
+                            try {
+                                Process child=new ProcessBuilder("/system/bin/sh","-c",
+                                    "umask 077; /system/bin/sh /vendor/bin/install-markor.sh > /data/local/tmp/archtv-mc1/markor-install.txt 2>&1").start();
+                                int result=child.waitFor();
+                                System.err.println("MARKOR_ORIGINAL_SESSION_CLIENT_EXIT actual="+result+" REQUIRES_INSTALLED_BYTES");
+                            } catch(Exception failure) {
+                                failure.printStackTrace(System.err);
+                            }
+                        },"linux-markor-installer");
+                        installation.start();
+                        call(looper,null,"loop",new Class<?>[0]);
+                        throw new IllegalStateException("Linux application loop returned; refusing Android implicit startup");
+                    } catch(Exception failure) { throw new RuntimeException("Original AMS callback failed",failure); }
+                };
+                call(activityManager.getClass(),activityManager,"systemReady",new Class<?>[]{Runnable.class,traceType},linuxApplicationLoop,trace);
+                throw new IllegalStateException("AMS callback boundary returned unexpectedly");
+
 
 
             }

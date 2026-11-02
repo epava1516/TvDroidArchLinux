@@ -1,0 +1,33 @@
+{
+  "checkpoint": "/home/tv/recuperacion-archtv/5c5ee4e5-b796-4e96-8c30-b5f96739180e-markor-launch",
+  "scope": "Actual original readiness integration, fails in PMS.systemReady before AMS callback or Markor installer",
+  "overall_exit": 1,
+  "native_complete_inventory_verified": true,
+  "bpf_cleanup_verified": true,
+  "observations": [
+    {
+      "tag": "System.err",
+      "message": "SELECTED_FAILURE_CAUSE depth=0 type=java.lang.RuntimeException message=com.android.server.LocalManagerRegistry$ManagerNotFoundException: Local manager com.android.server.art.DexUseManagerLocal does not exist or is not ready",
+      "actual_sender_pid_uid_gid": [
+        508,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "System.err",
+      "message": "SELECTED_FAILURE_CAUSE depth=1 type=com.android.server.LocalManagerRegistry$ManagerNotFoundException message=Local manager com.android.server.art.DexUseManagerLocal does not exist or is not ready",
+      "actual_sender_pid_uid_gid": [
+        508,
+        1000,
+        1000
+      ]
+    }
+  ],
+  "next": "Original SystemServer registers DexUseManagerLocal.createInstance(context) after PMS and initializes ArtManagerLocal through DexOptHelper. Reuse that whole initializer; do not synthesize managers or disable dexopt checks.",
+  "hashes": {
+    "/home/tv/recuperacion-archtv/5c5ee4e5-b796-4e96-8c30-b5f96739180e-markor-launch/before.json": "155845b0616bfaa6afed13ddd8cace2a0a1013c102e00b0c19d291943483681a",
+    "/home/tv/recuperacion-archtv/5c5ee4e5-b796-4e96-8c30-b5f96739180e-markor-launch/run.log": "803b535984e4f120f9bd527d8befc44f822b23fde92e6ec5cbeba8b1b4785d78",
+    "/home/tv/recuperacion-archtv/5c5ee4e5-b796-4e96-8c30-b5f96739180e-markor-launch/result.json": "1964340b04823e5169bf7911facbcb50c2f6f99936952d8e2d4555a211c5e320"
+  }
+}

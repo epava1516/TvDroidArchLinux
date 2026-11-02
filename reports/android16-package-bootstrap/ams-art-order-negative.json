@@ -1,0 +1,29 @@
+{
+  "checkpoint": "/home/tv/recuperacion-archtv/d2d293e8-cb52-4454-a453-2eca48674a0d-markor-launch",
+  "scope": "Actual failure of Linux orchestration order, not an AOSP implementation defect or APK result",
+  "observations": [
+    {
+      "tag": "System.err",
+      "message": "SELECTED_FAILURE_CAUSE depth=0 type=java.lang.NullPointerException message=null",
+      "actual_sender_pid_uid_gid": [
+        516,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "System.err",
+      "message": "\tat com.android.server.art.DexoptHelper$Injector.getAppHibernationManager(DexoptHelper.java:342)",
+      "actual_sender_pid_uid_gid": [
+        516,
+        1000,
+        1000
+      ]
+    }
+  ],
+  "decision": "Original source starts UiMode/Locale/Grammar/AppHibernation group before initializeArtManagerLocal. Restore that original whole group and conditional AppWindowLayout service, not a stub or null bypass.",
+  "overall_exit": 1,
+  "native_complete_inventory_verified": true,
+  "bpf_cleanup_verified": true,
+  "run_log_sha256": "af8d853917dddbfd516ad791beb8376ab30691528e21ff1ff12e8268e8c0a75e"
+}
