@@ -8,7 +8,8 @@ subprocess.run(['python',str(r/'reports/android16-selected-display/build-entry.p
 rc=(entry/'selected-services.rc').read_text()
 # EventHub requires CAP_BLOCK_SUSPEND; original ZygoteInit grants it to system_server.
 assert rc.count('    capabilities SYS_NICE\n')==1
-rc=rc.replace('    capabilities SYS_NICE\n','    capabilities SYS_NICE BLOCK_SUSPEND\n')
+# Original ZygoteInit also grants WAKE_ALARM: timerfd ALARM clocks require it.
+rc=rc.replace('    capabilities SYS_NICE\n','    capabilities SYS_NICE BLOCK_SUSPEND WAKE_ALARM\n')
 # Selected system services open the original netd maps by DAC. Reuse only
 # the two original system_server groups needed by network accounting, from
 # pinned ZygoteInit --setgroups; no CAP_BPF or global sysctl exception.

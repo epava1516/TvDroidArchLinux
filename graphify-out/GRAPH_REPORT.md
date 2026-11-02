@@ -1,7 +1,7 @@
-# Graph Report - audio-recovery-original  (2026-11-02)
+# Graph Report - alarm-native-admission  (2026-11-02)
 
 ## Corpus Check
-- 332 files · ~297,473 words
+- 332 files · ~297,865 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 36 file(s) not represented in the graph (top: .cil 9, .xml 8, .patch 7)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e227a7a9`
+- Built from commit: `b1602e91`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

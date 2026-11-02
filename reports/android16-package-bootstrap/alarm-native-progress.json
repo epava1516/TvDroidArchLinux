@@ -1,0 +1,83 @@
+{
+  "scope": "Original native alarm backend admitted; Markor installation still incomplete, no new APK stage acceptance",
+  "checkpoint": "/home/tv/recuperacion-archtv/0ca15469-69f7-404d-9e97-5e639b95f903-markor-launch",
+  "run_id": "0ca15469-69f7-404d-9e97-5e639b95f903",
+  "input": "dist/aosp16/package-cohort-build-64/payload-2.ext4",
+  "input_sha256": "fcc5581db67f9dc722570431a2c86d6763f71aa7584cf7a602e3d5d03e830eec",
+  "evidence_sha256": {
+    "before.json": "85219b36ba83c76ae50c14b29e8dc19229c782d223e6a74a1958ef728fd38857",
+    "result.json": "ee0e1a6199ce3f5608806052eed7f5c12fa7b5a74eceaf129e437a9aae934f9c",
+    "run.log": "62b744479d1540e3188bfdd387c02166d7ef0f03ccbdee740d2343850887a572"
+  },
+  "result": {
+    "outer_exit": 1,
+    "elapsed_seconds": 168.73243713378906,
+    "native_complete_inventory_verified": true,
+    "active_loops": "",
+    "final_dm": []
+  },
+  "bpf_cleanup_verified": true,
+  "trusted_identity": {
+    "kind": "SERVICES",
+    "pid_namespace_pid": 526,
+    "getpidcon_raw_return": 0,
+    "actual_context": "u:r:system_server:s0",
+    "contexts_observed_in_order": [
+      "u:r:system_server:s0"
+    ],
+    "errno_observed": [],
+    "status": [
+      "Uid:\t1000\t1000\t1000\t1000",
+      "Gid:\t1000\t1000\t1000\t1000",
+      "Groups:\t1003 3006 3007 ",
+      "CapPrm:\t0000001800800000",
+      "CapEff:\t0000001800800000",
+      "CapBnd:\t0000001800800000",
+      "NoNewPrivs:\t1"
+    ]
+  },
+  "actual_original_alarm_thread_stack": "    at com.android.server.alarm.AlarmManagerService.waitForAlarm(Native Method)\n    at com.android.server.alarm.AlarmManagerService.-$$Nest$smwaitForAlarm(AlarmManagerService.java:0)\n    at com.android.server.alarm.AlarmManagerService$Injector.waitForAlarm(AlarmManagerService.java:4349)\n    at com.android.server.alarm.AlarmManagerService$AlarmThread.run(AlarmManagerService.java:4455)\n",
+  "original_timer_fallback_previous": "Run63 actual timerfd_create(8) EPERM with cap0x1000800000, original Handler fallback then listener PendingIntent null. No constructor/method patch.",
+  "alarm_limits": "Positive kernel initialization/native wait and no repeated fallback exception in this bounded run. Does not prove wake-from-suspend or general alarm delivery/authorization/isolation.",
+  "host_clock": "CAP_SYS_TIME25 remains absent; no policy/enforcing/reboot/global sysctl changes requested",
+  "markor_install_output": "Success: created install session [299282187]\nSuccess: streamed 11861047 bytes\n",
+  "markor_launch_output": "",
+  "primary_block_evidence": [
+    {
+      "tag": "libc",
+      "message": "Unable to set property \"ctl.interface_start\" to \"aidl/artd\": PROP_ERROR_HANDLE_CONTROL_MESSAGE (0x20)",
+      "actual_sender_pid_uid_gid": [
+        330,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "libc",
+      "message": "Unable to set property \"ctl.interface_start\" to \"aidl/artd\": PROP_ERROR_HANDLE_CONTROL_MESSAGE (0x20)",
+      "actual_sender_pid_uid_gid": [
+        330,
+        1000,
+        1000
+      ]
+    }
+  ],
+  "primary_block": "Original ArtManager waits for artd; original service manager requests ctl.interface_start=aidl/artd, rejected0x20 by Linux no-control-backend guard. No readiness/service or install success manufactured.",
+  "next": "Explicit selected-service admission for original artd lazy interface; reuse original queue/control handling in Linux owner event loop, retain power and unselected-target rejection; actual original RC identity/caps/NNP and Binder/Markor operation required. Original AMS application-profile/return gate remains after this.",
+  "security": "Fresh read-only host view: permissive, policyload2, policy readback9141f284... unchanged; R1-MAC open; ARM/GMS/DRM separate",
+  "fresh_host_security": {
+    "record": "/home/tv/recuperacion-archtv/20261102T100606Z-alarm-native-admission/host-selinux-after64.json",
+    "sha256": "b04386082cae2d6bed0ec557abad63c0325be13716832596dca50f798374ba07",
+    "boot_id": "4e18faf8-2b46-42e4-a6b2-269c34326b68",
+    "enforce": 0,
+    "status": [
+      1,
+      4,
+      0,
+      2,
+      1
+    ],
+    "policy_readback_sha256": "9141f28442c0812c202089bfd544b07c6cbb3c5318baa9f9fde7dcf34a719775",
+    "scope": "Fresh private read-only SELinuxFS view; no load/enforcing changes"
+  }
+}

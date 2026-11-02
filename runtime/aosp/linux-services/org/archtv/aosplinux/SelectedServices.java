@@ -42,8 +42,9 @@ public final class SelectedServices {
             System.err.println(stack.toString());
             StringBuilder savedStack=new StringBuilder(stack);saveWaitDiagnostic(savedStack.toString());
             for (java.util.Map.Entry<Thread, StackTraceElement[]> entry : Thread.getAllStackTraces().entrySet()) {
-                if (!entry.getKey().getName().equals("android.display")) continue;
-                stack = new StringBuilder("SELECTED_DISPLAY_WAIT_STACK\n");
+                String threadName=entry.getKey().getName();
+                if (!threadName.equals("android.display") && !threadName.equals("AlarmManager")) continue;
+                stack = new StringBuilder(threadName.equals("AlarmManager") ? "SELECTED_ALARM_NATIVE_WAIT_STACK\n" : "SELECTED_DISPLAY_WAIT_STACK\n");
                 for (StackTraceElement frame : entry.getValue()) stack.append("    at ").append(frame).append('\n');
                 System.err.println(stack.toString());
                 savedStack.append(stack);saveWaitDiagnostic(savedStack.toString());
