@@ -6,7 +6,7 @@ pool and dm names derived from the pinned APEX manifests enter the private dev.
 The outer runner owns cleanup. This does not establish MAC isolation.
 """
 from pathlib import Path
-import argparse, ctypes, errno, fcntl, json, os, signal, stat, subprocess, time
+import argparse, ctypes, errno, fcntl, json, os, re, signal, stat, subprocess, time
 
 REPO = Path('/home/tv/repositorio-principal')
 
@@ -98,6 +98,82 @@ def expose_links(root, kernel):
         else:assert os.readlink(dest)==target
 
 
+def owned_process(proc, owner_cgroup, namespaces):
+    if any((proc/'ns'/name).stat().st_ino!=inode for name,inode in namespaces.items()):
+        return False
+    line=(proc/'cgroup').read_text().strip()
+    if not line.startswith('0::'):return False
+    path=line[3:]
+    if not path.startswith('/') or '..' in path.split('/'):return False
+    return owner_cgroup=='/' or path==owner_cgroup or path.startswith(owner_cgroup.rstrip('/')+'/')
+
+
+def observe_app_startups(log, state, out, owner_cgroup, namespaces, procbase):
+    """Bounded, read-only diagnostic for actual original AMS child-start events.
+
+    No ptrace, signals, heap dumps, app changes or model notifications. PID/start
+    time and cgroup checks prevent observing a reused or unrelated process.
+    """
+    changed=False
+    for _ in range(64):
+        line=log.readline()
+        if not line:break
+        try:item=json.loads(line)
+        except json.JSONDecodeError:continue
+        if item.get('tag')!='ActivityManager':continue
+        match=re.match(r'Start proc (\d+):([^/]+)/',item.get('message',''))
+        if not match or match[2] not in {'com.android.permissioncontroller','com.android.settings','net.gsantner.markor'}:continue
+        sender=item.get('actual_sender_pid_uid_gid',[])
+        if len(sender)!=3 or sender[1]!=1000:continue
+        try:
+            source=procbase/str(sender[0])
+            if (source/'attr/current').read_text().strip().rstrip('\0')!='u:r:system_server:s0':continue
+            if not owned_process(source,owner_cgroup,namespaces):continue
+        except OSError:continue
+        if len(state['processes'])>=6:
+            state['truncated']=True;changed=True;continue
+        proc=procbase/match[1]
+        event={'pid':int(match[1]),'package':match[2],'event':item,'seen_monotonic':time.monotonic(),'samples':[]}
+        try:
+            event['start_ticks']=(proc/'stat').read_text().rsplit(')',1)[1].split()[19]
+            event['initial_cgroup']=(proc/'cgroup').read_text().strip()
+            if not owned_process(proc,owner_cgroup,namespaces):continue
+        except OSError as error:event['early_exit_or_read_error']=str(error)
+        state['processes'].append(event);changed=True
+    for event in state['processes']:
+        if 'start_ticks' not in event:continue
+        age=time.monotonic()-event['seen_monotonic']
+        for delay in [2,7]:
+            if age<delay or any(x['delay_requested']==delay for x in event['samples']):continue
+            sample={'delay_requested':delay,'age_seconds':age,'observed_monotonic':time.monotonic()}
+            proc=procbase/str(event['pid'])
+            try:
+                ticks=(proc/'stat').read_text().rsplit(')',1)[1].split()[19]
+                if ticks!=event['start_ticks']:raise RuntimeError('PID reused; observation refused')
+                cgroup=(proc/'cgroup').read_text().strip()
+                if not owned_process(proc,owner_cgroup,namespaces):raise RuntimeError('PID outside owned namespaces/cgroup; observation refused')
+                sample['cgroup']=cgroup
+                sample['context']=(proc/'attr/current').read_text().strip().rstrip('\0')
+                sample['cmdline']=(proc/'cmdline').read_bytes()[:4096].replace(b'\0',b' ').decode(errors='replace')
+                sample['status']=[x for x in (proc/'status').read_text().splitlines() if x.startswith(('Name:','State:','Uid:','Gid:','Groups:','Cap','NoNewPrivs:','Seccomp:','Threads:','NSpid:','VmRSS:'))]
+                sample['tasks']=[]
+                for task in sorted((proc/'task').iterdir(),key=lambda x:int(x.name))[:12]:
+                    entry={'tid':int(task.name)}
+                    for name in ['comm','wchan','stack','syscall']:
+                        try:entry[name]=(task/name).read_text()[:8192]
+                        except OSError as error:entry[name+'_error']=str(error)
+                    sample['tasks'].append(entry)
+                sample['fds']={}
+                for fd in sorted((proc/'fd').iterdir(),key=lambda x:int(x.name))[:32]:
+                    try:sample['fds'][fd.name]=os.readlink(fd)
+                    except OSError as error:sample['fds'][fd.name]=str(error)
+                sample['maps_prefix']=(proc/'maps').read_text().splitlines()[:128]
+                if (proc/'stat').read_text().rsplit(')',1)[1].split()[19]!=ticks:raise RuntimeError('Process identity changed during observation')
+            except (OSError,RuntimeError) as error:sample['error']=str(error)
+            event['samples'].append(sample);changed=True
+    if changed:save(out/'app-start-observations.json',state)
+
+
 def monitor(root,out,parent):
     libc=ctypes.CDLL(None,use_errno=True)
     assert libc.prctl(1,signal.SIGTERM,0,0,0)==0  # owned parent's death stops monitor
@@ -123,8 +199,22 @@ def monitor(root,out,parent):
             stopping=True
         signal.signal(signal.SIGTERM,stop_monitor)
     network_peers={}
+    app_log=(out/'android-log-live.jsonl').open()
+    app_state={'scope':'Read-only native app-start diagnosis; not app availability/security acceptance','processes':[],'truncated':False}
+    # The monitor retains the Linux mount namespace. Numeric SCM/AMS PIDs
+    # belong to the cohort PID namespace, whose procfs is mounted in root/proc.
+    procbase=root/'proc'
+    assert int((procbase/'self/stat').read_text().split(' ',1)[0])==os.getpid(), 'procfs must expose cohort PID namespace'
+    assert (procbase/str(os.getpid())/'ns/pid').stat().st_ino==(procbase/'self/ns/pid').stat().st_ino
+    own=((procbase/'self/cgroup').read_text().strip().split('0::',1)[1])
+    owner_cgroup=own.split('.service',1)[0]+'.service' if '.service' in own else own
+    namespaces={name:(procbase/'self/ns'/name).stat().st_ino for name in ['pid','cgroup']}
+    app_state['owner_cgroup']=owner_cgroup;app_state['owner_namespaces']=namespaces
+    app_state['procfs']=str(procbase)
+    save(out/'app-start-observations.json',app_state)
     end=time.monotonic()+200
     while time.monotonic()<end and not stopping:
+        observe_app_startups(app_log,app_state,out,owner_cgroup,namespaces,procbase)
         if network is not None:
             for proc in Path('/proc').iterdir():
                 if not proc.name.isdigit():continue
@@ -202,6 +292,7 @@ def monitor(root,out,parent):
                 if error.errno not in (errno.ENOENT,errno.ENODEV,errno.EINVAL):raise
                 continue  # real kernel creation/removal raced sysfs reads
         time.sleep(.02)  # native device-event bridge, no model polling
+    app_log.close()
     if network is not None:network.snapshot(root,out,'monitor-close')
 
 

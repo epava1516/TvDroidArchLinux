@@ -28,6 +28,7 @@ text=text.replace("elif p.is_file():shutil.copyfile(p,root/'apex'/p.name)","elif
 # Only top-level roots from pinned original init.rc. Vold creates user dirs,
 # CE alias mounts and original permission data; no user metadata is seeded.
 roots=[('resource-cache',0o771,1000,1000),('misc/net',0o750,0,2000),('misc/stats-active-metric',0o770,1066,1000),('misc/stats-data',0o770,1066,1000),('misc/stats-data/restricted-data',0o770,1066,1000),('misc/stats-service',0o770,1066,1000),('misc/train-info',0o770,1066,1000),('dalvik-cache',0o771,0,0),('misc/vold',0o700,0,0),('misc/profiles',0o771,1000,1000),('misc/profiles/cur',0o771,1000,1000),('misc/profiles/ref',0o771,1000,1000),('misc/apexdata',0o711,0,0),('system/users',0o775,1000,1000),('media',0o550,1023,1023),('misc_ce',0o551,1000,9998),('system_ce',0o550,1000,1000),('user_de',0o511,1000,1000),('vendor_ce',0o551,0,0),('vendor_de',0o551,0,0)]
+roots += [('user',0o511,1000,1000),('data',0o771,1000,1000),('storage_area',0o551,0,0)]
 root_code="\n".join("p=root/'data'/"+repr(name)+";p.mkdir(parents=True,exist_ok=True);os.chmod(p,"+str(mode)+");os.chown(p,"+str(uid)+","+str(gid)+")" for name,mode,uid,gid in roots)
 apk_path=Path('/home/tv/.cache/archtv/apk/real-app-candidates/net.gsantner.markor-v164-2026.10.0-flavorDefault-release.apk')
 apk_sha='c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440'
@@ -36,6 +37,29 @@ assert hashlib.sha256(apk_path.read_bytes()).hexdigest()==apk_sha
 aconfig_code=""
 for name,mode in [('metadata',0o755),('metadata/aconfig',0o775),('metadata/aconfig/flags',0o770),('metadata/aconfig/maps',0o775),('metadata/aconfig/boot',0o775)]:
  aconfig_code+="\np=root/"+repr(name)+";p.mkdir(parents=True,exist_ok=True);os.chmod(p,"+str(mode)+");os.chown(p,0,1000)"
+# Original init.rc root namespace storage preparation (not a mounted volume or
+# an availability claim). Zygote requires a real /storage bind target before
+# specializing even an application whose main data is private.
+for logical,mode,uid,gid in [('storage',0o755,0,0),('mnt',0o755,0,0),('mnt/expand',0o771,1000,1000),('mnt/user',0o755,0,0),('mnt/user/0',0o755,0,0),('mnt/user/0/self',0o755,0,0),('mnt/user/0/emulated',0o755,0,0),('mnt/user/0/emulated/0',0o755,0,0),('mnt/pass_through',0o700,0,0),('mnt/pass_through/0',0o710,0,1023),('mnt/pass_through/0/self',0o710,0,1023),('mnt/pass_through/0/emulated',0o710,0,1023),('mnt/pass_through/0/emulated/0',0o710,0,1023)]:
+ root_code+="\np=root/"+repr(logical)+";p.mkdir(parents=True,exist_ok=True);os.chmod(p,"+str(mode)+");os.chown(p,"+str(uid)+","+str(gid)+")"
+storage_mount_code="""
+# Complete original init.rc app-data isolation prerequisites, within the
+# private Linux factory only. These bind actual directories; no APK/user
+# inventory, CE unlocked state, encryption, FUSE volume or readiness is seeded.
+apex_before=(root/'data/apex').stat()
+mount('--rbind',root/'data',root/'data');mount('--make-shared',root/'data')
+apex_after=(root/'data/apex').stat()
+assert (apex_before.st_dev,apex_before.st_ino)==(apex_after.st_dev,apex_after.st_ino), 'Data propagation setup must preserve real APEX child mount'
+mount('--rbind',root/'mnt/user/0',root/'storage');mount('--make-rslave',root/'storage')
+(root/'data_mirror').mkdir()
+mount('-t','tmpfs','-o','nodev,noexec,nosuid,mode=0700,uid=0,gid=1000,fscontext=u:object_r:tmpfs:s0,rootcontext=u:object_r:mirror_data_file:s0','tmpfs',root/'data_mirror')
+for name in ['data_ce','data_de','misc_ce','misc_de','storage_area','data_ce/null','data_de/null','misc_ce/null','misc_de/null','cur_profiles','ref_profiles']:
+ p=root/'data_mirror'/name;p.mkdir(mode=0o700)
+ assert lib.lsetfilecon_raw(str(p).encode(),b'u:object_r:mirror_data_file:s0')==0,ctypes.get_errno()
+for source,target in [('user','data_ce/null'),('user_de','data_de/null'),('misc_ce','misc_ce/null'),('misc_de','misc_de/null'),('storage_area','storage_area'),('misc/profiles/cur','cur_profiles'),('misc/profiles/ref','ref_profiles')]:
+ mount('--rbind',root/'data'/source,root/'data_mirror'/target)
+"""
+
 root_code+="\n(root/'dev/input').mkdir()"
 for name in ['markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
  root_code+="\np=root/'data/local/tmp/archtv-mc1'/"+repr(name)+";p.touch(mode=0o640);os.chown(p,1000,2000);os.chmod(p,0o640)"
@@ -48,6 +72,9 @@ for output_name in ['platform-capabilities.txt','linux-application-profile.txt',
 root_code+="\np=root/'data/local/tmp/archtv-mc1/markor-install.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
 root_code+="\nshutil.copyfile(Path("+repr(str(apk_path))+"),root/'data/local/tmp/markor.apk');os.chown(root/'data/local/tmp/markor.apk',2000,2000);os.chmod(root/'data/local/tmp/markor.apk',0o644)"
 text=text.replace('label(root)\n',root_code+'\nlabel(root)\n',1)
+mount_marker="for p in sorted((r/'dist/aosp16/factory-inputs-3').glob('*.payload.img')):"
+assert mount_marker in text
+text=text.replace(mount_marker,storage_mount_code+'\n'+mount_marker,1)
 text=text.replace('label(root)\n',"devices.prepare(root,out,Path("+repr(str(store))+"))\n"+aconfig_code+"\nassert not (root/'apex/apex-info-list.xml').exists()\nlabel(root)\n",1)
 health_mounts="""
 # Read-only Linux power_supply class and its exact current device targets.
