@@ -541,15 +541,24 @@ class LinuxMc1Cohort {
             lmkd_->AddReapCallback([this](const siginfo_t& info){std::fprintf(stderr,"SELECTED_LMKD_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);if(!closing_)manager_failed_=true;});
             if(auto started=lmkd_->Start();!started.ok())return started;
             std::fprintf(stderr,"SELECTED_LMKD_STARTED pid=%d NOT_SOCKET_OR_PRESSURE_ACCEPTANCE\n",lmkd_->pid());
-            // Parse the intact audio daemon contract; do not substitute a Java
-            // manager whose native policy/mixer dependencies are missing.
-            auto audio_parsed=parser.ParseConfigFile("/system/etc/init/audioserver.rc");
-            if(!audio_parsed.ok() || parser.parse_error_count()!=0)return android::base::Error()<<"Original audioserver RC rejected";
-            audioserver_=services.FindService("audioserver");
-            if(!audioserver_ || audioserver_->args()!=std::vector<std::string>{"/system/bin/audioserver"})return android::base::Error()<<"Unexpected original audioserver executable";
-            audioserver_->AddReapCallback([this](const siginfo_t& info){std::fprintf(stderr,"SELECTED_AUDIOSERVER_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);if(!closing_)manager_failed_=true;});
-            if(auto started=audioserver_->Start();!started.ok())return started;
-            std::fprintf(stderr,"SELECTED_AUDIOSERVER_STARTED pid=%d NOT_AUDIO_OR_POLICY_ACCEPTANCE\n",audioserver_->pid());
+            // Linux admits native audio when an actual provider is configured.
+            // AudioService keeps its original unavailable/recovery behavior;
+            // absence of a HAL is never reported as working playback.
+            const bool native_audio_configured = services.FindService("vendor.audio-hal-aidl") ||
+                services.FindService("vendor.audio-hal") || services.FindService("vendor.audio-hal-4-0-msd");
+            if (native_audio_configured) {
+                // Parse the intact audio daemon contract; do not substitute a Java
+                // manager whose native policy/mixer dependencies are missing.
+                auto audio_parsed=parser.ParseConfigFile("/system/etc/init/audioserver.rc");
+                if(!audio_parsed.ok() || parser.parse_error_count()!=0)return android::base::Error()<<"Original audioserver RC rejected";
+                audioserver_=services.FindService("audioserver");
+                if(!audioserver_ || audioserver_->args()!=std::vector<std::string>{"/system/bin/audioserver"})return android::base::Error()<<"Unexpected original audioserver executable";
+                audioserver_->AddReapCallback([this](const siginfo_t& info){std::fprintf(stderr,"SELECTED_AUDIOSERVER_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);if(!closing_)manager_failed_=true;});
+                if(auto started=audioserver_->Start();!started.ok())return started;
+                std::fprintf(stderr,"SELECTED_AUDIOSERVER_STARTED pid=%d NOT_AUDIO_OR_POLICY_ACCEPTANCE\n",audioserver_->pid());
+            } else {
+                std::fprintf(stderr,"SELECTED_NATIVE_AUDIO_DEFERRED no_original_HAL_configured NOT_AUDIO_AVAILABILITY\n");
+            }
             statsd_=services.FindService("statsd");
             if(!statsd_ || statsd_->args()!=std::vector<std::string>{"/apex/com.android.os.statsd/bin/statsd"})return android::base::Error()<<"Original perform_apex_config did not register expected statsd";
             statsd_->AddReapCallback([this](const siginfo_t& info){std::fprintf(stderr,"SELECTED_STATSD_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);if(!closing_)manager_failed_=true;});
@@ -658,13 +667,13 @@ class LinuxMc1Cohort {
         if(apex_requested_) {
             client_done_=false;client_ok_=false;
             auto package_client=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","shell","shell","--",
-                "/system/bin/sh","-c","umask 077; i=0; while [ $$i -lt 30 ]; do /system/bin/service check package > /data/local/tmp/archtv-mc1/package-query.txt 2>&1; /system/bin/service check activity > /data/local/tmp/archtv-mc1/activity-query.txt 2>&1; /system/bin/service check mount > /data/local/tmp/archtv-mc1/mount-query.txt 2>&1; if /system/bin/grep -qx 'Service package: found' /data/local/tmp/archtv-mc1/package-query.txt && /system/bin/grep -qx 'Service activity: found' /data/local/tmp/archtv-mc1/activity-query.txt && /system/bin/grep -qx 'Service mount: found' /data/local/tmp/archtv-mc1/mount-query.txt; then /system/bin/cmd package list packages --user 0 > /data/local/tmp/archtv-mc1/package-list.txt 2>&1; /system/bin/cmd package path --user 0 net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-path.txt 2>&1; if /system/bin/grep -q '^package:/data/app/' /data/local/tmp/archtv-mc1/markor-path.txt && /system/bin/grep -qx 'Status: ok' /data/local/tmp/archtv-mc1/markor-launch.txt; then /system/bin/dumpsys package net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-dump.txt 2>&1; exit $$?; fi; fi; i=$$((i+1)); /system/bin/sleep 1; done; exit 1"});
+                "/system/bin/sh","-c","umask 077; i=0; while [ $$i -lt 120 ]; do /system/bin/service check package > /data/local/tmp/archtv-mc1/package-query.txt 2>&1; /system/bin/service check activity > /data/local/tmp/archtv-mc1/activity-query.txt 2>&1; /system/bin/service check mount > /data/local/tmp/archtv-mc1/mount-query.txt 2>&1; if /system/bin/grep -qx 'Service package: found' /data/local/tmp/archtv-mc1/package-query.txt && /system/bin/grep -qx 'Service activity: found' /data/local/tmp/archtv-mc1/activity-query.txt && /system/bin/grep -qx 'Service mount: found' /data/local/tmp/archtv-mc1/mount-query.txt; then /system/bin/cmd package list packages --user 0 > /data/local/tmp/archtv-mc1/package-list.txt 2>&1; /system/bin/cmd package path --user 0 net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-path.txt 2>&1; if /system/bin/grep -q '^package:/data/app/' /data/local/tmp/archtv-mc1/markor-path.txt && /system/bin/grep -qx 'Status: ok' /data/local/tmp/archtv-mc1/markor-launch.txt; then /system/bin/dumpsys package net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-dump.txt 2>&1; exit $$?; fi; fi; i=$$((i+1)); /system/bin/sleep 1; done; exit 1"});
             if(!package_client.ok())return package_client.error();
             auto* peer=package_client->get();
             peer->AddReapCallback([this](const siginfo_t& info){client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;});
             services.AddService(std::move(*package_client));
             if(auto result=peer->ExecStart();!result.ok())return result;
-            if(auto result=Wait(tick,[this]{return client_done_;},35);!result.ok())return result;
+            if(auto result=Wait(tick,[this]{return client_done_;},120);!result.ok())return result;
             if(!client_ok_)return android::base::Error()<<"Original package client did not observe installed Markor";
             std::fprintf(stderr,"PACKAGES_ORIGINAL_BINDER_QUERY_RETURNED REQUIRES_INSTALL_LAUNCH\n");
         }

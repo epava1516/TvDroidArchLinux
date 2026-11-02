@@ -1,0 +1,127 @@
+{
+  "scope": "Integrated original audio/media-session recovery and interrupted Markor installation; no new APK acceptance",
+  "checkpoint": "/home/tv/recuperacion-archtv/928196cf-abd0-4de2-a074-cb7712d84a87-markor-launch",
+  "run_id": "928196cf-abd0-4de2-a074-cb7712d84a87",
+  "input": "dist/aosp16/package-cohort-build-63/payload-2.ext4",
+  "input_sha256": "d8b3af53febb7a3dd4f08b2e87aa7c74505a927db6cc17923303cc3215f4f7c7",
+  "evidence_sha256": {
+    "before.json": "be9036d61ad892d5acaa956901a2e57ac941b2fb4dc182ab2bd13d1276a515f5",
+    "result.json": "db943c56ba00b42863f777c8096c9e03b2a543e18afc150ecc2d3f223f4f8ec9",
+    "run.log": "3e57d0b88131a5928c1c436da161790db70d3f41faaadb15c0cf4e13333c2f69"
+  },
+  "result": {
+    "outer_exit": 1,
+    "elapsed_seconds": 153.7155876159668,
+    "native_complete_inventory_verified": true,
+    "active_loops": "",
+    "final_dm": []
+  },
+  "bpf_cleanup_verified": true,
+  "dynamic_observations": [
+    {
+      "tag": "AlarmManagerService",
+      "message": "timerfd_create(8) failed: Operation not permitted",
+      "actual_sender_pid_uid_gid": [
+        520,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "AlarmManager",
+      "message": "Failed to open alarm driver. Falling back to a handler.",
+      "actual_sender_pid_uid_gid": [
+        520,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "SystemServiceManager",
+      "message": "Starting com.android.server.media.MediaSessionService",
+      "actual_sender_pid_uid_gid": [
+        520,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "ActivityManager",
+      "message": "System now ready",
+      "actual_sender_pid_uid_gid": [
+        520,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "SystemServerTiming",
+      "message": "OnBootPhase_550_com.android.server.audio.AudioService$Lifecycle",
+      "actual_sender_pid_uid_gid": [
+        520,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "SystemServerTiming",
+      "message": "OnBootPhase_550_com.android.server.media.MediaSessionService",
+      "actual_sender_pid_uid_gid": [
+        520,
+        1000,
+        1000
+      ]
+    }
+  ],
+  "system_service_identity": {
+    "kind": "SERVICES",
+    "pid_namespace_pid": 520,
+    "getpidcon_raw_return": 0,
+    "actual_context": "u:r:system_server:s0",
+    "contexts_observed_in_order": [
+      "u:r:init:s0",
+      "u:r:system_server:s0"
+    ],
+    "errno_observed": [],
+    "status": [
+      "Uid:\t1000\t1000\t1000\t1000",
+      "Gid:\t1000\t1000\t1000\t1000",
+      "Groups:\t1003 3006 3007 ",
+      "CapPrm:\t0000001000800000",
+      "CapEff:\t0000001000800000",
+      "CapBnd:\t0000001000800000",
+      "NoNewPrivs:\t1"
+    ]
+  },
+  "primary_failure": "java.lang.RuntimeException: Original AMS callback failed\n\tat org.archtv.aosplinux.SelectedServices.lambda$main$3(SelectedServices.java:354)\n\tat org.archtv.aosplinux.SelectedServices$$ExternalSyntheticLambda3.run(D8$$SyntheticClass:0)\n\tat com.android.server.am.ActivityManagerService.systemReady(ActivityManagerService.java:9113)\n\tat java.lang.reflect.Method.invoke(Native Method)\n\tat org.archtv.aosplinux.SelectedServices.call(SelectedServices.java:10)\n\tat org.archtv.aosplinux.SelectedServices.main(SelectedServices.java:356)\n\tat java.lang.reflect.Method.invoke(Native Method)\n\tat org.archtv.aosplinux.ServiceLauncher.main(ServiceLauncher.java:37)\n\tat com.android.internal.os.RuntimeInit.nativeFinishInit(Native Method)\n\tat com.android.internal.os.RuntimeInit.main(RuntimeInit.java:366)\nCaused by: java.lang.NullPointerException: Attempt to invoke virtual method 'boolean android.app.PendingIntent.isActivity()' on a null object reference\n\tat com.android.server.alarm.AlarmManagerService.getAlarmOperationBundle(AlarmManagerService.java:4682)\n\tat com.android.server.alarm.AlarmManagerService.-$$Nest$mgetAlarmOperationBundle(AlarmManagerService.java:0)\n\tat com.android.server.alarm.AlarmManagerService$AlarmHandler.handleMessage(AlarmManagerService.java:4731)\n\tat android.os.Handler.dispatchMessage(Handler.java:132)\n\tat android.os.Looper.dispatchMessage(Looper.java:333)\n\tat android.os.Looper.loopOnce(Looper.java:263)\n\tat android.os.Looper.loop(Looper.java:367)\n\tat java.lang.reflect.Method.invoke(Native Method)\n\tat org.archtv.aosplinux.SelectedServices.call(SelectedServices.java:10)\n\tat org.archtv.aosplinux.SelectedServices.lambda$main$3(SelectedServices.java:352)\n\t... 9 more\n",
+  "markor_install_output": "Success: created install session [915189230]\nSuccess: streamed 11861047 bytes\ncmd: Failure calling service package: Broken pipe (32)\n",
+  "markor_launch_output": "",
+  "conclusions": [
+    "Original AudioService and MediaSessionService returned through boot phases500/550 while native backend remained unavailable; no audio playback or audio app compatibility accepted",
+    "Original MediaSession onStart invokes real AudioService playback callback registration; phase500/550 proves that lifecycle call returned. No active-session behavior accepted",
+    "Markor session creation and unmodified APK streaming succeeded; Broken pipe interrupted installation. No installed/launch/UI/input/persistence stage accepted",
+    "timerfd_create(8) EPERM caused original AlarmManager handler fallback; listener alarm then dereferenced null PendingIntent in that fallback",
+    "SERVICES actual cap mask0x1000800000 lacks WAKE_ALARM35; original ZygoteInit includes it. Targeted candidate64 must prove native AlarmThread and actual capability mask; do not patch PendingIntent or mark driver readiness manually"
+  ],
+  "initial_budget_correction": "Runs61/62 both passed display and netd; both expired at package-client35s. Increasing display budget in62 was a mistaken diagnosis and did not address that limit. Run63 restored display35 and allowed package120s within unchanged global bounds.",
+  "sources": {
+    "AudioService.java": {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/AudioService.java",
+      "sha256": "59d74a2df684f5995537f087e9b47b71013fcb42965b300041bb841e698af446"
+    },
+    "AlarmManagerService.java": {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/AlarmManagerService.java",
+      "sha256": "72e103c1294bc4872bacb9c0113151871f7d8c9696872e50783779f6f228be13"
+    },
+    "AlarmManagerService-jni.cpp": {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/AlarmManagerService-jni.cpp",
+      "sha256": "ebf42be1f2ab2fcccfbcee0438788a153c6c512fcc3a20974487991eb66b6408"
+    },
+    "ZygoteInit.java": {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/ZygoteInit.java",
+      "sha256": "e2299c75b02bfe180deb346b14d80a71cafe5258a05f0ff6c3f39fc024441bae"
+    }
+  },
+  "security": "Permissive policyload2; R1-MAC authorization/isolation open; no host policy/enforcing change",
+  "next": "Original WAKE_ALARM capability and kernel timer backend; then genuine AMS lifecycle/application profile and full Markor path. Audio hardware remains a separate compatibility/performance requirement."
+}

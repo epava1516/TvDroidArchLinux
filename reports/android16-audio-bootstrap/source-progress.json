@@ -1,0 +1,584 @@
+{
+  "scope": "Experimental complete original source-unit build pieces; not audio runtime or APK compatibility",
+  "source_acquisitions": [
+    {
+      "project": "hardware/interfaces",
+      "pin": "aa229558cbf04bc997ed27465c5e7ad497123d1b",
+      "url": "https://android.googlesource.com/platform/hardware/interfaces/+archive/aa229558cbf04bc997ed27465c5e7ad497123d1b/audio.tar.gz",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio",
+      "sha256": "65265039aeb5712b58ac2331f5efaf3097fcb573c15b1058a0d8cb2b78541111",
+      "skipped_nonregular": []
+    },
+    {
+      "project": "hardware/interfaces",
+      "pin": "aa229558cbf04bc997ed27465c5e7ad497123d1b",
+      "url": "https://android.googlesource.com/platform/hardware/interfaces/+archive/aa229558cbf04bc997ed27465c5e7ad497123d1b/bluetooth/audio/aidl.tar.gz",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/bluetooth-audio-aidl",
+      "sha256": "949c286c7ccff31a6029559927ad7829bf904e0960fc4ef7eb5ff6ceade8645c",
+      "skipped_nonregular": []
+    },
+    {
+      "project": "hardware/interfaces",
+      "pin": "aa229558cbf04bc997ed27465c5e7ad497123d1b",
+      "url": "https://android.googlesource.com/platform/hardware/interfaces/+archive/aa229558cbf04bc997ed27465c5e7ad497123d1b/common/aidl.tar.gz",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/common-aidl",
+      "sha256": "441b2b6c650e27acf9aa50d6c36afdfb37950d729ff512981a2193690e0a7e4e",
+      "skipped_nonregular": []
+    },
+    {
+      "project": "hardware/interfaces",
+      "pin": "aa229558cbf04bc997ed27465c5e7ad497123d1b",
+      "url": "https://android.googlesource.com/platform/hardware/interfaces/+archive/aa229558cbf04bc997ed27465c5e7ad497123d1b/common/fmq/aidl.tar.gz",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/fmq-aidl",
+      "sha256": "5388e737cfafc13fcaefce4653ae7b5afae565699954c2ce95f6e2f008c5f774",
+      "skipped_nonregular": []
+    },
+    {
+      "project": "external/tinyalsa_new",
+      "pin": "61e9a4ee64b1307d462e545d3f6c6e6d970625d1",
+      "url": "https://android.googlesource.com/platform/external/tinyalsa_new/+archive/61e9a4ee64b1307d462e545d3f6c6e6d970625d1.tar.gz",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/tinyalsa",
+      "sha256": "df3cf5b0f979d2b2e10cef628a7340d490db581fbf823251f00ad1320440a01e",
+      "skipped_nonregular": [
+        "LICENSE"
+      ]
+    },
+    {
+      "project": "hardware/libhardware",
+      "pin": "67b44bb0f7d1df962e737cfe9baf716bab45792e",
+      "url": "https://android.googlesource.com/platform/hardware/libhardware/+archive/67b44bb0f7d1df962e737cfe9baf716bab45792e/modules/usbaudio.tar.gz",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/alsa-utils",
+      "sha256": "0de557c5d9b0f83aa33f25ba774e5bf10fbb24dea135bd2b4450d45b7f44e577",
+      "skipped_nonregular": []
+    },
+    {
+      "project": "hardware/libhardware",
+      "pin": "67b44bb0f7d1df962e737cfe9baf716bab45792e",
+      "url": "https://android.googlesource.com/platform/hardware/libhardware/+archive/67b44bb0f7d1df962e737cfe9baf716bab45792e/include_all.tar.gz",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/libhardware-headers",
+      "sha256": "b40823921d14cd0ed3beb397fc1dc2ea6eb5d2a2089369711a8fb3e1de9a64c0",
+      "skipped_nonregular": []
+    },
+    {
+      "project": "external/tinyxml2",
+      "pin": "5f2c372c6213bfcb312adcfc9cafbce9f99eee78",
+      "url": "https://android.googlesource.com/platform/external/tinyxml2/+archive/5f2c372c6213bfcb312adcfc9cafbce9f99eee78.tar.gz",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/tinyxml2",
+      "sha256": "ea2821bdde68f63ae37a16b6b6b283e0586fe342f58d121cf328b2ff86e83b33",
+      "skipped_nonregular": []
+    },
+    {
+      "project": "system/media",
+      "pin": "74807f54ac951b3e7064b8153ef900c6b387b7cf",
+      "url": "https://android.googlesource.com/platform/system/media/+archive/74807f54ac951b3e7064b8153ef900c6b387b7cf/audio.tar.gz",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/audio-system",
+      "sha256": "de1e5fa08b7d16066380e50182aef21c5080d2805fd4e05c4e6dc7e6cf381e21",
+      "skipped_nonregular": []
+    },
+    {
+      "project": "system/media",
+      "pin": "74807f54ac951b3e7064b8153ef900c6b387b7cf",
+      "url": "https://android.googlesource.com/platform/system/media/+archive/74807f54ac951b3e7064b8153ef900c6b387b7cf/audio_utils.tar.gz",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/audio-utils",
+      "sha256": "9ce431dcc73b10142ed62ac4328185d20eb4fe2544ad85dd72272c2b8a7a9f16",
+      "skipped_nonregular": []
+    },
+    {
+      "project": "system/media",
+      "pin": "74807f54ac951b3e7064b8153ef900c6b387b7cf",
+      "url": "https://android.googlesource.com/platform/system/media/+archive/74807f54ac951b3e7064b8153ef900c6b387b7cf/audio_effects.tar.gz",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/audio-effects",
+      "sha256": "4c316afc7077f180d5dc7cde980e1d8d90f49aeaa924ac5dec1da05bfc2f45dc",
+      "skipped_nonregular": []
+    },
+    {
+      "project": "system/media",
+      "pin": "74807f54ac951b3e7064b8153ef900c6b387b7cf",
+      "url": "https://android.googlesource.com/platform/system/media/+archive/74807f54ac951b3e7064b8153ef900c6b387b7cf/audio_route.tar.gz",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/audio-route",
+      "sha256": "2c87e2625c40967cad3e4afe415b468c76a52c367137276b96ee431e42fc2b8c",
+      "skipped_nonregular": []
+    },
+    {
+      "project": "system/libfmq",
+      "pin": "99d47692bc5fb1a967a0e5345164ffd9b4cf0c5b",
+      "url": "https://android.googlesource.com/platform/system/libfmq/+archive/99d47692bc5fb1a967a0e5345164ffd9b4cf0c5b.tar.gz",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/libfmq",
+      "sha256": "45c0cf7c605173dcafc5dc6048617b6533a443e52d2b60fe06c8f82300417a3c",
+      "skipped_nonregular": [
+        ".clang-format"
+      ]
+    },
+    {
+      "project": "hardware/interfaces",
+      "pin": "aa229558cbf04bc997ed27465c5e7ad497123d1b",
+      "url": "https://android.googlesource.com/platform/hardware/interfaces/+archive/aa229558cbf04bc997ed27465c5e7ad497123d1b/bluetooth/audio/utils.tar.gz",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/bluetooth-audio-utils",
+      "sha256": "bd3d34adfd88210610f1ade3555355d9248b4a3c9041c12d611b345b9e9211c5",
+      "skipped_nonregular": []
+    },
+    {
+      "project": "system/hardware/interfaces",
+      "pin": "8266ce79ba801eb1cb71f123651ab083ad1c1044",
+      "url": "https://android.googlesource.com/platform/system/hardware/interfaces/+archive/8266ce79ba801eb1cb71f123651ab083ad1c1044/media.tar.gz",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/media-audio-aidl",
+      "sha256": "e0333b3e41a36785499c0cce4572d33fafe85dd586b2a8cf417ea59498225210",
+      "skipped_nonregular": []
+    },
+    {
+      "project": "system/media",
+      "pin": "74807f54ac951b3e7064b8153ef900c6b387b7cf",
+      "url": "https://android.googlesource.com/platform/system/media/+archive/74807f54ac951b3e7064b8153ef900c6b387b7cf/alsa_utils.tar.gz",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/alsa-utils-current",
+      "sha256": "94b5d40abc10403df5e30b0b332269d0340e648292636f092ed8fd82f2674314",
+      "skipped_nonregular": []
+    },
+    {
+      "project": "frameworks/av",
+      "pin": "22fd1c5d895e45a49df5582a4b345d8e3b75e46b",
+      "url": "https://android.googlesource.com/platform/frameworks/av/+archive/22fd1c5d895e45a49df5582a4b345d8e3b75e46b/media/libaudioclient.tar.gz",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/audioclient",
+      "sha256": "170d24a904e52dc5f7f7fad07ec2ce710bc4fc0b0ef266edc969fd07f4c7c812",
+      "skipped_nonregular": []
+    },
+    {
+      "project": "frameworks/av",
+      "pin": "22fd1c5d895e45a49df5582a4b345d8e3b75e46b",
+      "url": "https://android.googlesource.com/platform/frameworks/av/+archive/22fd1c5d895e45a49df5582a4b345d8e3b75e46b/media/libaudiofoundation.tar.gz",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/audiofoundation",
+      "sha256": "e6596bdce905e74bad314f7c719e002c593b8f975a0cc660b34c7b75a53d64c2",
+      "skipped_nonregular": []
+    },
+    {
+      "project": "frameworks/av",
+      "pin": "22fd1c5d895e45a49df5582a4b345d8e3b75e46b",
+      "url": "https://android.googlesource.com/platform/frameworks/av/+archive/22fd1c5d895e45a49df5582a4b345d8e3b75e46b/media/audioaidlconversion.tar.gz",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/audio-conversion",
+      "sha256": "bab05384eb77beef49dc4a8d164911e66f5da00a72e648baa747b411f3f6e9d3",
+      "skipped_nonregular": []
+    },
+    {
+      "project": "frameworks/av",
+      "pin": "22fd1c5d895e45a49df5582a4b345d8e3b75e46b",
+      "url": "https://android.googlesource.com/platform/frameworks/av/+archive/22fd1c5d895e45a49df5582a4b345d8e3b75e46b/media/liberror.tar.gz",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/error-utils",
+      "sha256": "e5692cc4c7ad9e0e8f06c36ed0a7de255c15a624d82995782406ad988620bec2",
+      "skipped_nonregular": []
+    },
+    {
+      "project": "frameworks/av",
+      "pin": "22fd1c5d895e45a49df5582a4b345d8e3b75e46b",
+      "url": "https://android.googlesource.com/platform/frameworks/av/+archive/22fd1c5d895e45a49df5582a4b345d8e3b75e46b/media/libaudiohal.tar.gz",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/audiohal",
+      "sha256": "246b780142f18ac76b1fc0ab05f1a99cf5dc5eac9b86a52279d860a3004b44c2",
+      "skipped_nonregular": []
+    },
+    {
+      "project": "frameworks/av",
+      "pin": "22fd1c5d895e45a49df5582a4b345d8e3b75e46b",
+      "url": "https://android.googlesource.com/platform/frameworks/av/+archive/22fd1c5d895e45a49df5582a4b345d8e3b75e46b/media/libmediahelper.tar.gz",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/mediahelper",
+      "sha256": "819da65eefc623202efb4a214a0d2c208a5dd64ba7a9772fae739d71294f9c2e",
+      "skipped_nonregular": []
+    },
+    {
+      "project": "frameworks/av",
+      "pin": "22fd1c5d895e45a49df5582a4b345d8e3b75e46b",
+      "url": "https://android.googlesource.com/platform/frameworks/av/+archive/22fd1c5d895e45a49df5582a4b345d8e3b75e46b/media/libnbaio.tar.gz",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/nbaio",
+      "sha256": "38c32b88fda7d6996323bd29e43f1f35f3c1ae19c780ac9013790a36b48b11dd",
+      "skipped_nonregular": []
+    },
+    {
+      "project": "frameworks/av",
+      "pin": "22fd1c5d895e45a49df5582a4b345d8e3b75e46b",
+      "url": "https://android.googlesource.com/platform/frameworks/av/+archive/22fd1c5d895e45a49df5582a4b345d8e3b75e46b/media/module/foundation/include.tar.gz",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/stagefright-headers",
+      "sha256": "60774fa6ba63f0a64a8698120d3f6265d1dda9ee0ecfa0c0f394bad0059ec09e",
+      "skipped_nonregular": []
+    },
+    {
+      "project": "frameworks/av",
+      "pin": "22fd1c5d895e45a49df5582a4b345d8e3b75e46b",
+      "url": "https://android.googlesource.com/platform/frameworks/av/+archive/22fd1c5d895e45a49df5582a4b345d8e3b75e46b/media/utils/include.tar.gz",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/mediautils-headers",
+      "sha256": "b0881eb6d062a55d390e7e93da4f784f804ef1fc5998c71e1e4cd9d49a3a4c3a",
+      "skipped_nonregular": []
+    }
+  ],
+  "original_aidl_release_rules": [
+    {
+      "url": "https://android.googlesource.com/platform/system/tools/aidl/+/3747384b876442e7ea0c355fe5adc75b29362833/build/aidl_gen_rule.go?format=TEXT",
+      "sha256": "94faee33cd67c8a994c9cd167b0115210176c880921717eaf363371dcf0b1d00",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/aidl-release-rules/aidl_gen_rule.go"
+    },
+    {
+      "url": "https://android.googlesource.com/platform/system/tools/aidl/+/3747384b876442e7ea0c355fe5adc75b29362833/build/aidl_interface.go?format=TEXT",
+      "sha256": "24f20c00ab56d6fa68d69a564e4ed6e0ef5e267fafd6abb24a5dfdfa9a7e420b",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/aidl-release-rules/aidl_interface.go"
+    }
+  ],
+  "interface_contracts": [
+    {
+      "name": "android.media.audio.common.types",
+      "build_version": 4,
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/media-audio-aidl/aidl_api/android.media.audio.common.types/4",
+      "frozen": true,
+      "release_flags": []
+    },
+    {
+      "name": "android.media.audio.eraser.types",
+      "build_version": 1,
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/media-audio-aidl/aidl_api/android.media.audio.eraser.types/1",
+      "frozen": true,
+      "release_flags": []
+    },
+    {
+      "name": "android.hardware.common",
+      "build_version": 2,
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/common-aidl/aidl_api/android.hardware.common/2",
+      "frozen": true,
+      "release_flags": []
+    },
+    {
+      "name": "android.hardware.common.fmq",
+      "build_version": 1,
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/fmq-aidl/aidl_api/android.hardware.common.fmq/1",
+      "frozen": true,
+      "release_flags": []
+    },
+    {
+      "name": "android.hardware.audio.common",
+      "build_version": 4,
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/aidl_api/android.hardware.audio.common/4",
+      "frozen": true,
+      "release_flags": []
+    },
+    {
+      "name": "android.hardware.audio.core",
+      "build_version": 4,
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/aidl_api/android.hardware.audio.core/current",
+      "frozen": false,
+      "release_flags": [
+        "-N/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/aidl_api/android.hardware.audio.core/current",
+        "--previous_api_dir=/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/aidl_api/android.hardware.audio.core/3",
+        "--previous_hash=eb5f1f5af402830af56b50eb66bdd60fd8cc774e"
+      ]
+    },
+    {
+      "name": "android.hardware.audio.core.sounddose",
+      "build_version": 3,
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/aidl_api/android.hardware.audio.core.sounddose/3",
+      "frozen": true,
+      "release_flags": []
+    },
+    {
+      "name": "android.hardware.audio.effect",
+      "build_version": 3,
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/aidl_api/android.hardware.audio.effect/3",
+      "frozen": true,
+      "release_flags": []
+    },
+    {
+      "name": "android.hardware.bluetooth.audio",
+      "build_version": 5,
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/bluetooth-audio-aidl/aidl_api/android.hardware.bluetooth.audio/5",
+      "frozen": true,
+      "release_flags": []
+    }
+  ],
+  "core_library_release_boundary": {
+    "original": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.audio.core-V4-ndk.so",
+    "original_sha256": "4c07952e418e0e537e2ff7af792c9a794862904e9b1e8f8917de53df2b4698a3",
+    "static_observation": "CLI objdump BnModule::getInterfaceVersion at0x33010 writes3, instruction0x33019 movl $3,(%rdx). Static, not execution/MCP.",
+    "generated_header": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/aidl/include/aidl/android/hardware/audio/core/IModule.h",
+    "generated_header_sha256": "3e0a7609b7e39e5b766d5ff0a49590caa0047f268ea350683eeda68e10d7c13a",
+    "generated_value": "version = true ?3:4; hash=eb5f1f5af402830af56b50eb66bdd60fd8cc774e; original Soong -N plus previous_api_dir3 and previous_hash. No manually selected API success."
+  },
+  "core_original_source_units": [
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/AidlConversionXsdc.cpp",
+      "sha256": "b131ecc8257307b0d07d7d5c5b7a0e6c49a22b456263069828ee524ce2727d78",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/0.o",
+      "object_sha256": "ae9ce0f32858682c57986be0e4e4296dc436def337ee92d4c0ea213be155f039"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/AudioPolicyConfigXmlConverter.cpp",
+      "sha256": "53915ab5930f1f68bdcc68f6b41f66265252200fc785ff6c1d721e3e3e2708fe",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/1.o",
+      "object_sha256": "f927fb7507c1db929727e4c9c673db01b1933bf3dff07de26be1151f5a09f276"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/Bluetooth.cpp",
+      "sha256": "3f84c5014987c4071213e35079e789fc1b7522d9f81588b203adf399627183f5",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/2.o",
+      "object_sha256": "674d7253977a2b3e6ee30fac00c11832ccd0f15ace8530eee0a18ddfbd26451d"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/CapEngineConfigXmlConverter.cpp",
+      "sha256": "883fad6e3e360a233768df6ec6de4a7719999224e340bb4a2517a99a6ca4f5aa",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/3.o",
+      "object_sha256": "07591c8ab90130a58521d14983babaefffb57ca411915fb6097e420ffec6652c"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/Config.cpp",
+      "sha256": "50085b2ea96f9b729cb512967d2d0402d09f8d2dac617a069f23008350b9b28f",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/4.o",
+      "object_sha256": "c44d4c824120fe890ed26b7454725e60d7854b9c3b37509e887d8b435f6928b4"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/Configuration.cpp",
+      "sha256": "7dae84f45bc225cab1fd07ab45d8448b6b0363d54bd5a720103477b2a303e3c2",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/5.o",
+      "object_sha256": "894d70bcba28d910a587632458c5102dcd67362ab93ea1863d2a92eb97e8beae"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/EngineConfigXmlConverter.cpp",
+      "sha256": "6bbecb87755f02b12ff84cb6730f076d9e5d7475f980b6179a540448040a0f67",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/6.o",
+      "object_sha256": "2627a9cdd59f235ed7512dae285ab573d30e7be0ab642e5dacc20bc4cc7b6783"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/Module.cpp",
+      "sha256": "80eef97369424c88fa6210480dea3ab63820552988733746d427c432b24f6060",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/7.o",
+      "object_sha256": "0aae1d083fd06fb71cdb40d2a6f0a6b6bf27a52fbdf3973c74d57320dc94d327"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/ModulePrimary.cpp",
+      "sha256": "9a2da29aa4cd4d38dca87520b2834d0ba3c9f30938d9c3d6805526c4170be4bf",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/8.o",
+      "object_sha256": "4ee23981cf6c5d6f95994768ce502afb18c3a310ddd46dbf4259236a7c612b3b"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/SoundDose.cpp",
+      "sha256": "df140bfd054eea0bdc7f3581373eedf0ba9fe1571b1bba3d78c53ec77ca694b1",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/9.o",
+      "object_sha256": "079bb2bcd517253e17315a6b05be678a6ae941c93cebbdd40a5c59026d156a68"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/Stream.cpp",
+      "sha256": "d523be48439e571fa7ffba6a0e07aae5454f756ebfb8ec19de4edb900e5ba1d5",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/10.o",
+      "object_sha256": "0fc0cf4106f31b31184aed9fcbf551e5453c51db9eab98c5a00e62dcd83c51de"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/Telephony.cpp",
+      "sha256": "e8636e831e42f7f20aad4e0c6a6e49c3b0f7e10e594b5e9b68df90b3aa9aa98d",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/11.o",
+      "object_sha256": "4328f9faab42e2a65dcb189ff787106957cdb6570020a7f0c7697ace6ed4f896"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/XsdcConversion.cpp",
+      "sha256": "259dfdea2365fde2b285cb05976b49f913f5dd6d9eff115a46c48d17d0d2f01a",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/12.o",
+      "object_sha256": "1154a146a77396a67e7bf528df0dd78e54ba7c0ee788dbede39779080720767c"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/alsa/Mixer.cpp",
+      "sha256": "60e2f44853a976b27b50d5462e57db7c88d1598904a047042c8ba48a93454a4a",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/13.o",
+      "object_sha256": "3b78dbff98ee1aa1e0213c3ff984a9f9b2873ba4b949fcd911626b5e96c01b97"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/alsa/ModuleAlsa.cpp",
+      "sha256": "3f6f6872f4e391ea27455495b631f7a6e764be4b0678878ed3d5e49a25587a85",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/14.o",
+      "object_sha256": "8dcb246cb3cd76d336242047907105c07e618bfcd2e0e8c62dffa8f158644eca"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/alsa/StreamAlsa.cpp",
+      "sha256": "bf08605917a9ddf280433d31ceab2406963c42bb7ba2674a7ba9ea4b1b0f8c51",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/15.o",
+      "object_sha256": "f1efeeca7a925078cf96abe5457dfc5949bd74a6ae561a621b37f340cb2dd03f"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/alsa/Utils.cpp",
+      "sha256": "1b8054d1e534e900ecd627715417302fdaeb35a56ad84f49ad5c020d60a7bf61",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/16.o",
+      "object_sha256": "fc6527265921174d1a165ae4b5ad2bf509a04c320c0d38713faae109e1ceced4"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/bluetooth/DevicePortProxy.cpp",
+      "sha256": "4d00da0d83214c8e34059e20c4a386f6f5424ee53cfbff1e0c8c181405637550",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/17.o",
+      "object_sha256": "e459b86d100c9d91876efa2e033d5cc99455e3ec41770cbae48ed2728a9dbe5b"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/bluetooth/ModuleBluetooth.cpp",
+      "sha256": "79590c1ca604eed750e67113242ab2bbd162c49ddce8c5aeb7f434fa7f7b239e",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/18.o",
+      "object_sha256": "a21e854494479490aa8f769c7f5d930fb11b85f8136c94aba36c2a70fbe59fbf"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/bluetooth/StreamBluetooth.cpp",
+      "sha256": "5f0ff66b8dc71603fdce029035f53fb4ac480a31c22006ddbb10737572f5b714",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/19.o",
+      "object_sha256": "cfc427eefb0c87cf0c0ec398a5536a29841c90902d53e13e9801c8b691e9f244"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/deprecated/StreamSwitcher.cpp",
+      "sha256": "26a7e6f0a7f4c20ec92f0372aa586b93358cd3d675a334d325342fd06201ed7f",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/20.o",
+      "object_sha256": "b1c70db2143bec23e18cfd0bf129800314f859988bd759259487151b0279407a"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/primary/PrimaryMixer.cpp",
+      "sha256": "2e0820010b472815dbbc596b0163bd12a8ac3a9d67fcd8a0cc9ce7b56fbd4a4f",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/21.o",
+      "object_sha256": "8835495a5230c0d0f2afb37325dafb77b9cc177e612ea637290b0492f47ef401"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/primary/StreamPrimary.cpp",
+      "sha256": "488c9c7ec1ca3da9073c3f8bc737e9c2de9568878f2bb0438cd2cd261988cd91",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/22.o",
+      "object_sha256": "e24496a25d3146e9a4ee222b53608454939ed84074dbab7d47d30aa95fc56980"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/r_submix/ModuleRemoteSubmix.cpp",
+      "sha256": "68c22e343a13ac3412fac0badb2ab43b29a1cea9bc3d456b28b47abd8b52129b",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/23.o",
+      "object_sha256": "b60d336fc1c5e8514ea4c067d5a9fdd1d0cc970ede5ed22d2d89e553001e24e2"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/r_submix/SubmixRoute.cpp",
+      "sha256": "1cf0081c3b3a1063b9d1116b659942361229383e1c04e99520b89cbe32b18136",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/24.o",
+      "object_sha256": "1d1f630ee531b3dd51566ab998c2a328db4cb648bad2bc9a387cbd509cacfa02"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/r_submix/StreamRemoteSubmix.cpp",
+      "sha256": "9e3fc543dd7992b2db195f6f49bd0ce509d5d9a62530f3337bf00fcc736b8a28",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/25.o",
+      "object_sha256": "3d44b013a644bbb687dca4efd83132faa842735b09dc79879e94d1d304944101"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/stub/ApeHeader.cpp",
+      "sha256": "9f0b1c9385bd5f5b228024c79f774b66b2421a2ad7da76f5a1c2182069bc8e09",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/26.o",
+      "object_sha256": "3551cef887848d9123a127422b8cce0d180e61d08fa5a0c4a2e339511b61ee21"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/stub/DriverStubImpl.cpp",
+      "sha256": "5cb5c8e701896955ab48705402582f48fb66dbab04d816164831a6184fb19ce7",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/27.o",
+      "object_sha256": "21aff2bd3a59df82c97da96aa3015a04793b73d8ce28e5c8e1d5c50fecfa5c09"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/stub/ModuleStub.cpp",
+      "sha256": "2583af5d67cd22a34ebff3dbf1dc5b0421b0aa0e4b42ffeaca07981d09567069",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/28.o",
+      "object_sha256": "c842b5a68f62269cbf1fd7ee2bb366eb99993bccdebf703f9de72bdb69f2da0c"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/stub/StreamMmapStub.cpp",
+      "sha256": "4eed6f4b897bf427ee8dbcb909d1ed8d8e8d519657e685b459793e887cda71f3",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/29.o",
+      "object_sha256": "93281c33aefc1e1501ff8dfd31ea97bc31c61efb0812f3960dd2fe32b7c004d3"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/stub/StreamOffloadStub.cpp",
+      "sha256": "209877353ced1ac87ae95b17d69d13fb81ece6c9a180f2ebba32e861a97be83b",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/30.o",
+      "object_sha256": "4cca5d0fbd5c316951f164d523c151e8bc43d6b03a1448ab2dce36dd2b4b6f15"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/stub/StreamStub.cpp",
+      "sha256": "6e70e79a10bf361725a8e18faf8752654c90b98daafdcf0876f6bcf098986ce2",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/31.o",
+      "object_sha256": "841fb8103ffb98466b374cd6a895a68a67186dc330715e3e9bc75607d10f6395"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/usb/ModuleUsb.cpp",
+      "sha256": "d92dd503b0cb6f5cdfc940585bde9ef2c60a4da46a454c75f19db007d119022e",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/32.o",
+      "object_sha256": "c3f07f96d1a5903ae1007e9c17c40b6da68961090fdbde49d695c3dd6906917b"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/usb/StreamUsb.cpp",
+      "sha256": "cbb310601b6dd9f8910c5721149c405c1450c9590841e8886c895823649e4f74",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/33.o",
+      "object_sha256": "e5f1aaece189725ca52f48d76001883490f221f7105312f775f3bbbd9f807a9b"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/usb/UsbAlsaMixerControl.cpp",
+      "sha256": "2e910ca68577c133957c712369effdae4e9a943c40c3c6df61325a5ae10079dc",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/34.o",
+      "object_sha256": "80e3ce0af6b6bb7e550b01730dc8ba5191882a2b4461fd5d59d3c04486678df7"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/main.cpp",
+      "sha256": "3ebe26c1cf46f7d32c09e92038c78d938fdfacdaddc59f1c9c0416e3649f5eeb",
+      "object": "/home/tv/repositorio-principal/dist/aosp16/audio-original-build-12/35.o",
+      "object_sha256": "687fb22bbc701942982711784ccae62ab52e51beceb72e3c35b6a7cf690a64bc"
+    }
+  ],
+  "core_build_limitation": "Old combined recipe compiled all36 core units then failed at separate effect target; later source recipe separates effect target. No whole linked core executable.",
+  "support_archives": {
+    "audio-support-build-2": {
+      "libtinyalsav2": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/audio-support-build-2/libtinyalsav2.a",
+        "sha256": "3d418307ea2187870e3290a87ae899f8bfc003f5ed1e938de1b98855d1b8d8eb"
+      },
+      "libalsautilsv2": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/audio-support-build-2/libalsautilsv2.a",
+        "sha256": "8603b0e661050c3f542496ef62f7a12cb3db737954a15cd5979c274ce33aeb85"
+      },
+      "libnbaio_mono": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/audio-support-build-2/libnbaio_mono.a",
+        "sha256": "1fe5c39f065546b41a4a454ade21d55dc963cb51b6bd30e0fa6fad1d98c5a6bd"
+      },
+      "libeffectconfig": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/audio-support-build-2/libeffectconfig.a",
+        "sha256": "c9bf1f8c8097bcc53e6256534ed241035a68a8aad4b7edb402dee1b1d09cf4ac"
+      }
+    },
+    "audio-support-build-3": {
+      "audio_policy_xml": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/audio-support-build-3/audio_policy_xml.a",
+        "sha256": "a501483b64a5675de7d9ce6e80f971bf7ba6b8377aba406b9c867decab7d6e63"
+      }
+    },
+    "audio-support-build-4": {
+      "audio_effect_service": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/audio-support-build-4/audio_effect_service.a",
+        "sha256": "e1f387d5b547a296aa1b6dfd53d256655b0b3f050ce62c39bf2c8827225f56cd"
+      }
+    },
+    "audio-support-build-5": {
+      "libbluetooth_audio_v5_ndk": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/audio-support-build-5/libbluetooth_audio_v5_ndk.a",
+        "sha256": "be255d10a948446395a23d0071ceb8e3c930427ad269744fa017656a3321c5b4"
+      }
+    }
+  },
+  "bluetooth_transport": "65 original frozenV5 NDK generated units compiled into static IPC transport archive; not Bluetooth service/adapter/codecs implementation or compatibility",
+  "effect_link": {
+    "record": "/home/tv/repositorio-principal/dist/aosp16/audio-effect-link-2/link.json",
+    "sha256": "067f9865f9ff5ce7da26660b82459f1753d1764b937273c19b1a732d7626d0b3",
+    "exit": 0,
+    "binary_sha256": "ed5a6b85492e54fbedf5a36ba7009148f9b4dcb7d709b8855dd9a618cf65d31b",
+    "MCP_static_evidence": "ev_2dbc364626a53bccb0e98f00103539dec37c748c45b98f25551ab1fa96811a6f"
+  },
+  "whole_core_link": {
+    "record": "/home/tv/repositorio-principal/dist/aosp16/audio-core-link-1/link.json",
+    "sha256": "680d24d3eace5bef2bcec67d7b26198b7a73073660ad742b443fb91de0991341",
+    "exit": 1,
+    "log": "/home/tv/repositorio-principal/dist/aosp16/audio-core-link-1/link.log",
+    "remaining": "Original BluetoothAudioSession and createIBluetoothAudioProviderFactory dependencies unresolved. No weak unresolved symbols or success stubs introduced."
+  },
+  "adaptations": [
+    "C support library flags preserve upstream intentional fall-through as diagnostics; source bytes unchanged",
+    "EffectMain outside-APEX Bionic compilation includes real original apexsupport declarations; actual AApexInfo_create/fallback retained, no APEX identity assertion",
+    "Original absolute GSI library symlinks resolve inside the image root, never host glibc/root",
+    "DebugO0 source objects are experimental; do not demonstrate production lightness or performance"
+  ],
+  "unproven": [
+    "Core/effect HAL registration and actual module inventory",
+    "Software effect plugin availability",
+    "Real ALSA PCM capture/playback; reference stub/MMAP/offload paths are not working hardware evidence",
+    "Original vendor-domain policy, devices and isolation in enforcing",
+    "Native audio backend startup and audio APK compatibility"
+  ],
+  "priority": "Integrated run63 shows logical AudioService/MediaSession startup can proceed without backend; immediate Markor path is native alarm admission and original AMS lifecycle. Audio hardware/performance remains open, not discarded."
+}

@@ -307,6 +307,8 @@ public final class SelectedServices {
                 start(manager,managerType,"com.android.server.storage.DeviceStorageMonitorService");
                 start(manager,managerType,"com.android.server.job.JobSchedulerService");
                 // Original AMS media-session tracker requires the real session manager.
+                // One existing bounded stack capture targets actual audio startup.
+                if(diagnostic.getState()==Thread.State.NEW) diagnostic.start();
                 start(manager,managerType,"com.android.server.audio.AudioService$Lifecycle");
                 start(manager,managerType,"com.android.server.media.MediaSessionService");
                 System.err.println("ORIGINAL_NETWORK_SUBSYSTEM_STARTED REQUIRES_BINDER_OPERATIONS_NOT_INTERNET_ACCEPTANCE");
