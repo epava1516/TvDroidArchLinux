@@ -1,0 +1,53 @@
+{
+  "scope": "Original IHealth provider and original Binder query/dump; original BatteryService reaches subsequent service startup. No phase500, app launch/UI or MAC acceptance",
+  "checkpoint": "/home/tv/recuperacion-archtv/799ea975-c697-483a-ac31-948ce1666f74-markor-launch",
+  "run_log_sha256": "629a8e2f38ae9631a94a30d097ed60b208bf13e367182e3280f390e172f1da24",
+  "health_query": "Service android.hardware.health.IHealth/default: found\n",
+  "health_info": {
+    "batteryPresent": [
+      "true"
+    ],
+    "batteryLevel": [
+      "90"
+    ],
+    "chargerAcOnline": [
+      "true"
+    ],
+    "batteryStatus": [
+      "CHARGING"
+    ]
+  },
+  "identity": {
+    "kind": "HEALTH",
+    "pid_namespace_pid": 422,
+    "getpidcon_raw_return": 0,
+    "actual_context": "u:r:hal_health_default:s0",
+    "contexts_observed_in_order": [
+      "u:r:hal_health_default:s0"
+    ],
+    "errno_observed": [],
+    "status": [
+      "Uid:\t1000\t1000\t1000\t1000",
+      "Gid:\t1000\t1000\t1000\t1000",
+      "Groups:\t ",
+      "CapPrm:\t0000001800000000",
+      "CapEff:\t0000001800000000",
+      "CapBnd:\t0000001800000000",
+      "NoNewPrivs:\t1"
+    ]
+  },
+  "binary_sha256": "c2cec2bc59f08d73f8f43f26bb7d90cd36854a85fed37f5e4408533ef7e8f352",
+  "policy_checkpoint": "/home/tv/recuperacion-archtv/20261102T013427Z-health-policy",
+  "cohort_result": {
+    "outer_exit": 1,
+    "active_loops": "",
+    "final_dm": []
+  },
+  "remaining_failure": "Selected Java process exit1 after DeviceIdle startup; DropBox absent produces repetitive error reporting; fatal cause not retained within bounded log. Cleanup failed its service-collection bound and original vold-failed request remained a failure, never host reboot or success.",
+  "limitations": [
+    "Permissive with policyload2; R1-MAC open",
+    "No fake_battery property set; observed90 differs from original fake42 and real Linux capacity subsequently91; charging values are time dependent",
+    "No hotplug/BPF filter/unsupported battery metadata acceptance",
+    "No Markor launch or user persistence acceptance"
+  ]
+}

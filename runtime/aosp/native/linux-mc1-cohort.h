@@ -98,7 +98,7 @@ class LinuxMc1Cohort {
     }
     bool vold_cancelled() const { return vold_cancelled_; }
     bool apex_cancelled() const { return apex_cancelled_; }
-    bool healthy() const { return !manager_failed_ && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && bootanimation_->IsRunning())) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning()); }
+    bool healthy() const { return !manager_failed_ && (!health_ || health_->IsRunning()) && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && bootanimation_->IsRunning())) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning()); }
     android::base::Result<void> Close(const Tick& tick) {
         using namespace android::init;
         if(!active_) return {};
@@ -120,6 +120,7 @@ class LinuxMc1Cohort {
         surfaceflinger_=nullptr;
         bootanimation_=nullptr;
         bootanimation_started_=false;
+        health_=nullptr;
         selected_=nullptr;
         suspend_=nullptr;
         installd_=nullptr;
@@ -388,6 +389,22 @@ class LinuxMc1Cohort {
         // Original upstream SystemSuspend keeps its own real wakelock counter
         // when Linux owns host sleep. No /sys/power controls are exposed here.
         if(apex_requested_) {
+            auto health_parsed=parser.ParseConfigFile("/vendor/etc/init/archtv-health.rc");
+            if(!health_parsed.ok() || parser.parse_error_count()!=0)return android::base::Error()<<"Original health RC rejected";
+            health_=services.FindService("vendor.health-default");
+            if(!health_ || health_->args()!=std::vector<std::string>{"/vendor/bin/hw/android.hardware.health-service.example"})return android::base::Error()<<"Unexpected original health provider";
+            health_->AddReapCallback([this](const siginfo_t& info){std::fprintf(stderr,"SELECTED_HEALTH_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);if(!closing_)manager_failed_=true;});
+            if(auto started=health_->Start();!started.ok())return started;
+            std::fprintf(stderr,"SELECTED_HEALTH_STARTED pid=%d NOT_REGISTERED\n",health_->pid());
+            client_done_=false;client_ok_=false;
+            auto health_client=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","shell","shell","--","/system/bin/sh","-c",
+                "umask 077; i=0; while [ $$i -lt 12 ]; do /system/bin/service check android.hardware.health.IHealth/default > /data/local/tmp/archtv-mc1/health-query.txt 2>&1; if /system/bin/grep -qx 'Service android.hardware.health.IHealth/default: found' /data/local/tmp/archtv-mc1/health-query.txt; then /system/bin/dumpsys android.hardware.health.IHealth/default > /data/local/tmp/archtv-mc1/health-dump.txt 2>&1; exit $$?; fi; i=$$((i+1)); /system/bin/sleep 1; done; exit 1"});
+            if(!health_client.ok())return health_client.error();
+            auto* health_peer=health_client->get();health_peer->AddReapCallback([this](const siginfo_t& info){client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;});services.AddService(std::move(*health_client));
+            if(auto started=health_peer->ExecStart();!started.ok())return started;
+            if(auto waited=Wait(tick,[this]{return client_done_;},16);!waited.ok())return waited;
+            if(!client_ok_)return android::base::Error()<<"Original IHealth query/dump failed";
+            std::fprintf(stderr,"HEALTH_ORIGINAL_BINDER_CLIENT_RETURNED REQUIRES_VALUE_VERIFICATION\n");
             auto zygote_parsed=parser.ParseConfigFile("/vendor/etc/init/archtv-app-zygote.rc");
             if(!zygote_parsed.ok() || parser.parse_error_count()!=0)return android::base::Error()<<"Application zygote profile rejected";
             zygote_=services.FindService("zygote");
@@ -490,6 +507,7 @@ class LinuxMc1Cohort {
     const bool surfaceflinger_requested_;
     const bool selected_requested_;
     const bool apex_requested_;
+    android::init::Service* health_=nullptr;
     android::init::Service* zygote_=nullptr;
     android::init::Service* vold_=nullptr;
     android::init::Service* manager_=nullptr;

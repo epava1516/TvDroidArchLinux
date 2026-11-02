@@ -1,0 +1,146 @@
+{
+  "evidence_id": "ev_1fb49bdacb98c8dd53617d0a0172610caf9c8ef5015496a9e460caea2593f436",
+  "subject": {
+    "name": "android.hardware.health-service.example",
+    "digest": {
+      "sha256": "c2cec2bc59f08d73f8f43f26bb7d90cd36854a85fed37f5e4408533ef7e8f352"
+    },
+    "local_path": "/home/tv/repositorio-principal/dist/aosp16/health-original-build-3/android.hardware.health-service.example",
+    "format": "elf",
+    "architecture": "x86_64"
+  },
+  "provider": {
+    "id": "rea-elf-notes",
+    "name": "REA ELF note parser",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.analysis",
+  "operation": "inspect_elf_notes",
+  "parameters": {
+    "path": "/home/tv/repositorio-principal/dist/aosp16/health-original-build-3/android.hardware.health-service.example",
+    "max_file_bytes": 67108864,
+    "max_entries": 32
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "artifact": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/health-original-build-3/android.hardware.health-service.example",
+      "sha256": "c2cec2bc59f08d73f8f43f26bb7d90cd36854a85fed37f5e4408533ef7e8f352",
+      "bytes": 146808
+    },
+    "format": "elf64",
+    "byte_order": "little",
+    "machine": 62,
+    "type": 3,
+    "type_name": "shared",
+    "tables": [
+      {
+        "kind": "program",
+        "index": 9,
+        "name": null,
+        "location": {
+          "offset": 648,
+          "bytes": 24
+        },
+        "alignment": 4
+      },
+      {
+        "kind": "section",
+        "index": 2,
+        "name": ".note.android.ident",
+        "location": {
+          "offset": 648,
+          "bytes": 24
+        },
+        "alignment": 4
+      }
+    ],
+    "entries": [
+      {
+        "index": 0,
+        "table_kind": "program",
+        "table_index": 9,
+        "location": {
+          "offset": 648,
+          "bytes": 24
+        },
+        "namesz": 8,
+        "descsz": 4,
+        "type": 1,
+        "type_name": "unknown",
+        "owner": "Android",
+        "owner_bytes_hex": "416e64726f696400",
+        "descriptor": {
+          "location": {
+            "offset": 668,
+            "bytes": 4
+          },
+          "bytes": 4,
+          "sha256": "de6d696c194fb883fd153e435f68d0283ebcf1a28c46cba524df6a8c0807084a",
+          "hex": "24000000"
+        },
+        "gnu": null
+      },
+      {
+        "index": 1,
+        "table_kind": "section",
+        "table_index": 2,
+        "location": {
+          "offset": 648,
+          "bytes": 24
+        },
+        "namesz": 8,
+        "descsz": 4,
+        "type": 1,
+        "type_name": "unknown",
+        "owner": "Android",
+        "owner_bytes_hex": "416e64726f696400",
+        "descriptor": {
+          "location": {
+            "offset": 668,
+            "bytes": 4
+          },
+          "bytes": 4,
+          "sha256": "de6d696c194fb883fd153e435f68d0283ebcf1a28c46cba524df6a8c0807084a",
+          "hex": "24000000"
+        },
+        "gnu": null
+      }
+    ],
+    "coverage": {
+      "status": "complete",
+      "examined_tables": 2,
+      "examined_entries": 2
+    },
+    "limitations": [
+      "This workflow does not execute the image, resolve runtime notes, or verify GNU build-id uniqueness against package catalogs.",
+      "PT_NOTE and SHT_NOTE are examined independently; the same file range may appear twice when both tables declare it."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "This workflow does not execute the image, resolve runtime notes, or verify GNU build-id uniqueness against package catalogs.",
+    "PT_NOTE and SHT_NOTE are examined independently; the same file range may appear twice when both tables declare it."
+  ],
+  "relationship_coverage": null,
+  "locations": [
+    {
+      "kind": "artifact-path",
+      "path": "/home/tv/repositorio-principal/dist/aosp16/health-original-build-3/android.hardware.health-service.example"
+    },
+    {
+      "kind": "file-offset-range",
+      "start": 648,
+      "end": 672
+    },
+    {
+      "kind": "file-offset-range",
+      "start": 648,
+      "end": 672
+    }
+  ],
+  "evidence_links": []
+}

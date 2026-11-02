@@ -173,6 +173,7 @@ public final class SelectedServices {
                 Object roleHelper=Class.forName("com.android.server.policy.role.RoleServicePlatformHelperImpl").getConstructor(contextType).newInstance(context);
                 call(Class.forName("com.android.server.LocalManagerRegistry"),null,"addManager",new Class<?>[]{Class.class,Object.class},roleHelperType,roleHelper);
                 start(manager,managerType,"com.android.role.RoleService");
+                start(manager,managerType,"com.android.server.BatteryService");
                 start(manager,managerType,"com.android.server.sensorprivacy.SensorPrivacyService");
                 start(manager,managerType,"com.android.server.sensors.SensorService");
                 start(manager,managerType,"com.android.server.alarm.AlarmManagerService");
@@ -207,12 +208,15 @@ public final class SelectedServices {
                     if(call(Class.forName("android.os.ServiceManager"),null,"checkService",new Class<?>[]{String.class},dependency)==null)
                         throw new IllegalStateException("Original storage dependency absent: "+dependency);
                 }
-                // Linux dispatches this original subsystem callback after its
-                // actual dependencies. This is not a global Android boot phase.
+                // Dispatch the original phase once to the selected coherent cohort
+                // after all prerequisites. No sys.boot_completed is fabricated.
                 int storagePhase=Class.forName("com.android.server.SystemService").getField("PHASE_SYSTEM_SERVICES_READY").getInt(null);
-                call(storageLifecycle.getClass(),storageLifecycle,"onBootPhase",new Class<?>[]{int.class},storagePhase);
 
                 start(manager,managerType,"com.android.server.usage.StorageStatsService$Lifecycle");
+                start(manager,managerType,"com.android.server.DeviceIdleController");
+                start(manager,managerType,"com.android.server.dreams.DreamManagerService");
+                call(managerType,manager,"startBootPhase",new Class<?>[]{traceType,int.class},trace,storagePhase);
+                System.err.println("ORIGINAL_SELECTED_PHASE500_RETURNED NOT_BOOT_COMPLETED_OR_APP_ACCEPTANCE");
                 System.err.println("PACKAGES_ORIGINAL_USER_AMS_STORAGE_STARTED REQUIRES_INSTALL_OPERATION");
                 // Run the real PackageInstaller client after dependency/lifecycle
                 // completion, while the original main looper can process work.

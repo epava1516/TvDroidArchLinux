@@ -39,7 +39,21 @@ root_code+="\np=root/'data/local/tmp/archtv-mc1/markor-install.txt';p.touch(mode
 root_code+="\nshutil.copyfile(Path("+repr(str(apk_path))+"),root/'data/local/tmp/markor.apk');os.chown(root/'data/local/tmp/markor.apk',2000,2000);os.chmod(root/'data/local/tmp/markor.apk',0o644)"
 text=text.replace('label(root)\n',root_code+'\nlabel(root)\n',1)
 text=text.replace('label(root)\n',"devices.prepare(root,out,Path("+repr(str(store))+"))\nassert not (root/'apex/apex-info-list.xml').exists()\nlabel(root)\n",1)
-text=text.replace("for p in sorted((r/'dist/aosp16/factory-inputs-3').glob('*.payload.img')):","devices.mount_sysfs(root)\nfor p in sorted((r/'dist/aosp16/factory-inputs-3').glob('*.payload.img')):",1)
+health_mounts="""
+# Read-only Linux power_supply class and its exact current device targets.
+# No /sys/power controls, fake battery values, or host relabeling.
+health_sources=[]
+health_class=Path('/sys/class/power_supply')
+health_target=root/'sys/class/power_supply';health_target.mkdir(parents=True,exist_ok=True)
+mount('--bind',health_class,health_target);mount('-o','remount,bind,ro',health_target)
+for node in sorted(health_class.iterdir()):
+ source=node.resolve();assert source.is_relative_to('/sys/devices')
+ target=root/str(source).lstrip('/');target.mkdir(parents=True,exist_ok=True)
+ mount('--bind',source,target);mount('-o','remount,bind,ro',target)
+ health_sources.append({'class':str(node),'target':str(source),'readonly':True})
+(out/'health-sysfs.json').write_text(json.dumps(health_sources,indent=2)+'\\n')
+"""
+text=text.replace("for p in sorted((r/'dist/aosp16/factory-inputs-3').glob('*.payload.img')):","devices.mount_sysfs(root)\n"+health_mounts+"\nfor p in sorted((r/'dist/aosp16/factory-inputs-3').glob('*.payload.img')):",1)
 text=text.replace("mount('-t','proc','proc',root/'proc')","devices.enable_loop_controls(root,out)\nmount('-t','proc','proc',root/'proc')")
 text=text.replace("cgbase=Path('/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1')", "unit_cgroup=Path('/proc/self/cgroup').read_text().split('0::',1)[1].strip()\nassert unit_cgroup.startswith('/system.slice/archtv-apex-') and unit_cgroup.endswith('.service')\ncgbase=Path('/sys/fs/cgroup'+unit_cgroup)/'archtv-apex'")
 text=text.replace("stdin_fd=os.open(root/'dev/null'", "monitor_log=(out/'device-monitor.log').open('w')\nmonitor=subprocess.Popen([sys.executable,str(r/'reports/android16-apex-bootstrap/devices.py'),str(root),str(out),str(os.getpid())],stdout=monitor_log,stderr=subprocess.STDOUT)\nprint('APEX_DEVICE_MONITOR_OWNED pid='+str(monitor.pid),flush=True)\nstdin_fd=os.open(root/'dev/null'",1)
@@ -61,9 +75,12 @@ text=text.replace("'INSTALLD':'u:r:installd:s0'","'INSTALLD':'u:r:installd:s0','
 text=text.replace("identity['kind'] in ['INSTALLD','DAEMON','SNAPSHOT']","identity['kind'] in ['INSTALLD','DAEMON','SNAPSHOT','VOLD','ZYGOTE']")
 text=text.replace("fields['Gid'].split()))==[0 if identity['kind']=='INSTALLD'","fields['Gid'].split()))==[0 if identity['kind'] in ['INSTALLD','VOLD','ZYGOTE']")
 text=text.replace("0x20000f if identity['kind']=='DAEMON'","factory_caps if identity['kind'] in ['VOLD','ZYGOTE'] else 0x20000f if identity['kind']=='DAEMON'")
+text=text.replace('SUSPEND|SERVICES|INSTALLD|VOLD|ZYGOTE','SUSPEND|SERVICES|INSTALLD|VOLD|ZYGOTE|HEALTH')
+text=text.replace("'ZYGOTE':'u:r:zygote:s0'","'ZYGOTE':'u:r:zygote:s0','HEALTH':'u:r:hal_health_default:s0'")
+text=text.replace("factory_caps if identity['kind']", "((1<<35)|(1<<36)) if identity['kind']=='HEALTH' else factory_caps if identity['kind']")
 # Preserve actual APEX output on Java/bootstrap failures as well.
 marker="if p.returncode!=0:\n failed_output="
-text=text.replace(marker,"""for name in ['apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt','vold-query.txt','vold-user0.txt','markor-install.txt','markor-path.txt','markor-dump.txt','activity-query.txt','mount-query.txt','markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
+text=text.replace(marker,"""for name in ['health-query.txt','health-dump.txt','apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt','vold-query.txt','vold-user0.txt','markor-install.txt','markor-path.txt','markor-dump.txt','activity-query.txt','mount-query.txt','markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
  f=Path('/data/local/tmp/archtv-mc1')/name
  if f.is_file():print('PACKAGE_ORIGINAL_OUTPUT '+name+' '+json.dumps(f.read_text()),flush=True)
 if p.returncode!=0:

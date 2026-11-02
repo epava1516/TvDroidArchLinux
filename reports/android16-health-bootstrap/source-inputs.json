@@ -1,0 +1,44 @@
+[
+  {
+    "project": "hardware/interfaces",
+    "pin": "aa229558cbf04bc997ed27465c5e7ad497123d1b",
+    "url": "https://android.googlesource.com/platform/hardware/interfaces/+archive/aa229558cbf04bc997ed27465c5e7ad497123d1b/health.tar.gz",
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/health-original-study-1/hardware-health",
+    "sha256": "95f9122a7c202aac95e16cfaa3685761a877b5ca7ec0953a0f16d4ee674e92aa",
+    "skipped_nonregular": [
+      "2.0/README"
+    ]
+  },
+  {
+    "project": "system/core",
+    "pin": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+    "url": "https://android.googlesource.com/platform/system/core/+archive/e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1/healthd.tar.gz",
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/health-original-study-1/healthd",
+    "sha256": "372a24ab4ae9e9780d6b4feb5872e58cc49efacc01e9991f8f1d80780b1c882f",
+    "skipped_nonregular": []
+  },
+  {
+    "project": "frameworks/native",
+    "pin": "fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103",
+    "url": "https://android.googlesource.com/platform/frameworks/native/+archive/fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103/services/batteryservice.tar.gz",
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/health-original-study-1/batteryservice",
+    "sha256": "8b7d1427932551d1f4faa79b75b466ff1dd6d82c7670275d7c4fa45be87e7935",
+    "skipped_nonregular": []
+  },
+  {
+    "project": "packages/modules/Connectivity",
+    "pin": "f930245ec39a510f37a9a7dfaded96d287491a61",
+    "url": "https://android.googlesource.com/platform/packages/modules/Connectivity/+archive/f930245ec39a510f37a9a7dfaded96d287491a61/bpf/syscall_wrappers.tar.gz",
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/health-original-study-1/bpf-wrappers",
+    "sha256": "e95840a0429444e0b365024eda233d77c8d197af0e40f11ed45d26107b509cfa",
+    "skipped_nonregular": []
+  },
+  {
+    "project": "packages/modules/Connectivity",
+    "pin": "f930245ec39a510f37a9a7dfaded96d287491a61",
+    "url": "https://android.googlesource.com/platform/packages/modules/Connectivity/+archive/f930245ec39a510f37a9a7dfaded96d287491a61/bpf/headers.tar.gz",
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/health-original-study-1/bpf-headers",
+    "sha256": "237bba36776b89d1c65f1955511b360d26985ffd9d096f77b09ee5e459357afa",
+    "skipped_nonregular": []
+  }
+]

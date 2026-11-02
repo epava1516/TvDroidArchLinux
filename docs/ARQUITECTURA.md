@@ -1,5 +1,8 @@
 # Arquitectura vigente · A16-QPR2-1
 
+Actualización 2026-11-02 · IHealth original: [evidencia](../reports/android16-health-bootstrap/functional.json), [frontera y reproducción](../reports/android16-health-bootstrap/README.md), [política cargada](../reports/android16-health-bootstrap/policy-load.json). Health AIDL/default + BatteryMonitor + HealthLoop originales consultan BAT0/AC por sysfs de sólo lectura; cliente Binder/dumpsys y conexión BatteryService probados. Política ampliada sólo con TE vendor original: entrada `6dce4ddec1c31b434ea97f5cb6ec2e9c7ad4af6f89a3652f16487b65a16f04c9`; kernel permisivo, policyload2. Hashes anteriores quedan históricos; R1-MAC abierto. El grupo termina con exit1 tras DeviceIdle y cierre fuera de su plazo, sin fase500 ni lanzamiento APK aceptados. Siguiente prueba: DropBox original y captura de causa Java; después ciclo coherente energía/idle/alarma y lanzamiento de Markor intacta. ARM/GMS/DRM separados.
+
+
 [Markor intacta: instalación original verificada](../reports/android16-package-bootstrap/markor-install-functional.json). Sesión original create/write/commit, consulta independiente de ruta y SHA256 de base.apk idéntico. Cohorte y dispositivos cerrados. Sólo instalación temporal en tmpfs; no lanzamiento/UI/entrada/nota/reapertura, persistencia ni MAC aceptados. Próximo: lanzamiento original con WMS/Input/zygote y recorrido completo.
 
 ## Experimental · ciclo de almacenamiento e instalación Linux
