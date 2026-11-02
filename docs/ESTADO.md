@@ -1,5 +1,9 @@
 # Estado actual y punto de entrada
 
+Actualización 2026-11-02: [Input original y capacidad observada](../reports/android16-package-bootstrap/input-capability-functional.json); [fallo previo](../reports/android16-package-bootstrap/input-capability-negative.json); [bloqueo de ciclo de vida](../reports/android16-package-bootstrap/window-lifecycle-negative.json).
+InputManager/EventHub originales arrancan con SYS_NICE + BLOCK_SUSPEND (máscara exacta observada, NNP1, UID1000/system_server). PhoneWindowManager requiere RoleService original, incorporado con su helper según SystemServer. El ensayo posterior llega a StorageStats pero aborta en AlarmManager antes de su callback de fase500. El siguiente experimento debe integrar las dependencias originales de energía/idle/alarma y su ciclo de vida coherente; BatteryService requiere IHealth real. No cambiar campos privados ni omitir comprobaciones. El marcador WMS no prueba inicialización asíncrona ni disponibilidad. Instalación Markor de9e18bdd sigue como única etapa APK aceptada (tmpfs); lanzamiento/UI/entrada/nota/cierre/reapertura pendientes. R1-MAC permisivo, ARM/GMS/DRM abiertos.
+
+
 Reanudación automática: [contrato y límites](REANUDACION.md). Corrección aislada del runtime; instalación de Markor verificada, lanzamiento pendiente.
 
 [Markor intacta: instalación original verificada](../reports/android16-package-bootstrap/markor-install-functional.json). Sesión original create/write/commit, consulta independiente de ruta y SHA256 de base.apk idéntico. Cohorte y dispositivos cerrados. Sólo instalación temporal en tmpfs; no lanzamiento/UI/entrada/nota/reapertura, persistencia ni MAC aceptados. Próximo: lanzamiento original con WMS/Input/zygote y recorrido completo.

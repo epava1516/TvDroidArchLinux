@@ -1,0 +1,27 @@
+{
+  "scope": "Original RoleService bootstrap progresses past missing-role PhoneWindowManager exception; no APK stages newly accepted",
+  "checkpoint": "/home/tv/recuperacion-archtv/71fdde53-cec2-4b3f-b67f-dd987bd9d067-markor-launch",
+  "log": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793581516534395567/android-log-live.jsonl",
+  "log_sha256": "a29ff1aa3495a734eb0ebf1ac4e99ecb0452f07bb916fe6dba0ec8809e8f8ab9",
+  "demonstrated_failure": "AlarmManagerService.refreshExactAlarmCandidates dereferences mLocalPermissionManager before PHASE_SYSTEM_SERVICES_READY callback; selected lifecycle has only phase200",
+  "decision": "Integrate coherent original power/idle/alarm lifecycle and prerequisites, not private-field patch or skipped permission checks",
+  "source": [
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/AlarmManagerService.java",
+      "sha256": "72e103c1294bc4872bacb9c0113151871f7d8c9696872e50783779f6f228be13"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/RoleService.java",
+      "sha256": "3c98acaab5fba5f4fc9419a79b778e2aa474c910e71b391324424b402e4db973"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/BatteryService.java",
+      "sha256": "2712898ae33e6a438d02a6f3d23b4330283df6f65d81e3ae931b165395cda850"
+    }
+  ],
+  "limitations": [
+    "WMS marker precedes asynchronous initialization; not health/readiness",
+    "All APK launch/UI/input/persistence still pending",
+    "SELinux permissive; R1-MAC open"
+  ]
+}

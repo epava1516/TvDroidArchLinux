@@ -18,3 +18,9 @@ trap 'task_status=$?; if [ "$committed" = false ]; then /system/bin/cmd package 
 /system/bin/cmd package install-write -S "$apk_bytes" "$session_id" base.apk "$apk_path"
 /system/bin/cmd package install-commit "$session_id"
 committed=true
+/system/bin/cmd activity start-user -w 0 > /data/local/tmp/archtv-mc1/markor-user-start.txt 2>&1
+resolved=$(/system/bin/cmd package resolve-activity --brief --user 0 -a android.intent.action.MAIN -c android.intent.category.LAUNCHER net.gsantner.markor)
+/system/bin/printf '%s\n' "$resolved" > /data/local/tmp/archtv-mc1/markor-resolve.txt
+component=$(/system/bin/printf '%s\n' "$resolved" | /system/bin/tail -n 1)
+case "$component" in net.gsantner.markor/*) ;; *) exit 1;; esac
+/system/bin/cmd activity start-activity -W --user 0 -n "$component" > /data/local/tmp/archtv-mc1/markor-launch.txt 2>&1

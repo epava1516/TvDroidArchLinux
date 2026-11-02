@@ -5,7 +5,11 @@ import json,subprocess,shutil,hashlib,sys
 r=Path(__file__).resolve().parents[2];out=(r/sys.argv[1]).resolve();out.mkdir()
 entry=out/'entry'
 subprocess.run(['python',str(r/'reports/android16-selected-display/build-entry.py'),'--output',str(entry)],check=True)
-rc=(entry/'selected-services.rc').read_text();lines=rc.splitlines();lines[0]='service archtv-selected-services /system/bin/app_process64 -Xmx768m -Xnoimage-dex2oat /system/bin --application --nice-name=archtv-selected-services org.archtv.aosplinux.ServiceLauncher --packages'
+rc=(entry/'selected-services.rc').read_text()
+# EventHub requires CAP_BLOCK_SUSPEND; original ZygoteInit grants it to system_server.
+assert rc.count('    capabilities SYS_NICE\n')==1
+rc=rc.replace('    capabilities SYS_NICE\n','    capabilities SYS_NICE BLOCK_SUSPEND\n')
+lines=rc.splitlines();lines[0]='service archtv-selected-services /system/bin/app_process64 -Xmx768m -Xnoimage-dex2oat /system/bin --application --nice-name=archtv-selected-services org.archtv.aosplinux.ServiceLauncher --packages'
 lines=[l for l in lines if not any(l.startswith('    setenv '+n+' ') for n in ['BOOTCLASSPATH','DEX2OATBOOTCLASSPATH','SYSTEMSERVERCLASSPATH','STANDALONE_SYSTEMSERVER_JARS'])];(entry/'selected-services.rc').write_text('\n'.join(lines)+'\n')
 old=r/'dist/aosp16/apex-cohort-build-6';commands=[]
 for n in ['graphics-client','cargo/debug/examples/native_supervisor']:
@@ -20,6 +24,12 @@ for key,value in vendor['files'].items():
  if key=='/vendor/framework/archtv-selected-services.jar':value['source']=str(entry/'archtv-selected-services.jar')
  if key=='/vendor/etc/init/archtv-selected-services.rc':value['source']=str(entry/'selected-services.rc')
 vendor['files']['/vendor/bin/install-markor.sh']={'source':str(r/'runtime/aosp/linux-services/install-markor.sh'),'context':'u:object_r:vendor_file:s0','mode':0o644}
+zygote=(r/'dist/aosp16/factory-inputs-3/root/system/etc/init/hw/init.zygote64.rc').read_text()
+assert zygote.count(' --start-system-server')==1
+zygote=zygote.replace(' --start-system-server','')
+zygote+=''.join('    setenv '+key+' '+value+'\n' for key,value in {'ANDROID_ART_ROOT':'/apex/com.android.art','ANDROID_I18N_ROOT':'/apex/com.android.i18n','ANDROID_TZDATA_ROOT':'/apex/com.android.tzdata'}.items())
+(out/'app-zygote.rc').write_text(zygote)
+vendor['files']['/vendor/etc/init/archtv-app-zygote.rc']={'source':str(out/'app-zygote.rc'),'context':'u:object_r:vendor_configs_file:s0','mode':0o644}
 (out/'vendor-inputs.json').write_text(json.dumps(vendor,indent=2))
 text=(base/'build-payload-expanded.py').read_text().replace(str(base),str(out));expected=out/'apex-expected.json';expected.write_text(json.dumps(json.loads((r/'reports/android16-apex-bootstrap/complete-inputs.json').read_text())['modules'],indent=2)+'\n');text=text.replace("image=out/'payload-2.ext4'", "record('/apex-expected.json',out/'apex-expected.json','u:object_r:vendor_configs_file:s0',0o600)\nimage=out/'payload-2.ext4'")
 recipe=out/'build-payload.py';recipe.write_text(text);subprocess.run(['python',str(recipe)],stdout=open(out/'packager.log','w'),stderr=subprocess.STDOUT,check=True)

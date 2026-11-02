@@ -98,7 +98,7 @@ class LinuxMc1Cohort {
     }
     bool vold_cancelled() const { return vold_cancelled_; }
     bool apex_cancelled() const { return apex_cancelled_; }
-    bool healthy() const { return !manager_failed_ && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && bootanimation_->IsRunning())) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning()); }
+    bool healthy() const { return !manager_failed_ && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && bootanimation_->IsRunning())) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning()); }
     android::base::Result<void> Close(const Tick& tick) {
         using namespace android::init;
         if(!active_) return {};
@@ -387,6 +387,19 @@ class LinuxMc1Cohort {
         auto parser=CreateParser(ActionManager::GetInstance(),services);
         // Original upstream SystemSuspend keeps its own real wakelock counter
         // when Linux owns host sleep. No /sys/power controls are exposed here.
+        if(apex_requested_) {
+            auto zygote_parsed=parser.ParseConfigFile("/vendor/etc/init/archtv-app-zygote.rc");
+            if(!zygote_parsed.ok() || parser.parse_error_count()!=0)return android::base::Error()<<"Application zygote profile rejected";
+            zygote_=services.FindService("zygote");
+            if(!zygote_ || zygote_->args().empty() || zygote_->args().front()!="/system/bin/app_process64")return android::base::Error()<<"Unexpected zygote executable";
+            for(const auto& argument:zygote_->args())if(argument=="--start-system-server")return android::base::Error()<<"Full SystemServer startup prohibited";
+            zygote_->AddReapCallback([this](const siginfo_t& info){
+                std::fprintf(stderr,"SELECTED_ZYGOTE_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
+                if(!closing_)manager_failed_=true;
+            });
+            if(auto started=zygote_->Start();!started.ok())return started;
+            std::fprintf(stderr,"SELECTED_ZYGOTE_STARTED pid=%d NOT_APP_LAUNCH\n",zygote_->pid());
+        }
         auto native_parsed=parser.ParseConfigFile("/system/etc/init/android.system.suspend-service.rc");
         if(!native_parsed.ok() || parser.parse_error_count()!=0)
             return android::base::Error()<<"Original SystemSuspend RC rejected";
@@ -448,7 +461,7 @@ class LinuxMc1Cohort {
         if(apex_requested_) {
             client_done_=false;client_ok_=false;
             auto package_client=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","shell","shell","--",
-                "/system/bin/sh","-c","umask 077; i=0; while [ $$i -lt 30 ]; do /system/bin/service check package > /data/local/tmp/archtv-mc1/package-query.txt 2>&1; /system/bin/service check activity > /data/local/tmp/archtv-mc1/activity-query.txt 2>&1; /system/bin/service check mount > /data/local/tmp/archtv-mc1/mount-query.txt 2>&1; if /system/bin/grep -qx 'Service package: found' /data/local/tmp/archtv-mc1/package-query.txt && /system/bin/grep -qx 'Service activity: found' /data/local/tmp/archtv-mc1/activity-query.txt && /system/bin/grep -qx 'Service mount: found' /data/local/tmp/archtv-mc1/mount-query.txt; then /system/bin/cmd package list packages --user 0 > /data/local/tmp/archtv-mc1/package-list.txt 2>&1; /system/bin/cmd package path --user 0 net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-path.txt 2>&1; if /system/bin/grep -q '^package:/data/app/' /data/local/tmp/archtv-mc1/markor-path.txt; then /system/bin/dumpsys package net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-dump.txt 2>&1; exit $$?; fi; fi; i=$$((i+1)); /system/bin/sleep 1; done; exit 1"});
+                "/system/bin/sh","-c","umask 077; i=0; while [ $$i -lt 30 ]; do /system/bin/service check package > /data/local/tmp/archtv-mc1/package-query.txt 2>&1; /system/bin/service check activity > /data/local/tmp/archtv-mc1/activity-query.txt 2>&1; /system/bin/service check mount > /data/local/tmp/archtv-mc1/mount-query.txt 2>&1; if /system/bin/grep -qx 'Service package: found' /data/local/tmp/archtv-mc1/package-query.txt && /system/bin/grep -qx 'Service activity: found' /data/local/tmp/archtv-mc1/activity-query.txt && /system/bin/grep -qx 'Service mount: found' /data/local/tmp/archtv-mc1/mount-query.txt; then /system/bin/cmd package list packages --user 0 > /data/local/tmp/archtv-mc1/package-list.txt 2>&1; /system/bin/cmd package path --user 0 net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-path.txt 2>&1; if /system/bin/grep -q '^package:/data/app/' /data/local/tmp/archtv-mc1/markor-path.txt && /system/bin/grep -qx 'Status: ok' /data/local/tmp/archtv-mc1/markor-launch.txt; then /system/bin/dumpsys package net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-dump.txt 2>&1; exit $$?; fi; fi; i=$$((i+1)); /system/bin/sleep 1; done; exit 1"});
             if(!package_client.ok())return package_client.error();
             auto* peer=package_client->get();
             peer->AddReapCallback([this](const siginfo_t& info){client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;});
@@ -477,6 +490,7 @@ class LinuxMc1Cohort {
     const bool surfaceflinger_requested_;
     const bool selected_requested_;
     const bool apex_requested_;
+    android::init::Service* zygote_=nullptr;
     android::init::Service* vold_=nullptr;
     android::init::Service* manager_=nullptr;
     android::init::Service* hardware_=nullptr;

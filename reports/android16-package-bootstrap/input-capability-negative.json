@@ -1,0 +1,29 @@
+{
+  "scope": "Original Input constructor negative; no Markor launch/UI acceptance",
+  "checkpoint": "/home/tv/recuperacion-archtv/fc258592-8c1f-4c8a-b023-2bd9a5d35fc7-markor-launch",
+  "log": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793581057829761116/android-log-live.jsonl",
+  "log_sha256": "4e963aeebb0ed045465fa88d9909443279d6cc39fbfdc01ce1eeed1919780720",
+  "native_frames": [
+    "runtime.cc:714]   native: #09 pc 003a7409  /system/lib64/libinputflinger.so (android::ensureProcessCanBlockSuspend +105) (BuildId: cd4951a2ce90e19fb5f2563364dbdb10)",
+    "runtime.cc:714]   native: #10 pc 003a707d  /system/lib64/libinputflinger.so (android::EventHub::EventHub+269) (BuildId: cd4951a2ce90e19fb5f2563364dbdb10)",
+    "runtime.cc:714]   native: #11 pc 0040ebeb  /system/lib64/libinputflinger.so (android::InputManager::InputManager+1355) (BuildId: cd4951a2ce90e19fb5f2563364dbdb10)",
+    "runtime.cc:714]   native: #12 pc 0007428e  /system/lib64/libandroid_servers.so (android::NativeInputManager::NativeInputManager+558) (BuildId: b59c7f0b992aa407c475e2616e09c867)",
+    "runtime.cc:714]   native: #08 pc 003a7409  /system/lib64/libinputflinger.so (android::ensureProcessCanBlockSuspend +105) (BuildId: cd4951a2ce90e19fb5f2563364dbdb10)",
+    "runtime.cc:714]   native: #09 pc 003a707d  /system/lib64/libinputflinger.so (android::EventHub::EventHub+269) (BuildId: cd4951a2ce90e19fb5f2563364dbdb10)",
+    "runtime.cc:714]   native: #10 pc 0040ebeb  /system/lib64/libinputflinger.so (android::InputManager::InputManager+1355) (BuildId: cd4951a2ce90e19fb5f2563364dbdb10)",
+    "runtime.cc:714]   native: #11 pc 0007428e  /system/lib64/libandroid_servers.so (android::NativeInputManager::NativeInputManager+558) (BuildId: b59c7f0b992aa407c475e2616e09c867)"
+  ],
+  "sources": [
+    {
+      "url": "https://android.googlesource.com/platform/frameworks/native/+/fcbde2bcff56ca1d7bec9cabf8bdca5e288bf103/services/inputflinger/reader/EventHub.cpp",
+      "sha256": "6be3d7bfc29b2bb6ba9d22ef183316b62a6b948452f4c006191b2a7de57016ce",
+      "source_path": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/EventHub.cpp"
+    },
+    {
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/core/java/com/android/internal/os/ZygoteInit.java",
+      "sha256": "e2299c75b02bfe180deb346b14d80a71cafe5258a05f0ff6c3f39fc024441bae",
+      "source_path": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/ZygoteInit.java"
+    }
+  ],
+  "decision": "Add only original-required BLOCK_SUSPEND to existing SYS_NICE process capabilities; observer must require exact mask0x1000800000; no host power sysfs exposed; permissive is not MAC acceptance"
+}

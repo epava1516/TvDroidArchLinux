@@ -14,7 +14,7 @@ assert last in recipe
 scope={'__name__':'__materialize__','__file__':str(r/'reports/android16-hwc3-wayland/execute-graphics.py')}
 saved=sys.argv;sys.argv=[str(r/'reports/android16-hwc3-wayland/execute-graphics.py'),socket,'--observe-logs','--surfaceflinger','--selected-display']
 exec(compile(recipe.replace(last,''),'<graphics materialization>','exec'),scope)
-text=scope['base'];text=text.replace("('mc3-live-'+str(time.time_ns()))","('apex-live-'+str(time.time_ns()))")
+text=scope['base'];text=text.replace("1<<36 if identity['kind']=='SUSPEND' else","(1<<36)|(1<<23) if identity['kind']=='SERVICES' else 1<<36 if identity['kind']=='SUSPEND' else");text=text.replace("('mc3-live-'+str(time.time_ns()))","('apex-live-'+str(time.time_ns()))")
 text=text.replace('dist/aosp16/sf-cohort-build-32/payload-2.ext4',str(payload.relative_to(r)))
 text=text.replace('len(observed_logs)<512','len(observed_logs)<4096')
 text=text.replace("'--display-integration'","'--packages-integration'").replace("'--startup-ms','45000'","'--startup-ms','150000'").replace("'--observe-ms','30000'","'--observe-ms','3000'")
@@ -27,11 +27,14 @@ devices=importlib.util.module_from_spec(spec);spec.loader.exec_module(devices)
 text=text.replace("elif p.is_file():shutil.copyfile(p,root/'apex'/p.name)","elif p.is_file() and p.name!='apex-info-list.xml':shutil.copyfile(p,root/'apex'/p.name)")
 # Only top-level roots from pinned original init.rc. Vold creates user dirs,
 # CE alias mounts and original permission data; no user metadata is seeded.
-roots=[('misc/vold',0o700,0,0),('misc/profiles',0o771,1000,1000),('misc/profiles/cur',0o771,1000,1000),('misc/profiles/ref',0o771,1000,1000),('misc/apexdata',0o711,0,0),('system/users',0o775,1000,1000),('media',0o550,1023,1023),('misc_ce',0o551,1000,9998),('system_ce',0o550,1000,1000),('user_de',0o511,1000,1000),('vendor_ce',0o551,0,0),('vendor_de',0o551,0,0)]
+roots=[('dalvik-cache',0o771,0,0),('misc/vold',0o700,0,0),('misc/profiles',0o771,1000,1000),('misc/profiles/cur',0o771,1000,1000),('misc/profiles/ref',0o771,1000,1000),('misc/apexdata',0o711,0,0),('system/users',0o775,1000,1000),('media',0o550,1023,1023),('misc_ce',0o551,1000,9998),('system_ce',0o550,1000,1000),('user_de',0o511,1000,1000),('vendor_ce',0o551,0,0),('vendor_de',0o551,0,0)]
 root_code="\n".join("p=root/'data'/"+repr(name)+";p.mkdir(parents=True,exist_ok=True);os.chmod(p,"+str(mode)+");os.chown(p,"+str(uid)+","+str(gid)+")" for name,mode,uid,gid in roots)
 apk_path=Path('/home/tv/.cache/archtv/apk/real-app-candidates/net.gsantner.markor-v164-2026.10.0-flavorDefault-release.apk')
 apk_sha='c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440'
 assert hashlib.sha256(apk_path.read_bytes()).hexdigest()==apk_sha
+root_code+="\n(root/'dev/input').mkdir()"
+for name in ['markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
+ root_code+="\np=root/'data/local/tmp/archtv-mc1'/"+repr(name)+";p.touch(mode=0o640);os.chown(p,1000,2000);os.chmod(p,0o640)"
 root_code+="\np=root/'data/local/tmp/archtv-mc1/markor-install.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
 root_code+="\nshutil.copyfile(Path("+repr(str(apk_path))+"),root/'data/local/tmp/markor.apk');os.chown(root/'data/local/tmp/markor.apk',2000,2000);os.chmod(root/'data/local/tmp/markor.apk',0o644)"
 text=text.replace('label(root)\n',root_code+'\nlabel(root)\n',1)
@@ -40,6 +43,8 @@ text=text.replace("for p in sorted((r/'dist/aosp16/factory-inputs-3').glob('*.pa
 text=text.replace("mount('-t','proc','proc',root/'proc')","devices.enable_loop_controls(root,out)\nmount('-t','proc','proc',root/'proc')")
 text=text.replace("cgbase=Path('/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1')", "unit_cgroup=Path('/proc/self/cgroup').read_text().split('0::',1)[1].strip()\nassert unit_cgroup.startswith('/system.slice/archtv-apex-') and unit_cgroup.endswith('.service')\ncgbase=Path('/sys/fs/cgroup'+unit_cgroup)/'archtv-apex'")
 text=text.replace("stdin_fd=os.open(root/'dev/null'", "monitor_log=(out/'device-monitor.log').open('w')\nmonitor=subprocess.Popen([sys.executable,str(r/'reports/android16-apex-bootstrap/devices.py'),str(root),str(out),str(os.getpid())],stdout=monitor_log,stderr=subprocess.STDOUT)\nprint('APEX_DEVICE_MONITOR_OWNED pid='+str(monitor.pid),flush=True)\nstdin_fd=os.open(root/'dev/null'",1)
+text=text.replace("log_observer=None;observed_logs=[];log_stop=False", "live_log=(out/'android-log-live.jsonl').open('w')\nlog_observer=None;observed_logs=[];log_stop=False")
+text=text.replace('observed_logs.append(item)',"observed_logs.append(item);live_log.write(json.dumps(item)+'\\n');live_log.flush()")
 text=text.replace('log_stop=True\n','monitor.terminate();monitor.wait(timeout=3);monitor_log.close()\nlog_stop=True\n',1)
 text=text.replace("os.chown(root/'data/local/tmp/archtv-mc1',2000,2000)","os.chown(root/'data/local/tmp/archtv-mc1',2000,1000);os.chmod(root/'data/local/tmp/archtv-mc1',0o750)")
 # The existing graphics verifier retains its eight exact service identities.
@@ -51,14 +56,14 @@ text=text.replace("identity['kind']=='INSTALLD'","identity['kind'] in ['INSTALLD
 # Avoid applying installd capabilities to apexd: native exact original RC masks.
 text=text.replace("0x2000ff if identity['kind'] in ['INSTALLD','DAEMON','SNAPSHOT'] else", "0x20000f if identity['kind']=='DAEMON' else 0xf if identity['kind']=='SNAPSHOT' else 0x2000ff if identity['kind']=='INSTALLD' else")
 text=text.replace("fields['Gid'].split()))==[0 if identity['kind'] in ['INSTALLD','DAEMON','SNAPSHOT']", "fields['Gid'].split()))==[0 if identity['kind']=='INSTALLD'")
-text=text.replace('SUSPEND|SERVICES|INSTALLD','SUSPEND|SERVICES|INSTALLD|VOLD')
-text=text.replace("'INSTALLD':'u:r:installd:s0'","'INSTALLD':'u:r:installd:s0','VOLD':'u:r:vold:s0'")
-text=text.replace("identity['kind'] in ['INSTALLD','DAEMON','SNAPSHOT']","identity['kind'] in ['INSTALLD','DAEMON','SNAPSHOT','VOLD']")
-text=text.replace("fields['Gid'].split()))==[0 if identity['kind']=='INSTALLD'","fields['Gid'].split()))==[0 if identity['kind'] in ['INSTALLD','VOLD']")
-text=text.replace("0x20000f if identity['kind']=='DAEMON'","factory_caps if identity['kind']=='VOLD' else 0x20000f if identity['kind']=='DAEMON'")
+text=text.replace('SUSPEND|SERVICES|INSTALLD','SUSPEND|SERVICES|INSTALLD|VOLD|ZYGOTE')
+text=text.replace("'INSTALLD':'u:r:installd:s0'","'INSTALLD':'u:r:installd:s0','VOLD':'u:r:vold:s0','ZYGOTE':'u:r:zygote:s0'")
+text=text.replace("identity['kind'] in ['INSTALLD','DAEMON','SNAPSHOT']","identity['kind'] in ['INSTALLD','DAEMON','SNAPSHOT','VOLD','ZYGOTE']")
+text=text.replace("fields['Gid'].split()))==[0 if identity['kind']=='INSTALLD'","fields['Gid'].split()))==[0 if identity['kind'] in ['INSTALLD','VOLD','ZYGOTE']")
+text=text.replace("0x20000f if identity['kind']=='DAEMON'","factory_caps if identity['kind'] in ['VOLD','ZYGOTE'] else 0x20000f if identity['kind']=='DAEMON'")
 # Preserve actual APEX output on Java/bootstrap failures as well.
 marker="if p.returncode!=0:\n failed_output="
-text=text.replace(marker,"""for name in ['apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt','vold-query.txt','vold-user0.txt','markor-install.txt','markor-path.txt','markor-dump.txt','activity-query.txt','mount-query.txt']:
+text=text.replace(marker,"""for name in ['apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt','vold-query.txt','vold-user0.txt','markor-install.txt','markor-path.txt','markor-dump.txt','activity-query.txt','mount-query.txt','markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
  f=Path('/data/local/tmp/archtv-mc1')/name
  if f.is_file():print('PACKAGE_ORIGINAL_OUTPUT '+name+' '+json.dumps(f.read_text()),flush=True)
 if p.returncode!=0:

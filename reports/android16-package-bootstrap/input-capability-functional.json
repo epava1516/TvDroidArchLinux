@@ -1,0 +1,32 @@
+{
+  "scope": "Original InputManager/EventHub construction and input threads only; WMS asynchronous initialization fails; no APK launch/UI/input accepted",
+  "checkpoint": "/home/tv/recuperacion-archtv/263a1327-77d0-49ad-95e0-3ee033014939-markor-launch",
+  "log": "/home/tv/recuperacion-archtv/263a1327-77d0-49ad-95e0-3ee033014939-markor-launch/run.log",
+  "log_sha256": "d368483738030fdde0fdb3dc86c4ecfe96a6e41fbb460e122b8a7eee8703fa56",
+  "identity": {
+    "kind": "SERVICES",
+    "pid_namespace_pid": 439,
+    "getpidcon_raw_return": 0,
+    "actual_context": "u:r:system_server:s0",
+    "contexts_observed_in_order": [
+      "u:r:system_server:s0"
+    ],
+    "errno_observed": [],
+    "status": [
+      "Uid:\t1000\t1000\t1000\t1000",
+      "Gid:\t1000\t1000\t1000\t1000",
+      "Groups:\t1003 ",
+      "CapPrm:\t0000001000800000",
+      "CapEff:\t0000001000800000",
+      "CapBnd:\t0000001000800000",
+      "NoNewPrivs:\t1"
+    ]
+  },
+  "observed": [
+    "InputManager Starting input manager",
+    "InputReader Device added: Virtual",
+    "WMS phase200/display0 configuration"
+  ],
+  "remaining_blocker": "PhoneWindowManager ModifierShortcutManager requires original RoleManager; fatal android.ui NullPointerException; candidate24 integrates original RoleService and platform helper per pinned SystemServer",
+  "host_security": "SELinux permissive; R1-MAC open; no host power sysfs exposed"
+}

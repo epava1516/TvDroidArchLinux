@@ -25,7 +25,7 @@ public final class SelectedServices {
     }
     public static void main(String[] args) {
         boolean packages = args.length==1 && args[0].equals("--packages");
-        Object platformCompat=null, activityManager=null;
+        Object platformCompat=null, activityManager=null, activityTaskManager=null;
 
         Thread mainThread = Thread.currentThread();
         Thread diagnostic = new Thread(() -> {
@@ -41,7 +41,7 @@ public final class SelectedServices {
             }
         }, "selected-wait-diagnostic");
         diagnostic.setDaemon(true);
-        diagnostic.start();
+        if(!packages)diagnostic.start();
         try {
             // Common original system-server IPC/scheduling setup. These calls
             // affect this trusted process, not the Linux host or tenant APKs.
@@ -109,6 +109,7 @@ public final class SelectedServices {
                 System.err.println("PACKAGES_ORIGINAL_ACCESS_CHECKING_STARTED NOT_PERMISSION_ACCEPTANCE");
                 Object atmLifecycle=start(manager,managerType,"com.android.server.wm.ActivityTaskManagerService$Lifecycle");
                 Object atm=call(atmLifecycle.getClass(),atmLifecycle,"getService",new Class<?>[0]);
+                activityTaskManager=atm;
                 activityManager=call(Class.forName("com.android.server.am.ActivityManagerService$Lifecycle"),null,"startService",
                     new Class<?>[]{managerType,Class.forName("com.android.server.wm.ActivityTaskManagerService")},manager,atm);
                 call(activityManager.getClass(),activityManager,"setSystemServiceManager",new Class<?>[]{managerType},manager);
@@ -126,7 +127,7 @@ public final class SelectedServices {
             // Original LightsManager is consumed by LocalDisplayAdapter.
             call(managerType, manager, "startService", new Class<?>[]{Class.class},
                     Class.forName("com.android.server.lights.LightsService"));
-            call(managerType, manager, "startService", new Class<?>[]{Class.class},
+            Object display=call(managerType, manager, "startService", new Class<?>[]{Class.class},
                     Class.forName("com.android.server.display.DisplayManagerService"));
             Class<?> traceType = Class.forName("com.android.server.utils.TimingsTraceAndSlog");
             Object trace = traceType.getConstructor().newInstance();
@@ -143,6 +144,7 @@ public final class SelectedServices {
                 call(managerType,manager,"startService",new Class<?>[]{Class.forName("com.android.server.SystemService")},domain);
                 call(Class.forName("com.android.server.pm.PackageManagerService"),null,"main",new Class<?>[]{contextType,installerType,domainType,boolean.class},context,installer,domain,false);
                 System.err.println("PACKAGES_ORIGINAL_PMS_RETURNED REQUIRES_INSTALL_LAUNCH_VERIFICATION");
+                diagnostic.start();
                 // Original post-PMS ordering: publish UserManager and system AMS,
                 // then bind the real storage services used by PackageInstaller.
                 start(manager,managerType,"com.android.server.pm.UserManagerService$LifeCycle");
@@ -162,6 +164,41 @@ public final class SelectedServices {
                 start(manager,managerType,"com.android.server.deviceconfig.DeviceConfigInit$Lifecycle");
                 call(Class.forName("android.database.sqlite.SQLiteCompatibilityWalFlags"),null,"reset",new Class<?>[0]);
                 System.err.println("PACKAGES_ORIGINAL_SYSTEM_PROVIDERS_INSTALLED REQUIRES_PROVIDER_OPERATION");
+                Class<?> resourcesType=Class.forName("com.android.server.resources.ResourcesManagerService");
+                Object resources=resourcesType.getConstructor(contextType).newInstance(context);
+                call(resourcesType,resources,"setActivityManagerService",new Class<?>[]{activityManager.getClass()},activityManager);
+                call(managerType,manager,"startService",new Class<?>[]{Class.forName("com.android.server.SystemService")},resources);
+                // Original SystemServer role subsystem precedes input/window policy.
+                Class<?> roleHelperType=Class.forName("com.android.server.role.RoleServicePlatformHelper");
+                Object roleHelper=Class.forName("com.android.server.policy.role.RoleServicePlatformHelperImpl").getConstructor(contextType).newInstance(context);
+                call(Class.forName("com.android.server.LocalManagerRegistry"),null,"addManager",new Class<?>[]{Class.class,Object.class},roleHelperType,roleHelper);
+                start(manager,managerType,"com.android.role.RoleService");
+                start(manager,managerType,"com.android.server.sensorprivacy.SensorPrivacyService");
+                start(manager,managerType,"com.android.server.sensors.SensorService");
+                start(manager,managerType,"com.android.server.alarm.AlarmManagerService");
+                Object inputLifecycle=start(manager,managerType,"com.android.server.input.InputManagerService$Lifecycle");
+                Object input=call(inputLifecycle.getClass(),inputLifecycle,"getService",new Class<?>[0]);
+                start(manager,managerType,"com.android.server.devicestate.DeviceStateManagerService");
+                int sensorPhase=Class.forName("com.android.server.SystemService").getField("PHASE_WAIT_FOR_SENSOR_SERVICE").getInt(null);
+                call(managerType,manager,"startBootPhase",new Class<?>[]{traceType,int.class},trace,sensorPhase);
+                Class<?> wmType=Class.forName("com.android.server.wm.WindowManagerService");
+                Class<?> policyType=Class.forName("com.android.server.policy.WindowManagerPolicy");
+                Object policy=Class.forName("com.android.server.policy.PhoneWindowManager").getConstructor().newInstance();
+                Object wm=call(wmType,null,"main",new Class<?>[]{contextType,input.getClass(),boolean.class,policyType,activityTaskManager.getClass()},context,input,false,policy,activityTaskManager);
+                Class<?> serviceManager=Class.forName("android.os.ServiceManager");
+                Class<?> binder=Class.forName("android.os.IBinder");
+                Class<?> smInterface=Class.forName("android.os.IServiceManager");
+                int dumpFlags=smInterface.getField("DUMP_FLAG_PRIORITY_CRITICAL").getInt(null)|smInterface.getField("DUMP_FLAG_PRIORITY_HIGH").getInt(null)|smInterface.getField("DUMP_FLAG_PROTO").getInt(null);
+                call(serviceManager,null,"addService",new Class<?>[]{String.class,binder,boolean.class,int.class},"window",wm,false,dumpFlags);
+                call(activityManager.getClass(),activityManager,"setWindowManager",new Class<?>[]{wmType},wm);
+                call(wmType,wm,"onInitReady",new Class<?>[0]);
+                Object inputCallback=call(wmType,wm,"getInputManagerCallback",new Class<?>[0]);
+                call(input.getClass(),input,"setWindowManagerCallbacks",new Class<?>[]{Class.forName("com.android.server.input.InputManagerService$WindowManagerCallbacks")},inputCallback);
+                call(input.getClass(),input,"start",new Class<?>[0]);
+                call(display.getClass(),display,"windowManagerAndInputReady",new Class<?>[0]);
+                call(wmType,wm,"displayReady",new Class<?>[0]);
+                System.err.println("MARKOR_ORIGINAL_WMS_INPUT_STARTED REQUIRES_APP_SURFACE_AND_INPUT");
+
                 Object storageLifecycle=start(manager,managerType,"com.android.server.StorageManagerService$Lifecycle");
                 Class<?> pmInternalType=Class.forName("android.content.pm.PackageManagerInternal");
                 Object pmInternal=call(Class.forName("com.android.server.LocalServices"),null,"getService",new Class<?>[]{Class.class},pmInternalType);
