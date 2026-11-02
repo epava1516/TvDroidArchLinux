@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+[Grupo original de conectividad: fase500 y fallo real de AMS](../reports/android16-package-bootstrap/network-lifecycle-progress.json). Ejecución, hashes, fuentes bloqueadas y límite de `systemReady/goingCallback` diferenciados: la propuesta de callback aún no se ejecutó. No disponibilidad general de servicios ni etapa APK nueva.
+
 Verificación de enlaces 2026-11-02: faltan localmente dos artefactos históricos ya enlazados (`dist/apk/local-registry-final-wayland-1/result.json` y `dist/apk/binder-service-context-lifetime-1/result.json`). Su contenido actual queda **desconocido/no reverificado**; se conserva la referencia histórica y no se usa para aceptar este hito. Los enlaces nuevos de LMKD/red existen y sus hashes se contrastaron.
 
 [LMKD original/AMS](../reports/android16-package-bootstrap/lmkd-functional.json) y [red: avance y fallo real](../reports/android16-package-bootstrap/network-accounting-progress.json). Hashes de cada ejecución, identidad, etiquetas y mapa conservados. Negativos [etiqueta JNI](../reports/android16-package-bootstrap/connectivity-bpf-label-negative.json) y [acceso DAC](../reports/android16-package-bootstrap/connectivity-bpf-dac-negative.json) superados; falta TelephonyRegistry y operaciones clientes. Inspección [REA MCP ELF](../reports/android16-package-bootstrap/lmkd-elf-mcp.json) estática; GDB por CLI no es MCP ni prueba APK. Ninguna etapa Markor nueva, cierre nativo fallido y R1-MAC abierto.

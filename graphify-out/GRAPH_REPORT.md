@@ -1,7 +1,7 @@
-# Graph Report - lmkd-network-identity  (2026-11-02)
+# Graph Report - network-ready-500  (2026-11-02)
 
 ## Corpus Check
-- 332 files · ~295,385 words
+- 332 files · ~295,532 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 36 file(s) not represented in the graph (top: .cil 9, .xml 8, .patch 7)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `8e74d21e`
+- Built from commit: `89a854bf`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

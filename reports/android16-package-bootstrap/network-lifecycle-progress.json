@@ -1,0 +1,117 @@
+{
+  "scope": "Original TelephonyRegistry/PacProxy/UiMode integrated and selected services phase500 returned; no full Android boot, no new APK stage accepted",
+  "checkpoint": "/home/tv/recuperacion-archtv/787de6a8-dc1a-450a-b8dd-de68965bed87-markor-launch",
+  "payload": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-44/payload-2.ext4",
+  "payload_sha256": "93c2adf3ae82d2c75ef7359d4d6bb2653437f662dbd5f7645a0cab2c59e8bb6c",
+  "overall_exit": 1,
+  "observations": [
+    {
+      "tag": "System.err",
+      "message": "ORIGINAL_NETWORK_SUBSYSTEM_STARTED REQUIRES_BINDER_OPERATIONS_NOT_INTERNET_ACCEPTANCE",
+      "actual_sender_pid_uid_gid": [
+        504,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "System.err",
+      "message": "ORIGINAL_SELECTED_PHASE500_RETURNED NOT_BOOT_COMPLETED_OR_APP_ACCEPTANCE",
+      "actual_sender_pid_uid_gid": [
+        504,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "System.err",
+      "message": "SELECTED_FAILURE_CAUSE depth=0 type=java.lang.IllegalStateException message=Cannot broadcast before boot completed",
+      "actual_sender_pid_uid_gid": [
+        504,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "System.err",
+      "message": "java.lang.IllegalStateException: Cannot broadcast before boot completed",
+      "actual_sender_pid_uid_gid": [
+        504,
+        1000,
+        1000
+      ]
+    }
+  ],
+  "native_complete_inventory_verified": true,
+  "bpf_cleanup_verified": true,
+  "final_active_loops": "",
+  "final_dm": [],
+  "native_close_accepted": false,
+  "markor_install_output_empty": true,
+  "source_analysis": {
+    "frameworks_base_commit": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+    "sources": [
+      {
+        "project": "platform/frameworks/base",
+        "commit": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+        "path": "services/core/java/com/android/server/TelephonyRegistry.java",
+        "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/core/java/com/android/server/TelephonyRegistry.java?format=TEXT",
+        "local": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/TelephonyRegistry.java",
+        "sha256": "ce257185ee613b28361b849a92be8e995943ae2fb1376e28fa4ae0d7ef33f09d"
+      },
+      {
+        "project": "platform/frameworks/base",
+        "commit": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+        "path": "services/core/java/com/android/server/connectivity/PacProxyService.java",
+        "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/core/java/com/android/server/connectivity/PacProxyService.java?format=TEXT",
+        "local": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/PacProxyService.java",
+        "sha256": "7e2efe69f9d8ed3dc15a60b0871f2f54b7c85dea7f2d3cb4e42c78891f300e7f"
+      },
+      {
+        "project": "platform/frameworks/base",
+        "commit": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+        "path": "services/core/java/com/android/server/UiModeManagerService.java",
+        "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/core/java/com/android/server/UiModeManagerService.java?format=TEXT",
+        "local": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/UiModeManagerService.java",
+        "sha256": "e2622b0143055a68ae89ce4463fce02fa666a49eb0bcbe182457b3ff94466229"
+      },
+      {
+        "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/core/java/com/android/server/am/ActivityManagerService.java?format=TEXT",
+        "commit": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+        "path": "services/core/java/com/android/server/am/ActivityManagerService.java",
+        "local": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/ActivityManagerService.java",
+        "sha256": "2df3c48c2e8769bf00193c70465e6b85d5208c48e23eac62820c9c083ae95601"
+      },
+      {
+        "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/core/java/com/android/server/am/BroadcastController.java?format=TEXT",
+        "commit": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+        "path": "services/core/java/com/android/server/am/BroadcastController.java",
+        "local": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/BroadcastController.java",
+        "sha256": "0cadffd17ff007554932858bf3935aee635ddefa4b9ef0ddf2956dd80dc6e1ed"
+      }
+    ],
+    "demonstrated_guard": "BroadcastController.verifyBroadcastLocked checks AMS.mProcessesReady; exception wording does not require manually publishing sys.boot_completed.",
+    "original_lifecycle": "AMS.systemReady performs controllers/user/appops/process preparation, sets readiness itself, then invokes goingCallback before persistent applications and Android home are started. A direct returning call would subsequently start those applications and home; do not invoke blindly.",
+    "next_experiment": "Review the pre-callback callees and original WMS/PMS/display readiness; evaluate using the documented goingCallback as a non-returning Linux selected-application event-loop boundary. Keep systemReady in-progress, never claim it returned; no readiness flag writes, no fake boot_completed, no full SystemServer/home/persistent-app bootstrap. Requires real launch/input/persistence and negative process inventory checks.",
+    "status": "Source-grounded candidate only, NOT executed or accepted by this milestone",
+    "wm_boundary": "Original PhoneWindowManager.systemReady explicitly does not bind keyguard. onSystemUiStarted does bind it; that call is outside the proposed Linux selected-app boundary. Other pre-callback side effects still require review.",
+    "wm_source_sha256": {
+      "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/PhoneWindowManager.java": "8316dc6b38c8a2e89ac02458dc0af73ec1a0f148d6290a5eb8f2f726b43bbd25",
+      "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/WindowManagerService.java": "a4f3890b225a6a1d5b6376d659caf353f55c37549185413ab2ce90f9009f1c4e"
+    }
+  },
+  "unresolved": [
+    "AMS readiness and real Markor installation/launch in this cohort",
+    "UI/input/note/persistence/close/reopen",
+    "Original service close failure distinct from verified outer cleanup",
+    "tmpfs user-list fs-verity ioctl unsupported",
+    "Functional network clients, multicast EPERM and Internet/DNS",
+    "R1-MAC permissive policyload2; ARM/GMS/DRM separate"
+  ],
+  "evidence_sha256": {
+    "/home/tv/recuperacion-archtv/787de6a8-dc1a-450a-b8dd-de68965bed87-markor-launch/before.json": "291792784e0cd42ebd78b0494e786879b75bc522eba4331f6d0139dfb8a3abda",
+    "/home/tv/recuperacion-archtv/787de6a8-dc1a-450a-b8dd-de68965bed87-markor-launch/run.log": "dfefcd65627abfa7ad23d414a50468958e6486f3dadfa6a6eb8ff58e70e33a24",
+    "/home/tv/recuperacion-archtv/787de6a8-dc1a-450a-b8dd-de68965bed87-markor-launch/result.json": "7b65c17739f50e061eb5e92b777a237ce11c7999b5bf314438a68ee9b58b4a02",
+    "/home/tv/recuperacion-archtv/787de6a8-dc1a-450a-b8dd-de68965bed87-markor-launch/bpf-cleanup.json": "dac20b014a9d0f12f4f7ea8cc110af19fe3318f65003df9ca4aa3c29c09614f9"
+  }
+}

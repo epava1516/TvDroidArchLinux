@@ -1,12 +1,14 @@
 # Matriz de aplicaciones reales
 
-La integración de soporte [memoria Bionic y display0](../reports/android16-selected-display/postboot-display-findings.json) no cambia la aceptación de Markor: instalación, lanzamiento, interfaz, entrada, función principal, persistencia, servicios, cierre y reapertura siguen sin recorrido completo probado. La consulta shell original no demuestra permisos ni comportamiento de una APK. La [operación Installer/installd](../reports/android16-package-bootstrap/installer-functional.json) tampoco acredita instalar Markor: no se ha llamado al flujo original PackageInstaller/PMS.
+Estado vigente: [instalación temporal original de Markor](../reports/android16-package-bootstrap/markor-install-functional.json) probada en su cohorte anterior; firma/bytes comprobados, sin persistencia entre sesiones. Lanzamiento, UI, entrada, nota, servicios de la app, cierre y reapertura siguen abiertos. El [avance a fase500](../reports/android16-package-bootstrap/network-lifecycle-progress.json) no acepta otra etapa.
 
-La [integración actual de servicios originales](../reports/android16-selected-display/findings.json) falla aún en la ABI ashmem/memfd del kernel. No publica display ni modifica la aceptación de ninguna APK. ARM, servicios externos y DRM siguen siendo ejes separados.
+Histórico anterior a la instalación temporal: la integración de soporte [memoria Bionic y display0](../reports/android16-selected-display/postboot-display-findings.json) no cambia la aceptación de Markor: instalación, lanzamiento, interfaz, entrada, función principal, persistencia, servicios, cierre y reapertura siguen sin recorrido completo probado. La consulta shell original no demuestra permisos ni comportamiento de una APK. La [operación Installer/installd](../reports/android16-package-bootstrap/installer-functional.json) tampoco acredita instalar Markor: no se ha llamado al flujo original PackageInstaller/PMS.
+
+Histórico · La [integración de servicios originales](../reports/android16-selected-display/findings.json) falla aún en la ABI ashmem/memfd del kernel. No publica display ni modifica la aceptación de ninguna APK. ARM, servicios externos y DRM siguen siendo ejes separados.
 
 ## Evidencia de subsistemas · sin cambiar aceptación APK
 
-[Recorrido nativo gráfico original probado](../reports/android16-software-renderer/sf-original-functional-findings.json): SurfaceFlinger y bootanimation originales dibujan mediante ANGLE/SwiftShader, allocator/mapper/HWC3, Wayland/Smithay y DRM, con consultas/identidades/cierre reales. Es dependencia previa; **no cambia ninguna de las nueve etapas de Markor u otra APK**, todas siguen no probadas. Permisivo no acredita aislamiento; Android completo no se arranca.
+Histórico anterior a instalación · [Recorrido nativo gráfico original probado](../reports/android16-software-renderer/sf-original-functional-findings.json): SurfaceFlinger y bootanimation originales dibujan mediante ANGLE/SwiftShader, allocator/mapper/HWC3, Wayland/Smithay y DRM, con consultas/identidades/cierre reales. Es dependencia previa; **no cambia ninguna de las nueve etapas de Markor u otra APK**, todas siguen no probadas. Permisivo no acredita aislamiento; Android completo no se arranca.
 
 La prioridad actual es el [camino crítico Markor](ROADMAP-A.md#camino-crítico-vigente--markor-completo).
 La integración negativa de propiedades/gestores no acepta ninguna de las nueve
@@ -49,9 +51,9 @@ Las APK están intactas en caché local; no se recompilan ni se parchean.
 
 | APK fijada | Perfil observado | Recorrido a verificar | Ejecución actual |
 | --- | --- | --- | --- |
-| Markor 2026.10.0, net.gsantner.markor | minSDK 21, target 35; no miembros lib/*.so en este APK | Crear/editar nota, entrada real, guardar, cerrar/reabrir | Nueve etapas sobre A16: no probadas |
-| Calculator 1.4.0, org.fossify.math | minSDK 26, target 36; AndroidX Path para arm64/armv7/x86/x86_64 | Alias de lanzador, 2+3, historial/preferencias, cierre/reapertura | Nueve etapas sobre A16: no probadas |
-| VLC 3.7.1, org.videolan.vlc | minSDK 17, target 36; VLC/medialibrary/C++ x86_64 | Fichero local, audio/vídeo, volver al shell, cierre | Nueve etapas sobre A16: no probadas en el runtime propio; Waydroid anterior no cuenta |
+| Markor 2026.10.0, net.gsantner.markor | minSDK 21, target 35; no miembros lib/*.so en este APK | Crear/editar nota, entrada real, guardar, cerrar/reabrir | Instalación temporal probada; las demás etapas no aceptadas |
+| Calculator 1.4.0, org.fossify.math | minSDK 26, target 36; AndroidX Path para arm64/armv7/x86/x86_64 | Alias de lanzador, 2+3, historial/preferencias, cierre/reapertura | Instalación temporal probada; las demás etapas no aceptadas |
+| VLC 3.7.1, org.videolan.vlc | minSDK 17, target 36; VLC/medialibrary/C++ x86_64 | Fichero local, audio/vídeo, volver al shell, cierre | Instalación temporal probada; las demás etapas no aceptadas en el runtime propio; Waydroid anterior no cuenta |
 
 REA MCP/JADX observa respectivamente 4.985/5.023/15.261 clases; estos inventarios
 no prueban cobertura dinámica. El ensayo del framework enlaza clases Activity de
@@ -101,4 +103,4 @@ y [la arquitectura](ARQUITECTURA.md) fijan aceptación y alternativas.
 
 ### Markor · firma original verificada (API36)
 
-[Verificación](../reports/android16-markor-original-signature/verification.json): apksig de la revisión AOSP bloqueada verifica firma v2 del APK intacto; copia negativa alterada falla por digest. Certificado y hashes registrados. REA MCP sólo aporta estructura declarada, no verifica criptografía. Las nueve etapas funcionales permanecen no probadas: esto no es instalación por PackageManager ni lanzamiento.
+[Verificación](../reports/android16-markor-original-signature/verification.json): apksig de la revisión AOSP bloqueada verifica firma v2 del APK intacto; copia negativa alterada falla por digest. Certificado y hashes registrados. REA MCP sólo aporta estructura declarada, no verifica criptografía. Esta evidencia de firma por sí sola no prueba instalación ni lanzamiento; la instalación temporal posterior está enlazada en el estado vigente.

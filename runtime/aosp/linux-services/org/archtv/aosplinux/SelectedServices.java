@@ -166,6 +166,11 @@ public final class SelectedServices {
                 Object usage=call(Class.forName("com.android.server.LocalServices"),null,"getService",new Class<?>[]{Class.class},usageType);
                 call(activityManager.getClass(),activityManager,"setUsageStatsManager",new Class<?>[]{usageType},usage);
 
+                // Original SystemServer publishes the registry even without a modem.
+                Class<?> registryType=Class.forName("com.android.server.TelephonyRegistry");
+                Class<?> registryConfig=Class.forName("com.android.server.TelephonyRegistry$ConfigurationProvider");
+                Object registry=registryType.getConstructor(contextType,registryConfig).newInstance(context,registryConfig.getConstructor().newInstance());
+                call(Class.forName("android.os.ServiceManager"),null,"addService",new Class<?>[]{String.class,Class.forName("android.os.IBinder")},"telephony.registry",registry);
                 start(manager,managerType,"com.android.server.accounts.AccountManagerService$Lifecycle");
                 start(manager,managerType,"com.android.server.content.ContentService$Lifecycle");
                 Object providers=call(activityManager.getClass(),activityManager,"getContentProviderHelper",new Class<?>[0]);
@@ -227,6 +232,7 @@ public final class SelectedServices {
                 call(managerType,manager,"startServiceFromJar",new Class<?>[]{String.class,String.class},
                     "com.android.server.stats.StatsCompanion$Lifecycle","/apex/com.android.os.statsd/javalib/service-statsd.jar");
                 start(manager,managerType,"com.android.server.DeviceIdleController");
+                start(manager,managerType,"com.android.server.UiModeManagerService");
                 start(manager,managerType,"com.android.server.dreams.DreamManagerService");
                 // Original SystemServer network subsystem ordering. Native netd
                 // and real original BPF maps must already exist; no local stub.
@@ -247,6 +253,8 @@ public final class SelectedServices {
                 Class<?> networkPolicyType=Class.forName("com.android.server.net.NetworkPolicyManagerService");
                 Object networkPolicy=networkPolicyType.getConstructor(contextType,Class.forName("android.app.IActivityManager"),Class.forName("android.os.INetworkManagementService")).newInstance(context,activityManager,networkManagement);
                 call(sm,null,"addService",new Class<?>[]{String.class,ib},"netpolicy",networkPolicy);
+                Object pacProxy=Class.forName("com.android.server.connectivity.PacProxyService").getConstructor(contextType).newInstance(context);
+                call(sm,null,"addService",new Class<?>[]{String.class,ib},"pac_proxy",pacProxy);
                 call(managerType,manager,"startServiceFromJar",new Class<?>[]{String.class,String.class},"com.android.server.ConnectivityServiceInitializer",connectivityJar);
                 call(networkPolicyType,networkPolicy,"bindConnectivityManager",new Class<?>[0]);
                 System.err.println("ORIGINAL_NETWORK_SUBSYSTEM_STARTED REQUIRES_BINDER_OPERATIONS_NOT_INTERNET_ACCEPTANCE");
