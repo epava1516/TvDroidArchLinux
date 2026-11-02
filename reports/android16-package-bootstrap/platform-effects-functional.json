@@ -1,0 +1,133 @@
+{
+  "scope": "Original immutable RRO, display-effects initialization, phase600 and AMS return; no new APK stage approval",
+  "run_id": "457c13db-abe5-4cd5-b601-a0d776d6ec07",
+  "checkpoint": "/home/tv/recuperacion-archtv/457c13db-abe5-4cd5-b601-a0d776d6ec07-markor-launch",
+  "input": "dist/aosp16/package-cohort-build-80/payload-2.ext4",
+  "input_sha256": "cd1928729668fdb16b44def3c78b8ae85fef9ece8eb5e2174934391e3c013ab1",
+  "hashes": {
+    "before.json": "680cdf7674ba148fe50b5e216d235e7af22c176c56f661a05359f8edb0051041",
+    "result.json": "d726c281bcfae1569d145e8e74583f70f50cad165ba3553d1f3418b78801dbb0",
+    "run.log": "fc9905527c9265b2e2c4e154430fce48e6aac0722262bf7bb9acd79fdff6301c",
+    "kernel-apex.log": "e8ba689d44a6b98869d95c8f1ef4c47394dafbbd2f806722fa57dfb7616885c0",
+    "completion-consumer.json": "68d6a94b1d9a32cd7a2560275fbcebf265f559e29eebc775c9289712d80d9bb4"
+  },
+  "platform_capability_actual_readback": "SCOPE original platform capability, not wallpaper compatibility or APK acceptance\nWALLPAPER_RESOURCE id=11101a4 system=false context=false\nASSET /system/framework/framework-res.apk\nASSET /vendor/overlay/ArchTvPlatform/ArchTvPlatform.apk\nWALLPAPER_ORIGINAL_MANAGER android.app.DisabledWallpaperManager supported=false\n",
+  "overlay": {
+    "apk": "dist/aosp16/platform-overlay-build-2/ArchTvPlatform.apk",
+    "sha256": "70c1dc0200702249aecf8b5aaa90cba451c7aa3b7221e7bc0b0dbfdd007a2fd7",
+    "build_record": "dist/aosp16/platform-overlay-build-2/build.json",
+    "build_record_sha256": "ef5c9bf5b81ef6bd73391952df3d308a1100eab5d7be437056dc7f78a68a505f",
+    "cryptographic_verification": "ORIGINAL_APKSIG_VERIFIED v2_checked=false v3_checked=true signer_sha256=7e66d9892396ba7b288521cf3b5684d4fd75bee02847782f9cec3f4bbc78c644",
+    "trust": "Own Linux vendor-overlay signer, not an AOSP platform signing key. Private signing material outside Git, not included."
+  },
+  "original_lifecycle_observations": [
+    {
+      "tag": "System.err",
+      "message": "ORIGINAL_JAVA_CONTEXT_MANAGER_DESCRIPTOR android.os.IServiceManager NOT_APK_ACCEPTANCE",
+      "actual_sender_pid_uid_gid": [
+        465,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "SystemServiceManager",
+      "message": "Starting phase 600",
+      "actual_sender_pid_uid_gid": [
+        465,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "System.err",
+      "message": "LINUX_ORIGINAL_AMS_CALLBACK_RETURNING AFTER_ORIGINAL_PHASE600 NOT_BOOT_COMPLETED",
+      "actual_sender_pid_uid_gid": [
+        465,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "System.err",
+      "message": "LINUX_ORIGINAL_AMS_SYSTEM_READY_RETURNED NOT_BOOT_COMPLETED",
+      "actual_sender_pid_uid_gid": [
+        465,
+        1000,
+        1000
+      ]
+    }
+  ],
+  "services_process_identity": {
+    "kind": "SERVICES",
+    "pid_namespace_pid": 465,
+    "getpidcon_raw_return": 0,
+    "actual_context": "u:r:system_server:s0",
+    "contexts_observed_in_order": [
+      "u:r:system_server:s0"
+    ],
+    "errno_observed": [],
+    "status": [
+      "Uid:\t1000\t1000\t1000\t1000",
+      "Gid:\t1000\t1000\t1000\t1000",
+      "Groups:\t1003 3006 3007 ",
+      "CapPrm:\t0000001800800000",
+      "CapEff:\t0000001800800000",
+      "CapBnd:\t0000001800800000",
+      "NoNewPrivs:\t1"
+    ]
+  },
+  "install_command_output": "Success: created install session [605081983]\nSuccess: streamed 11861047 bytes\nSuccess\n",
+  "installed_bytes_readback": "",
+  "actual_app_start_failure": [
+    {
+      "tag": "archtv-selected-services",
+      "message": "memevent failed to attach bpf program to oom/mark_victim tracepoint: No such file or directory",
+      "actual_sender_pid_uid_gid": [
+        465,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "ActivityManager",
+      "message": "Process ProcessRecord{dfab61b 1662:com.android.permissioncontroller/u0a102} failed to attach",
+      "actual_sender_pid_uid_gid": [
+        465,
+        1000,
+        1000
+      ]
+    }
+  ],
+  "result": {
+    "outer_exit": 1,
+    "elapsed_seconds": 165.71322011947632,
+    "active_loops": "",
+    "final_dm": []
+  },
+  "bpf_cleanup_verified": true,
+  "apex_complete_inventory_verified": true,
+  "predecessor": {
+    "checkpoint": "/home/tv/recuperacion-archtv/cc9ad2e5-e109-4e58-9b97-92bf0750100e-markor-launch",
+    "run_log_sha256": "7153b7b3617ac4610ea7e91fc6d1def766bde52487b73035a3ca27c604cd4cf5",
+    "scope": "79 original IServiceManager null during ActivityThread.systemMain, overlay probe not reached.80 makes a real original manager lookup/descriptor roundtrip earlier; no cache/private-field injection. Underlying79 cause and general stability are not proven by one succeeding run."
+  },
+  "source_records": [
+    "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/color-display-sources.json",
+    "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/wallpaper-display-effects-sources.json",
+    "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/linux-platform-overlay-sources.json",
+    "/home/tv/.cache/archtv/wallpaper-base-resource.json"
+  ],
+  "limits": [
+    "Wallpaper API implementation is absent in this initial Linux profile; original disabled manager truthfully reports unsupported. A real Wallpaper app route/host adapter remains open, not compatible by this check",
+    "Original OverlayConfig/AssetManager path retained, no overlayable-policy bypass; no negative policy authorization or enforcing proof",
+    "Color/Twilight original services and NotificationManager phase600 initialized; color transforms/night/location/render effects not accepted",
+    "Original AMS returned, not Android boot completed; no manual boot flags/Home/SystemUI chain",
+    "Installation command returned Success but installed bytes/path queries did not complete before bounded cohort deadline. Do not infer they deadlocked or accept a new install stage",
+    "PermissionController original process failed attach; Markor launch/UI/input/note/persistence/close/reopen remain unaccepted",
+    "Internal MC1 close incomplete after deadline; outer resources closed. Full stable lifetime not accepted",
+    "R1-MAC permissive, network/telephony/SE/SystemUI excluded profile features and ARM/GMS/DRM remain open"
+  ],
+  "next": "Read-only owned child process observation at2/7sec in same integrated experiment, contrast native Zygote specialization/mount source and actual kernel state, then fix demonstrated admission/attach blockage without disabling isolation",
+  "notification": "Exact run consumed by active owner; no continuation queued, notification gate absent"
+}

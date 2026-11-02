@@ -1,0 +1,7 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.archtv.platform.resources" android:versionCode="1" android:versionName="0.1">
+    <uses-sdk android:minSdkVersion="36" android:targetSdkVersion="36" />
+    <overlay android:targetPackage="android" android:targetName="FrameworkResources"
+        android:isStatic="true" android:priority="999" />
+    <application android:hasCode="false" android:label="ArchTv Linux capabilities" />
+</manifest>

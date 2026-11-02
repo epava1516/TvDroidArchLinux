@@ -1,0 +1,5 @@
+<resources>
+    <!-- Linux owns the desktop. Android WallpaperManager has no backing service
+         in this initial profile; its original disabled implementation reports it. -->
+    <bool name="config_enableWallpaperService">false</bool>
+</resources>

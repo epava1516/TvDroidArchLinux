@@ -3,9 +3,15 @@
 from pathlib import Path
 import json,subprocess,shutil,hashlib,sys
 r=Path(__file__).resolve().parents[2];out=(r/sys.argv[1]).resolve();out.mkdir()
-tracked_inputs=['reports/android16-apex-bootstrap/devices.py','runtime/aosp/linux-services/initial-apk-profile.json','runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java','runtime/aosp/linux-services/install-markor.sh','runtime/aosp/native/linux-property-worker.cpp','runtime/aosp/native/linux-mc1-cohort.h','reports/android16-package-bootstrap/build-integrated.py','runtime/aosp/android16-qpr2/patches/0004-linux-admitted-lazy-services.patch']
+tracked_inputs=['reports/android16-package-bootstrap/build-platform-overlay.py','tools/apk/SignPlatformOverlay.java','runtime/aosp/platform-overlay/AndroidManifest.xml','runtime/aosp/platform-overlay/res/values/config.xml','runtime/aosp/platform-overlay/overlay-config.xml','reports/android16-apex-bootstrap/devices.py','runtime/aosp/linux-services/initial-apk-profile.json','runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java','runtime/aosp/linux-services/install-markor.sh','runtime/aosp/native/linux-property-worker.cpp','runtime/aosp/native/linux-mc1-cohort.h','reports/android16-package-bootstrap/build-integrated.py','runtime/aosp/android16-qpr2/patches/0004-linux-admitted-lazy-services.patch']
 source_hashes={n:hashlib.sha256((r/n).read_bytes()).hexdigest() for n in tracked_inputs}
 (out/'source-inputs.json').write_text(json.dumps(source_hashes,indent=2)+'\n')
+overlay=r/'dist/aosp16/platform-overlay-build-2'
+overlay_record=json.loads((overlay/'build.json').read_text())
+assert hashlib.sha256((overlay/'ArchTvPlatform.apk').read_bytes()).hexdigest()==overlay_record['apk_sha256']
+for path,digest in overlay_record['inputs_sha256'].items():
+ assert hashlib.sha256(Path(path).read_bytes()).hexdigest()==digest,path
+(out/'platform-overlay-input.json').write_text(json.dumps(overlay_record,indent=2)+'\n')
 entry=out/'entry'
 subprocess.run(['python',str(r/'reports/android16-selected-display/build-entry.py'),'--output',str(entry)],check=True)
 rc=(entry/'selected-services.rc').read_text()
@@ -34,6 +40,8 @@ base=r/'dist/aosp16/sf-cohort-build-32';vendor=json.loads((base/'vendor-inputs.j
 for key,value in vendor['files'].items():
  if key=='/vendor/framework/archtv-selected-services.jar':value['source']=str(entry/'archtv-selected-services.jar')
  if key=='/vendor/etc/init/archtv-selected-services.rc':value['source']=str(entry/'selected-services.rc')
+vendor['files']['/vendor/overlay/ArchTvPlatform/ArchTvPlatform.apk']={'source':str(overlay/'ArchTvPlatform.apk'),'context':'u:object_r:vendor_overlay_file:s0','mode':0o644}
+vendor['files']['/vendor/overlay/config/config.xml']={'source':str(r/'runtime/aosp/platform-overlay/overlay-config.xml'),'context':'u:object_r:vendor_overlay_file:s0','mode':0o644}
 profile=json.loads((r/'runtime/aosp/linux-services/initial-apk-profile.json').read_text())
 profile_lines=[]
 for item in profile['excluded']:
@@ -75,6 +83,9 @@ netd_rc=netd_rc.replace('    capabilities ','    capabilities BPF ',1)
 vendor['files']['/vendor/etc/init/archtv-netd.rc']={'source':str(out/'linux-netd.rc'),'context':'u:object_r:vendor_configs_file:s0','mode':0o644}
 (out/'vendor-inputs.json').write_text(json.dumps(vendor,indent=2))
 text=(base/'build-payload-expanded.py').read_text().replace(str(base),str(out));expected=out/'apex-expected.json';expected.write_text(json.dumps(json.loads((r/'reports/android16-apex-bootstrap/complete-inputs.json').read_text())['modules'],indent=2)+'\n');text=text.replace("image=out/'payload-2.ext4'", "record('/apex-expected.json',out/'apex-expected.json','u:object_r:vendor_configs_file:s0',0o600)\nimage=out/'payload-2.ext4'")
+old_parent="record('/'+str(parent.relative_to(tree)),None,'u:object_r:vendor_file:s0',0o755)"
+assert old_parent in text
+text=text.replace(old_parent,"record('/'+str(parent.relative_to(tree)),None,'u:object_r:vendor_overlay_file:s0' if path.startswith('/vendor/overlay/') else 'u:object_r:vendor_file:s0',0o755)")
 recipe=out/'build-payload.py';recipe.write_text(text);subprocess.run(['python',str(recipe)],stdout=open(out/'packager.log','w'),stderr=subprocess.STDOUT,check=True)
 assert all(hashlib.sha256((r/n).read_bytes()).hexdigest()==h for n,h in source_hashes.items()), 'Source changed during build'
 print(out,flush=True)

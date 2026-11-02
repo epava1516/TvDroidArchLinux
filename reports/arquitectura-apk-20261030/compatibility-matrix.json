@@ -546,6 +546,14 @@
       "evidence": "../android16-package-bootstrap/bootstrap-profile-negative.json",
       "observation": "Original PMS enabled-state disabled packages remain in manifest persistent enumeration; current adapter refuses AMS return. Actual private APK filesystem profile is next, features of omitted packages remain unaccepted",
       "app_stage_results": "unchanged; only earlier temporary Markor installation approved"
+    },
+    {
+      "id": "a16-original-platform-rro-effects",
+      "status": "approved",
+      "scope": "Original resource/disabled capability, Color/Notification phase600 and AMS return only, not APK journey approval",
+      "evidence": "../android16-package-bootstrap/platform-effects-functional.json",
+      "observation": "Original static vendor RRO loaded; Android wallpaper backend absent and original DisabledWallpaperManager reports unsupported. Actual original phase600/AMS return verified. Wallpaper-dependent application routes, color rendering and all unaccepted app stages remain open.",
+      "app_stage_results": "unchanged; no new APK approval"
     }
   ]
 }

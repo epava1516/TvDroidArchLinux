@@ -90,6 +90,41 @@ public final class SelectedServices {
             }
         }
     }
+    private static void verifyLinuxPlatformCapabilities(Object context) throws Exception {
+        Class<?> resources=Class.forName("android.content.res.Resources");
+        Object system=call(resources,null,"getSystem",new Class<?>[0]);
+        Object local=call(Class.forName("android.content.Context"),context,"getResources",new Class<?>[0]);
+        int id=(Integer)call(resources,system,"getIdentifier",new Class<?>[]{String.class,String.class,String.class},
+            "config_enableWallpaperService","bool","android");
+        if(id==0)throw new IllegalStateException("Original wallpaper platform resource missing");
+        boolean systemEnabled=(Boolean)call(resources,system,"getBoolean",new Class<?>[]{int.class},id);
+        boolean contextEnabled=(Boolean)call(resources,local,"getBoolean",new Class<?>[]{int.class},id);
+        StringBuilder evidence=new StringBuilder("SCOPE original platform capability, not wallpaper compatibility or APK acceptance\n");
+        evidence.append("WALLPAPER_RESOURCE id=").append(Integer.toHexString(id))
+            .append(" system=").append(systemEnabled).append(" context=").append(contextEnabled).append('\n');
+        Object assets=call(resources,system,"getAssets",new Class<?>[0]);
+        Object[] apkAssets=(Object[])call(Class.forName("android.content.res.AssetManager"),assets,"getApkAssets",new Class<?>[0]);
+        boolean overlayLoaded=false;
+        for(Object apk:apkAssets) {
+            String path=(String)call(Class.forName("android.content.res.ApkAssets"),apk,"getAssetPath",new Class<?>[0]);
+            evidence.append("ASSET ").append(path).append('\n');
+            overlayLoaded|=path.contains("ArchTvPlatform");
+        }
+        try {
+            if(systemEnabled || contextEnabled || !overlayLoaded)
+                throw new IllegalStateException("Actual original AssetManager did not apply Linux platform overlay: "+evidence);
+            Class<?> wallpaper=Class.forName("android.app.WallpaperManager");
+            Object manager=call(Class.forName("android.content.Context"),context,"getSystemService",new Class<?>[]{Class.class},wallpaper);
+            boolean supported=(Boolean)call(wallpaper,manager,"isWallpaperSupported",new Class<?>[0]);
+            evidence.append("WALLPAPER_ORIGINAL_MANAGER ").append(manager.getClass().getName()).append(" supported=").append(supported).append('\n');
+            if(supported)throw new IllegalStateException("Wallpaper capability conflicts with missing Linux backend");
+            System.err.println("LINUX_PLATFORM_OVERLAY_ORIGINAL_READBACK_PASSED NOT_WALLPAPER_COMPATIBILITY");
+        } finally {
+            try(java.io.FileOutputStream output=new java.io.FileOutputStream("/data/local/tmp/archtv-mc1/platform-capabilities.txt")) {
+                output.write(evidence.toString().getBytes(java.nio.charset.StandardCharsets.UTF_8));
+            } catch(java.io.IOException failure) {System.err.println("PLATFORM_CAPABILITY_REPORT_FAILURE "+failure+"\n"+evidence);}
+        }
+    }
     private static void saveWaitDiagnostic(String value) {
         try (java.io.FileOutputStream output=new java.io.FileOutputStream("/data/local/tmp/archtv-mc1/selected-wait.txt")) {
             byte[] bytes=value.getBytes(java.nio.charset.StandardCharsets.UTF_8);
@@ -145,6 +180,17 @@ public final class SelectedServices {
             Class<?> process = Class.forName("android.os.Process");
             int priority = process.getField("THREAD_PRIORITY_FOREGROUND").getInt(null);
             call(process, null, "setThreadPriority", new Class<?>[]{int.class}, priority);
+            // Establish this original Java Binder client before resource/overlay
+            // initialization can make nested framework service lookups.
+            if(packages) {
+                Object originalManager=call(Class.forName("android.os.ServiceManager"),null,"getServiceOrThrow",
+                    new Class<?>[]{String.class},"manager");
+                String descriptor=(String)call(Class.forName("android.os.IBinder"),originalManager,
+                    "getInterfaceDescriptor",new Class<?>[0]);
+                if(!"android.os.IServiceManager".equals(descriptor))
+                    throw new IllegalStateException("Unexpected original context manager: "+descriptor);
+                System.err.println("ORIGINAL_JAVA_CONTEXT_MANAGER_DESCRIPTOR "+descriptor+" NOT_APK_ACCEPTANCE");
+            }
             if(packages)call(Class.forName("android.database.sqlite.SQLiteCompatibilityWalFlags"),null,
                 "init",new Class<?>[]{String.class},(Object)null);
             Class<?> looper = Class.forName("android.os.Looper");
@@ -154,6 +200,7 @@ public final class SelectedServices {
             Object thread = call(activityThread, null, "systemMain", new Class<?>[0]);
             Object context = call(activityThread, thread, "getSystemContext", new Class<?>[0]);
             Class<?> contextType = Class.forName("android.content.Context");
+            if(packages)verifyLinuxPlatformCapabilities(context);
             int theme = Class.forName("com.android.internal.R$style")
                     .getField("Theme_DeviceDefault_System").getInt(null);
             call(contextType, context, "setTheme", new Class<?>[]{int.class}, theme);
@@ -377,6 +424,13 @@ public final class SelectedServices {
                 call(channels,null,"removeDeprecated",new Class<?>[]{contextType},context);
                 call(channels,null,"createAll",new Class<?>[]{contextType},context);
                 start(manager,managerType,"com.android.server.storage.DeviceStorageMonitorService");
+                // Original SystemServer display-effects group precedes JobScheduler.
+                // Phase600 NotificationManager consumes ColorDisplayManager through real Binder.
+                Object displayPackageClient=call(contextType,context,"getPackageManager",new Class<?>[0]);
+                boolean isWatch=(Boolean)call(Class.forName("android.content.pm.PackageManager"),displayPackageClient,
+                    "hasSystemFeature",new Class<?>[]{String.class},"android.hardware.type.watch");
+                if(!isWatch)start(manager,managerType,"com.android.server.twilight.TwilightService");
+                start(manager,managerType,"com.android.server.display.color.ColorDisplayService");
                 start(manager,managerType,"com.android.server.job.JobSchedulerService");
                 // Original AMS media-session tracker requires the real session manager.
                 // One existing bounded stack capture targets actual audio startup.
