@@ -1,0 +1,72 @@
+{
+  "scope": "Integrated original services, intact install and actual host capacity/boot lifecycle limits; not launched Markor or APK/MAC acceptance",
+  "run_id": "5a46bbc3-eb52-4a78-8be8-bbc24a8a3c8c",
+  "candidate": 97,
+  "checkpoint": "/home/tv/recuperacion-archtv/5a46bbc3-eb52-4a78-8be8-bbc24a8a3c8c-markor-launch",
+  "result": {
+    "outer_exit": 1,
+    "elapsed_seconds": 196.40341591835022,
+    "native_complete_inventory_verified": true,
+    "active_loops": "",
+    "final_dm": []
+  },
+  "artifacts": {
+    "/home/tv/recuperacion-archtv/5a46bbc3-eb52-4a78-8be8-bbc24a8a3c8c-markor-launch/before.json": "950929dea6eaa8602b6d61c06c13172d3021f62d17b108d9eb6584b12bf7c1ca",
+    "/home/tv/recuperacion-archtv/5a46bbc3-eb52-4a78-8be8-bbc24a8a3c8c-markor-launch/result.json": "855fae90baa2b080a99cfd753cb17f269f6e6f5e4194b9495b2b4e6fe046be8d",
+    "/home/tv/recuperacion-archtv/5a46bbc3-eb52-4a78-8be8-bbc24a8a3c8c-markor-launch/run.log": "df237ed71f4debbb589fa452fcbc2561a4c09a369dd3583c0f1315189619b499",
+    "/home/tv/recuperacion-archtv/5a46bbc3-eb52-4a78-8be8-bbc24a8a3c8c-markor-launch/completion-consumer.json": "f3e67716720693cd8ff409ca6facb38703493b77e6abc749a86732623ad069c9",
+    "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793642787683892480/android-log-live.jsonl": "31f870653c8cb98b704a6df6346a5d4b64bc7c99cfa6c6e896c0df73668f2e4c",
+    "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793642787683892480/android-log-capture.json": "26f805b81a05ccee14f14570d1ef08d8850326cc1240a67a2a782ce4fcbcf6af",
+    "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-97/source-inputs.json": "e02d4d1106b6b9472df56b3ba8ffd0a4d39c4dbb3eb4be799c6168815be4ec3b",
+    "/home/tv/.cache/archtv/package96-kernel-resource.log": "304aa729c3aadf56a0ac57ed2ac68dc5c246812cba2065b3fdb097eabd99c359"
+  },
+  "capture": {
+    "records": 5031,
+    "bytes": 1172544,
+    "limit_bytes": 67108864,
+    "truncated": false,
+    "inline_limit_records": 512
+  },
+  "boot_state_original_dump": [
+    "  mProcessesReady=true mSystemReady=true mBooted=false mFactoryTest=0",
+    "  mBooting=true mCallFinishBooting=false mBootAnimationComplete=false"
+  ],
+  "markor_original_outputs": {
+    "markor-installed-bytes.txt": "SOURCE c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440  /data/local/tmp/markor.apk\nINSTALLED c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440  /data/app/~~I8lFrF6cWvS9FgwlgNSzpA==/net.gsantner.markor-LzlRS6w5ddx4dEeVatyQVg==/base.apk\n",
+    "markor-install.txt": "Success: created install session [2114793568]\nSuccess: streamed 11861047 bytes\nSuccess\n",
+    "markor-user-start.txt": "",
+    "markor-launch.txt": ""
+  },
+  "resource_negative": {
+    "run96": "01a8bdbf-e85d-42b2-90cd-fb490c7a393a",
+    "kernel_message": "nov 02 17:59:25 archtv kernel: cgroup: fork rejected by pids controller in /system.slice/archtv-apex-1793642235949821567.service",
+    "original_app_log": "pthread_create clone Try again, libc++abi thread constructor EAGAIN, hwservicemanager SIGABRT before cohort closure",
+    "decision": "Integrated TasksMax1024 only; pureAPEX remains256. MemoryMax4G/Swap1G/CPUQuota200% retained."
+  },
+  "live_systemd_sample": {
+    "TasksMax": 1024,
+    "TasksCurrent": 248,
+    "MemoryCurrent": 1217921024,
+    "MemoryPeak": 1284321280,
+    "scope": "Single live systemctl measurement recorded in tool transcript; not a final peak, per-app resource isolation or general stability proof."
+  },
+  "packaging_decisions": [
+    "Supervisor is built with locked offline Cargo from current hashed Rust inputs, not copied from apex6. Explicit /archtv/lib Linux loader/RPATH; CLI startup bounded300000ms.",
+    "Source guard now covers Rust crate, execution recipe and coupled runtime watchdogs. Native total300s, original package wait180s, root limits345/350/370 and renderer400/420/430. Package poll predicate still requires both installed path and original launch Status ok.",
+    "Existing log capture drains to64MiB evidence file independently of first512 inline summary. Preopened metadata FD survives private pivot; I/O metadata failure cannot suppress native result. No new monitor or notification producer."
+  ],
+  "rejected_attempts": {
+    "91": "Source requested300000 but older supervisor bounded180000; no Bionic admission.",
+    "92": "Builder still copied old apex6 supervisor; no Bionic admission.",
+    "93": "Fresh Rust binary had host /lib64 ELF interpreter absent in private root; no Bionic admission.",
+    "95": "Original cohort executed; metadata host pathname after pivot masked final export, so inventory/apps not accepted from that runner."
+  },
+  "remaining": [
+    "Original UserController waits because boot has not completed. Original PMS HOME_AFTER count0 and no Android Home idle activity; inspect AOSP lifecycle before adapting Linux host or reusing a narrowly scoped original bootstrap component. No manual boot flags.",
+    "UserDataPreparer recoveryNPE in94 is secondary; not reproduced as initiating failure in97 after task capacity change. Do not implement RecoverySystem or synthesize user serial numbers.",
+    "Markor launch/UI/input/note/persistence/close/reopen unaccepted; data still tmpfs.",
+    "Internal shutdown collection/reboot_on_failure callbacks remain open despite verified outer cleanup.",
+    "R1-MAC permissive/policyload2, Seccomp0, per-app memory controllers, ARM/GMS/DRM open."
+  ],
+  "rea_limit": "REA MCP connection responds; pwntools ELF layout provider unavailable because executable config unset. Error cache/package94-rea-layout-unavailable.json. readelf/host-loader checks are CLI/static, not MCP execution."
+}

@@ -3,7 +3,7 @@
 from pathlib import Path
 import json,subprocess,shutil,hashlib,sys
 r=Path(__file__).resolve().parents[2];out=(r/sys.argv[1]).resolve();out.mkdir()
-tracked_inputs=['reports/android16-package-bootstrap/build-platform-overlay.py','tools/apk/SignPlatformOverlay.java','runtime/aosp/platform-overlay/AndroidManifest.xml','runtime/aosp/platform-overlay/res/values/config.xml','runtime/aosp/platform-overlay/overlay-config.xml','reports/android16-apex-bootstrap/devices.py','runtime/aosp/linux-services/initial-apk-profile.json','runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java','runtime/aosp/linux-services/install-markor.sh','runtime/aosp/native/linux-property-worker.cpp','runtime/aosp/native/linux-mc1-cohort.h','reports/android16-package-bootstrap/build-integrated.py','runtime/aosp/android16-qpr2/patches/0004-linux-admitted-lazy-services.patch']
+tracked_inputs=['Cargo.toml','Cargo.lock','crates/archtv-core/Cargo.toml',*[str(p.relative_to(r)) for p in sorted((r/'crates/archtv-core/src').rglob('*.rs'))],'crates/archtv-core/examples/native_supervisor.rs','reports/android16-package-bootstrap/execute-integrated.py','reports/android16-package-bootstrap/integrated-session.sh','reports/android16-apex-bootstrap/run.py','reports/android16-package-bootstrap/build-platform-overlay.py','tools/apk/SignPlatformOverlay.java','runtime/aosp/platform-overlay/AndroidManifest.xml','runtime/aosp/platform-overlay/res/values/config.xml','runtime/aosp/platform-overlay/overlay-config.xml','reports/android16-apex-bootstrap/devices.py','runtime/aosp/linux-services/initial-apk-profile.json','runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java','runtime/aosp/linux-services/install-markor.sh','runtime/aosp/native/linux-property-worker.cpp','runtime/aosp/native/linux-mc1-cohort.h','reports/android16-package-bootstrap/build-integrated.py','runtime/aosp/android16-qpr2/patches/0004-linux-admitted-lazy-services.patch']
 source_hashes={n:hashlib.sha256((r/n).read_bytes()).hexdigest() for n in tracked_inputs}
 (out/'source-inputs.json').write_text(json.dumps(source_hashes,indent=2)+'\n')
 overlay=r/'dist/aosp16/platform-overlay-build-2'
@@ -27,10 +27,17 @@ rc=rc.replace('    group system graphics\n','    group system graphics net_bw_st
 lines=rc.splitlines();lines[0]='service archtv-selected-services /system/bin/app_process64 -Xmx768m -Xnoimage-dex2oat /system/bin --application --nice-name=archtv-selected-services org.archtv.aosplinux.ServiceLauncher --packages'
 lines=[l for l in lines if not any(l.startswith('    setenv '+n+' ') for n in ['BOOTCLASSPATH','DEX2OATBOOTCLASSPATH','SYSTEMSERVERCLASSPATH','STANDALONE_SYSTEMSERVER_JARS'])];(entry/'selected-services.rc').write_text('\n'.join(lines)+'\n')
 old=r/'dist/aosp16/apex-cohort-build-6';commands=[]
-for n in ['graphics-client','cargo/debug/examples/native_supervisor']:
+for n in ['graphics-client']:
  p=out/n;p.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(old/n,p)
 def run(argv):
  p=subprocess.run(argv,capture_output=True,text=True);commands.append({'argv':argv,'exit':p.returncode,'stderr':p.stderr});(out/'build.json').write_text(json.dumps({'commands':commands},indent=2));assert p.returncode==0,p.stderr
+# Build the supervisor from the current frozen Rust inputs; never inherit an
+# older executable whose CLI/lifetime contract differs from this candidate.
+rust_cache=Path('/home/tv/.cache/archtv/native-supervisor-current')
+run(['cargo','rustc','--offline','--locked','--manifest-path',str(r/'Cargo.toml'),'-p','archtv-core','--example','native_supervisor','--target-dir',str(rust_cache),'--','-C','link-arg=-Wl,--dynamic-linker,/archtv/lib/ld-linux-x86-64.so.2','-C','link-arg=-Wl,-rpath,/archtv/lib'])
+(out/'cargo/debug/examples').mkdir(parents=True,exist_ok=True)
+shutil.copy2(rust_cache/'debug/examples/native_supervisor',out/'cargo/debug/examples/native_supervisor')
+assert '/archtv/lib/ld-linux-x86-64.so.2' in subprocess.check_output(['readelf','-l',str(out/'cargo/debug/examples/native_supervisor')],text=True), 'Linux payload interpreter contract missing'
 for c in json.loads((old/'build.json').read_text())['commands']:
  argv=[a.replace(str(old),str(out)).replace('property-actions-source-2','property-actions-source-3').replace('property-actions-build-3','property-actions-build-4') for a in c['argv']]
  run(argv)

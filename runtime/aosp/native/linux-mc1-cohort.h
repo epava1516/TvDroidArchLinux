@@ -766,7 +766,7 @@ class LinuxMc1Cohort {
             peer->AddReapCallback([this](const siginfo_t& info){client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;});
             services.AddService(std::move(*package_client));
             if(auto result=peer->ExecStart();!result.ok())return result;
-            if(auto result=Wait(tick,[this]{return client_done_;},120);!result.ok())return result;
+            if(auto result=Wait(tick,[this]{return client_done_;},180);!result.ok())return result;
             if(!client_ok_)return android::base::Error()<<"Original package client did not observe installed Markor";
             std::fprintf(stderr,"PACKAGES_ORIGINAL_BINDER_QUERY_RETURNED REQUIRES_INSTALL_LAUNCH\n");
         }

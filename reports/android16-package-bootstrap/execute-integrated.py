@@ -17,7 +17,7 @@ exec(compile(recipe.replace(last,''),'<graphics materialization>','exec'),scope)
 text=scope['base'];text=text.replace("1<<36 if identity['kind']=='SUSPEND' else","(1<<36)|(1<<35)|(1<<23) if identity['kind']=='SERVICES' else 1<<36 if identity['kind']=='SUSPEND' else");text=text.replace("('mc3-live-'+str(time.time_ns()))","('apex-live-'+str(time.time_ns()))")
 text=text.replace('dist/aosp16/sf-cohort-build-32/payload-2.ext4',str(payload.relative_to(r)))
 text=text.replace('len(observed_logs)<512','len(observed_logs)<4096')
-text=text.replace("'--display-integration'","'--packages-integration'").replace("'--startup-ms','45000'","'--startup-ms','150000'").replace("'--observe-ms','30000'","'--observe-ms','3000'")
+text=text.replace("'--display-integration'","'--packages-integration'").replace("'--startup-ms','45000'","'--startup-ms','300000'").replace("'--observe-ms','30000'","'--observe-ms','3000'")
 text=text.replace('root.mkdir()\n',"""root.mkdir()
 import importlib.util
 factory_caps=int(next(l.split(':',1)[1].strip() for l in Path('/proc/self/status').read_text().splitlines() if l.startswith('CapEff:')),16)
@@ -70,7 +70,7 @@ for name in ['markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
 root_code+="\np=root/'data/local/tmp/archtv-mc1/selected-failure.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
 root_code+="\np=root/'data/local/tmp/archtv-mc1/ranging-service-info.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
 root_code+="\np=root/'data/local/tmp/archtv-mc1/selected-wait.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
-for output_name in ['platform-capabilities.txt','linux-application-profile.txt','markor-postcommit-path.txt','markor-postcommit-dump.txt','markor-installed-bytes.txt']:
+for output_name in ['markor-boot-before-user.txt','platform-capabilities.txt','linux-application-profile.txt','markor-postcommit-path.txt','markor-postcommit-dump.txt','markor-installed-bytes.txt']:
  root_code+="\np=root/'data/local/tmp/archtv-mc1'/"+repr(output_name)+";p.touch(mode=0o600);os.chown(p,1000,1000)"
 
 root_code+="\np=root/'data/local/tmp/archtv-mc1/markor-install.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
@@ -124,7 +124,25 @@ mount('-t','devpts','-o','newinstance,ptmxmode=0666,mode=0620,gid=5','devpts',ro
 text=text.replace("selinux=root/'sys/fs/selinux';",network_code+"\nselinux=root/'sys/fs/selinux';",1)
 text=text.replace("stdin_fd=os.open(root/'dev/null'", "monitor_log=(out/'device-monitor.log').open('w')\nmonitor=subprocess.Popen([sys.executable,str(r/'reports/android16-apex-bootstrap/devices.py'),str(root),str(out),str(os.getpid())],stdout=monitor_log,stderr=subprocess.STDOUT)\nprint('APEX_DEVICE_MONITOR_OWNED pid='+str(monitor.pid),flush=True)\nstdin_fd=os.open(root/'dev/null'",1)
 text=text.replace("log_observer=None;observed_logs=[];log_stop=False", "live_log=(out/'android-log-live.jsonl').open('w')\nlog_observer=None;observed_logs=[];log_stop=False")
-text=text.replace('observed_logs.append(item)',"observed_logs.append(item);live_log.write(json.dumps(item)+'\\n');live_log.flush()")
+# The inline diagnostic summary must not stop draining the real log stream.
+# Keep its memory bound, and persist the late user/launch failure in the
+# existing evidence file under a separate explicit byte limit.
+text=text.replace('and len(observed_logs)<4096','')
+text=text.replace("live_log=(out/'android-log-live.jsonl').open('w')", "live_log=(out/'android-log-live.jsonl').open('w')\nlog_capture_file=(out/'android-log-capture.json').open('w')\nlog_capture={'records':0,'bytes':0,'limit_bytes':67108864,'truncated':False,'inline_limit_records':512}")
+text=text.replace('observed_logs.append(item)', """item['observed_monotonic']=time.monotonic()
+    encoded=json.dumps(item)+'\\n';size=len(encoded.encode())
+    if log_capture['bytes']+size<=log_capture['limit_bytes']:
+     live_log.write(encoded);live_log.flush();log_capture['bytes']+=size;log_capture['records']+=1
+    else:log_capture['truncated']=True
+    if len(observed_logs)<log_capture['inline_limit_records']:observed_logs.append(item)""")
+text=text.replace("if p.returncode!=0:\n", """# Preopened evidence FD survives pivot_root; no host path is reopened here.
+try:
+ log_capture_file.write(json.dumps(log_capture,indent=2)+'\\n');log_capture_file.flush();log_capture_file.close()
+except OSError as error:
+ print('LOG_CAPTURE_METADATA_FAILURE '+repr(error),flush=True)
+if p.returncode!=0:
+""",1)
+
 text=text.replace('log_stop=True\n','monitor.terminate();monitor.wait(timeout=12);monitor_log.close()\nlog_stop=True\n',1)
 text=text.replace("os.chown(root/'data/local/tmp/archtv-mc1',2000,2000)","os.chown(root/'data/local/tmp/archtv-mc1',2000,1000);os.chmod(root/'data/local/tmp/archtv-mc1',0o750)")
 # The existing graphics verifier retains its eight exact service identities.
@@ -173,7 +191,7 @@ for file in sorted(Path('/metadata/aconfig').rglob('*')):
  info=file.stat()
  metadata.append({'path':str(file),'uid':info.st_uid,'gid':info.st_gid,'mode':oct(stat.S_IMODE(info.st_mode)),'context':os.getxattr(file,'security.selinux').decode().rstrip(chr(0)),'bytes':info.st_size,'sha256':hashlib.sha256(file.read_bytes()).hexdigest() if info.st_size<=33554432 else None})
 print('ACONFIG_ORIGINAL_METADATA_FILES '+json.dumps({'files':metadata,'truncated':metadata_truncated,'scope':'Original daemon outputs, not flag or permission acceptance'}),flush=True)
-for name in ['platform-capabilities.txt','linux-application-profile.txt','markor-postcommit-path.txt','markor-postcommit-dump.txt','markor-installed-bytes.txt','unadmitted-artd-control.txt','ranging-service-info.txt','ranging-permission.txt','netd-permission-query.txt','netd-query.txt','netd-interfaces.txt','stats-query.txt','selected-failure.txt','selected-wait.txt','health-query.txt','health-dump.txt','apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt','vold-query.txt','vold-user0.txt','markor-install.txt','markor-path.txt','markor-dump.txt','activity-query.txt','mount-query.txt','markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
+for name in ['markor-boot-before-user.txt','platform-capabilities.txt','linux-application-profile.txt','markor-postcommit-path.txt','markor-postcommit-dump.txt','markor-installed-bytes.txt','unadmitted-artd-control.txt','ranging-service-info.txt','ranging-permission.txt','netd-permission-query.txt','netd-query.txt','netd-interfaces.txt','stats-query.txt','selected-failure.txt','selected-wait.txt','health-query.txt','health-dump.txt','apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt','vold-query.txt','vold-user0.txt','markor-install.txt','markor-path.txt','markor-dump.txt','activity-query.txt','mount-query.txt','markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
  f=Path('/data/local/tmp/archtv-mc1')/name
  if f.is_file():print('PACKAGE_ORIGINAL_OUTPUT '+name+' '+json.dumps(f.read_text()),flush=True)
 if p.returncode!=0:

@@ -16,14 +16,14 @@ import hashlib
 own=['reports/android16-network-bootstrap/boundary.py','reports/android16-apex-bootstrap/devices.py','runtime/aosp/native/linux-exec-context.c','runtime/aosp/native/linux-property-worker.cpp','runtime/aosp/native/linux-mc1-cohort.h','runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java','runtime/aosp/linux-services/org/archtv/aosplinux/ServiceLauncher.java','runtime/aosp/linux-services/install-markor.sh','reports/android16-apex-bootstrap/run.py','reports/android16-apex-bootstrap/execute.py']+[str(n.relative_to(r)) for n in (r/'reports/android16-package-bootstrap').glob('*.py')]+[str(n.relative_to(r)) for n in (r/'reports/android16-package-bootstrap').glob('*.sh')]
 for name in own:
  destination=cp/'code'/name;destination.parent.mkdir(parents=True,exist_ok=True);destination.write_bytes((r/name).read_bytes())
-before['own_code_sha256']={n:hashlib.sha256((r/n).read_bytes()).hexdigest() for n in own};before['payload_sha256']=hashlib.file_digest((r/'dist/aosp16/package-cohort-build-90/payload-2.ext4').open('rb'),'sha256').hexdigest();(cp/'before.json').write_text(json.dumps(before,indent=2)+'\n')
+before['own_code_sha256']={n:hashlib.sha256((r/n).read_bytes()).hexdigest() for n in own};before['payload_sha256']=hashlib.file_digest((r/'dist/aosp16/package-cohort-build-97/payload-2.ext4').open('rb'),'sha256').hexdigest();(cp/'before.json').write_text(json.dumps(before,indent=2)+'\n')
 assert not Path('/run/systemd/system/getty@tty2.service').exists() and not Path('/run/systemd/system/getty@tty2.service').is_symlink()
 subprocess.run(['systemctl','stop','getty@tty2.service'],check=True);subprocess.run(['systemctl','mask','--runtime','getty@tty2.service'],check=True)
 try:
- subprocess.run(['systemd-run','--unit='+unit,'--service-type=exec','--setenv=ARCHTV_CODEX_REMOTE='+os.environ['ARCHTV_CODEX_REMOTE'],'--setenv=ARCHTV_CODEX_THREAD='+os.environ['ARCHTV_CODEX_THREAD'],'--property=User=tv','--property=PAMName=login','--property=TTYPath=/dev/tty2','--property=StandardInput=tty','--property=TTYReset=yes','--property=TTYVHangup=yes','--property=KillMode=control-group','--property=RuntimeMaxSec=190','/usr/bin/bash',str(r/'reports/android16-package-bootstrap/integrated-session.sh'),str(out)],check=True)
+ subprocess.run(['systemd-run','--unit='+unit,'--service-type=exec','--setenv=ARCHTV_CODEX_REMOTE='+os.environ['ARCHTV_CODEX_REMOTE'],'--setenv=ARCHTV_CODEX_THREAD='+os.environ['ARCHTV_CODEX_THREAD'],'--property=User=tv','--property=PAMName=login','--property=TTYPath=/dev/tty2','--property=StandardInput=tty','--property=TTYReset=yes','--property=TTYVHangup=yes','--property=KillMode=control-group','--property=RuntimeMaxSec=420','/usr/bin/bash',str(r/'reports/android16-package-bootstrap/integrated-session.sh'),str(out)],check=True)
  subprocess.run(['chvt','2'],check=True)
  # Native bounded waiter only; no model wakeups while unchanged.
- end=time.monotonic()+200
+ end=time.monotonic()+430
  while time.monotonic()<end:
   if subprocess.run(['systemctl','is-active','--quiet',unit+'.service']).returncode!=0:break
   time.sleep(.25)

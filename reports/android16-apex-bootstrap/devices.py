@@ -212,7 +212,7 @@ def monitor(root,out,parent):
     app_state['owner_cgroup']=owner_cgroup;app_state['owner_namespaces']=namespaces
     app_state['procfs']=str(procbase)
     save(out/'app-start-observations.json',app_state)
-    end=time.monotonic()+200
+    end=time.monotonic()+400
     while time.monotonic()<end and not stopping:
         observe_app_startups(app_log,app_state,out,owner_cgroup,namespaces,procbase)
         if network is not None:

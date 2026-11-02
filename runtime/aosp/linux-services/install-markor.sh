@@ -28,6 +28,8 @@ source_hash=$(/system/bin/sha256sum "$apk_path")
 installed_hash=$(/system/bin/sha256sum "$installed_apk")
 [ "${source_hash%% *}" = "${installed_hash%% *}" ] || exit 1
 /system/bin/printf 'SOURCE %s\nINSTALLED %s\n' "$source_hash" "$installed_hash" > /data/local/tmp/archtv-mc1/markor-installed-bytes.txt
+# Original state immediately before a possibly blocking user-start, not a replacement.
+/system/bin/dumpsys activity processes > /data/local/tmp/archtv-mc1/markor-boot-before-user.txt
 /system/bin/cmd activity start-user -w 0 > /data/local/tmp/archtv-mc1/markor-user-start.txt 2>&1
 resolved=$(/system/bin/cmd package resolve-activity --brief --user 0 -a android.intent.action.MAIN -c android.intent.category.LAUNCHER net.gsantner.markor)
 /system/bin/printf '%s\n' "$resolved" > /data/local/tmp/archtv-mc1/markor-resolve.txt
