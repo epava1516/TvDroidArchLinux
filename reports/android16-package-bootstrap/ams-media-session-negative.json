@@ -1,0 +1,38 @@
+{
+  "kind": "Real integrated execution; failure, no APK acceptance",
+  "checkpoint": "/home/tv/recuperacion-archtv/f9359d3b-e1a6-4f14-8bea-604316728294-markor-launch",
+  "run_id": "f9359d3b-e1a6-4f14-8bea-604316728294",
+  "input": "dist/aosp16/package-cohort-build-58/payload-2.ext4",
+  "input_sha256": "5fe4107517091545dd54393b0a4896a5273390db3bad87e3c24f3e89947da804",
+  "result_sha256": "c0397a2eff42d6fbf674dc8746bdee28f3ec981a578bde2560bcd1475d57198c",
+  "run_log_sha256": "6512babbf5bbbe4787cbde232d32a388c9014d601582b850cc4a6b9b1403270f",
+  "result": {
+    "outer_exit": 1,
+    "native_complete_inventory_verified": true,
+    "active_loops": "",
+    "final_dm": []
+  },
+  "bpf_cleanup_verified": true,
+  "primary_failure": "ORIGINAL_ASYNC_FATAL thread=bgres-controller\njava.lang.NullPointerException: Attempt to invoke interface method 'void android.media.session.ISessionManager.addSessionsListener(android.media.session.IActiveSessionsListener, android.content.ComponentName, int)' on a null object reference\n\tat android.media.session.MediaSessionManager.addOnActiveSessionsChangedListener(MediaSessionManager.java:389)\n\tat android.media.session.MediaSessionManager.addOnActiveSessionsChangedListener(MediaSessionManager.java:368)\n\tat com.android.server.am.AppMediaSessionTracker.onBgMediaSessionMonitorEnabled(AppMediaSessionTracker.java:86)\n\tat com.android.server.am.AppMediaSessionTracker.-$$Nest$monBgMediaSessionMonitorEnabled(AppMediaSessionTracker.java:0)\n\tat com.android.server.am.AppMediaSessionTracker$AppMediaSessionPolicy.onTrackerEnabled(AppMediaSessionTracker.java:211)\n\tat com.android.server.am.BaseAppStatePolicy.updateTrackerEnabled(BaseAppStatePolicy.java:70)\n\tat com.android.server.am.BaseAppStatePolicy.onSystemReady(BaseAppStatePolicy.java:102)\n\tat com.android.server.am.BaseAppStateEventsTracker$BaseAppStateEventsPolicy.onSystemReady(BaseAppStateEventsTracker.java:248)\n\tat com.android.server.am.BaseAppStateTracker$Injector.onSystemReady(BaseAppStateTracker.java:322)\n\tat com.android.server.am.BaseAppStateTracker.onSystemReady(BaseAppStateTracker.java:189)\n\tat com.android.server.am.AppRestrictionController.lambda$onSystemReady$0(AppRestrictionController.java:1531)\n\tat com.android.server.am.AppRestrictionController.$r8$lambda$cCOwIzhwVMmMXJ70sQK3rFQtGL0(AppRestrictionController.java:0)\n\tat com.android.server.am.AppRestrictionController$$ExternalSyntheticLambda4.run(R8$$SyntheticClass:0)\n\tat android.os.Handler.handleCallback(Handler.java:1070)\n\tat android.os.Handler.dispatchMessage(Handler.java:125)\n\tat android.os.Looper.dispatchMessage(Looper.java:333)\n\tat android.os.Looper.loopOnce(Looper.java:263)\n\tat android.os.Looper.loop(Looper.java:367)\n\tat android.os.HandlerThread.run(HandlerThread.java:139)\n",
+  "scope": "Original notification/LockSettings/DevicePolicy group progresses past preceding missing manager failures. AMS async media-session tracker finds no ISessionManager. This is not general credential/notification/JobScheduler functionality acceptance.",
+  "next": "Start original MediaSessionService before phase500 and run together. Resolve original AMS callback lifecycle restriction before accepting Activity resume.",
+  "security": "Permissive; R1-MAC authorization/isolation not demonstrated",
+  "consumption": "active owner consumed; no queued continuation",
+  "followup": {
+    "checkpoint": "/home/tv/recuperacion-archtv/e408ec72-154e-46e1-a15b-065bfe8ea0ae-markor-launch",
+    "run_id": "e408ec72-154e-46e1-a15b-065bfe8ea0ae",
+    "input": "dist/aosp16/package-cohort-build-59/payload-2.ext4",
+    "input_sha256": "8b4a99e058f4a3803d57d8ddfb7663d1043d84f9ae6cb87c0e8a7777ea7614d2",
+    "result_sha256": "a57b298bc4e4ad10d90bd96c0a01decb32f21e4ddb5b7b90d39cdf0e858cf075",
+    "run_log_sha256": "78fcefe1784095281f022a7f93a625b0d29d9358d3e751374c0c7e01e5e46b86",
+    "primary_failure": "java.lang.RuntimeException: Failed to start service com.android.server.media.MediaSessionService: onStart threw an exception\n\tat com.android.server.SystemServiceManager.startService(SystemServiceManager.java:282)\n\tat com.android.server.SystemServiceManager.startService(SystemServiceManager.java:257)\n\tat java.lang.reflect.Method.invoke(Native Method)\n\tat org.archtv.aosplinux.SelectedServices.call(SelectedServices.java:10)\n\tat org.archtv.aosplinux.SelectedServices.start(SelectedServices.java:20)\n\tat org.archtv.aosplinux.SelectedServices.main(SelectedServices.java:310)\n\tat java.lang.reflect.Method.invoke(Native Method)\n\tat org.archtv.aosplinux.ServiceLauncher.main(ServiceLauncher.java:37)\n\tat com.android.internal.os.RuntimeInit.nativeFinishInit(Native Method)\n\tat com.android.internal.os.RuntimeInit.main(RuntimeInit.java:366)\nCaused by: java.lang.NullPointerException: Attempt to invoke interface method 'void android.media.IAudioService.registerPlaybackCallback(android.media.IPlaybackConfigDispatcher)' on a null object reference\n\tat android.media.AudioManager.registerAudioPlaybackCallback(AudioManager.java:5852)\n\tat com.android.server.media.AudioPlayerStateMonitor.<init>(AudioPlayerStateMonitor.java:159)\n\tat com.android.server.media.AudioPlayerStateMonitor.getInstance(AudioPlayerStateMonitor.java:153)\n\tat com.android.server.media.MediaSessionService.onStart(MediaSessionService.java:275)\n\tat com.android.server.SystemServiceManager.startService(SystemServiceManager.java:280)\n\t... 9 more\n",
+    "outer_exit": 1,
+    "native_complete_inventory_verified": true,
+    "cleanup": {
+      "bpf": true,
+      "loops": "",
+      "dm": []
+    },
+    "decision": "Integrate original AudioService lifecycle plus original audioserver, preserving daemon RC identity/capabilities; test real native dependencies. No fake IAudioService or absent HAL success."
+  }
+}

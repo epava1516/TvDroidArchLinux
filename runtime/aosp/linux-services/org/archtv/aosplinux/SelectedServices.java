@@ -258,7 +258,6 @@ public final class SelectedServices {
                 // Original modular loader and lifecycle publish statsmanager/statscompanion.
                 call(managerType,manager,"startServiceFromJar",new Class<?>[]{String.class,String.class},
                     "com.android.server.stats.StatsCompanion$Lifecycle","/apex/com.android.os.statsd/javalib/service-statsd.jar");
-                start(manager,managerType,"com.android.server.DeviceIdleController");
                 start(manager,managerType,"com.android.server.UiModeManagerService");
                 // Original app configuration/hibernation/ART group and order.
                 start(manager,managerType,"com.android.server.locales.LocaleManagerService");
@@ -270,6 +269,10 @@ public final class SelectedServices {
                 start(manager,managerType,"com.android.server.apphibernation.AppHibernationService");
                 call(Class.forName("com.android.server.pm.DexOptHelper"),null,"initializeArtManagerLocal",new Class<?>[]{contextType,packagesService.getClass()},context,packagesService);
                 System.err.println("ORIGINAL_ART_MANAGERS_INITIALIZED NOT_ARTD_OPERATION_ACCEPTANCE");
+                // Original credential/policy services before notification phase500.
+                start(manager,managerType,"com.android.server.locksettings.LockSettingsService$Lifecycle");
+                start(manager,managerType,"com.android.server.DeviceIdleController");
+                start(manager,managerType,"com.android.server.devicepolicy.DevicePolicyManagerService$Lifecycle");
                 start(manager,managerType,"com.android.server.dreams.DreamManagerService");
                 // Original SystemServer network subsystem ordering. Native netd
                 // and real original BPF maps must already exist; no local stub.
@@ -294,6 +297,17 @@ public final class SelectedServices {
                 call(sm,null,"addService",new Class<?>[]{String.class,ib},"pac_proxy",pacProxy);
                 call(managerType,manager,"startServiceFromJar",new Class<?>[]{String.class,String.class},"com.android.server.ConnectivityServiceInitializer",connectivityJar);
                 call(networkPolicyType,networkPolicy,"bindConnectivityManager",new Class<?>[0]);
+                // Original notification/channel/storage-monitor/scheduling group.
+                // AMS's FGS tracker registers a real system notification listener.
+                start(manager,managerType,"com.android.server.bitmapoffload.BitmapOffloadService");
+                start(manager,managerType,"com.android.server.notification.NotificationManagerService");
+                Class<?> channels=Class.forName("com.android.internal.notification.SystemNotificationChannels");
+                call(channels,null,"removeDeprecated",new Class<?>[]{contextType},context);
+                call(channels,null,"createAll",new Class<?>[]{contextType},context);
+                start(manager,managerType,"com.android.server.storage.DeviceStorageMonitorService");
+                start(manager,managerType,"com.android.server.job.JobSchedulerService");
+                // Original AMS media-session tracker requires the real session manager.
+                start(manager,managerType,"com.android.server.media.MediaSessionService");
                 System.err.println("ORIGINAL_NETWORK_SUBSYSTEM_STARTED REQUIRES_BINDER_OPERATIONS_NOT_INTERNET_ACCEPTANCE");
                 call(managerType,manager,"startBootPhase",new Class<?>[]{traceType,int.class},trace,storagePhase);
                 System.err.println("ORIGINAL_SELECTED_PHASE500_RETURNED NOT_BOOT_COMPLETED_OR_APP_ACCEPTANCE");
