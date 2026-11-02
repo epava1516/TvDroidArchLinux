@@ -3,7 +3,7 @@
 from pathlib import Path
 import json,subprocess,shutil,hashlib,sys
 r=Path(__file__).resolve().parents[2];out=(r/sys.argv[1]).resolve();out.mkdir()
-tracked_inputs=['runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java','runtime/aosp/linux-services/install-markor.sh','runtime/aosp/native/linux-property-worker.cpp','runtime/aosp/native/linux-mc1-cohort.h','reports/android16-package-bootstrap/build-integrated.py','runtime/aosp/android16-qpr2/patches/0004-linux-admitted-lazy-services.patch']
+tracked_inputs=['reports/android16-apex-bootstrap/devices.py','runtime/aosp/linux-services/initial-apk-profile.json','runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java','runtime/aosp/linux-services/install-markor.sh','runtime/aosp/native/linux-property-worker.cpp','runtime/aosp/native/linux-mc1-cohort.h','reports/android16-package-bootstrap/build-integrated.py','runtime/aosp/android16-qpr2/patches/0004-linux-admitted-lazy-services.patch']
 source_hashes={n:hashlib.sha256((r/n).read_bytes()).hexdigest() for n in tracked_inputs}
 (out/'source-inputs.json').write_text(json.dumps(source_hashes,indent=2)+'\n')
 entry=out/'entry'
@@ -34,6 +34,14 @@ base=r/'dist/aosp16/sf-cohort-build-32';vendor=json.loads((base/'vendor-inputs.j
 for key,value in vendor['files'].items():
  if key=='/vendor/framework/archtv-selected-services.jar':value['source']=str(entry/'archtv-selected-services.jar')
  if key=='/vendor/etc/init/archtv-selected-services.rc':value['source']=str(entry/'selected-services.rc')
+profile=json.loads((r/'runtime/aosp/linux-services/initial-apk-profile.json').read_text())
+profile_lines=[]
+for item in profile['excluded']:
+ source=r/'dist/aosp16/factory-inputs-3/root'/item['apk'].lstrip('/')
+ assert source.stat().st_size==item['bytes'] and hashlib.file_digest(source.open('rb'),'sha256').hexdigest()==item['sha256'],item['apk']
+ profile_lines.append('\t'.join([item['package'],str(Path(item['apk']).parent),Path(item['apk']).name,item['sha256'],str(item['bytes']),str(item['uid']),str(item['gid']),str(item['directory_uid']),str(item['directory_gid'])]))
+(out/'initial-apk-profile.tsv').write_text('\n'.join(profile_lines)+'\n')
+vendor['files']['/vendor/etc/archtv-initial-apk-profile.tsv']={'source':str(out/'initial-apk-profile.tsv'),'context':'u:object_r:vendor_configs_file:s0','mode':0o400}
 vendor['files']['/vendor/bin/install-markor.sh']={'source':str(r/'runtime/aosp/linux-services/install-markor.sh'),'context':'u:object_r:vendor_file:s0','mode':0o644}
 zygote=(r/'dist/aosp16/factory-inputs-3/root/system/etc/init/hw/init.zygote64.rc').read_text()
 assert zygote.count(' --start-system-server')==1

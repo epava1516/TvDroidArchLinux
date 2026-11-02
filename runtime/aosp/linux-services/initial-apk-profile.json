@@ -1,0 +1,77 @@
+{
+  "scope": "Initial offline Markor note journey; not broad compatibility acceptance",
+  "decision": "Linux-owned private read-only APK directory view, not enabled-state filtering or patched APKs; complete original images/APEX and native libraries preserved underneath. These original packages are absent from this profile and their features remain unaccepted. Future subsystem admission must restore and test them coherently.",
+  "source_build": "AOSP official GSI/APEX14401865 BP4A.251205.006",
+  "excluded": [
+    {
+      "package": "com.android.networkstack",
+      "apk": "/system/priv-app/NetworkStack/NetworkStack.apk",
+      "bytes": 1531814,
+      "sha256": "8beadbf45d6a49cf7a6a8c0847cba56b7ab438203933813446402b01b170774d",
+      "uid": 0,
+      "gid": 0,
+      "directory_uid": 0,
+      "directory_gid": 0
+    },
+    {
+      "package": "com.android.ons",
+      "apk": "/system/priv-app/ONS/ONS.apk",
+      "bytes": 107025,
+      "sha256": "41e2bb38f863fa507c95a3eca2b77f9f4023ef45ca7db978f675cdc46f3ed8fc",
+      "uid": 0,
+      "gid": 0,
+      "directory_uid": 0,
+      "directory_gid": 0
+    },
+    {
+      "package": "com.android.se",
+      "apk": "/system/app/SecureElement/SecureElement.apk",
+      "bytes": 127390,
+      "sha256": "cab5c602addce6963d697b857e96abe96266f5e89b2714046ac5d50649c44541",
+      "uid": 0,
+      "gid": 0,
+      "directory_uid": 0,
+      "directory_gid": 0
+    },
+    {
+      "package": "com.android.cellbroadcastservice",
+      "apk": "/apex/com.android.cellbroadcast/priv-app/CellBroadcastServiceModule@BP4A.251205.006/CellBroadcastServiceModule.apk",
+      "bytes": 205713,
+      "sha256": "c56a2e200a08259b4ba0998a477fe32bc407c850137861b0714adbc10d5501c1",
+      "uid": 1000,
+      "gid": 1000,
+      "directory_uid": 0,
+      "directory_gid": 2000
+    },
+    {
+      "package": "com.android.networkstack.tethering",
+      "apk": "/apex/com.android.tethering/priv-app/TetheringNext@BP4A.251205.006/TetheringNext.apk",
+      "bytes": 1145244,
+      "sha256": "30088f0504ca6eb1d687c6996efb1536e59664e6165df38f3275ac9d2c2c9a63",
+      "uid": 1000,
+      "gid": 1000,
+      "directory_uid": 0,
+      "directory_gid": 2000
+    },
+    {
+      "package": "com.android.phone",
+      "apk": "/system/priv-app/TeleService/TeleService.apk",
+      "bytes": 9871192,
+      "sha256": "d0cd9c12da5247544d63f1026b8f65744c123ee41254a961603dac864e04824b",
+      "uid": 0,
+      "gid": 0,
+      "directory_uid": 0,
+      "directory_gid": 0
+    },
+    {
+      "package": "com.android.systemui",
+      "apk": "/system/system_ext/priv-app/SystemUI/SystemUI.apk",
+      "bytes": 39580926,
+      "sha256": "3088bcffa8ba68759d8d32e09a55b49bc3a80ef82362d3be078b1488501a1568",
+      "uid": 0,
+      "gid": 0,
+      "directory_uid": 0,
+      "directory_gid": 0
+    }
+  ]
+}

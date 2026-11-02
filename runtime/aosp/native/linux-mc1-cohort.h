@@ -9,6 +9,8 @@
 #include "mount_namespace.h"
 #include "util.h"
 #include <sys/mount.h>
+#include <sys/statvfs.h>
+#include <dlfcn.h>
 #include "action.h"
 #include "action_manager.h"
 #include <android-base/file.h>
@@ -527,9 +529,63 @@ class LinuxMc1Cohort {
         if(security_getenforce()!=expected_mode_)return android::base::Error()<<"MC3 security mode changed";
         return {};
     }
+    android::base::Result<void> ApplyLinuxApplicationView() {
+        // Owner is already in the original default APEX mount namespace. Only
+        // this cohort's view changes; original image/APK bytes remain untouched.
+        auto ns=android::init::GetCurrentMountNamespace();
+        if(!ns.ok() || *ns!=android::init::NS_DEFAULT)return android::base::Error()<<"APK profile requires actual default namespace";
+        std::string data;
+        if(!android::base::ReadFileToString("/vendor/etc/archtv-initial-apk-profile.tsv",&data) || data.size()>16384)
+            return android::base::Error()<<"Missing or excessive selected APK view";
+        // Original Bionic libcrypto export, not a replacement hash implementation.
+        void* crypto=dlopen("libcrypto.so",RTLD_NOW|RTLD_LOCAL);
+        if(!crypto)return android::base::Error()<<"Original libcrypto unavailable for APK identity";
+        using Sha256=unsigned char*(*)(const unsigned char*,size_t,unsigned char*);
+        auto sha256=reinterpret_cast<Sha256>(dlsym(crypto,"SHA256"));
+        if(!sha256){dlclose(crypto);return android::base::Error()<<"Original SHA256 export absent";}
+        struct CryptoOwner { void* value; ~CryptoOwner(){dlclose(value);} } crypto_owner{crypto};
+        std::istringstream input(data);std::string line;size_t count=0;
+        while(std::getline(input,line)) {
+            std::istringstream fields(line);std::string package,dir,name,expected,extra;uint64_t bytes=0;unsigned uid=0,gid=0,directory_uid=0,directory_gid=0;
+            if(!(fields>>package>>dir>>name>>expected>>bytes>>uid>>gid>>directory_uid>>directory_gid) || (fields>>extra) ||
+               !(dir.rfind("/system/",0)==0 || dir.rfind("/apex/",0)==0) ||
+               dir.find("..")!=std::string::npos || (dir.find("/priv-app/")==std::string::npos && dir.find("/app/")==std::string::npos) ||
+               name.find('/')!=std::string::npos || name.size()<5 || name.substr(name.size()-4)!=".apk" ||
+               expected.size()!=64 || bytes==0 || bytes>128*1024*1024)
+                return android::base::Error()<<"Invalid selected APK directory entry";
+            const auto apk=dir+"/"+name;
+            struct stat file{},directory{};
+            if(lstat(apk.c_str(),&file)!=0 || !S_ISREG(file.st_mode) || file.st_uid!=uid || file.st_gid!=gid || static_cast<uint64_t>(file.st_size)!=bytes ||
+               lstat(dir.c_str(),&directory)!=0 || !S_ISDIR(directory.st_mode) || directory.st_uid!=directory_uid || directory.st_gid!=directory_gid)
+                return android::base::Error()<<"Selected original APK identity metadata mismatch: "<<package;
+            std::string original;
+            if(!android::base::ReadFileToString(apk,&original) || original.size()!=bytes)
+                return android::base::Error()<<"Cannot read selected original APK: "<<package;
+            unsigned char digest[32];if(!sha256(reinterpret_cast<const unsigned char*>(original.data()),original.size(),digest))
+                return android::base::Error()<<"Original SHA256 failed";
+            std::string actual;const char hex[]="0123456789abcdef";
+            for(auto v:digest){actual+=hex[v>>4];actual+=hex[v&15];}
+            if(actual!=expected)return android::base::Error()<<"Original APK hash mismatch: "<<package;
+            char* raw_context=nullptr;
+            if(getfilecon(dir.c_str(),&raw_context)<0)return android::base::Error()<<"Missing original directory label";
+            std::string context(raw_context);freecon(raw_context);
+            if(mount("archtv-initial-apk-profile",dir.c_str(),"tmpfs",MS_NOSUID|MS_NODEV|MS_NOEXEC,"size=4096,mode=0755")!=0 ||
+               setfilecon(dir.c_str(),context.c_str())!=0 ||
+               mount(nullptr,dir.c_str(),nullptr,MS_REMOUNT|MS_RDONLY|MS_NOSUID|MS_NODEV|MS_NOEXEC,"size=4096,mode=0755")!=0)
+                return android::base::ErrnoError()<<"Private selected APK directory mount failed: "<<package;
+            struct statvfs view{};errno=0;
+            if(access(apk.c_str(),F_OK)==0 || errno!=ENOENT || statvfs(dir.c_str(),&view)!=0 || !(view.f_flag&ST_RDONLY))
+                return android::base::Error()<<"Selected APK remains available or view writable: "<<package;
+            std::fprintf(stderr,"LINUX_APK_VIEW_EXCLUDED package=%s original=%s sha256=%s bytes=%llu readonly=1 NOT_FEATURE_COMPATIBILITY\n",package.c_str(),apk.c_str(),actual.c_str(),static_cast<unsigned long long>(bytes));
+            ++count;
+        }
+        if(count!=7)return android::base::Error()<<"Unexpected selected initial APK view size";
+        return {};
+    }
     android::base::Result<void> StartSelectedDisplay(const Tick& tick) {
         std::fprintf(stderr,"SELECTED_SHADER_PRIMING_PROPERTY actual=%s NO_RENDER_ACCEPTANCE\n",android::base::GetProperty("service.sf.prime_shader_cache", "unset").c_str());
         using namespace android::init;
+        if(apex_requested_) { if(auto view=ApplyLinuxApplicationView();!view.ok())return view; }
         auto& services=ServiceList::GetInstance();
         auto parser=CreateParser(ActionManager::GetInstance(),services);
         // Original upstream SystemSuspend keeps its own real wakelock counter

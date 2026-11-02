@@ -32,7 +32,6 @@ public final class SelectedServices {
         int flags=pmType.getField("GET_SHARED_LIBRARY_FILES").getInt(null)
             | pmType.getField("MATCH_DIRECT_BOOT_AWARE").getInt(null)
             | pmType.getField("MATCH_DIRECT_BOOT_UNAWARE").getInt(null);
-        int disabled=pmType.getField("COMPONENT_ENABLED_STATE_DISABLED_USER").getInt(null);
         int componentDisabled=pmType.getField("COMPONENT_ENABLED_STATE_DISABLED").getInt(null);
         int dontKill=pmType.getField("DONT_KILL_APP").getInt(null);
         StringBuilder record=new StringBuilder("SCOPE original PMS bootstrap admission, not APK compatibility or MAC authorization\n");
@@ -48,12 +47,7 @@ public final class SelectedServices {
             // Keep SettingsProvider; do not disable the entire Settings APK for its Home component.
             boolean core=(name.equals("android") || name.equals("com.android.providers.settings"))
                 && uid==1000 && "system".equals(process);
-            if(!core) {
-                call(pmType,pm,"setApplicationEnabledSetting",new Class<?>[]{String.class,int.class,int.class},name,disabled,dontKill);
-                int actual=(Integer)call(pmType,pm,"getApplicationEnabledSetting",new Class<?>[]{String.class},name);
-                if(actual!=disabled)throw new IllegalStateException("PMS bootstrap state mismatch: "+name);
-                record.append("PERSISTENT_DISABLED ").append(name).append(" state=").append(actual).append('\n');
-            }
+            if(!core)throw new IllegalStateException("Unselected persistent package present in actual Linux image view: "+name);
         }
         Class<?> intentType=Class.forName("android.content.Intent");
         Object home=intentType.getConstructor(String.class).newInstance("android.intent.action.MAIN");

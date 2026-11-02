@@ -103,6 +103,8 @@ def monitor(root,out,parent):
     assert libc.prctl(1,signal.SIGTERM,0,0,0)==0  # owned parent's death stops monitor
     assert libc.prctl(38,1,0,0,0)==0  # NNP also applies to this trusted Linux observer
     assert os.getppid()==parent
+    libc.mount.argtypes=[ctypes.c_char_p,ctypes.c_char_p,ctypes.c_char_p,ctypes.c_ulong,ctypes.c_void_p]
+    libc.mount.restype=ctypes.c_int
     state=json.loads((out/'devices.json').read_text());allowed=set(state['allowed_dm_names']);seen=set();live={}
     lib=ctypes.CDLL(str(REPO/'dist/aosp16/linux-selinux-handoff-2/libselinux-3.11/src/libselinux.so.1'),use_errno=True)
     class Opt(ctypes.Structure):_fields_=[('type',ctypes.c_int),('value',ctypes.c_char_p)]
@@ -169,6 +171,7 @@ def monitor(root,out,parent):
                 if key in seen:continue
                 if not uuid:continue
                 assert '/' not in uuid and len(uuid)<129
+                observed=time.monotonic()
                 major,minor=map(int,(p/'dev').read_text().split(':'));node=root/'dev/block'/p.name
                 if node.exists():
                     info=node.stat();assert stat.S_ISBLK(info.st_mode) and info.st_rdev==os.makedev(major,minor)
@@ -180,8 +183,12 @@ def monitor(root,out,parent):
                 # Publish the real writable leaf BEFORE the libdm UUID link.
                 source=p/'queue/read_ahead_kb'
                 target=root/'sys/devices/virtual/block'/p.name/'queue/read_ahead_kb'
-                subprocess.run(['mount','--bind',str(source),str(target)],check=True)
-                subprocess.run(['mount','-o','remount,bind,rw',str(target)],check=True)
+                # Same real bind/remount operations, without two fork/execs per
+                # concurrent DM device before its original libdm UUID deadline.
+                # Keep nosuid/nodev/noexec on the one writable owned-device leaf.
+                for mount_source,flags in [(os.fsencode(source),4096),(None,4096|32|2|4|8)]:
+                    if libc.mount(mount_source,os.fsencode(target),None,flags,None)!=0:
+                        error=ctypes.get_errno();raise OSError(error,os.strerror(error),str(target))
                 unique=root/'dev/block/mapper/by-uuid'/uuid
                 if not unique.is_symlink():unique.symlink_to('../../'+p.name)
                 else:assert os.readlink(unique)=='../../'+p.name
@@ -189,7 +196,7 @@ def monitor(root,out,parent):
                 assert lib.selabel_lookup_raw(handle,ctypes.byref(context),('/dev/block/mapper/by-uuid/'+uuid).encode(),stat.S_IFLNK|0o777)==0
                 assert lib.lsetfilecon_raw(str(unique).encode(),context)==0;lib.freecon(context)
                 seen.add(key);live[uuid]=(p.name,name)
-                state['dm_nodes'].append({'name':name,'kernel_name':p.name,'uuid':uuid,'major':major,'minor':minor,'label':os.getxattr(node,'security.selinux').decode().rstrip('\0')})
+                state['dm_nodes'].append({'name':name,'kernel_name':p.name,'uuid':uuid,'major':major,'minor':minor,'label':os.getxattr(node,'security.selinux').decode().rstrip('\0'),'observed_monotonic':observed,'published_monotonic':time.monotonic(),'publication_seconds':time.monotonic()-observed})
                 save(out/'devices.json',state)
             except OSError as error:
                 if error.errno not in (errno.ENOENT,errno.ENODEV,errno.EINVAL):raise

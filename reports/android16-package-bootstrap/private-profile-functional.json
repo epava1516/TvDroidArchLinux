@@ -1,0 +1,159 @@
+{
+  "scope": "Real private APK view and original PMS inventory verified; reaches original phase600, no new APK stage acceptance",
+  "run_id": "78c29edb-9953-413b-bf61-9ef306fe75e8",
+  "checkpoint": "/home/tv/recuperacion-archtv/78c29edb-9953-413b-bf61-9ef306fe75e8-markor-launch",
+  "input": "dist/aosp16/package-cohort-build-76/payload-2.ext4",
+  "input_sha256": "550848416bf57cd3b5ebce0b5a773db843191f4ee61baead2790c7f9bcdce767",
+  "hashes": {
+    "before.json": "50191ee9e389368bf8a3218a6964380099b124c196028ea415783ffe6387042e",
+    "result.json": "604ae958c1d28da702a3addae6a4f7597a91866ef50cd52184b3ea5e18b3414a",
+    "run.log": "1a988aa0b52661c4b36d64e12e6e989a3a2484cdfcb8bf80a1b258e24d51d1e2",
+    "kernel-apex.log": "2f034e5da6dd5f28b31d05ec73fc0f1ccd09f0fa3d4d516da9d5be1708539c9e",
+    "completion-consumer.json": "691c7b523171382c71deffbe077d1758999d4554badec3d58bdc8c05f29ed9f0"
+  },
+  "profile": {
+    "scope": "Initial offline Markor note journey; not broad compatibility acceptance",
+    "decision": "Linux-owned private read-only APK directory view, not enabled-state filtering or patched APKs; complete original images/APEX and native libraries preserved underneath. These original packages are absent from this profile and their features remain unaccepted. Future subsystem admission must restore and test them coherently.",
+    "source_build": "AOSP official GSI/APEX14401865 BP4A.251205.006",
+    "excluded": [
+      {
+        "package": "com.android.networkstack",
+        "apk": "/system/priv-app/NetworkStack/NetworkStack.apk",
+        "bytes": 1531814,
+        "sha256": "8beadbf45d6a49cf7a6a8c0847cba56b7ab438203933813446402b01b170774d",
+        "uid": 0,
+        "gid": 0,
+        "directory_uid": 0,
+        "directory_gid": 0
+      },
+      {
+        "package": "com.android.ons",
+        "apk": "/system/priv-app/ONS/ONS.apk",
+        "bytes": 107025,
+        "sha256": "41e2bb38f863fa507c95a3eca2b77f9f4023ef45ca7db978f675cdc46f3ed8fc",
+        "uid": 0,
+        "gid": 0,
+        "directory_uid": 0,
+        "directory_gid": 0
+      },
+      {
+        "package": "com.android.se",
+        "apk": "/system/app/SecureElement/SecureElement.apk",
+        "bytes": 127390,
+        "sha256": "cab5c602addce6963d697b857e96abe96266f5e89b2714046ac5d50649c44541",
+        "uid": 0,
+        "gid": 0,
+        "directory_uid": 0,
+        "directory_gid": 0
+      },
+      {
+        "package": "com.android.cellbroadcastservice",
+        "apk": "/apex/com.android.cellbroadcast/priv-app/CellBroadcastServiceModule@BP4A.251205.006/CellBroadcastServiceModule.apk",
+        "bytes": 205713,
+        "sha256": "c56a2e200a08259b4ba0998a477fe32bc407c850137861b0714adbc10d5501c1",
+        "uid": 1000,
+        "gid": 1000,
+        "directory_uid": 0,
+        "directory_gid": 2000
+      },
+      {
+        "package": "com.android.networkstack.tethering",
+        "apk": "/apex/com.android.tethering/priv-app/TetheringNext@BP4A.251205.006/TetheringNext.apk",
+        "bytes": 1145244,
+        "sha256": "30088f0504ca6eb1d687c6996efb1536e59664e6165df38f3275ac9d2c2c9a63",
+        "uid": 1000,
+        "gid": 1000,
+        "directory_uid": 0,
+        "directory_gid": 2000
+      },
+      {
+        "package": "com.android.phone",
+        "apk": "/system/priv-app/TeleService/TeleService.apk",
+        "bytes": 9871192,
+        "sha256": "d0cd9c12da5247544d63f1026b8f65744c123ee41254a961603dac864e04824b",
+        "uid": 0,
+        "gid": 0,
+        "directory_uid": 0,
+        "directory_gid": 0
+      },
+      {
+        "package": "com.android.systemui",
+        "apk": "/system/system_ext/priv-app/SystemUI/SystemUI.apk",
+        "bytes": 39580926,
+        "sha256": "3088bcffa8ba68759d8d32e09a55b49bc3a80ef82362d3be078b1488501a1568",
+        "uid": 0,
+        "gid": 0,
+        "directory_uid": 0,
+        "directory_gid": 0
+      }
+    ]
+  },
+  "actual_private_mount_ledger": [
+    "LINUX_APK_VIEW_EXCLUDED package=com.android.networkstack original=/system/priv-app/NetworkStack/NetworkStack.apk sha256=8beadbf45d6a49cf7a6a8c0847cba56b7ab438203933813446402b01b170774d bytes=1531814 readonly=1 NOT_FEATURE_COMPATIBILITY",
+    "LINUX_APK_VIEW_EXCLUDED package=com.android.ons original=/system/priv-app/ONS/ONS.apk sha256=41e2bb38f863fa507c95a3eca2b77f9f4023ef45ca7db978f675cdc46f3ed8fc bytes=107025 readonly=1 NOT_FEATURE_COMPATIBILITY",
+    "LINUX_APK_VIEW_EXCLUDED package=com.android.se original=/system/app/SecureElement/SecureElement.apk sha256=cab5c602addce6963d697b857e96abe96266f5e89b2714046ac5d50649c44541 bytes=127390 readonly=1 NOT_FEATURE_COMPATIBILITY",
+    "LINUX_APK_VIEW_EXCLUDED package=com.android.cellbroadcastservice original=/apex/com.android.cellbroadcast/priv-app/CellBroadcastServiceModule@BP4A.251205.006/CellBroadcastServiceModule.apk sha256=c56a2e200a08259b4ba0998a477fe32bc407c850137861b0714adbc10d5501c1 bytes=205713 readonly=1 NOT_FEATURE_COMPATIBILITY",
+    "LINUX_APK_VIEW_EXCLUDED package=com.android.networkstack.tethering original=/apex/com.android.tethering/priv-app/TetheringNext@BP4A.251205.006/TetheringNext.apk sha256=30088f0504ca6eb1d687c6996efb1536e59664e6165df38f3275ac9d2c2c9a63 bytes=1145244 readonly=1 NOT_FEATURE_COMPATIBILITY",
+    "LINUX_APK_VIEW_EXCLUDED package=com.android.phone original=/system/priv-app/TeleService/TeleService.apk sha256=d0cd9c12da5247544d63f1026b8f65744c123ee41254a961603dac864e04824b bytes=9871192 readonly=1 NOT_FEATURE_COMPATIBILITY",
+    "LINUX_APK_VIEW_EXCLUDED package=com.android.systemui original=/system/system_ext/priv-app/SystemUI/SystemUI.apk sha256=3088bcffa8ba68759d8d32e09a55b49bc3a80ef82362d3be078b1488501a1568 bytes=39580926 readonly=1 NOT_FEATURE_COMPATIBILITY"
+  ],
+  "original_pms_profile_readback": "SCOPE original PMS bootstrap admission, not APK compatibility or MAC authorization\nPERSISTENT_BEFORE android uid=1000 process=system\nHOME_COMPONENT_DISABLED com.android.provision/com.android.provision.DefaultActivity state=2\nHOME_COMPONENT_DISABLED com.android.launcher3/com.android.launcher3.uioverrides.QuickstepLauncher state=2\nHOME_COMPONENT_DISABLED com.android.settings/com.android.settings.FallbackHome state=2\nPERSISTENT_AFTER android uid=1000 process=system\nHOME_AFTER count=0\n",
+  "original_apex_complete_inventory_verified": true,
+  "dm_publication": {
+    "record": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793627585110112355/devices.json",
+    "sha256": "37d968e2542cf35b40545265cc4ff17fd218316ede91bffb81faf45bb2218dc9",
+    "observations": 26,
+    "max_observation_to_publication_seconds": 0.011121921997983009,
+    "median_observation_to_publication_seconds": 0.004182820001005894,
+    "scope": "Same real leaf bind/remount before actual labeled UUID link, direct Linux syscalls. Timings begin at observer discovery, not kernel creation; one successful41 run does not establish general race elimination or enforcing."
+  },
+  "original_filesystem_metadata": {
+    "record": "/home/tv/.cache/archtv/cellbroadcast-profile-study/all-metadata.json",
+    "sha256": "cd9742ccec567533b72b16463a28a5754df7696224e6c7c0c8b461c52b451784",
+    "method": "Offline original GSI/APEX ext4 debugfs metadata, not REA execution"
+  },
+  "primary_failure": "java.lang.RuntimeException: Original AMS callback failed\n\tat org.archtv.aosplinux.SelectedServices.lambda$main$2(SelectedServices.java:415)\n\tat org.archtv.aosplinux.SelectedServices$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)\n\tat com.android.server.am.ActivityManagerService.systemReady(ActivityManagerService.java:9113)\n\tat java.lang.reflect.Method.invoke(Native Method)\n\tat org.archtv.aosplinux.SelectedServices.call(SelectedServices.java:10)\n\tat org.archtv.aosplinux.SelectedServices.main(SelectedServices.java:417)\n\tat java.lang.reflect.Method.invoke(Native Method)\n\tat org.archtv.aosplinux.ServiceLauncher.main(ServiceLauncher.java:37)\n\tat com.android.internal.os.RuntimeInit.nativeFinishInit(Native Method)\n\tat com.android.internal.os.RuntimeInit.main(RuntimeInit.java:366)\nCaused by: java.lang.RuntimeException: Failed to boot service com.android.server.notification.NotificationManagerService: onBootPhase threw an exception during phase 600\n\tat com.android.server.SystemServiceManager.startBootPhase(SystemServiceManager.java:321)\n\tat java.lang.reflect.Method.invoke(Native Method)\n\tat org.archtv.aosplinux.SelectedServices.call(SelectedServices.java:10)\n\tat org.archtv.aosplinux.SelectedServices.lambda$main$2(SelectedServices.java:413)\n\t... 9 more\nCaused by: java.lang.IllegalStateException: android.os.ServiceManager$ServiceNotFoundException: No service published for: color_display\n\tat android.hardware.display.ColorDisplayManager$ColorDisplayManagerInternal.getInstance(ColorDisplayManager.java:624)\n\tat android.hardware.display.ColorDisplayManager.<init>(ColorDisplayManager.java:188)\n\tat android.app.SystemServiceRegistry$28.createService(SystemServiceRegistry.java:613)\n\tat android.app.SystemServiceRegistry$28.createService(SystemServiceRegistry.java:610)\n\tat android.app.SystemServiceRegistry$CachedServiceFetcher.getService(SystemServiceRegistry.java:2531)\n\tat android.app.SystemServiceRegistry.getSystemService(SystemServiceRegistry.java:2063)\n\tat android.app.ContextImpl.getSystemService(ContextImpl.java:2434)\n\tat android.content.Context.getSystemService(Context.java:4901)\n\tat com.android.server.notification.DefaultDeviceEffectsApplier.<init>(DefaultDeviceEffectsApplier.java:73)\n\tat com.android.server.notification.NotificationManagerService.onBootPhase(NotificationManagerService.java:3534)\n\tat com.android.server.notification.NotificationManagerService.onBootPhase(NotificationManagerService.java:3483)\n\tat com.android.server.SystemServiceManager.startBootPhase(SystemServiceManager.java:318)\n\t... 12 more\nCaused by: android.os.ServiceManager$ServiceNotFoundException: No service published for: color_display\n\tat android.os.ServiceManager.getServiceOrThrow(ServiceManager.java:203)\n\tat android.hardware.display.ColorDisplayManager$ColorDisplayManagerInternal.getInstance(ColorDisplayManager.java:620)\n\t... 23 more\n",
+  "result": {
+    "outer_exit": 1,
+    "elapsed_seconds": 145.59245610237122,
+    "active_loops": "",
+    "final_dm": [],
+    "bpf_cleanup_verified": true
+  },
+  "negative_predecessors": [
+    {
+      "candidate": 74,
+      "checkpoint": "/home/tv/recuperacion-archtv/6a105805-6f6c-45b2-b3c3-2b0a5b6d86ac-markor-launch",
+      "hashes": {
+        "before.json": "56274dfbd2bd730dc85294b4f7b3c409bbf320fd2482a5383fe34a7d7466c9f6",
+        "result.json": "ed1b9a2a3c300b17a31aff75e2f8cce870587869343d0c80845e00b07ed7b0cc",
+        "run.log": "b032e8de2b8b5573993b3cc615b8caee125796268861af703f214bc3a5a0b706",
+        "kernel-apex.log": "f01cdfd4b104bb988fc05841635e5c1dbf18496a763efcf057a6ce84f1ccc4d6"
+      },
+      "outer_exit": 1,
+      "scope": "74 stops on real APEX APK uid mismatch; original filesystem metadata1000:1000 fixed, not permissions relaxed.75 stops before profile at original APEX dm UUID paths unavailable:39/41; preserved, not readiness accepted."
+    },
+    {
+      "candidate": 75,
+      "checkpoint": "/home/tv/recuperacion-archtv/2d70b437-c443-4432-aaf3-fd4facd81c21-markor-launch",
+      "hashes": {
+        "before.json": "abeb3f911daf7a1078e0f4760264592ac0c2fb0e9f0445016a0d0271981c50f5",
+        "result.json": "9579964dcedf1334030cda95c361ead6b41245858bd1f26383d7f34763b95ce2",
+        "run.log": "e324caa1ed86f1d97b3b044dbbd038cef66d3b3aa3df0fce71ecbcf904e481e1",
+        "kernel-apex.log": "0d5a28522e4fe691840ef4deb76bc0c94287483ca80c4991b1b17b7dd1a70144"
+      },
+      "outer_exit": 1,
+      "scope": "74 stops on real APEX APK uid mismatch; original filesystem metadata1000:1000 fixed, not permissions relaxed.75 stops before profile at original APEX dm UUID paths unavailable:39/41; preserved, not readiness accepted."
+    }
+  ],
+  "limits": [
+    "Only initial bootstrap view; original images/APK bytes and native libraries unchanged underneath, original framework/PMS not patched",
+    "Network/tethering, telephony/cellbroadcast, Secure Element and SystemUI APK functions are omitted, not compatible; broad roadmap remains open and must admit complete original subsystems when required",
+    "Original phase600 failed because NotificationManager.DefaultDeviceEffectsApplier requires color_display; callback did not return. No new installation/launch/UI/input/note/persistence/close/reopen accepted",
+    "Internal MC1 close incomplete after shutdown; outer resources closed, full service lifetime not accepted",
+    "Readonly/bootstrap profile is not MAC authorization or malicious APK isolation. R1-MAC permissive, ARM/GMS/DRM open",
+    "No policy/enforcing/sysctl/reboot/global host configuration change this milestone"
+  ],
+  "next": "Integrate original ColorDisplayService with its real display dependencies/order before phase600, then original AMS return, install bytes/signature readback, real user/attach/launch; no fake boot flags or services",
+  "notification": "exact UUID active-owned and consumed, gate absent, no continuation queued"
+}
