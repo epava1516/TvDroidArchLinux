@@ -1,0 +1,35 @@
+{
+  "scope": "Original native statsd registration + original StatsCompanion modular load and statsmanager callback acceptance at URI phase500; not metric pulling, full lifecycle, app launch or MAC acceptance",
+  "checkpoint": "/home/tv/recuperacion-archtv/2adbd086-0d37-4398-a1c8-b08c7f50f7a6-markor-launch",
+  "run_log_sha256": "e14045a06d61042edd535623057d7fdc571e0d2a0136467fa3c47a4b96a7e405",
+  "native_query": "Service stats: found\n",
+  "identity": {
+    "kind": "STATSD",
+    "pid_namespace_pid": 422,
+    "getpidcon_raw_return": 0,
+    "actual_context": "u:r:statsd:s0",
+    "contexts_observed_in_order": [
+      "u:r:init:s0",
+      "u:r:statsd:s0"
+    ],
+    "errno_observed": [],
+    "status": [
+      "Uid:\t1066\t1066\t1066\t1066",
+      "Gid:\t1066\t1066\t1066\t1066",
+      "Groups:\t1007 ",
+      "CapPrm:\t0000000000000000",
+      "CapEff:\t0000000000000000",
+      "CapBnd:\t000001ffffffffff",
+      "NoNewPrivs:\t1"
+    ]
+  },
+  "java_classloader": "ZygoteInit original getOrCreateSystemServerClassLoader + prefetchStandaloneSystemServerJars; orchestration-only child loader, SystemService parent identity asserted; no test-only/profile override",
+  "failure": "java.lang.RuntimeException: Failed to boot service com.android.server.am.ActivityManagerService$Lifecycle: onBootPhase threw an exception during phase 500\n\tat com.android.server.SystemServiceManager.startBootPhase(SystemServiceManager.java:321)\n\tat java.lang.reflect.Method.invoke(Native Method)\n\tat org.archtv.aosplinux.SelectedServices.call(SelectedServices.java:10)\n\tat org.archtv.aosplinux.SelectedServices.main(SelectedServices.java:222)\n\tat java.lang.reflect.Method.invoke(Native Method)\n\tat org.archtv.aosplinux.ServiceLauncher.main(ServiceLauncher.java:37)\n\tat com.android.internal.os.RuntimeInit.nativeFinishInit(Native Method)\n\tat com.android.internal.os.RuntimeInit.main(RuntimeInit.java:366)\nCaused by: java.lang.NullPointerException: Attempt to invoke virtual method 'void android.net.ConnectivityManager.registerDefaultNetworkCallback(android.net.ConnectivityManager$NetworkCallback)' on a null object reference\n\tat com.android.server.am.BatteryStatsService.systemServicesReady(BatteryStatsService.java:541)\n\tat com.android.server.am.ActivityManagerService$Lifecycle.onBootPhase(ActivityManagerService.java:2246)\n\tat com.android.server.SystemServiceManager.startBootPhase(SystemServiceManager.java:318)\n\t... 7 more\n",
+  "limitations": [
+    "Phase500 still fails at AMS/BatteryStatsService due absent ConnectivityManager",
+    "StatsCompanion phase600 systemReady and statsd event/pull collection not accepted",
+    "All Markor launch/UI/input/note/close/reopen gates open",
+    "SELinux permissive policyload2; R1-MAC open; ARM/GMS/DRM separate"
+  ],
+  "callback_acceptance_evidence": "Derived from original SystemServiceManager traversal: UriGrantsManagerService phase500 completed; next failure is AMS phase500. No atom actually pulled/collected is claimed."
+}

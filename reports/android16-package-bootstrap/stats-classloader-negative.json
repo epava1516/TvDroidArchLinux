@@ -1,0 +1,37 @@
+{
+  "scope": "Previous real failures before coherent modular loader setup; no APK acceptance",
+  "experiments": [
+    {
+      "checkpoint": "/home/tv/recuperacion-archtv/1cc86e99-8944-4dc9-873d-4962eb48eac5-markor-launch",
+      "log_sha256": "cf35f1c2619c95d7620c438ddc1b4440ed81ddbf6fb83a7c8dcc1c0f6968c45c",
+      "failure": "java.lang.RuntimeException: Failed to boot service com.android.server.uri.UriGrantsManagerService$Lifecycle: onBootPhase threw an exception during phase 500\n\tat com.android.server.SystemServiceManager.startBootPhase(SystemServiceManager.java:321)\n\tat java.lang.reflect.Method.invoke(Native Method)\n\tat org.archtv.aosplinux.SelectedServices.call(SelectedServices.java:10)\n\tat org.archtv.aosplinux.SelectedServices.main(SelectedServices.java:219)\n\tat java.lang.reflect.Method.invoke(Native Method)\n\tat org.archtv.aosplinux.ServiceLauncher.main(ServiceLauncher.java:28)\n\tat com.android.internal.os.RuntimeInit.nativeFinishInit(Native Method)\n\tat com.android.internal.os.RuntimeInit.main(RuntimeInit.java:366)\nCaused by: java.lang.NullPointerException: Attempt to invoke interface method 'void android.os.IStatsManagerService.registerPullAtomCallback(int, long, long, int[], android.os.IPullAtomCallback)' on a null object reference\n\tat android.app.StatsManager.setPullAtomCallback(StatsManager.java:667)\n\tat com.android.server.uri.UriMetricsHelper.registerPuller(UriMetricsHelper.java:50)\n\tat com.android.server.uri.UriGrantsManagerService$Lifecycle.onBootPhase(UriGrantsManagerService.java:239)\n\tat com.android.server.SystemServiceManager.startBootPhase(SystemServiceManager.java:318)\n\t... 7 more\n"
+    },
+    {
+      "checkpoint": "/home/tv/recuperacion-archtv/fb271f6e-ffbe-4bce-9744-8469995c7727-markor-launch",
+      "log_sha256": "833c64669c5cce2a3c6292a6a8c8553c0f37f36e715f591bd4905af70935f29c",
+      "failure": "java.lang.RuntimeException: Creating a ClassLoader from /apex/com.android.os.statsd/javalib/service-statsd.jar is not allowed. Please make sure that the jar is listed in `PRODUCT_APEX_STANDALONE_SYSTEM_SERVER_JARS` in the Makefile and added as a `standalone_contents` of a `systemserverclasspath_fragment` in `Android.bp`.\n\tat com.android.internal.os.SystemServerClassLoaderFactory.getOrCreateClassLoader(SystemServerClassLoaderFactory.java:69)\n\tat com.android.server.SystemServiceManager.startServiceFromJar(SystemServiceManager.java:169)\n\tat java.lang.reflect.Method.invoke(Native Method)\n\tat org.archtv.aosplinux.SelectedServices.call(SelectedServices.java:10)\n\tat org.archtv.aosplinux.SelectedServices.main(SelectedServices.java:218)\n\tat java.lang.reflect.Method.invoke(Native Method)\n\tat org.archtv.aosplinux.ServiceLauncher.main(ServiceLauncher.java:28)\n\tat com.android.internal.os.RuntimeInit.nativeFinishInit(Native Method)\n\tat com.android.internal.os.RuntimeInit.main(RuntimeInit.java:366)\n"
+    }
+  ],
+  "source_files": [
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/SystemServerClassLoaderFactory.java",
+      "sha256": "75ecf4cb270d09ff265719c6a4254b5fdb5957d08c488a09dc07f92c7d29e350",
+      "project_pin": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/ZygoteInit.java",
+      "sha256": "e2299c75b02bfe180deb346b14d80a71cafe5258a05f0ff6c3f39fc024441bae",
+      "project_pin": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/StatsCompanion.java",
+      "sha256": "e1d8a522e8b9bbdb55e9069bb98667efe29eeb357cb631cd3c05646feaa31e2b",
+      "project_pin": "aae39057403d4538cb56c856b880fd02d5765a1e"
+    },
+    {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/StatsManagerService.java",
+      "sha256": "df9a6a0e17bdf1e0934ba3567aff1b28597c310ffcb06cb1b79a5dc86bfb446d",
+      "project_pin": "aae39057403d4538cb56c856b880fd02d5765a1e"
+    }
+  ]
+}

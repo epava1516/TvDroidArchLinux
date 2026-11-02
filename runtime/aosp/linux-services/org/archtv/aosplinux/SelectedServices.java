@@ -168,6 +168,7 @@ public final class SelectedServices {
                 Object resources=resourcesType.getConstructor(contextType).newInstance(context);
                 call(resourcesType,resources,"setActivityManagerService",new Class<?>[]{activityManager.getClass()},activityManager);
                 call(managerType,manager,"startService",new Class<?>[]{Class.forName("com.android.server.SystemService")},resources);
+                start(manager,managerType,"com.android.server.DropBoxManagerService");
                 // Original SystemServer role subsystem precedes input/window policy.
                 Class<?> roleHelperType=Class.forName("com.android.server.role.RoleServicePlatformHelper");
                 Object roleHelper=Class.forName("com.android.server.policy.role.RoleServicePlatformHelperImpl").getConstructor(contextType).newInstance(context);
@@ -213,6 +214,9 @@ public final class SelectedServices {
                 int storagePhase=Class.forName("com.android.server.SystemService").getField("PHASE_SYSTEM_SERVICES_READY").getInt(null);
 
                 start(manager,managerType,"com.android.server.usage.StorageStatsService$Lifecycle");
+                // Original modular loader and lifecycle publish statsmanager/statscompanion.
+                call(managerType,manager,"startServiceFromJar",new Class<?>[]{String.class,String.class},
+                    "com.android.server.stats.StatsCompanion$Lifecycle","/apex/com.android.os.statsd/javalib/service-statsd.jar");
                 start(manager,managerType,"com.android.server.DeviceIdleController");
                 start(manager,managerType,"com.android.server.dreams.DreamManagerService");
                 call(managerType,manager,"startBootPhase",new Class<?>[]{traceType,int.class},trace,storagePhase);
@@ -237,6 +241,17 @@ public final class SelectedServices {
             call(looper, null, "loop", new Class<?>[0]);
             throw new IllegalStateException("Original main looper returned unexpectedly");
         } catch (Throwable failure) {
+            // Preserve the original exception even if Android's log transport is saturated.
+            try {
+                java.io.StringWriter text=new java.io.StringWriter();
+                failure.printStackTrace(new java.io.PrintWriter(text));
+                String stack=text.toString();
+                try (java.io.FileOutputStream failureFile=new java.io.FileOutputStream("/data/local/tmp/archtv-mc1/selected-failure.txt")) {
+                    failureFile.write(stack.substring(0,Math.min(stack.length(),32768)).getBytes("UTF-8"));
+                }
+            } catch (Throwable diagnosticFailure) {
+                System.err.println("SELECTED_FAILURE_FILE_UNAVAILABLE "+diagnosticFailure);
+            }
             Throwable cause=failure;
             for(int depth=0;cause!=null && depth<8;depth++,cause=cause.getCause()) {
                 String message=String.valueOf(cause.getMessage());
