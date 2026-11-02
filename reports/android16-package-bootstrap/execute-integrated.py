@@ -111,6 +111,13 @@ text=text.replace("(((1<<35)|(1<<36)) if identity['kind']=='HEALTH'", "(0x180402
 text=text.replace("fields['NoNewPrivs']=='1'", "fields['NoNewPrivs']=='1'\n if identity['kind']=='SERVICES':assert list(map(int,fields['Groups'].split()))==[1003,3006,3007]")
 text=text.replace('NETD|LMKD','NETD|LMKD|ACONFIG_SYSTEM|ACONFIG_MAINLINE')
 text=text.replace("'LMKD':'u:r:lmkd:s0'","'LMKD':'u:r:lmkd:s0','ACONFIG_SYSTEM':'u:r:aconfigd:s0','ACONFIG_MAINLINE':'u:r:aconfigd_mainline:s0'")
+# Observe actual demand-start PID through the existing namespace observer.
+text=text.replace("NETD|LMKD|ACONFIG_SYSTEM|ACONFIG_MAINLINE", "NETD|LMKD|ACONFIG_SYSTEM|ACONFIG_MAINLINE|ARTD")
+text=text.replace("'LMKD':'u:r:lmkd:s0'", "'LMKD':'u:r:lmkd:s0','ARTD':'u:r:artd:s0'")
+text=text.replace("1069 if identity['kind']=='LMKD' else ", "1082 if identity['kind']=='ARTD' else 1069 if identity['kind']=='LMKD' else ")
+text=text.replace("0x1804022 if identity['kind']=='LMKD'", "0xf if identity['kind']=='ARTD' else 0x1804022 if identity['kind']=='LMKD'")
+# Normalize only this diagnostic marker; result still requires the actual /proc identity.
+text=text.replace("',line)", "',line.replace('LINUX_LAZY_STARTED interface=aidl/artd pid=', 'SELECTED_ARTD_STARTED pid='))")
 # Preserve actual APEX output on Java/bootstrap failures as well.
 marker="if p.returncode!=0:\n failed_output="
 text=text.replace(marker,"""import hashlib
@@ -121,7 +128,7 @@ for file in sorted(Path('/metadata/aconfig').rglob('*')):
  info=file.stat()
  metadata.append({'path':str(file),'uid':info.st_uid,'gid':info.st_gid,'mode':oct(stat.S_IMODE(info.st_mode)),'context':os.getxattr(file,'security.selinux').decode().rstrip(chr(0)),'bytes':info.st_size,'sha256':hashlib.sha256(file.read_bytes()).hexdigest() if info.st_size<=33554432 else None})
 print('ACONFIG_ORIGINAL_METADATA_FILES '+json.dumps({'files':metadata,'truncated':metadata_truncated,'scope':'Original daemon outputs, not flag or permission acceptance'}),flush=True)
-for name in ['ranging-service-info.txt','ranging-permission.txt','netd-permission-query.txt','netd-query.txt','netd-interfaces.txt','stats-query.txt','selected-failure.txt','selected-wait.txt','health-query.txt','health-dump.txt','apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt','vold-query.txt','vold-user0.txt','markor-install.txt','markor-path.txt','markor-dump.txt','activity-query.txt','mount-query.txt','markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
+for name in ['unadmitted-artd-control.txt','ranging-service-info.txt','ranging-permission.txt','netd-permission-query.txt','netd-query.txt','netd-interfaces.txt','stats-query.txt','selected-failure.txt','selected-wait.txt','health-query.txt','health-dump.txt','apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt','vold-query.txt','vold-user0.txt','markor-install.txt','markor-path.txt','markor-dump.txt','activity-query.txt','mount-query.txt','markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
  f=Path('/data/local/tmp/archtv-mc1')/name
  if f.is_file():print('PACKAGE_ORIGINAL_OUTPUT '+name+' '+json.dumps(f.read_text()),flush=True)
 if p.returncode!=0:

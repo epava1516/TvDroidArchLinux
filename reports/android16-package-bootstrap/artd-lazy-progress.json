@@ -1,0 +1,107 @@
+{
+  "scope": "Original selected lazy ART service demand start and registration; installation command Success is partial, no new APK acceptance",
+  "run_id": "5bb9d231-ddb8-43b4-aaf9-863fb4cf4dfd",
+  "checkpoint": "/home/tv/recuperacion-archtv/5bb9d231-ddb8-43b4-aaf9-863fb4cf4dfd-markor-launch",
+  "input": "dist/aosp16/package-cohort-build-67/payload-2.ext4",
+  "input_sha256": "e92fc7bdbb655dcb78a131cc26330f0b3e5590e5f10b54829c31954556933e77",
+  "evidence_sha256": {
+    "before.json": "3a2c3c71a63ad35ec39521623c608bd00a58508c5596ef8d64956586177509eb",
+    "result.json": "83754a8e6a95ccc7e10a2d3474fabecd668b11acd5446ac6b32781a13f9f6ba0",
+    "run.log": "594802f4ed411ccaf4016b498c6ea563e88b0115ef2272bfbacb92c1096141ee",
+    "completion-consumer.json": "d73030891577318d6e878ee4688f769b0f7c45c5cb3202e4d030cb2d1822077b",
+    "completion-delivery.json": "67950601b082a91ad4c7ee1fffa68f41466aa5ca32d010af48c152bc1e6b0744"
+  },
+  "actual_identity": {
+    "kind": "ARTD",
+    "pid_namespace_pid": 1712,
+    "getpidcon_raw_return": 0,
+    "actual_context": "u:r:artd:s0",
+    "contexts_observed_in_order": [
+      "u:r:artd:s0"
+    ],
+    "errno_observed": [],
+    "status": [
+      "Uid:\t1082\t1082\t1082\t1082",
+      "Gid:\t1082\t1082\t1082\t1082",
+      "Groups:\t ",
+      "CapPrm:\t000000000000000f",
+      "CapEff:\t000000000000000f",
+      "CapBnd:\t000000000000000f",
+      "NoNewPrivs:\t1"
+    ]
+  },
+  "original_registration_and_rpc": [
+    {
+      "tag": "artd",
+      "message": "Starting artd",
+      "actual_sender_pid_uid_gid": [
+        1712,
+        1082,
+        1082
+      ]
+    },
+    {
+      "tag": "libbinder.AidlLazyServiceRegistrar",
+      "message": "Registering service artd",
+      "actual_sender_pid_uid_gid": [
+        1712,
+        1082,
+        1082
+      ]
+    },
+    {
+      "tag": "libbinder.AidlLazyServiceRegistrar",
+      "message": "Process has 1 (of 1 available) client(s) in use after notification artd has clients: 1",
+      "actual_sender_pid_uid_gid": [
+        1712,
+        1082,
+        1082
+      ]
+    },
+    {
+      "tag": "artd",
+      "message": "Merge skipped because there are no existing profiles",
+      "actual_sender_pid_uid_gid": [
+        1712,
+        1082,
+        1082
+      ]
+    },
+    {
+      "tag": "ArtService",
+      "message": "Failed to dexopt [packageName = net.gsantner.markor, dexPath = /data/app/~~gbn-X4Rjdu_rEmuNHHLvfg==/net.gsantner.markor-n_ADR0lekR23mXnUD_SvJw==/base.apk, isa = x86_64, classLoaderContext = PCL[]{PCL[/system_ext/framework/androidx.window.extensions.jar]#PCL[/system_ext/framework/androidx.window.sidecar.jar]}]\nandroid.os.ServiceSpecificException: Failed to get runtime options: Unable to get Zygote kinds (code 1)\n\tat android.os.Parcel.createExceptionOrNull(Parcel.java:3387)\n\tat android.os.Parcel.createException(Parcel.java:3357)\n\tat android.os.Parcel.readException(Parcel.java:3340)\n\tat android.os.Parcel.readException(Parcel.java:3282)\n\tat com.android.server.art.IArtd$Stub$Proxy.getDexoptNeeded(IArtd.java:1202)\n\tat com.android.server.art.Dexopter.getDexoptNeeded(Dexopter.java:531)\n\tat com.android.server.art.Dexopter.dexopt(Dexopter.java:242)\n\tat com.android.server.art.DexoptHelper.dexoptPackage(DexoptHelper.java:223)\n\tat com.android.server.art.DexoptHelper.lambda$dexopt$2(DexoptHelper.java:134)\n\tat com.android.server.art.DexoptHelper.$r8$lambda$dqRWedUmZ3-pt6Ky7GH3y8QM8Lc(DexoptHelper.java:0)\n\tat com.android.server.art.DexoptHelper$$ExternalSyntheticLambda2.get(R8$$SyntheticClass:0)\n\tat java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1744)\n\tat com.android.server.art.ArtManagerLocal$$ExternalSyntheticLambda1.execute(R8$$SyntheticClass:0)\n\tat java.util.concurrent.CompletableFuture.asyncSupplyStage(CompletableFuture.java:1758)\n\tat java.util.concurrent.CompletableFuture.supplyAsync(CompletableFuture.java:1981)\n\tat com.android.server.art.DexoptHelper.dexopt(DexoptHelper.java:126)\n\tat com.android.server.art.DexoptHelper.dexopt(DexoptHelper.java:90)\n\tat com.android.server.art.ArtManagerLocal.dexoptPackage(ArtManagerLocal.java:394)\n\tat com.android.server.art.ArtManagerLocal.dexoptPackage(ArtManagerLocal.java:379)\n\tat com.android.server.pm.DexOptHelper.dexoptPackageUsingArtService(DexOptHelper.java:382)\n\tat com.android.server.pm.DexOptHelper.lambda$performDexoptIfNeededAsync$0(DexOptHelper.java:357)\n\tat com.android.server.pm.DexOptHelper.$r8$lambda$VUbJuU_rIge_7A69vm4AK0Fc5dE(DexOptHelper.java:0)\n\tat com.android.server.pm.DexOptHelper$$ExternalSyntheticLambda0.run(R8$$SyntheticClass:0)\n\tat java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1780)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1154)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:652)\n\tat java.lang.Thread.run(Thread.java:1563)\n",
+      "actual_sender_pid_uid_gid": [
+        514,
+        1000,
+        1000
+      ]
+    }
+  ],
+  "installation_stdout": "Success: created install session [843836930]\nSuccess: streamed 11861047 bytes\nSuccess\n",
+  "unadmitted_control": {
+    "target": "aidl/artd_pre_reboot",
+    "profile_present": true,
+    "running": false,
+    "stdout": "Failed to set property 'ctl.interface_start' to 'aidl/artd_pre_reboot'.\nSee dmesg for error reason.\n",
+    "scope": "Linux explicit admission rejection in permissive mode, not MAC authorization"
+  },
+  "result": {
+    "outer_exit": 1,
+    "elapsed_seconds": 147.607088804245,
+    "bpf_cleanup_verified": true,
+    "active_loops": "",
+    "final_dm": []
+  },
+  "fatal": "ORIGINAL_ASYNC_FATAL thread=RoleControllerService\njava.lang.NullPointerException: Attempt to invoke virtual method 'boolean android.app.supervision.SupervisionManager.shouldAllowBypassingSupervisionRoleQualification()' on a null object reference\n\tat com.android.role.controller.behavior.v33.SystemSupervisionRoleBehavior.shouldAllowBypassingQualification(SystemSupervisionRoleBehavior.java:47)\n\tat com.android.role.controller.model.Role.shouldAllowBypassingQualification(Role.java:624)\n\tat com.android.role.controller.model.Role.isBypassingQualification(Role.java:635)\n\tat com.android.role.controller.model.Role.isStatic(Role.java:518)\n\tat com.android.role.controller.service.RoleControllerServiceImpl.onGrantDefaultRoles(RoleControllerServiceImpl.java:177)\n\tat com.android.role.LocalRoleController.lambda$grantDefaultRoles$1(LocalRoleController.java:56)\n\tat com.android.role.LocalRoleController.$r8$lambda$ye-flP7Mf14AbTzwSmiTgndT6Cg(LocalRoleController.java:0)\n\tat com.android.role.LocalRoleController$$ExternalSyntheticLambda1.run(R8$$SyntheticClass:0)\n\tat android.os.Handler.handleCallback(Handler.java:1070)\n\tat android.os.Handler.dispatchMessage(Handler.java:125)\n\tat android.os.Looper.dispatchMessage(Looper.java:333)\n\tat android.os.Looper.loopOnce(Looper.java:263)\n\tat android.os.Looper.loop(Looper.java:367)\n\tat android.os.HandlerThread.run(HandlerThread.java:139)\n",
+  "limits": [
+    "artd registered and returned a real RPC exception: Unable to get Zygote kinds; dexopt FAILED, not compiled code acceptance",
+    "Original installer returned Success; package path/signature readback interrupted by async fatal, not new installation acceptance",
+    "No launch/UI/input/persistent note/close/reopen accepted",
+    "Runtime requested original reboot,vold-failed after service death; Linux shutdown translated to owned cohort stop, not host reboot",
+    "MC1 close timed out after stop; outer cleanup closed loops/dm/BPF, fresh host collection empty; full service lifecycle not accepted",
+    "Lazy clean idle exit/restart, power/other controls and MAC enforcement not accepted by this run"
+  ],
+  "next": "Original SupervisionService lifecycle before role callbacks; restore actual ro.zygote identity contract for artd from original source, then full cohort. AMS original callback/profile gate remains.",
+  "notification": "active_owned, not_requested, consumed by exact active UUID; gate disabled; no queued continuation",
+  "security": "Permissive R1-MAC remains open; ARM/GMS/DRM separate"
+}

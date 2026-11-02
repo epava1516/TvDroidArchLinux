@@ -1,6 +1,6 @@
 #pragma once
 // One bounded MC1 functional experiment, using original service lifecycle code.
-// No boot scripts, synthesized readiness, control backend or APK acceptance.
+// No boot scripts, synthesized readiness, general control backend or APK acceptance.
 #include "init.h"
 #include "builtins.h"
 #include "service.h"
@@ -31,8 +31,8 @@ namespace archtv::aosp {
 class LinuxMc1Cohort {
  public:
     using Tick = std::function<bool()>;
-    LinuxMc1Cohort(const bool& stop,int expected_mode,bool hardware=false,bool graphics=false,bool surfaceflinger=false,bool selected=false,bool apex=false)
-        : stop_(stop),expected_mode_(expected_mode),hardware_requested_(hardware),graphics_requested_(graphics),surfaceflinger_requested_(surfaceflinger),selected_requested_(selected),apex_requested_(apex) {}
+    LinuxMc1Cohort(android::init::Epoll* epoll,const bool& stop,int expected_mode,bool hardware=false,bool graphics=false,bool surfaceflinger=false,bool selected=false,bool apex=false)
+        : epoll_(epoll),stop_(stop),expected_mode_(expected_mode),hardware_requested_(hardware),graphics_requested_(graphics),surfaceflinger_requested_(surfaceflinger),selected_requested_(selected),apex_requested_(apex) {}
     android::base::Result<void> Start(const Tick& tick) {
         using namespace android::init;
         auto& services=ServiceList::GetInstance();
@@ -108,6 +108,7 @@ class LinuxMc1Cohort {
         using namespace android::init;
         if(!active_) return {};
         closing_=true;
+        if(auto revoked=RevokeLinuxLazyInterfaces(epoll_);!revoked.ok())return revoked;
         auto& services=ServiceList::GetInstance();
         for(const auto& service:services)if(service->IsRunning())service->Stop();
         const auto end=std::chrono::steady_clock::now()+std::chrono::seconds(3);
@@ -559,6 +560,19 @@ class LinuxMc1Cohort {
             } else {
                 std::fprintf(stderr,"SELECTED_NATIVE_AUDIO_DEFERRED no_original_HAL_configured NOT_AUDIO_AVAILABILITY\n");
             }
+            auto* artd=services.FindInterface("aidl/artd");
+            if(!artd || artd!=services.FindService("artd") ||
+               artd->args()!=std::vector<std::string>{"/apex/com.android.art/bin/artd"} ||
+               artd->uid()!=1082 || artd->gid()!=1082 ||
+               !(artd->flags() & SVC_ONESHOT) || !(artd->flags() & SVC_DISABLED))
+                return android::base::Error()<<"Original lazy artd profile rejected";
+            artd->AddReapCallback([this](const siginfo_t& info){
+                const bool idle=info.si_code==CLD_EXITED && info.si_status==0;
+                std::fprintf(stderr,"SELECTED_ARTD_EXIT pid=%d code=%d status=%d clean=%d\n",info.si_pid,info.si_code,info.si_status,idle);
+                if(!closing_ && !idle)manager_failed_=true;
+            });
+            if(auto admitted=AdmitLinuxLazyInterface(epoll_,"aidl/artd");!admitted.ok())return admitted;
+            std::fprintf(stderr,"SELECTED_ARTD_LAZY_ADMITTED NOT_RUNNING_OR_REGISTERED\n");
             statsd_=services.FindService("statsd");
             if(!statsd_ || statsd_->args()!=std::vector<std::string>{"/apex/com.android.os.statsd/bin/statsd"})return android::base::Error()<<"Original perform_apex_config did not register expected statsd";
             statsd_->AddReapCallback([this](const siginfo_t& info){std::fprintf(stderr,"SELECTED_STATSD_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);if(!closing_)manager_failed_=true;});
@@ -573,12 +587,15 @@ class LinuxMc1Cohort {
             std::fprintf(stderr,"SELECTED_HEALTH_STARTED pid=%d NOT_REGISTERED\n",health_->pid());
             client_done_=false;client_ok_=false;
             auto health_client=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","shell","shell","--","/system/bin/sh","-c",
-                "umask 077; i=0; while [ $$i -lt 12 ]; do /system/bin/service check android.hardware.health.IHealth/default > /data/local/tmp/archtv-mc1/health-query.txt 2>&1; /system/bin/service check stats > /data/local/tmp/archtv-mc1/stats-query.txt 2>&1; if /system/bin/grep -qx 'Service stats: found' /data/local/tmp/archtv-mc1/stats-query.txt && /system/bin/grep -qx 'Service android.hardware.health.IHealth/default: found' /data/local/tmp/archtv-mc1/health-query.txt; then /system/bin/dumpsys android.hardware.health.IHealth/default > /data/local/tmp/archtv-mc1/health-dump.txt 2>&1; exit $$?; fi; i=$$((i+1)); /system/bin/sleep 1; done; exit 1"});
+                "umask 077; if /system/bin/setprop ctl.interface_start aidl/artd_pre_reboot > /data/local/tmp/archtv-mc1/unadmitted-artd-control.txt 2>&1; then exit 97; fi; i=0; while [ $$i -lt 12 ]; do /system/bin/service check android.hardware.health.IHealth/default > /data/local/tmp/archtv-mc1/health-query.txt 2>&1; /system/bin/service check stats > /data/local/tmp/archtv-mc1/stats-query.txt 2>&1; if /system/bin/grep -qx 'Service stats: found' /data/local/tmp/archtv-mc1/stats-query.txt && /system/bin/grep -qx 'Service android.hardware.health.IHealth/default: found' /data/local/tmp/archtv-mc1/health-query.txt; then /system/bin/dumpsys android.hardware.health.IHealth/default > /data/local/tmp/archtv-mc1/health-dump.txt 2>&1; exit $$?; fi; i=$$((i+1)); /system/bin/sleep 1; done; exit 1"});
             if(!health_client.ok())return health_client.error();
             auto* health_peer=health_client->get();health_peer->AddReapCallback([this](const siginfo_t& info){client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;});services.AddService(std::move(*health_client));
             if(auto started=health_peer->ExecStart();!started.ok())return started;
             if(auto waited=Wait(tick,[this]{return client_done_;},16);!waited.ok())return waited;
             if(!client_ok_)return android::base::Error()<<"Original IHealth query/dump failed";
+            auto* rejected=services.FindInterface("aidl/artd_pre_reboot");
+            if(!rejected || rejected->IsRunning())return android::base::Error()<<"Unadmitted original pre-reboot artd unexpectedly running or absent";
+            std::fprintf(stderr,"LINUX_UNADMITTED_ARTD_CONTROL_REJECTED original_profile_present=1 running=0 NOT_MAC_ACCEPTANCE\n");
             std::fprintf(stderr,"HEALTH_ORIGINAL_BINDER_CLIENT_RETURNED REQUIRES_VALUE_VERIFICATION\n");
             auto zygote_parsed=parser.ParseConfigFile("/vendor/etc/init/archtv-app-zygote.rc");
             if(!zygote_parsed.ok() || parser.parse_error_count()!=0)return android::base::Error()<<"Application zygote profile rejected";
@@ -689,6 +706,7 @@ class LinuxMc1Cohort {
                 return android::base::Error()<<"MC1 original progress deadline/error";
         }
     }
+    android::init::Epoll* epoll_;
     const bool& stop_;
     const int expected_mode_;
     const bool hardware_requested_;

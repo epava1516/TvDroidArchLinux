@@ -1,0 +1,137 @@
+--- a/init/init.h
++++ b/init/init.h
+@@ -44,8 +44,11 @@
+ bool QueueControlMessage(const std::string& message, const std::string& name, pid_t pid, int fd);
+ 
+ // Linux-owned serialized coordinator. Explicit actions only; caller owns Epoll.
+-// Does not load boot scripts or process service/power controls.
++// No boot scripts or power controls; only explicitly admitted lazy interfaces.
+ bool IsLinuxPropertyActionMode();
++bool IsLinuxControlMessageAdmitted(std::string_view message, const std::string& name);
++Result<void> AdmitLinuxLazyInterface(Epoll* epoll, const std::string& name);
++Result<void> RevokeLinuxLazyInterfaces(Epoll* epoll);
+ Result<void> StartLinuxPropertyActions(Epoll* epoll);
+ Result<int> PollLinuxPropertyActions(Epoll* epoll, std::optional<std::chrono::milliseconds> timeout);
+ Result<void> StopLinuxPropertyActions(Epoll* epoll);
+--- a/init/init.cpp
++++ b/init/init.cpp
+@@ -122,6 +122,9 @@
+ static int property_triggers_enabled = 0;
+ static bool linux_property_action_mode = false;
+ static Epoll* linux_property_action_epoll = nullptr;
++static pid_t linux_property_action_owner = -1;
++[[clang::no_destroy]] static std::mutex linux_control_lock;
++[[clang::no_destroy]] static std::set<std::string> linux_lazy_interfaces;
+ 
+ static int sigterm_fd = -1;
+ static int property_fd = -1;
+@@ -545,6 +548,10 @@
+ 
+ static bool HandleControlMessage(std::string_view message, const std::string& name,
+                                  pid_t from_pid) {
++    if (IsLinuxPropertyActionMode() && !IsLinuxControlMessageAdmitted(message, name)) {
++        LOG(ERROR) << "Linux control admission rejected ctl." << message << " for " << name;
++        return false;
++    }
+     std::string cmdline_path = StringPrintf("proc/%d/cmdline", from_pid);
+     std::string process_cmdline;
+     if (ReadFileToString(cmdline_path, &process_cmdline)) {
+@@ -595,6 +602,9 @@
+         return false;
+     }
+ 
++    if (IsLinuxPropertyActionMode()) {
++        fprintf(stderr, "LINUX_LAZY_STARTED interface=%s pid=%d\n", name.c_str(), service->pid());
++    }
+     LOG(INFO) << "Control message: Processed ctl." << message << " for '" << name
+               << "' from pid: " << from_pid << " (" << process_cmdline << ")";
+     return true;
+@@ -1050,6 +1060,35 @@
+ 
+ bool IsLinuxPropertyActionMode() { return linux_property_action_mode; }
+ 
++bool IsLinuxControlMessageAdmitted(std::string_view message, const std::string& name) {
++    auto lock = std::lock_guard{linux_control_lock};
++    return message == "interface_start" && linux_lazy_interfaces.count(name) != 0;
++}
++
++Result<void> AdmitLinuxLazyInterface(Epoll* epoll, const std::string& name) {
++    if (!epoll || epoll != linux_property_action_epoll || gettid() != linux_property_action_owner || !linux_property_action_mode) {
++        return Error() << "Linux coordinator is not active";
++    }
++    // Caller validates the complete original profile on the serialized owner.
++    // The property worker reads only this immutable admitted name, never ServiceList.
++    if (!ServiceList::GetInstance().FindInterface(name)) {
++        return Error() << "No original service for Linux lazy interface " << name;
++    }
++    auto lock = std::lock_guard{linux_control_lock};
++    if (!linux_lazy_interfaces.insert(name).second) return Error() << "Duplicate admission";
++    return {};
++}
++
++Result<void> RevokeLinuxLazyInterfaces(Epoll* epoll) {
++    if (!epoll || epoll != linux_property_action_epoll || gettid() != linux_property_action_owner || !linux_property_action_mode) {
++        return Error() << "Linux coordinator is not active";
++    }
++    auto lock = std::lock_guard{linux_control_lock};
++    linux_lazy_interfaces.clear();
++    return {};
++}
++
++
+ Result<void> StartLinuxPropertyActions(Epoll* epoll) {
+     if (!epoll || linux_property_action_mode || wake_main_thread_fd >= 0 || PropertyServiceHasStarted()) {
+         return Error() << "Invalid or duplicate Linux property action coordinator";
+@@ -1057,6 +1096,7 @@
+     if (auto result = epoll->Open(); !result.ok()) return result;
+     InstallInitNotifier(epoll);
+     linux_property_action_epoll = epoll;
++    linux_property_action_owner = gettid();
+     linux_property_action_mode = true;
+     property_triggers_enabled = 1;
+     // Caller supplies explicit actions. Never load Android boot scripts here.
+@@ -1064,20 +1104,26 @@
+ }
+ 
+ Result<int> PollLinuxPropertyActions(Epoll* epoll, std::optional<std::chrono::milliseconds> timeout) {
+-    if (!epoll || epoll != linux_property_action_epoll || !linux_property_action_mode || wake_main_thread_fd < 0) {
++    if (!epoll || epoll != linux_property_action_epoll || gettid() != linux_property_action_owner || !linux_property_action_mode || wake_main_thread_fd < 0) {
+         return Error() << "Linux property action coordinator is not active";
+     }
+     auto& actions = ActionManager::GetInstance();
+     if (actions.HasMoreCommands()) actions.ExecuteOneCommand();
+     if (actions.HasMoreCommands()) timeout = 0ms;
+-    return epoll->Wait(timeout);
++    auto result = epoll->Wait(timeout);
++    if (!result.ok()) return result;
++    HandleControlMessages();
++    return result;
+ }
+ 
+ Result<void> StopLinuxPropertyActions(Epoll* epoll) {
+-    if (!epoll || epoll != linux_property_action_epoll || !linux_property_action_mode || wake_main_thread_fd < 0) {
++    if (!epoll || epoll != linux_property_action_epoll || gettid() != linux_property_action_owner || !linux_property_action_mode || wake_main_thread_fd < 0) {
+         return Error() << "Linux property action coordinator is not active";
+     }
++    if (auto result = RevokeLinuxLazyInterfaces(epoll); !result.ok()) return result;
+     if (auto result = StopPropertyService(); !result.ok()) return result;
++    // Worker joined: reject and close every released socket, never start late services.
++    while (!pending_control_messages.empty()) HandleControlMessages();
+     if (ActionManager::GetInstance().HasMoreCommands()) {
+         return Error() << "Property actions remain; poll them before completing shutdown";
+     }
+--- a/init/property_service.cpp
++++ b/init/property_service.cpp
+@@ -567,8 +567,10 @@
+     }
+ 
+     if (IsLinuxPropertyActionMode() &&
+-        (StartsWith(name, "ctl.") || name == "sys.powerctl" || name == "sys.shutdown.requested")) {
+-        *error = "Linux property action coordinator has no service/power control backend";
++        ((StartsWith(name, "ctl.") && !IsLinuxControlMessageAdmitted(
++             std::string_view(name).substr(4), value)) ||
++         name == "sys.powerctl" || name == "sys.shutdown.requested")) {
++        *error = "Linux property action coordinator rejects unadmitted service/power control";
+         return {StartsWith(name, "ctl.") ? PROP_ERROR_HANDLE_CONTROL_MESSAGE
+                                          : PROP_ERROR_PERMISSION_DENIED};
+     }

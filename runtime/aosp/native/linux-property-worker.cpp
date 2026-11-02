@@ -148,7 +148,7 @@ int main(int argc,char** argv) {
     auto setup=StartLinuxPropertyActions(&epoll);
     if(!setup.ok())return 70;
     bool stop=false,peer_gone=false,invalid=false;std::string input;
-    archtv::aosp::LinuxMc1Cohort cohort(stop,launch_enforcing,hardware,graphics,surfaceflinger,selected,apex);
+    archtv::aosp::LinuxMc1Cohort cohort(&epoll,stop,launch_enforcing,hardware,graphics,surfaceflinger,selected,apex);
     auto tick=[&]{return PollLinuxPropertyActions(&epoll,std::chrono::milliseconds(50)).ok() && children.healthy() && !shutdown.failed();};
     auto registered=epoll.RegisterHandler(control.get(),[&]{
         char bytes[64];
