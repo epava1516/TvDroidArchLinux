@@ -1,0 +1,44 @@
+{
+  "scope": "Negative original security subsystem integration; no key/auth/user/APK acceptance",
+  "candidate": 104,
+  "checkpoint": "/home/tv/recuperacion-archtv/0401c2cb-1ecd-43df-b9d1-aa658f2774b5-markor-launch",
+  "result": {
+    "outer_exit": 1,
+    "native_complete_inventory_verified": true,
+    "elapsed_seconds": 25.38136100769043,
+    "active_loops": "",
+    "final_dm": []
+  },
+  "artifacts": {
+    "/home/tv/recuperacion-archtv/0401c2cb-1ecd-43df-b9d1-aa658f2774b5-markor-launch/result.json": "e4a9d5850c2aca0f3ea11d05c917e60a9293451bf7c00c8c5d030b3cfa17b431",
+    "/home/tv/recuperacion-archtv/0401c2cb-1ecd-43df-b9d1-aa658f2774b5-markor-launch/run.log": "694f59eb784c0808d1e1556796a5aaffb825b3947608c54f875caad1e962064f",
+    "/home/tv/recuperacion-archtv/0401c2cb-1ecd-43df-b9d1-aa658f2774b5-markor-launch/completion-consumer.json": "aa001ec8be37ab7135978c89aeee724fb15dff0d66c36e7000a99fa27a0ebe49",
+    "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793648583812352635/android-log-live.jsonl": "345479538b9fab937a76ee145b5d822c9587babe34efdc342a05850ce91a2fa9",
+    "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-104/source-inputs.json": "cc044d35f437d447caa7dfceb9a2f0e098673fbbe92a2454ed84cad51c831f5b",
+    "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/gatekeeperd.cpp": "ec14f124c8b4c323a6fd08e65112acf565190699623861b2aece7131b0fe2854",
+    "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/security-keystore2__src__service.rs": "6e7109516b0ba7502caf174ab32bc7e96091bad45068c12f9a2630015bb0f944",
+    "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/security-keystore2__src__globals.rs": "6b4087488cbe110f2490544de0228cfcd74e980854746450201780d89654d45c",
+    "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/security-keystore2__src__security_level.rs": "8c1c9c587254c88da920684f4e7aa5bff490aae7bc130a3dd936d5aa0689e4cd",
+    "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/keymaster-ng__AndroidKeyMintDevice.cpp": "ee66fdf35108da51be9d66b03913c7218ec6aed7349382cb09a4f16248c4f310",
+    "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/keymaster-Android.bp": "07953c15a85c2d572f2d6c267c35e1cfc91c03ebc6e0e98e66ddbeb5702a1c84"
+  },
+  "observed": [
+    "gatekeeperd original starts and explicitly logs no GateKeeper HAL",
+    "keystore2 original starts, fails mandatory TEE backend construction with HARDWARE_TYPE_UNAVAILABLE and SIGABRT",
+    "coordinator stops on actual daemon death; no simulated readiness/keys/credentials"
+  ],
+  "source_findings": [
+    "Stock KeystoreService requires logical TRUSTED_ENVIRONMENT backend and exposes only instantiated levels",
+    "globals chooses AIDL /default for TEE and rejects SOFTWARE selection; hardware info returned separately",
+    "KeystoreSecurityLevel stores requested level and emits keySecurityLevel from it, so a SOFTWARE HAL under /default alone risks reporting TEE metadata",
+    "Original AndroidKeyMintDevice accepts SOFTWARE and performs real PureSoftKeymasterContext cryptography; non-SOFTWARE modes explicitly emulate hardware enforcement",
+    "libkeymint_fake_latest explicitly advertises a newer HAL version than its v4 implementation; not accepted as honest version support"
+  ],
+  "decision": "Evaluate/build original full libkeymint v4 SOFTWARE provider; adapt original Keystore2 default selection and metadata coherently only with source-built evidence. Do not report software as TEE/StrongBox, fabricate attestation, use test keys as hardware identity, or mark missing GateKeeper HAL resolved. Existing GSI keystore2 cannot boot with current absent provider. No unchanged104 rerun.",
+  "acceptance_next": [
+    "Real key generation/encryption/decryption plus stored/reopened key via original framework/API, with SOFTWARE metadata",
+    "Wrong key/tampered blob rejected; TEE/StrongBox-only requests fail honestly unless actual protected backend exists",
+    "Original user unlock then intact Markor launch; separate from key microtests",
+    "Explicit no hardware attestation/certification/isolation acceptance in this VM"
+  ]
+}

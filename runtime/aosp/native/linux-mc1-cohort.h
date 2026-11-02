@@ -105,7 +105,7 @@ class LinuxMc1Cohort {
     }
     bool vold_cancelled() const { return vold_cancelled_; }
     bool apex_cancelled() const { return apex_cancelled_; }
-    bool healthy() const { return !manager_failed_ && (!aconfig_system_ || aconfig_system_->IsRunning() || aconfig_system_clean_exit_) && (!aconfig_mainline_ || aconfig_mainline_->IsRunning() || aconfig_mainline_clean_exit_) && (!audioserver_ || audioserver_->IsRunning()) && (!lmkd_ || lmkd_->IsRunning()) && (!netd_ || netd_->IsRunning()) && (!statsd_ || statsd_->IsRunning()) && (!health_ || health_->IsRunning()) && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && (bootanimation_->IsRunning() || bootanimation_clean_exit_))) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning() || apex_clean_exit_); }
+    bool healthy() const { return !manager_failed_ && (!gatekeeper_ || gatekeeper_->IsRunning()) && (!keystore_ || keystore_->IsRunning()) && (!aconfig_system_ || aconfig_system_->IsRunning() || aconfig_system_clean_exit_) && (!aconfig_mainline_ || aconfig_mainline_->IsRunning() || aconfig_mainline_clean_exit_) && (!audioserver_ || audioserver_->IsRunning()) && (!lmkd_ || lmkd_->IsRunning()) && (!netd_ || netd_->IsRunning()) && (!statsd_ || statsd_->IsRunning()) && (!health_ || health_->IsRunning()) && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && (bootanimation_->IsRunning() || bootanimation_clean_exit_))) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning() || apex_clean_exit_); }
     android::base::Result<void> Close(const Tick& tick) {
         using namespace android::init;
         if(!active_) return {};
@@ -138,7 +138,7 @@ class LinuxMc1Cohort {
         selected_=nullptr;
         suspend_=nullptr;
         installd_=nullptr;
-        apexd_=nullptr;
+        apexd_=nullptr;gatekeeper_=nullptr;keystore_=nullptr;
         services.RemoveServiceIf([](const auto& service){return !service->IsRunning();});
         active_=false;
         int observed_mode=security_getenforce();
@@ -603,6 +603,25 @@ class LinuxMc1Cohort {
         // Original upstream SystemSuspend keeps its own real wakelock counter
         // when Linux owns host sleep. No /sys/power controls are exposed here.
         if(apex_requested_) {
+            // Reuse original security daemons and their original UID/rlimit
+            // contracts. Registration is not proof of a working HAL or keys.
+            for(const char* path:{"/system/etc/init/gatekeeperd.rc","/system/etc/init/keystore2.rc"}) {
+                auto parsed=parser.ParseConfigFile(path);
+                if(!parsed.ok() || parser.parse_error_count()!=0)return android::base::Error()<<"Original security RC rejected: "<<path;
+            }
+            gatekeeper_=services.FindService("gatekeeperd");
+            keystore_=services.FindService("keystore2");
+            if(!gatekeeper_ || gatekeeper_->args()!=std::vector<std::string>{"/system/bin/gatekeeperd","/data/misc/gatekeeper"} || gatekeeper_->uid()!=1000 ||
+               !keystore_ || keystore_->args()!=std::vector<std::string>{"/system/bin/keystore2","/data/misc/keystore"} || keystore_->uid()!=1017)
+                return android::base::Error()<<"Original security daemon contract mismatch";
+            for(auto* service:{gatekeeper_,keystore_}) {
+                service->AddReapCallback([this](const siginfo_t& info) {
+                    std::fprintf(stderr,"ORIGINAL_SECURITY_DAEMON_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
+                    if(!closing_)manager_failed_=true;
+                });
+                if(auto started=service->Start();!started.ok())return started;
+                std::fprintf(stderr,"ORIGINAL_SECURITY_DAEMON_STARTED name=%s pid=%d NOT_HAL_OR_KEY_ACCEPTANCE\n",service->name().c_str(),service->pid());
+            }
             auto memory_parsed=parser.ParseConfigFile("/system/etc/init/lmkd.rc");
             if(!memory_parsed.ok() || parser.parse_error_count()!=0)return android::base::Error()<<"Original lmkd RC rejected";
             lmkd_=services.FindService("lmkd");
@@ -821,6 +840,8 @@ class LinuxMc1Cohort {
     android::init::Service* suspend_=nullptr;
     android::init::Service* installd_=nullptr;
     android::init::Service* apexd_=nullptr;
+    android::init::Service* gatekeeper_=nullptr;
+    android::init::Service* keystore_=nullptr;
     bool aconfig_system_clean_exit_=false,aconfig_mainline_clean_exit_=false;
     bool bootanimation_started_=false,bootanimation_clean_exit_=false;
     bool missing_done_=false,missing_ok_=false;

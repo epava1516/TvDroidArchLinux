@@ -1,5 +1,7 @@
 # Contrato vigente · AOSP Android 16 QPR2
 
+Nivel de protección · [Límite demostrado104](../reports/android16-package-bootstrap/original-security-backend-negative.json): la reutilización de criptografía AOSP software debe conservar la identidad SOFTWARE en las API y metadatos. No permite anunciar TEE/StrongBox, atestación, certificación ni protección frente al kernel sin soporte real. Las APK que exijan esas garantías requieren un backend protegido disponible o un error explícito. Una clave software real no es una credencial simulada, pero tampoco acredita aislamiento hardware; R1-MAC sigue abierto.
+
 ## Criterio de memoria compartida · alcance de las evidencias
 
 La base Linux debe satisfacer y demostrar la ABI de memoria compartida usada por los componentes originales. [Fallo real actual](../reports/android16-selected-display/findings.json): memfd/sealing no basta para el guard ioctl ashmem de AOSP. Crear un nonce artificial, desactivar el guard o convertir un retorno nominal en éxito no satisface el contrato. Un shim original tampoco certifica por sí solo permisos/protecciones, legacy/compat32 ni aislamiento: conservar sus límites y exigir pruebas reales antes de aceptar cada ámbito. Esto concreta R1, sin modificar la exigencia de APK intactas ni permitir Android completo. El hito gráfico original SF/bootanimation no cierra ninguna etapa APK.
