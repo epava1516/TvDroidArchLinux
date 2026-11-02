@@ -51,6 +51,8 @@ public final class SelectedServices {
             Class<?> process = Class.forName("android.os.Process");
             int priority = process.getField("THREAD_PRIORITY_FOREGROUND").getInt(null);
             call(process, null, "setThreadPriority", new Class<?>[]{int.class}, priority);
+            if(packages)call(Class.forName("android.database.sqlite.SQLiteCompatibilityWalFlags"),null,
+                "init",new Class<?>[]{String.class},(Object)null);
             Class<?> looper = Class.forName("android.os.Looper");
             call(looper, null, "prepareMainLooper", new Class<?>[0]);
             System.loadLibrary("android_servers");
@@ -120,6 +122,7 @@ public final class SelectedServices {
             // Preserve SystemServer's Power -> Thermal -> Display order.
             call(managerType, manager, "startService", new Class<?>[]{Class.class},
                     Class.forName("com.android.server.power.thermal.ThermalManagerService"));
+            if(packages)call(activityManager.getClass(),activityManager,"initPowerManagement",new Class<?>[0]);
             // Original LightsManager is consumed by LocalDisplayAdapter.
             call(managerType, manager, "startService", new Class<?>[]{Class.class},
                     Class.forName("com.android.server.lights.LightsService"));
@@ -140,10 +143,65 @@ public final class SelectedServices {
                 call(managerType,manager,"startService",new Class<?>[]{Class.forName("com.android.server.SystemService")},domain);
                 call(Class.forName("com.android.server.pm.PackageManagerService"),null,"main",new Class<?>[]{contextType,installerType,domainType,boolean.class},context,installer,domain,false);
                 System.err.println("PACKAGES_ORIGINAL_PMS_RETURNED REQUIRES_INSTALL_LAUNCH_VERIFICATION");
+                // Original post-PMS ordering: publish UserManager and system AMS,
+                // then bind the real storage services used by PackageInstaller.
+                start(manager,managerType,"com.android.server.pm.UserManagerService$LifeCycle");
+                call(Class.forName("com.android.internal.policy.AttributeCache"),null,"init",new Class<?>[]{contextType},context);
+                call(activityManager.getClass(),activityManager,"setSystemProcess",new Class<?>[0]);
+                call(platformCompat.getClass(),platformCompat,"registerPackageReceiver",new Class<?>[]{contextType},context);
+                start(manager,managerType,"com.android.server.SystemConfigService");
+                start(manager,managerType,"com.android.server.usage.UsageStatsService");
+                Class<?> usageType=Class.forName("android.app.usage.UsageStatsManagerInternal");
+                Object usage=call(Class.forName("com.android.server.LocalServices"),null,"getService",new Class<?>[]{Class.class},usageType);
+                call(activityManager.getClass(),activityManager,"setUsageStatsManager",new Class<?>[]{usageType},usage);
+
+                start(manager,managerType,"com.android.server.accounts.AccountManagerService$Lifecycle");
+                start(manager,managerType,"com.android.server.content.ContentService$Lifecycle");
+                Object providers=call(activityManager.getClass(),activityManager,"getContentProviderHelper",new Class<?>[0]);
+                call(providers.getClass(),providers,"installSystemProviders",new Class<?>[0]);
+                start(manager,managerType,"com.android.server.deviceconfig.DeviceConfigInit$Lifecycle");
+                call(Class.forName("android.database.sqlite.SQLiteCompatibilityWalFlags"),null,"reset",new Class<?>[0]);
+                System.err.println("PACKAGES_ORIGINAL_SYSTEM_PROVIDERS_INSTALLED REQUIRES_PROVIDER_OPERATION");
+                Object storageLifecycle=start(manager,managerType,"com.android.server.StorageManagerService$Lifecycle");
+                Class<?> pmInternalType=Class.forName("android.content.pm.PackageManagerInternal");
+                Object pmInternal=call(Class.forName("com.android.server.LocalServices"),null,"getService",new Class<?>[]{Class.class},pmInternalType);
+                if(pmInternal==null)throw new IllegalStateException("Original PackageManagerInternal absent");
+                for(String dependency:new String[]{"package","appops"}) {
+                    if(call(Class.forName("android.os.ServiceManager"),null,"checkService",new Class<?>[]{String.class},dependency)==null)
+                        throw new IllegalStateException("Original storage dependency absent: "+dependency);
+                }
+                // Linux dispatches this original subsystem callback after its
+                // actual dependencies. This is not a global Android boot phase.
+                int storagePhase=Class.forName("com.android.server.SystemService").getField("PHASE_SYSTEM_SERVICES_READY").getInt(null);
+                call(storageLifecycle.getClass(),storageLifecycle,"onBootPhase",new Class<?>[]{int.class},storagePhase);
+
+                start(manager,managerType,"com.android.server.usage.StorageStatsService$Lifecycle");
+                System.err.println("PACKAGES_ORIGINAL_USER_AMS_STORAGE_STARTED REQUIRES_INSTALL_OPERATION");
+                // Run the real PackageInstaller client after dependency/lifecycle
+                // completion, while the original main looper can process work.
+                Thread installation=new Thread(() -> {
+                    try {
+                        Process child=new ProcessBuilder("/system/bin/sh","-c",
+                            "umask 077; /system/bin/sh /vendor/bin/install-markor.sh > /data/local/tmp/archtv-mc1/markor-install.txt 2>&1").start();
+                        int result=child.waitFor();
+                        System.err.println("MARKOR_ORIGINAL_SESSION_CLIENT_EXIT actual="+result+" REQUIRES_INSTALLED_BYTES");
+                    } catch(Exception failure) {
+                        failure.printStackTrace(System.err);
+                    }
+                },"linux-markor-installer");
+                installation.start();
+
+
             }
             call(looper, null, "loop", new Class<?>[0]);
             throw new IllegalStateException("Original main looper returned unexpectedly");
         } catch (Throwable failure) {
+            Throwable cause=failure;
+            for(int depth=0;cause!=null && depth<8;depth++,cause=cause.getCause()) {
+                String message=String.valueOf(cause.getMessage());
+                if(message.length()>700)message=message.substring(0,700);
+                System.err.println("SELECTED_FAILURE_CAUSE depth="+depth+" type="+cause.getClass().getName()+" message="+message);
+            }
             failure.printStackTrace(System.err);
             System.exit(1);
         }

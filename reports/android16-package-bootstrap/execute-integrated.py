@@ -29,6 +29,11 @@ text=text.replace("elif p.is_file():shutil.copyfile(p,root/'apex'/p.name)","elif
 # CE alias mounts and original permission data; no user metadata is seeded.
 roots=[('misc/vold',0o700,0,0),('misc/profiles',0o771,1000,1000),('misc/profiles/cur',0o771,1000,1000),('misc/profiles/ref',0o771,1000,1000),('misc/apexdata',0o711,0,0),('system/users',0o775,1000,1000),('media',0o550,1023,1023),('misc_ce',0o551,1000,9998),('system_ce',0o550,1000,1000),('user_de',0o511,1000,1000),('vendor_ce',0o551,0,0),('vendor_de',0o551,0,0)]
 root_code="\n".join("p=root/'data'/"+repr(name)+";p.mkdir(parents=True,exist_ok=True);os.chmod(p,"+str(mode)+");os.chown(p,"+str(uid)+","+str(gid)+")" for name,mode,uid,gid in roots)
+apk_path=Path('/home/tv/.cache/archtv/apk/real-app-candidates/net.gsantner.markor-v164-2026.10.0-flavorDefault-release.apk')
+apk_sha='c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440'
+assert hashlib.sha256(apk_path.read_bytes()).hexdigest()==apk_sha
+root_code+="\np=root/'data/local/tmp/archtv-mc1/markor-install.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
+root_code+="\nshutil.copyfile(Path("+repr(str(apk_path))+"),root/'data/local/tmp/markor.apk');os.chown(root/'data/local/tmp/markor.apk',2000,2000);os.chmod(root/'data/local/tmp/markor.apk',0o644)"
 text=text.replace('label(root)\n',root_code+'\nlabel(root)\n',1)
 text=text.replace('label(root)\n',"devices.prepare(root,out,Path("+repr(str(store))+"))\nassert not (root/'apex/apex-info-list.xml').exists()\nlabel(root)\n",1)
 text=text.replace("for p in sorted((r/'dist/aosp16/factory-inputs-3').glob('*.payload.img')):","devices.mount_sysfs(root)\nfor p in sorted((r/'dist/aosp16/factory-inputs-3').glob('*.payload.img')):",1)
@@ -53,7 +58,7 @@ text=text.replace("fields['Gid'].split()))==[0 if identity['kind']=='INSTALLD'",
 text=text.replace("0x20000f if identity['kind']=='DAEMON'","factory_caps if identity['kind']=='VOLD' else 0x20000f if identity['kind']=='DAEMON'")
 # Preserve actual APEX output on Java/bootstrap failures as well.
 marker="if p.returncode!=0:\n failed_output="
-text=text.replace(marker,"""for name in ['apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt','vold-query.txt','vold-user0.txt']:
+text=text.replace(marker,"""for name in ['apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt','vold-query.txt','vold-user0.txt','markor-install.txt','markor-path.txt','markor-dump.txt','activity-query.txt','mount-query.txt']:
  f=Path('/data/local/tmp/archtv-mc1')/name
  if f.is_file():print('PACKAGE_ORIGINAL_OUTPUT '+name+' '+json.dumps(f.read_text()),flush=True)
 if p.returncode!=0:
@@ -76,6 +81,15 @@ for path in ['/data/misc/apexdata/com.android.permission/access.abx','/data/misc
  import hashlib
  print('STORAGE_ORIGINAL_PERMISSION_FILE '+json.dumps({'path':path,'uid':info.st_uid,'gid':info.st_gid,'mode':oct(stat.S_IMODE(info.st_mode)),'sha256':hashlib.sha256(f.read_bytes()).hexdigest(),'context':os.getxattr(f,'security.selinux').decode().rstrip('\0')}),flush=True)
 print('STORAGE_ORIGINAL_FILES_VERIFIED NOT_REOPEN_FBE_MAC_OR_APK_ACCEPTANCE',flush=True)
+"""
+text+=r"""
+install=Path('/data/local/tmp/archtv-mc1/markor-install.txt').read_text()
+assert 'Success' in install.splitlines(),install
+paths=Path('/data/local/tmp/archtv-mc1/markor-path.txt').read_text().splitlines()
+assert len(paths)==1 and paths[0].startswith('package:/data/app/'),paths
+installed=Path(paths[0][8:]);assert installed.is_file() and installed.name=='base.apk'
+assert hashlib.sha256(installed.read_bytes()).hexdigest()=='c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440'
+print('MARKOR_ORIGINAL_INSTALL_BYTES_VERIFIED NOT_LAUNCH_PERSISTENCE_MAC_OR_APK_COMPATIBILITY',flush=True)
 """
 compile(text,'<integrated factory>','exec')
 if '--materialize-only' in saved:
