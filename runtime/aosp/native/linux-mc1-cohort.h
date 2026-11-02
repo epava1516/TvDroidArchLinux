@@ -602,6 +602,18 @@ class LinuxMc1Cohort {
             zygote_=services.FindService("zygote");
             if(!zygote_ || zygote_->args().empty() || zygote_->args().front()!="/system/bin/app_process64")return android::base::Error()<<"Unexpected zygote executable";
             for(const auto& argument:zygote_->args())if(argument=="--start-system-server")return android::base::Error()<<"Full SystemServer startup prohibited";
+            // Real Linux-owned single-64-bit application Zygote profile, not readiness.
+            // ART GetSupportedInstructionSets reads this original build configuration.
+            if(zygote_->args()!=std::vector<std::string>{"/system/bin/app_process64","-Xzygote","/system/bin","--zygote","--socket-name=zygote"})
+                return android::base::Error()<<"Unsupported Linux application Zygote profile";
+            const auto configured_zygote=android::base::GetProperty("ro.zygote","");
+            if(!configured_zygote.empty() && configured_zygote!="zygote64")
+                return android::base::Error()<<"Existing ro.zygote conflicts with actual selected profile";
+            if(configured_zygote.empty() && !android::base::SetProperty("ro.zygote","zygote64"))
+                return android::base::Error()<<"Cannot configure original ART Zygote contract";
+            if(android::base::GetProperty("ro.zygote","")!="zygote64")
+                return android::base::Error()<<"Original ART Zygote configuration readback mismatch";
+            std::fprintf(stderr,"SELECTED_ZYGOTE_CONFIGURATION ro.zygote=zygote64 NOT_RUNNING\n");
             zygote_->AddReapCallback([this](const siginfo_t& info){
                 std::fprintf(stderr,"SELECTED_ZYGOTE_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
                 if(!closing_)manager_failed_=true;

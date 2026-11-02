@@ -216,6 +216,10 @@ public final class SelectedServices {
                 Object roleHelper=Class.forName("com.android.server.policy.role.RoleServicePlatformHelperImpl").getConstructor(contextType).newInstance(context);
                 call(Class.forName("com.android.server.LocalManagerRegistry"),null,"addManager",new Class<?>[]{Class.class,Object.class},roleHelperType,roleHelper);
                 start(manager,managerType,"com.android.role.RoleService");
+                // Target GSI SystemServer has folded supervision flags: its actual
+                // compiled sequence starts this complete original lifecycle here.
+                // Generated Flags classes are not an executable runtime API in this build.
+                start(manager,managerType,"com.android.server.supervision.SupervisionService$Lifecycle");
                 start(manager,managerType,"com.android.server.BatteryService");
                 start(manager,managerType,"com.android.server.sensorprivacy.SensorPrivacyService");
                 start(manager,managerType,"com.android.server.sensors.SensorService");

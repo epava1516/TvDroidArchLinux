@@ -1,0 +1,141 @@
+{
+  "scope": "Original SupervisionService phases and original ART/dex2oat on intact input Markor; no APK journey stage newly accepted",
+  "run_id": "4781a39c-e0ff-498e-a914-1e6568add46a",
+  "checkpoint": "/home/tv/recuperacion-archtv/4781a39c-e0ff-498e-a914-1e6568add46a-markor-launch",
+  "input": "dist/aosp16/package-cohort-build-69/payload-2.ext4",
+  "input_sha256": "0e020ae3605d0bdb2b8d6130a281cc3f3a091a931be161a1eef6dc9b7ff4aea1",
+  "evidence_sha256": {
+    "before.json": "b2a02fd9add69554273d4c9e211287590bb18c9d14825a0a4f2c5b31c13dccd0",
+    "result.json": "788f1cb7ffa12203f62644fd9b1776ea1c68dd3dd762d3fe50d1e7aaea51aef1",
+    "run.log": "6e1d3953121f699883d3f94daa173323eac2e9d7154cd5fbe1fe9ef880a74030",
+    "completion-consumer.json": "3487c6cb33189ca37478947da46cf3a651e0fbc62969fbb2d06627461d83c515"
+  },
+  "artd_identity": {
+    "kind": "ARTD",
+    "pid_namespace_pid": 1674,
+    "getpidcon_raw_return": 0,
+    "actual_context": "u:r:artd:s0",
+    "contexts_observed_in_order": [
+      "u:r:init:s0",
+      "u:r:artd:s0"
+    ],
+    "errno_observed": [],
+    "status": [
+      "Uid:\t1082\t1082\t1082\t1082",
+      "Gid:\t1082\t1082\t1082\t1082",
+      "Groups:\t ",
+      "CapPrm:\t000000000000000f",
+      "CapEff:\t000000000000000f",
+      "CapBnd:\t000000000000000f",
+      "NoNewPrivs:\t1"
+    ]
+  },
+  "real_dexopt_result": {
+    "tag": "ArtService",
+    "message": "Dexopt result: [packageName = net.gsantner.markor] DexContainerFileDexoptResult{dexContainerFile=/data/app/~~q-qrq0Gj3YUBo8DNfx6AvQ==/net.gsantner.markor-tJLtM1WSf5lM9fa8RaZm2Q==/base.apk, primaryAbi=true, abi=x86_64, actualCompilerFilter=verify, status=PERFORMED, dex2oatWallTimeMillis=5680, dex2oatCpuTimeMillis=2110, sizeBytes=10778052, sizeBeforeBytes=0, extendedStatusFlags=[]}",
+    "actual_sender_pid_uid_gid": [
+      512,
+      1000,
+      1000
+    ]
+  },
+  "supervision_lifecycle": [
+    {
+      "tag": "SystemServiceManager",
+      "message": "Starting com.android.server.supervision.SupervisionService$Lifecycle",
+      "actual_sender_pid_uid_gid": [
+        512,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "SystemServerTiming",
+      "message": "OnBootPhase_500_com.android.server.supervision.SupervisionService$Lifecycle",
+      "actual_sender_pid_uid_gid": [
+        512,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "SystemServerTiming",
+      "message": "OnBootPhase_550_com.android.server.supervision.SupervisionService$Lifecycle",
+      "actual_sender_pid_uid_gid": [
+        512,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "SystemServerTimingAsync",
+      "message": "ssm.onStartUser-0_com.android.server.supervision.SupervisionService$Lifecycle",
+      "actual_sender_pid_uid_gid": [
+        512,
+        1000,
+        1000
+      ]
+    }
+  ],
+  "configuration_observed": true,
+  "installation_command_stdout": "Success: created install session [1857419615]\nSuccess: streamed 11861047 bytes\nSuccess\n",
+  "selected_failure_output": "",
+  "primary_block": {
+    "tag": "UserController",
+    "message": "Not unlocking user 0 yet because boot hasn't completed",
+    "actual_sender_pid_uid_gid": [
+      512,
+      1000,
+      1000
+    ]
+  },
+  "secondary_app_attach_failures": [
+    {
+      "tag": "archtv-selected-services",
+      "message": "memevent failed to attach bpf program to oom/mark_victim tracepoint: No such file or directory",
+      "actual_sender_pid_uid_gid": [
+        512,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "ActivityManager",
+      "message": "Process ProcessRecord{39c196f 1648:com.android.permissioncontroller/u0a95} failed to attach",
+      "actual_sender_pid_uid_gid": [
+        512,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "ActivityManager",
+      "message": "Process ProcessRecord{ebdacfe 1649:com.android.settings/1000} failed to attach",
+      "actual_sender_pid_uid_gid": [
+        512,
+        1000,
+        1000
+      ]
+    }
+  ],
+  "result": {
+    "outer_exit": 1,
+    "elapsed_seconds": 157.14891839027405,
+    "bpf_cleanup_verified": true,
+    "active_loops": "",
+    "final_dm": []
+  },
+  "limits": [
+    "PMS install commit returned Success and real dexopt PERFORMED; missing durable install signature/path readback means no new installation acceptance",
+    "cmd activity start-user -w 0 waits for actual boot completion; no launch/UI/input/note/persistence/close/reopen",
+    "Current original AMS goingCallback never returns; no boot flags or readiness written to work around it",
+    "Original PermissionController/Settings process attachment failures remain; no availability asserted",
+    "Internal MC1 close timed out after stop; outer cleanup verified; full clean service lifetime not accepted",
+    "R1-MAC permissive; ARM/GMS/DRM open and separate"
+  ],
+  "next": "Enforce/review Linux application profile via original PMS before allowing original AMS callback return, so real boot/user lifecycle can progress without implicit Android Home/SystemUI/persistent chain. Capture install readback before user-start wait; diagnose real original app attach failures. No manual boot flags.",
+  "sources": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/supervision-artd-sources.json",
+  "negative": "reports/android16-package-bootstrap/supervision-art-runtime-negative.json",
+  "compiled_sequence": "reports/android16-package-bootstrap/systemserver-compiled-app-config.json (static CLI, not MCP)",
+  "notification": "active owner consumed exact run; gate absent, no continuation requested"
+}

@@ -1,0 +1,30 @@
+{
+  "scope": "Failed candidate68, no APK acceptance",
+  "checkpoint": "/home/tv/recuperacion-archtv/8693d95f-42a8-41df-bec6-f172d431e641-markor-launch",
+  "run_id": "8693d95f-42a8-41df-bec6-f172d431e641",
+  "evidence_sha256": {
+    "before.json": "f63142463cd98ffc9efea0df6da5a017f77fc4ec6eda7c92c0b590ddba09042e",
+    "result.json": "fa21becdc60c12a5becfc45ba7335bcee5627ed665723569c4bca1dc57920ebb",
+    "run.log": "01836173bf2fdcfde6cac13c4911cb6a0f4c3841bf2d374746cd71d3fafe405f",
+    "completion-consumer.json": "c9ff28f4ab6638fd7dd6cff4334ef4022d03207478a5cfd246ab3bb1e204a7c0"
+  },
+  "result": {
+    "outer_exit": 1,
+    "elapsed_seconds": 34.65273451805115,
+    "active_loops": "",
+    "final_dm": [],
+    "bpf_cleanup_verified": true
+  },
+  "configuration": "Original ro.zygote=zygote64 publication/readback passed for actual single64 profile; no artd/dexopt operation reached",
+  "failure": "Reflecting source-generated android.app.supervision.flags.Flags fails ClassNotFoundException in target GSI",
+  "compiled_evidence": {
+    "record": "reports/android16-package-bootstrap/systemserver-compiled-app-config.json",
+    "local": "/home/tv/.cache/archtv/systemserver-jadx-cli/SystemServer.java",
+    "sha256": "5fc63f420373018cf2c0653f314452b4e25766bb957d46f0db1f956bfe6aa4f5",
+    "excerpt": "Target SystemServer unconditionally starts SupervisionService.Lifecycle immediately after RoleService; static CLI JADX, not REA MCP/execution"
+  },
+  "source_records": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/supervision-artd-sources.json",
+  "decision": "Candidate69 follows actual target compiled service sequence, no replacement Flags class or fake API return; full original lifecycle is required before role callbacks",
+  "next": "Run69 integrated ART/properties/supervision/PMS/Markor; no new acceptance until readbacks/full journey",
+  "notification": "exact UUID consumed by active owner, gate absent"
+}

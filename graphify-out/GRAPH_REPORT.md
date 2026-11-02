@@ -1,7 +1,7 @@
-# Graph Report - artd-lazy-control  (2026-11-02)
+# Graph Report - art-supervision-functional  (2026-11-02)
 
 ## Corpus Check
-- 332 files · ~298,415 words
+- 332 files · ~298,947 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 37 file(s) not represented in the graph (top: .cil 9, .xml 8, .patch 8)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `096330f7`
+- Built from commit: `39a1a68d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -775,7 +775,7 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.091) - this node is a cross-community bridge._
 - **Should `resources-jni.cpp` be split into smaller, more focused modules?**
   _Cohesion score 0.13535353535353536 - nodes in this community are weakly interconnected._
-- **Why does `TvCompositor` connect `TvCompositor` to `duration`, `mod.rs`, `input.rs`, `drm.rs`, `compositor.rs`, `session.rs`, `.process_input_event`, `xdg_shell.rs`, `Backend`?**
-  _High betweenness centrality (0.066) - this node is a cross-community bridge._
+- **Why does `Arquitectura vigente · A16-QPR2-1` connect `Arquitectura vigente · A16-QPR2-1` to `Puerta vigente: Binder privado y política del Linux anfitrión`, `ready`, `ROADMAP.md`?**
+  _High betweenness centrality (0.064) - this node is a cross-community bridge._
 - **Should `Client` be split into smaller, more focused modules?**
   _Cohesion score 0.07785547785547786 - nodes in this community are weakly interconnected._
