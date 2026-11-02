@@ -23,6 +23,79 @@ public final class SelectedServices {
         call(Class.forName("com.android.server.LocalServices"), null, "addService",
             new Class<?>[]{Class.class,Object.class}, Class.forName(name), Class.forName(implementation).getConstructor().newInstance());
     }
+    private static void applyLinuxBootstrapProfile(Object context) throws Exception {
+        Class<?> ctx=Class.forName("android.content.Context");
+        Class<?> pmType=Class.forName("android.content.pm.PackageManager");
+        Class<?> ipmType=Class.forName("android.content.pm.IPackageManager");
+        Object pm=call(ctx,context,"getPackageManager",new Class<?>[0]);
+        Object ipm=call(Class.forName("android.app.AppGlobals"),null,"getPackageManager",new Class<?>[0]);
+        int flags=pmType.getField("GET_SHARED_LIBRARY_FILES").getInt(null)
+            | pmType.getField("MATCH_DIRECT_BOOT_AWARE").getInt(null)
+            | pmType.getField("MATCH_DIRECT_BOOT_UNAWARE").getInt(null);
+        int disabled=pmType.getField("COMPONENT_ENABLED_STATE_DISABLED_USER").getInt(null);
+        int componentDisabled=pmType.getField("COMPONENT_ENABLED_STATE_DISABLED").getInt(null);
+        int dontKill=pmType.getField("DONT_KILL_APP").getInt(null);
+        StringBuilder record=new StringBuilder("SCOPE original PMS bootstrap admission, not APK compatibility or MAC authorization\n");
+        try {
+        java.util.List<?> persistent=(java.util.List<?>)call(Class.forName("android.content.pm.ParceledListSlice"),
+            call(ipmType,ipm,"getPersistentApplications",new Class<?>[]{int.class},flags),"getList",new Class<?>[0]);
+        for(Object app:persistent) {
+            String name=(String)app.getClass().getField("packageName").get(app);
+            int uid=app.getClass().getField("uid").getInt(app);
+            String process=(String)app.getClass().getField("processName").get(app);
+            record.append("PERSISTENT_BEFORE ").append(name).append(" uid=").append(uid).append(" process=").append(process).append('\n');
+            // These original packages already run in the selected system process.
+            // Keep SettingsProvider; do not disable the entire Settings APK for its Home component.
+            boolean core=(name.equals("android") || name.equals("com.android.providers.settings"))
+                && uid==1000 && "system".equals(process);
+            if(!core) {
+                call(pmType,pm,"setApplicationEnabledSetting",new Class<?>[]{String.class,int.class,int.class},name,disabled,dontKill);
+                int actual=(Integer)call(pmType,pm,"getApplicationEnabledSetting",new Class<?>[]{String.class},name);
+                if(actual!=disabled)throw new IllegalStateException("PMS bootstrap state mismatch: "+name);
+                record.append("PERSISTENT_DISABLED ").append(name).append(" state=").append(actual).append('\n');
+            }
+        }
+        Class<?> intentType=Class.forName("android.content.Intent");
+        Object home=intentType.getConstructor(String.class).newInstance("android.intent.action.MAIN");
+        call(intentType,home,"addCategory",new Class<?>[]{String.class},"android.intent.category.HOME");
+        Class<?> componentType=Class.forName("android.content.ComponentName");
+        java.util.List<?> homes=(java.util.List<?>)call(pmType,pm,"queryIntentActivities",new Class<?>[]{intentType,int.class},home,flags);
+        for(Object resolve:homes) {
+            Object activity=resolve.getClass().getField("activityInfo").get(resolve);
+            String pkg=(String)activity.getClass().getField("packageName").get(activity);
+            String name=(String)activity.getClass().getField("name").get(activity);
+            Object component=componentType.getConstructor(String.class,String.class).newInstance(pkg,name);
+            call(pmType,pm,"setComponentEnabledSetting",new Class<?>[]{componentType,int.class,int.class},component,componentDisabled,dontKill);
+            int actual=(Integer)call(pmType,pm,"getComponentEnabledSetting",new Class<?>[]{componentType},component);
+            if(actual!=componentDisabled)throw new IllegalStateException("PMS Home state mismatch: "+pkg+"/"+name);
+            record.append("HOME_COMPONENT_DISABLED ").append(pkg).append('/').append(name).append(" state=").append(actual).append('\n');
+        }
+        if((Boolean)call(Class.forName("android.os.SystemProperties"),null,"getBoolean",new Class<?>[]{String.class,boolean.class},"ro.system_user_home_needed",false))
+            throw new IllegalStateException("Selected original profile requires Android system Home");
+        java.util.List<?> remaining=(java.util.List<?>)call(Class.forName("android.content.pm.ParceledListSlice"),
+            call(ipmType,ipm,"getPersistentApplications",new Class<?>[]{int.class},flags),"getList",new Class<?>[0]);
+        boolean unselectedRemaining=false;
+        for(Object app:remaining) {
+            String name=(String)app.getClass().getField("packageName").get(app);
+            int uid=app.getClass().getField("uid").getInt(app);
+            String process=(String)app.getClass().getField("processName").get(app);
+            if(!(name.equals("android") || name.equals("com.android.providers.settings")) || uid!=1000 || !"system".equals(process))
+                unselectedRemaining=true;
+            record.append("PERSISTENT_AFTER ").append(name).append(" uid=").append(uid).append(" process=").append(process).append('\n');
+        }
+        if(unselectedRemaining)throw new IllegalStateException("Original persistent enumeration retains disabled applications; see actual profile record");
+        java.util.List<?> remainingHomes=(java.util.List<?>)call(pmType,pm,"queryIntentActivities",new Class<?>[]{intentType,int.class},home,flags);
+        if(!remainingHomes.isEmpty())throw new IllegalStateException("Android Home remains enabled after original PMS profile");
+        record.append("HOME_AFTER count=0\n");
+        System.err.println("LINUX_BOOTSTRAP_PROFILE_ORIGINAL_PMS_READBACK_PASSED NOT_SECURITY_OR_APK_ACCEPTANCE");
+        } finally {
+            try(java.io.FileOutputStream output=new java.io.FileOutputStream("/data/local/tmp/archtv-mc1/linux-application-profile.txt")) {
+                output.write(record.toString().getBytes(java.nio.charset.StandardCharsets.UTF_8));
+            } catch(java.io.IOException reportingFailure) {
+                System.err.println("PROFILE_REPORT_IO_FAILURE "+reportingFailure+"\n"+record);
+            }
+        }
+    }
     private static void saveWaitDiagnostic(String value) {
         try (java.io.FileOutputStream output=new java.io.FileOutputStream("/data/local/tmp/archtv-mc1/selected-wait.txt")) {
             byte[] bytes=value.getBytes(java.nio.charset.StandardCharsets.UTF_8);
@@ -323,6 +396,7 @@ public final class SelectedServices {
                 // Original SystemServer readiness order, retaining real checks.
                 call(wmType,wm,"systemReady",new Class<?>[0]);
                 start(manager,managerType,"com.android.server.policy.PermissionPolicyService");
+                applyLinuxBootstrapProfile(context);
                 call(packagesService.getClass(),packagesService,"systemReady",new Class<?>[0]);
                 // Query the exact original definition, not a shell listing of
                 // permission groups (RANGING belongs to UNDEFINED).
@@ -339,27 +413,24 @@ public final class SelectedServices {
                     try {
                         int activityReady=Class.forName("com.android.server.SystemService").getField("PHASE_ACTIVITY_MANAGER_READY").getInt(null);
                         call(managerType,manager,"startBootPhase",new Class<?>[]{traceType,int.class},trace,activityReady);
-                        System.err.println("LINUX_ORIGINAL_AMS_CALLBACK_ENTERED METHOD_NOT_RETURNED_NOT_BOOT_COMPLETED");
-
-                        // Run the real PackageInstaller client after dependency/lifecycle
-                        // completion, while the original main looper can process work.
-                        Thread installation=new Thread(() -> {
-                            try {
-                                Process child=new ProcessBuilder("/system/bin/sh","-c",
-                                    "umask 077; /system/bin/sh /vendor/bin/install-markor.sh > /data/local/tmp/archtv-mc1/markor-install.txt 2>&1").start();
-                                int result=child.waitFor();
-                                System.err.println("MARKOR_ORIGINAL_SESSION_CLIENT_EXIT actual="+result+" REQUIRES_INSTALLED_BYTES");
-                            } catch(Exception failure) {
-                                failure.printStackTrace(System.err);
-                            }
-                        },"linux-markor-installer");
-                        installation.start();
-                        call(looper,null,"loop",new Class<?>[0]);
-                        throw new IllegalStateException("Linux application loop returned; refusing Android implicit startup");
+                        // Original SystemServer waits for original installd/PMS work before phase600.
+                        call(packagesService.getClass(),packagesService,"waitForAppDataPrepared",new Class<?>[0]);
+                        int appsPhase=Class.forName("com.android.server.SystemService").getField("PHASE_THIRD_PARTY_APPS_CAN_START").getInt(null);
+                        call(managerType,manager,"startBootPhase",new Class<?>[]{traceType,int.class},trace,appsPhase);
+                        System.err.println("LINUX_ORIGINAL_AMS_CALLBACK_RETURNING AFTER_ORIGINAL_PHASE600 NOT_BOOT_COMPLETED");
                     } catch(Exception failure) { throw new RuntimeException("Original AMS callback failed",failure); }
                 };
                 call(activityManager.getClass(),activityManager,"systemReady",new Class<?>[]{Runnable.class,traceType},linuxApplicationLoop,trace);
-                throw new IllegalStateException("AMS callback boundary returned unexpectedly");
+                System.err.println("LINUX_ORIGINAL_AMS_SYSTEM_READY_RETURNED NOT_BOOT_COMPLETED");
+                Thread installation=new Thread(() -> {
+                    try {
+                        Process child=new ProcessBuilder("/system/bin/sh","-c",
+                            "umask 077; /system/bin/sh /vendor/bin/install-markor.sh > /data/local/tmp/archtv-mc1/markor-install.txt 2>&1").start();
+                        int result=child.waitFor();
+                        System.err.println("MARKOR_ORIGINAL_SESSION_CLIENT_EXIT actual="+result+" REQUIRES_INSTALLED_BYTES");
+                    } catch(Exception failure) { failure.printStackTrace(System.err); }
+                },"linux-markor-installer");
+                installation.start();
 
 
 

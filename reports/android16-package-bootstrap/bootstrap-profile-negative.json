@@ -1,0 +1,107 @@
+{
+  "scope": "Original PMS enabled state does not enforce selected persistent bootstrap; negative architecture evidence, not runtime completion",
+  "runs": [
+    {
+      "run_id": "41fdb4be-f492-43c6-add3-d7ae8e14ba65",
+      "candidate": 70,
+      "checkpoint": "/home/tv/recuperacion-archtv/41fdb4be-f492-43c6-add3-d7ae8e14ba65-markor-launch",
+      "hashes": {
+        "before.json": "bd86d0cb8dac895f3844ad80a56036e04e6c964d7eefe9a57e56885381238bd6",
+        "result.json": "c16cd96380a928654fa78dab493f22d7371027ae4ed7bb717fc07da04828163a",
+        "run.log": "cc420ba75241c205c1b8e0daaac3f1ad14fa023e2b0d2b5de9256a08b6deecb2"
+      },
+      "result": {
+        "outer_exit": 1,
+        "elapsed_seconds": 143.1269383430481,
+        "active_loops": "",
+        "final_dm": []
+      },
+      "bpf_cleanup_verified": true,
+      "profile": null,
+      "failure": "java.lang.IllegalStateException: Unselected persistent app remains: com.android.networkstack\n\tat org.archtv.aosplinux.SelectedServices.applyLinuxBootstrapProfile(SelectedServices.java:81)\n\tat org.archtv.aosplinux.SelectedServices.main(SelectedServices.java:392)\n\tat java.lang.reflect.Method.invoke(Native Method)\n\tat org.archtv.aosplinux.ServiceLauncher.main(ServiceLauncher.java:37)\n\tat com.android.internal.os.RuntimeInit.nativeFinishInit(Native Method)\n\tat com.android.internal.os.RuntimeInit.main(RuntimeInit.java:366)\n",
+      "scope": "No APK stage accepted;70 original persistent state contradiction;71 ended at ndc deadline before profile;72 retains real complete profile mismatch"
+    },
+    {
+      "run_id": "3c14980a-6dc9-4d49-9ae7-1eb3f26d6f46",
+      "candidate": 71,
+      "checkpoint": "/home/tv/recuperacion-archtv/3c14980a-6dc9-4d49-9ae7-1eb3f26d6f46-markor-launch",
+      "hashes": {
+        "before.json": "86009bea38fdf93dacffe54921419c511a0dd3ec8d205f98f141f4b222c62f6b",
+        "result.json": "552de809050812b3e22825ea590ccf33f648f175b63319163b617628873c9de6",
+        "run.log": "c753a4a9973ddeecb1444d12b1f4b0ee86ac7f78b2ca5bcc3d02f33717d0e029"
+      },
+      "result": {
+        "outer_exit": 1,
+        "elapsed_seconds": 63.94338083267212,
+        "active_loops": "",
+        "final_dm": []
+      },
+      "bpf_cleanup_verified": true,
+      "profile": null,
+      "failure": "",
+      "scope": "No APK stage accepted;70 original persistent state contradiction;71 ended at ndc deadline before profile;72 retains real complete profile mismatch"
+    },
+    {
+      "run_id": "dd388bb9-db95-418a-add2-8f684ac11aac",
+      "candidate": 72,
+      "checkpoint": "/home/tv/recuperacion-archtv/dd388bb9-db95-418a-add2-8f684ac11aac-markor-launch",
+      "hashes": {
+        "before.json": "6db64d816ecd6b26645f6bf92c2e278b10ea1a13010d60403fa8753a4488604a",
+        "result.json": "a3092ed9b2719c1bbb83578ec7b2694240d7132e894134336e5a9f33c2f015fe",
+        "run.log": "3ff8a20024bfe90811c2693bd67a09c92d01c01c1da10e6b23c0ca9ed7203e7f"
+      },
+      "result": {
+        "outer_exit": 1,
+        "elapsed_seconds": 126.55776500701904,
+        "active_loops": "",
+        "final_dm": []
+      },
+      "bpf_cleanup_verified": true,
+      "profile": "SCOPE original PMS bootstrap admission, not APK compatibility or MAC authorization\nPERSISTENT_BEFORE com.android.networkstack uid=1073 process=com.android.networkstack.process\nPERSISTENT_DISABLED com.android.networkstack state=3\nPERSISTENT_BEFORE android uid=1000 process=system\nPERSISTENT_BEFORE com.android.ons uid=1001 process=com.android.phone\nPERSISTENT_DISABLED com.android.ons state=3\nPERSISTENT_BEFORE com.android.se uid=1068 process=com.android.se\nPERSISTENT_DISABLED com.android.se state=3\nPERSISTENT_BEFORE com.android.cellbroadcastservice uid=1073 process=com.android.networkstack.process\nPERSISTENT_DISABLED com.android.cellbroadcastservice state=3\nPERSISTENT_BEFORE com.android.networkstack.tethering uid=1073 process=com.android.networkstack.process\nPERSISTENT_DISABLED com.android.networkstack.tethering state=3\nPERSISTENT_BEFORE com.android.phone uid=1001 process=com.android.phone\nPERSISTENT_DISABLED com.android.phone state=3\nPERSISTENT_BEFORE com.android.systemui uid=10068 process=com.android.systemui\nPERSISTENT_DISABLED com.android.systemui state=3\nHOME_COMPONENT_DISABLED com.android.provision/com.android.provision.DefaultActivity state=2\nHOME_COMPONENT_DISABLED com.android.launcher3/com.android.launcher3.uioverrides.QuickstepLauncher state=2\nHOME_COMPONENT_DISABLED com.android.settings/com.android.settings.FallbackHome state=2\nPERSISTENT_AFTER com.android.networkstack uid=1073 process=com.android.networkstack.process\nPERSISTENT_AFTER android uid=1000 process=system\nPERSISTENT_AFTER com.android.ons uid=1001 process=com.android.phone\nPERSISTENT_AFTER com.android.se uid=1068 process=com.android.se\nPERSISTENT_AFTER com.android.cellbroadcastservice uid=1073 process=com.android.networkstack.process\nPERSISTENT_AFTER com.android.networkstack.tethering uid=1073 process=com.android.networkstack.process\nPERSISTENT_AFTER com.android.phone uid=1001 process=com.android.phone\nPERSISTENT_AFTER com.android.systemui uid=10068 process=com.android.systemui\n",
+      "failure": "java.lang.IllegalStateException: Original persistent enumeration retains disabled applications; see actual profile record\n\tat org.archtv.aosplinux.SelectedServices.applyLinuxBootstrapProfile(SelectedServices.java:86)\n\tat org.archtv.aosplinux.SelectedServices.main(SelectedServices.java:399)\n\tat java.lang.reflect.Method.invoke(Native Method)\n\tat org.archtv.aosplinux.ServiceLauncher.main(ServiceLauncher.java:37)\n\tat com.android.internal.os.RuntimeInit.nativeFinishInit(Native Method)\n\tat com.android.internal.os.RuntimeInit.main(RuntimeInit.java:366)\n",
+      "scope": "No APK stage accepted;70 original persistent state contradiction;71 ended at ndc deadline before profile;72 retains real complete profile mismatch"
+    }
+  ],
+  "source_facts": [
+    "ComputerEngine.getPersistentApplications filters manifest persistent/direct-boot, not enabled state",
+    "Original AMS.startPersistentApps consumes that list and un-stops selected packages",
+    "PMS.setApplicationHiddenSettingAsUser explicitly forbids hiding android/SystemUI; do not bypass that guard",
+    "PackageManagerInternalBase.getSystemUiServiceComponent reads original resource ComponentName, not guaranteed APK presence"
+  ],
+  "source_files": [
+    {
+      "local": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/ComputerEngine.java",
+      "sha256": "223614ff6d1694d0869b080c29fa869e1dd059b7abb8e0454fcb4d4b2b76c6dd"
+    },
+    {
+      "local": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/PackageManagerInternalBase.java",
+      "sha256": "9c90aba44abe0df7e5f0df63b718a2e17977519ff5714f52a6a145e81abf98c3"
+    },
+    {
+      "local": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/ProtectedPackages.java",
+      "sha256": "c36c54c7ca9114f0d43feda5bf987edd60efb96854a8a63ec149ba87b3febadf"
+    },
+    {
+      "local": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/services__core__java__com__android__server__pm__PackageManagerService.java",
+      "sha256": "19f12f146587df108b169ae826801910775fe2caa58e8a351eb1a5b89659bb8e"
+    },
+    {
+      "local": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/ActivityManagerService.java",
+      "sha256": "2df3c48c2e8769bf00193c70465e6b85d5208c48e23eac62820c9c083ae95601"
+    }
+  ],
+  "static_systemui_mcp": {
+    "path": "/home/tv/.cache/archtv/systemui-bootstrap-mcp.json",
+    "sha256": "a64bc20469cc0e61d64a22389b46afbb11f4c2c1101c9635d66c31a551226700",
+    "evidence_id": "ev_65d783a050d31d0832eef9dc88762f10c788617e035a654e84932b53ad09d1e2",
+    "fact": "Original application persistent=true, no HOME intent; static manifest only, no signature or execution proof"
+  },
+  "decision": "Next actual private package filesystem view: explicitly omit the seven unselected persistent infrastructure APK directories before PMS scans, preserving original underlying images/APEX/native components and all original APK bytes. Original PMS must enumerate the actual view, with complete exclusion/hash/mount ledger and no fabricated inventory. HOME components may use original enabled-state API, whose exact readback passed. Linux owns bootstrap selection; no hidden standard SystemServer/SystemUI chain.",
+  "limits": [
+    "Initial Markor note profile omits persistent network/tethering, telephony/cellbroadcast, Secure Element and SystemUI APK startup. Their functions are not compatible/proven by absence; keep broad compatibility roadmap open and admit complete original subsystems when integrated",
+    "No policy/enforcing changes; R1-MAC open; ARM/GMS/DRM separate",
+    "Original callback has not returned and phase600 is unproven",
+    "71 root ndc16-second query was an unrelated repeated operation; selected Markor cohort no longer repeats it. Original positive native network evidence remains historical, not current operation acceptance"
+  ],
+  "next": "Real package view plus original PMS actual inventory, phase600/AMS return, installed bytes/signature readback, then user/attach/launch/UI/persistence"
+}

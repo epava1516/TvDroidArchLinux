@@ -18,6 +18,16 @@ trap 'task_status=$?; if [ "$committed" = false ]; then /system/bin/cmd package 
 /system/bin/cmd package install-write -S "$apk_bytes" "$session_id" base.apk "$apk_path"
 /system/bin/cmd package install-commit "$session_id"
 committed=true
+# Preserve the original PMS readback before user-start can block or the cohort stops.
+/system/bin/cmd package path --user 0 net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-postcommit-path.txt
+/system/bin/dumpsys package net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-postcommit-dump.txt
+IFS= read -r installed_line < /data/local/tmp/archtv-mc1/markor-postcommit-path.txt
+case "$installed_line" in package:/data/app/*/base.apk) ;; *) exit 1;; esac
+installed_apk=${installed_line#package:}
+source_hash=$(/system/bin/sha256sum "$apk_path")
+installed_hash=$(/system/bin/sha256sum "$installed_apk")
+[ "${source_hash%% *}" = "${installed_hash%% *}" ] || exit 1
+/system/bin/printf 'SOURCE %s\nINSTALLED %s\n' "$source_hash" "$installed_hash" > /data/local/tmp/archtv-mc1/markor-installed-bytes.txt
 /system/bin/cmd activity start-user -w 0 > /data/local/tmp/archtv-mc1/markor-user-start.txt 2>&1
 resolved=$(/system/bin/cmd package resolve-activity --brief --user 0 -a android.intent.action.MAIN -c android.intent.category.LAUNCHER net.gsantner.markor)
 /system/bin/printf '%s\n' "$resolved" > /data/local/tmp/archtv-mc1/markor-resolve.txt
