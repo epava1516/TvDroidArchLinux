@@ -25,6 +25,9 @@ rc=rc.replace('    capabilities SYS_NICE\n','    capabilities SYS_NICE BLOCK_SUS
 assert rc.count('    group system graphics\n')==1
 rc=rc.replace('    group system graphics\n','    group system graphics net_bw_stats net_bw_acct\n')
 lines=rc.splitlines();lines[0]='service archtv-selected-services /system/bin/app_process64 -Xmx768m -Xnoimage-dex2oat /system/bin --application --nice-name=archtv-selected-services org.archtv.aosplinux.ServiceLauncher --packages'
+checkpoint_diagnostic='--checkpoint-diagnostic' in sys.argv[2:]
+(out/'build-options.json').write_text(json.dumps({'checkpoint_contract_diagnostic':checkpoint_diagnostic},indent=2)+'\n')
+if checkpoint_diagnostic:lines.append('    setenv ARCHTV_CHECKPOINT_DIAGNOSTIC 1')
 lines=[l for l in lines if not any(l.startswith('    setenv '+n+' ') for n in ['BOOTCLASSPATH','DEX2OATBOOTCLASSPATH','SYSTEMSERVERCLASSPATH','STANDALONE_SYSTEMSERVER_JARS'])];(entry/'selected-services.rc').write_text('\n'.join(lines)+'\n')
 old=r/'dist/aosp16/apex-cohort-build-6';commands=[]
 for n in ['graphics-client']:

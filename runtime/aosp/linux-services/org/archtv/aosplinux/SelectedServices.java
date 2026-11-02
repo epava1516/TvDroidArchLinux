@@ -58,6 +58,13 @@ public final class SelectedServices {
             Object activity=resolve.getClass().getField("activityInfo").get(resolve);
             String pkg=(String)activity.getClass().getField("packageName").get(activity);
             String name=(String)activity.getClass().getField("name").get(activity);
+            // Individual original boot activity supplies the real activity-idle
+            // lifecycle. The trusted installer removes it only after original
+            // user unlock; no Launcher3/SystemUI or manual boot flags.
+            if(pkg.equals("com.android.settings") && name.equals("com.android.settings.FallbackHome")) {
+                record.append("HOME_BOOTSTRAP_ORIGINAL ").append(pkg).append('/').append(name).append('\n');
+                continue;
+            }
             Object component=componentType.getConstructor(String.class,String.class).newInstance(pkg,name);
             call(pmType,pm,"setComponentEnabledSetting",new Class<?>[]{componentType,int.class,int.class},component,componentDisabled,dontKill);
             int actual=(Integer)call(pmType,pm,"getComponentEnabledSetting",new Class<?>[]{componentType},component);
@@ -79,8 +86,12 @@ public final class SelectedServices {
         }
         if(unselectedRemaining)throw new IllegalStateException("Original persistent enumeration retains disabled applications; see actual profile record");
         java.util.List<?> remainingHomes=(java.util.List<?>)call(pmType,pm,"queryIntentActivities",new Class<?>[]{intentType,int.class},home,flags);
-        if(!remainingHomes.isEmpty())throw new IllegalStateException("Android Home remains enabled after original PMS profile");
-        record.append("HOME_AFTER count=0\n");
+        if(remainingHomes.size()!=1)throw new IllegalStateException("Expected exactly the original bootstrap Home, got "+remainingHomes.size());
+        Object bootstrap=remainingHomes.get(0).getClass().getField("activityInfo").get(remainingHomes.get(0));
+        if(!"com.android.settings".equals(bootstrap.getClass().getField("packageName").get(bootstrap)) ||
+           !"com.android.settings.FallbackHome".equals(bootstrap.getClass().getField("name").get(bootstrap)))
+            throw new IllegalStateException("Unexpected Home in scoped original bootstrap");
+        record.append("HOME_BOOTSTRAP_ONLY count=1; must be removed after real unlock before Markor launch\n");
         System.err.println("LINUX_BOOTSTRAP_PROFILE_ORIGINAL_PMS_READBACK_PASSED NOT_SECURITY_OR_APK_ACCEPTANCE");
         } finally {
             try(java.io.FileOutputStream output=new java.io.FileOutputStream("/data/local/tmp/archtv-mc1/linux-application-profile.txt")) {
@@ -89,6 +100,41 @@ public final class SelectedServices {
                 System.err.println("PROFILE_REPORT_IO_FAILURE "+reportingFailure+"\n"+record);
             }
         }
+    }
+    private static void diagnoseOriginalCheckpoint() throws Exception {
+        java.util.concurrent.CountDownLatch done=new java.util.concurrent.CountDownLatch(1);
+        java.util.concurrent.atomic.AtomicReference<Exception> failed=new java.util.concurrent.atomic.AtomicReference<>();
+        Runnable operation=() -> {
+            StringBuilder record=new StringBuilder("SCOPE original no-checkpoint API diagnosis, not boot/update/APK acceptance\n");
+            try {
+                record.append("THREAD ").append(Thread.currentThread().getName()).append(" UID ")
+                    .append(call(Class.forName("android.os.Process"),null,"myUid",new Class<?>[0]))
+                    .append(" CALLING_UID ").append(call(Class.forName("android.os.Binder"),null,"getCallingUid",new Class<?>[0])).append('\n');
+                Object storage=call(Class.forName("com.android.internal.content.InstallLocationUtils"),null,"getStorageManager",new Class<?>[0]);
+                if(storage==null)throw new IllegalStateException("Original storage lookup returned null");
+                Class<?> storageType=Class.forName("android.os.storage.IStorageManager");
+                boolean supported=(Boolean)call(storageType,storage,"supportsCheckpoint",new Class<?>[0]);
+                record.append("SUPPORTS_CHECKPOINT ").append(supported).append('\n');
+                boolean needed=(Boolean)call(storageType,storage,"needsCheckpoint",new Class<?>[0]);
+                record.append("NEEDS_CHECKPOINT ").append(needed).append('\n');
+                if(supported || needed)throw new IllegalStateException("Diagnostic refuses to commit supported or pending checkpoints");
+                call(storageType,storage,"commitChanges",new Class<?>[0]);
+                record.append("ORIGINAL_NO_CHECKPOINT_COMMIT_RETURNED NOT_BOOT_OR_UPDATE_ACCEPTANCE\n");
+            } catch(Exception error) {
+                failed.set(error);
+                java.io.StringWriter trace=new java.io.StringWriter();error.printStackTrace(new java.io.PrintWriter(trace));record.append(trace);
+            } finally {
+                try(java.io.FileOutputStream output=new java.io.FileOutputStream("/data/local/tmp/archtv-mc1/storage-contract.txt")) {
+                    output.write(record.toString().getBytes(java.nio.charset.StandardCharsets.UTF_8));
+                } catch(java.io.IOException error) { error.printStackTrace(System.err); }
+                done.countDown();
+            }
+        };
+        Object handler=call(Class.forName("com.android.server.DisplayThread"),null,"getHandler",new Class<?>[0]);
+        if(!(Boolean)call(Class.forName("android.os.Handler"),handler,"post",new Class<?>[]{Runnable.class},operation))
+            throw new IllegalStateException("Original display handler rejected checkpoint diagnostic");
+        if(!done.await(20,java.util.concurrent.TimeUnit.SECONDS))throw new IllegalStateException("Original checkpoint diagnostic timed out");
+        if(failed.get()!=null)throw failed.get();
     }
     private static void verifyLinuxPlatformCapabilities(Object context) throws Exception {
         Class<?> resources=Class.forName("android.content.res.Resources");
@@ -361,6 +407,10 @@ public final class SelectedServices {
                 call(wmType,wm,"displayReady",new Class<?>[0]);
                 System.err.println("MARKOR_ORIGINAL_WMS_INPUT_STARTED REQUIRES_APP_SURFACE_AND_INPUT");
 
+                // Original SystemServer starts the complete IMMS lifecycle after
+                // WMS/InputManager and before phase500/UI activities. ViewRoot
+                // requires this original Binder even without a text editor.
+                start(manager,managerType,"com.android.server.inputmethod.InputMethodManagerService$Lifecycle");
                 Object storageLifecycle=start(manager,managerType,"com.android.server.StorageManagerService$Lifecycle");
                 Class<?> pmInternalType=Class.forName("android.content.pm.PackageManagerInternal");
                 Object pmInternal=call(Class.forName("com.android.server.LocalServices"),null,"getService",new Class<?>[]{Class.class},pmInternalType);
@@ -457,6 +507,7 @@ public final class SelectedServices {
                     output.write(permissionRecord.getBytes(java.nio.charset.StandardCharsets.UTF_8));
                 }
                 call(display.getClass(),display,"systemReady",new Class<?>[]{boolean.class},false);
+                if("1".equals(System.getenv("ARCHTV_CHECKPOINT_DIAGNOSTIC")))diagnoseOriginalCheckpoint();
                 Runnable linuxApplicationLoop=() -> {
                     try {
                         int activityReady=Class.forName("com.android.server.SystemService").getField("PHASE_ACTIVITY_MANAGER_READY").getInt(null);

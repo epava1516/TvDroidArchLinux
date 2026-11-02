@@ -1,5 +1,7 @@
 # Roadmap · Arch TV nativo en Rust
 
+Actualización 2026-11-02 · [Ciclo original de bootanimation](reports/android16-package-bootstrap/bootanimation-lifecycle-functional.json):101 acepta su salida CLD_EXITED0 sólo con service.bootanim.exit=1 original. La cohorte permanece viva y AMS supera la llamada original de checkpoint; el error anterior era posterior al cierre provocado por el coordinador. Settings.FallbackHome llega a Displayed con IMMS original. El bloqueo demostrado pasa a fase1000: MediaSessionService requiere MediaCommunicationService ausente. Siguiente: integrar ese subsistema original y observar desbloqueo real, retirar HOME mediante PMS y lanzar Markor. Ningún lanzamiento/UI/entrada/persistencia de Markor aceptado; R1-MAC permisivo, cierre interno y ARM/GMS/DRM abiertos.
+
 Objetivo: una sesión Linux para televisión con **compositor Wayland propio basado
 en Smithay**, **shell en Rust**, apariencia próxima a **Fire TV 2026** y aplicaciones
 Linux/Android. La distribución final estará basada en Arch Linux.

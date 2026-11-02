@@ -1,0 +1,41 @@
+{
+  "scope": "Original bootanimation clean exit and normal AMS checkpoint progression; not Markor launch, boot completion or MAC acceptance",
+  "candidate": 101,
+  "run_id": "3bce579b-a60c-4aef-96ad-d45cca778f38",
+  "checkpoint": "/home/tv/recuperacion-archtv/3bce579b-a60c-4aef-96ad-d45cca778f38-markor-launch",
+  "result": {
+    "outer_exit": 1,
+    "native_complete_inventory_verified": true,
+    "elapsed_seconds": 144.41306161880493,
+    "active_loops": "",
+    "final_dm": []
+  },
+  "artifacts": {
+    "/home/tv/recuperacion-archtv/3bce579b-a60c-4aef-96ad-d45cca778f38-markor-launch/result.json": "e83f8ee321094c93340d3eceb3900fc44f1bb3a8b476a2534f7441d5b73711d2",
+    "/home/tv/recuperacion-archtv/3bce579b-a60c-4aef-96ad-d45cca778f38-markor-launch/run.log": "e394501c72370afe42cdb8cf180aedb4b03e4b88a90ccac24c48d8c8bccf1bf8",
+    "/home/tv/recuperacion-archtv/3bce579b-a60c-4aef-96ad-d45cca778f38-markor-launch/completion-consumer.json": "f3d41fd89b4c94ee7b59d94b829df4cb11197283a9293801fbea3cee70e3612c",
+    "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793647394967378478/android-log-live.jsonl": "a04ee41d82215236f621abb8b9b42a62663b5dde6a123a78afc5aec5a242cedd",
+    "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793647394967378478/android-log-capture.json": "78e5a45ac153aff3bbcdbd8db4782e020f0d16a975a31370e09a19c8ee6739b7",
+    "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-101/source-inputs.json": "29fd4df1e5ac469850d992f1f2e5c64c920d825eb397db53df681d8d48c5a935",
+    "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-101/build-options.json": "603d1bea784cb03720528494d258e38c16abc4cf987527ca996f71ece9539fd8"
+  },
+  "outputs": {
+    "markor-user-state.txt": "",
+    "markor-installed-bytes.txt": "SOURCE c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440  /data/local/tmp/markor.apk\nINSTALLED c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440  /data/app/~~F6i-SNvTRXnNUVs4ZvsXJQ==/net.gsantner.markor-eiCiHXDK47KXyai1ReU01w==/base.apk\n",
+    "selected-failure.txt": "ORIGINAL_ASYNC_FATAL thread=android.display\njava.lang.RuntimeException: Failed to boot service com.android.server.media.MediaSessionService: onBootPhase threw an exception during phase 1000\n\tat com.android.server.SystemServiceManager.startBootPhase(SystemServiceManager.java:321)\n\tat com.android.server.am.ActivityManagerService.finishBooting(ActivityManagerService.java:5317)\n\tat com.android.server.am.ActivityManagerService.bootAnimationComplete(ActivityManagerService.java:5448)\n\tat com.android.server.wm.WindowManagerService.performEnableScreen(WindowManagerService.java:4230)\n\tat com.android.server.wm.WindowManagerService.-$$Nest$mperformEnableScreen(WindowManagerService.java:0)\n\tat com.android.server.wm.WindowManagerService$H.handleMessage(WindowManagerService.java:6243)\n\tat android.os.Handler.dispatchMessage(Handler.java:132)\n\tat android.os.Looper.dispatchMessage(Looper.java:333)\n\tat android.os.Looper.loopOnce(Looper.java:263)\n\tat android.os.Looper.loop(Looper.java:367)\n\tat android.os.HandlerThread.run(HandlerThread.java:139)\n\tat com.android.server.ServiceThread.run(ServiceThread.java:46)\nCaused by: java.lang.NullPointerException: Attempt to invoke interface method 'void android.media.IMediaCommunicationService.registerCallback(android.media.IMediaCommunicationServiceCallback, java.lang.String)' on a null object reference\n\tat android.media.MediaCommunicationManager.registerSessionCallback(MediaCommunicationManager.java:198)\n\tat com.android.server.media.MediaSessionService.onBootPhase(MediaSessionService.java:323)\n\tat com.android.server.SystemServiceManager.startBootPhase(SystemServiceManager.java:318)\n\t... 11 more\n",
+    "markor-launch.txt": ""
+  },
+  "proved": [
+    "Original Settings.FallbackHome displayed with original IMMS lifecycle",
+    "Bootanimation CLD_EXITED0 with original service.bootanim.exit=1 accepted without ending cohort",
+    "Original normal AMS checkpoint call returns; original Vold reports no active checkpoint",
+    "Original phase1000 entered; MediaSessionService then fails because original MediaCommunicationService absent"
+  ],
+  "not_accepted": [
+    "Markor launch/UI/input/note/persistence/close/reopen",
+    "R1-MAC permissive",
+    "internal ordered close",
+    "ARM GMS DRM"
+  ],
+  "next": "Integrate original MediaCommunicationService before MediaSessionService, following original SystemServer order; rerun normal user unlock and Markor launch, no checkpoint diagnostic."
+}

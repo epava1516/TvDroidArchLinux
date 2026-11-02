@@ -105,7 +105,7 @@ class LinuxMc1Cohort {
     }
     bool vold_cancelled() const { return vold_cancelled_; }
     bool apex_cancelled() const { return apex_cancelled_; }
-    bool healthy() const { return !manager_failed_ && (!aconfig_system_ || aconfig_system_->IsRunning() || aconfig_system_clean_exit_) && (!aconfig_mainline_ || aconfig_mainline_->IsRunning() || aconfig_mainline_clean_exit_) && (!audioserver_ || audioserver_->IsRunning()) && (!lmkd_ || lmkd_->IsRunning()) && (!netd_ || netd_->IsRunning()) && (!statsd_ || statsd_->IsRunning()) && (!health_ || health_->IsRunning()) && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && bootanimation_->IsRunning())) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning()); }
+    bool healthy() const { return !manager_failed_ && (!aconfig_system_ || aconfig_system_->IsRunning() || aconfig_system_clean_exit_) && (!aconfig_mainline_ || aconfig_mainline_->IsRunning() || aconfig_mainline_clean_exit_) && (!audioserver_ || audioserver_->IsRunning()) && (!lmkd_ || lmkd_->IsRunning()) && (!netd_ || netd_->IsRunning()) && (!statsd_ || statsd_->IsRunning()) && (!health_ || health_->IsRunning()) && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && (bootanimation_->IsRunning() || bootanimation_clean_exit_))) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning()); }
     android::base::Result<void> Close(const Tick& tick) {
         using namespace android::init;
         if(!active_) return {};
@@ -492,12 +492,18 @@ class LinuxMc1Cohort {
            surfaceflinger_->args()!=std::vector<std::string>{"/system/bin/surfaceflinger"} ||
            bootanimation_->args()!=std::vector<std::string>{"/system/bin/bootanimation"})
             return android::base::Error()<<"MC3 unexpected original SF/client executable";
-        for(auto* service:{surfaceflinger_,bootanimation_}) {
-            service->AddReapCallback([this](const siginfo_t& info) {
-                std::fprintf(stderr,"MC3_SF_SERVICE_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
-                if(!closing_)manager_failed_=true;
-            });
-        }
+        surfaceflinger_->AddReapCallback([this](const siginfo_t& info) {
+            std::fprintf(stderr,"MC3_SF_SERVICE_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
+            if(!closing_)manager_failed_=true;
+        });
+        bootanimation_->AddReapCallback([this](const siginfo_t& info) {
+            char requested[PROP_VALUE_MAX]={};
+            __system_property_get("service.bootanim.exit",requested);
+            bootanimation_clean_exit_=info.si_code==CLD_EXITED && info.si_status==0 && std::string(requested)=="1";
+            std::fprintf(stderr,"MC3_BOOTANIMATION_EXIT pid=%d code=%d status=%d original_exit_request=%s clean=%d NOT_BOOT_OR_APK_ACCEPTANCE\n",
+                info.si_pid,info.si_code,info.si_status,requested,bootanimation_clean_exit_);
+            if(!closing_ && !bootanimation_clean_exit_)manager_failed_=true;
+        });
         if(auto result=surfaceflinger_->Start();!result.ok())return result;
         std::fprintf(stderr,"MC3_ORIGINAL_SF_STARTED pid=%d NOT_REGISTERED\n",surfaceflinger_->pid());
         client_done_=false;client_ok_=false;
@@ -767,7 +773,7 @@ class LinuxMc1Cohort {
             services.AddService(std::move(*package_client));
             if(auto result=peer->ExecStart();!result.ok())return result;
             if(auto result=Wait(tick,[this]{return client_done_;},180);!result.ok())return result;
-            if(!client_ok_)return android::base::Error()<<"Original package client did not observe installed Markor";
+            if(!client_ok_)return android::base::Error()<<"Original package client did not observe installed AND launched Markor; inspect original outputs separately";
             std::fprintf(stderr,"PACKAGES_ORIGINAL_BINDER_QUERY_RETURNED REQUIRES_INSTALL_LAUNCH\n");
         }
         if(security_getenforce()!=expected_mode_)return android::base::Error()<<"Selected display security mode changed";
@@ -810,7 +816,7 @@ class LinuxMc1Cohort {
     android::init::Service* installd_=nullptr;
     android::init::Service* apexd_=nullptr;
     bool aconfig_system_clean_exit_=false,aconfig_mainline_clean_exit_=false;
-    bool bootanimation_started_=false;
+    bool bootanimation_started_=false,bootanimation_clean_exit_=false;
     bool missing_done_=false,missing_ok_=false;
     bool apex_cancelled_=false,vold_cancelled_=false;
     bool active_=false,closing_=false,manager_failed_=false,client_done_=false,client_ok_=false;

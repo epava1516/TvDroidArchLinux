@@ -1,0 +1,28 @@
+{
+  "scope": "Diagnostic100 and static compiled caller, not new APK acceptance",
+  "run_id": "c14bc1b2-e9a2-46df-8dcf-086d7a9140e3",
+  "artifacts": {
+    "/home/tv/recuperacion-archtv/c14bc1b2-e9a2-46df-8dcf-086d7a9140e3-markor-launch/run.log": "f7f57ebfa6e412ba3658c1ab2feea3a83ae553cdc262853d89b640049f8b4895",
+    "/home/tv/recuperacion-archtv/c14bc1b2-e9a2-46df-8dcf-086d7a9140e3-markor-launch/result.json": "d2538c196c862245b6aefe37486f98b7428a0d510c18337fa11819110c5e27af",
+    "/home/tv/recuperacion-archtv/c14bc1b2-e9a2-46df-8dcf-086d7a9140e3-markor-launch/completion-consumer.json": "efde0af646e96895059c304800ec559a7a68d75e295b93f02d80af05e166a314",
+    "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793646269030984973/android-log-live.jsonl": "9e04bb39cdadb22f041234a71b4c00ca3b3256413153d4ed253da967bed7e753",
+    "/home/tv/.cache/archtv/ams-jadx-cli/InspectAMS.java": "58be201c8f080f941f7cfb9807b8cc8a54fe940efa98d4963be47f88ba13de39",
+    "/home/tv/.cache/archtv/ams-jadx-cli/ActivityManagerService.java": "56745522be64d3e17a554739f4fd38655f85cd63f4b9366e702b44ec8e6a8f55",
+    "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/framework/services.jar": "5840117856bec0fc282cf7ce0991de56ef3b20d83f9c951f6d671f435818b383"
+  },
+  "storage_diagnostic": "Original IStorageManager on android.display UID/callingUID1000: supportsCheckpoint=false needsCheckpoint=false commitChanges returned. Not boot/update acceptance.",
+  "lifecycle_order": [
+    "bootanim CLD_EXITED0 at19:06:40.776",
+    "shared SF callback marks manager_failed; healthy also requires animation running",
+    "MC1_FAILED then sends SIGKILL to servicemanager at19:06:40.805",
+    "normal finishBooting later sees Binder death and requests checkpoint failure reboot at19:06:41.704"
+  ],
+  "decision": "Separate production SurfaceFlinger lifetime from original bootanimation oneshot; accept animation exit only CLD_EXITED0 with original service.bootanim.exit=1. Run101 disables checkpoint diagnostic. No fake boot flags or storage permissions.",
+  "static_inspection": "CLI JADX actual shipped services.jar AMS.finishBooting matches pinned source commitChanges/catch; REA MCP JAR provider limitation retained. Static code is not runtime proof.",
+  "limits": [
+    "Markor not launched",
+    "R1-MAC permissive open",
+    "internal close/reboot_on_failure still open",
+    "ARM GMS DRM separate open"
+  ]
+}

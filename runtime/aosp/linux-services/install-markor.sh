@@ -31,6 +31,13 @@ installed_hash=$(/system/bin/sha256sum "$installed_apk")
 # Original state immediately before a possibly blocking user-start, not a replacement.
 /system/bin/dumpsys activity processes > /data/local/tmp/archtv-mc1/markor-boot-before-user.txt
 /system/bin/cmd activity start-user -w 0 > /data/local/tmp/archtv-mc1/markor-user-start.txt 2>&1
+/system/bin/cmd activity get-started-user-state 0 > /data/local/tmp/archtv-mc1/markor-user-state.txt
+/system/bin/grep -qx RUNNING_UNLOCKED /data/local/tmp/archtv-mc1/markor-user-state.txt
+# Retire only the original bootstrap component after real framework unlock.
+/system/bin/cmd package disable --user 0 com.android.settings/.FallbackHome > /data/local/tmp/archtv-mc1/markor-bootstrap-home-stop.txt
+/system/bin/cmd activity force-stop --user 0 com.android.settings
+/system/bin/cmd package query-activities --brief --user 0 -a android.intent.action.MAIN -c android.intent.category.HOME > /data/local/tmp/archtv-mc1/markor-home-after.txt
+/system/bin/grep -qx 'No activities found' /data/local/tmp/archtv-mc1/markor-home-after.txt
 resolved=$(/system/bin/cmd package resolve-activity --brief --user 0 -a android.intent.action.MAIN -c android.intent.category.LAUNCHER net.gsantner.markor)
 /system/bin/printf '%s\n' "$resolved" > /data/local/tmp/archtv-mc1/markor-resolve.txt
 component=$(/system/bin/printf '%s\n' "$resolved" | /system/bin/tail -n 1)
