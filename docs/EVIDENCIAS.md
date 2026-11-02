@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+Candidato compilado 2026-11-02 · [Keystore2 original y perfil SOFTWARE explícito](../reports/android16-package-bootstrap/keystore2-source-candidate.json): biblioteca, entrada y servicios legacy completos enlazan con Rust/Bionic originales y panic=abort. El parche de dos archivos selecciona /software declarado y comprueba el nivel informado; no cambia peticiones TEE/StrongBox por software. No se ha ejecutado este candidato. Siguiente: integrar KeyMint/Keystore2 por Binder con VINTF, RC e identidades reales, operaciones de claves y negativas; después proveedor Java coherente, desbloqueo y Markor. Reproducción limpia/instalación aún pendientes; R1-MAC, ARM/GMS/DRM abiertos.
+
 [Componente criptográfico original106](../reports/android16-package-bootstrap/keymint-software-component.json): ejecución local de API C++ original v4/SOFTWARE, AES256-GCM, lectura en segundo proceso, dos negativas y hashes. Nativo0, exterior1 conservado, APEX41; cierre exterior comprobado. Comprobador corregido contrastado offline, no nueva ejecución. No Binder KeyMint, Keystore2, usuario, MAC ni Markor aceptados.
 
 [Prueba negativa de seguridad104](../reports/android16-package-bootstrap/original-security-backend-negative.json): hashes de artefactos, captura original y fuentes fijadas; gatekeeperd sin HAL y aborto Keystore2 por TEE ausente. APEX41 y cierre exterior conservados. No demuestra claves, autenticación, desbloqueo ni lanzamiento de Markor.
