@@ -103,7 +103,7 @@ class LinuxMc1Cohort {
     }
     bool vold_cancelled() const { return vold_cancelled_; }
     bool apex_cancelled() const { return apex_cancelled_; }
-    bool healthy() const { return !manager_failed_ && (!aconfig_system_ || aconfig_system_->IsRunning() || aconfig_system_clean_exit_) && (!aconfig_mainline_ || aconfig_mainline_->IsRunning() || aconfig_mainline_clean_exit_) && (!lmkd_ || lmkd_->IsRunning()) && (!netd_ || netd_->IsRunning()) && (!statsd_ || statsd_->IsRunning()) && (!health_ || health_->IsRunning()) && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && bootanimation_->IsRunning())) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning()); }
+    bool healthy() const { return !manager_failed_ && (!aconfig_system_ || aconfig_system_->IsRunning() || aconfig_system_clean_exit_) && (!aconfig_mainline_ || aconfig_mainline_->IsRunning() || aconfig_mainline_clean_exit_) && (!audioserver_ || audioserver_->IsRunning()) && (!lmkd_ || lmkd_->IsRunning()) && (!netd_ || netd_->IsRunning()) && (!statsd_ || statsd_->IsRunning()) && (!health_ || health_->IsRunning()) && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && bootanimation_->IsRunning())) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning()); }
     android::base::Result<void> Close(const Tick& tick) {
         using namespace android::init;
         if(!active_) return {};
@@ -127,6 +127,7 @@ class LinuxMc1Cohort {
         bootanimation_started_=false;
         aconfig_system_=nullptr;aconfig_mainline_=nullptr;
         aconfig_system_clean_exit_=false;aconfig_mainline_clean_exit_=false;
+        audioserver_=nullptr;
         lmkd_=nullptr;
         netd_=nullptr;
         statsd_=nullptr;
@@ -540,6 +541,15 @@ class LinuxMc1Cohort {
             lmkd_->AddReapCallback([this](const siginfo_t& info){std::fprintf(stderr,"SELECTED_LMKD_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);if(!closing_)manager_failed_=true;});
             if(auto started=lmkd_->Start();!started.ok())return started;
             std::fprintf(stderr,"SELECTED_LMKD_STARTED pid=%d NOT_SOCKET_OR_PRESSURE_ACCEPTANCE\n",lmkd_->pid());
+            // Parse the intact audio daemon contract; do not substitute a Java
+            // manager whose native policy/mixer dependencies are missing.
+            auto audio_parsed=parser.ParseConfigFile("/system/etc/init/audioserver.rc");
+            if(!audio_parsed.ok() || parser.parse_error_count()!=0)return android::base::Error()<<"Original audioserver RC rejected";
+            audioserver_=services.FindService("audioserver");
+            if(!audioserver_ || audioserver_->args()!=std::vector<std::string>{"/system/bin/audioserver"})return android::base::Error()<<"Unexpected original audioserver executable";
+            audioserver_->AddReapCallback([this](const siginfo_t& info){std::fprintf(stderr,"SELECTED_AUDIOSERVER_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);if(!closing_)manager_failed_=true;});
+            if(auto started=audioserver_->Start();!started.ok())return started;
+            std::fprintf(stderr,"SELECTED_AUDIOSERVER_STARTED pid=%d NOT_AUDIO_OR_POLICY_ACCEPTANCE\n",audioserver_->pid());
             statsd_=services.FindService("statsd");
             if(!statsd_ || statsd_->args()!=std::vector<std::string>{"/apex/com.android.os.statsd/bin/statsd"})return android::base::Error()<<"Original perform_apex_config did not register expected statsd";
             statsd_->AddReapCallback([this](const siginfo_t& info){std::fprintf(stderr,"SELECTED_STATSD_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);if(!closing_)manager_failed_=true;});
@@ -680,6 +690,7 @@ class LinuxMc1Cohort {
     android::init::Service* aconfig_system_=nullptr;
     android::init::Service* aconfig_mainline_=nullptr;
     android::init::Service* lmkd_=nullptr;
+    android::init::Service* audioserver_=nullptr;
     android::init::Service* netd_=nullptr;
     android::init::Service* statsd_=nullptr;
     android::init::Service* health_=nullptr;

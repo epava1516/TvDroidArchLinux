@@ -1,0 +1,219 @@
+{
+  "evidence_id": "ev_a711ef2135a8d6bcc63ba3bb28dc570d178e98862205c95486488e401aa388f2",
+  "subject": {
+    "name": "audioserver",
+    "digest": {
+      "sha256": "f954f0cd47fc68bd63f15f359caa1d02eaaf5bbc155c931389ce70f68d50de3e"
+    },
+    "local_path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/bin/audioserver",
+    "format": "elf",
+    "architecture": "x86_64"
+  },
+  "provider": {
+    "id": "rea-elf-notes",
+    "name": "REA ELF note parser",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.analysis",
+  "operation": "inspect_elf_notes",
+  "parameters": {
+    "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/bin/audioserver",
+    "max_file_bytes": 67108864,
+    "max_entries": 32
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "artifact": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/bin/audioserver",
+      "sha256": "f954f0cd47fc68bd63f15f359caa1d02eaaf5bbc155c931389ce70f68d50de3e",
+      "bytes": 2983536
+    },
+    "format": "elf64",
+    "byte_order": "little",
+    "machine": 62,
+    "type": 3,
+    "type_name": "shared",
+    "tables": [
+      {
+        "kind": "program",
+        "index": 11,
+        "name": null,
+        "location": {
+          "offset": 760,
+          "bytes": 56
+        },
+        "alignment": 4
+      },
+      {
+        "kind": "section",
+        "index": 2,
+        "name": ".note.android.ident",
+        "location": {
+          "offset": 760,
+          "bytes": 24
+        },
+        "alignment": 4
+      },
+      {
+        "kind": "section",
+        "index": 3,
+        "name": ".note.gnu.build-id",
+        "location": {
+          "offset": 784,
+          "bytes": 32
+        },
+        "alignment": 4
+      }
+    ],
+    "entries": [
+      {
+        "index": 0,
+        "table_kind": "program",
+        "table_index": 11,
+        "location": {
+          "offset": 760,
+          "bytes": 24
+        },
+        "namesz": 8,
+        "descsz": 4,
+        "type": 1,
+        "type_name": "unknown",
+        "owner": "Android",
+        "owner_bytes_hex": "416e64726f696400",
+        "descriptor": {
+          "location": {
+            "offset": 780,
+            "bytes": 4
+          },
+          "bytes": 4,
+          "sha256": "de6d696c194fb883fd153e435f68d0283ebcf1a28c46cba524df6a8c0807084a",
+          "hex": "24000000"
+        },
+        "gnu": null
+      },
+      {
+        "index": 1,
+        "table_kind": "program",
+        "table_index": 11,
+        "location": {
+          "offset": 784,
+          "bytes": 32
+        },
+        "namesz": 4,
+        "descsz": 16,
+        "type": 3,
+        "type_name": "gnu_build_id",
+        "owner": "GNU",
+        "owner_bytes_hex": "474e5500",
+        "descriptor": {
+          "location": {
+            "offset": 800,
+            "bytes": 16
+          },
+          "bytes": 16,
+          "sha256": "ef3cfbfac7a41b8cb543ec9204e5f3e7e4a16dbb23ffb54967cdfcf258708e81",
+          "hex": "b5f780c01df7cda933dba0079ff21c72"
+        },
+        "gnu": {
+          "build_id_hex": "b5f780c01df7cda933dba0079ff21c72",
+          "abi_tag": null,
+          "gold_version": null
+        }
+      },
+      {
+        "index": 2,
+        "table_kind": "section",
+        "table_index": 2,
+        "location": {
+          "offset": 760,
+          "bytes": 24
+        },
+        "namesz": 8,
+        "descsz": 4,
+        "type": 1,
+        "type_name": "unknown",
+        "owner": "Android",
+        "owner_bytes_hex": "416e64726f696400",
+        "descriptor": {
+          "location": {
+            "offset": 780,
+            "bytes": 4
+          },
+          "bytes": 4,
+          "sha256": "de6d696c194fb883fd153e435f68d0283ebcf1a28c46cba524df6a8c0807084a",
+          "hex": "24000000"
+        },
+        "gnu": null
+      },
+      {
+        "index": 3,
+        "table_kind": "section",
+        "table_index": 3,
+        "location": {
+          "offset": 784,
+          "bytes": 32
+        },
+        "namesz": 4,
+        "descsz": 16,
+        "type": 3,
+        "type_name": "gnu_build_id",
+        "owner": "GNU",
+        "owner_bytes_hex": "474e5500",
+        "descriptor": {
+          "location": {
+            "offset": 800,
+            "bytes": 16
+          },
+          "bytes": 16,
+          "sha256": "ef3cfbfac7a41b8cb543ec9204e5f3e7e4a16dbb23ffb54967cdfcf258708e81",
+          "hex": "b5f780c01df7cda933dba0079ff21c72"
+        },
+        "gnu": {
+          "build_id_hex": "b5f780c01df7cda933dba0079ff21c72",
+          "abi_tag": null,
+          "gold_version": null
+        }
+      }
+    ],
+    "coverage": {
+      "status": "complete",
+      "examined_tables": 3,
+      "examined_entries": 4
+    },
+    "limitations": [
+      "This workflow does not execute the image, resolve runtime notes, or verify GNU build-id uniqueness against package catalogs.",
+      "PT_NOTE and SHT_NOTE are examined independently; the same file range may appear twice when both tables declare it."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "This workflow does not execute the image, resolve runtime notes, or verify GNU build-id uniqueness against package catalogs.",
+    "PT_NOTE and SHT_NOTE are examined independently; the same file range may appear twice when both tables declare it."
+  ],
+  "relationship_coverage": null,
+  "locations": [
+    {
+      "kind": "artifact-path",
+      "path": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/bin/audioserver"
+    },
+    {
+      "kind": "file-offset-range",
+      "start": 760,
+      "end": 816
+    },
+    {
+      "kind": "file-offset-range",
+      "start": 760,
+      "end": 784
+    },
+    {
+      "kind": "file-offset-range",
+      "start": 784,
+      "end": 816
+    }
+  ],
+  "evidence_links": []
+}

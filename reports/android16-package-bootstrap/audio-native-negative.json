@@ -1,0 +1,330 @@
+{
+  "kind": "Real integrated original audio candidate; negative result",
+  "checkpoint": "/home/tv/recuperacion-archtv/719b8ba4-88a3-460c-a4cf-3553cbacf49c-markor-launch",
+  "run_id": "719b8ba4-88a3-460c-a4cf-3553cbacf49c",
+  "input": "dist/aosp16/package-cohort-build-60/payload-2.ext4",
+  "input_sha256": "79c7d393de65fa156d65617febd41a35c9ee54e5558016f8573262d3a2841f89",
+  "result_sha256": "ad004b8fe6a9f0dcee5dfaf87bc8a3971ebffda0ba85fe56d4520c0824df678f",
+  "run_log_sha256": "3323ac848c75c7284bf3b73cfb4a8ce9ba22d4676c88e1e3f86e6faa6d1367de",
+  "observations": [
+    {
+      "tag": "FastMixerState",
+      "message": "sMaxFastTracks = 8",
+      "actual_sender_pid_uid_gid": [
+        486,
+        1041,
+        1005
+      ]
+    },
+    {
+      "tag": "audioserver_main",
+      "message": "main: starting",
+      "actual_sender_pid_uid_gid": [
+        486,
+        1041,
+        1005
+      ]
+    },
+    {
+      "tag": "MediaUtils",
+      "message": "physMem: 8299868160",
+      "actual_sender_pid_uid_gid": [
+        486,
+        1041,
+        1005
+      ]
+    },
+    {
+      "tag": "MediaUtils",
+      "message": "requested limit: 536870912",
+      "actual_sender_pid_uid_gid": [
+        486,
+        1041,
+        1005
+      ]
+    },
+    {
+      "tag": "libc",
+      "message": "malloc_limit: Allocation limit enabled, max size 536870912 bytes\n",
+      "actual_sender_pid_uid_gid": [
+        486,
+        1041,
+        1005
+      ]
+    },
+    {
+      "tag": "cutils-trace",
+      "message": "Error opening trace file: No such file or directory (2)",
+      "actual_sender_pid_uid_gid": [
+        486,
+        1041,
+        1005
+      ]
+    },
+    {
+      "tag": "FactoryHal",
+      "message": "hasAidlHalService android.hardware.audio.core.IModule/default: false",
+      "actual_sender_pid_uid_gid": [
+        486,
+        1041,
+        1005
+      ]
+    },
+    {
+      "tag": "FactoryHal",
+      "message": "hasAidlHalService android.hardware.audio.effect.IFactory/default: false",
+      "actual_sender_pid_uid_gid": [
+        486,
+        1041,
+        1005
+      ]
+    },
+    {
+      "tag": "FactoryHal",
+      "message": "Found no HAL version, main(Device) null null!",
+      "actual_sender_pid_uid_gid": [
+        486,
+        1041,
+        1005
+      ]
+    },
+    {
+      "tag": "FactoryHal",
+      "message": "hasAidlHalService android.hardware.audio.effect.IFactory/default: false",
+      "actual_sender_pid_uid_gid": [
+        486,
+        1041,
+        1005
+      ]
+    },
+    {
+      "tag": "FactoryHal",
+      "message": "hasAidlHalService android.hardware.audio.core.IModule/default: false",
+      "actual_sender_pid_uid_gid": [
+        486,
+        1041,
+        1005
+      ]
+    },
+    {
+      "tag": "FactoryHal",
+      "message": "Found no HAL version, main(Effect) null null!",
+      "actual_sender_pid_uid_gid": [
+        486,
+        1041,
+        1005
+      ]
+    },
+    {
+      "tag": "BatteryNotifier",
+      "message": "batterystats service unavailable!",
+      "actual_sender_pid_uid_gid": [
+        486,
+        1041,
+        1005
+      ]
+    },
+    {
+      "tag": "libbinder.ServiceManagerCppClient",
+      "message": "Waiting for service 'media.metrics' on '/dev/binder'...",
+      "actual_sender_pid_uid_gid": [
+        486,
+        1041,
+        1005
+      ]
+    },
+    {
+      "tag": "libbinder.ServiceManagerCppClient",
+      "message": "Service media.metrics didn't start. Returning NULL",
+      "actual_sender_pid_uid_gid": [
+        486,
+        1041,
+        1005
+      ]
+    },
+    {
+      "tag": "libc",
+      "message": "failed to connect to tombstoned: No such file or directory",
+      "actual_sender_pid_uid_gid": [
+        486,
+        1041,
+        1005
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***\n",
+      "actual_sender_pid_uid_gid": [
+        486,
+        1041,
+        1005
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "Build fingerprint: 'Android/aosp_x86_64/generic_x86_64:16/BP4A.251205.006/14401865:user/release-keys'\n",
+      "actual_sender_pid_uid_gid": [
+        486,
+        1041,
+        1005
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "Kernel Release: '6.18.59-archtv-aosp16-1'\n",
+      "actual_sender_pid_uid_gid": [
+        486,
+        1041,
+        1005
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "Revision: '0'\n",
+      "actual_sender_pid_uid_gid": [
+        486,
+        1041,
+        1005
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "ABI: 'x86_64'\n",
+      "actual_sender_pid_uid_gid": [
+        486,
+        1041,
+        1005
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "Timestamp: 2026-11-02 08:27:42.458568220+0000\n",
+      "actual_sender_pid_uid_gid": [
+        486,
+        1041,
+        1005
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "Process uptime: 7s\n",
+      "actual_sender_pid_uid_gid": [
+        486,
+        1041,
+        1005
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "Executable: /system/bin/audioserver\n",
+      "actual_sender_pid_uid_gid": [
+        486,
+        1041,
+        1005
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "Cmdline: /system/bin/audioserver\n",
+      "actual_sender_pid_uid_gid": [
+        486,
+        1041,
+        1005
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "pid: 486, tid: 486, name: audioserver  >>> /system/bin/audioserver <<<\n",
+      "actual_sender_pid_uid_gid": [
+        486,
+        1041,
+        1005
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "uid: 1041\n",
+      "actual_sender_pid_uid_gid": [
+        486,
+        1041,
+        1005
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr --------\n",
+      "actual_sender_pid_uid_gid": [
+        486,
+        1041,
+        1005
+      ]
+    }
+  ],
+  "result": {
+    "outer_exit": 1,
+    "native_complete_inventory_verified": true,
+    "active_loops": "",
+    "final_dm": []
+  },
+  "bpf_cleanup_verified": true,
+  "conclusions": [
+    "Original audioserver executable started and received SIGSEGV, actual reap code3/status11",
+    "Original discovery reports no core or effects HAL and no media.metrics service",
+    "Exact SIGSEGV instruction/cause unknown; no backtrace retained in bounded log capture",
+    "UID1041/GID1005 observed via authenticated log sender; SID/caps/NNP not independently captured in this run",
+    "No AudioService/MediaSession availability or audio operability accepted",
+    "Vold reboot request is during failure cleanup, not proof of original audio crash cause"
+  ],
+  "decision": "Complete original native audio dependency closure using pinned AOSP sources and real HAL/provider before retry. Keep original daemon failure fatal; no empty audio Binder implementation. Original AMS lifecycle/profile gate remains open.",
+  "security": "No mode/policy change; permissive R1-MAC open",
+  "rea_static": "audioserver-elf-mcp.json identifies x86_64 API36 image/buildID, not fault execution",
+  "sources": [
+    {
+      "project": "frameworks/av",
+      "pin": "22fd1c5d895e45a49df5582a4b345d8e3b75e46b",
+      "url": "https://android.googlesource.com/platform/frameworks/av/+/22fd1c5d895e45a49df5582a4b345d8e3b75e46b/media/audioserver/main_audioserver.cpp?format=TEXT",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/frameworks/av/media/audioserver/main_audioserver.cpp",
+      "sha256": "4a864b8d0ed801a16d898c4885fb9067ae4ac04060fada23e4345c84831370f4"
+    },
+    {
+      "project": "frameworks/av",
+      "pin": "22fd1c5d895e45a49df5582a4b345d8e3b75e46b",
+      "url": "https://android.googlesource.com/platform/frameworks/av/+/22fd1c5d895e45a49df5582a4b345d8e3b75e46b/services/audioflinger/AudioFlinger.cpp?format=TEXT",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/frameworks/av/services/audioflinger/AudioFlinger.cpp",
+      "sha256": "9ade542793bcb534e53601657c35f0adbc592c5f6344d5d2468e931cb8f42fe1"
+    },
+    {
+      "project": "frameworks/av",
+      "pin": "22fd1c5d895e45a49df5582a4b345d8e3b75e46b",
+      "url": "https://android.googlesource.com/platform/frameworks/av/+/22fd1c5d895e45a49df5582a4b345d8e3b75e46b/media/libaudiohal/FactoryHal.cpp?format=TEXT",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/frameworks/av/media/libaudiohal/FactoryHal.cpp",
+      "sha256": "294811c22343249177043faf2b0eb72bce1df4e501e19061609d5a474a09bd2c"
+    },
+    {
+      "project": "hardware/interfaces",
+      "pin": "aa229558cbf04bc997ed27465c5e7ad497123d1b",
+      "url": "https://android.googlesource.com/platform/hardware/interfaces/+/aa229558cbf04bc997ed27465c5e7ad497123d1b/audio/aidl/default/Android.bp?format=TEXT",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware/interfaces/audio/aidl/default/Android.bp",
+      "sha256": "faa47df51ee8a4d94d3e46dfccdec1cc6ca7b8fa2f4454e0034005e06b0b1158"
+    },
+    {
+      "project": "hardware/interfaces",
+      "pin": "aa229558cbf04bc997ed27465c5e7ad497123d1b",
+      "url": "https://android.googlesource.com/platform/hardware/interfaces/+/aa229558cbf04bc997ed27465c5e7ad497123d1b/audio/aidl/default/main.cpp?format=TEXT",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware/interfaces/audio/aidl/default/main.cpp",
+      "sha256": "3ebe26c1cf46f7d32c09e92038c78d938fdfacdaddc59f1c9c0416e3649f5eeb"
+    },
+    {
+      "project": "frameworks/av",
+      "pin": "22fd1c5d895e45a49df5582a4b345d8e3b75e46b",
+      "url": "https://android.googlesource.com/platform/frameworks/av/+/22fd1c5d895e45a49df5582a4b345d8e3b75e46b/services/mediametrics/mediametrics.rc?format=TEXT",
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/frameworks/av/services/mediametrics/mediametrics.rc",
+      "sha256": "9a5101b1399525b66ace536a371dd48ee3513c4976f842fef544ed7e52ef2130"
+    }
+  ],
+  "source_contrast": {
+    "observation": "Original AudioFlinger constructor records metrics; onFirstRef then dereferences mDevicesFactoryHal via setCallbackOnce. FactoryHal reports no hardware provider.",
+    "classification": "Source-supported hypothesis for SIGSEGV, not instruction/backtrace confirmation",
+    "hal_base": "Original AIDL reference service includes primary/ALSA and explicit stub modules. Preserve this distinction; only real Linux backend with actual I/O may establish audio operability. Do not accept a stub module as working playback."
+  }
+}
