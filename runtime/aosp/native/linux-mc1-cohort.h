@@ -102,7 +102,7 @@ class LinuxMc1Cohort {
     }
     bool vold_cancelled() const { return vold_cancelled_; }
     bool apex_cancelled() const { return apex_cancelled_; }
-    bool healthy() const { return !manager_failed_ && (!netd_ || netd_->IsRunning()) && (!statsd_ || statsd_->IsRunning()) && (!health_ || health_->IsRunning()) && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && bootanimation_->IsRunning())) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning()); }
+    bool healthy() const { return !manager_failed_ && (!lmkd_ || lmkd_->IsRunning()) && (!netd_ || netd_->IsRunning()) && (!statsd_ || statsd_->IsRunning()) && (!health_ || health_->IsRunning()) && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && bootanimation_->IsRunning())) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning()); }
     android::base::Result<void> Close(const Tick& tick) {
         using namespace android::init;
         if(!active_) return {};
@@ -124,6 +124,7 @@ class LinuxMc1Cohort {
         surfaceflinger_=nullptr;
         bootanimation_=nullptr;
         bootanimation_started_=false;
+        lmkd_=nullptr;
         netd_=nullptr;
         statsd_=nullptr;
         health_=nullptr;
@@ -292,6 +293,7 @@ class LinuxMc1Cohort {
         netd_->AddReapCallback([this](const siginfo_t& info){std::fprintf(stderr,"NETWORK_NETD_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);if(!closing_)manager_failed_=true;});
         if(auto started=netd_->Start();!started.ok())return started;
         std::fprintf(stderr,"NETWORK_NETD_STARTED pid=%d NOT_REGISTERED\n",netd_->pid());
+        std::fprintf(stderr,"SELECTED_NETD_STARTED pid=%d NOT_REGISTERED\n",netd_->pid());
         client_done_=false;client_ok_=false;
         auto query=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","root","root","--","/system/bin/sh","-c",
             "umask 077; i=0; while [ $$i -lt 12 ]; do /system/bin/service check netd > /data/local/tmp/archtv-mc1/netd-query.txt 2>&1; if /system/bin/grep -qx 'Service netd: found' /data/local/tmp/archtv-mc1/netd-query.txt; then exit 0; fi; i=$$((i+1)); /system/bin/sleep 1; done; exit 1"});
@@ -464,6 +466,13 @@ class LinuxMc1Cohort {
         // Original upstream SystemSuspend keeps its own real wakelock counter
         // when Linux owns host sleep. No /sys/power controls are exposed here.
         if(apex_requested_) {
+            auto memory_parsed=parser.ParseConfigFile("/system/etc/init/lmkd.rc");
+            if(!memory_parsed.ok() || parser.parse_error_count()!=0)return android::base::Error()<<"Original lmkd RC rejected";
+            lmkd_=services.FindService("lmkd");
+            if(!lmkd_ || lmkd_->args()!=std::vector<std::string>{"/system/bin/lmkd"})return android::base::Error()<<"Unexpected original lmkd executable";
+            lmkd_->AddReapCallback([this](const siginfo_t& info){std::fprintf(stderr,"SELECTED_LMKD_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);if(!closing_)manager_failed_=true;});
+            if(auto started=lmkd_->Start();!started.ok())return started;
+            std::fprintf(stderr,"SELECTED_LMKD_STARTED pid=%d NOT_SOCKET_OR_PRESSURE_ACCEPTANCE\n",lmkd_->pid());
             statsd_=services.FindService("statsd");
             if(!statsd_ || statsd_->args()!=std::vector<std::string>{"/apex/com.android.os.statsd/bin/statsd"})return android::base::Error()<<"Original perform_apex_config did not register expected statsd";
             statsd_->AddReapCallback([this](const siginfo_t& info){std::fprintf(stderr,"SELECTED_STATSD_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);if(!closing_)manager_failed_=true;});
@@ -601,6 +610,7 @@ class LinuxMc1Cohort {
     const bool surfaceflinger_requested_;
     const bool selected_requested_;
     const bool apex_requested_;
+    android::init::Service* lmkd_=nullptr;
     android::init::Service* netd_=nullptr;
     android::init::Service* statsd_=nullptr;
     android::init::Service* health_=nullptr;

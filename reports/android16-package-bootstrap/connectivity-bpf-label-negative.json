@@ -1,0 +1,125 @@
+{
+  "checkpoint": "/home/tv/recuperacion-archtv/85cd0be7-1c76-4291-8837-8359bde8d7da-markor-launch",
+  "run_log_sha256": "0cd77b2dfdad333d7a3d8a866fc54f5af46ba6e86f0b0e23d5929236f40c34d1",
+  "observations": [
+    {
+      "tag": "ActivityManager",
+      "message": "Connection with lmkd established",
+      "actual_sender_pid_uid_gid": [
+        504,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "jniClatCoordinator",
+      "message": "context of '/sys/fs/bpf' is 'linux.system_u:linux.object_r:linux.bpf_t:s0' != 'u:object_r:fs_bpf:s0'",
+      "actual_sender_pid_uid_gid": [
+        504,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***\n",
+      "actual_sender_pid_uid_gid": [
+        504,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "Build fingerprint: 'Android/aosp_x86_64/generic_x86_64:16/BP4A.251205.006/14401865:user/release-keys'\n",
+      "actual_sender_pid_uid_gid": [
+        504,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "Kernel Release: '6.18.59-archtv-aosp16-1'\n",
+      "actual_sender_pid_uid_gid": [
+        504,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "Revision: '0'\n",
+      "actual_sender_pid_uid_gid": [
+        504,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "ABI: 'x86_64'\n",
+      "actual_sender_pid_uid_gid": [
+        504,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "Timestamp: 2026-11-02 05:24:20.380678581+0000\n",
+      "actual_sender_pid_uid_gid": [
+        504,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "Process uptime: 31s\n",
+      "actual_sender_pid_uid_gid": [
+        504,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "Executable: /system/bin/app_process64\n",
+      "actual_sender_pid_uid_gid": [
+        504,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "Cmdline: archtv-selected-services\n",
+      "actual_sender_pid_uid_gid": [
+        504,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "pid: 504, tid: 504, name: main  >>> archtv-selected-services <<<\n",
+      "actual_sender_pid_uid_gid": [
+        504,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "DEBUG",
+      "message": "uid: 1000\n",
+      "actual_sender_pid_uid_gid": [
+        504,
+        1000,
+        1000
+      ]
+    }
+  ],
+  "decision": "Original connectivity JNI aborts on private bpffs root label linux.bpf_t rather than original fs_bpf. Fix only the new bpffs rootcontext; original child genfs labels must match. Previously interpreted Java wait is not a proven storage/Lmkd deadlock.",
+  "scope": "Actual execution/abort; GDB native inspection captured earlier PMS phase, not the abort stack. No Markor stage accepted."
+}

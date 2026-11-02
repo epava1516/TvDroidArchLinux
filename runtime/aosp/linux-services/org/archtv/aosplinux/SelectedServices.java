@@ -23,6 +23,12 @@ public final class SelectedServices {
         call(Class.forName("com.android.server.LocalServices"), null, "addService",
             new Class<?>[]{Class.class,Object.class}, Class.forName(name), Class.forName(implementation).getConstructor().newInstance());
     }
+    private static void saveWaitDiagnostic(String value) {
+        try (java.io.FileOutputStream output=new java.io.FileOutputStream("/data/local/tmp/archtv-mc1/selected-wait.txt")) {
+            byte[] bytes=value.getBytes(java.nio.charset.StandardCharsets.UTF_8);
+            output.write(bytes,0,Math.min(bytes.length,32768));
+        } catch(java.io.IOException failure) { System.err.println("WAIT_DIAGNOSTIC_IO_FAILURE "+failure); }
+    }
     public static void main(String[] args) {
         boolean packages = args.length==1 && args[0].equals("--packages");
         Object platformCompat=null, activityManager=null, activityTaskManager=null;
@@ -30,14 +36,17 @@ public final class SelectedServices {
         Thread mainThread = Thread.currentThread();
         Thread diagnostic = new Thread(() -> {
             try { Thread.sleep(6000); } catch (InterruptedException stopped) { return; }
+            saveWaitDiagnostic("CAPTURE_STARTED main_state="+mainThread.getState()+"\n");
             StringBuilder stack = new StringBuilder("SELECTED_MAIN_WAIT_STACK\n");
             for (StackTraceElement frame : mainThread.getStackTrace()) stack.append("    at ").append(frame).append('\n');
             System.err.println(stack.toString());
+            StringBuilder savedStack=new StringBuilder(stack);saveWaitDiagnostic(savedStack.toString());
             for (java.util.Map.Entry<Thread, StackTraceElement[]> entry : Thread.getAllStackTraces().entrySet()) {
                 if (!entry.getKey().getName().equals("android.display")) continue;
                 stack = new StringBuilder("SELECTED_DISPLAY_WAIT_STACK\n");
                 for (StackTraceElement frame : entry.getValue()) stack.append("    at ").append(frame).append('\n');
                 System.err.println(stack.toString());
+                savedStack.append(stack);saveWaitDiagnostic(savedStack.toString());
             }
         }, "selected-wait-diagnostic");
         diagnostic.setDaemon(true);
@@ -144,7 +153,7 @@ public final class SelectedServices {
                 call(managerType,manager,"startService",new Class<?>[]{Class.forName("com.android.server.SystemService")},domain);
                 call(Class.forName("com.android.server.pm.PackageManagerService"),null,"main",new Class<?>[]{contextType,installerType,domainType,boolean.class},context,installer,domain,false);
                 System.err.println("PACKAGES_ORIGINAL_PMS_RETURNED REQUIRES_INSTALL_LAUNCH_VERIFICATION");
-                diagnostic.start();
+                if (Boolean.getBoolean("archtv.diagnose.wait")) diagnostic.start();
                 // Original post-PMS ordering: publish UserManager and system AMS,
                 // then bind the real storage services used by PackageInstaller.
                 start(manager,managerType,"com.android.server.pm.UserManagerService$LifeCycle");

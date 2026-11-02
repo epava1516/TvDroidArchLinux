@@ -1,0 +1,51 @@
+{
+  "checkpoint": "/home/tv/recuperacion-archtv/e6578ca4-7d76-4fc1-9cee-4babcdf49d3a-markor-launch",
+  "scope": "Private bpffs rootcontext fixes native JNI label check; next original map access fails DAC, not accepted connectivity",
+  "overall_exit": 1,
+  "native_complete_inventory_verified": true,
+  "bpf_cleanup_verified": true,
+  "observations": [
+    {
+      "tag": "System.err",
+      "message": "SELECTED_FAILURE_CAUSE depth=0 type=java.lang.RuntimeException message=Failed to create service com.android.server.NetworkStatsServiceInitializer: service constructor threw an exception",
+      "actual_sender_pid_uid_gid": [
+        518,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "System.err",
+      "message": "SELECTED_FAILURE_CAUSE depth=1 type=java.lang.reflect.InvocationTargetException message=null",
+      "actual_sender_pid_uid_gid": [
+        518,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "System.err",
+      "message": "SELECTED_FAILURE_CAUSE depth=2 type=java.lang.IllegalStateException message=Cannot open netd configuration map",
+      "actual_sender_pid_uid_gid": [
+        518,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "System.err",
+      "message": "SELECTED_FAILURE_CAUSE depth=3 type=android.system.ErrnoException message=nativeBpfFdGet failed: EACCES (Permission denied)",
+      "actual_sender_pid_uid_gid": [
+        518,
+        1000,
+        1000
+      ]
+    }
+  ],
+  "decision": "Reuse original system_server network accounting supplementary groups 3006/3007; do not grant CAP_BPF or disable unprivileged BPF. Verify actual groups and original pin uid/gid/mode in integrated execution.",
+  "unaccepted": [
+    "Java connectivity availability",
+    "Markor launch",
+    "clean native service close; timeout/vold shutdown error preserved"
+  ]
+}

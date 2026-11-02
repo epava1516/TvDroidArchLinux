@@ -1,0 +1,255 @@
+{
+  "checkpoint": "/home/tv/recuperacion-archtv/eab7e908-ff9c-41ee-afd7-2e5a113ea74e-markor-launch",
+  "payload": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-43/payload-2.ext4",
+  "payload_sha256": "fcabb57053cd4c3a5f5712a561b97b4fc7c990df3a91170d4fb37d1061fc1447",
+  "overall_exit": 1,
+  "scope": "Private bpffs labels and original network accounting DAC groups unblock netstats registration and ConnectivityService construction; not client operation or service readiness",
+  "identities": [
+    {
+      "kind": "NETD",
+      "pid_namespace_pid": 421,
+      "getpidcon_raw_return": 0,
+      "actual_context": "u:r:netd:s0",
+      "contexts_observed_in_order": [
+        "u:r:netd:s0"
+      ],
+      "errno_observed": [],
+      "status": [
+        "Uid:\t0\t0\t0\t0",
+        "Gid:\t0\t0\t0\t0",
+        "Groups:\t3005 ",
+        "CapPrm:\t00000080000074ef",
+        "CapEff:\t00000080000074ef",
+        "CapBnd:\t00000080000074ef",
+        "NoNewPrivs:\t1"
+      ]
+    },
+    {
+      "kind": "LMKD",
+      "pid_namespace_pid": 479,
+      "getpidcon_raw_return": 0,
+      "actual_context": "u:r:lmkd:s0",
+      "contexts_observed_in_order": [
+        "u:r:lmkd:s0"
+      ],
+      "errno_observed": [],
+      "status": [
+        "Uid:\t1069\t1069\t1069\t1069",
+        "Gid:\t1069\t1069\t1069\t1069",
+        "Groups:\t1000 3009 ",
+        "CapPrm:\t0000000001804022",
+        "CapEff:\t0000000001804022",
+        "CapBnd:\t0000000001804022",
+        "NoNewPrivs:\t1"
+      ]
+    },
+    {
+      "kind": "SERVICES",
+      "pid_namespace_pid": 501,
+      "getpidcon_raw_return": 0,
+      "actual_context": "u:r:system_server:s0",
+      "contexts_observed_in_order": [
+        "u:r:init:s0",
+        "u:r:system_server:s0"
+      ],
+      "errno_observed": [],
+      "status": [
+        "Uid:\t1000\t1000\t1000\t1000",
+        "Gid:\t1000\t1000\t1000\t1000",
+        "Groups:\t1003 3006 3007 ",
+        "CapPrm:\t0000001000800000",
+        "CapEff:\t0000001000800000",
+        "CapBnd:\t0000001000800000",
+        "NoNewPrivs:\t1"
+      ]
+    }
+  ],
+  "network_boundary": {
+    "host_netns": 4026531833,
+    "private_netns": 4026532311,
+    "controls": [
+      {
+        "name": "optmem_max",
+        "device": 53,
+        "inode": 1098009,
+        "global": false
+      },
+      {
+        "name": "rmem_default",
+        "device": 53,
+        "inode": 1098010,
+        "global": false
+      },
+      {
+        "name": "rmem_max",
+        "device": 53,
+        "inode": 1098011,
+        "global": false
+      },
+      {
+        "name": "rps_default_mask",
+        "device": 53,
+        "inode": 1098012,
+        "global": false
+      },
+      {
+        "name": "somaxconn",
+        "device": 53,
+        "inode": 1098013,
+        "global": false
+      },
+      {
+        "name": "tstamp_allow_data",
+        "device": 53,
+        "inode": 1098014,
+        "global": false
+      },
+      {
+        "name": "txrehash",
+        "device": 53,
+        "inode": 1098015,
+        "global": false
+      },
+      {
+        "name": "wmem_default",
+        "device": 53,
+        "inode": 1098016,
+        "global": false
+      },
+      {
+        "name": "wmem_max",
+        "device": 53,
+        "inode": 1098017,
+        "global": false
+      },
+      {
+        "name": "xfrm_acq_expires",
+        "device": 53,
+        "inode": 1098018,
+        "global": false
+      },
+      {
+        "name": "xfrm_aevent_etime",
+        "device": 53,
+        "inode": 1098019,
+        "global": false
+      },
+      {
+        "name": "xfrm_aevent_rseqth",
+        "device": 53,
+        "inode": 1098020,
+        "global": false
+      },
+      {
+        "name": "xfrm_larval_drop",
+        "device": 53,
+        "inode": 1098021,
+        "global": false
+      },
+      {
+        "name": "bpf_jit_enable",
+        "device": 23,
+        "inode": 748020,
+        "global": true
+      },
+      {
+        "name": "bpf_jit_kallsyms",
+        "device": 23,
+        "inode": 748021,
+        "global": true
+      }
+    ],
+    "global_values": {
+      "bpf_jit_enable": "1",
+      "bpf_jit_kallsyms": "1"
+    },
+    "bpf_root": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793597605659003765/root/sys/fs/bpf",
+    "bpf_device": 54,
+    "bpf_root_context": "u:object_r:fs_bpf:s0",
+    "bpf_directory_contexts": {
+      "loader": "u:object_r:fs_bpf_loader:s0",
+      "net_private": "u:object_r:fs_bpf_net_private:s0",
+      "net_shared": "u:object_r:fs_bpf_net_shared:s0",
+      "netd_readonly": "u:object_r:fs_bpf_netd_readonly:s0",
+      "netd_shared": "u:object_r:fs_bpf_netd_shared:s0",
+      "tethering": "u:object_r:fs_bpf_tethering:s0"
+    },
+    "kernel_preload_entries": [
+      "maps.debug",
+      "progs.debug"
+    ],
+    "cgroup_view": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793597605659003765/root/sys/fs/cgroup",
+    "scope": "Fresh private bpffs with kernel preload iterators; real sysctl inodes, existing private controls preserved. No Android programs loaded or readiness created."
+  },
+  "configuration_pin": [
+    {
+      "path": "netd_shared/map_netd_configuration_map",
+      "uid": 0,
+      "gid": 3007,
+      "mode": "0o460",
+      "context": "u:object_r:fs_bpf_netd_readonly:s0"
+    }
+  ],
+  "observations": [
+    {
+      "tag": "ActivityManager",
+      "message": "Connection with lmkd established",
+      "actual_sender_pid_uid_gid": [
+        501,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "NetworkStatsServiceInitializer",
+      "message": "Registering netstats",
+      "actual_sender_pid_uid_gid": [
+        501,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "ConnectivityService",
+      "message": "ConnectivityService starting up",
+      "actual_sender_pid_uid_gid": [
+        501,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "AndroidRuntime",
+      "message": "*** FATAL EXCEPTION IN SYSTEM PROCESS: android.net.connectivity.com.android.modules.utils.BackgroundThread\njava.lang.NullPointerException: Attempt to invoke interface method 'void com.android.internal.telephony.ITelephonyRegistry.addOnSubscriptionsChangedListener(java.lang.String, java.lang.String, com.android.internal.telephony.IOnSubscriptionsChangedListener)' on a null object reference\n\tat android.telephony.TelephonyRegistryManager.addOnSubscriptionsChangedListener(TelephonyRegistryManager.java:165)\n\tat android.telephony.SubscriptionManager.addOnSubscriptionsChangedListener(SubscriptionManager.java:1771)\n\tat android.net.connectivity.com.android.server.connectivity.KeepaliveStatsTracker.lambda$new$1(KeepaliveStatsTracker.java:371)\n\tat android.net.connectivity.com.android.server.connectivity.KeepaliveStatsTracker.$r8$lambda$YdT9W5-KYubGtwEExyIACCYMH14(KeepaliveStatsTracker.java:0)\n\tat android.net.connectivity.com.android.server.connectivity.KeepaliveStatsTracker$$ExternalSyntheticLambda2.run(R8$$SyntheticClass:0)\n\tat android.os.Handler.handleCallback(Handler.java:1070)\n\tat android.os.Handler.dispatchMessage(Handler.java:125)\n\tat android.os.Looper.dispatchMessage(Looper.java:333)\n\tat android.os.Looper.loopOnce(Looper.java:263)\n\tat android.os.Looper.loop(Looper.java:367)\n\tat android.os.HandlerThread.run(HandlerThread.java:139)\n",
+      "actual_sender_pid_uid_gid": [
+        501,
+        1000,
+        1000
+      ]
+    }
+  ],
+  "native_complete_inventory_verified": true,
+  "bpf_cleanup_verified": true,
+  "final_dm": [],
+  "final_loops": "",
+  "native_close_accepted": false,
+  "next_blocker": "Original ConnectivityService asynchronous subscription tracking throws NPE because telephony.registry is absent. Integrate original TelephonyRegistry and original preceding PacProxy/UI-mode lifecycle from SystemServer source; do not fake empty telephony callback or network readiness.",
+  "limitations": [
+    "No new Markor stage accepted; prior installation only in private tmpfs",
+    "No functional netstats/connectivity Binder client acceptance",
+    "Multicast socket EPERM remains; no Internet/DNS acceptance",
+    "Native close reports vold shutdown request/collection failure; outer resource cleanup separate",
+    "R1-MAC permissive policyload2, ARM/GMS/DRM open"
+  ],
+  "hashes": {
+    "/home/tv/recuperacion-archtv/eab7e908-ff9c-41ee-afd7-2e5a113ea74e-markor-launch/before.json": "d04194da5bc49f3d16008ced61c2b34d57f48e4c8e47b241cd72ef49e635123c",
+    "/home/tv/recuperacion-archtv/eab7e908-ff9c-41ee-afd7-2e5a113ea74e-markor-launch/run.log": "df3fa0a5c7506bb016b842bfb5fe710184bd807e96dad06b19828c1c57d51276",
+    "/home/tv/recuperacion-archtv/eab7e908-ff9c-41ee-afd7-2e5a113ea74e-markor-launch/result.json": "9350a829141e083786248ddcd35a827fdddce26ad856933cf8ef58ec470825ed",
+    "/home/tv/recuperacion-archtv/eab7e908-ff9c-41ee-afd7-2e5a113ea74e-markor-launch/bpf-cleanup.json": "272ad62f9243ed3c41b62551a3a8472c0a3ffdbf4d476a3310f12a5936390017",
+    "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793597605659003765/network-boundary.json": "3555d7de6d88de2e7a909de1ed71c997055237092b58f3ac0ffd48be18230ca5",
+    "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793597605659003765/bpf-owned.json": "9a90c8e8b10e1136c6e981def3e4a28f991700c63e4f15a1af6426d4560661db",
+    "dist/aosp16/package-cohort-build-43/entry/selected-services.rc": "2f5434a425aed9988a131c3cd2657f8e8eb21cd0eb0463c5c89b244d42df2b64",
+    "/home/tv/recuperacion-archtv/20261102T052238Z-host-selinux-view/private-selinux-state.json": "5df438b89629408571eb56ac9a26799078c842f14a81c14e25465de4d1f28719",
+    "/home/tv/recuperacion-archtv/20261102T052238Z-host-selinux-view/private-bpf-label.json": "c0f9ca713aa5a7dd003b66f91f750ca95679c7db2983e7c388617884034e4ded"
+  }
+}

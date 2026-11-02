@@ -27,8 +27,9 @@ def prepare(root,out):
         controls[name]=(fd,value)
     target=root/'sys/fs/bpf';target.mkdir(parents=True,exist_ok=True)
     host_bpf_device=Path('/sys/fs/bpf').stat().st_dev
-    mount(['-t','bpf','-o','nodev,noexec,nosuid','bpf',target])
+    mount(['-t','bpf','-o','nodev,noexec,nosuid,rootcontext=u:object_r:fs_bpf:s0','bpf',target])
     assert target.stat().st_dev!=host_bpf_device,'Refuse shared host BPF filesystem'
+    assert os.getxattr(target,'security.selinux').rstrip(b'\0')==b'u:object_r:fs_bpf:s0'
     # Linux bpf_fill_super()->populate_bpffs() installs these iterator links.
     # kernel/bpf/preload/bpf_preload_kern.c fixes their names; they are not
     # Android readiness or maps inherited from the host mount.
@@ -41,6 +42,8 @@ def prepare(root,out):
     # Containers only, matching original createDir(). Never create mainline_done or pins.
     for name in ['tethering','netd_shared','netd_readonly','net_shared','net_private','loader']:
         p=target/name;p.mkdir();p.chmod(0o1777)
+        expected=('u:object_r:fs_bpf_'+name+':s0').encode()
+        assert os.getxattr(p,'security.selinux').rstrip(b'\0')==expected,(name,os.getxattr(p,'security.selinux'))
     core=root/'proc/sys/net/core'
     existing={p.name:os.open(p,os.O_PATH|os.O_CLOEXEC) for p in core.iterdir() if p.is_file()}
     assert not set(controls)&set(existing),'Kernel now has private JIT controls; review boundary'
@@ -88,12 +91,16 @@ def prepare(root,out):
         mount(['--bind',net_sysfs/logical,destination]);mount(['-o','remount,bind,ro',destination])
     assert (root/'sys/class/net/lo').is_dir()
     save(out/'network-sysfs.json',{'private_netns':current_net,'interfaces':interfaces,'source':str(net_sysfs),'scope':'Real private-net sysfs view, read-only class/net and devices/virtual/net only; no host interface binding or fabricated metadata.'})
-    save(out/'network-boundary.json',{'host_netns':host_net,'private_netns':current_net,'controls':bound,'global_values':{n:v for n,(f,v) in controls.items()},'bpf_root':str(target),'bpf_device':target.stat().st_dev,'kernel_preload_entries':sorted(builtins),'cgroup_view':str(root/'sys/fs/cgroup'),'scope':'Fresh private bpffs with kernel preload iterators; real sysctl inodes, existing private controls preserved. No Android programs loaded or readiness created.'})
+    save(out/'network-boundary.json',{'host_netns':host_net,'private_netns':current_net,'controls':bound,'global_values':{n:v for n,(f,v) in controls.items()},'bpf_root':str(target),'bpf_device':target.stat().st_dev,'bpf_root_context':os.getxattr(target,'security.selinux').decode().rstrip('\0'),'bpf_directory_contexts':{p.name:os.getxattr(p,'security.selinux').decode().rstrip('\0') for p in target.iterdir() if p.is_dir()},'kernel_preload_entries':sorted(builtins),'cgroup_view':str(root/'sys/fs/cgroup'),'scope':'Fresh private bpffs with kernel preload iterators; real sysctl inodes, existing private controls preserved. No Android programs loaded or readiness created.'})
 
 def snapshot(root,out,phase):
     """Retain kernel IDs only for objects pinned under this run's private mount."""
     prefix=str(root/'sys/fs/bpf')+'/'
-    record={'phase':phase,'time':time.time(),'objects':{},'errors':[]}
+    record={'phase':phase,'time':time.time(),'objects':{},'errors':[],'pin_metadata':[]}
+    for path in (root/'sys/fs/bpf').rglob('*'):
+        if path.is_file():
+            info=path.stat()
+            record['pin_metadata'].append({'path':str(path.relative_to(root/'sys/fs/bpf')),'uid':info.st_uid,'gid':info.st_gid,'mode':oct(stat.S_IMODE(info.st_mode)),'context':os.getxattr(path,'security.selinux').decode().rstrip('\0')})
     for kind in ['prog','map','link']:
         p=subprocess.run(['/usr/bin/bpftool','-j','-f',kind,'show'],capture_output=True,text=True,timeout=3)
         if p.returncode:

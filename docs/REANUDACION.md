@@ -73,3 +73,17 @@ Unidades históricas APEX fallidas son transitorias, sin Restart. No hay timers 
 unidades archtv ejecutándose al iniciar esta revisión. El watcher de Input sólo
 captura evidencia. No hay herramienta general automation_update en esta sesión;
 no se atribuye inspección de automatizaciones externas inaccesibles.
+
+## Avisos históricos y observación actual
+
+Los avisos `71fdde53…`, `263a1327…` y `fc258592…` tienen consumo histórico
+registrado; su recepción tardía no inicia otra prueba. Los resultados nuevos
+siguen conservándose aunque el turno activo los consuma sin envío. La puerta de
+notificación continúa desactivada; no debe reactivarse para estas cohortes.
+
+Una captura REA MCP de procesos terminó con `cleanup_incomplete`; el observador
+Linux ya no está presente, pero el proveedor no confirmó la liberación de su
+propietario de captura. No repetir esa captura para forzar recuperación. Las
+inspecciones posteriores con GDB por CLI son diagnósticos distintos y no prueban
+conexión ni limpieza MCP. Evidencia original:
+`/home/tv/recuperacion-archtv/39fa340c-80ba-4ee1-a51f-13b8e0165df6-markor-launch/rea-process-capture-error.json`.

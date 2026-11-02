@@ -1,0 +1,125 @@
+{
+  "scope": "Original lmkd lifecycle and real AMS connection in integrated cohort; not command/reply, memory-pressure authorization, app launch or MAC acceptance",
+  "checkpoint": "/home/tv/recuperacion-archtv/a056fa88-d708-4bfe-9419-43587c318fdb-markor-launch",
+  "payload": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-40/payload-2.ext4",
+  "payload_sha256": "0cfb68fe364d2a32e75a422d1cd3dd9d43a597ed8485f478d0301740d96fa26a",
+  "evidence_sha256": {
+    "/home/tv/recuperacion-archtv/a056fa88-d708-4bfe-9419-43587c318fdb-markor-launch/before.json": "24c6e2ab92e90603b94bd5ac3f86689fea0844f0635564aef938d78b00c00bf4",
+    "/home/tv/recuperacion-archtv/a056fa88-d708-4bfe-9419-43587c318fdb-markor-launch/run.log": "dbcc0ca52c05242438b15500278da36af365b3f924e6d8a5027b4d29742eb171",
+    "/home/tv/recuperacion-archtv/a056fa88-d708-4bfe-9419-43587c318fdb-markor-launch/result.json": "ab70f2d5d1fc777ea583c5d698c696ecf5051262ec788c93843711b2829fc082",
+    "/home/tv/recuperacion-archtv/a056fa88-d708-4bfe-9419-43587c318fdb-markor-launch/bpf-cleanup.json": "9997191df9a4c8bd88d78fe191bd3b2e47f03a5e5bb92650f0070cc3bae6ceb1"
+  },
+  "identities": [
+    {
+      "kind": "NETD",
+      "pid_namespace_pid": 421,
+      "getpidcon_raw_return": 0,
+      "actual_context": "u:r:netd:s0",
+      "contexts_observed_in_order": [
+        "u:r:netd:s0"
+      ],
+      "errno_observed": [],
+      "status": [
+        "Uid:\t0\t0\t0\t0",
+        "Gid:\t0\t0\t0\t0",
+        "Groups:\t3005 ",
+        "CapPrm:\t00000080000074ef",
+        "CapEff:\t00000080000074ef",
+        "CapBnd:\t00000080000074ef",
+        "NoNewPrivs:\t1"
+      ]
+    },
+    {
+      "kind": "LMKD",
+      "pid_namespace_pid": 480,
+      "getpidcon_raw_return": 0,
+      "actual_context": "u:r:lmkd:s0",
+      "contexts_observed_in_order": [
+        "u:r:lmkd:s0"
+      ],
+      "errno_observed": [],
+      "status": [
+        "Uid:\t1069\t1069\t1069\t1069",
+        "Gid:\t1069\t1069\t1069\t1069",
+        "Groups:\t1000 3009 ",
+        "CapPrm:\t0000000001804022",
+        "CapEff:\t0000000001804022",
+        "CapBnd:\t0000000001804022",
+        "NoNewPrivs:\t1"
+      ]
+    }
+  ],
+  "original_daemon_and_java_observations": [
+    {
+      "tag": "lowmemorykiller",
+      "message": "Wakeup counter is reset from 0 to 0",
+      "actual_sender_pid_uid_gid": [
+        480,
+        1069,
+        1069
+      ]
+    },
+    {
+      "tag": "lowmemorykiller",
+      "message": "Using psi monitors for memory pressure detection",
+      "actual_sender_pid_uid_gid": [
+        480,
+        1069,
+        1069
+      ]
+    },
+    {
+      "tag": "lowmemorykiller",
+      "message": "Process polling is supported",
+      "actual_sender_pid_uid_gid": [
+        480,
+        1069,
+        1069
+      ]
+    },
+    {
+      "tag": "lowmemorykiller",
+      "message": "Process reaper initialized with 2 threads in the pool",
+      "actual_sender_pid_uid_gid": [
+        480,
+        1069,
+        1069
+      ]
+    },
+    {
+      "tag": "lowmemorykiller",
+      "message": "lmkd data connection established",
+      "actual_sender_pid_uid_gid": [
+        480,
+        1069,
+        1069
+      ]
+    },
+    {
+      "tag": "ActivityManager",
+      "message": "Connection with lmkd established",
+      "actual_sender_pid_uid_gid": [
+        500,
+        1000,
+        1000
+      ]
+    }
+  ],
+  "overall_exit": 1,
+  "native_complete_inventory_verified": true,
+  "bpf_cleanup_verified": true,
+  "final_active_loops": "",
+  "final_dm": [],
+  "decision": "LMKD absence no longer the demonstrated immediate blocker. Later connectivity JNI abort on private bpffs root label is captured separately in connectivity-bpf-label-negative.json. Do not call this storage deadlock or APK availability.",
+  "not_proved": [
+    "LMKD command/reply and pressure handling",
+    "Java connectivity readiness",
+    "Markor launch/UI/input/note/persistence",
+    "MAC authorization/isolation"
+  ],
+  "source_files": {
+    "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/ProcessList.java": "93d5210ae9a4b72e1ea4e82ecc48d369de74bab481bed18cf3ba227e2defa699",
+    "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/LmkdConnection.java": "75feaf075d00a847572996b3c27855b2cad7b1031d547638dc0bf9e2786097b9",
+    "dist/aosp16/factory-inputs-3/root/system/etc/init/lmkd.rc": "85aa14d9d568e14025c38d7dbd905aaa247b186b56ce7bbbc54d34aad4c3af8b"
+  }
+}

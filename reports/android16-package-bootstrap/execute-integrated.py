@@ -36,6 +36,7 @@ root_code+="\n(root/'dev/input').mkdir()"
 for name in ['markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
  root_code+="\np=root/'data/local/tmp/archtv-mc1'/"+repr(name)+";p.touch(mode=0o640);os.chown(p,1000,2000);os.chmod(p,0o640)"
 root_code+="\np=root/'data/local/tmp/archtv-mc1/selected-failure.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
+root_code+="\np=root/'data/local/tmp/archtv-mc1/selected-wait.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
 root_code+="\np=root/'data/local/tmp/archtv-mc1/markor-install.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
 root_code+="\nshutil.copyfile(Path("+repr(str(apk_path))+"),root/'data/local/tmp/markor.apk');os.chown(root/'data/local/tmp/markor.apk',2000,2000);os.chmod(root/'data/local/tmp/markor.apk',0o644)"
 text=text.replace('label(root)\n',root_code+'\nlabel(root)\n',1)
@@ -97,9 +98,15 @@ text=text.replace('SUSPEND|SERVICES|INSTALLD|VOLD|ZYGOTE|HEALTH','SUSPEND|SERVIC
 text=text.replace("'HEALTH':'u:r:hal_health_default:s0'","'HEALTH':'u:r:hal_health_default:s0','STATSD':'u:r:statsd:s0'")
 text=text.replace("list(map(int,fields['Uid'].split()))==[", "list(map(int,fields['Uid'].split()))==[1066 if identity['kind']=='STATSD' else ")
 text=text.replace("list(map(int,fields['Gid'].split()))==[", "list(map(int,fields['Gid'].split()))==[1066 if identity['kind']=='STATSD' else ")
+# Reuse the existing namespace-PID observer for original netd/lmkd identities.
+text=text.replace('SUSPEND|SERVICES|INSTALLD|VOLD|ZYGOTE|HEALTH|STATSD','SUSPEND|SERVICES|INSTALLD|VOLD|ZYGOTE|HEALTH|STATSD|NETD|LMKD')
+text=text.replace("'STATSD':'u:r:statsd:s0'","'STATSD':'u:r:statsd:s0','NETD':'u:r:netd:s0','LMKD':'u:r:lmkd:s0'")
+text=text.replace("1066 if identity['kind']=='STATSD' else ","1069 if identity['kind']=='LMKD' else 0 if identity['kind']=='NETD' else 1066 if identity['kind']=='STATSD' else ")
+text=text.replace("(((1<<35)|(1<<36)) if identity['kind']=='HEALTH'", "(0x1804022 if identity['kind']=='LMKD' else 0x80000074ef if identity['kind']=='NETD' else ((1<<35)|(1<<36)) if identity['kind']=='HEALTH'")
+text=text.replace("fields['NoNewPrivs']=='1'", "fields['NoNewPrivs']=='1'\n if identity['kind']=='SERVICES':assert list(map(int,fields['Groups'].split()))==[1003,3006,3007]")
 # Preserve actual APEX output on Java/bootstrap failures as well.
 marker="if p.returncode!=0:\n failed_output="
-text=text.replace(marker,"""for name in ['netd-permission-query.txt','netd-query.txt','netd-interfaces.txt','stats-query.txt','selected-failure.txt','health-query.txt','health-dump.txt','apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt','vold-query.txt','vold-user0.txt','markor-install.txt','markor-path.txt','markor-dump.txt','activity-query.txt','mount-query.txt','markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
+text=text.replace(marker,"""for name in ['netd-permission-query.txt','netd-query.txt','netd-interfaces.txt','stats-query.txt','selected-failure.txt','selected-wait.txt','health-query.txt','health-dump.txt','apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt','vold-query.txt','vold-user0.txt','markor-install.txt','markor-path.txt','markor-dump.txt','activity-query.txt','mount-query.txt','markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
  f=Path('/data/local/tmp/archtv-mc1')/name
  if f.is_file():print('PACKAGE_ORIGINAL_OUTPUT '+name+' '+json.dumps(f.read_text()),flush=True)
 if p.returncode!=0:

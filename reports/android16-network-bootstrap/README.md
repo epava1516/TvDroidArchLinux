@@ -87,3 +87,19 @@ Siguiente integración: namespaces y generación linkerconfig originales, netd y
 ConnectivityModuleConnector/NetworkStackClient/NetworkManagement/NetworkStats/
 NetworkPolicy/ConnectivityServiceInitializer en su orden original. No marcar
 readiness manualmente ni interpretar registro de Binder como recorrido APK.
+
+## Etiquetas y DAC del consumo Java original
+
+La fusión con la política Linux conserva `linux.bpf_t` como genfs raíz de bpf.
+El JNI original de conectividad aborta ante esa raíz: no es un deadlock Java.
+Sólo la nueva instancia privada se monta con `rootcontext=u:object_r:fs_bpf:s0`;
+las seis subcarpetas deben recibir sus genfscon AOSP originales, sin un `context=`
+uniforme que borraría esas distinciones. El bpffs del anfitrión no se etiqueta.
+
+El mapa original `netd_shared/map_netd_configuration_map` tiene UID0/GID3007,
+modo0460 y etiqueta `fs_bpf_netd_readonly`. La entrada seleccionada reutiliza
+los grupos originales net_bw_stats3006/net_bw_acct3007 de ZygoteInit; no se
+cambian permisos del mapa ni se añade CAP_BPF al proceso Java. Registro de
+netstats y construcción de ConnectivityService progresan; TelephonyRegistry
+ausente causa NPE asíncrona. No hay aceptación funcional de red o Markor.
+Véase [ejecución, hashes y limitaciones](../android16-package-bootstrap/network-accounting-progress.json).
