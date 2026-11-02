@@ -52,6 +52,23 @@ public final class SelectedServices {
         diagnostic.setDaemon(true);
         if(!packages)diagnostic.start();
         try {
+            // Keep the original fatal handler. Persist the actual asynchronous
+            // framework exception before it kills this trusted process; logdw
+            // can drop the crash datagram during startup bursts.
+            Thread.UncaughtExceptionHandler originalFatal=Thread.getDefaultUncaughtExceptionHandler();
+            if(originalFatal==null)throw new IllegalStateException("Original fatal handler absent");
+            Thread.setDefaultUncaughtExceptionHandler((thread,failure) -> {
+                try {
+                    java.io.StringWriter text=new java.io.StringWriter();
+                    text.append("ORIGINAL_ASYNC_FATAL thread=").append(thread.getName()).append('\n');
+                    failure.printStackTrace(new java.io.PrintWriter(text));
+                    byte[] bytes=text.toString().getBytes(java.nio.charset.StandardCharsets.UTF_8);
+                    try(java.io.FileOutputStream output=new java.io.FileOutputStream("/data/local/tmp/archtv-mc1/selected-failure.txt")) {
+                        output.write(bytes,0,Math.min(bytes.length,32768));
+                    }
+                } catch(Throwable recordingFailure) { /* Original fatal handling still runs. */ }
+                originalFatal.uncaughtException(thread,failure);
+            });
             // Common original system-server IPC/scheduling setup. These calls
             // affect this trusted process, not the Linux host or tenant APKs.
             Class<?> binderInternal = Class.forName("com.android.internal.os.BinderInternal");
@@ -97,7 +114,10 @@ public final class SelectedServices {
             call(sharedType, null, "setInstance", new Class<?>[]{sharedType}, shared);
             Class<?> installerType = Class.forName("com.android.server.pm.Installer");
             Object installer = call(managerType, manager, "startService", new Class<?>[]{Class.class}, installerType);
-            if(packages)start(manager,managerType,"com.android.server.os.DeviceIdentifiersPolicyService");
+            if(packages) {
+                start(manager,managerType,"com.android.server.os.DeviceIdentifiersPolicyService");
+                start(manager,managerType,"com.android.server.flags.FeatureFlagsService");
+            }
             // Real original Binder operation; default Installer is not isolated.
             // Its connection latch/remote exceptions remain intact.
             call(installerType, installer, "invalidateMounts", new Class<?>[0]);
@@ -282,6 +302,16 @@ public final class SelectedServices {
                 call(wmType,wm,"systemReady",new Class<?>[0]);
                 start(manager,managerType,"com.android.server.policy.PermissionPolicyService");
                 call(packagesService.getClass(),packagesService,"systemReady",new Class<?>[0]);
+                // Query the exact original definition, not a shell listing of
+                // permission groups (RANGING belongs to UNDEFINED).
+                Object packageClient=call(contextType,context,"getPackageManager",new Class<?>[0]);
+                Object rangingInfo=call(packageClient.getClass(),packageClient,"getPermissionInfo",new Class<?>[]{String.class,int.class},"android.permission.RANGING",0);
+                String permissionName=(String)rangingInfo.getClass().getField("name").get(rangingInfo);
+                if(!"android.permission.RANGING".equals(permissionName))throw new IllegalStateException("Original RANGING definition mismatch");
+                String permissionRecord="name="+permissionName+"\npackage="+rangingInfo.getClass().getField("packageName").get(rangingInfo)+"\nprotectionLevel="+rangingInfo.getClass().getField("protectionLevel").getInt(rangingInfo)+"\n";
+                try(java.io.FileOutputStream output=new java.io.FileOutputStream("/data/local/tmp/archtv-mc1/ranging-service-info.txt")) {
+                    output.write(permissionRecord.getBytes(java.nio.charset.StandardCharsets.UTF_8));
+                }
                 call(display.getClass(),display,"systemReady",new Class<?>[]{boolean.class},false);
                 Runnable linuxApplicationLoop=() -> {
                     try {

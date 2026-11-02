@@ -1,0 +1,2159 @@
+{
+  "scope": "Original aconfig-generated data consumed by PMS/AppOps: previous RANGING rejection passed, AMS reaches System now ready and phase550. Not full flags, services availability, MAC or APK acceptance.",
+  "checkpoint": "/home/tv/recuperacion-archtv/10d5da16-2703-47ad-94ea-92a5bd336ffe-markor-launch",
+  "payload": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-53/payload-2.ext4",
+  "payload_sha256": "6ce57b09a797627ae79ea1f5378cf4da6a84dd8bd01fde265a0861d08bbd4b15",
+  "overall_exit": 1,
+  "original_init_observations": [
+    "ACONFIG_ORIGINAL_INIT_EXIT name=early_system_aconfigd_platform_init pid=414 code=1 status=0",
+    "ACONFIG_ORIGINAL_INIT_EXIT name=system_aconfigd_platform_init pid=415 code=1 status=6",
+    "ACONFIG_ORIGINAL_PLATFORM_PARTIAL exit=6 vendor_absent ORIGINAL_NONFATAL_EXEC_CONTRACT NOT_COMPLETE_FLAG_ACCEPTANCE",
+    "ACONFIG_ORIGINAL_INIT_EXIT name=mainline_aconfigd_init pid=416 code=1 status=0",
+    "SELECTED_ACONFIG_SYSTEM_STARTED pid=417 NOT_FLAG_OR_PERMISSION_ACCEPTANCE",
+    "SELECTED_ACONFIG_MAINLINE_STARTED pid=418 NOT_FLAG_OR_PERMISSION_ACCEPTANCE",
+    "ACONFIG_ORIGINAL_SOCKET_EXIT pid=418 code=1 status=0 ONESHOT_NOT_SOCKET_AVAILABILITY",
+    "ACONFIG_ORIGINAL_SOCKET_EXIT pid=417 code=1 status=0 ONESHOT_NOT_SOCKET_AVAILABILITY"
+  ],
+  "actual_reader_observations": [
+    {
+      "tag": "ActivityManager",
+      "message": "System now ready",
+      "actual_sender_pid_uid_gid": [
+        524,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "SystemServiceManager",
+      "message": "Starting phase 550",
+      "actual_sender_pid_uid_gid": [
+        524,
+        1000,
+        1000
+      ]
+    }
+  ],
+  "metadata": {
+    "files": [
+      {
+        "path": "/metadata/aconfig/boot/com.android.adbd.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 38,
+        "sha256": "20ee19bbe0fc2e090c8742953a4a3ad7424067cdc1ec8f803f50c94e69dd3144"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.adbd.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 38,
+        "sha256": "b6951fc8af2cd0468fa298a692171f3b85459d5f7cb82f8e080200b2066597b3"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.adservices.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 78,
+        "sha256": "eb51ef87f1b3232a996cc2c73827d2169ead2f97d35faf90ab88a70cda1dbbfe"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.adservices.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 78,
+        "sha256": "dba9b965a4f1e6d4970c824d85a19b4254139cc7125724d94ecba9baebe571f2"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.appsearch.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 141,
+        "sha256": "0db43601bf8dc89963da06525cb15a94de3c43acea0a48ab260e97c3062a9a6d"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.appsearch.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 141,
+        "sha256": "358f442f981d063b07f5695b6a6c7548a5d624f08d2b2f3b014052145ec235e9"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.art.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 84,
+        "sha256": "f0ea48e66c5c60761ded43406d12884368646fed891133ef9a1c846e0fb0b31f"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.art.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 84,
+        "sha256": "f5021aa845721a852d889f5f95fbd79c1ca40e36e51b2ac83279c6d760efc3d0"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.bt.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 340,
+        "sha256": "260d9b2c63ac08b7f169c9a553f9396abc20bef9b07bcf58bf4c4eab011ea211"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.bt.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 340,
+        "sha256": "dcb3c3ac385be35ce3d25c1694918712c00ae074c8ebcff205d77a6a98eef9ca"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.cellbroadcast.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 47,
+        "sha256": "aeaeadf767f7c85cc3cac1e260f31614eec714593cd4a3b86b7a8fdb403670c9"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.cellbroadcast.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 47,
+        "sha256": "533be0e7a2a1dbac6f8caa7b07b8e01168c87d57226b1f6b11c6f95cc486daa2"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.compos.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 40,
+        "sha256": "e9655f2ba0b8f08c80e2ab27088b282fb3034c81030ae995d8568796cdb4e1bf"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.compos.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 40,
+        "sha256": "8fdc2635bf6c95f72eaa089c9a1fcf05d83e4731befca307d3387a5c6e11ebab"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.configinfrastructure.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 71,
+        "sha256": "a97c316918af814b948f9c1792a07e1234e1c58796c9b54df9789c67fa6003d4"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.configinfrastructure.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 71,
+        "sha256": "4e6772ca3aa8ede51d154c06ed967361a725c7ede6978b2faf8747c3cddbc6e1"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.conscrypt.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 49,
+        "sha256": "9066edfc2b70b876b529188d2063ebfc3d95708aa7d245d57c60d2eaa30bef2d"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.conscrypt.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 49,
+        "sha256": "52340c227b4eed1a590114a26b6e11b96944a43f6f508351f0ba8816c177c844"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.crashrecovery.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 50,
+        "sha256": "31147621646af36620c4b8b8b6545926f791db5136e91bf701e907f971658c3e"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.crashrecovery.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 50,
+        "sha256": "a32d594afce35b9f644564611c30136da8ff8d78e7eed11c55fe28f3e4e45a00"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.devicelock.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 48,
+        "sha256": "9b4b45c84d9a3deb8d276b8fa5923c06f76c19c93585b5b2acf8c1e42f8c26c9"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.devicelock.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 48,
+        "sha256": "969dc012f9c5a258a03c7e9429d48adb98935e5ec1de6f4d74a960096fd025ce"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.healthfitness.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 119,
+        "sha256": "43f88804815b499bb6b342ddd6374293f798b62b031dcc3aafd62d8c055aa746"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.healthfitness.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 119,
+        "sha256": "7c4fe02b8f7d15a46927cbc6fb95f0869e8b616b4f7e95a4ffc1978e0c25d98d"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.i18n.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 40,
+        "sha256": "b05b40cf80e6470ee8517f7692bf23d70f5a9608a10bfd0caf1cacfd661fb9f5"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.i18n.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 40,
+        "sha256": "3025d3110b3af612b3dc47df24fcfb2a335522f4a2c858acdf69293d1bd9250b"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.ipsec.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 43,
+        "sha256": "bb2ac54594f02595801f4959e205980e35c064e9f361b062978c21af0bdfcdfa"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.ipsec.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 43,
+        "sha256": "384ae333eeabc6ae39814eb62e3634d4d834db4839892d465e80699254ad420b"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.media.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 43,
+        "sha256": "7a0362e5e2a6a6090fd3bc74d61eb6180179af7a6fbfac2b4e7fa90fd2414337"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.media.swcodec.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 53,
+        "sha256": "e4bbc33f7011b2d19d445a93d060fe082c95c6b9a7ee864fec50c8347b11ba10"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.media.swcodec.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 53,
+        "sha256": "e5789b2acd944353075867366eb640a7b23f72a734217cf6b1c469d9145e1974"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.media.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 43,
+        "sha256": "4bfd7cda9667fff15c9929ee4d1d4af7a466564530318aea693cb0868db161fc"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.mediaprovider.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 109,
+        "sha256": "a0e30409b4dcbf4e234d6bd469dc96b817b1d07e7dd32dc644b3a02637105c33"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.mediaprovider.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 109,
+        "sha256": "dc5a5a3d11ecd7a659d6a8e7e3767bd8258d58e3ce75a038178fc450b0d33479"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.nfcservices.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 54,
+        "sha256": "03b8bcf36b76b168470bff5ae6c0b5b60e980d0b62e3379adc641a5ea27166e9"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.nfcservices.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 54,
+        "sha256": "5780dadbf555d005f61d069effebdad047088b2fa41b6f25c34d2bef51e38b2e"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.ondevicepersonalization.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 64,
+        "sha256": "b84750c23102609998c77d1c12d6bbe3dea4118f2cdba9e13c461fe88f94f655"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.ondevicepersonalization.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 64,
+        "sha256": "00d72540ad200b1aa92b3a0c25d27338aec226f96007cc62adec23dfb3bf262f"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.os.statsd.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 51,
+        "sha256": "7597bb3c12bda89de54e7a956bbaabfe4e829ca43f113117f47de63e83bfc5f0"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.os.statsd.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 51,
+        "sha256": "0ccc26fb021c7814a757fdf967f781b2f68be97d51663588b73ea6a23a8f3df9"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.permission.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 65,
+        "sha256": "dfae1be0ea8db7286437316a15a23e1325e3071b9ca6e4ed304bf77ee85d7efa"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.permission.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 65,
+        "sha256": "c710c6458cb15e718c3e7f3428d60f17cd109cb62ef42f3662662e161a94017b"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.profiling.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 51,
+        "sha256": "93235985fc66332cdeeb9793dfbb6d8ba54cd26dd27e53643975dd0de0d3325d"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.profiling.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 51,
+        "sha256": "8760caa4ad0229833ffd9b372b6edfcac7e84da8f0170b46727c46030921d677"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.rkpd.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 40,
+        "sha256": "86145afb98a14d91038374c39ecde31d274e4beff174d10a94ef4f09e02b48f8"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.rkpd.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 40,
+        "sha256": "e3b3e6368a5f74fd4c420bc68e15e1b2904146df351a2d7d6b8e2295151f4e77"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.telephonycore.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 47,
+        "sha256": "ea4a778c79311345377bfcbc08891b1e4f290d453680a8134a69810ae731b77e"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.telephonycore.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 47,
+        "sha256": "794020e15347d0b35461df9ce7989091dd2ea104baad7cd68c6128415cceac91"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.tethering.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 88,
+        "sha256": "5272a3e3a030a5b85c59e724ed05d61b8c46e3d38f4268d6a988d074053cdfc5"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.tethering.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 88,
+        "sha256": "34ee59dc136d383cb19e7275b0d03a99d2e9d5b01b0520e3e71977ca54ec4849"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.uprobestats.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 52,
+        "sha256": "cd3f4c9118b8f320bf4073ce3d9238b52a4e53f0383458624c0689736dfa005c"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.uprobestats.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 52,
+        "sha256": "bfcb200f6657d309c8d92542476e88b668bef19ea19f1969e4b5e4a5f056f852"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.uwb.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 50,
+        "sha256": "6d6ee89af0dba16e581e7c072cc48880fa571e7d1aeb51b1511b9c55ea2b90ee"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.uwb.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 50,
+        "sha256": "419ab325898c767d7e18e24069581a3ce87a9d9234c8df40048b9b63e40ca8d5"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.virt.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 41,
+        "sha256": "c3d329f3bfd280f37c32c47e90e1eeae588b50bec92b290810f60cb0d7527e42"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.virt.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 41,
+        "sha256": "1a797f010e6b037fbeec336048302942e13600a799e3e2c442ae3f87ac2f88a9"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.wifi.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 89,
+        "sha256": "f4211923753a90eeaeed72f2267bdfd1af10953640bd65996c289d5749b88b24"
+      },
+      {
+        "path": "/metadata/aconfig/boot/com.android.wifi.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 89,
+        "sha256": "b2565377895dafadf3bbedfc1815edbd650cc41a321615de9ce5072c57a79f8f"
+      },
+      {
+        "path": "/metadata/aconfig/boot/product.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 28,
+        "sha256": "d4bad440524871031ab00a7de2f2172924883588eaafe9f0657575bd8bc86b08"
+      },
+      {
+        "path": "/metadata/aconfig/boot/product.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 28,
+        "sha256": "7d54232b1b9fe7e24bbd2c24b0c5d980e12cea6101c104f84759248af423c943"
+      },
+      {
+        "path": "/metadata/aconfig/boot/system.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 1853,
+        "sha256": "f1c4da38ab08cf9462ab4bd84971b9118c99c4ebb166d837cc10c4270d19c67d"
+      },
+      {
+        "path": "/metadata/aconfig/boot/system.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 1853,
+        "sha256": "f4da4e9c60ba018bf0e9e2df3fe651ace603ace77c267a4cb6faa014451138b0"
+      },
+      {
+        "path": "/metadata/aconfig/boot/system_ext.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 202,
+        "sha256": "49c9f471eb66569cbd3afacc68f24bc643311e9231962a9b465d3190a1ed2b86"
+      },
+      {
+        "path": "/metadata/aconfig/boot/system_ext.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 202,
+        "sha256": "a5b4e296a80007b493ca36beacf94e2b9ea4d61adb4fb058b8f8d16b0d99babb"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.adbd.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 38,
+        "sha256": "20ee19bbe0fc2e090c8742953a4a3ad7424067cdc1ec8f803f50c94e69dd3144"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.adbd.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 38,
+        "sha256": "b6951fc8af2cd0468fa298a692171f3b85459d5f7cb82f8e080200b2066597b3"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.adbd_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.adservices.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 78,
+        "sha256": "eb51ef87f1b3232a996cc2c73827d2169ead2f97d35faf90ab88a70cda1dbbfe"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.adservices.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 78,
+        "sha256": "dba9b965a4f1e6d4970c824d85a19b4254139cc7125724d94ecba9baebe571f2"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.adservices_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.appsearch.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 141,
+        "sha256": "0db43601bf8dc89963da06525cb15a94de3c43acea0a48ab260e97c3062a9a6d"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.appsearch.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 141,
+        "sha256": "358f442f981d063b07f5695b6a6c7548a5d624f08d2b2f3b014052145ec235e9"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.appsearch_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.art.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 84,
+        "sha256": "f0ea48e66c5c60761ded43406d12884368646fed891133ef9a1c846e0fb0b31f"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.art.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 84,
+        "sha256": "f5021aa845721a852d889f5f95fbd79c1ca40e36e51b2ac83279c6d760efc3d0"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.art_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.bt.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 340,
+        "sha256": "260d9b2c63ac08b7f169c9a553f9396abc20bef9b07bcf58bf4c4eab011ea211"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.bt.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 340,
+        "sha256": "dcb3c3ac385be35ce3d25c1694918712c00ae074c8ebcff205d77a6a98eef9ca"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.bt_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.cellbroadcast.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 47,
+        "sha256": "aeaeadf767f7c85cc3cac1e260f31614eec714593cd4a3b86b7a8fdb403670c9"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.cellbroadcast.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 47,
+        "sha256": "533be0e7a2a1dbac6f8caa7b07b8e01168c87d57226b1f6b11c6f95cc486daa2"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.cellbroadcast_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.compos.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 40,
+        "sha256": "e9655f2ba0b8f08c80e2ab27088b282fb3034c81030ae995d8568796cdb4e1bf"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.compos.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 40,
+        "sha256": "8fdc2635bf6c95f72eaa089c9a1fcf05d83e4731befca307d3387a5c6e11ebab"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.compos_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.configinfrastructure.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 71,
+        "sha256": "a97c316918af814b948f9c1792a07e1234e1c58796c9b54df9789c67fa6003d4"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.configinfrastructure.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 71,
+        "sha256": "4e6772ca3aa8ede51d154c06ed967361a725c7ede6978b2faf8747c3cddbc6e1"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.configinfrastructure_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.conscrypt.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 49,
+        "sha256": "9066edfc2b70b876b529188d2063ebfc3d95708aa7d245d57c60d2eaa30bef2d"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.conscrypt.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 49,
+        "sha256": "52340c227b4eed1a590114a26b6e11b96944a43f6f508351f0ba8816c177c844"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.conscrypt_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.crashrecovery.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 50,
+        "sha256": "31147621646af36620c4b8b8b6545926f791db5136e91bf701e907f971658c3e"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.crashrecovery.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 50,
+        "sha256": "a32d594afce35b9f644564611c30136da8ff8d78e7eed11c55fe28f3e4e45a00"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.crashrecovery_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.devicelock.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 48,
+        "sha256": "9b4b45c84d9a3deb8d276b8fa5923c06f76c19c93585b5b2acf8c1e42f8c26c9"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.devicelock.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 48,
+        "sha256": "969dc012f9c5a258a03c7e9429d48adb98935e5ec1de6f4d74a960096fd025ce"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.devicelock_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.healthfitness.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 119,
+        "sha256": "43f88804815b499bb6b342ddd6374293f798b62b031dcc3aafd62d8c055aa746"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.healthfitness.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 119,
+        "sha256": "7c4fe02b8f7d15a46927cbc6fb95f0869e8b616b4f7e95a4ffc1978e0c25d98d"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.healthfitness_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.i18n.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 40,
+        "sha256": "b05b40cf80e6470ee8517f7692bf23d70f5a9608a10bfd0caf1cacfd661fb9f5"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.i18n.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 40,
+        "sha256": "3025d3110b3af612b3dc47df24fcfb2a335522f4a2c858acdf69293d1bd9250b"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.i18n_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.ipsec.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 43,
+        "sha256": "bb2ac54594f02595801f4959e205980e35c064e9f361b062978c21af0bdfcdfa"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.ipsec.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 43,
+        "sha256": "384ae333eeabc6ae39814eb62e3634d4d834db4839892d465e80699254ad420b"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.ipsec_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.media.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 43,
+        "sha256": "7a0362e5e2a6a6090fd3bc74d61eb6180179af7a6fbfac2b4e7fa90fd2414337"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.media.swcodec.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 53,
+        "sha256": "e4bbc33f7011b2d19d445a93d060fe082c95c6b9a7ee864fec50c8347b11ba10"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.media.swcodec.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 53,
+        "sha256": "e5789b2acd944353075867366eb640a7b23f72a734217cf6b1c469d9145e1974"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.media.swcodec_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.media.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 43,
+        "sha256": "4bfd7cda9667fff15c9929ee4d1d4af7a466564530318aea693cb0868db161fc"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.media_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.mediaprovider.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 109,
+        "sha256": "a0e30409b4dcbf4e234d6bd469dc96b817b1d07e7dd32dc644b3a02637105c33"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.mediaprovider.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 109,
+        "sha256": "dc5a5a3d11ecd7a659d6a8e7e3767bd8258d58e3ce75a038178fc450b0d33479"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.mediaprovider_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.nfcservices.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 54,
+        "sha256": "03b8bcf36b76b168470bff5ae6c0b5b60e980d0b62e3379adc641a5ea27166e9"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.nfcservices.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 54,
+        "sha256": "5780dadbf555d005f61d069effebdad047088b2fa41b6f25c34d2bef51e38b2e"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.nfcservices_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.ondevicepersonalization.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 64,
+        "sha256": "b84750c23102609998c77d1c12d6bbe3dea4118f2cdba9e13c461fe88f94f655"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.ondevicepersonalization.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 64,
+        "sha256": "00d72540ad200b1aa92b3a0c25d27338aec226f96007cc62adec23dfb3bf262f"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.ondevicepersonalization_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.os.statsd.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 51,
+        "sha256": "7597bb3c12bda89de54e7a956bbaabfe4e829ca43f113117f47de63e83bfc5f0"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.os.statsd.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 51,
+        "sha256": "0ccc26fb021c7814a757fdf967f781b2f68be97d51663588b73ea6a23a8f3df9"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.os.statsd_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.permission.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 65,
+        "sha256": "dfae1be0ea8db7286437316a15a23e1325e3071b9ca6e4ed304bf77ee85d7efa"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.permission.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 65,
+        "sha256": "c710c6458cb15e718c3e7f3428d60f17cd109cb62ef42f3662662e161a94017b"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.permission_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.profiling.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 51,
+        "sha256": "93235985fc66332cdeeb9793dfbb6d8ba54cd26dd27e53643975dd0de0d3325d"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.profiling.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 51,
+        "sha256": "8760caa4ad0229833ffd9b372b6edfcac7e84da8f0170b46727c46030921d677"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.profiling_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.rkpd.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 40,
+        "sha256": "86145afb98a14d91038374c39ecde31d274e4beff174d10a94ef4f09e02b48f8"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.rkpd.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 40,
+        "sha256": "e3b3e6368a5f74fd4c420bc68e15e1b2904146df351a2d7d6b8e2295151f4e77"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.rkpd_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.telephonycore.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 47,
+        "sha256": "ea4a778c79311345377bfcbc08891b1e4f290d453680a8134a69810ae731b77e"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.telephonycore.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 47,
+        "sha256": "794020e15347d0b35461df9ce7989091dd2ea104baad7cd68c6128415cceac91"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.telephonycore_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.tethering.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 88,
+        "sha256": "5272a3e3a030a5b85c59e724ed05d61b8c46e3d38f4268d6a988d074053cdfc5"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.tethering.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 88,
+        "sha256": "34ee59dc136d383cb19e7275b0d03a99d2e9d5b01b0520e3e71977ca54ec4849"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.tethering_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.uprobestats.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 52,
+        "sha256": "cd3f4c9118b8f320bf4073ce3d9238b52a4e53f0383458624c0689736dfa005c"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.uprobestats.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 52,
+        "sha256": "bfcb200f6657d309c8d92542476e88b668bef19ea19f1969e4b5e4a5f056f852"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.uprobestats_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.uwb.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 50,
+        "sha256": "6d6ee89af0dba16e581e7c072cc48880fa571e7d1aeb51b1511b9c55ea2b90ee"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.uwb.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 50,
+        "sha256": "419ab325898c767d7e18e24069581a3ce87a9d9234c8df40048b9b63e40ca8d5"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.uwb_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.virt.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 41,
+        "sha256": "c3d329f3bfd280f37c32c47e90e1eeae588b50bec92b290810f60cb0d7527e42"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.virt.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 41,
+        "sha256": "1a797f010e6b037fbeec336048302942e13600a799e3e2c442ae3f87ac2f88a9"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.virt_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.wifi.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 89,
+        "sha256": "f4211923753a90eeaeed72f2267bdfd1af10953640bd65996c289d5749b88b24"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.wifi.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 89,
+        "sha256": "b2565377895dafadf3bbedfc1815edbd650cc41a321615de9ce5072c57a79f8f"
+      },
+      {
+        "path": "/metadata/aconfig/flags/com.android.wifi_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/product.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 28,
+        "sha256": "d4bad440524871031ab00a7de2f2172924883588eaafe9f0657575bd8bc86b08"
+      },
+      {
+        "path": "/metadata/aconfig/flags/product.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 28,
+        "sha256": "7d54232b1b9fe7e24bbd2c24b0c5d980e12cea6101c104f84759248af423c943"
+      },
+      {
+        "path": "/metadata/aconfig/flags/product_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/system.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 1853,
+        "sha256": "f1c4da38ab08cf9462ab4bd84971b9118c99c4ebb166d837cc10c4270d19c67d"
+      },
+      {
+        "path": "/metadata/aconfig/flags/system.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 1853,
+        "sha256": "f4da4e9c60ba018bf0e9e2df3fe651ace603ace77c267a4cb6faa014451138b0"
+      },
+      {
+        "path": "/metadata/aconfig/flags/system_ext.info",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 202,
+        "sha256": "49c9f471eb66569cbd3afacc68f24bc643311e9231962a9b465d3190a1ed2b86"
+      },
+      {
+        "path": "/metadata/aconfig/flags/system_ext.val",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o644",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 202,
+        "sha256": "a5b4e296a80007b493ca36beacf94e2b9ea4d61adb4fb058b8f8d16b0d99babb"
+      },
+      {
+        "path": "/metadata/aconfig/flags/system_ext_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/flags/system_local_overrides.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_flags_metadata_file:s0",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/metadata/aconfig/mainline_storage_records.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 7719,
+        "sha256": "37a53f243d8cef5da3fc5ba23aef617069b05bd097d7b4cd94e697ffe0fb9e22"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.adbd.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 114,
+        "sha256": "dd5b1a1948744c1544e125e38a70f434ccaf2017d5b1866aabc9d643e55130e6"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.adbd.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 115,
+        "sha256": "ec794d5155e34d142816ba8aefa4b9e6db0a58c7ad751a2ae650332c5d293621"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.adservices.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 2385,
+        "sha256": "91a7df7d6ff1dfdec1846fc385b24e949ae2bb4703346151470716c32eb6f311"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.adservices.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 179,
+        "sha256": "4f84f603f481244ffa0650fcb7ffdc777df666f9eae83dcd65e65a4294ff01a3"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.appsearch.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 6772,
+        "sha256": "86910b38cdf1cb154e98b1933fc6016a48a30a97f69d43bbfc24ed92c633ca54"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.appsearch.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 125,
+        "sha256": "5526f254b9047a47886e9a891dac9bf3c344516a358f841186d855a9a4c00be8"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.art.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 2351,
+        "sha256": "dd04389f9961c152b2dea95616f6853557b52cc118989435a98a64c82c3c27b6"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.art.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 204,
+        "sha256": "697ed2220fa658fcdf2864b607506028ca4789b168e48e016f757cdf9c04cda4"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.bt.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 17452,
+        "sha256": "47a902d2f19a7fbe9a8f12faf42f9049ff13faef87c96477084ee25c59117720"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.bt.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 118,
+        "sha256": "acfc153102e083eb0466a7e183fd71fda861abf1e1249271a5191b35f77e646c"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.cellbroadcast.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 103,
+        "sha256": "848702401c6f0986734304491fc5d122d3118ea9497accc2496720a40f334976"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.cellbroadcast.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 141,
+        "sha256": "a32d08aa26af0b3febc67627ec8780780995c3b4025d0ca5e8d64476d80c67d0"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.compos.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 103,
+        "sha256": "e7ebe9abe151f6f6f3e81ff3c0aae5fd768fb9c502b3ee3ced7522001b07c42b"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.compos.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 119,
+        "sha256": "8454caf3f633e64f02bde833bb4cd11b56fd84141841f48532de5c43d858a88b"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.configinfrastructure.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 1063,
+        "sha256": "fcc6ba727d1e052e90fcac57a0c088e1d4a1167892b4bdeeb3099893f949288c"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.configinfrastructure.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 186,
+        "sha256": "260822107f38986cb53a0ac98187c559e072ce431db90a81a653192de7ee1105"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.conscrypt.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 443,
+        "sha256": "4b2e69f06a538cc11f040f46ce3efcbae40c9f3c3dc67241b2d37911ba1dc56f"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.conscrypt.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 188,
+        "sha256": "2ca376dc688b47da1b9daa19d77bde13490d5df9e0ce18613a3010a31421504e"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.crashrecovery.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 303,
+        "sha256": "e9e7780275c018f0de522503d664fe940c7b4ae069b198c7a1c22247d9e48d38"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.crashrecovery.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 133,
+        "sha256": "af9762781ce87afbd80a95ec393d1148ecc4ebc1a333bddb40c2cb64d6fe5c0f"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.devicelock.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 312,
+        "sha256": "173e46da7dd769aaf062901ce308bac8e75a86972519790ff0ae932350faa27b"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.devicelock.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 127,
+        "sha256": "d7d046cd117605720515e2d05da70f15da52ecc5ddb29d075f2e9f86f05576bb"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.healthfitness.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 3763,
+        "sha256": "5601d04b98f1d84ab9e9f291d24241183c8fe0c5d78416fca724a46e360b664b"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.healthfitness.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 133,
+        "sha256": "a0ed72c6a8b13881f844b1afeeef0d40007ff6610c00504130adc4f7faa98083"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.i18n.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 168,
+        "sha256": "22ea3fcae8815e73ca48818fe9deb5bdf372c1c87f0a72276599c14e2feb16ae"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.i18n.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 108,
+        "sha256": "bba5f64e644929b8b550b5c7e9fb0cae932c876bf4acab00cd5d8bdf304e5c4c"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.ipsec.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 277,
+        "sha256": "f9d7b4664d21594be89e6868ba830bb4cc7677fb927dc01659c94ea441d75c90"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.ipsec.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 117,
+        "sha256": "a9626e3fd30bf48061f322cd2053a4e6a7454d345f3604baa2e3e53176133f22"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.media.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 339,
+        "sha256": "178170a9f67ce873f677cb4ab00e64a1b12ccd2161c9680eccbe1da72bafcb26"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.media.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 183,
+        "sha256": "66bc6562caf68ecbc9744682af06e1fb4a265186b8ef2705f16a165d18bcafac"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.media.swcodec.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 366,
+        "sha256": "12b411fb4cf37b7957cf8000eee9b9eea3a7ad1180e6afe890dd6bb2b64c90ef"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.media.swcodec.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 129,
+        "sha256": "43d7a7a941dea3fa614aebceb2e1715ee941c98b46705aaae025cb0782c78a93"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.mediaprovider.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 3680,
+        "sha256": "87980dd99e6b037b6e22b29f929d189aae314ce6fbed32cdf1e11329f978d2cd"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.mediaprovider.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 244,
+        "sha256": "f6ac8c92730152b1a39d8c4155425cbb13f836ac66ed1c8bf6b430a44f5bddbe"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.nfcservices.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 554,
+        "sha256": "f07154d952abf9d4d85bd9f995e01e88f5b15225203d45c8d1716d7f6af01412"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.nfcservices.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 128,
+        "sha256": "1a88b25536651c89291403ccbebcce2c3562d8708968fd1ff634685d18792c88"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.ondevicepersonalization.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 558,
+        "sha256": "b80a44ea9f9d6be96def9257db485b2883e736e8b1bc9cfcec2ab7b9f7e90f72"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.ondevicepersonalization.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 164,
+        "sha256": "705716cbc98405ea209f6737a9676daeaa4ce135943dbf6cfe0549817f9d2e1c"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.os.statsd.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 510,
+        "sha256": "43c1feb4d5ee0304eaaa894d160f45b60d64679802574dc30cce8a66ec1f0dc3"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.os.statsd.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 125,
+        "sha256": "8b5370cf2d0231a6be66409b06dbcb5df039085d9499e048d8f5b9428278ddc3"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.permission.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 1335,
+        "sha256": "f0ad6b7e7546f541300f280762118e94cb033bf6225ffbde2577d3cb751fb59f"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.permission.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 189,
+        "sha256": "db06c1646b3e3b25ac236199691883f1f5b4a60ff9418e23c4ff0f8cf8b158cb"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.profiling.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 511,
+        "sha256": "23e8afcd19fc679efc775cc389c53a67d97f58b8ff0b6c6f785966868a5a4ff4"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.profiling.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 176,
+        "sha256": "0840240edc40111a0f6f257ea2734f224b2355702e82518d1195f97f8c31b1f8"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.rkpd.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 188,
+        "sha256": "cbcc1008bf4a081331239246fe6679e15c97d28546f0c5a21271ae1dbc3758ed"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.rkpd.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 115,
+        "sha256": "920c44356cee81c913989b76e29a6eed800a6cce05daf9ecb9ce389fcbc2f4e6"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.telephonycore.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 118,
+        "sha256": "d7dcc6a01b492223ba4cbec7c75085e09519c8775e26b148b2b16d89a0889d0f"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.telephonycore.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 129,
+        "sha256": "2b293320f4388a2910ec1682586c3c428f6dea41b6876b872f9e7cecd6bd2b2d"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.tethering.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 2406,
+        "sha256": "6560ddcb87952515d53ee51ab17bcfe629d9d9eb193ec5184e71cefb95eb785f"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.tethering.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 608,
+        "sha256": "50d2565aee50bd7ba22f771d1aadc7826e93c5aa009ca30aad29647fd3dacd5c"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.uprobestats.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 490,
+        "sha256": "195841cf76233b709494e2698eacb46e2955f2f782d2fba3171a0ef66481ff3e"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.uprobestats.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 134,
+        "sha256": "e1e8356b13c0ab2fa2b6cbfa41325541cf21f7db444fc917c123837f1ca39e46"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.uwb.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 701,
+        "sha256": "be330515e747c3e3df84e6c02dd2aa8c8da51ff7268554c818d37e313e1035e9"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.uwb.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 162,
+        "sha256": "e163bc3b82007a445f8be66318224d36a779ec86cbc4e202b6829c4fd3c81fdc"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.virt.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 291,
+        "sha256": "7d3a63a2f4892d980e68a28f0d4334eaa624250e7ada483d3a937856c14eb823"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.virt.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 132,
+        "sha256": "93276e91ddd38b124e65107b21663cfe05abbb10c05ca3d56dcac1df7dce6473"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.wifi.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 3027,
+        "sha256": "e528a3209094e59c293f7f4e4e6e619e84d913334c6d8c5480ab9b6bb64e1cd8"
+      },
+      {
+        "path": "/metadata/aconfig/maps/com.android.wifi.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 115,
+        "sha256": "026e13feb4b19b6b1c22cef2979fa34a0e33cde2c4f6fa044c846795c6058c85"
+      },
+      {
+        "path": "/metadata/aconfig/maps/product.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 60,
+        "sha256": "5f9dc16bda34923cdcb012bcba1c0ed75546c62c87ec5e68d9a84dc2da09cce1"
+      },
+      {
+        "path": "/metadata/aconfig/maps/product.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 60,
+        "sha256": "e059b3a6ceac887373e35c41cad90e11299b1559e1888b7250af2d82e8f19f38"
+      },
+      {
+        "path": "/metadata/aconfig/maps/system.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 109997,
+        "sha256": "721df8b8fe4d991c70d6b2b23a8913d73a496998d7513e8cc9072150ef05300f"
+      },
+      {
+        "path": "/metadata/aconfig/maps/system.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 9487,
+        "sha256": "24e9e2cc3f515e7faa7d79339795f853a21a52a7565ae3b8ed064fae03831330"
+      },
+      {
+        "path": "/metadata/aconfig/maps/system_ext.flag.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 9494,
+        "sha256": "a6af169f63fcc660425f2d8cdc4ab1253f24aa850c8bcbfcdb3cc0f1d8b71a28"
+      },
+      {
+        "path": "/metadata/aconfig/maps/system_ext.package.map",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o444",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 656,
+        "sha256": "afd0c81991b41b0e4fe3fc06375bb05c52ea6970f295f5728587d2570996e2d2"
+      },
+      {
+        "path": "/metadata/aconfig/platform_storage_records.pb",
+        "uid": 1000,
+        "gid": 1000,
+        "mode": "0o600",
+        "context": "u:object_r:aconfig_storage_metadata_file:s0",
+        "bytes": 634,
+        "sha256": "7959187b0fc3f4bace494ad0b25231367e696056f715df2e3d93aac3b691e15b"
+      }
+    ],
+    "truncated": false,
+    "scope": "Original daemon outputs, not flag or permission acceptance"
+  },
+  "identities": [
+    {
+      "kind": "ACONFIG_SYSTEM",
+      "pid_namespace_pid": 417,
+      "getpidcon_raw_return": 0,
+      "actual_context": "u:r:aconfigd:s0",
+      "contexts_observed_in_order": [
+        "u:r:aconfigd:s0"
+      ],
+      "errno_observed": [],
+      "status": [
+        "Uid:\t1000\t1000\t1000\t1000",
+        "Gid:\t1000\t1000\t1000\t1000",
+        "Groups:\t ",
+        "CapPrm:\t0000000000000000",
+        "CapEff:\t0000000000000000",
+        "CapBnd:\t000001ffffffffff",
+        "NoNewPrivs:\t1"
+      ]
+    },
+    {
+      "kind": "ACONFIG_MAINLINE",
+      "pid_namespace_pid": 418,
+      "getpidcon_raw_return": 0,
+      "actual_context": "u:r:aconfigd_mainline:s0",
+      "contexts_observed_in_order": [
+        "u:r:init:s0",
+        "u:r:aconfigd_mainline:s0"
+      ],
+      "errno_observed": [],
+      "status": [
+        "Uid:\t1000\t1000\t1000\t1000",
+        "Gid:\t1000\t1000\t1000\t1000",
+        "Groups:\t ",
+        "CapPrm:\t0000000000000000",
+        "CapEff:\t0000000000000000",
+        "CapBnd:\t000001ffffffffff",
+        "NoNewPrivs:\t1"
+      ]
+    }
+  ],
+  "identity_limit": "Short-lived initializer/socket processes may exit before Linux PID observation. Do not infer unobserved SID/caps/NNP from RC alone or accept MAC.",
+  "native_complete_inventory_verified": true,
+  "bpf_cleanup_verified": true,
+  "final_loops": "",
+  "final_dm": [],
+  "native_close_accepted": false,
+  "limitations": [
+    "Platform initializer returns6: vendor flag container absent, original nonfatal exec contract retained; vendor remains unavailable, no synthetic container",
+    "Both socket commands exit0/oneshot; system logs build-disabled. No live socket RPC or writable flags acceptance",
+    "Some package/mmap errors remain; do not claim all flag namespaces work",
+    "RANGING shell query not reached before later crash; original AppOps progression proves narrower effective permission consistency",
+    "AMS callback/Markor installer not reached; no new APK stage",
+    "Temporary metadata is not persistence across sessions; R1-MAC permissive policyload2, ARM/GMS/DRM open",
+    "Earlier shell-list filter caused premature shutdown in build54; its resulting Vold null exception was secondary. Direct original getPermissionInfo in build55 replaces that invalid check."
+  ],
+  "next": "Original notification/channel/bitmap/storage-monitor and scheduling group before phase500, so AMS FGS tracker can register its real listener. Review Task booting guard before Activity resume; no manual boot/ready flags.",
+  "hashes": {
+    "/home/tv/recuperacion-archtv/10d5da16-2703-47ad-94ea-92a5bd336ffe-markor-launch/before.json": "726b38d3ba6f7f740ccc1cee3f79444878da3ca2bbea07bb978d521af290065e",
+    "/home/tv/recuperacion-archtv/10d5da16-2703-47ad-94ea-92a5bd336ffe-markor-launch/run.log": "4a2900af00cd310fcea5328c7beea47d8d3f8fc8831ec3b270e5e5105e155aa5",
+    "/home/tv/recuperacion-archtv/10d5da16-2703-47ad-94ea-92a5bd336ffe-markor-launch/result.json": "943047236b7e9dfe502047180b2c26b78167e516b3eec3a7fe5cb93a2e981285",
+    "/home/tv/recuperacion-archtv/10d5da16-2703-47ad-94ea-92a5bd336ffe-markor-launch/bpf-cleanup.json": "a9a05c40b34b32c82dec5c212d93ddb3e435614e5f45766d5c5cb69720b8a1e6",
+    "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/etc/init/aconfigd.rc": "78d6bb311aa7126384da4b59780d4a87d9b321c4fd211d04e1339fbd8975447b",
+    "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/apex/com.android.configinfrastructure/etc/com.android.configinfrastrcture.init.rc": "243b9703d4d7079cc8acbcd932c2868aaf2f28b18b016701f504aeb5b5d0ca38",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/init/service.cpp": "d0d758cc6a87ebebf05c76d28026582cbac9a1e1ecd756987eeb96de7230e726",
+    "/home/tv/recuperacion-archtv/29283f18-6ebf-4d32-a97b-e94026ee8e85-markor-launch/before.json": "2b4f9d56e5f45dd4404fbb280e9045e1fe766c50e94b36c2cebcbff7a4750df1",
+    "/home/tv/recuperacion-archtv/29283f18-6ebf-4d32-a97b-e94026ee8e85-markor-launch/run.log": "a917ddd31829d61e65bcce2a005d1fa81ea71b0f58b150d8195b522d04a37400",
+    "/home/tv/recuperacion-archtv/29283f18-6ebf-4d32-a97b-e94026ee8e85-markor-launch/result.json": "c6aead011d86350d30c5f66023589aebb99d2bd9b60d85867d088406cde52ebd"
+  },
+  "followup_exact_client": {
+    "checkpoint": "/home/tv/recuperacion-archtv/29283f18-6ebf-4d32-a97b-e94026ee8e85-markor-launch",
+    "payload": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-55/payload-2.ext4",
+    "payload_sha256": "30bfcac927dd96c9d4a4ea0f47f7eaa61c209a5ac329d45891703e85ad6771f2",
+    "original_getPermissionInfo_result": "name=android.permission.RANGING\npackage=android\nprotectionLevel=1\n",
+    "actual_primary_failure": "ORIGINAL_ASYNC_FATAL thread=bgres-controller\njava.lang.NullPointerException: Attempt to invoke interface method 'void android.app.INotificationManager.registerListener(android.service.notification.INotificationListener, android.content.ComponentName, int)' on a null object reference\n\tat android.service.notification.NotificationListenerService.registerAsSystemService(NotificationListenerService.java:1367)\n\tat com.android.server.am.AppFGSTracker.onBgFgsMonitorEnabled(AppFGSTracker.java:484)\n\tat com.android.server.am.AppFGSTracker.-$$Nest$monBgFgsMonitorEnabled(AppFGSTracker.java:0)\n\tat com.android.server.am.AppFGSTracker$AppFGSPolicy.onTrackerEnabled(AppFGSTracker.java:895)\n\tat com.android.server.am.BaseAppStatePolicy.updateTrackerEnabled(BaseAppStatePolicy.java:70)\n\tat com.android.server.am.BaseAppStatePolicy.onSystemReady(BaseAppStatePolicy.java:102)\n\tat com.android.server.am.BaseAppStateEventsTracker$BaseAppStateEventsPolicy.onSystemReady(BaseAppStateEventsTracker.java:248)\n\tat com.android.server.am.AppFGSTracker$AppFGSPolicy.onSystemReady(AppFGSTracker.java:869)\n\tat com.android.server.am.BaseAppStateTracker$Injector.onSystemReady(BaseAppStateTracker.java:322)\n\tat com.android.server.am.BaseAppStateTracker.onSystemReady(BaseAppStateTracker.java:189)\n\tat com.android.server.am.AppFGSTracker.onSystemReady(AppFGSTracker.java:201)\n\tat com.android.server.am.AppRestrictionController.lambda$onSystemReady$0(AppRestrictionController.java:1531)\n\tat com.android.server.am.AppRestrictionController.$r8$lambda$cCOwIzhwVMmMXJ70sQK3rFQtGL0(AppRestrictionController.java:0)\n\tat com.android.server.am.AppRestrictionController$$ExternalSyntheticLambda4.run(R8$$SyntheticClass:0)\n\tat android.os.Handler.handleCallback(Handler.java:1070)\n\tat android.os.Handler.dispatchMessage(Handler.java:125)\n\tat android.os.Looper.dispatchMessage(Looper.java:333)\n\tat android.os.Looper.loopOnce(Looper.java:263)\n\tat android.os.Looper.loop(Looper.java:367)\n\tat android.os.HandlerThread.run(HandlerThread.java:139)\n",
+    "overall_exit": 1,
+    "native_complete_inventory_verified": true,
+    "bpf_cleanup_verified": true,
+    "final_loops": "",
+    "final_dm": [],
+    "scope": "Effective original permission definition, not an app grant; original fatal handler delegated after bounded recording. No Markor stage accepted."
+  }
+}

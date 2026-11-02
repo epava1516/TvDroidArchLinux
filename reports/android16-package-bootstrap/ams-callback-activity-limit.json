@@ -1,0 +1,17 @@
+{
+  "kind": "Static source constraint, not execution/compatibility acceptance",
+  "task_source": {
+    "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/core/java/com/android/server/wm/Task.java?format=TEXT",
+    "local": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/Task.java",
+    "sha256": "7a2e1ef0ae6d072bff6218a1569b240478f2099e0dd0e805f5c0717d743a4869"
+  },
+  "ams_source": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/ActivityManagerService.java",
+  "ams_sha256": "2df3c48c2e8769bf00193c70465e6b85d5208c48e23eac62820c9c083ae95601",
+  "facts": [
+    "Task.resumeTopActivityInnerLocked returns false while neither AMS booting nor booted",
+    "AMS initially sets mBooting=false and its explicit true assignment occurs after goingCallback, before implicit Home startup",
+    "Current non-returning callback has not been reached; it cannot be assumed to provide a resumed Activity"
+  ],
+  "decision": "Do not write booting/ready flags to get a nominal launch. Evaluate genuine original AMS lifecycle with a Linux-owned, actually enforced application profile that prevents Android UI/persistent bootstrap, or a justified original-source lifecycle adaptation. Review before activation; contract forbids full standard Android chain and requires inventory/closure.",
+  "status": "Unresolved architecture gate for Activity resume; keep full APK objective"
+}

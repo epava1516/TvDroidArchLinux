@@ -32,15 +32,20 @@ root_code="\n".join("p=root/'data'/"+repr(name)+";p.mkdir(parents=True,exist_ok=
 apk_path=Path('/home/tv/.cache/archtv/apk/real-app-candidates/net.gsantner.markor-v164-2026.10.0-flavorDefault-release.apk')
 apk_sha='c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440'
 assert hashlib.sha256(apk_path.read_bytes()).hexdigest()==apk_sha
+# Extend existing private APEX metadata after devices.prepare has created it.
+aconfig_code=""
+for name,mode in [('metadata',0o755),('metadata/aconfig',0o775),('metadata/aconfig/flags',0o770),('metadata/aconfig/maps',0o775),('metadata/aconfig/boot',0o775)]:
+ aconfig_code+="\np=root/"+repr(name)+";p.mkdir(parents=True,exist_ok=True);os.chmod(p,"+str(mode)+");os.chown(p,0,1000)"
 root_code+="\n(root/'dev/input').mkdir()"
 for name in ['markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
  root_code+="\np=root/'data/local/tmp/archtv-mc1'/"+repr(name)+";p.touch(mode=0o640);os.chown(p,1000,2000);os.chmod(p,0o640)"
 root_code+="\np=root/'data/local/tmp/archtv-mc1/selected-failure.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
+root_code+="\np=root/'data/local/tmp/archtv-mc1/ranging-service-info.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
 root_code+="\np=root/'data/local/tmp/archtv-mc1/selected-wait.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
 root_code+="\np=root/'data/local/tmp/archtv-mc1/markor-install.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
 root_code+="\nshutil.copyfile(Path("+repr(str(apk_path))+"),root/'data/local/tmp/markor.apk');os.chown(root/'data/local/tmp/markor.apk',2000,2000);os.chmod(root/'data/local/tmp/markor.apk',0o644)"
 text=text.replace('label(root)\n',root_code+'\nlabel(root)\n',1)
-text=text.replace('label(root)\n',"devices.prepare(root,out,Path("+repr(str(store))+"))\nassert not (root/'apex/apex-info-list.xml').exists()\nlabel(root)\n",1)
+text=text.replace('label(root)\n',"devices.prepare(root,out,Path("+repr(str(store))+"))\n"+aconfig_code+"\nassert not (root/'apex/apex-info-list.xml').exists()\nlabel(root)\n",1)
 health_mounts="""
 # Read-only Linux power_supply class and its exact current device targets.
 # No /sys/power controls, fake battery values, or host relabeling.
@@ -104,9 +109,19 @@ text=text.replace("'STATSD':'u:r:statsd:s0'","'STATSD':'u:r:statsd:s0','NETD':'u
 text=text.replace("1066 if identity['kind']=='STATSD' else ","1069 if identity['kind']=='LMKD' else 0 if identity['kind']=='NETD' else 1066 if identity['kind']=='STATSD' else ")
 text=text.replace("(((1<<35)|(1<<36)) if identity['kind']=='HEALTH'", "(0x1804022 if identity['kind']=='LMKD' else 0x80000074ef if identity['kind']=='NETD' else ((1<<35)|(1<<36)) if identity['kind']=='HEALTH'")
 text=text.replace("fields['NoNewPrivs']=='1'", "fields['NoNewPrivs']=='1'\n if identity['kind']=='SERVICES':assert list(map(int,fields['Groups'].split()))==[1003,3006,3007]")
+text=text.replace('NETD|LMKD','NETD|LMKD|ACONFIG_SYSTEM|ACONFIG_MAINLINE')
+text=text.replace("'LMKD':'u:r:lmkd:s0'","'LMKD':'u:r:lmkd:s0','ACONFIG_SYSTEM':'u:r:aconfigd:s0','ACONFIG_MAINLINE':'u:r:aconfigd_mainline:s0'")
 # Preserve actual APEX output on Java/bootstrap failures as well.
 marker="if p.returncode!=0:\n failed_output="
-text=text.replace(marker,"""for name in ['netd-permission-query.txt','netd-query.txt','netd-interfaces.txt','stats-query.txt','selected-failure.txt','selected-wait.txt','health-query.txt','health-dump.txt','apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt','vold-query.txt','vold-user0.txt','markor-install.txt','markor-path.txt','markor-dump.txt','activity-query.txt','mount-query.txt','markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
+text=text.replace(marker,"""import hashlib
+metadata=[];metadata_truncated=False
+for file in sorted(Path('/metadata/aconfig').rglob('*')):
+ if not file.is_file():continue
+ if len(metadata)>=256:metadata_truncated=True;break
+ info=file.stat()
+ metadata.append({'path':str(file),'uid':info.st_uid,'gid':info.st_gid,'mode':oct(stat.S_IMODE(info.st_mode)),'context':os.getxattr(file,'security.selinux').decode().rstrip(chr(0)),'bytes':info.st_size,'sha256':hashlib.sha256(file.read_bytes()).hexdigest() if info.st_size<=33554432 else None})
+print('ACONFIG_ORIGINAL_METADATA_FILES '+json.dumps({'files':metadata,'truncated':metadata_truncated,'scope':'Original daemon outputs, not flag or permission acceptance'}),flush=True)
+for name in ['ranging-service-info.txt','ranging-permission.txt','netd-permission-query.txt','netd-query.txt','netd-interfaces.txt','stats-query.txt','selected-failure.txt','selected-wait.txt','health-query.txt','health-dump.txt','apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt','vold-query.txt','vold-user0.txt','markor-install.txt','markor-path.txt','markor-dump.txt','activity-query.txt','mount-query.txt','markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
  f=Path('/data/local/tmp/archtv-mc1')/name
  if f.is_file():print('PACKAGE_ORIGINAL_OUTPUT '+name+' '+json.dumps(f.read_text()),flush=True)
 if p.returncode!=0:

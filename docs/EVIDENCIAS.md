@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+[Aconfig original y consulta exacta RANGING](../reports/android16-package-bootstrap/aconfig-reader-progress.json): init/data/lector diferenciados, códigos0/6 reales, sockets no aceptados; fallo FGS original conservado. [Restricción estática de reanudación Activity](../reports/android16-package-bootstrap/ams-callback-activity-limit.json), aún sin solución ejecutada; no compatibilidad APK por estos resultados.
+
 [Preparación real ART/PMS/Display y rechazo AppOps](../reports/android16-package-bootstrap/ams-ready-progress.json). Negativos [gestor DexUse ausente](../reports/android16-package-bootstrap/ams-art-readiness-negative.json) y [orden de ART](../reports/android16-package-bootstrap/ams-art-order-negative.json) conservados. [REA MCP manifiesto framework](../reports/android16-package-bootstrap/framework-ranging-mcp.json), completo y con hash; [JAR no admitido por MCP](../reports/android16-package-bootstrap/systemserver-jar-mcp-limit.json) y [análisis CLI compilado](../reports/android16-package-bootstrap/systemserver-compiled-app-config.json) diferenciados. No nueva aceptación APK ni disponibilidad general.
 
 [Grupo original de conectividad: fase500 y fallo real de AMS](../reports/android16-package-bootstrap/network-lifecycle-progress.json). Ejecución, hashes, fuentes bloqueadas y límite de `systemReady/goingCallback` diferenciados: la propuesta de callback aún no se ejecutó. No disponibilidad general de servicios ni etapa APK nueva.

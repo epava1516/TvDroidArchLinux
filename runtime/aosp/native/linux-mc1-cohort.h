@@ -21,6 +21,7 @@
 #include <cstdio>
 #include <cerrno>
 #include <vector>
+#include <memory>
 #include <chrono>
 #include <functional>
 #include <string>
@@ -102,7 +103,7 @@ class LinuxMc1Cohort {
     }
     bool vold_cancelled() const { return vold_cancelled_; }
     bool apex_cancelled() const { return apex_cancelled_; }
-    bool healthy() const { return !manager_failed_ && (!lmkd_ || lmkd_->IsRunning()) && (!netd_ || netd_->IsRunning()) && (!statsd_ || statsd_->IsRunning()) && (!health_ || health_->IsRunning()) && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && bootanimation_->IsRunning())) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning()); }
+    bool healthy() const { return !manager_failed_ && (!aconfig_system_ || aconfig_system_->IsRunning() || aconfig_system_clean_exit_) && (!aconfig_mainline_ || aconfig_mainline_->IsRunning() || aconfig_mainline_clean_exit_) && (!lmkd_ || lmkd_->IsRunning()) && (!netd_ || netd_->IsRunning()) && (!statsd_ || statsd_->IsRunning()) && (!health_ || health_->IsRunning()) && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && bootanimation_->IsRunning())) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning()); }
     android::base::Result<void> Close(const Tick& tick) {
         using namespace android::init;
         if(!active_) return {};
@@ -124,6 +125,8 @@ class LinuxMc1Cohort {
         surfaceflinger_=nullptr;
         bootanimation_=nullptr;
         bootanimation_started_=false;
+        aconfig_system_=nullptr;aconfig_mainline_=nullptr;
+        aconfig_system_clean_exit_=false;aconfig_mainline_clean_exit_=false;
         lmkd_=nullptr;
         netd_=nullptr;
         statsd_=nullptr;
@@ -245,6 +248,7 @@ class LinuxMc1Cohort {
             if(auto configured=config->function(BuiltinArguments{{"perform_apex_config"},context});!configured.ok())return configured;
             if(!IsDefaultMountNamespaceReady())return android::base::Error()<<"Original default namespace not ready";
             std::fprintf(stderr,"APEX_ORIGINAL_DEFAULT_CONFIG_RETURNED REQUIRES_SERVICE_OPERATIONS\n");
+            if(auto flags=StartAconfig(tick);!flags.ok())return flags;
             client_done_=false;client_ok_=false;
             auto storage=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","root","root","--","/system/bin/sh","-c",
                 "umask 077; /system/bin/service check vold > /data/local/tmp/archtv-mc1/vold-query.txt 2>&1; /system/bin/vdc cryptfs init_user0 > /data/local/tmp/archtv-mc1/vold-user0.txt 2>&1"});
@@ -260,6 +264,69 @@ class LinuxMc1Cohort {
 
         }
 
+        return {};
+    }
+    android::base::Result<void> StartAconfig(const Tick& tick) {
+        using namespace android::init;
+        auto& services=ServiceList::GetInstance();
+        auto parser=CreateParser(ActionManager::GetInstance(),services);
+        auto parsed=parser.ParseConfigFile("/system/etc/init/aconfigd.rc");
+        if(!parsed.ok() || parser.parse_error_count()!=0)return android::base::Error()<<"Original aconfig RC rejected";
+        const std::vector<std::vector<std::string>> stages={
+            {"early_system_aconfigd_platform_init","/system/bin/aconfigd-system","early-platform-init"},
+            {"system_aconfigd_platform_init","/system/bin/aconfigd-system","platform-init"},
+            {"mainline_aconfigd_init","/apex/com.android.configinfrastructure/bin/aconfigd-mainline","init"}};
+        for(const auto& stage:stages) {
+            auto* job=services.FindService(stage[0]);
+            const std::vector<std::string> expected(stage.begin()+1,stage.end());
+            if(!job || job->args()!=expected)return android::base::Error()<<"Unexpected original aconfig initializer "<<stage[0];
+            client_done_=false;client_ok_=false;
+            auto actual_exit=std::make_shared<siginfo_t>();
+            job->AddReapCallback([this,name=stage[0],actual_exit](const siginfo_t& info){
+                *actual_exit=info;
+                client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;
+                std::fprintf(stderr,"ACONFIG_ORIGINAL_INIT_EXIT name=%s pid=%d code=%d status=%d\n",name.c_str(),info.si_pid,info.si_code,info.si_status);
+            });
+            if(auto started=job->ExecStart();!started.ok())return started;
+            if(auto waited=Wait(tick,[this]{return client_done_;},20);!waited.ok())return waited;
+            if(!client_ok_) {
+                // Original init.Reap unblocks exec_start on nonzero exit when
+                // the original RC has no reboot_on_failure/critical contract.
+                // Preserve this observed partial result, never rewrite it as 0
+                // or manufacture vendor flags. Unexpected failures still stop.
+                std::string original_rc;
+                bool nonfatal=android::base::ReadFileToString("/system/etc/init/aconfigd.rc",&original_rc) &&
+                    original_rc.find("reboot_on_failure")==std::string::npos && original_rc.find("    critical")==std::string::npos;
+                bool vendor_absent=access("/vendor/etc/aconfig/package.map",F_OK)!=0 && errno==ENOENT;
+                bool actual_platform_files=true;
+                for(const auto* container:{"system","system_ext","product"}) {
+                    for(const auto* suffix:{".package.map",".flag.map"})
+                        actual_platform_files=actual_platform_files && access((std::string("/metadata/aconfig/maps/")+container+suffix).c_str(),R_OK)==0;
+                    actual_platform_files=actual_platform_files && access((std::string("/metadata/aconfig/boot/")+container+".val").c_str(),R_OK)==0;
+                }
+                bool known_partial=stage[0]=="system_aconfigd_platform_init" && actual_exit->si_code==CLD_EXITED &&
+                    actual_exit->si_status==6 && nonfatal && vendor_absent && actual_platform_files;
+                if(!known_partial)return android::base::Error()<<"Original aconfig initializer failed: "<<stage[0];
+                std::fprintf(stderr,"ACONFIG_ORIGINAL_PLATFORM_PARTIAL exit=6 vendor_absent ORIGINAL_NONFATAL_EXEC_CONTRACT NOT_COMPLETE_FLAG_ACCEPTANCE\n");
+            }
+        }
+        aconfig_system_=services.FindService("system_aconfigd_socket_service");
+        aconfig_mainline_=services.FindService("mainline_aconfigd_socket_service");
+        if(!aconfig_system_ || aconfig_system_->args()!=std::vector<std::string>{"/system/bin/aconfigd-system","start-socket"} ||
+           !aconfig_mainline_ || aconfig_mainline_->args()!=std::vector<std::string>{"/apex/com.android.configinfrastructure/bin/aconfigd-mainline","start-socket"})
+            return android::base::Error()<<"Original aconfig socket services absent or changed";
+        for(auto* service:{aconfig_system_,aconfig_mainline_}) {
+            service->AddReapCallback([this,service](const siginfo_t& info){
+                bool clean=info.si_code==CLD_EXITED && info.si_status==0;
+                if(service==aconfig_system_)aconfig_system_clean_exit_=clean;
+                if(service==aconfig_mainline_)aconfig_mainline_clean_exit_=clean;
+                std::fprintf(stderr,"ACONFIG_ORIGINAL_SOCKET_EXIT pid=%d code=%d status=%d ONESHOT_NOT_SOCKET_AVAILABILITY\n",info.si_pid,info.si_code,info.si_status);
+                if(!closing_ && !clean)manager_failed_=true;
+            });
+            if(auto started=service->Start();!started.ok())return started;
+        }
+        std::fprintf(stderr,"SELECTED_ACONFIG_SYSTEM_STARTED pid=%d NOT_FLAG_OR_PERMISSION_ACCEPTANCE\n",aconfig_system_->pid());
+        std::fprintf(stderr,"SELECTED_ACONFIG_MAINLINE_STARTED pid=%d NOT_FLAG_OR_PERMISSION_ACCEPTANCE\n",aconfig_mainline_->pid());
         return {};
     }
     android::base::Result<void> StartNetwork(const Tick& tick) {
@@ -610,6 +677,8 @@ class LinuxMc1Cohort {
     const bool surfaceflinger_requested_;
     const bool selected_requested_;
     const bool apex_requested_;
+    android::init::Service* aconfig_system_=nullptr;
+    android::init::Service* aconfig_mainline_=nullptr;
     android::init::Service* lmkd_=nullptr;
     android::init::Service* netd_=nullptr;
     android::init::Service* statsd_=nullptr;
@@ -626,6 +695,7 @@ class LinuxMc1Cohort {
     android::init::Service* suspend_=nullptr;
     android::init::Service* installd_=nullptr;
     android::init::Service* apexd_=nullptr;
+    bool aconfig_system_clean_exit_=false,aconfig_mainline_clean_exit_=false;
     bool bootanimation_started_=false;
     bool missing_done_=false,missing_ok_=false;
     bool apex_cancelled_=false,vold_cancelled_=false;
