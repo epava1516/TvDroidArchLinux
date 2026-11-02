@@ -147,7 +147,16 @@ def monitor(root,out,parent):
                 present=False
             if not present:
                 target=root/'sys/devices/virtual/block'/kernel_name/'queue/read_ahead_kb'
-                subprocess.run(['umount',str(target)],check=True)
+                mounts={row.split()[4] for row in Path('/proc/self/mountinfo').read_text().splitlines()}
+                if str(target) in mounts:
+                    removed=subprocess.run(['umount',str(target)],capture_output=True,text=True)
+                    if removed.returncode:
+                        # Device removal can detach its sysfs mount between
+                        # observation and umount. Only accept actual absence.
+                        remaining={row.split()[4] for row in Path('/proc/self/mountinfo').read_text().splitlines()}
+                        if str(target) in remaining:raise RuntimeError(removed.stderr)
+                state.setdefault('dm_control_removals',[]).append({'path':str(target),'mount_absent':True})
+                save(out/'devices.json',state)
                 unique=root/'dev/block/mapper/by-uuid'/uuid
                 if unique.is_symlink() and os.readlink(unique)=='../../'+kernel_name:unique.unlink()
                 seen.discard((kernel_name,name,uuid));del live[uuid]

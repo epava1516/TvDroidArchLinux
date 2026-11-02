@@ -479,3 +479,8 @@ no acredita perfil moderno; fuentes originales fijadas y decisión gráfica pend
 
 Actualización 2026-11-02 · [Cargadores BPF AOSP originales](../reports/android16-network-bootstrap/functional.json): Mainline no-root y platform terminan0, con43 programas/59 mapas propios y cierre comprobado; sysctls globales conservados. La cohorte sale1 porque netd exige la preparación original de namespaces/configuración APEX. Se integra ese ciclo sin readiness manual. No hay netd/ConnectivityManager ni nueva etapa Markor aceptados; R1-MAC sigue permisivo. [Decisiones y límites](../reports/android16-network-bootstrap/README.md).
 
+
+## Namespaces y netd · operación original con permisos reales
+
+Actualización 2026-11-02 · [Namespaces AOSP y operación netd originales](../reports/android16-network-bootstrap/native-functional.json): inventario41 por API/XML/versiones/montajes, linkerconfig generado y cliente root ndc obtiene lo/códigos110 y200 después del permission controller real. Cohorte sale1; no hay etapa APK nueva aceptada. Bloqueo observado: display espera LmkdConnection y principal en registro de StorageManagerService. Próximo: lmkd original y su protocolo antes de continuar conectividad/Markor. R1-MAC permisivo/policyload2, ARM/GMS/DRM abiertos. [Límites y negativos](../reports/android16-network-bootstrap/README.md).
+

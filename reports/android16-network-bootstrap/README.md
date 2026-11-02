@@ -1,5 +1,41 @@
 # Red original AOSP en la cohorte Linux
 
+## Vigente · namespaces originales y operación netd
+
+[Resultado y hashes](native-functional.json): inventario41 contrastado por API,
+XML, versiones y montajes; generación original de linkerconfig en las fases
+bootstrap y default. El cliente root ndc obtiene `110 0 lo` y `200 0 Interface
+list completed` después del registro real del permission controller en AMS.
+El ndc original puede devolver exit0 tras respuesta400: exigimos contenido y
+códigos positivos. La consulta temprana bloqueada se conserva como negativa;
+no se cambió la identidad root para evitar la comprobación original.
+
+La cohorte sale1: display espera LmkdConnection y el principal está en registro
+de StorageManagerService. Siguiente paso: lmkd original y su protocolo real.
+El subgrupo Java de conectividad, las etapas APK y MAC siguen sin aceptación.
+El ensayo39 contiene además un error propio Thread.start duplicado, corregido
+restaurando exactamente Java del38. Su verificación APEX tiene alcance separado.
+
+El rol Linux netd añade sólo CAP_BPF para map_create con el control global en2.
+UID0/netd/NNP1/máscara0x80000074ef se observaron en el ensayo de arranque previo;
+los ensayos de operación no muestrearon su identidad completa. No presentar esa
+observación anterior como prueba de capacidades efectivas de la última ejecución.
+Los módulos netfilter existentes se cargaron con checkpoint y revisión; ninguna
+regla/ruta/sysctl del anfitrión se cambió. Las reglas netd son de NET privado.
+
+Antes de Bionic se pivota raíz en un namespace privado y se desmonta la vista
+anterior: setns original no restablece una raíz externa al chroot. El observador
+queda fuera. Sólo su montaje privado de bloques comparte propagación para los
+controles de dm propios. Las interfaces vienen de sysfs real montado en NET
+privado, no del host. Estos hechos no prueban aislamiento de tenants.
+
+Fuentes adicionales: system/netd 8d4a0b7420e67cec340dc37a88815d99a16abfa7,
+include/binder_utils/BinderUtil.h y server/{NdcDispatcher,NetdNativeService}.cpp;
+Connectivity staticlibs/netd/libnetdutils/{Utils.cpp,include/netdutils/ResponseCode.h}.
+
+## Histórico · hito inicial de cargadores BPF
+
+
 [Resultado verificable](functional.json): NetBpfLoad Mainline y bpfloader platform
 originales terminan con código0 en la misma cohorte APEX41. El recorrido completo
 sale1: netd conserva su barrera original de configuración de namespaces APEX.

@@ -61,6 +61,14 @@ network_code="""import importlib.util
 network_spec=importlib.util.spec_from_file_location('network_boundary',r/'reports/android16-network-bootstrap/boundary.py')
 network=importlib.util.module_from_spec(network_spec);network_spec.loader.exec_module(network)
 network.prepare(root,out)
+# Real private mountpoints required by original SetupMountNamespaces and
+# logwrapper PTY allocation. All remain within this cohort's mount namespace.
+(root/'bootstrap-apex').mkdir(exist_ok=True)
+for point in ['apex','linkerconfig']:mount('--rbind',root/point,root/point)
+assert (root/'apex/com.android.runtime/bin/linker64').is_file(), 'Bootstrap runtime mount hidden'
+(root/'dev/pts').mkdir(exist_ok=True)
+mount('-t','devpts','-o','newinstance,ptmxmode=0666,mode=0620,gid=5','devpts',root/'dev/pts')
+(root/'dev/ptmx').symlink_to('pts/ptmx')
 """
 text=text.replace("selinux=root/'sys/fs/selinux';",network_code+"\nselinux=root/'sys/fs/selinux';",1)
 text=text.replace("stdin_fd=os.open(root/'dev/null'", "monitor_log=(out/'device-monitor.log').open('w')\nmonitor=subprocess.Popen([sys.executable,str(r/'reports/android16-apex-bootstrap/devices.py'),str(root),str(out),str(os.getpid())],stdout=monitor_log,stderr=subprocess.STDOUT)\nprint('APEX_DEVICE_MONITOR_OWNED pid='+str(monitor.pid),flush=True)\nstdin_fd=os.open(root/'dev/null'",1)
@@ -91,7 +99,7 @@ text=text.replace("list(map(int,fields['Uid'].split()))==[", "list(map(int,field
 text=text.replace("list(map(int,fields['Gid'].split()))==[", "list(map(int,fields['Gid'].split()))==[1066 if identity['kind']=='STATSD' else ")
 # Preserve actual APEX output on Java/bootstrap failures as well.
 marker="if p.returncode!=0:\n failed_output="
-text=text.replace(marker,"""for name in ['stats-query.txt','selected-failure.txt','health-query.txt','health-dump.txt','apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt','vold-query.txt','vold-user0.txt','markor-install.txt','markor-path.txt','markor-dump.txt','activity-query.txt','mount-query.txt','markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
+text=text.replace(marker,"""for name in ['netd-permission-query.txt','netd-query.txt','netd-interfaces.txt','stats-query.txt','selected-failure.txt','health-query.txt','health-dump.txt','apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt','vold-query.txt','vold-user0.txt','markor-install.txt','markor-path.txt','markor-dump.txt','activity-query.txt','mount-query.txt','markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
  f=Path('/data/local/tmp/archtv-mc1')/name
  if f.is_file():print('PACKAGE_ORIGINAL_OUTPUT '+name+' '+json.dumps(f.read_text()),flush=True)
 if p.returncode!=0:
@@ -100,7 +108,13 @@ if p.returncode!=0:
 tree=ast.parse((r/'reports/android16-apex-bootstrap/execute.py').read_text())
 checks=next(n.value.right.value for n in tree.body if isinstance(n,ast.Assign) and isinstance(n.value,ast.BinOp) and isinstance(n.value.right,ast.Constant) and isinstance(n.value.right.value,str) and n.value.right.value.startswith('\nfor name in'))
 checks=checks.replace('for v in identities','for v in identities if v["kind"] in ["MANAGER","DAEMON","SNAPSHOT"]').replace('for identity in identities:','for identity in [v for v in identities if v["kind"] in ["MANAGER","DAEMON","SNAPSHOT"]]:')
-text+='\n'+checks
+# Preserve independent original inventory verification even if a later Java
+# subsystem fails. Never turn that partial success into overall exit0.
+checks=checks.replace('if p.returncode!=0:sys.exit(1)','')
+verify_always="try:\n exec(compile("+repr(checks)+",'<original APEX evidence verification>','exec'),globals())\nexcept Exception as apex_failure:\n print('APEX_ORIGINAL_INVENTORY_NOT_VERIFIED '+repr(apex_failure),flush=True)\n if p.returncode==0:raise\n"
+assert marker in text
+text=text.replace(marker,verify_always+marker,1)
+
 text+="\nassert Path('/data/local/tmp/archtv-mc1/package-query.txt').read_text()=='Service package: found\\n'\npackage_list=Path('/data/local/tmp/archtv-mc1/package-list.txt').read_text().splitlines()\nassert 'package:android' in package_list and all(v.startswith('package:') for v in package_list),package_list\nprint('PACKAGES_ORIGINAL_LIST_VERIFIED NOT_INSTALL_DATA_OR_APK_ACCEPTANCE',flush=True)\n"
 text+=r"""
 assert Path('/data/local/tmp/archtv-mc1/vold-query.txt').read_text()=='Service vold: found\n'
@@ -124,6 +138,25 @@ installed=Path(paths[0][8:]);assert installed.is_file() and installed.name=='bas
 assert hashlib.sha256(installed.read_bytes()).hexdigest()=='c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440'
 print('MARKOR_ORIGINAL_INSTALL_BYTES_VERIFIED NOT_LAUNCH_PERSISTENCE_MAC_OR_APK_COMPATIBILITY',flush=True)
 """
+# AOSP setns() must operate on an actual namespace root, not a chroot
+# into a host-root namespace: setns may reset fs.root to that namespace root.
+# Keep the existing Linux observer outside, clone only the factory namespace,
+# pivot to its prepared tmpfs, and detach the old host view before Bionic.
+text=text.replace("os.chroot(root);os.chdir('/')",'''old_namespace=Path('/proc/self/ns/mnt').stat().st_ino
+expected_root=root.stat()
+# Share only this private target with the existing device observer before
+# cloning. Its owned dm read-ahead binds must reach apexd after pivot_root.
+mount('--make-shared',root/'sys/devices/virtual/block')
+assert kernel.unshare(0x00020000)==0,ctypes.get_errno() # CLONE_NEWNS
+assert Path('/proc/self/ns/mnt').stat().st_ino!=old_namespace
+old=root/'.old-root';old.mkdir(mode=0o700)
+assert kernel.syscall(155,str(root).encode(),str(old).encode())==0,ctypes.get_errno() # x86_64 pivot_root
+os.chdir('/')
+assert (Path('/').stat().st_dev,Path('/').stat().st_ino)==(expected_root.st_dev,expected_root.st_ino)
+assert kernel.umount2(b'/.old-root',2)==0,ctypes.get_errno()
+Path('/.old-root').rmdir()
+print('LINUX_PRIVATE_ROOT_PIVOTED old_host_view_detached',flush=True)
+''')
 compile(text,'<integrated factory>','exec')
 if '--materialize-only' in saved:
  Path('/home/tv/.cache/archtv/integrated-factory-preview.py').write_text(text)

@@ -219,6 +219,28 @@ public final class SelectedServices {
                     "com.android.server.stats.StatsCompanion$Lifecycle","/apex/com.android.os.statsd/javalib/service-statsd.jar");
                 start(manager,managerType,"com.android.server.DeviceIdleController");
                 start(manager,managerType,"com.android.server.dreams.DreamManagerService");
+                // Original SystemServer network subsystem ordering. Native netd
+                // and real original BPF maps must already exist; no local stub.
+                Class<?> connectorType=Class.forName("android.net.ConnectivityModuleConnector");
+                Object connector=call(connectorType,null,"getInstance",new Class<?>[0]);
+                call(connectorType,connector,"init",new Class<?>[]{contextType},context);
+                Class<?> networkStackType=Class.forName("android.net.NetworkStackClient");
+                Object networkStack=call(networkStackType,null,"getInstance",new Class<?>[0]);
+                call(networkStackType,networkStack,"init",new Class<?>[0]);
+                Class<?> networkManagementType=Class.forName("com.android.server.net.NetworkManagementService");
+                Object networkManagement=call(networkManagementType,null,"create",new Class<?>[]{contextType},context);
+                Class<?> sm=Class.forName("android.os.ServiceManager");
+                Class<?> ib=Class.forName("android.os.IBinder");
+                call(sm,null,"addService",new Class<?>[]{String.class,ib},"network_management",networkManagement);
+                start(manager,managerType,"com.android.server.NetworkScoreService$Lifecycle");
+                String connectivityJar="/apex/com.android.tethering/javalib/service-connectivity.jar";
+                call(managerType,manager,"startServiceFromJar",new Class<?>[]{String.class,String.class},"com.android.server.NetworkStatsServiceInitializer",connectivityJar);
+                Class<?> networkPolicyType=Class.forName("com.android.server.net.NetworkPolicyManagerService");
+                Object networkPolicy=networkPolicyType.getConstructor(contextType,Class.forName("android.app.IActivityManager"),Class.forName("android.os.INetworkManagementService")).newInstance(context,activityManager,networkManagement);
+                call(sm,null,"addService",new Class<?>[]{String.class,ib},"netpolicy",networkPolicy);
+                call(managerType,manager,"startServiceFromJar",new Class<?>[]{String.class,String.class},"com.android.server.ConnectivityServiceInitializer",connectivityJar);
+                call(networkPolicyType,networkPolicy,"bindConnectivityManager",new Class<?>[0]);
+                System.err.println("ORIGINAL_NETWORK_SUBSYSTEM_STARTED REQUIRES_BINDER_OPERATIONS_NOT_INTERNET_ACCEPTANCE");
                 call(managerType,manager,"startBootPhase",new Class<?>[]{traceType,int.class},trace,storagePhase);
                 System.err.println("ORIGINAL_SELECTED_PHASE500_RETURNED NOT_BOOT_COMPLETED_OR_APP_ACCEPTANCE");
                 System.err.println("PACKAGES_ORIGINAL_USER_AMS_STORAGE_STARTED REQUIRES_INSTALL_OPERATION");

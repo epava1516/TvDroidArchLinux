@@ -47,6 +47,13 @@ network_rc=network_rc.replace('service bpfloader /apex/com.android.tethering/bin
 # executing bpfloader_platform_exec directly. No new SELinux permission.
 vendor['files']['/bin/archtv-platform-bpfloader']={'source':str(r/'dist/aosp16/factory-inputs-3/root/system/bin/bpfloader'),'context':'u:object_r:bpfloader_exec:s0','mode':0o755}
 vendor['files']['/vendor/etc/init/archtv-platform-bpfloader.rc']={'source':str(out/'platform-bpfloader.rc'),'context':'u:object_r:vendor_configs_file:s0','mode':0o644}
+# Host BPF_UNPRIV_DEFAULT_OFF=2 stays unchanged. netd's original map_create
+# contract needs CAP_BPF on this Linux; never add forbidden SYS_ADMIN.
+netd_rc=(r/'dist/aosp16/factory-inputs-3/root/system/etc/init/netd.rc').read_text()
+assert netd_rc.count('    capabilities ')==1
+netd_rc=netd_rc.replace('    capabilities ','    capabilities BPF ',1)
+(out/'linux-netd.rc').write_text(netd_rc)
+vendor['files']['/vendor/etc/init/archtv-netd.rc']={'source':str(out/'linux-netd.rc'),'context':'u:object_r:vendor_configs_file:s0','mode':0o644}
 (out/'vendor-inputs.json').write_text(json.dumps(vendor,indent=2))
 text=(base/'build-payload-expanded.py').read_text().replace(str(base),str(out));expected=out/'apex-expected.json';expected.write_text(json.dumps(json.loads((r/'reports/android16-apex-bootstrap/complete-inputs.json').read_text())['modules'],indent=2)+'\n');text=text.replace("image=out/'payload-2.ext4'", "record('/apex-expected.json',out/'apex-expected.json','u:object_r:vendor_configs_file:s0',0o600)\nimage=out/'payload-2.ext4'")
 recipe=out/'build-payload.py';recipe.write_text(text);subprocess.run(['python',str(recipe)],stdout=open(out/'packager.log','w'),stderr=subprocess.STDOUT,check=True)

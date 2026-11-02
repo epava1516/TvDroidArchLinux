@@ -77,6 +77,17 @@ def prepare(root,out):
     source=Path('/sys/kernel/btf');dest=root/'sys/kernel/btf';dest.mkdir(parents=True,exist_ok=True)
     assert (source/'vmlinux').is_file()
     mount(['--bind',source,dest]);mount(['-o','remount,bind,ro',dest])
+    # A new sysfs superblock in this actual private NET exposes its real
+    # interface objects. Never bind the host's /sys/class/net into Android.
+    net_sysfs=out/'private-network-sysfs';net_sysfs.mkdir()
+    mount(['-t','sysfs','-o','ro,nodev,nosuid,noexec','sysfs',net_sysfs])
+    interfaces=sorted(p.name for p in (net_sysfs/'class/net').iterdir())
+    assert interfaces==['lo'],('Unexpected initial private interfaces',interfaces)
+    for logical in ['class/net','devices/virtual/net']:
+        destination=root/'sys'/logical;destination.mkdir(parents=True,exist_ok=True)
+        mount(['--bind',net_sysfs/logical,destination]);mount(['-o','remount,bind,ro',destination])
+    assert (root/'sys/class/net/lo').is_dir()
+    save(out/'network-sysfs.json',{'private_netns':current_net,'interfaces':interfaces,'source':str(net_sysfs),'scope':'Real private-net sysfs view, read-only class/net and devices/virtual/net only; no host interface binding or fabricated metadata.'})
     save(out/'network-boundary.json',{'host_netns':host_net,'private_netns':current_net,'controls':bound,'global_values':{n:v for n,(f,v) in controls.items()},'bpf_root':str(target),'bpf_device':target.stat().st_dev,'kernel_preload_entries':sorted(builtins),'cgroup_view':str(root/'sys/fs/cgroup'),'scope':'Fresh private bpffs with kernel preload iterators; real sysctl inodes, existing private controls preserved. No Android programs loaded or readiness created.'})
 
 def snapshot(root,out,phase):

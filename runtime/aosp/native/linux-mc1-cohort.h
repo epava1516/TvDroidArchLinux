@@ -6,6 +6,9 @@
 #include "service.h"
 #include "service_list.h"
 #include "parser.h"
+#include "mount_namespace.h"
+#include "util.h"
+#include <sys/mount.h>
 #include "action.h"
 #include "action_manager.h"
 #include <android-base/file.h>
@@ -21,6 +24,7 @@
 #include <chrono>
 #include <functional>
 #include <string>
+#include <sstream>
 
 namespace archtv::aosp {
 class LinuxMc1Cohort {
@@ -203,8 +207,24 @@ class LinuxMc1Cohort {
         if(auto result=process->ExecStart();!result.ok())return result;
         if(auto result=Wait(tick,[this]{return client_done_;},10);!result.ok())return result;
         if(!client_ok_)return android::base::Error()<<"Original APEX inventory client failed";
+        std::string active_output;
+        if(!android::base::ReadFileToString("/data/local/tmp/archtv-mc1/apex-active.txt",&active_output))return android::base::Error()<<"Original APEX inventory output missing";
+        std::istringstream active_lines(active_output);std::string active_line;size_t active_count=0;
+        while(std::getline(active_lines,active_line))if(active_line.rfind("Module: ",0)==0)++active_count;
+        // Early completeness gate only. Existing independent verification still
+        // must match every module/version/XML/mount; count is not acceptance.
+        if(active_count!=41)return android::base::Error()<<"Original active APEX inventory incomplete: "<<active_count<<" expected41";
         std::fprintf(stderr,"APEX_ORIGINAL_CLIENT_RETURNED REQUIRES_EXTERNAL_COMPLETE_INVENTORY_CHECK\n");
         if(selected_requested_) {
+            // Linux has already activated the complete APEX set. Preserve that
+            // real view for bootstrap, then use original namespace setup and
+            // switching; never assign the readiness flag ourselves.
+            if(mount("/apex","/bootstrap-apex",nullptr,MS_BIND|MS_REC,nullptr)!=0)
+                return android::base::ErrnoError()<<"Preserve actual APEX bootstrap view";
+            if(!SetupMountNamespaces())return android::base::Error()<<"Original mount namespace setup failed";
+            auto actual_namespace=GetCurrentMountNamespace();
+            if(!actual_namespace.ok() || *actual_namespace!=NS_BOOTSTRAP)return android::base::Error()<<"Original bootstrap namespace not entered";
+            std::fprintf(stderr,"APEX_ORIGINAL_BOOTSTRAP_NAMESPACE_ENTERED NOT_LINKER_READINESS\n");
             const std::vector<std::string> export_args={"load_exports","/data/local/tmp/archtv-mc1/classpath"};
             auto loader=GetBuiltinFunctionMap().Find(export_args);
             if(!loader.ok())return loader.error();
@@ -214,6 +234,16 @@ class LinuxMc1Cohort {
             auto config=GetBuiltinFunctionMap().Find({"perform_apex_config"});
             if(!config.ok())return config.error();
             if(auto configured=config->function(BuiltinArguments{{"perform_apex_config"},context});!configured.ok())return configured;
+            std::fprintf(stderr,"APEX_ORIGINAL_BOOTSTRAP_CONFIG_RETURNED NOT_DEFAULT_READINESS\n");
+            if(auto entered=SwitchToMountNamespaceIfNeeded(NS_DEFAULT);!entered.ok())return entered;
+            auto default_namespace=GetCurrentMountNamespace();
+            if(!default_namespace.ok() || *default_namespace!=NS_DEFAULT)return android::base::Error()<<"Original default namespace not entered";
+            // Original parser skips bootstrap APEXes here because their real
+            // configs were just parsed. It generates default linker config and
+            // sets readiness itself; do not set a flag or property manually.
+            if(auto configured=config->function(BuiltinArguments{{"perform_apex_config"},context});!configured.ok())return configured;
+            if(!IsDefaultMountNamespaceReady())return android::base::Error()<<"Original default namespace not ready";
+            std::fprintf(stderr,"APEX_ORIGINAL_DEFAULT_CONFIG_RETURNED REQUIRES_SERVICE_OPERATIONS\n");
             client_done_=false;client_ok_=false;
             auto storage=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","root","root","--","/system/bin/sh","-c",
                 "umask 077; /system/bin/service check vold > /data/local/tmp/archtv-mc1/vold-query.txt 2>&1; /system/bin/vdc cryptfs init_user0 > /data/local/tmp/archtv-mc1/vold-user0.txt 2>&1"});
@@ -255,13 +285,22 @@ class LinuxMc1Cohort {
             if(stat("/sys/fs/bpf/netd_shared/mainline_done",&ready)!=0 || !S_ISDIR(ready.st_mode))return android::base::Error()<<"Original mainline loader did not complete";
         }
         if(android::base::GetProperty("bpf.progs_loaded","")!="1")return android::base::Error()<<"Original platform loader did not publish completion";
-        parsed=parser.ParseConfigFile("/system/etc/init/netd.rc");
+        parsed=parser.ParseConfigFile("/vendor/etc/init/archtv-netd.rc");
         if(!parsed.ok() || parser.parse_error_count()!=0)return android::base::Error()<<"Original netd RC rejected";
         netd_=services.FindService("netd");
         if(!netd_ || netd_->args()!=std::vector<std::string>{"/system/bin/netd"})return android::base::Error()<<"Unexpected netd executable";
         netd_->AddReapCallback([this](const siginfo_t& info){std::fprintf(stderr,"NETWORK_NETD_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);if(!closing_)manager_failed_=true;});
         if(auto started=netd_->Start();!started.ok())return started;
         std::fprintf(stderr,"NETWORK_NETD_STARTED pid=%d NOT_REGISTERED\n",netd_->pid());
+        client_done_=false;client_ok_=false;
+        auto query=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","root","root","--","/system/bin/sh","-c",
+            "umask 077; i=0; while [ $$i -lt 12 ]; do /system/bin/service check netd > /data/local/tmp/archtv-mc1/netd-query.txt 2>&1; if /system/bin/grep -qx 'Service netd: found' /data/local/tmp/archtv-mc1/netd-query.txt; then exit 0; fi; i=$$((i+1)); /system/bin/sleep 1; done; exit 1"});
+        if(!query.ok())return query.error();
+        auto* peer=query->get();peer->AddReapCallback([this](const siginfo_t& info){client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;});services.AddService(std::move(*query));
+        if(auto started=peer->ExecStart();!started.ok())return started;
+        if(auto waited=Wait(tick,[this]{return client_done_;},16);!waited.ok())return waited;
+        if(!client_ok_)return android::base::Error()<<"Original netd Binder/interface query failed";
+        std::fprintf(stderr,"NETWORK_NETD_REGISTRATION_ONLY NOT_INTERFACE_OR_PERMISSION_ACCEPTANCE\n");
         return {};
     }
     android::base::Result<void> StartHardware(const Tick& tick,bool defer_graphics=false) {
@@ -516,6 +555,20 @@ class LinuxMc1Cohort {
         if(auto result=process->ExecStart();!result.ok())return result;
         if(auto result=Wait(tick,[this]{return client_done_;},35);!result.ok())return result;
         if(!client_ok_)return android::base::Error()<<"Original display CLI did not find default display";
+        if(apex_requested_) {
+            // Root's original netd permission check requires the real AMS
+            // permission controller. Do not bypass it or report Binder lookup
+            // as a successful netd operation.
+            client_done_=false;client_ok_=false;
+            auto network_query=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","root","root","--","/system/bin/sh","-c",
+                "umask 077; i=0; while [ $$i -lt 12 ]; do /system/bin/service check permission > /data/local/tmp/archtv-mc1/netd-permission-query.txt 2>&1; if /system/bin/grep -qx 'Service permission: found' /data/local/tmp/archtv-mc1/netd-permission-query.txt; then /system/bin/ndc interface list > /data/local/tmp/archtv-mc1/netd-interfaces.txt 2>&1; /system/bin/grep -qx '200 0 Interface list completed' /data/local/tmp/archtv-mc1/netd-interfaces.txt && /system/bin/grep -qx '110 0 lo' /data/local/tmp/archtv-mc1/netd-interfaces.txt; exit $$?; fi; i=$$((i+1)); /system/bin/sleep 1; done; exit 1"});
+            if(!network_query.ok())return network_query.error();
+            auto* network_peer=network_query->get();network_peer->AddReapCallback([this](const siginfo_t& info){client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;});services.AddService(std::move(*network_query));
+            if(auto started=network_peer->ExecStart();!started.ok())return started;
+            if(auto waited=Wait(tick,[this]{return client_done_;},16);!waited.ok())return waited;
+            if(!client_ok_)return android::base::Error()<<"Original authorized netd interface operation failed";
+            std::fprintf(stderr,"NETWORK_NETD_ORIGINAL_INTERFACE_LIST_PASSED NOT_INTERNET_OR_TENANT_PERMISSION_ACCEPTANCE\n");
+        }
         if(apex_requested_) {
             client_done_=false;client_ok_=false;
             auto package_client=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","shell","shell","--",
