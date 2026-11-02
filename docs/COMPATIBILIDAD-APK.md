@@ -1,5 +1,7 @@
 # Matriz de aplicaciones reales
 
+Corrección de coherencia: el JSON conserva ahora la instalación temporal anterior de Markor ya documentada; no se acepta una etapa nueva. [ART/dexopt](../reports/android16-package-bootstrap/art-supervision-functional.json) y la [frontera de persistentes PMS](../reports/android16-package-bootstrap/bootstrap-profile-negative.json) siguen siendo evidencia parcial. El perfil inicial omite APK de infraestructura de red/tethering, telefonía/cellbroadcast, Secure Element y SystemUI; sus funciones no se declaran compatibles por estar fuera de esa prueba. El objetivo amplio y sus recorridos siguen abiertos.
+
 Estado vigente: [instalación temporal original de Markor](../reports/android16-package-bootstrap/markor-install-functional.json) probada en su cohorte anterior; firma/bytes comprobados, sin persistencia entre sesiones. Lanzamiento, UI, entrada, nota, servicios de la app, cierre y reapertura siguen abiertos. El [avance a fase500](../reports/android16-package-bootstrap/network-lifecycle-progress.json) no acepta otra etapa.
 
 Histórico anterior a la instalación temporal: la integración de soporte [memoria Bionic y display0](../reports/android16-selected-display/postboot-display-findings.json) no cambia la aceptación de Markor: instalación, lanzamiento, interfaz, entrada, función principal, persistencia, servicios, cierre y reapertura siguen sin recorrido completo probado. La consulta shell original no demuestra permisos ni comportamiento de una APK. La [operación Installer/installd](../reports/android16-package-bootstrap/installer-functional.json) tampoco acredita instalar Markor: no se ha llamado al flujo original PackageInstaller/PMS.
@@ -20,8 +22,9 @@ recorrido salvo dependencia real demostrada de la versión/función seleccionada
 La fuente canónica sigue siendo el JSON enlazado abajo, ahora schema 2. La base
 es Android16 QPR2 nativa Bionic/AOSP, no el laboratorio Android13. Cada aplicación
 registra nueve etapas: instalación, lanzamiento, interfaz, entrada, función
-principal, persistencia, servicios, cierre y reapertura. Todas están **no probadas**
-en A16; no se calcula porcentaje. Estados admitidos: aprobado, fallo demostrado,
+principal, persistencia, servicios, cierre y reapertura. Sólo la instalación
+temporal anterior de Markor está aprobada con el alcance indicado; las otras
+etapas y aplicaciones siguen **no probadas** en A16. No se calcula porcentaje. Estados admitidos: aprobado, fallo demostrado,
 bloqueo externo y no probado, siempre con base/versión/evidencia/alcance.
 
 Markor, Calculator y VLC conservan versiones/hashes/procedencia y análisis estático.
@@ -52,8 +55,8 @@ Las APK están intactas en caché local; no se recompilan ni se parchean.
 | APK fijada | Perfil observado | Recorrido a verificar | Ejecución actual |
 | --- | --- | --- | --- |
 | Markor 2026.10.0, net.gsantner.markor | minSDK 21, target 35; no miembros lib/*.so en este APK | Crear/editar nota, entrada real, guardar, cerrar/reabrir | Instalación temporal probada; las demás etapas no aceptadas |
-| Calculator 1.4.0, org.fossify.math | minSDK 26, target 36; AndroidX Path para arm64/armv7/x86/x86_64 | Alias de lanzador, 2+3, historial/preferencias, cierre/reapertura | Instalación temporal probada; las demás etapas no aceptadas |
-| VLC 3.7.1, org.videolan.vlc | minSDK 17, target 36; VLC/medialibrary/C++ x86_64 | Fichero local, audio/vídeo, volver al shell, cierre | Instalación temporal probada; las demás etapas no aceptadas en el runtime propio; Waydroid anterior no cuenta |
+| Calculator 1.4.0, org.fossify.math | minSDK 26, target 36; AndroidX Path para arm64/armv7/x86/x86_64 | Alias de lanzador, 2+3, historial/preferencias, cierre/reapertura | Ninguna etapa A16 aceptada |
+| VLC 3.7.1, org.videolan.vlc | minSDK 17, target 36; VLC/medialibrary/C++ x86_64 | Fichero local, audio/vídeo, volver al shell, cierre | Ninguna etapa A16 aceptada; Waydroid anterior no cuenta |
 
 REA MCP/JADX observa respectivamente 4.985/5.023/15.261 clases; estos inventarios
 no prueban cobertura dinámica. El ensayo del framework enlaza clases Activity de

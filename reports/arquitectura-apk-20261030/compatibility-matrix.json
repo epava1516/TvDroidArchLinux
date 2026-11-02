@@ -32,7 +32,7 @@
       },
       "evidence_id": "ev_37c5a66b942f8e277c88500b2a15d430c2e523b672bf47fe74cf9c90638d164e",
       "full_evidence_id": "ev_746d40138a0f10e9c3202cd147e41d5efd4a7c58e81078c6109567a0bce77781",
-      "workflow": "Abrir fichero local, reproducir audio/v\u00eddeo, volver al shell y cerrar",
+      "workflow": "Abrir fichero local, reproducir audio/vídeo, volver al shell y cerrar",
       "runtime_results": {
         "installation": "not_tested",
         "launch": "not_tested",
@@ -44,7 +44,7 @@
         "close": "not_tested",
         "reopen": "not_tested"
       },
-      "reason": "Current host launcher substitutes Application and Activity/widgets. Complete real-app route not demonstrated; static inventory does not establish execution.",
+      "reason": "No accepted nine-stage A16 runtime route for this APK; prior Android13 experiments and static inspection do not establish current runtime compatibility.",
       "framework_class_link_pass": null,
       "source_verification": "Existing cached artifact; download provenance not revalidated in this audit. REA identity and declared signer recorded.",
       "declared_application": "org.videolan.mobile.app.VLCApplication",
@@ -63,7 +63,8 @@
         "close": "not_run"
       },
       "runtime_evidence_base": "Android16 QPR2 / A16-QPR2-1",
-      "privilege_model": "Ordinary APK candidate. Privileged/OEM/signature-dependent features not assumed or patched away."
+      "privilege_model": "Ordinary APK candidate. Privileged/OEM/signature-dependent features not assumed or patched away.",
+      "historical_reason_android13": "Current host launcher substitutes Application and Activity/widgets. Complete real-app route not demonstrated; static inventory does not establish execution."
     },
     {
       "id": "calculator",
@@ -106,7 +107,7 @@
         "close": "not_tested",
         "reopen": "not_tested"
       },
-      "reason": "Current host launcher substitutes Application and Activity/widgets. Complete real-app route not demonstrated; static inventory does not establish execution.",
+      "reason": "No accepted nine-stage A16 runtime route for this APK; prior Android13 experiments and static inspection do not establish current runtime compatibility.",
       "framework_class_link_pass": true,
       "declared_application": "org.fossify.commons.FossifyApp",
       "dependency_profiles": [
@@ -122,7 +123,8 @@
         "close": "not_run"
       },
       "runtime_evidence_base": "Android16 QPR2 / A16-QPR2-1",
-      "privilege_model": "Ordinary APK candidate. Privileged/OEM/signature-dependent features not assumed or patched away."
+      "privilege_model": "Ordinary APK candidate. Privileged/OEM/signature-dependent features not assumed or patched away.",
+      "historical_reason_android13": "Current host launcher substitutes Application and Activity/widgets. Complete real-app route not demonstrated; static inventory does not establish execution."
     },
     {
       "id": "markor",
@@ -150,7 +152,7 @@
       "full_evidence_id": "ev_d5cd84183419bac98590670d305ee85ecfe49a1c9dbe9c33ac78fdc6deb21f7f",
       "workflow": "Crear nota de texto local, editar con teclado, guardar, cerrar y reabrir",
       "runtime_results": {
-        "installation": "not_tested",
+        "installation": "approved",
         "launch": "not_tested",
         "interface": "not_tested",
         "input": "not_tested",
@@ -160,7 +162,7 @@
         "close": "not_tested",
         "reopen": "not_tested"
       },
-      "reason": "Current host launcher substitutes Application and Activity/widgets. Complete real-app route not demonstrated; static inventory does not establish execution.",
+      "reason": "Earlier A16 original temporary installation is evidenced. Current ART dexopt and PMS/AMS bootstrap experiments remain partial; launch/UI/input/note/services/persistence/close/reopen are not accepted.",
       "framework_class_link_pass": true,
       "declared_application": "net.gsantner.markor.ApplicationObject",
       "bootstrap_experiment": {
@@ -195,7 +197,16 @@
         "close": "not_run"
       },
       "runtime_evidence_base": "Android16 QPR2 / A16-QPR2-1",
-      "privilege_model": "Ordinary APK candidate. Privileged/OEM/signature-dependent features not assumed or patched away."
+      "privilege_model": "Ordinary APK candidate. Privileged/OEM/signature-dependent features not assumed or patched away.",
+      "historical_reason_android13": "Current host launcher substitutes Application and Activity/widgets. Complete real-app route not demonstrated; static inventory does not establish execution.",
+      "runtime_stage_evidence": {
+        "installation": {
+          "record": "../android16-package-bootstrap/markor-install-functional.json",
+          "record_sha256": "d7a5164ba89ef04b8501aeacf22d0bd4c563e5d716a4e6e1c767d0ff02c4bd72",
+          "base_commit": "d8647d1f71868ae2b12c351241259234bc409ae3",
+          "scope": "Earlier original installation with original package path/bytes check in temporary private tmpfs only; not new stage acceptance, durability, tenant isolation, launch or current candidate success"
+        }
+      }
     }
   ],
   "uncovered": [
@@ -490,7 +501,7 @@
       "acceptance": "Fix real author-distributed APK/version/requirements; test nine-stage workflow without per-APK patches or privileged bypass"
     }
   ],
-  "base_review": "A16-QPR2-1 supersedes A/B/C selection: native Bionic primary; SF\u2192Wayland first graphics hypothesis. Prior choice/experiments historical only.",
+  "base_review": "A16-QPR2-1 supersedes A/B/C selection: native Bionic primary; SF→Wayland first graphics hypothesis. Prior choice/experiments historical only.",
   "base_component_observation": {
     "evidence": "reports/bionic-component/art-core-result.json",
     "linker_help_and_launcher_list_exit": 0,
@@ -516,7 +527,25 @@
       "source_base_commit": "e520093",
       "evidence": "../android16-framework-entry/validation.json",
       "observation": "Original app_process returns0 but observed startVm ABI-list guard exits before VM; Markor only present on classpath",
-      "app_stage_results": "unchanged_not_tested"
+      "app_stage_results": "unchanged_not_tested",
+      "historical": true,
+      "current_limit": "This earlier startVm failure is historical; later original ART/selected service execution progressed. Retain as negative evidence, not current blocker."
+    },
+    {
+      "id": "a16-original-art-dexopt",
+      "status": "approved",
+      "scope": "Original ART/dexopt subsystem operation only; no new application-stage approval",
+      "evidence": "../android16-package-bootstrap/art-supervision-functional.json",
+      "observation": "Original artd registered and dexopt Markor PERFORMED, install stdout Success; no new full app-stage acceptance",
+      "app_stage_results": "unchanged; only earlier temporary Markor installation approved"
+    },
+    {
+      "id": "a16-original-persistent-profile-boundary",
+      "status": "demonstrated_failure",
+      "scope": "Bootstrap, not application journey approval",
+      "evidence": "../android16-package-bootstrap/bootstrap-profile-negative.json",
+      "observation": "Original PMS enabled-state disabled packages remain in manifest persistent enumeration; current adapter refuses AMS return. Actual private APK filesystem profile is next, features of omitted packages remain unaccepted",
+      "app_stage_results": "unchanged; only earlier temporary Markor installation approved"
     }
   ]
 }
