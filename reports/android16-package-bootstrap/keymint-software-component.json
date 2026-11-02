@@ -1,0 +1,78 @@
+{
+  "scope": "Executed original AOSP KeyMint v4 SOFTWARE implementation local C++ API/crypto in original Bionic/property context; NOT KeyMint Binder IPC, Keystore2, user authentication, security or APK compatibility acceptance",
+  "candidate": 106,
+  "run_id": "2b7ce94e-69df-4ee9-baa8-7d4bbe5d3ef3",
+  "checkpoint": "/home/tv/recuperacion-archtv/2b7ce94e-69df-4ee9-baa8-7d4bbe5d3ef3-keymint-component",
+  "result": {
+    "outer_exit": 1,
+    "native_complete_inventory_verified": true,
+    "elapsed_seconds": 26.546414375305176,
+    "active_loops": "",
+    "final_dm": []
+  },
+  "native_exit": 0,
+  "component_output": "KEYMINT_COMPONENT_ENCRYPTED_AND_SAVED SOFTWARE v4 NOT_KEYSTORE_OR_APK_ACCEPTANCE\nKEYMINT_COMPONENT_REOPEN_DECRYPT_AND_NEGATIVES_PASSED SOFTWARE v4 NOT_KEYSTORE_OR_APK_ACCEPTANCE\n",
+  "artifacts": {
+    "/home/tv/recuperacion-archtv/2b7ce94e-69df-4ee9-baa8-7d4bbe5d3ef3-keymint-component/run.log": "5056d261f1e0aa24838638100f804c2427e076130fc410369dccf29d673af624",
+    "/home/tv/recuperacion-archtv/2b7ce94e-69df-4ee9-baa8-7d4bbe5d3ef3-keymint-component/result.json": "bfaa1858be2265f5916847950ac96673671de0af0a88ceb3494f64bc5d5a388e",
+    "/home/tv/recuperacion-archtv/2b7ce94e-69df-4ee9-baa8-7d4bbe5d3ef3-keymint-component/completion-manifest.json": "462ced68f6028a94c324292c0bddcc10dad7e0336857bc6ed1d7c20578e31723",
+    "/home/tv/recuperacion-archtv/2b7ce94e-69df-4ee9-baa8-7d4bbe5d3ef3-keymint-component/completion-consumer.json": "9e58bf5766ac8792b170e1a5670bb5cb40388e25f9de15377a45dfabdaad036a",
+    "/home/tv/recuperacion-archtv/2b7ce94e-69df-4ee9-baa8-7d4bbe5d3ef3-keymint-component/completion-delivery.json": "a541b6f250b3bd5279a5f342664595d9228af0379c9718dbecfdcd1496c94987",
+    "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793650393245807000/android-log-live.jsonl": "9abd74d4ade5f03ad82ffa45aebbb7e3e35a247e12315ecb8d086cd70d704481",
+    "/home/tv/repositorio-principal/dist/aosp16/keymint-software-build-3/build.json": "fd7ffa094a0a04e166c5749861cef474c396912790eee577f9e180797fd3d4b2",
+    "/home/tv/repositorio-principal/dist/aosp16/keymint-software-build-3/probe-build.json": "d06f99ec457e1b06c11a4786ab6f1ee4bea7882326810d39c66f03a4f64ce9a9",
+    "/home/tv/repositorio-principal/dist/aosp16/keymint-software-build-3/keymint-crypto-probe": "e6f2766a275451f030958b2891817bb9daf2e1378491709147bb2efb0c76a968",
+    "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-106/source-inputs.json": "e07b40765c2f7d5a8110402c53c7d3f4123526c2c60b4b27afa23652f788bb0f",
+    "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-106/keymint-component-input.json": "76c0d8f510c4d44315b8f515c6dd8b2b5322fc80d23415e33dd20746a90d8be4",
+    "/home/tv/.cache/archtv/keymint106-verifier-replay.json": "0bcba6e9c31ba893b87e6655e968b18fd55dedd4ec7802d8f01455ffb8322503",
+    "/home/tv/.cache/archtv/keymint106-host-final.json": "1aa021e6ddc14aed59cf0fa481fba331e9bb63bfee770daefea11274425ab317",
+    "/home/tv/repositorio-principal/dist/aosp16/keymint-software-build-4/build.json": "e411f4b70839f464f4f8da6a9d01899d2d6b328f6c4cca5c8e91067965af70b8",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/keymaster-original-v4/provenance.json": "9eaba29e09556abace750b867e28839f5b2911b0faae1b5969bfeb0c653e58e0",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/security-hal-original/provenance.json": "8fa817cd4f30d58a7d155d656aa7943fa07d7ade63a6fa26ebd95e7111597e7f",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/framework-keystore-original/provenance.json": "58a37d1153145cac26414dcb9485b5a5c00143c2359e5ee94780a81056ab2e03",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/keystore2-original/provenance.json": "30d51cb5a862148952fe030f84716cc2f104234e69a87aa0b5b571704384ab93",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/keymint-boringssl-headers/provenance.json": "999005bf546e66a216b712a335b0ce285f33206cdc93aaa8fc6fdc7f4f107fa7",
+    "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/keymint-cppbor-original-headers/provenance.json": "e1e36612829bb87784e48867ea4c259b30b0c851fe53e27764c00a299d8eebd5",
+    "/home/tv/.cache/archtv/keymint106-selinux-final.json": "0a3a74938432c060787bd31bd50971c504869ae039adede2ffef6f80d5351e8b"
+  },
+  "proved": [
+    "Original complete IKeyMintDevice/operation/conversion sources compiled against frozen v4 AIDL and original GSI portable crypto libraries, strict link",
+    "getHardwareInfo reports SOFTWARE and version4",
+    "Actual AES256-GCM key generation/encryption; private blob file reopened by another process and plaintext recovered",
+    "Altered GCM tag rejected with VERIFICATION_FAILED, altered keyblob rejected",
+    "Actual APEX41 verification retained; 8 native cohort identities sampled; native owner closes with exit0 and tracked intentional Vold/APEX cancellation, not clean Android daemon exits"
+  ],
+  "outer_failure": "Historical outerexit1 is preserved: the generic verifier required the full Markor/graphics identity set for a deliberately native-only component profile. New scoped verifier passed offline replay of actual106 records and negative mutations; it has not run live, and does not rewrite result.json.",
+  "source_build4": "Reproducible script now builds provider and probe together with source/binary hashes. Build4 compiled/linked, but its binary differs from tested3 and was NOT executed; no equivalence asserted. Original provider daemon registration has not been tested.",
+  "configuration": "Original property loader publishes GSI OS metadata; Linux vendor patch property explicitly empty means unknown/0, no patch date or verified boot/attestation claimed. Original wait guard remains enabled; no KEYMASTER_UNIT_TEST_BUILD bypass.",
+  "earlier_attempts": [
+    {
+      "candidate": 105,
+      "checkpoint": "/home/tv/recuperacion-archtv/fe78edc6-d29c-4dbe-8cd6-0f48fb52c83b-keymint-component",
+      "result": "ELF in vendor namespace could not find original system KeyMint v4 library.106 uses /archtv/bin system-side loader context; no linker guards disabled."
+    },
+    {
+      "attempt": "standalone component2",
+      "result": "Tool observed timeout30s; no raw result file saved. Source contains property-creation wait; no runtime stack captured, so wait location not independently sampled."
+    }
+  ],
+  "not_accepted": [
+    "Keystore2 API or service availability",
+    "GateKeeper credential/HAT/TEE/StrongBox/attestation",
+    "KeyInfo/KeyMetadata correctness across Java service boundary",
+    "User RUNNING_UNLOCKED or Markor launch/UI/input/note/services/close/reopen",
+    "Durable state across cohort teardown; blob file test is two processes within one private cohort",
+    "R1-MAC permissive policyload2 and app Seccomp0 remain open; no policy/security/reboot change",
+    "ARM GMS DRM remain separate open"
+  ],
+  "decision": "Reuse original v4 SOFTWARE provider, not fake-latest version or emulated TEE. Next source-build coherent original Keystore2/software selection/metadata and complete Java Keystore provider default fallback, leaving explicit hardware requests unsupported. Then original user unlock and intact Markor vertical. No rerun of unchanged106 crypto proof.",
+  "host_security_final": {
+    "version": 1,
+    "sequence": 4,
+    "enforcing": 0,
+    "policyload": 2,
+    "deny_unknown": 1,
+    "enforce_file": "0",
+    "scope": "Fresh read-only private selinuxfs kernel status mapping; no policy/enforcing changes"
+  }
+}

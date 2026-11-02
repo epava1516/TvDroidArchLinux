@@ -1,5 +1,7 @@
 # Roadmap · Arch TV nativo en Rust
 
+Siguiente integración: [Keystore2/proveedor Java SOFTWARE coherentes tras106](docs/ROADMAP-A.md). El componente criptográfico original ejecutado es evidencia parcial; el bloqueo de desbloqueo/Markor sigue abierto.
+
 Camino crítico actualizado: [backend de seguridad original104](reports/android16-package-bootstrap/original-security-backend-negative.json) → desbloqueo real → Markor. La fase1000 original de103 se conserva. Véase la puerta de decisión y criterios en [ROADMAP-A](docs/ROADMAP-A.md).
 
 Actualización 2026-11-02 · [Usuario y ciclo APEX originales](reports/android16-package-bootstrap/original-user-unlock-progress.json):103 conserva APEX41 y atraviesa fase1000, incluyendo MediaSession/MediaCommunication y StagingManager originales. La salida lazy normal de apexd ya no cierra la cohorte; reinicio bajo demanda aún no probado. UserController llega a LockSettings y espera GateKeeper original, cuyo ctl.interface_start está rechazado. Siguiente: integrar gatekeeperd y sus backends reales de seguridad; después comprobar RUNNING_UNLOCKED y lanzar Markor, sin fabricar credenciales, claves ni flags. No hay lanzamiento/UI/entrada/nota persistente aceptados. R1-MAC permisivo, cierre interno y ARM/GMS/DRM abiertos.

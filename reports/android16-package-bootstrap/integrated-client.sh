@@ -2,7 +2,7 @@
 set -euo pipefail
 run_id=$(/usr/bin/python -c 'import uuid;print(uuid.uuid4())')
 unit="archtv-package-runner-$run_id"
-experiment_kind=$(/usr/bin/python -c 'import json;from pathlib import Path;d=json.loads(Path("/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-106/build-options.json").read_text());print("keymint-component" if d.get("keymint_component_diagnostic") else "markor-launch")')
+experiment_kind=$(/usr/bin/python -c 'import json;from pathlib import Path;d=json.loads(Path("/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-104/build-options.json").read_text());print("keymint-component" if d.get("keymint_component_diagnostic") else "markor-launch")')
 checkpoint="/home/tv/recuperacion-archtv/$run_id-$experiment_kind"
 mkdir -m 700 "$checkpoint"
 # Bind destination now, never discover a different daemon at delivery time.
@@ -17,4 +17,4 @@ name='KeyMint v4 software component' if kind=='keymint-component' else 'Markor i
 with p.open('x') as f:json.dump(dict(id=run,checkpoint=cp,unit=unit,owner=unit,name=name,active_owner='active:'+run,remote=remote,thread=thread),f)
 p.chmod(0o444)
 MANIFEST
-exec sudo -n systemd-run --unit="$unit" --wait --pipe --collect --property=RuntimeMaxSec=420 --property=KillMode=control-group --property=MemoryMax=512M --setenv="ARCHTV_RUN_CHECKPOINT=$checkpoint" --property="ExecStopPost=/usr/bin/python /home/tv/repositorio-principal/scripts/run_completion.py $checkpoint/completion-manifest.json" --working-directory=/home/tv/repositorio-principal /usr/bin/python /home/tv/repositorio-principal/reports/android16-apex-bootstrap/run.py dist/aosp16/package-cohort-build-106/payload-2.ext4 /home/tv/.cache/archtv/aosp16-qpr2/apex-data-store-1 "$XDG_RUNTIME_DIR/$WAYLAND_DISPLAY"
+exec sudo -n systemd-run --unit="$unit" --wait --pipe --collect --property=RuntimeMaxSec=420 --property=KillMode=control-group --property=MemoryMax=512M --setenv="ARCHTV_RUN_CHECKPOINT=$checkpoint" --property="ExecStopPost=/usr/bin/python /home/tv/repositorio-principal/scripts/run_completion.py $checkpoint/completion-manifest.json" --working-directory=/home/tv/repositorio-principal /usr/bin/python /home/tv/repositorio-principal/reports/android16-apex-bootstrap/run.py dist/aosp16/package-cohort-build-104/payload-2.ext4 /home/tv/.cache/archtv/aosp16-qpr2/apex-data-store-1 "$XDG_RUNTIME_DIR/$WAYLAND_DISPLAY"

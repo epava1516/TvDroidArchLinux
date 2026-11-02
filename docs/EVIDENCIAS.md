@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+[Componente criptográfico original106](../reports/android16-package-bootstrap/keymint-software-component.json): ejecución local de API C++ original v4/SOFTWARE, AES256-GCM, lectura en segundo proceso, dos negativas y hashes. Nativo0, exterior1 conservado, APEX41; cierre exterior comprobado. Comprobador corregido contrastado offline, no nueva ejecución. No Binder KeyMint, Keystore2, usuario, MAC ni Markor aceptados.
+
 [Prueba negativa de seguridad104](../reports/android16-package-bootstrap/original-security-backend-negative.json): hashes de artefactos, captura original y fuentes fijadas; gatekeeperd sin HAL y aborto Keystore2 por TEE ausente. APEX41 y cierre exterior conservados. No demuestra claves, autenticación, desbloqueo ni lanzamiento de Markor.
 
 Histórico 2026-11-02 · [Usuario y ciclo APEX originales](../reports/android16-package-bootstrap/original-user-unlock-progress.json):103 conserva APEX41 y atraviesa fase1000, incluyendo MediaSession/MediaCommunication y StagingManager originales. La salida lazy normal de apexd ya no cierra la cohorte; reinicio bajo demanda aún no probado. UserController llega a LockSettings y espera GateKeeper original, cuyo ctl.interface_start está rechazado. Siguiente: integrar gatekeeperd y sus backends reales de seguridad; después comprobar RUNNING_UNLOCKED y lanzar Markor, sin fabricar credenciales, claves ni flags. No hay lanzamiento/UI/entrada/nota persistente aceptados. R1-MAC permisivo, cierre interno y ARM/GMS/DRM abiertos.

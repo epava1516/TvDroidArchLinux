@@ -3,7 +3,7 @@
 from pathlib import Path
 import json,subprocess,shutil,hashlib,sys
 r=Path(__file__).resolve().parents[2];out=(r/sys.argv[1]).resolve();out.mkdir()
-tracked_inputs=['Cargo.toml','Cargo.lock','crates/archtv-core/Cargo.toml',*[str(p.relative_to(r)) for p in sorted((r/'crates/archtv-core/src').rglob('*.rs'))],'crates/archtv-core/examples/native_supervisor.rs','reports/android16-package-bootstrap/execute-integrated.py','reports/android16-package-bootstrap/integrated-session.sh','reports/android16-apex-bootstrap/run.py','reports/android16-package-bootstrap/build-platform-overlay.py','tools/apk/SignPlatformOverlay.java','runtime/aosp/platform-overlay/AndroidManifest.xml','runtime/aosp/platform-overlay/res/values/config.xml','runtime/aosp/platform-overlay/overlay-config.xml','reports/android16-apex-bootstrap/devices.py','runtime/aosp/linux-services/initial-apk-profile.json','runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java','runtime/aosp/linux-services/install-markor.sh','runtime/aosp/native/linux-property-worker.cpp','runtime/aosp/native/linux-mc1-cohort.h','reports/android16-package-bootstrap/build-integrated.py','runtime/aosp/android16-qpr2/patches/0004-linux-admitted-lazy-services.patch']
+tracked_inputs=['Cargo.toml','Cargo.lock','crates/archtv-core/Cargo.toml',*[str(p.relative_to(r)) for p in sorted((r/'crates/archtv-core/src').rglob('*.rs'))],'crates/archtv-core/examples/native_supervisor.rs','reports/android16-package-bootstrap/execute-integrated.py','reports/android16-package-bootstrap/integrated-session.sh','reports/android16-apex-bootstrap/run.py','reports/android16-package-bootstrap/build-platform-overlay.py','tools/apk/SignPlatformOverlay.java','runtime/aosp/platform-overlay/AndroidManifest.xml','runtime/aosp/platform-overlay/res/values/config.xml','runtime/aosp/platform-overlay/overlay-config.xml','reports/android16-apex-bootstrap/devices.py','runtime/aosp/linux-services/initial-apk-profile.json','runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java','runtime/aosp/linux-services/install-markor.sh','runtime/aosp/native/linux-property-worker.cpp','runtime/aosp/native/linux-mc1-cohort.h','reports/android16-package-bootstrap/build-integrated.py','runtime/aosp/android16-qpr2/patches/0004-linux-admitted-lazy-services.patch','fixtures/aosp-keymint-software/SoftwareCryptoProbe.cpp','runtime/aosp/native/linux-keymint-service.cpp','reports/android16-package-bootstrap/build-keymint-software.py']
 source_hashes={n:hashlib.sha256((r/n).read_bytes()).hexdigest() for n in tracked_inputs}
 (out/'source-inputs.json').write_text(json.dumps(source_hashes,indent=2)+'\n')
 overlay=r/'dist/aosp16/platform-overlay-build-2'
@@ -26,7 +26,8 @@ assert rc.count('    group system graphics\n')==1
 rc=rc.replace('    group system graphics\n','    group system graphics net_bw_stats net_bw_acct\n')
 lines=rc.splitlines();lines[0]='service archtv-selected-services /system/bin/app_process64 -Xmx768m -Xnoimage-dex2oat /system/bin --application --nice-name=archtv-selected-services org.archtv.aosplinux.ServiceLauncher --packages'
 checkpoint_diagnostic='--checkpoint-diagnostic' in sys.argv[2:]
-(out/'build-options.json').write_text(json.dumps({'checkpoint_contract_diagnostic':checkpoint_diagnostic},indent=2)+'\n')
+keymint_component='--keymint-component' in sys.argv[2:]
+(out/'build-options.json').write_text(json.dumps({'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component},indent=2)+'\n')
 if checkpoint_diagnostic:lines.append('    setenv ARCHTV_CHECKPOINT_DIAGNOSTIC 1')
 lines=[l for l in lines if not any(l.startswith('    setenv '+n+' ') for n in ['BOOTCLASSPATH','DEX2OATBOOTCLASSPATH','SYSTEMSERVERCLASSPATH','STANDALONE_SYSTEMSERVER_JARS'])];(entry/'selected-services.rc').write_text('\n'.join(lines)+'\n')
 old=r/'dist/aosp16/apex-cohort-build-6';commands=[]
@@ -53,6 +54,20 @@ for key,value in vendor['files'].items():
 # This Linux profile runs one real 64-bit Zygote. Preserve GSI bytes, but
 # declare the implemented device ABI set through the original property loader.
 base_props=Path(vendor['files']['/vendor/build.prop']['source']).read_text()
+if keymint_component:
+ # Unknown vendor patch level is explicitly empty/zero, never a claimed patch date.
+ # The original loader creates the property; KeyMint keeps its original wait guard.
+ base_props+='\nro.vendor.build.security_patch=\n'
+ probe=r/'dist/aosp16/keymint-software-build-4/keymint-crypto-probe'
+ probe_build=json.loads((probe.parent/'probe-build.json').read_text())
+ assert probe_build['probe_compile']['exit']==0 and probe_build['probe_link']['exit']==0
+ assert probe_build['source_sha256']==hashlib.sha256((r/'fixtures/aosp-keymint-software/SoftwareCryptoProbe.cpp').read_bytes()).hexdigest()
+ assert probe_build['binary_sha256']==hashlib.sha256(probe.read_bytes()).hexdigest()
+ profile_file=out/'keymint-component-profile';profile_file.write_text('software-crypto-v1\n')
+ vendor['files']['/vendor/etc/archtv-keymint-component']={'source':str(profile_file),'context':'u:object_r:vendor_configs_file:s0','mode':0o444}
+ vendor['files']['/bin/archtv-keymint-probe']={'source':str(probe),'context':'u:object_r:vendor_file:s0','mode':0o755}
+ (out/'keymint-component-input.json').write_text(json.dumps({'probe_sha256':hashlib.sha256(probe.read_bytes()).hexdigest(),'source_sha256':hashlib.sha256((r/'fixtures/aosp-keymint-software/SoftwareCryptoProbe.cpp').read_bytes()).hexdigest(),'scope':'Original crypto component only; unknown vendor patch0, no Keystore or APK acceptance'},indent=2)+'\n')
+
 (out/'linux-build.prop').write_text(base_props+'\nro.product.cpu.abilist=x86_64\nro.product.cpu.abilist64=x86_64\nro.product.cpu.abilist32=\n')
 vendor['files']['/vendor/build.prop']['source']=str(out/'linux-build.prop')
 vendor['files']['/vendor/overlay/ArchTvPlatform/ArchTvPlatform.apk']={'source':str(overlay/'ArchTvPlatform.apk'),'context':'u:object_r:vendor_overlay_file:s0','mode':0o644}

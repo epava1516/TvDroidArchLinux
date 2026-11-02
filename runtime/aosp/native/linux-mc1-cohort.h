@@ -100,6 +100,27 @@ class LinuxMc1Cohort {
             if(auto result=StartVold(tick);!result.ok())return result;
         }
         if(apex_requested_) { if(auto result=StartApex(tick);!result.ok())return result; }
+        // Explicit immutable Linux diagnostic profile, not an Android readiness flag.
+        const char* keymint_profile="/vendor/etc/archtv-keymint-component";
+        struct stat profile_info{};
+        if(lstat(keymint_profile,&profile_info)==0) {
+            std::string profile;
+            if(!apex_requested_ || !S_ISREG(profile_info.st_mode) || profile_info.st_uid!=0 ||
+               !android::base::ReadFileToString(keymint_profile,&profile) || profile!="software-crypto-v1\n")
+                return android::base::Error()<<"Invalid Linux KeyMint diagnostic profile";
+            auto component=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","root","root","--",
+                "/system/bin/sh","-c","umask 077; /archtv/bin/archtv-keymint-probe write /data/local/tmp/archtv-mc1/keymint-private-test-state.bin > /data/local/tmp/archtv-mc1/keymint-component.txt 2>&1 && /archtv/bin/archtv-keymint-probe read /data/local/tmp/archtv-mc1/keymint-private-test-state.bin >> /data/local/tmp/archtv-mc1/keymint-component.txt 2>&1"});
+            if(!component.ok())return component.error();
+            auto* process=component->get();client_done_=false;client_ok_=false;
+            process->AddReapCallback([this](const siginfo_t& info){client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;});
+            services.AddService(std::move(*component));
+            if(auto started=process->ExecStart();!started.ok())return started;
+            if(auto waited=Wait(tick,[this]{return client_done_;},35);!waited.ok())return waited;
+            if(!client_ok_)return android::base::Error()<<"Original software KeyMint component failed; inspect actual output";
+            std::fprintf(stderr,"KEYMINT_COMPONENT_RETURNED REQUIRES_OUTPUT_VERIFICATION_NOT_KEYSTORE_OR_APK_ACCEPTANCE\n");
+            return {};
+        }
+        if(errno!=ENOENT)return android::base::Error()<<"Cannot inspect Linux KeyMint diagnostic profile";
         if(hardware_requested_)return apex_requested_ && selected_requested_ ? StartGraphics(tick) : StartHardware(tick);
         return {};
     }
