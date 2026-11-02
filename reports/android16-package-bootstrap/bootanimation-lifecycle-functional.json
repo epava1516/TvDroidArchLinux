@@ -37,5 +37,5 @@
     "internal ordered close",
     "ARM GMS DRM"
   ],
-  "next": "Integrate original MediaCommunicationService before MediaSessionService, following original SystemServer order; rerun normal user unlock and Markor launch, no checkpoint diagnostic."
+  "next": "Integrate original MediaCommunicationService after MediaSessionService and before readiness phases, following original SystemServer order; rerun normal user unlock and Markor launch, no checkpoint diagnostic."
 }

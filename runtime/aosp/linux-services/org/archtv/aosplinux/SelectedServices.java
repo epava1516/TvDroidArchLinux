@@ -487,6 +487,8 @@ public final class SelectedServices {
                 if(diagnostic.getState()==Thread.State.NEW) diagnostic.start();
                 start(manager,managerType,"com.android.server.audio.AudioService$Lifecycle");
                 start(manager,managerType,"com.android.server.media.MediaSessionService");
+                // Original SystemServer starts the Media module service before boot phases.
+                start(manager,managerType,"com.android.server.media.MediaCommunicationService");
                 System.err.println("ORIGINAL_NETWORK_SUBSYSTEM_STARTED REQUIRES_BINDER_OPERATIONS_NOT_INTERNET_ACCEPTANCE");
                 call(managerType,manager,"startBootPhase",new Class<?>[]{traceType,int.class},trace,storagePhase);
                 System.err.println("ORIGINAL_SELECTED_PHASE500_RETURNED NOT_BOOT_COMPLETED_OR_APP_ACCEPTANCE");

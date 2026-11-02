@@ -1,0 +1,37 @@
+{
+  "scope": "Original Media module integration and subsequent demonstrated supervisor lifecycle fault; no Markor launch accepted",
+  "candidate": 102,
+  "checkpoint": "/home/tv/recuperacion-archtv/28e8511c-4c9a-47ec-9f37-b99dd77b8ed6-markor-launch",
+  "result": {
+    "outer_exit": 1,
+    "native_complete_inventory_verified": true,
+    "elapsed_seconds": 151.65673780441284,
+    "active_loops": "",
+    "final_dm": []
+  },
+  "artifacts": {
+    "/home/tv/recuperacion-archtv/28e8511c-4c9a-47ec-9f37-b99dd77b8ed6-markor-launch/result.json": "5552d0d201bb92c8ced13b309666370035cd4aa373e884d3817a11d9d8804522",
+    "/home/tv/recuperacion-archtv/28e8511c-4c9a-47ec-9f37-b99dd77b8ed6-markor-launch/run.log": "2cf6ea55089ca52c1d8f91a15259b6d3f12a4eb5c71daa48989b58b289176273",
+    "/home/tv/recuperacion-archtv/28e8511c-4c9a-47ec-9f37-b99dd77b8ed6-markor-launch/completion-consumer.json": "277c944a9905ac9ce4bd5d5299832e894671f78a9d0fa5c9f0c82bbb67ee3e5b",
+    "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793647767861302394/android-log-live.jsonl": "7d82b7aaffb249b3cfc1fdf842b4ee65093f8780a5458e961c808b4afa0b4695",
+    "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/MediaCommunicationService.java": "81cc47858f337d0c78fa9f5d2fe965de927d63b853f494c1bcb7bcd8ae9df5f4",
+    "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/MediaCommunicationService.source.json": "c6ed81573b87a399bda6b8eb95720dc2e5d64e76ef88b23e1aa9e3dc0a03b216",
+    "/home/tv/.cache/archtv/aosp16-qpr2/apexd-study-1/apexd_main.cpp": "a96f16bde40557472955969bbca66bf384dd35993051898c272053a5099c2e61",
+    "/home/tv/.cache/archtv/aosp16-qpr2/apexd-study-1/apexd_lifecycle.cpp": "778476b728eedc4fe45171c73850be8dd8a9c516ed4f38684960f34ea771727f",
+    "/home/tv/.cache/archtv/aosp16-qpr2/apexd-study-1/sources.json": "521f1c6561e0784f9ac1143b606fee01757b5ace8c12666b5f83e2e0275498ed",
+    "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-102/source-inputs.json": "a4efadb1057a7772b870c6ec8241364227c0ff65aa97f634019d82c2cd93be6e"
+  },
+  "facts": [
+    "Original MediaCommunicationService started after MediaSessionService before readiness phases",
+    "Earlier IMediaCommunicationService null fatal not reproduced; selected-failure.txt empty",
+    "Original apexd exits CLD_EXITED0 at19:31:49.210, then coordinator marks entire cohort unhealthy",
+    "APEX41 externally verified; no Markor launch/user unlock accepted"
+  ],
+  "decision": "103 retain cohort on original apexd CLD_EXITED0 only after original ready and observed inventory gate. Source permits lazy shutdown after boot cleanup. Does not demonstrate service restart on demand or APK compatibility.",
+  "limits": [
+    "Future APEX lazy restart availability unproven",
+    "Boot completion/user unlock require independent readbacks",
+    "Internal ordered close open",
+    "R1-MAC permissive; ARM GMS DRM separate open"
+  ]
+}

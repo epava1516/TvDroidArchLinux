@@ -105,7 +105,7 @@ class LinuxMc1Cohort {
     }
     bool vold_cancelled() const { return vold_cancelled_; }
     bool apex_cancelled() const { return apex_cancelled_; }
-    bool healthy() const { return !manager_failed_ && (!aconfig_system_ || aconfig_system_->IsRunning() || aconfig_system_clean_exit_) && (!aconfig_mainline_ || aconfig_mainline_->IsRunning() || aconfig_mainline_clean_exit_) && (!audioserver_ || audioserver_->IsRunning()) && (!lmkd_ || lmkd_->IsRunning()) && (!netd_ || netd_->IsRunning()) && (!statsd_ || statsd_->IsRunning()) && (!health_ || health_->IsRunning()) && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && (bootanimation_->IsRunning() || bootanimation_clean_exit_))) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning()); }
+    bool healthy() const { return !manager_failed_ && (!aconfig_system_ || aconfig_system_->IsRunning() || aconfig_system_clean_exit_) && (!aconfig_mainline_ || aconfig_mainline_->IsRunning() || aconfig_mainline_clean_exit_) && (!audioserver_ || audioserver_->IsRunning()) && (!lmkd_ || lmkd_->IsRunning()) && (!netd_ || netd_->IsRunning()) && (!statsd_ || statsd_->IsRunning()) && (!health_ || health_->IsRunning()) && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && (bootanimation_->IsRunning() || bootanimation_clean_exit_))) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning() || apex_clean_exit_); }
     android::base::Result<void> Close(const Tick& tick) {
         using namespace android::init;
         if(!active_) return {};
@@ -179,7 +179,12 @@ class LinuxMc1Cohort {
         apexd_->AddReapCallback([this](const siginfo_t& info) {
             std::fprintf(stderr,"APEX_DAEMON_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
             if(closing_ && stop_ && info.si_code==CLD_KILLED && info.si_status==SIGKILL)apex_cancelled_=true;
-            if(!closing_)manager_failed_=true;
+            // Original apexd enables lazy Binder shutdown after boot cleanup.
+            // Its normal exit does not unmount the verified active modules.
+            apex_clean_exit_=apex_inventory_observed_ && info.si_code==CLD_EXITED && info.si_status==0
+                && android::base::GetProperty("apexd.status","")=="ready";
+            std::fprintf(stderr,"APEX_LAZY_EXIT_OBSERVED clean=%d NOT_LAZY_RESTART_OR_APK_ACCEPTANCE\n",apex_clean_exit_);
+            if(!closing_ && !apex_clean_exit_)manager_failed_=true;
         });
         if(auto result=apexd_->Start();!result.ok())return result;
         std::fprintf(stderr,"APEX_DAEMON_STARTED pid=%d NOT_REGISTERED\n",apexd_->pid());
@@ -222,6 +227,7 @@ class LinuxMc1Cohort {
         // Early completeness gate only. Existing independent verification still
         // must match every module/version/XML/mount; count is not acceptance.
         if(active_count!=41)return android::base::Error()<<"Original active APEX inventory incomplete: "<<active_count<<" expected41";
+        apex_inventory_observed_=true;
         std::fprintf(stderr,"APEX_ORIGINAL_CLIENT_RETURNED REQUIRES_EXTERNAL_COMPLETE_INVENTORY_CHECK\n");
         if(selected_requested_) {
             // Linux has already activated the complete APEX set. Preserve that
@@ -819,6 +825,7 @@ class LinuxMc1Cohort {
     bool bootanimation_started_=false,bootanimation_clean_exit_=false;
     bool missing_done_=false,missing_ok_=false;
     bool apex_cancelled_=false,vold_cancelled_=false;
+    bool apex_inventory_observed_=false,apex_clean_exit_=false;
     bool active_=false,closing_=false,manager_failed_=false,client_done_=false,client_ok_=false;
 };
 }

@@ -1,0 +1,36 @@
+{
+  "scope": "Original selected phase1000 and lazy lifecycle progression, not Markor launch or security acceptance",
+  "candidate": 103,
+  "run_id": "b35e7242-e7cc-4e83-a1ac-0445a22d63a5",
+  "checkpoint": "/home/tv/recuperacion-archtv/b35e7242-e7cc-4e83-a1ac-0445a22d63a5-markor-launch",
+  "result": {
+    "outer_exit": 1,
+    "native_complete_inventory_verified": true,
+    "elapsed_seconds": 198.70127367973328,
+    "active_loops": "",
+    "final_dm": []
+  },
+  "artifacts": {
+    "/home/tv/recuperacion-archtv/b35e7242-e7cc-4e83-a1ac-0445a22d63a5-markor-launch/run.log": "31a0f459aac28430bf238316d6367dd91c09186a901978b197008404dd586998",
+    "/home/tv/recuperacion-archtv/b35e7242-e7cc-4e83-a1ac-0445a22d63a5-markor-launch/result.json": "ab7b0d901c96ebfebc80fc2fd1d93be9c691d57c166fef7480008861e1e381b4",
+    "/home/tv/recuperacion-archtv/b35e7242-e7cc-4e83-a1ac-0445a22d63a5-markor-launch/completion-consumer.json": "0af1b6244197b47a7f4f8b22d8830cdb4e60791e255a725713efabf9a051069d",
+    "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793648111120373541/android-log-live.jsonl": "b4bc67d919fdba4b9ea9337100f83b87f234dc309ab9c3f9d8fc759c3c3da23d",
+    "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793648111120373541/android-log-capture.json": "8775d0098936b67be678dba8e92dfcae0485a21704bcf46055a7b66e0955c4da",
+    "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-103/source-inputs.json": "43ae4effb33d3ca20eab681b14802fbf726a68cb9029aa8342b8dc318b9c46a9"
+  },
+  "proved": [
+    "Bootanimation exits0 with original exit request, accepted",
+    "apexd exits0 after original ready and inventory gate, accepted; restart availability still untested",
+    "Original phase1000 traverses MediaSession/MediaCommunication and StagingManager, original init thread pool shuts down",
+    "Original UserController invokes LockSettings unwrap for unsecured user0; rejected ctl.interface_start=aidl/android.service.gatekeeper.IGateKeeperService demonstrates missing original GateKeeper service admission"
+  ],
+  "not_accepted": [
+    "Actual user RUNNING_UNLOCKED",
+    "Markor launch/UI/input/note/persistence/close/reopen",
+    "APEX lazy restart",
+    "R1-MAC permissive",
+    "Internal ordered close",
+    "ARM GMS DRM"
+  ],
+  "next": "Integrate original gatekeeperd and required real security backends (GateKeeper HAL/Keystore/KeyMint) based on source/runtime contracts, no fake credentials, auth tokens or keys."
+}
