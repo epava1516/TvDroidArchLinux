@@ -662,6 +662,13 @@ class LinuxMc1Cohort {
             // ART GetSupportedInstructionSets reads this original build configuration.
             if(zygote_->args()!=std::vector<std::string>{"/system/bin/app_process64","-Xzygote","/system/bin","--zygote","--socket-name=zygote"})
                 return android::base::Error()<<"Unsupported Linux application Zygote profile";
+            for(const auto& [name,value]:std::vector<std::pair<std::string,std::string>>{
+                {"ro.product.cpu.abilist","x86_64"},{"ro.product.cpu.abilist64","x86_64"},
+                {"ro.product.cpu.abilist32",""}}) {
+                if(android::base::GetProperty(name,"")!=value)
+                    return android::base::Error()<<"Declared ABI conflicts with actual single-64-bit Zygote: "<<name;
+            }
+            std::fprintf(stderr,"SELECTED_ABI_PROFILE actual_original_properties=x86_64 abi32_empty=1 NOT_32BIT_OR_ARM_COMPATIBILITY\n");
             const auto configured_zygote=android::base::GetProperty("ro.zygote","");
             if(!configured_zygote.empty() && configured_zygote!="zygote64")
                 return android::base::Error()<<"Existing ro.zygote conflicts with actual selected profile";

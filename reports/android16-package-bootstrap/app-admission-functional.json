@@ -1,0 +1,248 @@
+{
+  "scope": "Original application admission, coherent single64 properties and intact Markor install/readback; not launch, UI, persistence or MAC acceptance",
+  "run_id": "fc3b93f5-1d09-45ec-894f-8f588abf2e3c",
+  "candidate": 90,
+  "checkpoint": "/home/tv/recuperacion-archtv/fc3b93f5-1d09-45ec-894f-8f588abf2e3c-markor-launch",
+  "result": {
+    "outer_exit": 1,
+    "elapsed_seconds": 151.8798050880432,
+    "native_complete_inventory_verified": true,
+    "active_loops": "",
+    "final_dm": []
+  },
+  "hashes": {
+    "/home/tv/recuperacion-archtv/fc3b93f5-1d09-45ec-894f-8f588abf2e3c-markor-launch/before.json": "6f1cdeb2d654cdd4eaeaee88f525c28dcfa2b17acad9ca5d690dbc72bef80c46",
+    "/home/tv/recuperacion-archtv/fc3b93f5-1d09-45ec-894f-8f588abf2e3c-markor-launch/result.json": "5ec9cef29c25f56bb77a6173be36af31f176e67eff5728f02e8305d3e0281236",
+    "/home/tv/recuperacion-archtv/fc3b93f5-1d09-45ec-894f-8f588abf2e3c-markor-launch/run.log": "8abb3cae9263f601e620196ab6e6ca70282a3b1a8cce88d773d76fb2eac82189",
+    "/home/tv/recuperacion-archtv/fc3b93f5-1d09-45ec-894f-8f588abf2e3c-markor-launch/completion-consumer.json": "6db18893c182b0a9d9c553d7e38581bdc8661e1f841d319369f32187ab072ae1",
+    "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793634851524890188/android-log-live.jsonl": "7293f63560374cf6f38913af4450007169ae8f45fefb3a56b529a56a1c7a2019",
+    "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793634851524890188/app-start-observations.json": "22d080676b7c41ba609f1ac1ed30290a170d3255f0d4d5439f46c079803d616f",
+    "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-90/source-inputs.json": "3121278d5cbf9d230135e30ee83205ea607ee8051b48dd769b6447873e76667a"
+  },
+  "actual_app_identity_samples": [
+    {
+      "pid": 1643,
+      "package": "com.android.permissioncontroller",
+      "samples": [
+        {
+          "age_seconds": 2.1168632409971906,
+          "context": "u:r:permissioncontroller_app:s0:c95,c256,c512,c768",
+          "cmdline": "com.android.permissioncontroller                                             ",
+          "status": [
+            "Name:\tssioncontroller",
+            "State:\tR (running)",
+            "Uid:\t10095\t10095\t10095\t10095",
+            "Gid:\t10095\t10095\t10095\t10095",
+            "Groups:\t9997 20095 50095 ",
+            "NSpid:\t1643",
+            "VmRSS:\t  167276 kB",
+            "Threads:\t12",
+            "CapInh:\t0000000000000000",
+            "CapPrm:\t0000000000000000",
+            "CapEff:\t0000000000000000",
+            "CapBnd:\t0000000000000000",
+            "CapAmb:\t0000000000000000",
+            "NoNewPrivs:\t1",
+            "Seccomp:\t0"
+          ],
+          "cgroup": "0::/apps/uid_10095/pid_1643",
+          "error": null
+        },
+        {
+          "age_seconds": 7.02020361898758,
+          "context": "u:r:permissioncontroller_app:s0:c95,c256,c512,c768",
+          "cmdline": "com.android.permissioncontroller                                             ",
+          "status": [
+            "Name:\tssioncontroller",
+            "State:\tS (sleeping)",
+            "Uid:\t10095\t10095\t10095\t10095",
+            "Gid:\t10095\t10095\t10095\t10095",
+            "Groups:\t9997 20095 50095 ",
+            "NSpid:\t1643",
+            "VmRSS:\t  180988 kB",
+            "Threads:\t22",
+            "CapInh:\t0000000000000000",
+            "CapPrm:\t0000000000000000",
+            "CapEff:\t0000000000000000",
+            "CapBnd:\t0000000000000000",
+            "CapAmb:\t0000000000000000",
+            "NoNewPrivs:\t1",
+            "Seccomp:\t0"
+          ],
+          "cgroup": "0::/apps/uid_10095/pid_1643",
+          "error": null
+        }
+      ]
+    },
+    {
+      "pid": 1705,
+      "package": "com.android.settings",
+      "samples": [
+        {
+          "age_seconds": 2.0376923069998156,
+          "context": "u:r:system_app:s0",
+          "cmdline": "com.android.settings                                                         ",
+          "status": [
+            "Name:\tndroid.settings",
+            "State:\tS (sleeping)",
+            "Uid:\t1000\t1000\t1000\t1000",
+            "Gid:\t1000\t1000\t1000\t1000",
+            "Groups:\t1000 1007 1065 1077 1079 1096 3001 3002 3003 3007 9997 ",
+            "NSpid:\t1705",
+            "VmRSS:\t  168740 kB",
+            "Threads:\t13",
+            "CapInh:\t0000000000000000",
+            "CapPrm:\t0000000000000000",
+            "CapEff:\t0000000000000000",
+            "CapBnd:\t0000000000000000",
+            "CapAmb:\t0000000000000000",
+            "NoNewPrivs:\t1",
+            "Seccomp:\t0"
+          ],
+          "cgroup": "0::/system/uid_1000/pid_1705",
+          "error": null
+        },
+        {
+          "age_seconds": 7.039478301987401,
+          "context": "u:r:system_app:s0",
+          "cmdline": "com.android.settings                                                         ",
+          "status": [
+            "Name:\tndroid.settings",
+            "State:\tS (sleeping)",
+            "Uid:\t1000\t1000\t1000\t1000",
+            "Gid:\t1000\t1000\t1000\t1000",
+            "Groups:\t1000 1007 1065 1077 1079 1096 3001 3002 3003 3007 9997 ",
+            "NSpid:\t1705",
+            "VmRSS:\t  171416 kB",
+            "Threads:\t14",
+            "CapInh:\t0000000000000000",
+            "CapPrm:\t0000000000000000",
+            "CapEff:\t0000000000000000",
+            "CapBnd:\t0000000000000000",
+            "CapAmb:\t0000000000000000",
+            "NoNewPrivs:\t1",
+            "Seccomp:\t0"
+          ],
+          "cgroup": "0::/system/uid_1000/pid_1705",
+          "error": null
+        }
+      ]
+    }
+  ],
+  "original_observations": [
+    {
+      "tag": "RoleService",
+      "message": "Granting default roles...",
+      "actual_sender_pid_uid_gid": [
+        468,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "ActivityManager",
+      "message": "Slow operation: 174ms so far, now at attachApplicationLocked: before bindApplication",
+      "actual_sender_pid_uid_gid": [
+        468,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "ActivityManager",
+      "message": "Slow operation: 174ms so far, now at attachApplicationLocked: immediately before bindApplication",
+      "actual_sender_pid_uid_gid": [
+        468,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "ActivityManager",
+      "message": "Slow operation: 175ms so far, now at attachApplicationLocked: immediately after bindApplication",
+      "actual_sender_pid_uid_gid": [
+        468,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "ActivityManager",
+      "message": "Slow operation: 175ms so far, now at attachApplicationLocked: after updateLruProcessLocked",
+      "actual_sender_pid_uid_gid": [
+        468,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "ActivityManager",
+      "message": "Slow operation: 175ms so far, now at attachApplicationLocked: after updateOomAdjLocked",
+      "actual_sender_pid_uid_gid": [
+        468,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "RoleService",
+      "message": "Granting default roles...",
+      "actual_sender_pid_uid_gid": [
+        468,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "ActivityManager",
+      "message": "runStartUser(): userId=0, parentUserId=0, currentUserId=0, isProfile=false, isVisibleProfile=false, display=-1, waiter=ProgressWaiter[userId=0, finished=false]",
+      "actual_sender_pid_uid_gid": [
+        468,
+        1000,
+        1000
+      ]
+    },
+    {
+      "tag": "UserController",
+      "message": "Not unlocking user 0 yet because boot hasn't completed",
+      "actual_sender_pid_uid_gid": [
+        468,
+        1000,
+        1000
+      ]
+    }
+  ],
+  "markor_outputs": {
+    "markor-postcommit-path.txt": "package:/data/app/~~Z3ZRDYrOBeUsQxiU2b7b_A==/net.gsantner.markor-5bVXVoLT-1-a59Ow9Eu_KA==/base.apk\n",
+    "markor-postcommit-dump.txt": {
+      "source": "checkpoint/run.log PACKAGE_ORIGINAL_OUTPUT markor-postcommit-dump.txt",
+      "characters": 324497,
+      "sha256_utf8": "0d16969ad8a1631b62b4b4f837c4734887e9ccac031f67c3a49fbc26d8302648"
+    },
+    "markor-installed-bytes.txt": "SOURCE c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440  /data/local/tmp/markor.apk\nINSTALLED c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440  /data/app/~~Z3ZRDYrOBeUsQxiU2b7b_A==/net.gsantner.markor-5bVXVoLT-1-a59Ow9Eu_KA==/base.apk\n",
+    "markor-install.txt": "Success: created install session [1685623402]\nSuccess: streamed 11861047 bytes\nSuccess\n",
+    "markor-path.txt": "package:/data/app/~~Z3ZRDYrOBeUsQxiU2b7b_A==/net.gsantner.markor-5bVXVoLT-1-a59Ow9Eu_KA==/base.apk\n",
+    "markor-user-start.txt": "",
+    "markor-resolve.txt": "",
+    "markor-launch.txt": ""
+  },
+  "source_evidence": [
+    "/home/tv/.cache/archtv/aosp16-qpr2/vold-study-1/sources.json",
+    "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/libprocessgroup.source.json",
+    "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/cgroup_map_write.source.json",
+    "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/ZygoteProcess.source.json"
+  ],
+  "decisions": [
+    "Original NICE40 inherited by cohort; no global scheduler changes.",
+    "Original cgroup v2 apps/system descriptor mode0775/system identity applied only to dedicated owned subtree and cgroup.procs. Original libprocessgroup creates actual perUID/perPID kernel groups. Per-app memory controller activation not established; parent MemoryMax remains4G.",
+    "Real vendor property loader declares implemented x86_64/single64 profile, original property readback guard before class loading. Original GSI bytes intact; 32bit/ARM compatibility not implied."
+  ],
+  "limits": [
+    "SELinux permissive/policyload2; process labels/cap0/NNP1 do not prove authorization or isolation. Observed app Seccomp0 remains security work.",
+    "No JNI FatalError, failedattach or AndroidRuntime FATAL in bounded90 log, not general stability.",
+    "Markor bytes identical after original PMS installation; existing temporary installation evidence reinforced, no UI or full APK compatibility accepted.",
+    "Original UserController explicitly waits for boot complete. Native budget150s expires; not a proven deadlock. No manual boot flags or permission changes.",
+    "Installer starts/streams/commits original APK. Data remains private tmpfs; no persistence between cohorts."
+  ],
+  "next": "One bounded longer integrated run to allow original boot/user lifecycle and launch. Keep coherent outer watchdogs; original dumpsys state before user wait. If still blocked diagnose actual WMS/AMS prerequisite; no boot flag mutation."
+}

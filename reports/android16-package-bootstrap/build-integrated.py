@@ -40,6 +40,11 @@ base=r/'dist/aosp16/sf-cohort-build-32';vendor=json.loads((base/'vendor-inputs.j
 for key,value in vendor['files'].items():
  if key=='/vendor/framework/archtv-selected-services.jar':value['source']=str(entry/'archtv-selected-services.jar')
  if key=='/vendor/etc/init/archtv-selected-services.rc':value['source']=str(entry/'selected-services.rc')
+# This Linux profile runs one real 64-bit Zygote. Preserve GSI bytes, but
+# declare the implemented device ABI set through the original property loader.
+base_props=Path(vendor['files']['/vendor/build.prop']['source']).read_text()
+(out/'linux-build.prop').write_text(base_props+'\nro.product.cpu.abilist=x86_64\nro.product.cpu.abilist64=x86_64\nro.product.cpu.abilist32=\n')
+vendor['files']['/vendor/build.prop']['source']=str(out/'linux-build.prop')
 vendor['files']['/vendor/overlay/ArchTvPlatform/ArchTvPlatform.apk']={'source':str(overlay/'ArchTvPlatform.apk'),'context':'u:object_r:vendor_overlay_file:s0','mode':0o644}
 vendor['files']['/vendor/overlay/config/config.xml']={'source':str(r/'runtime/aosp/platform-overlay/overlay-config.xml'),'context':'u:object_r:vendor_overlay_file:s0','mode':0o644}
 profile=json.loads((r/'runtime/aosp/linux-services/initial-apk-profile.json').read_text())

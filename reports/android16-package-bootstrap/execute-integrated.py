@@ -21,6 +21,10 @@ text=text.replace("'--display-integration'","'--packages-integration'").replace(
 text=text.replace('root.mkdir()\n',"""root.mkdir()
 import importlib.util
 factory_caps=int(next(l.split(':',1)[1].strip() for l in Path('/proc/self/status').read_text().splitlines() if l.startswith('CapEff:')),16)
+# Original early-init RLIMIT_NICE: inherited by original Bionic services/apps.
+import resource
+resource.setrlimit(resource.RLIMIT_NICE,(40,40))
+assert resource.getrlimit(resource.RLIMIT_NICE)==(40,40)
 spec=importlib.util.spec_from_file_location('apex_devices',r/'reports/android16-apex-bootstrap/devices.py')
 devices=importlib.util.module_from_spec(spec);spec.loader.exec_module(devices)
 """,1)
@@ -93,6 +97,17 @@ for node in sorted(health_class.iterdir()):
 text=text.replace("for p in sorted((r/'dist/aosp16/factory-inputs-3').glob('*.payload.img')):","devices.mount_sysfs(root)\n"+health_mounts+"\nfor p in sorted((r/'dist/aosp16/factory-inputs-3').glob('*.payload.img')):",1)
 text=text.replace("mount('-t','proc','proc',root/'proc')","devices.enable_loop_controls(root,out)\nmount('-t','proc','proc',root/'proc')")
 text=text.replace("cgbase=Path('/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1')", "unit_cgroup=Path('/proc/self/cgroup').read_text().split('0::',1)[1].strip()\nassert unit_cgroup.startswith('/system.slice/archtv-apex-') and unit_cgroup.endswith('.service')\ncgbase=Path('/sys/fs/cgroup'+unit_cgroup)/'archtv-apex'")
+# Original cgroup-v2 system/app hierarchy for the already owned cohort only.
+# CgroupSetup cannot be replayed globally: this Linux factory delegates its
+# existing kernel subtree, using the original descriptor mode/identity.
+cgroup_marker="(cg/'system').mkdir();os.chmod(cg/'system',0o775);os.chown(cg/'system',1000,1000)"
+assert cgroup_marker in text
+text=text.replace(cgroup_marker,"""os.chmod(cg,0o775);os.chown(cg,1000,1000)
+os.chmod(cg/'cgroup.procs',0o775);os.chown(cg/'cgroup.procs',1000,1000)
+for kind in ['system','apps']:
+ group=cg/kind;group.mkdir();os.chmod(group,0o775);os.chown(group,1000,1000)
+ os.chmod(group/'cgroup.procs',0o775);os.chown(group/'cgroup.procs',1000,1000)
+""",1)
 network_code="""import importlib.util
 network_spec=importlib.util.spec_from_file_location('network_boundary',r/'reports/android16-network-bootstrap/boundary.py')
 network=importlib.util.module_from_spec(network_spec);network_spec.loader.exec_module(network)
