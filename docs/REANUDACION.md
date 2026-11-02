@@ -1,45 +1,75 @@
-# Reanudación por ejecución
+# Reanudación y consumo por ejecución
 
-El único emisor del experimento integrado es ExecStopPost del runner independiente,
-una vez concluida su limpieza. El coordinador de consola no envía una segunda
-notificación. Su cierre y restauración de VT tienen evidencia separada; un evento
-del runner no acredita esa restauración ni ejecución posterior del modelo.
+## Contrato vigente
 
-El cliente genera UUID y directorio antes de arrancar el runner. El manifiesto
-inmutable vincula nombre, unidad propietaria, checkpoint y destino explícito
-ARCHTV_CODEX_REMOTE/ARCHTV_CODEX_THREAD. El runner recibe ARCHTV_RUN_CHECKPOINT.
-El puntero apex-current-checkpoint queda sólo para navegación humana.
+Cada ejecución tiene un manifiesto de sólo lectura con UUID, nombre real, unidad
+propietaria, checkpoint, destino y `active_owner` inmutables. El runner recibe
+ARCHTV_RUN_CHECKPOINT. `apex-current-checkpoint` es sólo navegación humana.
+Un único ExecStopPost recoge el resultado después de la limpieza del runner;
+el coordinador de consola conserva aparte su restauración de VT, sin notificar.
 
-Un flock exclusivo protege un registro reemplazado atómicamente con fsync.
-Se registra sending antes de contactar Codex: queued sólo acredita aceptación
-de cola; no acredita que la continuación se ejecutó. Un fallo/timeout o sending
-abandonado es indeterminado y nunca se reenvía automáticamente. Contrastar UUID
-con la cola/hilo y registrar recepción/ejecución efectiva antes de decidir una
-reentrega manual. No existe garantía distribuida de exactamente una entrega;
-se garantiza como máximo un intento automático por ejecución. El socket fijado
-puede caducar al reiniciar Codex: se conserva el error, sin descubrir otro destino.
+**El consumidor predeterminado es la ejecución activa, no la cola.** Un único
+flock de ejecución serializa callback, consumo, cesión y reclamación. El callback
+conserva siempre completion-result.json, incluso sin mensaje. El consumidor queda
+en completion-consumer.json. completion-delivery.json registra el envío o su
+supresión. Los reemplazos son atómicos, con fsync de archivo y directorio.
 
-Si el coordinador falla antes de crear el runner, no hay evento automático:
-consultar su checkpoint y journal. No se fabrica un resultado terminal.
-Cada aviso es breve y nombra el experimento real. No hay timers ni sondeos del
-modelo. Tests con sender simulado: `python tests/automation/test_run_completion.py`;
-no envían mensajes al hilo. Cubren éxito, fallo, ocho callbacks concurrentes,
-repetición, silencio no terminal y entrega indeterminada.
+Procedimiento del agente para cada manifiesto explícito (no usar el puntero global):
 
-## Auditoría de migración 2026-11-02
+1. Al retomar, contrastar manifiesto, Git, procesos y resultado; leer consumer y
+   delivery antes de procesarlo. Si está consumed, no repetir trabajo ni reencolar.
+2. Con propiedad active, procesar el resultado y registrar:
+   `python scripts/run_completion.py MANIFEST consume active:UUID`.
+   Puede hacerse antes del callback si result.json ya contiene outer_exit terminal.
+   Los callbacks posteriores conservarán la evidencia y guardarán consumed sin envío.
+3. Sólo si el agente deja de observar esa ejecución y necesita una continuación,
+   ceder explícitamente: `... MANIFEST handoff active:UUID`.
+   Un resultado consumido no admite cesión. `claim-active` recupera una cesión
+   todavía no enviada antes de que un nuevo turno empiece a procesarla.
+4. Si el estado es sending/queued/indeterminate, no reclamar ni reenviar: contrastar
+   la entrega real con la cola. queued sólo acredita aceptación, no recepción ni
+   ejecución. Una notificación histórica ya procesada debe descartarse como trabajo
+   redundante al entrar, conservando su evidencia; no ejecutar de nuevo el experimento.
 
-Checkpoint: /home/tv/recuperacion-archtv/20261102T005219Z-resume-repair.
-HEAD inicial 9e18bdd, sincronizado. Pendientes runtime y doce históricos conservados.
-Causa: plantilla apexd usada también para Markor, puntero global mutable,
-comprobación de existencia sin lock y fallback de segundo emisor.
-El callback cacheado apex-completion.py se archivó y quedó inerte, para que
-un reinicio manual de unidades históricas no vuelva a llenar la cola cancelada.
-Los avisos históricos tienen ejecuciones distintas: no se eliminan como duplicados.
+Además existe un interruptor de envío: por defecto NO está presente
+`/home/tv/.cache/archtv/completion-notifications.enabled`.
+Incluso tras handoff, su ausencia conserva resultado y notifications_disabled sin
+contactar Codex. **Permanece desactivado tras la revisión del 2 de noviembre.**
+Activarlo no cede el consumo de ningún run: ambas condiciones son necesarias.
+Un callback repetido puede entregar un resultado cedido antes silenciado, pero
+nunca uno active/consumed. No hay reintentos de intentos ambiguos. Un crash tras
+sending impide otro intento automático. No existe garantía distribuida de entrega
+exactamente una vez; hay un consumidor local y como máximo un intento automático.
+El socket fijado puede caducar: no se descubre otro destino ni se reenvía.
 
-Productores encontrados: callback cacheado APEX; ExecStopPost del cliente integrado;
-fallback del coordinador; wake-on-package.py (pidfd de empaquetado ya concluido);
-resume-after-boot.py (servicio archtv-kernel-boot-resume deshabilitado, no activo).
-Unidades APEX históricas fallidas son transitorias, no activas, sin Restart.
-No timers archtv activos. El watcher nativo de Input captura evidencia, no envía
-mensajes. No hay herramienta general automation_update disponible en esta sesión;
-no se afirma haber inspeccionado automatizaciones externas no accesibles.
+Si falla el coordinador antes de crear el runner no hay evento automático;
+consultar su checkpoint/journal. No se fabrica resultado terminal. No hay timers,
+sondeos del modelo ni mensajes de prueba al hilo.
+
+## Evidencias y límites
+
+`python tests/automation/test_run_completion.py`: éxito, fallo, ocho callbacks
+concurrentes, repetición, no terminal, entrega indeterminada, activo con resultado
+sin mensaje, consumo antes del callback, envíos desactivados, recuperación de
+cesión sin envío y carrera callbacks/consumo activo. Sender simulado exclusivamente.
+
+Checkpoint de corrección inicial: /home/tv/recuperacion-archtv/20261102T005219Z-resume-repair.
+Checkpoint de coordinación: /home/tv/recuperacion-archtv/20261102T011336Z-result-consumer.
+La corrección inicial sólo impedía duplicar *entregas*, pero cada runner seguía
+encolando aunque el turno activo ya lo observase. Ésta era la acumulación restante:
+los UUID distintos eran resultados reales, no callbacks necesariamente duplicados.
+
+Se contrastaron los tres runs fc258592, 263a1327 y 71fdde53 con sus manifiestos,
+resultados y recibos queued. Los tres resultados quedaron marcados consumed en sus propios checkpoints, con evidencia de migración; sus recibos queued se conservan. Esos recibos no prueban su presencia actual en cola.
+El CLI instalado publica thread/queue/list y thread/queue/delete en su esquema
+experimental. El intento de consulta mediante app-server proxy agotó initialize;
+no envió ningún delete. Estado actual de esa cola: desconocido. No se tocaron bases
+de datos internas ni se afirma haber cancelado los mensajes previos.
+
+Productores auditados: callback APEX cacheado (archivado e inerte), ExecStopPost
+integrado (único emisor actual), antiguo fallback del coordinador (retirado),
+wake-on-package.py (empaquetado concluido), resume-after-boot.py (servicio deshabilitado).
+Unidades históricas APEX fallidas son transitorias, sin Restart. No hay timers ni
+unidades archtv ejecutándose al iniciar esta revisión. El watcher de Input sólo
+captura evidencia. No hay herramienta general automation_update en esta sesión;
+no se atribuye inspección de automatizaciones externas inaccesibles.

@@ -19,3 +19,11 @@ Rules:
 - Actualizar el grafo antes de cerrar un avance. No usar force-push.
 - Mantener los hitos de ROADMAP.md ligados a pruebas y evidencias; un commit o un
   nodo nuevo de Graphify no demuestra que una funcionalidad esté completada.
+
+## Continuidad de pruebas
+
+Antes de procesar un aviso, contrastar su manifiesto y completion-consumer.json.
+Si ya está consumed, no repetir el trabajo. Seguir [el protocolo de consumo](docs/REANUDACION.md):
+propiedad activa por defecto, consumo registrado por UUID y cesión explícita antes
+de pedir una continuación. No activar envíos ni ceder resultados mientras el turno
+activo los observa. No interpretar queued como ejecución efectiva.
