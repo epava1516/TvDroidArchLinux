@@ -27,7 +27,7 @@ devices=importlib.util.module_from_spec(spec);spec.loader.exec_module(devices)
 text=text.replace("elif p.is_file():shutil.copyfile(p,root/'apex'/p.name)","elif p.is_file() and p.name!='apex-info-list.xml':shutil.copyfile(p,root/'apex'/p.name)")
 # Only top-level roots from pinned original init.rc. Vold creates user dirs,
 # CE alias mounts and original permission data; no user metadata is seeded.
-roots=[('misc/stats-active-metric',0o770,1066,1000),('misc/stats-data',0o770,1066,1000),('misc/stats-data/restricted-data',0o770,1066,1000),('misc/stats-service',0o770,1066,1000),('misc/train-info',0o770,1066,1000),('dalvik-cache',0o771,0,0),('misc/vold',0o700,0,0),('misc/profiles',0o771,1000,1000),('misc/profiles/cur',0o771,1000,1000),('misc/profiles/ref',0o771,1000,1000),('misc/apexdata',0o711,0,0),('system/users',0o775,1000,1000),('media',0o550,1023,1023),('misc_ce',0o551,1000,9998),('system_ce',0o550,1000,1000),('user_de',0o511,1000,1000),('vendor_ce',0o551,0,0),('vendor_de',0o551,0,0)]
+roots=[('misc/net',0o750,0,2000),('misc/stats-active-metric',0o770,1066,1000),('misc/stats-data',0o770,1066,1000),('misc/stats-data/restricted-data',0o770,1066,1000),('misc/stats-service',0o770,1066,1000),('misc/train-info',0o770,1066,1000),('dalvik-cache',0o771,0,0),('misc/vold',0o700,0,0),('misc/profiles',0o771,1000,1000),('misc/profiles/cur',0o771,1000,1000),('misc/profiles/ref',0o771,1000,1000),('misc/apexdata',0o711,0,0),('system/users',0o775,1000,1000),('media',0o550,1023,1023),('misc_ce',0o551,1000,9998),('system_ce',0o550,1000,1000),('user_de',0o511,1000,1000),('vendor_ce',0o551,0,0),('vendor_de',0o551,0,0)]
 root_code="\n".join("p=root/'data'/"+repr(name)+";p.mkdir(parents=True,exist_ok=True);os.chmod(p,"+str(mode)+");os.chown(p,"+str(uid)+","+str(gid)+")" for name,mode,uid,gid in roots)
 apk_path=Path('/home/tv/.cache/archtv/apk/real-app-candidates/net.gsantner.markor-v164-2026.10.0-flavorDefault-release.apk')
 apk_sha='c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440'
@@ -57,10 +57,16 @@ for node in sorted(health_class.iterdir()):
 text=text.replace("for p in sorted((r/'dist/aosp16/factory-inputs-3').glob('*.payload.img')):","devices.mount_sysfs(root)\n"+health_mounts+"\nfor p in sorted((r/'dist/aosp16/factory-inputs-3').glob('*.payload.img')):",1)
 text=text.replace("mount('-t','proc','proc',root/'proc')","devices.enable_loop_controls(root,out)\nmount('-t','proc','proc',root/'proc')")
 text=text.replace("cgbase=Path('/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1')", "unit_cgroup=Path('/proc/self/cgroup').read_text().split('0::',1)[1].strip()\nassert unit_cgroup.startswith('/system.slice/archtv-apex-') and unit_cgroup.endswith('.service')\ncgbase=Path('/sys/fs/cgroup'+unit_cgroup)/'archtv-apex'")
+network_code="""import importlib.util
+network_spec=importlib.util.spec_from_file_location('network_boundary',r/'reports/android16-network-bootstrap/boundary.py')
+network=importlib.util.module_from_spec(network_spec);network_spec.loader.exec_module(network)
+network.prepare(root,out)
+"""
+text=text.replace("selinux=root/'sys/fs/selinux';",network_code+"\nselinux=root/'sys/fs/selinux';",1)
 text=text.replace("stdin_fd=os.open(root/'dev/null'", "monitor_log=(out/'device-monitor.log').open('w')\nmonitor=subprocess.Popen([sys.executable,str(r/'reports/android16-apex-bootstrap/devices.py'),str(root),str(out),str(os.getpid())],stdout=monitor_log,stderr=subprocess.STDOUT)\nprint('APEX_DEVICE_MONITOR_OWNED pid='+str(monitor.pid),flush=True)\nstdin_fd=os.open(root/'dev/null'",1)
 text=text.replace("log_observer=None;observed_logs=[];log_stop=False", "live_log=(out/'android-log-live.jsonl').open('w')\nlog_observer=None;observed_logs=[];log_stop=False")
 text=text.replace('observed_logs.append(item)',"observed_logs.append(item);live_log.write(json.dumps(item)+'\\n');live_log.flush()")
-text=text.replace('log_stop=True\n','monitor.terminate();monitor.wait(timeout=3);monitor_log.close()\nlog_stop=True\n',1)
+text=text.replace('log_stop=True\n','monitor.terminate();monitor.wait(timeout=12);monitor_log.close()\nlog_stop=True\n',1)
 text=text.replace("os.chown(root/'data/local/tmp/archtv-mc1',2000,2000)","os.chown(root/'data/local/tmp/archtv-mc1',2000,1000);os.chmod(root/'data/local/tmp/archtv-mc1',0o750)")
 # The existing graphics verifier retains its eight exact service identities.
 # Observe apexd identities in the same real /proc sampling branch.

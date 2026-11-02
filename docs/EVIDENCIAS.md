@@ -474,3 +474,8 @@ estadísticas incompleto, error256 truncado detectado, FD denegado conservado.
 [Estado posterior](../reports/android16-hwmanager-cohort/host-post-run.json) sin procesos
 ni loops; las limitaciones REA/audit siguen aplicándose. FCM desconocido/max-level8
 no acredita perfil moderno; fuentes originales fijadas y decisión gráfica pendiente.
+
+## Red original · cargadores BPF, alcance parcial
+
+Actualización 2026-11-02 · [Cargadores BPF AOSP originales](../reports/android16-network-bootstrap/functional.json): Mainline no-root y platform terminan0, con43 programas/59 mapas propios y cierre comprobado; sysctls globales conservados. La cohorte sale1 porque netd exige la preparación original de namespaces/configuración APEX. Se integra ese ciclo sin readiness manual. No hay netd/ConnectivityManager ni nueva etapa Markor aceptados; R1-MAC sigue permisivo. [Decisiones y límites](../reports/android16-network-bootstrap/README.md).
+

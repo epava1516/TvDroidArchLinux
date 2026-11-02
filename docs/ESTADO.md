@@ -1,5 +1,8 @@
 # Estado actual y punto de entrada
 
+Actualización 2026-11-02 · [Cargadores BPF AOSP originales](../reports/android16-network-bootstrap/functional.json): Mainline no-root y platform terminan0, con43 programas/59 mapas propios y cierre comprobado; sysctls globales conservados. La cohorte sale1 porque netd exige la preparación original de namespaces/configuración APEX. Se integra ese ciclo sin readiness manual. No hay netd/ConnectivityManager ni nueva etapa Markor aceptados; R1-MAC sigue permisivo. [Decisiones y límites](../reports/android16-network-bootstrap/README.md).
+
+
 Actualización 2026-11-02 · [StatsD/StatsCompanion originales](../reports/android16-package-bootstrap/stats-functional.json): daemon original encontrado por Binder, UID1066/statsd/NNP1/capacidades efectivas0; carga modular y callback URI de fase500 progresan. No se acreditan extracción de métricas ni fase600. [Fallos previos](../reports/android16-package-bootstrap/stats-classloader-negative.json): falta statsmanager y después caché standalone no inicializada. Se reutilizan los helpers originales ZygoteInit para el cargador SYSTEMSERVER y sus JAR standalone; nuestra orquestación queda en un hijo con identidad del padre verificada. Sin añadir JAR a mano, isTestOnly, cambios de perfil ni arrancar SystemServer. Bloqueo actual: AMS/BatteryStatsService exige ConnectivityManager al registrar su callback de red. Siguiente integración: grupo original de conectividad y sus dependencias Linux privadas, sin fingir red disponible. Markor sigue con instalación solamente; R1-MAC permisivo/policyload2, ARM/GMS/DRM abiertos. Resultados consumidos por el turno activo, sin encolado.
 
 

@@ -98,7 +98,7 @@ class LinuxMc1Cohort {
     }
     bool vold_cancelled() const { return vold_cancelled_; }
     bool apex_cancelled() const { return apex_cancelled_; }
-    bool healthy() const { return !manager_failed_ && (!statsd_ || statsd_->IsRunning()) && (!health_ || health_->IsRunning()) && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && bootanimation_->IsRunning())) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning()); }
+    bool healthy() const { return !manager_failed_ && (!netd_ || netd_->IsRunning()) && (!statsd_ || statsd_->IsRunning()) && (!health_ || health_->IsRunning()) && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && bootanimation_->IsRunning())) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning()); }
     android::base::Result<void> Close(const Tick& tick) {
         using namespace android::init;
         if(!active_) return {};
@@ -120,6 +120,7 @@ class LinuxMc1Cohort {
         surfaceflinger_=nullptr;
         bootanimation_=nullptr;
         bootanimation_started_=false;
+        netd_=nullptr;
         statsd_=nullptr;
         health_=nullptr;
         selected_=nullptr;
@@ -224,9 +225,43 @@ class LinuxMc1Cohort {
             if(auto waited=Wait(tick,[this]{return client_done_;},25);!waited.ok())return waited;
             if(!client_ok_)return android::base::Error()<<"Original vold init_user0 failed";
             std::fprintf(stderr,"STORAGE_ORIGINAL_USER0_RETURNED REQUIRES_FILES_AND_PERMISSION_PERSISTENCE\n");
+            if(auto network=StartNetwork(tick);!network.ok())return network;
 
         }
 
+        return {};
+    }
+    android::base::Result<void> StartNetwork(const Tick& tick) {
+        using namespace android::init;
+        auto& services=ServiceList::GetInstance();
+        auto parser=CreateParser(ActionManager::GetInstance(),services);
+        // Same Android16 APEX ELF, upstream nonroot coexistence role. Do not
+        // start root netbpfload: it assumes ownership of global Linux BPF IDs.
+        auto parsed=parser.ParseConfigFile("/apex/com.android.tethering/etc/netbpfload.33rc");
+        if(!parsed.ok() || parser.parse_error_count()!=0)return android::base::Error()<<"Original nonroot network loader RC rejected";
+        parsed=parser.ParseConfigFile("/vendor/etc/init/archtv-platform-bpfloader.rc");
+        if(!parsed.ok() || parser.parse_error_count()!=0)return android::base::Error()<<"Platform BPF loader Linux role rejected";
+        for(const auto& name:std::vector<std::string>{"mdnsd_netbpfload","archtv-platform-bpfloader"}) {
+            auto* loader=services.FindService(name);
+            const std::string executable=name=="mdnsd_netbpfload"?"/apex/com.android.tethering/bin/netbpfload":"/archtv/bin/archtv-platform-bpfloader";
+            if(!loader || loader->args()!=std::vector<std::string>{executable})return android::base::Error()<<"Unexpected network loader executable";
+            client_done_=false;client_ok_=false;
+            loader->AddReapCallback([this,name](const siginfo_t& info){client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;std::fprintf(stderr,"NETWORK_LOADER_EXIT name=%s pid=%d code=%d status=%d\n",name.c_str(),info.si_pid,info.si_code,info.si_status);});
+            if(auto started=loader->Start();!started.ok())return started;
+            std::fprintf(stderr,"NETWORK_LOADER_STARTED name=%s pid=%d uid=%u NOT_READY\n",name.c_str(),loader->pid(),loader->uid());
+            if(auto waited=Wait(tick,[this]{return client_done_;},30);!waited.ok())return waited;
+            if(!client_ok_)return android::base::Error()<<"Original network loader failed: "<<name;
+            struct stat ready{};
+            if(stat("/sys/fs/bpf/netd_shared/mainline_done",&ready)!=0 || !S_ISDIR(ready.st_mode))return android::base::Error()<<"Original mainline loader did not complete";
+        }
+        if(android::base::GetProperty("bpf.progs_loaded","")!="1")return android::base::Error()<<"Original platform loader did not publish completion";
+        parsed=parser.ParseConfigFile("/system/etc/init/netd.rc");
+        if(!parsed.ok() || parser.parse_error_count()!=0)return android::base::Error()<<"Original netd RC rejected";
+        netd_=services.FindService("netd");
+        if(!netd_ || netd_->args()!=std::vector<std::string>{"/system/bin/netd"})return android::base::Error()<<"Unexpected netd executable";
+        netd_->AddReapCallback([this](const siginfo_t& info){std::fprintf(stderr,"NETWORK_NETD_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);if(!closing_)manager_failed_=true;});
+        if(auto started=netd_->Start();!started.ok())return started;
+        std::fprintf(stderr,"NETWORK_NETD_STARTED pid=%d NOT_REGISTERED\n",netd_->pid());
         return {};
     }
     android::base::Result<void> StartHardware(const Tick& tick,bool defer_graphics=false) {
@@ -513,6 +548,7 @@ class LinuxMc1Cohort {
     const bool surfaceflinger_requested_;
     const bool selected_requested_;
     const bool apex_requested_;
+    android::init::Service* netd_=nullptr;
     android::init::Service* statsd_=nullptr;
     android::init::Service* health_=nullptr;
     android::init::Service* zygote_=nullptr;

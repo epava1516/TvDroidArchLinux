@@ -110,8 +110,35 @@ def monitor(root,out,parent):
     lib.selabel_lookup_raw.argtypes=[ctypes.c_void_p,ctypes.POINTER(ctypes.c_char_p),ctypes.c_char_p,ctypes.c_int]
     lib.lsetfilecon_raw.argtypes=[ctypes.c_char_p,ctypes.c_char_p];lib.freecon.argtypes=[ctypes.c_void_p]
     opt=Opt(3,str(root/'system/etc/selinux/plat_file_contexts').encode());handle=lib.selabel_open(0,ctypes.byref(opt),1);assert handle
+    stopping=False;bpf_captured=False
+    network=None
+    if (out/'network-boundary.json').exists():
+        import importlib.util
+        spec=importlib.util.spec_from_file_location('network_boundary',REPO/'reports/android16-network-bootstrap/boundary.py')
+        network=importlib.util.module_from_spec(spec);spec.loader.exec_module(network)
+        def stop_monitor(signum,frame):
+            nonlocal stopping
+            stopping=True
+        signal.signal(signal.SIGTERM,stop_monitor)
+    network_peers={}
     end=time.monotonic()+200
-    while time.monotonic()<end:
+    while time.monotonic()<end and not stopping:
+        if network is not None:
+            for proc in Path('/proc').iterdir():
+                if not proc.name.isdigit():continue
+                try:
+                    comm=(proc/'comm').read_text().strip()
+                    if comm not in {'netbpfload','archtv-platform','netd'}:continue
+                    started=(proc/'stat').read_text().rsplit(')',1)[1].split()[19]
+                    key=proc.name+':'+started
+                    if key in network_peers:continue
+                    fields=dict(l.split(':',1) for l in (proc/'status').read_text().splitlines() if ':' in l)
+                    peer={'pid':int(proc.name),'start_ticks':started,'comm':comm,'executable':os.readlink(proc/'exe'),'context':(proc/'attr/current').read_text().strip().rstrip('\0')}
+                    peer.update({n:fields[n].strip() for n in ['Uid','Gid','Groups','CapInh','CapPrm','CapEff','CapBnd','CapAmb','NoNewPrivs']})
+                    network_peers[key]=peer;save(out/'network-identities.json',list(network_peers.values()))
+                except (OSError,ProcessLookupError):continue
+        if network is not None and not bpf_captured and (root/'sys/fs/bpf/netd_shared/mainline_done').is_dir():
+            network.snapshot(root,out,'mainline-done');bpf_captured=True
         for uuid,(kernel_name,name) in list(live.items()):
             kernel=Path('/sys/devices/virtual/block')/kernel_name
             try: present=(kernel/'dm/uuid').read_text().strip()==uuid
@@ -159,6 +186,7 @@ def monitor(root,out,parent):
                 if error.errno not in (errno.ENOENT,errno.ENODEV,errno.EINVAL):raise
                 continue  # real kernel creation/removal raced sysfs reads
         time.sleep(.02)  # native device-event bridge, no model polling
+    if network is not None:network.snapshot(root,out,'monitor-close')
 
 
 if __name__=='__main__':

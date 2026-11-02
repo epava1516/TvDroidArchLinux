@@ -36,6 +36,17 @@ health_rc=(health/'android.hardware.health-service.example.rc').read_text();asse
 # Whole original default provider; offline charger mode is owned by Linux.
 for target,source,context,mode in [('/vendor/bin/hw/android.hardware.health-service.example',r/'dist/aosp16/health-original-build-3/android.hardware.health-service.example','u:object_r:hal_health_default_exec:s0',0o755),('/vendor/etc/init/archtv-health.rc',out/'health.rc','u:object_r:vendor_configs_file:s0',0o644),('/vendor/etc/vintf/manifest/health.xml',health/'android.hardware.health-service.example.xml','u:object_r:vendor_configs_file:s0',0o644),('/vendor/lib64/android.hardware.health-V4-ndk.so',r/'dist/aosp16/factory-inputs-3/root/system/lib64/android.hardware.health-V4-ndk.so','u:object_r:vendor_file:s0',0o644)]:
  vendor['files'][target]={'source':str(source),'context':context,'mode':mode}
+# Original platform loader separated from the Mainline loader for Linux
+# coexistence. Keep the original UID, groups, capabilities, kmsg and limits.
+network_rc=(r/'dist/aosp16/factory-inputs-3/root/apex/com.android.tethering/etc/netbpfload.35rc').read_text()
+assert network_rc.count('service bpfloader /apex/com.android.tethering/bin/netbpfload')==1
+network_rc=network_rc.replace('service bpfloader /apex/com.android.tethering/bin/netbpfload','service archtv-platform-bpfloader /archtv/bin/archtv-platform-bpfloader')
+(out/'platform-bpfloader.rc').write_text(network_rc)
+# Linux entry alias: identical original ELF, original bpfloader_exec type.
+# init may enter bpfloader through this type; AOSP neverallow forbids init
+# executing bpfloader_platform_exec directly. No new SELinux permission.
+vendor['files']['/bin/archtv-platform-bpfloader']={'source':str(r/'dist/aosp16/factory-inputs-3/root/system/bin/bpfloader'),'context':'u:object_r:bpfloader_exec:s0','mode':0o755}
+vendor['files']['/vendor/etc/init/archtv-platform-bpfloader.rc']={'source':str(out/'platform-bpfloader.rc'),'context':'u:object_r:vendor_configs_file:s0','mode':0o644}
 (out/'vendor-inputs.json').write_text(json.dumps(vendor,indent=2))
 text=(base/'build-payload-expanded.py').read_text().replace(str(base),str(out));expected=out/'apex-expected.json';expected.write_text(json.dumps(json.loads((r/'reports/android16-apex-bootstrap/complete-inputs.json').read_text())['modules'],indent=2)+'\n');text=text.replace("image=out/'payload-2.ext4'", "record('/apex-expected.json',out/'apex-expected.json','u:object_r:vendor_configs_file:s0',0o600)\nimage=out/'payload-2.ext4'")
 recipe=out/'build-payload.py';recipe.write_text(text);subprocess.run(['python',str(recipe)],stdout=open(out/'packager.log','w'),stderr=subprocess.STDOUT,check=True)

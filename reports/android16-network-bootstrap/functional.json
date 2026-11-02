@@ -1,0 +1,62 @@
+{
+  "checkpoint": "/home/tv/recuperacion-archtv/f9cfd443-72fd-4271-9580-e4f020541ee0-markor-launch",
+  "base_commit": "b4e6716",
+  "payload": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-33/payload-2.ext4",
+  "payload_sha256": "5ba7fde707cbdf0d585c0295b45ccf27ddd396bf252cacf2ac4ea488c3ca1036",
+  "evidence_sha256": {
+    "/home/tv/recuperacion-archtv/f9cfd443-72fd-4271-9580-e4f020541ee0-markor-launch/before.json": "0abf4baaa0cc0f9373feeaa29e0887cc3f2d9d8bc88edd5b36113ae811932e2f",
+    "/home/tv/recuperacion-archtv/f9cfd443-72fd-4271-9580-e4f020541ee0-markor-launch/result.json": "618f9addfac676153a0fd887728c8d1204feed1148a1a9489f2d70f8814c1763",
+    "/home/tv/recuperacion-archtv/f9cfd443-72fd-4271-9580-e4f020541ee0-markor-launch/run.log": "535cfd207db28aa90baf04b58c2055a03e1e5f3ae252e381dd675bc3de81eb05",
+    "/home/tv/recuperacion-archtv/f9cfd443-72fd-4271-9580-e4f020541ee0-markor-launch/bpf-cleanup.json": "24c2634c17b573ad191ec2309d18f3a9fc1cf50712406597839d54750cb71457",
+    "/home/tv/recuperacion-archtv/f9cfd443-72fd-4271-9580-e4f020541ee0-markor-launch/bpf-before.json": "1629899cbe3b0ef52e3704d0bb2aaa32d39653b181e45dba18b00c2a812574ea",
+    "/home/tv/recuperacion-archtv/f9cfd443-72fd-4271-9580-e4f020541ee0-markor-launch/bpf-sysctls-before.json": "bd29e5e18c7a8fe9f28d4c8ba66f8169ab5d467547a2e9e6a328f7d7b7253d21",
+    "/home/tv/recuperacion-archtv/f9cfd443-72fd-4271-9580-e4f020541ee0-markor-launch/bpf-sysctls-after.json": "bd29e5e18c7a8fe9f28d4c8ba66f8169ab5d467547a2e9e6a328f7d7b7253d21",
+    "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793589162615225775/bpf-owned.json": "c2778154b779895637de24703ec6a1c0a201316ce30eba1a03ffcc5d34b0e93f",
+    "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793589162615225775/network-identities.json": "9f291e7896238a214f081405cd58f70a674ea248e46cd2d2483f8b9dc1875959",
+    "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793589162615225775/network-boundary.json": "9f477ae78d6909f574789ad0f366c97390c74f4b85fb66d529fbcd7cee07ca2e"
+  },
+  "native_mainline": {
+    "elf_sha256": "bf35f5d086766b1cbe0d40f90a4aa49b608d92ab41f77fecfa6d7c09a937ed21",
+    "profile": "original same-module netbpfload.33rc on API36, explicit Linux role adaptation",
+    "exit": 0,
+    "observed_identity": "u:r:bpfloader:s0",
+    "uid": 1000,
+    "cap_eff": "0x201001",
+    "nnp": 1,
+    "snapshot_programs": 31,
+    "snapshot_maps": 39
+  },
+  "native_platform": {
+    "original_elf_sha256": "eefea85123a543d529ed16c971dade38f0a1fb88cefaf50003d01c2200c3dd02",
+    "entry": "/archtv/bin/archtv-platform-bpfloader, identical ELF with original bpfloader_exec type and system namespace",
+    "exit": 0,
+    "property_check": "Coordinator passed real bpf.progs_loaded == 1 check before netd start; never written by Linux orchestration",
+    "identity_limitation": "Short-lived platform process was not sampled by identity observer in this run; UID0 startup and original configured capabilities are not a full effective-capabilities verification."
+  },
+  "owned_resources": {
+    "programs": 43,
+    "maps": 59,
+    "remaining": {
+      "prog": [],
+      "map": [],
+      "link": []
+    },
+    "final_snapshot": true,
+    "final_dm": [],
+    "active_loops": ""
+  },
+  "global_sysctls_unchanged": {
+    "kernel/unprivileged_bpf_disabled": "2",
+    "net/core/bpf_jit_enable": "1",
+    "net/core/bpf_jit_kallsyms": "1"
+  },
+  "cohort_exit": 1,
+  "next_demonstrated_blocker": "Original netd refused Start(): IsDefaultMountNamespaceReady false. Original APEX namespace/configuration lifecycle not yet integrated. No manual readiness fix accepted.",
+  "limitations": [
+    "Permissive policyload2; no MAC authorization or isolation acceptance.",
+    "No original netd operation, ConnectivityManager, new Markor stage or Internet acceptance.",
+    "Private network has no real external uplink; general networking still unproved.",
+    "Only pinned objects tracked; this does not claim arbitrary external BPF ownership or universal attachment lifecycle.",
+    "ARM/GMS/DRM remain separate open axes."
+  ]
+}
