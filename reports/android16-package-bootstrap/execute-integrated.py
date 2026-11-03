@@ -203,6 +203,13 @@ for point in ['apex','linkerconfig']:mount('--rbind',root/point,root/point)
 assert (root/'apex/com.android.runtime/bin/linker64').is_file(), 'Bootstrap runtime mount hidden'
 (root/'dev/pts').mkdir(exist_ok=True)
 mount('-t','devpts','-o','newinstance,ptmxmode=0666,mode=0620,gid=5,fscontext=u:object_r:devpts:s0,rootcontext=u:object_r:devpts:s0','devpts',root/'dev/pts')
+# The private devpts master is the real /dev/ptmx endpoint. Apply the
+# original /dev/ptmx file-context rule to that endpoint, not only its symlink.
+private_ptmx=root/'dev/pts/ptmx';ptmx_context=ctypes.c_char_p()
+assert lib.selabel_lookup_raw(handle,ctypes.byref(ptmx_context),b'/dev/ptmx',private_ptmx.lstat().st_mode)==0
+assert lib.lsetfilecon_raw(os.fsencode(private_ptmx),ptmx_context)==0;lib.freecon(ptmx_context)
+assert os.getxattr(private_ptmx,'security.selinux').decode().rstrip(chr(0))=='u:object_r:ptmx_device:s0'
+(out/'private-devpts.json').write_text(json.dumps({'root_context':os.getxattr(root/'dev/pts','security.selinux').decode().rstrip(chr(0)),'master_context':os.getxattr(private_ptmx,'security.selinux').decode().rstrip(chr(0)),'rule':'Original /dev/ptmx on private newinstance endpoint; host PTY unchanged'}))
 (root/'dev/ptmx').symlink_to('pts/ptmx')
 """
 text=text.replace("selinux=root/'sys/fs/selinux';",network_code+"\nselinux=root/'sys/fs/selinux';",1)

@@ -96,3 +96,35 @@
 ; that original daemon/FS identity edge, preserving bdev, mountpoint, SID,
 ; capability, namespaces and all original neverallow checks.
 (allow apexd linux.fs_t (filesystem (mount unmount)))
+
+; Actual189: the Linux device-event bridge cannot traverse sysfs_dm to read
+; the real kernel dm/name, dm/uuid and dev values. Read-only discovery keeps
+; the existing immutable allowed-name/UUID checks; no Android domain gets
+; new rights and no write/mount/relabel/device ioctl is granted here.
+(allow linux.init_t sysfs_dm (dir (read open getattr search)))
+(allow linux.init_t sysfs_dm (file (read open getattr)))
+(allow linux.init_t sysfs_dm (lnk_file (read getattr)))
+; Actual188/189 also show host udev/systemd denied traversal of the globally
+; AOSP-labeled loop sysfs nodes. Restore read-only Linux discovery; existing
+; private RO sysfs and precise RW control binds remain the runtime boundary.
+(allow linux.init_t sysfs_loop (dir (read open getattr search)))
+(allow linux.init_t sysfs_loop (lnk_file (read getattr)))
+
+; Actual190 and complete devices.py publication lifecycle: trusted Linux
+; control-plane bridge creates a real node only after exact manifest-derived
+; dm/name + kernel UUID + dev major/minor checks. Apply original file contexts,
+; then publish UUID link only after its real control bind succeeds. Android
+; domains gain no rights; no block contents read/write, open or ioctl here.
+; block_device is the original private /dev/block directory/default node and
+; UUID symlink type; dm_device is the original /dev/block/dm-N node label.
+(allow linux.init_t block_device (dir (read open getattr search write add_name remove_name)))
+(allow linux.init_t block_device (blk_file (create getattr setattr relabelfrom unlink)))
+(allow linux.init_t dm_device (blk_file (getattr setattr relabelto unlink)))
+(allow linux.init_t block_device (lnk_file (create getattr read relabelfrom relabelto unlink)))
+; Read-only kernel sysfs links are copied into private sysfs scaffolding.
+; This does not authorize creating kernel sysfs objects or writing attributes.
+(allow linux.init_t sysfs (dir (write add_name remove_name)))
+(allow linux.init_t sysfs (lnk_file (create read getattr unlink)))
+; Target of the existing exact read_ahead_kb bind in the private mount ns.
+; No new filesystem mount/remount, attribute write or Android permission.
+(allow linux.init_t sysfs_dm (file (mounton)))

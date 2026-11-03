@@ -1,6 +1,6 @@
 # Matriz de aplicaciones reales
 
-Observación188 · [Markor y seguridad](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): no hay nueva etapa APK aceptada. Bootstrap4 original probado y XML15/41 rechazado bajo enforcing; linkerconfig/PTY y monitor Linux de dispositivos bloquean. El recorrido local167 en permisivo conserva su alcance histórico y no se reclasifica como R1-MAC. ARM, servicios externos/GMS y DRM separados abiertos.
+Observación193 · [Markor bajo MAC pendiente](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): APEX original41 y classpath reales verificados, init_user0 falla por aliases proc del auxiliar original. Ninguna nueva etapa APK aceptada. El recorrido local167 permanece evidencia en permisivo; nota21bytes/hash y CE/DE se conservan, sin atribuir nueva ejecución. ARM, servicios externos/GMS y DRM separados abiertos.
 
 Histórico179 · [aconfig/VDC, sin nueva aceptación APK](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): original init_user0 alcanza vold y falla en auxiliar NNP. La nota e instalación previas conservan sus bytes/etiquetas tras la prueba; no equivale a ejecutar de nuevo Markor bajo MAC. Etapas167 mantienen alcance permisivo, ARM/GMS/DRM separados.
 

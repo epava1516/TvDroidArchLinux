@@ -122,8 +122,18 @@ def prepare(root, out, data_store, bootstrap=False):
 
 def mount_sysfs(root):
     # Do this after scaffold labeling: never relabel the real host sysfs.
-    subprocess.run(['mount','--bind','/sys/devices/virtual/block',str(root/'sys/devices/virtual/block')],check=True)
-    subprocess.run(['mount','-o','remount,bind,ro',str(root/'sys/devices/virtual/block')],check=True)
+    # Reuse the real kernel's block-link indexes, rather than dynamically
+    # copying sysfs-typed links into tmpfs (which requires an invalid extra
+    # filesystem-associate adaptation under MAC). Metadata indexes are RO;
+    # they do not create /dev nodes or grant access to host block contents.
+    views=[]
+    for logical in ['sys/devices/virtual/block','sys/dev/block','sys/block','sys/class/block']:
+        target=root/logical
+        subprocess.run(['mount','--bind','/'+logical,str(target)],check=True)
+        subprocess.run(['mount','-o','remount,bind,ro',str(target)],check=True)
+        assert os.statvfs(target).f_flag & os.ST_RDONLY
+        views.append({'source':'/'+logical,'target':str(target),'readonly':True})
+    save(root.parent/'sysfs-kernel-views.json',{'views':views,'scope':'Actual read-only kernel metadata including host indexes; /dev remains manifest-filtered. Not block-data access or isolation proof.'})
 
 
 def enable_loop_controls(root,out):
@@ -256,7 +266,11 @@ def monitor(root,out,parent):
     lib.selabel_open.argtypes=[ctypes.c_uint,ctypes.POINTER(Opt),ctypes.c_uint];lib.selabel_open.restype=ctypes.c_void_p
     lib.selabel_lookup_raw.argtypes=[ctypes.c_void_p,ctypes.POINTER(ctypes.c_char_p),ctypes.c_char_p,ctypes.c_int]
     lib.lsetfilecon_raw.argtypes=[ctypes.c_char_p,ctypes.c_char_p];lib.freecon.argtypes=[ctypes.c_void_p]
-    opt=Opt(3,str(root/'system/etc/selinux/plat_file_contexts').encode());handle=lib.selabel_open(0,ctypes.byref(opt),1);assert handle
+    # Factory preparation already copied the original platform/vendor patterns
+    # verbatim for Linux labeling. Reuse that exact private input rather than
+    # reopening Android file_contexts_file under Linux after enforcing starts.
+    contexts=out/'original-file-contexts';assert contexts.is_file()
+    opt=Opt(3,str(contexts).encode());handle=lib.selabel_open(0,ctypes.byref(opt),1);assert handle
     stopping=False;bpf_captured=False
     network=None
     if (out/'network-boundary.json').exists():
