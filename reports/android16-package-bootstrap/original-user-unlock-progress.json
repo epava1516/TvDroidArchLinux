@@ -163,7 +163,7 @@
     "Native normal lazy apexd exit CLD_EXITED0 clean1 followed by successful coordinatorclose0; explicit cancellation alternative was exercised133",
     "Native/exterior0; exact unitsinactive, VT1restored, no loops/dm/new FUSEconnections; host DRM node metadata identical"
   ],
-  "next": "160 same frozen159 artifact: actual permission switch OFF/ON and Main/editor frames before text, exact original app-written bytes, actual old/new PID and original relaunch then GUI reopen. If failure preserve file/input logs; no blind continuation or permissions seeding.",
+  "next": "Correct original trusted client path to actual Documents/markor; test actual exact bytes then original force-stop, old PID disappearance and original manifest relaunch/new PID, GUI reopen and unchanged bytes. Source original CAP_KILL contract is a potential prerequisite for direct crossUID signal; do not infer success from service response. Durable data and MAC remain separate.",
   "artifacts": {
     "/home/tv/recuperacion-archtv/ff987089-92db-43e2-852d-3e78501aae42-markor-software-launch/before-launch.json": "db7aaed86c8a4f5121ce3677ff47d50e11f74a3c646b3455437700432da2818a",
     "/home/tv/recuperacion-archtv/ff987089-92db-43e2-852d-3e78501aae42-markor-software-launch/result.json": "db31e85df10c964be7b912ab4f7c29b47f292e788e26c8df09ce639c935578b9",
@@ -1446,10 +1446,9 @@
     "next": "Exercise real keyboard through original KeyLayoutMap and dispatcher; complete onboarding through events and enter real editor. Test gateway rejection and focus/disconnect releases, fix transport loss state before accepting stability. Then actual unique note/save/app close/reopen with original storage."
   },
   "latest_functional_observation": {
-    "candidate": 152,
-    "execution": 153,
-    "run_id": "77e500e0-48c2-4957-9119-bea9a5649477",
-    "section": "editor_input_followup153"
+    "candidate": 161,
+    "checkpoint": "/home/tv/recuperacion-archtv/c59b66e9-3b61-4616-8fb1-97b3566b9d98-markor-software-launch",
+    "scope": "Actual note saved, exact21 bytes verified; process lifecycle and persistence unaccepted"
   },
   "not_accepted_at_base140": [
     "Final Smithay/physical output frame for this APK is not yet captured; early compositor30s capture is not app presentation evidence",
@@ -3472,5 +3471,214 @@
     ],
     "next": "160 same frozen159 artifact: actual permission switch OFF/ON and Main/editor frames before text, exact original app-written bytes, actual old/new PID and original relaunch then GUI reopen. If failure preserve file/input logs; no blind continuation or permissions seeding.",
     "159": "WAIT_FOR_FINISH2 compiles and executes permission/input flow; original Main transition false, guard raises before body input and closes devices (interaction_exit1). Native/exterior0 do not close workflow. Same original permission-required dialog visible; no saved note, old PID death, relaunch or reopen.160 reuses exact159 artifact with fresh cohort and explicit tokenfb3f64e0, visually verifies permission before body input; no new build."
+  },
+  "note_saved_followup160_161": {
+    "candidate": 161,
+    "id": "c59b66e9-3b61-4616-8fb1-97b3566b9d98",
+    "checkpoint": "/home/tv/recuperacion-archtv/c59b66e9-3b61-4616-8fb1-97b3566b9d98-markor-software-launch",
+    "native_exit": 0,
+    "outer_exit": 0,
+    "actual_note": {
+      "scope": "Read-only actual app-written file from exact active factory cgroup, no guest writes",
+      "unit": "archtv-apex-1793705755924825958.service",
+      "control_group": "/system.slice/archtv-apex-1793705755924825958.service",
+      "found": true,
+      "host_pid": 584781,
+      "installer_output": "Success: created install session [292616588]\nSuccess: streamed 11861047 bytes\nSuccess\n",
+      "data/media/0/Documents": [
+        [
+          "markor",
+          60
+        ]
+      ],
+      "data/media/0/Documents/markor": [
+        [
+          "archtv-c59b66e9.md",
+          21
+        ]
+      ],
+      "note": {
+        "source": "/data/media/0/Documents/markor/archtv-c59b66e9.md",
+        "size": 21,
+        "uid": 10083,
+        "gid": 1023,
+        "mode": "0o660",
+        "sha256": "1645868859299d3e33e5926bcd3926ded14acb134c0c9fe0b0404bf01ac86592",
+        "hex": "617263687476206e6f74652063353962363665390a",
+        "matches_expected": true
+      }
+    },
+    "UI": "Real Linux pointer verified Settings OFF then ON, original Main, full name archtv-c59b66e9.md, original DocumentActivity, actual Linux keyboard body and CtrlS. No guest note/pref/permission seeded.",
+    "proved": "Actual app-written21-byte Markdown note equals archtv note c59b66e9 newline. Root observer read only exact active factory cgroup with nonempty guard; this is privileged file observation, not MAC/app read-after-restart proof.",
+    "checker_defect": "Client watched /data/media/0/Documents/name instead of actual /data/media/0/Documents/markor/name. Explorer parent row was mistaken for current notebook. Original expected-byte precondition therefore never reached; lifecycle did not execute. No file moved/aliased to satisfy checker.",
+    "160": {
+      "checkpoint": "/home/tv/recuperacion-archtv/cd678b91-191a-4360-98c4-f86034e3f907-markor-software-launch",
+      "artifact_candidate": 159,
+      "explicit_workflow_token": "fb3f64e0",
+      "result": "Actual complete filename visible; sender150s expired. Commands7/8 appended after expiry not consumed, not replayed. Native0/exterior0; no note/lifecycle accepted."
+    },
+    "budgets161": {
+      "post_launch_observe_ms": 300000,
+      "sender_seconds": 290,
+      "note_observer_seconds": 285,
+      "startup_max_ms": 300000,
+      "scope": "Bounded manual functional test time only. Does not solve startup hangs, performance, authorization or declare compatibility.",
+      "cli_boundary_scope": "Host loader for argument checks because ELF uses private /archtv/lib interpreter. Initial direct host invocation failed before main; corrected300000 allowed,300001 observation rejected,300001 startup rejected, nonexistent child never started."
+    },
+    "closure": "161 commands1..11 consumed;12/13 appended after sender expiry and not consumed. Black later frame is after cohort closure, not an accepted app close. No PID death/relaunch/reopen acceptance.",
+    "cleanup": {
+      "id": "c59b66e9-3b61-4616-8fb1-97b3566b9d98",
+      "outer_unit": "archtv-markor-session-c59b66e9-3b61-4616-8fb1-97b3566b9d98",
+      "runner_unit": "archtv-package-runner-c59b66e9-3b61-4616-8fb1-97b3566b9d98",
+      "initial_vt": "1",
+      "root_pid": 580616,
+      "root_boot_id": "4e18faf8-2b46-42e4-a6b2-269c34326b68",
+      "result": "native_result_recorded",
+      "fuse_connections_before": [],
+      "host_devices_before": {
+        "card0": {
+          "mode": "0o660",
+          "uid": 0,
+          "gid": 983,
+          "rdev": 57856,
+          "inode": 365
+        },
+        "renderD128": {
+          "mode": "0o666",
+          "uid": 0,
+          "gid": 987,
+          "rdev": 57984,
+          "inode": 364
+        }
+      },
+      "interaction_exit": 0,
+      "host_devices_after": {
+        "card0": {
+          "mode": "0o660",
+          "uid": 0,
+          "gid": 983,
+          "rdev": 57856,
+          "inode": 365
+        },
+        "renderD128": {
+          "mode": "0o666",
+          "uid": 0,
+          "gid": 987,
+          "rdev": 57984,
+          "inode": 364
+        }
+      },
+      "host_device_metadata_unchanged": true,
+      "fuse_connections_after": [],
+      "new_fuse_connections": [],
+      "final_vt": "1",
+      "outer_active": false,
+      "runner_active": false
+    },
+    "not_accepted": [
+      "app process death",
+      "reopen",
+      "persistence after app restart",
+      "cross-cohort durable data",
+      "services generally",
+      "MAC/enforcing/isolation",
+      "complete Markor workflow",
+      "broad APK compatibility"
+    ],
+    "artifacts": [
+      {
+        "path": "/home/tv/recuperacion-archtv/c59b66e9-3b61-4616-8fb1-97b3566b9d98-markor-software-launch/actual-app-note-observation.json",
+        "sha256": "0537d3de044284f5ee7868b5226c5ad5d92ef8666958012d42538283929d759d"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/c59b66e9-3b61-4616-8fb1-97b3566b9d98-markor-software-launch/actual-app-note.bin",
+        "sha256": "1645868859299d3e33e5926bcd3926ded14acb134c0c9fe0b0404bf01ac86592"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/c59b66e9-3b61-4616-8fb1-97b3566b9d98-markor-software-launch/run.log",
+        "sha256": "1923f3fabff34f112e90889baf738bfc3ebda7ffcef973d60723f8c45061c70b"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/c59b66e9-3b61-4616-8fb1-97b3566b9d98-markor-software-launch/completion-consumer.json",
+        "sha256": "e03fd5ae879207d194d9c2c983f587fc1336aed6ae35c27f999b4a6ad460fac9"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/c59b66e9-3b61-4616-8fb1-97b3566b9d98-markor-software-launch/interaction-events.json",
+        "sha256": "1e5a84aa20a82809fb111bf0ed01ff0a63a4c1b380720f018fb1552ab90456fa"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/c59b66e9-3b61-4616-8fb1-97b3566b9d98-markor-software-launch/interaction-test.py",
+        "sha256": "4ff5fb5e1304ecc39c983fcf8cf94ea381c42ba49ce15b813b0108d2713bcf3d"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/c59b66e9-3b61-4616-8fb1-97b3566b9d98-markor-software-launch/cli-budget-boundaries.json",
+        "sha256": "715bf0e5367d0391b92695bf556ccc6a8a07c5503de78d93e0e58cbe5fb645c4"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/c59b66e9-3b61-4616-8fb1-97b3566b9d98-markor-software-launch/session-state.json",
+        "sha256": "5ffb79ebbfa51533eb06a5ccad398e936e727db14b7dc3ff89ce61c7c7a79456"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-161/source-inputs.json",
+        "sha256": "141a5998ce90e2f34bc387c812b7775298875b882a3d134552c1212b0aea0010"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-161/build-options.json",
+        "sha256": "39054953c47c6749c1d665d3cfeb761a298b1c152ec26f6761515ed494647709"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/c59b66e9-3b61-4616-8fb1-97b3566b9d98-markor-software-launch/inspect-editor-empty.png",
+        "sha256": "9522fa7e9bf60d10989efbf778f3a26c063f5ba0e1a9ff95be1148a085b886b5"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/c59b66e9-3b61-4616-8fb1-97b3566b9d98-markor-software-launch/inspect-main.png",
+        "sha256": "bbaca3b175530354517248dc0289b3e7fe03efc78e1464eed8ef593c36660a37"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/c59b66e9-3b61-4616-8fb1-97b3566b9d98-markor-software-launch/inspect-name-confirm.png",
+        "sha256": "9522c95d064778acf3630a519569c43b6dbe9a8f714769ffab853fc42ae79d13"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/c59b66e9-3b61-4616-8fb1-97b3566b9d98-markor-software-launch/inspect-name-progress.png",
+        "sha256": "552274808745515e88aca81cc42593b7d02c09bda8d7c0bb5fb9a5916ba0276d"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/c59b66e9-3b61-4616-8fb1-97b3566b9d98-markor-software-launch/inspect-name.png",
+        "sha256": "a5f0db9f68461cc00280b311af61ddef240424c2cf9c2a6019669440773fe13d"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/c59b66e9-3b61-4616-8fb1-97b3566b9d98-markor-software-launch/inspect-note-closed.png",
+        "sha256": "42b764748ca367c1d17f0e224f6b24cf97af77163e20363dea2b21fccc771f0f"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/c59b66e9-3b61-4616-8fb1-97b3566b9d98-markor-software-launch/inspect-note.png",
+        "sha256": "53e021103b2384abb088a534cb46b750a9282e505e2f1aaf3d84c0e6ba5d58c1"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/c59b66e9-3b61-4616-8fb1-97b3566b9d98-markor-software-launch/inspect-settings-before.png",
+        "sha256": "1f1961d63770a13667540fb570cab8bda5569f289ea463b21507285c8b17f0ad"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/c59b66e9-3b61-4616-8fb1-97b3566b9d98-markor-software-launch/inspect-settings-on.png",
+        "sha256": "4c9ae7e47ed132fc6e3dab0b094933079803ac8915e1e54bfa4f89d0a6e0536d"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/cd678b91-191a-4360-98c4-f86034e3f907-markor-software-launch/run.log",
+        "sha256": "7f7bcbab24b367e0058bc7c5144039178878d7485eebd7dfc0e8d6bdcdad9d0d"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/cd678b91-191a-4360-98c4-f86034e3f907-markor-software-launch/completion-consumer.json",
+        "sha256": "f02ec13964da7814e01ea34e5440176f3e324189ab9988236c5379c60cd61c49"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/cd678b91-191a-4360-98c4-f86034e3f907-markor-software-launch/interaction-events.json",
+        "sha256": "02f63c0f3cff32fc9a6a811022c1b3ab979d241441b4ab85106b23f3284dcb6e"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/cd678b91-191a-4360-98c4-f86034e3f907-markor-software-launch/inspect-name-complete.png",
+        "sha256": "4f275c5d6af68dff087007d18831d8bb9d3a0325785ff05445668bf2d0eaf6af"
+      }
+    ],
+    "next": "Correct original trusted client path to actual Documents/markor; test actual exact bytes then original force-stop, old PID disappearance and original manifest relaunch/new PID, GUI reopen and unchanged bytes. Source original CAP_KILL contract is a potential prerequisite for direct crossUID signal; do not infer success from service response. Durable data and MAC remain separate."
   }
 }

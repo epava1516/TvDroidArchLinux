@@ -39,9 +39,10 @@ checkpoint_diagnostic='--checkpoint-diagnostic' in sys.argv[2:]
 keymint_component='--keymint-component' in sys.argv[2:]
 software_platform='--software-security' in sys.argv[2:]
 observe_ms=int(next((a.split('=',1)[1] for a in sys.argv[2:] if a.startswith('--observe-ms=')),'3000'))
-assert 3000<=observe_ms<=180000
+assert 3000<=observe_ms<=300000
 workflow_token=next((a.split('=',1)[1] for a in sys.argv[2:] if a.startswith('--markor-workflow-token=')),None)
-assert workflow_token is None or (software_platform and re.fullmatch('[0-9a-f]{8}',workflow_token))
+assert workflow_token is None or (software_platform and observe_ms>=30000 and re.fullmatch('[0-9a-f]{8}',workflow_token))
+workflow_budget_seconds=observe_ms//1000-15 if workflow_token else None
 keystore_java='--keystore-java-component' in sys.argv[2:] or software_platform
 keystore_component='--keystore-component' in sys.argv[2:] or keystore_java
 assert not (keymint_component and keystore_component)
@@ -49,7 +50,7 @@ if software_platform:
  lines[0]=lines[0].replace('-Xmx768m','-Xmx512m')
  lines.append('    setenv ARCHTV_SOFTWARE_SECURITY_PROFILE software-platform-v1')
 experiment_kind='markor-software-launch' if software_platform else 'keystore-java-component' if keystore_java else 'keystore-component' if keystore_component else ('keymint-component' if keymint_component else 'markor-launch')
-(out/'build-options.json').write_text(json.dumps({'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component and not software_platform,'software_security_platform':software_platform,'observe_ms':observe_ms,'markor_workflow_token':workflow_token,'experiment_kind':experiment_kind},indent=2)+'\n')
+(out/'build-options.json').write_text(json.dumps({'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component and not software_platform,'software_security_platform':software_platform,'observe_ms':observe_ms,'markor_workflow_token':workflow_token,'markor_workflow_budget_seconds':workflow_budget_seconds,'experiment_kind':experiment_kind},indent=2)+'\n')
 if checkpoint_diagnostic:lines.append('    setenv ARCHTV_CHECKPOINT_DIAGNOSTIC 1')
 lines=[l for l in lines if not any(l.startswith('    setenv '+n+' ') for n in ['BOOTCLASSPATH','DEX2OATBOOTCLASSPATH','SYSTEMSERVERCLASSPATH','STANDALONE_SYSTEMSERVER_JARS'])];(entry/'selected-services.rc').write_text('\n'.join(lines)+'\n')
 old=r/'dist/aosp16/apex-cohort-build-6';commands=[]
@@ -210,6 +211,8 @@ for item in profile['excluded']:
 vendor['files']['/vendor/etc/archtv-initial-apk-profile.tsv']={'source':str(out/'initial-apk-profile.tsv'),'context':'u:object_r:vendor_configs_file:s0','mode':0o400}
 if workflow_token is not None:
  (out/'markor-workflow-token').write_text(workflow_token+'\n')
+ (out/'markor-workflow-budget').write_text(str(workflow_budget_seconds)+'\n')
+ vendor['files']['/vendor/etc/archtv-markor-workflow-budget']={'source':str(out/'markor-workflow-budget'),'context':'u:object_r:vendor_configs_file:s0','mode':0o444}
  vendor['files']['/vendor/etc/archtv-markor-workflow-token']={'source':str(out/'markor-workflow-token'),'context':'u:object_r:vendor_configs_file:s0','mode':0o444}
 vendor['files']['/vendor/bin/install-markor.sh']={'source':str(r/'runtime/aosp/linux-services/install-markor.sh'),'context':'u:object_r:vendor_file:s0','mode':0o644}
 zygote=(r/'dist/aosp16/factory-inputs-3/root/system/etc/init/hw/init.zygote64.rc').read_text()

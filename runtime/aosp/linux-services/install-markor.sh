@@ -90,8 +90,11 @@ if [ -f /vendor/etc/archtv-markor-workflow-token ]; then
     # media_rw is in pinned original ZygoteInit groups; do not expand app FUSE access.
     note=/data/media/0/Documents/archtv-$token.md
     expected="archtv note $token"
+    budget=$(/system/bin/cat /vendor/etc/archtv-markor-workflow-budget)
+    case "$budget" in ''|*[!0-9]*) exit 1;; esac
+    [ "$budget" -ge 15 ] && [ "$budget" -le 285 ] || exit 1
     n=0
-    while [ "$n" -lt 165 ]; do
+    while [ "$n" -lt "$budget" ]; do
         if [ -f "$note" ] && [ "$(/system/bin/cat "$note")" = "$expected" ]; then break; fi
         n=$((n+1)); /system/bin/sleep 1
     done

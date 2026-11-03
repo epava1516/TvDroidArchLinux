@@ -156,7 +156,7 @@
         "launch": "approved",
         "interface": "approved",
         "input": "approved",
-        "main_function": "not_tested",
+        "main_function": "approved",
         "persistence": "not_tested",
         "services": "not_tested",
         "close": "not_tested",
@@ -208,45 +208,45 @@
         },
         "launch": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "3c9464b3884422e24dd51762d7baf8da0b6854117f491e893f5d5479bb7bec27",
+          "record_sha256": "667efbb89443bc879cdf0ba4c86f055d4b289ac34b8906dd1719aa172f7e2fcf",
           "accepted": true,
           "scope": "Exact version164/c105bf5, candidate152 execution153, software experimental profile: manifest launch and original explorer/editor UI with real basic pointer/ASCII input. No gamepad/layout/repeat/GPU acceleration/security or full application completion.",
           "partial_observation": "Actual unique text visible in original editor; whole application C3 remains open."
         },
         "services": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "3c9464b3884422e24dd51762d7baf8da0b6854117f491e893f5d5479bb7bec27",
+          "record_sha256": "667efbb89443bc879cdf0ba4c86f055d4b289ac34b8906dd1719aa172f7e2fcf",
           "accepted": false,
-          "scope": "Save request without valid byte readback; no process close-reopen or durable data. Original Trust supersedes prior constructor failure but no full credential/service suite.",
+          "scope": "Original services support observed UI/write, but full service stage and process/durable-data lifecycle not accepted; R1-MAC open.",
           "partial_observation": "Actual unique text visible in original editor; whole application C3 remains open."
         },
         "interface": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "3c9464b3884422e24dd51762d7baf8da0b6854117f491e893f5d5479bb7bec27",
+          "record_sha256": "667efbb89443bc879cdf0ba4c86f055d4b289ac34b8906dd1719aa172f7e2fcf",
           "accepted": true,
           "scope": "Exact version164/c105bf5, candidate152 execution153, software experimental profile: manifest launch and original explorer/editor UI with real basic pointer/ASCII input. No gamepad/layout/repeat/GPU acceleration/security or full application completion.",
           "partial_observation": "Actual unique text visible in original editor; whole application C3 remains open."
         },
         "input": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "3c9464b3884422e24dd51762d7baf8da0b6854117f491e893f5d5479bb7bec27",
+          "record_sha256": "667efbb89443bc879cdf0ba4c86f055d4b289ac34b8906dd1719aa172f7e2fcf",
           "accepted": true,
           "scope": "Exact version164/c105bf5, candidate152 execution153, software experimental profile: manifest launch and original explorer/editor UI with real basic pointer/ASCII input. No gamepad/layout/repeat/GPU acceleration/security or full application completion.",
           "partial_observation": "Actual unique text visible in original editor; whole application C3 remains open."
         },
         "persistence": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "3c9464b3884422e24dd51762d7baf8da0b6854117f491e893f5d5479bb7bec27",
+          "record_sha256": "667efbb89443bc879cdf0ba4c86f055d4b289ac34b8906dd1719aa172f7e2fcf",
           "accepted": false,
           "scope": "Save request without valid byte readback; no process close-reopen or durable data. Original Trust supersedes prior constructor failure but no full credential/service suite.",
           "partial_observation": "Actual unique text visible in original editor; whole application C3 remains open."
         },
         "main_function": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "3c9464b3884422e24dd51762d7baf8da0b6854117f491e893f5d5479bb7bec27",
-          "accepted": false,
-          "scope": "Save request without valid byte readback; no process close-reopen or durable data. Original Trust supersedes prior constructor failure but no full credential/service suite.",
-          "partial_observation": "Actual unique text visible in original editor; whole application C3 remains open."
+          "record_sha256": "667efbb89443bc879cdf0ba4c86f055d4b289ac34b8906dd1719aa172f7e2fcf",
+          "section": "note_saved_followup160_161",
+          "accepted": true,
+          "scope": "Exact v164/c105bf5 profile161: create Markdown note through original GUI/Linux input and save21 actual bytes. Privileged read-only actual backing file with exact SHA. No process death/reopen/durable data/MAC or whole-application acceptance."
         }
       },
       "runtime_stage_evidence_history": [
@@ -314,9 +314,9 @@
       ],
       "latest_workflow_attempt": {
         "report": "reports/android16-package-bootstrap/original-user-unlock-progress.json",
-        "sha256": "3c9464b3884422e24dd51762d7baf8da0b6854117f491e893f5d5479bb7bec27",
-        "section": "permission_input_followup156_159",
-        "status": "156 proves UI permission transition manually;157/158 intended note/lifecycle fail with truncated filenames.159 stops correctly before blind body input after permission failure;160 same artifact UI-controlled trial pending. Prior153 scoped results stay tied to153, not transferred to new profile."
+        "sha256": "667efbb89443bc879cdf0ba4c86f055d4b289ac34b8906dd1719aa172f7e2fcf",
+        "section": "note_saved_followup160_161",
+        "status": "161 actual21-byte note saved; original lifecycle precondition pointed at wrong folder, never ran. No close/reopen/persistence acceptance."
       }
     }
   ],

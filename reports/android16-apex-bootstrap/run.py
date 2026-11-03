@@ -27,7 +27,7 @@ integrated_socket=Path(sys.argv[3]) if len(sys.argv)==4 else None
 interaction_extension=0
 if integrated_socket:
  observe_ms=json.loads((payload.parent/'build-options.json').read_text()).get('observe_ms',3000)
- assert isinstance(observe_ms,int) and 3000<=observe_ms<=180000
+ assert isinstance(observe_ms,int) and 3000<=observe_ms<=300000
  interaction_extension=max(0,(observe_ms+999)//1000-30)
 (recovery/'before.json').write_text(json.dumps({'phase':'preflight','argv':sys.argv,'boot_id':Path('/proc/sys/kernel/random/boot_id').read_text().strip(),'head':command(['runuser','-u','tv','--','git','-C',str(repo),'rev-parse','HEAD']).stdout.strip(),'pending':command(['runuser','-u','tv','--','git','-C',str(repo),'status','--short']).stdout},indent=2)+'\n')
 os.chown(recovery,1000,1000);os.chown(recovery/'before.json',1000,1000)
