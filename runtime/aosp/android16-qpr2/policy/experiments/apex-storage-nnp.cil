@@ -1,0 +1,6 @@
+; Original init->vold/apexd transitions already exist in pinned AOSP policy.
+; Actual170 enforcing audit1090939/1090942 denies only the extra Linux NNP
+; admission gate before exec. Preserve NNP1, original transition/entrypoint
+; checks, IDs and caps. Never allow init execute_no_trans on daemon executables.
+(allow init vold (process2 (nnp_transition)))
+(allow init apexd (process2 (nnp_transition)))

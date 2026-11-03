@@ -414,6 +414,15 @@
         "native_exit": 0,
         "outer_exit": 0,
         "scope": "Exact Markorv164 Markdown note created163 survives complete cohort teardown and original subsystems167; actual bytes, same UID/inodes/MCS, original install/force-stop/relaunch and real single pointer opens editor.167 native/exterior0. Not host reboot/power loss, FBE/MAC, graceful close, arbitrary upgrade or general APK compatibility."
+      },
+      "runtime_security_observation": {
+        "candidate": 171,
+        "status": "demonstrated_bootstrap_failure_before_APK",
+        "record": "../android16-package-bootstrap/r1-mac-integrated-progress.json",
+        "record_sha256": "ed13113e93d886404ff9b9b9eb1f7273e47e888bedd87aae3ff0b547690087ea",
+        "scope": "Original daemon exec with NNP1 under enforcing, APEX inventory client fails identity/DAC capture. No Markor launch or stage tested in this security profile. Previous167 exact permissive note workflow remains scoped to its earlier policy; not revalidated under current loaded policy6.",
+        "r1_mac": "open",
+        "host_after": "permissive policyload6, audit0, no owned runtime processes/devices; audit171 lost16"
       }
     }
   ],

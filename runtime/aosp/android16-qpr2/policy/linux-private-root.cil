@@ -1,0 +1,4 @@
+; Trusted Linux factory creates/removes its pivot_root attachment under the
+; private Android rootfs. Actual167 AVCs show parent write/add_name; removal
+; is required by the same pivot/detach lifecycle. No APK/domain gains this edge.
+(allow linux.init_t rootfs (dir (write add_name remove_name)))

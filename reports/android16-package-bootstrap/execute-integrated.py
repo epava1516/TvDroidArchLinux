@@ -168,7 +168,16 @@ for node in sorted(health_class.iterdir()):
 """
 text=text.replace("for p in sorted((r/'dist/aosp16/factory-inputs-3').glob('*.payload.img')):","devices.mount_sysfs(root)\n"+health_mounts+"\nfor p in sorted((r/'dist/aosp16/factory-inputs-3').glob('*.payload.img')):",1)
 text=text.replace("mount('-t','proc','proc',root/'proc')","devices.enable_loop_controls(root,out)\nmount('-t','proc','proc',root/'proc')")
-text=text.replace("cgbase=Path('/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1')", "unit_cgroup=Path('/proc/self/cgroup').read_text().split('0::',1)[1].strip()\nassert unit_cgroup.startswith('/system.slice/archtv-apex-') and unit_cgroup.endswith('.service')\ncgbase=Path('/sys/fs/cgroup'+unit_cgroup)/'archtv-apex'")
+text=text.replace("cgbase=Path('/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1')", "unit_cgroup=Path('/proc/self/cgroup').read_text().split('0::',1)[1].strip()\nassert unit_cgroup.startswith('/archtv.slice/archtv-apex-') and unit_cgroup.endswith('.service'),unit_cgroup\ncgbase=Path('/sys/fs/cgroup'+unit_cgroup)/'archtv-apex'")
+# Observe the real kernel labels at the same dedicated CG boundary; never
+# relabel host cgroups or infer runtime labeling merely from policy source.
+cg_observer="print('MC1_FACTORY_PLACED_IN_PRIVATE_CGROUP '+str(cg),flush=True)"
+assert text.count(cg_observer)==1
+text=text.replace(cg_observer,cg_observer+"""
+for observed in [cg,cg/'cgroup.procs',cg/'system',cg/'apps']:
+ print('LINUX_PRIVATE_CGROUP_LABEL '+json.dumps({'path':str(observed),'context':os.getxattr(observed,'security.selinux').decode().rstrip(chr(0))}),flush=True)
+""")
+
 # Original cgroup-v2 system/app hierarchy for the already owned cohort only.
 # CgroupSetup cannot be replayed globally: this Linux factory delegates its
 # existing kernel subtree, using the original descriptor mode/identity.
@@ -477,6 +486,16 @@ assert kernel.umount2(b'/.old-root',2)==0,ctypes.get_errno()
 Path('/.old-root').rmdir()
 print('LINUX_PRIVATE_ROOT_PIVOTED old_host_view_detached',flush=True)
 ''')
+# The enforcing boundary is admission, after trusted Linux preparation has
+# pivoted and detached the host view. Do not advertise prepared before that.
+gate="print('LINUX_PRIVATE_ROOT_PIVOTED old_host_view_detached',flush=True)"
+assert text.count(gate)==1
+text=text.replace(gate,gate+"""
+if os.environ.pop('ARCHTV_MAC_STDIN_GATE',None)=='1':
+ print('MAC_FACTORY_PREPARED_AWAITING_RELEASE',flush=True)
+ assert os.read(0,1)==b'G', 'MAC controller did not release prepared factory'
+""")
+
 compile(text,'<integrated factory>','exec')
 if '--materialize-only' in saved:
  Path('/home/tv/.cache/archtv/integrated-factory-preview.py').write_text(text)

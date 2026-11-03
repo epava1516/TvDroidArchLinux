@@ -1,0 +1,6 @@
+; Only dedicated runtime units live below this stable slice. Linux PID1 and
+; the trusted Linux factory manage it; Android sees only its bound descendant.
+; Do not grant Android access to host linux.cgroup_t objects.
+(genfscon cgroup2 /archtv.slice (u object_r cgroup_v2 ((s0) (s0))))
+(allow linux.init_t cgroup_v2 (dir (create read open getattr search write add_name remove_name rmdir setattr)))
+(allow linux.init_t cgroup_v2 (file (read open getattr write setattr)))

@@ -28,7 +28,7 @@ text=text.replace("for p in sorted((r/'dist/aosp16/factory-inputs-3').glob('*.pa
 text=text.replace("r/'dist/aosp16/hwmanager-cohort-4/payload-2.ext4'",repr(str(payload)))
 text=text.replace("mount('-t','proc','proc',root/'proc')","devices.enable_loop_controls(root,out)\nmount('-t','proc','proc',root/'proc')")
 text=text.replace("cgbase=Path('/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1')", """unit_cgroup=Path('/proc/self/cgroup').read_text().split('0::',1)[1].strip()
-assert unit_cgroup.startswith('/system.slice/archtv-apex-') and unit_cgroup.endswith('.service'),unit_cgroup
+assert unit_cgroup.startswith('/archtv.slice/archtv-apex-') and unit_cgroup.endswith('.service'),unit_cgroup
 cgbase=Path('/sys/fs/cgroup'+unit_cgroup)/'archtv-apex'""")
 text=text.replace("stdin_fd=os.open(root/'dev/null'", """monitor_log=(out/'device-monitor.log').open('w')
 monitor=subprocess.Popen([sys.executable,str(r/'reports/android16-apex-bootstrap/devices.py'),str(root),str(out),str(os.getpid())],stdout=monitor_log,stderr=subprocess.STDOUT)

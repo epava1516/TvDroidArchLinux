@@ -47,7 +47,7 @@ if integrated_socket:
     assert console_found,'Owned tty2 session missing'
 else:assert not sessions,'Interactive session present'
 
-before={'utc':stamp,'head':command(['runuser','-u','tv','--','git','-C',str(repo),'rev-parse','HEAD']).stdout.strip(),'pending':command(['runuser','-u','tv','--','git','-C',str(repo),'status','--short']).stdout,'boot_id':Path('/proc/sys/kernel/random/boot_id').read_text().strip(),'kernel':os.uname().release,'payload':str(payload),'data_store':str(data_store),'integrated_socket':str(integrated_socket) if integrated_socket else None,'data_preparation_sha256':hashlib.sha256((data_store/'linux-preparation.json').read_bytes()).hexdigest(),'payload_sha256':hashlib.file_digest(payload.open('rb'),'sha256').hexdigest(),'allowed_dm_names':sorted(allowed),'modules_before':command(['lsmod']).stdout,'scope':'Trusted original APEX activation only. Permissive; no APK or MAC acceptance. No VM restart requested.'}
+before={'utc':stamp,'head':command(['runuser','-u','tv','--','git','-C',str(repo),'rev-parse','HEAD']).stdout.strip(),'pending':command(['runuser','-u','tv','--','git','-C',str(repo),'status','--short']).stdout,'boot_id':Path('/proc/sys/kernel/random/boot_id').read_text().strip(),'kernel':os.uname().release,'payload':str(payload),'data_store':str(data_store),'integrated_socket':str(integrated_socket) if integrated_socket else None,'data_preparation_sha256':hashlib.sha256((data_store/'linux-preparation.json').read_bytes()).hexdigest(),'payload_sha256':hashlib.file_digest(payload.open('rb'),'sha256').hexdigest(),'allowed_dm_names':sorted(allowed),'modules_before':command(['lsmod']).stdout,'scope':('Bounded enforcing integration diagnostic requested; inspect mac-window.json actual modes/result. No APK/MAC acceptance or VM restart inferred.' if os.environ.get('ARCHTV_MAC_WINDOW_SECONDS') else 'Trusted original APEX activation only. Permissive; no APK or MAC acceptance. No VM restart requested.')}
 assert re.fullmatch('[0-9a-f]{40}',before['head']),before['head']
 (recovery/'before.json').write_text(json.dumps(before,indent=2)+'\n')
 (recovery/'pending.patch').write_bytes(subprocess.check_output(['runuser','-u','tv','--','git','-C',str(repo),'diff','--binary']))
@@ -71,9 +71,66 @@ dm_before=dm_names(baseline);assert not dm_before,dm_before
 unit='archtv-apex-'+str(time.time_ns())
 before['unit']=unit;before['dm_before']=sorted(dm_before);(recovery/'before.json').write_text(json.dumps(before,indent=2)+'\n')
 started=time.time();log=recovery/'run.log';exit_code=None;cleanup=[]
+# Opt-in bounded integration diagnostic; reuses the preopened-control watchdog
+# from hwmanager-cohort/enforcing-window.py. Never enables a permissive domain.
+mac_window=int(os.environ.get('ARCHTV_MAC_WINDOW_SECONDS','0'))
+assert mac_window==0 or 4<=mac_window<=120
+
+def candidate_run(args, **kwargs):
+    if not mac_window:return subprocess.run(args,**kwargs)
+    import ctypes,signal
+    expected=os.environ['ARCHTV_MAC_EXPECT_POLICY_SHA256'];assert re.fullmatch('[0-9a-f]{64}',expected)
+    lib=ctypes.CDLL(None,use_errno=True);assert lib.unshare(0x00020000)==0,ctypes.get_errno()
+    subprocess.run(['mount','--make-rprivate','/'],check=True)
+    control=recovery/'mac-control';control.mkdir(mode=0o700)
+    subprocess.run(['mount','-t','selinuxfs','selinuxfs',str(control)],check=True)
+    fd=None;watchdog=None;proc=None
+    record={'seconds':mac_window,'scope':'Global enforcing only after real factory preparation; original subsystems, not APK/MAC acceptance by exit0','activated':False}
+    try:
+        assert (control/'enforce').read_text().strip()=='0'
+        record['policy_readback_sha256']=hashlib.sha256((control/'policy').read_bytes()).hexdigest();assert record['policy_readback_sha256']==expected
+        fd=os.open(control/'enforce',os.O_RDWR|os.O_CLOEXEC)
+        def mode(value=None):
+            os.lseek(fd,0,0)
+            if value is not None:assert os.write(fd,value)==1;os.lseek(fd,0,0)
+            return os.read(fd,16).strip()
+        proc=subprocess.Popen(args,stdin=subprocess.PIPE,**{k:v for k,v in kwargs.items() if k!='timeout'})
+        deadline=time.monotonic()+60
+        while proc.poll() is None and 'MAC_FACTORY_PREPARED_AWAITING_RELEASE' not in log.read_text():
+            if time.monotonic()>deadline:raise TimeoutError('Factory preparation did not reach MAC gate')
+            time.sleep(.1)
+        if proc.poll() is not None:
+            record['candidate_exit_before_gate']=proc.returncode
+            return subprocess.CompletedProcess(args,proc.returncode)
+        # Fork outside candidate PID/mount/cgroup; no exec/library/path lookup
+        # is needed for recovery through the preopened kernel control.
+        watchdog=os.fork()
+        if watchdog==0:
+            time.sleep(mac_window)
+            try:os.lseek(fd,0,0);os.write(fd,b'0');os._exit(0)
+            except BaseException:os._exit(90)
+        assert mode(b'1')==b'1';record['activated']=True;record['started_monotonic']=time.monotonic()
+        proc.stdin.write(b'G');proc.stdin.flush();proc.stdin.close()
+        try:code=proc.wait(timeout=mac_window+5)
+        except subprocess.TimeoutExpired:
+            subprocess.run(['systemctl','stop',unit+'.service'],check=True);code=124;proc.wait(timeout=15)
+        record['candidate_exit']=code;record['mode_at_candidate_exit']=mode().decode();record['elapsed_enforcing_attempt']=time.monotonic()-record['started_monotonic']
+        if record['mode_at_candidate_exit']!='1':code=124;record['window_expired_no_acceptance']=True
+        return subprocess.CompletedProcess(args,code)
+    finally:
+        if fd is not None:
+            os.lseek(fd,0,0);assert os.write(fd,b'0')==1;os.lseek(fd,0,0);record['restored_enforce']=os.read(fd,16).strip().decode();assert record['restored_enforce']=='0'
+        if watchdog is not None:
+            waited,status=os.waitpid(watchdog,os.WNOHANG)
+            if not waited:os.kill(watchdog,signal.SIGTERM);_,status=os.waitpid(watchdog,0);record['watchdog_cancelled_after_restore']=True
+            record['watchdog_status']=status
+        (recovery/'mac-window.json').write_text(json.dumps(record,indent=2)+'\n')
+        if fd is not None:os.close(fd)
+        subprocess.run(['umount',str(control)],check=True);control.rmdir()
+
 try:
     with log.open('x') as stream:
-        result=subprocess.run(['systemd-run','--wait','--pipe','--collect','--unit='+unit,'--service-type=exec','--property=RuntimeMaxSec='+str(350+interaction_extension if integrated_socket else 210),'--property=TimeoutStopSec=5','--property=KillMode=control-group','--property=MemoryMax=4G','--property=MemorySwapMax=1G','--property=CPUQuota=200%','--property=TasksMax='+str(1024 if integrated_socket else 256),*(['--property=OpenFile=/proc/sys/net/core/bpf_jit_enable:archtv-bpf-jit:read-only','--property=OpenFile=/proc/sys/net/core/bpf_jit_kallsyms:archtv-bpf-kallsyms:read-only','--property=OpenFile=/proc/self/ns/net:archtv-host-netns:read-only','--setenv=ARCHTV_HOST_NETNS_INODE='+str(Path('/proc/self/ns/net').stat().st_ino)] if integrated_socket else []),'timeout','--kill-after=5',str(345+interaction_extension if integrated_socket else 205),'setpriv','--inh-caps=-all','--ambient-caps=-all','unshare','--mount','--pid','--fork','--kill-child=SIGKILL','--net','--ipc','--uts','/usr/bin/python',*([str(repo/'reports/android16-package-bootstrap/execute-integrated.py'),str(integrated_socket),str(payload),str(data_store)] if integrated_socket else [str(repo/'reports/android16-apex-bootstrap/execute.py'),'--payload',str(payload),'--data-store',str(data_store),'--observe-logs'])],stdout=stream,stderr=subprocess.STDOUT,timeout=370+interaction_extension if integrated_socket else 230)
+        result=candidate_run(['systemd-run','--wait','--pipe','--collect','--unit='+unit,'--slice=archtv.slice','--service-type=exec','--property=RuntimeMaxSec='+str(350+interaction_extension if integrated_socket else 210),'--property=TimeoutStopSec=5','--property=KillMode=control-group','--property=MemoryMax=4G','--property=MemorySwapMax=1G','--property=CPUQuota=200%','--property=TasksMax='+str(1024 if integrated_socket else 256),*(['--setenv=ARCHTV_MAC_STDIN_GATE=1'] if mac_window else []),*(['--property=OpenFile=/proc/sys/net/core/bpf_jit_enable:archtv-bpf-jit:read-only','--property=OpenFile=/proc/sys/net/core/bpf_jit_kallsyms:archtv-bpf-kallsyms:read-only','--property=OpenFile=/proc/self/ns/net:archtv-host-netns:read-only','--setenv=ARCHTV_HOST_NETNS_INODE='+str(Path('/proc/self/ns/net').stat().st_ino)] if integrated_socket else []),'timeout','--kill-after=5',str(345+interaction_extension if integrated_socket else 205),'setpriv','--inh-caps=-all','--ambient-caps=-all','unshare','--mount','--pid','--fork','--kill-child=SIGKILL','--net','--ipc','--uts','/usr/bin/python',*([str(repo/'reports/android16-package-bootstrap/execute-integrated.py'),str(integrated_socket),str(payload),str(data_store)] if integrated_socket else [str(repo/'reports/android16-apex-bootstrap/execute.py'),'--payload',str(payload),'--data-store',str(data_store),'--observe-logs'])],stdout=stream,stderr=subprocess.STDOUT,timeout=370+interaction_extension if integrated_socket else 230)
         exit_code=result.returncode
 finally:
     command(['systemctl','stop',unit+'.service'])
@@ -124,7 +181,7 @@ finally:
     messages=[]
     for line in klog.splitlines():
         row=json.loads(line);tag=row.get('SYSLOG_IDENTIFIER','');message=row.get('MESSAGE','')
-        if 'apex' in tag.lower() or re.search(r'apexd|device-mapper|dm-verity|loop[0-9]+',message,re.I):messages.append({'utc_us':row.get('__REALTIME_TIMESTAMP'),'tag':tag,'message':message})
+        if 'apex' in tag.lower() or re.search(r'apexd|device-mapper|dm-verity|loop[0-9]+|avc:|audit.*(?:lost|suppressed|backlog|rate limit)',message,re.I):messages.append({'utc_us':row.get('__REALTIME_TIMESTAMP'),'tag':tag,'message':message})
     (recovery/'kernel-apex.json').write_text(json.dumps(messages,indent=2)+'\n')
     (recovery/'kernel-apex.log').write_text('\n'.join(row['tag']+': '+row['message'] for row in messages)+'\n')
     text=log.read_text() if log.exists() else ''

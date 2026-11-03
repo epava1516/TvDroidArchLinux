@@ -1,0 +1,6 @@
+; Linux owns the global ext4 filesystem SID, including the private persisted
+; data bind and original read-only images. Mirror original AOSP domain->fs_type
+; getattr and file_type->labeledfs associate, preserving all file/DAC/MLS checks.
+; No file contents, mounts or relabel permission is granted here.
+(allow domain linux.fs_t (filesystem (getattr)))
+(allow file_type linux.fs_t (filesystem (associate)))
