@@ -416,13 +416,13 @@
         "scope": "Exact Markorv164 Markdown note created163 survives complete cohort teardown and original subsystems167; actual bytes, same UID/inodes/MCS, original install/force-stop/relaunch and real single pointer opens editor.167 native/exterior0. Not host reboot/power loss, FBE/MAC, graceful close, arbitrary upgrade or general APK compatibility."
       },
       "runtime_security_observation": {
-        "candidate": 205,
-        "status": "original_netd_map_init_pass_gatekeeper_abort_vintf_labels_wrong",
+        "candidate": 207,
+        "status": "original_vintf_contexts_fixed_security_daemons_start_allocator_driver_failed",
         "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-        "record_sha256": "524c428740ffb1e58f5e28bc6feb4cb9c7e749b5885d0760cd844cc5dd30da52",
-        "scope": "Original netd libnetd_updatable and controller init underMAC; no authorized client/network availability. Original Gatekeeper abort before acceptance; VINTF labels wrong, abort cause unproven. No new APK stage.",
+        "record_sha256": "8e06dc50571e3d3b38078ec9511bb1b17097414c6d0ad9ef21e9aaae7e28fffa",
+        "scope": "Original VINTF contexts corrected, functional security startup without shellfixtures, graphics allocator1 with GPU sysfs search denied. No authorized crypto operation, new UI or APK stage.",
         "r1_mac": "open",
-        "host_after": "Permissive candidate29/policyloadCOUNT27, auditnewloss0, no owned units/loops/dm/FUSE, allknown41prog58map absent; previous note/hash/CE/DE retained"
+        "host_after": "Permissive candidate29/policyloadCOUNT27, auditnewloss0, no owned resources and known41prog58map absent. Prior note/hash/CE/DE intact."
       },
       "runtime_security_observation_history": [
         {
@@ -496,6 +496,15 @@
           "scope": "Original logd/logcat and netd mount discovery underMAC, then map_createEPERM/SIGABRT. No netd operation or new APK stage; original close incomplete.",
           "r1_mac": "open",
           "host_after": "Candidate1 while enforcing6.326s, restored0, host candidate28/policyloadCOUNT26, auditnewloss0/rulesunchanged, no units/loops/dm/FUSE. Previous note21bytes/hash/CE/DE retained. UUID consumed; gate absent."
+        },
+        {
+          "candidate": 205,
+          "status": "original_netd_map_init_pass_gatekeeper_abort_vintf_labels_wrong",
+          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "record_sha256": "524c428740ffb1e58f5e28bc6feb4cb9c7e749b5885d0760cd844cc5dd30da52",
+          "scope": "Original netd libnetd_updatable and controller init underMAC; no authorized client/network availability. Original Gatekeeper abort before acceptance; VINTF labels wrong, abort cause unproven. No new APK stage.",
+          "r1_mac": "open",
+          "host_after": "Permissive candidate29/policyloadCOUNT27, auditnewloss0, no owned units/loops/dm/FUSE, allknown41prog58map absent; previous note/hash/CE/DE retained"
         }
       ],
       "runtime_security_history": [

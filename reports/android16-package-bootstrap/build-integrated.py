@@ -287,7 +287,14 @@ vendor['files']['/vendor/etc/init/archtv-logd.rc']={'source':str(out/'linux-logd
 text=(base/'build-payload-expanded.py').read_text().replace(str(base),str(out));expected=out/'apex-expected.json';expected.write_text(json.dumps(json.loads((r/'reports/android16-apex-bootstrap/complete-inputs.json').read_text())['modules'],indent=2)+'\n');text=text.replace("image=out/'payload-2.ext4'", "record('/apex-expected.json',out/'apex-expected.json','u:object_r:vendor_configs_file:s0',0o600)\nimage=out/'payload-2.ext4'")
 old_parent="record('/'+str(parent.relative_to(tree)),None,'u:object_r:vendor_file:s0',0o755)"
 assert old_parent in text
-text=text.replace(old_parent,"record('/'+str(parent.relative_to(tree)),None,'u:object_r:vendor_overlay_file:s0' if path.startswith('/vendor/overlay/') else 'u:object_r:vendor_file:s0',0o755)")
+# Pinned original file_contexts requires configs labels on vendor/etc and
+# every descendant directory. Generic vendor_file blocks real VINTF readers.
+# Preserve explicit leaf labels and the separately selected overlay tree.
+parent_contexts=r/'dist/aosp16/factory-inputs-3/root/system/etc/selinux/plat_file_contexts'
+original_rule=[line.split() for line in parent_contexts.read_text().splitlines() if line.split() and line.split()[0]=='/(vendor|system/vendor)/etc(/.*)?']
+assert original_rule==[['/(vendor|system/vendor)/etc(/.*)?','u:object_r:vendor_configs_file:s0']]
+(out/'vendor-parent-context-contract.json').write_text(json.dumps({'source':str(parent_contexts),'source_sha256':hashlib.sha256(parent_contexts.read_bytes()).hexdigest(),'original_rule':original_rule[0],'scope':'Only directory parents in immutable payload /vendor/etc; explicit leaf/overlay contexts retained. No host labels or policy changes.'},indent=2)+'\n')
+text=text.replace(old_parent,"record('/'+str(parent.relative_to(tree)),None,'u:object_r:vendor_configs_file:s0' if ('/'+str(parent.relative_to(tree))=='/vendor/etc' or ('/'+str(parent.relative_to(tree))).startswith('/vendor/etc/')) else 'u:object_r:vendor_overlay_file:s0' if path.startswith('/vendor/overlay/') else 'u:object_r:vendor_file:s0',0o755)")
 recipe=out/'build-payload.py';recipe.write_text(text);subprocess.run(['python',str(recipe)],stdout=open(out/'packager.log','w'),stderr=subprocess.STDOUT,check=True)
 assert all(hashlib.sha256((r/n).read_bytes()).hexdigest()==h for n,h in source_hashes.items()), 'Source changed during build'
 print(out,flush=True)

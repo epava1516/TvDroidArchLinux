@@ -816,10 +816,20 @@ class LinuxMc1Cohort {
         }
         if(auto started=keymint_->Start();!started.ok())return started;
         std::fprintf(stderr,"SELECTED_KEYMINT_STARTED pid=%d\n",keymint_->pid());
-        if(auto observed=client("/archtv-android/archtv-keystore-client provider unused > /data/local/tmp/archtv-mc1/keymint-provider.txt 2>&1");!observed.ok())return observed;
+        if(!software_security_) {
+            if(auto observed=client("/archtv-android/archtv-keystore-client provider unused > /data/local/tmp/archtv-mc1/keymint-provider.txt 2>&1");!observed.ok())return observed;
+        }
         keystore_=keystore;
         if(auto started=keystore_->Start();!started.ok())return started;
         std::fprintf(stderr,"SELECTED_KEYSTORE_STARTED pid=%d\n",keystore_->pid());
+        if(software_security_) {
+            // Functional startup uses original Keystore/gatekeeper/framework
+            // consumers. Shell has no original KeyMint lookup permission.
+            // Isolated Binder/JCA fixtures remain diagnostic profiles only.
+            std::fprintf(stderr,"SECURITY_DAEMONS_LIFECYCLE_ONLY REQUIRES_ORIGINAL_CONSUMER_OPERATION NOT_CRYPTO_OR_AUTH_ACCEPTANCE\n");
+            return {};
+        }
+
         if(auto observed=client("/archtv-android/archtv-keystore-client write /data/local/tmp/archtv-mc1/keystore-ciphertext.bin > /data/local/tmp/archtv-mc1/keystore-component.txt 2>&1 && /archtv-android/archtv-keystore-client read /data/local/tmp/archtv-mc1/keystore-ciphertext.bin >> /data/local/tmp/archtv-mc1/keystore-component.txt 2>&1");!observed.ok())return observed;
         std::string java_profile;
         if(android::base::ReadFileToString("/vendor/etc/archtv-keystore-java",&java_profile)) {

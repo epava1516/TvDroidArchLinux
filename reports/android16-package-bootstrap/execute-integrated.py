@@ -424,7 +424,11 @@ text=text.replace("list(map(int,fields['Uid'].split()))==[", "list(map(int,field
 text=text.replace("list(map(int,fields['Gid'].split()))==[", "list(map(int,fields['Gid'].split()))==[1032 if identity['kind']=='STORAGED' else 1006 if identity['kind']=='SWCODEC' else 1000 if identity['kind']=='IDMAP' else ")
 for capability in ['CapEff','CapPrm']:
  text=text.replace("int(fields['"+capability+"'],16)==(","int(fields['"+capability+"'],16)==(4 if identity['kind']=='STORAGED' else ")
-keystore_checks="""if keystore_component_profile:
+keystore_checks="""if software_platform_profile:
+ for fixture_output in ['keymint-provider.txt','keystore-component.txt','keystore-ciphertext.bin','keystore-java.txt','java-ciphertext.bin']:
+  assert not Path('/data/local/tmp/archtv-mc1/'+fixture_output).exists(), 'Functional startup must not reuse diagnostic fixture output'
+ print('SECURITY_FIXTURES_NOT_EXECUTED REQUIRE_ORIGINAL_FUNCTIONAL_CONSUMERS',flush=True)
+if keystore_component_profile and not software_platform_profile:
  provider=Path('/data/local/tmp/archtv-mc1/keymint-provider.txt').read_text().splitlines()
  output=Path('/data/local/tmp/archtv-mc1/keystore-component.txt').read_text().splitlines()
  assert len(provider)==1 and re.fullmatch(r'KEYMINT_BINDER_SOFTWARE_V4_OBSERVED pid=[1-9][0-9]* NOT_KEY_OR_APK_ACCEPTANCE',provider[0]),provider

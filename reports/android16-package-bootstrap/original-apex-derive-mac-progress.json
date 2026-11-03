@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "utc": "2026-11-03T21:25:33.861097+00:00",
+  "utc": "2026-11-03T21:35:11.860041+00:00",
   "scope": "Partial original APEX/derive admission under bounded enforcing; no new APK stage or general MAC/isolation acceptance",
   "base_commit": "39d0be0edb77c13575681175fc26e730adee3c11",
   "executions": {
@@ -1318,7 +1318,7 @@
     "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load10/after-load.json",
     "sha256": "309743229826231a5a6d96498f808485c1d5ad5ce3a5cd8c1a279f21f26b9aa8"
   },
-  "next": "Correct /vendor/etc parent directory labels using original file-context contract in image builder, new immutable image/native candidate206. No policy grant/readiness/invented manifest. Preserve exact original HAL XML and test original registration.",
+  "next": "Adapt only original common domain->sysfs dir search to Linux.sysfs_t, preserve RO private GPU view and host labels, compile next30 with neverallow; same native207 whole-cohort test. No content/write/mount grant or global sysfs relabel.",
   "original_sources": {
     "sdkextensions_commit": "4d10e57070bb9c6edcd13bf74e9d01717b2a5ecf",
     "derive_rc_sha256": "a9e65b0c114408e5cb8356bdb435a6b48d0a67cd7879915c52ffa094a267f607",
@@ -1388,8 +1388,8 @@
     "sha256": "9e395067238c647c729c48a03dc8a115e81727ff30a8bfd6f4e50098098c9134"
   },
   "latest_host": {
-    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after205-host.json",
-    "sha256": "acf31e4518d703e5af86930158effb846616d8e54bba37f1e975fcf0ec548612"
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after207-host.json",
+    "sha256": "c574cac8d100ba3f9edd6c6ef9e8cc8017accb05742460815369e552acb3a952"
   },
   "vdc_source_contract": {
     "builtin": "Pinned system/core/init/builtins.cpp1122–1172: original temporary exec plus original failure callback; exact argv /system/bin/vdc --wait cryptfs init_user0. Native observes actual reaping before advance, no shell redirection or synthetic readiness.",
@@ -2107,5 +2107,130 @@
       "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-205/source-inputs.json",
       "sha256": "472aaf09eba5eca161c43a0677c90fd233360ab5f25811ea5f4f6fed62e96b4c"
     }
+  },
+  "integrated206_207": {
+    "scope": "Immutable original context fix and functional original service composition, no HAL operation/crypto/APK MAC acceptance",
+    "contract": {
+      "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/functional-security-and-gpu-contract207.json",
+      "sha256": "c10e708c589fd2bb45b6d7c40514eb1a1bf951628e657d873882d100794bda17"
+    },
+    "build206": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-206/source-inputs.json",
+      "sha256": "b65aea4259ce48506ffaf0633d9765011c874457d930dd4d425344ae573c473d"
+    },
+    "build207": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-207/source-inputs.json",
+      "sha256": "eec9fccbe0e0ac58e661d5bc470c039675a4161ae9ced2e3dabe9e788b2446f9"
+    },
+    "image206": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-206/payload.json",
+      "sha256": "e5d361c180c4485bbaabba68fd63a57945b78001df612375d1398ef0561fb3a5"
+    },
+    "image207": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-207/payload.json",
+      "sha256": "59fb34eb99bb5da5f4a43253da1f655297d24d08b9add1c2156bef8d0d6e659a"
+    },
+    "original_parent_context": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-206/vendor-parent-context-contract.json",
+      "sha256": "d330722e2d5790835e687fce8cbbecfc91af49211f696bd9127e0d2ca40bf451"
+    },
+    "executions": {
+      "206": {
+        "id": "81d0663c-c27f-4c35-91c6-e7cf4fc0bc67",
+        "evidence": {
+          "result.json": {
+            "path": "/home/tv/recuperacion-archtv/81d0663c-c27f-4c35-91c6-e7cf4fc0bc67-markor-software-launch/result.json",
+            "sha256": "0fbeae2d95ca200289127b99576645aca5c1721d5fcd039ad4b0145ebeb367e9"
+          },
+          "mac-window.json": {
+            "path": "/home/tv/recuperacion-archtv/81d0663c-c27f-4c35-91c6-e7cf4fc0bc67-markor-software-launch/mac-window.json",
+            "sha256": "8ceba5b40d97cf682ef4012916f34a1c64e2b528d3de68deb997d33fc8c5acc1"
+          },
+          "completion-consumer.json": {
+            "path": "/home/tv/recuperacion-archtv/81d0663c-c27f-4c35-91c6-e7cf4fc0bc67-markor-software-launch/completion-consumer.json",
+            "sha256": "77e8f6738254b48f8ddda0b85117c392d55a5e988441f4b7b4dc5620e3a52dcc"
+          },
+          "runtime-source-overlay.json": {
+            "path": "/home/tv/recuperacion-archtv/81d0663c-c27f-4c35-91c6-e7cf4fc0bc67-markor-software-launch/runtime-source-overlay.json",
+            "sha256": "1dd0d08e183b37335d180f59d0ad64c2887a578dda6b866167e3eb7b2e393f10"
+          },
+          "original-logcat.txt": {
+            "path": "/home/tv/recuperacion-archtv/81d0663c-c27f-4c35-91c6-e7cf4fc0bc67-markor-software-launch/original-logcat.txt",
+            "sha256": "0340234c3376d71b81ea12f8d4ec365e881f4088be9b11a2c3f2c6469e534e71"
+          },
+          "bpf-all-known-after.json": {
+            "path": "/home/tv/recuperacion-archtv/81d0663c-c27f-4c35-91c6-e7cf4fc0bc67-markor-software-launch/bpf-all-known-after.json",
+            "sha256": "b26566da28d978352f3391ca98213700ba2e5f80cd738e1db5abfa408b9417bd"
+          },
+          "finite-audit/result.json": {
+            "path": "/home/tv/recuperacion-archtv/81d0663c-c27f-4c35-91c6-e7cf4fc0bc67-markor-software-launch/finite-audit/result.json",
+            "sha256": "f913b794a8678d894d2d519a5e9bdca9f926fdd6f7714a966d354530ca0fc392"
+          },
+          "userdata-after206-close.json": {
+            "path": "/home/tv/recuperacion-archtv/81d0663c-c27f-4c35-91c6-e7cf4fc0bc67-markor-software-launch/userdata-after206-close.json",
+            "sha256": "4477ee9211357764214a58e155c67a3708d0a0b48d85b4ad5bf7f5a386fc1b76"
+          },
+          "image-vintf-contexts.json": {
+            "path": "/home/tv/recuperacion-archtv/81d0663c-c27f-4c35-91c6-e7cf4fc0bc67-markor-software-launch/image-vintf-contexts.json",
+            "sha256": "05b05c75c4d268649e389190599b32885511fbf3eebe500048e9668a29008922"
+          }
+        },
+        "after_host": {
+          "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after206-host.json",
+          "sha256": "c9a785cbd38d1f7ab239f9849716c7f90085545c94ff5a041fccc0c4ab364493"
+        }
+      },
+      "207": {
+        "id": "db0f443f-da62-426b-86a2-3da9f5c19088",
+        "evidence": {
+          "result.json": {
+            "path": "/home/tv/recuperacion-archtv/db0f443f-da62-426b-86a2-3da9f5c19088-markor-software-launch/result.json",
+            "sha256": "e7316541171bd4d6ee67fce71db533b57759f07c580af0c895ee0aef2c723bc5"
+          },
+          "mac-window.json": {
+            "path": "/home/tv/recuperacion-archtv/db0f443f-da62-426b-86a2-3da9f5c19088-markor-software-launch/mac-window.json",
+            "sha256": "b3a7bb15afadf5b929d4ecadfe77999fb2d81f8b4d2539c0a382d9806f545784"
+          },
+          "completion-consumer.json": {
+            "path": "/home/tv/recuperacion-archtv/db0f443f-da62-426b-86a2-3da9f5c19088-markor-software-launch/completion-consumer.json",
+            "sha256": "98a28f90b6b4435b0a82327486164b7dbcff3821c0eb5a66914e3820c8fbc592"
+          },
+          "runtime-source-overlay.json": {
+            "path": "/home/tv/recuperacion-archtv/db0f443f-da62-426b-86a2-3da9f5c19088-markor-software-launch/runtime-source-overlay.json",
+            "sha256": "b44d69484fb9ae3e288e4123be744f97902959cd9933bf284a11c0f3812baafb"
+          },
+          "original-logcat.txt": {
+            "path": "/home/tv/recuperacion-archtv/db0f443f-da62-426b-86a2-3da9f5c19088-markor-software-launch/original-logcat.txt",
+            "sha256": "867fba850a38f127fe8c7fa31eff431f23aa84425b8248c932b9aae7a91a5118"
+          },
+          "bpf-all-known-after.json": {
+            "path": "/home/tv/recuperacion-archtv/db0f443f-da62-426b-86a2-3da9f5c19088-markor-software-launch/bpf-all-known-after.json",
+            "sha256": "0486e36c1c4ae84052b1bd89985081bf57d490c33081db905270d3dbcbb17bde"
+          },
+          "finite-audit/result.json": {
+            "path": "/home/tv/recuperacion-archtv/db0f443f-da62-426b-86a2-3da9f5c19088-markor-software-launch/finite-audit/result.json",
+            "sha256": "fdd4a97df70ae0edf42f9a02b74cb0642da455fba5b49f6f5a5c92122a96702b"
+          },
+          "userdata-after207-close.json": {
+            "path": "/home/tv/recuperacion-archtv/db0f443f-da62-426b-86a2-3da9f5c19088-markor-software-launch/userdata-after207-close.json",
+            "sha256": "be63ff5f15607cd29aec091a8a496f600a61078f62e6f97e0809fa367e0d55a4"
+          }
+        },
+        "after_host": {
+          "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after207-host.json",
+          "sha256": "c574cac8d100ba3f9edd6c6ef9e8cc8017accb05742460815369e552acb3a952"
+        }
+      }
+    },
+    "results": [
+      "206 actual image debugfs xattrs and e2fsck verify vendor/etc/vintf parent vendor_configs_file from pinned AOSP rule. Explicit leaf/overlay labels retained, no host labels or policy changes. Original VINTF parent read errors no longer observed. Gatekeeper no SIGABRT during35.509s window; lifecycle only, not registration/operation proof.",
+      "206 still fails added shell fixture KeyMint lookup (original service_manager denial), not a demonstrated KeyMint service failure.207 removes Binder/JCA fixtures only from functional profile; isolated diagnostic paths preserved, no new shell access or success output. Linux verifier requires fixture outputs absent in functional path.",
+      "207 starts KeyMint/Gatekeeper/Keystore and graphics daemons, original keystore consumer operations not accepted by Start. Allocator337 returns1, original Minigbm logs Failed to initialize driver. Two sysfs GPU directory search AVCs correspond; next common original sysfs directory search mapping. No physical UI/new APK stage."
+    ],
+    "limits": [
+      "Original Keystore/KeyMint/Gatekeeper availability/crypto/authentication/credential persistence require real authorized consumer operations; nonsecure reference is not hardware security.",
+      "Original close incomplete, external closure verified. No whole R1-MAC acceptance. Known network sysctl/NFLOG/dummy0 and GPU/FUSE optional limits remain.",
+      "Markor167 remains prior permissive local journey. No new APK stage, no ARM/GMS/DRM acceptance."
+    ]
   }
 }

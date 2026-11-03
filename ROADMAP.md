@@ -1,6 +1,6 @@
 # Roadmap · Arch TV nativo en Rust
 
-Prioridad205: [estado canónico](docs/ESTADO.md) · Netd supera mapas/inicialización; su operación espera al consumidor original autorizado. Gatekeeper aborta y VINTF tiene padres mal etiquetados: corregir imagen según AOSP y probar registro HAL real, luego Zygote y Markor bajo MAC. R1-MAC y limitaciones de red abiertas.
+Prioridad207: [estado canónico](docs/ESTADO.md) · VINTF corregido y arranque funcional de seguridad sin sondas shell no autorizadas. Allocator/driver falla con búsqueda sysfs GPU denegada: contrastar regla común AOSP, luego SF/display, Zygote y Markor bajo MAC. Operaciones originales de seguridad y R1-MAC siguen abiertas.
 
 Histórico179: [estado](docs/ESTADO.md) · builtin/VDC original alcanza vold y falla25 en auxiliar NNP; exigir operación user0 completa y APEX en vivo, luego Markor bajo MAC. [Evidencias](reports/android16-package-bootstrap/original-apex-derive-mac-progress.json).
 
