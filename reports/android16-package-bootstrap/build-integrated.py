@@ -4,8 +4,18 @@ from pathlib import Path
 import json,subprocess,shutil,hashlib,sys
 r=Path(__file__).resolve().parents[2];out=(r/sys.argv[1]).resolve();out.mkdir()
 tracked_inputs=['Cargo.toml','Cargo.lock','crates/archtv-core/Cargo.toml',*[str(p.relative_to(r)) for p in sorted((r/'crates/archtv-core/src').rglob('*.rs'))],'crates/archtv-core/examples/native_supervisor.rs','reports/android16-package-bootstrap/execute-integrated.py','reports/android16-package-bootstrap/integrated-session.sh','reports/android16-apex-bootstrap/run.py','reports/android16-package-bootstrap/build-platform-overlay.py','tools/apk/SignPlatformOverlay.java','runtime/aosp/platform-overlay/AndroidManifest.xml','runtime/aosp/platform-overlay/res/values/config.xml','runtime/aosp/platform-overlay/overlay-config.xml','reports/android16-apex-bootstrap/devices.py','runtime/aosp/linux-services/initial-apk-profile.json','runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java','runtime/aosp/linux-services/org/archtv/aosplinux/ServiceLauncher.java','runtime/aosp/linux-services/install-markor.sh','runtime/aosp/native/linux-property-worker.cpp','runtime/aosp/native/linux-mc1-cohort.h','reports/android16-package-bootstrap/build-integrated.py','runtime/aosp/android16-qpr2/patches/0004-linux-admitted-lazy-services.patch','fixtures/aosp-keymint-software/SoftwareCryptoProbe.cpp','runtime/aosp/native/linux-keymint-service.cpp','reports/android16-package-bootstrap/build-keymint-software.py','fixtures/aosp-keystore2-software/BinderClient.rs','runtime/aosp/android16-qpr2/patches/keystore2-linux-software.patch','fixtures/aosp-keystore2-software/OriginalJavaProviderProbe.java','runtime/aosp/android16-qpr2/patches/framework-keystore-linux-software.patch','tools/aosp/KeystoreFrameworkProfilePlan.java','tools/aosp/build_software_keystore_framework.py','reports/android16-package-bootstrap/build-keystore-java-probe.py','reports/android16-package-bootstrap/build-gatekeeper-software.py']
+tracked_inputs.extend(['reports/android16-property-actions/apply-patch-chain.py','reports/android16-property-actions/build-lazy-control.py',*[str(p.relative_to(r)) for p in sorted((r/'runtime/aosp/android16-qpr2/patches').glob('000[1-5]-*.patch'))]])
 source_hashes={n:hashlib.sha256((r/n).read_bytes()).hexdigest() for n in tracked_inputs}
 (out/'source-inputs.json').write_text(json.dumps(source_hashes,indent=2)+'\n')
+actions_source=r/'dist/aosp16/property-actions-source-4'
+actions_application=json.loads((actions_source/'application.json').read_text())
+for f in actions_application['files']:
+ assert hashlib.sha256((actions_source/f['name']).read_bytes()).hexdigest()==f['sha256'],f['name']
+for patch in actions_application['patches']:
+ assert hashlib.sha256(Path(patch['path']).read_bytes()).hexdigest()==patch['sha256'],patch['path']
+actions_archive=json.loads((r/'dist/aosp16/property-actions-build-5/archive.json').read_text())
+assert hashlib.sha256(Path(actions_archive['archive']).read_bytes()).hexdigest()==actions_archive['sha256']
+(out/'property-runtime-input.json').write_text(json.dumps({'application':actions_application,'archive':actions_archive},indent=2)+'\n')
 overlay=r/'dist/aosp16/platform-overlay-build-2'
 overlay_record=json.loads((overlay/'build.json').read_text())
 assert hashlib.sha256((overlay/'ArchTvPlatform.apk').read_bytes()).hexdigest()==overlay_record['apk_sha256']
@@ -51,7 +61,7 @@ run(['cargo','rustc','--offline','--locked','--manifest-path',str(r/'Cargo.toml'
 shutil.copy2(rust_cache/'debug/examples/native_supervisor',out/'cargo/debug/examples/native_supervisor')
 assert '/archtv/lib/ld-linux-x86-64.so.2' in subprocess.check_output(['readelf','-l',str(out/'cargo/debug/examples/native_supervisor')],text=True), 'Linux payload interpreter contract missing'
 for c in json.loads((old/'build.json').read_text())['commands']:
- argv=[a.replace(str(old),str(out)).replace('property-actions-source-2','property-actions-source-3').replace('property-actions-build-3','property-actions-build-4') for a in c['argv']]
+ argv=[a.replace(str(old),str(out)).replace('property-actions-source-2','property-actions-source-4').replace('property-actions-source-3','property-actions-source-4').replace('property-actions-build-3','property-actions-build-5').replace('property-actions-build-4','property-actions-build-5') for a in c['argv']]
  run(argv)
 argv=json.loads((r/'reports/android16-hwmanager-cohort/helper-build.json').read_text())['argv'];argv[argv.index('-o')+1]=str(out/'linux-exec-context-image');run(argv)
 (out/'artifacts.json').write_text(json.dumps({n:hashlib.sha256((out/n).read_bytes()).hexdigest() for n in ['graphics-client','cargo/debug/examples/native_supervisor','linux-exec-context-image','property-coordinator']},indent=2))

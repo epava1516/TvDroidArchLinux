@@ -1,6 +1,6 @@
 from pathlib import Path
-import json,subprocess,shutil
-r=Path('/home/tv/repositorio-principal');out=r/'dist/aosp16/property-actions-build-4';out.mkdir(exist_ok=True);overlay=r/'dist/aosp16/property-actions-source-3';old=json.loads((r/'reports/android16-propertyinit-entry/link.json').read_text())['attempts'];flags=old[0]['argv'][:old[0]['argv'].index('-c')];flags[1:1]=['-I'+str(overlay)];rec={'scope':'Original init action/event loop integration boundary, explicit lazy interface control, not SecondStageMain or APK compatibility','commands':[]}
+import json,subprocess,shutil,sys
+r=Path('/home/tv/repositorio-principal');out=r/(sys.argv[1] if len(sys.argv)>1 else 'dist/aosp16/property-actions-build-5');out.mkdir();overlay=r/(sys.argv[2] if len(sys.argv)>2 else 'dist/aosp16/property-actions-source-4');old=json.loads((r/'reports/android16-propertyinit-entry/link.json').read_text())['attempts'];flags=old[0]['argv'][:old[0]['argv'].index('-c')];flags[1:1]=['-I'+str(overlay)];rec={'scope':'Original init action/event loop integration boundary, explicit lazy interface control, not SecondStageMain or APK compatibility','commands':[]}
 for f in json.loads((overlay/'application.json').read_text())['files']:
  assert __import__('hashlib').sha256((overlay/f['name']).read_bytes()).hexdigest()==f['sha256'], f['name']
 for name,source in [('init.cpp',overlay/'init.cpp'),('property_service.cpp',overlay/'property_service.cpp'),('probe',r/'reports/android16-property-actions/probe.cpp')]:

@@ -1,5 +1,7 @@
 # Arquitectura vigente · A16-QPR2-1
 
+Propiedades132: el servicio original conserva CheckPermissions y credenciales del socket; su trabajador de restorecon se reconoce por el PID real del proceso supervisado, no por PID1. Así publica la finalización original y vold retorna. [Usuario desbloqueado y actividad Markor ejecutada](../reports/android16-package-bootstrap/original-user-unlock-progress.json); no equivale a cifrado en reposo, autorización MAC ni compatibilidad completa. Siguiente frontera: almacenamiento externo y OverlayManager originales, más cierre de apexd ya reaped.
+
 129 ejecuta la llamada original `LockSettingsInternal.onThirdPartyAppsStarted()` de SystemServer después de AMS.systemReady: LSS crea la contraseña sintética y los subsistemas originales abren las claves CE. La siguiente frontera es la preparación CE por vold; la respuesta de desbloqueo no prueba cifrado en reposo ni un usuario completamente iniciado. [Evidencia129](../reports/android16-package-bootstrap/gatekeeper-platform-progress.json).
 
 Contrato de ciclo LockSettings: la fase600 no sustituye la llamada explícita original `LockSettingsInternal.onThirdPartyAppsStarted()` posterior a AMS.systemReady (SystemServer fijado45034f, línea3590). El subsistema original debe crear la contraseña sintética y claves vinculadas; nuestro coordinador no asigna flags ni secretos.126/127 prueban que systemReady/fase480 solos no bastan. [Evidencia y límites](../reports/android16-package-bootstrap/gatekeeper-platform-progress.json).

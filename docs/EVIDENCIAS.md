@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+[Usuario y lanzamiento parcial132](../reports/android16-package-bootstrap/original-user-unlock-progress.json): UUID693e09b1, hashes de logs completos, fuentes/archivo nativo y salidas originales. Restorecon CE completo, RUNNING_UNLOCKED, bytes Markor iguales y AMS COLD/IntroActivity. Fallos de almacenamiento/DocumentsUI y salida nativa1 conservados; screenshot temprano no acredita UI Markor.103 permanece íntegro en historical103.
+
 [Ciclo LSS129](../reports/android16-package-bootstrap/gatekeeper-platform-progress.json), sección lifecycle_followup129: UUID217d0b64, hashes de inputs, resultado y log5513 registros sin truncar. Inicialización original de contraseña sintética y respuestas Keystore/CE observadas; preparación de directorios CE pendiente al límite. Se conserva causalidad temporal: SIGKILL vold y errores Recovery ocurren durante el cierre. APEX41, instalación intacta, exterior recogido; ningún lanzamiento ni RUNNING_UNLOCKED aceptados.
 
 [Seguimiento126/127 de LockSettings](../reports/android16-package-bootstrap/gatekeeper-platform-progress.json), sección lifecycle_followup127: UUID d663f6de, hashes del log completo5702 registros sin truncar, snapshot, resultado y consumo. Instalación intacta; RUNNING_LOCKED y contraseña sintética ausente, sin lanzamiento. El cierre exterior restaura VT1 y recoge dispositivos; el cierre interno falla y se conserva. La llamada local de SystemServer pendiente no se presenta como ejecutada.

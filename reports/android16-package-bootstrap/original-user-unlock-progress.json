@@ -1,36 +1,192 @@
 {
-  "scope": "Original selected phase1000 and lazy lifecycle progression, not Markor launch or security acceptance",
-  "candidate": 103,
-  "run_id": "b35e7242-e7cc-4e83-a1ac-0445a22d63a5",
-  "checkpoint": "/home/tv/recuperacion-archtv/b35e7242-e7cc-4e83-a1ac-0445a22d63a5-markor-launch",
+  "scope": "Original user unlock and intact Markor activity launch observed; not complete application launch/UI/input/persistence/security acceptance",
+  "candidate": 132,
+  "run_id": "693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8",
+  "checkpoint": "/home/tv/recuperacion-archtv/693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8-markor-software-launch",
   "result": {
+    "native_exit": 1,
     "outer_exit": 1,
     "native_complete_inventory_verified": true,
-    "elapsed_seconds": 198.70127367973328,
     "active_loops": "",
     "final_dm": []
   },
+  "outputs": {
+    "markor-user-state.txt": "RUNNING_UNLOCKED\n",
+    "markor-installed-bytes.txt": "SOURCE c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440  /data/local/tmp/markor.apk\nINSTALLED c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440  /data/app/~~Aci9F1BBa10wMq5ANhyI0A==/net.gsantner.markor-gj1L2ygQwbcBrzai0XQQsQ==/base.apk\n",
+    "markor-resolve.txt": "priority=0 preferredOrder=0 match=0x108000 specificIndex=-1 isDefault=false\nnet.gsantner.markor/.activity.MainActivity\n",
+    "markor-launch.txt": "Starting: Intent { cmp=net.gsantner.markor/.activity.MainActivity }\nStatus: ok\nLaunchState: COLD\nActivity: net.gsantner.markor/.activity.IntroActivity\nTotalTime: 4352\nWaitTime: 4365\nComplete\n"
+  },
+  "original_markers": [
+    {
+      "record_index": 4808,
+      "tag": "UserController.UserState",
+      "message": "User 0 state changed from BOOTING to RUNNING_LOCKED",
+      "actual_sender_pid_uid_gid": [
+        535,
+        1000,
+        1000
+      ],
+      "observed_monotonic": 103735.586247414
+    },
+    {
+      "record_index": 4856,
+      "tag": "vold",
+      "message": "Starting restorecon of /data/system_ce/0",
+      "actual_sender_pid_uid_gid": [
+        362,
+        0,
+        0
+      ],
+      "observed_monotonic": 103735.831305513
+    },
+    {
+      "record_index": 4861,
+      "tag": "vold",
+      "message": "Finished restorecon of /data/system_ce/0",
+      "actual_sender_pid_uid_gid": [
+        362,
+        0,
+        0
+      ],
+      "observed_monotonic": 103735.918416077
+    },
+    {
+      "record_index": 4862,
+      "tag": "vold",
+      "message": "Starting restorecon of /data/vendor_ce/0",
+      "actual_sender_pid_uid_gid": [
+        362,
+        0,
+        0
+      ],
+      "observed_monotonic": 103735.918919654
+    },
+    {
+      "record_index": 4866,
+      "tag": "vold",
+      "message": "Finished restorecon of /data/vendor_ce/0",
+      "actual_sender_pid_uid_gid": [
+        362,
+        0,
+        0
+      ],
+      "observed_monotonic": 103735.931963055
+    },
+    {
+      "record_index": 4867,
+      "tag": "vold",
+      "message": "Starting restorecon of /data/misc_ce/0",
+      "actual_sender_pid_uid_gid": [
+        362,
+        0,
+        0
+      ],
+      "observed_monotonic": 103735.932415956
+    },
+    {
+      "record_index": 4870,
+      "tag": "vold",
+      "message": "Finished restorecon of /data/misc_ce/0",
+      "actual_sender_pid_uid_gid": [
+        362,
+        0,
+        0
+      ],
+      "observed_monotonic": 103735.952745098
+    },
+    {
+      "record_index": 4965,
+      "tag": "UserController.UserState",
+      "message": "User 0 state changed from RUNNING_LOCKED to RUNNING_UNLOCKING",
+      "actual_sender_pid_uid_gid": [
+        535,
+        1000,
+        1000
+      ],
+      "observed_monotonic": 103738.518513774
+    },
+    {
+      "record_index": 5030,
+      "tag": "UserController.UserState",
+      "message": "User 0 state changed from RUNNING_UNLOCKING to RUNNING_UNLOCKED",
+      "actual_sender_pid_uid_gid": [
+        535,
+        1000,
+        1000
+      ],
+      "observed_monotonic": 103738.6382215
+    }
+  ],
   "artifacts": {
-    "/home/tv/recuperacion-archtv/b35e7242-e7cc-4e83-a1ac-0445a22d63a5-markor-launch/run.log": "31a0f459aac28430bf238316d6367dd91c09186a901978b197008404dd586998",
-    "/home/tv/recuperacion-archtv/b35e7242-e7cc-4e83-a1ac-0445a22d63a5-markor-launch/result.json": "ab7b0d901c96ebfebc80fc2fd1d93be9c691d57c166fef7480008861e1e381b4",
-    "/home/tv/recuperacion-archtv/b35e7242-e7cc-4e83-a1ac-0445a22d63a5-markor-launch/completion-consumer.json": "0af1b6244197b47a7f4f8b22d8830cdb4e60791e255a725713efabf9a051069d",
-    "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793648111120373541/android-log-live.jsonl": "b4bc67d919fdba4b9ea9337100f83b87f234dc309ab9c3f9d8fc759c3c3da23d",
-    "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793648111120373541/android-log-capture.json": "8775d0098936b67be678dba8e92dfcae0485a21704bcf46055a7b66e0955c4da",
-    "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-103/source-inputs.json": "43ae4effb33d3ca20eab681b14802fbf726a68cb9029aa8342b8dc318b9c46a9"
+    "/home/tv/recuperacion-archtv/693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8-markor-software-launch/before-launch.json": "930919720f1b11b7a7e9970cc28d51d26a13e19a3fd1876e13d6ff3285aa2753",
+    "/home/tv/recuperacion-archtv/693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8-markor-software-launch/result.json": "9c84a492b72924978fe99f071e09d190d93d4d0913c58d67678e883a03cf4bfa",
+    "/home/tv/recuperacion-archtv/693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8-markor-software-launch/completion-consumer.json": "7fd5feeef8a0edfbc1fc96656c4580a986d6f0dc9f481ffac8eba7f0edf65895",
+    "/home/tv/recuperacion-archtv/693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8-markor-software-launch/session-state.json": "6b606a7d94dc24ce17d4cb9c9ca3935058a14e0c4087d17cce50d9b1c79c7920",
+    "/home/tv/recuperacion-archtv/693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8-markor-software-launch/native-stderr.txt": "d30184acca354a5c6662fd71cd8427017d29c73c9e33dc4806e77e23064e8654",
+    "/home/tv/recuperacion-archtv/693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8-markor-software-launch/markor-launch.txt": "18c99596f5da9c9781faea804524796782484e05b989afe34260d5b1343500c4",
+    "/home/tv/recuperacion-archtv/693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8-markor-software-launch/markor-user-state.txt": "f7e3ef2a0655ff8eccb9cf63ec01c617e54e6f563e1dacc42f7d4269ad642347",
+    "/home/tv/recuperacion-archtv/693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8-markor-software-launch/markor-installed-bytes.txt": "96f016ebe4ca9742213a7b8a66fbbd45357c9428c6c44c77b95bea01bc7729a8",
+    "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793687096890713234/android-log-live.jsonl": "e6149770a9e257f69289054ef13106a458f68cf8f189db67806d053860d30696",
+    "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793687096890713234/android-log-capture.json": "66123c9d85aaeb02636ac9ccffabbc06a1e88a4dd2f17c274cd1aa1843faafb6",
+    "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-132/source-inputs.json": "1be2f746cb0bc777d34df51b9de8999460cb695e30702e1e23311a8d62030f0a",
+    "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-132/property-runtime-input.json": "28998099d410525db241fcc8268a44767ff43d2c2fdbe1c7fb06017943232c84"
   },
   "proved": [
-    "Bootanimation exits0 with original exit request, accepted",
-    "apexd exits0 after original ready and inventory gate, accepted; restart availability still untested",
-    "Original phase1000 traverses MediaSession/MediaCommunication and StagingManager, original init thread pool shuts down",
-    "Original UserController invokes LockSettings unwrap for unsecured user0; rejected ctl.interface_start=aidl/android.service.gatekeeper.IGateKeeperService demonstrates missing original GateKeeper service admission"
+    "Original asynchronous restorecon returns for system_ce, vendor_ce and misc_ce",
+    "Original user0 reaches RUNNING_UNLOCKED after original LSS synthetic-password/key initialization",
+    "Original PMS installs Markor byte-for-byte and original AMS start-activity returns Status:ok/COLD, routing MainActivity to intact IntroActivity",
+    "Markor MainActivity.onCreate appears in original external-storage failure trace; real APK code executed",
+    "Exact exterior units inactive and VT1 restored; devices cleaned; result consumed without queue notification"
   ],
   "not_accepted": [
-    "Actual user RUNNING_UNLOCKED",
-    "Markor launch/UI/input/note/persistence/close/reopen",
-    "APEX lazy restart",
-    "R1-MAC permissive",
-    "Internal ordered close",
-    "ARM GMS DRM"
+    "Stable visible Markor UI, input, note, persistence, close/reopen",
+    "Complete service compatibility: external storage resolves to /dev/null and rejects Markor path; DocumentsUI fails without IOverlayManager",
+    "Native success: exit1 APEX_CANCEL_NOT_COLLECTED despite earlier original daemon normal exit0/clean1; not silently relabeled",
+    "MAC authorization or isolation: SELinux permissive/policyload4",
+    "ARM, GMS and DRM remain open separate axes"
   ],
-  "next": "Integrate original gatekeeperd and required real security backends (GateKeeper HAL/Keystore/KeyMint) based on source/runtime contracts, no fake credentials, auth tokens or keys."
+  "adaptation": {
+    "patch": "runtime/aosp/android16-qpr2/patches/0005-linux-restorecon-owner.patch",
+    "source_commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+    "change": "After unchanged CheckPermissions, kernel peerPID is compared with getpid of supervised coordinator instead of literalPID1, allowing original asynchronous self completion to publish rather than recursively enqueue",
+    "actions_archive_sha256": "257c99474f70eed3d8ed280b4818eebc712996e1cddc69388c224a43917a5772"
+  },
+  "next": "Fix original normal-lazy-exit shutdown predicate with exact reap evidence; integrate coherent external storage/OverlayManager; capture app UI after its real launch and exercise intact onboarding/input/note. Do not accept whole launch from Status:ok alone.",
+  "historical103": {
+    "scope": "Original selected phase1000 and lazy lifecycle progression, not Markor launch or security acceptance",
+    "candidate": 103,
+    "run_id": "b35e7242-e7cc-4e83-a1ac-0445a22d63a5",
+    "checkpoint": "/home/tv/recuperacion-archtv/b35e7242-e7cc-4e83-a1ac-0445a22d63a5-markor-launch",
+    "result": {
+      "outer_exit": 1,
+      "native_complete_inventory_verified": true,
+      "elapsed_seconds": 198.70127367973328,
+      "active_loops": "",
+      "final_dm": []
+    },
+    "artifacts": {
+      "/home/tv/recuperacion-archtv/b35e7242-e7cc-4e83-a1ac-0445a22d63a5-markor-launch/run.log": "31a0f459aac28430bf238316d6367dd91c09186a901978b197008404dd586998",
+      "/home/tv/recuperacion-archtv/b35e7242-e7cc-4e83-a1ac-0445a22d63a5-markor-launch/result.json": "ab7b0d901c96ebfebc80fc2fd1d93be9c691d57c166fef7480008861e1e381b4",
+      "/home/tv/recuperacion-archtv/b35e7242-e7cc-4e83-a1ac-0445a22d63a5-markor-launch/completion-consumer.json": "0af1b6244197b47a7f4f8b22d8830cdb4e60791e255a725713efabf9a051069d",
+      "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793648111120373541/android-log-live.jsonl": "b4bc67d919fdba4b9ea9337100f83b87f234dc309ab9c3f9d8fc759c3c3da23d",
+      "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793648111120373541/android-log-capture.json": "8775d0098936b67be678dba8e92dfcae0485a21704bcf46055a7b66e0955c4da",
+      "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-103/source-inputs.json": "43ae4effb33d3ca20eab681b14802fbf726a68cb9029aa8342b8dc318b9c46a9"
+    },
+    "proved": [
+      "Bootanimation exits0 with original exit request, accepted",
+      "apexd exits0 after original ready and inventory gate, accepted; restart availability still untested",
+      "Original phase1000 traverses MediaSession/MediaCommunication and StagingManager, original init thread pool shuts down",
+      "Original UserController invokes LockSettings unwrap for unsecured user0; rejected ctl.interface_start=aidl/android.service.gatekeeper.IGateKeeperService demonstrates missing original GateKeeper service admission"
+    ],
+    "not_accepted": [
+      "Actual user RUNNING_UNLOCKED",
+      "Markor launch/UI/input/note/persistence/close/reopen",
+      "APEX lazy restart",
+      "R1-MAC permissive",
+      "Internal ordered close",
+      "ARM GMS DRM"
+    ],
+    "next": "Integrate original gatekeeperd and required real security backends (GateKeeper HAL/Keystore/KeyMint) based on source/runtime contracts, no fake credentials, auth tokens or keys."
+  },
+  "capture130_limitation": "Planned CLI GDB diagnostic found no matching comm and captured no stack; source inspection identified PID1 guard. Not REA MCP evidence."
 }

@@ -1,5 +1,7 @@
 # Roadmap · Arch TV nativo en Rust
 
+Camino crítico desde132: [cierre coherente y almacenamiento/OverlayManager originales](docs/ROADMAP-A.md) → UI/entrada/nota/cierre/reapertura de Markor. El usuario ya alcanza RUNNING_UNLOCKED y AMS lanza la APK intacta hacia IntroActivity; falta aceptación del recorrido completo. R1-MAC, ARM/GMS/DRM abiertos.
+
 Camino crítico desde129: [preparación CE original vía vold](docs/ROADMAP-A.md) → RUNNING_UNLOCKED real → Markor completa. El ciclo original LSS ya crea la contraseña sintética y abre claves CE; eso no acredita almacenamiento preparado ni cifrado en reposo. Lanzamiento, UI, entrada y persistencia siguen abiertos.
 
 Camino crítico desde127: [integrar el ciclo original restante de LockSettings](docs/ROADMAP-A.md) → desbloqueo real del usuario → Markor completa. Instalación intacta conservada; lanzamiento, UI, entrada y persistencia no aceptados. R1-MAC permanece abierto.

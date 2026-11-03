@@ -282,9 +282,9 @@
     "semantic_hash": ""
   },
   "ROADMAP.md": {
-    "mtime": 1793686428.904029,
-    "seen": 1793686445.1659079,
-    "ast_hash": "bc7dda4a0c5d884f91401c4a104a3a1b",
+    "mtime": 1793687394.4184308,
+    "seen": 1793687409.6651971,
+    "ast_hash": "caec4b0b0285aacfdcd4d3ef4c30920d",
     "semantic_hash": ""
   },
   "THIRD_PARTY.md": {
@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793686428.8806713,
-    "seen": 1793686445.1685808,
-    "ast_hash": "0b4dc80b31200da992495eccb3a89a1d",
+    "mtime": 1793687394.3762004,
+    "seen": 1793687409.6673825,
+    "ast_hash": "49bc9c02558f08e7fb07d9df302c144f",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793686428.8636017,
-    "seen": 1793686445.1692398,
-    "ast_hash": "aebe658ed458b617a064ddea4b2ffcad",
+    "mtime": 1793687394.3573196,
+    "seen": 1793687409.6679776,
+    "ast_hash": "40985d4da83d18efc929e51cb08fac20",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793686428.891904,
-    "seen": 1793686445.170059,
-    "ast_hash": "794b6bf500918e006b110e5f2153b3f8",
+    "mtime": 1793687394.3962004,
+    "seen": 1793687409.6688128,
+    "ast_hash": "8946b554d2e58d7fd30871f9ef379065",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -1716,9 +1716,9 @@
     "semantic_hash": ""
   },
   "docs/EVIDENCIAS.md": {
-    "mtime": 1793686428.8989143,
-    "seen": 1793686445.1693907,
-    "ast_hash": "33f21b12a8d3ed87dc51c9a8448774b4",
+    "mtime": 1793687394.4083228,
+    "seen": 1793687409.668208,
+    "ast_hash": "1cf4270d334d5ba79f9f5760d591ecc5",
     "semantic_hash": ""
   },
   "fixtures/aosp-framework-space/FrameworkSpaceProbe.java": {
@@ -1728,9 +1728,9 @@
     "semantic_hash": ""
   },
   "docs/COMPATIBILIDAD-APK.md": {
-    "mtime": 1793683903.230902,
-    "seen": 1793683922.401197,
-    "ast_hash": "46d64fe8104bb000b018ace89b80a92e",
+    "mtime": 1793687418.2573276,
+    "seen": 1793687452.6615741,
+    "ast_hash": "eff28f401ad866db78ff6b2038dc3da6",
     "semantic_hash": ""
   },
   "fixtures/aosp-window-service/ServiceRegistryChecks.java": {
@@ -1902,9 +1902,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/android16-qpr2/patches/README.md": {
-    "mtime": 1793440601.1559463,
-    "seen": 1793647620.6402502,
-    "ast_hash": "9af48a24cea575db8ac1a708a6e9acac",
+    "mtime": 1793687394.4271286,
+    "seen": 1793687409.670079,
+    "ast_hash": "f7c608cd3c422c04070e7eebcf0b7dec",
     "semantic_hash": ""
   },
   "crates/archtv-core/examples/native_supervisor.rs": {

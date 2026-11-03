@@ -1,5 +1,7 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+Puerta132: restorecon original y RUNNING_UNLOCKED probados; AMS solicita Markor intacta y ejecuta IntroActivity. Falta acreditar lanzamiento estable/UI/entrada/nota/cierre/reapertura. Prioridad: corregir el cierre que exige SIGKILL de apexd ya salido limpiamente, integrar almacenamiento externo y OverlayManager originales y observar la UI real después del lanzamiento. [Evidencia132](../reports/android16-package-bootstrap/original-user-unlock-progress.json). Mantener R1-MAC/ARM/GMS/DRM separados abiertos.
+
 Puerta actual129: ciclo LSS y respuesta original de apertura CE probados parcialmente → resolver la preparación CE pendiente en vold → RUNNING_UNLOCKED real → Markor lanzamiento/UI/entrada/nota/cierre/reapertura. La captura nativa siguiente debe identificar la operación que impide retornar a prepareUserStorage; no repetir sondas de claves ni ampliar tiempos sin causa. [Resultado129](../reports/android16-package-bootstrap/gatekeeper-platform-progress.json).
 
 Siguiente puerta funcional tras127: integrar y ejecutar `LockSettingsInternal.onThirdPartyAppsStarted()` en su orden original → verificar claves/CE y RUNNING_UNLOCKED real → lanzamiento/UI/entrada/nota/cierre/reapertura Markor. La llamada está preparada en candidato129; aún no probada. No repetir126/127 sin este cambio. [Resultado127 y fuentes](../reports/android16-package-bootstrap/gatekeeper-platform-progress.json).

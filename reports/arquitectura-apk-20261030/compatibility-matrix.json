@@ -32,7 +32,7 @@
       },
       "evidence_id": "ev_37c5a66b942f8e277c88500b2a15d430c2e523b672bf47fe74cf9c90638d164e",
       "full_evidence_id": "ev_746d40138a0f10e9c3202cd147e41d5efd4a7c58e81078c6109567a0bce77781",
-      "workflow": "Abrir fichero local, reproducir audio/vídeo, volver al shell y cerrar",
+      "workflow": "Abrir fichero local, reproducir audio/v\u00eddeo, volver al shell y cerrar",
       "runtime_results": {
         "installation": "not_tested",
         "launch": "not_tested",
@@ -158,11 +158,11 @@
         "input": "not_tested",
         "main_function": "not_tested",
         "persistence": "not_tested",
-        "services": "not_tested",
+        "services": "demonstrated_failure",
         "close": "not_tested",
         "reopen": "not_tested"
       },
-      "reason": "Earlier A16 original temporary installation is evidenced. Current ART dexopt and PMS/AMS bootstrap experiments remain partial; launch/UI/input/note/services/persistence/close/reopen are not accepted.",
+      "reason": "132 executes intact Markor MainActivity.onCreate and AMS reports cold launch to IntroActivity after real user unlock. Whole launch remains unaccepted: visible stable UI/input/persistence unverified, external storage invalid /dev/null, DocumentsUI missing OverlayManager, native close exits1. Earlier temporary installation remains approved.",
       "framework_class_link_pass": true,
       "declared_application": "net.gsantner.markor.ApplicationObject",
       "bootstrap_experiment": {
@@ -205,6 +205,20 @@
           "record_sha256": "d7a5164ba89ef04b8501aeacf22d0bd4c563e5d716a4e6e1c767d0ff02c4bd72",
           "base_commit": "d8647d1f71868ae2b12c351241259234bc409ae3",
           "scope": "Earlier original installation with original package path/bytes check in temporary private tmpfs only; not new stage acceptance, durability, tenant isolation, launch or current candidate success"
+        },
+        "launch": {
+          "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
+          "record_sha256": "38fcdb1160d99fcaee704931b7b34f342de98e03b17ff8fee562c67a63083ade",
+          "accepted": false,
+          "scope": "Original user unlock and intact Markor activity launch observed; not complete application launch/UI/input/persistence/security acceptance",
+          "failure_scope": "Partial actual launch observed, complete launch acceptance not tested. Do not infer failed start or no APK execution from not_tested."
+        },
+        "services": {
+          "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
+          "record_sha256": "38fcdb1160d99fcaee704931b7b34f342de98e03b17ff8fee562c67a63083ade",
+          "accepted": false,
+          "scope": "Original user unlock and intact Markor activity launch observed; not complete application launch/UI/input/persistence/security acceptance",
+          "failure_scope": "Complete stage criteria not met; preserves actual successful AMS request and activity execution, does not claim APK never ran."
         }
       }
     }
@@ -501,7 +515,7 @@
       "acceptance": "Fix real author-distributed APK/version/requirements; test nine-stage workflow without per-APK patches or privileged bypass"
     }
   ],
-  "base_review": "A16-QPR2-1 supersedes A/B/C selection: native Bionic primary; SF→Wayland first graphics hypothesis. Prior choice/experiments historical only.",
+  "base_review": "A16-QPR2-1 supersedes A/B/C selection: native Bionic primary; SF\u2192Wayland first graphics hypothesis. Prior choice/experiments historical only.",
   "base_component_observation": {
     "evidence": "reports/bionic-component/art-core-result.json",
     "linker_help_and_launcher_list_exit": 0,

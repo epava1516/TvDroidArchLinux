@@ -1,0 +1,14 @@
+--- a/init/property_service.cpp
++++ b/init/property_service.cpp
+@@ -602,7 +602,10 @@
+     // requesting that init performs a restorecon operation on the path specified by 'value'.
+     // We use a thread to do this restorecon operation to prevent holding up init, as it may take
+     // a long time to complete.
+-    if (name == kRestoreconProperty && cr.pid != 1 && !value.empty()) {
++    // Linux supervises this component without making it Android PID1. The
++    // original asynchronous worker completes through this same socket; its
++    // kernel-supplied peer PID must match this process, not the literal PID1.
++    if (name == kRestoreconProperty && cr.pid != getpid() && !value.empty()) {
+         GetAsyncRestorecon().TriggerRestorecon(value);
+         return {PROP_SUCCESS};
+     }

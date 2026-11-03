@@ -1,5 +1,7 @@
 # Matriz de aplicaciones reales
 
+132 ejecutó Markor intacta y AMS retornó COLD/IntroActivity tras RUNNING_UNLOCKED. La matriz conserva el lanzamiento como pendiente de aceptación completa, con ejecución parcial registrada, y servicios como fallo demostrado: almacenamiento externo inválido /dev/null y DocumentsUI sin OverlayManager. UI visible/entrada/nota/persistencia no probadas; instalación temporal conserva aprobación. [Alcance y evidencia](../reports/android16-package-bootstrap/original-user-unlock-progress.json).
+
 La [plataforma122 con GateKeeper/Keystore/JCA](../reports/android16-package-bootstrap/gatekeeper-platform-progress.json) repite instalación intacta de Markor; no añade una etapa aceptada: start-user espera, lanzamiento/UI/entrada/nota/persistencia/cierre/reapertura siguen abiertos. getSecureUserId(0)=0 es una respuesta real sobre usuario sin credencial; no demuestra autenticación de aplicaciones ni desbloqueo.
 
 [JCA original120](../reports/android16-package-bootstrap/keystore-java-functional.json) verifica generación/uso AES-GCM, reapertura entre clientes y negativas en un perfil experimental del framework. No prueba importación, claves asimétricas, autenticación, reinicios ni recorrido de ninguna APK. Markor conserva sólo su instalación temporal anterior; lanzamiento/UI/entrada/nota/cierre/reapertura abiertos.
