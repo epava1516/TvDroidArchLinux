@@ -1,6 +1,6 @@
 # Contrato vigente · AOSP Android 16 QPR2
 
-Límite207 · [función real frente a fixtures](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): los diagnósticos Binder/JCA aislados no bloquean ni certifican el arranque funcional; se conservan como regresiones con su alcance previo. Los daemons de seguridad deben atender consumidores originales autorizados, sin permisos nuevos para shell ni resultados de fixtures simulados. Etiquetas VINTF y arranque de procesos no acreditan autenticación, criptografía, UI ni APK. Allocator falla y R1-MAC completo sigue abierto.
+Límite209 · [progreso gráfico parcial](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): allocator y entrada renderer SF no acreditan píxeles, entrada o APK. El fallo real isDeclared del mapper se conserva; su contexto de dispositivo debe usar el contrato original, sin servicio ficticio ni éxito fabricado. Adaptación común sysfs sólo de recorrido/enlaces, sin lectura de contenidos ni cambios globales de etiquetas. R1-MAC de la cohorte completa sigue abierto.
 
 Histórico179 · [operación original fallida conservada](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): código0 de inicializadores aconfig no demuestra flags completas ni sockets disponibles; VDC25 no es éxito de init_user0. Inventario APEX leído después de cerrar no acredita disponibilidad durante ejecución. Mantener R1-MAC abierto hasta el recorrido real completo con identidades, pruebas negativas, cierre y efectos del anfitrión.
 

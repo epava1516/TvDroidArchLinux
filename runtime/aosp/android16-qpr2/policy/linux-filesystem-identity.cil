@@ -31,3 +31,15 @@
 (typeattribute archtv_original_bpffs_objects)
 (typeattributeset archtv_original_bpffs_objects (bpffs_type))
 (allow archtv_original_bpffs_objects linux.bpf_t (filesystem (associate)))
+
+; Pinned AOSP CIL22478 grants every original domain sysfs directory search.
+; Linux owns the real GPU metadata tree as linux.sysfs_t. Actual207 minigbm
+; fails traversing its PCI directory. Mirror only that common traversal
+; contract, not directory listing, file contents, writes or host relabeling.
+(allow domain linux.sysfs_t (dir (search)))
+
+; Complete the same original generic sysfs metadata contract: pinned
+; CIL22363/domain.te214 grants domain->sysfs lnk_file read/getattr.
+; Actual208 traverses the PCI dir but Linux-labelled device symlink read
+; fails. Preserve all regular target-file contents and mutation checks.
+(allow domain linux.sysfs_t (lnk_file (read getattr)))

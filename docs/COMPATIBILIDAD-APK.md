@@ -1,6 +1,6 @@
 # Matriz de aplicaciones reales
 
-Observación207 · [sin nueva etapa APK](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): VINTF con contextos originales y daemons de seguridad en arranque funcional; sus operaciones aún pendientes. Allocator1 por fallo de driver con búsqueda sysfs denegada. Sin nueva UI o recorrido Markor bajo MAC; nota/hash/CE/DE históricos conservados. R1-MAC, ARM, GMS y DRM separados abiertos.
+Observación209 · [sin nueva etapa APK](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): allocator supera el fallo de driver y SurfaceFlinger alcanza renderer, pero aborta por declaración nativa mapper denegada. Sin píxeles/UI ni nuevo recorrido Markor bajo MAC. Nota/hash/CE/DE previos intactos; R1-MAC, ARM, GMS y DRM separados abiertos.
 
 Histórico179 · [aconfig/VDC, sin nueva aceptación APK](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): original init_user0 alcanza vold y falla en auxiliar NNP. La nota e instalación previas conservan sus bytes/etiquetas tras la prueba; no equivale a ejecutar de nuevo Markor bajo MAC. Etapas167 mantienen alcance permisivo, ARM/GMS/DRM separados.
 

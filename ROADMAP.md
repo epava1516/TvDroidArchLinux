@@ -1,6 +1,6 @@
 # Roadmap · Arch TV nativo en Rust
 
-Prioridad207: [estado canónico](docs/ESTADO.md) · VINTF corregido y arranque funcional de seguridad sin sondas shell no autorizadas. Allocator/driver falla con búsqueda sysfs GPU denegada: contrastar regla común AOSP, luego SF/display, Zygote y Markor bajo MAC. Operaciones originales de seguridad y R1-MAC siguen abiertas.
+Prioridad209: [estado canónico](docs/ESTADO.md) · Allocator supera el fallo de driver; SF alcanza renderer pero falla isDeclared del mapper por contexto de dispositivo. Configurar instancia real con tipo AOSP y probar carga/operaciones, luego SF/display, Zygote y Markor bajo MAC. R1-MAC y compatibilidad amplia siguen abiertos.
 
 Histórico179: [estado](docs/ESTADO.md) · builtin/VDC original alcanza vold y falla25 en auxiliar NNP; exigir operación user0 completa y APEX en vivo, luego Markor bajo MAC. [Evidencias](reports/android16-package-bootstrap/original-apex-derive-mac-progress.json).
 

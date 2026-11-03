@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "utc": "2026-11-03T21:35:11.860041+00:00",
+  "utc": "2026-11-03T21:48:27.508697+00:00",
   "scope": "Partial original APEX/derive admission under bounded enforcing; no new APK stage or general MAC/isolation acceptance",
   "base_commit": "39d0be0edb77c13575681175fc26e730adee3c11",
   "executions": {
@@ -1318,7 +1318,7 @@
     "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load10/after-load.json",
     "sha256": "309743229826231a5a6d96498f808485c1d5ad5ce3a5cd8c1a279f21f26b9aa8"
   },
-  "next": "Adapt only original common domain->sysfs dir search to Linux.sysfs_t, preserve RO private GPU view and host labels, compile next30 with neverallow; same native207 whole-cohort test. No content/write/mount grant or global sysfs relabel.",
+  "next": "New immutable build210: integrate mapper/minigbm -> u:object_r:hal_graphics_mapper_service:s0 in composed vendor_service_contexts, preserving all existing entries and actual native VINTF XML. No isDeclared result override, fake Binder service, policy grant or host labels. Same31 whole original SF/mapper consumer test.",
   "original_sources": {
     "sdkextensions_commit": "4d10e57070bb9c6edcd13bf74e9d01717b2a5ecf",
     "derive_rc_sha256": "a9e65b0c114408e5cb8356bdb435a6b48d0a67cd7879915c52ffa094a267f607",
@@ -1388,8 +1388,8 @@
     "sha256": "9e395067238c647c729c48a03dc8a115e81727ff30a8bfd6f4e50098098c9134"
   },
   "latest_host": {
-    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after207-host.json",
-    "sha256": "c574cac8d100ba3f9edd6c6ef9e8cc8017accb05742460815369e552acb3a952"
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after209-host.json",
+    "sha256": "ca805f93db8b8118c481bf1a0bf0af29d6e416ebf24303b0b48d77d147e84340"
   },
   "vdc_source_contract": {
     "builtin": "Pinned system/core/init/builtins.cpp1122–1172: original temporary exec plus original failure callback; exact argv /system/bin/vdc --wait cryptfs init_user0. Native observes actual reaping before advance, no shell redirection or synthetic readiness.",
@@ -2231,6 +2231,127 @@
       "Original Keystore/KeyMint/Gatekeeper availability/crypto/authentication/credential persistence require real authorized consumer operations; nonsecure reference is not hardware security.",
       "Original close incomplete, external closure verified. No whole R1-MAC acceptance. Known network sysctl/NFLOG/dummy0 and GPU/FUSE optional limits remain.",
       "Markor167 remains prior permissive local journey. No new APK stage, no ARM/GMS/DRM acceptance."
+    ]
+  },
+  "integrated208_209": {
+    "scope": "Original generic sysfs owner adaptation and graphics progress under enforcing, no pixels/APK stage accepted",
+    "sysfs_contract": {
+      "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/sysfs-generic-contract208.json",
+      "sha256": "bd44a3e36c436de7797e4498da1c4ffecba205416eede7212eacf522fc7faeec"
+    },
+    "mapper_contract": {
+      "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/original-mapper-contract209.json",
+      "sha256": "06ef590160c11ce6faa11ed73360f0ef0832eaef0d1451daca31db6b57c8af09"
+    },
+    "policy30_artifact": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/selected-platform-policy-30/artifact.json",
+      "sha256": "c9269b2200441dd09483584c29fe5e588e60b2b770dc79707ee7e525745e210c"
+    },
+    "policy30_load": {
+      "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load30/after-load.json",
+      "sha256": "d23f814c2904a58b9d65d6760d7d90aa4d49756288c45141ec6aa656ecb2924c"
+    },
+    "policy31_artifact": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/selected-platform-policy-31/artifact.json",
+      "sha256": "513e04be3fee7ebaa5a591d621b8778ef7a194b50f534fe81300237493bcac53"
+    },
+    "policy31_load": {
+      "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load31/after-load.json",
+      "sha256": "7a0607128cb6e86746a3277b36b6aec37f7b7e24952f8a0cb01fd170aaf4ed9e"
+    },
+    "executions": {
+      "208": {
+        "id": "388803e4-dd02-4a3e-80da-b19147950157",
+        "evidence": {
+          "result.json": {
+            "path": "/home/tv/recuperacion-archtv/388803e4-dd02-4a3e-80da-b19147950157-markor-software-launch/result.json",
+            "sha256": "b180c7efbe95173fe38916f5c6848b99213cb8bcf6695373dcb431180ac34c78"
+          },
+          "mac-window.json": {
+            "path": "/home/tv/recuperacion-archtv/388803e4-dd02-4a3e-80da-b19147950157-markor-software-launch/mac-window.json",
+            "sha256": "11c848bbf1fd7a4a0d7e76b1f318dcd43e9e34e3f350265c6f92d3748fd94a2c"
+          },
+          "completion-consumer.json": {
+            "path": "/home/tv/recuperacion-archtv/388803e4-dd02-4a3e-80da-b19147950157-markor-software-launch/completion-consumer.json",
+            "sha256": "bc890724e447d594a49a013f292db622e64819fe5fead17114a8f68edd605c9d"
+          },
+          "runtime-source-overlay.json": {
+            "path": "/home/tv/recuperacion-archtv/388803e4-dd02-4a3e-80da-b19147950157-markor-software-launch/runtime-source-overlay.json",
+            "sha256": "b44d69484fb9ae3e288e4123be744f97902959cd9933bf284a11c0f3812baafb"
+          },
+          "original-logcat.txt": {
+            "path": "/home/tv/recuperacion-archtv/388803e4-dd02-4a3e-80da-b19147950157-markor-software-launch/original-logcat.txt",
+            "sha256": "225deb173d7387800455f0bad3c18d52d13294722b67c393c3cf6dba683b962c"
+          },
+          "bpf-all-known-after.json": {
+            "path": "/home/tv/recuperacion-archtv/388803e4-dd02-4a3e-80da-b19147950157-markor-software-launch/bpf-all-known-after.json",
+            "sha256": "2fd76994e54f6d3e1182a5eac9b0aab418994fbd1b36cbc5f691e168120526e2"
+          },
+          "finite-audit/result.json": {
+            "path": "/home/tv/recuperacion-archtv/388803e4-dd02-4a3e-80da-b19147950157-markor-software-launch/finite-audit/result.json",
+            "sha256": "b720a769c6d06df9ba37997cb712a398bd5ffaa7f72e6a1ff4bfc57f462dc222"
+          },
+          "userdata-after208-close.json": {
+            "path": "/home/tv/recuperacion-archtv/388803e4-dd02-4a3e-80da-b19147950157-markor-software-launch/userdata-after208-close.json",
+            "sha256": "79ea3b71eeb7a0703c94ab8306f0dfc9d1c258de6fea995a7b3fbbfd1dc6495d"
+          }
+        },
+        "after_host": {
+          "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after208-host.json",
+          "sha256": "932985d23f2ba67cde3dd2e7aec12e68fa4e6be180175b82f5907f5aee8f9e06"
+        }
+      },
+      "209": {
+        "id": "6d3b5d8a-c762-4745-883f-fc3f3c1af9bb",
+        "evidence": {
+          "result.json": {
+            "path": "/home/tv/recuperacion-archtv/6d3b5d8a-c762-4745-883f-fc3f3c1af9bb-markor-software-launch/result.json",
+            "sha256": "486f6b003d906e0b8a1fe0f34c9c2fb45ba9aba23db896452f98b389ccf35c06"
+          },
+          "mac-window.json": {
+            "path": "/home/tv/recuperacion-archtv/6d3b5d8a-c762-4745-883f-fc3f3c1af9bb-markor-software-launch/mac-window.json",
+            "sha256": "2011a31c65374a5b2dd50269bdfe9fe0ee15f5e8bf31026b7adcf3038b274e27"
+          },
+          "completion-consumer.json": {
+            "path": "/home/tv/recuperacion-archtv/6d3b5d8a-c762-4745-883f-fc3f3c1af9bb-markor-software-launch/completion-consumer.json",
+            "sha256": "0d73dd5f85253d7b46145e9cf0ac0cfacd2aba13e2333d3adf857b2a3d4ee20c"
+          },
+          "runtime-source-overlay.json": {
+            "path": "/home/tv/recuperacion-archtv/6d3b5d8a-c762-4745-883f-fc3f3c1af9bb-markor-software-launch/runtime-source-overlay.json",
+            "sha256": "b44d69484fb9ae3e288e4123be744f97902959cd9933bf284a11c0f3812baafb"
+          },
+          "original-logcat.txt": {
+            "path": "/home/tv/recuperacion-archtv/6d3b5d8a-c762-4745-883f-fc3f3c1af9bb-markor-software-launch/original-logcat.txt",
+            "sha256": "49cd5294339d4349cb88edb7e6aa1eae563c2306c39cfd4bed0c44ea5799e4ce"
+          },
+          "bpf-all-known-after.json": {
+            "path": "/home/tv/recuperacion-archtv/6d3b5d8a-c762-4745-883f-fc3f3c1af9bb-markor-software-launch/bpf-all-known-after.json",
+            "sha256": "ede3aabf283e3808e4cc0d856e6ab42d04acebc0cc9467b67b3e22373ee05508"
+          },
+          "finite-audit/result.json": {
+            "path": "/home/tv/recuperacion-archtv/6d3b5d8a-c762-4745-883f-fc3f3c1af9bb-markor-software-launch/finite-audit/result.json",
+            "sha256": "09bdd9530f67fa196242b161228c4b044b7289f96ea46f60d4b62f064790f031"
+          },
+          "userdata-after209-close.json": {
+            "path": "/home/tv/recuperacion-archtv/6d3b5d8a-c762-4745-883f-fc3f3c1af9bb-markor-software-launch/userdata-after209-close.json",
+            "sha256": "135b96e352e3030ce81331ed1df1f30dbae7db34373c3e8c17c3b6a72e78d31e"
+          }
+        },
+        "after_host": {
+          "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after209-host.json",
+          "sha256": "ca805f93db8b8118c481bf1a0bf0af29d6e416ebf24303b0b48d77d147e84340"
+        }
+      }
+    },
+    "results": [
+      "208 same native207 +30 dirsearch passes old PCI traversal; allocator still1 with actual Linux.sysfs_t device symlink read denied. Original generic lnkread/getattr rule also required.",
+      "31 maps complete original generic sysfs metadata: domain->Linux.sysfs_t dirsearch and lnkread/getattr only, no directory listing/regular read/write/mount/host relabel. Neverallow compilation passes.",
+      "209 same native207 allocator no longer exits1, starts IAllocator path; original SurfaceFlinger main/render engine initialization reached. SF then aborts with gralloc-mapper missing after original isDeclared mapper/minigbm gets EX_SECURITY/default_android_service. This is not graphics compatibility/pixels/allocator operation acceptance."
+    ],
+    "limits": [
+      "Native mapper5 actual library/declaration exist; mapper device service context omitted. Exact source vendor row not located; proposed device configuration must be documented as adaptation, not invented upstream copy.",
+      "Original close incomplete; external resources and known BPF IDs closed. No general isolation acceptance.",
+      "Original netd/sysctl/NFLOG/dummy0, GPU/FUSE optional errors, crypto/authentication consumer operations, original Zygote/Markor MAC, ARM/GMS/DRM remain open."
     ]
   }
 }
