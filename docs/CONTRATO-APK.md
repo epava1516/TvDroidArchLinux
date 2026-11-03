@@ -1,5 +1,7 @@
 # Contrato vigente · AOSP Android 16 QPR2
 
+Estado parcial137: la cohorte devuelve0 con APIs originales de almacenamiento/overlays, pero su captura SF es negra. El contrato sigue exigiendo UI visible, entrada, función, persistencia y ciclo completo, además de seguridad/instalación/actualización; no se cierran por ese exit0 ni por una captura PNG válida. [Evidencia](../reports/android16-package-bootstrap/original-user-unlock-progress.json).
+
 [GateKeeper original122](../reports/android16-package-bootstrap/gatekeeper-platform-progress.json) conserva el límite del proveedor AOSP no seguro: inscripción/verificación, tokens compartidos, durabilidad y aislamiento necesitan pruebas propias. Un SID de usuario vacío devuelto por el API original no es una credencial ni una señal de RUNNING_UNLOCKED. La política cargada en permisivo4 no cierra R1-MAC.
 
 El [perfil JCA experimental120](../reports/android16-package-bootstrap/keystore-java-functional.json) conserva metadatos SOFTWARE y errores StrongBox, sin cambiar el contrato. Cuatro elecciones por defecto adaptadas en el DEX original no equivalen a recompilar el framework ni acreditan todas sus clases, autenticación o APK. Exigir integración y recorridos reales antes de aceptar cada ámbito.

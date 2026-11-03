@@ -46,6 +46,8 @@ for name,mode in [('metadata',0o755),('metadata/aconfig',0o775),('metadata/aconf
 # specializing even an application whose main data is private.
 for logical,mode,uid,gid in [('storage',0o755,0,0),('mnt',0o755,0,0),('mnt/expand',0o771,1000,1000),('mnt/user',0o755,0,0),('mnt/user/0',0o755,0,0),('mnt/user/0/self',0o755,0,0),('mnt/user/0/emulated',0o755,0,0),('mnt/user/0/emulated/0',0o755,0,0),('mnt/pass_through',0o700,0,0),('mnt/pass_through/0',0o710,0,1023),('mnt/pass_through/0/self',0o710,0,1023),('mnt/pass_through/0/emulated',0o710,0,1023),('mnt/pass_through/0/emulated/0',0o710,0,1023)]:
  root_code+="\np=root/"+repr(logical)+";p.mkdir(parents=True,exist_ok=True);os.chmod(p,"+str(mode)+");os.chown(p,"+str(uid)+","+str(gid)+")"
+for logical,mode in [('mnt/runtime',0o700),('mnt/runtime/default',0o755),('mnt/runtime/default/self',0o755),('mnt/runtime/read',0o755),('mnt/runtime/read/self',0o755),('mnt/runtime/write',0o755),('mnt/runtime/write/self',0o755),('mnt/runtime/full',0o755),('mnt/runtime/full/self',0o755)]:
+ root_code+="\np=root/"+repr(logical)+";p.mkdir(parents=True,exist_ok=True);os.chmod(p,"+str(mode)+");os.chown(p,0,0)"
 storage_mount_code="""
 # Complete original init.rc app-data isolation prerequisites, within the
 # private Linux factory only. These bind actual directories; no APK/user
@@ -54,6 +56,9 @@ apex_before=(root/'data/apex').stat()
 mount('--rbind',root/'data',root/'data');mount('--make-shared',root/'data')
 apex_after=(root/'data/apex').stat()
 assert (apex_before.st_dev,apex_before.st_ino)==(apex_after.st_dev,apex_after.st_ino), 'Data propagation setup must preserve real APEX child mount'
+# Linux's enclosing root mount is private. Create a local shared source for
+# real vold FUSE submount propagation to /storage, with no host peer mount.
+mount('--bind',root/'mnt/user/0',root/'mnt/user/0');mount('--make-shared',root/'mnt/user/0')
 mount('--rbind',root/'mnt/user/0',root/'storage');mount('--make-rslave',root/'storage')
 (root/'data_mirror').mkdir()
 mount('-t','tmpfs','-o','nodev,noexec,nosuid,mode=0700,uid=0,gid=1000,fscontext=u:object_r:tmpfs:s0,rootcontext=u:object_r:mirror_data_file:s0','tmpfs',root/'data_mirror')
@@ -65,7 +70,17 @@ for source,target in [('user','data_ce/null'),('user_de','data_de/null'),('misc_
 """
 
 root_code+="\n(root/'dev/input').mkdir()"
-for name in ['markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
+root_code+="""
+# Original vold mounts a real private FUSE volume and passes its FD to the
+# original ExternalStorageService. Never replace it with a directory alias.
+fuse_device=Path('/sys/class/misc/fuse/dev').read_text().strip()
+assert fuse_device=='10:229',fuse_device
+# Linux private endpoint: only original root vold opens it; MediaProvider
+# receives the actual FD through Binder, not permission to open the host node.
+os.mknod(root/'dev/fuse',stat.S_IFCHR|0o600,os.makedev(10,229))
+os.chown(root/'dev/fuse',0,0)
+"""
+for name in ['markor-user-start.txt','markor-resolve.txt','markor-launch.txt','markor-volumes.txt','markor-overlays.txt','markor-sf.png']:
  root_code+="\np=root/'data/local/tmp/archtv-mc1'/"+repr(name)+";p.touch(mode=0o640);os.chown(p,1000,2000);os.chmod(p,0o640)"
 root_code+="\np=root/'data/local/tmp/archtv-mc1/selected-failure.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
 root_code+="\np=root/'data/local/tmp/archtv-mc1/ranging-service-info.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
@@ -130,6 +145,7 @@ text=text.replace("log_observer=None;observed_logs=[];log_stop=False", "live_log
 # existing evidence file under a separate explicit byte limit.
 text=text.replace('and len(observed_logs)<4096','')
 text=text.replace("live_log=(out/'android-log-live.jsonl').open('w')", "live_log=(out/'android-log-live.jsonl').open('w')\nlog_capture_file=(out/'android-log-capture.json').open('w')\nlog_capture={'records':0,'bytes':0,'limit_bytes':67108864,'truncated':False,'inline_limit_records':512}")
+text=text.replace("log_capture_file=(out/'android-log-capture.json').open('w')", "log_capture_file=(out/'android-log-capture.json').open('w')\nframe_capture=(out/'markor-sf.png').open('wb')\nos.fchmod(frame_capture.fileno(),0o600);os.fchown(frame_capture.fileno(),1000,1000)")
 text=text.replace('observed_logs.append(item)', """item['observed_monotonic']=time.monotonic()
     encoded=json.dumps(item)+'\\n';size=len(encoded.encode())
     if log_capture['bytes']+size<=log_capture['limit_bytes']:
@@ -141,6 +157,15 @@ try:
  log_capture_file.write(json.dumps(log_capture,indent=2)+'\\n');log_capture_file.flush();log_capture_file.close()
 except OSError as error:
  print('LOG_CAPTURE_METADATA_FAILURE '+repr(error),flush=True)
+frame_source=Path('/data/local/tmp/archtv-mc1/markor-sf.png')
+frame_info={'scope':'Original SurfaceFlinger pixels, not physical display/input/app journey acceptance','present':frame_source.is_file()}
+if frame_source.is_file():
+ info=frame_source.stat();frame_info.update(bytes=info.st_size,uid=info.st_uid,gid=info.st_gid)
+ if 0<info.st_size<=16777216:
+  pixels=frame_source.read_bytes();frame_capture.write(pixels);frame_capture.flush()
+  frame_info.update(png_signature=pixels.startswith(bytes.fromhex('89504e470d0a1a0a')),sha256=hashlib.sha256(pixels).hexdigest())
+frame_capture.close()
+print('MARKOR_ORIGINAL_SF_CAPTURE '+json.dumps(frame_info),flush=True)
 if p.returncode!=0:
 """,1)
 
@@ -192,7 +217,7 @@ for file in sorted(Path('/metadata/aconfig').rglob('*')):
  info=file.stat()
  metadata.append({'path':str(file),'uid':info.st_uid,'gid':info.st_gid,'mode':oct(stat.S_IMODE(info.st_mode)),'context':os.getxattr(file,'security.selinux').decode().rstrip(chr(0)),'bytes':info.st_size,'sha256':hashlib.sha256(file.read_bytes()).hexdigest() if info.st_size<=33554432 else None})
 print('ACONFIG_ORIGINAL_METADATA_FILES '+json.dumps({'files':metadata,'truncated':metadata_truncated,'scope':'Original daemon outputs, not flag or permission acceptance'}),flush=True)
-for name in ['selected-user-wait.txt','keystore-java.txt','keymint-provider.txt','keystore-component.txt','keymint-component.txt','storage-contract.txt','markor-user-state.txt','markor-bootstrap-home-stop.txt','markor-home-after.txt','markor-boot-before-user.txt','platform-capabilities.txt','linux-application-profile.txt','markor-postcommit-path.txt','markor-postcommit-dump.txt','markor-installed-bytes.txt','unadmitted-artd-control.txt','ranging-service-info.txt','ranging-permission.txt','netd-permission-query.txt','netd-query.txt','netd-interfaces.txt','stats-query.txt','selected-failure.txt','selected-wait.txt','health-query.txt','health-dump.txt','apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt','vold-query.txt','vold-user0.txt','markor-install.txt','markor-path.txt','markor-dump.txt','activity-query.txt','mount-query.txt','markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
+for name in ['markor-volumes.txt','markor-overlays.txt','selected-user-wait.txt','keystore-java.txt','keymint-provider.txt','keystore-component.txt','keymint-component.txt','storage-contract.txt','markor-user-state.txt','markor-bootstrap-home-stop.txt','markor-home-after.txt','markor-boot-before-user.txt','platform-capabilities.txt','linux-application-profile.txt','markor-postcommit-path.txt','markor-postcommit-dump.txt','markor-installed-bytes.txt','unadmitted-artd-control.txt','ranging-service-info.txt','ranging-permission.txt','netd-permission-query.txt','netd-query.txt','netd-interfaces.txt','stats-query.txt','selected-failure.txt','selected-wait.txt','health-query.txt','health-dump.txt','apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt','vold-query.txt','vold-user0.txt','markor-install.txt','markor-path.txt','markor-dump.txt','activity-query.txt','mount-query.txt','markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
  f=Path('/data/local/tmp/archtv-mc1')/name
  if f.is_file():print('PACKAGE_ORIGINAL_OUTPUT '+name+' '+json.dumps(f.read_text()),flush=True)
 if p.returncode!=0:
@@ -249,6 +274,14 @@ assert component_identity_assert in text
 keystore_expected={**component_expected,'KEYMINT':'u:r:hal_keymint_default:s0','KEYSTORE':'u:r:keystore:s0'}
 software_expected={**ast.literal_eval(full_expected),'KEYMINT':'u:r:hal_keymint_default:s0','KEYSTORE':'u:r:keystore:s0','GATEKEEPER_HAL':'u:r:hal_gatekeeper_default:s0','GATEKEEPER':'u:r:gatekeeperd:s0'}
 text=text.replace(component_identity_assert,"if keystore_component_profile:\n assert Path('/vendor/etc/archtv-keystore-component').read_text()=='software-keystore-v1\\n'\n expected_identities="+repr(keystore_expected)+"\n if software_platform_profile:\n  assert Path('/vendor/etc/archtv-software-security').read_text()=='software-platform-v1\\n'\n  expected_identities="+repr(software_expected)+"\n"+component_identity_assert)
+storage_identities={'STORAGED':'u:r:storaged:s0','IDMAP':'u:r:idmap:s0','SWCODEC':'u:r:mediaswcodec:s0'}
+text=text.replace('|GATEKEEPER)_STARTED','|GATEKEEPER|STORAGED|IDMAP|SWCODEC)_STARTED')
+text=text.replace("'GATEKEEPER':'u:r:gatekeeperd:s0'", "'GATEKEEPER':'u:r:gatekeeperd:s0',"+repr(storage_identities)[1:-1])
+text=text.replace(component_identity_assert,"if not keymint_component_profile and (not keystore_component_profile or software_platform_profile):\n expected_identities.update("+repr(storage_identities)+")\n"+component_identity_assert,1)
+text=text.replace("list(map(int,fields['Uid'].split()))==[", "list(map(int,fields['Uid'].split()))==[0 if identity['kind']=='STORAGED' else 1046 if identity['kind']=='SWCODEC' else 1000 if identity['kind']=='IDMAP' else ")
+text=text.replace("list(map(int,fields['Gid'].split()))==[", "list(map(int,fields['Gid'].split()))==[1032 if identity['kind']=='STORAGED' else 1006 if identity['kind']=='SWCODEC' else 1000 if identity['kind']=='IDMAP' else ")
+for capability in ['CapEff','CapPrm']:
+ text=text.replace("int(fields['"+capability+"'],16)==(","int(fields['"+capability+"'],16)==(4 if identity['kind']=='STORAGED' else ")
 keystore_checks="""if keystore_component_profile:
  provider=Path('/data/local/tmp/archtv-mc1/keymint-provider.txt').read_text().splitlines()
  output=Path('/data/local/tmp/archtv-mc1/keystore-component.txt').read_text().splitlines()

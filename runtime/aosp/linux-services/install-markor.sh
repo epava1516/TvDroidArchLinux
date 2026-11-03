@@ -60,3 +60,7 @@ resolved=$(/system/bin/cmd package resolve-activity --brief --user 0 -a android.
 component=$(/system/bin/printf '%s\n' "$resolved" | /system/bin/tail -n 1)
 case "$component" in net.gsantner.markor/*) ;; *) exit 1;; esac
 /system/bin/cmd activity start-activity -W --user 0 -n "$component" > /data/local/tmp/archtv-mc1/markor-launch.txt 2>&1
+# Actual APIs and pixels after launch, not an app-compatibility success marker.
+CLASSPATH=/system/framework/sm.jar /system/bin/app_process64 /system/bin com.android.commands.sm.Sm list-volumes all > /data/local/tmp/archtv-mc1/markor-volumes.txt
+/system/bin/cmd overlay list --user 0 > /data/local/tmp/archtv-mc1/markor-overlays.txt
+/system/bin/screencap -p /data/local/tmp/archtv-mc1/markor-sf.png

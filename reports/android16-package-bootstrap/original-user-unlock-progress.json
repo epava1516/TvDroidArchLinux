@@ -1,157 +1,344 @@
 {
-  "scope": "Original user unlock and intact Markor activity launch observed; not complete application launch/UI/input/persistence/security acceptance",
-  "candidate": 132,
-  "run_id": "693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8",
-  "checkpoint": "/home/tv/recuperacion-archtv/693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8-markor-software-launch",
+  "scope": "Original storage/media/overlay integration and post-launch frame observation; not a working Markor UI, input/note/persistence/MAC or broad compatibility acceptance",
+  "candidate": 137,
+  "run_id": "afb2b897-3292-45e4-9a3d-09425f609eb6",
+  "checkpoint": "/home/tv/recuperacion-archtv/afb2b897-3292-45e4-9a3d-09425f609eb6-markor-software-launch",
   "result": {
-    "native_exit": 1,
-    "outer_exit": 1,
+    "native_exit": 0,
+    "outer_exit": 0,
     "native_complete_inventory_verified": true,
     "active_loops": "",
     "final_dm": []
   },
   "outputs": {
+    "markor-volumes.txt": "private mounted null\nemulated;0 mounted null\n",
+    "markor-overlays.txt": "android\n[x] org.archtv.platform.resources\n[ ] com.android.internal.display.cutout.emulation.corner\n[ ] com.android.internal.display.cutout.emulation.double\n[ ] com.android.internal.display.cutout.emulation.hole\n[ ] com.android.internal.display.cutout.emulation.tall\n[ ] com.android.internal.systemui.navbar.threebutton\n[ ] com.android.theme.font.notoserifsource\n[ ] com.android.internal.display.cutout.emulation.waterfall\n[ ] com.android.internal.systemui.navbar.transparent\n[ ] com.android.role.notes.enabled\n[ ] android.gsi.overlay\n[ ] com.android.internal.systemui.navbar.gestural\n\ncom.android.systemui\n--- com.android.systemui.gsi.overlay\n\n",
     "markor-user-state.txt": "RUNNING_UNLOCKED\n",
-    "markor-installed-bytes.txt": "SOURCE c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440  /data/local/tmp/markor.apk\nINSTALLED c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440  /data/app/~~Aci9F1BBa10wMq5ANhyI0A==/net.gsantner.markor-gj1L2ygQwbcBrzai0XQQsQ==/base.apk\n",
-    "markor-resolve.txt": "priority=0 preferredOrder=0 match=0x108000 specificIndex=-1 isDefault=false\nnet.gsantner.markor/.activity.MainActivity\n",
-    "markor-launch.txt": "Starting: Intent { cmp=net.gsantner.markor/.activity.MainActivity }\nStatus: ok\nLaunchState: COLD\nActivity: net.gsantner.markor/.activity.IntroActivity\nTotalTime: 4352\nWaitTime: 4365\nComplete\n"
+    "markor-installed-bytes.txt": "SOURCE c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440  /data/local/tmp/markor.apk\nINSTALLED c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440  /data/app/~~p1NnD6tiM3ifvqbvfmk-oQ==/net.gsantner.markor-MUUwP5clJAENw54JvuR0ZA==/base.apk\n",
+    "markor-install.txt": "Success: created install session [1144906357]\nSuccess: streamed 11861047 bytes\nSuccess\nUnable to open /dev/null for media scanner stdout redirection.\n",
+    "markor-launch.txt": "Starting: Intent { cmp=net.gsantner.markor/.activity.MainActivity }\nStatus: ok\nLaunchState: COLD\nActivity: net.gsantner.markor/.activity.IntroActivity\nTotalTime: 4688\nWaitTime: 4691\nComplete\n"
   },
-  "original_markers": [
+  "original_backend_identities": [
     {
-      "record_index": 4808,
-      "tag": "UserController.UserState",
-      "message": "User 0 state changed from BOOTING to RUNNING_LOCKED",
-      "actual_sender_pid_uid_gid": [
-        535,
-        1000,
-        1000
+      "kind": "STORAGED",
+      "pid_namespace_pid": 519,
+      "getpidcon_raw_return": 0,
+      "actual_context": "u:r:storaged:s0",
+      "contexts_observed_in_order": [
+        "u:r:storaged:s0"
       ],
-      "observed_monotonic": 103735.586247414
+      "errno_observed": [],
+      "status": [
+        "Uid:\t0\t0\t0\t0",
+        "Gid:\t1032\t1032\t1032\t1032",
+        "Groups:\t ",
+        "CapPrm:\t0000000000000004",
+        "CapEff:\t0000000000000004",
+        "CapBnd:\t0000000000000004",
+        "NoNewPrivs:\t1"
+      ]
     },
     {
-      "record_index": 4856,
-      "tag": "vold",
-      "message": "Starting restorecon of /data/system_ce/0",
-      "actual_sender_pid_uid_gid": [
-        362,
-        0,
-        0
+      "kind": "IDMAP",
+      "pid_namespace_pid": 520,
+      "getpidcon_raw_return": 0,
+      "actual_context": "u:r:idmap:s0",
+      "contexts_observed_in_order": [
+        "u:r:idmap:s0"
       ],
-      "observed_monotonic": 103735.831305513
+      "errno_observed": [],
+      "status": [
+        "Uid:\t1000\t1000\t1000\t1000",
+        "Gid:\t1000\t1000\t1000\t1000",
+        "Groups:\t ",
+        "CapPrm:\t0000000000000000",
+        "CapEff:\t0000000000000000",
+        "CapBnd:\t000001ffffffffff",
+        "NoNewPrivs:\t1"
+      ]
     },
     {
-      "record_index": 4861,
-      "tag": "vold",
-      "message": "Finished restorecon of /data/system_ce/0",
-      "actual_sender_pid_uid_gid": [
-        362,
-        0,
-        0
+      "kind": "SWCODEC",
+      "pid_namespace_pid": 524,
+      "getpidcon_raw_return": 0,
+      "actual_context": "u:r:mediaswcodec:s0",
+      "contexts_observed_in_order": [
+        "u:r:mediaswcodec:s0"
       ],
-      "observed_monotonic": 103735.918416077
-    },
-    {
-      "record_index": 4862,
-      "tag": "vold",
-      "message": "Starting restorecon of /data/vendor_ce/0",
-      "actual_sender_pid_uid_gid": [
-        362,
-        0,
-        0
-      ],
-      "observed_monotonic": 103735.918919654
-    },
-    {
-      "record_index": 4866,
-      "tag": "vold",
-      "message": "Finished restorecon of /data/vendor_ce/0",
-      "actual_sender_pid_uid_gid": [
-        362,
-        0,
-        0
-      ],
-      "observed_monotonic": 103735.931963055
-    },
-    {
-      "record_index": 4867,
-      "tag": "vold",
-      "message": "Starting restorecon of /data/misc_ce/0",
-      "actual_sender_pid_uid_gid": [
-        362,
-        0,
-        0
-      ],
-      "observed_monotonic": 103735.932415956
-    },
-    {
-      "record_index": 4870,
-      "tag": "vold",
-      "message": "Finished restorecon of /data/misc_ce/0",
-      "actual_sender_pid_uid_gid": [
-        362,
-        0,
-        0
-      ],
-      "observed_monotonic": 103735.952745098
-    },
-    {
-      "record_index": 4965,
-      "tag": "UserController.UserState",
-      "message": "User 0 state changed from RUNNING_LOCKED to RUNNING_UNLOCKING",
-      "actual_sender_pid_uid_gid": [
-        535,
-        1000,
-        1000
-      ],
-      "observed_monotonic": 103738.518513774
-    },
-    {
-      "record_index": 5030,
-      "tag": "UserController.UserState",
-      "message": "User 0 state changed from RUNNING_UNLOCKING to RUNNING_UNLOCKED",
-      "actual_sender_pid_uid_gid": [
-        535,
-        1000,
-        1000
-      ],
-      "observed_monotonic": 103738.6382215
+      "errno_observed": [],
+      "status": [
+        "Uid:\t1046\t1046\t1046\t1046",
+        "Gid:\t1006\t1006\t1006\t1006",
+        "Groups:\t1026 1031 ",
+        "CapPrm:\t0000000000000000",
+        "CapEff:\t0000000000000000",
+        "CapBnd:\t000001ffffffffff",
+        "NoNewPrivs:\t1"
+      ]
     }
   ],
-  "artifacts": {
-    "/home/tv/recuperacion-archtv/693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8-markor-software-launch/before-launch.json": "930919720f1b11b7a7e9970cc28d51d26a13e19a3fd1876e13d6ff3285aa2753",
-    "/home/tv/recuperacion-archtv/693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8-markor-software-launch/result.json": "9c84a492b72924978fe99f071e09d190d93d4d0913c58d67678e883a03cf4bfa",
-    "/home/tv/recuperacion-archtv/693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8-markor-software-launch/completion-consumer.json": "7fd5feeef8a0edfbc1fc96656c4580a986d6f0dc9f481ffac8eba7f0edf65895",
-    "/home/tv/recuperacion-archtv/693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8-markor-software-launch/session-state.json": "6b606a7d94dc24ce17d4cb9c9ca3935058a14e0c4087d17cce50d9b1c79c7920",
-    "/home/tv/recuperacion-archtv/693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8-markor-software-launch/native-stderr.txt": "d30184acca354a5c6662fd71cd8427017d29c73c9e33dc4806e77e23064e8654",
-    "/home/tv/recuperacion-archtv/693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8-markor-software-launch/markor-launch.txt": "18c99596f5da9c9781faea804524796782484e05b989afe34260d5b1343500c4",
-    "/home/tv/recuperacion-archtv/693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8-markor-software-launch/markor-user-state.txt": "f7e3ef2a0655ff8eccb9cf63ec01c617e54e6f563e1dacc42f7d4269ad642347",
-    "/home/tv/recuperacion-archtv/693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8-markor-software-launch/markor-installed-bytes.txt": "96f016ebe4ca9742213a7b8a66fbbd45357c9428c6c44c77b95bea01bc7729a8",
-    "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793687096890713234/android-log-live.jsonl": "e6149770a9e257f69289054ef13106a458f68cf8f189db67806d053860d30696",
-    "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793687096890713234/android-log-capture.json": "66123c9d85aaeb02636ac9ccffabbc06a1e88a4dd2f17c274cd1aa1843faafb6",
-    "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-132/source-inputs.json": "1be2f746cb0bc777d34df51b9de8999460cb695e30702e1e23311a8d62030f0a",
-    "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-132/property-runtime-input.json": "28998099d410525db241fcc8268a44767ff43d2c2fdbe1c7fb06017943232c84"
+  "original_fuse_events": [
+    {
+      "record_index": 4906,
+      "tag": "vold",
+      "message": "Mounting emulated fuse volume",
+      "actual_sender_pid_uid_gid": [
+        364,
+        0,
+        0
+      ],
+      "observed_monotonic": 106210.027846608
+    },
+    {
+      "record_index": 5197,
+      "tag": "StorageUserConnection",
+      "message": "Service: [ComponentInfo{com.android.providers.media.module/com.android.providers.media.fuse.ExternalStorageServiceImpl}] connected. User [0]",
+      "actual_sender_pid_uid_gid": [
+        547,
+        1000,
+        1000
+      ],
+      "observed_monotonic": 106214.513859618
+    },
+    {
+      "record_index": 5202,
+      "tag": "FuseDaemon",
+      "message": "Not using FUSE BPF",
+      "actual_sender_pid_uid_gid": [
+        2119,
+        10100,
+        10100
+      ],
+      "observed_monotonic": 106214.573421816
+    },
+    {
+      "record_index": 5203,
+      "tag": "FuseDaemon",
+      "message": "Starting fuse...",
+      "actual_sender_pid_uid_gid": [
+        2119,
+        10100,
+        10100
+      ],
+      "observed_monotonic": 106214.574170255
+    },
+    {
+      "record_index": 5221,
+      "tag": "vold",
+      "message": "Setting ro.fuse.bpf.is_running to false",
+      "actual_sender_pid_uid_gid": [
+        364,
+        0,
+        0
+      ],
+      "observed_monotonic": 106214.674742111
+    }
+  ],
+  "frame": {
+    "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793689560774698241/markor-sf.png",
+    "bytes": 5916,
+    "sha256": "e1849a9fdd931ae97a24c1d085e345eaec5683052ac956cac3c770a987eb0d39",
+    "visual_inspection": "Observed through view_image: black frame, no visible Markor UI; image not edited/generated",
+    "scope": "SurfaceFlinger output only; does not establish correct physical presentation or app usability"
   },
   "proved": [
-    "Original asynchronous restorecon returns for system_ce, vendor_ce and misc_ce",
-    "Original user0 reaches RUNNING_UNLOCKED after original LSS synthetic-password/key initialization",
-    "Original PMS installs Markor byte-for-byte and original AMS start-activity returns Status:ok/COLD, routing MainActivity to intact IntroActivity",
-    "Markor MainActivity.onCreate appears in original external-storage failure trace; real APK code executed",
-    "Exact exterior units inactive and VT1 restored; devices cleaned; result consumed without queue notification"
+    "Three complete original daemons use original RC identities/caps/NNP and typed SELinux contexts",
+    "Original Sm client via app_process64 reports emulated;0 mounted; original MediaProvider FUSE service connected and started",
+    "Original OverlayManager returns actual list including active ArchTV platform overlay",
+    "Markor intact cold-starts IntroActivity after real RUNNING_UNLOCKED",
+    "Native/exterior0 and exact unitsinactive/VT1 restored; no loops/dm/new FUSEconnections afterstop"
   ],
   "not_accepted": [
-    "Stable visible Markor UI, input, note, persistence, close/reopen",
-    "Complete service compatibility: external storage resolves to /dev/null and rejects Markor path; DocumentsUI fails without IOverlayManager",
-    "Native success: exit1 APEX_CANCEL_NOT_COLLECTED despite earlier original daemon normal exit0/clean1; not silently relabeled",
-    "MAC authorization or isolation: SELinux permissive/policyload4",
-    "ARM, GMS and DRM remain open separate axes"
+    "Usable UI: captured frame is black and original gralloc driver/import/allocation errors remain",
+    "End-to-end Smithay\u2192Android input: current HWC WaylandOutput does not bind wl_seat",
+    "Note, persistence, app-close/reopen, full storage/media/service compatibility",
+    "FUSE BPF/passthrough: source logs report BPF disabled; no active kernel connection ID or mountinfo snapshot captured",
+    "MAC: policyload4/permissive remains R1 open; UID/caps observations do not prove authorization",
+    "ARM/GMS/DRM remain separate open axes"
   ],
-  "adaptation": {
-    "patch": "runtime/aosp/android16-qpr2/patches/0005-linux-restorecon-owner.patch",
-    "source_commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
-    "change": "After unchanged CheckPermissions, kernel peerPID is compared with getpid of supervised coordinator instead of literalPID1, allowing original asynchronous self completion to publish rather than recursively enqueue",
-    "actions_archive_sha256": "257c99474f70eed3d8ed280b4818eebc712996e1cddc69388c224a43917a5772"
+  "cleanup": {
+    "id": "afb2b897-3292-45e4-9a3d-09425f609eb6",
+    "outer_unit": "archtv-markor-session-afb2b897-3292-45e4-9a3d-09425f609eb6",
+    "runner_unit": "archtv-package-runner-afb2b897-3292-45e4-9a3d-09425f609eb6",
+    "initial_vt": "1",
+    "root_pid": 435418,
+    "root_boot_id": "4e18faf8-2b46-42e4-a6b2-269c34326b68",
+    "result": "native_result_recorded",
+    "fuse_connections_before": [],
+    "fuse_connections_after": [],
+    "new_fuse_connections": [],
+    "final_vt": "1",
+    "outer_active": false,
+    "runner_active": false
   },
-  "next": "Integrate original storage/media/OverlayManager and NativeTombstone lifecycle, correct profile verifier boundary, hold/capture real Markor UI and input/note.133 native cancellation closure0; new normal-exit branch unproven and outer1 retained.",
+  "next": "Correct justified private render-device DAC against pinned original contract and investigate original mapper failure; capture real UI and actual FUSE mountinfo, then input/real note. No host-device chmod or fake readiness.",
+  "artifacts": {
+    "/home/tv/recuperacion-archtv/afb2b897-3292-45e4-9a3d-09425f609eb6-markor-software-launch/before-launch.json": "9c301f9516c87b213d9dd2886d2c41e1b5165abefe7a68cb0f647033544c755e",
+    "/home/tv/recuperacion-archtv/afb2b897-3292-45e4-9a3d-09425f609eb6-markor-software-launch/result.json": "52dd110bc3857761be1598d455338f6888024555a441b616f903d1a805448a63",
+    "/home/tv/recuperacion-archtv/afb2b897-3292-45e4-9a3d-09425f609eb6-markor-software-launch/native-stderr.txt": "4d3106c7e56a8ec5fe21785ab3d828b92ab58c7455689088a208ff484418291e",
+    "/home/tv/recuperacion-archtv/afb2b897-3292-45e4-9a3d-09425f609eb6-markor-software-launch/completion-consumer.json": "671089450dea8d44b6b38fe6f721ae7f029c4bddb3a73c9730c0b631a42d517c",
+    "/home/tv/recuperacion-archtv/afb2b897-3292-45e4-9a3d-09425f609eb6-markor-software-launch/session-state.json": "b26581ca425e20d9a67d543523717b187538354758a5a1623c38ec31964efae6",
+    "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793689560774698241/android-log-live.jsonl": "390e071b238eb2782c793c8541b309b2b38cb531677e787b76f685e5109f2714",
+    "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793689560774698241/android-log-capture.json": "944d5deba156d504cc0d92ed8217a51c0c0d4e8c0fd034aafaf915dbadc8320f",
+    "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793689560774698241/markor-sf.png": "e1849a9fdd931ae97a24c1d085e345eaec5683052ac956cac3c770a987eb0d39",
+    "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-137/source-inputs.json": "74eb44344d6f2e909f5ea085db8347ab3ce86e3e6651ffdc99e750a55c35a7d6"
+  },
+  "historical132": {
+    "scope": "Original user unlock and intact Markor activity launch observed; not complete application launch/UI/input/persistence/security acceptance",
+    "candidate": 132,
+    "run_id": "693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8",
+    "checkpoint": "/home/tv/recuperacion-archtv/693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8-markor-software-launch",
+    "result": {
+      "native_exit": 1,
+      "outer_exit": 1,
+      "native_complete_inventory_verified": true,
+      "active_loops": "",
+      "final_dm": []
+    },
+    "outputs": {
+      "markor-user-state.txt": "RUNNING_UNLOCKED\n",
+      "markor-installed-bytes.txt": "SOURCE c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440  /data/local/tmp/markor.apk\nINSTALLED c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440  /data/app/~~Aci9F1BBa10wMq5ANhyI0A==/net.gsantner.markor-gj1L2ygQwbcBrzai0XQQsQ==/base.apk\n",
+      "markor-resolve.txt": "priority=0 preferredOrder=0 match=0x108000 specificIndex=-1 isDefault=false\nnet.gsantner.markor/.activity.MainActivity\n",
+      "markor-launch.txt": "Starting: Intent { cmp=net.gsantner.markor/.activity.MainActivity }\nStatus: ok\nLaunchState: COLD\nActivity: net.gsantner.markor/.activity.IntroActivity\nTotalTime: 4352\nWaitTime: 4365\nComplete\n"
+    },
+    "original_markers": [
+      {
+        "record_index": 4808,
+        "tag": "UserController.UserState",
+        "message": "User 0 state changed from BOOTING to RUNNING_LOCKED",
+        "actual_sender_pid_uid_gid": [
+          535,
+          1000,
+          1000
+        ],
+        "observed_monotonic": 103735.586247414
+      },
+      {
+        "record_index": 4856,
+        "tag": "vold",
+        "message": "Starting restorecon of /data/system_ce/0",
+        "actual_sender_pid_uid_gid": [
+          362,
+          0,
+          0
+        ],
+        "observed_monotonic": 103735.831305513
+      },
+      {
+        "record_index": 4861,
+        "tag": "vold",
+        "message": "Finished restorecon of /data/system_ce/0",
+        "actual_sender_pid_uid_gid": [
+          362,
+          0,
+          0
+        ],
+        "observed_monotonic": 103735.918416077
+      },
+      {
+        "record_index": 4862,
+        "tag": "vold",
+        "message": "Starting restorecon of /data/vendor_ce/0",
+        "actual_sender_pid_uid_gid": [
+          362,
+          0,
+          0
+        ],
+        "observed_monotonic": 103735.918919654
+      },
+      {
+        "record_index": 4866,
+        "tag": "vold",
+        "message": "Finished restorecon of /data/vendor_ce/0",
+        "actual_sender_pid_uid_gid": [
+          362,
+          0,
+          0
+        ],
+        "observed_monotonic": 103735.931963055
+      },
+      {
+        "record_index": 4867,
+        "tag": "vold",
+        "message": "Starting restorecon of /data/misc_ce/0",
+        "actual_sender_pid_uid_gid": [
+          362,
+          0,
+          0
+        ],
+        "observed_monotonic": 103735.932415956
+      },
+      {
+        "record_index": 4870,
+        "tag": "vold",
+        "message": "Finished restorecon of /data/misc_ce/0",
+        "actual_sender_pid_uid_gid": [
+          362,
+          0,
+          0
+        ],
+        "observed_monotonic": 103735.952745098
+      },
+      {
+        "record_index": 4965,
+        "tag": "UserController.UserState",
+        "message": "User 0 state changed from RUNNING_LOCKED to RUNNING_UNLOCKING",
+        "actual_sender_pid_uid_gid": [
+          535,
+          1000,
+          1000
+        ],
+        "observed_monotonic": 103738.518513774
+      },
+      {
+        "record_index": 5030,
+        "tag": "UserController.UserState",
+        "message": "User 0 state changed from RUNNING_UNLOCKING to RUNNING_UNLOCKED",
+        "actual_sender_pid_uid_gid": [
+          535,
+          1000,
+          1000
+        ],
+        "observed_monotonic": 103738.6382215
+      }
+    ],
+    "artifacts": {
+      "/home/tv/recuperacion-archtv/693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8-markor-software-launch/before-launch.json": "930919720f1b11b7a7e9970cc28d51d26a13e19a3fd1876e13d6ff3285aa2753",
+      "/home/tv/recuperacion-archtv/693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8-markor-software-launch/result.json": "9c84a492b72924978fe99f071e09d190d93d4d0913c58d67678e883a03cf4bfa",
+      "/home/tv/recuperacion-archtv/693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8-markor-software-launch/completion-consumer.json": "7fd5feeef8a0edfbc1fc96656c4580a986d6f0dc9f481ffac8eba7f0edf65895",
+      "/home/tv/recuperacion-archtv/693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8-markor-software-launch/session-state.json": "6b606a7d94dc24ce17d4cb9c9ca3935058a14e0c4087d17cce50d9b1c79c7920",
+      "/home/tv/recuperacion-archtv/693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8-markor-software-launch/native-stderr.txt": "d30184acca354a5c6662fd71cd8427017d29c73c9e33dc4806e77e23064e8654",
+      "/home/tv/recuperacion-archtv/693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8-markor-software-launch/markor-launch.txt": "18c99596f5da9c9781faea804524796782484e05b989afe34260d5b1343500c4",
+      "/home/tv/recuperacion-archtv/693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8-markor-software-launch/markor-user-state.txt": "f7e3ef2a0655ff8eccb9cf63ec01c617e54e6f563e1dacc42f7d4269ad642347",
+      "/home/tv/recuperacion-archtv/693e09b1-0dcd-4d48-9a2d-1f6b6e373fc8-markor-software-launch/markor-installed-bytes.txt": "96f016ebe4ca9742213a7b8a66fbbd45357c9428c6c44c77b95bea01bc7729a8",
+      "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793687096890713234/android-log-live.jsonl": "e6149770a9e257f69289054ef13106a458f68cf8f189db67806d053860d30696",
+      "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793687096890713234/android-log-capture.json": "66123c9d85aaeb02636ac9ccffabbc06a1e88a4dd2f17c274cd1aa1843faafb6",
+      "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-132/source-inputs.json": "1be2f746cb0bc777d34df51b9de8999460cb695e30702e1e23311a8d62030f0a",
+      "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-132/property-runtime-input.json": "28998099d410525db241fcc8268a44767ff43d2c2fdbe1c7fb06017943232c84"
+    },
+    "proved": [
+      "Original asynchronous restorecon returns for system_ce, vendor_ce and misc_ce",
+      "Original user0 reaches RUNNING_UNLOCKED after original LSS synthetic-password/key initialization",
+      "Original PMS installs Markor byte-for-byte and original AMS start-activity returns Status:ok/COLD, routing MainActivity to intact IntroActivity",
+      "Markor MainActivity.onCreate appears in original external-storage failure trace; real APK code executed",
+      "Exact exterior units inactive and VT1 restored; devices cleaned; result consumed without queue notification"
+    ],
+    "not_accepted": [
+      "Stable visible Markor UI, input, note, persistence, close/reopen",
+      "Complete service compatibility: external storage resolves to /dev/null and rejects Markor path; DocumentsUI fails without IOverlayManager",
+      "Native success: exit1 APEX_CANCEL_NOT_COLLECTED despite earlier original daemon normal exit0/clean1; not silently relabeled",
+      "MAC authorization or isolation: SELinux permissive/policyload4",
+      "ARM, GMS and DRM remain open separate axes"
+    ],
+    "adaptation": {
+      "patch": "runtime/aosp/android16-qpr2/patches/0005-linux-restorecon-owner.patch",
+      "source_commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+      "change": "After unchanged CheckPermissions, kernel peerPID is compared with getpid of supervised coordinator instead of literalPID1, allowing original asynchronous self completion to publish rather than recursively enqueue",
+      "actions_archive_sha256": "257c99474f70eed3d8ed280b4818eebc712996e1cddc69388c224a43917a5772"
+    },
+    "next": "Integrate original storage/media/OverlayManager and NativeTombstone lifecycle, correct profile verifier boundary, hold/capture real Markor UI and input/note.133 native cancellation closure0; new normal-exit branch unproven and outer1 retained.",
+    "capture130_limitation": "Planned CLI GDB diagnostic found no matching comm and captured no stack; source inspection identified PID1 guard. Not REA MCP evidence."
+  },
   "historical103": {
     "scope": "Original selected phase1000 and lazy lifecycle progression, not Markor launch or security acceptance",
     "candidate": 103,
@@ -188,7 +375,6 @@
     ],
     "next": "Integrate original gatekeeperd and required real security backends (GateKeeper HAL/Keystore/KeyMint) based on source/runtime contracts, no fake credentials, auth tokens or keys."
   },
-  "capture130_limitation": "Planned CLI GDB diagnostic found no matching comm and captured no stack; source inspection identified PID1 guard. Not REA MCP evidence.",
   "followup133": {
     "candidate": 133,
     "run_id": "3eb289d2-a165-4d8a-b81a-cc25e69c8977",
@@ -214,6 +400,29 @@
       "/home/tv/recuperacion-archtv/3eb289d2-a165-4d8a-b81a-cc25e69c8977-markor-software-launch/completion-consumer.json": "44baf225b53a17d93395e92036283167af950e0872aaaa9fcd0501cfd97bcb91",
       "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793687678665835426/android-log-live.jsonl": "91057aa47923271445cf7f16b5009c140599e84a043b3ff9ac36a73224979e96",
       "/home/tv/recuperacion-archtv/3eb289d2-a165-4d8a-b81a-cc25e69c8977-markor-software-launch/code/reports/android16-package-bootstrap/execute-integrated.py": "0b9681a55221a6ea9b9c3b16d26c0b31b62f2f142e5016749150f5db6dcf2d47"
+    }
+  },
+  "prior_runs": [
+    {
+      "candidate": 135,
+      "checkpoint": "/home/tv/recuperacion-archtv/dfa0d534-307e-4a9f-a057-565e90a26876-markor-software-launch",
+      "scope": "Original daemons/typed identities; mountENOENT and Sm wrapper missing app_process, no PNG",
+      "result_sha256": "a53b5bb9c0d03e98c043618b46b5e5665ac5ce55859dd670459c3183dba14d21"
+    },
+    {
+      "candidate": 136,
+      "checkpoint": "/home/tv/recuperacion-archtv/98799158-9015-42c8-b688-140bda76fb57-markor-software-launch",
+      "scope": "Preparation rejected unneeded appfuse path before Bionic; no APEX regression",
+      "result_sha256": "77df59bab799670654e5a7891ae28a7c521e0e9b49aefb0958dcf3ff8860be50"
+    }
+  ],
+  "REA_MCP": {
+    "scope": "Actual static MCP APK introspection, not execution; original UI onDone handler writes preferences itself. No preference mutation performed by our runtime/test",
+    "class_evidence_id": "ev_47aaa18aa597b275a570f832f22b6b02c2d342ef84f348ed1074c2f6585fe2d6",
+    "method_evidence_id": "ev_3d1e553351d87629a22847bcefafa4a543f24253f02376b1493f0d58e88f213b",
+    "artifacts": {
+      "/home/tv/recuperacion-archtv/dfa0d534-307e-4a9f-a057-565e90a26876-markor-software-launch/rea-intro-inspection.json": "208d701f894504179e9d09157aabe3f3b5e0e7f729bfa71b8a5a52a26935b3ee",
+      "/home/tv/recuperacion-archtv/dfa0d534-307e-4a9f-a057-565e90a26876-markor-software-launch/rea-intro-done-method.json": "282c8cc69017f5da2fdf2aa66f30e6b092cbe03c60e40e493c1aab2af67719ef"
     }
   }
 }

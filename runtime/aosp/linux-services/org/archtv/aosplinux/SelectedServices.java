@@ -377,6 +377,10 @@ public final class SelectedServices {
                 call(Class.forName("com.android.internal.policy.AttributeCache"),null,"init",new Class<?>[]{contextType},context);
                 call(activityManager.getClass(),activityManager,"setSystemProcess",new Class<?>[0]);
                 call(platformCompat.getClass(),platformCompat,"registerPackageReceiver",new Class<?>[]{contextType},context);
+                // Original SystemServer starts OMS after PMS/UserManager.
+                // DocumentsUI consumes its real IOverlayManager, not a stub.
+                start(manager,managerType,"com.android.server.om.OverlayManagerService");
+                start(manager,managerType,"com.android.server.os.NativeTombstoneManagerService");
                 start(manager,managerType,"com.android.server.SystemConfigService");
                 start(manager,managerType,"com.android.server.usage.UsageStatsService");
                 Class<?> usageType=Class.forName("android.app.usage.UsageStatsManagerInternal");

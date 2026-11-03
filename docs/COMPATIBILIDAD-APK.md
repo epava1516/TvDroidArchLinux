@@ -1,5 +1,7 @@
 # Matriz de aplicaciones reales
 
+137: Sm original devuelve emulated;0 mounted y OMS lista el overlay de plataforma; la petición de lanzamiento original llega a IntroActivity. La captura SF real es negra y hay errores de mapper: interfaz con fallo demostrado en esta ejecución, sin aceptar el lanzamiento completo/entrada/nota. La salida0 del experimento no cambia la aceptación general. [Evidencia y matriz](../reports/android16-package-bootstrap/original-user-unlock-progress.json). El antiguo fallback de volumen /dev/null está superado; persiste un aviso distinto de redirección stdout a /dev/null.
+
 132 ejecutó Markor intacta y AMS retornó COLD/IntroActivity tras RUNNING_UNLOCKED. La matriz conserva el lanzamiento como pendiente de aceptación completa, con ejecución parcial registrada, y servicios como fallo demostrado: almacenamiento externo inválido /dev/null y DocumentsUI sin OverlayManager. UI visible/entrada/nota/persistencia no probadas; instalación temporal conserva aprobación. [Alcance y evidencia](../reports/android16-package-bootstrap/original-user-unlock-progress.json).
 
 La [plataforma122 con GateKeeper/Keystore/JCA](../reports/android16-package-bootstrap/gatekeeper-platform-progress.json) repite instalación intacta de Markor; no añade una etapa aceptada: start-user espera, lanzamiento/UI/entrada/nota/persistencia/cierre/reapertura siguen abiertos. getSecureUserId(0)=0 es una respuesta real sobre usuario sin credencial; no demuestra autenticación de aplicaciones ni desbloqueo.
@@ -32,9 +34,10 @@ recorrido salvo dependencia real demostrada de la versión/función seleccionada
 La fuente canónica sigue siendo el JSON enlazado abajo, ahora schema 2. La base
 es Android16 QPR2 nativa Bionic/AOSP, no el laboratorio Android13. Cada aplicación
 registra nueve etapas: instalación, lanzamiento, interfaz, entrada, función
-principal, persistencia, servicios, cierre y reapertura. Sólo la instalación
-temporal anterior de Markor está aprobada con el alcance indicado; las otras
-etapas y aplicaciones siguen **no probadas** en A16. No se calcula porcentaje. Estados admitidos: aprobado, fallo demostrado,
+principal, persistencia, servicios, cierre y reapertura. La instalación temporal
+de Markor está aprobada con alcance acotado; su ejecución parcial queda registrada,
+con interfaz negra/fallos de servicios y sin recorrido completo aceptado. Las demás
+etapas pendientes y aplicaciones conservan el estado del JSON canónico. No se calcula porcentaje. Estados admitidos: aprobado, fallo demostrado,
 bloqueo externo y no probado, siempre con base/versión/evidencia/alcance.
 
 Markor, Calculator y VLC conservan versiones/hashes/procedencia y análisis estático.

@@ -154,7 +154,7 @@
       "runtime_results": {
         "installation": "approved",
         "launch": "not_tested",
-        "interface": "not_tested",
+        "interface": "demonstrated_failure",
         "input": "not_tested",
         "main_function": "not_tested",
         "persistence": "not_tested",
@@ -162,7 +162,7 @@
         "close": "not_tested",
         "reopen": "not_tested"
       },
-      "reason": "132 executes intact Markor MainActivity.onCreate and AMS reports cold launch to IntroActivity after real user unlock. Whole launch remains unaccepted: visible stable UI/input/persistence unverified, external storage invalid /dev/null, DocumentsUI missing OverlayManager, native close exits1. Earlier temporary installation remains approved.",
+      "reason": "137: original storage reports mounted emulated;0 and OMS responds, native/exterior0. Intact Markor cold-starts IntroActivity but actual SF capture is black with original mapper errors; visible UI, input, note/persistence/full services not accepted. Previous unmounted-volume /dev/null path failure superseded; separate /dev/null stdout-redirection warning remains.",
       "framework_class_link_pass": true,
       "declared_application": "net.gsantner.markor.ApplicationObject",
       "bootstrap_experiment": {
@@ -208,17 +208,24 @@
         },
         "launch": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "96cbbd00ea9f2fa161e73d376cc724991c3ea413708ceae6e4ee1217eb4068ea",
+          "record_sha256": "5f37187a7ab32987be24780f94ec5c235538105c08b754224db66ef134b86e27",
           "accepted": false,
-          "scope": "Original user unlock and intact Markor activity launch observed; not complete application launch/UI/input/persistence/security acceptance",
-          "failure_scope": "Partial actual launch observed, complete launch acceptance not tested. Do not infer failed start or no APK execution from not_tested."
+          "scope": "Original storage/media/overlay integration and post-launch frame observation; not a working Markor UI, input/note/persistence/MAC or broad compatibility acceptance",
+          "observation": "Original API launch/mounted-volume/overlay successes retained; current frame black, end-to-end input absent; not whole-stage approval."
         },
         "services": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "96cbbd00ea9f2fa161e73d376cc724991c3ea413708ceae6e4ee1217eb4068ea",
+          "record_sha256": "5f37187a7ab32987be24780f94ec5c235538105c08b754224db66ef134b86e27",
           "accepted": false,
-          "scope": "Original user unlock and intact Markor activity launch observed; not complete application launch/UI/input/persistence/security acceptance",
-          "failure_scope": "Complete stage criteria not met; preserves actual successful AMS request and activity execution, does not claim APK never ran."
+          "scope": "Original storage/media/overlay integration and post-launch frame observation; not a working Markor UI, input/note/persistence/MAC or broad compatibility acceptance",
+          "observation": "Original API launch/mounted-volume/overlay successes retained; current frame black, end-to-end input absent; not whole-stage approval."
+        },
+        "interface": {
+          "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
+          "record_sha256": "5f37187a7ab32987be24780f94ec5c235538105c08b754224db66ef134b86e27",
+          "accepted": false,
+          "scope": "Original storage/media/overlay integration and post-launch frame observation; not a working Markor UI, input/note/persistence/MAC or broad compatibility acceptance",
+          "observation": "Original API launch/mounted-volume/overlay successes retained; current frame black, end-to-end input absent; not whole-stage approval."
         }
       }
     }

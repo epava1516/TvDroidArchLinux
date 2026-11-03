@@ -143,9 +143,10 @@ class LinuxMc1Cohort {
     bool vold_cancelled() const { return vold_cancelled_; }
     bool apex_cancelled() const { return apex_cancelled_; }
     bool apex_exited_cleanly() const {
-        return apex_clean_exit_ && apexd_ && !apexd_->IsRunning();
+        // Close clears the pointer only after every service has been reaped.
+        return apex_clean_exit_ && (!apexd_ || !apexd_->IsRunning());
     }
-    bool healthy() const { return !manager_failed_ && (!gatekeeper_hal_ || gatekeeper_hal_->IsRunning()) && (!gatekeeper_ || gatekeeper_->IsRunning()) && (!keystore_ || keystore_->IsRunning()) && (!keymint_ || keymint_->IsRunning()) && (!aconfig_system_ || aconfig_system_->IsRunning() || aconfig_system_clean_exit_) && (!aconfig_mainline_ || aconfig_mainline_->IsRunning() || aconfig_mainline_clean_exit_) && (!audioserver_ || audioserver_->IsRunning()) && (!lmkd_ || lmkd_->IsRunning()) && (!netd_ || netd_->IsRunning()) && (!statsd_ || statsd_->IsRunning()) && (!health_ || health_->IsRunning()) && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && (bootanimation_->IsRunning() || bootanimation_clean_exit_))) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning() || apex_clean_exit_); }
+    bool healthy() const { return !manager_failed_ && (!storaged_ || storaged_->IsRunning()) && (!swcodec_ || swcodec_->IsRunning()) && (!idmap_ || idmap_->IsRunning()) && (!gatekeeper_hal_ || gatekeeper_hal_->IsRunning()) && (!gatekeeper_ || gatekeeper_->IsRunning()) && (!keystore_ || keystore_->IsRunning()) && (!keymint_ || keymint_->IsRunning()) && (!aconfig_system_ || aconfig_system_->IsRunning() || aconfig_system_clean_exit_) && (!aconfig_mainline_ || aconfig_mainline_->IsRunning() || aconfig_mainline_clean_exit_) && (!audioserver_ || audioserver_->IsRunning()) && (!lmkd_ || lmkd_->IsRunning()) && (!netd_ || netd_->IsRunning()) && (!statsd_ || statsd_->IsRunning()) && (!health_ || health_->IsRunning()) && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && (bootanimation_->IsRunning() || bootanimation_clean_exit_))) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning() || apex_clean_exit_); }
     android::base::Result<void> Close(const Tick& tick) {
         using namespace android::init;
         if(!active_) return {};
@@ -171,6 +172,7 @@ class LinuxMc1Cohort {
         aconfig_system_=nullptr;aconfig_mainline_=nullptr;
         aconfig_system_clean_exit_=false;aconfig_mainline_clean_exit_=false;
         audioserver_=nullptr;
+        storaged_=nullptr;swcodec_=nullptr;idmap_=nullptr;
         lmkd_=nullptr;
         netd_=nullptr;
         statsd_=nullptr;
@@ -733,6 +735,29 @@ class LinuxMc1Cohort {
             lmkd_->AddReapCallback([this](const siginfo_t& info){std::fprintf(stderr,"SELECTED_LMKD_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);if(!closing_)manager_failed_=true;});
             if(auto started=lmkd_->Start();!started.ok())return started;
             std::fprintf(stderr,"SELECTED_LMKD_STARTED pid=%d NOT_SOCKET_OR_PRESSURE_ACCEPTANCE\n",lmkd_->pid());
+            // Complete original storage/codec/overlay backends. The media APEX
+            // profile was registered by original perform_apex_config already.
+            for(const char* path:{"/system/etc/init/storaged.rc","/system/etc/init/idmap2d.rc"}) {
+                auto parsed=parser.ParseConfigFile(path);
+                if(!parsed.ok() || parser.parse_error_count()!=0)return android::base::Error()<<"Original storage/overlay RC rejected: "<<path;
+            }
+            storaged_=services.FindService("storaged");
+            idmap_=services.FindService("idmap2d");
+            swcodec_=services.FindService("media.swcodec");
+            if(!storaged_ || storaged_->args()!=std::vector<std::string>{"/system/bin/storaged"} || storaged_->uid()!=AID_ROOT || storaged_->gid()!=AID_PACKAGE_INFO ||
+               !idmap_ || idmap_->args()!=std::vector<std::string>{"/system/bin/idmap2d"} || idmap_->uid()!=AID_SYSTEM || idmap_->gid()!=AID_SYSTEM ||
+               !swcodec_ || swcodec_->args()!=std::vector<std::string>{"/apex/com.android.media.swcodec/bin/mediaswcodec"} || swcodec_->uid()!=AID_MEDIA_CODEC || swcodec_->gid()!=AID_CAMERA)
+                return android::base::Error()<<"Original storage/codec/overlay profile mismatch";
+            for(auto* service:{storaged_,idmap_,swcodec_}) {
+                service->AddReapCallback([this](const siginfo_t& info){
+                    std::fprintf(stderr,"ORIGINAL_STORAGE_BACKEND_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
+                    if(!closing_)manager_failed_=true;
+                });
+                if(auto started=service->Start();!started.ok())return started;
+            }
+            std::fprintf(stderr,"SELECTED_STORAGED_STARTED pid=%d NOT_STORAGE_ACCEPTANCE\n",storaged_->pid());
+            std::fprintf(stderr,"SELECTED_IDMAP_STARTED pid=%d NOT_OVERLAY_OPERATION_ACCEPTANCE\n",idmap_->pid());
+            std::fprintf(stderr,"SELECTED_SWCODEC_STARTED pid=%d NOT_MEDIA_PLAYBACK_ACCEPTANCE\n",swcodec_->pid());
             // Linux admits native audio when an actual provider is configured.
             // AudioService keeps its original unavailable/recovery behavior;
             // absence of a HAL is never reported as working playback.
@@ -895,7 +920,7 @@ class LinuxMc1Cohort {
             std::fprintf(stderr,"NETWORK_NETD_ROOT_OPERATION_NOT_RETESTED_NOT_CURRENT_OPERATION_ACCEPTANCE\n");
             client_done_=false;client_ok_=false;
             auto package_client=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","shell","shell","--",
-                "/system/bin/sh","-c","umask 077; i=0; while [ $$i -lt 120 ]; do /system/bin/service check package > /data/local/tmp/archtv-mc1/package-query.txt 2>&1; /system/bin/service check activity > /data/local/tmp/archtv-mc1/activity-query.txt 2>&1; /system/bin/service check mount > /data/local/tmp/archtv-mc1/mount-query.txt 2>&1; if /system/bin/grep -qx 'Service package: found' /data/local/tmp/archtv-mc1/package-query.txt && /system/bin/grep -qx 'Service activity: found' /data/local/tmp/archtv-mc1/activity-query.txt && /system/bin/grep -qx 'Service mount: found' /data/local/tmp/archtv-mc1/mount-query.txt; then /system/bin/cmd package list packages --user 0 > /data/local/tmp/archtv-mc1/package-list.txt 2>&1; /system/bin/cmd package path --user 0 net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-path.txt 2>&1; if /system/bin/grep -q '^package:/data/app/' /data/local/tmp/archtv-mc1/markor-path.txt && /system/bin/grep -qx 'Status: ok' /data/local/tmp/archtv-mc1/markor-launch.txt; then /system/bin/dumpsys package net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-dump.txt 2>&1; exit $$?; fi; fi; i=$$((i+1)); /system/bin/sleep 1; done; exit 1"});
+                "/system/bin/sh","-c","umask 077; i=0; while [ $$i -lt 120 ]; do /system/bin/service check package > /data/local/tmp/archtv-mc1/package-query.txt 2>&1; /system/bin/service check activity > /data/local/tmp/archtv-mc1/activity-query.txt 2>&1; /system/bin/service check mount > /data/local/tmp/archtv-mc1/mount-query.txt 2>&1; if /system/bin/grep -qx 'Service package: found' /data/local/tmp/archtv-mc1/package-query.txt && /system/bin/grep -qx 'Service activity: found' /data/local/tmp/archtv-mc1/activity-query.txt && /system/bin/grep -qx 'Service mount: found' /data/local/tmp/archtv-mc1/mount-query.txt; then /system/bin/cmd package list packages --user 0 > /data/local/tmp/archtv-mc1/package-list.txt 2>&1; /system/bin/cmd package path --user 0 net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-path.txt 2>&1; if /system/bin/grep -q '^package:/data/app/' /data/local/tmp/archtv-mc1/markor-path.txt && /system/bin/grep -qx 'Status: ok' /data/local/tmp/archtv-mc1/markor-launch.txt && /system/bin/test -s /data/local/tmp/archtv-mc1/markor-sf.png; then /system/bin/dumpsys package net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-dump.txt 2>&1; exit $$?; fi; fi; i=$$((i+1)); /system/bin/sleep 1; done; exit 1"});
             if(!package_client.ok())return package_client.error();
             auto* peer=package_client->get();
             peer->AddReapCallback([this](const siginfo_t& info){client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;});
@@ -929,6 +954,9 @@ class LinuxMc1Cohort {
     android::init::Service* aconfig_mainline_=nullptr;
     android::init::Service* lmkd_=nullptr;
     android::init::Service* audioserver_=nullptr;
+    android::init::Service* storaged_=nullptr;
+    android::init::Service* swcodec_=nullptr;
+    android::init::Service* idmap_=nullptr;
     android::init::Service* netd_=nullptr;
     android::init::Service* statsd_=nullptr;
     android::init::Service* health_=nullptr;

@@ -1,5 +1,7 @@
 # Roadmap · Arch TV nativo en Rust
 
+Prioridad137: [resolver la captura gráfica negra de Markor](docs/ROADMAP-A.md) → entrada desde Smithay → nota persistente/cierre/reapertura. Almacenamiento original mounted, OverlayManager y cierre de cohorte están observados; no equivalen a un recorrido APK completo ni a MAC. [Evidencia137](reports/android16-package-bootstrap/original-user-unlock-progress.json).
+
 Camino crítico desde132: [cierre coherente y almacenamiento/OverlayManager originales](docs/ROADMAP-A.md) → UI/entrada/nota/cierre/reapertura de Markor. El usuario ya alcanza RUNNING_UNLOCKED y AMS lanza la APK intacta hacia IntroActivity; falta aceptación del recorrido completo. R1-MAC, ARM/GMS/DRM abiertos.
 
 Camino crítico desde129: [preparación CE original vía vold](docs/ROADMAP-A.md) → RUNNING_UNLOCKED real → Markor completa. El ciclo original LSS ya crea la contraseña sintética y abre claves CE; eso no acredita almacenamiento preparado ni cifrado en reposo. Lanzamiento, UI, entrada y persistencia siguen abiertos.
