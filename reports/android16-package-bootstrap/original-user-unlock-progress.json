@@ -151,7 +151,7 @@
     "change": "After unchanged CheckPermissions, kernel peerPID is compared with getpid of supervised coordinator instead of literalPID1, allowing original asynchronous self completion to publish rather than recursively enqueue",
     "actions_archive_sha256": "257c99474f70eed3d8ed280b4818eebc712996e1cddc69388c224a43917a5772"
   },
-  "next": "Fix original normal-lazy-exit shutdown predicate with exact reap evidence; integrate coherent external storage/OverlayManager; capture app UI after its real launch and exercise intact onboarding/input/note. Do not accept whole launch from Status:ok alone.",
+  "next": "Integrate original storage/media/OverlayManager and NativeTombstone lifecycle, correct profile verifier boundary, hold/capture real Markor UI and input/note.133 native cancellation closure0; new normal-exit branch unproven and outer1 retained.",
   "historical103": {
     "scope": "Original selected phase1000 and lazy lifecycle progression, not Markor launch or security acceptance",
     "candidate": 103,
@@ -188,5 +188,32 @@
     ],
     "next": "Integrate original gatekeeperd and required real security backends (GateKeeper HAL/Keystore/KeyMint) based on source/runtime contracts, no fake credentials, auth tokens or keys."
   },
-  "capture130_limitation": "Planned CLI GDB diagnostic found no matching comm and captured no stack; source inspection identified PID1 guard. Not REA MCP evidence."
+  "capture130_limitation": "Planned CLI GDB diagnostic found no matching comm and captured no stack; source inspection identified PID1 guard. Not REA MCP evidence.",
+  "followup133": {
+    "candidate": 133,
+    "run_id": "3eb289d2-a165-4d8a-b81a-cc25e69c8977",
+    "checkpoint": "/home/tv/recuperacion-archtv/3eb289d2-a165-4d8a-b81a-cc25e69c8977-markor-software-launch",
+    "native_exit": 0,
+    "outer_exit": 1,
+    "proved": [
+      "This run exercised explicit apexd cancellation, recorded SIGKILL and exact original cancellation request; not normal lazy exit",
+      "Native closure drains actions/joins workers and returns0",
+      "Exterior exactunitsinactive, VT1 restored, loops/dm empty"
+    ],
+    "new_normal_exit_branch_limit": "Source adds acceptance for already-collected normal lazy exit;132 records actual clean1 with older rejecting predicate.133 exercised cancellation instead. Execution of new normal-exit branch remains unproven; do not call it tested from133.",
+    "outer_failure": "Materialized factory line450 applied standalone Keystore no-launch assertion to full platform; real Markor launch output nonempty. Result exit1 retained. Guard correction materializes/AST-checks but has not yet executed in a new cohort.",
+    "not_accepted": [
+      "Stable Markor UI/input/note/persistence/full services",
+      "MAC and broad APK compatibility"
+    ],
+    "artifacts": {
+      "/home/tv/recuperacion-archtv/3eb289d2-a165-4d8a-b81a-cc25e69c8977-markor-software-launch/result.json": "b971253305d8c3a18d94bd1428c88adb488ce17fb43bbb7a9201457f3b950e9e",
+      "/home/tv/recuperacion-archtv/3eb289d2-a165-4d8a-b81a-cc25e69c8977-markor-software-launch/run.log": "e5128790e63a2ff0d37d1f42075b3b8de669c875c28866c00f08c49f656fd726",
+      "/home/tv/recuperacion-archtv/3eb289d2-a165-4d8a-b81a-cc25e69c8977-markor-software-launch/native-stderr.txt": "e4f3a8447cf7837c372103146a97ad646c2897294c1c1e8324c99c3a302886ac",
+      "/home/tv/recuperacion-archtv/3eb289d2-a165-4d8a-b81a-cc25e69c8977-markor-software-launch/session-state.json": "0e3b5b2024a0ea1f1a835e36381a80abc5beb60c8e5b60e593853859ee5bd151",
+      "/home/tv/recuperacion-archtv/3eb289d2-a165-4d8a-b81a-cc25e69c8977-markor-software-launch/completion-consumer.json": "44baf225b53a17d93395e92036283167af950e0872aaaa9fcd0501cfd97bcb91",
+      "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793687678665835426/android-log-live.jsonl": "91057aa47923271445cf7f16b5009c140599e84a043b3ff9ac36a73224979e96",
+      "/home/tv/recuperacion-archtv/3eb289d2-a165-4d8a-b81a-cc25e69c8977-markor-software-launch/code/reports/android16-package-bootstrap/execute-integrated.py": "0b9681a55221a6ea9b9c3b16d26c0b31b62f2f142e5016749150f5db6dcf2d47"
+    }
+  }
 }

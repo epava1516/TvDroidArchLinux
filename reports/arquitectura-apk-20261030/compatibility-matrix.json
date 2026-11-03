@@ -208,14 +208,14 @@
         },
         "launch": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "38fcdb1160d99fcaee704931b7b34f342de98e03b17ff8fee562c67a63083ade",
+          "record_sha256": "96cbbd00ea9f2fa161e73d376cc724991c3ea413708ceae6e4ee1217eb4068ea",
           "accepted": false,
           "scope": "Original user unlock and intact Markor activity launch observed; not complete application launch/UI/input/persistence/security acceptance",
           "failure_scope": "Partial actual launch observed, complete launch acceptance not tested. Do not infer failed start or no APK execution from not_tested."
         },
         "services": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "38fcdb1160d99fcaee704931b7b34f342de98e03b17ff8fee562c67a63083ade",
+          "record_sha256": "96cbbd00ea9f2fa161e73d376cc724991c3ea413708ceae6e4ee1217eb4068ea",
           "accepted": false,
           "scope": "Original user unlock and intact Markor activity launch observed; not complete application launch/UI/input/persistence/security acceptance",
           "failure_scope": "Complete stage criteria not met; preserves actual successful AMS request and activity execution, does not claim APK never ran."

@@ -257,7 +257,8 @@ keystore_checks="""if keystore_component_profile:
  first=re.fullmatch(r'KEYSTORE_BINDER_GENERATED_ENCRYPTED metadata=SOFTWARE hardware_rejected=2 pid=([1-9][0-9]*) NOT_APK_OR_MAC_ACCEPTANCE',output[0])
  second=re.fullmatch(r'KEYSTORE_BINDER_REOPENED_DECRYPTED tamper_rejected=1 deleted=1 metadata=SOFTWARE pid=([1-9][0-9]*) NOT_APK_OR_MAC_ACCEPTANCE',output[1])
  assert first and second and first[1]!=second[1],output
- assert Path('/data/local/tmp/archtv-mc1/markor-launch.txt').read_text()==''
+ if not software_platform_profile:
+  assert Path('/data/local/tmp/archtv-mc1/markor-launch.txt').read_text()==''
  if Path('/vendor/etc/archtv-keystore-java').is_file():
   assert Path('/vendor/etc/archtv-keystore-java').read_text()=='software-java-profile-v1\\n'
   java=Path('/data/local/tmp/archtv-mc1/keystore-java.txt').read_text().splitlines()

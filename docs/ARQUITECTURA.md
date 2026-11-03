@@ -1,5 +1,7 @@
 # Arquitectura vigente · A16-QPR2-1
 
+Cierre: reap original normal de apexd y cancelación explícita son resultados distintos. La adaptación exige reap0/inventario/ready y ausencia de daemon vivo, o cancelación recogida por ambos propietarios.133 prueba nativo0 por cancelación; la rama normal nueva sigue pendiente de ejecución. No acredita cierre de una APK ni MAC. [Evidencia](../reports/android16-package-bootstrap/original-user-unlock-progress.json).
+
 Propiedades132: el servicio original conserva CheckPermissions y credenciales del socket; su trabajador de restorecon se reconoce por el PID real del proceso supervisado, no por PID1. Así publica la finalización original y vold retorna. [Usuario desbloqueado y actividad Markor ejecutada](../reports/android16-package-bootstrap/original-user-unlock-progress.json); no equivale a cifrado en reposo, autorización MAC ni compatibilidad completa. Siguiente frontera: almacenamiento externo y OverlayManager originales, más cierre de apexd ya reaped.
 
 129 ejecuta la llamada original `LockSettingsInternal.onThirdPartyAppsStarted()` de SystemServer después de AMS.systemReady: LSS crea la contraseña sintética y los subsistemas originales abren las claves CE. La siguiente frontera es la preparación CE por vold; la respuesta de desbloqueo no prueba cifrado en reposo ni un usuario completamente iniciado. [Evidencia129](../reports/android16-package-bootstrap/gatekeeper-platform-progress.json).

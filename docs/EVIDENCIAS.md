@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+[Seguimiento133](../reports/android16-package-bootstrap/original-user-unlock-progress.json), followup133: nativo0, cancelación explícita y drenaje/cierre recogidos. No prueba la rama nueva de reap normal. Exterior1 preservado por aserción de perfil incorrecta; corrección sólo materializada. No nueva etapa APK aceptada.
+
 [Usuario y lanzamiento parcial132](../reports/android16-package-bootstrap/original-user-unlock-progress.json): UUID693e09b1, hashes de logs completos, fuentes/archivo nativo y salidas originales. Restorecon CE completo, RUNNING_UNLOCKED, bytes Markor iguales y AMS COLD/IntroActivity. Fallos de almacenamiento/DocumentsUI y salida nativa1 conservados; screenshot temprano no acredita UI Markor.103 permanece íntegro en historical103.
 
 [Ciclo LSS129](../reports/android16-package-bootstrap/gatekeeper-platform-progress.json), sección lifecycle_followup129: UUID217d0b64, hashes de inputs, resultado y log5513 registros sin truncar. Inicialización original de contraseña sintética y respuestas Keystore/CE observadas; preparación de directorios CE pendiente al límite. Se conserva causalidad temporal: SIGKILL vold y errores Recovery ocurren durante el cierre. APEX41, instalación intacta, exterior recogido; ningún lanzamiento ni RUNNING_UNLOCKED aceptados.

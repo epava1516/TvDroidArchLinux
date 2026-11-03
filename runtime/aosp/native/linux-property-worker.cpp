@@ -197,10 +197,14 @@ int main(int argc,char** argv) {
     if(healthy)healthy=send_status(control.get(),diagnostic?"ARCHTV_NATIVE_V1 DIAGNOSTIC_STARTED\n":"ARCHTV_NATIVE_V1 STARTED\n");
     while(healthy && !stop)healthy=PollLinuxPropertyActions(&epoll,std::chrono::milliseconds(250)).ok() && children.healthy() && !shutdown.failed() && (!mc1 || cohort.healthy());
     const bool intentional_apex_stop=apex && healthy && stop && !peer_gone && !invalid;
-    if(intentional_apex_stop)shutdown.ExpectApexdCancellation();
+    if(intentional_apex_stop && !cohort.apex_exited_cleanly())shutdown.ExpectApexdCancellation();
     if(intentional_apex_stop && packages)shutdown.ExpectVoldCancellation();
     auto cohort_closed=cohort.Close(tick);
-    if(intentional_apex_stop && (!shutdown.apexd_cancelled() || !cohort.apex_cancelled())) {
+    // Original apexd can have exited normally through lazy Binder shutdown.
+    // Its verified reap is a different outcome from our explicit cancellation;
+    // neither outcome permits a live daemon or an unverified/nonzero exit.
+    if(intentional_apex_stop && !cohort.apex_exited_cleanly() &&
+       (!shutdown.apexd_cancelled() || !cohort.apex_cancelled())) {
         std::fprintf(stderr,"APEX_CANCEL_NOT_COLLECTED\n");healthy=false;
     }
     if(intentional_apex_stop && packages && (!shutdown.vold_cancelled() || !cohort.vold_cancelled())) {

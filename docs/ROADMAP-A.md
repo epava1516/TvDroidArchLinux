@@ -1,5 +1,7 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+133: cierre nativo0 con cancelación explícita; rama nueva de salida normal aún no ejercida. Exterior1 conservado por comprobación de perfil aislado aplicada a la plataforma completa. Siguiente integración: storaged/Codec2 software/OverlayManager y ciclo NativeTombstone originales según sus contratos, almacenamiento montado real y UI de Markor tras lanzamiento. No usar rutas ficticias ni declarar multimedia compatible por registrar Codec2.
+
 Puerta132: restorecon original y RUNNING_UNLOCKED probados; AMS solicita Markor intacta y ejecuta IntroActivity. Falta acreditar lanzamiento estable/UI/entrada/nota/cierre/reapertura. Prioridad: corregir el cierre que exige SIGKILL de apexd ya salido limpiamente, integrar almacenamiento externo y OverlayManager originales y observar la UI real después del lanzamiento. [Evidencia132](../reports/android16-package-bootstrap/original-user-unlock-progress.json). Mantener R1-MAC/ARM/GMS/DRM separados abiertos.
 
 Puerta actual129: ciclo LSS y respuesta original de apertura CE probados parcialmente → resolver la preparación CE pendiente en vold → RUNNING_UNLOCKED real → Markor lanzamiento/UI/entrada/nota/cierre/reapertura. La captura nativa siguiente debe identificar la operación que impide retornar a prepareUserStorage; no repetir sondas de claves ni ampliar tiempos sin causa. [Resultado129](../reports/android16-package-bootstrap/gatekeeper-platform-progress.json).
