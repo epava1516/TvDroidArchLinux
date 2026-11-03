@@ -157,8 +157,19 @@ null_setup="for n,dev in [('null',(1,3)),('urandom',(1,9))]:os.mknod(root/'dev'/
 assert text.count(null_setup)==1
 # mknod applies umask; make the intended standard-device mode explicit.
 text=text.replace(null_setup,null_setup+";os.chmod(root/'dev'/n,0o666)")
+if build_options.get('original_system_dma_heap',False):
+ # Original ueventd /dev/dma_heap/system0444 system:system; real kernel heap,
+ # fresh private inode only. Never create/chmod a host /dev node.
+ heap_setup="""
+heap_sysfs=Path('/sys/class/dma_heap/system/dev')
+heap_numbers=heap_sysfs.read_text().strip().split(':');assert len(heap_numbers)==2 and all(x.isdecimal() for x in heap_numbers)
+heap_major,heap_minor=map(int,heap_numbers);assert heap_major>0
+heap_dir=root/'dev/dma_heap';heap_dir.mkdir(mode=0o755)
+heap=heap_dir/'system';os.mknod(heap,stat.S_IFCHR|0o444,os.makedev(heap_major,heap_minor));os.chmod(heap,0o444);os.chown(heap,1000,1000)
+"""
+ text=text.replace(null_setup,heap_setup+'\n'+null_setup,1)
 device_metadata="""
-for name in ['dev/null','dev/urandom','dev/dri/card0','dev/dri/renderD128']:
+for name in ['dev/null','dev/urandom','dev/dri/card0','dev/dri/renderD128']+(['dev/dma_heap/system'] if (root/'dev/dma_heap/system').exists() else []):
  info=(root/name).stat()
  print('PRIVATE_DEVICE_CONTRACT '+json.dumps({'path':'/'+name,'mode':oct(stat.S_IMODE(info.st_mode)),'uid':info.st_uid,'gid':info.st_gid,'rdev':[os.major(info.st_rdev),os.minor(info.st_rdev)],'context':os.getxattr(root/name,'security.selinux').decode().rstrip(chr(0))}),flush=True)
 """

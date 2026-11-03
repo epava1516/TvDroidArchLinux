@@ -416,13 +416,13 @@
         "scope": "Exact Markorv164 Markdown note created163 survives complete cohort teardown and original subsystems167; actual bytes, same UID/inodes/MCS, original install/force-stop/relaunch and real single pointer opens editor.167 native/exterior0. Not host reboot/power loss, FBE/MAC, graceful close, arbitrary upgrade or general APK compatibility."
       },
       "runtime_security_observation": {
-        "candidate": 215,
-        "status": "Wayland_shared_file_and_SF_display0_pass_allocator_memfd_transfer_denied",
+        "candidate": 217,
+        "status": "original_heap_profile_mapper_role_and_SF_Binder_query_pass_private_APK_mount_denied",
         "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-        "record_sha256": "8e841e232f56254af01d926d342195dadca9469fd0a6390b111b80d831e88226",
-        "scope": "8.654s actual enforcing, original SF display0 connects. Allocation Binder memfd denied, no pixels or APK stage; original generic DMABUF heap build option omitted. Prior167 permissive APK note persistence intact.",
+        "record_sha256": "c9aa6cdc96b6eede36cfd98e7d4994a491da6f3c5f5f9bd99c0d28b13bbf6b3a",
+        "scope": "Original SF/AIDL queries0/display0 log under enforcing; allocation memfd failure no longer reproduced. No pixels/new APK stage. Private selected package mount and SF software JIT execmem denied. Prior167 permissive note remains historical.",
         "r1_mac": "open",
-        "host_after": "permissive policy35/loadCOUNT32, auditnewloss0; owned resources closed, known41/58 absent and prior userdata retained"
+        "host_after": "permissive35/loadCOUNT32, auditnewloss0; no owned resources, known41/58 absent and prior note/CE/DE intact"
       },
       "runtime_security_observation_history": [
         {
@@ -541,6 +541,15 @@
           "scope": "Connected peer/capability protocol under enforcing; incoming host temporary file denied. No pixels or new APK stage. Prior167 permissive note persistence unchanged.",
           "r1_mac": "open",
           "host_after": "permissive policy33/loadCOUNT31, auditnewloss0; owned resources closed, known BPF absent and prior userdata retained"
+        },
+        {
+          "candidate": 215,
+          "status": "Wayland_shared_file_and_SF_display0_pass_allocator_memfd_transfer_denied",
+          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "record_sha256": "8e841e232f56254af01d926d342195dadca9469fd0a6390b111b80d831e88226",
+          "scope": "8.654s actual enforcing, original SF display0 connects. Allocation Binder memfd denied, no pixels or APK stage; original generic DMABUF heap build option omitted. Prior167 permissive APK note persistence intact.",
+          "r1_mac": "open",
+          "host_after": "permissive policy35/loadCOUNT32, auditnewloss0; owned resources closed, known41/58 absent and prior userdata retained"
         }
       ],
       "runtime_security_history": [

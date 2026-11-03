@@ -34,7 +34,18 @@ const struct backend backend_vmwgfx = {
  p.write_text(new);patch.extend(difflib.unified_diff(old.splitlines(True),new.splitlines(True),fromfile='a/'+name,tofile='b/'+name))
 (out/'vmwgfx-dumb.patch').write_text(''.join(patch));rec['patch_sha256']=hashlib.sha256((out/'vmwgfx-dumb.patch').read_bytes()).hexdigest()
 cpp=json.loads((r/'reports/android16-hwc3-frontend/build.json').read_text())['results'][0]['argv'];cpp=cpp[:cpp.index('-MMD')];c=next(row['argv'] for row in json.loads((r/'reports/android16-wayland-client/build.json').read_text())['commands'] if Path(row['argv'][0]).name=='clang-21');c=c[:c.index('-c')]+[arg for arg in cpp if arg.startswith('-I')]
-includes=['-I'+str(p) for p in [tree,cache/'libdrm',cache/'libdrm/include/drm',cache/'hardware-interfaces/graphics/mapper/stable-c/include',cache/'hardware-interfaces/graphics/mapper/stable-c/implutils/include',cache/'frameworks-native/libs/nativewindow/include']];defines=['-Wno-unused-parameter','-Wno-sign-compare','-DANDROID','-DANDROID_API_LEVEL=36','-D_FILE_OFFSET_BITS=64']
+heap=Path('/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/libdmabufheap-original')
+heap_provenance=json.loads((heap/'provenance.json').read_text())
+assert heap_provenance['status']=='complete' and heap_provenance['commit']=='2b9dbd3bcb16fdc0336bb18fddcca6f95badc237'
+heap_headers=heap/heap_provenance['relative_source_root']/'include'
+ion=Path('/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/libion-original')
+ion_provenance=json.loads((ion/'provenance.json').read_text())
+assert ion_provenance['status']=='complete' and ion_provenance['commit']=='622d6495817e1468ed238c119fc0e0772e213000'
+ion_headers=ion/ion_provenance['relative_source_root']/'kernel-headers'
+assert (heap_headers/'BufferAllocator/BufferAllocator.h').is_file()
+assert 'generic_cflags = ["-DHAS_DMABUF_SYSTEM_HEAP"]' in (tree/'Android.bp').read_text()
+rec['original_generic_dma_heap']={'provenance':heap_provenance,'ion_provenance':ion_provenance,'headers':{str(p):hashlib.sha256(p.read_bytes()).hexdigest() for folder in (heap_headers,ion_headers) for p in sorted(folder.rglob('*.h'))},'android_bp_sha256':hashlib.sha256((tree/'Android.bp').read_bytes()).hexdigest(),'scope':'Original generic build option and complete heap interface; allocation/device/MAC require execution.'}
+includes=['-I'+str(p) for p in [tree,heap_headers,ion_headers,cache/'libdrm',cache/'libdrm/include/drm',cache/'hardware-interfaces/graphics/mapper/stable-c/include',cache/'hardware-interfaces/graphics/mapper/stable-c/implutils/include',cache/'frameworks-native/libs/nativewindow/include']];defines=['-Wno-unused-parameter','-Wno-sign-compare','-DANDROID','-DANDROID_API_LEVEL=36','-D_FILE_OFFSET_BITS=64','-DHAS_DMABUF_SYSTEM_HEAP']
 bp=(tree/'Android.bp').read_text();start=bp.index('name: "minigbm_core_files"');part=bp[start:];core=re.findall(r'"([^" ]+\.c)"',re.search(r'srcs: \[(.*?)\]',part,re.S)[1]);assert len(core)>=10
 sources=[('core',tree/name) for name in core]+[('common',tree/'cros_gralloc'/name) for name in ['cros_gralloc_buffer.cc','cros_gralloc_driver.cc','cros_gralloc_helpers.cc']]+[('utils',tree/'cros_gralloc/gralloc4/CrosGralloc4Utils.cc'),('allocator',tree/'cros_gralloc/aidl/Allocator.cpp'),('allocator',tree/'cros_gralloc/aidl/Main.cpp'),('mapper',tree/'cros_gralloc/gralloc4/CrosGralloc4Mapper.cc'),('mapper',tree/'cros_gralloc/mapper_stablec/Mapper.cpp')]
 for module,p in sources:

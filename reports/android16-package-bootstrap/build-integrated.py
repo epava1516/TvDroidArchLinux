@@ -4,7 +4,7 @@ from pathlib import Path
 import json,subprocess,shutil,hashlib,sys,re
 r=Path(__file__).resolve().parents[2];out=(r/sys.argv[1]).resolve();out.mkdir()
 tracked_inputs=['Cargo.toml','Cargo.lock','crates/archtv-core/Cargo.toml',*[str(p.relative_to(r)) for p in sorted((r/'crates/archtv-core/src').rglob('*.rs'))],'crates/archtv-core/examples/native_supervisor.rs','reports/android16-package-bootstrap/execute-integrated.py','reports/android16-package-bootstrap/integrated-session.sh','reports/android16-apex-bootstrap/run.py','reports/android16-package-bootstrap/build-platform-overlay.py','tools/apk/SignPlatformOverlay.java','runtime/aosp/platform-overlay/AndroidManifest.xml','runtime/aosp/platform-overlay/res/values/config.xml','runtime/aosp/platform-overlay/overlay-config.xml','reports/android16-apex-bootstrap/devices.py','runtime/aosp/linux-services/initial-apk-profile.json','runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java','runtime/aosp/linux-services/org/archtv/aosplinux/ServiceLauncher.java','runtime/aosp/linux-services/install-markor.sh','runtime/aosp/native/linux-property-worker.cpp','runtime/aosp/native/linux-mc1-cohort.h','reports/android16-package-bootstrap/build-integrated.py','runtime/aosp/android16-qpr2/patches/0004-linux-admitted-lazy-services.patch','fixtures/aosp-keymint-software/SoftwareCryptoProbe.cpp','runtime/aosp/native/linux-keymint-service.cpp','reports/android16-package-bootstrap/build-keymint-software.py','fixtures/aosp-keystore2-software/BinderClient.rs','runtime/aosp/android16-qpr2/patches/keystore2-linux-software.patch','fixtures/aosp-keystore2-software/OriginalJavaProviderProbe.java','runtime/aosp/android16-qpr2/patches/framework-keystore-linux-software.patch','tools/aosp/KeystoreFrameworkProfilePlan.java','tools/aosp/build_software_keystore_framework.py','reports/android16-package-bootstrap/build-keystore-java-probe.py','reports/android16-package-bootstrap/build-gatekeeper-software.py']
-tracked_inputs.append('reports/android16-package-bootstrap/userdata.py')
+tracked_inputs.extend(['reports/android16-package-bootstrap/userdata.py','reports/android16-hwc3-wayland/build-minigbm.py','reports/android16-hwc3-wayland/link-minigbm.py'])
 tracked_inputs.append('reports/android16-package-bootstrap/build-bootstrap-xml.py')
 tracked_inputs.append('reports/android16-network-bootstrap/boundary.py')
 tracked_inputs.extend(['runtime/aosp/native/linux-wayland-frame-composer.cpp','runtime/aosp/native/linux-wayland-frame-composer.h','reports/android16-hwc3-wayland/build-input.py'])
@@ -57,7 +57,7 @@ if software_platform:
  lines[0]=lines[0].replace('-Xmx768m','-Xmx512m')
  lines.append('    setenv ARCHTV_SOFTWARE_SECURITY_PROFILE software-platform-v1')
 experiment_kind='markor-software-launch' if software_platform else 'keystore-java-component' if keystore_java else 'keystore-component' if keystore_component else ('keymint-component' if keymint_component else 'markor-launch')
-(out/'build-options.json').write_text(json.dumps({'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component and not software_platform,'software_security_platform':software_platform,'observe_ms':observe_ms,'persistent_userdata_name':userdata_name,'markor_workflow_token':workflow_token,'markor_workflow_budget_seconds':workflow_budget_seconds,'experiment_kind':experiment_kind,'original_apex_bootstrap':True,'original_logd':True,'preconnected_wayland':True},indent=2)+'\n')
+(out/'build-options.json').write_text(json.dumps({'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component and not software_platform,'software_security_platform':software_platform,'observe_ms':observe_ms,'persistent_userdata_name':userdata_name,'markor_workflow_token':workflow_token,'markor_workflow_budget_seconds':workflow_budget_seconds,'experiment_kind':experiment_kind,'original_apex_bootstrap':True,'original_logd':True,'preconnected_wayland':True,'original_system_dma_heap':True},indent=2)+'\n')
 if checkpoint_diagnostic:lines.append('    setenv ARCHTV_CHECKPOINT_DIAGNOSTIC 1')
 lines=[l for l in lines if not any(l.startswith('    setenv '+n+' ') for n in ['BOOTCLASSPATH','DEX2OATBOOTCLASSPATH','SYSTEMSERVERCLASSPATH','STANDALONE_SYSTEMSERVER_JARS'])];(entry/'selected-services.rc').write_text('\n'.join(lines)+'\n')
 old=r/'dist/aosp16/apex-cohort-build-6';commands=[]
@@ -99,13 +99,25 @@ input_record=json.loads((input_hwc/'build.json').read_text());assert input_recor
 assert hashlib.sha256(Path(input_record['executable']).read_bytes()).hexdigest()==input_record['executable_sha256']
 for target,value in vendor['files'].items():
  if value.get('source','').endswith('android.hardware.graphics.composer3-service.archtv-display-2'):value['source']=input_record['executable']
+# Preserve original generic minigbm heap path, all four modules from one build.
+minigbm=r/'dist/aosp16/minigbm-native-link-6'
+minigbm_record=json.loads((minigbm/'link.json').read_text());assert minigbm_record['terminal']
+source_build=minigbm_record['source_build'];assert source_build['original_generic_dma_heap']
+assert hashlib.sha256(Path(source_build['path']).read_bytes()).hexdigest()==source_build['sha256']
+for row in minigbm_record['artifacts']:
+ assert hashlib.sha256(Path(row['path']).read_bytes()).hexdigest()==row['sha256']
+ name=Path(row['path']).name
+ target='/vendor/bin/hw/'+name if not name.endswith('.so') else '/vendor/lib64/'+('hw/' if name=='mapper.minigbm.so' else '')+name
+ assert target in vendor['files'],target
+ vendor['files'][target]['source']=row['path']
+(out/'minigbm-input.json').write_text(json.dumps(minigbm_record,indent=2)+'\n')
 # Original whole libinput, needed by original KeyLayoutMap/updateMetaState.
 # Preserve existing vendor modules; add only the exact missing DT_NEEDED
 # closure from this same original GSI. Core Bionic/APEX names keep their
 # existing linker namespace resolution, never a copied second libc.
 import re
 original_libs=r/'dist/aosp16/factory-inputs-3/root/system/lib64'
-closure={};pending=['libinput.so'];core={'libc.so','libm.so','libdl.so','libdl_android.so','libc++.so'}
+closure={};pending=['libinput.so','libdmabufheap.so'];core={'libc.so','libm.so','libdl.so','libdl_android.so','libc++.so'}
 while pending:
  name=pending.pop()
  if name in core or name in closure:continue
@@ -117,6 +129,23 @@ while pending:
  vendor['files'][target]={'source':str(source),'context':'u:object_r:vendor_file:s0','mode':0o644}
  pending.extend(dependencies)
  assert len(closure)<=64,'Unexpected input dependency expansion'
+# The mapper executes inside framework clients. Its complete vendor-side
+# dependency closure shares the existing SP-HAL code role, never vendor_file.
+# In particular the newly active heap library must not get an ambient SF grant.
+sphal={};pending=['mapper.minigbm.so']
+while pending:
+ name=pending.pop()
+ if name in core or name in sphal:continue
+ target='/vendor/lib64/'+('hw/' if name=='mapper.minigbm.so' else '')+name
+ if target not in vendor['files']:continue # existing shared system namespace
+ item=vendor['files'][target];source=Path(item['source'])
+ needed=re.findall(r'NEEDED.*\[(.*?)\]',subprocess.check_output(['readelf','-d',str(source)],text=True))
+ sphal[name]={'target':target,'source':str(source),'sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'previous_context':item['context'],'needed':needed}
+ item['context']='u:object_r:same_process_hal_file:s0'
+ pending.extend(needed)
+ assert len(sphal)<=64,'Unexpected mapper dependency expansion'
+assert 'libdmabufheap.so' in sphal,'Original heap provider not in mapper closure'
+(out/'mapper-library-role.json').write_text(json.dumps({'scope':'Complete vendor SP-HAL code dependency role; original HAL client policy remains unchanged, no runtime or ABI acceptance inferred.','libraries':sphal},indent=2)+'\n')
 (out/'wayland-input-library-closure.json').write_text(json.dumps({'scope':'Exact original GSI DT_NEEDED closure only; no runtime/ABI acceptance','core_existing_resolution':sorted(core),'libraries':closure},indent=2)+'\n')
 (out/'wayland-input-build.json').write_text(json.dumps(input_record,indent=2)+'\n')
 for key,value in vendor['files'].items():

@@ -2615,5 +2615,114 @@
     },
     "scope": "Received shared-file contract only; all regular server-created files in directory share type, not keymap-only. Original graceful close incomplete, external cohort closure verified. Previous167 APK note path remains permissive historical.",
     "next": "Original generic minigbm HAS_DMABUF_SYSTEM_HEAP omitted from actual compilation; host system heap exists250:0 but unexposed. Integrate whole original allocator build/device contract before any allocator-private tmpfs grants. Then actual buffers/presentation, original Zygote and full Markor under MAC. R1-MAC/ARM/GMS/DRM remain open."
+  },
+  "integrated216_217": {
+    "status": "original_dma_heap_profile_and_mapper_closure_integrated_original_SF_service_query_pass_private_APK_mount_denied",
+    "execution": 217,
+    "build": 217,
+    "policy": 35,
+    "policyload_count": 32,
+    "evidence": [
+      {
+        "path": "/home/tv/recuperacion-archtv/68c9d917-af7f-4163-a889-99a29d984d1d-markor-software-launch/result.json",
+        "sha256": "77edb5541e761aa749aa77e0a0d14cdc9ee75465880a97a588c7c6ca8b418ac5"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/68c9d917-af7f-4163-a889-99a29d984d1d-markor-software-launch/mac-window.json",
+        "sha256": "9cfcdd34db3a1eaee5255ffe57fd3cb01f10e64d0be1ec45e57ff1bb01ce3091"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/68c9d917-af7f-4163-a889-99a29d984d1d-markor-software-launch/run.log",
+        "sha256": "2c9b4d5403ef61cf68fff35725050c9dbe3cbd55dcffcc73b51cdd9abd394c78"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/68c9d917-af7f-4163-a889-99a29d984d1d-markor-software-launch/original-logcat-evidence.json",
+        "sha256": "9b65cfd91b367d1765943cd0a1598301c074861ce60166ecea357d9902a072e1"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/68c9d917-af7f-4163-a889-99a29d984d1d-markor-software-launch/integration-findings.json",
+        "sha256": "056260b8d35c5ef5f79cdb5f2881874f23e8598e712eca357af1be036bfd8fd4"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/68c9d917-af7f-4163-a889-99a29d984d1d-markor-software-launch/session-state.json",
+        "sha256": "5096321830fbd23ae5b3212763414bbd2e0668b65b7f7cc720dc37dbc0aa6a98"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/68c9d917-af7f-4163-a889-99a29d984d1d-markor-software-launch/wayland-runtime-closed.json",
+        "sha256": "b2d104d906a2f22d3fa3dadbb2e411682cfe84387a6f1cbdd32c946575ccad5e"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/68c9d917-af7f-4163-a889-99a29d984d1d-markor-software-launch/finite-audit/result.json",
+        "sha256": "4f87efba05384d46bf22e529a1738396342cd7639d06ea2fa71a4c17bbded62a"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/68c9d917-af7f-4163-a889-99a29d984d1d-markor-software-launch/bpf-all-known-after.json",
+        "sha256": "5fd77caef1fc78942cff369ce815f77b66ff0f2cf14eb03e493225d18e58fbff"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/68c9d917-af7f-4163-a889-99a29d984d1d-markor-software-launch/userdata-after217-close.json",
+        "sha256": "219f0b7c984fcd27b84e3bf552e4ad197f1c6e2b4171b0ec29c0d0dca29e38d5"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/68c9d917-af7f-4163-a889-99a29d984d1d-markor-software-launch/completion-consumer.json",
+        "sha256": "c9fd1cd27c1e5b01bfb86b0a5ea7b98dbebf5fb55175f032e279233d18e7c0e2"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/68c9d917-af7f-4163-a889-99a29d984d1d-markor-software-launch/candidate-artifacts.json",
+        "sha256": "0e2aa173847ca895ecf624165477012c4145526a12f442eaccd70bc76461953c"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/af31fc47-6c08-40f0-8ffd-9f551387679e-markor-software-launch/result.json",
+        "sha256": "e9a89ed8aba6de38624fa239a8513a818570aa1e813c9c362f7c6247299f556d"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/af31fc47-6c08-40f0-8ffd-9f551387679e-markor-software-launch/mac-window.json",
+        "sha256": "5a35cb19711535cb1d0f033c185dc99b86f57beaed43121b9520533884cbecf1"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/af31fc47-6c08-40f0-8ffd-9f551387679e-markor-software-launch/bpf-all-known-after.json",
+        "sha256": "8f443f9826f9be8b547f2b0535b3a5771c915535c7d1f319d9c5f66f05f846a2"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/af31fc47-6c08-40f0-8ffd-9f551387679e-markor-software-launch/userdata-after216-close.json",
+        "sha256": "05a92bd6b82ebc93be5acb9a85c7744343a35f7cf94a0d21fbbdf34a092f3ee0"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/af31fc47-6c08-40f0-8ffd-9f551387679e-markor-software-launch/completion-consumer.json",
+        "sha256": "9a096db1d3d00be7036250a9b3a9591a8dc1a9373d5562ccaf4513204d08d6d8"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after216-host.json",
+        "sha256": "fa796f4efe190b82080f3615fe912dc707a40877a783cf70afc6bd70f36e942a"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after217-host.json",
+        "sha256": "b2f1d860cdc18bf13cd44f9fc0ab694737d586e143de7007f6a625755d5f0930"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-217/mapper-library-role.json",
+        "sha256": "fcb1c9c9bd77f01a495ad54cc9e9243e379a30e051e9fc830ebc1f80be450c6f"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-7/build.json",
+        "sha256": "603fcd12c82469839cbed43605aaba4b6ea1764a80c9f31792a176d7c6bd910f"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/minigbm-native-link-6/link.json",
+        "sha256": "40c279b0095d866e0c080a598e70a7c4d571afd63927e20ab337e230f4ea00ef"
+      }
+    ],
+    "findings": {
+      "scope": "Partial actual original graphics/bootstrap MAC integration; no pixels or APK accepted.",
+      "native6_failed": "Complete build attempted with heap header, missing original libion kernel header; preserved failed artifact. Whole native7 uses both locked source projects and23 objects0.",
+      "native7_link6": "Whole four modules strictly linked with original generic HAS_DMABUF_SYSTEM_HEAP; original libdmabufheap GSI provider, no API stubs or replacement memory allocator.",
+      "216": "Actual private device250:0,0444 UID/GID1000 with dmabuf_system_heap_device observed. SF load denied because newly copied libdmabufheap vendor_file; no allocation claim.",
+      "217": "Complete vendor mapper DT_NEEDED closure assigned existing same_process_hal_file role. Original service queries SurfaceFlinger and SurfaceFlingerAIDL exit0; original logcat records display0 connection. Previous allocator reserved-memfd denial/allocation-129 not reproduced in8.247629969991976s enforcing interval. No actual buffer/pixel acceptance inferred from absence of error.",
+      "next_failure": "Coordinator MaskInitialApkDirectories mounts tmpfs using Linux default filesystem label; actual init->Linux.tmpfs_t filesystem mount denied at com.android.networkstack. Reuse original AOSP tmpfs fscontext and retained directory rootcontext on private namespace mount, preserve readonly/hash/identity checks; do not grant init mounting host generic tmpfs. Seven excluded packages remain explicit experimental profile, not compatibility claimed.",
+      "software_renderer": "SurfaceFlinger self:process execmem denied. Explicit software ANGLE/SwiftShader JIT path requires source-based justification and tested domain-scoped adaptation; no execstack/execheap/execmod exception. Pinned original policy domain.te forbids execstack/execheap and acknowledges some device-specific execmem requirements; no automatic authorization acceptance.",
+      "host": "Permissive policy35/loadCOUNT32, audit0/backlog64/newloss0, VT1/devices restored; no owned units/loops/DM/FUSE; known41prog58map absent; UUID runtime dir closed, prior userdata/note retained; /dev/dma_heap still absent on host.",
+      "notifications": "216 and217 active-owned result consumed once, no queue. Gate remains absent."
+    },
+    "next": "Private selected-package mount must use original AOSP filesystem/root labels rather than host Linux default. Software SF JIT execmem remains explicit open. Then original Zygote/system_server route and Markor full under MAC. Preparation remains permissive. R1-MAC/ARM/GMS/DRM open."
   }
 }
