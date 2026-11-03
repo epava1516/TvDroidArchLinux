@@ -171,7 +171,7 @@
     "MAC authorization/isolation: permissive policyload4, R1open",
     "ARM/GMS/DRM separateopen"
   ],
-  "next": "Capture final Smithay app frame and integrate Linux Wayland input with original Android input subsystem, then actual onboarding/editor/unique note/close/reopen. Preserve all permissions/errors; no direct preference writes or illustrated-file acceptance.",
+  "next": "Bind Wayland seat and adapt actual keyboard/pointer events to original Android input subsystem with authenticated boundary, focus/loss/release handling and negatives. Then real onboarding/editor/unique note/save/app close/reopen. Do not edit app preferences or call app callbacks directly.",
   "artifacts": {
     "/home/tv/recuperacion-archtv/ff987089-92db-43e2-852d-3e78501aae42-markor-software-launch/before-launch.json": "db7aaed86c8a4f5121ce3677ff47d50e11f74a3c646b3455437700432da2818a",
     "/home/tv/recuperacion-archtv/ff987089-92db-43e2-852d-3e78501aae42-markor-software-launch/result.json": "db31e85df10c964be7b912ab4f7c29b47f292e788e26c8df09ce639c935578b9",
@@ -337,7 +337,7 @@
     ],
     "not_accepted": [
       "Usable UI: captured frame is black and original gralloc driver/import/allocation errors remain",
-      "End-to-end Smithay\u2192Android input: current HWC WaylandOutput does not bind wl_seat",
+      "End-to-end Smithay→Android input: current HWC WaylandOutput does not bind wl_seat",
       "Note, persistence, app-close/reopen, full storage/media/service compatibility",
       "FUSE BPF/passthrough: source logs report BPF disabled; no active kernel connection ID or mountinfo snapshot captured",
       "MAC: policyload4/permissive remains R1 open; UID/caps observations do not prove authorization",
@@ -684,5 +684,329 @@
         "NoNewPrivs:\t1"
       ]
     }
-  ]
+  ],
+  "presentation_followup142": {
+    "run_id": "ca5004b9-e881-4dd8-a847-0ea77c95c7c7",
+    "candidate": 140,
+    "checkpoint": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch",
+    "result": {
+      "outer_exit": 0,
+      "native_complete_inventory_verified": true
+    },
+    "trigger": {
+      "factory": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793693356938379186",
+      "event": {
+        "tag": "ActivityTaskManager",
+        "message": "Displayed net.gsantner.markor/.activity.IntroActivity for user 0: +3s968ms",
+        "actual_sender_pid_uid_gid": [
+          533,
+          1000,
+          1000
+        ],
+        "observed_monotonic": 109981.825149466
+      },
+      "scope": "Original displayed event triggers read-only final DRM capture; no UI acceptance until image inspection"
+    },
+    "capture_mechanism": "Existing Smithay DRM Backend.capture maps current completed scanout dumb buffer read-only after no pending flip, active output and !dirty; repeated capture requests only following original ActivityTaskManager Displayed event. No compositor or candidate source changes.",
+    "samples": [
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-00.ppm",
+        "sha256": "d4e96a65fd4f8e97bc1d762fc90cf2593bc2efb53a3125a72502fdae0f09395c",
+        "capture_mtime_ns": 1793693524985317105
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-01.ppm",
+        "sha256": "d4e96a65fd4f8e97bc1d762fc90cf2593bc2efb53a3125a72502fdae0f09395c",
+        "capture_mtime_ns": 1793693525581991558
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-02.ppm",
+        "sha256": "d4e96a65fd4f8e97bc1d762fc90cf2593bc2efb53a3125a72502fdae0f09395c",
+        "capture_mtime_ns": 1793693526025330672
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-03.ppm",
+        "sha256": "7f0f69111db54602c3b6de648f45a1dcc2ae3e12c578d919994ebe6ab214c873",
+        "capture_mtime_ns": 1793693526695339416
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-04.ppm",
+        "sha256": "7f0f69111db54602c3b6de648f45a1dcc2ae3e12c578d919994ebe6ab214c873",
+        "capture_mtime_ns": 1793693527315347510
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-05.ppm",
+        "sha256": "7f0f69111db54602c3b6de648f45a1dcc2ae3e12c578d919994ebe6ab214c873",
+        "capture_mtime_ns": 1793693528052023802
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-06.ppm",
+        "sha256": "7f0f69111db54602c3b6de648f45a1dcc2ae3e12c578d919994ebe6ab214c873",
+        "capture_mtime_ns": 1793693528685365406
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-07.ppm",
+        "sha256": "7f0f69111db54602c3b6de648f45a1dcc2ae3e12c578d919994ebe6ab214c873",
+        "capture_mtime_ns": 1793693529345374031
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-08.ppm",
+        "sha256": "7f0f69111db54602c3b6de648f45a1dcc2ae3e12c578d919994ebe6ab214c873",
+        "capture_mtime_ns": 1793693530152051244
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-09.ppm",
+        "sha256": "7f0f69111db54602c3b6de648f45a1dcc2ae3e12c578d919994ebe6ab214c873",
+        "capture_mtime_ns": 1793693530572056739
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-10.ppm",
+        "sha256": "7f0f69111db54602c3b6de648f45a1dcc2ae3e12c578d919994ebe6ab214c873",
+        "capture_mtime_ns": 1793693531335400059
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-11.ppm",
+        "sha256": "7f0f69111db54602c3b6de648f45a1dcc2ae3e12c578d919994ebe6ab214c873",
+        "capture_mtime_ns": 1793693532045409351
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-12.ppm",
+        "sha256": "7f0f69111db54602c3b6de648f45a1dcc2ae3e12c578d919994ebe6ab214c873",
+        "capture_mtime_ns": 1793693532852086584
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-13.ppm",
+        "sha256": "7f0f69111db54602c3b6de648f45a1dcc2ae3e12c578d919994ebe6ab214c873",
+        "capture_mtime_ns": 1793693533535428867
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-14.ppm",
+        "sha256": "7f0f69111db54602c3b6de648f45a1dcc2ae3e12c578d919994ebe6ab214c873",
+        "capture_mtime_ns": 1793693534078769319
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-15.ppm",
+        "sha256": "7cea062f56ceab3eb1eda0fd769ab4aaaaeb9956c6ac33b1eeea1b58a6cac95a",
+        "capture_mtime_ns": 1793693534812112265
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-16.ppm",
+        "sha256": "7cea062f56ceab3eb1eda0fd769ab4aaaaeb9956c6ac33b1eeea1b58a6cac95a",
+        "capture_mtime_ns": 1793693535262118166
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-17.ppm",
+        "sha256": "7cea062f56ceab3eb1eda0fd769ab4aaaaeb9956c6ac33b1eeea1b58a6cac95a",
+        "capture_mtime_ns": 1793693536015461397
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-18.ppm",
+        "sha256": "7cea062f56ceab3eb1eda0fd769ab4aaaaeb9956c6ac33b1eeea1b58a6cac95a",
+        "capture_mtime_ns": 1793693536678803419
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-19.ppm",
+        "sha256": "7cea062f56ceab3eb1eda0fd769ab4aaaaeb9956c6ac33b1eeea1b58a6cac95a",
+        "capture_mtime_ns": 1793693537392146117
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-20.ppm",
+        "sha256": "7cea062f56ceab3eb1eda0fd769ab4aaaaeb9956c6ac33b1eeea1b58a6cac95a",
+        "capture_mtime_ns": 1793693537812151631
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-21.ppm",
+        "sha256": "7cea062f56ceab3eb1eda0fd769ab4aaaaeb9956c6ac33b1eeea1b58a6cac95a",
+        "capture_mtime_ns": 1793693538365492233
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-22.ppm",
+        "sha256": "7cea062f56ceab3eb1eda0fd769ab4aaaaeb9956c6ac33b1eeea1b58a6cac95a",
+        "capture_mtime_ns": 1793693538918832836
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-23.ppm",
+        "sha256": "7cea062f56ceab3eb1eda0fd769ab4aaaaeb9956c6ac33b1eeea1b58a6cac95a",
+        "capture_mtime_ns": 1793693539582174888
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-24.ppm",
+        "sha256": "7cea062f56ceab3eb1eda0fd769ab4aaaaeb9956c6ac33b1eeea1b58a6cac95a",
+        "capture_mtime_ns": 1793693540240549461
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-25.ppm",
+        "sha256": "7cea062f56ceab3eb1eda0fd769ab4aaaaeb9956c6ac33b1eeea1b58a6cac95a",
+        "capture_mtime_ns": 1793693540927462933
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-26.ppm",
+        "sha256": "7cea062f56ceab3eb1eda0fd769ab4aaaaeb9956c6ac33b1eeea1b58a6cac95a",
+        "capture_mtime_ns": 1793693541588867946
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-27.ppm",
+        "sha256": "7cea062f56ceab3eb1eda0fd769ab4aaaaeb9956c6ac33b1eeea1b58a6cac95a",
+        "capture_mtime_ns": 1793693542488879792
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-28.ppm",
+        "sha256": "7cea062f56ceab3eb1eda0fd769ab4aaaaeb9956c6ac33b1eeea1b58a6cac95a",
+        "capture_mtime_ns": 1793693543072220806
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-29.ppm",
+        "sha256": "7cea062f56ceab3eb1eda0fd769ab4aaaaeb9956c6ac33b1eeea1b58a6cac95a",
+        "capture_mtime_ns": 1793693543681802758
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-30.ppm",
+        "sha256": "7cea062f56ceab3eb1eda0fd769ab4aaaaeb9956c6ac33b1eeea1b58a6cac95a",
+        "capture_mtime_ns": 1793693544288903501
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-31.ppm",
+        "sha256": "7cea062f56ceab3eb1eda0fd769ab4aaaaeb9956c6ac33b1eeea1b58a6cac95a",
+        "capture_mtime_ns": 1793693544962245709
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-32.ppm",
+        "sha256": "7cea062f56ceab3eb1eda0fd769ab4aaaaeb9956c6ac33b1eeea1b58a6cac95a",
+        "capture_mtime_ns": 1793693545798923409
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-33.ppm",
+        "sha256": "7cea062f56ceab3eb1eda0fd769ab4aaaaeb9956c6ac33b1eeea1b58a6cac95a",
+        "capture_mtime_ns": 1793693546498932643
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-34.ppm",
+        "sha256": "7cea062f56ceab3eb1eda0fd769ab4aaaaeb9956c6ac33b1eeea1b58a6cac95a",
+        "capture_mtime_ns": 1793693547268942802
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-35.ppm",
+        "sha256": "7cea062f56ceab3eb1eda0fd769ab4aaaaeb9956c6ac33b1eeea1b58a6cac95a",
+        "capture_mtime_ns": 1793693547798949804
+      }
+    ],
+    "hash_counts": {
+      "7f0f69111db54602c3b6de648f45a1dcc2ae3e12c578d919994ebe6ab214c873": 12,
+      "7cea062f56ceab3eb1eda0fd769ab4aaaaeb9956c6ac33b1eeea1b58a6cac95a": 21,
+      "d4e96a65fd4f8e97bc1d762fc90cf2593bc2efb53a3125a72502fdae0f09395c": 3
+    },
+    "visual_inspection": {
+      "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-markor.png",
+      "sha256": "c93c9ffe204a41e7b0ea424ca20b5fc801c30df6e450d9ec9fe46b500b5ee78e",
+      "source_ppm": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/smithay-frame-03.ppm",
+      "observed": "Actual intact IntroActivity first Main View slide visible at1280x800 in final Smithay DRM buffer. Illustrated filenames are bundled onboarding art, not created notes.",
+      "preview_conversion": "ffmpeg PPM to PNG, no editing"
+    },
+    "cleanup": {
+      "id": "ca5004b9-e881-4dd8-a847-0ea77c95c7c7",
+      "outer_unit": "archtv-markor-session-ca5004b9-e881-4dd8-a847-0ea77c95c7c7",
+      "runner_unit": "archtv-package-runner-ca5004b9-e881-4dd8-a847-0ea77c95c7c7",
+      "initial_vt": "1",
+      "root_pid": 456126,
+      "root_boot_id": "4e18faf8-2b46-42e4-a6b2-269c34326b68",
+      "result": "native_result_recorded",
+      "fuse_connections_before": [],
+      "host_devices_before": {
+        "card0": {
+          "mode": "0o660",
+          "uid": 0,
+          "gid": 983,
+          "rdev": 57856,
+          "inode": 365
+        },
+        "renderD128": {
+          "mode": "0o666",
+          "uid": 0,
+          "gid": 987,
+          "rdev": 57984,
+          "inode": 364
+        }
+      },
+      "host_devices_after": {
+        "card0": {
+          "mode": "0o660",
+          "uid": 0,
+          "gid": 983,
+          "rdev": 57856,
+          "inode": 365
+        },
+        "renderD128": {
+          "mode": "0o666",
+          "uid": 0,
+          "gid": 987,
+          "rdev": 57984,
+          "inode": 364
+        }
+      },
+      "host_device_metadata_unchanged": true,
+      "fuse_connections_after": [],
+      "new_fuse_connections": [],
+      "final_vt": "1",
+      "outer_active": false,
+      "runner_active": false
+    },
+    "evidence": {
+      "before-launch.json": {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/before-launch.json",
+        "sha256": "90d7e3f518c0c9616a0e1254b474c31d129b9410ebfed7919b30ed84cbadca93"
+      },
+      "result.json": {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/result.json",
+        "sha256": "2525405a6e9a0f2d4b70ab21363e19f9333ce0e510b76978b8b1269a2ab762c0"
+      },
+      "session-state.json": {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/session-state.json",
+        "sha256": "3fe51c1ffc8863b85d56d61c3ee15192c4515d6e3f1d57a30ecae3eeffaad592"
+      },
+      "capture-trigger.json": {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/capture-trigger.json",
+        "sha256": "635e15b30829fed134afd18c20956d60a4f94bf01831c0030e29947eafb9a5fb"
+      },
+      "capture-samples.json": {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/capture-samples.json",
+        "sha256": "93bf8eb2d48505b2db34b9efbf70f01c3acc9213f9cc118b54da218c6e74e661"
+      },
+      "completion-consumer.json": {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/completion-consumer.json",
+        "sha256": "0a40357f028078b6e5441e7423ab596d0852e21a7fb4b66e6a003610f76a34d9"
+      },
+      "completion-delivery.json": {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/completion-delivery.json",
+        "sha256": "6f10bd25dc2d6d15cb983e6f219d7a70de2e6a3ad1b8311b5c9eddfc604229d2"
+      },
+      "compositor.log": {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/compositor.log",
+        "sha256": "cab0ef558f659776f4679e6a0d16a005a6c0b33502f143a21c7d0a1cccb8c576"
+      },
+      "client-entry.sh": {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/client-entry.sh",
+        "sha256": "9df3643301e3a09f68fd3923fdee3acb91f5ed80f735d91c16377b06a0b2cb38"
+      },
+      "session.sh": {
+        "path": "/home/tv/recuperacion-archtv/ca5004b9-e881-4dd8-a847-0ea77c95c7c7-markor-software-launch/session.sh",
+        "sha256": "f93902cb682b5cd5ca155f570f99ed6bc1da9fd58de64a91242ade0d4cd1aacd"
+      }
+    },
+    "earlier_capture141": {
+      "checkpoint": "/home/tv/recuperacion-archtv/a65b6fb5-956b-47a0-9023-b64152063a8d-markor-software-launch",
+      "frame_sha256": "d4e96a65fd4f8e97bc1d762fc90cf2593bc2efb53a3125a72502fdae0f09395c",
+      "observed": "All-black first DRM sample immediately after Displayed; later142 samples prove original event precedes visible presentation. Black sample preserved; no renderer regression inferred.",
+      "result_sha256": "f441f30d36253fd1ffc09a04238b373383d0b0e9e47cab6017d8486dbe22d51a"
+    },
+    "proved": [
+      "Real APK onboarding reaches Smithay final DRM buffer, not only SurfaceFlinger screenshot",
+      "Native/exterior0 and exact runtime cleanup; unchanged host DRM metadata"
+    ],
+    "not_accepted": [
+      "No keyboard/pointer event reaches original Android from Wayland yet",
+      "No editor/main function/note/save/app close-reopen/persistence",
+      "No MAC/enforcing, hardware acceleration, protected graphics, broad APK, ARM/GMS/DRM acceptance"
+    ],
+    "next": "Bind Wayland seat and adapt actual keyboard/pointer events to original Android input subsystem with authenticated boundary, focus/loss/release handling and negatives. Then real onboarding/editor/unique note/save/app close/reopen. Do not edit app preferences or call app callbacks directly."
+  }
 }

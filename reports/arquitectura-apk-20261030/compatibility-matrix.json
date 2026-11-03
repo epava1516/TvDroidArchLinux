@@ -32,7 +32,7 @@
       },
       "evidence_id": "ev_37c5a66b942f8e277c88500b2a15d430c2e523b672bf47fe74cf9c90638d164e",
       "full_evidence_id": "ev_746d40138a0f10e9c3202cd147e41d5efd4a7c58e81078c6109567a0bce77781",
-      "workflow": "Abrir fichero local, reproducir audio/v\u00eddeo, volver al shell y cerrar",
+      "workflow": "Abrir fichero local, reproducir audio/vídeo, volver al shell y cerrar",
       "runtime_results": {
         "installation": "not_tested",
         "launch": "not_tested",
@@ -162,7 +162,7 @@
         "close": "not_tested",
         "reopen": "not_tested"
       },
-      "reason": "140: intact original IntroActivity visible in actual SF capture, native/exterior0; storage and overlays work in recorded scope. Full stage acceptance remains insufficient: no final Smithay app-frame capture, no end-to-end input/editor/note/services/persistence/close/reopen. Historical black-frame/device failures preserved, not current renderer blocker.",
+      "reason": "142 using frozen140: actual intact IntroActivity visible in twelve final Smithay DRM captures after initially black samples. No end-to-end input/editor/note/services/persistence/app-close/reopen. Complete stage criteria remain insufficient; no new complete APK stage accepted.",
       "framework_class_link_pass": true,
       "declared_application": "net.gsantner.markor.ApplicationObject",
       "bootstrap_experiment": {
@@ -208,24 +208,24 @@
         },
         "launch": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "a064864ece94689534dd097749e7ebc6e0d42d0a032dde34425939714e7cc629",
+          "record_sha256": "6b7f4a682a3fdf88f08e04ee69c5cc2e96a4e66a7702b4725b487d7d764506fa",
           "accepted": false,
-          "scope": "Intact Markor onboarding rendered in original SurfaceFlinger; not final Smithay presentation, input, note, persistence, app-close/reopen, MAC or broad APK compatibility acceptance",
-          "partial_observation": "Intact onboarding rendered by original SF; not_tested denotes insufficient evidence for complete stage criteria, not absence of APK execution."
+          "scope": "Actual intact onboarding reaches final Smithay DRM buffer; no complete interactive application workflow, input/editor/note/persistence/app-close/reopen or MAC acceptance",
+          "partial_observation": "Twelve final DRM captures show original IntroActivity; initial Displayed event preceded actual visible frame. not_tested denotes incomplete complete-stage evidence, not absence of app execution."
         },
         "services": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "a064864ece94689534dd097749e7ebc6e0d42d0a032dde34425939714e7cc629",
+          "record_sha256": "6b7f4a682a3fdf88f08e04ee69c5cc2e96a4e66a7702b4725b487d7d764506fa",
           "accepted": false,
-          "scope": "Intact Markor onboarding rendered in original SurfaceFlinger; not final Smithay presentation, input, note, persistence, app-close/reopen, MAC or broad APK compatibility acceptance",
-          "partial_observation": "Intact onboarding rendered by original SF; not_tested denotes insufficient evidence for complete stage criteria, not absence of APK execution."
+          "scope": "Actual intact onboarding reaches final Smithay DRM buffer; no complete interactive application workflow, input/editor/note/persistence/app-close/reopen or MAC acceptance",
+          "partial_observation": "Twelve final DRM captures show original IntroActivity; initial Displayed event preceded actual visible frame. not_tested denotes incomplete complete-stage evidence, not absence of app execution."
         },
         "interface": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "a064864ece94689534dd097749e7ebc6e0d42d0a032dde34425939714e7cc629",
+          "record_sha256": "6b7f4a682a3fdf88f08e04ee69c5cc2e96a4e66a7702b4725b487d7d764506fa",
           "accepted": false,
-          "scope": "Intact Markor onboarding rendered in original SurfaceFlinger; not final Smithay presentation, input, note, persistence, app-close/reopen, MAC or broad APK compatibility acceptance",
-          "partial_observation": "Intact onboarding rendered by original SF; not_tested denotes insufficient evidence for complete stage criteria, not absence of APK execution."
+          "scope": "Actual intact onboarding reaches final Smithay DRM buffer; no complete interactive application workflow, input/editor/note/persistence/app-close/reopen or MAC acceptance",
+          "partial_observation": "Twelve final DRM captures show original IntroActivity; initial Displayed event preceded actual visible frame. not_tested denotes incomplete complete-stage evidence, not absence of app execution."
         }
       },
       "runtime_stage_evidence_history": [
@@ -569,7 +569,7 @@
       "acceptance": "Fix real author-distributed APK/version/requirements; test nine-stage workflow without per-APK patches or privileged bypass"
     }
   ],
-  "base_review": "A16-QPR2-1 supersedes A/B/C selection: native Bionic primary; SF\u2192Wayland first graphics hypothesis. Prior choice/experiments historical only.",
+  "base_review": "A16-QPR2-1 supersedes A/B/C selection: native Bionic primary; SF→Wayland first graphics hypothesis. Prior choice/experiments historical only.",
   "base_component_observation": {
     "evidence": "reports/bionic-component/art-core-result.json",
     "linker_help_and_launcher_list_exit": 0,

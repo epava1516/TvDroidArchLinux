@@ -1,6 +1,6 @@
 # Índice de evidencias
 
-[140 · renderizado original de Markor](../reports/android16-package-bootstrap/original-user-unlock-progress.json): UUIDff987089, captura8079168a… de IntroActivity inspeccionada, FUSE mountinfo real, modos/etiquetas privados, hostbefore/after idéntico y nativo/exterior0. Fuente Cuttlefish y parche vmwgfx enlazados por hash;139 render-only siguió negro. El slide incluye una ilustración, no archivos reales. No hay captura final Smithay, entrada, nota ni persistencia aceptadas.137/132/103 y seguimiento133 conservados en el mismo registro histórico.
+[142 · presentación real de Markor en Smithay](../reports/android16-package-bootstrap/original-user-unlock-progress.json), sección presentation_followup142: UUIDca5004b9, doce PPM con SHA7f0f6911… inspeccionados mediante conversión PNG. El capturador existente lee el búfer DRM actual sin flip pendiente; tres primeras muestras negras y las de cierre se conservan. Candidato140 y APK intactos, nativo/exterior0, host sin cambios y cierre comprobado. No acredita interacción, nota ni persistencia.141 conserva la captura prematura negra;140 y resultados históricos permanecen en el mismo registro.
 
 [Seguimiento133](../reports/android16-package-bootstrap/original-user-unlock-progress.json), followup133: nativo0, cancelación explícita y drenaje/cierre recogidos. No prueba la rama nueva de reap normal. Exterior1 preservado por aserción de perfil incorrecta; corrección sólo materializada. No nueva etapa APK aceptada.
 

@@ -282,9 +282,9 @@
     "semantic_hash": ""
   },
   "ROADMAP.md": {
-    "mtime": 1793692422.9192305,
-    "seen": 1793692434.9416597,
-    "ast_hash": "135e5bb56cbed6353601a2b06d6ef622",
+    "mtime": 1793693624.5311778,
+    "seen": 1793693639.7605686,
+    "ast_hash": "d07a70aa9ea97be907e7354aba99944c",
     "semantic_hash": ""
   },
   "THIRD_PARTY.md": {
@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793692422.8835335,
-    "seen": 1793692434.9438016,
-    "ast_hash": "26db779c177ddd2cfb9b3f5f85d833fe",
+    "mtime": 1793693624.5257044,
+    "seen": 1793693639.7627463,
+    "ast_hash": "74e4cdedd883578bbdf692655b0fed3b",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793692422.8590982,
-    "seen": 1793692434.9443288,
-    "ast_hash": "a732804904ed8314b3c822b7e99ed703",
+    "mtime": 1793693624.4999819,
+    "seen": 1793693639.7633498,
+    "ast_hash": "7ba9bd99549dfdb6a76c864c63186241",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793692422.8949404,
-    "seen": 1793692434.9451888,
-    "ast_hash": "f878ad9cf1966cea47a808ae66b3dd16",
+    "mtime": 1793693624.5061738,
+    "seen": 1793693639.7640796,
+    "ast_hash": "81edc07fdc49139e3321e52d5826c454",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -1716,9 +1716,9 @@
     "semantic_hash": ""
   },
   "docs/EVIDENCIAS.md": {
-    "mtime": 1793692422.904625,
-    "seen": 1793692434.944479,
-    "ast_hash": "b09887ad53aabb1c05f04c7ded8347b3",
+    "mtime": 1793693624.509982,
+    "seen": 1793693639.7635,
+    "ast_hash": "4e7a973caf30c8cd140d375c219b79ab",
     "semantic_hash": ""
   },
   "fixtures/aosp-framework-space/FrameworkSpaceProbe.java": {
@@ -1728,9 +1728,9 @@
     "semantic_hash": ""
   },
   "docs/COMPATIBILIDAD-APK.md": {
-    "mtime": 1793692422.9245687,
-    "seen": 1793692434.9438822,
-    "ast_hash": "560e41c78d1e10589abee05b3ae0971c",
+    "mtime": 1793693624.5284767,
+    "seen": 1793693639.7628288,
+    "ast_hash": "99e70cb905b0123539d58c72b672973f",
     "semantic_hash": ""
   },
   "fixtures/aosp-window-service/ServiceRegistryChecks.java": {
