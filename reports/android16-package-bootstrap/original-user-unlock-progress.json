@@ -163,7 +163,7 @@
     "Native normal lazy apexd exit CLD_EXITED0 clean1 followed by successful coordinatorclose0; explicit cancellation alternative was exercised133",
     "Native/exterior0; exact unitsinactive, VT1restored, no loops/dm/new FUSEconnections; host DRM node metadata identical"
   ],
-  "next": "Integrate whole original com.android.server.trust.TrustManagerService after LockSettings lifecycle and before boot phases, matching original SystemServer. Do not return false from KeyguardManager or bypass PasswordStore. Repeat same actual permission->new-file->typed unique note/save/app close-reopen journey in one bounded cohort; verify actual original trust operations and preserve unsupported credentials/hardware/lockscreen limits.",
+  "next": "Add read-only note-byte export inside existing factory before data teardown, with bounded tokenized workflow. Original trusted installer client can wait for exact app-written text, execute original cmd activity force-stop and manifest relaunch, record actual PID/death/launch outputs; never write the note or readiness. Drive actual reopen in GUI and compare bytes. Keep crosscohort durable data separate and open.",
   "artifacts": {
     "/home/tv/recuperacion-archtv/ff987089-92db-43e2-852d-3e78501aae42-markor-software-launch/before-launch.json": "db7aaed86c8a4f5121ce3677ff47d50e11f74a3c646b3455437700432da2818a",
     "/home/tv/recuperacion-archtv/ff987089-92db-43e2-852d-3e78501aae42-markor-software-launch/result.json": "db31e85df10c964be7b912ab4f7c29b47f292e788e26c8df09ce639c935578b9",
@@ -1446,9 +1446,10 @@
     "next": "Exercise real keyboard through original KeyLayoutMap and dispatcher; complete onboarding through events and enter real editor. Test gateway rejection and focus/disconnect releases, fix transport loss state before accepting stability. Then actual unique note/save/app close/reopen with original storage."
   },
   "latest_functional_observation": {
-    "candidate": 151,
-    "run_id": "c6c8413d-1246-4e0b-a256-f1b309d5df7b",
-    "section": "permission_flow_followup151"
+    "candidate": 152,
+    "execution": 153,
+    "run_id": "77e500e0-48c2-4957-9119-bea9a5649477",
+    "section": "editor_input_followup153"
   },
   "not_accepted_at_base140": [
     "Final Smithay/physical output frame for this APK is not yet captured; early compositor30s capture is not app presentation evidence",
@@ -2541,5 +2542,194 @@
       "ARM/GMS/DRM, install/update and complete product remain open"
     ],
     "next": "Integrate whole original com.android.server.trust.TrustManagerService after LockSettings lifecycle and before boot phases, matching original SystemServer. Do not return false from KeyguardManager or bypass PasswordStore. Repeat same actual permission->new-file->typed unique note/save/app close-reopen journey in one bounded cohort; verify actual original trust operations and preserve unsupported credentials/hardware/lockscreen limits."
+  },
+  "editor_input_followup153": {
+    "candidate": 152,
+    "execution": 153,
+    "run_id": "77e500e0-48c2-4957-9119-bea9a5649477",
+    "checkpoint": "/home/tv/recuperacion-archtv/77e500e0-48c2-4957-9119-bea9a5649477-markor-software-launch",
+    "factory": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793700447965701855",
+    "native_exit": 0,
+    "outer_exit": 0,
+    "original_subsystem": "com.android.server.trust.TrustManagerService after LockSettings lifecycle before boot phases, matching pinned SystemServer. No KeyguardManager return patched or state fabricated.",
+    "source_provenance": {
+      "TrustManagerService.source.json": {
+        "pin": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+        "path": "services/core/java/com/android/server/trust/TrustManagerService.java",
+        "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/core/java/com/android/server/trust/TrustManagerService.java?format=TEXT",
+        "sha256": "aace4aa7d3c720d98aebb6246fcf2cdc863d13df45abe09bc6fcc38006f6e51b"
+      },
+      "KeyguardManager.source.json": {
+        "pin": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+        "path": "core/java/android/app/KeyguardManager.java",
+        "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/core/java/android/app/KeyguardManager.java?format=TEXT",
+        "sha256": "d08cefe657b7f7c7331c97f40e8d1ace18b28a8313b3ee2aceb98ac7de8673e1"
+      }
+    },
+    "actual_UI_observations": [
+      {
+        "path": "/home/tv/recuperacion-archtv/77e500e0-48c2-4957-9119-bea9a5649477-markor-software-launch/inspect-01.png",
+        "observed": "Original Markor editor opened for new archtv-77e500e0.md, blank buffer, not onboarding art"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/77e500e0-48c2-4957-9119-bea9a5649477-markor-software-launch/inspect-03.png",
+        "observed": "Actual editor displays archtv note 77e500e0 typed through Linux keyboard/Smithay/Wayland/original Android input; original LatinIME is visible"
+      }
+    ],
+    "save_scope": "Original Ctrl+S key request sent and save icon becomes inactive; no valid file-byte readback. No saved-file/persistence acceptance from icon or pixels.",
+    "inspection_failure": "External read-only inspector found no matching root; later diagnostic found ControlGroup empty because native unit ended. The diagnostic then enumerated host cgroup roots read-only due missing empty-group guard; no matching guest file was read and nothing written inside guest. This is invalid save evidence, NOT proof file absent. Future capture belongs inside existing factory before teardown; active inspectors must reject empty cgroup.",
+    "prior152": {
+      "checkpoint": "/home/tv/recuperacion-archtv/96aa520c-679f-4cb6-82f5-8b1cdfc3349c-markor-software-launch",
+      "result_sha256": "9b0fd9161b131dc2c6b35b771e8d57835eb2bf74c1b10b319cf5efac38fed055",
+      "observed": "Trust allows original NewFileDialog and actual typed filename after explicit focus. Commands5/6/7 were written after bounded sender ended and not consumed; not evidence of Ctrl+A/Enter execution.",
+      "consumed_command_ids": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "queued_but_not_executed_ids": [
+        5,
+        6,
+        7
+      ],
+      "no_cross_run_replay": true
+    },
+    "proved": [
+      "Exact original manifest launch reaches real app main/editor views in Smithay",
+      "Real pointer and keyboard ASCII edit the intact APK; screenshot includes unique text, not a fixture widget",
+      "Original Trust integration supersedes KeyguardManager-null failure151 in this observed path",
+      "Native/global close, host metadata and temporary input device removal verified"
+    ],
+    "not_accepted": [
+      "No verified saved bytes, app process close/reopen or persistence across runtime restarts",
+      "No complete application C3 or broad APK compatibility from these three stage observations",
+      "No full Trust/credential/lockscreen/TEE behavior, encryption or MAC/tenant isolation proof",
+      "ARM/GMS/DRM, other system-app failures, gateway failure tests and product installation/update remain open"
+    ],
+    "cleanup": {
+      "id": "77e500e0-48c2-4957-9119-bea9a5649477",
+      "outer_unit": "archtv-markor-session-77e500e0-48c2-4957-9119-bea9a5649477",
+      "runner_unit": "archtv-package-runner-77e500e0-48c2-4957-9119-bea9a5649477",
+      "initial_vt": "1",
+      "root_pid": 516885,
+      "root_boot_id": "4e18faf8-2b46-42e4-a6b2-269c34326b68",
+      "result": "native_result_recorded",
+      "fuse_connections_before": [],
+      "host_devices_before": {
+        "card0": {
+          "mode": "0o660",
+          "uid": 0,
+          "gid": 983,
+          "rdev": 57856,
+          "inode": 365
+        },
+        "renderD128": {
+          "mode": "0o666",
+          "uid": 0,
+          "gid": 987,
+          "rdev": 57984,
+          "inode": 364
+        }
+      },
+      "interaction_exit": 0,
+      "host_devices_after": {
+        "card0": {
+          "mode": "0o660",
+          "uid": 0,
+          "gid": 983,
+          "rdev": 57856,
+          "inode": 365
+        },
+        "renderD128": {
+          "mode": "0o666",
+          "uid": 0,
+          "gid": 987,
+          "rdev": 57984,
+          "inode": 364
+        }
+      },
+      "host_device_metadata_unchanged": true,
+      "fuse_connections_after": [],
+      "new_fuse_connections": [],
+      "final_vt": "1",
+      "outer_active": false,
+      "runner_active": false
+    },
+    "artifacts": {
+      "/home/tv/recuperacion-archtv/77e500e0-48c2-4957-9119-bea9a5649477-markor-software-launch/before-launch.json": {
+        "sha256": "3aa5f2bf67df4a31b887a42c509a0bb2dc3c3a7074f73f29c21eb4e8819f787a",
+        "bytes": 2507
+      },
+      "/home/tv/recuperacion-archtv/77e500e0-48c2-4957-9119-bea9a5649477-markor-software-launch/result.json": {
+        "sha256": "44b54e40d0087a0e2c1ad8760ad75e85c8fec15fcb8d654afb8d2c88a8d526d0",
+        "bytes": 29850
+      },
+      "/home/tv/recuperacion-archtv/77e500e0-48c2-4957-9119-bea9a5649477-markor-software-launch/session-state.json": {
+        "sha256": "8ee84683eb0bb67d24888ad8313590e8aa9589290d78b65da43e483eef5a495e",
+        "bytes": 1126
+      },
+      "/home/tv/recuperacion-archtv/77e500e0-48c2-4957-9119-bea9a5649477-markor-software-launch/interaction-test.py": {
+        "sha256": "ba916206b2d13f4e648b8dba6939879580e2bd6c01391b9af6b59267b9016c7a",
+        "bytes": 6635
+      },
+      "/home/tv/recuperacion-archtv/77e500e0-48c2-4957-9119-bea9a5649477-markor-software-launch/interaction-events.json": {
+        "sha256": "70947b768e7578e2fa9e900ef6bd6edc1415b316752025f57acc6becf024ecb6",
+        "bytes": 17297
+      },
+      "/home/tv/recuperacion-archtv/77e500e0-48c2-4957-9119-bea9a5649477-markor-software-launch/input-commands.jsonl": {
+        "sha256": "7bb44c33f36245295b0db5739a361faaa0377072e5ada50a3c6f141989f214ee",
+        "bytes": 156
+      },
+      "/home/tv/recuperacion-archtv/77e500e0-48c2-4957-9119-bea9a5649477-markor-software-launch/input-device-cleanup.json": {
+        "sha256": "24de4143e57ed3b78225b0c65dcb0a0162aca14a74aa3fbff93c4e45e8c1d000",
+        "bytes": 236
+      },
+      "/home/tv/recuperacion-archtv/77e500e0-48c2-4957-9119-bea9a5649477-markor-software-launch/capture-samples.json": {
+        "sha256": "e7def5d44a583884176ae106ecd0c7ea4f2d1a0e1e7b55d8eaebb1164791778a",
+        "bytes": 84894
+      },
+      "/home/tv/recuperacion-archtv/77e500e0-48c2-4957-9119-bea9a5649477-markor-software-launch/completion-consumer.json": {
+        "sha256": "32eece58d9d830b873e4e005217b72e565f754a11d29f0139ace12bc34ff0a7e",
+        "bytes": 196
+      },
+      "/home/tv/recuperacion-archtv/77e500e0-48c2-4957-9119-bea9a5649477-markor-software-launch/completion-delivery.json": {
+        "sha256": "d68e3eaf9f9cf1abd107a87aa3c528fb7724174cfb777b43788b40204585fa16",
+        "bytes": 240
+      },
+      "/home/tv/recuperacion-archtv/77e500e0-48c2-4957-9119-bea9a5649477-markor-software-launch/compositor.log": {
+        "sha256": "c789b5d87d0398a1dab30bde9d1813e593e9ad4b32654b1c6f6be5ad341fab4d",
+        "bytes": 218987
+      },
+      "/home/tv/recuperacion-archtv/77e500e0-48c2-4957-9119-bea9a5649477-markor-software-launch/inspect-01.ppm": {
+        "sha256": "b387511b55ed496a4b332cc8fc8198a5395aab23f74bab06759855140a1aca99",
+        "bytes": 3072016
+      },
+      "/home/tv/recuperacion-archtv/77e500e0-48c2-4957-9119-bea9a5649477-markor-software-launch/inspect-01.png": {
+        "sha256": "5e33656784ee52193f32d37ceabd096179a41bc85d47c56deba2b0bec18936d7",
+        "bytes": 20362
+      },
+      "/home/tv/recuperacion-archtv/77e500e0-48c2-4957-9119-bea9a5649477-markor-software-launch/inspect-03.ppm": {
+        "sha256": "229f967f664f420add8a05da1ba6b20e7a338488fed34fc9a0caf34c9c8c7260",
+        "bytes": 3072016
+      },
+      "/home/tv/recuperacion-archtv/77e500e0-48c2-4957-9119-bea9a5649477-markor-software-launch/inspect-03.png": {
+        "sha256": "99fa31aa5209b7946d260cb8d9099bc61c027d11bb136bbc62e084ad9d393bdc",
+        "bytes": 52018
+      },
+      "/home/tv/recuperacion-archtv/77e500e0-48c2-4957-9119-bea9a5649477-markor-software-launch/note-backing-location-diagnostic.json": {
+        "sha256": "6772047c0657800075d83dbc908218a9d2ae4ba9141b6ebc8b1d7e433d489908",
+        "bytes": 1594
+      },
+      "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793700447965701855/android-log-live.jsonl": {
+        "sha256": "ddf1408b974480d3e34f6c80196db95f2d7532a21fa8e90e42e53df024056162",
+        "bytes": 2227432
+      },
+      "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-152/source-inputs.json": {
+        "sha256": "7fb82b5999d4cf71024748d4326f265fb0869a8f640cdc50e6177538f126eae3",
+        "bytes": 5770
+      }
+    },
+    "next": "Add read-only note-byte export inside existing factory before data teardown, with bounded tokenized workflow. Original trusted installer client can wait for exact app-written text, execute original cmd activity force-stop and manifest relaunch, record actual PID/death/launch outputs; never write the note or readiness. Drive actual reopen in GUI and compare bytes. Keep crosscohort durable data separate and open."
   }
 }

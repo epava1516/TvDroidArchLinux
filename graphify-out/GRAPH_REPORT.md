@@ -1,7 +1,7 @@
 # Graph Report - repositorio-principal  (2026-11-03)
 
 ## Corpus Check
-- 345 files · ~312,842 words
+- 345 files · ~312,900 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 42 file(s) not represented in the graph (top: .xml 11, .patch 11, .cil 9)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `b28cbb0a`
+- Built from commit: `5f2a74b9`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -104,13 +104,13 @@
 - Capa de compatibilidad APK propia sobre Linux
 - APK mínima: contador
 - .main
-- .process_input_event
 - RuntimeProbe
 - compositor.rs
 - APK original en el compositor propio
 - ART host para la capa APK
 - audit_boot_inputs.py
 - Constructor original de View con recursos del APK
+- OriginalJavaProviderProbe.java
 - identity.rs
 - 100-apk-session.sh
 - 101-apk-smoke.sh
@@ -139,7 +139,7 @@
 - xdg_shell.rs
 - Handler y Looper originales ejecutan mensajes en Linux
 - .main
-- OriginalJavaProviderProbe.java
+- properties.rs
 - Java_android_os_Binder_getNativeBBinderHolder
 - desktop.rs
 - ThrowableLogProbe.java
@@ -178,38 +178,38 @@
 - Port gráfico original: frontera RenderNode
 - SoftwareCryptoProbe.cpp
 - Adaptación tipada de CriticalNative a funciones host HWUI
-- Buffer
+- xdg_shell.rs
 - Traducción ARM · investigación R6 separada
 - Cliente de accesibilidad original: contratos y frontera Binder
 - ApplicationInfo original y metadatos reales de APK
 - Contrato vigente · AOSP Android 16 QPR2
 - Perfil JNI original de construcción y propiedades RenderNode
 - PublicResourcesProbe.java
-- properties.rs
+- FocusStack<T>
 - AuditedSectionParser
 - Holder Binder original en ART/Linux
 - Arquitectura vigente · A16-QPR2-1
 - FrameworkSpaceProbe
 - linux-wayland-output.cpp
-- FocusStack<T>
+- KeystoreFrameworkProfilePlan.java
 - linux-wayland-frame-composer.cpp
-- xdg_shell.rs
+- .process_input_event
 - ApkMetadata
 - Log original con excepciones y líneas largas
 - Matriz de aplicaciones reales
 - Reference
 - Roadmap A · plataforma APK general sobre Linux
 - check_host_security.py
-- invocationtargetexception
+- WaylandInputBridge
 - Main.java
 - Page
-- KeystoreFrameworkProfilePlan.java
 - Puerta vigente: Binder privado y política del Linux anfitrión
 - ready
 - zipfile
 - Camino crítico vigente · Markor completo
 - Historial conservado · no es el estado vigente
 - patches/README.md
+- Buffer
 - Action
 - RuntimeStatus
 - Key
@@ -456,10 +456,6 @@ Nodes (3): APK mínima: contador, Construcción, Prueba que debe pasar la futura
 Cohesion: 0.06
 Nodes (20): QueueSemanticsProbe, Runnable, Setup, Runnable, Runnable, Setup, Runnable, Runnable (+12 more)
 
-### Community 91 - ".process_input_event"
-Cohesion: 0.21
-Nodes (6): Shortcut, Exit, Home, Resume, Vt, TvCompositor
-
 ### Community 92 - "RuntimeProbe"
 Cohesion: 0.39
 Nodes (3): Increment, Operation, RuntimeProbe
@@ -555,6 +551,10 @@ Nodes (3): Handler y Looper originales ejecutan mensajes en Linux, Implementaci�
 ### Community 126 - ".main"
 Cohesion: 0.21
 Nodes (3): Attached, ContextProbe, android.content.ComponentCallbacks2
+
+### Community 127 - "properties.rs"
+Cohesion: 0.35
+Nodes (6): HOST_PROFILE, Java_android_os_SystemProperties_native_1get_1boolean__Ljava_lang_String_2Z(), Java_android_os_SystemProperties_native_1get_1int__Ljava_lang_String_2I(), Java_android_os_SystemProperties_native_1get__Ljava_lang_String_2Ljava_lang_String_2(), Java_org_archtv_apkruntime_HostProfile_nativeInitialize(), property()
 
 ### Community 128 - "Java_android_os_Binder_getNativeBBinderHolder"
 Cohesion: 0.46
@@ -664,10 +664,6 @@ Nodes (8): Bytes, load(), main(), number(), operationParams(), Params, require()
 Cohesion: 0.50
 Nodes (3): Adaptación tipada de CriticalNative a funciones host HWUI, Integración pendiente, Prueba ART
 
-### Community 197 - "Buffer"
-Cohesion: 0.25
-Nodes (7): Buffer, bytes, data, height, object, released, width
-
 ### Community 198 - "Traducción ARM · investigación R6 separada"
 Cohesion: 0.50
 Nodes (4): Clausura invitada y pruebas antes de elegir, Native Bridge original que reutilizar, Opciones existentes y estado de decisión, Traducción ARM · investigación R6 separada
@@ -684,9 +680,9 @@ Nodes (4): ApplicationInfo original y metadatos reales de APK, Constructor View,
 Cohesion: 0.12
 Nodes (17): 10. USO DE FUENTES Y REA, 11. VALIDACIÓN, 12. HITOS Y PUERTAS DE DECISIÓN, 13. DOCUMENTACIÓN Y ENTREGA, 1. PROTEGER EL TRABAJO EXISTENTE, 2. BASE AOSP, 3. ARQUITECTURA DE EJECUCIÓN, 4. SIGNIFICADO DE “SIN ANDROID COMPLETO” (+9 more)
 
-### Community 204 - "properties.rs"
-Cohesion: 0.35
-Nodes (6): HOST_PROFILE, Java_android_os_SystemProperties_native_1get_1boolean__Ljava_lang_String_2Z(), Java_android_os_SystemProperties_native_1get_1int__Ljava_lang_String_2I(), Java_android_os_SystemProperties_native_1get__Ljava_lang_String_2Ljava_lang_String_2(), Java_org_archtv_apkruntime_HostProfile_nativeInitialize(), property()
+### Community 204 - "FocusStack<T>"
+Cohesion: 0.30
+Nodes (4): FocusStack, FocusStack<T>, home_returns_without_destroying_app_and_close_restores_focus(), repeated_activation_does_not_duplicate_a_window()
 
 ### Community 205 - "AuditedSectionParser"
 Cohesion: 0.13
@@ -700,13 +696,13 @@ Nodes (3): Construcción, Holder Binder original en ART/Linux, Pruebas y límite
 Cohesion: 0.03
 Nodes (63): Adaptador de directorios proc · verificación offline, Arquitectura vigente · A16-QPR2-1, Artefacto reproducible de política experimental, Base de ingeniería y procedencia, Binder Rust original: regresiones y contrato de identidad, Cierre y comportamiento que hay que conservar, Conjuntos globales: fallo probado de la composición actual, Contraste nativo de transacciones con contexto de seguridad (+55 more)
 
-### Community 210 - "FocusStack<T>"
-Cohesion: 0.30
-Nodes (4): FocusStack, FocusStack<T>, home_returns_without_destroying_app_and_close_restores_focus(), repeated_activation_does_not_duplicate_a_window()
-
 ### Community 211 - "linux-wayland-frame-composer.cpp"
 Cohesion: 0.08
 Nodes (8): LinuxWaylandFrameComposer, callback_, callback_mutex_, connected_, display_live_, mutex_, output_, stop_
+
+### Community 212 - ".process_input_event"
+Cohesion: 0.21
+Nodes (6): Shortcut, Exit, Home, Resume, Vt, TvCompositor
 
 ### Community 214 - "Log original con excepciones y líneas largas"
 Cohesion: 0.50
@@ -728,7 +724,7 @@ Nodes (22): Control experimental de namespaces de política, Decisiones offline 
 Cohesion: 0.13
 Nodes (7): inspect(), main(), read_status(), read_text(), status_snapshot(), zero_size_selinux_status(), HostSecurityReporting
 
-### Community 220 - "invocationtargetexception"
+### Community 220 - "WaylandInputBridge"
 Cohesion: 0.17
 Nodes (3): SelectedServices, ServiceLauncher, WaylandInputBridge
 
@@ -747,6 +743,10 @@ Nodes (5): Histórico · primer intento APEX, superado por el hito anterior, His
 ### Community 226 - "zipfile"
 Cohesion: 0.09
 Nodes (12): dex_inventory(), string(), table(), uint(), inspect(), digest(), decode(), fields() (+4 more)
+
+### Community 230 - "Buffer"
+Cohesion: 0.25
+Nodes (7): Buffer, bytes, data, height, object, released, width
 
 ### Community 231 - "Action"
 Cohesion: 0.18
@@ -790,7 +790,7 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.078) - this node is a cross-community bridge._
 - **Should `resources-jni.cpp` be split into smaller, more focused modules?**
   _Cohesion score 0.07372229760289462 - nodes in this community are weakly interconnected._
-- **Why does `TvCompositor` connect `TvCompositor` to `winit.rs`, `mod.rs`, `input.rs`, `drm.rs`, `session.rs`, `xdg_shell.rs`, `.process_input_event`, `compositor.rs`?**
-  _High betweenness centrality (0.066) - this node is a cross-community bridge._
+- **Why does `Arquitectura vigente · A16-QPR2-1` connect `Arquitectura vigente · A16-QPR2-1` to `Puerta vigente: Binder privado y política del Linux anfitrión`, `ready`, `ROADMAP.md`?**
+  _High betweenness centrality (0.065) - this node is a cross-community bridge._
 - **Should `Client` be split into smaller, more focused modules?**
   _Cohesion score 0.08346134152585766 - nodes in this community are weakly interconnected._

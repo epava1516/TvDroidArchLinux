@@ -1,6 +1,6 @@
 # Índice de evidencias
 
-[151 · permiso y explorador originales](../reports/android16-package-bootstrap/original-user-unlock-progress.json): UUIDc6c8413d, capturas inspeccionadas de Ajustes off/on y Documents real; comando de crear archivo produce FATAL de Markor en KeyguardManager.isDeviceSecure. Fuentes originales Clipboard/ECM/SafetyCenter y Keyguard/Trust fijadas por hash, CLI149 y fallos148/149/150 preservados. Nativo/exterior0 no acredita APK sana. Ambos dispositivos retirados, host intacto, VT1 y sin loops/dm/FUSE. No editor, texto o nota aceptados.
+[152/153 · editor y entrada real](../reports/android16-package-bootstrap/original-user-unlock-progress.json): UUID96aa520c/77e500e0, Trust original sin respuestas falsas, NewFileDialog y editor propio con texto archtv note 77e500e0 inspeccionado en DRM. Comandos y logs originales enlazados por SHA; Ctrl+S es solicitud, no bytes persistidos. Inspector tardío/cgroup vacío documentado como evidencia inválida de guardado.152 comandos5/6/7 no consumidos y no se reproducen. Ambos cierres nativo/exterior0, dispositivos retirados, host intacto, sin loops/dm/FUSE.
 
 [Seguimiento133](../reports/android16-package-bootstrap/original-user-unlock-progress.json), followup133: nativo0, cancelación explícita y drenaje/cierre recogidos. No prueba la rama nueva de reap normal. Exterior1 preservado por aserción de perfil incorrecta; corrección sólo materializada. No nueva etapa APK aceptada.
 

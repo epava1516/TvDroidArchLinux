@@ -1,6 +1,6 @@
 # Contrato vigente · AOSP Android 16 QPR2
 
-Estado parcial151: permiso por UI original y explorador real; crear archivo provoca fallo demostrado por KeyguardManager ausente. El contrato mantiene editor/texto, nota/guardado/cierre/reapertura, aislamiento/estabilidad/instalación/actualización. No se devolverán estados Keyguard o permisos ficticios para continuar. Cohorte nativo0, interfaz visible o directorios creados no acreditan aplicación completa ni seguridad MAC. [Evidencia](../reports/android16-package-bootstrap/original-user-unlock-progress.json).
+Estado parcial153: editor real y texto introducido en la APK intacta; lanzamiento/interfaz/entrada básicos verificados con alcance exacto. El contrato conserva guardado verificable, cierre de proceso/reapertura, durabilidad, seguridad/estabilidad/instalación/actualización. Una orden Ctrl+S o un icono no prueba bytes guardados; el intento externo tardío no cuenta. No se cierra C3 ni runtime completo por estas etapas. [Evidencia](../reports/android16-package-bootstrap/original-user-unlock-progress.json).
 
 [GateKeeper original122](../reports/android16-package-bootstrap/gatekeeper-platform-progress.json) conserva el límite del proveedor AOSP no seguro: inscripción/verificación, tokens compartidos, durabilidad y aislamiento necesitan pruebas propias. Un SID de usuario vacío devuelto por el API original no es una credencial ni una señal de RUNNING_UNLOCKED. La política cargada en permisivo4 no cierra R1-MAC.
 

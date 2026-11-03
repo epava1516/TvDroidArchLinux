@@ -486,6 +486,9 @@ public final class SelectedServices {
                 System.err.println("ORIGINAL_ART_MANAGERS_INITIALIZED NOT_ARTD_OPERATION_ACCEPTANCE");
                 // Original credential/policy services before notification phase500.
                 start(manager,managerType,"com.android.server.locksettings.LockSettingsService$Lifecycle");
+                // Original trust service backs KeyguardManager; credential and
+                // device-secure decisions remain in AOSP, not Linux constants.
+                start(manager,managerType,"com.android.server.trust.TrustManagerService");
                 start(manager,managerType,"com.android.server.DeviceIdleController");
                 start(manager,managerType,"com.android.server.devicepolicy.DevicePolicyManagerService$Lifecycle");
                 start(manager,managerType,"com.android.server.dreams.DreamManagerService");

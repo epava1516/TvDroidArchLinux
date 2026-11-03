@@ -153,16 +153,16 @@
       "workflow": "Crear nota de texto local, editar con teclado, guardar, cerrar y reabrir",
       "runtime_results": {
         "installation": "approved",
-        "launch": "not_tested",
-        "interface": "not_tested",
-        "input": "not_tested",
-        "main_function": "demonstrated_failure",
+        "launch": "approved",
+        "interface": "approved",
+        "input": "approved",
+        "main_function": "not_tested",
         "persistence": "not_tested",
-        "services": "demonstrated_failure",
+        "services": "not_tested",
         "close": "not_tested",
         "reopen": "not_tested"
       },
-      "reason": "151: real original Settings permission UI toggled, intact Markor explorer /storage/emulated/0/Documents visible in final Smithay. Create-file action crashes: KeyguardManager null in PasswordStore/NewFileDialog, original trust service absent. No editor/text/note/save/reopen. Native0 is cohort closure, not APK success.",
+      "reason": "153 using original Trust candidate152: manifest launch, own explorer/new-file/editor UI in Smithay, pointer and ASCII text entry proven on intact APK. Save requested but file bytes not verified; no app process close-reopen/durability or full C3. Stage approvals apply only to this exact APK/base and observed basic route, not all UI/input features.",
       "framework_class_link_pass": true,
       "declared_application": "net.gsantner.markor.ApplicationObject",
       "bootstrap_experiment": {
@@ -208,45 +208,45 @@
         },
         "launch": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "ff0eb38b206b106188b4536ae13d5eb9903b3f219c75a0ae75095f978a962a33",
-          "accepted": false,
-          "scope": "Actual permission flow/explorer, then proven create-file crash due missing KeyguardManager. No complete workflow or security acceptance",
-          "partial_observation": "Markor main-function/services have demonstrated failure; original Clipboard/EnhancedConfirmation missing-manager failures superseded151 in this observed path."
+          "record_sha256": "a2c2af111547153a6112a51a98702a4e6923d043a92c6c616a2237187b1f0e02",
+          "accepted": true,
+          "scope": "Exact version164/c105bf5, candidate152 execution153, software experimental profile: manifest launch and original explorer/editor UI with real basic pointer/ASCII input. No gamepad/layout/repeat/GPU acceleration/security or full application completion.",
+          "partial_observation": "Actual unique text visible in original editor; whole application C3 remains open."
         },
         "services": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "ff0eb38b206b106188b4536ae13d5eb9903b3f219c75a0ae75095f978a962a33",
+          "record_sha256": "a2c2af111547153a6112a51a98702a4e6923d043a92c6c616a2237187b1f0e02",
           "accepted": false,
-          "scope": "Actual permission flow/explorer, then proven create-file crash due missing KeyguardManager. No complete workflow or security acceptance",
-          "partial_observation": "Markor main-function/services have demonstrated failure; original Clipboard/EnhancedConfirmation missing-manager failures superseded151 in this observed path."
+          "scope": "Save request without valid byte readback; no process close-reopen or durable data. Original Trust supersedes prior constructor failure but no full credential/service suite.",
+          "partial_observation": "Actual unique text visible in original editor; whole application C3 remains open."
         },
         "interface": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "ff0eb38b206b106188b4536ae13d5eb9903b3f219c75a0ae75095f978a962a33",
-          "accepted": false,
-          "scope": "Actual permission flow/explorer, then proven create-file crash due missing KeyguardManager. No complete workflow or security acceptance",
-          "partial_observation": "Markor main-function/services have demonstrated failure; original Clipboard/EnhancedConfirmation missing-manager failures superseded151 in this observed path."
+          "record_sha256": "a2c2af111547153a6112a51a98702a4e6923d043a92c6c616a2237187b1f0e02",
+          "accepted": true,
+          "scope": "Exact version164/c105bf5, candidate152 execution153, software experimental profile: manifest launch and original explorer/editor UI with real basic pointer/ASCII input. No gamepad/layout/repeat/GPU acceleration/security or full application completion.",
+          "partial_observation": "Actual unique text visible in original editor; whole application C3 remains open."
         },
         "input": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "ff0eb38b206b106188b4536ae13d5eb9903b3f219c75a0ae75095f978a962a33",
-          "accepted": false,
-          "scope": "Actual permission flow/explorer, then proven create-file crash due missing KeyguardManager. No complete workflow or security acceptance",
-          "partial_observation": "Markor main-function/services have demonstrated failure; original Clipboard/EnhancedConfirmation missing-manager failures superseded151 in this observed path."
+          "record_sha256": "a2c2af111547153a6112a51a98702a4e6923d043a92c6c616a2237187b1f0e02",
+          "accepted": true,
+          "scope": "Exact version164/c105bf5, candidate152 execution153, software experimental profile: manifest launch and original explorer/editor UI with real basic pointer/ASCII input. No gamepad/layout/repeat/GPU acceleration/security or full application completion.",
+          "partial_observation": "Actual unique text visible in original editor; whole application C3 remains open."
         },
         "persistence": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "ff0eb38b206b106188b4536ae13d5eb9903b3f219c75a0ae75095f978a962a33",
+          "record_sha256": "a2c2af111547153a6112a51a98702a4e6923d043a92c6c616a2237187b1f0e02",
           "accepted": false,
-          "scope": "Actual permission flow/explorer, then proven create-file crash due missing KeyguardManager. No complete workflow or security acceptance",
-          "partial_observation": "Markor main-function/services have demonstrated failure; original Clipboard/EnhancedConfirmation missing-manager failures superseded151 in this observed path."
+          "scope": "Save request without valid byte readback; no process close-reopen or durable data. Original Trust supersedes prior constructor failure but no full credential/service suite.",
+          "partial_observation": "Actual unique text visible in original editor; whole application C3 remains open."
         },
         "main_function": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "ff0eb38b206b106188b4536ae13d5eb9903b3f219c75a0ae75095f978a962a33",
+          "record_sha256": "a2c2af111547153a6112a51a98702a4e6923d043a92c6c616a2237187b1f0e02",
           "accepted": false,
-          "scope": "Actual permission flow/explorer, then proven create-file crash due missing KeyguardManager. No complete workflow or security acceptance",
-          "partial_observation": "Markor main-function/services have demonstrated failure; original Clipboard/EnhancedConfirmation missing-manager failures superseded151 in this observed path."
+          "scope": "Save request without valid byte readback; no process close-reopen or durable data. Original Trust supersedes prior constructor failure but no full credential/service suite.",
+          "partial_observation": "Actual unique text visible in original editor; whole application C3 remains open."
         }
       },
       "runtime_stage_evidence_history": [
@@ -294,6 +294,22 @@
             }
           },
           "superseded": "Black SF frame superseded by visible original onboarding140; full Smithay presentation/input/journey still unverified."
+        },
+        {
+          "as_of_candidate": 151,
+          "source_commit": "5f2a74b",
+          "results": {
+            "installation": "approved",
+            "launch": "not_tested",
+            "interface": "not_tested",
+            "input": "not_tested",
+            "main_function": "demonstrated_failure",
+            "persistence": "not_tested",
+            "services": "demonstrated_failure",
+            "close": "not_tested",
+            "reopen": "not_tested"
+          },
+          "scope": "Original KeyguardManager-null create-file failure; superseded by original Trust integration152/153 for the observed path."
         }
       ]
     }

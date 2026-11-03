@@ -1,6 +1,6 @@
 # Roadmap · Arch TV nativo en Rust
 
-Prioridad151: [TrustManager/Keyguard originales→crear archivo→texto→guardar→cerrar/reabrir](docs/ROADMAP-A.md). Permiso por Ajustes y explorador real probados; crear archivo falla antes del editor. [Evidencia151](reports/android16-package-bootstrap/original-user-unlock-progress.json). Sin nota ni persistencia aceptadas; R1-MAC, ARM/GMS/DRM y entrega del producto abiertos.
+Prioridad153: [bytes guardados→cierre de proceso→relanzamiento→reapertura real](docs/ROADMAP-A.md). Trust original permite editor y texto por teclado Linux; [evidencia153](reports/android16-package-bootstrap/original-user-unlock-progress.json). Guardado todavía sin lectura válida, C3 y durabilidad abiertos; R1-MAC, ARM/GMS/DRM y producto siguen en el objetivo.
 
 Camino crítico desde132: [cierre coherente y almacenamiento/OverlayManager originales](docs/ROADMAP-A.md) → UI/entrada/nota/cierre/reapertura de Markor. El usuario ya alcanza RUNNING_UNLOCKED y AMS lanza la APK intacta hacia IntroActivity; falta aceptación del recorrido completo. R1-MAC, ARM/GMS/DRM abiertos.
 
