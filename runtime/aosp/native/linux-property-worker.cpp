@@ -96,6 +96,21 @@ int main(int argc,char** argv) {
        getsockopt(control.get(),SOL_SOCKET,SO_PEERCRED,&peer,&peer_size)!=0 || peer.uid!=getuid())return 77;
     int flags=fcntl(control.get(),F_GETFL);
     if(flags<0 || fcntl(control.get(),F_SETFL,flags|O_NONBLOCK)<0 || fcntl(control.get(),F_SETFD,FD_CLOEXEC)<0)return 74;
+    unique_fd wayland_channel;
+    if(const char* value=getenv("ARCHTV_WAYLAND_CHANNEL_FD")) {
+        char* last=nullptr;errno=0;long raw=strtol(value,&last,10);
+        if(errno || !last || *last || raw<3 || raw>65535 || raw==control.get())return 77;
+        wayland_channel.reset(static_cast<int>(raw));unsetenv("ARCHTV_WAYLAND_CHANNEL_FD");
+        int kind=0;socklen_t length=sizeof(kind);ucred remote{};socklen_t remote_length=sizeof(remote);
+        if(getsockopt(wayland_channel.get(),SOL_SOCKET,SO_TYPE,&kind,&length)!=0 || kind!=SOCK_STREAM ||
+           getsockopt(wayland_channel.get(),SOL_SOCKET,SO_PEERCRED,&remote,&remote_length)!=0 || remote.uid!=1000 ||
+           fcntl(wayland_channel.get(),F_SETFD,FD_CLOEXEC)!=0)return 77;
+        char* channel_context=nullptr;
+        if(fgetfilecon(wayland_channel.get(),&channel_context)<0)return 77;
+        bool channel_ok=channel_context && std::strcmp(channel_context,"linux.system_u:linux.object_r:archtv_wayland_channel:s0")==0;
+        freecon(channel_context);if(!channel_ok)return 77;
+        std::fprintf(stderr,"WAYLAND_COORDINATOR_CAPABILITY_CLOEXEC uid=%u fd=%d NOT_PROTOCOL_ACCEPTANCE\n",remote.uid,wayland_channel.get());
+    }
     Epoll epoll;
     if(!epoll.Open().ok())return 70;
     archtv::aosp::LinuxChildReaper children(epoll);
@@ -148,7 +163,7 @@ int main(int argc,char** argv) {
     auto setup=StartLinuxPropertyActions(&epoll);
     if(!setup.ok())return 70;
     bool stop=false,peer_gone=false,invalid=false;std::string input;
-    archtv::aosp::LinuxMc1Cohort cohort(&epoll,stop,launch_enforcing,hardware,graphics,surfaceflinger,selected,apex);
+    archtv::aosp::LinuxMc1Cohort cohort(&epoll,stop,launch_enforcing,hardware,graphics,surfaceflinger,selected,apex,wayland_channel.release());
     auto tick=[&]{return PollLinuxPropertyActions(&epoll,std::chrono::milliseconds(50)).ok() && children.healthy() && !shutdown.failed();};
     auto registered=epoll.RegisterHandler(control.get(),[&]{
         char bytes[64];

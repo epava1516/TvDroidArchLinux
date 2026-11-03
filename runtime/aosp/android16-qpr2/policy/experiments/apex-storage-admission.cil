@@ -161,3 +161,18 @@
 ; adaptation for our HWC adapter, not an upstream Cuttlefish rule copy.
 (typeattributeset halclientdomain (hal_graphics_composer_default))
 (typeattributeset hal_graphics_allocator_client (hal_graphics_composer_default))
+
+; Capability-only Linux Wayland transport: factory creates/connects the
+; channel, validates its real peer, then transfers it only to trusted Rust,
+; original coordinator and the selected HWC child. No Android ambient connect.
+(type archtv_wayland_channel)
+(roletype linux.object_r archtv_wayland_channel)
+(allow linux.init_t archtv_wayland_channel (unix_stream_socket (create connect read write getattr getopt setopt shutdown)))
+(allow archtv_launcher archtv_wayland_channel (unix_stream_socket (read write getattr getopt setopt shutdown)))
+(allow init archtv_wayland_channel (unix_stream_socket (read write getattr getopt setopt shutdown)))
+(allow hal_graphics_composer_default linux.init_t (fd (use)))
+(allow hal_graphics_composer_default archtv_wayland_channel (unix_stream_socket (read write getattr getopt setopt shutdown)))
+(typeattribute archtv_not_wayland_factory)
+(typeattributeset archtv_not_wayland_factory (not linux.init_t))
+(neverallow archtv_not_wayland_factory archtv_wayland_channel (unix_stream_socket (create connect bind listen accept)))
+(neverallow appdomain archtv_wayland_channel (unix_stream_socket (read write)))

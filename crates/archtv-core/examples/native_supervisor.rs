@@ -1,6 +1,7 @@
 //! Internal lifetime exerciser; component startup is not runtime readiness.
 use archtv_core::native_process::{NativeFailure, NativeProcess, Startup};
 use std::{process::Command, time::Duration};
+use std::os::{fd::{FromRawFd, OwnedFd}, unix::process::CommandExt};
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut args = std::env::args_os().skip(1);
     let expected = match args.next().as_deref() {
@@ -37,7 +38,29 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let executable = args.next().ok_or("missing executable")?;
     let mut command = Command::new(executable);
     command.args(args).env_clear().env("PATH", "/usr/bin:/bin");
+    // Explicit connected capability, never an ambient Wayland pathname grant.
+    let channel = match std::env::var("ARCHTV_WAYLAND_CHANNEL_FD") {
+        Ok(value) => {
+            let fd: i32 = value.parse()?;
+            if fd < 3 { return Err("invalid Wayland capability fd".into()); }
+            let owned = unsafe { OwnedFd::from_raw_fd(fd) };
+            if unsafe { libc::fcntl(fd, libc::F_SETFD, libc::FD_CLOEXEC) } < 0 {
+                return Err(std::io::Error::last_os_error().into());
+            }
+            command.env("ARCHTV_WAYLAND_CHANNEL_FD", fd.to_string());
+            unsafe { command.pre_exec(move || {
+                if libc::fcntl(fd, libc::F_SETFD, 0) < 0 { return Err(std::io::Error::last_os_error()); }
+                Ok(())
+            }); }
+            Some(owned)
+        },
+        Err(std::env::VarError::NotPresent) => None,
+        Err(error) => return Err(error.into()),
+    };
     let mut process = NativeProcess::spawn(command)?;
+    // Parent must not keep the connection alive after child handoff.
+    drop(channel);
+
     println!(
         "NATIVE_PROCESS_OWNED pid={} pidfd={}",
         process.pid(),

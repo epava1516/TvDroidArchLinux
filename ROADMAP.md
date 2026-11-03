@@ -1,5 +1,7 @@
 # Roadmap · Arch TV nativo en Rust
 
+Vigente213 · [conexión Wayland tipada bajo enforcing](reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): peer real UID1000/SID Linux.init_t y hash del compositor verificados; descriptor conectado delegado sólo a HWC, copias anteriores cerradas y ruta ambiente ausente. Supera la conexión antes denegada; falla al recibir un archivo compartido Linux.init_tmpfs_t. Smithay usa temporales del directorio XDG para el teclado v5 negociado: aislar ese directorio por UUID con tipos específicos, sin permisos sobre temporales genéricos. Sin píxeles ni nueva etapa APK. Preparación del descriptor anterior a enforcing; reinicio individual de HWC no cubierto. Política33/policyload31, anfitrión devuelto a permisivo, auditoría sin pérdida nueva, cierre externo y nota previa intactos. R1-MAC completo, Zygote original y ARM/GMS/DRM siguen abiertos.
+
 Prioridad211: [estado canónico](docs/ESTADO.md) · Mapper y contexto GLES software avanzan; HWC bloquea en socket Wayland. Integrar endpoint/peer/FDs específicos y probar presentación real en Smithay, luego display, Zygote y Markor bajo MAC. R1-MAC y compatibilidad amplia siguen abiertos.
 
 Histórico179: [estado](docs/ESTADO.md) · builtin/VDC original alcanza vold y falla25 en auxiliar NNP; exigir operación user0 completa y APEX en vivo, luego Markor bajo MAC. [Evidencias](reports/android16-package-bootstrap/original-apex-derive-mac-progress.json).

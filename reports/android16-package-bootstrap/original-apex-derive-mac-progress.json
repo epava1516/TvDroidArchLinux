@@ -2483,5 +2483,45 @@
       "Original close incomplete; external closure, known BPF resources and persisted note verified. R1-MAC completecohort open.",
       "Original authorized security/netd operations, original Zygote/framework/Markor MAC and ARM/GMS/DRM remain open."
     ]
+  },
+  "integrated212_213": {
+    "status": "typed_connected_Wayland_capability_reaches_protocol_under_enforcing_shared_file_receive_denied",
+    "execution": 213,
+    "build": 212,
+    "hwc_input": 7,
+    "policy": 33,
+    "policyload_count": 31,
+    "policy_readback_sha256": "fce3e900eafb1e95e9595236998dbaf7672d16108706b1a3feca2f2cca82dca5",
+    "evidence": [
+      {
+        "path": "/home/tv/recuperacion-archtv/77608ead-6b1c-4476-98e5-3960569d2a71-markor-software-launch/result.json",
+        "sha256": "a5ad91a365b4c805b002a65c0a09e97fdc5d7bd9495d610033ad21b3d0303f01"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/77608ead-6b1c-4476-98e5-3960569d2a71-markor-software-launch/wayland-peer.json",
+        "sha256": "588c20d21713422596264621ee56f35f2ffd3a83cff92a3c0c97432a96b28d5c"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/77608ead-6b1c-4476-98e5-3960569d2a71-markor-software-launch/completion-consumer.json",
+        "sha256": "3245778c833a03729f8dc43df2f2d6f3b3b2d45db5882fc4ad36d94c1523de42"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/77608ead-6b1c-4476-98e5-3960569d2a71-markor-software-launch/bpf-all-known-after.json",
+        "sha256": "dac23cb772a536720ce861a1a989e5b112e28bdce202a6645e5a43106d628a4a"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/77608ead-6b1c-4476-98e5-3960569d2a71-markor-software-launch/userdata-after213-close.json",
+        "sha256": "35d4418f7f178c103f0ab506d1aa178c7c82eeb645c99788b614323405157dbf"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after213-host.json",
+        "sha256": "8371a54ffc1f14e5cf7d51c3f2b833b30a1febe20c0d94e84fe83ec90bd6182b"
+      }
+    ],
+    "failure212": "Python SO_PEERSEC buffer4096 exceeds Python getsockopt limit; preflight failed before MAC/APEX. Corrected1024 in immutable Linux-only runtime overlay for213.",
+    "verified213": "Peer UID/GID1000, compositor binary SHA4db18bd9..., PID/starttime and SO_PEERSEC match Linux.init_t. Typed connected capability delegated only to HWC; coordinator and namespace-parent copies closed. Ambient socket path absent. MAC interval9.444751680013724s, APEX41 actual inventory, audit newloss0.",
+    "remaining": "Incoming shared FD /run/user/1000/#53 deleted is Linux.init_tmpfs_t, read/write denied to HWC; SF aborts creating AIDL composer. Pinned Smithay keymap_file.rs sends tempfile_in(XDG_RUNTIME_DIR) for keyboard version<7; our seat bind caps5. Exact FD origin inferred from source/path, not independently traced.",
+    "limits": "Factory preflight before enforcing; no claim factory operations enforced. Existing trusted compositor remains Linux.init_t. One capability per cohort; HWC child restart needs fresh admission and is unimplemented. No pixels/input/APK stage accepted; original graceful close incomplete; external closure verified. R1-MAC open.",
+    "next": "Dedicated UUID-bound runtime directory/file types for incoming shared files, no broad host tmpfs grant; actual protocol and display test, then original Zygote and Markor under MAC."
   }
 }

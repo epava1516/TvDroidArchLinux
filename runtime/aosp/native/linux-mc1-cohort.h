@@ -36,8 +36,8 @@ namespace archtv::aosp {
 class LinuxMc1Cohort {
  public:
     using Tick = std::function<bool()>;
-    LinuxMc1Cohort(android::init::Epoll* epoll,const bool& stop,int expected_mode,bool hardware=false,bool graphics=false,bool surfaceflinger=false,bool selected=false,bool apex=false)
-        : epoll_(epoll),stop_(stop),expected_mode_(expected_mode),hardware_requested_(hardware),graphics_requested_(graphics),surfaceflinger_requested_(surfaceflinger),selected_requested_(selected),apex_requested_(apex) {}
+    LinuxMc1Cohort(android::init::Epoll* epoll,const bool& stop,int expected_mode,bool hardware=false,bool graphics=false,bool surfaceflinger=false,bool selected=false,bool apex=false,int wayland_fd=-1)
+        : epoll_(epoll),stop_(stop),expected_mode_(expected_mode),hardware_requested_(hardware),graphics_requested_(graphics),surfaceflinger_requested_(surfaceflinger),selected_requested_(selected),apex_requested_(apex),wayland_channel_(wayland_fd) {}
     android::base::Result<void> Start(const Tick& tick) {
         using namespace android::init;
         auto& services=ServiceList::GetInstance();
@@ -640,7 +640,21 @@ class LinuxMc1Cohort {
                 std::fprintf(stderr,"MC3_GRAPHICS_SERVICE_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
                 if(!closing_)manager_failed_=true;
             });
-            if(auto result=service->Start();!result.ok())return result;
+            const bool handoff=service==composer_ && wayland_channel_.get()>=0;
+            if(handoff) {
+                if(getenv("ARCHTV_WAYLAND_FD") || fcntl(wayland_channel_.get(),F_GETFD)!=FD_CLOEXEC)
+                    return android::base::Error()<<"Wayland capability was not sealed for other services";
+                if(setenv("ARCHTV_WAYLAND_FD",std::to_string(wayland_channel_.get()).c_str(),1)!=0 ||
+                   fcntl(wayland_channel_.get(),F_SETFD,0)!=0)return android::base::ErrnoError()<<"Wayland HWC publication failed";
+            }
+            auto started=service->Start();
+            if(handoff) {
+                unsetenv("ARCHTV_WAYLAND_FD");
+                if(fcntl(wayland_channel_.get(),F_SETFD,FD_CLOEXEC)!=0)return android::base::ErrnoError()<<"Wayland capability reseal failed";
+                wayland_channel_.reset();
+                std::fprintf(stderr,"WAYLAND_CAPABILITY_PUBLISHED_ONLY_HWC pid=%d parent_copy_closed=1 NOT_PROTOCOL_ACCEPTANCE\n",service->pid());
+            }
+            if(!started.ok())return started;
             std::fprintf(stderr,"MC3_GRAPHICS_SERVICE_STARTED name=%s pid=%d uid=%u gid=%u NOT_REGISTERED\n",
                          service->name().c_str(),service->pid(),service->uid(),service->gid());
         }
@@ -1106,6 +1120,7 @@ class LinuxMc1Cohort {
     android::init::Service* storaged_=nullptr;
     android::init::Service* swcodec_=nullptr;
     android::init::Service* idmap_=nullptr;
+    android::base::unique_fd wayland_channel_;
     android::init::Service* logd_=nullptr;
     android::init::Service* logcat_=nullptr;
     android::init::Service* netd_=nullptr;

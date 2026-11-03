@@ -13,12 +13,22 @@ native=Path('/home/tv/.cache/archtv/aosp16-qpr2/frameworks-native-gui-source-1')
 for name in ['IInputConstants','MotionEventFlag','PointerCaptureMode','PointerIconType']:
  source=native/('libs/input/android/os/'+name+'.aidl');record['inputs'][str(source)]=digest(source)
  run([str(r/'dist/aosp16/aidl-host-build-4/aidl'),'--lang=cpp','--out='+str(out/'aidl-src'),'--header_out='+str(out/'include'),'-I'+str(native/'libs/input'),str(source)])
-state=json.loads((old/'build.json').read_text());source=r/'runtime/aosp/native/linux-wayland-output.cpp';cmd=list(next(c['argv'] for c in state['commands'] if '-c' in c['argv'] and 'linux-wayland-frame-composer.cpp' in c['argv'][c['argv'].index('-c')+1]));cmd[cmd.index('-c')+1]=str(source);cmd[1:1]=['-I'+str(out/'include'),'-I'+str(native/'libs/binder/include'),'-I/home/tv/.cache/archtv/aosp16-qpr2/wayland-input-original']
-for flag,suffix in [('-o','.o'),('-MF','.d')]:cmd[cmd.index(flag)+1]=str(out/(source.stem+suffix))
-for p in [source,r/'runtime/aosp/native/linux-wayland-input.h']:
- record['inputs'][str(p)]=digest(p)
-run(cmd)
-cmd=list(link['argv']);oldobj=str(old/'linux-wayland-output.o');assert cmd.count(oldobj)==1;cmd[cmd.index(oldobj)]=str(out/'linux-wayland-output.o');cmd[-1]=str(out/'android.hardware.graphics.composer3-service.archtv-input')
+state=json.loads((old/'build.json').read_text())
+for name in ['linux-wayland-output.cpp','linux-wayland-frame-composer.cpp']:
+ source=r/'runtime/aosp/native'/name
+ cmd=list(next(c['argv'] for c in state['commands'] if '-c' in c['argv'] and 'linux-wayland-frame-composer.cpp' in c['argv'][c['argv'].index('-c')+1]))
+ cmd[cmd.index('-c')+1]=str(source)
+ cmd[1:1]=['-I'+str(out/'include'),'-I'+str(native/'libs/binder/include'),'-I/home/tv/.cache/archtv/aosp16-qpr2/wayland-input-original']
+ for flag,suffix in [('-o','.o'),('-MF','.d')]:cmd[cmd.index(flag)+1]=str(out/(source.stem+suffix))
+ record['inputs'][str(source)]=digest(source)
+ run(cmd)
+for name in ['linux-wayland-input.h','linux-wayland-output.h','linux-wayland-frame-composer.h']:
+ p=r/'runtime/aosp/native'/name;record['inputs'][str(p)]=digest(p)
+cmd=list(link['argv'])
+for name in ['linux-wayland-output','linux-wayland-frame-composer']:
+ oldobj=str(old/(name+'.o'));assert cmd.count(oldobj)==1
+ cmd[cmd.index(oldobj)]=str(out/(name+'.o'))
+cmd[-1]=str(out/'android.hardware.graphics.composer3-service.archtv-input')
 lib=r/'dist/aosp16/factory-inputs-3/root/system/lib64/libinput.so';cmd.insert(-2,str(lib))
 record['inputs'][str(lib)]=digest(lib)
 for a in cmd:

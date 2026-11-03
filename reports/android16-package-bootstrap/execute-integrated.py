@@ -6,6 +6,67 @@ import xml.etree.ElementTree, hashlib
 # Resolve the Linux verification hash provider before entering the chroot.
 hashlib.sha256(b"").digest()
 r=Path(__file__).resolve().parents[2]
+# Host-PID preflight inside the existing transient service, before unshare.
+# Connect one typed capability; never grant the HWC ambient host connectto.
+if len(sys.argv)>1 and sys.argv[1]=='--prepare-wayland':
+ import os,socket as unix_socket,stat,struct,ctypes,subprocess,datetime
+ assert os.geteuid()==0 and len(sys.argv)==5
+ peer=Path(sys.argv[2]);payload_arg=Path(sys.argv[3]).resolve()
+ cp=Path(os.environ['ARCHTV_RUN_CHECKPOINT']);manifest=json.loads((cp/'completion-manifest.json').read_text())
+ assert manifest['checkpoint']==str(cp)
+ st=peer.lstat();assert stat.S_ISSOCK(st.st_mode) and st.st_uid==1000
+ lib=ctypes.CDLL(str(r/'dist/aosp16/linux-selinux-handoff-2/libselinux-3.11/src/libselinux.so.1'),use_errno=True)
+ lib.getsockcreatecon_raw.argtypes=[ctypes.POINTER(ctypes.c_char_p)];lib.setsockcreatecon_raw.argtypes=[ctypes.c_char_p];lib.freecon.argtypes=[ctypes.c_void_p]
+ old=ctypes.c_char_p();assert lib.getsockcreatecon_raw(ctypes.byref(old))==0
+ try:
+  assert lib.setsockcreatecon_raw(b'linux.system_u:linux.object_r:archtv_wayland_channel:s0')==0,ctypes.get_errno()
+  channel=unix_socket.socket(unix_socket.AF_UNIX,unix_socket.SOCK_STREAM)
+ finally:
+  assert lib.setsockcreatecon_raw(old)==0
+  if old:lib.freecon(old)
+ channel.connect(str(peer))
+ pid,uid,gid=struct.unpack('3i',channel.getsockopt(unix_socket.SOL_SOCKET,unix_socket.SO_PEERCRED,12))
+ outer='archtv-markor-session-'+manifest['id']+'.service'
+ actual=int(subprocess.check_output(['systemctl','show',outer,'-p','MainPID','--value'],text=True).strip())
+ assert pid==actual and pid>1 and uid==1000 and gid==1000
+ pidfd=os.pidfd_open(pid)
+ process=Path('/proc')/str(pid)
+ start=process.joinpath('stat').read_text().rsplit(')',1)[1].split()[19]
+ expected=Path('/home/tv/.cache/archtv/compositor-native/debug/archtv-compositor')
+ assert (process/'exe').resolve()==expected.resolve()
+ expected_hash=json.loads((cp/'before-launch.json').read_text())['compositor_executable_sha256']
+ actual_hash=hashlib.sha256((process/'exe').read_bytes()).hexdigest();assert actual_hash==expected_hash
+ context=(process/'attr/current').read_text().rstrip(chr(0)+'\n')
+ peersec=channel.getsockopt(unix_socket.SOL_SOCKET,unix_socket.SO_PEERSEC,1024).rstrip(b'\0').decode()
+ assert context==peersec and context.startswith('linux.')
+ assert process.joinpath('stat').read_text().rsplit(')',1)[1].split()[19]==start
+ now=peer.lstat();assert (st.st_dev,st.st_ino,st.st_uid)==(now.st_dev,now.st_ino,now.st_uid)
+ lib.fgetfilecon_raw.argtypes=[ctypes.c_int,ctypes.POINTER(ctypes.c_char_p)];label=ctypes.c_char_p()
+ assert lib.fgetfilecon_raw(channel.fileno(),ctypes.byref(label))>=0
+ channel_label=label.value.decode();lib.freecon(label)
+ assert channel_label=='linux.system_u:linux.object_r:archtv_wayland_channel:s0'
+ record={'id':manifest['id'],'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'boot_id':Path('/proc/sys/kernel/random/boot_id').read_text().strip(),'pid':pid,'pid_starttime':start,'uid':uid,'gid':gid,'exe_sha256':actual_hash,'process_context':context,'SO_PEERSEC':peersec,'socket_inode':[st.st_dev,st.st_ino],'socket_context':os.getxattr(peer,'security.selinux').decode().rstrip(chr(0)),'channel_context':channel_label,'scope':'Actual host-PID/peer validation before namespaces. Connected capability only, not Wayland protocol/pixels acceptance; no peer relabel.'}
+ (cp/'wayland-peer.json').write_text(json.dumps(record,indent=2)+'\n');os.chown(cp/'wayland-peer.json',1000,1000)
+ os.close(pidfd)
+ os.environ['ARCHTV_WAYLAND_CHANNEL_FD']=str(channel.fileno());channel.set_inheritable(True)
+ # Preserve the existing namespace topology, but close the connection in
+ # its waiting parent instead of letting util-linux unshare retain a copy.
+ kernel=ctypes.CDLL(None,use_errno=True)
+ parent_pidfd=os.pidfd_open(os.getpid())
+ assert kernel.unshare(0x00020000|0x20000000|0x40000000|0x08000000|0x04000000)==0,ctypes.get_errno()
+ child=os.fork()
+ if child:
+  channel.close();os.close(parent_pidfd)
+  record['preflight_parent_copy_closed']=True;record['delegated_host_pid']=child
+  (cp/'wayland-peer.json').write_text(json.dumps(record,indent=2)+'\n');os.chown(cp/'wayland-peer.json',1000,1000)
+  _,status=os.waitpid(child,0);code=os.waitstatus_to_exitcode(status);os._exit(code if code>=0 else 128-code)
+ import select
+ assert kernel.prctl(1,9,0,0,0)==0,ctypes.get_errno() # PR_SET_PDEATHSIG/SIGKILL
+ poll=select.poll();poll.register(parent_pidfd,select.POLLIN)
+ if poll.poll(0):os._exit(77)
+ os.close(parent_pidfd)
+ os.execv('/usr/bin/python',['/usr/bin/python',str(Path(__file__).resolve()),*sys.argv[2:]])
+
 socket=sys.argv[1];payload=Path(sys.argv[2]).resolve();store=Path(sys.argv[3]).resolve()
 build_options=json.loads((payload.parent/'build-options.json').read_text())
 original_apex_bootstrap=build_options.get('original_apex_bootstrap',False)
@@ -21,6 +82,23 @@ scope={'__name__':'__materialize__','__file__':str(r/'reports/android16-hwc3-way
 saved=sys.argv;sys.argv=[str(r/'reports/android16-hwc3-wayland/execute-graphics.py'),socket,'--observe-logs','--surfaceflinger','--selected-display']
 exec(compile(recipe.replace(last,''),'<graphics materialization>','exec'),scope)
 text=scope['base']
+if build_options.get('preconnected_wayland',False):
+ import os
+ channel_fd=int(os.environ.pop('ARCHTV_WAYLAND_CHANNEL_FD'));assert channel_fd>=3
+ ambient="target=root/'dev/socket/archtv-wayland';target.touch();mount('--bind',peer,target)"
+ assert text.count(ambient)==1
+ text=text.replace(ambient,"print('WAYLAND_AMBIENT_PATH_NOT_EXPOSED capability_only=1',flush=True)")
+ os.set_inheritable(channel_fd,False)
+ # Retain the capability only in the child Rust supervisor. All other
+ # preparation subprocesses keep close_fds=True; parent copy closes on spawn.
+ call='env=env,start_new_session=True)'
+ assert text.count(call)==1
+ text=text.replace(call,'env=env,start_new_session=True,pass_fds=('+str(channel_fd)+',))')
+ envline="env={'PATH':'/system/bin:/archtv/bin','ANDROID_ROOT':'/system','ANDROID_DATA':'/data'}"
+ assert text.count(envline)==1
+ text=text.replace(envline,envline+"\nenv['ARCHTV_WAYLAND_CHANNEL_FD']="+repr(str(channel_fd)))
+ marker='errors=[];identities=[]';assert text.count(marker)==1
+ text=text.replace(marker,'os.close('+str(channel_fd)+')\n'+marker,1)
 if build_options.get('original_logd',False):
  # Original init owns all three original sockets; do not prebind logdw in
  # the Linux Python observer. Legacy candidates keep their passive observer.

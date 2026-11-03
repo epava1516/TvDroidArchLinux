@@ -15,6 +15,20 @@
 #include <limits>
 #include <vector>
 #include <unistd.h>
+#include <fcntl.h>
+// Seal the delegated capability before the original HWC main or any exec.
+// No ambient socket name is authorized by this handoff.
+__attribute__((constructor)) static void SealInheritedWaylandCapability() {
+    const char* text=std::getenv("ARCHTV_WAYLAND_FD");
+    if(!text)return;
+    char* end=nullptr;errno=0;long value=std::strtol(text,&end,10);
+    if(errno || !end || *end || value<3 || value>65535)_exit(77);
+    int fd=static_cast<int>(value),kind=0;socklen_t size=sizeof(kind);
+    ucred peer{};socklen_t peer_size=sizeof(peer);
+    if(fcntl(fd,F_SETFD,FD_CLOEXEC)!=0 ||
+       getsockopt(fd,SOL_SOCKET,SO_TYPE,&kind,&size)!=0 || kind!=SOCK_STREAM ||
+       getsockopt(fd,SOL_SOCKET,SO_PEERCRED,&peer,&peer_size)!=0 || peer.uid!=1000)_exit(77);
+}
 namespace aidl::android::hardware::graphics::composer3::impl {
 LinuxWaylandFrameComposer::~LinuxWaylandFrameComposer(){stop_=true;if(monitor_.joinable())monitor_.join();}
 HWC3::Error LinuxWaylandFrameComposer::init() {

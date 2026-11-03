@@ -282,9 +282,9 @@
     "semantic_hash": ""
   },
   "ROADMAP.md": {
-    "mtime": 1793743272.5122,
-    "seen": 1793743281.3202815,
-    "ast_hash": "ceac7d7d82de13ed4b1ffe62716bc1fe",
+    "mtime": 1793744917.2036703,
+    "seen": 1793744931.372988,
+    "ast_hash": "4629e08c95157b5090571213f3ed0e50",
     "semantic_hash": ""
   },
   "THIRD_PARTY.md": {
@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793743272.5018303,
-    "seen": 1793743281.3224669,
-    "ast_hash": "0ec8d7b0b6dc8fef8c472836305d82a9",
+    "mtime": 1793744917.1879838,
+    "seen": 1793744931.3752937,
+    "ast_hash": "4b4656d2c4e8af159203618837dda00b",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793743272.4973333,
-    "seen": 1793743281.3236268,
-    "ast_hash": "b754052462229ce312cadb73fd727e6b",
+    "mtime": 1793744917.1826663,
+    "seen": 1793744931.3759367,
+    "ast_hash": "b61b8e0f076b8daf1dc93be159bf9293",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793743272.505289,
-    "seen": 1793743281.3243833,
-    "ast_hash": "d6ba28769c7933931f8e134da461a0fa",
+    "mtime": 1793744917.1990654,
+    "seen": 1793744931.3768153,
+    "ast_hash": "ab3b9479890c134ffb6cef4ab75d1c32",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -816,9 +816,9 @@
     "semantic_hash": ""
   },
   "docs/CONTRATO-APK.md": {
-    "mtime": 1793743272.5065267,
-    "seen": 1793743281.3233666,
-    "ast_hash": "e89781b8d2b3aec7effbf8e704b27b7c",
+    "mtime": 1793744917.1905198,
+    "seen": 1793744931.3756976,
+    "ast_hash": "c9d743b570bab252abe3e76ef18a3b7b",
     "semantic_hash": ""
   },
   "runtime/apk/README.md": {
@@ -1716,9 +1716,9 @@
     "semantic_hash": ""
   },
   "docs/EVIDENCIAS.md": {
-    "mtime": 1793743272.5097215,
-    "seen": 1793743281.323784,
-    "ast_hash": "822214b30575a2fde74155b4245970b6",
+    "mtime": 1793744917.1957996,
+    "seen": 1793744931.3761468,
+    "ast_hash": "1de7a1e6333e172534b025d7ed76deab",
     "semantic_hash": ""
   },
   "fixtures/aosp-framework-space/FrameworkSpaceProbe.java": {
@@ -1728,9 +1728,9 @@
     "semantic_hash": ""
   },
   "docs/COMPATIBILIDAD-APK.md": {
-    "mtime": 1793743272.5080657,
-    "seen": 1793743281.3225472,
-    "ast_hash": "e5bd3a0fc3f8e715a77f9bdbb3eb6147",
+    "mtime": 1793744917.1926565,
+    "seen": 1793744931.3753743,
+    "ast_hash": "ef4b2189521d378149cb659c7d182cd6",
     "semantic_hash": ""
   },
   "fixtures/aosp-window-service/ServiceRegistryChecks.java": {
@@ -1908,9 +1908,9 @@
     "semantic_hash": ""
   },
   "crates/archtv-core/examples/native_supervisor.rs": {
-    "mtime": 1793705637.649001,
-    "seen": 1793705647.8788686,
-    "ast_hash": "d51195dcc4cd9fca2ab261e8a0bdbdd1",
+    "mtime": 1793743708.6728876,
+    "seen": 1793744931.3511262,
+    "ast_hash": "0e79cf90aeb32a746d562b3cee15f8b5",
     "semantic_hash": ""
   },
   "crates/archtv-core/src/native_process.rs": {
@@ -1926,9 +1926,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-property-worker.cpp": {
-    "mtime": 1793687477.3531575,
-    "seen": 1793687958.9246,
-    "ast_hash": "cf583421bfa32f2e95190d636adae5e2",
+    "mtime": 1793743900.147242,
+    "seen": 1793744931.3603776,
+    "ast_hash": "57ce7f1d3941f3e1f8fb6b52a073e6b9",
     "semantic_hash": ""
   },
   "runtime/aosp/native/verify-service-profile.cpp": {
@@ -1974,9 +1974,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-mc1-cohort.h": {
-    "mtime": 1793741463.5923007,
-    "seen": 1793741727.975218,
-    "ast_hash": "ab60ef55e985ac3bd6cd0d0ba5f023b0",
+    "mtime": 1793743708.6810606,
+    "seen": 1793744931.3603702,
+    "ast_hash": "f3ca15dba83ed328a008ba848010846b",
     "semantic_hash": ""
   },
   "fixtures/aosp-wayland-output/client.cpp": {
@@ -2010,9 +2010,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-wayland-frame-composer.cpp": {
-    "mtime": 1793478450.258549,
-    "seen": 1793647620.639494,
-    "ast_hash": "3b1eb6c9bcf1663a1e297e1654d1b23b",
+    "mtime": 1793743900.1454732,
+    "seen": 1793744931.3606536,
+    "ast_hash": "726ba00f80588bf44ec9e2b10a6e5545",
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-wayland-frame-composer.h": {
