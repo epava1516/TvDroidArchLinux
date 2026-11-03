@@ -1,6 +1,6 @@
 # Roadmap · Arch TV nativo en Rust
 
-Prioridad201: [estado canónico](docs/ESTADO.md) · Registro logd/logcat original probado bajo MAC. Netd falla al leer montajes: adaptar contrato de enlaces proc conservando controles del destino y semántica Linux; después registro/operación netd, Zygote y Markor bajo MAC. Cierre original y R1-MAC abiertos.
+Prioridad202: [estado canónico](docs/ESTADO.md) · Netd supera montajes/cgroup y falla map_create por CAP_BPF. Justificar adaptación limitada conservando sysctl global2 y controles BPF originales; después registro/operación, Zygote y Markor bajo MAC. R1-MAC y cierre original abiertos.
 
 Histórico179: [estado](docs/ESTADO.md) · builtin/VDC original alcanza vold y falla25 en auxiliar NNP; exigir operación user0 completa y APEX en vivo, luego Markor bajo MAC. [Evidencias](reports/android16-package-bootstrap/original-apex-derive-mac-progress.json).
 

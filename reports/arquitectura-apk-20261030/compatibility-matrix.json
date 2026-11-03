@@ -416,13 +416,13 @@
         "scope": "Exact Markorv164 Markdown note created163 survives complete cohort teardown and original subsystems167; actual bytes, same UID/inodes/MCS, original install/force-stop/relaunch and real single pointer opens editor.167 native/exterior0. Not host reboot/power loss, FBE/MAC, graceful close, arbitrary upgrade or general APK compatibility."
       },
       "runtime_security_observation": {
-        "candidate": 201,
-        "status": "original_logd_logcat_under_enforcing_netd_mounts_denied",
+        "candidate": 202,
+        "status": "original_netd_cgroup_discovery_pass_map_create_capBPF_denied",
         "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-        "record_sha256": "bc03fe62ab6b972207fb2c41fae9324673470fcdcde7eff6c33d27e28851cd34",
-        "scope": "Original logging real records underMAC; netd1 cgroup discovery, no newAPKstage. Original shutdown incomplete; external closure verified.",
+        "record_sha256": "0ef99ae2378684fbd443ef91cdc2743a371a6294a8c2a01efa81b964c406994f",
+        "scope": "Original logd/logcat and netd mount discovery underMAC, then map_createEPERM/SIGABRT. No netd operation or new APK stage; original close incomplete.",
         "r1_mac": "open",
-        "host_after": "Permissive candidate27/policyload25, auditnewloss0, noownedresources, previousnote/CE/DE unchanged"
+        "host_after": "Candidate1 while enforcing6.326s, restored0, host candidate28/policyloadCOUNT26, auditnewloss0/rulesunchanged, no units/loops/dm/FUSE. Previous note21bytes/hash/CE/DE retained. UUID consumed; gate absent."
       },
       "runtime_security_observation_history": [
         {
@@ -478,6 +478,15 @@
           "scope": "Original Mainline and platform BPF loaders exit0 and original completion property; netd starts then exit1, no netd service or APK stage accepted.",
           "r1_mac": "open",
           "host_after": "41 known programs and58 maps absent after close, no loops/dm/FUSE/owned units. Audit loss delta0; permissive0 restored, policyload24/candidate26. Previous note/hash/CE/DE unchanged."
+        },
+        {
+          "candidate": 201,
+          "status": "original_logd_logcat_under_enforcing_netd_mounts_denied",
+          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "record_sha256": "bc03fe62ab6b972207fb2c41fae9324673470fcdcde7eff6c33d27e28851cd34",
+          "scope": "Original logging real records underMAC; netd1 cgroup discovery, no newAPKstage. Original shutdown incomplete; external closure verified.",
+          "r1_mac": "open",
+          "host_after": "Permissive candidate27/policyload25, auditnewloss0, noownedresources, previousnote/CE/DE unchanged"
         }
       ],
       "runtime_security_history": [

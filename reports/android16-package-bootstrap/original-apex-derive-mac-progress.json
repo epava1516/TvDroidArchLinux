@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "utc": "2026-11-03T21:04:57.711758+00:00",
+  "utc": "2026-11-03T21:10:53.827400+00:00",
   "scope": "Partial original APEX/derive admission under bounded enforcing; no new APK stage or general MAC/isolation acceptance",
   "base_commit": "39d0be0edb77c13575681175fc26e730adee3c11",
   "executions": {
@@ -1318,7 +1318,7 @@
     "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load10/after-load.json",
     "sha256": "309743229826231a5a6d96498f808485c1d5ad5ce3a5cd8c1a279f21f26b9aa8"
   },
-  "next": "Map common original domain proc alias read/getattr to actual proc_mounts and Linux.proc_net_t lnk_file; leave regular target checks unchanged. Test original netd cgroup discovery.",
+  "next": "Contrast original netd:self bpf map_create and Linux6.18 syscall.c1450..1457 CAP_BPF check, propose narrow netd self capability2 bpf while retaining original bpf object permissions, neverallow and global sysctl2. No SYS_ADMIN or APK capability grant. Then original operation/registration, not lookup-only acceptance.",
   "original_sources": {
     "sdkextensions_commit": "4d10e57070bb9c6edcd13bf74e9d01717b2a5ecf",
     "derive_rc_sha256": "a9e65b0c114408e5cb8356bdb435a6b48d0a67cd7879915c52ffa094a267f607",
@@ -1388,8 +1388,8 @@
     "sha256": "9e395067238c647c729c48a03dc8a115e81727ff30a8bfd6f4e50098098c9134"
   },
   "latest_host": {
-    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after201-host.json",
-    "sha256": "7da835f99c3764d7bda171647583a15fd626b881a01a96e18c7e56fe78f734ec"
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after202-host.json",
+    "sha256": "809eecf9f2dced4d1c93924aed545d1c021b5c613d8c02dc04d6862516daac89"
   },
   "vdc_source_contract": {
     "builtin": "Pinned system/core/init/builtins.cpp1122–1172: original temporary exec plus original failure callback; exact argv /system/bin/vdc --wait cryptfs init_user0. Native observes actual reaping before advance, no shell redirection or synthetic readiness.",
@@ -1872,5 +1872,63 @@
     "fatal_netd": "Actual original netd: Failed to read mounts: Permission denied; Failed to find cgroup v2 root Permission denied, exits1. Audit proc_mounts lnkread matches source libprocessgroup setmntent(/proc/mounts). Linux policycap genfs_seclabel_symlinks changes AOSP original alias label semantics; source diagnosis recorded.",
     "closure": "Candidate1 while enforcing5.979s, watchdog restored0; original Close reports services not collected and Android failure shutdown intercepted, not graceful closure acceptance. External cohort closed, allknown41prog58map absent, loops/dm/FUSE none, auditnewloss0/rulesunchanged, VT/GPU restored and note/CE/DE retained.",
     "limitations": "Real logging/error evidence, no netd availability or new APK stage. Host observer logd proc metadata denied repeatedly, not fixed with new inspection rights. Other VINTF/GPU/FUSE limits visible in logs and open. R1-MAC completecohort/Zygote/ARM/GMS/DRM open."
+  },
+  "integrated202": {
+    "id": "9283f240-deb5-452d-82e7-b59790d1657f",
+    "evidence": {
+      "result.json": {
+        "path": "/home/tv/recuperacion-archtv/9283f240-deb5-452d-82e7-b59790d1657f-markor-software-launch/result.json",
+        "sha256": "1719f15335b77e8010997509a9110ab295880b2941a21e849abba545309f5aee"
+      },
+      "mac-window.json": {
+        "path": "/home/tv/recuperacion-archtv/9283f240-deb5-452d-82e7-b59790d1657f-markor-software-launch/mac-window.json",
+        "sha256": "583def585966232972f1d596dcd439056a8bcea2485c5c740ec39fc4f4bf62b2"
+      },
+      "completion-consumer.json": {
+        "path": "/home/tv/recuperacion-archtv/9283f240-deb5-452d-82e7-b59790d1657f-markor-software-launch/completion-consumer.json",
+        "sha256": "0e191836d20d4b9f1ae0da752f723b64aa447421177e459a6aef144e1289bad8"
+      },
+      "original-logcat.txt": {
+        "path": "/home/tv/recuperacion-archtv/9283f240-deb5-452d-82e7-b59790d1657f-markor-software-launch/original-logcat.txt",
+        "sha256": "72cd3a5a7f62d1208b78ba2e31ccc1bb799dc8b60e3c743d045d18847951dd5e"
+      },
+      "runtime-source-overlay.json": {
+        "path": "/home/tv/recuperacion-archtv/9283f240-deb5-452d-82e7-b59790d1657f-markor-software-launch/runtime-source-overlay.json",
+        "sha256": "e1500d4acd5af39f9a6c126a0c0c38f819f624ebbd6659d8653a99082183e91f"
+      },
+      "userdata-after202-close.json": {
+        "path": "/home/tv/recuperacion-archtv/9283f240-deb5-452d-82e7-b59790d1657f-markor-software-launch/userdata-after202-close.json",
+        "sha256": "f7c0e5d9ab7e97590675ee0df36c59e40c735d63d21afc7c5fbef0d1409a7486"
+      },
+      "finite-audit/result.json": {
+        "path": "/home/tv/recuperacion-archtv/9283f240-deb5-452d-82e7-b59790d1657f-markor-software-launch/finite-audit/result.json",
+        "sha256": "00747e6b3e83be7c6e23dbc39c0e03c225af02ef07fb75b957b9f633817905ed"
+      }
+    },
+    "policy28_artifact": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/selected-platform-policy-28/artifact.json",
+      "sha256": "1d34772ead3d1fffde25f42ab30f0005675a906d54c8923b90b5ff5f52029126"
+    },
+    "policy28_load": {
+      "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load28/after-load.json",
+      "sha256": "842e7e171e7ee46b412bef9b95016132a9a524b9d85c647f707fdb621b2914df"
+    },
+    "after_host": {
+      "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after202-host.json",
+      "sha256": "809eecf9f2dced4d1c93924aed545d1c021b5c613d8c02dc04d6862516daac89"
+    },
+    "adaptation": "Original domain proc lnkread/getattr mirrored only to proc_mounts and Linux.proc_net_t; preserve Linux genfs_seclabel_symlinks global capability and all target content rights. Native201 unchanged with original logging.",
+    "result": "Original netd passes mount discovery and enters NetdUpdatable initialization. Map create EPERM then SIGABRT6; audit capability39/BPF denied to netd self. Host unprivileged_bpf_disabled2 remains unchanged; native RC already carries BPF but SELinux does not authorize it. No availability/operation/APK stage accepted.",
+    "other_limits": "netd reads /proc/net/psched denied as Linux.proc_net_t file, misctrl_prop read denied. These have not been proved fatal and are not automatically granted. Original close incomplete; external shutdown and state restoration checked.",
+    "next": "Contrast original netd:self bpf map_create and Linux6.18 syscall.c1450..1457 CAP_BPF check, propose narrow netd self capability2 bpf while retaining original bpf object permissions, neverallow and global sysctl2. No SYS_ADMIN or APK capability grant. Then original operation/registration, not lookup-only acceptance.",
+    "recovery": "Candidate1 while enforcing6.326s, restored0, host candidate28/policyloadCOUNT26, auditnewloss0/rulesunchanged, no units/loops/dm/FUSE. Previous note21bytes/hash/CE/DE retained. UUID consumed; gate absent.",
+    "bpf_all_known_after": {
+      "path": "/home/tv/recuperacion-archtv/9283f240-deb5-452d-82e7-b59790d1657f-markor-software-launch/bpf-all-known-after.json",
+      "sha256": "90f48d6fa4fa530b315fc62d0677795b194e37358f2e2455e024bf68847a9a48"
+    },
+    "cap_bpf_contract": {
+      "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/netd-cap-bpf-contract202.json",
+      "sha256": "6afcb32430a86d2ec0bce8eaba17c00a947ea903bd54ac4bd1db3d2cf273cdcd"
+    }
   }
 }

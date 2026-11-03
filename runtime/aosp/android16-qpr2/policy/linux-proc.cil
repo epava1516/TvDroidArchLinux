@@ -23,3 +23,12 @@
 (allow domain linux.sysctl_rpc_t (dir (ioctl read getattr lock open watch watch_reads search)))
 (allow domain linux.sysctl_net_t (dir (search)))
 (allow domain linux.sysctl_net_unix_t (dir (search)))
+
+; Linux preserves global policycap genfs_seclabel_symlinks, absent in AOSP.
+; Kernel hooks.c1533 therefore labels these aliases by genfs rather than the
+; original proc superblock SID. Actual201 netd mount discovery failed on this
+; link, before any target file read. Mirror ONLY original domain->proc alias
+; read/getattr to these actual owners, preserving all target/content checks.
+; Do not disable the Linux global capability or relabel host proc objects.
+(allow domain proc_mounts (lnk_file (read getattr)))
+(allow domain linux.proc_net_t (lnk_file (read getattr)))
