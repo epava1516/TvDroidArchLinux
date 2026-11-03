@@ -1,6 +1,6 @@
 # Matriz de aplicaciones reales
 
-145 verifica entrega original de DPAD_RIGHT22 y rechazo real de peer con contexto incorrecto; no escritura.146 muestra el último slide QuickNote, que es ayuda y no una nota. [Evidencia145/146](../reports/android16-package-bootstrap/original-user-unlock-progress.json): directorio privado de Markor ausente, ENOENT e inode0 impiden aceptar persistencia. Instalación temporal conservada; lanzamiento/interfaz/entrada/función/servicios/cierre/reapertura completos siguen abiertos. No se adjudica el fallo de DONE a esos errores sin prueba causal.
+147 supera la falta de directorios privados: creación original CE/DE y etiquetas verificadas, bienvenida terminada y solicitud original de almacenamiento visible en Smithay. [Evidencia147](../reports/android16-package-bootstrap/original-user-unlock-progress.json). La solicitud no equivale a permiso concedido; faltan editor, texto/nota, guardado y cierre/reapertura. Etapas completas conservan evidencia insuficiente; ningún porcentaje de compatibilidad ni durabilidad inferido.
 
 132 ejecutó Markor intacta y AMS retornó COLD/IntroActivity tras RUNNING_UNLOCKED. La matriz conserva el lanzamiento como pendiente de aceptación completa, con ejecución parcial registrada, y servicios como fallo demostrado: almacenamiento externo inválido /dev/null y DocumentsUI sin OverlayManager. UI visible/entrada/nota/persistencia no probadas; instalación temporal conserva aprobación. [Alcance y evidencia](../reports/android16-package-bootstrap/original-user-unlock-progress.json).
 

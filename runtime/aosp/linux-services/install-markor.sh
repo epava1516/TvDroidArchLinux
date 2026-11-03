@@ -4,30 +4,7 @@
 set -eu
 apk_path=/data/local/tmp/markor.apk
 apk_bytes=$(/system/bin/stat -c %s "$apk_path")
-created=$(/system/bin/cmd package install-create --user 0 -i android -S "$apk_bytes")
-/system/bin/printf '%s\n' "$created"
-case "$created" in
- 'Success: created install session ['*']') ;;
- *) exit 1 ;;
-esac
-session_id=${created##*\[}
-session_id=${session_id%\]}
-case "$session_id" in ''|*[!0-9]*) exit 1;; esac
-committed=false
-trap 'task_status=$?; if [ "$committed" = false ]; then /system/bin/cmd package install-abandon "$session_id" >&2 || :; fi; exit "$task_status"' EXIT
-/system/bin/cmd package install-write -S "$apk_bytes" "$session_id" base.apk "$apk_path"
-/system/bin/cmd package install-commit "$session_id"
-committed=true
-# Preserve the original PMS readback before user-start can block or the cohort stops.
-/system/bin/cmd package path --user 0 net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-postcommit-path.txt
-/system/bin/dumpsys package net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-postcommit-dump.txt
-IFS= read -r installed_line < /data/local/tmp/archtv-mc1/markor-postcommit-path.txt
-case "$installed_line" in package:/data/app/*/base.apk) ;; *) exit 1;; esac
-installed_apk=${installed_line#package:}
-source_hash=$(/system/bin/sha256sum "$apk_path")
-installed_hash=$(/system/bin/sha256sum "$installed_apk")
-[ "${source_hash%% *}" = "${installed_hash%% *}" ] || exit 1
-/system/bin/printf 'SOURCE %s\nINSTALLED %s\n' "$source_hash" "$installed_hash" > /data/local/tmp/archtv-mc1/markor-installed-bytes.txt
+# Install into an actually unlocked, mounted original user environment.
 # Original state immediately before a possibly blocking user-start, not a replacement.
 /system/bin/dumpsys activity processes > /data/local/tmp/archtv-mc1/markor-boot-before-user.txt
 # UserController can return early for the current running/locked user without
@@ -60,6 +37,34 @@ while [ "$volume_wait" -lt 120 ]; do
     /system/bin/sleep 1
 done
 /system/bin/grep -q '^emulated;0 mounted ' /data/local/tmp/archtv-mc1/markor-volumes.txt
+
+created=$(/system/bin/cmd package install-create --user 0 -i android -S "$apk_bytes")
+/system/bin/printf '%s\n' "$created"
+case "$created" in
+ 'Success: created install session ['*']') ;;
+ *) exit 1 ;;
+esac
+session_id=${created##*\[}
+session_id=${session_id%\]}
+case "$session_id" in ''|*[!0-9]*) exit 1;; esac
+committed=false
+trap 'task_status=$?; if [ "$committed" = false ]; then /system/bin/cmd package install-abandon "$session_id" >&2 || :; fi; exit "$task_status"' EXIT
+/system/bin/cmd package install-write -S "$apk_bytes" "$session_id" base.apk "$apk_path"
+/system/bin/cmd package install-commit "$session_id"
+committed=true
+# Preserve the original PMS readback before user-start can block or the cohort stops.
+/system/bin/cmd package path --user 0 net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-postcommit-path.txt
+/system/bin/dumpsys package net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-postcommit-dump.txt
+IFS= read -r installed_line < /data/local/tmp/archtv-mc1/markor-postcommit-path.txt
+case "$installed_line" in package:/data/app/*/base.apk) ;; *) exit 1;; esac
+installed_apk=${installed_line#package:}
+source_hash=$(/system/bin/sha256sum "$apk_path")
+installed_hash=$(/system/bin/sha256sum "$installed_apk")
+[ "${source_hash%% *}" = "${installed_hash%% *}" ] || exit 1
+/system/bin/printf 'SOURCE %s\nINSTALLED %s\n' "$source_hash" "$installed_hash" > /data/local/tmp/archtv-mc1/markor-installed-bytes.txt
+# Observe directories created by original PMS/installd; never mkdir app data.
+/system/bin/stat -c '%n|inode=%i|uid=%u|gid=%g|mode=%a' /data/user/0/net.gsantner.markor /data/user_de/0/net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-app-data.txt 2>&1
+/system/bin/ls -ldZ /data/user/0/net.gsantner.markor /data/user_de/0/net.gsantner.markor >> /data/local/tmp/archtv-mc1/markor-app-data.txt
 # Retire only the original bootstrap component after real framework unlock.
 /system/bin/cmd package disable --user 0 com.android.settings/.FallbackHome > /data/local/tmp/archtv-mc1/markor-bootstrap-home-stop.txt
 /system/bin/cmd activity force-stop --user 0 com.android.settings

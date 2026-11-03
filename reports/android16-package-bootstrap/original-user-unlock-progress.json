@@ -163,7 +163,7 @@
     "Native normal lazy apexd exit CLD_EXITED0 clean1 followed by successful coordinatorclose0; explicit cancellation alternative was exercised133",
     "Native/exterior0; exact unitsinactive, VT1restored, no loops/dm/new FUSEconnections; host DRM node metadata identical"
   ],
-  "next": "Integrate original user unlock before PackageInstaller commit so the normal AppDataHelper CE guards can hold, then verify original app data inode/owner/label and absence of ContextImpl ENOENT. If still absent, inspect actual CE-prepared and UserManager state rather than overriding flags or creating dirs. Complete final DONE by real input, enter actual editor/type unique note/save/app close/reopen.",
+  "next": "Follow actual storage permission dialog/Settings UI, then actual editor and unique typed note/save/app close-reopen. Retain one live cohort long enough for complete interaction instead of another cold boot for each click; bounded observation is separate from startup timeout. No direct preference/permission writes.",
   "artifacts": {
     "/home/tv/recuperacion-archtv/ff987089-92db-43e2-852d-3e78501aae42-markor-software-launch/before-launch.json": "db7aaed86c8a4f5121ce3677ff47d50e11f74a3c646b3455437700432da2818a",
     "/home/tv/recuperacion-archtv/ff987089-92db-43e2-852d-3e78501aae42-markor-software-launch/result.json": "db31e85df10c964be7b912ab4f7c29b47f292e788e26c8df09ce639c935578b9",
@@ -1446,10 +1446,9 @@
     "next": "Exercise real keyboard through original KeyLayoutMap and dispatcher; complete onboarding through events and enter real editor. Test gateway rejection and focus/disconnect releases, fix transport loss state before accepting stability. Then actual unique note/save/app close/reopen with original storage."
   },
   "latest_functional_observation": {
-    "candidate": 145,
-    "execution": 146,
-    "run_id": "947ca8d5-5abb-4da7-bb3b-19b0d4f35480",
-    "section": "input_followup145_146"
+    "candidate": 147,
+    "run_id": "334186a9-9247-4b8e-b4a1-d52c4c9e17d5",
+    "section": "private_data_followup147"
   },
   "not_accepted_at_base140": [
     "Final Smithay/physical output frame for this APK is not yet captured; early compositor30s capture is not app presentation evidence",
@@ -2100,5 +2099,147 @@
       "Forced gateway failure, isolation, ARM/GMS/DRM and product install/update remain open"
     ],
     "next": "Integrate original user unlock before PackageInstaller commit so the normal AppDataHelper CE guards can hold, then verify original app data inode/owner/label and absence of ContextImpl ENOENT. If still absent, inspect actual CE-prepared and UserManager state rather than overriding flags or creating dirs. Complete final DONE by real input, enter actual editor/type unique note/save/app close/reopen."
+  },
+  "private_data_followup147": {
+    "candidate": 147,
+    "run_id": "334186a9-9247-4b8e-b4a1-d52c4c9e17d5",
+    "checkpoint": "/home/tv/recuperacion-archtv/334186a9-9247-4b8e-b4a1-d52c4c9e17d5-markor-software-launch",
+    "factory": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793696310352700213",
+    "native_exit": 0,
+    "outer_exit": 0,
+    "original_app_data_stat_and_context": "/data/user/0/net.gsantner.markor|inode=3198|uid=10104|gid=10104|mode=700\n/data/user_de/0/net.gsantner.markor|inode=3201|uid=10104|gid=10104|mode=700\ndrwx------ 4 u0_a104 u0_a104 u:object_r:app_data_file:s0:c104,c256,c512,c768  80 2026-11-03 09:01 /data/user/0/net.gsantner.markor\ndrwx------ 4 u0_a104 u0_a104 u:object_r:app_data_file:s0:c104,c256,c512,c768  80 2026-11-03 09:01 /data/user_de/0/net.gsantner.markor\n",
+    "recorded_missing_private_path_or_inode0_errors": 0,
+    "onboarding_transition": [
+      {
+        "tag": "ActivityTaskManager",
+        "message": "Displayed net.gsantner.markor/.activity.StoragePermissionActivity for user 0: +1s687ms",
+        "actual_sender_pid_uid_gid": [
+          539,
+          1000,
+          1000
+        ],
+        "observed_monotonic": 112968.167771354
+      }
+    ],
+    "visual_inspection": {
+      "path": "/home/tv/recuperacion-archtv/334186a9-9247-4b8e-b4a1-d52c4c9e17d5-markor-software-launch/markor-real-storage-permission.png",
+      "scope": "Actual StoragePermissionActivity dialog: Storage permission required to read and write files, EXIT/OK. Original onboarding finished; this is not the editor or a written note."
+    },
+    "change": "Wait for original RUNNING_UNLOCKED and mounted emulated volume before creating/committing original PackageInstaller session. Original PMS/installd create the directories, no app data mkdir, inode or state assigned by Linux. Stat/ls only observe actual original results before launch.",
+    "scope": "147 demonstrates correct app directories and completes onboarding. Earlier146 missing-data result remains historical. This does not prove all possible causes of earlier race or data durability.",
+    "cleanup": {
+      "id": "334186a9-9247-4b8e-b4a1-d52c4c9e17d5",
+      "outer_unit": "archtv-markor-session-334186a9-9247-4b8e-b4a1-d52c4c9e17d5",
+      "runner_unit": "archtv-package-runner-334186a9-9247-4b8e-b4a1-d52c4c9e17d5",
+      "initial_vt": "1",
+      "root_pid": 479661,
+      "root_boot_id": "4e18faf8-2b46-42e4-a6b2-269c34326b68",
+      "result": "native_result_recorded",
+      "fuse_connections_before": [],
+      "host_devices_before": {
+        "card0": {
+          "mode": "0o660",
+          "uid": 0,
+          "gid": 983,
+          "rdev": 57856,
+          "inode": 365
+        },
+        "renderD128": {
+          "mode": "0o666",
+          "uid": 0,
+          "gid": 987,
+          "rdev": 57984,
+          "inode": 364
+        }
+      },
+      "interaction_exit": 0,
+      "host_devices_after": {
+        "card0": {
+          "mode": "0o660",
+          "uid": 0,
+          "gid": 983,
+          "rdev": 57856,
+          "inode": 365
+        },
+        "renderD128": {
+          "mode": "0o666",
+          "uid": 0,
+          "gid": 987,
+          "rdev": 57984,
+          "inode": 364
+        }
+      },
+      "host_device_metadata_unchanged": true,
+      "fuse_connections_after": [],
+      "new_fuse_connections": [],
+      "final_vt": "1",
+      "outer_active": false,
+      "runner_active": false
+    },
+    "artifacts": {
+      "/home/tv/recuperacion-archtv/334186a9-9247-4b8e-b4a1-d52c4c9e17d5-markor-software-launch/before-launch.json": {
+        "sha256": "9c9d70d27e150e8e97dfca71628bc00a4c43b39ac4485fd4b71b8e2c0e9d1e41",
+        "bytes": 2361
+      },
+      "/home/tv/recuperacion-archtv/334186a9-9247-4b8e-b4a1-d52c4c9e17d5-markor-software-launch/result.json": {
+        "sha256": "a439e66f341f653331542fab657b7c85d00649385f9e52a78731da7e18438222",
+        "bytes": 29851
+      },
+      "/home/tv/recuperacion-archtv/334186a9-9247-4b8e-b4a1-d52c4c9e17d5-markor-software-launch/session-state.json": {
+        "sha256": "9ecd2eeb6adb4ef39c05ee1d717a4e53a3551f047e7b694f0eda7b536281d119",
+        "bytes": 1126
+      },
+      "/home/tv/recuperacion-archtv/334186a9-9247-4b8e-b4a1-d52c4c9e17d5-markor-software-launch/pointer-test.json": {
+        "sha256": "7802963b00119c2b4208d93f71e6c643466cc498354328d13024bc31f45f6223",
+        "bytes": 1764
+      },
+      "/home/tv/recuperacion-archtv/334186a9-9247-4b8e-b4a1-d52c4c9e17d5-markor-software-launch/pointer-test.py": {
+        "sha256": "2dec32a1238dc528e0a8f74524bd5f841fa6b9840864e9f66cd5f88def1efc0d",
+        "bytes": 1936
+      },
+      "/home/tv/recuperacion-archtv/334186a9-9247-4b8e-b4a1-d52c4c9e17d5-markor-software-launch/input-device-cleanup.json": {
+        "sha256": "06b2b299add3133f35def486f9cd3deffa203321554099de8d3fb41c6d3c38f2",
+        "bytes": 82
+      },
+      "/home/tv/recuperacion-archtv/334186a9-9247-4b8e-b4a1-d52c4c9e17d5-markor-software-launch/capture-samples.json": {
+        "sha256": "bc3bb0fdf3e5b85fef745cc968e64f3d06331fd0d7ce755afe80c3797311cbaa",
+        "bytes": 17084
+      },
+      "/home/tv/recuperacion-archtv/334186a9-9247-4b8e-b4a1-d52c4c9e17d5-markor-software-launch/completion-consumer.json": {
+        "sha256": "2e66ece994e0fde6b1f8680d6635da37bd4ee9ef954fa61dfa23c8085d81f50c",
+        "bytes": 196
+      },
+      "/home/tv/recuperacion-archtv/334186a9-9247-4b8e-b4a1-d52c4c9e17d5-markor-software-launch/completion-delivery.json": {
+        "sha256": "8fb84aca3c06353cd3d5c3b032eaabfd4f193f25d87214ddbce54dc1d6cc900e",
+        "bytes": 240
+      },
+      "/home/tv/recuperacion-archtv/334186a9-9247-4b8e-b4a1-d52c4c9e17d5-markor-software-launch/compositor.log": {
+        "sha256": "04fbae33ed1f12b576563ead55130c3cc7bd43755957cb91eb103ca6afa880c8",
+        "bytes": 138030
+      },
+      "/home/tv/recuperacion-archtv/334186a9-9247-4b8e-b4a1-d52c4c9e17d5-markor-software-launch/smithay-frame-27.ppm": {
+        "sha256": "8875596b1550d0e9b47f3b7b7a9b634748d9075eb8c7d5ea949a3fe865fe5bd7",
+        "bytes": 3072016
+      },
+      "/home/tv/recuperacion-archtv/334186a9-9247-4b8e-b4a1-d52c4c9e17d5-markor-software-launch/markor-real-storage-permission.png": {
+        "sha256": "df6a0f1a1c262fc68ac45703838d8ed0e3862a37c6fffa9e72bc5104b8059971",
+        "bytes": 13139
+      },
+      "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793696310352700213/android-log-live.jsonl": {
+        "sha256": "3a677c24119689725176c90457ee4a50c69fbbec663a61377376b3c990d1c2ad",
+        "bytes": 1857322
+      },
+      "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-147/source-inputs.json": {
+        "sha256": "307ee95089be450b90c93618780f0396f61473e19fd73a25c94ab08028855d5d",
+        "bytes": 5770
+      }
+    },
+    "not_accepted": [
+      "No external storage permission granted yet; original request shown, no appops/permission success invented",
+      "No actual editor/typed note/save/app close-reopen or durability across cohorts",
+      "Directory UID/mode/category observations in permissive are not MAC/tenant isolation or encryption proof",
+      "ARM/GMS/DRM, installation/update and complete product remain open"
+    ],
+    "next": "Follow actual storage permission dialog/Settings UI, then actual editor and unique typed note/save/app close-reopen. Retain one live cohort long enough for complete interaction instead of another cold boot for each click; bounded observation is separate from startup timeout. No direct preference/permission writes."
   }
 }

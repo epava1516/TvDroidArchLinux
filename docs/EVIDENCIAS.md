@@ -1,6 +1,6 @@
 # Índice de evidencias
 
-[145/146 · entrada y datos privados](../reports/android16-package-bootstrap/original-user-unlock-progress.json): UUIDd2249924 y947ca8d5, nativo/exterior0, key22 down/up aceptados, peer UID1000/system_server rechazado y EOF verificado. Diez eventos de puntero llevan al slide QuickNote; no editor. Logs originales muestran ENOENT privado e inode0. Capturas, fuentes originales AppDataHelper/UserManager, respuesta REA MCP onCreate y lectura SELinux privada enlazadas por SHA. Dispositivos input9/input10 ausentes después; VT1 y host restaurados. Negativas de fallo de transporte y persistencia siguen pendientes.
+[147 · creación original de datos privados](../reports/android16-package-bootstrap/original-user-unlock-progress.json), sección private_data_followup147: UUID334186a9, inodeCE3198/DE3201, UID/GID10104, modo700, categorías c104,c256,c512,c768 observadas tras instalación original posterior al desbloqueo. No warnings previos de ruta/inode0 en el log completo. Entrada termina bienvenida y captura DRM muestra solicitud real de almacenamiento. Nativo/exterior0, input11 retirado, host intacto, VT1 y sin loops/dm/FUSE. No permiso inventado, editor ni nota aceptados.
 
 [Seguimiento133](../reports/android16-package-bootstrap/original-user-unlock-progress.json), followup133: nativo0, cancelación explícita y drenaje/cierre recogidos. No prueba la rama nueva de reap normal. Exterior1 preservado por aserción de perfil incorrecta; corrección sólo materializada. No nueva etapa APK aceptada.
 

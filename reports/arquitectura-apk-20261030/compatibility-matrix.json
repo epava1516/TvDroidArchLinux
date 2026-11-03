@@ -162,7 +162,7 @@
         "close": "not_tested",
         "reopen": "not_tested"
       },
-      "reason": "145: original KeyLayoutMap maps Linux106 to Android22, dispatcher accepts down/up; wrong-context UID1000 rejected.146 pointer advances to final QuickNote intro slide, not editor. App private data path absent/CEinode0 demonstrated; no typing, note, save, app close-reopen or persistence. Complete stage criteria remain open.",
+      "reason": "147: install after real original unlock creates CE/DE dirs uid/gid10104 mode700 with real app_data_file categories; no previous ENOENT/inode0 in current log. Real input finishes onboarding and reaches original StoragePermissionActivity. External permission/editor/text/note/save/app-close/reopen/durability still unverified.",
       "framework_class_link_pass": true,
       "declared_application": "net.gsantner.markor.ApplicationObject",
       "bootstrap_experiment": {
@@ -208,38 +208,38 @@
         },
         "launch": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "b75b7c673f70c11e8ef43898713a76babba7e615cfbdfad0e0a42d77a8958d59",
+          "record_sha256": "e48a8f79a69842f058d839199e0ef384b63c01b957d6c28453964bc900307f58",
           "accepted": false,
-          "scope": "Original key22 dispatch/peer-context negative and final intro slide; actual private data path missing. No editor/typed note/save/reopen or MAC acceptance",
-          "partial_observation": "Private cache/shared_prefs/files ENOENT and original CEinode0 prevent accepting persistence; no stage percentage inferred."
+          "scope": "Original CE/DE directory creation and onboarding completion to actual storage permission request; no note or full workflow acceptance",
+          "partial_observation": "Previous missing-private-data blocker superseded147; directory metadata is not file persistence, encryption or MAC proof."
         },
         "services": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "b75b7c673f70c11e8ef43898713a76babba7e615cfbdfad0e0a42d77a8958d59",
+          "record_sha256": "e48a8f79a69842f058d839199e0ef384b63c01b957d6c28453964bc900307f58",
           "accepted": false,
-          "scope": "Original key22 dispatch/peer-context negative and final intro slide; actual private data path missing. No editor/typed note/save/reopen or MAC acceptance",
-          "partial_observation": "Private cache/shared_prefs/files ENOENT and original CEinode0 prevent accepting persistence; no stage percentage inferred."
+          "scope": "Original CE/DE directory creation and onboarding completion to actual storage permission request; no note or full workflow acceptance",
+          "partial_observation": "Previous missing-private-data blocker superseded147; directory metadata is not file persistence, encryption or MAC proof."
         },
         "interface": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "b75b7c673f70c11e8ef43898713a76babba7e615cfbdfad0e0a42d77a8958d59",
+          "record_sha256": "e48a8f79a69842f058d839199e0ef384b63c01b957d6c28453964bc900307f58",
           "accepted": false,
-          "scope": "Original key22 dispatch/peer-context negative and final intro slide; actual private data path missing. No editor/typed note/save/reopen or MAC acceptance",
-          "partial_observation": "Private cache/shared_prefs/files ENOENT and original CEinode0 prevent accepting persistence; no stage percentage inferred."
+          "scope": "Original CE/DE directory creation and onboarding completion to actual storage permission request; no note or full workflow acceptance",
+          "partial_observation": "Previous missing-private-data blocker superseded147; directory metadata is not file persistence, encryption or MAC proof."
         },
         "input": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "b75b7c673f70c11e8ef43898713a76babba7e615cfbdfad0e0a42d77a8958d59",
+          "record_sha256": "e48a8f79a69842f058d839199e0ef384b63c01b957d6c28453964bc900307f58",
           "accepted": false,
-          "scope": "Original key22 dispatch/peer-context negative and final intro slide; actual private data path missing. No editor/typed note/save/reopen or MAC acceptance",
-          "partial_observation": "Private cache/shared_prefs/files ENOENT and original CEinode0 prevent accepting persistence; no stage percentage inferred."
+          "scope": "Original CE/DE directory creation and onboarding completion to actual storage permission request; no note or full workflow acceptance",
+          "partial_observation": "Previous missing-private-data blocker superseded147; directory metadata is not file persistence, encryption or MAC proof."
         },
         "persistence": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "b75b7c673f70c11e8ef43898713a76babba7e615cfbdfad0e0a42d77a8958d59",
+          "record_sha256": "e48a8f79a69842f058d839199e0ef384b63c01b957d6c28453964bc900307f58",
           "accepted": false,
-          "scope": "Original key22 dispatch/peer-context negative and final intro slide; actual private data path missing. No editor/typed note/save/reopen or MAC acceptance",
-          "partial_observation": "Private cache/shared_prefs/files ENOENT and original CEinode0 prevent accepting persistence; no stage percentage inferred."
+          "scope": "Original CE/DE directory creation and onboarding completion to actual storage permission request; no note or full workflow acceptance",
+          "partial_observation": "Previous missing-private-data blocker superseded147; directory metadata is not file persistence, encryption or MAC proof."
         }
       },
       "runtime_stage_evidence_history": [
