@@ -1,6 +1,6 @@
 # Roadmap · Arch TV nativo en Rust
 
-Prioridad144: [teclado real, gateway y editor de Markor](docs/ROADMAP-A.md) → nota/guardado/cierre/reapertura. El clic Linux→Smithay→Wayland→Android original ya cambia la bienvenida intacta, con imagen final comprobada. [Evidencia144](reports/android16-package-bootstrap/original-user-unlock-progress.json). No completa el recorrido ni compatibilidad amplia; R1-MAC, ARM/GMS/DRM y entrega del producto permanecen abiertos.
+Prioridad145/146: [datos privados originales de Markor antes del editor](docs/ROADMAP-A.md) → texto/nota/guardado/cierre/reapertura. Teclado despachado y contexto incorrecto rechazado; último slide visible. [Evidencia](reports/android16-package-bootstrap/original-user-unlock-progress.json). ENOENT e inode0 impiden aceptar persistencia; integrar orden de desbloqueo/instalación y probar creación original sin fabricar datos. R1-MAC, ARM/GMS/DRM y entrega del producto permanecen abiertos.
 
 Camino crítico desde132: [cierre coherente y almacenamiento/OverlayManager originales](docs/ROADMAP-A.md) → UI/entrada/nota/cierre/reapertura de Markor. El usuario ya alcanza RUNNING_UNLOCKED y AMS lanza la APK intacta hacia IntroActivity; falta aceptación del recorrido completo. R1-MAC, ARM/GMS/DRM abiertos.
 

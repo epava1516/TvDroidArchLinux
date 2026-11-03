@@ -162,7 +162,7 @@
         "close": "not_tested",
         "reopen": "not_tested"
       },
-      "reason": "144: real Linux pointer reaches original Android input dispatcher and changes intact Markor onboarding Main View -> View, visible in final Smithay DRM. Keyboard/editor/note/save/app close-reopen/persistence and gateway negatives remain unverified; no complete functional stage newly accepted.",
+      "reason": "145: original KeyLayoutMap maps Linux106 to Android22, dispatcher accepts down/up; wrong-context UID1000 rejected.146 pointer advances to final QuickNote intro slide, not editor. App private data path absent/CEinode0 demonstrated; no typing, note, save, app close-reopen or persistence. Complete stage criteria remain open.",
       "framework_class_link_pass": true,
       "declared_application": "net.gsantner.markor.ApplicationObject",
       "bootstrap_experiment": {
@@ -208,31 +208,38 @@
         },
         "launch": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "6d90ecf99fdab7f32aba4f0af0b317a4bbdeeba3f0cfe3eaf46dbe089514050c",
+          "record_sha256": "b75b7c673f70c11e8ef43898713a76babba7e615cfbdfad0e0a42d77a8958d59",
           "accepted": false,
-          "scope": "Real pointer-driven onboarding transition; no actual editor/keyboard/note/save/persistence/app-close/reopen or security acceptance",
-          "partial_observation": "Original dispatcher accepts actual pointer down/up, intact app advances, final Smithay captures inspected. not_tested denotes incomplete full-stage criteria, not absence of execution/input."
+          "scope": "Original key22 dispatch/peer-context negative and final intro slide; actual private data path missing. No editor/typed note/save/reopen or MAC acceptance",
+          "partial_observation": "Private cache/shared_prefs/files ENOENT and original CEinode0 prevent accepting persistence; no stage percentage inferred."
         },
         "services": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "6d90ecf99fdab7f32aba4f0af0b317a4bbdeeba3f0cfe3eaf46dbe089514050c",
+          "record_sha256": "b75b7c673f70c11e8ef43898713a76babba7e615cfbdfad0e0a42d77a8958d59",
           "accepted": false,
-          "scope": "Real pointer-driven onboarding transition; no actual editor/keyboard/note/save/persistence/app-close/reopen or security acceptance",
-          "partial_observation": "Original dispatcher accepts actual pointer down/up, intact app advances, final Smithay captures inspected. not_tested denotes incomplete full-stage criteria, not absence of execution/input."
+          "scope": "Original key22 dispatch/peer-context negative and final intro slide; actual private data path missing. No editor/typed note/save/reopen or MAC acceptance",
+          "partial_observation": "Private cache/shared_prefs/files ENOENT and original CEinode0 prevent accepting persistence; no stage percentage inferred."
         },
         "interface": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "6d90ecf99fdab7f32aba4f0af0b317a4bbdeeba3f0cfe3eaf46dbe089514050c",
+          "record_sha256": "b75b7c673f70c11e8ef43898713a76babba7e615cfbdfad0e0a42d77a8958d59",
           "accepted": false,
-          "scope": "Real pointer-driven onboarding transition; no actual editor/keyboard/note/save/persistence/app-close/reopen or security acceptance",
-          "partial_observation": "Original dispatcher accepts actual pointer down/up, intact app advances, final Smithay captures inspected. not_tested denotes incomplete full-stage criteria, not absence of execution/input."
+          "scope": "Original key22 dispatch/peer-context negative and final intro slide; actual private data path missing. No editor/typed note/save/reopen or MAC acceptance",
+          "partial_observation": "Private cache/shared_prefs/files ENOENT and original CEinode0 prevent accepting persistence; no stage percentage inferred."
         },
         "input": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "6d90ecf99fdab7f32aba4f0af0b317a4bbdeeba3f0cfe3eaf46dbe089514050c",
+          "record_sha256": "b75b7c673f70c11e8ef43898713a76babba7e615cfbdfad0e0a42d77a8958d59",
           "accepted": false,
-          "scope": "Real pointer-driven onboarding transition; no actual editor/keyboard/note/save/persistence/app-close/reopen or security acceptance",
-          "partial_observation": "Original dispatcher accepts actual pointer down/up, intact app advances, final Smithay captures inspected. not_tested denotes incomplete full-stage criteria, not absence of execution/input."
+          "scope": "Original key22 dispatch/peer-context negative and final intro slide; actual private data path missing. No editor/typed note/save/reopen or MAC acceptance",
+          "partial_observation": "Private cache/shared_prefs/files ENOENT and original CEinode0 prevent accepting persistence; no stage percentage inferred."
+        },
+        "persistence": {
+          "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
+          "record_sha256": "b75b7c673f70c11e8ef43898713a76babba7e615cfbdfad0e0a42d77a8958d59",
+          "accepted": false,
+          "scope": "Original key22 dispatch/peer-context negative and final intro slide; actual private data path missing. No editor/typed note/save/reopen or MAC acceptance",
+          "partial_observation": "Private cache/shared_prefs/files ENOENT and original CEinode0 prevent accepting persistence; no stage percentage inferred."
         }
       },
       "runtime_stage_evidence_history": [

@@ -1,6 +1,6 @@
 # Contrato vigente · AOSP Android 16 QPR2
 
-Estado parcial144: un puntero Linux controla realmente la bienvenida intacta mediante Smithay y el despachador Android original. El contrato sigue exigiendo teclado/entrada completa, función principal, persistencia y ciclo de aplicación, junto con aislamiento/estabilidad/instalación/actualización. Una transición introductoria o una ilustración de archivos no acredita una nota ni compatibilidad general. Gateway autenticado en permisivo no demuestra autorización MAC. [Evidencia](../reports/android16-package-bootstrap/original-user-unlock-progress.json).
+Estado parcial145/146: teclado llega al despachador original y el peer incorrecto se rechaza; la bienvenida alcanza el último slide. El contrato exige texto/editor, función principal, datos privados reales, guardado y ciclo completo, además de seguridad/instalación/actualización. Datos privados ausentes e inode0 son una limitación demostrada; no se sustituyen por mkdir manual ni flags de éxito. Contexto explícito comprobado en permisivo no es autorización MAC. [Evidencia](../reports/android16-package-bootstrap/original-user-unlock-progress.json).
 
 [GateKeeper original122](../reports/android16-package-bootstrap/gatekeeper-platform-progress.json) conserva el límite del proveedor AOSP no seguro: inscripción/verificación, tokens compartidos, durabilidad y aislamiento necesitan pruebas propias. Un SID de usuario vacío devuelto por el API original no es una credencial ni una señal de RUNNING_UNLOCKED. La política cargada en permisivo4 no cierra R1-MAC.
 

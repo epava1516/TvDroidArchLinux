@@ -13,15 +13,18 @@
 #include <cstring>
 #include <cerrno>
 #include <cstddef>
+#include <chrono>
+#include <algorithm>
 namespace archtv::aosp {
 class LinuxWaylandInput {
-    int fd_=-1,meta_=0;uint32_t sequence_=0;size_t offset_=0,ack_bytes_=0;
+    int fd_=-1,meta_=0;uint32_t sequence_=0,last_ack_=0;size_t offset_=0,ack_bytes_=0;
     std::array<uint32_t,2> ack_{};
     std::shared_ptr<android::KeyLayoutMap> layout_;
     std::map<uint32_t,int32_t> held_;
     std::deque<std::array<uint32_t,10>> pending_;
     bool touch_=false;int x_=0,y_=0;
-    void Disconnect(){if(fd_>=0)close(fd_);fd_=-1;pending_.clear();offset_=ack_bytes_=0;}
+    std::chrono::steady_clock::time_point progress_;
+    void Disconnect(){if(fd_>=0)close(fd_);fd_=-1;pending_.clear();offset_=ack_bytes_=0;held_.clear();meta_=0;touch_=false;}
     bool Connect(){
         if(fd_>=0)return true;
         int fd=socket(AF_UNIX,SOCK_STREAM|SOCK_NONBLOCK|SOCK_CLOEXEC,0);if(fd<0)return false;
@@ -33,18 +36,20 @@ class LinuxWaylandInput {
            getsockopt(fd,SOL_SOCKET,SO_PEERSEC,context,&length)!=0 || std::strcmp(context,"u:r:system_server:s0")){
             std::fprintf(stderr,"WAYLAND_INPUT_PEER_REJECTED\n");close(fd);return false;
         }
-        fd_=fd;std::fprintf(stderr,"WAYLAND_INPUT_PEER_AUTHENTICATED pid=%d uid=%d context=%s\n",peer.pid,peer.uid,context);return true;
+        fd_=fd;last_ack_=sequence_;progress_=std::chrono::steady_clock::now();std::fprintf(stderr,"WAYLAND_INPUT_PEER_AUTHENTICATED pid=%d uid=%d context=%s\n",peer.pid,peer.uid,context);return true;
     }
     void Emit(uint32_t type,uint32_t code,uint32_t action,uint32_t scan=0){
-        if(!Connect()){std::fprintf(stderr,"WAYLAND_INPUT_NOT_DELIVERED errno=%d\n",errno);return;}
+        if(!Connect()){std::fprintf(stderr,"WAYLAND_INPUT_NOT_DELIVERED errno=%d\n",errno);Disconnect();return;}
         if(pending_.size()>=64){std::fprintf(stderr,"WAYLAND_INPUT_QUEUE_OVERFLOW disconnect\n");Disconnect();return;}
         std::array<uint32_t,10> packet{0x41544931,type,++sequence_,code,action,uint32_t(meta_),scan,uint32_t(x_),uint32_t(y_),0};
+        if(sequence_==last_ack_+1)progress_=std::chrono::steady_clock::now();
         for(auto& v:packet)v=htonl(v);pending_.push_back(packet);Pump();
     }
  public:
     ~LinuxWaylandInput(){Disconnect();}
     void Pump(){
         if(fd_<0)return;
+        if(sequence_!=last_ack_ && std::chrono::steady_clock::now()-progress_>std::chrono::seconds(5)){std::fprintf(stderr,"WAYLAND_INPUT_ACK_TIMEOUT disconnect\n");Disconnect();return;}
         while(!pending_.empty()){
             auto* bytes=reinterpret_cast<const char*>(pending_.front().data());
             ssize_t n=send(fd_,bytes+offset_,40-offset_,MSG_DONTWAIT|MSG_NOSIGNAL);
@@ -59,8 +64,10 @@ class LinuxWaylandInput {
             ack_bytes_+=size_t(n);
             if(ack_bytes_==8){
                 uint32_t seq=ntohl(ack_[0]),result=ntohl(ack_[1]);ack_bytes_=0;
-                if(seq>sequence_ || result>1){std::fprintf(stderr,"WAYLAND_INPUT_INVALID_ACK\n");Disconnect();return;}
+                if(seq!=last_ack_+1 || seq>sequence_ || result>1){std::fprintf(stderr,"WAYLAND_INPUT_INVALID_ACK\n");Disconnect();return;}
+                last_ack_=seq;progress_=std::chrono::steady_clock::now();
                 std::fprintf(stderr,"WAYLAND_INPUT_ORIGINAL_DISPATCH seq=%u accepted=%u\n",seq,result);
+                if(!result){Disconnect();return;}
             }
         }
     }
@@ -71,7 +78,7 @@ class LinuxWaylandInput {
         if(down){if(held_.count(scan))return;held_[scan]=code;}else if(!held_.erase(scan))return;
         meta_=android::updateMetaState(code,down,meta_);Emit(1,code,down?0:1,scan);
     }
-    void Move(double x,double y){x_=int(x*1000);y_=int(y*1000);if(touch_)Emit(2,0,2);}
+    void Move(double x,double y){x_=int(std::clamp(x,0.0,8192.0)*1000);y_=int(std::clamp(y,0.0,8192.0)*1000);if(touch_)Emit(2,0,2);}
     void Button(uint32_t button,bool down){if(button!=0x110 || down==touch_)return;touch_=down;Emit(2,0,down?0:1);}
     void Reset(){
         auto keys=held_;for(auto [scan,code]:keys)Key(scan,false);

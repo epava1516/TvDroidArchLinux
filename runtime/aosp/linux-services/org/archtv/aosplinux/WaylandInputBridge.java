@@ -106,6 +106,17 @@ final class WaylandInputBridge {
             finally{if(socket!=null)try{invoke(socket,"close",new Class<?>[0]);}catch(Exception ignored){}}
         }
     }
+    private static void verifyRejectedPeer() throws Exception {
+        Object client=Class.forName("android.net.LocalSocket").getConstructor().newInstance();
+        try {
+            Object address=Class.forName("android.net.LocalSocketAddress").getConstructor(String.class).newInstance("archtv-wayland-input-v1");
+            invoke(client,"connect",new Class<?>[]{address.getClass()},address);
+            invoke(client,"setSoTimeout",new Class<?>[]{int.class},3000);
+            int result=((InputStream)invoke(client,"getInputStream",new Class<?>[0])).read();
+            if(result!=-1)throw new SecurityException("Gateway accepted non-composer peer");
+            System.err.println("WAYLAND_INPUT_NEGATIVE_PEER_CLOSED actual_uid=1000 actual_domain=system_server NOT_APP_UID_OR_MAC_ACCEPTANCE");
+        }finally{invoke(client,"close",new Class<?>[0]);}
+    }
     static void start(Object input) throws Exception {
         WaylandInputBridge bridge=new WaylandInputBridge(input);
         // Abstract sockets are scoped by the cohort's private network namespace.
@@ -113,5 +124,6 @@ final class WaylandInputBridge {
         Object server=Class.forName("android.net.LocalServerSocket").getConstructor(String.class).newInstance("archtv-wayland-input-v1");
         Thread worker=new Thread(()->bridge.serve(server),"linux-wayland-input");worker.setDaemon(true);worker.start();
         System.err.println("WAYLAND_INPUT_GATEWAY_LISTENING NOT_APK_INPUT_ACCEPTANCE");
+        verifyRejectedPeer();
     }
 }

@@ -163,7 +163,7 @@
     "Native normal lazy apexd exit CLD_EXITED0 clean1 followed by successful coordinatorclose0; explicit cancellation alternative was exercised133",
     "Native/exterior0; exact unitsinactive, VT1restored, no loops/dm/new FUSEconnections; host DRM node metadata identical"
   ],
-  "next": "Exercise real keyboard through original KeyLayoutMap and dispatcher; complete onboarding through events and enter real editor. Test gateway rejection and focus/disconnect releases, fix transport loss state before accepting stability. Then actual unique note/save/app close/reopen with original storage.",
+  "next": "Integrate original user unlock before PackageInstaller commit so the normal AppDataHelper CE guards can hold, then verify original app data inode/owner/label and absence of ContextImpl ENOENT. If still absent, inspect actual CE-prepared and UserManager state rather than overriding flags or creating dirs. Complete final DONE by real input, enter actual editor/type unique note/save/app close/reopen.",
   "artifacts": {
     "/home/tv/recuperacion-archtv/ff987089-92db-43e2-852d-3e78501aae42-markor-software-launch/before-launch.json": "db7aaed86c8a4f5121ce3677ff47d50e11f74a3c646b3455437700432da2818a",
     "/home/tv/recuperacion-archtv/ff987089-92db-43e2-852d-3e78501aae42-markor-software-launch/result.json": "db31e85df10c964be7b912ab4f7c29b47f292e788e26c8df09ce639c935578b9",
@@ -1446,9 +1446,10 @@
     "next": "Exercise real keyboard through original KeyLayoutMap and dispatcher; complete onboarding through events and enter real editor. Test gateway rejection and focus/disconnect releases, fix transport loss state before accepting stability. Then actual unique note/save/app close/reopen with original storage."
   },
   "latest_functional_observation": {
-    "candidate": 144,
-    "run_id": "3fcb1a1e-2bc9-4ee7-a9a8-c18145b6ae4a",
-    "section": "input_followup144"
+    "candidate": 145,
+    "execution": 146,
+    "run_id": "947ca8d5-5abb-4da7-bb3b-19b0d4f35480",
+    "section": "input_followup145_146"
   },
   "not_accepted_at_base140": [
     "Final Smithay/physical output frame for this APK is not yet captured; early compositor30s capture is not app presentation evidence",
@@ -1457,5 +1458,647 @@
     "Other graphics formats/apps, accelerated/protected rendering, FUSE BPF/passthrough",
     "MAC authorization/isolation: permissive policyload4, R1open",
     "ARM/GMS/DRM separateopen"
-  ]
+  ],
+  "input_followup145_146": {
+    "executions": [
+      {
+        "execution": 145,
+        "candidate": 145,
+        "run_id": "d2249924-130e-46ca-b62f-5ce94911ba98",
+        "checkpoint": "/home/tv/recuperacion-archtv/d2249924-130e-46ca-b62f-5ce94911ba98-markor-software-launch",
+        "factory": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793695064001190996",
+        "native_exit": 0,
+        "outer_exit": 0,
+        "events": [
+          {
+            "tag": "System.err",
+            "message": "WAYLAND_INPUT_GATEWAY_LISTENING NOT_APK_INPUT_ACCEPTANCE",
+            "actual_sender_pid_uid_gid": [
+              543,
+              1000,
+              1000
+            ],
+            "observed_monotonic": 111684.757351809
+          },
+          {
+            "tag": "System.err",
+            "message": "WAYLAND_INPUT_PEER_REJECTED pid=543 uid=1000 context=u:r:system_server:s0",
+            "actual_sender_pid_uid_gid": [
+              543,
+              1000,
+              1000
+            ],
+            "observed_monotonic": 111684.757407057
+          },
+          {
+            "tag": "System.err",
+            "message": "WAYLAND_INPUT_NEGATIVE_PEER_CLOSED actual_uid=1000 actual_domain=system_server NOT_APP_UID_OR_MAC_ACCEPTANCE",
+            "actual_sender_pid_uid_gid": [
+              543,
+              1000,
+              1000
+            ],
+            "observed_monotonic": 111684.7575674
+          },
+          {
+            "tag": "System.err",
+            "message": "WAYLAND_INPUT_PEER_AUTHENTICATED pid=460 uid=1000 context=u:r:hal_graphics_composer_default:s0",
+            "actual_sender_pid_uid_gid": [
+              543,
+              1000,
+              1000
+            ],
+            "observed_monotonic": 111717.010067883
+          },
+          {
+            "tag": "System.err",
+            "message": "WAYLAND_INPUT_ORIGINAL_DISPATCH seq=1 type=1 code=22 action=0 accepted=true",
+            "actual_sender_pid_uid_gid": [
+              543,
+              1000,
+              1000
+            ],
+            "observed_monotonic": 111717.031912834
+          },
+          {
+            "tag": "System.err",
+            "message": "WAYLAND_INPUT_ORIGINAL_DISPATCH seq=2 type=1 code=22 action=1 accepted=true",
+            "actual_sender_pid_uid_gid": [
+              543,
+              1000,
+              1000
+            ],
+            "observed_monotonic": 111717.068826977
+          },
+          {
+            "tag": "System.err",
+            "message": "WAYLAND_INPUT_PEER_CLOSED",
+            "actual_sender_pid_uid_gid": [
+              543,
+              1000,
+              1000
+            ],
+            "observed_monotonic": 111750.722144114
+          }
+        ],
+        "private_data_failure_count": 15,
+        "private_data_failures_first_lines": [
+          {
+            "tag": "ActivityManager",
+            "message": "net.gsantner.markor inode == 0 or app uninstalled with keep-data",
+            "monotonic": 111708.651432435
+          },
+          {
+            "tag": "ContextImpl",
+            "message": "Failed to ensure /data/user/0/net.gsantner.markor/cache",
+            "monotonic": 111709.400904015
+          },
+          {
+            "tag": "ContextImpl",
+            "message": "Failed to ensure /data/user/0/net.gsantner.markor/shared_prefs",
+            "monotonic": 111709.529986571
+          },
+          {
+            "tag": "ContextImpl",
+            "message": "Failed to ensure /data/user/0/net.gsantner.markor/shared_prefs",
+            "monotonic": 111709.535088069
+          },
+          {
+            "tag": "ContextImpl",
+            "message": "Failed to ensure /data/user/0/net.gsantner.markor/shared_prefs",
+            "monotonic": 111709.537494207
+          },
+          {
+            "tag": "ContextImpl",
+            "message": "Failed to ensure /data/user/0/net.gsantner.markor/shared_prefs",
+            "monotonic": 111709.889991935
+          },
+          {
+            "tag": "ContextImpl",
+            "message": "Failed to ensure /data/user/0/net.gsantner.markor/shared_prefs",
+            "monotonic": 111709.890194461
+          },
+          {
+            "tag": "ContextImpl",
+            "message": "Failed to ensure /data/user/0/net.gsantner.markor/shared_prefs",
+            "monotonic": 111709.890344507
+          },
+          {
+            "tag": "ContextImpl",
+            "message": "Failed to ensure /data/user/0/net.gsantner.markor/shared_prefs",
+            "monotonic": 111710.267940798
+          },
+          {
+            "tag": "ContextImpl",
+            "message": "Failed to ensure /data/user/0/net.gsantner.markor/shared_prefs",
+            "monotonic": 111710.524979579
+          },
+          {
+            "tag": "ContextImpl",
+            "message": "Failed to ensure /data/user/0/net.gsantner.markor/shared_prefs",
+            "monotonic": 111710.793195584
+          },
+          {
+            "tag": "ContextImpl",
+            "message": "Failed to ensure /data/user/0/net.gsantner.markor/shared_prefs",
+            "monotonic": 111710.816900006
+          },
+          {
+            "tag": "ContextImpl",
+            "message": "Failed to ensure /data/user/0/net.gsantner.markor/shared_prefs",
+            "monotonic": 111710.817167308
+          },
+          {
+            "tag": "ContextImpl",
+            "message": "Failed to ensure /data/user/0/net.gsantner.markor/files",
+            "monotonic": 111715.084318098
+          },
+          {
+            "tag": "ContextImpl",
+            "message": "Failed to ensure /data/user/0/net.gsantner.markor/files",
+            "monotonic": 111715.084575344
+          }
+        ],
+        "cleanup": {
+          "id": "d2249924-130e-46ca-b62f-5ce94911ba98",
+          "outer_unit": "archtv-markor-session-d2249924-130e-46ca-b62f-5ce94911ba98",
+          "runner_unit": "archtv-package-runner-d2249924-130e-46ca-b62f-5ce94911ba98",
+          "initial_vt": "1",
+          "root_pid": 469170,
+          "root_boot_id": "4e18faf8-2b46-42e4-a6b2-269c34326b68",
+          "result": "native_result_recorded",
+          "fuse_connections_before": [],
+          "host_devices_before": {
+            "card0": {
+              "mode": "0o660",
+              "uid": 0,
+              "gid": 983,
+              "rdev": 57856,
+              "inode": 365
+            },
+            "renderD128": {
+              "mode": "0o666",
+              "uid": 0,
+              "gid": 987,
+              "rdev": 57984,
+              "inode": 364
+            }
+          },
+          "interaction_exit": 0,
+          "host_devices_after": {
+            "card0": {
+              "mode": "0o660",
+              "uid": 0,
+              "gid": 983,
+              "rdev": 57856,
+              "inode": 365
+            },
+            "renderD128": {
+              "mode": "0o666",
+              "uid": 0,
+              "gid": 987,
+              "rdev": 57984,
+              "inode": 364
+            }
+          },
+          "host_device_metadata_unchanged": true,
+          "fuse_connections_after": [],
+          "new_fuse_connections": [],
+          "final_vt": "1",
+          "outer_active": false,
+          "runner_active": false
+        },
+        "artifacts": {
+          "/home/tv/recuperacion-archtv/d2249924-130e-46ca-b62f-5ce94911ba98-markor-software-launch/before-launch.json": {
+            "sha256": "bc42c5c742fa7c8354f731b4fafa5cb5020034573bb779d56c355a3aa89d0223",
+            "bytes": 3195
+          },
+          "/home/tv/recuperacion-archtv/d2249924-130e-46ca-b62f-5ce94911ba98-markor-software-launch/result.json": {
+            "sha256": "bf01c7b6e074cc51ccd48d2ae69a8cfab6b95a2e09b080492d15622e74600b0b",
+            "bytes": 29863
+          },
+          "/home/tv/recuperacion-archtv/d2249924-130e-46ca-b62f-5ce94911ba98-markor-software-launch/session-state.json": {
+            "sha256": "fcf3cba58f95c21a46c438e9ac71fe53316281e07c94b2dabcc7e4b4fb7e14da",
+            "bytes": 1126
+          },
+          "/home/tv/recuperacion-archtv/d2249924-130e-46ca-b62f-5ce94911ba98-markor-software-launch/keyboard-test.json": {
+            "sha256": "38a7796625b13715cf35c410ff176aed649df44d9702c66ae6915a5a655e6e66",
+            "bytes": 519
+          },
+          "/home/tv/recuperacion-archtv/d2249924-130e-46ca-b62f-5ce94911ba98-markor-software-launch/keyboard-test.py": {
+            "sha256": "5a6f87e60df43514ba1abe0c872418cbc5d7ffac6e2557a41de02b247f2b7972",
+            "bytes": 1588
+          },
+          "/home/tv/recuperacion-archtv/d2249924-130e-46ca-b62f-5ce94911ba98-markor-software-launch/input-device-cleanup.json": {
+            "sha256": "6fecdb313d5c997cb3aec7ecf7348c62724c1299f87e4ec37412b6f173a5f398",
+            "bytes": 128
+          },
+          "/home/tv/recuperacion-archtv/d2249924-130e-46ca-b62f-5ce94911ba98-markor-software-launch/capture-samples.json": {
+            "sha256": "19097c47118f2633d5ed2cb5a49142ceb86fe6f5136fdbb15e78c25b9273bf05",
+            "bytes": 16870
+          },
+          "/home/tv/recuperacion-archtv/d2249924-130e-46ca-b62f-5ce94911ba98-markor-software-launch/completion-consumer.json": {
+            "sha256": "c12a88b19890b93ff63292453f31b873e9db69120c9ebf66f4b0af97e9e742ed",
+            "bytes": 196
+          },
+          "/home/tv/recuperacion-archtv/d2249924-130e-46ca-b62f-5ce94911ba98-markor-software-launch/completion-delivery.json": {
+            "sha256": "a4f34b067e8ec0cb76a0f6404fa20d24c7e7c34672b654df6f7511f96e98566c",
+            "bytes": 240
+          },
+          "/home/tv/recuperacion-archtv/d2249924-130e-46ca-b62f-5ce94911ba98-markor-software-launch/compositor.log": {
+            "sha256": "499684aa9b38efa043cc3f2fec61d59fa1b02f784ffd6f364b2c164c3d4bac51",
+            "bytes": 137108
+          },
+          "/home/tv/recuperacion-archtv/d2249924-130e-46ca-b62f-5ce94911ba98-markor-software-launch/host-security-preflight.json": {
+            "sha256": "fa1b91822fe8af9ced1331b18cd8de3eee3d4dcd7b78803357932905fa68c999",
+            "bytes": 414
+          },
+          "/home/tv/recuperacion-archtv/d2249924-130e-46ca-b62f-5ce94911ba98-markor-software-launch/rea-intro-create-method.json": {
+            "sha256": "c74bdb0b406c0893517f60fd4e370d60d1e9207d90fce00ec0e8d290895998d0",
+            "bytes": 21501
+          },
+          "/home/tv/recuperacion-archtv/d2249924-130e-46ca-b62f-5ce94911ba98-markor-software-launch/markor-after-real-keyboard.png": {
+            "sha256": "d572854f693c3b2bafeedaee66fcdc36fb17df24eba17c23e3f266e16e600790",
+            "bytes": 151155
+          },
+          "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793695064001190996/android-log-live.jsonl": {
+            "sha256": "d76a852fc1429aad18921bd719142af2444ff2c39110417f8768cc4d431feac3"
+          }
+        },
+        "visual_observation": "Main View remains after actual DPAD_RIGHT22; no navigation/typing claim from dispatcher acceptance"
+      },
+      {
+        "execution": 146,
+        "candidate": 145,
+        "run_id": "947ca8d5-5abb-4da7-bb3b-19b0d4f35480",
+        "checkpoint": "/home/tv/recuperacion-archtv/947ca8d5-5abb-4da7-bb3b-19b0d4f35480-markor-software-launch",
+        "factory": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793695480099892018",
+        "native_exit": 0,
+        "outer_exit": 0,
+        "events": [
+          {
+            "tag": "System.err",
+            "message": "WAYLAND_INPUT_GATEWAY_LISTENING NOT_APK_INPUT_ACCEPTANCE",
+            "actual_sender_pid_uid_gid": [
+              535,
+              1000,
+              1000
+            ],
+            "observed_monotonic": 112099.120475584
+          },
+          {
+            "tag": "System.err",
+            "message": "WAYLAND_INPUT_PEER_REJECTED pid=535 uid=1000 context=u:r:system_server:s0",
+            "actual_sender_pid_uid_gid": [
+              535,
+              1000,
+              1000
+            ],
+            "observed_monotonic": 112099.120518517
+          },
+          {
+            "tag": "System.err",
+            "message": "WAYLAND_INPUT_NEGATIVE_PEER_CLOSED actual_uid=1000 actual_domain=system_server NOT_APP_UID_OR_MAC_ACCEPTANCE",
+            "actual_sender_pid_uid_gid": [
+              535,
+              1000,
+              1000
+            ],
+            "observed_monotonic": 112099.120558522
+          },
+          {
+            "tag": "System.err",
+            "message": "WAYLAND_INPUT_PEER_AUTHENTICATED pid=459 uid=1000 context=u:r:hal_graphics_composer_default:s0",
+            "actual_sender_pid_uid_gid": [
+              535,
+              1000,
+              1000
+            ],
+            "observed_monotonic": 112130.633542538
+          },
+          {
+            "tag": "System.err",
+            "message": "WAYLAND_INPUT_ORIGINAL_DISPATCH seq=1 type=2 code=0 action=0 accepted=true",
+            "actual_sender_pid_uid_gid": [
+              535,
+              1000,
+              1000
+            ],
+            "observed_monotonic": 112130.642439739
+          },
+          {
+            "tag": "System.err",
+            "message": "WAYLAND_INPUT_ORIGINAL_DISPATCH seq=2 type=2 code=0 action=1 accepted=true",
+            "actual_sender_pid_uid_gid": [
+              535,
+              1000,
+              1000
+            ],
+            "observed_monotonic": 112130.69590956
+          },
+          {
+            "tag": "System.err",
+            "message": "WAYLAND_INPUT_ORIGINAL_DISPATCH seq=3 type=2 code=0 action=0 accepted=true",
+            "actual_sender_pid_uid_gid": [
+              535,
+              1000,
+              1000
+            ],
+            "observed_monotonic": 112132.408042618
+          },
+          {
+            "tag": "System.err",
+            "message": "WAYLAND_INPUT_ORIGINAL_DISPATCH seq=4 type=2 code=0 action=1 accepted=true",
+            "actual_sender_pid_uid_gid": [
+              535,
+              1000,
+              1000
+            ],
+            "observed_monotonic": 112133.060726414
+          },
+          {
+            "tag": "System.err",
+            "message": "WAYLAND_INPUT_ORIGINAL_DISPATCH seq=5 type=2 code=0 action=0 accepted=true",
+            "actual_sender_pid_uid_gid": [
+              535,
+              1000,
+              1000
+            ],
+            "observed_monotonic": 112133.992160748
+          },
+          {
+            "tag": "System.err",
+            "message": "WAYLAND_INPUT_ORIGINAL_DISPATCH seq=6 type=2 code=0 action=1 accepted=true",
+            "actual_sender_pid_uid_gid": [
+              535,
+              1000,
+              1000
+            ],
+            "observed_monotonic": 112134.173074698
+          },
+          {
+            "tag": "System.err",
+            "message": "WAYLAND_INPUT_ORIGINAL_DISPATCH seq=7 type=2 code=0 action=0 accepted=true",
+            "actual_sender_pid_uid_gid": [
+              535,
+              1000,
+              1000
+            ],
+            "observed_monotonic": 112135.696988902
+          },
+          {
+            "tag": "System.err",
+            "message": "WAYLAND_INPUT_ORIGINAL_DISPATCH seq=8 type=2 code=0 action=1 accepted=true",
+            "actual_sender_pid_uid_gid": [
+              535,
+              1000,
+              1000
+            ],
+            "observed_monotonic": 112135.947914276
+          },
+          {
+            "tag": "System.err",
+            "message": "WAYLAND_INPUT_ORIGINAL_DISPATCH seq=9 type=2 code=0 action=0 accepted=true",
+            "actual_sender_pid_uid_gid": [
+              535,
+              1000,
+              1000
+            ],
+            "observed_monotonic": 112137.225879673
+          },
+          {
+            "tag": "System.err",
+            "message": "WAYLAND_INPUT_ORIGINAL_DISPATCH seq=10 type=2 code=0 action=1 accepted=true",
+            "actual_sender_pid_uid_gid": [
+              535,
+              1000,
+              1000
+            ],
+            "observed_monotonic": 112137.346615519
+          },
+          {
+            "tag": "System.err",
+            "message": "WAYLAND_INPUT_PEER_CLOSED",
+            "actual_sender_pid_uid_gid": [
+              535,
+              1000,
+              1000
+            ],
+            "observed_monotonic": 112164.718880062
+          }
+        ],
+        "private_data_failure_count": 15,
+        "private_data_failures_first_lines": [
+          {
+            "tag": "ActivityManager",
+            "message": "net.gsantner.markor inode == 0 or app uninstalled with keep-data",
+            "monotonic": 112119.963060254
+          },
+          {
+            "tag": "ContextImpl",
+            "message": "Failed to ensure /data/user/0/net.gsantner.markor/cache",
+            "monotonic": 112120.818475186
+          },
+          {
+            "tag": "ContextImpl",
+            "message": "Failed to ensure /data/user/0/net.gsantner.markor/shared_prefs",
+            "monotonic": 112121.018403547
+          },
+          {
+            "tag": "ContextImpl",
+            "message": "Failed to ensure /data/user/0/net.gsantner.markor/shared_prefs",
+            "monotonic": 112121.100525576
+          },
+          {
+            "tag": "ContextImpl",
+            "message": "Failed to ensure /data/user/0/net.gsantner.markor/shared_prefs",
+            "monotonic": 112121.100692772
+          },
+          {
+            "tag": "ContextImpl",
+            "message": "Failed to ensure /data/user/0/net.gsantner.markor/shared_prefs",
+            "monotonic": 112121.636407437
+          },
+          {
+            "tag": "ContextImpl",
+            "message": "Failed to ensure /data/user/0/net.gsantner.markor/shared_prefs",
+            "monotonic": 112121.642662841
+          },
+          {
+            "tag": "ContextImpl",
+            "message": "Failed to ensure /data/user/0/net.gsantner.markor/shared_prefs",
+            "monotonic": 112121.644517744
+          },
+          {
+            "tag": "ContextImpl",
+            "message": "Failed to ensure /data/user/0/net.gsantner.markor/shared_prefs",
+            "monotonic": 112122.018861083
+          },
+          {
+            "tag": "ContextImpl",
+            "message": "Failed to ensure /data/user/0/net.gsantner.markor/shared_prefs",
+            "monotonic": 112122.321091924
+          },
+          {
+            "tag": "ContextImpl",
+            "message": "Failed to ensure /data/user/0/net.gsantner.markor/shared_prefs",
+            "monotonic": 112122.987937422
+          },
+          {
+            "tag": "ContextImpl",
+            "message": "Failed to ensure /data/user/0/net.gsantner.markor/shared_prefs",
+            "monotonic": 112122.98814259
+          },
+          {
+            "tag": "ContextImpl",
+            "message": "Failed to ensure /data/user/0/net.gsantner.markor/shared_prefs",
+            "monotonic": 112122.98822581
+          },
+          {
+            "tag": "ContextImpl",
+            "message": "Failed to ensure /data/user/0/net.gsantner.markor/files",
+            "monotonic": 112126.645286225
+          },
+          {
+            "tag": "ContextImpl",
+            "message": "Failed to ensure /data/user/0/net.gsantner.markor/files",
+            "monotonic": 112126.6551938
+          }
+        ],
+        "cleanup": {
+          "id": "947ca8d5-5abb-4da7-bb3b-19b0d4f35480",
+          "outer_unit": "archtv-markor-session-947ca8d5-5abb-4da7-bb3b-19b0d4f35480",
+          "runner_unit": "archtv-package-runner-947ca8d5-5abb-4da7-bb3b-19b0d4f35480",
+          "initial_vt": "1",
+          "root_pid": 473910,
+          "root_boot_id": "4e18faf8-2b46-42e4-a6b2-269c34326b68",
+          "result": "native_result_recorded",
+          "fuse_connections_before": [],
+          "host_devices_before": {
+            "card0": {
+              "mode": "0o660",
+              "uid": 0,
+              "gid": 983,
+              "rdev": 57856,
+              "inode": 365
+            },
+            "renderD128": {
+              "mode": "0o666",
+              "uid": 0,
+              "gid": 987,
+              "rdev": 57984,
+              "inode": 364
+            }
+          },
+          "interaction_exit": 0,
+          "host_devices_after": {
+            "card0": {
+              "mode": "0o660",
+              "uid": 0,
+              "gid": 983,
+              "rdev": 57856,
+              "inode": 365
+            },
+            "renderD128": {
+              "mode": "0o666",
+              "uid": 0,
+              "gid": 987,
+              "rdev": 57984,
+              "inode": 364
+            }
+          },
+          "host_device_metadata_unchanged": true,
+          "fuse_connections_after": [],
+          "new_fuse_connections": [],
+          "final_vt": "1",
+          "outer_active": false,
+          "runner_active": false
+        },
+        "artifacts": {
+          "/home/tv/recuperacion-archtv/947ca8d5-5abb-4da7-bb3b-19b0d4f35480-markor-software-launch/before-launch.json": {
+            "sha256": "e4810b84fc4e1013ed489cda6403d6b43eee4962a050199fbad172c290a71d15",
+            "bytes": 3307
+          },
+          "/home/tv/recuperacion-archtv/947ca8d5-5abb-4da7-bb3b-19b0d4f35480-markor-software-launch/result.json": {
+            "sha256": "53edbb9536baf9587e0d53421b5eb1259b29ac7bd1c679dc990ecd9d957b67cb",
+            "bytes": 29855
+          },
+          "/home/tv/recuperacion-archtv/947ca8d5-5abb-4da7-bb3b-19b0d4f35480-markor-software-launch/session-state.json": {
+            "sha256": "f63b37d5c1ba4fa7556727e0b6b1327e3b6f8a5126b9ae010bb19f88f6a364ac",
+            "bytes": 1126
+          },
+          "/home/tv/recuperacion-archtv/947ca8d5-5abb-4da7-bb3b-19b0d4f35480-markor-software-launch/pointer-test.json": {
+            "sha256": "50a29cab6472f1d2d11c5f8f19946b2eb6229a4a7c1c6a5d9e3f4fb93dc66afd",
+            "bytes": 1556
+          },
+          "/home/tv/recuperacion-archtv/947ca8d5-5abb-4da7-bb3b-19b0d4f35480-markor-software-launch/pointer-test.py": {
+            "sha256": "d59abbabd89b78c0afd23d9e6205b3b49b59e4c4d7bc9ac46eff9284a3255dfb",
+            "bytes": 1839
+          },
+          "/home/tv/recuperacion-archtv/947ca8d5-5abb-4da7-bb3b-19b0d4f35480-markor-software-launch/input-device-cleanup.json": {
+            "sha256": "dab0832cd8f21b4d7e7cb9d645094f494075f97d43bcf7bbf784eeaf41c5d4b4",
+            "bytes": 129
+          },
+          "/home/tv/recuperacion-archtv/947ca8d5-5abb-4da7-bb3b-19b0d4f35480-markor-software-launch/capture-samples.json": {
+            "sha256": "2670a4f9d5cf7cf828d70888c8b5a305f0def436eadfd4bb7546b9a3c8c10d00",
+            "bytes": 17540
+          },
+          "/home/tv/recuperacion-archtv/947ca8d5-5abb-4da7-bb3b-19b0d4f35480-markor-software-launch/completion-consumer.json": {
+            "sha256": "89657a8254ed038b2f38625c6a1d861d3388e0cfc226ae2731e727f24ea8bc43",
+            "bytes": 196
+          },
+          "/home/tv/recuperacion-archtv/947ca8d5-5abb-4da7-bb3b-19b0d4f35480-markor-software-launch/completion-delivery.json": {
+            "sha256": "250ed3b3b9c309e3a3be9a314377ae4e4132cb6e6f5a422f9afd51f1b5adc59d",
+            "bytes": 240
+          },
+          "/home/tv/recuperacion-archtv/947ca8d5-5abb-4da7-bb3b-19b0d4f35480-markor-software-launch/compositor.log": {
+            "sha256": "8079a4dd2d8de5dd889a13dbff83842fc3b9aed239cf7d037aab1aa7a3e7f91d",
+            "bytes": 139960
+          },
+          "/home/tv/recuperacion-archtv/947ca8d5-5abb-4da7-bb3b-19b0d4f35480-markor-software-launch/markor-after-onboarding-clicks.png": {
+            "sha256": "8c8ea301bf95d764f66488f0fb6044a0a52884e557c82efd9b3cbe00251cb123",
+            "bytes": 65334
+          },
+          "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793695480099892018/android-log-live.jsonl": {
+            "sha256": "a16f8499894218feeb110c79774cc8b41e779616569598c84efdb2b38bc5a215"
+          }
+        },
+        "visual_observation": "Real clicks advance to final QuickNote onboarding slide with DONE visible; not actual QuickNote editor, not proven completion or note"
+      }
+    ],
+    "scope": "Original keyboard mapping/dispatch, real wrong-context peer rejection and multi-slide pointer control; partial application workflow only",
+    "source_changes": {
+      "transport": "Clear held keys/meta/touch and queued/partial data on disconnect, failed connection, rejected acknowledgment or overflow. Check ordered acknowledgments and bound outstanding wait5s. Clamp coordinates. No replay to a new connection.",
+      "tested_scope": "Normal real key down/up and pointer interactions execute; wrong-context UID1000 connection actually rejected and EOF observed. Forced timeout/overflow/malformed/partial-frame/focus failure paths not executed, no stability completion."
+    },
+    "original_source_analysis": {
+      "AppDataHelper": {
+        "pin": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+        "path": "services/core/java/com/android/server/pm/AppDataHelper.java",
+        "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/core/java/com/android/server/pm/AppDataHelper.java?format=TEXT",
+        "sha256": "375fe9ed587817afba0135d0d0c92a2457619b3734132761f32fcf44451db6fe"
+      },
+      "UserManagerService": {
+        "pin": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+        "path": "services/core/java/com/android/server/pm/UserManagerService.java",
+        "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/core/java/com/android/server/pm/UserManagerService.java?format=TEXT",
+        "sha256": "7244604b4e5544ba976ab0f4709a49001b871f29c7d6dfcb352767a1d674849e"
+      },
+      "contract": "Original AppDataHelper.prepareAppDataPostCommitLIF only requests CE when StorageManager.isCeStorageUnlocked and local isCeStoragePrepared; DE-only when user running, otherwise skips. Original UserManager.onBeforeUnlockUser prepares CE, marks it prepared and reconciles original app data. Current script installs before waiting for RUNNING_UNLOCKED; race/guard outcome remains hypothesis until actual states/path evidence contrasted. Existing factory already asserts /data/user/0 bind alias to /data/data; do not invent an absent alias or mkdir package data manually."
+    },
+    "REA_MCP": {
+      "evidence_id": "ev_e4d01d964985c954c60470ce08e87f64712350c6697ae6513bcb53adbacf0f30",
+      "artifact_sha256": "c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440",
+      "operation": "inspect_android_method IntroActivity.onCreate, actual MCP response saved145",
+      "finding": "Five original slides: Main View, View, Share -> Markor, Todo, QuickNote. Static method inspection only; does not prove transition, completion, signature or runtime."
+    },
+    "demonstrated_blocker": "Original ContextImpl cannot create cache/shared_prefs/files because app parent path /data/user/0/net.gsantner.markor is absent; original ProcessList reports CE inode0. This prevents accepting private-data persistence. Final DONE activation/finish is independently unproven; do not assert private data error caused fifth click not to finish.",
+    "not_accepted": [
+      "No typed text/editor/main function, unique note/save/app close-reopen or durable storage",
+      "No full input stage, non-US layout/repeats/mouse hover-scroll/multitouch or Android physical device enumeration",
+      "SameUID different-context negative is not ordinary APK UID denial or MAC/enforcing proof",
+      "Forced gateway failure, isolation, ARM/GMS/DRM and product install/update remain open"
+    ],
+    "next": "Integrate original user unlock before PackageInstaller commit so the normal AppDataHelper CE guards can hold, then verify original app data inode/owner/label and absence of ContextImpl ENOENT. If still absent, inspect actual CE-prepared and UserManager state rather than overriding flags or creating dirs. Complete final DONE by real input, enter actual editor/type unique note/save/app close/reopen."
+  }
 }

@@ -1,6 +1,6 @@
 # Índice de evidencias
 
-[144 · entrada real hasta una APK intacta](../reports/android16-package-bootstrap/original-user-unlock-progress.json), sección input_followup144: UUID3fcb1a1e, eventos kernel del emisor, alta/baja libinput, credenciales/contexto del peer observados, dos respuestas originales accepted=true y capturas antes/después de Main View→View. Hashes de fuentes/build/cierre original libinput/artefactos y fallo143 conservados. Nativo/exterior0, input8 ya ausente, VT1 restaurada y host intacto. No acredita teclado/editor/nota/persistencia ni controles MAC;142 conserva presentación DRM y141 la captura prematura.
+[145/146 · entrada y datos privados](../reports/android16-package-bootstrap/original-user-unlock-progress.json): UUIDd2249924 y947ca8d5, nativo/exterior0, key22 down/up aceptados, peer UID1000/system_server rechazado y EOF verificado. Diez eventos de puntero llevan al slide QuickNote; no editor. Logs originales muestran ENOENT privado e inode0. Capturas, fuentes originales AppDataHelper/UserManager, respuesta REA MCP onCreate y lectura SELinux privada enlazadas por SHA. Dispositivos input9/input10 ausentes después; VT1 y host restaurados. Negativas de fallo de transporte y persistencia siguen pendientes.
 
 [Seguimiento133](../reports/android16-package-bootstrap/original-user-unlock-progress.json), followup133: nativo0, cancelación explícita y drenaje/cierre recogidos. No prueba la rama nueva de reap normal. Exterior1 preservado por aserción de perfil incorrecta; corrección sólo materializada. No nueva etapa APK aceptada.
 
