@@ -1,6 +1,6 @@
 # Roadmap · Arch TV nativo en Rust
 
-Prioridad142: [integrar entrada Wayland con Android original](docs/ROADMAP-A.md) → nota real/guardado/cierre/reapertura. La bienvenida de la APK intacta ya está verificada en la salida DRM final de Smithay, además de SF. [Evidencia142](reports/android16-package-bootstrap/original-user-unlock-progress.json). No completa el recorrido ni la compatibilidad amplia; R1-MAC, ARM/GMS/DRM y entrega del producto permanecen abiertos.
+Prioridad144: [teclado real, gateway y editor de Markor](docs/ROADMAP-A.md) → nota/guardado/cierre/reapertura. El clic Linux→Smithay→Wayland→Android original ya cambia la bienvenida intacta, con imagen final comprobada. [Evidencia144](reports/android16-package-bootstrap/original-user-unlock-progress.json). No completa el recorrido ni compatibilidad amplia; R1-MAC, ARM/GMS/DRM y entrega del producto permanecen abiertos.
 
 Camino crítico desde132: [cierre coherente y almacenamiento/OverlayManager originales](docs/ROADMAP-A.md) → UI/entrada/nota/cierre/reapertura de Markor. El usuario ya alcanza RUNNING_UNLOCKED y AMS lanza la APK intacta hacia IntroActivity; falta aceptación del recorrido completo. R1-MAC, ARM/GMS/DRM abiertos.
 

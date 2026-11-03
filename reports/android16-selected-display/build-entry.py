@@ -16,7 +16,7 @@ dex.mkdir()
 source = ROOT / 'runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java'
 commands = []
 for stage in range(2):
-    argv = ['javac', '--release', '8', '-d', str(classes), str(source), str(source.with_name('ServiceLauncher.java'))] if stage == 0 else ['java', '-cp', '/home/tv/.cache/archtv/apk-build-tools/r8.jar',
+    argv = ['javac', '--release', '8', '-d', str(classes), str(source), str(source.with_name('ServiceLauncher.java')), str(source.with_name('WaylandInputBridge.java'))] if stage == 0 else ['java', '-cp', '/home/tv/.cache/archtv/apk-build-tools/r8.jar',
               'com.android.tools.r8.D8', '--min-api', '36', '--output', str(dex),
               *map(str, classes.rglob('*.class'))]
     result = subprocess.run(argv, capture_output=True, text=True, timeout=90)
@@ -24,6 +24,7 @@ for stage in range(2):
     (out / 'build.json').write_text(json.dumps({'commands': commands,
         'source_sha256': hashlib.sha256(source.read_bytes()).hexdigest(),
         'launcher_sha256': hashlib.sha256(source.with_name('ServiceLauncher.java').read_bytes()).hexdigest(),
+        'wayland_input_sha256': hashlib.sha256(source.with_name('WaylandInputBridge.java').read_bytes()).hexdigest(),
         'scope': 'Orchestration build only; no service, display, APK or MAC acceptance'}, indent=2)+'\n')
     result.check_returncode()
 jar = out / 'archtv-selected-services.jar'

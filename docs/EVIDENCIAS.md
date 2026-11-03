@@ -1,6 +1,6 @@
 # Índice de evidencias
 
-[142 · presentación real de Markor en Smithay](../reports/android16-package-bootstrap/original-user-unlock-progress.json), sección presentation_followup142: UUIDca5004b9, doce PPM con SHA7f0f6911… inspeccionados mediante conversión PNG. El capturador existente lee el búfer DRM actual sin flip pendiente; tres primeras muestras negras y las de cierre se conservan. Candidato140 y APK intactos, nativo/exterior0, host sin cambios y cierre comprobado. No acredita interacción, nota ni persistencia.141 conserva la captura prematura negra;140 y resultados históricos permanecen en el mismo registro.
+[144 · entrada real hasta una APK intacta](../reports/android16-package-bootstrap/original-user-unlock-progress.json), sección input_followup144: UUID3fcb1a1e, eventos kernel del emisor, alta/baja libinput, credenciales/contexto del peer observados, dos respuestas originales accepted=true y capturas antes/después de Main View→View. Hashes de fuentes/build/cierre original libinput/artefactos y fallo143 conservados. Nativo/exterior0, input8 ya ausente, VT1 restaurada y host intacto. No acredita teclado/editor/nota/persistencia ni controles MAC;142 conserva presentación DRM y141 la captura prematura.
 
 [Seguimiento133](../reports/android16-package-bootstrap/original-user-unlock-progress.json), followup133: nativo0, cancelación explícita y drenaje/cierre recogidos. No prueba la rama nueva de reap normal. Exterior1 preservado por aserción de perfil incorrecta; corrección sólo materializada. No nueva etapa APK aceptada.
 

@@ -577,6 +577,7 @@ public final class SelectedServices {
                 if(lockInternal==null)throw new IllegalStateException("Original LockSettingsInternal unavailable");
                 call(lockInternalType,lockInternal,"onThirdPartyAppsStarted",new Class<?>[0]);
                 System.err.println("ORIGINAL_LOCKSETTINGS_THIRD_PARTY_RETURNED NOT_USER_UNLOCK_OR_APK_ACCEPTANCE");
+                WaylandInputBridge.start(input);
                 Thread installation=new Thread(() -> {
                     try {
                         Process child=new ProcessBuilder("/system/bin/sh","-c",

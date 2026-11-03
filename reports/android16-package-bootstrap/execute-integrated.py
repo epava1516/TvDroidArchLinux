@@ -7,6 +7,8 @@ import xml.etree.ElementTree, hashlib
 hashlib.sha256(b"").digest()
 r=Path(__file__).resolve().parents[2]
 socket=sys.argv[1];payload=Path(sys.argv[2]).resolve();store=Path(sys.argv[3]).resolve()
+observe_ms=json.loads((payload.parent/'build-options.json').read_text()).get('observe_ms',3000)
+assert isinstance(observe_ms,int) and 3000<=observe_ms<=30000
 # Materialize the existing graphics adapter, then add the tested APEX boundary.
 recipe=(r/'reports/android16-hwc3-wayland/execute-graphics.py').read_text()
 last="exec(compile(base, '<materialized graphics factory>', 'exec'), {'__name__': '__main__'})"
@@ -32,7 +34,7 @@ for name in ['dev/null','dev/urandom','dev/dri/card0','dev/dri/renderD128']:
 """
 text=text.replace('dist/aosp16/sf-cohort-build-32/payload-2.ext4',str(payload.relative_to(r)))
 text=text.replace('len(observed_logs)<512','len(observed_logs)<4096')
-text=text.replace("'--display-integration'","'--packages-integration'").replace("'--startup-ms','45000'","'--startup-ms','300000'").replace("'--observe-ms','30000'","'--observe-ms','3000'")
+text=text.replace("'--display-integration'","'--packages-integration'").replace("'--startup-ms','45000'","'--startup-ms','300000'").replace("'--observe-ms','30000'","'--observe-ms',"+repr(str(observe_ms)))
 text=text.replace('root.mkdir()\n',"""root.mkdir()
 import importlib.util
 factory_caps=int(next(l.split(':',1)[1].strip() for l in Path('/proc/self/status').read_text().splitlines() if l.startswith('CapEff:')),16)

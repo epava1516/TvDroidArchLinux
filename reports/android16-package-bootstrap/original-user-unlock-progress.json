@@ -163,15 +163,7 @@
     "Native normal lazy apexd exit CLD_EXITED0 clean1 followed by successful coordinatorclose0; explicit cancellation alternative was exercised133",
     "Native/exterior0; exact unitsinactive, VT1restored, no loops/dm/new FUSEconnections; host DRM node metadata identical"
   ],
-  "not_accepted": [
-    "Final Smithay/physical output frame for this APK is not yet captured; early compositor30s capture is not app presentation evidence",
-    "End-to-end Android input absent: current HWC WaylandOutput has no wl_seat binding",
-    "Actual editor, unique note creation, save/persistence, services for full journey, app-close/reopen",
-    "Other graphics formats/apps, accelerated/protected rendering, FUSE BPF/passthrough",
-    "MAC authorization/isolation: permissive policyload4, R1open",
-    "ARM/GMS/DRM separateopen"
-  ],
-  "next": "Bind Wayland seat and adapt actual keyboard/pointer events to original Android input subsystem with authenticated boundary, focus/loss/release handling and negatives. Then real onboarding/editor/unique note/save/app close/reopen. Do not edit app preferences or call app callbacks directly.",
+  "next": "Exercise real keyboard through original KeyLayoutMap and dispatcher; complete onboarding through events and enter real editor. Test gateway rejection and focus/disconnect releases, fix transport loss state before accepting stability. Then actual unique note/save/app close/reopen with original storage.",
   "artifacts": {
     "/home/tv/recuperacion-archtv/ff987089-92db-43e2-852d-3e78501aae42-markor-software-launch/before-launch.json": "db7aaed86c8a4f5121ce3677ff47d50e11f74a3c646b3455437700432da2818a",
     "/home/tv/recuperacion-archtv/ff987089-92db-43e2-852d-3e78501aae42-markor-software-launch/result.json": "db31e85df10c964be7b912ab4f7c29b47f292e788e26c8df09ce639c935578b9",
@@ -1008,5 +1000,462 @@
       "No MAC/enforcing, hardware acceleration, protected graphics, broad APK, ARM/GMS/DRM acceptance"
     ],
     "next": "Bind Wayland seat and adapt actual keyboard/pointer events to original Android input subsystem with authenticated boundary, focus/loss/release handling and negatives. Then real onboarding/editor/unique note/save/app close/reopen. Do not edit app preferences or call app callbacks directly."
-  }
+  },
+  "input_followup144": {
+    "run_id": "3fcb1a1e-2bc9-4ee7-a9a8-c18145b6ae4a",
+    "candidate": 144,
+    "checkpoint": "/home/tv/recuperacion-archtv/3fcb1a1e-2bc9-4ee7-a9a8-c18145b6ae4a-markor-software-launch",
+    "factory": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793694417050732755",
+    "result": {
+      "native_exit": 0,
+      "outer_exit": 0,
+      "original_apex_inventory_modules": 41
+    },
+    "original_input_events": [
+      {
+        "tag": "System.err",
+        "message": "WAYLAND_INPUT_GATEWAY_LISTENING NOT_APK_INPUT_ACCEPTANCE",
+        "actual_sender_pid_uid_gid": [
+          538,
+          1000,
+          1000
+        ],
+        "observed_monotonic": 111033.405043104
+      },
+      {
+        "tag": "System.err",
+        "message": "WAYLAND_INPUT_PEER_AUTHENTICATED pid=459 uid=1000 context=u:r:hal_graphics_composer_default:s0",
+        "actual_sender_pid_uid_gid": [
+          538,
+          1000,
+          1000
+        ],
+        "observed_monotonic": 111065.619618206
+      },
+      {
+        "tag": "System.err",
+        "message": "WAYLAND_INPUT_ORIGINAL_DISPATCH seq=1 type=2 code=0 action=0 accepted=true",
+        "actual_sender_pid_uid_gid": [
+          538,
+          1000,
+          1000
+        ],
+        "observed_monotonic": 111065.62518262
+      },
+      {
+        "tag": "System.err",
+        "message": "WAYLAND_INPUT_ORIGINAL_DISPATCH seq=2 type=2 code=0 action=1 accepted=true",
+        "actual_sender_pid_uid_gid": [
+          538,
+          1000,
+          1000
+        ],
+        "observed_monotonic": 111065.627497389
+      },
+      {
+        "tag": "System.err",
+        "message": "WAYLAND_INPUT_PEER_CLOSED",
+        "actual_sender_pid_uid_gid": [
+          538,
+          1000,
+          1000
+        ],
+        "observed_monotonic": 111095.639548465
+      }
+    ],
+    "observed_function": "Actual Linux uinput absolute pointer discovered by compositor/libinput; real wl_pointer down/up passes authenticated private gateway into original InputManagerService; intact Markor advances Main View -> View onboarding slide, visible in final Smithay DRM image. No app callbacks/preferences modified.",
+    "visual_inspection": {
+      "before": "/home/tv/recuperacion-archtv/3fcb1a1e-2bc9-4ee7-a9a8-c18145b6ae4a-markor-software-launch/smithay-frame-03.ppm",
+      "after": "/home/tv/recuperacion-archtv/3fcb1a1e-2bc9-4ee7-a9a8-c18145b6ae4a-markor-software-launch/markor-after-real-pointer.png",
+      "after_source": "/home/tv/recuperacion-archtv/3fcb1a1e-2bc9-4ee7-a9a8-c18145b6ae4a-markor-software-launch/smithay-frame-10.ppm",
+      "scope": "Second onboarding slide View, NOT the actual editor or a created note. Illustrations are bundled APK art."
+    },
+    "input_boundary": {
+      "transport": "Private NET namespace AF_UNIX abstract stream, immutable protocol version, bounded40byte records; HWC monitors even while display idle",
+      "server_admission": "Original LocalSocket.getPeerCredentials uid1000 and SELinux.getPeerContext exact hal_graphics_composer_default, observed authenticated pid459. Source context is kernel-provided, not packet metadata.",
+      "client_admission": "Native source checks SO_PEERCRED uid1000 and SO_PEERSEC system_server before sending; successful receiver events imply this branch passed. Native stderr acknowledgment was not independently captured.",
+      "original_contracts": "Original KeyLayoutMap/updateMetaState linked through complete original GSI libinput; pointer events are original MotionEvent virtual touchscreen, dispatched by original InputManagerService.injectInputEvent WAIT_FOR_RESULT. No original permission check patched or replaced.",
+      "security_scope": "Permissive policyload4. Explicit peer comparison is functionality, not MAC/enforcing or isolation proof. Unauthorized/malformed/partial packet/focus/transport failure negative tests still required."
+    },
+    "source_provenance": {
+      "LocalSocket.source.json": {
+        "pin": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+        "path": "core/java/android/net/LocalSocket.java",
+        "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/core/java/android/net/LocalSocket.java?format=TEXT",
+        "sha256": "a4f429ff21e0206f2d4ea6daced717bc8695ba2c4263f32dee16cb26b6aabd79"
+      },
+      "InputShellCommand.source.json": {
+        "pin": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+        "path": "services/core/java/com/android/server/input/InputShellCommand.java",
+        "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/core/java/com/android/server/input/InputShellCommand.java?format=TEXT",
+        "sha256": "9b2c7d34d4f823b65e5b024e6b0ca124fae860c41a47bfa5c59d25af9d2ed5b8"
+      },
+      "jni.source.json": {
+        "pin": "2d584ec2da2c5271ed1576593c6590d652806f0d",
+        "url": "https://android.googlesource.com/platform/libnativehelper/+/2d584ec2da2c5271ed1576593c6590d652806f0d/include_jni/jni.h?format=TEXT",
+        "sha256": "2a3cea5e4306872202592406593f6465f07b848d75ed03ad07e2936479867f0a"
+      },
+      "SELinux.source.json": {
+        "pin": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+        "path": "core/java/android/os/SELinux.java",
+        "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/core/java/android/os/SELinux.java?format=TEXT",
+        "sha256": "b2cb22a20310c559ef6163498c689d75f45c5a8aa0262abe9b11345506eae26d"
+      }
+    },
+    "whole_original_library_closure": {
+      "scope": "Exact original GSI DT_NEEDED closure only; no runtime/ABI acceptance",
+      "core_existing_resolution": [
+        "libc++.so",
+        "libc.so",
+        "libdl.so",
+        "libdl_android.so",
+        "libm.so"
+      ],
+      "libraries": {
+        "libinput.so": {
+          "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libinput.so",
+          "sha256": "7040fae5ab8598d81b0d3e5e6aed06e624922996089f907fe7e05634619ad6fe",
+          "needed": [
+            "libclang_rt.ubsan_standalone-x86_64-android.so",
+            "android.companion.virtualdevice.flags-aconfig-cc.so",
+            "com.android.window.flags.window-aconfig_flags_c_lib.so",
+            "libPlatformProperties.so",
+            "libaconfig_storage_read_api_cc.so",
+            "libbase.so",
+            "libbinder.so",
+            "libbinder_ndk.so",
+            "libcutils.so",
+            "liblog.so",
+            "libtinyxml2.so",
+            "libutils.so",
+            "libz.so",
+            "server_configurable_flags.so",
+            "libc++.so",
+            "libc.so",
+            "libm.so",
+            "libdl.so"
+          ]
+        },
+        "server_configurable_flags.so": {
+          "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/server_configurable_flags.so",
+          "sha256": "7b7bb6a7010792d35ca0207233cf13fa42ac3f82eb16a8fbb455073951cb9ce8",
+          "needed": [
+            "libbase.so",
+            "libcutils.so",
+            "libc++.so",
+            "libc.so",
+            "libm.so",
+            "libdl.so"
+          ]
+        },
+        "libz.so": {
+          "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libz.so",
+          "sha256": "975b579497a84ff181982cfa0f39e37dec19f00293dfdc258ab2bb1630a63553",
+          "needed": [
+            "libc.so",
+            "libm.so",
+            "libdl.so"
+          ]
+        },
+        "libtinyxml2.so": {
+          "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libtinyxml2.so",
+          "sha256": "830557737c75a37e7753fc1ffd6af4e54bee8e4df09b4f1fd341e2e7aacc9206",
+          "needed": [
+            "liblog.so",
+            "libc++.so",
+            "libc.so",
+            "libm.so",
+            "libdl.so"
+          ]
+        },
+        "liblog.so": {
+          "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/liblog.so",
+          "sha256": "d19efa76e39bc458a0f9125d1665185ce95af9153bfe695e0c9519937ea9bc0a",
+          "needed": [
+            "libc++.so",
+            "libc.so",
+            "libm.so",
+            "libdl.so"
+          ]
+        },
+        "libbinder_ndk.so": {
+          "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libbinder_ndk.so",
+          "sha256": "02522958590df89d15f9663671e2a1456a36b273db4c452d71e58f8d88103b88",
+          "needed": [
+            "libbinder.so",
+            "liblog.so",
+            "libutils.so",
+            "libc++.so",
+            "libc.so",
+            "libm.so",
+            "libdl.so"
+          ]
+        },
+        "libbinder.so": {
+          "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libbinder.so",
+          "sha256": "184ef6000d17e6ce011e5b595a00b24cadbec5915a4eed5f4b16b0c172a45e49",
+          "needed": [
+            "libcutils.so",
+            "liblog.so",
+            "libutils.so",
+            "libapexsupport.so",
+            "libvndksupport.so",
+            "libc++.so",
+            "libc.so",
+            "libm.so",
+            "libdl.so"
+          ]
+        },
+        "libvndksupport.so": {
+          "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libvndksupport.so",
+          "sha256": "ac4e2cc821957fc90c739b1414520e006ef51b6031e83f9163db177b710fbc6c",
+          "needed": [
+            "libdl_android.so",
+            "liblog.so",
+            "libc++.so",
+            "libc.so",
+            "libm.so",
+            "libdl.so"
+          ]
+        },
+        "libapexsupport.so": {
+          "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libapexsupport.so",
+          "sha256": "533c4c56e19ad3ea94031f3fd543e233a33441732c48b71c18f6eac491bde8d1",
+          "needed": [
+            "libdl_android.so",
+            "liblog.so",
+            "libc++.so",
+            "libc.so",
+            "libm.so",
+            "libdl.so"
+          ]
+        },
+        "libaconfig_storage_read_api_cc.so": {
+          "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libaconfig_storage_read_api_cc.so",
+          "sha256": "4c9e8e98ddc5f420dd3781e16f1f69da7603e735baba6110ed45072a87d1ff47",
+          "needed": [
+            "libc++.so",
+            "libc.so",
+            "libm.so",
+            "libdl.so"
+          ]
+        },
+        "libPlatformProperties.so": {
+          "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libPlatformProperties.so",
+          "sha256": "b6a4a27568bc0b1b8807e67ebdfad3bb994afe5287826ee5139cdcd5093369b3",
+          "needed": [
+            "liblog.so",
+            "libc++.so",
+            "libc.so",
+            "libm.so",
+            "libdl.so"
+          ]
+        },
+        "com.android.window.flags.window-aconfig_flags_c_lib.so": {
+          "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/com.android.window.flags.window-aconfig_flags_c_lib.so",
+          "sha256": "907df463a29d724adbc1d1bee35ef18473d886788ae84161ce11e8a0f14a1d72",
+          "needed": [
+            "libaconfig_storage_read_api_cc.so",
+            "libbase.so",
+            "liblog.so",
+            "libc++.so",
+            "libc.so",
+            "libm.so",
+            "libdl.so"
+          ]
+        },
+        "android.companion.virtualdevice.flags-aconfig-cc.so": {
+          "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/android.companion.virtualdevice.flags-aconfig-cc.so",
+          "sha256": "23859c8ae38ec1d340d21ca67bbb08ed2911398db90926a5712b8c25542c8cd7",
+          "needed": [
+            "libaconfig_storage_read_api_cc.so",
+            "libbase.so",
+            "liblog.so",
+            "libc++.so",
+            "libc.so",
+            "libm.so",
+            "libdl.so"
+          ]
+        },
+        "libclang_rt.ubsan_standalone-x86_64-android.so": {
+          "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/lib64/libclang_rt.ubsan_standalone-x86_64-android.so",
+          "sha256": "3d00f08948b49a78eb6fcebdbf23314ae0ae5daab4cfb49b87730b19f6dba03a",
+          "needed": [
+            "libc.so",
+            "libdl.so",
+            "liblog.so"
+          ]
+        }
+      }
+    },
+    "cleanup": {
+      "id": "3fcb1a1e-2bc9-4ee7-a9a8-c18145b6ae4a",
+      "outer_unit": "archtv-markor-session-3fcb1a1e-2bc9-4ee7-a9a8-c18145b6ae4a",
+      "runner_unit": "archtv-package-runner-3fcb1a1e-2bc9-4ee7-a9a8-c18145b6ae4a",
+      "initial_vt": "1",
+      "root_pid": 463690,
+      "root_boot_id": "4e18faf8-2b46-42e4-a6b2-269c34326b68",
+      "result": "native_result_recorded",
+      "fuse_connections_before": [],
+      "host_devices_before": {
+        "card0": {
+          "mode": "0o660",
+          "uid": 0,
+          "gid": 983,
+          "rdev": 57856,
+          "inode": 365
+        },
+        "renderD128": {
+          "mode": "0o666",
+          "uid": 0,
+          "gid": 987,
+          "rdev": 57984,
+          "inode": 364
+        }
+      },
+      "interaction_exit": 0,
+      "host_devices_after": {
+        "card0": {
+          "mode": "0o660",
+          "uid": 0,
+          "gid": 983,
+          "rdev": 57856,
+          "inode": 365
+        },
+        "renderD128": {
+          "mode": "0o666",
+          "uid": 0,
+          "gid": 987,
+          "rdev": 57984,
+          "inode": 364
+        }
+      },
+      "host_device_metadata_unchanged": true,
+      "fuse_connections_after": [],
+      "new_fuse_connections": [],
+      "final_vt": "1",
+      "outer_active": false,
+      "runner_active": false
+    },
+    "input_device_cleanup": {
+      "scope": "Actual post-run input device check",
+      "sysname": "input8",
+      "exists": false,
+      "current_name": null
+    },
+    "artifacts": {
+      "/home/tv/recuperacion-archtv/3fcb1a1e-2bc9-4ee7-a9a8-c18145b6ae4a-markor-software-launch/before-launch.json": {
+        "sha256": "20eaefbede815ff9287671a34db469682131714f9120113897697609a0e77a2a",
+        "bytes": 4303
+      },
+      "/home/tv/recuperacion-archtv/3fcb1a1e-2bc9-4ee7-a9a8-c18145b6ae4a-markor-software-launch/result.json": {
+        "sha256": "9ad418147afd7b5d77183280d90ce5855ed56badc6157e70517ba90c6d93a0b2",
+        "bytes": 29848
+      },
+      "/home/tv/recuperacion-archtv/3fcb1a1e-2bc9-4ee7-a9a8-c18145b6ae4a-markor-software-launch/session-state.json": {
+        "sha256": "f4e7046b06883ad8bba5fb56a3340a1056835ed09669d2a3e0f705fe5c844684",
+        "bytes": 1126
+      },
+      "/home/tv/recuperacion-archtv/3fcb1a1e-2bc9-4ee7-a9a8-c18145b6ae4a-markor-software-launch/pointer-test.json": {
+        "sha256": "71389120f69af716eb760554adbcc344373b23bb5b1c0f5bed67ce85b8a1cebb",
+        "bytes": 731
+      },
+      "/home/tv/recuperacion-archtv/3fcb1a1e-2bc9-4ee7-a9a8-c18145b6ae4a-markor-software-launch/pointer-test.py": {
+        "sha256": "11deb1b73a73840fb9f461f6ce526ba4986291bfc23537bbc73b367d6de11ddb",
+        "bytes": 1799
+      },
+      "/home/tv/recuperacion-archtv/3fcb1a1e-2bc9-4ee7-a9a8-c18145b6ae4a-markor-software-launch/input-device-cleanup.json": {
+        "sha256": "325b114d3bb642866a1ab2612dbe8343d4dc6ae7e9c13bbc0e8b733e170541ca",
+        "bytes": 118
+      },
+      "/home/tv/recuperacion-archtv/3fcb1a1e-2bc9-4ee7-a9a8-c18145b6ae4a-markor-software-launch/capture-trigger.json": {
+        "sha256": "518b957efc9c466dd22d6d243bd02962e15851545a36d20dffc3dd9c8c8923f2",
+        "bytes": 473
+      },
+      "/home/tv/recuperacion-archtv/3fcb1a1e-2bc9-4ee7-a9a8-c18145b6ae4a-markor-software-launch/capture-samples.json": {
+        "sha256": "a239615230fad57e2b8ce413fdc2b78167d1413404e07a3b758f46d8783cd28d",
+        "bytes": 15091
+      },
+      "/home/tv/recuperacion-archtv/3fcb1a1e-2bc9-4ee7-a9a8-c18145b6ae4a-markor-software-launch/completion-consumer.json": {
+        "sha256": "d3980ab399f59fdbc7a41c2c40aa0994bbd76143c17f0e53a013a433d891c558",
+        "bytes": 196
+      },
+      "/home/tv/recuperacion-archtv/3fcb1a1e-2bc9-4ee7-a9a8-c18145b6ae4a-markor-software-launch/completion-delivery.json": {
+        "sha256": "81d9618d4e3d5b68c3d85d06f984ef9e6bb1d9d0fc607c80a072c8b1df4d6816",
+        "bytes": 240
+      },
+      "/home/tv/recuperacion-archtv/3fcb1a1e-2bc9-4ee7-a9a8-c18145b6ae4a-markor-software-launch/compositor.log": {
+        "sha256": "f90cd6dd83e22977ce02635b31242bbb3e58f4f915bbff73804520c98359c76a",
+        "bytes": 134406
+      },
+      "/home/tv/recuperacion-archtv/3fcb1a1e-2bc9-4ee7-a9a8-c18145b6ae4a-markor-software-launch/smithay-frame-03.ppm": {
+        "sha256": "7f0f69111db54602c3b6de648f45a1dcc2ae3e12c578d919994ebe6ab214c873",
+        "bytes": 3072016
+      },
+      "/home/tv/recuperacion-archtv/3fcb1a1e-2bc9-4ee7-a9a8-c18145b6ae4a-markor-software-launch/smithay-frame-10.ppm": {
+        "sha256": "a2b8bba2f5426f1ec13340271f42a2003e00fc973a03101853de9879fdcbd0bb",
+        "bytes": 3072016
+      },
+      "/home/tv/recuperacion-archtv/3fcb1a1e-2bc9-4ee7-a9a8-c18145b6ae4a-markor-software-launch/markor-after-real-pointer.png": {
+        "sha256": "21455c538c1d58481adc6db7c0d2b4630344d88713a30989de729a7c1d1c1c35",
+        "bytes": 90592
+      },
+      "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-144/source-inputs.json": {
+        "sha256": "daff98dbe5e57b1778b8428aed3a0f6d260f745e0ac37205afce972788a4e7d6",
+        "bytes": 5770
+      },
+      "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-144/build-options.json": {
+        "sha256": "e3cc67277ae3f813250f470bbc9aa517ef7b69646c81103c2eb2e7d466919224",
+        "bytes": 237
+      },
+      "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-144/wayland-input-build.json": {
+        "sha256": "4199d51332db08f986e13e61a572c9a041129267834f2c0508a1282a2e7ba8e6",
+        "bytes": 24769
+      },
+      "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-144/wayland-input-library-closure.json": {
+        "sha256": "165cc0d53e02058ed57ab7226689114167930d689a6786fe4906c5b10868c43f",
+        "bytes": 6161
+      },
+      "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793694417050732755/android-log-live.jsonl": {
+        "sha256": "0416dd437d465c0e5ca9ec190a961f6c364bea964f0271f83f0318a4b467b789",
+        "bytes": 1994381
+      },
+      "/home/tv/.cache/archtv/run-markor-input-144.py": {
+        "sha256": "81d09fd0ad3623cccad5ff3f1bfce4149549ff0605c0d6ee1384afb5cc8e6bbc",
+        "bytes": 6449
+      }
+    },
+    "prior143": {
+      "checkpoint": "/home/tv/recuperacion-archtv/9c73f6a5-9e46-4d12-829c-9b4267fa87ad-markor-software-launch",
+      "outer_exit": 1,
+      "native_inventory_modules": 41,
+      "actual_failure": "Original libinput missing android.companion.virtualdevice.flags-aconfig-cc.so in HAL default namespace; before app/input. Exact original DT_NEEDED closure included144; no fake library or stub.",
+      "result_sha256": "3f7f994c704521534e237fd365b552dc77cc39b77d8d4dd1ac0ae9389e925866"
+    },
+    "proved": [
+      "Complete pointer path Linux -> Smithay -> Wayland -> original Android dispatcher -> intact app visible transition",
+      "Original backend boot/close together native0 and exterior0, host metadata preserved, temporary input device actually removed"
+    ],
+    "not_accepted": [
+      "Keyboard layout/typing and modifier paths compiled but not executed yet",
+      "No editor, unique note, save, app close/reopen or data durability",
+      "Virtual touchscreen only; mouse hover/scroll, multitouch, repeats, non-US keyboard layout and real Android input-device enumeration not implemented/verified",
+      "Gateway malformed/unauthorized/focus/disconnect recovery and bounded failure still need actual negative tests; no MAC acceptance",
+      "Broad APK, ARM, GMS/DRM, installation/update and product delivery remain open"
+    ],
+    "next": "Exercise real keyboard through original KeyLayoutMap and dispatcher; complete onboarding through events and enter real editor. Test gateway rejection and focus/disconnect releases, fix transport loss state before accepting stability. Then actual unique note/save/app close/reopen with original storage."
+  },
+  "latest_functional_observation": {
+    "candidate": 144,
+    "run_id": "3fcb1a1e-2bc9-4ee7-a9a8-c18145b6ae4a",
+    "section": "input_followup144"
+  },
+  "not_accepted_at_base140": [
+    "Final Smithay/physical output frame for this APK is not yet captured; early compositor30s capture is not app presentation evidence",
+    "End-to-end Android input absent: current HWC WaylandOutput has no wl_seat binding",
+    "Actual editor, unique note creation, save/persistence, services for full journey, app-close/reopen",
+    "Other graphics formats/apps, accelerated/protected rendering, FUSE BPF/passthrough",
+    "MAC authorization/isolation: permissive policyload4, R1open",
+    "ARM/GMS/DRM separateopen"
+  ]
 }

@@ -4,7 +4,7 @@ from pathlib import Path
 import json,subprocess,shutil,hashlib,sys
 r=Path(__file__).resolve().parents[2];out=(r/sys.argv[1]).resolve();out.mkdir()
 tracked_inputs=['Cargo.toml','Cargo.lock','crates/archtv-core/Cargo.toml',*[str(p.relative_to(r)) for p in sorted((r/'crates/archtv-core/src').rglob('*.rs'))],'crates/archtv-core/examples/native_supervisor.rs','reports/android16-package-bootstrap/execute-integrated.py','reports/android16-package-bootstrap/integrated-session.sh','reports/android16-apex-bootstrap/run.py','reports/android16-package-bootstrap/build-platform-overlay.py','tools/apk/SignPlatformOverlay.java','runtime/aosp/platform-overlay/AndroidManifest.xml','runtime/aosp/platform-overlay/res/values/config.xml','runtime/aosp/platform-overlay/overlay-config.xml','reports/android16-apex-bootstrap/devices.py','runtime/aosp/linux-services/initial-apk-profile.json','runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java','runtime/aosp/linux-services/org/archtv/aosplinux/ServiceLauncher.java','runtime/aosp/linux-services/install-markor.sh','runtime/aosp/native/linux-property-worker.cpp','runtime/aosp/native/linux-mc1-cohort.h','reports/android16-package-bootstrap/build-integrated.py','runtime/aosp/android16-qpr2/patches/0004-linux-admitted-lazy-services.patch','fixtures/aosp-keymint-software/SoftwareCryptoProbe.cpp','runtime/aosp/native/linux-keymint-service.cpp','reports/android16-package-bootstrap/build-keymint-software.py','fixtures/aosp-keystore2-software/BinderClient.rs','runtime/aosp/android16-qpr2/patches/keystore2-linux-software.patch','fixtures/aosp-keystore2-software/OriginalJavaProviderProbe.java','runtime/aosp/android16-qpr2/patches/framework-keystore-linux-software.patch','tools/aosp/KeystoreFrameworkProfilePlan.java','tools/aosp/build_software_keystore_framework.py','reports/android16-package-bootstrap/build-keystore-java-probe.py','reports/android16-package-bootstrap/build-gatekeeper-software.py']
-tracked_inputs.extend(['reports/android16-property-actions/apply-patch-chain.py','reports/android16-property-actions/build-lazy-control.py',*[str(p.relative_to(r)) for p in sorted((r/'runtime/aosp/android16-qpr2/patches').glob('000[1-5]-*.patch'))]])
+tracked_inputs.extend(['reports/android16-selected-display/build-entry.py','runtime/aosp/linux-services/org/archtv/aosplinux/WaylandInputBridge.java','runtime/aosp/native/linux-wayland-input.h','runtime/aosp/native/linux-wayland-output.cpp','reports/android16-property-actions/apply-patch-chain.py','reports/android16-property-actions/build-lazy-control.py',*[str(p.relative_to(r)) for p in sorted((r/'runtime/aosp/android16-qpr2/patches').glob('000[1-5]-*.patch'))]])
 source_hashes={n:hashlib.sha256((r/n).read_bytes()).hexdigest() for n in tracked_inputs}
 (out/'source-inputs.json').write_text(json.dumps(source_hashes,indent=2)+'\n')
 actions_source=r/'dist/aosp16/property-actions-source-4'
@@ -38,6 +38,8 @@ lines=rc.splitlines();lines[0]='service archtv-selected-services /system/bin/app
 checkpoint_diagnostic='--checkpoint-diagnostic' in sys.argv[2:]
 keymint_component='--keymint-component' in sys.argv[2:]
 software_platform='--software-security' in sys.argv[2:]
+observe_ms=int(next((a.split('=',1)[1] for a in sys.argv[2:] if a.startswith('--observe-ms=')),'3000'))
+assert 3000<=observe_ms<=30000
 keystore_java='--keystore-java-component' in sys.argv[2:] or software_platform
 keystore_component='--keystore-component' in sys.argv[2:] or keystore_java
 assert not (keymint_component and keystore_component)
@@ -45,7 +47,7 @@ if software_platform:
  lines[0]=lines[0].replace('-Xmx768m','-Xmx512m')
  lines.append('    setenv ARCHTV_SOFTWARE_SECURITY_PROFILE software-platform-v1')
 experiment_kind='markor-software-launch' if software_platform else 'keystore-java-component' if keystore_java else 'keystore-component' if keystore_component else ('keymint-component' if keymint_component else 'markor-launch')
-(out/'build-options.json').write_text(json.dumps({'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component and not software_platform,'software_security_platform':software_platform,'experiment_kind':experiment_kind},indent=2)+'\n')
+(out/'build-options.json').write_text(json.dumps({'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component and not software_platform,'software_security_platform':software_platform,'observe_ms':observe_ms,'experiment_kind':experiment_kind},indent=2)+'\n')
 if checkpoint_diagnostic:lines.append('    setenv ARCHTV_CHECKPOINT_DIAGNOSTIC 1')
 lines=[l for l in lines if not any(l.startswith('    setenv '+n+' ') for n in ['BOOTCLASSPATH','DEX2OATBOOTCLASSPATH','SYSTEMSERVERCLASSPATH','STANDALONE_SYSTEMSERVER_JARS'])];(entry/'selected-services.rc').write_text('\n'.join(lines)+'\n')
 old=r/'dist/aosp16/apex-cohort-build-6';commands=[]
@@ -66,6 +68,31 @@ for c in json.loads((old/'build.json').read_text())['commands']:
 argv=json.loads((r/'reports/android16-hwmanager-cohort/helper-build.json').read_text())['argv'];argv[argv.index('-o')+1]=str(out/'linux-exec-context-image');run(argv)
 (out/'artifacts.json').write_text(json.dumps({n:hashlib.sha256((out/n).read_bytes()).hexdigest() for n in ['graphics-client','cargo/debug/examples/native_supervisor','linux-exec-context-image','property-coordinator']},indent=2))
 base=r/'dist/aosp16/sf-cohort-build-32';vendor=json.loads((base/'vendor-inputs.json').read_text())
+input_hwc=r/'dist/aosp16/hwc3-wayland-input-4'
+input_record=json.loads((input_hwc/'build.json').read_text());assert input_record['terminal']
+assert hashlib.sha256(Path(input_record['executable']).read_bytes()).hexdigest()==input_record['executable_sha256']
+for target,value in vendor['files'].items():
+ if value.get('source','').endswith('android.hardware.graphics.composer3-service.archtv-display-2'):value['source']=input_record['executable']
+# Original whole libinput, needed by original KeyLayoutMap/updateMetaState.
+# Preserve existing vendor modules; add only the exact missing DT_NEEDED
+# closure from this same original GSI. Core Bionic/APEX names keep their
+# existing linker namespace resolution, never a copied second libc.
+import re
+original_libs=r/'dist/aosp16/factory-inputs-3/root/system/lib64'
+closure={};pending=['libinput.so'];core={'libc.so','libm.so','libdl.so','libdl_android.so','libc++.so'}
+while pending:
+ name=pending.pop()
+ if name in core or name in closure:continue
+ target='/vendor/lib64/'+name
+ if target in vendor['files']:continue
+ source=original_libs/name;assert source.is_file(),('Original input dependency unavailable',name)
+ dependencies=re.findall(r'NEEDED.*\[(.*?)\]',subprocess.check_output(['readelf','-d',str(source)],text=True))
+ closure[name]={'source':str(source),'sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'needed':dependencies}
+ vendor['files'][target]={'source':str(source),'context':'u:object_r:vendor_file:s0','mode':0o644}
+ pending.extend(dependencies)
+ assert len(closure)<=64,'Unexpected input dependency expansion'
+(out/'wayland-input-library-closure.json').write_text(json.dumps({'scope':'Exact original GSI DT_NEEDED closure only; no runtime/ABI acceptance','core_existing_resolution':sorted(core),'libraries':closure},indent=2)+'\n')
+(out/'wayland-input-build.json').write_text(json.dumps(input_record,indent=2)+'\n')
 for key,value in vendor['files'].items():
  if key=='/vendor/framework/archtv-selected-services.jar':value['source']=str(entry/'archtv-selected-services.jar')
  if key=='/vendor/etc/init/archtv-selected-services.rc':value['source']=str(entry/'selected-services.rc')

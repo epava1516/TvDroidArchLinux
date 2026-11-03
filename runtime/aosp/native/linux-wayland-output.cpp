@@ -1,4 +1,5 @@
 #include "linux-wayland-output.h"
+#include "linux-wayland-input.h"
 #include <wayland-client.h>
 #include "xdg-shell-client-protocol.h"
 #include <algorithm>
@@ -16,6 +17,8 @@ struct LinuxWaylandOutput::Impl {
     wl_registry* registry=nullptr;
     wl_compositor* compositor=nullptr;
     wl_shm* shm=nullptr;
+    wl_seat* seat=nullptr;wl_keyboard* keyboard=nullptr;wl_pointer* pointer=nullptr;
+    LinuxWaylandInput input;
     wl_output* output=nullptr;
     xdg_wm_base* wm=nullptr;
     wl_surface* surface=nullptr;
@@ -50,6 +53,7 @@ struct LinuxWaylandOutput::Impl {
         errno=ENODEV;return false;
     }
     bool Poll() {
+        input.Pump();
         if(!display || closed){errno=ENODEV;return false;}
         if(wl_display_dispatch_pending(display)<0)return false;
         while(wl_display_prepare_read(display)!=0)if(wl_display_dispatch_pending(display)<0)return false;
@@ -69,9 +73,39 @@ struct LinuxWaylandOutput::Impl {
         static const wl_callback_listener listener{[](void* p,wl_callback*,uint32_t){*static_cast<bool*>(p)=true;}};
         wl_callback_add_listener(cb,&listener,&done);bool ok=Pump([&]{return done;});wl_callback_destroy(cb);return ok;
     }
+    static void SeatCapabilities(void* data,wl_seat* seat,uint32_t caps) {
+        auto& s=*static_cast<Impl*>(data);
+        if((caps&WL_SEAT_CAPABILITY_KEYBOARD) && !s.keyboard){
+            s.keyboard=wl_seat_get_keyboard(seat);
+            static const wl_keyboard_listener listener{
+                [](void*,wl_keyboard*,uint32_t,int fd,uint32_t){close(fd);},
+                [](void*,wl_keyboard*,uint32_t,wl_surface*,wl_array*){},
+                [](void* p,wl_keyboard*,uint32_t,wl_surface*){static_cast<Impl*>(p)->input.Reset();},
+                [](void* p,wl_keyboard*,uint32_t,uint32_t,uint32_t key,uint32_t state){static_cast<Impl*>(p)->input.Key(key,state==WL_KEYBOARD_KEY_STATE_PRESSED);},
+                [](void*,wl_keyboard*,uint32_t,uint32_t,uint32_t,uint32_t,uint32_t){},
+                [](void*,wl_keyboard*,int32_t,int32_t){}};
+            wl_keyboard_add_listener(s.keyboard,&listener,&s);
+        }else if(!(caps&WL_SEAT_CAPABILITY_KEYBOARD) && s.keyboard){s.input.Reset();wl_keyboard_destroy(s.keyboard);s.keyboard=nullptr;}
+        if((caps&WL_SEAT_CAPABILITY_POINTER) && !s.pointer){
+            s.pointer=wl_seat_get_pointer(seat);
+            static const wl_pointer_listener listener{
+                [](void* p,wl_pointer*,uint32_t,wl_surface*,wl_fixed_t x,wl_fixed_t y){static_cast<Impl*>(p)->input.Move(wl_fixed_to_double(x),wl_fixed_to_double(y));},
+                [](void* p,wl_pointer*,uint32_t,wl_surface*){static_cast<Impl*>(p)->input.Reset();},
+                [](void* p,wl_pointer*,uint32_t,wl_fixed_t x,wl_fixed_t y){static_cast<Impl*>(p)->input.Move(wl_fixed_to_double(x),wl_fixed_to_double(y));},
+                [](void* p,wl_pointer*,uint32_t,uint32_t,uint32_t button,uint32_t state){static_cast<Impl*>(p)->input.Button(button,state==WL_POINTER_BUTTON_STATE_PRESSED);},
+                [](void*,wl_pointer*,uint32_t,uint32_t,wl_fixed_t){},
+                [](void*,wl_pointer*){},[](void*,wl_pointer*,uint32_t){},[](void*,wl_pointer*,uint32_t,uint32_t){},[](void*,wl_pointer*,uint32_t,int32_t){}};
+            wl_pointer_add_listener(s.pointer,&listener,&s);
+        }else if(!(caps&WL_SEAT_CAPABILITY_POINTER) && s.pointer){s.input.Reset();wl_pointer_destroy(s.pointer);s.pointer=nullptr;}
+    }
     static void Global(void* data,wl_registry* r,uint32_t name,const char* interface,uint32_t version) {
         auto& s=*static_cast<Impl*>(data);
         if(!std::strcmp(interface,"wl_compositor") && !s.compositor)s.compositor=static_cast<wl_compositor*>(wl_registry_bind(r,name,&wl_compositor_interface,std::min(version,4u)));
+        else if(!std::strcmp(interface,"wl_seat") && !s.seat) {
+            s.seat=static_cast<wl_seat*>(wl_registry_bind(r,name,&wl_seat_interface,std::min(version,5u)));
+            static const wl_seat_listener listener{SeatCapabilities,[](void*,wl_seat*,const char*){}};
+            if(!s.seat){s.closed=true;return;}wl_seat_add_listener(s.seat,&listener,&s);
+        }
         else if(!std::strcmp(interface,"wl_shm") && !s.shm) {
             s.shm=static_cast<wl_shm*>(wl_registry_bind(r,name,&wl_shm_interface,1));
             static const wl_shm_listener listener{[](void* p,wl_shm*,uint32_t format){if(format==WL_SHM_FORMAT_XRGB8888)static_cast<Impl*>(p)->shm_xrgb=true;}};
@@ -134,6 +168,7 @@ struct LinuxWaylandOutput::Impl {
         bool ok=Pump([&]{return frame;});wl_callback_destroy(cb);return ok;
     }
     ~Impl() {
+        input.Reset();if(keyboard)wl_keyboard_destroy(keyboard);if(pointer)wl_pointer_destroy(pointer);if(seat)wl_seat_destroy(seat);
         if(top)xdg_toplevel_destroy(top);if(xsurface)xdg_surface_destroy(xsurface);if(surface)wl_surface_destroy(surface);
         for(auto& b:buffers){if(b.object)wl_buffer_destroy(b.object);if(b.data!=MAP_FAILED)munmap(b.data,b.bytes);}
         if(output)wl_output_destroy(output);if(wm)xdg_wm_base_destroy(wm);if(shm)wl_shm_destroy(shm);if(compositor)wl_compositor_destroy(compositor);if(registry)wl_registry_destroy(registry);if(display)wl_display_disconnect(display);

@@ -162,7 +162,7 @@
         "close": "not_tested",
         "reopen": "not_tested"
       },
-      "reason": "142 using frozen140: actual intact IntroActivity visible in twelve final Smithay DRM captures after initially black samples. No end-to-end input/editor/note/services/persistence/app-close/reopen. Complete stage criteria remain insufficient; no new complete APK stage accepted.",
+      "reason": "144: real Linux pointer reaches original Android input dispatcher and changes intact Markor onboarding Main View -> View, visible in final Smithay DRM. Keyboard/editor/note/save/app close-reopen/persistence and gateway negatives remain unverified; no complete functional stage newly accepted.",
       "framework_class_link_pass": true,
       "declared_application": "net.gsantner.markor.ApplicationObject",
       "bootstrap_experiment": {
@@ -208,24 +208,31 @@
         },
         "launch": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "6b7f4a682a3fdf88f08e04ee69c5cc2e96a4e66a7702b4725b487d7d764506fa",
+          "record_sha256": "6d90ecf99fdab7f32aba4f0af0b317a4bbdeeba3f0cfe3eaf46dbe089514050c",
           "accepted": false,
-          "scope": "Actual intact onboarding reaches final Smithay DRM buffer; no complete interactive application workflow, input/editor/note/persistence/app-close/reopen or MAC acceptance",
-          "partial_observation": "Twelve final DRM captures show original IntroActivity; initial Displayed event preceded actual visible frame. not_tested denotes incomplete complete-stage evidence, not absence of app execution."
+          "scope": "Real pointer-driven onboarding transition; no actual editor/keyboard/note/save/persistence/app-close/reopen or security acceptance",
+          "partial_observation": "Original dispatcher accepts actual pointer down/up, intact app advances, final Smithay captures inspected. not_tested denotes incomplete full-stage criteria, not absence of execution/input."
         },
         "services": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "6b7f4a682a3fdf88f08e04ee69c5cc2e96a4e66a7702b4725b487d7d764506fa",
+          "record_sha256": "6d90ecf99fdab7f32aba4f0af0b317a4bbdeeba3f0cfe3eaf46dbe089514050c",
           "accepted": false,
-          "scope": "Actual intact onboarding reaches final Smithay DRM buffer; no complete interactive application workflow, input/editor/note/persistence/app-close/reopen or MAC acceptance",
-          "partial_observation": "Twelve final DRM captures show original IntroActivity; initial Displayed event preceded actual visible frame. not_tested denotes incomplete complete-stage evidence, not absence of app execution."
+          "scope": "Real pointer-driven onboarding transition; no actual editor/keyboard/note/save/persistence/app-close/reopen or security acceptance",
+          "partial_observation": "Original dispatcher accepts actual pointer down/up, intact app advances, final Smithay captures inspected. not_tested denotes incomplete full-stage criteria, not absence of execution/input."
         },
         "interface": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "6b7f4a682a3fdf88f08e04ee69c5cc2e96a4e66a7702b4725b487d7d764506fa",
+          "record_sha256": "6d90ecf99fdab7f32aba4f0af0b317a4bbdeeba3f0cfe3eaf46dbe089514050c",
           "accepted": false,
-          "scope": "Actual intact onboarding reaches final Smithay DRM buffer; no complete interactive application workflow, input/editor/note/persistence/app-close/reopen or MAC acceptance",
-          "partial_observation": "Twelve final DRM captures show original IntroActivity; initial Displayed event preceded actual visible frame. not_tested denotes incomplete complete-stage evidence, not absence of app execution."
+          "scope": "Real pointer-driven onboarding transition; no actual editor/keyboard/note/save/persistence/app-close/reopen or security acceptance",
+          "partial_observation": "Original dispatcher accepts actual pointer down/up, intact app advances, final Smithay captures inspected. not_tested denotes incomplete full-stage criteria, not absence of execution/input."
+        },
+        "input": {
+          "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
+          "record_sha256": "6d90ecf99fdab7f32aba4f0af0b317a4bbdeeba3f0cfe3eaf46dbe089514050c",
+          "accepted": false,
+          "scope": "Real pointer-driven onboarding transition; no actual editor/keyboard/note/save/persistence/app-close/reopen or security acceptance",
+          "partial_observation": "Original dispatcher accepts actual pointer down/up, intact app advances, final Smithay captures inspected. not_tested denotes incomplete full-stage criteria, not absence of execution/input."
         }
       },
       "runtime_stage_evidence_history": [
