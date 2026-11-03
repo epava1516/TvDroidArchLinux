@@ -38,6 +38,9 @@ while [ "$volume_wait" -lt 120 ]; do
 done
 /system/bin/grep -q '^emulated;0 mounted ' /data/local/tmp/archtv-mc1/markor-volumes.txt
 
+# Actual original PMS state before install/update; no package state seeded.
+/system/bin/cmd package path --user 0 net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-preinstall-path.txt 2>&1 || :
+/system/bin/dumpsys package net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-preinstall-dump.txt 2>&1
 created=$(/system/bin/cmd package install-create --user 0 -i android -S "$apk_bytes")
 /system/bin/printf '%s\n' "$created"
 case "$created" in

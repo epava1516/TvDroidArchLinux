@@ -7,7 +7,9 @@ import xml.etree.ElementTree, hashlib
 hashlib.sha256(b"").digest()
 r=Path(__file__).resolve().parents[2]
 socket=sys.argv[1];payload=Path(sys.argv[2]).resolve();store=Path(sys.argv[3]).resolve()
-observe_ms=json.loads((payload.parent/'build-options.json').read_text()).get('observe_ms',3000)
+build_options=json.loads((payload.parent/'build-options.json').read_text())
+observe_ms=build_options.get('observe_ms',3000)
+userdata_name=build_options.get('persistent_userdata_name')
 assert isinstance(observe_ms,int) and 3000<=observe_ms<=300000
 # Materialize the existing graphics adapter, then add the tested APEX boundary.
 recipe=(r/'reports/android16-hwc3-wayland/execute-graphics.py').read_text()
@@ -45,6 +47,22 @@ assert resource.getrlimit(resource.RLIMIT_NICE)==(40,40)
 spec=importlib.util.spec_from_file_location('apex_devices',r/'reports/android16-apex-bootstrap/devices.py')
 devices=importlib.util.module_from_spec(spec);spec.loader.exec_module(devices)
 """,1)
+if userdata_name is not None:
+ import re
+ assert re.fullmatch('[a-z0-9][a-z0-9_-]{0,47}',userdata_name)
+ data_boundary="for n in ['system','apex','linkerconfig','data','dev','proc','sys','vendor','odm','archtv']:(root/n).mkdir()"
+ assert text.count(data_boundary)==1
+ data_setup="""
+userdata_spec=importlib.util.spec_from_file_location('linux_userdata',r/'reports/android16-package-bootstrap/userdata.py')
+userdata=importlib.util.module_from_spec(userdata_spec);userdata_spec.loader.exec_module(userdata)
+userdata_lock,userdata_fd=userdata.prepare(root,out,USERDATA_NAME)
+""".replace('USERDATA_NAME',repr(userdata_name))
+ text=text.replace(data_boundary,data_boundary+'\n'+data_setup,1)
+ text=text.replace("(root/'data'/n).mkdir(mode=0o700 if n in ['property','local/tmp/archtv-mc1'] else 0o755)","(root/'data'/n).mkdir(mode=0o700 if n in ['property','local/tmp/archtv-mc1'] else 0o755,exist_ok=True)")
+ text=text.replace("p=root/'data'/name;p.mkdir(parents=True,mode=mode)","p=root/'data'/name;p.mkdir(parents=True,mode=mode,exist_ok=True)")
+ text=text.replace("(root/'data/system').mkdir(mode=0o775)","(root/'data/system').mkdir(mode=0o775,exist_ok=True)")
+ text=text.replace("(root/'data/misc/surfaceflinger').mkdir(parents=True,mode=0o700)","(root/'data/misc/surfaceflinger').mkdir(parents=True,mode=0o700,exist_ok=True)")
+
 text=text.replace("elif p.is_file():shutil.copyfile(p,root/'apex'/p.name)","elif p.is_file() and p.name!='apex-info-list.xml':shutil.copyfile(p,root/'apex'/p.name)")
 # Only top-level roots from pinned original init.rc. Vold creates user dirs,
 # CE alias mounts and original permission data; no user metadata is seeded.
@@ -103,7 +121,7 @@ root_code+="\np=root/'data/local/tmp/archtv-mc1/selected-failure.txt';p.touch(mo
 root_code+="\np=root/'data/local/tmp/archtv-mc1/ranging-service-info.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
 root_code+="\np=root/'data/local/tmp/archtv-mc1/selected-wait.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
 root_code+="\np=root/'data/local/tmp/archtv-mc1/selected-user-wait.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
-for output_name in ['keymint-component.txt','storage-contract.txt','markor-user-state.txt','markor-bootstrap-home-stop.txt','markor-home-after.txt','markor-boot-before-user.txt','platform-capabilities.txt','linux-application-profile.txt','markor-postcommit-path.txt','markor-postcommit-dump.txt','markor-installed-bytes.txt']:
+for output_name in ['markor-preinstall-path.txt','markor-preinstall-dump.txt','keymint-component.txt','storage-contract.txt','markor-user-state.txt','markor-bootstrap-home-stop.txt','markor-home-after.txt','markor-boot-before-user.txt','platform-capabilities.txt','linux-application-profile.txt','markor-postcommit-path.txt','markor-postcommit-dump.txt','markor-installed-bytes.txt']:
  root_code+="\np=root/'data/local/tmp/archtv-mc1'/"+repr(output_name)+";p.touch(mode=0o600);os.chown(p,1000,1000)"
 
 root_code+="\np=root/'data/local/tmp/archtv-mc1/markor-install.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
@@ -113,6 +131,27 @@ mount_marker="for p in sorted((r/'dist/aosp16/factory-inputs-3').glob('*.payload
 assert mount_marker in text
 text=text.replace(mount_marker,storage_mount_code+'\n'+mount_marker,1)
 text=text.replace('label(root)\n',"devices.prepare(root,out,Path("+repr(str(store))+"))\n"+aconfig_code+"\nassert not (root/'apex/apex-info-list.xml').exists()\nlabel(root)\n",1)
+if userdata_name is not None:
+ scaffold={'property','local','local/tmp','local/tmp/archtv-mc1','misc_de','system_de','misc/installd','misc/user','app','app-staging','system','misc/surfaceflinger'}
+ for name,_,_,_ in roots:
+  q=Path(name)
+  while str(q)!='.':scaffold.add(str(q));q=q.parent
+ label_walk="dirs[:]=[n for n in dirs if Path(base)/n not in [root/'system',root/'vendor']]"
+ assert text.count(label_walk)==1
+ text=text.replace(label_walk,label_walk+"\n if Path(base).is_relative_to(root/'data'):continue\n if Path(base)==root:dirs[:]=[n for n in dirs if n!='data']",1)
+ label_boundary="for p in sorted((r/'dist/aosp16/factory-inputs-3').glob('*.payload.img')):"
+ label_data="label(root/'data')\n"
+ for name in sorted(scaffold):label_data+="label(root/'data'/"+repr(name)+")\n"
+ label_data+="for q in (root/'data/local/tmp/archtv-mc1').iterdir():label(q)\n"
+ text=text.replace(label_boundary,label_data+label_boundary,1)
+ # Sync the real persistent filesystem after original services stop. FD is
+ # preopened/CLOEXEC, never passed to Android, and survives private pivot_root.
+ sync_code="""
+assert kernel.syncfs(userdata_fd)==0,ctypes.get_errno()
+print('LINUX_PRIVATE_USERDATA_SYNCED device='+str(os.fstat(userdata_fd).st_dev)+' inode='+str(os.fstat(userdata_fd).st_ino),flush=True)
+os.close(userdata_fd) # userdata_lock remains owned until factory process exit
+"""
+ text=text.replace("if p.returncode!=0:\n",sync_code+"\nif p.returncode!=0:\n",1)
 health_mounts="""
 # Read-only Linux power_supply class and its exact current device targets.
 # No /sys/power controls, fake battery values, or host relabeling.
@@ -267,7 +306,7 @@ for file in sorted(Path('/metadata/aconfig').rglob('*')):
  info=file.stat()
  metadata.append({'path':str(file),'uid':info.st_uid,'gid':info.st_gid,'mode':oct(stat.S_IMODE(info.st_mode)),'context':os.getxattr(file,'security.selinux').decode().rstrip(chr(0)),'bytes':info.st_size,'sha256':hashlib.sha256(file.read_bytes()).hexdigest() if info.st_size<=33554432 else None})
 print('ACONFIG_ORIGINAL_METADATA_FILES '+json.dumps({'files':metadata,'truncated':metadata_truncated,'scope':'Original daemon outputs, not flag or permission acceptance'}),flush=True)
-for name in ['markor-app-data.txt','markor-volumes.txt','markor-overlays.txt','selected-user-wait.txt','keystore-java.txt','keymint-provider.txt','keystore-component.txt','keymint-component.txt','storage-contract.txt','markor-user-state.txt','markor-bootstrap-home-stop.txt','markor-home-after.txt','markor-boot-before-user.txt','platform-capabilities.txt','linux-application-profile.txt','markor-postcommit-path.txt','markor-postcommit-dump.txt','markor-installed-bytes.txt','unadmitted-artd-control.txt','ranging-service-info.txt','ranging-permission.txt','netd-permission-query.txt','netd-query.txt','netd-interfaces.txt','stats-query.txt','selected-failure.txt','selected-wait.txt','health-query.txt','health-dump.txt','apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt','vold-query.txt','vold-user0.txt','markor-install.txt','markor-path.txt','markor-dump.txt','activity-query.txt','mount-query.txt','markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
+for name in ['markor-preinstall-path.txt','markor-preinstall-dump.txt','markor-app-data.txt','markor-volumes.txt','markor-overlays.txt','selected-user-wait.txt','keystore-java.txt','keymint-provider.txt','keystore-component.txt','keymint-component.txt','storage-contract.txt','markor-user-state.txt','markor-bootstrap-home-stop.txt','markor-home-after.txt','markor-boot-before-user.txt','platform-capabilities.txt','linux-application-profile.txt','markor-postcommit-path.txt','markor-postcommit-dump.txt','markor-installed-bytes.txt','unadmitted-artd-control.txt','ranging-service-info.txt','ranging-permission.txt','netd-permission-query.txt','netd-query.txt','netd-interfaces.txt','stats-query.txt','selected-failure.txt','selected-wait.txt','health-query.txt','health-dump.txt','apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt','vold-query.txt','vold-user0.txt','markor-install.txt','markor-path.txt','markor-dump.txt','activity-query.txt','mount-query.txt','markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
  f=Path('/data/local/tmp/archtv-mc1')/name
  if f.is_file():print('PACKAGE_ORIGINAL_OUTPUT '+name+' '+json.dumps(f.read_text()),flush=True)
 if p.returncode!=0:
@@ -287,9 +326,18 @@ text+="\nassert Path('/data/local/tmp/archtv-mc1/package-query.txt').read_text()
 text+=r"""
 assert Path('/data/local/tmp/archtv-mc1/vold-query.txt').read_text()=='Service vold: found\n'
 ce_mounts=[line for line in Path('/proc/self/mountinfo').read_text().splitlines() if line.split()[4]=='/data/user/0']
-assert len(ce_mounts)==1 and ce_mounts[0].split()[3]=='/data/data',ce_mounts
+data_mounts=[line for line in Path('/proc/self/mountinfo').read_text().splitlines() if line.split()[4]=='/data']
+# vold may stack an identical /data bind on the Linux-owned data mount.
+# Accept only equivalent roots/devices for every layer, never an arbitrary first
+# mount or a guessed top layer. Actual CE/legacy inode equality remains below.
+assert data_mounts and len(ce_mounts)==1,(data_mounts,ce_mounts)
+data_backings={(line.split()[2],line.split()[3]) for line in data_mounts}
+assert len(data_backings)==1,(data_mounts,ce_mounts)
+data_device,data_root=next(iter(data_backings));ce_fields=ce_mounts[0].split()
+assert (ce_fields[2],ce_fields[3])==(data_device,data_root.rstrip('/')+'/data'),(data_mounts,ce_mounts)
 print('STORAGE_ORIGINAL_CE_ALIAS_MOUNTINFO '+json.dumps(ce_mounts),flush=True)
-assert Path('/data/user/0').stat().st_ino==Path('/data/data').stat().st_ino
+ce_info=Path('/data/user/0').stat();legacy_info=Path('/data/data').stat()
+assert (ce_info.st_dev,ce_info.st_ino)==(legacy_info.st_dev,legacy_info.st_ino)
 for path in ['/data/misc/apexdata/com.android.permission/access.abx','/data/misc_de/0/apexdata/com.android.permission/access.abx','/data/misc_de/0/apexdata/com.android.permission/runtime-permissions.xml']:
  f=Path(path);info=f.lstat()
  assert stat.S_ISREG(info.st_mode) and info.st_uid==1000 and 0<info.st_size<16777216,path

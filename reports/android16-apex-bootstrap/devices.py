@@ -25,10 +25,10 @@ def prepare(root, out, data_store):
     data_store=data_store.resolve()
     assert data_store.parent==Path('/home/tv/.cache/archtv/aosp16-qpr2') and data_store.name.startswith('apex-data-store-')
     assert data_store.stat().st_uid==0 and (data_store/'linux-preparation.json').is_file()
-    (root/'data/apex').mkdir()
+    (root/'data/apex').mkdir(exist_ok=True)
     subprocess.run(['mount','--bind',str(data_store),str(root/'data/apex')],check=True)
     for logical,mode,uid,gid in [('data/misc_de',0o551,1000,9998),('data/system_de',0o550,1000,1000)]:
-        p=root/logical;p.mkdir(mode=mode);os.chown(p,uid,gid)
+        p=root/logical;p.mkdir(mode=mode,exist_ok=True);os.chown(p,uid,gid)
     for name in ['metadata', 'metadata/apex', 'metadata/apex/sessions', 'metadata/apex/images', 'metadata/apex/config']:
         p=root/name; p.mkdir(mode=0o700); os.chown(p,0,1000)
     for directory in ['dev/block/mapper/by-uuid','sys/dev/block','sys/block','sys/class/block','sys/devices/virtual/block']:

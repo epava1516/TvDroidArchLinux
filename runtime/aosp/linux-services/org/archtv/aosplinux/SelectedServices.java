@@ -53,6 +53,28 @@ public final class SelectedServices {
         Object home=intentType.getConstructor(String.class).newInstance("android.intent.action.MAIN");
         call(intentType,home,"addCategory",new Class<?>[]{String.class},"android.intent.category.HOME");
         Class<?> componentType=Class.forName("android.content.ComponentName");
+        // This Linux profile uses the original temporary boot activity for
+        // activity-idle, then removes it after actual unlock. A persisted PMS
+        // correctly remembers that removal; rearm only this known component
+        // for the next cold cohort, through original PMS with real readback.
+        Object bootstrapComponent=componentType.getConstructor(String.class,String.class)
+            .newInstance("com.android.settings","com.android.settings.FallbackHome");
+        int bootstrapState=(Integer)call(pmType,pm,"getComponentEnabledSetting",new Class<?>[]{componentType},bootstrapComponent);
+        record.append("HOME_BOOTSTRAP_STATE_BEFORE ").append(bootstrapState).append('\n');
+        if(bootstrapState==componentDisabled) {
+            int disabledMatch=pmType.getField("MATCH_DISABLED_COMPONENTS").getInt(null);
+            Object info=call(pmType,pm,"getActivityInfo",new Class<?>[]{componentType,int.class},bootstrapComponent,flags|disabledMatch);
+            Object app=info.getClass().getField("applicationInfo").get(info);
+            if(!"com.android.settings".equals(info.getClass().getField("packageName").get(info)) ||
+               !"com.android.settings.FallbackHome".equals(info.getClass().getField("name").get(info)) ||
+               app.getClass().getField("uid").getInt(app)!=1000)
+                throw new IllegalStateException("Unexpected original bootstrap activity identity");
+            int enabled=pmType.getField("COMPONENT_ENABLED_STATE_ENABLED").getInt(null);
+            call(pmType,pm,"setComponentEnabledSetting",new Class<?>[]{componentType,int.class,int.class},bootstrapComponent,enabled,dontKill);
+            int actual=(Integer)call(pmType,pm,"getComponentEnabledSetting",new Class<?>[]{componentType},bootstrapComponent);
+            if(actual!=enabled)throw new IllegalStateException("Original PMS did not rearm temporary bootstrap activity");
+            record.append("HOME_BOOTSTRAP_REARM_ORIGINAL previous=").append(bootstrapState).append(" actual=").append(actual).append('\n');
+        }
         java.util.List<?> homes=(java.util.List<?>)call(pmType,pm,"queryIntentActivities",new Class<?>[]{intentType,int.class},home,flags);
         for(Object resolve:homes) {
             Object activity=resolve.getClass().getField("activityInfo").get(resolve);

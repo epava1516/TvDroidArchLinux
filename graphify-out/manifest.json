@@ -282,9 +282,9 @@
     "semantic_hash": ""
   },
   "ROADMAP.md": {
-    "mtime": 1793707327.4683778,
-    "seen": 1793707344.8882632,
-    "ast_hash": "785a619904f3bc3174a8e8b1d19559f0",
+    "mtime": 1793710300.0150056,
+    "seen": 1793710315.3860486,
+    "ast_hash": "d1c5a9a9719fa4267679e26eb77471ad",
     "semantic_hash": ""
   },
   "THIRD_PARTY.md": {
@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793707327.439498,
-    "seen": 1793707344.8909476,
-    "ast_hash": "f2d0ab6f180f8cc971a7590a301a5868",
+    "mtime": 1793710299.9961934,
+    "seen": 1793710315.3870566,
+    "ast_hash": "c73a673b3fdaa52df0051feea9241e3c",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793707327.405214,
-    "seen": 1793707344.8914616,
-    "ast_hash": "51c1d84d1831445182b5511824f3d27c",
+    "mtime": 1793710299.9870145,
+    "seen": 1793710315.387479,
+    "ast_hash": "0f70a7bb3c61416d0b62a9ec05da6b90",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793707327.4779754,
-    "seen": 1793707344.8943594,
-    "ast_hash": "17dd91543ecca183a6f8c9eaaa9133cb",
+    "mtime": 1793710300.0181463,
+    "seen": 1793710315.3879294,
+    "ast_hash": "c6a966314c96afc5b2ea258a3a5bc945",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -816,9 +816,9 @@
     "semantic_hash": ""
   },
   "docs/CONTRATO-APK.md": {
-    "mtime": 1793707327.4627848,
-    "seen": 1793707344.891247,
-    "ast_hash": "1df5f5b20169ed6a8f35cbdfe5ee61fb",
+    "mtime": 1793710300.0033486,
+    "seen": 1793710315.387272,
+    "ast_hash": "9824c9337d878220ab9b08dbd4e74233",
     "semantic_hash": ""
   },
   "runtime/apk/README.md": {
@@ -1716,9 +1716,9 @@
     "semantic_hash": ""
   },
   "docs/EVIDENCIAS.md": {
-    "mtime": 1793707327.423943,
-    "seen": 1793707344.8916068,
-    "ast_hash": "5a414187e381eae5932f7fc1dd1e1dcb",
+    "mtime": 1793710300.0219026,
+    "seen": 1793710315.3875809,
+    "ast_hash": "ca740c221d26a1af3824273ca98626ba",
     "semantic_hash": ""
   },
   "fixtures/aosp-framework-space/FrameworkSpaceProbe.java": {
@@ -1728,9 +1728,9 @@
     "semantic_hash": ""
   },
   "docs/COMPATIBILIDAD-APK.md": {
-    "mtime": 1793707327.4706597,
-    "seen": 1793707344.8910265,
-    "ast_hash": "2f583655f2f8e7fec4139900a74492b1",
+    "mtime": 1793710300.0119445,
+    "seen": 1793710315.3871357,
+    "ast_hash": "b4e401bcdbcab8df4aee1be880d11ffe",
     "semantic_hash": ""
   },
   "fixtures/aosp-window-service/ServiceRegistryChecks.java": {
@@ -2022,9 +2022,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java": {
-    "mtime": 1793699513.605734,
-    "seen": 1793701227.863016,
-    "ast_hash": "c95542591ede50e17c4bee6f22185ea2",
+    "mtime": 1793709589.6646292,
+    "seen": 1793709605.5003667,
+    "ast_hash": "1b70e46b8b3040a1398ad17ecad72831",
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/org/archtv/aosplinux/ServiceLauncher.java": {
@@ -2034,9 +2034,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/install-markor.sh": {
-    "mtime": 1793706451.151598,
-    "seen": 1793706461.1630409,
-    "ast_hash": "d3c6ca8c0215d44d87a90158974f3904",
+    "mtime": 1793707873.960758,
+    "seen": 1793707961.3520248,
+    "ast_hash": "35ef3d79c83c65a122cce7efc5e97497",
     "semantic_hash": ""
   },
   "scripts/run_completion.py": {

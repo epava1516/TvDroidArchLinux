@@ -1,0 +1,222 @@
+{
+  "utc": "2026-11-03T12:51:39.978485+00:00",
+  "base_commit": "886a0311878a652cd67caadd671490b019e17e50",
+  "status": "functional cross-cohort note observed; complete exterior acceptance open",
+  "first_execution": {
+    "id": "e67cd03b-c01d-4c18-8623-a103114a6448-markor-software-launch",
+    "native_exit": 0,
+    "outer_exit": 1,
+    "limitation": "Old tmpfs-literal CE mount verifier failed; note saved, process reopened and syncfs succeeded."
+  },
+  "second_execution": {
+    "id": "db4f3a81-e85a-40b1-8eb0-b6937afba7b8-markor-software-launch",
+    "native_exit": 0,
+    "outer_exit": 1,
+    "original_apex_inventory": 41,
+    "limitation": "Verifier rejected two equivalent stacked /data mounts before subsequent storage acceptance checks. Corrected verifier not yet rerun live."
+  },
+  "intermediate_failures": {
+    "164": "Static mkdir FileExistsError before Android execution; only existing scaffold made idempotent.",
+    "165": "PMS restored disabled original FallbackHome; fresh-only Home guard failed. Original component rearmed via PMS only when exactly disabled and UID1000; removed after original unlock."
+  },
+  "actual_workflow": {
+    "scope": "Read-only actual note and original lifecycle outputs within one ephemeral cohort; not cross-cohort durability",
+    "token": "e67cd03b",
+    "note_source": "Original privileged system_server client cat of actual /data/media/0/Documents/markor/archtv-e67cd03b.md before force-stop; evidence copy only",
+    "present": true,
+    "note": {
+      "path": "/data/local/tmp/archtv-mc1/markor-note-bytes.bin",
+      "bytes_hex": "617263687476206e6f74652065363763643033620a",
+      "sha256": "636ce55ce9922bbf0d71f8fda4218536489af0e828336b0e2b7720221a491630",
+      "size": 21,
+      "uid": 1000,
+      "gid": 2000,
+      "inode": 11949233,
+      "mode": "0o640",
+      "matches_expected": true
+    },
+    "markor-lifecycle.txt": "before_pid=2484\nprevious_process_absent=2484\nafter_pid=2835\n",
+    "markor-relaunch.txt": "Starting: Intent { cmp=net.gsantner.markor/.activity.MainActivity }\nStatus: ok\nLaunchState: COLD\nActivity: net.gsantner.markor/.activity.MainActivity\nTotalTime: 3620\nWaitTime: 3628\nComplete\n",
+    "markor-note-before-stop.txt": "636ce55ce9922bbf0d71f8fda4218536489af0e828336b0e2b7720221a491630  /data/media/0/Documents/markor/archtv-e67cd03b.md\n",
+    "markor-note-after-relaunch.txt": "636ce55ce9922bbf0d71f8fda4218536489af0e828336b0e2b7720221a491630  /data/media/0/Documents/markor/archtv-e67cd03b.md\n"
+  },
+  "cross_cohort_observation": {
+    "same_storage_and_note_and_private_directories": true,
+    "storage_uuid": "c48bece0-7628-4e81-abc3-4130bec87e61",
+    "data_root": {
+      "device": 2050,
+      "inode": 11947269,
+      "uid": 0,
+      "gid": 0
+    },
+    "note": {
+      "sha256": "636ce55ce9922bbf0d71f8fda4218536489af0e828336b0e2b7720221a491630",
+      "size": 21,
+      "uid": 10101,
+      "gid": 1023,
+      "context": "u:object_r:media_rw_data_file:s0:c101,c256,c512,c768"
+    },
+    "private_directories": {
+      "data/net.gsantner.markor": {
+        "device": 2050,
+        "inode": 11948934,
+        "uid": 10104,
+        "gid": 10104,
+        "mode": "0o700",
+        "context": "u:object_r:app_data_file:s0:c104,c256,c512,c768"
+      },
+      "user_de/0/net.gsantner.markor": {
+        "device": 2050,
+        "inode": 11949002,
+        "uid": 10104,
+        "gid": 10104,
+        "mode": "0o700",
+        "context": "u:object_r:app_data_file:s0:c104,c256,c512,c768"
+      }
+    },
+    "second_input": "Exactly one real Linux uinput pointer click; no text, intro bypass, permission grant or data seed. Inspected final Smithay/DRM PNG shows original note.",
+    "app_profile": "Markor2026.10.0 v164 intact; original same-version PackageInstaller replacement, not general update/rollback."
+  },
+  "cleanup": {
+    "id": "db4f3a81-e85a-40b1-8eb0-b6937afba7b8",
+    "outer_unit": "archtv-markor-session-db4f3a81-e85a-40b1-8eb0-b6937afba7b8",
+    "runner_unit": "archtv-package-runner-db4f3a81-e85a-40b1-8eb0-b6937afba7b8",
+    "initial_vt": "1",
+    "root_pid": 619923,
+    "root_boot_id": "4e18faf8-2b46-42e4-a6b2-269c34326b68",
+    "result": "native_result_recorded",
+    "fuse_connections_before": [],
+    "host_devices_before": {
+      "card0": {
+        "mode": "0o660",
+        "uid": 0,
+        "gid": 983,
+        "rdev": 57856,
+        "inode": 365
+      },
+      "renderD128": {
+        "mode": "0o666",
+        "uid": 0,
+        "gid": 987,
+        "rdev": 57984,
+        "inode": 364
+      }
+    },
+    "interaction_exit": 0,
+    "host_devices_after": {
+      "card0": {
+        "mode": "0o660",
+        "uid": 0,
+        "gid": 983,
+        "rdev": 57856,
+        "inode": 365
+      },
+      "renderD128": {
+        "mode": "0o666",
+        "uid": 0,
+        "gid": 987,
+        "rdev": 57984,
+        "inode": 364
+      }
+    },
+    "host_device_metadata_unchanged": true,
+    "fuse_connections_after": [],
+    "new_fuse_connections": [],
+    "final_vt": "1",
+    "outer_active": false,
+    "runner_active": false
+  },
+  "verifier_regression": {
+    "scope": "Actual166 captured mount rows; isolated verifier regression, not a new runtime execution. Live CE/legacy inode check remains required and was not reached166.",
+    "actual_rows": [
+      [
+        "602 601 8:2 /home/tv/.local/share/archtv/experimental-userdata/markor-cycle-163/data /data rw,relatime shared:319 - ext4 /dev/sda2 rw,seclabel",
+        "604 602 8:2 /home/tv/.local/share/archtv/experimental-userdata/markor-cycle-163/data /data rw,relatime shared:289 - ext4 /dev/sda2 rw,seclabel"
+      ],
+      [
+        "1461 604 8:2 /home/tv/.local/share/archtv/experimental-userdata/markor-cycle-163/data/data /data/user/0 rw,relatime shared:289 - ext4 /dev/sda2 rw,seclabel"
+      ]
+    ],
+    "results": [
+      {
+        "case": "actual_stacked",
+        "accepted": true
+      },
+      {
+        "case": "single_equivalent",
+        "accepted": true
+      },
+      {
+        "case": "wrong_second_root",
+        "accepted": false
+      },
+      {
+        "case": "wrong_second_device",
+        "accepted": false
+      },
+      {
+        "case": "wrong_ce_root",
+        "accepted": false
+      },
+      {
+        "case": "missing_ce",
+        "accepted": false
+      }
+    ],
+    "verifier_source_sha256": "4ea773c1358331134c8863819e8816f8b42dfbebfa427f78c8557d6d71110278"
+  },
+  "architecture": "Root-owned0700 storage, exclusive flock, private mount namespace, bind actual data, Android-owned state, preserve dynamic MCS labels; archive only owned diagnostic dir outside guest /data; syncfs after original services stop. APEX store separate. No host policy changes.",
+  "limitations": [
+    "SELinux permissive: R1-MAC open; labels/identities do not prove authorization or isolation.",
+    "No host reboot, abrupt power failure, encryption/FBE, secure credential or hardware-backed key durability acceptance.",
+    "Exterior166 exit1 retained; live corrected CE inode/storage checks and repeatability remain required.",
+    "Force-stop is not graceful close. No broad APK, ARM, GMS, DRM or distributable update/rollback acceptance."
+  ],
+  "next_action": "Execute same original subsystems with corrected equivalent-layer mount verifier, same real data store, no note typing or regrant; require native and exterior exit0 and cleanup before closing storage integration.",
+  "artifacts": [
+    {
+      "path": "/home/tv/recuperacion-archtv/db4f3a81-e85a-40b1-8eb0-b6937afba7b8-markor-software-launch/before.json",
+      "sha256": "ca223acbf98b57bbfd2b67c310015ba5eadf6a38bb47abe27164ab7b137e3998"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/db4f3a81-e85a-40b1-8eb0-b6937afba7b8-markor-software-launch/result.json",
+      "sha256": "d94fb6f859a0fe77d802d81a5758170374fbed95300fdbe6e4d59106b9fdff5f"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/db4f3a81-e85a-40b1-8eb0-b6937afba7b8-markor-software-launch/session-state.json",
+      "sha256": "11a2d768461f86aeae621680130929300f2376f823f3d76c15ecec8e52fb24ad"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/db4f3a81-e85a-40b1-8eb0-b6937afba7b8-markor-software-launch/completion-consumer.json",
+      "sha256": "0bf2bad255919e3b2a5171c1348a0e9d1b3b3439784408d37df64bf6be94b4fe"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/db4f3a81-e85a-40b1-8eb0-b6937afba7b8-markor-software-launch/interaction-events.json",
+      "sha256": "c306358f15d26c63b197828d2ebda0407fa61101de5cfb5188b99bc034e49f0b"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/db4f3a81-e85a-40b1-8eb0-b6937afba7b8-markor-software-launch/inspect-second-note.png",
+      "sha256": "3474c1da361c5b1a57f4d2b5abe812e08758ac6f4f2cf20b19cb44263261e482"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/db4f3a81-e85a-40b1-8eb0-b6937afba7b8-markor-software-launch/userdata-after-second-close.json",
+      "sha256": "4e572ee34bd11dec8f5c6e8250906588f9bb046b366adaf739e01b4056f026fa"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/db4f3a81-e85a-40b1-8eb0-b6937afba7b8-markor-software-launch/mount-verifier-correction.json",
+      "sha256": "89130154de4947002d6abb1c6321a14a656f970ab9afa2be9e0e37563acb5960"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793709716593172053/userdata-mount.json",
+      "sha256": "2fdcb548337d3da5316022c7b562819db529d4082990cd410f50b76791a2491c"
+    },
+    {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793709716593172053/markor-workflow-evidence.json",
+      "sha256": "637e48a81694806d12b885fa1b434e398edc3317b07da21ea27f84e05c40b084"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/e67cd03b-c01d-4c18-8623-a103114a6448-markor-software-launch/userdata-after-first-close.json",
+      "sha256": "347d14820bb66a9aa00900501723a5c80ef5eb12b7aaba88b73b57404eef7fcf"
+    }
+  ]
+}
