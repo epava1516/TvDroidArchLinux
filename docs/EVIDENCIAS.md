@@ -1,6 +1,6 @@
 # Índice de evidencias
 
-Actualización180 · [log original de activación0, hashes y límites](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): read_ahead_kb denegado, XML activo vacío y helper original ejecutado con fallo conservado. Overlay del verificador Linux explícito sobre payload179; no recompilación nativa fingida. Muestra de supervisor y cierre separadas de disponibilidad de productores. Política14 con neverallows, auditoría sin pérdida nueva y recuperación externa verificadas.
+Actualización182 · [ejecuciones181/182, fuentes y hashes](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): pool90 y EROFS0/1 reales; corrección de la hipótesis sobre etiquetas exclusivas; read_ahead superado, mount Linux adaptado, aliases fallidos y5 activaciones iniciales sin inventario completo. Cabeceras ELF/bootstrap estáticas separadas de ejecución y REA. Ambas ventanas restauran modo0/auditoría y recursos; nota/CE/DE conservados.
 
 Actualización179 · [ejecuciones176/177/179, fuentes, hashes y límites](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): originales early-system/mainline0; platform6 parcial explícito; builtin/VDC25 y denegación NNP del auxiliar. XML41 inactivo tras cierre y verificación de nota previa separadas de ejecución APK. Compilación178 rechazada por opciones erróneas, nunca ejecutada;179 compilada con fuentes congeladas. Auditoría sin pérdida nueva y restauración del anfitrión verificadas.
 

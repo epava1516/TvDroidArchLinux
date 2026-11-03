@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "utc": "2026-11-03T15:16:11.372565+00:00",
+  "utc": "2026-11-03T15:33:26.039716+00:00",
   "scope": "Partial original APEX/derive admission under bounded enforcing; no new APK stage or general MAC/isolation acceptance",
   "base_commit": "39d0be0edb77c13575681175fc26e730adee3c11",
   "executions": {
@@ -259,6 +259,98 @@
       "outer_exit": 1,
       "native_complete_inventory_verified": false,
       "finding": "Original helper now executes as vold_prepare_subdirs, fails Linux proc self/thread-self link and SELinux/filesystem discovery; VDC25 remains. Decisive original apexd journal shows0 restored,0 activated and actual read_ahead_kb Permission denied on reserved loops38/39. New collector observes active map empty; native producer liveness not independently established by p.poll (Linux supervisor only). No APEX/service/APK availability accepted."
+    },
+    "181": {
+      "result.json": {
+        "path": "/home/tv/recuperacion-archtv/e409abec-8cad-4787-bc25-42b9cc52ba5f-markor-software-launch/result.json",
+        "sha256": "022bb80f95823e15daf72c334dc9aa489f3f4b64dde16f4cf19738c746a2bdb1"
+      },
+      "mac-window.json": {
+        "path": "/home/tv/recuperacion-archtv/e409abec-8cad-4787-bc25-42b9cc52ba5f-markor-software-launch/mac-window.json",
+        "sha256": "846aa7905049fd4e766c812532ea7c6fd39e330d7a89117c3b9c92cf12f82cd9"
+      },
+      "session-state.json": {
+        "path": "/home/tv/recuperacion-archtv/e409abec-8cad-4787-bc25-42b9cc52ba5f-markor-software-launch/session-state.json",
+        "sha256": "698c7e6546eef11d3e008765a7557dfa2dfda3865c746e49d0b494bbf96afedd"
+      },
+      "finite-audit/result.json": {
+        "path": "/home/tv/recuperacion-archtv/e409abec-8cad-4787-bc25-42b9cc52ba5f-markor-software-launch/finite-audit/result.json",
+        "sha256": "2568ac287ca70f4cbb0f752a0c7fa5a40cfa06608d81b7ad031f97234b7bf2f2"
+      },
+      "completion-consumer.json": {
+        "path": "/home/tv/recuperacion-archtv/e409abec-8cad-4787-bc25-42b9cc52ba5f-markor-software-launch/completion-consumer.json",
+        "sha256": "e6a7e432f9dfb35edb66a2ddf7cefa3b4701f81c14d77dfeea7b0bbced61755d"
+      },
+      "run.log": {
+        "path": "/home/tv/recuperacion-archtv/e409abec-8cad-4787-bc25-42b9cc52ba5f-markor-software-launch/run.log",
+        "sha256": "79236f2635002a054eb032e8a7fc297566f27e808857023cdbb0514d9ba398f0"
+      },
+      "runtime-source-overlay.json": {
+        "path": "/home/tv/recuperacion-archtv/e409abec-8cad-4787-bc25-42b9cc52ba5f-markor-software-launch/runtime-source-overlay.json",
+        "sha256": "9e902987d59dc67df49db7fd4ac320e8c60ad7372efa16c308226d0d86e608c9"
+      },
+      "factory-materialized.py": {
+        "path": "/home/tv/recuperacion-archtv/e409abec-8cad-4787-bc25-42b9cc52ba5f-markor-software-launch/factory-materialized.py",
+        "sha256": "7bc3a8b641f17e12bbfab5fd5b0d6f348368fd95be93c1e6e1d70b932e2ff075"
+      },
+      "android-service-journal.json": {
+        "path": "/home/tv/recuperacion-archtv/e409abec-8cad-4787-bc25-42b9cc52ba5f-markor-software-launch/android-service-journal.json",
+        "sha256": "a57f1e2c76d4c27017dad9a3c26956a8f244e4575fbec3ea270a2cebe285de8d"
+      },
+      "devices": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793719407739767182/devices.json",
+        "sha256": "9704fcc37d4d3c3d7d4025ef998c646e32d769ff5d98b9ccbc7c5a3278100ced"
+      },
+      "checkpoint": "/home/tv/recuperacion-archtv/e409abec-8cad-4787-bc25-42b9cc52ba5f-markor-software-launch",
+      "outer_exit": 1,
+      "native_complete_inventory_verified": false,
+      "finding": "Original read_ahead now works; exact pool2..91 and both Linux-coordinator EROFS negatives pass. Original apexd mount denied on Linux.fs_t, activation0; optional scheduler/nr_requests remain genuinely RO warnings. Original helper proc failures/VDC25 remain."
+    },
+    "182": {
+      "result.json": {
+        "path": "/home/tv/recuperacion-archtv/38c92233-66b3-4482-8681-fc00c342cafc-markor-software-launch/result.json",
+        "sha256": "e9405e68b57c8f4035ab106b59d84786fa5670ecbe0aff5ead6a0783d1778835"
+      },
+      "mac-window.json": {
+        "path": "/home/tv/recuperacion-archtv/38c92233-66b3-4482-8681-fc00c342cafc-markor-software-launch/mac-window.json",
+        "sha256": "1ba84f3e4516f827879a0456ae7502338ef069633c49c618d496aae7cac94959"
+      },
+      "session-state.json": {
+        "path": "/home/tv/recuperacion-archtv/38c92233-66b3-4482-8681-fc00c342cafc-markor-software-launch/session-state.json",
+        "sha256": "cbdc016cc03236f8279f520b2d0054f961de8b10ea17f7ae149ebbdb1295d87e"
+      },
+      "finite-audit/result.json": {
+        "path": "/home/tv/recuperacion-archtv/38c92233-66b3-4482-8681-fc00c342cafc-markor-software-launch/finite-audit/result.json",
+        "sha256": "25e9ce1a7591c31cfbc3aaec6b87a52669108acd67e361a957953ea1b8227b85"
+      },
+      "completion-consumer.json": {
+        "path": "/home/tv/recuperacion-archtv/38c92233-66b3-4482-8681-fc00c342cafc-markor-software-launch/completion-consumer.json",
+        "sha256": "492db91b5bc9acfb46fe8fc6dba1236f44d9f912064cb04dadaccc9e01806675"
+      },
+      "run.log": {
+        "path": "/home/tv/recuperacion-archtv/38c92233-66b3-4482-8681-fc00c342cafc-markor-software-launch/run.log",
+        "sha256": "74cc2b6d7025c942eb6e9df6a6e053f11429cf873e8518d6953ab6dea483ce20"
+      },
+      "runtime-source-overlay.json": {
+        "path": "/home/tv/recuperacion-archtv/38c92233-66b3-4482-8681-fc00c342cafc-markor-software-launch/runtime-source-overlay.json",
+        "sha256": "7021d982a1faa7b8c6f935a37655b359040213e7a6cca4aacc62207eb7e068d3"
+      },
+      "factory-materialized.py": {
+        "path": "/home/tv/recuperacion-archtv/38c92233-66b3-4482-8681-fc00c342cafc-markor-software-launch/factory-materialized.py",
+        "sha256": "7bc3a8b641f17e12bbfab5fd5b0d6f348368fd95be93c1e6e1d70b932e2ff075"
+      },
+      "android-service-journal.json": {
+        "path": "/home/tv/recuperacion-archtv/38c92233-66b3-4482-8681-fc00c342cafc-markor-software-launch/android-service-journal.json",
+        "sha256": "05ea6dab6532a079f4039a3160f3921c65119a64dd2cf0ce85b2ad4e348dd3b0"
+      },
+      "devices": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793719746972373753/devices.json",
+        "sha256": "3eb9a6bc3c3f00c4be6e9242f9722e815ba50a9fb424f17574fa46ffd6e375fa"
+      },
+      "checkpoint": "/home/tv/recuperacion-archtv/38c92233-66b3-4482-8681-fc00c342cafc-markor-software-launch",
+      "outer_exit": 1,
+      "native_complete_inventory_verified": false,
+      "finding": "Original APEX initial activation5 then bind aliases fail mounton: empty Linux scaffold rootfs or Linux pre-mounted image root system_file. Fallback0, native derive service missing; no coherent41 inventory/classpath/service/APK acceptance. Do not allow mounton rootfs/system_file as workaround; replace conflicting Linux bootstrap APEX views using original bootstrap sequence."
     }
   },
   "decisions": [
@@ -295,7 +387,7 @@
     "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load10/after-load.json",
     "sha256": "309743229826231a5a6d96498f808485c1d5ad5ce3a5cd8c1a279f21f26b9aa8"
   },
-  "next": "PRIORITY actual APEX activation0: original ConfigureReadAhead apexd_loop.cpp286 opens real reserved loop read_ahead_kb O_RDWR; Linux.sysfs_t ancestor search denied. Adapt only exact reserved loop controls with original sysfs_loop label/permissions and read-only ancestors, retain Linux labels elsewhere. Current observed pool2..91 must be explicit guarded contract before file-specific genfs mappings; reject out-of-profile pool, do not grant generic Linux sysfs file writes or alter global original assertions. Review association/host effects and restore controls; then real original41 activation/authorized framework Binder and user0 helper proc aliases. Proposal not implemented/tested yet.",
+  "next": "Integrate original apexd --bootstrap and original namespace/perform_apex_config order, replacing Linux-prepared unversioned APEX image aliases. First prove original bootstrap linker dependency closure/entry without those views; do not widen mounton to rootfs/system_file. Label empty original mountpoints via original contract, never relabel immutable image content. Then original full APEX41/versions/mounts + framework Binder, user0 helper, coherent original services and whole Markor MAC. No new audit platform or partial compatibility claim.",
   "original_sources": {
     "sdkextensions_commit": "4d10e57070bb9c6edcd13bf74e9d01717b2a5ecf",
     "derive_rc_sha256": "a9e65b0c114408e5cb8356bdb435a6b48d0a67cd7879915c52ffa094a267f607",
@@ -364,7 +456,7 @@
     "path": "/home/tv/recuperacion-archtv/47084881-176c-4fb6-bd15-765df4685086-markor-software-launch/userdata-after179-close.json",
     "sha256": "9e395067238c647c729c48a03dc8a115e81727ff30a8bfd6f4e50098098c9134"
   },
-  "latest_host": "Permissive policyload13 readback eab652d057be4ad3e0732da46ef2ac792a0e01f91d5e902eb433028567aec4b2, audit0/backlog64/lost_delta0, same boot, no owned units/loops/dm/FUSE; host GPU metadata unchanged. Existing21-byte note/hash/inodes/labels preserved, not a new APK test.",
+  "latest_host": "After182: same kernel/boot, policy16 readback1812eff5112d6b66ddcf4f41becb5c74486ff009b6247261dd3cf7c4785ca10e, permissive policyload16, audit0/backlog64/rules unchanged/lost_delta0; no owned units/loops/dm/FUSE, GPU metadata unchanged. Prior21-byte note SHA636ce55c... and CE/DE inodes/labels intact, not APK execution under MAC.",
   "vdc_source_contract": {
     "builtin": "Pinned system/core/init/builtins.cpp1122\u20131172: original temporary exec plus original failure callback; exact argv /system/bin/vdc --wait cryptfs init_user0. Native observes actual reaping before advance, no shell redirection or synthetic readiness.",
     "vold_helper": {
@@ -392,5 +484,58 @@
   "userdata_after180": {
     "path": "/home/tv/recuperacion-archtv/f763f39b-ffbd-479a-9f94-46350a164437-markor-software-launch/userdata-after180-close.json",
     "sha256": "c0f8932b58084144024b4b39c8156ac2a89aee51815a1001fc48cacf02336fcf"
+  },
+  "policy15_artifact": {
+    "path": "dist/aosp16/selected-platform-policy-15/artifact.json",
+    "sha256": "a20257b166a3fcc318d4cc031d0e62591714fd060db77a10da2fd80564d00634"
+  },
+  "policy15_before_load": {
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load15/before-host.json",
+    "sha256": "6dde32dd7cde07a9d16be16c8fa3bf5832b886447056db933da8364c69e90e0e"
+  },
+  "policy15_after_load": {
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load15/after-load.json",
+    "sha256": "69ddb2440b3075a8393bac04df0916aa140aa19ece2a65ac015f4de8661b3fe5"
+  },
+  "policy16_artifact": {
+    "path": "dist/aosp16/selected-platform-policy-16/artifact.json",
+    "sha256": "649b6a2de7126ca29e9ea45dff99edbc250a7d7b155610d650dc218c72332a3a"
+  },
+  "policy16_before_load": {
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load16/before-host.json",
+    "sha256": "07fe36c43f4f1d6658edfd255728602c1bfd81913d9414ef29d68b141e8cf56f"
+  },
+  "policy16_after_load": {
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load16/after-load.json",
+    "sha256": "c3cd4dd2be6e079063ac9cd71a0dc49c30218e313a5609c00cf4f774a2b78018"
+  },
+  "after182_host": {
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after182-host.json",
+    "sha256": "62821736e2a8b199af1e1020cbecf62291a859459cd8193e8e3c3a6d9a558422"
+  },
+  "userdata_after182": {
+    "path": "/home/tv/recuperacion-archtv/38c92233-66b3-4482-8681-fc00c342cafc-markor-software-launch/userdata-after182-close.json",
+    "sha256": "84e1f1a1de711aa6b08577f7d4c5e3e9277060b2cdc81259f6956fd350b14b09"
+  },
+  "loop_label_correction": "Actual load15 BEFORE already showed original sysfs_loop on loop0..37, INCLUDING0/1. Those labels/values/modes/UID/GID stayed unchanged. Added90 exact genfs entries did NOT provide label exclusivity; removed in16 along with unnecessary Linux coordinator write grant. Original broad loop prefix remains. Effective experimental constraints: exact90 pool2..91, private sysfs RO, only reserved read_ahead controls RW; both0/1 open-only negatives EROFS. This is Linux-coordinator VFS observation, not Android remount resistance/general MAC acceptance.",
+  "bootstrap_contract": {
+    "source": "Pinned system/core/init/init.cpp1170 calls SetupMountNamespaces before scripts; original init.rc81\u201385 exec_start apexd-bootstrap then perform_apex_config. Current native calls namespace setup after normal activation, with Linux pre-mounted aliases; actual182 demonstrates incompatibility.",
+    "headers": "Linux binutils readelf STATIC header inspection (not REA MCP or execution): original GSI apexd interpreter /system/bin/bootstrap/linker64; custom coordinator179 interpreter /system/bin/linker64. Original system/bin/bootstrap/linker64 and system/lib64/bootstrap/libc.so exist. Source/runtime experiment still required.",
+    "original_apexd": {
+      "path": "dist/aosp16/factory-inputs-3/root/system/bin/apexd",
+      "sha256": "533764534569f94c99183d6874abc9c8109aea995ad3d4f6df727ccaf96b06d3"
+    },
+    "original_init_rc": {
+      "path": "dist/aosp16/factory-inputs-3/root/system/etc/init/hw/init.rc",
+      "sha256": "ed04dd44e1d9dfb305cd7d71be7acddd4b6105715cff8b085c7b8d4579fc97db"
+    },
+    "native179": {
+      "path": "dist/aosp16/package-cohort-build-179/property-coordinator",
+      "sha256": "937f4335e155dc72e70037a41675fc1f5a85e35ea786ff79b75705b857a0bd17"
+    },
+    "static_header_record": {
+      "path": "/home/tv/recuperacion-archtv/38c92233-66b3-4482-8681-fc00c342cafc-markor-software-launch/bootstrap-header-inspection.json",
+      "sha256": "d04b5b70060c099c9d8e9d8df4a54cb73fb1a367494c1389c08b35e414fdf494"
+    }
   }
 }

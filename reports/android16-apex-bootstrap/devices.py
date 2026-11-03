@@ -60,6 +60,11 @@ def prepare(root, out, data_store):
             save(out/'devices.json',state)
     finally: os.close(ctl)
     pool=idle[:2*len(allowed)+8]
+    # Fixed experimental private RW pool. Original sysfs_loop labels are
+    # broader globally; this is not label exclusivity. Reject changed allocation
+    # before exposing a control; never borrow foreign loops.
+    assert pool==list(range(2,92)), ('Reserved loop policy/profile mismatch',pool)
+    state['loop_policy_profile']={'first':2,'last':91,'scope':'Exact private RW control pool and actual original labels; not exclusive global mappings'}
     for number in pool:
         p=Path('/sys/devices/virtual/block')/f'loop{number}'
         major,minor=map(int,(p/'dev').read_text().split(':'))
@@ -80,6 +85,7 @@ def mount_sysfs(root):
 
 def enable_loop_controls(root,out):
     state=json.loads((out/'devices.json').read_text());changes=[]
+    assert state['loop_pool']==list(range(2,92)), 'Refuse unlabelled loop controls'
     # Every slot was idle when reserved, but bootstrap may temporarily use it.
     # Keep its control available when apexd releases and reuses that slot.
     # The rest of sysfs
@@ -88,9 +94,24 @@ def enable_loop_controls(root,out):
         kernel=Path('/sys/devices/virtual/block')/f'loop{number}'
         source=kernel/'queue/read_ahead_kb';target=root/'sys/devices/virtual/block'/kernel.name/'queue/read_ahead_kb'
         previous=source.read_text().strip()
+        control_label=os.getxattr(source,'security.selinux').decode().rstrip(chr(0))
+        assert control_label=='u:object_r:sysfs_loop:s0', ('Reserved control label mismatch',str(source),control_label)
         subprocess.run(['mount','--bind',str(source),str(target)],check=True)
         subprocess.run(['mount','-o','remount,bind,rw',str(target)],check=True)
-        changes.append({'id':number,'previous':previous,'attribute':'queue/read_ahead_kb'})
+        changes.append({'id':number,'previous':previous,'attribute':'queue/read_ahead_kb','actual_selinux_label':control_label})
+    # Check the actual private mount boundary without writing a value. This
+    # Linux-coordinator VFS negative is not an Android MAC/isolation test.
+    denied=[]
+    for number in [0,1]:
+        other=root/'sys/devices/virtual/block'/f'loop{number}'/'queue/read_ahead_kb'
+        assert other.is_file(), ('Missing negative control',str(other))
+        try: fd=os.open(other,os.O_WRONLY|os.O_CLOEXEC)
+        except OSError as error:
+            assert error.errno==errno.EROFS, ('Expected real EROFS',str(other),error)
+            denied.append({'id':number,'errno':error.errno})
+        else:
+            os.close(fd);raise AssertionError('Outside-pool control writable: '+str(other))
+    state['loop_readonly_vfs_negative']={'observed':denied,'scope':'Trusted Linux coordinator open only, no write; not Android MAC or remount resistance'}
     state['loop_controls']=changes;save(out/'devices.json',state)
 
 

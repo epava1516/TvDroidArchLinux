@@ -416,13 +416,13 @@
         "scope": "Exact Markorv164 Markdown note created163 survives complete cohort teardown and original subsystems167; actual bytes, same UID/inodes/MCS, original install/force-stop/relaunch and real single pointer opens editor.167 native/exterior0. Not host reboot/power loss, FBE/MAC, graceful close, arbitrary upgrade or general APK compatibility."
       },
       "runtime_security_observation": {
-        "candidate": 180,
-        "status": "original_APEX_activation0_and_user0_failure_before_APK",
+        "candidate": 182,
+        "status": "original_APEX_bootstrap_alias_conflict_before_APK",
         "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-        "record_sha256": "0ef51dd8398d665b7192f8a98e69bfd5310e55c96a3f826c16e3b8b49a233421",
-        "scope": "Original apexd0 activation demonstrated by journal/read_ahead failure. Helper executes but proc metadata fails; VDC25. No APK or service acceptance; previous167 scope unchanged.",
+        "record_sha256": "28758156a1d9297c4b7a5359fc7bc042a08d63347033f6df16d7b5df3b208a3b",
+        "scope": "Read_ahead/mount initial5 then aliases mounton failure; no41/derive/new APK acceptance. Replace Linux views via original bootstrap, not relaxed labels. Pool/VFS negatives not general MAC. Previous167 scope unchanged.",
         "r1_mac": "open",
-        "host_after": "permissive policyload14, audit0/lost_delta0, no owned runtime resources"
+        "host_after": "permissive policyload16, audit0/lost_delta0, no owned runtime resources; prior note unchanged"
       },
       "runtime_security_observation_history": [
         {
@@ -451,6 +451,15 @@
           "scope": "Early-system/mainline original initializers0; platform6 partial. Actual original VDC SID reaches vold; child helper NNP denied, VDC25. Original XML41 inactive after close, no live availability assertion. No new APK stage. Prior167 permissive workflow unchanged.",
           "r1_mac": "open",
           "host_after": "permissive policyload13, audit0/lost_delta0, no owned resources; prior note unchanged"
+        },
+        {
+          "candidate": 180,
+          "status": "original_APEX_activation0_and_user0_failure_before_APK",
+          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "record_sha256": "0ef51dd8398d665b7192f8a98e69bfd5310e55c96a3f826c16e3b8b49a233421",
+          "scope": "Original apexd0 activation demonstrated by journal/read_ahead failure. Helper executes but proc metadata fails; VDC25. No APK or service acceptance; previous167 scope unchanged.",
+          "r1_mac": "open",
+          "host_after": "permissive policyload14, audit0/lost_delta0, no owned runtime resources"
         }
       ]
     }

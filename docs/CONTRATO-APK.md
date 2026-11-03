@@ -1,6 +1,6 @@
 # Contrato vigente · AOSP Android 16 QPR2
 
-Límite180 · [no disponibilidad por señales parciales](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): activated/ready originales pueden coexistir con0 módulos activados. Exigir inventario y montajes reales, y operación del consumidor autorizado. La vida del supervisor Linux no prueba vida de apexd; inicializadores y classpath no prueban servicios ni APK. Mantener fallos reales, controles MAC y alcance completo.
+Límite182 · [sin disponibilidad por montaje parcial](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json):5 activaciones iniciales y fallback fallido no acreditan inventario41, servicios ni APK. Reutilizar bootstrap original en lugar de relajar mounton. Negativos EROFS del coordinador Linux no prueban permisos de remount ni aislamiento Android; etiquetas amplias sysfs_loop ya existían. R1-MAC y alcance completo se conservan.
 
 Histórico179 · [operación original fallida conservada](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): código0 de inicializadores aconfig no demuestra flags completas ni sockets disponibles; VDC25 no es éxito de init_user0. Inventario APEX leído después de cerrar no acredita disponibilidad durante ejecución. Mantener R1-MAC abierto hasta el recorrido real completo con identidades, pruebas negativas, cierre y efectos del anfitrión.
 
