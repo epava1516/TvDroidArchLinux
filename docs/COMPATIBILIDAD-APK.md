@@ -1,6 +1,8 @@
 # Matriz de aplicaciones reales
 
-Seguridad179 · [aconfig/VDC, sin nueva aceptación APK](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): original init_user0 alcanza vold y falla en auxiliar NNP. La nota e instalación previas conservan sus bytes/etiquetas tras la prueba; no equivale a ejecutar de nuevo Markor bajo MAC. Etapas167 mantienen alcance permisivo, ARM/GMS/DRM separados.
+Seguridad180 · [APEX0 y usuario0 incompleto](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): ningún nuevo paso APK aceptado. Falla activación APEX por control real de loop; VDC25 y helper proc pendientes. El recorrido167 permisivo conserva sólo su evidencia/versión/perfil, sin validación bajo política14.
+
+Histórico179 · [aconfig/VDC, sin nueva aceptación APK](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): original init_user0 alcanza vold y falla en auxiliar NNP. La nota e instalación previas conservan sus bytes/etiquetas tras la prueba; no equivale a ejecutar de nuevo Markor bajo MAC. Etapas167 mantienen alcance permisivo, ARM/GMS/DRM separados.
 
 Histórico175 · [subsistemas originales, aún sin Markor MAC](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): deriva y carga de exports originales probadas; aconfig termina1 y el verificador no acepta inventario. Mantener las etapas locales de Markor167 con su alcance permisivo. Sin nueva compatibilidad APK, ARM, GMS ni DRM.
 

@@ -1,6 +1,8 @@
 # Roadmap · Arch TV nativo en Rust
 
-Prioridad179: [estado](docs/ESTADO.md) · builtin/VDC original alcanza vold y falla25 en auxiliar NNP; exigir operación user0 completa y APEX en vivo, luego Markor bajo MAC. [Evidencias](reports/android16-package-bootstrap/original-apex-derive-mac-progress.json).
+Prioridad180: [estado canónico](docs/ESTADO.md) · activación original APEX0 por read_ahead_kb denegado; corregir sólo controles de loops reservados y exigir inventario real antes de avanzar a Markor bajo MAC.
+
+Histórico179: [estado](docs/ESTADO.md) · builtin/VDC original alcanza vold y falla25 en auxiliar NNP; exigir operación user0 completa y APEX en vivo, luego Markor bajo MAC. [Evidencias](reports/android16-package-bootstrap/original-apex-derive-mac-progress.json).
 
 Histórico175: [estado canónico](docs/ESTADO.md) y [experimento integrado](reports/android16-package-bootstrap/original-apex-derive-mac-progress.json). Derive original bajo MAC probado; aconfig/proc y verificador bloquean la siguiente integración. R1-MAC y recorrido completo bajo controles abiertos.
 

@@ -1,6 +1,8 @@
 # Contrato vigente · AOSP Android 16 QPR2
 
-Alcance179 · [operación original fallida conservada](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): código0 de inicializadores aconfig no demuestra flags completas ni sockets disponibles; VDC25 no es éxito de init_user0. Inventario APEX leído después de cerrar no acredita disponibilidad durante ejecución. Mantener R1-MAC abierto hasta el recorrido real completo con identidades, pruebas negativas, cierre y efectos del anfitrión.
+Límite180 · [no disponibilidad por señales parciales](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): activated/ready originales pueden coexistir con0 módulos activados. Exigir inventario y montajes reales, y operación del consumidor autorizado. La vida del supervisor Linux no prueba vida de apexd; inicializadores y classpath no prueban servicios ni APK. Mantener fallos reales, controles MAC y alcance completo.
+
+Histórico179 · [operación original fallida conservada](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): código0 de inicializadores aconfig no demuestra flags completas ni sockets disponibles; VDC25 no es éxito de init_user0. Inventario APEX leído después de cerrar no acredita disponibilidad durante ejecución. Mantener R1-MAC abierto hasta el recorrido real completo con identidades, pruebas negativas, cierre y efectos del anfitrión.
 
 Histórico175 · [evidencia de controles parciales](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): ejecución original de derive/aconfig o denegación de un namespace no cierran R1-MAC. Exigir el recorrido completo, accesos permitidos/denegados, identidades, cierre y efectos sobre el anfitrión. Preparación y limpieza permisivas, consulta Binder pendiente y verificador incompleto se mantienen explícitos. Las etapas locales167 no se reclasifican como aprobadas bajo MAC.
 

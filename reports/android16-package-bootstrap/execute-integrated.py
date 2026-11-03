@@ -331,6 +331,10 @@ checks=checks.replace('for v in identities','for v in identities if v["kind"] in
 # Preserve independent original inventory verification even if a later Java
 # subsystem fails. Never turn that partial success into overall exit0.
 checks=checks.replace('if p.returncode!=0:sys.exit(1)','')
+# Integrated cohorts may deactivate APEX during original shutdown. Require the
+# real live observation; retain identity checks above and closing XML below.
+checks=checks[:checks.index("expected={m['name']")] + "assert live_apex_evidence.get('verified') is True,live_apex_evidence\nprint('APEX_ORIGINAL_CLASSPATH_PATHS_VERIFIED NOT_CLASSLOADER_OR_APK_ACCEPTANCE',flush=True)\nprint('APEX_ORIGINAL_COMPLETE_INVENTORY_VERIFIED modules='+str(len(live_apex_evidence['actual']))+' LIVE_XML_AND_MOUNTS_NOT_FRAMEWORK_BINDER_OR_APK_MAC_ACCEPTANCE',flush=True)\n"
+
 verify_always="try:\n exec(compile("+repr(checks)+",'<original APEX evidence verification>','exec'),globals())\nexcept Exception as apex_failure:\n print('APEX_ORIGINAL_INVENTORY_NOT_VERIFIED '+repr(apex_failure),flush=True)\n if p.returncode==0:raise\n"
 assert marker in text
 text=text.replace(marker,verify_always+marker,1)
@@ -502,6 +506,48 @@ if os.environ.pop('ARCHTV_MAC_STDIN_GATE',None)=='1':
 """)
 
 text=text.replace("'PATH':'/system/bin:/archtv/bin'","'PATH':'/system/bin'")
+# Observe at the original export event while the Linux supervisor still runs. This is a
+# single read-only sample in the existing stderr collector, not a readiness
+# writer, monitor service, queue producer or permission substitute.
+text=text.replace('errors=[];identities=[]','errors=[];identities=[];live_apex_evidence={}',1)
+live_sample="""
+  if 'PACKAGES_ORIGINAL_LOAD_EXPORTS_RETURNED ' in line and not live_apex_evidence:
+   sample={'scope':'Original live XML, mounts and exported paths only; not Binder availability or APK/MAC acceptance','started_monotonic':time.monotonic(),'linux_supervisor_pid':p.pid}
+   try:
+    assert p.poll() is None,'Linux supervisor already terminal'
+    import xml.etree.ElementTree as ET
+    xml_path=Path('/apex/apex-info-list.xml');xml_bytes=xml_path.read_bytes();assert len(xml_bytes)<=262144
+    elements=[e for e in ET.fromstring(xml_bytes) if e.attrib.get('isActive')=='true']
+    actual={e.attrib['moduleName']:int(e.attrib['versionCode']) for e in elements}
+    sample.update(xml_utf8=xml_bytes.decode(),xml_sha256=hashlib.sha256(xml_bytes).hexdigest(),active_modules=actual)
+    expected={m['name']:m['version'] for m in json.loads(Path('/archtv/apex-expected.json').read_text())}
+    assert len(elements)==len(actual) and actual==expected,{'actual':actual,'expected':expected}
+    mounts={}
+    for name,version in actual.items():
+     for path in ['/apex/'+name,'/apex/'+name+'@'+str(version)]:
+      node=Path(path);assert node.is_mount(),path
+      st=node.stat();mounts[path]={'device':st.st_dev,'inode':st.st_ino}
+    exports=Path('/data/system/environ/classpath').read_text();variables=set();jars=[]
+    for row in exports.splitlines():
+     export,name,value=row.split(' ',2)
+     assert export=='export' and name in ['BOOTCLASSPATH','DEX2OATBOOTCLASSPATH','SYSTEMSERVERCLASSPATH','STANDALONE_SYSTEMSERVER_JARS'] and name not in variables
+     variables.add(name)
+     for jar in value.split(':'):
+      assert jar.startswith(('/apex/','/system/')) and Path(jar).is_file(),jar
+      jars.append(jar)
+    assert len(variables)==4
+    assert xml_path.read_bytes()==xml_bytes and p.poll() is None,'Linux supervisor or XML changed during sample'
+    for path,identity in mounts.items():
+     st=Path(path).stat();assert Path(path).is_mount() and [st.st_dev,st.st_ino]==[identity['device'],identity['inode']],path
+    sample.update(verified=True,actual=actual,mounts=mounts,xml_utf8=xml_bytes.decode(),xml_sha256=hashlib.sha256(xml_bytes).hexdigest(),classpath=exports,jar_paths=jars)
+   except Exception as error:sample.update(verified=False,error=repr(error))
+   sample['finished_monotonic']=time.monotonic();live_apex_evidence.update(sample)
+   print('APEX_LIVE_ORIGINAL_OBSERVATION '+json.dumps(sample),flush=True)
+"""
+assert text.count('  errors.append(line)\n')==1
+text=text.replace('  errors.append(line)\n','  errors.append(line)\n'+live_sample,1)
+
+
 compile(text,'<integrated factory>','exec')
 if '--materialize-only' in saved:
  Path('/home/tv/.cache/archtv/integrated-factory-preview.py').write_text(text)

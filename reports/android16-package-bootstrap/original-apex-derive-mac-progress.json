@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "utc": "2026-11-03T15:06:41.499077+00:00",
+  "utc": "2026-11-03T15:16:11.372565+00:00",
   "scope": "Partial original APEX/derive admission under bounded enforcing; no new APK stage or general MAC/isolation acceptance",
   "base_commit": "39d0be0edb77c13575681175fc26e730adee3c11",
   "executions": {
@@ -217,6 +217,48 @@
       "outer_exit": 1,
       "native_complete_inventory_verified": false,
       "finding": "Original init_user0 builtin creates VDC --wait cryptfs init_user0, root UID/GID and original kernel vdc SID observed in audit. Client reaches original vold and returns25; child vold_prepare_subdirs blocked by original transition NNP gate. No user initialization or APK stage accepted. Native shutdown request retained; host not rebooted."
+    },
+    "180": {
+      "result.json": {
+        "path": "/home/tv/recuperacion-archtv/f763f39b-ffbd-479a-9f94-46350a164437-markor-software-launch/result.json",
+        "sha256": "231c8480f44b8b469bb19d96f30b598157c4d5e06170a0d8f957834669db17c3"
+      },
+      "mac-window.json": {
+        "path": "/home/tv/recuperacion-archtv/f763f39b-ffbd-479a-9f94-46350a164437-markor-software-launch/mac-window.json",
+        "sha256": "c96b769252ea3479f898657bdc971b4df81f96453689da027bbe65c84559fcc7"
+      },
+      "session-state.json": {
+        "path": "/home/tv/recuperacion-archtv/f763f39b-ffbd-479a-9f94-46350a164437-markor-software-launch/session-state.json",
+        "sha256": "f3d6da7e78148fee426a1ebd7cb5c5bb416e5431d99ce24c714d01632a5e6b3f"
+      },
+      "finite-audit/result.json": {
+        "path": "/home/tv/recuperacion-archtv/f763f39b-ffbd-479a-9f94-46350a164437-markor-software-launch/finite-audit/result.json",
+        "sha256": "b220701774d03450701d094aa7272cc354e5fec73a4711e69b3df7ceeb413d26"
+      },
+      "completion-consumer.json": {
+        "path": "/home/tv/recuperacion-archtv/f763f39b-ffbd-479a-9f94-46350a164437-markor-software-launch/completion-consumer.json",
+        "sha256": "9d834afc70f9a225e114217d45b05c0cff94b2aecc7e1b65012ab40239c648fe"
+      },
+      "run.log": {
+        "path": "/home/tv/recuperacion-archtv/f763f39b-ffbd-479a-9f94-46350a164437-markor-software-launch/run.log",
+        "sha256": "9f34a42944ef5926cd26dc039704fd0711a35fb8884e2c8e721a590ace50ee2e"
+      },
+      "runtime-source-overlay.json": {
+        "path": "/home/tv/recuperacion-archtv/f763f39b-ffbd-479a-9f94-46350a164437-markor-software-launch/runtime-source-overlay.json",
+        "sha256": "13c25ca93c878a14f2c7b9c91aa60621acd1fb5bb2b744192a1076a4ab0a65c8"
+      },
+      "factory-materialized.py": {
+        "path": "/home/tv/recuperacion-archtv/f763f39b-ffbd-479a-9f94-46350a164437-markor-software-launch/factory-materialized.py",
+        "sha256": "dda07f9d974737ee9be64cda85c897f0b4fb0e022eb291464da6908aa1177fd3"
+      },
+      "apex-activation-failure.json": {
+        "path": "/home/tv/recuperacion-archtv/f763f39b-ffbd-479a-9f94-46350a164437-markor-software-launch/apex-activation-failure.json",
+        "sha256": "bade19a877206138c36ddfb69dc97b059ee841aa908f41bc58926bb3be786202"
+      },
+      "checkpoint": "/home/tv/recuperacion-archtv/f763f39b-ffbd-479a-9f94-46350a164437-markor-software-launch",
+      "outer_exit": 1,
+      "native_complete_inventory_verified": false,
+      "finding": "Original helper now executes as vold_prepare_subdirs, fails Linux proc self/thread-self link and SELinux/filesystem discovery; VDC25 remains. Decisive original apexd journal shows0 restored,0 activated and actual read_ahead_kb Permission denied on reserved loops38/39. New collector observes active map empty; native producer liveness not independently established by p.poll (Linux supervisor only). No APEX/service/APK availability accepted."
     }
   },
   "decisions": [
@@ -253,7 +295,7 @@
     "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load10/after-load.json",
     "sha256": "309743229826231a5a6d96498f808485c1d5ad5ce3a5cd8c1a279f21f26b9aa8"
   },
-  "next": "Admit exact original vold->vold_prepare_subdirs NNP edge from source/actual179, retaining IDs/caps/NNP/DAC/neverallows. Resolve genuine Linux metadata interfaces only as justified. Observe inventory while live and VDC result; then original network/hardware/ART/PMS/AMS toward Markor MAC, not success by fixtures.",
+  "next": "PRIORITY actual APEX activation0: original ConfigureReadAhead apexd_loop.cpp286 opens real reserved loop read_ahead_kb O_RDWR; Linux.sysfs_t ancestor search denied. Adapt only exact reserved loop controls with original sysfs_loop label/permissions and read-only ancestors, retain Linux labels elsewhere. Current observed pool2..91 must be explicit guarded contract before file-specific genfs mappings; reject out-of-profile pool, do not grant generic Linux sysfs file writes or alter global original assertions. Review association/host effects and restore controls; then real original41 activation/authorized framework Binder and user0 helper proc aliases. Proposal not implemented/tested yet.",
   "original_sources": {
     "sdkextensions_commit": "4d10e57070bb9c6edcd13bf74e9d01717b2a5ecf",
     "derive_rc_sha256": "a9e65b0c114408e5cb8356bdb435a6b48d0a67cd7879915c52ffa094a267f607",
@@ -332,5 +374,23 @@
     "original_transition": "(typetransition vold vold_prepare_subdirs_exec process vold_prepare_subdirs) present in original policy; NNP1 gate is distinct and denied179.",
     "limits": "VDC audit SID established, full caps and process metadata not externally sampled yet. Error25 not rewritten as success; helper and complete user0 operation remain open."
   },
-  "inventory_timing_limit": "Verifier currently runs after native process stop. Actual original XML177/17941 entries inactive after original shutdown; cannot use as proof of live unavailability or invent active flags. Next integration must capture original XML and actual mounts while cohort remains live, keep closing observation separate."
+  "inventory_timing_limit": "Correction180: inactive inventory was not demonstrated to result only from close. Actual original activation logs establish0 packages BEFORE activated status. Collector p.poll checks Linux supervisor, not native/APEX producer lifetime; no broad liveness claim. Active XML, mounts, four exports and path checks required for any inventory acceptance.",
+  "after180_host": {
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after180-host.json",
+    "sha256": "02c788bf5dc4a7dfd4a15022bd6d4b78e9f77facf96333c1bc5d8b4890c5e846"
+  },
+  "policy14_artifact": {
+    "path": "dist/aosp16/selected-platform-policy-14/artifact.json",
+    "sha256": "79851f2d77cd49f70ad2fd199e061486ca183fd6d6e6e09b9e4ea0f1c7cdf469"
+  },
+  "scope_notes180": [
+    "Original derive0/exports and aconfig initializers0 do not imply real full APEX activation; Linux-prepared bootstrap paths remain reachable.",
+    "No factory inventory synthesized or XML active flags modified.",
+    "After180 normal restore0/policyload14, audit0/backlog64/rules unchanged/lost_delta0, same boot and no owned units/loops/dm/FUSE.",
+    "Diagnostic-only sampler now retains raw XML/hash even on failure; this additional failure field is materialized/compiled after180, not claimed as present in that run."
+  ],
+  "userdata_after180": {
+    "path": "/home/tv/recuperacion-archtv/f763f39b-ffbd-479a-9f94-46350a164437-markor-software-launch/userdata-after180-close.json",
+    "sha256": "c0f8932b58084144024b4b39c8156ac2a89aee51815a1001fc48cacf02336fcf"
+  }
 }

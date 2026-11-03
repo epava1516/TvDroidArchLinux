@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+Actualización180 · [log original de activación0, hashes y límites](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): read_ahead_kb denegado, XML activo vacío y helper original ejecutado con fallo conservado. Overlay del verificador Linux explícito sobre payload179; no recompilación nativa fingida. Muestra de supervisor y cierre separadas de disponibilidad de productores. Política14 con neverallows, auditoría sin pérdida nueva y recuperación externa verificadas.
+
 Actualización179 · [ejecuciones176/177/179, fuentes, hashes y límites](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): originales early-system/mainline0; platform6 parcial explícito; builtin/VDC25 y denegación NNP del auxiliar. XML41 inactivo tras cierre y verificación de nota previa separadas de ejecución APK. Compilación178 rechazada por opciones erróneas, nunca ejecutada;179 compilada con fuentes congeladas. Auditoría sin pérdida nueva y restauración del anfitrión verificadas.
 
 Histórico175 · [índice de ejecuciones172–175, hashes, fuentes y limitaciones](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): classpath generado por servicio original y reemplazo real bajo enforcing; control de namespace positivo/negativo. Aconfig y verificador siguen fallando. Se conservan errores, cierres y pérdida de auditoría0 de cada ventana; no confundirlos con el histórico171. REA MCP conectado, proveedor nativo no disponible y captura172 incompleta, documentados separadamente.

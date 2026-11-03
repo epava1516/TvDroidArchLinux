@@ -71,3 +71,13 @@
 ; at that exact original edge instead of root shell or execute_no_trans.
 (allow init vdc (process2 (nnp_transition)))
 (allow vdc linux.proc_t (lnk_file (read)))
+
+; Actual179: VDC reaches vold; original FsCrypt.cpp910–915 executes the
+; helper and1045 requires its result. Original vold_prepare_subdirs_exec
+; transition exists; preserve NNP1 and all original helper checks.
+(allow vold vold_prepare_subdirs (process2 (nnp_transition)))
+; Actual179 VDC's genuine SELinux/filesystem discovery on the Linux host.
+; Read-only metadata; no bundle search, policy controls or host mount rights.
+(allow vdc linux.security_t (filesystem (getattr)))
+(allow vdc proc_mounts (lnk_file (read)))
+(allow vdc proc_filesystems (file (read open getattr)))
