@@ -555,15 +555,11 @@ class LinuxMc1Cohort {
         if(auto started=netd_->Start();!started.ok())return started;
         std::fprintf(stderr,"NETWORK_NETD_STARTED pid=%d NOT_REGISTERED\n",netd_->pid());
         std::fprintf(stderr,"SELECTED_NETD_STARTED pid=%d NOT_REGISTERED\n",netd_->pid());
-        client_done_=false;client_ok_=false;
-        auto query=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","root","root","--","/system/bin/sh","-c",
-            "umask 077; i=0; while [ $$i -lt 12 ]; do /system/bin/service check netd > /data/local/tmp/archtv-mc1/netd-query.txt 2>&1; if /system/bin/grep -qx 'Service netd: found' /data/local/tmp/archtv-mc1/netd-query.txt; then exit 0; fi; i=$$((i+1)); /system/bin/sleep 1; done; exit 1"});
-        if(!query.ok())return query.error();
-        auto* peer=query->get();peer->AddReapCallback([this](const siginfo_t& info){client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;});services.AddService(std::move(*query));
-        if(auto started=peer->ExecStart();!started.ok())return started;
-        if(auto waited=Wait(tick,[this]{return client_done_;},16);!waited.ok())return waited;
-        if(!client_ok_)return android::base::Error()<<"Original netd Binder/interface query failed";
-        std::fprintf(stderr,"NETWORK_NETD_REGISTRATION_ONLY NOT_INTERFACE_OR_PERMISSION_ACCEPTANCE\n");
+        // Original AOSP excludes shell from netd_service discovery. Do not
+        // mint a shell permission or treat a Linux diagnostic as a consumer.
+        // Start is lifecycle admission only; keep reap/healthy guards and
+        // require the authorized original system_server operation later.
+        std::fprintf(stderr,"NETWORK_NETD_LIFECYCLE_ONLY REQUIRES_AUTHORIZED_ORIGINAL_CONSUMER NOT_REGISTERED_OR_OPERATION_ACCEPTANCE\n");
         return {};
     }
     android::base::Result<void> StartHardware(const Tick& tick,bool defer_graphics=false) {

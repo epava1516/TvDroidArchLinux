@@ -1,6 +1,6 @@
 # Contrato vigente · AOSP Android 16 QPR2
 
-Límite202 · [alcance original conservado](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): netd supera descubrimiento cgroup y falla map_create por CAP_BPF. No acredita red ni ninguna etapa APK. El contrato de enlaces proc no añade contenidos y mantiene la capacidad genfs global de Linux. Las capacidades de un daemon original requieren justificación propia; no se heredan a APK. Cierre original y R1-MAC de la cohorte siguen abiertos; etapas167 permisivas.
+Límite205 · [avance original sin aceptación ficticia](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): CAP_BPF propia permite map_create original de netd, no acredita conectividad, registro ni permiso cliente. Shell permanece excluido de netd_service; retirar su sonda no sustituye al consumidor original autorizado. Gatekeeper aborta y VINTF tiene un defecto de etiquetas comprobado, con causalidad aún pendiente. Referencia software sin protección hardware; R1-MAC completo y etapas APK bajo enforcing siguen abiertos.
 
 Histórico179 · [operación original fallida conservada](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): código0 de inicializadores aconfig no demuestra flags completas ni sockets disponibles; VDC25 no es éxito de init_user0. Inventario APEX leído después de cerrar no acredita disponibilidad durante ejecución. Mantener R1-MAC abierto hasta el recorrido real completo con identidades, pruebas negativas, cierre y efectos del anfitrión.
 

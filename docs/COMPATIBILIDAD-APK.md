@@ -1,6 +1,6 @@
 # Matriz de aplicaciones reales
 
-Observación202 · [sin etapa APK nueva](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): netd supera montajes pero aborta al crear mapa BPF con CAP_BPF denegada. Registro original auténtico y persistencia previa preservada, sin inferir disponibilidad de red o nueva operación Markor. R1-MAC, ARM, GMS y DRM separados abiertos.
+Observación205 · [sin etapa APK nueva](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): mapa e inicialización original netd avanzan bajo MAC; operaciones de red, sysctls, dummy0/NFLOG y autorización cliente siguen limitadas. Gatekeeper aborta; etiquetas VINTF incorrectas demostradas. Nota/hash y CE/DE previos intactos, sin nuevo recorrido Markor. R1-MAC, ARM, GMS y DRM separados abiertos.
 
 Histórico179 · [aconfig/VDC, sin nueva aceptación APK](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): original init_user0 alcanza vold y falla en auxiliar NNP. La nota e instalación previas conservan sus bytes/etiquetas tras la prueba; no equivale a ejecutar de nuevo Markor bajo MAC. Etapas167 mantienen alcance permisivo, ARM/GMS/DRM separados.
 

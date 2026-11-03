@@ -1,6 +1,6 @@
 # Roadmap · Arch TV nativo en Rust
 
-Prioridad202: [estado canónico](docs/ESTADO.md) · Netd supera montajes/cgroup y falla map_create por CAP_BPF. Justificar adaptación limitada conservando sysctl global2 y controles BPF originales; después registro/operación, Zygote y Markor bajo MAC. R1-MAC y cierre original abiertos.
+Prioridad205: [estado canónico](docs/ESTADO.md) · Netd supera mapas/inicialización; su operación espera al consumidor original autorizado. Gatekeeper aborta y VINTF tiene padres mal etiquetados: corregir imagen según AOSP y probar registro HAL real, luego Zygote y Markor bajo MAC. R1-MAC y limitaciones de red abiertas.
 
 Histórico179: [estado](docs/ESTADO.md) · builtin/VDC original alcanza vold y falla25 en auxiliar NNP; exigir operación user0 completa y APEX en vivo, luego Markor bajo MAC. [Evidencias](reports/android16-package-bootstrap/original-apex-derive-mac-progress.json).
 

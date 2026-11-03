@@ -143,3 +143,12 @@
 ; record real pinned IDs for cleanup. No Android domain gains permissions.
 (allow linux.init_t bpffs_type (dir (read open getattr search)))
 (allow linux.init_t bpffs_type (file (read open getattr)))
+
+; Actual202 original netd map_create hits Linux6.18 syscall.c1450..1457:
+; unprivileged_bpf_disabled=2 additionally demands CAP_BPF. Original AOSP
+; netd.te16 already permits self:bpf map_create; its Linux RC carries BPF.
+; Authorize only the corresponding capability of this original daemon.
+; This capability supports more than maps; all original bpf object checks
+; remain, including no new prog_load/map_write rights. No SYS_ADMIN or app
+; grant, and the global Linux sysctl stays2. Neverallow compilation required.
+(allow netd self (capability2 (bpf)))
