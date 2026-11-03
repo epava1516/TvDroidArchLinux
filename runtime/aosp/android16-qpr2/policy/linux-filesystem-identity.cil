@@ -4,3 +4,15 @@
 ; No file contents, mounts or relabel permission is granted here.
 (allow domain linux.fs_t (filesystem (getattr)))
 (allow file_type linux.fs_t (filesystem (associate)))
+
+; Original common SELinuxFS metadata contract (pinned CIL22468/73/83).
+; Linux owns this filesystem's SID and labels. Without the original statfs
+; permission libselinux init.c cannot find selinux_mnt and Android enabled.c
+; reports disabled. Actual194 vold_prepare_subdirs metadata AVC demonstrates
+; this path; a zero helper exit is not restorecon/security acceptance.
+; No read/write/administration permission is added; private load/enforce/etc
+; leaves remain individually RO, while the real selinuxfs root remains RW as
+; required by original verify_selinuxmnt().
+(allow domain linux.security_t (filesystem (getattr)))
+(allow domain linux.security_t (dir (search)))
+(allow domain linux.security_t (file (getattr)))

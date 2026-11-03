@@ -48,7 +48,10 @@ def prepare(root,out):
     existing={p.name:os.open(p,os.O_PATH|os.O_CLOEXEC) for p in core.iterdir() if p.is_file()}
     assert not set(controls)&set(existing),'Kernel now has private JIT controls; review boundary'
     # Preserve real private-net controls while adding the two actual global nodes.
-    mount(['-t','tmpfs','-o','mode=0755,nodev,nosuid,noexec','archtv-net-core',core])
+    prior_core_context=os.getxattr(core,'security.selinux').decode().rstrip(chr(0))
+    assert prior_core_context.split(':')[2]=='linux.sysctl_net_t',prior_core_context
+    mount(['-t','tmpfs','-o','mode=0755,nodev,nosuid,noexec,rootcontext='+prior_core_context,'archtv-net-core',core])
+    assert os.getxattr(core,'security.selinux').decode().rstrip(chr(0))==prior_core_context
     bound=[]
     for name,fd in {**existing,**{n:f for n,(f,v) in controls.items()}}.items():
         p=core/name;p.touch(mode=0o600)
@@ -73,7 +76,9 @@ def prepare(root,out):
         if name not in controls: original=os.fstat(fd)
         actual=p.stat()
         assert (original.st_dev,original.st_ino)==(actual.st_dev,actual.st_ino),(name,(original.st_dev,original.st_ino),(actual.st_dev,actual.st_ino),p.read_text().strip())
-        bound.append({'name':name,'device':actual.st_dev,'inode':actual.st_ino,'global':name in controls})
+        actual_context=os.getxattr(p,'security.selinux').decode().rstrip(chr(0))
+        if name in controls:assert actual_context=='u:object_r:proc_bpf:s0',(name,actual_context)
+        bound.append({'name':name,'device':actual.st_dev,'inode':actual.st_ino,'global':name in controls,'context':actual_context})
         os.close(fd)
     os.close(private_net_fd);os.close(5)
     for key in ['LISTEN_FDS','LISTEN_FDNAMES','LISTEN_PID']:os.environ.pop(key,None)
@@ -91,7 +96,7 @@ def prepare(root,out):
         mount(['--bind',net_sysfs/logical,destination]);mount(['-o','remount,bind,ro',destination])
     assert (root/'sys/class/net/lo').is_dir()
     save(out/'network-sysfs.json',{'private_netns':current_net,'interfaces':interfaces,'source':str(net_sysfs),'scope':'Real private-net sysfs view, read-only class/net and devices/virtual/net only; no host interface binding or fabricated metadata.'})
-    save(out/'network-boundary.json',{'host_netns':host_net,'private_netns':current_net,'controls':bound,'global_values':{n:v for n,(f,v) in controls.items()},'bpf_root':str(target),'bpf_device':target.stat().st_dev,'bpf_root_context':os.getxattr(target,'security.selinux').decode().rstrip('\0'),'bpf_directory_contexts':{p.name:os.getxattr(p,'security.selinux').decode().rstrip('\0') for p in target.iterdir() if p.is_dir()},'kernel_preload_entries':sorted(builtins),'cgroup_view':str(root/'sys/fs/cgroup'),'scope':'Fresh private bpffs with kernel preload iterators; real sysctl inodes, existing private controls preserved. No Android programs loaded or readiness created.'})
+    save(out/'network-boundary.json',{'host_netns':host_net,'private_netns':current_net,'controls':bound,'core_directory_context':prior_core_context,'global_values':{n:v for n,(f,v) in controls.items()},'bpf_root':str(target),'bpf_device':target.stat().st_dev,'bpf_root_context':os.getxattr(target,'security.selinux').decode().rstrip('\0'),'bpf_directory_contexts':{p.name:os.getxattr(p,'security.selinux').decode().rstrip('\0') for p in target.iterdir() if p.is_dir()},'kernel_preload_entries':sorted(builtins),'cgroup_view':str(root/'sys/fs/cgroup'),'scope':'Fresh private bpffs with kernel preload iterators; real sysctl inodes, existing private controls preserved. No Android programs loaded or readiness created.'})
 
 def snapshot(root,out,phase):
     """Retain kernel IDs only for objects pinned under this run's private mount."""

@@ -8,3 +8,18 @@
 ; Actual193 vold_prepare_subdirs self/thread-self read failed without it.
 ; No regular-file contents, PID directory traversal, ptrace or namespace use.
 (allow domain linux.proc_t (lnk_file (read getattr)))
+
+; Original proc directory contract mapped to Linux-owned /proc/sys labels.
+; Original net subtree grants search only; preserve that distinction.
+; No sysctl regular-file contents or write rights. Actual195 bpfloader
+; failed traversing /proc/sys before reaching its real proc_bpf controls.
+(allow domain linux.sysctl_t (dir (ioctl read getattr lock open watch watch_reads search)))
+(allow domain linux.sysctl_kernel_t (dir (ioctl read getattr lock open watch watch_reads search)))
+(allow domain linux.sysctl_crypto_t (dir (ioctl read getattr lock open watch watch_reads search)))
+(allow domain linux.sysctl_dev_t (dir (ioctl read getattr lock open watch watch_reads search)))
+(allow domain linux.sysctl_fs_t (dir (ioctl read getattr lock open watch watch_reads search)))
+(allow domain linux.sysctl_vm_t (dir (ioctl read getattr lock open watch watch_reads search)))
+(allow domain linux.sysctl_irq_t (dir (ioctl read getattr lock open watch watch_reads search)))
+(allow domain linux.sysctl_rpc_t (dir (ioctl read getattr lock open watch watch_reads search)))
+(allow domain linux.sysctl_net_t (dir (search)))
+(allow domain linux.sysctl_net_unix_t (dir (search)))
