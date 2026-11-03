@@ -6,6 +6,42 @@ import xml.etree.ElementTree, hashlib
 # Resolve the Linux verification hash provider before entering the chroot.
 hashlib.sha256(b"").digest()
 r=Path(__file__).resolve().parents[2]
+# Scope server-created shared files to this immutable execution, not /run/user.
+if len(sys.argv)>1 and sys.argv[1] in ('--prepare-wayland-runtime','--close-wayland-runtime'):
+ import os,stat,uuid,ctypes,subprocess
+ assert os.geteuid()==0 and len(sys.argv)==3
+ cp=Path(sys.argv[2]).resolve();before=json.loads((cp/'before-launch.json').read_text())
+ run=str(uuid.UUID(before['id']));assert run==before['id'] and cp.name.startswith(run+'-')
+ directory=Path('/run/user/1000')/('archtv-'+run)
+ record=cp/'wayland-runtime.json'
+ label='linux.system_u:linux.object_r:archtv_wayland_runtime_dir:s0'
+ if sys.argv[1]=='--prepare-wayland-runtime':
+  assert not directory.exists() and not directory.is_symlink() and not record.exists()
+  directory.mkdir(mode=0o700);os.chown(directory,1000,1000)
+  lib=ctypes.CDLL(str(r/'dist/aosp16/linux-selinux-handoff-2/libselinux-3.11/src/libselinux.so.1'),use_errno=True)
+  lib.setfilecon_raw.argtypes=[ctypes.c_char_p,ctypes.c_char_p]
+  assert lib.setfilecon_raw(os.fsencode(directory),label.encode())==0,ctypes.get_errno()
+  st=directory.lstat();assert stat.S_ISDIR(st.st_mode) and stat.S_IMODE(st.st_mode)==0o700
+  assert os.getxattr(directory,'security.selinux').rstrip(b'\0').decode()==label
+  with record.open('x') as f:json.dump({'id':run,'path':str(directory),'dev':st.st_dev,'inode':st.st_ino,'uid':st.st_uid,'gid':st.st_gid,'context':label,'scope':'All regular files created here by Linux.init_t receive runtime_file type; not a keymap-only label. Preparation before enforcing.'},f,indent=2)
+  os.chown(record,1000,1000)
+ else:
+  for unit in ('archtv-markor-session-','archtv-package-runner-'):
+   assert subprocess.run(['systemctl','is-active','--quiet',unit+run+'.service']).returncode!=0,'Runtime still active'
+  expected=json.loads(record.read_text());assert expected['id']==run and expected['path']==str(directory)
+  if not directory.exists() and not directory.is_symlink():
+   closed=cp/'wayland-runtime-closed.json';closed.write_text(json.dumps({'id':run,'observed_absent_after_units_stopped':str(directory),'scope':'May have been removed by logind after the owned PAM session; no claim this helper unlinked it.'})+'\n');os.chown(closed,1000,1000)
+   sys.exit(0)
+  st=directory.lstat();assert stat.S_ISDIR(st.st_mode) and (st.st_dev,st.st_ino)==(expected['dev'],expected['inode'])
+  assert st.st_uid==1000 and st.st_gid==1000 and stat.S_IMODE(st.st_mode)==0o700
+  entries=list(directory.iterdir())
+  for entry in entries:
+   s=entry.lstat()
+   assert entry.name in ('wayland-1','wayland-1.lock') and s.st_uid==1000 and (stat.S_ISSOCK(s.st_mode) or stat.S_ISREG(s.st_mode)),str(entry)
+  for entry in entries:entry.unlink()
+  directory.rmdir()
+  closed=cp/'wayland-runtime-closed.json';closed.write_text(json.dumps({'id':run,'removed':str(directory),'entries':[e.name for e in entries]})+'\n');os.chown(closed,1000,1000)
+ sys.exit(0)
 # Host-PID preflight inside the existing transient service, before unshare.
 # Connect one typed capability; never grant the HWC ambient host connectto.
 if len(sys.argv)>1 and sys.argv[1]=='--prepare-wayland':
@@ -14,6 +50,11 @@ if len(sys.argv)>1 and sys.argv[1]=='--prepare-wayland':
  peer=Path(sys.argv[2]);payload_arg=Path(sys.argv[3]).resolve()
  cp=Path(os.environ['ARCHTV_RUN_CHECKPOINT']);manifest=json.loads((cp/'completion-manifest.json').read_text())
  assert manifest['checkpoint']==str(cp)
+ if (cp/'wayland-runtime.json').exists():
+  runtime=json.loads((cp/'wayland-runtime.json').read_text());assert runtime['id']==manifest['id']
+  assert peer.parent==Path(runtime['path']) and peer.parent.name=='archtv-'+manifest['id']
+  rst=peer.parent.lstat();assert (rst.st_dev,rst.st_ino)==(runtime['dev'],runtime['inode']) and rst.st_uid==1000
+  assert os.getxattr(peer.parent,'security.selinux').rstrip(b'\0').decode()==runtime['context']
  st=peer.lstat();assert stat.S_ISSOCK(st.st_mode) and st.st_uid==1000
  lib=ctypes.CDLL(str(r/'dist/aosp16/linux-selinux-handoff-2/libselinux-3.11/src/libselinux.so.1'),use_errno=True)
  lib.getsockcreatecon_raw.argtypes=[ctypes.POINTER(ctypes.c_char_p)];lib.setsockcreatecon_raw.argtypes=[ctypes.c_char_p];lib.freecon.argtypes=[ctypes.c_void_p]

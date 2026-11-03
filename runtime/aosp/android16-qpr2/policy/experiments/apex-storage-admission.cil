@@ -176,3 +176,23 @@
 (typeattributeset archtv_not_wayland_factory (not linux.init_t))
 (neverallow archtv_not_wayland_factory archtv_wayland_channel (unix_stream_socket (create connect bind listen accept)))
 (neverallow appdomain archtv_wayland_channel (unix_stream_socket (read write)))
+
+; Actual213 reaches SCM_RIGHTS but a keyboard-v5 temporary file retains the
+; generic Linux.init_tmpfs_t. Scope ALL regular files in a UUID-bound private
+; compositor runtime directory, not generic host temporaries or path opens.
+(type archtv_wayland_runtime_dir)
+(type archtv_wayland_runtime_file)
+(roletype linux.object_r archtv_wayland_runtime_dir)
+(roletype object_r archtv_wayland_runtime_dir)
+(roletype linux.object_r archtv_wayland_runtime_file)
+(roletype object_r archtv_wayland_runtime_file)
+(typetransition linux.init_t archtv_wayland_runtime_dir file archtv_wayland_runtime_file)
+(allow linux.init_t archtv_wayland_runtime_dir (dir (create search write add_name remove_name getattr read open rmdir setattr relabelto)))
+(allow linux.init_t archtv_wayland_runtime_file (file (create open read write getattr setattr unlink map)))
+(allow archtv_wayland_runtime_dir linux.tmpfs_t (filesystem (associate)))
+(allow archtv_wayland_runtime_file linux.tmpfs_t (filesystem (associate)))
+; SCM_RIGHTS checks the O_RDWR description even though HWC closes the keymap.
+; No open/create/path traversal permission is delegated to Android.
+(allow hal_graphics_composer_default archtv_wayland_runtime_file (file (read write getattr map)))
+(neverallow appdomain archtv_wayland_runtime_file (file (open read write map)))
+(neverallow appdomain archtv_wayland_runtime_dir (dir (search open write)))

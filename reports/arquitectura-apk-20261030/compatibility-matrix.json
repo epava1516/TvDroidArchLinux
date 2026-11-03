@@ -416,13 +416,13 @@
         "scope": "Exact Markorv164 Markdown note created163 survives complete cohort teardown and original subsystems167; actual bytes, same UID/inodes/MCS, original install/force-stop/relaunch and real single pointer opens editor.167 native/exterior0. Not host reboot/power loss, FBE/MAC, graceful close, arbitrary upgrade or general APK compatibility."
       },
       "runtime_security_observation": {
-        "candidate": 213,
-        "status": "typed_Wayland_handoff_pass_shared_file_receive_denied",
+        "candidate": 215,
+        "status": "Wayland_shared_file_and_SF_display0_pass_allocator_memfd_transfer_denied",
         "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-        "record_sha256": "a5b2970b5790e1f1eb964263eb91aed98450dd70f26aa4e5e1d8057878851276",
-        "scope": "Connected peer/capability protocol under enforcing; incoming host temporary file denied. No pixels or new APK stage. Prior167 permissive note persistence unchanged.",
+        "record_sha256": "8e841e232f56254af01d926d342195dadca9469fd0a6390b111b80d831e88226",
+        "scope": "8.654s actual enforcing, original SF display0 connects. Allocation Binder memfd denied, no pixels or APK stage; original generic DMABUF heap build option omitted. Prior167 permissive APK note persistence intact.",
         "r1_mac": "open",
-        "host_after": "permissive policy33/loadCOUNT31, auditnewloss0; owned resources closed, known BPF absent and prior userdata retained"
+        "host_after": "permissive policy35/loadCOUNT32, auditnewloss0; owned resources closed, known41/58 absent and prior userdata retained"
       },
       "runtime_security_observation_history": [
         {
@@ -532,6 +532,15 @@
           "scope": "Actual device context/original HWC client role pass former mapper failures, software GLES3.1 context initialized. HWC Wayland socket denied; no pixels/display/newAPKstage, security operations unaccepted.",
           "r1_mac": "open",
           "host_after": "Permissive candidate32/policyloadCOUNT30, auditnewloss0, no owned resources and known41prog58map absent, previous note/hash/CE/DE retained"
+        },
+        {
+          "candidate": 213,
+          "status": "typed_Wayland_handoff_pass_shared_file_receive_denied",
+          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "record_sha256": "a5b2970b5790e1f1eb964263eb91aed98450dd70f26aa4e5e1d8057878851276",
+          "scope": "Connected peer/capability protocol under enforcing; incoming host temporary file denied. No pixels or new APK stage. Prior167 permissive note persistence unchanged.",
+          "r1_mac": "open",
+          "host_after": "permissive policy33/loadCOUNT31, auditnewloss0; owned resources closed, known BPF absent and prior userdata retained"
         }
       ],
       "runtime_security_history": [

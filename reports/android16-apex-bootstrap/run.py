@@ -35,7 +35,15 @@ if integrated_socket:
 os.chown(recovery,1000,1000);os.chown(recovery/'before.json',1000,1000)
 sessions=command(['loginctl','list-sessions','--no-legend']).stdout.strip()
 if integrated_socket:
-    assert integrated_socket.parent==Path('/run/user/1000') and integrated_socket.is_socket()
+    runtime_record=recovery/'wayland-runtime.json'
+    if runtime_record.exists():
+        runtime=json.loads(runtime_record.read_text());manifest=json.loads((recovery/'completion-manifest.json').read_text())
+        assert runtime['id']==manifest['id'] and runtime['path']=='/run/user/1000/archtv-'+manifest['id']
+        assert integrated_socket.parent==Path(runtime['path'])
+        rst=integrated_socket.parent.lstat();assert (rst.st_dev,rst.st_ino)==(runtime['dev'],runtime['inode']) and rst.st_uid==1000
+        assert os.getxattr(integrated_socket.parent,'security.selinux').rstrip(b'\0').decode()==runtime['context']
+    else:assert integrated_socket.parent==Path('/run/user/1000')
+    assert integrated_socket.is_socket()
     console_found=False
     for row in sessions.splitlines():
         fields=row.split();assert len(fields)>2 and fields[1]=='1000',row

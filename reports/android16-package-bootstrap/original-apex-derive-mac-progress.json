@@ -2523,5 +2523,97 @@
     "remaining": "Incoming shared FD /run/user/1000/#53 deleted is Linux.init_tmpfs_t, read/write denied to HWC; SF aborts creating AIDL composer. Pinned Smithay keymap_file.rs sends tempfile_in(XDG_RUNTIME_DIR) for keyboard version<7; our seat bind caps5. Exact FD origin inferred from source/path, not independently traced.",
     "limits": "Factory preflight before enforcing; no claim factory operations enforced. Existing trusted compositor remains Linux.init_t. One capability per cohort; HWC child restart needs fresh admission and is unimplemented. No pixels/input/APK stage accepted; original graceful close incomplete; external closure verified. R1-MAC open.",
     "next": "Dedicated UUID-bound runtime directory/file types for incoming shared files, no broad host tmpfs grant; actual protocol and display test, then original Zygote and Markor under MAC."
+  },
+  "integrated214_215": {
+    "execution": 215,
+    "id": "425f0b8b-e4ed-4337-aa24-eea99d3bec73",
+    "status": "typed_shared_file_transfer_and_original_SF_display_connect_under_MAC_allocator_reserved_region_denied",
+    "build": 212,
+    "hwc_input": 7,
+    "policy": 35,
+    "policyload_count": 32,
+    "evidence": [
+      {
+        "path": "/home/tv/recuperacion-archtv/425f0b8b-e4ed-4337-aa24-eea99d3bec73-markor-software-launch/result.json",
+        "sha256": "c8436b7207ddf0e66a9232e3ea2b425501eda911af86b5c8f9aa9002ebfde655"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/425f0b8b-e4ed-4337-aa24-eea99d3bec73-markor-software-launch/mac-window.json",
+        "sha256": "22d354697a4c3f6c6b3947d1eebb3a72174181c71ca54230c085db0ec66500da"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/425f0b8b-e4ed-4337-aa24-eea99d3bec73-markor-software-launch/wayland-runtime.json",
+        "sha256": "d59e773e00ac29767a678390d9b36ded03b818b51f97ee019417ba3b8ff80130"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/425f0b8b-e4ed-4337-aa24-eea99d3bec73-markor-software-launch/wayland-runtime-closed.json",
+        "sha256": "eb7854a59279454e6be240fac502bf96a6af133c12a808cd29d092e56e266fc7"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/425f0b8b-e4ed-4337-aa24-eea99d3bec73-markor-software-launch/wayland-peer.json",
+        "sha256": "69bed9c72ffd1d330d340250b758aa72b471f6161bf411be8c7f93e19957adc5"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/425f0b8b-e4ed-4337-aa24-eea99d3bec73-markor-software-launch/session-state.json",
+        "sha256": "7a1b09c3a2744fcdd424ced5cecafea59a7684009d573f90e43787bfe0c8791b"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/425f0b8b-e4ed-4337-aa24-eea99d3bec73-markor-software-launch/completion-consumer.json",
+        "sha256": "2d0c3f008ae4ab0a2fab7f69b28ef47c9c674a35ed57bb6a05bf131e40978a98"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/425f0b8b-e4ed-4337-aa24-eea99d3bec73-markor-software-launch/bpf-all-known-after.json",
+        "sha256": "63c87e914daa261c799683739dd2fac57229122b94bb118ed638cc605bccfbff"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/425f0b8b-e4ed-4337-aa24-eea99d3bec73-markor-software-launch/userdata-after215-close.json",
+        "sha256": "0760db87f3140f17cba53ad8a216e8133a945a3b4e49b04f3f2205076341cf3d"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/425f0b8b-e4ed-4337-aa24-eea99d3bec73-markor-software-launch/allocator-source-decision.json",
+        "sha256": "fcbb57470c63d704aa5991308e25b24c40e5d67cdbebbb099dba093b0b454219"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/425f0b8b-e4ed-4337-aa24-eea99d3bec73-markor-software-launch/shared-file-source-decision.json",
+        "sha256": "36be178925c5431d4161a9287938e3f0f6201304a6a3ac8a6a8ec6c5e7f4083e"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/425f0b8b-e4ed-4337-aa24-eea99d3bec73-markor-software-launch/runtime-source-overlay.json",
+        "sha256": "da1c92381e36e678ccc35656a2a61c582709ea1ec12a0ddcc09c0c216cc0acc7"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/425f0b8b-e4ed-4337-aa24-eea99d3bec73-markor-software-launch/rea-libcutils-ashmem.json",
+        "sha256": "66c8b6b6319b064b26b44483ad004c4c5859951367fba1c5fd222aceef3c0404"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/425f0b8b-e4ed-4337-aa24-eea99d3bec73-markor-software-launch/rea-allocator-ashmem.json",
+        "sha256": "47935edcd109e65bfd17604e72601a771ac0c830e027f8641f8920b37556a406"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/425f0b8b-e4ed-4337-aa24-eea99d3bec73-markor-software-launch/finite-audit/result.json",
+        "sha256": "3b16497c4de3df9d838511d2c89f0c6e618fe20055fe310508951b00b998c2f4"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after215-host.json",
+        "sha256": "c877dbf2129d4ad2edcb0da097f208990763d458477f792c82b9e8a4aa9f6382"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load35/after-load.json",
+        "sha256": "2ba9f79dcbe1df2355f7a4a4feb26742902b75c0d5f5309a0e8c0c48b3891db7"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/selected-platform-policy-35/compiler.json",
+        "sha256": "ea8c66f9e06a853bf61f0ff438cea70570e960dc2c6d3c8d72d6ac09eccba2b4"
+      }
+    ],
+    "verified": "UID1000 private UUID XDG directory actual type transition creates Linux.init_t files as archtv_wayland_runtime_file; connected capability preserved. Keyboard-v5 shared FD no longer aborts Wayland; original SF connects display0 in actual8.654042745s enforcing interval. No ambient HWC pathopen; no generic Linux tmpfs rights. Host restored0/VT1/audit0 backlog64, newloss0; no owned units/loops/DM/FUSE, known41prog58map absent, directory removed, prior note/data retained.",
+    "failures_preserved": {
+      "wrong_offline34": "Default baseline profile accidentally selected, stopped own compiler -15; never loaded.35 uses exact integrated14module profile/hash matching33 and neverallow enabled.",
+      "preflight214": "Own ordering error: created private runtime dir before PAM created /run/user/1000. No runtime/MAC, audit restored.215 moves preparation after PAM before compositor exec.",
+      "actual215": "Binder rejects reserved-region memfds with allocator-private type; SF allocation-129 and output buffer fatal. No pixels/UI/APK accepted.",
+      "preparation_MAC": "Compositor lock and sock_file preparation also have permissive AVCs. Preparation remains explicitly outside enforcing; do not claim fully enforcing launch/host control-plane."
+    },
+    "scope": "Received shared-file contract only; all regular server-created files in directory share type, not keymap-only. Original graceful close incomplete, external cohort closure verified. Previous167 APK note path remains permissive historical.",
+    "next": "Original generic minigbm HAS_DMABUF_SYSTEM_HEAP omitted from actual compilation; host system heap exists250:0 but unexposed. Integrate whole original allocator build/device contract before any allocator-private tmpfs grants. Then actual buffers/presentation, original Zygote and full Markor under MAC. R1-MAC/ARM/GMS/DRM remain open."
   }
 }
