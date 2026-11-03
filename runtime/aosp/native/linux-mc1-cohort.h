@@ -1,3 +1,4 @@
+#include <private/android_filesystem_config.h>
 #pragma once
 // One bounded MC1 functional experiment, using original service lifecycle code.
 // No boot scripts, synthesized readiness, general control backend or APK acceptance.
@@ -100,6 +101,16 @@ class LinuxMc1Cohort {
             if(auto result=StartVold(tick);!result.ok())return result;
         }
         if(apex_requested_) { if(auto result=StartApex(tick);!result.ok())return result; }
+        struct stat keystore_profile_info{};
+        const char* keystore_profile="/vendor/etc/archtv-keystore-component";
+        if(lstat(keystore_profile,&keystore_profile_info)==0) {
+            std::string profile;
+            if(!apex_requested_ || !S_ISREG(keystore_profile_info.st_mode) || keystore_profile_info.st_uid!=0 ||
+               !android::base::ReadFileToString(keystore_profile,&profile) || profile!="software-keystore-v1\n")
+                return android::base::Error()<<"Invalid Linux Keystore diagnostic profile";
+            return RunOriginalSoftwareKeystore(tick);
+        }
+        if(errno!=ENOENT)return android::base::Error()<<"Cannot inspect Linux Keystore diagnostic profile";
         // Explicit immutable Linux diagnostic profile, not an Android readiness flag.
         const char* keymint_profile="/vendor/etc/archtv-keymint-component";
         struct stat profile_info{};
@@ -126,7 +137,7 @@ class LinuxMc1Cohort {
     }
     bool vold_cancelled() const { return vold_cancelled_; }
     bool apex_cancelled() const { return apex_cancelled_; }
-    bool healthy() const { return !manager_failed_ && (!gatekeeper_ || gatekeeper_->IsRunning()) && (!keystore_ || keystore_->IsRunning()) && (!aconfig_system_ || aconfig_system_->IsRunning() || aconfig_system_clean_exit_) && (!aconfig_mainline_ || aconfig_mainline_->IsRunning() || aconfig_mainline_clean_exit_) && (!audioserver_ || audioserver_->IsRunning()) && (!lmkd_ || lmkd_->IsRunning()) && (!netd_ || netd_->IsRunning()) && (!statsd_ || statsd_->IsRunning()) && (!health_ || health_->IsRunning()) && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && (bootanimation_->IsRunning() || bootanimation_clean_exit_))) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning() || apex_clean_exit_); }
+    bool healthy() const { return !manager_failed_ && (!gatekeeper_ || gatekeeper_->IsRunning()) && (!keystore_ || keystore_->IsRunning()) && (!keymint_ || keymint_->IsRunning()) && (!aconfig_system_ || aconfig_system_->IsRunning() || aconfig_system_clean_exit_) && (!aconfig_mainline_ || aconfig_mainline_->IsRunning() || aconfig_mainline_clean_exit_) && (!audioserver_ || audioserver_->IsRunning()) && (!lmkd_ || lmkd_->IsRunning()) && (!netd_ || netd_->IsRunning()) && (!statsd_ || statsd_->IsRunning()) && (!health_ || health_->IsRunning()) && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && (bootanimation_->IsRunning() || bootanimation_clean_exit_))) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning() || apex_clean_exit_); }
     android::base::Result<void> Close(const Tick& tick) {
         using namespace android::init;
         if(!active_) return {};
@@ -159,7 +170,7 @@ class LinuxMc1Cohort {
         selected_=nullptr;
         suspend_=nullptr;
         installd_=nullptr;
-        apexd_=nullptr;gatekeeper_=nullptr;keystore_=nullptr;
+        apexd_=nullptr;gatekeeper_=nullptr;keystore_=nullptr;keymint_=nullptr;
         services.RemoveServiceIf([](const auto& service){return !service->IsRunning();});
         active_=false;
         int observed_mode=security_getenforce();
@@ -615,6 +626,44 @@ class LinuxMc1Cohort {
         if(count!=7)return android::base::Error()<<"Unexpected selected initial APK view size";
         return {};
     }
+    android::base::Result<void> RunOriginalSoftwareKeystore(const Tick& tick) {
+        using namespace android::init;
+        auto& services=ServiceList::GetInstance();
+        auto parser=CreateParser(ActionManager::GetInstance(),services);
+        for(const char* path:{"/vendor/etc/init/archtv-keymint-software.rc","/vendor/etc/init/archtv-keystore-software.rc"}) {
+            auto parsed=parser.ParseConfigFile(path);
+            if(!parsed.ok() || parser.parse_error_count()!=0)return android::base::Error()<<"Software service RC rejected: "<<path;
+        }
+        keymint_=services.FindService("archtv-keymint-software");
+        auto* keystore=services.FindService("archtv-keystore2");
+        if(!keymint_ || keymint_->uid()!=AID_NOBODY || keymint_->args()!=std::vector<std::string>{"/archtv-android/archtv-keymint-software"} ||
+           !keystore || keystore->uid()!=1017 || keystore->args()!=std::vector<std::string>{"/system/bin/keystore2","/data/misc/keystore"})
+            return android::base::Error()<<"Software security identity/executable contract mismatch";
+        for(auto* service:{keymint_,keystore})service->AddReapCallback([this](const siginfo_t& info){
+            std::fprintf(stderr,"SOFTWARE_SECURITY_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
+            if(!closing_)manager_failed_=true;
+        });
+        auto client=[&](const std::string& command)->android::base::Result<void> {
+            auto temporary=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","shell","shell","--","/system/bin/sh","-c","umask 077; "+command});
+            if(!temporary.ok())return temporary.error();
+            auto* process=temporary->get();client_done_=false;client_ok_=false;
+            process->AddReapCallback([this](const siginfo_t& info){client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;});
+            services.AddService(std::move(*temporary));
+            if(auto started=process->ExecStart();!started.ok())return started;
+            if(auto waited=Wait(tick,[this]{return client_done_;},60);!waited.ok())return waited;
+            if(!client_ok_)return android::base::Error()<<"Original software Binder client failed; inspect actual output";
+            return {};
+        };
+        if(auto started=keymint_->Start();!started.ok())return started;
+        std::fprintf(stderr,"SELECTED_KEYMINT_STARTED pid=%d\n",keymint_->pid());
+        if(auto observed=client("/archtv-android/archtv-keystore-client provider unused > /data/local/tmp/archtv-mc1/keymint-provider.txt 2>&1");!observed.ok())return observed;
+        keystore_=keystore;
+        if(auto started=keystore_->Start();!started.ok())return started;
+        std::fprintf(stderr,"SELECTED_KEYSTORE_STARTED pid=%d\n",keystore_->pid());
+        if(auto observed=client("/archtv-android/archtv-keystore-client write /data/local/tmp/archtv-mc1/keystore-ciphertext.bin > /data/local/tmp/archtv-mc1/keystore-component.txt 2>&1 && /archtv-android/archtv-keystore-client read /data/local/tmp/archtv-mc1/keystore-ciphertext.bin >> /data/local/tmp/archtv-mc1/keystore-component.txt 2>&1");!observed.ok())return observed;
+        std::fprintf(stderr,"KEYSTORE_COMPONENT_RETURNED REQUIRES_OUTPUT_VERIFICATION_NOT_APK_OR_MAC_ACCEPTANCE\n");
+        return {};
+    }
     android::base::Result<void> StartSelectedDisplay(const Tick& tick) {
         std::fprintf(stderr,"SELECTED_SHADER_PRIMING_PROPERTY actual=%s NO_RENDER_ACCEPTANCE\n",android::base::GetProperty("service.sf.prime_shader_cache", "unset").c_str());
         using namespace android::init;
@@ -863,6 +912,7 @@ class LinuxMc1Cohort {
     android::init::Service* apexd_=nullptr;
     android::init::Service* gatekeeper_=nullptr;
     android::init::Service* keystore_=nullptr;
+    android::init::Service* keymint_=nullptr;
     bool aconfig_system_clean_exit_=false,aconfig_mainline_clean_exit_=false;
     bool bootanimation_started_=false,bootanimation_clean_exit_=false;
     bool missing_done_=false,missing_ok_=false;

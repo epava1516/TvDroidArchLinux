@@ -1,0 +1,86 @@
+{
+  "utc": "2026-11-03T04:03:12.934132+00:00",
+  "scope": "Permissive original KeyMint Binder response, not cryptographic Keystore2/MAC/APK acceptance",
+  "run_id": "40983b12-2bb9-4925-b497-f13dd3aad725",
+  "checkpoint": "/home/tv/recuperacion-archtv/40983b12-2bb9-4925-b497-f13dd3aad725-keystore-component",
+  "artifacts": {
+    "result.json": {
+      "path": "/home/tv/recuperacion-archtv/40983b12-2bb9-4925-b497-f13dd3aad725-keystore-component/result.json",
+      "sha256": "65a64e49f71bd9471876609a38c4dcd39b720d9d70c4f164ca6ae2d9bf955440"
+    },
+    "run.log": {
+      "path": "/home/tv/recuperacion-archtv/40983b12-2bb9-4925-b497-f13dd3aad725-keystore-component/run.log",
+      "sha256": "2df623d8a524315cbfbc5f9c47dc67cee51a9e21ac24ba4752cdcf59d762baed"
+    },
+    "completion-manifest.json": {
+      "path": "/home/tv/recuperacion-archtv/40983b12-2bb9-4925-b497-f13dd3aad725-keystore-component/completion-manifest.json",
+      "sha256": "0949ca4feef2e4de37d4d34a13a609924f5ac97e659b4c9aaed1dca2c5bd84c3"
+    },
+    "completion-consumer.json": {
+      "path": "/home/tv/recuperacion-archtv/40983b12-2bb9-4925-b497-f13dd3aad725-keystore-component/completion-consumer.json",
+      "sha256": "4120825d0d005c8406b4816ac8726dbcc2d9be744db2368fbaec43e4544dff29"
+    },
+    "session-state.json": {
+      "path": "/home/tv/recuperacion-archtv/40983b12-2bb9-4925-b497-f13dd3aad725-keystore-component/session-state.json",
+      "sha256": "0305fa7b61eb57658e23ffc692ef00f0a35cf93fd3473bbfc01a913bbda8dc85"
+    }
+  },
+  "result": {
+    "outer_exit": 1,
+    "native_complete_inventory_verified": true,
+    "active_loops": "",
+    "final_dm": []
+  },
+  "observed": {
+    "provider_client_pid": 418,
+    "provider_client_exit": 0,
+    "hardware_info_security_level": "SOFTWARE",
+    "interface_version": 4,
+    "keystore_exit": 1,
+    "native_linker_error": "libandroidicu.so needed by /system/lib64/libsqlite.so not found in namespace default",
+    "keystore_keys": false,
+    "markor_launch": false,
+    "session_restored_vt": "1"
+  },
+  "decision": "Bind adapted daemon read-only at existing original /system/bin/keystore2 for original system/APEX namespace selection, keep helper bundle0700; candidate115 not yet executed",
+  "security": {
+    "permissive": true,
+    "policyload": 3,
+    "sequence": 6,
+    "enforcing_acceptance": false,
+    "policy_recovery": "/home/tv/recuperacion-archtv/20261102T223149Z-keystore-policy/RETOMAR.txt"
+  },
+  "limits": [
+    "No generate/encrypt/decrypt result",
+    "No Java provider, unlock or new Markor stage",
+    "Failure-path inner MC1_CLOSE_FAILED remains open; outer cleanup verified",
+    "Snapshot and console confirmed, restore untested",
+    "REA ELF provider unavailable; actual Binder/native execution is independent evidence"
+  ],
+  "subsequent_attempt": {
+    "run_id": "a044fe98-33a2-4d7b-8f95-ed84a059d3c2",
+    "checkpoint": "/home/tv/recuperacion-archtv/a044fe98-33a2-4d7b-8f95-ed84a059d3c2-keystore-component",
+    "candidate": 115,
+    "outer_exit": 1,
+    "native_complete_inventory_verified": false,
+    "native_gate": "39 active; bt and ondevicepersonalization UUID device deadlines",
+    "bridge_publication_seconds": 3.063248801001464,
+    "keystore_reached": false,
+    "cleanup": "units inactive, VT1, no loops/dm"
+  },
+  "original_entry_execution": {
+    "run_id": "56afaa11-1090-4c6e-8e1f-62a586ca2875",
+    "checkpoint": "/home/tv/recuperacion-archtv/56afaa11-1090-4c6e-8e1f-62a586ca2875-keystore-component",
+    "result_sha256": "d1ece83c142202a6204767d06c91340c28cca41124b77c54408b1667a13ee1a1",
+    "outer_exit": 1,
+    "native_complete_inventory_verified": true,
+    "original_path": "/system/bin/keystore2",
+    "linker_failure_reproduced": false,
+    "keystore_binder_calls_reached": true,
+    "actual_crypto_error": "UNSUPPORTED_PADDING_MODE",
+    "decision": "Correct client AES-GCM parameters to include original PADDING NONE for key generation and createOperation, not a runtime relaxation",
+    "reference_source": "system/security/keystore2/test_utils/key_generations.rs:import_transport_key",
+    "crypto_accepted": false,
+    "cleanup": "outer inactive VT1 loopsdmempty; inner closure still open"
+  }
+}

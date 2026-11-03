@@ -2,7 +2,7 @@
 set -euo pipefail
 run_id=$(/usr/bin/python -c 'import uuid;print(uuid.uuid4())')
 unit="archtv-package-runner-$run_id"
-experiment_kind=$(/usr/bin/python -c 'import json;from pathlib import Path;d=json.loads(Path("/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-104/build-options.json").read_text());print("keymint-component" if d.get("keymint_component_diagnostic") else "markor-launch")')
+experiment_kind=$(/usr/bin/python -c 'import json;from pathlib import Path;d=json.loads(Path("/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-104/build-options.json").read_text());print(d.get("experiment_kind") or ("keymint-component" if d.get("keymint_component_diagnostic") else "markor-launch"))')
 checkpoint="/home/tv/recuperacion-archtv/$run_id-$experiment_kind"
 mkdir -m 700 "$checkpoint"
 # Bind destination now, never discover a different daemon at delivery time.
@@ -12,8 +12,8 @@ import json,sys
 from pathlib import Path
 cp,run,unit,remote,thread,kind=sys.argv[1:]
 p=Path(cp)/'completion-manifest.json'
-assert kind in ('keymint-component','markor-launch')
-name='KeyMint v4 software component' if kind=='keymint-component' else 'Markor integrated launch'
+assert kind in ('keymint-component','keystore-component','markor-launch')
+name={'keymint-component':'KeyMint v4 software component','keystore-component':'Original Keystore2 software Binder integration','markor-launch':'Markor integrated launch'}[kind]
 with p.open('x') as f:json.dump(dict(id=run,checkpoint=cp,unit=unit,owner=unit,name=name,active_owner='active:'+run,remote=remote,thread=thread),f)
 p.chmod(0o444)
 MANIFEST

@@ -1,0 +1,83 @@
+{
+  "utc": "2026-11-03T03:58:11.959279+00:00",
+  "scope": "Original KeyMint process admission in real private cohort; not Binder service, key operations, authorization, user unlock or APK compatibility.",
+  "candidate": 113,
+  "run_id": "e422706a-b3a1-44c1-a7ae-164f02831330",
+  "checkpoint": "/home/tv/recuperacion-archtv/e422706a-b3a1-44c1-a7ae-164f02831330-keystore-component",
+  "native_identity": {
+    "kind": "KEYMINT",
+    "pid_namespace_pid": 415,
+    "getpidcon_raw_return": 0,
+    "actual_context": "u:r:hal_keymint_default:s0",
+    "contexts_observed_in_order": [
+      "u:r:hal_keymint_default:s0"
+    ],
+    "errno_observed": [],
+    "status": [
+      "Uid:\t9999\t9999\t9999\t9999",
+      "Gid:\t0\t0\t0\t0",
+      "Groups:\t ",
+      "CapPrm:\t0000000000000000",
+      "CapEff:\t0000000000000000",
+      "CapBnd:\t000001ffffffffff",
+      "NoNewPrivs:\t1"
+    ]
+  },
+  "readonly_selected_aliases": [
+    {
+      "path": "/archtv-android/archtv-keystore2-software",
+      "sha256": "20a4f0bf4d0803e0c947332655e45d44f71d1f55d5e3bb3c33561f5751f3eeac",
+      "context": "u:object_r:keystore_exec:s0",
+      "readonly": true
+    },
+    {
+      "path": "/archtv-android/archtv-keystore-client",
+      "sha256": "439b8efef3c434133b16e39e97177a472de6b48b3e60c14353d7889ba60d1895",
+      "context": "u:object_r:shell_exec:s0",
+      "readonly": true
+    },
+    {
+      "path": "/archtv-android/archtv-keymint-software",
+      "sha256": "4a0765f1ee2c71193ccfb7835b21bc8f75c63c7d2f872ae7d8447f55b4c895f8",
+      "context": "u:object_r:hal_keymint_default_exec:s0",
+      "readonly": true
+    }
+  ],
+  "preserved_linux_boundary": "Original /archtv and /archtv/bin remain root-only0700. Only three hash-bound Android file inodes get read-only aliases; no chmod of helper bundle.",
+  "policy": {
+    "source": "Entire original vendor/hal_keymint_default.te plus original existing health/graphics modules",
+    "source_board_api_profile": 202504,
+    "neverallow_disabled": false,
+    "load_return": 0,
+    "policyload": 3,
+    "enforcing": 0,
+    "kernel_readback_sha256": "77c0c0861cd1dd2acfb383546ade932c010162a70b906866c7801cff91017a18",
+    "recovery": "/home/tv/recuperacion-archtv/20261102T223149Z-keystore-policy/RETOMAR.txt",
+    "diagnostic_note": "Raw successful load/context checks retain errno22 from previous negative calls; errno not meaningful on return0. No load repeated to change that diagnostic."
+  },
+  "result": {
+    "outer_exit": 1,
+    "native_inventory_verified": true,
+    "keymint_process_executed": true,
+    "binder_response_accepted": false,
+    "keystore_started": false,
+    "reason": "Client shell UID2000 cannot open the system-owned UID1000 mode0600 precreated output file; exits1 before Binder observation. Remove those two diagnostic precreations so real shell redirection creates private outputs.",
+    "native_close": "Failure-path inner close not accepted; outer cleanup verified separately.",
+    "active_loops": "",
+    "final_dm": []
+  },
+  "notification": "Active UUID consumed; no queued continuation.",
+  "evidence": {
+    "/home/tv/recuperacion-archtv/e422706a-b3a1-44c1-a7ae-164f02831330-keystore-component/run.log": "d2faf032123f3bd9ecc5e8f036cca0c863d3723f2cb0a98c4e7791e936a5c885",
+    "/home/tv/recuperacion-archtv/e422706a-b3a1-44c1-a7ae-164f02831330-keystore-component/result.json": "4a3eb855927c6595c0d9dd85bac3ece25910c3607293b997a09a13ce9ed17acb",
+    "/home/tv/recuperacion-archtv/e422706a-b3a1-44c1-a7ae-164f02831330-keystore-component/session-state.json": "aedf32d678f8ead3ee02324f3e09534a2dc4bbb1453ae50b03cd7a30d4c6e82d",
+    "/home/tv/recuperacion-archtv/e422706a-b3a1-44c1-a7ae-164f02831330-keystore-component/completion-consumer.json": "73bb69c68835f1629e70578c88e1ff422cb1d7f37e35977707711be4707d024e",
+    "/home/tv/repositorio-principal/dist/aosp16/keystore-policy-inputs-3/build.json": "57c0c707fac3e3999cd351f5d35b0f1decf958ac49db80410b2d836c57d3cb3b",
+    "/home/tv/repositorio-principal/dist/aosp16/keystore-cohort-policy-2/artifact.json": "a4981874cdfe5ff2c2a3d4f246a6cd2d55dd84d2b41950949c130a6acab4a5a1",
+    "/home/tv/repositorio-principal/dist/aosp16/keystore-cohort-policy-2/compiler.json": "cc885d0039396b9a4249216c0a1b15b0ea1f0392f1084202f824a04aa4e54916",
+    "/home/tv/recuperacion-archtv/20261102T223149Z-keystore-policy/before-host.json": "73d0f59a7c94290ba56e118857fb608961b5ccdec7525368f5ec4fbdf3a4554a",
+    "/home/tv/recuperacion-archtv/20261102T223149Z-keystore-policy/after-load.json": "a068d83bbf117e8b9022badb37cd6519d5c6d0ad10f174431013e83efb42617a"
+  },
+  "earlier_attempts": "keystore-binder-negative.json",
+  "next": "Candidate114 removes incompatible output-file precreation; repeat real Binder/provider/Keystore/key operations under new UUID, then original Java provider and user unlock/Markor."
+}

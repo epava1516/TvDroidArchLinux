@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Combine existing real APEX and original graphics factories; no Android boot."""
 from pathlib import Path
-import sys,ast
+import sys,ast,json
 import xml.etree.ElementTree, hashlib
 # Resolve the Linux verification hash provider before entering the chroot.
 hashlib.sha256(b"").digest()
@@ -191,7 +191,7 @@ for file in sorted(Path('/metadata/aconfig').rglob('*')):
  info=file.stat()
  metadata.append({'path':str(file),'uid':info.st_uid,'gid':info.st_gid,'mode':oct(stat.S_IMODE(info.st_mode)),'context':os.getxattr(file,'security.selinux').decode().rstrip(chr(0)),'bytes':info.st_size,'sha256':hashlib.sha256(file.read_bytes()).hexdigest() if info.st_size<=33554432 else None})
 print('ACONFIG_ORIGINAL_METADATA_FILES '+json.dumps({'files':metadata,'truncated':metadata_truncated,'scope':'Original daemon outputs, not flag or permission acceptance'}),flush=True)
-for name in ['keymint-component.txt','storage-contract.txt','markor-user-state.txt','markor-bootstrap-home-stop.txt','markor-home-after.txt','markor-boot-before-user.txt','platform-capabilities.txt','linux-application-profile.txt','markor-postcommit-path.txt','markor-postcommit-dump.txt','markor-installed-bytes.txt','unadmitted-artd-control.txt','ranging-service-info.txt','ranging-permission.txt','netd-permission-query.txt','netd-query.txt','netd-interfaces.txt','stats-query.txt','selected-failure.txt','selected-wait.txt','health-query.txt','health-dump.txt','apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt','vold-query.txt','vold-user0.txt','markor-install.txt','markor-path.txt','markor-dump.txt','activity-query.txt','mount-query.txt','markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
+for name in ['keymint-provider.txt','keystore-component.txt','keymint-component.txt','storage-contract.txt','markor-user-state.txt','markor-bootstrap-home-stop.txt','markor-home-after.txt','markor-boot-before-user.txt','platform-capabilities.txt','linux-application-profile.txt','markor-postcommit-path.txt','markor-postcommit-dump.txt','markor-installed-bytes.txt','unadmitted-artd-control.txt','ranging-service-info.txt','ranging-permission.txt','netd-permission-query.txt','netd-query.txt','netd-interfaces.txt','stats-query.txt','selected-failure.txt','selected-wait.txt','health-query.txt','health-dump.txt','apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt','vold-query.txt','vold-user0.txt','markor-install.txt','markor-path.txt','markor-dump.txt','activity-query.txt','mount-query.txt','markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
  f=Path('/data/local/tmp/archtv-mc1')/name
  if f.is_file():print('PACKAGE_ORIGINAL_OUTPUT '+name+' '+json.dumps(f.read_text()),flush=True)
 if p.returncode!=0:
@@ -234,7 +234,28 @@ print('MARKOR_ORIGINAL_INSTALL_BYTES_VERIFIED NOT_LAUNCH_PERSISTENCE_MAC_OR_APK_
 identity_line=next(line for line in text.splitlines() if line.startswith("assert {v['kind']:v['actual_context'] for v in identities}=="))
 full_expected=identity_line.split('==',1)[1]
 component_expected={'MANAGER':'u:r:servicemanager:s0','HWMANAGER':'u:r:hwservicemanager:s0','VOLD':'u:r:vold:s0','DAEMON':'u:r:apexd:s0','SNAPSHOT':'u:r:apexd:s0','ACONFIG_SYSTEM':'u:r:aconfigd:s0','ACONFIG_MAINLINE':'u:r:aconfigd_mainline:s0','NETD':'u:r:netd:s0'}
-text=text.replace(identity_line,"keymint_component_profile=Path('/vendor/etc/archtv-keymint-component').is_file()\nexpected_identities="+full_expected+"\nif keymint_component_profile:\n assert Path('/vendor/etc/archtv-keymint-component').read_text()=='software-crypto-v1\\n'\n expected_identities="+repr(component_expected)+"\nassert {v['kind']:v['actual_context'] for v in identities}==expected_identities")
+text=text.replace(identity_line,"keymint_component_profile=Path('/vendor/etc/archtv-keymint-component').is_file()\nkeystore_component_profile=Path('/vendor/etc/archtv-keystore-component').is_file()\nassert not (keymint_component_profile and keystore_component_profile)\nexpected_identities="+full_expected+"\nif keymint_component_profile:\n assert Path('/vendor/etc/archtv-keymint-component').read_text()=='software-crypto-v1\\n'\n expected_identities="+repr(component_expected)+"\nassert {v['kind']:v['actual_context'] for v in identities}==expected_identities")
+# Extend the existing real SID/credentials observer for the two original daemons.
+text=text.replace('|ARTD)_STARTED','|ARTD|KEYMINT|KEYSTORE)_STARTED')
+text=text.replace("'ARTD':'u:r:artd:s0'", "'ARTD':'u:r:artd:s0','KEYMINT':'u:r:hal_keymint_default:s0','KEYSTORE':'u:r:keystore:s0'")
+text=text.replace("list(map(int,fields['Uid'].split()))==[", "list(map(int,fields['Uid'].split()))==[9999 if identity['kind']=='KEYMINT' else 1017 if identity['kind']=='KEYSTORE' else ")
+text=text.replace("list(map(int,fields['Gid'].split()))==[", "list(map(int,fields['Gid'].split()))==[0 if identity['kind']=='KEYMINT' else 1017 if identity['kind']=='KEYSTORE' else ")
+component_identity_assert="assert {v['kind']:v['actual_context'] for v in identities}==expected_identities"
+assert component_identity_assert in text
+keystore_expected={**component_expected,'KEYMINT':'u:r:hal_keymint_default:s0','KEYSTORE':'u:r:keystore:s0'}
+text=text.replace(component_identity_assert,"if keystore_component_profile:\n assert Path('/vendor/etc/archtv-keystore-component').read_text()=='software-keystore-v1\\n'\n expected_identities="+repr(keystore_expected)+"\n"+component_identity_assert)
+keystore_checks="""if keystore_component_profile:
+ provider=Path('/data/local/tmp/archtv-mc1/keymint-provider.txt').read_text().splitlines()
+ output=Path('/data/local/tmp/archtv-mc1/keystore-component.txt').read_text().splitlines()
+ assert len(provider)==1 and re.fullmatch(r'KEYMINT_BINDER_SOFTWARE_V4_OBSERVED pid=[1-9][0-9]* NOT_KEY_OR_APK_ACCEPTANCE',provider[0]),provider
+ assert len(output)==2,output
+ first=re.fullmatch(r'KEYSTORE_BINDER_GENERATED_ENCRYPTED metadata=SOFTWARE hardware_rejected=2 pid=([1-9][0-9]*) NOT_APK_OR_MAC_ACCEPTANCE',output[0])
+ second=re.fullmatch(r'KEYSTORE_BINDER_REOPENED_DECRYPTED tamper_rejected=1 deleted=1 metadata=SOFTWARE pid=([1-9][0-9]*) NOT_APK_OR_MAC_ACCEPTANCE',output[1])
+ assert first and second and first[1]!=second[1],output
+ assert Path('/data/local/tmp/archtv-mc1/markor-launch.txt').read_text()==''
+ print('KEYSTORE_SOFTWARE_BINDER_COMPONENT_VERIFIED NOT_USER_AUTH_MAC_OR_APK_ACCEPTANCE',flush=True)
+ sys.exit(0)
+"""
 component_checks="""if keymint_component_profile:
  output=Path('/data/local/tmp/archtv-mc1/keymint-component.txt').read_text().splitlines()
  assert output==['KEYMINT_COMPONENT_ENCRYPTED_AND_SAVED SOFTWARE v4 NOT_KEYSTORE_OR_APK_ACCEPTANCE','KEYMINT_COMPONENT_REOPEN_DECRYPT_AND_NEGATIVES_PASSED SOFTWARE v4 NOT_KEYSTORE_OR_APK_ACCEPTANCE'],output
@@ -244,7 +265,40 @@ component_checks="""if keymint_component_profile:
 """
 component_boundary="text=Path('/data/local/tmp/archtv-mc1/service-list.txt').read_text()"
 assert component_boundary in text
-text=text.replace(component_boundary,component_checks+component_boundary,1)
+text=text.replace(component_boundary,keystore_checks+component_checks+component_boundary,1)
+
+# The Linux helper bundle remains root-only0700. Admit only the three
+# hash-bound Android binaries at separate read-only paths for their real UIDs.
+if (payload.parent/'keystore-component-inputs.json').exists():
+ alias_inputs=json.loads((payload.parent/'keystore-component-inputs.json').read_text())['native']
+ aliases={name:{'sha256':item['deployed_sha256'],'context':'u:object_r:'+{'archtv-keymint-software':'hal_keymint_default_exec','archtv-keystore2-software':'keystore_exec','archtv-keystore-client':'shell_exec'}[name]+':s0'} for name,item in alias_inputs.items()}
+ assert set(aliases)=={'archtv-keymint-software','archtv-keystore2-software','archtv-keystore-client'}
+ alias_code="""
+import hashlib
+if (root/'vendor/etc/archtv-keystore-component').is_file():
+ android_alias=root/'archtv-android';android_alias.mkdir(mode=0o755)
+ assert lib.lsetfilecon_raw(str(android_alias).encode(),b'u:object_r:system_file:s0')==0,ctypes.get_errno()
+ for name,expected in ALIAS_INPUTS.items():
+  source=candidate/'bin'/name;info=source.lstat()
+  assert stat.S_ISREG(info.st_mode) and info.st_uid==0 and stat.S_IMODE(info.st_mode)==0o755
+  assert hashlib.sha256(source.read_bytes()).hexdigest()==expected['sha256']
+  assert os.getxattr(source,'security.selinux').decode().rstrip('\\0')==expected['context']
+  # Original linkerconfig selects system/APEX namespace by executable path.
+  # Bind the adapted daemon at its existing original system entry; do not copy
+  # ICU out of its APEX or broaden fallback namespace library access.
+  target=root/'system/bin/keystore2' if name=='archtv-keystore2-software' else android_alias/name
+  if name=='archtv-keystore2-software':assert target.is_file() and not target.is_symlink()
+  else:target.touch()
+  mount('--bind',source,target);mount('-o','remount,bind,ro',target)
+  assert (target.stat().st_dev,target.stat().st_ino)==(info.st_dev,info.st_ino)
+  assert os.statvfs(target).f_flag & os.ST_RDONLY
+  print('KEYSTORE_LINUX_NATIVE_ALIAS '+json.dumps({'path':'/'+str(target.relative_to(root)),'sha256':expected['sha256'],'context':expected['context'],'readonly':True}),flush=True)
+ assert stat.S_IMODE((root/'archtv').stat().st_mode)==0o700
+ assert stat.S_IMODE((root/'archtv/bin').stat().st_mode)==0o700
+""".replace('ALIAS_INPUTS',repr(aliases))
+ alias_boundary="mount('--bind',candidate,root/'archtv');mount('-o','remount,bind,ro',root/'archtv')"
+ assert text.count(alias_boundary)==1
+ text=text.replace(alias_boundary,alias_boundary+'\n'+alias_code)
 
 # AOSP setns() must operate on an actual namespace root, not a chroot
 # into a host-root namespace: setns may reset fs.root to that namespace root.

@@ -1,5 +1,7 @@
 # Matriz de aplicaciones reales
 
+[Keystore2/KeyMint original116](../reports/android16-package-bootstrap/keystore-binder-functional.json) supera claves y negativas por Binder con SOFTWARE en permisivo. Es soporte nativo, no ejecución de Markor: instalación temporal previa conservada; lanzamiento/UI/entrada/nota/cierre/reapertura siguen sin aceptación. Reapertura de clave entre clientes no es persistencia de la aplicación.
+
 El [perfil de plataforma original](../reports/android16-package-bootstrap/platform-effects-functional.json) declara Android WallpaperService ausente: el recurso aplicado por RRO y el DisabledWallpaperManager original lo confirman. Esto es una limitación comprobada de plataforma, no una prueba de una aplicación de fondos ni compatibilidad resuelta. Color/notificación/fase600/retorno AMS progresan; las etapas APK conservan su estado.
 
 Corrección de coherencia: el JSON conserva ahora la instalación temporal anterior de Markor ya documentada; no se acepta una etapa nueva. [ART/dexopt](../reports/android16-package-bootstrap/art-supervision-functional.json) y la [frontera de persistentes PMS](../reports/android16-package-bootstrap/bootstrap-profile-negative.json) siguen siendo evidencia parcial. El perfil inicial omite APK de infraestructura de red/tethering, telefonía/cellbroadcast, Secure Element y SystemUI; sus funciones no se declaran compatibles por estar fuera de esa prueba. El objetivo amplio y sus recorridos siguen abiertos.
