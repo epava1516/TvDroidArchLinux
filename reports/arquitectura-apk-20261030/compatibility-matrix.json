@@ -236,11 +236,11 @@
           "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance. Services means required local-note route; close means original forced process stop; persistence is across those two app processes only."
         },
         "persistence": {
-          "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "c4811ff5b370932c757ad64f55058e1772a80bb37c85310299d0a14214ae582c",
-          "section": "note_process_reopen162",
+          "record": "../android16-package-bootstrap/persistent-userdata-functional.json",
+          "record_sha256": "df3c1ee7e74df27dacd16c038e79834a712c96a478727348e8320bb924ca798e",
+          "section": "successful_repeat167",
           "accepted": true,
-          "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance. Services means required local-note route; close means original forced process stop; persistence is across those two app processes only."
+          "scope": "Exact Markorv164 Markdown note created163 survives complete cohort teardown and original subsystems167; actual bytes, same UID/inodes/MCS, original install/force-stop/relaunch and real single pointer opens editor.167 native/exterior0. Not host reboot/power loss, FBE/MAC, graceful close, arbitrary upgrade or general APK compatibility."
         },
         "services": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
@@ -396,13 +396,24 @@
             "close": "not_tested",
             "reopen": "not_tested"
           }
+        },
+        {
+          "as_of_candidate": 162,
+          "persistence": {
+            "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
+            "record_sha256": "c4811ff5b370932c757ad64f55058e1772a80bb37c85310299d0a14214ae582c",
+            "section": "note_process_reopen162",
+            "accepted": true,
+            "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance. Services means required local-note route; close means original forced process stop; persistence is across those two app processes only."
+          }
         }
       ],
       "latest_workflow_attempt": {
-        "report": "reports/android16-package-bootstrap/original-user-unlock-progress.json",
-        "sha256": "c4811ff5b370932c757ad64f55058e1772a80bb37c85310299d0a14214ae582c",
-        "section": "note_process_reopen162",
-        "status": "Local-note nine-stage workflow162 verified, oldPID2584/newPID3743, same21 bytes and real reopened GUI. No broad compatibility/MAC/durable-data claim."
+        "candidate": 167,
+        "record": "../android16-package-bootstrap/persistent-userdata-functional.json",
+        "native_exit": 0,
+        "outer_exit": 0,
+        "scope": "Exact Markorv164 Markdown note created163 survives complete cohort teardown and original subsystems167; actual bytes, same UID/inodes/MCS, original install/force-stop/relaunch and real single pointer opens editor.167 native/exterior0. Not host reboot/power loss, FBE/MAC, graceful close, arbitrary upgrade or general APK compatibility."
       }
     }
   ],

@@ -1,6 +1,6 @@
 # Índice de evidencias
 
-[Persistencia163→166](../reports/android16-package-bootstrap/persistent-userdata-functional.json): hashes de artefactos, nota idéntica, datos privados y fallo exterior del verificador conservado; alcance funcional acotado y repetición pendiente.
+[Persistencia163→167](../reports/android16-package-bootstrap/persistent-userdata-functional.json): hashes de artefactos, nota idéntica, UID/inodos/etiquetas privados, relanzamiento y editor inspeccionado;167 nativo/exterior0. Fallos anteriores conservados, permisivo y alcance funcional acotado.
 
 Vigente162 · [recorrido local de Markor probado](../reports/android16-package-bootstrap/original-user-unlock-progress.json), sección note_process_reopen162: APK intacta instala/lanza, muestra su UI en Smithay, recibe entrada Linux y guarda21 bytes; el gestor original mata el PID2584, lanza el3743 y el puntero reabre la nota con el mismo texto y SHA d846c828… antes/después. Cierre forzado y persistencia entre procesos dentro de una cohorte: no durabilidad entre arranques, cierre elegante ni todas las funciones de Markor. Ruta real Documents/markor y CAP_KILL original; UID/SID/grupos/NNP1 verificados en permisivo. Cohorte cerrada sin loops/dm/FUSE, VT1/host restaurados y resultado consumido sin encolar. Próximo: datos privados durables y dos cohortes reales; R1-MAC, C2/C4–C7, otras APK, ARM/GMS/DRM e instalación/actualización/distro siguen abiertos.
 
