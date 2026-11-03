@@ -88,7 +88,7 @@ if [ -f /vendor/etc/archtv-markor-workflow-token ]; then
     [ "${#token}" -eq 8 ] || exit 1
     # Privileged original system_server observer, not an app access test.
     # media_rw is in pinned original ZygoteInit groups; do not expand app FUSE access.
-    note=/data/media/0/Documents/archtv-$token.md
+    note=/data/media/0/Documents/markor/archtv-$token.md
     expected="archtv note $token"
     budget=$(/system/bin/cat /vendor/etc/archtv-markor-workflow-budget)
     case "$budget" in ''|*[!0-9]*) exit 1;; esac

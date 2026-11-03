@@ -1,7 +1,7 @@
 {
   "schema": 2,
   "runtime_baseline": "Experimental original AOSP/Bionic x86_64 subsystem cohort on Linux/Smithay, selected pinned sources and existing binary artifacts; exact profiles/evidence required. Full Android build coherence, broad APK compatibility and R1-MAC remain open.",
-  "scope": "Unmodified real APK static identities and planned end-to-end workflows. No general compatibility or runtime failure claimed from unexecuted cases.",
+  "scope": "Intact real APK identities and explicitly scoped, versioned runtime workflows; static findings and unexecuted cases remain separate. A passing local route does not establish arbitrary APK compatibility.",
   "applications": [
     {
       "id": "vlc",
@@ -157,12 +157,12 @@
         "interface": "approved",
         "input": "approved",
         "main_function": "approved",
-        "persistence": "not_tested",
-        "services": "not_tested",
-        "close": "not_tested",
-        "reopen": "not_tested"
+        "persistence": "approved",
+        "services": "approved",
+        "close": "approved",
+        "reopen": "approved"
       },
-      "reason": "153 using original Trust candidate152: manifest launch, own explorer/new-file/editor UI in Smithay, pointer and ASCII text entry proven on intact APK. Save requested but file bytes not verified; no app process close-reopen/durability or full C3. Stage approvals apply only to this exact APK/base and observed basic route, not all UI/input features.",
+      "reason": "Experimental exact local Markdown workflow162 verified in permissive ephemeral cohort; all other functions/profiles, durable runtime data, MAC/security, stability/performance and product gates retain explicit open requirements.",
       "framework_class_link_pass": true,
       "declared_application": "net.gsantner.markor.ApplicationObject",
       "bootstrap_experiment": {
@@ -201,52 +201,67 @@
       "historical_reason_android13": "Current host launcher substitutes Application and Activity/widgets. Complete real-app route not demonstrated; static inventory does not establish execution.",
       "runtime_stage_evidence": {
         "installation": {
-          "record": "../android16-package-bootstrap/markor-install-functional.json",
-          "record_sha256": "d7a5164ba89ef04b8501aeacf22d0bd4c563e5d716a4e6e1c767d0ff02c4bd72",
-          "base_commit": "d8647d1f71868ae2b12c351241259234bc409ae3",
-          "scope": "Earlier original installation with original package path/bytes check in temporary private tmpfs only; not new stage acceptance, durability, tenant isolation, launch or current candidate success"
+          "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
+          "record_sha256": "c4811ff5b370932c757ad64f55058e1772a80bb37c85310299d0a14214ae582c",
+          "section": "note_process_reopen162",
+          "accepted": true,
+          "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance. Services means required local-note route; close means original forced process stop; persistence is across those two app processes only."
         },
         "launch": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "667efbb89443bc879cdf0ba4c86f055d4b289ac34b8906dd1719aa172f7e2fcf",
+          "record_sha256": "c4811ff5b370932c757ad64f55058e1772a80bb37c85310299d0a14214ae582c",
+          "section": "note_process_reopen162",
           "accepted": true,
-          "scope": "Exact version164/c105bf5, candidate152 execution153, software experimental profile: manifest launch and original explorer/editor UI with real basic pointer/ASCII input. No gamepad/layout/repeat/GPU acceleration/security or full application completion.",
-          "partial_observation": "Actual unique text visible in original editor; whole application C3 remains open."
-        },
-        "services": {
-          "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "667efbb89443bc879cdf0ba4c86f055d4b289ac34b8906dd1719aa172f7e2fcf",
-          "accepted": false,
-          "scope": "Original services support observed UI/write, but full service stage and process/durable-data lifecycle not accepted; R1-MAC open.",
-          "partial_observation": "Actual unique text visible in original editor; whole application C3 remains open."
+          "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance. Services means required local-note route; close means original forced process stop; persistence is across those two app processes only."
         },
         "interface": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "667efbb89443bc879cdf0ba4c86f055d4b289ac34b8906dd1719aa172f7e2fcf",
+          "record_sha256": "c4811ff5b370932c757ad64f55058e1772a80bb37c85310299d0a14214ae582c",
+          "section": "note_process_reopen162",
           "accepted": true,
-          "scope": "Exact version164/c105bf5, candidate152 execution153, software experimental profile: manifest launch and original explorer/editor UI with real basic pointer/ASCII input. No gamepad/layout/repeat/GPU acceleration/security or full application completion.",
-          "partial_observation": "Actual unique text visible in original editor; whole application C3 remains open."
+          "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance. Services means required local-note route; close means original forced process stop; persistence is across those two app processes only."
         },
         "input": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "667efbb89443bc879cdf0ba4c86f055d4b289ac34b8906dd1719aa172f7e2fcf",
+          "record_sha256": "c4811ff5b370932c757ad64f55058e1772a80bb37c85310299d0a14214ae582c",
+          "section": "note_process_reopen162",
           "accepted": true,
-          "scope": "Exact version164/c105bf5, candidate152 execution153, software experimental profile: manifest launch and original explorer/editor UI with real basic pointer/ASCII input. No gamepad/layout/repeat/GPU acceleration/security or full application completion.",
-          "partial_observation": "Actual unique text visible in original editor; whole application C3 remains open."
-        },
-        "persistence": {
-          "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "667efbb89443bc879cdf0ba4c86f055d4b289ac34b8906dd1719aa172f7e2fcf",
-          "accepted": false,
-          "scope": "Save request without valid byte readback; no process close-reopen or durable data. Original Trust supersedes prior constructor failure but no full credential/service suite.",
-          "partial_observation": "Actual unique text visible in original editor; whole application C3 remains open."
+          "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance. Services means required local-note route; close means original forced process stop; persistence is across those two app processes only."
         },
         "main_function": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "667efbb89443bc879cdf0ba4c86f055d4b289ac34b8906dd1719aa172f7e2fcf",
-          "section": "note_saved_followup160_161",
+          "record_sha256": "c4811ff5b370932c757ad64f55058e1772a80bb37c85310299d0a14214ae582c",
+          "section": "note_process_reopen162",
           "accepted": true,
-          "scope": "Exact v164/c105bf5 profile161: create Markdown note through original GUI/Linux input and save21 actual bytes. Privileged read-only actual backing file with exact SHA. No process death/reopen/durable data/MAC or whole-application acceptance."
+          "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance. Services means required local-note route; close means original forced process stop; persistence is across those two app processes only."
+        },
+        "persistence": {
+          "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
+          "record_sha256": "c4811ff5b370932c757ad64f55058e1772a80bb37c85310299d0a14214ae582c",
+          "section": "note_process_reopen162",
+          "accepted": true,
+          "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance. Services means required local-note route; close means original forced process stop; persistence is across those two app processes only."
+        },
+        "services": {
+          "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
+          "record_sha256": "c4811ff5b370932c757ad64f55058e1772a80bb37c85310299d0a14214ae582c",
+          "section": "note_process_reopen162",
+          "accepted": true,
+          "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance. Services means required local-note route; close means original forced process stop; persistence is across those two app processes only."
+        },
+        "close": {
+          "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
+          "record_sha256": "c4811ff5b370932c757ad64f55058e1772a80bb37c85310299d0a14214ae582c",
+          "section": "note_process_reopen162",
+          "accepted": true,
+          "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance. Services means required local-note route; close means original forced process stop; persistence is across those two app processes only."
+        },
+        "reopen": {
+          "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
+          "record_sha256": "c4811ff5b370932c757ad64f55058e1772a80bb37c85310299d0a14214ae582c",
+          "section": "note_process_reopen162",
+          "accepted": true,
+          "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance. Services means required local-note route; close means original forced process stop; persistence is across those two app processes only."
         }
       },
       "runtime_stage_evidence_history": [
@@ -310,13 +325,84 @@
             "reopen": "not_tested"
           },
           "scope": "Original KeyguardManager-null create-file failure; superseded by original Trust integration152/153 for the observed path."
+        },
+        {
+          "as_of_commit": "09ce4dc",
+          "scope": "Before original process restart162; immutable history, not latest stage state",
+          "evidence": {
+            "installation": {
+              "record": "../android16-package-bootstrap/markor-install-functional.json",
+              "record_sha256": "d7a5164ba89ef04b8501aeacf22d0bd4c563e5d716a4e6e1c767d0ff02c4bd72",
+              "base_commit": "d8647d1f71868ae2b12c351241259234bc409ae3",
+              "scope": "Earlier original installation with original package path/bytes check in temporary private tmpfs only; not new stage acceptance, durability, tenant isolation, launch or current candidate success"
+            },
+            "launch": {
+              "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
+              "record_sha256": "667efbb89443bc879cdf0ba4c86f055d4b289ac34b8906dd1719aa172f7e2fcf",
+              "accepted": true,
+              "scope": "Exact version164/c105bf5, candidate152 execution153, software experimental profile: manifest launch and original explorer/editor UI with real basic pointer/ASCII input. No gamepad/layout/repeat/GPU acceleration/security or full application completion.",
+              "partial_observation": "Actual unique text visible in original editor; whole application C3 remains open.",
+              "record_commit": "09ce4dc"
+            },
+            "services": {
+              "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
+              "record_sha256": "667efbb89443bc879cdf0ba4c86f055d4b289ac34b8906dd1719aa172f7e2fcf",
+              "accepted": false,
+              "scope": "Original services support observed UI/write, but full service stage and process/durable-data lifecycle not accepted; R1-MAC open.",
+              "partial_observation": "Actual unique text visible in original editor; whole application C3 remains open.",
+              "record_commit": "09ce4dc"
+            },
+            "interface": {
+              "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
+              "record_sha256": "667efbb89443bc879cdf0ba4c86f055d4b289ac34b8906dd1719aa172f7e2fcf",
+              "accepted": true,
+              "scope": "Exact version164/c105bf5, candidate152 execution153, software experimental profile: manifest launch and original explorer/editor UI with real basic pointer/ASCII input. No gamepad/layout/repeat/GPU acceleration/security or full application completion.",
+              "partial_observation": "Actual unique text visible in original editor; whole application C3 remains open.",
+              "record_commit": "09ce4dc"
+            },
+            "input": {
+              "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
+              "record_sha256": "667efbb89443bc879cdf0ba4c86f055d4b289ac34b8906dd1719aa172f7e2fcf",
+              "accepted": true,
+              "scope": "Exact version164/c105bf5, candidate152 execution153, software experimental profile: manifest launch and original explorer/editor UI with real basic pointer/ASCII input. No gamepad/layout/repeat/GPU acceleration/security or full application completion.",
+              "partial_observation": "Actual unique text visible in original editor; whole application C3 remains open.",
+              "record_commit": "09ce4dc"
+            },
+            "persistence": {
+              "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
+              "record_sha256": "667efbb89443bc879cdf0ba4c86f055d4b289ac34b8906dd1719aa172f7e2fcf",
+              "accepted": false,
+              "scope": "Save request without valid byte readback; no process close-reopen or durable data. Original Trust supersedes prior constructor failure but no full credential/service suite.",
+              "partial_observation": "Actual unique text visible in original editor; whole application C3 remains open.",
+              "record_commit": "09ce4dc"
+            },
+            "main_function": {
+              "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
+              "record_sha256": "667efbb89443bc879cdf0ba4c86f055d4b289ac34b8906dd1719aa172f7e2fcf",
+              "section": "note_saved_followup160_161",
+              "accepted": true,
+              "scope": "Exact v164/c105bf5 profile161: create Markdown note through original GUI/Linux input and save21 actual bytes. Privileged read-only actual backing file with exact SHA. No process death/reopen/durable data/MAC or whole-application acceptance.",
+              "record_commit": "09ce4dc"
+            }
+          },
+          "runtime_results": {
+            "installation": "approved",
+            "launch": "approved",
+            "interface": "approved",
+            "input": "approved",
+            "main_function": "approved",
+            "persistence": "not_tested",
+            "services": "not_tested",
+            "close": "not_tested",
+            "reopen": "not_tested"
+          }
         }
       ],
       "latest_workflow_attempt": {
         "report": "reports/android16-package-bootstrap/original-user-unlock-progress.json",
-        "sha256": "667efbb89443bc879cdf0ba4c86f055d4b289ac34b8906dd1719aa172f7e2fcf",
-        "section": "note_saved_followup160_161",
-        "status": "161 actual21-byte note saved; original lifecycle precondition pointed at wrong folder, never ran. No close/reopen/persistence acceptance."
+        "sha256": "c4811ff5b370932c757ad64f55058e1772a80bb37c85310299d0a14214ae582c",
+        "section": "note_process_reopen162",
+        "status": "Local-note nine-stage workflow162 verified, oldPID2584/newPID3743, same21 bytes and real reopened GUI. No broad compatibility/MAC/durable-data claim."
       }
     }
   ],

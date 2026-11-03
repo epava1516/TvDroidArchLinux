@@ -16,7 +16,7 @@ assert last in recipe
 scope={'__name__':'__materialize__','__file__':str(r/'reports/android16-hwc3-wayland/execute-graphics.py')}
 saved=sys.argv;sys.argv=[str(r/'reports/android16-hwc3-wayland/execute-graphics.py'),socket,'--observe-logs','--surfaceflinger','--selected-display']
 exec(compile(recipe.replace(last,''),'<graphics materialization>','exec'),scope)
-text=scope['base'];text=text.replace("1<<36 if identity['kind']=='SUSPEND' else","(1<<36)|(1<<35)|(1<<23) if identity['kind']=='SERVICES' else 1<<36 if identity['kind']=='SUSPEND' else");text=text.replace("('mc3-live-'+str(time.time_ns()))","('apex-live-'+str(time.time_ns()))")
+text=scope['base'];text=text.replace("1<<36 if identity['kind']=='SUSPEND' else","(1<<36)|(1<<35)|(1<<23)|(1<<5) if identity['kind']=='SERVICES' else 1<<36 if identity['kind']=='SUSPEND' else");text=text.replace("('mc3-live-'+str(time.time_ns()))","('apex-live-'+str(time.time_ns()))")
 render_setup="p=root/'dev/dri'/node;os.mknod(p,stat.S_IFCHR|0o660,actual.st_rdev);os.chmod(p,0o660);os.chown(p,0,1003)"
 assert text.count(render_setup)==1
 # Pinned Cuttlefish ueventd uses0666 for these two nodes. The deployed vmwgfx
@@ -194,7 +194,7 @@ try:
   assert len(token)==8 and all(c in '0123456789abcdef' for c in token)
   workflow['token']=token
   note=Path('/data/local/tmp/archtv-mc1/markor-note-bytes.bin')
-  workflow['note_source']='Original privileged system_server client cat of actual /data/media/0/Documents/archtv-'+token+'.md before force-stop; evidence copy only'
+  workflow['note_source']='Original privileged system_server client cat of actual /data/media/0/Documents/markor/archtv-'+token+'.md before force-stop; evidence copy only'
   workflow['present']=note.is_file()
   if note.is_file():
    st=note.stat();assert st.st_size<=4096

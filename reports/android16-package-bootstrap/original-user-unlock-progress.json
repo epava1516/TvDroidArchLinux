@@ -163,7 +163,7 @@
     "Native normal lazy apexd exit CLD_EXITED0 clean1 followed by successful coordinatorclose0; explicit cancellation alternative was exercised133",
     "Native/exterior0; exact unitsinactive, VT1restored, no loops/dm/new FUSEconnections; host DRM node metadata identical"
   ],
-  "next": "Correct original trusted client path to actual Documents/markor; test actual exact bytes then original force-stop, old PID disappearance and original manifest relaunch/new PID, GUI reopen and unchanged bytes. Source original CAP_KILL contract is a potential prerequisite for direct crossUID signal; do not infer success from service response. Durable data and MAC remain separate.",
+  "next": "Durable private /data: review existing factory mounts and original per-user/keystore/package state before adapting; two real cohorts must preserve installed APK/signature/UID, note bytes, original unlock and reopen. No host-wide mounts or fake inventory/data. R1-MAC negative/enforcing tests, broad apps and product gates stay open.",
   "artifacts": {
     "/home/tv/recuperacion-archtv/ff987089-92db-43e2-852d-3e78501aae42-markor-software-launch/before-launch.json": "db7aaed86c8a4f5121ce3677ff47d50e11f74a3c646b3455437700432da2818a",
     "/home/tv/recuperacion-archtv/ff987089-92db-43e2-852d-3e78501aae42-markor-software-launch/result.json": "db31e85df10c964be7b912ab4f7c29b47f292e788e26c8df09ce639c935578b9",
@@ -1446,9 +1446,9 @@
     "next": "Exercise real keyboard through original KeyLayoutMap and dispatcher; complete onboarding through events and enter real editor. Test gateway rejection and focus/disconnect releases, fix transport loss state before accepting stability. Then actual unique note/save/app close/reopen with original storage."
   },
   "latest_functional_observation": {
-    "candidate": 161,
-    "checkpoint": "/home/tv/recuperacion-archtv/c59b66e9-3b61-4616-8fb1-97b3566b9d98-markor-software-launch",
-    "scope": "Actual note saved, exact21 bytes verified; process lifecycle and persistence unaccepted"
+    "candidate": 162,
+    "checkpoint": "/home/tv/recuperacion-archtv/8c334fbc-832b-4648-bd13-df789e1b3a0d-markor-software-launch",
+    "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance."
   },
   "not_accepted_at_base140": [
     "Final Smithay/physical output frame for this APK is not yet captured; early compositor30s capture is not app presentation evidence",
@@ -3680,5 +3680,259 @@
       }
     ],
     "next": "Correct original trusted client path to actual Documents/markor; test actual exact bytes then original force-stop, old PID disappearance and original manifest relaunch/new PID, GUI reopen and unchanged bytes. Source original CAP_KILL contract is a potential prerequisite for direct crossUID signal; do not infer success from service response. Durable data and MAC remain separate."
+  },
+  "note_process_reopen162": {
+    "candidate": 162,
+    "id": "8c334fbc-832b-4648-bd13-df789e1b3a0d",
+    "checkpoint": "/home/tv/recuperacion-archtv/8c334fbc-832b-4648-bd13-df789e1b3a0d-markor-software-launch",
+    "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance.",
+    "native_exit": 0,
+    "outer_exit": 0,
+    "installation_original_output": "SOURCE c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440  /data/local/tmp/markor.apk\nINSTALLED c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440  /data/app/~~sD9m9bSGa1RWxlvNYiTa1w==/net.gsantner.markor-1Y7x4Jw-Iln9iE-dTODEQg==/base.apk\n",
+    "original_path_fix": "Notebook is /storage/emulated/0/Documents/markor, backing /data/media/0/Documents/markor. Correct the observer to actual path; no guest note/folder/alias created by test.",
+    "original_capability": {
+      "source": {
+        "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/core/java/com/android/internal/os/ZygoteInit.java?format=TEXT",
+        "pin": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+        "path": "core/java/com/android/internal/os/ZygoteInit.java",
+        "sha256": "e2299c75b02bfe180deb346b14d80a71cafe5258a05f0ff6c3f39fc024441bae",
+        "verified_from_official": true
+      },
+      "adaptation": "Add only original CAP_KILL bit5 to selected system_server RC for original AMS direct crossUID process termination; retain private PID namespace, UID1000, SID, original group subset and NNP1. No host policy or global device metadata change.",
+      "observed": {
+        "kind": "SERVICES",
+        "pid_namespace_pid": 545,
+        "getpidcon_raw_return": 0,
+        "actual_context": "u:r:system_server:s0",
+        "contexts_observed_in_order": [
+          "u:r:system_server:s0"
+        ],
+        "errno_observed": [],
+        "status": [
+          "Uid:\t1000\t1000\t1000\t1000",
+          "Gid:\t1000\t1000\t1000\t1000",
+          "Groups:\t1003 1023 3006 3007 ",
+          "CapPrm:\t0000001800800020",
+          "CapEff:\t0000001800800020",
+          "CapBnd:\t0000001800800020",
+          "NoNewPrivs:\t1"
+        ]
+      },
+      "limit": "Permissive policy; identity/capability observation is not MAC authorization/isolation. No claim that lack of CAP_KILL was previously executed and failed; it was a real original contract prerequisite."
+    },
+    "workflow": {
+      "scope": "Read-only actual note and original lifecycle outputs within one ephemeral cohort; not cross-cohort durability",
+      "token": "8c334fbc",
+      "note_source": "Original privileged system_server client cat of actual /data/media/0/Documents/markor/archtv-8c334fbc.md before force-stop; evidence copy only",
+      "present": true,
+      "note": {
+        "path": "/data/local/tmp/archtv-mc1/markor-note-bytes.bin",
+        "bytes_hex": "617263687476206e6f74652038633333346662630a",
+        "sha256": "d846c8282bb8e4370030f55b06d421468c105faf16a646855c0da4c9794c3e46",
+        "size": 21,
+        "uid": 1000,
+        "gid": 2000,
+        "inode": 151,
+        "mode": "0o640",
+        "matches_expected": true
+      },
+      "markor-lifecycle.txt": "before_pid=2584\nprevious_process_absent=2584\nafter_pid=3743\n",
+      "markor-relaunch.txt": "Starting: Intent { cmp=net.gsantner.markor/.activity.MainActivity }\nStatus: ok\nLaunchState: COLD\nActivity: net.gsantner.markor/.activity.MainActivity\nTotalTime: 2304\nWaitTime: 2307\nComplete\n",
+      "markor-note-before-stop.txt": "d846c8282bb8e4370030f55b06d421468c105faf16a646855c0da4c9794c3e46  /data/media/0/Documents/markor/archtv-8c334fbc.md\n",
+      "markor-note-after-relaunch.txt": "d846c8282bb8e4370030f55b06d421468c105faf16a646855c0da4c9794c3e46  /data/media/0/Documents/markor/archtv-8c334fbc.md\n"
+    },
+    "original_app_lifecycle": {
+      "namespace_pids": {
+        "before": 2584,
+        "after": 3743,
+        "historical_not_live": true
+      },
+      "original_obituary": {
+        "tag": "ActivityManager",
+        "message": "Got obituary of 2584:net.gsantner.markor",
+        "actual_sender_pid_uid_gid": [
+          545,
+          1000,
+          1000
+        ],
+        "observed_monotonic": 123419.656583411
+      },
+      "new_document_display": {
+        "tag": "ActivityTaskManager",
+        "message": "Displayed net.gsantner.markor/.activity.DocumentActivity for user 0: +414ms",
+        "actual_sender_pid_uid_gid": [
+          545,
+          1000,
+          1000
+        ],
+        "observed_monotonic": 123427.582834212
+      },
+      "forced_stop_scope": "Original cmd activity force-stop followed by actual /proc oldPID disappearance and new original manifest launch. Graceful quit callbacks not tested.",
+      "GUI_reopen": "Real Linux pointer command12 clicked saved entry after original Main displayed; original DocumentActivity displayed again after new PID. Inspected final Smithay frame contains same full note. RGB-matched archived PPM samples occur after relaunch and pointer input.",
+      "no_Markor_fatal_observed": true,
+      "input_adapter_errors": []
+    },
+    "saved_bytes": {
+      "size": 21,
+      "sha256": "d846c8282bb8e4370030f55b06d421468c105faf16a646855c0da4c9794c3e46",
+      "hex": "617263687476206e6f74652038633333346662630a",
+      "before_after_hash_equal": true,
+      "scope": "Original trusted client reads actual backing file before and after process restart. Exported note metadata belongs to diagnostic copy, not original app storage permissions. Actual APK performs all note writes."
+    },
+    "cleanup": {
+      "id": "8c334fbc-832b-4648-bd13-df789e1b3a0d",
+      "outer_unit": "archtv-markor-session-8c334fbc-832b-4648-bd13-df789e1b3a0d",
+      "runner_unit": "archtv-package-runner-8c334fbc-832b-4648-bd13-df789e1b3a0d",
+      "initial_vt": "1",
+      "root_pid": 592113,
+      "root_boot_id": "4e18faf8-2b46-42e4-a6b2-269c34326b68",
+      "result": "native_result_recorded",
+      "fuse_connections_before": [],
+      "host_devices_before": {
+        "card0": {
+          "mode": "0o660",
+          "uid": 0,
+          "gid": 983,
+          "rdev": 57856,
+          "inode": 365
+        },
+        "renderD128": {
+          "mode": "0o666",
+          "uid": 0,
+          "gid": 987,
+          "rdev": 57984,
+          "inode": 364
+        }
+      },
+      "interaction_exit": 0,
+      "host_devices_after": {
+        "card0": {
+          "mode": "0o660",
+          "uid": 0,
+          "gid": 983,
+          "rdev": 57856,
+          "inode": 365
+        },
+        "renderD128": {
+          "mode": "0o666",
+          "uid": 0,
+          "gid": 987,
+          "rdev": 57984,
+          "inode": 364
+        }
+      },
+      "host_device_metadata_unchanged": true,
+      "fuse_connections_after": [],
+      "new_fuse_connections": [],
+      "final_vt": "1",
+      "outer_active": false,
+      "runner_active": false
+    },
+    "accepted_workflow_stages": [
+      "installation",
+      "launch",
+      "interface",
+      "input",
+      "main_function",
+      "persistence",
+      "services",
+      "close",
+      "reopen"
+    ],
+    "limits": [
+      "Only exact local Markdown note workflow/version/profile, not all Markor functionality (SAF/cloud/audio/WebView etc).",
+      "Persistence across app processes in same ephemeral cohort only; cross-cohort/kernel restart durability untested.",
+      "Required original services function in permissive; R1-MAC/enforcing/tenant isolation open.",
+      "Human-paced ASCII/pointer and forced process stop; latency, repeatability, gamepad/layout/input under stress and graceful exit callbacks open.",
+      "Background GSI app failures remain recorded, not hidden or classified as healthy platform.",
+      "Source/binary full reproducibility/coherence, packaging/update/rollback/distro and broad APK matrix remain open. ARM/GMS/DRM separate."
+    ],
+    "artifacts": [
+      {
+        "path": "/home/tv/recuperacion-archtv/8c334fbc-832b-4648-bd13-df789e1b3a0d-markor-software-launch/verified-note.bin",
+        "sha256": "d846c8282bb8e4370030f55b06d421468c105faf16a646855c0da4c9794c3e46"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/8c334fbc-832b-4648-bd13-df789e1b3a0d-markor-software-launch/run.log",
+        "sha256": "3e229cd712f20f210029740faf54a439ae6fd9fbf6828fc0e1af701e8726aa8c"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/8c334fbc-832b-4648-bd13-df789e1b3a0d-markor-software-launch/completion-consumer.json",
+        "sha256": "cde72427d723fdcdcbe9e79c707150867378fc72086a5a322f3ca641e48b57d0"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/8c334fbc-832b-4648-bd13-df789e1b3a0d-markor-software-launch/reopen-driver.json",
+        "sha256": "3fb8d1a254c970263282d1080fc414333263fdccc43352de0d775076f14e1352"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/8c334fbc-832b-4648-bd13-df789e1b3a0d-markor-software-launch/reopen-frame-provenance.json",
+        "sha256": "46eebd456e620a83d7a2f7f6b8d01cb635edc9978ae71d591f028f4437ee03fb"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/8c334fbc-832b-4648-bd13-df789e1b3a0d-markor-software-launch/interaction-events.json",
+        "sha256": "60d1dec03dc36755c410283a5298d2e82212d068392143eca3f2411c9fff8bb9"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/8c334fbc-832b-4648-bd13-df789e1b3a0d-markor-software-launch/interaction-test.py",
+        "sha256": "70fec432c69fb8caf32c232b6fb86963da7fb8913a9f49479d6cea41842ad3c1"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/8c334fbc-832b-4648-bd13-df789e1b3a0d-markor-software-launch/session-state.json",
+        "sha256": "a3f4d1a9aa83d1f0254acf650f5121611d25a575b74d8cc4fab83f3203fe63fa"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/8c334fbc-832b-4648-bd13-df789e1b3a0d-markor-software-launch/before.json",
+        "sha256": "92ad5850f2302f87f60d7325d4ef407d9fe6735b931cae3f78fe3ee30276d5e9"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793706566347815365/markor-workflow-evidence.json",
+        "sha256": "2e3b5576dad56e0221cd4b55f8f2957ecbc44f5a9c82a8d1b725c2a2446f29bd"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793706566347815365/android-log-live.jsonl",
+        "sha256": "44fd97480be2a98ca9e16b79c2cad86967fab7c265a3bbbe4fe4ddcf3f03b664"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-162/source-inputs.json",
+        "sha256": "2d01bd891bbadade38960f8f8941704f9c7430d63286c4c6708f68e524fda878"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-162/build-options.json",
+        "sha256": "e797e16281ec9e6aa95ac8137f95e8965a4263cc4abb0205b2930875b91fa848"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/8c334fbc-832b-4648-bd13-df789e1b3a0d-markor-software-launch/inspect-after-process-reopen.png",
+        "sha256": "86b0e1ec2ab4f363764400884dc9277777aaf23244e3592217e63b04127b6c68"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/8c334fbc-832b-4648-bd13-df789e1b3a0d-markor-software-launch/inspect-editor-empty.png",
+        "sha256": "50902820cadebbc187f8719497fda4ba345371395f97beb72db1dfe905f15a58"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/8c334fbc-832b-4648-bd13-df789e1b3a0d-markor-software-launch/inspect-main.png",
+        "sha256": "bbaca3b175530354517248dc0289b3e7fe03efc78e1464eed8ef593c36660a37"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/8c334fbc-832b-4648-bd13-df789e1b3a0d-markor-software-launch/inspect-name-complete.png",
+        "sha256": "a1b61d4aa658bdacd808945a0bae23b57389c1aa899453f153f09fdda6c45b10"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/8c334fbc-832b-4648-bd13-df789e1b3a0d-markor-software-launch/inspect-name-confirm.png",
+        "sha256": "054cea8b11d02d99a44ab6e261331172ce5216c536e8a5b23030b7880ddc7a0d"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/8c334fbc-832b-4648-bd13-df789e1b3a0d-markor-software-launch/inspect-name.png",
+        "sha256": "ede5c834d973a4c0125b96aa4fe31da5ea8b862d42af06f5354aadf11c2c4ed1"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/8c334fbc-832b-4648-bd13-df789e1b3a0d-markor-software-launch/inspect-settings-before.png",
+        "sha256": "1f1961d63770a13667540fb570cab8bda5569f289ea463b21507285c8b17f0ad"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/8c334fbc-832b-4648-bd13-df789e1b3a0d-markor-software-launch/inspect-settings-on.png",
+        "sha256": "4c9ae7e47ed132fc6e3dab0b094933079803ac8915e1e54bfa4f89d0a6e0536d"
+      }
+    ],
+    "next": "Durable private /data: review existing factory mounts and original per-user/keystore/package state before adapting; two real cohorts must preserve installed APK/signature/UID, note bytes, original unlock and reopen. No host-wide mounts or fake inventory/data. R1-MAC negative/enforcing tests, broad apps and product gates stay open."
   }
 }
