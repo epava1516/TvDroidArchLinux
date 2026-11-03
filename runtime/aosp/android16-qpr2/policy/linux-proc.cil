@@ -1,3 +1,10 @@
 ; Experimental Linux-owned proc directory adapter, verified offline only.
 ; Original Android domain -> proc directory contract; no regular-file access.
 (allow domain linux.proc_t (dir (ioctl read getattr lock open watch watch_reads search)))
+
+; Original pinned platform-with-vendor.cil22448 grants every original domain
+; proc:lnk_file read/getattr. Linux owns the proc superblock/genfs globally;
+; mirror that whole original alias contract rather than per-service patches.
+; Actual193 vold_prepare_subdirs self/thread-self read failed without it.
+; No regular-file contents, PID directory traversal, ptrace or namespace use.
+(allow domain linux.proc_t (lnk_file (read getattr)))

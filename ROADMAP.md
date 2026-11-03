@@ -1,6 +1,6 @@
 # Roadmap · Arch TV nativo en Rust
 
-Prioridad193: [estado canónico](docs/ESTADO.md) · APEX original41/versiones/montajes/classpath verificados bajo enforcing. Resolver init_user0/helper/proc y logd original; después recorrido completo Markor con controles. El hito no acepta nueva etapa APK ni cierra R1-MAC.
+Prioridad194: [estado canónico](docs/ESTADO.md) · APEX41 real y VDC/user0 original0, con efectos completos todavía pendientes. Revisar transiciones exec/NNP de los servicios seleccionados: init→bpfloader falla127. Continuar subsistemas originales hacia Markor con NNP1; ninguna nueva etapa APK/MAC aceptada.
 
 Histórico179: [estado](docs/ESTADO.md) · builtin/VDC original alcanza vold y falla25 en auxiliar NNP; exigir operación user0 completa y APEX en vivo, luego Markor bajo MAC. [Evidencias](reports/android16-package-bootstrap/original-apex-derive-mac-progress.json).
 

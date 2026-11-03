@@ -1,6 +1,6 @@
 # Contrato vigente · AOSP Android 16 QPR2
 
-Límite193 · [disponibilidad parcial de subsistemas](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json):41 APEX/versiones/montajes y JAR reales bajo enforcing acreditan esa activación; no servicio framework Binder, usuario inicializado ni compatibilidad APK. init_user0 falla25; no devolver éxito ni omitir el auxiliar. Ventana5,289s termina1 y restaura0; expiración184 probada separadamente como fallo124. Tipos globales y metadatos kernel RO no prueban aislamiento. Recorrido167 permisivo y alcance amplio conservan sus límites.
+Límite194 · [resultado parcial de user0](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): salida0 de VDC/builtin no acredita todos los efectos de almacenamiento ni elimina las denegaciones de descubrimiento del auxiliar. Fallo127 de netbpfload se conserva; NNP1 no se desactiva para avanzar. APEX41 no equivale a framework Binder o APK compatible. R1-MAC y recorrido completo bajo controles abiertos; evidencia local167 en permisivo conserva su alcance.
 
 Histórico179 · [operación original fallida conservada](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): código0 de inicializadores aconfig no demuestra flags completas ni sockets disponibles; VDC25 no es éxito de init_user0. Inventario APEX leído después de cerrar no acredita disponibilidad durante ejecución. Mantener R1-MAC abierto hasta el recorrido real completo con identidades, pruebas negativas, cierre y efectos del anfitrión.
 

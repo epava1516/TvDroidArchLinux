@@ -121,10 +121,8 @@
 (allow linux.init_t block_device (blk_file (create getattr setattr relabelfrom unlink)))
 (allow linux.init_t dm_device (blk_file (getattr setattr relabelto unlink)))
 (allow linux.init_t block_device (lnk_file (create getattr read relabelfrom relabelto unlink)))
-; Read-only kernel sysfs links are copied into private sysfs scaffolding.
-; This does not authorize creating kernel sysfs objects or writing attributes.
-(allow linux.init_t sysfs (dir (write add_name remove_name)))
-(allow linux.init_t sysfs (lnk_file (create read getattr unlink)))
+; Actual193 uses real RO kernel indexes; no sysfs-typed tmpfs link
+; mutation/association grants are required. Retire the unused18 permits.
 ; Target of the existing exact read_ahead_kb bind in the private mount ns.
 ; No new filesystem mount/remount, attribute write or Android permission.
 (allow linux.init_t sysfs_dm (file (mounton)))

@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "utc": "2026-11-03T16:50:36.451501+00:00",
+  "utc": "2026-11-03T16:57:24.022517+00:00",
   "scope": "Partial original APEX/derive admission under bounded enforcing; no new APK stage or general MAC/isolation acceptance",
   "base_commit": "39d0be0edb77c13575681175fc26e730adee3c11",
   "executions": {
@@ -849,6 +849,64 @@
         "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-0f2fed0ecb2646f68cd409e045ef6d59/sysfs-kernel-views.json",
         "sha256": "8a9c9870eff86aaca708c2df409943ebbde056624f51e96ed49ed69f7f7ab379"
       }
+    },
+    "194": {
+      "before-launch.json": {
+        "path": "/home/tv/recuperacion-archtv/691c54b9-23f3-4a43-9529-09d11a3671d9-markor-software-launch/before-launch.json",
+        "sha256": "546fd36a705bc1cb841b16c58abedb421ec465a914923cb54b30b075cf58fb73"
+      },
+      "result.json": {
+        "path": "/home/tv/recuperacion-archtv/691c54b9-23f3-4a43-9529-09d11a3671d9-markor-software-launch/result.json",
+        "sha256": "5271396d253b0a5f27e31a09ba8a4dd3d54971f0e824dd4a97b4295ff31d2858"
+      },
+      "mac-window.json": {
+        "path": "/home/tv/recuperacion-archtv/691c54b9-23f3-4a43-9529-09d11a3671d9-markor-software-launch/mac-window.json",
+        "sha256": "0d5f98ea4cf0d43660d17fffb0c5bc492ec3a70b8bb44d683cf4125560405eb4"
+      },
+      "run.log": {
+        "path": "/home/tv/recuperacion-archtv/691c54b9-23f3-4a43-9529-09d11a3671d9-markor-software-launch/run.log",
+        "sha256": "1a77947c9f64994ad8c7b2d70e4749e7dab25ca97398f289944a6aca7a69f8be"
+      },
+      "kernel-apex.log": {
+        "path": "/home/tv/recuperacion-archtv/691c54b9-23f3-4a43-9529-09d11a3671d9-markor-software-launch/kernel-apex.log",
+        "sha256": "e1c29d243f01a104d406256133af2992d810d3818c67e87562aa708704f58978"
+      },
+      "factory-path.json": {
+        "path": "/home/tv/recuperacion-archtv/691c54b9-23f3-4a43-9529-09d11a3671d9-markor-software-launch/factory-path.json",
+        "sha256": "251af669a2d1d587c87ffca0362ff51f794ebb3e85c0c287fc27dc1b1809a772"
+      },
+      "factory-materialized.py": {
+        "path": "/home/tv/recuperacion-archtv/691c54b9-23f3-4a43-9529-09d11a3671d9-markor-software-launch/factory-materialized.py",
+        "sha256": "3cf224e26410ed37fca73a58ab4df549105913a04df8f505d8cc1379b4bdf58c"
+      },
+      "session-state.json": {
+        "path": "/home/tv/recuperacion-archtv/691c54b9-23f3-4a43-9529-09d11a3671d9-markor-software-launch/session-state.json",
+        "sha256": "25570110bea3d83222f5303e590dd521c04b3dd3d938a6afa40981a54f3a4c31"
+      },
+      "completion-manifest.json": {
+        "path": "/home/tv/recuperacion-archtv/691c54b9-23f3-4a43-9529-09d11a3671d9-markor-software-launch/completion-manifest.json",
+        "sha256": "2ecd2d95c1e7e3834fcf072790d7e6938490ac0530a760d7d8ec86ccf2a6b51b"
+      },
+      "completion-consumer.json": {
+        "path": "/home/tv/recuperacion-archtv/691c54b9-23f3-4a43-9529-09d11a3671d9-markor-software-launch/completion-consumer.json",
+        "sha256": "e8e5db0a7a4b0c9a99b79d332562b5c17ddbce848915a71c58fc8a03a9cc953b"
+      },
+      "finite-audit/result.json": {
+        "path": "/home/tv/recuperacion-archtv/691c54b9-23f3-4a43-9529-09d11a3671d9-markor-software-launch/finite-audit/result.json",
+        "sha256": "05b2c83d2ad53243d99b8aa044af97e0dbada25861c0d916f42fe4362617acb3"
+      },
+      "finite-audit/audit.log": {
+        "path": "/home/tv/recuperacion-archtv/691c54b9-23f3-4a43-9529-09d11a3671d9-markor-software-launch/finite-audit/audit.log",
+        "sha256": "b980238e7f9397a95d91b67f630325851173aa5c15789b18b3390695992fe9b8"
+      },
+      "runtime-source-overlay.json": {
+        "path": "/home/tv/recuperacion-archtv/691c54b9-23f3-4a43-9529-09d11a3671d9-markor-software-launch/runtime-source-overlay.json",
+        "sha256": "1bc29cc6ec194c48693d01274062a522f51da696273ff99f866abbdab6ce3a7b"
+      },
+      "userdata-after194-close.json": {
+        "path": "/home/tv/recuperacion-archtv/691c54b9-23f3-4a43-9529-09d11a3671d9-markor-software-launch/userdata-after194-close.json",
+        "sha256": "811e19ac520b07571fdde7b9ad9949c673888e61e61d73e307cd9023ccfad42c"
+      }
     }
   },
   "decisions": [
@@ -886,7 +944,7 @@
     "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load10/after-load.json",
     "sha256": "309743229826231a5a6d96498f808485c1d5ad5ce3a5cd8c1a279f21f26b9aa8"
   },
-  "next": "Map original vold_prepare_subdirs proc aliases via same established Linux/AOSP proc contract, prune obsolete sysfs mutation allowances, execute complete original user0 then original framework/Markor under MAC. Integrate original logd before broad service use; no fake logging success.",
+  "next": "Review complete selected original service exec/NNP edges before next policy; correct genuine init->bpfloader transition with NNP1. Contrast helper remaining metadata denials against original contract and actual outputs. Integrate original logd rather than grant sendto diagnostic Linux socket. Continue original framework/Markor, no newAPK acceptance.",
   "original_sources": {
     "sdkextensions_commit": "4d10e57070bb9c6edcd13bf74e9d01717b2a5ecf",
     "derive_rc_sha256": "a9e65b0c114408e5cb8356bdb435a6b48d0a67cd7879915c52ffa094a267f607",
@@ -956,8 +1014,8 @@
     "sha256": "9e395067238c647c729c48a03dc8a115e81727ff30a8bfd6f4e50098098c9134"
   },
   "latest_host": {
-    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after193-host.json",
-    "sha256": "c631f5cad977ef836e9db7461d36b9b4cde851ddc49dd1d2190cad3087133318"
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after194-host.json",
+    "sha256": "7458a35b4524bcd7883fd5a642c1caadfb82393d3ca23752463c8a954f834881"
   },
   "vdc_source_contract": {
     "builtin": "Pinned system/core/init/builtins.cpp1122\u20131172: original temporary exec plus original failure callback; exact argv /system/bin/vdc --wait cryptfs init_user0. Native observes actual reaping before advance, no shell redirection or synthetic readiness.",
@@ -1163,5 +1221,29 @@
       "R1-MAC full cohort, ARM/GMS/DRM, broad APK, install/update/product remain open."
     ],
     "next": "Map original vold_prepare_subdirs proc aliases via same established Linux/AOSP proc contract, prune obsolete sysfs mutation allowances, execute complete original user0 then original framework/Markor under MAC. Integrate original logd before broad service use; no fake logging success."
+  },
+  "policy19_artifact": {
+    "path": "/home/tv/repositorio-principal/dist/aosp16/selected-platform-policy-19/artifact.json",
+    "sha256": "15186a688f9927142b86f26d5f493729b7a1c0d57d16ae07109c1cd5fdd99bf3"
+  },
+  "policy19_load": {
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load19/after-load.json",
+    "sha256": "0e1691b54be764eb0c3b7a554f188c4a4b4b6bbd7a5fab5e5d6a68c444d39f5a"
+  },
+  "after194_host": {
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after194-host.json",
+    "sha256": "7458a35b4524bcd7883fd5a642c1caadfb82393d3ca23752463c8a954f834881"
+  },
+  "integrated194": {
+    "scope": "Partial original user0 return, not complete storage/MAC or APK acceptance",
+    "positive": "Original builtin init_user0 -> VDC original -> vold original -> helper original. Actual STORAGE_ORIGINAL_USER0_EXIT code1(CLD_EXITED) status0 and RETURNED. APEX41 still verified under enforcing; normalrestore0 in4.872s.",
+    "proc_contract": "Pinned platform-with-vendor.cil22448 allow domain proc lnk_file read/getattr mirrored whole to linux.proc_t. Retired unused18 Linux sysfs dir/link mutation allows. No regular-file/PID dir/ptrace grants.",
+    "remaining": "Original selected netbpfload attempts init->bpfloader NNP transition; actual AVC nnp_transition and execute_no_trans, exit127, original shutdown request stops cohort without rebooting VM. Do not disable NNP or return success. Review selected original exec transition graph as whole before next policy.",
+    "limits": [
+      "Original helper still sees filesystem getattr on Linux.security_t and proc_filesystems/proc_mounts denials; VDC0 alone does not prove every SELinux/filesystem discovery or user storage effect. Existing note/CE/DE are preserved, not freshly created by194.",
+      "Original log sends still denied to diagnostic Linux receiver; original logd integration pending, no generic socket allows.",
+      "No new APK stage; entire MAC/isolation, broadAPK and ARM/GMS/DRM remain open."
+    ],
+    "recovery": "Global inspector verifies mode0/policyload19, audit0/newlost0, no ownedunits/loops/dm/FUSE, VT1/GPU unchanged; note21bytes/hash and CE/DE inode/labels retained. Active result consumed, gate absent."
   }
 }
