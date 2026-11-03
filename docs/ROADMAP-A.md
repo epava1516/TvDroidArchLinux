@@ -1,6 +1,6 @@
 # Roadmap A · plataforma APK general sobre Linux
 
-Camino crítico137: almacenamiento original informa mounted, OMS responde y cierre nativo/exterior0 → resolver captura negra (mapper y DAC del render node privado) → UI visible → puente de entrada Smithay/Wayland a Android → nota, guardado, cierre y reapertura. [Alcance137](../reports/android16-package-bootstrap/original-user-unlock-progress.json). No repetir135/136 ni sondas de claves; ambos fallos de preparación/cliente se conservan históricos. R1-MAC y ARM/GMS/DRM permanecen abiertos.
+Camino crítico140: bienvenida de Markor renderizada en SF → captura de la salida final Smithay → puente de entrada Wayland al subsistema original Android → onboarding/editor/nota única/guardar/cerrar/reabrir. [Evidencia140 y comparación139](../reports/android16-package-bootstrap/original-user-unlock-progress.json). El fallo negro de137/139 está superado en SF; no repetirlo como bloqueo vigente. Cierre lazy normal probado140 y cancelación explícita133. Mantener R1-MAC, durabilidad, instalación/actualización y ARM/GMS/DRM abiertos.
 
 133: cierre nativo0 con cancelación explícita; rama nueva de salida normal aún no ejercida. Exterior1 conservado por comprobación de perfil aislado aplicada a la plataforma completa. Siguiente integración: storaged/Codec2 software/OverlayManager y ciclo NativeTombstone originales según sus contratos, almacenamiento montado real y UI de Markor tras lanzamiento. No usar rutas ficticias ni declarar multimedia compatible por registrar Codec2.
 

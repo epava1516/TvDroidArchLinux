@@ -1,6 +1,6 @@
 # Matriz de aplicaciones reales
 
-137: Sm original devuelve emulated;0 mounted y OMS lista el overlay de plataforma; la petición de lanzamiento original llega a IntroActivity. La captura SF real es negra y hay errores de mapper: interfaz con fallo demostrado en esta ejecución, sin aceptar el lanzamiento completo/entrada/nota. La salida0 del experimento no cambia la aceptación general. [Evidencia y matriz](../reports/android16-package-bootstrap/original-user-unlock-progress.json). El antiguo fallback de volumen /dev/null está superado; persiste un aviso distinto de redirección stdout a /dev/null.
+140 renderiza la bienvenida intacta de Markor en una captura real de SF, superando el fallo negro anterior. Lanzamiento/interfaz/servicios conservan not_tested por evidencia insuficiente del criterio completo: falta salida final Smithay e interacción/función de la APK. Las observaciones parciales y fallos históricos se registran aparte en el JSON; no equivale a no haber ejecutado la APK. [Evidencia140](../reports/android16-package-bootstrap/original-user-unlock-progress.json). La instalación temporal sigue aprobada; ninguna nota, entrada o persistencia aceptadas.
 
 132 ejecutó Markor intacta y AMS retornó COLD/IntroActivity tras RUNNING_UNLOCKED. La matriz conserva el lanzamiento como pendiente de aceptación completa, con ejecución parcial registrada, y servicios como fallo demostrado: almacenamiento externo inválido /dev/null y DocumentsUI sin OverlayManager. UI visible/entrada/nota/persistencia no probadas; instalación temporal conserva aprobación. [Alcance y evidencia](../reports/android16-package-bootstrap/original-user-unlock-progress.json).
 
@@ -36,7 +36,7 @@ es Android16 QPR2 nativa Bionic/AOSP, no el laboratorio Android13. Cada aplicaci
 registra nueve etapas: instalación, lanzamiento, interfaz, entrada, función
 principal, persistencia, servicios, cierre y reapertura. La instalación temporal
 de Markor está aprobada con alcance acotado; su ejecución parcial queda registrada,
-con interfaz negra/fallos de servicios y sin recorrido completo aceptado. Las demás
+con bienvenida SF visible en140 pero sin presentación final/interacción ni recorrido completo aceptados. Las demás
 etapas pendientes y aplicaciones conservan el estado del JSON canónico. No se calcula porcentaje. Estados admitidos: aprobado, fallo demostrado,
 bloqueo externo y no probado, siempre con base/versión/evidencia/alcance.
 

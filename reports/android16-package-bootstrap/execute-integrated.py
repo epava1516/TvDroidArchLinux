@@ -15,6 +15,21 @@ scope={'__name__':'__materialize__','__file__':str(r/'reports/android16-hwc3-way
 saved=sys.argv;sys.argv=[str(r/'reports/android16-hwc3-wayland/execute-graphics.py'),socket,'--observe-logs','--surfaceflinger','--selected-display']
 exec(compile(recipe.replace(last,''),'<graphics materialization>','exec'),scope)
 text=scope['base'];text=text.replace("1<<36 if identity['kind']=='SUSPEND' else","(1<<36)|(1<<35)|(1<<23) if identity['kind']=='SERVICES' else 1<<36 if identity['kind']=='SUSPEND' else");text=text.replace("('mc3-live-'+str(time.time_ns()))","('apex-live-'+str(time.time_ns()))")
+render_setup="p=root/'dev/dri'/node;os.mknod(p,stat.S_IFCHR|0o660,actual.st_rdev);os.chmod(p,0o660);os.chown(p,0,1003)"
+assert text.count(render_setup)==1
+# Pinned Cuttlefish ueventd uses0666 for these two nodes. The deployed vmwgfx
+# dumb-buffer backend requires a primary node even for client-side mapping.
+# These are fresh Android-labelled private inodes, not chmod of host nodes.
+text=text.replace(render_setup,"p=root/'dev/dri'/node;mode=0o666;os.mknod(p,stat.S_IFCHR|mode,actual.st_rdev);os.chmod(p,mode);os.chown(p,0,1003)")
+null_setup="for n,dev in [('null',(1,3)),('urandom',(1,9))]:os.mknod(root/'dev'/n,stat.S_IFCHR|0o666,os.makedev(*dev))"
+assert text.count(null_setup)==1
+# mknod applies umask; make the intended standard-device mode explicit.
+text=text.replace(null_setup,null_setup+";os.chmod(root/'dev'/n,0o666)")
+device_metadata="""
+for name in ['dev/null','dev/urandom','dev/dri/card0','dev/dri/renderD128']:
+ info=(root/name).stat()
+ print('PRIVATE_DEVICE_CONTRACT '+json.dumps({'path':'/'+name,'mode':oct(stat.S_IMODE(info.st_mode)),'uid':info.st_uid,'gid':info.st_gid,'rdev':[os.major(info.st_rdev),os.minor(info.st_rdev)],'context':os.getxattr(root/name,'security.selinux').decode().rstrip(chr(0))}),flush=True)
+"""
 text=text.replace('dist/aosp16/sf-cohort-build-32/payload-2.ext4',str(payload.relative_to(r)))
 text=text.replace('len(observed_logs)<512','len(observed_logs)<4096')
 text=text.replace("'--display-integration'","'--packages-integration'").replace("'--startup-ms','45000'","'--startup-ms','300000'").replace("'--observe-ms','30000'","'--observe-ms','3000'")
@@ -80,7 +95,7 @@ assert fuse_device=='10:229',fuse_device
 os.mknod(root/'dev/fuse',stat.S_IFCHR|0o600,os.makedev(10,229))
 os.chown(root/'dev/fuse',0,0)
 """
-for name in ['markor-user-start.txt','markor-resolve.txt','markor-launch.txt','markor-volumes.txt','markor-overlays.txt','markor-sf.png']:
+for name in ['markor-user-start.txt','markor-resolve.txt','markor-launch.txt','markor-volumes.txt','markor-overlays.txt','markor-sf.png','markor-mountinfo.txt']:
  root_code+="\np=root/'data/local/tmp/archtv-mc1'/"+repr(name)+";p.touch(mode=0o640);os.chown(p,1000,2000);os.chmod(p,0o640)"
 root_code+="\np=root/'data/local/tmp/archtv-mc1/selected-failure.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
 root_code+="\np=root/'data/local/tmp/archtv-mc1/ranging-service-info.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
@@ -139,6 +154,7 @@ mount('-t','devpts','-o','newinstance,ptmxmode=0666,mode=0620,gid=5','devpts',ro
 """
 text=text.replace("selinux=root/'sys/fs/selinux';",network_code+"\nselinux=root/'sys/fs/selinux';",1)
 text=text.replace("stdin_fd=os.open(root/'dev/null'", "monitor_log=(out/'device-monitor.log').open('w')\nmonitor=subprocess.Popen([sys.executable,str(r/'reports/android16-apex-bootstrap/devices.py'),str(root),str(out),str(os.getpid())],stdout=monitor_log,stderr=subprocess.STDOUT)\nprint('APEX_DEVICE_MONITOR_OWNED pid='+str(monitor.pid),flush=True)\nstdin_fd=os.open(root/'dev/null'",1)
+text=text.replace("stdin_fd=os.open(root/'dev/null'",device_metadata+"\nstdin_fd=os.open(root/'dev/null'",1)
 text=text.replace("log_observer=None;observed_logs=[];log_stop=False", "live_log=(out/'android-log-live.jsonl').open('w')\nlog_observer=None;observed_logs=[];log_stop=False")
 # The inline diagnostic summary must not stop draining the real log stream.
 # Keep its memory bound, and persist the late user/launch failure in the
@@ -146,6 +162,7 @@ text=text.replace("log_observer=None;observed_logs=[];log_stop=False", "live_log
 text=text.replace('and len(observed_logs)<4096','')
 text=text.replace("live_log=(out/'android-log-live.jsonl').open('w')", "live_log=(out/'android-log-live.jsonl').open('w')\nlog_capture_file=(out/'android-log-capture.json').open('w')\nlog_capture={'records':0,'bytes':0,'limit_bytes':67108864,'truncated':False,'inline_limit_records':512}")
 text=text.replace("log_capture_file=(out/'android-log-capture.json').open('w')", "log_capture_file=(out/'android-log-capture.json').open('w')\nframe_capture=(out/'markor-sf.png').open('wb')\nos.fchmod(frame_capture.fileno(),0o600);os.fchown(frame_capture.fileno(),1000,1000)")
+text=text.replace("frame_capture=(out/'markor-sf.png').open('wb')", "mount_capture=(out/'markor-mountinfo.txt').open('wb')\nos.fchmod(mount_capture.fileno(),0o600);os.fchown(mount_capture.fileno(),1000,1000)\nframe_capture=(out/'markor-sf.png').open('wb')")
 text=text.replace('observed_logs.append(item)', """item['observed_monotonic']=time.monotonic()
     encoded=json.dumps(item)+'\\n';size=len(encoded.encode())
     if log_capture['bytes']+size<=log_capture['limit_bytes']:
@@ -166,6 +183,12 @@ if frame_source.is_file():
   frame_info.update(png_signature=pixels.startswith(bytes.fromhex('89504e470d0a1a0a')),sha256=hashlib.sha256(pixels).hexdigest())
 frame_capture.close()
 print('MARKOR_ORIGINAL_SF_CAPTURE '+json.dumps(frame_info),flush=True)
+mount_source=Path('/data/local/tmp/archtv-mc1/markor-mountinfo.txt')
+if mount_source.is_file() and 0<mount_source.stat().st_size<=1048576:
+ mount_bytes=mount_source.read_bytes();mount_capture.write(mount_bytes)
+ selected_mounts=[line for line in mount_bytes.decode().splitlines() if line.split()[4].startswith(('/storage','/mnt/user','/mnt/runtime'))]
+ print('MARKOR_ORIGINAL_MOUNTINFO '+json.dumps({'scope':'Kernel mountinfo from original installer namespace after launch request, not per-app access or persistence acceptance','sha256':hashlib.sha256(mount_bytes).hexdigest(),'selected':selected_mounts}),flush=True)
+mount_capture.close()
 if p.returncode!=0:
 """,1)
 

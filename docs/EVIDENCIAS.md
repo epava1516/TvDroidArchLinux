@@ -1,6 +1,6 @@
 # Índice de evidencias
 
-[137 · almacenamiento/API y captura real](../reports/android16-package-bootstrap/original-user-unlock-progress.json): UUIDafb2b897, nativo/exterior0, hashes de inputs/log completo/PNG y readbacks mounted/overlays. Imagen inspeccionada negra, UI fallida; montaje activo no tiene snapshot de mountinfo/ID de conexión. Identidades/caps de tres daemons originales y conexiones finales vacías observadas. REA MCP135 inspeccionó la clase Intro y su método Done en la APK intacta; evidencia estática, no una interacción.135/136,132/133/103 conservados con límites.
+[140 · renderizado original de Markor](../reports/android16-package-bootstrap/original-user-unlock-progress.json): UUIDff987089, captura8079168a… de IntroActivity inspeccionada, FUSE mountinfo real, modos/etiquetas privados, hostbefore/after idéntico y nativo/exterior0. Fuente Cuttlefish y parche vmwgfx enlazados por hash;139 render-only siguió negro. El slide incluye una ilustración, no archivos reales. No hay captura final Smithay, entrada, nota ni persistencia aceptadas.137/132/103 y seguimiento133 conservados en el mismo registro histórico.
 
 [Seguimiento133](../reports/android16-package-bootstrap/original-user-unlock-progress.json), followup133: nativo0, cancelación explícita y drenaje/cierre recogidos. No prueba la rama nueva de reap normal. Exterior1 preservado por aserción de perfil incorrecta; corrección sólo materializada. No nueva etapa APK aceptada.
 

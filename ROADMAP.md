@@ -1,6 +1,6 @@
 # Roadmap · Arch TV nativo en Rust
 
-Prioridad137: [resolver la captura gráfica negra de Markor](docs/ROADMAP-A.md) → entrada desde Smithay → nota persistente/cierre/reapertura. Almacenamiento original mounted, OverlayManager y cierre de cohorte están observados; no equivalen a un recorrido APK completo ni a MAC. [Evidencia137](reports/android16-package-bootstrap/original-user-unlock-progress.json).
+Prioridad140: [verificar salida final Smithay e integrar entrada Android](docs/ROADMAP-A.md) → nota real/guardado/cierre/reapertura. La APK intacta ya dibuja su bienvenida en SF y el almacenamiento original está montado; eso no completa el recorrido ni la compatibilidad amplia. [Evidencia140](reports/android16-package-bootstrap/original-user-unlock-progress.json). R1-MAC, ARM/GMS/DRM y entrega del producto permanecen abiertos.
 
 Camino crítico desde132: [cierre coherente y almacenamiento/OverlayManager originales](docs/ROADMAP-A.md) → UI/entrada/nota/cierre/reapertura de Markor. El usuario ya alcanza RUNNING_UNLOCKED y AMS lanza la APK intacta hacia IntroActivity; falta aceptación del recorrido completo. R1-MAC, ARM/GMS/DRM abiertos.
 

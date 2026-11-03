@@ -1,6 +1,6 @@
 # Contrato vigente · AOSP Android 16 QPR2
 
-Estado parcial137: la cohorte devuelve0 con APIs originales de almacenamiento/overlays, pero su captura SF es negra. El contrato sigue exigiendo UI visible, entrada, función, persistencia y ciclo completo, además de seguridad/instalación/actualización; no se cierran por ese exit0 ni por una captura PNG válida. [Evidencia](../reports/android16-package-bootstrap/original-user-unlock-progress.json).
+Estado parcial140: la APK intacta renderiza su bienvenida en SF y la cohorte devuelve0. El contrato mantiene la presentación final en Linux/Smithay, entrada, función principal, persistencia y ciclo completo, junto con seguridad/instalación/actualización. Una pantalla introductoria o su ilustración de archivos no acredita una nota ni compatibilidad general. [Evidencia](../reports/android16-package-bootstrap/original-user-unlock-progress.json).
 
 [GateKeeper original122](../reports/android16-package-bootstrap/gatekeeper-platform-progress.json) conserva el límite del proveedor AOSP no seguro: inscripción/verificación, tokens compartidos, durabilidad y aislamiento necesitan pruebas propias. Un SID de usuario vacío devuelto por el API original no es una credencial ni una señal de RUNNING_UNLOCKED. La política cargada en permisivo4 no cierra R1-MAC.
 
@@ -286,7 +286,7 @@ para la revisión de base.
 | --- | --- | --- |
 | C1 | APK originales completas | SHA-256/versiones, firma criptográfica y procedencia/política de confianza; no parchear APK ni sustituir su código por una réplica. Splits y bibliotecas dinámicas se registran explícitamente. |
 | C2 | Base reproducible | Build/revisión/ABI de ART, libcore, Bionic/linker, framework/APEX/JNI/recursos y servicios, classpath y namespaces; hashes/licencias. Stubs SDK sólo compilan: no cuentan como implementación ejecutable. |
-| C3 | Aplicación real completa | Las seis etapas de la matriz: lanzamiento por manifiesto/alias, interfaz propia de la APK, entrada real, persistencia, servicios y cierre/reapertura. Fixtures y pasos de bootstrap son regresiones parciales. |
+| C3 | Aplicación real completa | Las nueve etapas de la matriz: instalación, lanzamiento por manifiesto/alias, interfaz propia de la APK en Smithay, entrada real, función principal, persistencia, servicios, cierre y reapertura. Fixtures y pasos de bootstrap son regresiones parciales. |
 | C4 | Aislamiento e identidad | Separación real por APK, permisos/URI/FD/Binder y datos, IPC autenticado, límites de procesos/memoria/red, lectura de código y recursos protegida. Probar accesos cruzados, denegación y caída; UID declarado no sustituye credenciales reales. |
 | C5 | Estabilidad y ligereza | Mantener puertas H7: latencias, CPU/PSS y presupuestos, frame pacing, soak, ciclos y recuperación. Contabilizar todos los servicios compartidos y por app, además del shell; presupuesto global del runtime aún por medir/decidir. |
 | C6 | Instalación/actualización | Dependencias/versiones/licencias fijadas; instalación limpia, migración de datos, actualización atómica, rollback y recuperación H8/H9. Una caché SDK del laboratorio no es un paquete distribuible aceptado. |

@@ -154,15 +154,15 @@
       "runtime_results": {
         "installation": "approved",
         "launch": "not_tested",
-        "interface": "demonstrated_failure",
+        "interface": "not_tested",
         "input": "not_tested",
         "main_function": "not_tested",
         "persistence": "not_tested",
-        "services": "demonstrated_failure",
+        "services": "not_tested",
         "close": "not_tested",
         "reopen": "not_tested"
       },
-      "reason": "137: original storage reports mounted emulated;0 and OMS responds, native/exterior0. Intact Markor cold-starts IntroActivity but actual SF capture is black with original mapper errors; visible UI, input, note/persistence/full services not accepted. Previous unmounted-volume /dev/null path failure superseded; separate /dev/null stdout-redirection warning remains.",
+      "reason": "140: intact original IntroActivity visible in actual SF capture, native/exterior0; storage and overlays work in recorded scope. Full stage acceptance remains insufficient: no final Smithay app-frame capture, no end-to-end input/editor/note/services/persistence/close/reopen. Historical black-frame/device failures preserved, not current renderer blocker.",
       "framework_class_link_pass": true,
       "declared_application": "net.gsantner.markor.ApplicationObject",
       "bootstrap_experiment": {
@@ -208,26 +208,73 @@
         },
         "launch": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "5f37187a7ab32987be24780f94ec5c235538105c08b754224db66ef134b86e27",
+          "record_sha256": "a064864ece94689534dd097749e7ebc6e0d42d0a032dde34425939714e7cc629",
           "accepted": false,
-          "scope": "Original storage/media/overlay integration and post-launch frame observation; not a working Markor UI, input/note/persistence/MAC or broad compatibility acceptance",
-          "observation": "Original API launch/mounted-volume/overlay successes retained; current frame black, end-to-end input absent; not whole-stage approval."
+          "scope": "Intact Markor onboarding rendered in original SurfaceFlinger; not final Smithay presentation, input, note, persistence, app-close/reopen, MAC or broad APK compatibility acceptance",
+          "partial_observation": "Intact onboarding rendered by original SF; not_tested denotes insufficient evidence for complete stage criteria, not absence of APK execution."
         },
         "services": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "5f37187a7ab32987be24780f94ec5c235538105c08b754224db66ef134b86e27",
+          "record_sha256": "a064864ece94689534dd097749e7ebc6e0d42d0a032dde34425939714e7cc629",
           "accepted": false,
-          "scope": "Original storage/media/overlay integration and post-launch frame observation; not a working Markor UI, input/note/persistence/MAC or broad compatibility acceptance",
-          "observation": "Original API launch/mounted-volume/overlay successes retained; current frame black, end-to-end input absent; not whole-stage approval."
+          "scope": "Intact Markor onboarding rendered in original SurfaceFlinger; not final Smithay presentation, input, note, persistence, app-close/reopen, MAC or broad APK compatibility acceptance",
+          "partial_observation": "Intact onboarding rendered by original SF; not_tested denotes insufficient evidence for complete stage criteria, not absence of APK execution."
         },
         "interface": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "5f37187a7ab32987be24780f94ec5c235538105c08b754224db66ef134b86e27",
+          "record_sha256": "a064864ece94689534dd097749e7ebc6e0d42d0a032dde34425939714e7cc629",
           "accepted": false,
-          "scope": "Original storage/media/overlay integration and post-launch frame observation; not a working Markor UI, input/note/persistence/MAC or broad compatibility acceptance",
-          "observation": "Original API launch/mounted-volume/overlay successes retained; current frame black, end-to-end input absent; not whole-stage approval."
+          "scope": "Intact Markor onboarding rendered in original SurfaceFlinger; not final Smithay presentation, input, note, persistence, app-close/reopen, MAC or broad APK compatibility acceptance",
+          "partial_observation": "Intact onboarding rendered by original SF; not_tested denotes insufficient evidence for complete stage criteria, not absence of APK execution."
         }
-      }
+      },
+      "runtime_stage_evidence_history": [
+        {
+          "as_of_candidate": 137,
+          "source_commit": "8e352d0",
+          "results": {
+            "installation": "approved",
+            "launch": "not_tested",
+            "interface": "demonstrated_failure",
+            "input": "not_tested",
+            "main_function": "not_tested",
+            "persistence": "not_tested",
+            "services": "demonstrated_failure",
+            "close": "not_tested",
+            "reopen": "not_tested"
+          },
+          "evidence": {
+            "installation": {
+              "record": "../android16-package-bootstrap/markor-install-functional.json",
+              "record_sha256": "d7a5164ba89ef04b8501aeacf22d0bd4c563e5d716a4e6e1c767d0ff02c4bd72",
+              "base_commit": "d8647d1f71868ae2b12c351241259234bc409ae3",
+              "scope": "Earlier original installation with original package path/bytes check in temporary private tmpfs only; not new stage acceptance, durability, tenant isolation, launch or current candidate success"
+            },
+            "launch": {
+              "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
+              "record_sha256": "5f37187a7ab32987be24780f94ec5c235538105c08b754224db66ef134b86e27",
+              "accepted": false,
+              "scope": "Original storage/media/overlay integration and post-launch frame observation; not a working Markor UI, input/note/persistence/MAC or broad compatibility acceptance",
+              "observation": "Original API launch/mounted-volume/overlay successes retained; current frame black, end-to-end input absent; not whole-stage approval."
+            },
+            "services": {
+              "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
+              "record_sha256": "5f37187a7ab32987be24780f94ec5c235538105c08b754224db66ef134b86e27",
+              "accepted": false,
+              "scope": "Original storage/media/overlay integration and post-launch frame observation; not a working Markor UI, input/note/persistence/MAC or broad compatibility acceptance",
+              "observation": "Original API launch/mounted-volume/overlay successes retained; current frame black, end-to-end input absent; not whole-stage approval."
+            },
+            "interface": {
+              "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
+              "record_sha256": "5f37187a7ab32987be24780f94ec5c235538105c08b754224db66ef134b86e27",
+              "accepted": false,
+              "scope": "Original storage/media/overlay integration and post-launch frame observation; not a working Markor UI, input/note/persistence/MAC or broad compatibility acceptance",
+              "observation": "Original API launch/mounted-volume/overlay successes retained; current frame black, end-to-end input absent; not whole-stage approval."
+            }
+          },
+          "superseded": "Black SF frame superseded by visible original onboarding140; full Smithay presentation/input/journey still unverified."
+        }
+      ]
     }
   ],
   "uncovered": [

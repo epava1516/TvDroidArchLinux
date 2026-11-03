@@ -50,6 +50,16 @@ while [ "$user_wait" -lt 120 ]; do
     /system/bin/sleep 1
 done
 /system/bin/grep -qx RUNNING_UNLOCKED /data/local/tmp/archtv-mc1/markor-user-state.txt
+# Launch only after the actual original volume is mounted; no volume or user
+# property is assigned. The same original Sm class is used with our real ABI.
+volume_wait=0
+while [ "$volume_wait" -lt 120 ]; do
+    CLASSPATH=/system/framework/sm.jar /system/bin/app_process64 /system/bin com.android.commands.sm.Sm list-volumes all > /data/local/tmp/archtv-mc1/markor-volumes.txt
+    if /system/bin/grep -q '^emulated;0 mounted ' /data/local/tmp/archtv-mc1/markor-volumes.txt; then break; fi
+    volume_wait=$((volume_wait + 1))
+    /system/bin/sleep 1
+done
+/system/bin/grep -q '^emulated;0 mounted ' /data/local/tmp/archtv-mc1/markor-volumes.txt
 # Retire only the original bootstrap component after real framework unlock.
 /system/bin/cmd package disable --user 0 com.android.settings/.FallbackHome > /data/local/tmp/archtv-mc1/markor-bootstrap-home-stop.txt
 /system/bin/cmd activity force-stop --user 0 com.android.settings
@@ -63,4 +73,5 @@ case "$component" in net.gsantner.markor/*) ;; *) exit 1;; esac
 # Actual APIs and pixels after launch, not an app-compatibility success marker.
 CLASSPATH=/system/framework/sm.jar /system/bin/app_process64 /system/bin com.android.commands.sm.Sm list-volumes all > /data/local/tmp/archtv-mc1/markor-volumes.txt
 /system/bin/cmd overlay list --user 0 > /data/local/tmp/archtv-mc1/markor-overlays.txt
+/system/bin/cat /proc/self/mountinfo > /data/local/tmp/archtv-mc1/markor-mountinfo.txt
 /system/bin/screencap -p /data/local/tmp/archtv-mc1/markor-sf.png
