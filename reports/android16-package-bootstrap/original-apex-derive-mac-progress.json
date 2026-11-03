@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "utc": "2026-11-03T20:34:49.139445+00:00",
+  "utc": "2026-11-03T20:54:18.122405+00:00",
   "scope": "Partial original APEX/derive admission under bounded enforcing; no new APK stage or general MAC/isolation acceptance",
   "base_commit": "39d0be0edb77c13575681175fc26e730adee3c11",
   "executions": {
@@ -1318,7 +1318,7 @@
     "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load10/after-load.json",
     "sha256": "309743229826231a5a6d96498f808485c1d5ad5ce3a5cd8c1a279f21f26b9aa8"
   },
-  "next": "Adapt original common fs_type self association for fs_bpf root to Linux.bpf_t, and original domain fs_type filesystem/dir getattr to Linux.filesystem_type (no contents/control/mount rights). Then same native199 + Linuxreadonly snapshot/case-insensitive capture, entire original platformBPF/netd integration. FUSE query noncritical/unverified kernel/view limit retained. No reactive grants for abortunwinder bundle/vendor/tmp reads. Original Zygote/logd and Markor fullMAC remain required.",
+  "next": "Recover netd original error from same execution journal and original source. If unavailable, integrate original logd/logcat preserving host audit ownership, rather than granting Android sendto to Python Linux.init_t receiver.",
   "original_sources": {
     "sdkextensions_commit": "4d10e57070bb9c6edcd13bf74e9d01717b2a5ecf",
     "derive_rc_sha256": "a9e65b0c114408e5cb8356bdb435a6b48d0a67cd7879915c52ffa094a267f607",
@@ -1388,11 +1388,11 @@
     "sha256": "9e395067238c647c729c48a03dc8a115e81727ff30a8bfd6f4e50098098c9134"
   },
   "latest_host": {
-    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after199-host.json",
-    "sha256": "b27ba3d7757da0dfc3e611156737098f9f9d82ef1293fc90fe8121f0c97c58ee"
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after200-host.json",
+    "sha256": "872bf7376fcaf9d7aecdbed426697827caf5819da8296004fa5d05931f3ec134"
   },
   "vdc_source_contract": {
-    "builtin": "Pinned system/core/init/builtins.cpp1122\u20131172: original temporary exec plus original failure callback; exact argv /system/bin/vdc --wait cryptfs init_user0. Native observes actual reaping before advance, no shell redirection or synthetic readiness.",
+    "builtin": "Pinned system/core/init/builtins.cpp1122–1172: original temporary exec plus original failure callback; exact argv /system/bin/vdc --wait cryptfs init_user0. Native observes actual reaping before advance, no shell redirection or synthetic readiness.",
     "vold_helper": {
       "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/vold-fscrypt-original/FsCrypt.cpp",
       "sha256": "716c7553fc8ce7ad48c1857676e23adcb4458de362869655b30c712c287b0876"
@@ -1453,7 +1453,7 @@
   },
   "loop_label_correction": "Actual load15 BEFORE already showed original sysfs_loop on loop0..37, INCLUDING0/1. Those labels/values/modes/UID/GID stayed unchanged. Added90 exact genfs entries did NOT provide label exclusivity; removed in16 along with unnecessary Linux coordinator write grant. Original broad loop prefix remains. Effective experimental constraints: exact90 pool2..91, private sysfs RO, only reserved read_ahead controls RW; both0/1 open-only negatives EROFS. This is Linux-coordinator VFS observation, not Android remount resistance/general MAC acceptance.",
   "bootstrap_contract": {
-    "source": "Pinned system/core/init/init.cpp1170 calls SetupMountNamespaces before scripts; original init.rc81\u201385 exec_start apexd-bootstrap then perform_apex_config. Current native calls namespace setup after normal activation, with Linux pre-mounted aliases; actual182 demonstrates incompatibility.",
+    "source": "Pinned system/core/init/init.cpp1170 calls SetupMountNamespaces before scripts; original init.rc81–85 exec_start apexd-bootstrap then perform_apex_config. Current native calls namespace setup after normal activation, with Linux pre-mounted aliases; actual182 demonstrates incompatibility.",
     "headers": "Linux binutils readelf STATIC header inspection (not REA MCP or execution): original GSI apexd interpreter /system/bin/bootstrap/linker64; custom coordinator179 interpreter /system/bin/linker64. Original system/bin/bootstrap/linker64 and system/lib64/bootstrap/libc.so exist. Source/runtime experiment still required.",
     "original_apexd": {
       "path": "dist/aosp16/factory-inputs-3/root/system/bin/apexd",
@@ -1744,5 +1744,68 @@
     "fuse_limit": "Original platform also reports FUSE prog type query ENOENT, noncritical source. Private-view absence versus kernel support not contrasted; do not infer global kernelabsence or media compatibility.",
     "logging": "Existing capture now case-insensitive BPF tag matching.199 exact old list omitted BpfLoader-rs; recovered same-runjournal separately. Post199 diagnostic parsing correction not represented as rerunoriginalservice. Original logd integration still pending.",
     "recovery": "199 candidate1 stillenforcing after7.143s, normalrestore0. Global inspector permissive candidate25/policyloadCOUNT23, audit0/newloss0/rulesunchanged/backlog64, no ownedunits/loops/dm/FUSE; VT/GPU and priornote21byte/hash/CE/DE retained.198/199consumed noqueue. R1MAC completecohort, kernel6.18warning, originalZygote/logd/user0effects/ARM/GMS/DRM open."
+  },
+  "after200_host": {
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after200-host.json",
+    "sha256": "872bf7376fcaf9d7aecdbed426697827caf5819da8296004fa5d05931f3ec134"
+  },
+  "policy26_artifact": {
+    "path": "/home/tv/repositorio-principal/dist/aosp16/selected-platform-policy-26/artifact.json",
+    "sha256": "ee9a707bc7f6d049188bcc07bc4ac50c0dfb63b6a1362b5c2195746767b418c1"
+  },
+  "policy26_load": {
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load26/after-load.json",
+    "sha256": "84924a4ce1194084bff5b87665af2910305f2d117492996cdc010eb091298f45"
+  },
+  "filesystem_contract26": {
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/filesystem-contract26.json",
+    "sha256": "a2bdc949d16daaa998236b90b70914336030cbd580d09ba74a0b9a739d8a6882"
+  },
+  "userdata_after200": {
+    "path": "/home/tv/recuperacion-archtv/59d8f237-419d-47b2-9f0e-1d8d89989592-markor-software-launch/userdata-after200-close.json",
+    "sha256": "a4d9ce56bebb8a9e625b88a5661bfe3ec73980f08437508cd23787ef6247ede5"
+  },
+  "bpf_all_known200": {
+    "path": "/home/tv/recuperacion-archtv/59d8f237-419d-47b2-9f0e-1d8d89989592-markor-software-launch/bpf-all-known-after.json",
+    "sha256": "71ab5094631102cd7c7a6bb14d071449d52190d58749ba47d32247b27a7fd6d2"
+  },
+  "integrated200": {
+    "id": "59d8f237-419d-47b2-9f0e-1d8d89989592",
+    "evidence": {
+      "result.json": {
+        "path": "/home/tv/recuperacion-archtv/59d8f237-419d-47b2-9f0e-1d8d89989592-markor-software-launch/result.json",
+        "sha256": "4391ee8e3605be26c62a1a846c586926f761a9de9e4cf5889673c501e5399367"
+      },
+      "mac-window.json": {
+        "path": "/home/tv/recuperacion-archtv/59d8f237-419d-47b2-9f0e-1d8d89989592-markor-software-launch/mac-window.json",
+        "sha256": "83a8eb5c7ed472a95982cb9941fa84d25ed1d4505ea77d6f601fbd86709eb407"
+      },
+      "completion-consumer.json": {
+        "path": "/home/tv/recuperacion-archtv/59d8f237-419d-47b2-9f0e-1d8d89989592-markor-software-launch/completion-consumer.json",
+        "sha256": "af67cb379d6df3956be572aab77a0113284cd2e5684f4cd117a59fc02e7df75f"
+      },
+      "runtime-source-overlay.json": {
+        "path": "/home/tv/recuperacion-archtv/59d8f237-419d-47b2-9f0e-1d8d89989592-markor-software-launch/runtime-source-overlay.json",
+        "sha256": "d7f6bd4534a9315c0fb1e9a6324696c78d2f9dc2523182ecfb23ffa51c960029"
+      },
+      "android-service-journal.json": {
+        "path": "/home/tv/recuperacion-archtv/59d8f237-419d-47b2-9f0e-1d8d89989592-markor-software-launch/android-service-journal.json",
+        "sha256": "c7e9f0d702bd1d363d87f002bc21744c5395e26117efd28936b6798dcb22a09c"
+      },
+      "kernel-apex.log": {
+        "path": "/home/tv/recuperacion-archtv/59d8f237-419d-47b2-9f0e-1d8d89989592-markor-software-launch/kernel-apex.log",
+        "sha256": "91c291fe93cb265281fbb6d86f4387a5c0dd7fea62fbed114dca8860bea04044"
+      },
+      "bpf-cleanup.json": {
+        "path": "/home/tv/recuperacion-archtv/59d8f237-419d-47b2-9f0e-1d8d89989592-markor-software-launch/bpf-cleanup.json",
+        "sha256": "d1d2a895b1784ebf1664ea13ac9954d68190e466e71f32365dd5aaae711edc8a"
+      }
+    },
+    "scope": "Original Mainline and platform BPF loaders exit0 and original completion property; netd starts then exit1, no netd service or APK stage accepted.",
+    "policy": "26 maps original common filesystem metadata to Linux.filesystem_type and full effective bpffs_type association including root to Linux.bpf_t. No blanket file content/control grants.",
+    "failure": "netd proc/net and proc/mounts link read AVCs plus logdw sendto denied; exact fatal cause not yet established. Do not infer causation from AVC alone.",
+    "optional_limits": "Original platform GPU map setattr on fallback Linux.bpf_t denied; FUSE prog type query ENOENT noncritical. Loader0 is not full GPU/FUSE availability.",
+    "closure": "41 known programs and58 maps absent after close, no loops/dm/FUSE/owned units. Audit loss delta0; permissive0 restored, policyload24/candidate26. Previous note/hash/CE/DE unchanged.",
+    "next": "Recover netd original error from same execution journal and original source. If unavailable, integrate original logd/logcat preserving host audit ownership, rather than granting Android sendto to Python Linux.init_t receiver."
   }
 }

@@ -2,7 +2,11 @@
 ; data bind and original read-only images. Mirror original AOSP domain->fs_type
 ; getattr and file_type->labeledfs associate, preserving all file/DAC/MLS checks.
 ; No file contents, mounts or relabel permission is granted here.
-(allow domain linux.fs_t (filesystem (getattr)))
+; Whole original fs_type metadata contract, including virtual filesystems.
+; Linux calls its corresponding attribute filesystem_type. No contents,
+; administration or mount permission is added.
+(allow domain linux.filesystem_type (filesystem (getattr)))
+(allow domain linux.filesystem_type (dir (getattr)))
 (allow file_type linux.fs_t (filesystem (associate)))
 
 ; Original common SELinuxFS metadata contract (pinned CIL22468/73/83).
@@ -13,15 +17,17 @@
 ; No read/write/administration permission is added; private load/enforce/etc
 ; leaves remain individually RO, while the real selinuxfs root remains RW as
 ; required by original verify_selinuxmnt().
-(allow domain linux.security_t (filesystem (getattr)))
+; filesystem getattr is covered by the common owner mapping above.
 (allow domain linux.security_t (dir (search)))
 (allow domain linux.security_t (file (getattr)))
 
 ; Actual197 original map pin denied associate: fs_bpf_tethering -> Linux.bpf_t.
-; Original pinned policy18519 grants bpffs_type except fs_bpf association on
-; its own fs_bpf filesystem SID. Preserve that complete object set and only
-; adapt the Linux-owned filesystem SID; original map/program/pin, directory,
-; DAC and capability checks are unchanged. No generic file-type or domain grant.
+; Original pinned policy18519 grants bpffs_type except fs_bpf association,
+; AND common27721 grants fs_type self association (fs_bpf is an fs_type).
+; Actual199 platform mkdir/root pins exposed that missing reflexive edge.
+; Together the original effective contract covers all bpffs_type objects.
+; Adapt only filesystem owner SID; original map/program/pin, directory,
+; DAC/capability checks remain. No generic file-type/domain mutation grant.
 (typeattribute archtv_original_bpffs_objects)
-(typeattributeset archtv_original_bpffs_objects (and (bpffs_type) (not (fs_bpf))))
+(typeattributeset archtv_original_bpffs_objects (bpffs_type))
 (allow archtv_original_bpffs_objects linux.bpf_t (filesystem (associate)))
