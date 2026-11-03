@@ -163,7 +163,7 @@
     "Native normal lazy apexd exit CLD_EXITED0 clean1 followed by successful coordinatorclose0; explicit cancellation alternative was exercised133",
     "Native/exterior0; exact unitsinactive, VT1restored, no loops/dm/new FUSEconnections; host DRM node metadata identical"
   ],
-  "next": "Follow actual storage permission dialog/Settings UI, then actual editor and unique typed note/save/app close-reopen. Retain one live cohort long enough for complete interaction instead of another cold boot for each click; bounded observation is separate from startup timeout. No direct preference/permission writes.",
+  "next": "Integrate whole original com.android.server.trust.TrustManagerService after LockSettings lifecycle and before boot phases, matching original SystemServer. Do not return false from KeyguardManager or bypass PasswordStore. Repeat same actual permission->new-file->typed unique note/save/app close-reopen journey in one bounded cohort; verify actual original trust operations and preserve unsupported credentials/hardware/lockscreen limits.",
   "artifacts": {
     "/home/tv/recuperacion-archtv/ff987089-92db-43e2-852d-3e78501aae42-markor-software-launch/before-launch.json": "db7aaed86c8a4f5121ce3677ff47d50e11f74a3c646b3455437700432da2818a",
     "/home/tv/recuperacion-archtv/ff987089-92db-43e2-852d-3e78501aae42-markor-software-launch/result.json": "db31e85df10c964be7b912ab4f7c29b47f292e788e26c8df09ce639c935578b9",
@@ -1446,9 +1446,9 @@
     "next": "Exercise real keyboard through original KeyLayoutMap and dispatcher; complete onboarding through events and enter real editor. Test gateway rejection and focus/disconnect releases, fix transport loss state before accepting stability. Then actual unique note/save/app close/reopen with original storage."
   },
   "latest_functional_observation": {
-    "candidate": 147,
-    "run_id": "334186a9-9247-4b8e-b4a1-d52c4c9e17d5",
-    "section": "private_data_followup147"
+    "candidate": 151,
+    "run_id": "c6c8413d-1246-4e0b-a256-f1b309d5df7b",
+    "section": "permission_flow_followup151"
   },
   "not_accepted_at_base140": [
     "Final Smithay/physical output frame for this APK is not yet captured; early compositor30s capture is not app presentation evidence",
@@ -2241,5 +2241,305 @@
       "ARM/GMS/DRM, installation/update and complete product remain open"
     ],
     "next": "Follow actual storage permission dialog/Settings UI, then actual editor and unique typed note/save/app close-reopen. Retain one live cohort long enough for complete interaction instead of another cold boot for each click; bounded observation is separate from startup timeout. No direct preference/permission writes."
+  },
+  "permission_flow_followup151": {
+    "candidate": 151,
+    "run_id": "c6c8413d-1246-4e0b-a256-f1b309d5df7b",
+    "checkpoint": "/home/tv/recuperacion-archtv/c6c8413d-1246-4e0b-a256-f1b309d5df7b-markor-software-launch",
+    "factory": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793698681197939253",
+    "result": {
+      "native_exit": 0,
+      "outer_exit": 0,
+      "scope": "Cohort operation/closure only; Markor later crashes, NOT APK compatibility pass"
+    },
+    "original_subsystems_added": [
+      "com.android.ecm.EnhancedConfirmationService",
+      "com.android.server.clipboard.ClipboardService",
+      "com.android.safetycenter.SafetyCenterService"
+    ],
+    "source_decisions": {
+      "Clipboard": "Original requires existing UriGrantsManagerInternal/AMS/WMS/AppOps; already integrated. Original guards optional ContentCapture/Autofill/VirtualDevice; no substitutes added. Actual Settings Compose UI now works; copy/paste functionality not demonstrated.",
+      "EnhancedConfirmation": "Whole original Permission Mainline service before RoleService, preserving original policy checks. Earlier unresolved-manager failure absent; not a full restricted-permission policy/security suite.",
+      "SafetyCenter": "Whole original service owns resource-supported/disabled decision and boot-completed registration; no fake SafetyCenter result. Full safety-source integration untested.",
+      "observation": "Post-start observation bounded180000ms with matching Rust/parser/factory/outer limits. Startup300000ms and original package client180s progress bound unchanged.148 original validation failure preserved, CLI accepted180000/rejected180001 and startup300001 before child execution."
+    },
+    "source_provenance": {
+      "ClipboardService.source.json": {
+        "project": "frameworks/base",
+        "pin": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+        "path": "services/core/java/com/android/server/clipboard/ClipboardService.java",
+        "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/core/java/com/android/server/clipboard/ClipboardService.java?format=TEXT",
+        "sha256": "544aabaa64f72970d281efbd343314e9a0a372a4d2efe855da072953a5d755bf"
+      },
+      "SafetyCenterService.source.json": {
+        "project": "packages/modules/Permission",
+        "pin": "e86c3ce11c473fe33c644296363a9d72069f40a3",
+        "path": "service/java/com/android/safetycenter/SafetyCenterService.java",
+        "url": "https://android.googlesource.com/platform/packages/modules/Permission/+/e86c3ce11c473fe33c644296363a9d72069f40a3/service/java/com/android/safetycenter/SafetyCenterService.java?format=TEXT",
+        "sha256": "3ed66d5388a8c0d6d35f021ec8c7fa54b35df0b8bedef14079914fba9c010d8e"
+      },
+      "EnhancedConfirmationService.source.json": {
+        "project": "packages/modules/Permission",
+        "pin": "e86c3ce11c473fe33c644296363a9d72069f40a3",
+        "path": "service/java/com/android/ecm/EnhancedConfirmationService.java",
+        "url": "https://android.googlesource.com/platform/packages/modules/Permission/+/e86c3ce11c473fe33c644296363a9d72069f40a3/service/java/com/android/ecm/EnhancedConfirmationService.java?format=TEXT",
+        "sha256": "b7ae17f498133ea275d429f2ed53efbe1582c0036139bf839cbe5c861385f7fd"
+      }
+    },
+    "cli_validation": {
+      "checkpoint": "/home/tv/recuperacion-archtv/fcb7a984-a1e0-43d3-af6f-1ba42c69984b-markor-software-launch",
+      "sha256": "832ecf2cfb2a353aefa041ca5e88297e785218ad295d83eef710a45ec6aa4ff2",
+      "cases": [
+        {
+          "observe_ms": 180000,
+          "startup_ms": 300000,
+          "exit": 1,
+          "stderr": "Error: Os { code: 2, kind: NotFound, message: \"No such file or directory\" }\n"
+        },
+        {
+          "observe_ms": 180001,
+          "startup_ms": 300000,
+          "exit": 1,
+          "stderr": "Error: \"observation duration exceeds 180000ms\"\n"
+        },
+        {
+          "observe_ms": 180000,
+          "startup_ms": 300001,
+          "exit": 1,
+          "stderr": "Error: \"startup duration outside 1..300000ms\"\n"
+        }
+      ]
+    },
+    "functional_observations": [
+      {
+        "frame": "/home/tv/recuperacion-archtv/c6c8413d-1246-4e0b-a256-f1b309d5df7b-markor-software-launch/inspect-01.png",
+        "observed": "Original Settings All files access page for Markor, toggle off"
+      },
+      {
+        "frame": "/home/tv/recuperacion-archtv/c6c8413d-1246-4e0b-a256-f1b309d5df7b-markor-software-launch/inspect-02.png",
+        "observed": "Real Linux click changes original Settings toggle to checked"
+      },
+      {
+        "frame": "/home/tv/recuperacion-archtv/c6c8413d-1246-4e0b-a256-f1b309d5df7b-markor-software-launch/inspect-04.png",
+        "observed": "Return via real input reaches actual Markor explorer /storage/emulated/0/Documents, empty file list. Not bundled onboarding illustration."
+      }
+    ],
+    "permission_scope": "UI toggle plus original application proceeds past permission gate. No direct appops/permission/prefs writes. No independent AppOps dump or actual file read/write proof yet.",
+    "demonstrated_failure": {
+      "operation": "Real create-file + button from actual explorer",
+      "error": "KeyguardManager null at PasswordStore initialization calling isDeviceSecure; NewFileDialog cannot open, no editor or note created",
+      "original_log_identity": [
+        2583,
+        10104,
+        10104
+      ],
+      "observed_monotonic": 115432.078653498,
+      "top_stack_lines": [
+        "FATAL EXCEPTION: main",
+        "Process: net.gsantner.markor, PID: 2583",
+        "java.lang.NullPointerException: Attempt to invoke virtual method 'boolean android.app.KeyguardManager.isDeviceSecure()' on a null object reference",
+        "\tat androidx.print.PrintHelper$$ExternalSyntheticApiModelOutline0.m(r8-map-id-552a3f6c531386af6775cff32766febf07d823a6a2c51d989acf3f7a0cc511a9:32)",
+        "\tat other.de.stanetz.jpencconverter.PasswordStore.<init>(r8-map-id-552a3f6c531386af6775cff32766febf07d823a6a2c51d989acf3f7a0cc511a9:19)",
+        "\tat net.gsantner.markor.model.AppSettings.getDefaultPassword(r8-map-id-552a3f6c531386af6775cff32766febf07d823a6a2c51d989acf3f7a0cc511a9:7)",
+        "\tat net.gsantner.markor.model.AppSettings.isDefaultPasswordSet(r8-map-id-552a3f6c531386af6775cff32766febf07d823a6a2c51d989acf3f7a0cc511a9:1)",
+        "\tat net.gsantner.markor.frontend.NewFileDialog.onCreateDialog(r8-map-id-552a3f6c531386af6775cff32766febf07d823a6a2c51d989acf3f7a0cc511a9:146)",
+        "\tat androidx.fragment.app.DialogFragment.onGetLayoutInflater(r8-map-id-552a3f6c531386af6775cff32766febf07d823a6a2c51d989acf3f7a0cc511a9:29)"
+      ],
+      "source_contract": "Original KeyguardManager constructor requires real trust and notification services. Notification exists; TrustManagerService absent from selected cohort. Source fetched unchanged, no false isDeviceSecure answer."
+    },
+    "keyguard_source_provenance": {
+      "TrustManagerService.source.json": {
+        "pin": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+        "path": "services/core/java/com/android/server/trust/TrustManagerService.java",
+        "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/core/java/com/android/server/trust/TrustManagerService.java?format=TEXT",
+        "sha256": "aace4aa7d3c720d98aebb6246fcf2cdc863d13df45abe09bc6fcc38006f6e51b"
+      },
+      "KeyguardManager.source.json": {
+        "pin": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+        "path": "core/java/android/app/KeyguardManager.java",
+        "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/core/java/android/app/KeyguardManager.java?format=TEXT",
+        "sha256": "d08cefe657b7f7c7331c97f40e8d1ace18b28a8313b3ee2aceb98ac7de8673e1"
+      }
+    },
+    "other_background_fatal_headers": [
+      [
+        "FATAL EXCEPTION: Thread-2",
+        "Process: com.android.managedprovisioning, PID: 2082",
+        "java.lang.NullPointerException: Attempt to invoke virtual method 'void android.content.pm.CrossProfileApps.resetInteractAcrossProfilesAppOps(java.util.Collection, java.util.Set)' on a null object reference"
+      ],
+      [
+        "FATAL EXCEPTION: main",
+        "Process: com.android.devicelockcontroller, PID: 1906",
+        "java.lang.ExceptionInInitializerError"
+      ],
+      [
+        "FATAL EXCEPTION: main",
+        "Process: com.android.dynsystem:dynsystem, PID: 2678",
+        "java.lang.RuntimeException: Unable to start service com.android.dynsystem.DynamicSystemInstallationService@ebccc90 with Intent { act=android.os.image.action.NOTIFY_IF_IN_USE xflg=0x4 cmp=com.android.dynsystem/.DynamicSystemInstallationService }"
+      ],
+      [
+        "FATAL EXCEPTION: main",
+        "Process: com.android.dynsystem:dynsystem, PID: 2892",
+        "java.lang.RuntimeException: Unable to start service com.android.dynsystem.DynamicSystemInstallationService@ebccc90 with Intent { act=android.os.image.action.NOTIFY_IF_IN_USE xflg=0x4 cmp=com.android.dynsystem/.DynamicSystemInstallationService }"
+      ]
+    ],
+    "cleanup": {
+      "id": "c6c8413d-1246-4e0b-a256-f1b309d5df7b",
+      "outer_unit": "archtv-markor-session-c6c8413d-1246-4e0b-a256-f1b309d5df7b",
+      "runner_unit": "archtv-package-runner-c6c8413d-1246-4e0b-a256-f1b309d5df7b",
+      "initial_vt": "1",
+      "root_pid": 500197,
+      "root_boot_id": "4e18faf8-2b46-42e4-a6b2-269c34326b68",
+      "result": "native_result_recorded",
+      "fuse_connections_before": [],
+      "host_devices_before": {
+        "card0": {
+          "mode": "0o660",
+          "uid": 0,
+          "gid": 983,
+          "rdev": 57856,
+          "inode": 365
+        },
+        "renderD128": {
+          "mode": "0o666",
+          "uid": 0,
+          "gid": 987,
+          "rdev": 57984,
+          "inode": 364
+        }
+      },
+      "interaction_exit": 0,
+      "host_devices_after": {
+        "card0": {
+          "mode": "0o660",
+          "uid": 0,
+          "gid": 983,
+          "rdev": 57856,
+          "inode": 365
+        },
+        "renderD128": {
+          "mode": "0o666",
+          "uid": 0,
+          "gid": 987,
+          "rdev": 57984,
+          "inode": 364
+        }
+      },
+      "host_device_metadata_unchanged": true,
+      "fuse_connections_after": [],
+      "new_fuse_connections": [],
+      "final_vt": "1",
+      "outer_active": false,
+      "runner_active": false
+    },
+    "artifacts": {
+      "/home/tv/recuperacion-archtv/c6c8413d-1246-4e0b-a256-f1b309d5df7b-markor-software-launch/before-launch.json": {
+        "sha256": "798749e4e89388ea611cb7de7f3732fda8a4fa76061af1505008f6059bffd046",
+        "bytes": 3519
+      },
+      "/home/tv/recuperacion-archtv/c6c8413d-1246-4e0b-a256-f1b309d5df7b-markor-software-launch/result.json": {
+        "sha256": "780c5d50c43909576ef7a0b4d1a756e4642a6f7dfba8ed662ea765ad8ba5aacb",
+        "bytes": 29678
+      },
+      "/home/tv/recuperacion-archtv/c6c8413d-1246-4e0b-a256-f1b309d5df7b-markor-software-launch/session-state.json": {
+        "sha256": "cdf3663f7d879ff8e8c3a71b2911730e9c59b0236ee596f87884a39793a9f458",
+        "bytes": 1126
+      },
+      "/home/tv/recuperacion-archtv/c6c8413d-1246-4e0b-a256-f1b309d5df7b-markor-software-launch/interaction-test.py": {
+        "sha256": "6b4ad3d4b72679020f64d0f5ca00495c3eeec9d893f6eb8ce037f5e267bc97ae",
+        "bytes": 4856
+      },
+      "/home/tv/recuperacion-archtv/c6c8413d-1246-4e0b-a256-f1b309d5df7b-markor-software-launch/interaction-events.json": {
+        "sha256": "a82b31221e7fe600886d1e66dcc8d976f539e2e30fe91126425ddc18af5fafa7",
+        "bytes": 5713
+      },
+      "/home/tv/recuperacion-archtv/c6c8413d-1246-4e0b-a256-f1b309d5df7b-markor-software-launch/input-commands.jsonl": {
+        "sha256": "55ca1223134670ff5a1f8e66b3001167c2c5b9d9b87edb218ad6568317c07e0e",
+        "bytes": 147
+      },
+      "/home/tv/recuperacion-archtv/c6c8413d-1246-4e0b-a256-f1b309d5df7b-markor-software-launch/input-device-cleanup.json": {
+        "sha256": "6259f2958605f652d65ae60b14158f9281b5d272b9f589b4361208725769ca91",
+        "bytes": 236
+      },
+      "/home/tv/recuperacion-archtv/c6c8413d-1246-4e0b-a256-f1b309d5df7b-markor-software-launch/capture-samples.json": {
+        "sha256": "7a40c292ccf9a3bc7d439b1514253606a5f41f6e5be3cb973e4d23f8edef7226",
+        "bytes": 96527
+      },
+      "/home/tv/recuperacion-archtv/c6c8413d-1246-4e0b-a256-f1b309d5df7b-markor-software-launch/completion-consumer.json": {
+        "sha256": "4296d834553e03b8835dc7d2aa8e159f02212bdb3134e2e9085a01fd14f67da6",
+        "bytes": 196
+      },
+      "/home/tv/recuperacion-archtv/c6c8413d-1246-4e0b-a256-f1b309d5df7b-markor-software-launch/completion-delivery.json": {
+        "sha256": "3c5417210faf9109e71918d3b2550c35b60477df304b572774da111e01bc1b7a",
+        "bytes": 240
+      },
+      "/home/tv/recuperacion-archtv/c6c8413d-1246-4e0b-a256-f1b309d5df7b-markor-software-launch/compositor.log": {
+        "sha256": "54345e881af78da9f464b397243df237a86200872e997470c63720f06116e6df",
+        "bytes": 195277
+      },
+      "/home/tv/recuperacion-archtv/c6c8413d-1246-4e0b-a256-f1b309d5df7b-markor-software-launch/inspect-01.ppm": {
+        "sha256": "6280b731a7605c9011e4217eb5e94156dc8fdc48b2c0f2167f4fd5c5b02d5c9f",
+        "bytes": 3072016
+      },
+      "/home/tv/recuperacion-archtv/c6c8413d-1246-4e0b-a256-f1b309d5df7b-markor-software-launch/inspect-01.png": {
+        "sha256": "1f1961d63770a13667540fb570cab8bda5569f289ea463b21507285c8b17f0ad",
+        "bytes": 39823
+      },
+      "/home/tv/recuperacion-archtv/c6c8413d-1246-4e0b-a256-f1b309d5df7b-markor-software-launch/inspect-02.ppm": {
+        "sha256": "7751e6b92da5515955e240c58ed2d7d358c38b9ff5d90b1a1bfb93f4b1bc6775",
+        "bytes": 3072016
+      },
+      "/home/tv/recuperacion-archtv/c6c8413d-1246-4e0b-a256-f1b309d5df7b-markor-software-launch/inspect-02.png": {
+        "sha256": "4c9ae7e47ed132fc6e3dab0b094933079803ac8915e1e54bfa4f89d0a6e0536d",
+        "bytes": 39251
+      },
+      "/home/tv/recuperacion-archtv/c6c8413d-1246-4e0b-a256-f1b309d5df7b-markor-software-launch/inspect-04.ppm": {
+        "sha256": "9a62da26ac3ad1442767b50a64aa3f502e4d5db2a20455e38d9258b5f16987a2",
+        "bytes": 3072016
+      },
+      "/home/tv/recuperacion-archtv/c6c8413d-1246-4e0b-a256-f1b309d5df7b-markor-software-launch/inspect-04.png": {
+        "sha256": "725a5d1bc3a048a309b03349db0f1ec15bf610c17f48fd5b73e51c7e328a0cd9",
+        "bytes": 27345
+      },
+      "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793698681197939253/android-log-live.jsonl": {
+        "sha256": "1ae604579b4ff0114c2f97bc7b871e0358b64b55b8a78e50dfcbc6771a7a7dcb",
+        "bytes": 2345818
+      },
+      "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-151/source-inputs.json": {
+        "sha256": "53e5819ccec9cb01a1e21c067869b9576596879f46af04c7b85dc140f2ca4e5d",
+        "bytes": 5770
+      }
+    },
+    "prior_runs": [
+      {
+        "candidate": 148,
+        "checkpoint": "/home/tv/recuperacion-archtv/7b68644c-6c81-4b2b-a66d-c6fc098f99da-markor-software-launch",
+        "outer_exit": 1,
+        "result_sha256": "0ba8c113a6fdb74ab0e2762e332b5a71f5109955b06dd5baa8ab6ac85906b34d",
+        "scope": "Supervisor CLI rejected180000 against60000 before services; not APEX regression. Rust bound now180000, startup300000 unchanged."
+      },
+      {
+        "candidate": 149,
+        "checkpoint": "/home/tv/recuperacion-archtv/fcb7a984-a1e0-43d3-af6f-1ba42c69984b-markor-software-launch",
+        "outer_exit": 0,
+        "result_sha256": "e12f41c454fe599f16bfc312528aba9e0e2f267abc751e3bd9c00b6d91af8a50",
+        "scope": "Native/exterior0 but Settings Compose missing Clipboard and PermissionController missing EnhancedConfirmation; actual failures, no permission/editor."
+      },
+      {
+        "candidate": 150,
+        "checkpoint": "/home/tv/recuperacion-archtv/94a93bb8-4bd7-4c60-87d2-5ec3a213f956-markor-software-launch",
+        "outer_exit": 1,
+        "result_sha256": "fb6a25893ed4f61b482dfde8f0b193e730da69d88535d4c46cc830f094822dc6",
+        "scope": "Native/exterior1 at original package-client progress deadline before launch. App data created. Vold SIGKILL and shutdown request observed during close; secondary close failed. Global exact cleanup passed.151 moves existing snapshot postinstall; startup/progress limits unchanged, underlying timing cause not established."
+      }
+    ],
+    "not_accepted": [
+      "No editor, typed text, note/save, app close/reopen or persistence",
+      "UI permission flow is not all permission API/security compatibility; original APK crashed at next functional action",
+      "No MAC/enforcing/tenant isolation, FBE or gateway forced-failure acceptance",
+      "ManagedProvisioning/CrossProfile, DeviceLock and Shortcut warnings remain separate unresolved platform functions",
+      "ARM/GMS/DRM, install/update and complete product remain open"
+    ],
+    "next": "Integrate whole original com.android.server.trust.TrustManagerService after LockSettings lifecycle and before boot phases, matching original SystemServer. Do not return false from KeyguardManager or bypass PasswordStore. Repeat same actual permission->new-file->typed unique note/save/app close-reopen journey in one bounded cohort; verify actual original trust operations and preserve unsupported credentials/hardware/lockscreen limits."
   }
 }

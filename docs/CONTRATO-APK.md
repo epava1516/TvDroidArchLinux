@@ -1,6 +1,6 @@
 # Contrato vigente · AOSP Android 16 QPR2
 
-Estado parcial147: datos privados CE/DE creados por servicios originales y bienvenida terminada; Markor solicita almacenamiento. El contrato mantiene permiso efectivo real, texto/editor, función principal, guardado y ciclo completo, junto con aislamiento/estabilidad/instalación/actualización. Directorios y etiquetas no acreditan una nota, durabilidad ni autorización MAC. Se seguirá la UI original sin escribir permisos o preferencias artificialmente. [Evidencia](../reports/android16-package-bootstrap/original-user-unlock-progress.json).
+Estado parcial151: permiso por UI original y explorador real; crear archivo provoca fallo demostrado por KeyguardManager ausente. El contrato mantiene editor/texto, nota/guardado/cierre/reapertura, aislamiento/estabilidad/instalación/actualización. No se devolverán estados Keyguard o permisos ficticios para continuar. Cohorte nativo0, interfaz visible o directorios creados no acreditan aplicación completa ni seguridad MAC. [Evidencia](../reports/android16-package-bootstrap/original-user-unlock-progress.json).
 
 [GateKeeper original122](../reports/android16-package-bootstrap/gatekeeper-platform-progress.json) conserva el límite del proveedor AOSP no seguro: inscripción/verificación, tokens compartidos, durabilidad y aislamiento necesitan pruebas propias. Un SID de usuario vacío devuelto por el API original no es una credencial ni una señal de RUNNING_UNLOCKED. La política cargada en permisivo4 no cierra R1-MAC.
 

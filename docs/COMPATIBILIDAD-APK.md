@@ -1,6 +1,6 @@
 # Matriz de aplicaciones reales
 
-147 supera la falta de directorios privados: creación original CE/DE y etiquetas verificadas, bienvenida terminada y solicitud original de almacenamiento visible en Smithay. [Evidencia147](../reports/android16-package-bootstrap/original-user-unlock-progress.json). La solicitud no equivale a permiso concedido; faltan editor, texto/nota, guardado y cierre/reapertura. Etapas completas conservan evidencia insuficiente; ningún porcentaje de compatibilidad ni durabilidad inferido.
+151 prueba UI original de permiso y explorador de Markor en Smithay. La función principal y servicios tienen fallo demostrado: crear archivo cae por KeyguardManager nulo, antes del editor. [Evidencia151](../reports/android16-package-bootstrap/original-user-unlock-progress.json). Otras etapas conservan evidencia insuficiente; no hay texto, nota/guardado/cierre/reapertura ni durabilidad aceptados. Nativo0 no es éxito de la APK. Clipboard/ECM ya no fallan en ese recorrido; APIs completas y otras APK de infraestructura siguen abiertas.
 
 132 ejecutó Markor intacta y AMS retornó COLD/IntroActivity tras RUNNING_UNLOCKED. La matriz conserva el lanzamiento como pendiente de aceptación completa, con ejecución parcial registrada, y servicios como fallo demostrado: almacenamiento externo inválido /dev/null y DocumentsUI sin OverlayManager. UI visible/entrada/nota/persistencia no probadas; instalación temporal conserva aprobación. [Alcance y evidencia](../reports/android16-package-bootstrap/original-user-unlock-progress.json).
 

@@ -183,7 +183,14 @@ public final class SelectedServices {
 
         Thread mainThread = Thread.currentThread();
         Thread diagnostic = new Thread(() -> {
-            try { Thread.sleep(6000); } catch (InterruptedException stopped) { return; }
+            try {
+                if("software-platform-v1".equals(System.getenv("ARCHTV_SOFTWARE_SECURITY_PROFILE"))) {
+                    java.io.File installed=new java.io.File("/data/local/tmp/archtv-mc1/markor-installed-bytes.txt");
+                    long until=System.nanoTime()+java.util.concurrent.TimeUnit.SECONDS.toNanos(180);
+                    while((!installed.isFile() || installed.length()==0) && System.nanoTime()<until)Thread.sleep(250);
+                    Thread.sleep(5000);
+                } else { Thread.sleep(6000); }
+            } catch (InterruptedException stopped) { return; }
             saveWaitDiagnostic("CAPTURE_STARTED main_state="+mainThread.getState()+"\n");
             StringBuilder stack = new StringBuilder("SELECTED_MAIN_WAIT_STACK\n");
             for (StackTraceElement frame : mainThread.getStackTrace()) stack.append("    at ").append(frame).append('\n');
@@ -191,8 +198,8 @@ public final class SelectedServices {
             StringBuilder savedStack=new StringBuilder(stack);saveWaitDiagnostic(savedStack.toString());
             for (java.util.Map.Entry<Thread, StackTraceElement[]> entry : Thread.getAllStackTraces().entrySet()) {
                 String threadName=entry.getKey().getName();
-                if (!threadName.equals("android.display") && !threadName.equals("AlarmManager")) continue;
-                stack = new StringBuilder(threadName.equals("AlarmManager") ? "SELECTED_ALARM_NATIVE_WAIT_STACK\n" : "SELECTED_DISPLAY_WAIT_STACK\n");
+                if (!threadName.equals("android.display") && !threadName.equals("AlarmManager") && !threadName.startsWith("Binder:") && !threadName.equals("PackageManager") && !threadName.equals("ActivityManager") && !threadName.equals("linux-markor-installer")) continue;
+                stack = new StringBuilder("SELECTED_THREAD_WAIT_STACK name="+threadName+" state="+entry.getKey().getState()+"\n");
                 for (StackTraceElement frame : entry.getValue()) stack.append("    at ").append(frame).append('\n');
                 System.err.println(stack.toString());
                 savedStack.append(stack);saveWaitDiagnostic(savedStack.toString());
@@ -404,6 +411,9 @@ public final class SelectedServices {
                 call(resourcesType,resources,"setActivityManagerService",new Class<?>[]{activityManager.getClass()},activityManager);
                 call(managerType,manager,"startService",new Class<?>[]{Class.forName("com.android.server.SystemService")},resources);
                 start(manager,managerType,"com.android.server.DropBoxManagerService");
+                // Original Permission Mainline service; GrantPermissionsActivity
+                // consults its real policy instead of a local allow/deny substitute.
+                start(manager,managerType,"com.android.ecm.EnhancedConfirmationService");
                 // Original SystemServer role subsystem precedes input/window policy.
                 Class<?> roleHelperType=Class.forName("com.android.server.role.RoleServicePlatformHelper");
                 Object roleHelper=Class.forName("com.android.server.policy.role.RoleServicePlatformHelperImpl").getConstructor(contextType).newInstance(context);
@@ -444,6 +454,9 @@ public final class SelectedServices {
                 // WMS/InputManager and before phase500/UI activities. ViewRoot
                 // requires this original Binder even without a text editor.
                 start(manager,managerType,"com.android.server.inputmethod.InputMethodManagerService$Lifecycle");
+                // Whole original clipboard. ContentCapture/Autofill are optional
+                // guarded integrations in its source, not invented local services.
+                start(manager,managerType,"com.android.server.clipboard.ClipboardService");
                 Object storageLifecycle=start(manager,managerType,"com.android.server.StorageManagerService$Lifecycle");
                 Class<?> pmInternalType=Class.forName("android.content.pm.PackageManagerInternal");
                 Object pmInternal=call(Class.forName("com.android.server.LocalServices"),null,"getService",new Class<?>[]{Class.class},pmInternalType);
@@ -554,6 +567,9 @@ public final class SelectedServices {
                     output.write(permissionRecord.getBytes(java.nio.charset.StandardCharsets.UTF_8));
                 }
                 call(display.getClass(),display,"systemReady",new Class<?>[]{boolean.class},false);
+                // Original service publishes even when original resources disable
+                // Safety Center; it owns that decision and boot-completed setup.
+                start(manager,managerType,"com.android.safetycenter.SafetyCenterService");
                 if("1".equals(System.getenv("ARCHTV_CHECKPOINT_DIAGNOSTIC")))diagnoseOriginalCheckpoint();
                 Runnable linuxApplicationLoop=() -> {
                     try {

@@ -23,6 +23,12 @@ def dm_names(result):
 assert not command(['losetup','-l','-n']).stdout.strip(),'Another loop workload exists'
 assert not command(['systemctl','list-units','archtv-mc3*','--all','--no-legend']).stdout.strip(),'Another cohort exists'
 integrated_socket=Path(sys.argv[3]) if len(sys.argv)==4 else None
+# Only extend the post-start interaction window; native startup stays300000ms.
+interaction_extension=0
+if integrated_socket:
+ observe_ms=json.loads((payload.parent/'build-options.json').read_text()).get('observe_ms',3000)
+ assert isinstance(observe_ms,int) and 3000<=observe_ms<=180000
+ interaction_extension=max(0,(observe_ms+999)//1000-30)
 (recovery/'before.json').write_text(json.dumps({'phase':'preflight','argv':sys.argv,'boot_id':Path('/proc/sys/kernel/random/boot_id').read_text().strip(),'head':command(['runuser','-u','tv','--','git','-C',str(repo),'rev-parse','HEAD']).stdout.strip(),'pending':command(['runuser','-u','tv','--','git','-C',str(repo),'status','--short']).stdout},indent=2)+'\n')
 os.chown(recovery,1000,1000);os.chown(recovery/'before.json',1000,1000)
 sessions=command(['loginctl','list-sessions','--no-legend']).stdout.strip()
@@ -67,7 +73,7 @@ before['unit']=unit;before['dm_before']=sorted(dm_before);(recovery/'before.json
 started=time.time();log=recovery/'run.log';exit_code=None;cleanup=[]
 try:
     with log.open('x') as stream:
-        result=subprocess.run(['systemd-run','--wait','--pipe','--collect','--unit='+unit,'--service-type=exec','--property=RuntimeMaxSec='+str(350 if integrated_socket else 210),'--property=TimeoutStopSec=5','--property=KillMode=control-group','--property=MemoryMax=4G','--property=MemorySwapMax=1G','--property=CPUQuota=200%','--property=TasksMax='+str(1024 if integrated_socket else 256),*(['--property=OpenFile=/proc/sys/net/core/bpf_jit_enable:archtv-bpf-jit:read-only','--property=OpenFile=/proc/sys/net/core/bpf_jit_kallsyms:archtv-bpf-kallsyms:read-only','--property=OpenFile=/proc/self/ns/net:archtv-host-netns:read-only','--setenv=ARCHTV_HOST_NETNS_INODE='+str(Path('/proc/self/ns/net').stat().st_ino)] if integrated_socket else []),'timeout','--kill-after=5',str(345 if integrated_socket else 205),'setpriv','--inh-caps=-all','--ambient-caps=-all','unshare','--mount','--pid','--fork','--kill-child=SIGKILL','--net','--ipc','--uts','/usr/bin/python',*([str(repo/'reports/android16-package-bootstrap/execute-integrated.py'),str(integrated_socket),str(payload),str(data_store)] if integrated_socket else [str(repo/'reports/android16-apex-bootstrap/execute.py'),'--payload',str(payload),'--data-store',str(data_store),'--observe-logs'])],stdout=stream,stderr=subprocess.STDOUT,timeout=370 if integrated_socket else 230)
+        result=subprocess.run(['systemd-run','--wait','--pipe','--collect','--unit='+unit,'--service-type=exec','--property=RuntimeMaxSec='+str(350+interaction_extension if integrated_socket else 210),'--property=TimeoutStopSec=5','--property=KillMode=control-group','--property=MemoryMax=4G','--property=MemorySwapMax=1G','--property=CPUQuota=200%','--property=TasksMax='+str(1024 if integrated_socket else 256),*(['--property=OpenFile=/proc/sys/net/core/bpf_jit_enable:archtv-bpf-jit:read-only','--property=OpenFile=/proc/sys/net/core/bpf_jit_kallsyms:archtv-bpf-kallsyms:read-only','--property=OpenFile=/proc/self/ns/net:archtv-host-netns:read-only','--setenv=ARCHTV_HOST_NETNS_INODE='+str(Path('/proc/self/ns/net').stat().st_ino)] if integrated_socket else []),'timeout','--kill-after=5',str(345+interaction_extension if integrated_socket else 205),'setpriv','--inh-caps=-all','--ambient-caps=-all','unshare','--mount','--pid','--fork','--kill-child=SIGKILL','--net','--ipc','--uts','/usr/bin/python',*([str(repo/'reports/android16-package-bootstrap/execute-integrated.py'),str(integrated_socket),str(payload),str(data_store)] if integrated_socket else [str(repo/'reports/android16-apex-bootstrap/execute.py'),'--payload',str(payload),'--data-store',str(data_store),'--observe-logs'])],stdout=stream,stderr=subprocess.STDOUT,timeout=370+interaction_extension if integrated_socket else 230)
         exit_code=result.returncode
 finally:
     command(['systemctl','stop',unit+'.service'])

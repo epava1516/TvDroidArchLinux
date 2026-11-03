@@ -8,7 +8,7 @@ hashlib.sha256(b"").digest()
 r=Path(__file__).resolve().parents[2]
 socket=sys.argv[1];payload=Path(sys.argv[2]).resolve();store=Path(sys.argv[3]).resolve()
 observe_ms=json.loads((payload.parent/'build-options.json').read_text()).get('observe_ms',3000)
-assert isinstance(observe_ms,int) and 3000<=observe_ms<=30000
+assert isinstance(observe_ms,int) and 3000<=observe_ms<=180000
 # Materialize the existing graphics adapter, then add the tested APEX boundary.
 recipe=(r/'reports/android16-hwc3-wayland/execute-graphics.py').read_text()
 last="exec(compile(base, '<materialized graphics factory>', 'exec'), {'__name__': '__main__'})"

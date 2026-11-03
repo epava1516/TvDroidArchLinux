@@ -39,7 +39,7 @@ checkpoint_diagnostic='--checkpoint-diagnostic' in sys.argv[2:]
 keymint_component='--keymint-component' in sys.argv[2:]
 software_platform='--software-security' in sys.argv[2:]
 observe_ms=int(next((a.split('=',1)[1] for a in sys.argv[2:] if a.startswith('--observe-ms=')),'3000'))
-assert 3000<=observe_ms<=30000
+assert 3000<=observe_ms<=180000
 keystore_java='--keystore-java-component' in sys.argv[2:] or software_platform
 keystore_component='--keystore-component' in sys.argv[2:] or keystore_java
 assert not (keymint_component and keystore_component)

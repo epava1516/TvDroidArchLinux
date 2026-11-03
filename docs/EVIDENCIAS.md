@@ -1,6 +1,6 @@
 # Índice de evidencias
 
-[147 · creación original de datos privados](../reports/android16-package-bootstrap/original-user-unlock-progress.json), sección private_data_followup147: UUID334186a9, inodeCE3198/DE3201, UID/GID10104, modo700, categorías c104,c256,c512,c768 observadas tras instalación original posterior al desbloqueo. No warnings previos de ruta/inode0 en el log completo. Entrada termina bienvenida y captura DRM muestra solicitud real de almacenamiento. Nativo/exterior0, input11 retirado, host intacto, VT1 y sin loops/dm/FUSE. No permiso inventado, editor ni nota aceptados.
+[151 · permiso y explorador originales](../reports/android16-package-bootstrap/original-user-unlock-progress.json): UUIDc6c8413d, capturas inspeccionadas de Ajustes off/on y Documents real; comando de crear archivo produce FATAL de Markor en KeyguardManager.isDeviceSecure. Fuentes originales Clipboard/ECM/SafetyCenter y Keyguard/Trust fijadas por hash, CLI149 y fallos148/149/150 preservados. Nativo/exterior0 no acredita APK sana. Ambos dispositivos retirados, host intacto, VT1 y sin loops/dm/FUSE. No editor, texto o nota aceptados.
 
 [Seguimiento133](../reports/android16-package-bootstrap/original-user-unlock-progress.json), followup133: nativo0, cancelación explícita y drenaje/cierre recogidos. No prueba la rama nueva de reap normal. Exterior1 preservado por aserción de perfil incorrecta; corrección sólo materializada. No nueva etapa APK aceptada.
 

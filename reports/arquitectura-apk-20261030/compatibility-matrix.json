@@ -156,13 +156,13 @@
         "launch": "not_tested",
         "interface": "not_tested",
         "input": "not_tested",
-        "main_function": "not_tested",
+        "main_function": "demonstrated_failure",
         "persistence": "not_tested",
-        "services": "not_tested",
+        "services": "demonstrated_failure",
         "close": "not_tested",
         "reopen": "not_tested"
       },
-      "reason": "147: install after real original unlock creates CE/DE dirs uid/gid10104 mode700 with real app_data_file categories; no previous ENOENT/inode0 in current log. Real input finishes onboarding and reaches original StoragePermissionActivity. External permission/editor/text/note/save/app-close/reopen/durability still unverified.",
+      "reason": "151: real original Settings permission UI toggled, intact Markor explorer /storage/emulated/0/Documents visible in final Smithay. Create-file action crashes: KeyguardManager null in PasswordStore/NewFileDialog, original trust service absent. No editor/text/note/save/reopen. Native0 is cohort closure, not APK success.",
       "framework_class_link_pass": true,
       "declared_application": "net.gsantner.markor.ApplicationObject",
       "bootstrap_experiment": {
@@ -208,38 +208,45 @@
         },
         "launch": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "e48a8f79a69842f058d839199e0ef384b63c01b957d6c28453964bc900307f58",
+          "record_sha256": "ff0eb38b206b106188b4536ae13d5eb9903b3f219c75a0ae75095f978a962a33",
           "accepted": false,
-          "scope": "Original CE/DE directory creation and onboarding completion to actual storage permission request; no note or full workflow acceptance",
-          "partial_observation": "Previous missing-private-data blocker superseded147; directory metadata is not file persistence, encryption or MAC proof."
+          "scope": "Actual permission flow/explorer, then proven create-file crash due missing KeyguardManager. No complete workflow or security acceptance",
+          "partial_observation": "Markor main-function/services have demonstrated failure; original Clipboard/EnhancedConfirmation missing-manager failures superseded151 in this observed path."
         },
         "services": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "e48a8f79a69842f058d839199e0ef384b63c01b957d6c28453964bc900307f58",
+          "record_sha256": "ff0eb38b206b106188b4536ae13d5eb9903b3f219c75a0ae75095f978a962a33",
           "accepted": false,
-          "scope": "Original CE/DE directory creation and onboarding completion to actual storage permission request; no note or full workflow acceptance",
-          "partial_observation": "Previous missing-private-data blocker superseded147; directory metadata is not file persistence, encryption or MAC proof."
+          "scope": "Actual permission flow/explorer, then proven create-file crash due missing KeyguardManager. No complete workflow or security acceptance",
+          "partial_observation": "Markor main-function/services have demonstrated failure; original Clipboard/EnhancedConfirmation missing-manager failures superseded151 in this observed path."
         },
         "interface": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "e48a8f79a69842f058d839199e0ef384b63c01b957d6c28453964bc900307f58",
+          "record_sha256": "ff0eb38b206b106188b4536ae13d5eb9903b3f219c75a0ae75095f978a962a33",
           "accepted": false,
-          "scope": "Original CE/DE directory creation and onboarding completion to actual storage permission request; no note or full workflow acceptance",
-          "partial_observation": "Previous missing-private-data blocker superseded147; directory metadata is not file persistence, encryption or MAC proof."
+          "scope": "Actual permission flow/explorer, then proven create-file crash due missing KeyguardManager. No complete workflow or security acceptance",
+          "partial_observation": "Markor main-function/services have demonstrated failure; original Clipboard/EnhancedConfirmation missing-manager failures superseded151 in this observed path."
         },
         "input": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "e48a8f79a69842f058d839199e0ef384b63c01b957d6c28453964bc900307f58",
+          "record_sha256": "ff0eb38b206b106188b4536ae13d5eb9903b3f219c75a0ae75095f978a962a33",
           "accepted": false,
-          "scope": "Original CE/DE directory creation and onboarding completion to actual storage permission request; no note or full workflow acceptance",
-          "partial_observation": "Previous missing-private-data blocker superseded147; directory metadata is not file persistence, encryption or MAC proof."
+          "scope": "Actual permission flow/explorer, then proven create-file crash due missing KeyguardManager. No complete workflow or security acceptance",
+          "partial_observation": "Markor main-function/services have demonstrated failure; original Clipboard/EnhancedConfirmation missing-manager failures superseded151 in this observed path."
         },
         "persistence": {
           "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "e48a8f79a69842f058d839199e0ef384b63c01b957d6c28453964bc900307f58",
+          "record_sha256": "ff0eb38b206b106188b4536ae13d5eb9903b3f219c75a0ae75095f978a962a33",
           "accepted": false,
-          "scope": "Original CE/DE directory creation and onboarding completion to actual storage permission request; no note or full workflow acceptance",
-          "partial_observation": "Previous missing-private-data blocker superseded147; directory metadata is not file persistence, encryption or MAC proof."
+          "scope": "Actual permission flow/explorer, then proven create-file crash due missing KeyguardManager. No complete workflow or security acceptance",
+          "partial_observation": "Markor main-function/services have demonstrated failure; original Clipboard/EnhancedConfirmation missing-manager failures superseded151 in this observed path."
+        },
+        "main_function": {
+          "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
+          "record_sha256": "ff0eb38b206b106188b4536ae13d5eb9903b3f219c75a0ae75095f978a962a33",
+          "accepted": false,
+          "scope": "Actual permission flow/explorer, then proven create-file crash due missing KeyguardManager. No complete workflow or security acceptance",
+          "partial_observation": "Markor main-function/services have demonstrated failure; original Clipboard/EnhancedConfirmation missing-manager failures superseded151 in this observed path."
         }
       },
       "runtime_stage_evidence_history": [
