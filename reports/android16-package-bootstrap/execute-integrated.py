@@ -307,7 +307,18 @@ for node in sorted(health_class.iterdir()):
 (out/'health-sysfs.json').write_text(json.dumps(health_sources,indent=2)+'\\n')
 """
 text=text.replace("for p in sorted((r/'dist/aosp16/factory-inputs-3').glob('*.payload.img')):","devices.mount_sysfs(root)\n"+health_mounts+"\nfor p in sorted((r/'dist/aosp16/factory-inputs-3').glob('*.payload.img')):",1)
-text=text.replace("mount('-t','proc','proc',root/'proc')","devices.enable_loop_controls(root,out)\nmount('-t','proc','proc',root/'proc')")
+proc_mount="mount('-t','proc','proc',root/'proc')"
+assert text.count(proc_mount)==1
+host_control_guard="""
+# SysRq is a real global-kernel control, not a PID-namespaced resource.
+# Keep the real inode/label but make ONLY this namespace's alias read-only.
+sysrq=root/'proc/sysrq-trigger';before_sysrq=sysrq.stat()
+mount('--bind',sysrq,sysrq);mount('-o','remount,bind,ro,nosuid,nodev,noexec',sysrq)
+after_sysrq=sysrq.stat();assert (before_sysrq.st_dev,before_sysrq.st_ino)==(after_sysrq.st_dev,after_sysrq.st_ino)
+assert os.statvfs(sysrq).f_flag&os.ST_RDONLY
+(out/'host-control-proc.json').write_text(json.dumps({'path':'/proc/sysrq-trigger','real_inode_preserved':True,'device':after_sysrq.st_dev,'inode':after_sysrq.st_ino,'context':os.getxattr(sysrq,'security.selinux').decode().rstrip(chr(0)),'readonly_mount':True,'scope':'Real global endpoint, namespace-local read-only alias. No fake file or successful write; no host mount changed.'},indent=2)+'\\n')
+"""
+text=text.replace(proc_mount,'devices.enable_loop_controls(root,out)\n'+proc_mount+'\n'+host_control_guard,1)
 text=text.replace("cgbase=Path('/sys/fs/cgroup/system.slice/codex-remote.service/archtv-mc1')", "unit_cgroup=Path('/proc/self/cgroup').read_text().split('0::',1)[1].strip()\nassert unit_cgroup.startswith('/archtv.slice/archtv-apex-') and unit_cgroup.endswith('.service'),unit_cgroup\ncgbase=Path('/sys/fs/cgroup'+unit_cgroup)/'archtv-apex'")
 # Observe the real kernel labels at the same dedicated CG boundary; never
 # relabel host cgroups or infer runtime labeling merely from policy source.

@@ -923,11 +923,46 @@ class LinuxMc1Cohort {
             }
             auto memory_parsed=parser.ParseConfigFile("/system/etc/init/lmkd.rc");
             if(!memory_parsed.ok() || parser.parse_error_count()!=0)return android::base::Error()<<"Original lmkd RC rejected";
+            // Original policy permits LMKD SysRq access, but this runtime does
+            // not own Linux's global kernel. Prove the real endpoint refuses a
+            // write-capable open; never issue a SysRq write or fake success.
+            errno=0;
+            const int sysrq_control=open("/proc/sysrq-trigger",O_WRONLY|O_CLOEXEC);
+            const int sysrq_errno=errno;
+            if(sysrq_control>=0){close(sysrq_control);return android::base::Error()<<"Host SysRq unexpectedly writable from private runtime";}
+            if(sysrq_errno!=EROFS && sysrq_errno!=EACCES && sysrq_errno!=EPERM)
+                return android::base::Error()<<"Host SysRq negative inconclusive: "<<sysrq_errno;
+            std::fprintf(stderr,"HOST_SYSRQ_PRIVATE_WRITE_OPEN_DENIED errno=%d NO_SYSRQ_COMMAND_ISSUED NOT_GENERAL_HOST_ISOLATION\n",sysrq_errno);
             lmkd_=services.FindService("lmkd");
             if(!lmkd_ || lmkd_->args()!=std::vector<std::string>{"/system/bin/lmkd"})return android::base::Error()<<"Unexpected original lmkd executable";
             lmkd_->AddReapCallback([this](const siginfo_t& info){std::fprintf(stderr,"SELECTED_LMKD_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);if(!closing_)manager_failed_=true;});
             if(auto started=lmkd_->Start();!started.ok())return started;
             std::fprintf(stderr,"SELECTED_LMKD_STARTED pid=%d NOT_SOCKET_OR_PRESSURE_ACCEPTANCE\n",lmkd_->pid());
+            // Let the original daemon initialize its inherited control socket;
+            // elapsed time is not readiness. Only the original client reply
+            // below admits progress, and a daemon exit still aborts Wait().
+            const auto lmkd_start_window=std::chrono::steady_clock::now()+std::chrono::milliseconds(500);
+            if(auto waited=Wait(tick,[lmkd_start_window]{return std::chrono::steady_clock::now()>=lmkd_start_window;},2);!waited.ok())return waited;
+            const pid_t original_lmkd_pid=lmkd_->pid();
+            auto reinit=Service::MakeTemporaryOneshotService({"exec","-","system","system","--","/system/bin/lmkd","--reinit"});
+            if(!reinit.ok())return reinit.error();
+            // Same untouched platform client used by original lmkd.rc. The
+            // supported system UID can access the system:system socket without
+            // granting root DAC override or selecting a forged server domain.
+            auto* lmkd_client=reinit->get();
+            if(lmkd_client->uid()!=1000 || lmkd_client->gid()!=1000 || lmkd_client->args()!=std::vector<std::string>{"/system/bin/lmkd","--reinit"})
+                return android::base::Error()<<"Original LMKD client contract mismatch";
+            client_done_=false;client_ok_=false;
+            lmkd_client->AddReapCallback([this](const siginfo_t& info){
+                client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;
+                std::fprintf(stderr,"ORIGINAL_LMKD_CLIENT_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
+            });
+            services.AddService(std::move(*reinit));
+            if(auto started=lmkd_client->ExecStart();!started.ok())return started;
+            if(auto waited=Wait(tick,[this]{return client_done_;},8);!waited.ok())return waited;
+            if(!client_ok_ || !lmkd_->IsRunning() || lmkd_->pid()!=original_lmkd_pid || security_getenforce()!=expected_mode_)
+                return android::base::Error()<<"Original LMKD client/daemon operation failed";
+            std::fprintf(stderr,"ORIGINAL_LMKD_REINIT_REPLY_EXIT0 daemon_pid=%d client_uid=1000 client_gid=1000 NOT_PRESSURE_KILL_OR_FULL_MEMORY_ACCEPTANCE\n",original_lmkd_pid);
             // Complete original storage/codec/overlay backends. The media APEX
             // profile was registered by original perform_apex_config already.
             for(const char* path:{"/system/etc/init/storaged.rc","/system/etc/init/idmap2d.rc"}) {

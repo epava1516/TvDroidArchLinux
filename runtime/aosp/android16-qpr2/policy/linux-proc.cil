@@ -2,6 +2,13 @@
 ; Original Android domain -> proc directory contract; no regular-file access.
 (allow domain linux.proc_t (dir (ioctl read getattr lock open watch watch_reads search)))
 
+; Actual222 LMKD/libpsi cannot traverse /proc/pressure. Its memory/CPU/IO
+; files already retain the original distinct proc_pressure_* SIDs, as do
+; meminfo/vmstat/zoneinfo. Mirror the original proc DIRECTORY contract only;
+; retain original file-level memory RW versus CPU/IO read permissions.
+; PSI writes register per-FD kernel triggers, not global pressure settings.
+(allow domain linux.proc_psi_t (dir (ioctl read getattr lock open watch watch_reads search)))
+
 ; Original pinned platform-with-vendor.cil22448 grants every original domain
 ; proc:lnk_file read/getattr. Linux owns the proc superblock/genfs globally;
 ; mirror that whole original alias contract rather than per-service patches.

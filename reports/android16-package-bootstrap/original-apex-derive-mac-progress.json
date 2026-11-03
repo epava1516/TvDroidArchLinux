@@ -2911,5 +2911,127 @@
       "other_limits": "RGBA_FP16 minigbm allocation unsupported in renderer logs; no presentation/graphics compatibility inferred. Original graceful cohort close still incomplete; external teardown verified. Current profile excludes sevenpackages, no broadcompatibility.",
       "host": "policy40 permissive/loadCOUNT36 after13.013870052s actualenforcing, auditnewloss0/backlog64 restored, VT1/devices unchanged, no owned runtime/loops/DM/FUSE; known41prog58map absent, priornote/CE/DE identity retained; gateabsent and resultconsumed once."
     }
+  },
+  "integrated223_224": {
+    "execution": 224,
+    "build": 224,
+    "policy": 41,
+    "policyload_count": 37,
+    "status": "original_LMKD_PSI_and_client_reinit_pass_private_SysRq_RO_guard_pass_ABI_profile_conflict",
+    "evidence": [
+      {
+        "path": "/home/tv/recuperacion-archtv/29ff4da2-5a54-404b-a85c-b5cb93cc66a6-markor-software-launch/result.json",
+        "sha256": "6386aef754534d1d79f7050f5846ae35f77083e872fddb494fec02f16498bbf0"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/29ff4da2-5a54-404b-a85c-b5cb93cc66a6-markor-software-launch/mac-window.json",
+        "sha256": "297bd967f65573d5d75418e6323fe3cf153048dc197a66e49e1f3e6a55ffd79f"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/29ff4da2-5a54-404b-a85c-b5cb93cc66a6-markor-software-launch/run.log",
+        "sha256": "5d2164e1c23b920053b152557f8416959e98cb6b7d10ba3dc6ad7af03600040a"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/29ff4da2-5a54-404b-a85c-b5cb93cc66a6-markor-software-launch/original-logcat-evidence.json",
+        "sha256": "113e8cb5f6716f7c4aa8c3bbeb8c568f855d609d1666ca3d24a695d9d07dd265"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/29ff4da2-5a54-404b-a85c-b5cb93cc66a6-markor-software-launch/lmkd-psi-client-evidence.json",
+        "sha256": "1b649ee0c19f1718d29f7c05ddafb092ebb76645b4d00be23b0dbd2ca681c313"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/29ff4da2-5a54-404b-a85c-b5cb93cc66a6-markor-software-launch/integration-findings.json",
+        "sha256": "64bf475e66ec2fed10e85182f6cb9f28f643441a6b512221b7189be961be5f0c"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/29ff4da2-5a54-404b-a85c-b5cb93cc66a6-markor-software-launch/host-control-proc.json",
+        "sha256": "5df8c39f7af60360d3355d7bb23f360987c9cf3a6fb07e9d3c16bec35ca0f66b"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/29ff4da2-5a54-404b-a85c-b5cb93cc66a6-markor-software-launch/session-state.json",
+        "sha256": "ef223e05af3a790fd624d06d24bc2455dc2fdac3fb9245634881d07b4f9bd2f6"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/29ff4da2-5a54-404b-a85c-b5cb93cc66a6-markor-software-launch/finite-audit/result.json",
+        "sha256": "d5a2788eadfde1e6376fd24d7cf94e1e118c980941c5f3a92bf13526cc0cb92d"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/29ff4da2-5a54-404b-a85c-b5cb93cc66a6-markor-software-launch/completion-consumer.json",
+        "sha256": "fef8320d2e2827ff8204417531e1fe0e0aba22b1b674c51447b97f93accd0254"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/29ff4da2-5a54-404b-a85c-b5cb93cc66a6-markor-software-launch/bpf-all-known-after.json",
+        "sha256": "753c07d2e68fc187437cec7090e7912e9acf1e80e8f88bdd33d64a5b089e9c25"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/29ff4da2-5a54-404b-a85c-b5cb93cc66a6-markor-software-launch/userdata-after224-close.json",
+        "sha256": "c0d59e6bcb3fefb20c23afbc86c49df4d6b13138137fbb4e2e7ad0f1da2bb55a"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/29ff4da2-5a54-404b-a85c-b5cb93cc66a6-markor-software-launch/wayland-runtime-closed.json",
+        "sha256": "1a37846ea15abef713d9cad91a9bdf80152bb9a05f817108044d2dc03b843388"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/a8447292-6bdc-479c-882a-fe376d7f1898-markor-software-launch/result.json",
+        "sha256": "c3c0948c5286283cf151f2e69729373733a875c58d5fc9812ce8edf3455387e5"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/a8447292-6bdc-479c-882a-fe376d7f1898-markor-software-launch/mac-window.json",
+        "sha256": "8920820a250ce536f6b6836ad7d64cbd24c24443be71d59da71d624d3dc5e94e"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/a8447292-6bdc-479c-882a-fe376d7f1898-markor-software-launch/completion-consumer.json",
+        "sha256": "e032eb6049830ec92fff28435beca5349b745b1b0a8db5c1739f4209e7fe836b"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/a8447292-6bdc-479c-882a-fe376d7f1898-markor-software-launch/bpf-all-known-after.json",
+        "sha256": "9476fab9dff1d862bb0b4516efd1613828581433d57d1bcd3d7ffc37c5d746ef"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/a8447292-6bdc-479c-882a-fe376d7f1898-markor-software-launch/userdata-after223-close.json",
+        "sha256": "d6c0d2cc454687b1a76849a9e6f0949964d9db63db9f305bcab79c22641cfefa"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/a8447292-6bdc-479c-882a-fe376d7f1898-markor-software-launch/sysrq-host-before.json",
+        "sha256": "e66292fcaf2e1095528db9db6573bff831415836339278ce7ef13e223292ed38"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/a8447292-6bdc-479c-882a-fe376d7f1898-markor-software-launch/host-control-findings.json",
+        "sha256": "03486a519c73f90f09c9c6c1eebeec17753ce143539d1bf54dfe06a74cb0e0e3"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/a8447292-6bdc-479c-882a-fe376d7f1898-markor-software-launch/memory-endpoint-preflight.json",
+        "sha256": "0f5664736a6534a418b17c0fd805cf18edc29ee481e514a42c9ba4bd833c912c"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after223-host.json",
+        "sha256": "769c77ee1db6cb4550940af0b85bb903da00333af0b2765287be3f029f437758"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after224-host.json",
+        "sha256": "80798d0c5287dd8676e69fc2ff88592a7354524faaaa0bc777d0c3da25962bc3"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load41/after-load.json",
+        "sha256": "8a3730fd6103de204372186a7a9d13b988ad65319e0ce439b21413eeb5a40e4c"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load41/candidate.json",
+        "sha256": "8ff6aaffaec28df5a21e17a9a50845704d3cb9a34f833857e1bf26315f6c7ff5"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/selected-platform-policy-41/compiler.json",
+        "sha256": "fac7dff9cd689301aee6dfd931a90a34720c266ecb8b9baada6972b37e4585ad"
+      }
+    ],
+    "findings": {
+      "status": "original_LMKD_PSI_and_client_reinit_pass_private_SysRq_RO_guard_pass_ABI_profile_conflict",
+      "223": "Original LMKD PSI setup+reinit client reply pass. Original sysrq label/writepermission exposure discovered from metadata/source, not observed SysRq call. Proposal41 assumption unmapped was wrong, superseded by host-control-findings and224 RO guard.",
+      "224": "Same policy41, native224 protects only private namespace real SysRq alias; actualwrite-open EROFS and hostmetadata unchanged. Original daemon registers PSI monitors twice and original client UID1000 exits0 with validreply, daemon samePID alive afterreply. Cohort exits later at independentABI guard; LMKD SIGKILL is teardown, not observed spontaneousexit.",
+      "preserved_controls": "Only /proc/pressure directory originalrole added; originalmemoryRW CPU/IOread, filelabels, hostfilepermissions and all originalneverallows retained. No boot_completed or manualreadiness. No SysRq commands. Watchdog source reviewed selects registered victim; stale sepolicy rebootcomment not evidence of implementation.",
+      "next": "Correct own property profile source/ownership for actual single x86_64 Zygote, retaining original propertyloader+guards. Private stock system_ext/etc/build.prop exists and root/system_ext symlink points /system/system_ext; inspect originalLoadPartitionProperties/order and preserve base bytes. System-owned ABI/ro.zygote and shaderconfiguration must not masquerade as vendor-owned settings. Then original Zygote/system_server fork and fullMarkor underMAC. No init->systemserver directexec grant.",
+      "limits": "PSI registration/reinit only, not pressurekill/victim isolation/fullmemory; v2 JoinCgroup warning and globalPSI/cgroupbudget semantics remain. No pixels, appstage or broadcompatibility. WholeR1, ARM/GMS/DRM open.",
+      "host": "Permissive41/loadCOUNT37, audit0/backlog64/newloss0, VT1/devices/SysRqhostmetadata unchanged, no ownedruntime/loops/DM/FUSE; known41prog58map absent and priornote/CE/DE unchanged. Resultactive-owned consumed once, gateabsent."
+    }
   }
 }

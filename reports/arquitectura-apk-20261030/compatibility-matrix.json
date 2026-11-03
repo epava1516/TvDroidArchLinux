@@ -416,13 +416,13 @@
         "scope": "Exact Markorv164 Markdown note created163 survives complete cohort teardown and original subsystems167; actual bytes, same UID/inodes/MCS, original install/force-stop/relaunch and real single pointer opens editor.167 native/exterior0. Not host reboot/power loss, FBE/MAC, graceful close, arbitrary upgrade or general APK compatibility."
       },
       "runtime_security_observation": {
-        "candidate": 222,
-        "status": "private_APK_view_complete_negative_and_positive_under_MAC_LMKD_PSI_denied",
+        "candidate": 224,
+        "status": "original_LMKD_PSI_and_client_reinit_pass_private_SysRq_RO_guard_pass_ABI_profile_conflict",
         "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-        "record_sha256": "8b626d81315915a697212dbaddf675ba7fc3efc30a2132dc37818cf9b70e03ea",
-        "scope": "Seven original-profile private views pass metadata/hash/context/RO under enforcing and genericLinuxmount denied. Original LMKD/storaged exec reached, PSIsecuritydenial and v1fallbackunsupported stopsbootstrap. No Java/pixels/APK stage underMAC. Prior167 permissive note intact.",
+        "record_sha256": "ac914ee008353c202977f878b4c06860ce65f5583b126986d8f73438519debd6",
+        "scope": "Original PSI registrations and original --reinit client UID1000 reply0; daemon survives reply. Real SysRq privateRO/errno30 and hostmetadata unchanged. ABIprofile source mismatch stops next stage. No app/pixels/pressurekill/fullR1 acceptance; previous167 permissive note intact.",
         "r1_mac": "open",
-        "host_after": "permissive40/loadCOUNT36; auditnewloss0, no owned resources,41/58known BPF absent, priornote/CE/DE unchanged"
+        "host_after": "permissive41/loadCOUNT37, auditnewloss0/no ownedresources, known41/58 BPF absent, prioruserdata retained"
       },
       "runtime_security_observation_history": [
         {
@@ -559,6 +559,15 @@
           "scope": "Original SF/AIDL queries0/display0 log under enforcing; allocation memfd failure no longer reproduced. No pixels/new APK stage. Private selected package mount and SF software JIT execmem denied. Prior167 permissive note remains historical.",
           "r1_mac": "open",
           "host_after": "permissive35/loadCOUNT32, auditnewloss0; no owned resources, known41/58 absent and prior note/CE/DE intact"
+        },
+        {
+          "candidate": 222,
+          "status": "private_APK_view_complete_negative_and_positive_under_MAC_LMKD_PSI_denied",
+          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "record_sha256": "8b626d81315915a697212dbaddf675ba7fc3efc30a2132dc37818cf9b70e03ea",
+          "scope": "Seven original-profile private views pass metadata/hash/context/RO under enforcing and genericLinuxmount denied. Original LMKD/storaged exec reached, PSIsecuritydenial and v1fallbackunsupported stopsbootstrap. No Java/pixels/APK stage underMAC. Prior167 permissive note intact.",
+          "r1_mac": "open",
+          "host_after": "permissive40/loadCOUNT36; auditnewloss0, no owned resources,41/58known BPF absent, priornote/CE/DE unchanged"
         }
       ],
       "runtime_security_history": [
