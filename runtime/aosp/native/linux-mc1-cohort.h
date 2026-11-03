@@ -775,14 +775,45 @@ class LinuxMc1Cohort {
             char* raw_context=nullptr;
             if(getfilecon(dir.c_str(),&raw_context)<0)return android::base::Error()<<"Missing original directory label";
             std::string context(raw_context);freecon(raw_context);
-            if(mount("archtv-initial-apk-profile",dir.c_str(),"tmpfs",MS_NOSUID|MS_NODEV|MS_NOEXEC,"size=4096,mode=0755")!=0 ||
-               setfilecon(dir.c_str(),context.c_str())!=0 ||
-               mount(nullptr,dir.c_str(),nullptr,MS_REMOUNT|MS_RDONLY|MS_NOSUID|MS_NODEV|MS_NOEXEC,"size=4096,mode=0755")!=0)
+            // The shared host kernel defaults tmpfs to Linux's filesystem SID.
+            // This fresh private view belongs to Android; retain the original
+            // directory label atomically at mount, not a later relabel grant.
+            if(context.empty() || context.find_first_of(",\"\r\n")!=std::string::npos)
+                return android::base::Error()<<"Invalid original private APK mount context";
+            const int enforcing=security_getenforce();
+            if(enforcing<0)return android::base::ErrnoError()<<"Cannot determine private mount MAC mode";
+            if(count==0 && enforcing==1) {
+                // Check the boundary on the actual private target: admitting
+                // Android fscontext must not admit a generic Linux mount.
+                errno=0;
+                const int unlabelled=mount("archtv-private-negative",dir.c_str(),"tmpfs",MS_RDONLY|MS_NOSUID|MS_NODEV|MS_NOEXEC,"size=4096,mode=0755");
+                const int denied_errno=errno;
+                if(unlabelled==0) {
+                    const int cleanup=umount2(dir.c_str(),MNT_DETACH);
+                    std::fprintf(stderr,"PRIVATE_APK_GENERIC_FS_UNEXPECTED cleanup=%d errno=%d\n",cleanup,cleanup<0?errno:0);
+                    return android::base::Error()<<"Generic Linux private mount unexpectedly admitted";
+                }
+                if(denied_errno!=EACCES && denied_errno!=EPERM)
+                    return android::base::Error()<<"Unexpected private mount negative result: "<<denied_errno;
+                std::fprintf(stderr,"PRIVATE_APK_GENERIC_FS_DENIED errno=%d NOT_FULL_ISOLATION_ACCEPTANCE\n",denied_errno);
+            }
+            char directory_mode[16];std::snprintf(directory_mode,sizeof(directory_mode),"%o",static_cast<unsigned>(directory.st_mode&07777));
+            const std::string mount_options="size=4096,mode="+std::string(directory_mode)+",uid="+std::to_string(directory_uid)+",gid="+std::to_string(directory_gid)+",fscontext=u:object_r:archtv_apk_view_fs:s0,rootcontext="+context;
+            if(mount("archtv-initial-apk-profile",dir.c_str(),"tmpfs",MS_NOSUID|MS_NODEV|MS_NOEXEC,mount_options.c_str())!=0 ||
+               mount(nullptr,dir.c_str(),nullptr,MS_REMOUNT|MS_RDONLY|MS_NOSUID|MS_NODEV|MS_NOEXEC,nullptr)!=0)
                 return android::base::ErrnoError()<<"Private selected APK directory mount failed: "<<package;
+            char* mounted_context=nullptr;
+            if(getfilecon(dir.c_str(),&mounted_context)<0)return android::base::Error()<<"Cannot verify private APK root context";
+            const bool same_context=context==mounted_context;freecon(mounted_context);
+            if(!same_context)return android::base::Error()<<"Private APK root context changed: "<<package;
+            struct stat mounted_directory{};
+            if(lstat(dir.c_str(),&mounted_directory)!=0 || mounted_directory.st_uid!=directory_uid || mounted_directory.st_gid!=directory_gid ||
+               (mounted_directory.st_mode&07777)!=(directory.st_mode&07777))
+                return android::base::Error()<<"Private APK root ownership or mode changed: "<<package;
             struct statvfs view{};errno=0;
             if(access(apk.c_str(),F_OK)==0 || errno!=ENOENT || statvfs(dir.c_str(),&view)!=0 || !(view.f_flag&ST_RDONLY))
                 return android::base::Error()<<"Selected APK remains available or view writable: "<<package;
-            std::fprintf(stderr,"LINUX_APK_VIEW_EXCLUDED package=%s original=%s sha256=%s bytes=%llu readonly=1 NOT_FEATURE_COMPATIBILITY\n",package.c_str(),apk.c_str(),actual.c_str(),static_cast<unsigned long long>(bytes));
+            std::fprintf(stderr,"LINUX_APK_VIEW_EXCLUDED package=%s original=%s sha256=%s bytes=%llu readonly=1 uid=%u gid=%u mode=%o inode_context=%s NOT_FEATURE_COMPATIBILITY\n",package.c_str(),apk.c_str(),actual.c_str(),static_cast<unsigned long long>(bytes),mounted_directory.st_uid,mounted_directory.st_gid,static_cast<unsigned>(mounted_directory.st_mode&07777),context.c_str());
             ++count;
         }
         if(count!=7)return android::base::Error()<<"Unexpected selected initial APK view size";

@@ -416,13 +416,13 @@
         "scope": "Exact Markorv164 Markdown note created163 survives complete cohort teardown and original subsystems167; actual bytes, same UID/inodes/MCS, original install/force-stop/relaunch and real single pointer opens editor.167 native/exterior0. Not host reboot/power loss, FBE/MAC, graceful close, arbitrary upgrade or general APK compatibility."
       },
       "runtime_security_observation": {
-        "candidate": 217,
-        "status": "original_heap_profile_mapper_role_and_SF_Binder_query_pass_private_APK_mount_denied",
+        "candidate": 222,
+        "status": "private_APK_view_complete_negative_and_positive_under_MAC_LMKD_PSI_denied",
         "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-        "record_sha256": "c9aa6cdc96b6eede36cfd98e7d4994a491da6f3c5f5f9bd99c0d28b13bbf6b3a",
-        "scope": "Original SF/AIDL queries0/display0 log under enforcing; allocation memfd failure no longer reproduced. No pixels/new APK stage. Private selected package mount and SF software JIT execmem denied. Prior167 permissive note remains historical.",
+        "record_sha256": "8b626d81315915a697212dbaddf675ba7fc3efc30a2132dc37818cf9b70e03ea",
+        "scope": "Seven original-profile private views pass metadata/hash/context/RO under enforcing and genericLinuxmount denied. Original LMKD/storaged exec reached, PSIsecuritydenial and v1fallbackunsupported stopsbootstrap. No Java/pixels/APK stage underMAC. Prior167 permissive note intact.",
         "r1_mac": "open",
-        "host_after": "permissive35/loadCOUNT32, auditnewloss0; no owned resources, known41/58 absent and prior note/CE/DE intact"
+        "host_after": "permissive40/loadCOUNT36; auditnewloss0, no owned resources,41/58known BPF absent, priornote/CE/DE unchanged"
       },
       "runtime_security_observation_history": [
         {
@@ -550,6 +550,15 @@
           "scope": "8.654s actual enforcing, original SF display0 connects. Allocation Binder memfd denied, no pixels or APK stage; original generic DMABUF heap build option omitted. Prior167 permissive APK note persistence intact.",
           "r1_mac": "open",
           "host_after": "permissive policy35/loadCOUNT32, auditnewloss0; owned resources closed, known41/58 absent and prior userdata retained"
+        },
+        {
+          "candidate": 217,
+          "status": "original_heap_profile_mapper_role_and_SF_Binder_query_pass_private_APK_mount_denied",
+          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "record_sha256": "c9aa6cdc96b6eede36cfd98e7d4994a491da6f3c5f5f9bd99c0d28b13bbf6b3a",
+          "scope": "Original SF/AIDL queries0/display0 log under enforcing; allocation memfd failure no longer reproduced. No pixels/new APK stage. Private selected package mount and SF software JIT execmem denied. Prior167 permissive note remains historical.",
+          "r1_mac": "open",
+          "host_after": "permissive35/loadCOUNT32, auditnewloss0; no owned resources, known41/58 absent and prior note/CE/DE intact"
         }
       ],
       "runtime_security_history": [

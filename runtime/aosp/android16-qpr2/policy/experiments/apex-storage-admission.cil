@@ -196,3 +196,39 @@
 (allow hal_graphics_composer_default archtv_wayland_runtime_file (file (read write getattr map)))
 (neverallow appdomain archtv_wayland_runtime_file (file (open read write map)))
 (neverallow appdomain archtv_wayland_runtime_dir (dir (search open write)))
+
+; Actual217 software RenderEngine uses the explicitly selected original
+; ANGLE/SwiftShader LLVM JIT inside SurfaceFlinger. Original Reactor LLVMJIT
+; requests executable anonymous code pages; this device-profile adaptation
+; permits execmem in that one daemon, not Android apps or host domains.
+; It is broader than a particular JIT page and does not prove W^X/isolation.
+; Original neverallow execstack/execheap/execmod controls remain unchanged.
+(allow surfaceflinger self (process (execmem)))
+
+; Actual218 fscontext mount requires relabelfrom of the new superblock's
+; default Linux SID before assigning the original AOSP tmpfs SID. Linux6.18
+; may_context_mount_sb_relabel checks FROM then TO; bad_option rejects
+; changing security options/SID of an already initialized superblock.
+; This is not permission to mount a filesystem retaining the host SID.
+; Actual integration must verify that generic mount denial remains.
+(allow init linux.tmpfs_t (filesystem (relabelfrom)))
+(neverallow init linux.tmpfs_t (filesystem (mount)))
+; Original init.te288..309 explicitly reserves contextmount_type for
+; device-specific read-only context mounts. Original domain.te802..811
+; forbids relabelto on generic fs_type (including tmpfs); failed candidate38
+; preserves that rejection. Use this extension point for the fresh private
+; empty APK view only. Original init lifecycle/TO and file association rules
+; now apply as a complete role, without changing global tmpfs attributes.
+(type archtv_apk_view_fs)
+(roletype object_r archtv_apk_view_fs)
+(typeattributeset fs_type (archtv_apk_view_fs))
+(typeattributeset contextmount_type (archtv_apk_view_fs))
+; AV review221 of the compiled baseline shows that the original init
+; fs_type-minus-debugfs expansion is a frozen concrete set. Adding this
+; type cannot retroactively extend that generated set. Reify the complete
+; needed lifecycle on this private FS only, not on host filesystem types.
+(allow init archtv_apk_view_fs (filesystem (mount remount unmount getattr relabelfrom relabelto)))
+; Original file.te228 associates file_type inodes with tmpfs. This private
+; read-only replacement likewise retains the original APK-directory labels.
+; No dev_type association or inode write/create permission is introduced.
+(allow file_type archtv_apk_view_fs (filesystem (associate)))

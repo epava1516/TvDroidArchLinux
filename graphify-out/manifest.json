@@ -282,9 +282,9 @@
     "semantic_hash": ""
   },
   "ROADMAP.md": {
-    "mtime": 1793746610.21548,
-    "seen": 1793746619.3518562,
-    "ast_hash": "5b4be1ac0d8137467836d6432d589fc1",
+    "mtime": 1793748792.5175169,
+    "seen": 1793748808.3138046,
+    "ast_hash": "9bf0a8e9c0e086d7ae4356843d1442ef",
     "semantic_hash": ""
   },
   "THIRD_PARTY.md": {
@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793746610.2079542,
-    "seen": 1793746619.3535573,
-    "ast_hash": "6c017e4b5b4f5b6e26e7931795b434d2",
+    "mtime": 1793748792.4983377,
+    "seen": 1793748808.315641,
+    "ast_hash": "81b0660fc163f4239b5c555933b073d7",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793746610.2041333,
-    "seen": 1793746619.3540761,
-    "ast_hash": "39588e9617f236c678c7f4d95bda9560",
+    "mtime": 1793748792.4933054,
+    "seen": 1793748808.316094,
+    "ast_hash": "743b5eae97062ddbf945668bc54a1937",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793746610.2141294,
-    "seen": 1793746619.3550029,
-    "ast_hash": "67fde64d7f6c8bcd05b63696cdd760e9",
+    "mtime": 1793748792.514306,
+    "seen": 1793748808.316729,
+    "ast_hash": "a6dcfcb5fdcd25fa1adb7c00db19b483",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -816,9 +816,9 @@
     "semantic_hash": ""
   },
   "docs/CONTRATO-APK.md": {
-    "mtime": 1793746610.2096193,
-    "seen": 1793746619.3538477,
-    "ast_hash": "3bf138c8abe000186a513c448c3de591",
+    "mtime": 1793748792.5032752,
+    "seen": 1793748808.3159032,
+    "ast_hash": "4b787fc11762ab897124344fa1d5c989",
     "semantic_hash": ""
   },
   "runtime/apk/README.md": {
@@ -1716,9 +1716,9 @@
     "semantic_hash": ""
   },
   "docs/EVIDENCIAS.md": {
-    "mtime": 1793746610.2120817,
-    "seen": 1793746619.354233,
-    "ast_hash": "ded1d221dadf5d8fc25a6959a87bf99d",
+    "mtime": 1793748792.510259,
+    "seen": 1793748808.3162265,
+    "ast_hash": "9f48c3dc644026b1da12ae8d5e9d8b32",
     "semantic_hash": ""
   },
   "fixtures/aosp-framework-space/FrameworkSpaceProbe.java": {
@@ -1728,9 +1728,9 @@
     "semantic_hash": ""
   },
   "docs/COMPATIBILIDAD-APK.md": {
-    "mtime": 1793746610.2103162,
-    "seen": 1793746619.3536415,
-    "ast_hash": "49fb9d7f71fefb4bbc7daad276a67e91",
+    "mtime": 1793748792.5053113,
+    "seen": 1793748808.31571,
+    "ast_hash": "3c31bb301f3647e61caca76f115dba40",
     "semantic_hash": ""
   },
   "fixtures/aosp-window-service/ServiceRegistryChecks.java": {
@@ -1974,9 +1974,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-mc1-cohort.h": {
-    "mtime": 1793743708.6810606,
-    "seen": 1793744931.3603702,
-    "ast_hash": "f3ca15dba83ed328a008ba848010846b",
+    "mtime": 1793748397.9448502,
+    "seen": 1793748808.3017492,
+    "ast_hash": "a9b803fdbd88ad7d294dc40037f0ef3a",
     "semantic_hash": ""
   },
   "fixtures/aosp-wayland-output/client.cpp": {
