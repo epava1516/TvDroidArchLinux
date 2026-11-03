@@ -3,7 +3,7 @@
 from pathlib import Path
 import json,subprocess,shutil,hashlib,sys
 r=Path(__file__).resolve().parents[2];out=(r/sys.argv[1]).resolve();out.mkdir()
-tracked_inputs=['Cargo.toml','Cargo.lock','crates/archtv-core/Cargo.toml',*[str(p.relative_to(r)) for p in sorted((r/'crates/archtv-core/src').rglob('*.rs'))],'crates/archtv-core/examples/native_supervisor.rs','reports/android16-package-bootstrap/execute-integrated.py','reports/android16-package-bootstrap/integrated-session.sh','reports/android16-apex-bootstrap/run.py','reports/android16-package-bootstrap/build-platform-overlay.py','tools/apk/SignPlatformOverlay.java','runtime/aosp/platform-overlay/AndroidManifest.xml','runtime/aosp/platform-overlay/res/values/config.xml','runtime/aosp/platform-overlay/overlay-config.xml','reports/android16-apex-bootstrap/devices.py','runtime/aosp/linux-services/initial-apk-profile.json','runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java','runtime/aosp/linux-services/install-markor.sh','runtime/aosp/native/linux-property-worker.cpp','runtime/aosp/native/linux-mc1-cohort.h','reports/android16-package-bootstrap/build-integrated.py','runtime/aosp/android16-qpr2/patches/0004-linux-admitted-lazy-services.patch','fixtures/aosp-keymint-software/SoftwareCryptoProbe.cpp','runtime/aosp/native/linux-keymint-service.cpp','reports/android16-package-bootstrap/build-keymint-software.py','fixtures/aosp-keystore2-software/BinderClient.rs','runtime/aosp/android16-qpr2/patches/keystore2-linux-software.patch','fixtures/aosp-keystore2-software/OriginalJavaProviderProbe.java','runtime/aosp/android16-qpr2/patches/framework-keystore-linux-software.patch','tools/aosp/KeystoreFrameworkProfilePlan.java','tools/aosp/build_software_keystore_framework.py','reports/android16-package-bootstrap/build-keystore-java-probe.py']
+tracked_inputs=['Cargo.toml','Cargo.lock','crates/archtv-core/Cargo.toml',*[str(p.relative_to(r)) for p in sorted((r/'crates/archtv-core/src').rglob('*.rs'))],'crates/archtv-core/examples/native_supervisor.rs','reports/android16-package-bootstrap/execute-integrated.py','reports/android16-package-bootstrap/integrated-session.sh','reports/android16-apex-bootstrap/run.py','reports/android16-package-bootstrap/build-platform-overlay.py','tools/apk/SignPlatformOverlay.java','runtime/aosp/platform-overlay/AndroidManifest.xml','runtime/aosp/platform-overlay/res/values/config.xml','runtime/aosp/platform-overlay/overlay-config.xml','reports/android16-apex-bootstrap/devices.py','runtime/aosp/linux-services/initial-apk-profile.json','runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java','runtime/aosp/linux-services/org/archtv/aosplinux/ServiceLauncher.java','runtime/aosp/linux-services/install-markor.sh','runtime/aosp/native/linux-property-worker.cpp','runtime/aosp/native/linux-mc1-cohort.h','reports/android16-package-bootstrap/build-integrated.py','runtime/aosp/android16-qpr2/patches/0004-linux-admitted-lazy-services.patch','fixtures/aosp-keymint-software/SoftwareCryptoProbe.cpp','runtime/aosp/native/linux-keymint-service.cpp','reports/android16-package-bootstrap/build-keymint-software.py','fixtures/aosp-keystore2-software/BinderClient.rs','runtime/aosp/android16-qpr2/patches/keystore2-linux-software.patch','fixtures/aosp-keystore2-software/OriginalJavaProviderProbe.java','runtime/aosp/android16-qpr2/patches/framework-keystore-linux-software.patch','tools/aosp/KeystoreFrameworkProfilePlan.java','tools/aosp/build_software_keystore_framework.py','reports/android16-package-bootstrap/build-keystore-java-probe.py','reports/android16-package-bootstrap/build-gatekeeper-software.py']
 source_hashes={n:hashlib.sha256((r/n).read_bytes()).hexdigest() for n in tracked_inputs}
 (out/'source-inputs.json').write_text(json.dumps(source_hashes,indent=2)+'\n')
 overlay=r/'dist/aosp16/platform-overlay-build-2'
@@ -27,11 +27,15 @@ rc=rc.replace('    group system graphics\n','    group system graphics net_bw_st
 lines=rc.splitlines();lines[0]='service archtv-selected-services /system/bin/app_process64 -Xmx768m -Xnoimage-dex2oat /system/bin --application --nice-name=archtv-selected-services org.archtv.aosplinux.ServiceLauncher --packages'
 checkpoint_diagnostic='--checkpoint-diagnostic' in sys.argv[2:]
 keymint_component='--keymint-component' in sys.argv[2:]
-keystore_java='--keystore-java-component' in sys.argv[2:]
+software_platform='--software-security' in sys.argv[2:]
+keystore_java='--keystore-java-component' in sys.argv[2:] or software_platform
 keystore_component='--keystore-component' in sys.argv[2:] or keystore_java
 assert not (keymint_component and keystore_component)
-experiment_kind='keystore-java-component' if keystore_java else 'keystore-component' if keystore_component else ('keymint-component' if keymint_component else 'markor-launch')
-(out/'build-options.json').write_text(json.dumps({'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component,'experiment_kind':experiment_kind},indent=2)+'\n')
+if software_platform:
+ lines[0]=lines[0].replace('-Xmx768m','-Xmx512m')
+ lines.append('    setenv ARCHTV_SOFTWARE_SECURITY_PROFILE software-platform-v1')
+experiment_kind='markor-software-launch' if software_platform else 'keystore-java-component' if keystore_java else 'keystore-component' if keystore_component else ('keymint-component' if keymint_component else 'markor-launch')
+(out/'build-options.json').write_text(json.dumps({'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component and not software_platform,'software_security_platform':software_platform,'experiment_kind':experiment_kind},indent=2)+'\n')
 if checkpoint_diagnostic:lines.append('    setenv ARCHTV_CHECKPOINT_DIAGNOSTIC 1')
 lines=[l for l in lines if not any(l.startswith('    setenv '+n+' ') for n in ['BOOTCLASSPATH','DEX2OATBOOTCLASSPATH','SYSTEMSERVERCLASSPATH','STANDALONE_SYSTEMSERVER_JARS'])];(entry/'selected-services.rc').write_text('\n'.join(lines)+'\n')
 old=r/'dist/aosp16/apex-cohort-build-6';commands=[]
@@ -106,8 +110,33 @@ if keystore_component:
  for target,source in [('/vendor/etc/archtv-keystore-component',profile),('/vendor/etc/init/archtv-keystore-software.rc',out/'keystore.rc'),('/vendor/etc/init/archtv-keymint-software.rc',out/'keymint.rc'),('/vendor/etc/vintf/manifest/archtv-software-keymint.xml',manifest),('/vendor/etc/selinux/vendor_service_contexts',contexts)]:
   vendor['files'][target]={'source':str(source),'context':'u:object_r:vendor_configs_file:s0','mode':0o444}
  (out/'keystore-component-inputs.json').write_text(json.dumps({'native':native_inputs,'scope':'Exact candidate bytes and original contracts, not execution/keys/MAC/APK acceptance.'},indent=2)+'\n')
+ if software_platform:
+  gatekeeper=r/'dist/aosp16/gatekeeper-software-build-2'
+  gatekeeper_build=json.loads((gatekeeper/'build.json').read_text());assert gatekeeper_build['terminal']
+  gatekeeper_binary=gatekeeper/'android.hardware.gatekeeper-service.nonsecure'
+  assert hashlib.sha256(gatekeeper_binary.read_bytes()).hexdigest()==gatekeeper_build['binary_sha256']
+  for item in gatekeeper_build['sources']:assert hashlib.sha256(Path(item['path']).read_bytes()).hexdigest()==item['sha256']
+  stripped=out/'archtv-gatekeeper-software';run(['objcopy','--strip-debug',str(gatekeeper_binary),str(stripped)])
+  native_inputs['archtv-gatekeeper-software']={'source':str(gatekeeper_binary),'source_sha256':gatekeeper_build['binary_sha256'],'deployed_sha256':hashlib.sha256(stripped.read_bytes()).hexdigest(),'transformation':'objcopy --strip-debug; original complete GateKeeper/SharedSecret service'}
+  vendor['files']['/bin/archtv-gatekeeper-software']={'source':str(stripped),'context':'u:object_r:hal_gatekeeper_default_exec:s0','mode':0o755}
+  source=Path('/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/gatekeeper-aidl-original/source/hardware/interfaces/gatekeeper/aidl/software')
+  original_rc=(source/'android.hardware.gatekeeper-service.nonsecure.rc').read_text()
+  original_entry='/apex/com.android.hardware.gatekeeper/bin/hw/android.hardware.gatekeeper-service.nonsecure'
+  assert original_rc.count(original_entry)==1
+  rc_path=out/'gatekeeper.rc';rc_path.write_text(original_rc.replace(original_entry,'/archtv-android/archtv-gatekeeper-software'))
+  marker=out/'software-platform-profile';marker.write_text('software-platform-v1\n')
+  cf=Path('/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/cuttlefish-vendor-policy-original/source/device/google/cuttlefish/shared/sepolicy/vendor/service_contexts')
+  mapping=[line for line in cf.read_text().splitlines() if line.startswith('android.hardware.security.sharedsecret.ISharedSecret/gatekeeper ')]
+  assert len(mapping)==1 and mapping[0].split()[1]=='u:object_r:hal_gatekeeper_service:s0'
+  contexts.write_text(contexts.read_text()+mapping[0]+'\n')
+  for target,src in [('/vendor/etc/init/archtv-gatekeeper-software.rc',rc_path),('/vendor/etc/archtv-software-security',marker),('/vendor/etc/vintf/manifest/gatekeeper.xml',source/'android.hardware.gatekeeper-service.nonsecure.xml'),('/vendor/etc/vintf/manifest/gatekeeper-sharedsecret.xml',source/'android.hardware.security.sharedsecret-gatekeeper.xml')]:
+   vendor['files'][target]={'source':str(src),'context':'u:object_r:vendor_configs_file:s0','mode':0o444}
+  # Same immutable native input record now covers all four actual service/client files.
+  (out/'keystore-component-inputs.json').write_text(json.dumps({'native':native_inputs,'scope':'Whole original services; entry alias/VINTF adapted outside original vendor APEX, not invented APEX activation or authentication proof'},indent=2)+'\n')
+  (out/'gatekeeper-inputs.json').write_text(json.dumps({'original_build':str(gatekeeper/'build.json'),'binary_sha256':gatekeeper_build['binary_sha256'],'contexts_source':str(cf),'source_service_directory':str(source),'scope':'Original RC identity/groups; only exec entry moved from vendor APEX to Linux private alias. No additional APEX inventory claimed.'},indent=2)+'\n')
+
  if keystore_java:
-  framework=r/'dist/aosp16/keystore-framework-profile-1'
+  framework=r/('dist/aosp16/keystore-framework-profile-2' if software_platform else 'dist/aosp16/keystore-framework-profile-1')
   framework_build=json.loads((framework/'build.json').read_text())
   assert hashlib.sha256((framework/'framework.jar').read_bytes()).hexdigest()==framework_build['output']['sha256']
   assert hashlib.sha256((r/'runtime/aosp/android16-qpr2/patches/framework-keystore-linux-software.patch').read_bytes()).hexdigest()==framework_build['source_patch_sha256']
@@ -122,6 +151,12 @@ if keystore_component:
   (out/'keystore-java-inputs.json').write_text(json.dumps({'framework_sha256':framework_build['output']['sha256'],'original_framework_sha256':framework_build['original']['sha256'],'probe_sha256':probe_build['jar_sha256'],'scope':'Experimental original framework binary profile, not source rebuild or runtime acceptance'},indent=2)+'\n')
 
 
+if software_platform:
+ # Original AndroidRuntime product-property contract; these are private guest
+ # properties, not host RAM changes. Apps retain128MiB growth limit; original
+ # system-server entry clears growth limit up to bounded512MiB maximum.
+ base_props='\n'.join(line for line in base_props.splitlines() if not line.startswith(('dalvik.vm.heapsize=','dalvik.vm.heapgrowthlimit=')))
+ base_props+='\ndalvik.vm.heapsize=512m\ndalvik.vm.heapgrowthlimit=128m\n'
 (out/'linux-build.prop').write_text(base_props+'\nro.product.cpu.abilist=x86_64\nro.product.cpu.abilist64=x86_64\nro.product.cpu.abilist32=\n')
 vendor['files']['/vendor/build.prop']['source']=str(out/'linux-build.prop')
 vendor['files']['/vendor/overlay/ArchTvPlatform/ArchTvPlatform.apk']={'source':str(overlay/'ArchTvPlatform.apk'),'context':'u:object_r:vendor_overlay_file:s0','mode':0o644}

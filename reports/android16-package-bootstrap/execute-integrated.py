@@ -70,6 +70,7 @@ for name in ['markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
 root_code+="\np=root/'data/local/tmp/archtv-mc1/selected-failure.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
 root_code+="\np=root/'data/local/tmp/archtv-mc1/ranging-service-info.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
 root_code+="\np=root/'data/local/tmp/archtv-mc1/selected-wait.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
+root_code+="\np=root/'data/local/tmp/archtv-mc1/selected-user-wait.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
 for output_name in ['keymint-component.txt','storage-contract.txt','markor-user-state.txt','markor-bootstrap-home-stop.txt','markor-home-after.txt','markor-boot-before-user.txt','platform-capabilities.txt','linux-application-profile.txt','markor-postcommit-path.txt','markor-postcommit-dump.txt','markor-installed-bytes.txt']:
  root_code+="\np=root/'data/local/tmp/archtv-mc1'/"+repr(output_name)+";p.touch(mode=0o600);os.chown(p,1000,1000)"
 
@@ -191,7 +192,7 @@ for file in sorted(Path('/metadata/aconfig').rglob('*')):
  info=file.stat()
  metadata.append({'path':str(file),'uid':info.st_uid,'gid':info.st_gid,'mode':oct(stat.S_IMODE(info.st_mode)),'context':os.getxattr(file,'security.selinux').decode().rstrip(chr(0)),'bytes':info.st_size,'sha256':hashlib.sha256(file.read_bytes()).hexdigest() if info.st_size<=33554432 else None})
 print('ACONFIG_ORIGINAL_METADATA_FILES '+json.dumps({'files':metadata,'truncated':metadata_truncated,'scope':'Original daemon outputs, not flag or permission acceptance'}),flush=True)
-for name in ['keystore-java.txt','keymint-provider.txt','keystore-component.txt','keymint-component.txt','storage-contract.txt','markor-user-state.txt','markor-bootstrap-home-stop.txt','markor-home-after.txt','markor-boot-before-user.txt','platform-capabilities.txt','linux-application-profile.txt','markor-postcommit-path.txt','markor-postcommit-dump.txt','markor-installed-bytes.txt','unadmitted-artd-control.txt','ranging-service-info.txt','ranging-permission.txt','netd-permission-query.txt','netd-query.txt','netd-interfaces.txt','stats-query.txt','selected-failure.txt','selected-wait.txt','health-query.txt','health-dump.txt','apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt','vold-query.txt','vold-user0.txt','markor-install.txt','markor-path.txt','markor-dump.txt','activity-query.txt','mount-query.txt','markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
+for name in ['selected-user-wait.txt','keystore-java.txt','keymint-provider.txt','keystore-component.txt','keymint-component.txt','storage-contract.txt','markor-user-state.txt','markor-bootstrap-home-stop.txt','markor-home-after.txt','markor-boot-before-user.txt','platform-capabilities.txt','linux-application-profile.txt','markor-postcommit-path.txt','markor-postcommit-dump.txt','markor-installed-bytes.txt','unadmitted-artd-control.txt','ranging-service-info.txt','ranging-permission.txt','netd-permission-query.txt','netd-query.txt','netd-interfaces.txt','stats-query.txt','selected-failure.txt','selected-wait.txt','health-query.txt','health-dump.txt','apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt','vold-query.txt','vold-user0.txt','markor-install.txt','markor-path.txt','markor-dump.txt','activity-query.txt','mount-query.txt','markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
  f=Path('/data/local/tmp/archtv-mc1')/name
  if f.is_file():print('PACKAGE_ORIGINAL_OUTPUT '+name+' '+json.dumps(f.read_text()),flush=True)
 if p.returncode!=0:
@@ -234,16 +235,20 @@ print('MARKOR_ORIGINAL_INSTALL_BYTES_VERIFIED NOT_LAUNCH_PERSISTENCE_MAC_OR_APK_
 identity_line=next(line for line in text.splitlines() if line.startswith("assert {v['kind']:v['actual_context'] for v in identities}=="))
 full_expected=identity_line.split('==',1)[1]
 component_expected={'MANAGER':'u:r:servicemanager:s0','HWMANAGER':'u:r:hwservicemanager:s0','VOLD':'u:r:vold:s0','DAEMON':'u:r:apexd:s0','SNAPSHOT':'u:r:apexd:s0','ACONFIG_SYSTEM':'u:r:aconfigd:s0','ACONFIG_MAINLINE':'u:r:aconfigd_mainline:s0','NETD':'u:r:netd:s0'}
-text=text.replace(identity_line,"keymint_component_profile=Path('/vendor/etc/archtv-keymint-component').is_file()\nkeystore_component_profile=Path('/vendor/etc/archtv-keystore-component').is_file()\nassert not (keymint_component_profile and keystore_component_profile)\nexpected_identities="+full_expected+"\nif keymint_component_profile:\n assert Path('/vendor/etc/archtv-keymint-component').read_text()=='software-crypto-v1\\n'\n expected_identities="+repr(component_expected)+"\nassert {v['kind']:v['actual_context'] for v in identities}==expected_identities")
+text=text.replace(identity_line,"keymint_component_profile=Path('/vendor/etc/archtv-keymint-component').is_file()\nkeystore_component_profile=Path('/vendor/etc/archtv-keystore-component').is_file()\nsoftware_platform_profile=Path('/vendor/etc/archtv-software-security').is_file()\nassert not (keymint_component_profile and keystore_component_profile)\nexpected_identities="+full_expected+"\nif keymint_component_profile:\n assert Path('/vendor/etc/archtv-keymint-component').read_text()=='software-crypto-v1\\n'\n expected_identities="+repr(component_expected)+"\nassert {v['kind']:v['actual_context'] for v in identities}==expected_identities")
 # Extend the existing real SID/credentials observer for the two original daemons.
-text=text.replace('|ARTD)_STARTED','|ARTD|KEYMINT|KEYSTORE)_STARTED')
-text=text.replace("'ARTD':'u:r:artd:s0'", "'ARTD':'u:r:artd:s0','KEYMINT':'u:r:hal_keymint_default:s0','KEYSTORE':'u:r:keystore:s0'")
+text=text.replace('|ARTD)_STARTED','|ARTD|KEYMINT|KEYSTORE|GATEKEEPER_HAL|GATEKEEPER)_STARTED')
+text=text.replace("'ARTD':'u:r:artd:s0'", "'ARTD':'u:r:artd:s0','KEYMINT':'u:r:hal_keymint_default:s0','KEYSTORE':'u:r:keystore:s0','GATEKEEPER_HAL':'u:r:hal_gatekeeper_default:s0','GATEKEEPER':'u:r:gatekeeperd:s0'")
 text=text.replace("list(map(int,fields['Uid'].split()))==[", "list(map(int,fields['Uid'].split()))==[9999 if identity['kind']=='KEYMINT' else 1017 if identity['kind']=='KEYSTORE' else ")
 text=text.replace("list(map(int,fields['Gid'].split()))==[", "list(map(int,fields['Gid'].split()))==[0 if identity['kind']=='KEYMINT' else 1017 if identity['kind']=='KEYSTORE' else ")
+stock_identity_assignment=next(line for line in text.splitlines() if line.startswith('expected_identities='))
+text=text.replace(stock_identity_assignment,'expected_identities='+full_expected,1)
+text=text.replace("list(map(int,fields['Gid'].split()))==[", "list(map(int,fields['Gid'].split()))==[0 if identity['kind']=='GATEKEEPER' else ")
 component_identity_assert="assert {v['kind']:v['actual_context'] for v in identities}==expected_identities"
 assert component_identity_assert in text
 keystore_expected={**component_expected,'KEYMINT':'u:r:hal_keymint_default:s0','KEYSTORE':'u:r:keystore:s0'}
-text=text.replace(component_identity_assert,"if keystore_component_profile:\n assert Path('/vendor/etc/archtv-keystore-component').read_text()=='software-keystore-v1\\n'\n expected_identities="+repr(keystore_expected)+"\n"+component_identity_assert)
+software_expected={**ast.literal_eval(full_expected),'KEYMINT':'u:r:hal_keymint_default:s0','KEYSTORE':'u:r:keystore:s0','GATEKEEPER_HAL':'u:r:hal_gatekeeper_default:s0','GATEKEEPER':'u:r:gatekeeperd:s0'}
+text=text.replace(component_identity_assert,"if keystore_component_profile:\n assert Path('/vendor/etc/archtv-keystore-component').read_text()=='software-keystore-v1\\n'\n expected_identities="+repr(keystore_expected)+"\n if software_platform_profile:\n  assert Path('/vendor/etc/archtv-software-security').read_text()=='software-platform-v1\\n'\n  expected_identities="+repr(software_expected)+"\n"+component_identity_assert)
 keystore_checks="""if keystore_component_profile:
  provider=Path('/data/local/tmp/archtv-mc1/keymint-provider.txt').read_text().splitlines()
  output=Path('/data/local/tmp/archtv-mc1/keystore-component.txt').read_text().splitlines()
@@ -262,7 +267,7 @@ keystore_checks="""if keystore_component_profile:
   assert len(first_java)==len(second_java)==1 and first_java[0]!=second_java[0],java
   print('ORIGINAL_JAVA_KEYSTORE_COMPONENT_VERIFIED NOT_USER_AUTH_MAC_OR_APK_ACCEPTANCE',flush=True)
  print('KEYSTORE_SOFTWARE_BINDER_COMPONENT_VERIFIED NOT_USER_AUTH_MAC_OR_APK_ACCEPTANCE',flush=True)
- sys.exit(0)
+ if not software_platform_profile:sys.exit(0)
 """
 component_checks="""if keymint_component_profile:
  output=Path('/data/local/tmp/archtv-mc1/keymint-component.txt').read_text().splitlines()
@@ -279,8 +284,9 @@ text=text.replace(component_boundary,keystore_checks+component_checks+component_
 # hash-bound Android binaries at separate read-only paths for their real UIDs.
 if (payload.parent/'keystore-component-inputs.json').exists():
  alias_inputs=json.loads((payload.parent/'keystore-component-inputs.json').read_text())['native']
- aliases={name:{'sha256':item['deployed_sha256'],'context':'u:object_r:'+{'archtv-keymint-software':'hal_keymint_default_exec','archtv-keystore2-software':'keystore_exec','archtv-keystore-client':'shell_exec'}[name]+':s0'} for name,item in alias_inputs.items()}
- assert set(aliases)=={'archtv-keymint-software','archtv-keystore2-software','archtv-keystore-client'}
+ aliases={name:{'sha256':item['deployed_sha256'],'context':'u:object_r:'+{'archtv-keymint-software':'hal_keymint_default_exec','archtv-keystore2-software':'keystore_exec','archtv-keystore-client':'shell_exec','archtv-gatekeeper-software':'hal_gatekeeper_default_exec'}[name]+':s0'} for name,item in alias_inputs.items()}
+ software_platform=json.loads((payload.parent/'build-options.json').read_text()).get('software_security_platform',False)
+ assert set(aliases)==({'archtv-keymint-software','archtv-keystore2-software','archtv-keystore-client'} | ({'archtv-gatekeeper-software'} if software_platform else set()))
  alias_code="""
 import hashlib
 if (root/'vendor/etc/archtv-keystore-component').is_file():

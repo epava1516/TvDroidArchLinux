@@ -282,9 +282,9 @@
     "semantic_hash": ""
   },
   "ROADMAP.md": {
-    "mtime": 1793680619.8795097,
-    "seen": 1793680634.4364483,
-    "ast_hash": "8374a51675b8479148fa53e8454e3239",
+    "mtime": 1793683903.222128,
+    "seen": 1793683922.398985,
+    "ast_hash": "20b229589c690c1a94557d42a86f28d4",
     "semantic_hash": ""
   },
   "THIRD_PARTY.md": {
@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793680619.8713877,
-    "seen": 1793680634.442605,
-    "ast_hash": "601ee3d790b64c19b3da8b94002a8d00",
+    "mtime": 1793684283.7980793,
+    "seen": 1793684299.4392831,
+    "ast_hash": "c6dec3fb9c55b6d9df0d7a5462798bca",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793680619.86129,
-    "seen": 1793680634.442764,
-    "ast_hash": "c2715a3df081ee4241f469331f62383d",
+    "mtime": 1793684283.7924023,
+    "seen": 1793684299.440161,
+    "ast_hash": "0b5814053f39e636c6edd1dbe333b987",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793680696.837619,
-    "seen": 1793680728.8611364,
-    "ast_hash": "fe06ccb04ee4655bc30c13740f1a07e6",
+    "mtime": 1793684283.8060994,
+    "seen": 1793684299.440977,
+    "ast_hash": "661bc83e9693d2dc77d39559143b5309",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -816,9 +816,9 @@
     "semantic_hash": ""
   },
   "docs/CONTRATO-APK.md": {
-    "mtime": 1793680619.8840802,
-    "seen": 1793680634.442705,
-    "ast_hash": "9881cbd46124118d77bcf7eb9c0a359a",
+    "mtime": 1793683903.2409196,
+    "seen": 1793683922.4015183,
+    "ast_hash": "be283e723de91679a1941cea840e7793",
     "semantic_hash": ""
   },
   "runtime/apk/README.md": {
@@ -1716,9 +1716,9 @@
     "semantic_hash": ""
   },
   "docs/EVIDENCIAS.md": {
-    "mtime": 1793680619.8655317,
-    "seen": 1793680634.442805,
-    "ast_hash": "49dd8bad28f2f56e4dd51b25dac047e4",
+    "mtime": 1793684283.7954876,
+    "seen": 1793684299.4403348,
+    "ast_hash": "0dfd83c356b87961d8ba952035426b54",
     "semantic_hash": ""
   },
   "fixtures/aosp-framework-space/FrameworkSpaceProbe.java": {
@@ -1728,9 +1728,9 @@
     "semantic_hash": ""
   },
   "docs/COMPATIBILIDAD-APK.md": {
-    "mtime": 1793680619.8812659,
-    "seen": 1793680634.4426441,
-    "ast_hash": "a23d94fba89dad2790c3b69ca01abb5a",
+    "mtime": 1793683903.230902,
+    "seen": 1793683922.401197,
+    "ast_hash": "46d64fe8104bb000b018ace89b80a92e",
     "semantic_hash": ""
   },
   "fixtures/aosp-window-service/ServiceRegistryChecks.java": {
@@ -1974,9 +1974,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-mc1-cohort.h": {
-    "mtime": 1793680279.554126,
-    "seen": 1793680634.404479,
-    "ast_hash": "b935bca25a37982c42998e11d3a1c640",
+    "mtime": 1793681386.4983501,
+    "seen": 1793681798.27214,
+    "ast_hash": "f8bdf361ac535e1604678ce964a97b98",
     "semantic_hash": ""
   },
   "fixtures/aosp-wayland-output/client.cpp": {
@@ -2022,15 +2022,15 @@
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java": {
-    "mtime": 1793647715.10652,
-    "seen": 1793648434.0830588,
-    "ast_hash": "f7b19576273fe7fe3e53a64a4b5ce175",
+    "mtime": 1793683711.1987023,
+    "seen": 1793683922.3844607,
+    "ast_hash": "ec967d57df42595698e3bbfcc453503f",
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/org/archtv/aosplinux/ServiceLauncher.java": {
-    "mtime": 1793584539.0804095,
-    "seen": 1793647620.6394398,
-    "ast_hash": "13a60ca5b461c18c2e58a69cdddc526c",
+    "mtime": 1793682231.0329983,
+    "seen": 1793682431.1066864,
+    "ast_hash": "6628c90ca7078a8cf48f42ed2b0e7563",
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/install-markor.sh": {
@@ -2124,9 +2124,9 @@
     "semantic_hash": ""
   },
   "tools/aosp/build_software_keystore_framework.py": {
-    "mtime": 1793679507.1459792,
-    "seen": 1793679867.9745345,
-    "ast_hash": "a72ae06ec8d78b99424fcdb710398bee",
+    "mtime": 1793681227.3679497,
+    "seen": 1793681798.2802932,
+    "ast_hash": "3f6dadd7359213281510aff7bc9736c5",
     "semantic_hash": ""
   }
 }

@@ -197,6 +197,35 @@ public final class SelectedServices {
                 System.err.println(stack.toString());
                 savedStack.append(stack);saveWaitDiagnostic(savedStack.toString());
             }
+            if("software-platform-v1".equals(System.getenv("ARCHTV_SOFTWARE_SECURITY_PROFILE"))) {
+                // One bounded read-only snapshot resolves where real user-start
+                // waits after original installation; it does not signal readiness.
+                try {
+                    java.io.File committed=new java.io.File("/data/local/tmp/archtv-mc1/markor-installed-bytes.txt");
+                    long deadline=System.nanoTime()+java.util.concurrent.TimeUnit.SECONDS.toNanos(180);
+                    while((!committed.isFile() || committed.length()==0) && System.nanoTime()<deadline)Thread.sleep(250);
+                    boolean hasInstallEvidence=committed.isFile() && committed.length()>0;
+                    if(hasInstallEvidence)Thread.sleep(30000);
+                    StringBuilder late=new StringBuilder("SCOPE original service user-start wait; not boot, unlock, auth or APK acceptance\n");
+                    late.append("install_evidence_seen=").append(hasInstallEvidence).append(" monotonic_ns=").append(System.nanoTime()).append('\n');
+                    java.util.List<java.util.Map.Entry<Thread,StackTraceElement[]>> threads=new java.util.ArrayList<>(Thread.getAllStackTraces().entrySet());
+                    threads.sort(java.util.Comparator.comparing(entry -> entry.getKey().getName()));
+                    int count=0;
+                    for(java.util.Map.Entry<Thread,StackTraceElement[]> entry:threads) {
+                        if(count++>=128){late.append("TRUNCATED threads\n");break;}
+                        late.append("THREAD ").append(entry.getKey().getName()).append(" state=").append(entry.getKey().getState()).append('\n');
+                        int frames=0;
+                        for(StackTraceElement frame:entry.getValue()) {
+                            if(frames++>=48){late.append("    TRUNCATED frames\n");break;}
+                            late.append("    at ").append(frame).append('\n');
+                        }
+                    }
+                    if(late.length()>262144){late.setLength(262100);late.append("\nTRUNCATED bytes\n");}
+                    try(java.io.FileOutputStream output=new java.io.FileOutputStream("/data/local/tmp/archtv-mc1/selected-user-wait.txt")) {
+                        output.write(late.toString().getBytes(java.nio.charset.StandardCharsets.UTF_8));
+                    }
+                } catch(Throwable failure) {System.err.println("ORIGINAL_USER_WAIT_SNAPSHOT_FAILED "+failure);}
+            }
         }, "selected-wait-diagnostic");
         diagnostic.setDaemon(true);
         if(!packages)diagnostic.start();

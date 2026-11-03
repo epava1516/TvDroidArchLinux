@@ -12,8 +12,8 @@ import json,sys
 from pathlib import Path
 cp,run,unit,remote,thread,kind=sys.argv[1:]
 p=Path(cp)/'completion-manifest.json'
-assert kind in ('keymint-component','keystore-component','keystore-java-component','markor-launch')
-name={'keymint-component':'KeyMint v4 software component','keystore-component':'Original Keystore2 software Binder integration','keystore-java-component':'Original Java Keystore software integration','markor-launch':'Markor integrated launch'}[kind]
+assert kind in ('keymint-component','keystore-component','keystore-java-component','markor-software-launch','markor-launch')
+name={'keymint-component':'KeyMint v4 software component','keystore-component':'Original Keystore2 software Binder integration','keystore-java-component':'Original Java Keystore software integration','markor-software-launch':'Markor original software-security launch','markor-launch':'Markor integrated launch'}[kind]
 with p.open('x') as f:json.dump(dict(id=run,checkpoint=cp,unit=unit,owner=unit,name=name,active_owner='active:'+run,remote=remote,thread=thread),f)
 p.chmod(0o444)
 MANIFEST

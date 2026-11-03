@@ -108,9 +108,14 @@ class LinuxMc1Cohort {
             if(!apex_requested_ || !S_ISREG(keystore_profile_info.st_mode) || keystore_profile_info.st_uid!=0 ||
                !android::base::ReadFileToString(keystore_profile,&profile) || profile!="software-keystore-v1\n")
                 return android::base::Error()<<"Invalid Linux Keystore diagnostic profile";
-            return RunOriginalSoftwareKeystore(tick);
-        }
-        if(errno!=ENOENT)return android::base::Error()<<"Cannot inspect Linux Keystore diagnostic profile";
+            std::string platform_profile;
+            if(android::base::ReadFileToString("/vendor/etc/archtv-software-security",&platform_profile)) {
+                if(platform_profile!="software-platform-v1\n")return android::base::Error()<<"Unknown software platform profile";
+                software_security_=true;
+            }
+            if(auto software=RunOriginalSoftwareKeystore(tick);!software.ok())return software;
+            if(!software_security_)return {};
+        } else if(errno!=ENOENT)return android::base::Error()<<"Cannot inspect Linux Keystore diagnostic profile";
         // Explicit immutable Linux diagnostic profile, not an Android readiness flag.
         const char* keymint_profile="/vendor/etc/archtv-keymint-component";
         struct stat profile_info{};
@@ -137,7 +142,7 @@ class LinuxMc1Cohort {
     }
     bool vold_cancelled() const { return vold_cancelled_; }
     bool apex_cancelled() const { return apex_cancelled_; }
-    bool healthy() const { return !manager_failed_ && (!gatekeeper_ || gatekeeper_->IsRunning()) && (!keystore_ || keystore_->IsRunning()) && (!keymint_ || keymint_->IsRunning()) && (!aconfig_system_ || aconfig_system_->IsRunning() || aconfig_system_clean_exit_) && (!aconfig_mainline_ || aconfig_mainline_->IsRunning() || aconfig_mainline_clean_exit_) && (!audioserver_ || audioserver_->IsRunning()) && (!lmkd_ || lmkd_->IsRunning()) && (!netd_ || netd_->IsRunning()) && (!statsd_ || statsd_->IsRunning()) && (!health_ || health_->IsRunning()) && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && (bootanimation_->IsRunning() || bootanimation_clean_exit_))) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning() || apex_clean_exit_); }
+    bool healthy() const { return !manager_failed_ && (!gatekeeper_hal_ || gatekeeper_hal_->IsRunning()) && (!gatekeeper_ || gatekeeper_->IsRunning()) && (!keystore_ || keystore_->IsRunning()) && (!keymint_ || keymint_->IsRunning()) && (!aconfig_system_ || aconfig_system_->IsRunning() || aconfig_system_clean_exit_) && (!aconfig_mainline_ || aconfig_mainline_->IsRunning() || aconfig_mainline_clean_exit_) && (!audioserver_ || audioserver_->IsRunning()) && (!lmkd_ || lmkd_->IsRunning()) && (!netd_ || netd_->IsRunning()) && (!statsd_ || statsd_->IsRunning()) && (!health_ || health_->IsRunning()) && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && (bootanimation_->IsRunning() || bootanimation_clean_exit_))) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning() || apex_clean_exit_); }
     android::base::Result<void> Close(const Tick& tick) {
         using namespace android::init;
         if(!active_) return {};
@@ -170,7 +175,7 @@ class LinuxMc1Cohort {
         selected_=nullptr;
         suspend_=nullptr;
         installd_=nullptr;
-        apexd_=nullptr;gatekeeper_=nullptr;keystore_=nullptr;keymint_=nullptr;
+        apexd_=nullptr;software_security_=false;gatekeeper_hal_=nullptr;gatekeeper_=nullptr;keystore_=nullptr;keymint_=nullptr;
         services.RemoveServiceIf([](const auto& service){return !service->IsRunning();});
         active_=false;
         int observed_mode=security_getenforce();
@@ -654,6 +659,18 @@ class LinuxMc1Cohort {
             if(!client_ok_)return android::base::Error()<<"Original software Binder client failed; inspect actual output";
             return {};
         };
+        if(software_security_) {
+            auto parsed=parser.ParseConfigFile("/vendor/etc/init/archtv-gatekeeper-software.rc");
+            if(!parsed.ok() || parser.parse_error_count()!=0)return android::base::Error()<<"Original software GateKeeper RC rejected";
+            gatekeeper_hal_=services.FindService("vendor.gatekeeper_nonsecure");
+            if(!gatekeeper_hal_ || gatekeeper_hal_->uid()!=1000 || gatekeeper_hal_->args()!=std::vector<std::string>{"/archtv-android/archtv-gatekeeper-software"})return android::base::Error()<<"Original GateKeeper identity/entry mismatch";
+            gatekeeper_hal_->AddReapCallback([this](const siginfo_t& info){
+                std::fprintf(stderr,"SOFTWARE_GATEKEEPER_HAL_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
+                if(!closing_)manager_failed_=true;
+            });
+            if(auto started=gatekeeper_hal_->Start();!started.ok())return started;
+            std::fprintf(stderr,"SELECTED_GATEKEEPER_HAL_STARTED pid=%d NOT_REGISTERED_OR_AUTHENTICATION\n",gatekeeper_hal_->pid());
+        }
         if(auto started=keymint_->Start();!started.ok())return started;
         std::fprintf(stderr,"SELECTED_KEYMINT_STARTED pid=%d\n",keymint_->pid());
         if(auto observed=client("/archtv-android/archtv-keystore-client provider unused > /data/local/tmp/archtv-mc1/keymint-provider.txt 2>&1");!observed.ok())return observed;
@@ -686,21 +703,25 @@ class LinuxMc1Cohort {
             // Reuse original security daemons and their original UID/rlimit
             // contracts. Registration is not proof of a working HAL or keys.
             for(const char* path:{"/system/etc/init/gatekeeperd.rc","/system/etc/init/keystore2.rc"}) {
+                if(software_security_ && std::string(path)=="/system/etc/init/keystore2.rc")continue;
                 auto parsed=parser.ParseConfigFile(path);
                 if(!parsed.ok() || parser.parse_error_count()!=0)return android::base::Error()<<"Original security RC rejected: "<<path;
             }
             gatekeeper_=services.FindService("gatekeeperd");
-            keystore_=services.FindService("keystore2");
+            if(!software_security_)keystore_=services.FindService("keystore2");
+            else if(!keystore_ || !keystore_->IsRunning())return android::base::Error()<<"Software Keystore stopped before platform integration";
             if(!gatekeeper_ || gatekeeper_->args()!=std::vector<std::string>{"/system/bin/gatekeeperd","/data/misc/gatekeeper"} || gatekeeper_->uid()!=1000 ||
                !keystore_ || keystore_->args()!=std::vector<std::string>{"/system/bin/keystore2","/data/misc/keystore"} || keystore_->uid()!=1017)
                 return android::base::Error()<<"Original security daemon contract mismatch";
             for(auto* service:{gatekeeper_,keystore_}) {
+                if(software_security_ && service==keystore_)continue;
                 service->AddReapCallback([this](const siginfo_t& info) {
                     std::fprintf(stderr,"ORIGINAL_SECURITY_DAEMON_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
                     if(!closing_)manager_failed_=true;
                 });
                 if(auto started=service->Start();!started.ok())return started;
                 std::fprintf(stderr,"ORIGINAL_SECURITY_DAEMON_STARTED name=%s pid=%d NOT_HAL_OR_KEY_ACCEPTANCE\n",service->name().c_str(),service->pid());
+                if(software_security_ && service==gatekeeper_)std::fprintf(stderr,"SELECTED_GATEKEEPER_STARTED pid=%d NOT_AUTHENTICATION\n",service->pid());
             }
             auto memory_parsed=parser.ParseConfigFile("/system/etc/init/lmkd.rc");
             if(!memory_parsed.ok() || parser.parse_error_count()!=0)return android::base::Error()<<"Original lmkd RC rejected";
@@ -920,6 +941,8 @@ class LinuxMc1Cohort {
     android::init::Service* suspend_=nullptr;
     android::init::Service* installd_=nullptr;
     android::init::Service* apexd_=nullptr;
+    android::init::Service* gatekeeper_hal_=nullptr;
+    bool software_security_=false;
     android::init::Service* gatekeeper_=nullptr;
     android::init::Service* keystore_=nullptr;
     android::init::Service* keymint_=nullptr;

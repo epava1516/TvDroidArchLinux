@@ -1,6 +1,6 @@
 # Roadmap · Arch TV nativo en Rust
 
-Siguiente integración: [plataforma original con perfil JCA SOFTWARE120 y GateKeeper real](docs/ROADMAP-A.md) → desbloqueo → Markor completo. JCA y negativas verificadas en un perfil binario experimental; el bootstrap Markor aún no lo integra. R1-MAC sigue abierto.
+Camino crítico: [plataforma conjunta GateKeeper/Keystore/JCA/PMS122](docs/ROADMAP-A.md) → resolver la espera original de start-user → RUNNING_UNLOCKED → lanzamiento/UI/entrada/nota/cierre/reapertura de Markor. Instalación intacta repetida, sin lanzamiento aceptado. R1-MAC sigue abierto.
 
 Camino crítico actualizado: integrar [JCA original120](reports/android16-package-bootstrap/keystore-java-functional.json) con GateKeeper y servicios originales → RUNNING_UNLOCKED → Markor. La fase1000 original de103 se conserva. Véase la puerta de decisión y criterios en [ROADMAP-A](docs/ROADMAP-A.md).
 

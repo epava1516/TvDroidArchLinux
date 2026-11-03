@@ -13,6 +13,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[2]
 out = (ROOT / sys.argv[1]).resolve()
 out.mkdir()
+with_gatekeeper='--gatekeeper' in sys.argv[2:]
 old = runpy.run_path(str(ROOT / 'reports/android16-hwc3-wayland/prepare-vendor-policy.py'))
 source = old['SOURCE']
 require = old['REQUIRE'].replace('module graphics_vendor', 'module vendor')
@@ -22,26 +23,35 @@ require = require.replace(' attribute halserverdomain;',
 require = require.replace(' type init;',
     ' type charger_vendor; type hal_health_server_tmpfs; type hal_secureclock_service;'
     ' type hal_sharedsecret_service; type vendor_security_patch_level_prop; type atrace; type dumpstate; type shell; type system_app; type traceur_app; type init;')
+if with_gatekeeper:
+    require=require.replace(' attribute halserverdomain;', ' attribute halclientdomain; attribute hal_gatekeeper; attribute hal_gatekeeper_server; attribute hal_gatekeeper_client; attribute halserverdomain;')
 require = require.replace(' class dir search;', ' class dir search; class service_manager { add find };')
 inputs = [source / name for name in (
     'public/global_macros', 'public/ioctl_defines', 'public/ioctl_macros',
     'public/te_macros', 'flagging/flagging_macros',
     'vendor/hal_graphics_allocator_default.te', 'vendor/hal_graphics_composer_default.te',
     'vendor/hal_health_default.te', 'vendor/hal_keymint_default.te')]
+if with_gatekeeper:
+    require=require.replace(' type init;', ' type keystore; type kmsg_device; type init;')
+    require=require.replace(' class dir search;', ' class chr_file { open append write lock map getattr }; class dir search;')
+    cf=Path('/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/cuttlefish-vendor-policy-original/source/device/google/cuttlefish/shared/sepolicy/vendor')
+    # Original reference policy is needed for its additional SharedSecret/gatekeeper
+    # endpoint. Keep the Keystore client attribute and service logging rules whole.
+    inputs.extend([source/'vendor/hal_gatekeeper_default.te',cf/'keystore.te',cf/'hal_gatekeeper_default.te'])
 # Explicit Linux policy compatibility profile for the pinned public 202504 API.
 # This is not a hardware/firmware certification or a claimed vendor patch date.
 argv = ['m4', '-Dtarget_full_treble=true', '-Dtarget_build_variant=user',
         '-Dtarget_board_api_level=202504', *map(str, inputs)]
 expanded = subprocess.check_output(argv, text=True)
 te = out / 'vendor.te'
-te.write_text(require + expanded + '\nrole r types { hal_keymint_default hal_health_default '
+te.write_text(require + expanded + '\nrole r types { '+('hal_gatekeeper_default ' if with_gatekeeper else '')+'hal_keymint_default hal_health_default '
               'hal_graphics_allocator_default hal_graphics_composer_default };\n')
 compiler = ROOT / 'dist/aosp16/selinux-tools-host-4/source/checkpolicy/checkmodule'
 cmd = [str(compiler), '-m', '-M', '-C', '-o', str(out / 'vendor.cil'), str(te)]
 result = subprocess.run(cmd, capture_output=True, text=True)
 record = {'m4': argv, 'inputs': {str(f): hashlib.sha256(f.read_bytes()).hexdigest() for f in inputs},
           'argv': cmd, 'exit': result.returncode, 'stderr': result.stderr,
-          'scope': 'Entire original vendor TE, no invented allows. Offline, not MAC or service acceptance.'}
+          'includes_gatekeeper':with_gatekeeper, 'scope': 'Entire original vendor TE, no invented allows. Offline, not MAC or service acceptance.'}
 (out / 'build.json').write_text(json.dumps(record, indent=2) + '\n')
 result.check_returncode()
 lines = (out / 'vendor.cil').read_text().splitlines()

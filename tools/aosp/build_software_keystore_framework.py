@@ -48,8 +48,24 @@ with zipfile.ZipFile(original) as inp,zipfile.ZipFile(out/'framework.jar','w') a
    data=bytes(changed)
    assert data[12:32]==hashlib.sha1(data[32:]).digest()
    assert struct.unpack_from('<I',data,8)[0]==zlib.adler32(data[12:])&0xffffffff
+  # ART directly mmaps uncompressed DEX only at an aligned file offset.
+  # Preserve contents; align via a ZIP extra field, never by editing DEX again.
+  if info.filename.endswith('.dex'):
+   assert info.compress_type==zipfile.ZIP_STORED
+   start=target.fp.tell()+30+len(info.filename.encode('utf-8'))+len(info.extra)
+   padding=(-start)%4
+   if padding:info.extra+=struct.pack('<HH',0xd935,padding)+bytes(padding)
   target.writestr(info,data)
   entries.append({'name':info.filename,'before_sha256':before,'after_sha256':hashlib.sha256(data).hexdigest()})
+alignment=[]
+raw=(out/'framework.jar').read_bytes()
+with zipfile.ZipFile(out/'framework.jar') as z:
+ for info in z.infolist():
+  if info.filename.endswith('.dex'):
+   filename_length,extra_length=struct.unpack_from('<HH',raw,info.header_offset+26)
+   data_offset=info.header_offset+30+filename_length+extra_length
+   assert data_offset%4==0
+   alignment.append({'name':info.filename,'offset':data_offset,'aligned4':True})
 assert [e['name'] for e in entries if e['before_sha256']!=e['after_sha256']]==['classes3.dex']
-record={'scope':'Experimental binary profile of complete original framework; not source rebuild or Java execution acceptance','original':{'path':str(original),'sha256':sha(original)},'output':{'path':str(out/'framework.jar'),'sha256':sha(out/'framework.jar')},'plan':plan,'entries':entries,'source_pin':provenance['commit'],'original_sources_sha256':source_hashes,'source_patch_sha256':sha(patch),'engine_sha256':sha(engine),'planner_sha256':sha(source),'commands':commands,'limits':['Full source rebuild pending; source/DEX correspondence scoped to four selections','All class tables and other instructions byte-identical; ART boot-image coherence must be tested','StrongBox branches retained; hardware metadata/attestation/authentication not fabricated','No JCA, user unlock or Markor result from this build']}
+record={'scope':'Experimental binary profile of complete original framework; not source rebuild or Java execution acceptance','original':{'path':str(original),'sha256':sha(original)},'output':{'path':str(out/'framework.jar'),'sha256':sha(out/'framework.jar')},'plan':plan,'entries':entries,'alignment':alignment,'builder_sha256':sha(Path(__file__)),'source_pin':provenance['commit'],'original_sources_sha256':source_hashes,'source_patch_sha256':sha(patch),'engine_sha256':sha(engine),'planner_sha256':sha(source),'commands':commands,'limits':['Full source rebuild pending; source/DEX correspondence scoped to four selections','All class tables and other instructions byte-identical; ART boot-image coherence must be tested','StrongBox branches retained; hardware metadata/attestation/authentication not fabricated','No JCA, user unlock or Markor result from this build']}
 (out/'build.json').write_text(json.dumps(record,indent=2)+'\n');print(out)

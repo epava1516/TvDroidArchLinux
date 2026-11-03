@@ -1,0 +1,308 @@
+{
+  "scope": "Actual GateKeeper original Binder + coherent original platform installation; not credentials/user unlock/launch/MAC acceptance",
+  "run_id": "53a575c5-a629-4a53-9034-e1f91d1c53f9",
+  "candidate": 122,
+  "checkpoint": "/home/tv/recuperacion-archtv/53a575c5-a629-4a53-9034-e1f91d1c53f9-markor-software-launch",
+  "artifacts": {
+    "before-launch.json": {
+      "path": "/home/tv/recuperacion-archtv/53a575c5-a629-4a53-9034-e1f91d1c53f9-markor-software-launch/before-launch.json",
+      "sha256": "51f6303f8fefcd5f7abde1f5da9c21986e689af8bed636abc7611e95f9ebb53d"
+    },
+    "result.json": {
+      "path": "/home/tv/recuperacion-archtv/53a575c5-a629-4a53-9034-e1f91d1c53f9-markor-software-launch/result.json",
+      "sha256": "026ae898dff02faf59bb49061a44a52e8dcda0a49c1e7dd6de397cd9386a08dc"
+    },
+    "run.log": {
+      "path": "/home/tv/recuperacion-archtv/53a575c5-a629-4a53-9034-e1f91d1c53f9-markor-software-launch/run.log",
+      "sha256": "e357925002b4eb72e77701e8f611db82125740cc0da23ac0e6983063c8bb63be"
+    },
+    "session-state.json": {
+      "path": "/home/tv/recuperacion-archtv/53a575c5-a629-4a53-9034-e1f91d1c53f9-markor-software-launch/session-state.json",
+      "sha256": "ecf4ca243f99277cb4c799df626ff5941744313b9aff0965ac34784a060df147"
+    },
+    "completion-consumer.json": {
+      "path": "/home/tv/recuperacion-archtv/53a575c5-a629-4a53-9034-e1f91d1c53f9-markor-software-launch/completion-consumer.json",
+      "sha256": "b8ea8a6888b3418ba389500df7e0d6c9c1c27515f0dad866ee59146a0f092e8b"
+    }
+  },
+  "native_exit": 1,
+  "outer_exit": 1,
+  "actual_security_identities": [
+    {
+      "kind": "GATEKEEPER_HAL",
+      "pid_namespace_pid": 419,
+      "getpidcon_raw_return": 0,
+      "actual_context": "u:r:hal_gatekeeper_default:s0",
+      "contexts_observed_in_order": [
+        "u:r:hal_gatekeeper_default:s0"
+      ],
+      "errno_observed": [],
+      "status": [
+        "Uid:\t1000\t1000\t1000\t1000",
+        "Gid:\t1000\t1000\t1000\t1000",
+        "Groups:\t ",
+        "CapPrm:\t0000000000000000",
+        "CapEff:\t0000000000000000",
+        "CapBnd:\t000001ffffffffff",
+        "NoNewPrivs:\t1"
+      ]
+    },
+    {
+      "kind": "KEYMINT",
+      "pid_namespace_pid": 420,
+      "getpidcon_raw_return": 0,
+      "actual_context": "u:r:hal_keymint_default:s0",
+      "contexts_observed_in_order": [
+        "u:r:hal_keymint_default:s0"
+      ],
+      "errno_observed": [],
+      "status": [
+        "Uid:\t9999\t9999\t9999\t9999",
+        "Gid:\t0\t0\t0\t0",
+        "Groups:\t ",
+        "CapPrm:\t0000000000000000",
+        "CapEff:\t0000000000000000",
+        "CapBnd:\t000001ffffffffff",
+        "NoNewPrivs:\t1"
+      ]
+    },
+    {
+      "kind": "KEYSTORE",
+      "pid_namespace_pid": 423,
+      "getpidcon_raw_return": 0,
+      "actual_context": "u:r:keystore:s0",
+      "contexts_observed_in_order": [
+        "u:r:keystore:s0"
+      ],
+      "errno_observed": [],
+      "status": [
+        "Uid:\t1017\t1017\t1017\t1017",
+        "Gid:\t1017\t1017\t1017\t1017",
+        "Groups:\t1007 3009 ",
+        "CapPrm:\t0000000000000000",
+        "CapEff:\t0000000000000000",
+        "CapBnd:\t000001ffffffffff",
+        "NoNewPrivs:\t1"
+      ]
+    },
+    {
+      "kind": "GATEKEEPER",
+      "pid_namespace_pid": 502,
+      "getpidcon_raw_return": 0,
+      "actual_context": "u:r:gatekeeperd:s0",
+      "contexts_observed_in_order": [
+        "u:r:init:s0",
+        "u:r:gatekeeperd:s0"
+      ],
+      "errno_observed": [],
+      "status": [
+        "Uid:\t1000\t1000\t1000\t1000",
+        "Gid:\t0\t0\t0\t0",
+        "Groups:\t ",
+        "CapPrm:\t0000000000000000",
+        "CapEff:\t0000000000000000",
+        "CapBnd:\t000001ffffffffff",
+        "NoNewPrivs:\t1"
+      ]
+    }
+  ],
+  "heap_observed": {
+    "growth_before": 134217728,
+    "maximum_after": 536870912,
+    "source": "Original SystemServer clearGrowthLimit + AndroidRuntime product property contract"
+  },
+  "GateKeeper_actual_API_reply": {
+    "method": "IGateKeeperService.getSecureUserId(0)",
+    "caller_uid": 1000,
+    "secure_user_id": 0,
+    "scope": "Direct original Binder API, no RemoteException converted into success; fresh user has no stored secure ID. Not credential/auth proof."
+  },
+  "Markor_install": {
+    "source_and_installed_sha256": "c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440",
+    "PMS_session_result": "Success",
+    "new_launch_or_full_compatibility": false
+  },
+  "current_blocker": "Real user-start progress listener does not finish. Source integration gap: explicit LockSettings.systemReady and PHASE_LOCK_SETTINGS_READY absent before phase500; present in pinned original SystemServer. Causality to observed wait to be tested by full integration.",
+  "host_security": {
+    "enforcing": 0,
+    "policyload": 4,
+    "kernel_readback_sha256": "5d3f98680e6ddf6fd73cdd1b1c76634ef4718072b431ed3e5c048e6321f2ce69",
+    "recovery": "/home/tv/recuperacion-archtv/20261103T045223Z-gatekeeper-policy/RETOMAR.txt",
+    "source": "Whole original gatekeeper defaultTE + original Cuttlefish Keystore client/logging rules; neverallow not disabled"
+  },
+  "framework_container": "Profile2 all entries identical to tested1, aligned4; integrated JCA still passes",
+  "cleanup": {
+    "outer": "inactive, VT1 restored",
+    "loops": "",
+    "dm": [],
+    "bpf_remaining": {
+      "prog": [],
+      "map": [],
+      "link": []
+    },
+    "inner_failure_path": "not collected before tick stop; open"
+  },
+  "limits": [
+    "GateKeeper credential enrollment/verification, cross-KeyMint HMAC/auth-bound keys and persistence untested",
+    "No original vendor APEX activation claimed: service/RC/VINTF individually reused with Linux exec alias",
+    "No new Markor launch/UI/input/note/persistence/close/reopen acceptance",
+    "R1MAC, ARM/GMS/DRM remain open"
+  ],
+  "wait_capture125": {
+    "run_id": "2b2035dc-0cc1-41c0-8f20-de429a7b972d",
+    "checkpoint": "/home/tv/recuperacion-archtv/2b2035dc-0cc1-41c0-8f20-de429a7b972d-markor-software-launch",
+    "snapshot": "/home/tv/recuperacion-archtv/2b2035dc-0cc1-41c0-8f20-de429a7b972d-markor-software-launch/selected-user-wait-extracted.txt",
+    "snapshot_sha256": "6071cd7fc859f9852c42dd0f3775becd9d3a6458368e744e03afbe26388ef3d8",
+    "characters": 45931,
+    "threads": 106,
+    "truncated": false,
+    "observed_block": "Binder shell caller in ProgressWaiter.waitForFinish / ActivityManagerShellCommand.runStartUser; main/ActivityManager/display stacks in MessageQueue.nativePollOnce at sample",
+    "native_exit": 1,
+    "outer_exit": 1,
+    "scope": "Single bounded live original Java snapshot; not proof of every process or absence of other waits"
+  },
+  "next_experiment": "Invoke original ILockSettings.systemReady and original phase480 before500, preserving exceptions/permissions, then whole Markor walk; no ready/unlock flag assignment.",
+  "source_evidence": {
+    "system-server-entry-original": {
+      "project": "frameworks/base",
+      "file": "services/java/com/android/server/SystemServer.java",
+      "commit": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/java/com/android/server/SystemServer.java?format=TEXT",
+      "lock_sha256": "06c6fcc779cb0e115f4515a0c38a67c31151dc8b55bd335ff2f0987e3db3eb58",
+      "status": "complete",
+      "expected_git_blob": "9ab827e36eb62b439f8566fb65e726411bf1567f",
+      "signature_verified": false,
+      "git_blob_verified": "9ab827e36eb62b439f8566fb65e726411bf1567f",
+      "sha256": "b36c352ec50695a2284cd1b6ce2f980d77b6305eed7a3243ca7f3077131df426",
+      "bytes": 169924,
+      "artifact": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-server-entry-original/SystemServer.java",
+      "original_file_modified": false
+    },
+    "locksettings-service-original": {
+      "project": "frameworks/base",
+      "file": "services/core/java/com/android/server/locksettings/LockSettingsService.java",
+      "commit": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/core/java/com/android/server/locksettings/LockSettingsService.java?format=TEXT",
+      "lock_sha256": "06c6fcc779cb0e115f4515a0c38a67c31151dc8b55bd335ff2f0987e3db3eb58",
+      "status": "complete",
+      "expected_git_blob": "a9abc56763b0d76cc11e03bc47fb0f590ba600cf",
+      "signature_verified": false,
+      "git_blob_verified": "a9abc56763b0d76cc11e03bc47fb0f590ba600cf",
+      "sha256": "ac3a73fac630351adf4aeb1e8c8000ebbec994ac7c708ef8e3c2ed58eb20f094",
+      "bytes": 178738,
+      "artifact": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/locksettings-service-original/LockSettingsService.java",
+      "original_file_modified": false
+    },
+    "gatekeeper-aidl-original": {
+      "project": "hardware/interfaces",
+      "subtree": "gatekeeper/aidl",
+      "commit": "aa229558cbf04bc997ed27465c5e7ad497123d1b",
+      "url": "https://android.googlesource.com/platform/hardware/interfaces/+archive/aa229558cbf04bc997ed27465c5e7ad497123d1b/gatekeeper/aidl.tar.gz",
+      "lock_sha256": "06c6fcc779cb0e115f4515a0c38a67c31151dc8b55bd335ff2f0987e3db3eb58",
+      "status": "complete",
+      "signature_verified": false,
+      "original_source_modified": false,
+      "archive_bytes": 21644,
+      "archive_sha256": "e2c5a3e2e33c5cc3d9a4d06f398e2f53e2f80ebf5c769323799db1eca1c824c0",
+      "regular_files": 35,
+      "relative_source_root": "source/hardware/interfaces/gatekeeper/aidl",
+      "unresolved_symlinks": [],
+      "completeness": "Original subtree only; sibling sources/generated inputs must be supplied before build"
+    },
+    "gatekeeperd-original": {
+      "project": "system/core",
+      "subtree": "gatekeeperd",
+      "commit": "e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1",
+      "url": "https://android.googlesource.com/platform/system/core/+archive/e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1/gatekeeperd.tar.gz",
+      "lock_sha256": "06c6fcc779cb0e115f4515a0c38a67c31151dc8b55bd335ff2f0987e3db3eb58",
+      "status": "complete",
+      "signature_verified": false,
+      "original_source_modified": false,
+      "archive_bytes": 9291,
+      "archive_sha256": "877d43623b4ad1ec267e1345821c002c3a1299ca3ab53ac77e0ed0f90b4c4c76",
+      "regular_files": 11,
+      "relative_source_root": "source/system/core/gatekeeperd",
+      "unresolved_symlinks": [],
+      "completeness": "Original subtree only; sibling sources/generated inputs must be supplied before build"
+    },
+    "gatekeeper-core-original": {
+      "project": "system/gatekeeper",
+      "subtree": ".",
+      "commit": "604418333097ac26ab0ba51319221bf2bb2b6d2f",
+      "url": "https://android.googlesource.com/platform/system/gatekeeper/+archive/604418333097ac26ab0ba51319221bf2bb2b6d2f.tar.gz",
+      "lock_sha256": "06c6fcc779cb0e115f4515a0c38a67c31151dc8b55bd335ff2f0987e3db3eb58",
+      "status": "complete",
+      "signature_verified": false,
+      "original_source_modified": false,
+      "archive_bytes": 49790,
+      "archive_sha256": "8919a000e67af10e688f722cf64d7d5020dc1e4f1b6d1f66601931b062b0aadc",
+      "regular_files": 44,
+      "relative_source_root": "source/system/gatekeeper",
+      "unresolved_symlinks": [
+        "system/gatekeeper/rust/rustfmt.toml"
+      ],
+      "completeness": "Original subtree only; sibling sources/generated inputs must be supplied before build"
+    },
+    "gatekeeper-scrypt-original": {
+      "project": "external/scrypt",
+      "subtree": ".",
+      "commit": "958140511cebc42a79e9eec852a4f7dfa2bd2755",
+      "url": "https://android.googlesource.com/platform/external/scrypt/+archive/958140511cebc42a79e9eec852a4f7dfa2bd2755.tar.gz",
+      "lock_sha256": "06c6fcc779cb0e115f4515a0c38a67c31151dc8b55bd335ff2f0987e3db3eb58",
+      "status": "complete",
+      "signature_verified": false,
+      "original_source_modified": false,
+      "archive_bytes": 18398,
+      "archive_sha256": "b9316d1c157846f9c9f31ed19b6f4d6013f2c96980540e37b01457c045701f7f",
+      "regular_files": 22,
+      "relative_source_root": "source/external/scrypt",
+      "unresolved_symlinks": [],
+      "completeness": "Original subtree only; sibling sources/generated inputs must be supplied before build"
+    },
+    "cuttlefish-vendor-policy-original": {
+      "project": "device/google/cuttlefish",
+      "subtree": "shared/sepolicy/vendor",
+      "commit": "4d368849922b04124e66b1aad48f93b3209f3c8d",
+      "url": "https://android.googlesource.com/device/google/cuttlefish/+archive/4d368849922b04124e66b1aad48f93b3209f3c8d/shared/sepolicy/vendor.tar.gz",
+      "lock_sha256": "06c6fcc779cb0e115f4515a0c38a67c31151dc8b55bd335ff2f0987e3db3eb58",
+      "status": "complete",
+      "signature_verified": false,
+      "original_source_modified": false,
+      "archive_bytes": 12618,
+      "archive_sha256": "36bcf673035124455a76b062f7bb8779356216f58522ba8784465f837b3e7685",
+      "regular_files": 80,
+      "relative_source_root": "source/device/google/cuttlefish/shared/sepolicy/vendor",
+      "unresolved_symlinks": [],
+      "completeness": "Original subtree only; sibling sources/generated inputs must be supplied before build"
+    }
+  },
+  "REA_MCP123": {
+    "capture": "/home/tv/recuperacion-archtv/3628a42a-8775-4f1c-9e7b-67196db7def6-markor-software-launch/rea-process-capture.json",
+    "outcome": "cleanup_incomplete: root process environment ownership inaccessible; partial actual capture, not complete clean execution evidence",
+    "post_cleanup": "/home/tv/recuperacion-archtv/3628a42a-8775-4f1c-9e7b-67196db7def6-markor-software-launch/post-rea-cleanup.json",
+    "post_cleanup_scope": "Independent root read-only observation: exact candidates absent and exactunitsinactive; original REA error retained, tempRootretained byprovider",
+    "ordinary_native125_not_MCP": true
+  },
+  "policy_load_evidence": {
+    "candidate.json": {
+      "path": "/home/tv/recuperacion-archtv/20261103T045223Z-gatekeeper-policy/candidate.json",
+      "sha256": "3ea759b2ca4ffd8648b9b3c23b34e9aeaa293685ffadc3cc00f8ed4eea9b7703"
+    },
+    "before-host.json": {
+      "path": "/home/tv/recuperacion-archtv/20261103T045223Z-gatekeeper-policy/before-host.json",
+      "sha256": "144323bbb1d05804c9b66565381743a23ef81e295167ad4cc5f6c457ac487f29"
+    },
+    "after-load.json": {
+      "path": "/home/tv/recuperacion-archtv/20261103T045223Z-gatekeeper-policy/after-load.json",
+      "sha256": "d40c7c2825cb6c347e33588fe9a52ec98dc6259b6c5a5bcfff1462993f57b763"
+    },
+    "load-policy.py": {
+      "path": "/home/tv/recuperacion-archtv/20261103T045223Z-gatekeeper-policy/load-policy.py",
+      "sha256": "dea528dcede22b5e8d969ea794c57d8b684525d33dbc289e9a1f258f5dc269da"
+    },
+    "restore-policy.py": {
+      "path": "/home/tv/recuperacion-archtv/20261103T045223Z-gatekeeper-policy/restore-policy.py",
+      "sha256": "6027536dc13efde0fbc87168038ae2cdb3254a570a6ec3a942ebbc1abc080d92"
+    }
+  }
+}

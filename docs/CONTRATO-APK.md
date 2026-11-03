@@ -1,5 +1,7 @@
 # Contrato vigente · AOSP Android 16 QPR2
 
+[GateKeeper original122](../reports/android16-package-bootstrap/gatekeeper-platform-progress.json) conserva el límite del proveedor AOSP no seguro: inscripción/verificación, tokens compartidos, durabilidad y aislamiento necesitan pruebas propias. Un SID de usuario vacío devuelto por el API original no es una credencial ni una señal de RUNNING_UNLOCKED. La política cargada en permisivo4 no cierra R1-MAC.
+
 El [perfil JCA experimental120](../reports/android16-package-bootstrap/keystore-java-functional.json) conserva metadatos SOFTWARE y errores StrongBox, sin cambiar el contrato. Cuatro elecciones por defecto adaptadas en el DEX original no equivalen a recompilar el framework ni acreditan todas sus clases, autenticación o APK. Exigir integración y recorridos reales antes de aceptar cada ámbito.
 
 [Resultado nativo116](../reports/android16-package-bootstrap/keystore-binder-functional.json): operaciones reales SOFTWARE y negativas de hardware/tamper/borrado verificadas, sin cambiar este contrato. Quedan autorización MAC, claves entre reinicios, autenticación/GateKeeper y recorrido APK completo.

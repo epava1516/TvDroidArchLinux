@@ -1,5 +1,7 @@
 # Matriz de aplicaciones reales
 
+La [plataforma122 con GateKeeper/Keystore/JCA](../reports/android16-package-bootstrap/gatekeeper-platform-progress.json) repite instalación intacta de Markor; no añade una etapa aceptada: start-user espera, lanzamiento/UI/entrada/nota/persistencia/cierre/reapertura siguen abiertos. getSecureUserId(0)=0 es una respuesta real sobre usuario sin credencial; no demuestra autenticación de aplicaciones ni desbloqueo.
+
 [JCA original120](../reports/android16-package-bootstrap/keystore-java-functional.json) verifica generación/uso AES-GCM, reapertura entre clientes y negativas en un perfil experimental del framework. No prueba importación, claves asimétricas, autenticación, reinicios ni recorrido de ninguna APK. Markor conserva sólo su instalación temporal anterior; lanzamiento/UI/entrada/nota/cierre/reapertura abiertos.
 
 [Keystore2/KeyMint original116](../reports/android16-package-bootstrap/keystore-binder-functional.json) supera claves y negativas por Binder con SOFTWARE en permisivo. Es soporte nativo, no ejecución de Markor: instalación temporal previa conservada; lanzamiento/UI/entrada/nota/cierre/reapertura siguen sin aceptación. Reapertura de clave entre clientes no es persistencia de la aplicación.
