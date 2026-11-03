@@ -196,7 +196,7 @@ finally:
     messages=[]
     for line in klog.splitlines():
         row=json.loads(line);tag=row.get('SYSLOG_IDENTIFIER','');message=row.get('MESSAGE','')
-        if 'apex' in tag.lower() or re.search(r'apexd|device-mapper|dm-verity|loop[0-9]+|avc:|audit.*(?:lost|suppressed|backlog|rate limit)',message,re.I):messages.append({'utc_us':row.get('__REALTIME_TIMESTAMP'),'tag':tag,'message':message})
+        if 'apex' in tag.lower() or 'bpf' in tag.lower() or re.search(r'apexd|device-mapper|dm-verity|loop[0-9]+|avc:|audit.*(?:lost|suppressed|backlog|rate limit)',message,re.I):messages.append({'utc_us':row.get('__REALTIME_TIMESTAMP'),'tag':tag,'message':message})
     (recovery/'kernel-apex.json').write_text(json.dumps(messages,indent=2)+'\n')
     (recovery/'kernel-apex.log').write_text('\n'.join(row['tag']+': '+row['message'] for row in messages)+'\n')
     # Native Android KernelLogger/user AVC records may enter journald outside
@@ -205,7 +205,7 @@ finally:
     service_messages=[]
     for line in service_journal.splitlines():
         row=json.loads(line);tag=row.get('SYSLOG_IDENTIFIER','');message=row.get('MESSAGE','')
-        if tag.startswith('apexd-') or tag in ['servicemanager','hwservicemanager','apexd','vold','linkerconfig','derive_classpath','logd','keystore2'] or ('name=apexservice' in message and 'tclass=service_manager' in message):
+        if tag.startswith('apexd-') or 'bpf' in tag.lower() or tag in ['servicemanager','hwservicemanager','apexd','vold','linkerconfig','derive_classpath','logd','keystore2','NetBpfLoad','BpfLoader','netd','archtv-platform-bpfloader'] or ('name=apexservice' in message and 'tclass=service_manager' in message):
             service_messages.append({'utc_us':row.get('__REALTIME_TIMESTAMP'),'transport':row.get('_TRANSPORT'),'pid':row.get('_PID'),'tag':tag,'message':message})
     (recovery/'android-service-journal.json').write_text(json.dumps(service_messages,indent=2)+'\n')
 

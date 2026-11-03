@@ -126,3 +126,20 @@
 ; Target of the existing exact read_ahead_kb bind in the private mount ns.
 ; No new filesystem mount/remount, attribute write or Android permission.
 (allow linux.init_t sysfs_dm (file (mounton)))
+
+; Actual198: trusted Linux control-plane bpftool cannot inspect original loader
+; object IDs while enforcing (map_read/prog_run denied), so owned cleanup IDs
+; were incomplete. Grant only that exact original owner edge, no Android app
+; rights and no new map_write/prog_load/capability. Linux names prog_run for
+; obtaining/inspecting a program FD; this permission ALSO permits program test
+; execution if the host caller has required kernel capabilities. It is not a
+; read-only permission. Trusted host control-plane already owns these tests.
+(allow linux.init_t bpfloader (bpf (map_read prog_run)))
+
+; Complete the trusted host ownership-inspection path: original198 denies
+; bpffs directory search as well as BPF object info. Only metadata/opaque
+; read handles; no directory mutation, inode writes or map_write. Combined
+; with the exact bpfloader-owner edge above, this lets the existing observer
+; record real pinned IDs for cleanup. No Android domain gains permissions.
+(allow linux.init_t bpffs_type (dir (read open getattr search)))
+(allow linux.init_t bpffs_type (file (read open getattr)))

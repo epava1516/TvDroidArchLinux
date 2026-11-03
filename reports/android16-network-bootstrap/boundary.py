@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Private Linux BPF mount and real sysctl bindings for original AOSP loaders."""
 from pathlib import Path
-import json,os,stat,subprocess,time
+import ctypes,json,os,stat,subprocess,time
 
 def save(path,value):
     path.write_text(json.dumps(value,indent=2)+'\n')
@@ -102,16 +102,48 @@ def snapshot(root,out,phase):
     """Retain kernel IDs only for objects pinned under this run's private mount."""
     prefix=str(root/'sys/fs/bpf')+'/'
     record={'phase':phase,'time':time.time(),'objects':{},'errors':[],'pin_metadata':[]}
+    # pathlib recursion may silently skip unreadable directories. Preserve
+    # a real failed observation rather than accepting an empty ownership set.
+    try:
+        list((root/'sys/fs/bpf').iterdir())
+    except OSError as error:
+        record['errors'].append({'operation':'read-private-bpffs','errno':error.errno,'error':str(error)})
     for path in (root/'sys/fs/bpf').rglob('*'):
         if path.is_file():
             info=path.stat()
             record['pin_metadata'].append({'path':str(path.relative_to(root/'sys/fs/bpf')),'uid':info.st_uid,'gid':info.st_gid,'mode':oct(stat.S_IMODE(info.st_mode)),'context':os.getxattr(path,'security.selinux').decode().rstrip('\0')})
-    for kind in ['prog','map','link']:
-        p=subprocess.run(['/usr/bin/bpftool','-j','-f',kind,'show'],capture_output=True,text=True,timeout=3)
-        if p.returncode:
-            record['errors'].append({'kind':kind,'exit':p.returncode,'stderr':p.stderr});continue
-        data=json.loads(p.stdout)
-        record['objects'][kind]=[o for o in data if any(str(path).startswith(prefix) and str(path) not in {prefix+'maps.debug',prefix+'progs.debug'} for path in o.get('pinned',[]))]
+    # bpftool -f enumerates pins with default RW map handles, even though
+    # show-by-ID uses read-only handles. Do not grant host map_write for an
+    # observer: reuse libbpf's original readonly object getter and actual
+    # kernel fdinfo IDs for only this private mount's real pins.
+    record['objects']={kind:[] for kind in ['prog','map','link']}
+    record['backend']='libbpf-bpf_obj_get_opts-readonly-kernel-fdinfo'
+    class GetOpts(ctypes.Structure):
+        _fields_=[('sz',ctypes.c_size_t),('file_flags',ctypes.c_uint32),('path_fd',ctypes.c_int)]
+    lib=ctypes.CDLL('/usr/lib/libbpf.so.1',use_errno=True)
+    lib.bpf_obj_get_opts.argtypes=[ctypes.c_char_p,ctypes.POINTER(GetOpts)]
+    lib.bpf_obj_get_opts.restype=ctypes.c_int
+    for item in record['pin_metadata']:
+        pin=root/'sys/fs/bpf'/item['path']
+        if pin.name in {'maps.debug','progs.debug'}:continue
+        opts=GetOpts(ctypes.sizeof(GetOpts),8,0)  # BPF_F_RDONLY, installed bpf.h
+        ctypes.set_errno(0);fd=lib.bpf_obj_get_opts(os.fsencode(pin),ctypes.byref(opts))
+        if fd<0:
+            record['errors'].append({'operation':'readonly-pin-open','path':str(pin),'return':fd,'errno':ctypes.get_errno()})
+            continue
+        try:
+            fields=dict(line.split(':',1) for line in Path('/proc/self/fdinfo',str(fd)).read_text().splitlines() if ':' in line)
+            kind=next((kind for kind in ['link','map','prog'] if kind+'_id' in fields),None)
+            if kind is None:raise ValueError('Real pinned FD has no known kernel object ID')
+            identifier=int(fields[kind+'_id'].strip());assert identifier>0
+            record['objects'][kind].append({'id':identifier,'pinned':[str(pin)],'open_flags':8,'fdinfo':{k:v.strip() for k,v in fields.items()}})
+        except (OSError,ValueError,AssertionError) as error:
+            record['errors'].append({'operation':'kernel-fdinfo-id','path':str(pin),'error':str(error)})
+        finally:os.close(fd)
+    for kind,prefix_name in [('prog','prog_'),('map','map_')]:
+        observed_pins=[p for p in record['pin_metadata'] if Path(p['path']).name.startswith(prefix_name)]
+        if observed_pins and not record['objects'].get(kind,[]):
+            record['errors'].append({'operation':'reconcile-pinned-ids','kind':kind,'pins':len(observed_pins),'error':'Real pins observed but no matching kernel IDs; ownership incomplete'})
     path=out/'bpf-owned.json';records=json.loads(path.read_text()) if path.exists() else []
     records.append(record);save(path,records)
     return record

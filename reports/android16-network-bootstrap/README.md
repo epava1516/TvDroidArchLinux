@@ -1,6 +1,10 @@
 # Red original AOSP en la cohorte Linux
 
-## Vigente · namespaces originales y operación netd
+## Estado bajo MAC
+
+[Registro canónico198/199](../android16-package-bootstrap/original-apex-derive-mac-progress.json): Mainline original termina0 y sus IDs fijados se liberan; plataforma aborta por asociación de raíz bpffs. La operación netd descrita debajo es histórica en permisivo, no disponibilidad actual bajo MAC.
+
+## Histórico · operación netd en permisivo
 
 [Resultado y hashes](native-functional.json): inventario41 contrastado por API,
 XML, versiones y montajes; generación original de linkerconfig en las fases

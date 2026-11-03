@@ -1,6 +1,6 @@
 # Matriz de aplicaciones reales
 
-Observación197 · [Markor bajo MAC pendiente](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): BPF supera JIT y crea mapa, pero pin falla por asociación bpffs AOSP/Linux. Sin red ni etapa APK nuevas aceptadas. El cargador advierte que su tabla de versiones no reconoce6.18; no equivale al fallo concreto de permisos ni prueba compatibilidad del kernel. Nota/CE/DE previos intactos; R1-MAC, ARM, GMS/servicios externos y DRM abiertos.
+Observación199 · [Markor sin nueva etapa aceptada](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): BPF Mainline original0 y cierre de31 programas/39 mapas conocidos; plataforma aborta antes de netd. No se infiere conectividad, procesamiento multimedia ni FUSE-BPF por cargar objetos; la consulta FUSE falla ENOENT en la vista privada y falta contraste del kernel. Nota/CE/DE anteriores conservados; R1-MAC, ARM, GMS/servicios externos y DRM separados abiertos.
 
 Histórico179 · [aconfig/VDC, sin nueva aceptación APK](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): original init_user0 alcanza vold y falla en auxiliar NNP. La nota e instalación previas conservan sus bytes/etiquetas tras la prueba; no equivale a ejecutar de nuevo Markor bajo MAC. Etapas167 mantienen alcance permisivo, ARM/GMS/DRM separados.
 

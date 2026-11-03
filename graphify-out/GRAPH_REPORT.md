@@ -1,7 +1,7 @@
 # Graph Report - repositorio-principal  (2026-11-03)
 
 ## Corpus Check
-- 346 files · ~319,812 words
+- 346 files · ~319,909 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 48 file(s) not represented in the graph (top: .cil 15, .xml 11, .patch 11)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `8e8deea2`
+- Built from commit: `06659dd1`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -789,7 +789,7 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.076) - this node is a cross-community bridge._
 - **Should `resources-jni.cpp` be split into smaller, more focused modules?**
   _Cohesion score 0.13535353535353536 - nodes in this community are weakly interconnected._
-- **Why does `TvCompositor` connect `TvCompositor` to `winit.rs`, `mod.rs`, `input.rs`, `drm.rs`, `session.rs`, `.process_input_event`, `xdg_shell.rs`, `compositor.rs`?**
-  _High betweenness centrality (0.067) - this node is a cross-community bridge._
+- **Why does `Arquitectura vigente · A16-QPR2-1` connect `Arquitectura vigente · A16-QPR2-1` to `Puerta vigente: Binder privado y política del Linux anfitrión`, `ready`, `ROADMAP.md`?**
+  _High betweenness centrality (0.064) - this node is a cross-community bridge._
 - **Should `Client` be split into smaller, more focused modules?**
   _Cohesion score 0.08346134152585766 - nodes in this community are weakly interconnected._

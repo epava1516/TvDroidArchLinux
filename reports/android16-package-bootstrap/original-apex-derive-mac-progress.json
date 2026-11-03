@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "utc": "2026-11-03T17:26:44.028272+00:00",
+  "utc": "2026-11-03T20:34:49.139445+00:00",
   "scope": "Partial original APEX/derive admission under bounded enforcing; no new APK stage or general MAC/isolation acceptance",
   "base_commit": "39d0be0edb77c13575681175fc26e730adee3c11",
   "executions": {
@@ -1105,6 +1105,182 @@
         "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1fd6c900fa44478c86e32b83c0b627cb/private-devpts.json",
         "sha256": "5eeb33b3b6e84576b8500e769a9a2a6a3e726cd5761e2ab61e16da0f3570df68"
       }
+    },
+    "198": {
+      "before-launch.json": {
+        "path": "/home/tv/recuperacion-archtv/25f30e93-6b3a-499d-b8ba-9780d65f8599-markor-software-launch/before-launch.json",
+        "sha256": "67f8fd355f7376f8716502c0390e4b4f39d1e12dc77c133be644b41ef8dad211"
+      },
+      "result.json": {
+        "path": "/home/tv/recuperacion-archtv/25f30e93-6b3a-499d-b8ba-9780d65f8599-markor-software-launch/result.json",
+        "sha256": "606246505b3d57d1e0f9b437438d6f69b1ec0c5b965585d33d3f38ef7de0baa3"
+      },
+      "mac-window.json": {
+        "path": "/home/tv/recuperacion-archtv/25f30e93-6b3a-499d-b8ba-9780d65f8599-markor-software-launch/mac-window.json",
+        "sha256": "ce14d3f6e282b326f184b9c624476ce0ed9eb0925e4aeaba52b57129211ec39a"
+      },
+      "run.log": {
+        "path": "/home/tv/recuperacion-archtv/25f30e93-6b3a-499d-b8ba-9780d65f8599-markor-software-launch/run.log",
+        "sha256": "870f95e3150d70ec64e6ccee70686768a4f5c77a8f097191f00469666d3d8219"
+      },
+      "kernel-apex.log": {
+        "path": "/home/tv/recuperacion-archtv/25f30e93-6b3a-499d-b8ba-9780d65f8599-markor-software-launch/kernel-apex.log",
+        "sha256": "9c8320921154bf3eee8401cad3562604c8279e99d9579441e9aec47368241609"
+      },
+      "android-service-journal.json": {
+        "path": "/home/tv/recuperacion-archtv/25f30e93-6b3a-499d-b8ba-9780d65f8599-markor-software-launch/android-service-journal.json",
+        "sha256": "5b4162e8083554f34580855463f3a08be87bc50c08db38b4c0f4c1d408d8c488"
+      },
+      "factory-path.json": {
+        "path": "/home/tv/recuperacion-archtv/25f30e93-6b3a-499d-b8ba-9780d65f8599-markor-software-launch/factory-path.json",
+        "sha256": "a172080f5cf998465359ab71be7ab7970a7ac306c4b85751b315ce5bf26655c7"
+      },
+      "factory-materialized.py": {
+        "path": "/home/tv/recuperacion-archtv/25f30e93-6b3a-499d-b8ba-9780d65f8599-markor-software-launch/factory-materialized.py",
+        "sha256": "b732fe3ef67cfba4ff1a205caaa8e841d400701f2628fb7ea01af27592ab90d4"
+      },
+      "session-state.json": {
+        "path": "/home/tv/recuperacion-archtv/25f30e93-6b3a-499d-b8ba-9780d65f8599-markor-software-launch/session-state.json",
+        "sha256": "907b69a6130889fc43b1fe1f69c4fe235d07d2c60996c60c6c8f5cf1f1243cb4"
+      },
+      "completion-manifest.json": {
+        "path": "/home/tv/recuperacion-archtv/25f30e93-6b3a-499d-b8ba-9780d65f8599-markor-software-launch/completion-manifest.json",
+        "sha256": "2fe39b88c2df9a03aee8861dcb4f6008149d2a76a5ccfde6cb5316118fde2d51"
+      },
+      "completion-consumer.json": {
+        "path": "/home/tv/recuperacion-archtv/25f30e93-6b3a-499d-b8ba-9780d65f8599-markor-software-launch/completion-consumer.json",
+        "sha256": "d733cdbb5ddd56c565a41abf1a7013c4f1f8a73fdadc69603787c6c9cd69d2fb"
+      },
+      "finite-audit/result.json": {
+        "path": "/home/tv/recuperacion-archtv/25f30e93-6b3a-499d-b8ba-9780d65f8599-markor-software-launch/finite-audit/result.json",
+        "sha256": "0cc649bdd131b99c5fe65a782a81fa398109d1a80094aeddacf9de1cccc087e5"
+      },
+      "finite-audit/audit.log": {
+        "path": "/home/tv/recuperacion-archtv/25f30e93-6b3a-499d-b8ba-9780d65f8599-markor-software-launch/finite-audit/audit.log",
+        "sha256": "960b1f763ad5bafc4d601ee705c7178f4a6bf39ad85b1e10ccde1d53395e52e2"
+      },
+      "runtime-source-overlay.json": {
+        "path": "/home/tv/recuperacion-archtv/25f30e93-6b3a-499d-b8ba-9780d65f8599-markor-software-launch/runtime-source-overlay.json",
+        "sha256": "9a69a05afa501603f3dca0733bc5af5ebda2e775289cfb16b36b02961f138d58"
+      },
+      "bpf-cleanup.json": {
+        "path": "/home/tv/recuperacion-archtv/25f30e93-6b3a-499d-b8ba-9780d65f8599-markor-software-launch/bpf-cleanup.json",
+        "sha256": "ccf9297fb8249aa11cbf3493117b2ec2c162b8cf06b4c952385ea561c53c09ed"
+      },
+      "bpf-before.json": {
+        "path": "/home/tv/recuperacion-archtv/25f30e93-6b3a-499d-b8ba-9780d65f8599-markor-software-launch/bpf-before.json",
+        "sha256": "17d882db357ef38c0967e26237fdbdfcf17282642d1df1c3e944d8aa220ded20"
+      },
+      "bpf-cleanup-recovered.json": {
+        "path": "/home/tv/recuperacion-archtv/25f30e93-6b3a-499d-b8ba-9780d65f8599-markor-software-launch/bpf-cleanup-recovered.json",
+        "sha256": "f9c1a1abdfca47e816c38c12a6fe4baa9d1c1ac7983b8966159656aeab2f63c3"
+      },
+      "bpf-owned.json": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-25f30e936b3a499db8ba9780d65f8599/bpf-owned.json",
+        "sha256": "ef7e3a5a158cb5a567fd35acf29b718c20f62d232a6de5306d63737320631ab6"
+      },
+      "network-boundary.json": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-25f30e936b3a499db8ba9780d65f8599/network-boundary.json",
+        "sha256": "b23b174cb88d4bcb3eb1653d11ac467d7e43d915f339245ada7af7c4a62e88e5"
+      },
+      "device-monitor.log": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-25f30e936b3a499db8ba9780d65f8599/device-monitor.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "199": {
+      "before-launch.json": {
+        "path": "/home/tv/recuperacion-archtv/6c2118d5-a326-40ad-a76f-eaec97e3f3fd-markor-software-launch/before-launch.json",
+        "sha256": "515203633737d0954135d9f8a776bdade93639f89d4845af711d12a3f0990fec"
+      },
+      "result.json": {
+        "path": "/home/tv/recuperacion-archtv/6c2118d5-a326-40ad-a76f-eaec97e3f3fd-markor-software-launch/result.json",
+        "sha256": "75afb22cc9f5b397543c4455449585bab66ccf3467d9826ae08e77da20489fb4"
+      },
+      "mac-window.json": {
+        "path": "/home/tv/recuperacion-archtv/6c2118d5-a326-40ad-a76f-eaec97e3f3fd-markor-software-launch/mac-window.json",
+        "sha256": "15c58493c342ad195855f26e9958c7707754391bda57c9a54f3254d274544240"
+      },
+      "run.log": {
+        "path": "/home/tv/recuperacion-archtv/6c2118d5-a326-40ad-a76f-eaec97e3f3fd-markor-software-launch/run.log",
+        "sha256": "c7d2bec763aea9cbcd0170f869edd42b58681e113cc11bdc03748a13b96270e3"
+      },
+      "kernel-apex.log": {
+        "path": "/home/tv/recuperacion-archtv/6c2118d5-a326-40ad-a76f-eaec97e3f3fd-markor-software-launch/kernel-apex.log",
+        "sha256": "08b94c703401ea899e26dd6c4f737b050179ab4073754ba9785a3d7540d569d5"
+      },
+      "android-service-journal.json": {
+        "path": "/home/tv/recuperacion-archtv/6c2118d5-a326-40ad-a76f-eaec97e3f3fd-markor-software-launch/android-service-journal.json",
+        "sha256": "fba85283bf09ef7e1f6e66c349d0dca04e27b1e5dc16bbd08c1c82e2e1daf227"
+      },
+      "factory-path.json": {
+        "path": "/home/tv/recuperacion-archtv/6c2118d5-a326-40ad-a76f-eaec97e3f3fd-markor-software-launch/factory-path.json",
+        "sha256": "8c3a52c7ae7f6c97318814a78bc5751c7bc5fb7562e8afc06dbf04408ce601fa"
+      },
+      "factory-materialized.py": {
+        "path": "/home/tv/recuperacion-archtv/6c2118d5-a326-40ad-a76f-eaec97e3f3fd-markor-software-launch/factory-materialized.py",
+        "sha256": "9d894c9ac2ad88eddecda100e96aa6f69f631407422f6730a5673cc43315016c"
+      },
+      "session-state.json": {
+        "path": "/home/tv/recuperacion-archtv/6c2118d5-a326-40ad-a76f-eaec97e3f3fd-markor-software-launch/session-state.json",
+        "sha256": "2983873bc48115af75723d7e870343dcc34db0d512a22bcf65b98cd7ec7210b2"
+      },
+      "completion-manifest.json": {
+        "path": "/home/tv/recuperacion-archtv/6c2118d5-a326-40ad-a76f-eaec97e3f3fd-markor-software-launch/completion-manifest.json",
+        "sha256": "d05d0dad9875dfdc0b34d1c1cd9dea731b2bdead615b6546ffae03c387070db6"
+      },
+      "completion-consumer.json": {
+        "path": "/home/tv/recuperacion-archtv/6c2118d5-a326-40ad-a76f-eaec97e3f3fd-markor-software-launch/completion-consumer.json",
+        "sha256": "36d78b54058f921a1dc83142e0dafb8b8f15cca4d5cfe33a7fa0382621969517"
+      },
+      "finite-audit/result.json": {
+        "path": "/home/tv/recuperacion-archtv/6c2118d5-a326-40ad-a76f-eaec97e3f3fd-markor-software-launch/finite-audit/result.json",
+        "sha256": "59bce3a2e76dc49eae7ea33cfe48a7110cd395e1adf88b58f465535290cc668d"
+      },
+      "finite-audit/audit.log": {
+        "path": "/home/tv/recuperacion-archtv/6c2118d5-a326-40ad-a76f-eaec97e3f3fd-markor-software-launch/finite-audit/audit.log",
+        "sha256": "0b74b094daca593c77efb35cce81c9fae57cfbc7d021d3cb58ba36ec9a743465"
+      },
+      "runtime-source-overlay.json": {
+        "path": "/home/tv/recuperacion-archtv/6c2118d5-a326-40ad-a76f-eaec97e3f3fd-markor-software-launch/runtime-source-overlay.json",
+        "sha256": "e57cd7261bccf1312ba6bbe2f0c2b6e2d671ef91e8bc7bd4cce7fb2f60b5f45b"
+      },
+      "bpf-cleanup.json": {
+        "path": "/home/tv/recuperacion-archtv/6c2118d5-a326-40ad-a76f-eaec97e3f3fd-markor-software-launch/bpf-cleanup.json",
+        "sha256": "cf00c3e8f391cd357ecf7e2af4b0a1a3a27feb22d0ffb264609a08d321f98d57"
+      },
+      "bpf-before.json": {
+        "path": "/home/tv/recuperacion-archtv/6c2118d5-a326-40ad-a76f-eaec97e3f3fd-markor-software-launch/bpf-before.json",
+        "sha256": "242d996344cc0a2bb387b0ad534f152bfd34a5e2691217be1b242f6d2387b66b"
+      },
+      "bpf-journal-recovered.json": {
+        "path": "/home/tv/recuperacion-archtv/6c2118d5-a326-40ad-a76f-eaec97e3f3fd-markor-software-launch/bpf-journal-recovered.json",
+        "sha256": "4ecf0789528956c7fe62e686fb83d0708dbcfdc48150f49bf333dce834c237bc"
+      },
+      "bpf-all-known-after.json": {
+        "path": "/home/tv/recuperacion-archtv/6c2118d5-a326-40ad-a76f-eaec97e3f3fd-markor-software-launch/bpf-all-known-after.json",
+        "sha256": "4e2256fe41cdd733c14ab2a991dfe82bde5ce51751e3e0f72632ac7a306a10f3"
+      },
+      "snapshot-readonly-validation.json": {
+        "path": "/home/tv/recuperacion-archtv/6c2118d5-a326-40ad-a76f-eaec97e3f3fd-markor-software-launch/snapshot-readonly-validation.json",
+        "sha256": "5ce4d8c8e73839f8a33bbd737e2d8054954d667fe6d896dccf0d24884d8d6521"
+      },
+      "userdata-after199-close.json": {
+        "path": "/home/tv/recuperacion-archtv/6c2118d5-a326-40ad-a76f-eaec97e3f3fd-markor-software-launch/userdata-after199-close.json",
+        "sha256": "7a8e36d72101053e12637a2bb0299c7d4b1a047d65ce679b15b358a63cb42caa"
+      },
+      "bpf-owned.json": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-6c2118d5a32640ada76feaec97e3f3fd/bpf-owned.json",
+        "sha256": "811997caad29ee32cf83eb7c4b11bccb0506df9392d92063c9bdc177c1ccc9db"
+      },
+      "network-boundary.json": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-6c2118d5a32640ada76feaec97e3f3fd/network-boundary.json",
+        "sha256": "f0e068912312edd2391b1810aebb1d983490356365e7ca7e263ca2c7aa7b97fa"
+      },
+      "device-monitor.log": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-6c2118d5a32640ada76feaec97e3f3fd/device-monitor.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
     }
   },
   "decisions": [
@@ -1142,7 +1318,7 @@
     "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load10/after-load.json",
     "sha256": "309743229826231a5a6d96498f808485c1d5ad5ce3a5cd8c1a279f21f26b9aa8"
   },
-  "next": "Reuse whole original bpffs associate contract: base_typeattr_321 = bpffs_type except fs_bpf, map destination to Linux.bpf_t filesystem without new pin/create/data rights. Include actual original BPF KernelLogger tags in existing capture. Then entire original BPF/netd integration. Original Zygote selected-framework route/logd/helper effects/Markor MAC and ARM/GMS/DRM open.",
+  "next": "Adapt original common fs_type self association for fs_bpf root to Linux.bpf_t, and original domain fs_type filesystem/dir getattr to Linux.filesystem_type (no contents/control/mount rights). Then same native199 + Linuxreadonly snapshot/case-insensitive capture, entire original platformBPF/netd integration. FUSE query noncritical/unverified kernel/view limit retained. No reactive grants for abortunwinder bundle/vendor/tmp reads. Original Zygote/logd and Markor fullMAC remain required.",
   "original_sources": {
     "sdkextensions_commit": "4d10e57070bb9c6edcd13bf74e9d01717b2a5ecf",
     "derive_rc_sha256": "a9e65b0c114408e5cb8356bdb435a6b48d0a67cd7879915c52ffa094a267f607",
@@ -1212,8 +1388,8 @@
     "sha256": "9e395067238c647c729c48a03dc8a115e81727ff30a8bfd6f4e50098098c9134"
   },
   "latest_host": {
-    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after197-host.json",
-    "sha256": "ff6f2df05d09606a39acc9e64b7ea13618b7fabd3ea72f0f1cb704e53be8779f"
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after199-host.json",
+    "sha256": "b27ba3d7757da0dfc3e611156737098f9f9d82ef1293fc90fe8121f0c97c58ee"
   },
   "vdc_source_contract": {
     "builtin": "Pinned system/core/init/builtins.cpp1122\u20131172: original temporary exec plus original failure callback; exact argv /system/bin/vdc --wait cryptfs init_user0. Native observes actual reaping before advance, no shell redirection or synthetic readiness.",
@@ -1519,5 +1695,54 @@
     "logging": "Original NetBpfLoad KernelLogger tags omitted by old capturefilter. Same bounded execution journal recovered without rerun. Include actual NetBpfLoad/BpfLoader/netd in existing capture next.",
     "provenance": "Native188 source-inputs omits network boundary; runtime-only Linux extra independently pinned with HEAD baseline in overlay4. No compiled-input/rebuild claim; future nativebuild mustcapture.",
     "recovery": "Verified mode0, candidate22 loaded but kernel policyloadCOUNT21 because21artifact unused. Hashb5d03a1dc375f9ca697d04f9374e044a6e50c021aa16613bc77e26a07dc6cc74. Audit0/newloss0/rulesunchanged/backlog64, no ownedunits/loops/dm/FUSE. VT/GPU restored, priornote21byte/hash/CE/DE preserved.196/197 consumed noqueue."
+  },
+  "policy23_artifact": {
+    "path": "/home/tv/repositorio-principal/dist/aosp16/selected-platform-policy-23/artifact.json",
+    "sha256": "8631284ce019440358af5424055803485fe73d0b9f08375d1ffc22aa35bb656d"
+  },
+  "policy23_load": {
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load23/after-load.json",
+    "sha256": "d6da97de08f84640625c02124d1fed8245a477346d73fd9b95e1a8d009332c3a"
+  },
+  "policy24_unused_artifact": {
+    "path": "/home/tv/repositorio-principal/dist/aosp16/selected-platform-policy-24/artifact.json",
+    "sha256": "4edb380bd72c8acaf2bd8bc2709bdb898cad095b9fec287f0f61c9ffb49ef9f6"
+  },
+  "policy25_artifact": {
+    "path": "/home/tv/repositorio-principal/dist/aosp16/selected-platform-policy-25/artifact.json",
+    "sha256": "f3a6184345c4a43223996f9c1c7f278e7c003ea23dee53e46c82fbbea074cd4e"
+  },
+  "policy25_load": {
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load25/after-load.json",
+    "sha256": "3e41c4d2529acd33533081aaf418fee89cc35f654339ceec9845a79203902b84"
+  },
+  "bpffs_contract23": {
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/bpffs-contract23.json",
+    "sha256": "05ce3ea1bb2f020d4b40ff25595e17f431edea0c2f0596329c42f80fc8b99663"
+  },
+  "observer_consumer199": {
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/observer-and-consumer199.json",
+    "sha256": "fdd6bc3f6d79515e70c0539732f4c49911d7d05b20b959f19a9296a37f4af87a"
+  },
+  "after199_host": {
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after199-host.json",
+    "sha256": "b27ba3d7757da0dfc3e611156737098f9f9d82ef1293fc90fe8121f0c97c58ee"
+  },
+  "build199": {
+    "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-199/source-inputs.json",
+    "sha256": "80fc66ddec36e3ee2cbba4a57994ff387452fdf7f457c80a81226e4c20843b4c"
+  },
+  "integrated198_199": {
+    "scope": "Original Mainline BPF execution/IDs/closure milestone, no netd or new APK compatibility acceptance",
+    "association23": "Same original specific bpffs_type except fs_bpf object association rule mapped to Linux.bpf_t.198 real loader exits0 and loads/pins programs, but added init stat checker fails because original init lacks bpffs search.",
+    "native199": "Removes only gratuitous init stat; original producer creates real mainline_done before0, platform completion property and netd operations remain required. No init newaccess. Native199 also first captures network boundary in source-inputs; Linux-only ownership correction explicitly pinned in overlay.",
+    "host_observer25": "24 compiled unused.25 allows trusted Linux init_t bpffs directory metadata/opaque read handles and bpfloader-owner map_read/prog_run; no Android permission, map_write/prog_load or capability grant. prog_run ALSO permits tests with kernelcaps, not readonly permission. Source comments explicit.",
+    "readonly_backend": "Original libbpf bpf_obj_get_opts withBPF_F_RDONLY and actual kernel fdinfo IDs per private pin, no global bpftool -f scan/defaultRW opens. Actual199 validates78 mapFD observations allflags02000000/O_RDONLY. Guard records unreadable directories or missing realpin IDs as errors, never empty success.",
+    "execution199": "Mainline original exits0; platform original startsUID0 then abortsSIGABRT(code3,status6). Both operate in original bpfloader SID; bpfloader_platform_exec is executable type, not separate domain. Trusted immutable original ELF Linux entryalias is explicit adaptation, original order/source/IDs/caps retained.",
+    "programs_and_closure": "Actual199 snapshots mainline-done/monitor-close each31program/39map/0link, noerrors. All observed IDs absent afterclose; independent union with originalKernelLoggerIDs also31/39 absent.198 unique logged IDs {\"prog\": 31, \"map\": 38, \"link\": 0} absent, but host/systemd/observer globaldelta notempty and oldownershipcapture incomplete. No broad deletion/globalempty claim.",
+    "primary_platform_failure": "Recovered real BpfLoader-rs logs show mkdir cputimeinstate/memevents/vendor EACCES; exact audit fs_bpf ->Linux.bpf_t filesystemassociate denied. Original common CIL27721 allow fs_type self filesystemassociate was not included in23 root mapping. Next adapt effective full bpffs set includingroot and common original FS metadata to Linux.filesystem_type. No automatic grant to bundle/vendor/tmp accesses from abort/unwinding.",
+    "fuse_limit": "Original platform also reports FUSE prog type query ENOENT, noncritical source. Private-view absence versus kernel support not contrasted; do not infer global kernelabsence or media compatibility.",
+    "logging": "Existing capture now case-insensitive BPF tag matching.199 exact old list omitted BpfLoader-rs; recovered same-runjournal separately. Post199 diagnostic parsing correction not represented as rerunoriginalservice. Original logd integration still pending.",
+    "recovery": "199 candidate1 stillenforcing after7.143s, normalrestore0. Global inspector permissive candidate25/policyloadCOUNT23, audit0/newloss0/rulesunchanged/backlog64, no ownedunits/loops/dm/FUSE; VT/GPU and priornote21byte/hash/CE/DE retained.198/199consumed noqueue. R1MAC completecohort, kernel6.18warning, originalZygote/logd/user0effects/ARM/GMS/DRM open."
   }
 }

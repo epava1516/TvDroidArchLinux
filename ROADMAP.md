@@ -1,6 +1,6 @@
 # Roadmap · Arch TV nativo en Rust
 
-Prioridad197: [estado canónico](docs/ESTADO.md) · JIT y mapa BPF originales reales; pin bloqueado por asociación bpffs AOSP/Linux. Adaptar contrato original completo, avanzar netd/cliente y después servicios/entrada Zygote y Markor bajo MAC. Retornos0 parciales no cierran compatibilidad.
+Prioridad199: [estado canónico](docs/ESTADO.md) · Mainline BPF original0 y liberación de IDs probada. Completar asociación raíz bpffs/metadatos FS y plataforma/netd/cliente; después Zygote/logd y Markor bajo MAC. No hay nueva etapa APK ni red aceptada.
 
 Histórico179: [estado](docs/ESTADO.md) · builtin/VDC original alcanza vold y falla25 en auxiliar NNP; exigir operación user0 completa y APEX en vivo, luego Markor bajo MAC. [Evidencias](reports/android16-package-bootstrap/original-apex-derive-mac-progress.json).
 

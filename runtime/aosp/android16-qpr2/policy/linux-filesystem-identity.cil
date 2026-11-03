@@ -16,3 +16,12 @@
 (allow domain linux.security_t (filesystem (getattr)))
 (allow domain linux.security_t (dir (search)))
 (allow domain linux.security_t (file (getattr)))
+
+; Actual197 original map pin denied associate: fs_bpf_tethering -> Linux.bpf_t.
+; Original pinned policy18519 grants bpffs_type except fs_bpf association on
+; its own fs_bpf filesystem SID. Preserve that complete object set and only
+; adapt the Linux-owned filesystem SID; original map/program/pin, directory,
+; DAC and capability checks are unchanged. No generic file-type or domain grant.
+(typeattribute archtv_original_bpffs_objects)
+(typeattributeset archtv_original_bpffs_objects (and (bpffs_type) (not (fs_bpf))))
+(allow archtv_original_bpffs_objects linux.bpf_t (filesystem (associate)))

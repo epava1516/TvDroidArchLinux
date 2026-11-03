@@ -416,13 +416,13 @@
         "scope": "Exact Markorv164 Markdown note created163 survives complete cohort teardown and original subsystems167; actual bytes, same UID/inodes/MCS, original install/force-stop/relaunch and real single pointer opens editor.167 native/exterior0. Not host reboot/power loss, FBE/MAC, graceful close, arbitrary upgrade or general APK compatibility."
       },
       "runtime_security_observation": {
-        "candidate": 197,
-        "status": "original_JIT_pass_map_created_pin_associate_denied",
+        "candidate": 199,
+        "status": "original_mainlineBPF_exit0_platform_root_associate_abort",
         "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-        "record_sha256": "e77ff7bb2f8437447a94bb59bdf3010f253a0bafe08c0b226eb57f6cf39f5b4c",
-        "scope": "JIT/map creation positive, pinEACCES; APEX41/user0 return0 partial, oldSELinuxdetection risk explicit; no newAPK stage or R1MAC acceptance.",
+        "record_sha256": "46af7cd07c5ca8e36d2fbdebd4d84f97557ef65ec77e9f66724634efc88208e0",
+        "scope": "Real31prog39map snapshots and IDrelease verified. Platform SIGABRT onrootbpffsassociation; no netd/newAPKstage accepted. User0effect/Zygote/logd/kernelwarning remain explicit.",
         "r1_mac": "open",
-        "host_after": "Permissive candidate22/policyloadCOUNT21, auditnewloss0,no ownedresources, previousnote/CE/DE preserved"
+        "host_after": "Permissive candidate25/policyloadCOUNT23, auditnewloss0/noownedresources and allknownBPFIDsabsent, note/CE/DE retained"
       },
       "runtime_security_observation_history": [
         {
@@ -507,6 +507,15 @@
           "scope": "APEX41 and original user0 return0 retained; original netbpfload NNP edge runs but exit24. Selected system_server direct entry held out; original Zygote route pending. No new APK stage;167 remains permissive scope.",
           "r1_mac": "open",
           "host_after": "Verified permissive policyload20/audit0/no newloss/no ownedresources; note/CE/DE unchanged"
+        },
+        {
+          "candidate": 197,
+          "status": "original_JIT_pass_map_created_pin_associate_denied",
+          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "record_sha256": "e77ff7bb2f8437447a94bb59bdf3010f253a0bafe08c0b226eb57f6cf39f5b4c",
+          "scope": "JIT/map creation positive, pinEACCES; APEX41/user0 return0 partial, oldSELinuxdetection risk explicit; no newAPK stage or R1MAC acceptance.",
+          "r1_mac": "open",
+          "host_after": "Permissive candidate22/policyloadCOUNT21, auditnewloss0,no ownedresources, previousnote/CE/DE preserved"
         }
       ]
     }

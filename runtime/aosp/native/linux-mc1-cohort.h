@@ -510,8 +510,12 @@ class LinuxMc1Cohort {
             std::fprintf(stderr,"NETWORK_LOADER_STARTED name=%s pid=%d uid=%u NOT_READY\n",name.c_str(),loader->pid(),loader->uid());
             if(auto waited=Wait(tick,[this]{return client_done_;},30);!waited.ok())return waited;
             if(!client_ok_)return android::base::Error()<<"Original network loader failed: "<<name;
-            struct stat ready{};
-            if(stat("/sys/fs/bpf/netd_shared/mainline_done",&ready)!=0 || !S_ISDIR(ready.st_mode))return android::base::Error()<<"Original mainline loader did not complete";
+            // Original NetBpfLoad creates mainline_done before its successful
+            // nonroot return. Android init has only mounton on fs_bpf: it is
+            // not the map consumer. Do not give init new BPF traversal rights
+            // for this added diagnostic. Keep original producer exit, platform
+            // completion property and subsequent original netd operations.
+            std::fprintf(stderr,"NETWORK_ORIGINAL_LOADER_EXIT0 name=%s REQUIRES_ORIGINAL_CONSUMER_OPERATIONS\n",name.c_str());
         }
         if(android::base::GetProperty("bpf.progs_loaded","")!="1")return android::base::Error()<<"Original platform loader did not publish completion";
         parsed=parser.ParseConfigFile("/vendor/etc/init/archtv-netd.rc");

@@ -1,6 +1,6 @@
 # Contrato vigente · AOSP Android 16 QPR2
 
-Límite197 · [detección y evidencia](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): el kernel puede aplicar MAC mientras libselinux detecta mal su montaje; user0/VDC0 anteriores no acreditaban restorecon/seguridad. Metadatos comunes se adaptan sin permisos nuevos de controles. JIT y mapa reales no implican pin/programa/red disponibles: pinEACCES y salida38 conservados.196 caducada se rechaza aunque derive termine0. Sin etapa APK/MAC general nueva.
+Límite199 · [alcance de BPF real](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): Mainline0, programas/mapas fijados y sus IDs liberados prueban ese recorrido, no red, framework ni APK compatibles. Aborto de plataforma por asociación raíz se conserva. El inspector falla si no puede observar pins/IDs; sus mapas usan FD O_RDONLY y no obtiene map_write. Las facultades de prueba implícitas de prog_run del control Linux se documentan; ningún dominio Android gana esos permisos. R1-MAC de la cohorte completa sigue abierto.
 
 Histórico179 · [operación original fallida conservada](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): código0 de inicializadores aconfig no demuestra flags completas ni sockets disponibles; VDC25 no es éxito de init_user0. Inventario APEX leído después de cerrar no acredita disponibilidad durante ejecución. Mantener R1-MAC abierto hasta el recorrido real completo con identidades, pruebas negativas, cierre y efectos del anfitrión.
 
