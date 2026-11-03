@@ -51,6 +51,18 @@ def prepare(root, out, name):
         prior = archive / out.name
         assert not prior.exists()
         diagnostic.rename(prior)  # Preserve evidence; remove no application data.
+    prior_root_client = None
+    root_client = data / 'local/tmp/archtv-apex-client'
+    if root_client.exists() or root_client.is_symlink():
+        info = root_client.lstat()
+        assert stat.S_ISDIR(info.st_mode) and info.st_uid == 0 and info.st_gid == 0
+        assert stat.S_IMODE(info.st_mode) == 0o700
+        archive = store / 'diagnostics'
+        archive.mkdir(mode=0o700, exist_ok=True)
+        assert archive.resolve() == archive and archive.stat().st_uid == 0
+        prior_root_client = archive / (out.name + '-apex-root-client')
+        assert not prior_root_client.exists()
+        root_client.rename(prior_root_client)
     subprocess.run(['mount', '--bind', str(data), str(root / 'data')], check=True)
     source = data.stat()
     target = (root / 'data').stat()
@@ -58,6 +70,7 @@ def prepare(root, out, name):
     fd = os.open(data, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW | os.O_CLOEXEC)
     record = {**metadata, 'path': str(data), 'device': source.st_dev, 'inode': source.st_ino,
               'prior_diagnostics': str(prior) if prior else None,
+              'prior_root_client_diagnostics': str(prior_root_client) if prior_root_client else None,
               'scope': 'Owned private experimental data; no APK, user, key, permission or readiness seeded. No encryption/MAC acceptance.'}
     (out / 'userdata-mount.json').write_text(json.dumps(record, indent=2) + '\n')
     print('LINUX_PRIVATE_USERDATA_MOUNT ' + json.dumps(record), flush=True)

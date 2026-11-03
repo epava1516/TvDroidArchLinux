@@ -29,6 +29,10 @@ def prepare(root, out, data_store):
     subprocess.run(['mount','--bind',str(data_store),str(root/'data/apex')],check=True)
     for logical,mode,uid,gid in [('data/misc_de',0o551,1000,9998),('data/system_de',0o550,1000,1000)]:
         p=root/logical;p.mkdir(mode=mode,exist_ok=True);os.chown(p,uid,gid)
+    # Original init.rc environ scaffold for the original derive service.
+    # These are directories only, never service inventory or readiness files.
+    for logical,mode,uid,gid in [('data/system',0o775,1000,1000),('data/system/environ',0o700,1000,1000)]:
+        p=root/logical;p.mkdir(parents=True,mode=mode,exist_ok=True);os.chmod(p,mode);os.chown(p,uid,gid)
     for name in ['metadata', 'metadata/apex', 'metadata/apex/sessions', 'metadata/apex/images', 'metadata/apex/config']:
         p=root/name; p.mkdir(mode=0o700); os.chown(p,0,1000)
     for directory in ['dev/block/mapper/by-uuid','sys/dev/block','sys/block','sys/class/block','sys/devices/virtual/block']:

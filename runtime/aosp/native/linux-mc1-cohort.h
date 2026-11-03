@@ -10,6 +10,7 @@
 #include "mount_namespace.h"
 #include "util.h"
 #include <sys/mount.h>
+#include <fcntl.h>
 #include <sys/statvfs.h>
 #include <dlfcn.h>
 #include "action.h"
@@ -40,6 +41,21 @@ class LinuxMc1Cohort {
         using namespace android::init;
         auto& services=ServiceList::GetInstance();
         if(services.size()!=0) return android::base::Error()<<"MC1 requires a fresh service list";
+        if(expected_mode_==1) {
+            // Linux's PID1 supervises this private runtime. Its mount view may
+            // contain host control resources and must stay inaccessible even
+            // while original init opens its own namespace for APEX setup.
+            if(getpid()==1)return android::base::Error()<<"Expected separate Linux PID1 supervisor";
+            errno=0;
+            int control_namespace=open("/proc/1/ns/mnt",O_RDONLY|O_CLOEXEC);
+            int denied_errno=errno;
+            if(control_namespace>=0) {
+                close(control_namespace);
+                return android::base::Error()<<"Linux supervisor namespace unexpectedly accessible";
+            }
+            if(denied_errno!=EACCES)return android::base::Error()<<"Supervisor namespace negative inconclusive: "<<denied_errno;
+            std::fprintf(stderr,"MAC_NEGATIVE_LINUX_SUPERVISOR_NAMESPACE_DENIED errno=13 NOT_GENERAL_ISOLATION_ACCEPTANCE\n");
+        }
         active_=true;
         Action::set_function_map(&GetBuiltinFunctionMap());
         auto parser=CreateParser(ActionManager::GetInstance(),services);
@@ -223,7 +239,7 @@ class LinuxMc1Cohort {
             if(closing_ && stop_ && info.si_code==CLD_KILLED && info.si_status==SIGKILL)apex_cancelled_=true;
             // Original apexd enables lazy Binder shutdown after boot cleanup.
             // Its normal exit does not unmount the verified active modules.
-            apex_clean_exit_=apex_inventory_observed_ && info.si_code==CLD_EXITED && info.si_status==0
+            apex_clean_exit_=apex_activation_observed_ && info.si_code==CLD_EXITED && info.si_status==0
                 && android::base::GetProperty("apexd.status","")=="ready";
             std::fprintf(stderr,"APEX_LAZY_EXIT_OBSERVED clean=%d NOT_LAZY_RESTART_OR_APK_ACCEPTANCE\n",apex_clean_exit_);
             if(!closing_ && !apex_clean_exit_)manager_failed_=true;
@@ -246,31 +262,13 @@ class LinuxMc1Cohort {
         if(auto result=Wait(tick,[this]{return client_done_;},25);!result.ok())return result;
         if(!client_ok_ || android::base::GetProperty("apexd.status","")!="ready")
             return android::base::Error()<<"Original snapshot phase did not publish ready";
-        client_done_=false;client_ok_=false;
-        auto client=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","root","root","--",
-            "/system/bin/sh","-c",
-            "umask 077; /system/bin/service check apexservice > /data/local/tmp/archtv-mc1/apex-query.txt 2>&1; "
-            "/system/bin/cmd apexservice getActivePackages > /data/local/tmp/archtv-mc1/apex-active.txt 2>&1 && "
-            "/apex/com.android.sdkext/bin/derive_classpath /data/local/tmp/archtv-mc1/classpath && "
-            "/system/bin/chown 0:1000 /data/local/tmp/archtv-mc1/classpath && /system/bin/chmod 0640 /data/local/tmp/archtv-mc1/classpath"});
-        if(!client.ok())return client.error();
-        auto* process=client->get();
-        process->AddReapCallback([this](const siginfo_t& info) {
-            client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;
-        });
-        services.AddService(std::move(*client));
-        if(auto result=process->ExecStart();!result.ok())return result;
-        if(auto result=Wait(tick,[this]{return client_done_;},10);!result.ok())return result;
-        if(!client_ok_)return android::base::Error()<<"Original APEX inventory client failed";
-        std::string active_output;
-        if(!android::base::ReadFileToString("/data/local/tmp/archtv-mc1/apex-active.txt",&active_output))return android::base::Error()<<"Original APEX inventory output missing";
-        std::istringstream active_lines(active_output);std::string active_line;size_t active_count=0;
-        while(std::getline(active_lines,active_line))if(active_line.rfind("Module: ",0)==0)++active_count;
-        // Early completeness gate only. Existing independent verification still
-        // must match every module/version/XML/mount; count is not acceptance.
-        if(active_count!=41)return android::base::Error()<<"Original active APEX inventory incomplete: "<<active_count<<" expected41";
-        apex_inventory_observed_=true;
-        std::fprintf(stderr,"APEX_ORIGINAL_CLIENT_RETURNED REQUIRES_EXTERNAL_COMPLETE_INVENTORY_CHECK\n");
+        // Original init.rc does not query apexservice through an unauthorized
+        // root/shell diagnostic before derive_classpath. Original ApexManager
+        // in system_server is the later authorized Binder consumer. The Linux
+        // verifier checks original XML/versions/mounts; do not invent inventory
+        // or grant shell access to a protected service for a diagnostic gate.
+        apex_activation_observed_=true;
+        std::fprintf(stderr,"APEX_ORIGINAL_ACTIVATION_OBSERVED REQUIRES_FRAMEWORK_QUERY_AND_EXTERNAL_INVENTORY\n");
         if(selected_requested_) {
             // Linux has already activated the complete APEX set. Preserve that
             // real view for bootstrap, then use original namespace setup and
@@ -281,16 +279,19 @@ class LinuxMc1Cohort {
             auto actual_namespace=GetCurrentMountNamespace();
             if(!actual_namespace.ok() || *actual_namespace!=NS_BOOTSTRAP)return android::base::Error()<<"Original bootstrap namespace not entered";
             std::fprintf(stderr,"APEX_ORIGINAL_BOOTSTRAP_NAMESPACE_ENTERED NOT_LINKER_READINESS\n");
-            const std::vector<std::string> export_args={"load_exports","/data/local/tmp/archtv-mc1/classpath"};
-            auto loader=GetBuiltinFunctionMap().Find(export_args);
-            if(!loader.ok())return loader.error();
+            // Original init.rc performs APEX configuration before starting
+            // the original derive_classpath service and importing its output.
             const std::string context="u:r:init:s0";
-            if(auto loaded=loader->function(BuiltinArguments{export_args,context});!loaded.ok())return loaded;
-            std::fprintf(stderr,"PACKAGES_ORIGINAL_LOAD_EXPORTS_RETURNED NOT_JAVA_SERVICE_AVAILABILITY\n");
             auto config=GetBuiltinFunctionMap().Find({"perform_apex_config"});
             if(!config.ok())return config.error();
             if(auto configured=config->function(BuiltinArguments{{"perform_apex_config"},context});!configured.ok())return configured;
             std::fprintf(stderr,"APEX_ORIGINAL_BOOTSTRAP_CONFIG_RETURNED NOT_DEFAULT_READINESS\n");
+            if(auto derived=DeriveOriginalClasspath(tick,true);!derived.ok())return derived;
+            const std::vector<std::string> export_args={"load_exports","/data/system/environ/classpath"};
+            auto loader=GetBuiltinFunctionMap().Find(export_args);
+            if(!loader.ok())return loader.error();
+            if(auto loaded=loader->function(BuiltinArguments{export_args,context});!loaded.ok())return loaded;
+            std::fprintf(stderr,"PACKAGES_ORIGINAL_LOAD_EXPORTS_RETURNED NOT_JAVA_SERVICE_AVAILABILITY\n");
             if(auto entered=SwitchToMountNamespaceIfNeeded(NS_DEFAULT);!entered.ok())return entered;
             auto default_namespace=GetCurrentMountNamespace();
             if(!default_namespace.ok() || *default_namespace!=NS_DEFAULT)return android::base::Error()<<"Original default namespace not entered";
@@ -313,9 +314,49 @@ class LinuxMc1Cohort {
             if(!client_ok_)return android::base::Error()<<"Original vold init_user0 failed";
             std::fprintf(stderr,"STORAGE_ORIGINAL_USER0_RETURNED REQUIRES_FILES_AND_PERMISSION_PERSISTENCE\n");
             if(auto network=StartNetwork(tick);!network.ok())return network;
-
+        } else {
+            if(auto derived=DeriveOriginalClasspath(tick,false);!derived.ok())return derived;
         }
-
+        return {};
+    }
+    android::base::Result<void> DeriveOriginalClasspath(const Tick& tick,bool parsed_by_original_apex_config) {
+        using namespace android::init;
+        auto& services=ServiceList::GetInstance();
+        if(!parsed_by_original_apex_config) {
+            auto parser=CreateParser(ActionManager::GetInstance(),services);
+            auto parsed=parser.ParseConfigFile("/apex/com.android.sdkext/etc/derive_classpath.rc");
+            if(!parsed.ok() || parser.parse_error_count()!=0)return android::base::Error()<<"Original derive_classpath RC rejected";
+        }
+        auto* derive=services.FindService("derive_classpath");
+        if(!derive || derive->args()!=std::vector<std::string>{"/apex/com.android.sdkext/bin/derive_classpath"}
+            || derive->uid()!=1000 || derive->gid()!=1000)
+            return android::base::Error()<<"Original derive_classpath identity/entry missing";
+        struct stat prior_export{};
+        bool had_export=lstat("/data/system/environ/classpath",&prior_export)==0;
+        if(!had_export && errno!=ENOENT)return android::base::ErrnoError()<<"Inspect original classpath destination";
+        if(had_export && !S_ISREG(prior_export.st_mode))return android::base::Error()<<"Original classpath destination is not regular";
+        client_done_=false;client_ok_=false;
+        derive->AddReapCallback([this](const siginfo_t& info){
+            client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;
+            std::fprintf(stderr,"DERIVE_ORIGINAL_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
+        });
+        if(auto started=derive->ExecStart();!started.ok())return started;
+        std::fprintf(stderr,"APEX_DERIVE_STARTED pid=%d uid=%u gid=%u NOT_CLASSPATH_READINESS\n",derive->pid(),derive->uid(),derive->gid());
+        if(auto waited=Wait(tick,[this]{return client_done_;},25);!waited.ok())return waited;
+        if(!client_ok_)return android::base::Error()<<"Original derive_classpath service failed";
+        std::string exports;
+        if(!android::base::ReadFileToString("/data/system/environ/classpath",&exports) || exports.empty())
+            return android::base::Error()<<"Original classpath exports missing";
+        struct stat actual_export{};
+        if(lstat("/data/system/environ/classpath",&actual_export)!=0 || !S_ISREG(actual_export.st_mode)
+            || actual_export.st_uid!=1000 || actual_export.st_gid!=1000 || (actual_export.st_mode&0022)!=0)
+            return android::base::Error()<<"Original classpath output ownership rejected";
+        if(had_export && prior_export.st_dev==actual_export.st_dev && prior_export.st_ino==actual_export.st_ino)
+            return android::base::Error()<<"Original classpath atomic replacement not observed";
+        std::fprintf(stderr,"DERIVE_ORIGINAL_OUTPUT uid=%u gid=%u mode=%o inode=%llu replaced=%d\n",
+            actual_export.st_uid,actual_export.st_gid,actual_export.st_mode&0777,
+            static_cast<unsigned long long>(actual_export.st_ino),had_export);
+        std::fprintf(stderr,"DERIVE_ORIGINAL_RETURNED REQUIRES_EXPORTS_AND_JAVA_VERIFICATION\n");
         return {};
     }
     android::base::Result<void> StartAconfig(const Tick& tick) {
@@ -981,7 +1022,7 @@ class LinuxMc1Cohort {
     bool bootanimation_started_=false,bootanimation_clean_exit_=false;
     bool missing_done_=false,missing_ok_=false;
     bool apex_cancelled_=false,vold_cancelled_=false;
-    bool apex_inventory_observed_=false,apex_clean_exit_=false;
+    bool apex_activation_observed_=false,apex_clean_exit_=false;
     bool active_=false,closing_=false,manager_failed_=false,client_done_=false,client_ok_=false;
 };
 }

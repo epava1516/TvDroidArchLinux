@@ -67,6 +67,7 @@ text=text.replace("elif p.is_file():shutil.copyfile(p,root/'apex'/p.name)","elif
 # Only top-level roots from pinned original init.rc. Vold creates user dirs,
 # CE alias mounts and original permission data; no user metadata is seeded.
 roots=[('misc/gatekeeper',0o700,1000,1000),('misc/keystore',0o700,1017,1017),('resource-cache',0o771,1000,1000),('misc/net',0o750,0,2000),('misc/stats-active-metric',0o770,1066,1000),('misc/stats-data',0o770,1066,1000),('misc/stats-data/restricted-data',0o770,1066,1000),('misc/stats-service',0o770,1066,1000),('misc/train-info',0o770,1066,1000),('dalvik-cache',0o771,0,0),('misc/vold',0o700,0,0),('misc/profiles',0o771,1000,1000),('misc/profiles/cur',0o771,1000,1000),('misc/profiles/ref',0o771,1000,1000),('misc/apexdata',0o711,0,0),('system/users',0o775,1000,1000),('media',0o550,1023,1023),('misc_ce',0o551,1000,9998),('system_ce',0o550,1000,1000),('user_de',0o511,1000,1000),('vendor_ce',0o551,0,0),('vendor_de',0o551,0,0)]
+roots += [('system/environ',0o700,1000,1000)]
 roots += [('user',0o511,1000,1000),('data',0o771,1000,1000),('storage_area',0o551,0,0)]
 root_code="\n".join("p=root/'data'/"+repr(name)+";p.mkdir(parents=True,exist_ok=True);os.chmod(p,"+str(mode)+");os.chown(p,"+str(uid)+","+str(gid)+")" for name,mode,uid,gid in roots)
 apk_path=Path('/home/tv/.cache/archtv/apk/real-app-candidates/net.gsantner.markor-v164-2026.10.0-flavorDefault-release.apk')
@@ -275,6 +276,9 @@ text=text.replace("SELECTED_(SUSPEND|SERVICES|INSTALLD)_STARTED pid=(\\d+)',line
 text=text.replace('(match[5] or match[7])','(match[5] or match[7] or match[9])').replace('int(match[2] or match[4] or match[6] or match[8])','int(match[2] or match[4] or match[6] or match[8] or match[10])')
 text=text.replace("'INSTALLD':'u:r:installd:s0'","'INSTALLD':'u:r:installd:s0','DAEMON':'u:r:apexd:s0','SNAPSHOT':'u:r:apexd:s0'")
 text=text.replace("identity['kind']=='INSTALLD'","identity['kind'] in ['INSTALLD','DAEMON','SNAPSHOT']")
+text=text.replace('APEX_(DAEMON|SNAPSHOT)','APEX_(DAEMON|SNAPSHOT|DERIVE)')
+text=text.replace("'SNAPSHOT':'u:r:apexd:s0'","'SNAPSHOT':'u:r:apexd:s0','DERIVE':'u:r:derive_classpath:s0'")
+
 # Avoid applying installd capabilities to apexd: native exact original RC masks.
 text=text.replace("0x2000ff if identity['kind'] in ['INSTALLD','DAEMON','SNAPSHOT'] else", "0x20000f if identity['kind']=='DAEMON' else 0xf if identity['kind']=='SNAPSHOT' else 0x2000ff if identity['kind']=='INSTALLD' else")
 text=text.replace("fields['Gid'].split()))==[0 if identity['kind'] in ['INSTALLD','DAEMON','SNAPSHOT']", "fields['Gid'].split()))==[0 if identity['kind']=='INSTALLD'")
@@ -316,14 +320,14 @@ for file in sorted(Path('/metadata/aconfig').rglob('*')):
  metadata.append({'path':str(file),'uid':info.st_uid,'gid':info.st_gid,'mode':oct(stat.S_IMODE(info.st_mode)),'context':os.getxattr(file,'security.selinux').decode().rstrip(chr(0)),'bytes':info.st_size,'sha256':hashlib.sha256(file.read_bytes()).hexdigest() if info.st_size<=33554432 else None})
 print('ACONFIG_ORIGINAL_METADATA_FILES '+json.dumps({'files':metadata,'truncated':metadata_truncated,'scope':'Original daemon outputs, not flag or permission acceptance'}),flush=True)
 for name in ['markor-preinstall-path.txt','markor-preinstall-dump.txt','markor-app-data.txt','markor-volumes.txt','markor-overlays.txt','selected-user-wait.txt','keystore-java.txt','keymint-provider.txt','keystore-component.txt','keymint-component.txt','storage-contract.txt','markor-user-state.txt','markor-bootstrap-home-stop.txt','markor-home-after.txt','markor-boot-before-user.txt','platform-capabilities.txt','linux-application-profile.txt','markor-postcommit-path.txt','markor-postcommit-dump.txt','markor-installed-bytes.txt','unadmitted-artd-control.txt','ranging-service-info.txt','ranging-permission.txt','netd-permission-query.txt','netd-query.txt','netd-interfaces.txt','stats-query.txt','selected-failure.txt','selected-wait.txt','health-query.txt','health-dump.txt','apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt','vold-query.txt','vold-user0.txt','markor-install.txt','markor-path.txt','markor-dump.txt','activity-query.txt','mount-query.txt','markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
- f=Path('/data/local/tmp/archtv-mc1')/name
+ f=Path('/data/system/environ/classpath') if name=='classpath' else (Path('/data/local/tmp/archtv-apex-client') if name in ['apex-query.txt','apex-active.txt'] else Path('/data/local/tmp/archtv-mc1'))/name
  if f.is_file():print('PACKAGE_ORIGINAL_OUTPUT '+name+' '+json.dumps(f.read_text()),flush=True)
 if p.returncode!=0:
  failed_output=""")
 # Reuse exact accepted native APEX inventory verification (its own identities).
 tree=ast.parse((r/'reports/android16-apex-bootstrap/execute.py').read_text())
 checks=next(n.value.right.value for n in tree.body if isinstance(n,ast.Assign) and isinstance(n.value,ast.BinOp) and isinstance(n.value.right,ast.Constant) and isinstance(n.value.right.value,str) and n.value.right.value.startswith('\nfor name in'))
-checks=checks.replace('for v in identities','for v in identities if v["kind"] in ["MANAGER","DAEMON","SNAPSHOT"]').replace('for identity in identities:','for identity in [v for v in identities if v["kind"] in ["MANAGER","DAEMON","SNAPSHOT"]]:')
+checks=checks.replace('for v in identities','for v in identities if v["kind"] in ["MANAGER","DAEMON","SNAPSHOT","DERIVE"]').replace('for identity in identities:','for identity in [v for v in identities if v["kind"] in ["MANAGER","DAEMON","SNAPSHOT","DERIVE"]]:')
 # Preserve independent original inventory verification even if a later Java
 # subsystem fails. Never turn that partial success into overall exit0.
 checks=checks.replace('if p.returncode!=0:sys.exit(1)','')
@@ -496,8 +500,17 @@ if os.environ.pop('ARCHTV_MAC_STDIN_GATE',None)=='1':
  assert os.read(0,1)==b'G', 'MAC controller did not release prepared factory'
 """)
 
+text=text.replace("'PATH':'/system/bin:/archtv/bin'","'PATH':'/system/bin'")
 compile(text,'<integrated factory>','exec')
 if '--materialize-only' in saved:
  Path('/home/tv/.cache/archtv/integrated-factory-preview.py').write_text(text)
 else:
+ # Preserve the exact composed source per immutable execution before entering
+ # any private runtime view; a mutable preview cannot locate a later traceback.
+ import os
+ if os.environ.get('ARCHTV_RUN_CHECKPOINT'):
+  execution=Path(os.environ['ARCHTV_RUN_CHECKPOINT']).resolve()
+  assert execution.parent==Path('/home/tv/recuperacion-archtv')
+  with (execution/'factory-materialized.py').open('x') as materialized:
+   materialized.write(text);materialized.flush();os.fsync(materialized.fileno())
  exec(compile(text,'<integrated factory>','exec'),{'__name__':'__main__'})

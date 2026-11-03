@@ -1,0 +1,47 @@
+; Original derive_classpath uses init_daemon_domain and original system UID.
+; Preserve NNP1 as on the already-tested original vold/apexd service edges.
+(allow init derive_classpath (process2 (nnp_transition)))
+; These admitted original services use Linux's /proc/self aliases. Reuse the
+; existing MC1 read-only metadata bridge, not host files or executable bundles.
+(typeattributeset archtv_mc1_android (vold apexd derive_classpath linkerconfig))
+(allow archtv_mc1_android proc_mounts (lnk_file (read)))
+(allow archtv_mc1_android linux.security_t (filesystem (getattr)))
+(allow archtv_mc1_android linux.security_t (dir (search)))
+(allow archtv_mc1_android linux.security_t (file (getattr)))
+; Original shell may read status; the Linux boundary deliberately keeps
+; appdomain (including shell) unable to write any host SELinux control.
+(allow shell linux.security_t (dir (read open getattr search)))
+(allow shell linux.security_t (file (read open getattr map)))
+; Trusted Linux observer reads only /proc metadata labelled by these domains.
+; No ptrace, memory access, writes or Android capabilities are introduced.
+(typeattribute archtv_storage_observed)
+(typeattributeset archtv_storage_observed (vold apexd derive_classpath))
+(allow linux.init_t archtv_storage_observed (process (getattr)))
+(allow linux.init_t archtv_storage_observed (dir (search)))
+(allow linux.init_t archtv_storage_observed (file (read open getattr)))
+; Global host policy/mode authority remains with Linux, never any Android SID.
+(neverallow domain linux.security_t (security (load_policy setenforce setbool setsecparam setcheckreqprot)))
+; The trusted Linux verifier reads the actual original derive output; it
+; cannot infer classpath correctness from an exit status or a log line.
+(allow linux.init_t environ_system_data_file (dir (search)))
+(allow linux.init_t environ_system_data_file (file (read open getattr)))
+; Original perform_apex_config synchronously execs original linkerconfig
+; (builtins.cpp:1180–1187); its original init transition also preserves NNP1.
+(allow init linkerconfig (process2 (nnp_transition)))
+; Actual173: original SetupMountNamespaces cannot open its own namespace
+; FD because Linux owns nsfs globally. Only init gets namespace metadata;
+; original setns/capability checks and private /proc view remain required.
+(allow init linux.nsfs_t (file (read open getattr)))
+; Never let that metadata edge expose control-plane /proc namespace handles.
+(neverallow init linux.init_t (dir (search)))
+(neverallow init archtv_launcher (dir (search)))
+; Actual173: fstat of the Linux-owned persisted /data FD needs only metadata.
+(allow linux.init_t system_data_root_file (dir (getattr)))
+
+; Actual174: original early_system_aconfigd_platform_init is blocked at the
+; original init_daemon_domain edge by NNP1. Keep that transition and NNP;
+; never permit execute_no_trans as a substitute.
+(allow init aconfigd (process2 (nnp_transition)))
+; Actual174: independent Linux verifier reads its immutable expected manifest
+; carried in the vendor image, never substitutes it for original XML/mounts.
+(allow linux.init_t vendor_configs_file (file (read open getattr)))

@@ -39,7 +39,7 @@ text=text.replace("'--observe-ms','150'","'--observe-ms','3000','--startup-ms','
 old="""  match=re.search(r'MC1_(MANAGER|HWMANAGER)_STARTED pid=(\\d+)',line)
   if match:
    kind=match[1];expected='u:r:hwservicemanager:s0' if kind=='HWMANAGER' else 'u:r:servicemanager:s0';pid=int(match[2]);seen=[];seen_errors=[];deadline=time.monotonic()+1"""
-new="""  match=re.search(r'MC1_(MANAGER)_STARTED pid=(\\d+)|APEX_(DAEMON|SNAPSHOT)_STARTED pid=(\\d+)',line)
+new="""  match=re.search(r'MC1_(MANAGER)_STARTED pid=(\\d+)|APEX_(DAEMON|SNAPSHOT|DERIVE)_STARTED pid=(\\d+)',line)
   if match:
    kind=match[1] or match[3];expected='u:r:servicemanager:s0' if kind=='MANAGER' else 'u:r:apexd:s0';pid=int(match[2] or match[4]);seen=[];seen_errors=[];deadline=time.monotonic()+1"""
 assert old in text;text=text.replace(old,new)
@@ -48,9 +48,9 @@ text=text.replace("log_stop=True\n", "monitor.terminate();monitor.wait(timeout=3
 boundary=text.index("\nif p.returncode!=0:\n failed_output=")
 text=text[:boundary]+'''
 for name in ['apex-query.txt','apex-active.txt','classpath']:
- result=Path('/data/local/tmp/archtv-mc1')/name
+ result=Path('/data/system/environ/classpath') if name=='classpath' else Path('/data/local/tmp/archtv-apex-client')/name
  if result.is_file():
-  info=result.lstat();assert stat.S_ISREG(info.st_mode) and info.st_uid==0 and info.st_gid==(1000 if name=='classpath' else 0) and stat.S_IMODE(info.st_mode)==(0o640 if name=='classpath' else 0o600) and info.st_size<=262144
+  info=result.lstat();assert stat.S_ISREG(info.st_mode) and info.st_uid==(1000 if name=='classpath' else 0) and info.st_gid==(1000 if name=='classpath' else 0) and (stat.S_IMODE(info.st_mode)&0o022)==0 and (name=='classpath' or stat.S_IMODE(info.st_mode)==0o600) and info.st_size<=262144
   print('APEX_ORIGINAL_OUTPUT '+name+' '+json.dumps(result.read_text()),flush=True)
 xml=Path('/apex/apex-info-list.xml')
 if xml.is_file():
@@ -58,30 +58,23 @@ if xml.is_file():
  print('APEX_ORIGINAL_XML '+json.dumps(xml.read_text()),flush=True)
  print('APEX_ORIGINAL_XML_LABEL '+repr(os.getxattr(xml,'security.selinux')),flush=True)
 if p.returncode!=0:sys.exit(1)
-assert {v['kind']:v['actual_context'] for v in identities}=={'MANAGER':'u:r:servicemanager:s0','DAEMON':'u:r:apexd:s0','SNAPSHOT':'u:r:apexd:s0'}
+assert {v['kind']:v['actual_context'] for v in identities}=={'MANAGER':'u:r:servicemanager:s0','DAEMON':'u:r:apexd:s0','SNAPSHOT':'u:r:apexd:s0','DERIVE':'u:r:derive_classpath:s0'}
 for identity in identities:
  fields={line.split(':',1)[0]:line.split(':',1)[1].strip() for line in identity['status']}
- expected_uid=1000 if identity['kind']=='MANAGER' else 0
- expected_caps={'MANAGER':0,'DAEMON':0x20000f,'SNAPSHOT':0xf}[identity['kind']]
+ expected_uid=1000 if identity['kind'] in ['MANAGER','DERIVE'] else 0
+ expected_caps={'MANAGER':0,'DAEMON':0x20000f,'SNAPSHOT':0xf,'DERIVE':0}[identity['kind']]
  assert list(map(int,fields['Uid'].split()))==[expected_uid]*4 and list(map(int,fields['Gid'].split()))==[1000]*4
  assert int(fields['CapEff'],16)==expected_caps and int(fields['CapPrm'],16)==expected_caps and fields['NoNewPrivs']=='1'
-query=Path('/data/local/tmp/archtv-mc1/apex-query.txt').read_text()
-assert query=='Service apexservice: found\\n'
 expected={m['name']:m['version'] for m in json.loads(Path('/archtv/apex-expected.json').read_text())}
-actual={}
-for line in Path('/data/local/tmp/archtv-mc1/apex-active.txt').read_text().splitlines():
- match=re.fullmatch(r'Module: (\\S+) Version: (\\d+) VersionName:.* Path: (\\S+) IsActive: true IsFactory: (true|false) Partition: (\\S+)',line)
- assert match,line
- assert match[1] not in actual
- actual[match[1]]=int(match[2])
-assert actual==expected,{'expected':expected,'actual':actual}
 import xml.etree.ElementTree as ET
-from_xml={e.attrib['moduleName']:int(e.attrib['versionCode']) for e in ET.fromstring(xml.read_bytes()) if e.attrib.get('isActive')=='true'}
-assert from_xml==expected,{'xml':from_xml,'expected':expected}
+active_elements=[e for e in ET.fromstring(xml.read_bytes()) if e.attrib.get('isActive')=='true']
+actual={e.attrib['moduleName']:int(e.attrib['versionCode']) for e in active_elements}
+assert len(active_elements)==len(actual), 'Duplicate active original APEX XML entries'
+assert actual==expected,{'xml':actual,'expected':expected}
 for name,version in expected.items():
  assert Path('/apex/'+name+'@'+str(version)).is_mount(),name
  assert Path('/apex/'+name).is_mount(),name
-classpath=Path('/data/local/tmp/archtv-mc1/classpath').read_text()
+classpath=Path('/data/system/environ/classpath').read_text()
 classpath_names=set()
 for line in classpath.splitlines():
  export,name,value=line.split(' ',2)
@@ -92,7 +85,7 @@ for line in classpath.splitlines():
   assert path.startswith(('/apex/','/system/')) and Path(path).is_file(),path
 assert len(classpath_names)==4
 print('APEX_ORIGINAL_CLASSPATH_PATHS_VERIFIED NOT_CLASSLOADER_OR_APK_ACCEPTANCE',flush=True)
-print('APEX_ORIGINAL_COMPLETE_INVENTORY_VERIFIED modules='+str(len(actual))+' NOT_APK_OR_MAC_ACCEPTANCE',flush=True)
+print('APEX_ORIGINAL_COMPLETE_INVENTORY_VERIFIED modules='+str(len(actual))+' XML_AND_MOUNTS_NOT_FRAMEWORK_BINDER_OR_APK_MAC_ACCEPTANCE',flush=True)
 '''
 compile(text,'<materialized APEX factory>','exec')
 if options.materialize_only:

@@ -1,0 +1,170 @@
+{
+  "schema": 1,
+  "utc": "2026-11-03T14:48:12.978470+00:00",
+  "scope": "Partial original APEX/derive admission under bounded enforcing; no new APK stage or general MAC/isolation acceptance",
+  "base_commit": "39d0be0edb77c13575681175fc26e730adee3c11",
+  "executions": {
+    "172": {
+      "result.json": {
+        "path": "/home/tv/recuperacion-archtv/40c60f35-427a-43e4-a6c3-54d220f30c57-markor-software-launch/result.json",
+        "sha256": "4b7ce839474282f43f152d19fd5ca6dfef509b4de922abca175b49497bf5fd8b"
+      },
+      "mac-window.json": {
+        "path": "/home/tv/recuperacion-archtv/40c60f35-427a-43e4-a6c3-54d220f30c57-markor-software-launch/mac-window.json",
+        "sha256": "05f6b2831fd6071508b5766bc557eef0c7e596b53b06c7bfc4a8823952103456"
+      },
+      "session-state.json": {
+        "path": "/home/tv/recuperacion-archtv/40c60f35-427a-43e4-a6c3-54d220f30c57-markor-software-launch/session-state.json",
+        "sha256": "1b9eefa3890e6b9161749ba217d6b479707eaea30e6a374eb432482d38e7602a"
+      },
+      "finite-audit/result.json": {
+        "path": "/home/tv/recuperacion-archtv/40c60f35-427a-43e4-a6c3-54d220f30c57-markor-software-launch/finite-audit/result.json",
+        "sha256": "18d547c489c187dc7635e01e4f994f27f6afce335bbf8bd985ab5f47172690e9"
+      },
+      "completion-consumer.json": {
+        "path": "/home/tv/recuperacion-archtv/40c60f35-427a-43e4-a6c3-54d220f30c57-markor-software-launch/completion-consumer.json",
+        "sha256": "d6759331fbadf3f7359f7b9d01ed286c3c597c2696aca446befe5677a4ec82e0"
+      },
+      "outer_exit": 1,
+      "native_complete_inventory_verified": false,
+      "checkpoint": "/home/tv/recuperacion-archtv/40c60f35-427a-43e4-a6c3-54d220f30c57-markor-software-launch",
+      "finding": "Proper root-owned capture obtained; original shell SID denied protected apex_service find. Not service absence."
+    },
+    "173": {
+      "result.json": {
+        "path": "/home/tv/recuperacion-archtv/d12f8c6a-bb3d-4972-8e06-c600153e3326-markor-software-launch/result.json",
+        "sha256": "d1b39512203ef735c0dc758d32a5fe0cbdf6aa527cb944f6e493df0409d47ebd"
+      },
+      "mac-window.json": {
+        "path": "/home/tv/recuperacion-archtv/d12f8c6a-bb3d-4972-8e06-c600153e3326-markor-software-launch/mac-window.json",
+        "sha256": "b755c97c37dfb65d5f91ac25a1de28f00ff26a58459390c3da30090bac43b6ae"
+      },
+      "session-state.json": {
+        "path": "/home/tv/recuperacion-archtv/d12f8c6a-bb3d-4972-8e06-c600153e3326-markor-software-launch/session-state.json",
+        "sha256": "c34d36b4041d513492a361d942efbc7188e85f49c3b2c852a9b901478e296624"
+      },
+      "finite-audit/result.json": {
+        "path": "/home/tv/recuperacion-archtv/d12f8c6a-bb3d-4972-8e06-c600153e3326-markor-software-launch/finite-audit/result.json",
+        "sha256": "600b0ee8226da06eba627a57c09bf7880fcb00ac87aad5b70e026058e26056ff"
+      },
+      "completion-consumer.json": {
+        "path": "/home/tv/recuperacion-archtv/d12f8c6a-bb3d-4972-8e06-c600153e3326-markor-software-launch/completion-consumer.json",
+        "sha256": "ecea79872e3c57f459bf0974cfbc231ac163513d1efe502ee6aae3387a9d330e"
+      },
+      "android-service-journal.json": {
+        "path": "/home/tv/recuperacion-archtv/d12f8c6a-bb3d-4972-8e06-c600153e3326-markor-software-launch/android-service-journal.json",
+        "sha256": "1dd20b7673d1fe600e8fef8494b14c2c8070607db665d864afa6eb3f3b007e37"
+      },
+      "outer_exit": 1,
+      "native_complete_inventory_verified": false,
+      "checkpoint": "/home/tv/recuperacion-archtv/d12f8c6a-bb3d-4972-8e06-c600153e3326-markor-software-launch",
+      "finding": "Original private SetupMountNamespaces blocked by Linux nsfs read; Linux userdata fstat metadata also denied."
+    },
+    "174": {
+      "result.json": {
+        "path": "/home/tv/recuperacion-archtv/53d894bc-05eb-4470-ad64-d87a339d2665-markor-software-launch/result.json",
+        "sha256": "24e10f4548c6e8813c2d80f8311152883cd530f5c3c818a073422668c77b945a"
+      },
+      "mac-window.json": {
+        "path": "/home/tv/recuperacion-archtv/53d894bc-05eb-4470-ad64-d87a339d2665-markor-software-launch/mac-window.json",
+        "sha256": "338d048b6bee79b9b09b39d57c8d7c32d23359b7c08414ab894a153a58c19ba4"
+      },
+      "session-state.json": {
+        "path": "/home/tv/recuperacion-archtv/53d894bc-05eb-4470-ad64-d87a339d2665-markor-software-launch/session-state.json",
+        "sha256": "5f24afd6c4825bd86693960e0b550fae1ab9f7d91ea1316bdbf50c1f1058a529"
+      },
+      "finite-audit/result.json": {
+        "path": "/home/tv/recuperacion-archtv/53d894bc-05eb-4470-ad64-d87a339d2665-markor-software-launch/finite-audit/result.json",
+        "sha256": "ee4f95cb37d687290fd506d7a428b6e982d78ba6df4b57b713fd5636c5ef9a70"
+      },
+      "completion-consumer.json": {
+        "path": "/home/tv/recuperacion-archtv/53d894bc-05eb-4470-ad64-d87a339d2665-markor-software-launch/completion-consumer.json",
+        "sha256": "d4bed7e33fc1ed186b93425990266e51fdbf2ee9e1f0fd2e48a270b97e2a2bb3"
+      },
+      "android-service-journal.json": {
+        "path": "/home/tv/recuperacion-archtv/53d894bc-05eb-4470-ad64-d87a339d2665-markor-software-launch/android-service-journal.json",
+        "sha256": "d11396b27f0018a52920e604bd453e39e20829ed0f176a2a2ce0d225199e5690"
+      },
+      "outer_exit": 1,
+      "native_complete_inventory_verified": false,
+      "checkpoint": "/home/tv/recuperacion-archtv/53d894bc-05eb-4470-ad64-d87a339d2665-markor-software-launch",
+      "finding": "Own namespace positive and supervisor namespace EACCES negative pass; derive original exits0 UID/GID1000 output0600, original load_exports returns. Original early aconfig initializer exits127 with init->aconfigd NNP denied. External inventory verifier cannot read expected vendor manifest; no inventory acceptance."
+    },
+    "175": {
+      "result.json": {
+        "path": "/home/tv/recuperacion-archtv/3a32d12e-73a3-4fdd-83ab-5dd6c3dec015-markor-software-launch/result.json",
+        "sha256": "e590e094d4a1e83ea5ed2ee227ebd714ca9d8c52378faeba16d03f27dd9812b7"
+      },
+      "mac-window.json": {
+        "path": "/home/tv/recuperacion-archtv/3a32d12e-73a3-4fdd-83ab-5dd6c3dec015-markor-software-launch/mac-window.json",
+        "sha256": "59f67fabeaa95a380a5ab337d59c88b416b16b802c420c3c03dc9d12878c77a3"
+      },
+      "session-state.json": {
+        "path": "/home/tv/recuperacion-archtv/3a32d12e-73a3-4fdd-83ab-5dd6c3dec015-markor-software-launch/session-state.json",
+        "sha256": "f5a636ec0cfc56543047f5c2810741192708c1940dff57d61b7692980adf20a8"
+      },
+      "finite-audit/result.json": {
+        "path": "/home/tv/recuperacion-archtv/3a32d12e-73a3-4fdd-83ab-5dd6c3dec015-markor-software-launch/finite-audit/result.json",
+        "sha256": "f2e690dddec7c9a4bb2b525e7acd3016cda7296d7dd94ee70f3082646092f4e5"
+      },
+      "completion-consumer.json": {
+        "path": "/home/tv/recuperacion-archtv/3a32d12e-73a3-4fdd-83ab-5dd6c3dec015-markor-software-launch/completion-consumer.json",
+        "sha256": "c26ce082a9bbfa95bea648489b5b93ae9b75be33460d9684666d20975b3ef308"
+      },
+      "android-service-journal.json": {
+        "path": "/home/tv/recuperacion-archtv/3a32d12e-73a3-4fdd-83ab-5dd6c3dec015-markor-software-launch/android-service-journal.json",
+        "sha256": "38aab3292a255803ab4f922b80f890e7dea7be016110d09fb65c0573c13d255b"
+      },
+      "run.log": {
+        "path": "/home/tv/recuperacion-archtv/3a32d12e-73a3-4fdd-83ab-5dd6c3dec015-markor-software-launch/run.log",
+        "sha256": "222d5ddd6510b3eb0e0e1bccd7c7efb346a3e5bf73c2c7f5cdcf9ed89f89f69f"
+      },
+      "checkpoint": "/home/tv/recuperacion-archtv/3a32d12e-73a3-4fdd-83ab-5dd6c3dec015-markor-software-launch",
+      "outer_exit": 1,
+      "native_complete_inventory_verified": false,
+      "finding": "Original derive succeeds and atomic replacement observed. aconfig original transition now executes; exits1 with /proc/self Linux proc_t lnk_file read denied. Later close fails/internal Android shutdown request retained; no host reboot. External inventory verifier still denied ancestor search (vendor_file); inventory unaccepted."
+    }
+  },
+  "decisions": [
+    "Retain shell apex_service find denial; original framework caller must query original APEX Binder service later. UID0 alone does not override its SID.",
+    "Reuse original perform_apex_config, parsed derive RC/system UID/default atomic output and original load_exports order. No synthesized inventory, readiness or classpath.",
+    "Only init gets Linux nsfs metadata access; actual same-run EACCES to Linux supervisor namespace required.",
+    "Neverallow assertions retained, including rejected policy6; no execute_no_trans substitution."
+  ],
+  "limitations": [
+    "Runtime preparation and external cleanup remain permissive.",
+    "Negative namespace control is narrow; not general containment.",
+    "Watchdog expiry fallback not exercised by these normal restore runs.",
+    "Original logd, system property ownership, authorized framework APEX RPC and whole Markor under MAC remain open.",
+    "Prior Markor167 local-note/persistence scope remains unchanged; ARM/GMS/DRM and broad compatibility open.",
+    "REA MCP connected but native provider unavailable; process capture172 returned cleanup_incomplete. Separate host check found suspect PID absent, not proof of every REA cleanup resource."
+  ],
+  "after174_host": {
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after174-host.json",
+    "sha256": "adf76f30bd49ecccde0b7eb96480a940f780b1dc34bb5fad0b5ff563f7dfdf30"
+  },
+  "rea_provider": {
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/rea-native-provider-unavailable.json",
+    "sha256": "fa5d2e4d07c36a195b80283a8b8812cd2ac9263a656ab70ef12a6791070d121b"
+  },
+  "after175_host": {
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after175-host.json",
+    "sha256": "21e87cd0a824dfca046906eea49e1150c363e63e67a523af1b00d2a90d56c49c"
+  },
+  "policy10_artifact": {
+    "path": "dist/aosp16/selected-platform-policy-10/artifact.json",
+    "sha256": "5dd8024bb456fc9ebb55993a214674e75e5e492b6525532c0fa383875e842ed5"
+  },
+  "policy10_load": {
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load10/after-load.json",
+    "sha256": "309743229826231a5a6d96498f808485c1d5ad5ce3a5cd8c1a279f21f26b9aa8"
+  },
+  "next": "Study original aconfig /proc/self use, grant only justified Linux proc alias bridge; separately fix trusted verifier directory search based on actual paths. Keep original logd sender issue and system properties open; next integrated run must advance real original subsystems, not audit alone.",
+  "original_sources": {
+    "sdkextensions_commit": "4d10e57070bb9c6edcd13bf74e9d01717b2a5ecf",
+    "derive_rc_sha256": "a9e65b0c114408e5cb8356bdb435a6b48d0a67cd7879915c52ffa094a267f607",
+    "cache": "/home/tv/.cache/archtv/aosp16-qpr2/sdkext-classpath-study-1",
+    "code": "https://android.googlesource.com/platform/packages/modules/SdkExtensions/+/4d10e57070bb9c6edcd13bf74e9d01717b2a5ecf/derive_classpath/",
+    "scope": "Source inspection: original system UID/RC, default output and rename; execution recorded separately. Original private/aconfigd.te init_daemon_domain reused."
+  }
+}

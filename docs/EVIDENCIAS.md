@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+Vigente175 · [índice de ejecuciones172–175, hashes, fuentes y limitaciones](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): classpath generado por servicio original y reemplazo real bajo enforcing; control de namespace positivo/negativo. Aconfig y verificador siguen fallando. Se conservan errores, cierres y pérdida de auditoría0 de cada ventana; no confundirlos con el histórico171. REA MCP conectado, proveedor nativo no disponible y captura172 incompleta, documentados separadamente.
+
 [R1-MAC integrado168–171](../reports/android16-package-bootstrap/r1-mac-integrated-progress.json): política/fuentes/hashes, NNP original corregido, cgroup real, negativo directo-helper y fallo real del cliente APEX. Restauración normal a permisivo y auditoría0 verificadas; watchdog por expiración pendiente, pérdida16 en171 y ninguna etapa APK enforcing aceptada.
 
 [Persistencia163→167](../reports/android16-package-bootstrap/persistent-userdata-functional.json): hashes de artefactos, nota idéntica, UID/inodos/etiquetas privados, relanzamiento y editor inspeccionado;167 nativo/exterior0. Fallos anteriores conservados, permisivo y alcance funcional acotado.
@@ -568,4 +570,3 @@ Actualización 2026-11-02 · [Cargadores BPF AOSP originales](../reports/android
 ## Namespaces y netd · operación original con permisos reales
 
 Actualización 2026-11-02 · [Namespaces AOSP y operación netd originales](../reports/android16-network-bootstrap/native-functional.json): inventario41 por API/XML/versiones/montajes, linkerconfig generado y cliente root ndc obtiene lo/códigos110 y200 después del permission controller real. Cohorte sale1; no hay etapa APK nueva aceptada. Bloqueo observado: display espera LmkdConnection y principal en registro de StorageManagerService. Próximo: lmkd original y su protocolo antes de continuar conectividad/Markor. R1-MAC permisivo/policyload2, ARM/GMS/DRM abiertos. [Límites y negativos](../reports/android16-network-bootstrap/README.md).
-
