@@ -1,6 +1,6 @@
 # Contrato vigente · AOSP Android 16 QPR2
 
-Límite200 · [productores originales y aceptación](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): ambos cargadores BPF0 y propiedad original prueban esos productores; netd1 no acredita servicio ni conectividad. Errores opcionales GPU/FUSE siguen abiertos.41 programas/58 mapas conocidos liberados y datos previos conservados no equivalen a nueva ejecución APK. R1-MAC de la cohorte completa, ARM, servicios externos y DRM permanecen abiertos.
+Límite201 · [registro original y fallo verificable](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): logd/logcat originales y mensajes auténticos prueban registro, no disponibilidad de netd ni compatibilidad APK. El fallo de cgroup proviene de lectura de montajes denegada; no se fabrican servicios. Cierre externo comprobado, cierre original incompleto y cohorte MAC completa siguen abiertos; las etapas167 mantienen alcance permisivo.
 
 Histórico179 · [operación original fallida conservada](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): código0 de inicializadores aconfig no demuestra flags completas ni sockets disponibles; VDC25 no es éxito de init_user0. Inventario APEX leído después de cerrar no acredita disponibilidad durante ejecución. Mantener R1-MAC abierto hasta el recorrido real completo con identidades, pruebas negativas, cierre y efectos del anfitrión.
 

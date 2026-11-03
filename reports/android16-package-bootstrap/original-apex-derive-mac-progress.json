@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "utc": "2026-11-03T20:54:18.122405+00:00",
+  "utc": "2026-11-03T21:04:57.711758+00:00",
   "scope": "Partial original APEX/derive admission under bounded enforcing; no new APK stage or general MAC/isolation acceptance",
   "base_commit": "39d0be0edb77c13575681175fc26e730adee3c11",
   "executions": {
@@ -1318,7 +1318,7 @@
     "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load10/after-load.json",
     "sha256": "309743229826231a5a6d96498f808485c1d5ad5ce3a5cd8c1a279f21f26b9aa8"
   },
-  "next": "Recover netd original error from same execution journal and original source. If unavailable, integrate original logd/logcat preserving host audit ownership, rather than granting Android sendto to Python Linux.init_t receiver.",
+  "next": "Map common original domain proc alias read/getattr to actual proc_mounts and Linux.proc_net_t lnk_file; leave regular target checks unchanged. Test original netd cgroup discovery.",
   "original_sources": {
     "sdkextensions_commit": "4d10e57070bb9c6edcd13bf74e9d01717b2a5ecf",
     "derive_rc_sha256": "a9e65b0c114408e5cb8356bdb435a6b48d0a67cd7879915c52ffa094a267f607",
@@ -1388,8 +1388,8 @@
     "sha256": "9e395067238c647c729c48a03dc8a115e81727ff30a8bfd6f4e50098098c9134"
   },
   "latest_host": {
-    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after200-host.json",
-    "sha256": "872bf7376fcaf9d7aecdbed426697827caf5819da8296004fa5d05931f3ec134"
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after201-host.json",
+    "sha256": "7da835f99c3764d7bda171647583a15fd626b881a01a96e18c7e56fe78f734ec"
   },
   "vdc_source_contract": {
     "builtin": "Pinned system/core/init/builtins.cpp1122–1172: original temporary exec plus original failure callback; exact argv /system/bin/vdc --wait cryptfs init_user0. Native observes actual reaping before advance, no shell redirection or synthetic readiness.",
@@ -1807,5 +1807,70 @@
     "optional_limits": "Original platform GPU map setattr on fallback Linux.bpf_t denied; FUSE prog type query ENOENT noncritical. Loader0 is not full GPU/FUSE availability.",
     "closure": "41 known programs and58 maps absent after close, no loops/dm/FUSE/owned units. Audit loss delta0; permissive0 restored, policyload24/candidate26. Previous note/hash/CE/DE unchanged.",
     "next": "Recover netd original error from same execution journal and original source. If unavailable, integrate original logd/logcat preserving host audit ownership, rather than granting Android sendto to Python Linux.init_t receiver."
+  },
+  "integrated201": {
+    "id": "fbc539db-6188-4c1c-9df5-e2532f922afe",
+    "evidence": {
+      "result.json": {
+        "path": "/home/tv/recuperacion-archtv/fbc539db-6188-4c1c-9df5-e2532f922afe-markor-software-launch/result.json",
+        "sha256": "c2d9919b7f46f5be8200a7be2ce24689d6a22521afc37c0d27815c2ae657b99a"
+      },
+      "mac-window.json": {
+        "path": "/home/tv/recuperacion-archtv/fbc539db-6188-4c1c-9df5-e2532f922afe-markor-software-launch/mac-window.json",
+        "sha256": "fd0778562ad47062aa9e4f87630a5a3d93bb947b66858c9a215756b217b13134"
+      },
+      "completion-consumer.json": {
+        "path": "/home/tv/recuperacion-archtv/fbc539db-6188-4c1c-9df5-e2532f922afe-markor-software-launch/completion-consumer.json",
+        "sha256": "1cf1c9f1923b676db4b3d595aea274ec6905f32fcb486510c0c5f65f3eb0f2b3"
+      },
+      "runtime-source-overlay.json": {
+        "path": "/home/tv/recuperacion-archtv/fbc539db-6188-4c1c-9df5-e2532f922afe-markor-software-launch/runtime-source-overlay.json",
+        "sha256": "e1500d4acd5af39f9a6c126a0c0c38f819f624ebbd6659d8653a99082183e91f"
+      },
+      "original-logcat.txt": {
+        "path": "/home/tv/recuperacion-archtv/fbc539db-6188-4c1c-9df5-e2532f922afe-markor-software-launch/original-logcat.txt",
+        "sha256": "1891bfc1ff748d2a32912ee8567a3550922c33069e1b95db6b5f7b64bb32b245"
+      },
+      "bpf-all-known-after.json": {
+        "path": "/home/tv/recuperacion-archtv/fbc539db-6188-4c1c-9df5-e2532f922afe-markor-software-launch/bpf-all-known-after.json",
+        "sha256": "6ae4182fa338c1e622bf440d9b0c378a2f1c7cf50a7d42a63fabff07ff86a154"
+      },
+      "userdata-after201-close.json": {
+        "path": "/home/tv/recuperacion-archtv/fbc539db-6188-4c1c-9df5-e2532f922afe-markor-software-launch/userdata-after201-close.json",
+        "sha256": "a7bef1f862c8ede2a321e2a84a8e4a73c282d48ffb9e8711d07eca0f8d7d1f52"
+      },
+      "finite-audit/result.json": {
+        "path": "/home/tv/recuperacion-archtv/fbc539db-6188-4c1c-9df5-e2532f922afe-markor-software-launch/finite-audit/result.json",
+        "sha256": "ebf9f1f1cf89cbed0077a9d0025d463ccd20e8546262794e130e64cd84f14f53"
+      }
+    },
+    "source_build": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-201/source-inputs.json",
+      "sha256": "70d0f2a683f95c05a735f4fbe2f733f46c0f0688b1b301ac116bcd826ddd0397"
+    },
+    "original_logd_inputs": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-201/original-logd-inputs.json",
+      "sha256": "b0a345b26fd6e1c5b374ad8bf44533918c46930e3ab5dcbbd98bafa26721861c"
+    },
+    "policy27_artifact": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/selected-platform-policy-27/artifact.json",
+      "sha256": "e2b16eb7a006be29e297e10a528d28a3669c166fd28dc17fed778502622790d2"
+    },
+    "policy27_load": {
+      "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load27/after-load.json",
+      "sha256": "31c79b24047824ab27e3b980d9393441be7a6bea4b2d39aeba8c08229745789a"
+    },
+    "after_host": {
+      "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after201-host.json",
+      "sha256": "7da835f99c3764d7bda171647583a15fd626b881a01a96e18c7e56fe78f734ec"
+    },
+    "symlink_contract": {
+      "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/proc-symlink-contract201.json",
+      "sha256": "4a39e891c652d6b45d2452983458bfa63fd53b38dc3b6cec411954e537e6cce0"
+    },
+    "execution": "Original logd readiness and actual logcat55972bytes real daemon records under enforcing, no Python logdw receiver. Original logd UID1036 transition/NNP retained; audit/kernel readers disabled via original properties, no AUDIT_CONTROL or auditctl triggers. Logcat real shell with original log group, no fabricated senderGID.",
+    "fatal_netd": "Actual original netd: Failed to read mounts: Permission denied; Failed to find cgroup v2 root Permission denied, exits1. Audit proc_mounts lnkread matches source libprocessgroup setmntent(/proc/mounts). Linux policycap genfs_seclabel_symlinks changes AOSP original alias label semantics; source diagnosis recorded.",
+    "closure": "Candidate1 while enforcing5.979s, watchdog restored0; original Close reports services not collected and Android failure shutdown intercepted, not graceful closure acceptance. External cohort closed, allknown41prog58map absent, loops/dm/FUSE none, auditnewloss0/rulesunchanged, VT/GPU restored and note/CE/DE retained.",
+    "limitations": "Real logging/error evidence, no netd availability or new APK stage. Host observer logd proc metadata denied repeatedly, not fixed with new inspection rights. Other VINTF/GPU/FUSE limits visible in logs and open. R1-MAC completecohort/Zygote/ARM/GMS/DRM open."
   }
 }

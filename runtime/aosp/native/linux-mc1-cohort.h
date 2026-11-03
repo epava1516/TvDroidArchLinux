@@ -61,6 +61,7 @@ class LinuxMc1Cohort {
         Action::set_function_map(&GetBuiltinFunctionMap());
         if(apex_requested_ && selected_requested_) {
             if(auto bootstrap=BootstrapOriginalApex(tick);!bootstrap.ok())return bootstrap;
+            if(auto logging=StartOriginalLogging(tick);!logging.ok())return logging;
         }
         auto parser=CreateParser(ActionManager::GetInstance(),services);
         auto parsed=parser.ParseConfigFile("/system/etc/init/servicemanager.rc");
@@ -167,7 +168,7 @@ class LinuxMc1Cohort {
         // Close clears the pointer only after every service has been reaped.
         return apex_clean_exit_ && (!apexd_ || !apexd_->IsRunning());
     }
-    bool healthy() const { return !manager_failed_ && (!storaged_ || storaged_->IsRunning()) && (!swcodec_ || swcodec_->IsRunning()) && (!idmap_ || idmap_->IsRunning()) && (!gatekeeper_hal_ || gatekeeper_hal_->IsRunning()) && (!gatekeeper_ || gatekeeper_->IsRunning()) && (!keystore_ || keystore_->IsRunning()) && (!keymint_ || keymint_->IsRunning()) && (!aconfig_system_ || aconfig_system_->IsRunning() || aconfig_system_clean_exit_) && (!aconfig_mainline_ || aconfig_mainline_->IsRunning() || aconfig_mainline_clean_exit_) && (!audioserver_ || audioserver_->IsRunning()) && (!lmkd_ || lmkd_->IsRunning()) && (!netd_ || netd_->IsRunning()) && (!statsd_ || statsd_->IsRunning()) && (!health_ || health_->IsRunning()) && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && (bootanimation_->IsRunning() || bootanimation_clean_exit_))) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning() || apex_clean_exit_); }
+    bool healthy() const { return (!logd_ || logd_->IsRunning()) && (!logcat_ || logcat_->IsRunning()) && !manager_failed_ && (!storaged_ || storaged_->IsRunning()) && (!swcodec_ || swcodec_->IsRunning()) && (!idmap_ || idmap_->IsRunning()) && (!gatekeeper_hal_ || gatekeeper_hal_->IsRunning()) && (!gatekeeper_ || gatekeeper_->IsRunning()) && (!keystore_ || keystore_->IsRunning()) && (!keymint_ || keymint_->IsRunning()) && (!aconfig_system_ || aconfig_system_->IsRunning() || aconfig_system_clean_exit_) && (!aconfig_mainline_ || aconfig_mainline_->IsRunning() || aconfig_mainline_clean_exit_) && (!audioserver_ || audioserver_->IsRunning()) && (!lmkd_ || lmkd_->IsRunning()) && (!netd_ || netd_->IsRunning()) && (!statsd_ || statsd_->IsRunning()) && (!health_ || health_->IsRunning()) && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && (bootanimation_->IsRunning() || bootanimation_clean_exit_))) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning() || apex_clean_exit_); }
     android::base::Result<void> Close(const Tick& tick) {
         using namespace android::init;
         if(!active_) return {};
@@ -183,7 +184,7 @@ class LinuxMc1Cohort {
             if(std::chrono::steady_clock::now()>=end || !tick())
                 return android::base::Error()<<"MC1 services not collected during close";
         }
-        manager_=nullptr;
+        manager_=nullptr;logd_=nullptr;logcat_=nullptr;
         hardware_=nullptr;
         allocator_=nullptr;
         composer_=nullptr;
@@ -210,6 +211,34 @@ class LinuxMc1Cohort {
         return {};
     }
  private:
+    android::base::Result<void> StartOriginalLogging(const Tick& tick) {
+        using namespace android::init;
+        if(android::base::GetProperty("ro.logd.kernel","")!="false" || android::base::GetProperty("ro.logd.auditd","")!="false")
+            return android::base::Error()<<"Original logd must preserve Linux kernel/audit ownership";
+        auto& services=ServiceList::GetInstance();
+        auto parser=CreateParser(ActionManager::GetInstance(),services);
+        auto parsed=parser.ParseConfigFile("/vendor/etc/init/archtv-logd.rc");
+        if(!parsed.ok() || parser.parse_error_count()!=0)return android::base::Error()<<"Original logd RC rejected";
+        logd_=services.FindService("logd");
+        if(!logd_ || logd_->args()!=std::vector<std::string>{"/system/bin/logd"} || logd_->uid()!=1036)
+            return android::base::Error()<<"Unexpected original logd entry";
+        if(android::base::GetProperty("logd.ready","")=="true")return android::base::Error()<<"Stale logd readiness";
+        logd_->AddReapCallback([this](const siginfo_t& info){std::fprintf(stderr,"ORIGINAL_LOGD_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);if(!closing_)manager_failed_=true;});
+        if(auto started=logd_->Start();!started.ok())return started;
+        std::fprintf(stderr,"ORIGINAL_LOGD_STARTED pid=%d NOT_READY\n",logd_->pid());
+        if(auto waited=Wait(tick,[]{return android::base::GetProperty("logd.ready","")=="true";});!waited.ok())return waited;
+        // Real shell client with original log group; no invented sender GID.
+        // Continuous original reader preserves startup failures before shutdown.
+        auto reader=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","shell","shell","log","--",
+            "/system/bin/sh","-c","umask 077; exec /system/bin/logcat -b all -v threadtime -v uid > /data/local/tmp/archtv-mc1/original-logcat.txt 2>&1"});
+        if(!reader.ok())return reader.error();
+        logcat_=reader->get();
+        logcat_->AddReapCallback([this](const siginfo_t& info){std::fprintf(stderr,"ORIGINAL_LOGCAT_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);if(!closing_)manager_failed_=true;});
+        services.AddService(std::move(*reader));
+        if(auto started=logcat_->Start();!started.ok())return started;
+        std::fprintf(stderr,"ORIGINAL_LOGD_READY_REQUIRES_CLIENT_OUTPUT logcat_pid=%d\n",logcat_->pid());
+        return {};
+    }
     android::base::Result<void> StartVold(const Tick& tick) {
         using namespace android::init;
         auto& services=ServiceList::GetInstance();
@@ -1071,6 +1100,8 @@ class LinuxMc1Cohort {
     android::init::Service* storaged_=nullptr;
     android::init::Service* swcodec_=nullptr;
     android::init::Service* idmap_=nullptr;
+    android::init::Service* logd_=nullptr;
+    android::init::Service* logcat_=nullptr;
     android::init::Service* netd_=nullptr;
     android::init::Service* statsd_=nullptr;
     android::init::Service* health_=nullptr;

@@ -29,3 +29,6 @@
 (allow init zygote (process2 (nnp_transition)))
 (allow init system_suspend (process2 (nnp_transition)))
 (allow init installd (process2 (nnp_transition)))
+
+; Original pinned init->logd transition retained; Linux NNP admission only.
+(allow init logd (process2 (nnp_transition)))

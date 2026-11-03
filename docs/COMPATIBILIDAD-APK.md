@@ -1,6 +1,6 @@
 # Matriz de aplicaciones reales
 
-Observación200 · [Markor sin etapa MAC nueva](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): cargadores BPF originales0, netd1 antes de disponibilidad aceptada. GPU/FUSE parciales explícitos. La nota de21 bytes y las identidades/etiquetas CE/DE previas permanecen intactas, sin nueva operación del editor. Las etapas167 conservan alcance permisivo; R1-MAC, ARM, GMS y DRM siguen separados.
+Observación201 · [sin etapa APK nueva](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): registro original bajo enforcing captura netd1 por montajes; no acredita red ni Markor bajo MAC. La nota previa y CE/DE conservan bytes/identidades/etiquetas. Cierre original incompleto documentado; R1-MAC, ARM, GMS y DRM separados abiertos.
 
 Histórico179 · [aconfig/VDC, sin nueva aceptación APK](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): original init_user0 alcanza vold y falla en auxiliar NNP. La nota e instalación previas conservan sus bytes/etiquetas tras la prueba; no equivale a ejecutar de nuevo Markor bajo MAC. Etapas167 mantienen alcance permisivo, ARM/GMS/DRM separados.
 

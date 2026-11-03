@@ -56,7 +56,7 @@ if software_platform:
  lines[0]=lines[0].replace('-Xmx768m','-Xmx512m')
  lines.append('    setenv ARCHTV_SOFTWARE_SECURITY_PROFILE software-platform-v1')
 experiment_kind='markor-software-launch' if software_platform else 'keystore-java-component' if keystore_java else 'keystore-component' if keystore_component else ('keymint-component' if keymint_component else 'markor-launch')
-(out/'build-options.json').write_text(json.dumps({'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component and not software_platform,'software_security_platform':software_platform,'observe_ms':observe_ms,'persistent_userdata_name':userdata_name,'markor_workflow_token':workflow_token,'markor_workflow_budget_seconds':workflow_budget_seconds,'experiment_kind':experiment_kind,'original_apex_bootstrap':True},indent=2)+'\n')
+(out/'build-options.json').write_text(json.dumps({'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component and not software_platform,'software_security_platform':software_platform,'observe_ms':observe_ms,'persistent_userdata_name':userdata_name,'markor_workflow_token':workflow_token,'markor_workflow_budget_seconds':workflow_budget_seconds,'experiment_kind':experiment_kind,'original_apex_bootstrap':True,'original_logd':True},indent=2)+'\n')
 if checkpoint_diagnostic:lines.append('    setenv ARCHTV_CHECKPOINT_DIAGNOSTIC 1')
 lines=[l for l in lines if not any(l.startswith('    setenv '+n+' ') for n in ['BOOTCLASSPATH','DEX2OATBOOTCLASSPATH','SYSTEMSERVERCLASSPATH','STANDALONE_SYSTEMSERVER_JARS'])];(entry/'selected-services.rc').write_text('\n'.join(lines)+'\n')
 old=r/'dist/aosp16/apex-cohort-build-6';commands=[]
@@ -124,6 +124,10 @@ for key,value in vendor['files'].items():
 # This Linux profile runs one real 64-bit Zygote. Preserve GSI bytes, but
 # declare the implemented device ABI set through the original property loader.
 base_props=Path(vendor['files']['/vendor/build.prop']['source']).read_text()
+# Keep Linux's audit receiver and kernel reader authoritative; original logd
+# still serves its real logd/logdr/logdw channels and drops unused caps.
+base_props+='\nro.logd.kernel=false\nro.logd.auditd=false\n'
+
 if keymint_component:
  # Unknown vendor patch level is explicitly empty/zero, never a claimed patch date.
  # The original loader creates the property; KeyMint keeps its original wait guard.
@@ -267,6 +271,18 @@ assert netd_rc.count('    capabilities ')==1
 netd_rc=netd_rc.replace('    capabilities ','    capabilities BPF ',1)
 (out/'linux-netd.rc').write_text(netd_rc)
 vendor['files']['/vendor/etc/init/archtv-netd.rc']={'source':str(out/'linux-netd.rc'),'context':'u:object_r:vendor_configs_file:s0','mode':0o644}
+# Original logd first service only: do not import boot-completed auditctl
+# triggers into a Linux-owned audit subsystem. Kernel/audit readers disabled
+# through original supported properties; keep original kmsg write descriptor.
+logd_source=Path('/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/logging/source/system/logging/logd')
+logd_rc=(logd_source/'logd.rc').read_text().split('\nservice logd-reinit ',1)[0]+'\n'
+assert logd_rc.count('    file /proc/kmsg r\n')==1
+logd_rc=logd_rc.replace('    file /proc/kmsg r\n','')
+assert logd_rc.count('    capabilities SYSLOG AUDIT_CONTROL\n')==1
+logd_rc=logd_rc.replace('    capabilities SYSLOG AUDIT_CONTROL\n','    capabilities SYSLOG\n')
+(out/'linux-logd.rc').write_text(logd_rc)
+vendor['files']['/vendor/etc/init/archtv-logd.rc']={'source':str(out/'linux-logd.rc'),'context':'u:object_r:vendor_configs_file:s0','mode':0o644}
+(out/'original-logd-inputs.json').write_text(json.dumps({'sources':{str(logd_source/n):hashlib.sha256((logd_source/n).read_bytes()).hexdigest() for n in ['main.cpp','logd.rc']},'binary':{'path':str(r/'dist/aosp16/factory-inputs-3/root/system/bin/logd'),'sha256':hashlib.sha256((r/'dist/aosp16/factory-inputs-3/root/system/bin/logd').read_bytes()).hexdigest()},'adaptation':'First original service, omit unused kernel-read fd and AUDIT_CONTROL; original ro.logd.kernel/auditd false. No auditctl triggers, no original ELF modification. logd still opens kmsg for its own errors; kernel logging is not claimed.'},indent=2)+'\n')
 (out/'vendor-inputs.json').write_text(json.dumps(vendor,indent=2))
 text=(base/'build-payload-expanded.py').read_text().replace(str(base),str(out));expected=out/'apex-expected.json';expected.write_text(json.dumps(json.loads((r/'reports/android16-apex-bootstrap/complete-inputs.json').read_text())['modules'],indent=2)+'\n');text=text.replace("image=out/'payload-2.ext4'", "record('/apex-expected.json',out/'apex-expected.json','u:object_r:vendor_configs_file:s0',0o600)\nimage=out/'payload-2.ext4'")
 old_parent="record('/'+str(parent.relative_to(tree)),None,'u:object_r:vendor_file:s0',0o755)"

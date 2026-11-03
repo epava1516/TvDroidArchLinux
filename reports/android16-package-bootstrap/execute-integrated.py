@@ -20,7 +20,14 @@ assert last in recipe
 scope={'__name__':'__materialize__','__file__':str(r/'reports/android16-hwc3-wayland/execute-graphics.py')}
 saved=sys.argv;sys.argv=[str(r/'reports/android16-hwc3-wayland/execute-graphics.py'),socket,'--observe-logs','--surfaceflinger','--selected-display']
 exec(compile(recipe.replace(last,''),'<graphics materialization>','exec'),scope)
-text=scope['base'];text=text.replace("1<<36 if identity['kind']=='SUSPEND' else","(1<<36)|(1<<35)|(1<<23)|(1<<5) if identity['kind']=='SERVICES' else 1<<36 if identity['kind']=='SUSPEND' else");text=text.replace("('mc3-live-'+str(time.time_ns()))","('apex-live-'+str(time.time_ns()))")
+text=scope['base']
+if build_options.get('original_logd',False):
+ # Original init owns all three original sockets; do not prebind logdw in
+ # the Linux Python observer. Legacy candidates keep their passive observer.
+ passive="if '--observe-logs' in sys.argv[1:]:"
+ assert text.count(passive)==1
+ text=text.replace(passive,"if False: # original logd owns logdw",1)
+text=text.replace("1<<36 if identity['kind']=='SUSPEND' else","(1<<36)|(1<<35)|(1<<23)|(1<<5) if identity['kind']=='SERVICES' else 1<<36 if identity['kind']=='SUSPEND' else");text=text.replace("('mc3-live-'+str(time.time_ns()))","('apex-live-'+str(time.time_ns()))")
 render_setup="p=root/'dev/dri'/node;os.mknod(p,stat.S_IFCHR|0o660,actual.st_rdev);os.chmod(p,0o660);os.chown(p,0,1003)"
 assert text.count(render_setup)==1
 # Pinned Cuttlefish ueventd uses0666 for these two nodes. The deployed vmwgfx
@@ -232,6 +239,10 @@ text=text.replace('observed_logs.append(item)', """item['observed_monotonic']=ti
      live_log.write(encoded);live_log.flush();log_capture['bytes']+=size;log_capture['records']+=1
     else:log_capture['truncated']=True
     if len(observed_logs)<log_capture['inline_limit_records']:observed_logs.append(item)""")
+if build_options.get('original_logd',False):
+ boundary='if p.returncode!=0:\n'
+ assert text.count(boundary)==1
+ text=text.replace(boundary,"logcat=Path('/data/local/tmp/archtv-mc1/original-logcat.txt');raw_logcat=logcat.read_bytes() if logcat.exists() else b'';print('ORIGINAL_LOGCAT_OUTPUT '+json.dumps({'present':logcat.exists(),'bytes':len(raw_logcat),'sha256':hashlib.sha256(raw_logcat).hexdigest(),'tail_limit_bytes':1048576,'truncated':len(raw_logcat)>1048576,'text':raw_logcat[-1048576:].decode(errors='replace')}),flush=True)\n"+boundary,1)
 text=text.replace("if p.returncode!=0:\n", """# Preopened evidence FD survives pivot_root; no host path is reopened here.
 try:
  log_capture_file.write(json.dumps(log_capture,indent=2)+'\\n');log_capture_file.flush();log_capture_file.close()

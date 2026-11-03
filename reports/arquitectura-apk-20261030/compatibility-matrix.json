@@ -416,13 +416,13 @@
         "scope": "Exact Markorv164 Markdown note created163 survives complete cohort teardown and original subsystems167; actual bytes, same UID/inodes/MCS, original install/force-stop/relaunch and real single pointer opens editor.167 native/exterior0. Not host reboot/power loss, FBE/MAC, graceful close, arbitrary upgrade or general APK compatibility."
       },
       "runtime_security_observation": {
-        "candidate": 200,
-        "status": "original_bpf_loaders_exit0_netd_exit1",
+        "candidate": 201,
+        "status": "original_logd_logcat_under_enforcing_netd_mounts_denied",
         "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-        "record_sha256": "3218b48b8885b338a5474459d633c03ce1c363ad7cdceb0ecc5538c0b68df451",
-        "scope": "Original Mainline and platform BPF loaders exit0 and original completion property; netd starts then exit1, no netd service or APK stage accepted.",
+        "record_sha256": "bc03fe62ab6b972207fb2c41fae9324673470fcdcde7eff6c33d27e28851cd34",
+        "scope": "Original logging real records underMAC; netd1 cgroup discovery, no newAPKstage. Original shutdown incomplete; external closure verified.",
         "r1_mac": "open",
-        "host_after": "41 known programs and58 maps absent after close, no loops/dm/FUSE/owned units. Audit loss delta0; permissive0 restored, policyload24/candidate26. Previous note/hash/CE/DE unchanged."
+        "host_after": "Permissive candidate27/policyload25, auditnewloss0, noownedresources, previousnote/CE/DE unchanged"
       },
       "runtime_security_observation_history": [
         {
@@ -469,6 +469,15 @@
           "scope": "Real31prog39map snapshots and IDrelease verified. Platform SIGABRT onrootbpffsassociation; no netd/newAPKstage accepted. User0effect/Zygote/logd/kernelwarning remain explicit.",
           "r1_mac": "open",
           "host_after": "Permissive candidate25/policyloadCOUNT23, auditnewloss0/noownedresources and allknownBPFIDsabsent, note/CE/DE retained"
+        },
+        {
+          "candidate": 200,
+          "status": "original_bpf_loaders_exit0_netd_exit1",
+          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "record_sha256": "3218b48b8885b338a5474459d633c03ce1c363ad7cdceb0ecc5538c0b68df451",
+          "scope": "Original Mainline and platform BPF loaders exit0 and original completion property; netd starts then exit1, no netd service or APK stage accepted.",
+          "r1_mac": "open",
+          "host_after": "41 known programs and58 maps absent after close, no loops/dm/FUSE/owned units. Audit loss delta0; permissive0 restored, policyload24/candidate26. Previous note/hash/CE/DE unchanged."
         }
       ],
       "runtime_security_history": [
