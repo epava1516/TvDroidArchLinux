@@ -1,8 +1,8 @@
 # Roadmap · Arch TV nativo en Rust
 
-Siguiente integración: [proveedor Java original tras Keystore2/KeyMint Binder116](docs/ROADMAP-A.md). Operaciones de claves y negativas nativas pasan en permisivo; quedan selección SOFTWARE Java coherente, GateKeeper/desbloqueo y Markor completo. R1-MAC sigue abierto.
+Siguiente integración: [plataforma original con perfil JCA SOFTWARE120 y GateKeeper real](docs/ROADMAP-A.md) → desbloqueo → Markor completo. JCA y negativas verificadas en un perfil binario experimental; el bootstrap Markor aún no lo integra. R1-MAC sigue abierto.
 
-Camino crítico actualizado: proveedor Java coherente sobre [Keystore2/KeyMint Binder116](reports/android16-package-bootstrap/keystore-binder-functional.json) → GateKeeper/desbloqueo real → Markor. La fase1000 original de103 se conserva. Véase la puerta de decisión y criterios en [ROADMAP-A](docs/ROADMAP-A.md).
+Camino crítico actualizado: integrar [JCA original120](reports/android16-package-bootstrap/keystore-java-functional.json) con GateKeeper y servicios originales → RUNNING_UNLOCKED → Markor. La fase1000 original de103 se conserva. Véase la puerta de decisión y criterios en [ROADMAP-A](docs/ROADMAP-A.md).
 
 Actualización 2026-11-02 · [Usuario y ciclo APEX originales](reports/android16-package-bootstrap/original-user-unlock-progress.json):103 conserva APEX41 y atraviesa fase1000, incluyendo MediaSession/MediaCommunication y StagingManager originales. La salida lazy normal de apexd ya no cierra la cohorte; reinicio bajo demanda aún no probado. UserController llega a LockSettings y espera GateKeeper original, cuyo ctl.interface_start está rechazado. Siguiente: integrar gatekeeperd y sus backends reales de seguridad; después comprobar RUNNING_UNLOCKED y lanzar Markor, sin fabricar credenciales, claves ni flags. No hay lanzamiento/UI/entrada/nota persistente aceptados. R1-MAC permisivo, cierre interno y ARM/GMS/DRM abiertos.
 

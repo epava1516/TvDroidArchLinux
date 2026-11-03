@@ -661,6 +661,16 @@ class LinuxMc1Cohort {
         if(auto started=keystore_->Start();!started.ok())return started;
         std::fprintf(stderr,"SELECTED_KEYSTORE_STARTED pid=%d\n",keystore_->pid());
         if(auto observed=client("/archtv-android/archtv-keystore-client write /data/local/tmp/archtv-mc1/keystore-ciphertext.bin > /data/local/tmp/archtv-mc1/keystore-component.txt 2>&1 && /archtv-android/archtv-keystore-client read /data/local/tmp/archtv-mc1/keystore-ciphertext.bin >> /data/local/tmp/archtv-mc1/keystore-component.txt 2>&1");!observed.ok())return observed;
+        std::string java_profile;
+        if(android::base::ReadFileToString("/vendor/etc/archtv-keystore-java",&java_profile)) {
+            if(java_profile!="software-java-profile-v1\n")return android::base::Error()<<"Unknown Java Keystore profile";
+            for(const char* directory:{"/apex/com.android.art","/apex/com.android.i18n","/apex/com.android.tzdata"}) {
+                struct stat actual{};
+                if(stat(directory,&actual)!=0 || !S_ISDIR(actual.st_mode))return android::base::ErrnoError()<<"Original Java APEX root absent: "<<directory;
+            }
+            const std::string entry="ANDROID_ART_ROOT=/apex/com.android.art ANDROID_I18N_ROOT=/apex/com.android.i18n ANDROID_TZDATA_ROOT=/apex/com.android.tzdata CLASSPATH=/vendor/framework/archtv-keystore-probe.jar /system/bin/app_process64 -Xmx128m -Xnoimage-dex2oat /system/bin --application org.archtv.keystoreprobe.OriginalJavaProviderProbe ";
+            if(auto observed=client(entry+"write /data/local/tmp/archtv-mc1/java-ciphertext.bin > /data/local/tmp/archtv-mc1/keystore-java.txt 2>&1 && "+entry+"read /data/local/tmp/archtv-mc1/java-ciphertext.bin >> /data/local/tmp/archtv-mc1/keystore-java.txt 2>&1");!observed.ok())return observed;
+        }
         std::fprintf(stderr,"KEYSTORE_COMPONENT_RETURNED REQUIRES_OUTPUT_VERIFICATION_NOT_APK_OR_MAC_ACCEPTANCE\n");
         return {};
     }

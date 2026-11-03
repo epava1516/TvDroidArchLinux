@@ -1,5 +1,7 @@
 # Contrato vigente · AOSP Android 16 QPR2
 
+El [perfil JCA experimental120](../reports/android16-package-bootstrap/keystore-java-functional.json) conserva metadatos SOFTWARE y errores StrongBox, sin cambiar el contrato. Cuatro elecciones por defecto adaptadas en el DEX original no equivalen a recompilar el framework ni acreditan todas sus clases, autenticación o APK. Exigir integración y recorridos reales antes de aceptar cada ámbito.
+
 [Resultado nativo116](../reports/android16-package-bootstrap/keystore-binder-functional.json): operaciones reales SOFTWARE y negativas de hardware/tamper/borrado verificadas, sin cambiar este contrato. Quedan autorización MAC, claves entre reinicios, autenticación/GateKeeper y recorrido APK completo.
 
 Nivel de protección · [Límite demostrado104](../reports/android16-package-bootstrap/original-security-backend-negative.json): la reutilización de criptografía AOSP software debe conservar la identidad SOFTWARE en las API y metadatos. No permite anunciar TEE/StrongBox, atestación, certificación ni protección frente al kernel sin soporte real. Las APK que exijan esas garantías requieren un backend protegido disponible o un error explícito. Una clave software real no es una credencial simulada, pero tampoco acredita aislamiento hardware; R1-MAC sigue abierto.

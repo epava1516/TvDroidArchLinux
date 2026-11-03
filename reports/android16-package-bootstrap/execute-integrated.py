@@ -191,7 +191,7 @@ for file in sorted(Path('/metadata/aconfig').rglob('*')):
  info=file.stat()
  metadata.append({'path':str(file),'uid':info.st_uid,'gid':info.st_gid,'mode':oct(stat.S_IMODE(info.st_mode)),'context':os.getxattr(file,'security.selinux').decode().rstrip(chr(0)),'bytes':info.st_size,'sha256':hashlib.sha256(file.read_bytes()).hexdigest() if info.st_size<=33554432 else None})
 print('ACONFIG_ORIGINAL_METADATA_FILES '+json.dumps({'files':metadata,'truncated':metadata_truncated,'scope':'Original daemon outputs, not flag or permission acceptance'}),flush=True)
-for name in ['keymint-provider.txt','keystore-component.txt','keymint-component.txt','storage-contract.txt','markor-user-state.txt','markor-bootstrap-home-stop.txt','markor-home-after.txt','markor-boot-before-user.txt','platform-capabilities.txt','linux-application-profile.txt','markor-postcommit-path.txt','markor-postcommit-dump.txt','markor-installed-bytes.txt','unadmitted-artd-control.txt','ranging-service-info.txt','ranging-permission.txt','netd-permission-query.txt','netd-query.txt','netd-interfaces.txt','stats-query.txt','selected-failure.txt','selected-wait.txt','health-query.txt','health-dump.txt','apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt','vold-query.txt','vold-user0.txt','markor-install.txt','markor-path.txt','markor-dump.txt','activity-query.txt','mount-query.txt','markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
+for name in ['keystore-java.txt','keymint-provider.txt','keystore-component.txt','keymint-component.txt','storage-contract.txt','markor-user-state.txt','markor-bootstrap-home-stop.txt','markor-home-after.txt','markor-boot-before-user.txt','platform-capabilities.txt','linux-application-profile.txt','markor-postcommit-path.txt','markor-postcommit-dump.txt','markor-installed-bytes.txt','unadmitted-artd-control.txt','ranging-service-info.txt','ranging-permission.txt','netd-permission-query.txt','netd-query.txt','netd-interfaces.txt','stats-query.txt','selected-failure.txt','selected-wait.txt','health-query.txt','health-dump.txt','apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt','vold-query.txt','vold-user0.txt','markor-install.txt','markor-path.txt','markor-dump.txt','activity-query.txt','mount-query.txt','markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
  f=Path('/data/local/tmp/archtv-mc1')/name
  if f.is_file():print('PACKAGE_ORIGINAL_OUTPUT '+name+' '+json.dumps(f.read_text()),flush=True)
 if p.returncode!=0:
@@ -253,6 +253,14 @@ keystore_checks="""if keystore_component_profile:
  second=re.fullmatch(r'KEYSTORE_BINDER_REOPENED_DECRYPTED tamper_rejected=1 deleted=1 metadata=SOFTWARE pid=([1-9][0-9]*) NOT_APK_OR_MAC_ACCEPTANCE',output[1])
  assert first and second and first[1]!=second[1],output
  assert Path('/data/local/tmp/archtv-mc1/markor-launch.txt').read_text()==''
+ if Path('/vendor/etc/archtv-keystore-java').is_file():
+  assert Path('/vendor/etc/archtv-keystore-java').read_text()=='software-java-profile-v1\\n'
+  java=Path('/data/local/tmp/archtv-mc1/keystore-java.txt').read_text().splitlines()
+  first_java=[re.fullmatch(r'ORIGINAL_JCA_ENCRYPTED SOFTWARE strongbox_rejected=1 pid=([1-9][0-9]*) NOT_APK_OR_MAC_ACCEPTANCE',line) for line in java]
+  second_java=[re.fullmatch(r'ORIGINAL_JCA_REOPENED SOFTWARE tamper_rejected=1 deleted=1 pid=([1-9][0-9]*) NOT_APK_OR_MAC_ACCEPTANCE',line) for line in java]
+  first_java=[m[1] for m in first_java if m];second_java=[m[1] for m in second_java if m]
+  assert len(first_java)==len(second_java)==1 and first_java[0]!=second_java[0],java
+  print('ORIGINAL_JAVA_KEYSTORE_COMPONENT_VERIFIED NOT_USER_AUTH_MAC_OR_APK_ACCEPTANCE',flush=True)
  print('KEYSTORE_SOFTWARE_BINDER_COMPONENT_VERIFIED NOT_USER_AUTH_MAC_OR_APK_ACCEPTANCE',flush=True)
  sys.exit(0)
 """
@@ -296,6 +304,18 @@ if (root/'vendor/etc/archtv-keystore-component').is_file():
  assert stat.S_IMODE((root/'archtv').stat().st_mode)==0o700
  assert stat.S_IMODE((root/'archtv/bin').stat().st_mode)==0o700
 """.replace('ALIAS_INPUTS',repr(aliases))
+ if (payload.parent/'keystore-java-inputs.json').exists():
+  java_inputs=json.loads((payload.parent/'keystore-java-inputs.json').read_text())
+  alias_code+='''
+assert (root/'vendor/etc/archtv-keystore-java').read_text()=='software-java-profile-v1\\n'
+framework_source=candidate/'bin/archtv-keystore-framework.jar';framework_target=root/'system/framework/framework.jar'
+assert hashlib.sha256(framework_source.read_bytes()).hexdigest()==FRAMEWORK_SHA
+assert hashlib.sha256(framework_target.read_bytes()).hexdigest()==ORIGINAL_FRAMEWORK_SHA
+assert os.getxattr(framework_source,'security.selinux').decode().rstrip('\\0')=='u:object_r:system_file:s0'
+mount('--bind',framework_source,framework_target);mount('-o','remount,bind,ro',framework_target)
+assert os.statvfs(framework_target).f_flag & os.ST_RDONLY
+print('KEYSTORE_ORIGINAL_FRAMEWORK_PROFILE '+json.dumps({'sha256':FRAMEWORK_SHA,'original_sha256':ORIGINAL_FRAMEWORK_SHA,'readonly':True,'scope':'experimental binary profile, not source rebuild or Java execution proof'}),flush=True)
+'''.replace('ORIGINAL_FRAMEWORK_SHA',repr(java_inputs['original_framework_sha256'])).replace('FRAMEWORK_SHA',repr(java_inputs['framework_sha256']))
  alias_boundary="mount('--bind',candidate,root/'archtv');mount('-o','remount,bind,ro',root/'archtv')"
  assert text.count(alias_boundary)==1
  text=text.replace(alias_boundary,alias_boundary+'\n'+alias_code)

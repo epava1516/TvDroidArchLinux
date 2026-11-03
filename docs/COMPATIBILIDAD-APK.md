@@ -1,5 +1,7 @@
 # Matriz de aplicaciones reales
 
+[JCA original120](../reports/android16-package-bootstrap/keystore-java-functional.json) verifica generación/uso AES-GCM, reapertura entre clientes y negativas en un perfil experimental del framework. No prueba importación, claves asimétricas, autenticación, reinicios ni recorrido de ninguna APK. Markor conserva sólo su instalación temporal anterior; lanzamiento/UI/entrada/nota/cierre/reapertura abiertos.
+
 [Keystore2/KeyMint original116](../reports/android16-package-bootstrap/keystore-binder-functional.json) supera claves y negativas por Binder con SOFTWARE en permisivo. Es soporte nativo, no ejecución de Markor: instalación temporal previa conservada; lanzamiento/UI/entrada/nota/cierre/reapertura siguen sin aceptación. Reapertura de clave entre clientes no es persistencia de la aplicación.
 
 El [perfil de plataforma original](../reports/android16-package-bootstrap/platform-effects-functional.json) declara Android WallpaperService ausente: el recurso aplicado por RRO y el DisabledWallpaperManager original lo confirman. Esto es una limitación comprobada de plataforma, no una prueba de una aplicación de fondos ni compatibilidad resuelta. Color/notificación/fase600/retorno AMS progresan; las etapas APK conservan su estado.
