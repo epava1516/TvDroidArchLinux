@@ -1,6 +1,6 @@
 # Matriz de aplicaciones reales
 
-Observación209 · [sin nueva etapa APK](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): allocator supera el fallo de driver y SurfaceFlinger alcanza renderer, pero aborta por declaración nativa mapper denegada. Sin píxeles/UI ni nuevo recorrido Markor bajo MAC. Nota/hash/CE/DE previos intactos; R1-MAC, ARM, GMS y DRM separados abiertos.
+Observación211 · [sin nueva etapa APK](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): mapper y contexto software GLES3.1 funcionan parcialmente; la conexión HWC a Wayland está denegada y no hay nueva presentación/UI Markor bajo MAC. Identidad MAC del compositor no capturada. Nota/hash/CE/DE previos intactos. R1-MAC, ARM, GMS y DRM separados abiertos.
 
 Histórico179 · [aconfig/VDC, sin nueva aceptación APK](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): original init_user0 alcanza vold y falla en auxiliar NNP. La nota e instalación previas conservan sus bytes/etiquetas tras la prueba; no equivale a ejecutar de nuevo Markor bajo MAC. Etapas167 mantienen alcance permisivo, ARM/GMS/DRM separados.
 

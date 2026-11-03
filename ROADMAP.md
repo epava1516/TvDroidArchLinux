@@ -1,6 +1,6 @@
 # Roadmap · Arch TV nativo en Rust
 
-Prioridad209: [estado canónico](docs/ESTADO.md) · Allocator supera el fallo de driver; SF alcanza renderer pero falla isDeclared del mapper por contexto de dispositivo. Configurar instancia real con tipo AOSP y probar carga/operaciones, luego SF/display, Zygote y Markor bajo MAC. R1-MAC y compatibilidad amplia siguen abiertos.
+Prioridad211: [estado canónico](docs/ESTADO.md) · Mapper y contexto GLES software avanzan; HWC bloquea en socket Wayland. Integrar endpoint/peer/FDs específicos y probar presentación real en Smithay, luego display, Zygote y Markor bajo MAC. R1-MAC y compatibilidad amplia siguen abiertos.
 
 Histórico179: [estado](docs/ESTADO.md) · builtin/VDC original alcanza vold y falla25 en auxiliar NNP; exigir operación user0 completa y APEX en vivo, luego Markor bajo MAC. [Evidencias](reports/android16-package-bootstrap/original-apex-derive-mac-progress.json).
 

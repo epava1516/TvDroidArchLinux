@@ -283,6 +283,30 @@ logd_rc=logd_rc.replace('    capabilities SYSLOG AUDIT_CONTROL\n','    capabilit
 (out/'linux-logd.rc').write_text(logd_rc)
 vendor['files']['/vendor/etc/init/archtv-logd.rc']={'source':str(out/'linux-logd.rc'),'context':'u:object_r:vendor_configs_file:s0','mode':0o644}
 (out/'original-logd-inputs.json').write_text(json.dumps({'sources':{str(logd_source/n):hashlib.sha256((logd_source/n).read_bytes()).hexdigest() for n in ['main.cpp','logd.rc']},'binary':{'path':str(r/'dist/aosp16/factory-inputs-3/root/system/bin/logd'),'sha256':hashlib.sha256((r/'dist/aosp16/factory-inputs-3/root/system/bin/logd').read_bytes()).hexdigest()},'adaptation':'First original service, omit unused kernel-read fd and AUDIT_CONTROL; original ro.logd.kernel/auditd false. No auditctl triggers, no original ELF modification. logd still opens kmsg for its own errors; kernel logging is not claimed.'},indent=2)+'\n')
+# Device configuration for the actual native mapper5 library/instance.
+# This is an explicit Linux device mapping, not a claimed upstream row copy.
+# Original AOSP already permits its graphics allocator clients to find this
+# original service type; do not override isDeclared or add a Binder service.
+import xml.etree.ElementTree as ET
+mapper_xml=Path(vendor['files']['/vendor/etc/vintf/manifest/mapper.xml']['source'])
+mapper_tree=ET.parse(mapper_xml).getroot()
+mapper_hal=[node for node in mapper_tree.findall('hal') if node.get('format')=='native' and node.findtext('name')=='mapper']
+assert len(mapper_hal)==1 and mapper_hal[0].findtext('version')=='5.0'
+mapper_instances=[node.text for node in mapper_hal[0].findall('interface/instance')]
+assert mapper_instances==['minigbm']
+mapper_name='mapper/'+mapper_instances[0]
+policy_source=Path('/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/sepolicy/source/system/sepolicy')
+assert 'type hal_graphics_mapper_service, hal_service_type, service_manager_type;' in (policy_source/'public/service.te').read_text()
+assert 'allow hal_graphics_allocator_client hal_graphics_mapper_service:service_manager find;' in (policy_source/'private/hal_graphics_allocator.te').read_text()
+assert 'hal_client_domain(surfaceflinger, hal_graphics_allocator)' in (policy_source/'private/surfaceflinger.te').read_text()
+existing_contexts=vendor['files'].get('/vendor/etc/selinux/vendor_service_contexts')
+previous_contexts=Path(existing_contexts['source']).read_text() if existing_contexts else ''
+assert not any(row.split() and row.split()[0]==mapper_name for row in previous_contexts.splitlines())
+mapper_mapping=mapper_name+' u:object_r:hal_graphics_mapper_service:s0'
+mapper_contexts=out/'graphics-service-contexts'
+mapper_contexts.write_text(previous_contexts.rstrip('\n')+'\n'+mapper_mapping+'\n')
+vendor['files']['/vendor/etc/selinux/vendor_service_contexts']={'source':str(mapper_contexts),'context':'u:object_r:vendor_configs_file:s0','mode':0o444}
+(out/'native-mapper-context-contract.json').write_text(json.dumps({'mapping':mapper_mapping,'xml':str(mapper_xml),'xml_sha256':hashlib.sha256(mapper_xml.read_bytes()).hexdigest(),'previous_contexts_sha256':hashlib.sha256(previous_contexts.encode()).hexdigest(),'original_policy_sources':{n:hashlib.sha256((policy_source/n).read_bytes()).hexdigest() for n in ['public/service.te','private/hal_graphics_allocator.te','private/surfaceflinger.te']},'scope':'Explicit device mapping for actual native VINTF instance/library using original AOSP type/client rules. No upstream row copy claimed, no new policy permission, Binder implementation or isDeclared result.'},indent=2)+'\n')
 (out/'vendor-inputs.json').write_text(json.dumps(vendor,indent=2))
 text=(base/'build-payload-expanded.py').read_text().replace(str(base),str(out));expected=out/'apex-expected.json';expected.write_text(json.dumps(json.loads((r/'reports/android16-apex-bootstrap/complete-inputs.json').read_text())['modules'],indent=2)+'\n');text=text.replace("image=out/'payload-2.ext4'", "record('/apex-expected.json',out/'apex-expected.json','u:object_r:vendor_configs_file:s0',0o600)\nimage=out/'payload-2.ext4'")
 old_parent="record('/'+str(parent.relative_to(tree)),None,'u:object_r:vendor_file:s0',0o755)"

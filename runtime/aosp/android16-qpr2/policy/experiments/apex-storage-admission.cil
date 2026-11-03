@@ -152,3 +152,12 @@
 ; remain, including no new prog_load/map_write rights. No SYS_ADMIN or app
 ; grant, and the global Linux sysctl stays2. Neverallow compilation required.
 (allow netd self (capability2 (bpf)))
+
+; Linux Wayland HWC adapter calls original GraphicBufferMapper (line84).
+; Actual210 composer is not an allocator client and isDeclared is denied.
+; Apply original full-Treble hal_client_domain expansion atomically, using
+; existing original allocator Binder/find/mapper permissions, not per-method
+; exceptions or default_android_service access. This is a Linux device-role
+; adaptation for our HWC adapter, not an upstream Cuttlefish rule copy.
+(typeattributeset halclientdomain (hal_graphics_composer_default))
+(typeattributeset hal_graphics_allocator_client (hal_graphics_composer_default))

@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "utc": "2026-11-03T21:48:27.508697+00:00",
+  "utc": "2026-11-03T22:01:12.468334+00:00",
   "scope": "Partial original APEX/derive admission under bounded enforcing; no new APK stage or general MAC/isolation acceptance",
   "base_commit": "39d0be0edb77c13575681175fc26e730adee3c11",
   "executions": {
@@ -1318,7 +1318,7 @@
     "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load10/after-load.json",
     "sha256": "309743229826231a5a6d96498f808485c1d5ad5ce3a5cd8c1a279f21f26b9aa8"
   },
-  "next": "New immutable build210: integrate mapper/minigbm -> u:object_r:hal_graphics_mapper_service:s0 in composed vendor_service_contexts, preserving all existing entries and actual native VINTF XML. No isDeclared result override, fake Binder service, policy grant or host labels. Same31 whole original SF/mapper consumer test.",
+  "next": "Use existing startup preflight to capture actual owned compositor executable/hash, UID/GID/SID, server PID/boot/starttime, socket inode/owner/context and peer credentials. Bind these to run UUID. Define narrowly typed socket and server/peer boundary for HWC Wayland path, preserving existing host controls and recovery; no generic Linux.tmpfs_t write/connect-to broad host domain shortcut. Test actual HWC connection/SCM_RIGHTS buffers and original SF display, no readiness or pixels fabricated.",
   "original_sources": {
     "sdkextensions_commit": "4d10e57070bb9c6edcd13bf74e9d01717b2a5ecf",
     "derive_rc_sha256": "a9e65b0c114408e5cb8356bdb435a6b48d0a67cd7879915c52ffa094a267f607",
@@ -1388,8 +1388,8 @@
     "sha256": "9e395067238c647c729c48a03dc8a115e81727ff30a8bfd6f4e50098098c9134"
   },
   "latest_host": {
-    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after209-host.json",
-    "sha256": "ca805f93db8b8118c481bf1a0bf0af29d6e416ebf24303b0b48d77d147e84340"
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after211-host.json",
+    "sha256": "bf63755c75b8834efedb270e0820df52b470942914065c831615cd096495b00a"
   },
   "vdc_source_contract": {
     "builtin": "Pinned system/core/init/builtins.cpp1122–1172: original temporary exec plus original failure callback; exact argv /system/bin/vdc --wait cryptfs init_user0. Native observes actual reaping before advance, no shell redirection or synthetic readiness.",
@@ -2352,6 +2352,136 @@
       "Native mapper5 actual library/declaration exist; mapper device service context omitted. Exact source vendor row not located; proposed device configuration must be documented as adaptation, not invented upstream copy.",
       "Original close incomplete; external resources and known BPF IDs closed. No general isolation acceptance.",
       "Original netd/sysctl/NFLOG/dummy0, GPU/FUSE optional errors, crypto/authentication consumer operations, original Zygote/Markor MAC, ARM/GMS/DRM remain open."
+    ]
+  },
+  "integrated210_211": {
+    "scope": "Native mapper configuration and adapted HWC original client role; GLES context and Wayland boundary progress, no display/APK acceptance",
+    "mapper_context_contract": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-210/native-mapper-context-contract.json",
+      "sha256": "7c64c1f342a918036cadcb2b4a3c85e5f4a34d52795e81dbd25d284c1c89ae3b"
+    },
+    "build210": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-210/source-inputs.json",
+      "sha256": "cd5c361ce6239e8ec4cb36e20da202296abf4190b238c6770edcbf232746237e"
+    },
+    "image210": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-210/payload.json",
+      "sha256": "cbcf724b471d5c558955deac88d23250c8954fc092e5bc9e9a8c6596ee00349b"
+    },
+    "hwc_client_contract": {
+      "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/hwc-allocator-client-contract210.json",
+      "sha256": "958b750612fa13e418c8a501fc9d5a9294c2aa7f829479f3fcc9bb3f24e9dcfa"
+    },
+    "policy32_artifact": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/selected-platform-policy-32/artifact.json",
+      "sha256": "33b682bdad29f6e492c7c2a59e13a5ddd036bfdb06dfc25a9c393060b3988e86"
+    },
+    "policy32_load": {
+      "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load32/after-load.json",
+      "sha256": "dddcde19e13dd043d73f25274ce5116a4545563ae1de414fe6445d42641c7aad"
+    },
+    "wayland_boundary": {
+      "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/wayland-peer-contract211.json",
+      "sha256": "101d4cbdc4e3dd5c7d38b7353b4a02aea83ac89d702dd204f49edcac60297568"
+    },
+    "executions": {
+      "210": {
+        "id": "9d6358d5-268d-44a9-8f28-2f2c0350d808",
+        "evidence": {
+          "result.json": {
+            "path": "/home/tv/recuperacion-archtv/9d6358d5-268d-44a9-8f28-2f2c0350d808-markor-software-launch/result.json",
+            "sha256": "26a5fdc7623ddada143357ff334c64062d928e4c786de16d73794b2d57239816"
+          },
+          "mac-window.json": {
+            "path": "/home/tv/recuperacion-archtv/9d6358d5-268d-44a9-8f28-2f2c0350d808-markor-software-launch/mac-window.json",
+            "sha256": "66f4de88dd63acb23fbb75714b3ebd8b82fadcb45ebbfd6af1ea7c52b459c9a1"
+          },
+          "completion-consumer.json": {
+            "path": "/home/tv/recuperacion-archtv/9d6358d5-268d-44a9-8f28-2f2c0350d808-markor-software-launch/completion-consumer.json",
+            "sha256": "667413f960806e60ac4f9d8392ee5b35671fc37ca2ae3d025eae15c70006206c"
+          },
+          "runtime-source-overlay.json": {
+            "path": "/home/tv/recuperacion-archtv/9d6358d5-268d-44a9-8f28-2f2c0350d808-markor-software-launch/runtime-source-overlay.json",
+            "sha256": "fa69b89f1d7aaee5e7854d29cb842024031c1cf402bd971323480eaa46540115"
+          },
+          "original-logcat.txt": {
+            "path": "/home/tv/recuperacion-archtv/9d6358d5-268d-44a9-8f28-2f2c0350d808-markor-software-launch/original-logcat.txt",
+            "sha256": "1a63c69c9a8e782dfb84b3cdc20db17c5367d3a925495fc92bff62a5e932a3cf"
+          },
+          "bpf-all-known-after.json": {
+            "path": "/home/tv/recuperacion-archtv/9d6358d5-268d-44a9-8f28-2f2c0350d808-markor-software-launch/bpf-all-known-after.json",
+            "sha256": "3315dd7ac9840173b734dae8bcb6a5df3fa8defb27f99a9c81ce729dc4f2564b"
+          },
+          "finite-audit/result.json": {
+            "path": "/home/tv/recuperacion-archtv/9d6358d5-268d-44a9-8f28-2f2c0350d808-markor-software-launch/finite-audit/result.json",
+            "sha256": "b89cd7d2f4df8824ae7b5cf731511f6be20019bb379e9f25813db1a9b823ab80"
+          },
+          "userdata-after210-close.json": {
+            "path": "/home/tv/recuperacion-archtv/9d6358d5-268d-44a9-8f28-2f2c0350d808-markor-software-launch/userdata-after210-close.json",
+            "sha256": "d5cd546b047cb0de996028462fa5b16981a711064c20679dd790cee67e04b074"
+          },
+          "image-mapper-contexts.json": {
+            "path": "/home/tv/recuperacion-archtv/9d6358d5-268d-44a9-8f28-2f2c0350d808-markor-software-launch/image-mapper-contexts.json",
+            "sha256": "840a1b8bcf9576b0bbfbdec07e65020aeab0459fa4126d07a4c72cb842c004a0"
+          }
+        },
+        "after_host": {
+          "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after210-host.json",
+          "sha256": "ff4f3d058332d3ad6a757df63e0685f08f97b070e04463acf840fec945e7057d"
+        }
+      },
+      "211": {
+        "id": "4f743763-6aef-4ee3-882f-ce1b0264fd91",
+        "evidence": {
+          "result.json": {
+            "path": "/home/tv/recuperacion-archtv/4f743763-6aef-4ee3-882f-ce1b0264fd91-markor-software-launch/result.json",
+            "sha256": "75a5c222a08658ff6612884625256158df6fb964a4b18962f294a7d00bdfd808"
+          },
+          "mac-window.json": {
+            "path": "/home/tv/recuperacion-archtv/4f743763-6aef-4ee3-882f-ce1b0264fd91-markor-software-launch/mac-window.json",
+            "sha256": "b8a0fe1f77fe482be2e050dc843ece8b5336176f78d13d0484ff3bb1acffddc8"
+          },
+          "completion-consumer.json": {
+            "path": "/home/tv/recuperacion-archtv/4f743763-6aef-4ee3-882f-ce1b0264fd91-markor-software-launch/completion-consumer.json",
+            "sha256": "30f62dc06216ccefcbf732222a5ac099bd63e25590445bf5b207239173137f24"
+          },
+          "runtime-source-overlay.json": {
+            "path": "/home/tv/recuperacion-archtv/4f743763-6aef-4ee3-882f-ce1b0264fd91-markor-software-launch/runtime-source-overlay.json",
+            "sha256": "fa69b89f1d7aaee5e7854d29cb842024031c1cf402bd971323480eaa46540115"
+          },
+          "original-logcat.txt": {
+            "path": "/home/tv/recuperacion-archtv/4f743763-6aef-4ee3-882f-ce1b0264fd91-markor-software-launch/original-logcat.txt",
+            "sha256": "8073f23a41265502de6b638b842e07e9fce0fd7de382fad90dec14493866f3dd"
+          },
+          "bpf-all-known-after.json": {
+            "path": "/home/tv/recuperacion-archtv/4f743763-6aef-4ee3-882f-ce1b0264fd91-markor-software-launch/bpf-all-known-after.json",
+            "sha256": "7b9c10c13b7072c35bf0dcddc2d354ad60618f76ef409c2f5b4ddd22cbdb6ffe"
+          },
+          "finite-audit/result.json": {
+            "path": "/home/tv/recuperacion-archtv/4f743763-6aef-4ee3-882f-ce1b0264fd91-markor-software-launch/finite-audit/result.json",
+            "sha256": "e99a36a85c311f0edfbfe8756d321a5e12f84a74bfd02ec12deb882e316e0704"
+          },
+          "userdata-after211-close.json": {
+            "path": "/home/tv/recuperacion-archtv/4f743763-6aef-4ee3-882f-ce1b0264fd91-markor-software-launch/userdata-after211-close.json",
+            "sha256": "05e2138222bbe6fc97d9bf92d108f47e6ef9538de69eea5008ed7a65f7b74f8a"
+          }
+        },
+        "after_host": {
+          "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after211-host.json",
+          "sha256": "bf63755c75b8834efedb270e0820df52b470942914065c831615cd096495b00a"
+        }
+      }
+    },
+    "results": [
+      "210 exact mapper/minigbm device mapping to existing hal_graphics_mapper_service; all existing vendor service rows preserved, native mapper XML and library SHA unchanged, actual image bytes verified. No claimed upstream row copy, new policy API or isDeclared override.",
+      "210 original SF passes old mapper error and creates GLES3.1 ANGLE/SwiftShader context. Adapted HWC then aborts because actual allocator lookup is denied; its Linux adapter uses GraphicBufferMapper but original client membership missing.",
+      "32 adds both attributes from original fullTreble hal_client_domain to adapted HWC: halclientdomain + hal_graphics_allocator_client. Reuses complete original Binder/find/same_process_hal_file permissions; no nonTreble passthrough attrs or direct default_service grant. Original neverallow compilation passes.",
+      "211 same native210 no longer hits HWC allocator/mapper lookup abort. Actual Wayland socket write denied on generic Linux.tmpfs_t; HWC init returns failure, SF aborts Cannot create AidlComposerClient. Original server MAC SID/peer credential not captured, not inferred."
+    ],
+    "limits": [
+      "GLES strings/context are not presented pixels or hardware acceleration: renderer is software ANGLE/SwiftShader. HWC buffer exchange/display not accepted.",
+      "Original close incomplete; external closure, known BPF resources and persisted note verified. R1-MAC completecohort open.",
+      "Original authorized security/netd operations, original Zygote/framework/Markor MAC and ARM/GMS/DRM remain open."
     ]
   }
 }

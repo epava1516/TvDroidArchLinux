@@ -1,6 +1,6 @@
 # Contrato vigente · AOSP Android 16 QPR2
 
-Límite209 · [progreso gráfico parcial](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): allocator y entrada renderer SF no acreditan píxeles, entrada o APK. El fallo real isDeclared del mapper se conserva; su contexto de dispositivo debe usar el contrato original, sin servicio ficticio ni éxito fabricado. Adaptación común sysfs sólo de recorrido/enlaces, sin lectura de contenidos ni cambios globales de etiquetas. R1-MAC de la cohorte completa sigue abierto.
+Límite211 · [puente gráfico aún incompleto](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): contexto GLES3.1 software y consultas mapper resueltas no prueban presentación, entrada ni APK. El socket Wayland denegado conserva su fallo real; el puente requiere identidad de servidor, endpoint específico y intercambio de buffers verificables, sin permisos genéricos de anfitrión o readiness simulado. Rol cliente allocator reusa el contrato original para la función añadida por nuestro HWC. R1-MAC completo sigue abierto.
 
 Histórico179 · [operación original fallida conservada](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): código0 de inicializadores aconfig no demuestra flags completas ni sockets disponibles; VDC25 no es éxito de init_user0. Inventario APEX leído después de cerrar no acredita disponibilidad durante ejecución. Mantener R1-MAC abierto hasta el recorrido real completo con identidades, pruebas negativas, cierre y efectos del anfitrión.
 
