@@ -86,14 +86,17 @@ if [ -f /vendor/etc/archtv-markor-workflow-token ]; then
     token=$(/system/bin/cat /vendor/etc/archtv-markor-workflow-token)
     case "$token" in ''|*[!0-9a-f]*) exit 1;; esac
     [ "${#token}" -eq 8 ] || exit 1
-    note=/storage/emulated/0/Documents/archtv-$token.md
+    # Privileged original system_server observer, not an app access test.
+    # media_rw is in pinned original ZygoteInit groups; do not expand app FUSE access.
+    note=/data/media/0/Documents/archtv-$token.md
     expected="archtv note $token"
     n=0
-    while [ "$n" -lt 145 ]; do
+    while [ "$n" -lt 165 ]; do
         if [ -f "$note" ] && [ "$(/system/bin/cat "$note")" = "$expected" ]; then break; fi
         n=$((n+1)); /system/bin/sleep 1
     done
-    [ -f "$note" ] && [ "$(/system/bin/cat "$note")" = "$expected" ]
+    [ -f "$note" ] || exit 1
+    [ "$(/system/bin/cat "$note")" = "$expected" ] || exit 1
     [ "$(/system/bin/stat -c %s "$note")" -le 4096 ]
     /system/bin/cat "$note" > /data/local/tmp/archtv-mc1/markor-note-bytes.bin
     /system/bin/sha256sum "$note" > /data/local/tmp/archtv-mc1/markor-note-before-stop.txt

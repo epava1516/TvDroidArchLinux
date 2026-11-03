@@ -163,7 +163,7 @@
     "Native normal lazy apexd exit CLD_EXITED0 clean1 followed by successful coordinatorclose0; explicit cancellation alternative was exercised133",
     "Native/exterior0; exact unitsinactive, VT1restored, no loops/dm/new FUSEconnections; host DRM node metadata identical"
   ],
-  "next": "Trace original permission activity return and focus/lifecycle before no-window state; existing UI driver must stop body input unless actual editor transition observed. Then actual saved bytes, original force-stop/new PID/relaunch and GUI reopen. Do not disable idle policy or seed permission/readiness; cross-cohort durable data remains separate.",
+  "next": "160 same frozen159 artifact: actual permission switch OFF/ON and Main/editor frames before text, exact original app-written bytes, actual old/new PID and original relaunch then GUI reopen. If failure preserve file/input logs; no blind continuation or permissions seeding.",
   "artifacts": {
     "/home/tv/recuperacion-archtv/ff987089-92db-43e2-852d-3e78501aae42-markor-software-launch/before-launch.json": "db7aaed86c8a4f5121ce3677ff47d50e11f74a3c646b3455437700432da2818a",
     "/home/tv/recuperacion-archtv/ff987089-92db-43e2-852d-3e78501aae42-markor-software-launch/result.json": "db31e85df10c964be7b912ab4f7c29b47f292e788e26c8df09ce639c935578b9",
@@ -2933,5 +2933,544 @@
       }
     ],
     "next": "Trace original permission activity return and focus/lifecycle before no-window state; existing UI driver must stop body input unless actual editor transition observed. Then actual saved bytes, original force-stop/new PID/relaunch and GUI reopen. Do not disable idle policy or seed permission/readiness; cross-cohort durable data remains separate."
+  },
+  "permission_input_followup156_159": {
+    "scope": "Real intact Markor UI and native input/storage integration, partial results; not complete APK acceptance",
+    "reassessment155": "Stored frame18 shows All files access OFF, frame19 original permission-required dialog. Driver sent body text despite no Main transition. No focused window plus later sleep do not establish initial runtime lifecycle defect; blind input/Enter may activate EXIT, exact callback not demonstrated.",
+    "REA_MCP": {
+      "artifacts": [
+        {
+          "path": "/home/tv/recuperacion-archtv/f00eafa2-ce61-47d9-8829-d290bc43a607-markor-software-launch/rea-permission-askForPermissions.json",
+          "sha256": "6ee85bf6580e977bbcd74aa26720819fa4650f1de93bece43585716d5598aadd"
+        },
+        {
+          "path": "/home/tv/recuperacion-archtv/f00eafa2-ce61-47d9-8829-d290bc43a607-markor-software-launch/rea-permission-class.json",
+          "sha256": "eee9d170dd67af3bb4d5412e3aee6bd573858c6037181b0d987b95bcabe1e2cf"
+        },
+        {
+          "path": "/home/tv/recuperacion-archtv/f00eafa2-ce61-47d9-8829-d290bc43a607-markor-software-launch/rea-permission-onActivityResult.json",
+          "sha256": "1919250d056907c1771d8ed1ff8db08c02213fae6a51ea847b41e0137ae8381b"
+        },
+        {
+          "path": "/home/tv/recuperacion-archtv/f00eafa2-ce61-47d9-8829-d290bc43a607-markor-software-launch/rea-permission-onRequestPermissionsResult.json",
+          "sha256": "9c1a22b438b43990d4af68e6ff045f8ba746e2e32bc92c65bcbdb7266324954e"
+        },
+        {
+          "path": "/home/tv/recuperacion-archtv/f00eafa2-ce61-47d9-8829-d290bc43a607-markor-software-launch/rea-permission-processPermissionState.json",
+          "sha256": "c48d4130ed9f3cabde5c80b4c1e5e3256c325b9bd0c342d9eae8d9ee033ca42e"
+        },
+        {
+          "path": "/home/tv/recuperacion-archtv/f00eafa2-ce61-47d9-8829-d290bc43a607-markor-software-launch/rea-permission-request0.json",
+          "sha256": "aa631c4426429874530c5db354cdfd763e651e22bc2db8445d74c7bafb79dd29"
+        },
+        {
+          "path": "/home/tv/recuperacion-archtv/f00eafa2-ce61-47d9-8829-d290bc43a607-markor-software-launch/rea-permission-request1.json",
+          "sha256": "55ba7b31e7d2b7626571ca50aa33c55253b8545b5d117117fa46c7c10fbec239"
+        }
+      ],
+      "finding": "Exact APK requests Settings all-files permission and legacy WRITE_EXTERNAL_STORAGE. StoragePermissionActivity atomically handles first result and checks actual permission before Main or dialog. Static inspection only, no execution/signature claim."
+    },
+    "156": "Manual frame verification proves OFF to ON and actual Main/Document editor with full archtv-f00eafa2 name and note text. Original UID1000 observer at /storage path reports stat/cat Permission denied; no copied bytes or process restart.",
+    "original_identity_adaptation": {
+      "source": {
+        "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/core/java/com/android/internal/os/ZygoteInit.java?format=TEXT",
+        "pin": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+        "path": "core/java/com/android/internal/os/ZygoteInit.java",
+        "sha256": "e2299c75b02bfe180deb346b14d80a71cafe5258a05f0ff6c3f39fc024441bae",
+        "verified_from_official": true
+      },
+      "change": "Reuse original system_server media_rw GID1023 only, in addition to previous1003/3006/3007; observed exact group assertion passes157/158. Observer reads actual backing /data/media, not broaden app FUSE access. No new capability or host metadata change.",
+      "limit": "Permissive identity and group observations do not prove MAC or general storage operations; intended note not captured157/158."
+    },
+    "157": "Filename visibly truncated to archtv-4899763.md, later unexpected Notebook dialog. Original Java input seq jumps67 to94 with reauthentication; disconnect cause not retained, not claimed as proven ACK timeout. No intended note bytes or lifecycle.",
+    "158": "Drain socket ACKs before five-second inactivity check; add Android log reason for ACK timeout/rejection. Original Java106 dispatch sequence contiguous with no ArchTVInput error observed; no general drop-free guarantee. Name still visibly archtv-581a268 (missing last0), intended note copy empty, no lifecycle. Source comparison finds bridge WAIT_FOR_RESULT1 whereas original InputShellCommand normally uses WAIT_FOR_FINISH2. Mode2 experiment159 pending.",
+    "results": [
+      {
+        "candidate": 156,
+        "id": "f00eafa2-ce61-47d9-8829-d290bc43a607",
+        "checkpoint": "/home/tv/recuperacion-archtv/f00eafa2-ce61-47d9-8829-d290bc43a607-markor-software-launch",
+        "factory": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793702878252209983",
+        "outer_exit": 0,
+        "native_complete_inventory_verified": true,
+        "note_capture": {
+          "scope": "Read-only actual note and original lifecycle outputs within one ephemeral cohort; not cross-cohort durability",
+          "token": "f00eafa2",
+          "note_source": "Original system_server client cat of actual /storage/emulated/0/Documents/archtv-f00eafa2.md before force-stop; evidence copy only",
+          "present": true,
+          "note": {
+            "path": "/data/local/tmp/archtv-mc1/markor-note-bytes.bin",
+            "bytes_hex": "",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "size": 0,
+            "uid": 1000,
+            "gid": 2000,
+            "inode": 151,
+            "mode": "0o640",
+            "matches_expected": false
+          },
+          "markor-lifecycle.txt": "",
+          "markor-relaunch.txt": "",
+          "markor-note-before-stop.txt": "",
+          "markor-note-after-relaunch.txt": ""
+        },
+        "cleanup": {
+          "id": "f00eafa2-ce61-47d9-8829-d290bc43a607",
+          "outer_unit": "archtv-markor-session-f00eafa2-ce61-47d9-8829-d290bc43a607",
+          "runner_unit": "archtv-package-runner-f00eafa2-ce61-47d9-8829-d290bc43a607",
+          "initial_vt": "1",
+          "root_pid": 542425,
+          "root_boot_id": "4e18faf8-2b46-42e4-a6b2-269c34326b68",
+          "result": "native_result_recorded",
+          "fuse_connections_before": [],
+          "host_devices_before": {
+            "card0": {
+              "mode": "0o660",
+              "uid": 0,
+              "gid": 983,
+              "rdev": 57856,
+              "inode": 365
+            },
+            "renderD128": {
+              "mode": "0o666",
+              "uid": 0,
+              "gid": 987,
+              "rdev": 57984,
+              "inode": 364
+            }
+          },
+          "interaction_exit": 0,
+          "host_devices_after": {
+            "card0": {
+              "mode": "0o660",
+              "uid": 0,
+              "gid": 983,
+              "rdev": 57856,
+              "inode": 365
+            },
+            "renderD128": {
+              "mode": "0o666",
+              "uid": 0,
+              "gid": 987,
+              "rdev": 57984,
+              "inode": 364
+            }
+          },
+          "host_device_metadata_unchanged": true,
+          "fuse_connections_after": [],
+          "new_fuse_connections": [],
+          "final_vt": "1",
+          "outer_active": false,
+          "runner_active": false
+        },
+        "artifacts": [
+          {
+            "path": "/home/tv/recuperacion-archtv/f00eafa2-ce61-47d9-8829-d290bc43a607-markor-software-launch/run.log",
+            "sha256": "eeca28dc5ac214f8c3c712aee196e6c6376b165400a29488f49635b4b3a77f67"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/f00eafa2-ce61-47d9-8829-d290bc43a607-markor-software-launch/session-state.json",
+            "sha256": "1c6d8a6a19edd89d448e51477091ef9cb68e54c92979b643cd0b9a3025716685"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/f00eafa2-ce61-47d9-8829-d290bc43a607-markor-software-launch/completion-consumer.json",
+            "sha256": "e82aa98fafafea5aba01ab8369bc94180eadabad8e5aa0a8a336d9f5e61e2a3c"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/f00eafa2-ce61-47d9-8829-d290bc43a607-markor-software-launch/interaction-events.json",
+            "sha256": "c0b9a094e9dfca10cb59e6ef5c9cd4cf97e5f3f1397a69c9ca5b836f2e98612e"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/f00eafa2-ce61-47d9-8829-d290bc43a607-markor-software-launch/interaction-test.py",
+            "sha256": "39307789a4e4cfa423f45623cf2524e2b84c88b00006ec7027e73dc44116a7f1"
+          },
+          {
+            "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793702878252209983/markor-workflow-evidence.json",
+            "sha256": "bb64cb2fdbdea053b8f3bb81c4272da799436da1d1e3abc169f872c4b2b24f32"
+          },
+          {
+            "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793702878252209983/android-log-live.jsonl",
+            "sha256": "1f2a8365f25bfe48264f2f9a0f180105652352ebcf4c7e86652986e8dda83d82"
+          },
+          {
+            "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-156/source-inputs.json",
+            "sha256": "21c6b9d16908fcc55f30c3e03c3525b0db1098af04c349f138b114e8d6e65ae1"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/f00eafa2-ce61-47d9-8829-d290bc43a607-markor-software-launch/inspect-after-note.png",
+            "sha256": "38655776201ee475cf1430616fb8e4f191ca9b22fbbbeeea1198e5a017315020"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/f00eafa2-ce61-47d9-8829-d290bc43a607-markor-software-launch/inspect-after-permission.png",
+            "sha256": "8750fc7c4b2c1d48f4529a5bb3208f317997ea2aa276d50fbf59ca1743e74a6a"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/f00eafa2-ce61-47d9-8829-d290bc43a607-markor-software-launch/inspect-editor-empty.png",
+            "sha256": "251ee90ac2a4632447b66ec57ef6b5665b6276e4fe94fba9df31817129f45e8b"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/f00eafa2-ce61-47d9-8829-d290bc43a607-markor-software-launch/inspect-name-complete.png",
+            "sha256": "f741fbf457b2ce1ecd2be4bc1c4cc671ca60304f69ca5bc4025d70be228cd6a8"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/f00eafa2-ce61-47d9-8829-d290bc43a607-markor-software-launch/inspect-name-final.png",
+            "sha256": "51bbfe254fd0c89f51bb38bb3bd11c126a0ee08b4b628138f71c94e327476c68"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/f00eafa2-ce61-47d9-8829-d290bc43a607-markor-software-launch/inspect-name.png",
+            "sha256": "244fecbf5ac334260c24c0763c84bd7a3cd7162db789b97edaaa6e1e74b13c36"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/f00eafa2-ce61-47d9-8829-d290bc43a607-markor-software-launch/inspect-settings-before.png",
+            "sha256": "1f1961d63770a13667540fb570cab8bda5569f289ea463b21507285c8b17f0ad"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/f00eafa2-ce61-47d9-8829-d290bc43a607-markor-software-launch/inspect-settings-toggle.png",
+            "sha256": "4c9ae7e47ed132fc6e3dab0b094933079803ac8915e1e54bfa4f89d0a6e0536d"
+          }
+        ]
+      },
+      {
+        "candidate": 157,
+        "id": "4899763e-6862-4be3-9cb3-a38152d5160b",
+        "checkpoint": "/home/tv/recuperacion-archtv/4899763e-6862-4be3-9cb3-a38152d5160b-markor-software-launch",
+        "factory": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793703545478408161",
+        "outer_exit": 0,
+        "native_complete_inventory_verified": true,
+        "note_capture": {
+          "scope": "Read-only actual note and original lifecycle outputs within one ephemeral cohort; not cross-cohort durability",
+          "token": "4899763e",
+          "note_source": "Original privileged system_server client cat of actual /data/media/0/Documents/archtv-4899763e.md before force-stop; evidence copy only",
+          "present": true,
+          "note": {
+            "path": "/data/local/tmp/archtv-mc1/markor-note-bytes.bin",
+            "bytes_hex": "",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "size": 0,
+            "uid": 1000,
+            "gid": 2000,
+            "inode": 151,
+            "mode": "0o640",
+            "matches_expected": false
+          },
+          "markor-lifecycle.txt": "",
+          "markor-relaunch.txt": "",
+          "markor-note-before-stop.txt": "",
+          "markor-note-after-relaunch.txt": ""
+        },
+        "cleanup": {
+          "id": "4899763e-6862-4be3-9cb3-a38152d5160b",
+          "outer_unit": "archtv-markor-session-4899763e-6862-4be3-9cb3-a38152d5160b",
+          "runner_unit": "archtv-package-runner-4899763e-6862-4be3-9cb3-a38152d5160b",
+          "initial_vt": "1",
+          "root_pid": 550764,
+          "root_boot_id": "4e18faf8-2b46-42e4-a6b2-269c34326b68",
+          "result": "native_result_recorded",
+          "fuse_connections_before": [],
+          "host_devices_before": {
+            "card0": {
+              "mode": "0o660",
+              "uid": 0,
+              "gid": 983,
+              "rdev": 57856,
+              "inode": 365
+            },
+            "renderD128": {
+              "mode": "0o666",
+              "uid": 0,
+              "gid": 987,
+              "rdev": 57984,
+              "inode": 364
+            }
+          },
+          "interaction_exit": 0,
+          "host_devices_after": {
+            "card0": {
+              "mode": "0o660",
+              "uid": 0,
+              "gid": 983,
+              "rdev": 57856,
+              "inode": 365
+            },
+            "renderD128": {
+              "mode": "0o666",
+              "uid": 0,
+              "gid": 987,
+              "rdev": 57984,
+              "inode": 364
+            }
+          },
+          "host_device_metadata_unchanged": true,
+          "fuse_connections_after": [],
+          "new_fuse_connections": [],
+          "final_vt": "1",
+          "outer_active": false,
+          "runner_active": false
+        },
+        "artifacts": [
+          {
+            "path": "/home/tv/recuperacion-archtv/4899763e-6862-4be3-9cb3-a38152d5160b-markor-software-launch/run.log",
+            "sha256": "7e4578d80429d1f4174fcefcf5156d3ad5e82be0062dc156262450796c73ab19"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/4899763e-6862-4be3-9cb3-a38152d5160b-markor-software-launch/session-state.json",
+            "sha256": "41658962bd8d2e7ed20ff9f1dd53d7c30b3282700d378c42e8e20d7fdc4aebd6"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/4899763e-6862-4be3-9cb3-a38152d5160b-markor-software-launch/completion-consumer.json",
+            "sha256": "8c22b7d9dd5aaba2576e7da20d78c4b179c3812f6b14b670816c89e22a7b7499"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/4899763e-6862-4be3-9cb3-a38152d5160b-markor-software-launch/interaction-events.json",
+            "sha256": "4b7fddd73248d5ae1818b007e8a5775faef108d864d59f262a4b06b5427fa617"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/4899763e-6862-4be3-9cb3-a38152d5160b-markor-software-launch/interaction-test.py",
+            "sha256": "a18c1caeca43051bb5e5de5c32619d8dd0f316b808cef09adfca67a0057882a4"
+          },
+          {
+            "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793703545478408161/markor-workflow-evidence.json",
+            "sha256": "d72057da9f1a9eef8201fc91218815c64cbb2f4716b6f0679b2bb94bb5ca54dd"
+          },
+          {
+            "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793703545478408161/android-log-live.jsonl",
+            "sha256": "b5b8eb492f24c65d85f91c024693ece78dcb5df3a0c12a1b4c5f260641d42f3f"
+          },
+          {
+            "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-157/source-inputs.json",
+            "sha256": "02f467d8a8c4a017d0b8701839464e86d7eb637a3bcef165eb00f9f15919550d"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/4899763e-6862-4be3-9cb3-a38152d5160b-markor-software-launch/inspect-current.png",
+            "sha256": "1f1961d63770a13667540fb570cab8bda5569f289ea463b21507285c8b17f0ad"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/4899763e-6862-4be3-9cb3-a38152d5160b-markor-software-launch/inspect-current2.png",
+            "sha256": "26fb9f2bbe18324ef6f9fdc8d75b7212422be9add78d885e6805010ad3462d50"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/4899763e-6862-4be3-9cb3-a38152d5160b-markor-software-launch/inspect-note.png",
+            "sha256": "b34526ae6f84f9f56412dfe8e3289be7cfe1fe715405a0c86a551932724b2cbe"
+          }
+        ]
+      },
+      {
+        "candidate": 158,
+        "id": "581a2680-f942-4cb4-a033-51a22a1ad84f",
+        "checkpoint": "/home/tv/recuperacion-archtv/581a2680-f942-4cb4-a033-51a22a1ad84f-markor-software-launch",
+        "factory": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793704147140928618",
+        "outer_exit": 0,
+        "native_complete_inventory_verified": true,
+        "note_capture": {
+          "scope": "Read-only actual note and original lifecycle outputs within one ephemeral cohort; not cross-cohort durability",
+          "token": "581a2680",
+          "note_source": "Original privileged system_server client cat of actual /data/media/0/Documents/archtv-581a2680.md before force-stop; evidence copy only",
+          "present": true,
+          "note": {
+            "path": "/data/local/tmp/archtv-mc1/markor-note-bytes.bin",
+            "bytes_hex": "",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "size": 0,
+            "uid": 1000,
+            "gid": 2000,
+            "inode": 151,
+            "mode": "0o640",
+            "matches_expected": false
+          },
+          "markor-lifecycle.txt": "",
+          "markor-relaunch.txt": "",
+          "markor-note-before-stop.txt": "",
+          "markor-note-after-relaunch.txt": ""
+        },
+        "cleanup": {
+          "id": "581a2680-f942-4cb4-a033-51a22a1ad84f",
+          "outer_unit": "archtv-markor-session-581a2680-f942-4cb4-a033-51a22a1ad84f",
+          "runner_unit": "archtv-package-runner-581a2680-f942-4cb4-a033-51a22a1ad84f",
+          "initial_vt": "1",
+          "root_pid": 558458,
+          "root_boot_id": "4e18faf8-2b46-42e4-a6b2-269c34326b68",
+          "result": "native_result_recorded",
+          "fuse_connections_before": [],
+          "host_devices_before": {
+            "card0": {
+              "mode": "0o660",
+              "uid": 0,
+              "gid": 983,
+              "rdev": 57856,
+              "inode": 365
+            },
+            "renderD128": {
+              "mode": "0o666",
+              "uid": 0,
+              "gid": 987,
+              "rdev": 57984,
+              "inode": 364
+            }
+          },
+          "interaction_exit": 0,
+          "host_devices_after": {
+            "card0": {
+              "mode": "0o660",
+              "uid": 0,
+              "gid": 983,
+              "rdev": 57856,
+              "inode": 365
+            },
+            "renderD128": {
+              "mode": "0o666",
+              "uid": 0,
+              "gid": 987,
+              "rdev": 57984,
+              "inode": 364
+            }
+          },
+          "host_device_metadata_unchanged": true,
+          "fuse_connections_after": [],
+          "new_fuse_connections": [],
+          "final_vt": "1",
+          "outer_active": false,
+          "runner_active": false
+        },
+        "artifacts": [
+          {
+            "path": "/home/tv/recuperacion-archtv/581a2680-f942-4cb4-a033-51a22a1ad84f-markor-software-launch/run.log",
+            "sha256": "e464041c9c55992fcb4b8f94f5de9390cc3fe92b01d9b7829ad5de709b42e4a4"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/581a2680-f942-4cb4-a033-51a22a1ad84f-markor-software-launch/session-state.json",
+            "sha256": "9f849ca6894ee297802d6abd07516e709b35a771a98307189b6415cb6093bf3f"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/581a2680-f942-4cb4-a033-51a22a1ad84f-markor-software-launch/completion-consumer.json",
+            "sha256": "d9dcaab121d9486161fe119f470edbcba324f05130123829aa7f6c82cd753b60"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/581a2680-f942-4cb4-a033-51a22a1ad84f-markor-software-launch/interaction-events.json",
+            "sha256": "0547ae8d3d471538071f672ece654477e5092c46fca86e81ba14c0cec43d51bf"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/581a2680-f942-4cb4-a033-51a22a1ad84f-markor-software-launch/interaction-test.py",
+            "sha256": "5f0610365510693d5bebb176658bac8b02dc08b84aa341ef09f1f78816b002f2"
+          },
+          {
+            "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793704147140928618/markor-workflow-evidence.json",
+            "sha256": "c082a012c5a66acf48d302d7d0e501f14c4bbeb6f229fb0cd2a3e1c3149b2937"
+          },
+          {
+            "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793704147140928618/android-log-live.jsonl",
+            "sha256": "a51329fcc48ca75aaf4cc3fda6a0c1b54ace883924564a14065ef9e599bd2580"
+          },
+          {
+            "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-158/source-inputs.json",
+            "sha256": "65be7920d0aee117923be5ab95e3728d57cbf45f73d58a7001da228b8bfd6e76"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/581a2680-f942-4cb4-a033-51a22a1ad84f-markor-software-launch/inspect-current.png",
+            "sha256": "ea5de4c77f70f7b8dfe65c8fe3d21762822f8dab143a907973091b0cec881729"
+          }
+        ]
+      },
+      {
+        "candidate": 159,
+        "id": "fb3f64e0-c035-4576-a2c0-10efabfea578",
+        "checkpoint": "/home/tv/recuperacion-archtv/fb3f64e0-c035-4576-a2c0-10efabfea578-markor-software-launch",
+        "outer_exit": 0,
+        "cleanup": {
+          "id": "fb3f64e0-c035-4576-a2c0-10efabfea578",
+          "outer_unit": "archtv-markor-session-fb3f64e0-c035-4576-a2c0-10efabfea578",
+          "runner_unit": "archtv-package-runner-fb3f64e0-c035-4576-a2c0-10efabfea578",
+          "initial_vt": "1",
+          "root_pid": 566180,
+          "root_boot_id": "4e18faf8-2b46-42e4-a6b2-269c34326b68",
+          "result": "native_result_recorded",
+          "fuse_connections_before": [],
+          "host_devices_before": {
+            "card0": {
+              "mode": "0o660",
+              "uid": 0,
+              "gid": 983,
+              "rdev": 57856,
+              "inode": 365
+            },
+            "renderD128": {
+              "mode": "0o666",
+              "uid": 0,
+              "gid": 987,
+              "rdev": 57984,
+              "inode": 364
+            }
+          },
+          "interaction_exit": 1,
+          "host_devices_after": {
+            "card0": {
+              "mode": "0o660",
+              "uid": 0,
+              "gid": 983,
+              "rdev": 57856,
+              "inode": 365
+            },
+            "renderD128": {
+              "mode": "0o666",
+              "uid": 0,
+              "gid": 987,
+              "rdev": 57984,
+              "inode": 364
+            }
+          },
+          "host_device_metadata_unchanged": true,
+          "fuse_connections_after": [],
+          "new_fuse_connections": [],
+          "final_vt": "1",
+          "outer_active": false,
+          "runner_active": false
+        },
+        "artifacts": [
+          {
+            "path": "/home/tv/recuperacion-archtv/fb3f64e0-c035-4576-a2c0-10efabfea578-markor-software-launch/run.log",
+            "sha256": "1dc38606de4ac0a06999a5cd5bff8d8736f0f419f921ed7bd876a97ded5e4b03"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/fb3f64e0-c035-4576-a2c0-10efabfea578-markor-software-launch/interaction-test.log",
+            "sha256": "3dc43a42682abd0ef5b1fafa2117420e7b4f55dab285f617659bdbd02ad502a3"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/fb3f64e0-c035-4576-a2c0-10efabfea578-markor-software-launch/interaction-test.py",
+            "sha256": "eac01d9ed2ee2603ba16e4304dbadc249de0d348cc600ba18fa71fa7f4a470bb"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/fb3f64e0-c035-4576-a2c0-10efabfea578-markor-software-launch/interaction-events.json",
+            "sha256": "2cdbb388822b72159ba947e78d5ff03ef6309ed490162d979960e660b40d2253"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/fb3f64e0-c035-4576-a2c0-10efabfea578-markor-software-launch/inspect-current.png",
+            "sha256": "df6a0f1a1c262fc68ac45703838d8ed0e3862a37c6fffa9e72bc5104b8059971"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/fb3f64e0-c035-4576-a2c0-10efabfea578-markor-software-launch/completion-consumer.json",
+            "sha256": "04e586c25e7a53d3a652fc397e0a7561136a6803d4a069af6bba08dced22baf9"
+          },
+          {
+            "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793704684702847805/markor-workflow-evidence.json",
+            "sha256": "1b5005ffd44df8e0cb83faddc7cf9e53df6efb42c8e9b33e11867c05ec13ab4b"
+          },
+          {
+            "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793704684702847805/android-log-live.jsonl",
+            "sha256": "f9444c8f863f5eb26d65f396a8b007f1246d549687f3d7c4290fc8050b575ed6"
+          }
+        ]
+      }
+    ],
+    "not_accepted": [
+      "main function",
+      "saved bytes",
+      "persistence",
+      "process close",
+      "reopen",
+      "cross-cohort durability",
+      "broad services",
+      "MAC/enforcing",
+      "broad APK compatibility"
+    ],
+    "next": "160 same frozen159 artifact: actual permission switch OFF/ON and Main/editor frames before text, exact original app-written bytes, actual old/new PID and original relaunch then GUI reopen. If failure preserve file/input logs; no blind continuation or permissions seeding.",
+    "159": "WAIT_FOR_FINISH2 compiles and executes permission/input flow; original Main transition false, guard raises before body input and closes devices (interaction_exit1). Native/exterior0 do not close workflow. Same original permission-required dialog visible; no saved note, old PID death, relaunch or reopen.160 reuses exact159 artifact with fresh cohort and explicit tokenfb3f64e0, visually verifies permission before body input; no new build."
   }
 }

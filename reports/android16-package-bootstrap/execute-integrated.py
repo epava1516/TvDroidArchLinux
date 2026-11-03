@@ -194,7 +194,7 @@ try:
   assert len(token)==8 and all(c in '0123456789abcdef' for c in token)
   workflow['token']=token
   note=Path('/data/local/tmp/archtv-mc1/markor-note-bytes.bin')
-  workflow['note_source']='Original system_server client cat of actual /storage/emulated/0/Documents/archtv-'+token+'.md before force-stop; evidence copy only'
+  workflow['note_source']='Original privileged system_server client cat of actual /data/media/0/Documents/archtv-'+token+'.md before force-stop; evidence copy only'
   workflow['present']=note.is_file()
   if note.is_file():
    st=note.stat();assert st.st_size<=4096
@@ -247,7 +247,7 @@ text=text.replace('SUSPEND|SERVICES|INSTALLD|VOLD|ZYGOTE|HEALTH|STATSD','SUSPEND
 text=text.replace("'STATSD':'u:r:statsd:s0'","'STATSD':'u:r:statsd:s0','NETD':'u:r:netd:s0','LMKD':'u:r:lmkd:s0'")
 text=text.replace("1066 if identity['kind']=='STATSD' else ","1069 if identity['kind']=='LMKD' else 0 if identity['kind']=='NETD' else 1066 if identity['kind']=='STATSD' else ")
 text=text.replace("(((1<<35)|(1<<36)) if identity['kind']=='HEALTH'", "(0x1804022 if identity['kind']=='LMKD' else 0x80000074ef if identity['kind']=='NETD' else ((1<<35)|(1<<36)) if identity['kind']=='HEALTH'")
-text=text.replace("fields['NoNewPrivs']=='1'", "fields['NoNewPrivs']=='1'\n if identity['kind']=='SERVICES':assert list(map(int,fields['Groups'].split()))==[1003,3006,3007]")
+text=text.replace("fields['NoNewPrivs']=='1'", "fields['NoNewPrivs']=='1'\n if identity['kind']=='SERVICES':assert list(map(int,fields['Groups'].split()))==[1003,1023,3006,3007]")
 text=text.replace('NETD|LMKD','NETD|LMKD|ACONFIG_SYSTEM|ACONFIG_MAINLINE')
 text=text.replace("'LMKD':'u:r:lmkd:s0'","'LMKD':'u:r:lmkd:s0','ACONFIG_SYSTEM':'u:r:aconfigd:s0','ACONFIG_MAINLINE':'u:r:aconfigd_mainline:s0'")
 # Observe actual demand-start PID through the existing namespace observer.

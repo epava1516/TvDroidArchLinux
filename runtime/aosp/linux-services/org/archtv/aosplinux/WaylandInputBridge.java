@@ -31,8 +31,9 @@ final class WaylandInputBridge {
     private boolean dispatch(Object event) throws Exception {
         invoke(event,"setDisplayId",new Class<?>[]{int.class},0);
         try {
-            // WAIT_FOR_RESULT. Real original permission and target checks stay intact.
-            return (Boolean)invoke(input,"injectInputEvent",new Class<?>[]{eventType,int.class},event,1);
+            // WAIT_FOR_FINISH, as original InputShellCommand: do not ACK ahead
+            // of window/IME delivery. Original permission/target checks stay intact.
+            return (Boolean)invoke(input,"injectInputEvent",new Class<?>[]{eventType,int.class},event,2);
         } finally {if(motionType.isInstance(event))invoke(event,"recycle",new Class<?>[0]);}
     }
     private boolean key(int code,int action,int scan,int state) throws Exception {

@@ -30,10 +30,10 @@ assert rc.count('    capabilities SYS_NICE\n')==1
 # Original ZygoteInit also grants WAKE_ALARM: timerfd ALARM clocks require it.
 rc=rc.replace('    capabilities SYS_NICE\n','    capabilities SYS_NICE BLOCK_SUSPEND WAKE_ALARM\n')
 # Selected system services open the original netd maps by DAC. Reuse only
-# the two original system_server groups needed by network accounting, from
+# the original media_rw and network-accounting groups, from
 # pinned ZygoteInit --setgroups; no CAP_BPF or global sysctl exception.
 assert rc.count('    group system graphics\n')==1
-rc=rc.replace('    group system graphics\n','    group system graphics net_bw_stats net_bw_acct\n')
+rc=rc.replace('    group system graphics\n','    group system graphics media_rw net_bw_stats net_bw_acct\n')
 lines=rc.splitlines();lines[0]='service archtv-selected-services /system/bin/app_process64 -Xmx768m -Xnoimage-dex2oat /system/bin --application --nice-name=archtv-selected-services org.archtv.aosplinux.ServiceLauncher --packages'
 checkpoint_diagnostic='--checkpoint-diagnostic' in sys.argv[2:]
 keymint_component='--keymint-component' in sys.argv[2:]
@@ -70,7 +70,7 @@ for c in json.loads((old/'build.json').read_text())['commands']:
 argv=json.loads((r/'reports/android16-hwmanager-cohort/helper-build.json').read_text())['argv'];argv[argv.index('-o')+1]=str(out/'linux-exec-context-image');run(argv)
 (out/'artifacts.json').write_text(json.dumps({n:hashlib.sha256((out/n).read_bytes()).hexdigest() for n in ['graphics-client','cargo/debug/examples/native_supervisor','linux-exec-context-image','property-coordinator']},indent=2))
 base=r/'dist/aosp16/sf-cohort-build-32';vendor=json.loads((base/'vendor-inputs.json').read_text())
-input_hwc=r/'dist/aosp16/hwc3-wayland-input-5'
+input_hwc=r/'dist/aosp16/hwc3-wayland-input-6'
 input_record=json.loads((input_hwc/'build.json').read_text());assert input_record['terminal']
 assert hashlib.sha256(Path(input_record['executable']).read_bytes()).hexdigest()==input_record['executable_sha256']
 for target,value in vendor['files'].items():

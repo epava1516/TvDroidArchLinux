@@ -10,6 +10,7 @@
 #include <deque>
 #include <map>
 #include <cstdio>
+#include <android/log.h>
 #include <cstring>
 #include <cerrno>
 #include <cstddef>
@@ -49,7 +50,6 @@ class LinuxWaylandInput {
     ~LinuxWaylandInput(){Disconnect();}
     void Pump(){
         if(fd_<0)return;
-        if(sequence_!=last_ack_ && std::chrono::steady_clock::now()-progress_>std::chrono::seconds(5)){std::fprintf(stderr,"WAYLAND_INPUT_ACK_TIMEOUT disconnect\n");Disconnect();return;}
         while(!pending_.empty()){
             auto* bytes=reinterpret_cast<const char*>(pending_.front().data());
             ssize_t n=send(fd_,bytes+offset_,40-offset_,MSG_DONTWAIT|MSG_NOSIGNAL);
@@ -67,8 +67,15 @@ class LinuxWaylandInput {
                 if(seq!=last_ack_+1 || seq>sequence_ || result>1){std::fprintf(stderr,"WAYLAND_INPUT_INVALID_ACK\n");Disconnect();return;}
                 last_ack_=seq;progress_=std::chrono::steady_clock::now();
                 std::fprintf(stderr,"WAYLAND_INPUT_ORIGINAL_DISPATCH seq=%u accepted=%u\n",seq,result);
-                if(!result){Disconnect();return;}
+                if(!result){__android_log_print(ANDROID_LOG_ERROR,"ArchTVInput","DISPATCH_REJECTED seq=%u",seq);Disconnect();return;}
             }
+        }
+        // The display/Wayland thread may have been busy while a valid ACK
+        // reached the socket. Drain it before testing inactivity; never drop
+        // acknowledged input merely because Pump was scheduled late.
+        if(sequence_!=last_ack_ && std::chrono::steady_clock::now()-progress_>std::chrono::seconds(5)){
+            __android_log_print(ANDROID_LOG_ERROR,"ArchTVInput","ACK_TIMEOUT sent=%u ack=%u pending=%zu",sequence_,last_ack_,pending_.size());
+            std::fprintf(stderr,"WAYLAND_INPUT_ACK_TIMEOUT disconnect\n");Disconnect();return;
         }
     }
     void Key(uint32_t scan,bool down){
