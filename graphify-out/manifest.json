@@ -282,9 +282,9 @@
     "semantic_hash": ""
   },
   "ROADMAP.md": {
-    "mtime": 1793683903.222128,
-    "seen": 1793683922.398985,
-    "ast_hash": "20b229589c690c1a94557d42a86f28d4",
+    "mtime": 1793686428.904029,
+    "seen": 1793686445.1659079,
+    "ast_hash": "bc7dda4a0c5d884f91401c4a104a3a1b",
     "semantic_hash": ""
   },
   "THIRD_PARTY.md": {
@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793684283.7980793,
-    "seen": 1793684299.4392831,
-    "ast_hash": "c6dec3fb9c55b6d9df0d7a5462798bca",
+    "mtime": 1793686428.8806713,
+    "seen": 1793686445.1685808,
+    "ast_hash": "0b4dc80b31200da992495eccb3a89a1d",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793684283.7924023,
-    "seen": 1793684299.440161,
-    "ast_hash": "0b5814053f39e636c6edd1dbe333b987",
+    "mtime": 1793686428.8636017,
+    "seen": 1793686445.1692398,
+    "ast_hash": "aebe658ed458b617a064ddea4b2ffcad",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793684283.8060994,
-    "seen": 1793684299.440977,
-    "ast_hash": "661bc83e9693d2dc77d39559143b5309",
+    "mtime": 1793686428.891904,
+    "seen": 1793686445.170059,
+    "ast_hash": "794b6bf500918e006b110e5f2153b3f8",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -1716,9 +1716,9 @@
     "semantic_hash": ""
   },
   "docs/EVIDENCIAS.md": {
-    "mtime": 1793684283.7954876,
-    "seen": 1793684299.4403348,
-    "ast_hash": "0dfd83c356b87961d8ba952035426b54",
+    "mtime": 1793686428.8989143,
+    "seen": 1793686445.1693907,
+    "ast_hash": "33f21b12a8d3ed87dc51c9a8448774b4",
     "semantic_hash": ""
   },
   "fixtures/aosp-framework-space/FrameworkSpaceProbe.java": {
@@ -2022,9 +2022,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java": {
-    "mtime": 1793683711.1987023,
-    "seen": 1793683922.3844607,
-    "ast_hash": "ec967d57df42595698e3bbfcc453503f",
+    "mtime": 1793685975.6445553,
+    "seen": 1793686066.6429858,
+    "ast_hash": "837f944ca9285632d51924b3d310143a",
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/org/archtv/aosplinux/ServiceLauncher.java": {
@@ -2034,9 +2034,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/install-markor.sh": {
-    "mtime": 1793644231.88269,
-    "seen": 1793647620.6394198,
-    "ast_hash": "18460f2b1ce9fdc58864c17390febe16",
+    "mtime": 1793685373.015957,
+    "seen": 1793686066.6426456,
+    "ast_hash": "91146f0e3b64328f683b1f256e33e59e",
     "semantic_hash": ""
   },
   "scripts/run_completion.py": {

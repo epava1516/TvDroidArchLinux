@@ -1,5 +1,9 @@
 # Roadmap · Arch TV nativo en Rust
 
+Camino crítico desde129: [preparación CE original vía vold](docs/ROADMAP-A.md) → RUNNING_UNLOCKED real → Markor completa. El ciclo original LSS ya crea la contraseña sintética y abre claves CE; eso no acredita almacenamiento preparado ni cifrado en reposo. Lanzamiento, UI, entrada y persistencia siguen abiertos.
+
+Camino crítico desde127: [integrar el ciclo original restante de LockSettings](docs/ROADMAP-A.md) → desbloqueo real del usuario → Markor completa. Instalación intacta conservada; lanzamiento, UI, entrada y persistencia no aceptados. R1-MAC permanece abierto.
+
 Camino crítico: [plataforma conjunta GateKeeper/Keystore/JCA/PMS122](docs/ROADMAP-A.md) → resolver la espera original de start-user → RUNNING_UNLOCKED → lanzamiento/UI/entrada/nota/cierre/reapertura de Markor. Instalación intacta repetida, sin lanzamiento aceptado. R1-MAC sigue abierto.
 
 Camino crítico actualizado: integrar [JCA original120](reports/android16-package-bootstrap/keystore-java-functional.json) con GateKeeper y servicios originales → RUNNING_UNLOCKED → Markor. La fase1000 original de103 se conserva. Véase la puerta de decisión y criterios en [ROADMAP-A](docs/ROADMAP-A.md).

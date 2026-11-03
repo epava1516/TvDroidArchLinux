@@ -304,5 +304,153 @@
       "path": "/home/tv/recuperacion-archtv/20261103T045223Z-gatekeeper-policy/restore-policy.py",
       "sha256": "6027536dc13efde0fbc87168038ae2cdb3254a570a6ec3a942ebbc1abc080d92"
     }
+  },
+  "lifecycle_followup127": {
+    "run_id": "d663f6de-7c51-4fe0-8bb9-4458867baabd",
+    "candidate": 127,
+    "utc": "2026-11-03T06:06:03.286046+00:00",
+    "native_exit": 1,
+    "outer_exit": 1,
+    "consumed": true,
+    "functional": {
+      "installed_bytes_sha256": "c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440",
+      "user_state_query_output": "empty; not proof of returned command",
+      "unlock": false,
+      "launch": false
+    },
+    "observations": [
+      "Original user0 transitioned BOOTING to RUNNING_LOCKED",
+      "Original LSS failed to unwrap missing synthetic password",
+      "Original phase600 does not call LockSettingsInternal.onThirdPartyAppsStarted; original SystemServer calls it separately after AMS.systemReady",
+      "Both original LockSettings.systemReady and phase480 returned in126 and127; not sufficient for unlock"
+    ],
+    "next_action": "Integrate original LockSettingsInternal.onThirdPartyAppsStarted after AMS.systemReady and execute candidate128; do not fabricate flags or synthetic-password state",
+    "cleanup": {
+      "id": "d663f6de-7c51-4fe0-8bb9-4458867baabd",
+      "outer_unit": "archtv-markor-session-d663f6de-7c51-4fe0-8bb9-4458867baabd",
+      "runner_unit": "archtv-package-runner-d663f6de-7c51-4fe0-8bb9-4458867baabd",
+      "initial_vt": "1",
+      "root_pid": 402502,
+      "root_boot_id": "4e18faf8-2b46-42e4-a6b2-269c34326b68",
+      "result": "native_result_recorded",
+      "final_vt": "1",
+      "outer_active": false,
+      "runner_active": false
+    },
+    "evidence": [
+      {
+        "path": "/home/tv/recuperacion-archtv/d663f6de-7c51-4fe0-8bb9-4458867baabd-markor-software-launch/result.json",
+        "sha256": "2ace2922496ce7b3c583fb2e7edcb4200e3c6fa84c42828c5f55d1e3eb6889e1"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/d663f6de-7c51-4fe0-8bb9-4458867baabd-markor-software-launch/completion-consumer.json",
+        "sha256": "cb291d976cea4fa48370418c1b7c569d2162f986492781e48c0706d64ce0105e"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/d663f6de-7c51-4fe0-8bb9-4458867baabd-markor-software-launch/selected-user-wait-extracted.txt",
+        "sha256": "e8804d8aade65ece12d286a853662b9c9bdfa4e301e90bf25b695c9c20282315"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793685582873546140/android-log-live.jsonl",
+        "sha256": "bb5b5c9e89e82af0f0e2f38cb620cbe11b5208e6fedfc5b8dca625753a4b067c"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793685582873546140/android-log-capture.json",
+        "sha256": "eca958ada8ac5d2d423eee5bd24b537e75749bd75ef7f8f68301a4237f18e039"
+      }
+    ]
+  },
+  "lifecycle_followup129": {
+    "candidate": 129,
+    "run_id": "217d0b64-131b-4034-929d-cf5d01c62f6b",
+    "checkpoint": "/home/tv/recuperacion-archtv/217d0b64-131b-4034-929d-cf5d01c62f6b-markor-software-launch",
+    "scope": "Original LSS synthetic-password initialization and Keystore/CE-unlock response; not RUNNING_UNLOCKED, full storage preparation, APK launch or MAC acceptance",
+    "native_exit": 1,
+    "outer_exit": 1,
+    "markers": [
+      {
+        "record_index": 3961,
+        "tag": "LockSettingsService",
+        "message": "Successfully initialized synthetic password for user 0",
+        "observed_monotonic": 102730.373110341
+      },
+      {
+        "record_index": 3962,
+        "tag": "System.err",
+        "message": "ORIGINAL_LOCKSETTINGS_THIRD_PARTY_RETURNED NOT_USER_UNLOCK_OR_APK_ACCEPTANCE",
+        "observed_monotonic": 102730.374654409
+      },
+      {
+        "record_index": 4793,
+        "tag": "keystore2",
+        "message": "keystore2/src/super_key.rs:1174 - CredentialEncrypted super key for user AndroidUserId(0) is already unlocked.\n",
+        "observed_monotonic": 102742.898852146
+      },
+      {
+        "record_index": 4794,
+        "tag": "LockSettingsService",
+        "message": "Unlocked CE storage for unsecured user 0",
+        "observed_monotonic": 102742.898954796
+      },
+      {
+        "record_index": 4802,
+        "tag": "UserDataPreparer",
+        "message": "Preparing user data; volumeUuid=null, userId=0, flags=0x2, isNewUser=true",
+        "observed_monotonic": 102742.906235201
+      }
+    ],
+    "next_blocker": "Original vold prepareUserStorage flags2 has not returned by progress deadline; last preparation log /data/misc_ce/0.new. Root cause not yet demonstrated. Investigate native operation with pinned AOSP and targeted owned-process capture.",
+    "cleanup_causality": "Native MC1 deadline occurs before coordinator SIGKILL of vold; consequent DeadObject and RecoverySystem NPE are shutdown aftermath, not demonstrated initial storage failure. Inner close failure preserved.",
+    "cleanup": {
+      "id": "217d0b64-131b-4034-929d-cf5d01c62f6b",
+      "outer_unit": "archtv-markor-session-217d0b64-131b-4034-929d-cf5d01c62f6b",
+      "runner_unit": "archtv-package-runner-217d0b64-131b-4034-929d-cf5d01c62f6b",
+      "initial_vt": "1",
+      "root_pid": 408383,
+      "root_boot_id": "4e18faf8-2b46-42e4-a6b2-269c34326b68",
+      "result": "native_result_recorded",
+      "final_vt": "1",
+      "outer_active": false,
+      "runner_active": false
+    },
+    "active_loops": "",
+    "final_dm": [],
+    "evidence": [
+      {
+        "path": "/home/tv/recuperacion-archtv/217d0b64-131b-4034-929d-cf5d01c62f6b-markor-software-launch/before-launch.json",
+        "sha256": "b49ec9cc33e945a7d755198ca803b4bc309c39bfbf870b06498079c92d14330f"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/217d0b64-131b-4034-929d-cf5d01c62f6b-markor-software-launch/result.json",
+        "sha256": "6b48273e1717c7d70648e6af062a80b1cdf4621f858d201ea6295d37db346a4c"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/217d0b64-131b-4034-929d-cf5d01c62f6b-markor-software-launch/completion-consumer.json",
+        "sha256": "14f16b2252149b7105fc749b06853cb97df477535fdb9f85568097a727083fcb"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/217d0b64-131b-4034-929d-cf5d01c62f6b-markor-software-launch/native-stderr.txt",
+        "sha256": "7cf33cb3001ea364814daab28aa03fb39453c4d055509b8ebb798c3dbf35bcf2"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793686093188938111/android-log-live.jsonl",
+        "sha256": "9dd23b0d40da92091ce1b78b80daaa414815e9739f61f1055c06c8c283e06230"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793686093188938111/android-log-capture.json",
+        "sha256": "b25ca2802982c14859937f7859cbcd5331f59f98396f5e77e4519907691b16b8"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-129/source-inputs.json",
+        "sha256": "80693e47134f76284b28af5da65ba0ffd713d04740b524eaf25ad1b999324cd4"
+      }
+    ],
+    "limitations": [
+      "No user RUNNING_UNLOCKED accepted",
+      "Markor install intact only; no launch/UI/input/note/persistence acceptance",
+      "Original CE-unlock response on private test storage does not prove encrypted at-rest storage or security",
+      "SELinux permissive policyload4; R1-MAC open",
+      "ARM, GMS and DRM remain separate open axes"
+    ]
   }
 }

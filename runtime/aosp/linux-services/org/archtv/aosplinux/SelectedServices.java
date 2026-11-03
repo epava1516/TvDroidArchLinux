@@ -519,6 +519,18 @@ public final class SelectedServices {
                 // Original SystemServer starts the Media module service before boot phases.
                 start(manager,managerType,"com.android.server.media.MediaCommunicationService");
                 System.err.println("ORIGINAL_NETWORK_SUBSYSTEM_STARTED REQUIRES_BINDER_OPERATIONS_NOT_INTERNET_ACCEPTANCE");
+                // Original SystemServer: initialize LockSettings through its
+                // real interface before PHASE_LOCK_SETTINGS_READY, then phase500.
+                // Neither a field nor a user/ready property is assigned here.
+                Object lockBinder=call(sm,null,"getServiceOrThrow",new Class<?>[]{String.class},"lock_settings");
+                Object lockSettings=call(Class.forName("com.android.internal.widget.ILockSettings$Stub"),null,
+                        "asInterface",new Class<?>[]{ib},lockBinder);
+                call(Class.forName("com.android.internal.widget.ILockSettings"),lockSettings,
+                        "systemReady",new Class<?>[0]);
+                System.err.println("ORIGINAL_LOCKSETTINGS_SYSTEM_READY_RETURNED NOT_AUTH_UNLOCK_OR_APK_ACCEPTANCE");
+                int lockSettingsPhase=Class.forName("com.android.server.SystemService").getField("PHASE_LOCK_SETTINGS_READY").getInt(null);
+                call(managerType,manager,"startBootPhase",new Class<?>[]{traceType,int.class},trace,lockSettingsPhase);
+                System.err.println("ORIGINAL_LOCKSETTINGS_PHASE_RETURNED actual="+lockSettingsPhase+" NOT_USER_UNLOCK_ACCEPTANCE");
                 call(managerType,manager,"startBootPhase",new Class<?>[]{traceType,int.class},trace,storagePhase);
                 System.err.println("ORIGINAL_SELECTED_PHASE500_RETURNED NOT_BOOT_COMPLETED_OR_APP_ACCEPTANCE");
                 System.err.println("PACKAGES_ORIGINAL_USER_AMS_STORAGE_STARTED REQUIRES_INSTALL_OPERATION");
@@ -552,6 +564,15 @@ public final class SelectedServices {
                 };
                 call(activityManager.getClass(),activityManager,"systemReady",new Class<?>[]{Runnable.class,traceType},linuxApplicationLoop,trace);
                 System.err.println("LINUX_ORIGINAL_AMS_SYSTEM_READY_RETURNED NOT_BOOT_COMPLETED");
+                // SystemServer makes this separate original local-service call
+                // after AMS.systemReady; phase600 alone does not perform it.
+                // LSS owns synthetic-password creation and bound-key migration.
+                Class<?> lockInternalType=Class.forName("com.android.server.locksettings.LockSettingsInternal");
+                Object lockInternal=call(Class.forName("com.android.server.LocalServices"),null,
+                        "getService",new Class<?>[]{Class.class},lockInternalType);
+                if(lockInternal==null)throw new IllegalStateException("Original LockSettingsInternal unavailable");
+                call(lockInternalType,lockInternal,"onThirdPartyAppsStarted",new Class<?>[0]);
+                System.err.println("ORIGINAL_LOCKSETTINGS_THIRD_PARTY_RETURNED NOT_USER_UNLOCK_OR_APK_ACCEPTANCE");
                 Thread installation=new Thread(() -> {
                     try {
                         Process child=new ProcessBuilder("/system/bin/sh","-c",
