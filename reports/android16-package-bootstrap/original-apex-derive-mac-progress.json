@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "utc": "2026-11-03T16:57:24.022517+00:00",
+  "utc": "2026-11-03T17:06:14.341340+00:00",
   "scope": "Partial original APEX/derive admission under bounded enforcing; no new APK stage or general MAC/isolation acceptance",
   "base_commit": "39d0be0edb77c13575681175fc26e730adee3c11",
   "executions": {
@@ -907,6 +907,64 @@
         "path": "/home/tv/recuperacion-archtv/691c54b9-23f3-4a43-9529-09d11a3671d9-markor-software-launch/userdata-after194-close.json",
         "sha256": "811e19ac520b07571fdde7b9ad9949c673888e61e61d73e307cd9023ccfad42c"
       }
+    },
+    "195": {
+      "before-launch.json": {
+        "path": "/home/tv/recuperacion-archtv/f595c092-bdc5-4ab4-afca-83453bdc6acf-markor-software-launch/before-launch.json",
+        "sha256": "09f6ff83f873416920414ffd73b57afbaaaaa6087accd2564d9d7eea62b79980"
+      },
+      "result.json": {
+        "path": "/home/tv/recuperacion-archtv/f595c092-bdc5-4ab4-afca-83453bdc6acf-markor-software-launch/result.json",
+        "sha256": "db48bb067bbc7b2d8ab500c4a41aa3476fa1aeac936c2340f7ab651298b314b9"
+      },
+      "mac-window.json": {
+        "path": "/home/tv/recuperacion-archtv/f595c092-bdc5-4ab4-afca-83453bdc6acf-markor-software-launch/mac-window.json",
+        "sha256": "77491ea7f49c699cc5bf2921d23e1bcfff4ff963810a4ca95f8e1ea1880bd874"
+      },
+      "run.log": {
+        "path": "/home/tv/recuperacion-archtv/f595c092-bdc5-4ab4-afca-83453bdc6acf-markor-software-launch/run.log",
+        "sha256": "09027b95c53dd4e801f84a3b428c4d6a4f7b68c6a2ebac6951746c2ab15596db"
+      },
+      "kernel-apex.log": {
+        "path": "/home/tv/recuperacion-archtv/f595c092-bdc5-4ab4-afca-83453bdc6acf-markor-software-launch/kernel-apex.log",
+        "sha256": "0e13080ab33056ef2f5fd8d4787963f98d48ffaa1f579f91c7db0455b7856f1a"
+      },
+      "factory-path.json": {
+        "path": "/home/tv/recuperacion-archtv/f595c092-bdc5-4ab4-afca-83453bdc6acf-markor-software-launch/factory-path.json",
+        "sha256": "1ee8117b4b2b51d0a87fe138fe6da4fe602cf1e40b5dbf2a171559d67c457c35"
+      },
+      "factory-materialized.py": {
+        "path": "/home/tv/recuperacion-archtv/f595c092-bdc5-4ab4-afca-83453bdc6acf-markor-software-launch/factory-materialized.py",
+        "sha256": "92af3f75d42ecd267ff6e732376b9ad49a856546dd0d21ec9f638a3156e7005d"
+      },
+      "session-state.json": {
+        "path": "/home/tv/recuperacion-archtv/f595c092-bdc5-4ab4-afca-83453bdc6acf-markor-software-launch/session-state.json",
+        "sha256": "2f39bd64fb7416e3eea764b2197cc21083807be37c9faa434fb2a45a0f74d93e"
+      },
+      "completion-manifest.json": {
+        "path": "/home/tv/recuperacion-archtv/f595c092-bdc5-4ab4-afca-83453bdc6acf-markor-software-launch/completion-manifest.json",
+        "sha256": "32ad338d1393b65ef04c102964c282190bf62c417cf176b929ab478e9970325a"
+      },
+      "completion-consumer.json": {
+        "path": "/home/tv/recuperacion-archtv/f595c092-bdc5-4ab4-afca-83453bdc6acf-markor-software-launch/completion-consumer.json",
+        "sha256": "85f1671a515177b3f556588aa165300874480e1ddb788bfe16653d3612b7b7c5"
+      },
+      "finite-audit/result.json": {
+        "path": "/home/tv/recuperacion-archtv/f595c092-bdc5-4ab4-afca-83453bdc6acf-markor-software-launch/finite-audit/result.json",
+        "sha256": "c358b9ca4dc697c6515bc95e61d00064a6553bf8a56b9fcf14a20ddc9b3fb737"
+      },
+      "finite-audit/audit.log": {
+        "path": "/home/tv/recuperacion-archtv/f595c092-bdc5-4ab4-afca-83453bdc6acf-markor-software-launch/finite-audit/audit.log",
+        "sha256": "83334945230f6447542a55cf3a3d4ec44391fd85261d01055f877efde37ac556"
+      },
+      "runtime-source-overlay.json": {
+        "path": "/home/tv/recuperacion-archtv/f595c092-bdc5-4ab4-afca-83453bdc6acf-markor-software-launch/runtime-source-overlay.json",
+        "sha256": "5a29fe88e0b2c11876f4e9b19d1d70e2c937269a4a499a81822f86d0543ec89c"
+      },
+      "userdata-after195-close.json": {
+        "path": "/home/tv/recuperacion-archtv/f595c092-bdc5-4ab4-afca-83453bdc6acf-markor-software-launch/userdata-after195-close.json",
+        "sha256": "5b0ca1fd0e4ec398ce00ede7cd3772c4997f1df96024a62b4701cd89eabd5560"
+      }
     }
   },
   "decisions": [
@@ -944,7 +1002,7 @@
     "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load10/after-load.json",
     "sha256": "309743229826231a5a6d96498f808485c1d5ad5ce3a5cd8c1a279f21f26b9aa8"
   },
-  "next": "Review complete selected original service exec/NNP edges before next policy; correct genuine init->bpfloader transition with NNP1. Contrast helper remaining metadata denials against original contract and actual outputs. Integrate original logd rather than grant sendto diagnostic Linux socket. Continue original framework/Markor, no newAPK acceptance.",
+  "next": "Review complete Linux-owned proc/sys directory mapping against original proc contracts and actual real global/private JIT control labels, not fake files or write success. Integrate original BPF/netd then original graphics/security and Zygote-selected framework route. Original logd and helper metadata denials remain; no generic diagnostic socket grants.",
   "original_sources": {
     "sdkextensions_commit": "4d10e57070bb9c6edcd13bf74e9d01717b2a5ecf",
     "derive_rc_sha256": "a9e65b0c114408e5cb8356bdb435a6b48d0a67cd7879915c52ffa094a267f607",
@@ -1014,8 +1072,8 @@
     "sha256": "9e395067238c647c729c48a03dc8a115e81727ff30a8bfd6f4e50098098c9134"
   },
   "latest_host": {
-    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after194-host.json",
-    "sha256": "7458a35b4524bcd7883fd5a642c1caadfb82393d3ca23752463c8a954f834881"
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after195-host.json",
+    "sha256": "6adddef2fbca76deea9c09ca53c3dab3d8a54e2bd67ee617b7eee2aa39b3485d"
   },
   "vdc_source_contract": {
     "builtin": "Pinned system/core/init/builtins.cpp1122\u20131172: original temporary exec plus original failure callback; exact argv /system/bin/vdc --wait cryptfs init_user0. Native observes actual reaping before advance, no shell redirection or synthetic readiness.",
@@ -1245,5 +1303,34 @@
       "No new APK stage; entire MAC/isolation, broadAPK and ARM/GMS/DRM remain open."
     ],
     "recovery": "Global inspector verifies mode0/policyload19, audit0/newlost0, no ownedunits/loops/dm/FUSE, VT1/GPU unchanged; note21bytes/hash and CE/DE inode/labels retained. Active result consumed, gate absent."
+  },
+  "policy20_artifact": {
+    "path": "/home/tv/repositorio-principal/dist/aosp16/selected-platform-policy-20/artifact.json",
+    "sha256": "7dc6949ae8ae93405b04806dda85ec61c81f69cf6945fd894a4c62556ae33f8d"
+  },
+  "policy20_load": {
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load20/after-load.json",
+    "sha256": "6b2858a78f18a7ed08f8d68f195bf56c6fb5d0f034c936d98aee94de257c0063"
+  },
+  "after195_host": {
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after195-host.json",
+    "sha256": "6adddef2fbca76deea9c09ca53c3dab3d8a54e2bd67ee617b7eee2aa39b3485d"
+  },
+  "selected_exec_nnp_review": {
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/selected-exec-nnp-review.json",
+    "sha256": "3c212b87495d7cce112182ac0d9e12024fd1cdd65087099193dc101deda1a5ac"
+  },
+  "netbpfload_source195": {
+    "path": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/NetBpfLoad.cpp",
+    "sha256": "e465ded8ae0e6f1770fdb256b45e0f0c63e8d767f7f7cb057fddb7a830735ef3"
+  },
+  "integrated195": {
+    "scope": "Native original transition progress, no new APK/MAC acceptance",
+    "review": "20 explicit init->selected native-domain transitions verified exist in pinned original CIL; only nnp_transition added, original entrypoint/identity/caps and NNP1 retained. Static review does not verify later services.",
+    "positive": "Original netbpfload transitions past NNP and runs to exit24 instead of127; APEX41 verified, original VDC/init_user0 returns0.",
+    "failure": "Actual enforcing bpfloader denied search on Linux.sysctl_t at /proc/sys, plus proc_mounts symlink read. Original NetBpfLoad.cpp1798 returns24 when writing real /proc/sys/net/core/bpf_jit_enable fails. No claim kernel JIT support absent or permission fixed; entry traversal failure precedes it.",
+    "security": "Candidate1 at enforcing,4.941s; restore0, policyload20. Auditnewlost0/rulesunchanged/backlog64, VT1/GPUmetadata unchanged, no ownedunits/loops/dm/FUSE. Prior21byte note/hash/CE/DE inodes preserved.",
+    "framework_route": "Current explicit system_server app_process route is NOT granted. Original CIL lacks equivalent init type transition; native original Zygote setcontext/startup->system_server and original seapp prohibitions documented from pinned source. Narrow original post-fork Java entry adaptation must preserve real fork/security/loader and selected original services, without full Android boot. Source/build/runtime experiment pending.",
+    "next": "Review complete Linux-owned proc/sys directory mapping against original proc contracts and actual real global/private JIT control labels, not fake files or write success. Integrate original BPF/netd then original graphics/security and Zygote-selected framework route. Original logd and helper metadata denials remain; no generic diagnostic socket grants."
   }
 }

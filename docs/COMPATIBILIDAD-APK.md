@@ -1,6 +1,6 @@
 # Matriz de aplicaciones reales
 
-Observación194 · [Markor sin nueva etapa aceptada](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): APEX41 real y retorno original user0/VDC0 bajo enforcing son parciales. La integración falla en NNP de netbpfload antes de una nueva ejecución APK. Nota21bytes/hash y CE/DE anteriores conservados; no se atribuyen a194. R1-MAC, ARM, GMS/servicios externos y DRM abiertos y separados.
+Observación195 · [Markor bajo MAC aún pendiente](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): APEX41 y user0/VDC0, luego netbpfload real salida24 por frontera proc/sys. No etapa APK nueva; la entrada framework vía Zygote original requiere integración. Nota/CE/DE previos conservados, sin atribuir nueva ejecución de aplicación. ARM, GMS/servicios externos y DRM siguen separados abiertos.
 
 Histórico179 · [aconfig/VDC, sin nueva aceptación APK](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): original init_user0 alcanza vold y falla en auxiliar NNP. La nota e instalación previas conservan sus bytes/etiquetas tras la prueba; no equivale a ejecutar de nuevo Markor bajo MAC. Etapas167 mantienen alcance permisivo, ARM/GMS/DRM separados.
 

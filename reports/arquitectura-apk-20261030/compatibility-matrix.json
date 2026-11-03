@@ -416,13 +416,13 @@
         "scope": "Exact Markorv164 Markdown note created163 survives complete cohort teardown and original subsystems167; actual bytes, same UID/inodes/MCS, original install/force-stop/relaunch and real single pointer opens editor.167 native/exterior0. Not host reboot/power loss, FBE/MAC, graceful close, arbitrary upgrade or general APK compatibility."
       },
       "runtime_security_observation": {
-        "candidate": 194,
-        "status": "original_user0_return0_network_NNP_block_before_APK",
+        "candidate": 195,
+        "status": "original_netbpfload_runs_exit24_proc_sys_traversal_block",
         "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-        "record_sha256": "fa5982a421cbcbf41442298ff60457450b6493b5c020e38f024f210e0a18b12e",
-        "scope": "Original user0/VDC0 and APEX41 enforcing; helper metadata denials not fullstorage acceptance. Original netbpfload NNP fails127; no new APK stage. Original167 permissive scope unchanged.",
+        "record_sha256": "00a38eaf139e4e3193c29e923f915b159b65a7256bd6609030c940080027aa3b",
+        "scope": "APEX41 and original user0 return0 retained; original netbpfload NNP edge runs but exit24. Selected system_server direct entry held out; original Zygote route pending. No new APK stage;167 remains permissive scope.",
         "r1_mac": "open",
-        "host_after": "Verified permissive policyload19/audit0/lostdelta0/no ownedresources; note/CE/DE retained"
+        "host_after": "Verified permissive policyload20/audit0/no newloss/no ownedresources; note/CE/DE unchanged"
       },
       "runtime_security_observation_history": [
         {
@@ -489,6 +489,15 @@
           "scope": "Original bootstrap/default APEX41 versions/mounts/classpath verified enforcing; helper user0 proc alias failure, no new APK stage. Original167 permissive scope unchanged.",
           "r1_mac": "open",
           "host_after": "Verified permissive policyload18/audit0/lostdelta0/no owned resources; prior note21byte/hash/CE/DE inodes preserved"
+        },
+        {
+          "candidate": 194,
+          "status": "original_user0_return0_network_NNP_block_before_APK",
+          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "record_sha256": "fa5982a421cbcbf41442298ff60457450b6493b5c020e38f024f210e0a18b12e",
+          "scope": "Original user0/VDC0 and APEX41 enforcing; helper metadata denials not fullstorage acceptance. Original netbpfload NNP fails127; no new APK stage. Original167 permissive scope unchanged.",
+          "r1_mac": "open",
+          "host_after": "Verified permissive policyload19/audit0/lostdelta0/no ownedresources; note/CE/DE retained"
         }
       ]
     }

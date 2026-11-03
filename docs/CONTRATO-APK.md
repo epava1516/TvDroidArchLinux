@@ -1,6 +1,6 @@
 # Contrato vigente · AOSP Android 16 QPR2
 
-Límite194 · [resultado parcial de user0](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): salida0 de VDC/builtin no acredita todos los efectos de almacenamiento ni elimina las denegaciones de descubrimiento del auxiliar. Fallo127 de netbpfload se conserva; NNP1 no se desactiva para avanzar. APEX41 no equivale a framework Binder o APK compatible. R1-MAC y recorrido completo bajo controles abiertos; evidencia local167 en permisivo conserva su alcance.
+Límite195 · [transición y disponibilidad separadas](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): las20 transiciones estáticas y una admisión real de netbpfload no prueban disponibilidad de esos servicios; el original falla24. Reutilizar la ruta original Zygote y justificar cualquier adaptación de entrada, conservando isSystemServer, IDs/caps, NNP y cargadores. No conceder execute_no_trans para eludirla ni arrancar Android completo. User0/VDC0 y APEX41 siguen parciales respecto al recorrido APK/MAC.
 
 Histórico179 · [operación original fallida conservada](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): código0 de inicializadores aconfig no demuestra flags completas ni sockets disponibles; VDC25 no es éxito de init_user0. Inventario APEX leído después de cerrar no acredita disponibilidad durante ejecución. Mantener R1-MAC abierto hasta el recorrido real completo con identidades, pruebas negativas, cierre y efectos del anfitrión.
 

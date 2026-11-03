@@ -4,3 +4,28 @@
 ; checks, IDs and caps. Never allow init execute_no_trans on daemon executables.
 (allow init vold (process2 (nnp_transition)))
 (allow init apexd (process2 (nnp_transition)))
+
+; Selected native cohort: every edge exists in original pinned policy,
+; recorded in selected-exec-nnp-review.json. Preserve NNP1, original exec
+; transition/entrypoint checks and identities; no execute_no_trans.
+; No new Binder/file/device rights or direct system_server entry.
+(allow init bpfloader (process2 (nnp_transition)))
+(allow init netd (process2 (nnp_transition)))
+(allow init hal_graphics_allocator_default (process2 (nnp_transition)))
+(allow init hal_graphics_composer_default (process2 (nnp_transition)))
+(allow init surfaceflinger (process2 (nnp_transition)))
+(allow init bootanim (process2 (nnp_transition)))
+(allow init hal_keymint_default (process2 (nnp_transition)))
+(allow init hal_gatekeeper_default (process2 (nnp_transition)))
+(allow init gatekeeperd (process2 (nnp_transition)))
+(allow init keystore (process2 (nnp_transition)))
+(allow init lmkd (process2 (nnp_transition)))
+(allow init storaged (process2 (nnp_transition)))
+(allow init idmap (process2 (nnp_transition)))
+(allow init mediaswcodec (process2 (nnp_transition)))
+(allow init artd (process2 (nnp_transition)))
+(allow init statsd (process2 (nnp_transition)))
+(allow init hal_health_default (process2 (nnp_transition)))
+(allow init zygote (process2 (nnp_transition)))
+(allow init system_suspend (process2 (nnp_transition)))
+(allow init installd (process2 (nnp_transition)))
