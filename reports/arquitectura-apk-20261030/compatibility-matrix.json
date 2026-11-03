@@ -32,7 +32,7 @@
       },
       "evidence_id": "ev_37c5a66b942f8e277c88500b2a15d430c2e523b672bf47fe74cf9c90638d164e",
       "full_evidence_id": "ev_746d40138a0f10e9c3202cd147e41d5efd4a7c58e81078c6109567a0bce77781",
-      "workflow": "Abrir fichero local, reproducir audio/vídeo, volver al shell y cerrar",
+      "workflow": "Abrir fichero local, reproducir audio/v\u00eddeo, volver al shell y cerrar",
       "runtime_results": {
         "installation": "not_tested",
         "launch": "not_tested",
@@ -416,13 +416,13 @@
         "scope": "Exact Markorv164 Markdown note created163 survives complete cohort teardown and original subsystems167; actual bytes, same UID/inodes/MCS, original install/force-stop/relaunch and real single pointer opens editor.167 native/exterior0. Not host reboot/power loss, FBE/MAC, graceful close, arbitrary upgrade or general APK compatibility."
       },
       "runtime_security_observation": {
-        "candidate": 182,
-        "status": "original_APEX_bootstrap_alias_conflict_before_APK",
+        "candidate": 188,
+        "status": "original_bootstrap4_default_inventory15_of41_rejected",
         "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-        "record_sha256": "28758156a1d9297c4b7a5359fc7bc042a08d63347033f6df16d7b5df3b208a3b",
-        "scope": "Read_ahead/mount initial5 then aliases mounton failure; no41/derive/new APK acceptance. Replace Linux views via original bootstrap, not relaxed labels. Pool/VFS negatives not general MAC. Previous167 scope unchanged.",
+        "record_sha256": "3ec86209068139372c7559acc863a1f37fd507c3d49d4a3ad397efc79f22fc56",
+        "scope": "Original bootstrap and namespace entry executed under enforcing; incomplete15/41, linkerconfig/PTMX and Linux monitor file-context read failures, no new APK stage. Original167 permissive scope unchanged.",
         "r1_mac": "open",
-        "host_after": "permissive policyload16, audit0/lost_delta0, no owned runtime resources; prior note unchanged"
+        "host_after": "Verified global inspector: permissive policyload16, audit0/lost_delta0, no owned units/loops/dm/FUSE; note21bytes/hash and CE/DE inodes preserved"
       },
       "runtime_security_observation_history": [
         {
@@ -460,6 +460,17 @@
           "scope": "Original apexd0 activation demonstrated by journal/read_ahead failure. Helper executes but proc metadata fails; VDC25. No APK or service acceptance; previous167 scope unchanged.",
           "r1_mac": "open",
           "host_after": "permissive policyload14, audit0/lost_delta0, no owned runtime resources"
+        }
+      ],
+      "runtime_security_history": [
+        {
+          "candidate": 182,
+          "status": "original_APEX_bootstrap_alias_conflict_before_APK",
+          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "record_sha256": "28758156a1d9297c4b7a5359fc7bc042a08d63347033f6df16d7b5df3b208a3b",
+          "scope": "Read_ahead/mount initial5 then aliases mounton failure; no41/derive/new APK acceptance. Replace Linux views via original bootstrap, not relaxed labels. Pool/VFS negatives not general MAC. Previous167 scope unchanged.",
+          "r1_mac": "open",
+          "host_after": "permissive policyload16, audit0/lost_delta0, no owned runtime resources; prior note unchanged"
         }
       ]
     }
@@ -756,7 +767,7 @@
       "acceptance": "Fix real author-distributed APK/version/requirements; test nine-stage workflow without per-APK patches or privileged bypass"
     }
   ],
-  "base_review": "A16-QPR2-1 supersedes A/B/C selection: native Bionic primary; SF→Wayland first graphics hypothesis. Prior choice/experiments historical only.",
+  "base_review": "A16-QPR2-1 supersedes A/B/C selection: native Bionic primary; SF\u2192Wayland first graphics hypothesis. Prior choice/experiments historical only.",
   "base_component_observation": {
     "evidence": "reports/bionic-component/art-core-result.json",
     "linker_help_and_launcher_list_exit": 0,

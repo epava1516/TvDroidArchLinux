@@ -1,6 +1,6 @@
 # Matriz de aplicaciones reales
 
-Seguridad182 · [bootstrap incompatible, sin nuevas etapas APK](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): perfil MAC alcanza montaje parcial pero no41 aliases coherentes ni derive. Nota anterior e inodos/etiquetas CE/DE intactos, sin prueba nueva de lanzamiento. El recorrido167 conserva su perfil permisivo y las limitaciones de compatibilidad amplia.
+Observación188 · [Markor y seguridad](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): no hay nueva etapa APK aceptada. Bootstrap4 original probado y XML15/41 rechazado bajo enforcing; linkerconfig/PTY y monitor Linux de dispositivos bloquean. El recorrido local167 en permisivo conserva su alcance histórico y no se reclasifica como R1-MAC. ARM, servicios externos/GMS y DRM separados abiertos.
 
 Histórico179 · [aconfig/VDC, sin nueva aceptación APK](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): original init_user0 alcanza vold y falla en auxiliar NNP. La nota e instalación previas conservan sus bytes/etiquetas tras la prueba; no equivale a ejecutar de nuevo Markor bajo MAC. Etapas167 mantienen alcance permisivo, ARM/GMS/DRM separados.
 

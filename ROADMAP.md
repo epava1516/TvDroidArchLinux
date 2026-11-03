@@ -1,6 +1,6 @@
 # Roadmap · Arch TV nativo en Rust
 
-Prioridad182: [estado canónico](docs/ESTADO.md) · sustituir aliases APEX Linux incompatibles por bootstrap original, sin ampliar mounton a rootfs/system_file; exigir41 módulos y recorrido Markor real bajo MAC.
+Prioridad188: [estado canónico](docs/ESTADO.md) · bootstrap original4 probado; inventario15/41 rechazado. Resolver PTMX privado y monitor Linux/file_contexts para exigir41 y user0, después recorrido completo Markor bajo MAC. No ampliar permisos indiscriminadamente ni repetir el recorrido histórico167 como nueva aceptación.
 
 Histórico179: [estado](docs/ESTADO.md) · builtin/VDC original alcanza vold y falla25 en auxiliar NNP; exigir operación user0 completa y APEX en vivo, luego Markor bajo MAC. [Evidencias](reports/android16-package-bootstrap/original-apex-derive-mac-progress.json).
 

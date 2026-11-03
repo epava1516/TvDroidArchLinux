@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """One bounded original APEX cohort with exact global-device cleanup/recovery."""
 from pathlib import Path
-import datetime,fcntl,hashlib,json,os,re,subprocess,sys,time
+import datetime,fcntl,hashlib,json,os,re,subprocess,sys,time,uuid
 
 repo=Path(__file__).resolve().parents[2]
 payload=(repo/sys.argv[1]).resolve()
@@ -15,6 +15,8 @@ if os.environ.get('ARCHTV_RUN_CHECKPOINT'):assert (recovery/'completion-manifest
 else:recovery.mkdir(mode=0o700)
 Path('/home/tv/.cache/archtv/kernel-aosp16-1/apex-current-checkpoint').write_text(str(recovery)+'\n')
 expected=json.loads((repo/'reports/android16-apex-bootstrap/complete-inputs.json').read_text())['modules'];allowed={m['name'] for m in expected}
+bootstrap_profile=(payload.parent/'build-options.json').is_file() and json.loads((payload.parent/'build-options.json').read_text()).get('original_apex_bootstrap',False)
+if bootstrap_profile:allowed |= {m['name']+'@'+str(m['version']) for m in expected}
 def command(args,**kw):return subprocess.run(args,text=True,capture_output=True,**kw)
 def dm_names(result):
     assert result.returncode==0,result.stderr
@@ -145,10 +147,23 @@ finally:
             cleanup.append({'name':name,'exit':result.returncode,'stderr':result.stderr})
         except subprocess.TimeoutExpired:
             cleanup.append({'name':name,'exit':None,'error':'Bounded removal timed out; not forced'})
-    factories=sorted((repo/'dist/aosp16').glob('apex-live-*'),key=lambda p:p.stat().st_mtime)
-    factory=factories[-1] if factories and factories[-1].stat().st_mtime>=started else None
+    binding=recovery/'factory-path.json'
+    if bootstrap_profile:
+        factory=None
+        if binding.exists():
+            row=json.loads(binding.read_text());manifest=json.loads((recovery/'completion-manifest.json').read_text())
+            assert row['id']==manifest['id'] and row['checkpoint']==str(recovery)
+            assert str(uuid.UUID(row['id']))==row['id']
+            candidate=repo/'dist/aosp16'/('apex-live-'+uuid.UUID(row['id']).hex);assert row['factory']==str(candidate)
+            if candidate.is_dir():factory=candidate
+    else:
+        factories=sorted((repo/'dist/aosp16').glob('apex-live-*'),key=lambda p:p.stat().st_mtime)
+        factory=factories[-1] if factories and factories[-1].stat().st_mtime>=started else None
     device_state=json.loads((factory/'devices.json').read_text()) if factory and (factory/'devices.json').exists() else None
     loop_cleanup=[]
+    if not device_state and factory and (factory/'backing-loops.json').exists():
+        rows=json.loads((factory/'backing-loops.json').read_text())
+        device_state={'created_loop_ids':[row['id'] for row in rows if row['created']],'loop_controls':[],'scope':'Backing setup failed before APEX scaffold; exact owned IDs only'}
     if device_state:
         for item in device_state.get('loop_controls',[]):
             kernel=Path('/sys/devices/virtual/block')/('loop'+str(item['id']))
@@ -190,7 +205,7 @@ finally:
     service_messages=[]
     for line in service_journal.splitlines():
         row=json.loads(line);tag=row.get('SYSLOG_IDENTIFIER','');message=row.get('MESSAGE','')
-        if tag in ['servicemanager','hwservicemanager','apexd','vold','linkerconfig','derive_classpath','logd','keystore2'] or ('name=apexservice' in message and 'tclass=service_manager' in message):
+        if tag.startswith('apexd-') or tag in ['servicemanager','hwservicemanager','apexd','vold','linkerconfig','derive_classpath','logd','keystore2'] or ('name=apexservice' in message and 'tclass=service_manager' in message):
             service_messages.append({'utc_us':row.get('__REALTIME_TIMESTAMP'),'transport':row.get('_TRANSPORT'),'pid':row.get('_PID'),'tag':tag,'message':message})
     (recovery/'android-service-journal.json').write_text(json.dumps(service_messages,indent=2)+'\n')
 

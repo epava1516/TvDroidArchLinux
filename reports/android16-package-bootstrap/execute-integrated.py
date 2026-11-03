@@ -8,6 +8,8 @@ hashlib.sha256(b"").digest()
 r=Path(__file__).resolve().parents[2]
 socket=sys.argv[1];payload=Path(sys.argv[2]).resolve();store=Path(sys.argv[3]).resolve()
 build_options=json.loads((payload.parent/'build-options.json').read_text())
+original_apex_bootstrap=build_options.get('original_apex_bootstrap',False)
+assert isinstance(original_apex_bootstrap,bool)
 observe_ms=build_options.get('observe_ms',3000)
 userdata_name=build_options.get('persistent_userdata_name')
 assert isinstance(observe_ms,int) and 3000<=observe_ms<=300000
@@ -200,7 +202,7 @@ network.prepare(root,out)
 for point in ['apex','linkerconfig']:mount('--rbind',root/point,root/point)
 assert (root/'apex/com.android.runtime/bin/linker64').is_file(), 'Bootstrap runtime mount hidden'
 (root/'dev/pts').mkdir(exist_ok=True)
-mount('-t','devpts','-o','newinstance,ptmxmode=0666,mode=0620,gid=5','devpts',root/'dev/pts')
+mount('-t','devpts','-o','newinstance,ptmxmode=0666,mode=0620,gid=5,fscontext=u:object_r:devpts:s0,rootcontext=u:object_r:devpts:s0','devpts',root/'dev/pts')
 (root/'dev/ptmx').symlink_to('pts/ptmx')
 """
 text=text.replace("selinux=root/'sys/fs/selinux';",network_code+"\nselinux=root/'sys/fs/selinux';",1)
@@ -334,6 +336,11 @@ checks=checks.replace('if p.returncode!=0:sys.exit(1)','')
 # Integrated cohorts may deactivate APEX during original shutdown. Require the
 # real live observation; retain identity checks above and closing XML below.
 checks=checks[:checks.index("expected={m['name']")] + "assert live_apex_evidence.get('verified') is True,live_apex_evidence\nprint('APEX_ORIGINAL_CLASSPATH_PATHS_VERIFIED NOT_CLASSLOADER_OR_APK_ACCEPTANCE',flush=True)\nprint('APEX_ORIGINAL_COMPLETE_INVENTORY_VERIFIED modules='+str(len(live_apex_evidence['actual']))+' LIVE_XML_AND_MOUNTS_NOT_FRAMEWORK_BINDER_OR_APK_MAC_ACCEPTANCE',flush=True)\n"
+if original_apex_bootstrap:
+ checks=checks.replace('["MANAGER","DAEMON","SNAPSHOT","DERIVE"]','["MANAGER","DAEMON","SNAPSHOT","DERIVE","BOOTSTRAP"]')
+ checks=checks.replace("'DERIVE':'u:r:derive_classpath:s0'}", "'DERIVE':'u:r:derive_classpath:s0','BOOTSTRAP':'u:r:apexd:s0'}")
+ checks=checks.replace("'DERIVE':0}","'DERIVE':0,'BOOTSTRAP':0x200000}")
+
 
 verify_always="try:\n exec(compile("+repr(checks)+",'<original APEX evidence verification>','exec'),globals())\nexcept Exception as apex_failure:\n print('APEX_ORIGINAL_INVENTORY_NOT_VERIFIED '+repr(apex_failure),flush=True)\n if p.returncode==0:raise\n"
 assert marker in text
@@ -375,6 +382,7 @@ print('MARKOR_ORIGINAL_INSTALL_BYTES_VERIFIED NOT_LAUNCH_PERSISTENCE_MAC_OR_APK_
 # A component-only profile must never inherit Markor/graphics acceptance.
 identity_line=next(line for line in text.splitlines() if line.startswith("assert {v['kind']:v['actual_context'] for v in identities}=="))
 full_expected=identity_line.split('==',1)[1]
+if original_apex_bootstrap:full_expected=repr({**ast.literal_eval(full_expected),'BOOTSTRAP':'u:r:apexd:s0'})
 component_expected={'MANAGER':'u:r:servicemanager:s0','HWMANAGER':'u:r:hwservicemanager:s0','VOLD':'u:r:vold:s0','DAEMON':'u:r:apexd:s0','SNAPSHOT':'u:r:apexd:s0','ACONFIG_SYSTEM':'u:r:aconfigd:s0','ACONFIG_MAINLINE':'u:r:aconfigd_mainline:s0','NETD':'u:r:netd:s0'}
 text=text.replace(identity_line,"keymint_component_profile=Path('/vendor/etc/archtv-keymint-component').is_file()\nkeystore_component_profile=Path('/vendor/etc/archtv-keystore-component').is_file()\nsoftware_platform_profile=Path('/vendor/etc/archtv-software-security').is_file()\nassert not (keymint_component_profile and keystore_component_profile)\nexpected_identities="+full_expected+"\nif keymint_component_profile:\n assert Path('/vendor/etc/archtv-keymint-component').read_text()=='software-crypto-v1\\n'\n expected_identities="+repr(component_expected)+"\nassert {v['kind']:v['actual_context'] for v in identities}==expected_identities")
 # Extend the existing real SID/credentials observer for the two original daemons.
@@ -545,8 +553,78 @@ live_sample="""
    print('APEX_LIVE_ORIGINAL_OBSERVATION '+json.dumps(sample),flush=True)
 """
 assert text.count('  errors.append(line)\n')==1
-text=text.replace('  errors.append(line)\n','  errors.append(line)\n'+live_sample,1)
+text=text.replace('  errors.append(line)\n','  errors.append(line)\n'+('' if original_apex_bootstrap else live_sample),1)
 
+
+if original_apex_bootstrap:
+ candidate_mount="mount('-o','loop,ro,noload',r/"+repr(str(payload.relative_to(r)))+",candidate)"
+ assert text.count(candidate_mount)==1
+ text=text.replace(candidate_mount,"devices.mount_backing_image(r/"+repr(str(payload.relative_to(r)))+",candidate,128,out)",1)
+ gsi_mount="mount('-o','loop,ro,noload','/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img',gsi)"
+ assert text.count(gsi_mount)==1
+ text=text.replace(gsi_mount,"devices.mount_backing_image(Path('/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img'),gsi,129,out)",1)
+ old_prepare="devices.prepare(root,out,Path('/home/tv/.cache/archtv/aosp16-qpr2/apex-data-store-1'))"
+ assert text.count(old_prepare)==1;text=text.replace(old_prepare,old_prepare[:-1]+",bootstrap=True)",1)
+ # Empty mountpoints get their identity from original apexd creation/restorecon.
+ # Do not pre-create aliases or pre-mount extracted APEX image roots from Linux.
+ precreate="for p in (r/'dist/aosp16/factory-inputs-3/root/apex').iterdir():\n if p.is_dir():(root/'apex'/p.name).mkdir()\n elif p.is_file() and p.name!='apex-info-list.xml':shutil.copyfile(p,root/'apex'/p.name)\n"
+ assert text.count(precreate)==1
+ text=text.replace(precreate,"assert not any((root/'apex').iterdir()), 'Original APEX must start empty'\n",1)
+ preview="for p in sorted((r/'dist/aosp16/factory-inputs-3').glob('*.payload.img')):\n target=root/'apex'/p.name.removesuffix('.payload.img');assert target.is_dir()\n kind=subprocess.check_output(['blkid','-p','-s','TYPE','-o','value',str(p)],text=True).strip()\n mount('-o','loop,ro,noload' if kind=='ext4' else 'loop,ro',p,target)\n"
+ assert text.count(preview)==1;text=text.replace(preview,'',1)
+ text=text.replace("(root/'bootstrap-apex').mkdir(exist_ok=True)","(root/'bootstrap-apex').mkdir(exist_ok=True);label(root/'bootstrap-apex')",1)
+ text=text.replace("assert (root/'apex/com.android.runtime/bin/linker64').is_file(), 'Bootstrap runtime mount hidden'","assert (root/'system/bin/bootstrap/linker64').is_file() and not any((root/'apex').iterdir()), 'Original bootstrap entry requires empty APEX'",1)
+ text=text.replace('APEX_(DAEMON|SNAPSHOT|DERIVE)','APEX_(DAEMON|SNAPSHOT|DERIVE|BOOTSTRAP)')
+ text=text.replace("'DERIVE':'u:r:derive_classpath:s0'","'DERIVE':'u:r:derive_classpath:s0','BOOTSTRAP':'u:r:apexd:s0'")
+ # Original RC: user root, group system, CAP_SYS_ADMIN, NNP remains1.
+ loop="for identity in identities:\n fields="
+ assert text.count(loop)==1
+ text=text.replace(loop,"""for identity in identities:
+ if identity['kind']=='BOOTSTRAP':
+  fields={line.split(':',1)[0]:line.split(':',1)[1].strip() for line in identity['status']}
+  assert list(map(int,fields['Uid'].split()))==[0]*4 and list(map(int,fields['Gid'].split()))==[1000]*4
+  assert int(fields['CapEff'],16)==0x200000 and int(fields['CapPrm'],16)==0x200000 and fields['NoNewPrivs']=='1'
+  continue
+ fields=""",1)
+ # Read-only evidence bridge from the original worker's default namespace.
+ # Original producers/kernel supply all bytes/stats. No service/API substitute.
+ native_parse="""
+try:
+ native_stderr=''.join(errors)
+ complete=re.findall(r'^APEX_NATIVE_EVIDENCE_COMPLETE pid=(\\d+) enforcing=([01]) NS_DEFAULT_NOT_BINDER_OR_APK_ACCEPTANCE$',native_stderr,re.M)
+ assert len(complete)==1,'Missing unique original default-namespace evidence'
+ worker,mode=complete[0];parts={}
+ for kind in ['XML','MOUNTS']:
+  matches=list(re.finditer(r'^APEX_NATIVE_'+kind+r'_BEGIN pid=(\\d+) enforcing=([01]) bytes=(\\d+)\\n(.*?)^APEX_NATIVE_'+kind+r'_END$',native_stderr,re.M|re.S))
+  assert len(matches)==1,kind
+  match=matches[0];assert match[1]==worker and match[2]==mode
+  raw=match[4].encode();length=int(match[3]);assert 0<length<=1048576 and raw[length:] in [b'',b'\\n']
+  parts[kind]=raw[:length]
+ import xml.etree.ElementTree as ET
+ elements=[e for e in ET.fromstring(parts['XML']) if e.attrib.get('isActive')=='true']
+ actual={e.attrib['moduleName']:int(e.attrib['versionCode']) for e in elements}
+ expected={m['name']:m['version'] for m in json.loads(Path('/archtv/apex-expected.json').read_text())}
+ assert len(elements)==len(actual) and actual==expected,{'actual':actual,'expected':expected}
+ mounts={line.split()[4] for line in parts['MOUNTS'].decode().splitlines()}
+ for name,version in actual.items():
+  assert '/apex/'+name in mounts and '/apex/'+name+'@'+str(version) in mounts,name
+ jars={}
+ for path,device,inode,size in re.findall(r'^APEX_NATIVE_JAR path=(\\S+) device=(\\d+) inode=(\\d+) size=(\\d+)$',native_stderr,re.M):
+  value=[int(device),int(inode),int(size)];assert value[1]>0
+  assert path not in jars or jars[path]==value,'JAR changed during snapshot'
+  jars[path]=value
+ exports=Path('/data/system/environ/classpath').read_text();variables=set();paths=set()
+ for row in exports.splitlines():
+  op,name,value=row.split(' ',2)
+  assert op=='export' and name in ['BOOTCLASSPATH','DEX2OATBOOTCLASSPATH','SYSTEMSERVERCLASSPATH','STANDALONE_SYSTEMSERVER_JARS'] and name not in variables
+  variables.add(name);paths.update(value.split(':'))
+ assert len(variables)==4 and paths==set(jars),{'exports':paths,'native_jars':set(jars)}
+ live_apex_evidence.update(verified=True,actual=actual,source='Original worker NS_DEFAULT read-only XML/mountinfo/JAR stat bridge',worker_pid=int(worker),enforcing=int(mode),xml_utf8=parts['XML'].decode(),mountinfo_utf8=parts['MOUNTS'].decode(),jar_stats=jars,classpath=exports)
+except Exception as error:live_apex_evidence.update(verified=False,error=repr(error),source='Original worker namespace bridge; incomplete is not acceptance')
+print('APEX_NATIVE_NAMESPACE_OBSERVATION '+json.dumps(live_apex_evidence),flush=True)
+"""
+ marker="print('MC1_RESULT '+json.dumps("
+ assert text.count(marker)==1;text=text.replace(marker,native_parse+'\n'+marker,1)
 
 compile(text,'<integrated factory>','exec')
 if '--materialize-only' in saved:
@@ -558,6 +636,15 @@ else:
  if os.environ.get('ARCHTV_RUN_CHECKPOINT'):
   execution=Path(os.environ['ARCHTV_RUN_CHECKPOINT']).resolve()
   assert execution.parent==Path('/home/tv/recuperacion-archtv')
+  if original_apex_bootstrap:
+   import uuid
+   manifest=json.loads((execution/'completion-manifest.json').read_text());run_id=manifest['id'];assert str(uuid.UUID(run_id))==run_id
+   assert manifest['checkpoint']==str(execution)
+   factory_name='apex-live-'+uuid.UUID(run_id).hex
+   factory=r/'dist/aosp16'/factory_name
+   assert len(str(factory/'root/dev/socket/logdw').encode())<=107, 'Private Unix socket path exceeds Linux limit'
+   text=text.replace("('apex-live-'+str(time.time_ns()))",repr(factory_name),1)
+   with (execution/'factory-path.json').open('x') as binding:json.dump({'id':run_id,'checkpoint':str(execution),'factory':str(factory)},binding)
   with (execution/'factory-materialized.py').open('x') as materialized:
    materialized.write(text);materialized.flush();os.fsync(materialized.fileno())
  exec(compile(text,'<integrated factory>','exec'),{'__name__':'__main__'})

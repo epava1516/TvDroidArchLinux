@@ -25,6 +25,7 @@
 #include <cstdio>
 #include <cerrno>
 #include <vector>
+#include <utility>
 #include <memory>
 #include <chrono>
 #include <functional>
@@ -58,9 +59,12 @@ class LinuxMc1Cohort {
         }
         active_=true;
         Action::set_function_map(&GetBuiltinFunctionMap());
+        if(apex_requested_ && selected_requested_) {
+            if(auto bootstrap=BootstrapOriginalApex(tick);!bootstrap.ok())return bootstrap;
+        }
         auto parser=CreateParser(ActionManager::GetInstance(),services);
         auto parsed=parser.ParseConfigFile("/system/etc/init/servicemanager.rc");
-        if(!parsed.ok() || parser.parse_error_count()!=0 || services.size()!=1)
+        if(!parsed.ok() || parser.parse_error_count()!=0)
             return android::base::Error()<<"MC1 original manager profile rejected";
         manager_=services.FindService("servicemanager");
         if(!manager_ || manager_->args()!=std::vector<std::string>{"/system/bin/servicemanager"})
@@ -87,6 +91,7 @@ class LinuxMc1Cohort {
         // weaken it merely to inspect a different-UID child's /proc attrs.
         // Original shell/CLI, explicit original shell context and UID. The shell
         // writes its real output to fresh private shell_data_file storage.
+        client_done_=false;client_ok_=false;
         auto client=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","shell","shell","--",
             "/system/bin/sh","-c","/system/bin/service list > /data/local/tmp/archtv-mc1/service-list.txt 2>&1"});
         if(!client.ok()) return client.error();
@@ -222,15 +227,50 @@ class LinuxMc1Cohort {
         std::fprintf(stderr,"SELECTED_VOLD_STARTED pid=%d NOT_REGISTERED\n",vold_->pid());
         return {};
     }
+    android::base::Result<void> BootstrapOriginalApex(const Tick& tick) {
+        using namespace android::init;
+        auto& services=ServiceList::GetInstance();
+        if(!SetupMountNamespaces())return android::base::Error()<<"Original pre-bootstrap namespace setup failed";
+        auto current=GetCurrentMountNamespace();
+        if(!current.ok() || *current!=NS_BOOTSTRAP)return android::base::Error()<<"Original bootstrap namespace missing";
+        auto parser=CreateParser(ActionManager::GetInstance(),services);
+        auto parsed=parser.ParseConfigFile("/system/etc/init/apexd.rc");
+        if(!parsed.ok() || parser.parse_error_count()!=0)return android::base::Error()<<"Original bootstrap APEX RC rejected";
+        auto* bootstrap=services.FindService("apexd-bootstrap");
+        if(!bootstrap || bootstrap->args()!=std::vector<std::string>{"/system/bin/apexd","--bootstrap"})
+            return android::base::Error()<<"Original bootstrap executable/arguments missing";
+        client_done_=false;client_ok_=false;
+        bootstrap->AddReapCallback([this](const siginfo_t& info){
+            client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;
+            std::fprintf(stderr,"APEX_BOOTSTRAP_ORIGINAL_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
+        });
+        if(auto started=bootstrap->ExecStart();!started.ok())return started;
+        std::fprintf(stderr,"APEX_BOOTSTRAP_STARTED pid=%d NOT_FULL_INVENTORY\n",bootstrap->pid());
+        if(auto waited=Wait(tick,[this]{return client_done_;},100);!waited.ok())return waited;
+        if(!client_ok_)return android::base::Error()<<"Original APEX bootstrap failed";
+        auto config=GetBuiltinFunctionMap().Find({"perform_apex_config"});
+        if(!config.ok())return config.error();
+        if(auto configured=config->function(BuiltinArguments{{"perform_apex_config"},"u:r:init:s0"});!configured.ok())return configured;
+        apex_bootstrap_prepared_=true;
+        std::fprintf(stderr,"APEX_BOOTSTRAP_ORIGINAL_CONFIG_RETURNED NOT_DEFAULT_READINESS\n");
+        return {};
+    }
     android::base::Result<void> StartApex(const Tick& tick) {
         using namespace android::init;
         auto& services=ServiceList::GetInstance();
         if(!android::base::GetProperty("apexd.status","").empty())
             return android::base::Error()<<"Refusing stale APEX status";
-        auto parser=CreateParser(ActionManager::GetInstance(),services);
-        auto parsed=parser.ParseConfigFile("/system/etc/init/apexd.rc");
-        if(!parsed.ok() || parser.parse_error_count()!=0)
-            return android::base::Error()<<"Original APEX service profile rejected";
+        if(!apex_bootstrap_prepared_) {
+            auto parser=CreateParser(ActionManager::GetInstance(),services);
+            auto parsed=parser.ParseConfigFile("/system/etc/init/apexd.rc");
+            if(!parsed.ok() || parser.parse_error_count()!=0)return android::base::Error()<<"Original APEX service profile rejected";
+        } else {
+            auto enter=GetBuiltinFunctionMap().Find({"enter_default_mount_ns"});
+            if(!enter.ok())return enter.error();
+            if(auto entered=enter->function(BuiltinArguments{{"enter_default_mount_ns"},"u:r:init:s0"});!entered.ok())return entered;
+            auto current=GetCurrentMountNamespace();
+            if(!current.ok() || *current!=NS_DEFAULT)return android::base::Error()<<"Original default namespace missing before normal APEX";
+        }
         apexd_=services.FindService("apexd");
         if(!apexd_ || apexd_->args()!=std::vector<std::string>{"/system/bin/apexd"})
             return android::base::Error()<<"Unexpected original apexd executable";
@@ -270,37 +310,20 @@ class LinuxMc1Cohort {
         apex_activation_observed_=true;
         std::fprintf(stderr,"APEX_ORIGINAL_ACTIVATION_OBSERVED REQUIRES_FRAMEWORK_QUERY_AND_EXTERNAL_INVENTORY\n");
         if(selected_requested_) {
-            // Linux has already activated the complete APEX set. Preserve that
-            // real view for bootstrap, then use original namespace setup and
-            // switching; never assign the readiness flag ourselves.
-            if(mount("/apex","/bootstrap-apex",nullptr,MS_BIND|MS_REC,nullptr)!=0)
-                return android::base::ErrnoError()<<"Preserve actual APEX bootstrap view";
-            if(!SetupMountNamespaces())return android::base::Error()<<"Original mount namespace setup failed";
-            auto actual_namespace=GetCurrentMountNamespace();
-            if(!actual_namespace.ok() || *actual_namespace!=NS_BOOTSTRAP)return android::base::Error()<<"Original bootstrap namespace not entered";
-            std::fprintf(stderr,"APEX_ORIGINAL_BOOTSTRAP_NAMESPACE_ENTERED NOT_LINKER_READINESS\n");
-            // Original init.rc performs APEX configuration before starting
-            // the original derive_classpath service and importing its output.
+            if(!apex_bootstrap_prepared_)return android::base::Error()<<"Original bootstrap phase missing";
             const std::string context="u:r:init:s0";
             auto config=GetBuiltinFunctionMap().Find({"perform_apex_config"});
             if(!config.ok())return config.error();
             if(auto configured=config->function(BuiltinArguments{{"perform_apex_config"},context});!configured.ok())return configured;
-            std::fprintf(stderr,"APEX_ORIGINAL_BOOTSTRAP_CONFIG_RETURNED NOT_DEFAULT_READINESS\n");
+            if(!IsDefaultMountNamespaceReady())return android::base::Error()<<"Original default namespace not ready";
+            std::fprintf(stderr,"APEX_ORIGINAL_DEFAULT_CONFIG_RETURNED REQUIRES_SERVICE_OPERATIONS\n");
             if(auto derived=DeriveOriginalClasspath(tick,true);!derived.ok())return derived;
             const std::vector<std::string> export_args={"load_exports","/data/system/environ/classpath"};
             auto loader=GetBuiltinFunctionMap().Find(export_args);
             if(!loader.ok())return loader.error();
             if(auto loaded=loader->function(BuiltinArguments{export_args,context});!loaded.ok())return loaded;
+            if(auto evidence=ObserveOriginalApexNamespace();!evidence.ok())return evidence;
             std::fprintf(stderr,"PACKAGES_ORIGINAL_LOAD_EXPORTS_RETURNED NOT_JAVA_SERVICE_AVAILABILITY\n");
-            if(auto entered=SwitchToMountNamespaceIfNeeded(NS_DEFAULT);!entered.ok())return entered;
-            auto default_namespace=GetCurrentMountNamespace();
-            if(!default_namespace.ok() || *default_namespace!=NS_DEFAULT)return android::base::Error()<<"Original default namespace not entered";
-            // Original parser skips bootstrap APEXes here because their real
-            // configs were just parsed. It generates default linker config and
-            // sets readiness itself; do not set a flag or property manually.
-            if(auto configured=config->function(BuiltinArguments{{"perform_apex_config"},context});!configured.ok())return configured;
-            if(!IsDefaultMountNamespaceReady())return android::base::Error()<<"Original default namespace not ready";
-            std::fprintf(stderr,"APEX_ORIGINAL_DEFAULT_CONFIG_RETURNED REQUIRES_SERVICE_OPERATIONS\n");
             if(auto flags=StartAconfig(tick);!flags.ok())return flags;
             // Reuse original init_user0 -> ExecVdcRebootOnFailure. A root
             // shell retains shell SID and is not the authorized VDC caller.
@@ -328,6 +351,40 @@ class LinuxMc1Cohort {
         } else {
             if(auto derived=DeriveOriginalClasspath(tick,false);!derived.ok())return derived;
         }
+        return {};
+    }
+    android::base::Result<void> ObserveOriginalApexNamespace() {
+        using namespace android::init;
+        auto current=GetCurrentMountNamespace();
+        if(!current.ok() || *current!=NS_DEFAULT || security_getenforce()!=expected_mode_)
+            return android::base::Error()<<"APEX evidence namespace/mode mismatch";
+        for(const auto& item:std::vector<std::pair<std::string,std::string>>{
+                {"XML","/apex/apex-info-list.xml"},{"MOUNTS","/proc/self/mountinfo"}}) {
+            std::string bytes;
+            if(!android::base::ReadFileToString(item.second,&bytes) || bytes.empty() || bytes.size()>1048576)
+                return android::base::Error()<<"Original namespace evidence unreadable: "<<item.second;
+            std::fprintf(stderr,"APEX_NATIVE_%s_BEGIN pid=%d enforcing=%d bytes=%zu\n",item.first.c_str(),getpid(),expected_mode_,bytes.size());
+            std::fwrite(bytes.data(),1,bytes.size(),stderr);
+            if(bytes.back()!='\n')std::fputc('\n',stderr);
+            std::fprintf(stderr,"APEX_NATIVE_%s_END\n",item.first.c_str());
+        }
+        std::string exports;
+        if(!android::base::ReadFileToString("/data/system/environ/classpath",&exports))return android::base::Error()<<"Original exports unreadable for evidence";
+        std::istringstream rows(exports);std::string row;
+        while(std::getline(rows,row)) {
+            std::istringstream parts(row);std::string operation,name,value;
+            if(!(parts>>operation>>name>>value) || operation!="export")return android::base::Error()<<"Original export syntax invalid";
+            std::istringstream paths(value);std::string path;
+            while(std::getline(paths,path,':')) {
+                if(path.rfind("/apex/",0)!=0 && path.rfind("/system/",0)!=0)return android::base::Error()<<"Original JAR path outside profile";
+                struct stat info{};
+                if(stat(path.c_str(),&info)!=0 || !S_ISREG(info.st_mode))return android::base::Error()<<"Original JAR missing: "<<path;
+                std::fprintf(stderr,"APEX_NATIVE_JAR path=%s device=%llu inode=%llu size=%llu\n",path.c_str(),
+                    static_cast<unsigned long long>(info.st_dev),static_cast<unsigned long long>(info.st_ino),static_cast<unsigned long long>(info.st_size));
+            }
+        }
+        if(security_getenforce()!=expected_mode_)return android::base::Error()<<"APEX evidence mode changed";
+        std::fprintf(stderr,"APEX_NATIVE_EVIDENCE_COMPLETE pid=%d enforcing=%d NS_DEFAULT_NOT_BINDER_OR_APK_ACCEPTANCE\n",getpid(),expected_mode_);
         return {};
     }
     android::base::Result<void> DeriveOriginalClasspath(const Tick& tick,bool parsed_by_original_apex_config) {
@@ -1002,6 +1059,7 @@ class LinuxMc1Cohort {
     const bool surfaceflinger_requested_;
     const bool selected_requested_;
     const bool apex_requested_;
+    bool apex_bootstrap_prepared_=false;
     android::init::Service* aconfig_system_=nullptr;
     android::init::Service* aconfig_mainline_=nullptr;
     android::init::Service* lmkd_=nullptr;

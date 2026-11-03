@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "utc": "2026-11-03T15:33:26.039716+00:00",
+  "utc": "2026-11-03T16:34:43.289870+00:00",
   "scope": "Partial original APEX/derive admission under bounded enforcing; no new APK stage or general MAC/isolation acceptance",
   "base_commit": "39d0be0edb77c13575681175fc26e730adee3c11",
   "executions": {
@@ -351,6 +351,256 @@
       "outer_exit": 1,
       "native_complete_inventory_verified": false,
       "finding": "Original APEX initial activation5 then bind aliases fail mounton: empty Linux scaffold rootfs or Linux pre-mounted image root system_file. Fallback0, native derive service missing; no coherent41 inventory/classpath/service/APK acceptance. Do not allow mounton rootfs/system_file as workaround; replace conflicting Linux bootstrap APEX views using original bootstrap sequence."
+    },
+    "183": {
+      "before-launch.json": {
+        "path": "/home/tv/recuperacion-archtv/900ba0d7-8611-4c64-b008-ef5860fe6373-markor-software-launch/before-launch.json",
+        "sha256": "2ba0b8e48f33452f993f5a5833fd06d405a6635d44e83e387526eda61bf74334"
+      },
+      "result.json": {
+        "path": "/home/tv/recuperacion-archtv/900ba0d7-8611-4c64-b008-ef5860fe6373-markor-software-launch/result.json",
+        "sha256": "7fe730b06582e5974b1e8a4998baf97bf3302ab966a302196f9867d8b2f6b1e8"
+      },
+      "mac-window.json": {
+        "path": "/home/tv/recuperacion-archtv/900ba0d7-8611-4c64-b008-ef5860fe6373-markor-software-launch/mac-window.json",
+        "sha256": "462f88c78a203802520b1d8c401b25bd3f964f72f42362170db5651af3db67f0"
+      },
+      "run.log": {
+        "path": "/home/tv/recuperacion-archtv/900ba0d7-8611-4c64-b008-ef5860fe6373-markor-software-launch/run.log",
+        "sha256": "dffe258ad832eccec38b2a3b4cdfb5c7fb3bda1dc409d52f0a1ba5a707d1fad6"
+      },
+      "kernel-apex.log": {
+        "path": "/home/tv/recuperacion-archtv/900ba0d7-8611-4c64-b008-ef5860fe6373-markor-software-launch/kernel-apex.log",
+        "sha256": "779da6f5e2fc9f3aed66b4fb5b45bbed713ee41a7662ba36aeea3e2cb7747ef7"
+      },
+      "factory-materialized.py": {
+        "path": "/home/tv/recuperacion-archtv/900ba0d7-8611-4c64-b008-ef5860fe6373-markor-software-launch/factory-materialized.py",
+        "sha256": "5b0ca682b090e6adcf3143827b3a6acdf9fc2733cf5e7c785d428bcd68cdcdb7"
+      },
+      "session-state.json": {
+        "path": "/home/tv/recuperacion-archtv/900ba0d7-8611-4c64-b008-ef5860fe6373-markor-software-launch/session-state.json",
+        "sha256": "437d7e96c292134e6cc434857381c32a24c7597cb0632dfccca87be7fd2668ae"
+      },
+      "completion-manifest.json": {
+        "path": "/home/tv/recuperacion-archtv/900ba0d7-8611-4c64-b008-ef5860fe6373-markor-software-launch/completion-manifest.json",
+        "sha256": "76843b61c763c9c6987ed0a6cc6f293a67f3f9e7f9362042bf5828ef839eabf2"
+      },
+      "completion-consumer.json": {
+        "path": "/home/tv/recuperacion-archtv/900ba0d7-8611-4c64-b008-ef5860fe6373-markor-software-launch/completion-consumer.json",
+        "sha256": "06540df3cc44a98ed6289e89292a33ddfbfa09e029108388bbb95d9a3822fade"
+      },
+      "finite-audit/result.json": {
+        "path": "/home/tv/recuperacion-archtv/900ba0d7-8611-4c64-b008-ef5860fe6373-markor-software-launch/finite-audit/result.json",
+        "sha256": "7f5684df05c25fc5c01d5204ecffbc4768d627420c98ed6fcd07e33b06abfdec"
+      },
+      "finite-audit/audit.log": {
+        "path": "/home/tv/recuperacion-archtv/900ba0d7-8611-4c64-b008-ef5860fe6373-markor-software-launch/finite-audit/audit.log",
+        "sha256": "02caf55611c9e48859ad9895f3ec117f53140011fcf046dfe727f5e67cec88e4"
+      }
+    },
+    "184": {
+      "before-launch.json": {
+        "path": "/home/tv/recuperacion-archtv/e83f1bf9-3045-45cf-9d5e-3e09c15db6ed-markor-software-launch/before-launch.json",
+        "sha256": "759cb73192d4d2f01e3cf79a8b7d7f8f07617bd8496e1e80768d332b83461e97"
+      },
+      "result.json": {
+        "path": "/home/tv/recuperacion-archtv/e83f1bf9-3045-45cf-9d5e-3e09c15db6ed-markor-software-launch/result.json",
+        "sha256": "f8d43bd6ecdfa8ee50097801c15100bcd3d672095fbab912ed626a962b3b6d89"
+      },
+      "mac-window.json": {
+        "path": "/home/tv/recuperacion-archtv/e83f1bf9-3045-45cf-9d5e-3e09c15db6ed-markor-software-launch/mac-window.json",
+        "sha256": "2087f2c5e7152c7852812b405e277dfa811d8014b0260dc08c08d436a06ff0e3"
+      },
+      "run.log": {
+        "path": "/home/tv/recuperacion-archtv/e83f1bf9-3045-45cf-9d5e-3e09c15db6ed-markor-software-launch/run.log",
+        "sha256": "a4d1227a5f65e285cfa48f8c026bf9338a573b71b70139160a6fb7f383b3ee18"
+      },
+      "kernel-apex.log": {
+        "path": "/home/tv/recuperacion-archtv/e83f1bf9-3045-45cf-9d5e-3e09c15db6ed-markor-software-launch/kernel-apex.log",
+        "sha256": "bddb8a7067a96b7d21fdb6fc074a00aa0efbcd381a18cdd901f1560149bb3e87"
+      },
+      "factory-materialized.py": {
+        "path": "/home/tv/recuperacion-archtv/e83f1bf9-3045-45cf-9d5e-3e09c15db6ed-markor-software-launch/factory-materialized.py",
+        "sha256": "5ffefe284c3e91b12eb0f585ecfdf44bdba5574c3c68d719aa7e474d2ab55096"
+      },
+      "session-state.json": {
+        "path": "/home/tv/recuperacion-archtv/e83f1bf9-3045-45cf-9d5e-3e09c15db6ed-markor-software-launch/session-state.json",
+        "sha256": "4d67c5a9eb3b1cfc46b3afab74a9113bd31eab600b48db7b680342bc2413074b"
+      },
+      "completion-manifest.json": {
+        "path": "/home/tv/recuperacion-archtv/e83f1bf9-3045-45cf-9d5e-3e09c15db6ed-markor-software-launch/completion-manifest.json",
+        "sha256": "171bdb576163993feb3170798daee8bc3f45b8d592d0c918725c40ff56c1f72c"
+      },
+      "completion-consumer.json": {
+        "path": "/home/tv/recuperacion-archtv/e83f1bf9-3045-45cf-9d5e-3e09c15db6ed-markor-software-launch/completion-consumer.json",
+        "sha256": "769ef17d4dee090c5c8d4602172850cd54194d5196c80525d5bae442be1ca729"
+      },
+      "finite-audit/result.json": {
+        "path": "/home/tv/recuperacion-archtv/e83f1bf9-3045-45cf-9d5e-3e09c15db6ed-markor-software-launch/finite-audit/result.json",
+        "sha256": "f0e77e9f38d2f77d0fa3f109e11be48bbd01edb791984c8ef14232330c95230b"
+      },
+      "finite-audit/audit.log": {
+        "path": "/home/tv/recuperacion-archtv/e83f1bf9-3045-45cf-9d5e-3e09c15db6ed-markor-software-launch/finite-audit/audit.log",
+        "sha256": "a263fed0a9ab4d521114a07242b22604d1b14c6514ef2303e3be973912e3c618"
+      }
+    },
+    "185": {
+      "before-launch.json": {
+        "path": "/home/tv/recuperacion-archtv/1a2b2c10-2940-43b0-954d-3d4bcb955723-markor-software-launch/before-launch.json",
+        "sha256": "fe301b8aad7016d29681b2ad529434fa235518f0ba59ec8bb8efc27c240f062e"
+      },
+      "result.json": {
+        "path": "/home/tv/recuperacion-archtv/1a2b2c10-2940-43b0-954d-3d4bcb955723-markor-software-launch/result.json",
+        "sha256": "2b8ec0fdcfa13a9eaeabfb57d2c937ca4f95a7279561485426ba66cf014679d7"
+      },
+      "mac-window.json": {
+        "path": "/home/tv/recuperacion-archtv/1a2b2c10-2940-43b0-954d-3d4bcb955723-markor-software-launch/mac-window.json",
+        "sha256": "b533aa0cfc3d227bd2e5f8181b4e39eace5b5ccc0fbc2ce2310a6cabd3ac7dd3"
+      },
+      "run.log": {
+        "path": "/home/tv/recuperacion-archtv/1a2b2c10-2940-43b0-954d-3d4bcb955723-markor-software-launch/run.log",
+        "sha256": "70eefe596c16257d88283de0633e9523e1e559f894558a7dd8cc1475e4639b3e"
+      },
+      "kernel-apex.log": {
+        "path": "/home/tv/recuperacion-archtv/1a2b2c10-2940-43b0-954d-3d4bcb955723-markor-software-launch/kernel-apex.log",
+        "sha256": "e514688db48e85f302369488102c31300c9d06ac5cea3129e0965265352d62be"
+      },
+      "factory-path.json": {
+        "path": "/home/tv/recuperacion-archtv/1a2b2c10-2940-43b0-954d-3d4bcb955723-markor-software-launch/factory-path.json",
+        "sha256": "8e255e8e6b4129b6f91e9625e7f8e205c990a4efb8edab03214b95fc5bdaad0d"
+      },
+      "factory-materialized.py": {
+        "path": "/home/tv/recuperacion-archtv/1a2b2c10-2940-43b0-954d-3d4bcb955723-markor-software-launch/factory-materialized.py",
+        "sha256": "13e9a380cfe1abfd2cebd5db55ef9ed790b960b402f19dd744a186969e05a8a9"
+      },
+      "session-state.json": {
+        "path": "/home/tv/recuperacion-archtv/1a2b2c10-2940-43b0-954d-3d4bcb955723-markor-software-launch/session-state.json",
+        "sha256": "1c9e75899d6db6293d1f05ea1bef7581f116b21c7afbefbef8fdc6957803234c"
+      },
+      "completion-manifest.json": {
+        "path": "/home/tv/recuperacion-archtv/1a2b2c10-2940-43b0-954d-3d4bcb955723-markor-software-launch/completion-manifest.json",
+        "sha256": "574f2bb15e7d2ec23b3fdf0ddf5e7a1248a3f330f280db88da3fb86c4495ff85"
+      },
+      "completion-consumer.json": {
+        "path": "/home/tv/recuperacion-archtv/1a2b2c10-2940-43b0-954d-3d4bcb955723-markor-software-launch/completion-consumer.json",
+        "sha256": "fe366d0ed65d896df32440af16e9b334686c9b8a2c4f4bc166bd30766ecd02b5"
+      },
+      "finite-audit/result.json": {
+        "path": "/home/tv/recuperacion-archtv/1a2b2c10-2940-43b0-954d-3d4bcb955723-markor-software-launch/finite-audit/result.json",
+        "sha256": "4ffe43e5a130496feb2e977b6a2c39ba5e8af3487ce8d1a45aec68c8f4b6a7bc"
+      },
+      "finite-audit/audit.log": {
+        "path": "/home/tv/recuperacion-archtv/1a2b2c10-2940-43b0-954d-3d4bcb955723-markor-software-launch/finite-audit/audit.log",
+        "sha256": "a8394cc7b27d914031e3b2ffe07918c35db6ae9b6dd67e4ed5e05beae72f26ed"
+      },
+      "runtime-source-overlay.json": {
+        "path": "/home/tv/recuperacion-archtv/1a2b2c10-2940-43b0-954d-3d4bcb955723-markor-software-launch/runtime-source-overlay.json",
+        "sha256": "027c7dc513908396570140896777d4a600dbdef7007870ee3dcabc495351fcfc"
+      }
+    },
+    "186": {
+      "before-launch.json": {
+        "path": "/home/tv/recuperacion-archtv/e40f2a77-e242-4603-946e-7abed7e41b7a-markor-software-launch/before-launch.json",
+        "sha256": "c77f68d8907444e15e7bdabb3c3d624102981df23fd8f4ad220f16457b7ec59c"
+      },
+      "result.json": {
+        "path": "/home/tv/recuperacion-archtv/e40f2a77-e242-4603-946e-7abed7e41b7a-markor-software-launch/result.json",
+        "sha256": "898cabf7e297b80f0540965ab6e84c49548c6af75e5bd9c2d68067177a3f33c5"
+      },
+      "mac-window.json": {
+        "path": "/home/tv/recuperacion-archtv/e40f2a77-e242-4603-946e-7abed7e41b7a-markor-software-launch/mac-window.json",
+        "sha256": "7b18c29432d64f70d1883dfd6738baab01d2d26742b9f9eb4c911f931fc384c9"
+      },
+      "run.log": {
+        "path": "/home/tv/recuperacion-archtv/e40f2a77-e242-4603-946e-7abed7e41b7a-markor-software-launch/run.log",
+        "sha256": "45c8f27e8105338c2d4508a946a7b2b8074ed7410929ae946bd1ab9b07f861a1"
+      },
+      "kernel-apex.log": {
+        "path": "/home/tv/recuperacion-archtv/e40f2a77-e242-4603-946e-7abed7e41b7a-markor-software-launch/kernel-apex.log",
+        "sha256": "723f155983b6f5f258e78d553e5d1e9814e00c33b3801ca5339cc94f38ca8519"
+      },
+      "factory-path.json": {
+        "path": "/home/tv/recuperacion-archtv/e40f2a77-e242-4603-946e-7abed7e41b7a-markor-software-launch/factory-path.json",
+        "sha256": "4b5455df1fe3d6d17c5c3443e42f48b8fec1f3d62d80d2fdf030fb7cf27861aa"
+      },
+      "factory-materialized.py": {
+        "path": "/home/tv/recuperacion-archtv/e40f2a77-e242-4603-946e-7abed7e41b7a-markor-software-launch/factory-materialized.py",
+        "sha256": "36d0cda03bbbe11c47764e2a700d14b28946913e9dc7fa0cf681659c74c97934"
+      },
+      "session-state.json": {
+        "path": "/home/tv/recuperacion-archtv/e40f2a77-e242-4603-946e-7abed7e41b7a-markor-software-launch/session-state.json",
+        "sha256": "1980849aabe83abe2e9a31050ca73127dd407bff3afaf42fa3b17793eea3559a"
+      },
+      "completion-manifest.json": {
+        "path": "/home/tv/recuperacion-archtv/e40f2a77-e242-4603-946e-7abed7e41b7a-markor-software-launch/completion-manifest.json",
+        "sha256": "e7c2fa2afffe731e8bb613572f9bcaddd407bea461af472560acac80db36d7dc"
+      },
+      "completion-consumer.json": {
+        "path": "/home/tv/recuperacion-archtv/e40f2a77-e242-4603-946e-7abed7e41b7a-markor-software-launch/completion-consumer.json",
+        "sha256": "0f8716d6c68b6f548466cea4f3456ecde85aa5b2d702924abbb0028d0cc7d37c"
+      },
+      "finite-audit/result.json": {
+        "path": "/home/tv/recuperacion-archtv/e40f2a77-e242-4603-946e-7abed7e41b7a-markor-software-launch/finite-audit/result.json",
+        "sha256": "23992a0f40b0f20a4d00cae2e96862d82646f698448cd128402f163ebc06ab18"
+      },
+      "finite-audit/audit.log": {
+        "path": "/home/tv/recuperacion-archtv/e40f2a77-e242-4603-946e-7abed7e41b7a-markor-software-launch/finite-audit/audit.log",
+        "sha256": "a9e0515e068e7610a8c58b68d4fc045f315ed3b6d6648b51f337cc6cc18f1a50"
+      },
+      "runtime-source-overlay.json": {
+        "path": "/home/tv/recuperacion-archtv/e40f2a77-e242-4603-946e-7abed7e41b7a-markor-software-launch/runtime-source-overlay.json",
+        "sha256": "0fa5fc874a7ef624de9cd9b3bc7e32a220f7243ae6ec210b7aa43e783f9ac055"
+      }
+    },
+    "188": {
+      "before-launch.json": {
+        "path": "/home/tv/recuperacion-archtv/51801257-4737-45cc-9662-f8bd5a7f8298-markor-software-launch/before-launch.json",
+        "sha256": "f439630429e66a562bee39f6b1ab79c0f7f51c06566f384f1c450dc75a7bcc19"
+      },
+      "result.json": {
+        "path": "/home/tv/recuperacion-archtv/51801257-4737-45cc-9662-f8bd5a7f8298-markor-software-launch/result.json",
+        "sha256": "077890c3c20fae88dbe3a655910cded07cd8d75224eb35d9a0251b08557139b5"
+      },
+      "mac-window.json": {
+        "path": "/home/tv/recuperacion-archtv/51801257-4737-45cc-9662-f8bd5a7f8298-markor-software-launch/mac-window.json",
+        "sha256": "29b615de9ac2b7d29cbf4f40b6c3d3771a6e560011a62189526d5e17dfa7c126"
+      },
+      "run.log": {
+        "path": "/home/tv/recuperacion-archtv/51801257-4737-45cc-9662-f8bd5a7f8298-markor-software-launch/run.log",
+        "sha256": "5bdf582af8ce27a00ebf2413cc4a13b2d02877928cfec85545300ccf8a10ae54"
+      },
+      "kernel-apex.log": {
+        "path": "/home/tv/recuperacion-archtv/51801257-4737-45cc-9662-f8bd5a7f8298-markor-software-launch/kernel-apex.log",
+        "sha256": "f65b6af8a902a4de33a39fe35aca094bc67f20d487fdbe5210dabcbf214e569d"
+      },
+      "factory-path.json": {
+        "path": "/home/tv/recuperacion-archtv/51801257-4737-45cc-9662-f8bd5a7f8298-markor-software-launch/factory-path.json",
+        "sha256": "b04c22aab2de55aac9549ac27a6462cdfbebb9a78362a3267041e1c75ea5eed5"
+      },
+      "factory-materialized.py": {
+        "path": "/home/tv/recuperacion-archtv/51801257-4737-45cc-9662-f8bd5a7f8298-markor-software-launch/factory-materialized.py",
+        "sha256": "ff3e0f8ae6412917486af56273e21179294956357f55940846a0bf37f6db9b32"
+      },
+      "session-state.json": {
+        "path": "/home/tv/recuperacion-archtv/51801257-4737-45cc-9662-f8bd5a7f8298-markor-software-launch/session-state.json",
+        "sha256": "b63231040d640eb7f13d82e5d6ef1134ca1c9989afac7ba06333fcb7c2a04904"
+      },
+      "completion-manifest.json": {
+        "path": "/home/tv/recuperacion-archtv/51801257-4737-45cc-9662-f8bd5a7f8298-markor-software-launch/completion-manifest.json",
+        "sha256": "b3587cb26fcabba53fca0f2047681e301d0895c7aa7f70eb4775a79d3de1eadf"
+      },
+      "completion-consumer.json": {
+        "path": "/home/tv/recuperacion-archtv/51801257-4737-45cc-9662-f8bd5a7f8298-markor-software-launch/completion-consumer.json",
+        "sha256": "9b85c083d0d2996d9fea5056f018f12a32202c051fc2328882edc30099feb1c2"
+      },
+      "finite-audit/result.json": {
+        "path": "/home/tv/recuperacion-archtv/51801257-4737-45cc-9662-f8bd5a7f8298-markor-software-launch/finite-audit/result.json",
+        "sha256": "46d09c4f623531c836ad957683b8f5d75aeeb66c54ccb6a49a45f65a503b027e"
+      },
+      "finite-audit/audit.log": {
+        "path": "/home/tv/recuperacion-archtv/51801257-4737-45cc-9662-f8bd5a7f8298-markor-software-launch/finite-audit/audit.log",
+        "sha256": "42d35ad9110f6c5d77376d906984259d35b3d1f420772be9a2ad81693221bc1d"
+      }
     }
   },
   "decisions": [
@@ -365,7 +615,8 @@
     "Watchdog expiry fallback not exercised by these normal restore runs.",
     "Original logd, system property ownership, authorized framework APEX RPC and whole Markor under MAC remain open.",
     "Prior Markor167 local-note/persistence scope remains unchanged; ARM/GMS/DRM and broad compatibility open.",
-    "REA MCP connected but native provider unavailable; process capture172 returned cleanup_incomplete. Separate host check found suspect PID absent, not proof of every REA cleanup resource."
+    "REA MCP connected but native provider unavailable; process capture172 returned cleanup_incomplete. Separate host check found suspect PID absent, not proof of every REA cleanup resource.",
+    "Watchdog expiry previously untested is now exercised in184: fallback0/exterior124, never functional acceptance."
   ],
   "after174_host": {
     "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after174-host.json",
@@ -387,7 +638,7 @@
     "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load10/after-load.json",
     "sha256": "309743229826231a5a6d96498f808485c1d5ad5ce3a5cd8c1a279f21f26b9aa8"
   },
-  "next": "Integrate original apexd --bootstrap and original namespace/perform_apex_config order, replacing Linux-prepared unversioned APEX image aliases. First prove original bootstrap linker dependency closure/entry without those views; do not widen mounton to rootfs/system_file. Label empty original mountpoints via original contract, never relabel immutable image content. Then original full APEX41/versions/mounts + framework Binder, user0 helper, coherent original services and whole Markor MAC. No new audit platform or partial compatibility claim.",
+  "next": "Resolve exact private PTMX original ioctl contract and Linux monitor original contexts read before next integration. Reuse compiled188 only for Linux/policy changes with immutable overlay. Require real41 mounts/versions plus original linkerconfig success, user0 then Markor full under MAC.",
   "original_sources": {
     "sdkextensions_commit": "4d10e57070bb9c6edcd13bf74e9d01717b2a5ecf",
     "derive_rc_sha256": "a9e65b0c114408e5cb8356bdb435a6b48d0a67cd7879915c52ffa094a267f607",
@@ -456,7 +707,10 @@
     "path": "/home/tv/recuperacion-archtv/47084881-176c-4fb6-bd15-765df4685086-markor-software-launch/userdata-after179-close.json",
     "sha256": "9e395067238c647c729c48a03dc8a115e81727ff30a8bfd6f4e50098098c9134"
   },
-  "latest_host": "After182: same kernel/boot, policy16 readback1812eff5112d6b66ddcf4f41becb5c74486ff009b6247261dd3cf7c4785ca10e, permissive policyload16, audit0/backlog64/rules unchanged/lost_delta0; no owned units/loops/dm/FUSE, GPU metadata unchanged. Prior21-byte note SHA636ce55c... and CE/DE inodes/labels intact, not APK execution under MAC.",
+  "latest_host": {
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after188-host.json",
+    "sha256": "aefe5915d9accf08633268d031c625c2e7a57421313c24ae8b25e899ebdd432a"
+  },
   "vdc_source_contract": {
     "builtin": "Pinned system/core/init/builtins.cpp1122\u20131172: original temporary exec plus original failure callback; exact argv /system/bin/vdc --wait cryptfs init_user0. Native observes actual reaping before advance, no shell redirection or synthetic readiness.",
     "vold_helper": {
@@ -537,5 +791,61 @@
       "path": "/home/tv/recuperacion-archtv/38c92233-66b3-4482-8681-fc00c342cafc-markor-software-launch/bootstrap-header-inspection.json",
       "sha256": "d04b5b70060c099c9d8e9d8df4a54cb73fb1a367494c1389c08b35e414fdf494"
     }
+  },
+  "bootstrap_integration183_188": {
+    "status": "partial; no APK/MAC acceptance",
+    "builds": {
+      "183": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-183/source-inputs.json",
+        "sha256": "147ce0c1e3647b4bc6c61c1e34d587fdc466280de52978a717bdc3c0ba918b70"
+      },
+      "184": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-184/source-inputs.json",
+        "sha256": "285b6c0e5866b49ed2866f07e3e728af2ffa3f133de01608525c268e877ba29f"
+      },
+      "187": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-187/source-inputs.json",
+        "sha256": "465209833a93ca228cf28963eadc83c04a5724caa7eead0a1b0b1073de9ef88b"
+      },
+      "188": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-188/source-inputs.json",
+        "sha256": "79d742ee858b2e2377754706c4fc11969e7b4e9a1f74f619879d3d5a16cff347"
+      }
+    },
+    "unused_build187": "Artifact prepared but never executed; failed edit assertion preceded build. Old tool handle no longer exists; no exit-code claim.",
+    "original_static_xml": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/bootstrap-libxml2-1/artifact.json",
+      "sha256": "90a397ba2b5e6dbe38800cd66d57b1d30313897847eb23db02682223a4dc2468"
+    },
+    "decisions": [
+      "Reuse original bootstrap linker, SetupMountNamespaces, apexd --bootstrap, perform_apex_config and default activation; no mounton rootfs/system_file allowance.",
+      "Whole original libxml2 static Android variant38 source files, STATIC_LIBXML=1 disables ICU per original header; no API shim or modification of app XML/ICU.",
+      "Real backing images128/129 LOOP_CONFIGURE readonly/autoclear; original bootstrap uses real free loop0..89. No renumbered nodes or fabricated responses.",
+      "Factory immutable full UUID.hex binding recorded before resources,107-byte Unix socket path bound; legacy time-based discovery retained only for old profiles.",
+      "Original worker emits read-only XML/mountinfo/JAR stat in actual default mount namespace;188 reports15/41 and explicitly rejects inventory."
+    ],
+    "observations": {
+      "183": "Before main missing ICU via dynamic libxml2; resolved by whole original static variant184.",
+      "184": "Original bootstrap stalls on loop0/1 occupied by Linux images. Independent30s watchdog expires, native killed, exterior124, restore0 verified; not enforcing acceptance.",
+      "185": "Before MAC AF_UNIX111-byte path failure; actual readonly high backing devices removed. Compact full UUID fixes path.",
+      "186": "Original bootstrap4 exits0 in334ms; original linkerconfig Permission denied, init->Linux devpts search; client completion state reused prematurely. No default41 or APK.",
+      "188": "Bootstrap4 exits0; first original shell client proceeds, default namespace native evidence observed enforcing1; original XML15/41 rejected. Linkerconfig TIOCGPTPEER0x5431 denied on private devpts chr_file. Device monitor crashes opening original file contexts under Linux identity (actual file_contexts_file getattr denial), explaining missing DM publication and timeout; do not blame APEX image compatibility. Original mainline_aconfigd initializer unavailable after incomplete activation. Candidate exit1 still enforcing,21.717s; normalrestore0. No newAPK stage."
+    },
+    "limits": [
+      "perform_apex_config return is NOT linkerconfig success: original builtin logs error and returns.",
+      "Host udev/systemd enforcing denials on globally labeled sysfs_loop observed; evaluate required Linux read-only access, not broad Android privileges.",
+      "Original namespace XML15 not Binder availability; native evidence complete marker alone not accepted.",
+      "Original167 permissive local note lifecycle unchanged; current all-Markor under MAC open.",
+      "Audit unit188 inadvertently retains historical short e40f2a77 name; exact UUID checkpoint and manifest still188, no concurrent receiver. Correct future name."
+    ],
+    "next": "Resolve exact private PTMX original ioctl contract and Linux monitor original contexts read before next integration. Reuse compiled188 only for Linux/policy changes with immutable overlay. Require real41 mounts/versions plus original linkerconfig success, user0 then Markor full under MAC."
+  },
+  "after188-host": {
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after188-host.json",
+    "sha256": "aefe5915d9accf08633268d031c625c2e7a57421313c24ae8b25e899ebdd432a"
+  },
+  "userdata-after188-close": {
+    "path": "/home/tv/recuperacion-archtv/51801257-4737-45cc-9662-f8bd5a7f8298-markor-software-launch/userdata-after188-close.json",
+    "sha256": "96d463fcfb7fc3c6cbb04d38972e9eb0f57154376a5ba29f3bae938beb05b718"
   }
 }

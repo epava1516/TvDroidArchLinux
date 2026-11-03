@@ -5,6 +5,7 @@ import json,subprocess,shutil,hashlib,sys,re
 r=Path(__file__).resolve().parents[2];out=(r/sys.argv[1]).resolve();out.mkdir()
 tracked_inputs=['Cargo.toml','Cargo.lock','crates/archtv-core/Cargo.toml',*[str(p.relative_to(r)) for p in sorted((r/'crates/archtv-core/src').rglob('*.rs'))],'crates/archtv-core/examples/native_supervisor.rs','reports/android16-package-bootstrap/execute-integrated.py','reports/android16-package-bootstrap/integrated-session.sh','reports/android16-apex-bootstrap/run.py','reports/android16-package-bootstrap/build-platform-overlay.py','tools/apk/SignPlatformOverlay.java','runtime/aosp/platform-overlay/AndroidManifest.xml','runtime/aosp/platform-overlay/res/values/config.xml','runtime/aosp/platform-overlay/overlay-config.xml','reports/android16-apex-bootstrap/devices.py','runtime/aosp/linux-services/initial-apk-profile.json','runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java','runtime/aosp/linux-services/org/archtv/aosplinux/ServiceLauncher.java','runtime/aosp/linux-services/install-markor.sh','runtime/aosp/native/linux-property-worker.cpp','runtime/aosp/native/linux-mc1-cohort.h','reports/android16-package-bootstrap/build-integrated.py','runtime/aosp/android16-qpr2/patches/0004-linux-admitted-lazy-services.patch','fixtures/aosp-keymint-software/SoftwareCryptoProbe.cpp','runtime/aosp/native/linux-keymint-service.cpp','reports/android16-package-bootstrap/build-keymint-software.py','fixtures/aosp-keystore2-software/BinderClient.rs','runtime/aosp/android16-qpr2/patches/keystore2-linux-software.patch','fixtures/aosp-keystore2-software/OriginalJavaProviderProbe.java','runtime/aosp/android16-qpr2/patches/framework-keystore-linux-software.patch','tools/aosp/KeystoreFrameworkProfilePlan.java','tools/aosp/build_software_keystore_framework.py','reports/android16-package-bootstrap/build-keystore-java-probe.py','reports/android16-package-bootstrap/build-gatekeeper-software.py']
 tracked_inputs.append('reports/android16-package-bootstrap/userdata.py')
+tracked_inputs.append('reports/android16-package-bootstrap/build-bootstrap-xml.py')
 tracked_inputs.extend(['reports/android16-selected-display/build-entry.py','runtime/aosp/linux-services/org/archtv/aosplinux/WaylandInputBridge.java','runtime/aosp/native/linux-wayland-input.h','runtime/aosp/native/linux-wayland-output.cpp','reports/android16-property-actions/apply-patch-chain.py','reports/android16-property-actions/build-lazy-control.py',*[str(p.relative_to(r)) for p in sorted((r/'runtime/aosp/android16-qpr2/patches').glob('000[1-5]-*.patch'))]])
 source_hashes={n:hashlib.sha256((r/n).read_bytes()).hexdigest() for n in tracked_inputs}
 (out/'source-inputs.json').write_text(json.dumps(source_hashes,indent=2)+'\n')
@@ -54,7 +55,7 @@ if software_platform:
  lines[0]=lines[0].replace('-Xmx768m','-Xmx512m')
  lines.append('    setenv ARCHTV_SOFTWARE_SECURITY_PROFILE software-platform-v1')
 experiment_kind='markor-software-launch' if software_platform else 'keystore-java-component' if keystore_java else 'keystore-component' if keystore_component else ('keymint-component' if keymint_component else 'markor-launch')
-(out/'build-options.json').write_text(json.dumps({'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component and not software_platform,'software_security_platform':software_platform,'observe_ms':observe_ms,'persistent_userdata_name':userdata_name,'markor_workflow_token':workflow_token,'markor_workflow_budget_seconds':workflow_budget_seconds,'experiment_kind':experiment_kind},indent=2)+'\n')
+(out/'build-options.json').write_text(json.dumps({'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component and not software_platform,'software_security_platform':software_platform,'observe_ms':observe_ms,'persistent_userdata_name':userdata_name,'markor_workflow_token':workflow_token,'markor_workflow_budget_seconds':workflow_budget_seconds,'experiment_kind':experiment_kind,'original_apex_bootstrap':True},indent=2)+'\n')
 if checkpoint_diagnostic:lines.append('    setenv ARCHTV_CHECKPOINT_DIAGNOSTIC 1')
 lines=[l for l in lines if not any(l.startswith('    setenv '+n+' ') for n in ['BOOTCLASSPATH','DEX2OATBOOTCLASSPATH','SYSTEMSERVERCLASSPATH','STANDALONE_SYSTEMSERVER_JARS'])];(entry/'selected-services.rc').write_text('\n'.join(lines)+'\n')
 old=r/'dist/aosp16/apex-cohort-build-6';commands=[]
@@ -62,6 +63,16 @@ for n in ['graphics-client']:
  p=out/n;p.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(old/n,p)
 def run(argv):
  p=subprocess.run(argv,capture_output=True,text=True);commands.append({'argv':argv,'exit':p.returncode,'stderr':p.stderr});(out/'build.json').write_text(json.dumps({'commands':commands},indent=2));assert p.returncode==0,p.stderr
+# Reuse AOSP's complete static XML variant to avoid an ICU/APEX cycle before
+# apexd-bootstrap. Shared system/APP XML and ICU remain original and untouched.
+xml_out=r/'dist/aosp16/bootstrap-libxml2-1'
+if not (xml_out/'artifact.json').exists():
+ assert not xml_out.exists(), 'Preserve failed original XML build; choose a new candidate'
+ run(['python',str(r/'reports/android16-package-bootstrap/build-bootstrap-xml.py'),str(xml_out)])
+xml_record=json.loads((xml_out/'artifact.json').read_text());assert xml_record['terminal']
+xml_archive=Path(xml_record['archive']);assert hashlib.sha256(xml_archive.read_bytes()).hexdigest()==xml_record['archive_sha256']
+for name,digest in xml_record['source_sha256'].items():assert hashlib.sha256((Path(xml_record['source'])/name).read_bytes()).hexdigest()==digest,name
+(out/'bootstrap-xml-input.json').write_text(json.dumps(xml_record,indent=2)+'\n')
 # Build the supervisor from the current frozen Rust inputs; never inherit an
 # older executable whose CLI/lifetime contract differs from this candidate.
 rust_cache=Path('/home/tv/.cache/archtv/native-supervisor-current')
@@ -71,7 +82,13 @@ shutil.copy2(rust_cache/'debug/examples/native_supervisor',out/'cargo/debug/exam
 assert '/archtv/lib/ld-linux-x86-64.so.2' in subprocess.check_output(['readelf','-l',str(out/'cargo/debug/examples/native_supervisor')],text=True), 'Linux payload interpreter contract missing'
 for c in json.loads((old/'build.json').read_text())['commands']:
  argv=[a.replace(str(old),str(out)).replace('property-actions-source-2','property-actions-source-4').replace('property-actions-source-3','property-actions-source-4').replace('property-actions-build-3','property-actions-build-5').replace('property-actions-build-4','property-actions-build-5') for a in c['argv']]
+ if any(a.endswith('/property-coordinator') for a in argv):
+  index=argv.index('--dynamic-linker');assert argv[index+1]=='/system/bin/linker64'
+  argv[index+1]='/system/bin/bootstrap/linker64'
+  xml_slots=[i for i,a in enumerate(argv) if a.endswith('/system/lib64/libxml2.so')];assert len(xml_slots)==1
+  argv[xml_slots[0]]=str(xml_archive)
  run(argv)
+assert '[Requesting program interpreter: /system/bin/bootstrap/linker64]' in subprocess.check_output(['readelf','-l',str(out/'property-coordinator')],text=True), 'Original bootstrap interpreter contract missing'
 argv=json.loads((r/'reports/android16-hwmanager-cohort/helper-build.json').read_text())['argv'];argv[argv.index('-o')+1]=str(out/'linux-exec-context-image');run(argv)
 (out/'artifacts.json').write_text(json.dumps({n:hashlib.sha256((out/n).read_bytes()).hexdigest() for n in ['graphics-client','cargo/debug/examples/native_supervisor','linux-exec-context-image','property-coordinator']},indent=2))
 base=r/'dist/aosp16/sf-cohort-build-32';vendor=json.loads((base/'vendor-inputs.json').read_text())

@@ -6,7 +6,7 @@ pool and dm names derived from the pinned APEX manifests enter the private dev.
 The outer runner owns cleanup. This does not establish MAC isolation.
 """
 from pathlib import Path
-import argparse, ctypes, errno, fcntl, json, os, re, signal, stat, subprocess, time
+import argparse, ctypes, errno, fcntl, json, os, re, signal, stat, struct, subprocess, time
 
 REPO = Path('/home/tv/repositorio-principal')
 
@@ -17,10 +17,46 @@ def save(path, value):
     temp.replace(path)
 
 
-def prepare(root, out, data_store):
+def mount_backing_image(image, target, number, out):
+    """Real readonly/autoclear Linux backing slot, outside original APEX IDs."""
+    image=Path(image).resolve();assert number in [128,129] and image.is_file()
+    path=out/'backing-loops.json';rows=json.loads(path.read_text()) if path.exists() else []
+    assert all(row['id']!=number for row in rows)
+    kernel=Path('/sys/devices/virtual/block')/f'loop{number}'
+    backing=kernel/'loop/backing_file'
+    assert not (backing.exists() and backing.read_text().strip()), 'Backing slot already occupied'
+    row={'id':number,'image':str(image),'created':False,'configured':False,'mounted':False}
+    rows.append(row);save(path,rows)
+    if not kernel.exists():
+        ctl=os.open('/dev/loop-control',os.O_RDWR|os.O_CLOEXEC)
+        try: fcntl.ioctl(ctl,0x4c80,number)
+        finally: os.close(ctl)
+        row['created']=True;save(path,rows)
+    major,minor=map(int,(kernel/'dev').read_text().split(':'))
+    node=out/f'backing-loop{number}';os.mknod(node,stat.S_IFBLK|0o600,os.makedev(major,minor))
+    fd=os.open(node,os.O_RDWR|os.O_CLOEXEC);image_fd=os.open(image,os.O_RDONLY|os.O_CLOEXEC)
+    try:
+        # Linux UAPI loop_config, native x86_64 ABI304 bytes. Real kernel flags:
+        # LO_FLAGS_READ_ONLY1 | LO_FLAGS_AUTOCLEAR4; keep FD until mount owns it.
+        info=struct.pack('=QQQQQIIII64s64s32sQQ',0,0,0,0,0,0,0,0,5,str(image).encode()[:63].ljust(64,b'\0'),b'\0'*64,b'\0'*32,0,0)
+        config=struct.pack('=II',image_fd,0)+info+b'\0'*64;assert len(config)==304
+        fcntl.ioctl(fd,0x4c0a,config)  # LOOP_CONFIGURE, not simulated ioctl
+        actual=bytearray(232);fcntl.ioctl(fd,0x4c05,actual,True)
+        fields=struct.unpack('=QQQQQIIII64s64s32sQQ',actual)
+        assert fields[5]==number and fields[8]&5==5 and fields[1]==image.stat().st_ino
+        row.update(configured=True,flags=fields[8],image_inode=fields[1],major=major,minor=minor);save(path,rows)
+        subprocess.run(['mount','-o','ro,noload',str(node),str(target)],check=True)
+        assert os.statvfs(target).f_flag & os.ST_RDONLY
+        row['mounted']=True;save(path,rows)
+    finally:
+        os.close(image_fd);os.close(fd)
+
+
+def prepare(root, out, data_store, bootstrap=False):
     modules = json.loads((REPO/'reports/android16-apex-bootstrap/complete-inputs.json').read_text())['modules']
     allowed = {m['name'] for m in modules}
     assert len(allowed) == 41
+    if bootstrap:allowed |= {m['name']+'@'+str(m['version']) for m in modules}
     # Persistent, disk-backed native cache; do not repeat nested loop-image I/O.
     data_store=data_store.resolve()
     assert data_store.parent==Path('/home/tv/.cache/archtv/aosp16-qpr2') and data_store.name.startswith('apex-data-store-')
@@ -49,22 +85,29 @@ def prepare(root, out, data_store):
             assert '/home/tv/repositorio-principal/dist/aosp16/' in value or value=='/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img',value
             occupied.append(int(p.name[4:]))
         else: idle.append(int(p.name[4:]))
-    created=[]; next_id=max([int(p.name[4:]) for p in paths],default=-1)+1
+    backing_rows=json.loads((out/'backing-loops.json').read_text()) if bootstrap else []
+    if bootstrap:assert occupied==[128,129] and all(row['mounted'] and row['flags']&5==5 for row in backing_rows)
+    created=[row['id'] for row in backing_rows if row['created']]; next_id=max([int(p.name[4:]) for p in paths],default=-1)+1
     state={'allowed_dm_names':sorted(allowed),'loop_pool':[],'created_loop_ids':created,'occupied_factory_loops':occupied,'dm_nodes':[],'scope':'Real Linux devices; trusted diagnostic only, not MAC or APK acceptance'}
     save(out/'devices.json',state)
     ctl=os.open('/dev/loop-control',os.O_RDWR|os.O_CLOEXEC)
     try:
-        while len(idle)<2*len(allowed)+8:
-            fcntl.ioctl(ctl,0x4c80,next_id)  # real LOOP_CTL_ADD, never fake GET_FREE
-            created.append(next_id);idle.append(next_id);next_id+=1
-            save(out/'devices.json',state)
+        if bootstrap:
+            pool=list(range(2*len(modules)+8));assert pool==list(range(90))
+            for number in pool:
+                kernel=Path('/sys/devices/virtual/block')/f'loop{number}'
+                backing=kernel/'loop/backing_file'
+                assert not (backing.exists() and backing.read_text().strip()), ('Original bootstrap slot occupied',number)
+                if not kernel.exists():
+                    fcntl.ioctl(ctl,0x4c80,number);created.append(number);save(out/'devices.json',state)
+        else:
+            while len(idle)<2*len(modules)+8:
+                fcntl.ioctl(ctl,0x4c80,next_id)
+                created.append(next_id);idle.append(next_id);next_id+=1;save(out/'devices.json',state)
+            pool=idle[:2*len(modules)+8]
+            assert pool==list(range(2,92)), ('Reserved loop profile mismatch',pool)
     finally: os.close(ctl)
-    pool=idle[:2*len(allowed)+8]
-    # Fixed experimental private RW pool. Original sysfs_loop labels are
-    # broader globally; this is not label exclusivity. Reject changed allocation
-    # before exposing a control; never borrow foreign loops.
-    assert pool==list(range(2,92)), ('Reserved loop policy/profile mismatch',pool)
-    state['loop_policy_profile']={'first':2,'last':91,'scope':'Exact private RW control pool and actual original labels; not exclusive global mappings'}
+    state['loop_policy_profile']={'first':pool[0],'last':pool[-1],'scope':'Actual private RW pool; original broad loop labels are not exclusive'}
     for number in pool:
         p=Path('/sys/devices/virtual/block')/f'loop{number}'
         major,minor=map(int,(p/'dev').read_text().split(':'))
@@ -85,7 +128,8 @@ def mount_sysfs(root):
 
 def enable_loop_controls(root,out):
     state=json.loads((out/'devices.json').read_text());changes=[]
-    assert state['loop_pool']==list(range(2,92)), 'Refuse unlabelled loop controls'
+    profile=state['loop_policy_profile']
+    assert state['loop_pool']==list(range(profile['first'],profile['last']+1)) and len(state['loop_pool'])==90, 'Refuse changed control pool'
     # Every slot was idle when reserved, but bootstrap may temporarily use it.
     # Keep its control available when apexd releases and reuses that slot.
     # The rest of sysfs
@@ -102,7 +146,7 @@ def enable_loop_controls(root,out):
     # Check the actual private mount boundary without writing a value. This
     # Linux-coordinator VFS negative is not an Android MAC/isolation test.
     denied=[]
-    for number in [0,1]:
+    for number in state['occupied_factory_loops']:
         other=root/'sys/devices/virtual/block'/f'loop{number}'/'queue/read_ahead_kb'
         assert other.is_file(), ('Missing negative control',str(other))
         try: fd=os.open(other,os.O_WRONLY|os.O_CLOEXEC)
