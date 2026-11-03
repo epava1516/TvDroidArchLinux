@@ -97,7 +97,7 @@ assert fuse_device=='10:229',fuse_device
 os.mknod(root/'dev/fuse',stat.S_IFCHR|0o600,os.makedev(10,229))
 os.chown(root/'dev/fuse',0,0)
 """
-for name in ['markor-app-data.txt','markor-user-start.txt','markor-resolve.txt','markor-launch.txt','markor-volumes.txt','markor-overlays.txt','markor-sf.png','markor-mountinfo.txt']:
+for name in ['markor-note-before-stop.txt','markor-note-after-relaunch.txt','markor-note-bytes.bin','markor-lifecycle.txt','markor-relaunch.txt','markor-app-data.txt','markor-user-start.txt','markor-resolve.txt','markor-launch.txt','markor-volumes.txt','markor-overlays.txt','markor-sf.png','markor-mountinfo.txt']:
  root_code+="\np=root/'data/local/tmp/archtv-mc1'/"+repr(name)+";p.touch(mode=0o640);os.chown(p,1000,2000);os.chmod(p,0o640)"
 root_code+="\np=root/'data/local/tmp/archtv-mc1/selected-failure.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
 root_code+="\np=root/'data/local/tmp/archtv-mc1/ranging-service-info.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
@@ -164,6 +164,9 @@ text=text.replace("log_observer=None;observed_logs=[];log_stop=False", "live_log
 text=text.replace('and len(observed_logs)<4096','')
 text=text.replace("live_log=(out/'android-log-live.jsonl').open('w')", "live_log=(out/'android-log-live.jsonl').open('w')\nlog_capture_file=(out/'android-log-capture.json').open('w')\nlog_capture={'records':0,'bytes':0,'limit_bytes':67108864,'truncated':False,'inline_limit_records':512}")
 text=text.replace("log_capture_file=(out/'android-log-capture.json').open('w')", "log_capture_file=(out/'android-log-capture.json').open('w')\nframe_capture=(out/'markor-sf.png').open('wb')\nos.fchmod(frame_capture.fileno(),0o600);os.fchown(frame_capture.fileno(),1000,1000)")
+# Capture actual app-owned bytes while the factory still owns /data. All host
+# outputs are preopened before pivot_root; no guest note is created here.
+text=text.replace("frame_capture=(out/'markor-sf.png').open('wb')", "workflow_capture=(out/'markor-workflow-evidence.json').open('w')\nframe_capture=(out/'markor-sf.png').open('wb')")
 text=text.replace("frame_capture=(out/'markor-sf.png').open('wb')", "mount_capture=(out/'markor-mountinfo.txt').open('wb')\nos.fchmod(mount_capture.fileno(),0o600);os.fchown(mount_capture.fileno(),1000,1000)\nframe_capture=(out/'markor-sf.png').open('wb')")
 text=text.replace('observed_logs.append(item)', """item['observed_monotonic']=time.monotonic()
     encoded=json.dumps(item)+'\\n';size=len(encoded.encode())
@@ -183,6 +186,28 @@ if frame_source.is_file():
  if 0<info.st_size<=16777216:
   pixels=frame_source.read_bytes();frame_capture.write(pixels);frame_capture.flush()
   frame_info.update(png_signature=pixels.startswith(bytes.fromhex('89504e470d0a1a0a')),sha256=hashlib.sha256(pixels).hexdigest())
+workflow={'scope':'Read-only actual note and original lifecycle outputs within one ephemeral cohort; not cross-cohort durability','token':None}
+try:
+ token_path=Path('/vendor/etc/archtv-markor-workflow-token')
+ if token_path.is_file():
+  token=token_path.read_text().strip()
+  assert len(token)==8 and all(c in '0123456789abcdef' for c in token)
+  workflow['token']=token
+  note=Path('/data/local/tmp/archtv-mc1/markor-note-bytes.bin')
+  workflow['note_source']='Original system_server client cat of actual /storage/emulated/0/Documents/archtv-'+token+'.md before force-stop; evidence copy only'
+  workflow['present']=note.is_file()
+  if note.is_file():
+   st=note.stat();assert st.st_size<=4096
+   raw=note.read_bytes()
+   workflow['note']={'path':str(note),'bytes_hex':raw.hex(),'sha256':hashlib.sha256(raw).hexdigest(),'size':st.st_size,'uid':st.st_uid,'gid':st.st_gid,'inode':st.st_ino,'mode':oct(st.st_mode & 0o7777),'matches_expected':raw==('archtv note '+token+'\\n').encode()}
+  for name in ['markor-lifecycle.txt','markor-relaunch.txt','markor-note-before-stop.txt','markor-note-after-relaunch.txt']:
+   src=Path('/data/local/tmp/archtv-mc1')/name
+   if src.is_file():
+    assert src.stat().st_size<=16384
+    workflow[name]=src.read_text()
+except Exception as error:
+ workflow['capture_error']=repr(error)
+workflow_capture.write(json.dumps(workflow,indent=2)+'\\n');workflow_capture.flush();workflow_capture.close()
 frame_capture.close()
 print('MARKOR_ORIGINAL_SF_CAPTURE '+json.dumps(frame_info),flush=True)
 mount_source=Path('/data/local/tmp/archtv-mc1/markor-mountinfo.txt')

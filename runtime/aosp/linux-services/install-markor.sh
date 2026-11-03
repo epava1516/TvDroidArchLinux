@@ -80,3 +80,36 @@ CLASSPATH=/system/framework/sm.jar /system/bin/app_process64 /system/bin com.and
 /system/bin/cmd overlay list --user 0 > /data/local/tmp/archtv-mc1/markor-overlays.txt
 /system/bin/cat /proc/self/mountinfo > /data/local/tmp/archtv-mc1/markor-mountinfo.txt
 /system/bin/screencap -p /data/local/tmp/archtv-mc1/markor-sf.png
+
+# Optional real-APK lifecycle experiment. Only the UI may create/write the note.
+if [ -f /vendor/etc/archtv-markor-workflow-token ]; then
+    token=$(/system/bin/cat /vendor/etc/archtv-markor-workflow-token)
+    case "$token" in ''|*[!0-9a-f]*) exit 1;; esac
+    [ "${#token}" -eq 8 ] || exit 1
+    note=/storage/emulated/0/Documents/archtv-$token.md
+    expected="archtv note $token"
+    n=0
+    while [ "$n" -lt 145 ]; do
+        if [ -f "$note" ] && [ "$(/system/bin/cat "$note")" = "$expected" ]; then break; fi
+        n=$((n+1)); /system/bin/sleep 1
+    done
+    [ -f "$note" ] && [ "$(/system/bin/cat "$note")" = "$expected" ]
+    [ "$(/system/bin/stat -c %s "$note")" -le 4096 ]
+    /system/bin/cat "$note" > /data/local/tmp/archtv-mc1/markor-note-bytes.bin
+    /system/bin/sha256sum "$note" > /data/local/tmp/archtv-mc1/markor-note-before-stop.txt
+    before=$(/system/bin/pidof net.gsantner.markor)
+    case "$before" in ''|*[!0-9]*) exit 1;; esac
+    /system/bin/printf 'before_pid=%s\n' "$before" > /data/local/tmp/archtv-mc1/markor-lifecycle.txt
+    /system/bin/cmd activity force-stop --user 0 net.gsantner.markor >> /data/local/tmp/archtv-mc1/markor-lifecycle.txt 2>&1
+    n=0
+    while [ -d /proc/$before ] && [ "$n" -lt 10 ]; do n=$((n+1)); /system/bin/sleep 1; done
+    [ ! -d /proc/$before ]
+    /system/bin/printf 'previous_process_absent=%s\n' "$before" >> /data/local/tmp/archtv-mc1/markor-lifecycle.txt
+    /system/bin/cmd activity start-activity -W --user 0 -n "$component" > /data/local/tmp/archtv-mc1/markor-relaunch.txt 2>&1
+    /system/bin/grep -qx 'Status: ok' /data/local/tmp/archtv-mc1/markor-relaunch.txt
+    after=$(/system/bin/pidof net.gsantner.markor)
+    case "$after" in ''|*[!0-9]*) exit 1;; esac
+    [ "$after" != "$before" ]
+    /system/bin/printf 'after_pid=%s\n' "$after" >> /data/local/tmp/archtv-mc1/markor-lifecycle.txt
+    /system/bin/sha256sum "$note" > /data/local/tmp/archtv-mc1/markor-note-after-relaunch.txt
+fi

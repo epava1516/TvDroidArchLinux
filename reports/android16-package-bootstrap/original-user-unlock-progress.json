@@ -163,7 +163,7 @@
     "Native normal lazy apexd exit CLD_EXITED0 clean1 followed by successful coordinatorclose0; explicit cancellation alternative was exercised133",
     "Native/exterior0; exact unitsinactive, VT1restored, no loops/dm/new FUSEconnections; host DRM node metadata identical"
   ],
-  "next": "Add read-only note-byte export inside existing factory before data teardown, with bounded tokenized workflow. Original trusted installer client can wait for exact app-written text, execute original cmd activity force-stop and manifest relaunch, record actual PID/death/launch outputs; never write the note or readiness. Drive actual reopen in GUI and compare bytes. Keep crosscohort durable data separate and open.",
+  "next": "Trace original permission activity return and focus/lifecycle before no-window state; existing UI driver must stop body input unless actual editor transition observed. Then actual saved bytes, original force-stop/new PID/relaunch and GUI reopen. Do not disable idle policy or seed permission/readiness; cross-cohort durable data remains separate.",
   "artifacts": {
     "/home/tv/recuperacion-archtv/ff987089-92db-43e2-852d-3e78501aae42-markor-software-launch/before-launch.json": "db7aaed86c8a4f5121ce3677ff47d50e11f74a3c646b3455437700432da2818a",
     "/home/tv/recuperacion-archtv/ff987089-92db-43e2-852d-3e78501aae42-markor-software-launch/result.json": "db31e85df10c964be7b912ab4f7c29b47f292e788e26c8df09ce639c935578b9",
@@ -2731,5 +2731,207 @@
       }
     },
     "next": "Add read-only note-byte export inside existing factory before data teardown, with bounded tokenized workflow. Original trusted installer client can wait for exact app-written text, execute original cmd activity force-stop and manifest relaunch, record actual PID/death/launch outputs; never write the note or readiness. Drive actual reopen in GUI and compare bytes. Keep crosscohort durable data separate and open."
+  },
+  "saved_note_lifecycle_followup154_155": {
+    "candidate155": 155,
+    "run_id": "d9f12728-85fe-4d1c-aade-4299dfd982fb",
+    "checkpoint": "/home/tv/recuperacion-archtv/d9f12728-85fe-4d1c-aade-4299dfd982fb-markor-software-launch",
+    "implementation": "Optional immutable eight-hex token in vendor payload; existing UID1000/system_server original installer observes real note through FUSE, then original cmd activity force-stop and manifest relaunch. Only diagnostic outputs precreated owner1000; note never seeded. Preopened factory FD exports captured bytes and lifecycle outputs.",
+    "executed154": {
+      "checkpoint": "/home/tv/recuperacion-archtv/26e79d3b-4d23-4abd-afac-07d377923b1c-markor-software-launch",
+      "native_exit": 0,
+      "outer_exit": 0,
+      "functional_result": "Real editor text visible and original shell exact cat comparison passed; next write of markor-note-before-stop.txt failed Permission denied. No process close/relaunch. Factory final backing path absent does not prove note absent during operation.",
+      "corrective_action155": "Precreate bounded diagnostic outputs with owner1000 and existing file mode0640, no directory permission expansion. Capture actual source bytes via original client before shutdown."
+    },
+    "executed155": {
+      "native_exit": 0,
+      "outer_exit": 0,
+      "functional_result": "Does not reach original Main explorer/new-file editor. Settings Spa displayed; later top process sleeping and final DRM frame black. UI driver main_transition false but still issued queued text commands: event delivery is not functional success. No original force-stop or relaunch observed.",
+      "cause": "Initial cause unknown. Original InputDispatcher at118760.501 reports StoragePermissionActivity has no input channel, then keys drop for no focused window at118765/118770/118776. Original PowerManager timeout118830 occurs later: sleep is a later consequence/observation, not demonstrated initial cause. No Markor FATAL found; background app failures separate.",
+      "note_evidence": {
+        "scope": "Read-only actual note and original lifecycle outputs within one ephemeral cohort; not cross-cohort durability",
+        "token": "d9f12728",
+        "note_source": "Original system_server client cat of actual /storage/emulated/0/Documents/archtv-d9f12728.md before force-stop; evidence copy only",
+        "present": true,
+        "note": {
+          "path": "/data/local/tmp/archtv-mc1/markor-note-bytes.bin",
+          "bytes_hex": "",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0,
+          "uid": 1000,
+          "gid": 2000,
+          "inode": 151,
+          "mode": "0o640",
+          "matches_expected": false
+        },
+        "markor-lifecycle.txt": "",
+        "markor-relaunch.txt": "",
+        "markor-note-before-stop.txt": "",
+        "markor-note-after-relaunch.txt": ""
+      },
+      "not_accepted": [
+        "saved-note bytes",
+        "main function",
+        "process close",
+        "relaunch",
+        "reopen",
+        "persistence",
+        "general services",
+        "MAC isolation"
+      ]
+    },
+    "cleanup": {
+      "154": {
+        "id": "26e79d3b-4d23-4abd-afac-07d377923b1c",
+        "outer_unit": "archtv-markor-session-26e79d3b-4d23-4abd-afac-07d377923b1c",
+        "runner_unit": "archtv-package-runner-26e79d3b-4d23-4abd-afac-07d377923b1c",
+        "initial_vt": "1",
+        "root_pid": 525737,
+        "root_boot_id": "4e18faf8-2b46-42e4-a6b2-269c34326b68",
+        "result": "native_result_recorded",
+        "fuse_connections_before": [],
+        "host_devices_before": {
+          "card0": {
+            "mode": "0o660",
+            "uid": 0,
+            "gid": 983,
+            "rdev": 57856,
+            "inode": 365
+          },
+          "renderD128": {
+            "mode": "0o666",
+            "uid": 0,
+            "gid": 987,
+            "rdev": 57984,
+            "inode": 364
+          }
+        },
+        "interaction_exit": 0,
+        "host_devices_after": {
+          "card0": {
+            "mode": "0o660",
+            "uid": 0,
+            "gid": 983,
+            "rdev": 57856,
+            "inode": 365
+          },
+          "renderD128": {
+            "mode": "0o666",
+            "uid": 0,
+            "gid": 987,
+            "rdev": 57984,
+            "inode": 364
+          }
+        },
+        "host_device_metadata_unchanged": true,
+        "fuse_connections_after": [],
+        "new_fuse_connections": [],
+        "final_vt": "1",
+        "outer_active": false,
+        "runner_active": false
+      },
+      "155": {
+        "id": "d9f12728-85fe-4d1c-aade-4299dfd982fb",
+        "outer_unit": "archtv-markor-session-d9f12728-85fe-4d1c-aade-4299dfd982fb",
+        "runner_unit": "archtv-package-runner-d9f12728-85fe-4d1c-aade-4299dfd982fb",
+        "initial_vt": "1",
+        "root_pid": 534123,
+        "root_boot_id": "4e18faf8-2b46-42e4-a6b2-269c34326b68",
+        "result": "native_result_recorded",
+        "fuse_connections_before": [],
+        "host_devices_before": {
+          "card0": {
+            "mode": "0o660",
+            "uid": 0,
+            "gid": 983,
+            "rdev": 57856,
+            "inode": 365
+          },
+          "renderD128": {
+            "mode": "0o666",
+            "uid": 0,
+            "gid": 987,
+            "rdev": 57984,
+            "inode": 364
+          }
+        },
+        "interaction_exit": 0,
+        "host_devices_after": {
+          "card0": {
+            "mode": "0o660",
+            "uid": 0,
+            "gid": 983,
+            "rdev": 57856,
+            "inode": 365
+          },
+          "renderD128": {
+            "mode": "0o666",
+            "uid": 0,
+            "gid": 987,
+            "rdev": 57984,
+            "inode": 364
+          }
+        },
+        "host_device_metadata_unchanged": true,
+        "fuse_connections_after": [],
+        "new_fuse_connections": [],
+        "final_vt": "1",
+        "outer_active": false,
+        "runner_active": false
+      }
+    },
+    "notification_coordination": "Both manifests active_owned then consumed once; no queue deliveries or new continuation. Gate remains absent. Historical71fd already consumed, skipped.",
+    "artifacts": [
+      {
+        "path": "/home/tv/recuperacion-archtv/26e79d3b-4d23-4abd-afac-07d377923b1c-markor-software-launch/run.log",
+        "sha256": "087cbe33f08d3de83e9b47ac65c9b24cb9cab9ea8ec948d2a0f1de12adbc512b"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/26e79d3b-4d23-4abd-afac-07d377923b1c-markor-software-launch/completion-consumer.json",
+        "sha256": "608ccc10ea6c904dd6ee59751d9b451126e656fa1b89df99ae6bb48306d03c62"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/26e79d3b-4d23-4abd-afac-07d377923b1c-markor-software-launch/inspect-note.png",
+        "sha256": "4cd99ad56e21176e01976b1da5f37252ab61c62a5ed83d7b3b6a92d80b86b418"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/d9f12728-85fe-4d1c-aade-4299dfd982fb-markor-software-launch/run.log",
+        "sha256": "31966f48f0ff92c3c455d9071d52a560093f5408f7a8e309cacf8ed3f1472ab8"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/d9f12728-85fe-4d1c-aade-4299dfd982fb-markor-software-launch/completion-consumer.json",
+        "sha256": "bf136f2faaa9b6d943fd10461cb05e37cb981ad76ed01f7293958f2c40beaf8c"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/d9f12728-85fe-4d1c-aade-4299dfd982fb-markor-software-launch/interaction-events.json",
+        "sha256": "4f173fc1a6e8a0736321b7b42ebccd05a866ef5846bbe366691d7adff0dd47d2"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/d9f12728-85fe-4d1c-aade-4299dfd982fb-markor-software-launch/reopen-driver.json",
+        "sha256": "ae36cbe74cccb5b385b66c98b778be4fad3f497b2b2fe3ffa6942563fbd05c01"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/d9f12728-85fe-4d1c-aade-4299dfd982fb-markor-software-launch/inspect-note.png",
+        "sha256": "3e25a09ca6defc8efa884ff9945f86dea746b99e7fd6c70fdfdfa8109877351a"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793702086806905127/markor-workflow-evidence.json",
+        "sha256": "cc6cb8d430d73932700038d36ac0bbe8b33594f228b4da0af2366743cc888024"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-1793702086806905127/android-log-live.jsonl",
+        "sha256": "6320a733ca4ec86d979cf22c90edd09a4bd45655f3674232c5659a7ab317ff81"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-155/source-inputs.json",
+        "sha256": "dd489e6b79baffcdcc34f2f33e4c2fbe7ed6909dc56f187c57314308b97bec2e"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-155/build-options.json",
+        "sha256": "51bdaca45f45ea1da5394662f61451637372893703b1adf812b7eb786daf9bb2"
+      }
+    ],
+    "next": "Trace original permission activity return and focus/lifecycle before no-window state; existing UI driver must stop body input unless actual editor transition observed. Then actual saved bytes, original force-stop/new PID/relaunch and GUI reopen. Do not disable idle policy or seed permission/readiness; cross-cohort durable data remains separate."
   }
 }
