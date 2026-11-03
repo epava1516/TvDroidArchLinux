@@ -416,13 +416,13 @@
         "scope": "Exact Markorv164 Markdown note created163 survives complete cohort teardown and original subsystems167; actual bytes, same UID/inodes/MCS, original install/force-stop/relaunch and real single pointer opens editor.167 native/exterior0. Not host reboot/power loss, FBE/MAC, graceful close, arbitrary upgrade or general APK compatibility."
       },
       "runtime_security_observation": {
-        "candidate": 175,
-        "status": "demonstrated_original_subsystem_failure_before_APK",
+        "candidate": 179,
+        "status": "original_VDC_Binder_operation_failed_before_APK",
         "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-        "record_sha256": "f64854090b3afbf55fb2b5097de218bc09dbfbfad480a9d182571f1e5ce3604e",
-        "scope": "Original namespace/derive atomic replacement/load_exports under enforcing; aconfig exits1, external inventory verifier denied. No Markor stage under MAC. Prior167 exact permissive note workflow unchanged.",
+        "record_sha256": "b865ffd7d0aecb74fb5cdec4279e547550731d705561d04ced1b783003577486",
+        "scope": "Early-system/mainline original initializers0; platform6 partial. Actual original VDC SID reaches vold; child helper NNP denied, VDC25. Original XML41 inactive after close, no live availability assertion. No new APK stage. Prior167 permissive workflow unchanged.",
         "r1_mac": "open",
-        "host_after": "permissive policyload10, audit0, no owned runtime processes/devices; lost_delta0"
+        "host_after": "permissive policyload13, audit0/lost_delta0, no owned resources; prior note unchanged"
       },
       "runtime_security_observation_history": [
         {
@@ -433,6 +433,15 @@
           "scope": "Original daemon exec with NNP1 under enforcing, APEX inventory client fails identity/DAC capture. No Markor launch or stage tested in this security profile. Previous167 exact permissive note workflow remains scoped to its earlier policy; not revalidated under current loaded policy6.",
           "r1_mac": "open",
           "host_after": "permissive policyload6, audit0, no owned runtime processes/devices; audit171 lost16"
+        },
+        {
+          "candidate": 175,
+          "status": "demonstrated_original_subsystem_failure_before_APK",
+          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "record_sha256": "f64854090b3afbf55fb2b5097de218bc09dbfbfad480a9d182571f1e5ce3604e",
+          "scope": "Original namespace/derive atomic replacement/load_exports under enforcing; aconfig exits1, external inventory verifier denied. No Markor stage under MAC. Prior167 exact permissive note workflow unchanged.",
+          "r1_mac": "open",
+          "host_after": "permissive policyload10, audit0, no owned runtime processes/devices; lost_delta0"
         }
       ]
     }

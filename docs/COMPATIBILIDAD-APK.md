@@ -1,6 +1,8 @@
 # Matriz de aplicaciones reales
 
-Seguridad175 · [subsistemas originales, aún sin Markor MAC](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): deriva y carga de exports originales probadas; aconfig termina1 y el verificador no acepta inventario. Mantener las etapas locales de Markor167 con su alcance permisivo. Sin nueva compatibilidad APK, ARM, GMS ni DRM.
+Seguridad179 · [aconfig/VDC, sin nueva aceptación APK](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): original init_user0 alcanza vold y falla en auxiliar NNP. La nota e instalación previas conservan sus bytes/etiquetas tras la prueba; no equivale a ejecutar de nuevo Markor bajo MAC. Etapas167 mantienen alcance permisivo, ARM/GMS/DRM separados.
+
+Histórico175 · [subsistemas originales, aún sin Markor MAC](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): deriva y carga de exports originales probadas; aconfig termina1 y el verificador no acepta inventario. Mantener las etapas locales de Markor167 con su alcance permisivo. Sin nueva compatibilidad APK, ARM, GMS ni DRM.
 
 Histórico · Estado de seguridad171 · [admisión original en enforcing y límites](../reports/android16-package-bootstrap/r1-mac-integrated-progress.json): Rust→Bionic/init y exec originales de vold/apexd superan NNP1; cgroups privados tienen etiquetas originales y los del anfitrión conservan las Linux. El cliente de inventario APEX falla: UID0/SID shell no puede escribir en la captura UID2000:GID1000/0750 sin capacidades DAC prohibidas. No se acepta disponibilidad APEX ni Markor bajo MAC. El anfitrión queda permisivo/policyload6, auditoría0 y sin procesos/dispositivos propios.170 no pierde auditoría;171 pierde16 registros, por lo que no es exhaustivo. Próximo: identidad/captura legítimas del cliente y derive_classpath original, interfaces Linux de metadatos y logd original; no conceder DAC a shell ni fabricar inventario.
 

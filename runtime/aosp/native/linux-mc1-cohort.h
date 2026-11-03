@@ -302,14 +302,25 @@ class LinuxMc1Cohort {
             if(!IsDefaultMountNamespaceReady())return android::base::Error()<<"Original default namespace not ready";
             std::fprintf(stderr,"APEX_ORIGINAL_DEFAULT_CONFIG_RETURNED REQUIRES_SERVICE_OPERATIONS\n");
             if(auto flags=StartAconfig(tick);!flags.ok())return flags;
+            // Reuse original init_user0 -> ExecVdcRebootOnFailure. A root
+            // shell retains shell SID and is not the authorized VDC caller.
+            // Attach our observation before the next reap tick, preserving
+            // the original failure callback and transition/identity contract.
+            const std::vector<std::string> storage_args={"/system/bin/vdc","--wait","cryptfs","init_user0"};
+            if(services.FindService(storage_args,&Service::args))
+                return android::base::Error()<<"Unexpected preexisting original init_user0 client";
+            auto initialize=GetBuiltinFunctionMap().Find({"init_user0"});
+            if(!initialize.ok())return initialize.error();
+            if(auto initialized=initialize->function(BuiltinArguments{{"init_user0"},context});!initialized.ok())return initialized;
+            auto* storage_peer=services.FindService(storage_args,&Service::args);
+            if(!storage_peer || storage_peer->pid()<=0 || storage_peer->uid()!=0 || storage_peer->gid()!=0)
+                return android::base::Error()<<"Original init_user0 client identity/entry missing";
             client_done_=false;client_ok_=false;
-            auto storage=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","root","root","--","/system/bin/sh","-c",
-                "umask 077; /system/bin/service check vold > /data/local/tmp/archtv-mc1/vold-query.txt 2>&1; /system/bin/vdc cryptfs init_user0 > /data/local/tmp/archtv-mc1/vold-user0.txt 2>&1"});
-            if(!storage.ok())return storage.error();
-            auto* storage_peer=storage->get();
-            storage_peer->AddReapCallback([this](const siginfo_t& info){client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;});
-            services.AddService(std::move(*storage));
-            if(auto started=storage_peer->ExecStart();!started.ok())return started;
+            storage_peer->AddReapCallback([this](const siginfo_t& info){
+                client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;
+                std::fprintf(stderr,"STORAGE_ORIGINAL_USER0_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
+            });
+            std::fprintf(stderr,"STORAGE_ORIGINAL_USER0_STARTED pid=%d ORIGINAL_BUILTIN_NOT_RETURNED\n",storage_peer->pid());
             if(auto waited=Wait(tick,[this]{return client_done_;},25);!waited.ok())return waited;
             if(!client_ok_)return android::base::Error()<<"Original vold init_user0 failed";
             std::fprintf(stderr,"STORAGE_ORIGINAL_USER0_RETURNED REQUIRES_FILES_AND_PERMISSION_PERSISTENCE\n");

@@ -45,3 +45,29 @@
 ; Actual174: independent Linux verifier reads its immutable expected manifest
 ; carried in the vendor image, never substitutes it for original XML/mounts.
 (allow linux.init_t vendor_configs_file (file (read open getattr)))
+
+; Actual175: original aconfigd reaches exec with NNP1, then Bionic/Rust
+; follows /proc/self. Linux owns the proc alias label; directory/file target
+; checks remain separate. Do not expose host namespace handles.
+(allow aconfigd linux.proc_t (lnk_file (read)))
+; Independent trusted Linux observer traverses original private RO images
+; and the producer's APEX mount tree. These are search-only edges, not
+; Android privileges, file contents, writes, or synthetic inventory.
+(allow linux.init_t vendor_file (dir (search)))
+(allow linux.init_t system_file (dir (search)))
+(allow linux.init_t apex_mnt_dir (dir (search)))
+
+; Actual176: mainline original RC/init_daemon_domain reaches the NNP gate.
+; Its source main.rs calls inherited_fd::init_once before logging; the pinned
+; rustutils implementation canonicalizes /proc/self/fd. Preserve both checks
+; and NNP, with Linux's proc alias bridge only (no execute_no_trans).
+(allow init aconfigd_mainline (process2 (nnp_transition)))
+(allow aconfigd_mainline linux.proc_t (lnk_file (read)))
+; Actual176 verifier reads original producer XML, not a generated inventory.
+(allow linux.init_t apex_info_file (file (read open getattr)))
+
+; Original builtins.cpp init_user0 invokes /system/bin/vdc --wait cryptfs
+; init_user0. Pinned AOSP already defines init vdc_exec -> vdc. Preserve NNP1
+; at that exact original edge instead of root shell or execute_no_trans.
+(allow init vdc (process2 (nnp_transition)))
+(allow vdc linux.proc_t (lnk_file (read)))

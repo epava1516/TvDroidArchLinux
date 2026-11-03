@@ -1,6 +1,8 @@
 # Roadmap · Arch TV nativo en Rust
 
-Prioridad175: [estado canónico](docs/ESTADO.md) y [experimento integrado](reports/android16-package-bootstrap/original-apex-derive-mac-progress.json). Derive original bajo MAC probado; aconfig/proc y verificador bloquean la siguiente integración. R1-MAC y recorrido completo bajo controles abiertos.
+Prioridad179: [estado](docs/ESTADO.md) · builtin/VDC original alcanza vold y falla25 en auxiliar NNP; exigir operación user0 completa y APEX en vivo, luego Markor bajo MAC. [Evidencias](reports/android16-package-bootstrap/original-apex-derive-mac-progress.json).
+
+Histórico175: [estado canónico](docs/ESTADO.md) y [experimento integrado](reports/android16-package-bootstrap/original-apex-derive-mac-progress.json). Derive original bajo MAC probado; aconfig/proc y verificador bloquean la siguiente integración. R1-MAC y recorrido completo bajo controles abiertos.
 
 Estado de seguridad171 · [admisión original en enforcing y límites](reports/android16-package-bootstrap/r1-mac-integrated-progress.json): Rust→Bionic/init y exec originales de vold/apexd superan NNP1; cgroups privados tienen etiquetas originales y los del anfitrión conservan las Linux. El cliente de inventario APEX falla: UID0/SID shell no puede escribir en la captura UID2000:GID1000/0750 sin capacidades DAC prohibidas. No se acepta disponibilidad APEX ni Markor bajo MAC. El anfitrión queda permisivo/policyload6, auditoría0 y sin procesos/dispositivos propios.170 no pierde auditoría;171 pierde16 registros, por lo que no es exhaustivo. Próximo: identidad/captura legítimas del cliente y derive_classpath original, interfaces Linux de metadatos y logd original; no conceder DAC a shell ni fabricar inventario.
 

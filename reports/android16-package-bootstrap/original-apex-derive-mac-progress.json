@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "utc": "2026-11-03T14:48:12.978470+00:00",
+  "utc": "2026-11-03T15:06:41.499077+00:00",
   "scope": "Partial original APEX/derive admission under bounded enforcing; no new APK stage or general MAC/isolation acceptance",
   "base_commit": "39d0be0edb77c13575681175fc26e730adee3c11",
   "executions": {
@@ -123,6 +123,100 @@
       "outer_exit": 1,
       "native_complete_inventory_verified": false,
       "finding": "Original derive succeeds and atomic replacement observed. aconfig original transition now executes; exits1 with /proc/self Linux proc_t lnk_file read denied. Later close fails/internal Android shutdown request retained; no host reboot. External inventory verifier still denied ancestor search (vendor_file); inventory unaccepted."
+    },
+    "176": {
+      "result.json": {
+        "path": "/home/tv/recuperacion-archtv/9b626a1c-4720-45b0-be7c-6edc84d5da62-markor-software-launch/result.json",
+        "sha256": "56749294622499201277a40205af99bf7c26f4c5ccf1b11ea0d151767aa14b35"
+      },
+      "mac-window.json": {
+        "path": "/home/tv/recuperacion-archtv/9b626a1c-4720-45b0-be7c-6edc84d5da62-markor-software-launch/mac-window.json",
+        "sha256": "0348b5c27266abc6ea6256604524ed1ab751d3c9f29732fd3e02a894be3249a2"
+      },
+      "session-state.json": {
+        "path": "/home/tv/recuperacion-archtv/9b626a1c-4720-45b0-be7c-6edc84d5da62-markor-software-launch/session-state.json",
+        "sha256": "9b96f9f60385e103d9213c8b6475ff1331b7caacf144371937e68a349fc76beb"
+      },
+      "finite-audit/result.json": {
+        "path": "/home/tv/recuperacion-archtv/9b626a1c-4720-45b0-be7c-6edc84d5da62-markor-software-launch/finite-audit/result.json",
+        "sha256": "75b8dbe45ad3b9a6403c58c420b6c475a81587179989f7842defc8927344412c"
+      },
+      "completion-consumer.json": {
+        "path": "/home/tv/recuperacion-archtv/9b626a1c-4720-45b0-be7c-6edc84d5da62-markor-software-launch/completion-consumer.json",
+        "sha256": "792936dc4ad28947abb71064c4b377e629c68c3586f36a1c7d70e3d90509e6a9"
+      },
+      "android-service-journal.json": {
+        "path": "/home/tv/recuperacion-archtv/9b626a1c-4720-45b0-be7c-6edc84d5da62-markor-software-launch/android-service-journal.json",
+        "sha256": "4ec19d8241e15b9531583784a614ad7e021ff630d9d0a4a627b11120cb0f3daa"
+      },
+      "run.log": {
+        "path": "/home/tv/recuperacion-archtv/9b626a1c-4720-45b0-be7c-6edc84d5da62-markor-software-launch/run.log",
+        "sha256": "4743207476a9e4ffa983ad2ad328bbad77960e82b3193a8b5dc543f6b9e4ac3b"
+      },
+      "checkpoint": "/home/tv/recuperacion-archtv/9b626a1c-4720-45b0-be7c-6edc84d5da62-markor-software-launch",
+      "outer_exit": 1,
+      "native_complete_inventory_verified": false,
+      "finding": "Original early_system initializer exits0 after Linux proc alias bridge. Platform initializer exits6 known nonfatal vendor-absent contract with actual system/system_ext/product outputs, not full flag acceptance. Original mainline initializer blocked init->aconfigd_mainline NNP and exits127. External XML read denied. No new APK stage."
+    },
+    "177": {
+      "result.json": {
+        "path": "/home/tv/recuperacion-archtv/71349ce9-c258-4ff2-9ea2-4f2c4a0ffed2-markor-software-launch/result.json",
+        "sha256": "6e616df3652b256a4e2ded9a0a360c82e7c1589a8f2946f6c7806a3614265dd8"
+      },
+      "mac-window.json": {
+        "path": "/home/tv/recuperacion-archtv/71349ce9-c258-4ff2-9ea2-4f2c4a0ffed2-markor-software-launch/mac-window.json",
+        "sha256": "ffbe82f1165651c0b565c5497010006f5840e09175cb5741417a48109bbef8b6"
+      },
+      "session-state.json": {
+        "path": "/home/tv/recuperacion-archtv/71349ce9-c258-4ff2-9ea2-4f2c4a0ffed2-markor-software-launch/session-state.json",
+        "sha256": "58e036793c67f8bb2078a217a07456e9f57ee3669d1672868b3e34f20fb9130c"
+      },
+      "finite-audit/result.json": {
+        "path": "/home/tv/recuperacion-archtv/71349ce9-c258-4ff2-9ea2-4f2c4a0ffed2-markor-software-launch/finite-audit/result.json",
+        "sha256": "58800b5621920a0446ef0f014b127185a8181beb2b2e9dd4a41b011bd6001c8c"
+      },
+      "completion-consumer.json": {
+        "path": "/home/tv/recuperacion-archtv/71349ce9-c258-4ff2-9ea2-4f2c4a0ffed2-markor-software-launch/completion-consumer.json",
+        "sha256": "f1aa7844998481257578ce3a312dd9d18854f3571bf8097047fc6ee7fbf92c98"
+      },
+      "run.log": {
+        "path": "/home/tv/recuperacion-archtv/71349ce9-c258-4ff2-9ea2-4f2c4a0ffed2-markor-software-launch/run.log",
+        "sha256": "631542f992f057854da01293fa4026679b6f09e3b3f2aebfef05458ae5c453e4"
+      },
+      "checkpoint": "/home/tv/recuperacion-archtv/71349ce9-c258-4ff2-9ea2-4f2c4a0ffed2-markor-software-launch",
+      "outer_exit": 1,
+      "native_complete_inventory_verified": false,
+      "finding": "Original early-system0 and mainline0; platform6 known partial, not complete flags. Socket oneshots0 do not establish socket service availability. Old root/shell VDC gate exits1 with DAC capabilities denied. Producer XML read after close has41 records, ALL inactive; no live inventory accepted."
+    },
+    "179": {
+      "result.json": {
+        "path": "/home/tv/recuperacion-archtv/47084881-176c-4fb6-bd15-765df4685086-markor-software-launch/result.json",
+        "sha256": "fcb4627fe7d8cf52ea17afb6c6b439c7866c28c9607f253013184e623d3508a1"
+      },
+      "mac-window.json": {
+        "path": "/home/tv/recuperacion-archtv/47084881-176c-4fb6-bd15-765df4685086-markor-software-launch/mac-window.json",
+        "sha256": "80993e813726701dccaaf04378bdf64fd96b8c394c204b3f9b89005220549ec7"
+      },
+      "session-state.json": {
+        "path": "/home/tv/recuperacion-archtv/47084881-176c-4fb6-bd15-765df4685086-markor-software-launch/session-state.json",
+        "sha256": "1a05b208f549a72cf95226aeaa58286961aec3932654cd993cdc282dd00c5041"
+      },
+      "finite-audit/result.json": {
+        "path": "/home/tv/recuperacion-archtv/47084881-176c-4fb6-bd15-765df4685086-markor-software-launch/finite-audit/result.json",
+        "sha256": "56cbbbc944cf152f77f38df4f84698832b6596c0361266fdd2aabf45999347cf"
+      },
+      "completion-consumer.json": {
+        "path": "/home/tv/recuperacion-archtv/47084881-176c-4fb6-bd15-765df4685086-markor-software-launch/completion-consumer.json",
+        "sha256": "3a26c15002bc6d5aa35a52c73a3bbd0052e8cc16ac79f80cf653145f6d465c4a"
+      },
+      "run.log": {
+        "path": "/home/tv/recuperacion-archtv/47084881-176c-4fb6-bd15-765df4685086-markor-software-launch/run.log",
+        "sha256": "849fa77e795e0614d53c6f5654619a3b95311d2f0355caa966629fa52bd831f0"
+      },
+      "checkpoint": "/home/tv/recuperacion-archtv/47084881-176c-4fb6-bd15-765df4685086-markor-software-launch",
+      "outer_exit": 1,
+      "native_complete_inventory_verified": false,
+      "finding": "Original init_user0 builtin creates VDC --wait cryptfs init_user0, root UID/GID and original kernel vdc SID observed in audit. Client reaches original vold and returns25; child vold_prepare_subdirs blocked by original transition NNP gate. No user initialization or APK stage accepted. Native shutdown request retained; host not rebooted."
     }
   },
   "decisions": [
@@ -159,12 +253,84 @@
     "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load10/after-load.json",
     "sha256": "309743229826231a5a6d96498f808485c1d5ad5ce3a5cd8c1a279f21f26b9aa8"
   },
-  "next": "Study original aconfig /proc/self use, grant only justified Linux proc alias bridge; separately fix trusted verifier directory search based on actual paths. Keep original logd sender issue and system properties open; next integrated run must advance real original subsystems, not audit alone.",
+  "next": "Admit exact original vold->vold_prepare_subdirs NNP edge from source/actual179, retaining IDs/caps/NNP/DAC/neverallows. Resolve genuine Linux metadata interfaces only as justified. Observe inventory while live and VDC result; then original network/hardware/ART/PMS/AMS toward Markor MAC, not success by fixtures.",
   "original_sources": {
     "sdkextensions_commit": "4d10e57070bb9c6edcd13bf74e9d01717b2a5ecf",
     "derive_rc_sha256": "a9e65b0c114408e5cb8356bdb435a6b48d0a67cd7879915c52ffa094a267f607",
     "cache": "/home/tv/.cache/archtv/aosp16-qpr2/sdkext-classpath-study-1",
     "code": "https://android.googlesource.com/platform/packages/modules/SdkExtensions/+/4d10e57070bb9c6edcd13bf74e9d01717b2a5ecf/derive_classpath/",
     "scope": "Source inspection: original system UID/RC, default output and rename; execution recorded separately. Original private/aconfigd.te init_daemon_domain reused."
-  }
+  },
+  "after176_host": {
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after176-host.json",
+    "sha256": "797aa766b4abf6f307e56cb5829b76f7b863372b10dfa521a9d05e835a25fd46"
+  },
+  "policy11_artifact": {
+    "path": "dist/aosp16/selected-platform-policy-11/artifact.json",
+    "sha256": "d9c687909cf3ed891276a080efed0c6adb48ab478e2f952c13609170616b715f"
+  },
+  "aconfig_mainline_sources": {
+    "main.rs": {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/aconfigd-source-study-1/main.rs",
+      "sha256": "27c7aded85cf8ba13bc3c5d76246e6c7bdc3d187a18151c36118976974b758cb"
+    },
+    "aconfigd.rs": {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/aconfigd-source-study-1/aconfigd.rs",
+      "sha256": "e385659a607278a4b482a70ab2ca91b321a4053cfea6c8b3f1c72f8cb6e68998"
+    },
+    "aconfigd_commands.rs": {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/aconfigd-source-study-1/aconfigd_commands.rs",
+      "sha256": "48dd7aff99aedb9b67ce35fb9f8bcbf57099b24cfaf88d4f2ca4c1a210402e8e"
+    }
+  },
+  "source_interpretation": "ConfigInfrastructure source fetched is MAINLINE, not evidence of system initializer implementation. main.rs calls rustutils inherited_fd::init_once; pinned original librustutils/src/inherited_fd.rs canonicalizes /proc/self/fd. Actual176 early-system0 is execution, separate from mainline source inference.",
+  "failed_build178": {
+    "scope": "Never executed; agent supplied wrong option names, rejected before native compile. Correct options used in179; failure directory preserved.",
+    "directory": "dist/aosp16/package-cohort-build-178"
+  },
+  "policy12_artifact": {
+    "path": "dist/aosp16/selected-platform-policy-12/artifact.json",
+    "sha256": "a2ea1f2cad53c76f132ee1f390d73631e3d7f330e37327b4d7b16efced54b966"
+  },
+  "policy13_artifact": {
+    "path": "dist/aosp16/selected-platform-policy-13/artifact.json",
+    "sha256": "fceaf1555881d9b56b72f56fbaeceb8fed4a9af613e58221bf4c994109bc0a4d"
+  },
+  "build179": {
+    "source-inputs.json": {
+      "path": "dist/aosp16/package-cohort-build-179/source-inputs.json",
+      "sha256": "ece174726be72437132eea64d62202f6b72356154d94662a28279cab4db29d8c"
+    },
+    "build-options.json": {
+      "path": "dist/aosp16/package-cohort-build-179/build-options.json",
+      "sha256": "2cecab8576da22fbaec110055599eab30ce60f4989dddeea59e842a943f1c9a7"
+    },
+    "artifacts.json": {
+      "path": "dist/aosp16/package-cohort-build-179/artifacts.json",
+      "sha256": "609a33f53ea467786c1f13adc0738b1be6c2aa98861e477c79f587cc7a503d37"
+    },
+    "build.json": {
+      "path": "dist/aosp16/package-cohort-build-179/build.json",
+      "sha256": "caf33621451b35a8e2b2b5a6cfffb1686464913b088039c829838f9a3e01bbd8"
+    }
+  },
+  "after179_host": {
+    "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/after179-host.json",
+    "sha256": "2292f4bc52b6ad8f1098835b6e4679d6390b9212955828fa74db4e06e632dec2"
+  },
+  "userdata_after179": {
+    "path": "/home/tv/recuperacion-archtv/47084881-176c-4fb6-bd15-765df4685086-markor-software-launch/userdata-after179-close.json",
+    "sha256": "9e395067238c647c729c48a03dc8a115e81727ff30a8bfd6f4e50098098c9134"
+  },
+  "latest_host": "Permissive policyload13 readback eab652d057be4ad3e0732da46ef2ac792a0e01f91d5e902eb433028567aec4b2, audit0/backlog64/lost_delta0, same boot, no owned units/loops/dm/FUSE; host GPU metadata unchanged. Existing21-byte note/hash/inodes/labels preserved, not a new APK test.",
+  "vdc_source_contract": {
+    "builtin": "Pinned system/core/init/builtins.cpp1122\u20131172: original temporary exec plus original failure callback; exact argv /system/bin/vdc --wait cryptfs init_user0. Native observes actual reaping before advance, no shell redirection or synthetic readiness.",
+    "vold_helper": {
+      "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/vold-fscrypt-original/FsCrypt.cpp",
+      "sha256": "716c7553fc8ce7ad48c1857676e23adcb4458de362869655b30c712c287b0876"
+    },
+    "original_transition": "(typetransition vold vold_prepare_subdirs_exec process vold_prepare_subdirs) present in original policy; NNP1 gate is distinct and denied179.",
+    "limits": "VDC audit SID established, full caps and process metadata not externally sampled yet. Error25 not rewritten as success; helper and complete user0 operation remain open."
+  },
+  "inventory_timing_limit": "Verifier currently runs after native process stop. Actual original XML177/17941 entries inactive after original shutdown; cannot use as proof of live unavailability or invent active flags. Next integration must capture original XML and actual mounts while cohort remains live, keep closing observation separate."
 }

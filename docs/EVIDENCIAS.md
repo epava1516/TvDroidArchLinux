@@ -1,6 +1,8 @@
 # Índice de evidencias
 
-Vigente175 · [índice de ejecuciones172–175, hashes, fuentes y limitaciones](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): classpath generado por servicio original y reemplazo real bajo enforcing; control de namespace positivo/negativo. Aconfig y verificador siguen fallando. Se conservan errores, cierres y pérdida de auditoría0 de cada ventana; no confundirlos con el histórico171. REA MCP conectado, proveedor nativo no disponible y captura172 incompleta, documentados separadamente.
+Actualización179 · [ejecuciones176/177/179, fuentes, hashes y límites](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): originales early-system/mainline0; platform6 parcial explícito; builtin/VDC25 y denegación NNP del auxiliar. XML41 inactivo tras cierre y verificación de nota previa separadas de ejecución APK. Compilación178 rechazada por opciones erróneas, nunca ejecutada;179 compilada con fuentes congeladas. Auditoría sin pérdida nueva y restauración del anfitrión verificadas.
+
+Histórico175 · [índice de ejecuciones172–175, hashes, fuentes y limitaciones](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): classpath generado por servicio original y reemplazo real bajo enforcing; control de namespace positivo/negativo. Aconfig y verificador siguen fallando. Se conservan errores, cierres y pérdida de auditoría0 de cada ventana; no confundirlos con el histórico171. REA MCP conectado, proveedor nativo no disponible y captura172 incompleta, documentados separadamente.
 
 [R1-MAC integrado168–171](../reports/android16-package-bootstrap/r1-mac-integrated-progress.json): política/fuentes/hashes, NNP original corregido, cgroup real, negativo directo-helper y fallo real del cliente APEX. Restauración normal a permisivo y auditoría0 verificadas; watchdog por expiración pendiente, pérdida16 en171 y ninguna etapa APK enforcing aceptada.
 

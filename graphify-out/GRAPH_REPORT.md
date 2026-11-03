@@ -1,7 +1,7 @@
 # Graph Report - repositorio-principal  (2026-11-03)
 
 ## Corpus Check
-- 346 files · ~318,787 words
+- 346 files · ~319,246 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 48 file(s) not represented in the graph (top: .cil 15, .xml 11, .patch 11)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `39d0be0e`
+- Built from commit: `2cd1ac50`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -795,7 +795,7 @@ Nodes (6): Android existente, Base actual y herramientas conservadas, Desarrollo
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `ready()` connect `ready` to `re`, `verify_wayland_resize.py`?**
-  _High betweenness centrality (0.175) - this node is a cross-community bridge._
+  _High betweenness centrality (0.174) - this node is a cross-community bridge._
 - **What connects `archtv-aosp-linux`, `archtv-apk-host`, `archtv-compositor` to the rest of the system?**
   _230 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `worker.rs` be split into smaller, more focused modules?**
@@ -804,7 +804,7 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.077) - this node is a cross-community bridge._
 - **Should `resources-jni.cpp` be split into smaller, more focused modules?**
   _Cohesion score 0.13535353535353536 - nodes in this community are weakly interconnected._
-- **Why does `TvCompositor` connect `TvCompositor` to `xdg_shell.rs`, `winit.rs`, `mod.rs`, `input.rs`, `drm.rs`, `session.rs`, `.process_input_event`, `compositor.rs`?**
-  _High betweenness centrality (0.069) - this node is a cross-community bridge._
+- **Why does `Arquitectura vigente · A16-QPR2-1` connect `Arquitectura vigente · A16-QPR2-1` to `Puerta vigente: Binder privado y política del Linux anfitrión`, `ready`, `ROADMAP.md`?**
+  _High betweenness centrality (0.065) - this node is a cross-community bridge._
 - **Should `Client` be split into smaller, more focused modules?**
   _Cohesion score 0.07932692307692307 - nodes in this community are weakly interconnected._

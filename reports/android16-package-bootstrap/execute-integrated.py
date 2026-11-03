@@ -337,7 +337,8 @@ text=text.replace(marker,verify_always+marker,1)
 
 text+="\nassert Path('/data/local/tmp/archtv-mc1/package-query.txt').read_text()=='Service package: found\\n'\npackage_list=Path('/data/local/tmp/archtv-mc1/package-list.txt').read_text().splitlines()\nassert 'package:android' in package_list and all(v.startswith('package:') for v in package_list),package_list\nprint('PACKAGES_ORIGINAL_LIST_VERIFIED NOT_INSTALL_DATA_OR_APK_ACCEPTANCE',flush=True)\n"
 text+=r"""
-assert Path('/data/local/tmp/archtv-mc1/vold-query.txt').read_text()=='Service vold: found\n'
+# Original init_user0 invokes VDC itself; no unauthorized shell query gate.
+# The native callback records its real result; storage topology follows.
 ce_mounts=[line for line in Path('/proc/self/mountinfo').read_text().splitlines() if line.split()[4]=='/data/user/0']
 data_mounts=[line for line in Path('/proc/self/mountinfo').read_text().splitlines() if line.split()[4]=='/data']
 # vold may stack an identical /data bind on the Linux-owned data mount.
