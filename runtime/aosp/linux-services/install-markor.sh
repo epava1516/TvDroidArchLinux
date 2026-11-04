@@ -4,6 +4,14 @@
 set -eu
 apk_path=/data/local/tmp/markor.apk
 apk_bytes=$(/system/bin/stat -c %s "$apk_path")
+# Wait for the original AMS boot completion before asking it to start/unlock
+# users. This only reads the original property; no readiness is manufactured.
+boot_wait=0
+while [ "$(/system/bin/getprop sys.boot_completed)" != 1 ] && [ "$boot_wait" -lt 200 ]; do
+    boot_wait=$((boot_wait + 1)); /system/bin/sleep 1
+done
+[ "$(/system/bin/getprop sys.boot_completed)" = 1 ]
+
 # Install into an actually unlocked, mounted original user environment.
 # Original state immediately before a possibly blocking user-start, not a replacement.
 /system/bin/dumpsys activity processes > /data/local/tmp/archtv-mc1/markor-boot-before-user.txt

@@ -172,6 +172,7 @@ class LinuxMc1Cohort {
     android::base::Result<void> Close(const Tick& tick) {
         using namespace android::init;
         if(!active_) return {};
+        const bool workflow_completed= !workflow_started_ || (workflow_done_ && workflow_ok_);
         closing_=true;
         if(auto revoked=RevokeLinuxLazyInterfaces(epoll_);!revoked.ok())return revoked;
         auto& services=ServiceList::GetInstance();
@@ -208,6 +209,7 @@ class LinuxMc1Cohort {
         int observed_mode=security_getenforce();
         std::fprintf(stderr,"MC1_CLOSE_OBSERVED enforcing=%d expected=%d\n",observed_mode,expected_mode_);
         if(observed_mode!=expected_mode_)return android::base::Error()<<"MC1 security mode changed during close";
+        if(!workflow_completed)return android::base::Error()<<"Original Markor shell workflow failed or incomplete before close; inspect actual outputs";
         return {};
     }
  private:
@@ -1160,16 +1162,24 @@ class LinuxMc1Cohort {
         if(apex_requested_) {
             std::fprintf(stderr,"NETWORK_NETD_ROOT_OPERATION_NOT_RETESTED_NOT_CURRENT_OPERATION_ACCEPTANCE\n");
             client_done_=false;client_ok_=false;
+            // This is an external original adb-shell style client, not a
+            // child of system_server. Its real CLI waits for original user and
+            // volume state, then performs PackageInstaller sessions and UI work.
+            // It remains owned during the observation window; startup is not
+            // installation readiness, and closure requires its real success.
             auto package_client=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","shell","shell","--",
-                "/system/bin/sh","-c","umask 077; i=0; while [ $$i -lt 120 ]; do /system/bin/service check package > /data/local/tmp/archtv-mc1/package-query.txt 2>&1; /system/bin/service check activity > /data/local/tmp/archtv-mc1/activity-query.txt 2>&1; /system/bin/service check mount > /data/local/tmp/archtv-mc1/mount-query.txt 2>&1; if /system/bin/grep -qx 'Service package: found' /data/local/tmp/archtv-mc1/package-query.txt && /system/bin/grep -qx 'Service activity: found' /data/local/tmp/archtv-mc1/activity-query.txt && /system/bin/grep -qx 'Service mount: found' /data/local/tmp/archtv-mc1/mount-query.txt; then /system/bin/cmd package list packages --user 0 > /data/local/tmp/archtv-mc1/package-list.txt 2>&1; /system/bin/cmd package path --user 0 net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-path.txt 2>&1; if /system/bin/grep -q '^package:/data/app/' /data/local/tmp/archtv-mc1/markor-path.txt && /system/bin/grep -qx 'Status: ok' /data/local/tmp/archtv-mc1/markor-launch.txt && /system/bin/test -s /data/local/tmp/archtv-mc1/markor-sf.png; then /system/bin/dumpsys package net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-dump.txt 2>&1; exit $$?; fi; fi; i=$$((i+1)); /system/bin/sleep 1; done; exit 1"});
+                "/system/bin/sh","-c","umask 077; exec /system/bin/sh /vendor/bin/install-markor.sh > /data/local/tmp/archtv-mc1/markor-install.txt 2>&1"});
             if(!package_client.ok())return package_client.error();
             auto* peer=package_client->get();
-            peer->AddReapCallback([this](const siginfo_t& info){client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;});
+            peer->AddReapCallback([this](const siginfo_t& info){
+                workflow_done_=true;workflow_ok_=info.si_code==CLD_EXITED && info.si_status==0;
+                std::fprintf(stderr,"MARKOR_ORIGINAL_SHELL_WORKFLOW_EXIT pid=%d code=%d status=%d NOT_APK_ACCEPTANCE\n",info.si_pid,info.si_code,info.si_status);
+                if(!closing_ && !workflow_ok_)manager_failed_=true;
+            });
             services.AddService(std::move(*package_client));
-            if(auto result=peer->ExecStart();!result.ok())return result;
-            if(auto result=Wait(tick,[this]{return client_done_;},180);!result.ok())return result;
-            if(!client_ok_)return android::base::Error()<<"Original package client did not observe installed AND launched Markor; inspect original outputs separately";
-            std::fprintf(stderr,"PACKAGES_ORIGINAL_BINDER_QUERY_RETURNED REQUIRES_INSTALL_LAUNCH\n");
+            if(auto result=peer->Start();!result.ok())return result;
+            workflow_started_=true;
+            std::fprintf(stderr,"MARKOR_ORIGINAL_SHELL_WORKFLOW_STARTED pid=%d uid=%u gid=%u NOT_INSTALLED_OR_LAUNCHED\n",peer->pid(),peer->uid(),peer->gid());
         }
         if(security_getenforce()!=expected_mode_)return android::base::Error()<<"Selected display security mode changed";
         return {};
@@ -1227,6 +1237,7 @@ class LinuxMc1Cohort {
     bool missing_done_=false,missing_ok_=false;
     bool apex_cancelled_=false,vold_cancelled_=false;
     bool apex_activation_observed_=false,apex_clean_exit_=false;
+    bool workflow_started_=false,workflow_done_=false,workflow_ok_=false;
     bool active_=false,closing_=false,manager_failed_=false,client_done_=false,client_ok_=false;
 };
 }

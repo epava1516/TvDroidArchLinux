@@ -522,6 +522,12 @@ public final class SelectedServices {
                 start(manager,managerType,"com.android.server.NetworkScoreService$Lifecycle");
                 String connectivityJar="/apex/com.android.tethering/javalib/service-connectivity.jar";
                 call(managerType,manager,"startServiceFromJar",new Class<?>[]{String.class,String.class},"com.android.server.NetworkStatsServiceInitializer",connectivityJar);
+                // Original SystemServer starts the complete font lifecycle before
+                // application-ready phases. Apps receive its serialized font map;
+                // original policy deliberately forbids their direct XML access.
+                Class<?> fontLifecycleType=Class.forName("com.android.server.graphics.fonts.FontManagerService$Lifecycle");
+                Object fontLifecycle=fontLifecycleType.getConstructor(contextType,boolean.class).newInstance(context,false);
+                call(managerType,manager,"startService",new Class<?>[]{Class.forName("com.android.server.SystemService")},fontLifecycle);
                 Class<?> networkPolicyType=Class.forName("com.android.server.net.NetworkPolicyManagerService");
                 Object networkPolicy=networkPolicyType.getConstructor(contextType,Class.forName("android.app.IActivityManager"),Class.forName("android.os.INetworkManagementService")).newInstance(context,activityManager,networkManagement);
                 call(sm,null,"addService",new Class<?>[]{String.class,ib},"netpolicy",networkPolicy);
@@ -606,15 +612,10 @@ public final class SelectedServices {
                 call(lockInternalType,lockInternal,"onThirdPartyAppsStarted",new Class<?>[0]);
                 System.err.println("ORIGINAL_LOCKSETTINGS_THIRD_PARTY_RETURNED NOT_USER_UNLOCK_OR_APK_ACCEPTANCE");
                 WaylandInputBridge.start(input);
-                Thread installation=new Thread(() -> {
-                    try {
-                        Process child=new ProcessBuilder("/system/bin/sh","-c",
-                            "umask 077; /system/bin/sh /vendor/bin/install-markor.sh > /data/local/tmp/archtv-mc1/markor-install.txt 2>&1").start();
-                        int result=child.waitFor();
-                        System.err.println("MARKOR_ORIGINAL_SESSION_CLIENT_EXIT actual="+result+" REQUIRES_INSTALLED_BYTES");
-                    } catch(Exception failure) { failure.printStackTrace(System.err); }
-                },"linux-markor-installer");
-                installation.start();
+                // Installation is an external original shell/PackageInstaller
+                // client owned by the native coordinator, never a shell child
+                // of system_server. Keep its original execute denial intact.
+
 
 
 

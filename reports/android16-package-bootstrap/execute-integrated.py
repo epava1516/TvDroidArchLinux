@@ -263,15 +263,16 @@ os.mknod(root/'dev/fuse',stat.S_IFCHR|0o600,os.makedev(10,229))
 os.chown(root/'dev/fuse',0,0)
 """
 for name in ['markor-note-before-stop.txt','markor-note-after-relaunch.txt','markor-note-bytes.bin','markor-lifecycle.txt','markor-relaunch.txt','markor-app-data.txt','markor-user-start.txt','markor-resolve.txt','markor-launch.txt','markor-volumes.txt','markor-overlays.txt','markor-sf.png','markor-mountinfo.txt']:
- root_code+="\np=root/'data/local/tmp/archtv-mc1'/"+repr(name)+";p.touch(mode=0o640);os.chown(p,1000,2000);os.chmod(p,0o640)"
+ root_code+="\np=root/'data/local/tmp/archtv-mc1'/"+repr(name)+";p.touch(mode=0o640);os.chown(p,2000,1000);os.chmod(p,0o640)"
 root_code+="\np=root/'data/local/tmp/archtv-mc1/selected-failure.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
 root_code+="\np=root/'data/local/tmp/archtv-mc1/ranging-service-info.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
 root_code+="\np=root/'data/local/tmp/archtv-mc1/selected-wait.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
 root_code+="\np=root/'data/local/tmp/archtv-mc1/selected-user-wait.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
 for output_name in ['markor-preinstall-path.txt','markor-preinstall-dump.txt','keymint-component.txt','storage-contract.txt','markor-user-state.txt','markor-bootstrap-home-stop.txt','markor-home-after.txt','markor-boot-before-user.txt','platform-capabilities.txt','linux-application-profile.txt','markor-postcommit-path.txt','markor-postcommit-dump.txt','markor-installed-bytes.txt']:
- root_code+="\np=root/'data/local/tmp/archtv-mc1'/"+repr(output_name)+";p.touch(mode=0o600);os.chown(p,1000,1000)"
+ uid=2000 if output_name.startswith("markor-") else 1000
+ root_code+="\np=root/'data/local/tmp/archtv-mc1'/"+repr(output_name)+";p.touch(mode=0o600);os.chown(p,"+str(uid)+",1000)"
 
-root_code+="\np=root/'data/local/tmp/archtv-mc1/markor-install.txt';p.touch(mode=0o600);os.chown(p,1000,1000)"
+root_code+="\np=root/'data/local/tmp/archtv-mc1/markor-install.txt';p.touch(mode=0o600);os.chown(p,2000,1000)"
 root_code+="\nshutil.copyfile(Path("+repr(str(apk_path))+"),root/'data/local/tmp/markor.apk');os.chown(root/'data/local/tmp/markor.apk',2000,2000);os.chmod(root/'data/local/tmp/markor.apk',0o644)"
 text=text.replace('label(root)\n',root_code+'\nlabel(root)\n',1)
 mount_marker="for p in sorted((r/'dist/aosp16/factory-inputs-3').glob('*.payload.img')):"
@@ -376,11 +377,11 @@ text=text.replace("log_observer=None;observed_logs=[];log_stop=False", "live_log
 # existing evidence file under a separate explicit byte limit.
 text=text.replace('and len(observed_logs)<4096','')
 text=text.replace("live_log=(out/'android-log-live.jsonl').open('w')", "live_log=(out/'android-log-live.jsonl').open('w')\nlog_capture_file=(out/'android-log-capture.json').open('w')\nlog_capture={'records':0,'bytes':0,'limit_bytes':67108864,'truncated':False,'inline_limit_records':512}")
-text=text.replace("log_capture_file=(out/'android-log-capture.json').open('w')", "log_capture_file=(out/'android-log-capture.json').open('w')\nframe_capture=(out/'markor-sf.png').open('wb')\nos.fchmod(frame_capture.fileno(),0o600);os.fchown(frame_capture.fileno(),1000,1000)")
+text=text.replace("log_capture_file=(out/'android-log-capture.json').open('w')", "log_capture_file=(out/'android-log-capture.json').open('w')\nframe_capture=(out/'markor-sf.png').open('wb')\nos.fchmod(frame_capture.fileno(),0o640);os.fchown(frame_capture.fileno(),2000,1000)")
 # Capture actual app-owned bytes while the factory still owns /data. All host
 # outputs are preopened before pivot_root; no guest note is created here.
 text=text.replace("frame_capture=(out/'markor-sf.png').open('wb')", "workflow_capture=(out/'markor-workflow-evidence.json').open('w')\nframe_capture=(out/'markor-sf.png').open('wb')")
-text=text.replace("frame_capture=(out/'markor-sf.png').open('wb')", "mount_capture=(out/'markor-mountinfo.txt').open('wb')\nos.fchmod(mount_capture.fileno(),0o600);os.fchown(mount_capture.fileno(),1000,1000)\nframe_capture=(out/'markor-sf.png').open('wb')")
+text=text.replace("frame_capture=(out/'markor-sf.png').open('wb')", "mount_capture=(out/'markor-mountinfo.txt').open('wb')\nos.fchmod(mount_capture.fileno(),0o640);os.fchown(mount_capture.fileno(),2000,1000)\nframe_capture=(out/'markor-sf.png').open('wb')")
 text=text.replace('observed_logs.append(item)', """item['observed_monotonic']=time.monotonic()
     encoded=json.dumps(item)+'\\n';size=len(encoded.encode())
     if log_capture['bytes']+size<=log_capture['limit_bytes']:
@@ -539,7 +540,7 @@ print('STORAGE_ORIGINAL_FILES_VERIFIED NOT_REOPEN_FBE_MAC_OR_APK_ACCEPTANCE',flu
 text+=r"""
 install=Path('/data/local/tmp/archtv-mc1/markor-install.txt').read_text()
 assert 'Success' in install.splitlines(),install
-paths=Path('/data/local/tmp/archtv-mc1/markor-path.txt').read_text().splitlines()
+paths=Path('/data/local/tmp/archtv-mc1/markor-postcommit-path.txt').read_text().splitlines()
 assert len(paths)==1 and paths[0].startswith('package:/data/app/'),paths
 installed=Path(paths[0][8:]);assert installed.is_file() and installed.name=='base.apk'
 assert hashlib.sha256(installed.read_bytes()).hexdigest()=='c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440'

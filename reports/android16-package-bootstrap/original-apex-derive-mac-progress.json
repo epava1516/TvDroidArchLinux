@@ -1318,7 +1318,7 @@
     "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load10/after-load.json",
     "sha256": "309743229826231a5a6d96498f808485c1d5ad5ce3a5cd8c1a279f21f26b9aa8"
   },
-  "next": "Resolve original app font_fallback.xml EACCES by actual file/parent DAC and labels plus original app-policy contract; preserve original app crashes and no fake font data. Then retry actual Markor installation/launch and display presentation; bound observer log spam without granting host-wide proc access.",
+  "next": "Stage the complete trusted external shell client and its two read-only workflow inputs under shell-owned diagnostic storage using exact payload bytes; retain vendor_file denial, no generic vendor read grants. Then actual PackageInstaller/Markor vertical.",
   "original_sources": {
     "sdkextensions_commit": "4d10e57070bb9c6edcd13bf74e9d01717b2a5ecf",
     "derive_rc_sha256": "a9e65b0c114408e5cb8356bdb435a6b48d0a67cd7879915c52ffa094a267f607",
@@ -3710,5 +3710,142 @@
         "sha256": "a17743b22c9d7bffed6024dcdfd3a2193933ebd0084bc463a103eeae9fcd5f4f"
       }
     ]
+  },
+  "integrated242_244": {
+    "utc": "2026-11-04T10:49:26.931024+00:00",
+    "results": {
+      "242": "Full original FontManagerService.Lifecycle starts, joins original font load phases480/500/550/600. Original Settings FallbackHome is Displayed, no font XML EACCES in full persisted log. Exact original app.te neverallow/dontaudit forbids direct fallback XML reads. No app permission broadening. Own Java system_server ProcessBuilder shell exec EACCES blocks installer; no Markor accepted.",
+      "243": "Remove Java shell child; original native init Service starts external shell UID/GID2000 workflow. Real failure before install: output markor-install.txt remained UID1000 mode600. This diagnostic mismatch is not service availability or APK failure. Outer error1, host restored/closed; consumed once.",
+      "244": "Output DAC corrected. Original external shell starts under enforcing, then actual read of /vendor/bin/install-markor.sh denied: shell->vendor_file:file read. Script never runs, no installation. Optional network proc sampler stops after first actual denial, recording missing identities; audit lost0. MAC active27.386s, exit1 then restored0; host closure verified."
+    },
+    "source_contract": "Typeface.setSystemFontMap(null) reads prohibited XML in app. Original SystemServer starts FontManagerService.Lifecycle(context,safeMode); original FontManagerInternal publishes serialized shared map, used by AMS/ActivityThread. Reuse entire original subsystem, no fake font or API substitute.",
+    "diagnostic_limit": "Optional network proc sampler repeatedly hit MAC denial and rotated audit files.244 stops only that sampler at first PermissionError, records unknown identities; BPF/device monitors continue. No proc permission granted. Native original logcat fallback drives read-only captures with explicit threadtime provenance, never fabricated SCM/SID identity or APK acceptance.",
+    "evidence": [
+      {
+        "execution": 242,
+        "path": "/home/tv/recuperacion-archtv/045d88b1-706f-473f-9985-9d696c2f1629-markor-software-launch/before-launch.json",
+        "sha256": "e10f6bad9edfe962989d7c91ead2ebc46e321beb144055d9155443d4ef1bcd05"
+      },
+      {
+        "execution": 242,
+        "path": "/home/tv/recuperacion-archtv/045d88b1-706f-473f-9985-9d696c2f1629-markor-software-launch/result.json",
+        "sha256": "12ca66a2ae62bf50e6f05089c5e1229e3a81ca3fe5e889e9c6fa4796e1136f9a"
+      },
+      {
+        "execution": 242,
+        "path": "/home/tv/recuperacion-archtv/045d88b1-706f-473f-9985-9d696c2f1629-markor-software-launch/after-host.json",
+        "sha256": "a5af43776cc937da7cefdfc0cf3866e21ac6b63282caf8ae289c9be5a3453ce6"
+      },
+      {
+        "execution": 242,
+        "path": "/home/tv/recuperacion-archtv/045d88b1-706f-473f-9985-9d696c2f1629-markor-software-launch/mac-window.json",
+        "sha256": "beb4790c0a3d00d5a053abcd348bbd2e9fa741bfcd9360e544ae6f24d43d42ec"
+      },
+      {
+        "execution": 242,
+        "path": "/home/tv/recuperacion-archtv/045d88b1-706f-473f-9985-9d696c2f1629-markor-software-launch/finite-audit/result.json",
+        "sha256": "7fd21032616bf358eb34fba6a735129585e396351b4bc5ceccd6d86725e07c42"
+      },
+      {
+        "execution": 242,
+        "path": "/home/tv/recuperacion-archtv/045d88b1-706f-473f-9985-9d696c2f1629-markor-software-launch/completion-consumer.json",
+        "sha256": "f8c640c2ea7c11ed0e4d1eb7b66c8ff488076fa0e2e6b3868ad6290e2baa659c"
+      },
+      {
+        "execution": 242,
+        "path": "/home/tv/recuperacion-archtv/045d88b1-706f-473f-9985-9d696c2f1629-markor-software-launch/original-logcat-persisted.txt",
+        "sha256": "d04eb9472e8690a8005b92138181efd19097747fb873ed542af7e06042240a66"
+      },
+      {
+        "execution": 243,
+        "path": "/home/tv/recuperacion-archtv/7fbf1e54-85e8-48cc-88b9-246647ae61d0-markor-software-launch/before-launch.json",
+        "sha256": "0d0c15021eb898773955188d708f0418ad6139cebfd3f2deb3226ba117cadbc4"
+      },
+      {
+        "execution": 243,
+        "path": "/home/tv/recuperacion-archtv/7fbf1e54-85e8-48cc-88b9-246647ae61d0-markor-software-launch/result.json",
+        "sha256": "e6e24a5ac12b83e23aba78dc8fcb0b3ec762c4f7adb429c483d07c325e5d5ce8"
+      },
+      {
+        "execution": 243,
+        "path": "/home/tv/recuperacion-archtv/7fbf1e54-85e8-48cc-88b9-246647ae61d0-markor-software-launch/after-host.json",
+        "sha256": "d7fa962ed97a609c5c1dbf4f11ab3448543f34e4c380737dba0f239322b2087a"
+      },
+      {
+        "execution": 243,
+        "path": "/home/tv/recuperacion-archtv/7fbf1e54-85e8-48cc-88b9-246647ae61d0-markor-software-launch/mac-window.json",
+        "sha256": "f77745841160587b3e991faf04d6e7f221aacfd38145da0aec60e3f5230bb387"
+      },
+      {
+        "execution": 243,
+        "path": "/home/tv/recuperacion-archtv/7fbf1e54-85e8-48cc-88b9-246647ae61d0-markor-software-launch/finite-audit/result.json",
+        "sha256": "a3475f3fa2fc9f8da4c399e13447d0fff9efb7361fd837f9406637575b98d9a9"
+      },
+      {
+        "execution": 243,
+        "path": "/home/tv/recuperacion-archtv/7fbf1e54-85e8-48cc-88b9-246647ae61d0-markor-software-launch/completion-consumer.json",
+        "sha256": "2642f7c7526ba46cf1a7f4e5cc6b168ec357db57d801e88adf04889aa348c73b"
+      },
+      {
+        "execution": 243,
+        "path": "/home/tv/recuperacion-archtv/7fbf1e54-85e8-48cc-88b9-246647ae61d0-markor-software-launch/persisted-original-logcat.txt",
+        "sha256": "c32ce06ce370e475062b5a04ed19bb33bce5c4ce8cad67bae0310c1546e097c4"
+      },
+      {
+        "execution": 243,
+        "path": "/home/tv/recuperacion-archtv/7fbf1e54-85e8-48cc-88b9-246647ae61d0-markor-software-launch/persisted-markor-install.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/font-manager-source-acquisition.json",
+        "sha256": "81439686490a916108daeefa1ea53460e6d1380efd4b4458e2daaa5ce53410f9"
+      },
+      {
+        "execution": 244,
+        "path": "/home/tv/recuperacion-archtv/30360e7c-f8d4-447d-9150-064490424ec7-markor-software-launch/before-launch.json",
+        "sha256": "236df95ee517ba72c950c32f98ae29038ec7fed8c7c7900757420de0ef617633"
+      },
+      {
+        "execution": 244,
+        "path": "/home/tv/recuperacion-archtv/30360e7c-f8d4-447d-9150-064490424ec7-markor-software-launch/result.json",
+        "sha256": "5a902cc1fe0a04407ed4003851cb530ddb185915ed468e618d24b9426d51da09"
+      },
+      {
+        "execution": 244,
+        "path": "/home/tv/recuperacion-archtv/30360e7c-f8d4-447d-9150-064490424ec7-markor-software-launch/after-host.json",
+        "sha256": "75f0c189f751f66ed5ca2324e203554d3e16537189f8061efb65d840efc8feca"
+      },
+      {
+        "execution": 244,
+        "path": "/home/tv/recuperacion-archtv/30360e7c-f8d4-447d-9150-064490424ec7-markor-software-launch/mac-window.json",
+        "sha256": "db7b845338e018638630321f9ccd7d29285ca027c1f7484cb0cf921c47e382a9"
+      },
+      {
+        "execution": 244,
+        "path": "/home/tv/recuperacion-archtv/30360e7c-f8d4-447d-9150-064490424ec7-markor-software-launch/finite-audit/result.json",
+        "sha256": "eeec7ca0989d9cf3b06183a6455434f44433f73b8f6060d90077ad51e75a95c5"
+      },
+      {
+        "execution": 244,
+        "path": "/home/tv/recuperacion-archtv/30360e7c-f8d4-447d-9150-064490424ec7-markor-software-launch/completion-consumer.json",
+        "sha256": "acc52b59f3e2042fedf544ad2d97837bce4ad051a35184792f643018a5adf7db"
+      },
+      {
+        "execution": 244,
+        "path": "/home/tv/recuperacion-archtv/30360e7c-f8d4-447d-9150-064490424ec7-markor-software-launch/persisted-original-logcat.txt",
+        "sha256": "392c331373b67d5cd7503263bc48989ddb5bb33dbb961b32124788890e31c0fd"
+      },
+      {
+        "execution": 244,
+        "path": "/home/tv/recuperacion-archtv/30360e7c-f8d4-447d-9150-064490424ec7-markor-software-launch/persisted-markor-install.txt",
+        "sha256": "b67f0352823f2f9822e6f7e28dfa34607eaa2cd28220dafeab7f5fe5e2660712"
+      },
+      {
+        "execution": 244,
+        "path": "/home/tv/recuperacion-archtv/30360e7c-f8d4-447d-9150-064490424ec7-markor-software-launch/run.log",
+        "sha256": "63d4b7c9dc84a76ed1125f20f003865627adc641c65fe8252c44022639b1bc03"
+      }
+    ],
+    "accepted_apk_stages": []
   }
 }

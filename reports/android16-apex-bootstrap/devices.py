@@ -282,6 +282,7 @@ def monitor(root,out,parent):
             stopping=True
         signal.signal(signal.SIGTERM,stop_monitor)
     network_peers={}
+    network_identity_blocked=False
     app_log=(out/'android-log-live.jsonl').open()
     app_state={'scope':'Read-only native app-start diagnosis; not app availability/security acceptance','processes':[],'truncated':False}
     # The monitor retains the Linux mount namespace. Numeric SCM/AMS PIDs
@@ -298,7 +299,7 @@ def monitor(root,out,parent):
     end=time.monotonic()+400
     while time.monotonic()<end and not stopping:
         observe_app_startups(app_log,app_state,out,owner_cgroup,namespaces,procbase)
-        if network is not None:
+        if network is not None and not network_identity_blocked:
             for proc in Path('/proc').iterdir():
                 if not proc.name.isdigit():continue
                 try:
@@ -311,6 +312,13 @@ def monitor(root,out,parent):
                     peer={'pid':int(proc.name),'start_ticks':started,'comm':comm,'executable':os.readlink(proc/'exe'),'context':(proc/'attr/current').read_text().strip().rstrip('\0')}
                     peer.update({n:fields[n].strip() for n in ['Uid','Gid','Groups','CapInh','CapPrm','CapEff','CapBnd','CapAmb','NoNewPrivs']})
                     network_peers[key]=peer;save(out/'network-identities.json',list(network_peers.values()))
+                except PermissionError as error:
+                    # Optional read-only diagnosis must not continuously retry
+                    # MAC-denied proc access and rotate away the actual failure.
+                    # Stop only this sampler; device/BPF monitoring continues.
+                    network_identity_blocked=True
+                    save(out/'network-identities-error.json',{'error':str(error),'scope':'Optional Linux proc sampler stopped after actual permission denial; missing identities remain unknown. No MAC permissions changed.'})
+                    break
                 except (OSError,ProcessLookupError):continue
         if network is not None and not bpf_captured and (root/'sys/fs/bpf/netd_shared/mainline_done').is_dir():
             network.snapshot(root,out,'mainline-done');bpf_captured=True
