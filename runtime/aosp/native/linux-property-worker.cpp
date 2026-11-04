@@ -14,6 +14,7 @@
 #include <selinux/selinux.h>
 #include <sys/socket.h>
 #include <sys/stat.h>
+#include <paths.h>
 #include <sys/ioctl.h>
 #include <sys/syscall.h>
 #include <linux/memfd.h>
@@ -133,6 +134,11 @@ int main(int argc,char** argv) {
     if(lstat("/data/property",&property_dir)!=0 || !S_ISDIR(property_dir.st_mode) || property_dir.st_uid!=getuid() || (property_dir.st_mode&0077))return 77;
     archtv::aosp::LinuxShutdownSink shutdown;
     if(!shutdown.Install().ok())return 70;
+    // Match original SecondStageMain before starting any Android service.
+    // Keep Linux's own supervisor PATH separate; this is inside Bionic/private
+    // root. Original command wrappers (content/sm/etc.) resolve app_process.
+    if(setenv("PATH",_PATH_DEFPATH,1)!=0)return 74;
+    std::fprintf(stderr,"AOSP_NATIVE_PATH_SET source=SecondStageMain/_PATH_DEFPATH path=%s\n",getenv("PATH"));
     // Same original initialization used before services in SecondStageMain,
     // without dispatching Android boot. util::CreateSocket must have its handle.
     SelabelInitialize();

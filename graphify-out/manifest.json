@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793814967.5670388,
-    "seen": 1793814981.6866605,
-    "ast_hash": "2155323d2b90fb07ba5d0902c9f6aad1",
+    "mtime": 1793817180.5765986,
+    "seen": 1793817202.815933,
+    "ast_hash": "ae83ec12f0a0b0bdef4e7b375cd4d660",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793815021.8631828,
-    "seen": 1793815030.9268222,
-    "ast_hash": "38c5bc70867285bd408434d04ff18286",
+    "mtime": 1793817180.5665984,
+    "seen": 1793817202.8166082,
+    "ast_hash": "0c99dca4f61fad0d9274eaf507feeb72",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793815021.8672047,
-    "seen": 1793815030.927749,
-    "ast_hash": "b3e917d247a2c4c6e88811438103d314",
+    "mtime": 1793817180.5734684,
+    "seen": 1793817202.8174682,
+    "ast_hash": "bc5076069ae2e96fc01ef6a39edb68f5",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -1716,9 +1716,9 @@
     "semantic_hash": ""
   },
   "docs/EVIDENCIAS.md": {
-    "mtime": 1793814967.5702863,
-    "seen": 1793814981.6870923,
-    "ast_hash": "855c7db9c5579cdb2bc70483718819fb",
+    "mtime": 1793817180.5883565,
+    "seen": 1793817202.8168492,
+    "ast_hash": "917e89a5d64aac37123fedbbd537e78b",
     "semantic_hash": ""
   },
   "fixtures/aosp-framework-space/FrameworkSpaceProbe.java": {
@@ -1926,9 +1926,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-property-worker.cpp": {
-    "mtime": 1793813228.7618082,
-    "seen": 1793813345.2704167,
-    "ast_hash": "4483162836e0beffaa70e2e278c9229a",
+    "mtime": 1793815992.0987818,
+    "seen": 1793816082.4763963,
+    "ast_hash": "b3dac4b77b9ffe9326ae59691e5e19b6",
     "semantic_hash": ""
   },
   "runtime/aosp/native/verify-service-profile.cpp": {
@@ -2034,9 +2034,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/install-markor.sh": {
-    "mtime": 1793812712.9468637,
-    "seen": 1793812780.4129882,
-    "ast_hash": "a47a09e4f0d3ac3820812748467a59d7",
+    "mtime": 1793816805.435347,
+    "seen": 1793817078.5226812,
+    "ast_hash": "7a2b1b3360c99591874389fd7eabc334",
     "semantic_hash": ""
   },
   "scripts/run_completion.py": {
@@ -2089,7 +2089,7 @@
   },
   "runtime/aosp/hwui-sources.json": {
     "mtime": 1793383954.003966,
-    "seen": 1793813820.7024028,
+    "seen": 1793815074.3684382,
     "ast_hash": "",
     "semantic_hash": ""
   },

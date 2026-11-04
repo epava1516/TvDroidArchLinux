@@ -6029,5 +6029,67 @@
       "REA MCP connected but ELF layout provider unavailable; no ELF inspection inferred",
       "ARM/GMS/DRM, media/audio and product install/update/distro remain open"
     ]
+  },
+  "vlc277_279": {
+    "application": "org.videolan.vlc",
+    "apk_sha256": "4646633ede40c4784c5584087cffc5c60cc45b16966ae0b36cedd784d7c4a11e",
+    "cases": {
+      "277": {
+        "checkpoint": "/home/tv/recuperacion-archtv/1f5f064c-6f10-41db-a13d-12d2fcc05fdd-markor-software-launch",
+        "run_id": "1f5f064c-6f10-41db-a13d-12d2fcc05fdd",
+        "result": "Original content shell wrapper could not resolve app_process; no provider call or VLC install. Linux supervisor PATH leaked into Bionic; original SecondStageMain/_PATH_DEFPATH contract identified.",
+        "evidence": {
+          "result.json": "605131baad7507de818f93ae542f0caa82c9a119512bff62637dedc49b938338",
+          "mac-window.json": "1c137071cf78883b43d52f8e2f62a5bf96174322d3294636a83dbfd6f0800125",
+          "session-state.json": "79694c6e2b98dd41c4f90a30f4df44703c346aa8f856e41856387d88f504cfef",
+          "finite-audit/result.json": "98717010c88d24366c4756bff3db022dad545b599938ed4db8d18a87959e31e6",
+          "original-client-evidence.json": "d9928b933d60856fcbd1b3cd3a14aeed10c70533492a1ce3dddef64173ea2113",
+          "observed-media-query-error.txt": "a28b36a953c075e6537d5277631509269ffb794e9ee440bcae4fec9933ad95f4",
+          "native-path-diagnosis.json": "45f6c551a2bcbd75211c6aff07cb70c6dba1bad15f5f946a9412f4ff397eb873"
+        },
+        "closure": "Terminal/consumed, MAC restored0, original udev restored, own loops/dm/FUSE absent, VT/device/SysRq restored; audit no loss/rules unchanged. No notifications queued."
+      },
+      "278": {
+        "checkpoint": "/home/tv/recuperacion-archtv/31b0a844-8b0c-4187-98b9-91d1282138d8-markor-software-launch",
+        "run_id": "31b0a844-8b0c-4187-98b9-91d1282138d8",
+        "result": "Original Bionic PATH measured, content query/insert executed. Original provider copied DB/WAL shows generated pending video row; default original query excludes pending. No content bytes or VLC install accepted.",
+        "evidence": {
+          "result.json": "fe717e7b9a406d2c5fa3ff3e5bff4504734ffdb51f8c5ba2667c61224febf436",
+          "mac-window.json": "9960a14b58b32f9dc9a5ff43f9077bcb06dcd77e24601cb8cde6ee4c9402cecd",
+          "session-state.json": "2e69da31b5c6ebf6a8f3cab73f406c17cd8a3c18b73a07e0475375c82d75a8cf",
+          "finite-audit/result.json": "d217fc7c171ad8dc3b79f1b6386f780f413c49db9946a3e26335cd30f54d5927",
+          "original-client-evidence.json": "10696609d0cd1ff76515a377009bda8335c11f7f56b4d90e35ba0b55180be959",
+          "observed-markor-install.txt": "7b420eca63c29a1eb13e604de4767099c45992627ada378251f4e35f34b5d319",
+          "observed-media-before.txt": "2b6eeded2979883d1ae8ad272d9c39e23ec60283320c831edf1b1e6b6e3de247",
+          "observed-media-id.txt": "2b6eeded2979883d1ae8ad272d9c39e23ec60283320c831edf1b1e6b6e3de247",
+          "observed-media-insert.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "provider-insert-diagnosis.json": "1b4ed0d50ba16b43cc9b9c73c9fb347e41001dac6137c872f44e9a1ad36bf300",
+          "pending-query-diagnosis.json": "fb9a61b13a29f50313cf3946894258bb04404872cca46a8434c7c40cc755d891"
+        },
+        "closure": "Terminal/consumed, MAC restored0, original udev restored, own loops/dm/FUSE absent, VT/device/SysRq restored; audit no loss/rules unchanged. No notifications queued."
+      },
+      "279": {
+        "checkpoint": "/home/tv/recuperacion-archtv/65e89643-22d8-4946-8c99-b04955ab9a59-markor-software-launch",
+        "run_id": "65e89643-22d8-4946-8c99-b04955ab9a59",
+        "result": "Controlled cancellation before media query after original parser source showed unescaped colon key malformed. No API/runtime compatibility inference.",
+        "evidence": {
+          "result.json": "732f09210c9dd4c711f7d841c9fd2ac27384769a7028230cb9f84b740cf69d02",
+          "mac-window.json": "8eb1427b29e0be9fcddb174a665062769d57c9421f43418990a11132d9b418f5",
+          "session-state.json": "cfa2a19530743998b90b3e54b36f1c2ac9eea691b3e2a6ca5f817e618cfb2634",
+          "finite-audit/result.json": "f46b464d6a8b364b73a97e58389aedf5f5bd5030f4affe8203ca56b17bdec4e0",
+          "operator-stop-reason.json": "b0c33c925c0609d64dc08c99d1d4d27349a524cb478b4ef030d76bd532ea40ba"
+        },
+        "closure": "Terminal/consumed, MAC restored0, original udev restored, own loops/dm/FUSE absent, VT/device/SysRq restored; audit no loss/rules unchanged. No notifications queued."
+      }
+    },
+    "native_environment_fix": "Bionic worker now performs original SecondStageMain setenv(PATH,_PATH_DEFPATH) using paths.h; actual original client prints Android paths and provider replies in278. Host Linux PATH unchanged. No boot trigger or policy change.",
+    "provider_contract": "QUERY_ARG_MATCH_PENDING/MATCH_INCLUDE must be explicitly requested for pending-row discovery; original content --extra uses escaped colons in key. Source-derived correction, no hardcoded row ID or direct provider database writes.",
+    "current_candidate": "280 compiled and executing; escaped original extra, actual write/readback/hash/publish then VLC. Not yet accepted.",
+    "limits": [
+      "VLC installation, UI, JNI execution and playback untested in these cases",
+      "Read-only copied database inspection is not runtime API query success",
+      "CLI exit0 is not accepted as proof of side effects",
+      "Full R1-MAC/ARM/GMS/DRM/audio/video/product gates open"
+    ]
   }
 }
