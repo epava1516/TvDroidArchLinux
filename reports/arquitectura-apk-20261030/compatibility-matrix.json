@@ -416,12 +416,12 @@
         "scope": "Exact Markorv164 Markdown note created163 survives complete cohort teardown and original subsystems167; actual bytes, same UID/inodes/MCS, original install/force-stop/relaunch and real single pointer opens editor.167 native/exterior0. Not host reboot/power loss, FBE/MAC, graceful close, arbitrary upgrade or general APK compatibility."
       },
       "runtime_security_observation": {
-        "candidate": 253,
-        "execution": 254,
-        "state": "terminal exit1; no APK stage accepted",
+        "candidate": 256,
+        "execution": 256,
+        "state": "terminal exit1 after real installation; protected-HOME mutation denied",
         "evidence": "reports/android16-package-bootstrap/original-apex-derive-mac-progress.json",
-        "sha256": "a8f852b1ca122fb7531c073ea6d13f6eac30f57a95a6a836303fcf4f23748b3e",
-        "latest_result": "Original mounted volume and unlocked user; PackageInstaller session created, APK transfer denied under MAC; session abandoned. Next native stdin streaming; no direct file permission grant."
+        "sha256": "922148e6d5fa0b4a854966a50b3d4ed6edfdbfddc71a68cf53757f3b1208a600",
+        "latest_result": "Shell private stat is diagnostic; original PMS rejects disabling protected FallbackHome. No Markor launch reached. Next explicit launch without unrelated HOME mutation."
       },
       "runtime_security_observation_history": [
         {
@@ -655,6 +655,22 @@
           "evidence": "reports/android16-package-bootstrap/original-apex-derive-mac-progress.json",
           "sha256": "8ae27b921df2d1c29b36d34dfadf37224a0d61366705709a8304e932a7594dc5",
           "latest_result": "exit1. Resource readback config_animateScreenLights=true; original StorageManagerService and MediaProvider report emulated;0 mounted. Original shell volume output remains empty; installation never started. mediaserver64 SIGABRT ICU IcuRegistration::getTimeZoneModulePath; missing ANDROID_TZDATA_ROOT. No observed repeat of previous SwiftShader crash; fade/wake cycle not accepted."
+        },
+        {
+          "candidate": 253,
+          "execution": 254,
+          "state": "terminal exit1; no APK stage accepted",
+          "evidence": "reports/android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "sha256": "a8f852b1ca122fb7531c073ea6d13f6eac30f57a95a6a836303fcf4f23748b3e",
+          "latest_result": "Original mounted volume and unlocked user; PackageInstaller session created, APK transfer denied under MAC; session abandoned. Next native stdin streaming; no direct file permission grant."
+        },
+        {
+          "candidate": 255,
+          "execution": 255,
+          "state": "terminal exit1 after original installation; launch not reached",
+          "evidence": "reports/android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "sha256": "a9da680643af33e3fda2d7c908737a1fe3a4066172cd5e56b6b0d321896037d5",
+          "latest_result": "Real streamed install/commit/PMS path and identical APK bytes; private directories UID10104/MCS104. Shell private stat denied, no permission grant; all later workflow stages pending."
         }
       ],
       "runtime_security_history": [
@@ -712,7 +728,17 @@
           "r1_mac": "open",
           "host_after": "Permissive candidate22/policyloadCOUNT21, auditnewloss0,no ownedresources, previousnote/CE/DE preserved"
         }
-      ]
+      ],
+      "runtime_mac_stage_evidence": {
+        "installation": {
+          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "record_sha256": "922148e6d5fa0b4a854966a50b3d4ed6edfdbfddc71a68cf53757f3b1208a600",
+          "section": "integrated255",
+          "accepted": true,
+          "scope": "Original PackageInstaller installation, identical intact APK bytes and physical private-directory metadata under enforcing. Not complete isolation, launch, UI, note persistence or full workflow acceptance."
+        },
+        "remaining": "launch/interface/input/main-function/persistence/services/close/reopen under MAC remain unaccepted; historical permissive observations preserved separately."
+      }
     }
   ],
   "uncovered": [

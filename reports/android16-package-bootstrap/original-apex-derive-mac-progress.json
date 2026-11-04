@@ -4215,5 +4215,65 @@
       }
     },
     "next": "255: original PackageManagerShellCommand.openInFile/doWriteSplit accepts stdin; stream intact APK through shell pipe rather than granting system_server direct shell_data_file access. Preserve MAC denial and all app stages pending."
+  },
+  "integrated255": {
+    "utc": "2026-11-04T12:36:17.673508+00:00",
+    "checkpoint": "/home/tv/recuperacion-archtv/ba0cdcfa-7edb-4324-bbd3-63fee22b898c-markor-software-launch",
+    "result": "Original shell streams11861047 bytes through pipe/stdin to original PackageInstaller; commit success. PMS readback returns installed base.apk; full SHA256 equals intact source c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440. Original installer creates app CE backing and DE directories UID/GID10104 mode0700 app_data_file:s0:c104,c256,c512,c768. No direct system_server shell_data_file grant.",
+    "failure": "Workflow stops on shell stat of private app directories, correctly denied. No original launch reached. Closure internal MC1_CLOSE_FAILED; external host recovery verified mode0, audit0 lost0, no owned units/loops/DM/BPF.",
+    "installation_scope": "Narrow original installation/byte identity/private-dir metadata observation under MAC accepted. Not process identity, app access isolation, UI, lifecycle, persistence, signatures of arbitrary APK or general compatibility. Raw source and installed bytes identical; original PMS signature checks retained. Physical CE backing observed after private mount teardown; live alias not independently reverified in this failed run.",
+    "evidence": {
+      "/home/tv/recuperacion-archtv/ba0cdcfa-7edb-4324-bbd3-63fee22b898c-markor-software-launch/result.json": {
+        "sha256": "5f17d629e06b977aab447f0fea1b72942e8bfe46d452e7ceb7aab87d6208e819",
+        "bytes": 48229
+      },
+      "/home/tv/recuperacion-archtv/ba0cdcfa-7edb-4324-bbd3-63fee22b898c-markor-software-launch/persisted-markor-install.txt": {
+        "sha256": "077c9d69e6c31bc97959888b991f18d036df2f78cc437fb557a2141fcb27d24d",
+        "bytes": 117
+      },
+      "/home/tv/recuperacion-archtv/ba0cdcfa-7edb-4324-bbd3-63fee22b898c-markor-software-launch/persisted-markor-installed-bytes.txt": {
+        "sha256": "4ed69f51197f616a21c7db01b87af6fbe2f3d62127c2ba64f1a58e4cc4bba3e1",
+        "bytes": 267
+      },
+      "/home/tv/recuperacion-archtv/ba0cdcfa-7edb-4324-bbd3-63fee22b898c-markor-software-launch/persisted-markor-postcommit-path.txt": {
+        "sha256": "f2bcfb7c4cca2c15fa31b8b20d15723658c2922fa09cb5394a89051e2a79f632",
+        "bytes": 99
+      },
+      "/home/tv/recuperacion-archtv/ba0cdcfa-7edb-4324-bbd3-63fee22b898c-markor-software-launch/persisted-markor-postcommit-dump.txt": {
+        "sha256": "09eb99539335cc684a29fc9aa82c77068949c2de86fecc15e8569a90d29b0b9e",
+        "bytes": 324378
+      },
+      "/home/tv/recuperacion-archtv/ba0cdcfa-7edb-4324-bbd3-63fee22b898c-markor-software-launch/installed-artifacts.json": {
+        "sha256": "4c0dccf5658f193e3c9fd7bb25e384e18e6346e2850b260823a0b237018e5fb4",
+        "bytes": 930
+      },
+      "/home/tv/recuperacion-archtv/ba0cdcfa-7edb-4324-bbd3-63fee22b898c-markor-software-launch/after-host.json": {
+        "sha256": "46a0a431f6950d7fbecf4e75321fcc2ae31b9af60ea03da74e4fcc1e37cb40b9",
+        "bytes": 632
+      },
+      "/home/tv/recuperacion-archtv/ba0cdcfa-7edb-4324-bbd3-63fee22b898c-markor-software-launch/finite-audit/result.json": {
+        "sha256": "1ea55387841edfd21aad5ac44860f2b2f3ddfaf5ab9b6ae4aca24f65ecd572d7",
+        "bytes": 2284
+      }
+    },
+    "rea_icu_static": {
+      "evidence_id": "ev_4bd0a14002e3f8e94d16feff54f8b07fce8329ce6464bf8d7b49397e0c6deca8",
+      "sha256": "c2a8ff1b026502334c71bd20b52c2bd78020623433e00d76d1090bffea48dbc2",
+      "build_id": "3588a29fb28a6f3c33e3dc8c0d4a2570",
+      "scope": "Actual REA MCP ELF note inspection; matches ICU build-id in native252 trace. Static inspection, not execution."
+    },
+    "next": "256 compiled; separate shell private-data diagnostic from launch gate; keep private-access denial and privileged read-only evidence. Original launch/Smithay UI/input/note/close/reopen still required."
+  },
+  "integrated256": {
+    "utc": "2026-11-04T12:40:04.148218+00:00",
+    "checkpoint": "/home/tv/recuperacion-archtv/77b80775-cd9e-4b73-a812-7f999ffc7ed9-markor-software-launch",
+    "result": "Original streamed install/commit repeated; shell private-directory stat denial preserved and no longer fatal. Next shell disable of protected Settings.FallbackHome correctly throws SecurityException before resolving/launching Markor. No launch accepted.",
+    "evidence": {
+      "/home/tv/recuperacion-archtv/77b80775-cd9e-4b73-a812-7f999ffc7ed9-markor-software-launch/result.json": "107f06467a03b814427f281e2a2f914c64b6a4ce3e8000059934a1cb26d5be84",
+      "/home/tv/recuperacion-archtv/77b80775-cd9e-4b73-a812-7f999ffc7ed9-markor-software-launch/persisted-markor-install.txt": "ad9735a3cc20b507b0773b2a3f21ee9f5ab6e778e5bbb7b5e8b5d4c22381b53f",
+      "/home/tv/recuperacion-archtv/77b80775-cd9e-4b73-a812-7f999ffc7ed9-markor-software-launch/persisted-markor-app-data.txt": "d0c98d1b678dda51714623e038d058f6a8eace1228aeed89c3fb8fee0dcfdcef",
+      "/home/tv/recuperacion-archtv/77b80775-cd9e-4b73-a812-7f999ffc7ed9-markor-software-launch/after-host.json": "2981c306ae97f91c7410e609d48ddf45aa1c93de4a4f9863a092108f9f97fc30"
+    },
+    "next": "257 removes unnecessary protected-HOME mutation and empty-HOME predicate; original explicit resolve/start remains mandatory. Note observer uses real shared FUSE /storage/emulated/0, not private raw backing. No new permission or note writes."
   }
 }

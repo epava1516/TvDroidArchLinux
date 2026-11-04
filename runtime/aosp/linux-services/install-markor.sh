@@ -2,6 +2,7 @@
 # Trusted Linux installer orchestration of original PackageInstaller sessions.
 # No boot/property mutation, API replacement, permission or signature override.
 set -eu
+set -o pipefail
 apk_path=/data/local/tmp/markor.apk
 apk_bytes=$(/system/bin/stat -c %s "$apk_path")
 # Wait for the original AMS boot completion before asking it to start/unlock
@@ -39,7 +40,12 @@ done
 # property is assigned. The same original Sm class is used with our real ABI.
 volume_wait=0
 while [ "$volume_wait" -lt 120 ]; do
-    CLASSPATH=/system/framework/sm.jar /system/bin/app_process64 /system/bin com.android.commands.sm.Sm list-volumes all > /data/local/tmp/archtv-mc1/markor-volumes.txt
+    # Keep stderr and actual status: an empty file alone cannot distinguish an
+    # empty original inventory from a failed or unfinished Java tool.
+    volume_status=0
+    CLASSPATH=/system/framework/sm.jar /system/bin/app_process64 /system/bin com.android.commands.sm.Sm list-volumes all > /data/local/tmp/archtv-mc1/markor-volumes.txt 2>/data/local/tmp/archtv-mc1/markor-volumes-error.txt || volume_status=$?
+    /system/bin/printf 'volume_query attempt=%s exit=%s\n' "$volume_wait" "$volume_status"
+    [ "$volume_status" -eq 0 ]
     if /system/bin/grep -q '^emulated;0 mounted ' /data/local/tmp/archtv-mc1/markor-volumes.txt; then break; fi
     volume_wait=$((volume_wait + 1))
     /system/bin/sleep 1
@@ -60,7 +66,10 @@ session_id=${session_id%\]}
 case "$session_id" in ''|*[!0-9]*) exit 1;; esac
 committed=false
 trap 'task_status=$?; if [ "$committed" = false ]; then /system/bin/cmd package install-abandon "$session_id" >&2 || :; fi; exit "$task_status"' EXIT
-/system/bin/cmd package install-write -S "$apk_bytes" "$session_id" base.apk "$apk_path"
+# Original doWriteSplit accepts '-' through getInFd(). Feed a pipe from the
+# shell owner: passing the file path (or redirecting that file descriptor)
+# would require system_server to read shell_data_file, correctly denied by MAC.
+/system/bin/cat "$apk_path" | /system/bin/cmd package install-write -S "$apk_bytes" "$session_id" base.apk -
 /system/bin/cmd package install-commit "$session_id"
 committed=true
 # Preserve the original PMS readback before user-start can block or the cohort stops.

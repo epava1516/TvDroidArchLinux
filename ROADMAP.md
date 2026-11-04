@@ -1,6 +1,6 @@
 # Roadmap · Arch TV nativo en Rust
 
-Vigente · [Estado252 y siguiente integración nativa](docs/ESTADO.md): FUSE original montado bajo MAC; instalación Markor pendiente. El orden y criterios de aceptación siguen en [Roadmap A](docs/ROADMAP-A.md).
+Vigente · [Estado actual y siguiente lanzamiento](docs/ESTADO.md): instalación original de Markor intacta comprobada bajo MAC; lanzamiento, interfaz y persistencia pendientes. El orden y criterios de aceptación siguen en [Roadmap A](docs/ROADMAP-A.md).
 
 Histórico248 · El cliente original confirma RUNNING_UNLOCKED; los forks originales superan el bloqueo tmpfs y MediaProvider aparece con UID10078/contexto propio ante servicemanager. No prueba aislamiento completo. Faltan media.player/media.resource_manager: MediaProvider espera el segundo; la fuente original los publica juntos desde mediaserver64. System_server sufre SIGSEGV(Thread<00>), sin core/stack suficiente; causa exacta abierta. Volumen e instalación Markor aún sin aceptar. Siguiente: integrar servidor multimedia/extractor/métricas originales y recogida original del fallo para verificar volumen y PackageInstaller.48 cargada;121 decisiones y límites documentados, anfitrión restaurado/permisivo y cerrado, auditoría sin pérdidas. R1-MAC, presentación/audio, ARM/GMS/DRM abiertos. [Evidencia canónica](reports/android16-package-bootstrap/original-apex-derive-mac-progress.json).
 
