@@ -416,12 +416,12 @@
         "scope": "Exact Markorv164 Markdown note created163 survives complete cohort teardown and original subsystems167; actual bytes, same UID/inodes/MCS, original install/force-stop/relaunch and real single pointer opens editor.167 native/exterior0. Not host reboot/power loss, FBE/MAC, graceful close, arbitrary upgrade or general APK compatibility."
       },
       "runtime_security_observation": {
-        "candidate": 252,
-        "execution": 252,
-        "state": "terminal exit1; no Markor stage accepted",
+        "candidate": 253,
+        "execution": 254,
+        "state": "terminal exit1; no APK stage accepted",
         "evidence": "reports/android16-package-bootstrap/original-apex-derive-mac-progress.json",
-        "sha256": "6fa4f5fcff501d847e8d5715197f6b17f357782e195c07ad31bd1e18dac17e55",
-        "latest_result": "exit1. Resource readback config_animateScreenLights=true; original StorageManagerService and MediaProvider report emulated;0 mounted. Original shell volume output remains empty; installation never started. mediaserver64 SIGABRT ICU IcuRegistration::getTimeZoneModulePath; missing ANDROID_TZDATA_ROOT. No observed repeat of previous SwiftShader crash; fade/wake cycle not accepted."
+        "sha256": "a8f852b1ca122fb7531c073ea6d13f6eac30f57a95a6a836303fcf4f23748b3e",
+        "latest_result": "Original mounted volume and unlocked user; PackageInstaller session created, APK transfer denied under MAC; session abandoned. Next native stdin streaming; no direct file permission grant."
       },
       "runtime_security_observation_history": [
         {
@@ -647,6 +647,14 @@
           "evidence": "reports/android16-package-bootstrap/original-apex-derive-mac-progress.json",
           "sha256": "b3ec7cfd83b5fae03f08ab6b4e24eec2d3f48e7d2ef3349e5ca214430a2fce2a",
           "latest_result": "Original app forks now pass previous tmpfs denial; original servicemanager observes MediaProvider UID10078/SID mediaprovider_app:s0:c78,c256,c512,c768 requesting media.resource_manager. Original user CLI RUNNING_UNLOCKED. No emulated volume/installation accepted. system_server479 crashes SIGSEGV(Thread<00>), Zygote suicides on server death. Native MediaPlayer/ResourceManager unavailable; MediaProvider waits. No core/tombstone, exact fault PC/library unknown.191.978s enforcing, exit1 then restored0; external closure/audit lost0 verified."
+        },
+        {
+          "candidate": 252,
+          "execution": 252,
+          "state": "terminal exit1; no Markor stage accepted",
+          "evidence": "reports/android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "sha256": "8ae27b921df2d1c29b36d34dfadf37224a0d61366705709a8304e932a7594dc5",
+          "latest_result": "exit1. Resource readback config_animateScreenLights=true; original StorageManagerService and MediaProvider report emulated;0 mounted. Original shell volume output remains empty; installation never started. mediaserver64 SIGABRT ICU IcuRegistration::getTimeZoneModulePath; missing ANDROID_TZDATA_ROOT. No observed repeat of previous SwiftShader crash; fade/wake cycle not accepted."
         }
       ],
       "runtime_security_history": [

@@ -4165,6 +4165,55 @@
         "bytes": 31150
       }
     },
-    "next": "253: restore inherited original init.environ APEX roots for native media; record actual Sm stderr/status; full original PackageInstaller/Markor path. No new APK stages accepted; R1-MAC ARM GMS DRM audio/graphics and product remain open."
+    "next": "253: restore inherited original init.environ APEX roots for native media; record actual Sm stderr/status; full original PackageInstaller/Markor path. No new APK stages accepted; R1-MAC ARM GMS DRM audio/graphics and product remain open.",
+    "source_contracts": {
+      "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/system-core/source/system/core/rootdir/init.environ.rc.in": {
+        "sha256": "193f5f89e7efa65952b42ffd045060dc8f324570f0343f4b2c3ce7d8c1cde997"
+      },
+      "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/display-power-source-acquisition.json": {
+        "sha256": "f31931497ed04038af821017bf31490787239f8853d36c322ebfd20a3bb239db"
+      },
+      "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/sm-runtimeinit-source-acquisition.json": {
+        "sha256": "fe579daec21472efd4dba435ce16adcdb21aea6062f2e35474e633c105be0942"
+      }
+    },
+    "rea_static_fault_module": {
+      "evidence": "ev_31d556c7ccbb18294d3f8dc4b1fc937d48b6778945bdf8ce177b67f583a1da23",
+      "path": "dist/aosp16/swiftshader-link-2/vulkan.pastel.so",
+      "sha256": "dd923b5296ce8bd23c89ac6c874f04cda76a8bc8765fa8160d762b747a1a5117",
+      "scope": "REA MCP ELF notes inspection only. No PT_NOTE/SHT_NOTE. GDB startup during enforcing failed before target/inferior with Guile JIT permission failure; host-policy correlation remains open. Raw results retained in checkpoint250."
+    }
+  },
+  "integrated253_254": {
+    "utc": "2026-11-04T12:28:39.372209+00:00",
+    "253": "Build253 exit0; run253 failed before runtime/MAC due missing compositor_executable_sha256 checkpoint field. Preserved/consumed.",
+    "254": "Same payload253; original inherited init.environ paths restored. Actual Sm exit0 returns private mounted null and emulated;0 mounted null; user RUNNING_UNLOCKED. PackageInstaller creates session2026284750 then correctly denies system_server read of shell_data_file APK. Workflow exit255; trap abandons session (final Success belongs to abandon, not installation). No install/launch accepted. No recurrence of TZDATA abort within this short observation; playback and power lifecycle remain unaccepted.",
+    "checkpoint": "/home/tv/recuperacion-archtv/11744584-f655-45e4-bef8-cd97ce7297d9-markor-software-launch",
+    "result_sha256": "ba3a33f4490d9cd3b1de80be049566aa276c6c86ebff803929d5e60b5c21bef1",
+    "installer_sha256": "d3def7e7e5428755899dc5488860f46beb2aeaaf80c6ab8e100795b29076902c",
+    "host_after": {
+      "utc": "2026-11-04T12:27:25.693459+00:00",
+      "kernel": "6.18.59-archtv-aosp16-1",
+      "boot_id": "ed605c8c-db9e-4ce1-8c57-d383f08d3694",
+      "enforce": "0",
+      "status": [
+        1,
+        116,
+        0,
+        10,
+        1
+      ],
+      "policy_sha256": "2b9925e3eba7d687a2383af91402313c7d46fe12f6edb9e7f9f4fb299fe69076",
+      "owned_running_units": "",
+      "audit": "enabled 0\nfailure 1\npid 0\nrate_limit 0\nbacklog_limit 64\nlost 0\nbacklog 0\nbacklog_wait_time 18000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n",
+      "loops": "",
+      "dm": "No devices found\n",
+      "owned_bpf_remaining": {
+        "prog": [],
+        "map": [],
+        "link": []
+      }
+    },
+    "next": "255: original PackageManagerShellCommand.openInFile/doWriteSplit accepts stdin; stream intact APK through shell pipe rather than granting system_server direct shell_data_file access. Preserve MAC denial and all app stages pending."
   }
 }

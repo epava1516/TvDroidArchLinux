@@ -153,6 +153,17 @@ int main(int argc,char** argv) {
         }
     }
     if(selected) {
+        // Original rootdir/init.environ.rc.in exports these before APEX mounts.
+        // Native services (including ICU in mediaserver) need the same inherited
+        // environment as Java tools. Export paths, without claiming readiness;
+        // original APEX activation and classpath validation verify their contents.
+        for(const auto& entry: {std::pair{"ANDROID_ART_ROOT","/apex/com.android.art"},
+                               std::pair{"ANDROID_I18N_ROOT","/apex/com.android.i18n"},
+                               std::pair{"ANDROID_TZDATA_ROOT","/apex/com.android.tzdata"},
+                               std::pair{"ANDROID_STORAGE","/storage"},
+                               std::pair{"EXTERNAL_STORAGE","/sdcard"}}) {
+            if(setenv(entry.first,entry.second,1)!=0)return 74;
+        }
         // Required original init.environ export. Original installd globals pass
         // getenv(ASEC_MOUNTPOINT) directly to std::string/strlen.
         struct stat directory{};
