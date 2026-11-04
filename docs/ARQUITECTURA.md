@@ -2398,3 +2398,5 @@ El backing Linux de userdata conserva linux.fs_t. El contrato original vold Bind
 ## ALSA: escrituras y reloj son contratos separados
 
 La [ejecución299](../reports/android16-audio-bootstrap/write-observation-progress.json) observa retornos reales del proxy original, incluso después de detener su trabajador; un mensaje TinyALSA almacenado no convierte un retorno0 en fallo. Los contadores no acreditan reloj físico ni sonido. La comparación Linux también presenta duración anómala y EIO: resolver esa frontera antes de alterar transferencias originales o ampliar permisos. La recuperación explícita del observador no acredita cobertura MAC de su cierre.
+
+La [comparación contada de reloj Linux](../reports/android16-audio-bootstrap/clock-comparison.json) conserva frames y retorno de drain: no se debe atribuir toda duración corta a pérdida de datos Android. Las selecciones de reloj son temporales y globales, con recuperación nativa; no hay configuración persistente nueva. Un plazo de supervisión agotado no prueba fallo de vold: en300 su reboot_on_failure sigue al SIGKILL de limpieza, sin reiniciar la VM.

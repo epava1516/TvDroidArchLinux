@@ -1,0 +1,83 @@
+{
+  "scope": "Counted Linux/libasound PCM timing comparison, not Android/acoustic acceptance",
+  "tsc": {
+    "source_bytes": 768000,
+    "expected_frames": 192000,
+    "accepted_frames": 192000,
+    "write_calls": 188,
+    "write_error": 0,
+    "write_seconds": 2.595378203,
+    "delay_result": 0,
+    "delay_frames": 3584,
+    "drain_result": 0,
+    "drain_seconds": 0.054574229,
+    "total_seconds": 2.649952432
+  },
+  "acpi_pm": {
+    "source_bytes": 768000,
+    "expected_frames": 192000,
+    "accepted_frames": 192000,
+    "write_calls": 188,
+    "write_error": 0,
+    "write_seconds": 3.929187385,
+    "delay_result": 0,
+    "delay_frames": 3584,
+    "drain_result": 0,
+    "drain_seconds": 0.084075907,
+    "total_seconds": 4.013263292
+  },
+  "evidence": [
+    {
+      "path": "/home/tv/recuperacion-archtv/20261104T-pcm-frame-drain/stdout.json",
+      "sha256": "d9db9c4645b6e948170505ab5ee9969abb5480cfc9099f613ad5a63e889b19b6"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/20261104T-pcm-frame-drain/result.json",
+      "sha256": "32e8754b820a6711b444397080d9a37577060abae7db7d1de700739f18dbe46f"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/20261104T-pcm-clocksource/stdout.json",
+      "sha256": "f956f0eb3d61c46e5f82cede1be0c7f1e947b97e042ecb874dc3a9259682c07c"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/20261104T-pcm-clocksource/result.json",
+      "sha256": "44364743b2eff6c197d10bd155edbfbda79123450c32729801e4bb3c61cdcae8"
+    }
+  ],
+  "decision": "Temporary acpi_pm integrated VLC experiment; no persistent clocksource setting yet. Exact frames/drain exclude source truncation and partialwrites; one pair does not prove all timing/safety requirements.",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/alsa-project/alsa-utils/v1.2.16/aplay/aplay.c",
+      "scope": "playback_go calls snd_pcm_drain without checking its return; native probe independently records actual return."
+    },
+    {
+      "path": "/home/tv/.cache/archtv/kernel-aosp16-1/source-1/linux-6.18.59/sound/pci/intel8x0.c",
+      "sha256": "b62134d0f8daa98e2e37b623b1e111a1eec8107acddce2faa44c0b9d92fd2098",
+      "scope": "VM optimization only auto-detects QEMU/Parallels; tested forcedmode did not resolve timing; restoreddefault."
+    }
+  ],
+  "kvm_clock": {
+    "record": "/home/tv/recuperacion-archtv/20261104T-pcm-kvm-clock/stdout.json",
+    "sha256": "ac60aaae42bc0fb1f5adf099eab5ab6eb3d0a1128d46f1f47b1ce87d4c4b18fc",
+    "outcome": {
+      "source_bytes": 768000,
+      "expected_frames": 192000,
+      "accepted_frames": 192000,
+      "write_calls": 188,
+      "write_error": 0,
+      "write_seconds": 3.572912787,
+      "delay_result": 0,
+      "delay_frames": 3584,
+      "drain_result": 0,
+      "drain_seconds": 0.074865244,
+      "total_seconds": 3.647778031
+    },
+    "scope": "One run3.648s; no equivalence/stability acceptance"
+  },
+  "integrated300": {
+    "record": "/home/tv/recuperacion-archtv/6f903b15-9ded-4dcc-a2c4-e473635ce64a-markor-software-launch/functional-result.json",
+    "sha256": "7737128a86eddd06156a67d8c4bab8e9b3dce151c44e0f65531204bef3af0281",
+    "result": "startup deadline, no APK launch; normal recovery verified; descriptor publisher unexercised"
+  },
+  "next_experiment": "Bounded display cold-start budget240s/outer250s, original service/dumpsys checks unchanged; observe120s/MAC420s. Next image301 compiles; do not infer availability."
+}

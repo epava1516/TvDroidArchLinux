@@ -10,7 +10,7 @@
   "verification": {
     "filesystem_regressions": 3,
     "py_compile": "pass",
-    "live_candidate": "pending; not yet exercised with new observer"
+    "live_candidate": "Run300 verified terminal ownership/normal host metadata recovery; no Displayed event, descriptor publisher not exercised. Full integrated capture validation remains pending."
   },
   "recovery": {
     "utc": "2026-11-04T23:37:09.799610+00:00",
