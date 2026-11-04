@@ -1,17 +1,17 @@
 # Graph Report - repositorio-principal  (2026-11-04)
 
 ## Corpus Check
-- 349 files · ~326,545 words
+- 349 files · ~326,540 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 52 file(s) not represented in the graph (top: .cil 17, .patch 12, .xml 11)
 
 ## Summary
-- 3451 nodes · 6503 edges · 257 communities (130 shown, 127 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 126 edges (avg confidence: 0.84)
+- 3451 nodes · 6505 edges · 257 communities (130 shown, 127 thin omitted)
+- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 127 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f14ef522`
+- Built from commit: `4488a237`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -106,6 +106,7 @@
 - Capa de compatibilidad APK propia sobre Linux
 - APK mínima: contador
 - .main
+- LocalContextProbe.java
 - RuntimeProbe
 - compositor.rs
 - APK original en el compositor propio
@@ -161,7 +162,7 @@
 - ContextAction
 - Capability
 - .state
-- linux-exec-context.c
+- linux-mc1-cohort.h
 - RenderNodeProbe
 - Medida de View original y siguiente frontera de layout
 - context-metrics/README.md
@@ -222,7 +223,7 @@
 - Referencias Fire TV para Arch TV
 - AppId
 - verify_counter_headless.py
-- skcms-clang-compat-probe.cpp
+- linux-exec-context.c
 - ClientState
 - SystemResourcesChecks.java
 - Capability
@@ -403,8 +404,8 @@ Cohesion: 0.50
 Nodes (3): DBUS_SESSION_BUS_ADDRESS, LIBSEAT_BACKEND, 93-android-shell-session.sh script
 
 ### Community 65 - "LinuxShutdownSink"
-Cohesion: 0.07
-Nodes (12): admit_original_memfd(), close_actions(), main(), send_status(), LinuxShutdownSink, apex_cancelled_, command_, expect_apex_cancel_ (+4 more)
+Cohesion: 0.10
+Nodes (10): admit_original_memfd(), main(), LinuxShutdownSink, apex_cancelled_, command_, expect_apex_cancel_, expect_vold_cancel_, installed_ (+2 more)
 
 ### Community 67 - "Cuelgue completo de la VM durante H6"
 Cohesion: 0.25
@@ -447,8 +448,8 @@ Cohesion: 0.67
 Nodes (3): Al cerrar un hito o antes de interrumpir/reiniciar, Al retomar, Checkpoint y recuperación
 
 ### Community 84 - ".initialize"
-Cohesion: 0.14
-Nodes (4): OriginalBootstrapProbe, MetadataProbe, LocalContextProbe, HostProfile
+Cohesion: 0.27
+Nodes (3): OriginalBootstrapProbe, MetadataProbe, HostProfile
 
 ### Community 86 - "Índice de evidencias"
 Cohesion: 0.06
@@ -579,7 +580,7 @@ Cohesion: 0.08
 Nodes (11): run(), sha(), run(), source_inputs(), run(), run(), sha(), rgb() (+3 more)
 
 ### Community 133 - "linux-graphics-client.cpp"
-Cohesion: 0.11
+Cohesion: 0.08
 Nodes (4): Mapa del proyecto con Graphify, lookup(), main(), status()
 
 ### Community 134 - "winit.rs"
@@ -591,7 +592,7 @@ Cohesion: 0.33
 Nodes (5): Comprobación y límites, Fuentes y construcción, Integración en el contador, Port nativo de recursos de AOSP a Linux, Puente JNI sobre ART
 
 ### Community 136 - "LinuxChildReaper"
-Cohesion: 0.12
+Cohesion: 0.17
 Nodes (7): LinuxChildReaper, claimed_, fd_, mask_saved_, observer_, old_mask_, registered_
 
 ### Community 140 - "Bootstrap de servicios originales sobre Linux"
@@ -655,7 +656,7 @@ Cohesion: 0.12
 Nodes (13): Construcción nativa, Ejecución y límite actual, RenderNode original ejecutado en ART sobre Linux, Construcción de objetos host, Dependencias identificadas, Evidencia y decisión, Port gráfico original: frontera RenderNode, Próximas comprobaciones necesarias (+5 more)
 
 ### Community 182 - "Main"
-Cohesion: 0.18
+Cohesion: 0.17
 Nodes (6): Main, Runnable, Runnable, Runnable, Runnable, UiShutdown
 
 ### Community 196 - "Adaptación tipada de CriticalNative a funciones host HWUI"
@@ -679,7 +680,7 @@ Cohesion: 0.12
 Nodes (17): 10. USO DE FUENTES Y REA, 11. VALIDACIÓN, 12. HITOS Y PUERTAS DE DECISIÓN, 13. DOCUMENTACIÓN Y ENTREGA, 1. PROTEGER EL TRABAJO EXISTENTE, 2. BASE AOSP, 3. ARQUITECTURA DE EJECUCIÓN, 4. SIGNIFICADO DE “SIN ANDROID COMPLETO” (+9 more)
 
 ### Community 205 - "AuditedSectionParser"
-Cohesion: 0.12
+Cohesion: 0.13
 Nodes (14): AuditedSectionParser, active_, current_, kind_, original_, ProfileLine, line, tokens (+6 more)
 
 ### Community 206 - "Holder Binder original en ART/Linux"
@@ -762,9 +763,9 @@ Nodes (9): Capturas de referencia, Catálogo de fuentes, Comparación histórica
 Cohesion: 0.33
 Nodes (3): AppId, identity_rejects_commands_and_keeps_android_profiles_distinct(), LaunchReceipt
 
-### Community 245 - "skcms-clang-compat-probe.cpp"
-Cohesion: 0.32
-Nodes (3): check(), main(), reference()
+### Community 245 - "linux-exec-context.c"
+Cohesion: 0.15
+Nodes (5): main(), refused(), check(), main(), reference()
 
 ### Community 249 - "Capability"
 Cohesion: 0.33

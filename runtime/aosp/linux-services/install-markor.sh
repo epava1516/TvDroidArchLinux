@@ -82,14 +82,17 @@ source_hash=$(/system/bin/sha256sum "$apk_path")
 installed_hash=$(/system/bin/sha256sum "$installed_apk")
 [ "${source_hash%% *}" = "${installed_hash%% *}" ] || exit 1
 /system/bin/printf 'SOURCE %s\nINSTALLED %s\n' "$source_hash" "$installed_hash" > /data/local/tmp/archtv-mc1/markor-installed-bytes.txt
-# Observe directories created by original PMS/installd; never mkdir app data.
-/system/bin/stat -c '%n|inode=%i|uid=%u|gid=%g|mode=%a' /data/user/0/net.gsantner.markor /data/user_de/0/net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-app-data.txt 2>&1
-/system/bin/ls -ldZ /data/user/0/net.gsantner.markor /data/user_de/0/net.gsantner.markor >> /data/local/tmp/archtv-mc1/markor-app-data.txt
-# Retire only the original bootstrap component after real framework unlock.
-/system/bin/cmd package disable --user 0 com.android.settings/.FallbackHome > /data/local/tmp/archtv-mc1/markor-bootstrap-home-stop.txt
-/system/bin/cmd activity force-stop --user 0 com.android.settings
+# Shell cannot inspect private app data under the original MAC/DAC contracts.
+# Retain this actual diagnostic result, without making it an installation or
+# launch predicate. Privileged Linux evidence collection observes backings
+# separately; never grant shell access or create application data here.
+app_data_status=0
+/system/bin/stat -c '%n|inode=%i|uid=%u|gid=%g|mode=%a' /data/user/0/net.gsantner.markor /data/user_de/0/net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-app-data.txt 2>&1 || app_data_status=$?
+/system/bin/printf 'shell_private_data_stat exit=%s NOT_APP_DATA_ACCEPTANCE\n' "$app_data_status" >> /data/local/tmp/archtv-mc1/markor-app-data.txt
+# Observe HOME candidates; explicit Markor launch does not require shell to
+# disable a protected platform component. Actual256 rejected that operation.
+# This does not establish the final Linux-only desktop/product profile.
 /system/bin/cmd package query-activities --brief --user 0 -a android.intent.action.MAIN -c android.intent.category.HOME > /data/local/tmp/archtv-mc1/markor-home-after.txt
-/system/bin/grep -qx 'No activities found' /data/local/tmp/archtv-mc1/markor-home-after.txt
 resolved=$(/system/bin/cmd package resolve-activity --brief --user 0 -a android.intent.action.MAIN -c android.intent.category.LAUNCHER net.gsantner.markor)
 /system/bin/printf '%s\n' "$resolved" > /data/local/tmp/archtv-mc1/markor-resolve.txt
 component=$(/system/bin/printf '%s\n' "$resolved" | /system/bin/tail -n 1)
@@ -106,9 +109,11 @@ if [ -f /data/local/tmp/archtv-mc1/archtv-markor-workflow-token ]; then
     token=$(/system/bin/cat /data/local/tmp/archtv-mc1/archtv-markor-workflow-token)
     case "$token" in ''|*[!0-9a-f]*) exit 1;; esac
     [ "${#token}" -eq 8 ] || exit 1
-    # Privileged original system_server observer, not an app access test.
-    # media_rw is in pinned original ZygoteInit groups; do not expand app FUSE access.
-    note=/data/media/0/Documents/markor/archtv-$token.md
+    # External shell observer uses the original shared-storage FUSE view;
+    # it cannot read the private /data/media backing. Original shell is an
+    # app_domain; no new FUSE grant or fabricated note is introduced here.
+    # Successful shell observation still does not prove ordinary app isolation.
+    note=/storage/emulated/0/Documents/markor/archtv-$token.md
     expected="archtv note $token"
     budget=$(/system/bin/cat /data/local/tmp/archtv-mc1/archtv-markor-workflow-budget)
     case "$budget" in ''|*[!0-9]*) exit 1;; esac

@@ -4275,5 +4275,50 @@
       "/home/tv/recuperacion-archtv/77b80775-cd9e-4b73-a812-7f999ffc7ed9-markor-software-launch/after-host.json": "2981c306ae97f91c7410e609d48ddf45aa1c93de4a4f9863a092108f9f97fc30"
     },
     "next": "257 removes unnecessary protected-HOME mutation and empty-HOME predicate; original explicit resolve/start remains mandatory. Note observer uses real shared FUSE /storage/emulated/0, not private raw backing. No new permission or note writes."
+  },
+  "integrated257": {
+    "utc": "2026-11-04T12:51:12.382770+00:00",
+    "checkpoint": "/home/tv/recuperacion-archtv/3cad5ade-3419-4d16-98ec-3361d14ce9c2-markor-software-launch",
+    "result": "Original resolve/start succeeds. am Status:ok, LaunchState:COLD, actual activity net.gsantner.markor/.activity.IntroActivity. Original SurfaceFlinger screencap inspected: real APK onboarding (illustration of sample documents, not user note/files). No main function, input or persistence accepted.",
+    "facts": [
+      "11-04 12:43:16.904  1000   483   507 I am_proc_start: [0,1371,10104,net.gsantner.markor,next-top-activity,{net.gsantner.markor/net.gsantner.markor.activity.MainActivity}]",
+      "11-04 12:43:20.948  1000   483   504 I ActivityTaskManager: Displayed net.gsantner.markor/.activity.IntroActivity for user 0: +4s189ms",
+      "11-04 12:44:03.377  1000   483   529 I PowerManagerService: Going to sleep due to timeout (uid 1000, screenOffTimeout=60000, activityTimeoutWM=-1, maxDimRatio=0.20000005, maxDimDur=7000)..."
+    ],
+    "presentation_limit": "Physical Smithay capture was blank after original60s sleep. More decisive: SurfaceFlinger repeatedly reported present NO_RESOURCES while awake, so sleep alone cannot explain missing presentation. Next HWC experiment must locate real failing fence/mapper/Wayland callback, preserving waits and failure semantics.",
+    "instrumentation_limit": "Automatic observer matched only MainActivity, missing actual IntroActivity. Copied input sender hardcoded older UUID77608ead. Corrected current-UUID sender first failed ENODEV because uinput module unloaded; temporary modprobe uinput succeeded. Retry guard rejected after runtime ended/VT restored. No input sent/accepted. Next observer/sender bind explicit UUID, actual Intro event, no historical coordinate auto-click.",
+    "evidence": {
+      "/home/tv/recuperacion-archtv/3cad5ade-3419-4d16-98ec-3361d14ce9c2-markor-software-launch/result.json": "cfb39cba8d7517f0e6e39ffb316c8252b43a11d7153681248161840f6a91a50e",
+      "/home/tv/recuperacion-archtv/3cad5ade-3419-4d16-98ec-3361d14ce9c2-markor-software-launch/observed-markor-launch.txt": "0266a114be93445f25e1ceb450c2d9cb8fe8a9da5dfe04724a4b4484ea2aaa4a",
+      "/home/tv/recuperacion-archtv/3cad5ade-3419-4d16-98ec-3361d14ce9c2-markor-software-launch/observed-markor-sf.png": "8079168a4fb41aa5ee139fb37c35e2026b65c3f48bec1001eb10b7586c869353",
+      "/home/tv/recuperacion-archtv/3cad5ade-3419-4d16-98ec-3361d14ce9c2-markor-software-launch/external-capture-trigger.json": "9faaa84c840cd3ff4acc00c2f113d824cbc96d185a0874109ce602b7a0feb9d6",
+      "/home/tv/recuperacion-archtv/3cad5ade-3419-4d16-98ec-3361d14ce9c2-markor-software-launch/observed-smithay-frame.png": "a77f973095ea10b0a2243a18b9fc86dd94efa540b652980ed0791c7424d95706",
+      "/home/tv/recuperacion-archtv/3cad5ade-3419-4d16-98ec-3361d14ce9c2-markor-software-launch/observed-smithay-frame.json": "9f25bbc416d427024055e8aec5776c252ceb93d23444fc9f83619e7cc2941582",
+      "/home/tv/recuperacion-archtv/3cad5ade-3419-4d16-98ec-3361d14ce9c2-markor-software-launch/after-host.json": "6024999cde63b554d612e0d5b5072513ad7819b1c2052ed74b3552182892e5cb"
+    },
+    "host_after": {
+      "utc": "2026-11-04T12:47:47.122305+00:00",
+      "kernel": "6.18.59-archtv-aosp16-1",
+      "boot_id": "ed605c8c-db9e-4ce1-8c57-d383f08d3694",
+      "enforce": "0",
+      "status": [
+        1,
+        128,
+        0,
+        10,
+        1
+      ],
+      "policy_sha256": "2b9925e3eba7d687a2383af91402313c7d46fe12f6edb9e7f9f4fb299fe69076",
+      "owned_running_units": "",
+      "audit": "enabled 0\nfailure 1\npid 0\nrate_limit 0\nbacklog_limit 64\nlost 0\nbacklog 0\nbacklog_wait_time 18000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n",
+      "loops": "",
+      "dm": "No devices found\n",
+      "owned_bpf_remaining": {
+        "prog": [],
+        "map": [],
+        "link": []
+      }
+    },
+    "next": "258: original intact Markor with stage diagnostics in existing HWC adapter to resolve NO_RESOURCES, corrected native capture/input instrumentation, uinput now loaded. No policy grant or Android full boot."
   }
 }
