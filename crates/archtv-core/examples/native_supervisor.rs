@@ -17,8 +17,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             .to_str()
             .ok_or("invalid duration")?
             .parse()?;
-        if millis > 300_000 {
-            return Err("observation duration exceeds 300000ms".into());
+        if millis > 600_000 {
+            return Err("observation duration exceeds 600000ms".into());
         }
         separator = args.next();
         Duration::from_millis(millis)

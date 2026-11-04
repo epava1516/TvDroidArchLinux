@@ -115,15 +115,19 @@ if [ -f /data/local/tmp/archtv-mc1/archtv-markor-workflow-token ]; then
     # Successful shell observation still does not prove ordinary app isolation.
     note=/storage/emulated/0/Documents/markor/archtv-$token.md
     expected="archtv note $token"
+    # Command substitution strips trailing newlines. Require the exact byte
+    # count too, so an autosave before the final Enter cannot trigger force-stop.
+    expected_bytes=$((${#expected} + 1))
     budget=$(/system/bin/cat /data/local/tmp/archtv-mc1/archtv-markor-workflow-budget)
     case "$budget" in ''|*[!0-9]*) exit 1;; esac
-    [ "$budget" -ge 15 ] && [ "$budget" -le 285 ] || exit 1
+    [ "$budget" -ge 15 ] && [ "$budget" -le 585 ] || exit 1
     n=0
     while [ "$n" -lt "$budget" ]; do
-        if [ -f "$note" ] && [ "$(/system/bin/cat "$note")" = "$expected" ]; then break; fi
+        if [ -f "$note" ] && [ "$(/system/bin/stat -c %s "$note")" -eq "$expected_bytes" ] && [ "$(/system/bin/cat "$note")" = "$expected" ]; then break; fi
         n=$((n+1)); /system/bin/sleep 1
     done
     [ -f "$note" ] || exit 1
+    [ "$(/system/bin/stat -c %s "$note")" -eq "$expected_bytes" ] || exit 1
     [ "$(/system/bin/cat "$note")" = "$expected" ] || exit 1
     [ "$(/system/bin/stat -c %s "$note")" -le 4096 ]
     /system/bin/cat "$note" > /data/local/tmp/archtv-mc1/markor-note-bytes.bin

@@ -748,32 +748,46 @@
       "runtime_mac_stage_evidence": {
         "installation": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "a342aba48b9fe960a9ad6aa5e3e35468673da397c9052afb62360f6e6a0efdf0",
+          "record_sha256": "3aa6ccf594b89c8fa406f00a6acad78e5e50f683ab35fec95d30fd01f61c4a8b",
           "section": "integrated255",
           "accepted": true,
           "scope": "Original PackageInstaller installation, identical intact APK bytes and physical private-directory metadata under enforcing. Not complete isolation, launch, UI, note persistence or full workflow acceptance."
         },
-        "remaining": "Keyboard text, main note creation/save, persistence and application close/reopen remain unaccepted; broader services, R1-MAC, ARM/GMS/DRM and product requirements open.",
+        "remaining": "Original explicit app force-stop/new PID/relaunch and visible note reopen remain unaccepted. Observer/storage alias misses later FUSE submount; fix canonical original mounted view. Broader services, full R1-MAC/ARM/GMS/DRM and product gates open.",
         "launch": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "a342aba48b9fe960a9ad6aa5e3e35468673da397c9052afb62360f6e6a0efdf0",
+          "record_sha256": "3aa6ccf594b89c8fa406f00a6acad78e5e50f683ab35fec95d30fd01f61c4a8b",
           "section": "integrated257",
           "accepted": true,
           "scope": "Original explicit launch redirects intact APK to IntroActivity; Status:ok and real SF internal onboarding pixels. Not presentation on Rust/Smithay, input, complete Markor workflow or broad compatibility."
         },
         "physical_presentation": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "a342aba48b9fe960a9ad6aa5e3e35468673da397c9052afb62360f6e6a0efdf0",
+          "record_sha256": "3aa6ccf594b89c8fa406f00a6acad78e5e50f683ab35fec95d30fd01f61c4a8b",
           "section": "integrated259_physical_presentation",
           "accepted": true,
           "scope": "Original onboarding pixels visually observed in actual Smithay DRM capture during enforcing window; no input, note or lifecycle acceptance."
         },
         "pointer_input": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "a342aba48b9fe960a9ad6aa5e3e35468673da397c9052afb62360f6e6a0efdf0",
+          "record_sha256": "3aa6ccf594b89c8fa406f00a6acad78e5e50f683ab35fec95d30fd01f61c4a8b",
           "section": "integrated262",
           "accepted": true,
           "scope": "Real Linux pointer through Smithay/HWC/typed gateway/original InputManager advances intact Markor UI and original Settings under enforcing. Not keyboard text, note or complete workflow."
+        },
+        "keyboard_ascii": {
+          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "record_sha256": "3aa6ccf594b89c8fa406f00a6acad78e5e50f683ab35fec95d30fd01f61c4a8b",
+          "section": "integrated266",
+          "accepted": true,
+          "scope": "Actual original filename and Markdown text entered through physical Linux keyboard, original Generic.kl/libinput and original InputManager under enforcing; other layouts unproven."
+        },
+        "note_create_save": {
+          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "record_sha256": "3aa6ccf594b89c8fa406f00a6acad78e5e50f683ab35fec95d30fd01f61c4a8b",
+          "section": "integrated266",
+          "accepted": true,
+          "scope": "Real original UI creates/saves21 bytes, observed unchanged in persistent backing after cohort closes. Not app reopen or explicit lifecycle acceptance."
         }
       }
     }

@@ -133,7 +133,7 @@ original_apex_bootstrap=build_options.get('original_apex_bootstrap',False)
 assert isinstance(original_apex_bootstrap,bool)
 observe_ms=build_options.get('observe_ms',3000)
 userdata_name=build_options.get('persistent_userdata_name')
-assert isinstance(observe_ms,int) and 3000<=observe_ms<=300000
+assert isinstance(observe_ms,int) and 3000<=observe_ms<=600000
 # Materialize the existing graphics adapter, then add the tested APEX boundary.
 recipe=(r/'reports/android16-hwc3-wayland/execute-graphics.py').read_text()
 last="exec(compile(base, '<materialized graphics factory>', 'exec'), {'__name__': '__main__'})"

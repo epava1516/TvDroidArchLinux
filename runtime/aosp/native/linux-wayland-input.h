@@ -79,7 +79,7 @@ class LinuxWaylandInput {
         }
     }
     void Key(uint32_t scan,bool down){
-        if(!layout_){auto result=android::KeyLayoutMap::load("/system/usr/keylayout/Generic.kl");if(!result.ok()){std::fprintf(stderr,"WAYLAND_INPUT_ORIGINAL_KEYLAYOUT_UNAVAILABLE\n");return;}layout_=*result;}
+        if(!layout_){auto result=android::KeyLayoutMap::load("/vendor/usr/keylayout/Generic.kl");if(!result.ok()){std::fprintf(stderr,"WAYLAND_INPUT_ORIGINAL_KEYLAYOUT_UNAVAILABLE\n");return;}layout_=*result;}
         int32_t code=0;uint32_t flags=0;
         if(layout_->mapKey(scan,0,&code,&flags)!=android::OK || code==0){std::fprintf(stderr,"WAYLAND_INPUT_UNMAPPED_SCAN %u\n",scan);return;}
         if(down){if(held_.count(scan))return;held_[scan]=code;}else if(!held_.erase(scan))return;

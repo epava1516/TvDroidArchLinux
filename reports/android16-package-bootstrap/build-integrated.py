@@ -45,7 +45,9 @@ checkpoint_diagnostic='--checkpoint-diagnostic' in sys.argv[2:]
 keymint_component='--keymint-component' in sys.argv[2:]
 software_platform='--software-security' in sys.argv[2:]
 observe_ms=int(next((a.split('=',1)[1] for a in sys.argv[2:] if a.startswith('--observe-ms=')),'3000'))
-assert 3000<=observe_ms<=300000
+# Real262 used the entire300s window on original onboarding/storage UI.
+# Keep startup separately bounded; allow at most600s of actual interaction.
+assert 3000<=observe_ms<=600000
 userdata_name=next((a.split('=',1)[1] for a in sys.argv[2:] if a.startswith('--userdata-name=')),None)
 assert userdata_name is None or (software_platform and re.fullmatch('[a-z0-9][a-z0-9_-]{0,47}',userdata_name))
 workflow_token=next((a.split('=',1)[1] for a in sys.argv[2:] if a.startswith('--markor-workflow-token=')),None)
@@ -95,11 +97,21 @@ assert '[Requesting program interpreter: /system/bin/bootstrap/linker64]' in sub
 argv=json.loads((r/'reports/android16-hwmanager-cohort/helper-build.json').read_text())['argv'];argv[argv.index('-o')+1]=str(out/'linux-exec-context-image');run(argv)
 (out/'artifacts.json').write_text(json.dumps({n:hashlib.sha256((out/n).read_bytes()).hexdigest() for n in ['graphics-client','cargo/debug/examples/native_supervisor','linux-exec-context-image','property-coordinator']},indent=2))
 base=r/'dist/aosp16/sf-cohort-build-32';vendor=json.loads((base/'vendor-inputs.json').read_text())
-input_hwc=r/'dist/aosp16/hwc3-wayland-input-9'
+input_hwc=r/'dist/aosp16/hwc3-wayland-input-10'
 input_record=json.loads((input_hwc/'build.json').read_text());assert input_record['terminal']
 assert hashlib.sha256(Path(input_record['executable']).read_bytes()).hexdigest()==input_record['executable_sha256']
 for target,value in vendor['files'].items():
  if value.get('source','').endswith('android.hardware.graphics.composer3-service.archtv-display-2'):value['source']=input_record['executable']
+# The Linux seat HAL uses the original complete KeyLayoutMap implementation.
+# Actual265 correctly denied its access to generic system_file/Generic.kl.
+# Supply identical original GSI data as readonly device configuration, using
+# the existing vendor_configs_file contract; never grant generic system reads
+# or replace the original table/parser with a handwritten keycode map.
+keylayout=r/'dist/aosp16/factory-inputs-3/root/system/usr/keylayout/Generic.kl'
+keylayout_target='/vendor/usr/keylayout/Generic.kl'
+assert keylayout.is_file() and keylayout_target not in vendor['files']
+vendor['files'][keylayout_target]={'source':str(keylayout),'context':'u:object_r:vendor_configs_file:s0','mode':0o444}
+(out/'original-keylayout-input.json').write_text(json.dumps({'source':str(keylayout),'sha256':hashlib.sha256(keylayout.read_bytes()).hexdigest(),'target':keylayout_target,'context':'u:object_r:vendor_configs_file:s0','mode':'0444','scope':'Original AOSP Generic.kl bytes unchanged; original KeyLayoutMap, readonly vendor device configuration, not keyboard execution acceptance'},indent=2)+'\n')
 # Preserve original generic minigbm heap path, all four modules from one build.
 minigbm=r/'dist/aosp16/minigbm-native-link-6'
 minigbm_record=json.loads((minigbm/'link.json').read_text());assert minigbm_record['terminal']

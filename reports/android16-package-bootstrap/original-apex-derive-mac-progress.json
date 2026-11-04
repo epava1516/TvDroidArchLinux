@@ -5265,5 +5265,281 @@
     "failure": "Bounded observation300s expires before note. Native MC1_CLOSE_OBSERVED enforcing1, then incomplete workflow makes exit1. Does not accept application lifecycle.",
     "evidence_limit": "Frontend EXIT archive can race outer stop; archived frame snapshots/PNGs and original Android full log preserved. Fix bounded natural parent close before force stop next execution.",
     "next": "Longer bounded interaction budget with original readiness/permissions/ACK preserved; continue existing persisted app state, create note through UI, save, force-stop/relaunch/reopen and compare real bytes. No app data seeding."
+  },
+  "integrated263": {
+    "checkpoint": "/home/tv/recuperacion-archtv/3a963448-560e-4e6a-952a-f1a2cee4c49b-markor-software-launch",
+    "scope": "Observation600s rejected before native guest by remaining executor300s bound; corrected, failed artifact retained. Natural parent archive/cleanup passed. No APK result."
+  },
+  "integrated264": {
+    "checkpoint": "/home/tv/recuperacion-archtv/2c929b0b-c896-40fd-a190-39584316662a-markor-software-launch",
+    "scope": "Installed/launched original APK; shell rejects budget585 against old285 maximum and exits1. No input consumed. Corrected image script bound, no permission/readiness bypass.",
+    "additional_unresolved": "Original artd helper dex2oat32 execution EACCES captured; compilation not accepted. DeviceLockController/DynamicSystem background failures not claimed available."
+  },
+  "integrated265": {
+    "checkpoint": "/home/tv/recuperacion-archtv/931c46cb-c3af-4d7e-bd9d-3d7475fd9f78-markor-software-launch",
+    "scope": "Original main UI and New-document dialog; actual physical keys reach HWC, Generic.kl/system_file read denied. Filename remains empty. Controlled stop, no keyboard text acceptance."
+  },
+  "original_keylayout_vendor_config": {
+    "artifact": {
+      "source": "/home/tv/repositorio-principal/dist/aosp16/factory-inputs-3/root/system/usr/keylayout/Generic.kl",
+      "sha256": "3c2c3c704f05973b49cecd5dbccd28f211c399e6f5eb2877fd07cdd203b690ac",
+      "target": "/vendor/usr/keylayout/Generic.kl",
+      "context": "u:object_r:vendor_configs_file:s0",
+      "mode": "0444",
+      "scope": "Original AOSP Generic.kl bytes unchanged; original KeyLayoutMap, readonly vendor device configuration, not keyboard execution acceptance"
+    },
+    "kernel_decisions": {
+      "scope": "Actualloaded policy decisions, independent of globalpermissive. No dangerouswrite/load/enforce operation attempted; not runtimeisolationacceptance.",
+      "cases": [
+        {
+          "source": "u:r:hal_graphics_composer_default:s0",
+          "target": "u:object_r:vendor_configs_file:s0",
+          "class": "file",
+          "permission": "read",
+          "allowed": true,
+          "expected": true,
+          "flags": 0
+        },
+        {
+          "source": "u:r:hal_graphics_composer_default:s0",
+          "target": "u:object_r:vendor_configs_file:s0",
+          "class": "file",
+          "permission": "open",
+          "allowed": true,
+          "expected": true,
+          "flags": 0
+        },
+        {
+          "source": "u:r:hal_graphics_composer_default:s0",
+          "target": "u:object_r:vendor_configs_file:s0",
+          "class": "file",
+          "permission": "getattr",
+          "allowed": true,
+          "expected": true,
+          "flags": 0
+        },
+        {
+          "source": "u:r:hal_graphics_composer_default:s0",
+          "target": "u:object_r:vendor_configs_file:s0",
+          "class": "file",
+          "permission": "map",
+          "allowed": true,
+          "expected": true,
+          "flags": 0
+        },
+        {
+          "source": "u:r:hal_graphics_composer_default:s0",
+          "target": "u:object_r:vendor_configs_file:s0",
+          "class": "file",
+          "permission": "write",
+          "allowed": false,
+          "expected": false,
+          "flags": 0
+        }
+      ],
+      "enforce": "0"
+    },
+    "scope": "Unchanged original Generic.kl staged readonly as vendor_configs_file and parsed by original libinput KeyLayoutMap; actual text tested266. Existing read/map contract reused; write denied and policy60 unchanged."
+  },
+  "integrated266": {
+    "checkpoint": "/home/tv/recuperacion-archtv/06c48864-6242-44d5-acde-9a3bbcc0ce8f-markor-software-launch",
+    "run_id": "06c48864-6242-44d5-acde-9a3bbcc0ce8f",
+    "payload": 265,
+    "policy": 60,
+    "result": "Intact Markor creates named Markdown note via original UI, physical Linux keyboard types actual filename/content, Save clicked. Exact21 bytes remain in real persisted backing after cohort closes.",
+    "note": {
+      "path": "/home/tv/.local/share/archtv/experimental-userdata/markor-cycle-232/data/media/0/Documents/markor/archtv-e67cd03b.md",
+      "bytes_hex": "617263687476206e6f74652065363763643033620a",
+      "size": 21,
+      "sha256": "636ce55ce9922bbf0d71f8fda4218536489af0e828336b0e2b7720221a491630",
+      "uid": 10078,
+      "gid": 1023,
+      "inode": 11954672,
+      "mode": "0o660",
+      "scope": "Actual note created/typed/saved through intact APK UI; read-only after cohort closure. No app-reopen acceptance."
+    },
+    "baseline": {
+      "path": "/home/tv/.local/share/archtv/experimental-userdata/markor-cycle-232/data/media/0/Documents/markor/archtv-e67cd03b.md",
+      "exists": false,
+      "scope": "Read-only baseline, no data writes"
+    },
+    "images": {
+      "reports/android16-package-bootstrap/markor-mac266-filename.png": {
+        "source": "/home/tv/recuperacion-archtv/06c48864-6242-44d5-acde-9a3bbcc0ce8f-markor-software-launch/name-complete.png",
+        "sha256": "1d7cb0c22747792ddb4e60789c0382dd6959cf25863dd68f56d8f47459c41ce1"
+      },
+      "reports/android16-package-bootstrap/markor-mac266-typing.png": {
+        "source": "/home/tv/recuperacion-archtv/06c48864-6242-44d5-acde-9a3bbcc0ce8f-markor-software-launch/note-partial-text.png",
+        "sha256": "7ed1358a1fcba28439217fc5b1d68799203f0bceed8030d872bb58d1e2b3db1e"
+      },
+      "reports/android16-package-bootstrap/markor-mac266-saved.png": {
+        "source": "/home/tv/recuperacion-archtv/06c48864-6242-44d5-acde-9a3bbcc0ce8f-markor-software-launch/after-save.png",
+        "sha256": "07b9f988f84d82f13f08c02da70f1f897653ee2fedf9561ac7ce922e52b8426a"
+      }
+    },
+    "mac_window": {
+      "seconds": 900,
+      "scope": "Global enforcing only after real factory preparation; original subsystems, not APK/MAC acceptance by exit0",
+      "activated": true,
+      "policy_readback_sha256": "3df7d54f003d57287cc7c7761f52ae034ed9ba91e0f61a2a097cdd3b30161aa6",
+      "started_monotonic": 28233.354404074,
+      "candidate_exit": 1,
+      "mode_at_candidate_exit": "1",
+      "elapsed_enforcing_attempt": 639.619324092997,
+      "restored_enforce": "0",
+      "watchdog_cancelled_after_restore": true,
+      "watchdog_status": 15
+    },
+    "closure": {
+      "id": "06c48864-6242-44d5-acde-9a3bbcc0ce8f",
+      "outer_unit": "archtv-markor-session-06c48864-6242-44d5-acde-9a3bbcc0ce8f",
+      "runner_unit": "archtv-package-runner-06c48864-6242-44d5-acde-9a3bbcc0ce8f",
+      "initial_vt": "1",
+      "root_pid": 138440,
+      "root_boot_id": "ed605c8c-db9e-4ce1-8c57-d383f08d3694",
+      "result": "native_result_recorded",
+      "fuse_connections_before": [],
+      "host_devices_before": {
+        "card0": {
+          "mode": "0o660",
+          "uid": 0,
+          "gid": 983,
+          "rdev": 57856,
+          "inode": 366
+        },
+        "renderD128": {
+          "mode": "0o666",
+          "uid": 0,
+          "gid": 987,
+          "rdev": 57984,
+          "inode": 365
+        }
+      },
+      "natural_parent_close_observed": true,
+      "frontend_archive_observed": true,
+      "interaction_exit": 1,
+      "host_sysrq_before": {
+        "device": 23,
+        "inode": 4026532098,
+        "mode": "0o200",
+        "uid": 0,
+        "gid": 0,
+        "label": "u:object_r:proc_sysrq:s0",
+        "readonly_mount": false
+      },
+      "host_sysrq_after": {
+        "device": 23,
+        "inode": 4026532098,
+        "mode": "0o200",
+        "uid": 0,
+        "gid": 0,
+        "label": "u:object_r:proc_sysrq:s0",
+        "readonly_mount": false
+      },
+      "host_sysrq_metadata_unchanged": true,
+      "host_devices_after": {
+        "card0": {
+          "mode": "0o660",
+          "uid": 0,
+          "gid": 983,
+          "rdev": 57856,
+          "inode": 366
+        },
+        "renderD128": {
+          "mode": "0o666",
+          "uid": 0,
+          "gid": 987,
+          "rdev": 57984,
+          "inode": 365
+        }
+      },
+      "host_device_metadata_unchanged": true,
+      "fuse_connections_after": [],
+      "new_fuse_connections": [],
+      "final_vt": "1",
+      "outer_active": false,
+      "runner_active": false
+    },
+    "audit": {
+      "before": {
+        "text": "enabled 0\nfailure 1\npid 0\nrate_limit 0\nbacklog_limit 64\nlost 0\nbacklog 0\nbacklog_wait_time 18000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n",
+        "fields": {
+          "enabled": "0",
+          "failure": "1",
+          "pid": "0",
+          "rate_limit": "0",
+          "backlog_limit": "64",
+          "lost": "0",
+          "backlog": "0",
+          "backlog_wait_time": "18000",
+          "backlog_wait_time_actual": "0",
+          "loginuid_immutable": "0 unlocked"
+        }
+      },
+      "rules_sha256_before": "61501e69a61dbbc1a41605ea15c34807e6b1d3992bee195dde36a7ebdd95dd87",
+      "unit": "archtv-audit-mac-06c48864",
+      "active": {
+        "text": "enabled 1\nfailure 1\npid 138430\nrate_limit 0\nbacklog_limit 4096\nlost 0\nbacklog 0\nbacklog_wait_time 18000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n",
+        "fields": {
+          "enabled": "1",
+          "failure": "1",
+          "pid": "138430",
+          "rate_limit": "0",
+          "backlog_limit": "4096",
+          "lost": "0",
+          "backlog": "0",
+          "backlog_wait_time": "18000",
+          "backlog_wait_time_actual": "0",
+          "loginuid_immutable": "0 unlocked"
+        }
+      },
+      "root_controller_exit": 0,
+      "before_receiver_stop": {
+        "text": "enabled 1\nfailure 1\npid 138430\nrate_limit 0\nbacklog_limit 4096\nlost 0\nbacklog 0\nbacklog_wait_time 18000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n",
+        "fields": {
+          "enabled": "1",
+          "failure": "1",
+          "pid": "138430",
+          "rate_limit": "0",
+          "backlog_limit": "4096",
+          "lost": "0",
+          "backlog": "0",
+          "backlog_wait_time": "18000",
+          "backlog_wait_time_actual": "0",
+          "loginuid_immutable": "0 unlocked"
+        }
+      },
+      "after": {
+        "text": "enabled 0\nfailure 1\npid 0\nrate_limit 0\nbacklog_limit 64\nlost 0\nbacklog 0\nbacklog_wait_time 18000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n",
+        "fields": {
+          "enabled": "0",
+          "failure": "1",
+          "pid": "0",
+          "rate_limit": "0",
+          "backlog_limit": "64",
+          "lost": "0",
+          "backlog": "0",
+          "backlog_wait_time": "18000",
+          "backlog_wait_time_actual": "0",
+          "loginuid_immutable": "0 unlocked"
+        }
+      },
+      "rules_unchanged": true,
+      "lost_delta": 0,
+      "receiver_closed": true,
+      "backlog_limit_restored": true
+    },
+    "log": {
+      "bytes": 1178051,
+      "sha256": "4f3edec2f9622dda92c3a603df53108aab365e9cff0de5637aca03924f7b49d3",
+      "source": "/home/tv/.local/share/archtv/experimental-userdata/markor-cycle-232/data/local/tmp/archtv-mc1/original-logcat.txt"
+    },
+    "limit": "No explicit original am force-stop/relaunch or app reopening accepted. Shell observer alias/storage lacks later FUSE submount; original canonical mount/mnt/user/0/emulated is present. Window expires, outer1 for incomplete workflow; process death by cohort teardown is not claimed an app lifecycle pass.",
+    "next": "Keep actual note, adapt observer to original mounted FUSE view, test original force-stop/new PID/relaunch and visible note reopen. Never grant shell private/data/media access or seed note.",
+    "other_limits": "ASCII text only, not all keyboard layouts. Full host R1-MAC, broad APK/ARM/GMS/DRM and product gates remain open.",
+    "reproduction_scripts": {
+      "root-controller.py": "4b220b4434ca2a1a1c2b731c47b393136810b4f56e296f7ecf3bbfa596008c24",
+      "audit-wrapper.py": "aaaf28c5d1f7a4c1bbf5d34934dcbe1307d790fb8f543bd2f6f525dfae7746bf"
+    }
   }
 }

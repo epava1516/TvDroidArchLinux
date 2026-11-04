@@ -29,7 +29,7 @@ integrated_socket=Path(sys.argv[3]) if len(sys.argv)==4 else None
 interaction_extension=0
 if integrated_socket:
  observe_ms=json.loads((payload.parent/'build-options.json').read_text()).get('observe_ms',3000)
- assert isinstance(observe_ms,int) and 3000<=observe_ms<=300000
+ assert isinstance(observe_ms,int) and 3000<=observe_ms<=600000
  interaction_extension=max(0,(observe_ms+999)//1000-30)
 (recovery/'before.json').write_text(json.dumps({'phase':'preflight','argv':sys.argv,'boot_id':Path('/proc/sys/kernel/random/boot_id').read_text().strip(),'head':command(['runuser','-u','tv','--','git','-C',str(repo),'rev-parse','HEAD']).stdout.strip(),'pending':command(['runuser','-u','tv','--','git','-C',str(repo),'status','--short']).stdout},indent=2)+'\n')
 os.chown(recovery,1000,1000);os.chown(recovery/'before.json',1000,1000)
@@ -85,10 +85,10 @@ started=time.time();log=recovery/'run.log';exit_code=None;cleanup=[]
 # from hwmanager-cohort/enforcing-window.py. Never enables a permissive domain.
 mac_window=int(os.environ.get('ARCHTV_MAC_WINDOW_SECONDS','0'))
 # A complete APK workflow includes the existing 300s native startup bound
-# plus up to 300s post-start interaction. Short probes retain the 120s ceiling.
+# plus up to 600s post-start interaction. Short probes retain the 120s ceiling.
 # This changes duration only; preopened-FD restoration and independent watchdog
 # remain mandatory, with no permissive domain or administration exception.
-mac_limit=600 if integrated_socket and observe_ms>=30000 else 120
+mac_limit=300+(observe_ms+999)//1000 if integrated_socket and observe_ms>=30000 else 120
 assert mac_window==0 or 4<=mac_window<=mac_limit
 
 def candidate_run(args, **kwargs):

@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793805081.8834445,
-    "seen": 1793805265.9928124,
-    "ast_hash": "8d46f4d899555fa030b051af74daad81",
+    "mtime": 1793809580.7216287,
+    "seen": 1793809597.219046,
+    "ast_hash": "779384bbe209cdef4ba504c84382e5b8",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793806775.973258,
-    "seen": 1793806791.3038135,
-    "ast_hash": "109859f64958eef5a6be386fc5d80a91",
+    "mtime": 1793809580.6889281,
+    "seen": 1793809597.2194006,
+    "ast_hash": "a3acff253d1730c7852abd193dc80095",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793806775.9904132,
-    "seen": 1793806791.3047118,
-    "ast_hash": "4a64073ea3cd566bd00dc34ac2c3027f",
+    "mtime": 1793809580.7052953,
+    "seen": 1793809597.2198288,
+    "ast_hash": "e40a0ef1ee0737ddb63514924bad523e",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -1908,9 +1908,9 @@
     "semantic_hash": ""
   },
   "crates/archtv-core/examples/native_supervisor.rs": {
-    "mtime": 1793743708.6728876,
-    "seen": 1793744931.3511262,
-    "ast_hash": "0e79cf90aeb32a746d562b3cee15f8b5",
+    "mtime": 1793806889.3277798,
+    "seen": 1793807057.181452,
+    "ast_hash": "5557a67211d8d783ba8ebe7a1d224f69",
     "semantic_hash": ""
   },
   "crates/archtv-core/src/native_process.rs": {
@@ -2034,9 +2034,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/install-markor.sh": {
-    "mtime": 1793795972.0808642,
-    "seen": 1793796013.2249582,
-    "ast_hash": "8ac4870c24b9b333f84744fc65c82ed3",
+    "mtime": 1793808333.1878781,
+    "seen": 1793809597.2011425,
+    "ast_hash": "ea7bd90984a23b184e907bb147632d26",
     "semantic_hash": ""
   },
   "scripts/run_completion.py": {
@@ -2136,9 +2136,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-wayland-input.h": {
-    "mtime": 1793805762.4416854,
-    "seen": 1793806791.2874386,
-    "ast_hash": "cce2a35ad6900b8c321197a8ab065fe7",
+    "mtime": 1793808254.8633685,
+    "seen": 1793809597.20397,
+    "ast_hash": "51edcbc1769a0a63347316c615823aca",
     "semantic_hash": ""
   },
   "runtime/aosp/android16-qpr2/policy/selected-platform-profile.json": {
