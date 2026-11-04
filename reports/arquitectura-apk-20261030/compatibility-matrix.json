@@ -748,22 +748,22 @@
       "runtime_mac_stage_evidence": {
         "installation": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "9cb384a4e4171162fbda14359513bbeaad933856d665db839dc119d8bc04e33b",
+          "record_sha256": "34dc393e9946a474e51f8abf07844dff2717df05c9763693d8b73099ebaf2064",
           "section": "integrated255",
           "accepted": true,
           "scope": "Original PackageInstaller installation, identical intact APK bytes and physical private-directory metadata under enforcing. Not complete isolation, launch, UI, note persistence or full workflow acceptance."
         },
-        "remaining": "Input hotplug labels blocked; main function, persistence, services and close/reopen under MAC remain unaccepted. R1 full-host security open.",
+        "remaining": "Input hotplug labeling verified separately with original udev under enforcing59; integrated260 stopped at display startup35s deadline before Markor. Application input, main function, persistence, services, close/reopen and full R1 remain unaccepted.",
         "launch": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "9cb384a4e4171162fbda14359513bbeaad933856d665db839dc119d8bc04e33b",
+          "record_sha256": "34dc393e9946a474e51f8abf07844dff2717df05c9763693d8b73099ebaf2064",
           "section": "integrated257",
           "accepted": true,
           "scope": "Original explicit launch redirects intact APK to IntroActivity; Status:ok and real SF internal onboarding pixels. Not presentation on Rust/Smithay, input, complete Markor workflow or broad compatibility."
         },
         "physical_presentation": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "9cb384a4e4171162fbda14359513bbeaad933856d665db839dc119d8bc04e33b",
+          "record_sha256": "34dc393e9946a474e51f8abf07844dff2717df05c9763693d8b73099ebaf2064",
           "section": "integrated259_physical_presentation",
           "accepted": true,
           "scope": "Original onboarding pixels visually observed in actual Smithay DRM capture during enforcing window; no input, note or lifecycle acceptance."

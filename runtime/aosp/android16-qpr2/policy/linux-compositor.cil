@@ -12,6 +12,11 @@
 (typeattributeset linux.domain (archtv_compositor))
 (typeattributeset linux.userdomain (archtv_compositor))
 (typeattributeset linux.file_type (archtv_compositor_exec archtv_compositor_device))
+(typeattributeset linux.device_node (archtv_compositor_device))
+; Original refpolicy dev_node interface (devices.if66), not just file_type.
+; Real udev hotplug under enforcing58 denied filesystem associate because
+; devices.te464 grants that contract to device_node on Linux devtmpfs.
+; This declares the actual object kind; it grants no generic input access.
 (typeattributeset linux.exec_type (archtv_compositor_exec))
 ; A root-owned exact executable, never a generic shell or Android entrypoint.
 (typetransition linux.init_t archtv_compositor_exec process archtv_compositor)

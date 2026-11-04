@@ -4501,5 +4501,287 @@
       "backlog_limit_restored": true
     },
     "next": "Diagnose original udev relabel behavior for hotplug, verify exact device identities and real input, then note and reopen. No blanket generic input grants."
+  },
+  "original_linux_udev_selinux": {
+    "checkpoint": "/home/tv/recuperacion-archtv/20261104T-udev-selinux-original",
+    "source": {
+      "path": "/opt/archtv/experimental/udev/17f8c7dc6bfe7929e58ae726c9e4978382d45fd5efafae3e4bfde97f27706d3b-2",
+      "binary_sha256": "17f8c7dc6bfe7929e58ae726c9e4978382d45fd5efafae3e4bfde97f27706d3b",
+      "source": {
+        "url": "https://codeload.github.com/systemd/systemd/tar.gz/refs/tags/v262.1",
+        "sha256": "100fc873b848b9b0297d8a705e8e2ed326256c8483d9960ee1ffe264c8a5c3e3",
+        "source": "systemd-262.1",
+        "scope": "Original upstream source; no runtime acceptance"
+      },
+      "files": {
+        "run_linux_udev.py": "a858fa14ac5eeebf9300d4c65c6102dcfb76aff7ed9801b1d3db788a0850b3f5",
+        "udevadm.standalone": "17f8c7dc6bfe7929e58ae726c9e4978382d45fd5efafae3e4bfde97f27706d3b",
+        "selinux/config": "b27823702f2772e1e5c0453c33990c076f93c40e39e02d86ae436523ef513dd2",
+        "lib/libselinux.so.1": "489267d2256e96da30a3c143754145520d94bd5e28af37b3cc2aae4b5a949dd3",
+        "selinux/archtv/contexts/files/file_contexts": "59a57ed38d451be1b0180c24086290eb77eb53900ed9f595e15ca9026849360d"
+      },
+      "scope": "Original udev standalone with original Linux/glibc libselinux; scoped namespace config. No full host MAC acceptance."
+    },
+    "original_build_limitation": "Host systemd262.1 reports -SELINUX; parser recognizes SECLABEL but cannot execute original SELinux labeling",
+    "first_runtime_result": {
+      "results": [
+        {
+          "mode_requested": "0",
+          "mode_observed": "0",
+          "device": "/dev/input/event1",
+          "sysname": "input12",
+          "name": "ArchTV original udev label 0",
+          "label": "linux.system_u:linux.object_r:archtv_compositor_device:s0",
+          "rdev": 3393,
+          "uid": 0,
+          "gid": 992,
+          "permissions": "0o660",
+          "scope": "Real owned kernel uinput device, original udev SECLABEL; not application input acceptance"
+        },
+        {
+          "mode_requested": "1",
+          "mode_observed": "1",
+          "device": "/dev/input/event1",
+          "sysname": "input13",
+          "name": "ArchTV original udev label 1",
+          "label": "linux.system_u:object_r:linux.event_device_t:s0",
+          "rdev": 3393,
+          "uid": 0,
+          "gid": 992,
+          "permissions": "0o660",
+          "scope": "Real owned kernel uinput device, original udev SECLABEL; not application input acceptance"
+        }
+      ],
+      "enforce_restored": "0"
+    },
+    "policy59_fix": "Original refpolicy dev_node interface devices.if66 assigns device_node; devices.te464 already defines filesystem association. No generic input read/write grants.",
+    "verified_runtime_result": {
+      "results": [
+        {
+          "mode_requested": "0",
+          "mode_observed": "0",
+          "device": "/dev/input/event1",
+          "sysname": "input14",
+          "name": "ArchTV original udev label 0",
+          "label": "linux.system_u:linux.object_r:archtv_compositor_device:s0",
+          "rdev": 3393,
+          "uid": 0,
+          "gid": 992,
+          "permissions": "0o660",
+          "scope": "Real owned kernel uinput device, original udev SECLABEL; not application input acceptance"
+        },
+        {
+          "mode_requested": "1",
+          "mode_observed": "1",
+          "device": "/dev/input/event1",
+          "sysname": "input15",
+          "name": "ArchTV original udev label 1",
+          "label": "linux.system_u:linux.object_r:archtv_compositor_device:s0",
+          "rdev": 3393,
+          "uid": 0,
+          "gid": 992,
+          "permissions": "0o660",
+          "scope": "Real owned kernel uinput device, original udev SECLABEL; not application input acceptance"
+        }
+      ],
+      "enforce_restored": "0"
+    },
+    "namespace_probe": {
+      "returncode": 0,
+      "stdout": "{\"event\": \"ORIGINAL_LINUX_SELINUX_VIEW\", \"enabled\": true, \"enforce\": 0, \"policy_sha256\": \"6b3ee84b31fabd2c3f652f454767eb98a618b914cc32c7d1c44e2b7927d819b8\", \"mount_namespace\": \"mnt:[4026532237]\", \"scope\": \"Observed state; no policy load, enforcing change or hotplug acceptance\"}\n",
+      "stderr": "",
+      "historical_failure": "First readonly root mount rejected by original libselinux init.c; root writable, control children readonly in candidate2"
+    },
+    "negative_namespace_guard": {
+      "returncode": 1,
+      "stderr": "Traceback (most recent call last):\n  File \"/opt/archtv/experimental/udev/17f8c7dc6bfe7929e58ae726c9e4978382d45fd5efafae3e4bfde97f27706d3b-2/run_linux_udev.py\", line 65, in <module>\n    main()\n    ~~~~^^\n  File \"/opt/archtv/experimental/udev/17f8c7dc6bfe7929e58ae726c9e4978382d45fd5efafae3e4bfde97f27706d3b-2/run_linux_udev.py\", line 21, in main\n    assert os.readlink('/proc/self/ns/mnt') != os.readlink('/proc/1/ns/mnt'), 'private mounts required'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: private mounts required\n",
+      "scope": "Wrapper rejects PID1 mount namespace before mounting or executing the daemon"
+    },
+    "scope": "Real original udev + original Linux/glibc libselinux tags new owned input devices under mode0 and1. Configuration is private to daemon; controls read-only there. Runtime-only original-unit replacement with root-owned rollback. Not application input, full host labeling or isolation acceptance.",
+    "recovery": {
+      "dropin": "/run/systemd/system/systemd-udevd.service.d/90-archtv-selinux.conf",
+      "sha256": "f76bc13c8d0a74c1076444b2c08254000beab2e19120eb817c6e177efbcc2919",
+      "rollback": [
+        "sudo",
+        "-n",
+        "python",
+        "/opt/archtv/experimental/udev-recovery/20261104-test1/rollback.py"
+      ],
+      "timer": "archtv-udev-rollback-test1.timer",
+      "scope": "Runtime-only daemon replacement; root-owned rollback restores original unit. No reboot or policy/mode change."
+    },
+    "sources": [
+      "https://github.com/systemd/systemd/blob/v262.1/src/udev/udev-node.c",
+      "https://github.com/systemd/systemd/blob/v262.1/src/shared/selinux-util.c"
+    ],
+    "daemon_state_after260": "Original installed daemon restored; candidate only runtime override, currently inactive",
+    "build": {
+      "source": {
+        "url": "https://codeload.github.com/systemd/systemd/tar.gz/refs/tags/v262.1",
+        "sha256": "100fc873b848b9b0297d8a705e8e2ed326256c8483d9960ee1ffe264c8a5c3e3",
+        "source": "systemd-262.1",
+        "scope": "Original upstream source; no runtime acceptance"
+      },
+      "source_patches": [],
+      "build_command": "PKG_CONFIG_PATH=<selinux-prefix>/lib/pkgconfig meson setup build systemd-262.1 --prefix=/usr --buildtype=release -Dmode=release -Dselinux=enabled -Dtests=false -Dman=disabled -Dhtml=disabled -Dstandalone-binaries=udevadm -Dversion-tag=262.1-archtv-selinux-experimental; ninja -C build -j2 udevadm.standalone",
+      "setup_log": "/home/tv/.cache/archtv/udev-selinux-setup.log",
+      "build_log": "/home/tv/.cache/archtv/udev-selinux-build.log",
+      "binary_sha256": "17f8c7dc6bfe7929e58ae726c9e4978382d45fd5efafae3e4bfde97f27706d3b",
+      "config_h_sha256": "ef1b429f3d2fea93faef31abda960d099ce245872dc92cb772c2f19763e60afa",
+      "features": {
+        "HAVE_SELINUX": true,
+        "HAVE_ACL": true,
+        "HAVE_KMOD": true,
+        "HAVE_TPM2": true
+      },
+      "limitation": "Runtime candidate1 tagged under permissive; enforcing failed actual filesystem associate. Compilation and daemon startup do not accept input or isolation."
+    }
+  },
+  "integrated260": {
+    "checkpoint": "/home/tv/recuperacion-archtv/7a6ca4b2-5ab9-48f4-80d6-9de95e195c04-markor-software-launch",
+    "run_id": "7a6ca4b2-5ab9-48f4-80d6-9de95e195c04",
+    "artifact": 259,
+    "policy": 59,
+    "outer_exit": 1,
+    "native_complete_inventory_verified": true,
+    "primary_failure": "Original display client native Wait35s elapsed at15:10:56 after Zygote fork15:10:54. Actual original log has no new fatal exception before close. No Markor launch/input attempted.",
+    "secondary_failure": "vold reboot_on_failure follows coordinator close SIGKILL; intercepted, no VM reboot. Internal close still fails.",
+    "next_experiment": "Same original display readiness check with bounded shell90 iterations/native100s budget; no readiness or access bypass. Build260 pending, no execution accepted.",
+    "closure": {
+      "id": "7a6ca4b2-5ab9-48f4-80d6-9de95e195c04",
+      "outer_unit": "archtv-markor-session-7a6ca4b2-5ab9-48f4-80d6-9de95e195c04",
+      "runner_unit": "archtv-package-runner-7a6ca4b2-5ab9-48f4-80d6-9de95e195c04",
+      "initial_vt": "1",
+      "root_pid": 108020,
+      "root_boot_id": "ed605c8c-db9e-4ce1-8c57-d383f08d3694",
+      "result": "native_result_recorded",
+      "fuse_connections_before": [],
+      "host_devices_before": {
+        "card0": {
+          "mode": "0o660",
+          "uid": 0,
+          "gid": 983,
+          "rdev": 57856,
+          "inode": 366
+        },
+        "renderD128": {
+          "mode": "0o666",
+          "uid": 0,
+          "gid": 987,
+          "rdev": 57984,
+          "inode": 365
+        }
+      },
+      "host_sysrq_before": {
+        "device": 23,
+        "inode": 4026532098,
+        "mode": "0o200",
+        "uid": 0,
+        "gid": 0,
+        "label": "u:object_r:proc_sysrq:s0",
+        "readonly_mount": false
+      },
+      "host_sysrq_after": {
+        "device": 23,
+        "inode": 4026532098,
+        "mode": "0o200",
+        "uid": 0,
+        "gid": 0,
+        "label": "u:object_r:proc_sysrq:s0",
+        "readonly_mount": false
+      },
+      "host_sysrq_metadata_unchanged": true,
+      "host_devices_after": {
+        "card0": {
+          "mode": "0o660",
+          "uid": 0,
+          "gid": 983,
+          "rdev": 57856,
+          "inode": 366
+        },
+        "renderD128": {
+          "mode": "0o666",
+          "uid": 0,
+          "gid": 987,
+          "rdev": 57984,
+          "inode": 365
+        }
+      },
+      "host_device_metadata_unchanged": true,
+      "fuse_connections_after": [],
+      "new_fuse_connections": [],
+      "final_vt": "1",
+      "outer_active": false,
+      "runner_active": false
+    },
+    "audit": {
+      "before": {
+        "text": "enabled 0\nfailure 1\npid 0\nrate_limit 0\nbacklog_limit 64\nlost 0\nbacklog 0\nbacklog_wait_time 18000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n",
+        "fields": {
+          "enabled": "0",
+          "failure": "1",
+          "pid": "0",
+          "rate_limit": "0",
+          "backlog_limit": "64",
+          "lost": "0",
+          "backlog": "0",
+          "backlog_wait_time": "18000",
+          "backlog_wait_time_actual": "0",
+          "loginuid_immutable": "0 unlocked"
+        }
+      },
+      "rules_sha256_before": "61501e69a61dbbc1a41605ea15c34807e6b1d3992bee195dde36a7ebdd95dd87",
+      "unit": "archtv-audit-mac-561d67a8",
+      "active": {
+        "text": "enabled 1\nfailure 1\npid 108009\nrate_limit 0\nbacklog_limit 4096\nlost 0\nbacklog 0\nbacklog_wait_time 18000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n",
+        "fields": {
+          "enabled": "1",
+          "failure": "1",
+          "pid": "108009",
+          "rate_limit": "0",
+          "backlog_limit": "4096",
+          "lost": "0",
+          "backlog": "0",
+          "backlog_wait_time": "18000",
+          "backlog_wait_time_actual": "0",
+          "loginuid_immutable": "0 unlocked"
+        }
+      },
+      "root_controller_exit": 0,
+      "before_receiver_stop": {
+        "text": "enabled 1\nfailure 1\npid 108009\nrate_limit 0\nbacklog_limit 4096\nlost 0\nbacklog 0\nbacklog_wait_time 18000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n",
+        "fields": {
+          "enabled": "1",
+          "failure": "1",
+          "pid": "108009",
+          "rate_limit": "0",
+          "backlog_limit": "4096",
+          "lost": "0",
+          "backlog": "0",
+          "backlog_wait_time": "18000",
+          "backlog_wait_time_actual": "0",
+          "loginuid_immutable": "0 unlocked"
+        }
+      },
+      "after": {
+        "text": "enabled 0\nfailure 1\npid 0\nrate_limit 0\nbacklog_limit 64\nlost 0\nbacklog 0\nbacklog_wait_time 18000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n",
+        "fields": {
+          "enabled": "0",
+          "failure": "1",
+          "pid": "0",
+          "rate_limit": "0",
+          "backlog_limit": "64",
+          "lost": "0",
+          "backlog": "0",
+          "backlog_wait_time": "18000",
+          "backlog_wait_time_actual": "0",
+          "loginuid_immutable": "0 unlocked"
+        }
+      },
+      "rules_unchanged": true,
+      "lost_delta": 0,
+      "receiver_closed": true,
+      "backlog_limit_restored": true
+    }
   }
 }
