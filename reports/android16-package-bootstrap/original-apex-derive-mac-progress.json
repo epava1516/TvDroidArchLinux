@@ -1392,7 +1392,7 @@
     "sha256": "bf63755c75b8834efedb270e0820df52b470942914065c831615cd096495b00a"
   },
   "vdc_source_contract": {
-    "builtin": "Pinned system/core/init/builtins.cpp1122\u20131172: original temporary exec plus original failure callback; exact argv /system/bin/vdc --wait cryptfs init_user0. Native observes actual reaping before advance, no shell redirection or synthetic readiness.",
+    "builtin": "Pinned system/core/init/builtins.cpp1122–1172: original temporary exec plus original failure callback; exact argv /system/bin/vdc --wait cryptfs init_user0. Native observes actual reaping before advance, no shell redirection or synthetic readiness.",
     "vold_helper": {
       "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/vold-fscrypt-original/FsCrypt.cpp",
       "sha256": "716c7553fc8ce7ad48c1857676e23adcb4458de362869655b30c712c287b0876"
@@ -1453,7 +1453,7 @@
   },
   "loop_label_correction": "Actual load15 BEFORE already showed original sysfs_loop on loop0..37, INCLUDING0/1. Those labels/values/modes/UID/GID stayed unchanged. Added90 exact genfs entries did NOT provide label exclusivity; removed in16 along with unnecessary Linux coordinator write grant. Original broad loop prefix remains. Effective experimental constraints: exact90 pool2..91, private sysfs RO, only reserved read_ahead controls RW; both0/1 open-only negatives EROFS. This is Linux-coordinator VFS observation, not Android remount resistance/general MAC acceptance.",
   "bootstrap_contract": {
-    "source": "Pinned system/core/init/init.cpp1170 calls SetupMountNamespaces before scripts; original init.rc81\u201385 exec_start apexd-bootstrap then perform_apex_config. Current native calls namespace setup after normal activation, with Linux pre-mounted aliases; actual182 demonstrates incompatibility.",
+    "source": "Pinned system/core/init/init.cpp1170 calls SetupMountNamespaces before scripts; original init.rc81–85 exec_start apexd-bootstrap then perform_apex_config. Current native calls namespace setup after normal activation, with Linux pre-mounted aliases; actual182 demonstrates incompatibility.",
     "headers": "Linux binutils readelf STATIC header inspection (not REA MCP or execution): original GSI apexd interpreter /system/bin/bootstrap/linker64; custom coordinator179 interpreter /system/bin/linker64. Original system/bin/bootstrap/linker64 and system/lib64/bootstrap/libc.so exist. Source/runtime experiment still required.",
     "original_apexd": {
       "path": "dist/aosp16/factory-inputs-3/root/system/bin/apexd",
@@ -6090,6 +6090,67 @@
       "Read-only copied database inspection is not runtime API query success",
       "CLI exit0 is not accepted as proof of side effects",
       "Full R1-MAC/ARM/GMS/DRM/audio/video/product gates open"
+    ]
+  },
+  "vlc280": {
+    "run_id": "21e98a7b-46d2-4875-8f8d-e2b931b6a450",
+    "checkpoint": "/home/tv/recuperacion-archtv/21e98a7b-46d2-4875-8f8d-e2b931b6a450-markor-software-launch",
+    "artifact": 280,
+    "evidence": {
+      "result.json": "ca6ff85bfa014886cbce8aa282b61c20fa81549c3fdacaf78669aa759867ea19",
+      "mac-window.json": "128924deb7ed561f8ec3e6c6183013f54ff94fce54a37e7c53bdbab435fa5224",
+      "session-state.json": "ad8096c3cf4ca2a06d661be88a9eaf619d3074a130da1c7912648b9269020ebb",
+      "finite-audit/result.json": "1212c3e1ba66c87fe08b31813464575346dcb46b106f08769b92cc00414b52ad",
+      "original-client-evidence.json": "615f6edd269a2749cce7004b40071d2b012e61d431a3d3af2e63625a2e22f23d",
+      "observed-media-bytes.txt": "76a4010c16d2430c8f17674d11c552ebb296bb30ce886e621b82a493c80d1bc5",
+      "observed-media-uri.txt": "8a9a10c9846ae02980d2891d122505526267c39ad49118e75101175565575274",
+      "observed-media-published.txt": "89ac5a0c148edf649ac8d3da0201a6823ef4bd14d7d3c458252e4d7e4c6f9e8a",
+      "observed-media-readback.mp4": "30fc8da5b0511c723c434cc13b3635507d7caae0b0d137c1f87aecbe6d1d4e17",
+      "observed-markor-installed-bytes.txt": "45f901b01c788567db38e5ec612c8f7fbb7dbac7ee2c3e7a885ed8ef96852bd1",
+      "observed-markor-launch.txt": "0d33a6370dcabc88c610b59797318374fbc074c77e05c4a7d2bd4dd5753fc8c8",
+      "observed-android-ps-after.txt": "22f33485e8c831646a36cfbddbd19b1ed6733dd7ee3bb3090d4e798692c50ac4",
+      "observed-android-app-status.txt": "2dec64c06fa5ac5dd305e19c825cf144ced0288c677fa7a7797dfe544176211b",
+      "interaction-events.json": "d3f0d9a27d2768744e82f0e0747e320e3ddef026d4b363d3f278391b58014f96",
+      "interaction-test.log": "0e3dfd13006943658597c869d4a2cf816cfbd6d81b7a5bb4bccfb78e56e8382a",
+      "vlc-initial.png": "ae6f71afe341b20804f8e7123dfeb9caa79e1b1d21a18b71a40829bf163084ee",
+      "vlc-after-wake.png": "ae6f71afe341b20804f8e7123dfeb9caa79e1b1d21a18b71a40829bf163084ee",
+      "observed-original-logcat.txt": "82b2ed5ed751725f7ed6c73dc68396fe7312b377d96dd622113c342e55461c2a",
+      "completion-consumer.json": "e71b99f58877c9dc38427cee31c96fc1b407ce87784c5aef0cc56266e7bcdbe5"
+    },
+    "media": {
+      "api": "Original Content/MediaProvider/MediaStore insert, MATCH_INCLUDE query, write, read, publish and query",
+      "uri_observed": "content://media/external_primary/video/media/16",
+      "bytes": 420785,
+      "sha256": "30fc8da5b0511c723c434cc13b3635507d7caae0b0d137c1f87aecbe6d1d4e17",
+      "published": "Row: 0 is_pending=0",
+      "scope": "Only actual generated4s MPEG4/AAC bytes; no direct provider database/backing writes or fixed row id"
+    },
+    "apk": {
+      "id": "vlc",
+      "sha256": "4646633ede40c4784c5584087cffc5c60cc45b16966ae0b36cedd784d7c4a11e",
+      "installed_bytes_verified": true,
+      "launch": "Original cold StartActivity → original TV OnboardingActivity; physical welcome captured",
+      "pid": 1693,
+      "uid": 10104,
+      "sid_observed_original_ps": "u:r:untrusted_app:s0:c104,c256,c512,c768",
+      "caps_zero": true,
+      "nnp": 1,
+      "seccomp": 2
+    },
+    "input": {
+      "commands_emitted": 3,
+      "accepted": false,
+      "observed": "Original Activity paused/stopped for sleep before manual clicks; no resume/page transition shown. Welcome screenshot after clicks remains first page. Keyboard wake/TV navigation not attempted in280. Sender guard ends after session closes; exit1 is not APK crash.",
+      "next": "Run original VLC again with actual keyboard wake and DPAD/Enter; observe each page and real media permission dialog before playback."
+    },
+    "security": "Bounded enforcing1 during candidate, unchanged policy60; original ps reads live kernel SIDs from unchanged shell role. Linux exterior getpidcon verifier still denied and outer_exit1 preserved. This is not complete R1 or early ephemeral identity coverage.",
+    "closure": "Native MC1_RESULT.exit0 / NATIVE_COMPONENT_STOPPED0; outer1 retained. No own loops/dm/FUSE/BPF; VT, DRM metadata and SysRq restored; audit loss0/rules unchanged; host mode0 and original udev restored; active owner consumed, no notification queued.",
+    "remaining": [
+      "VLC input/onboarding/media permission",
+      "Actual decoded video and independently observed audio",
+      "VLC close/reopen persistence",
+      "Full R1/product admission and isolation",
+      "ARM/GMS/DRM and broad APK compatibility"
     ]
   }
 }

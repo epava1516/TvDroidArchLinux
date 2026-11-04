@@ -60,6 +60,15 @@ assert re.fullmatch(r'[a-zA-Z][a-zA-Z0-9_]*(?:\.[a-zA-Z][a-zA-Z0-9_]*)+',apk_tar
 assert re.fullmatch('[0-9a-f]{64}',apk_target['sha256'])
 assert hashlib.sha256(Path(apk_target['path_local']).read_bytes()).hexdigest()==apk_target['sha256']
 assert software_platform or apk_id=='markor'
+media_test=None
+if '--media-test' in sys.argv[2:]:
+ assert software_platform and apk_id=='vlc'
+ media_manifest=Path('/home/tv/.cache/archtv/media-test-assets/archtv-vlc-testsrc2-sine-4s.json')
+ media_record=json.loads(media_manifest.read_text())
+ media_test={k:media_record[k] for k in ['path','sha256','bytes']}
+ assert media_test['sha256']=='30fc8da5b0511c723c434cc13b3635507d7caae0b0d137c1f87aecbe6d1d4e17'
+ assert media_test['bytes']==420785 and hashlib.sha256(Path(media_test['path']).read_bytes()).hexdigest()==media_test['sha256']
+ media_test['display_name']='archtv-test-'+media_test['sha256'][:8]+'.mp4'
 workflow_token=next((a.split('=',1)[1] for a in sys.argv[2:] if a.startswith('--markor-workflow-token=')),None)
 assert workflow_token is None or (apk_id=='markor' and software_platform and observe_ms>=30000 and re.fullmatch('[0-9a-f]{8}',workflow_token))
 workflow_budget_seconds=observe_ms//1000-15 if workflow_token else None
@@ -70,7 +79,7 @@ if software_platform:
  lines[0]=lines[0].replace('-Xmx768m','-Xmx512m')
  lines.append('    setenv ARCHTV_SOFTWARE_SECURITY_PROFILE software-platform-v1')
 experiment_kind='markor-software-launch' if software_platform else 'keystore-java-component' if keystore_java else 'keystore-component' if keystore_component else ('keymint-component' if keymint_component else 'markor-launch')
-(out/'build-options.json').write_text(json.dumps({'apk_target':apk_target,'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component and not software_platform,'software_security_platform':software_platform,'observe_ms':observe_ms,'persistent_userdata_name':userdata_name,'markor_workflow_token':workflow_token,'markor_workflow_budget_seconds':workflow_budget_seconds,'experiment_kind':experiment_kind,'original_apex_bootstrap':True,'original_logd':True,'preconnected_wayland':True,'original_system_dma_heap':True},indent=2)+'\n')
+(out/'build-options.json').write_text(json.dumps({'apk_target':apk_target,'media_test':media_test,'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component and not software_platform,'software_security_platform':software_platform,'observe_ms':observe_ms,'persistent_userdata_name':userdata_name,'markor_workflow_token':workflow_token,'markor_workflow_budget_seconds':workflow_budget_seconds,'experiment_kind':experiment_kind,'original_apex_bootstrap':True,'original_logd':True,'preconnected_wayland':True,'original_system_dma_heap':True},indent=2)+'\n')
 if checkpoint_diagnostic:lines.append('    setenv ARCHTV_CHECKPOINT_DIAGNOSTIC 1')
 lines=[l for l in lines if not any(l.startswith('    setenv '+n+' ') for n in ['BOOTCLASSPATH','DEX2OATBOOTCLASSPATH','SYSTEMSERVERCLASSPATH','STANDALONE_SYSTEMSERVER_JARS'])];(entry/'selected-services.rc').write_text('\n'.join(lines)+'\n')
 old=r/'dist/aosp16/apex-cohort-build-6';commands=[]
@@ -320,6 +329,9 @@ if workflow_token is not None:
  (out/'markor-workflow-budget').write_text(str(workflow_budget_seconds)+'\n')
  vendor['files']['/vendor/etc/archtv-markor-workflow-budget']={'source':str(out/'markor-workflow-budget'),'context':'u:object_r:vendor_configs_file:s0','mode':0o444}
  vendor['files']['/vendor/etc/archtv-markor-workflow-token']={'source':str(out/'markor-workflow-token'),'context':'u:object_r:vendor_configs_file:s0','mode':0o444}
+if media_test is not None:
+ (out/'media-test-name').write_text(media_test['display_name']+'\n')
+ vendor['files']['/vendor/etc/archtv-media-test-name']={'source':str(out/'media-test-name'),'context':'u:object_r:vendor_configs_file:s0','mode':0o444}
 (out/'install-package').write_text(apk_target['package']+'\n')
 vendor['files']['/vendor/etc/archtv-install-package']={'source':str(out/'install-package'),'context':'u:object_r:vendor_configs_file:s0','mode':0o444}
 vendor['files']['/vendor/bin/install-markor.sh']={'source':str(r/'runtime/aosp/linux-services/install-markor.sh'),'context':'u:object_r:vendor_file:s0','mode':0o644}

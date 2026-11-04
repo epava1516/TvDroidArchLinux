@@ -32,11 +32,11 @@
       },
       "evidence_id": "ev_37c5a66b942f8e277c88500b2a15d430c2e523b672bf47fe74cf9c90638d164e",
       "full_evidence_id": "ev_746d40138a0f10e9c3202cd147e41d5efd4a7c58e81078c6109567a0bce77781",
-      "workflow": "Abrir fichero local, reproducir audio/v\u00eddeo, volver al shell y cerrar",
+      "workflow": "Abrir fichero local, reproducir audio/vídeo, volver al shell y cerrar",
       "runtime_results": {
-        "installation": "not_tested",
-        "launch": "not_tested",
-        "interface": "not_tested",
+        "installation": "approved",
+        "launch": "approved",
+        "interface": "approved",
         "input": "not_tested",
         "main_function": "not_tested",
         "persistence": "not_tested",
@@ -44,7 +44,7 @@
         "close": "not_tested",
         "reopen": "not_tested"
       },
-      "reason": "277/278 stop in original media-input setup before VLC installation: native PATH corrected and provider creates pending row hidden by default query;279 cancelled on original CLI escape validation.280 running. No VLC runtime compatibility accepted.",
+      "reason": "280 proves exact installed APK, original cold launch and physical TV welcome under bounded enforcing. MediaStore bytes/hash/publication proven. Three mouse clicks did not advance original sleeping onboarding; input/playback/audio and application lifecycle remain unaccepted.",
       "framework_class_link_pass": null,
       "source_verification": "Existing cached artifact; download provenance not revalidated in this audit. REA identity and declared signer recorded.",
       "declared_application": "org.videolan.mobile.app.VLCApplication",
@@ -68,12 +68,33 @@
       "runtime_mac_stage_evidence": {
         "media_input_setup": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "863a36f5ba2ad017deaeb60b6352f196bce201c0343f6afc6845148f925c6fbb",
-          "section": "vlc277_279",
-          "accepted": false,
-          "scope": "Original provider pending row exists, but content write/readback/publish and VLC install/launch/playback not yet demonstrated; no fake URI/readiness."
+          "record_sha256": "40925fc53fe59b3de28418dd6692bb33d6c82db377d3b3428ae3b574e39d85e5",
+          "section": "vlc280",
+          "accepted": true,
+          "scope": "Original API actual URI,420785-byte hash/readback and is_pending0 publication; not playback."
         },
-        "remaining": "Actual imported bytes/publication, original install/launch/UI/input/playback/close/reopen, audio separate, complete R1 and external dependencies remain open."
+        "remaining": "TV onboarding/input, media permission, actual video/audio, close/reopen, full R1, ARM/GMS/DRM/product remain open.",
+        "installation": {
+          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "record_sha256": "40925fc53fe59b3de28418dd6692bb33d6c82db377d3b3428ae3b574e39d85e5",
+          "section": "vlc280",
+          "accepted": true,
+          "scope": "Exact installed bytes and original cold TV welcome only; no playback or full R1."
+        },
+        "launch": {
+          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "record_sha256": "40925fc53fe59b3de28418dd6692bb33d6c82db377d3b3428ae3b574e39d85e5",
+          "section": "vlc280",
+          "accepted": true,
+          "scope": "Exact installed bytes and original cold TV welcome only; no playback or full R1."
+        },
+        "interface": {
+          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "record_sha256": "40925fc53fe59b3de28418dd6692bb33d6c82db377d3b3428ae3b574e39d85e5",
+          "section": "vlc280",
+          "accepted": true,
+          "scope": "Exact installed bytes and original cold TV welcome only; no playback or full R1."
+        }
       }
     },
     {
@@ -138,35 +159,35 @@
       "runtime_mac_stage_evidence": {
         "installation": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "863a36f5ba2ad017deaeb60b6352f196bce201c0343f6afc6845148f925c6fbb",
+          "record_sha256": "40925fc53fe59b3de28418dd6692bb33d6c82db377d3b3428ae3b574e39d85e5",
           "section": "calculator273",
           "accepted": true,
           "scope": "Original PackageInstaller stream and identical intact installed/source APK bytes; no signature override. Not independent source authenticity verification."
         },
         "launch": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "863a36f5ba2ad017deaeb60b6352f196bce201c0343f6afc6845148f925c6fbb",
+          "record_sha256": "40925fc53fe59b3de28418dd6692bb33d6c82db377d3b3428ae3b574e39d85e5",
           "section": "calculator273",
           "accepted": true,
           "scope": "Original resolver alias SplashActivity.Green -> MainActivity and ActivityManager Status ok/COLD."
         },
         "physical_presentation": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "863a36f5ba2ad017deaeb60b6352f196bce201c0343f6afc6845148f925c6fbb",
+          "record_sha256": "40925fc53fe59b3de28418dd6692bb33d6c82db377d3b3428ae3b574e39d85e5",
           "section": "calculator273",
           "accepted": true,
           "scope": "Actual DRM screenshot through own compositor/HWC; not only internal screencap."
         },
         "pointer_input_main_function": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "863a36f5ba2ad017deaeb60b6352f196bce201c0343f6afc6845148f925c6fbb",
+          "record_sha256": "40925fc53fe59b3de28418dd6692bb33d6c82db377d3b3428ae3b574e39d85e5",
           "section": "calculator273",
           "accepted": true,
           "scope": "Linux pointer2+3=5 and original History dialog; no widget/Activity callback substitutions."
         },
         "activity_close": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "863a36f5ba2ad017deaeb60b6352f196bce201c0343f6afc6845148f925c6fbb",
+          "record_sha256": "40925fc53fe59b3de28418dd6692bb33d6c82db377d3b3428ae3b574e39d85e5",
           "section": "calculator273",
           "accepted": true,
           "scope": "Actual Back -> app-request finish/onDestroy/task removed. Not process-kill or independent cohort reopen."
@@ -174,7 +195,7 @@
         "remaining": "SID observation, full host/PAM/tenant R1-MAC, all app/service features, source-authenticity revalidation and product gates remain open. Exact calculator version/route only.",
         "history_persistence_reopen": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "863a36f5ba2ad017deaeb60b6352f196bce201c0343f6afc6845148f925c6fbb",
+          "record_sha256": "40925fc53fe59b3de28418dd6692bb33d6c82db377d3b3428ae3b574e39d85e5",
           "section": "calculator276",
           "accepted": true,
           "scope": "UI History2+3=5 created273 and visible276 after original activity finish and cohort teardown; only click History in276. Same UID10104/APK. Not host reboot, all app features or full R1-MAC."
@@ -803,7 +824,7 @@
       "runtime_mac_stage_evidence": {
         "installation": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "863a36f5ba2ad017deaeb60b6352f196bce201c0343f6afc6845148f925c6fbb",
+          "record_sha256": "40925fc53fe59b3de28418dd6692bb33d6c82db377d3b3428ae3b574e39d85e5",
           "section": "integrated255",
           "accepted": true,
           "scope": "Original PackageInstaller installation, identical intact APK bytes and physical private-directory metadata under enforcing. Not complete isolation, launch, UI, note persistence or full workflow acceptance."
@@ -811,35 +832,35 @@
         "remaining": "Forced app close/newPID/cold relaunch and visible unchanged note reopen proven270. Graceful app/cohort shutdown, full-host R1-MAC/PAM admission and tenant isolation, broader API/services, ART compilation ABI, ARM/GMS/DRM and install/update/product remain open.",
         "launch": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "863a36f5ba2ad017deaeb60b6352f196bce201c0343f6afc6845148f925c6fbb",
+          "record_sha256": "40925fc53fe59b3de28418dd6692bb33d6c82db377d3b3428ae3b574e39d85e5",
           "section": "integrated257",
           "accepted": true,
           "scope": "Original explicit launch redirects intact APK to IntroActivity; Status:ok and real SF internal onboarding pixels. Not presentation on Rust/Smithay, input, complete Markor workflow or broad compatibility."
         },
         "physical_presentation": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "863a36f5ba2ad017deaeb60b6352f196bce201c0343f6afc6845148f925c6fbb",
+          "record_sha256": "40925fc53fe59b3de28418dd6692bb33d6c82db377d3b3428ae3b574e39d85e5",
           "section": "integrated259_physical_presentation",
           "accepted": true,
           "scope": "Original onboarding pixels visually observed in actual Smithay DRM capture during enforcing window; no input, note or lifecycle acceptance."
         },
         "pointer_input": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "863a36f5ba2ad017deaeb60b6352f196bce201c0343f6afc6845148f925c6fbb",
+          "record_sha256": "40925fc53fe59b3de28418dd6692bb33d6c82db377d3b3428ae3b574e39d85e5",
           "section": "integrated262",
           "accepted": true,
           "scope": "Real Linux pointer through Smithay/HWC/typed gateway/original InputManager advances intact Markor UI and original Settings under enforcing. Not keyboard text, note or complete workflow."
         },
         "keyboard_ascii": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "863a36f5ba2ad017deaeb60b6352f196bce201c0343f6afc6845148f925c6fbb",
+          "record_sha256": "40925fc53fe59b3de28418dd6692bb33d6c82db377d3b3428ae3b574e39d85e5",
           "section": "integrated266",
           "accepted": true,
           "scope": "Actual original filename and Markdown text entered through physical Linux keyboard, original Generic.kl/libinput and original InputManager under enforcing; other layouts unproven."
         },
         "note_create_save": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "863a36f5ba2ad017deaeb60b6352f196bce201c0343f6afc6845148f925c6fbb",
+          "record_sha256": "40925fc53fe59b3de28418dd6692bb33d6c82db377d3b3428ae3b574e39d85e5",
           "section": "integrated266",
           "accepted": true,
           "scope": "Real original UI creates/saves21 bytes, observed unchanged in persistent backing after cohort closes. Not app reopen or explicit lifecycle acceptance."
@@ -847,7 +868,7 @@
         "forced_close_relaunch_persistence270": {
           "accepted": true,
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "863a36f5ba2ad017deaeb60b6352f196bce201c0343f6afc6845148f925c6fbb",
+          "record_sha256": "40925fc53fe59b3de28418dd6692bb33d6c82db377d3b3428ae3b574e39d85e5",
           "scope": "Original force-stop PID1354 absent, cold newPID1757, same21-byte note hash and physical UI after reopen under policy60 enforcing; existing UI-created266 note. Not graceful close/full host MAC/general APK.",
           "section": "integrated270"
         }
@@ -1146,7 +1167,7 @@
       "acceptance": "Fix real author-distributed APK/version/requirements; test nine-stage workflow without per-APK patches or privileged bypass"
     }
   ],
-  "base_review": "A16-QPR2-1 supersedes A/B/C selection: native Bionic primary; SF\u2192Wayland first graphics hypothesis. Prior choice/experiments historical only.",
+  "base_review": "A16-QPR2-1 supersedes A/B/C selection: native Bionic primary; SF→Wayland first graphics hypothesis. Prior choice/experiments historical only.",
   "base_component_observation": {
     "evidence": "reports/bionic-component/art-core-result.json",
     "linker_help_and_launcher_list_exit": 0,

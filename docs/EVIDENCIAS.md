@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+Vigente ·280 prueba importación/publicación MediaStore original con420785 bytes y SHA idéntico, instalación VLC intacta y lanzamiento frío a su bienvenida TV sobre Smithay bajo enforcing acotado. El ps original observa SID/UID del proceso real sin nuevos permisos; el verificador Linux exterior sigue denegado/exit1 y R1-MAC abierto. Tres clics no avanzaron el asistente ya dormido: siguiente experimento usa despertar y navegación de teclado reales, permisos de medios y reproducción. Vídeo/audio, cierre/reapertura y compatibilidad general sin aceptar. [Resultado y hashes](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json), vlc280.
+
 277–279 · [MediaStore original y entorno Bionic](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json), vlc277_279: PATH medido, respuestas originales, copia DB/WAL sólo leída, fuentes del filtro pending/parser, cancelación explícita y restauración con hashes. Ninguna etapa VLC aceptada.
 
 276 · [Persistencia de calculadora y límite SID](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json), calculator276: [historial tras reapertura](../reports/android16-package-bootstrap/calculator-mac276-persisted-history.png), sólo click History, status kernel real, SID EACCES, cierre/restauración y hashes. R1-MAC sin aceptar.

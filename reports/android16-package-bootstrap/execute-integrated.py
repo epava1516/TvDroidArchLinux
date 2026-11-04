@@ -243,6 +243,14 @@ apk_target=build_options.get('apk_target',{'id':'markor','package':'net.gsantner
 apk_path=Path(apk_target['path_local'])
 apk_sha=apk_target['sha256']
 assert hashlib.sha256(apk_path.read_bytes()).hexdigest()==apk_sha
+media_test=build_options.get('media_test')
+if media_test is not None:
+ assert apk_target['id']=='vlc' and media_test['bytes']<=1048576
+ media_source=Path(media_test['path'])
+ assert media_source.stat().st_size==media_test['bytes'] and hashlib.sha256(media_source.read_bytes()).hexdigest()==media_test['sha256']
+ media_destination='data/local/tmp/archtv-mc1/archtv-media-input.mp4'
+ root_code+="\nshutil.copyfile(Path("+repr(str(media_source))+"),root/"+repr(media_destination)+");os.chown(root/"+repr(media_destination)+",2000,2000);os.chmod(root/"+repr(media_destination)+",0o400)"
+
 # Extend existing private APEX metadata after devices.prepare has created it.
 aconfig_code=""
 for name,mode in [('metadata',0o755),('metadata/aconfig',0o775),('metadata/aconfig/flags',0o770),('metadata/aconfig/maps',0o775),('metadata/aconfig/boot',0o775)]:
@@ -303,7 +311,7 @@ root_code+="\nshutil.copyfile(Path("+repr(str(apk_path))+"),root/'data/local/tmp
 root_code+="""
 import hashlib
 shell_inputs=[]
-for relative in ['bin/install-markor.sh','etc/archtv-install-package','etc/archtv-markor-workflow-token','etc/archtv-markor-workflow-budget']:
+for relative in ['bin/install-markor.sh','etc/archtv-install-package','etc/archtv-media-test-name','etc/archtv-markor-workflow-token','etc/archtv-markor-workflow-budget']:
  source=root/'vendor'/relative
  if not source.exists():
   assert relative!='bin/install-markor.sh','Missing external installer payload'
@@ -534,7 +542,7 @@ for file in sorted(Path('/metadata/aconfig').rglob('*')):
  info=file.stat()
  metadata.append({'path':str(file),'uid':info.st_uid,'gid':info.st_gid,'mode':oct(stat.S_IMODE(info.st_mode)),'context':os.getxattr(file,'security.selinux').decode().rstrip(chr(0)),'bytes':info.st_size,'sha256':hashlib.sha256(file.read_bytes()).hexdigest() if info.st_size<=33554432 else None})
 print('ACONFIG_ORIGINAL_METADATA_FILES '+json.dumps({'files':metadata,'truncated':metadata_truncated,'scope':'Original daemon outputs, not flag or permission acceptance'}),flush=True)
-for name in ['markor-preinstall-path.txt','markor-preinstall-dump.txt','markor-app-data.txt','markor-volumes.txt','markor-overlays.txt','selected-user-wait.txt','keystore-java.txt','keymint-provider.txt','keystore-component.txt','keymint-component.txt','storage-contract.txt','markor-user-state.txt','markor-bootstrap-home-stop.txt','markor-home-after.txt','markor-boot-before-user.txt','platform-capabilities.txt','linux-application-profile.txt','markor-postcommit-path.txt','markor-postcommit-dump.txt','markor-installed-bytes.txt','unadmitted-artd-control.txt','ranging-service-info.txt','ranging-permission.txt','netd-permission-query.txt','netd-query.txt','netd-interfaces.txt','stats-query.txt','selected-failure.txt','selected-wait.txt','health-query.txt','health-dump.txt','apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt','vold-query.txt','vold-user0.txt','markor-install.txt','markor-path.txt','markor-dump.txt','activity-query.txt','mount-query.txt','markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
+for name in ['media-before.txt','media-id.txt','media-insert.txt','media-write.txt','media-publish.txt','media-published.txt','media-uri.txt','media-bytes.txt','media-query-error.txt','media-read-error.txt','android-ps-before.txt','android-ps-postinstall.txt','android-ps-after.txt','android-ps-error.txt','android-ps-status.txt','android-app-status.txt','markor-preinstall-path.txt','markor-preinstall-dump.txt','markor-app-data.txt','markor-volumes.txt','markor-overlays.txt','selected-user-wait.txt','keystore-java.txt','keymint-provider.txt','keystore-component.txt','keymint-component.txt','storage-contract.txt','markor-user-state.txt','markor-bootstrap-home-stop.txt','markor-home-after.txt','markor-boot-before-user.txt','platform-capabilities.txt','linux-application-profile.txt','markor-postcommit-path.txt','markor-postcommit-dump.txt','markor-installed-bytes.txt','unadmitted-artd-control.txt','ranging-service-info.txt','ranging-permission.txt','netd-permission-query.txt','netd-query.txt','netd-interfaces.txt','stats-query.txt','selected-failure.txt','selected-wait.txt','health-query.txt','health-dump.txt','apex-query.txt','apex-active.txt','classpath','package-query.txt','package-list.txt','vold-query.txt','vold-user0.txt','markor-install.txt','markor-path.txt','markor-dump.txt','activity-query.txt','mount-query.txt','markor-user-start.txt','markor-resolve.txt','markor-launch.txt']:
  f=Path('/data/system/environ/classpath') if name=='classpath' else (Path('/data/local/tmp/archtv-apex-client') if name in ['apex-query.txt','apex-active.txt'] else Path('/data/local/tmp/archtv-mc1'))/name
  if f.is_file():print('PACKAGE_ORIGINAL_OUTPUT '+name+' '+json.dumps(f.read_text()),flush=True)
 if p.returncode!=0:

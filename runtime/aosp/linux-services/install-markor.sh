@@ -3,6 +3,7 @@
 # No boot/property mutation, API replacement, permission or signature override.
 set -eu
 set -o pipefail
+/system/bin/printf 'native_cli_PATH=%s\n' "$PATH"
 apk_path=/data/local/tmp/markor.apk
 apk_bytes=$(/system/bin/stat -c %s "$apk_path")
 # Explicit trusted installer target; original PMS must discover/validate the
@@ -60,9 +61,49 @@ while [ "$volume_wait" -lt 120 ]; do
 done
 /system/bin/grep -q '^emulated;0 mounted ' /data/local/tmp/archtv-mc1/markor-volumes.txt
 
+# Optional controlled media input goes through the original provider API.
+# No direct /data/media writes, fabricated inventory or URI. Original content
+# catches provider errors, so every effect is independently queried/read back.
+media_source=/data/local/tmp/archtv-mc1/archtv-media-input.mp4
+if [ -f "$media_source" ]; then
+    [ "$target_package" = org.videolan.vlc ] || exit 1
+    IFS= read -r media_name < /data/local/tmp/archtv-mc1/archtv-media-test-name
+    case "$media_name" in archtv-test-????????.mp4) ;; *) exit 1;; esac
+    case "$media_name" in *[!a-zA-Z0-9_.-]*) exit 1;; esac
+    media_collection=content://media/external_primary/video/media
+    media_where="_display_name='$media_name' AND relative_path='Movies/'"
+    /system/bin/content query --user 0 --uri "$media_collection" --projection _id --where "$media_where" --extra 'android\:query-arg-match-pending:i:1' > /data/local/tmp/archtv-mc1/media-before.txt 2>/data/local/tmp/archtv-mc1/media-query-error.txt
+    media_before=$(/system/bin/cat /data/local/tmp/archtv-mc1/media-before.txt)
+    if [ "$media_before" = 'No result found.' ]; then
+        /system/bin/content insert --user 0 --uri "$media_collection" --bind "_display_name:s:$media_name" --bind mime_type:s:video/mp4 --bind relative_path:s:Movies/ --bind is_pending:i:1 > /data/local/tmp/archtv-mc1/media-insert.txt 2>&1
+    fi
+    /system/bin/content query --user 0 --uri "$media_collection" --projection _id --where "$media_where" --extra 'android\:query-arg-match-pending:i:1' > /data/local/tmp/archtv-mc1/media-id.txt 2>/data/local/tmp/archtv-mc1/media-query-error.txt
+    [ "$(/system/bin/wc -l < /data/local/tmp/archtv-mc1/media-id.txt)" -eq 1 ]
+    /system/bin/grep -Eq '^Row: 0 _id=[0-9]+$' /data/local/tmp/archtv-mc1/media-id.txt
+    media_row=$(/system/bin/cat /data/local/tmp/archtv-mc1/media-id.txt)
+    media_id=${media_row##*=}
+    media_uri=$media_collection/$media_id
+    /system/bin/printf '%s\n' "$media_uri" > /data/local/tmp/archtv-mc1/media-uri.txt
+    /system/bin/cat "$media_source" | /system/bin/content write --user 0 --uri "$media_uri" > /data/local/tmp/archtv-mc1/media-write.txt 2>&1
+    /system/bin/content read --user 0 --uri "$media_uri" > /data/local/tmp/archtv-mc1/media-readback.mp4 2>/data/local/tmp/archtv-mc1/media-read-error.txt
+    media_expected=$(/system/bin/sha256sum "$media_source")
+    media_actual=$(/system/bin/sha256sum /data/local/tmp/archtv-mc1/media-readback.mp4)
+    [ "${media_expected%% *}" = "${media_actual%% *}" ]
+    [ "$(/system/bin/stat -c %s "$media_source")" -eq "$(/system/bin/stat -c %s /data/local/tmp/archtv-mc1/media-readback.mp4)" ]
+    /system/bin/printf 'SOURCE %s\nREADBACK %s\n' "$media_expected" "$media_actual" > /data/local/tmp/archtv-mc1/media-bytes.txt
+    /system/bin/content update --user 0 --uri "$media_uri" --bind is_pending:i:0 > /data/local/tmp/archtv-mc1/media-publish.txt 2>&1
+    /system/bin/content query --user 0 --uri "$media_uri" --projection is_pending > /data/local/tmp/archtv-mc1/media-published.txt 2>/data/local/tmp/archtv-mc1/media-query-error.txt
+    /system/bin/grep -qx 'Row: 0 is_pending=0' /data/local/tmp/archtv-mc1/media-published.txt
+fi
+
 # Actual original PMS state before install/update; no package state seeded.
 /system/bin/cmd package path --user 0 $target_package > /data/local/tmp/archtv-mc1/markor-preinstall-path.txt 2>&1 || :
 /system/bin/dumpsys package $target_package > /data/local/tmp/archtv-mc1/markor-preinstall-dump.txt 2>&1
+# Kernel-derived labels from original Android ps under its original shell role.
+# Diagnostic status is retained; this does not override the external SID gate.
+ps_status=0
+/system/bin/ps -A -o PID,LABEL,NAME > /data/local/tmp/archtv-mc1/android-ps-before.txt 2>/data/local/tmp/archtv-mc1/android-ps-error.txt || ps_status=$?
+/system/bin/printf 'ps_before_exit=%s\n' "$ps_status" > /data/local/tmp/archtv-mc1/android-ps-status.txt
 created=$(/system/bin/cmd package install-create --user 0 -i android -S "$apk_bytes")
 /system/bin/printf '%s\n' "$created"
 case "$created" in
@@ -80,6 +121,9 @@ trap 'task_status=$?; if [ "$committed" = false ]; then /system/bin/cmd package 
 /system/bin/cat "$apk_path" | /system/bin/cmd package install-write -S "$apk_bytes" "$session_id" base.apk -
 /system/bin/cmd package install-commit "$session_id"
 committed=true
+ps_status=0
+/system/bin/ps -A -o PID,LABEL,NAME > /data/local/tmp/archtv-mc1/android-ps-postinstall.txt 2>/data/local/tmp/archtv-mc1/android-ps-error.txt || ps_status=$?
+/system/bin/printf 'ps_postinstall_exit=%s\n' "$ps_status" >> /data/local/tmp/archtv-mc1/android-ps-status.txt
 # Preserve the original PMS readback before user-start can block or the cohort stops.
 /system/bin/cmd package path --user 0 $target_package > /data/local/tmp/archtv-mc1/markor-postcommit-path.txt
 /system/bin/dumpsys package $target_package > /data/local/tmp/archtv-mc1/markor-postcommit-dump.txt
@@ -106,6 +150,14 @@ resolved=$(/system/bin/cmd package resolve-activity --brief --user 0 -a android.
 component=$(/system/bin/printf '%s\n' "$resolved" | /system/bin/tail -n 1)
 case "$component" in "$target_package"/*) ;; *) exit 1;; esac
 /system/bin/cmd activity start-activity -W --user 0 -n "$component" > /data/local/tmp/archtv-mc1/markor-launch.txt 2>&1
+ps_status=0
+/system/bin/ps -A -o PID,LABEL,NAME > /data/local/tmp/archtv-mc1/android-ps-after.txt 2>/data/local/tmp/archtv-mc1/android-ps-error.txt || ps_status=$?
+/system/bin/printf 'ps_after_exit=%s\n' "$ps_status" >> /data/local/tmp/archtv-mc1/android-ps-status.txt
+app_pid=$(/system/bin/pidof "$target_package" || :)
+case "$app_pid" in
+    ''|*[!0-9]*) /system/bin/printf 'app_pid_unavailable\n' > /data/local/tmp/archtv-mc1/android-app-status.txt ;;
+    *) /system/bin/cat /proc/$app_pid/status > /data/local/tmp/archtv-mc1/android-app-status.txt 2>&1 || : ;;
+esac
 # Actual APIs and pixels after launch, not an app-compatibility success marker.
 CLASSPATH=/system/framework/sm.jar /system/bin/app_process64 /system/bin com.android.commands.sm.Sm list-volumes all > /data/local/tmp/archtv-mc1/markor-volumes.txt
 /system/bin/cmd overlay list --user 0 > /data/local/tmp/archtv-mc1/markor-overlays.txt
