@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+Audio290 · [Registro canónico](../reports/android16-audio-bootstrap/source-progress.json), native_audio290: original AudioFlinger/AudioPolicy consultados, componente nativo0 y cierre bajo enforcing62. [Captura física](../reports/android16-package-bootstrap/vlc-mac290-first-frame.png) muestra sólo frame0. El registro enlaza logs originales/hash, AVC del memfd, prueba de recuperación y límites: sin PCM ni movimiento,21 plugins DSP ausentes, observación PCM Linux denegada; R1 abierto.
+
 Estado de política de audio ·62 cargada en permisivo con copia real61 y reversión preparada. El compilador conserva neverallows;22 decisiones offline mantienen transiciones/entrypoints originales, habilitan sólo las dos puertas NNP y conservan cinco negativas. Esto no es ejecución de servicios ni aislamiento. Siguiente: nueva cohorte completa con el payload286 verificado y hash real de política62. [Resultado](../reports/android16-audio-bootstrap/source-progress.json), audio_nnp_policy62.
 
 En curso ·288 supera el contexto raw inválido anterior, pero el kernel bloquea los exec originales del HAL y audioserver por nnp_transition con NNP1. Los PID anunciados son forks previos a exec, no servicios disponibles; ambos terminan127. No se acepta audio ni VLC continuo. Política61 quedó cargada/permisiva tras cierre;62 se compila con sólo dos admisiones NNP para las transiciones originales, sin execute_no_trans ni permisos de archivos/Binder/dispositivos añadidos. [Evidencia](../reports/android16-audio-bootstrap/source-progress.json), native_audio288.

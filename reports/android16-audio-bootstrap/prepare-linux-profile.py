@@ -45,6 +45,12 @@ text = original_rc.read_text()
 assert text.count('/apex/com.android.hardware.audio/bin/hw/') == 2
 rc.write_text(text.replace('/apex/com.android.hardware.audio/bin/hw/', '/vendor/bin/hw/') + '\n')
 add('/vendor/etc/init/archtv-audio.rc', rc)
+# The original AIDL factory searches this exact filename; legacy GSI
+# audio_effects.xml is a different deployment input. Keep original declarations
+# and actual failed dlopen behavior: no effects are fabricated when libraries
+# are absent, and reference/no-op plugins are not installed as working DSP.
+add('/vendor/etc/audio_effects_config.xml', study / 'hardware-audio/aidl/default/audio_effects_config.xml')
+record['adaptations'].append('Original AIDL audio_effects_config.xml unchanged. EffectFactory inserts identities only after actual dlopen succeeds; absent plugins remain unavailable, not accepted effects.')
 record['original_rc_sha256'] = sha(original_rc)
 record['adaptations'].append('Only the executable directory in original RC changes from audio APEX to private vendor; user/groups/caps/rtprio/ioprio/task_profiles/onrestart retained.')
 # Original schema/configuration and volume tables, restricted to the hardware

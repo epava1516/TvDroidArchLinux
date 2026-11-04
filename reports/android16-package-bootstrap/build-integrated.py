@@ -436,6 +436,13 @@ text=text.replace(old_parent,"record('/'+str(parent.relative_to(tree)),None,'u:o
 if native_audio:
  assert text.count("'128M'")==1
  text=text.replace("'128M'","'256M'")
+# Retain immutable images, manifests and failed extraction evidence. Successful
+# verification dumps duplicate immutable source/image bytes and consume scarce
+# disk per build; remove only each newly verified dump after its hash matches.
+# Historical builds/dumps are never touched by this recipe.
+verified_dump="assert hashlib.sha256(dump.read_bytes()).hexdigest()==entry['sha256'],path"
+assert text.count(verified_dump)==1
+text=text.replace(verified_dump,verified_dump+"\n  dump.unlink() # Successful ephemeral extraction only; source/image retained")
 recipe=out/'build-payload.py';recipe.write_text(text);subprocess.run(['python',str(recipe)],stdout=open(out/'packager.log','w'),stderr=subprocess.STDOUT,check=True)
 assert all(hashlib.sha256((r/n).read_bytes()).hexdigest()==h for n,h in source_hashes.items()), 'Source changed during build'
 print(out,flush=True)

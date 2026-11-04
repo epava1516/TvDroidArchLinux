@@ -580,7 +580,7 @@
     "Original vendor-domain policy, devices and isolation in enforcing",
     "Native audio backend startup and audio APK compatibility"
   ],
-  "priority": "Fresh UUID whole original HAL/effect/audioserver+VLC on verified unchanged payload286 with expected actual readback37a1c1dfe97062b6f765f18c50778227e0245216fd8a3e65977062450d0b8969; actual execution, service registration and PCM still unproved.",
+  "priority": "Original vendor audio TE has no private tmpfs transition/type. Explicit Linux adaptation uses whole original tmpfs_domain macro on new private audio type and projects to Linux anonymous memory; no generic Linux tmpfs write/app/execute permissions. Offline63+9new-memory decisions before kernel load, then whole same payload290 with fresh UUID.",
   "linux_alsa_original_closure": {
     "utc": "2026-11-04T20:33:01.311873+00:00",
     "scope": "BUILD ONLY: complete original AIDL core factory and original session/provider/Rust/codec closure, adapted primary ALSA transfers and clock; no runtime availability accepted",
@@ -727,5 +727,40 @@
     "recovery": "/home/tv/recuperacion-archtv/20261104T-audio-original-policy62/RETOMAR.txt",
     "mode_at_load": 0,
     "next": "Fresh UUID whole original HAL/effect/audioserver+VLC on verified unchanged payload286 with expected actual readback37a1c1dfe97062b6f765f18c50778227e0245216fd8a3e65977062450d0b8969; actual execution, service registration and PCM still unproved."
+  },
+  "native_audio289": {
+    "checkpoint": "/home/tv/recuperacion-archtv/8e3885bf-cf6b-4c54-a502-2baf0d6fb086-markor-software-launch",
+    "record": "/home/tv/recuperacion-archtv/8e3885bf-cf6b-4c54-a502-2baf0d6fb086-markor-software-launch/functional-result.json",
+    "scope": "Actual original HAL/effect entry under62 enforcing; exact AIDL config missing, native audio not accepted",
+    "effect_plugin_inventory": "/home/tv/recuperacion-archtv/8e3885bf-cf6b-4c54-a502-2baf0d6fb086-markor-software-launch/original-effect-plugin-inventory.json",
+    "all21_plugins_absent": true,
+    "next": "Deploy original audio_effects_config.xml unchanged, keep actual factory dlopen and missing-library behavior. Build290 source guard and same full cohort; no effects compatibility inferred from registration."
+  },
+  "native_audio290": {
+    "scope": "Whole original audio provider/effect factory/audioserver+Java+intact VLC execute together under62 enforcing, native closes0; no successful PCM or video motion accepted",
+    "checkpoint": "/home/tv/recuperacion-archtv/5bf4cb14-c43f-446a-9668-06d8191de53f-markor-software-launch",
+    "record": "/home/tv/recuperacion-archtv/5bf4cb14-c43f-446a-9668-06d8191de53f-markor-software-launch/functional-result.json",
+    "record_sha256": "83c8217197cff757662f0d02709e79df4291dbd5e8ff01bcbf3fd50f7058a0be",
+    "final_log": {
+      "path": "/home/tv/recuperacion-archtv/5bf4cb14-c43f-446a-9668-06d8191de53f-markor-software-launch/original-logcat-final.txt",
+      "bytes": 63027329,
+      "sha256": "3207a55f2d47e6755204869875534db2ba4edab91602f41f28adea55aa4117ba"
+    },
+    "image": {
+      "path": "reports/android16-package-bootstrap/vlc-mac290-first-frame.png",
+      "sha256": "1f57564fea880967e9e57d1cd0cdec013a61e0dda73f681c3343ef26cc831e4f",
+      "scope": "Actual physical Smithay/VLC frame0 only"
+    },
+    "native_exit": 0,
+    "outer_exit": 1,
+    "actual_original_service_queries": [
+      "system_server IAudioPolicyService",
+      "system_server IAudioFlingerService",
+      "VLC UID10104 IAudioFlingerService"
+    ],
+    "blocked": "Original primary output setup fails on hal_audio_default memfd:test_android_memfd write denied against Linux tmpfs. AudioPolicy reports no reachable primary; app getMinFrameCount status-1. Host PCM observer access denied, not an output-state proof.",
+    "effects": "Config present, original queryProcessing fails getDescriptorFailed;21 DSP plugins absent and unimplemented, not resolved by registration.",
+    "host_after": "/home/tv/recuperacion-archtv/5bf4cb14-c43f-446a-9668-06d8191de53f-markor-software-launch/host-audio-after.json",
+    "next": "Original vendor audio TE has no private tmpfs transition/type. Explicit Linux adaptation uses whole original tmpfs_domain macro on new private audio type and projects to Linux anonymous memory; no generic Linux tmpfs write/app/execute permissions. Offline63+9new-memory decisions before kernel load, then whole same payload290 with fresh UUID."
   }
 }
