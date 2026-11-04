@@ -3342,5 +3342,175 @@
         "sha256": "1d038cf80825efe3910e1b92d629437785fa927632679114db9422f7f2ca3fbf"
       }
     ]
+  },
+  "integrated235_237": {
+    "utc": "2026-11-04T09:24:07.029650+00:00",
+    "executions": [
+      235,
+      236,
+      237
+    ],
+    "artifact_latest": 237,
+    "policy": 44,
+    "scope": "OriginalZygote fork/securityhooks reach realJava UID1000 system_server, reuseoriginalclassloader, actualGateKeeperBinderoperation; noAPKstage accepted.",
+    "results": {
+      "235": "44fulloriginalselected libselinuxmacros+twohopNNP passes; Javaalias checksUID1000/contextsystem_server afteroriginalhooks. Ownmanualstandaloneprefetch duplicatesoriginalcachedloader andfails.",
+      "236": "Removeownprefetch/extraorchestrationloader, verifyactualclassloaderidentity and TCCL againstoriginalcachedloader. ActualGateKeeper.getSecureUserId(0) returns0 fromoriginaldaemon, callerUID1000; notauth/unlockacceptance. Ownobsolete getServiceOrThrow(manager) auxiliarydiagnostic fails; removed, notsubstitutedwithsuccess.",
+      "237": "OriginalBindercontext fromZygote+GateKeeper retained; originalframeworkbootstrap reachesConnectivityServiceInitializer. FatalrealUDPbind EACCES, AVCnode_bind system_server->Linux.node_t. Originalnet.te allows {netdomain -ephemeral_app -sdk_sandbox_all} node_type:{icmp rawip tcp udp} node_bind; Linuxglobalnodeidentity notmappedyet. NetworkStats requestsNETLINK_SOCK_DIAG modulealiases deniedbyMAC; inet_diag/tcp_diag/udp_diag existingLinuxmodulepaths identified, notyetloaded/persisted. NoInstallerRPC/display/APKaccepted."
+    },
+    "enforcing_seconds": {
+      "235": 28.599884918000043,
+      "236": 27.23114006900005,
+      "237": 42.96018375699987
+    },
+    "policy_contract": "43partialcompiledneverloaded.44projects originalselinux_check_context/access forselecteddomains ontoLinux-ownedrealSELinuxfs and admits onlyoriginaltwohopNNP retainingNNP1.49loadedpolicydecisionsallowcontracts and denyadministration/load/setenforce/setbool/setsecparam/directinit->systemserver. Noadminsyscall attempted; wholestability/isolationnotaccepted.",
+    "decision": "Next integrate originalnet.te node_bind contract ontoLinux-ownednode labels preserving original ephemeral/sdk exclusions, private-netns invariant and module_request denial; LinuxpreloadactualSOCK_DIAGmodules asneeded. Then wholeConnectivity/Installer/managers/Markor, no fakeprovider/readiness orsecuritybypass.",
+    "host": {
+      "utc": "2026-11-04T09:21:51.500110+00:00",
+      "kernel": "6.18.59-archtv-aosp16-1",
+      "boot_id": "ed605c8c-db9e-4ce1-8c57-d383f08d3694",
+      "enforce": "0",
+      "status": [
+        1,
+        46,
+        0,
+        3,
+        1
+      ],
+      "policy_sha256": "f1ff89da5d0fb96b370a330cb5d7ba6af8aff2660d36b11f2f8b60fb3ef9881b",
+      "owned_running_units": "",
+      "audit": "enabled 0\nfailure 1\npid 0\nrate_limit 0\nbacklog_limit 64\nlost 0\nbacklog 0\nbacklog_wait_time 18000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n",
+      "loops": "",
+      "dm": "No devices found\n",
+      "owned_bpf_remaining": {
+        "prog": [],
+        "map": [],
+        "link": []
+      }
+    },
+    "limits": [
+      "AllMarkorAPKunderMAC stages remainunaccepted; no UI/input/note/reopen validation yet.",
+      "Nativecohort orderlyclose stillincomplete; externalcleanupverified.",
+      "WholeR1MAC/ARM/GMS/DRM/distro open; bootanimationSIGSEGV retainedseparategraphicslimitation.",
+      "SecureuserID0 isoriginalunenrolledsoftwareprofile result, notauth/certification proof."
+    ],
+    "evidence": [
+      {
+        "path": "/home/tv/recuperacion-archtv/a544a84e-b6c1-4eec-a581-05d247e32d3b-markor-software-launch/run.log",
+        "sha256": "857bdc9c01c93f867d78fff8fba945a0aa972d48db8eaffff997ca47693ae37e"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/a544a84e-b6c1-4eec-a581-05d247e32d3b-markor-software-launch/result.json",
+        "sha256": "4fe476ab94afac437cde500e7e866c5332c9525116e4fdc8b966e85283c03af8"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/a544a84e-b6c1-4eec-a581-05d247e32d3b-markor-software-launch/mac-window.json",
+        "sha256": "cd6aa2279c6c38e4256021c826f0ab57b770efcb7898bfc85c5cd759ebea25c4"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/a544a84e-b6c1-4eec-a581-05d247e32d3b-markor-software-launch/finite-audit/result.json",
+        "sha256": "e81cd9c1955d53d8e3eb3cb8361b7ca97f1260524f6a467d0d3ceb45b1e4a59c"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/a544a84e-b6c1-4eec-a581-05d247e32d3b-markor-software-launch/after-host.json",
+        "sha256": "517fbf359dfb70e473eef8ad86b27a37e9a61e952465683746cff47ab798dd53"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/a544a84e-b6c1-4eec-a581-05d247e32d3b-markor-software-launch/completion-consumer.json",
+        "sha256": "af268053a80607cbba3d055c81225d2a02c7c82083e8b687d558664afb744033"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/a544a84e-b6c1-4eec-a581-05d247e32d3b-markor-software-launch/session-state.json",
+        "sha256": "cbba366603bf517eb9f99978a5879f7e1f64b9492619512f97cd68194beb9076"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/cc985b2e-8185-4d97-8344-0fa987aa8be1-markor-software-launch/run.log",
+        "sha256": "7478c5a33a085fe663d34fcf7b389419daf429ae3af9d00cc7194d686cca2e83"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/cc985b2e-8185-4d97-8344-0fa987aa8be1-markor-software-launch/result.json",
+        "sha256": "ed57a3caaf6d705f321b1bb54d5e37ab4f9997c8c9f62197629b02404dd23bf6"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/cc985b2e-8185-4d97-8344-0fa987aa8be1-markor-software-launch/mac-window.json",
+        "sha256": "c3e7eae08ab0b3ba8852475b0e627e464caf802210c94aed753199b079e20b90"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/cc985b2e-8185-4d97-8344-0fa987aa8be1-markor-software-launch/finite-audit/result.json",
+        "sha256": "ef0dafe1fd60d634dde7098e6cbbb52c3862a2fd88fa638c76ff2c82dd85bc9d"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/cc985b2e-8185-4d97-8344-0fa987aa8be1-markor-software-launch/after-host.json",
+        "sha256": "68777532a93361660fddbf03089ca1bf09eaad7b4996a51b3c1228715eac76fa"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/cc985b2e-8185-4d97-8344-0fa987aa8be1-markor-software-launch/completion-consumer.json",
+        "sha256": "2aabce3f2593f1b6e4cc7ae1d8428bab1938a5945a09dd5369bbea3ca0cd5a77"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/cc985b2e-8185-4d97-8344-0fa987aa8be1-markor-software-launch/session-state.json",
+        "sha256": "97466e17f2c9b452405bfbe38cd0f42b847bd3cd30a5da9a8550c0e299be0fec"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/65ae3ed4-a394-44f5-8edc-d6c9c22acb17-markor-software-launch/run.log",
+        "sha256": "dbd79dc0ef4d401d0bf7a2d1a080af027144bd3857deda696f13d97d8e4f20b5"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/65ae3ed4-a394-44f5-8edc-d6c9c22acb17-markor-software-launch/result.json",
+        "sha256": "1fb14e215ee2596ac5d5c402fece1cf293077e718992787562703bef95b38293"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/65ae3ed4-a394-44f5-8edc-d6c9c22acb17-markor-software-launch/mac-window.json",
+        "sha256": "5d2100436303bfb09adfd9355a76b408bf862dfb0fd09c61a1c5b61322deb3bb"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/65ae3ed4-a394-44f5-8edc-d6c9c22acb17-markor-software-launch/finite-audit/result.json",
+        "sha256": "73d7baadab1c99d7936570d21efbf4783aa232e7d3455154a1e27fca8b8fdf74"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/65ae3ed4-a394-44f5-8edc-d6c9c22acb17-markor-software-launch/after-host.json",
+        "sha256": "9f5e32615a0d159408eb2943d2efb8e00235a9f9a582d8a5499fc832c80d5dfe"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/65ae3ed4-a394-44f5-8edc-d6c9c22acb17-markor-software-launch/completion-consumer.json",
+        "sha256": "cf871892c0e899ccd4bba493f9b54ed4a2df10d4452be30805917a6028fd7dce"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/65ae3ed4-a394-44f5-8edc-d6c9c22acb17-markor-software-launch/session-state.json",
+        "sha256": "1b1e3ff3e4cdbe9eb10b5a317d2c20bbb2a416fcfdf885330154ef2d714aee24"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load44/candidate-review.json",
+        "sha256": "f15741444d682462680eaf6739f406d5877f36e53e835d25a727defbe697900b"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load44/before-host.json",
+        "sha256": "df7eb27ff1253a13daf165ba69b068ed5a317edaee19999598087534ec5964e9"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load44/after-load.json",
+        "sha256": "1d40ecd1ab556cc6a46d6683620354a5c18c4b1646386154e4af89421454c34e"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load44/access-contract.json",
+        "sha256": "5d2842153fa8d04871841ba0262fef4388bd08543e82a54bff85a9e2aadd9938"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/selected-platform-policy-44/compiler.json",
+        "sha256": "ac9389997bacb0ca0d979832ab1f50afbabdcd0d0c105e05c880c76fe5555461"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-237/source-inputs.json",
+        "sha256": "e05e5b76b2ababdb2d150d0f23e3ddf6017275d3929a0cea5acd4e98846bb03c"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-237/payload.json",
+        "sha256": "85f53036e297e7ea579175b71cb941a15bdb39a068c3cf7444347d65236b0d2d"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load43/before43-fork-edge-queries.json",
+        "sha256": "86ccdef1a4c83980f9c11dbf0ffd2d42f2e21b81fd4a89a2edf04ccbd8094d79"
+      }
+    ]
   }
 }

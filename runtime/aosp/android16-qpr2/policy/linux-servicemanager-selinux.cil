@@ -5,9 +5,24 @@
 (allow servicemanager linux.security_t (file (read getattr map open write)))
 (allow servicemanager linux.security_t (security (compute_av)))
 
-; Original installd calls selinux_status_open(true) after initialize_directories.
-; Linux owns the real selinuxfs/status inode (linux.security_t). Project only
-; its original read/mmap contract; do not grant write, policy administration,
-; or fallback netlink sockets. No fake status page or substituted success.
-(allow installd linux.security_t (dir (getattr search)))
-(allow installd linux.security_t (file (read getattr map open)))
+; Original selected services' libselinux contracts, projected onto Linux's
+; real selinuxfs objects. From the pinned original TE/CIL:
+;   installd: selinux_check_context
+;   zygote: selinux_check_context + selinux_check_access
+;   system_server: selinux_check_access
+; Transactional /context and /access require file read/write. This does not
+; grant security-class load_policy, setenforce, setbool or setsecparam. Keep
+; those negative decisions and init->system_server NNP denial separately tested.
+; No fake status page, context validator or additional fallback netlink socket.
+(allow installd linux.security_t (dir (ioctl read getattr lock open watch watch_reads search)))
+(allow installd linux.security_t (file (ioctl read getattr lock map open watch watch_reads write append)))
+(allow installd linux.security_t (lnk_file (ioctl read getattr lock map open watch watch_reads)))
+(allow installd linux.security_t (security (check_context)))
+(allow zygote linux.security_t (dir (ioctl read getattr lock open watch watch_reads search)))
+(allow zygote linux.security_t (file (ioctl read getattr lock map open watch watch_reads write append)))
+(allow zygote linux.security_t (lnk_file (ioctl read getattr lock map open watch watch_reads)))
+(allow zygote linux.security_t (security (check_context compute_av)))
+(allow system_server linux.security_t (dir (ioctl read getattr lock open watch watch_reads search)))
+(allow system_server linux.security_t (file (ioctl read getattr lock map open watch watch_reads write append)))
+(allow system_server linux.security_t (lnk_file (ioctl read getattr lock map open watch watch_reads)))
+(allow system_server linux.security_t (security (compute_av)))

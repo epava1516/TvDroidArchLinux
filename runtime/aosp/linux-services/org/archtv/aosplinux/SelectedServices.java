@@ -284,17 +284,9 @@ public final class SelectedServices {
             Class<?> process = Class.forName("android.os.Process");
             int priority = process.getField("THREAD_PRIORITY_FOREGROUND").getInt(null);
             call(process, null, "setThreadPriority", new Class<?>[]{int.class}, priority);
-            // Establish this original Java Binder client before resource/overlay
-            // initialization can make nested framework service lookups.
-            if(packages) {
-                Object originalManager=call(Class.forName("android.os.ServiceManager"),null,"getServiceOrThrow",
-                    new Class<?>[]{String.class},"manager");
-                String descriptor=(String)call(Class.forName("android.os.IBinder"),originalManager,
-                    "getInterfaceDescriptor",new Class<?>[0]);
-                if(!"android.os.IServiceManager".equals(descriptor))
-                    throw new IllegalStateException("Unexpected original context manager: "+descriptor);
-                System.err.println("ORIGINAL_JAVA_CONTEXT_MANAGER_DESCRIPTOR "+descriptor+" NOT_APK_ACCEPTANCE");
-            }
+            // Original Zygote initializes the Binder context. The launcher has
+            // already made a real GateKeeper Binder call; no named "manager"
+            // service is a prerequisite for the original framework bootstrap.
             if(packages)call(Class.forName("android.database.sqlite.SQLiteCompatibilityWalFlags"),null,
                 "init",new Class<?>[]{String.class},(Object)null);
             Class<?> looper = Class.forName("android.os.Looper");

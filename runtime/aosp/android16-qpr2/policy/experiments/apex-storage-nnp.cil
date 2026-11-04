@@ -32,3 +32,11 @@
 
 ; Original pinned init->logd transition retained; Linux NNP admission only.
 (allow init logd (process2 (nnp_transition)))
+
+; Original system-server fork: zygote.te admits dyntransition only through
+; system_server_startup; system_server_startup.te then admits system_server.
+; The Linux supervisor's irreversible NNP1 adds this second kernel gate.
+; Actual policy42 AV denies both NNP edges; preserve NNP1, original UID/caps,
+; setcurrent/dyntransition/seapp hooks and the denial of direct init entry.
+(allow zygote system_server_startup (process2 (nnp_transition)))
+(allow system_server_startup system_server (process2 (nnp_transition)))

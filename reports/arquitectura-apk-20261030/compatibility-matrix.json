@@ -416,13 +416,13 @@
         "scope": "Exact Markorv164 Markdown note created163 survives complete cohort teardown and original subsystems167; actual bytes, same UID/inodes/MCS, original install/force-stop/relaunch and real single pointer opens editor.167 native/exterior0. Not host reboot/power loss, FBE/MAC, graceful close, arbitrary upgrade or general APK compatibility."
       },
       "runtime_security_observation": {
-        "candidate": 234,
-        "status": "originalfork_childUID1000_securitycontext_denied_beforeJava_installdstatus_initialization_advanced",
+        "candidate": 237,
+        "status": "originalfork_Java_UID1000_systemserver_loader_GateKeeperBinder_pass_ConnectivityUDPbinddenied",
         "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-        "record_sha256": "d164fae314e281a89d7dad4907f6cd8c89ee6ea6b449132e3e4adf8b3454d920",
-        "scope": "LinuxAPKprofile omits originalAndroidbootanimation (separategraphicsprofile retainsfailure); SF/HWC andallrequiredservice monitoring retained. Shellclientchecksdisplayonly; originalJavaInstaller stillrequired. Originalinstalld statusinitialization advances, livesuntilteardown, noregistrationacceptedbylogalone. Originalforkcreateschild491 historicalUID1000, originalnativefork/security code aborts beforeJava: selinux_android_setcontext needsreal/contextRW; zygote Linux.security_t read/enforce+RWcontext denied. Aliasmain NOTobserved, noAPKstage.",
+        "record_sha256": "bf3eb25fdfd83fe7fe436d1c0594deac39bb49ff3c194b93f09315e750065977",
+        "scope": "OriginalZygote fork/securityhooks reach realJava UID1000 system_server, reuseoriginalclassloader, actualGateKeeperBinderoperation; noAPKstage accepted. OriginalBindercontext fromZygote+GateKeeper retained; originalframeworkbootstrap reachesConnectivityServiceInitializer. FatalrealUDPbind EACCES, AVCnode_bind system_server->Linux.node_t. Originalnet.te allows {netdomain -ephemeral_app -sdk_sandbox_all} node_type:{icmp rawip tcp udp} node_bind; Linuxglobalnodeidentity notmappedyet. NetworkStats requestsNETLINK_SOCK_DIAG modulealiases deniedbyMAC; inet_diag/tcp_diag/udp_diag existingLinuxmodulepaths identified, notyetloaded/persisted. NoInstallerRPC/display/APKaccepted.",
         "r1_mac": "open",
-        "host_after": "AOSPkernel, permisive42/load2, audit0/lost0, noownedunits/loopsDM/BPF"
+        "host_after": "AOSPkernel, permisive44/load3, audit0/lost0, noownedunits/loopsDM/BPF"
       },
       "runtime_security_observation_history": [
         {
@@ -595,6 +595,15 @@
           "scope": "OriginalLinuxkernel/policy41 restored; originalnetd advances after Linuxmodulepreload; originalABIguard passes and appZygote processStart returns, noZygoteprotocol/applicationacceptance. SELECTED_ZYGOTE_CONFIGURATION ro.zygote=zygote64; SELECTED_ZYGOTE_STARTED pid436 historical. netdSIG9 onlyteardown. SelectedServices127 has AVC init->system_server process2nnp_transition denied; do notgrant. installd1: layout_version read/user0getattr unlabeled_t.",
           "r1_mac": "open",
           "host_after": "AOSPkernel, permisivepolicy41/load1, audit0/lost0, noownedunits/loopsDM/BPF"
+        },
+        {
+          "candidate": 234,
+          "status": "originalfork_childUID1000_securitycontext_denied_beforeJava_installdstatus_initialization_advanced",
+          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "record_sha256": "d164fae314e281a89d7dad4907f6cd8c89ee6ea6b449132e3e4adf8b3454d920",
+          "scope": "LinuxAPKprofile omits originalAndroidbootanimation (separategraphicsprofile retainsfailure); SF/HWC andallrequiredservice monitoring retained. Shellclientchecksdisplayonly; originalJavaInstaller stillrequired. Originalinstalld statusinitialization advances, livesuntilteardown, noregistrationacceptedbylogalone. Originalforkcreateschild491 historicalUID1000, originalnativefork/security code aborts beforeJava: selinux_android_setcontext needsreal/contextRW; zygote Linux.security_t read/enforce+RWcontext denied. Aliasmain NOTobserved, noAPKstage.",
+          "r1_mac": "open",
+          "host_after": "AOSPkernel, permisive42/load2, audit0/lost0, noownedunits/loopsDM/BPF"
         }
       ],
       "runtime_security_history": [
