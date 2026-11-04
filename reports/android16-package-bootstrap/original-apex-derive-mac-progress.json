@@ -3092,5 +3092,91 @@
         "sha256": "e1b1b2acacbe0004799fee0036e3c6bd2016a9f8d491129d7dfd497193313f67"
       }
     ]
+  },
+  "integrated228_231": {
+    "utc": "2026-11-04T08:28:28.602805+00:00",
+    "execution": 231,
+    "artifact": 227,
+    "enforcing_seconds": 12.113414148999993,
+    "scope": "OriginalLinuxkernel/policy41 restored; originalnetd advances after Linuxmodulepreload; originalABIguard passes and appZygote processStart returns, noZygoteprotocol/applicationacceptance.",
+    "actual": "SELECTED_ZYGOTE_CONFIGURATION ro.zygote=zygote64; SELECTED_ZYGOTE_STARTED pid436 historical. netdSIG9 onlyteardown. SelectedServices127 has AVC init->system_server process2nnp_transition denied; do notgrant. installd1: layout_version read/user0getattr unlabeled_t.",
+    "decision": "Use originalZygote fork/system_server startup/securityhooks, not directinit grant. Originalinit restorecon/order for persistedinstalld metadata; no fabricatedmetadata or broadenunlabeledaccess. Netfilter/XFRM modules Linux-owned prerequisite, runtimeNOmodule_request authority.",
+    "host": {
+      "utc": "2026-11-04T08:27:16.072396+00:00",
+      "kernel": "6.18.59-archtv-aosp16-1",
+      "boot_id": "ed605c8c-db9e-4ce1-8c57-d383f08d3694",
+      "enforce": "0",
+      "status": [
+        1,
+        18,
+        0,
+        1,
+        1
+      ],
+      "policy_sha256": "5ca58bdc8b149161eac4d7614b30332d33486dea3b5ec7171af8f68cbd923a06",
+      "owned_running_units": "",
+      "audit": "enabled 0\nfailure 1\npid 0\nrate_limit 0\nbacklog_limit 64\nlost 0\nbacklog 0\nbacklog_wait_time 18000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n",
+      "loops": "",
+      "dm": "No devices found\n",
+      "owned_bpf_remaining": {
+        "prog": [],
+        "map": [],
+        "link": []
+      }
+    },
+    "module_profile": "runtime/aosp/linux-services/archtv-aosp16-network.conf",
+    "module_profile_install": "NOTINSTALLED: auto-review rejected persistent/etc/modules-load.d write; repo candidate+temporarymodules only. No workaround.",
+    "limits": [
+      "NoAPKunderMAC acceptance, noZygote socket/Java startupacceptance bypid",
+      "NoInternet/DNS/tethering acceptance bynetddaemonlifetime",
+      "NoUI/pixels/input/persistence rerun; historical167 notaltered",
+      "Snapshotconfirmed, restorationnotrehearsed; fullR1MAC/ARM/GMS/DRM/distro open"
+    ],
+    "evidence": [
+      {
+        "path": "/home/tv/recuperacion-archtv/8a2ea7d6-25ce-4ddb-966c-0bc3e70162c7-markor-software-launch/result.json",
+        "sha256": "d4d4d78a45fb0e5b84fd13f6106b63c1c9810683b389ff18511852f47730e67e"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/8a2ea7d6-25ce-4ddb-966c-0bc3e70162c7-markor-software-launch/run.log",
+        "sha256": "c941ab75ccdb754c8b5be608a80c310f7ccaeb7758bf016b97cafe77bb5042ba"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/8a2ea7d6-25ce-4ddb-966c-0bc3e70162c7-markor-software-launch/mac-window.json",
+        "sha256": "61b59cebc6dcd547af45b7aca36bfc1f3a4f91de9a50c52fda04f0defc331418"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/8a2ea7d6-25ce-4ddb-966c-0bc3e70162c7-markor-software-launch/finite-audit/result.json",
+        "sha256": "606eabc82de825dd53bda08f5e80b18b5de7d5b169cb4bf776c54209b4894764"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/8a2ea7d6-25ce-4ddb-966c-0bc3e70162c7-markor-software-launch/completion-consumer.json",
+        "sha256": "1dcd5caba39ef4096abb5f70380f892afddfea6fd185603774bb84d9a5c4889a"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/8a2ea7d6-25ce-4ddb-966c-0bc3e70162c7-markor-software-launch/after-host.json",
+        "sha256": "7b4070b8b5490e248ed42f40a8966b526257ae3cfe0d182065881bd9c90d01a9"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/8a2ea7d6-25ce-4ddb-966c-0bc3e70162c7-markor-software-launch/bpf-cleanup.json",
+        "sha256": "a25f3cb5adde25bc7ee1f4616e57924c43c91b28474196147fb28dda74027bef"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/8a2ea7d6-25ce-4ddb-966c-0bc3e70162c7-markor-software-launch/session-state.json",
+        "sha256": "a741ef10aeb881a8fc4a15e50e26c5466ae69372f23d0cc7d01d431fbaa1de36"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/20261104T081624Z-restore-aosp-kernel/postboot-228-230-progress.json",
+        "sha256": "536d5a0b5b51db14af8125d0bdea6f48c7abbf0cf73bd8c2718ba623b382aeb1"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/20261104T081624Z-restore-aosp-kernel/policy-firstload41/after.json",
+        "sha256": "3047647bba5d3f2ab3aa7905142a9cf19cbdac4e0ffd7d09e553b5ae37b322be"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/20261104T081624Z-restore-aosp-kernel/network-module-profile.json",
+        "sha256": "493441f6882d9374e3d6d0268f2a667c5c7712730ea95c86eec7466c025c442d"
+      }
+    ]
   }
 }
