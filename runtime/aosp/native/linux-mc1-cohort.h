@@ -210,7 +210,7 @@ class LinuxMc1Cohort {
         int observed_mode=security_getenforce();
         std::fprintf(stderr,"MC1_CLOSE_OBSERVED enforcing=%d expected=%d\n",observed_mode,expected_mode_);
         if(observed_mode!=expected_mode_)return android::base::Error()<<"MC1 security mode changed during close";
-        if(!workflow_completed)return android::base::Error()<<"Original Markor shell workflow failed or incomplete before close; inspect actual outputs";
+        if(!workflow_completed)return android::base::Error()<<"Original APK shell workflow failed or incomplete before close; inspect actual outputs";
         return {};
     }
  private:
@@ -1211,13 +1211,13 @@ class LinuxMc1Cohort {
             auto* peer=package_client->get();
             peer->AddReapCallback([this](const siginfo_t& info){
                 workflow_done_=true;workflow_ok_=info.si_code==CLD_EXITED && info.si_status==0;
-                std::fprintf(stderr,"MARKOR_ORIGINAL_SHELL_WORKFLOW_EXIT pid=%d code=%d status=%d NOT_APK_ACCEPTANCE\n",info.si_pid,info.si_code,info.si_status);
+                std::fprintf(stderr,"APK_ORIGINAL_SHELL_WORKFLOW_EXIT pid=%d code=%d status=%d NOT_APK_ACCEPTANCE\n",info.si_pid,info.si_code,info.si_status);
                 if(!closing_ && !workflow_ok_)manager_failed_=true;
             });
             services.AddService(std::move(*package_client));
             if(auto result=peer->Start();!result.ok())return result;
             workflow_started_=true;
-            std::fprintf(stderr,"MARKOR_ORIGINAL_SHELL_WORKFLOW_STARTED pid=%d uid=%u gid=%u NOT_INSTALLED_OR_LAUNCHED\n",peer->pid(),peer->uid(),peer->gid());
+            std::fprintf(stderr,"APK_ORIGINAL_SHELL_WORKFLOW_STARTED pid=%d uid=%u gid=%u NOT_INSTALLED_OR_LAUNCHED\n",peer->pid(),peer->uid(),peer->gid());
         }
         if(security_getenforce()!=expected_mode_)return android::base::Error()<<"Selected display security mode changed";
         return {};

@@ -5,6 +5,14 @@ set -eu
 set -o pipefail
 apk_path=/data/local/tmp/markor.apk
 apk_bytes=$(/system/bin/stat -c %s "$apk_path")
+# Explicit trusted installer target; original PMS must discover/validate the
+# actual APK. Old payloads without this input keep their pinned Markor route.
+target_package=net.gsantner.markor
+if [ -f /data/local/tmp/archtv-mc1/archtv-install-package ]; then
+    IFS= read -r target_package < /data/local/tmp/archtv-mc1/archtv-install-package
+fi
+case "$target_package" in ''|*[!a-zA-Z0-9_.]*) exit 1;; esac
+
 # Wait for the original AMS boot completion before asking it to start/unlock
 # users. This only reads the original property; no readiness is manufactured.
 boot_wait=0
@@ -53,8 +61,8 @@ done
 /system/bin/grep -q '^emulated;0 mounted ' /data/local/tmp/archtv-mc1/markor-volumes.txt
 
 # Actual original PMS state before install/update; no package state seeded.
-/system/bin/cmd package path --user 0 net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-preinstall-path.txt 2>&1 || :
-/system/bin/dumpsys package net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-preinstall-dump.txt 2>&1
+/system/bin/cmd package path --user 0 $target_package > /data/local/tmp/archtv-mc1/markor-preinstall-path.txt 2>&1 || :
+/system/bin/dumpsys package $target_package > /data/local/tmp/archtv-mc1/markor-preinstall-dump.txt 2>&1
 created=$(/system/bin/cmd package install-create --user 0 -i android -S "$apk_bytes")
 /system/bin/printf '%s\n' "$created"
 case "$created" in
@@ -73,8 +81,8 @@ trap 'task_status=$?; if [ "$committed" = false ]; then /system/bin/cmd package 
 /system/bin/cmd package install-commit "$session_id"
 committed=true
 # Preserve the original PMS readback before user-start can block or the cohort stops.
-/system/bin/cmd package path --user 0 net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-postcommit-path.txt
-/system/bin/dumpsys package net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-postcommit-dump.txt
+/system/bin/cmd package path --user 0 $target_package > /data/local/tmp/archtv-mc1/markor-postcommit-path.txt
+/system/bin/dumpsys package $target_package > /data/local/tmp/archtv-mc1/markor-postcommit-dump.txt
 IFS= read -r installed_line < /data/local/tmp/archtv-mc1/markor-postcommit-path.txt
 case "$installed_line" in package:/data/app/*/base.apk) ;; *) exit 1;; esac
 installed_apk=${installed_line#package:}
@@ -87,16 +95,16 @@ installed_hash=$(/system/bin/sha256sum "$installed_apk")
 # launch predicate. Privileged Linux evidence collection observes backings
 # separately; never grant shell access or create application data here.
 app_data_status=0
-/system/bin/stat -c '%n|inode=%i|uid=%u|gid=%g|mode=%a' /data/user/0/net.gsantner.markor /data/user_de/0/net.gsantner.markor > /data/local/tmp/archtv-mc1/markor-app-data.txt 2>&1 || app_data_status=$?
+/system/bin/stat -c '%n|inode=%i|uid=%u|gid=%g|mode=%a' /data/user/0/$target_package /data/user_de/0/$target_package > /data/local/tmp/archtv-mc1/markor-app-data.txt 2>&1 || app_data_status=$?
 /system/bin/printf 'shell_private_data_stat exit=%s NOT_APP_DATA_ACCEPTANCE\n' "$app_data_status" >> /data/local/tmp/archtv-mc1/markor-app-data.txt
 # Observe HOME candidates; explicit Markor launch does not require shell to
 # disable a protected platform component. Actual256 rejected that operation.
 # This does not establish the final Linux-only desktop/product profile.
 /system/bin/cmd package query-activities --brief --user 0 -a android.intent.action.MAIN -c android.intent.category.HOME > /data/local/tmp/archtv-mc1/markor-home-after.txt
-resolved=$(/system/bin/cmd package resolve-activity --brief --user 0 -a android.intent.action.MAIN -c android.intent.category.LAUNCHER net.gsantner.markor)
+resolved=$(/system/bin/cmd package resolve-activity --brief --user 0 -a android.intent.action.MAIN -c android.intent.category.LAUNCHER $target_package)
 /system/bin/printf '%s\n' "$resolved" > /data/local/tmp/archtv-mc1/markor-resolve.txt
 component=$(/system/bin/printf '%s\n' "$resolved" | /system/bin/tail -n 1)
-case "$component" in net.gsantner.markor/*) ;; *) exit 1;; esac
+case "$component" in "$target_package"/*) ;; *) exit 1;; esac
 /system/bin/cmd activity start-activity -W --user 0 -n "$component" > /data/local/tmp/archtv-mc1/markor-launch.txt 2>&1
 # Actual APIs and pixels after launch, not an app-compatibility success marker.
 CLASSPATH=/system/framework/sm.jar /system/bin/app_process64 /system/bin com.android.commands.sm.Sm list-volumes all > /data/local/tmp/archtv-mc1/markor-volumes.txt
@@ -106,6 +114,7 @@ CLASSPATH=/system/framework/sm.jar /system/bin/app_process64 /system/bin com.and
 
 # Optional real-APK lifecycle experiment. Only the UI may create/write the note.
 if [ -f /data/local/tmp/archtv-mc1/archtv-markor-workflow-token ]; then
+    [ "$target_package" = net.gsantner.markor ] || exit 1
     token=$(/system/bin/cat /data/local/tmp/archtv-mc1/archtv-markor-workflow-token)
     case "$token" in ''|*[!0-9a-f]*) exit 1;; esac
     [ "${#token}" -eq 8 ] || exit 1
@@ -125,7 +134,7 @@ if [ -f /data/local/tmp/archtv-mc1/archtv-markor-workflow-token ]; then
     {
         /system/bin/id
         /system/bin/id -Z
-        for observed in "/storage/emulated/0/Documents/markor/archtv-$token.md" "$note" "/mnt/user/0/emulated/Documents/markor/archtv-$token.md"; do
+        for observed in "$note" "/mnt/user/0/emulated/0/Documents/markor/archtv-$token.md" "/mnt/user/0/emulated/Documents/markor/archtv-$token.md"; do
             observed_status=0
             /system/bin/stat -c '%n|size=%s|uid=%u|gid=%g|mode=%a' "$observed" || observed_status=$?
             /system/bin/printf 'observer_stat_exit=%s\n' "$observed_status"
@@ -145,17 +154,17 @@ if [ -f /data/local/tmp/archtv-mc1/archtv-markor-workflow-token ]; then
     [ "$(/system/bin/stat -c %s "$note")" -le 4096 ]
     /system/bin/cat "$note" > /data/local/tmp/archtv-mc1/markor-note-bytes.bin
     /system/bin/sha256sum "$note" > /data/local/tmp/archtv-mc1/markor-note-before-stop.txt
-    before=$(/system/bin/pidof net.gsantner.markor)
+    before=$(/system/bin/pidof $target_package)
     case "$before" in ''|*[!0-9]*) exit 1;; esac
     /system/bin/printf 'before_pid=%s\n' "$before" > /data/local/tmp/archtv-mc1/markor-lifecycle.txt
-    /system/bin/cmd activity force-stop --user 0 net.gsantner.markor >> /data/local/tmp/archtv-mc1/markor-lifecycle.txt 2>&1
+    /system/bin/cmd activity force-stop --user 0 $target_package >> /data/local/tmp/archtv-mc1/markor-lifecycle.txt 2>&1
     n=0
     while [ -d /proc/$before ] && [ "$n" -lt 10 ]; do n=$((n+1)); /system/bin/sleep 1; done
     [ ! -d /proc/$before ]
     /system/bin/printf 'previous_process_absent=%s\n' "$before" >> /data/local/tmp/archtv-mc1/markor-lifecycle.txt
     /system/bin/cmd activity start-activity -W --user 0 -n "$component" > /data/local/tmp/archtv-mc1/markor-relaunch.txt 2>&1
     /system/bin/grep -qx 'Status: ok' /data/local/tmp/archtv-mc1/markor-relaunch.txt
-    after=$(/system/bin/pidof net.gsantner.markor)
+    after=$(/system/bin/pidof $target_package)
     case "$after" in ''|*[!0-9]*) exit 1;; esac
     [ "$after" != "$before" ]
     /system/bin/printf 'after_pid=%s\n' "$after" >> /data/local/tmp/archtv-mc1/markor-lifecycle.txt

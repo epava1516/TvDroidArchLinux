@@ -237,8 +237,11 @@ roots += [('system/environ',0o700,1000,1000)]
 roots += [('anr',0o775,1000,1000),('tombstones',0o775,1000,1000),('misc/media',0o700,1013,1013)]
 roots += [('user',0o511,1000,1000),('data',0o771,1000,1000),('storage_area',0o551,0,0)]
 root_code="\n".join("p=root/'data'/"+repr(name)+";p.mkdir(parents=True,exist_ok=True);os.chmod(p,"+str(mode)+");os.chown(p,"+str(uid)+","+str(gid)+")" for name,mode,uid,gid in roots)
-apk_path=Path('/home/tv/.cache/archtv/apk/real-app-candidates/net.gsantner.markor-v164-2026.10.0-flavorDefault-release.apk')
-apk_sha='c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440'
+# Legacy payloads retain their exact pinned Markor target. New payloads
+# explicitly bind the matrix APK path/hash/package at build time.
+apk_target=build_options.get('apk_target',{'id':'markor','package':'net.gsantner.markor','path_local':'/home/tv/.cache/archtv/apk/real-app-candidates/net.gsantner.markor-v164-2026.10.0-flavorDefault-release.apk','sha256':'c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440'})
+apk_path=Path(apk_target['path_local'])
+apk_sha=apk_target['sha256']
 assert hashlib.sha256(apk_path.read_bytes()).hexdigest()==apk_sha
 # Extend existing private APEX metadata after devices.prepare has created it.
 aconfig_code=""
@@ -300,7 +303,7 @@ root_code+="\nshutil.copyfile(Path("+repr(str(apk_path))+"),root/'data/local/tmp
 root_code+="""
 import hashlib
 shell_inputs=[]
-for relative in ['bin/install-markor.sh','etc/archtv-markor-workflow-token','etc/archtv-markor-workflow-budget']:
+for relative in ['bin/install-markor.sh','etc/archtv-install-package','etc/archtv-markor-workflow-token','etc/archtv-markor-workflow-budget']:
  source=root/'vendor'/relative
  if not source.exists():
   assert relative!='bin/install-markor.sh','Missing external installer payload'
@@ -586,9 +589,9 @@ assert 'Success' in install.splitlines(),install
 paths=Path('/data/local/tmp/archtv-mc1/markor-postcommit-path.txt').read_text().splitlines()
 assert len(paths)==1 and paths[0].startswith('package:/data/app/'),paths
 installed=Path(paths[0][8:]);assert installed.is_file() and installed.name=='base.apk'
-assert hashlib.sha256(installed.read_bytes()).hexdigest()=='c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440'
-print('MARKOR_ORIGINAL_INSTALL_BYTES_VERIFIED NOT_LAUNCH_PERSISTENCE_MAC_OR_APK_COMPATIBILITY',flush=True)
-"""
+assert hashlib.sha256(installed.read_bytes()).hexdigest()==APK_TARGET_SHA256
+print('APK_ORIGINAL_INSTALL_BYTES_VERIFIED NOT_LAUNCH_PERSISTENCE_MAC_OR_APK_COMPATIBILITY',flush=True)
+""".replace('APK_TARGET_SHA256',repr(apk_sha))
 # A component-only profile must never inherit Markor/graphics acceptance.
 identity_line=next(line for line in text.splitlines() if line.startswith("assert {v['kind']:v['actual_context'] for v in identities}=="))
 full_expected=identity_line.split('==',1)[1]

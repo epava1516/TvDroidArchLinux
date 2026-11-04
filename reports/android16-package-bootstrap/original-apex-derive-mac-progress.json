@@ -5861,5 +5861,84 @@
       "Forced app close only, not graceful save-on-exit",
       "No broad APK, ARM/GMS/DRM or product acceptance"
     ]
+  },
+  "calculator273": {
+    "checkpoint": "/home/tv/recuperacion-archtv/c7dc6e3e-f562-4ece-beb2-f368cb35f4b9-markor-software-launch",
+    "run_id": "c7dc6e3e-f562-4ece-beb2-f368cb35f4b9",
+    "payload": 274,
+    "application": "org.fossify.math",
+    "apk_sha256": "7c5443c22d6d62c67dfe80df33ea9161ff0fa440f92590bcb45d7008b57613ed",
+    "result": "Original PackageInstaller streams7047681 bytes; installed/source hashes identical. Original resolver selects SplashActivity.Green alias and ActivityManager starts MainActivity. Physical Smithay UI plus real Linux pointer computes2+3=5; original History dialog displays2+3 and5. Back produces original app-request finish, onDestroy and task removal.",
+    "functional": {
+      "scope": "Intact Fossify Calculator installation/alias resolution, physical UI, Linux pointer2+3=5, history visible, Back triggers original app-request finish/destroy/task removal. Reopen and persisted history not yet tested. No full host R1-MAC or broad compatibility acceptance.",
+      "artifact_sha256": "7c5443c22d6d62c67dfe80df33ea9161ff0fa440f92590bcb45d7008b57613ed",
+      "evidence": {
+        "markor-install.txt": {
+          "sha256": "393933d096184bed1ae1bf7af347addf510d6628312604aef11e5f1eb0fccea6",
+          "size": 116
+        },
+        "markor-launch.txt": {
+          "sha256": "1f4360eebc0e99f48c8cfba694866e75ef1cdcf2e2e86529e21635a348356c33",
+          "size": 196
+        },
+        "markor-resolve.txt": {
+          "sha256": "e7f7b2d7b2c88a11d5dc1faaa41b2c9029d7dcaa4e5710d43396e9ba177540bf",
+          "size": 126
+        },
+        "markor-postcommit-dump.txt": {
+          "sha256": "58f3b061752d84c88f56c750f9bbe7381a79cc0625c2ee5250aae16faec07119",
+          "size": 9272
+        },
+        "markor-installed-bytes.txt": {
+          "sha256": "4bd83d374b90e88ca36f58bb0d9e95e99bc9773160b4a8ecb3d0b4b4b3757c73",
+          "size": 264
+        },
+        "original-logcat.txt": {
+          "sha256": "e90dfe7df232162b68be8b107eef53cb6cefb53f5057b24ddf043371ad641674",
+          "size": 1548514
+        }
+      },
+      "images": {
+        "calculator-initial.png": "c261f949926553ba6e5710661696e53ab615d5eb5e4b9ba9fee9eb404e55c752",
+        "calculator-two-plus-three.png": "d078a30d75d7c6e9e9fdb40e2f2ad5bc6f9915b136cf27d52cb5072d67a5335b",
+        "calculator-history-stable.png": "8c73844a996a6767d40aba3932e639fd4aeef46ea2e54a39a1bff11589e281e2",
+        "calculator-after-back.png": "05713dbacb00cfa92e8cad1581147b0f1349f6ee14c97d122440aff36011bd53"
+      },
+      "original_activity_close": [
+        "11-04 17:27:48.800  1000   491   907 I wm_finish_activity: [0,180521113,3,org.fossify.math/.activities.SplashActivity.Green,app-request]",
+        "11-04 17:27:51.973 10104  1374  1374 I wm_on_destroy_called: [180521113,org.fossify.math.activities.SplashActivity.Green,performDestroy,0]",
+        "11-04 17:31:25.306  1000   491   892 I wm_finish_activity: [0,80343701,3,org.fossify.math/.activities.MainActivity,app-request]",
+        "11-04 17:31:25.556 10104  1374  1374 I wm_on_destroy_called: [80343701,org.fossify.math.activities.MainActivity,performDestroy,1]",
+        "11-04 17:31:25.619  1000   491   892 I wm_task_removed: [3,3,0,removeChild, last child = ActivityRecord{80343701 u0 org.fossify.math/.activities.MainActivity t-1 f}} in Task{9c8f75e #3 type=standard A=10104:org.fossify.math}]"
+      ],
+      "log_decode": "Raw bytes preserved/hashed; display decoding replaces invalid UTF8; an initial strict decode failed before any stop."
+    },
+    "images": {
+      "reports/android16-package-bootstrap/calculator-mac273-result.png": "d078a30d75d7c6e9e9fdb40e2f2ad5bc6f9915b136cf27d52cb5072d67a5335b",
+      "reports/android16-package-bootstrap/calculator-mac273-history.png": "8c73844a996a6767d40aba3932e639fd4aeef46ea2e54a39a1bff11589e281e2"
+    },
+    "evidence": {
+      "calculator-functional-stage.json": "54397e9216aa8ed5cb0e87a6e54e4ec680951040cb94f9c16ea4aeee4bc34fda",
+      "observed-markor-install.txt": "393933d096184bed1ae1bf7af347addf510d6628312604aef11e5f1eb0fccea6",
+      "observed-markor-launch.txt": "1f4360eebc0e99f48c8cfba694866e75ef1cdcf2e2e86529e21635a348356c33",
+      "observed-markor-installed-bytes.txt": "4bd83d374b90e88ca36f58bb0d9e95e99bc9773160b4a8ecb3d0b4b4b3757c73",
+      "observed-markor-postcommit-dump.txt": "58f3b061752d84c88f56c750f9bbe7381a79cc0625c2ee5250aae16faec07119",
+      "observed-original-logcat.txt": "e90dfe7df232162b68be8b107eef53cb6cefb53f5057b24ddf043371ad641674",
+      "input-commands.jsonl": "f8c664c07be6c6398b2e6d586d1475ba01f7fb578f0d2a36cf86a436497f512a",
+      "mac-window.json": "fdf86be8b3b5cd775d1cf07c7f50e9509c84fb234a9777f58b910bdb1c5f31dc",
+      "session-state.json": "9ec8edd2efee0cae0d7d77d66dd49ce183b0dd28a563999ad43aa9307486590a",
+      "finite-audit/result.json": "2f56751f930c31e996bea610b898f658581c88cbabc8a224f692bb1d37d285ec",
+      "result.json": "884f14701d7417939f77fb0ae38a292d5f0f3aafc82aa73f9d47172ee92aac14",
+      "built-source-boundary/linux-mc1-cohort.h": "891f66a69096f49f22b65656bbc2343a7fad195c951b3f292fe27a5b9e13f456",
+      "built-source-boundary/linux-property-worker.cpp": "bc3a9777363a4b5d2761610a289d352ee7d2af9a490f00e523d0a701e029f74c"
+    },
+    "candidate_changes": "Trusted external CLI target id/package/path/hash selected from existing real APK matrix. Original PMS/PackageInstaller, manifest resolution, ART and activities unchanged. Historical markor-* diagnostic filenames retained; explicit notification name identifies Calculator. Optional note workflow rejected for other targets. No permission, package/user inventory, readiness or signature override.",
+    "closure": "Activity finished itself through Back; operator then stopped only this cohort. MAC1 at candidate exit, restored0; no loops/dm/FUSE/owned sessions; VT1, device/SysRq metadata preserved; audit no loss/rules unchanged; original udev restored; result consumed without queue. Operator outer0 is not original native full-close or exterior verifier success.",
+    "limits": [
+      "Reopen and cross-cohort history persistence untested; candidate275 next",
+      "No all Calculator features, native JNI call coverage or broad APK compatibility acceptance",
+      "Original external proc identity verifier still fails under MAC; parent-kernel sampler source not part of274 build and remains untested",
+      "Full host/PAM R1-MAC, ARM/GMS/DRM and product/install/update/distro open"
+    ]
   }
 }

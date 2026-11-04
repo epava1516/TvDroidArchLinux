@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793811763.2859552,
-    "seen": 1793811775.8030972,
-    "ast_hash": "6ceb10d6637368bc63efdfa3c6d346a9",
+    "mtime": 1793813685.0256662,
+    "seen": 1793813698.340014,
+    "ast_hash": "62a6db20789712437d938caeb202bf2f",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793812980.0960407,
-    "seen": 1793812994.7698057,
-    "ast_hash": "bbc09cc8c5b33831ef1eae55e11ccbb8",
+    "mtime": 1793813777.0711708,
+    "seen": 1793813792.602226,
+    "ast_hash": "69e74d8969e6c1c5599d4938cd5eb593",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793812980.1000662,
-    "seen": 1793812994.7705777,
-    "ast_hash": "1428d549c6528897bea5a92880b3707f",
+    "mtime": 1793813777.0735219,
+    "seen": 1793813792.6034951,
+    "ast_hash": "bb9793dabb37fa9f7e91fd81a0504cc2",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -1716,9 +1716,9 @@
     "semantic_hash": ""
   },
   "docs/EVIDENCIAS.md": {
-    "mtime": 1793812980.1056254,
-    "seen": 1793812994.769974,
-    "ast_hash": "2b4e709a96bc373f65a3f9673db8c62b",
+    "mtime": 1793813685.027517,
+    "seen": 1793813698.340923,
+    "ast_hash": "42c97be2d798af81112c2d257e4242fb",
     "semantic_hash": ""
   },
   "fixtures/aosp-framework-space/FrameworkSpaceProbe.java": {
@@ -1926,9 +1926,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-property-worker.cpp": {
-    "mtime": 1793794819.868425,
-    "seen": 1793794928.1542778,
-    "ast_hash": "a8fe50378f29e6e0a8297a610bc547a8",
+    "mtime": 1793813228.7618082,
+    "seen": 1793813345.2704167,
+    "ast_hash": "4483162836e0beffaa70e2e278c9229a",
     "semantic_hash": ""
   },
   "runtime/aosp/native/verify-service-profile.cpp": {
@@ -1974,9 +1974,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-mc1-cohort.h": {
-    "mtime": 1793812712.9445734,
-    "seen": 1793812780.4145427,
-    "ast_hash": "5f8ca0d756e5b2f63845556ae6773cfa",
+    "mtime": 1793813754.1509793,
+    "seen": 1793813792.580775,
+    "ast_hash": "af2505c431239fce8c59f51da04e4cc2",
     "semantic_hash": ""
   },
   "fixtures/aosp-wayland-output/client.cpp": {
@@ -2089,7 +2089,7 @@
   },
   "runtime/aosp/hwui-sources.json": {
     "mtime": 1793383954.003966,
-    "seen": 1793812236.906386,
+    "seen": 1793813031.4367816,
     "ast_hash": "",
     "semantic_hash": ""
   },

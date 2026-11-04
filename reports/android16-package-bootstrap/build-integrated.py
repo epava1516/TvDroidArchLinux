@@ -50,8 +50,18 @@ observe_ms=int(next((a.split('=',1)[1] for a in sys.argv[2:] if a.startswith('--
 assert 3000<=observe_ms<=600000
 userdata_name=next((a.split('=',1)[1] for a in sys.argv[2:] if a.startswith('--userdata-name=')),None)
 assert userdata_name is None or (software_platform and re.fullmatch('[a-z0-9][a-z0-9_-]{0,47}',userdata_name))
+# Select an intact real APK from the existing compatibility matrix. This is
+# trusted external installer input, never PMS inventory or a permission seed.
+apk_id=next((a.split('=',1)[1] for a in sys.argv[2:] if a.startswith('--apk-id=')),'markor')
+applications=json.loads((r/'reports/arquitectura-apk-20261030/compatibility-matrix.json').read_text())['applications']
+selected=next(a for a in applications if a['id']==apk_id)
+apk_target={k:selected[k] for k in ['id','package','path_local','sha256']}
+assert re.fullmatch(r'[a-zA-Z][a-zA-Z0-9_]*(?:\.[a-zA-Z][a-zA-Z0-9_]*)+',apk_target['package'])
+assert re.fullmatch('[0-9a-f]{64}',apk_target['sha256'])
+assert hashlib.sha256(Path(apk_target['path_local']).read_bytes()).hexdigest()==apk_target['sha256']
+assert software_platform or apk_id=='markor'
 workflow_token=next((a.split('=',1)[1] for a in sys.argv[2:] if a.startswith('--markor-workflow-token=')),None)
-assert workflow_token is None or (software_platform and observe_ms>=30000 and re.fullmatch('[0-9a-f]{8}',workflow_token))
+assert workflow_token is None or (apk_id=='markor' and software_platform and observe_ms>=30000 and re.fullmatch('[0-9a-f]{8}',workflow_token))
 workflow_budget_seconds=observe_ms//1000-15 if workflow_token else None
 keystore_java='--keystore-java-component' in sys.argv[2:] or software_platform
 keystore_component='--keystore-component' in sys.argv[2:] or keystore_java
@@ -60,7 +70,7 @@ if software_platform:
  lines[0]=lines[0].replace('-Xmx768m','-Xmx512m')
  lines.append('    setenv ARCHTV_SOFTWARE_SECURITY_PROFILE software-platform-v1')
 experiment_kind='markor-software-launch' if software_platform else 'keystore-java-component' if keystore_java else 'keystore-component' if keystore_component else ('keymint-component' if keymint_component else 'markor-launch')
-(out/'build-options.json').write_text(json.dumps({'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component and not software_platform,'software_security_platform':software_platform,'observe_ms':observe_ms,'persistent_userdata_name':userdata_name,'markor_workflow_token':workflow_token,'markor_workflow_budget_seconds':workflow_budget_seconds,'experiment_kind':experiment_kind,'original_apex_bootstrap':True,'original_logd':True,'preconnected_wayland':True,'original_system_dma_heap':True},indent=2)+'\n')
+(out/'build-options.json').write_text(json.dumps({'apk_target':apk_target,'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component and not software_platform,'software_security_platform':software_platform,'observe_ms':observe_ms,'persistent_userdata_name':userdata_name,'markor_workflow_token':workflow_token,'markor_workflow_budget_seconds':workflow_budget_seconds,'experiment_kind':experiment_kind,'original_apex_bootstrap':True,'original_logd':True,'preconnected_wayland':True,'original_system_dma_heap':True},indent=2)+'\n')
 if checkpoint_diagnostic:lines.append('    setenv ARCHTV_CHECKPOINT_DIAGNOSTIC 1')
 lines=[l for l in lines if not any(l.startswith('    setenv '+n+' ') for n in ['BOOTCLASSPATH','DEX2OATBOOTCLASSPATH','SYSTEMSERVERCLASSPATH','STANDALONE_SYSTEMSERVER_JARS'])];(entry/'selected-services.rc').write_text('\n'.join(lines)+'\n')
 old=r/'dist/aosp16/apex-cohort-build-6';commands=[]
@@ -310,6 +320,8 @@ if workflow_token is not None:
  (out/'markor-workflow-budget').write_text(str(workflow_budget_seconds)+'\n')
  vendor['files']['/vendor/etc/archtv-markor-workflow-budget']={'source':str(out/'markor-workflow-budget'),'context':'u:object_r:vendor_configs_file:s0','mode':0o444}
  vendor['files']['/vendor/etc/archtv-markor-workflow-token']={'source':str(out/'markor-workflow-token'),'context':'u:object_r:vendor_configs_file:s0','mode':0o444}
+(out/'install-package').write_text(apk_target['package']+'\n')
+vendor['files']['/vendor/etc/archtv-install-package']={'source':str(out/'install-package'),'context':'u:object_r:vendor_configs_file:s0','mode':0o444}
 vendor['files']['/vendor/bin/install-markor.sh']={'source':str(r/'runtime/aosp/linux-services/install-markor.sh'),'context':'u:object_r:vendor_file:s0','mode':0o644}
 zygote=(r/'dist/aosp16/factory-inputs-3/root/system/etc/init/hw/init.zygote64.rc').read_text()
 assert zygote.count(' --start-system-server')==1
