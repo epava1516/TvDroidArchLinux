@@ -580,7 +580,7 @@
     "Original vendor-domain policy, devices and isolation in enforcing",
     "Native audio backend startup and audio APK compatibility"
   ],
-  "priority": "Compile whole original vendor/hal_audio_default.te with original macros into policy61, preserving all policy60 Linux adapters. Check original neverallows, checkpoint/load permissive with rollback60, then fresh UUID on unchanged verified payload286 to test original domain/start/Binder/real PCM. Full R1 remains open.",
+  "priority": "Fresh UUID whole original HAL/effect/audioserver+VLC on verified unchanged payload286 with expected actual readback37a1c1dfe97062b6f765f18c50778227e0245216fd8a3e65977062450d0b8969; actual execution, service registration and PCM still unproved.",
   "linux_alsa_original_closure": {
     "utc": "2026-11-04T20:33:01.311873+00:00",
     "scope": "BUILD ONLY: complete original AIDL core factory and original session/provider/Rust/codec closure, adapted primary ALSA transfers and clock; no runtime availability accepted",
@@ -677,5 +677,55 @@
       }
     ],
     "next": "Compile whole original vendor/hal_audio_default.te with original macros into policy61, preserving all policy60 Linux adapters. Check original neverallows, checkpoint/load permissive with rollback60, then fresh UUID on unchanged verified payload286 to test original domain/start/Binder/real PCM. Full R1 remains open."
+  },
+  "original_vendor_audio_policy61": {
+    "scope": "Whole original vendor TE compilation and permissive kernel load only; not domain execution, authorization, HAL or PCM acceptance",
+    "source": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/sepolicy/source/system/sepolicy/vendor/hal_audio_default.te",
+    "source_sha256": "f3ad6badfb42f195807bfc6c888e24ca8e7af930e292e4d8a0af6482190a8da4",
+    "offline_inputs": "dist/aosp16/audio-policy-inputs-2",
+    "artifact": "dist/aosp16/selected-platform-policy-61/artifact.json",
+    "artifact_sha256": "093921c636091925ffa0dd8a080d03bfa9307a32bee5c223cba58015a8ec7a66",
+    "actual_kernel_readback_sha256": "9c17d4a6242575c7ffcd71bba3c80236f2955eb529d95808f82ee325c6571c7e",
+    "neverallow_disabled": false,
+    "permissive_load_result": "/home/tv/recuperacion-archtv/20261104T-audio-original-policy61/after-load.json",
+    "load_notes": "/home/tv/recuperacion-archtv/20261104T-audio-original-policy61/load-notes.json",
+    "recovery": "/home/tv/recuperacion-archtv/20261104T-audio-original-policy61/RETOMAR.txt",
+    "original_audio_contexts_recognized": true,
+    "mode_at_load": 0,
+    "full_R1": false,
+    "negative_preserved": "Policy60 original audio context invalid under real enforcing287; no allow to unlabeled introduced.",
+    "next": "Actual full candidate288 is in progress on same verified payload286; no availability or audio inference from valid labels."
+  },
+  "native_audio288": {
+    "checkpoint": "/home/tv/recuperacion-archtv/67fb1923-69b8-4f4f-9d48-cc5ef7886323-markor-software-launch",
+    "record": "/home/tv/recuperacion-archtv/67fb1923-69b8-4f4f-9d48-cc5ef7886323-markor-software-launch/functional-result.json",
+    "sha256": "fb49d8c04d797fa1e4dcd0a958ec05b69c307c2419e41bfb5b6718ab9445b7de",
+    "scope": "Real original integrated cohort under policy61 enforcing; negative before successful audio exec. Fork/PID log does not establish binary execution or service availability.",
+    "primary_failure": "Kernel process2 nnp_transition init->hal_audio_default and init->audioserver denied while irreversibleNNP1 retained. Subsequent execute_no_trans denied; not a reason to grant execute_no_trans.",
+    "availability_accepted": false,
+    "next": "Policy62 adds exactly2 Linux NNP admission edges for original transitions. No new original domain transitions/entrypoints, file/Binder/device/capability permissions or NNP disable. Then original full cohort on same verified payload286, fresh UUID."
+  },
+  "audio_nnp_policy62": {
+    "scope": "Original vendor policy plus two specific Linux NNP gates; offline decisions and permissive load only, not exec/service/PCM or R1 acceptance",
+    "artifact": "dist/aosp16/selected-platform-policy-62/artifact.json",
+    "candidate_sha256": "3d1b29e11cfb98e951418b08621b8331e208a39e93dbb793dc0bb4b1ed88d0d0",
+    "kernel_readback_sha256": "37a1c1dfe97062b6f765f18c50778227e0245216fd8a3e65977062450d0b8969",
+    "compile_exit": 0,
+    "neverallow_disabled": false,
+    "offline_access_comparison": {
+      "path": "dist/aosp16/audio-policy-inputs-3/access-comparison.json",
+      "sha256": "fbb11d786e6f1bd723bb40fc7b27ad70561c2600472739c6d3078ff51d33003f",
+      "all22_expected": true,
+      "limits": "Original sepol_check_access decisions, errors distinct from denial7; not kernel/DAC/caps/NNP execution"
+    },
+    "preserved_denials": [
+      "init execute_no_trans audio execs",
+      "Linux init direct HAL transition",
+      "untrusted_app transition to HAL/audioserver"
+    ],
+    "load_result": "/home/tv/recuperacion-archtv/20261104T-audio-original-policy62/after-load.json",
+    "recovery": "/home/tv/recuperacion-archtv/20261104T-audio-original-policy62/RETOMAR.txt",
+    "mode_at_load": 0,
+    "next": "Fresh UUID whole original HAL/effect/audioserver+VLC on verified unchanged payload286 with expected actual readback37a1c1dfe97062b6f765f18c50778227e0245216fd8a3e65977062450d0b8969; actual execution, service registration and PCM still unproved."
   }
 }

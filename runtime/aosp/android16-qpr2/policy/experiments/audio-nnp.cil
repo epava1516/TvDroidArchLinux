@@ -1,0 +1,7 @@
+; Actual audio288 under policy61: original exec types now resolve, but Linux's
+; irreversible NNP1 rejects the original init_daemon_domain transitions.
+; Preserve NNP1, original init->target transitions/entrypoints, IDs/caps and
+; all Binder/file/device checks. Never allow execute_no_trans on audio execs.
+; Both HAL providers use the same pinned original hal_audio_default domain.
+(allow init hal_audio_default (process2 (nnp_transition)))
+(allow init audioserver (process2 (nnp_transition)))
