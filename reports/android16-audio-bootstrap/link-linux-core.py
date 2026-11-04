@@ -21,7 +21,7 @@ core = json.loads((repo / 'dist/aosp16/audio-original-build-12/build.json').read
 for source in core['sources']:
     assert sha(source['path']) == source['sha256'], source['path']
 write_diagnostic = '--write-diagnostic' in sys.argv[2:]
-adapted_dir = repo / ('dist/aosp16/audio-linux-primary-build-2' if write_diagnostic else 'dist/aosp16/audio-linux-primary-build-1')
+adapted_dir = repo / ('dist/aosp16/audio-linux-primary-build-4' if write_diagnostic else 'dist/aosp16/audio-linux-primary-build-1')
 adapted = json.loads((adapted_dir / 'build.json').read_text())
 assert len(adapted['objects']) == (3 if write_diagnostic else 2)
 assert all(c['exit'] == 0 for c in adapted['commands'])

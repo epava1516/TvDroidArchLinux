@@ -2394,3 +2394,7 @@ El backing Linux de userdata conserva linux.fs_t. El contrato original vold Bind
 
 
 296 demuestra el recorrido original propiedades/servicios/APEX/paquetes/volumen→APK intacta→gráficos/entrada/decodificación software y movimiento visual. El backend StreamAlsa asíncrono puede descartar frames y avanzar su contabilidad sin escritura física correcta: no aceptar sonido por movimiento, apertura o posición lógica. Aplay Linux y hw_ptr confirman una base de dispositivo funcional bajo permisivo; no autorizan ni resuelven la ruta Bionic/TinyALSA o su temporización. [Evidencia](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json), native_audio296.
+
+## ALSA: escrituras y reloj son contratos separados
+
+La [ejecución299](../reports/android16-audio-bootstrap/write-observation-progress.json) observa retornos reales del proxy original, incluso después de detener su trabajador; un mensaje TinyALSA almacenado no convierte un retorno0 en fallo. Los contadores no acreditan reloj físico ni sonido. La comparación Linux también presenta duración anómala y EIO: resolver esa frontera antes de alterar transferencias originales o ampliar permisos. La recuperación explícita del observador no acredita cobertura MAC de su cierre.

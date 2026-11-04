@@ -25,11 +25,33 @@
          alsaDeviceProxies.push_back(std::move(proxy));
          auto sink = makeSink(mIsInput);  // Do not block the writer when it is on our thread.
          if (sink != nullptr) {
-@@ -285,9 +296,13 @@
+@@ -279,15 +290,35 @@
+ #endif
+     const size_t bufferSize = mBufferSizeFrames * mFrameSizeBytes;
+     std::vector<char> buffer(bufferSize);
++    uint64_t observedWriteCalls = 0;
++    uint64_t observedSuccessfulCalls = 0;
++    uint64_t observedAcceptedFrames = 0;
+     while (mIoThreadIsRunning) {
+         ssize_t framesReadOrError = mSources[idx]->read(&buffer[0], mBufferSizeFrames);
+         if (framesReadOrError > 0) {
              int ret = proxy_write_with_retries(mAlsaDeviceProxies[idx].get(), &buffer[0],
                                                 framesReadOrError * mFrameSizeBytes,
                                                 mReadWriteRetries);
 +            const int observedWriteErrno = errno;
++            ++observedWriteCalls;
++            if (ret == 0) {
++                ++observedSuccessfulCalls;
++                observedAcceptedFrames += framesReadOrError;
++            }
++            if (observedWriteCalls == 1 || ret != 0) {
++                LOG(INFO) << "LINUX_PCM_WRITE_OBSERVATION index=" << idx
++                          << " call=" << observedWriteCalls << " frames=" << framesReadOrError
++                          << " result=" << ret << " worker_running=" << mIoThreadIsRunning
++                          << " observed_errno=" << observedWriteErrno
++                          << " errno_text=" << strerror(observedWriteErrno)
++                          << " tinyalsa_error=" << pcm_get_error(mAlsaDeviceProxies[idx].get()->pcm);
++            }
              // Errors when the stream is being stopped are expected.
              LOG_IF(WARNING, ret != 0 && mIoThreadIsRunning)
 -                    << __func__ << "[" << idx << "]: Error writing into ALSA: " << ret;
@@ -40,3 +62,13 @@
          } else if (framesReadOrError == 0) {
              // MonoPipeReader does not have a blocking read, while use of std::condition_variable
              // requires use of a mutex. For now, just do a 1ms sleep. Consider using a different
+@@ -298,6 +329,9 @@
+                          << "]: Error while reading from the pipe: " << framesReadOrError;
+         }
+     }
++    LOG(INFO) << "LINUX_PCM_WRITE_SUMMARY index=" << idx << " calls=" << observedWriteCalls
++              << " successful_calls=" << observedSuccessfulCalls
++              << " accepted_frames_by_proxy_contract=" << observedAcceptedFrames;
+ }
+ 
+ void StreamAlsa::teardownIo() {

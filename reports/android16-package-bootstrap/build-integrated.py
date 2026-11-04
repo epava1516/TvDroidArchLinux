@@ -448,4 +448,25 @@ assert text.count(verified_dump)==1
 text=text.replace(verified_dump,verified_dump+"\n  dump.unlink() # Successful ephemeral extraction only; source/image retained")
 recipe=out/'build-payload.py';recipe.write_text(text);subprocess.run(['python',str(recipe)],stdout=open(out/'packager.log','w'),stderr=subprocess.STDOUT,check=True)
 assert all(hashlib.sha256((r/n).read_bytes()).hexdigest()==h for n,h in source_hashes.items()), 'Source changed during build'
+# Fresh successful staging duplicates immutable original sources and the image.
+# This exact cleanup already ran manually for292/297 to unblock real PMS space
+# checks. Never delete failed staging, historical artifacts or source inputs.
+packed=json.loads((out/'payload.json').read_text())
+image=Path(packed['image'])
+with image.open('rb') as stream:
+ assert hashlib.file_digest(stream,'sha256').hexdigest()==packed['sha256']
+staging=out/'payload-tree-2'
+assert not staging.is_symlink() and staging.resolve()==out.resolve()/'payload-tree-2'
+verified=[]
+for item in staging.rglob('*'):
+ assert not item.is_symlink() and (item.is_dir() or item.is_file()),str(item)
+ if not item.is_file():continue
+ logical='/'+str(item.relative_to(staging));entry=packed['entries'][logical]
+ assert hashlib.sha256(item.read_bytes()).hexdigest()==entry['sha256'],logical
+ original=Path(entry['source'])
+ assert not original.is_relative_to(staging) and original.is_file(),logical
+ assert hashlib.sha256(original.read_bytes()).hexdigest()==entry['sha256'],logical
+ verified.append({'path':logical,'sha256':entry['sha256'],'bytes':item.stat().st_size})
+(out/'verified-staging-cleanup.json').write_text(json.dumps({'scope':'Only newly generated successful staging duplicate removed after source/image checks. Immutable source/image/manifests and failed/historical work retained.','image_sha256':packed['sha256'],'removed_tree':str(staging),'bytes':sum(row['bytes'] for row in verified),'files':verified},indent=2)+'\n')
+shutil.rmtree(staging)
 print(out,flush=True)

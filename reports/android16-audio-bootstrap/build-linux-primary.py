@@ -40,11 +40,29 @@ for patch in patches:
     subprocess.run(['patch', '--batch', '--fuzz=0', '-p1', '-i', str(patch)],
                    cwd=out / 'source', check=True, capture_output=True)
 base = json.loads((core / 'build.json').read_text())
+reuse_dir = repo / 'dist/aosp16/audio-linux-primary-build-1' if '--reuse-primary' in sys.argv[3:] else None
+assert not reuse_dir or write_diagnostic
+reuse = json.loads((reuse_dir / 'build.json').read_text()) if reuse_dir else None
 for f in files:
     src = out / 'source' / f['path']
     assert sha(src) == f['adapted_sha256']
     original = str(study / f['path'])
     command = next(c['argv'] for c in base['commands'] if original in c['argv'])
+    if reuse and f['path'] != 'aidl/default/alsa/StreamAlsa.cpp':
+        unit = next(u for u in reuse['objects'] if u['original'] == original)
+        prior_source = reuse_dir / 'source' / f['path']
+        assert sha(prior_source) == unit['source_sha256'] == sha(src)
+        assert sha(Path(unit['object'])) == unit['sha256']
+        old_command = next(c for c in reuse['commands'] if str(prior_source) in c['argv'])
+        assert old_command['exit'] == 0
+        assert old_command['argv'][:old_command['argv'].index('-MMD')] == command[:command.index('-MMD')]
+        record['commands'].append({**old_command, 'reused_verified_object': True,
+                                   'source_record': str(reuse_dir / 'build.json'),
+                                   'source_record_sha256': sha(reuse_dir / 'build.json')})
+        record['objects'].append({**unit, 'reused_verified_object': True})
+        (out / 'build.json').write_text(json.dumps(record, indent=2) + '\n')
+        print(src.name, 'reused_verified_object', flush=True)
+        continue
     obj = out / (src.stem + '.o')
     argv = command[:command.index('-MMD')] + ['-MMD', '-MF', str(obj.with_suffix('.d')),
                                             '-c', str(src), '-o', str(obj)]

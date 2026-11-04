@@ -1,42 +1,81 @@
 {
-  "record": "/home/tv/recuperacion-archtv/fd9a66d4-7cff-417e-ae30-595953561aa1-markor-software-launch/write-observation-result.json",
-  "sha256": "d23296e08ae65e1a8a2f321f5865d5e37881bdca3b71344f717aeb6612c42a62",
-  "scope": "Real intact VLC original writer diagnostic; opened config observed, error still unknown due original stop-time logging condition. Not audio/compatibility/R1 acceptance.",
-  "next_action": "Capture original call outcome even after stop plus bounded successful-write/frame counters; unchanged transfer/retry/return/policy behavior. Then correct only cause demonstrated by original error/context.",
-  "source_candidate": "audio-alsa-write-observation.patch version with active-worker failures/config only; no success/stop-time outcome accepted",
-  "build": "dist/aosp16/package-cohort-build-297/payload.json",
-  "candidate_inputs": {
-    "runtime/aosp/android16-qpr2/patches/audio-alsa-write-observation.patch": "0b6339580730d1681036a4b0ab2f29db043831116b432a79e5473826bd44c020",
-    "runtime/aosp/android16-qpr2/patches/audio-alsa-write-observation.json": "687f757d26a2656fda1f5a396ddf76e163ac2fec3d2d80ec977a46cf69b40ee2",
-    "dist/aosp16/package-cohort-build-297/source-inputs.json": "36b1a824ef1fd13dec114a3c5696bbecef5044469b072c8e5b1903c76be5974d",
-    "dist/aosp16/package-cohort-build-297/payload.json": "f0bd83656a19cb97415329ea02d1eef0ff1ee6b7cc29590e317bae9e99bf9b8b",
-    "dist/aosp16/audio-linux-core-link-4/link.json": "8e11d7ff923dc0c85218fdb8f1a127f869aab5dcf52c0c1b9ff123840a0f7534"
+  "execution299": {
+    "id": "1657f52b-17f0-46ad-a2f8-6b3dd1d4d1ab",
+    "checkpoint": "/home/tv/recuperacion-archtv/1657f52b-17f0-46ad-a2f8-6b3dd1d4d1ab-markor-software-launch",
+    "payload": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-299/payload-2.ext4",
+      "sha256": "042ccd6bdd65019530432f8926efac226bd8eb620cd40504c8559a14ea869dce"
+    },
+    "native_core": {
+      "path": "/home/tv/repositorio-principal/dist/aosp16/audio-linux-core-link-5/android.hardware.audio.service-aidl.example",
+      "sha256": "0f2c679d2f180ec578df5011102575d920105f198d7a127055af2a0a29c8d758"
+    },
+    "actual_writes": {
+      "calls": 43,
+      "successful_calls": 42,
+      "accepted_frames_by_proxy_contract": 172032,
+      "last_error": 77,
+      "last_worker_running": false
+    },
+    "interpretation": {
+      "path": "/home/tv/recuperacion-archtv/1657f52b-17f0-46ad-a2f8-6b3dd1d4d1ab-markor-software-launch/write-outcome-interpretation.json",
+      "sha256": "98e3b4b30f7b5a90c29291fd1ff8d2c31dc9b6a993f4f2e9d42217b576445b33"
+    },
+    "log": {
+      "path": "/home/tv/recuperacion-archtv/1657f52b-17f0-46ad-a2f8-6b3dd1d4d1ab-markor-software-launch/original-logcat-final.txt",
+      "sha256": "906f6ad02c4f7ca46874767f47b69018b702e45f2e16c7ded2fdf2813920599a"
+    },
+    "recovery": {
+      "path": "/home/tv/recuperacion-archtv/1657f52b-17f0-46ad-a2f8-6b3dd1d4d1ab-markor-software-launch/explicit-recovery-result.json",
+      "sha256": "ec29b94c06b8b09b0e0b5943defa7009faafecceae15aba17868977f94c0fa0b"
+    },
+    "scope": "Real original proxy write results from intact VLC; not continuous/acoustic output, exact hardware rate or full MAC closure. Observer failed; recovery explicit."
   },
-  "source_snapshot": {
-    "reports/android16-audio-bootstrap/build-linux-primary.py": {
-      "path": "/home/tv/recuperacion-archtv/fd9a66d4-7cff-417e-ae30-595953561aa1-markor-software-launch/source-candidate-v1/reports/android16-audio-bootstrap/build-linux-primary.py",
-      "sha256": "9c21e5112ab3f4c9668246277d01d45e6db058b99cf6f5be8dfd90829ad7e776"
-    },
-    "reports/android16-audio-bootstrap/link-linux-core.py": {
-      "path": "/home/tv/recuperacion-archtv/fd9a66d4-7cff-417e-ae30-595953561aa1-markor-software-launch/source-candidate-v1/reports/android16-audio-bootstrap/link-linux-core.py",
-      "sha256": "957f98a4eabbf297da7dead7527238fb3223498ceebbf26c45e07245f45c8fe3"
-    },
-    "reports/android16-audio-bootstrap/prepare-linux-profile.py": {
-      "path": "/home/tv/recuperacion-archtv/fd9a66d4-7cff-417e-ae30-595953561aa1-markor-software-launch/source-candidate-v1/reports/android16-audio-bootstrap/prepare-linux-profile.py",
-      "sha256": "b76848d580eaf1868d3c0baaf854b935aca1e9bcbc6fcceae40b7385adaf1f61"
-    },
-    "reports/android16-package-bootstrap/build-integrated.py": {
-      "path": "/home/tv/recuperacion-archtv/fd9a66d4-7cff-417e-ae30-595953561aa1-markor-software-launch/source-candidate-v1/reports/android16-package-bootstrap/build-integrated.py",
-      "sha256": "2bf3808f3efdce88de07be3daf921fb04a38e5a6a5630dcfa1eaa34b754a70b7"
-    },
-    "runtime/aosp/android16-qpr2/patches/audio-alsa-write-observation.patch": {
-      "path": "/home/tv/recuperacion-archtv/fd9a66d4-7cff-417e-ae30-595953561aa1-markor-software-launch/source-candidate-v1/runtime/aosp/android16-qpr2/patches/audio-alsa-write-observation.patch",
-      "sha256": "0b6339580730d1681036a4b0ab2f29db043831116b432a79e5473826bd44c020"
-    },
-    "runtime/aosp/android16-qpr2/patches/audio-alsa-write-observation.json": {
-      "path": "/home/tv/recuperacion-archtv/fd9a66d4-7cff-417e-ae30-595953561aa1-markor-software-launch/source-candidate-v1/runtime/aosp/android16-qpr2/patches/audio-alsa-write-observation.json",
-      "sha256": "687f757d26a2656fda1f5a396ddf76e163ac2fec3d2d80ec977a46cf69b40ee2"
-    }
+  "linux_clock_comparison": {
+    "path": "/home/tv/recuperacion-archtv/20261104T-pcm-clock-comparison/result.json",
+    "sha256": "ac1d8b7f806267e4b30453350dcc38a40a9ad0095917f1b995d763743376e110"
   },
-  "candidate_inputs_scope": "Hashes identify the tested historical candidate. Project source paths may advance; immutable source copies above and Git retain the tested content. Dist artifacts remain original."
+  "next_action": "Diagnose Linux AC97/VM timing and EIO before changing original audio transfer; validate corrected observer in next justified integrated cohort. Continuous playback and lifecycle remain open.",
+  "history298": {
+    "record": "/home/tv/recuperacion-archtv/fd9a66d4-7cff-417e-ae30-595953561aa1-markor-software-launch/write-observation-result.json",
+    "sha256": "d23296e08ae65e1a8a2f321f5865d5e37881bdca3b71344f717aeb6612c42a62",
+    "scope": "Real intact VLC original writer diagnostic; opened config observed, error still unknown due original stop-time logging condition. Not audio/compatibility/R1 acceptance.",
+    "next_action": "Capture original call outcome even after stop plus bounded successful-write/frame counters; unchanged transfer/retry/return/policy behavior. Then correct only cause demonstrated by original error/context.",
+    "source_candidate": "audio-alsa-write-observation.patch version with active-worker failures/config only; no success/stop-time outcome accepted",
+    "build": "dist/aosp16/package-cohort-build-297/payload.json",
+    "candidate_inputs": {
+      "runtime/aosp/android16-qpr2/patches/audio-alsa-write-observation.patch": "0b6339580730d1681036a4b0ab2f29db043831116b432a79e5473826bd44c020",
+      "runtime/aosp/android16-qpr2/patches/audio-alsa-write-observation.json": "687f757d26a2656fda1f5a396ddf76e163ac2fec3d2d80ec977a46cf69b40ee2",
+      "dist/aosp16/package-cohort-build-297/source-inputs.json": "36b1a824ef1fd13dec114a3c5696bbecef5044469b072c8e5b1903c76be5974d",
+      "dist/aosp16/package-cohort-build-297/payload.json": "f0bd83656a19cb97415329ea02d1eef0ff1ee6b7cc29590e317bae9e99bf9b8b",
+      "dist/aosp16/audio-linux-core-link-4/link.json": "8e11d7ff923dc0c85218fdb8f1a127f869aab5dcf52c0c1b9ff123840a0f7534"
+    },
+    "source_snapshot": {
+      "reports/android16-audio-bootstrap/build-linux-primary.py": {
+        "path": "/home/tv/recuperacion-archtv/fd9a66d4-7cff-417e-ae30-595953561aa1-markor-software-launch/source-candidate-v1/reports/android16-audio-bootstrap/build-linux-primary.py",
+        "sha256": "9c21e5112ab3f4c9668246277d01d45e6db058b99cf6f5be8dfd90829ad7e776"
+      },
+      "reports/android16-audio-bootstrap/link-linux-core.py": {
+        "path": "/home/tv/recuperacion-archtv/fd9a66d4-7cff-417e-ae30-595953561aa1-markor-software-launch/source-candidate-v1/reports/android16-audio-bootstrap/link-linux-core.py",
+        "sha256": "957f98a4eabbf297da7dead7527238fb3223498ceebbf26c45e07245f45c8fe3"
+      },
+      "reports/android16-audio-bootstrap/prepare-linux-profile.py": {
+        "path": "/home/tv/recuperacion-archtv/fd9a66d4-7cff-417e-ae30-595953561aa1-markor-software-launch/source-candidate-v1/reports/android16-audio-bootstrap/prepare-linux-profile.py",
+        "sha256": "b76848d580eaf1868d3c0baaf854b935aca1e9bcbc6fcceae40b7385adaf1f61"
+      },
+      "reports/android16-package-bootstrap/build-integrated.py": {
+        "path": "/home/tv/recuperacion-archtv/fd9a66d4-7cff-417e-ae30-595953561aa1-markor-software-launch/source-candidate-v1/reports/android16-package-bootstrap/build-integrated.py",
+        "sha256": "2bf3808f3efdce88de07be3daf921fb04a38e5a6a5630dcfa1eaa34b754a70b7"
+      },
+      "runtime/aosp/android16-qpr2/patches/audio-alsa-write-observation.patch": {
+        "path": "/home/tv/recuperacion-archtv/fd9a66d4-7cff-417e-ae30-595953561aa1-markor-software-launch/source-candidate-v1/runtime/aosp/android16-qpr2/patches/audio-alsa-write-observation.patch",
+        "sha256": "0b6339580730d1681036a4b0ab2f29db043831116b432a79e5473826bd44c020"
+      },
+      "runtime/aosp/android16-qpr2/patches/audio-alsa-write-observation.json": {
+        "path": "/home/tv/recuperacion-archtv/fd9a66d4-7cff-417e-ae30-595953561aa1-markor-software-launch/source-candidate-v1/runtime/aosp/android16-qpr2/patches/audio-alsa-write-observation.json",
+        "sha256": "687f757d26a2656fda1f5a396ddf76e163ac2fec3d2d80ec977a46cf69b40ee2"
+      }
+    },
+    "candidate_inputs_scope": "Hashes identify the tested historical candidate. Project source paths may advance; immutable source copies above and Git retain the tested content. Dist artifacts remain original."
+  }
 }

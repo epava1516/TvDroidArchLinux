@@ -629,3 +629,5 @@ Política64 y ejecución295: fuente original vold, AVC/montaje, cierre/recuperac
 
 
 296: observación inmutable de vídeo móvil (PPM original, selección por entrada física y PNG frames29/43), clientes originales con APK fuente/instalada de hash idéntico, log final/cierre/MAC64 y comparación Linux posterior por pidfd del dueño exacto. Cada resultado conserva su alcance y hashes; exterior1 y fallo ALSA-1 impiden aceptar audio o R1 completo. [Evidencia](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json), native_audio296.
+
+Audio299 y comparación Linux: [retornos originales, hashes, recuperación y límite temporal](../reports/android16-audio-bootstrap/write-observation-progress.json).42 llamadas exitosas son evidencia parcial; EIO Linux, continuidad, acústica y auditoría final abiertos. [Carrera del observador y tres regresiones](../reports/android16-package-bootstrap/capture-recovery-299.json); prueba integrada de la corrección pendiente.
