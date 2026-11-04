@@ -1,0 +1,119 @@
+; Experimental dedicated Linux compositor identity, motivated by actual258:
+; linux.init_t is denied receipt of HWC-owned wl_shm memfds (fd.use).
+; Never grant that Android boundary to the generic host domain. Reuse the
+; Linux userdomain contract for the unprivileged frontend, not Android domains.
+; This candidate is NOT isolation/presentation acceptance until executed.
+(type archtv_compositor)
+(type archtv_compositor_exec)
+(type archtv_compositor_device)
+(roletype linux.system_r archtv_compositor)
+(roletype linux.object_r archtv_compositor_exec)
+(roletype linux.object_r archtv_compositor_device)
+(typeattributeset linux.domain (archtv_compositor))
+(typeattributeset linux.userdomain (archtv_compositor))
+(typeattributeset linux.file_type (archtv_compositor_exec archtv_compositor_device))
+(typeattributeset linux.exec_type (archtv_compositor_exec))
+; A root-owned exact executable, never a generic shell or Android entrypoint.
+(typetransition linux.init_t archtv_compositor_exec process archtv_compositor)
+(allow linux.init_t archtv_compositor_exec (file (getattr open read execute)))
+(allow linux.init_t archtv_compositor (process (transition siginh rlimitinh)))
+(allow linux.init_t archtv_compositor (process2 (nnp_transition)))
+(allow archtv_compositor archtv_compositor_exec (file (entrypoint execute open read getattr map)))
+(allow archtv_compositor linux.init_t (fd (use)))
+(allow archtv_compositor linux.init_t (process (sigchld)))
+(allow archtv_compositor self (process (fork getcap getsched setrlimit)))
+(allow archtv_compositor self (fd (use)))
+(allow archtv_compositor self (dir (search read open getattr)))
+(allow archtv_compositor self (file (read open getattr)))
+; This development host's glibc/libraries remain Linux.unlabeled_t (measured).
+; Read/execute mappings only; no write, relabel, generic executable entrypoint
+; or execute_no_trans. Proper package/library labeling remains a product gate.
+(allow archtv_compositor linux.unlabeled_t (dir (search read open getattr)))
+(allow archtv_compositor linux.unlabeled_t (file (read open getattr map execute)))
+(allow archtv_compositor linux.unlabeled_t (lnk_file (read getattr)))
+; Only explicitly labeled seat/DRM/TTY nodes, retaining DAC/logind admission.
+; Do not grant this actor generic Linux.event_device_t device access.
+(allow archtv_compositor archtv_compositor_device (chr_file (open read write getattr ioctl map)))
+; Private existing Wayland runtime and keymap/capture files. No app traversal.
+(typetransition archtv_compositor archtv_wayland_runtime_dir file archtv_wayland_runtime_file)
+; Actual standalone probe creates anonymous smithay-keymap memfd. Give only
+; this creator its existing trusted Wayland-file type; never permit writes to
+; generic Linux.tmpfs_t. Path-based runtime-directory labeling cannot type it.
+(typetransition archtv_compositor linux.tmpfs_t file archtv_wayland_runtime_file)
+(allow archtv_compositor archtv_wayland_runtime_dir (dir (search read open getattr write add_name remove_name)))
+(allow archtv_compositor archtv_wayland_runtime_file (file (create open read write append getattr setattr unlink rename map lock)))
+(typetransition archtv_compositor archtv_wayland_runtime_dir sock_file archtv_wayland_runtime_file)
+(allow archtv_compositor archtv_wayland_runtime_file (sock_file (create open read write getattr setattr unlink)))
+(allow linux.init_t archtv_wayland_runtime_file (sock_file (write getattr)))
+(allow archtv_compositor self (unix_stream_socket (create bind listen accept read write getattr getopt setopt shutdown)))
+(allow archtv_compositor linux.init_t (unix_stream_socket (connectto read write getattr getopt setopt shutdown)))
+(allow linux.init_t archtv_compositor (unix_stream_socket (connectto read write getattr getopt setopt shutdown)))
+; connectto checks the factory socket's typed SID, not its process SID.
+; The old generic-host connection was made before enforcing and audited as a
+; denial. This admits the exact factory channel to the new compositor only.
+(allow archtv_wayland_channel archtv_compositor (unix_stream_socket (connectto)))
+(allow archtv_compositor archtv_wayland_channel (unix_stream_socket (read write getattr getopt setopt shutdown)))
+; logind/DBus/udev live in the existing Linux context, not an Android service.
+(allow archtv_compositor linux.tmpfs_t (dir (search read open getattr)))
+(allow archtv_compositor linux.tmpfs_t (sock_file (write getattr)))
+(allow archtv_compositor linux.tmpfs_t (file (read open getattr map)))
+(allow archtv_compositor linux.tmpfs_t (lnk_file (read getattr)))
+(allow archtv_compositor linux.init_t (dbus (send_msg)))
+(allow linux.init_t archtv_compositor (dbus (send_msg)))
+; Reuse complete refpolicy systemd_read_logind_sessions_files and
+; systemd_read_logind_runtime_files interfaces (systemd.if1655/1558), expanded
+; in the original policy for clients such as wireplumber. Label runtime state
+; according to original systemd.fc119/120/122, not generic init_tmpfs access.
+(allow archtv_compositor linux.systemd_logind_t (fd (use)))
+(allow archtv_compositor linux.var_run_t (lnk_file (read getattr)))
+(allow archtv_compositor linux.var_t (dir (getattr open search)))
+(allow archtv_compositor linux.var_run_t (dir (getattr open search)))
+(allow archtv_compositor linux.init_runtime_t (dir (getattr open search)))
+(allow archtv_compositor linux.systemd_sessions_runtime_t (dir (ioctl read getattr lock open search)))
+(allow archtv_compositor linux.systemd_sessions_runtime_t (file (ioctl read getattr lock open)))
+(allow archtv_compositor linux.systemd_logind_runtime_t (dir (ioctl read getattr lock open search)))
+(allow archtv_compositor linux.systemd_logind_runtime_t (file (ioctl read getattr lock open)))
+; Linux services predate policy loading and still run as Linux.init_t in this
+; development VM. Preserve original per-directory logind result labels.
+(typetransition linux.init_t linux.systemd_sessions_runtime_t file linux.systemd_sessions_runtime_t)
+(typetransition linux.init_t linux.systemd_sessions_runtime_t dir linux.systemd_sessions_runtime_t)
+(typetransition linux.init_t linux.systemd_logind_runtime_t file linux.systemd_logind_runtime_t)
+(typetransition linux.init_t linux.systemd_logind_runtime_t dir linux.systemd_logind_runtime_t)
+; Original udev_read_runtime_files (udev.if313): libinput needs the actual
+; udev database/tags as well as sysfs. Under enforcing56 the mislabelled
+; init_tmpfs database hid every input device; do not grant generic access.
+; Pair readonly files with original udev_list_runtime for enumeration/tags.
+(allow archtv_compositor linux.udev_runtime_t (dir (ioctl read getattr lock open search)))
+(allow archtv_compositor linux.udev_runtime_t (file (ioctl read getattr lock open)))
+(allow archtv_compositor linux.udev_runtime_t (lnk_file (read getattr)))
+(typetransition linux.init_t linux.udev_runtime_t file linux.udev_runtime_t)
+(typetransition linux.init_t linux.udev_runtime_t dir linux.udev_runtime_t)
+(allow archtv_compositor self (netlink_kobject_uevent_socket (create bind read getattr getopt setopt)))
+(allow archtv_compositor linux.sysfs_t (dir (search read open getattr)))
+(allow archtv_compositor linux.sysfs_t (file (read open getattr)))
+(allow archtv_compositor linux.sysfs_t (lnk_file (read getattr)))
+(allow archtv_compositor linux.sysfs_t (filesystem (getattr)))
+; Original refpolicy kernel_read_kernel_sysctls, kernel.if2478. Actual
+; libseat startup reads ngroups_max. Reuse the readonly interface, never a
+; sysctl write, module operation or administrative capability.
+(allow archtv_compositor linux.proc_t (dir (getattr open search)))
+(allow archtv_compositor linux.sysctl_t (dir (getattr open search)))
+(allow archtv_compositor linux.sysctl_kernel_t (dir (ioctl read getattr lock open search)))
+(allow archtv_compositor linux.sysctl_kernel_t (file (ioctl read getattr lock open)))
+; Real SCM_RIGHTS origin and original per-domain memfd result type. Receipt
+; checks O_RDWR even when the renderer reads pixels. No path open/create,
+; arbitrary Android files, app descriptors or synthetic frame completion.
+(allow archtv_compositor hal_graphics_composer_default (fd (use)))
+(allow archtv_compositor hal_graphics_composer_server_tmpfs (file (read write getattr map)))
+(allow hal_graphics_composer_default archtv_compositor (fd (use)))
+; Keep the generic Linux host and APKs outside this new transfer contract.
+(neverallow linux.init_t hal_graphics_composer_default (fd (use)))
+(neverallow appdomain archtv_compositor (process (transition dyntransition ptrace)))
+(neverallow appdomain archtv_compositor_exec (file (entrypoint execute)))
+(neverallow archtv_compositor archtv_all_types (process (dyntransition)))
+(neverallow archtv_compositor self (process (execmem)))
+(neverallow archtv_compositor self (capability (sys_admin sys_module sys_boot setuid setgid dac_override)))
+(neverallow appdomain archtv_wayland_runtime_file (sock_file (write)))
+(neverallow archtv_compositor linux.security_t (security (load_policy setenforce setbool setsecparam setcheckreqprot)))
+; Original AOSP SID security resolves to type kernel, not a type "security".
+(neverallow archtv_compositor kernel (security (load_policy setenforce setbool setsecparam setcheckreqprot)))

@@ -95,7 +95,7 @@ assert '[Requesting program interpreter: /system/bin/bootstrap/linker64]' in sub
 argv=json.loads((r/'reports/android16-hwmanager-cohort/helper-build.json').read_text())['argv'];argv[argv.index('-o')+1]=str(out/'linux-exec-context-image');run(argv)
 (out/'artifacts.json').write_text(json.dumps({n:hashlib.sha256((out/n).read_bytes()).hexdigest() for n in ['graphics-client','cargo/debug/examples/native_supervisor','linux-exec-context-image','property-coordinator']},indent=2))
 base=r/'dist/aosp16/sf-cohort-build-32';vendor=json.loads((base/'vendor-inputs.json').read_text())
-input_hwc=r/'dist/aosp16/hwc3-wayland-input-7'
+input_hwc=r/'dist/aosp16/hwc3-wayland-input-8'
 input_record=json.loads((input_hwc/'build.json').read_text());assert input_record['terminal']
 assert hashlib.sha256(Path(input_record['executable']).read_bytes()).hexdigest()==input_record['executable_sha256']
 for target,value in vendor['files'].items():

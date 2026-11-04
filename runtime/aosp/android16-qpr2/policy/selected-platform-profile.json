@@ -177,7 +177,8 @@
     "runtime/aosp/android16-qpr2/policy/experiments/apex-storage-nnp.cil",
     "runtime/aosp/android16-qpr2/policy/experiments/apex-storage-admission.cil",
     "runtime/aosp/android16-qpr2/policy/linux-network.cil",
-    "runtime/aosp/android16-qpr2/policy/linux-fuse.cil"
+    "runtime/aosp/android16-qpr2/policy/linux-fuse.cil",
+    "runtime/aosp/android16-qpr2/policy/linux-compositor.cil"
   ],
   "limitations": [
     "No live kernel/host/service/APK acceptance",

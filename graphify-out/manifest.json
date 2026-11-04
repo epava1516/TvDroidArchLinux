@@ -42,9 +42,9 @@
     "semantic_hash": "7783c5634fb6278d04255576f659fe25"
   },
   "crates/archtv-compositor/src/main.rs": {
-    "mtime": 1793367973.0887237,
-    "seen": 1793647620.639067,
-    "ast_hash": "6acb6d71d08aa53330e3df50e5d3ffe4",
+    "mtime": 1793801341.429322,
+    "seen": 1793801686.4239097,
+    "ast_hash": "42e7fc9c5cd2c2c10b12f577afc5c726",
     "semantic_hash": ""
   },
   "crates/archtv-compositor/src/session.rs": {
@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793796700.9562776,
-    "seen": 1793796808.3816357,
-    "ast_hash": "2ff94e047e79d11becc369e9a00789ef",
+    "mtime": 1793801667.7041345,
+    "seen": 1793801686.4493349,
+    "ast_hash": "00d5fb63b79a6f60e4bc293457715712",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793796672.4223547,
-    "seen": 1793796685.569961,
-    "ast_hash": "e6e01f26e407674f9664b4cf5a4be4a3",
+    "mtime": 1793803897.5798898,
+    "seen": 1793803908.8657513,
+    "ast_hash": "a070047083323ecaf38210d0955ba7d0",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793796700.9619236,
-    "seen": 1793796808.3825965,
-    "ast_hash": "3cf98853b91f428f69f25c7ba6234b03",
+    "mtime": 1793801667.7148464,
+    "seen": 1793801686.4502656,
+    "ast_hash": "6473144d086bcde56526cfcb404f8760",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -816,9 +816,9 @@
     "semantic_hash": ""
   },
   "docs/CONTRATO-APK.md": {
-    "mtime": 1793796700.959507,
-    "seen": 1793796808.3818095,
-    "ast_hash": "eab58fd6b2acd1a345e55ad2b8e20a7b",
+    "mtime": 1793801667.7173703,
+    "seen": 1793801686.449533,
+    "ast_hash": "c54136052039b57104f23e6b23ea6251",
     "semantic_hash": ""
   },
   "runtime/apk/README.md": {
@@ -2142,9 +2142,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/android16-qpr2/policy/selected-platform-profile.json": {
-    "mtime": 1793793641.4932518,
-    "seen": 1793794202.2779355,
-    "ast_hash": "57c7e2cba1dbd6b6735d5938fcb056f3",
+    "mtime": 1793797415.162308,
+    "seen": 1793801686.4308922,
+    "ast_hash": "0c6a8b7b6185fabd0c8c911e80214ad5",
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/archtv/runtime/SelectedRuntime.java": {

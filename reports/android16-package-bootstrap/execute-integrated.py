@@ -28,6 +28,10 @@ if len(sys.argv)>1 and sys.argv[1] in ('--prepare-wayland-runtime','--close-wayl
  else:
   for unit in ('archtv-markor-session-','archtv-package-runner-'):
    assert subprocess.run(['systemctl','is-active','--quiet',unit+run+'.service']).returncode!=0,'Runtime still active'
+  if not record.exists():
+   assert not directory.exists() and not directory.is_symlink(),'Unrecorded runtime directory requires diagnosis'
+   closed=cp/'wayland-runtime-closed.json';closed.write_text(json.dumps({'id':run,'not_prepared':True,'observed_absent':str(directory),'scope':'Startup did not prepare a runtime; no directory was deleted.'})+'\n');os.chown(closed,1000,1000)
+   sys.exit(0)
   expected=json.loads(record.read_text());assert expected['id']==run and expected['path']==str(directory)
   if not directory.exists() and not directory.is_symlink():
    closed=cp/'wayland-runtime-closed.json';closed.write_text(json.dumps({'id':run,'observed_absent_after_units_stopped':str(directory),'scope':'May have been removed by logind after the owned PAM session; no claim this helper unlinked it.'})+'\n');os.chown(closed,1000,1000)
@@ -37,7 +41,7 @@ if len(sys.argv)>1 and sys.argv[1] in ('--prepare-wayland-runtime','--close-wayl
   entries=list(directory.iterdir())
   for entry in entries:
    s=entry.lstat()
-   assert entry.name in ('wayland-1','wayland-1.lock') and s.st_uid==1000 and (stat.S_ISSOCK(s.st_mode) or stat.S_ISREG(s.st_mode)),str(entry)
+   assert entry.name in ('wayland-1','wayland-1.lock','compositor.log','screen.ppm','capture.request') and s.st_uid==1000 and (stat.S_ISSOCK(s.st_mode) or stat.S_ISREG(s.st_mode)),str(entry)
   for entry in entries:entry.unlink()
   directory.rmdir()
   closed=cp/'wayland-runtime-closed.json';closed.write_text(json.dumps({'id':run,'removed':str(directory),'entries':[e.name for e in entries]})+'\n');os.chown(closed,1000,1000)
@@ -69,17 +73,32 @@ if len(sys.argv)>1 and sys.argv[1]=='--prepare-wayland':
  pid,uid,gid=struct.unpack('3i',channel.getsockopt(unix_socket.SOL_SOCKET,unix_socket.SO_PEERCRED,12))
  outer='archtv-markor-session-'+manifest['id']+'.service'
  actual=int(subprocess.check_output(['systemctl','show',outer,'-p','MainPID','--value'],text=True).strip())
- assert pid==actual and pid>1 and uid==1000 and gid==1000
+ assert pid>1 and uid==1000 and gid==1000
  pidfd=os.pidfd_open(pid)
  process=Path('/proc')/str(pid)
  start=process.joinpath('stat').read_text().rsplit(')',1)[1].split()[19]
- expected=Path('/home/tv/.cache/archtv/compositor-native/debug/archtv-compositor')
+ # Dedicated frontend is a direct child of the owned PAM session, not the
+ # privileged runtime launcher. Validate the actual socket peer, executable,
+ # cgroup and parent; a writable PID/status file cannot substitute for these.
+ assert process.joinpath('status').read_text().split('PPid:',1)[1].splitlines()[0].strip()==str(actual)
+ # pam_systemd can move the owned leader and child into session-N.scope.
+ # Bind to the actual owned leader's kernel cgroup, not an assumed unit suffix.
+ parent_cgroup=(Path('/proc')/str(actual)/'cgroup').read_text()
+ assert parent_cgroup.strip() and process.joinpath('cgroup').read_text()==parent_cgroup
+ before=json.loads((cp/'before-launch.json').read_text())
+ expected=Path(before['compositor_executable_path'])
+ assert expected.is_absolute() and expected.is_relative_to('/opt/archtv/experimental/compositor')
+ for node in [expected,*expected.parents]:
+  info=node.lstat();assert info.st_uid==0 and not info.st_mode&0o022 and not stat.S_ISLNK(info.st_mode),str(node)
  assert (process/'exe').resolve()==expected.resolve()
- expected_hash=json.loads((cp/'before-launch.json').read_text())['compositor_executable_sha256']
+ expected_hash=before['compositor_executable_sha256']
  actual_hash=hashlib.sha256((process/'exe').read_bytes()).hexdigest();assert actual_hash==expected_hash
  context=(process/'attr/current').read_text().rstrip(chr(0)+'\n')
  peersec=channel.getsockopt(unix_socket.SOL_SOCKET,unix_socket.SO_PEERSEC,1024).rstrip(b'\0').decode()
- assert context==peersec and context.startswith('linux.')
+ assert context==peersec=='linux.system_u:linux.system_r:archtv_compositor:s0'
+ status=dict(line.split(':',1) for line in process.joinpath('status').read_text().splitlines() if ':' in line)
+ assert status['NoNewPrivs'].strip()=='1'
+ assert all(int(status[key].strip(),16)==0 for key in ['CapInh','CapPrm','CapEff','CapAmb'])
  assert process.joinpath('stat').read_text().rsplit(')',1)[1].split()[19]==start
  now=peer.lstat();assert (st.st_dev,st.st_ino,st.st_uid)==(now.st_dev,now.st_ino,now.st_uid)
  lib.fgetfilecon_raw.argtypes=[ctypes.c_int,ctypes.POINTER(ctypes.c_char_p)];label=ctypes.c_char_p()

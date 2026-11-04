@@ -416,12 +416,12 @@
         "scope": "Exact Markorv164 Markdown note created163 survives complete cohort teardown and original subsystems167; actual bytes, same UID/inodes/MCS, original install/force-stop/relaunch and real single pointer opens editor.167 native/exterior0. Not host reboot/power loss, FBE/MAC, graceful close, arbitrary upgrade or general APK compatibility."
       },
       "runtime_security_observation": {
-        "candidate": 257,
-        "execution": 257,
-        "state": "terminal; original launch and internal SF pixels; Smithay/input/notes not accepted",
+        "candidate": 258,
+        "execution": 258,
+        "state": "controlled stop after real buffer boundary denial; no new APK stage accepted",
         "evidence": "reports/android16-package-bootstrap/original-apex-derive-mac-progress.json",
-        "sha256": "2db9cde21f7f46a8739d99adaed1b10004d334cd63bc7875062ddf9d320318be",
-        "latest_result": "Actual original IntroActivity launched; SF onboarding screenshot inspected. Physical capture blank; HWC presents NO_RESOURCES before sleep. Input instrumentation failed safely, no input sent."
+        "sha256": "8e9ef3ef41c82566dac0154cea8f81388063461e7c9aad30b17f9ceef0557db9",
+        "latest_result": "Fences/mapper pass; Rust generic Linux domain cannot receive HWC memfd. Own frontend succeeds standalone in permissive; actual original Markor transfer under MAC pending."
       },
       "runtime_security_observation_history": [
         {
@@ -679,6 +679,14 @@
           "evidence": "reports/android16-package-bootstrap/original-apex-derive-mac-progress.json",
           "sha256": "922148e6d5fa0b4a854966a50b3d4ed6edfdbfddc71a68cf53757f3b1208a600",
           "latest_result": "Shell private stat is diagnostic; original PMS rejects disabling protected FallbackHome. No Markor launch reached. Next explicit launch without unrelated HOME mutation."
+        },
+        {
+          "candidate": 257,
+          "execution": 257,
+          "state": "terminal; original launch and internal SF pixels; Smithay/input/notes not accepted",
+          "evidence": "reports/android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "sha256": "2db9cde21f7f46a8739d99adaed1b10004d334cd63bc7875062ddf9d320318be",
+          "latest_result": "Actual original IntroActivity launched; SF onboarding screenshot inspected. Physical capture blank; HWC presents NO_RESOURCES before sleep. Input instrumentation failed safely, no input sent."
         }
       ],
       "runtime_security_history": [
@@ -740,18 +748,25 @@
       "runtime_mac_stage_evidence": {
         "installation": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "2db9cde21f7f46a8739d99adaed1b10004d334cd63bc7875062ddf9d320318be",
+          "record_sha256": "9cb384a4e4171162fbda14359513bbeaad933856d665db839dc119d8bc04e33b",
           "section": "integrated255",
           "accepted": true,
           "scope": "Original PackageInstaller installation, identical intact APK bytes and physical private-directory metadata under enforcing. Not complete isolation, launch, UI, note persistence or full workflow acceptance."
         },
-        "remaining": "Rust/Smithay presentation, input, main function, persistence, services, close/reopen under MAC remain unaccepted; historical permissive stages separate.",
+        "remaining": "Input hotplug labels blocked; main function, persistence, services and close/reopen under MAC remain unaccepted. R1 full-host security open.",
         "launch": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "2db9cde21f7f46a8739d99adaed1b10004d334cd63bc7875062ddf9d320318be",
+          "record_sha256": "9cb384a4e4171162fbda14359513bbeaad933856d665db839dc119d8bc04e33b",
           "section": "integrated257",
           "accepted": true,
           "scope": "Original explicit launch redirects intact APK to IntroActivity; Status:ok and real SF internal onboarding pixels. Not presentation on Rust/Smithay, input, complete Markor workflow or broad compatibility."
+        },
+        "physical_presentation": {
+          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "record_sha256": "9cb384a4e4171162fbda14359513bbeaad933856d665db839dc119d8bc04e33b",
+          "section": "integrated259_physical_presentation",
+          "accepted": true,
+          "scope": "Original onboarding pixels visually observed in actual Smithay DRM capture during enforcing window; no input, note or lifecycle acceptance."
         }
       }
     }

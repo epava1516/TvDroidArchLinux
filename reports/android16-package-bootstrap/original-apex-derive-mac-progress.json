@@ -4320,5 +4320,186 @@
       }
     },
     "next": "258: original intact Markor with stage diagnostics in existing HWC adapter to resolve NO_RESOURCES, corrected native capture/input instrumentation, uinput now loaded. No policy grant or Android full boot."
+  },
+  "integrated258_compositor_boundary": {
+    "checkpoint": "/home/tv/recuperacion-archtv/ae5ba68c-5285-46d6-8979-cee0273dae45-markor-software-launch",
+    "result": "Actual HWC8 stage wayland-commit-callback timeout after fences/mapper; audit denies Rust linux.init_t use of HWC memfd. Generic Linux host permission deliberately remains denied.",
+    "termination": "Scoped controlled stop; reported outer0 is not naturally completed Markor workflow. No new APK stage accepted.",
+    "evidence": {
+      "/home/tv/recuperacion-archtv/ae5ba68c-5285-46d6-8979-cee0273dae45-markor-software-launch/persisted-original-logcat.txt": "2f74a79b2f1248ff4f1acda45c237b3c9ad4bab96df7ea81a5c5d4a1755a58ae",
+      "/home/tv/recuperacion-archtv/ae5ba68c-5285-46d6-8979-cee0273dae45-markor-software-launch/decision-presentation-block.json": "4984c49502d7bb582aaea1ca0dfb4128ed266b8ed574be15a4cd2abefb092741",
+      "/home/tv/recuperacion-archtv/ae5ba68c-5285-46d6-8979-cee0273dae45-markor-software-launch/after-host.json": "79aeb80135ef2af905165e7f0742a39dff2eebc320ed86db52382e15e261ce9f",
+      "/home/tv/recuperacion-archtv/ae5ba68c-5285-46d6-8979-cee0273dae45-markor-software-launch/input-after-host.json": "0dc5ef5dc7e02bc19c7fd1d73cc852429cb1bd5bfcc76d16f4f2c48be364c307"
+    },
+    "next": "Dedicated frontend domain, real buffer receipt/callback/physical Markor pixels then input/note lifecycle."
+  },
+  "compositor_domain_progress": {
+    "utc": "2026-11-04T14:14:04.838616+00:00",
+    "current_policy": "56 loaded permissive before bounded enforcing test; readback3fd81d1ccccddc0defe1b941e5bd8b71f201cf8792be0dd2627e78b155d0753e",
+    "history": {
+      "52": "Offline rejected unresolved type security, never loaded.",
+      "53": "Loaded permissive;185 actual access decisions+160 FUSE comparisons+13 seat/admin invariants. Not runtime acceptance.",
+      "54": "Loaded permissive; own-role entry and standalone DRM/input startup demonstrated.",
+      "55": "Offline compiled, never loaded.",
+      "56": "Offline compiled/loaded permissive; original readonly logind/sysctl interfaces, own keymap memfd typing, sysfs statfs and private atomic capture rename. Enforcing test pending."
+    },
+    "entry_guard": "Root-owned binary2563895... rejects wrong domain, actual own UID/GID1000 NNP1 zero-capabilities entry observed. Formatted source rebuilt afterward, not yet installed; tested exact root-owned binary retained.",
+    "standalone_history": {
+      "5a8dae93": "ENODATA after pipe-style PAM startup, no DRM.",
+      "18b59ef3": "HUP before preparation, systemd success classification not frontend success.",
+      "1079b39e": "Real Seat0 VT2; guard correctly rejects PAM-inherited capabilities.",
+      "f4b50179": "Capabilities dropped only on frontend; actual own-role DRM/input startup, capture, clean child/outer0 in permissive. No APK/enforcing acceptance."
+    },
+    "standalone_checkpoint": "/home/tv/recuperacion-archtv/f4b50179-dd53-403a-9325-401a96fb3fc1-compositor-domain",
+    "active_host_changes": "Exact seat labels and temporary udev rule: compositor-domain-54/seat-before.json. Root-owned executable under /opt; prior4db binary preserved. Original refpolicy logind runtime labels applied to4 metadata nodes, no contents/DAC change. No reboot/default boot change.",
+    "recovery": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/compositor-domain-54/seat-labels.py restore after tests stopped; own exec label must be restored/removed before policy rollback. Standard logind labels exist in baseline51.",
+    "scope": "Necessary Linux identity integration for actual original Markor pixels; not compatibility criterion or completed security. R1-MAC, physical UI/input and note lifecycle remain open."
+  },
+  "integrated259_physical_presentation": {
+    "checkpoint": "/home/tv/recuperacion-archtv/561d67a8-d6a2-42e0-84e7-443b15d95d9a-markor-software-launch",
+    "run_id": "561d67a8-d6a2-42e0-84e7-443b15d95d9a",
+    "policy": 58,
+    "result": "Original IntroActivity visually observed in physical Smithay DRM capture under enforcing; own compositor role UID/GID1000 NNP1 caps0",
+    "frame": "/home/tv/recuperacion-archtv/561d67a8-d6a2-42e0-84e7-443b15d95d9a-markor-software-launch/current-frame.png",
+    "frame_sha256": "025b8fd8f179fe1b44f9e98dd34380cc913699a5545f2461e10c24803e96993d",
+    "limitation": "Final current-frame is real dimmed tutorial; earlier archived PPMs retain bright tutorial. Tutorial illustration is not real user notes. Input not accepted; hotplug event6/event1 generic event_device_t causes own compositor getattr denial. Controlled cohort stop; outer_exit0 not workflow success; inventory false after stop.",
+    "closure": {
+      "id": "561d67a8-d6a2-42e0-84e7-443b15d95d9a",
+      "outer_unit": "archtv-markor-session-561d67a8-d6a2-42e0-84e7-443b15d95d9a",
+      "runner_unit": "archtv-package-runner-561d67a8-d6a2-42e0-84e7-443b15d95d9a",
+      "initial_vt": "1",
+      "root_pid": 97312,
+      "root_boot_id": "ed605c8c-db9e-4ce1-8c57-d383f08d3694",
+      "result": "native_result_recorded",
+      "fuse_connections_before": [],
+      "host_devices_before": {
+        "card0": {
+          "mode": "0o660",
+          "uid": 0,
+          "gid": 983,
+          "rdev": 57856,
+          "inode": 366
+        },
+        "renderD128": {
+          "mode": "0o666",
+          "uid": 0,
+          "gid": 987,
+          "rdev": 57984,
+          "inode": 365
+        }
+      },
+      "interaction_exit": 1,
+      "host_sysrq_before": {
+        "device": 23,
+        "inode": 4026532098,
+        "mode": "0o200",
+        "uid": 0,
+        "gid": 0,
+        "label": "u:object_r:proc_sysrq:s0",
+        "readonly_mount": false
+      },
+      "host_sysrq_after": {
+        "device": 23,
+        "inode": 4026532098,
+        "mode": "0o200",
+        "uid": 0,
+        "gid": 0,
+        "label": "u:object_r:proc_sysrq:s0",
+        "readonly_mount": false
+      },
+      "host_sysrq_metadata_unchanged": true,
+      "host_devices_after": {
+        "card0": {
+          "mode": "0o660",
+          "uid": 0,
+          "gid": 983,
+          "rdev": 57856,
+          "inode": 366
+        },
+        "renderD128": {
+          "mode": "0o666",
+          "uid": 0,
+          "gid": 987,
+          "rdev": 57984,
+          "inode": 365
+        }
+      },
+      "host_device_metadata_unchanged": true,
+      "fuse_connections_after": [],
+      "new_fuse_connections": [],
+      "final_vt": "1",
+      "outer_active": false,
+      "runner_active": false
+    },
+    "audit": {
+      "before": {
+        "text": "enabled 0\nfailure 1\npid 0\nrate_limit 0\nbacklog_limit 64\nlost 0\nbacklog 0\nbacklog_wait_time 18000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n",
+        "fields": {
+          "enabled": "0",
+          "failure": "1",
+          "pid": "0",
+          "rate_limit": "0",
+          "backlog_limit": "64",
+          "lost": "0",
+          "backlog": "0",
+          "backlog_wait_time": "18000",
+          "backlog_wait_time_actual": "0",
+          "loginuid_immutable": "0 unlocked"
+        }
+      },
+      "rules_sha256_before": "61501e69a61dbbc1a41605ea15c34807e6b1d3992bee195dde36a7ebdd95dd87",
+      "unit": "archtv-audit-mac-561d67a8",
+      "active": {
+        "text": "enabled 1\nfailure 1\npid 97305\nrate_limit 0\nbacklog_limit 4096\nlost 0\nbacklog 0\nbacklog_wait_time 18000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n",
+        "fields": {
+          "enabled": "1",
+          "failure": "1",
+          "pid": "97305",
+          "rate_limit": "0",
+          "backlog_limit": "4096",
+          "lost": "0",
+          "backlog": "0",
+          "backlog_wait_time": "18000",
+          "backlog_wait_time_actual": "0",
+          "loginuid_immutable": "0 unlocked"
+        }
+      },
+      "root_controller_exit": 0,
+      "before_receiver_stop": {
+        "text": "enabled 1\nfailure 1\npid 97305\nrate_limit 0\nbacklog_limit 4096\nlost 0\nbacklog 0\nbacklog_wait_time 18000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n",
+        "fields": {
+          "enabled": "1",
+          "failure": "1",
+          "pid": "97305",
+          "rate_limit": "0",
+          "backlog_limit": "4096",
+          "lost": "0",
+          "backlog": "0",
+          "backlog_wait_time": "18000",
+          "backlog_wait_time_actual": "0",
+          "loginuid_immutable": "0 unlocked"
+        }
+      },
+      "after": {
+        "text": "enabled 0\nfailure 1\npid 0\nrate_limit 0\nbacklog_limit 64\nlost 0\nbacklog 0\nbacklog_wait_time 18000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n",
+        "fields": {
+          "enabled": "0",
+          "failure": "1",
+          "pid": "0",
+          "rate_limit": "0",
+          "backlog_limit": "64",
+          "lost": "0",
+          "backlog": "0",
+          "backlog_wait_time": "18000",
+          "backlog_wait_time_actual": "0",
+          "loginuid_immutable": "0 unlocked"
+        }
+      },
+      "rules_unchanged": true,
+      "lost_delta": 0,
+      "receiver_closed": true,
+      "backlog_limit_restored": true
+    },
+    "next": "Diagnose original udev relabel behavior for hotplug, verify exact device identities and real input, then note and reopen. No blanket generic input grants."
   }
 }

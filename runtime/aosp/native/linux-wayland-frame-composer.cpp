@@ -16,6 +16,7 @@
 #include <vector>
 #include <unistd.h>
 #include <fcntl.h>
+#include <android/log.h>
 // Seal the delegated capability before the original HWC main or any exec.
 // No ambient socket name is authorized by this handoff.
 __attribute__((constructor)) static void SealInheritedWaylandCapability() {
@@ -90,16 +91,24 @@ HWC3::Error LinuxWaylandFrameComposer::validateDisplay(Display* d,DisplayChanges
 }
 HWC3::Error LinuxWaylandFrameComposer::presentDisplay(Display* d,::android::base::unique_fd* present,std::unordered_map<int64_t,::android::base::unique_fd>* releases) {
     std::lock_guard<std::mutex> lock(mutex_);
+    // Real257 reaches original Markor but SF reports NO_RESOURCES every ~3s.
+    // Identify the failing boundary without bypassing a fence, mapper or real
+    // Wayland callback. These diagnostics are not presentation acceptance.
+    auto failed=[](const char* stage){
+        int saved=errno;
+        __android_log_print(ANDROID_LOG_ERROR,"ArchTVHWC","PRESENT_FAILED stage=%s errno=%d",stage,saved);
+        errno=saved;return HWC3::Error::NoResources;
+    };
     if(!connected_ || !display_live_ || d->getId()!=0)return HWC3::Error::BadDisplay;
     auto handle=d->getClientTarget().getBuffer();if(!handle)return HWC3::Error::BadParameter;
     errno=0;auto acquire=d->getClientTarget().getFence();
-    if(!acquire.ok() && errno)return HWC3::Error::NoResources;
-    if(acquire.ok() && sync_wait(acquire.get(),3000)!=0)return HWC3::Error::NoResources;
+    if(!acquire.ok() && errno)return failed("acquire-fence-dup");
+    if(acquire.ok() && sync_wait(acquire.get(),3000)!=0)return failed("acquire-fence-wait");
     auto& mapper=::android::GraphicBufferMapper::get();
     uint64_t w=0,h=0,allocation=0,protected_content=0;
     ::android::ui::PixelFormat format{};
     std::vector<aidl::android::hardware::graphics::common::PlaneLayout> planes;
-    if(mapper.getWidth(handle,&w)!=0 || mapper.getHeight(handle,&h)!=0 || mapper.getAllocationSize(handle,&allocation)!=0 || mapper.getProtectedContent(handle,&protected_content)!=0 || mapper.getPixelFormatRequested(handle,&format)!=0 || mapper.getPlaneLayouts(handle,&planes)!=0)return HWC3::Error::NoResources;
+    if(mapper.getWidth(handle,&w)!=0 || mapper.getHeight(handle,&h)!=0 || mapper.getAllocationSize(handle,&allocation)!=0 || mapper.getProtectedContent(handle,&protected_content)!=0 || mapper.getPixelFormatRequested(handle,&format)!=0 || mapper.getPlaneLayouts(handle,&planes)!=0)return failed("mapper-metadata");
     if(protected_content || planes.size()!=1)return HWC3::Error::Unsupported;
     if(w!=uint64_t(output_.width()) || h!=uint64_t(output_.height()) || w==0 || h==0 || w*h>16777216)return HWC3::Error::BadParameter;
     const auto& plane=planes[0];
@@ -107,15 +116,16 @@ HWC3::Error LinuxWaylandFrameComposer::presentDisplay(Display* d,::android::base
     bool rgba=format==::android::ui::PixelFormat::RGBA_8888 || format==::android::ui::PixelFormat::RGBX_8888;
     if(!rgba && format!=::android::ui::PixelFormat::BGRA_8888)return HWC3::Error::Unsupported;
     std::vector<uint32_t> pixels(w*h);void* data=nullptr;
-    if(mapper.lock(handle,static_cast<uint32_t>(aidl::android::hardware::graphics::common::BufferUsage::CPU_READ_OFTEN),::android::Rect(static_cast<int32_t>(w),static_cast<int32_t>(h)),&data)!=0)return HWC3::Error::NoResources;
-    if(!data){mapper.unlock(handle);return HWC3::Error::NoResources;}
+    if(mapper.lock(handle,static_cast<uint32_t>(aidl::android::hardware::graphics::common::BufferUsage::CPU_READ_OFTEN),::android::Rect(static_cast<int32_t>(w),static_cast<int32_t>(h)),&data)!=0)return failed("mapper-lock");
+    if(!data){mapper.unlock(handle);return failed("mapper-null-data");}
     for(uint64_t y=0;y<h;++y) {
         const auto* row=static_cast<const uint8_t*>(data)+y*uint64_t(plane.strideInBytes);
         for(uint64_t x=0;x<w;++x){const auto* p=row+x*4;pixels[y*w+x]=0xff000000u|(uint32_t(p[rgba?0:2])<<16)|(uint32_t(p[1])<<8)|p[rgba?2:0];}
     }
     ::android::base::unique_fd unlock;
-    if(mapper.unlock(handle,&unlock)!=0 || (unlock.ok() && sync_wait(unlock.get(),3000)!=0))return HWC3::Error::NoResources;
-    if(!output_.CommitCpu(pixels.data(),int(w),int(h),int(w)))return HWC3::Error::NoResources;
+    if(mapper.unlock(handle,&unlock)!=0)return failed("mapper-unlock");
+    if(unlock.ok() && sync_wait(unlock.get(),3000)!=0)return failed("unlock-fence-wait");
+    if(!output_.CommitCpu(pixels.data(),int(w),int(h),int(w)))return failed("wayland-commit-callback");
     // Source read is complete and the real Wayland callback arrived. There is
     // no kernel present fence: leave it absent, as the original frontend's
     // addPresentFence already does for invalid FDs. Timing/VTS remains OPEN.

@@ -15,6 +15,55 @@ use smithay::reexports::{calloop::EventLoop, wayland_server::Display};
 use state::TvCompositor;
 use std::time::Duration;
 
+// The experimental Android-facing frontend has its own Linux identity. Fail
+// before opening seat/Wayland devices if a launcher forgot the domain or NNP
+// transition. Other standalone compositor backends retain their existing mode.
+fn verify_required_domain() -> Result<(), Box<dyn std::error::Error>> {
+    match std::env::var("ARCHTV_REQUIRE_COMPOSITOR_DOMAIN") {
+        Err(std::env::VarError::NotPresent) => return Ok(()),
+        Ok(value) if value == "1" => {}
+        _ => return Err("invalid compositor domain requirement".into()),
+    }
+    let context = std::fs::read_to_string("/proc/self/attr/current")?;
+    let context = context.trim_end_matches(['\0', '\n']);
+    if context != "linux.system_u:linux.system_r:archtv_compositor:s0" {
+        return Err(format!("compositor domain mismatch: {context}").into());
+    }
+    let status = std::fs::read_to_string("/proc/self/status")?;
+    let field = |name: &str| {
+        status
+            .lines()
+            .find_map(|line| line.strip_prefix(name))
+            .map(str::trim)
+            .ok_or_else(|| format!("missing kernel process field: {name}"))
+    };
+    for name in ["Uid:", "Gid:"] {
+        let ids = field(name)?
+            .split_whitespace()
+            .map(str::parse::<u32>)
+            .collect::<Result<Vec<_>, _>>()?;
+        if ids != [1000; 4] {
+            return Err(format!("compositor identity mismatch: {name} {ids:?}").into());
+        }
+    }
+    if field("NoNewPrivs:")? != "1" {
+        return Err("compositor requires irreversible NNP1".into());
+    }
+    for name in ["CapInh:", "CapPrm:", "CapEff:", "CapAmb:"] {
+        if u64::from_str_radix(field(name)?, 16)? != 0 {
+            return Err(format!("compositor must have no capabilities: {name}").into());
+        }
+    }
+    tracing::info!(
+        context,
+        uid = 1000,
+        gid = 1000,
+        no_new_privs = 1,
+        "COMPOSITOR_SECURITY_OBSERVED_NOT_PRESENTATION_OR_ISOLATION_ACCEPTANCE"
+    );
+    Ok(())
+}
+
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     tracing_subscriber::fmt()
         .with_env_filter(
@@ -23,6 +72,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         )
         .with_ansi(false)
         .init();
+    verify_required_domain()?;
     let mut command = Vec::new();
     let mut shell = false;
     let mut lifetime = None;
