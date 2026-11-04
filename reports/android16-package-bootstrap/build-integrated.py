@@ -12,6 +12,7 @@ tracked_inputs.extend(['reports/android16-package-bootstrap/build-libcutils-memo
 tracked_inputs.extend(['runtime/aosp/native/linux-wayland-frame-composer.cpp','runtime/aosp/native/linux-wayland-frame-composer.h','reports/android16-hwc3-wayland/build-input.py'])
 tracked_inputs.extend(['reports/android16-selected-display/build-entry.py','runtime/aosp/linux-services/org/archtv/aosplinux/WaylandInputBridge.java','runtime/aosp/native/linux-wayland-input.h','runtime/aosp/native/linux-wayland-output.cpp','reports/android16-property-actions/apply-patch-chain.py','reports/android16-property-actions/build-lazy-control.py',*[str(p.relative_to(r)) for p in sorted((r/'runtime/aosp/android16-qpr2/patches').glob('000[1-5]-*.patch'))]])
 tracked_inputs.append('reports/android16-audio-bootstrap/prepare-linux-profile.py')
+tracked_inputs.extend(['reports/android16-audio-bootstrap/build-linux-primary.py','reports/android16-audio-bootstrap/link-linux-core.py','runtime/aosp/android16-qpr2/patches/audio-alsa-write-observation.patch','runtime/aosp/android16-qpr2/patches/audio-alsa-write-observation.json'])
 source_hashes={n:hashlib.sha256((r/n).read_bytes()).hexdigest() for n in tracked_inputs}
 (out/'source-inputs.json').write_text(json.dumps(source_hashes,indent=2)+'\n')
 actions_source=r/'dist/aosp16/property-actions-source-4'
@@ -48,6 +49,8 @@ keymint_component='--keymint-component' in sys.argv[2:]
 software_platform='--software-security' in sys.argv[2:]
 native_audio='--native-audio' in sys.argv[2:]
 assert not native_audio or software_platform
+audio_write_diagnostic='--audio-write-diagnostic' in sys.argv[2:]
+assert not audio_write_diagnostic or native_audio
 observe_ms=int(next((a.split('=',1)[1] for a in sys.argv[2:] if a.startswith('--observe-ms=')),'3000'))
 # Real262 used the entire300s window on original onboarding/storage UI.
 # Keep startup separately bounded; allow at most600s of actual interaction.
@@ -92,7 +95,7 @@ if software_platform:
  lines[0]=lines[0].replace('-Xmx768m','-Xmx512m')
  lines.append('    setenv ARCHTV_SOFTWARE_SECURITY_PROFILE software-platform-v1')
 experiment_kind='markor-software-launch' if software_platform else 'keystore-java-component' if keystore_java else 'keystore-component' if keystore_component else ('keymint-component' if keymint_component else 'markor-launch')
-(out/'build-options.json').write_text(json.dumps({'apk_target':apk_target,'media_test':media_test,'memory_library':memory_library,'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component and not software_platform,'software_security_platform':software_platform,'observe_ms':observe_ms,'persistent_userdata_name':userdata_name,'markor_workflow_token':workflow_token,'markor_workflow_budget_seconds':workflow_budget_seconds,'experiment_kind':experiment_kind,'original_apex_bootstrap':True,'original_logd':True,'preconnected_wayland':True,'original_system_dma_heap':True,'native_audio':native_audio},indent=2)+'\n')
+(out/'build-options.json').write_text(json.dumps({'apk_target':apk_target,'media_test':media_test,'memory_library':memory_library,'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component and not software_platform,'software_security_platform':software_platform,'observe_ms':observe_ms,'persistent_userdata_name':userdata_name,'markor_workflow_token':workflow_token,'markor_workflow_budget_seconds':workflow_budget_seconds,'experiment_kind':experiment_kind,'original_apex_bootstrap':True,'original_logd':True,'preconnected_wayland':True,'original_system_dma_heap':True,'native_audio':native_audio,'audio_write_diagnostic':audio_write_diagnostic},indent=2)+'\n')
 if checkpoint_diagnostic:lines.append('    setenv ARCHTV_CHECKPOINT_DIAGNOSTIC 1')
 lines=[l for l in lines if not any(l.startswith('    setenv '+n+' ') for n in ['BOOTCLASSPATH','DEX2OATBOOTCLASSPATH','SYSTEMSERVERCLASSPATH','STANDALONE_SYSTEMSERVER_JARS'])];(entry/'selected-services.rc').write_text('\n'.join(lines)+'\n')
 old=r/'dist/aosp16/apex-cohort-build-6';commands=[]
@@ -419,7 +422,7 @@ mapper_contexts.write_text(previous_contexts.rstrip('\n')+'\n'+mapper_mapping+'\
 vendor['files']['/vendor/etc/selinux/vendor_service_contexts']={'source':str(mapper_contexts),'context':'u:object_r:vendor_configs_file:s0','mode':0o444}
 (out/'native-mapper-context-contract.json').write_text(json.dumps({'mapping':mapper_mapping,'xml':str(mapper_xml),'xml_sha256':hashlib.sha256(mapper_xml.read_bytes()).hexdigest(),'previous_contexts_sha256':hashlib.sha256(previous_contexts.encode()).hexdigest(),'original_policy_sources':{n:hashlib.sha256((policy_source/n).read_bytes()).hexdigest() for n in ['public/service.te','private/hal_graphics_allocator.te','private/surfaceflinger.te']},'scope':'Explicit device mapping for actual native VINTF instance/library using original AOSP type/client rules. No upstream row copy claimed, no new policy permission, Binder implementation or isDeclared result.'},indent=2)+'\n')
 (out/'vendor-inputs.json').write_text(json.dumps(vendor,indent=2))
-if native_audio:run(['python',str(r/'reports/android16-audio-bootstrap/prepare-linux-profile.py'),str(out)])
+if native_audio:run(['python',str(r/'reports/android16-audio-bootstrap/prepare-linux-profile.py'),str(out)]+(['--audio-write-diagnostic'] if audio_write_diagnostic else []))
 text=(base/'build-payload-expanded.py').read_text().replace(str(base),str(out));expected=out/'apex-expected.json';expected.write_text(json.dumps(json.loads((r/'reports/android16-apex-bootstrap/complete-inputs.json').read_text())['modules'],indent=2)+'\n');text=text.replace("image=out/'payload-2.ext4'", "record('/apex-expected.json',out/'apex-expected.json','u:object_r:vendor_configs_file:s0',0o600)\nimage=out/'payload-2.ext4'")
 old_parent="record('/'+str(parent.relative_to(tree)),None,'u:object_r:vendor_file:s0',0o755)"
 assert old_parent in text

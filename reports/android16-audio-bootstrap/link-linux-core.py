@@ -20,11 +20,21 @@ for path, digest in old['inputs'].items():
 core = json.loads((repo / 'dist/aosp16/audio-original-build-12/build.json').read_text())
 for source in core['sources']:
     assert sha(source['path']) == source['sha256'], source['path']
-adapted = json.loads((repo / 'dist/aosp16/audio-linux-primary-build-1/build.json').read_text())
-assert len(adapted['objects']) == 2 and all(c['exit'] == 0 for c in adapted['commands'])
+write_diagnostic = '--write-diagnostic' in sys.argv[2:]
+adapted_dir = repo / ('dist/aosp16/audio-linux-primary-build-2' if write_diagnostic else 'dist/aosp16/audio-linux-primary-build-1')
+adapted = json.loads((adapted_dir / 'build.json').read_text())
+assert len(adapted['objects']) == (3 if write_diagnostic else 2)
+assert all(c['exit'] == 0 for c in adapted['commands'])
+if write_diagnostic:
+    assert adapted['write_diagnostic']
+    assert any(u['original'].endswith('/alsa/StreamAlsa.cpp') for u in adapted['objects'])
+    for path, expected in adapted['patches'].items():
+        assert sha(path) == expected, path
 replace = {}
 for unit in adapted['objects']:
     assert sha(unit['object']) == unit['sha256']
+    relative = Path(unit['original']).relative_to('/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio')
+    assert sha(adapted_dir / 'source' / relative) == unit['source_sha256']
     previous = next(s['object'] for s in core['sources'] if s['path'] == unit['original'])
     replace[previous] = unit['object']
 support = json.loads((repo / 'dist/aosp16/audio-support-build-11/build.json').read_text())
@@ -122,6 +132,14 @@ record['commands'].append({'argv': cmd, 'exit': result.returncode})
 for path in [*replace.values(), *archives, str(flagobj), *map(str, extra),
              *map(str, outputs), str(crt / 'crtbegin_so.o'), str(crt / 'crtend_so.o')]:
     record['inputs'][path] = sha(path)
+record['inputs'][str(adapted_dir / 'build.json')] = sha(adapted_dir / 'build.json')
+for unit in adapted['objects']:
+    relative = Path(unit['original']).relative_to('/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio')
+    source = adapted_dir / 'source' / relative
+    record['inputs'][str(source)] = sha(source)
+for path, expected in adapted.get('patches', {}).items():
+    record['inputs'][path] = expected
+record['write_diagnostic'] = write_diagnostic
 if result.returncode == 0:
     record['binary_sha256'] = sha(binary)
 (out / 'link.json').write_text(json.dumps(record, indent=2) + '\n')

@@ -1,0 +1,42 @@
+--- a/aidl/default/alsa/StreamAlsa.cpp
++++ b/aidl/default/alsa/StreamAlsa.cpp
+@@ -14,6 +14,8 @@
+  * limitations under the License.
+  */
+ 
++#include <cerrno>
++#include <cstring>
+ #include <cmath>
+ #include <limits>
+ 
+@@ -127,6 +129,15 @@
+         if (proxy.get() == nullptr) {
+             return ::android::NO_INIT;
+         }
++        const auto& actualConfig = proxy.get()->alsa_config;
++        LOG(INFO) << "LINUX_PCM_OPEN_OBSERVATION card=" << proxy.get()->profile->card
++                  << " device=" << proxy.get()->profile->device
++                  << " rate=" << actualConfig.rate << " channels=" << actualConfig.channels
++                  << " format=" << actualConfig.format << " period_size=" << actualConfig.period_size
++                  << " period_count=" << actualConfig.period_count
++                  << " start_threshold=" << actualConfig.start_threshold
++                  << " stop_threshold=" << actualConfig.stop_threshold
++                  << " avail_min=" << actualConfig.avail_min;
+         alsaDeviceProxies.push_back(std::move(proxy));
+         auto sink = makeSink(mIsInput);  // Do not block the writer when it is on our thread.
+         if (sink != nullptr) {
+@@ -285,9 +296,13 @@
+             int ret = proxy_write_with_retries(mAlsaDeviceProxies[idx].get(), &buffer[0],
+                                                framesReadOrError * mFrameSizeBytes,
+                                                mReadWriteRetries);
++            const int observedWriteErrno = errno;
+             // Errors when the stream is being stopped are expected.
+             LOG_IF(WARNING, ret != 0 && mIoThreadIsRunning)
+-                    << __func__ << "[" << idx << "]: Error writing into ALSA: " << ret;
++                    << __func__ << "[" << idx << "]: Error writing into ALSA: " << ret
++                    << " observed_errno=" << observedWriteErrno
++                    << " errno_text=" << strerror(observedWriteErrno)
++                    << " tinyalsa_error=" << pcm_get_error(mAlsaDeviceProxies[idx].get()->pcm);
+         } else if (framesReadOrError == 0) {
+             // MonoPipeReader does not have a blocking read, while use of std::condition_variable
+             // requires use of a mutex. For now, just do a 1ms sleep. Consider using a different

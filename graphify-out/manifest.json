@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793832093.8109713,
-    "seen": 1793832103.223576,
-    "ast_hash": "0e4c7e9db7b3148acf964c1e709bcd56",
+    "mtime": 1793833419.399299,
+    "seen": 1793833435.9853423,
+    "ast_hash": "4ff3250c67f9938ee6a594ff214db9bc",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -2181,6 +2181,12 @@
     "mtime": 1793823222.5060105,
     "seen": 1793824397.06439,
     "ast_hash": "186331fe0e636bacd0f9f538dc72bc8f",
+    "semantic_hash": ""
+  },
+  "runtime/aosp/android16-qpr2/patches/audio-alsa-write-observation.json": {
+    "mtime": 1793832272.4654496,
+    "seen": 1793833435.9672318,
+    "ast_hash": "22574fde7fe6fc433f50ac0bf75d5191",
     "semantic_hash": ""
   }
 }

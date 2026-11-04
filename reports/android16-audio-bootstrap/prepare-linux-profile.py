@@ -19,11 +19,15 @@ path = out / 'vendor-inputs.json'
 vendor = json.loads(path.read_text())
 study = Path('/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1')
 root = repo / 'dist/aosp16/factory-inputs-3/root'
-core = repo / 'dist/aosp16/audio-linux-core-link-3'
+write_diagnostic = '--audio-write-diagnostic' in sys.argv[2:]
+core = repo / ('dist/aosp16/audio-linux-core-link-4' if write_diagnostic else 'dist/aosp16/audio-linux-core-link-3')
 effect = repo / 'dist/aosp16/audio-effect-link-2'
 sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
 record = {'scope': 'Private original audio deployment candidate, not service or PCM acceptance',
           'files': {}, 'adaptations': []}
+record['write_diagnostic'] = write_diagnostic
+if write_diagnostic:
+    record['adaptations'].append('Original StreamAlsa logs opened config and failure errno/pcm_get_error only; transfer/return/retry behavior unchanged. This is not an audio correction or PCM acceptance.')
 for parent, executable in [(core, 'android.hardware.audio.service-aidl.example'),
                            (effect, 'android.hardware.audio.effect.service-aidl.example')]:
     link = json.loads((parent / 'link.json').read_text())

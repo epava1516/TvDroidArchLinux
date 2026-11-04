@@ -1,0 +1,16 @@
+{
+  "scope": "Explicit diagnostic-only original source adaptation. Logs actual opened config and original failure return/observed errno/pcm_get_error; no retry, transfer/accounting, return, permission, timing or fake readiness changes. errno is a captured TLS observation, not independently a syscall trace.",
+  "original_project": "hardware/interfaces",
+  "pin": "aa229558cbf04bc997ed27465c5e7ad497123d1b",
+  "files": [
+    {
+      "path": "aidl/default/alsa/StreamAlsa.cpp",
+      "original_sha256": "bf08605917a9ddf280433d31ceab2406963c42bb7ba2674a7ba9ea4b1b0f8c51",
+      "adapted_sha256": "c9bef2a679ad35eb2a783e6907e7d9665c143956fb3729b8af9c3c78c9ff8704"
+    }
+  ],
+  "patch_sha256": "0b6339580730d1681036a4b0ab2f29db043831116b432a79e5473826bd44c020",
+  "trigger": "Original real VLC296 writer-1, no matching audio AVC in sampled prefix; Linux/libasound accepted writes and advanced hw_ptr after exact original owner closure.",
+  "evidence_checkpoint": "/home/tv/recuperacion-archtv/90b0fc24-06b8-4c82-846e-9d0b13090382-markor-software-launch/functional-result.json",
+  "license": "Original Apache2.0 source notices retained"
+}
