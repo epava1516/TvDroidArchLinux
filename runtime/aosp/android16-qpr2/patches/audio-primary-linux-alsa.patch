@@ -1,0 +1,186 @@
+--- a/aidl/default/primary/StreamPrimary.cpp
++++ b/aidl/default/primary/StreamPrimary.cpp
+@@ -47,26 +47,25 @@
+ }
+ 
+ ::android::status_t StreamPrimary::init(DriverCallbackInterface* callback) {
+-    RETURN_STATUS_IF_ERROR(mStubDriver.init(callback));
+     return StreamAlsa::init(callback);
+ }
+ 
+ ::android::status_t StreamPrimary::drain(StreamDescriptor::DrainMode mode) {
+-    return isStubStreamOnWorker() ? mStubDriver.drain(mode) : StreamAlsa::drain(mode);
++    return StreamAlsa::drain(mode);
+ }
+ 
+ ::android::status_t StreamPrimary::flush() {
+-    RETURN_STATUS_IF_ERROR(isStubStreamOnWorker() ? mStubDriver.flush() : StreamAlsa::flush());
++    RETURN_STATUS_IF_ERROR(StreamAlsa::flush());
+     // TODO(b/372951987): consider if this needs to be done from 'StreamInWorkerLogic::cycle'.
+     return mIsInput ? standby() : ::android::OK;
+ }
+ 
+ ::android::status_t StreamPrimary::pause() {
+-    return isStubStreamOnWorker() ? mStubDriver.pause() : StreamAlsa::pause();
++    return StreamAlsa::pause();
+ }
+ 
+ ::android::status_t StreamPrimary::standby() {
+-    return isStubStreamOnWorker() ? mStubDriver.standby() : StreamAlsa::standby();
++    return StreamAlsa::standby();
+ }
+ 
+ ::android::status_t StreamPrimary::start() {
+@@ -82,7 +81,8 @@
+         StreamAlsa::shutdown();  // Close currently opened ALSA devices.
+     }
+     if (isStub) {
+-        return mStubDriver.start();
++        LOG(ERROR) << __func__ << ": no real ALSA route connected";
++        return ::android::NO_INIT;
+     }
+     RETURN_STATUS_IF_ERROR(StreamAlsa::start());
+     mStartTimeNs = ::android::uptimeNanos();
+@@ -93,51 +93,18 @@
+ 
+ ::android::status_t StreamPrimary::transfer(void* buffer, size_t frameCount,
+                                             size_t* actualFrameCount, int32_t* latencyMs) {
+-    if (isStubStreamOnWorker()) {
+-        return mStubDriver.transfer(buffer, frameCount, actualFrameCount, latencyMs);
+-    }
+-    // This is a workaround for the emulator implementation which has a host-side buffer
+-    // and is not being able to achieve real-time behavior similar to ADSPs (b/302587331).
+-    if (!mSkipNextTransfer) {
+-        RETURN_STATUS_IF_ERROR(
+-                StreamAlsa::transfer(buffer, frameCount, actualFrameCount, latencyMs));
+-    } else {
+-        LOG(DEBUG) << __func__ << ": skipping transfer (" << frameCount << " frames)";
+-        *actualFrameCount = frameCount;
+-        if (mIsInput) memset(buffer, 0, frameCount * mFrameSizeBytes);
+-        mSkipNextTransfer = false;
+-    }
+-    if (!mIsAsynchronous) {
+-        const long bufferDurationUs =
+-                (*actualFrameCount) * MICROS_PER_SECOND / mContext.getSampleRate();
+-        const auto totalDurationUs =
+-                (::android::uptimeNanos() - mStartTimeNs) / NANOS_PER_MICROSECOND;
+-        mFramesSinceStart += *actualFrameCount;
+-        const long totalOffsetUs =
+-                mFramesSinceStart * MICROS_PER_SECOND / mContext.getSampleRate() - totalDurationUs;
+-        LOG(VERBOSE) << __func__ << ": totalOffsetUs " << totalOffsetUs;
+-        if (totalOffsetUs > 0) {
+-            const long sleepTimeUs = std::min(totalOffsetUs, bufferDurationUs);
+-            LOG(VERBOSE) << __func__ << ": sleeping for " << sleepTimeUs << " us";
+-            usleep(sleepTimeUs);
+-        } else {
+-            mSkipNextTransfer = true;
+-        }
+-    } else {
+-        LOG(VERBOSE) << __func__ << ": asynchronous transfer";
+-    }
+-    return ::android::OK;
+-}
+-
+-::android::status_t StreamPrimary::refinePosition(StreamDescriptor::Position*) {
+-    // Since not all data is actually sent to the HAL, use the position maintained by Stream class
+-    // which accounts for all frames passed from / to the client.
+-    return ::android::OK;
++    if (isStubStreamOnWorker()) return ::android::NO_INIT;
++    // Linux uses the real ALSA clock. Never skip a transfer while reporting
++    // its frames consumed to compensate for a Cuttlefish host-side buffer.
++    return StreamAlsa::transfer(buffer, frameCount, actualFrameCount, latencyMs);
++}
++
++::android::status_t StreamPrimary::refinePosition(StreamDescriptor::Position* position) {
++    return StreamAlsa::refinePosition(position);
+ }
+ 
+ void StreamPrimary::shutdown() {
+     StreamAlsa::shutdown();
+-    mStubDriver.shutdown();
+ }
+ 
+ ndk::ScopedAStatus StreamPrimary::setConnectedDevices(const ConnectedDevices& devices) {
+@@ -147,8 +114,12 @@
+                    << devices.size();
+         return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
+     }
++    if (!devices.empty() && useStubStream(mIsInput, devices[0])) {
++        LOG(ERROR) << __func__ << ": simulated route unsupported in Linux ALSA profile";
++        return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
++    }
+     {
+-        const bool useStubDriver = devices.empty() || useStubStream(mIsInput, devices[0]);
++        const bool useStubDriver = devices.empty();
+         std::lock_guard l(mLock);
+         mAlsaDeviceId = useStubDriver ? kStubDeviceId : getCardAndDeviceId(devices);
+     }
+--- a/aidl/default/ModulePrimary.cpp
++++ b/aidl/default/ModulePrimary.cpp
+@@ -68,9 +68,7 @@
+                                                     const std::vector<MicrophoneInfo>& microphones,
+                                                     std::shared_ptr<StreamIn>* result) {
+     if (context.isMmap()) {
+-        // "Stub" is used because there is no support for MMAP audio I/O on CVD.
+-        return createStreamInstance<StreamInMmapStub>(result, std::move(context), sinkMetadata,
+-                                                      microphones);
++        return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
+     }
+     return createStreamInstance<StreamInPrimary>(result, std::move(context), sinkMetadata,
+                                                  microphones);
+@@ -79,45 +77,21 @@
+ ndk::ScopedAStatus ModulePrimary::createOutputStream(
+         StreamContext&& context, const SourceMetadata& sourceMetadata,
+         const std::optional<AudioOffloadInfo>& offloadInfo, std::shared_ptr<StreamOut>* result) {
+-    if (context.isMmap()) {
+-        // "Stub" is used because there is no support for MMAP audio I/O on CVD.
+-        return createStreamInstance<StreamOutMmapStub>(result, std::move(context), sourceMetadata,
+-                                                       offloadInfo);
+-    } else if (areAllBitPositionFlagsSet(
+-                       context.getFlags().get<AudioIoFlags::output>(),
+-                       {AudioOutputFlags::COMPRESS_OFFLOAD, AudioOutputFlags::NON_BLOCKING})) {
+-        // "Stub" is used because there is no actual decoder. The stream just
+-        // extracts the clip duration from the media file header and simulates
+-        // playback over time.
+-        return createStreamInstance<StreamOutOffloadStub>(result, std::move(context),
+-                                                          sourceMetadata, offloadInfo);
++    if (context.isMmap() || areAllBitPositionFlagsSet(
++            context.getFlags().get<AudioIoFlags::output>(),
++            {AudioOutputFlags::COMPRESS_OFFLOAD})) {
++        // The example's MMAP/offload implementations simulate playback.
++        // This Linux profile promises ordinary real PCM, not those backends.
++        return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
+     }
+     return createStreamInstance<StreamOutPrimary>(result, std::move(context), sourceMetadata,
+                                                   offloadInfo);
+ }
+ 
+-ndk::ScopedAStatus ModulePrimary::createMmapBuffer(const AudioPortConfig& portConfig,
+-                                                   int32_t bufferSizeFrames, int32_t frameSizeBytes,
+-                                                   MmapBufferDescriptor* desc) {
+-    const size_t bufferSizeBytes = static_cast<size_t>(bufferSizeFrames) * frameSizeBytes;
+-    // The actual mmap buffer for I/O is created after the stream exits standby, via
+-    // 'IStreamCommon.createMmapBuffer'. But we must return a valid file descriptor here because
+-    // 'MmapBufferDescriptor' can not contain a "null" fd.
+-    const std::string regionName =
+-            std::string("mmap-sim-o-") +
+-            std::to_string(portConfig.ext.get<AudioPortExt::Tag::mix>().handle);
+-    int fd = ashmem_create_region(regionName.c_str(), bufferSizeBytes);
+-    if (fd < 0) {
+-        PLOG(ERROR) << __func__ << ": failed to create shared memory region of " << bufferSizeBytes
+-                    << " bytes";
+-        return ndk::ScopedAStatus::fromExceptionCode(EX_ILLEGAL_STATE);
+-    }
+-    desc->sharedMemory.fd = ndk::ScopedFileDescriptor(fd);
+-    desc->sharedMemory.size = bufferSizeBytes;
+-    desc->burstSizeFrames = bufferSizeFrames / 4;
+-    desc->flags = 1 << MmapBufferDescriptor::FLAG_INDEX_APPLICATION_SHAREABLE;
+-    LOG(DEBUG) << __func__ << ": " << desc->toString();
+-    return ndk::ScopedAStatus::ok();
++ndk::ScopedAStatus ModulePrimary::createMmapBuffer(const AudioPortConfig&,
++                                                   int32_t, int32_t,
++                                                   MmapBufferDescriptor*) {
++    return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
+ }
+ 
+ int32_t ModulePrimary::getNominalLatencyMs(const AudioPortConfig& portConfig) {

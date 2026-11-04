@@ -1,0 +1,20 @@
+{
+  "scope": "Experimental source adaptation, not runtime/output acceptance",
+  "original_project": "hardware/interfaces",
+  "pin": "aa229558cbf04bc997ed27465c5e7ad497123d1b",
+  "files": [
+    {
+      "path": "aidl/default/primary/StreamPrimary.cpp",
+      "original_sha256": "488c9c7ec1ca3da9073c3f8bc737e9c2de9568878f2bb0438cd2cd261988cd91",
+      "adapted_sha256": "bb71c6f794d6da35b160e35fedb2dd30b3d495628381542c3c0064623dbee9a8"
+    },
+    {
+      "path": "aidl/default/ModulePrimary.cpp",
+      "original_sha256": "9a2da29aa4cd4d38dca87520b2834d0ba3c9f30938d9c3d6805526c4170be4bf",
+      "adapted_sha256": "0a806a13d1154e993ba12bc62ad57a03c6e9a22e0df304284ff2518241909d88"
+    }
+  ],
+  "patch_sha256": "fe9de28233156306d435fb29b22612bf6f592ec7418f2b36f0c45e33474e7491",
+  "decision": "Reuse whole original StreamAlsa I/O/clock/error path; reject simulated routes/MMAP/offload rather than fabricate output. Keep class layouts/headers unchanged. Hardware configuration must advertise real ordinary PCM only. Full factory and Bluetooth module dependency closure retained.",
+  "limits": "Still requires compile/link, actual device open/write, playback/clock measurement, real failed-open negative control and APK matrix evidence. This does not establish full input/audio/effects/offload compatibility."
+}

@@ -580,5 +580,55 @@
     "Original vendor-domain policy, devices and isolation in enforcing",
     "Native audio backend startup and audio APK compatibility"
   ],
-  "priority": "Integrated run63 shows logical AudioService/MediaSession startup can proceed without backend; immediate Markor path is native alarm admission and original AMS lifecycle. Audio hardware/performance remains open, not discarded."
+  "priority": "Current critical path after actual VLC284 first frame: deploy privately configured original AIDL primary HAL + audioserver, real card0 PCM profile/device aliases and identities/policy. Verify actual Binder registration, native audio route/open/write/clock plus failed-open negative, then continuous VLC playback, close/reopen. Do not repeat Markor or claim availability by linker success.",
+  "linux_alsa_original_closure": {
+    "utc": "2026-11-04T20:33:01.311873+00:00",
+    "scope": "BUILD ONLY: complete original AIDL core factory and original session/provider/Rust/codec closure, adapted primary ALSA transfers and clock; no runtime availability accepted",
+    "records": [
+      {
+        "path": "dist/aosp16/audio-support-build-11/build.json",
+        "sha256": "602d9e5d0362dd6232e15c818660d0b4fe2b9e10f202267a930812a71a2b0c98"
+      },
+      {
+        "path": "dist/aosp16/audio-linux-primary-build-1/build.json",
+        "sha256": "08bec00123fd4b43d3a75d8c36b2beb251157e72f9fcaaefb6e238da0efe97ed"
+      },
+      {
+        "path": "dist/aosp16/audio-codecs-build-3/build.json",
+        "sha256": "172712fbb665b6eddd12e8627af030aa5e234db938d7d8372cba5f7778ce8a3d"
+      },
+      {
+        "path": "dist/aosp16/audio-offload-rust-library-2/build.json",
+        "sha256": "3bb2adf00eef9ef862f6b029ae45f8b978e717459f23dec5e624d7933a7834b4"
+      },
+      {
+        "path": "dist/aosp16/audio-support-build-12/build.json",
+        "sha256": "a1bb07204df3bc825fa68066d3b9de20bc35388d2a0a40cd29804f81094c0a59"
+      },
+      {
+        "path": "dist/aosp16/audio-linux-core-link-1/link.json",
+        "sha256": "29f877442558d2c5972b2d4742bb1c6ddbbb43b2b93910163b62c5f4746f60ee"
+      },
+      {
+        "path": "dist/aosp16/audio-linux-core-link-2/link.json",
+        "sha256": "25f37a1ffc6141f667fd5117c2e1761f7893a16838d50292cbad8c5b88daeff2"
+      },
+      {
+        "path": "dist/aosp16/audio-linux-core-link-3/link.json",
+        "sha256": "263c1804b86e66bb0e4a58ceb9b8fee0904955a9b2ecb956635b069428bf280b"
+      }
+    ],
+    "binary_sha256": "812b942bbc5eaa9ea700ff73de427d3dcd57908a6a3b9ce3260dba8b638c7f96",
+    "REA_MCP": "reports/android16-audio-bootstrap/core-linux-elf-mcp.json",
+    "boundaries": "Original shared session/provider and HIDL/AIDL interfaces retained. Flattening failed duplicate isOpusHiResCodec; preserved negative. Original whole Rust LE Audio uses original source Binder adapter and pinned offline crates, not stripped image Rust metadata. FlatBuffers target built from original six-unit Android.bp list, independent from host flatc.",
+    "hardware": "Read-only host /proc/asound/cards+pcm confirms Intel82801AA-ICH/AD1980 card0 playback0; hw_params closed. No PCM/mixer writes in this milestone.",
+    "adaptation": "Two primary source units use original StreamAlsa transfer/hardware clock and reject simulated/MMAP/offload routes. No fake frames consumed or NullSink. Existing class layout retained. This requires real PCM-only policy configuration.",
+    "limits": [
+      "Unoptimized Rust development archive; no production size/performance acceptance",
+      "No HAL registration, original audioserver startup or ALSA write yet",
+      "No assertion of Bluetooth/HCI/offload availability; original subsystems are link dependencies",
+      "Soong sanitizer/CFI and logger integration equivalence unproved",
+      "VLC remains first frame only; full R1 and product open"
+    ]
+  }
 }

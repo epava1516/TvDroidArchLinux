@@ -16,6 +16,7 @@ pins = {p.get('path'): p.get('revision') for p in ET.parse(
 inputs = [
     ('hardware/interfaces', 'audio', 'hardware-audio'),
     ('hardware/interfaces', 'bluetooth/audio/aidl', 'bluetooth-audio-aidl'),
+    ('hardware/interfaces', 'bluetooth/audio', 'bluetooth-audio-hidl'),
     ('hardware/interfaces', 'common/aidl', 'common-aidl'),
     ('hardware/interfaces', 'common/fmq/aidl', 'fmq-aidl'),
     ('external/tinyalsa_new', '', 'tinyalsa'),
@@ -28,6 +29,7 @@ inputs = [
     ('system/media', 'audio_route', 'audio-route'),
     ('system/libfmq', '', 'libfmq'),
     ('hardware/interfaces', 'bluetooth/audio/utils', 'bluetooth-audio-utils'),
+    ('hardware/interfaces', 'bluetooth/audio/flags', 'bluetooth-audio-flags'),
     ('system/hardware/interfaces', 'media', 'media-audio-aidl'),
     ('system/media', 'alsa_utils', 'alsa-utils-current'),
     ('frameworks/av', 'media/libaudioclient', 'audioclient'),
@@ -39,6 +41,12 @@ inputs = [
     ('frameworks/av', 'media/libnbaio', 'nbaio'),
     ('frameworks/av', 'media/module/foundation/include', 'stagefright-headers'),
     ('frameworks/av', 'media/utils/include', 'mediautils-headers'),
+    # Original support closure of the core factory's Bluetooth/session modules.
+    ('packages/modules/Bluetooth', 'offload', 'bluetooth-offload'),
+    ('external/flatbuffers', '', 'flatbuffers'),
+    ('external/liblc3', '', 'liblc3'),
+    ('external/libopus', '', 'libopus'),
+    ('external/opus-experimental', '', 'opus-experimental'),
 ]
 
 
