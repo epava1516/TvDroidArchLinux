@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+276 · [Persistencia de calculadora y límite SID](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json), calculator276: [historial tras reapertura](../reports/android16-package-bootstrap/calculator-mac276-persisted-history.png), sólo click History, status kernel real, SID EACCES, cierre/restauración y hashes. R1-MAC sin aceptar.
+
 273 · [Calculadora intacta real](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json), calculator273: instalación/alias original, [resultado2+3=5](../reports/android16-package-bootstrap/calculator-mac273-result.png), [historial](../reports/android16-package-bootstrap/calculator-mac273-history.png), Back/onDestroy y restauración. No reapertura ni aceptación completa de compatibilidad.
 
 272 · [Cierre nativo real y límite del observador](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json), integrated272: STOPPED0, cliente0, recogida y restauración; exterior1 por identidad proc EACCES/None. Hashes de salida y materialización diagnóstica conservados. No aceptación R1-MAC.

@@ -5940,5 +5940,94 @@
       "Original external proc identity verifier still fails under MAC; parent-kernel sampler source not part of274 build and remains untested",
       "Full host/PAM R1-MAC, ARM/GMS/DRM and product/install/update/distro open"
     ]
+  },
+  "calculator276": {
+    "checkpoint": "/home/tv/recuperacion-archtv/1a08cb7d-3300-46f6-90f6-7afbe978e87e-markor-software-launch",
+    "run_id": "1a08cb7d-3300-46f6-90f6-7afbe978e87e",
+    "payload": 276,
+    "application": "org.fossify.math",
+    "result": "Original PackageInstaller recognizes installed Calculator, original alias cold-launches new MainActivity process. Only History click entered; original2+3=5 from273 visible in a distinct cohort after previous app-request Back/onDestroy and cohort teardown. Same UID10104 and exact APK bytes retained.",
+    "stage": {
+      "scope": "Existing UI-created Calculator History2+3=5 visible in a separate cohort after prior Back/app-request finish and cohort teardown. This run sends only click History; no new expression. Natural closure, mode restoration and parent kernel metadata still pending.",
+      "source_cohort": "c7dc6e3e-f562-4ece-beb2-f368cb35f4b9",
+      "current_cohort": "1a08cb7d-3300-46f6-90f6-7afbe978e87e",
+      "images": {
+        "calculator-reopened.png": "c261f949926553ba6e5710661696e53ab615d5eb5e4b9ba9fee9eb404e55c752",
+        "calculator-persisted-history.png": "fd70d50cf8d63e50d5bf398df4227d3269d9b95f36d240a0fa15d66920b1f970"
+      },
+      "input_commands": "{\"id\": 1, \"op\": \"click\", \"position\": [1055, 40]}\n",
+      "original_process_events": [
+        "11-04 17:40:57.606  1000   502   532 I am_proc_start: [0,1401,10104,org.fossify.math,next-top-activity,{org.fossify.math/org.fossify.math.activities.SplashActivity.Green}]",
+        "11-04 17:40:57.606  1000   502   532 I ActivityManager: Start proc 1401:org.fossify.math/u0a104 for next-top-activity {org.fossify.math/org.fossify.math.activities.SplashActivity.Green}"
+      ],
+      "evidence": {
+        "markor-preinstall-path.txt": {
+          "sha256": "5db41ff333b6c6bfeac0d23ef484d817e31e4c42897829c5ba6409a523abb614",
+          "size": 96
+        },
+        "markor-preinstall-dump.txt": {
+          "sha256": "9c06d14daa46c328158cb1356d257eea5ea59e27fd4ff784362775afa4736681",
+          "size": 9267
+        },
+        "markor-installed-bytes.txt": {
+          "sha256": "de8505567ad035b3b65319569c4428a58b48d8839eab9774475e3393f4f1f809",
+          "size": 264
+        },
+        "markor-launch.txt": {
+          "sha256": "4a0b599678e1f0bf142790ec51b916f05f690626fd0f7ed2f4e2731c838832a4",
+          "size": 196
+        },
+        "original-logcat.txt": {
+          "sha256": "2cd49671255bfd35876965aec00ca2bda99964b2e229b675003831bbaaa6f386",
+          "size": 1003345
+        }
+      }
+    },
+    "image": {
+      "path": "reports/android16-package-bootstrap/calculator-mac276-persisted-history.png",
+      "sha256": "fd70d50cf8d63e50d5bf398df4227d3269d9b95f36d240a0fa15d66920b1f970"
+    },
+    "native_close": "Actual original client exit0, native STOPPED0, expected enforcing1 preserved; exterior runner1 retained because process SID observations remain denied/missing.",
+    "parent_metadata": {
+      "frames": 56,
+      "distinct_service_pids": 48,
+      "roles_joined_by_actual_pid": 26,
+      "credential_status_reads_ok": 26,
+      "sid_reads_ok": 0,
+      "sid_eacces": 26,
+      "library_api": "Original Android getpidcon; DISABLE_SETRANS raw-copy source contract. Failed getpidcon_raw link275 preserved. No expected SID assigned.",
+      "scope": "Actual kernel credential/capability reads; SID reads failed. Not authorization, full identity verification or isolation acceptance."
+    },
+    "evidence": {
+      "calculator-reopen-stage.json": "9fa8021c3bbe9d2a4dec9fd42af48a70ee87b89670b6d0f8c770b23d930390fb",
+      "parent-kernel-identity-observations.json": "07287bd528284cfa7aba4a4d990216f34e2dc07707a037bc4baa20aff466281f",
+      "observed-markor-preinstall-path.txt": "5db41ff333b6c6bfeac0d23ef484d817e31e4c42897829c5ba6409a523abb614",
+      "observed-markor-preinstall-dump.txt": "9c06d14daa46c328158cb1356d257eea5ea59e27fd4ff784362775afa4736681",
+      "observed-markor-installed-bytes.txt": "de8505567ad035b3b65319569c4428a58b48d8839eab9774475e3393f4f1f809",
+      "observed-markor-launch.txt": "4a0b599678e1f0bf142790ec51b916f05f690626fd0f7ed2f4e2731c838832a4",
+      "observed-original-logcat.txt": "2cd49671255bfd35876965aec00ca2bda99964b2e229b675003831bbaaa6f386",
+      "input-commands.jsonl": "4c0c12e99e1c9af0242459c333bf4bb4b5e7315a675761762d7ba0f67fdfbcf6",
+      "run.log": "9faab4d48b7502927db5096fb2bef7e96abd3b69a5ee5898552574374a52a49c",
+      "result.json": "e5cb1f1820dd36b704391bc3538684c0dbeadf8ade31e98b1b694c3ae0f3712d",
+      "mac-window.json": "53527d022408431f745e89cb7067077666753118c92af7244866204ac7f3d65b",
+      "session-state.json": "7e857d9f152feff6c98977dfaf2d3d1dc7a0058b3ab7bfd46ca645eaa87352cb",
+      "finite-audit/result.json": "7b6f4fa87a85e352796f78d6b483b9ae37296b82f09c9595f4bd17a6cb6d84b6",
+      "built-source-boundary/linux-mc1-cohort.h": "8e9402a4e5c48f66da5a91ac28d74db6a8f4c2603a5bed4bddbf22838e932aea",
+      "built-source-boundary/linux-property-worker.cpp": "1d3a2348b89c01f5177a2a9d8e78501b9a180cb442916c43a9ed5f66b7e4767c"
+    },
+    "source_and_decision_evidence": {
+      "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/parent-identity-api-source.json": "27e9720be1a77ddca4118bd121e68ea78714734df6bacabc2785f06dcc68fdd6",
+      "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/shell-metadata-av276.json": "4d3f4c3160efc449bc414b078701d8fd378ca058ad8731d40af5c458abca0099",
+      "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/rea-libselinux-layout-unavailable276.json": "fbc7094117ba7a265e2b12246a49af1121f80937c63d329a63639839838b6b8f"
+    },
+    "decision": "Do not grant init/general Linux domain process-getattr to satisfy observer. Loaded kernel policy denies init->artd getattr but allows original shell role metadata. Next use original ps/client for live-app and live-service context evidence; transient helper coverage and full R1 remain open. Leaf app_data_file read AV is allowed in that query and is not a private-data isolation proof; actual path/DAC/MLS/directory traversal must be tested separately.",
+    "closure": "Original native protocol collects cohort, no own loops/dm/FUSE/units; VT1, device/SysRq metadata preserved; MAC restored0; audit unchanged/zero loss; original udev restored; consumed without queue.",
+    "limits": [
+      "Only tested Calculator version2+3/history route; not all features/general APK compatibility",
+      "No host reboot/FBE/durability guarantee by two cohorts",
+      "Full host/PAM, SID collection, tenant isolation and expiration recovery remain open",
+      "REA MCP connected but ELF layout provider unavailable; no ELF inspection inferred",
+      "ARM/GMS/DRM, media/audio and product install/update/distro remain open"
+    ]
   }
 }

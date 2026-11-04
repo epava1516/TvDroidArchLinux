@@ -1,7 +1,7 @@
 # Graph Report - repositorio-principal  (2026-11-04)
 
 ## Corpus Check
-- 350 files · ~329,144 words
+- 350 files · ~329,384 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 53 file(s) not represented in the graph (top: .cil 18, .patch 12, .xml 11)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `5f1e396d`
+- Built from commit: `0491619d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -96,9 +96,9 @@
 - SoftwareCryptoProbe.cpp
 - View
 - Checkpoint y recuperación
-- backend.rs
+- Activity
 - ROADMAP.md
-- logging.rs
+- LinuxWaylandFrameComposer
 - runtime.rs
 - Índice de evidencias
 - Capa de compatibilidad APK propia sobre Linux
@@ -128,7 +128,7 @@
 - Inicio del port de vistas originales
 - Port selectivo del framework original a Linux
 - QueueSemanticsProbe.java
-- LinuxWaylandFrameComposer
+- backend.rs
 - clock
 - Delivery
 - .metafactory
@@ -141,6 +141,7 @@
 - xdg_shell.rs
 - Handler y Looper originales ejecutan mensajes en Linux
 - xdg_shell.rs
+- logging.rs
 - Java_android_os_Binder_getNativeBBinderHolder
 - desktop.rs
 - ThrowableLogProbe.java
@@ -172,7 +173,7 @@
 - Log original de AOSP con JNI Linux
 - Recursos de sistema AOSP junto a los del APK
 - android.rs
-- window_policy.rs
+- Renderer
 - Action
 - Canvas
 - Consultas IWindowManager respaldadas por Wayland
@@ -187,7 +188,6 @@
 - Contrato vigente · AOSP Android 16 QPR2
 - Perfil JNI original de construcción y propiedades RenderNode
 - properties.rs
-- Activity
 - AuditedSectionParser
 - Holder Binder original en ART/Linux
 - Arquitectura vigente · A16-QPR2-1
@@ -202,7 +202,7 @@
 - Roadmap A · plataforma APK general sobre Linux
 - check_host_security.py
 - WaylandInputBridge
-- Renderer
+- window_policy.rs
 - LocalServiceBinder.java
 - ApkMetadata
 - Puerta vigente: Binder privado y política del Linux anfitrión
@@ -225,10 +225,10 @@
 - SignPlatformOverlay.java
 - linux-exec-context.c
 - ClientState
-- OriginalJavaProviderProbe
+- findDisplays
 - SystemResourcesChecks.java
 - install-markor.sh
-- findDisplays
+- OriginalJavaProviderProbe
 - ServiceCacheProbe.java
 - Base actual y herramientas conservadas
 - IdentitySample
@@ -455,13 +455,9 @@ Nodes (12): OnClickListener, View, ViewGroup, Button, LinearLayout, TextView, Ma
 Cohesion: 0.67
 Nodes (3): Al cerrar un hito o antes de interrumpir/reiniciar, Al retomar, Checkpoint y recuperación
 
-### Community 82 - "backend.rs"
-Cohesion: 0.19
-Nodes (3): Backend, Launch, Update
-
-### Community 84 - "logging.rs"
-Cohesion: 0.32
-Nodes (8): Java_android_util_Log_isLoggable(), Java_android_util_Log_logger_1entry_1max_1payload_1native(), Java_android_util_Log_println_1native(), level(), PAYLOAD, prefix(), string(), threshold()
+### Community 84 - "LinuxWaylandFrameComposer"
+Cohesion: 0.16
+Nodes (8): LinuxWaylandFrameComposer, callback_, callback_mutex_, connected_, display_live_, mutex_, output_, stop_
 
 ### Community 86 - "Índice de evidencias"
 Cohesion: 0.06
@@ -535,9 +531,9 @@ Nodes (4): Inicialización original y estados de View, Inicio del port de vistas
 Cohesion: 0.18
 Nodes (10): Base de estudio fijada, Compilación inicial de vistas, Fronteras concretas, Integración en la APK, JNI Linux verificado, Port selectivo del framework original a Linux, Primer conjunto original compilado, Primer despacho original (+2 more)
 
-### Community 114 - "LinuxWaylandFrameComposer"
-Cohesion: 0.16
-Nodes (8): LinuxWaylandFrameComposer, callback_, callback_mutex_, connected_, display_live_, mutex_, output_, stop_
+### Community 114 - "backend.rs"
+Cohesion: 0.19
+Nodes (3): Backend, Launch, Update
 
 ### Community 115 - "clock"
 Cohesion: 0.45
@@ -566,6 +562,10 @@ Nodes (60): LinuxMc1Cohort, aconfig_mainline_, aconfig_mainline_clean_exit_, aco
 ### Community 125 - "Handler y Looper originales ejecutan mensajes en Linux"
 Cohesion: 0.50
 Nodes (3): Handler y Looper originales ejecutan mensajes en Linux, Implementación y fronteras, Pruebas y evidencia
+
+### Community 127 - "logging.rs"
+Cohesion: 0.32
+Nodes (8): Java_android_util_Log_isLoggable(), Java_android_util_Log_logger_1entry_1max_1payload_1native(), Java_android_util_Log_println_1native(), level(), PAYLOAD, prefix(), string(), threshold()
 
 ### Community 128 - "Java_android_os_Binder_getNativeBBinderHolder"
 Cohesion: 0.46
@@ -638,6 +638,10 @@ Nodes (3): Construcción y carga explícita, Evidencia y frontera siguiente, Rec
 ### Community 159 - "android.rs"
 Cohesion: 0.24
 Nodes (6): CONTRACT_VERSION, InstallPolicy, NewOnly, Replace, InstallReceipt, ProviderError
+
+### Community 160 - "Renderer"
+Cohesion: 0.28
+Nodes (3): Message, Node, Renderer
 
 ### Community 161 - "Action"
 Cohesion: 0.10
@@ -723,10 +727,6 @@ Nodes (9): inspect(), main(), read_status(), read_text(), status_snapshot(), zer
 Cohesion: 0.17
 Nodes (3): SelectedServices, ServiceLauncher, WaylandInputBridge
 
-### Community 221 - "Renderer"
-Cohesion: 0.28
-Nodes (3): Message, Node, Renderer
-
 ### Community 225 - "ready"
 Cohesion: 0.40
 Nodes (5): Histórico · primer intento APEX, superado por el hito anterior, Histórico · primer intento APEX, superado por el hito anterior, Histórico · primer intento APEX, superado por el hito anterior, Histórico · primer intento APEX, superado por el hito anterior, ready()
@@ -792,13 +792,13 @@ Nodes (4): audit(), inside(), inventory(), main()
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `ready()` connect `ready` to `re`, `verify_wayland_resize.py`?**
-  _High betweenness centrality (0.172) - this node is a cross-community bridge._
+  _High betweenness centrality (0.171) - this node is a cross-community bridge._
 - **What connects `archtv-aosp-linux`, `archtv-apk-host`, `archtv-compositor` to the rest of the system?**
   _246 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `worker.rs` be split into smaller, more focused modules?**
   _Cohesion score 0.10420168067226891 - nodes in this community are weakly interconnected._
 - **Why does `TvCompositor` connect `TvCompositor` to `winit.rs`, `mod.rs`, `input.rs`, `drm.rs`, `session.rs`, `.process_input_event`, `compositor.rs`, `xdg_shell.rs`?**
-  _High betweenness centrality (0.073) - this node is a cross-community bridge._
+  _High betweenness centrality (0.072) - this node is a cross-community bridge._
 - **Should `resources-jni.cpp` be split into smaller, more focused modules?**
   _Cohesion score 0.13535353535353536 - nodes in this community are weakly interconnected._
 - **Why does `Estado actual y punto de entrada` connect `Capa de compatibilidad APK propia sobre Linux` to `ready`, `ROADMAP.md`, `Historial conservado · no es el estado vigente`?**

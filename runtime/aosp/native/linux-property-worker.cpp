@@ -175,7 +175,7 @@ int main(int argc,char** argv) {
     if(!setup.ok())return 70;
     bool stop=false,peer_gone=false,invalid=false;std::string input;
     archtv::aosp::LinuxMc1Cohort cohort(&epoll,stop,launch_enforcing,hardware,graphics,surfaceflinger,selected,apex,wayland_channel.release());
-    auto tick=[&]{return PollLinuxPropertyActions(&epoll,std::chrono::milliseconds(50)).ok() && children.healthy() && !shutdown.failed();};
+    auto tick=[&]{cohort.ObserveOwnedServiceIdentities();return PollLinuxPropertyActions(&epoll,std::chrono::milliseconds(50)).ok() && children.healthy() && !shutdown.failed();};
     auto registered=epoll.RegisterHandler(control.get(),[&]{
         char bytes[64];
         for(int turn=0;turn<4;++turn) {
@@ -221,7 +221,10 @@ int main(int argc,char** argv) {
         healthy=admitted.ok();
     }
     if(healthy)healthy=send_status(control.get(),diagnostic?"ARCHTV_NATIVE_V1 DIAGNOSTIC_STARTED\n":"ARCHTV_NATIVE_V1 STARTED\n");
-    while(healthy && !stop)healthy=PollLinuxPropertyActions(&epoll,std::chrono::milliseconds(250)).ok() && children.healthy() && !shutdown.failed() && (!mc1 || cohort.healthy());
+    while(healthy && !stop) {
+        if(mc1)cohort.ObserveOwnedServiceIdentities();
+        healthy=PollLinuxPropertyActions(&epoll,std::chrono::milliseconds(250)).ok() && children.healthy() && !shutdown.failed() && (!mc1 || cohort.healthy());
+    }
     const bool intentional_apex_stop=apex && healthy && stop && !peer_gone && !invalid;
     if(intentional_apex_stop && !cohort.apex_exited_cleanly())shutdown.ExpectApexdCancellation();
     if(intentional_apex_stop && packages)shutdown.ExpectVoldCancellation();

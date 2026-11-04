@@ -31,6 +31,7 @@
 #include <functional>
 #include <string>
 #include <sstream>
+#include <map>
 
 namespace archtv::aosp {
 class LinuxMc1Cohort {
@@ -161,6 +162,50 @@ class LinuxMc1Cohort {
         if(errno!=ENOENT)return android::base::Error()<<"Cannot inspect Linux KeyMint diagnostic profile";
         if(hardware_requested_)return apex_requested_ && selected_requested_ ? StartGraphics(tick) : StartHardware(tick);
         return {};
+    }
+    // Bounded kernel observations from the admitted original init parent.
+    // Diagnostic only: never substitute intended SID/credentials or change
+    // policy/readiness. Linux observers can be denied cross-domain proc reads.
+    void ObserveOwnedServiceIdentities() {
+        if(!active_ || closing_)return;
+        const auto now=std::chrono::steady_clock::now();
+        for(const auto& service:android::init::ServiceList::GetInstance()) {
+            const pid_t pid=service->pid();
+            if(!service->IsRunning() || pid<=0)continue;
+            if(!identity_samples_.count(pid) && identity_samples_.size()>=256)continue;
+            auto& sample=identity_samples_[pid];
+            if(sample.attempts>=16 || now<sample.next)continue;
+            ++sample.attempts;sample.next=now+std::chrono::milliseconds(50);
+            char* context=nullptr;errno=0;
+            // Original Android API; DISABLE_SETRANS makes its context copy raw.
+            const int context_result=getpidcon(pid,&context);
+            const int context_error=context_result<0?errno:0;
+            const std::string actual_context=context_result==0 && context?context:"";
+            if(context)freecon(context);
+            std::string status;errno=0;
+            const bool status_read=android::base::ReadFileToString("/proc/"+std::to_string(pid)+"/status",&status);
+            const int status_error=status_read?0:errno;
+            std::string fields;
+            if(status_read && status.size()<=16384) {
+                std::istringstream lines(status);std::string line;
+                while(std::getline(lines,line)) {
+                    if(line.rfind("Uid:",0)==0 || line.rfind("Gid:",0)==0 || line.rfind("Groups:",0)==0 ||
+                       line.rfind("CapEff:",0)==0 || line.rfind("CapPrm:",0)==0 || line.rfind("CapBnd:",0)==0 ||
+                       line.rfind("NoNewPrivs:",0)==0)fields+=line+"\n";
+                }
+            }
+            const auto hex=[](const std::string& value) {
+                static constexpr char digits[]="0123456789abcdef";std::string result;
+                for(unsigned char byte:value){result+=digits[byte>>4];result+=digits[byte&15];}
+                return result.empty()?std::string("-"):result;
+            };
+            const std::string signature=actual_context+fields+std::to_string(context_error)+":"+std::to_string(status_error);
+            if(sample.observed && sample.last==signature)continue;
+            sample.observed=true;sample.last=signature;
+            std::fprintf(stderr,"MC1_PARENT_KERNEL_IDENTITY_V1 parent=%d pid=%d name_hex=%s context_hex=%s context_errno=%d status_hex=%s status_errno=%d status_bounded=%d NOT_IDENTITY_ACCEPTANCE\n",
+                getpid(),pid,hex(service->name()).c_str(),hex(actual_context).c_str(),context_error,
+                hex(fields).c_str(),status_error,status_read && status.size()<=16384);
+        }
     }
     bool vold_cancelled() const { return vold_cancelled_; }
     bool apex_cancelled() const { return apex_cancelled_; }
@@ -1231,6 +1276,11 @@ class LinuxMc1Cohort {
                 return android::base::Error()<<"MC1 original progress deadline/error";
         }
     }
+    struct IdentitySample {
+        unsigned attempts=0;bool observed=false;std::string last;
+        std::chrono::steady_clock::time_point next{};
+    };
+    std::map<pid_t,IdentitySample> identity_samples_;
     android::init::Epoll* epoll_;
     const bool& stop_;
     const int expected_mode_;
