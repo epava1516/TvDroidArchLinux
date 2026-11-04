@@ -35,7 +35,7 @@
     "path": "/home/tv/recuperacion-archtv/20261104T-pcm-clock-comparison/result.json",
     "sha256": "ac1d8b7f806267e4b30453350dcc38a40a9ad0095917f1b995d763743376e110"
   },
-  "next_action": "Diagnose Linux AC97/VM timing and EIO before changing original audio transfer; validate corrected observer in next justified integrated cohort. Continuous playback and lifecycle remain open.",
+  "next_action": "Investigate host/hypervisor AC97 delivery clock and source PCM duration/drain contract before further HAL changes. Validate corrected observer in next justified integrated cohort; no sound/R1 acceptance.",
   "history298": {
     "record": "/home/tv/recuperacion-archtv/fd9a66d4-7cff-417e-ae30-595953561aa1-markor-software-launch/write-observation-result.json",
     "sha256": "d23296e08ae65e1a8a2f321f5865d5e37881bdca3b71344f717aeb6612c42a62",
@@ -77,5 +77,10 @@
       }
     },
     "candidate_inputs_scope": "Hashes identify the tested historical candidate. Project source paths may advance; immutable source copies above and Git retain the tested content. Dist artifacts remain original."
+  },
+  "linux_vm_optimization": {
+    "record": "/home/tv/recuperacion-archtv/20261104T-ac97-vm-optimization/result.json",
+    "sha256": "2463ef4d12c00aada12a46c6940c75991790065f00caecfbdafc26fefd0ec4dd",
+    "decision": "No persistent override. Two exit0 runs still2.77/2.63s for4s source. inside_vm alone does not resolve timing. Explicit recovery after invalid negative bint argument; original default/mixer verified."
   }
 }
