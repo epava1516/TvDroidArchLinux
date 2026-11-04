@@ -6,6 +6,7 @@ r=Path(__file__).resolve().parents[2];out=(r/sys.argv[1]).resolve();out.mkdir()
 tracked_inputs=['Cargo.toml','Cargo.lock','crates/archtv-core/Cargo.toml',*[str(p.relative_to(r)) for p in sorted((r/'crates/archtv-core/src').rglob('*.rs'))],'crates/archtv-core/examples/native_supervisor.rs','reports/android16-package-bootstrap/execute-integrated.py','reports/android16-package-bootstrap/integrated-session.sh','reports/android16-apex-bootstrap/run.py','reports/android16-package-bootstrap/build-platform-overlay.py','tools/apk/SignPlatformOverlay.java','runtime/aosp/platform-overlay/AndroidManifest.xml','runtime/aosp/platform-overlay/res/values/config.xml','runtime/aosp/platform-overlay/overlay-config.xml','reports/android16-apex-bootstrap/devices.py','runtime/aosp/linux-services/initial-apk-profile.json','runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java','runtime/aosp/linux-services/org/archtv/aosplinux/ServiceLauncher.java','runtime/aosp/linux-services/install-markor.sh','runtime/aosp/native/linux-property-worker.cpp','runtime/aosp/native/linux-mc1-cohort.h','reports/android16-package-bootstrap/build-integrated.py','runtime/aosp/android16-qpr2/patches/0004-linux-admitted-lazy-services.patch','fixtures/aosp-keymint-software/SoftwareCryptoProbe.cpp','runtime/aosp/native/linux-keymint-service.cpp','reports/android16-package-bootstrap/build-keymint-software.py','fixtures/aosp-keystore2-software/BinderClient.rs','runtime/aosp/android16-qpr2/patches/keystore2-linux-software.patch','fixtures/aosp-keystore2-software/OriginalJavaProviderProbe.java','runtime/aosp/android16-qpr2/patches/framework-keystore-linux-software.patch','tools/aosp/KeystoreFrameworkProfilePlan.java','tools/aosp/build_software_keystore_framework.py','reports/android16-package-bootstrap/build-keystore-java-probe.py','reports/android16-package-bootstrap/build-gatekeeper-software.py']
 tracked_inputs.extend(['reports/android16-package-bootstrap/userdata.py','reports/android16-hwc3-wayland/build-minigbm.py','reports/android16-hwc3-wayland/link-minigbm.py'])
 tracked_inputs.append('reports/android16-package-bootstrap/build-bootstrap-xml.py')
+tracked_inputs.extend(['runtime/aosp/linux-services/archtv/runtime/SelectedRuntime.java','tools/aosp/ZygoteSelectedEntryPlan.java','tools/aosp/build_selected_zygote_framework.py','reports/android16-selected-display/build-entry.py','runtime/aosp/android16-qpr2/patches/framework-zygote-selected-entry.patch'])
 tracked_inputs.append('reports/android16-network-bootstrap/boundary.py')
 tracked_inputs.extend(['runtime/aosp/native/linux-wayland-frame-composer.cpp','runtime/aosp/native/linux-wayland-frame-composer.h','reports/android16-hwc3-wayland/build-input.py'])
 tracked_inputs.extend(['reports/android16-selected-display/build-entry.py','runtime/aosp/linux-services/org/archtv/aosplinux/WaylandInputBridge.java','runtime/aosp/native/linux-wayland-input.h','runtime/aosp/native/linux-wayland-output.cpp','reports/android16-property-actions/apply-patch-chain.py','reports/android16-property-actions/build-lazy-control.py',*[str(p.relative_to(r)) for p in sorted((r/'runtime/aosp/android16-qpr2/patches').glob('000[1-5]-*.patch'))]])
@@ -241,6 +242,19 @@ if keystore_component:
   assert all(c['exit']==0 for c in probe_build['commands'])
   assert hashlib.sha256((r/'fixtures/aosp-keystore2-software/OriginalJavaProviderProbe.java').read_bytes()).hexdigest()==probe_build['source_sha256']
   assert hashlib.sha256((probe/'probe.jar').read_bytes()).hexdigest()==probe_build['jar_sha256']
+  if software_platform:
+   composition=r/'dist/aosp16/selected-zygote-framework-7'
+   composed=json.loads((composition/'build.json').read_text())
+   assert composed['parent_sha256']==framework_build['output']['sha256']
+   assert hashlib.sha256((composition/'framework.jar').read_bytes()).hexdigest()==composed['output_sha256']
+   assert hashlib.sha256((r/'tools/aosp/build_selected_zygote_framework.py').read_bytes()).hexdigest()==composed['builder_sha256']
+   assert hashlib.sha256((r/'tools/aosp/ZygoteSelectedEntryPlan.java').read_bytes()).hexdigest()==composed['planner_sha256']
+   framework=composition
+   framework_build={**framework_build,'output':{'sha256':composed['output_sha256'],'path':str(composition/'framework.jar')}}
+   (out/'selected-zygote-framework.json').write_text(json.dumps(composed,indent=2)+'\n')
+   assert composed['changes'][0]['after']=='archtv.runtime.SelectedRuntime'
+   marker=out/'selected-systemserver-profile';marker.write_text('selected-zygote-entry-v1\narchtv.runtime.SelectedRuntime\n')
+   vendor['files']['/vendor/etc/archtv-selected-systemserver-profile']={'source':str(marker),'context':'u:object_r:vendor_configs_file:s0','mode':0o444}
   java_marker=out/'java-profile';java_marker.write_text('software-java-profile-v1\n')
   for target,source,context in [('/bin/archtv-keystore-framework.jar',framework/'framework.jar','system_file'),('/vendor/framework/archtv-keystore-probe.jar',probe/'probe.jar','vendor_file'),('/vendor/etc/archtv-keystore-java',java_marker,'vendor_configs_file')]:
    vendor['files'][target]={'source':str(source),'context':'u:object_r:'+context+':s0','mode':0o444}
@@ -270,6 +284,7 @@ vendor['files']['/system_ext/etc/build.prop']={'source':str(out/'system-ext-buil
 vendor['files']['/vendor/build.prop']['source']=str(out/'linux-build.prop')
 vendor['files']['/vendor/overlay/ArchTvPlatform/ArchTvPlatform.apk']={'source':str(overlay/'ArchTvPlatform.apk'),'context':'u:object_r:vendor_overlay_file:s0','mode':0o644}
 vendor['files']['/vendor/overlay/config/config.xml']={'source':str(r/'runtime/aosp/platform-overlay/overlay-config.xml'),'context':'u:object_r:vendor_overlay_file:s0','mode':0o644}
+vendor['files']['/vendor/framework/archtv-selected-services.jar']['context']='u:object_r:system_file:s0'
 profile=json.loads((r/'runtime/aosp/linux-services/initial-apk-profile.json').read_text())
 profile_lines=[]
 for item in profile['excluded']:
@@ -286,8 +301,10 @@ if workflow_token is not None:
 vendor['files']['/vendor/bin/install-markor.sh']={'source':str(r/'runtime/aosp/linux-services/install-markor.sh'),'context':'u:object_r:vendor_file:s0','mode':0o644}
 zygote=(r/'dist/aosp16/factory-inputs-3/root/system/etc/init/hw/init.zygote64.rc').read_text()
 assert zygote.count(' --start-system-server')==1
-zygote=zygote.replace(' --start-system-server','')
+# Preserve original system-server fork; pinned framework profile selects only our entry.
+if not software_platform:zygote=zygote.replace(' --start-system-server','')
 zygote+=''.join('    setenv '+key+' '+value+'\n' for key,value in {'ANDROID_ART_ROOT':'/apex/com.android.art','ANDROID_I18N_ROOT':'/apex/com.android.i18n','ANDROID_TZDATA_ROOT':'/apex/com.android.tzdata'}.items())
+zygote+='    setenv ARCHTV_SOFTWARE_SECURITY_PROFILE software-platform-v1\n'
 (out/'app-zygote.rc').write_text(zygote)
 vendor['files']['/vendor/etc/init/archtv-app-zygote.rc']={'source':str(out/'app-zygote.rc'),'context':'u:object_r:vendor_configs_file:s0','mode':0o644}
 health=Path('/home/tv/.cache/archtv/aosp16-qpr2/health-original-study-1/hardware-health/aidl/default')

@@ -16,7 +16,7 @@ dex.mkdir()
 source = ROOT / 'runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java'
 commands = []
 for stage in range(2):
-    argv = ['javac', '--release', '8', '-d', str(classes), str(source), str(source.with_name('ServiceLauncher.java')), str(source.with_name('WaylandInputBridge.java'))] if stage == 0 else ['java', '-cp', '/home/tv/.cache/archtv/apk-build-tools/r8.jar',
+    argv = ['javac', '--release', '8', '-d', str(classes), str(source), str(source.with_name('ServiceLauncher.java')), str(source.with_name('WaylandInputBridge.java')), str(ROOT/'runtime/aosp/linux-services/archtv/runtime/SelectedRuntime.java')] if stage == 0 else ['java', '-cp', '/home/tv/.cache/archtv/apk-build-tools/r8.jar',
               'com.android.tools.r8.D8', '--min-api', '36', '--output', str(dex),
               *map(str, classes.rglob('*.class'))]
     result = subprocess.run(argv, capture_output=True, text=True, timeout=90)

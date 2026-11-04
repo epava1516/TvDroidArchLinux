@@ -1,0 +1,5 @@
+--- a/core/java/com/android/internal/os/ZygoteInit.java
++++ b/core/java/com/android/internal/os/ZygoteInit.java
+@@ -727,1 +727,1 @@
+-                "com.android.server.SystemServer",
++                "archtv.runtime.SelectedRuntime",

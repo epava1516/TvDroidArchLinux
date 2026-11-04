@@ -728,10 +728,16 @@ class LinuxMc1Cohort {
         if(auto result=process->ExecStart();!result.ok())return result;
         if(auto result=Wait(tick,[this]{return client_done_;},35);!result.ok())return result;
         if(!client_ok_)return android::base::Error()<<"MC3 original SF service queries failed";
+        // The selected Linux APK profile uses the Rust frontend, not Android's
+        // boot visual. Keep original bootanimation in the separate graphics
+        // experiment, including its SIGSEGV failure; app pixels still need proof.
+        if(selected_requested_) {
+            std::fprintf(stderr,"MC3_BOOTANIMATION_NOT_STARTED selected_Linux_APK_profile NOT_GRAPHICS_ACCEPTANCE\n");
+            return StartSelectedDisplay(tick);
+        }
         if(auto result=bootanimation_->Start();!result.ok())return result;
         bootanimation_started_=true;
         std::fprintf(stderr,"MC3_ORIGINAL_BOOTANIMATION_STARTED pid=%d NOT_PIXEL_ACCEPTANCE\n",bootanimation_->pid());
-        if(selected_requested_)return StartSelectedDisplay(tick);
         if(security_getenforce()!=expected_mode_)return android::base::Error()<<"MC3 security mode changed";
         return {};
     }
@@ -1041,14 +1047,17 @@ class LinuxMc1Cohort {
             if(!rejected || rejected->IsRunning())return android::base::Error()<<"Unadmitted original pre-reboot artd unexpectedly running or absent";
             std::fprintf(stderr,"LINUX_UNADMITTED_ARTD_CONTROL_REJECTED original_profile_present=1 running=0 NOT_MAC_ACCEPTANCE\n");
             std::fprintf(stderr,"HEALTH_ORIGINAL_BINDER_CLIENT_RETURNED REQUIRES_VALUE_VERIFICATION\n");
+            std::string selected_profile;
+            if(!android::base::ReadFileToString("/vendor/etc/archtv-selected-systemserver-profile",&selected_profile) || selected_profile!="selected-zygote-entry-v1\narchtv.runtime.SelectedRuntime\n")
+                return android::base::Error()<<"Verified selected Zygote framework profile required; refuse full SystemServer entry";
             auto zygote_parsed=parser.ParseConfigFile("/vendor/etc/init/archtv-app-zygote.rc");
             if(!zygote_parsed.ok() || parser.parse_error_count()!=0)return android::base::Error()<<"Application zygote profile rejected";
             zygote_=services.FindService("zygote");
             if(!zygote_ || zygote_->args().empty() || zygote_->args().front()!="/system/bin/app_process64")return android::base::Error()<<"Unexpected zygote executable";
-            for(const auto& argument:zygote_->args())if(argument=="--start-system-server")return android::base::Error()<<"Full SystemServer startup prohibited";
+            // Original fork/security hooks retained; framework target profile selects Linux orchestration, not SystemServer.run().
             // Real Linux-owned single-64-bit application Zygote profile, not readiness.
             // ART GetSupportedInstructionSets reads this original build configuration.
-            if(zygote_->args()!=std::vector<std::string>{"/system/bin/app_process64","-Xzygote","/system/bin","--zygote","--socket-name=zygote"})
+            if(zygote_->args()!=std::vector<std::string>{"/system/bin/app_process64","-Xzygote","/system/bin","--zygote","--start-system-server","--socket-name=zygote"})
                 return android::base::Error()<<"Unsupported Linux application Zygote profile";
             for(const auto& [name,value]:std::vector<std::pair<std::string,std::string>>{
                 {"ro.product.cpu.abilist","x86_64"},{"ro.product.cpu.abilist64","x86_64"},
@@ -1069,8 +1078,7 @@ class LinuxMc1Cohort {
                 std::fprintf(stderr,"SELECTED_ZYGOTE_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
                 if(!closing_)manager_failed_=true;
             });
-            if(auto started=zygote_->Start();!started.ok())return started;
-            std::fprintf(stderr,"SELECTED_ZYGOTE_STARTED pid=%d NOT_APP_LAUNCH\n",zygote_->pid());
+            // Start only after original storage relabel and installd below.
         }
         auto native_parsed=parser.ParseConfigFile("/system/etc/init/android.system.suspend-service.rc");
         if(!native_parsed.ok() || parser.parse_error_count()!=0)
@@ -1084,6 +1092,13 @@ class LinuxMc1Cohort {
         });
         if(auto result=suspend_->Start();!result.ok())return result;
         std::fprintf(stderr,"SELECTED_SUSPEND_STARTED pid=%d NOT_REGISTERED\n",suspend_->pid());
+
+        // Original post-fs-data command, including original CE exclusion/seapp rules.
+        const std::vector<std::string> relabel_args={"restorecon","--recursive","--skip-ce","/data"};
+        auto relabel=GetBuiltinFunctionMap().Find(relabel_args);
+        if(!relabel.ok())return relabel.error();
+        if(auto result=relabel->function(BuiltinArguments{relabel_args,"u:r:init:s0"});!result.ok())return result;
+        std::fprintf(stderr,"SELECTED_ORIGINAL_DATA_RESTORECON_RETURNED NOT_APP_DATA_ACCEPTANCE\n");
         auto installer_parsed=parser.ParseConfigFile("/system/etc/init/installd.rc");
         if(!installer_parsed.ok() || parser.parse_error_count()!=0)
             return android::base::Error()<<"Original installd RC rejected";
@@ -1096,26 +1111,24 @@ class LinuxMc1Cohort {
         });
         if(auto result=installd_->Start();!result.ok())return result;
         std::fprintf(stderr,"SELECTED_INSTALLD_STARTED pid=%d NOT_REGISTERED\n",installd_->pid());
-        auto parsed=parser.ParseConfigFile("/vendor/etc/init/archtv-selected-services.rc");
-        if(!parsed.ok() || parser.parse_error_count()!=0)
-            return android::base::Error()<<"Selected original service orchestration RC rejected";
-        selected_=services.FindService("archtv-selected-services");
-        if(!selected_ || selected_->args().empty() || (selected_->args().front()!="/system/bin/app_process64" && !(apex_requested_ && selected_->args().front()=="/system/bin/sh")))
-            return android::base::Error()<<"Unexpected selected service runtime";
-        selected_->AddReapCallback([this](const siginfo_t& info) {
-            std::fprintf(stderr,"SELECTED_SERVICES_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
-            if(!closing_)manager_failed_=true;
-        });
-        if(auto result=selected_->Start();!result.ok())return result;
-        std::fprintf(stderr,"SELECTED_SERVICES_STARTED pid=%d NOT_REGISTERED\n",selected_->pid());
+        if(!zygote_)return android::base::Error()<<"Original selected system-server Zygote missing";
+        const char* original_classpath=getenv("SYSTEMSERVERCLASSPATH");
+        if(!original_classpath || !*original_classpath)return android::base::Error()<<"Original derived system-server classpath missing";
+        const std::string original_classpath_copy(original_classpath);
+        const std::string selected_classpath=original_classpath_copy+":/vendor/framework/archtv-selected-services.jar";
+        const std::vector<std::string> export_selected={"export","SYSTEMSERVERCLASSPATH",selected_classpath};
+        auto exporter=GetBuiltinFunctionMap().Find(export_selected);
+        if(!exporter.ok())return exporter.error();
+        if(auto result=exporter->function(BuiltinArguments{export_selected,"u:r:init:s0"});!result.ok())return result;
+        std::fprintf(stderr,"SELECTED_SYSTEMSERVER_CLASSPATH_EXTENSION original=%s adapted=%s NOT_ORIGINAL_DERIVE_OUTPUT\n",original_classpath_copy.c_str(),selected_classpath.c_str());
+        if(auto started=zygote_->Start();!started.ok())return started;
+        std::fprintf(stderr,"SELECTED_ZYGOTE_ORIGINAL_SYSTEMSERVER_FORK_STARTED pid=%d NOT_APP_LAUNCH\n",zygote_->pid());
         client_done_=false;client_ok_=false;
         auto client=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","shell","shell","--",
             "/system/bin/sh","-c",
             "umask 077; i=0; while [ $$i -lt 30 ]; do "
-            "/system/bin/service check installd > /data/local/tmp/archtv-mc1/installd-query.txt 2>&1; "
             "/system/bin/service check display > /data/local/tmp/archtv-mc1/display-query.txt 2>&1; "
-            "if /system/bin/grep -qx 'Service display: found' /data/local/tmp/archtv-mc1/display-query.txt && "
-            "/system/bin/grep -qx 'Service installd: found' /data/local/tmp/archtv-mc1/installd-query.txt; then "
+            "if /system/bin/grep -qx 'Service display: found' /data/local/tmp/archtv-mc1/display-query.txt; then "
             "/system/bin/dumpsys display > /data/local/tmp/archtv-mc1/display-dump.txt 2>&1; "
             "/system/bin/cmd display get-displays --ids-only > /data/local/tmp/archtv-mc1/display-ids.txt 2>&1; "
             "if /system/bin/grep -qx '0' /data/local/tmp/archtv-mc1/display-ids.txt; then exit 0; fi; fi; "

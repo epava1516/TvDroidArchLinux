@@ -3178,5 +3178,169 @@
         "sha256": "493441f6882d9374e3d6d0268f2a667c5c7712730ea95c86eec7466c025c442d"
       }
     ]
+  },
+  "integrated232_234": {
+    "utc": "2026-11-04T08:58:56.260867+00:00",
+    "executions": [
+      232,
+      233,
+      234
+    ],
+    "artifact_latest": 234,
+    "policy": 42,
+    "enforcing_seconds": 35.35628428200016,
+    "framework_adaptation": {
+      "parent": "/home/tv/repositorio-principal/dist/aosp16/keystore-framework-profile-2/framework.jar",
+      "parent_sha256": "c21c036adb3fe619c623b4a69234d6b685a1c659c70d19ac028b7d097f4c4147",
+      "source": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/ZygoteInit.java",
+      "source_sha256": "e2299c75b02bfe180deb346b14d80a71cafe5258a05f0ff6c3f39fc024441bae",
+      "source_patch_sha256": "a180d113c4ec2c0f0b1abf1170d116102d7c2880a593ef18c97e03bf54784c3c",
+      "planner_sha256": "f3fb1adba10f91868ab0962a35907e66f249a6276e9001b2250639714188e011",
+      "builder_sha256": "31ecde4cf1491c0db357659c45a4844efce6f61e4bb3cc56877e0a14cd8d9904",
+      "output": "/home/tv/repositorio-principal/dist/aosp16/selected-zygote-framework-7/framework.jar",
+      "output_sha256": "9ef1ad69322aa91299f060276779789354ebad0f831ab73babf673a7edbf674f",
+      "changes": [
+        {
+          "entry": "classes5.dex",
+          "method": "ZygoteInit.forkSystemServer",
+          "before": "com.android.server.SystemServer",
+          "after": "archtv.runtime.SelectedRuntime",
+          "methods_verified": 54525,
+          "instruction_differences": 1,
+          "original_shared_string_references": 1,
+          "original_sha256": "5487da0c0dda05620a753e9e08c429731297875e5ce22851b157f09605e7f496",
+          "adapted_sha256": "67330d4e0b09769802fd0cf0a701773bea28d18be91bc9bd6ebde49f57d1c409"
+        }
+      ],
+      "commands": [
+        {
+          "argv": [
+            "javac",
+            "-cp",
+            "/home/tv/.local/share/rea/android/jadx-headless-mcp-0.7.1-all.jar",
+            "-d",
+            "/home/tv/repositorio-principal/dist/aosp16/selected-zygote-framework-7",
+            "/home/tv/repositorio-principal/tools/aosp/ZygoteSelectedEntryPlan.java"
+          ],
+          "exit": 0,
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "java",
+            "-cp",
+            "/home/tv/repositorio-principal/dist/aosp16/selected-zygote-framework-7:/home/tv/.local/share/rea/android/jadx-headless-mcp-0.7.1-all.jar",
+            "ZygoteSelectedEntryPlan",
+            "/home/tv/repositorio-principal/dist/aosp16/keystore-framework-profile-2/framework.jar",
+            "/home/tv/repositorio-principal/dist/aosp16/selected-zygote-framework-7/adapted.dex"
+          ],
+          "exit": 0,
+          "stderr": ""
+        }
+      ],
+      "scope": "Original framework plus prior explicit keystore profile; one Zygote target instruction reference adapted with dexlib2; shared SystemServer references retained and all executable instruction operands compared. Original fork/security/UID/GID/capability/classloader instructions retained. No source rebuild, runtime or APK compatibility acceptance."
+    },
+    "results": {
+      "232": "Freshuserdata232 originalrestorecon recursive skipCE returned; originalinstalld initialize_directories advanced; selinuxstatus realLinuxinode read denied. NoJavaforkchildentry accepted.",
+      "233": "42loadedpermissive, tenactualpolicydecisions: installdstatusread/map allowed; write/admin anddirectinit->systemserverNNP denied. Runtime hitoriginalbootanimationSIGSEGV earlier; noinstalld42runtimeacceptance.",
+      "234": "LinuxAPKprofile omits originalAndroidbootanimation (separategraphicsprofile retainsfailure); SF/HWC andallrequiredservice monitoring retained. Shellclientchecksdisplayonly; originalJavaInstaller stillrequired. Originalinstalld statusinitialization advances, livesuntilteardown, noregistrationacceptedbylogalone. Originalforkcreateschild491 historicalUID1000, originalnativefork/security code aborts beforeJava: selinux_android_setcontext needsreal/contextRW; zygote Linux.security_t read/enforce+RWcontext denied. Aliasmain NOTobserved, noAPKstage."
+    },
+    "decision": "Reuse wholeoriginal selinux_check_context/get_enforce libselinux contract at Linux-owned realSELinuxfs for selectedoriginaldomains, preserving separate securityclass administrationdenials and NNP init->system_server denial. Verifyoriginalsource/macros and actualAV before42->43; do not replay directselectedexec. Then originalforkJava/Installer/display andfullMarkor.",
+    "bootanimation_limit": "OriginalbootanimationSIGSEGV remainsunresolved and explicitgraphicslimitation; removingoptionalbootvisualfromselectedLinuxAPKprofile is not appgraphicsacceptance. Originalgraphicsdiagnostic stillstarts/monitorsit.",
+    "userdata": "markor-cycle-232 freshbefore232; onlyoriginalruntimecreatedmetadata, noAPKseed. Historical163 notehash/CE-DE rootmetadata readback after234 retained; notfulltree verification or newappacceptance.",
+    "security": "WholeR1MACopen;42ROcontract ispartial, runtime/globalpermissiveafterclose. No ARM/GMS/DRM resolution.",
+    "host": {
+      "utc": "2026-11-04T08:56:59.489465+00:00",
+      "kernel": "6.18.59-archtv-aosp16-1",
+      "boot_id": "ed605c8c-db9e-4ce1-8c57-d383f08d3694",
+      "enforce": "0",
+      "status": [
+        1,
+        32,
+        0,
+        2,
+        1
+      ],
+      "policy_sha256": "a9cd883f8036e1dcd56359bbd4e0ea2a0b795ee6c1699d5db05de00e579df2e2",
+      "owned_running_units": "",
+      "audit": "enabled 0\nfailure 1\npid 0\nrate_limit 0\nbacklog_limit 64\nlost 0\nbacklog 0\nbacklog_wait_time 18000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n",
+      "loops": "",
+      "dm": "No devices found\n",
+      "owned_bpf_remaining": {
+        "prog": [],
+        "map": [],
+        "link": []
+      }
+    },
+    "module_persistence": {
+      "authorization": "User specificallyauthorized installation afterauto-reviewrejection",
+      "installed": "/etc/modules-load.d/archtv-aosp16-network.conf",
+      "sha256": "3696563f251d51c5be3870f5bcbeefe656ab9c105096a80f5450810481ab2220",
+      "mode": "0o644",
+      "uid": 65534,
+      "scope": "Existing26kernelmodules loadednow; installedprofile futurebootnotyettested."
+    },
+    "evidence": [
+      {
+        "path": "/home/tv/recuperacion-archtv/bd150e0e-bbba-43a1-8f26-c50a12759645-markor-software-launch/run.log",
+        "sha256": "37d6ecf512eb8618795f1d8844c2b4985fb316860a1eb923d60e509f20a92088"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/bd150e0e-bbba-43a1-8f26-c50a12759645-markor-software-launch/result.json",
+        "sha256": "af456541baba4a2f0142535ab01a59f4ef80a0a62db6b2cab0520767a93cf1af"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/bd150e0e-bbba-43a1-8f26-c50a12759645-markor-software-launch/mac-window.json",
+        "sha256": "fa89cbb3ee2806daf0062465a99773442a5035fea50e3fc7ca63df3dfeb7e483"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/bd150e0e-bbba-43a1-8f26-c50a12759645-markor-software-launch/finite-audit/result.json",
+        "sha256": "c7315485b077bfc51394d6a9944f72eae1673144590a61a6551d42cc2da9ef38"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/bd150e0e-bbba-43a1-8f26-c50a12759645-markor-software-launch/after-host.json",
+        "sha256": "ef41ca1114efe4b0ff881b48c6dd0904def5f6f6fa7055605083cb311cbb7af8"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/bd150e0e-bbba-43a1-8f26-c50a12759645-markor-software-launch/completion-consumer.json",
+        "sha256": "38fd161f531ae6917eba83613a126bb8bf8288fb31294838f5f5aa5601ecc232"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/bd150e0e-bbba-43a1-8f26-c50a12759645-markor-software-launch/checkpoint-correction.json",
+        "sha256": "a154293e304441050edf370f478ef41ea0a584a66c6c2cab6b832fac8daa6955"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load42/candidate.json",
+        "sha256": "8e998f12c0a8fc4bbc8929ce47f4bc3779cdbbfa26ce99d990b1a0a7c51ad25c"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load42/before-host.json",
+        "sha256": "d6d07544ce6372df061472b17a5d6f9f8e913e58a2f2e13b9b2e4cc76d2c271f"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load42/after-load.json",
+        "sha256": "6ecf86ccf64c8f456cdd576e8eafded975e211a895a058276912cb6f9ee32a7e"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load42/access-contract.json",
+        "sha256": "c274bbb985669fcb6a679069a05fd9f8bb622ef6df10ce58514ef05a6b132342"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/selected-zygote-framework-7/build.json",
+        "sha256": "bc903099ebcbe9fc5cda71ca2defd42669b78c515389df2f6e82d33442bbe250"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-234/source-inputs.json",
+        "sha256": "79df506ab02b63bb174ceda7c73b8050d89ac9093ecb239f9f1cb82cf508ce52"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-234/payload.json",
+        "sha256": "766b18d1a3a0fac6f1641d6019232769dc610f6468bf566c7dd45ebf0e7191e8"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/bd150e0e-bbba-43a1-8f26-c50a12759645-markor-software-launch/historical163-after234.json",
+        "sha256": "1d038cf80825efe3910e1b92d629437785fa927632679114db9422f7f2ca3fbf"
+      }
+    ]
   }
 }

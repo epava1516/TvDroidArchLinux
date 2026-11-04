@@ -4,3 +4,10 @@
 (allow servicemanager linux.security_t (dir (getattr search)))
 (allow servicemanager linux.security_t (file (read getattr map open write)))
 (allow servicemanager linux.security_t (security (compute_av)))
+
+; Original installd calls selinux_status_open(true) after initialize_directories.
+; Linux owns the real selinuxfs/status inode (linux.security_t). Project only
+; its original read/mmap contract; do not grant write, policy administration,
+; or fallback netlink sockets. No fake status page or substituted success.
+(allow installd linux.security_t (dir (getattr search)))
+(allow installd linux.security_t (file (read getattr map open)))

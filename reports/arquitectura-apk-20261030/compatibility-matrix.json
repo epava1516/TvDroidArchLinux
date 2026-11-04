@@ -416,13 +416,13 @@
         "scope": "Exact Markorv164 Markdown note created163 survives complete cohort teardown and original subsystems167; actual bytes, same UID/inodes/MCS, original install/force-stop/relaunch and real single pointer opens editor.167 native/exterior0. Not host reboot/power loss, FBE/MAC, graceful close, arbitrary upgrade or general APK compatibility."
       },
       "runtime_security_observation": {
-        "candidate": 231,
-        "status": "ABIguard_pass_originalZygoteStart_notprotocol_selectedServicesNNPdenied_installd_unlabeled",
+        "candidate": 234,
+        "status": "originalfork_childUID1000_securitycontext_denied_beforeJava_installdstatus_initialization_advanced",
         "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-        "record_sha256": "0160a2b319e14721ce8be5b68419041c27a16251116ff90655c672a84c66303e",
-        "scope": "OriginalLinuxkernel/policy41 restored; originalnetd advances after Linuxmodulepreload; originalABIguard passes and appZygote processStart returns, noZygoteprotocol/applicationacceptance. SELECTED_ZYGOTE_CONFIGURATION ro.zygote=zygote64; SELECTED_ZYGOTE_STARTED pid436 historical. netdSIG9 onlyteardown. SelectedServices127 has AVC init->system_server process2nnp_transition denied; do notgrant. installd1: layout_version read/user0getattr unlabeled_t.",
+        "record_sha256": "d164fae314e281a89d7dad4907f6cd8c89ee6ea6b449132e3e4adf8b3454d920",
+        "scope": "LinuxAPKprofile omits originalAndroidbootanimation (separategraphicsprofile retainsfailure); SF/HWC andallrequiredservice monitoring retained. Shellclientchecksdisplayonly; originalJavaInstaller stillrequired. Originalinstalld statusinitialization advances, livesuntilteardown, noregistrationacceptedbylogalone. Originalforkcreateschild491 historicalUID1000, originalnativefork/security code aborts beforeJava: selinux_android_setcontext needsreal/contextRW; zygote Linux.security_t read/enforce+RWcontext denied. Aliasmain NOTobserved, noAPKstage.",
         "r1_mac": "open",
-        "host_after": "AOSPkernel, permisivepolicy41/load1, audit0/lost0, noownedunits/loopsDM/BPF"
+        "host_after": "AOSPkernel, permisive42/load2, audit0/lost0, noownedunits/loopsDM/BPF"
       },
       "runtime_security_observation_history": [
         {
@@ -586,6 +586,15 @@
           "scope": "System-owned globals moved to original canonical system_ext source;226 enforcing9.65s bootanimationSIGSEGV beforeABIguard/Zygote, no APK acceptance.227built, controlleraborted beforecohort on hostwithoutSELinux. Historical167 accepted stages unchanged.",
           "r1_mac": "open",
           "host_after": "7.2.11-arch1-1 bootf445a28c-5c09-4893-98e8-4f2214a928cf, noSELinux, auditrestored0/no newloss; historicalAOSPpolicy41 notcurrent"
+        },
+        {
+          "candidate": 231,
+          "status": "ABIguard_pass_originalZygoteStart_notprotocol_selectedServicesNNPdenied_installd_unlabeled",
+          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "record_sha256": "0160a2b319e14721ce8be5b68419041c27a16251116ff90655c672a84c66303e",
+          "scope": "OriginalLinuxkernel/policy41 restored; originalnetd advances after Linuxmodulepreload; originalABIguard passes and appZygote processStart returns, noZygoteprotocol/applicationacceptance. SELECTED_ZYGOTE_CONFIGURATION ro.zygote=zygote64; SELECTED_ZYGOTE_STARTED pid436 historical. netdSIG9 onlyteardown. SelectedServices127 has AVC init->system_server process2nnp_transition denied; do notgrant. installd1: layout_version read/user0getattr unlabeled_t.",
+          "r1_mac": "open",
+          "host_after": "AOSPkernel, permisivepolicy41/load1, audit0/lost0, noownedunits/loopsDM/BPF"
         }
       ],
       "runtime_security_history": [
