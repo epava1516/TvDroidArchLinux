@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793811736.5947526,
-    "seen": 1793811749.8391411,
-    "ast_hash": "8640456faf4a3a5718d0aa2e620e3e2c",
+    "mtime": 1793812980.0960407,
+    "seen": 1793812994.7698057,
+    "ast_hash": "bbc09cc8c5b33831ef1eae55e11ccbb8",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793812203.6037056,
-    "seen": 1793812217.1333342,
-    "ast_hash": "296f09d94153fa3e2f3e728f537b07b5",
+    "mtime": 1793812980.1000662,
+    "seen": 1793812994.7705777,
+    "ast_hash": "1428d549c6528897bea5a92880b3707f",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -1716,9 +1716,9 @@
     "semantic_hash": ""
   },
   "docs/EVIDENCIAS.md": {
-    "mtime": 1793811736.5982666,
-    "seen": 1793811749.8393562,
-    "ast_hash": "73b0561b99669c6d82dc8c5adf3ed0b4",
+    "mtime": 1793812980.1056254,
+    "seen": 1793812994.769974,
+    "ast_hash": "2b4e709a96bc373f65a3f9673db8c62b",
     "semantic_hash": ""
   },
   "fixtures/aosp-framework-space/FrameworkSpaceProbe.java": {
@@ -1974,9 +1974,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-mc1-cohort.h": {
-    "mtime": 1793805209.2033427,
-    "seen": 1793805265.980144,
-    "ast_hash": "f1ef6848a07853f4fe09f7cb9ac12630",
+    "mtime": 1793812712.9445734,
+    "seen": 1793812780.4145427,
+    "ast_hash": "5f8ca0d756e5b2f63845556ae6773cfa",
     "semantic_hash": ""
   },
   "fixtures/aosp-wayland-output/client.cpp": {
@@ -2034,9 +2034,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/install-markor.sh": {
-    "mtime": 1793811196.7303193,
-    "seen": 1793811244.9144554,
-    "ast_hash": "9d301706fd174eb501ae732af8156c87",
+    "mtime": 1793812712.9468637,
+    "seen": 1793812780.4129882,
+    "ast_hash": "a47a09e4f0d3ac3820812748467a59d7",
     "semantic_hash": ""
   },
   "scripts/run_completion.py": {
@@ -2089,7 +2089,7 @@
   },
   "runtime/aosp/hwui-sources.json": {
     "mtime": 1793383954.003966,
-    "seen": 1793811796.2976665,
+    "seen": 1793812236.906386,
     "ast_hash": "",
     "semantic_hash": ""
   },

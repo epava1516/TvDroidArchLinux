@@ -5728,5 +5728,138 @@
     "decision": "Do not alter Service::Stop or bypass workflow. Reuse proven270 payload/600s observation in execution272 to measure actual complete closure.",
     "closure": "No loops/dm/FUSE; host devices/SysRq/VT restored, MAC0, original udev restored, audit unchanged/no losses; result consumed without queue.",
     "limits": "Not APK compatibility or successful natural cohort close."
+  },
+  "integrated272": {
+    "checkpoint": "/home/tv/recuperacion-archtv/deb30895-864f-4608-a962-ee662c4c5383-markor-software-launch",
+    "run_id": "deb30895-864f-4608-a962-ee662c4c5383",
+    "payload": 270,
+    "result": "Original client workflow exits0, original native Close observes enforcing1, expected vold cancellation collected; property actions drained/workers joined and native STOPPED exit0. External runner exit1 is retained: post-native identity check gets actual_contextNone/EACCES for Android child proc reads from Linux.init_t observer.",
+    "diagnostic": {
+      "native_exit": 0,
+      "stdout": "NATIVE_PROCESS_OWNED pid=285 pidfd=5\nNATIVE_COMPONENT_STARTUP mode=Diagnostic NOT_APK_READINESS\nNATIVE_OBSERVATION_NO_EVENT NOT_HEALTH_OR_APK_READINESS\nNATIVE_COMPONENT_STOPPED exit=exit status: 0\n",
+      "close_lines": [
+        "MARKOR_ORIGINAL_SHELL_WORKFLOW_EXIT pid=536 code=1 status=0 NOT_APK_ACCEPTANCE",
+        "LINUX_VOLD_EXPLICIT_CANCELLATION original_request=reboot,vold-failed NOT_ANDROID_CLEAN_EXIT",
+        "MC1_CLOSE_OBSERVED enforcing=1 expected=1",
+        "PROPERTY_WORKER_STOPPED: original actions drained and workers joined; not APK readiness"
+      ],
+      "external_identity_observer_failures": [
+        {
+          "kind": "ACONFIG_SYSTEM",
+          "actual_context": null,
+          "status_error": "[Errno 2] No such file or directory: '/proc/325/status'"
+        },
+        {
+          "kind": "ACONFIG_MAINLINE",
+          "actual_context": null,
+          "status_error": "[Errno 2] No such file or directory: '/proc/326/status'"
+        },
+        {
+          "kind": "NETD",
+          "actual_context": null,
+          "status_error": "[Errno 13] Permission denied: '/proc/332/status'"
+        },
+        {
+          "kind": "GATEKEEPER_HAL",
+          "actual_context": null,
+          "status_error": "[Errno 13] Permission denied: '/proc/333/status'"
+        },
+        {
+          "kind": "KEYMINT",
+          "actual_context": null,
+          "status_error": "[Errno 13] Permission denied: '/proc/334/status'"
+        },
+        {
+          "kind": "KEYSTORE",
+          "actual_context": null,
+          "status_error": "[Errno 13] Permission denied: '/proc/335/status'"
+        },
+        {
+          "kind": "ALLOCATOR",
+          "actual_context": null,
+          "status_error": "[Errno 13] Permission denied: '/proc/336/status'"
+        },
+        {
+          "kind": "COMPOSER",
+          "actual_context": null,
+          "status_error": "[Errno 13] Permission denied: '/proc/337/status'"
+        },
+        {
+          "kind": "SF",
+          "actual_context": null,
+          "status_error": "[Errno 13] Permission denied: '/proc/338/status'"
+        },
+        {
+          "kind": "GATEKEEPER",
+          "actual_context": null,
+          "status_error": "[Errno 13] Permission denied: '/proc/394/status'"
+        },
+        {
+          "kind": "LMKD",
+          "actual_context": null,
+          "status_error": "[Errno 13] Permission denied: '/proc/395/status'"
+        },
+        {
+          "kind": "STORAGED",
+          "actual_context": null,
+          "status_error": "[Errno 13] Permission denied: '/proc/400/status'"
+        },
+        {
+          "kind": "IDMAP",
+          "actual_context": null,
+          "status_error": "[Errno 13] Permission denied: '/proc/401/status'"
+        },
+        {
+          "kind": "SWCODEC",
+          "actual_context": null,
+          "status_error": "[Errno 13] Permission denied: '/proc/402/status'"
+        },
+        {
+          "kind": "STATSD",
+          "actual_context": null,
+          "status_error": "[Errno 13] Permission denied: '/proc/403/status'"
+        },
+        {
+          "kind": "HEALTH",
+          "actual_context": null,
+          "status_error": "[Errno 13] Permission denied: '/proc/407/status'"
+        },
+        {
+          "kind": "SUSPEND",
+          "actual_context": null,
+          "status_error": "[Errno 13] Permission denied: '/proc/420/status'"
+        },
+        {
+          "kind": "INSTALLD",
+          "actual_context": null,
+          "status_error": "[Errno 13] Permission denied: '/proc/421/status'"
+        },
+        {
+          "kind": "ARTD",
+          "actual_context": null,
+          "status_error": "[Errno 13] Permission denied: '/proc/1162/status'"
+        }
+      ],
+      "scope": "Native protocol and collection observed; outer verifier fails actual proc identity reads under enforcing, no global security acceptance."
+    },
+    "evidence": {
+      "native-close-diagnostic.json": "224d12bca2d4562866101de6e087262ed062a644095e2984db6f1f6711e4b6d9",
+      "client-stage.json": "50d6eac23ef6bbc29315f19cc7ba402b0e82a2ebcf2dcc29509202927880247b",
+      "run.log": "002d36873f22fe9493b4a92e6a75cc56abef42871de8f07040d71c40b7d69c5f",
+      "result.json": "1a404e171a012817514761e8b2f03ac645bb47f1f3d7442ecf319c91cd493e11",
+      "mac-window.json": "859dc63a6b72fe9e37419f66da6616dfb3cc2e2952a04bebbcf62371b94d4128",
+      "session-state.json": "93c6c6f5a41efc6477052c02bd7d03c12a0ff0431c1edb71b5ff99e7a923665b",
+      "finite-audit/result.json": "3919e3e836c0510d204e57b1e4b89e79ed07848a9da110ddc540831f03818c66",
+      "materialized-factory272.py": "a45a40054b0b394523e736fb5ba056b9315b27fbb560bc1dd014693eaa3b13ab",
+      "executed-outer-source.py": "36c18b8367866b8e9341db2cad00c69cab6a7356c649037c7587cb6881a8cb66"
+    },
+    "closure": "No owned units/loops/dm/FUSE after closure; host device metadata/SysRq/VT restored; MAC0; original udev restored; audit rules/buffer restored, zero loss; consumed without queue.",
+    "decision": "Keep native Stop unchanged. R1-MAC must provide genuine kernel-derived identity evidence through an admitted observer/parent; do not ignore None, substitute expected SID or broaden generic Linux.init_t. Calculator admission remains separate uncommitted candidate.",
+    "limits": [
+      "Native protocol closure is not full exterior verifier success",
+      "Full host/PAM admission, complete identity/tenant isolation and watchdog expiration remain open",
+      "Forced app close only, not graceful save-on-exit",
+      "No broad APK, ARM/GMS/DRM or product acceptance"
+    ]
   }
 }
