@@ -6259,5 +6259,73 @@
       "Full R1, product packaging/install/update",
       "ARM, GMS, DRM and wide real APK matrix"
     ]
+  },
+  "vlc284": {
+    "run_id": "2534370f-b937-4d02-9cae-2614a4b7ce1a",
+    "checkpoint": "/home/tv/recuperacion-archtv/2534370f-b937-4d02-9cae-2614a4b7ce1a-markor-software-launch",
+    "artifact": 284,
+    "evidence": {
+      "before-launch.json": "2970b85d0567dd123015a97ef05f35b3c6aa9f2e6e5ff72d03daf82d7b209386",
+      "host-admission.json": "6f0d7d978f90422c54badac89aefb525e1c3d6407b010268c19ce2f81dd9f9b0",
+      "result.json": "0186e1575a6e0fdb63aa6c928734718263fe9fa195de63f8994c67cfe46efc2c",
+      "mac-window.json": "2fedcf3d0d1cd910b1626567414f38d058165980d491492c74d9ff6adf8e77b8",
+      "session-state.json": "1664ff662886ca8433308b3341addfe717ea6e36bb2e5784482a66327e2f2390",
+      "finite-audit/result.json": "277be2872c62215dbfdd7bc6fcd5d8cbec5f84411c5c4a5ef5bf95919acd92b0",
+      "original-client-evidence.json": "db40f478d251d5f8799ad17c9f461be6a53fc2e672dea27d71b9a24629d9d11d",
+      "observed-original-logcat.txt": "a94d74e28f5c5fa5f4750061f74fa7f01dbd01feb4b5398c42b8718bda8ed8d1",
+      "native-stderr.txt": "edf26c8c74b87e3b87f0d32bec04753343aacaf518c44e82905ed7923c199512",
+      "router-executed.txt": "a9963858bf9c4c876624e2e125782e0719e3d2b4dded50a3ccfb9330c066c73d",
+      "audio-blocker.txt": "432002faf0f1928862f9f1820bed218b00fed898a8bb43064a34eab413ec8ae5",
+      "close-summary.json": "3f3f16fa0d3e87916da1fb3093442811ae47063a04c76fe01257742fbc93f064",
+      "interaction-events.json": "b4ce939d0cbc01cfc911fb120a9b218860afbc541df08082f195c9672ef9272b",
+      "capture-samples.json": "9d8ac010dcb69d0d79d0805d5f3cae29b50365263750addc7babdb6c4d6fc0c9",
+      "vlc-player4.png": "fdcc023922d54a3ec424521ef9284dfc701a97a4b5c26563d752ad89ce88d92f",
+      "vlc-player5.png": "35034438f4db9759e14186753f8cb1f782037768a1ecd0da22878c945d7de232",
+      "vlc-final-frame.png": "a77f973095ea10b0a2243a18b9fc86dd94efa540b652980ed0791c7424d95706",
+      "host-audio-readonly.json": "15b7e02cf97a98cd814e6695e26ae3b2537127d5b98869542539fc981790183a",
+      "original-goldfish-root-tree.json": "7d78685375da098da4299c9923c0b491ae939d7e705f1d1fd89a80e6715020b1",
+      "goldfish-hals-tree.json": "f300f2e00fefb874597e80e307c735e20dcc71e02fb14d29533877d9df8038a9",
+      "goldfish-hals-audio-tree.json": "e69e7355a58db03511ab7aad2ea743035fc8eaf8ec7a0074cc8dffb585de0623",
+      "goldfish-audio-Android.bp": "8978c4165ac1520b6ed86a9fb27d5ca2c8dbb08f8ffed895ab7515406c36e5ff",
+      "goldfish-audio-Android.bp.source.json": "38f3a4538be4353b46db97eaadf6fc996fe17a6d5e59ee1b6753d45fd34d5008",
+      "goldfish-audio-talsa.cpp": "04e3d2d838949451f98aa1334d9cbe013df32fe0f6f81fc65bee052c9935954d",
+      "goldfish-audio-talsa.cpp.source.json": "722da67dd3f452a7e3f5b351d34b1e039c53f926b613e15e3f188997f297c216",
+      "goldfish-audio-entry.cpp": "46cd751e8b3652985cce405f91ead7742e1583975ffe6c9f130d5637c9a1e549",
+      "goldfish-audio-entry.cpp.source.json": "93750049e5f1392df682f4e45016664fec933f5c8bcd23ea1e103ce72d12ce9e",
+      "goldfish-audio-device_port_sink.cpp": "be78c7b599f7146a67055bb281eba77c911d689690891beea2eea31379d2fd53",
+      "goldfish-audio-device_port_sink.cpp.source.json": "4f38d689dd1c125c5a7bf47c1d76db1c8c4ca248cd61814c26831fbe377307fb",
+      "completion-consumer.json": "45a0d209d1b0206ad43bce11a5e22f3ea595c2bbd73b07175514a9a5f5c66735",
+      "validation-check-scope.json": "11f4941fd20e698fdf9debcd65736fac8e39ad23f55f6ccf190fde6720966afd",
+      "audio-platform-linkage.json": "e687175b59e7e5275781c425c28a06638aa336fb59c705a08249466ad8a5621a"
+    },
+    "build": "284 exited0 and every tracked source-input hash matched before launch; no external coordinator correction. Original full-library memory backport retained.",
+    "functional": "Whole original MediaRouterService constructed and published after original AudioService/MediaSession; original systemRunning in AMS callback after phase600 returns. Unmodified VLC PID1885/UID10104 proceeds through original VideoPlayerActivity and SurfaceView creation, avoiding former null-router crash. Physical compositor presents actual first MPEG4 frame/timecode0 from real local file.",
+    "video_limit": "No continuous playback accepted. Two inspected physical captures show source timecode0; loading cone disappears but that is UI change, not proof of video motion. End capture is blank during closure, not playback success.",
+    "audio_blocker": "Original Java AudioService exists, but native IAudioPolicyService absent and original VLC AudioTrack getMinBufferSize repeatedly invalid. Full audioserver startup is currently gated on an actual configured original HAL in LinuxMc1Cohort; no provider has been supplied. No PCM/audio output or audible sound accepted.",
+    "host_backend": "Privileged readonly inspection confirms Intel8086:2415/snd_intel8x0 and real ALSA control/PCM nodes. Earlier unprivileged exists/glob absence is a restricted-view result, not missing hardware. No sound devices, modules or mixer settings modified.",
+    "next_original_provider": {
+      "pin": "f3487b53aafe47000f08501243f5924526f1809a (manifest.lock.json existing goldfish pin)",
+      "source": "hals/audio/ complete original HIDL7.1 ranchu candidate. Real TinyalsaSink branch exists, but create() silently falls back to NullSink when ALSA fails or route unsupported. Unmodified fallback is unsuitable for promised output and cannot count as working audio.",
+      "status": "Source candidate only; historical /audio path404 corrected using original tree. Need inspect dependencies and compare AIDL reference before selection. Reject silent primary NullSink fallback: adapt error propagation coherently or select another real provider, with real failed-open negative test. Then compile whole provider, preserve RC/identity/caps/NNP/Binder/policy, admit actual ALSA nodes privately without relabelling/chowning host, then rerun original VLC with actual PCM/video progression."
+    },
+    "closure": {
+      "native_exit": 0,
+      "native_stopped0": true,
+      "outer_exit": 1,
+      "apex_inventory": true,
+      "loops": "",
+      "dm": [],
+      "bpf_cleanup": true,
+      "scope": "Cohort closure is separate from actual app playback. Outer identity observer remains failed."
+    },
+    "security": "Policy60 unchanged, bounded enforcing1 then normal0 restoration, original udev restored, audit rules unchanged/loss0, no own loops/dm/FUSE/BPF. Active UUID consumed, no notification queued. R1-MAC remains open; first frame and original router do not prove isolation or full APK compatibility.",
+    "next_action": "Integrate original native audio server and a real original ALSA-backed HAL as one subsystem; prove real Binder/API operations and actual output, then VLC continuous video/audio/close/reopen. Preserve lack of proof rather than return dummy successes.",
+    "remaining": [
+      "Continuous video and actual audio",
+      "VLC controlled close/reopen and persistence",
+      "R1-MAC and isolated/Chromium memory backport limitations",
+      "Wide APK matrix, ARM/GMS/DRM",
+      "Product lightness/install/update/recovery"
+    ]
   }
 }

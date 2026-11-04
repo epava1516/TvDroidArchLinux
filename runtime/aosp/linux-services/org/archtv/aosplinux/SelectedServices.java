@@ -564,6 +564,12 @@ public final class SelectedServices {
                 // remain visible and no playback/hardware compatibility is claimed.
                 start(manager,managerType,"com.android.server.audio.AudioService$Lifecycle");
                 start(manager,managerType,"com.android.server.media.MediaSessionService");
+                // Original SystemServer constructs/publishes the complete router
+                // after AudioService. VLC's real VideoPlayerActivity consumes it.
+                Class<?> mediaRouterType=Class.forName("com.android.server.media.MediaRouterService");
+                Object mediaRouter=mediaRouterType.getConstructor(contextType).newInstance(context);
+                String mediaRouterName=(String)contextType.getField("MEDIA_ROUTER_SERVICE").get(null);
+                call(sm,null,"addService",new Class<?>[]{String.class,ib},mediaRouterName,mediaRouter);
                 // Original SystemServer starts the Media module service before boot phases.
                 start(manager,managerType,"com.android.server.media.MediaCommunicationService");
                 System.err.println("ORIGINAL_NETWORK_SUBSYSTEM_STARTED REQUIRES_BINDER_OPERATIONS_NOT_INTERNET_ACCEPTANCE");
@@ -602,6 +608,10 @@ public final class SelectedServices {
                         call(packagesService.getClass(),packagesService,"waitForAppDataPrepared",new Class<?>[0]);
                         int appsPhase=Class.forName("com.android.server.SystemService").getField("PHASE_THIRD_PARTY_APPS_CAN_START").getInt(null);
                         call(managerType,manager,"startBootPhase",new Class<?>[]{traceType,int.class},trace,appsPhase);
+                        // Original SystemServer notifies the router inside AMS's
+                        // readiness callback after phase600; not manual readiness.
+                        call(mediaRouterType,mediaRouter,"systemRunning",new Class<?>[0]);
+                        System.err.println("ORIGINAL_MEDIA_ROUTER_SYSTEM_RUNNING_RETURNED NOT_ROUTING_OR_PLAYBACK_ACCEPTANCE");
                         System.err.println("LINUX_ORIGINAL_AMS_CALLBACK_RETURNING AFTER_ORIGINAL_PHASE600 NOT_BOOT_COMPLETED");
                     } catch(Exception failure) { throw new RuntimeException("Original AMS callback failed",failure); }
                 };
