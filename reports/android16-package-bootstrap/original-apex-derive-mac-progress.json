@@ -5700,5 +5700,33 @@
       "ASCII and this Markdown note only; not all Markor features or general APK compatibility",
       "Original ART dex2oat32/ABI, background services and orderly cohort shutdown unresolved; ARM/GMS/DRM separate"
     ]
+  },
+  "integrated271": {
+    "checkpoint": "/home/tv/recuperacion-archtv/5020fbda-969d-48ea-a469-0f832e3defbf-markor-software-launch",
+    "run_id": "5020fbda-969d-48ea-a469-0f832e3defbf",
+    "payload": 271,
+    "result": "Natural observation120s ends while original shell workflow still running; original Close collects services but rejects incomplete workflow. Actual native exit1 and UnexpectedEof, not successful STOPPED.",
+    "diagnostic": {
+      "exit": 1,
+      "stdout": "NATIVE_PROCESS_OWNED pid=285 pidfd=5\nNATIVE_COMPONENT_STARTUP mode=Diagnostic NOT_APK_READINESS\nNATIVE_OBSERVATION_NO_EVENT NOT_HEALTH_OR_APK_READINESS\n",
+      "close_lines": [
+        "LINUX_VOLD_EXPLICIT_CANCELLATION original_request=reboot,vold-failed NOT_ANDROID_CLEAN_EXIT",
+        "MARKOR_ORIGINAL_SHELL_WORKFLOW_EXIT pid=540 code=2 status=9 NOT_APK_ACCEPTANCE",
+        "MC1_CLOSE_OBSERVED enforcing=1 expected=1",
+        "MC1_CLOSE_FAILED Original Markor shell workflow failed or incomplete before close; inspect actual outputs"
+      ],
+      "scope": "Original native failure preserved; no STOPPED or APK success inferred"
+    },
+    "evidence": {
+      "native-close-diagnostic.json": "f160da8860e7063e3cabc7237942f63a8645a26cc6ef3e7d056c022faca9362f",
+      "run.log": "e526587150d0ba034e449ff25f5fb73f32b3e6938d7eb5948c5b2932dafea359",
+      "result.json": "ab54ad73d4d13212c684396cf4109a378df477e44324c7ab5495a4b0a4fec65b",
+      "mac-window.json": "28b4ae3a575377f34c9f2d892a25e4378512ec13e6beeed69e2666e932aff15f",
+      "session-state.json": "3d3f6c9b66f273e7e220456030050fca750afef6133e8f5a0cd7f55fe62f1845",
+      "finite-audit/result.json": "73fd49675b888bffa7d0ca810e8de6eec9fe671b3e4dd28afc60f1ec154e7f1f"
+    },
+    "decision": "Do not alter Service::Stop or bypass workflow. Reuse proven270 payload/600s observation in execution272 to measure actual complete closure.",
+    "closure": "No loops/dm/FUSE; host devices/SysRq/VT restored, MAC0, original udev restored, audit unchanged/no losses; result consumed without queue.",
+    "limits": "Not APK compatibility or successful natural cohort close."
   }
 }
