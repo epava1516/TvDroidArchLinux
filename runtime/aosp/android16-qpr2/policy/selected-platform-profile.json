@@ -175,7 +175,8 @@
     "runtime/aosp/android16-qpr2/policy/linux-filesystem-identity.cil",
     "runtime/aosp/android16-qpr2/policy/linux-private-root.cil",
     "runtime/aosp/android16-qpr2/policy/experiments/apex-storage-nnp.cil",
-    "runtime/aosp/android16-qpr2/policy/experiments/apex-storage-admission.cil"
+    "runtime/aosp/android16-qpr2/policy/experiments/apex-storage-admission.cil",
+    "runtime/aosp/android16-qpr2/policy/linux-network.cil"
   ],
   "limitations": [
     "No live kernel/host/service/APK acceptance",

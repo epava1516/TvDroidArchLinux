@@ -548,6 +548,9 @@ public final class SelectedServices {
                 // Original AMS media-session tracker requires the real session manager.
                 // One existing bounded stack capture targets actual audio startup.
                 if(diagnostic.getState()==Thread.State.NEW) diagnostic.start();
+                // Retain the original Java AudioService/MediaSession dependency.
+                // Native audio backend is unconfigured; original native failures
+                // remain visible and no playback/hardware compatibility is claimed.
                 start(manager,managerType,"com.android.server.audio.AudioService$Lifecycle");
                 start(manager,managerType,"com.android.server.media.MediaSessionService");
                 // Original SystemServer starts the Media module service before boot phases.
@@ -573,16 +576,8 @@ public final class SelectedServices {
                 start(manager,managerType,"com.android.server.policy.PermissionPolicyService");
                 applyLinuxBootstrapProfile(context);
                 call(packagesService.getClass(),packagesService,"systemReady",new Class<?>[0]);
-                // Query the exact original definition, not a shell listing of
-                // permission groups (RANGING belongs to UNDEFINED).
-                Object packageClient=call(contextType,context,"getPackageManager",new Class<?>[0]);
-                Object rangingInfo=call(packageClient.getClass(),packageClient,"getPermissionInfo",new Class<?>[]{String.class,int.class},"android.permission.RANGING",0);
-                String permissionName=(String)rangingInfo.getClass().getField("name").get(rangingInfo);
-                if(!"android.permission.RANGING".equals(permissionName))throw new IllegalStateException("Original RANGING definition mismatch");
-                String permissionRecord="name="+permissionName+"\npackage="+rangingInfo.getClass().getField("packageName").get(rangingInfo)+"\nprotectionLevel="+rangingInfo.getClass().getField("protectionLevel").getInt(rangingInfo)+"\n";
-                try(java.io.FileOutputStream output=new java.io.FileOutputStream("/data/local/tmp/archtv-mc1/ranging-service-info.txt")) {
-                    output.write(permissionRecord.getBytes(java.nio.charset.StandardCharsets.UTF_8));
-                }
+                // Permission-definition regression auditing is not a bootstrap
+                // prerequisite; no system_server writes to shell-owned reports.
                 call(display.getClass(),display,"systemReady",new Class<?>[]{boolean.class},false);
                 // Original service publishes even when original resources disable
                 // Safety Center; it owns that decision and boot-completed setup.

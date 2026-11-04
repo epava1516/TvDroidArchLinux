@@ -416,13 +416,19 @@
         "scope": "Exact Markorv164 Markdown note created163 survives complete cohort teardown and original subsystems167; actual bytes, same UID/inodes/MCS, original install/force-stop/relaunch and real single pointer opens editor.167 native/exterior0. Not host reboot/power loss, FBE/MAC, graceful close, arbitrary upgrade or general APK compatibility."
       },
       "runtime_security_observation": {
-        "candidate": 237,
-        "status": "originalfork_Java_UID1000_systemserver_loader_GateKeeperBinder_pass_ConnectivityUDPbinddenied",
-        "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-        "record_sha256": "bf3eb25fdfd83fe7fe436d1c0594deac39bb49ff3c194b93f09315e750065977",
-        "scope": "OriginalZygote fork/securityhooks reach realJava UID1000 system_server, reuseoriginalclassloader, actualGateKeeperBinderoperation; noAPKstage accepted. OriginalBindercontext fromZygote+GateKeeper retained; originalframeworkbootstrap reachesConnectivityServiceInitializer. FatalrealUDPbind EACCES, AVCnode_bind system_server->Linux.node_t. Originalnet.te allows {netdomain -ephemeral_app -sdk_sandbox_all} node_type:{icmp rawip tcp udp} node_bind; Linuxglobalnodeidentity notmappedyet. NetworkStats requestsNETLINK_SOCK_DIAG modulealiases deniedbyMAC; inet_diag/tcp_diag/udp_diag existingLinuxmodulepaths identified, notyetloaded/persisted. NoInstallerRPC/display/APKaccepted.",
-        "r1_mac": "open",
-        "host_after": "AOSPkernel, permisive44/load3, audit0/lost0, noownedunits/loopsDM/BPF"
+        "candidate": 240,
+        "execution": 241,
+        "result": {
+          "id": "76f0fa1e-d4ea-44d6-9e5b-6c1a9da84627",
+          "outer_exit": 1,
+          "enforcing_seconds": 197.41064523499972,
+          "mode_at_candidate_exit": 1,
+          "restored_enforce": 0,
+          "result": "Original synthetic password import passes prior fatal access check; original rollback-resistant key fallback explicitly logged, no hardware/rollback security claim. LockSettings.onThirdPartyAppsStarted returns; original USER_UNLOCKED broadcast observed. Original Settings FallbackHome processes repeatedly fail loading font_fallback.xml EACCES; no Markor installation/launch acceptance. SurfaceFlinger also reports present BAD_PARAMETER.",
+          "evidence_limit": "Final ring truncated initial startup; complete persisted original log copied immutably. Finite audit rotated under observer proc-search denials; absence of individual AVC is not proof of access. Investigate concrete font path and observer noise without widening proc access."
+        },
+        "evidence": "reports/android16-package-bootstrap/original-apex-derive-mac-progress.json",
+        "sha256": "6677c47a638e6d12fabfdef8865c1a1d45d73d16fb7907c3a8d1347281951536"
       },
       "runtime_security_observation_history": [
         {
@@ -604,6 +610,15 @@
           "scope": "LinuxAPKprofile omits originalAndroidbootanimation (separategraphicsprofile retainsfailure); SF/HWC andallrequiredservice monitoring retained. Shellclientchecksdisplayonly; originalJavaInstaller stillrequired. Originalinstalld statusinitialization advances, livesuntilteardown, noregistrationacceptedbylogalone. Originalforkcreateschild491 historicalUID1000, originalnativefork/security code aborts beforeJava: selinux_android_setcontext needsreal/contextRW; zygote Linux.security_t read/enforce+RWcontext denied. Aliasmain NOTobserved, noAPKstage.",
           "r1_mac": "open",
           "host_after": "AOSPkernel, permisive42/load2, audit0/lost0, noownedunits/loopsDM/BPF"
+        },
+        {
+          "candidate": 237,
+          "status": "originalfork_Java_UID1000_systemserver_loader_GateKeeperBinder_pass_ConnectivityUDPbinddenied",
+          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "record_sha256": "bf3eb25fdfd83fe7fe436d1c0594deac39bb49ff3c194b93f09315e750065977",
+          "scope": "OriginalZygote fork/securityhooks reach realJava UID1000 system_server, reuseoriginalclassloader, actualGateKeeperBinderoperation; noAPKstage accepted. OriginalBindercontext fromZygote+GateKeeper retained; originalframeworkbootstrap reachesConnectivityServiceInitializer. FatalrealUDPbind EACCES, AVCnode_bind system_server->Linux.node_t. Originalnet.te allows {netdomain -ephemeral_app -sdk_sandbox_all} node_type:{icmp rawip tcp udp} node_bind; Linuxglobalnodeidentity notmappedyet. NetworkStats requestsNETLINK_SOCK_DIAG modulealiases deniedbyMAC; inet_diag/tcp_diag/udp_diag existingLinuxmodulepaths identified, notyetloaded/persisted. NoInstallerRPC/display/APKaccepted.",
+          "r1_mac": "open",
+          "host_after": "AOSPkernel, permisive44/load3, audit0/lost0, noownedunits/loopsDM/BPF"
         }
       ],
       "runtime_security_history": [

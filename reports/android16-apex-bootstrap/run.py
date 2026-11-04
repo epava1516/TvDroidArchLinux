@@ -84,7 +84,12 @@ started=time.time();log=recovery/'run.log';exit_code=None;cleanup=[]
 # Opt-in bounded integration diagnostic; reuses the preopened-control watchdog
 # from hwmanager-cohort/enforcing-window.py. Never enables a permissive domain.
 mac_window=int(os.environ.get('ARCHTV_MAC_WINDOW_SECONDS','0'))
-assert mac_window==0 or 4<=mac_window<=120
+# A complete APK workflow includes the existing 300s native startup bound
+# plus up to 300s post-start interaction. Short probes retain the 120s ceiling.
+# This changes duration only; preopened-FD restoration and independent watchdog
+# remain mandatory, with no permissive domain or administration exception.
+mac_limit=600 if integrated_socket and observe_ms>=30000 else 120
+assert mac_window==0 or 4<=mac_window<=mac_limit
 
 def candidate_run(args, **kwargs):
     if not mac_window:return subprocess.run(args,**kwargs)

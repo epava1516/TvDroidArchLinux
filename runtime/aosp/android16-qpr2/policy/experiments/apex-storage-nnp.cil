@@ -40,3 +40,11 @@
 ; setcurrent/dyntransition/seapp hooks and the denial of direct init entry.
 (allow zygote system_server_startup (process2 (nnp_transition)))
 (allow system_server_startup system_server (process2 (nnp_transition)))
+
+; Complete original zygote.te dynamic-transition target set for APK forks.
+; Actual45 permits these original dyntransitions but denies the extra NNP1
+; gate. Preserve irreversible NNP1 and original UID/GID/caps/seapp checks.
+; No additional dyntransition, executable, Binder or file permission added.
+(allow zygote appdomain (process2 (nnp_transition)))
+(allow zygote webview_zygote (process2 (nnp_transition)))
+(allow zygote app_zygote (process2 (nnp_transition)))

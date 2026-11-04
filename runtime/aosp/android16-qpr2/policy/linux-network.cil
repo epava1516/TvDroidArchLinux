@@ -1,0 +1,12 @@
+; Pinned AOSP private/net.te bind contract, projected to Linux-owned network
+; node/port identities. Preserve the original excluded client domains.
+; The runtime separately requires its private network namespace; this grants
+; neither namespace entry, module loading, routing, nor sysctl administration.
+(typeattribute archtv_original_network_bind_clients)
+(typeattributeset archtv_original_network_bind_clients (and netdomain (not (or ephemeral_app sdk_sandbox_all))))
+(allow archtv_original_network_bind_clients linux.node_type (icmp_socket (node_bind)))
+(allow archtv_original_network_bind_clients linux.node_type (rawip_socket (node_bind)))
+(allow archtv_original_network_bind_clients linux.node_type (tcp_socket (node_bind)))
+(allow archtv_original_network_bind_clients linux.node_type (udp_socket (node_bind)))
+(allow archtv_original_network_bind_clients linux.port_type (udp_socket (name_bind)))
+(allow archtv_original_network_bind_clients linux.port_type (tcp_socket (name_bind)))

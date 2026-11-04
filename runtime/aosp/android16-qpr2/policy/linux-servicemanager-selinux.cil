@@ -26,3 +26,13 @@
 (allow system_server linux.security_t (file (ioctl read getattr lock map open watch watch_reads write append)))
 (allow system_server linux.security_t (lnk_file (ioctl read getattr lock map open watch watch_reads)))
 (allow system_server linux.security_t (security (compute_av)))
+
+; Original private/keystore.te invokes selinux_check_access(keystore).
+; Its class/permission catalogue reads and transactional /access query must
+; reach the host-owned selinuxfs too. Existing AOSP keystore2_key permissions
+; remain unchanged; in particular this grants no caller access to keys.
+; The original self netlink_selinux_socket rules already remain in AOSP CIL.
+(allow keystore linux.security_t (dir (ioctl read getattr lock open watch watch_reads search)))
+(allow keystore linux.security_t (file (ioctl read getattr lock map open watch watch_reads write append)))
+(allow keystore linux.security_t (lnk_file (ioctl read getattr lock map open watch watch_reads)))
+(allow keystore linux.security_t (security (compute_av)))

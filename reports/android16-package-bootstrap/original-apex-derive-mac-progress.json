@@ -1318,7 +1318,7 @@
     "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load10/after-load.json",
     "sha256": "309743229826231a5a6d96498f808485c1d5ad5ce3a5cd8c1a279f21f26b9aa8"
   },
-  "next": "Use existing startup preflight to capture actual owned compositor executable/hash, UID/GID/SID, server PID/boot/starttime, socket inode/owner/context and peer credentials. Bind these to run UUID. Define narrowly typed socket and server/peer boundary for HWC Wayland path, preserving existing host controls and recovery; no generic Linux.tmpfs_t write/connect-to broad host domain shortcut. Test actual HWC connection/SCM_RIGHTS buffers and original SF display, no readiness or pixels fabricated.",
+  "next": "Resolve original app font_fallback.xml EACCES by actual file/parent DAC and labels plus original app-policy contract; preserve original app crashes and no fake font data. Then retry actual Markor installation/launch and display presentation; bound observer log spam without granting host-wide proc access.",
   "original_sources": {
     "sdkextensions_commit": "4d10e57070bb9c6edcd13bf74e9d01717b2a5ecf",
     "derive_rc_sha256": "a9e65b0c114408e5cb8356bdb435a6b48d0a67cd7879915c52ffa094a267f607",
@@ -3510,6 +3510,204 @@
       {
         "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load43/before43-fork-edge-queries.json",
         "sha256": "86ccdef1a4c83980f9c11dbf0ffd2d42f2e21b81fd4a89a2edf04ccbd8094d79"
+      }
+    ]
+  },
+  "integrated238_240": {
+    "utc": "2026-11-04T10:26:34.863031+00:00",
+    "results": {
+      "238": "Original UDP bind/Installer.invalidateMounts Binder and display0 pass; 120s MAC deadline expired before own obsolete RANGING audit write failed. No APK acceptance.",
+      "239": "Conditional deferral of original JavaAudioService is incoherent: original MediaSessionService requires IAudioService and fails. Reverted; failed source archived, native audio unavailable.",
+      "240": "Original Java audio/media chain restored. Phase500/600 and AMS.systemReady return under enforcing. Keystore2 synthetic-password import fails EINVAL; actual enforcing AVC denies keystore Linux-owned selinuxfs enforce/class index/deny_unknown reads. Original system_server locksettings_key rebind grant already present."
+    },
+    "policy45": "Original net.te bind projection onto Linux node/port identities preserves ephemeral/sdk exclusions; 68 decisions verified.",
+    "policy46": "Original Zygote app-domain NNP transition admission; no new dyntransition or cleared NNP; 76 decisions verified. Actual APK fork not yet accepted.",
+    "policy47": "Source-exact keystore selinux_check_access filesystem/compute_av projection; no new key permissions. Compiled with neverallow enabled, loaded permissive, 93 decisions verified including administrative and key-access negatives.",
+    "runtime241": {
+      "id": "76f0fa1e-d4ea-44d6-9e5b-6c1a9da84627",
+      "outer_exit": 1,
+      "enforcing_seconds": 197.41064523499972,
+      "mode_at_candidate_exit": 1,
+      "restored_enforce": 0,
+      "result": "Original synthetic password import passes prior fatal access check; original rollback-resistant key fallback explicitly logged, no hardware/rollback security claim. LockSettings.onThirdPartyAppsStarted returns; original USER_UNLOCKED broadcast observed. Original Settings FallbackHome processes repeatedly fail loading font_fallback.xml EACCES; no Markor installation/launch acceptance. SurfaceFlinger also reports present BAD_PARAMETER.",
+      "evidence_limit": "Final ring truncated initial startup; complete persisted original log copied immutably. Finite audit rotated under observer proc-search denials; absence of individual AVC is not proof of access. Investigate concrete font path and observer noise without widening proc access."
+    },
+    "limits": [
+      "No APK stage under MAC accepted",
+      "Original native audio backend unavailable",
+      "Functional closure and R1-MAC isolation remain open",
+      "ARM, GMS and DRM separate/open"
+    ],
+    "evidence": [
+      {
+        "execution": 238,
+        "path": "/home/tv/recuperacion-archtv/a72f2969-128b-42a6-a7c1-10ffdb03774b-markor-software-launch/before-launch.json",
+        "sha256": "ca820096e5106653daf9b8ec848516f9606c5cb3f917696c0f6115caf546476f"
+      },
+      {
+        "execution": 238,
+        "path": "/home/tv/recuperacion-archtv/a72f2969-128b-42a6-a7c1-10ffdb03774b-markor-software-launch/result.json",
+        "sha256": "9383a2c0053a46c5ad9a7b210e9c85367b9c9cf4112f06cb7ba6982dca394558"
+      },
+      {
+        "execution": 238,
+        "path": "/home/tv/recuperacion-archtv/a72f2969-128b-42a6-a7c1-10ffdb03774b-markor-software-launch/after-host.json",
+        "sha256": "6e6ceb023a563f1ef8f58307e7bf0f553397cce326e38f67de125f48bbbadcf8"
+      },
+      {
+        "execution": 238,
+        "path": "/home/tv/recuperacion-archtv/a72f2969-128b-42a6-a7c1-10ffdb03774b-markor-software-launch/run.log",
+        "sha256": "2fa334229c3d20e0a4998269fc8a11508ea1644afb5780f869a27b0704593d43"
+      },
+      {
+        "execution": 238,
+        "path": "/home/tv/recuperacion-archtv/a72f2969-128b-42a6-a7c1-10ffdb03774b-markor-software-launch/finite-audit/result.json",
+        "sha256": "23cf04e68f5dea018729d75ffadb1972858f9437703afdad195210cf3d98e0b5"
+      },
+      {
+        "execution": 238,
+        "path": "/home/tv/recuperacion-archtv/a72f2969-128b-42a6-a7c1-10ffdb03774b-markor-software-launch/completion-consumer.json",
+        "sha256": "92fbfaedcafb7313e1e7e7c3a04f2a7a8ec75658abb36e9cc3e3ce6644b428bc"
+      },
+      {
+        "execution": 239,
+        "path": "/home/tv/recuperacion-archtv/234ce356-efcd-41c4-80de-17209e198b84-markor-software-launch/before-launch.json",
+        "sha256": "2777659b246630cad9ca695406e28c9ad7b70910ca0e3ac2ceba132662d10a6c"
+      },
+      {
+        "execution": 239,
+        "path": "/home/tv/recuperacion-archtv/234ce356-efcd-41c4-80de-17209e198b84-markor-software-launch/result.json",
+        "sha256": "109ac172bfe794111b1ba634999defb024e29d5f63dd29c209da73e361738394"
+      },
+      {
+        "execution": 239,
+        "path": "/home/tv/recuperacion-archtv/234ce356-efcd-41c4-80de-17209e198b84-markor-software-launch/after-host.json",
+        "sha256": "1faa33e38665cf9c3d8dfd5af5479efc78ec3c8bf5c3695078c9322ff1bdadc7"
+      },
+      {
+        "execution": 239,
+        "path": "/home/tv/recuperacion-archtv/234ce356-efcd-41c4-80de-17209e198b84-markor-software-launch/run.log",
+        "sha256": "cd5cac0535c4be4556a160e2e35d9d9f092f2cff711a02ccaa15fadca800cecb"
+      },
+      {
+        "execution": 239,
+        "path": "/home/tv/recuperacion-archtv/234ce356-efcd-41c4-80de-17209e198b84-markor-software-launch/finite-audit/result.json",
+        "sha256": "1a4208c3265d81d0fa5f6ed5b17dbaeb29c754cce6cf43e392d91b108e0baf93"
+      },
+      {
+        "execution": 239,
+        "path": "/home/tv/recuperacion-archtv/234ce356-efcd-41c4-80de-17209e198b84-markor-software-launch/completion-consumer.json",
+        "sha256": "2543b07fa7503e312f0db4bab1d555093c32620c7f174d6e1af6e984d353ec01"
+      },
+      {
+        "execution": 240,
+        "path": "/home/tv/recuperacion-archtv/a6301cbf-ce19-49ef-8e83-0d12ab863518-markor-software-launch/before-launch.json",
+        "sha256": "8eae21b514e34c6b8eea1ab1a97716843eb9bd8def590b6607912ecd16e855e9"
+      },
+      {
+        "execution": 240,
+        "path": "/home/tv/recuperacion-archtv/a6301cbf-ce19-49ef-8e83-0d12ab863518-markor-software-launch/result.json",
+        "sha256": "e61cd21e7d3e7be0c2973f546f8d1f390f449416c3e201f6412596684175dc55"
+      },
+      {
+        "execution": 240,
+        "path": "/home/tv/recuperacion-archtv/a6301cbf-ce19-49ef-8e83-0d12ab863518-markor-software-launch/after-host.json",
+        "sha256": "c0a444c8df3343560e8f66e9ae0d086231a36028784cba882e786906740b265a"
+      },
+      {
+        "execution": 240,
+        "path": "/home/tv/recuperacion-archtv/a6301cbf-ce19-49ef-8e83-0d12ab863518-markor-software-launch/run.log",
+        "sha256": "dc2a3c21f81c8d1ad404aad8b9091ce547a2952ca498f00f1afe9d8549d8b9e5"
+      },
+      {
+        "execution": 240,
+        "path": "/home/tv/recuperacion-archtv/a6301cbf-ce19-49ef-8e83-0d12ab863518-markor-software-launch/finite-audit/result.json",
+        "sha256": "b90794c16c55df7e01a5d18fbf1f186550adaf20ae581f2c5f896f2fa47a66cf"
+      },
+      {
+        "execution": 240,
+        "path": "/home/tv/recuperacion-archtv/a6301cbf-ce19-49ef-8e83-0d12ab863518-markor-software-launch/completion-consumer.json",
+        "sha256": "64dcf375f0deea2a592b7eb1b6ced34dbddd2c66dc9302b7bed60e0dc4f9c12f"
+      },
+      {
+        "policy": 45,
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load45/before-host.json",
+        "sha256": "d7053dfac4efe73ff3f612f7a9fccab5476fd152364d1dcc8a10ed4f3ced5225"
+      },
+      {
+        "policy": 45,
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load45/after-load.json",
+        "sha256": "f8b94f556c6cba6b9702cb2abd956726246da48168ff950d09d3c6372efc8d97"
+      },
+      {
+        "policy": 45,
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load45/access-contract.json",
+        "sha256": "68140fbc1d4bf7db036896215ed32196ea5d86b3d0d1285e45a4e4eba5caec5c"
+      },
+      {
+        "policy": 46,
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load46/before-host.json",
+        "sha256": "ee6644c9a2d130fc7ce3f477389d8d61ca7ec1058729ed86f65b4d8c628081c7"
+      },
+      {
+        "policy": 46,
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load46/after-load.json",
+        "sha256": "b5f1acbe98c800d0b28c316bb3d22aaf392aa138e3ac50d122ec1a69a897b4a6"
+      },
+      {
+        "policy": 46,
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load46/access-contract.json",
+        "sha256": "3cbcb0d8b3a9db95735b16e350a5773a20c8d15077baf8ab488e6285ffa7c9ef"
+      },
+      {
+        "policy": 47,
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load47/before-host.json",
+        "sha256": "87d3f1ebb324f3e6a57d7ef176234aa13cb6635985c3e4963d03799ba1b013a2"
+      },
+      {
+        "policy": 47,
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load47/after-load.json",
+        "sha256": "9371c0f99e7a50a07478fec2f928fc705b7409d811236aaabc718db274ee7835"
+      },
+      {
+        "policy": 47,
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load47/access-contract.json",
+        "sha256": "274550d2463d03c8c8a138f85d8bc718ad5058b1974fbb65c80ae29b5686e4c9"
+      },
+      {
+        "execution": 241,
+        "path": "/home/tv/recuperacion-archtv/76f0fa1e-d4ea-44d6-9e5b-6c1a9da84627-markor-software-launch/result.json",
+        "sha256": "8e89a2558c6d21c375194f383b9ff81bb9e5795970697dc2d6136cc861a0e431"
+      },
+      {
+        "execution": 241,
+        "path": "/home/tv/recuperacion-archtv/76f0fa1e-d4ea-44d6-9e5b-6c1a9da84627-markor-software-launch/after-host.json",
+        "sha256": "f3e0775d51251ff721274053df3660ab9db91d4ce7fb841abb19bc11cac8339d"
+      },
+      {
+        "execution": 241,
+        "path": "/home/tv/recuperacion-archtv/76f0fa1e-d4ea-44d6-9e5b-6c1a9da84627-markor-software-launch/mac-window.json",
+        "sha256": "032d2619a162f53c857071229b04c350109acb4c95e5949bd61b9e8f55672f8e"
+      },
+      {
+        "execution": 241,
+        "path": "/home/tv/recuperacion-archtv/76f0fa1e-d4ea-44d6-9e5b-6c1a9da84627-markor-software-launch/finite-audit/result.json",
+        "sha256": "eb32f6e41b387d63c6e0201d01f41faf1fff111cedec962964eabd8e24621fad"
+      },
+      {
+        "execution": 241,
+        "path": "/home/tv/recuperacion-archtv/76f0fa1e-d4ea-44d6-9e5b-6c1a9da84627-markor-software-launch/completion-consumer.json",
+        "sha256": "6af37f114e86dc117ebf88c52562ba5de29406ca44ec0fd39c3be7fa6275f595"
+      },
+      {
+        "execution": 241,
+        "path": "/home/tv/recuperacion-archtv/76f0fa1e-d4ea-44d6-9e5b-6c1a9da84627-markor-software-launch/original-logcat-persisted.txt",
+        "sha256": "ddd63a85710ca34b14ff0a871626ad76907b709302e2674ea333da378ce40ba0"
+      },
+      {
+        "execution": 241,
+        "path": "/home/tv/recuperacion-archtv/76f0fa1e-d4ea-44d6-9e5b-6c1a9da84627-markor-software-launch/run.log",
+        "sha256": "a17743b22c9d7bffed6024dcdfd3a2193933ebd0084bc463a103eeae9fcd5f4f"
       }
     ]
   }
