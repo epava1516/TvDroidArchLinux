@@ -626,3 +626,6 @@ Actualización 2026-11-02 · [Namespaces AOSP y operación netd originales](../r
 
 
 Política64 y ejecución295: fuente original vold, AVC/montaje, cierre/recuperación y22decisionesoffline63/64. Ninguna prueba de volumen/API/PCM por la mera carga de64. [Evidencia y límites](../reports/android16-audio-bootstrap/vendor-memory-progress.json).
+
+
+296: observación inmutable de vídeo móvil (PPM original, selección por entrada física y PNG frames29/43), clientes originales con APK fuente/instalada de hash idéntico, log final/cierre/MAC64 y comparación Linux posterior por pidfd del dueño exacto. Cada resultado conserva su alcance y hashes; exterior1 y fallo ALSA-1 impiden aceptar audio o R1 completo. [Evidencia](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json), native_audio296.

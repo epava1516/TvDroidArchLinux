@@ -68,74 +68,81 @@
       "runtime_mac_stage_evidence": {
         "media_input_setup": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "section": "vlc280",
           "accepted": true,
           "scope": "Original API actual URI,420785-byte hash/readback and is_pending0 publication; not playback."
         },
-        "remaining": "Successful original PCM output, moving video/audio, app persistence/close/reopen, missing original DSP plugins, full R1, ARM/GMS/DRM and product requirements remain open.",
+        "remaining": "Successful original physical PCM/audio and hardware clock, app persistence/full close/reopen, missing original DSP plugins, fullR1/ARM/GMS/DRM/product remain open. Controlled software video motion observed296; full main_function stays blocked.",
         "installation": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "section": "vlc280",
           "accepted": true,
           "scope": "Exact installed bytes and original cold TV welcome only; no playback or full R1."
         },
         "launch": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "section": "vlc280",
           "accepted": true,
           "scope": "Exact installed bytes and original cold TV welcome only; no playback or full R1."
         },
         "interface": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "section": "vlc280",
           "accepted": true,
           "scope": "Exact installed bytes and original cold TV welcome only; no playback or full R1."
         },
         "input": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "section": "vlc281",
           "accepted": true,
           "scope": "Actual Linux keyboard/TV navigation and original permission dialogs; no playback/full isolation claim."
         },
         "playback_blocker": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
-          "section": "native_audio290",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
+          "section": "native_audio296",
           "accepted": false,
-          "scope": "Original native audio HAL/effect factory/audioserver now execute with real IAudioPolicy/IAudioFlinger retrieval under enforcing62; primary output still cannot open due original HAL memfd feature-probe write denied on Linux tmpfs. Actual clip remains frame0, no PCM/video motion accepted.21 effect plugins missing; R1 and broad compatibility open."
+          "scope": "Previous FMQ/memory barrier passed enough for original ALSA worker to receive data; actual ALSA writer returns-1 and transfer drops4096frames. No physical PCM/audio accepted; missing DSP/fullR1 open."
         },
         "thumbnail": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "section": "vlc283",
           "accepted": true,
           "scope": "Actual physical decoded testsrc2 thumbnail only, not moving video or audio; original reverted memory backport experimental."
         },
         "media_router": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "section": "vlc284",
           "accepted": true,
           "scope": "Whole original router lifecycle and real original VideoPlayerActivity pass former null-service failure; no routing/audio hardware acceptance."
         },
         "first_video_frame": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "section": "vlc284",
           "accepted": true,
           "scope": "Physical actual source frame/timecode0 only; not video motion or complete playback."
         },
         "native_audio_services": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "section": "native_audio290",
           "accepted": true,
           "scope": "Original provider/effect factory and audioserver execute; system_server obtains IAudioPolicy and IAudioFlinger, actual VLC obtains IAudioFlinger. No output stream, DSP, hardware or full R1 acceptance."
+        },
+        "video_motion": {
+          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
+          "section": "native_audio296",
+          "accepted": true,
+          "scope": "Actual original full-screen sourceframes29\u219243/time2.417\u21923.583 under bounded enforcing64, intact VLC/Smithay; limited MPEG4Part2 clip. Cohort closed/recovered. No physical audio/realtime/AVsync/fullR1 acceptance."
         }
       }
     },
@@ -201,35 +208,35 @@
       "runtime_mac_stage_evidence": {
         "installation": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "section": "calculator273",
           "accepted": true,
           "scope": "Original PackageInstaller stream and identical intact installed/source APK bytes; no signature override. Not independent source authenticity verification."
         },
         "launch": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "section": "calculator273",
           "accepted": true,
           "scope": "Original resolver alias SplashActivity.Green -> MainActivity and ActivityManager Status ok/COLD."
         },
         "physical_presentation": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "section": "calculator273",
           "accepted": true,
           "scope": "Actual DRM screenshot through own compositor/HWC; not only internal screencap."
         },
         "pointer_input_main_function": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "section": "calculator273",
           "accepted": true,
           "scope": "Linux pointer2+3=5 and original History dialog; no widget/Activity callback substitutions."
         },
         "activity_close": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "section": "calculator273",
           "accepted": true,
           "scope": "Actual Back -> app-request finish/onDestroy/task removed. Not process-kill or independent cohort reopen."
@@ -237,7 +244,7 @@
         "remaining": "SID observation, full host/PAM/tenant R1-MAC, all app/service features, source-authenticity revalidation and product gates remain open. Exact calculator version/route only.",
         "history_persistence_reopen": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "section": "calculator276",
           "accepted": true,
           "scope": "UI History2+3=5 created273 and visible276 after original activity finish and cohort teardown; only click History in276. Same UID10104/APK. Not host reboot, all app features or full R1-MAC."
@@ -555,7 +562,7 @@
           "candidate": 175,
           "status": "demonstrated_original_subsystem_failure_before_APK",
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "scope": "Original namespace/derive atomic replacement/load_exports under enforcing; aconfig exits1, external inventory verifier denied. No Markor stage under MAC. Prior167 exact permissive note workflow unchanged.",
           "r1_mac": "open",
           "host_after": "permissive policyload10, audit0, no owned runtime processes/devices; lost_delta0"
@@ -564,7 +571,7 @@
           "candidate": 179,
           "status": "original_VDC_Binder_operation_failed_before_APK",
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "scope": "Early-system/mainline original initializers0; platform6 partial. Actual original VDC SID reaches vold; child helper NNP denied, VDC25. Original XML41 inactive after close, no live availability assertion. No new APK stage. Prior167 permissive workflow unchanged.",
           "r1_mac": "open",
           "host_after": "permissive policyload13, audit0/lost_delta0, no owned resources; prior note unchanged"
@@ -573,7 +580,7 @@
           "candidate": 180,
           "status": "original_APEX_activation0_and_user0_failure_before_APK",
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "scope": "Original apexd0 activation demonstrated by journal/read_ahead failure. Helper executes but proc metadata fails; VDC25. No APK or service acceptance; previous167 scope unchanged.",
           "r1_mac": "open",
           "host_after": "permissive policyload14, audit0/lost_delta0, no owned runtime resources"
@@ -582,7 +589,7 @@
           "candidate": 199,
           "status": "original_mainlineBPF_exit0_platform_root_associate_abort",
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "scope": "Real31prog39map snapshots and IDrelease verified. Platform SIGABRT onrootbpffsassociation; no netd/newAPKstage accepted. User0effect/Zygote/logd/kernelwarning remain explicit.",
           "r1_mac": "open",
           "host_after": "Permissive candidate25/policyloadCOUNT23, auditnewloss0/noownedresources and allknownBPFIDsabsent, note/CE/DE retained"
@@ -591,7 +598,7 @@
           "candidate": 200,
           "status": "original_bpf_loaders_exit0_netd_exit1",
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "scope": "Original Mainline and platform BPF loaders exit0 and original completion property; netd starts then exit1, no netd service or APK stage accepted.",
           "r1_mac": "open",
           "host_after": "41 known programs and58 maps absent after close, no loops/dm/FUSE/owned units. Audit loss delta0; permissive0 restored, policyload24/candidate26. Previous note/hash/CE/DE unchanged."
@@ -600,7 +607,7 @@
           "candidate": 201,
           "status": "original_logd_logcat_under_enforcing_netd_mounts_denied",
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "scope": "Original logging real records underMAC; netd1 cgroup discovery, no newAPKstage. Original shutdown incomplete; external closure verified.",
           "r1_mac": "open",
           "host_after": "Permissive candidate27/policyload25, auditnewloss0, noownedresources, previousnote/CE/DE unchanged"
@@ -609,7 +616,7 @@
           "candidate": 202,
           "status": "original_netd_cgroup_discovery_pass_map_create_capBPF_denied",
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "scope": "Original logd/logcat and netd mount discovery underMAC, then map_createEPERM/SIGABRT. No netd operation or new APK stage; original close incomplete.",
           "r1_mac": "open",
           "host_after": "Candidate1 while enforcing6.326s, restored0, host candidate28/policyloadCOUNT26, auditnewloss0/rulesunchanged, no units/loops/dm/FUSE. Previous note21bytes/hash/CE/DE retained. UUID consumed; gate absent."
@@ -618,7 +625,7 @@
           "candidate": 205,
           "status": "original_netd_map_init_pass_gatekeeper_abort_vintf_labels_wrong",
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "scope": "Original netd libnetd_updatable and controller init underMAC; no authorized client/network availability. Original Gatekeeper abort before acceptance; VINTF labels wrong, abort cause unproven. No new APK stage.",
           "r1_mac": "open",
           "host_after": "Permissive candidate29/policyloadCOUNT27, auditnewloss0, no owned units/loops/dm/FUSE, allknown41prog58map absent; previous note/hash/CE/DE retained"
@@ -627,7 +634,7 @@
           "candidate": 207,
           "status": "original_vintf_contexts_fixed_security_daemons_start_allocator_driver_failed",
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "scope": "Original VINTF contexts corrected, functional security startup without shellfixtures, graphics allocator1 with GPU sysfs search denied. No authorized crypto operation, new UI or APK stage.",
           "r1_mac": "open",
           "host_after": "Permissive candidate29/policyloadCOUNT27, auditnewloss0, no owned resources and known41prog58map absent. Prior note/hash/CE/DE intact."
@@ -636,7 +643,7 @@
           "candidate": 209,
           "status": "allocator_driver_admission_progress_SF_native_mapper_context_denied",
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "scope": "Original allocator survives init, SurfaceFlinger reaches renderer then original mapper isDeclared denied/defaultservice and SIGABRT. No pixels or APKstage, security operations still unaccepted.",
           "r1_mac": "open",
           "host_after": "Permissive candidate31/policyloadCOUNT29, auditnewloss0, no owned resources, known41prog58map absent; note/hash/CE/DE retained"
@@ -645,7 +652,7 @@
           "candidate": 211,
           "status": "original_mapper_and_GLES_context_pass_HWC_Wayland_socket_denied",
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "scope": "Actual device context/original HWC client role pass former mapper failures, software GLES3.1 context initialized. HWC Wayland socket denied; no pixels/display/newAPKstage, security operations unaccepted.",
           "r1_mac": "open",
           "host_after": "Permissive candidate32/policyloadCOUNT30, auditnewloss0, no owned resources and known41prog58map absent, previous note/hash/CE/DE retained"
@@ -654,7 +661,7 @@
           "candidate": 213,
           "status": "typed_Wayland_handoff_pass_shared_file_receive_denied",
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "scope": "Connected peer/capability protocol under enforcing; incoming host temporary file denied. No pixels or new APK stage. Prior167 permissive note persistence unchanged.",
           "r1_mac": "open",
           "host_after": "permissive policy33/loadCOUNT31, auditnewloss0; owned resources closed, known BPF absent and prior userdata retained"
@@ -663,7 +670,7 @@
           "candidate": 215,
           "status": "Wayland_shared_file_and_SF_display0_pass_allocator_memfd_transfer_denied",
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "scope": "8.654s actual enforcing, original SF display0 connects. Allocation Binder memfd denied, no pixels or APK stage; original generic DMABUF heap build option omitted. Prior167 permissive APK note persistence intact.",
           "r1_mac": "open",
           "host_after": "permissive policy35/loadCOUNT32, auditnewloss0; owned resources closed, known41/58 absent and prior userdata retained"
@@ -672,7 +679,7 @@
           "candidate": 217,
           "status": "original_heap_profile_mapper_role_and_SF_Binder_query_pass_private_APK_mount_denied",
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "scope": "Original SF/AIDL queries0/display0 log under enforcing; allocation memfd failure no longer reproduced. No pixels/new APK stage. Private selected package mount and SF software JIT execmem denied. Prior167 permissive note remains historical.",
           "r1_mac": "open",
           "host_after": "permissive35/loadCOUNT32, auditnewloss0; no owned resources, known41/58 absent and prior note/CE/DE intact"
@@ -681,7 +688,7 @@
           "candidate": 222,
           "status": "private_APK_view_complete_negative_and_positive_under_MAC_LMKD_PSI_denied",
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "scope": "Seven original-profile private views pass metadata/hash/context/RO under enforcing and genericLinuxmount denied. Original LMKD/storaged exec reached, PSIsecuritydenial and v1fallbackunsupported stopsbootstrap. No Java/pixels/APK stage underMAC. Prior167 permissive note intact.",
           "r1_mac": "open",
           "host_after": "permissive40/loadCOUNT36; auditnewloss0, no owned resources,41/58known BPF absent, priornote/CE/DE unchanged"
@@ -690,7 +697,7 @@
           "candidate": 224,
           "status": "original_LMKD_PSI_and_client_reinit_pass_private_SysRq_RO_guard_pass_ABI_profile_conflict",
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "scope": "Original PSI registrations and original --reinit client UID1000 reply0; daemon survives reply. Real SysRq privateRO/errno30 and hostmetadata unchanged. ABIprofile source mismatch stops next stage. No app/pixels/pressurekill/fullR1 acceptance; previous167 permissive note intact.",
           "r1_mac": "open",
           "host_after": "permissive41/loadCOUNT37, auditnewloss0/no ownedresources, known41/58 BPF absent, prioruserdata retained"
@@ -699,7 +706,7 @@
           "candidate": 227,
           "status": "private_system_property_profile_built_226_bootanimation_SIGSEGV_before_Zygote_227_host_without_SELinux",
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "scope": "System-owned globals moved to original canonical system_ext source;226 enforcing9.65s bootanimationSIGSEGV beforeABIguard/Zygote, no APK acceptance.227built, controlleraborted beforecohort on hostwithoutSELinux. Historical167 accepted stages unchanged.",
           "r1_mac": "open",
           "host_after": "7.2.11-arch1-1 bootf445a28c-5c09-4893-98e8-4f2214a928cf, noSELinux, auditrestored0/no newloss; historicalAOSPpolicy41 notcurrent"
@@ -708,7 +715,7 @@
           "candidate": 231,
           "status": "ABIguard_pass_originalZygoteStart_notprotocol_selectedServicesNNPdenied_installd_unlabeled",
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "scope": "OriginalLinuxkernel/policy41 restored; originalnetd advances after Linuxmodulepreload; originalABIguard passes and appZygote processStart returns, noZygoteprotocol/applicationacceptance. SELECTED_ZYGOTE_CONFIGURATION ro.zygote=zygote64; SELECTED_ZYGOTE_STARTED pid436 historical. netdSIG9 onlyteardown. SelectedServices127 has AVC init->system_server process2nnp_transition denied; do notgrant. installd1: layout_version read/user0getattr unlabeled_t.",
           "r1_mac": "open",
           "host_after": "AOSPkernel, permisivepolicy41/load1, audit0/lost0, noownedunits/loopsDM/BPF"
@@ -717,7 +724,7 @@
           "candidate": 234,
           "status": "originalfork_childUID1000_securitycontext_denied_beforeJava_installdstatus_initialization_advanced",
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "scope": "LinuxAPKprofile omits originalAndroidbootanimation (separategraphicsprofile retainsfailure); SF/HWC andallrequiredservice monitoring retained. Shellclientchecksdisplayonly; originalJavaInstaller stillrequired. Originalinstalld statusinitialization advances, livesuntilteardown, noregistrationacceptedbylogalone. Originalforkcreateschild491 historicalUID1000, originalnativefork/security code aborts beforeJava: selinux_android_setcontext needsreal/contextRW; zygote Linux.security_t read/enforce+RWcontext denied. Aliasmain NOTobserved, noAPKstage.",
           "r1_mac": "open",
           "host_after": "AOSPkernel, permisive42/load2, audit0/lost0, noownedunits/loopsDM/BPF"
@@ -726,7 +733,7 @@
           "candidate": 237,
           "status": "originalfork_Java_UID1000_systemserver_loader_GateKeeperBinder_pass_ConnectivityUDPbinddenied",
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "scope": "OriginalZygote fork/securityhooks reach realJava UID1000 system_server, reuseoriginalclassloader, actualGateKeeperBinderoperation; noAPKstage accepted. OriginalBindercontext fromZygote+GateKeeper retained; originalframeworkbootstrap reachesConnectivityServiceInitializer. FatalrealUDPbind EACCES, AVCnode_bind system_server->Linux.node_t. Originalnet.te allows {netdomain -ephemeral_app -sdk_sandbox_all} node_type:{icmp rawip tcp udp} node_bind; Linuxglobalnodeidentity notmappedyet. NetworkStats requestsNETLINK_SOCK_DIAG modulealiases deniedbyMAC; inet_diag/tcp_diag/udp_diag existingLinuxmodulepaths identified, notyetloaded/persisted. NoInstallerRPC/display/APKaccepted.",
           "r1_mac": "open",
           "host_after": "AOSPkernel, permisive44/load3, audit0/lost0, noownedunits/loopsDM/BPF"
@@ -812,7 +819,7 @@
           "candidate": 182,
           "status": "original_APEX_bootstrap_alias_conflict_before_APK",
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "scope": "Read_ahead/mount initial5 then aliases mounton failure; no41/derive/new APK acceptance. Replace Linux views via original bootstrap, not relaxed labels. Pool/VFS negatives not general MAC. Previous167 scope unchanged.",
           "r1_mac": "open",
           "host_after": "permissive policyload16, audit0/lost_delta0, no owned runtime resources; prior note unchanged"
@@ -821,7 +828,7 @@
           "candidate": 188,
           "status": "original_bootstrap4_default_inventory15_of41_rejected",
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "scope": "Original bootstrap and namespace entry executed under enforcing; incomplete15/41, linkerconfig/PTMX and Linux monitor file-context read failures, no new APK stage. Original167 permissive scope unchanged.",
           "r1_mac": "open",
           "host_after": "Verified global inspector: permissive policyload16, audit0/lost_delta0, no owned units/loops/dm/FUSE; note21bytes/hash and CE/DE inodes preserved"
@@ -830,7 +837,7 @@
           "candidate": 193,
           "status": "original_APEX41_real_verified_user0_failed_before_APK",
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "scope": "Original bootstrap/default APEX41 versions/mounts/classpath verified enforcing; helper user0 proc alias failure, no new APK stage. Original167 permissive scope unchanged.",
           "r1_mac": "open",
           "host_after": "Verified permissive policyload18/audit0/lostdelta0/no owned resources; prior note21byte/hash/CE/DE inodes preserved"
@@ -839,7 +846,7 @@
           "candidate": 194,
           "status": "original_user0_return0_network_NNP_block_before_APK",
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "scope": "Original user0/VDC0 and APEX41 enforcing; helper metadata denials not fullstorage acceptance. Original netbpfload NNP fails127; no new APK stage. Original167 permissive scope unchanged.",
           "r1_mac": "open",
           "host_after": "Verified permissive policyload19/audit0/lostdelta0/no ownedresources; note/CE/DE retained"
@@ -848,7 +855,7 @@
           "candidate": 195,
           "status": "original_netbpfload_runs_exit24_proc_sys_traversal_block",
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "scope": "APEX41 and original user0 return0 retained; original netbpfload NNP edge runs but exit24. Selected system_server direct entry held out; original Zygote route pending. No new APK stage;167 remains permissive scope.",
           "r1_mac": "open",
           "host_after": "Verified permissive policyload20/audit0/no newloss/no ownedresources; note/CE/DE unchanged"
@@ -857,7 +864,7 @@
           "candidate": 197,
           "status": "original_JIT_pass_map_created_pin_associate_denied",
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "scope": "JIT/map creation positive, pinEACCES; APEX41/user0 return0 partial, oldSELinuxdetection risk explicit; no newAPK stage or R1MAC acceptance.",
           "r1_mac": "open",
           "host_after": "Permissive candidate22/policyloadCOUNT21, auditnewloss0,no ownedresources, previousnote/CE/DE preserved"
@@ -866,7 +873,7 @@
       "runtime_mac_stage_evidence": {
         "installation": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "section": "integrated255",
           "accepted": true,
           "scope": "Original PackageInstaller installation, identical intact APK bytes and physical private-directory metadata under enforcing. Not complete isolation, launch, UI, note persistence or full workflow acceptance."
@@ -874,35 +881,35 @@
         "remaining": "Forced app close/newPID/cold relaunch and visible unchanged note reopen proven270. Graceful app/cohort shutdown, full-host R1-MAC/PAM admission and tenant isolation, broader API/services, ART compilation ABI, ARM/GMS/DRM and install/update/product remain open.",
         "launch": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "section": "integrated257",
           "accepted": true,
           "scope": "Original explicit launch redirects intact APK to IntroActivity; Status:ok and real SF internal onboarding pixels. Not presentation on Rust/Smithay, input, complete Markor workflow or broad compatibility."
         },
         "physical_presentation": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "section": "integrated259_physical_presentation",
           "accepted": true,
           "scope": "Original onboarding pixels visually observed in actual Smithay DRM capture during enforcing window; no input, note or lifecycle acceptance."
         },
         "pointer_input": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "section": "integrated262",
           "accepted": true,
           "scope": "Real Linux pointer through Smithay/HWC/typed gateway/original InputManager advances intact Markor UI and original Settings under enforcing. Not keyboard text, note or complete workflow."
         },
         "keyboard_ascii": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "section": "integrated266",
           "accepted": true,
           "scope": "Actual original filename and Markdown text entered through physical Linux keyboard, original Generic.kl/libinput and original InputManager under enforcing; other layouts unproven."
         },
         "note_create_save": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "section": "integrated266",
           "accepted": true,
           "scope": "Real original UI creates/saves21 bytes, observed unchanged in persistent backing after cohort closes. Not app reopen or explicit lifecycle acceptance."
@@ -910,7 +917,7 @@
         "forced_close_relaunch_persistence270": {
           "accepted": true,
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "d9b018322bc4adbe238130449e45b2fb893952cfa9e42ca1e77ac1e67db2796a",
+          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "scope": "Original force-stop PID1354 absent, cold newPID1757, same21-byte note hash and physical UI after reopen under policy60 enforcing; existing UI-created266 note. Not graceful close/full host MAC/general APK.",
           "section": "integrated270"
         }

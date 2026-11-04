@@ -2391,3 +2391,6 @@ Audio291: sistema y vendor conservan variantes distintas de libcutils. La adapta
 
 
 El backing Linux de userdata conserva linux.fs_t. El contrato original vold BindMount→UnmountTree necesita desmontar el bind anterior privado;64 proyecta únicamente unmount, conservando namespaces y ausencia de acceso proc/ptrace al supervisor. SID GLOBAL, no confinamiento por ruta; no se acepta aislamiento por la regla ni por consultas offline. [Evidencia y límites](../reports/android16-audio-bootstrap/vendor-memory-progress.json).
+
+
+296 demuestra el recorrido original propiedades/servicios/APEX/paquetes/volumen→APK intacta→gráficos/entrada/decodificación software y movimiento visual. El backend StreamAlsa asíncrono puede descartar frames y avanzar su contabilidad sin escritura física correcta: no aceptar sonido por movimiento, apertura o posición lógica. Aplay Linux y hw_ptr confirman una base de dispositivo funcional bajo permisivo; no autorizan ni resuelven la ruta Bionic/TinyALSA o su temporización. [Evidencia](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json), native_audio296.

@@ -787,5 +787,10 @@
       "sha256": "77befbdb38642d1ced44744d4dde32eac2dc5335b056ed9d624f23bb25e8a944",
       "scope": "Tracked --memory generator reproduces compiled63 AOSP bytes and semantic profile; no manual profile append, no repeated compiler/kernel test"
     }
+  },
+  "native_audio296": {
+    "record": "/home/tv/recuperacion-archtv/90b0fc24-06b8-4c82-846e-9d0b13090382-markor-software-launch/functional-result.json",
+    "sha256": "e423e3ca6f3e6899c10eeb1991e8f75e62b7cee093c8fcc637bf28a85efa18c5",
+    "scope": "Original volume\u2192PMS installation\u2192cold VLC/input\u2192sourceframes29\u219243 motion. Android ALSA writer-1/droppedframes; Linux baseline writes/hwptradvance only. Native0/exterior1, cohort closed/recovered, fullR1/compatibility open."
   }
 }

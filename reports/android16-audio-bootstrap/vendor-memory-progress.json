@@ -78,7 +78,7 @@
     "API symbol comparison is not full ABI equivalence",
     "No audio playback, full R1 isolation or broad APK acceptance"
   ],
-  "next_action": "New unique integrated cohort using unchanged verified payload292 and kernel readback64. Require actual mounted original volume\u2192original installation\u2192VLC UI/input\u2192FMQueue/PCM/physicalposition/moving video. No readiness or storage threshold bypass.",
+  "next_action": "Contrast exact Bionic/TinyALSA write errno/pcm_get_error and actual stream configuration with Linux baseline. Do not assume SELinux or hardware cause from-1; no observed matching audio AVC in sampled prefix. Preserve original API failure behavior; no silent dropped-frame success acceptance. Then retest original VLC complete audio/video and lifecycle.",
   "execution293": {
     "id": "0178a35c-2e61-480f-ab2a-5042f3f8d174",
     "checkpoint": "/home/tv/recuperacion-archtv/0178a35c-2e61-480f-ab2a-5042f3f8d174-markor-software-launch",
@@ -251,5 +251,15 @@
         "sha256": "ea2802dd3807782fc1494b97d0a5f31f7c68af628d20e1f14d3ab1fc34ab5bd8"
       }
     }
+  },
+  "video_motion296": {
+    "record": "/home/tv/recuperacion-archtv/90b0fc24-06b8-4c82-846e-9d0b13090382-markor-software-launch/video-motion-observation.json",
+    "sha256": "dff88cf2a07f1a02f4caab0b5c77d3ea5913c06d2d1604180002481bc7d297ee",
+    "scope": "Original volume/install/launch/input and actual source-frame29\u219243 motion; original ALSA writer fails-1/dropsframes. Observation prefix, cohort closure pending, full R1/compatibility open."
+  },
+  "native_audio296": {
+    "record": "/home/tv/recuperacion-archtv/90b0fc24-06b8-4c82-846e-9d0b13090382-markor-software-launch/functional-result.json",
+    "sha256": "e423e3ca6f3e6899c10eeb1991e8f75e62b7cee093c8fcc637bf28a85efa18c5",
+    "scope": "Original volume\u2192PMS installation\u2192cold VLC/input\u2192sourceframes29\u219243 motion. Android ALSA writer-1/droppedframes; Linux baseline writes/hwptradvance only. Native0/exterior1, cohort closed/recovered, fullR1/compatibility open."
   }
 }

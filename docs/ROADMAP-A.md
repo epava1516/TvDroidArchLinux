@@ -984,3 +984,6 @@ Actualización audio291: el próximo experimento integra la variante vendor de l
 
 
 Tras295: puerta inmediata volumen original montado y ciclo bind/FUSE bajo64; después instalación y UI real VLC con variante vendor292, PCM/escritura/posición y movimiento. Recuperación63 preparada. No se repiten builds ni se rebajan umbrales de almacenamiento. [Evidencia y límites](../reports/android16-audio-bootstrap/vendor-memory-progress.json).
+
+
+Puerta visual296 aprobada sólo para el clip controlado MPEG4Part2 en VLC: frames29→43. Puerta inmediata de audio: obtener errno/pcm_get_error y configuración real del escritor Bionic/TinyALSA (-1) y contrastarlos con Linux/libasound que escribe y avanza hw_ptr; decidir adaptación concreta sin falsear transferencia ni descartar errores como éxito. Después PCM real/posición/tiempo, sonido y persistencia/cierre/reapertura de VLC. R1/ARM/GMS/DRM/producto siguen abiertos. [Evidencia](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json), native_audio296.

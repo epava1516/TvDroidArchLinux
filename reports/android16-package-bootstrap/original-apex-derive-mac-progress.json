@@ -6338,5 +6338,10 @@
     "native_exit": 0,
     "outer_exit": 1,
     "full_R1_closed": false
+  },
+  "native_audio296": {
+    "record": "/home/tv/recuperacion-archtv/90b0fc24-06b8-4c82-846e-9d0b13090382-markor-software-launch/functional-result.json",
+    "sha256": "e423e3ca6f3e6899c10eeb1991e8f75e62b7cee093c8fcc637bf28a85efa18c5",
+    "scope": "Original volume\u2192PMS installation\u2192cold VLC/input\u2192sourceframes29\u219243 motion. Android ALSA writer-1/droppedframes; Linux baseline writes/hwptradvance only. Native0/exterior1, cohort closed/recovered, fullR1/compatibility open."
   }
 }
