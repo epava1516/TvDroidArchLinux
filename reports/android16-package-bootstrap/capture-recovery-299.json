@@ -1,0 +1,63 @@
+{
+  "run_id": "1657f52b-17f0-46ad-a2f8-6b3dd1d4d1ab",
+  "checkpoint": "/home/tv/recuperacion-archtv/1657f52b-17f0-46ad-a2f8-6b3dd1d4d1ab-markor-software-launch",
+  "cause": "Compositor unlink between request creation and path-based chown; observer finally ran before native MAC restoration.",
+  "correction": [
+    "O_EXCL/O_NOFOLLOW create with descriptor-based fchown; pending request not replaced",
+    "Wait for terminal original runner and MainPID0 before frontend/host recovery",
+    "Persist initial SysRq metadata before runtime starts; restore mixer in finally"
+  ],
+  "verification": {
+    "filesystem_regressions": 3,
+    "py_compile": "pass",
+    "live_candidate": "pending; not yet exercised with new observer"
+  },
+  "recovery": {
+    "utc": "2026-11-04T23:37:09.799610+00:00",
+    "mode_evidence": "/home/tv/recuperacion-archtv/1657f52b-17f0-46ad-a2f8-6b3dd1d4d1ab-markor-software-launch/recovery-state.json",
+    "udev_drop_absent": true,
+    "mixer_recovered_equal": true,
+    "sysrq_after_recovery": {
+      "device": 23,
+      "inode": 4026532098,
+      "mode": "0o200",
+      "uid": 0,
+      "gid": 0,
+      "label": "u:object_r:proc_sysrq:s0",
+      "readonly_mount": false
+    },
+    "sysrq_before_this_attempt": "unknown: old controller kept it only in memory and failed before persisting final state",
+    "sysrq_metadata_equal": null,
+    "runtime_units": "",
+    "active_loops": "",
+    "dm_names": "No devices found",
+    "scope": "Explicit recovery after capture failure. Failed root-after retained; no normal cleanup/audit completeness claim. PriorSysrq unavailable in this attempt, so equality unknown."
+  },
+  "limitations": [
+    "Prior SysRq metadata unavailable for run299; equality unknown",
+    "Audit closing interval incomplete; no full R1 acceptance",
+    "Original PCM writes are distinct from sound, continuity and hardware rate"
+  ],
+  "evidence": {
+    "explicit-recovery-result.json": {
+      "path": "/home/tv/recuperacion-archtv/1657f52b-17f0-46ad-a2f8-6b3dd1d4d1ab-markor-software-launch/explicit-recovery-result.json",
+      "sha256": "ec29b94c06b8b09b0e0b5943defa7009faafecceae15aba17868977f94c0fa0b"
+    },
+    "recovery-state.json": {
+      "path": "/home/tv/recuperacion-archtv/1657f52b-17f0-46ad-a2f8-6b3dd1d4d1ab-markor-software-launch/recovery-state.json",
+      "sha256": "52cd24db19a017ee33cb066452e06058e817da3e7e787f1a6be70cd45caae9f1"
+    },
+    "write-outcome-interpretation.json": {
+      "path": "/home/tv/recuperacion-archtv/1657f52b-17f0-46ad-a2f8-6b3dd1d4d1ab-markor-software-launch/write-outcome-interpretation.json",
+      "sha256": "98e3b4b30f7b5a90c29291fd1ff8d2c31dc9b6a993f4f2e9d42217b576445b33"
+    },
+    "original-logcat-final.txt": {
+      "path": "/home/tv/recuperacion-archtv/1657f52b-17f0-46ad-a2f8-6b3dd1d4d1ab-markor-software-launch/original-logcat-final.txt",
+      "sha256": "906f6ad02c4f7ca46874767f47b69018b702e45f2e16c7ded2fdf2813920599a"
+    },
+    "mac-window.json": {
+      "path": "/home/tv/recuperacion-archtv/1657f52b-17f0-46ad-a2f8-6b3dd1d4d1ab-markor-software-launch/mac-window.json",
+      "sha256": "987903995367c029936a9a3b585115a8e83da619387a2949779f1bf819b3cc42"
+    }
+  }
+}

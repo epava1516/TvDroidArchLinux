@@ -93,3 +93,9 @@ conexión ni limpieza MCP. Evidencia original:
 El cliente captura una vez el tipo desde `build-options.json` del mismo directorio explícito que contiene el payload. Ese tipo determina conjuntamente el sufijo del checkpoint y el nombre del manifiesto inmutable: `keymint-component` / «KeyMint v4 software component» o `markor-launch` / «Markor integrated launch». No se consulta un puntero global ni se reutiliza un nombre de Markor para una prueba criptográfica.
 
 [Dos ejecuciones reales](../reports/android16-package-bootstrap/completion-profile-binding.json), con UUID distintos y resultados distintos, registraron callback `active_owned` y consumo `consumed`. Sus evidencias se conservan aunque no generan otra continuación. La puerta de envíos sigue desactivada; esto no prueba recepción en cola ni ejecución de una continuación remota. El resultado nativo, el del runner y la aceptación APK siguen separados.
+
+## Observación de capturas y cierre del runtime
+
+La [carrera real de la sesión299](../reports/android16-package-bootstrap/capture-recovery-299.json) no fue una entrega duplicada: el compositor consumió el fichero antes del `chown` por ruta. El publicador usa ahora el descriptor abierto y no reemplaza solicitudes pendientes. El observador espera el estado terminal y MainPID0 del runner antes de recuperar el frontend y comprobar el anfitrión. Conserva la propiedad activa del resultado; no envía continuaciones.
+
+Tres regresiones de filesystem verifican consumo concurrente, solicitud pendiente y enlace simbólico; no prueban MAC ni una aplicación. La validación integrada del observador sigue pendiente. En299 se recuperaron modo permisivo, mixer y recursos, pero el intervalo final de auditoría quedó incompleto y el metadato SysRq anterior se perdió: no se acredita igualdad ni cierre R1 completo.

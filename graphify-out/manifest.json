@@ -2052,9 +2052,9 @@
     "semantic_hash": ""
   },
   "docs/REANUDACION.md": {
-    "mtime": 1793650841.685514,
-    "seen": 1793650852.0903335,
-    "ast_hash": "3b67848ce2640dacf0800dcbf190914d",
+    "mtime": 1793835665.927001,
+    "seen": 1793835682.0431354,
+    "ast_hash": "abb2516a97e223644b4e1b536e5b6231",
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/initial-apk-profile.json": {
@@ -2184,9 +2184,15 @@
     "semantic_hash": ""
   },
   "runtime/aosp/android16-qpr2/patches/audio-alsa-write-observation.json": {
-    "mtime": 1793832272.4654496,
-    "seen": 1793833435.9672318,
-    "ast_hash": "22574fde7fe6fc433f50ac0bf75d5191",
+    "mtime": 1793833665.6100888,
+    "seen": 1793835682.0242004,
+    "ast_hash": "19b38361c957feeb4d1dee6168fa2217",
+    "semantic_hash": ""
+  },
+  "tests/automation/test_session_capture.py": {
+    "mtime": 1793835167.108305,
+    "seen": 1793835682.0331798,
+    "ast_hash": "11d11bd82ed94aa1dfc4ae371439bd5f",
     "semantic_hash": ""
   }
 }
