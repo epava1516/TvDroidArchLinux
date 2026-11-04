@@ -620,3 +620,6 @@ Actualización 2026-11-02 · [Cargadores BPF AOSP originales](../reports/android
 ## Namespaces y netd · operación original con permisos reales
 
 Actualización 2026-11-02 · [Namespaces AOSP y operación netd originales](../reports/android16-network-bootstrap/native-functional.json): inventario41 por API/XML/versiones/montajes, linkerconfig generado y cliente root ndc obtiene lo/códigos110 y200 después del permission controller real. Cohorte sale1; no hay etapa APK nueva aceptada. Bloqueo observado: display espera LmkdConnection y principal en registro de StorageManagerService. Próximo: lmkd original y su protocolo antes de continuar conectividad/Markor. R1-MAC permisivo/policyload2, ARM/GMS/DRM abiertos. [Límites y negativos](../reports/android16-network-bootstrap/README.md).
+
+
+- [Audio291 y candidato de memoria vendor](../reports/android16-audio-bootstrap/vendor-memory-progress.json): UUID, hashes de logs originales, cierre, restauración permisiva y fallo Binder real. Candidato02167eca conserva130 identidades de exportación; enlace y comparación estáticos, sin aceptación PCM/ABI completa ni APK adicional.

@@ -978,3 +978,6 @@ confirma getcon kernel, getfilecon ENODATA sin demostrar etiqueta efectiva y lec
 tras configurar montaje RO explícito. Systemd -SELINUX exige integración de host.
 Mantener controles originales/RC/cohortes; avance independiente de lectura/offline
 permitido. Las nueve etapas Markor y todas las aplicaciones reales siguen abiertas.
+
+
+Actualización audio291: el próximo experimento integra la variante vendor de libcutils con la adaptación de etiqueta original ya usada en sistema. Puerta: transferencia FMQ real HAL→audioserver bajo enforcing63, sin acceso general a memoria privada; conservar regresión de gráficos por su rol SP-HAL. Después negociar PCM, contrastar escritura/posición física y vídeo en movimiento; un enlace o130 símbolos conservados no cierran esta puerta. [Evidencia](../reports/android16-audio-bootstrap/vendor-memory-progress.json).

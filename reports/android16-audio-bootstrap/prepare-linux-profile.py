@@ -36,6 +36,20 @@ def add(target, source, context='vendor_configs_file', mode=0o444):
     vendor['files'][target] = {'source': str(source), 'context': 'u:object_r:' + context + ':s0', 'mode': mode}
     record['files'][target] = {'source': str(source), 'sha256': sha(source)}
 
+# The HAL's vendor namespace uses its own libcutils. Keep the vendor build,
+# source-selected LLNDK boundary and SP-HAL file type; never substitute platform.
+memory = repo / 'dist/aosp16/vendor-libcutils-memory-3'
+memory_build = json.loads((memory / 'build.json').read_text())
+assert memory_build['terminal'] and not memory_build['export_comparison']['missing']
+assert sha(memory / 'libcutils.so') == memory_build['sha256']
+for source, expected in memory_build['inputs'].items():
+    assert sha(Path(source)) == expected, source
+vendor_memory = vendor['files']['/vendor/lib64/libcutils.so']
+record['vendor_memory_previous'] = dict(vendor_memory)
+vendor_memory['source'] = str(memory / 'libcutils.so')
+record['files']['/vendor/lib64/libcutils.so'] = {'source': vendor_memory['source'], 'sha256': memory_build['sha256']}
+record['adaptations'].append('Original vendor libcutils retained with explicit original memfd-label backport; 130 export identities unchanged. Runtime FMQ transfer, policy access and graphics regression remain unproved.')
+
 binaries = ['android.hardware.audio.service-aidl.example', 'android.hardware.audio.effect.service-aidl.example']
 for parent, name in zip([core, effect], binaries):
     add('/vendor/bin/hw/' + name, parent / name, 'hal_audio_default_exec', 0o755)

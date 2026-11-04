@@ -1,0 +1,82 @@
+{
+  "utc": "2026-11-04T21:58:00.022278+00:00",
+  "run_id": "837b593f-2411-4981-8328-73def88a08de",
+  "checkpoint": "/home/tv/recuperacion-archtv/837b593f-2411-4981-8328-73def88a08de-markor-software-launch",
+  "git_head": "a2ee2ee0c456f751a9338d8b7eaa182366310589",
+  "execution": {
+    "outer_exit": 1,
+    "native_complete_inventory_verified": true,
+    "mac": {
+      "seconds": 900,
+      "scope": "Global enforcing only after real factory preparation; original subsystems, not APK/MAC acceptance by exit0",
+      "activated": true,
+      "policy_readback_sha256": "27a3af9610b0c9b03102bc5985bcfec9f9723ed2ed5934f030a2d7b4f8b46c86",
+      "started_monotonic": 48245.557039001,
+      "candidate_exit": 1,
+      "mode_at_candidate_exit": "1",
+      "elapsed_enforcing_attempt": 647.8360120279976,
+      "restored_enforce": "0",
+      "watchdog_cancelled_after_restore": true,
+      "watchdog_status": 15
+    },
+    "closure": {
+      "active_loops": "",
+      "final_dm": []
+    },
+    "original_wrapper_terminal": true
+  },
+  "functional_failure": "Original HAL creates private memfd, but Binder transfer of MessageQueue to audioserver is denied read/write against hal_audio_default_tmpfs. No working output stream or PCM accepted.",
+  "source_contract": "Original libfmq MessageQueueBase.h allocates MessageQueue via ashmem_create_region. Payload290 vendor libcutils remains original older vendor build; only system libcutils carries explicit label backport.",
+  "candidate": {
+    "build": "/home/tv/repositorio-principal/dist/aosp16/vendor-libcutils-memory-3/build.json",
+    "build_sha256": "863b2fbbaaf0c6153461f7cee280bff3ed026222b122dce26d81b2925f97bbcb",
+    "library_sha256": "02167ecaa4d4ff9e12809a122a2b24b8217f21743798768cd291660e90a6f11b",
+    "exports": {
+      "missing": [],
+      "added": [],
+      "original_count": 130,
+      "candidate_count": 130,
+      "limitation": "Symbol identity/binding/type/visibility only, not full ABI or runtime proof"
+    },
+    "strategy": "Relink complete existing vendor libcutils object graph with the same explicit original AOSP allocation-label backport. Preserve vendor macros and LLNDK links; do not substitute platform binary or widen private memory access."
+  },
+  "evidence": {
+    "result.json": {
+      "path": "/home/tv/recuperacion-archtv/837b593f-2411-4981-8328-73def88a08de-markor-software-launch/result.json",
+      "sha256": "3752b39f979307ec9c4f4c413a6e79d010c7c6f7d43cebe704ed9bfb0c504a3c",
+      "bytes": 48227
+    },
+    "mac-window.json": {
+      "path": "/home/tv/recuperacion-archtv/837b593f-2411-4981-8328-73def88a08de-markor-software-launch/mac-window.json",
+      "sha256": "7c4dbb303fed9cc6f12ae2641fef704448e4fb7ea7c2aee883f25f6a77f288d9",
+      "bytes": 501
+    },
+    "reattached-observer-result.json": {
+      "path": "/home/tv/recuperacion-archtv/837b593f-2411-4981-8328-73def88a08de-markor-software-launch/reattached-observer-result.json",
+      "sha256": "f4476dd60a45f4c94cd5d85a4f19641d05c8d6daadd4e799e11aabde890bdb98",
+      "bytes": 549
+    },
+    "original-logcat-memory-snapshot.txt": {
+      "path": "/home/tv/recuperacion-archtv/837b593f-2411-4981-8328-73def88a08de-markor-software-launch/original-logcat-memory-snapshot.txt",
+      "sha256": "e464472f6d81ebb811d8cc649fc25f039c81a5e05d82b5334a3983186a8262e2",
+      "bytes": 1373372
+    },
+    "finite-audit/audit.log": {
+      "path": "/home/tv/recuperacion-archtv/837b593f-2411-4981-8328-73def88a08de-markor-software-launch/finite-audit/audit.log",
+      "sha256": "95e56bbc8a54d68cc7b28fdcca1c0a155129a051764e81423574a033cd9057af",
+      "bytes": 6655419
+    },
+    "finite-audit/result.json": {
+      "path": "/home/tv/recuperacion-archtv/837b593f-2411-4981-8328-73def88a08de-markor-software-launch/finite-audit/result.json",
+      "sha256": "a30b6ec5a05210a7df98728807b59bc16d4267d6d92f8ca0b5d6e6de4d7f0e63",
+      "bytes": 2288
+    }
+  },
+  "limitations": [
+    "No runtime acceptance of new vendor library",
+    "Shared SP-HAL role requires graphics regression in integrated cohort",
+    "API symbol comparison is not full ABI equivalence",
+    "No audio playback, full R1 isolation or broad APK acceptance"
+  ],
+  "next_action": "Build next integrated payload using prepared vendor variant, verify original memory-label read/relabel under enforcing63, then actual FMQ/PCM and VLC movement. Recheck host selinuxfs visibility before admission; LSM active and temporary readback63/permissive verified."
+}

@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793828249.307183,
-    "seen": 1793828262.989023,
-    "ast_hash": "d4f5d3cb0ab69c9342e8b2be6ff46e6f",
+    "mtime": 1793829480.0572548,
+    "seen": 1793829494.8233418,
+    "ast_hash": "7bf9707110beeb2a6d35ef4e17831980",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793828249.3092394,
-    "seen": 1793828262.9904344,
-    "ast_hash": "bbbcc65cdbd1147ad6ba48ed890ac7f4",
+    "mtime": 1793829480.0696447,
+    "seen": 1793829494.8242722,
+    "ast_hash": "a6b9040c7728cfa212c68044a062af27",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -2089,7 +2089,7 @@
   },
   "runtime/aosp/hwui-sources.json": {
     "mtime": 1793383954.003966,
-    "seen": 1793828038.8442888,
+    "seen": 1793828368.7491996,
     "ast_hash": "",
     "semantic_hash": ""
   },
