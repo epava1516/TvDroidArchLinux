@@ -174,6 +174,13 @@ for name in ['dev/null','dev/urandom','dev/dri/card0','dev/dri/renderD128']+(['d
  print('PRIVATE_DEVICE_CONTRACT '+json.dumps({'path':'/'+name,'mode':oct(stat.S_IMODE(info.st_mode)),'uid':info.st_uid,'gid':info.st_gid,'rdev':[os.major(info.st_rdev),os.minor(info.st_rdev)],'context':os.getxattr(root/name,'security.selinux').decode().rstrip(chr(0))}),flush=True)
 """
 text=text.replace('dist/aosp16/sf-cohort-build-32/payload-2.ext4',str(payload.relative_to(r)))
+if (payload.parent/'system-property-profile.json').exists():
+ # The root/system_ext symlink is absolute inside the guest. Resolve the
+ # physical mountpoint explicitly before pivot; never follow it on the host.
+ profile_mount="mount('--bind',gsi/'system',root/'system');mount('-o','remount,bind,ro',root/'system')"
+ assert text.count(profile_mount)==1
+ text=text.replace(profile_mount,profile_mount+"\nprofile_source=candidate/'system_ext/etc/build.prop';profile_target=root/'system/system_ext/etc/build.prop'\nassert profile_source.is_file() and profile_target.is_file()\nmount('--bind',profile_source,profile_target);mount('-o','remount,bind,ro,nosuid,nodev,noexec',profile_target)\nprint('SYSTEM_PROPERTY_PROFILE_PRIVATE_RO '+str(profile_target),flush=True)",1)
+
 text=text.replace('len(observed_logs)<512','len(observed_logs)<4096')
 text=text.replace("'--display-integration'","'--packages-integration'").replace("'--startup-ms','45000'","'--startup-ms','300000'").replace("'--observe-ms','30000'","'--observe-ms',"+repr(str(observe_ms)))
 text=text.replace('root.mkdir()\n',"""root.mkdir()

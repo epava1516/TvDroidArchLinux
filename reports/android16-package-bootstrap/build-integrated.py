@@ -253,7 +253,20 @@ if software_platform:
  # system-server entry clears growth limit up to bounded512MiB maximum.
  base_props='\n'.join(line for line in base_props.splitlines() if not line.startswith(('dalvik.vm.heapsize=','dalvik.vm.heapgrowthlimit=')))
  base_props+='\ndalvik.vm.heapsize=512m\ndalvik.vm.heapgrowthlimit=128m\n'
-(out/'linux-build.prop').write_text(base_props+'\nro.product.cpu.abilist=x86_64\nro.product.cpu.abilist64=x86_64\nro.product.cpu.abilist32=\n')
+# System-owned ABI globals must enter through an original system partition
+# property source, not vendor_init. Preserve the original system_ext profile.
+abi_properties={'ro.product.cpu.abilist':'x86_64','ro.product.cpu.abilist64':'x86_64',
+                'ro.product.cpu.abilist32':'','ro.zygote':'zygote64',
+                'service.sf.prime_shader_cache':'false'}
+base_props='\n'.join(line for line in base_props.splitlines() if line.partition('=')[0] not in abi_properties)
+(out/'linux-build.prop').write_text(base_props+'\n')
+original_props=r/'dist/aosp16/factory-inputs-3/root/system/system_ext/etc/build.prop'
+original_bytes=original_props.read_bytes()
+assert not any(line.partition('=')[0] in abi_properties for line in original_bytes.decode().splitlines())
+profile_bytes=original_bytes+b'\n# Linux private single64 device profile; no 32-bit/ARM execution claimed.\n'+''.join(k+'='+v+'\n' for k,v in abi_properties.items()).encode()
+(out/'system-ext-build.prop').write_bytes(profile_bytes)
+vendor['files']['/system_ext/etc/build.prop']={'source':str(out/'system-ext-build.prop'),'context':'u:object_r:system_file:s0','mode':0o444}
+(out/'system-property-profile.json').write_text(json.dumps({'original':str(original_props),'original_sha256':hashlib.sha256(original_bytes).hexdigest(),'profile_sha256':hashlib.sha256(profile_bytes).hexdigest(),'properties':abi_properties,'scope':'Private Linux device profile through original PropertyLoadBootDefaults canonical system_ext source; no host properties, policy grants, APK or 32-bit compatibility acceptance.'},indent=2)+'\n')
 vendor['files']['/vendor/build.prop']['source']=str(out/'linux-build.prop')
 vendor['files']['/vendor/overlay/ArchTvPlatform/ArchTvPlatform.apk']={'source':str(overlay/'ArchTvPlatform.apk'),'context':'u:object_r:vendor_overlay_file:s0','mode':0o644}
 vendor['files']['/vendor/overlay/config/config.xml']={'source':str(r/'runtime/aosp/platform-overlay/overlay-config.xml'),'context':'u:object_r:vendor_overlay_file:s0','mode':0o644}

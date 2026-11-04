@@ -1392,7 +1392,7 @@
     "sha256": "bf63755c75b8834efedb270e0820df52b470942914065c831615cd096495b00a"
   },
   "vdc_source_contract": {
-    "builtin": "Pinned system/core/init/builtins.cpp1122–1172: original temporary exec plus original failure callback; exact argv /system/bin/vdc --wait cryptfs init_user0. Native observes actual reaping before advance, no shell redirection or synthetic readiness.",
+    "builtin": "Pinned system/core/init/builtins.cpp1122\u20131172: original temporary exec plus original failure callback; exact argv /system/bin/vdc --wait cryptfs init_user0. Native observes actual reaping before advance, no shell redirection or synthetic readiness.",
     "vold_helper": {
       "path": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/vold-fscrypt-original/FsCrypt.cpp",
       "sha256": "716c7553fc8ce7ad48c1857676e23adcb4458de362869655b30c712c287b0876"
@@ -1453,7 +1453,7 @@
   },
   "loop_label_correction": "Actual load15 BEFORE already showed original sysfs_loop on loop0..37, INCLUDING0/1. Those labels/values/modes/UID/GID stayed unchanged. Added90 exact genfs entries did NOT provide label exclusivity; removed in16 along with unnecessary Linux coordinator write grant. Original broad loop prefix remains. Effective experimental constraints: exact90 pool2..91, private sysfs RO, only reserved read_ahead controls RW; both0/1 open-only negatives EROFS. This is Linux-coordinator VFS observation, not Android remount resistance/general MAC acceptance.",
   "bootstrap_contract": {
-    "source": "Pinned system/core/init/init.cpp1170 calls SetupMountNamespaces before scripts; original init.rc81–85 exec_start apexd-bootstrap then perform_apex_config. Current native calls namespace setup after normal activation, with Linux pre-mounted aliases; actual182 demonstrates incompatibility.",
+    "source": "Pinned system/core/init/init.cpp1170 calls SetupMountNamespaces before scripts; original init.rc81\u201385 exec_start apexd-bootstrap then perform_apex_config. Current native calls namespace setup after normal activation, with Linux pre-mounted aliases; actual182 demonstrates incompatibility.",
     "headers": "Linux binutils readelf STATIC header inspection (not REA MCP or execution): original GSI apexd interpreter /system/bin/bootstrap/linker64; custom coordinator179 interpreter /system/bin/linker64. Original system/bin/bootstrap/linker64 and system/lib64/bootstrap/libc.so exist. Source/runtime experiment still required.",
     "original_apexd": {
       "path": "dist/aosp16/factory-inputs-3/root/system/bin/apexd",
@@ -3033,5 +3033,64 @@
       "limits": "PSI registration/reinit only, not pressurekill/victim isolation/fullmemory; v2 JoinCgroup warning and globalPSI/cgroupbudget semantics remain. No pixels, appstage or broadcompatibility. WholeR1, ARM/GMS/DRM open.",
       "host": "Permissive41/loadCOUNT37, audit0/backlog64/newloss0, VT1/devices/SysRqhostmetadata unchanged, no ownedruntime/loops/DM/FUSE; known41prog58map absent and priornote/CE/DE unchanged. Resultactive-owned consumed once, gateabsent."
     }
+  },
+  "integrated225_227": {
+    "executions": [
+      225,
+      226,
+      227
+    ],
+    "utc": "2026-11-04T08:15:05.203210+00:00",
+    "scope": "System-owned device properties moved from vendor to private RO canonical system_ext profile; original loader/policy/ABI guard retained.",
+    "results": {
+      "225": "Stopped before MAC: own mount ordering bug, corrected before226.",
+      "226": "Original loader mounted canonical system profile; enforcing9.654256s, bootanimation SIGSEGV before Zygote/ABI guard. LMKD original client0. Shutdown vold-failed follows teardown SIGKILL, not demonstrated initiating cause. No Zygote or APK accepted.",
+      "227": "Artifact built; host changed to7.2.11-arch1-1 bootf445a28c-5c09-4893-98e8-4f2214a928cf withoutSELinux. Controller stopped before cohort on missingxattr95, audit restored0/no loss. No MAC trial."
+    },
+    "limitations": [
+      "ABI guard not reached in226; truthful global property runtime values still require observation.",
+      "Shader-cache config relocated in227, no graphics support inferred.",
+      "All APK stages underMAC remain unaccepted; historical167 note intact after226.",
+      "Host policy41 load37 is historical, NOT currenthost state."
+    ],
+    "next": "Restore separate authorized AOSP kernel via one-shot after new checkpoint; verify actual SELinux and loadpolicy41 only after verifying artifacts. Then227 freshexecution, diagnose bootanimation from originalsource/artifacts; originalZygote route remains required.",
+    "evidence": [
+      {
+        "path": "/home/tv/recuperacion-archtv/b217ada3-d3ab-462f-9f30-c43d205f2a7e-markor-software-launch/result.json",
+        "sha256": "e33e167d7376ca3e91085b2a804a26efc6f19c1e700d08c7684c7a32c3fb3306"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/23c1ef2a-a4b4-4eb0-b80f-09b47f77a990-markor-software-launch/result.json",
+        "sha256": "882106d4658c4673af77a1cf24728ed5c032188d263369d4acdb7d0f6600ab0a"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/23c1ef2a-a4b4-4eb0-b80f-09b47f77a990-markor-software-launch/mac-window.json",
+        "sha256": "b8443a6a502923f28bce799ef4d64cf0bd37a3e714c6dae23b61aeb892419ab1"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/23c1ef2a-a4b4-4eb0-b80f-09b47f77a990-markor-software-launch/run.log",
+        "sha256": "e3c62cf3817d2f71c0fcefe11f41655e63e64c04327434be360152f0d1e5dbd4"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/23c1ef2a-a4b4-4eb0-b80f-09b47f77a990-markor-software-launch/session-state.json",
+        "sha256": "a82cebeb6257c51476cdc43182191fba59bbafe7aefbd09c12be4ed2135cabf1"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/23c1ef2a-a4b4-4eb0-b80f-09b47f77a990-markor-software-launch/finite-audit/result.json",
+        "sha256": "2535ab0ea6a8256667be248ddfa6c16c0bfd83961bd5f98a9e88b963140db503"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/89031f2d-d595-4c3b-97ac-cbdc84fe8ad6-markor-software-launch/finite-audit/result.json",
+        "sha256": "dbd508cbe821c266250e6818ccfad88561efe194062e84a7f28c0a8c6c84411f"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-227/system-property-profile.json",
+        "sha256": "a4aa83f1d89e5494d6213b4cd1fca875c33bda3bb90a49742c366c4768b9149b"
+      },
+      {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-227/payload.json",
+        "sha256": "e1b1b2acacbe0004799fee0036e3c6bd2016a9f8d491129d7dfd497193313f67"
+      }
+    ]
   }
 }

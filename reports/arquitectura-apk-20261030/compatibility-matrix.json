@@ -32,7 +32,7 @@
       },
       "evidence_id": "ev_37c5a66b942f8e277c88500b2a15d430c2e523b672bf47fe74cf9c90638d164e",
       "full_evidence_id": "ev_746d40138a0f10e9c3202cd147e41d5efd4a7c58e81078c6109567a0bce77781",
-      "workflow": "Abrir fichero local, reproducir audio/vídeo, volver al shell y cerrar",
+      "workflow": "Abrir fichero local, reproducir audio/v\u00eddeo, volver al shell y cerrar",
       "runtime_results": {
         "installation": "not_tested",
         "launch": "not_tested",
@@ -416,13 +416,13 @@
         "scope": "Exact Markorv164 Markdown note created163 survives complete cohort teardown and original subsystems167; actual bytes, same UID/inodes/MCS, original install/force-stop/relaunch and real single pointer opens editor.167 native/exterior0. Not host reboot/power loss, FBE/MAC, graceful close, arbitrary upgrade or general APK compatibility."
       },
       "runtime_security_observation": {
-        "candidate": 224,
-        "status": "original_LMKD_PSI_and_client_reinit_pass_private_SysRq_RO_guard_pass_ABI_profile_conflict",
+        "candidate": 227,
+        "status": "private_system_property_profile_built_226_bootanimation_SIGSEGV_before_Zygote_227_host_without_SELinux",
         "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-        "record_sha256": "ac914ee008353c202977f878b4c06860ce65f5583b126986d8f73438519debd6",
-        "scope": "Original PSI registrations and original --reinit client UID1000 reply0; daemon survives reply. Real SysRq privateRO/errno30 and hostmetadata unchanged. ABIprofile source mismatch stops next stage. No app/pixels/pressurekill/fullR1 acceptance; previous167 permissive note intact.",
+        "record_sha256": "b9f78ee7289665dafcee9f8906136e6651fe58bb5721e3f475c26f3a410f3338",
+        "scope": "System-owned globals moved to original canonical system_ext source;226 enforcing9.65s bootanimationSIGSEGV beforeABIguard/Zygote, no APK acceptance.227built, controlleraborted beforecohort on hostwithoutSELinux. Historical167 accepted stages unchanged.",
         "r1_mac": "open",
-        "host_after": "permissive41/loadCOUNT37, auditnewloss0/no ownedresources, known41/58 BPF absent, prioruserdata retained"
+        "host_after": "7.2.11-arch1-1 bootf445a28c-5c09-4893-98e8-4f2214a928cf, noSELinux, auditrestored0/no newloss; historicalAOSPpolicy41 notcurrent"
       },
       "runtime_security_observation_history": [
         {
@@ -568,6 +568,15 @@
           "scope": "Seven original-profile private views pass metadata/hash/context/RO under enforcing and genericLinuxmount denied. Original LMKD/storaged exec reached, PSIsecuritydenial and v1fallbackunsupported stopsbootstrap. No Java/pixels/APK stage underMAC. Prior167 permissive note intact.",
           "r1_mac": "open",
           "host_after": "permissive40/loadCOUNT36; auditnewloss0, no owned resources,41/58known BPF absent, priornote/CE/DE unchanged"
+        },
+        {
+          "candidate": 224,
+          "status": "original_LMKD_PSI_and_client_reinit_pass_private_SysRq_RO_guard_pass_ABI_profile_conflict",
+          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "record_sha256": "ac914ee008353c202977f878b4c06860ce65f5583b126986d8f73438519debd6",
+          "scope": "Original PSI registrations and original --reinit client UID1000 reply0; daemon survives reply. Real SysRq privateRO/errno30 and hostmetadata unchanged. ABIprofile source mismatch stops next stage. No app/pixels/pressurekill/fullR1 acceptance; previous167 permissive note intact.",
+          "r1_mac": "open",
+          "host_after": "permissive41/loadCOUNT37, auditnewloss0/no ownedresources, known41/58 BPF absent, prioruserdata retained"
         }
       ],
       "runtime_security_history": [
@@ -920,7 +929,7 @@
       "acceptance": "Fix real author-distributed APK/version/requirements; test nine-stage workflow without per-APK patches or privileged bypass"
     }
   ],
-  "base_review": "A16-QPR2-1 supersedes A/B/C selection: native Bionic primary; SF→Wayland first graphics hypothesis. Prior choice/experiments historical only.",
+  "base_review": "A16-QPR2-1 supersedes A/B/C selection: native Bionic primary; SF\u2192Wayland first graphics hypothesis. Prior choice/experiments historical only.",
   "base_component_observation": {
     "evidence": "reports/bionic-component/art-core-result.json",
     "linker_help_and_launcher_list_exit": 0,
