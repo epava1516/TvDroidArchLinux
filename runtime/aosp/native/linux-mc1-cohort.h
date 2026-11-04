@@ -168,7 +168,7 @@ class LinuxMc1Cohort {
         // Close clears the pointer only after every service has been reaped.
         return apex_clean_exit_ && (!apexd_ || !apexd_->IsRunning());
     }
-    bool healthy() const { return (!logd_ || logd_->IsRunning()) && (!logcat_ || logcat_->IsRunning()) && !manager_failed_ && (!storaged_ || storaged_->IsRunning()) && (!swcodec_ || swcodec_->IsRunning()) && (!idmap_ || idmap_->IsRunning()) && (!gatekeeper_hal_ || gatekeeper_hal_->IsRunning()) && (!gatekeeper_ || gatekeeper_->IsRunning()) && (!keystore_ || keystore_->IsRunning()) && (!keymint_ || keymint_->IsRunning()) && (!aconfig_system_ || aconfig_system_->IsRunning() || aconfig_system_clean_exit_) && (!aconfig_mainline_ || aconfig_mainline_->IsRunning() || aconfig_mainline_clean_exit_) && (!audioserver_ || audioserver_->IsRunning()) && (!lmkd_ || lmkd_->IsRunning()) && (!netd_ || netd_->IsRunning()) && (!statsd_ || statsd_->IsRunning()) && (!health_ || health_->IsRunning()) && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && (bootanimation_->IsRunning() || bootanimation_clean_exit_))) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning() || apex_clean_exit_); }
+    bool healthy() const { return (!tombstoned_ || tombstoned_->IsRunning()) && (!mediaextractor_ || mediaextractor_->IsRunning()) && (!mediametrics_ || mediametrics_->IsRunning()) && (!mediaserver_ || mediaserver_->IsRunning()) && (!logd_ || logd_->IsRunning()) && (!logcat_ || logcat_->IsRunning()) && !manager_failed_ && (!storaged_ || storaged_->IsRunning()) && (!swcodec_ || swcodec_->IsRunning()) && (!idmap_ || idmap_->IsRunning()) && (!gatekeeper_hal_ || gatekeeper_hal_->IsRunning()) && (!gatekeeper_ || gatekeeper_->IsRunning()) && (!keystore_ || keystore_->IsRunning()) && (!keymint_ || keymint_->IsRunning()) && (!aconfig_system_ || aconfig_system_->IsRunning() || aconfig_system_clean_exit_) && (!aconfig_mainline_ || aconfig_mainline_->IsRunning() || aconfig_mainline_clean_exit_) && (!audioserver_ || audioserver_->IsRunning()) && (!lmkd_ || lmkd_->IsRunning()) && (!netd_ || netd_->IsRunning()) && (!statsd_ || statsd_->IsRunning()) && (!health_ || health_->IsRunning()) && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && (bootanimation_->IsRunning() || bootanimation_clean_exit_))) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning() || apex_clean_exit_); }
     android::base::Result<void> Close(const Tick& tick) {
         using namespace android::init;
         if(!active_) return {};
@@ -185,6 +185,7 @@ class LinuxMc1Cohort {
             if(std::chrono::steady_clock::now()>=end || !tick())
                 return android::base::Error()<<"MC1 services not collected during close";
         }
+        tombstoned_=nullptr;mediaextractor_=nullptr;mediametrics_=nullptr;mediaserver_=nullptr;
         manager_=nullptr;logd_=nullptr;logcat_=nullptr;
         hardware_=nullptr;
         allocator_=nullptr;
@@ -1123,6 +1124,40 @@ class LinuxMc1Cohort {
         if(!exporter.ok())return exporter.error();
         if(auto result=exporter->function(BuiltinArguments{export_selected,"u:r:init:s0"});!result.ok())return result;
         std::fprintf(stderr,"SELECTED_SYSTEMSERVER_CLASSPATH_EXTENSION original=%s adapted=%s NOT_ORIGINAL_DERIVE_OUTPUT\n",original_classpath_copy.c_str(),selected_classpath.c_str());
+        if(apex_requested_) {
+            // Complete original native media units. MediaProvider actually waits
+            // for ResourceManagerService; the original media binary publishes it
+            // together with MediaPlayerService. Keep extractor/metrics and crash
+            // collection intact rather than substituting Binder registrations.
+            for(const char* path:{"/system/etc/init/tombstoned.rc","/system/etc/init/mediaextractor.rc",
+                                  "/system/etc/init/mediametrics.rc","/system/etc/init/hw/mediaserver.zygote64.rc"}) {
+                auto parsed=parser.ParseConfigFile(path);
+                if(!parsed.ok() || parser.parse_error_count()!=0)return android::base::Error()<<"Original media/crash RC rejected: "<<path;
+            }
+            tombstoned_=services.FindService("tombstoned");
+            mediaextractor_=services.FindService("mediaextractor");
+            mediametrics_=services.FindService("mediametrics");
+            mediaserver_=services.FindService("media");
+            struct OriginalProfile { Service* process; const char* executable; uid_t uid; gid_t gid; };
+            const OriginalProfile profiles[]={
+                {tombstoned_,"/system/bin/tombstoned",AID_TOMBSTONED,AID_SYSTEM},
+                {mediaextractor_,"/system/bin/mediaextractor",AID_MEDIA_EX,AID_DRMRPC},
+                {mediametrics_,"/system/bin/mediametrics",AID_MEDIA,AID_MEDIA},
+                {mediaserver_,"/system/bin/mediaserver64",AID_MEDIA,AID_AUDIO}};
+            for(const auto& profile:profiles) {
+                auto* service=profile.process;
+                if(!service || service->args()!=std::vector<std::string>{profile.executable} ||
+                   service->uid()!=profile.uid || service->gid()!=profile.gid)
+                    return android::base::Error()<<"Original media/crash identity/executable mismatch: "<<profile.executable;
+                const std::string name=service->name();
+                service->AddReapCallback([this,name](const siginfo_t& info){
+                    std::fprintf(stderr,"ORIGINAL_MEDIA_CRASH_SERVICE_EXIT name=%s pid=%d code=%d status=%d\n",name.c_str(),info.si_pid,info.si_code,info.si_status);
+                    if(!closing_)manager_failed_=true;
+                });
+                if(auto started=service->Start();!started.ok())return started;
+                std::fprintf(stderr,"ORIGINAL_MEDIA_CRASH_SERVICE_STARTED name=%s pid=%d uid=%u gid=%u NOT_BINDER_OPERATION_OR_PLAYBACK_ACCEPTANCE\n",name.c_str(),service->pid(),service->uid(),service->gid());
+            }
+        }
         if(auto started=zygote_->Start();!started.ok())return started;
         std::fprintf(stderr,"SELECTED_ZYGOTE_ORIGINAL_SYSTEMSERVER_FORK_STARTED pid=%d NOT_APP_LAUNCH\n",zygote_->pid());
         client_done_=false;client_ok_=false;
@@ -1210,6 +1245,10 @@ class LinuxMc1Cohort {
     android::init::Service* swcodec_=nullptr;
     android::init::Service* idmap_=nullptr;
     android::base::unique_fd wayland_channel_;
+    android::init::Service* tombstoned_=nullptr;
+    android::init::Service* mediaextractor_=nullptr;
+    android::init::Service* mediametrics_=nullptr;
+    android::init::Service* mediaserver_=nullptr;
     android::init::Service* logd_=nullptr;
     android::init::Service* logcat_=nullptr;
     android::init::Service* netd_=nullptr;

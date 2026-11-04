@@ -21,7 +21,7 @@ for patch in actions_application['patches']:
 actions_archive=json.loads((r/'dist/aosp16/property-actions-build-5/archive.json').read_text())
 assert hashlib.sha256(Path(actions_archive['archive']).read_bytes()).hexdigest()==actions_archive['sha256']
 (out/'property-runtime-input.json').write_text(json.dumps({'application':actions_application,'archive':actions_archive},indent=2)+'\n')
-overlay=r/'dist/aosp16/platform-overlay-build-2'
+overlay=r/'dist/aosp16/platform-overlay-build-3'
 overlay_record=json.loads((overlay/'build.json').read_text())
 assert hashlib.sha256((overlay/'ArchTvPlatform.apk').read_bytes()).hexdigest()==overlay_record['apk_sha256']
 for path,digest in overlay_record['inputs_sha256'].items():

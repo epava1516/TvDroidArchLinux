@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793791827.1386511,
-    "seen": 1793791836.4594698,
-    "ast_hash": "f528397c01b426d4ece3f8efd62268a6",
+    "mtime": 1793794907.7798817,
+    "seen": 1793794928.1749613,
+    "ast_hash": "d0d1c46be8c66266df8527626b23ef8a",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793791827.1107848,
-    "seen": 1793791836.4599912,
-    "ast_hash": "e6b4555d7518f37da189d38296009209",
+    "mtime": 1793794907.7598813,
+    "seen": 1793794928.1761572,
+    "ast_hash": "88b18dd4142b33f2412017da97c647e8",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793791827.1186576,
-    "seen": 1793791836.4608264,
-    "ast_hash": "d28fd2b5214832625c0b2a1d9ef90732",
+    "mtime": 1793794907.8048155,
+    "seen": 1793794928.1772401,
+    "ast_hash": "a80ba5f95615ef5447380cd2de7e868c",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -816,9 +816,9 @@
     "semantic_hash": ""
   },
   "docs/CONTRATO-APK.md": {
-    "mtime": 1793791827.1461897,
-    "seen": 1793791836.4597712,
-    "ast_hash": "d2123699ab2868d5d1dabe4ca12ed120",
+    "mtime": 1793794907.7932153,
+    "seen": 1793794928.1755338,
+    "ast_hash": "c51d2ddb329cf8341c1af2c3ef40c993",
     "semantic_hash": ""
   },
   "runtime/apk/README.md": {
@@ -1716,9 +1716,9 @@
     "semantic_hash": ""
   },
   "docs/EVIDENCIAS.md": {
-    "mtime": 1793791827.1498318,
-    "seen": 1793791836.460141,
-    "ast_hash": "8170a94942f25efa6d6c02f1961769a8",
+    "mtime": 1793794907.8121982,
+    "seen": 1793794928.176449,
+    "ast_hash": "bebc061e2759eb8053f07091b7d2fe6f",
     "semantic_hash": ""
   },
   "fixtures/aosp-framework-space/FrameworkSpaceProbe.java": {
@@ -1728,9 +1728,9 @@
     "semantic_hash": ""
   },
   "docs/COMPATIBILIDAD-APK.md": {
-    "mtime": 1793791827.147803,
-    "seen": 1793791836.4595494,
-    "ast_hash": "576cad77ab49fc0ff2470b75f2f757e6",
+    "mtime": 1793794907.8085375,
+    "seen": 1793794928.1750724,
+    "ast_hash": "e59ae71fbfed5942e5164ccaf820a774",
     "semantic_hash": ""
   },
   "fixtures/aosp-window-service/ServiceRegistryChecks.java": {
@@ -1926,9 +1926,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-property-worker.cpp": {
-    "mtime": 1793743900.147242,
-    "seen": 1793744931.3603776,
-    "ast_hash": "57ce7f1d3941f3e1f8fb6b52a073e6b9",
+    "mtime": 1793794819.868425,
+    "seen": 1793794928.1542778,
+    "ast_hash": "a8fe50378f29e6e0a8297a610bc547a8",
     "semantic_hash": ""
   },
   "runtime/aosp/native/verify-service-profile.cpp": {
@@ -1974,9 +1974,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-mc1-cohort.h": {
-    "mtime": 1793789499.991199,
-    "seen": 1793789763.0114486,
-    "ast_hash": "50e790482e73003dc8a6217e01a2961c",
+    "mtime": 1793792013.2259083,
+    "seen": 1793792325.244414,
+    "ast_hash": "c9e1564be28a396addbfbc61988682b2",
     "semantic_hash": ""
   },
   "fixtures/aosp-wayland-output/client.cpp": {
@@ -2022,9 +2022,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java": {
-    "mtime": 1793788941.180663,
-    "seen": 1793789044.6437488,
-    "ast_hash": "31961f6f63bf77743aa371ce21ca8d6e",
+    "mtime": 1793793576.5779195,
+    "seen": 1793794202.2804568,
+    "ast_hash": "4566a7b9589bd51fa81e8d81e532e12e",
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/org/archtv/aosplinux/ServiceLauncher.java": {
@@ -2034,9 +2034,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/install-markor.sh": {
-    "mtime": 1793789499.9918249,
-    "seen": 1793789763.0099766,
-    "ast_hash": "199d8a5bffc97df3307cbbd6b71a15a3",
+    "mtime": 1793794820.0250943,
+    "seen": 1793794928.1526556,
+    "ast_hash": "0f38a03a23df57325eba6b3296a15996",
     "semantic_hash": ""
   },
   "scripts/run_completion.py": {
@@ -2142,9 +2142,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/android16-qpr2/policy/selected-platform-profile.json": {
-    "mtime": 1793784489.675415,
-    "seen": 1793787786.1004982,
-    "ast_hash": "bcaf9947b6c41e7165aa40a472d3d183",
+    "mtime": 1793793641.4932518,
+    "seen": 1793794202.2779355,
+    "ast_hash": "57c7e2cba1dbd6b6735d5938fcb056f3",
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/archtv/runtime/SelectedRuntime.java": {

@@ -4099,5 +4099,72 @@
     ],
     "next_original_subsystem": "Pinned original main_mediaserver.cpp instantiates MediaPlayerService and ResourceManagerService together. Exact original GSI mediaserver64 ELF64 verified through REA MCP ELF notes; original mediaserver.zygote64.rc, mediaextractor/mediametrics/tombstoned profiles available. Next integration must provide these complete original services plus actual crash collection and demonstrate volume/PackageInstaller; no SoundPool root-cause assertion without crash stack.",
     "rea_limits": "REA MCP GDB static libsoundpool.so symbol read observes ThreadPool and exact artifact hash; static scan found no Thread< literal. No inferior executed, no fault site identified, source/binary thread-name correspondence unproven. GDB session closed with none_observed. Media ELF note inspection is static only."
+  },
+  "integrated249_252": {
+    "utc": "2026-11-04T12:21:46.972432+00:00",
+    "experiments": {
+      "249": "Original media/player/resource-manager/extractor/metrics and tombstoned profiles started; no APK acceptance.",
+      "250": "Original NNP in-process crash fallback captured system_server SEGV_ACCERR in SwiftShader JIT during ColorFade EGL. No execmem grant.",
+      "251": "Preflight build rejected stale overlay source hash; never executed.",
+      "252": "exit1. Resource readback config_animateScreenLights=true; original StorageManagerService and MediaProvider report emulated;0 mounted. Original shell volume output remains empty; installation never started. mediaserver64 SIGABRT ICU IcuRegistration::getTimeZoneModulePath; missing ANDROID_TZDATA_ROOT. No observed repeat of previous SwiftShader crash; fade/wake cycle not accepted."
+    },
+    "checkpoint_250": "/home/tv/recuperacion-archtv/44df03a0-38a6-47f0-a708-2d4072ad6047-markor-software-launch",
+    "checkpoint_252": "/home/tv/recuperacion-archtv/e4303d9a-d5e4-438f-a687-94a5d663b11e-markor-software-launch",
+    "policy51": {
+      "readback_sha256": "2b9925e3eba7d687a2383af91402313c7d46fe12f6edb9e7f9f4fb299fe69076",
+      "decisions_previous": 155,
+      "fuse_original_comparisons": 160,
+      "scope": "Original fuse target rules incl neverallows mapped to Linux fusefs_t global owner. This does not establish host FUSE isolation or real app access."
+    },
+    "host_after252": {
+      "utc": "2026-11-04T12:17:56.010699+00:00",
+      "kernel": "6.18.59-archtv-aosp16-1",
+      "boot_id": "ed605c8c-db9e-4ce1-8c57-d383f08d3694",
+      "enforce": "0",
+      "status": [
+        1,
+        112,
+        0,
+        10,
+        1
+      ],
+      "policy_sha256": "2b9925e3eba7d687a2383af91402313c7d46fe12f6edb9e7f9f4fb299fe69076",
+      "owned_running_units": "",
+      "audit": "enabled 0\nfailure 1\npid 0\nrate_limit 0\nbacklog_limit 64\nlost 0\nbacklog 0\nbacklog_wait_time 18000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n",
+      "loops": "",
+      "dm": "No devices found\n",
+      "owned_bpf_remaining": {
+        "prog": [],
+        "map": [],
+        "link": []
+      }
+    },
+    "evidence": {
+      "/home/tv/recuperacion-archtv/e4303d9a-d5e4-438f-a687-94a5d663b11e-markor-software-launch/result.json": {
+        "sha256": "26cc5781b1fabff733dba0f1f8e17530ca93657c447c77f935e3f941bb2f0845",
+        "bytes": 48240
+      },
+      "/home/tv/recuperacion-archtv/e4303d9a-d5e4-438f-a687-94a5d663b11e-markor-software-launch/persisted-original-logcat.txt": {
+        "sha256": "a28f912fbaa0a61c98b3d96ddba0531a41701ac8037dd12317d3f1935a72cf90",
+        "bytes": 862063
+      },
+      "/home/tv/recuperacion-archtv/e4303d9a-d5e4-438f-a687-94a5d663b11e-markor-software-launch/mc1-stderr.txt": {
+        "sha256": "c258669b14aee2ca9a331968f8574ef213fa66ce9b5aba9c1b863eb29ed38fea",
+        "bytes": 182253
+      },
+      "/home/tv/recuperacion-archtv/e4303d9a-d5e4-438f-a687-94a5d663b11e-markor-software-launch/after-host.json": {
+        "sha256": "7228e6ebd24b892e4c2e3988376f04ee9373a58febd6cbbb0d538a2a194c1e0e",
+        "bytes": 632
+      },
+      "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load51/access-contract.json": {
+        "sha256": "fbbbd4075c79aa8a130ddf103fa245e8d90ec0706bc74fd8bb937372926d60b6",
+        "bytes": 36087
+      },
+      "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load51/fuse-original-comparison.json": {
+        "sha256": "804db6dbee3c8d596f4e435c8fb9cccf80a77bce2a9dee687c562641c6ba7902",
+        "bytes": 31150
+      }
+    },
+    "next": "253: restore inherited original init.environ APEX roots for native media; record actual Sm stderr/status; full original PackageInstaller/Markor path. No new APK stages accepted; R1-MAC ARM GMS DRM audio/graphics and product remain open."
   }
 }

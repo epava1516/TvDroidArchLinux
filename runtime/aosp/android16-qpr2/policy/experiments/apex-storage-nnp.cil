@@ -48,3 +48,27 @@
 (allow zygote appdomain (process2 (nnp_transition)))
 (allow zygote webview_zygote (process2 (nnp_transition)))
 (allow zygote app_zygote (process2 (nnp_transition)))
+
+; Original init_daemon_domain transitions for the complete native media/crash
+; profiles. Linux NNP1 remains irreversible; original exec labels, identities,
+; capabilities, Binder/ptrace and file rules remain the authorization gates.
+(allow init mediaserver (process2 (nnp_transition)))
+(allow init mediaextractor (process2 (nnp_transition)))
+(allow init mediametrics (process2 (nnp_transition)))
+(allow init tombstoned (process2 (nnp_transition)))
+; Original debuggerd_handler.cpp forces in-process fallback under NNP1;
+; the crash_dump exec path is not used. Actual249 denies system_server's
+; tombstoned_crash socket write. Full original public/te_macros
+; crash_dump_fallback(system_server), user-build branch, retains NNP1 and
+; ptrace restrictions. FD/append permissions are for original diagnostic
+; descriptors, never direct arbitrary file writes or app authorization.
+(allow system_server anr_data_file (file (append)))
+(allow system_server dumpstate (fd (use)))
+(allow system_server incidentd (fd (use)))
+(allow system_server dumpstate (fifo_file (append write)))
+(allow system_server incidentd (fifo_file (append write)))
+(allow system_server system_server (fifo_file (append write)))
+(allow system_server tombstoned (unix_stream_socket (connectto)))
+(allow system_server tombstoned (fd (use)))
+(allow system_server tombstoned_crash_socket (sock_file (write)))
+(allow system_server tombstone_data_file (file (append)))

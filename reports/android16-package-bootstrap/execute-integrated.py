@@ -214,6 +214,8 @@ text=text.replace("elif p.is_file():shutil.copyfile(p,root/'apex'/p.name)","elif
 # CE alias mounts and original permission data; no user metadata is seeded.
 roots=[('misc/gatekeeper',0o700,1000,1000),('misc/keystore',0o700,1017,1017),('resource-cache',0o771,1000,1000),('misc/net',0o750,0,2000),('misc/stats-active-metric',0o770,1066,1000),('misc/stats-data',0o770,1066,1000),('misc/stats-data/restricted-data',0o770,1066,1000),('misc/stats-service',0o770,1066,1000),('misc/train-info',0o770,1066,1000),('dalvik-cache',0o771,0,0),('misc/vold',0o700,0,0),('misc/profiles',0o771,1000,1000),('misc/profiles/cur',0o771,1000,1000),('misc/profiles/ref',0o771,1000,1000),('misc/apexdata',0o711,0,0),('system/users',0o775,1000,1000),('media',0o550,1023,1023),('misc_ce',0o551,1000,9998),('system_ce',0o550,1000,1000),('user_de',0o511,1000,1000),('vendor_ce',0o551,0,0),('vendor_de',0o551,0,0)]
 roots += [('system/environ',0o700,1000,1000)]
+# Exact pinned init.rc roots for original media/crash services; no trace or media state seeded.
+roots += [('anr',0o775,1000,1000),('tombstones',0o775,1000,1000),('misc/media',0o700,1013,1013)]
 roots += [('user',0o511,1000,1000),('data',0o771,1000,1000),('storage_area',0o551,0,0)]
 root_code="\n".join("p=root/'data'/"+repr(name)+";p.mkdir(parents=True,exist_ok=True);os.chmod(p,"+str(mode)+");os.chown(p,"+str(uid)+","+str(gid)+")" for name,mode,uid,gid in roots)
 apk_path=Path('/home/tv/.cache/archtv/apk/real-app-candidates/net.gsantner.markor-v164-2026.10.0-flavorDefault-release.apk')

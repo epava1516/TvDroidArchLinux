@@ -2,4 +2,9 @@
     <!-- Linux owns the desktop. Android WallpaperManager has no backing service
          in this initial profile; its original disabled implementation reports it. -->
     <bool name="config_enableWallpaperService">false</bool>
+    <!-- Use original ColorFade.MODE_FADE/ColorLayer. The cool-down EGL path
+         invokes SwiftShader JIT inside system_server, whose original policy
+         forbids execmem (real tombstone250). Preserve fade and display state
+         transitions without granting executable memory or disabling timeout. -->
+    <bool name="config_animateScreenLights">true</bool>
 </resources>

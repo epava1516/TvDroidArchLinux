@@ -401,6 +401,11 @@ public final class SelectedServices {
                 // Original SystemServer starts OMS after PMS/UserManager.
                 // DocumentsUI consumes its real IOverlayManager, not a stub.
                 start(manager,managerType,"com.android.server.om.OverlayManagerService");
+                Object platformResources=call(contextType,context,"getResources",new Class<?>[0]);
+                int simpleFade=Class.forName("com.android.internal.R$bool").getField("config_animateScreenLights").getInt(null);
+                boolean actualSimpleFade=(Boolean)call(Class.forName("android.content.res.Resources"),platformResources,"getBoolean",new Class<?>[]{int.class},simpleFade);
+                if(!actualSimpleFade)throw new IllegalStateException("Original ColorLayer fade overlay inactive; refusing system_server software EGL JIT path");
+                System.err.println("ORIGINAL_COLORFADE_RESOURCE_READBACK animateScreenLights="+actualSimpleFade+" REQUIRES_IDLE_AND_WAKE_EXECUTION_NOT_GRAPHICS_ACCEPTANCE");
                 start(manager,managerType,"com.android.server.os.NativeTombstoneManagerService");
                 start(manager,managerType,"com.android.server.SystemConfigService");
                 start(manager,managerType,"com.android.server.usage.UsageStatsService");
