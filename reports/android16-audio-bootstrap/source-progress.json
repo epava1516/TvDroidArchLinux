@@ -580,7 +580,7 @@
     "Original vendor-domain policy, devices and isolation in enforcing",
     "Native audio backend startup and audio APK compatibility"
   ],
-  "priority": "Current critical path after actual VLC284 first frame: deploy privately configured original AIDL primary HAL + audioserver, real card0 PCM profile/device aliases and identities/policy. Verify actual Binder registration, native audio route/open/write/clock plus failed-open negative, then continuous VLC playback, close/reopen. Do not repeat Markor or claim availability by linker success.",
+  "priority": "Compile whole original vendor/hal_audio_default.te with original macros into policy61, preserving all policy60 Linux adapters. Check original neverallows, checkpoint/load permissive with rollback60, then fresh UUID on unchanged verified payload286 to test original domain/start/Binder/real PCM. Full R1 remains open.",
   "linux_alsa_original_closure": {
     "utc": "2026-11-04T20:33:01.311873+00:00",
     "scope": "BUILD ONLY: complete original AIDL core factory and original session/provider/Rust/codec closure, adapted primary ALSA transfers and clock; no runtime availability accepted",
@@ -630,5 +630,52 @@
       "Soong sanitizer/CFI and logger integration equivalence unproved",
       "VLC remains first frame only; full R1 and product open"
     ]
+  },
+  "native_audio287": {
+    "scope": "Executed negative integration under enforcing; HAL not started, no PCM or new VLC acceptance",
+    "checkpoint": "/home/tv/recuperacion-archtv/7310e5a8-2a5b-49f5-a529-f4fa4cfc41f1-markor-software-launch",
+    "payload_build": 286,
+    "payload_sha256": "57f4bc3f2c83b2c73a2e4642ac06bf60a1d1c10dada633dbf36b0e1a339e3fef",
+    "records": [
+      {
+        "path": "/home/tv/recuperacion-archtv/7310e5a8-2a5b-49f5-a529-f4fa4cfc41f1-markor-software-launch/before-launch.json",
+        "sha256": "93d08dc49a1c691902e8a1b99343013cf4a1952b6a2311b39e6992da01925342"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/7310e5a8-2a5b-49f5-a529-f4fa4cfc41f1-markor-software-launch/functional-result.json",
+        "sha256": "1c969de608e2e7146263d3ece6212b77b2820c2e5fe15eef5ce648eec2a50a1c"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/7310e5a8-2a5b-49f5-a529-f4fa4cfc41f1-markor-software-launch/result.json",
+        "sha256": "c7bcb38352e123548cc1dab2193c94a00c14ef6c7929fcf020242dade082d050"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/7310e5a8-2a5b-49f5-a529-f4fa4cfc41f1-markor-software-launch/mac-window.json",
+        "sha256": "548ae750ade498445627dbe9f3cec610d5844a1533e33bb7693682070c1c382f"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/7310e5a8-2a5b-49f5-a529-f4fa4cfc41f1-markor-software-launch/host-audio-after.json",
+        "sha256": "35f95781eb1f81e7f170197f39866d1f9e1c4205980cd62a9b63064e8444ea47"
+      },
+      {
+        "path": "/home/tv/recuperacion-archtv/7310e5a8-2a5b-49f5-a529-f4fa4cfc41f1-markor-software-launch/completion-consumer.json",
+        "sha256": "75b0584880b71ad0c0b7e6a3d664417ee4d5f3c509152e1910efac928fc8d698"
+      }
+    ],
+    "principal_failure": "Kernel AVC init getattr raw hal_audio_default_exec -> linux.unlabeled_t because verified policy60 lacks original vendor audio domain/type. No permission to unlabeled added.",
+    "private_devices": "Real116:5 control+116:2 playback aliases0660 system:audio with valid original audio_device context; original host nodes unchanged.",
+    "host": "MAC restored0, BPF/loop/dm closed, original udev restored, mixer exact scontents restoration and host sound inode/ownership/mode/context unchanged, no reboot; audit lost0 rules unchanged.",
+    "secondary_failure": "Native Close fails after Stop triggers original vold reboot_on_failure; outer cleanup verified. No VM reboot; not primary cause.",
+    "earlier_attempts": [
+      {
+        "build": 285,
+        "scope": "All binaries compiled, offline image128MiB too small for161MiB tree; packager-negative.json. Development profile286 uses256MiB, not production lightness."
+      },
+      {
+        "id": "5fc9041a-82c4-434b-a5b1-f3499b3b3932",
+        "scope": "Preparation failed missing compositor checkpoint fields before MAC; closed/consumed. No HAL attempt."
+      }
+    ],
+    "next": "Compile whole original vendor/hal_audio_default.te with original macros into policy61, preserving all policy60 Linux adapters. Check original neverallows, checkpoint/load permissive with rollback60, then fresh UUID on unchanged verified payload286 to test original domain/start/Binder/real PCM. Full R1 remains open."
   }
 }

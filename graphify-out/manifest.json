@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793821353.3373258,
-    "seen": 1793821399.3242085,
-    "ast_hash": "99c2f627a31a0acf726a757aefb3c1a5",
+    "mtime": 1793825495.6284194,
+    "seen": 1793825511.3993106,
+    "ast_hash": "df7276d82b20d4dd9b9bddea496be6e8",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793824381.3310554,
-    "seen": 1793824397.0889647,
-    "ast_hash": "7dc41b223027b9ae564fc6e1e8631d7b",
+    "mtime": 1793825495.600301,
+    "seen": 1793825511.4000852,
+    "ast_hash": "0e510cab624e8a9e1889f6011501036c",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -492,9 +492,9 @@
     "semantic_hash": ""
   },
   "manifests/android-test-lab.txt": {
-    "mtime": 1793324946.7829764,
-    "seen": 1793647620.6402054,
-    "ast_hash": "4f33a43dd39b4d7c85a3e47472f9b62c",
+    "mtime": 1793824975.574941,
+    "seen": 1793825511.4012341,
+    "ast_hash": "8a2e4c5f4435acec9e59228737cce837",
     "semantic_hash": ""
   },
   "scripts/94-android-media-probe.sh": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793821283.4601502,
-    "seen": 1793821297.28396,
-    "ast_hash": "28e1156825e8337317da310008c86436",
+    "mtime": 1793825495.6069677,
+    "seen": 1793825511.4009655,
+    "ast_hash": "d9b005661c8441fb980ccd1b2775d2e0",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -1716,9 +1716,9 @@
     "semantic_hash": ""
   },
   "docs/EVIDENCIAS.md": {
-    "mtime": 1793821283.4622657,
-    "seen": 1793821297.2833579,
-    "ast_hash": "43059a6f48604ad26a7fe6222fedee22",
+    "mtime": 1793825495.6185608,
+    "seen": 1793825511.4002445,
+    "ast_hash": "d3a85ad731f05e97282557a779082c05",
     "semantic_hash": ""
   },
   "fixtures/aosp-framework-space/FrameworkSpaceProbe.java": {
@@ -1974,9 +1974,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-mc1-cohort.h": {
-    "mtime": 1793813754.1509793,
-    "seen": 1793813792.580775,
-    "ast_hash": "af2505c431239fce8c59f51da04e4cc2",
+    "mtime": 1793824694.3957236,
+    "seen": 1793825511.3808465,
+    "ast_hash": "63cde1eb1ff713e0926cc0f8228d6c07",
     "semantic_hash": ""
   },
   "fixtures/aosp-wayland-output/client.cpp": {
@@ -2089,7 +2089,7 @@
   },
   "runtime/aosp/hwui-sources.json": {
     "mtime": 1793383954.003966,
-    "seen": 1793821645.1544664,
+    "seen": 1793824447.4795613,
     "ast_hash": "",
     "semantic_hash": ""
   },

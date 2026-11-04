@@ -213,7 +213,7 @@ class LinuxMc1Cohort {
         // Close clears the pointer only after every service has been reaped.
         return apex_clean_exit_ && (!apexd_ || !apexd_->IsRunning());
     }
-    bool healthy() const { return (!tombstoned_ || tombstoned_->IsRunning()) && (!mediaextractor_ || mediaextractor_->IsRunning()) && (!mediametrics_ || mediametrics_->IsRunning()) && (!mediaserver_ || mediaserver_->IsRunning()) && (!logd_ || logd_->IsRunning()) && (!logcat_ || logcat_->IsRunning()) && !manager_failed_ && (!storaged_ || storaged_->IsRunning()) && (!swcodec_ || swcodec_->IsRunning()) && (!idmap_ || idmap_->IsRunning()) && (!gatekeeper_hal_ || gatekeeper_hal_->IsRunning()) && (!gatekeeper_ || gatekeeper_->IsRunning()) && (!keystore_ || keystore_->IsRunning()) && (!keymint_ || keymint_->IsRunning()) && (!aconfig_system_ || aconfig_system_->IsRunning() || aconfig_system_clean_exit_) && (!aconfig_mainline_ || aconfig_mainline_->IsRunning() || aconfig_mainline_clean_exit_) && (!audioserver_ || audioserver_->IsRunning()) && (!lmkd_ || lmkd_->IsRunning()) && (!netd_ || netd_->IsRunning()) && (!statsd_ || statsd_->IsRunning()) && (!health_ || health_->IsRunning()) && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && (bootanimation_->IsRunning() || bootanimation_clean_exit_))) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning() || apex_clean_exit_); }
+    bool healthy() const { return (!tombstoned_ || tombstoned_->IsRunning()) && (!mediaextractor_ || mediaextractor_->IsRunning()) && (!mediametrics_ || mediametrics_->IsRunning()) && (!mediaserver_ || mediaserver_->IsRunning()) && (!logd_ || logd_->IsRunning()) && (!logcat_ || logcat_->IsRunning()) && !manager_failed_ && (!storaged_ || storaged_->IsRunning()) && (!swcodec_ || swcodec_->IsRunning()) && (!idmap_ || idmap_->IsRunning()) && (!gatekeeper_hal_ || gatekeeper_hal_->IsRunning()) && (!gatekeeper_ || gatekeeper_->IsRunning()) && (!keystore_ || keystore_->IsRunning()) && (!keymint_ || keymint_->IsRunning()) && (!aconfig_system_ || aconfig_system_->IsRunning() || aconfig_system_clean_exit_) && (!aconfig_mainline_ || aconfig_mainline_->IsRunning() || aconfig_mainline_clean_exit_) && (!audiohal_ || audiohal_->IsRunning()) && (!audioeffect_ || audioeffect_->IsRunning()) && (!audioserver_ || audioserver_->IsRunning()) && (!lmkd_ || lmkd_->IsRunning()) && (!netd_ || netd_->IsRunning()) && (!statsd_ || statsd_->IsRunning()) && (!health_ || health_->IsRunning()) && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && (bootanimation_->IsRunning() || bootanimation_clean_exit_))) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning() || apex_clean_exit_); }
     android::base::Result<void> Close(const Tick& tick) {
         using namespace android::init;
         if(!active_) return {};
@@ -240,7 +240,7 @@ class LinuxMc1Cohort {
         bootanimation_started_=false;
         aconfig_system_=nullptr;aconfig_mainline_=nullptr;
         aconfig_system_clean_exit_=false;aconfig_mainline_clean_exit_=false;
-        audioserver_=nullptr;
+        audioserver_=nullptr;audiohal_=nullptr;audioeffect_=nullptr;
         storaged_=nullptr;swcodec_=nullptr;idmap_=nullptr;
         lmkd_=nullptr;
         netd_=nullptr;
@@ -1043,6 +1043,27 @@ class LinuxMc1Cohort {
             // Linux admits native audio when an actual provider is configured.
             // AudioService keeps its original unavailable/recovery behavior;
             // absence of a HAL is never reported as working playback.
+            if(access("/vendor/etc/init/archtv-audio.rc",R_OK)==0) {
+                auto audio_hal_parser=parser.ParseConfigFile("/vendor/etc/init/archtv-audio.rc");
+                if(!audio_hal_parser.ok() || parser.parse_error_count()!=0)
+                    return android::base::Error()<<"Original audio HAL RC rejected";
+                audiohal_=services.FindService("vendor.audio-hal-aidl");
+                audioeffect_=services.FindService("vendor.audio-effect-hal-aidl");
+                if(!audiohal_ || !audioeffect_ ||
+                   audiohal_->args()!=std::vector<std::string>{"/vendor/bin/hw/android.hardware.audio.service-aidl.example"} ||
+                   audioeffect_->args()!=std::vector<std::string>{"/vendor/bin/hw/android.hardware.audio.effect.service-aidl.example"} ||
+                   audiohal_->uid()!=AID_AUDIOSERVER || audioeffect_->uid()!=AID_AUDIOSERVER ||
+                   audiohal_->gid()!=AID_AUDIO || audioeffect_->gid()!=AID_AUDIO)
+                    return android::base::Error()<<"Unexpected original audio HAL identity/executable";
+                for(auto* service:{audiohal_,audioeffect_}) {
+                    service->AddReapCallback([this](const siginfo_t& info){
+                        std::fprintf(stderr,"ORIGINAL_AUDIO_HAL_EXIT pid=%d code=%d status=%d\n",info.si_pid,info.si_code,info.si_status);
+                        if(!closing_)manager_failed_=true;
+                    });
+                    if(auto started=service->Start();!started.ok())return started;
+                    std::fprintf(stderr,"ORIGINAL_AUDIO_HAL_STARTED name=%s pid=%d NOT_AUDIO_ACCEPTANCE\n",service->name().c_str(),service->pid());
+                }
+            }
             const bool native_audio_configured = services.FindService("vendor.audio-hal-aidl") ||
                 services.FindService("vendor.audio-hal") || services.FindService("vendor.audio-hal-4-0-msd");
             if (native_audio_configured) {
@@ -1294,6 +1315,8 @@ class LinuxMc1Cohort {
     android::init::Service* aconfig_mainline_=nullptr;
     android::init::Service* lmkd_=nullptr;
     android::init::Service* audioserver_=nullptr;
+    android::init::Service* audiohal_=nullptr;
+    android::init::Service* audioeffect_=nullptr;
     android::init::Service* storaged_=nullptr;
     android::init::Service* swcodec_=nullptr;
     android::init::Service* idmap_=nullptr;

@@ -33,6 +33,7 @@ inputs = [
     ('system/hardware/interfaces', 'media', 'media-audio-aidl'),
     ('system/media', 'alsa_utils', 'alsa-utils-current'),
     ('frameworks/av', 'media/libaudioclient', 'audioclient'),
+    ('frameworks/av', 'services/audiopolicy/config', 'audio-policy-defaults'),
     ('frameworks/av', 'media/libaudiofoundation', 'audiofoundation'),
     ('frameworks/av', 'media/audioaidlconversion', 'audio-conversion'),
     ('frameworks/av', 'media/liberror', 'error-utils'),

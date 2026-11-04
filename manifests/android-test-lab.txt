@@ -1,2 +1,5 @@
 # Herramienta de laboratorio para generar clips originales de prueba H6.
 ffmpeg
+
+# Captura/restauración del mezclador real antes de pruebas del HAL AOSP.
+alsa-utils

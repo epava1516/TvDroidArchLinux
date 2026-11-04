@@ -176,6 +176,17 @@ null_setup="for n,dev in [('null',(1,3)),('urandom',(1,9))]:os.mknod(root/'dev'/
 assert text.count(null_setup)==1
 # mknod applies umask; make the intended standard-device mode explicit.
 text=text.replace(null_setup,null_setup+";os.chmod(root/'dev'/n,0o666)")
+if build_options.get('native_audio',False):
+ # Alias only the actual playback/control character devices. Original labels
+ # are applied later by label(root); host device ownership/labels stay intact.
+ sound_setup="""
+sound=root/'dev/snd';sound.mkdir(mode=0o755)
+for name in ['controlC0','pcmC0D0p']:
+ original=Path('/dev/snd')/name;actual=original.stat();assert stat.S_ISCHR(actual.st_mode)
+ node=sound/name;os.mknod(node,stat.S_IFCHR|0o660,actual.st_rdev);os.chmod(node,0o660);os.chown(node,1000,1005)
+"""
+ text=text.replace(null_setup,sound_setup+'\n'+null_setup,1)
+
 if build_options.get('original_system_dma_heap',False):
  # Original ueventd /dev/dma_heap/system0444 system:system; real kernel heap,
  # fresh private inode only. Never create/chmod a host /dev node.
@@ -188,7 +199,7 @@ heap=heap_dir/'system';os.mknod(heap,stat.S_IFCHR|0o444,os.makedev(heap_major,he
 """
  text=text.replace(null_setup,heap_setup+'\n'+null_setup,1)
 device_metadata="""
-for name in ['dev/null','dev/urandom','dev/dri/card0','dev/dri/renderD128']+(['dev/dma_heap/system'] if (root/'dev/dma_heap/system').exists() else []):
+for name in ['dev/null','dev/urandom','dev/dri/card0','dev/dri/renderD128']+(['dev/snd/controlC0','dev/snd/pcmC0D0p'] if (root/'dev/snd').exists() else [])+(['dev/dma_heap/system'] if (root/'dev/dma_heap/system').exists() else []):
  info=(root/name).stat()
  print('PRIVATE_DEVICE_CONTRACT '+json.dumps({'path':'/'+name,'mode':oct(stat.S_IMODE(info.st_mode)),'uid':info.st_uid,'gid':info.st_gid,'rdev':[os.major(info.st_rdev),os.minor(info.st_rdev)],'context':os.getxattr(root/name,'security.selinux').decode().rstrip(chr(0))}),flush=True)
 """
