@@ -580,7 +580,7 @@
     "Original vendor-domain policy, devices and isolation in enforcing",
     "Native audio backend startup and audio APK compatibility"
   ],
-  "priority": "Original vendor audio TE has no private tmpfs transition/type. Explicit Linux adaptation uses whole original tmpfs_domain macro on new private audio type and projects to Linux anonymous memory; no generic Linux tmpfs write/app/execute permissions. Offline63+9new-memory decisions before kernel load, then whole same payload290 with fresh UUID.",
+  "priority": "Fresh actual whole original audio/VLC attempt291, unchanged verified payload290, exact compositor fields, expected kernel readback27a3af9610b0c9b03102bc5985bcfec9f9723ed2ed5934f030a2d7b4f8b46c86. Require real original memfd feature probe, FMQ/output creation, ALSA transfer and hardware clock; no generic write grant, feature-success injection or diagnostic permission shortcut.",
   "linux_alsa_original_closure": {
     "utc": "2026-11-04T20:33:01.311873+00:00",
     "scope": "BUILD ONLY: complete original AIDL core factory and original session/provider/Rust/codec closure, adapted primary ALSA transfers and clock; no runtime availability accepted",
@@ -762,5 +762,30 @@
     "effects": "Config present, original queryProcessing fails getDescriptorFailed;21 DSP plugins absent and unimplemented, not resolved by registration.",
     "host_after": "/home/tv/recuperacion-archtv/5bf4cb14-c43f-446a-9668-06d8191de53f-markor-software-launch/host-audio-after.json",
     "next": "Original vendor audio TE has no private tmpfs transition/type. Explicit Linux adaptation uses whole original tmpfs_domain macro on new private audio type and projects to Linux anonymous memory; no generic Linux tmpfs write/app/execute permissions. Offline63+9new-memory decisions before kernel load, then whole same payload290 with fresh UUID."
+  },
+  "private_audio_memory_policy63": {
+    "scope": "Explicit Linux private-memory adaptation with original macro; offline9 decisions and permissive context load only, not memfd/stream/PCM/APK or full R1 acceptance",
+    "upstream_fact": "Original vendor/hal_audio_default.te does not define a private tmpfs domain/type. This adaptation declares one file_type and invokes the complete original tmpfs_domain macro, then projects its transition to Linux-owned anonymous memory. No claim that this exact audio transition already exists upstream.",
+    "TE": "runtime/aosp/android16-qpr2/policy/experiments/audio-tmpfs.te",
+    "Linux_projection": "runtime/aosp/android16-qpr2/policy/experiments/audio-tmpfs.cil",
+    "artifact": "dist/aosp16/selected-platform-policy-63/artifact.json",
+    "input_binary_sha256": "f4bda44e814ac3002a267f6fe9f35fb299943153ea494e5041b02814201d4cdb",
+    "actual_kernel_readback_sha256": "27a3af9610b0c9b03102bc5985bcfec9f9723ed2ed5934f030a2d7b4f8b46c86",
+    "neverallow_disabled": false,
+    "offline_memory_decisions": {
+      "path": "dist/aosp16/audio-policy-inputs-4/memory-access.json",
+      "sha256": "38db9d70cd580d04a2688ca1def759b84e30fd76387af3199fbced5e364d1f4e",
+      "all9_expected": true,
+      "scope": "Read/write/map/relabelfrom and association private allow; generic Linux write, private exec, app write/map deny. Offline only, errors distinct from denial7."
+    },
+    "load": "/home/tv/recuperacion-archtv/20261104T-audio-original-policy63/after-load.json",
+    "recovery": "/home/tv/recuperacion-archtv/20261104T-audio-original-policy63/RETOMAR.txt",
+    "mode_at_load": 0,
+    "next": "Fresh actual whole original audio/VLC attempt291, unchanged verified payload290, exact compositor fields, expected kernel readback27a3af9610b0c9b03102bc5985bcfec9f9723ed2ed5934f030a2d7b4f8b46c86. Require real original memfd feature probe, FMQ/output creation, ALSA transfer and hardware clock; no generic write grant, feature-success injection or diagnostic permission shortcut.",
+    "reproduction": {
+      "path": "dist/aosp16/audio-policy-inputs-5/reproduction.json",
+      "sha256": "77befbdb38642d1ced44744d4dde32eac2dc5335b056ed9d624f23bb25e8a944",
+      "scope": "Tracked --memory generator reproduces compiled63 AOSP bytes and semantic profile; no manual profile append, no repeated compiler/kernel test"
+    }
   }
 }

@@ -1,5 +1,7 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+Puerta de memoria ·63: compilación/neverallows, nueve decisiones offline y carga permisiva completadas en su alcance. Siguen pendientes memfd real bajo MAC → FMQ/output → frecuencia/PCM/reloj → VLC continuo y cierre/reapertura. Reutilizar payload290; no repetir compilación/consultas offline aún válidas ni convertirlas en aceptación APK. [Registro](../reports/android16-audio-bootstrap/source-progress.json), private_audio_memory_policy63.
+
 Audio nativo ·290 acepta sólo ejecución conjunta de proveedores y audioserver originales, consultas Binder reales y cierre nativo0. No acepta PCM, DSP ni reproducción. Camino inmediato: memoria privada con macro tmpfs_domain original → FMQ/stream original → ALSA real y reloj → consulta de frecuencia válida → vídeo/audio de VLC → cierre/reapertura.63 se prepara por la denegación real del probe memfd; no permitir escritura a tmpfs Linux genérico ni fabricar readiness. [Resultado y límites](../reports/android16-audio-bootstrap/source-progress.json), native_audio290.
 
 Estado de política de audio ·62 cargada en permisivo con copia real61 y reversión preparada. El compilador conserva neverallows;22 decisiones offline mantienen transiciones/entrypoints originales, habilitan sólo las dos puertas NNP y conservan cinco negativas. Esto no es ejecución de servicios ni aislamiento. Siguiente: nueva cohorte completa con el payload286 verificado y hash real de política62. [Resultado](../reports/android16-audio-bootstrap/source-progress.json), audio_nnp_policy62.

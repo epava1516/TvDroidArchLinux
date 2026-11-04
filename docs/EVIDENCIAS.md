@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+Memoria63 · [Registro canónico](../reports/android16-audio-bootstrap/source-progress.json), private_audio_memory_policy63: hashes distintos de binario y lectura kernel, macro/fuentes, nueve decisiones offline y carga permisiva/contextos. El registro enlaza backup62 y reversión. Ninguna ejecución real del nuevo probe memfd/stream/PCM queda probada por estos resultados.
+
 Audio290 · [Registro canónico](../reports/android16-audio-bootstrap/source-progress.json), native_audio290: original AudioFlinger/AudioPolicy consultados, componente nativo0 y cierre bajo enforcing62. [Captura física](../reports/android16-package-bootstrap/vlc-mac290-first-frame.png) muestra sólo frame0. El registro enlaza logs originales/hash, AVC del memfd, prueba de recuperación y límites: sin PCM ni movimiento,21 plugins DSP ausentes, observación PCM Linux denegada; R1 abierto.
 
 Estado de política de audio ·62 cargada en permisivo con copia real61 y reversión preparada. El compilador conserva neverallows;22 decisiones offline mantienen transiciones/entrypoints originales, habilitan sólo las dos puertas NNP y conservan cinco negativas. Esto no es ejecución de servicios ni aislamiento. Siguiente: nueva cohorte completa con el payload286 verificado y hash real de política62. [Resultado](../reports/android16-audio-bootstrap/source-progress.json), audio_nnp_policy62.

@@ -1,0 +1,5 @@
+; Project the original tmpfs_domain macro's new audio-private transition onto
+; Linux-owned anonymous tmpfs/memfd. The TE adapter supplies original macro
+; permissions and type; existing file_type filesystem association is retained.
+; No generic Linux tmpfs write, executable, Binder, device or app rights added.
+(typetransition hal_audio_default linux.tmpfs_t file hal_audio_default_tmpfs)

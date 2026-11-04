@@ -1,0 +1,9 @@
+# Linux-only memory adaptation for the original audio HAL domain.
+# Actual290: memfd:test_android_memfd ftruncate is denied on linux.tmpfs_t,
+# preventing original FMQ/output creation. The upstream audio vendor TE does
+# not declare a private tmpfs type; this is an explicit adaptation, not an
+# assertion that the rule already exists upstream. Reuse the original complete
+# tmpfs_domain macro and a private file type, never allow writes to generic
+# Linux tmpfs or report the feature probe successful without kernel writes.
+type hal_audio_default_tmpfs, file_type;
+tmpfs_domain(hal_audio_default)
