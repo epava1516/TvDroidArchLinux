@@ -78,5 +78,105 @@
     "API symbol comparison is not full ABI equivalence",
     "No audio playback, full R1 isolation or broad APK acceptance"
   ],
-  "next_action": "Build next integrated payload using prepared vendor variant, verify original memory-label read/relabel under enforcing63, then actual FMQ/PCM and VLC movement. Recheck host selinuxfs visibility before admission; LSM active and temporary readback63/permissive verified."
+  "next_action": "Actual295 pending at /home/tv/recuperacion-archtv/1967e9d5-7eb5-4ab3-b344-72feba9c2d98-markor-software-launch with identical payload292,1285644288 free bytes after scoped package-cache recovery. No original storage checks bypassed. Inspect installation then real UI/input/FMQueue/PCM. Full R1/ARM/GMS/DRM/product open.",
+  "execution293": {
+    "id": "0178a35c-2e61-480f-ab2a-5042f3f8d174",
+    "checkpoint": "/home/tv/recuperacion-archtv/0178a35c-2e61-480f-ab2a-5042f3f8d174-markor-software-launch",
+    "outer_exit": 1,
+    "mac_seconds": 113.97554263100028,
+    "restored_enforce": "0",
+    "native_complete_inventory_verified": true,
+    "active_loops": "",
+    "final_dm": [],
+    "audio_observation": "Original AudioFlinger requests stream; original HAL reaches openOutputStream with4096frames. Previous FailedTransaction/private-FMQ denial absent from observed initial audio segment; no playback or hardware-write acceptance. StreamAlsa says no opened devices before app data.",
+    "apk_blocker": "Original PackageInstaller install-create rejects internal volume: not enough space. No launch/UI stage tested293.",
+    "host_recovery": "Same boot; root-after enforce0, original udev recovered; mixer snapshots byte-equal; audit receiver closed, rules unchanged and lostdelta0.",
+    "evidence": {
+      "result.json": {
+        "path": "/home/tv/recuperacion-archtv/0178a35c-2e61-480f-ab2a-5042f3f8d174-markor-software-launch/result.json",
+        "sha256": "831a03f11f771c42bbbd221fb599c6df084beb5205dd186db8f1db6b1a599369",
+        "bytes": 48227
+      },
+      "mac-window.json": {
+        "path": "/home/tv/recuperacion-archtv/0178a35c-2e61-480f-ab2a-5042f3f8d174-markor-software-launch/mac-window.json",
+        "sha256": "e25b8d7c84080720537b672d78f578f1be1e85aeeb7164bb96b1fd6a24b14e04",
+        "bytes": 502
+      },
+      "root-after.json": {
+        "path": "/home/tv/recuperacion-archtv/0178a35c-2e61-480f-ab2a-5042f3f8d174-markor-software-launch/root-after.json",
+        "sha256": "3b8adf1f8e301ce6b30813d8a75b60cf9f99b10e76cfd07fb661f9752ba31307",
+        "bytes": 361
+      },
+      "finite-audit/result.json": {
+        "path": "/home/tv/recuperacion-archtv/0178a35c-2e61-480f-ab2a-5042f3f8d174-markor-software-launch/finite-audit/result.json",
+        "sha256": "0d8fe9e8cc55c815f77b8d1064f68267c3e4017e87ee4dcd68f0e9632fafa599",
+        "bytes": 2288
+      },
+      "original-logcat-final.txt": {
+        "path": "/home/tv/recuperacion-archtv/0178a35c-2e61-480f-ab2a-5042f3f8d174-markor-software-launch/original-logcat-final.txt",
+        "sha256": "438a8c6738a876d103552f92c6ed44470ec2944fc19c2acca4d10a408729df53",
+        "bytes": 1023366
+      },
+      "observed-markor-install.txt": {
+        "path": "/home/tv/recuperacion-archtv/0178a35c-2e61-480f-ab2a-5042f3f8d174-markor-software-launch/observed-markor-install.txt",
+        "sha256": "6fb06a62adfa9431e41a201a2ee348c6da7d6cf67ecec5b48af873cf64aab1fe",
+        "bytes": 2134
+      }
+    }
+  },
+  "preflight292": {
+    "checkpoint": "/home/tv/recuperacion-archtv/929727b4-4a92-4dc3-a133-a05cb2da5a88-markor-software-launch",
+    "result": "No runtime: global diagnostic selinuxfs mount contradicted existing private udev absence guard. Original udev restored and own mount removed. Later root owner uses temporary alternate probe removed before udev."
+  },
+  "disk_recovery": {
+    "record": "dist/aosp16/package-cohort-build-292/verified-staging-cleanup.json",
+    "sha256": "ff69d1172ee456fc38c4f4fc9be927bc95063a07ed94f0746cd35efb78ef030d",
+    "bytes_removed": 168333953,
+    "scope": "Only current successful staging duplicate; image, all original source bytes, manifests and historical evidence retained. No storage checks bypassed."
+  },
+  "execution294": {
+    "id": "da425805-2f54-4e1a-bf95-17f3168c7446",
+    "checkpoint": "/home/tv/recuperacion-archtv/da425805-2f54-4e1a-bf95-17f3168c7446-markor-software-launch",
+    "result": "Original install-create and write49444910bytes succeeded; install-commit rejected insufficient storage. No VLC launch/PCM accepted.",
+    "outer_exit": 1,
+    "restored_enforce": "0",
+    "host": "Same boot, udev restored, mixers byte-equal, actual cohort closed.",
+    "evidence": {
+      "result.json": {
+        "path": "/home/tv/recuperacion-archtv/da425805-2f54-4e1a-bf95-17f3168c7446-markor-software-launch/result.json",
+        "sha256": "fe33b245689bfa6582fd7fa2e02e6306e56216099e4bc60b9d5c21971ebc449d",
+        "bytes": 48224
+      },
+      "mac-window.json": {
+        "path": "/home/tv/recuperacion-archtv/da425805-2f54-4e1a-bf95-17f3168c7446-markor-software-launch/mac-window.json",
+        "sha256": "33bfbf61b874d9dd8be502e909f6002c1a9e2d5057dc67a71c998ac93ae06cc1",
+        "bytes": 501
+      },
+      "root-after.json": {
+        "path": "/home/tv/recuperacion-archtv/da425805-2f54-4e1a-bf95-17f3168c7446-markor-software-launch/root-after.json",
+        "sha256": "07548ab277fd32060ce6a09c6001be3c616a594957fdfd19d2f046ec1df44fd0",
+        "bytes": 361
+      },
+      "finite-audit/result.json": {
+        "path": "/home/tv/recuperacion-archtv/da425805-2f54-4e1a-bf95-17f3168c7446-markor-software-launch/finite-audit/result.json",
+        "sha256": "8f88ea4f91028f0628294ae035bec7c3367182035d547725c984af942ca10c09",
+        "bytes": 2288
+      },
+      "original-logcat-final.txt": {
+        "path": "/home/tv/recuperacion-archtv/da425805-2f54-4e1a-bf95-17f3168c7446-markor-software-launch/original-logcat-final.txt",
+        "sha256": "2896b31b47222be7d8140bb363eee03e567d91690fbd75e56c98cfd830c3884a",
+        "bytes": 1008735
+      },
+      "observed-markor-install.txt": {
+        "path": "/home/tv/recuperacion-archtv/da425805-2f54-4e1a-bf95-17f3168c7446-markor-software-launch/observed-markor-install.txt",
+        "sha256": "0174186010c29570e729991508120bd4da064b68ec274f37d216a2812774ddfc",
+        "bytes": 1704
+      },
+      "pacman-cache-recovery.json": {
+        "path": "/home/tv/recuperacion-archtv/da425805-2f54-4e1a-bf95-17f3168c7446-markor-software-launch/pacman-cache-recovery.json",
+        "sha256": "44c342485ab0119be1d17e4f5e93ac0c763055e11345d4050d18dd80fa038233",
+        "bytes": 1351
+      }
+    }
+  }
 }

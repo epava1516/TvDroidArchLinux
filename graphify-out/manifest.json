@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793827925.4187655,
-    "seen": 1793827941.8441048,
-    "ast_hash": "845a0df233222e11ab7f4254291d412a",
+    "mtime": 1793829513.2912786,
+    "seen": 1793830374.2828548,
+    "ast_hash": "e09e37df0c803a74c286e61dc83fb183",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793829480.0572548,
-    "seen": 1793829494.8233418,
-    "ast_hash": "7bf9707110beeb2a6d35ef4e17831980",
+    "mtime": 1793830351.6517315,
+    "seen": 1793830374.2835639,
+    "ast_hash": "633d52c93c271ffd12670b8d0ac049de",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -1716,9 +1716,9 @@
     "semantic_hash": ""
   },
   "docs/EVIDENCIAS.md": {
-    "mtime": 1793828249.3110006,
-    "seen": 1793828262.989287,
-    "ast_hash": "b6ed728eac16a3a701e793e291015a7f",
+    "mtime": 1793829513.2980917,
+    "seen": 1793830374.2837267,
+    "ast_hash": "7c8a5895b9c5952eccaa8f473c0d8b10",
     "semantic_hash": ""
   },
   "fixtures/aosp-framework-space/FrameworkSpaceProbe.java": {
