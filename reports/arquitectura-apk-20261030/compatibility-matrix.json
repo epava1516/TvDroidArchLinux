@@ -416,15 +416,13 @@
         "scope": "Exact Markorv164 Markdown note created163 survives complete cohort teardown and original subsystems167; actual bytes, same UID/inodes/MCS, original install/force-stop/relaunch and real single pointer opens editor.167 native/exterior0. Not host reboot/power loss, FBE/MAC, graceful close, arbitrary upgrade or general APK compatibility."
       },
       "runtime_security_observation": {
-        "candidate": 244,
-        "state": "terminal exit1; no installation or launch accepted",
-        "previous": {
-          "242": "Original font service removes app font failure; original FallbackHome Displayed, no Smithay pixels proof.",
-          "243": "External original shell workflow starts but diagnostic file DAC rejects before install."
-        },
+        "candidate": 246,
+        "execution": 248,
+        "state": "terminal exit1; no Markor stage accepted",
+        "previous247": "Original CLI confirms RUNNING_UNLOCKED; original app forks blocked by tmpfs mount denial, volume/installation pending",
         "evidence": "reports/android16-package-bootstrap/original-apex-derive-mac-progress.json",
-        "sha256": "dec9baebff39dd1991331c39de3557f6850f850171a496af44b5ebe7663f9bdd",
-        "latest_result": "Output DAC corrected. Original external shell starts under enforcing, then actual read of /vendor/bin/install-markor.sh denied: shell->vendor_file:file read. Script never runs, no installation. Optional network proc sampler stops after first actual denial, recording missing identities; audit lost0. MAC active27.386s, exit1 then restored0; host closure verified."
+        "sha256": "b3ec7cfd83b5fae03f08ab6b4e24eec2d3f48e7d2ef3349e5ca214430a2fce2a",
+        "latest_result": "Original app forks now pass previous tmpfs denial; original servicemanager observes MediaProvider UID10078/SID mediaprovider_app:s0:c78,c256,c512,c768 requesting media.resource_manager. Original user CLI RUNNING_UNLOCKED. No emulated volume/installation accepted. system_server479 crashes SIGSEGV(Thread<00>), Zygote suicides on server death. Native MediaPlayer/ResourceManager unavailable; MediaProvider waits. No core/tombstone, exact fault PC/library unknown.191.978s enforcing, exit1 then restored0; external closure/audit lost0 verified."
       },
       "runtime_security_observation_history": [
         {
@@ -630,6 +628,17 @@
           },
           "evidence": "reports/android16-package-bootstrap/original-apex-derive-mac-progress.json",
           "sha256": "6677c47a638e6d12fabfdef8865c1a1d45d73d16fb7907c3a8d1347281951536"
+        },
+        {
+          "candidate": 244,
+          "state": "terminal exit1; no installation or launch accepted",
+          "previous": {
+            "242": "Original font service removes app font failure; original FallbackHome Displayed, no Smithay pixels proof.",
+            "243": "External original shell workflow starts but diagnostic file DAC rejects before install."
+          },
+          "evidence": "reports/android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "sha256": "dec9baebff39dd1991331c39de3557f6850f850171a496af44b5ebe7663f9bdd",
+          "latest_result": "Output DAC corrected. Original external shell starts under enforcing, then actual read of /vendor/bin/install-markor.sh denied: shell->vendor_file:file read. Script never runs, no installation. Optional network proc sampler stops after first actual denial, recording missing identities; audit lost0. MAC active27.386s, exit1 then restored0; host closure verified."
         }
       ],
       "runtime_security_history": [

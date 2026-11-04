@@ -1318,7 +1318,7 @@
     "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load10/after-load.json",
     "sha256": "309743229826231a5a6d96498f808485c1d5ad5ce3a5cd8c1a279f21f26b9aa8"
   },
-  "next": "Stage the complete trusted external shell client and its two read-only workflow inputs under shell-owned diagnostic storage using exact payload bytes; retain vendor_file denial, no generic vendor read grants. Then actual PackageInstaller/Markor vertical.",
+  "next": "Pinned original main_mediaserver.cpp instantiates MediaPlayerService and ResourceManagerService together. Exact original GSI mediaserver64 ELF64 verified through REA MCP ELF notes; original mediaserver.zygote64.rc, mediaextractor/mediametrics/tombstoned profiles available. Next integration must provide these complete original services plus actual crash collection and demonstrate volume/PackageInstaller; no SoundPool root-cause assertion without crash stack.",
   "original_sources": {
     "sdkextensions_commit": "4d10e57070bb9c6edcd13bf74e9d01717b2a5ecf",
     "derive_rc_sha256": "a9e65b0c114408e5cb8356bdb435a6b48d0a67cd7879915c52ffa094a267f607",
@@ -3847,5 +3847,257 @@
       }
     ],
     "accepted_apk_stages": []
+  },
+  "integrated245_248": {
+    "utc": "2026-11-04T11:15:45.519277+00:00",
+    "results": {
+      "245": "Compiled but not executed: pre-run inspection found generated staging digest check before hashlib import.246 corrects this. No runtime/MAC result claimed.",
+      "246": "Exact trusted external client script/token/budget copied from immutable payload to shell-owned diagnostics, hashes verified. Real script executes; source APK getattr denied because persistent-data label walk excluded that input, leaving Linux.unlabeled_t. No install. Host closure verified.",
+      "247": "Same immutable payload246, sole changed Linux preparer applies original file_contexts to trusted APK; source and overlay hash/snapshot recorded. Actual original CLI reports RUNNING_UNLOCKED. ExternalStorageService/PermissionController and other normal app forks abort in original Zygote MountAppDataTmpFs: filesystem.mount denied on Linux.tmpfs_t. Real volume query remains blocked, no install. Later Zygote SIGKILL observed; cause not established, scoped kernel journal has no OOM entries. Host restored/closed.",
+      "248": "Original app forks now pass previous tmpfs denial; original servicemanager observes MediaProvider UID10078/SID mediaprovider_app:s0:c78,c256,c512,c768 requesting media.resource_manager. Original user CLI RUNNING_UNLOCKED. No emulated volume/installation accepted. system_server479 crashes SIGSEGV(Thread<00>), Zygote suicides on server death. Native MediaPlayer/ResourceManager unavailable; MediaProvider waits. No core/tombstone, exact fault PC/library unknown.191.978s enforcing, exit1 then restored0; external closure/audit lost0 verified."
+    },
+    "policy48_contract": "Global Linux FS_USE_TRANS SID stays Linux-owned. Original Zygote mounts new per-app tmpfs NOSUID/NODEV/NOEXEC; new inode contexts computed by kernel use Android creator/object_r. Original type transition to zygote_tmpfs remains. Preserve original root/policy/mountpoint/capability/MLS checks; no namespace opt-out or original JNI/code edit.",
+    "query_correction": "First two access-query expectations used Linux-owned parent inode context for create/relabel-from. Preserve those failures and real negatives; corrected using actual security_compute_create result u:object_r:linux.tmpfs_t:s0. No further policy grant was made. Queries do not prove real fork/isolation.",
+    "rea": "Actual REA MCP binary_session responded, no open target/cleanup; session evidence247. Source analysis used pinned originals; no static binary inspection or REA execution claimed.",
+    "accepted_apk_stages": [],
+    "limits": [
+      "R1-MAC isolation and orderly runtime closure remain open",
+      "Markor installation/launch/UI/input/note cycle under MAC not accepted",
+      "Host diagnostics are not application privileges",
+      "Audio and presentation, ARM/GMS/DRM remain separate/open"
+    ],
+    "evidence": [
+      {
+        "execution": 246,
+        "path": "/home/tv/recuperacion-archtv/45a68640-a1b0-4096-ae07-93ad106bb516-markor-software-launch/before-launch.json",
+        "sha256": "f8a183eae1651341a2d2a6f5a2e6b72448d64ee34b3352737cc3e72a690c69a3"
+      },
+      {
+        "execution": 246,
+        "path": "/home/tv/recuperacion-archtv/45a68640-a1b0-4096-ae07-93ad106bb516-markor-software-launch/result.json",
+        "sha256": "7c08bc9ee89dd08007f190fc4ccec956dc4dd9f3180a25f5daed7c6802f8dd27"
+      },
+      {
+        "execution": 246,
+        "path": "/home/tv/recuperacion-archtv/45a68640-a1b0-4096-ae07-93ad106bb516-markor-software-launch/after-host.json",
+        "sha256": "1bdbb4b558d156866e2d3520adaf38721d007db12059546a4a71d597da333507"
+      },
+      {
+        "execution": 246,
+        "path": "/home/tv/recuperacion-archtv/45a68640-a1b0-4096-ae07-93ad106bb516-markor-software-launch/mac-window.json",
+        "sha256": "37d67431adfb984ca7e5c6631ec4fc5d4d42ce2b87347b27156c69ac729c71fe"
+      },
+      {
+        "execution": 246,
+        "path": "/home/tv/recuperacion-archtv/45a68640-a1b0-4096-ae07-93ad106bb516-markor-software-launch/finite-audit/result.json",
+        "sha256": "76944ed140ce5eaa804845a42a6bf771ff9d6fb8c9aa3ce378b88473d77c9c5d"
+      },
+      {
+        "execution": 246,
+        "path": "/home/tv/recuperacion-archtv/45a68640-a1b0-4096-ae07-93ad106bb516-markor-software-launch/completion-consumer.json",
+        "sha256": "75bcab5ad936fd04c73de660cad5d1d8ba2c84d74fe8842f3ba510f0fd7623a1"
+      },
+      {
+        "execution": 246,
+        "path": "/home/tv/recuperacion-archtv/45a68640-a1b0-4096-ae07-93ad106bb516-markor-software-launch/persisted-original-logcat.txt",
+        "sha256": "fd529e5358639ff4f0cfb0c4f9803438cc807694bf381d0df45790c654e15a4b"
+      },
+      {
+        "execution": 246,
+        "path": "/home/tv/recuperacion-archtv/45a68640-a1b0-4096-ae07-93ad106bb516-markor-software-launch/persisted-markor-install.txt",
+        "sha256": "a873c25729cffa1d2afae8e2928158de10f108f54b6fde17d1bd2442930d1255"
+      },
+      {
+        "execution": 246,
+        "path": "/home/tv/recuperacion-archtv/45a68640-a1b0-4096-ae07-93ad106bb516-markor-software-launch/persisted-markor-user-state.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "execution": 247,
+        "path": "/home/tv/recuperacion-archtv/e6097871-ace8-4c11-ac12-1bc892143152-markor-software-launch/before-launch.json",
+        "sha256": "33b4bc98b4af92dc5312ef72eb720cf0e2d478bdc0190ce7dcafd1080fb5ddf4"
+      },
+      {
+        "execution": 247,
+        "path": "/home/tv/recuperacion-archtv/e6097871-ace8-4c11-ac12-1bc892143152-markor-software-launch/result.json",
+        "sha256": "80e1fdd2fd947a0605eb27201913303ac866b0c5cd2f7cb675edb41c3b25a934"
+      },
+      {
+        "execution": 247,
+        "path": "/home/tv/recuperacion-archtv/e6097871-ace8-4c11-ac12-1bc892143152-markor-software-launch/after-host.json",
+        "sha256": "9ced84052cc7581c8e123b148c5f27ee35559d7ec659ba858fca68df9a919963"
+      },
+      {
+        "execution": 247,
+        "path": "/home/tv/recuperacion-archtv/e6097871-ace8-4c11-ac12-1bc892143152-markor-software-launch/mac-window.json",
+        "sha256": "bdcf4a72c1b28e425e2f882e133689fb4641041a4ee1ae914aac6a8ccf284b04"
+      },
+      {
+        "execution": 247,
+        "path": "/home/tv/recuperacion-archtv/e6097871-ace8-4c11-ac12-1bc892143152-markor-software-launch/finite-audit/result.json",
+        "sha256": "8a04b98349f54c1f9179abd13fe31ee46ac0cabdbc0b7ce1afea1433f72adcb4"
+      },
+      {
+        "execution": 247,
+        "path": "/home/tv/recuperacion-archtv/e6097871-ace8-4c11-ac12-1bc892143152-markor-software-launch/completion-consumer.json",
+        "sha256": "68bb86d4155a870c281aafdd5ecc3a9eb0e0280766dedcda937665905069dd1d"
+      },
+      {
+        "execution": 247,
+        "path": "/home/tv/recuperacion-archtv/e6097871-ace8-4c11-ac12-1bc892143152-markor-software-launch/persisted-original-logcat.txt",
+        "sha256": "7c09e35509efdc1de82b93f49d831a259aab59213f455bc177e8004cfae9302a"
+      },
+      {
+        "execution": 247,
+        "path": "/home/tv/recuperacion-archtv/e6097871-ace8-4c11-ac12-1bc892143152-markor-software-launch/persisted-markor-install.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "execution": 247,
+        "path": "/home/tv/recuperacion-archtv/e6097871-ace8-4c11-ac12-1bc892143152-markor-software-launch/persisted-markor-user-state.txt",
+        "sha256": "f7e3ef2a0655ff8eccb9cf63ec01c617e54e6f563e1dacc42f7d4269ad642347"
+      },
+      {
+        "execution": 247,
+        "path": "/home/tv/recuperacion-archtv/e6097871-ace8-4c11-ac12-1bc892143152-markor-software-launch/rea-mcp-session.json",
+        "sha256": "2099f167ad27c0d9cbdc38c2f6b1af924bb9646eb483d4a22168a030818eef1b"
+      },
+      {
+        "policy": 48,
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load48/before-host.json",
+        "sha256": "c51c6625c78ed377c7364bf3f3580092e634969007314890f4b9964aa227246a"
+      },
+      {
+        "policy": 48,
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load48/after-load.json",
+        "sha256": "a7cc64214bc4e14415abc55d231d775648c15427ecd878c62090b8104fd8f421"
+      },
+      {
+        "policy": 48,
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load48/candidate-review.json",
+        "sha256": "bd29986dfafd5e61dead4cb225504458904a6278379d1636f52ec95cead231e9"
+      },
+      {
+        "policy": 48,
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load48/access-contract.json",
+        "sha256": "9aed15f52b58af4a3f568d7a0527ec79eee34092762dad5199f0b881a55776af"
+      },
+      {
+        "policy": 48,
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load48/computed-create-check.json",
+        "sha256": "839fd4cb09a289b84224e031e875262fbf2411b8b0e0d07b46df563e7caf74a5"
+      },
+      {
+        "policy": 48,
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load48/create-context-diagnostic.json",
+        "sha256": "d9d890963a88d999ac135b739cd11fe8e346dd636c14639364e3641958474010"
+      },
+      {
+        "policy": 48,
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load48/access-contract-v1-failure.json",
+        "sha256": "ba287cb5ec34330331319883d4739d50ff60d148c9a316234bbe3fcee95a7972"
+      },
+      {
+        "policy": 48,
+        "path": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/policy-load48/access-contract-v2-failure.json",
+        "sha256": "fe996001f541eea22bbcfded0816e6f5db7efff761fed71337c346d09f18ebc4"
+      },
+      {
+        "execution": 246,
+        "path": "/home/tv/repositorio-principal/dist/aosp16/apex-live-45a68640a1b04096ae0793ad106bb516/external-shell-inputs.json",
+        "sha256": "89d9437c4e2ef738550814294c45f43777ebe2ead798465804d940204fd0bf0a"
+      },
+      {
+        "execution": 248,
+        "path": "/home/tv/recuperacion-archtv/911c096a-bed4-47cd-a47d-5b81cf68bcc8-markor-software-launch/result.json",
+        "sha256": "7c9a4eb57f06833a41a93e9e149d059f054447e75712e81c29e8a8442d090f0c"
+      },
+      {
+        "execution": 248,
+        "path": "/home/tv/recuperacion-archtv/911c096a-bed4-47cd-a47d-5b81cf68bcc8-markor-software-launch/before-launch.json",
+        "sha256": "686a88b07572c825689f8f015cc823b3eb016f531b99fcdf1686e2f277169204"
+      },
+      {
+        "execution": 248,
+        "path": "/home/tv/recuperacion-archtv/911c096a-bed4-47cd-a47d-5b81cf68bcc8-markor-software-launch/after-host.json",
+        "sha256": "1eac84e34b346be7205f7745185834a67620bdcf0e6259ef807a12683166b610"
+      },
+      {
+        "execution": 248,
+        "path": "/home/tv/recuperacion-archtv/911c096a-bed4-47cd-a47d-5b81cf68bcc8-markor-software-launch/mac-window.json",
+        "sha256": "d4d27024c9f802929a8ef955a47780a65cddc7704c56096fcc73d7e4d6448280"
+      },
+      {
+        "execution": 248,
+        "path": "/home/tv/recuperacion-archtv/911c096a-bed4-47cd-a47d-5b81cf68bcc8-markor-software-launch/finite-audit/result.json",
+        "sha256": "19c1363b19e833c26cb5f0a0b3beccf1f301556de1eb5a8b9fe4fec5a5742e4d"
+      },
+      {
+        "execution": 248,
+        "path": "/home/tv/recuperacion-archtv/911c096a-bed4-47cd-a47d-5b81cf68bcc8-markor-software-launch/completion-consumer.json",
+        "sha256": "4076fa61db83a64607b5de2f7566b806724df8e8418f38138e9e2eef4da6065b"
+      },
+      {
+        "execution": 248,
+        "path": "/home/tv/recuperacion-archtv/911c096a-bed4-47cd-a47d-5b81cf68bcc8-markor-software-launch/persisted-original-logcat.txt",
+        "sha256": "a343e6062515884c9840d2085b00b666228ebd2e7b5118af82e3f147648e2c73"
+      },
+      {
+        "execution": 248,
+        "path": "/home/tv/recuperacion-archtv/911c096a-bed4-47cd-a47d-5b81cf68bcc8-markor-software-launch/persisted-markor-install.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "execution": 248,
+        "path": "/home/tv/recuperacion-archtv/911c096a-bed4-47cd-a47d-5b81cf68bcc8-markor-software-launch/persisted-markor-user-state.txt",
+        "sha256": "f7e3ef2a0655ff8eccb9cf63ec01c617e54e6f563e1dacc42f7d4269ad642347"
+      },
+      {
+        "execution": 248,
+        "path": "/home/tv/recuperacion-archtv/911c096a-bed4-47cd-a47d-5b81cf68bcc8-markor-software-launch/persisted-markor-volumes.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "execution": 248,
+        "path": "/home/tv/recuperacion-archtv/911c096a-bed4-47cd-a47d-5b81cf68bcc8-markor-software-launch/kernel-mediaprovider-caller.txt",
+        "sha256": "cbcae694640ebd822910a2543270c1939c4d56424325e7ac369ebcacf78f2ba5"
+      },
+      {
+        "execution": 248,
+        "path": "/home/tv/recuperacion-archtv/911c096a-bed4-47cd-a47d-5b81cf68bcc8-markor-software-launch/mc1-stderr.txt",
+        "sha256": "75ac6641fefe0a6affa5b61d1b657b9349374b6ef8e54bf8009b800429d05fff"
+      },
+      {
+        "execution": 248,
+        "path": "/home/tv/recuperacion-archtv/911c096a-bed4-47cd-a47d-5b81cf68bcc8-markor-software-launch/rea-file.json",
+        "sha256": "004a3ab51a141ab8b635a6043a501f59d87b8a1f63d3f3740cebe6f50e78e959"
+      },
+      {
+        "execution": 248,
+        "path": "/home/tv/recuperacion-archtv/911c096a-bed4-47cd-a47d-5b81cf68bcc8-markor-software-launch/rea-symbols.json",
+        "sha256": "143d56e7947e7a2bc6dad49d15edf59b46fb0d739b56a24a514f694ba9addd6e"
+      },
+      {
+        "execution": 248,
+        "path": "/home/tv/recuperacion-archtv/911c096a-bed4-47cd-a47d-5b81cf68bcc8-markor-software-launch/rea-strings.json",
+        "sha256": "d75e32e3df3457f3e33187c64f5912a716f0fa5cc41e6fade988ac9c7e8f64bf"
+      },
+      {
+        "execution": 248,
+        "path": "/home/tv/recuperacion-archtv/911c096a-bed4-47cd-a47d-5b81cf68bcc8-markor-software-launch/rea-close.json",
+        "sha256": "ad74a8711f61aec9e638eada51f9c1ad8c910fe8fb979a10cf012541c5ae0fec"
+      },
+      {
+        "execution": 248,
+        "path": "/home/tv/recuperacion-archtv/911c096a-bed4-47cd-a47d-5b81cf68bcc8-markor-software-launch/rea-media-elf.json",
+        "sha256": "703cecd46e43da937482b33afdcc9fafc60723a7c3390be947f630a598698983"
+      },
+      {
+        "path": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/native-media-source-acquisition.json",
+        "sha256": "3301a61a6785d116bc41a36cb1baa5c58dbde5924a7865152e011c3752ed9f4f"
+      }
+    ],
+    "next_original_subsystem": "Pinned original main_mediaserver.cpp instantiates MediaPlayerService and ResourceManagerService together. Exact original GSI mediaserver64 ELF64 verified through REA MCP ELF notes; original mediaserver.zygote64.rc, mediaextractor/mediametrics/tombstoned profiles available. Next integration must provide these complete original services plus actual crash collection and demonstrate volume/PackageInstaller; no SoundPool root-cause assertion without crash stack.",
+    "rea_limits": "REA MCP GDB static libsoundpool.so symbol read observes ThreadPool and exact artifact hash; static scan found no Thread< literal. No inferior executed, no fault site identified, source/binary thread-name correspondence unproven. GDB session closed with none_observed. Media ELF note inspection is static only."
   }
 }

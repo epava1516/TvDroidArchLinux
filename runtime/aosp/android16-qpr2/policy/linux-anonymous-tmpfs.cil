@@ -85,3 +85,19 @@
 (allow ueventd_tmpfs linux.tmpfs_t (filesystem (associate)))
 (allow webview_zygote_tmpfs linux.tmpfs_t (filesystem (associate)))
 (allow zygote_tmpfs linux.tmpfs_t (filesystem (associate)))
+
+; Linux also owns the filesystem/root SID of freshly mounted tmpfs, not just
+; anonymous memfd. Original Zygote MountAppDataTmpFs mounts a new private
+; MS_NOSUID|MS_NODEV|MS_NOEXEC instance for per-app data isolation. Actual247
+; fails that mount before ExternalStorageService/PermissionController can fork.
+; Project the complete original tmpfs contract, retaining original mounton
+; target labels, capabilities, per-app namespace setup, MLS and relabelto rules.
+; No Linux filesystem is relabeled and no original Zygote code is patched.
+; Pinned platform CIL22037/22102/27758: common metadata/association only.
+(allow domain linux.tmpfs_t (dir (getattr search)))
+(allow domain linux.tmpfs_t (file (getattr relabelfrom)))
+(allow file_type linux.tmpfs_t (filesystem (associate)))
+; Pinned private/zygote.te101-111/159, CIL75291/75296/75301/75302/75464.
+(allow zygote linux.tmpfs_t (filesystem (mount unmount)))
+(allow zygote linux.tmpfs_t (dir (ioctl read write create getattr setattr lock rename mounton open watch watch_reads add_name remove_name reparent search rmdir relabelfrom)))
+(allow zygote linux.tmpfs_t (lnk_file (create relabelfrom)))

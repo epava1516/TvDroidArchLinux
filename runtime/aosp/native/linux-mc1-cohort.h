@@ -1168,7 +1168,7 @@ class LinuxMc1Cohort {
             // It remains owned during the observation window; startup is not
             // installation readiness, and closure requires its real success.
             auto package_client=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","shell","shell","--",
-                "/system/bin/sh","-c","umask 077; exec /system/bin/sh /vendor/bin/install-markor.sh > /data/local/tmp/archtv-mc1/markor-install.txt 2>&1"});
+                "/system/bin/sh","-c","umask 077; exec /system/bin/sh /data/local/tmp/archtv-mc1/install-markor.sh > /data/local/tmp/archtv-mc1/markor-install.txt 2>&1"});
             if(!package_client.ok())return package_client.error();
             auto* peer=package_client->get();
             peer->AddReapCallback([this](const siginfo_t& info){

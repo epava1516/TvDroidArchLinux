@@ -274,6 +274,25 @@ for output_name in ['markor-preinstall-path.txt','markor-preinstall-dump.txt','k
 
 root_code+="\np=root/'data/local/tmp/archtv-mc1/markor-install.txt';p.touch(mode=0o600);os.chown(p,2000,1000)"
 root_code+="\nshutil.copyfile(Path("+repr(str(apk_path))+"),root/'data/local/tmp/markor.apk');os.chown(root/'data/local/tmp/markor.apk',2000,2000);os.chmod(root/'data/local/tmp/markor.apk',0o644)"
+# Trusted developer CLI inputs belong to shell storage, not vendor policy.
+# Copy exact payload bytes before label()/MAC release; do not relabel generic
+# vendor files or expand shell/system_server access to them.
+root_code+="""
+import hashlib
+shell_inputs=[]
+for relative in ['bin/install-markor.sh','etc/archtv-markor-workflow-token','etc/archtv-markor-workflow-budget']:
+ source=root/'vendor'/relative
+ if not source.exists():
+  assert relative!='bin/install-markor.sh','Missing external installer payload'
+  continue
+ destination=root/'data/local/tmp/archtv-mc1'/source.name
+ shutil.copyfile(source,destination)
+ os.chown(destination,2000,2000);os.chmod(destination,0o400)
+ digest=hashlib.sha256(source.read_bytes()).hexdigest()
+ assert hashlib.sha256(destination.read_bytes()).hexdigest()==digest
+ shell_inputs.append({'source':str(source),'destination':str(destination),'sha256':digest,'uid':2000,'gid':2000,'mode':'0400'})
+(out/'external-shell-inputs.json').write_text(json.dumps({'scope':'Exact trusted external CLI payload inputs only; no app/user/key/permission/readiness state seeded','files':shell_inputs},indent=2)+'\\n')
+"""
 text=text.replace('label(root)\n',root_code+'\nlabel(root)\n',1)
 mount_marker="for p in sorted((r/'dist/aosp16/factory-inputs-3').glob('*.payload.img')):"
 assert mount_marker in text
@@ -290,6 +309,10 @@ if userdata_name is not None:
  label_boundary="for p in sorted((r/'dist/aosp16/factory-inputs-3').glob('*.payload.img')):"
  label_data="label(root/'data')\n"
  for name in sorted(scaffold):label_data+="label(root/'data'/"+repr(name)+")\n"
+ # Only the trusted input APK lies outside the diagnostics directory. Apply
+ # its original file_contexts label too; never grant access to unlabeled data
+ # or recursively relabel application/user storage to make installation pass.
+ label_data+="label(root/'data/local/tmp/markor.apk')\n"
  label_data+="for q in (root/'data/local/tmp/archtv-mc1').iterdir():label(q)\n"
  text=text.replace(label_boundary,label_data+label_boundary,1)
  # Sync the real persistent filesystem after original services stop. FD is
