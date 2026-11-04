@@ -113,11 +113,24 @@ if [ -f /data/local/tmp/archtv-mc1/archtv-markor-workflow-token ]; then
     # it cannot read the private /data/media backing. Original shell is an
     # app_domain; no new FUSE grant or fabricated note is introduced here.
     # Successful shell observation still does not prove ordinary app isolation.
+    # Use the original public FUSE view. Direct /mnt/user traversal is
+    # intentionally restricted by original vold; never bypass it with groups.
     note=/storage/emulated/0/Documents/markor/archtv-$token.md
     expected="archtv note $token"
     # Command substitution strips trailing newlines. Require the exact byte
     # count too, so an autosave before the final Enter cannot trigger force-stop.
     expected_bytes=$((${#expected} + 1))
+    # One original-client diagnostic for the demonstrated namespace/FUSE gap.
+    # It changes no access, mounts, data, readiness or acceptance predicate.
+    {
+        /system/bin/id
+        /system/bin/id -Z
+        for observed in "/storage/emulated/0/Documents/markor/archtv-$token.md" "$note" "/mnt/user/0/emulated/Documents/markor/archtv-$token.md"; do
+            observed_status=0
+            /system/bin/stat -c '%n|size=%s|uid=%u|gid=%g|mode=%a' "$observed" || observed_status=$?
+            /system/bin/printf 'observer_stat_exit=%s\n' "$observed_status"
+        done
+    } > /data/local/tmp/archtv-mc1/markor-observer-paths.txt 2>&1 || :
     budget=$(/system/bin/cat /data/local/tmp/archtv-mc1/archtv-markor-workflow-budget)
     case "$budget" in ''|*[!0-9]*) exit 1;; esac
     [ "$budget" -ge 15 ] && [ "$budget" -le 585 ] || exit 1

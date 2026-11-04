@@ -748,46 +748,53 @@
       "runtime_mac_stage_evidence": {
         "installation": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "3aa6ccf594b89c8fa406f00a6acad78e5e50f683ab35fec95d30fd01f61c4a8b",
+          "record_sha256": "6dd20d9092c11caf95d82ec4f03c9f3110d418563e6aa6951128a0f068c1534f",
           "section": "integrated255",
           "accepted": true,
           "scope": "Original PackageInstaller installation, identical intact APK bytes and physical private-directory metadata under enforcing. Not complete isolation, launch, UI, note persistence or full workflow acceptance."
         },
-        "remaining": "Original explicit app force-stop/new PID/relaunch and visible note reopen remain unaccepted. Observer/storage alias misses later FUSE submount; fix canonical original mounted view. Broader services, full R1-MAC/ARM/GMS/DRM and product gates open.",
+        "remaining": "Forced app close/newPID/cold relaunch and visible unchanged note reopen proven270. Graceful app/cohort shutdown, full-host R1-MAC/PAM admission and tenant isolation, broader API/services, ART compilation ABI, ARM/GMS/DRM and install/update/product remain open.",
         "launch": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "3aa6ccf594b89c8fa406f00a6acad78e5e50f683ab35fec95d30fd01f61c4a8b",
+          "record_sha256": "6dd20d9092c11caf95d82ec4f03c9f3110d418563e6aa6951128a0f068c1534f",
           "section": "integrated257",
           "accepted": true,
           "scope": "Original explicit launch redirects intact APK to IntroActivity; Status:ok and real SF internal onboarding pixels. Not presentation on Rust/Smithay, input, complete Markor workflow or broad compatibility."
         },
         "physical_presentation": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "3aa6ccf594b89c8fa406f00a6acad78e5e50f683ab35fec95d30fd01f61c4a8b",
+          "record_sha256": "6dd20d9092c11caf95d82ec4f03c9f3110d418563e6aa6951128a0f068c1534f",
           "section": "integrated259_physical_presentation",
           "accepted": true,
           "scope": "Original onboarding pixels visually observed in actual Smithay DRM capture during enforcing window; no input, note or lifecycle acceptance."
         },
         "pointer_input": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "3aa6ccf594b89c8fa406f00a6acad78e5e50f683ab35fec95d30fd01f61c4a8b",
+          "record_sha256": "6dd20d9092c11caf95d82ec4f03c9f3110d418563e6aa6951128a0f068c1534f",
           "section": "integrated262",
           "accepted": true,
           "scope": "Real Linux pointer through Smithay/HWC/typed gateway/original InputManager advances intact Markor UI and original Settings under enforcing. Not keyboard text, note or complete workflow."
         },
         "keyboard_ascii": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "3aa6ccf594b89c8fa406f00a6acad78e5e50f683ab35fec95d30fd01f61c4a8b",
+          "record_sha256": "6dd20d9092c11caf95d82ec4f03c9f3110d418563e6aa6951128a0f068c1534f",
           "section": "integrated266",
           "accepted": true,
           "scope": "Actual original filename and Markdown text entered through physical Linux keyboard, original Generic.kl/libinput and original InputManager under enforcing; other layouts unproven."
         },
         "note_create_save": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "3aa6ccf594b89c8fa406f00a6acad78e5e50f683ab35fec95d30fd01f61c4a8b",
+          "record_sha256": "6dd20d9092c11caf95d82ec4f03c9f3110d418563e6aa6951128a0f068c1534f",
           "section": "integrated266",
           "accepted": true,
           "scope": "Real original UI creates/saves21 bytes, observed unchanged in persistent backing after cohort closes. Not app reopen or explicit lifecycle acceptance."
+        },
+        "forced_close_relaunch_persistence270": {
+          "accepted": true,
+          "record": "reports/android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "record_section": "integrated270",
+          "record_sha256": "6dd20d9092c11caf95d82ec4f03c9f3110d418563e6aa6951128a0f068c1534f",
+          "scope": "Original force-stop PID1354 absent, cold newPID1757, same21-byte note hash and physical UI after reopen under policy60 enforcing; existing UI-created266 note. Not graceful close/full host MAC/general APK."
         }
       }
     }

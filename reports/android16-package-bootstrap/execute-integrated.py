@@ -259,10 +259,9 @@ apex_before=(root/'data/apex').stat()
 mount('--rbind',root/'data',root/'data');mount('--make-shared',root/'data')
 apex_after=(root/'data/apex').stat()
 assert (apex_before.st_dev,apex_before.st_ino)==(apex_after.st_dev,apex_after.st_ino), 'Data propagation setup must preserve real APEX child mount'
-# Linux's enclosing root mount is private. Create a local shared source for
-# real vold FUSE submount propagation to /storage, with no host peer mount.
-mount('--bind',root/'mnt/user/0',root/'mnt/user/0');mount('--make-shared',root/'mnt/user/0')
-mount('--rbind',root/'mnt/user/0',root/'storage');mount('--make-rslave',root/'storage')
+# Public storage propagation is prepared after pivot_root below. A shared
+# root here would make pivot_root fail EINVAL; a /mnt/user/0 self-bind
+# would instead be removed by original vold unmountAll (actual268/269).
 (root/'data_mirror').mkdir()
 mount('-t','tmpfs','-o','nodev,noexec,nosuid,mode=0700,uid=0,gid=1000,fscontext=u:object_r:tmpfs:s0,rootcontext=u:object_r:mirror_data_file:s0','tmpfs',root/'data_mirror')
 for name in ['data_ce','data_de','misc_ce','misc_de','storage_area','data_ce/null','data_de/null','misc_ce/null','misc_de/null','cur_profiles','ref_profiles']:
@@ -716,6 +715,13 @@ os.chdir('/')
 assert (Path('/').stat().st_dev,Path('/').stat().st_ino)==(expected_root.st_dev,expected_root.st_ino)
 assert kernel.umount2(b'/.old-root',2)==0,ctypes.get_errno()
 Path('/.old-root').rmdir()
+# Original init order: shared isolated root, then public slave storage bind.
+# Do this only after pivot_root detached the host. No disposable self-bind
+# below /mnt; original vold's stale-mount cleanup must not strand /storage.
+assert kernel.mount(None,b'/',None,1<<20,None)==0,ctypes.get_errno() # MS_SHARED
+assert kernel.mount(b'/mnt/user/0',b'/storage',None,4096|16384,None)==0,ctypes.get_errno()
+assert kernel.mount(None,b'/storage',None,(1<<19)|16384,None)==0,ctypes.get_errno()
+print('LINUX_PUBLIC_STORAGE_SLAVE_PREPARED_AFTER_PIVOT',flush=True)
 print('LINUX_PRIVATE_ROOT_PIVOTED old_host_view_detached',flush=True)
 ''')
 # The enforcing boundary is admission, after trusted Linux preparation has

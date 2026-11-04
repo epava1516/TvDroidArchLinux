@@ -1,5 +1,7 @@
 # Contrato vigente · AOSP Android 16 QPR2
 
+Evidencia270 · Cierre forzado original y reapertura física con nota persistida aceptados sólo para el recorrido acotado de Markor y política60. No satisface por sí solo cierre elegante, aislamiento general, todas las funciones ni compatibilidad amplia. [Prueba y límites](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json), integrated270.
+
 Vigente · El siguiente experimento y sus límites se mantienen en [Estado](ESTADO.md); resultados funcionales, hashes y alcance en el [registro de integración](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json). Los experimentos anteriores se conservan como históricos. La compatibilidad APK completa, R1-MAC, ARM/GMS/DRM y los requisitos de producto permanecen abiertos.
 
 Criterio vigente de presentación y seguridad: instalar o lanzar no acredita interfaz sobre Smithay. Se exige transferencia real del buffer, callback real y captura física de la APK; no basta screencap interno. La recepción del HWC no se habilitará para todo Linux.init_t. El frontend propio y el lanzador privilegiado mantienen identidades separadas, NNP/capacidades verificadas y permisos negativos. El funcionamiento en permisivo y las consultas AV son evidencias parciales, no autorización/aislamiento.

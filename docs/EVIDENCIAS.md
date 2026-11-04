@@ -1,5 +1,9 @@
 # Índice de evidencias
 
+270 · [Cierre y reapertura reales bajo MAC](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json), integrated270: PID original ausente/nuevo, hashes FUSE antes/después, [captura física](../reports/android16-package-bootstrap/markor-mac270-reopened.png), cierre/restauración acotados. No aislamiento general ni cierre elegante.
+
+268 · [Diagnóstico original de propagación FUSE](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json), sección integrated268: stat original, mountinfo, desmontaje vold y cierre con hashes; candidato269 todavía sin aceptación funcional.
+
 Markor bajo MAC: [registro canónico de integración](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json), sección `integrated266`, y [captura física de la nota guardada](../reports/android16-package-bootstrap/markor-mac266-saved.png). El alcance y las limitaciones de teclado, guardado y reapertura se mantienen en ese registro.
 
 Vigente · El siguiente experimento y sus límites se mantienen en [Estado](ESTADO.md); resultados funcionales, hashes y alcance en el [registro de integración](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json). Los experimentos anteriores se conservan como históricos. La compatibilidad APK completa, R1-MAC, ARM/GMS/DRM y los requisitos de producto permanecen abiertos.

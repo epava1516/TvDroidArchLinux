@@ -5541,5 +5541,164 @@
       "root-controller.py": "4b220b4434ca2a1a1c2b731c47b393136810b4f56e296f7ecf3bbfa596008c24",
       "audit-wrapper.py": "aaaf28c5d1f7a4c1bbf5d34934dcbe1307d790fb8f543bd2f6f525dfae7746bf"
     }
+  },
+  "integrated268": {
+    "checkpoint": "/home/tv/recuperacion-archtv/f03d18c2-d1e5-49e3-bd39-a9b41833f67c-markor-software-launch",
+    "run_id": "f03d18c2-d1e5-49e3-bd39-a9b41833f67c",
+    "payload": 268,
+    "policy": 60,
+    "result": "Original shell exact-path stat returns EACCES. Original vold log confirms unmountAll removed /mnt/user/0 self-bind. Shell mountinfo confirms original FUSE only below /mnt/user/0, while storage slave lost its source. No additional groups or MAC permissions granted.",
+    "sources": {
+      "vold_unmountAll": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/vold-volume-manager-original/VolumeManager.cpp:1034",
+      "vold_MountUserFuse": "/home/tv/.cache/archtv/aosp16-qpr2/native-build-inputs/vold-utils-original/Utils.cpp:1598",
+      "adbd_identity_source": {
+        "url": "https://android.googlesource.com/platform/packages/modules/adb/+/refs/heads/android16-qpr2-release/daemon/main.cpp?format=TEXT",
+        "sha256": "2fab28bc373a496a849ad76d520bdd5d4ba51d5240fef9b67bf9da9c1507ceaa"
+      }
+    },
+    "evidence": {
+      "original-observer-paths.txt": {
+        "path": "/home/tv/recuperacion-archtv/f03d18c2-d1e5-49e3-bd39-a9b41833f67c-markor-software-launch/original-observer-paths.txt",
+        "sha256": "8b906adf24ccb73b5b35025c563c7cabfb62157ec27450dcaafec4e70266609f"
+      },
+      "original-shell-mountinfo.txt": {
+        "path": "/home/tv/recuperacion-archtv/f03d18c2-d1e5-49e3-bd39-a9b41833f67c-markor-software-launch/original-shell-mountinfo.txt",
+        "sha256": "07ba7b1b25c173d0e9897c9c63757144e239e26e3c6a261339f2319bad698755"
+      },
+      "vold-original-stale-mounts.txt": {
+        "path": "/home/tv/recuperacion-archtv/f03d18c2-d1e5-49e3-bd39-a9b41833f67c-markor-software-launch/vold-original-stale-mounts.txt",
+        "sha256": "a1200b0a461a8437cc06a37f30a2162761471fc75d618c309aa717d2c4dda8ff"
+      },
+      "session-state.json": {
+        "path": "/home/tv/recuperacion-archtv/f03d18c2-d1e5-49e3-bd39-a9b41833f67c-markor-software-launch/session-state.json",
+        "sha256": "5d4bb13b4f1b04b7f7a4a39477c2d1ddb8a2aedff42c44491b4628ed6d432fb4"
+      },
+      "mac-window.json": {
+        "path": "/home/tv/recuperacion-archtv/f03d18c2-d1e5-49e3-bd39-a9b41833f67c-markor-software-launch/mac-window.json",
+        "sha256": "8d1fb19d57524cbf674cc36c85ea4754c30c1732b54fc805724ae3271ace9c81"
+      },
+      "result.json": {
+        "path": "/home/tv/recuperacion-archtv/f03d18c2-d1e5-49e3-bd39-a9b41833f67c-markor-software-launch/result.json",
+        "sha256": "3cb436b734f49f8b5dd80721fc3235ef20bc1c32144b83e450af1aa1ee6ef325"
+      },
+      "finite-audit/result.json": {
+        "path": "/home/tv/recuperacion-archtv/f03d18c2-d1e5-49e3-bd39-a9b41833f67c-markor-software-launch/finite-audit/result.json",
+        "sha256": "54d2dffb95f70c5cb954713f7f199b97ffcaa5cefd84cb1d5f1e247c9a64d960"
+      }
+    },
+    "decision": "Use original shared isolated root -> slave public storage topology; remove per-user self-bind that vold intentionally cleans. Direct /mnt/user root:media_rw0750 is not a public shell access path. Candidate269 not yet accepted.",
+    "closure": "Operator stopped exact owned cohort after diagnosis. Original runner outer_exit0 is not workflow success. No loops/dm/FUSE remain, VT1 and device metadata restored; MAC restored0; original udev restored; result consumed without queue.",
+    "limits": [
+      "No original force-stop/new-PID/relaunch acceptance",
+      "No broad APK or full host R1-MAC acceptance"
+    ]
+  },
+  "integrated269": {
+    "checkpoint": "/home/tv/recuperacion-archtv/7a46215b-97c6-4530-9664-970e073b865c-markor-software-launch",
+    "run_id": "7a46215b-97c6-4530-9664-970e073b865c",
+    "result": "Preparation fails before MAC/Android admission: pivot_root EINVAL because candidate shared root before pivot. Closed/consumed, original udev restored.",
+    "decision": "Prepare shared isolated root and public slave storage only after pivot_root and detached host; candidate270 unverified.",
+    "evidence": {
+      "run.log": "55de0d3e3abbc77c365585089448598af77f62c9a6f37b0dc8a18aa87f4187fd",
+      "result.json": "0e17fe541d53480b9bc69b23e0b2dc1b57d94ba63442353a62d93596ca00d3d2",
+      "session-state.json": "c7e267b2286bd2e92b19e3de4752ee7f3820329aa6dff37a0f751180f2229540"
+    },
+    "apk_acceptance": false
+  },
+  "integrated270": {
+    "checkpoint": "/home/tv/recuperacion-archtv/67c070db-5603-42b7-a329-953eb16ea29b-markor-software-launch",
+    "run_id": "67c070db-5603-42b7-a329-953eb16ea29b",
+    "payload": 270,
+    "policy": 60,
+    "result": "Public original FUSE view propagated after pivot-root fix. Original shell with only shell group reads actual UI-created note. Original activity force-stop kills PID1354; original observer confirms absent, cold launch returns Status ok/newPID1757. Real Linux pointer opens note in new process and physical DRM screenshot shows original saved text.",
+    "functional": {
+      "scope": "Original shell public FUSE exact note hash, original force-stop/PID absence/new-PID cold relaunch; physical Linux pointer reopens original note visibly under enforcing. Not general APK/full-host isolation acceptance.",
+      "artifacts": {
+        "markor-observer-paths.txt": {
+          "sha256": "2b2e2071c9a0979ee1965261d46e5dcf5e714e5c8f815cb3ae94a2436684b43a",
+          "size": 416
+        },
+        "markor-lifecycle.txt": {
+          "sha256": "0d2e04b596cf9863016973c5141b236c2373c3de7cdc01aaa82aac28941ac996",
+          "size": 60
+        },
+        "markor-relaunch.txt": {
+          "sha256": "9187f174aa5d108fa2d72e2a1090541e984f0b6978b96d8f7c8bacc277d07744",
+          "size": 190
+        },
+        "markor-note-before-stop.txt": {
+          "sha256": "3638adf8a816c0268d0701d40bdf0638f7639304fe3af7b5f9c85e051bf1a21c",
+          "size": 122
+        },
+        "markor-note-after-relaunch.txt": {
+          "sha256": "3638adf8a816c0268d0701d40bdf0638f7639304fe3af7b5f9c85e051bf1a21c",
+          "size": 122
+        },
+        "markor-note-bytes.bin": {
+          "sha256": "636ce55ce9922bbf0d71f8fda4218536489af0e828336b0e2b7720221a491630",
+          "size": 21
+        },
+        "markor-mountinfo.txt": {
+          "sha256": "c3f02878922767ef7c8e0df2f7d8917cddc1070b30884c441c159c5c68185c04",
+          "size": 45966
+        },
+        "markor-install.txt": {
+          "sha256": "2f74d04082d1ff0da02daf9255f51e011c2e1665bdc52fd8ba5aef092de2d2ce",
+          "size": 116
+        },
+        "markor-launch.txt": {
+          "sha256": "d235596710af895e3fc39b3718e2434ba455780172e5093e86d3422f2a66806f",
+          "size": 190
+        },
+        "original-logcat.txt": {
+          "sha256": "520ffbff69510cadea5f8bde96f89951df1decbea2ced29d2f18f92e1bf2fdc1",
+          "size": 1041793
+        }
+      },
+      "observed_pids": [
+        1354,
+        1757
+      ],
+      "note_sha256": "636ce55ce9922bbf0d71f8fda4218536489af0e828336b0e2b7720221a491630",
+      "image": "note-reopened.png",
+      "image_sha256": "4ff7fb8677bdde1728331e0cc30a12398374c51ea7b092cd2207ab2ad39f7375"
+    },
+    "mac_window": {
+      "seconds": 900,
+      "scope": "Global enforcing only after real factory preparation; original subsystems, not APK/MAC acceptance by exit0",
+      "activated": true,
+      "policy_readback_sha256": "3df7d54f003d57287cc7c7761f52ae034ed9ba91e0f61a2a097cdd3b30161aa6",
+      "started_monotonic": 31182.988220019,
+      "candidate_exit": 0,
+      "mode_at_candidate_exit": "1",
+      "elapsed_enforcing_attempt": 221.77051084599952,
+      "restored_enforce": "0",
+      "watchdog_cancelled_after_restore": true,
+      "watchdog_status": 15
+    },
+    "image": {
+      "path": "reports/android16-package-bootstrap/markor-mac270-reopened.png",
+      "sha256": "4ff7fb8677bdde1728331e0cc30a12398374c51ea7b092cd2207ab2ad39f7375"
+    },
+    "evidence": {
+      "observed-markor-mountinfo.txt": "c3f02878922767ef7c8e0df2f7d8917cddc1070b30884c441c159c5c68185c04",
+      "observed-markor-observer-paths.txt": "2b2e2071c9a0979ee1965261d46e5dcf5e714e5c8f815cb3ae94a2436684b43a",
+      "observed-markor-lifecycle.txt": "0d2e04b596cf9863016973c5141b236c2373c3de7cdc01aaa82aac28941ac996",
+      "observed-markor-relaunch.txt": "9187f174aa5d108fa2d72e2a1090541e984f0b6978b96d8f7c8bacc277d07744",
+      "observed-markor-note-before-stop.txt": "3638adf8a816c0268d0701d40bdf0638f7639304fe3af7b5f9c85e051bf1a21c",
+      "observed-markor-note-after-relaunch.txt": "3638adf8a816c0268d0701d40bdf0638f7639304fe3af7b5f9c85e051bf1a21c",
+      "observed-markor-note-bytes.bin": "636ce55ce9922bbf0d71f8fda4218536489af0e828336b0e2b7720221a491630",
+      "session-state.json": "3a66479a20c4d975e2db5e86c8039feef316e92e221ca70baf100f3aa59fcc22",
+      "finite-audit/result.json": "8da08870f90ce3bacfa2eeed7843273b31481d200fcc98cd453c57dc499f5d05",
+      "result.json": "5d2c743593a60a5f89da0a2f6b5dc3681621744abf4609d494505999a7767d47"
+    },
+    "closure": "Operator stopped exact cohort after functional proof. No guest workflow success inferred from outer_exit0; original inventory verifier false after operator stop. VT1, host devices, SysRq unchanged; loops/dm/FUSE absent; audit rules/buffer restored with no loss; original udev restored; consumed without queue.",
+    "limits": [
+      "Forced application close, not graceful application save-on-exit",
+      "Existing note created266, not recreated270; persisted through separate cohorts",
+      "Global host R1-MAC/PAM boundary remains open",
+      "ASCII and this Markdown note only; not all Markor features or general APK compatibility",
+      "Original ART dex2oat32/ABI, background services and orderly cohort shutdown unresolved; ARM/GMS/DRM separate"
+    ]
   }
 }
