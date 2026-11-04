@@ -6152,5 +6152,43 @@
       "Full R1/product admission and isolation",
       "ARM/GMS/DRM and broad APK compatibility"
     ]
+  },
+  "vlc281": {
+    "run_id": "7530996a-ff2d-40af-af7b-8abf4ebd1404",
+    "checkpoint": "/home/tv/recuperacion-archtv/7530996a-ff2d-40af-af7b-8abf4ebd1404-markor-software-launch",
+    "artifact_reused": 280,
+    "evidence": {
+      "before-launch.json": "a93b35e76c736aa149c1a3d79869d637b86cb2479e4b7a01bef58962901dd5f9",
+      "host-admission.json": "e67122b6d61e7cd7dfe544c6caf0f366e81949f425fbebb0c1da6988506b553c",
+      "result.json": "e0e4ac960da4948c2a60525e0eb19fef745d407c6550b0f8211d0b49b575341b",
+      "mac-window.json": "72a729ceee9bb67d9bcfbf0cdd6ecc84eeed61a46967c6f382ac481144824bb2",
+      "session-state.json": "edde1ace129620262105b8d7e3496ab1cd699a1a35402ce755b6c97c1a284330",
+      "finite-audit/result.json": "cd12d87a3b6c53a92cf1f574ae521a37d1fc21face3a0377489c6ed966acbe18",
+      "original-client-evidence.json": "22596305ca3593caa99aa741b029fde9df83fc2b6abbf778c1a06bf5f9129d3c",
+      "observed-original-logcat.txt": "ec3932e9edc2b3ead7d9a348ba3852cd3cd4391ca7cda9066be11dfa3ec74f18",
+      "native-stderr.txt": "56dcaf4e1815c5a981e1fd3a28a82dcbece94dc559b97eff8d05506847835943",
+      "media-crash-diagnosis.json": "548cf75ad50541196d650bf1dc43267c7d4db4234b851f8f3add6db1b10ee5c6",
+      "interaction-events.json": "2d100c6307adba957e5f83dc4936bba39dba68fc2934716ef16f5f58724d556f",
+      "vlc-current.png": "082a028b8dc203f190f61a1555299a883d73081277c35201a10f7ca36ffa7894",
+      "vlc-permission4.png": "26f9969fd5827c71a7e8e3524d428f28682bd7d256ec0d10dcda81ac381140ae",
+      "vlc-permission5.png": "a31cd8b0ec0994a9435c1b94dbf491a8b1f4b960b1b151288a65a8fd0218a7d8",
+      "vlc-library.png": "ad3e8041eea25dd6b58b51d01d0f1fb86f1dca897c6a35b27999b02192a40f61",
+      "vlc-movies-focus.png": "8ad3a3ccc0fad3240ddb583accd8afc5402957877da548e46d5719b654a555ac",
+      "completion-consumer.json": "6795ec1c3153cb9fd30ff965bf33a45baa040aeac1d52c6231dfcfae83e8c1fc"
+    },
+    "functional": "Original MainTvActivity, physical KEY_WAKEUP/DPAD/Enter navigation, original PermissionController dialogs granting standard audio/video media access, original library initializes, browser traverses internal memory to Movies and observes1 file. No direct permission/prefs writes. LibVLC reports3.0.23; not playback proof.",
+    "input": "19 commands emitted and original WAIT_FOR_FINISH ACK logs. Command20 not emitted because cohort had already failed; never count queued command as delivered.",
+    "primary_failure": "Opening Movies generates video thumbnail: BufferPool/FMQ memfd transfers denied read/write mediaswcodec→mediaserver_tmpfs and mediaserver→mediaextractor_tmpfs; IMemory FAILED_TRANSACTION then MediaBuffer length13954 size0 CHECK abort, media pid432 SIGABRT. Causal chain demonstrated for thumbnail, initial source-label mismatch still under investigation.",
+    "secondary_failures": "Cohort teardown SIGKILLs vold; reboot_on_failure triggers original shutdown request captured by Linux sink, no VM reboot. MC1_CLOSE_FAILED and native1 retained. Missing AudioFlinger/AudioPolicy prevents claiming audio. Crash socket denied, partial debuggerd log/no tombstone. ART dex2oat exec also denied earlier; original installation succeeds with fallback, optimization not accepted.",
+    "result": {
+      "native_exit": 1,
+      "outer_exit": 1,
+      "native_apex_inventory": true,
+      "playback_accepted": false,
+      "close_reopen_accepted": false
+    },
+    "closure": "Terminal active owner consumed. Host mode0 restored, original udev restored, VT/SysRq/device metadata unchanged, own loops/dm/FUSE/BPF removed. Audit loss0/rules unchanged. Notifications disabled.",
+    "next_action": "Inspect original GSI ashmem/memfd/Binder FD contracts and actual original libraries before changing labels/policy. Integrate original memory sharing, not broad cross-domain RW. AudioFlinger/AudioPolicy absent is a separate demonstrated dependency.",
+    "limits": "R1-MAC, actual video/audio, app lifecycle, broad compatibility, ARM/GMS/DRM and product requirements remain open."
   }
 }
