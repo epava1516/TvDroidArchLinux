@@ -8,6 +8,7 @@ tracked_inputs.extend(['reports/android16-package-bootstrap/userdata.py','report
 tracked_inputs.append('reports/android16-package-bootstrap/build-bootstrap-xml.py')
 tracked_inputs.extend(['runtime/aosp/linux-services/archtv/runtime/SelectedRuntime.java','tools/aosp/ZygoteSelectedEntryPlan.java','tools/aosp/build_selected_zygote_framework.py','reports/android16-selected-display/build-entry.py','runtime/aosp/android16-qpr2/patches/framework-zygote-selected-entry.patch'])
 tracked_inputs.append('reports/android16-network-bootstrap/boundary.py')
+tracked_inputs.extend(['reports/android16-package-bootstrap/build-libcutils-memory.py','runtime/aosp/android16-qpr2/patches/libcutils-memfd-original-label.patch','runtime/aosp/android16-qpr2/patches/libcutils-memfd-original-label.json'])
 tracked_inputs.extend(['runtime/aosp/native/linux-wayland-frame-composer.cpp','runtime/aosp/native/linux-wayland-frame-composer.h','reports/android16-hwc3-wayland/build-input.py'])
 tracked_inputs.extend(['reports/android16-selected-display/build-entry.py','runtime/aosp/linux-services/org/archtv/aosplinux/WaylandInputBridge.java','runtime/aosp/native/linux-wayland-input.h','runtime/aosp/native/linux-wayland-output.cpp','reports/android16-property-actions/apply-patch-chain.py','reports/android16-property-actions/build-lazy-control.py',*[str(p.relative_to(r)) for p in sorted((r/'runtime/aosp/android16-qpr2/patches').glob('000[1-5]-*.patch'))]])
 source_hashes={n:hashlib.sha256((r/n).read_bytes()).hexdigest() for n in tracked_inputs}
@@ -60,6 +61,15 @@ assert re.fullmatch(r'[a-zA-Z][a-zA-Z0-9_]*(?:\.[a-zA-Z][a-zA-Z0-9_]*)+',apk_tar
 assert re.fullmatch('[0-9a-f]{64}',apk_target['sha256'])
 assert hashlib.sha256(Path(apk_target['path_local']).read_bytes()).hexdigest()==apk_target['sha256']
 assert software_platform or apk_id=='markor'
+memory_library=None
+if '--memfd-label-original' in sys.argv[2:]:
+ assert software_platform
+ memory_path=r/'dist/aosp16/libcutils-memfd-linux-2/libcutils.so'
+ memory_build=json.loads((memory_path.parent/'build.json').read_text())
+ assert memory_build['terminal'] and memory_build['sha256']=='c960f7e332b1e6f42f69a8ca73d81b2bc6ffd538bc424e3fdb5ad7701dc99180'
+ assert hashlib.sha256(memory_path.read_bytes()).hexdigest()==memory_build['sha256']
+ for source,expected in memory_build['inputs'].items():assert hashlib.sha256(Path(source).read_bytes()).hexdigest()==expected,source
+ memory_library={'path':str(memory_path),'sha256':memory_build['sha256'],'payload_path':'/bin/archtv-libcutils-memory.so','scope':'Experimental original libcutils memory-label backport; not APK/security acceptance'}
 media_test=None
 if '--media-test' in sys.argv[2:]:
  assert software_platform and apk_id=='vlc'
@@ -79,7 +89,7 @@ if software_platform:
  lines[0]=lines[0].replace('-Xmx768m','-Xmx512m')
  lines.append('    setenv ARCHTV_SOFTWARE_SECURITY_PROFILE software-platform-v1')
 experiment_kind='markor-software-launch' if software_platform else 'keystore-java-component' if keystore_java else 'keystore-component' if keystore_component else ('keymint-component' if keymint_component else 'markor-launch')
-(out/'build-options.json').write_text(json.dumps({'apk_target':apk_target,'media_test':media_test,'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component and not software_platform,'software_security_platform':software_platform,'observe_ms':observe_ms,'persistent_userdata_name':userdata_name,'markor_workflow_token':workflow_token,'markor_workflow_budget_seconds':workflow_budget_seconds,'experiment_kind':experiment_kind,'original_apex_bootstrap':True,'original_logd':True,'preconnected_wayland':True,'original_system_dma_heap':True},indent=2)+'\n')
+(out/'build-options.json').write_text(json.dumps({'apk_target':apk_target,'media_test':media_test,'memory_library':memory_library,'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component and not software_platform,'software_security_platform':software_platform,'observe_ms':observe_ms,'persistent_userdata_name':userdata_name,'markor_workflow_token':workflow_token,'markor_workflow_budget_seconds':workflow_budget_seconds,'experiment_kind':experiment_kind,'original_apex_bootstrap':True,'original_logd':True,'preconnected_wayland':True,'original_system_dma_heap':True},indent=2)+'\n')
 if checkpoint_diagnostic:lines.append('    setenv ARCHTV_CHECKPOINT_DIAGNOSTIC 1')
 lines=[l for l in lines if not any(l.startswith('    setenv '+n+' ') for n in ['BOOTCLASSPATH','DEX2OATBOOTCLASSPATH','SYSTEMSERVERCLASSPATH','STANDALONE_SYSTEMSERVER_JARS'])];(entry/'selected-services.rc').write_text('\n'.join(lines)+'\n')
 old=r/'dist/aosp16/apex-cohort-build-6';commands=[]
@@ -329,6 +339,8 @@ if workflow_token is not None:
  (out/'markor-workflow-budget').write_text(str(workflow_budget_seconds)+'\n')
  vendor['files']['/vendor/etc/archtv-markor-workflow-budget']={'source':str(out/'markor-workflow-budget'),'context':'u:object_r:vendor_configs_file:s0','mode':0o444}
  vendor['files']['/vendor/etc/archtv-markor-workflow-token']={'source':str(out/'markor-workflow-token'),'context':'u:object_r:vendor_configs_file:s0','mode':0o444}
+if memory_library is not None:
+ vendor['files'][memory_library['payload_path']]={'source':memory_library['path'],'context':'u:object_r:system_lib_file:s0','mode':0o444}
 if media_test is not None:
  (out/'media-test-name').write_text(media_test['display_name']+'\n')
  vendor['files']['/vendor/etc/archtv-media-test-name']={'source':str(out/'media-test-name'),'context':'u:object_r:vendor_configs_file:s0','mode':0o444}

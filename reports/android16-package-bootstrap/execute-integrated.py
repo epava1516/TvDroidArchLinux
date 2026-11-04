@@ -243,6 +243,14 @@ apk_target=build_options.get('apk_target',{'id':'markor','package':'net.gsantner
 apk_path=Path(apk_target['path_local'])
 apk_sha=apk_target['sha256']
 assert hashlib.sha256(apk_path.read_bytes()).hexdigest()==apk_sha
+memory_library=build_options.get('memory_library')
+if memory_library is not None:
+ assert build_options['software_security_platform']
+ assert memory_library['payload_path']=='/bin/archtv-libcutils-memory.so'
+ assert hashlib.sha256(Path(memory_library['path']).read_bytes()).hexdigest()==memory_library['sha256']
+ # Bind only inside the already-private factory; never overwrite the GSI or host.
+ # All selected services use the original platform loader and the complete library.
+ root_code+="\nimport hashlib\nmemory_source=candidate/'bin/archtv-libcutils-memory.so';memory_target=root/'system/lib64/libcutils.so'\nassert hashlib.sha256(memory_source.read_bytes()).hexdigest()=="+repr(memory_library['sha256'])+"\nassert memory_target.is_file()\nmount('--bind',memory_source,memory_target);mount('-o','remount,bind,ro,nosuid,nodev',memory_target)\nprint('ORIGINAL_LIBCUTILS_MEMORY_PRIVATE_RO '+str(memory_target),flush=True)"
 media_test=build_options.get('media_test')
 if media_test is not None:
  assert apk_target['id']=='vlc' and media_test['bytes']<=1048576

@@ -1,0 +1,15 @@
+{
+  "original_aosp_commit": "bc5465980cc6ecc26eb7fa9e5d08a2f5921d05ed",
+  "reverted_by": "0e78ca50b705413afff4472abaec20755075b921",
+  "revert_reason": "b/448179325; public commit does not specify technical cause",
+  "source_sha256": "a8b2ef0eb7aafabdb5bf8c30e0674502ee062ab2a99f7d5260e7df1e759b1d5d",
+  "adapted_sha256": "10eeb6d9b4820e8e789fac5fe403d88dfa7221f8e88740b4941cfd23d5f9cdf7",
+  "patch_sha256": "f43d8341540e3ff22cc84e9ed43d0b48cc73679d0772950d0ea28ac54ea53a7f",
+  "scope": "Experimental backport of original allocation/label functions to pinned QPR2 source. Strict original failure behavior, no invented label or success. Full library needed; not runtime acceptance.",
+  "existing_port_compared": {
+    "git_blob_sha1": "c1c37a2503330f9df075356b9eceaaa0fe8c8b8a",
+    "differences": "Port preserves unlabelled allocation after failure and skips isolated app UIDs due reported Chromium seccomp traps. Those changes are not adopted in this strict initial candidate; isolated apps/recovery compatibility explicitly unverified."
+  },
+  "license": "Original source Apache-2.0; retain original source notices",
+  "source_evidence_checkpoint": "/home/tv/recuperacion-archtv/7530996a-ff2d-40af-af7b-8abf4ebd1404-markor-software-launch"
+}

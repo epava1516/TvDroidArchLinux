@@ -6190,5 +6190,74 @@
     "closure": "Terminal active owner consumed. Host mode0 restored, original udev restored, VT/SysRq/device metadata unchanged, own loops/dm/FUSE/BPF removed. Audit loss0/rules unchanged. Notifications disabled.",
     "next_action": "Inspect original GSI ashmem/memfd/Binder FD contracts and actual original libraries before changing labels/policy. Integrate original memory sharing, not broad cross-domain RW. AudioFlinger/AudioPolicy absent is a separate demonstrated dependency.",
     "limits": "R1-MAC, actual video/audio, app lifecycle, broad compatibility, ARM/GMS/DRM and product requirements remain open."
+  },
+  "vlc283": {
+    "run_id": "05730340-fa76-458c-b668-5a4773e946c8",
+    "checkpoint": "/home/tv/recuperacion-archtv/05730340-fa76-458c-b668-5a4773e946c8-markor-software-launch",
+    "artifact": 282,
+    "evidence": {
+      "before-launch.json": "c6a81a1cdb9e95c72607e4a8c4031f8be4fffebbb1ea3469a0e332aa14cabb88",
+      "host-admission.json": "a98cfc947d3837e46d6fe3bc0066ac072ff98ade008ab02809acbc0ac814617c",
+      "result.json": "446facc8c718a557d4ae722a8025b8c202d54b22fab1289d7e4ea1408cbc492b",
+      "mac-window.json": "ab326864e7ead37fb11610afc723d5deff7a1245fe38b127025d7388f6acc261",
+      "session-state.json": "548dd2d4ac3661ba290bee4cf38e2f0bb9aad9e1c1476b5105c378a99f5cd0f6",
+      "finite-audit/result.json": "b634fee402b59237daaf5a2b20add0057cf3581cf919a58181206fe1056a1bc4",
+      "original-client-evidence.json": "c16e9c00f4c68dbaa0b4023b431cbb457f0373733e48ad08c92b693c1995013a",
+      "observed-original-logcat.txt": "ffac2a00c7f4486729b6a26214db4ffb37429f1f489f949854ce6491595b8dba",
+      "native-stderr.txt": "4db04d9dff397659f786bbd675d864cdb649959fb6b25b6ba4a61427295daad2",
+      "playback-failure.txt": "87a1a674bbf9aaf391bc6ab0636a52536ebc47b9907692219f6674c00b5147f0",
+      "close-summary.json": "e2235923b36cf5d43ac843578a042024eda9e60bb6785d170df6030c118beea3",
+      "interaction-events.json": "0f13c951fdadb1fb866647cdad4fa7c47e35084a9aa7b8bfcebb8d42faf46306",
+      "vlc-movie-list.png": "7f3b9b9dddd7fa4eaa7136421691f9fe1af6ad28613e92eff6c75ddeef463d58",
+      "vlc-play2.png": "b0f342a9941bd5b6b042da54f46421d04c547c401968cffda2034b29a758d076",
+      "memory-source-review.json": "ff47f3b2dd1f75fbe41565eeff586bdd3dcca433de878533a1bd63438b780209",
+      "next-original-service-source.json": "7ff6fecd36058e4c045e8bf32999808d49230f214734561af450d44bd6b4788d",
+      "completion-consumer.json": "424df1aa322e268a328f7c2a8c190b2d60cf1b5736ec3c4c9618a9a0a82e837e"
+    },
+    "original_memory_backport": {
+      "patch": "runtime/aosp/android16-qpr2/patches/libcutils-memfd-original-label.patch",
+      "aosp_change": "bc5465980cc6ecc26eb7fa9e5d08a2f5921d05ed",
+      "reverted_by_aosp": "0e78ca50b705413afff4472abaec20755075b921",
+      "source_match": "Fetched official QPR2 ashmem-dev.cpp matches pinned e9d1fa source exactly before adaptation",
+      "library": "/home/tv/repositorio-principal/dist/aosp16/libcutils-memfd-linux-2/libcutils.so",
+      "sha256": "c960f7e332b1e6f42f69a8ca73d81b2bc6ffd538bc424e3fdb5ad7701dc99180",
+      "build_record_sha256": "e1fcb31e793e62081412e4d2332ed0b6c6f2193c0442825c49af046743c4cb85",
+      "export_comparison_sha256": "aa149c8fa87f0a851f213d186e394b230238549086e17de5998b1e8fea42b53c",
+      "rea_static_notes_sha256": "ee2e6315521db43fb34a65cb898aa2fee5ea89d8549df0783ca8c48ced0c633b",
+      "boundary": "Complete Bionic library; context read from original policy file and original Bionic fsetxattr, no Linux/glibc libselinux dependency. Private readonly system library bind. No policy grant added.",
+      "limits": "Original upstream revert retained/documented. Strict allocation failure, no permissive fallback. Isolated/Chromium/recovery unverified. Direct memfd_create outside libcutils unchanged. Ashmem-compatible sharing is not full isolation."
+    },
+    "preparation_results": {
+      "candidate1": "Wrong inherited vendor defines detected by3 missing original testing exports, not deployed. Candidate2 platform variant preserves all125 original exports, one extra weak Trim template; static comparison not ABI acceptance.",
+      "build282": "Builder exit1 final source guard retained; only external coordinator changed. Native inputs unchanged; verified125 payload entries and exact library hash. Precise inverse-hash correction documented, not a rewritten build success.",
+      "external_correction_record": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-282/external-coordinator-correction.json",
+      "external_correction_sha256": "d8ab9675ebb851606363f732bfc30a6ad624dd167c5ebd406f1636c0ad7319ff",
+      "execution282": {
+        "checkpoint": "/home/tv/recuperacion-archtv/df66667d-4b88-44e6-86d0-d7c1617af339-markor-software-launch",
+        "result_sha256": "8d9c6ad48070aa3f6e80238cbce7b872afe0a1b49ebef49293f30f3bf7d7398a",
+        "scope": "Factory source root/bin absent before mount; corrected to already-mounted candidate/bin. MAC not activated, no services or APK accepted."
+      }
+    },
+    "functional": "Original imported media bytes and intact VLC original install/launch. Previously granted standard media permissions persist. Physical TV keyboard traverses Movies. Original codec decodes and VLC displays actual testsrc2 thumbnail; original media server no longer aborts at previous thumbnail point. Screenshot is physical compositor output, not generated test image substitution. FD target label itself not independently sampled; positive contract evidence is real original decode/thumbnail, unchanged policy and actual code path.",
+    "playback_failure": "Enter on real media item launches original VideoPlayerActivity; original VLC PID1759 throws RuntimeException caused by missing IMediaRouterService.registerClientAsUser (MediaRouter.java461), dies and original AMS recovers PID1932. No video playback or audio accepted. Missing AudioFlinger/AudioPolicy also independently logged. No patch to VLC or fake router.",
+    "closure": {
+      "native_component_exit": 0,
+      "outer_exit": 1,
+      "apex_inventory": true,
+      "native_stopped_marker": true,
+      "remaining_loops": "",
+      "remaining_dm": [],
+      "bpf_cleanup": true,
+      "scope": "Transport/cohort closure results; video playback failed independently at absent original MediaRouter."
+    },
+    "security": "Bounded enforcing1 with unchanged policy60; normal restoration0. Full R1 remains open; Linux exterior identity observer still fails. Actual app/native feature evidence does not replace identity/isolation acceptance.",
+    "next_action": "Integrate whole original MediaRouterService constructor, publish real Binder and systemRunning in original SystemServer/AMS order; then actual VideoPlayer playback and original native audio services.",
+    "remaining": [
+      "Video/audio playback and output",
+      "VLC controlled close/reopen and media resume persistence",
+      "Isolated processes/Chromium and recovery for original reverted memory backport",
+      "Full R1, product packaging/install/update",
+      "ARM, GMS, DRM and wide real APK matrix"
+    ]
   }
 }

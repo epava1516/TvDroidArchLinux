@@ -3,6 +3,24 @@
 Estas modificaciones no son código upstream ni un runtime instalado. La revisión
 base permanece fijada en el manifiesto; conservar licencias y procedencia AOSP.
 
+- `libcutils-memfd-original-label.patch`: candidato experimental de la biblioteca
+  Bionic completa, sobre system/core e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1.
+  Recupera las funciones de asignación/etiquetado del [cambio AOSP
+  bc5465980cc6](https://android.googlesource.com/platform/system/core/+/bc5465980cc6ecc26eb7fa9e5d08a2f5921d05ed),
+  [revertido por AOSP](https://android.googlesource.com/platform/system/core/+/0e78ca50b705413afff4472abaec20755075b921)
+  por b/448179325, cuyo detalle técnico no es público en ese commit. Conserva su
+  fallo real de asignación si no puede aplicar el contexto leído del fichero de
+  política original; no fija un SID en el código ni amplía permisos de tmpfs.
+  El JSON adjunto fija hashes, alcance y comparación con un port Linux existente.
+  Ese port permite continuar sin reetiquetar y excluye UID aislados por una
+  incompatibilidad seccomp de Chromium que comunica; esas variantes no se han
+  adoptado ni validado aquí. Procesos aislados, recuperación y compatibilidad
+  general quedan sin aceptar. Los filtros originales de mediaextractor y
+  mediacodec incluyen fsetxattr; esto no sustituye la ejecución. El constructor
+  `reports/android16-package-bootstrap/build-libcutils-memory.py` conserva el
+  conjunto completo de fuentes/exports de plataforma. La prueba integrada usa
+  un bind readonly privado de la biblioteca; no modifica el GSI de referencia.
+
 - `0001-property-persistence-errors.patch`: system/core
   e9d1fa3705d7fbd0ac1c942bc4c276161bfbfed1, tres archivos bajo init/.
   Añade API comprobable conservando wrapper void y propaga errores en llamadores
