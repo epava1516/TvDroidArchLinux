@@ -2388,3 +2388,6 @@ funcional futura del recorrido original, sin éxitos sustitutos.
 
 
 Audio291: sistema y vendor conservan variantes distintas de libcutils. La adaptación explícita de etiqueta memfd debe mantener ambas fronteras de compilación/carga; la variante vendor comparte uso SP-HAL con gráficos y no puede sustituirse sin contraste por la de plataforma. El candidato conserva macros vendor, objetos originales y enlaces LLNDK. Igualdad de130 símbolos exportados sólo prueba esa comparación estática; falta ejecución integrada, transferencia FMQ, negociación PCM y regresión gráfica. No se concede acceso general de audioserver a hal_audio_default_tmpfs. [Resultado](../reports/android16-audio-bootstrap/vendor-memory-progress.json).
+
+
+El backing Linux de userdata conserva linux.fs_t. El contrato original vold BindMount→UnmountTree necesita desmontar el bind anterior privado;64 proyecta únicamente unmount, conservando namespaces y ausencia de acceso proc/ptrace al supervisor. SID GLOBAL, no confinamiento por ruta; no se acepta aislamiento por la regla ni por consultas offline. [Evidencia y límites](../reports/android16-audio-bootstrap/vendor-memory-progress.json).

@@ -1,0 +1,10 @@
+; Linux-backed persistent userdata retains Linux's global filesystem SID.
+; Original vold Utils.cpp BindMount first calls UnmountTree(MNT_DETACH).
+; Actual295 denies that operation on /mnt/pass_through/0/emulated, so the
+; original emulated-volume inventory remains unmountable. Original vold.te
+; permits labeledfs mount/unmount/remount; project only the observed unmount
+; need onto the real Linux backing filesystem. This SID is GLOBAL: this rule
+; is not a per-path/per-mount restriction. Mandatory detached private root and
+; mount/PID namespaces remain the boundary; no namespace, proc, host-file,
+; capability or mount/remount access is added. Full R1 remains open.
+(allow vold linux.fs_t (filesystem (unmount)))

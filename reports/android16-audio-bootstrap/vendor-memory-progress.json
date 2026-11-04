@@ -78,7 +78,7 @@
     "API symbol comparison is not full ABI equivalence",
     "No audio playback, full R1 isolation or broad APK acceptance"
   ],
-  "next_action": "Actual295 pending at /home/tv/recuperacion-archtv/1967e9d5-7eb5-4ab3-b344-72feba9c2d98-markor-software-launch with identical payload292,1285644288 free bytes after scoped package-cache recovery. No original storage checks bypassed. Inspect installation then real UI/input/FMQueue/PCM. Full R1/ARM/GMS/DRM/product open.",
+  "next_action": "New unique integrated cohort using unchanged verified payload292 and kernel readback64. Require actual mounted original volume\u2192original installation\u2192VLC UI/input\u2192FMQueue/PCM/physicalposition/moving video. No readiness or storage threshold bypass.",
   "execution293": {
     "id": "0178a35c-2e61-480f-ab2a-5042f3f8d174",
     "checkpoint": "/home/tv/recuperacion-archtv/0178a35c-2e61-480f-ab2a-5042f3f8d174-markor-software-launch",
@@ -176,6 +176,79 @@
         "path": "/home/tv/recuperacion-archtv/da425805-2f54-4e1a-bf95-17f3168c7446-markor-software-launch/pacman-cache-recovery.json",
         "sha256": "44c342485ab0119be1d17e4f5e93ac0c763055e11345d4050d18dd80fa038233",
         "bytes": 1351
+      }
+    }
+  },
+  "execution295": {
+    "id": "1967e9d5-7eb5-4ab3-b344-72feba9c2d98",
+    "checkpoint": "/home/tv/recuperacion-archtv/1967e9d5-7eb5-4ab3-b344-72feba9c2d98-markor-software-launch",
+    "result": "Original emulated volume unmountable; installer waits actual Sm inventory then fails, no launch/PCM.",
+    "original_contract": "vold Utils.cpp BindMount calls UnmountTree MNT_DETACH before MS_BIND; actual kernel denies filesystem unmount against Linux-owned fs SID on private pass-through target. Linux-backed existing bind inferred from source/AVC/log, not direct live mount table.",
+    "host": "Same boot, permissive restored, original udev and mixer restored, auditlost0/rulesunchanged, loops/dmclosed.",
+    "evidence": {
+      "result.json": {
+        "path": "/home/tv/recuperacion-archtv/1967e9d5-7eb5-4ab3-b344-72feba9c2d98-markor-software-launch/result.json",
+        "sha256": "b27d16887e802e9bd47d565c1241a4a937b4f7c4137ca465b90c180683d47130",
+        "bytes": 48235
+      },
+      "mac-window.json": {
+        "path": "/home/tv/recuperacion-archtv/1967e9d5-7eb5-4ab3-b344-72feba9c2d98-markor-software-launch/mac-window.json",
+        "sha256": "203f2bc20b173096bf872c96294cfea474c3726768eddc179ea8c32e266bf73b",
+        "bytes": 502
+      },
+      "root-after.json": {
+        "path": "/home/tv/recuperacion-archtv/1967e9d5-7eb5-4ab3-b344-72feba9c2d98-markor-software-launch/root-after.json",
+        "sha256": "e14d53deab02d15abf5a91f54b12fa11970651c347058fb39c6e11a3792d0cf8",
+        "bytes": 361
+      },
+      "finite-audit/result.json": {
+        "path": "/home/tv/recuperacion-archtv/1967e9d5-7eb5-4ab3-b344-72feba9c2d98-markor-software-launch/finite-audit/result.json",
+        "sha256": "25c72aa44a1cc1cf184ce336d86fa0862514411ad16853ae16e070e2f670fc60",
+        "bytes": 2288
+      },
+      "finite-audit/audit.log": {
+        "path": "/home/tv/recuperacion-archtv/1967e9d5-7eb5-4ab3-b344-72feba9c2d98-markor-software-launch/finite-audit/audit.log",
+        "sha256": "ad1de09703daca25b843bff72154f238bed8c9f5c38f880c5be458c4654bd9b2",
+        "bytes": 5656775
+      },
+      "original-logcat-final.txt": {
+        "path": "/home/tv/recuperacion-archtv/1967e9d5-7eb5-4ab3-b344-72feba9c2d98-markor-software-launch/original-logcat-final.txt",
+        "sha256": "ad099edea1071e00df997ccc62e4b2c1e21e8a81f2afcb308ee995d5a778725a",
+        "bytes": 2176319
+      },
+      "vold-bind-diagnosis.json": {
+        "path": "/home/tv/recuperacion-archtv/1967e9d5-7eb5-4ab3-b344-72feba9c2d98-markor-software-launch/vold-bind-diagnosis.json",
+        "sha256": "e1b82ffe247fcbea3c26b0059a7e090a515a7dd29cc19494bca74f860b92462f",
+        "bytes": 1583
+      }
+    }
+  },
+  "vold_policy64": {
+    "checkpoint": "/home/tv/recuperacion-archtv/20261104T-vold-private-bind-policy64",
+    "input_binary_sha256": "7a763a1727f0e20a6cacf733b083f295c6fbde20e25233ac495cf4e89047edb2",
+    "kernel_readback_sha256": "a5cd6a5c0de7969ffbdf1fbdfceaaabcf3bf6059863a5aa2c5db8e6b7121274c",
+    "mode_after_load": "permissive",
+    "delta": "Only vold\u2192linux.fs_t filesystem unmount. SID is GLOBAL, private detached root/mount/PID namespace remains mandatory. No namespace/proc/capability/file/mount/remount additions.",
+    "tests": "Compiler0 neverallowenabled,22offline63/64decisions expected; scope excludes runtime and full isolation. Kernel load0/errnoNone, contextsrecognized; no new service/volume/APK acceptance.",
+    "reproduce": "python reports/android16-audio-bootstrap/prepare-audio-policy.py NEW_OUTPUT --memory --vold-private-bind; use tools/aosp/build_linux_policy.py with generated profile/AOSP CIL. Semantic profile+mergedAOSP bytes matched actual64 inputs, limitations prose differs.",
+    "artifacts": {
+      "/home/tv/repositorio-principal/dist/aosp16/selected-platform-policy-64/artifact.json": {
+        "sha256": "dd328ddbc63fd58a4dc9b70b3fbce33b848a66b4ef8bc1ef11ae3af102ac4578"
+      },
+      "/home/tv/repositorio-principal/dist/aosp16/selected-platform-policy-64/compiler.json": {
+        "sha256": "003253b7e6057c3dfcbcf3b950dcb2e6c575e4da6cb4d0d6681dd1887c039598"
+      },
+      "/home/tv/repositorio-principal/dist/aosp16/vold-bind-policy-inputs-1/access-comparison.json": {
+        "sha256": "383f8fb91949a6568cb326e4868634cc98e324173cbe9c50e88fb094a7a27c36"
+      },
+      "/home/tv/recuperacion-archtv/20261104T-vold-private-bind-policy64/before-host.json": {
+        "sha256": "e818f1fba3aa68505d4b5f0a2d1a7bbedc1f4e188cb2b6d43659cb1527e5ecff"
+      },
+      "/home/tv/recuperacion-archtv/20261104T-vold-private-bind-policy64/after-load.json": {
+        "sha256": "4e18a37f801fa1c93c6d2899490c2151e4cf4d8eb1b61e13e2e0c9018e7c88f7"
+      },
+      "/home/tv/recuperacion-archtv/20261104T-vold-private-bind-policy64/rollback-policy63.py": {
+        "sha256": "ea2802dd3807782fc1494b97d0a5f31f7c68af628d20e1f14d3ab1fc34ab5bd8"
       }
     }
   }

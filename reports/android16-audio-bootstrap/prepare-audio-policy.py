@@ -56,6 +56,10 @@ if with_memory:
     profile['limitations'].append('Explicit Linux private-memory file_type and original tmpfs_domain macro; projected transition requires real memfd/output testing. Original vendor audio TE itself lacks this private type. No generic Linux tmpfs write or app/execute access granted.')
 for name, digest in verified['modules'].items():
     assert hashlib.sha256((repo / name).read_bytes()).hexdigest() == digest
+if '--vold-private-bind' in sys.argv[2:]:
+    assert with_memory, 'Retain verified audio63 base for the private-bind candidate'
+    profile['modules'].append('runtime/aosp/android16-qpr2/policy/experiments/vold-private-bind-unmount.cil')
+    profile['limitations'].append('Exact original vold UnmountTree need on Linux-backed private bind. Filesystem SID is GLOBAL; detached private root/mount/PID namespaces remain mandatory. No new file/proc/namespace/capability or mount/remount access. Offline only, R1 remains open.')
 profile['input_sha256']['aosp'] = hashlib.sha256(merged).hexdigest()
 profile['limitations'].append('Original complete vendor/hal_audio_default.te added; no runtime/domain transition/device/isolation acceptance.')
 (out / 'profile.json').write_text(json.dumps(profile, indent=2) + '\n')

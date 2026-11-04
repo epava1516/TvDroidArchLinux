@@ -981,3 +981,6 @@ permitido. Las nueve etapas Markor y todas las aplicaciones reales siguen abiert
 
 
 Actualización audio291: el próximo experimento integra la variante vendor de libcutils con la adaptación de etiqueta original ya usada en sistema. Puerta: transferencia FMQ real HAL→audioserver bajo enforcing63, sin acceso general a memoria privada; conservar regresión de gráficos por su rol SP-HAL. Después negociar PCM, contrastar escritura/posición física y vídeo en movimiento; un enlace o130 símbolos conservados no cierran esta puerta. [Evidencia](../reports/android16-audio-bootstrap/vendor-memory-progress.json).
+
+
+Tras295: puerta inmediata volumen original montado y ciclo bind/FUSE bajo64; después instalación y UI real VLC con variante vendor292, PCM/escritura/posición y movimiento. Recuperación63 preparada. No se repiten builds ni se rebajan umbrales de almacenamiento. [Evidencia y límites](../reports/android16-audio-bootstrap/vendor-memory-progress.json).

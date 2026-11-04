@@ -623,3 +623,6 @@ Actualización 2026-11-02 · [Namespaces AOSP y operación netd originales](../r
 
 
 - [Audio291 y candidato de memoria vendor](../reports/android16-audio-bootstrap/vendor-memory-progress.json): UUID, hashes de logs originales, cierre, restauración permisiva y fallo Binder real. Candidato02167eca conserva130 identidades de exportación; enlace y comparación estáticos, sin aceptación PCM/ABI completa ni APK adicional.
+
+
+Política64 y ejecución295: fuente original vold, AVC/montaje, cierre/recuperación y22decisionesoffline63/64. Ninguna prueba de volumen/API/PCM por la mera carga de64. [Evidencia y límites](../reports/android16-audio-bootstrap/vendor-memory-progress.json).
