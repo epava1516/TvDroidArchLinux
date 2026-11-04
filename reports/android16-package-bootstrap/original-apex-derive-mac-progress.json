@@ -4335,25 +4335,31 @@
   },
   "compositor_domain_progress": {
     "utc": "2026-11-04T14:14:04.838616+00:00",
-    "current_policy": "56 loaded permissive before bounded enforcing test; readback3fd81d1ccccddc0defe1b941e5bd8b71f201cf8792be0dd2627e78b155d0753e",
+    "current_policy": "Superseded by later integration sections; policy60 loaded permissive before current262 bounded test. Read actual checkpoint/host state; no isolation acceptance.",
     "history": {
       "52": "Offline rejected unresolved type security, never loaded.",
       "53": "Loaded permissive;185 actual access decisions+160 FUSE comparisons+13 seat/admin invariants. Not runtime acceptance.",
       "54": "Loaded permissive; own-role entry and standalone DRM/input startup demonstrated.",
       "55": "Offline compiled, never loaded.",
-      "56": "Offline compiled/loaded permissive; original readonly logind/sysctl interfaces, own keymap memfd typing, sysfs statfs and private atomic capture rename. Enforcing test pending."
+      "56": "Standalone frontend DRM/capture passed in enforcing after trusted PAM/session setup0; input enumeration missing. Whole host PAM1 separately failed. Historical, not complete host MAC.",
+      "57": "Offline only, never loaded.",
+      "58": "Original udev readonly metadata contract; own compositor receives actual HWC buffers and Markor pixels in259 under enforcing. Hotplug labeling blocked; source host -SELINUX.",
+      "59": "Original Linux dev_node contract; original rebuilt udev tags actual hotplug devices under0/1.261 reaches original physical UI/Smithay input but HWC->generic SS input socket denied."
     },
-    "entry_guard": "Root-owned binary2563895... rejects wrong domain, actual own UID/GID1000 NNP1 zero-capabilities entry observed. Formatted source rebuilt afterward, not yet installed; tested exact root-owned binary retained.",
+    "entry_guard": "Formatted root-owned binary6d0ab143497a79af30f1a241745c389a33654026554e84b7805f82c7c1fbb25c installed; exact guarded entry/physical Markor tested259/261. Earlier standalone CLI timeout was not entry proof.",
     "standalone_history": {
       "5a8dae93": "ENODATA after pipe-style PAM startup, no DRM.",
       "18b59ef3": "HUP before preparation, systemd success classification not frontend success.",
       "1079b39e": "Real Seat0 VT2; guard correctly rejects PAM-inherited capabilities.",
-      "f4b50179": "Capabilities dropped only on frontend; actual own-role DRM/input startup, capture, clean child/outer0 in permissive. No APK/enforcing acceptance."
+      "f4b50179": "Capabilities dropped only on frontend; actual own-role DRM/input startup, capture, clean child/outer0 in permissive. No APK/enforcing acceptance.",
+      "2a818667": "PAM under1 failed; no frontend started. R1 whole-host failure preserved.",
+      "3fc2202d": "Trusted PAM/session setup0, frontend exec/DRM/capture under1, no input enumeration. Child/outer0, mode0 restored. No APK or HWC receipt then."
     },
     "standalone_checkpoint": "/home/tv/recuperacion-archtv/f4b50179-dd53-403a-9325-401a96fb3fc1-compositor-domain",
     "active_host_changes": "Exact seat labels and temporary udev rule: compositor-domain-54/seat-before.json. Root-owned executable under /opt; prior4db binary preserved. Original refpolicy logind runtime labels applied to4 metadata nodes, no contents/DAC change. No reboot/default boot change.",
     "recovery": "/home/tv/recuperacion-archtv/20261103T-apex-original-service-handoff/compositor-domain-54/seat-labels.py restore after tests stopped; own exec label must be restored/removed before policy rollback. Standard logind labels exist in baseline51.",
-    "scope": "Necessary Linux identity integration for actual original Markor pixels; not compatibility criterion or completed security. R1-MAC, physical UI/input and note lifecycle remain open."
+    "scope": "Necessary Linux identity integration for actual original Markor pixels; not compatibility criterion or completed security. R1-MAC, physical UI/input and note lifecycle remain open.",
+    "historical_current_policy_at_1414": "56 loaded permissive before bounded enforcing test; readback3fd81d1ccccddc0defe1b941e5bd8b71f201cf8792be0dd2627e78b155d0753e"
   },
   "integrated259_physical_presentation": {
     "checkpoint": "/home/tv/recuperacion-archtv/561d67a8-d6a2-42e0-84e7-443b15d95d9a-markor-software-launch",
@@ -4783,5 +4789,481 @@
       "receiver_closed": true,
       "backlog_limit_restored": true
     }
+  },
+  "integrated261": {
+    "checkpoint": "/home/tv/recuperacion-archtv/1572e6d4-2f9c-42a9-a92c-bc06e9b461a9-markor-software-launch",
+    "payload": 260,
+    "policy": 59,
+    "result": "Original Markor IntroActivity physically displayed; own live keyboard/pointer enumerated; input NOT accepted",
+    "frame": "/home/tv/recuperacion-archtv/1572e6d4-2f9c-42a9-a92c-bc06e9b461a9-markor-software-launch/current-frame.png",
+    "frame_sha256": "f73eb841af3f5811b1d221f3c2910d07987ce81bc75f00dea8d25dff77a43d07",
+    "failure": "HWC connectto abstract archtv-wayland-input-v1 denied against generic system_server socket SID when first real click sent. No application input/note acceptance.",
+    "controlled_stop": true,
+    "closure": {
+      "id": "1572e6d4-2f9c-42a9-a92c-bc06e9b461a9",
+      "outer_unit": "archtv-markor-session-1572e6d4-2f9c-42a9-a92c-bc06e9b461a9",
+      "runner_unit": "archtv-package-runner-1572e6d4-2f9c-42a9-a92c-bc06e9b461a9",
+      "initial_vt": "1",
+      "root_pid": 110574,
+      "root_boot_id": "ed605c8c-db9e-4ce1-8c57-d383f08d3694",
+      "result": "native_result_recorded",
+      "fuse_connections_before": [],
+      "host_devices_before": {
+        "card0": {
+          "mode": "0o660",
+          "uid": 0,
+          "gid": 983,
+          "rdev": 57856,
+          "inode": 366
+        },
+        "renderD128": {
+          "mode": "0o666",
+          "uid": 0,
+          "gid": 987,
+          "rdev": 57984,
+          "inode": 365
+        }
+      },
+      "interaction_exit": 1,
+      "host_sysrq_before": {
+        "device": 23,
+        "inode": 4026532098,
+        "mode": "0o200",
+        "uid": 0,
+        "gid": 0,
+        "label": "u:object_r:proc_sysrq:s0",
+        "readonly_mount": false
+      },
+      "host_sysrq_after": {
+        "device": 23,
+        "inode": 4026532098,
+        "mode": "0o200",
+        "uid": 0,
+        "gid": 0,
+        "label": "u:object_r:proc_sysrq:s0",
+        "readonly_mount": false
+      },
+      "host_sysrq_metadata_unchanged": true,
+      "host_devices_after": {
+        "card0": {
+          "mode": "0o660",
+          "uid": 0,
+          "gid": 983,
+          "rdev": 57856,
+          "inode": 366
+        },
+        "renderD128": {
+          "mode": "0o666",
+          "uid": 0,
+          "gid": 987,
+          "rdev": 57984,
+          "inode": 365
+        }
+      },
+      "host_device_metadata_unchanged": true,
+      "fuse_connections_after": [],
+      "new_fuse_connections": [],
+      "final_vt": "1",
+      "outer_active": false,
+      "runner_active": false
+    },
+    "audit": {
+      "before": {
+        "text": "enabled 0\nfailure 1\npid 0\nrate_limit 0\nbacklog_limit 64\nlost 0\nbacklog 0\nbacklog_wait_time 18000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n",
+        "fields": {
+          "enabled": "0",
+          "failure": "1",
+          "pid": "0",
+          "rate_limit": "0",
+          "backlog_limit": "64",
+          "lost": "0",
+          "backlog": "0",
+          "backlog_wait_time": "18000",
+          "backlog_wait_time_actual": "0",
+          "loginuid_immutable": "0 unlocked"
+        }
+      },
+      "rules_sha256_before": "61501e69a61dbbc1a41605ea15c34807e6b1d3992bee195dde36a7ebdd95dd87",
+      "unit": "archtv-audit-mac-1572e6d4",
+      "active": {
+        "text": "enabled 1\nfailure 1\npid 110564\nrate_limit 0\nbacklog_limit 4096\nlost 0\nbacklog 0\nbacklog_wait_time 18000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n",
+        "fields": {
+          "enabled": "1",
+          "failure": "1",
+          "pid": "110564",
+          "rate_limit": "0",
+          "backlog_limit": "4096",
+          "lost": "0",
+          "backlog": "0",
+          "backlog_wait_time": "18000",
+          "backlog_wait_time_actual": "0",
+          "loginuid_immutable": "0 unlocked"
+        }
+      },
+      "root_controller_exit": 0,
+      "before_receiver_stop": {
+        "text": "enabled 1\nfailure 1\npid 110564\nrate_limit 0\nbacklog_limit 4096\nlost 0\nbacklog 0\nbacklog_wait_time 18000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n",
+        "fields": {
+          "enabled": "1",
+          "failure": "1",
+          "pid": "110564",
+          "rate_limit": "0",
+          "backlog_limit": "4096",
+          "lost": "0",
+          "backlog": "0",
+          "backlog_wait_time": "18000",
+          "backlog_wait_time_actual": "0",
+          "loginuid_immutable": "0 unlocked"
+        }
+      },
+      "after": {
+        "text": "enabled 0\nfailure 1\npid 0\nrate_limit 0\nbacklog_limit 64\nlost 0\nbacklog 0\nbacklog_wait_time 18000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n",
+        "fields": {
+          "enabled": "0",
+          "failure": "1",
+          "pid": "0",
+          "rate_limit": "0",
+          "backlog_limit": "64",
+          "lost": "0",
+          "backlog": "0",
+          "backlog_wait_time": "18000",
+          "backlog_wait_time_actual": "0",
+          "loginuid_immutable": "0 unlocked"
+        }
+      },
+      "rules_unchanged": true,
+      "lost_delta": 0,
+      "receiver_closed": true,
+      "backlog_limit_restored": true
+    }
+  },
+  "typed_input_candidate60": {
+    "scope": "Executed262: typed endpoint authenticates actual peers and real original dispatch drives physical Markor UI. No keyboard text/note/lifecycle acceptance.",
+    "kernel_decisions": {
+      "scope": "Actualloaded policy decisions, independent of globalpermissive. No dangerouswrite/load/enforce operation attempted; not runtimeisolationacceptance.",
+      "cases": [
+        {
+          "source": "u:r:system_server:s0",
+          "target": "u:r:system_server:s0",
+          "class": "process",
+          "permission": "setsockcreate",
+          "allowed": true,
+          "expected": true,
+          "flags": 0
+        },
+        {
+          "source": "u:r:system_server:s0",
+          "target": "u:object_r:archtv_input_channel:s0",
+          "class": "unix_stream_socket",
+          "permission": "create",
+          "allowed": true,
+          "expected": true,
+          "flags": 0
+        },
+        {
+          "source": "u:r:system_server:s0",
+          "target": "u:object_r:archtv_input_channel:s0",
+          "class": "unix_stream_socket",
+          "permission": "bind",
+          "allowed": true,
+          "expected": true,
+          "flags": 0
+        },
+        {
+          "source": "u:r:system_server:s0",
+          "target": "u:object_r:archtv_input_channel:s0",
+          "class": "unix_stream_socket",
+          "permission": "listen",
+          "allowed": true,
+          "expected": true,
+          "flags": 0
+        },
+        {
+          "source": "u:r:system_server:s0",
+          "target": "u:object_r:archtv_input_channel:s0",
+          "class": "unix_stream_socket",
+          "permission": "accept",
+          "allowed": true,
+          "expected": true,
+          "flags": 0
+        },
+        {
+          "source": "u:r:system_server:s0",
+          "target": "u:object_r:archtv_input_channel:s0",
+          "class": "unix_stream_socket",
+          "permission": "connectto",
+          "allowed": true,
+          "expected": true,
+          "flags": 0
+        },
+        {
+          "source": "u:r:system_server:s0",
+          "target": "u:object_r:archtv_input_channel:s0",
+          "class": "unix_stream_socket",
+          "permission": "read",
+          "allowed": true,
+          "expected": true,
+          "flags": 0
+        },
+        {
+          "source": "u:r:system_server:s0",
+          "target": "u:object_r:archtv_input_channel:s0",
+          "class": "unix_stream_socket",
+          "permission": "write",
+          "allowed": true,
+          "expected": true,
+          "flags": 0
+        },
+        {
+          "source": "u:r:system_server:s0",
+          "target": "u:object_r:archtv_input_channel:s0",
+          "class": "unix_stream_socket",
+          "permission": "getopt",
+          "allowed": true,
+          "expected": true,
+          "flags": 0
+        },
+        {
+          "source": "u:r:system_server:s0",
+          "target": "u:object_r:archtv_input_channel:s0",
+          "class": "unix_stream_socket",
+          "permission": "setopt",
+          "allowed": true,
+          "expected": true,
+          "flags": 0
+        },
+        {
+          "source": "u:r:hal_graphics_composer_default:s0",
+          "target": "u:object_r:archtv_input_channel:s0",
+          "class": "unix_stream_socket",
+          "permission": "connectto",
+          "allowed": true,
+          "expected": true,
+          "flags": 0
+        },
+        {
+          "source": "u:r:hal_graphics_composer_default:s0",
+          "target": "u:r:system_server:s0",
+          "class": "unix_stream_socket",
+          "permission": "connectto",
+          "allowed": false,
+          "expected": false,
+          "flags": 0
+        },
+        {
+          "source": "u:r:hal_graphics_composer_default:s0",
+          "target": "u:object_r:archtv_input_channel:s0",
+          "class": "unix_stream_socket",
+          "permission": "create",
+          "allowed": false,
+          "expected": false,
+          "flags": 0
+        },
+        {
+          "source": "u:r:untrusted_app:s0",
+          "target": "u:object_r:archtv_input_channel:s0",
+          "class": "unix_stream_socket",
+          "permission": "connectto",
+          "allowed": false,
+          "expected": false,
+          "flags": 0
+        },
+        {
+          "source": "linux.system_u:linux.system_r:linux.init_t:s0",
+          "target": "u:object_r:archtv_input_channel:s0",
+          "class": "unix_stream_socket",
+          "permission": "connectto",
+          "allowed": false,
+          "expected": false,
+          "flags": 0
+        }
+      ],
+      "enforce": "0"
+    },
+    "policy_readback": "3df7d54f003d57287cc7c7761f52ae034ed9ba91e0f61a2a097cdd3b30161aa6",
+    "adaptation": "Per-thread sockcreate labels one original LocalServerSocket, restores previous attribute; HWC authenticates UID/SO_PEERSEC typed endpoint, server authenticates original HWC. Generic HWC->system_server sockets remain denied. Original InputManager dispatch/WAIT_FOR_FINISH and real ACK unchanged.",
+    "build261_failure": "Java8 compile rejects readNBytes; retained failed artifact. Corrected bounded stream reads in build262 exit0.",
+    "active_checkpoint": "/home/tv/recuperacion-archtv/22f7fcf4-468d-40de-9134-3f62ce7e2f49-markor-software-launch"
+  },
+  "integrated262": {
+    "checkpoint": "/home/tv/recuperacion-archtv/22f7fcf4-468d-40de-9134-3f62ce7e2f49-markor-software-launch",
+    "run_id": "22f7fcf4-468d-40de-9134-3f62ce7e2f49",
+    "payload": 262,
+    "policy": 60,
+    "result": "Original pointer input causes real Markor tutorial page transitions on physical Smithay output; completed tutorial and original Settings storage-access toggle visibly changed.",
+    "acceptance": "Pointer interaction/UI response narrowly accepted under enforcing. Keyboard text, note creation/save, persistent note and app close/reopen NOT accepted. Settings checkbox is not proof of persisted AppOps grant.",
+    "frames": {
+      "frame-before-input.png": "f73eb841af3f5811b1d221f3c2910d07987ce81bc75f00dea8d25dff77a43d07",
+      "after-click1.png": "84f40c3e2f035e900cf3cbd20bdff99399f5659b2c086ce94693eff35af99a65",
+      "after-click2.png": "cc7bb17028d466de4ceda979565bb1635b5ad5e3e19129cb9eb05c1566995008",
+      "after-click3.png": "26415cbef7464882803223464f76f85e8c1cc4d94bc114dda5cbce6e19f75a55",
+      "after-click4.png": "07c50d9a2e80cb395a05953cd13e1b6b9b124223e56b297d79dd57f413065427",
+      "after-click5.png": "4fc18905aac8fcd805efdd9b48ddc6971a8e5000a0e640118086b7493c4699cd",
+      "storage-settings.png": "40fc46479da34b7974c5d385430b08a1030b003b99363b2c509b1cca62487f4e",
+      "storage-permission-toggled.png": "ff053c36dfb6781a25e887cbb2eb8e4c27c7b9fa0644505c7c3ac28183e1e105"
+    },
+    "input_events": "/home/tv/recuperacion-archtv/22f7fcf4-468d-40de-9134-3f62ce7e2f49-markor-software-launch/interaction-events.json",
+    "dispatch": "Original InputManager WAIT_FOR_FINISH reports accepted=true for14 touch events, matching7 visible clicks. Commands8(back key) and9 near window end lack matching original acceptance; no keyboard/back claim.",
+    "mac_window": {
+      "seconds": 600,
+      "scope": "Global enforcing only after real factory preparation; original subsystems, not APK/MAC acceptance by exit0",
+      "activated": true,
+      "policy_readback_sha256": "3df7d54f003d57287cc7c7761f52ae034ed9ba91e0f61a2a097cdd3b30161aa6",
+      "started_monotonic": 25844.088952426,
+      "candidate_exit": 1,
+      "mode_at_candidate_exit": "1",
+      "elapsed_enforcing_attempt": 343.9362398600024,
+      "restored_enforce": "0",
+      "watchdog_cancelled_after_restore": true,
+      "watchdog_status": 15
+    },
+    "log_provenance": {
+      "source": "/home/tv/.local/share/archtv/experimental-userdata/markor-cycle-232/data/local/tmp/archtv-mc1/original-logcat.txt",
+      "bytes": 1081363,
+      "sha256": "58b4cd22aea27051fd0775a0b89d36b7dc1fb1f1fc6f0649509b8bbf658723d3",
+      "scope": "Whole original persisted log copied before another runtime; run.log embeds only limited tail"
+    },
+    "closure": {
+      "id": "22f7fcf4-468d-40de-9134-3f62ce7e2f49",
+      "outer_unit": "archtv-markor-session-22f7fcf4-468d-40de-9134-3f62ce7e2f49",
+      "runner_unit": "archtv-package-runner-22f7fcf4-468d-40de-9134-3f62ce7e2f49",
+      "initial_vt": "1",
+      "root_pid": 116652,
+      "root_boot_id": "ed605c8c-db9e-4ce1-8c57-d383f08d3694",
+      "result": "native_result_recorded",
+      "fuse_connections_before": [],
+      "host_devices_before": {
+        "card0": {
+          "mode": "0o660",
+          "uid": 0,
+          "gid": 983,
+          "rdev": 57856,
+          "inode": 366
+        },
+        "renderD128": {
+          "mode": "0o666",
+          "uid": 0,
+          "gid": 987,
+          "rdev": 57984,
+          "inode": 365
+        }
+      },
+      "interaction_exit": 1,
+      "host_sysrq_before": {
+        "device": 23,
+        "inode": 4026532098,
+        "mode": "0o200",
+        "uid": 0,
+        "gid": 0,
+        "label": "u:object_r:proc_sysrq:s0",
+        "readonly_mount": false
+      },
+      "host_sysrq_after": {
+        "device": 23,
+        "inode": 4026532098,
+        "mode": "0o200",
+        "uid": 0,
+        "gid": 0,
+        "label": "u:object_r:proc_sysrq:s0",
+        "readonly_mount": false
+      },
+      "host_sysrq_metadata_unchanged": true,
+      "host_devices_after": {
+        "card0": {
+          "mode": "0o660",
+          "uid": 0,
+          "gid": 983,
+          "rdev": 57856,
+          "inode": 366
+        },
+        "renderD128": {
+          "mode": "0o666",
+          "uid": 0,
+          "gid": 987,
+          "rdev": 57984,
+          "inode": 365
+        }
+      },
+      "host_device_metadata_unchanged": true,
+      "fuse_connections_after": [],
+      "new_fuse_connections": [],
+      "final_vt": "1",
+      "outer_active": false,
+      "runner_active": false
+    },
+    "audit": {
+      "before": {
+        "text": "enabled 0\nfailure 1\npid 0\nrate_limit 0\nbacklog_limit 64\nlost 0\nbacklog 0\nbacklog_wait_time 18000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n",
+        "fields": {
+          "enabled": "0",
+          "failure": "1",
+          "pid": "0",
+          "rate_limit": "0",
+          "backlog_limit": "64",
+          "lost": "0",
+          "backlog": "0",
+          "backlog_wait_time": "18000",
+          "backlog_wait_time_actual": "0",
+          "loginuid_immutable": "0 unlocked"
+        }
+      },
+      "rules_sha256_before": "61501e69a61dbbc1a41605ea15c34807e6b1d3992bee195dde36a7ebdd95dd87",
+      "unit": "archtv-audit-mac-22f7fcf4",
+      "active": {
+        "text": "enabled 1\nfailure 1\npid 116642\nrate_limit 0\nbacklog_limit 4096\nlost 0\nbacklog 0\nbacklog_wait_time 18000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n",
+        "fields": {
+          "enabled": "1",
+          "failure": "1",
+          "pid": "116642",
+          "rate_limit": "0",
+          "backlog_limit": "4096",
+          "lost": "0",
+          "backlog": "0",
+          "backlog_wait_time": "18000",
+          "backlog_wait_time_actual": "0",
+          "loginuid_immutable": "0 unlocked"
+        }
+      },
+      "root_controller_exit": 0,
+      "before_receiver_stop": {
+        "text": "enabled 1\nfailure 1\npid 116642\nrate_limit 0\nbacklog_limit 4096\nlost 0\nbacklog 0\nbacklog_wait_time 18000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n",
+        "fields": {
+          "enabled": "1",
+          "failure": "1",
+          "pid": "116642",
+          "rate_limit": "0",
+          "backlog_limit": "4096",
+          "lost": "0",
+          "backlog": "0",
+          "backlog_wait_time": "18000",
+          "backlog_wait_time_actual": "0",
+          "loginuid_immutable": "0 unlocked"
+        }
+      },
+      "after": {
+        "text": "enabled 0\nfailure 1\npid 0\nrate_limit 0\nbacklog_limit 64\nlost 0\nbacklog 0\nbacklog_wait_time 18000\nbacklog_wait_time_actual 0\nloginuid_immutable 0 unlocked\n",
+        "fields": {
+          "enabled": "0",
+          "failure": "1",
+          "pid": "0",
+          "rate_limit": "0",
+          "backlog_limit": "64",
+          "lost": "0",
+          "backlog": "0",
+          "backlog_wait_time": "18000",
+          "backlog_wait_time_actual": "0",
+          "loginuid_immutable": "0 unlocked"
+        }
+      },
+      "rules_unchanged": true,
+      "lost_delta": 0,
+      "receiver_closed": true,
+      "backlog_limit_restored": true
+    },
+    "outer_exit": 1,
+    "native_complete_inventory_verified": true,
+    "failure": "Bounded observation300s expires before note. Native MC1_CLOSE_OBSERVED enforcing1, then incomplete workflow makes exit1. Does not accept application lifecycle.",
+    "evidence_limit": "Frontend EXIT archive can race outer stop; archived frame snapshots/PNGs and original Android full log preserved. Fix bounded natural parent close before force stop next execution.",
+    "next": "Longer bounded interaction budget with original readiness/permissions/ACK preserved; continue existing persisted app state, create note through UI, save, force-stop/relaunch/reopen and compare real bytes. No app data seeding."
   }
 }

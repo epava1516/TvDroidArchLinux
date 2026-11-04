@@ -748,25 +748,32 @@
       "runtime_mac_stage_evidence": {
         "installation": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "34dc393e9946a474e51f8abf07844dff2717df05c9763693d8b73099ebaf2064",
+          "record_sha256": "a342aba48b9fe960a9ad6aa5e3e35468673da397c9052afb62360f6e6a0efdf0",
           "section": "integrated255",
           "accepted": true,
           "scope": "Original PackageInstaller installation, identical intact APK bytes and physical private-directory metadata under enforcing. Not complete isolation, launch, UI, note persistence or full workflow acceptance."
         },
-        "remaining": "Input hotplug labeling verified separately with original udev under enforcing59; integrated260 stopped at display startup35s deadline before Markor. Application input, main function, persistence, services, close/reopen and full R1 remain unaccepted.",
+        "remaining": "Keyboard text, main note creation/save, persistence and application close/reopen remain unaccepted; broader services, R1-MAC, ARM/GMS/DRM and product requirements open.",
         "launch": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "34dc393e9946a474e51f8abf07844dff2717df05c9763693d8b73099ebaf2064",
+          "record_sha256": "a342aba48b9fe960a9ad6aa5e3e35468673da397c9052afb62360f6e6a0efdf0",
           "section": "integrated257",
           "accepted": true,
           "scope": "Original explicit launch redirects intact APK to IntroActivity; Status:ok and real SF internal onboarding pixels. Not presentation on Rust/Smithay, input, complete Markor workflow or broad compatibility."
         },
         "physical_presentation": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "34dc393e9946a474e51f8abf07844dff2717df05c9763693d8b73099ebaf2064",
+          "record_sha256": "a342aba48b9fe960a9ad6aa5e3e35468673da397c9052afb62360f6e6a0efdf0",
           "section": "integrated259_physical_presentation",
           "accepted": true,
           "scope": "Original onboarding pixels visually observed in actual Smithay DRM capture during enforcing window; no input, note or lifecycle acceptance."
+        },
+        "pointer_input": {
+          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "record_sha256": "a342aba48b9fe960a9ad6aa5e3e35468673da397c9052afb62360f6e6a0efdf0",
+          "section": "integrated262",
+          "accepted": true,
+          "scope": "Real Linux pointer through Smithay/HWC/typed gateway/original InputManager advances intact Markor UI and original Settings under enforcing. Not keyboard text, note or complete workflow."
         }
       }
     }

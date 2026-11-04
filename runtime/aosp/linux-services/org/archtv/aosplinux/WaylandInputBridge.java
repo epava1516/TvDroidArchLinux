@@ -118,11 +118,43 @@ final class WaylandInputBridge {
             System.err.println("WAYLAND_INPUT_NEGATIVE_PEER_CLOSED actual_uid=1000 actual_domain=system_server NOT_APP_UID_OR_MAC_ACCEPTANCE");
         }finally{invoke(client,"close",new Class<?>[0]);}
     }
+    private static Object createServer() throws Exception {
+        // Linux's per-thread socket-create attribute labels this one endpoint.
+        // Restore it even if the original LocalServerSocket constructor fails;
+        // never change system_server's process identity or all of its sockets.
+        final String attribute="/proc/thread-self/attr/sockcreate";
+        final String context="u:object_r:archtv_input_channel:s0";
+        byte[] previous;
+        try(FileInputStream file=new FileInputStream(attribute)){
+            ByteArrayOutputStream saved=new ByteArrayOutputStream();
+            byte[] buffer=new byte[256];int count;
+            while((count=file.read(buffer))!=-1){
+                if(count==0 || saved.size()+count>4096)throw new IOException("Invalid socket-create context length");
+                saved.write(buffer,0,count);
+            }
+            previous=saved.toByteArray();
+        }
+        Object server=null;
+        try {
+            try(FileOutputStream file=new FileOutputStream(attribute)){
+                file.write((context+'\0').getBytes(java.nio.charset.StandardCharsets.UTF_8));
+            }
+            server=Class.forName("android.net.LocalServerSocket").getConstructor(String.class).newInstance("archtv-wayland-input-v1");
+        }finally{
+            try(FileOutputStream file=new FileOutputStream(attribute)){
+                if(previous.length==0)file.write(0);else file.write(previous);
+            }catch(Exception failure){
+                if(server!=null)invoke(server,"close",new Class<?>[0]);
+                throw failure;
+            }
+        }
+        return server;
+    }
     static void start(Object input) throws Exception {
         WaylandInputBridge bridge=new WaylandInputBridge(input);
         // Abstract sockets are scoped by the cohort's private network namespace.
         // Both peers also verify kernel-provided UID and SELinux context.
-        Object server=Class.forName("android.net.LocalServerSocket").getConstructor(String.class).newInstance("archtv-wayland-input-v1");
+        Object server=createServer();
         Thread worker=new Thread(()->bridge.serve(server),"linux-wayland-input");worker.setDaemon(true);worker.start();
         System.err.println("WAYLAND_INPUT_GATEWAY_LISTENING NOT_APK_INPUT_ACCEPTANCE");
         verifyRejectedPeer();

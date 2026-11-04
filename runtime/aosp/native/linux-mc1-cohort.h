@@ -1161,9 +1161,12 @@ class LinuxMc1Cohort {
         if(auto started=zygote_->Start();!started.ok())return started;
         std::fprintf(stderr,"SELECTED_ZYGOTE_ORIGINAL_SYSTEMSERVER_FORK_STARTED pid=%d NOT_APP_LAUNCH\n",zygote_->pid());
         client_done_=false;client_ok_=false;
+        // Real260 spent ~33s in original Zygote preload/fork, leaving ~2s
+        // of the old 35s window for system_server/Display. Keep a bounded
+        // original CLI check, but budget the entire cold startup coherently.
         auto client=Service::MakeTemporaryOneshotService({"exec","u:r:shell:s0","shell","shell","--",
             "/system/bin/sh","-c",
-            "umask 077; i=0; while [ $$i -lt 30 ]; do "
+            "umask 077; i=0; while [ $$i -lt 90 ]; do "
             "/system/bin/service check display > /data/local/tmp/archtv-mc1/display-query.txt 2>&1; "
             "if /system/bin/grep -qx 'Service display: found' /data/local/tmp/archtv-mc1/display-query.txt; then "
             "/system/bin/dumpsys display > /data/local/tmp/archtv-mc1/display-dump.txt 2>&1; "
@@ -1178,7 +1181,7 @@ class LinuxMc1Cohort {
         });
         services.AddService(std::move(*client));
         if(auto result=process->ExecStart();!result.ok())return result;
-        if(auto result=Wait(tick,[this]{return client_done_;},35);!result.ok())return result;
+        if(auto result=Wait(tick,[this]{return client_done_;},100);!result.ok())return result;
         if(!client_ok_)return android::base::Error()<<"Original display CLI did not find default display";
         if(apex_requested_ && !selected_requested_) {
             // Root's original netd permission check requires the real AMS

@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793805250.2916653,
-    "seen": 1793805265.9933612,
-    "ast_hash": "82aaefb6a2cb484d5a061817e5028a98",
+    "mtime": 1793806775.973258,
+    "seen": 1793806791.3038135,
+    "ast_hash": "109859f64958eef5a6be386fc5d80a91",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793805081.8906584,
-    "seen": 1793805265.9939575,
-    "ast_hash": "16b99e40f266490b56de41643131a4bf",
+    "mtime": 1793806775.9904132,
+    "seen": 1793806791.3047118,
+    "ast_hash": "4a64073ea3cd566bd00dc34ac2c3027f",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -2130,15 +2130,15 @@
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/org/archtv/aosplinux/WaylandInputBridge.java": {
-    "mtime": 1793704588.1598237,
-    "seen": 1793704604.9065871,
-    "ast_hash": "338ccd8f95a19c92e00ec0977e1c6d9f",
+    "mtime": 1793805996.835989,
+    "seen": 1793806791.285991,
+    "ast_hash": "91ce88fab3a298f524f9c2b6d80458b1",
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-wayland-input.h": {
-    "mtime": 1793704013.2122169,
-    "seen": 1793704061.488323,
-    "ast_hash": "7ec5306536933502693b4ecb62426182",
+    "mtime": 1793805762.4416854,
+    "seen": 1793806791.2874386,
+    "ast_hash": "cce2a35ad6900b8c321197a8ab065fe7",
     "semantic_hash": ""
   },
   "runtime/aosp/android16-qpr2/policy/selected-platform-profile.json": {

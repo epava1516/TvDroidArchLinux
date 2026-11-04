@@ -111,6 +111,21 @@
 (allow archtv_compositor hal_graphics_composer_default (fd (use)))
 (allow archtv_compositor hal_graphics_composer_server_tmpfs (file (read write getattr map)))
 (allow hal_graphics_composer_default archtv_compositor (fd (use)))
+; Real261 reaches Linux/Smithay/HWC input, but HWC->system_server's generic
+; abstract stream socket is denied. Label only the dedicated input endpoint
+; at creation, restoring the thread's original socket-create attribute.
+; InputManager still checks/injects/dispatches the actual events and ACKs only
+; its real result. Both endpoints retain kernel UID/SID peer authentication.
+(type archtv_input_channel)
+(roletype object_r archtv_input_channel)
+(allow system_server self (process (setsockcreate)))
+(allow system_server archtv_input_channel (unix_stream_socket (create bind listen accept connectto read write getattr getopt setopt shutdown)))
+(allow hal_graphics_composer_default archtv_input_channel (unix_stream_socket (connectto)))
+(typeattribute archtv_not_input_server)
+(typeattributeset archtv_not_input_server (not system_server))
+(neverallow archtv_not_input_server archtv_input_channel (unix_stream_socket (create bind listen accept)))
+(neverallow hal_graphics_composer_default system_server (unix_stream_socket (connectto)))
+(neverallow appdomain archtv_input_channel (unix_stream_socket (connectto read write)))
 ; Keep the generic Linux host and APKs outside this new transfer contract.
 (neverallow linux.init_t hal_graphics_composer_default (fd (use)))
 (neverallow appdomain archtv_compositor (process (transition dyntransition ptrace)))

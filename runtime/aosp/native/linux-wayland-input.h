@@ -34,7 +34,7 @@ class LinuxWaylandInput {
         if(connect(fd,reinterpret_cast<sockaddr*>(&addr),offsetof(sockaddr_un,sun_path)+sizeof(name))!=0){close(fd);return false;}
         ucred peer{};socklen_t n=sizeof(peer);char context[128]{};socklen_t length=sizeof(context)-1;
         if(getsockopt(fd,SOL_SOCKET,SO_PEERCRED,&peer,&n)!=0 || peer.uid!=1000 ||
-           getsockopt(fd,SOL_SOCKET,SO_PEERSEC,context,&length)!=0 || std::strcmp(context,"u:r:system_server:s0")){
+           getsockopt(fd,SOL_SOCKET,SO_PEERSEC,context,&length)!=0 || std::strcmp(context,"u:object_r:archtv_input_channel:s0")){
             std::fprintf(stderr,"WAYLAND_INPUT_PEER_REJECTED\n");close(fd);return false;
         }
         fd_=fd;last_ack_=sequence_;progress_=std::chrono::steady_clock::now();std::fprintf(stderr,"WAYLAND_INPUT_PEER_AUTHENTICATED pid=%d uid=%d context=%s\n",peer.pid,peer.uid,context);return true;
