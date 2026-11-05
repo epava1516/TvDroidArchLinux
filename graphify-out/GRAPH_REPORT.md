@@ -1,7 +1,7 @@
 # Graph Report - repositorio-principal  (2026-11-05)
 
 ## Corpus Check
-- 372 files · ~360,698 words
+- 372 files · ~360,873 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 71 file(s) not represented in the graph (top: .cil 26, .patch 20, .xml 12)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `b094206f`
+- Built from commit: `53941777`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -853,16 +853,16 @@ Nodes (6): ContextAction, Cancel, Favorite, Hide, Left, Right
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `ready()` connect `ready` to `re`, `subprocess`?**
-  _High betweenness centrality (0.129) - this node is a cross-community bridge._
+  _High betweenness centrality (0.130) - this node is a cross-community bridge._
 - **What connects `archtv-android`, `archtv-aosp-linux`, `archtv-apk-host` to the rest of the system?**
   _307 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `worker.rs` be split into smaller, more focused modules?**
   _Cohesion score 0.11363636363636363 - nodes in this community are weakly interconnected._
 - **Why does `TvCompositor` connect `TvCompositor` to `duration`, `mod.rs`, `xdg_shell.rs`, `drm.rs`, `input.rs`, `session.rs`, `init`, `archtv-compositor/src/launcher.rs`, `.init_wayland_listener`, `compositor.rs`?**
-  _High betweenness centrality (0.075) - this node is a cross-community bridge._
+  _High betweenness centrality (0.076) - this node is a cross-community bridge._
 - **Should `resources-jni.cpp` be split into smaller, more focused modules?**
   _Cohesion score 0.13535353535353536 - nodes in this community are weakly interconnected._
 - **Why does `Histórico · primer intento APEX, superado por el hito anterior` connect `ready` to `Arquitectura vigente · A16-QPR2-1`?**
-  _High betweenness centrality (0.055) - this node is a cross-community bridge._
+  _High betweenness centrality (0.056) - this node is a cross-community bridge._
 - **Should `TvCompositor` be split into smaller, more focused modules?**
   _Cohesion score 0.09871794871794871 - nodes in this community are weakly interconnected._

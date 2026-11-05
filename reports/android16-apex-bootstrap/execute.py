@@ -44,7 +44,7 @@ new="""  match=re.search(r'MC1_(MANAGER)_STARTED pid=(\\d+)|APEX_(DAEMON|SNAPSHO
    kind=match[1] or match[3];expected='u:r:servicemanager:s0' if kind=='MANAGER' else 'u:r:apexd:s0';pid=int(match[2] or match[4]);seen=[];seen_errors=[];deadline=time.monotonic()+1"""
 assert old in text;text=text.replace(old,new)
 text=text.replace('len(observed_logs)<256','len(observed_logs)<512')
-text=text.replace("log_stop=True\n", "monitor.terminate();monitor.wait(timeout=3);monitor_log.close()\nlog_stop=True\n",1)
+text=text.replace("log_stop=True\n", "monitor.terminate();monitor.wait(timeout=3);monitor_log.close()\nassert monitor.returncode==0, (\"Original device monitor failed; inspect device-monitor.log and device-monitor-result.json\",monitor.returncode)\nlog_stop=True\n",1)
 boundary=text.index("\nif p.returncode!=0:\n failed_output=")
 text=text[:boundary]+'''
 for name in ['apex-query.txt','apex-active.txt','classpath']:

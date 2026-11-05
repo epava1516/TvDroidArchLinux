@@ -1,5 +1,9 @@
 # Estado actual y punto de entrada
 
+Preparación363: candidato acota EIO a identidad DM calculada y exige snapshotfinal/propagación del fallo del monitor; sintaxis/materialización compilan, sin cohorte363 ejecutada. La prueba kernel de64ciclos fue abortada143 tras bloqueoD rcu_barrier y SOFTLOCKUP SLUB/RCU. El lector no tenía plazo propio mientras esperaba retirada: ensayo confuso, sin aceptación ni atribución aVirtualBox/kernel/candidato. Tras detener únicamente ese controlador, procesos/DM/loops/cohortes ausentes verificados. Se conserva362 fallido y Markor357/VLC361 válidos en su alcance. Preparar recuperación/reinicio con entrada custom verificada y nueva admisión antes de APK. Informe ART →monitor363_preparation.
+
+Histórico anterior (alcance y siguientes pasos de su fecha):
+
 362 ejecuta fuente chirp y4órdenes físicas con VLC intacta: captura204800frames, traza temporal estimada0,025→2s y Back deliberado; no demuestra pérdida de fuente completa ni pausa. Home muestra búsqueda vlc0 aunque el catálogo original devuelve13entradas: reapertura bloqueada. El guion esperaba Displayed, sin exigir handoff del compositor; orden exacto de teclas/foco no acreditado por relojes mezclados. Nativa/exterior0, runner/UI1 por monitor EIO sysfs dm/name y falta snapshotBPFfinal; IDs conocidos retirados, cierre completo no aceptado. Host69/permisivo/TSC/mixer/datos/auditoría recuperados y consumido sin cola. Markor357/VLC361 mantienen alcance. Informe ART →integration362.
 
 Histórico anterior (alcance y siguientes pasos de su fecha):

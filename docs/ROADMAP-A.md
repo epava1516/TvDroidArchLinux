@@ -1,5 +1,9 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+Antes del ensayo funcional363, recuperar estado fresco tras SOFTLOCKUP del ensayo DM abortado y verificar kernel/boot/SELinux/política, sin reutilizar PID/handles ni repetir lector64ciclos ocupado. Candidato del monitor aún sólo compila: prueba acotada con plazo independiente y cierre real/errores visibles, luego misma integración VLC con foco/handoff confirmado, catálogo PMS componente/etiqueta y reapertura UI. No aceptar snapshot fabricado, pausa por envío de tecla, fuente completa tras Back temprano ni estabilidad por desaparecer procesos.362 permanece último experimento APK; R1/ARM/GMS/DRM/objetivo amplio abiertos.
+
+Histórico anterior (alcance y siguientes pasos de su fecha):
+
 Tras362, ejecutar la integración funcional corrigiendo tres puntos concretos: esperar foco/handoff actual además de Displayed para entrada; contrastar componentes/etiquetas del catálogo PMS real ante Home vlc0; asegurar cierre observable del monitor sin ocultar EIO ni fabricar snapshotBPF. Después pausa/Back/reapertura real desde Home con fuente temporal; no CLI de sustitución.362 fue censurado por Back temprano y no mide cobertura4s completa. No más auditorías de clases como hito principal. R1/ARM/GMS/DRM/compatibilidad amplia/instalación/actualización/ligereza abiertos. Informe ART →integration362.
 
 Histórico anterior (alcance y siguientes pasos de su fecha):

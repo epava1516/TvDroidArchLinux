@@ -259,6 +259,30 @@ def observe_app_startups(log, state, out, owner_cgroup, namespaces, procbase):
     if changed:save(out/'app-start-observations.json',state)
 
 
+def read_dm_identity_attribute(path, state, out):
+    """Only computed DM name/uuid metadata; never suppress other I/O errors.
+
+    Linux dm_attr_{name,uuid}_show returns EIO when dm_copy_name_and_uuid
+    cannot find the hash-cell identity. The mapping can be leaving sysfs.
+    Final real DM/BPF cleanup checks remain mandatory.
+    """
+    assert path.name in {'name', 'uuid'} and path.parent.name == 'dm'
+    assert path.parent.parent.parent == Path('/sys/devices/virtual/block')
+    try:
+        return path.read_text().strip()
+    except OSError as error:
+        if error.errno != errno.EIO:
+            raise
+        state['dm_identity_unavailable_count'] = state.get('dm_identity_unavailable_count', 0) + 1
+        rows = state.setdefault('dm_identity_unavailable', [])
+        if len(rows) < 32:
+            rows.append({'path': str(path), 'errno': error.errno,
+                         'observed_monotonic': time.monotonic(),
+                         'scope': 'Computed kernel identity unavailable; not device/cleanup acceptance'})
+        save(out/'devices.json', state)
+        return None
+
+
 def monitor(root,out,parent):
     libc=ctypes.CDLL(None,use_errno=True)
     assert libc.prctl(1,signal.SIGTERM,0,0,0)==0  # owned parent's death stops monitor
@@ -303,94 +327,112 @@ def monitor(root,out,parent):
     app_state['procfs']=str(procbase)
     save(out/'app-start-observations.json',app_state)
     end=time.monotonic()+400
-    while time.monotonic()<end and not stopping:
-        observe_app_startups(app_log,app_state,out,owner_cgroup,namespaces,procbase)
-        if network is not None and not network_identity_blocked:
-            for proc in Path('/proc').iterdir():
-                if not proc.name.isdigit():continue
+    monitor_error=None
+    try:
+        while time.monotonic()<end and not stopping:
+            observe_app_startups(app_log,app_state,out,owner_cgroup,namespaces,procbase)
+            if network is not None and not network_identity_blocked:
+                for proc in Path('/proc').iterdir():
+                    if not proc.name.isdigit():continue
+                    try:
+                        comm=(proc/'comm').read_text().strip()
+                        if comm not in {'netbpfload','archtv-platform','netd'}:continue
+                        started=(proc/'stat').read_text().rsplit(')',1)[1].split()[19]
+                        key=proc.name+':'+started
+                        if key in network_peers:continue
+                        fields=dict(l.split(':',1) for l in (proc/'status').read_text().splitlines() if ':' in l)
+                        peer={'pid':int(proc.name),'start_ticks':started,'comm':comm,'executable':os.readlink(proc/'exe'),'context':(proc/'attr/current').read_text().strip().rstrip('\0')}
+                        peer.update({n:fields[n].strip() for n in ['Uid','Gid','Groups','CapInh','CapPrm','CapEff','CapBnd','CapAmb','NoNewPrivs']})
+                        network_peers[key]=peer;save(out/'network-identities.json',list(network_peers.values()))
+                    except PermissionError as error:
+                        # Optional read-only diagnosis must not continuously retry
+                        # MAC-denied proc access and rotate away the actual failure.
+                        # Stop only this sampler; device/BPF monitoring continues.
+                        network_identity_blocked=True
+                        save(out/'network-identities-error.json',{'error':str(error),'scope':'Optional Linux proc sampler stopped after actual permission denial; missing identities remain unknown. No MAC permissions changed.'})
+                        break
+                    except (OSError,ProcessLookupError):continue
+            if network is not None and not bpf_captured and (root/'sys/fs/bpf/netd_shared/mainline_done').is_dir():
+                network.snapshot(root,out,'mainline-done');bpf_captured=True
+            for uuid,(kernel_name,name) in list(live.items()):
+                kernel=Path('/sys/devices/virtual/block')/kernel_name
+                try: present=read_dm_identity_attribute(kernel/'dm/uuid',state,out)==uuid
+                except OSError as error:
+                    if error.errno not in (errno.ENOENT,errno.ENODEV,errno.EINVAL):raise
+                    present=False
+                if not present:
+                    target=root/'sys/devices/virtual/block'/kernel_name/'queue/read_ahead_kb'
+                    mounts={row.split()[4] for row in Path('/proc/self/mountinfo').read_text().splitlines()}
+                    if str(target) in mounts:
+                        removed=subprocess.run(['umount',str(target)],capture_output=True,text=True)
+                        if removed.returncode:
+                            # Device removal can detach its sysfs mount between
+                            # observation and umount. Only accept actual absence.
+                            remaining={row.split()[4] for row in Path('/proc/self/mountinfo').read_text().splitlines()}
+                            if str(target) in remaining:raise RuntimeError(removed.stderr)
+                    state.setdefault('dm_control_removals',[]).append({'path':str(target),'mount_absent':True})
+                    save(out/'devices.json',state)
+                    unique=root/'dev/block/mapper/by-uuid'/uuid
+                    if unique.is_symlink() and os.readlink(unique)=='../../'+kernel_name:unique.unlink()
+                    seen.discard((kernel_name,name,uuid));del live[uuid]
+            for p in Path('/sys/devices/virtual/block').glob('dm-*'):
                 try:
-                    comm=(proc/'comm').read_text().strip()
-                    if comm not in {'netbpfload','archtv-platform','netd'}:continue
-                    started=(proc/'stat').read_text().rsplit(')',1)[1].split()[19]
-                    key=proc.name+':'+started
-                    if key in network_peers:continue
-                    fields=dict(l.split(':',1) for l in (proc/'status').read_text().splitlines() if ':' in l)
-                    peer={'pid':int(proc.name),'start_ticks':started,'comm':comm,'executable':os.readlink(proc/'exe'),'context':(proc/'attr/current').read_text().strip().rstrip('\0')}
-                    peer.update({n:fields[n].strip() for n in ['Uid','Gid','Groups','CapInh','CapPrm','CapEff','CapBnd','CapAmb','NoNewPrivs']})
-                    network_peers[key]=peer;save(out/'network-identities.json',list(network_peers.values()))
-                except PermissionError as error:
-                    # Optional read-only diagnosis must not continuously retry
-                    # MAC-denied proc access and rotate away the actual failure.
-                    # Stop only this sampler; device/BPF monitoring continues.
-                    network_identity_blocked=True
-                    save(out/'network-identities-error.json',{'error':str(error),'scope':'Optional Linux proc sampler stopped after actual permission denial; missing identities remain unknown. No MAC permissions changed.'})
-                    break
-                except (OSError,ProcessLookupError):continue
-        if network is not None and not bpf_captured and (root/'sys/fs/bpf/netd_shared/mainline_done').is_dir():
-            network.snapshot(root,out,'mainline-done');bpf_captured=True
-        for uuid,(kernel_name,name) in list(live.items()):
-            kernel=Path('/sys/devices/virtual/block')/kernel_name
-            try: present=(kernel/'dm/uuid').read_text().strip()==uuid
-            except OSError as error:
-                if error.errno not in (errno.ENOENT,errno.ENODEV,errno.EINVAL):raise
-                present=False
-            if not present:
-                target=root/'sys/devices/virtual/block'/kernel_name/'queue/read_ahead_kb'
-                mounts={row.split()[4] for row in Path('/proc/self/mountinfo').read_text().splitlines()}
-                if str(target) in mounts:
-                    removed=subprocess.run(['umount',str(target)],capture_output=True,text=True)
-                    if removed.returncode:
-                        # Device removal can detach its sysfs mount between
-                        # observation and umount. Only accept actual absence.
-                        remaining={row.split()[4] for row in Path('/proc/self/mountinfo').read_text().splitlines()}
-                        if str(target) in remaining:raise RuntimeError(removed.stderr)
-                state.setdefault('dm_control_removals',[]).append({'path':str(target),'mount_absent':True})
-                save(out/'devices.json',state)
-                unique=root/'dev/block/mapper/by-uuid'/uuid
-                if unique.is_symlink() and os.readlink(unique)=='../../'+kernel_name:unique.unlink()
-                seen.discard((kernel_name,name,uuid));del live[uuid]
-        for p in Path('/sys/devices/virtual/block').glob('dm-*'):
-            try:
-                name=(p/'dm/name').read_text().strip()
-                if name not in allowed:continue
-                uuid=(p/'dm/uuid').read_text().strip()
-                key=(p.name,name,uuid)
-                if key in seen:continue
-                if not uuid:continue
-                assert '/' not in uuid and len(uuid)<129
-                observed=time.monotonic()
-                major,minor=map(int,(p/'dev').read_text().split(':'));node=root/'dev/block'/p.name
-                if node.exists():
-                    info=node.stat();assert stat.S_ISBLK(info.st_mode) and info.st_rdev==os.makedev(major,minor)
-                else:os.mknod(node,stat.S_IFBLK|0o600,os.makedev(major,minor))
-                logical=('/dev/block/'+p.name).encode();context=ctypes.c_char_p()
-                assert lib.selabel_lookup_raw(handle,ctypes.byref(context),logical,stat.S_IFBLK|0o600)==0
-                assert lib.lsetfilecon_raw(str(node).encode(),context)==0;lib.freecon(context)
-                expose_links(root,p)
-                # Publish the real writable leaf BEFORE the libdm UUID link.
-                source=p/'queue/read_ahead_kb'
-                target=root/'sys/devices/virtual/block'/p.name/'queue/read_ahead_kb'
-                # Same real bind/remount operations, without two fork/execs per
-                # concurrent DM device before its original libdm UUID deadline.
-                # Keep nosuid/nodev/noexec on the one writable owned-device leaf.
-                for mount_source,flags in [(os.fsencode(source),4096),(None,4096|32|2|4|8)]:
-                    if libc.mount(mount_source,os.fsencode(target),None,flags,None)!=0:
-                        error=ctypes.get_errno();raise OSError(error,os.strerror(error),str(target))
-                unique=root/'dev/block/mapper/by-uuid'/uuid
-                if not unique.is_symlink():unique.symlink_to('../../'+p.name)
-                else:assert os.readlink(unique)=='../../'+p.name
-                context=ctypes.c_char_p()
-                assert lib.selabel_lookup_raw(handle,ctypes.byref(context),('/dev/block/mapper/by-uuid/'+uuid).encode(),stat.S_IFLNK|0o777)==0
-                assert lib.lsetfilecon_raw(str(unique).encode(),context)==0;lib.freecon(context)
-                seen.add(key);live[uuid]=(p.name,name)
-                state['dm_nodes'].append({'name':name,'kernel_name':p.name,'uuid':uuid,'major':major,'minor':minor,'label':os.getxattr(node,'security.selinux').decode().rstrip('\0'),'observed_monotonic':observed,'published_monotonic':time.monotonic(),'publication_seconds':time.monotonic()-observed})
-                save(out/'devices.json',state)
-            except OSError as error:
-                if error.errno not in (errno.ENOENT,errno.ENODEV,errno.EINVAL):raise
-                continue  # real kernel creation/removal raced sysfs reads
-        time.sleep(.02)  # native device-event bridge, no model polling
-    app_log.close()
-    if network is not None:network.snapshot(root,out,'monitor-close')
+                    name=read_dm_identity_attribute(p/'dm/name',state,out)
+                    if name not in allowed:continue
+                    uuid=read_dm_identity_attribute(p/'dm/uuid',state,out)
+                    if uuid is None:continue
+                    key=(p.name,name,uuid)
+                    if key in seen:continue
+                    if not uuid:continue
+                    assert '/' not in uuid and len(uuid)<129
+                    observed=time.monotonic()
+                    major,minor=map(int,(p/'dev').read_text().split(':'));node=root/'dev/block'/p.name
+                    if node.exists():
+                        info=node.stat();assert stat.S_ISBLK(info.st_mode) and info.st_rdev==os.makedev(major,minor)
+                    else:os.mknod(node,stat.S_IFBLK|0o600,os.makedev(major,minor))
+                    logical=('/dev/block/'+p.name).encode();context=ctypes.c_char_p()
+                    assert lib.selabel_lookup_raw(handle,ctypes.byref(context),logical,stat.S_IFBLK|0o600)==0
+                    assert lib.lsetfilecon_raw(str(node).encode(),context)==0;lib.freecon(context)
+                    expose_links(root,p)
+                    # Publish the real writable leaf BEFORE the libdm UUID link.
+                    source=p/'queue/read_ahead_kb'
+                    target=root/'sys/devices/virtual/block'/p.name/'queue/read_ahead_kb'
+                    # Same real bind/remount operations, without two fork/execs per
+                    # concurrent DM device before its original libdm UUID deadline.
+                    # Keep nosuid/nodev/noexec on the one writable owned-device leaf.
+                    for mount_source,flags in [(os.fsencode(source),4096),(None,4096|32|2|4|8)]:
+                        if libc.mount(mount_source,os.fsencode(target),None,flags,None)!=0:
+                            error=ctypes.get_errno();raise OSError(error,os.strerror(error),str(target))
+                    unique=root/'dev/block/mapper/by-uuid'/uuid
+                    if not unique.is_symlink():unique.symlink_to('../../'+p.name)
+                    else:assert os.readlink(unique)=='../../'+p.name
+                    context=ctypes.c_char_p()
+                    assert lib.selabel_lookup_raw(handle,ctypes.byref(context),('/dev/block/mapper/by-uuid/'+uuid).encode(),stat.S_IFLNK|0o777)==0
+                    assert lib.lsetfilecon_raw(str(unique).encode(),context)==0;lib.freecon(context)
+                    seen.add(key);live[uuid]=(p.name,name)
+                    state['dm_nodes'].append({'name':name,'kernel_name':p.name,'uuid':uuid,'major':major,'minor':minor,'label':os.getxattr(node,'security.selinux').decode().rstrip('\0'),'observed_monotonic':observed,'published_monotonic':time.monotonic(),'publication_seconds':time.monotonic()-observed})
+                    save(out/'devices.json',state)
+                except OSError as error:
+                    if error.errno not in (errno.ENOENT,errno.ENODEV,errno.EINVAL):raise
+                    continue  # real kernel creation/removal raced sysfs reads
+            time.sleep(.02)  # native device-event bridge, no model polling
+    except BaseException as error:
+        monitor_error=repr(error)
+        raise
+    finally:
+        snapshot_completed=False
+        try:
+            app_log.close()
+            if network is not None:
+                network.snapshot(root,out,'monitor-close')
+                snapshot_completed=True
+        finally:
+            save(out/'device-monitor-result.json', {
+                'loop_error': monitor_error,
+                'network_snapshot_attempted': network is not None,
+                'snapshot_call_completed': snapshot_completed,
+                'scope': 'Lifecycle evidence only; snapshot errors, final ownership and monitor exit remain independently checked'})
+
 
 
 if __name__=='__main__':

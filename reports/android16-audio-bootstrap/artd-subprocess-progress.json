@@ -4070,6 +4070,76 @@
             "sha256": "64f20e257b723dc8eae79cf5e87a3b8164d498bd076f9179dabe657d5e6d4885"
           }
         }
+      },
+      "monitor363_preparation": {
+        "work": "/home/tv/recuperacion-archtv/20261105-vlc-focus363",
+        "tested_commit": "5394177 plus own monitor candidate, not integrated363",
+        "native_APK_run_started": false,
+        "candidate_sources": {
+          "reports/android16-apex-bootstrap/devices.py": "198de9733cccf90dc9998d8a1961d800029d05ef7d6b6803cd02572f8b6d67b5",
+          "reports/android16-apex-bootstrap/execute.py": "42ce0741bd120895ab8575e2daca89876debf2c824bd799377d959ca7762e5a2"
+        },
+        "validation": {
+          "python_syntax": true,
+          "materialized_factory_compile": true,
+          "64cycle_kernel_test": "ABORTED exit143, no pass; own reader had no independent deadline while remove waited, confounding workload",
+          "kernel_observation": "Actual D rcu_barrier in dmsetup remove; kernel SOFTLOCKUP SLUB/RCU recorded. Cause not established, no automatic blame on VirtualBox or source patch.",
+          "after_stop": "Verified controller/child absent, no DM/loops/cohorts. Same boot. Not stability acceptance."
+        },
+        "source_decision": "Handle EIO only computed dm/name or dm/uuid metadata, preserve other errors; always attempt final ownership snapshot and propagate monitor nonzero. Not integrated/runtime-proven.",
+        "REA": "Actual binary_session MCP response reconnect verified; package4787 result lost with stale code-mode generation, not inspected result/CLI evidence; do not repeat unchanged call as if it never started.",
+        "next": "Preserve checkpoint and candidate, recover fresh host boot with exact custom kernel/SELinux permissive entry after lockup; verify boot/security/policy before original cohort. Replace stress reader with strict independent deadline and sleeping/bounded reads, no repeat64busy loop. Functional VLC input must require current compositor Android application handoff plus original Displayed and same-clock pairs; diagnose actual returned PMS component/label catalog before real Home reopen.",
+        "scope": "No363APK acceptance, monitor candidate compile-only; failed/confounded test retained. R1/ARM/GMS/DRM/fullroadmap open.",
+        "evidence": {
+          "before-work.json": {
+            "path": "/home/tv/recuperacion-archtv/20261105-vlc-focus363/before-work.json",
+            "sha256": "1e42762cd75c9b60a5d01a80a1aad83981a61ae17c13d0b3fc4073cf7e5bfefb"
+          },
+          "host-idle.json": {
+            "path": "/home/tv/recuperacion-archtv/20261105-vlc-focus363/host-idle.json",
+            "sha256": "1e736ef9c8e9ffe8bff31c2bb8b9c83fcb38535fd425fce1d8dc4d25092a89a0"
+          },
+          "dm-lifecycle-before.json": {
+            "path": "/home/tv/recuperacion-archtv/20261105-vlc-focus363/dm-lifecycle-before.json",
+            "sha256": "77fd586649470553f71aa592bffacb5bb4ba95f3af5eb6ac15929ee58f348ce6"
+          },
+          "dm-blocked-processes.json": {
+            "path": "/home/tv/recuperacion-archtv/20261105-vlc-focus363/dm-blocked-processes.json",
+            "sha256": "f12b0967db198ab8bbe4be6b62c6a52013ec6a9b7697a0e486f2dac820841d42"
+          },
+          "dm-blocked-kernel.log": {
+            "path": "/home/tv/recuperacion-archtv/20261105-vlc-focus363/dm-blocked-kernel.log",
+            "sha256": "7d9d081a6ee9ec1c7976140ffb022730ac3b836aa58df115ceb80cc9f14c27ba"
+          },
+          "kernel-lockup-full.log": {
+            "path": "/home/tv/recuperacion-archtv/20261105-vlc-focus363/kernel-lockup-full.log",
+            "sha256": "69d4c46b1c91e47d0e4853241804025d1201b91ada1aaa8177fe98aeaa84298a"
+          },
+          "reboot-preparation-readback.json": {
+            "path": "/home/tv/recuperacion-archtv/20261105-vlc-focus363/reboot-preparation-readback.json",
+            "sha256": "1bec170a854505fa86f3431bda1cd7799e7a518c50e74007b76c748d0b47d7a5"
+          },
+          "actual-boot-entries.json": {
+            "path": "/home/tv/recuperacion-archtv/20261105-vlc-focus363/actual-boot-entries.json",
+            "sha256": "27246daae6dcb19951e744fa4c3f282594cd43f0e8ad7a8e1f309ab6ae65f13c"
+          },
+          "test-stop.json": {
+            "path": "/home/tv/recuperacion-archtv/20261105-vlc-focus363/test-stop.json",
+            "sha256": "cee2a65fb79be86548715d6b2c38ce346c8083e2e96ba0fe4346ad420121e419"
+          },
+          "after-aborted-test.json": {
+            "path": "/home/tv/recuperacion-archtv/20261105-vlc-focus363/after-aborted-test.json",
+            "sha256": "f4346ff84069672aff9d7f7f33a7ebe9d67c8634347dec58eabe345d61234964"
+          },
+          "rea-reconnected-state.json": {
+            "path": "/home/tv/recuperacion-archtv/20261105-vlc-focus363/rea-reconnected-state.json",
+            "sha256": "c9f04c9b0b97656112301976182561c1bc7be30fce361e66f829c51f67a77f74"
+          },
+          "materialized-factory.py": {
+            "path": "/home/tv/recuperacion-archtv/20261105-vlc-focus363/materialized-factory.py",
+            "sha256": "005d86b2282107d3aefb2b7a6883bd6379a762c8a4887f5ce9bd4c384125f7fc"
+          }
+        }
       }
     }
   },
