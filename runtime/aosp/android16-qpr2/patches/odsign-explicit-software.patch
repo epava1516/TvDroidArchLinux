@@ -1,0 +1,67 @@
+--- a/KeystoreKey.cpp
++++ b/KeystoreKey.cpp
+@@ -50,6 +50,14 @@
+ using android::base::Error;
+ using android::base::Result;
+ 
++// Explicit Linux SOFTWARE build profile. This is not TEE-backed verified boot.
++// Keep original hardware selection in every build without the reviewed flag.
++#if defined(ARCHTV_ODSIGN_SOFTWARE_PROFILE)
++static constexpr SecurityLevel kArchTvOdsignSecurityLevel = SecurityLevel::SOFTWARE;
++#else
++static constexpr SecurityLevel kArchTvOdsignSecurityLevel = SecurityLevel::TRUSTED_ENVIRONMENT;
++#endif
++
+ static KeyDescriptor getKeyDescriptor(const android::String16& keyAlias, int64_t keyNspace) {
+     // AIDL parcelable objects don't have constructor
+     static KeyDescriptor descriptor;
+@@ -155,7 +163,7 @@
+         return false;
+     }
+ 
+-    auto status = mService->getSecurityLevel(SecurityLevel::TRUSTED_ENVIRONMENT, &mSecurityLevel);
++    auto status = mService->getSecurityLevel(kArchTvOdsignSecurityLevel, &mSecurityLevel);
+     if (!status.isOk()) {
+         return false;
+     }
+@@ -190,10 +198,11 @@
+     }
+ 
+     // On some earlier builds, we created this key on the Strongbox security level;
+-    // we now use TEE keys instead (mostly for speed). It shouldn't matter since
+-    // verified boot is protected by the TEE anyway. If the key happens to be on
++    // the original profile uses TEE keys. The explicit Linux profile instead
++    // requires SOFTWARE metadata and makes no hardware verified-boot claim.
++    // If the key happens to be on
+     // the wrong security level, delete it (this should happen just once).
+-    if (keyEntryResponse.metadata.keySecurityLevel != SecurityLevel::TRUSTED_ENVIRONMENT) {
++    if (keyEntryResponse.metadata.keySecurityLevel != kArchTvOdsignSecurityLevel) {
+         return Error() << "Found invalid keystore key with security level: "
+                        << android::hardware::security::keymint::toString(
+                               keyEntryResponse.metadata.keySecurityLevel);
+--- a/odsign_main.cpp
++++ b/odsign_main.cpp
+@@ -49,7 +49,12 @@
+ // Keystore boot level that the odsign key uses
+ const int kKeyBootLevel = 30;
+ const std::string kPublicKeySignature = "/data/misc/odsign/publickey.signature";
++#if defined(ARCHTV_ODSIGN_SOFTWARE_PROFILE)
++// HMAC alias derives from this name as well. Do not delete/reuse TEE keys.
++const android::String16 kKeyAlias{"archtv-software-ondevice-signing"};
++#else
+ const android::String16 kKeyAlias{"ondevice-signing"};
++#endif
+ constexpr int kKeyNspace = 101;  // odsign_key
+ 
+ const std::string kSigningKeyCert = "/data/misc/odsign/key.cert";
+@@ -495,6 +500,10 @@
+         stats_reporter->SetOdsignRecordEnabled(false);
+         return 0;
+     }
++#if defined(ARCHTV_ODSIGN_SOFTWARE_PROFILE)
++    LOG(WARNING) << "ARCHTV_ODSIGN_SOFTWARE_PROFILE: original signing/verification, "
++                    "SOFTWARE keys; no TEE/StrongBox or hardware verified-boot guarantee";
++#endif
+     auto keystoreResult =
+         KeystoreKey::getInstance(kPublicKeySignature, kKeyAlias, kKeyNspace, kKeyBootLevel);
+     if (!keystoreResult.ok()) {

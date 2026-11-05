@@ -1,5 +1,9 @@
 # Arquitectura vigente · A16-QPR2-1
 
+Frontera ABI odsign: cabeceras CPP de snapshots AIDLv1 y proxies originales GSI v1 frente a Keystore2 Rust original y KeyMint v4 NDK SOFTWARE. El enlace resuelve símbolos, todavía no demuestra transacciones de firma. libstatspull/statssocket proceden del mismo APEX statsd original, no del anfitrión. Mantener ruta original /system/bin/odsign para el namespace del enlazador; separar datos/caché/firmas del perfil SOFTWARE de cualquier estado TEE y de los recorridos Markor/VLC históricos.
+
+Caché ART coherente: reutilizar odrefresh y odsign completos, no escribir propiedades de verificación desde el coordinador. El odsign original exige TEE; el perfil Linux SOFTWARE adapta explícitamente selección y validación de metadata y usa alias distintos para RSA/HMAC, conservando firma, nivel de arranque y fallo cerrado. Su ruta original sin fs-verity verifica el contenido completo. No aporta garantías de hardware ni prueba aislamiento. Exigir la secuencia original derive_classpath/art_boot/odsign y carga real de imágenes antes de aceptar la integración.
+
 321 localiza la pausa fuera de applyGain/pcm_writei. El runner conserva200% por defecto; una comparación explícita300% exige≥4CPU y cohorte integrada, sin quitar límite ni modificar4G/1G de memoria. Se registra el perfil en before.json; no acredita ligereza de producción. Throttling agregado no demuestra causa del retraso.
 
 Observación321 candidata: dos lecturas CLOCK_MONOTONIC alrededor de applyGain/pcm_writei, publicadas en el log existente con errores explícitos. No se sustituyen timestamps de presentación ni resultados PCM.319 conserva el reset sin dumps durante playback; no se atribuye automáticamente a VirtualBox ni al reloj.

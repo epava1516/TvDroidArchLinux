@@ -261,6 +261,16 @@
         "flushed_frames": 18637,
         "complete_audio_accepted": false,
         "decision": "Largest delay outside HAL transfer; controlled CPU budget comparison next, not timestamp weakening. Coherent ART remains open."
+      },
+      "audio_control322": {
+        "checkpoint": "/home/tv/recuperacion-archtv/f2c4c52b-6181-4650-a395-0f6aab150ca1-markor-software-launch",
+        "cpu_max": "300000 100000",
+        "max_inter_transfer_gap_ms": 750.863169,
+        "max_transfer_ms": 102.974729,
+        "track_server_frames": 163840,
+        "flushed_frames": 13296,
+        "complete_audio_accepted": false,
+        "decision": "CPU300 insufficient; coherent original ART/signing integration next. No source signal or acoustic acceptance."
       }
     },
     {

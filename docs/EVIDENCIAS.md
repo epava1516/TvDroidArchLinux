@@ -1,5 +1,11 @@
 # Índice de evidencias
 
+Receta final ART: construcción6 compila7 unidades; enlace2 con --no-undefined/--no-allow-shlib-undefined pasa. Hashes y ABI están en coherent_cache_candidate del informe ART existente. El desensamblado REA citado corresponde al artefacto anterior link1; no se extrapola a ejecución de link2.
+
+[ART/odsign adaptado completo](../reports/android16-audio-bootstrap/artd-subprocess-progress.json), coherent_cache_candidate:7 unidades compiladas verificadas y enlace1 exit0; protobuf/AIDL originales, StatsReporter completo y enum de métricas completo generado desde fuente. REA MCP ev_0b4c4d569e7e96b98e91bb5f57af39ad94594326dd5ecdfe87129e56d4a8724c es desensamblado estático de initialize, no ejecución. Artefacto SHA25524786b3d8a1cce8f39f091ff6f9de7cde5c7c7243084d7cb99b8825c5c76b.
+
+322: [resultado funcional](../../recuperacion-archtv/f2c4c52b-6181-4650-a395-0f6aab150ca1-markor-software-launch/functional-result.json),79 escrituras, max transferencia102,975ms, max intervalo750,863ms, late flush620222µs; cuota300 efectiva no basta. [Candidato ART coherente](../reports/android16-audio-bootstrap/artd-subprocess-progress.json), coherent_cache_candidate: pins/hashes originales, perfil SOFTWARE y criterios completos de firma/carga/negativas. Construcción no acredita ejecución.
+
 321: [resultado funcional](../../recuperacion-archtv/ab8962df-3fce-46bb-a10b-6c7f6fb8cbc4-markor-software-launch/functional-result.json) enlaza hashes de log original, AudioFlinger, recursos y recuperación.64 escrituras; max transferencia114,778ms, max intervalo1695,646ms, late flush1671689µs. Permisivo65/TSC/mixer/unidades/loops/dm y auditoría sin pérdidas verificados. Contadores no prueban señal fuente ni sonido audible.
 
 319: [resultado funcional](../../recuperacion-archtv/482e2fbd-171b-4c2b-a862-919b629e2974-markor-software-launch/functional-result.json), hashes de originales y recuperación.100 posiciones,0 rebases, reset, flushed18462, un dump tardío. REA MCP obtuvo tablas estáticas eliminadas en dos AudioFlinger; no demuestra disponibilidad TEE. Proveedor ELF-layout no configurado, sin fingir inspección adicional.

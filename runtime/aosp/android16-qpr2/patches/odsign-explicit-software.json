@@ -1,0 +1,32 @@
+{
+  "status": "whole_source_compiled_linked_not_executed",
+  "project": "system/security",
+  "source_pin": "882e4a2102348cf7c320737d4e21b39c25d3a422",
+  "source_archive_sha256": "5fcc598fa2c2e146037f56b14bd81bc42bedfdc0d7ceda9dd78dbb319d564ced",
+  "patch_sha256": "48cb740acbde7212bba8cf78019b85298e8bf1851b2695038eadd79415bd4830",
+  "files": [
+    {
+      "path": "KeystoreKey.cpp",
+      "original_sha256": "71f137aef15e045883fc18578d46c638e47289850bde54a6dbeab0665ff4a074",
+      "adapted_sha256": "8bb3f089bf493b7f0d58ccbe3193e167daf3cc9056c816c48e760e94c64c4452"
+    },
+    {
+      "path": "odsign_main.cpp",
+      "original_sha256": "e9ce7c2a192652749cdd831aee3ff1a47c666259bda2bcda981c9883d979c83e",
+      "adapted_sha256": "823ba44f315632548de29b202efe6bf920e40cc9f28335972d65e9031558b7bd"
+    }
+  ],
+  "scope": "Whole original odsign subsystem; explicit SOFTWARE build selection and matching metadata validation, distinct RSA/HMAC aliases. Default hardware profile unchanged.",
+  "retained": [
+    "Original cryptographic signing/verification, boot-level tags, fail-closed cleanup and verification properties",
+    "Original odrefresh invocation/cache decisions",
+    "Original fs-verity or full digest verification selection",
+    "Original metrics and binder contracts"
+  ],
+  "limits": [
+    "No runtime executed; no ART image loading, trust or APK acceptance from compilation/linking",
+    "SOFTWARE signing does not provide TEE or hardware verified boot",
+    "Boot-level enforcement, isolation, fresh/private cache and negative tamper tests required before accepting integration",
+    "No properties/readiness may be written by coordinator to bypass odsign results"
+  ]
+}

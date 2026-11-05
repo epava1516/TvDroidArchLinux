@@ -21,11 +21,11 @@
       "derive_classpath",
       "odrefresh"
     ],
-    "new_permission": "artd \u2192 artd_subprocess_type process2 nnp_transition only",
+    "new_permission": "artd → artd_subprocess_type process2 nnp_transition only",
     "original_transition_and_entrypoint_required": true,
     "execute_no_trans_not_granted": true,
     "offline_queries": 24,
-    "actual_runtime_observation": "Original artd invokes art_exec --drop-capabilities \u2192 dex2oat32 targeting oat/x86_64/base.odex; dex2oat returned code 0",
+    "actual_runtime_observation": "Original artd invokes art_exec --drop-capabilities → dex2oat32 targeting oat/x86_64/base.odex; dex2oat returned code 0",
     "boot_image": "Checksum mismatch remains; compiler falls back to imageless running. No coherent boot image acceptance."
   },
   "apk": {
@@ -94,5 +94,101 @@
     "original_artd_te": "https://android.googlesource.com/platform/system/sepolicy/+/43e4494a5a78317819dcc2766a11927c12ef3dfd/private/artd.te",
     "original_artd_source": "https://android.googlesource.com/platform/art/+/1690c6912a7972c9e62c39b48c706de9b8b18b4a/artd/artd.cc",
     "artd_source_sha256": "94a90649a5ebdc06d371ad52def35ddb115cf5bda272538f18cc2f1df725485b"
+  },
+  "coherent_cache_candidate": {
+    "state": "whole_source_build6_link2_passed_not_executed",
+    "build": "dist/aosp16/odsign-software-build-6/build.json",
+    "patch": "runtime/aosp/android16-qpr2/patches/odsign-explicit-software.patch",
+    "sources": {
+      "original-odsign": {
+        "project": "system/security",
+        "pin": "882e4a2102348cf7c320737d4e21b39c25d3a422",
+        "url": "https://android.googlesource.com/platform/system/security/+archive/882e4a2102348cf7c320737d4e21b39c25d3a422/ondevice-signing.tar.gz",
+        "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/original-odsign",
+        "sha256": "5fcc598fa2c2e146037f56b14bd81bc42bedfdc0d7ceda9dd78dbb319d564ced",
+        "skipped_nonregular": []
+      },
+      "original-odrefresh": {
+        "project": "art",
+        "pin": "1690c6912a7972c9e62c39b48c706de9b8b18b4a",
+        "url": "https://android.googlesource.com/platform/art/+archive/1690c6912a7972c9e62c39b48c706de9b8b18b4a/odrefresh.tar.gz",
+        "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/original-odrefresh",
+        "sha256": "91c85a245a8aed182b20a26a8555c22514fc249f7d3f9f059b74be5b61c61856",
+        "skipped_nonregular": []
+      },
+      "original-fsverity-utils": {
+        "project": "external/fsverity-utils",
+        "pin": "d229a02345e07b8105c805c7563b902a7d2f9206",
+        "url": "https://android.googlesource.com/platform/external/fsverity-utils/+archive/d229a02345e07b8105c805c7563b902a7d2f9206.tar.gz",
+        "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/original-fsverity-utils",
+        "sha256": "e0c85789844d100dce922ac0e148a507afe339aa5b79946de91439ae5baba1f4",
+        "skipped_nonregular": []
+      },
+      "original-art-atoms": {
+        "project": "frameworks/proto_logging",
+        "pin": "cef5253cee341d943c2972775e047ca368e9b1ee",
+        "url": "https://android.googlesource.com/platform/frameworks/proto_logging/+archive/cef5253cee341d943c2972775e047ca368e9b1ee/stats/atoms/art.tar.gz",
+        "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/original-art-atoms",
+        "sha256": "f77037eb463baecba3069df19c25148eac78b55c2b2a8fa89096cab5d08de26f",
+        "skipped_nonregular": []
+      },
+      "original-logwrapper": {
+        "project": "system/logging",
+        "pin": "58dac317ea08b8f275ebd01ce864acab2de30b93",
+        "url": "https://android.googlesource.com/platform/system/logging/+archive/58dac317ea08b8f275ebd01ce864acab2de30b93/logwrapper.tar.gz",
+        "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/original-logwrapper",
+        "sha256": "28ab34a6ae21a4c37c0ba5af92a94d08f7923bf6c78d8696d1abde7a98e9c1f4",
+        "skipped_nonregular": []
+      }
+    },
+    "decision": "Reuse whole odsign and odrefresh, with explicit SOFTWARE Keystore selection, matching metadata validation and separate RSA/HMAC aliases. Preserve original signing, boot-level tags, digest/fs-verity selection, cleanup and property reporting.",
+    "source_evidence": {
+      "original_init_sequence": "derive_classpath -> art_boot -> odsign -> key.done -> raise keystore.boot_level -> verification.done -> zygote",
+      "original_security_requirement": "KeystoreKey.cpp requiresTRUSTED_ENVIRONMENT at getSecurityLevel and existing-key metadata check; SOFTWARE is an explicit port, not hardware equivalence",
+      "original_fallback": "odsign_main.cpp SupportsFsVerity false selects original full verification; no host filesystem change assumed"
+    },
+    "acceptance": [
+      "Generate full cache from exactmodified framework/classpath/ISA/profile using originalodrefresh, not exit0-skipped",
+      "Originalodsign creates/verifies real signatures through originalKeystore2 and SOFTWAREKeyMint, actualmetadataSOFTWARE",
+      "No coordinator writes verification/readiness success; originalproperties and negative tamper/wrongkey/bootlevel tests",
+      "Originalzygote/systemserver actuallyload coherent images without checksumfallback",
+      "Cache update/rollback and Markor/VLC fullworkflows; R1security and hardwarelimits remain separate"
+    ],
+    "limits": [
+      "Builds1-5 preserved. Header roots and original statsAPEX/Bionic library paths corrected; all7 sourceobjects verified and link1 returns0. No runtime attempted.",
+      "SOFTWARE signing does not provide TEE, StrongBox or hardware verified boot",
+      "Generated statsheader contains all8original Status enum constants only; whole original file-based StatsReporter retained; no fake statsservice",
+      "No ART image loading, trust, availability, performance or APK acceptance from compiling/linking"
+    ],
+    "successful_compilation_evidence": "dist/aosp16/odsign-software-build-5/build.json",
+    "link": "dist/aosp16/odsign-software-link-2/link.json",
+    "binary_sha256": "b1fec7fdffc90e6cbe3e370c59c8851d444e470cbd78a461d413447335514073",
+    "MCP_static": {
+      "operation": "inspect_with_objdump native symbol-scoped initialize disassembly",
+      "evidence_id": "ev_0b4c4d569e7e96b98e91bb5f57af39ad94594326dd5ecdfe87129e56d4a8724c",
+      "path": "dist/aosp16/odsign-software-link-1/rea-initialize.json",
+      "exit": 0,
+      "scope": "Static disassembly only; no service call or execution."
+    },
+    "ABI_frontier": {
+      "target": "x86_64 Android36 Bionic",
+      "client_headers": "Full frozen AIDLv1 CPP snapshots forKeystore2/KeyMint; generated proxies not reimplemented or compiled as duplicate services",
+      "libraries": "Original GSI v1 CPP proxy DSOs; existing original Keystore2 Rust backend + KeyMint v4 NDK SOFTWARE service. StableAIDL compatibility still needs actual signing tests.",
+      "stats": "Original libstatspull/statssocket from same original statsd APEX589049a2, bytes match extraction provenance",
+      "protobuf": "Original pinned protobuf25.8 generation/headers, link resolves original libprotobuf-cpp-lite; dynamic availability not accepted by linking."
+    },
+    "next_integration": {
+      "runtime_path": "Keep /system/bin/odsign using a private cohort-only bind of adaptedbinary, so original linker namespace/service RC/domain remain; preserve source GSI binary. A vendor executable path would select a different linker namespace.",
+      "data": "Fresh dedicated private userdata/cache/signature/key state; do not overwrite old Markor/VLC caches or TEE-profile state.",
+      "coordinator": "Original derive_classpath -> art_boot -> odsign -> actualkey.done -> originalkeystore.boot_level advancement -> actualverification.done/success -> zygote. No coordinator writes verification success.",
+      "validation": "Require original generated artifacts, originalsignature+negative tamper/bootlevel, actualimage mappings/logs withoutfallback, then Markor/VLC completeworkflows."
+    },
+    "build_sha256": "93d92316f935683503d41b490f00d60587e2747fb5955711b7edf53baf74556e",
+    "link_sha256": "b5b752968fda87999ca9b8f06b983bbb6d3063c7429d647d1647d9a697c9fa69",
+    "previous_link": {
+      "path": "dist/aosp16/odsign-software-link-1/link.json",
+      "binary_sha256": "25524786b3d8a1cce8f39f091ff6f9de7cde5c7c7243084d7cb99b8825c5c76b",
+      "MCP_evidence_scope": "REA static disassembly belongs only to link1 artifact, not a runtime test of link2"
+    }
   }
 }

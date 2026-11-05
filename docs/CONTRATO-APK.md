@@ -1,5 +1,7 @@
 # Contrato vigente · AOSP Android 16 QPR2
 
+La caché ART adaptada debe corresponder al framework/classpath/ISA/perfiles reales y cargarse sin fallback por checksum. La firma SOFTWARE debe declararse como tal y conservar comprobación criptográfica, rechazo de alteraciones y controles de nivel de arranque; no equivale a TEE/StrongBox ni a verified boot de hardware. Ninguna propiedad de verificación escrita por el coordinador sustituye a odsign original. Compilar o enlazar esa herramienta no satisface este requisito.
+
 Evidencia270 · Cierre forzado original y reapertura física con nota persistida aceptados sólo para el recorrido acotado de Markor y política60. No satisface por sí solo cierre elegante, aislamiento general, todas las funciones ni compatibilidad amplia. [Prueba y límites](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json), integrated270.
 
 Vigente · El siguiente experimento y sus límites se mantienen en [Estado](ESTADO.md); resultados funcionales, hashes y alcance en el [registro de integración](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json). Los experimentos anteriores se conservan como históricos. La compatibilidad APK completa, R1-MAC, ARM/GMS/DRM y los requisitos de producto permanecen abiertos.

@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793856166.1418564,
-    "seen": 1793856181.2491832,
-    "ast_hash": "d95737a54ced6e8eeee55d0596180f3a",
+    "mtime": 1793857590.30613,
+    "seen": 1793857604.2528305,
+    "ast_hash": "d76658d8799cb3f1d7503f56d6f0c5d5",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793856166.1330411,
-    "seen": 1793856181.2498522,
-    "ast_hash": "8f4244d292398864552e638a7a4ee6d8",
+    "mtime": 1793857741.5004482,
+    "seen": 1793857755.079187,
+    "ast_hash": "ce96e0a0c4f3d2a7bd80d1aea581e39e",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793856166.1490946,
-    "seen": 1793856181.2507405,
-    "ast_hash": "8134bff1ef6bc86575a05a2aa31b703d",
+    "mtime": 1793857246.8052535,
+    "seen": 1793857604.2542608,
+    "ast_hash": "4e5e8ff34e5ec8b4102f5818c40ca4de",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -816,9 +816,9 @@
     "semantic_hash": ""
   },
   "docs/CONTRATO-APK.md": {
-    "mtime": 1793811763.2908738,
-    "seen": 1793811775.8034737,
-    "ast_hash": "81a1dbd4ecfe6566868dbe7cf0e86b4b",
+    "mtime": 1793857246.827966,
+    "seen": 1793857604.2531993,
+    "ast_hash": "58b946243bdcab98d591781e4495003a",
     "semantic_hash": ""
   },
   "runtime/apk/README.md": {
@@ -1716,9 +1716,9 @@
     "semantic_hash": ""
   },
   "docs/EVIDENCIAS.md": {
-    "mtime": 1793856166.154735,
-    "seen": 1793856181.250099,
-    "ast_hash": "577fa0cf473f93d03534d0d0c3990e9a",
+    "mtime": 1793857741.5057905,
+    "seen": 1793857755.079352,
+    "ast_hash": "2825ac7bcbfe6c9e748ea3098003fc2a",
     "semantic_hash": ""
   },
   "fixtures/aosp-framework-space/FrameworkSpaceProbe.java": {
@@ -2199,6 +2199,12 @@
     "mtime": 1793855294.1352777,
     "seen": 1793855381.40875,
     "ast_hash": "380e76cf10464c910e20e005dee08b82",
+    "semantic_hash": ""
+  },
+  "runtime/aosp/android16-qpr2/patches/odsign-explicit-software.json": {
+    "mtime": 1793857590.2932332,
+    "seen": 1793857604.2338126,
+    "ast_hash": "2fb2318c639053a81cac79c699067370",
     "semantic_hash": ""
   }
 }

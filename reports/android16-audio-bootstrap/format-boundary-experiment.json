@@ -57,7 +57,7 @@
     "path": "/home/tv/recuperacion-archtv/47768c2f-8ed9-4b63-94f2-2dc69075bc02-markor-software-launch/functional-result.json",
     "sha256": "ccab625d57941e71b0c060e15d28ecbc5ed1e710d358c1c0b6e033ba1b985b5b"
   },
-  "next_experiment": "Controlled same321payload and stack, CPUQuota300% vs original200%, within4vCPU VM, unchanged4G/1G limits/policy/TSC. Aggregate37.339s throttling is hypothesis only, not proof of cause. Default200 unchanged; if no timing improvement stop treating quota as sufficient explanation. Coherent original ART image integration remains next complete subsystem, not more HAL rewrites.",
+  "next_experiment": "Integrate coherent original ART cache and original odsign with explicit SOFTWARE profile: no fake verification properties or hardware claims. Sourcebuild inprogress; no audio acceptance.",
   "control314": {
     "path": "/home/tv/recuperacion-archtv/ca39f661-16b2-4a71-beec-fd849cf14d7d-markor-software-launch/functional-result.json",
     "sha256": "95029372f366c61240fba4631e61b04c9480fd72fa9d79037cc893be6f491d52"
@@ -155,7 +155,7 @@
     "path": "/home/tv/recuperacion-archtv/270b9a2e-5a3a-46eb-b66a-cd913a4ef08c-markor-software-launch/functional-result.json",
     "sha256": "1c3dc01c44bd4a0ec6bded0c05c20673a5af86cae56d0c4f4c974336b8d4c75a"
   },
-  "current_blocker": "Actual321 largest inter-transfer gap1695.646471ms lies outside observed gain/pcm_writei duration(max114.778128ms); original VLC flush1671689us. Source signal/fullaudio remain unproven.",
+  "current_blocker": "Actual322 CPU300 retains timing reset, late620222us flush and early silence; quota increase is insufficient. Coherent ART boot image subsystem remains missing; no source signal accepted.",
   "foreground317_analysis": {
     "path": "/home/tv/recuperacion-archtv/270b9a2e-5a3a-46eb-b66a-cd913a4ef08c-markor-software-launch/foreground-sequence-analysis.json",
     "sha256": "c82709dec9299c824d45d8cb6dd43c7ff03c399ae1660680e3fa1b95a632a5d3"
@@ -296,9 +296,39 @@
     "source_reference_frames": 192000
   },
   "next_control322": {
-    "state": "prepared_not_started",
+    "state": "terminal_recovered_consumed_negative",
     "payload_reused": "dist/aosp16/package-cohort-build-321/payload-2.ext4",
     "changed": "Explicit bounded host runner CPUQuota300 profile only; original default200 preserved",
     "limits": "No causal or fullaudio claim before real result; improved timing alone cannot identify source signal or establish lightness."
-  }
+  },
+  "control322": {
+    "attempt": 322,
+    "state": "terminal_recovered_consumed",
+    "checkpoint": "/home/tv/recuperacion-archtv/f2c4c52b-6181-4650-a395-0f6aab150ca1-markor-software-launch",
+    "install_session": 580064674,
+    "payload_reused": "dist/aosp16/package-cohort-build-321/payload-2.ext4",
+    "cpu_max_effective": "300000 100000",
+    "writes": 79,
+    "max_transfer_ms": 102.974729,
+    "max_inter_transfer_gap_ms": 750.863169,
+    "late_flush_us": 620222,
+    "full_audio_accepted": false,
+    "decision": "CPU300 is insufficient: timing reset/late flush/early silence persist. Do not increase quota again as an unproven fix. Keep original200 default. Next complete subsystem: coherent ART boot image compilation plus original signing/verification, not more speculative HAL edits.",
+    "evidence": {
+      "observed-original-logcat.txt": "a8911c9ceb5a3491f5b112a8c8736c57fa3cced1da3468e5e2d4987318bdbec1",
+      "observed-audio-flinger-1.txt": "1e59d6e4a5f1fe9dbeee5630fa3174ae3a08c1d86544802b0033a35a40534d81",
+      "verified-active-units.json": "0375f573397088e559fea426694dba84a6d02566cc65d5b64757d819eb18e344",
+      "recovery-readback.json": "fa5fdf1c58ee45667ff009edf10746630d763bb9d090457f60d2776e131143cc",
+      "finite-audit/result.json": "65c20c671652134990b40bc228491037535efc65551f33611497771ebea0d289"
+    },
+    "limits": [
+      "A lower gap in one run does not prove CPU quota causal",
+      "Counters do not identify source signal or acoustic output",
+      "R1, ART coherent cache, ARM/GMS/DRM and product remain open"
+    ],
+    "track_server_frames": 163840,
+    "track_flushed_frames": 13296,
+    "source_reference_frames": 192000
+  },
+  "historical_root_scope": "Top-level experiment/artifacts/build/functional_result retain312/313 history. Latest controlNNN fields and current_blocker/next_experiment carry current interpretation."
 }
