@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+319: [resultado funcional](../../recuperacion-archtv/482e2fbd-171b-4c2b-a862-919b629e2974-markor-software-launch/functional-result.json), hashes de originales y recuperación.100 posiciones,0 rebases, reset, flushed18462, un dump tardío. REA MCP obtuvo tablas estáticas eliminadas en dos AudioFlinger; no demuestra disponibilidad TEE. Proveedor ELF-layout no configurado, sin fingir inspección adicional.
+
 318: [resultado funcional](../../recuperacion-archtv/7258fdce-6de6-458e-afd9-933d8a867d73-markor-software-launch/functional-result.json) contiene hashes de logs/dumps y recuperación. Server163840, flushed13846,119 posiciones sin rebase; no aceptación de audio completo. Resultado terminal y consumido por propietario activo, sin continuación en cola.
 
 Vigente ·[Ejecuciones314–317, AOSP y REA MCP](../reports/android16-audio-bootstrap/format-boundary-experiment.json):315 permite datos reales de AudioTrack con DSP registrado no habilitado;316 conserva fallo temporal;317 muere antes de audio durante cierre/reinicio foreground. El análisis posterior conserva y corrige la interpretación inicial de plazo: ActiveServices cancela el temporizador y provoca el mismo error al cerrar fgRequired.318 separa el lanzamiento VIEW. Ningún constructor, contador HAL ni inspección estática acepta compatibilidad.

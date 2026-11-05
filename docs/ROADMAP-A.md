@@ -1,5 +1,7 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+Decisión319: las16 consultas no explican por sí solas el fallo. Próxima prueba321 mide inicio/fin reales de transferencia PCM para distinguir bloqueo dentro del HAL de demora previa. Conserva contratos originales, política y TSC. Señal completa, launcher/selección y reapertura siguen pendientes.
+
 Prioridad inmediata tras318: controlar perturbación de observación con la misma pila original, un VIEW y una sola consulta AudioFlinger tras30s. Decidir por logs reales de timing y consumo; si persiste, descartar las16 consultas como explicación suficiente. Launcher/selección/reapertura, señal completa y salida acústica siguen abiertos.
 
 Prioridad vigente ·317 no alcanza audio: el servicio entra en foreground, sale y se cierra con un nuevo inicio pendiente. No atribuirlo sólo a plazo agotado, falta de API o a la corrección de posición no ejercitada.318 debe ejecutar un único VIEW original y contrastar vida del servicio, datos/posiciones y cierre; mantener launcher/selección, reinicios rápidos y reapertura como recorridos separados pendientes, sin reducir compatibilidad a un caso que pase. No relajar permisos/plazos ni sustituir APIs. Después señal/duración completas y posición acumulada tras standby. [AOSP/REA y resultados reales](../reports/android16-audio-bootstrap/format-boundary-experiment.json).

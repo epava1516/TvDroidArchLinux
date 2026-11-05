@@ -1,12 +1,12 @@
 {
-  "status": "original_cumulative_position_restoration_candidate_not_executed",
+  "status": "transfer_duration_observation_candidate_not_executed",
   "source_pin": "aa229558cbf04bc997ed27465c5e7ad497123d1b",
-  "patch_sha256": "64ad0105a1293a49b5a3bb43e118c6f37cc510d062cadb1f86f685266f081534",
+  "patch_sha256": "04d355d6b35271da8c3e7fb1f617c26a8d6b23d847040f3aece314ef419e1dbd",
   "files": [
     {
       "path": "aidl/default/alsa/StreamAlsa.cpp",
       "original_sha256": "bf08605917a9ddf280433d31ceab2406963c42bb7ba2674a7ba9ea4b1b0f8c51",
-      "adapted_sha256": "931f88f3240b1f863e97a29432d22ea1db5b184d3f857615486ee86b42ce82ba"
+      "adapted_sha256": "d5698c8b4d492dbf0d415717fe3a19cf03aceb61f53fb70ec3ac3c0088d3a2f3"
     }
   ],
   "scope": "Linux attached single-device synchronous output only; original FMQ/AIDL, Bionic, DeviceProxy and TinyALSA; unchanged public/header ABI",
@@ -16,11 +16,12 @@
     "No acoustic acceptance; external USB and input keep original paths",
     "Blocking IO and driver errors/closure must be tested in bounded integrated runtime",
     "Logs actual context/config/proxy formats; mismatched frame widths fail BAD_VALUE with zero accepted frames, no synthetic conversion.",
-    "Restores original resetTransferredFrames from actual worker cumulative frame count across proxy recreation; original presentation formula/clock retained. Logs actual context/proxy/presentation/monotonic values, no fabricated timestamps. Effect on real VLC timing not yet tested."
+    "Original cumulative reset exercised in318 and319, no rebases observed; timing remains faulty. Adds actual monotonic transfer begin/end to distinguish blocking write from upstream scheduling gaps; no presentation formula or PCM-result change."
   ],
-  "previous_patch_sha256": "8dd1185de8ab54d1245dba145e51a90e1cf5197c8ff546c05a35cf42e1978be1",
+  "previous_patch_sha256": "64ad0105a1293a49b5a3bb43e118c6f37cc510d062cadb1f86f685266f081534",
   "patch_history": [
     "3aee1ac5b4b06ede78cd78b6498fef573446de8c0ccef5c8a3a36311da50b61a",
-    "8dd1185de8ab54d1245dba145e51a90e1cf5197c8ff546c05a35cf42e1978be1"
+    "8dd1185de8ab54d1245dba145e51a90e1cf5197c8ff546c05a35cf42e1978be1",
+    "64ad0105a1293a49b5a3bb43e118c6f37cc510d062cadb1f86f685266f081534"
   ]
 }

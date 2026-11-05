@@ -23,7 +23,7 @@ write_diagnostic = '--audio-write-diagnostic' in sys.argv[2:]
 synchronous_pcm = '--audio-synchronous-pcm' in sys.argv[2:]
 production_dynamics = '--audio-production-dynamics' in sys.argv[2:]
 assert not (write_diagnostic and synchronous_pcm), 'Choose one audio backend candidate'
-core = repo / ('dist/aosp16/audio-linux-core-link-9' if synchronous_pcm else
+core = repo / ('dist/aosp16/audio-linux-core-link-10' if synchronous_pcm else
                'dist/aosp16/audio-linux-core-link-5' if write_diagnostic else
                'dist/aosp16/audio-linux-core-link-3')
 effect = repo / 'dist/aosp16/audio-effect-link-2'

@@ -1,5 +1,7 @@
 # Arquitectura vigente · A16-QPR2-1
 
+Observación321 candidata: dos lecturas CLOCK_MONOTONIC alrededor de applyGain/pcm_writei, publicadas en el log existente con errores explícitos. No se sustituyen timestamps de presentación ni resultados PCM.319 conserva el reset sin dumps durante playback; no se atribuye automáticamente a VirtualBox ni al reloj.
+
 318 ejercita119 posiciones, sin rebase acumulado. Un único VIEW evita la excepción foreground sólo en esa ejecución, pero conserva vaciado13846 frames. El siguiente control reduce consultas AudioFlinger a una tardía; no cambia contrato de timestamps, reloj, política ni APK. No hay señal completa acreditada.
 
 Actualización vigente ·315 integra el subsistema original DynamicsProcessing completo y permite consumo AudioTrack; su procesamiento no está habilitado ni aceptado. La restauración de posición de317 conserva contador acumulado/fórmula/reloj originales, pero el APK falla antes de audio. AOSP ActiveServices y los eventos reales muestran foreground, stop, nuevo inicio y cierre pendiente, no prueba de plazo agotado. REA MCP del APK exacto confirma intentos de foreground en onCreate/onStartCommand y captura silenciosa de algunas excepciones. El coordinador318 despacha un único VIEW original para el experimento de audio; el archivo genérico de lanzamiento es copia exacta del resultado original, nunca otro lanzamiento ni readiness manual. Launcher/selección, concurrencia y reapertura siguen sujetos a pruebas. [Fuentes y límites](../reports/android16-audio-bootstrap/format-boundary-experiment.json).

@@ -57,7 +57,7 @@
     "path": "/home/tv/recuperacion-archtv/47768c2f-8ed9-4b63-94f2-2dc69075bc02-markor-software-launch/functional-result.json",
     "sha256": "ccab625d57941e71b0c060e15d28ecbc5ed1e710d358c1c0b6e033ba1b985b5b"
   },
-  "next_experiment": "Same original stack and singleVIEW; one late AudioFlinger dump instead of16 during playback. Test measurement perturbation without changing clocks, policy, timestamps or application.",
+  "next_experiment": "Actual321 transfer duration observation, same original stack and late dump;320 packaging failed before runtime (javac exit1, stderr empty, stdout not retained). Preserve320; record stdout from now on. Cause unproven.",
   "control314": {
     "path": "/home/tv/recuperacion-archtv/ca39f661-16b2-4a71-beec-fd849cf14d7d-markor-software-launch/functional-result.json",
     "sha256": "95029372f366c61240fba4631e61b04c9480fd72fa9d79037cc893be6f491d52"
@@ -155,7 +155,7 @@
     "path": "/home/tv/recuperacion-archtv/270b9a2e-5a3a-46eb-b66a-cd913a4ef08c-markor-software-launch/functional-result.json",
     "sha256": "1c3dc01c44bd4a0ec6bded0c05c20673a5af86cae56d0c4f4c974336b8d4c75a"
   },
-  "current_blocker": "Actual318 consumes client data but flushes13846 frames; source complete signal and timing remain unproven. No cumulative rebase observed in119 positions.",
+  "current_blocker": "Actual319 with one late dump still resets timing and discards18462frames. 0.75s inter-write gap not localized; frame counters do not identify source signal.",
   "foreground317_analysis": {
     "path": "/home/tv/recuperacion-archtv/270b9a2e-5a3a-46eb-b66a-cd913a4ef08c-markor-software-launch/foreground-sequence-analysis.json",
     "sha256": "c82709dec9299c824d45d8cb6dd43c7ff03c399ae1660680e3fa1b95a632a5d3"
@@ -202,5 +202,64 @@
       "observed-media-launch.txt": "3f66e2fc4e4c31446958ce9c09647025bc84ea197d576190493a5f321cc24edc",
       "observed-markor-launch.txt": "3f66e2fc4e4c31446958ce9c09647025bc84ea197d576190493a5f321cc24edc"
     }
+  },
+  "tee_original_evaluation": {
+    "sources_pin": "22fd1c5d895e45a49df5582a4b345d8e3b75e46b",
+    "source_configuration": "audioflinger/Configuration.h comments out TEE_SINK; NBAIO_Tee.cpp body under ifdef",
+    "compiled_artifacts": [
+      {
+        "name": "libaudioflinger_utils.so",
+        "sha256": "80e89d64851db32965057963134e4afda50affce4552d004bce33a83364be5d7",
+        "rea_evidence": "ev_a4185ca92446671439968260da24c7c20c969582821481dbbc90a00650bee304"
+      },
+      {
+        "name": "libaudioflinger_datapath.so",
+        "sha256": "74bd09ccd13fcd58aa73a65bd12f4dcbaa51c0a743e0e40045118d917052a8b5",
+        "rea_evidence": "ev_3bcf1d438d28771b0ca60063b81a04ba0bd269ddf53a26c7151215202c47c614"
+      }
+    ],
+    "observations": "Actual REA MCP objdump reports stripped static symbol tables. Local byte scan finds no aftee_, NBAIO_Tee or af.tee literals in these two files; /data/misc/audioserver exists in utils only.",
+    "limits": "No proof of feature availability or whole-artifact absence. No property enabled or capture performed. REA ELF-layout provider unavailable (caller-supplied pwntools environment missing); no repeated repair or installation.",
+    "decision": "Do not treat af.tee property as working capture. Continue actual timing diagnosis; full signal remains unverified."
+  },
+  "next_candidate320": {
+    "state": "component_compiled_linked_packaging320_failed_not_executed",
+    "primary_build": "dist/aosp16/audio-linux-primary-build-8",
+    "core_link": "dist/aosp16/audio-linux-core-link-10",
+    "change": "Add observed monotonic transfer begin/end/error to existing PCM write log. Same actual pcm_writei/results and original presentation contract; no timestamp substitution.",
+    "question": "Does0.75s gap occur inside HAL gain/write or before transfer entry?",
+    "limits": "Compilation/linking are not execution or audio acceptance."
+  },
+  "control319": {
+    "checkpoint": "/home/tv/recuperacion-archtv/482e2fbd-171b-4c2b-a862-919b629e2974-markor-software-launch",
+    "state": "terminal_recovered_consumed",
+    "actual_install_session": 2040113518,
+    "positions": 100,
+    "rebases": 0,
+    "max_timestamp_age_ms": 38.853828,
+    "track_server_frames": 151552,
+    "track_flushed_frames": 18462,
+    "timing_reset": true,
+    "early_silence_us": -1046719,
+    "late_flush_warning_observed": false,
+    "decision": "Removing in-playback dumps is insufficient: timing reset and discarded frames persist. 0.75s gap between writes does not yet locate blocking PCM vs upstream delay.",
+    "full_audio_accepted": false,
+    "outer_exit": 1,
+    "foreground_exception_count": 0,
+    "launch_alias_identical": true,
+    "evidence": {
+      "observed-original-logcat.txt": "0698c6f6f212080a0748a2cb02253be73c32702d92495b2f4fe958def4595e43",
+      "observed-audio-flinger-1.txt": "2794a2738304cfa427bb5c03187698eaac4cce39eb3a5f271cb58936bee689a1",
+      "observed-audio-flinger-status.txt": "34b8c8fd5682223b3a76346a08e8859b0daeec7f7b2866b4e9d92d09117a4f80",
+      "recovery-readback.json": "50bcd062851ee571628c5418d43283ec4c293df6c394ea4ce157fab9ab7becbc",
+      "finite-audit/result.json": "ccf80417f1742e56e938017f519a6040f13126e3929fbd486efe98a1d53068ba",
+      "session-state.json": "2135cb75b1cc8acb01bc94a2724df086f111f872ccc46b902157368c25e0efe9"
+    }
+  },
+  "next_candidate321": {
+    "state": "building",
+    "primary_build": "dist/aosp16/audio-linux-primary-build-8",
+    "core_link": "dist/aosp16/audio-linux-core-link-10",
+    "scope": "Same320 transfer-duration observation; no changes to original PCM result or presentation timestamps."
   }
 }

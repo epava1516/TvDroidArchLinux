@@ -240,6 +240,17 @@
         "flushed_frames": 13846,
         "complete_audio_accepted": false,
         "limits": "Single VIEW result only; launcher/media/reopen stability and source signal remain open. Counters cannot prove decoded source output."
+      },
+      "audio_control319": {
+        "checkpoint": "/home/tv/recuperacion-archtv/482e2fbd-171b-4c2b-a862-919b629e2974-markor-software-launch",
+        "client_frames_consumed": 151552,
+        "flushed_frames": 18462,
+        "position_samples": 100,
+        "position_rebases": 0,
+        "timing_reset": true,
+        "one_late_dump": true,
+        "complete_audio_accepted": false,
+        "decision": "Repeated dumps not sufficient cause; transfer timing observation next. No signal/acoustic or launcher/reopen acceptance."
       }
     },
     {

@@ -88,7 +88,7 @@
      mIoThreadIsRunning = true;
      for (size_t i = 0; i < mAlsaDeviceProxies.size(); ++i) {
          mIoThreads.emplace_back(mIsInput ? &StreamAlsa::inputIoThread : &StreamAlsa::outputIoThread,
-@@ -159,6 +197,38 @@
+@@ -159,6 +197,54 @@
      if (mAlsaDeviceProxies.empty()) {
          LOG(FATAL) << __func__ << ": no opened devices";
          return ::android::NO_INIT;
@@ -104,6 +104,11 @@
 +                       << mFrameSizeBytes << " proxy_frame_bytes=" << proxy->frame_size;
 +            return ::android::BAD_VALUE;
 +        }
++        // Observe elapsed transfer time without changing the original position
++        // or PCM result. A clock failure remains explicit, never a timestamp.
++        timespec transferBegin = {};
++        const int beginClockResult = clock_gettime(CLOCK_MONOTONIC, &transferBegin);
++        const int beginClockErrno = beginClockResult == 0 ? 0 : errno;
 +        alsa::applyGain(buffer, mGain, frameCount * mFrameSizeBytes,
 +                        mConfig.value().format, mConfig->channels);
 +        while (*actualFrameCount < frameCount) {
@@ -121,13 +126,24 @@
 +        }
 +        *latencyMs = static_cast<int32_t>(std::min(proxy_get_latency(proxy),
 +                static_cast<unsigned>(std::numeric_limits<int32_t>::max())));
++        timespec transferEnd = {};
++        const int endClockResult = clock_gettime(CLOCK_MONOTONIC, &transferEnd);
++        const int endClockErrno = endClockResult == 0 ? 0 : errno;
 +        LOG(INFO) << "LINUX_PCM_SYNC_WRITE requested=" << frameCount
-+                  << " accepted=" << *actualFrameCount;
++                  << " accepted=" << *actualFrameCount
++                  << " begin_ns=" << (beginClockResult == 0
++                          ? audio_utils_ns_from_timespec(&transferBegin) : -1)
++                  << " end_ns=" << (endClockResult == 0
++                          ? audio_utils_ns_from_timespec(&transferEnd) : -1)
++                  << " begin_clock_result=" << beginClockResult
++                  << " begin_clock_errno=" << beginClockErrno
++                  << " end_clock_result=" << endClockResult
++                  << " end_clock_errno=" << endClockErrno;
 +        return ::android::OK;
      }
      const size_t bytesToTransfer = frameCount * mFrameSizeBytes;
      unsigned maxLatency = 0;
-@@ -202,6 +272,11 @@
+@@ -202,6 +288,11 @@
      }
      // Since the proxy can only count transferred frames since its creation,
      // we override its counter value with ours and let it to correct for buffered frames.
@@ -139,7 +155,7 @@
      alsa::resetTransferredFrames(mAlsaDeviceProxies[0], position->frames);
      if (mIsInput) {
          if (int ret = proxy_get_capture_position(mAlsaDeviceProxies[0].get(), &position->frames,
-@@ -221,6 +296,18 @@
+@@ -221,6 +312,18 @@
              }
              position->frames = static_cast<int64_t>(hwFrames);
              position->timeNs = audio_utils_ns_from_timespec(&timestamp);

@@ -20,7 +20,7 @@ for stage in range(2):
               'com.android.tools.r8.D8', '--min-api', '36', '--output', str(dex),
               *map(str, classes.rglob('*.class'))]
     result = subprocess.run(argv, capture_output=True, text=True, timeout=90)
-    commands.append({'argv': argv, 'exit': result.returncode, 'stderr': result.stderr})
+    commands.append({'argv': argv, 'exit': result.returncode, 'stdout': result.stdout, 'stderr': result.stderr})
     (out / 'build.json').write_text(json.dumps({'commands': commands,
         'source_sha256': hashlib.sha256(source.read_bytes()).hexdigest(),
         'launcher_sha256': hashlib.sha256(source.with_name('ServiceLauncher.java').read_bytes()).hexdigest(),
