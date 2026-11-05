@@ -1,12 +1,16 @@
 # Índice de evidencias
 
+341 (UUID 28003656-01d6-4c93-866c-4a34bf3e1a62): informe canónico ART →profile_coherence_experiment.integration341 vincula payloadSHA, original-logcat, MC1_RESULT/identidades, frame real, inventario/cache-readback, copia offline previa y recuperación/consumo. boot.art de 8167184 bytes, boot.oat de 14778176 bytes y boot.vdex de 1012072 bytes, todos con flag fs-verity; firma RSA verificada y copia alterada negativa son pruebas offline limitadas. No prueban carga de imágenes, revocación ni aislamiento. Salida nativa 0 y exterior 1, modo1 durante 304 s y restaurado a 0; ninguna aceptación por propiedades/exit0 solamente.
+
+Histórico anterior:
+
 Preparación ART posterior a340: informe canónico →profile_coherence_experiment identifica binario original profman (REA MCP `ev_0f73aa82e02bd43f5489998abfb92c9f1941986b30ad53d438bdb48fdc1f5da1`, sólo headers), fuentes ART fijadas, comandos ejecutados y perfil SHA `b6c53a209c86cb5973cde735455bdd5dc9c9e21c36f2ad42b337224a408862d7`.52.539 descriptores conservados,18 identificadores ZIP coincidentes; no prueba imágenes/carga. Se conserva el fallo del comprobador inicial: confundió Adler de DEX con CRC del contenedor; la fuente DexFileLoader justifica la corrección, sin editar el perfil.
 
 Resultados337/340 y fallos de preparación338/339: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.x509_reopen_correction`.337 conserva CLI original (PID1487 ausente→1984, lanzamiento COLD) y nota SHA `ade0b42b49d676eb10feb0ae1c3be4b82792d2ce8203f98c7e332f64e1a63322`; cierre negativo por plazo10s.340 conserva el frame P6 `6195a154fce052467c06214e6e32ea0c6dd94a1f53309f7e569a77ab8f5a7a74` con el texto visible tras clic real en otra cohorte; STOPPED/salida0 pero exterior1;19 contextos externos EACCES y fallo de ruta del diagnóstico tras pivot_root. Las copias offline debugfs preservan evidencia original, no son pruebas de acceso sin privilegios.19 pruebas nativas pasan fuera del sandbox; dentro cinco fallaron EPERM. Compilación y sintaxis pasan; no sustituyen el recorrido real.
 
 Histórico336:
 
-336 ·reports/android16-audio-bootstrap/artd-subprocess-progress.json, x509_reopen_correction.integration336: hashes de log/CLI, APK fuente/instalada c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440, frame IntroActivity7f0f69111db54602c3b6de648f45a1dcc2ae3e12c578d919994ebe6ab214c873, MAC348,94s/mode1/restaurado0, identidad final fallida, input0eventos, recuperación y consumo. La traza334 permisiva y REA MCP antes/después siguen separados. La matriz conserva los workflows históricos como tales y apunta a336 como intento actual parcial.
+336 ·reports/android16-audio-bootstrap/artd-subprocess-progress.json, x509_reopen_correction.integration336: hashes de log/CLI, APK fuente/instalada c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440, frame IntroActivity7f0f69111db54602c3b6de648f45a1dcc2ae3e12c578d919994ebe6ab214c873, MAC348,94s/mode1/restaurado a 0, identidad final fallida, input0eventos, recuperación y consumo. La traza334 permisiva y REA MCP antes/después siguen separados. La matriz conserva los workflows históricos como tales y apunta a336 como intento actual parcial.
 
 Índice histórico:
 

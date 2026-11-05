@@ -1042,7 +1042,115 @@
       "APK_inputs": 14,
       "scope": "Actual unprivileged original Bionic profman profile conversion; all original descriptors retained using adapted framework. StaticREA headers separate. No Android boot/services started, no profile bytes/checksums manually forged. No coherent bootimages/loading/signing/APK acceptance yet.",
       "initial_negative": "Compared location checksum incorrectly to raw DEX Adler; all18 failures preserved. OriginalDexFileLoader uses ZIPCRC32+i forcontainer; corrected verifier notprofilebytes.",
-      "next": "Integrate generated profile into private package, stop reusing incompatible precompiled system bootimages using original odrefresh contracts, produce/sign/load coherent images, then retain complete Markor workflow. Preserve old store/cache and source artifacts before regeneration."
+      "next": "Integrate generated profile into private package, stop reusing incompatible precompiled system bootimages using original odrefresh contracts, produce/sign/load coherent images, then retain complete Markor workflow. Preserve old store/cache and source artifacts before regeneration.",
+      "integration341": {
+        "checkpoint": "/home/tv/recuperacion-archtv/28003656-01d6-4c93-866c-4a34bf3e1a62-markor-software-launch",
+        "build": "dist/aosp16/package-cohort-build-341",
+        "payload_sha256": "d2f419be498c8c9f9ee4aae4179a65ea516ab0d26adafe4b6543185cf33e478b",
+        "original_profile_sha256": "b6c53a209c86cb5973cde735455bdd5dc9c9e21c36f2ad42b337224a408862d7",
+        "result": {
+          "path": "/home/tv/recuperacion-archtv/28003656-01d6-4c93-866c-4a34bf3e1a62-markor-software-launch/result.json",
+          "sha256": "9ede8bb2f479802549d8e802f866569c584a0bd33e8724aea58069c314bd6ae6"
+        },
+        "native_result": {
+          "path": "/home/tv/recuperacion-archtv/28003656-01d6-4c93-866c-4a34bf3e1a62-markor-software-launch/native-result.json",
+          "sha256": "92104e294c036dd5d8d8b32f240d540c69575a1a7ffceaa6a5c36ef5ea7e6010"
+        },
+        "identity_observations": {
+          "path": "/home/tv/recuperacion-archtv/28003656-01d6-4c93-866c-4a34bf3e1a62-markor-software-launch/identity-observations.json",
+          "sha256": "8f6fa169f9d441f225d63d07d25b8ee1107be61d8ecf9244fb2bf8d4cd8e5fcf"
+        },
+        "original_log": {
+          "path": "/home/tv/recuperacion-archtv/28003656-01d6-4c93-866c-4a34bf3e1a62-markor-software-launch/observed-original-logcat.txt",
+          "sha256": "d7ed90ac2697b3d779f78a6497b78d68450bac6fe804fbe28a03262142433df5"
+        },
+        "visual_note": {
+          "path": "/home/tv/recuperacion-archtv/28003656-01d6-4c93-866c-4a34bf3e1a62-markor-software-launch/visual-note-reopen.json",
+          "sha256": "ec2c98682fb2cba164f95760db6cab256e680244d9e79e5964b6ab2ee946f12b"
+        },
+        "cache_inventory": {
+          "path": "/home/tv/recuperacion-archtv/28003656-01d6-4c93-866c-4a34bf3e1a62-markor-software-launch/cache-offline-inventory.json",
+          "sha256": "df86947c27466373f66af6d7556c0a128082d3169e09ac032d0426bf1b47451c"
+        },
+        "cache_readback": {
+          "path": "/home/tv/recuperacion-archtv/28003656-01d6-4c93-866c-4a34bf3e1a62-markor-software-launch/cache-readback.json",
+          "sha256": "27c0045ce8c5093f6ec01e872b5270130a61a7451666fa8288f514f22be647d8"
+        },
+        "backup": {
+          "path": "/home/tv/recuperacion-archtv/28003656-01d6-4c93-866c-4a34bf3e1a62-markor-software-launch/userdata-backup.json",
+          "sha256": "9fc029d1cd5aaa966ab1e9f3235859f704052b50a63d1b5b1012881f65eb5cd1"
+        },
+        "recovery": {
+          "path": "/home/tv/recuperacion-archtv/28003656-01d6-4c93-866c-4a34bf3e1a62-markor-software-launch/recovery-readback.json",
+          "sha256": "073f017384e91958bc02953b714535ac7e896bac78eecf44ad87c82285ef07c5"
+        },
+        "consumer": {
+          "path": "/home/tv/recuperacion-archtv/28003656-01d6-4c93-866c-4a34bf3e1a62-markor-software-launch/completion-consumer.json",
+          "sha256": "f42a66a2c74c23aafa48dfe226787aed1e4fe18e0020ba82cedf8009939c91c7"
+        },
+        "native_exit": 0,
+        "outer_exit": 1,
+        "actual_original_sequence": [
+          "odrefresh --check missing realprivate/system and/data boot.oat ->exit79",
+          "original odrefresh compile ->exit80",
+          "originalodsign exit0, originalverification properties observed",
+          "intact Markor MainActivity displayed; retained337note opened withrealpointer input",
+          "actualSTOPPED and childexit0",
+          "exactidentityguard fails; observed26 expected25,19contextsdenied"
+        ],
+        "cache_boot_files": {
+          "boot.art": {
+            "bytes": 8167184,
+            "sha256": "b55c8b31d75d98580de0c7299673b78f7b2bedf16cd4032e90a09782c18c62a9",
+            "inode_flags": "0x180000"
+          },
+          "boot.oat": {
+            "bytes": 14778176,
+            "sha256": "ffb3dc0f67ff4781965c8ac4cf5c9e18efb1f9046de812ba36f0202160bd060d",
+            "inode_flags": "0x180000"
+          },
+          "boot.vdex": {
+            "bytes": 1012072,
+            "sha256": "04eec0e5ed498ba7dda3c8d59d3ae43e53e9611ae09440e7ac76d0246045cd74",
+            "inode_flags": "0x180000"
+          },
+          "boot-framework-adservices.art": {
+            "bytes": 3135936,
+            "sha256": "865e70f6da1c192b5a061e3eb3579a30d3826033e7c50263dc76444a81d7b959",
+            "inode_flags": "0x180000"
+          },
+          "boot-framework-adservices.oat": {
+            "bytes": 115552,
+            "sha256": "35267ed3733def669309b10c53b7779e2afd778f02f345da90c6e3631d59036c",
+            "inode_flags": "0x180000"
+          },
+          "boot-framework-adservices.vdex": {
+            "bytes": 225412,
+            "sha256": "5c1f8c01afd51cb98cf9570ec22171266ee040fdc059ce733957db857cba614b",
+            "inode_flags": "0x180000"
+          }
+        },
+        "cryptographic_scope": "Original generation/signing observed, six copiedbootartifacts actualfsverity flags. OpenSSL independently verifiesactual odsign.info RSA-PKCS1-SHA256 usingoriginal cert; bit-flippedcopy rejected. Originalruntime tamper/revocation/boottrust not accepted. No privatekey copied.",
+        "remaining": [
+          "Direct mapping/provenance ofgeneratedimages in ART processes notyetcaptured; runtimeworks andoldframeworkprofilemismatchabsent is indirect",
+          "Originalsignature/cache verification afternewcohortreopen",
+          "Stale app-specificcache imagechecksums cause originalARTfallback; no oldcachesdiscarded",
+          "Originaldex2oat warned UFFDIO_MOVE unsupported; previouslyprovedmemoryABI ispartial,notallARTmemorysemantics",
+          "Identityguardparser/profile assumptions stale; no permissionwidening or SIDsubstitution",
+          "R1/ARM/GMS/DRM/broadcompatibility/productgates remainopen"
+        ],
+        "additional_note_attempt": "After visualoldnoteproof, openednewfiledialog andtypedfilename; shutdownbeganduringinput. No new341note/save accepted; wakecommand5queuedafter senderclosed, notprocessed.",
+        "recovery_checks": {
+          "mode": 0,
+          "policy": 67,
+          "mac_seconds_actual": 304.2207321530004,
+          "image_allocation": 1073745920,
+          "backing_unmounted_detached": true,
+          "audit_lost_delta": 0,
+          "result_consumed": true
+        },
+        "next": "Add bounded original systemserver self-mapping/status evidence in existing SelectedRuntime entry, then repeatcoherentsignedcache reopen plusintactMarkor. Correct identitylifetimes using originalkernel metadata sources, not hoped SID or blanketrules."
+      }
     }
   }
 }

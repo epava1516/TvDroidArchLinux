@@ -6,7 +6,7 @@ r=Path(__file__).resolve().parents[2]
 # Reject typos before creating artifacts: omitted memory/media inputs change the candidate.
 allowed_flags = {'--checkpoint-diagnostic', '--keymint-component', '--keystore-component',
                  '--keystore-java-component', '--software-security', '--native-audio',
-                 '--audio-write-diagnostic', '--audio-synchronous-pcm', '--audio-production-dynamics', '--coherent-art',
+                 '--audio-write-diagnostic', '--audio-synchronous-pcm', '--audio-production-dynamics', '--coherent-art', '--coherent-art-images',
                  '--memfd-label-original', '--media-test', '--audio-only-media'}
 allowed_values = ('--observe-ms=', '--userdata-name=', '--apk-id=', '--markor-workflow-token=')
 assert all(a in allowed_flags or any(a.startswith(prefix) for prefix in allowed_values)
@@ -62,6 +62,8 @@ keymint_component='--keymint-component' in sys.argv[2:]
 software_platform='--software-security' in sys.argv[2:]
 coherent_art='--coherent-art' in sys.argv[2:]
 assert not coherent_art or software_platform
+coherent_art_images='--coherent-art-images' in sys.argv[2:]
+assert not coherent_art_images or coherent_art
 native_audio='--native-audio' in sys.argv[2:]
 assert not native_audio or software_platform
 audio_write_diagnostic='--audio-write-diagnostic' in sys.argv[2:]
@@ -130,7 +132,7 @@ if software_platform:
  lines[0]=lines[0].replace('-Xmx768m','-Xmx512m')
  lines.append('    setenv ARCHTV_SOFTWARE_SECURITY_PROFILE software-platform-v1')
 experiment_kind='markor-software-launch' if software_platform else 'keystore-java-component' if keystore_java else 'keystore-component' if keystore_component else ('keymint-component' if keymint_component else 'markor-launch')
-(out/'build-options.json').write_text(json.dumps({'apk_target':apk_target,'media_test':media_test,'coherent_art':coherent_art,'memory_library':memory_library,'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component and not software_platform,'software_security_platform':software_platform,'observe_ms':observe_ms,'persistent_userdata_name':userdata_name,'markor_workflow_token':workflow_token,'markor_workflow_budget_seconds':workflow_budget_seconds,'experiment_kind':experiment_kind,'original_apex_bootstrap':True,'original_logd':True,'preconnected_wayland':True,'original_system_dma_heap':True,'native_audio':native_audio,'audio_write_diagnostic':audio_write_diagnostic,'audio_synchronous_pcm':audio_synchronous_pcm,'audio_production_dynamics':audio_production_dynamics},indent=2)+'\n')
+(out/'build-options.json').write_text(json.dumps({'apk_target':apk_target,'media_test':media_test,'coherent_art':coherent_art,'coherent_art_images':coherent_art_images,'memory_library':memory_library,'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component and not software_platform,'software_security_platform':software_platform,'observe_ms':observe_ms,'persistent_userdata_name':userdata_name,'markor_workflow_token':workflow_token,'markor_workflow_budget_seconds':workflow_budget_seconds,'experiment_kind':experiment_kind,'original_apex_bootstrap':True,'original_logd':True,'preconnected_wayland':True,'original_system_dma_heap':True,'native_audio':native_audio,'audio_write_diagnostic':audio_write_diagnostic,'audio_synchronous_pcm':audio_synchronous_pcm,'audio_production_dynamics':audio_production_dynamics},indent=2)+'\n')
 if checkpoint_diagnostic:lines.append('    setenv ARCHTV_CHECKPOINT_DIAGNOSTIC 1')
 lines=[l for l in lines if not any(l.startswith('    setenv '+n+' ') for n in ['BOOTCLASSPATH','DEX2OATBOOTCLASSPATH','SYSTEMSERVERCLASSPATH','STANDALONE_SYSTEMSERVER_JARS'])];(entry/'selected-services.rc').write_text('\n'.join(lines)+'\n')
 old=r/'dist/aosp16/apex-cohort-build-6';commands=[]
@@ -420,6 +422,22 @@ if coherent_art:
  art_record['private_data_roots']=roots
  art_record['file_contexts_source']={'path':str(fc),'sha256':hashlib.sha256(fc.read_bytes()).hexdigest()}
  (out/'coherent-art-input.json').write_text(json.dumps(art_record,indent=2)+'\n')
+ if coherent_art_images:
+  # Reuse the original profman-produced profile; never rewrite DEX checksums.
+  profile_result=r/'dist/aosp16/art-profile-coherence-1/profile-result.json'
+  profile_record=json.loads(profile_result.read_text())
+  assert profile_record['original_descriptors']==profile_record['roundtrip_descriptors']==52539
+  assert not profile_record['missing_descriptors'] and not profile_record['extra_descriptors']
+  assert len(profile_record['dex_checks'])==18 and all(x['matches'] for x in profile_record['dex_checks'])
+  for original in profile_record['original_apks']:
+   assert hashlib.sha256(Path(original['path']).read_bytes()).hexdigest()==original['sha256'],original['path']
+  generated=Path(profile_record['profile'])
+  assert hashlib.sha256(generated.read_bytes()).hexdigest()==profile_record['profile_sha256']
+  adapted=profile_record['adapted_framework']
+  assert hashlib.sha256(Path(adapted['path']).read_bytes()).hexdigest()==adapted['sha256']
+  assert vendor['files']['/bin/archtv-keystore-framework.jar']['source']==adapted['path']
+  (out/'regenerated-art-profile-input.json').write_text(json.dumps({'result':str(profile_result),'result_sha256':hashlib.sha256(profile_result.read_bytes()).hexdigest(),'profile_sha256':profile_record['profile_sha256'],'framework_sha256':adapted['sha256'],'scope':'Profile artifact only; original odrefresh must generate/sign/load images at runtime; no acceptance from packaging'},indent=2)+'\n')
+  vendor['files']['/bin/archtv-framework-boot-image.prof']={'source':str(generated),'context':'u:object_r:system_file:s0','mode':0o444}
  (out/'coherent-art-profile').write_text('software-signed-cache-v1\n')
  vendor['files']['/bin/archtv-odsign-software']={'source':str(art_binary),'context':'u:object_r:odsign_exec:s0','mode':0o755}
  vendor['files']['/vendor/etc/archtv-coherent-art']={'source':str(out/'coherent-art-profile'),'context':'u:object_r:vendor_configs_file:s0','mode':0o444}

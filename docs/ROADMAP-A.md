@@ -1,5 +1,9 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+Resultado341: generación original y firma de caché avanzadas; nota337 abierta de nuevo. Siguiente incertidumbre bloqueante: demostrar qué imágenes mapea ART y que la caché nueva se verifica al reabrir. Añadir sólo lectura acotada de mapas/estado propios en SelectedRuntime existente, sin otra plataforma ni permisos al observador. Corregir después el verificador conforme a lifetimes reales (zygote→system_server, bootanimation omitida en este perfil), conservando controles UID/grupos/caps/NNP. Sigue pendiente coherencia e invalidación de cachés por aplicación al cambiar imagen, UFFDIO_MOVE, R1 y compatibilidad amplia.
+
+Histórico anterior:
+
 Siguiente experimento vertical: consumir el perfil regenerado real con odrefresh original, retirar de la imagen privada los precompilados incompatibles conforme a su contrato de recompilación y verificar generación→firma→carga→Markor. Preservar el almacén y la caché existentes antes de regenerarlos. En esa integración corregir el verificador de identidades con la vía original de metadatos y los ciclos reales; ninguna lectura denegada cuenta como SID observado. Resultado de preparación y límites: informe canónico ART →profile_coherence_experiment/identity_evidence_decision340.
 
 Prioridad vigente tras la nota337 y reapertura visual340: (1) cierre cooperativo340 observado: resolver el acceso denegado del observador a19 contextos y comprobar identidades exactas, sin sustituirlas por las solicitadas; (2) empaquetar imágenes/perfiles ART coherentes con el framework adaptado, verificar carga original y negativas de firma/revocación; (3) repetir recorridos completos Markor/VLC con el perfil resultante y continuar matriz real. La nota y los píxeles son avances funcionales parciales, no cierre del runtime. R1, ligereza/instalación/actualización y ARM/GMS/DRM conservan sus puertas independientes. Resultados y dependencias locales por hash en el informe canónico ART.

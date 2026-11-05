@@ -1,5 +1,9 @@
 # Estado actual y punto de entrada
 
+Vigente341 ·odrefresh original detecta la ausencia real de precompilados sólo en la raíz privada, genera caché (exit80) y odsign termina0. Se conservan seis artefactos boot con fs-verity y firma RSA real de odsign.info verificada offline; una copia alterada se rechaza. Markor intacta abre visualmente la nota337. STOPPED y salida nativa 0; exterior1 por guardia de identidades todavía desfasada/lecturas denegadas. Falta observación directa de imágenes mapeadas y verificación original de la nueva caché al reabrir. No se acepta otra nota341 ni coherencia/seguridad global. Fuente: informe canónico ART →profile_coherence_experiment.integration341.
+
+Histórico anterior:
+
 Vigente ·337 creó una nota mediante interfaz y permiso original de almacenamiento; el cliente original verificó sus 21 bytes antes y después de force-stop y relanzamiento con PID nuevo.340 la ha abierto visualmente en una cohorte nueva sobre Rust/Smithay. 340 recibió STOPPED y salida0; exterior1 por escritura de diagnóstico en ruta del host ya separada tras pivot_root (corregida para usar stdout).19 contextos externos devuelven EACCES; identidades/R1 pendientes.337 agotó el plazo de10s. El candidato permite45s acotados, conservando STOPPED y salida real obligatorios. Evidencia canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `x509_reopen_correction.integration337/integration340`. No acredita R1, coherencia completa de boot images/perfiles ni compatibilidad amplia.
 
 Histórico336:

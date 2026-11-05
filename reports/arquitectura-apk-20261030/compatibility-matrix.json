@@ -661,13 +661,13 @@
         }
       ],
       "latest_workflow_attempt": {
-        "candidate": 340,
+        "candidate": 341,
         "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
-        "record_sha256": "dc8693012e81c38944a381555496bf886bdfeccbd16aa61e543a15c3f7ced504",
-        "section": "coherent_cache_candidate.x509_reopen_correction.integration340",
+        "record_sha256": "24b2c27260f03358c711aeb5da60cc0c84dfea7856a2ae7a03ba41e9df507eec",
+        "section": "coherent_cache_candidate.profile_coherence_experiment.integration341",
         "native_exit": 0,
         "outer_exit": 1,
-        "scope": "337 real UI note21bytes, originalforce-stop/coldnewPID andFUSEpersistence;340 newcohort actualvisualreopen. Not wholecohort identity/MAC acceptance or coherentARTimages.",
+        "scope": "Originalbootcachegenerated/signed, intactMarkoractualeditorretainednote; directimageprovenancepending; outeridentityguardfails.337notecreation/lifecyclehistoricalvalid; no new341noteaccepted.",
         "stages": {
           "installation": "observed_intact_original_PMS",
           "launch": "observed_MainActivity",
@@ -676,16 +676,16 @@
           "main_function": "note_created_saved337",
           "persistence": "original_FUSE_equal_bytes337_and_visual_newcohort340",
           "services": "partial_original_subsystems_only",
-          "close": "original_app_force_stop337_and_cooperative_cohort_exit340",
-          "reopen": "original_cold_newPID337_and_actual_editor_newcohort340"
+          "close": "original_app_force_stop337_and_cooperative_cohort_exit341",
+          "reopen": "original_cold_newPID337_and_actual_editor_newcohort341"
         }
       },
       "runtime_security_observation": {
-        "candidate": 340,
-        "state": "MAC480 activated1,243s,restored0;19externalcontexts denied,outerfailed,R1open",
+        "candidate": 341,
+        "state": "MAC480activated1,304s,restored0;native0/outer1;R1open",
         "evidence": "reports/android16-audio-bootstrap/artd-subprocess-progress.json",
-        "sha256": "dc8693012e81c38944a381555496bf886bdfeccbd16aa61e543a15c3f7ced504",
-        "latest_result": "Functional note persistence and cooperative stop observed; externalcontextverification incomplete. Original parent diagnostics do not automatically resolve denied contexts. No broadcompatibility/security acceptance."
+        "sha256": "24b2c27260f03358c711aeb5da60cc0c84dfea7856a2ae7a03ba41e9df507eec",
+        "latest_result": "Generatedbootcachefsverityflags andmetadataRSAverification+offlinecopynegative; notruntime tamperpolicy/boottrust/identityacceptance."
       },
       "runtime_security_observation_history": [
         {
@@ -966,6 +966,13 @@
           "evidence": "reports/android16-audio-bootstrap/artd-subprocess-progress.json",
           "sha256": "d17f8c3db759b59123d67a71c875721f873b8798dd4c171d5f336e26d2714671",
           "latest_result": "Actualstoredcert/cachechecks andMarkorPMS/introframe; notallidentitychecks, input/note, coherentbootimage, isolation orfullworkflow."
+        },
+        {
+          "candidate": 340,
+          "state": "MAC480 activated1,243s,restored0;19externalcontexts denied,outerfailed,R1open",
+          "evidence": "reports/android16-audio-bootstrap/artd-subprocess-progress.json",
+          "sha256": "dc8693012e81c38944a381555496bf886bdfeccbd16aa61e543a15c3f7ced504",
+          "latest_result": "Functional note persistence and cooperative stop observed; externalcontextverification incomplete. Original parent diagnostics do not automatically resolve denied contexts. No broadcompatibility/security acceptance."
         }
       ],
       "runtime_security_history": [
@@ -1102,6 +1109,26 @@
             "services": "partial_original_subsystems_only",
             "close": "pending_app_lifecycle",
             "reopen": "pending_app_lifecycle"
+          }
+        },
+        {
+          "candidate": 340,
+          "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
+          "record_sha256": "dc8693012e81c38944a381555496bf886bdfeccbd16aa61e543a15c3f7ced504",
+          "section": "coherent_cache_candidate.x509_reopen_correction.integration340",
+          "native_exit": 0,
+          "outer_exit": 1,
+          "scope": "337 real UI note21bytes, originalforce-stop/coldnewPID andFUSEpersistence;340 newcohort actualvisualreopen. Not wholecohort identity/MAC acceptance or coherentARTimages.",
+          "stages": {
+            "installation": "observed_intact_original_PMS",
+            "launch": "observed_MainActivity",
+            "interface": "actual_editor_note_pixels_observed",
+            "input": "real_uinput_click_and_prior337_typing",
+            "main_function": "note_created_saved337",
+            "persistence": "original_FUSE_equal_bytes337_and_visual_newcohort340",
+            "services": "partial_original_subsystems_only",
+            "close": "original_app_force_stop337_and_cooperative_cohort_exit340",
+            "reopen": "original_cold_newPID337_and_actual_editor_newcohort340"
           }
         }
       ],

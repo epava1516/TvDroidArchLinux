@@ -287,6 +287,29 @@ if build_options.get('coherent_art',False):
   name,mode,uid,gid,context=(entry[k] for k in ['path','mode','uid','gid','context'])
   assert name in ['misc/odrefresh','misc/odsign','misc/odsign/metrics','misc/apexdata/com.android.art']
   root_code+="\np=root/'data'/"+repr(name)+";p.mkdir(parents=True,exist_ok=True);os.chmod(p,"+str(mode)+");os.chown(p,"+str(uid)+","+str(gid)+");os.setxattr(p,'security.selinux',"+repr(context.encode()+bytes([0]))+");assert os.getxattr(p,'security.selinux').rstrip(bytes([0]))=="+repr(context.encode())
+if build_options.get('coherent_art_images',False):
+ assert build_options.get('coherent_art')
+ profile_input=json.loads((payload.parent/'regenerated-art-profile-input.json').read_text())
+ assert hashlib.sha256(Path(profile_input['result']).read_bytes()).hexdigest()==profile_input['result_sha256']
+ # Hide incompatible precompiled artifacts only in the private factory. Original
+ # odrefresh sees their real absence and must regenerate through its normal path.
+ # No original GSI/APEX bytes, fingerprint, inventory or readiness are changed.
+ root_code+=r"""
+profile_source=candidate/'bin/archtv-framework-boot-image.prof'
+profile_target=root/'system/etc/boot-image.prof'
+assert hashlib.sha256(profile_source.read_bytes()).hexdigest()==PROFILE_SHA
+assert hashlib.sha256((candidate/'bin/archtv-keystore-framework.jar').read_bytes()).hexdigest()==FRAMEWORK_SHA
+assert profile_target.is_file()
+mount('--bind',profile_source,profile_target)
+mount('-o','remount,bind,ro,nosuid,nodev',profile_target)
+precompiled=root/'system/framework/x86_64'
+assert precompiled.is_dir() and (precompiled/'boot.art').is_file()
+precompiled_names=sorted(p.name for p in precompiled.iterdir())
+mount('-t','tmpfs','-o','ro,nosuid,nodev,mode=0555,context=u:object_r:system_file:s0','archtv-private-art-regeneration',precompiled)
+assert not list(precompiled.iterdir())
+assert os.statvfs(precompiled).f_flag & os.ST_RDONLY
+print('ORIGINAL_ART_REGENERATION_INPUTS '+json.dumps({'profile_sha256':PROFILE_SHA,'framework_sha256':FRAMEWORK_SHA,'private_precompiled_omitted':precompiled_names,'scope':'Private package selection only; require original generation/signature/loading, not image or APK acceptance'}),flush=True)
+""".replace('PROFILE_SHA',repr(profile_input['profile_sha256'])).replace('FRAMEWORK_SHA',repr(profile_input['framework_sha256']))
 media_test=build_options.get('media_test')
 if media_test is not None:
  assert apk_target['id']=='vlc' and media_test['bytes']<=1048576
