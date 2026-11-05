@@ -126,5 +126,48 @@
       "path": "/home/tv/recuperacion-archtv/f269655f-1e47-46c8-b335-07265d439ead-markor-software-launch/finite-audit/result.json",
       "sha256": "cb877d75f3774ad97e3855fee4526b8fee9a848e94e37e3503c3809f9b31bbb0"
     }
-  ]
+  ],
+  "control309": {
+    "record": "/home/tv/recuperacion-archtv/17131e27-c251-4abf-bba0-7d91d77cb313-markor-software-launch/functional-result.json",
+    "record_sha256": "a8f83da5be9ba44ec2d49323ad4ba7f02a6e370eb28dec1d77ffbee3472a6515",
+    "result": "original_installation_and_VIEW_command_pass_app_start_failed_cgroup_no_PCM",
+    "next_action": "Bounded private cgroup namespace reproduction: compare default versus mount-context projection and verify host labels unchanged. If supported and scoped, adapt existing factory mount then repeat full original APK/audio path; do not broadenzygotehostcgroup access."
+  },
+  "cgroup_label_experiment": {
+    "checkpoint": "/home/tv/recuperacion-archtv/df27e8bd-c3ee-4698-857f-e338c6679b16-cgroup-view",
+    "result_sha256": "f71086e685b13d6ff9269b449329838e2175c9531666228e8d76a93aa41e93d1",
+    "scope": "Only private delegated subtree and child namespaces; baselinepermissive, no Android or isolation acceptance",
+    "default_view": "AOSP label retained; mismatch not reproduced in this short test",
+    "mount_context": "Rejected32; kernel reports same superblock with different security settings. Not a supported correction.",
+    "host_root_unchanged": true,
+    "source_evidence": [
+      {
+        "path": "/home/tv/.cache/archtv/kernel-aosp16-1/source-1/linux-6.18.59/kernel/cgroup/cgroup.c",
+        "sha256": "a7854ee6ff51deb721a69150680645851d99c5daacdb8c779ca9529d5ed0849b"
+      },
+      {
+        "path": "/home/tv/.cache/archtv/kernel-aosp16-1/source-1/linux-6.18.59/security/selinux/hooks.c",
+        "sha256": "d39f3b81a355f8ae04cd7e4e9915e3bbd9f52727065fc5b177b735e4957bb846"
+      }
+    ],
+    "candidate": "Existing Linux factory parent retains O_PATH/CLOEXEC descriptors for root/system/apps cgroup.procs; no new permissions/relabels, explicit childpass_fds remains only6. Common-ancestor cgroup_may_write uses inode_permission without pathname; cold genfs inode hypothesis still needs integrated proof.",
+    "next_result_required": "Actual intact VLC start, original audioVIEW and PCM under existing policy65 enforcing window, host recovery and negatives; metadata pins not APK acceptance"
+  },
+  "control310": {
+    "record": "/home/tv/recuperacion-archtv/d4a9455a-a099-45ff-9c67-cf82a042ddc9-markor-software-launch/functional-result.json",
+    "record_sha256": "0af9b92e2b8db5b3aff9508961d8127a59460f1bfe912ae7a1ad0ac38892202e",
+    "result": "original_VLC_audio_VIEW_UI_and_PCM_observed_partial_after_dentry_lifetime_candidate",
+    "pcm_calls": 25,
+    "accepted_frames": 102400,
+    "source_frames": 192000,
+    "next_action": "Same310payload audio-only control with acpi_pm selected before runtime and automaticTSCrestoration, to contrast knownclockdivergence with identical APK/PCM. No compilation or securitychange. Ifdifferencepersists, inspect originalAudioFlingerformat/trackcounters via originalshellclient; do notinferfromUI orfilledbuffers."
+  },
+  "historical_image_retention": {
+    "index": "/home/tv/repositorio-principal/dist/aosp16/generated-image-retention-20261105.json",
+    "sha256": "886598762366fae41b1cbd92ee3c50138482826a681a6772d06814bbf9a183ce",
+    "scope": "Lossless generatedimage archives, restore originalbytes from each image-preservation.json before replay; source/kernel/userdata/logs retained",
+    "archives": 12,
+    "target_met": false,
+    "free_after": 2029887488
+  }
 }

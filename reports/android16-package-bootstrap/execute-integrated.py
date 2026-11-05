@@ -408,6 +408,27 @@ assert text.count(cg_observer)==1
 text=text.replace(cg_observer,cg_observer+"""
 for observed in [cg,cg/'cgroup.procs',cg/'system',cg/'apps']:
  print('LINUX_PRIVATE_CGROUP_LABEL '+json.dumps({'path':str(observed),'context':os.getxattr(observed,'security.selinux').decode().rstrip(chr(0))}),flush=True)
+# Keep connected dentries for migration ancestors in the existing Linux
+# factory parent. cgroup_may_write obtains ancestor inodes without a pathname;
+# a cold SELinux genfs inode can otherwise use the shared superblock SID.
+# O_PATH cannot write, CLOEXEC + explicit pass_fds=(6,) exclude Android.
+# This is a candidate lifetime correction, not a new permission or label.
+import fcntl,errno
+private_cgroup_procs_pins=[]
+for ancestor in [cg,cg/'system',cg/'apps']:
+ path=ancestor/'cgroup.procs'
+ pin=os.open(path,os.O_PATH|os.O_NOFOLLOW|os.O_CLOEXEC)
+ private_cgroup_procs_pins.append(pin)
+ assert pin!=6 and fcntl.fcntl(pin,fcntl.F_GETFD)&fcntl.FD_CLOEXEC
+ assert fcntl.fcntl(pin,fcntl.F_GETFL)&os.O_PATH
+ actual=os.fstat(pin);expected=path.stat()
+ assert (actual.st_dev,actual.st_ino)==(expected.st_dev,expected.st_ino)
+ context=os.getxattr(path,'security.selinux').decode().rstrip(chr(0))
+ assert context=='u:object_r:cgroup_v2:s0',context
+ try:os.write(pin,b'0')
+ except OSError as error:assert error.errno==errno.EBADF
+ else:raise AssertionError('Metadata pin unexpectedly writable')
+ print('LINUX_PRIVATE_CGROUP_DENTRY_PIN '+json.dumps({'path':str(path),'fd':pin,'device':actual.st_dev,'inode':actual.st_ino,'context':context,'cloexec':True,'write_rejected':'EBADF','owner':'Linux factory parent lifetime only; not passed to native/Android child','scope':'Candidate for original cgroup ancestor check; not APK or isolation acceptance'}),flush=True)
 """)
 
 # Original cgroup-v2 system/app hierarchy for the already owned cohort only.

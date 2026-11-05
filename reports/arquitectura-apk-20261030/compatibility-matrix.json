@@ -103,11 +103,10 @@
           "scope": "Actual Linux keyboard/TV navigation and original permission dialogs; no playback/full isolation claim."
         },
         "playback_blocker": {
-          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
-          "section": "native_audio296",
+          "record": "/home/tv/recuperacion-archtv/d4a9455a-a099-45ff-9c67-cf82a042ddc9-markor-software-launch/functional-result.json",
+          "record_sha256": "0af9b92e2b8db5b3aff9508961d8127a59460f1bfe912ae7a1ad0ac38892202e",
           "accepted": false,
-          "scope": "Previous FMQ/memory barrier passed enough for original ALSA worker to receive data; actual ALSA writer returns-1 and transfer drops4096frames. No physical PCM/audio accepted; missing DSP/fullR1 open."
+          "scope": "Current310: originalVLCaudioVIEW/UI and25TinyALSAwrites102400frames observed without oldHALqueue drops/write errors. Reference192000frames not covered, acoustic/timing/realhardwarecontrols/lifecycle/fullR1 unresolved. AVloadalone doesnotexplain samecount in audio-only. Prior296write-error record preserved in history."
         },
         "thumbnail": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
@@ -158,7 +157,21 @@
           "record": "/home/tv/recuperacion-archtv/f269655f-1e47-46c8-b335-07265d439ead-markor-software-launch/functional-result.json",
           "record_sha256": "cb941211d7330d8f41fb53d3bbaa60ce813812c753236bd29c7cfb1de55b7443",
           "scope": "Original audioMediaStore publication/readback; PMSinstall insufficientstorage. No VIEW, PCM or lifecycle acceptance in308."
-        }
+        },
+        "audio_only310": {
+          "record": "/home/tv/recuperacion-archtv/d4a9455a-a099-45ff-9c67-cf82a042ddc9-markor-software-launch/functional-result.json",
+          "record_sha256": "0af9b92e2b8db5b3aff9508961d8127a59460f1bfe912ae7a1ad0ac38892202e",
+          "scope": "OriginalVLC VIEW/NowPlaying/PCM afterparentcgroupdentrylifetime candidate;102400of192000referenceframes, nofullaudio/acoustic/timing/R1 acceptance."
+        },
+        "playback_blocker_history": [
+          {
+            "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+            "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
+            "section": "native_audio296",
+            "accepted": false,
+            "scope": "Previous FMQ/memory barrier passed enough for original ALSA worker to receive data; actual ALSA writer returns-1 and transfer drops4096frames. No physical PCM/audio accepted; missing DSP/fullR1 open."
+          }
+        ]
       }
     },
     {
