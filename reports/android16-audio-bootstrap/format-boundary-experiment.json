@@ -1,5 +1,5 @@
 {
-  "status": "original_track_never_filled_HAL_writes_not_source_audio_evidence",
+  "status": "original_production_DP_allows_real_AudioTrack_consumption_timing_still_incomplete",
   "utc": "2026-11-05T03:11:55.325296+00:00",
   "previous_control": {
     "run_id": "a443800f-c903-4819-af20-f11cf6cd00eb",
@@ -93,7 +93,7 @@
         "build": "dist/aosp16/package-cohort-build-315",
         "sha256": "b8a75efb2c52208dff8323fd211b3b6a9700f918bbca9c6db73e891cd9de80c3",
         "source_input_hashes_match": true,
-        "runtime": "started315_original_services_result_pending",
+        "runtime": "terminal_consumed; realclientServer137306, registeredDP notenabled, timing warnings, nofullaudio",
         "checkpoint": "/home/tv/recuperacion-archtv/024d84b1-a192-4d63-896a-a6d0d4f08640-markor-software-launch"
       }
     }
@@ -102,5 +102,15 @@
     "manifest": "dist/aosp16/package-cohort-build-314/image-preservation.json",
     "sha256": "9086529561eafb96c0cbc313e7a2238476f2c66475703604e8053bfd7d4a6f3d",
     "scope": "Closed/consumed own314raw recovered losslessly fromgzip; all logs/sources/userdata retained"
+  },
+  "control315": {
+    "path": "/home/tv/recuperacion-archtv/024d84b1-a192-4d63-896a-a6d0d4f08640-markor-software-launch/functional-result.json",
+    "sha256": "7b98dec06d5303bc70b832a80d9ba6070a48429fb361ae72a837b8d1b48bff35"
+  },
+  "next_control316": {
+    "scope": "Same315payload, only temporaryacpi_pm withTSCrollback; actualclientdata now flows unlike311, so timing uncertainty newly actionable",
+    "status": "active_result_pending",
+    "checkpoint": "/home/tv/recuperacion-archtv/c4a1674a-e6ea-4f84-ae73-d856660265ad-markor-software-launch",
+    "payload_sha256": "b8a75efb2c52208dff8323fd211b3b6a9700f918bbca9c6db73e891cd9de80c3"
   }
 }
