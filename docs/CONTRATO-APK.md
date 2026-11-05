@@ -1,5 +1,7 @@
 # Contrato vigente · AOSP Android 16 QPR2
 
+Resultado357: el recorrido original PMS→Home privado→HWC→Context/Instrumentation→Markor/interfaz/nota y cierre de cohorte está ejecutado y contrastado. Retorno RPC no equivale a frame: se conservan testigos originales, capturas y hashes por separado. Aceptación limitada al recorrido de nota existente; R1, resto de APK/funciones, instalación/actualización, ligereza y ARM/GMS/DRM siguen abiertos. Véase informe ART →integration357.
+
 Actualización355: Home visual y retorno por cliente original probados; el catálogo y lanzamiento desde Home aún no están integrados. Los dominios Home/compositor comparten principal de confianza: no es aislamiento entre ambos. El reto adicional de seis entradas quedó incompleto y R1 permanece abierto. Véase informe ART →integration355.
 
 353 acredita el handoff visual seleccionado y la reapertura original de la nota; los envoltorios1 impiden aceptar el ensayo completo. No acredita todavía admisión del exec de Home en enforcing, sus controles de entrada propios ni catálogo/lanzamiento APK desde su UI. Home/compositor comparten principal de confianza y no se declara aislamiento. Los criterios completos del roadmap siguen vigentes: no cerrar compatibilidad amplia ni R1 por esta integración parcial.

@@ -1,5 +1,9 @@
 # Índice de evidencias
 
+357 pasa el recorrido seleccionado: catálogo PMS real→Home Rust/búsqueda→D-pad→Context/Instrumentation original inicia MainActivity→interfaz/nota348 intacta. Dieciséis entradas físicas, nueve outputs originales AMS/FUSE, guardias de identidad/Installer/CE/hashAPK y tres invocaciones terminadas0. Nativa0/exterior0;338.104s de ventana enforcing registrada, host69/permisivo y datos desmontados/loop retirado verificados, consumido sin cola. Primera captura pedida como Home muestra Markor y no cuenta como Home; la búsqueda/enfoque de tarjeta sí se inspeccionó. No es creación nueva357 ni compatibilidad APK amplia/R1. Siguiente: VLC real y su audio/vídeo sobre la base coherente actual, con negativas concretas del launcher en la misma cohorte. Informe ART →integration357.
+
+Histórico anterior:
+
 356 falla por el guion UI: Enter activó Q del teclado virtual, no la tarjeta. No hubo RPC de lanzamiento; no es un fallo probado de Context/Instrumentation. Se ejecutó el catálogo original con dos entradas y la búsqueda mostró una tarjeta Markor real. Nativa1/exterior1, cohorte cerrada, datos desmontados/loop retirado, política69/permisivo y recuperación verificados; resultado consumido sin cola. Se conserva355 como último cierre seleccionado positivo. Siguiente357: misma imagen356 y frontend, nuevo UUID/backup, selección D-pad del resultado original y Enter tras la captura real inspeccionada; no recompilar AOSP ni relanzar por CLI. Informe ART →integration356.
 
 Histórico anterior:

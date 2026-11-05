@@ -1,7 +1,7 @@
 # Graph Report - repositorio-principal  (2026-11-05)
 
 ## Corpus Check
-- 369 files · ~357,246 words
+- 369 files · ~357,760 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 70 file(s) not represented in the graph (top: .cil 26, .patch 19, .xml 12)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `06ddc63e`
+- Built from commit: `2d19b052`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -347,7 +347,7 @@ Nodes (7): Construcción y comprobaciones, Desarrollo del compositor Rust, Ensay
 
 ### Community 26 - "Arquitectura objetivo"
 Cohesion: 0.06
-Nodes (31): ALSA: escrituras y reloj son contratos separados, Antecedentes históricos (no son decisiones vigentes), Arquitectura anterior BASE-AOSP-1, Arquitectura objetivo anterior, Arquitecturas y aislamiento, Bionic, libhybris y servicios originales, Comparación de estrategias y mezclas actuales, Componentes, procesos y cierre mínimo (+23 more)
+Nodes (31): ALSA: escrituras y reloj son contratos separados, Antecedentes históricos (no son decisiones vigentes), Arquitectura anterior BASE-AOSP-1, Arquitectura objetivo anterior, Arquitecturas y aislamiento, Bionic, libhybris y servicios originales, Catálogo y lanzamiento originales desde Home, Comparación de estrategias y mezclas actuales (+23 more)
 
 ### Community 27 - "68-graphify.sh"
 Cohesion: 0.40

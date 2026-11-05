@@ -1896,7 +1896,7 @@
           "sha256": "d3eb7667da5d6443deb22eb91de5893b561c0d7ec098f92087a2ed33a0a58f36"
         }
       },
-      "current_integration": 356,
+      "current_integration": 357,
       "integration348": {
         "checkpoint": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch",
         "build": "dist/aosp16/package-cohort-build-348",
@@ -2977,6 +2977,135 @@
           "search-before-enter.png": {
             "path": "/home/tv/recuperacion-archtv/07be21fd-7b33-4681-b29f-3d61c75d288a-markor-software-launch/search-before-enter.png",
             "sha256": "26c0ca0acd65ccd17474915e2013f44bc1f81533e9aae25d52ab482255a88387"
+          }
+        }
+      },
+      "integration357": {
+        "checkpoint": "/home/tv/recuperacion-archtv/237e6a54-d906-4c80-801e-5ef767f7186b-markor-software-launch",
+        "build": "dist/aosp16/package-cohort-build-356",
+        "unchanged_payload_reused": true,
+        "native_exit": 0,
+        "outer_exit": 0,
+        "three_owner_services_success": true,
+        "selected_home_launch_workflow_accepted": true,
+        "broad_APK_compatibility_accepted": false,
+        "physical_command_count": 16,
+        "original_catalog": {
+          "real_entries": 2,
+          "through": "Original PMS -> authenticated HWC worker -> trusted Wayland global -> private Home FD",
+          "scope": "Actual query data and visible Markor search card, not full launcher feature or APK compatibility acceptance"
+        },
+        "original_launch": {
+          "component": "net.gsantner.markor/net.gsantner.markor.activity.MainActivity",
+          "user": 0,
+          "original_log_witness": "LAUNCHER_ORIGINAL_START_REQUEST_RETURNED",
+          "compositor_sequence": 16,
+          "compositor_status": 0,
+          "home_local_request_id": 22,
+          "cli_relaunch": false,
+          "scope": "Actual original Context/Instrumentation call plus original AMS foreground and physical frame/note correlation; RPC return alone is not presentation acceptance"
+        },
+        "normal_note_observations": {
+          "verified": true,
+          "launch_source": "original_home_gateway",
+          "resumed": {
+            "before": true,
+            "background": false,
+            "relaunched": true
+          },
+          "note_sha256": "d3dd765e00aedeb5b0325cbb4a7efa3a66892ed7e0b36ea2a385586dd7551a33",
+          "token": "348ace01",
+          "scope": "Original AMS top-resumed sequence and unchanged original FUSE note hashes only; correlate physical input/lifecycle/crashes separately. Not task finish, process death, full app compatibility or isolation acceptance"
+        },
+        "protected_original_outputs": 9,
+        "original_identity_guard_verified": true,
+        "apk_source_installed_sha256": "c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440",
+        "enforcing_interval_seconds": 338.10432185800164,
+        "host_restored_mode": 0,
+        "recovery_verified": true,
+        "consumed": true,
+        "scope": "Selected intact Markor initial original install/CLI launch, physical note view/Back, Rust Home search/D-pad selection, original launcher request, app UI/note reopening and original FUSE persistence, coherent service closure. Existing348 note; not new note creation357, forced process death, all Markor features/APKs, R1/isolation/lightness/update/FBE/reboot or ARM/GMS/DRM acceptance. Home/compositor share trusted principal; Home pointer support and original recent-task integration remain open. First purpose-Home capture is not classified as Home.",
+        "next": "Run real VLC local-media workflow on the current coherent ART/Bionic/verity/native-audio base, reusing original MediaProvider/codec/audio/services; contrast historical audio322/installation331 rather than retaining old memfd block as current. Include concrete launcher peer negatives in a functional cohort; keep R1/ARM/GMS/DRM separate.",
+        "evidence": {
+          "native-result.json": {
+            "path": "/home/tv/recuperacion-archtv/237e6a54-d906-4c80-801e-5ef767f7186b-markor-software-launch/native-result.json",
+            "sha256": "75d44b0d352f50895206577ad978a3e7f92f19a2a9d935a6e27384a5370d62d3"
+          },
+          "result.json": {
+            "path": "/home/tv/recuperacion-archtv/237e6a54-d906-4c80-801e-5ef767f7186b-markor-software-launch/result.json",
+            "sha256": "4514f30ec795018dc32e9e919e91e4b2e013c2799fc63587949794bc13cdcdc6"
+          },
+          "terminal-owner-status.json": {
+            "path": "/home/tv/recuperacion-archtv/237e6a54-d906-4c80-801e-5ef767f7186b-markor-software-launch/terminal-owner-status.json",
+            "sha256": "1e268e9086ff278abe199c5499bcaf33ac6cb59daf3fe3c79c52f926cf847e0b"
+          },
+          "completion-result.json": {
+            "path": "/home/tv/recuperacion-archtv/237e6a54-d906-4c80-801e-5ef767f7186b-markor-software-launch/completion-result.json",
+            "sha256": "864bfc6db938309be721c77b41ecf78a3292f1e07051255abf074b947a4e61bd"
+          },
+          "completion-consumer.json": {
+            "path": "/home/tv/recuperacion-archtv/237e6a54-d906-4c80-801e-5ef767f7186b-markor-software-launch/completion-consumer.json",
+            "sha256": "bcaa4fc46e5ddd5da66cf081ad64cf2a2ad1b402ba0b614808ddf9536b320864"
+          },
+          "original-identities.json": {
+            "path": "/home/tv/recuperacion-archtv/237e6a54-d906-4c80-801e-5ef767f7186b-markor-software-launch/original-identities.json",
+            "sha256": "b3695bfaa5357bf26dcb859e0c56bb8b8ccd040b0171f537203c183fb8afd5b2"
+          },
+          "original-installer.json": {
+            "path": "/home/tv/recuperacion-archtv/237e6a54-d906-4c80-801e-5ef767f7186b-markor-software-launch/original-installer.json",
+            "sha256": "c64477d9d4031524daaa84e5b2f316ae498ed3ef6b730bf916db274c8e5733cc"
+          },
+          "original-storage.json": {
+            "path": "/home/tv/recuperacion-archtv/237e6a54-d906-4c80-801e-5ef767f7186b-markor-software-launch/original-storage.json",
+            "sha256": "52317999ce29ef5dcb447eb63399327fd18cb724dde91f5014b9f145a8422908"
+          },
+          "original-apk-hashes.json": {
+            "path": "/home/tv/recuperacion-archtv/237e6a54-d906-4c80-801e-5ef767f7186b-markor-software-launch/original-apk-hashes.json",
+            "sha256": "1ed9bbc1e96919582fa1a4f3fd691364239c2a6a3151f3dceec89e8377e0d2e0"
+          },
+          "original-home-note-observations.json": {
+            "path": "/home/tv/recuperacion-archtv/237e6a54-d906-4c80-801e-5ef767f7186b-markor-software-launch/original-home-note-observations.json",
+            "sha256": "c508bbd983d3508e2c2088217e9a1aa687a24c0b6da79280396f62f30d29d54f"
+          },
+          "original-workflow-capture.json": {
+            "path": "/home/tv/recuperacion-archtv/237e6a54-d906-4c80-801e-5ef767f7186b-markor-software-launch/original-workflow-capture.json",
+            "sha256": "c8146d72a70bca8cbca4919a14e7b3f1da4a185846c7d91f9954de625f2864da"
+          },
+          "observed-original-logcat.txt": {
+            "path": "/home/tv/recuperacion-archtv/237e6a54-d906-4c80-801e-5ef767f7186b-markor-software-launch/observed-original-logcat.txt",
+            "sha256": "84f8d9f890fa3b0a69ac6bcfa6a0f33d5636e0e210b00ae15a3eb7776d4f68fd"
+          },
+          "mac-window.json": {
+            "path": "/home/tv/recuperacion-archtv/237e6a54-d906-4c80-801e-5ef767f7186b-markor-software-launch/mac-window.json",
+            "sha256": "51aea4971f11ad2e7e9f7dede6f592ac55e68d2d99405bc6be76ac44a65eb6ef"
+          },
+          "recovery-readback.json": {
+            "path": "/home/tv/recuperacion-archtv/237e6a54-d906-4c80-801e-5ef767f7186b-markor-software-launch/recovery-readback.json",
+            "sha256": "984c2e08adf84c3e36c5c3761688239bdb1766ef6999b23bfc5f861346b1a7c3"
+          },
+          "backing-after.json": {
+            "path": "/home/tv/recuperacion-archtv/237e6a54-d906-4c80-801e-5ef767f7186b-markor-software-launch/backing-after.json",
+            "sha256": "5d9e48b25f4d95f5a0cc2c4afc39492ad3e4bcb85e23bb3029524ca701aa29e5"
+          },
+          "native-ui-sequence.json": {
+            "path": "/home/tv/recuperacion-archtv/237e6a54-d906-4c80-801e-5ef767f7186b-markor-software-launch/native-ui-sequence.json",
+            "sha256": "eb67cde4f2e44049e205cbaa292e1f6339e24826811ae9f8674bbdea3781df84"
+          },
+          "visual-review357.json": {
+            "path": "/home/tv/recuperacion-archtv/237e6a54-d906-4c80-801e-5ef767f7186b-markor-software-launch/visual-review357.json",
+            "sha256": "8441d05b2f984a4fa000ea46e5f16465065cacd58195b9c478d69d61b5d4469b"
+          },
+          "background-fatal-scope.json": {
+            "path": "/home/tv/recuperacion-archtv/237e6a54-d906-4c80-801e-5ef767f7186b-markor-software-launch/background-fatal-scope.json",
+            "sha256": "8c8bdb11543d05d1531d72b51dd3cd0dbfda34120aa504a24af9b4b744728277"
+          },
+          "review-ui-0.png": {
+            "path": "/home/tv/recuperacion-archtv/237e6a54-d906-4c80-801e-5ef767f7186b-markor-software-launch/review-ui-0.png",
+            "sha256": "dcc386cb0e4ae29e04a89c8f09e49da999a4fda215deb80eda38699102802f3a"
+          },
+          "review-ui-1.png": {
+            "path": "/home/tv/recuperacion-archtv/237e6a54-d906-4c80-801e-5ef767f7186b-markor-software-launch/review-ui-1.png",
+            "sha256": "9cd5c23d64794c99266cfa8212858975f2bf4e97e872bee5527008915728eaf3"
           }
         }
       }
