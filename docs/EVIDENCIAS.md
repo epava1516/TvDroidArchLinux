@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+Audio307 ·[Registro con hashes](../reports/android16-audio-bootstrap/synchronous-pcm-progress.json): original VLC→FMQ→TinyALSA,25 escrituras/102400frames completos por llamada; vídeo sourceframe40, cierre y recuperación comprobados. No cubre la fuente nominal192000frames; underrun y fallo SoundPool-9 permanecen visibles. Drain/flush no ejercitados, pausa no implementada, sonido acústico no demostrado. No constituye compatibilidad APK general.
+
 ART305 ·[Registro y hashes](../reports/android16-audio-bootstrap/artd-subprocess-progress.json): compilación original vía artd/art_exec/dex2oat32 con retorno0 y OAT conservado; política65/24 decisiones offline, cierre y recuperación. Límites: checksum de imagen de arranque incompatible, fallback imageless, exterior1/R1 abierto y proveedor ELF de REA MCP no configurado. No prueba compatibilidad general APK ni audio continuo.
 
 Memoria63 · [Registro canónico](../reports/android16-audio-bootstrap/source-progress.json), private_audio_memory_policy63: hashes distintos de binario y lectura kernel, macro/fuentes, nueve decisiones offline y carga permisiva/contextos. El registro enlaza backup62 y reversión. Ninguna ejecución real del nuevo probe memfd/stream/PCM queda probada por estos resultados.

@@ -17,12 +17,16 @@ out = (repo / sys.argv[2]).resolve()
 out.mkdir()
 patches = [repo / 'runtime/aosp/android16-qpr2/patches/audio-primary-linux-alsa.patch']
 write_diagnostic = '--write-diagnostic' in sys.argv[3:]
+synchronous_pcm = '--synchronous-pcm' in sys.argv[3:]
+assert not (write_diagnostic and synchronous_pcm), 'Choose one StreamAlsa candidate'
+if synchronous_pcm:
+    patches.append(repo / 'runtime/aosp/android16-qpr2/patches/audio-alsa-synchronous-pcm.patch')
 if write_diagnostic:
     patches.append(repo / 'runtime/aosp/android16-qpr2/patches/audio-alsa-write-observation.patch')
 sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
 study = Path('/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio')
 record = {'scope': 'Compilation only; no link, service or output acceptance',
-          'write_diagnostic': write_diagnostic, 'patches': {}, 'commands': [], 'objects': []}
+          'write_diagnostic': write_diagnostic, 'synchronous_pcm': synchronous_pcm, 'patches': {}, 'commands': [], 'objects': []}
 files = []
 for patch in patches:
     meta = json.loads(patch.with_suffix('.json').read_text())

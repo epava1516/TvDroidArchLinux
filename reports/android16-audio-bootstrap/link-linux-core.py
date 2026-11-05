@@ -21,12 +21,17 @@ core = json.loads((repo / 'dist/aosp16/audio-original-build-12/build.json').read
 for source in core['sources']:
     assert sha(source['path']) == source['sha256'], source['path']
 write_diagnostic = '--write-diagnostic' in sys.argv[2:]
-adapted_dir = repo / ('dist/aosp16/audio-linux-primary-build-4' if write_diagnostic else 'dist/aosp16/audio-linux-primary-build-1')
+synchronous_pcm = '--synchronous-pcm' in sys.argv[2:]
+assert not (write_diagnostic and synchronous_pcm), 'Choose one StreamAlsa candidate'
+adapted_dir = repo / ('dist/aosp16/audio-linux-primary-build-5' if synchronous_pcm else
+                      'dist/aosp16/audio-linux-primary-build-4' if write_diagnostic else
+                      'dist/aosp16/audio-linux-primary-build-1')
 adapted = json.loads((adapted_dir / 'build.json').read_text())
-assert len(adapted['objects']) == (3 if write_diagnostic else 2)
+assert len(adapted['objects']) == (3 if write_diagnostic or synchronous_pcm else 2)
+assert adapted.get('synchronous_pcm', False) == synchronous_pcm
 assert all(c['exit'] == 0 for c in adapted['commands'])
-if write_diagnostic:
-    assert adapted['write_diagnostic']
+if write_diagnostic or synchronous_pcm:
+    assert adapted['write_diagnostic'] == write_diagnostic
     assert any(u['original'].endswith('/alsa/StreamAlsa.cpp') for u in adapted['objects'])
     for path, expected in adapted['patches'].items():
         assert sha(path) == expected, path
@@ -140,6 +145,9 @@ for unit in adapted['objects']:
 for path, expected in adapted.get('patches', {}).items():
     record['inputs'][path] = expected
 record['write_diagnostic'] = write_diagnostic
+record['synchronous_pcm'] = synchronous_pcm
+record['adapted_build'] = {'path': str(adapted_dir / 'build.json'), 'sha256': sha(adapted_dir / 'build.json')}
+
 if result.returncode == 0:
     record['binary_sha256'] = sha(binary)
 (out / 'link.json').write_text(json.dumps(record, indent=2) + '\n')

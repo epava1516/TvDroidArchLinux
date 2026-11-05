@@ -1,0 +1,126 @@
+--- a/aidl/default/alsa/StreamAlsa.cpp
++++ b/aidl/default/alsa/StreamAlsa.cpp
+@@ -14,6 +14,7 @@
+  * limitations under the License.
+  */
+ 
++#include <cerrno>
+ #include <cmath>
+ #include <limits>
+ 
+@@ -76,7 +77,13 @@
+     return mConfig.has_value() ? ::android::OK : ::android::NO_INIT;
+ }
+ 
+-::android::status_t StreamAlsa::drain(StreamDescriptor::DrainMode) {
++::android::status_t StreamAlsa::drain(StreamDescriptor::DrainMode mode) {
++    if (!mIsInput && mSinks.empty() && mAlsaDeviceProxies.size() == 1) {
++        if (mode != StreamDescriptor::DrainMode::DRAIN_ALL) return ::android::INVALID_OPERATION;
++        const int ret = pcm_drain(mAlsaDeviceProxies[0].get()->pcm);
++        LOG(INFO) << "LINUX_PCM_DRAIN result=" << ret;
++        return ret == 0 ? ::android::OK : ::android::INVALID_OPERATION;
++    }
+     if (!mIsInput) {
+         static constexpr float kMicrosPerSecond = MICROS_PER_SECOND;
+         const size_t delayUs = static_cast<size_t>(
+@@ -87,10 +94,20 @@
+ }
+ 
+ ::android::status_t StreamAlsa::flush() {
++    if (!mIsInput && mSinks.empty() && mAlsaDeviceProxies.size() == 1) {
++        auto* pcm = mAlsaDeviceProxies[0].get()->pcm;
++        const int stop = pcm_stop(pcm);
++        const int prepare = stop == 0 ? pcm_prepare(pcm) : -1;
++        LOG(INFO) << "LINUX_PCM_FLUSH stop=" << stop << " prepare=" << prepare;
++        return stop == 0 && prepare == 0 ? ::android::OK : ::android::INVALID_OPERATION;
++    }
+     return ::android::OK;
+ }
+ 
+ ::android::status_t StreamAlsa::pause() {
++    // This candidate does not advertise successful hardware pause without an implementation.
++    if (!mIsInput && mSinks.empty() && mAlsaDeviceProxies.size() == 1)
++        return ::android::INVALID_OPERATION;
+     return ::android::OK;
+ }
+ 
+@@ -107,7 +124,14 @@
+     decltype(mAlsaDeviceProxies) alsaDeviceProxies;
+     decltype(mSources) sources;
+     decltype(mSinks) sinks;
+-    for (const auto& device : getDeviceProfiles()) {
++    const auto profiles = getDeviceProfiles();
++    // Linux attached single-device blocking PCM: preserve the original FMQ worker
++    // and DeviceProxy, but remove the example's nonblocking lossy MonoPipe.
++    // No header, object layout or vtable changes; external USB/input paths stay original.
++    const bool synchronous = !mIsInput && profiles.size() == 1 &&
++            !profiles[0].isExternal && profiles[0].direction == PCM_OUT;
++    if (synchronous && getContext().getAsyncCallback()) return ::android::INVALID_OPERATION;
++    for (const auto& device : profiles) {
+         if ((device.direction == PCM_OUT && mIsInput) ||
+             (device.direction == PCM_IN && !mIsInput)) {
+             continue;
+@@ -128,6 +152,7 @@
+             return ::android::NO_INIT;
+         }
+         alsaDeviceProxies.push_back(std::move(proxy));
++        if (synchronous) continue;
+         auto sink = makeSink(mIsInput);  // Do not block the writer when it is on our thread.
+         if (sink != nullptr) {
+             sinks.push_back(sink);
+@@ -146,6 +171,10 @@
+     mAlsaDeviceProxies = std::move(alsaDeviceProxies);
+     mSources = std::move(sources);
+     mSinks = std::move(sinks);
++    if (synchronous) {
++        LOG(INFO) << "LINUX_PCM_SYNCHRONOUS attached=1 devices=1 no_intermediate_pipe=1";
++        return ::android::OK;
++    }
+     mIoThreadIsRunning = true;
+     for (size_t i = 0; i < mAlsaDeviceProxies.size(); ++i) {
+         mIoThreads.emplace_back(mIsInput ? &StreamAlsa::inputIoThread : &StreamAlsa::outputIoThread,
+@@ -159,6 +188,33 @@
+     if (mAlsaDeviceProxies.empty()) {
+         LOG(FATAL) << __func__ << ": no opened devices";
+         return ::android::NO_INIT;
++    }
++    *actualFrameCount = 0;
++    if (!mIsInput && mSinks.empty() && mAlsaDeviceProxies.size() == 1) {
++        if (frameCount > static_cast<size_t>(std::numeric_limits<int>::max()) ||
++            mFrameSizeBytes == 0 || frameCount > std::numeric_limits<size_t>::max() / mFrameSizeBytes)
++            return ::android::BAD_VALUE;
++        auto* proxy = mAlsaDeviceProxies[0].get();
++        alsa::applyGain(buffer, mGain, frameCount * mFrameSizeBytes,
++                        mConfig.value().format, mConfig->channels);
++        while (*actualFrameCount < frameCount) {
++            const int ret = pcm_writei(proxy->pcm,
++                    static_cast<char*>(buffer) + *actualFrameCount * mFrameSizeBytes,
++                    static_cast<unsigned>(frameCount - *actualFrameCount));
++            if (ret <= 0 || static_cast<size_t>(ret) > frameCount - *actualFrameCount) {
++                LOG(ERROR) << "LINUX_PCM_SYNC_WRITE requested=" << frameCount
++                           << " accepted=" << *actualFrameCount << " result=" << ret
++                           << " errno=" << errno;
++                return ::android::INVALID_OPERATION;
++            }
++            *actualFrameCount += ret;
++            proxy->transferred += ret;
++        }
++        *latencyMs = static_cast<int32_t>(std::min(proxy_get_latency(proxy),
++                static_cast<unsigned>(std::numeric_limits<int32_t>::max())));
++        LOG(INFO) << "LINUX_PCM_SYNC_WRITE requested=" << frameCount
++                  << " accepted=" << *actualFrameCount;
++        return ::android::OK;
+     }
+     const size_t bytesToTransfer = frameCount * mFrameSizeBytes;
+     unsigned maxLatency = 0;
+@@ -202,7 +258,9 @@
+     }
+     // Since the proxy can only count transferred frames since its creation,
+     // we override its counter value with ours and let it to correct for buffered frames.
+-    alsa::resetTransferredFrames(mAlsaDeviceProxies[0], position->frames);
++    // In the synchronous path the proxy counts only actual successful PCM writes.
++    if (mIsInput || !mSinks.empty())
++        alsa::resetTransferredFrames(mAlsaDeviceProxies[0], position->frames);
+     if (mIsInput) {
+         if (int ret = proxy_get_capture_position(mAlsaDeviceProxies[0].get(), &position->frames,
+                                                  &position->timeNs);

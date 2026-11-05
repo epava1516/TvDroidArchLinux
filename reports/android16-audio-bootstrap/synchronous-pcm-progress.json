@@ -1,0 +1,122 @@
+{
+  "status": "integrated_original_pcm_writes_observed_partial",
+  "run_id": "e22360b9-f498-4042-a4ca-b0f87dd25a47",
+  "checkpoint": "/home/tv/recuperacion-archtv/e22360b9-f498-4042-a4ca-b0f87dd25a47-markor-software-launch",
+  "patch": "runtime/aosp/android16-qpr2/patches/audio-alsa-synchronous-pcm.patch",
+  "patch_sha256": "3aee1ac5b4b06ede78cd78b6498fef573446de8c0ccef5c8a3a36311da50b61a",
+  "build": "dist/aosp16/audio-linux-primary-build-5/build.json",
+  "link": "dist/aosp16/audio-linux-core-link-7/link.json",
+  "binary_sha256": "6ada810dc1e97f2b18f8d01b08682917b0fcbf9e41b5879e61d815c4e3a5b6fc",
+  "payload_sha256": "c086fd84aeb9efdf10a6110d65f9a9c4df9d09ba14ad8429e95817567938722e",
+  "source_interfaces": "Original StreamAlsa/StreamPrimary/ModulePrimary, FMQ and TinyALSA; no public header/layout changes",
+  "limits": [
+    "No runtime/audio/clock acceptance from compilation",
+    "Hardware pause unsupported and returns error; no fake success",
+    "No acoustic acceptance; external USB and input keep original paths",
+    "Blocking IO and driver errors/closure must be tested in bounded integrated runtime"
+  ],
+  "negative_builds": {
+    "306": "Rejected incorrect option plus source-change guard; never executed, staging losslessly archived with manifest.",
+    "link6": "Old diagnostic-only assertion rejected sync selector before link; corrected, distinctlink7 succeeded."
+  },
+  "option_regression": "Unknown option rejected before mkdir; direct execution, no synthetic test messages",
+  "counts": {
+    "calls": 25,
+    "requested": 102400,
+    "accepted": 102400,
+    "errors": 0,
+    "old_monopipe_drop_lines": 0,
+    "source_audio_nominal_frames": 192000,
+    "source_audio_sample_rate": 48000,
+    "source_audio_duration_seconds": 4,
+    "limitation": "Not all source duration demonstrated at PCM; no causal inference or acoustic acceptance"
+  },
+  "functional": {
+    "original_install": "Success session1110735214; bytes original/installed verified in checkpoint",
+    "original_launch": "Status ok and actual VLC TV UI observed",
+    "input": "Actual native events1wake2History3tile4Enter5Back; UIHistory and full-screen sourceframe40 observed",
+    "video_frame": "playback-sample-8.png counter40/time3.333; earlier UI/black samples retained as negatives",
+    "audio": "Real TinyALSA accepts actual counts; no intermediate MonoPipe path. Not full audio acceptance.",
+    "drain_flush_pause": "Drain and flush not exercised by this playback. Hardware pause explicitly unsupported; no successful control claimed.",
+    "lifecycle": "Back delivered and activity recorded stopped, black surface; no reopen/complete lifecycle acceptance"
+  },
+  "unresolved": [
+    "AudioFlinger BUFFER TIMEOUT/underrun after last write; exact causality not established.",
+    "SoundPool UI audio track creation failed -9; separate from VLC track actual writes.",
+    "Physical/acoustic output, mixer route, VM timing and full source-frame coverage remain unverified.",
+    "Coherent ART boot image and full R1 isolation remain open."
+  ],
+  "closure": {
+    "native_component_exit": 0,
+    "outer_runner_exit": 1,
+    "root_audit_exit": 0,
+    "actual_after": {
+      "mode": "0",
+      "policy_sha256": "5851879a58b0dbe713336162ffd58178cac4e842171213b78a7c5a80b525c706",
+      "units": {
+        "archtv-host-owner-e22360b9-f498-4042-a4ca-b0f87dd25a47.service": {
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "MainPID": "0"
+        },
+        "archtv-package-runner-e22360b9-f498-4042-a4ca-b0f87dd25a47.service": {
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "MainPID": "0"
+        },
+        "archtv-markor-session-e22360b9-f498-4042-a4ca-b0f87dd25a47.service": {
+          "LoadState": "not-found",
+          "ActiveState": "inactive",
+          "MainPID": "0"
+        }
+      },
+      "clock": "tsc",
+      "udev_drop_absent": true,
+      "pcm_status": "closed"
+    },
+    "audit_lost_delta": 0,
+    "audit_rules_unchanged": true,
+    "mixer_identical": true,
+    "sysrq_device_metadata_identical": true,
+    "loops_dm_bpf_closed": true
+  },
+  "next_experiment": "Intact VLC audio-only source through original MediaStore/AudioTrack on same payload base, to separate AV synchronization from PCM delivery. Preserve original APIs and errors; collect source/output frame counts and actual controls. No continuous/acoustic acceptance until proved.",
+  "evidence": [
+    {
+      "path": "/home/tv/recuperacion-archtv/e22360b9-f498-4042-a4ca-b0f87dd25a47-markor-software-launch/observed-original-logcat.txt",
+      "sha256": "def065a78aa3f5bd8ca84623d503405e61a518d3a6557169d52022d31cf048e6"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/e22360b9-f498-4042-a4ca-b0f87dd25a47-markor-software-launch/synchronous-pcm-selected.log",
+      "sha256": "d84b93518b4526ae0efa7a660fc89603b2d8c9dba2ddd2d505568ccc759e2ec0"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/e22360b9-f498-4042-a4ca-b0f87dd25a47-markor-software-launch/observed-markor-installed-bytes.txt",
+      "sha256": "c146a12476c08676a24d7499cbd51016ae5f10a67bcd0aa563087c29a202eae6"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/e22360b9-f498-4042-a4ca-b0f87dd25a47-markor-software-launch/recovery-readback.json",
+      "sha256": "ffa995e82ba80cb693a3fba4775484fed9dc80f7b288155512072e0d1b4d35a5"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/e22360b9-f498-4042-a4ca-b0f87dd25a47-markor-software-launch/finite-audit/result.json",
+      "sha256": "fc06b1d7f7ea1c4ebadcfbb88f2eec1639708d420becc7a6a456a41c99d8439d"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/e22360b9-f498-4042-a4ca-b0f87dd25a47-markor-software-launch/interaction-events.json",
+      "sha256": "a799eff150c2a210eb1c4996ce78f50cdd03da6c3da89adf8453746d7d1cd5d9"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/e22360b9-f498-4042-a4ca-b0f87dd25a47-markor-software-launch/playback-sample-8.png",
+      "sha256": "926a45cbcc126d4bdb34366854a12214f28c7fef0d4c4eb09d83fbf21699427a"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/e22360b9-f498-4042-a4ca-b0f87dd25a47-markor-software-launch/playback-additional-candidates.json",
+      "sha256": "7b3d8b86f28c9d05af6ec67a58466db8abc1126e48d6964cea50b4f2871e5045"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/e22360b9-f498-4042-a4ca-b0f87dd25a47-markor-software-launch/host-owner-journal.jsonl",
+      "sha256": "3be8dbb6f30a359eef4c4d3fa4d0adde5d498626d91c7bd9f32a821eb0f5987d"
+    }
+  ]
+}

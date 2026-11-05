@@ -20,12 +20,19 @@ vendor = json.loads(path.read_text())
 study = Path('/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1')
 root = repo / 'dist/aosp16/factory-inputs-3/root'
 write_diagnostic = '--audio-write-diagnostic' in sys.argv[2:]
-core = repo / ('dist/aosp16/audio-linux-core-link-5' if write_diagnostic else 'dist/aosp16/audio-linux-core-link-3')
+synchronous_pcm = '--audio-synchronous-pcm' in sys.argv[2:]
+assert not (write_diagnostic and synchronous_pcm), 'Choose one audio backend candidate'
+core = repo / ('dist/aosp16/audio-linux-core-link-7' if synchronous_pcm else
+               'dist/aosp16/audio-linux-core-link-5' if write_diagnostic else
+               'dist/aosp16/audio-linux-core-link-3')
 effect = repo / 'dist/aosp16/audio-effect-link-2'
 sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
 record = {'scope': 'Private original audio deployment candidate, not service or PCM acceptance',
           'files': {}, 'adaptations': []}
 record['write_diagnostic'] = write_diagnostic
+record['synchronous_pcm'] = synchronous_pcm
+if synchronous_pcm:
+    record['adaptations'].append('Candidate attached single-device blocking PCM removes reference lossy MonoPipe, counts actual TinyALSA writes and propagates errors. Real drain/flush, pause explicitly unsupported. No runtime/continuity/clock/acoustic acceptance.')
 if write_diagnostic:
     record['adaptations'].append('Original StreamAlsa logs opened config and failure errno/pcm_get_error only; transfer/return/retry behavior unchanged. This is not an audio correction or PCM acceptance.')
 for parent, executable in [(core, 'android.hardware.audio.service-aidl.example'),

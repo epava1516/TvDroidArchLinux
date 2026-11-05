@@ -148,6 +148,11 @@
           "record": "/home/tv/recuperacion-archtv/429a62f4-0ff6-48ec-8009-634fe4b2bb3e-markor-software-launch/functional-result.json",
           "record_sha256": "e680357c7c36d83fab13c71cc2f9a444fe0ba394d8064651ba73f9a827105949",
           "scope": "Actual software video counters5→32 on Smithay; successful proxy writes39/159744frames coexist with MonoPipe drops. No continuous/acoustic audio, timing, complete lifecycle or R1 acceptance."
+        },
+        "synchronous_pcm307": {
+          "record": "/home/tv/recuperacion-archtv/e22360b9-f498-4042-a4ca-b0f87dd25a47-markor-software-launch/functional-result.json",
+          "record_sha256": "9f85e5e7d525c2f330221ad68945d2f5b8a190fcd1ff20dac868d663bd92ec26",
+          "scope": "25actual writes102400frames without intermediate queue drops; source192000frames not covered, underrun observed. No full audio/acoustic/timing/lifecycle/R1 acceptance."
         }
       }
     },
