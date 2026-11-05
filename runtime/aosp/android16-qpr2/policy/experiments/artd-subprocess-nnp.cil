@@ -1,0 +1,10 @@
+; Original private/artd.te uses domain_auto_trans for profman, dex2oat,
+; derive_classpath and odrefresh; each belongs to artd_subprocess_type.
+; Actual302/303 art_exec exec fails at the extra Linux inherited NNP1 gate.
+; Keep NNP1 and all original transition/entrypoint/UID/capability checks.
+; This admits only that original closed subprocess set through process2;
+; it adds no process transition, executable, file, Binder, device or capability
+; permission. In particular original artd execute_no_trans neverallow remains.
+; Pin/set/source and positive/negative decisions must be reviewed on updates.
+; Offline preparation is not compiler availability, authorization or APK proof.
+(allow artd artd_subprocess_type (process2 (nnp_transition)))

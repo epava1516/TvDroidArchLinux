@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+ART305 ·[Registro y hashes](../reports/android16-audio-bootstrap/artd-subprocess-progress.json): compilación original vía artd/art_exec/dex2oat32 con retorno0 y OAT conservado; política65/24 decisiones offline, cierre y recuperación. Límites: checksum de imagen de arranque incompatible, fallback imageless, exterior1/R1 abierto y proveedor ELF de REA MCP no configurado. No prueba compatibilidad general APK ni audio continuo.
+
 Memoria63 · [Registro canónico](../reports/android16-audio-bootstrap/source-progress.json), private_audio_memory_policy63: hashes distintos de binario y lectura kernel, macro/fuentes, nueve decisiones offline y carga permisiva/contextos. El registro enlaza backup62 y reversión. Ninguna ejecución real del nuevo probe memfd/stream/PCM queda probada por estos resultados.
 
 Audio290 · [Registro canónico](../reports/android16-audio-bootstrap/source-progress.json), native_audio290: original AudioFlinger/AudioPolicy consultados, componente nativo0 y cierre bajo enforcing62. [Captura física](../reports/android16-package-bootstrap/vlc-mac290-first-frame.png) muestra sólo frame0. El registro enlaza logs originales/hash, AVC del memfd, prueba de recuperación y límites: sin PCM ni movimiento,21 plugins DSP ausentes, observación PCM Linux denegada; R1 abierto.

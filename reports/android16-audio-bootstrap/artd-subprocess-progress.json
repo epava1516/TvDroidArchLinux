@@ -1,0 +1,98 @@
+{
+  "status": "original_artd_compilation_observed_partial",
+  "run_id": "f997d849-e411-4a4d-a1f0-b28e44e6ef04",
+  "checkpoint": "/home/tv/recuperacion-archtv/f997d849-e411-4a4d-a1f0-b28e44e6ef04-markor-software-launch",
+  "policy": {
+    "number": 65,
+    "input_sha256": "3c14ef6c26f671466830fc86a443ab96b58109e6fb64679b711b150fc2cfa063",
+    "actual_kernel_sha256": "5851879a58b0dbe713336162ffd58178cac4e842171213b78a7c5a80b525c706",
+    "baseline_after": "0",
+    "module": "runtime/aosp/android16-qpr2/policy/experiments/artd-subprocess-nnp.cil",
+    "module_sha256": "78b105504908f85192bd7125d423909306b0097e3dfeb2d652c57a423aa00bfb",
+    "offline_comparison": "dist/aosp16/audio-policy-inputs-65/access-comparison.json",
+    "compiler_artifact": "dist/aosp16/selected-platform-policy-65/artifact.json",
+    "recovery": "/home/tv/recuperacion-archtv/20261105T-artd-subprocess-policy65/RETOMAR.txt",
+    "offline_comparison_sha256": "270c5ab34660cb29ce1fb1ebe8e6734d85b47663a5f8cc01adafb93bf7f4148a"
+  },
+  "scope": {
+    "original_closed_domains": [
+      "dex2oat",
+      "profman",
+      "derive_classpath",
+      "odrefresh"
+    ],
+    "new_permission": "artd \u2192 artd_subprocess_type process2 nnp_transition only",
+    "original_transition_and_entrypoint_required": true,
+    "execute_no_trans_not_granted": true,
+    "offline_queries": 24,
+    "actual_runtime_observation": "Original artd invokes art_exec --drop-capabilities \u2192 dex2oat32 targeting oat/x86_64/base.odex; dex2oat returned code 0",
+    "boot_image": "Checksum mismatch remains; compiler falls back to imageless running. No coherent boot image acceptance."
+  },
+  "apk": {
+    "package": "org.videolan.vlc",
+    "original_and_installed_sha256": "4646633ede40c4784c5584087cffc5c60cc45b16966ae0b36cedd784d7c4a11e",
+    "install_session": 1268158865,
+    "install": "original Success, streamed49444910bytes"
+  },
+  "artifact": {
+    "source": "/home/tv/.local/share/archtv/experimental-userdata/vlc-cycle-277/data/app/~~4oe_4uY5_w3j_YgkUd6n5w==/org.videolan.vlc-oSf-b0OE3F3dKsQs_WaxuQ==/oat/x86_64/base.odex",
+    "copy": "/home/tv/recuperacion-archtv/f997d849-e411-4a4d-a1f0-b28e44e6ef04-markor-software-launch/generated-base.odex",
+    "bytes": 279488,
+    "sha256": "592a6547a36834772ec2c5e9d25dcffa1acf3c4fd6cb38b844779d16204ea2af",
+    "scope": "Generated OAT artifact; presence does not establish optimized code coverage or APK compatibility"
+  },
+  "evidence": [
+    {
+      "path": "/home/tv/recuperacion-archtv/f997d849-e411-4a4d-a1f0-b28e44e6ef04-markor-software-launch/observed-original-logcat.txt",
+      "sha256": "3df26870ecbee76ef1d63ffb3cf3b25633df52cfe6530b4de5da4082b369f7aa"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/f997d849-e411-4a4d-a1f0-b28e44e6ef04-markor-software-launch/artd-compiler-selected.log",
+      "sha256": "2859698ec2a95d4fa8bcc16281f83483f8eb323ed82ae1fc47f2f73c1c51d6f0"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/f997d849-e411-4a4d-a1f0-b28e44e6ef04-markor-software-launch/observed-markor-install.txt",
+      "sha256": "c9f16bd81304b32a2acbe341edcf19cd6aa41f26ccc1a9dbc0b6cd5401564f51"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/f997d849-e411-4a4d-a1f0-b28e44e6ef04-markor-software-launch/observed-markor-installed-bytes.txt",
+      "sha256": "8290c2e5eed73bb8baf1e74d85e77c7e6761a9e4cf1d5d0fd0122eb1a9375ed4"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/f997d849-e411-4a4d-a1f0-b28e44e6ef04-markor-software-launch/root-after.json",
+      "sha256": "91289d8045376bdfc2ae875c31b38f38edd4e1167f02b50298fa154d5c928428"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/f997d849-e411-4a4d-a1f0-b28e44e6ef04-markor-software-launch/host-owner-journal.json",
+      "sha256": "161818c36832c7f241c3ff17661845f26bcf9edd212f9e478a5314c3f0588de5"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/f997d849-e411-4a4d-a1f0-b28e44e6ef04-markor-software-launch/rea-oat-layout-provider-unavailable.json",
+      "sha256": "fbc7094117ba7a265e2b12246a49af1121f80937c63d329a63639839838b6b8f"
+    }
+  ],
+  "closure": {
+    "outer_exit": 1,
+    "native_inventory41": true,
+    "active_loops": "",
+    "final_dm": [],
+    "bpf_cleanup_verified": true,
+    "host_audit_exit": 0,
+    "clocksource_after": "tsc",
+    "owner_journal": "Unique systemd unit Deactivated successfully; not inferred from default status of garbage-collected unit"
+  },
+  "limits": [
+    "No full R1 isolation acceptance; exterior runner remains1.",
+    "No x86_32 APK or ARM translation acceptance from the bitness of compiler executable.",
+    "No optimized code coverage inferred from OAT presence.",
+    "REA MCP responded provider_unavailable: REA_PWNTOOLS_PYTHON unset; no ELF inspection completed.",
+    "No continuous/acoustic audio, complete application lifecycle or broad APK compatibility accepted."
+  ],
+  "source": {
+    "project": "platform/system/sepolicy",
+    "pin": "43e4494a5a78317819dcc2766a11927c12ef3dfd",
+    "original_artd_te": "https://android.googlesource.com/platform/system/sepolicy/+/43e4494a5a78317819dcc2766a11927c12ef3dfd/private/artd.te",
+    "original_artd_source": "https://android.googlesource.com/platform/art/+/1690c6912a7972c9e62c39b48c706de9b8b18b4a/artd/artd.cc",
+    "artd_source_sha256": "94a90649a5ebdc06d371ad52def35ddb115cf5bda272538f18cc2f1df725485b"
+  }
+}

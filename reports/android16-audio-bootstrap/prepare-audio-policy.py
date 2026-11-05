@@ -60,6 +60,10 @@ if '--vold-private-bind' in sys.argv[2:]:
     assert with_memory, 'Retain verified audio63 base for the private-bind candidate'
     profile['modules'].append('runtime/aosp/android16-qpr2/policy/experiments/vold-private-bind-unmount.cil')
     profile['limitations'].append('Exact original vold UnmountTree need on Linux-backed private bind. Filesystem SID is GLOBAL; detached private root/mount/PID namespaces remain mandatory. No new file/proc/namespace/capability or mount/remount access. Offline only, R1 remains open.')
+if '--artd-subprocess-nnp' in sys.argv[2:]:
+    assert with_memory and '--vold-private-bind' in sys.argv[2:], 'Preserve the complete verified policy64 base'
+    profile['modules'].append('runtime/aosp/android16-qpr2/policy/experiments/artd-subprocess-nnp.cil')
+    profile['limitations'].append('Only the extra inherited NNP admission for the closed original artd_subprocess_type set. Original domain_auto_trans/entrypoints/credentials remain mandatory and execute_no_trans remains denied. Offline only; actual compiler identities, operation and R1/APK acceptance require real execution.')
 profile['input_sha256']['aosp'] = hashlib.sha256(merged).hexdigest()
 profile['limitations'].append('Original complete vendor/hal_audio_default.te added; no runtime/domain transition/device/isolation acceptance.')
 (out / 'profile.json').write_text(json.dumps(profile, indent=2) + '\n')
