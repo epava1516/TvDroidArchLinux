@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+Conservación operativa353: imágenes frías346–351 archivadas en Zstandard, con SHA256 de todos los bytes descomprimidos comprobado antes de retirar el raw. La imagen352, userdata y pendientes permanecen. Para consultar o repetir un hito archivado, restaurar primero su raw con el script/índice exactos; esta restauración de artefactos no es una prueba de recuperación de VM/política. Índice canónico: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.historical_artifact_preservation.closed_payload_archives353`.
+
 352 (27aeed55-5cfe-4e25-8191-74ab26e84e07): informe ART enlaza la captura íntegra de diez outputs originales y su guardia ejecutada positiva, callbacks onDestroy, tareas21/22, PID1354 conservado, WARM291ms y editor real de nota348/hash21bytes. Guardias anteriores positivas y cierre/recuperación/consumo verificados. Tres fallos DeviceLock/DSU y ausencia de ANR Markor sólo en el tramo capturado. Home-boundary-source-observation enlaza hashes de fuentes y compositor352: único toplevel14:08:16→14:13:05, persistente al cerrar Markor. Señala reutilización de canal/ATMS/Home privado, sin afirmar nuevo protocolo ejecutado. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration352`.
 
 Histórico anterior:
