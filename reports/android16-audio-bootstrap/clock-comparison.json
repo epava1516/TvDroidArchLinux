@@ -79,5 +79,25 @@
     "sha256": "7737128a86eddd06156a67d8c4bab8e9b3dce151c44e0f65531204bef3af0281",
     "result": "startup deadline, no APK launch; normal recovery verified; descriptor publisher unexercised"
   },
-  "next_experiment": "Bounded display cold-start budget240s/outer250s, original service/dumpsys checks unchanged; observe120s/MAC420s. Next image301 compiles; do not infer availability."
+  "next_experiment": "Image302: same coldstartup240/250s and source, observe300000/MAC600 to allow original install/workflow; no interpretation of streamed bytes as installation.",
+  "cold_boot_image": {
+    "source": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/image_space.cc",
+    "source_sha256": "c7b972499fe83b8e949aae4aa641b7fea7c3b5c52c2920979b155748f378765f",
+    "source_pin": "1690c6912a7972c9e62c39b48c706de9b8b18b4a",
+    "source_url": "https://android.googlesource.com/platform/art/+/1690c6912a7972c9e62c39b48c706de9b8b18b4a/runtime/gc/space/image_space.cc",
+    "runtime_log": "/home/tv/recuperacion-archtv/6f903b15-9ded-4dcc-a2c4-e473635ce64a-markor-software-launch/observed-original-logcat.txt",
+    "runtime_log_sha256": "2fd14a957aca8fcce5a5b01f109d288b37f87e6d445fd0e6e902b57487f1fb85",
+    "observed_error": [
+      "11-04 23:50:05.797  root   446   446 E zygote64: Error reading named image component header for /system/framework/boot.art, error: Failed to open oat file '/system/framework/x86_64/boot-framework.oat' when validating it for image '/system/framework/boot-framework.art': In oat file '/system/framework/boot-framework.oat': dex file checksum 0x60691e5e does not match checksum 0x2d29da0e of external dex file '/system/framework/framework.jar!classes3.dex'"
+    ],
+    "contract": "Original ART validates precompiled image dex checksums. Primary image invalid => original full compilation to memfd, when enabled; generated descriptors retained in process, no persistent cache inferred.",
+    "installation_requirement": "Generate/validate coherent boot images with original Bionic ART and exact adapted framework/classpath, ISA, profiles and compiler inputs. Invalidate atomically on updates. No fake odsign/ART cache verification success.",
+    "scope": "Source plus actual mismatch; not proof why compilation did not finish before run300 deadline."
+  },
+  "integrated301": {
+    "record": "/home/tv/recuperacion-archtv/cd08abc4-7666-4fed-a48c-19c82d3bf0f5-markor-software-launch/functional-result.json",
+    "sha256": "13e648d81f31138e6fd7cc0f4c8674b690e4ca339055b153b1e0c819dc9265f9",
+    "result": "Original install session761543334 accepted49444910 streamed bytes. Observe120s expired; workflow SIGKILL9/commit brokenpipe during close. Not completed installation or launch.",
+    "scope": "Original Display succeeds with longer cold budget, no APK accepted. Normal recovery; request publisher unexercised."
+  }
 }

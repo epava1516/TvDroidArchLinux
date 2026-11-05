@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793836545.4892497,
-    "seen": 1793836557.4299903,
-    "ast_hash": "da5b8c3513b00181d1aeb5b8d5cbdc3c",
+    "mtime": 1793837026.9845307,
+    "seen": 1793837046.803966,
+    "ast_hash": "cfd65f8b559e78c3687b56f77426abfa",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793836545.4928558,
-    "seen": 1793836557.4305503,
-    "ast_hash": "a0df4d8ac61535b30eccf991343275a8",
+    "mtime": 1793837026.9933057,
+    "seen": 1793837046.8050284,
+    "ast_hash": "413be9ad01d8859e2a8481b4f4a1e313",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
