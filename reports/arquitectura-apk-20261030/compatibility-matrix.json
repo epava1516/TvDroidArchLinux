@@ -663,7 +663,7 @@
       "latest_workflow_attempt": {
         "candidate": 340,
         "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
-        "record_sha256": "0e1c21ab3d5aa7bd92eb4799ddb03ba79eca11d82381335636f3da61ebd217ed",
+        "record_sha256": "dc8693012e81c38944a381555496bf886bdfeccbd16aa61e543a15c3f7ced504",
         "section": "coherent_cache_candidate.x509_reopen_correction.integration340",
         "native_exit": 0,
         "outer_exit": 1,
@@ -684,7 +684,7 @@
         "candidate": 340,
         "state": "MAC480 activated1,243s,restored0;19externalcontexts denied,outerfailed,R1open",
         "evidence": "reports/android16-audio-bootstrap/artd-subprocess-progress.json",
-        "sha256": "0e1c21ab3d5aa7bd92eb4799ddb03ba79eca11d82381335636f3da61ebd217ed",
+        "sha256": "dc8693012e81c38944a381555496bf886bdfeccbd16aa61e543a15c3f7ced504",
         "latest_result": "Functional note persistence and cooperative stop observed; externalcontextverification incomplete. Original parent diagnostics do not automatically resolve denied contexts. No broadcompatibility/security acceptance."
       },
       "runtime_security_observation_history": [

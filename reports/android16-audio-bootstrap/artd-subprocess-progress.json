@@ -978,6 +978,71 @@
           "consumer": "consumed"
         }
       }
+    },
+    "identity_evidence_decision340": {
+      "analysis": {
+        "path": "/home/tv/recuperacion-archtv/5eca4625-0b53-4dbb-9ba9-bec591fc6f82-markor-software-launch/identity-next-decision.json",
+        "sha256": "de8047a5f5ac7fcf7941888815247609947effb072f50d24b5a6ff385a8b0c04"
+      },
+      "offline_original_libsepol": {
+        "path": "/home/tv/recuperacion-archtv/5eca4625-0b53-4dbb-9ba9-bec591fc6f82-markor-software-launch/offline-context-access.json",
+        "sha256": "60fa16d8d9630eb81492c790a2083093e6acfacec6386b9f9d39d68caefcb04b"
+      },
+      "original_ps": {
+        "path": "/home/tv/recuperacion-archtv/5eca4625-0b53-4dbb-9ba9-bec591fc6f82-markor-software-launch/observed-android-ps-after.txt",
+        "sha256": "93abfb04f6157cfba9e7cd981a6d757fc31af81789ad2d6e40132b78f9fde0a0"
+      },
+      "scope": "Original shell obtainedactualkernelcontexts forzygote/system_server/Markor whileLinuxobserver denied. Originalparentstatus andoriginalCLI may provide bounded evidence channel; integration/negativechecks pending. No new permission or security acceptance.",
+      "next": "Repair stale lifetime/parser assumptions based on source (bootanimation intentionallyabsent; originalzygote forks systemserver), preserve exact enabled-service checks and actual UID/caps/NNP."
+    },
+    "profile_coherence_experiment": {
+      "result": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/art-profile-coherence-1/profile-result.json",
+        "sha256": "9807c46b86f729946ba2942222447a70045d462d6d642233e7651b982a2d6bb5"
+      },
+      "source_art": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/art-profile-coherence-1/source.json",
+        "sha256": "636591eed5fd1a262123f0d1669d032322856d6f7295816d88b19961f4557ff7"
+      },
+      "source_runtime": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/art-profile-coherence-1/runtime-source.json",
+        "sha256": "7bcc87044bb1df4612e469b04e161973186b9ab5e0ecd4566863f85325dbb316"
+      },
+      "source_i18n": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/art-profile-coherence-1/i18n-source.json",
+        "sha256": "ba8e90fe1d317e25b03ab8593201c93dbdc5305fbd2a5b913191324c74e47365"
+      },
+      "commands": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/art-profile-coherence-1/profile-commands.json",
+        "sha256": "1e236390f5c4d5c53a430f4c124a97a7519aea9f13b8c39528fa22a2eee60f2b"
+      },
+      "driver": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/art-profile-coherence-1/experiment-driver.py",
+        "sha256": "24633341c58fbc95b576c71fd18c7361ca8ea2589c1aa414206660b8781967c1"
+      },
+      "original_profman_source": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/art-profile-coherence-1/profman.cc",
+        "sha256": "ac9f6aea9c750f7a358dc78c10656da7b6517f3c8fc1040c72f3c1552572774f"
+      },
+      "original_dex_loader_source": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/art-profile-coherence-1/dex_file_loader.cc",
+        "sha256": "280870964626de749da5b1dbd08c88edcba6d7cd214d5fb03e77770f0b2a991f"
+      },
+      "rea_profman_headers": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/art-profile-coherence-1/rea-profman-headers.json",
+        "sha256": "a2c4ab1b1c3189b8bdc3f889b617dbf765fc018fdf66d3ca30ae83cb03f936bc"
+      },
+      "profile": {
+        "path": "/home/tv/repositorio-principal/dist/aosp16/art-profile-coherence-1/framework-regenerated.prof",
+        "sha256": "b6c53a209c86cb5973cde735455bdd5dc9c9e21c36f2ad42b337224a408862d7"
+      },
+      "descriptors": 52539,
+      "roundtrip_equal": true,
+      "zip_location_checksums_matched": 18,
+      "APK_inputs": 14,
+      "scope": "Actual unprivileged original Bionic profman profile conversion; all original descriptors retained using adapted framework. StaticREA headers separate. No Android boot/services started, no profile bytes/checksums manually forged. No coherent bootimages/loading/signing/APK acceptance yet.",
+      "initial_negative": "Compared location checksum incorrectly to raw DEX Adler; all18 failures preserved. OriginalDexFileLoader uses ZIPCRC32+i forcontainer; corrected verifier notprofilebytes.",
+      "next": "Integrate generated profile into private package, stop reusing incompatible precompiled system bootimages using original odrefresh contracts, produce/sign/load coherent images, then retain complete Markor workflow. Preserve old store/cache and source artifacts before regeneration."
     }
   }
 }

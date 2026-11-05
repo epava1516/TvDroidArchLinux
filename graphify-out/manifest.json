@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793869805.3892913,
-    "seen": 1793870006.6505125,
-    "ast_hash": "f456e59ca5cf1cbd31b6eef9ad3fcc10",
+    "mtime": 1793870844.5710464,
+    "seen": 1793870870.1070387,
+    "ast_hash": "4344c5aa559f6498de6ab23a5d37a3e0",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793869975.1211224,
-    "seen": 1793870006.651098,
-    "ast_hash": "eb76994a8cbbd010cabc928878325b25",
+    "mtime": 1793870844.5746667,
+    "seen": 1793870870.1083617,
+    "ast_hash": "a0c03b478cfac985c9be694f4a339e8d",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -1716,9 +1716,9 @@
     "semantic_hash": ""
   },
   "docs/EVIDENCIAS.md": {
-    "mtime": 1793869975.1128623,
-    "seen": 1793870006.6507683,
-    "ast_hash": "1038f150ae31d785f544f3fa793b340c",
+    "mtime": 1793870844.5795045,
+    "seen": 1793870870.107778,
+    "ast_hash": "2c60ee28c1b5c581bef72d51d3a5e752",
     "semantic_hash": ""
   },
   "fixtures/aosp-framework-space/FrameworkSpaceProbe.java": {
