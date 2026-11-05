@@ -1,5 +1,9 @@
 # Contrato vigente · AOSP Android 16 QPR2
 
+349 sólo añade reapertura entre cohortes de la nota348 y lectura nativa fija de metadatos en enforcing. No es un nuevo recorrido completo ni aceptación MAC/aislamiento. Las credenciales deben corresponder a la fase observada: init pre-exec con CapEff0 no acredita apexd post-exec aunque otro testigo muestre su SID después. Se conserva el fallo exterior y no se relajan capacidades. El recorrido348 continúa siendo evidencia parcial válida; cierre normal, reboot/FBE, actualización, estabilidad, ligereza y compatibilidad amplia permanecen abiertos. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration349`.
+
+Histórico anterior:
+
 348 satisface sólo el recorrido experimental exacto de nota local: crear/escribir/guardar porUI, lectura FUSE igual, cierre forzado original y reapertura fría con nota visible. No equivale a todas las funciones Markor ni a cierre normal de la aplicación, persistencia tras reinicio/FBE, aislamiento/R1, rendimiento ligero o compatibilidad general. CPU300 sigue experimental. Los metadatos privados deben observarse desde una autoridad Android original permitida, sin eliminar MCS, ampliar Linux indiscriminadamente ni fabricar archivos/readiness; esa adaptación aún no está probada. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration348`.
 
 Histórico anterior:

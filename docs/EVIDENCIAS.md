@@ -1,5 +1,9 @@
 # Índice de evidencias
 
+349 (496ae6e0-55fd-4706-aba1-82a4d094e890): el informe ART enlaza resultado nativo0, lectura original de tres archivos con hashes, replay del parser sobre datos reales, frame visto de nota348 reabierta, muestra transitoria SNAPSHOT y exterior1, recuperación/consumo y pruebas negativas del parser. El nuevo branch integrado de metadatos/hash instalado no se alcanzó por la guardia anterior; no presentarlo como ejecutado. REA MCP SHA256 es inspección estática; readelf CLI sólo contrasta DT_NEEDED. La disponibilidad real de libcrypto procede de dlsym/dladdr y hashes nativos. Windows11/VirtualBox7.2.22 es información del usuario, sin atribución causal a relojes. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration349`.
+
+Histórico anterior:
+
 348 (e0fa5b78-4a45-43d5-8ddf-fe45ef118344): informe ART →profile_coherence_experiment.integration348 vincula notaSHA d3dd765e00aedeb5b0325cbb4a7efa3a66892ed7e0b36ea2a385586dd7551a33, recibos CLI, PID1347→1712, frames de creación/reapertura, baseline ausente, PMS128paquetes, guardia28, CPU300, MAC y cierre/consumo. El log completo1083998bytes se recuperó offline conSHA igual; dos regiones noUTF8 se documentan, sin cambiar bytes. AVC real deniega search Linuxinit→system_userdir_file; permisos de lectores Android sólo contrastados offline. REA ELF-layout devolvió provider_unavailable porPython no configurado; readelfCLI complementario no acredita MCP ni biblioteca ya cargada. Exterior1 conservado. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration348`.
 
 Histórico anterior:

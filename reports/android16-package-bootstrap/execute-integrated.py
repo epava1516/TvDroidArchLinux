@@ -70,6 +70,52 @@ def verify_original_fork_identities(native_stderr, external, ps_texts, logcat_te
  except (KeyError,ValueError,AssertionError) as error:errors.append({'kind':'SERVICES','error':str(error)})
  return {'verified':not errors and len(observed)==len(expected)+1,'observed':observed,'errors':errors,'expected_count':len(expected)+1,'scope':'Selected original-fork profile credential/SID witnesses only; not atomic snapshot, authorization, isolation or APK compatibility'}
 
+def verify_original_storage_metadata(native_stderr, worker_pid, expected_mode, data_device):
+ """Require complete fixed-path kernel observations from admitted Android init.
+
+ No private file contents cross the boundary. Missing/error/duplicate records
+ are failures, never availability or authorization inferred from configuration.
+ """
+ def records(prefix):
+  result=[]
+  for line in native_stderr.splitlines():
+   if not line.startswith(prefix+' '):continue
+   pairs=re.findall(r'(\w+)=(\S+)',line);value=dict(pairs)
+   assert len(value)==len(pairs),'Duplicate native metadata key'
+   result.append(value)
+  return result
+ ce=records('STORAGE_NATIVE_CE_V1');complete=records('STORAGE_NATIVE_COMPLETE_V1');files=records('STORAGE_NATIVE_PERMISSION_V1')
+ assert len(ce)==len(complete)==1 and len(files)==3,'Incomplete/duplicate native storage observation'
+ ce=ce[0];complete=complete[0]
+ assert int(ce['pid'])==int(complete['pid'])==int(worker_pid),'Wrong native observer PID'
+ assert int(ce['enforcing'])==int(complete['enforcing'])==int(expected_mode),'Wrong native observer mode'
+ assert int(ce['uid'])==0 and bytes.fromhex(ce['context_hex']).decode()=='u:r:init:s0' and ce['namespace']=='default','Wrong native authority/namespace'
+ assert complete['files']=='3','Wrong native file count'
+ major,minor=map(int,data_device.split(':'));device=os.makedev(major,minor)
+ assert int(ce['ce_device'])==int(ce['legacy_device'])==device and int(ce['ce_inode'])==int(ce['legacy_inode'])>0,'Wrong CE/legacy device/inode'
+ library=bytes.fromhex(ce['hash_library_hex']).decode()
+ assert library in ['/system/lib64/bootstrap/libcrypto.so','/system/lib64/libcrypto.so'],'Unexpected original hash provider'
+ expected={'/data/misc/apexdata/com.android.permission/access.abx','/data/misc_de/0/apexdata/com.android.permission/access.abx','/data/misc_de/0/apexdata/com.android.permission/runtime-permissions.xml'};observed={}
+ for row in files:
+  path=bytes.fromhex(row['path_hex']).decode();assert path in expected and path not in observed,'Unexpected/duplicate permission path'
+  assert int(row['pid'])==int(worker_pid) and int(row['device'])==device and int(row['inode'])>0,'Wrong permission file observer/device/inode'
+  assert int(row['uid'])==1000 and int(row['gid'])==1000 and int(row['mode'],8)&0o022==0,'Permission file credentials/mode mismatch'
+  assert 0<int(row['size'])<16777216 and re.fullmatch('[0-9a-f]{64}',row['sha256']),'Permission size/hash missing'
+  assert bytes.fromhex(row['context_hex']).decode()=='u:object_r:apex_system_server_data_file:s0','Permission file context mismatch'
+  observed[path]=row
+ assert set(observed)==expected
+ return {'verified':True,'observer_pid':int(worker_pid),'observer_context':'u:r:init:s0','enforcing':int(expected_mode),'namespace':'default','ce_device':device,'ce_inode':int(ce['ce_inode']),'hash_library':library,'files':observed,'scope':'Original init readonly post-service-close fixed metadata/hash witness; not permission semantics, FBE, isolation or general APK acceptance'}
+
+
+def verify_original_installed_hashes(text, installed_path, apk_sha):
+ """Original shell hashes exact installed bytes; no Linux private-data grant."""
+ rows=text.splitlines();assert len(rows)==2,'Missing/extra original installed hash rows'
+ source=re.fullmatch(r'SOURCE ([0-9a-f]{64})  /data/local/tmp/markor\.apk',rows[0])
+ installed=re.fullmatch(r'INSTALLED ([0-9a-f]{64})  '+re.escape(installed_path),rows[1])
+ assert source and installed and source[1]==installed[1]==apk_sha,'Original source/installed bytes differ'
+ return {'source_sha256':source[1],'installed_sha256':installed[1],'installed_path':installed_path,'scope':'Protected original shell sha256sum readback after original PMS commit; not independent Linux private-file access or general installation security acceptance'}
+
+
 r=Path(__file__).resolve().parents[2]
 # Scope server-created shared files to this immutable execution, not /run/user.
 if len(sys.argv)>1 and sys.argv[1] in ('--prepare-wayland-runtime','--close-wayland-runtime'):
@@ -1052,7 +1098,33 @@ installer_operation_check=r"""if original_fork_profile:
 else:
 """+'\n'.join(' '+line for line in installer_query_guard.splitlines())+'\n'
 text=text.replace(installer_query_guard,installer_operation_check,1)
-text=inspect.getsource(verify_original_fork_identities)+'\n'+text
+# Keep mount-shape checks in the Linux view, but private inode/permission
+# reads use the admitted Android authority. Retain legacy checks elsewhere.
+private_start=text.index("ce_info=Path('/data/user/0').stat()")
+private_end=text.index("print('STORAGE_ORIGINAL_FILES_VERIFIED",private_start)
+private_end=text.index('\n',private_end)+1
+legacy_private=text[private_start:private_end]
+private_checks="""if original_fork_profile:
+ storage_witness=verify_original_storage_metadata(''.join(errors),live_apex_evidence['worker_pid'],live_apex_evidence['enforcing'],data_device)
+ print('STORAGE_ORIGINAL_ANDROID_AUTHORITY_VERIFIED '+json.dumps(storage_witness),flush=True)
+else:
+"""+'\n'.join(' '+line for line in legacy_private.splitlines())+'\n'
+text=text[:private_start]+private_checks+text[private_end:]
+installed_start=text.index("installed=Path(paths[0][8:]);assert installed.is_file()")
+installed_end=text.index("print('APK_ORIGINAL_INSTALL_BYTES_VERIFIED",installed_start)
+legacy_installed=text[installed_start:installed_end]
+installed_checks="""if original_fork_profile:
+ assert Path(paths[0][8:]).name=='base.apk'
+ hash_file=Path('/data/local/tmp/archtv-mc1/markor-installed-bytes.txt');hash_stat=hash_file.lstat()
+ assert stat.S_ISREG(hash_stat.st_mode) and hash_stat.st_uid==2000 and not stat.S_IMODE(hash_stat.st_mode)&0o022 and 0<hash_stat.st_size<4096
+ assert os.getxattr(hash_file,'security.selinux').rstrip(b'\\0')==b'u:object_r:shell_data_file:s0'
+ installed_witness=verify_original_installed_hashes(hash_file.read_text(),paths[0][8:],APK_TARGET_SHA256)
+ print('APK_ORIGINAL_SHELL_HASH_READBACK_VERIFIED '+json.dumps(installed_witness),flush=True)
+else:
+""".replace('APK_TARGET_SHA256',repr(apk_sha))+'\n'.join(' '+line for line in legacy_installed.splitlines())+'\n'
+text=text[:installed_start]+installed_checks+text[installed_end:]
+text=inspect.getsource(verify_original_fork_identities)+'\n'+inspect.getsource(verify_original_storage_metadata)+'\n'+inspect.getsource(verify_original_installed_hashes)+'\n'+text
+
 
 compile(text,'<integrated factory>','exec')
 if '--materialize-only' in saved:

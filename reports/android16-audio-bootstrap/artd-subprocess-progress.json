@@ -21,11 +21,11 @@
       "derive_classpath",
       "odrefresh"
     ],
-    "new_permission": "artd → artd_subprocess_type process2 nnp_transition only",
+    "new_permission": "artd \u2192 artd_subprocess_type process2 nnp_transition only",
     "original_transition_and_entrypoint_required": true,
     "execute_no_trans_not_granted": true,
     "offline_queries": 24,
-    "actual_runtime_observation": "Original artd invokes art_exec --drop-capabilities → dex2oat32 targeting oat/x86_64/base.odex; dex2oat returned code 0",
+    "actual_runtime_observation": "Original artd invokes art_exec --drop-capabilities \u2192 dex2oat32 targeting oat/x86_64/base.odex; dex2oat returned code 0",
     "boot_image": "Checksum mismatch remains; compiler falls back to imageless running. No coherent boot image acceptance."
   },
   "apk": {
@@ -221,7 +221,7 @@
     },
     "integration326": {
       "checkpoint": "/home/tv/recuperacion-archtv/cde2d4de-f95e-4841-b035-05eac8321be4-markor-software-launch",
-      "result": "art_boot exited0; odsign exited127 before main: init→odsign process2 nosuid_transition denied under66",
+      "result": "art_boot exited0; odsign exited127 before main: init\u2192odsign process2 nosuid_transition denied under66",
       "data_labels": {
         "store": "/home/tv/.local/share/archtv/experimental-userdata/art-coherent-326",
         "metadata": {
@@ -295,7 +295,7 @@
       "offline_access_evidence": "dist/aosp16/audio-policy-inputs-67/access-comparison.json",
       "offline_cases": 48,
       "payload_sha256": "4c058a8b21bcbcc7c9cfbc423573f3e252b57857e890788b4a47d42d073b93d7",
-      "scope": "Same326 payload/private store.67 adds only init→odsign nosuid_transition; NNP1/nosuid/original labels preserved. No runtime success assumed.",
+      "scope": "Same326 payload/private store.67 adds only init\u2192odsign nosuid_transition; NNP1/nosuid/original labels preserved. No runtime success assumed.",
       "functional_result": "/home/tv/recuperacion-archtv/1ac79885-39f9-4abf-8da2-16fee8b80080-markor-software-launch/functional-result.json",
       "result": {
         "id": "1ac79885-39f9-4abf-8da2-16fee8b80080",
@@ -1042,7 +1042,7 @@
       "APK_inputs": 14,
       "scope": "Actual unprivileged original Bionic profman profile conversion; all original descriptors retained using adapted framework. StaticREA headers separate. No Android boot/services started, no profile bytes/checksums manually forged. No coherent bootimages/loading/signing/APK acceptance yet.",
       "initial_negative": "Compared location checksum incorrectly to raw DEX Adler; all18 failures preserved. OriginalDexFileLoader uses ZIPCRC32+i forcontainer; corrected verifier notprofilebytes.",
-      "next": "Integrate generated profile into private package, stop reusing incompatible precompiled system bootimages using original odrefresh contracts, produce/sign/load coherent images, then retain complete Markor workflow. Preserve old store/cache and source artifacts before regeneration.",
+      "next": "Obtain phase-coherent post-exec snapshot credential witness using original service lifecycle/source and kernel evidence, retaining negatives and original boundaries. Do not accept init pre-exec credentials as apexd or waive capabilities. Then normal app close/reopen and coherent minimal package profile, broad APK compatibility and R1 still open.",
       "integration341": {
         "checkpoint": "/home/tv/recuperacion-archtv/28003656-01d6-4c93-866c-4a34bf3e1a62-markor-software-launch",
         "build": "dist/aosp16/package-cohort-build-341",
@@ -1246,7 +1246,7 @@
         ],
         "next": "Run existingoriginal Markorworkflowtoken with300sinteraction, immediatelyfocuseditorbodybeforetyping; originalCLI requiresbytes thenforce-stop/newPID/reopen. Keep oldnote/data. Correct identityproofs after functionalworkflow, no intendedSID substitution."
       },
-      "state": "original_profile_regenerated_cache_signed_reopened_and_six_bootfiles_mapped; broadcoherence_security_APK_acceptance_open",
+      "state": "349 original metadata native positive and existing note reopened; outer1 snapshot identity evidence transition, not accepted cohort",
       "integration343": {
         "checkpoint": "/home/tv/recuperacion-archtv/085b5399-1642-4738-9c64-5adeecb8b5e9-markor-software-launch",
         "build": "dist/aosp16/package-cohort-build-343",
@@ -1723,7 +1723,7 @@
           "sha256": "d3eb7667da5d6443deb22eb91de5893b561c0d7ec098f92087a2ed33a0a58f36"
         }
       },
-      "current_integration": 348,
+      "current_integration": 349,
       "integration348": {
         "checkpoint": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch",
         "build": "dist/aosp16/package-cohort-build-348",
@@ -1886,6 +1886,92 @@
           "/system/bin/cmd package list packages --user 0"
         ],
         "scope": "Originalcommands outputs/status retained; no expectedstrings/fakeinventory. Actual348query/list verified; remainingMACobserver failure retained."
+      },
+      "integration349": {
+        "checkpoint": "/home/tv/recuperacion-archtv/496ae6e0-55fd-4706-aba1-82a4d094e890-markor-software-launch",
+        "build": "dist/aosp16/package-cohort-build-349",
+        "native_exit": 0,
+        "outer_exit": 1,
+        "host_owner_exit": 0,
+        "original_storage_metadata_verified": true,
+        "storage_verification_scope": "Actual native init293/enforcing1/defaultnamespace/fixed3files/originallibcrypto SHA256; parser replay positive after guard failure, integrated downstream checks not reached. No permission semantics/FBE/isolation acceptance.",
+        "identity_guard_verified": false,
+        "identity_guard_error": "SNAPSHOT capabilities mismatch: only native sample is pre-exec init SID, CapPrm15/CapEff0; separate post-exec SID not phase-coherent capabilities proof. Guard failure retained.",
+        "cross_cohort_note_reopen_observed": true,
+        "note_path": "/storage/emulated/0/Documents/markor/archtv-348ace01.md",
+        "new_note_write_observed": false,
+        "real_primary_workflow_observed": false,
+        "overall_cohort_accepted": false,
+        "all_markor_features_accepted": false,
+        "R1_MAC_accepted": false,
+        "cpu_quota_percent": 300,
+        "kernel_cpu_max": "300000 100000",
+        "policy": 68,
+        "policy_changed": false,
+        "mac_restored": "0",
+        "remaining_checks": "Correctly observe post-exec credentials of original fast snapshot child; then actual integrated private metadata and protected installed-hash branches must execute, not just standalone replay.",
+        "next": "Obtain phase-coherent post-exec snapshot credential witness using original service lifecycle/source and kernel evidence, retaining negatives and original boundaries. Do not accept init pre-exec credentials as apexd or waive capabilities. Then normal app close/reopen and coherent minimal package profile, broad APK compatibility and R1 still open.",
+        "scope": "Intact Markor existing348note reopened through real UI on Rust/Smithay; native metadata proves original reader contract only. No new primary workflow, complete cohort, general stability/lightness/FBE/R1 acceptance.",
+        "native_result": {
+          "path": "/home/tv/recuperacion-archtv/496ae6e0-55fd-4706-aba1-82a4d094e890-markor-software-launch/native-result.json",
+          "sha256": "bb415cfc67a7a72272c5368c0907b6552b517b0f4c4197b6b46d26634f66133a"
+        },
+        "result": {
+          "path": "/home/tv/recuperacion-archtv/496ae6e0-55fd-4706-aba1-82a4d094e890-markor-software-launch/result.json",
+          "sha256": "fda09e0f2c8b9beddbf199abfe4749e18ce2c583efa0348f558d0b271d1095f9"
+        },
+        "identity_guard": {
+          "path": "/home/tv/recuperacion-archtv/496ae6e0-55fd-4706-aba1-82a4d094e890-markor-software-launch/original-fork-identities.json",
+          "sha256": "22f1ce9bc9a57d801a0ab97bb1187e0e4fbea8538a4376bd859581623988b08f"
+        },
+        "identity_failure": {
+          "path": "/home/tv/recuperacion-archtv/496ae6e0-55fd-4706-aba1-82a4d094e890-markor-software-launch/snapshot-identity-failure.json",
+          "sha256": "2ce0272f5a36b88bd08c8c2a3c26f73d24ee6096a21c2a1930580df6ed6cdeae"
+        },
+        "storage_metadata": {
+          "path": "/home/tv/recuperacion-archtv/496ae6e0-55fd-4706-aba1-82a4d094e890-markor-software-launch/original-storage-metadata.json",
+          "sha256": "1ed9d9fd8f1863d749b2ca64af518ed3772579561220f632d21686e96f055032"
+        },
+        "visual_reopened": {
+          "path": "/home/tv/recuperacion-archtv/496ae6e0-55fd-4706-aba1-82a4d094e890-markor-software-launch/visual-note-reopened.json",
+          "sha256": "f92881990c49210b971c0782df6ae9438d2c6f1d0702eedd8f7a33ee7200285d"
+        },
+        "cpu_kernel": {
+          "path": "/home/tv/recuperacion-archtv/496ae6e0-55fd-4706-aba1-82a4d094e890-markor-software-launch/cpu-quota-kernel.json",
+          "sha256": "53df8b6ab5ef684fa1356db4da837fa3dcd1d9c5a9584190961e70b07666ea80"
+        },
+        "mac_window": {
+          "path": "/home/tv/recuperacion-archtv/496ae6e0-55fd-4706-aba1-82a4d094e890-markor-software-launch/mac-window.json",
+          "sha256": "70aea82d98703f3423d64f620dd5a504244ce9b1e0fc0377d948f0e143605ace"
+        },
+        "normal_backing_close": {
+          "path": "/home/tv/recuperacion-archtv/496ae6e0-55fd-4706-aba1-82a4d094e890-markor-software-launch/backing-after.json",
+          "sha256": "2cfdb3654d9cd71edeacc6a010214f5d7142f6759635c047ea364db3e705d08a"
+        },
+        "recovery": {
+          "path": "/home/tv/recuperacion-archtv/496ae6e0-55fd-4706-aba1-82a4d094e890-markor-software-launch/recovery-readback.json",
+          "sha256": "c8ceea542fc4603147102c12534b5f383a9aac3632e159e9c203d36ee873d512"
+        },
+        "consumer": {
+          "path": "/home/tv/recuperacion-archtv/496ae6e0-55fd-4706-aba1-82a4d094e890-markor-software-launch/completion-consumer.json",
+          "sha256": "50613d157f587aa44069da288570786077723b427decd3a10bbc865395b9d611"
+        },
+        "parser_tests": {
+          "path": "/home/tv/recuperacion-archtv/20261105T125645Z-metadata-authority349/parser-composition-tests.json",
+          "sha256": "9d7660057bb1cab1e748c22b39d2353e29ccba79bb9f9a282b2cdb1ed8c599d0"
+        },
+        "crypto_provenance": {
+          "path": "/home/tv/recuperacion-archtv/20261105T125645Z-metadata-authority349/original-crypto-provenance.json",
+          "sha256": "67cdc9ef0c53705b22da37c625f73090c320872d91b969508e12d1ba6e1fe315"
+        },
+        "rea_static_sha256": {
+          "path": "/home/tv/recuperacion-archtv/20261105T125645Z-metadata-authority349/rea-original-sha256.json",
+          "sha256": "f4ae06cd9727acc1fad2af1e6738ab3c074851aad9ae2b60c63081876b1dbbd8"
+        },
+        "host_report": {
+          "path": "/home/tv/recuperacion-archtv/20261105T125645Z-metadata-authority349/host-reported.json",
+          "sha256": "0f0e4374c6001cfb17a893de7a5ac0a91f19580ca3018214f29652eaa82c51d3"
+        }
       }
     }
   },

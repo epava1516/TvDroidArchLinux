@@ -1,5 +1,9 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+349 reduce el bloqueo del lector: metadatos originales reales verificados y nota348 reabierta entre cohortes, sin ampliar política. Siguiente experimento: capturar credenciales post-exec coherentes del proceso original corto apexd-snapshotde; resolver la carrera de observación con fuentes/ciclo original y evidencia kernel, sin aceptar CapEff0 pre-exec como contrato final. Después exigir la ejecución integrada de metadatos y hash instalado protegido, cierre normal de aplicación y perfil mínimo coherente. No repetir el workflow348 ya probado como requisito de cada sonda. R1, estabilidad/ligereza/instalación/actualización y ARM/GMS/DRM siguen abiertos. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration349`.
+
+Histórico anterior:
+
 Hito348: recorrido exacto crear/guardar/force-stop/coldreopen con nota21bytes y editor real observado; PMS original produce ahora sus consultas, guardia28/Installer pasan. Siguiente experimento debe adaptar juntos CE/permisos/hashAPK a sus autoridades reales: lectura fija por init Android existente (permitida offline), snapshot e inodos reales, hash con componente original disponible; Linux mantiene su denegación. No ejecutar el verificador en permisivo para obtener verde. Tras esa frontera, ampliar APK/funciones reales y perfil ligero de paquetes: DSU de fondo sigue fallando por servicio ausente. R1, cierre normal de la aplicación, reboot/FBE, actualización, ARM/GMS/DRM siguen abiertos. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration348`.
 
 Histórico anterior:

@@ -1,5 +1,9 @@
 # Estado actual y punto de entrada
 
+349: Markor intacta reabre la nota348 en el editor real. La lectura CE y de tres archivos de permisos desde init Android pasa en enforcing, con SHA256 de libcrypto original; Linux conserva su denegación y política68 no cambia. Nativa0/exterior1: falta un testigo coherente de capacidades post-exec de apexd-snapshotde; la muestra nativa es todavía init, CapPrm15/CapEff0. Guardia fallida conservada. Cierre y recuperación normal verificados; próximo: observar esa transición con el ciclo original, después ejecutar todas las comprobaciones integradas restantes. R1 abierto. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration349`.
+
+Histórico anterior:
+
 348: nota nueva creada y guardada en Markor intacta por entrada real, 21bytes/hash iguales antes/después del force-stop original; PID1347 ausente→relanzamiento frío1712 y texto visible en el editor nuevo. Guardia28, InstallerRPC y consultas/lista PMS originales pasan. Nativa0/exterior1: Linuxinit no puede atravesar /data/user (AVC search system_userdir_file, enforcing). Cierre normal, modo0/política68 y recursos recuperados. Próximo: trasladar la observación CE/permisos al worker init Android ya admitido, sin ampliar Linux ni simular disponibilidad. R1 sigue abierto. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration348`.
 
 Histórico anterior:

@@ -1,5 +1,9 @@
 # Arquitectura vigente · A16-QPR2-1
 
+349 demuestra la frontera de lectura: el worker original init, después de recoger servicios, observa CE/permisos de sólo lectura en NS_DEFAULT/enforcing1; SHA256 se resuelve en libcrypto original ya dependiente de libfs_mgr. No se añaden permisos Linux ni otra criptografía. El parser exige PID, contexto, dispositivo/inodo, propietarios, modos, etiquetas y tres hashes completos. La lectura nativa pasa, pero el ejecutor se detiene antes en la guardia SNAPSHOT: una muestra pre-exec y un SID post-exec separado no demuestran capacidades post-exec. Mantener esa distinción y obtener un testigo coherente. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration349`.
+
+Histórico anterior:
+
 348 confirma el recorrido local de nota sobre ART/Bionic/AOSP coherentes y Rust/Smithay. El fallo restante corresponde al lector: Linuxinit queda denegado en search de system_userdir_file; archivos CE incluyen categoríasMCS. La comparación offline con etiquetas reales autoriza a init/system_server originales para metadatos de CE y los tres archivos de permisos; no prueba todavía su lectura real. Integrar ese testigo fijo en el worker original existente, manteniendo la denegación Linux, y conservar el hashAPK producido por el cliente original. Disponibilidad del mecanismo de hash nativo aún por comprobar; no preparar más permisos amplios ni reimplementar criptografía. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration348`.
 
 Histórico anterior:

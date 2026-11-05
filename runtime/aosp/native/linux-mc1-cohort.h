@@ -239,6 +239,18 @@ class LinuxMc1Cohort {
             if(std::chrono::steady_clock::now()>=end || !tick())
                 return android::base::Error()<<"MC1 services not collected during close";
         }
+        // Private Android metadata belongs to an Android authority, not the
+        // Linux observer. Read after writers have stopped; observation failure
+        // must never skip the already-required service collection/cleanup.
+        std::string storage_observation_error;
+        if(apex_requested_ && selected_requested_ && software_security_ && workflow_completed) {
+            auto observed=ObserveOriginalStorageMetadata();
+            if(!observed.ok()) {
+                storage_observation_error=observed.error().message();
+                std::fprintf(stderr,"STORAGE_NATIVE_FAILED message_hex=%s NOT_ACCEPTANCE\n",
+                             MetadataHex(storage_observation_error).c_str());
+            }
+        }
         tombstoned_=nullptr;mediaextractor_=nullptr;mediametrics_=nullptr;mediaserver_=nullptr;
         manager_=nullptr;logd_=nullptr;logcat_=nullptr;
         hardware_=nullptr;
@@ -266,9 +278,85 @@ class LinuxMc1Cohort {
         std::fprintf(stderr,"MC1_CLOSE_OBSERVED enforcing=%d expected=%d\n",observed_mode,expected_mode_);
         if(observed_mode!=expected_mode_)return android::base::Error()<<"MC1 security mode changed during close";
         if(!workflow_completed)return android::base::Error()<<"Original APK shell workflow failed or incomplete before close; inspect actual outputs";
+        if(!storage_observation_error.empty())return android::base::Error()<<storage_observation_error;
         return {};
     }
  private:
+    static std::string MetadataHex(const std::string& value) {
+        static constexpr char digits[]="0123456789abcdef";
+        std::string out;out.reserve(value.size()*2);
+        for(unsigned char byte:value){out+=digits[byte>>4];out+=digits[byte&15];}
+        return out.empty()?std::string("-"):out;
+    }
+    android::base::Result<void> ObserveOriginalStorageMetadata() {
+        using namespace android::init;
+        auto ns=GetCurrentMountNamespace();
+        char* raw_context=nullptr;
+        if(getcon(&raw_context)<0)return android::base::ErrnoError()<<"Storage observer getcon";
+        const std::string context=raw_context?raw_context:"";freecon(raw_context);
+        if(!ns.ok() || *ns!=NS_DEFAULT || context!="u:r:init:s0" || getuid()!=0 ||
+           security_getenforce()!=expected_mode_)
+            return android::base::Error()<<"Storage observer authority/namespace/mode mismatch";
+        struct stat ce{},legacy{};
+        if(lstat("/data/user/0",&ce)!=0 || lstat("/data/data",&legacy)!=0)
+            return android::base::ErrnoError()<<"Original CE/legacy metadata";
+        if(!S_ISDIR(ce.st_mode) || !S_ISDIR(legacy.st_mode) ||
+           ce.st_dev!=legacy.st_dev || ce.st_ino!=legacy.st_ino)
+            return android::base::Error()<<"Original CE/legacy inode mismatch";
+        // Exact ABI from original BoringSSL openssl/sha2.h. libfs_mgr already
+        // depends on original libcrypto; do not add a crypto implementation,
+        // silently load another provider or accept an unavailable symbol.
+        using Sha256=unsigned char*(*)(const unsigned char*,size_t,unsigned char*);
+        void* address=dlsym(RTLD_DEFAULT,"SHA256");Dl_info provider{};
+        if(!address || dladdr(address,&provider)==0 || !provider.dli_fname)
+            return android::base::Error()<<"Original SHA256 provider unavailable";
+        const std::string library=provider.dli_fname;
+        if(library.size()<12 || library.compare(library.size()-12,12,"libcrypto.so")!=0)
+            return android::base::Error()<<"Unexpected SHA256 provider";
+        auto sha256=reinterpret_cast<Sha256>(address);
+        std::fprintf(stderr,"STORAGE_NATIVE_CE_V1 pid=%d enforcing=%d uid=%u context_hex=%s namespace=default ce_device=%llu ce_inode=%llu legacy_device=%llu legacy_inode=%llu hash_library_hex=%s NOT_ISOLATION_ACCEPTANCE\n",
+            getpid(),expected_mode_,static_cast<unsigned>(getuid()),MetadataHex(context).c_str(),
+            static_cast<unsigned long long>(ce.st_dev),static_cast<unsigned long long>(ce.st_ino),
+            static_cast<unsigned long long>(legacy.st_dev),static_cast<unsigned long long>(legacy.st_ino),
+            MetadataHex(library).c_str());
+        for(const char* path:{"/data/misc/apexdata/com.android.permission/access.abx",
+                "/data/misc_de/0/apexdata/com.android.permission/access.abx",
+                "/data/misc_de/0/apexdata/com.android.permission/runtime-permissions.xml"}) {
+            android::base::unique_fd fd(open(path,O_RDONLY|O_CLOEXEC|O_NOFOLLOW));
+            if(fd.get()<0)return android::base::ErrnoError()<<"Original permission open: "<<path;
+            struct stat before{},after{};
+            if(fstat(fd.get(),&before)!=0)return android::base::ErrnoError()<<"Permission fstat";
+            if(!S_ISREG(before.st_mode) || before.st_uid!=1000 || before.st_size<=0 || before.st_size>=16777216)
+                return android::base::Error()<<"Permission file kind/owner/size mismatch: "<<path;
+            std::string bytes(static_cast<size_t>(before.st_size),'\0');size_t offset=0;
+            while(offset<bytes.size()) {
+                const auto n=read(fd.get(),bytes.data()+offset,bytes.size()-offset);
+                if(n<0 && errno==EINTR)continue;
+                if(n<=0)return android::base::Error()<<"Permission file short/failed read: "<<path;
+                offset+=static_cast<size_t>(n);
+            }
+            char extra;
+            if(read(fd.get(),&extra,1)!=0 || fstat(fd.get(),&after)!=0 ||
+               before.st_dev!=after.st_dev || before.st_ino!=after.st_ino || before.st_size!=after.st_size ||
+               before.st_mtim.tv_sec!=after.st_mtim.tv_sec || before.st_mtim.tv_nsec!=after.st_mtim.tv_nsec ||
+               before.st_ctim.tv_sec!=after.st_ctim.tv_sec || before.st_ctim.tv_nsec!=after.st_ctim.tv_nsec)
+                return android::base::Error()<<"Permission file changed during observation: "<<path;
+            char* raw_label=nullptr;
+            if(fgetfilecon(fd.get(),&raw_label)<0)return android::base::ErrnoError()<<"Permission file context";
+            const std::string label=raw_label?raw_label:"";freecon(raw_label);
+            unsigned char digest[32];
+            if(sha256(reinterpret_cast<const unsigned char*>(bytes.data()),bytes.size(),digest)!=digest)
+                return android::base::Error()<<"Original SHA256 failed";
+            const auto digest_hex=MetadataHex(std::string(reinterpret_cast<const char*>(digest),sizeof(digest)));
+            std::fprintf(stderr,"STORAGE_NATIVE_PERMISSION_V1 pid=%d path_hex=%s device=%llu inode=%llu uid=%u gid=%u mode=%o size=%llu context_hex=%s sha256=%s NOT_PERMISSION_SEMANTICS_ACCEPTANCE\n",
+                getpid(),MetadataHex(path).c_str(),static_cast<unsigned long long>(before.st_dev),
+                static_cast<unsigned long long>(before.st_ino),static_cast<unsigned>(before.st_uid),
+                static_cast<unsigned>(before.st_gid),before.st_mode&07777,
+                static_cast<unsigned long long>(before.st_size),MetadataHex(label).c_str(),digest_hex.c_str());
+        }
+        std::fprintf(stderr,"STORAGE_NATIVE_COMPLETE_V1 pid=%d enforcing=%d files=3 NOT_FBE_OR_ISOLATION_ACCEPTANCE\n",getpid(),expected_mode_);
+        return {};
+    }
     android::base::Result<void> StartOriginalLogging(const Tick& tick) {
         using namespace android::init;
         if(android::base::GetProperty("ro.logd.kernel","")!="false" || android::base::GetProperty("ro.logd.auditd","")!="false")
