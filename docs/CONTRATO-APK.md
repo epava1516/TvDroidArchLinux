@@ -1,5 +1,9 @@
 # Contrato vigente · AOSP Android 16 QPR2
 
+348 satisface sólo el recorrido experimental exacto de nota local: crear/escribir/guardar porUI, lectura FUSE igual, cierre forzado original y reapertura fría con nota visible. No equivale a todas las funciones Markor ni a cierre normal de la aplicación, persistencia tras reinicio/FBE, aislamiento/R1, rendimiento ligero o compatibilidad general. CPU300 sigue experimental. Los metadatos privados deben observarse desde una autoridad Android original permitida, sin eliminar MCS, ampliar Linux indiscriminadamente ni fabricar archivos/readiness; esa adaptación aún no está probada. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration348`.
+
+Histórico anterior:
+
 347 acredita reapertura visual de una nota existente mediante entrada real, con cuota300 observada por kernel; no acredita nueva escritura/lifecycle completo, causa del ANR anterior ni ligereza productiva. InstallerRPC/28identidades son resultados parciales separados. La ausencia de ANR se limita a los logs capturados; fallos DSU siguen registrados. No fabricar archivos de consulta ni rebajar controles: los outputs deben proceder de clientes originales. R1 y compatibilidad amplia permanecen abiertos. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration347`.
 
 Histórico anterior:

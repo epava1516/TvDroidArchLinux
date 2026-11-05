@@ -136,6 +136,10 @@ ps_status=0
 # Preserve the original PMS readback before user-start can block or the cohort stops.
 /system/bin/cmd package path --user 0 $target_package > /data/local/tmp/archtv-mc1/markor-postcommit-path.txt
 /system/bin/dumpsys package $target_package > /data/local/tmp/archtv-mc1/markor-postcommit-dump.txt
+# Real original service-manager/PMS reads required by the functional verifier.
+# Preserve the commands' output/status; never write an expected result string.
+/system/bin/service check package > /data/local/tmp/archtv-mc1/package-query.txt
+/system/bin/cmd package list packages --user 0 > /data/local/tmp/archtv-mc1/package-list.txt
 IFS= read -r installed_line < /data/local/tmp/archtv-mc1/markor-postcommit-path.txt
 case "$installed_line" in package:/data/app/*/base.apk) ;; *) exit 1;; esac
 installed_apk=${installed_line#package:}

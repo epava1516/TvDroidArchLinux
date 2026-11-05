@@ -1,5 +1,9 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+Hito348: recorrido exacto crear/guardar/force-stop/coldreopen con nota21bytes y editor real observado; PMS original produce ahora sus consultas, guardia28/Installer pasan. Siguiente experimento debe adaptar juntos CE/permisos/hashAPK a sus autoridades reales: lectura fija por init Android existente (permitida offline), snapshot e inodos reales, hash con componente original disponible; Linux mantiene su denegación. No ejecutar el verificador en permisivo para obtener verde. Tras esa frontera, ampliar APK/funciones reales y perfil ligero de paquetes: DSU de fondo sigue fallando por servicio ausente. R1, cierre normal de la aplicación, reboot/FBE, actualización, ARM/GMS/DRM siguen abiertos. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration348`.
+
+Histórico anterior:
+
 Tras347: InstallerRPC original verificado y Markor vuelve a mostrar la nota con CPU300 real; no ANR suyo en logs capturados. Resolver en conjunto el contrato de outputs restante: emitir service check package y cmd package list reales desde el instalador existente; conservar CEmount/inodos, tres archivos de permisos y hashAPK como comprobaciones aún pendientes de ejecutar. Después recorrido completo con la base integrada y medir estabilidad/ligereza, revisando paquetes GSI de fondo innecesarios. No aumentar timeoutsANR ni cambiar CPU200 por defecto con una muestra. R1/ARM/GMS/DRM siguen abiertos. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration347`.
 
 Histórico anterior:

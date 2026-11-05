@@ -1723,7 +1723,170 @@
           "sha256": "d3eb7667da5d6443deb22eb91de5893b561c0d7ec098f92087a2ed33a0a58f36"
         }
       },
-      "current_integration": 347
+      "current_integration": 348,
+      "integration348": {
+        "checkpoint": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch",
+        "build": "dist/aosp16/package-cohort-build-348",
+        "payload_sha256": "6b5a9fd8f8089df8bad73fd67f7b00872312d2db8c9a0b9e02bff982a38d4eba",
+        "native_exit": 0,
+        "outer_exit": 1,
+        "host_owner_exit": 0,
+        "identity_guard_verified": true,
+        "identity_count": 28,
+        "installer_original_operation_verified": true,
+        "original_pms_queries_verified": true,
+        "original_package_list_count": 128,
+        "real_primary_workflow_observed": true,
+        "overall_cohort_accepted": false,
+        "all_markor_features_accepted": false,
+        "R1_MAC_accepted": false,
+        "scope": "ExactintactMarkorv164 selectedlocalnote workflow oncoherentoriginalART/Bionic/AOSP withRust/Smithay andboundedCPU300. ActualUI/input/create/save21bytes; originalFUSEhashbefore/after, originalAMSforce-stop/oldPIDabsent/coldnewPID, actualsavednoteeditor. Notallfeatures/broadAPK, gracefulclose, reboot/FBE/updates/lightness orR1acceptance.",
+        "note": {
+          "path": "/storage/emulated/0/Documents/markor/archtv-348ace01.md",
+          "body": "archtv note 348ace01\n",
+          "bytes": 21,
+          "sha256": "d3dd765e00aedeb5b0325cbb4a7efa3a66892ed7e0b36ea2a385586dd7551a33",
+          "creator": "Only actualMarkorUI viaLinuxuinput ->Rust/Smithay ->originalAndroidinput; baseline348absentverified; no directnote/prefs/permission/readiness writes."
+        },
+        "lifecycle": {
+          "before_pid": 1347,
+          "previous_process_absent": true,
+          "after_pid": 1712,
+          "original_cold_launch_total_ms": 2510,
+          "independent_zygote_exit": "Process1347 exited signal9; fulloriginalrawlogSHA verified"
+        },
+        "input_navigation_limit": "Firstplusclick ledtointernalstorage list unexpectedly; recoveredviaactualNotebookentry thenplus; all10commands/events retained. No inputreliability/latencycausality claim.",
+        "cpu_quota_percent": 300,
+        "kernel_cpu_max": "300000 100000",
+        "cpu_scope": "Experimentalexistingreviewedquota on4vCPU VM, default200unchanged; security/memory/ANRlimitsunchanged. Two300successes plusprior200successes do notprovequota caused346ANR.",
+        "mac_seconds_actual": 344.39998426700186,
+        "mac_restored": "0",
+        "remaining_failure": "ActualLinuxverifier stat(/data/user/0) denied. Finiteaudit showsLinuxinit search system_userdir_file:s0 denied permissive0. Do notgrant broadLinuxAndroiddata/MCSaccess orrerunpermissivetogreen. OriginalAPK functionalroute alreadycompleted.",
+        "remaining_checks": "CE/legacy inode comparison, threepermissionfilesmetadata/hash andfinalhostAPK directhash notcompleted byLinuxobserver. Mountshape/PMSqueriescheckedbeforedenial. Roleboundary mustbereviewed aswhole, notremoved.",
+        "next": "ReuseadmittedoriginalAndroidinit NS_DEFAULT readonlywitness forfixedCE/permissionmetadata (offlinepolicyallowsinit/system_server, Linuxinitdenied); retainLinuxnegative. Reuseoriginalshell installedAPKhashreadback insteadwrongactorprivateread. Hashimplementation/libraryavailability stillunverified; preferoriginalAOSPcrypto, noneimplemented. ThenrealAPKs/services/lightness onward; R1/ARM/GMS/DRMopen.",
+        "workflow_receipt": {
+          "path": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch/original-workflow-live-readback.json",
+          "sha256": "eb39119983cc6c14a656b2b277cd9ce5643523e4ee707def0ee89393e2e87d97"
+        },
+        "note_bytes": {
+          "path": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch/live348-markor-note-bytes.bin",
+          "sha256": "d3dd765e00aedeb5b0325cbb4a7efa3a66892ed7e0b36ea2a385586dd7551a33"
+        },
+        "note_before": {
+          "path": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch/live348-markor-note-before-stop.txt",
+          "sha256": "bf03f6b72cc60189cd6ccaa2ba698e2854b583a3ab38d24c27171afe2ec1c991"
+        },
+        "note_after": {
+          "path": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch/live348-markor-note-after-relaunch.txt",
+          "sha256": "bf03f6b72cc60189cd6ccaa2ba698e2854b583a3ab38d24c27171afe2ec1c991"
+        },
+        "original_lifecycle": {
+          "path": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch/live348-markor-lifecycle.txt",
+          "sha256": "7e015b50fbc4ddf9fcb059eb83b8fd08e09b2610fcc75c10dd9bd763a5dcb6ac"
+        },
+        "original_relaunch": {
+          "path": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch/live348-markor-relaunch.txt",
+          "sha256": "49ff06b2cab614db388d977eb727fa6c416deae3f18ce9290945f38dc8dbd4b1"
+        },
+        "visual_created": {
+          "path": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch/visual-note-created.json",
+          "sha256": "dee63d7c8fee06961287f3ba854c68a61387762bdf223f9849c073056214ba03"
+        },
+        "visual_reopened": {
+          "path": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch/visual-note-reopened.json",
+          "sha256": "ce2d6ca8eefc019d69e4d579632a74e3ee9b2236e530ef64901520b76a247d7d"
+        },
+        "ui_lifecycle_log": {
+          "path": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch/ui-lifecycle-log-observation.json",
+          "sha256": "40f57464af2e7158a1d2e0c8de3a8025f19c8d48cacfc6386bc702de8c9d5726"
+        },
+        "full_log_readback": {
+          "path": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch/original-logcat-full-readback.json",
+          "sha256": "3171510f6bf5c06997a38bf677041df1d44d72c90496b520c336abeb7d1babc3"
+        },
+        "native_result": {
+          "path": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch/native-result.json",
+          "sha256": "ea1939ae6843120ce62bf017c81c2dee8473ab2296bdc072aae737f6556b51a7"
+        },
+        "result": {
+          "path": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch/result.json",
+          "sha256": "a1c53eb141d096ee7d7ead84540c1d59ba8fd7b47036c59f037434e16f290bf2"
+        },
+        "identity_guard": {
+          "path": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch/original-fork-identities.json",
+          "sha256": "6ca4464c83c010e3dff043fdc86c792aeec443cdd9ce239e315139c90411f34a"
+        },
+        "installer_operation": {
+          "path": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch/original-installer-operation.json",
+          "sha256": "aa64a4cd0c57a7c4c8208b362af0a11962c91aea2446fa5e676c74e8e14a12b8"
+        },
+        "package_query": {
+          "path": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch/observed-package-query.txt",
+          "sha256": "5598fd9db814b7d972569280c6e31130f002df86c6b9ea983e023754f63843d1"
+        },
+        "package_list": {
+          "path": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch/observed-package-list.txt",
+          "sha256": "e99fbe419a1c8ab5201575464c5b5edebb6d6ee74dc63b61729d290774730b4c"
+        },
+        "installed_byte_hashes": {
+          "path": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch/observed-markor-installed-bytes.txt",
+          "sha256": "d7b0d5e815c6bc604ada4fa11620298f1baacb101a813c9a85b2d9d5abdd0de6"
+        },
+        "cpu_kernel": {
+          "path": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch/cpu-quota-kernel.json",
+          "sha256": "fed2be5e4ceb0ac60a6e5809b91eba5a7b72bda24c5eac6a4cbbdd72e99ca56c"
+        },
+        "mac_window": {
+          "path": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch/mac-window.json",
+          "sha256": "4405c48f47359dd5a68fa0ab9261c4dc15ead46a6ba1ee00087c451649a57e89"
+        },
+        "normal_backing_close": {
+          "path": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch/backing-after.json",
+          "sha256": "2cfdb3654d9cd71edeacc6a010214f5d7142f6759635c047ea364db3e705d08a"
+        },
+        "recovery": {
+          "path": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch/recovery-readback.json",
+          "sha256": "c8ceea542fc4603147102c12534b5f383a9aac3632e159e9c203d36ee873d512"
+        },
+        "consumer": {
+          "path": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch/completion-consumer.json",
+          "sha256": "e8549d13243f6d2f0c8d8f8e4fb892c0dafdfd754bc60f981c3193d3bfee33d1"
+        },
+        "backup": {
+          "path": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch/userdata-backup.json",
+          "sha256": "bd872e05bc2377493ac48df367b40b8c847565a5d3c7f5104d7240b88b38f43b"
+        },
+        "baseline_note_absent": {
+          "path": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch/baseline-note-absence.json",
+          "sha256": "1d9263386c76b4b53ff1f339f493ee8d6a47aaf9cf37b8f1d4f21e2652f0c166"
+        },
+        "metadata_access_offline": {
+          "path": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch/remaining-metadata-access-offline.json",
+          "sha256": "5b6ed82f757cd580fb345cacfd9091b27f0bab0e62242860cf97b7dfc5c0e1bb"
+        },
+        "actual_metadata_denial": {
+          "path": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch/linux-metadata-observer-denials.json",
+          "sha256": "1481dfeb0ee6aa3cc3bf5a9e39a6fdcbf900d499c61c43b633d583c4f2125d99"
+        },
+        "rea_provider_unavailable": {
+          "path": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch/rea-layout-provider-unavailable.json",
+          "sha256": "72c53fb079c753205a1c38184c438459c2be4d954af8f2dd76464d5f7ab6528e"
+        },
+        "rea_scope": "MCP inspect_binary_layout returnedprovider_unavailable: REA_PWNTOOLS_PYTHON notconfigured. No layoutinspection orMCPconnectionabsence inferred; GNUobjdumpMCP workedinprior346. Supplemental readelfCLI showedlibselinux neededlibpcre2/liblog/libpackagelistparser/libc, notlibcrypto; notMCP orlivecrypto availability proof.",
+        "supplemental_libselinux_cli": {
+          "path": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch/libselinux-dynamic-cli.txt",
+          "sha256": "4ab5e2fa16419cdbd2284ca8e2e54d0d310e197ae1a0c320497e7b35e70f13c9"
+        }
+      },
+      "pms_query_producer_correction": {
+        "source": "runtime/aosp/linux-services/install-markor.sh",
+        "source_sha256": "0a23dac45fb63178cea39ecbea96b54d49e74934bc9b4b9de6d0d3b0dc57ac8b",
+        "commands": [
+          "/system/bin/service check package",
+          "/system/bin/cmd package list packages --user 0"
+        ],
+        "scope": "Originalcommands outputs/status retained; no expectedstrings/fakeinventory. Actual348query/list verified; remainingMACobserver failure retained."
+      }
     }
   },
   "history": [
@@ -1743,6 +1906,12 @@
       "utc": "2026-11-05T12:10:01.233138+00:00",
       "milestone": "347 actualInstallerRPC/28identityguard andMarkorsavednoteUI atkernelCPU300; retainouter1missingPMSqueries andbackgroundDSUcrashes",
       "evidence": "/home/tv/recuperacion-archtv/9904b9d6-7d3a-4b42-b283-446ee96ac2bc-markor-software-launch",
+      "R1": "open"
+    },
+    {
+      "utc": "2026-11-05T12:43:59.191844+00:00",
+      "milestone": "348 realnewnote21bytes/forcedstop/coldreopen undercoherentART +PMSqueries; preserveLinuxobserverMACdenial",
+      "evidence": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch",
       "R1": "open"
     }
   ]

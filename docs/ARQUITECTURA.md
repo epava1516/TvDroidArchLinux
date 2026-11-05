@@ -1,5 +1,9 @@
 # Arquitectura vigente · A16-QPR2-1
 
+348 confirma el recorrido local de nota sobre ART/Bionic/AOSP coherentes y Rust/Smithay. El fallo restante corresponde al lector: Linuxinit queda denegado en search de system_userdir_file; archivos CE incluyen categoríasMCS. La comparación offline con etiquetas reales autoriza a init/system_server originales para metadatos de CE y los tres archivos de permisos; no prueba todavía su lectura real. Integrar ese testigo fijo en el worker original existente, manteniendo la denegación Linux, y conservar el hashAPK producido por el cliente original. Disponibilidad del mecanismo de hash nativo aún por comprobar; no preparar más permisos amplios ni reimplementar criptografía. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration348`.
+
+Histórico anterior:
+
 La guardia Installer347 usa la operación Binder original invalidateMounts y el PID verificado de system_server, en lugar del archivo de consulta exclusivo del cliente antiguo. La cuota300 experimental se comprueba en cgroupv2, con memoria4GiB/swap1GiB y límitesANR/seguridad intactos. La nota reaparece; no atribuir la mejora sólo aCPU (cachés/datos difieren y hubo éxitos200). Dos procesos DSU originales fallan por servicio dynamic_system ausente: evidencia de perfil de paquetes aún poco coherente, no razón para arrancar Android completo. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration347`.
 
 Histórico anterior:

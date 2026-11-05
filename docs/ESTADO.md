@@ -1,5 +1,9 @@
 # Estado actual y punto de entrada
 
+348: nota nueva creada y guardada en Markor intacta por entrada real, 21bytes/hash iguales antes/después del force-stop original; PID1347 ausente→relanzamiento frío1712 y texto visible en el editor nuevo. Guardia28, InstallerRPC y consultas/lista PMS originales pasan. Nativa0/exterior1: Linuxinit no puede atravesar /data/user (AVC search system_userdir_file, enforcing). Cierre normal, modo0/política68 y recursos recuperados. Próximo: trasladar la observación CE/permisos al worker init Android ya admitido, sin ampliar Linux ni simular disponibilidad. R1 sigue abierto. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration348`.
+
+Histórico anterior:
+
 347: cuota real cpu.max=300000 100000; Markor intacta abre la nota343, editor visible 1,85s tras clic real. Foco original de MainActivity/DocumentActivity y sin ANR de Markor en la captura; no prueba causal de la cuota ni estabilidad general. Guardia28 y retorno Binder original Installer positivos; nativa0/exterior1 por package-query.txt/package-list.txt sin productor. Cierre normal y modo0/política68 recuperados. Próximo: emitir consultas PMS originales reales y verificar juntos los contratos restantes, sin inventar archivos. CPU200 sigue por defecto; R1 abierto. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration347`.
 
 Histórico anterior:

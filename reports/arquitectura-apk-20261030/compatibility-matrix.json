@@ -414,7 +414,7 @@
         "close": "approved",
         "reopen": "approved"
       },
-      "reason": "Experimental exact local Markdown workflow162 verified in permissive ephemeral cohort; all other functions/profiles, durable runtime data, MAC/security, stability/performance and product gates retain explicit open requirements.",
+      "reason": "Current348 exactintactMarkor localnote create/save/forcedstop/coldreopen observedoncoherentARTbase underboundedMAC withCPU300. Linuxmetadataobserver denied search; overallcohort/R1 remainsopen. Allotherfeatures, gracefulclose/reboot/FBE, updates/stability/lightness/generalAPK unaccepted.",
       "framework_class_link_pass": true,
       "declared_application": "net.gsantner.markor.ApplicationObject",
       "bootstrap_experiment": {
@@ -453,67 +453,67 @@
       "historical_reason_android13": "Current host launcher substitutes Application and Activity/widgets. Complete real-app route not demonstrated; static inventory does not establish execution.",
       "runtime_stage_evidence": {
         "installation": {
-          "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "c4811ff5b370932c757ad64f55058e1772a80bb37c85310299d0a14214ae582c",
-          "section": "note_process_reopen162",
+          "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
+          "record_sha256": "eea921de292ed68ce871ad06fd6559b56de1f27c83dd2ebfafb6bf3b74983040",
+          "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
-          "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance. Services means required local-note route; close means original forced process stop; persistence is across those two app processes only."
+          "scope": "ExactintactMarkorv164 selectedlocalnote workflow oncoherentoriginalART/Bionic/AOSP withRust/Smithay andboundedCPU300. ActualUI/input/create/save21bytes; originalFUSEhashbefore/after, originalAMSforce-stop/oldPIDabsent/coldnewPID, actualsavednoteeditor. Notallfeatures/broadAPK, gracefulclose, reboot/FBE/updates/lightness orR1acceptance. Stage installation: originalPMSsession_andintactAPKsource/installedhash"
         },
         "launch": {
-          "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "c4811ff5b370932c757ad64f55058e1772a80bb37c85310299d0a14214ae582c",
-          "section": "note_process_reopen162",
+          "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
+          "record_sha256": "eea921de292ed68ce871ad06fd6559b56de1f27c83dd2ebfafb6bf3b74983040",
+          "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
-          "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance. Services means required local-note route; close means original forced process stop; persistence is across those two app processes only."
+          "scope": "ExactintactMarkorv164 selectedlocalnote workflow oncoherentoriginalART/Bionic/AOSP withRust/Smithay andboundedCPU300. ActualUI/input/create/save21bytes; originalFUSEhashbefore/after, originalAMSforce-stop/oldPIDabsent/coldnewPID, actualsavednoteeditor. Notallfeatures/broadAPK, gracefulclose, reboot/FBE/updates/lightness orR1acceptance. Stage launch: originalMainActivitythenDocumentActivity"
         },
         "interface": {
-          "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "c4811ff5b370932c757ad64f55058e1772a80bb37c85310299d0a14214ae582c",
-          "section": "note_process_reopen162",
+          "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
+          "record_sha256": "eea921de292ed68ce871ad06fd6559b56de1f27c83dd2ebfafb6bf3b74983040",
+          "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
-          "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance. Services means required local-note route; close means original forced process stop; persistence is across those two app processes only."
+          "scope": "ExactintactMarkorv164 selectedlocalnote workflow oncoherentoriginalART/Bionic/AOSP withRust/Smithay andboundedCPU300. ActualUI/input/create/save21bytes; originalFUSEhashbefore/after, originalAMSforce-stop/oldPIDabsent/coldnewPID, actualsavednoteeditor. Notallfeatures/broadAPK, gracefulclose, reboot/FBE/updates/lightness orR1acceptance. Stage interface: actualcreatedandsavednoteeditoraftercoldrelaunch"
         },
         "input": {
-          "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "c4811ff5b370932c757ad64f55058e1772a80bb37c85310299d0a14214ae582c",
-          "section": "note_process_reopen162",
+          "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
+          "record_sha256": "eea921de292ed68ce871ad06fd6559b56de1f27c83dd2ebfafb6bf3b74983040",
+          "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
-          "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance. Services means required local-note route; close means original forced process stop; persistence is across those two app processes only."
+          "scope": "ExactintactMarkorv164 selectedlocalnote workflow oncoherentoriginalART/Bionic/AOSP withRust/Smithay andboundedCPU300. ActualUI/input/create/save21bytes; originalFUSEhashbefore/after, originalAMSforce-stop/oldPIDabsent/coldnewPID, actualsavednoteeditor. Notallfeatures/broadAPK, gracefulclose, reboot/FBE/updates/lightness orR1acceptance. Stage input: 10actualpointer/keyboardcommands; navigationrecoveryrecorded"
         },
         "main_function": {
-          "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "c4811ff5b370932c757ad64f55058e1772a80bb37c85310299d0a14214ae582c",
-          "section": "note_process_reopen162",
+          "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
+          "record_sha256": "eea921de292ed68ce871ad06fd6559b56de1f27c83dd2ebfafb6bf3b74983040",
+          "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
-          "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance. Services means required local-note route; close means original forced process stop; persistence is across those two app processes only."
+          "scope": "ExactintactMarkorv164 selectedlocalnote workflow oncoherentoriginalART/Bionic/AOSP withRust/Smithay andboundedCPU300. ActualUI/input/create/save21bytes; originalFUSEhashbefore/after, originalAMSforce-stop/oldPIDabsent/coldnewPID, actualsavednoteeditor. Notallfeatures/broadAPK, gracefulclose, reboot/FBE/updates/lightness orR1acceptance. Stage main_function: new21bytenotecreatedandsavedbyUI"
         },
         "persistence": {
-          "record": "../android16-package-bootstrap/persistent-userdata-functional.json",
-          "record_sha256": "df3c1ee7e74df27dacd16c038e79834a712c96a478727348e8320bb924ca798e",
-          "section": "successful_repeat167",
+          "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
+          "record_sha256": "eea921de292ed68ce871ad06fd6559b56de1f27c83dd2ebfafb6bf3b74983040",
+          "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
-          "scope": "Exact Markorv164 Markdown note created163 survives complete cohort teardown and original subsystems167; actual bytes, same UID/inodes/MCS, original install/force-stop/relaunch and real single pointer opens editor.167 native/exterior0. Not host reboot/power loss, FBE/MAC, graceful close, arbitrary upgrade or general APK compatibility."
+          "scope": "ExactintactMarkorv164 selectedlocalnote workflow oncoherentoriginalART/Bionic/AOSP withRust/Smithay andboundedCPU300. ActualUI/input/create/save21bytes; originalFUSEhashbefore/after, originalAMSforce-stop/oldPIDabsent/coldnewPID, actualsavednoteeditor. Notallfeatures/broadAPK, gracefulclose, reboot/FBE/updates/lightness orR1acceptance. Stage persistence: sameoriginalFUSEhashbefore/afterforcedstop; crosscohort348notyettested"
         },
         "services": {
-          "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "c4811ff5b370932c757ad64f55058e1772a80bb37c85310299d0a14214ae582c",
-          "section": "note_process_reopen162",
+          "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
+          "record_sha256": "eea921de292ed68ce871ad06fd6559b56de1f27c83dd2ebfafb6bf3b74983040",
+          "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
-          "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance. Services means required local-note route; close means original forced process stop; persistence is across those two app processes only."
+          "scope": "ExactintactMarkorv164 selectedlocalnote workflow oncoherentoriginalART/Bionic/AOSP withRust/Smithay andboundedCPU300. ActualUI/input/create/save21bytes; originalFUSEhashbefore/after, originalAMSforce-stop/oldPIDabsent/coldnewPID, actualsavednoteeditor. Notallfeatures/broadAPK, gracefulclose, reboot/FBE/updates/lightness orR1acceptance. Stage services: requiredlocalnote originalpackages/permission/activity/display/input/storage/ART +28identitywitnesses/PMSqueries/InstallerRPC; notallservices"
         },
         "close": {
-          "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "c4811ff5b370932c757ad64f55058e1772a80bb37c85310299d0a14214ae582c",
-          "section": "note_process_reopen162",
+          "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
+          "record_sha256": "eea921de292ed68ce871ad06fd6559b56de1f27c83dd2ebfafb6bf3b74983040",
+          "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
-          "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance. Services means required local-note route; close means original forced process stop; persistence is across those two app processes only."
+          "scope": "ExactintactMarkorv164 selectedlocalnote workflow oncoherentoriginalART/Bionic/AOSP withRust/Smithay andboundedCPU300. ActualUI/input/create/save21bytes; originalFUSEhashbefore/after, originalAMSforce-stop/oldPIDabsent/coldnewPID, actualsavednoteeditor. Notallfeatures/broadAPK, gracefulclose, reboot/FBE/updates/lightness orR1acceptance. Stage close: originalAMSforcedstop1347 andactualprocabsence/Zygoteexit"
         },
         "reopen": {
-          "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
-          "record_sha256": "c4811ff5b370932c757ad64f55058e1772a80bb37c85310299d0a14214ae582c",
-          "section": "note_process_reopen162",
+          "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
+          "record_sha256": "eea921de292ed68ce871ad06fd6559b56de1f27c83dd2ebfafb6bf3b74983040",
+          "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
-          "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance. Services means required local-note route; close means original forced process stop; persistence is across those two app processes only."
+          "scope": "ExactintactMarkorv164 selectedlocalnote workflow oncoherentoriginalART/Bionic/AOSP withRust/Smithay andboundedCPU300. ActualUI/input/create/save21bytes; originalFUSEhashbefore/after, originalAMSforce-stop/oldPIDabsent/coldnewPID, actualsavednoteeditor. Notallfeatures/broadAPK, gracefulclose, reboot/FBE/updates/lightness orR1acceptance. Stage reopen: originalcoldPID1712 thenactualpointeropenedsavednote"
         }
       },
       "runtime_stage_evidence_history": [
@@ -658,36 +658,104 @@
             "accepted": true,
             "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance. Services means required local-note route; close means original forced process stop; persistence is across those two app processes only."
           }
+        },
+        {
+          "historical_from": "162/167",
+          "evidence": {
+            "installation": {
+              "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
+              "record_sha256": "c4811ff5b370932c757ad64f55058e1772a80bb37c85310299d0a14214ae582c",
+              "section": "note_process_reopen162",
+              "accepted": true,
+              "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance. Services means required local-note route; close means original forced process stop; persistence is across those two app processes only."
+            },
+            "launch": {
+              "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
+              "record_sha256": "c4811ff5b370932c757ad64f55058e1772a80bb37c85310299d0a14214ae582c",
+              "section": "note_process_reopen162",
+              "accepted": true,
+              "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance. Services means required local-note route; close means original forced process stop; persistence is across those two app processes only."
+            },
+            "interface": {
+              "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
+              "record_sha256": "c4811ff5b370932c757ad64f55058e1772a80bb37c85310299d0a14214ae582c",
+              "section": "note_process_reopen162",
+              "accepted": true,
+              "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance. Services means required local-note route; close means original forced process stop; persistence is across those two app processes only."
+            },
+            "input": {
+              "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
+              "record_sha256": "c4811ff5b370932c757ad64f55058e1772a80bb37c85310299d0a14214ae582c",
+              "section": "note_process_reopen162",
+              "accepted": true,
+              "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance. Services means required local-note route; close means original forced process stop; persistence is across those two app processes only."
+            },
+            "main_function": {
+              "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
+              "record_sha256": "c4811ff5b370932c757ad64f55058e1772a80bb37c85310299d0a14214ae582c",
+              "section": "note_process_reopen162",
+              "accepted": true,
+              "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance. Services means required local-note route; close means original forced process stop; persistence is across those two app processes only."
+            },
+            "persistence": {
+              "record": "../android16-package-bootstrap/persistent-userdata-functional.json",
+              "record_sha256": "df3c1ee7e74df27dacd16c038e79834a712c96a478727348e8320bb924ca798e",
+              "section": "successful_repeat167",
+              "accepted": true,
+              "scope": "Exact Markorv164 Markdown note created163 survives complete cohort teardown and original subsystems167; actual bytes, same UID/inodes/MCS, original install/force-stop/relaunch and real single pointer opens editor.167 native/exterior0. Not host reboot/power loss, FBE/MAC, graceful close, arbitrary upgrade or general APK compatibility."
+            },
+            "services": {
+              "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
+              "record_sha256": "c4811ff5b370932c757ad64f55058e1772a80bb37c85310299d0a14214ae582c",
+              "section": "note_process_reopen162",
+              "accepted": true,
+              "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance. Services means required local-note route; close means original forced process stop; persistence is across those two app processes only."
+            },
+            "close": {
+              "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
+              "record_sha256": "c4811ff5b370932c757ad64f55058e1772a80bb37c85310299d0a14214ae582c",
+              "section": "note_process_reopen162",
+              "accepted": true,
+              "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance. Services means required local-note route; close means original forced process stop; persistence is across those two app processes only."
+            },
+            "reopen": {
+              "record": "../android16-package-bootstrap/original-user-unlock-progress.json",
+              "record_sha256": "c4811ff5b370932c757ad64f55058e1772a80bb37c85310299d0a14214ae582c",
+              "section": "note_process_reopen162",
+              "accepted": true,
+              "scope": "Exact intact Markor v164 local Markdown workflow on experimental native Bionic/AOSP x86_64+Rust/Smithay, within one private ephemeral data cohort. Nine workflow stages verified; not all Markor features/general APK compatibility, distribution, performance or security acceptance. Services means required local-note route; close means original forced process stop; persistence is across those two app processes only."
+            }
+          }
         }
       ],
       "latest_workflow_attempt": {
-        "candidate": 347,
+        "candidate": 348,
         "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
-        "record_sha256": "dd79d35273a4a4d64d354dd946ce8832443c42db394af6f271b5291c53f96b9d",
-        "section": "coherent_cache_candidate.profile_coherence_experiment.integration347",
-        "real_primary_workflow_observed": false,
+        "record_sha256": "eea921de292ed68ce871ad06fd6559b56de1f27c83dd2ebfafb6bf3b74983040",
+        "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
+        "real_primary_workflow_observed": true,
         "native_exit": 0,
         "outer_exit": 1,
-        "scope": "Savednote343visible1.85safterrealclick atactualCPU300; originalmain/documentfocus andnoMarkorANRincapturedlogs. No newwrite/fulllifecycle; no causality/R1/generalcompatibilityclaim.343fullprimarypositive and346ANRnegative retained.",
+        "scope": "ExactintactMarkorv164 selectedlocalnote workflow oncoherentoriginalART/Bionic/AOSP withRust/Smithay andboundedCPU300. ActualUI/input/create/save21bytes; originalFUSEhashbefore/after, originalAMSforce-stop/oldPIDabsent/coldnewPID, actualsavednoteeditor. Notallfeatures/broadAPK, gracefulclose, reboot/FBE/updates/lightness orR1acceptance.",
         "stages": {
-          "installation": "originalPMSsession_success_andexactAPKhashreadback",
-          "launch": "originalMainActivityDisplayed+3.059s",
-          "interface": "actualsavednoteeditor",
-          "input": "actualpointerclick",
-          "main_function": "savednote_readonly_reopen",
-          "persistence": "existing343note_reopened_afterclosedcohorts",
-          "services": "28identityguard+originalInstallerRPCverified; finallegacyPMSqueryguardfails",
-          "close": "boundedcohortshutdown_normaldataandhostrecovery",
-          "reopen": "existingnoteonly_notnewforce_stop_relaunch_this_attempt"
+          "installation": "originalPMSsession_andintactAPKsource/installedhash",
+          "launch": "originalMainActivitythenDocumentActivity",
+          "interface": "actualcreatedandsavednoteeditoraftercoldrelaunch",
+          "input": "10actualpointer/keyboardcommands; navigationrecoveryrecorded",
+          "main_function": "new21bytenotecreatedandsavedbyUI",
+          "persistence": "sameoriginalFUSEhashbefore/afterforcedstop; crosscohort348notyettested",
+          "services": "requiredlocalnote originalpackages/permission/activity/display/input/storage/ART +28identitywitnesses/PMSqueries/InstallerRPC; notallservices",
+          "close": "originalAMSforcedstop1347 andactualprocabsence/Zygoteexit",
+          "reopen": "originalcoldPID1712 thenactualpointeropenedsavednote"
         }
       },
       "runtime_security_observation": {
-        "candidate": 347,
-        "state": "policy68bounded enforcing/restored0;28identityguard+originalInstallerreturn; native0/outer1missingPMSqueryfiles; normaldata/hostclose; R1open",
+        "candidate": 348,
+        "state": "policy68bounded enforcing/restored0;28identities+InstallerRPC+PMSquery/list; fullselectedforcednoteworkflow; native0/outer1LinuxobserverMACdenial; normalhost/data close; R1open",
         "evidence": "reports/android16-audio-bootstrap/artd-subprocess-progress.json",
-        "sha256": "dd79d35273a4a4d64d354dd946ce8832443c42db394af6f271b5291c53f96b9d",
-        "section": "coherent_cache_candidate.profile_coherence_experiment.integration347",
-        "latest_result": "Selectedcredential/SID/RPCwitnesses, notallservices/authorization/isolation. CPU300doesnotproveproductionlightness orcauseof346ANR."
+        "sha256": "eea921de292ed68ce871ad06fd6559b56de1f27c83dd2ebfafb6bf3b74983040",
+        "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
+        "latest_result": "Functionalnote proof separatefromLinuxobservermetadata failure andsecurity/isolation. No newpolicy orfakeoutputs."
       },
       "runtime_security_observation_history": [
         {
@@ -1005,6 +1073,15 @@
           "section": "coherent_cache_candidate.profile_coherence_experiment.integration346",
           "latest_result": "27originalRCservices+originalsystemserver credential/SID witnesses; notatomic/allservices/authorization/isolation. MarkorANR andblackUI prevent346APKjourneyacceptance.",
           "record_commit": "4a67847e836a026849501fd432c74e1947a7d445"
+        },
+        {
+          "candidate": 347,
+          "state": "policy68bounded enforcing/restored0;28identityguard+originalInstallerreturn; native0/outer1missingPMSqueryfiles; normaldata/hostclose; R1open",
+          "evidence": "reports/android16-audio-bootstrap/artd-subprocess-progress.json",
+          "sha256": "dd79d35273a4a4d64d354dd946ce8832443c42db394af6f271b5291c53f96b9d",
+          "section": "coherent_cache_candidate.profile_coherence_experiment.integration347",
+          "latest_result": "Selectedcredential/SID/RPCwitnesses, notallservices/authorization/isolation. CPU300doesnotproveproductionlightness orcauseof346ANR.",
+          "record_commit": "e9f3faf3566a36e2dd837c6717c6b315ba98c9a7"
         }
       ],
       "runtime_security_history": [
@@ -1065,55 +1142,55 @@
       ],
       "runtime_mac_stage_evidence": {
         "installation": {
-          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
-          "section": "integrated255",
+          "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
+          "record_sha256": "eea921de292ed68ce871ad06fd6559b56de1f27c83dd2ebfafb6bf3b74983040",
+          "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
-          "scope": "Original PackageInstaller installation, identical intact APK bytes and physical private-directory metadata under enforcing. Not complete isolation, launch, UI, note persistence or full workflow acceptance."
+          "scope": "Only exactfunctionalstage duringboundedactualenforcing; notR1authorization/isolation acceptance. originalPMSsession_andintactAPKsource/installedhash"
         },
-        "remaining": "Forced app close/newPID/cold relaunch and visible unchanged note reopen proven270. Graceful app/cohort shutdown, full-host R1-MAC/PAM admission and tenant isolation, broader API/services, ART compilation ABI, ARM/GMS/DRM and install/update/product remain open.",
         "launch": {
-          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
-          "section": "integrated257",
+          "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
+          "record_sha256": "eea921de292ed68ce871ad06fd6559b56de1f27c83dd2ebfafb6bf3b74983040",
+          "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
-          "scope": "Original explicit launch redirects intact APK to IntroActivity; Status:ok and real SF internal onboarding pixels. Not presentation on Rust/Smithay, input, complete Markor workflow or broad compatibility."
+          "scope": "Only exactfunctionalstage duringboundedactualenforcing; notR1authorization/isolation acceptance. originalMainActivitythenDocumentActivity"
         },
         "physical_presentation": {
-          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
-          "section": "integrated259_physical_presentation",
+          "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
+          "record_sha256": "eea921de292ed68ce871ad06fd6559b56de1f27c83dd2ebfafb6bf3b74983040",
+          "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
-          "scope": "Original onboarding pixels visually observed in actual Smithay DRM capture during enforcing window; no input, note or lifecycle acceptance."
+          "scope": "Only exactfunctionalstage duringboundedactualenforcing; notR1authorization/isolation acceptance. actualcreatedandsavednoteeditoraftercoldrelaunch"
         },
         "pointer_input": {
-          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
-          "section": "integrated262",
+          "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
+          "record_sha256": "eea921de292ed68ce871ad06fd6559b56de1f27c83dd2ebfafb6bf3b74983040",
+          "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
-          "scope": "Real Linux pointer through Smithay/HWC/typed gateway/original InputManager advances intact Markor UI and original Settings under enforcing. Not keyboard text, note or complete workflow."
+          "scope": "Only exactfunctionalstage duringboundedactualenforcing; notR1authorization/isolation acceptance. 10actualpointer/keyboardcommands; navigationrecoveryrecorded"
         },
         "keyboard_ascii": {
-          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
-          "section": "integrated266",
+          "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
+          "record_sha256": "eea921de292ed68ce871ad06fd6559b56de1f27c83dd2ebfafb6bf3b74983040",
+          "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
-          "scope": "Actual original filename and Markdown text entered through physical Linux keyboard, original Generic.kl/libinput and original InputManager under enforcing; other layouts unproven."
+          "scope": "Only exactfunctionalstage duringboundedactualenforcing; notR1authorization/isolation acceptance. 10actualpointer/keyboardcommands; navigationrecoveryrecorded"
         },
         "note_create_save": {
-          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
-          "section": "integrated266",
+          "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
+          "record_sha256": "eea921de292ed68ce871ad06fd6559b56de1f27c83dd2ebfafb6bf3b74983040",
+          "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
-          "scope": "Real original UI creates/saves21 bytes, observed unchanged in persistent backing after cohort closes. Not app reopen or explicit lifecycle acceptance."
+          "scope": "Only exactfunctionalstage duringboundedactualenforcing; notR1authorization/isolation acceptance. new21bytenotecreatedandsavedbyUI"
         },
-        "forced_close_relaunch_persistence270": {
+        "forced_close_relaunch_persistence348": {
+          "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
+          "record_sha256": "eea921de292ed68ce871ad06fd6559b56de1f27c83dd2ebfafb6bf3b74983040",
+          "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
-          "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
-          "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
-          "scope": "Original force-stop PID1354 absent, cold newPID1757, same21-byte note hash and physical UI after reopen under policy60 enforcing; existing UI-created266 note. Not graceful close/full host MAC/general APK.",
-          "section": "integrated270"
-        }
+          "scope": "Only exactfunctionalstage duringboundedactualenforcing; notR1authorization/isolation acceptance. originalcoldPID1712 thenactualpointeropenedsavednote"
+        },
+        "remaining": "Linuxobserver search denied; nativeAndroid-authority CE/permission witness stillpending, R1/host/tenant boundaries/FBE/gracefulclose/update/performance/broadAPIs/ARM/GMS/DRM open."
       },
       "latest_workflow_attempt_history": [
         {
@@ -1245,31 +1322,109 @@
             "reopen": "not_accepted_this_attempt"
           },
           "record_commit": "4a67847e836a026849501fd432c74e1947a7d445"
+        },
+        {
+          "candidate": 347,
+          "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
+          "record_sha256": "dd79d35273a4a4d64d354dd946ce8832443c42db394af6f271b5291c53f96b9d",
+          "section": "coherent_cache_candidate.profile_coherence_experiment.integration347",
+          "real_primary_workflow_observed": false,
+          "native_exit": 0,
+          "outer_exit": 1,
+          "scope": "Savednote343visible1.85safterrealclick atactualCPU300; originalmain/documentfocus andnoMarkorANRincapturedlogs. No newwrite/fulllifecycle; no causality/R1/generalcompatibilityclaim.343fullprimarypositive and346ANRnegative retained.",
+          "stages": {
+            "installation": "originalPMSsession_success_andexactAPKhashreadback",
+            "launch": "originalMainActivityDisplayed+3.059s",
+            "interface": "actualsavednoteeditor",
+            "input": "actualpointerclick",
+            "main_function": "savednote_readonly_reopen",
+            "persistence": "existing343note_reopened_afterclosedcohorts",
+            "services": "28identityguard+originalInstallerRPCverified; finallegacyPMSqueryguardfails",
+            "close": "boundedcohortshutdown_normaldataandhostrecovery",
+            "reopen": "existingnoteonly_notnewforce_stop_relaunch_this_attempt"
+          },
+          "record_commit": "e9f3faf3566a36e2dd837c6717c6b315ba98c9a7"
         }
       ],
-      "runtime_results_scope": "Historical exact162/167 workflows and255–270 MAC stages retain their own evidence; not revalidated by336. Current profile trial is latest_workflow_attempt336; no generalAPK/security acceptance.",
+      "runtime_results_scope": "runtime_results162/167 remainhistorical, archivedstageevidence retainsownlimits. Currentfunctional/matrixstage evidence348; prior343workflow and344/345/347savednote reopens retainedashistory.346ANR remainsnegative; no generalAPK/security acceptance.",
       "last_full_primary_workflow_positive": {
-        "candidate": 343,
+        "candidate": 348,
         "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
-        "record_sha256": "5e34a712c1ca9230c7e5048012b550363140b89df1d5a05dc920def64edf7b73",
-        "section": "coherent_cache_candidate.profile_coherence_experiment.integration343",
+        "record_sha256": "eea921de292ed68ce871ad06fd6559b56de1f27c83dd2ebfafb6bf3b74983040",
+        "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
         "real_primary_workflow_observed": true,
         "native_exit": 0,
         "outer_exit": 1,
-        "scope": "IntactrealAPK primarynote workflow observed oncoherentbase; notallMarkorfeatures, fullcohort/R1, broadcompatibility orproduction acceptance.",
+        "scope": "ExactintactMarkorv164 selectedlocalnote workflow oncoherentoriginalART/Bionic/AOSP withRust/Smithay andboundedCPU300. ActualUI/input/create/save21bytes; originalFUSEhashbefore/after, originalAMSforce-stop/oldPIDabsent/coldnewPID, actualsavednoteeditor. Notallfeatures/broadAPK, gracefulclose, reboot/FBE/updates/lightness orR1acceptance.",
         "stages": {
-          "installation": "intact_original_PMS",
-          "launch": "original_MainActivity",
-          "interface": "actual_note_editor_before_and_after_relaunch",
-          "input": "actual_pointer_keyboard_focused_body",
-          "main_function": "note_created_saved21bytes343",
-          "persistence": "original_FUSE_same_bytes_hash_before_after_stop",
-          "services": "required_original_packages_permissions_activity_display_input_storage_ART;other_services_unproven",
-          "close": "original_force_stop_oldPID1328_absent",
-          "reopen": "original_coldPID1633_and_actual_saved_note_editor"
-        },
-        "record_commit": "257a4e092c764a8892e74c6dcda8eb848d952e27"
-      }
+          "installation": "originalPMSsession_andintactAPKsource/installedhash",
+          "launch": "originalMainActivitythenDocumentActivity",
+          "interface": "actualcreatedandsavednoteeditoraftercoldrelaunch",
+          "input": "10actualpointer/keyboardcommands; navigationrecoveryrecorded",
+          "main_function": "new21bytenotecreatedandsavedbyUI",
+          "persistence": "sameoriginalFUSEhashbefore/afterforcedstop; crosscohort348notyettested",
+          "services": "requiredlocalnote originalpackages/permission/activity/display/input/storage/ART +28identitywitnesses/PMSqueries/InstallerRPC; notallservices",
+          "close": "originalAMSforcedstop1347 andactualprocabsence/Zygoteexit",
+          "reopen": "originalcoldPID1712 thenactualpointeropenedsavednote"
+        }
+      },
+      "runtime_mac_stage_evidence_history": [
+        {
+          "historical_from": "255-270",
+          "evidence": {
+            "installation": {
+              "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+              "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
+              "section": "integrated255",
+              "accepted": true,
+              "scope": "Original PackageInstaller installation, identical intact APK bytes and physical private-directory metadata under enforcing. Not complete isolation, launch, UI, note persistence or full workflow acceptance."
+            },
+            "remaining": "Forced app close/newPID/cold relaunch and visible unchanged note reopen proven270. Graceful app/cohort shutdown, full-host R1-MAC/PAM admission and tenant isolation, broader API/services, ART compilation ABI, ARM/GMS/DRM and install/update/product remain open.",
+            "launch": {
+              "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+              "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
+              "section": "integrated257",
+              "accepted": true,
+              "scope": "Original explicit launch redirects intact APK to IntroActivity; Status:ok and real SF internal onboarding pixels. Not presentation on Rust/Smithay, input, complete Markor workflow or broad compatibility."
+            },
+            "physical_presentation": {
+              "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+              "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
+              "section": "integrated259_physical_presentation",
+              "accepted": true,
+              "scope": "Original onboarding pixels visually observed in actual Smithay DRM capture during enforcing window; no input, note or lifecycle acceptance."
+            },
+            "pointer_input": {
+              "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+              "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
+              "section": "integrated262",
+              "accepted": true,
+              "scope": "Real Linux pointer through Smithay/HWC/typed gateway/original InputManager advances intact Markor UI and original Settings under enforcing. Not keyboard text, note or complete workflow."
+            },
+            "keyboard_ascii": {
+              "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+              "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
+              "section": "integrated266",
+              "accepted": true,
+              "scope": "Actual original filename and Markdown text entered through physical Linux keyboard, original Generic.kl/libinput and original InputManager under enforcing; other layouts unproven."
+            },
+            "note_create_save": {
+              "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+              "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
+              "section": "integrated266",
+              "accepted": true,
+              "scope": "Real original UI creates/saves21 bytes, observed unchanged in persistent backing after cohort closes. Not app reopen or explicit lifecycle acceptance."
+            },
+            "forced_close_relaunch_persistence270": {
+              "accepted": true,
+              "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
+              "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
+              "scope": "Original force-stop PID1354 absent, cold newPID1757, same21-byte note hash and physical UI after reopen under policy60 enforcing; existing UI-created266 note. Not graceful close/full host MAC/general APK.",
+              "section": "integrated270"
+            }
+          }
+        }
+      ]
     }
   ],
   "uncovered": [
@@ -1639,5 +1794,12 @@
     "source_sha256": "dd79d35273a4a4d64d354dd946ce8832443c42db394af6f271b5291c53f96b9d",
     "section": "coherent_cache_candidate.profile_coherence_experiment.integration347",
     "scope": "ActualsavednoteUI atCPU300+28identities+InstallerRPC, outer1legacyPMSqueryfiles; noR1/generalAPKacceptance."
+  },
+  "latest_integration_observation_348": {
+    "application": "Markor intact v164",
+    "source": "reports/android16-audio-bootstrap/artd-subprocess-progress.json",
+    "source_sha256": "eea921de292ed68ce871ad06fd6559b56de1f27c83dd2ebfafb6bf3b74983040",
+    "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
+    "scope": "Exactlocalnote workflow realpositive; outer1LinuxobserversearchMACdenial. Not R1/allapp/generalcompatibility."
   }
 }

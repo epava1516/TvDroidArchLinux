@@ -1,5 +1,9 @@
 # Índice de evidencias
 
+348 (e0fa5b78-4a45-43d5-8ddf-fe45ef118344): informe ART →profile_coherence_experiment.integration348 vincula notaSHA d3dd765e00aedeb5b0325cbb4a7efa3a66892ed7e0b36ea2a385586dd7551a33, recibos CLI, PID1347→1712, frames de creación/reapertura, baseline ausente, PMS128paquetes, guardia28, CPU300, MAC y cierre/consumo. El log completo1083998bytes se recuperó offline conSHA igual; dos regiones noUTF8 se documentan, sin cambiar bytes. AVC real deniega search Linuxinit→system_userdir_file; permisos de lectores Android sólo contrastados offline. REA ELF-layout devolvió provider_unavailable porPython no configurado; readelfCLI complementario no acredita MCP ni biblioteca ya cargada. Exterior1 conservado. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration348`.
+
+Histórico anterior:
+
 347 (9904b9d6-7d3a-4b42-b283-446ee96ac2bc): informe ART →profile_coherence_experiment.integration347 enlaza cpu.max real, contadores/PSI, frame de nota y demora1,85s, logs originales, guardia28, InstallerRPC, ventanaMAC, cierre/recuperación/consumo y revisión de contratos restantes. installer_guard_correction conserva tres negativas de procedencia (retorno ausente, PID y UID incorrectos) más replay positivo offline346, separados de ejecución347. Sin ANR Markor en992231bytes capturados; dos fallos DSU de fondo preservados. Exterior1 por consultas PMS sin productor; no guardia global aceptada. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration347`.
 
 Histórico anterior:
