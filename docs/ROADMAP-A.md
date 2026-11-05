@@ -1,5 +1,7 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+Tras321: control322 limitado de presupuesto CPU sobre la misma imagen para contrastar contención fuera del HAL. Si falla, descartar cuota como explicación suficiente. Priorizar después imagen/caché ART coherente original y carga real sin fallback: el desacuerdo de checksum ya está demostrado, no atribuirle audio sin prueba. Conservar la puerta completa de señal, continuidad, launcher/selección y reapertura.
+
 Decisión319: las16 consultas no explican por sí solas el fallo. Próxima prueba321 mide inicio/fin reales de transferencia PCM para distinguir bloqueo dentro del HAL de demora previa. Conserva contratos originales, política y TSC. Señal completa, launcher/selección y reapertura siguen pendientes.
 
 Prioridad inmediata tras318: controlar perturbación de observación con la misma pila original, un VIEW y una sola consulta AudioFlinger tras30s. Decidir por logs reales de timing y consumo; si persiste, descartar las16 consultas como explicación suficiente. Launcher/selección/reapertura, señal completa y salida acústica siguen abiertos.

@@ -251,6 +251,16 @@
         "one_late_dump": true,
         "complete_audio_accepted": false,
         "decision": "Repeated dumps not sufficient cause; transfer timing observation next. No signal/acoustic or launcher/reopen acceptance."
+      },
+      "audio_control321": {
+        "checkpoint": "/home/tv/recuperacion-archtv/ab8962df-3fce-46bb-a10b-6c7f6fb8cbc4-markor-software-launch",
+        "timed_writes": 64,
+        "max_transfer_ms": 114.778128,
+        "max_inter_transfer_gap_ms": 1695.646471,
+        "track_server_frames": 102400,
+        "flushed_frames": 18637,
+        "complete_audio_accepted": false,
+        "decision": "Largest delay outside HAL transfer; controlled CPU budget comparison next, not timestamp weakening. Coherent ART remains open."
       }
     },
     {

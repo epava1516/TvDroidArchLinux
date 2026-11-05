@@ -8,6 +8,17 @@ payload=(repo/sys.argv[1]).resolve()
 data_store=Path(sys.argv[2]).resolve()
 assert data_store.parent==Path("/home/tv/.cache/archtv/aosp16-qpr2") and data_store.name.startswith("apex-data-store-") and (data_store/"linux-preparation.json").is_file()
 assert os.geteuid()==0 and payload.is_relative_to(repo/'dist/aosp16') and payload.is_file()
+# Explicit bounded resource comparison, default unchanged. A4-vCPU VM retains
+# at least one CPU of aggregate headroom at the experimental300% ceiling.
+# This is not a production lightness or scheduling guarantee.
+def candidate_cpu_quota_percent(raw, host_cpus):
+    assert raw in ('200', '300'), 'Only reviewed200/300 percent CPU profiles'
+    value = int(raw)
+    assert value == 200 or (host_cpus is not None and host_cpus >= 4), '300 percent requires at least4 host-visible CPUs'
+    return value
+cpu_quota_percent = candidate_cpu_quota_percent(
+    os.environ.get('ARCHTV_CANDIDATE_CPU_QUOTA_PERCENT', '200'), os.cpu_count())
+assert cpu_quota_percent == 200 or len(sys.argv) == 4, '300 percent is integrated comparison only'
 lock=open('/home/tv/.cache/archtv/apex-cohort.lock','a');fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
 stamp=datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ')
 recovery=Path(os.environ['ARCHTV_RUN_CHECKPOINT']) if os.environ.get('ARCHTV_RUN_CHECKPOINT') else Path('/home/tv/recuperacion-archtv')/(stamp+'-apex-activation')
@@ -58,6 +69,7 @@ if integrated_socket:
 else:assert not sessions,'Interactive session present'
 
 before={'utc':stamp,'head':command(['runuser','-u','tv','--','git','-C',str(repo),'rev-parse','HEAD']).stdout.strip(),'pending':command(['runuser','-u','tv','--','git','-C',str(repo),'status','--short']).stdout,'boot_id':Path('/proc/sys/kernel/random/boot_id').read_text().strip(),'kernel':os.uname().release,'payload':str(payload),'data_store':str(data_store),'integrated_socket':str(integrated_socket) if integrated_socket else None,'data_preparation_sha256':hashlib.sha256((data_store/'linux-preparation.json').read_bytes()).hexdigest(),'payload_sha256':hashlib.file_digest(payload.open('rb'),'sha256').hexdigest(),'allowed_dm_names':sorted(allowed),'modules_before':command(['lsmod']).stdout,'scope':('Bounded enforcing integration diagnostic requested; inspect mac-window.json actual modes/result. No APK/MAC acceptance or VM restart inferred.' if os.environ.get('ARCHTV_MAC_WINDOW_SECONDS') else 'Trusted original APEX activation only. Permissive; no APK or MAC acceptance. No VM restart requested.')}
+before['cpu_quota_percent']=cpu_quota_percent
 assert re.fullmatch('[0-9a-f]{40}',before['head']),before['head']
 (recovery/'before.json').write_text(json.dumps(before,indent=2)+'\n')
 (recovery/'pending.patch').write_bytes(subprocess.check_output(['runuser','-u','tv','--','git','-C',str(repo),'diff','--binary']))
@@ -145,7 +157,7 @@ def candidate_run(args, **kwargs):
 
 try:
     with log.open('x') as stream:
-        result=candidate_run(['systemd-run','--wait','--pipe','--collect','--unit='+unit,'--slice=archtv.slice','--service-type=exec','--property=RuntimeMaxSec='+str(350+interaction_extension if integrated_socket else 210),'--property=TimeoutStopSec=5','--property=KillMode=control-group','--property=MemoryMax=4G','--property=MemorySwapMax=1G','--property=CPUQuota=200%','--property=TasksMax='+str(1024 if integrated_socket else 256),'--setenv=ARCHTV_RUN_CHECKPOINT='+str(recovery),*(['--setenv=ARCHTV_MAC_STDIN_GATE=1'] if mac_window else []),*(['--property=OpenFile=/proc/sys/net/core/bpf_jit_enable:archtv-bpf-jit:read-only','--property=OpenFile=/proc/sys/net/core/bpf_jit_kallsyms:archtv-bpf-kallsyms:read-only','--property=OpenFile=/proc/self/ns/net:archtv-host-netns:read-only','--setenv=ARCHTV_HOST_NETNS_INODE='+str(Path('/proc/self/ns/net').stat().st_ino)] if integrated_socket else []),'timeout','--kill-after=5',str(345+interaction_extension if integrated_socket else 205),'setpriv','--inh-caps=-all','--ambient-caps=-all',*(['/usr/bin/python',str(repo/'reports/android16-package-bootstrap/execute-integrated.py'),'--prepare-wayland',str(integrated_socket),str(payload),str(data_store)] if integrated_socket and json.loads((payload.parent/'build-options.json').read_text()).get('preconnected_wayland',False) else ['unshare','--mount','--pid','--fork','--kill-child=SIGKILL','--net','--ipc','--uts','/usr/bin/python',*([str(repo/'reports/android16-package-bootstrap/execute-integrated.py'),str(integrated_socket),str(payload),str(data_store)] if integrated_socket else [str(repo/'reports/android16-apex-bootstrap/execute.py'),'--payload',str(payload),'--data-store',str(data_store),'--observe-logs'])])],stdout=stream,stderr=subprocess.STDOUT,timeout=370+interaction_extension if integrated_socket else 230)
+        result=candidate_run(['systemd-run','--wait','--pipe','--collect','--unit='+unit,'--slice=archtv.slice','--service-type=exec','--property=RuntimeMaxSec='+str(350+interaction_extension if integrated_socket else 210),'--property=TimeoutStopSec=5','--property=KillMode=control-group','--property=MemoryMax=4G','--property=MemorySwapMax=1G','--property=CPUQuota='+str(cpu_quota_percent)+'%','--property=TasksMax='+str(1024 if integrated_socket else 256),'--setenv=ARCHTV_RUN_CHECKPOINT='+str(recovery),*(['--setenv=ARCHTV_MAC_STDIN_GATE=1'] if mac_window else []),*(['--property=OpenFile=/proc/sys/net/core/bpf_jit_enable:archtv-bpf-jit:read-only','--property=OpenFile=/proc/sys/net/core/bpf_jit_kallsyms:archtv-bpf-kallsyms:read-only','--property=OpenFile=/proc/self/ns/net:archtv-host-netns:read-only','--setenv=ARCHTV_HOST_NETNS_INODE='+str(Path('/proc/self/ns/net').stat().st_ino)] if integrated_socket else []),'timeout','--kill-after=5',str(345+interaction_extension if integrated_socket else 205),'setpriv','--inh-caps=-all','--ambient-caps=-all',*(['/usr/bin/python',str(repo/'reports/android16-package-bootstrap/execute-integrated.py'),'--prepare-wayland',str(integrated_socket),str(payload),str(data_store)] if integrated_socket and json.loads((payload.parent/'build-options.json').read_text()).get('preconnected_wayland',False) else ['unshare','--mount','--pid','--fork','--kill-child=SIGKILL','--net','--ipc','--uts','/usr/bin/python',*([str(repo/'reports/android16-package-bootstrap/execute-integrated.py'),str(integrated_socket),str(payload),str(data_store)] if integrated_socket else [str(repo/'reports/android16-apex-bootstrap/execute.py'),'--payload',str(payload),'--data-store',str(data_store),'--observe-logs'])])],stdout=stream,stderr=subprocess.STDOUT,timeout=370+interaction_extension if integrated_socket else 230)
         exit_code=result.returncode
 finally:
     command(['systemctl','stop',unit+'.service'])

@@ -1,5 +1,7 @@
 # Arquitectura vigente · A16-QPR2-1
 
+321 localiza la pausa fuera de applyGain/pcm_writei. El runner conserva200% por defecto; una comparación explícita300% exige≥4CPU y cohorte integrada, sin quitar límite ni modificar4G/1G de memoria. Se registra el perfil en before.json; no acredita ligereza de producción. Throttling agregado no demuestra causa del retraso.
+
 Observación321 candidata: dos lecturas CLOCK_MONOTONIC alrededor de applyGain/pcm_writei, publicadas en el log existente con errores explícitos. No se sustituyen timestamps de presentación ni resultados PCM.319 conserva el reset sin dumps durante playback; no se atribuye automáticamente a VirtualBox ni al reloj.
 
 318 ejercita119 posiciones, sin rebase acumulado. Un único VIEW evita la excepción foreground sólo en esa ejecución, pero conserva vaciado13846 frames. El siguiente control reduce consultas AudioFlinger a una tardía; no cambia contrato de timestamps, reloj, política ni APK. No hay señal completa acreditada.

@@ -57,7 +57,7 @@
     "path": "/home/tv/recuperacion-archtv/47768c2f-8ed9-4b63-94f2-2dc69075bc02-markor-software-launch/functional-result.json",
     "sha256": "ccab625d57941e71b0c060e15d28ecbc5ed1e710d358c1c0b6e033ba1b985b5b"
   },
-  "next_experiment": "Actual321 transfer duration observation, same original stack and late dump;320 packaging failed before runtime (javac exit1, stderr empty, stdout not retained). Preserve320; record stdout from now on. Cause unproven.",
+  "next_experiment": "Controlled same321payload and stack, CPUQuota300% vs original200%, within4vCPU VM, unchanged4G/1G limits/policy/TSC. Aggregate37.339s throttling is hypothesis only, not proof of cause. Default200 unchanged; if no timing improvement stop treating quota as sufficient explanation. Coherent original ART image integration remains next complete subsystem, not more HAL rewrites.",
   "control314": {
     "path": "/home/tv/recuperacion-archtv/ca39f661-16b2-4a71-beec-fd849cf14d7d-markor-software-launch/functional-result.json",
     "sha256": "95029372f366c61240fba4631e61b04c9480fd72fa9d79037cc893be6f491d52"
@@ -155,7 +155,7 @@
     "path": "/home/tv/recuperacion-archtv/270b9a2e-5a3a-46eb-b66a-cd913a4ef08c-markor-software-launch/functional-result.json",
     "sha256": "1c3dc01c44bd4a0ec6bded0c05c20673a5af86cae56d0c4f4c974336b8d4c75a"
   },
-  "current_blocker": "Actual319 with one late dump still resets timing and discards18462frames. 0.75s inter-write gap not localized; frame counters do not identify source signal.",
+  "current_blocker": "Actual321 largest inter-transfer gap1695.646471ms lies outside observed gain/pcm_writei duration(max114.778128ms); original VLC flush1671689us. Source signal/fullaudio remain unproven.",
   "foreground317_analysis": {
     "path": "/home/tv/recuperacion-archtv/270b9a2e-5a3a-46eb-b66a-cd913a4ef08c-markor-software-launch/foreground-sequence-analysis.json",
     "sha256": "c82709dec9299c824d45d8cb6dd43c7ff03c399ae1660680e3fa1b95a632a5d3"
@@ -257,9 +257,48 @@
     }
   },
   "next_candidate321": {
-    "state": "building",
+    "state": "terminal_recovered_consumed",
     "primary_build": "dist/aosp16/audio-linux-primary-build-8",
     "core_link": "dist/aosp16/audio-linux-core-link-10",
     "scope": "Same320 transfer-duration observation; no changes to original PCM result or presentation timestamps."
+  },
+  "control321": {
+    "attempt": 321,
+    "state": "terminal_recovered_consumed",
+    "actual_install_session": 167492403,
+    "timed_writes": 64,
+    "captured_hal_accepted_frames": 262144,
+    "max_transfer_ms": 114.778128,
+    "max_gap_between_transfers_ms": 1695.646471,
+    "late_flush_us": 1671689,
+    "audio_timing_accepted": false,
+    "source_signal_accepted": false,
+    "decision": "Observed largest delay lies outside gain/pcm_writei transfer. Do not weaken timestamps, reset counters or blame blocking PCM. Investigate upstream scheduling/original media service initialization; coherent ART images remain a separate demonstrated missing subsystem.",
+    "resource_scope": "CPUQuota200% and aggregate37.339s throttling observed; no time-resolved correlation establishes cause of1.696s gap. Do not infer causality from aggregate counters.",
+    "source_log_sha256": "bc298e0d4de59dde8a571d8290826189d81aec2f46aa7490a2ba35def9d3069e",
+    "limits": [
+      "64 captured HAL writes can contain padding/silence; not proof of full source samples",
+      "Single VIEW does not establish launcher/media/reopen stability",
+      "R1, coherent ART cache, ARM/GMS/DRM and production scope remain open"
+    ],
+    "checkpoint": "/home/tv/recuperacion-archtv/ab8962df-3fce-46bb-a10b-6c7f6fb8cbc4-markor-software-launch",
+    "outer_exit": 1,
+    "foreground_exception_count": 0,
+    "evidence": {
+      "observed-original-logcat.txt": "62ee99b76922cf8b7ad8b4a9b79499df0cffa28425ed152b8e0993e375792c50",
+      "observed-audio-flinger-1.txt": "7af2ec40d31851c274a050d3ed7a0e033dc73e483a789169b8d9c83734511ea1",
+      "post-playback-cgroup-resources.json": "aafa85f550fbf1764873eb318f4ebb2c345b88b8e97d4f1babaccfb7306ca881",
+      "recovery-readback.json": "b76abc2870f0f8253430fabc92486677eb6eca777fb6bf7cd0eaccef919ad224",
+      "finite-audit/result.json": "23773991695f17310f8f0c5a2e8a248b67cef6c6e3b53879adf565a37900770c"
+    },
+    "track_server_frames": 102400,
+    "track_flushed_frames": 18637,
+    "source_reference_frames": 192000
+  },
+  "next_control322": {
+    "state": "prepared_not_started",
+    "payload_reused": "dist/aosp16/package-cohort-build-321/payload-2.ext4",
+    "changed": "Explicit bounded host runner CPUQuota300 profile only; original default200 preserved",
+    "limits": "No causal or fullaudio claim before real result; improved timing alone cannot identify source signal or establish lightness."
   }
 }

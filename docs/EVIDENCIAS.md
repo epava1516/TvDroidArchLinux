@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+321: [resultado funcional](../../recuperacion-archtv/ab8962df-3fce-46bb-a10b-6c7f6fb8cbc4-markor-software-launch/functional-result.json) enlaza hashes de log original, AudioFlinger, recursos y recuperación.64 escrituras; max transferencia114,778ms, max intervalo1695,646ms, late flush1671689µs. Permisivo65/TSC/mixer/unidades/loops/dm y auditoría sin pérdidas verificados. Contadores no prueban señal fuente ni sonido audible.
+
 319: [resultado funcional](../../recuperacion-archtv/482e2fbd-171b-4c2b-a862-919b629e2974-markor-software-launch/functional-result.json), hashes de originales y recuperación.100 posiciones,0 rebases, reset, flushed18462, un dump tardío. REA MCP obtuvo tablas estáticas eliminadas en dos AudioFlinger; no demuestra disponibilidad TEE. Proveedor ELF-layout no configurado, sin fingir inspección adicional.
 
 318: [resultado funcional](../../recuperacion-archtv/7258fdce-6de6-458e-afd9-933d8a867d73-markor-software-launch/functional-result.json) contiene hashes de logs/dumps y recuperación. Server163840, flushed13846,119 posiciones sin rebase; no aceptación de audio completo. Resultado terminal y consumido por propietario activo, sin continuación en cola.
