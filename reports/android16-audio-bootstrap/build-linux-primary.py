@@ -45,7 +45,7 @@ for patch in patches:
                    cwd=out / 'source', check=True, capture_output=True)
 base = json.loads((core / 'build.json').read_text())
 reuse_dir = repo / 'dist/aosp16/audio-linux-primary-build-1' if '--reuse-primary' in sys.argv[3:] else None
-assert not reuse_dir or write_diagnostic
+assert not reuse_dir or write_diagnostic or synchronous_pcm
 reuse = json.loads((reuse_dir / 'build.json').read_text()) if reuse_dir else None
 for f in files:
     src = out / 'source' / f['path']

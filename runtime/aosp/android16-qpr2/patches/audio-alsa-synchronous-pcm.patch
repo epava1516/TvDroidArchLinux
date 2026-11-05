@@ -68,18 +68,27 @@
          auto sink = makeSink(mIsInput);  // Do not block the writer when it is on our thread.
          if (sink != nullptr) {
              sinks.push_back(sink);
-@@ -146,6 +171,10 @@
+@@ -146,6 +171,19 @@
      mAlsaDeviceProxies = std::move(alsaDeviceProxies);
      mSources = std::move(sources);
      mSinks = std::move(sinks);
 +    if (synchronous) {
-+        LOG(INFO) << "LINUX_PCM_SYNCHRONOUS attached=1 devices=1 no_intermediate_pipe=1";
++        auto* proxy = mAlsaDeviceProxies[0].get();
++        LOG(INFO) << "LINUX_PCM_SYNCHRONOUS attached=1 devices=1 no_intermediate_pipe=1"
++                  << " context_frame_bytes=" << mFrameSizeBytes
++                  << " config_channels=" << mConfig->channels
++                  << " config_rate=" << mConfig->rate
++                  << " config_format=" << static_cast<int>(mConfig->format)
++                  << " proxy_frame_bytes=" << proxy->frame_size
++                  << " proxy_channels=" << proxy_get_channel_count(proxy)
++                  << " proxy_rate=" << proxy_get_sample_rate(proxy)
++                  << " proxy_format=" << static_cast<int>(proxy_get_format(proxy));
 +        return ::android::OK;
 +    }
      mIoThreadIsRunning = true;
      for (size_t i = 0; i < mAlsaDeviceProxies.size(); ++i) {
          mIoThreads.emplace_back(mIsInput ? &StreamAlsa::inputIoThread : &StreamAlsa::outputIoThread,
-@@ -159,6 +188,33 @@
+@@ -159,6 +197,38 @@
      if (mAlsaDeviceProxies.empty()) {
          LOG(FATAL) << __func__ << ": no opened devices";
          return ::android::NO_INIT;
@@ -90,6 +99,11 @@
 +            mFrameSizeBytes == 0 || frameCount > std::numeric_limits<size_t>::max() / mFrameSizeBytes)
 +            return ::android::BAD_VALUE;
 +        auto* proxy = mAlsaDeviceProxies[0].get();
++        if (proxy->frame_size != mFrameSizeBytes) {
++            LOG(ERROR) << "LINUX_PCM_SYNC_FORMAT_MISMATCH context_frame_bytes="
++                       << mFrameSizeBytes << " proxy_frame_bytes=" << proxy->frame_size;
++            return ::android::BAD_VALUE;
++        }
 +        alsa::applyGain(buffer, mGain, frameCount * mFrameSizeBytes,
 +                        mConfig.value().format, mConfig->channels);
 +        while (*actualFrameCount < frameCount) {
@@ -113,7 +127,7 @@
      }
      const size_t bytesToTransfer = frameCount * mFrameSizeBytes;
      unsigned maxLatency = 0;
-@@ -202,7 +258,9 @@
+@@ -202,7 +272,9 @@
      }
      // Since the proxy can only count transferred frames since its creation,
      // we override its counter value with ours and let it to correct for buffered frames.

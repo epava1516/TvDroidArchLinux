@@ -169,5 +169,12 @@
     "archives": 12,
     "target_met": false,
     "free_after": 2029887488
+  },
+  "control311": {
+    "record": "/home/tv/recuperacion-archtv/a443800f-c903-4819-af20-f11cf6cd00eb-markor-software-launch/functional-result.json",
+    "record_sha256": "fe53aaf3a2efb920b1f9d382678ba15bea787b851ae17a631c0556f905510980",
+    "result": "same_audio_frame_count_with_acpi_pm_no_full_audio_acceptance",
+    "accepted_frames": 102400,
+    "decision": "Clocksource switch alone doesnoteliminate frame discrepancy. Do notpromoteACPI orclaim timingcorrect. NextoriginalAudioFlinger/AudioTrackformat and framecounter dump plus HALmetadata tolocate firstboundary mismatch."
   }
 }

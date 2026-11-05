@@ -183,7 +183,7 @@ finally:
  (cp/'session-state.json').write_text(json.dumps(state,indent=2)+'\n');os.chown(cp/'session-state.json',1000,1000)
 client_evidence={}
 source=Path('/home/tv/.local/share/archtv/experimental-userdata/vlc-cycle-277/data/local/tmp/archtv-mc1')
-for name in ['media-resolve.txt','media-launch.txt','media-before.txt','media-id.txt','media-insert.txt','media-write.txt','media-publish.txt','media-published.txt','media-uri.txt','media-bytes.txt','media-query-error.txt','media-read-error.txt','media-readback.mp4','android-ps-before.txt','android-ps-postinstall.txt','android-ps-after.txt','android-ps-error.txt','android-ps-status.txt','android-app-status.txt','markor-install.txt','markor-launch.txt','markor-resolve.txt','markor-app-data.txt','markor-installed-bytes.txt','original-logcat.txt']:
+for name in ['audio-flinger-1.txt','audio-flinger-2.txt','audio-flinger-status.txt','media-resolve.txt','media-launch.txt','media-before.txt','media-id.txt','media-insert.txt','media-write.txt','media-publish.txt','media-published.txt','media-uri.txt','media-bytes.txt','media-query-error.txt','media-read-error.txt','media-readback.mp4','android-ps-before.txt','android-ps-postinstall.txt','android-ps-after.txt','android-ps-error.txt','android-ps-status.txt','android-app-status.txt','markor-install.txt','markor-launch.txt','markor-resolve.txt','markor-app-data.txt','markor-installed-bytes.txt','original-logcat.txt']:
  p=source/name
  try:
   st=p.lstat();assert stat.S_ISREG(st.st_mode) and st.st_uid==2000 and st.st_size<=33554432

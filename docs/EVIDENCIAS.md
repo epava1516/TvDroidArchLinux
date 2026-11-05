@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+Vigente ·[Control311](../reports/android16-audio-bootstrap/audio-only-comparison.json): cambio temporal de reloj sin mejora del recuento. [Candidato312](../reports/android16-audio-bootstrap/format-boundary-experiment.json): hashes de compilación/enlace y pregunta funcional; ejecución pendiente, ninguna aceptación adicional.
+
 VLC/audio310 ·[Índice canónico](../reports/android16-audio-bootstrap/audio-only-comparison.json), control310: APK intacta, originalPMS/VIEW/URI grant, interfazNowPlaying y25PCM/102400frames. Fuente de referencia192000frames; no audio completo/acústica/timing aceptados. Tres pins de metadatos del padre, EBADF/CLOEXEC reales; sin nuevas reglas, contexto del cgroup anfitrión Linux conservado y subárbol propio eliminado al cierre.309negativo y prueba context=fallida permanecen vinculados. Las imágenes generadas históricas comprimidas se recuperan exactamente con su image-preservation.json; el lote acotado conserva12imágenes y sus hashes, sin retirar fuentes, kernel, userdata o logs.
 
 Audio307 ·[Registro con hashes](../reports/android16-audio-bootstrap/synchronous-pcm-progress.json): original VLC→FMQ→TinyALSA,25 escrituras/102400frames completos por llamada; vídeo sourceframe40, cierre y recuperación comprobados. No cubre la fuente nominal192000frames; underrun y fallo SoundPool-9 permanecen visibles. Drain/flush no ejercitados, pausa no implementada, sonido acústico no demostrado. No constituye compatibilidad APK general.

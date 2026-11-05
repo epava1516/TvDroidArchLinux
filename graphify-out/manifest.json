@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793846574.2073123,
-    "seen": 1793846588.1118739,
-    "ast_hash": "7d475723442c100acaa143211d743308",
+    "mtime": 1793848597.7782335,
+    "seen": 1793848611.2736902,
+    "ast_hash": "32e5a7b2f0a6cea0f59f4bf8923e6889",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793846574.1818583,
-    "seen": 1793846588.112562,
-    "ast_hash": "d6f94bddd59c91942b6cc2b7c19d526d",
+    "mtime": 1793848315.3338346,
+    "seen": 1793848330.2873554,
+    "ast_hash": "ea957506f312985f05b1e3970b23d75d",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793846574.2217965,
-    "seen": 1793846588.1140666,
-    "ast_hash": "0bc6d5f87a076b26eefa9f214bf2d9e6",
+    "mtime": 1793848315.3428676,
+    "seen": 1793848330.2877986,
+    "ast_hash": "716ad9448c0586b1b0fe06d93518b90f",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -1716,9 +1716,9 @@
     "semantic_hash": ""
   },
   "docs/EVIDENCIAS.md": {
-    "mtime": 1793846574.2337399,
-    "seen": 1793846588.112717,
-    "ast_hash": "408b1d209ec603d1435efddba19b1780",
+    "mtime": 1793848315.3511,
+    "seen": 1793848330.2874308,
+    "ast_hash": "ffcc0282971fbcebcba7daf931929daa",
     "semantic_hash": ""
   },
   "fixtures/aosp-framework-space/FrameworkSpaceProbe.java": {
@@ -2034,9 +2034,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/install-markor.sh": {
-    "mtime": 1793843260.7577136,
-    "seen": 1793843301.4400504,
-    "ast_hash": "0fbde83fb160397dda099817a568e117",
+    "mtime": 1793848241.7804222,
+    "seen": 1793848330.2681851,
+    "ast_hash": "448dbe8aaf72cc879adc18d490e335e6",
     "semantic_hash": ""
   },
   "scripts/run_completion.py": {
@@ -2196,9 +2196,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/android16-qpr2/patches/audio-alsa-synchronous-pcm.json": {
-    "mtime": 1793841988.5803006,
-    "seen": 1793842450.6074183,
-    "ast_hash": "d1ed31a0201069026ce2526909067ce6",
+    "mtime": 1793848241.8207858,
+    "seen": 1793848330.2664578,
+    "ast_hash": "ccd51a9adfb9dc74caf6a413c1ed944d",
     "semantic_hash": ""
   }
 }

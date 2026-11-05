@@ -1,0 +1,56 @@
+{
+  "status": "compiled_and_linked_runtime_pending",
+  "utc": "2026-11-05T03:11:55.325296+00:00",
+  "previous_control": {
+    "run_id": "a443800f-c903-4819-af20-f11cf6cd00eb",
+    "result": "acpi_pm same25writes102400frames vs192000 reference; no complete audio acceptance"
+  },
+  "experiment": "312 original VLC + AudioFlinger snapshots + HAL/proxy format metadata",
+  "question": "Does the first discrepancy occur in original AudioTrack/AudioFlinger accounting, HAL frame width, or later PCM output?",
+  "changes": [
+    "Two bounded original dumpsys media.audio_flinger calls after original VIEW; real exit statuses retained, no timing acceptance under service diagnostics",
+    "HAL logs actual context frame width, config and proxy channels/rate/format; rejects unequal widths BAD_VALUE before buffer access",
+    "Reuse unchanged Primary objects only with existing source/flags/object SHA verification"
+  ],
+  "artifacts": [
+    {
+      "path": "dist/aosp16/audio-linux-primary-build-6/build.json",
+      "sha256": "6c3e5b09cb5345459d4ab7d2475b3364139e5959d8206d0c6d7622650436465d"
+    },
+    {
+      "path": "dist/aosp16/audio-linux-core-link-8/link.json",
+      "sha256": "3b65455a3fc5a3e93ba45eae11565cb81f2f6dc300df7d871a831acb2851b5d6"
+    },
+    {
+      "path": "runtime/aosp/android16-qpr2/patches/audio-alsa-synchronous-pcm.patch",
+      "sha256": "8dd1185de8ab54d1245dba145e51a90e1cf5197c8ff546c05a35cf42e1978be1"
+    },
+    {
+      "path": "runtime/aosp/android16-qpr2/patches/audio-alsa-synchronous-pcm.json",
+      "sha256": "66367395ba79a73cd111d1cba18c2c7f56a096f800b9683340450e8036aa929d"
+    }
+  ],
+  "limits": [
+    "Not yet executed; compilation/linking are not compatibility evidence",
+    "No acoustic, full audio, clock, drain/flush or lifecycle acceptance",
+    "R1-MAC, coherent ART images, ARM/GMS/DRM remain open"
+  ],
+  "build": {
+    "path": "dist/aosp16/package-cohort-build-312",
+    "payload_sha256": "e81221d7ea15314103722c23f1e378ad90730a00bd34250d59e248a95d236023",
+    "source_inputs_all_match": true,
+    "materialization": "AST passes with isolated socketpair solely for syntax; no runtime proof"
+  },
+  "attempts": [
+    {
+      "id": "35c73d4b-c976-43ee-9068-c9cdc8123ed0",
+      "checkpoint": "/home/tv/recuperacion-archtv/35c73d4b-c976-43ee-9068-c9cdc8123ed0-markor-software-launch",
+      "result": "Pre-service manifest missing compositor_executable_path; owner terminal, recovery verified, consumed; copied diagnostic outputs are historical and not evidence of this attempt"
+    },
+    {
+      "id": "47768c2f-8ed9-4b63-94f2-2dc69075bc02",
+      "checkpoint": "/home/tv/recuperacion-archtv/47768c2f-8ed9-4b63-94f2-2dc69075bc02-markor-software-launch",
+      "result": "started with corrected verified compositor metadata; functional result pending"
+    }
+  ]
+}
