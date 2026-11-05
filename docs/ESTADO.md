@@ -1,5 +1,7 @@
 # Estado actual y punto de entrada
 
+En preparación356: gateway autenticado para catálogo PMS y lanzamiento Context/Instrumentation originales, DEX construido y8 comprobaciones host positivas. No ejecutado ni conectado a Home; no modifica el resultado355 ni acredita API/Binder/MAC. Siguiente entrega funcional: cliente nativo y canal privado de Home, seguidos de catálogo→selección UI→lanzamiento/nota/cierre/reapertura en una cohorte. Detalle y hashes: informe ART →launcher_control_preparation356.
+
 355: recorrido seleccionado Markor → Atrás → Home Rust → relanzamiento original WARM → nota intacta comprobado, con diez outputs originales, guardia de identidades y tres servicios propietarios terminados correctamente. Nativa0/exterior0; recuperación y consumo verificados. El ensayo adicional de seis entradas NO pasa: la quinta llegó después del cierre de la superficie Android. Se conservan ambos intentos y sus fallos. No acredita lanzador UI, compatibilidad general, aislamiento ni rendimiento. Siguiente integración funcional: catálogo y lanzamiento originales desde Home Rust; R1, ARM/GMS/DRM, instalación/actualización y cobertura amplia siguen abiertos. Evidencia canónica: informe ART →coherent_cache_candidate.profile_coherence_experiment.integration355; checkpoint /home/tv/recuperacion-archtv/57bcd21d-b722-46a9-86fb-e95c916a53bb-markor-software-launch.
 
 Histórico anterior:

@@ -159,7 +159,9 @@ final class WaylandInputBridge {
             System.err.println("WAYLAND_INPUT_NEGATIVE_PEER_CLOSED actual_uid=1000 actual_domain=system_server NOT_APP_UID_OR_MAC_ACCEPTANCE");
         }finally{invoke(client,"close",new Class<?>[0]);}
     }
-    private static Object createServer() throws Exception {
+    static Object createServer(String name) throws Exception {
+        if(!name.equals("archtv-wayland-input-v2") && !name.equals("archtv-launcher-control-v1"))
+            throw new IllegalArgumentException("Unknown trusted endpoint");
         // Linux's per-thread socket-create attribute labels this one endpoint.
         // Restore it even if the original LocalServerSocket constructor fails;
         // never change system_server's process identity or all of its sockets.
@@ -180,7 +182,7 @@ final class WaylandInputBridge {
             try(FileOutputStream file=new FileOutputStream(attribute)){
                 file.write((context+'\0').getBytes(java.nio.charset.StandardCharsets.UTF_8));
             }
-            server=Class.forName("android.net.LocalServerSocket").getConstructor(String.class).newInstance("archtv-wayland-input-v2");
+            server=Class.forName("android.net.LocalServerSocket").getConstructor(String.class).newInstance(name);
         }finally{
             try(FileOutputStream file=new FileOutputStream(attribute)){
                 if(previous.length==0)file.write(0);else file.write(previous);
@@ -195,7 +197,7 @@ final class WaylandInputBridge {
         WaylandInputBridge bridge=new WaylandInputBridge(input,atm);
         // Abstract sockets are scoped by the cohort's private network namespace.
         // Both peers also verify kernel-provided UID and SELinux context.
-        Object server=createServer();
+        Object server=createServer("archtv-wayland-input-v2");
         Thread worker=new Thread(()->bridge.serve(server),"linux-wayland-input");worker.setDaemon(true);worker.start();
         System.err.println("WAYLAND_INPUT_GATEWAY_LISTENING NOT_APK_INPUT_ACCEPTANCE");
         verifyRejectedPeer();

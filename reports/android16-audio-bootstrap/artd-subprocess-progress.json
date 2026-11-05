@@ -2837,6 +2837,34 @@
           }
         },
         "next": "Integrate original package/activity catalog and launch with trusted Rust Home; keep separate API, ABI and ARM/GMS/DRM requirements."
+      },
+      "launcher_control_preparation356": {
+        "checkpoint": "/home/tv/recuperacion-archtv/20261105-launcher-control356",
+        "checkpoint_sha256": "716591076a3062982fdb6293efb66d15143f7a30d6eda415bd1cebf34a40b376",
+        "source_evidence": "/home/tv/.cache/archtv/aosp16-qpr2/launcher-control-source356/sources.json",
+        "source_evidence_sha256": "019467264a7fd4003fb0bc5e80639284d120863d914ed56e66b181ee8fe72b3f",
+        "build": {
+          "directory": "/home/tv/.cache/archtv/launcher-control-entry356c",
+          "build_record_sha256": "a7baf5ec839bb1d85dd922a23822ff0efc6d1d08c68d16c85ffdba8103de7a8a",
+          "jar_sha256": "81be1644aa79274237caf139e40a015271d50e84d30be6c84e5c0c84e21afbfe",
+          "commands_exit": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "scope": "Own Java/D8 compilation only, no runtime execution."
+        },
+        "host_regressions": {
+          "command": "python -m unittest discover -s tests/automation -p test_launcher_control_build.py -v",
+          "result": "PASS one host test containing8 checks",
+          "source_sha256": "50df08cd981761a9904783e352a16425400b3da9c0044491c4804a64939d4ab3",
+          "scope": "Actual adapter UTF8 decoding, string byte bound and endpoint allowlist only; not peer authentication, Binder execution, frame parser, APK or MAC acceptance."
+        },
+        "runtime_executed": false,
+        "ui_connected": false,
+        "original_services_available_claim": false,
+        "next": "Native client authenticating server and bounded request worker, private Rust Home transport, then same-cohort original catalog -> user Home selection -> original launch -> actual frame/input/note/Back/reopen. No automatic launch retry after indeterminate delivery."
       }
     }
   },

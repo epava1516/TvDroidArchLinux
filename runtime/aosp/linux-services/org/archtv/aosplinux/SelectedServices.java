@@ -627,6 +627,7 @@ public final class SelectedServices {
                 call(lockInternalType,lockInternal,"onThirdPartyAppsStarted",new Class<?>[0]);
                 System.err.println("ORIGINAL_LOCKSETTINGS_THIRD_PARTY_RETURNED NOT_USER_UNLOCK_OR_APK_ACCEPTANCE");
                 WaylandInputBridge.start(input,activityTaskManager);
+                LauncherControlBridge.start(context);
                 // Installation is an external original shell/PackageInstaller
                 // client owned by the native coordinator, never a shell child
                 // of system_server. Keep its original execute denial intact.

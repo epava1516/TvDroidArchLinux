@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793899633.0429916,
-    "seen": 1793899648.720021,
-    "ast_hash": "77cce9dbebc92448f91660672995855e",
+    "mtime": 1793900090.180045,
+    "seen": 1793900104.0945618,
+    "ast_hash": "95ccc50db6db6dc488e25d1ede6ed7cb",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793899632.998979,
-    "seen": 1793899648.7206998,
-    "ast_hash": "c76ce6d9a7e6a8c860c0e529497e1ccb",
+    "mtime": 1793900214.9923444,
+    "seen": 1793900228.456162,
+    "ast_hash": "6e14d249d96e0289dd47bf9629914315",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793899633.0109358,
-    "seen": 1793899648.721455,
-    "ast_hash": "a5491cfeed8a530251cc927caf1ff6c8",
+    "mtime": 1793900214.9987526,
+    "seen": 1793900228.4565935,
+    "ast_hash": "fc6337ff56581f4c28a9149f37ad3e3f",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -2022,9 +2022,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java": {
-    "mtime": 1793890654.7915606,
-    "seen": 1793892565.5273998,
-    "ast_hash": "801dee51b292e7b87b9ed04d69ab5d71",
+    "mtime": 1793899945.5966053,
+    "seen": 1793900104.0781877,
+    "ast_hash": "df992668cff81f3c3d78a350f149483f",
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/org/archtv/aosplinux/ServiceLauncher.java": {
@@ -2130,9 +2130,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/org/archtv/aosplinux/WaylandInputBridge.java": {
-    "mtime": 1793891563.099659,
-    "seen": 1793892565.528047,
-    "ast_hash": "345e0cf222d3c0c63212ba61a6e5b5ef",
+    "mtime": 1793899945.5874643,
+    "seen": 1793900104.0784302,
+    "ast_hash": "68dcc962a9918253d7f462752c446078",
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-wayland-input.h": {
@@ -2247,6 +2247,18 @@
     "mtime": 1793899039.4619045,
     "seen": 1793899648.7129743,
     "ast_hash": "db8e630cb5594a10e812d362e6ffa8f1",
+    "semantic_hash": ""
+  },
+  "runtime/aosp/linux-services/org/archtv/aosplinux/LauncherControlBridge.java": {
+    "mtime": 1793900125.9798062,
+    "seen": 1793900228.4359033,
+    "ast_hash": "a2a80db3b0cbd853936cc6990dfe5eee",
+    "semantic_hash": ""
+  },
+  "tests/automation/test_launcher_control_build.py": {
+    "mtime": 1793900163.7836287,
+    "seen": 1793900228.4455776,
+    "ast_hash": "491d9fddaeee0a61e14d569ba857506a",
     "semantic_hash": ""
   }
 }

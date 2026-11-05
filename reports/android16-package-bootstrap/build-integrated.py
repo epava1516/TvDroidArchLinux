@@ -16,7 +16,7 @@ tracked_inputs=['Cargo.toml','Cargo.lock','crates/archtv-core/Cargo.toml',*[str(
 tracked_inputs.extend(['reports/android16-package-bootstrap/userdata.py','reports/android16-hwc3-wayland/build-minigbm.py','reports/android16-hwc3-wayland/link-minigbm.py'])
 tracked_inputs.append('reports/android16-package-bootstrap/build-bootstrap-xml.py')
 tracked_inputs.extend(['runtime/aosp/linux-services/archtv/runtime/SelectedRuntime.java','tools/aosp/ZygoteSelectedEntryPlan.java','tools/aosp/build_selected_zygote_framework.py','reports/android16-selected-display/build-entry.py','runtime/aosp/android16-qpr2/patches/framework-zygote-selected-entry.patch'])
-tracked_inputs.extend(['runtime/aosp/linux-services/org/archtv/aosplinux/TaskFocusObserver.java','tools/aosp/TaskStackObserverGlue.java','runtime/aosp/native/linux-wayland-task-protocol.h'])
+tracked_inputs.extend(['runtime/aosp/linux-services/org/archtv/aosplinux/LauncherControlBridge.java','runtime/aosp/linux-services/org/archtv/aosplinux/TaskFocusObserver.java','tools/aosp/TaskStackObserverGlue.java','runtime/aosp/native/linux-wayland-task-protocol.h'])
 tracked_inputs.append('reports/android16-network-bootstrap/boundary.py')
 tracked_inputs.append('scripts/run_completion.py')
 tracked_inputs.extend(['reports/android16-package-bootstrap/build-libcutils-memory.py','runtime/aosp/android16-qpr2/patches/libcutils-memfd-original-label.patch','runtime/aosp/android16-qpr2/patches/libcutils-memfd-original-label.json'])

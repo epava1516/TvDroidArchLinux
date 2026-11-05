@@ -28,7 +28,7 @@ for argv in [['javac','-cp',str(engine),'-d',str(build_tools),str(glue_source)],
     (out/'listener-glue-build.json').write_text(json.dumps({'commands':commands,'original_framework_sha256':hashlib.sha256(original.read_bytes()).hexdigest(),'engine_sha256':hashlib.sha256(engine.read_bytes()).hexdigest(),'source_sha256':hashlib.sha256(glue_source.read_bytes()).hexdigest(),'scope':'Original executable Binder listener ABI checked; one own adapter subclass only, no android.* implementation or runtime acceptance'},indent=2)+'\n')
     result.check_returncode()
 for stage in range(2):
-    argv = ['javac', '--release', '8', '-d', str(classes), str(source), str(source.with_name('ServiceLauncher.java')), str(source.with_name('WaylandInputBridge.java')), str(source.with_name('TaskFocusObserver.java')), str(ROOT/'runtime/aosp/linux-services/archtv/runtime/SelectedRuntime.java')] if stage == 0 else ['java', '-cp', '/home/tv/.cache/archtv/apk-build-tools/r8.jar',
+    argv = ['javac', '--release', '8', '-d', str(classes), str(source), str(source.with_name('ServiceLauncher.java')), str(source.with_name('WaylandInputBridge.java')), str(source.with_name('LauncherControlBridge.java')), str(source.with_name('TaskFocusObserver.java')), str(ROOT/'runtime/aosp/linux-services/archtv/runtime/SelectedRuntime.java')] if stage == 0 else ['java', '-cp', '/home/tv/.cache/archtv/apk-build-tools/r8.jar',
               'com.android.tools.r8.D8', '--min-api', '36', '--output', str(dex),
               str(glue), *map(str, classes.rglob('*.class'))]
     result = subprocess.run(argv, capture_output=True, text=True, timeout=90)
@@ -37,6 +37,7 @@ for stage in range(2):
         'source_sha256': hashlib.sha256(source.read_bytes()).hexdigest(),
         'launcher_sha256': hashlib.sha256(source.with_name('ServiceLauncher.java').read_bytes()).hexdigest(),
         'wayland_input_sha256': hashlib.sha256(source.with_name('WaylandInputBridge.java').read_bytes()).hexdigest(),
+        'launcher_control_sha256': hashlib.sha256(source.with_name('LauncherControlBridge.java').read_bytes()).hexdigest(),
         'scope': 'Orchestration build only; no service, display, APK or MAC acceptance'}, indent=2)+'\n')
     result.check_returncode()
 jar = out / 'archtv-selected-services.jar'
