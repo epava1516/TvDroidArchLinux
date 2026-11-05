@@ -170,11 +170,21 @@ if [ "${media_mime:-}" = audio/mp4 ]; then
     /system/bin/cmd activity start-activity -W --user 0 --grant-read-uri-permission -a android.intent.action.VIEW -d "$media_uri" -t "$media_mime" -n "$media_component" > /data/local/tmp/archtv-mc1/media-launch.txt 2>&1
     # Bounded original service diagnostics. A failed dump remains a failure;
     # snapshots may perturb timing and do not establish playback continuity.
-    for snapshot in 1 2; do
+    # Actual313 showed both early snapshots preceded AudioTrack creation.
+    # Preserve a bounded window, including zero-track observations; no readiness
+    # marker, retry continuation, discarded snapshot or playback success claim.
+    snapshot=1
+    while [ "$snapshot" -le 16 ]; do
         /system/bin/sleep 0.5
+        part=1
+        [ "$snapshot" -le 8 ] || part=2
+        dump_path=/data/local/tmp/archtv-mc1/audio-flinger-$part.txt
+        /system/bin/printf '\nSNAPSHOT %s BEGIN\n' "$snapshot" >> "$dump_path"
         dump_status=0
-        /system/bin/dumpsys -t 3 media.audio_flinger > /data/local/tmp/archtv-mc1/audio-flinger-$snapshot.txt 2>&1 || dump_status=$?
+        /system/bin/dumpsys -t 1 media.audio_flinger >> "$dump_path" 2>&1 || dump_status=$?
+        /system/bin/printf 'SNAPSHOT %s END exit=%s\n' "$snapshot" "$dump_status" >> "$dump_path"
         /system/bin/printf 'snapshot=%s exit=%s NOT_AUDIO_ACCEPTANCE\n' "$snapshot" "$dump_status" >> /data/local/tmp/archtv-mc1/audio-flinger-status.txt
+        snapshot=$((snapshot + 1))
     done
 fi
 ps_status=0

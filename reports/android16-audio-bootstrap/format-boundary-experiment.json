@@ -1,5 +1,5 @@
 {
-  "status": "compiled_and_linked_runtime_pending",
+  "status": "format_width_agrees_audio_incomplete_snapshots_precede_track",
   "utc": "2026-11-05T03:11:55.325296+00:00",
   "previous_control": {
     "run_id": "a443800f-c903-4819-af20-f11cf6cd00eb",
@@ -31,15 +31,15 @@
     }
   ],
   "limits": [
-    "Not yet executed; compilation/linking are not compatibility evidence",
+    "Real313 format evidence only; early312 manifest failed before services. No complete audio acceptance.",
     "No acoustic, full audio, clock, drain/flush or lifecycle acceptance",
     "R1-MAC, coherent ART images, ARM/GMS/DRM remain open"
   ],
   "build": {
     "path": "dist/aosp16/package-cohort-build-312",
     "payload_sha256": "e81221d7ea15314103722c23f1e378ad90730a00bd34250d59e248a95d236023",
-    "source_inputs_all_match": true,
-    "materialization": "AST passes with isolated socketpair solely for syntax; no runtime proof"
+    "materialization": "AST passes with isolated socketpair solely for syntax; no runtime proof",
+    "source_inputs_matched_before_launch": true
   },
   "attempts": [
     {
@@ -50,7 +50,17 @@
     {
       "id": "47768c2f-8ed9-4b63-94f2-2dc69075bc02",
       "checkpoint": "/home/tv/recuperacion-archtv/47768c2f-8ed9-4b63-94f2-2dc69075bc02-markor-software-launch",
-      "result": "started with corrected verified compositor metadata; functional result pending"
+      "result": "terminal/consumed; widths4bytes agree;27writes110592frames incomplete; two dumps precede track"
     }
-  ]
+  ],
+  "functional_result": {
+    "path": "/home/tv/recuperacion-archtv/47768c2f-8ed9-4b63-94f2-2dc69075bc02-markor-software-launch/functional-result.json",
+    "sha256": "ccab625d57941e71b0c060e15d28ecbc5ed1e710d358c1c0b6e033ba1b985b5b"
+  },
+  "next_experiment": {
+    "build": "dist/aosp16/package-cohort-build-314",
+    "scope": "SameHAL/APK/PCM/policy/TSC, original dumpsys16snapshots over delayed track creation; preserve all snapshots including zeros; no timing acceptance",
+    "state": "built_not_executed",
+    "payload_sha256": "aeb9b07a29c160dd6f58298a9f65d0e6da1af0569cd0086d884bd682a5c31c38"
+  }
 }

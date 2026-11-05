@@ -1,6 +1,6 @@
 # Índice de evidencias
 
-Vigente ·[Control311](../reports/android16-audio-bootstrap/audio-only-comparison.json): cambio temporal de reloj sin mejora del recuento. [Candidato312](../reports/android16-audio-bootstrap/format-boundary-experiment.json): hashes de compilación/enlace y pregunta funcional; ejecución pendiente, ninguna aceptación adicional.
+Vigente ·[Control311](../reports/android16-audio-bootstrap/audio-only-comparison.json): cambio temporal de reloj sin mejora del recuento. [Ejecución313](../reports/android16-audio-bootstrap/format-boundary-experiment.json): formatos HAL/proxy4bytes coinciden,27escrituras/110592frames; consultas originales anteriores a la pista. Recuperación verificada;314 amplía la ventana de observación, sin aceptación de audio completo.
 
 VLC/audio310 ·[Índice canónico](../reports/android16-audio-bootstrap/audio-only-comparison.json), control310: APK intacta, originalPMS/VIEW/URI grant, interfazNowPlaying y25PCM/102400frames. Fuente de referencia192000frames; no audio completo/acústica/timing aceptados. Tres pins de metadatos del padre, EBADF/CLOEXEC reales; sin nuevas reglas, contexto del cgroup anfitrión Linux conservado y subárbol propio eliminado al cierre.309negativo y prueba context=fallida permanecen vinculados. Las imágenes generadas históricas comprimidas se recuperan exactamente con su image-preservation.json; el lote acotado conserva12imágenes y sus hashes, sin retirar fuentes, kernel, userdata o logs.
 
