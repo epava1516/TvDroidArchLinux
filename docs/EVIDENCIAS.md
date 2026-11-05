@@ -1,5 +1,9 @@
 # Índice de evidencias
 
+360/361 · informe ART →coherent_cache_candidate.profile_coherence_experiment:360 conserva AVC Binder real, error FAILED_TRANSACTION y captura vacía, nunca aceptada por exit0.361 captura1.153.642bytes por AF original,286720frames PCM sin truncar, geometría proc real y señal1kHz; WAV/hash/métricas/frames DRM/identidades/cierre/recuperación en functional-result.json del checkpoint10a0bd46-16f7-4d8d-98f9-a9475cec17ce. Ni PCM ni métricas cierran audio completo/sincronía/salida acústica. REA MCP exportó tablas reales; Rizin no disponible, no se presenta como ejecución ni decompilación.
+
+Histórico anterior (alcance y siguientes pasos de su fecha):
+
 359 · informe ART →coherent_cache_candidate.profile_coherence_experiment.integration359: parámetro original ro.hardware.audio.tinyalsa.period_size_multiplier=4, origen compilado/hash contrastado; cuatro capturas DRM con avance0,167→2,833s;84escrituras PCM positivas sin EIO. Contadores, correcciones VLC y limitación de señal/geometría se conservan sin aceptar AV. Checkpoint cd74e710-5737-4572-aa56-3beb4409feae, hashes/rutas en el informe; cierre/recuperación y consumo verificados.
 
 Histórico anterior (alcance y siguientes pasos de su fecha):

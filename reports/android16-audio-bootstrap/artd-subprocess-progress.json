@@ -1896,7 +1896,7 @@
           "sha256": "d3eb7667da5d6443deb22eb91de5893b561c0d7ec098f92087a2ed33a0a58f36"
         }
       },
-      "current_integration": 359,
+      "current_integration": 361,
       "integration348": {
         "checkpoint": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch",
         "build": "dist/aosp16/package-cohort-build-348",
@@ -3522,6 +3522,259 @@
           "audio-period-result.json": {
             "path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/audio-period-result.json",
             "sha256": "fe068a683ef2c9b0b98a999f5aa873b5039d1a50244fc8fc557e6ce048075a0b"
+          }
+        }
+      },
+      "integration360": {
+        "checkpoint": "/home/tv/recuperacion-archtv/bfc85de6-b2f0-4765-947f-82b0b5a9288a-markor-software-launch",
+        "native_exit": 0,
+        "outer_exit": 0,
+        "accepted_PCM_observation_executed": false,
+        "capture_bytes": 0,
+        "direct_shell_to_HAL_denied": true,
+        "cause": "Actual enforcing69 Binder AVC shell->hal_audio_default call denied. dumpsys reports FAILED_TRANSACTION but pipeline exit0; empty capture rejected. No full audio/runtime acceptance.",
+        "evidence": {
+          "capture-failure-decision.json": {
+            "path": "/home/tv/recuperacion-archtv/bfc85de6-b2f0-4765-947f-82b0b5a9288a-markor-software-launch/capture-failure-decision.json",
+            "sha256": "78632d1948f93f2fd0799652b3c9eeeeccc0eda8488c3226a114d39acf45dab9"
+          },
+          "observed-audio-accepted-pcm.bin": {
+            "path": "/home/tv/recuperacion-archtv/bfc85de6-b2f0-4765-947f-82b0b5a9288a-markor-software-launch/observed-audio-accepted-pcm.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "observed-audio-pcm-error.txt": {
+            "path": "/home/tv/recuperacion-archtv/bfc85de6-b2f0-4765-947f-82b0b5a9288a-markor-software-launch/observed-audio-pcm-error.txt",
+            "sha256": "306b04ed8573e96d4bd64d5637010b445c57fb44c49d855f3c9655a2fed9dd6e"
+          },
+          "recovery-readback.json": {
+            "path": "/home/tv/recuperacion-archtv/bfc85de6-b2f0-4765-947f-82b0b5a9288a-markor-software-launch/recovery-readback.json",
+            "sha256": "984c2e08adf84c3e36c5c3761688239bdb1766ef6999b23bfc5f861346b1a7c3"
+          },
+          "completion-consumer.json": {
+            "path": "/home/tv/recuperacion-archtv/bfc85de6-b2f0-4765-947f-82b0b5a9288a-markor-software-launch/completion-consumer.json",
+            "sha256": "d5989756709696007523290cea747c3cf52d2a2d4048cc6dfa7d10ebca10899d"
+          }
+        },
+        "next": "Original AF/DeviceHal forwarding; no new shell HAL Binder grant."
+      },
+      "integration361": {
+        "checkpoint": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch",
+        "build": "dist/aosp16/package-cohort-build-361",
+        "tested_code_commit": "60eb720 plus frozen source-inputs observation patch",
+        "native_exit": 0,
+        "outer_exit": 0,
+        "three_owner_services_success": true,
+        "original_install_VIEW": true,
+        "moving_video_observed": true,
+        "original_identity_guard_verified": true,
+        "accepted_PCM_observation_executed": true,
+        "actual_geometry_observed": true,
+        "policy_unchanged": 69,
+        "observation_caller_uid": 1041,
+        "actual_audio": {
+          "observation": {
+            "capture_path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/observed-audio-accepted-pcm.bin",
+            "capture_sha256": "674c72a240e59d4ad2bd692de66b1856107aa1a208764571e8ecf8e551b96cdc",
+            "producer_metadata": {
+              "rate": 48000,
+              "channels": 2,
+              "frame_bytes": 4,
+              "format": 0,
+              "total_frames": 286720,
+              "captured_bytes": 1146880,
+              "writes": 71,
+              "flags": 0,
+              "hw_params_bytes": 124,
+              "status_bytes": 188,
+              "hw_error": 0,
+              "status_error": 0,
+              "producer_pid": 414,
+              "producer_tid": 464,
+              "transport_envelope": {
+                "kind": "original AudioFlinger --hal dump",
+                "prefix_bytes": 6375,
+                "prefix_sha256": "82d98c3cd312b7a3a8266d331cca16f72e94ae6ed0ba06cc7a3a175945f00035",
+                "suffix_bytes": 0,
+                "suffix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "scope": "Original surrounding dump retained in the input artifact; not source samples."
+              },
+              "producer_read_hw_params": "access: RW_INTERLEAVED\nformat: S16_LE\nsubformat: STD\nchannels: 2\nrate: 48000 (48000/1)\nperiod_size: 4096\nbuffer_size: 16384\n",
+              "producer_read_pcm_status": "state: PREPARED\nowner_pid   : 464\ntrigger_time: 0.000000000\ntstamp      : 134631.584094109\ndelay       : 0\navail       : 12288\navail_max   : 12288\n-----\nhw_ptr      : 0\nappl_ptr    : 4096\n"
+            },
+            "raw_sample_sha256": "fd9b1dccf88d4c1c81c0eaee193a33dbd27d0efe32a2a063755d6037d1b8e906",
+            "captured_byte_count_consistent": true,
+            "reference_path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/host-reference-stereo48k-s16le.pcm",
+            "reference_sha256": "f63c6cf8da96802c95210e4686b5184761207484c9b854e5fc8c63b0780267ec",
+            "scope": "Known-media signal metrics only. Producer proc read is separate from external identity/MAC proof. Accepted samples are not acoustic output, clock accuracy, source completeness, A/V sync or APK compatibility. Constant1kHz reference cannot uniquely identify source time/coverage; active thresholds and power ratios are diagnostic, not acceptance gates.",
+            "wav_path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/signal-analysis-1/accepted-signal.wav",
+            "wav_sha256": "c14cc32ec12ff095b5f85b027872b006f43fb89dcb4bac33b9f84bceb39defec",
+            "captured_signal": {
+              "frames": 286720,
+              "nominal_sample_duration_seconds": 5.973333333333334,
+              "peak_abs_pcm16": 114,
+              "peak_window_rms_pcm16": 70.37994358006642,
+              "active_threshold_pcm16": 3.518997179003321,
+              "active_nominal_seconds": 2.54,
+              "nominal_1khz_active_seconds": 2.44,
+              "identical_stereo_frames": 286720
+            },
+            "reference_signal": {
+              "frames": 192000,
+              "nominal_sample_duration_seconds": 4.0,
+              "peak_abs_pcm16": 3422,
+              "peak_window_rms_pcm16": 2087.298650219545,
+              "active_threshold_pcm16": 104.36493251097724,
+              "active_nominal_seconds": 4.0,
+              "nominal_1khz_active_seconds": 4.0,
+              "identical_stereo_frames": 192000
+            }
+          },
+          "AudioTrack_stop_declared_frames_delivered": 137364,
+          "reference_frames": 192000,
+          "sync_witnesses": [
+            "11-05 21:39:23.128 10105  1465  1516 W VLC     : [00007fd6e8612520/5ec] libvlc audio output: playback too early (-51911): down-sampling",
+            "11-05 21:39:24.054 10105  1465  1516 W VLC     : [00007fd6e8612520/5ec] libvlc audio output: playback way too late (568805): flushing buffers",
+            "11-05 21:39:24.373 10105  1465  1516 W VLC     : [00007fd6e8612520/5ec] libvlc audio output: playback way too early (-872972): playing silence",
+            "11-05 21:39:24.373 10105  1465  1516 D VLC     : [00007fd6e8612520/5ec] libvlc audio output: inserting 41902 zeroes",
+            "11-05 21:39:24.869 10105  1465  1516 W VLC     : [00007fd6e8612520/5ec] libvlc audio output: playback too late (83247): up-sampling"
+          ],
+          "positive_transfer_log_rows": 68,
+          "producer_capture_calls": 71,
+          "transfer_log_scope": "Capture records individual pcm_writei returns; transfer logs are a separate observation, not asserted exhaustive or one-to-one.",
+          "complete_source_signal_audio_accepted": false,
+          "acoustic_output_accepted": false,
+          "AV_sync_accepted": false,
+          "scope": "Actual accepted bytes contain 1kHz signal and silence; nominal active1kHz2.44s vs4s reference. Gain/amplitude differs; constant tone cannot uniquely establish coverage/time. Original VLC flush/silence/resampling retained. No complete audio acceptance or attribution to VirtualBox/clock without experiment."
+        },
+        "physical_input_commands": 0,
+        "complete_audio_video_workflow_accepted": false,
+        "broad_APK_compatibility_accepted": false,
+        "apk_sha256": "4646633ede40c4784c5584087cffc5c60cc45b16966ae0b36cedd784d7c4a11e",
+        "media_readback_sha256": "30fc8da5b0511c723c434cc13b3635507d7caae0b0d137c1f87aecbe6d1d4e17",
+        "enforcing_interval_seconds": 349.5850155930093,
+        "recovery_verified": true,
+        "restored_mode": 0,
+        "consumed": true,
+        "scope": "Diagnostic known-media observation only; original AF/DeviceHal Binder forwarding, explicit core variant copies positive TinyALSA bytes bounded2MiB and reads proc metadata. No policy/API/ABI/error/position/default production change. Allocate/copy/proc read can perturb timing. First-stream capture only, no microphone. Real selected video and source-frequency signal observed; complete source coverage/acoustic/sync/VLC input/lifecycle/broad compatibility remain unproved. Markor357 preserved.",
+        "next": "Use a time-coded source (not constant tone) and original VLC input/pause/Back/reopen workflow; correlate actual decoded source, accepted PCM and timing. Inspect original AudioTrack/HAL position and VM/kernel clock contracts for demonstrated flush/silence divergence; do not alter clocks/positions or blame Windows/VirtualBox without controlled evidence. No further empty class/fixture milestone. R1/ARM/GMS/DRM and broad goal open.",
+        "validation": {
+          "build_exit": 0,
+          "original_route_offline": "/home/tv/recuperacion-archtv/20261105-audio-signal361/offline-original-route.json",
+          "actual_empty360_rejected": "/home/tv/recuperacion-archtv/20261105-audio-signal361/actual-negative-parser.json",
+          "native_compile_link_exit": 0
+        },
+        "evidence": {
+          "native-result.json": {
+            "path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/native-result.json",
+            "sha256": "f8d20310ea3151ede7d2afc3bf90f3297870c46335723b165e31a956198f418c"
+          },
+          "result.json": {
+            "path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/result.json",
+            "sha256": "1f855d8cbacd4ec3b3565bb39b6d219cd88b6a39963e3c9e10c01b7134b9df24"
+          },
+          "terminal-owner-status.json": {
+            "path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/terminal-owner-status.json",
+            "sha256": "8c6da162692853ce767b040ce0263896455f8c14244106c987fd40929e5cfe8a"
+          },
+          "completion-result.json": {
+            "path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/completion-result.json",
+            "sha256": "9c1b47bf5e626bd94112b526885385cbe0e6a779cf4b0471f37ca038f03b0254"
+          },
+          "completion-consumer.json": {
+            "path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/completion-consumer.json",
+            "sha256": "be972948d40c612bfb980262cbbc37c09cde279230e9203493140b839aa78dcd"
+          },
+          "original-identities.json": {
+            "path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/original-identities.json",
+            "sha256": "ea36692b258bb29f62d5dd1f8478f16daf52390de2d82136a8bf655ae61374ee"
+          },
+          "original-installer.json": {
+            "path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/original-installer.json",
+            "sha256": "fd39ccaaa288c27e4e36a6b024c657450c2bfd56e9f782970419d114c1d20f70"
+          },
+          "original-storage.json": {
+            "path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/original-storage.json",
+            "sha256": "136763800b2e35f39f0c9197876e85c9239eff968176f023895d24c8f4f1384b"
+          },
+          "original-apk-hashes.json": {
+            "path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/original-apk-hashes.json",
+            "sha256": "546926b4797f14434691fce38a9538dae7c2cb5d73d8c47434bd2e1be1a4abd3"
+          },
+          "observed-original-logcat.txt": {
+            "path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/observed-original-logcat.txt",
+            "sha256": "8ed9566da20af5505d152d7270eddf1e5ca1a749d8bcb5001177f90818923d01"
+          },
+          "original-client-evidence.json": {
+            "path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/original-client-evidence.json",
+            "sha256": "f7787e375bc1a41455ec216c803b0aa8d152068dd98570aa5e158f116aa36e47"
+          },
+          "observed-media-launch.txt": {
+            "path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/observed-media-launch.txt",
+            "sha256": "2ad23ff616553ef6cb735d29437ae4c07871b572403124a67b2cf97d1c518160"
+          },
+          "observed-media-published.txt": {
+            "path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/observed-media-published.txt",
+            "sha256": "89ac5a0c148edf649ac8d3da0201a6823ef4bd14d7d3c458252e4d7e4c6f9e8a"
+          },
+          "observed-media-readback.mp4": {
+            "path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/observed-media-readback.mp4",
+            "sha256": "30fc8da5b0511c723c434cc13b3635507d7caae0b0d137c1f87aecbe6d1d4e17"
+          },
+          "observed-audio-accepted-pcm.bin": {
+            "path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/observed-audio-accepted-pcm.bin",
+            "sha256": "674c72a240e59d4ad2bd692de66b1856107aa1a208764571e8ecf8e551b96cdc"
+          },
+          "observed-audio-pcm-error.txt": {
+            "path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/observed-audio-pcm-error.txt",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "observed-audio-pcm-status.txt": {
+            "path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/observed-audio-pcm-status.txt",
+            "sha256": "bddde26fdcde62164f6559d4722720b2bed912c3d3aeec21d160bcab06799901"
+          },
+          "observed-audio-pcm-sha256.txt": {
+            "path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/observed-audio-pcm-sha256.txt",
+            "sha256": "bf1dfb852a5fc0811d4b3c9e1c3844b2ff7d6be379bcd911ed5277ae16ea80fe"
+          },
+          "audio-signal-result.json": {
+            "path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/audio-signal-result.json",
+            "sha256": "289b63e4ffd8eb53e410b4988d8127f50b311026d049cdfd2428e3369d38d91a"
+          },
+          "signal-analysis-1/signal-analysis.json": {
+            "path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/signal-analysis-1/signal-analysis.json",
+            "sha256": "daff2f7dcb9e5868cfe2120772b313de82f18ed9f4090db8d19c4b37b781ea38"
+          },
+          "signal-analysis-1/accepted-signal.wav": {
+            "path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/signal-analysis-1/accepted-signal.wav",
+            "sha256": "c14cc32ec12ff095b5f85b027872b006f43fb89dcb4bac33b9f84bceb39defec"
+          },
+          "mac-window.json": {
+            "path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/mac-window.json",
+            "sha256": "84917bdf0512d749ce14bf465c10dbda1cbc04c30db042562029cf38c14f7eea"
+          },
+          "recovery-readback.json": {
+            "path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/recovery-readback.json",
+            "sha256": "984c2e08adf84c3e36c5c3761688239bdb1766ef6999b23bfc5f861346b1a7c3"
+          },
+          "backing-after.json": {
+            "path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/backing-after.json",
+            "sha256": "5d9e48b25f4d95f5a0cc2c4afc39492ad3e4bcb85e23bb3029524ca701aa29e5"
+          },
+          "visual-review361.json": {
+            "path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/visual-review361.json",
+            "sha256": "d71f8d93abfe02b217bc544591ac354f2686fdb38440f12824fea3168da6e074"
+          },
+          "background-fatal-scope.json": {
+            "path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/background-fatal-scope.json",
+            "sha256": "39cea946cbc57c42dc74d229800182c718ebc847ef776239fdde0133b2a03387"
+          },
+          "previous-diagnostic-preservation.json": {
+            "path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/previous-diagnostic-preservation.json",
+            "sha256": "14c45265280a44fb1c39916a0a0d344b0aa615a6204e81b52df252d97b722959"
+          },
+          "before-launch.json": {
+            "path": "/home/tv/recuperacion-archtv/10a0bd46-16f7-4d8d-98f9-a9475cec17ce-markor-software-launch/before-launch.json",
+            "sha256": "22c07032e61db290e20eca0f266041bf415e76f21b808ca13a32513c9170edb7"
           }
         }
       }

@@ -1,0 +1,25 @@
+{
+  "status": "experimental_known_media_observation",
+  "source_pin": "aa229558cbf04bc997ed27465c5e7ad497123d1b",
+  "patch_sha256": "608c3dc9d840bde76cb0d42b77fe1413adeba31e1fcb1959807ba122e18b9b83",
+  "files": [
+    {
+      "path": "aidl/default/alsa/StreamAlsa.cpp",
+      "original_sha256": "d5698c8b4d492dbf0d415717fe3a19cf03aceb61f53fb70ec3ac3c0088d3a2f3",
+      "adapted_sha256": "589c0ddf3862ebb60cff1a182817206330b8f28876ce41adca8ea7a69d95061e"
+    },
+    {
+      "path": "aidl/default/Module.cpp",
+      "original_sha256": "80eef97369424c88fa6210480dea3ab63820552988733746d427c432b24f6060",
+      "adapted_sha256": "2935e1bf68b5cd653a5dd967dac0429ac00d1952d76946d914dde0d7b7962f71"
+    }
+  ],
+  "scope": "After positive TinyALSA returns only; existing AudioFlinger --hal -> DeviceHalAidl::dump -> Module::dump, original audioserver UID1041 and forwarded marker. No header/object-layout/vtable/API/position/error/policy changes. Explicit known-media env, bounded2MiB, output only.",
+  "limits": [
+    "Not audio or MAC acceptance from compile/link",
+    "Measurement allocation/copy/proc read can perturb timing and must be recorded",
+    "Capture truncation, shape change, second stream and proc errors explicit; not fake success",
+    "Accepted PCM bytes prove only kernel-boundary digital data, never acoustic output"
+  ],
+  "previous_variant": "360 direct shell->HAL denied by original69 Binder policy, zero capture; preserved in bfc85de6-b2f0-4765-947f-82b0b5a9288a checkpoint. Use original mediator, not a new Binder grant."
+}

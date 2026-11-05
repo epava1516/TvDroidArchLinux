@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793910190.780093,
-    "seen": 1793910192.2242138,
-    "ast_hash": "b3ae87909843ab6e933839644e511a75",
+    "mtime": 1793915195.6478074,
+    "seen": 1793915219.4441786,
+    "ast_hash": "4d2d5c747e07319c390000284a44f849",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793910190.7657828,
-    "seen": 1793910192.2245657,
-    "ast_hash": "c2a74165faf33dffeab91d0baf04dfcc",
+    "mtime": 1793915195.627714,
+    "seen": 1793915219.4450443,
+    "ast_hash": "c648ff69ce124e19319c8686dacf91f4",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793910190.7696922,
-    "seen": 1793910192.2249784,
-    "ast_hash": "66810bb93a1fed927723f2bf3975f753",
+    "mtime": 1793915195.634531,
+    "seen": 1793915219.4458883,
+    "ast_hash": "8ecd0b694099509a23a6ce79cbdb7f42",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -1716,9 +1716,9 @@
     "semantic_hash": ""
   },
   "docs/EVIDENCIAS.md": {
-    "mtime": 1793910190.7746124,
-    "seen": 1793910192.224649,
-    "ast_hash": "e20f09030b7aee887f9d8ecd2d407540",
+    "mtime": 1793915195.6439178,
+    "seen": 1793915219.4452062,
+    "ast_hash": "d6352b872247fe61666d131d6536c6b1",
     "semantic_hash": ""
   },
   "fixtures/aosp-framework-space/FrameworkSpaceProbe.java": {
@@ -2034,9 +2034,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/install-markor.sh": {
-    "mtime": 1793907180.2985191,
-    "seen": 1793908001.416395,
-    "ast_hash": "8b50a66b12fcad1c68a3afbd67979b1a",
+    "mtime": 1793913702.2838123,
+    "seen": 1793914628.6631918,
+    "ast_hash": "b3588196a278c171ed571cf5af5a02b2",
     "semantic_hash": ""
   },
   "scripts/run_completion.py": {
@@ -2283,6 +2283,24 @@
     "mtime": 1793901469.7580268,
     "seen": 1793902237.7713134,
     "ast_hash": "61f8863e0d69e19f535688bee6c8b992",
+    "semantic_hash": ""
+  },
+  "runtime/aosp/android16-qpr2/patches/audio-alsa-pcm-observation.json": {
+    "mtime": 1793913702.2625527,
+    "seen": 1793914628.6608596,
+    "ast_hash": "e1947b61e0b85ff633c655a4f6fbf797",
+    "semantic_hash": ""
+  },
+  "runtime/aosp/native/linux-pcm-observation.h": {
+    "mtime": 1793911057.1675913,
+    "seen": 1793911915.212292,
+    "ast_hash": "c3c08a730d9a9a6b18182f824eb44d46",
+    "semantic_hash": ""
+  },
+  "tools/aosp/analyze_accepted_pcm.py": {
+    "mtime": 1793913758.2549577,
+    "seen": 1793914628.6761954,
+    "ast_hash": "dd8b23d36eb919958641587a45412447",
     "semantic_hash": ""
   }
 }

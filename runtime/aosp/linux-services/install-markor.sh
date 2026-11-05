@@ -187,6 +187,21 @@ if [ -n "${media_uri:-}" ]; then
     /system/bin/dumpsys -t 1 media.audio_flinger >> "$dump_path" 2>&1 || dump_status=$?
     /system/bin/printf 'SNAPSHOT 1 END exit=%s\n' "$dump_status" >> "$dump_path"
     /system/bin/printf 'snapshot=1 late_after_seconds=30 exit=%s NOT_AUDIO_ACCEPTANCE\n' "$dump_status" > /data/local/tmp/archtv-mc1/audio-flinger-status.txt
+    if [ -f /vendor/etc/archtv-audio-known-media-observation ]; then
+        # Original AudioFlinger forwards the shell-owned pipe to the HAL Binder
+        # dump entry; original shell cat owns the private evidence file. No HAL
+        # file-write permission, source replacement or invented PCM is needed.
+        if (set -o pipefail
+            /system/bin/dumpsys -t 10 media.audio_flinger --hal --archtv-known-media-pcm 2>/data/local/tmp/archtv-mc1/audio-pcm-error.txt |
+                /system/bin/cat > /data/local/tmp/archtv-mc1/audio-accepted-pcm.bin); then
+            pcm_dump_status=0
+        else
+            pcm_dump_status=$?
+        fi
+        /system/bin/chmod 0400 /data/local/tmp/archtv-mc1/audio-accepted-pcm.bin
+        /system/bin/sha256sum /data/local/tmp/archtv-mc1/audio-accepted-pcm.bin > /data/local/tmp/archtv-mc1/audio-pcm-sha256.txt
+        /system/bin/printf 'pipeline_exit=%s known_media=1 NOT_AUDIO_ACCEPTANCE\n' "$pcm_dump_status" > /data/local/tmp/archtv-mc1/audio-pcm-status.txt
+    fi
 
 else
     /system/bin/cmd activity start-activity -W --user 0 -n "$component" > /data/local/tmp/archtv-mc1/markor-launch.txt 2>&1

@@ -1,5 +1,9 @@
 # Arquitectura vigente · A16-QPR2-1
 
+361 reutiliza Module::dump y la mediación AudioFlinger→DeviceHalAidl originales: el shell conserva su denegación Binder directa al HAL, audioserver1041 reenvía el FD con argumento original. Variante diagnóstica explícita/default apagado copia sólo bytes tras pcm_writei positivo (máximo2MiB), consulta proc ALSA original y no modifica ABI/clases públicas/retornos/posiciones/política. Puede perturbar tiempos; primer stream y medio generado conocido solamente. La señal1kHz parcial y geometría real no acreditan fuente completa/sincronía/acústica. NBAIO_Tee requiere habilitación de build según fuentes originales; REA export tables no demuestra ausencia de todo el código. Informe ART →integration361.
+
+Histórico anterior (alcance y siguientes pasos de su fecha):
+
 Resultado359: el perfil privado usa el contrato de propiedad original de libalsautils para periodos×4; no sustituye el motor ni falsifica frames, posiciones o errores. Desaparece el EIO de358 en esta ejecución y se conserva vídeo, pero la señal de salida y su sincronía siguen sin prueba. La geometría real no se infiere del valor configurado. Se evalúa NBAIO_Tee original antes de instrumentación propia mínima, manteniendo separadas entrega cliente, mezcla, HAL/kernel y salida acústica. Informe ART →integration359.
 
 Histórico anterior (alcance y siguientes pasos de su fecha):

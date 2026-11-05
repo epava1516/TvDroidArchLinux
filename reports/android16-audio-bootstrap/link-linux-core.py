@@ -22,13 +22,20 @@ for source in core['sources']:
     assert sha(source['path']) == source['sha256'], source['path']
 write_diagnostic = '--write-diagnostic' in sys.argv[2:]
 synchronous_pcm = '--synchronous-pcm' in sys.argv[2:]
+pcm_observation = '--pcm-observation' in sys.argv[2:]
+assert not pcm_observation or synchronous_pcm
 assert not (write_diagnostic and synchronous_pcm), 'Choose one StreamAlsa candidate'
-adapted_dir = repo / ('dist/aosp16/audio-linux-primary-build-8' if synchronous_pcm else
+adapted_dir = repo / ('dist/aosp16/audio-linux-primary-build-10' if pcm_observation else
+                      'dist/aosp16/audio-linux-primary-build-8' if synchronous_pcm else
                       'dist/aosp16/audio-linux-primary-build-4' if write_diagnostic else
                       'dist/aosp16/audio-linux-primary-build-1')
 adapted = json.loads((adapted_dir / 'build.json').read_text())
-assert len(adapted['objects']) == (3 if write_diagnostic or synchronous_pcm else 2)
+assert len(adapted['objects']) == (4 if pcm_observation else 3 if write_diagnostic or synchronous_pcm else 2)
 assert adapted.get('synchronous_pcm', False) == synchronous_pcm
+assert adapted.get('pcm_observation', False) == pcm_observation
+if pcm_observation:
+    header = adapted['observation_header']
+    assert sha(header['path']) == header['sha256']
 assert all(c['exit'] == 0 for c in adapted['commands'])
 if write_diagnostic or synchronous_pcm:
     assert adapted['write_diagnostic'] == write_diagnostic
@@ -54,6 +61,8 @@ result = subprocess.run(cmd, capture_output=True, timeout=120)
 (out / 'flags.log').write_bytes(result.stdout + result.stderr)
 record = {'scope': 'Original core executable linkage only; no runtime or output acceptance',
           'commands': [{'argv': cmd, 'exit': result.returncode}], 'inputs': dict(old['inputs'])}
+if pcm_observation:
+    record['inputs'][header['path']] = header['sha256']
 (out / 'link.json').write_text(json.dumps(record, indent=2) + '\n')
 if result.returncode:
     print(result.stderr.decode(errors='replace')[-2500:])

@@ -1,5 +1,9 @@
 # Estado actual y punto de entrada
 
+361: captura PCM real mediante AudioFlinger/DeviceHal originales, sin ampliar política69.286720frames aceptados, geometría real48kHz/estéreo/periodo4096/buffer16384; tono1kHz activo nominal2,44s frente a4s de referencia. VLC original conserva instalación/VIEW/vídeo; flush/silencio/resampling impiden aceptar audio completo o sincronía.360 queda histórico: llamada directa Binder denegada, captura vacía rechazada aunque pipeline0. Tres propietarios cerrados0,349,585s enforcing y recuperación verificada; consumido sin cola. Markor357 mantiene su alcance. Informe ART →integration361.
+
+Histórico anterior (alcance y siguientes pasos de su fecha):
+
 359: con el parámetro original ALSA de periodos×4, VLC intacta conserva instalación/VIEW/vídeo y realiza84 escrituras/344064frames sin el EIO de358. AudioTrack declara138822frames frente a192000 de referencia; hay correcciones de sincronía y no se capturó señal. No se acepta audio completo ni geometría real por la propiedad. Tres propietarios cerrados0,354,432s enforcing, host69/permisivo y recuperación verificados; consumido sin cola. Markor357 conserva su alcance. Informe ART →integration359.
 
 Histórico anterior (alcance y siguientes pasos de su fecha):

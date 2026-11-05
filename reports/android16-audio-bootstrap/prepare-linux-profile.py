@@ -22,8 +22,11 @@ root = repo / 'dist/aosp16/factory-inputs-3/root'
 write_diagnostic = '--audio-write-diagnostic' in sys.argv[2:]
 synchronous_pcm = '--audio-synchronous-pcm' in sys.argv[2:]
 production_dynamics = '--audio-production-dynamics' in sys.argv[2:]
+pcm_observation = '--audio-pcm-observation' in sys.argv[2:]
+assert not pcm_observation or synchronous_pcm
 assert not (write_diagnostic and synchronous_pcm), 'Choose one audio backend candidate'
-core = repo / ('dist/aosp16/audio-linux-core-link-10' if synchronous_pcm else
+core = repo / ('dist/aosp16/audio-linux-core-link-12' if pcm_observation else
+               'dist/aosp16/audio-linux-core-link-10' if synchronous_pcm else
                'dist/aosp16/audio-linux-core-link-5' if write_diagnostic else
                'dist/aosp16/audio-linux-core-link-3')
 effect = repo / 'dist/aosp16/audio-effect-link-2'
@@ -33,6 +36,7 @@ record = {'scope': 'Private original audio deployment candidate, not service or 
 record['write_diagnostic'] = write_diagnostic
 record['synchronous_pcm'] = synchronous_pcm
 record['production_dynamics'] = production_dynamics
+record['pcm_observation'] = pcm_observation
 if synchronous_pcm:
     record['adaptations'].append('Candidate attached single-device blocking PCM removes reference lossy MonoPipe, counts actual TinyALSA writes and propagates errors. Real drain/flush, pause explicitly unsupported. No runtime/continuity/clock/acoustic acceptance.')
 if write_diagnostic:
@@ -70,7 +74,19 @@ original_rc = study / 'hardware-audio/aidl/default/android.hardware.audio.servic
 rc = out / 'audio-original-linux.rc'
 text = original_rc.read_text()
 assert text.count('/apex/com.android.hardware.audio/bin/hw/') == 2
-rc.write_text(text.replace('/apex/com.android.hardware.audio/bin/hw/', '/vendor/bin/hw/') + '\n')
+text = text.replace('/apex/com.android.hardware.audio/bin/hw/', '/vendor/bin/hw/')
+if pcm_observation:
+    lines = text.splitlines()
+    services = [i for i, line in enumerate(lines) if line.startswith('service ') and
+                line.endswith('/android.hardware.audio.service-aidl.example')]
+    assert len(services) == 1
+    lines.insert(services[0] + 1, '    setenv ARCHTV_PCM_OBSERVE_KNOWN_MEDIA 1')
+    text = '\n'.join(lines)
+    marker = out / 'audio-known-media-observation'
+    marker.write_text('Explicit known generated media only; bounded2MiB post-acceptance PCM through original Binder dump. Not audio acceptance.\n')
+    add('/vendor/etc/archtv-audio-known-media-observation', marker)
+    record['adaptations'].append('Known-media observation only: post-TinyALSA accepted-byte copy, original AudioFlinger/DeviceHal dump forwarding with audioserver UID1041 and shell-owned FIFO, original proc hw_params read; bounded2MiB. No object/header ABI, policy, microphone, file grant, error, timestamp or position change. Measurement can perturb timing.')
+rc.write_text(text + '\n')
 add('/vendor/etc/init/archtv-audio.rc', rc)
 # The original AIDL factory searches this exact filename; legacy GSI
 # audio_effects.xml is a different deployment input. Keep original declarations
@@ -96,7 +112,7 @@ if production_dynamics:
     record['adaptations'].append('Original production DynamicsProcessing engine/AIDL/common worker/ranges deployed with original config and notices. Original factory must actually dlopen/query/process it; no inventory/readiness or DSP availability fabricated. Other missing plugins remain missing.')
 record['adaptations'].append('Original AIDL audio_effects_config.xml unchanged. EffectFactory inserts identities only after actual dlopen succeeds; absent plugins remain unavailable, not accepted effects.')
 record['original_rc_sha256'] = sha(original_rc)
-record['adaptations'].append('Only the executable directory in original RC changes from audio APEX to private vendor; user/groups/caps/rtprio/ioprio/task_profiles/onrestart retained.')
+record['adaptations'].append('Executable directory changes from audio APEX to private vendor; explicit observation variant also sets its known-media env. Original user/groups/caps/rtprio/ioprio/task_profiles/onrestart retained.')
 # Original schema/configuration and volume tables, restricted to the hardware
 # being evaluated. Do not advertise stub input/telephony/Bluetooth/MMAP/offload.
 gold = Path('/home/tv/.cache/archtv/aosp16-qpr2/goldfish-audio-original-1/source/policy')

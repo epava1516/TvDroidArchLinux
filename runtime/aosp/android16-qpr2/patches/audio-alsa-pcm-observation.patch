@@ -1,0 +1,51 @@
+--- a/aidl/default/alsa/StreamAlsa.cpp
++++ b/aidl/default/alsa/StreamAlsa.cpp
+@@ -20,6 +20,7 @@
+ 
+ #define LOG_TAG "AHAL_StreamAlsa"
+ #include <android-base/logging.h>
++#include "linux-pcm-observation.h"
+ 
+ #include <Utils.h>
+ #include <audio_utils/clock.h>
+@@ -226,6 +227,10 @@
+                            << " errno=" << errno;
+                 return ::android::INVALID_OPERATION;
+             }
++            archtv::pcm_observation::accepted(this,
++                    static_cast<const char*>(buffer) + *actualFrameCount * mFrameSizeBytes,
++                    static_cast<size_t>(ret), mFrameSizeBytes, mConfig->channels,
++                    mConfig->rate, static_cast<unsigned>(mConfig->format));
+             *actualFrameCount += ret;
+             proxy->transferred += ret;
+         }
+--- a/aidl/default/Module.cpp
++++ b/aidl/default/Module.cpp
+@@ -21,6 +21,7 @@
+ #include <aidl/android/media/audio/common/AudioInputFlags.h>
+ #include <aidl/android/media/audio/common/AudioOutputFlags.h>
+ #include <android-base/logging.h>
++#include "linux-pcm-observation.h"
+ #include <android/binder_ibinder_platform.h>
+ #include <error/expected_utils.h>
+ 
+@@ -624,6 +625,19 @@
+ 
+ binder_status_t Module::dump(int fd, const char** args, uint32_t numArgs) {
+     if (::aidl::android::hardware::audio::common::hasArgument(
++                args, numArgs, "--archtv-known-media-pcm")) {
++        const auto caller = AIBinder_getCallingUid();
++        if (caller != 1041 || !archtv::pcm_observation::enabled() ||
++            !::aidl::android::hardware::audio::common::hasArgument(
++                args, numArgs,
++                ::aidl::android::hardware::audio::common::kDumpFromAudioServerArgument))
++            return STATUS_PERMISSION_DENIED;
++        const auto result = archtv::pcm_observation::dump(fd);
++        LOG(INFO) << "KNOWN_MEDIA_PCM_DUMP caller_uid=" << caller << " result=" << result
++                  << " original_audioserver_forwarded=1 NOT_AUDIO_ACCEPTANCE";
++        return result;
++    }
++    if (::aidl::android::hardware::audio::common::hasArgument(
+                 args, numArgs,
+                 ::aidl::android::hardware::audio::common::kDumpFromAudioServerArgument)) {
+         std::ostringstream s;

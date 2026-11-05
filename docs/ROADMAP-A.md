@@ -1,5 +1,9 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+Tras361, prioridad funcional: fuente con tiempo identificable y recorrido VLC por entrada real/pausa/Back/reapertura, correlacionando señal aceptada y contratos originales de posición/reloj. La captura ya funciona por AF original sin permisos nuevos; no repetir auditorías de acceso como siguiente entregable. El tono constante sólo acredita frecuencia, no cobertura temporal:2,44s activos nominales frente a4s fuente y correcciones VLC siguen abiertos. No atribuirlo a VirtualBox ni cambiar timestamps sin experimento controlado. R1/compatibilidad amplia/instalación/actualización/ligereza/ARM/GMS/DRM abiertos. Informe ART →integration361.
+
+Histórico anterior (alcance y siguientes pasos de su fecha):
+
 Tras359, el siguiente bloqueo funcional es acreditar la señal/continuidad y sincronía, no otro constructor: evaluar NBAIO_Tee original en el AudioFlinger desplegado mediante REA MCP y fuentes antes de un observador propio mínimo. Vincular captura de salida/fuente, geometría/posiciones reales y una única prueba VLC con entrada/Back/cierre/reapertura. Periodos×4 evitó el EIO en359, pero los contadores no identifican la fuente; no repetir el control acpi_pm316 como nuevo ni alterar timestamps. R1/compatibilidad amplia/instalación/actualización/ligereza/ARM/GMS/DRM abiertos. Informe ART →integration359.
 
 Histórico anterior (alcance y siguientes pasos de su fecha):
