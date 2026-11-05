@@ -153,6 +153,11 @@
           "record": "/home/tv/recuperacion-archtv/e22360b9-f498-4042-a4ca-b0f87dd25a47-markor-software-launch/functional-result.json",
           "record_sha256": "9f85e5e7d525c2f330221ad68945d2f5b8a190fcd1ff20dac868d663bd92ec26",
           "scope": "25actual writes102400frames without intermediate queue drops; source192000frames not covered, underrun observed. No full audio/acoustic/timing/lifecycle/R1 acceptance."
+        },
+        "audio_mediastore308": {
+          "record": "/home/tv/recuperacion-archtv/f269655f-1e47-46c8-b335-07265d439ead-markor-software-launch/functional-result.json",
+          "record_sha256": "cb941211d7330d8f41fb53d3bbaa60ce813812c753236bd29c7cfb1de55b7443",
+          "scope": "Original audioMediaStore publication/readback; PMSinstall insufficientstorage. No VIEW, PCM or lifecycle acceptance in308."
         }
       }
     },

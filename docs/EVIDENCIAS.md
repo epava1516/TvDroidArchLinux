@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+Audio MediaStore308 ·[Registro canónico](../reports/android16-audio-bootstrap/audio-only-comparison.json): mismo AAC, referencia PCM192000frames idéntica; REA MCP manifiesto real del APK; proveedor original publica URI audio y readback SHA idéntico. Instalación rechazada por almacenamiento; no demuestra VIEW, reproducción ni PCM. No confundir hash del proveedor JADX con subject.digest.sha256 del APK; selección inicial errónea retenida y corregida antes de esta prueba.
+
 Audio307 ·[Registro con hashes](../reports/android16-audio-bootstrap/synchronous-pcm-progress.json): original VLC→FMQ→TinyALSA,25 escrituras/102400frames completos por llamada; vídeo sourceframe40, cierre y recuperación comprobados. No cubre la fuente nominal192000frames; underrun y fallo SoundPool-9 permanecen visibles. Drain/flush no ejercitados, pausa no implementada, sonido acústico no demostrado. No constituye compatibilidad APK general.
 
 ART305 ·[Registro y hashes](../reports/android16-audio-bootstrap/artd-subprocess-progress.json): compilación original vía artd/art_exec/dex2oat32 con retorno0 y OAT conservado; política65/24 decisiones offline, cierre y recuperación. Límites: checksum de imagen de arranque incompatible, fallback imageless, exterior1/R1 abierto y proveedor ELF de REA MCP no configurado. No prueba compatibilidad general APK ni audio continuo.

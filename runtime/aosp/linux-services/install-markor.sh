@@ -68,14 +68,23 @@ media_source=/data/local/tmp/archtv-mc1/archtv-media-input.mp4
 if [ -f "$media_source" ]; then
     [ "$target_package" = org.videolan.vlc ] || exit 1
     IFS= read -r media_name < /data/local/tmp/archtv-mc1/archtv-media-test-name
-    case "$media_name" in archtv-test-????????.mp4) ;; *) exit 1;; esac
+    case "$media_name" in
+        archtv-test-????????.mp4)
+            media_collection=content://media/external_primary/video/media
+            media_mime=video/mp4
+            media_relative_path=Movies/ ;;
+        archtv-test-????????.m4a)
+            media_collection=content://media/external_primary/audio/media
+            media_mime=audio/mp4
+            media_relative_path=Music/ ;;
+        *) exit 1;;
+    esac
     case "$media_name" in *[!a-zA-Z0-9_.-]*) exit 1;; esac
-    media_collection=content://media/external_primary/video/media
-    media_where="_display_name='$media_name' AND relative_path='Movies/'"
+    media_where="_display_name='$media_name' AND relative_path='$media_relative_path'"
     /system/bin/content query --user 0 --uri "$media_collection" --projection _id --where "$media_where" --extra 'android\:query-arg-match-pending:i:1' > /data/local/tmp/archtv-mc1/media-before.txt 2>/data/local/tmp/archtv-mc1/media-query-error.txt
     media_before=$(/system/bin/cat /data/local/tmp/archtv-mc1/media-before.txt)
     if [ "$media_before" = 'No result found.' ]; then
-        /system/bin/content insert --user 0 --uri "$media_collection" --bind "_display_name:s:$media_name" --bind mime_type:s:video/mp4 --bind relative_path:s:Movies/ --bind is_pending:i:1 > /data/local/tmp/archtv-mc1/media-insert.txt 2>&1
+        /system/bin/content insert --user 0 --uri "$media_collection" --bind "_display_name:s:$media_name" --bind "mime_type:s:$media_mime" --bind "relative_path:s:$media_relative_path" --bind is_pending:i:1 > /data/local/tmp/archtv-mc1/media-insert.txt 2>&1
     fi
     /system/bin/content query --user 0 --uri "$media_collection" --projection _id --where "$media_where" --extra 'android\:query-arg-match-pending:i:1' > /data/local/tmp/archtv-mc1/media-id.txt 2>/data/local/tmp/archtv-mc1/media-query-error.txt
     [ "$(/system/bin/wc -l < /data/local/tmp/archtv-mc1/media-id.txt)" -eq 1 ]
@@ -150,6 +159,16 @@ resolved=$(/system/bin/cmd package resolve-activity --brief --user 0 -a android.
 component=$(/system/bin/printf '%s\n' "$resolved" | /system/bin/tail -n 1)
 case "$component" in "$target_package"/*) ;; *) exit 1;; esac
 /system/bin/cmd activity start-activity -W --user 0 -n "$component" > /data/local/tmp/archtv-mc1/markor-launch.txt 2>&1
+# The audio-only comparison uses VLC's declared VIEW contract, resolved by
+# original PMS. URI access is granted by original AMS; never synthesize a URI
+# or bypass provider permission checks. Actual playback still needs evidence.
+if [ "${media_mime:-}" = audio/mp4 ]; then
+    media_resolved=$(/system/bin/cmd package resolve-activity --brief --user 0 -a android.intent.action.VIEW -c android.intent.category.DEFAULT -d "$media_uri" -t "$media_mime" -p "$target_package")
+    /system/bin/printf '%s\n' "$media_resolved" > /data/local/tmp/archtv-mc1/media-resolve.txt
+    media_component=$(/system/bin/printf '%s\n' "$media_resolved" | /system/bin/tail -n 1)
+    case "$media_component" in "$target_package"/*) ;; *) exit 1;; esac
+    /system/bin/cmd activity start-activity -W --user 0 --grant-read-uri-permission -a android.intent.action.VIEW -d "$media_uri" -t "$media_mime" -n "$media_component" > /data/local/tmp/archtv-mc1/media-launch.txt 2>&1
+fi
 ps_status=0
 /system/bin/ps -A -o PID,LABEL,NAME > /data/local/tmp/archtv-mc1/android-ps-after.txt 2>/data/local/tmp/archtv-mc1/android-ps-error.txt || ps_status=$?
 /system/bin/printf 'ps_after_exit=%s\n' "$ps_status" >> /data/local/tmp/archtv-mc1/android-ps-status.txt

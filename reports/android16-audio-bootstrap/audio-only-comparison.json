@@ -1,0 +1,130 @@
+{
+  "status": "original_audio_mediastore_roundtrip_passed_install_rejected_no_playback",
+  "scope": "Functional comparison in intact VLC, not broad APK or acoustic acceptance",
+  "hypothesis": "Removing video while preserving identical decoded audio separates AV synchronization from PCM delivery; neither outcome alone proves clock cause.",
+  "source_asset": {
+    "scope": "Same AAC stream remuxed without video, no APK modification; reference decode does not prove runtime delivery",
+    "path": "/home/tv/.cache/archtv/media-test-assets/archtv-vlc-audio-only-4s.m4a",
+    "sha256": "0b0a63604759b9e1a885442117d0ede6c78ab76a80e8426df522198dfef7b2fb",
+    "bytes": 36483,
+    "source": {
+      "path": "/home/tv/.cache/archtv/media-test-assets/archtv-vlc-testsrc2-sine-4s.mp4",
+      "sha256": "30fc8da5b0511c723c434cc13b3635507d7caae0b0d137c1f87aecbe6d1d4e17"
+    },
+    "argv": [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-i",
+      "/home/tv/.cache/archtv/media-test-assets/archtv-vlc-testsrc2-sine-4s.mp4",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "copy",
+      "/home/tv/.cache/archtv/media-test-assets/archtv-vlc-audio-only-4s.m4a"
+    ],
+    "decoded_pcm_reference": [
+      {
+        "path": "/home/tv/.cache/archtv/media-test-assets/archtv-vlc-testsrc2-sine-4s.mp4",
+        "bytes": 384000,
+        "sha256": "56a33b919e06bff9aad2b2390a0377bb49130deb25d8bdc5b09451a1019bcb3a",
+        "frames": 192000
+      },
+      {
+        "path": "/home/tv/.cache/archtv/media-test-assets/archtv-vlc-audio-only-4s.m4a",
+        "bytes": 384000,
+        "sha256": "56a33b919e06bff9aad2b2390a0377bb49130deb25d8bdc5b09451a1019bcb3a",
+        "frames": 192000
+      }
+    ]
+  },
+  "reference_manifest_sha256": "490e4d74f3a09fdc87ebb8a04be7995ebbb41dbd5b60b4bd008498ec1aa9dbb8",
+  "rea_mcp": {
+    "operation": "inspect_android_package",
+    "evidence_id": "ev_f4d01192ad92f63ed24387382d85259b4cf9b91f2c6cf2dc855aea07861424b0",
+    "authority": "shipped-artifact",
+    "scope": "Static decoded APK manifest, not execution or signature verification",
+    "artifact_sha256": "4646633ede40c4784c5584087cffc5c60cc45b16966ae0b36cedd784d7c4a11e",
+    "provider_engine": {
+      "name": "jadx-headless-mcp",
+      "version": "0.7.1",
+      "artifact_sha256": "6e5eacf500b64292bfb73c49797c1958f6ee44646e43e868039ae7feb573ff75",
+      "source_revision": "5844800a486d2248fa949b74c9896285f5b54de2",
+      "worker_count": 1,
+      "heap_limit_mib": 1980
+    },
+    "evidence": "/home/tv/recuperacion-archtv/20261105T-vlc-audio-only-contract/rea-manifest-evidence.json",
+    "evidence_sha256": "72695c8eb8fe9fea28101131f28f57eb82bff10e641b6b2f029e0a4f4858be6d",
+    "selected_contract": "/home/tv/recuperacion-archtv/20261105T-vlc-audio-only-contract/audio-view-contract.json",
+    "selected_contract_sha256": "fe788b7a06c6d844c15821708451134d53642efe9dce703ed4af0d9458a6cb4d",
+    "contract": "StartActivity exported VIEW accepts content scheme/audio MIME; actual original PMS resolve and AMS URI grant must still execute"
+  },
+  "candidate": "dist/aosp16/package-cohort-build-308",
+  "baseline": "reports/android16-audio-bootstrap/synchronous-pcm-progress.json",
+  "acceptance_required": [
+    "Original audio MediaStore insert/query/write/readback/publication",
+    "Original PMS resolves audio VIEW and AMS starts it with genuine URI read grant",
+    "Actual VLC playback through AudioTrack/FMQ and real PCM counts/errors",
+    "Host recovery and process/descriptor/device cleanup"
+  ],
+  "limits": [
+    "Identical reference decode192000frames is not runtime delivery.",
+    "Zero PCM call errors do not prove complete source coverage, mixer output, acoustic signal or physical time.",
+    "R1, coherent ART boot images, ARM/GMS/DRM and broad runtime remain open."
+  ],
+  "run_id": "f269655f-1e47-46c8-b335-07265d439ead",
+  "checkpoint": "/home/tv/recuperacion-archtv/f269655f-1e47-46c8-b335-07265d439ead-markor-software-launch",
+  "executed": {
+    "audio_media_uri": "content://media/external_primary/audio/media/19",
+    "readback_sha256": "0b0a63604759b9e1a885442117d0ede6c78ab76a80e8426df522198dfef7b2fb",
+    "published": true,
+    "original_installer": "session1423235728 streamed49444910bytes then INSTALL_FAILED_INSUFFICIENT_STORAGE: Failed to override installation location",
+    "audio_VIEW": "not reached; static manifest only remains partial evidence",
+    "PCM": "not tested in308; no reuse of307counts"
+  },
+  "closure": {
+    "mode_after": "0",
+    "policy_sha256": "5851879a58b0dbe713336162ffd58178cac4e842171213b78a7c5a80b525c706",
+    "clock_after": "tsc",
+    "host_audit_exit": 0,
+    "audit_lost_delta": 0,
+    "audit_rules_unchanged": true,
+    "audit_receiver_closed": true,
+    "mixer_device_sysrq_equal": true,
+    "loops_dm_bpf_closed": true,
+    "outer_exit": 1,
+    "R1": "open"
+  },
+  "next_action": "Preserve storage rejection. Recover actual disk headroom by lossless archival of superseded generated images, verifying originalSHA and retaining exact recovery. Re-run identical308payload to test whether original PMS installation unblocks; no threshold/permission/readiness override. Full audio comparison remains outstanding.",
+  "execution_evidence": [
+    {
+      "path": "/home/tv/recuperacion-archtv/f269655f-1e47-46c8-b335-07265d439ead-markor-software-launch/observed-markor-install.txt",
+      "sha256": "038403df9928deb5a43ce68ce532c5ec9706c2bc956abcd303772902ab194593"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/f269655f-1e47-46c8-b335-07265d439ead-markor-software-launch/observed-media-bytes.txt",
+      "sha256": "a2f8810522795e21566815954d9121a198d5aa89ccbbdf916cdadc01e2af9400"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/f269655f-1e47-46c8-b335-07265d439ead-markor-software-launch/observed-media-uri.txt",
+      "sha256": "833dba42cefc05a6f78284a2b0c3aa7c373373f118d0338bc84e90a405263dc0"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/f269655f-1e47-46c8-b335-07265d439ead-markor-software-launch/observed-media-readback.mp4",
+      "sha256": "0b0a63604759b9e1a885442117d0ede6c78ab76a80e8426df522198dfef7b2fb"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/f269655f-1e47-46c8-b335-07265d439ead-markor-software-launch/observed-media-published.txt",
+      "sha256": "89ac5a0c148edf649ac8d3da0201a6823ef4bd14d7d3c458252e4d7e4c6f9e8a"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/f269655f-1e47-46c8-b335-07265d439ead-markor-software-launch/root-after.json",
+      "sha256": "d3978f7fb8905d3ddad687c174b4bf54fc3cdbd688592d8398d4860de7f28728"
+    },
+    {
+      "path": "/home/tv/recuperacion-archtv/f269655f-1e47-46c8-b335-07265d439ead-markor-software-launch/finite-audit/result.json",
+      "sha256": "cb877d75f3774ad97e3855fee4526b8fee9a848e94e37e3503c3809f9b31bbb0"
+    }
+  ]
+}

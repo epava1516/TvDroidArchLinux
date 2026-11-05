@@ -7,7 +7,7 @@ r=Path(__file__).resolve().parents[2]
 allowed_flags = {'--checkpoint-diagnostic', '--keymint-component', '--keystore-component',
                  '--keystore-java-component', '--software-security', '--native-audio',
                  '--audio-write-diagnostic', '--audio-synchronous-pcm',
-                 '--memfd-label-original', '--media-test'}
+                 '--memfd-label-original', '--media-test', '--audio-only-media'}
 allowed_values = ('--observe-ms=', '--userdata-name=', '--apk-id=', '--markor-workflow-token=')
 assert all(a in allowed_flags or any(a.startswith(prefix) for prefix in allowed_values)
            for a in sys.argv[2:]), 'Unknown integrated build option'
@@ -90,6 +90,8 @@ if '--memfd-label-original' in sys.argv[2:]:
  for source,expected in memory_build['inputs'].items():assert hashlib.sha256(Path(source).read_bytes()).hexdigest()==expected,source
  memory_library={'path':str(memory_path),'sha256':memory_build['sha256'],'payload_path':'/bin/archtv-libcutils-memory.so','scope':'Experimental original libcutils memory-label backport; not APK/security acceptance'}
 media_test=None
+audio_only_media='--audio-only-media' in sys.argv[2:]
+assert not audio_only_media or '--media-test' in sys.argv[2:]
 if '--media-test' in sys.argv[2:]:
  assert software_platform and apk_id=='vlc'
  media_manifest=Path('/home/tv/.cache/archtv/media-test-assets/archtv-vlc-testsrc2-sine-4s.json')
@@ -98,6 +100,18 @@ if '--media-test' in sys.argv[2:]:
  assert media_test['sha256']=='30fc8da5b0511c723c434cc13b3635507d7caae0b0d137c1f87aecbe6d1d4e17'
  assert media_test['bytes']==420785 and hashlib.sha256(Path(media_test['path']).read_bytes()).hexdigest()==media_test['sha256']
  media_test['display_name']='archtv-test-'+media_test['sha256'][:8]+'.mp4'
+ if audio_only_media:
+  media_manifest=Path('/home/tv/.cache/archtv/media-test-assets/archtv-vlc-audio-only-4s.json')
+  media_record=json.loads(media_manifest.read_text())
+  media_test={k:media_record[k] for k in ['path','sha256','bytes']}
+  assert media_test['sha256']=='0b0a63604759b9e1a885442117d0ede6c78ab76a80e8426df522198dfef7b2fb'
+  assert media_test['bytes']==36483 and hashlib.sha256(Path(media_test['path']).read_bytes()).hexdigest()==media_test['sha256']
+  assert media_record['source']['sha256']=='30fc8da5b0511c723c434cc13b3635507d7caae0b0d137c1f87aecbe6d1d4e17'
+  assert {x['sha256'] for x in media_record['decoded_pcm_reference']}=={'56a33b919e06bff9aad2b2390a0377bb49130deb25d8bdc5b09451a1019bcb3a'}
+  media_test['display_name']='archtv-test-'+media_test['sha256'][:8]+'.m4a'
+  media_test['reference_manifest']=str(media_manifest)
+  media_test['reference_manifest_sha256']=hashlib.sha256(media_manifest.read_bytes()).hexdigest()
+
 workflow_token=next((a.split('=',1)[1] for a in sys.argv[2:] if a.startswith('--markor-workflow-token=')),None)
 assert workflow_token is None or (apk_id=='markor' and software_platform and observe_ms>=30000 and re.fullmatch('[0-9a-f]{8}',workflow_token))
 workflow_budget_seconds=observe_ms//1000-15 if workflow_token else None
