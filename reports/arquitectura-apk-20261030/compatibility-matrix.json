@@ -103,10 +103,10 @@
           "scope": "Actual Linux keyboard/TV navigation and original permission dialogs; no playback/full isolation claim."
         },
         "playback_blocker": {
-          "record": "/home/tv/recuperacion-archtv/d4a9455a-a099-45ff-9c67-cf82a042ddc9-markor-software-launch/functional-result.json",
-          "record_sha256": "0af9b92e2b8db5b3aff9508961d8127a59460f1bfe912ae7a1ad0ac38892202e",
+          "record": "/home/tv/recuperacion-archtv/ca39f661-16b2-4a71-beec-fd849cf14d7d-markor-software-launch/functional-result.json",
+          "record_sha256": "95029372f366c61240fba4631e61b04c9480fd72fa9d79037cc893be6f491d52",
           "accepted": false,
-          "scope": "Current310: originalVLCaudioVIEW/UI and25TinyALSAwrites102400frames observed without oldHALqueue drops/write errors. Reference192000frames not covered, acoustic/timing/realhardwarecontrols/lifecycle/fullR1 unresolved. AVloadalone doesnotexplain samecount in audio-only. Prior296write-error record preserved in history."
+          "scope": "314 actual AudioFlinger track55 remains Server0/FrmRdy0/f through original underrun removal.25HALwrites102400agree with outputthread, NOT decoded-source playback evidence. Width4bytes coherent; next complete original productionDSP integration addresses missing contract, cause not established. Acoustic/fullaudio/R1/coherentART/lifecycle remain open."
         },
         "thumbnail": {
           "record": "../android16-package-bootstrap/original-apex-derive-mac-progress.json",
@@ -161,7 +161,7 @@
         "audio_only310": {
           "record": "/home/tv/recuperacion-archtv/d4a9455a-a099-45ff-9c67-cf82a042ddc9-markor-software-launch/functional-result.json",
           "record_sha256": "0af9b92e2b8db5b3aff9508961d8127a59460f1bfe912ae7a1ad0ac38892202e",
-          "scope": "OriginalVLC VIEW/NowPlaying/PCM afterparentcgroupdentrylifetime candidate;102400of192000referenceframes, nofullaudio/acoustic/timing/R1 acceptance."
+          "scope": "Historical310 originalVLC VIEW/NowPlaying and102400HALframes observed. HAL write count alone never establishes decoded-source audio;314 separately proves unfilled original track. No fullaudio/acoustic/timing/R1 acceptance."
         },
         "playback_blocker_history": [
           {
@@ -170,8 +170,20 @@
             "section": "native_audio296",
             "accepted": false,
             "scope": "Previous FMQ/memory barrier passed enough for original ALSA worker to receive data; actual ALSA writer returns-1 and transfer drops4096frames. No physical PCM/audio accepted; missing DSP/fullR1 open."
+          },
+          {
+            "record": "/home/tv/recuperacion-archtv/d4a9455a-a099-45ff-9c67-cf82a042ddc9-markor-software-launch/functional-result.json",
+            "record_sha256": "0af9b92e2b8db5b3aff9508961d8127a59460f1bfe912ae7a1ad0ac38892202e",
+            "accepted": false,
+            "scope": "Current310: originalVLCaudioVIEW/UI and25TinyALSAwrites102400frames observed without oldHALqueue drops/write errors. Reference192000frames not covered, acoustic/timing/realhardwarecontrols/lifecycle/fullR1 unresolved. AVloadalone doesnotexplain samecount in audio-only. Prior296write-error record preserved in history."
           }
-        ]
+        ],
+        "audio_format314": {
+          "record": "/home/tv/recuperacion-archtv/ca39f661-16b2-4a71-beec-fd849cf14d7d-markor-software-launch/functional-result.json",
+          "record_sha256": "95029372f366c61240fba4631e61b04c9480fd72fa9d79037cc893be6f491d52",
+          "accepted": false,
+          "scope": "314 actual AudioFlinger track55 remains Server0/FrmRdy0/f through original underrun removal.25HALwrites102400agree with outputthread, NOT decoded-source playback evidence. Width4bytes coherent; next complete original productionDSP integration addresses missing contract, cause not established. Acoustic/fullaudio/R1/coherentART/lifecycle remain open."
+        }
       }
     },
     {

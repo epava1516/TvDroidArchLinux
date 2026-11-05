@@ -21,6 +21,7 @@ study = Path('/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1')
 root = repo / 'dist/aosp16/factory-inputs-3/root'
 write_diagnostic = '--audio-write-diagnostic' in sys.argv[2:]
 synchronous_pcm = '--audio-synchronous-pcm' in sys.argv[2:]
+production_dynamics = '--audio-production-dynamics' in sys.argv[2:]
 assert not (write_diagnostic and synchronous_pcm), 'Choose one audio backend candidate'
 core = repo / ('dist/aosp16/audio-linux-core-link-8' if synchronous_pcm else
                'dist/aosp16/audio-linux-core-link-5' if write_diagnostic else
@@ -31,6 +32,7 @@ record = {'scope': 'Private original audio deployment candidate, not service or 
           'files': {}, 'adaptations': []}
 record['write_diagnostic'] = write_diagnostic
 record['synchronous_pcm'] = synchronous_pcm
+record['production_dynamics'] = production_dynamics
 if synchronous_pcm:
     record['adaptations'].append('Candidate attached single-device blocking PCM removes reference lossy MonoPipe, counts actual TinyALSA writes and propagates errors. Real drain/flush, pause explicitly unsupported. No runtime/continuity/clock/acoustic acceptance.')
 if write_diagnostic:
@@ -75,6 +77,23 @@ add('/vendor/etc/init/archtv-audio.rc', rc)
 # and actual failed dlopen behavior: no effects are fabricated when libraries
 # are absent, and reference/no-op plugins are not installed as working DSP.
 add('/vendor/etc/audio_effects_config.xml', study / 'hardware-audio/aidl/default/audio_effects_config.xml')
+production_plugin = None
+if production_dynamics:
+    dynamics = repo / 'dist/aosp16/audio-production-dynamics-link-1'
+    link = json.loads((dynamics / 'link.json').read_text())
+    production_plugin = dynamics / 'libdynamicsprocessingaidl.so'
+    assert link['exit'] == 0 and sha(production_plugin) == link['binary_sha256']
+    for source, expected in link['inputs'].items():
+        assert sha(Path(source)) == expected, source
+    add('/vendor/lib64/soundfx/libdynamicsprocessingaidl.so', production_plugin,
+        'vendor_file', 0o644)
+    add('/vendor/etc/archtv/licenses/dynamicsprocessing-NOTICE',
+        study / 'framework-dynamicsproc/NOTICE')
+    for name in ['COPYING.APACHE', 'COPYING.BSD', 'COPYING.MINPACK', 'COPYING.MPL2', 'NOTICE']:
+        add('/vendor/etc/archtv/licenses/eigen-' + name, study / 'eigen' / name)
+    record['production_dynamics_link'] = {'path': str(dynamics / 'link.json'),
+                                          'sha256': sha(dynamics / 'link.json')}
+    record['adaptations'].append('Original production DynamicsProcessing engine/AIDL/common worker/ranges deployed with original config and notices. Original factory must actually dlopen/query/process it; no inventory/readiness or DSP availability fabricated. Other missing plugins remain missing.')
 record['adaptations'].append('Original AIDL audio_effects_config.xml unchanged. EffectFactory inserts identities only after actual dlopen succeeds; absent plugins remain unavailable, not accepted effects.')
 record['original_rc_sha256'] = sha(original_rc)
 record['adaptations'].append('Only the executable directory in original RC changes from audio APEX to private vendor; user/groups/caps/rtprio/ioprio/task_profiles/onrestart retained.')
@@ -120,6 +139,8 @@ record['adaptations'].append('VINTF core3 matches original generated released co
 # Complete actual DT_NEEDED closure, keeping original Bionic/core namespace.
 custom = {p.name: p for p in core.glob('*.so')}
 pending = [core / binaries[0], effect / binaries[1]]
+if production_plugin is not None:
+    pending.append(production_plugin)
 seen = set()
 while pending:
     binary = pending.pop()

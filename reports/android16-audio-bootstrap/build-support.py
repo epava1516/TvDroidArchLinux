@@ -39,6 +39,16 @@ groups = {
     'libbluetooth_audio_v5_ndk': sorted((core / 'aidl/src/android/hardware/bluetooth/audio').rglob('*.cpp')),
     'audio_policy_xml': sorted((core / 'xml').glob('*.cpp')),
     'audio_effect_service': [study / 'hardware-audio/aidl/default' / n for n in ['EffectFactory.cpp', 'EffectMain.cpp']],
+    # Complete production Android.bp groups: real engine, AIDL context/worker
+    # and parameter ranges. Never substitute the reference copy-through effect.
+    'libdynamicsprocessingaidl': [
+        *[study / 'framework-dynamicsproc' / n for n in [
+            'dsp/DPBase.cpp', 'dsp/DPFrequency.cpp',
+            'aidl/DynamicsProcessing.cpp', 'aidl/DynamicsProcessingContext.cpp']],
+        *[study / 'hardware-audio/aidl/default' / n for n in [
+            'EffectContext.cpp', 'EffectThread.cpp', 'EffectImpl.cpp']],
+        study / 'hardware-audio/aidl/common/EffectRangeSpecific.cpp',
+    ],
     # Complete original Android.bp groups, not replacements for missing symbols.
     # These are linked by the original core factory even when no Bluetooth route
     # is configured. Compiling them does not establish Bluetooth availability.
@@ -76,7 +86,26 @@ assert selected <= groups.keys(), selected - groups.keys()
 bluetooth_groups = {'libbluetooth_audio_session_aidl', 'android_hardware_bluetooth_audio_impl'}
 if not selected:
     # Preserve the existing non-Bluetooth support build invocation.
-    selected = set(groups) - bluetooth_groups
+    selected = set(groups) - bluetooth_groups - {'libdynamicsprocessingaidl'}
+if 'libdynamicsprocessingaidl' in selected:
+    additional = []
+    for name in ['framework-dynamicsproc', 'eigen']:
+        acquisition = study / (name + '.acquisition.json')
+        meta = json.loads(acquisition.read_text())
+        archive = study / (name + '.tar.gz')
+        assert hashlib.file_digest(archive.open('rb'), 'sha256').hexdigest() == meta['sha256']
+        additional.append(meta)
+    record['additional_source_acquisitions'] = additional
+    record['production_effect_inputs'] = {
+        str(p): hashlib.file_digest(p.open('rb'), 'sha256').hexdigest()
+        for directory in [study / 'framework-dynamicsproc', study / 'eigen',
+                          study / 'hardware-audio/aidl/default/include',
+                          study / 'hardware-audio/aidl/common/include']
+        for p in sorted(directory.rglob('*')) if p.is_file()
+    }
+    # libeigen's original exported flag; no host Eigen or glibc headers.
+    flags += ['-I' + str(study / 'framework-dynamicsproc'),
+              '-I' + str(study / 'eigen'), '-DEIGEN_MPL2_ONLY']
 if selected & bluetooth_groups:
     generated = out / 'bluetooth-generated'
     generated.mkdir()

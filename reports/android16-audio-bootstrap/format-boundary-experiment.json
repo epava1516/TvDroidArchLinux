@@ -1,5 +1,5 @@
 {
-  "status": "format_width_agrees_audio_incomplete_snapshots_precede_track",
+  "status": "original_track_never_filled_HAL_writes_not_source_audio_evidence",
   "utc": "2026-11-05T03:11:55.325296+00:00",
   "previous_control": {
     "run_id": "a443800f-c903-4819-af20-f11cf6cd00eb",
@@ -60,7 +60,47 @@
   "next_experiment": {
     "build": "dist/aosp16/package-cohort-build-314",
     "scope": "SameHAL/APK/PCM/policy/TSC, original dumpsys16snapshots over delayed track creation; preserve all snapshots including zeros; no timing acceptance",
-    "state": "built_not_executed",
-    "payload_sha256": "aeb9b07a29c160dd6f58298a9f65d0e6da1af0569cd0086d884bd682a5c31c38"
+    "state": "terminal_consumed",
+    "payload_sha256": "aeb9b07a29c160dd6f58298a9f65d0e6da1af0569cd0086d884bd682a5c31c38",
+    "result": "Original track55 remains Server0/FrmRdy0;25HALwrites102400not decodedsource proof; original16snapshots allquery0; recovery verified"
+  },
+  "control314": {
+    "path": "/home/tv/recuperacion-archtv/ca39f661-16b2-4a71-beec-fd849cf14d7d-markor-software-launch/functional-result.json",
+    "sha256": "95029372f366c61240fba4631e61b04c9480fd72fa9d79037cc893be6f491d52"
+  },
+  "production_DSP": {
+    "source_acquisition": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/framework-dynamicsproc.acquisition.json",
+    "production": "Complete frameworks/av dynamicsproc AIDL/context/common worker + DPBase/DPFrequency real DSP, original parameters/ranges",
+    "rejected": "hardware/interfaces DynamicsProcessingSw::effectProcessImpl TODO copy-through, not production DSP",
+    "hypothesis": "Missing constructor contract may affect original VLC fallback; not established as cause, require realclient frames and signal/runtime outcome",
+    "REA_native": "Actual MCP connected; decompiler providers unavailable. Supported MCP inspect_with_objdump succeeded for candidate createEffect; no target session opened, no runtime/decompilation claim.",
+    "candidate": {
+      "build_record": "dist/aosp16/audio-production-dynamics-build-1/build.json",
+      "build_record_sha256": "6e4fac7b8543e260cc882d3695a7d696f88d0e133583b7c662d004e9390e1741",
+      "source_units": 8,
+      "link_record": "dist/aosp16/audio-production-dynamics-link-1/link.json",
+      "link_record_sha256": "9b972ef72a95fe0984f420f2f22de4be984fc86144a69728782179819f15265b",
+      "binary_sha256": "77f26556fd3ee91a27375bf035e3fc764680c4c96f372913045277ad6705e0a3",
+      "optimization": "Inherited debug-O0; not performance/lightness or release-build acceptance",
+      "MCP_static_evidence": {
+        "id": "ev_3b7325bf921aa2659f5d181dac8bfc3f02cf91e659856473179756387a162454",
+        "path": "reports/android16-audio-bootstrap/production-dynamics-elf-mcp.json",
+        "scope": "Actual REA MCP objdump selected createEffect symbol, complete exit0 unchanged artifact; static assembly only, no DSP/constructor/runtime execution"
+      },
+      "deployment": "Explicit --audio-production-dynamics flag; original config UUID/path, real DT_NEEDED closure, original source licenses; other missing plugins remain absent",
+      "next": "build315 then originalVLC with original16AudioFlinger snapshots and actual source/server/signal/closure. No constructor-only acceptance",
+      "coherent_payload": {
+        "build": "dist/aosp16/package-cohort-build-315",
+        "sha256": "b8a75efb2c52208dff8323fd211b3b6a9700f918bbca9c6db73e891cd9de80c3",
+        "source_input_hashes_match": true,
+        "runtime": "started315_original_services_result_pending",
+        "checkpoint": "/home/tv/recuperacion-archtv/024d84b1-a192-4d63-896a-a6d0d4f08640-markor-software-launch"
+      }
+    }
+  },
+  "storage_preservation314": {
+    "manifest": "dist/aosp16/package-cohort-build-314/image-preservation.json",
+    "sha256": "9086529561eafb96c0cbc313e7a2238476f2c66475703604e8053bfd7d4a6f3d",
+    "scope": "Closed/consumed own314raw recovered losslessly fromgzip; all logs/sources/userdata retained"
   }
 }
