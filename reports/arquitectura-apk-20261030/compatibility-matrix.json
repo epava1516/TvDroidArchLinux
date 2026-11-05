@@ -199,6 +199,11 @@
           "client_server_counter": 137306,
           "DSP_signal_processing_accepted": false,
           "full_audio_accepted": false
+        },
+        "audio_timing316": {
+          "record": "/home/tv/recuperacion-archtv/c4a1674a-e6ea-4f84-ae73-d856660265ad-markor-software-launch/functional-result.json",
+          "record_sha256": "90f5d59d226a8be634b75d8ba5b4c262f4b9918e485b69dac6847f994b6ac9d0",
+          "scope": "SameproductionDSP315payload withtemporaryacpi_pm; timingreset persists, server131072/flushed19472, nofullaudio. OriginalstateTSC/mode0/policy65/resourcesrestored, consumedonce."
         }
       }
     },

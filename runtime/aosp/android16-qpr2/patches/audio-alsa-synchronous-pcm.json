@@ -1,12 +1,12 @@
 {
-  "status": "format_diagnostic_candidate_not_executed",
+  "status": "original_cumulative_position_restoration_candidate_not_executed",
   "source_pin": "aa229558cbf04bc997ed27465c5e7ad497123d1b",
-  "patch_sha256": "8dd1185de8ab54d1245dba145e51a90e1cf5197c8ff546c05a35cf42e1978be1",
+  "patch_sha256": "64ad0105a1293a49b5a3bb43e118c6f37cc510d062cadb1f86f685266f081534",
   "files": [
     {
       "path": "aidl/default/alsa/StreamAlsa.cpp",
       "original_sha256": "bf08605917a9ddf280433d31ceab2406963c42bb7ba2674a7ba9ea4b1b0f8c51",
-      "adapted_sha256": "f19ee4318ce00fb1bb13fa6579315d54bc976626b304bfd038a859c13060e0de"
+      "adapted_sha256": "931f88f3240b1f863e97a29432d22ea1db5b184d3f857615486ee86b42ce82ba"
     }
   ],
   "scope": "Linux attached single-device synchronous output only; original FMQ/AIDL, Bionic, DeviceProxy and TinyALSA; unchanged public/header ABI",
@@ -15,7 +15,12 @@
     "Hardware pause unsupported and returns error; no fake success",
     "No acoustic acceptance; external USB and input keep original paths",
     "Blocking IO and driver errors/closure must be tested in bounded integrated runtime",
-    "Logs actual context/config/proxy formats; mismatched frame widths fail BAD_VALUE with zero accepted frames, no synthetic conversion."
+    "Logs actual context/config/proxy formats; mismatched frame widths fail BAD_VALUE with zero accepted frames, no synthetic conversion.",
+    "Restores original resetTransferredFrames from actual worker cumulative frame count across proxy recreation; original presentation formula/clock retained. Logs actual context/proxy/presentation/monotonic values, no fabricated timestamps. Effect on real VLC timing not yet tested."
   ],
-  "previous_patch_sha256": "3aee1ac5b4b06ede78cd78b6498fef573446de8c0ccef5c8a3a36311da50b61a"
+  "previous_patch_sha256": "8dd1185de8ab54d1245dba145e51a90e1cf5197c8ff546c05a35cf42e1978be1",
+  "patch_history": [
+    "3aee1ac5b4b06ede78cd78b6498fef573446de8c0ccef5c8a3a36311da50b61a",
+    "8dd1185de8ab54d1245dba145e51a90e1cf5197c8ff546c05a35cf42e1978be1"
+  ]
 }

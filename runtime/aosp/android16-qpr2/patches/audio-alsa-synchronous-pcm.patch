@@ -127,14 +127,34 @@
      }
      const size_t bytesToTransfer = frameCount * mFrameSizeBytes;
      unsigned maxLatency = 0;
-@@ -202,7 +272,9 @@
+@@ -202,6 +272,11 @@
      }
      // Since the proxy can only count transferred frames since its creation,
      // we override its counter value with ours and let it to correct for buffered frames.
--    alsa::resetTransferredFrames(mAlsaDeviceProxies[0], position->frames);
-+    // In the synchronous path the proxy counts only actual successful PCM writes.
-+    if (mIsInput || !mSinks.empty())
-+        alsa::resetTransferredFrames(mAlsaDeviceProxies[0], position->frames);
++    // Preserve the original cumulative StreamContext position. The synchronous
++    // driver already reports actualFrameCount to the original worker; a new
++    // ALSA proxy lifetime must not replace that cumulative stream base.
++    const int64_t contextFrames = position->frames;
++    const uint64_t transferredBefore = mAlsaDeviceProxies[0].get()->transferred;
+     alsa::resetTransferredFrames(mAlsaDeviceProxies[0], position->frames);
      if (mIsInput) {
          if (int ret = proxy_get_capture_position(mAlsaDeviceProxies[0].get(), &position->frames,
-                                                  &position->timeNs);
+@@ -221,6 +296,18 @@
+             }
+             position->frames = static_cast<int64_t>(hwFrames);
+             position->timeNs = audio_utils_ns_from_timespec(&timestamp);
++            if (mSinks.empty() && mAlsaDeviceProxies.size() == 1) {
++                struct timespec now{};
++                const int clockResult = clock_gettime(CLOCK_MONOTONIC, &now);
++                const int clockErrno = clockResult == 0 ? 0 : errno;
++                LOG(INFO) << "LINUX_PCM_POSITION context_frames=" << contextFrames
++                          << " proxy_before=" << transferredBefore
++                          << " presented_frames=" << position->frames
++                          << " timestamp_ns=" << position->timeNs
++                          << " monotonic_ns="
++                          << (clockResult == 0 ? audio_utils_ns_from_timespec(&now) : -1)
++                          << " clock_result=" << clockResult << " clock_errno=" << clockErrno;
++            }
+         } else {
+             LOG(WARNING) << __func__ << ": failed to retrieve presentation position: " << ret;
+             return ::android::INVALID_OPERATION;

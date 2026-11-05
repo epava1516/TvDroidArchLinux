@@ -23,7 +23,7 @@ for source in core['sources']:
 write_diagnostic = '--write-diagnostic' in sys.argv[2:]
 synchronous_pcm = '--synchronous-pcm' in sys.argv[2:]
 assert not (write_diagnostic and synchronous_pcm), 'Choose one StreamAlsa candidate'
-adapted_dir = repo / ('dist/aosp16/audio-linux-primary-build-6' if synchronous_pcm else
+adapted_dir = repo / ('dist/aosp16/audio-linux-primary-build-7' if synchronous_pcm else
                       'dist/aosp16/audio-linux-primary-build-4' if write_diagnostic else
                       'dist/aosp16/audio-linux-primary-build-1')
 adapted = json.loads((adapted_dir / 'build.json').read_text())

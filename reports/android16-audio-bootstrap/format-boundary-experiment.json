@@ -109,8 +109,52 @@
   },
   "next_control316": {
     "scope": "Same315payload, only temporaryacpi_pm withTSCrollback; actualclientdata now flows unlike311, so timing uncertainty newly actionable",
-    "status": "active_result_pending",
+    "status": "terminal_consumed; timingreset/flush persists, TSCrestored",
     "checkpoint": "/home/tv/recuperacion-archtv/c4a1674a-e6ea-4f84-ae73-d856660265ad-markor-software-launch",
     "payload_sha256": "b8a75efb2c52208dff8323fd211b3b6a9700f918bbca9c6db73e891cd9de80c3"
-  }
+  },
+  "control316": {
+    "path": "/home/tv/recuperacion-archtv/c4a1674a-e6ea-4f84-ae73-d856660265ad-markor-software-launch/functional-result.json",
+    "sha256": "90f5d59d226a8be634b75d8ba5b4c262f4b9918e485b69dac6847f994b6ac9d0"
+  },
+  "next_candidate317": {
+    "scope": "Original worker advances cumulative count only by actualFrameCount; restoring originalreset preserves stream lifetime acrossnewproxy. Diagnostic values do not replace realpresentation timestamps. No header/vtable/layout, policy, codec orclock change. EffectonVLCtiming notyettested.",
+    "state": "started_realVLC_result_pending",
+    "build": "dist/aosp16/audio-linux-primary-build-7",
+    "source_pin": "aa229558cbf04bc997ed27465c5e7ad497123d1b",
+    "original_contract_inputs": {
+      "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/Stream.cpp": "d523be48439e571fa7ffba6a0e07aae5454f756ebfb8ec19de4edb900e5ba1d5",
+      "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/include/core-impl/Stream.h": "8a516a8a6efbce9b107a7b0f030afa7308d1228e6999b1d0f4520f3f9b68631b",
+      "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/alsa/Utils.cpp": "1b8054d1e534e900ecd627715417302fdaeb35a56ad84f49ad5c020d60a7bf61",
+      "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/hardware-audio/aidl/default/alsa/StreamAlsa.cpp": "bf08605917a9ddf280433d31ceab2406963c42bb7ba2674a7ba9ea4b1b0f8c51"
+    },
+    "artifacts": {
+      "dist/aosp16/audio-linux-primary-build-7/build.json": "5d68e2c30b8e14b7c849670a7cdbd1426a8a3252a214db3fcf1bcd5b1a7e05fc",
+      "dist/aosp16/audio-linux-core-link-9/link.json": "3b728ba6c0627596ca1468627607b17ed821565211bf53c0206ab07f98e4c03f",
+      "runtime/aosp/android16-qpr2/patches/audio-alsa-synchronous-pcm.patch": "64ad0105a1293a49b5a3bb43e118c6f37cc510d062cadb1f86f685266f081534",
+      "runtime/aosp/android16-qpr2/patches/audio-alsa-synchronous-pcm.json": "e55a92caae51ba0df0ab87ca97625a6e4b19d989173a39dda59e151fb4acb462"
+    },
+    "payload_sha256": "c62067295e53050fd914b336841c632807861070ca8ea7588208626068aa6c82",
+    "source_inputs_match_before_launch": true,
+    "checkpoint": "/home/tv/recuperacion-archtv/270b9a2e-5a3a-46eb-b66a-cd913a4ef08c-markor-software-launch"
+  },
+  "storage_preservation315": {
+    "manifest": "dist/aosp16/package-cohort-build-315/image-preservation.json",
+    "sha256": "7a7d1a6a30e3c2d7287430a0558cbea0dafa011a17d8a0047aa77282d4c80146",
+    "scope": "315and316closed/consumed; exactgzip recovery verified, no data/source/log removal"
+  },
+  "additional_closed_preservation": [
+    {
+      "manifest": "dist/aosp16/package-cohort-build-310/image-preservation.json",
+      "sha256": "b34b44cfa367deabd5339d7a501b966b6c52024ef7586de15d55b485b5cdc9d1"
+    },
+    {
+      "manifest": "dist/aosp16/package-cohort-build-308/image-preservation.json",
+      "sha256": "6c8c2232d0c197f8c02622e898799bc23339aa3c977f095f820943447ee959e0"
+    },
+    {
+      "manifest": "dist/aosp16/package-cohort-build-307/image-preservation.json",
+      "sha256": "12d28cf04b6cdf8ef24bd0bc5d3dd161d594e2d945d75b62ce89ee3b9cedc0f6"
+    }
+  ]
 }
