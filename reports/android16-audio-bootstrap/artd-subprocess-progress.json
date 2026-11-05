@@ -1042,7 +1042,7 @@
       "APK_inputs": 14,
       "scope": "Actual unprivileged original Bionic profman profile conversion; all original descriptors retained using adapted framework. StaticREA headers separate. No Android boot/services started, no profile bytes/checksums manually forged. No coherent bootimages/loading/signing/APK acceptance yet.",
       "initial_negative": "Compared location checksum incorrectly to raw DEX Adler; all18 failures preserved. OriginalDexFileLoader uses ZIPCRC32+i forcontainer; corrected verifier notprofilebytes.",
-      "next": "Execute corrected capture352 with same original normalBack route, then prioritize originalHOME/Back handoff to Rust/Linux shell insteadFallbackHome. Retain normalclose/forcedclose distinction and coherent minimal package profile work. R1/ARM/GMS/DRM/broadAPK remain open.",
+      "next": "Implement full normalBack->RustHome handoff using originalTaskStackListener/getFocusedRootTaskInfo and existing mutuallyauthenticated inputduplex, plus trusted preopenedHomeclient. Preserve originalAMS lifecycle, boundedprotocol/negative/disconnect checks anduserfocus authorization. No pixel/log heuristics or another publicendpoint. Sourceavailability not runtimeintegrationproof. Beforeheavybuild, budget actual955MiB free by preserving/verified losslessarchival of cold intermediates/artifacts, no evidence/pending discard.",
       "integration341": {
         "checkpoint": "/home/tv/recuperacion-archtv/28003656-01d6-4c93-866c-4a34bf3e1a62-markor-software-launch",
         "build": "dist/aosp16/package-cohort-build-341",
@@ -1246,7 +1246,7 @@
         ],
         "next": "Run existingoriginal Markorworkflowtoken with300sinteraction, immediatelyfocuseditorbodybeforetyping; originalCLI requiresbytes thenforce-stop/newPID/reopen. Keep oldnote/data. Correct identityproofs after functionalworkflow, no intendedSID substitution."
       },
-      "state": "351 original normalBack/Destroy/WARMreopen functionalpositive; outer1 captureview error retained, correctedsource awaiting352",
+      "state": "352 selected normalclose/warmnote allintegratedguards pass, normalcapturefixed; HOMEhandoff/R1/generalcompatibility open",
       "integration343": {
         "checkpoint": "/home/tv/recuperacion-archtv/085b5399-1642-4738-9c64-5adeecb8b5e9-markor-software-launch",
         "build": "dist/aosp16/package-cohort-build-343",
@@ -1723,7 +1723,7 @@
           "sha256": "d3eb7667da5d6443deb22eb91de5893b561c0d7ec098f92087a2ed33a0a58f36"
         }
       },
-      "current_integration": 351,
+      "current_integration": 352,
       "integration348": {
         "checkpoint": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch",
         "build": "dist/aosp16/package-cohort-build-348",
@@ -2250,6 +2250,137 @@
         },
         "executed_executor_sha256": "f2e0b5aeaf5b8de7b77675bdf6c1752d2356b3b9e859f5570d774771a5b2c67b",
         "current_fixed_executor_sha256": "688bbccaa4ee3e02be593115a24819c6984f08f278a3c900cec816cfd75b7f45"
+      },
+      "integration352": {
+        "checkpoint": "/home/tv/recuperacion-archtv/27aeed55-5cfe-4e25-8191-74ab26e84e07-markor-software-launch",
+        "build": "dist/aosp16/package-cohort-build-352",
+        "payload_sha256": "d0bd6f9724a402f5c6606207ae99a267681171e0a88cf8b3af63c3dfd5d4ea2d",
+        "native_exit": 0,
+        "outer_exit": 0,
+        "host_owner_exit": 0,
+        "selected_cohort_checks_passed": true,
+        "identity_guard_verified": true,
+        "identity_count": 28,
+        "installer_original_operation_verified": true,
+        "original_pms_queries_verified": true,
+        "original_storage_metadata_verified": true,
+        "original_installed_hash_guard_verified": true,
+        "normal_activity_close_observed": true,
+        "normal_back_guard_integrated_verified": true,
+        "protected_normal_files_captured": 10,
+        "real_primary_workflow_observed": false,
+        "new_note_write_observed": false,
+        "overall_cohort_accepted": false,
+        "all_markor_features_accepted": false,
+        "R1_MAC_accepted": false,
+        "linux_home_handoff_accepted": false,
+        "policy": 68,
+        "policy_changed": false,
+        "mac_restored": "0",
+        "cpu_quota_percent": 300,
+        "kernel_cpu_max": "300000 100000",
+        "note": {
+          "token": "348ace01",
+          "bytes": 21,
+          "sha256": "d3dd765e00aedeb5b0325cbb4a7efa3a66892ed7e0b36ea2a385586dd7551a33",
+          "scope": "Existing348note only; original FUSE hashes equal before/background/relaunch and editor visible. No newwrite/reboot/FBE acceptance."
+        },
+        "lifecycle": {
+          "physical_commands": 4,
+          "back_events": 2,
+          "original_uid": 10104,
+          "process_before": 1354,
+          "process_after_background": 1354,
+          "background_process_state": "cached cch-rec",
+          "old_active_task": 21,
+          "new_active_task": 22,
+          "launch_state": "WARM",
+          "launch_total_ms": 291,
+          "callbacks": "Original app-request/stop/onDestroy Document186247628 and Main43162522 PID1354; originalresume Main258348914 then Document38814064.",
+          "task_scope": "Oldtask absentactiveactivitytree, recenttaskreference retained. Not recents deletion or processdeath."
+        },
+        "home_boundary": "ActualAMS resumes com.android.settings/.FallbackHome; blackframegap, notRusthome. Persistent HWC Waylandtoplevel mapped14:08:16 anddestroyed14:13:05 onlyatcohortclose, cannotusewindowdestruction forAPKclose.",
+        "capture_correction": "Exact protected shared shell-input profile now visible to Linux capture; all10original UID2000/shell_data_file outputs validated in actual integrated run, not reconstructed.351 failure remains historical.",
+        "background_failures": "Three originalfatals: DeviceLock and twoDynamicSystem; noMarkorANR in capturedlog. Not generalstability.",
+        "remaining_failure": null,
+        "scope": "IntactMarkor selected normalBack/originalcallbacks/AMS/task21->22/WARM/retainedprocess/existingnoteUI persistence; allselectedintegratedguards pass together. No generalAPK/allfeatures/R1/Linuxhome/lightness/FBE/update/stability acceptance; fullcreate/save/forcedcoldreopen remains348.",
+        "next": "Implement full normalBack->RustHome handoff using originalTaskStackListener/getFocusedRootTaskInfo and existing mutuallyauthenticated inputduplex, plus trusted preopenedHomeclient. Preserve originalAMS lifecycle, boundedprotocol/negative/disconnect checks anduserfocus authorization. No pixel/log heuristics or another publicendpoint. Sourceavailability not runtimeintegrationproof. Beforeheavybuild, budget actual955MiB free by preserving/verified losslessarchival of cold intermediates/artifacts, no evidence/pending discard.",
+        "native_result": {
+          "path": "/home/tv/recuperacion-archtv/27aeed55-5cfe-4e25-8191-74ab26e84e07-markor-software-launch/native-result.json",
+          "sha256": "a4027875d00b0bed94d6a96c7dc1fc8d11fc4bd42fa69946f7cb1a83c80c52b2"
+        },
+        "result": {
+          "path": "/home/tv/recuperacion-archtv/27aeed55-5cfe-4e25-8191-74ab26e84e07-markor-software-launch/result.json",
+          "sha256": "9a1755b95bcca0db80c3075058c60c45575fcb250e3e5e72021072b77dcc27ff"
+        },
+        "identity_guard": {
+          "path": "/home/tv/recuperacion-archtv/27aeed55-5cfe-4e25-8191-74ab26e84e07-markor-software-launch/original-fork-identities.json",
+          "sha256": "c8dacfb5213243453efc24e0b337ca1c13daa431b4c22ca0437a3cf7531c0208"
+        },
+        "installer_operation": {
+          "path": "/home/tv/recuperacion-archtv/27aeed55-5cfe-4e25-8191-74ab26e84e07-markor-software-launch/original-installer-operation.json",
+          "sha256": "9f6a688ad6a4cb5f4eb9046d530ad007ffb504a207ca72fba7e6a505f24837e3"
+        },
+        "storage_metadata": {
+          "path": "/home/tv/recuperacion-archtv/27aeed55-5cfe-4e25-8191-74ab26e84e07-markor-software-launch/original-storage-metadata.json",
+          "sha256": "bb4a27732ea29c23861612a64298c7688a9cdd5fae6fa16f9f952711f8929fe0"
+        },
+        "installed_hashes": {
+          "path": "/home/tv/recuperacion-archtv/27aeed55-5cfe-4e25-8191-74ab26e84e07-markor-software-launch/original-installed-hashes.json",
+          "sha256": "4b1506b239734a8521cc09ea0b4cf90e6929dd6bb8259a6a61d47c2ec5dbd95a"
+        },
+        "normal_integrated_observation": {
+          "path": "/home/tv/recuperacion-archtv/27aeed55-5cfe-4e25-8191-74ab26e84e07-markor-software-launch/original-normal-observation.json",
+          "sha256": "a1808eb0ee9de3a988691c89d5bf4aa5e944cfa1416f34842e6a90d3afc2b830"
+        },
+        "normal_live_readback": {
+          "path": "/home/tv/recuperacion-archtv/27aeed55-5cfe-4e25-8191-74ab26e84e07-markor-software-launch/original-normal-live-readback.json",
+          "sha256": "a5e2900fffafd9f0febc17d0ab60f638d23c2b216748fd755f898a16cbbd659c"
+        },
+        "normal_integrated_capture": {
+          "path": "/home/tv/recuperacion-archtv/27aeed55-5cfe-4e25-8191-74ab26e84e07-markor-software-launch/original-workflow-capture.json",
+          "sha256": "2ae8a807316085586755ee3f1809523e3b8bb54d43812b03b501285e210cc6bb"
+        },
+        "normal_lifecycle_log": {
+          "path": "/home/tv/recuperacion-archtv/27aeed55-5cfe-4e25-8191-74ab26e84e07-markor-software-launch/original-normal-lifecycle-log.json",
+          "sha256": "4b033fab3639c3c37ce629b5165cfc318ea1f413a75dce876d3f05e70c9f7b4a"
+        },
+        "process_retention": {
+          "path": "/home/tv/recuperacion-archtv/27aeed55-5cfe-4e25-8191-74ab26e84e07-markor-software-launch/normal-process-retention.json",
+          "sha256": "f9a063050e0106d0f1e383aad1b32ab38a9e2713d9a72196890acf3ea81dfaa1"
+        },
+        "visual_reopened": {
+          "path": "/home/tv/recuperacion-archtv/27aeed55-5cfe-4e25-8191-74ab26e84e07-markor-software-launch/visual-note-normal-reopened.json",
+          "sha256": "d5f95e8d933d8aebe0495cbc66739fff0731bbe9e7e3d97188c9b506d59caf12"
+        },
+        "home_boundary_evidence": {
+          "path": "/home/tv/recuperacion-archtv/27aeed55-5cfe-4e25-8191-74ab26e84e07-markor-software-launch/home-boundary-source-observation.json",
+          "sha256": "aaa6c10c590f7f367171230d187579981e1a0327c46a25b2263292f5dc90a641"
+        },
+        "cpu_kernel": {
+          "path": "/home/tv/recuperacion-archtv/27aeed55-5cfe-4e25-8191-74ab26e84e07-markor-software-launch/cpu-quota-kernel.json",
+          "sha256": "d00374beb70bb723b0e1a2440067fd790bc7eab80cf28a92b290834d88c46cf0"
+        },
+        "mac_window": {
+          "path": "/home/tv/recuperacion-archtv/27aeed55-5cfe-4e25-8191-74ab26e84e07-markor-software-launch/mac-window.json",
+          "sha256": "5c77fe27f30e51ec0cf5ea8cd849f94d2b9f70ebf1bbd11b4b7a2a029723ed96"
+        },
+        "normal_backing_close": {
+          "path": "/home/tv/recuperacion-archtv/27aeed55-5cfe-4e25-8191-74ab26e84e07-markor-software-launch/backing-after.json",
+          "sha256": "2cfdb3654d9cd71edeacc6a010214f5d7142f6759635c047ea364db3e705d08a"
+        },
+        "recovery": {
+          "path": "/home/tv/recuperacion-archtv/27aeed55-5cfe-4e25-8191-74ab26e84e07-markor-software-launch/recovery-readback.json",
+          "sha256": "c8ceea542fc4603147102c12534b5f383a9aac3632e159e9c203d36ee873d512"
+        },
+        "terminal_owners": {
+          "path": "/home/tv/recuperacion-archtv/27aeed55-5cfe-4e25-8191-74ab26e84e07-markor-software-launch/terminal-owner-status.json",
+          "sha256": "15edeeb7947293f0539efe0ce084880179273eea066c2afaf881f304aa254f86"
+        },
+        "consumer": {
+          "path": "/home/tv/recuperacion-archtv/27aeed55-5cfe-4e25-8191-74ab26e84e07-markor-software-launch/completion-consumer.json",
+          "sha256": "6eb249162aa7b62c9d35bc2f6ff35f49f9a9e861d00739b9fb892fb28832baea"
+        }
       }
     }
   },

@@ -1,5 +1,9 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+352 elimina el bloqueo de captura integrado: cierre normal/reanudación WARM/nota existente y todas las guardias pasan juntas;351fallido se conserva. Próximo hito debe ejecutar Back→Home Rust con estado real de ATMS y cliente Home privado ya existente, no añadir otro servicio público ni deducir cierre por píxeles/logs/destrucción de HWC. Preservar ACK/cola/desconexión y negativas de identidad del canal de entrada al ampliarlo. Validar foco, entrada y lifecycle juntos; no usar cambio de foco Linux como sustituto de pausa/reanudación Android. El espacio libre observado es955MiB: antes de otra compilación pesada, archivo sin pérdidas/verificación/restauración de artefactos fríos, manteniendo originales de ejecución necesarios y pendientes. R1/perfil mínimo/broadAPK/instalación/actualización/ligereza y ARM/GMS/DRM siguen abiertos. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration352`.
+
+Histórico anterior:
+
 351 avanza el recorrido normal: Back→onDestroy de ambas actividades→PID en caché→lanzamiento original WARM→nota persistida visible. No repetir constructores ni fixtures como siguiente hito.352 debe ejecutar la corrección concreta de captura (perfil compartido, no /vendor de otra vista), manteniendo351exterior1 histórico. Después, prioridad funcional al contrato HOME/Back y retorno a shell Rust: FallbackHome de Android es un límite demostrado. Conservar pruebas de cierre forzado348 y normal351 separadas; continuar perfil mínimo coherente sin DSU/DeviceLock innecesarios y R1/broadAPK/instalación/actualización/ligereza. ARM/GMS/DRM separados. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration351`.
 
 Histórico anterior:

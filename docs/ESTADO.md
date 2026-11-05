@@ -1,5 +1,9 @@
 # Estado actual y punto de entrada
 
+352: nativa0/exterior0/propietarios0. La captura corregida lee el perfil compartido protegido y verifica juntos los diez outputs originales de cierre normal, además de las guardias28/Installer/PMS/CE/permisos/hashAPK. Dos Atrás→onDestroy Document/Main, PID1354 en caché, tarea21→22 WARM y nota348 visible con hash21bytes intacto. Política68 intacta y anfitrión recuperado/consumido. Siguiente avance funcional: Home/Back a shell Rust, porque AMS aún selecciona FallbackHome y la superficie HWC persiste. Reutilizar canal privado bidireccional de entrada y APIs originales de tareas; integración aún no implementada. Preservar evidencias antes de liberar espacio de artefactos fríos. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration352`.
+
+Histórico anterior:
+
 351: dos Atrás reales producen app-request, parada/onDestroy de Document/Main; la tarea activa19 desaparece, PID1372 queda en caché. El lanzamiento original WARM crea tarea20 y la nota348 reaparece con el mismo hash21bytes. AMS vuelve temporalmente a Settings.FallbackHome, no a Rusthome. Guardias originales previas pasan; nativa0/exterior1 por captura que busca el perfil en otra vista /vendor. Diez outputs originales verificados offline y parser positivo; fuente corregida a copia protegida compartida, pendiente352. Anfitrión recuperado/resultado consumido. Próximo: comprobar captura integrada y resolver handoff HOME/Back con nuestra interfaz. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration351`.
 
 Histórico anterior:

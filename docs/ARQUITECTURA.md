@@ -1,5 +1,9 @@
 # Arquitectura vigente · A16-QPR2-1
 
+352 prueba en ejecución la frontera de captura: perfil y archivos originales compartidos, no /vendor del namespace del worker. El compositor mantiene una superficie para el display Android durante toda la cohorte, incluso tras onDestroy de Markor; destroyed_toplevel no sirve como señal de cierre APK. Ya existe Home de confianza mediante socketpair privado y ClientState.is_shell; app_id no concede ese rol. El canal WaylandInputBridge/LinuxWaylandInput autentica UID/contexto de ambos pares y es bidireccional. El siguiente enlace debe reutilizarlo con protocolo versionado/acotado y APIs originales TaskStackListener/getFocusedRootTaskInfo, manteniendo lifecycle y autorización de foco. Disponibilidad de esas APIs en fuentes no acredita todavía esa integración. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration352`.
+
+Histórico anterior:
+
 351 confirma cierre normal de actividades con callbacks originales app-request/onStop/onDestroy, proceso conservado en caché y nueva tarea WARM. No equivale a matar el proceso ni borrar recents. La vuelta actual resuelve Settings.FallbackHome y produce un tramo negro: falta handoff a nuestra interfaz Rust/Linux, que no debe sustituirse por un launcher Android completo. El nuevo cliente sólo observa AMS/FUSE y relanza; sólo entrada UI real genera Back. La captura Linux debe leer el perfil CLI protegido compartido, no /vendor del namespace del worker. Fuente corregida y atribución shell/FUSE precisada; no presentar esa corrección como ejecutada aún. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration351`.
 
 Histórico anterior:

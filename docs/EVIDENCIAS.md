@@ -1,5 +1,9 @@
 # Índice de evidencias
 
+352 (27aeed55-5cfe-4e25-8191-74ab26e84e07): informe ART enlaza la captura íntegra de diez outputs originales y su guardia ejecutada positiva, callbacks onDestroy, tareas21/22, PID1354 conservado, WARM291ms y editor real de nota348/hash21bytes. Guardias anteriores positivas y cierre/recuperación/consumo verificados. Tres fallos DeviceLock/DSU y ausencia de ANR Markor sólo en el tramo capturado. Home-boundary-source-observation enlaza hashes de fuentes y compositor352: único toplevel14:08:16→14:13:05, persistente al cerrar Markor. Señala reutilización de canal/ATMS/Home privado, sin afirmar nuevo protocolo ejecutado. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration352`.
+
+Histórico anterior:
+
 351 (dbef763b-8e05-4316-86f7-0d1703c13a29): informe ART enlaza cuatro comandos físicos, diez outputs AMS/procesos/FUSE originales, callbacks app-request/stop/onDestroy PID1372, tareas activas19/20 y referencia reciente conservada, WARM271ms, hash21bytes y editor visto. No ANR Markor en el log capturado; tres fatales de fondo conservados. Nativa0/exterior1 por KeyError normal_back: captura busca perfil worker-only /vendor. Debugfs de sólo lectura contrasta bytes contra copias vivas, UID2000/mode0600/etiquetas originales y replay positivo; no reejecuta el colector corregido. El manifiesto de inputs confirma el token protegido compartido. Recuperación/consumo y variantes sintéticas quedan enlazadas con su alcance. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration351`.
 
 Histórico anterior:

@@ -1,5 +1,9 @@
 # Contrato vigente · AOSP Android 16 QPR2
 
+352 satisface sólo el caso normal de salida de actividades, proceso retenido y reapertura WARM con nota existente, ahora con todas las comprobaciones integradas ejecutadas. No cierra todas las funciones Markor ni compatibilidad amplia/R1/reboot-FBE/actualización/ligereza/estabilidad. El retorno a escritorio debe ser nuestra shell Rust: FallbackHome no satisface ese requisito. La ampliación del canal privado debe conservar autenticación, límites/negativas y lifecycle original; ningún mensaje de estado puede convertirse en readiness ficticia o autorización implícita. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration352`.
+
+Histórico anterior:
+
 351 acredita sólo el caso de cierre normal de actividades de Markor por entrada Atrás, callbacks originales y reapertura WARM con nota existente intacta. Proceso en caché y referencia de tarea reciente son válidos y se distinguen del cierre forzado previo. No acredita retorno al escritorio Rust: AMS seleccionó FallbackHome. Tampoco convierte el exterior1 del colector en éxito: corrección de vista requiere ejecución integrada. Compatibilidad amplia, todas las funciones Markor, seguridad/R1, persistencia reboot/FBE, instalación/actualización y ligereza siguen abiertos. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration351`.
 
 Histórico anterior:
