@@ -1896,7 +1896,7 @@
           "sha256": "d3eb7667da5d6443deb22eb91de5893b561c0d7ec098f92087a2ed33a0a58f36"
         }
       },
-      "current_integration": 358,
+      "current_integration": 359,
       "integration348": {
         "checkpoint": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch",
         "build": "dist/aosp16/package-cohort-build-348",
@@ -3329,6 +3329,200 @@
           "path": "/home/tv/recuperacion-archtv/20261105-vlc-coherent358/iso-cache-preservation.json",
           "sha256": "0c8a7b9e45bc0a1faf153a47e4131743d05e7a4ba5c61e2b6a2796ff2b25c707",
           "scope": "Historic ISO intermediate tar stream/decompression/compare verified before expanded cache unlink; source/keys/data/final ISO/evidence preserved; exact restore command retained. No VM restore rehearsal."
+        }
+      },
+      "integration359": {
+        "checkpoint": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch",
+        "build": "dist/aosp16/package-cohort-build-359",
+        "tested_code_commit": "f7ac2da plus frozen build-integrated.py period option patch",
+        "native_exit": 0,
+        "outer_exit": 0,
+        "three_owner_services_success": true,
+        "original_install_VIEW": true,
+        "moving_video_observed": true,
+        "selected_EIO_not_reproduced": true,
+        "complete_audio_video_workflow_accepted": false,
+        "broad_APK_compatibility_accepted": false,
+        "apk_sha256": "4646633ede40c4784c5584087cffc5c60cc45b16966ae0b36cedd784d7c4a11e",
+        "media_readback_sha256": "30fc8da5b0511c723c434cc13b3635507d7caae0b0d137c1f87aecbe6d1d4e17",
+        "original_audio_period_size_multiplier": 4,
+        "actual_audio": {
+          "actual_writes": 84,
+          "actual_accepted_frames": 344064,
+          "HAL_write_errors": 0,
+          "max_transfer_ms": 191.736912,
+          "max_inter_write_gap_ms": 817.379743,
+          "AudioTrack_stop_declared_frames_delivered": 138822,
+          "reference_frames": 192000,
+          "late_original_AF_frames_written": 344064,
+          "late_original_AF_standby": true,
+          "sync_witnesses": [
+            "11-05 20:15:49.564 10105  1496  1547 W VLC     : [00007ff92b012a20/60b] libvlc audio output: playback way too early (-652957): playing silence",
+            "11-05 20:15:49.565 10105  1496  1547 D VLC     : [00007ff92b012a20/60b] libvlc audio output: inserting 31341 zeroes",
+            "11-05 20:15:49.870 10105  1496  1547 W VLC     : [00007ff92b012a20/60b] libvlc audio output: playback too late (63946): up-sampling"
+          ],
+          "complete_source_signal_audio_accepted": false,
+          "actual_kernel_geometry_independently_captured": false,
+          "scope": "Selected original property4 eliminates observed358 EIO in this359 run. Accepted HAL frames include possible silence and cannot identify decoded source. AudioTrack delivery count differs from192000 reference; resampling/clock semantics and source waveform remain unproved, so count difference is not alone a proof of lost source samples. PCM ring geometry was not independently captured under MAC; private property/source hash alone does not establish it. No acoustic/sync/continuous-source acceptance."
+        },
+        "video_evidence": [
+          {
+            "raw_path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/smithay-frame-554c26f0d74a0e9a5c3d0c9d0e2f36b28ac4efeaed2252ed8a74b7249ba25ca5.ppm",
+            "raw_sha256": "554c26f0d74a0e9a5c3d0c9d0e2f36b28ac4efeaed2252ed8a74b7249ba25ca5",
+            "review_path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/vlc-video-observed-0.png",
+            "review_sha256": "32dc69c107abbb726f89e18a3b45128c072f840fb2aea227cd624ddda55058a8",
+            "visible_source_pts_seconds": 0.167,
+            "visible_source_frame_counter": 2
+          },
+          {
+            "raw_path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/smithay-frame-43b6c0a96487172026b084738076d24b1e8554361a114afee40917658771fd0e.ppm",
+            "raw_sha256": "43b6c0a96487172026b084738076d24b1e8554361a114afee40917658771fd0e",
+            "review_path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/vlc-video-observed-1.png",
+            "review_sha256": "f6b7fe8db2fee12948a60ed462a375788fedd978454bf0cedfc13273a3b56d3c",
+            "visible_source_pts_seconds": 1.833,
+            "visible_source_frame_counter": 22
+          },
+          {
+            "raw_path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/smithay-frame-0d002cabe427c1ecf20b7749aea9be44d67f92b7a392272117b7959ddb169fae.ppm",
+            "raw_sha256": "0d002cabe427c1ecf20b7749aea9be44d67f92b7a392272117b7959ddb169fae",
+            "review_path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/vlc-video-observed-2.png",
+            "review_sha256": "218c4d40683211d7b2e5f882647201b45eeb1cc5d42c52ccd9ce017276e058d2",
+            "visible_source_pts_seconds": 2.083,
+            "visible_source_frame_counter": 25
+          },
+          {
+            "raw_path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/smithay-frame-4f25d06c07e6b1ea9238f62b657b95bd0df634f8755fdfa0381153ec9681c7a2.ppm",
+            "raw_sha256": "4f25d06c07e6b1ea9238f62b657b95bd0df634f8755fdfa0381153ec9681c7a2",
+            "review_path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/vlc-video-observed-3.png",
+            "review_sha256": "743c311e4acb129c169b336a090af4e8b6112d81d63cca3376969767b284d2b0",
+            "visible_source_pts_seconds": 2.833,
+            "visible_source_frame_counter": 34
+          }
+        ],
+        "physical_input_commands": 0,
+        "original_identity_guard_verified": true,
+        "enforcing_interval_seconds": 354.43192929500947,
+        "recovery_verified": true,
+        "restored_mode": 0,
+        "consumed": true,
+        "original_source_contract": {
+          "path": "/home/tv/.cache/archtv/aosp16-qpr2/audio-original-study-1/alsa-utils-current/alsa_device_profile.c",
+          "sha256": "a5ee98aa3329ee080b9abe9fc098d44d9f85a99fc0bedcd7dacc0e49cc5b3632",
+          "object": "/home/tv/repositorio-principal/dist/aosp16/audio-support-build-2/libalsautilsv2-0.o",
+          "object_sha256": "08b06593b65dac4640fb47734029e606908abe513c34c03138ccb5a18e903612"
+        },
+        "validation": {
+          "build_exit": 0,
+          "invalid_option_checks": {
+            "scope": "Bounded CLI failure checks only; no runtime/playback acceptance.",
+            "checks": [
+              {
+                "case": "out-of-range",
+                "exit": 1,
+                "no_artifact_directory_created": true,
+                "error": "AssertionError: Choose one bounded original ALSA period multiplier (1, 2 or 4)"
+              },
+              {
+                "case": "missing-native",
+                "exit": 1,
+                "no_artifact_directory_created": true,
+                "error": "AssertionError: ALSA period profile requires original native audio"
+              }
+            ]
+          },
+          "scope": "Bounded option rejects before artifact creation, syntax/build/source hashes and actual integrated run. None proves decoded-source signal or broad compatibility."
+        },
+        "scope": "Original period property4 only; engine/APK/JNI/MediaCodec/native audio binaries retained from358. Real original install/VIEW, moving video,84successful writes344064frames and EOF handoff; no source signal, full AV, physical VLC input/Back/close/reopen, actual kernel ring geometry, clock, broad stability or R1 acceptance. Selected Markor357 remains valid; ARM/GMS/DRM separate.",
+        "next": "Inspect whether deployed AudioFlinger has original NBAIO_Tee via REA MCP; available source Configuration.h comments TEE_SINK out by default, not compiled-absence proof. Prefer original bounded output/track capture if present. If absent, justify a minimal explicit known-media accepted-PCM observation before one real VLC input/pause/Back/reopen workflow. Correlate waveform/source, actual geometry, positions and timing; do not accept silence/counts, repeat old acpi_pm316 as new evidence, or weaken errors/positions. Preserve R1/ARM/GMS/DRM and broad goals.",
+        "evidence": {
+          "native-result.json": {
+            "path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/native-result.json",
+            "sha256": "2e6c37991f7f99d2eedbd6c71a34b0c56d1fc4c469c17e6fd4e904b14c0d3573"
+          },
+          "result.json": {
+            "path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/result.json",
+            "sha256": "ec742dd78ee28c0d706e090ad4845281c37aadd61594bc880bd8d0937034f50a"
+          },
+          "terminal-owner-status.json": {
+            "path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/terminal-owner-status.json",
+            "sha256": "73c439950995cf37bdb9e32e81835cf75b9373c8734305124ab9cdffed0bfc94"
+          },
+          "completion-result.json": {
+            "path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/completion-result.json",
+            "sha256": "bb060a1dbff063959ebc5bdc6b8058eb5acd728ea363d9c179f8b6896c380033"
+          },
+          "completion-consumer.json": {
+            "path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/completion-consumer.json",
+            "sha256": "f70c1660c55ef6fdcd3f8445fe624c4d7a0bd3d1b54beb7bc4b9c4c7f780dd68"
+          },
+          "original-identities.json": {
+            "path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/original-identities.json",
+            "sha256": "caf21291908fa869a8b972b7147899311740a4d9f988591ca8e86a5aa653e33a"
+          },
+          "original-installer.json": {
+            "path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/original-installer.json",
+            "sha256": "61d3f665cbf617b814c23f57ff744d474c018ac2a6c4b25767af27aa2f89337d"
+          },
+          "original-storage.json": {
+            "path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/original-storage.json",
+            "sha256": "9281c1bbbe44b3f1a71f1d75737450fb4951f95087119abe2ee99f786e691bbf"
+          },
+          "original-apk-hashes.json": {
+            "path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/original-apk-hashes.json",
+            "sha256": "cacf684c4d956e6854eaa7edcbb9fe72c3a44f938f38fad1680e6d9cdac5aa8a"
+          },
+          "observed-original-logcat.txt": {
+            "path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/observed-original-logcat.txt",
+            "sha256": "7bd626569130af16fd6f9c52c61e75074bbfcb071e7ebdd8c82b5509061631e3"
+          },
+          "observed-media-launch.txt": {
+            "path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/observed-media-launch.txt",
+            "sha256": "c7694d19e514396327e60da3b9258e9347e129370c09c8d49d7d2e2f2b66aec2"
+          },
+          "observed-media-published.txt": {
+            "path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/observed-media-published.txt",
+            "sha256": "89ac5a0c148edf649ac8d3da0201a6823ef4bd14d7d3c458252e4d7e4c6f9e8a"
+          },
+          "observed-media-bytes.txt": {
+            "path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/observed-media-bytes.txt",
+            "sha256": "76a4010c16d2430c8f17674d11c552ebb296bb30ce886e621b82a493c80d1bc5"
+          },
+          "observed-media-readback.mp4": {
+            "path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/observed-media-readback.mp4",
+            "sha256": "30fc8da5b0511c723c434cc13b3635507d7caae0b0d137c1f87aecbe6d1d4e17"
+          },
+          "observed-audio-flinger-1.txt": {
+            "path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/observed-audio-flinger-1.txt",
+            "sha256": "a2ac83199f8ac592b11bc463b6697b5f877d805df39aceb273c0ff1edc3b68ed"
+          },
+          "observed-audio-flinger-status.txt": {
+            "path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/observed-audio-flinger-status.txt",
+            "sha256": "34b8c8fd5682223b3a76346a08e8859b0daeec7f7b2866b4e9d92d09117a4f80"
+          },
+          "mac-window.json": {
+            "path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/mac-window.json",
+            "sha256": "ab2a54ed1861bea65a20962ea6b6a590918f5a93be59f1a6886278f5148c9e38"
+          },
+          "recovery-readback.json": {
+            "path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/recovery-readback.json",
+            "sha256": "984c2e08adf84c3e36c5c3761688239bdb1766ef6999b23bfc5f861346b1a7c3"
+          },
+          "backing-after.json": {
+            "path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/backing-after.json",
+            "sha256": "5d9e48b25f4d95f5a0cc2c4afc39492ad3e4bcb85e23bb3029524ca701aa29e5"
+          },
+          "visual-review359.json": {
+            "path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/visual-review359.json",
+            "sha256": "29935f9c38513d75ba1c97050cb22e25b4853baf5f84d89390d6b1c6e97e4ca5"
+          },
+          "background-fatal-scope.json": {
+            "path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/background-fatal-scope.json",
+            "sha256": "2c538d19fea9236b0b787abbadb88317e8248a2107b0f397c5bbbd160c424b50"
+          },
+          "audio-period-result.json": {
+            "path": "/home/tv/recuperacion-archtv/cd74e710-5737-4572-aa56-3beb4409feae-markor-software-launch/audio-period-result.json",
+            "sha256": "fe068a683ef2c9b0b98a999f5aa873b5039d1a50244fc8fc557e6ce048075a0b"
+          }
         }
       }
     }

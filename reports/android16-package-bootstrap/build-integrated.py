@@ -8,9 +8,13 @@ allowed_flags = {'--checkpoint-diagnostic', '--keymint-component', '--keystore-c
                  '--keystore-java-component', '--software-security', '--native-audio',
                  '--audio-write-diagnostic', '--audio-synchronous-pcm', '--audio-production-dynamics', '--coherent-art', '--coherent-art-images',
                  '--memfd-label-original', '--media-test', '--audio-only-media', '--markor-home-launch'}
-allowed_values = ('--observe-ms=', '--userdata-name=', '--apk-id=', '--markor-workflow-token=', '--markor-normal-close-token=')
+allowed_values = ('--observe-ms=', '--userdata-name=', '--apk-id=', '--markor-workflow-token=', '--markor-normal-close-token=', '--audio-period-size-multiplier=')
 assert all(a in allowed_flags or any(a.startswith(prefix) for prefix in allowed_values)
            for a in sys.argv[2:]), 'Unknown integrated build option'
+audio_period_values=[a.split('=',1)[1] for a in sys.argv[2:] if a.startswith('--audio-period-size-multiplier=')]
+assert len(audio_period_values)<=1 and all(v in ('1','2','4') for v in audio_period_values), 'Choose one bounded original ALSA period multiplier (1, 2 or 4)'
+assert not audio_period_values or '--native-audio' in sys.argv[2:], 'ALSA period profile requires original native audio'
+audio_period_size_multiplier=int(audio_period_values[0]) if audio_period_values else 1
 out=(r/sys.argv[1]).resolve();out.mkdir()
 tracked_inputs=['Cargo.toml','Cargo.lock','crates/archtv-core/Cargo.toml',*[str(p.relative_to(r)) for p in sorted((r/'crates/archtv-core/src').rglob('*.rs'))],'crates/archtv-core/examples/native_supervisor.rs','reports/android16-package-bootstrap/execute-integrated.py','reports/android16-package-bootstrap/integrated-session.sh','reports/android16-apex-bootstrap/run.py','reports/android16-package-bootstrap/build-platform-overlay.py','tools/apk/SignPlatformOverlay.java','runtime/aosp/platform-overlay/AndroidManifest.xml','runtime/aosp/platform-overlay/res/values/config.xml','runtime/aosp/platform-overlay/overlay-config.xml','reports/android16-apex-bootstrap/devices.py','runtime/aosp/linux-services/initial-apk-profile.json','runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java','runtime/aosp/linux-services/org/archtv/aosplinux/ServiceLauncher.java','runtime/aosp/linux-services/install-markor.sh','runtime/aosp/native/linux-property-worker.cpp','runtime/aosp/native/linux-mc1-cohort.h','reports/android16-package-bootstrap/build-integrated.py','runtime/aosp/android16-qpr2/patches/0004-linux-admitted-lazy-services.patch','fixtures/aosp-keymint-software/SoftwareCryptoProbe.cpp','runtime/aosp/native/linux-keymint-service.cpp','reports/android16-package-bootstrap/build-keymint-software.py','fixtures/aosp-keystore2-software/BinderClient.rs','runtime/aosp/android16-qpr2/patches/keystore2-linux-software.patch','fixtures/aosp-keystore2-software/OriginalJavaProviderProbe.java','runtime/aosp/android16-qpr2/patches/framework-keystore-linux-software.patch','tools/aosp/KeystoreFrameworkProfilePlan.java','tools/aosp/build_software_keystore_framework.py','reports/android16-package-bootstrap/build-keystore-java-probe.py','reports/android16-package-bootstrap/build-gatekeeper-software.py']
 tracked_inputs.extend(['reports/android16-package-bootstrap/userdata.py','reports/android16-hwc3-wayland/build-minigbm.py','reports/android16-hwc3-wayland/link-minigbm.py'])
@@ -140,7 +144,7 @@ if software_platform:
  lines[0]=lines[0].replace('-Xmx768m','-Xmx512m')
  lines.append('    setenv ARCHTV_SOFTWARE_SECURITY_PROFILE software-platform-v1')
 experiment_kind='markor-software-launch' if software_platform else 'keystore-java-component' if keystore_java else 'keystore-component' if keystore_component else ('keymint-component' if keymint_component else 'markor-launch')
-(out/'build-options.json').write_text(json.dumps({'apk_target':apk_target,'media_test':media_test,'coherent_art':coherent_art,'coherent_art_images':coherent_art_images,'memory_library':memory_library,'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component and not software_platform,'software_security_platform':software_platform,'observe_ms':observe_ms,'persistent_userdata_name':userdata_name,'markor_workflow_token':workflow_token,'markor_workflow_budget_seconds':workflow_budget_seconds,'markor_home_launch':home_launch,'markor_normal_close_token':normal_close_token,'markor_normal_close_budget_seconds':normal_close_budget_seconds,'experiment_kind':experiment_kind,'original_apex_bootstrap':True,'original_logd':True,'preconnected_wayland':True,'original_system_dma_heap':True,'native_audio':native_audio,'audio_write_diagnostic':audio_write_diagnostic,'audio_synchronous_pcm':audio_synchronous_pcm,'audio_production_dynamics':audio_production_dynamics},indent=2)+'\n')
+(out/'build-options.json').write_text(json.dumps({'apk_target':apk_target,'media_test':media_test,'coherent_art':coherent_art,'coherent_art_images':coherent_art_images,'memory_library':memory_library,'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component and not software_platform,'software_security_platform':software_platform,'observe_ms':observe_ms,'persistent_userdata_name':userdata_name,'markor_workflow_token':workflow_token,'markor_workflow_budget_seconds':workflow_budget_seconds,'markor_home_launch':home_launch,'markor_normal_close_token':normal_close_token,'markor_normal_close_budget_seconds':normal_close_budget_seconds,'experiment_kind':experiment_kind,'original_apex_bootstrap':True,'original_logd':True,'preconnected_wayland':True,'original_system_dma_heap':True,'native_audio':native_audio,'audio_write_diagnostic':audio_write_diagnostic,'audio_synchronous_pcm':audio_synchronous_pcm,'audio_production_dynamics':audio_production_dynamics,'audio_period_size_multiplier':audio_period_size_multiplier},indent=2)+'\n')
 if checkpoint_diagnostic:lines.append('    setenv ARCHTV_CHECKPOINT_DIAGNOSTIC 1')
 lines=[l for l in lines if not any(l.startswith('    setenv '+n+' ') for n in ['BOOTCLASSPATH','DEX2OATBOOTCLASSPATH','SYSTEMSERVERCLASSPATH','STANDALONE_SYSTEMSERVER_JARS'])];(entry/'selected-services.rc').write_text('\n'.join(lines)+'\n')
 old=r/'dist/aosp16/apex-cohort-build-6';commands=[]
@@ -379,6 +383,19 @@ if software_platform:
 abi_properties={'ro.product.cpu.abilist':'x86_64','ro.product.cpu.abilist64':'x86_64',
                 'ro.product.cpu.abilist32':'','ro.zygote':'zygote64',
                 'service.sf.prime_shader_cache':'false'}
+# Original libalsautils owns this property and real PCM negotiation. The default
+# stays absent/1; a larger private device ring never changes errors, clocks or
+# the number of frames actually written. Host358 small/large controls motivate
+# testing 4, but cannot establish Android playback or source-signal continuity.
+audio_period_contract=None
+if audio_period_size_multiplier!=1:
+ support=json.loads((r/'dist/aosp16/audio-support-build-2/build.json').read_text())
+ profiles=[s for s in support['sources'] if s['path'].endswith('/alsa_device_profile.c')]
+ assert len(profiles)==1
+ audio_period_contract=profiles[0]
+ assert hashlib.sha256(Path(audio_period_contract['path']).read_bytes()).hexdigest()==audio_period_contract['sha256']
+ assert '"ro.hardware.audio.tinyalsa.period_size_multiplier", 1' in Path(audio_period_contract['path']).read_text()
+ abi_properties['ro.hardware.audio.tinyalsa.period_size_multiplier']=str(audio_period_size_multiplier)
 base_props='\n'.join(line for line in base_props.splitlines() if line.partition('=')[0] not in abi_properties)
 (out/'linux-build.prop').write_text(base_props+'\n')
 original_props=r/'dist/aosp16/factory-inputs-3/root/system/system_ext/etc/build.prop'
@@ -387,7 +404,7 @@ assert not any(line.partition('=')[0] in abi_properties for line in original_byt
 profile_bytes=original_bytes+b'\n# Linux private single64 device profile; no 32-bit/ARM execution claimed.\n'+''.join(k+'='+v+'\n' for k,v in abi_properties.items()).encode()
 (out/'system-ext-build.prop').write_bytes(profile_bytes)
 vendor['files']['/system_ext/etc/build.prop']={'source':str(out/'system-ext-build.prop'),'context':'u:object_r:system_file:s0','mode':0o444}
-(out/'system-property-profile.json').write_text(json.dumps({'original':str(original_props),'original_sha256':hashlib.sha256(original_bytes).hexdigest(),'profile_sha256':hashlib.sha256(profile_bytes).hexdigest(),'properties':abi_properties,'scope':'Private Linux device profile through original PropertyLoadBootDefaults canonical system_ext source; no host properties, policy grants, APK or 32-bit compatibility acceptance.'},indent=2)+'\n')
+(out/'system-property-profile.json').write_text(json.dumps({'original':str(original_props),'original_sha256':hashlib.sha256(original_bytes).hexdigest(),'profile_sha256':hashlib.sha256(profile_bytes).hexdigest(),'properties':abi_properties,'audio_period_contract':audio_period_contract,'scope':'Private Linux device profile through original PropertyLoadBootDefaults canonical system_ext source; no host properties, policy grants, APK or 32-bit compatibility acceptance.'},indent=2)+'\n')
 vendor['files']['/vendor/build.prop']['source']=str(out/'linux-build.prop')
 vendor['files']['/vendor/overlay/ArchTvPlatform/ArchTvPlatform.apk']={'source':str(overlay/'ArchTvPlatform.apk'),'context':'u:object_r:vendor_overlay_file:s0','mode':0o644}
 vendor['files']['/vendor/overlay/config/config.xml']={'source':str(r/'runtime/aosp/platform-overlay/overlay-config.xml'),'context':'u:object_r:vendor_overlay_file:s0','mode':0o644}

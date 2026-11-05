@@ -1,5 +1,9 @@
 # Índice de evidencias
 
+359 · informe ART →coherent_cache_candidate.profile_coherence_experiment.integration359: parámetro original ro.hardware.audio.tinyalsa.period_size_multiplier=4, origen compilado/hash contrastado; cuatro capturas DRM con avance0,167→2,833s;84escrituras PCM positivas sin EIO. Contadores, correcciones VLC y limitación de señal/geometría se conservan sin aceptar AV. Checkpoint cd74e710-5737-4572-aa56-3beb4409feae, hashes/rutas en el informe; cierre/recuperación y consumo verificados.
+
+Histórico anterior (alcance y siguientes pasos de su fecha):
+
 358 · informe ART →coherent_cache_candidate.profile_coherence_experiment.integration358: instalación/VIEW VLC x86_64 intacta, MediaProvider con hash de lectura, JNI original y MediaCodec original, tres imágenes DRM con avance visible. Audio EIO y controles Linux4096/16384 conservados; exit0 de cohorte no acepta AV. Checkpoint750f70b7-dcd6-4485-80d1-7ac731995b04; hash y rutas en el informe. Recuperación y consumo verificados. REA MCP aporta inspección estática play()V, separada de ejecución.
 
 Histórico anterior (alcance y siguientes pasos de su fecha):

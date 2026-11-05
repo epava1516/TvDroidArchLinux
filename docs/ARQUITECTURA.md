@@ -1,5 +1,9 @@
 # Arquitectura vigente · A16-QPR2-1
 
+Resultado359: el perfil privado usa el contrato de propiedad original de libalsautils para periodos×4; no sustituye el motor ni falsifica frames, posiciones o errores. Desaparece el EIO de358 en esta ejecución y se conserva vídeo, pero la señal de salida y su sincronía siguen sin prueba. La geometría real no se infiere del valor configurado. Se evalúa NBAIO_Tee original antes de instrumentación propia mínima, manteniendo separadas entrega cliente, mezcla, HAL/kernel y salida acústica. Informe ART →integration359.
+
+Histórico anterior (alcance y siguientes pasos de su fecha):
+
 Resultado358: VLC x86_64 intacta cruza PMS/MediaProvider/AMS, Bionic/JNI y MediaCodec originales hasta vídeo en Rust/Smithay. El audio falla en TinyALSA con EIO también reproducible en aplay Linux; el control de buffer mayor completa. Se prioriza el parámetro original ALSA de periodos para el siguiente experimento, sin sustituir servicios, falsificar posiciones ni considerar la causa del dispositivo virtual resuelta. Doce errores de presentación HWC y fallos de fondo se conservan; tres frames positivos no prueban sincronía/rendimiento. Véase informe ART →integration358.
 
 Histórico anterior (alcance y siguientes pasos de su fecha):

@@ -1,5 +1,9 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+Tras359, el siguiente bloqueo funcional es acreditar la señal/continuidad y sincronía, no otro constructor: evaluar NBAIO_Tee original en el AudioFlinger desplegado mediante REA MCP y fuentes antes de un observador propio mínimo. Vincular captura de salida/fuente, geometría/posiciones reales y una única prueba VLC con entrada/Back/cierre/reapertura. Periodos×4 evitó el EIO en359, pero los contadores no identifican la fuente; no repetir el control acpi_pm316 como nuevo ni alterar timestamps. R1/compatibilidad amplia/instalación/actualización/ligereza/ARM/GMS/DRM abiertos. Informe ART →integration359.
+
+Histórico anterior (alcance y siguientes pasos de su fecha):
+
 Prioridad tras358: probar VLC intacta con el contrato original AOSP ro.hardware.audio.tinyalsa.period_size_multiplier=4, porque el control Linux de buffer16384 supera el EIO observado con4096. Verificar geometría real, errores/posiciones reales y señal de la fuente; no prometer audio por exit0, aumentar contadores ni ocultar el fallo. Después entrada/Back/cierre/reapertura VLC y negativas concretas del launcher. Markor357 sigue probado; compatibilidad amplia, R1, instalación/actualización, ligereza, ARM/GMS/DRM abiertos. Evidencias y alcance en informe ART →integration358.
 
 Histórico anterior (alcance y siguientes pasos de su fecha):

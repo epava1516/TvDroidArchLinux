@@ -1,5 +1,9 @@
 # Estado actual y punto de entrada
 
+359: con el parámetro original ALSA de periodos×4, VLC intacta conserva instalación/VIEW/vídeo y realiza84 escrituras/344064frames sin el EIO de358. AudioTrack declara138822frames frente a192000 de referencia; hay correcciones de sincronía y no se capturó señal. No se acepta audio completo ni geometría real por la propiedad. Tres propietarios cerrados0,354,432s enforcing, host69/permisivo y recuperación verificados; consumido sin cola. Markor357 conserva su alcance. Informe ART →integration359.
+
+Histórico anterior (alcance y siguientes pasos de su fecha):
+
 358: VLC intacta se instala y abre por VIEW original; tres capturas DRM muestran vídeo real a1,333/1,667/2,667s y retorno a Home tras EOF. Audio no pasa: segunda escritura ALSA EIO, HAL ERROR tras4096frames. Linux aplay reproduce EIO con buffer4096; con16384 termina. Cohorte y tres propietarios cerrados0,345,441s enforcing, host69/permisivo y recuperación verificados; consumido sin cola. Markor357 conserva su alcance. Informe ART →integration358.
 
 Histórico anterior (alcance y siguientes pasos de su fecha):
