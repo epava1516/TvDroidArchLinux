@@ -1,5 +1,9 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+Prioridad vigente tras la nota337 y reapertura visual340: (1) cierre cooperativo340 observado: resolver el acceso denegado del observador a19 contextos y comprobar identidades exactas, sin sustituirlas por las solicitadas; (2) empaquetar imágenes/perfiles ART coherentes con el framework adaptado, verificar carga original y negativas de firma/revocación; (3) repetir recorridos completos Markor/VLC con el perfil resultante y continuar matriz real. La nota y los píxeles son avances funcionales parciales, no cierre del runtime. R1, ligereza/instalación/actualización y ARM/GMS/DRM conservan sus puertas independientes. Resultados y dependencias locales por hash en el informe canónico ART.
+
+Histórico de prioridades336:
+
 Puerta siguiente tras336 ·Guardar valores de identidad antes de la misma comprobación, sin relajar el conjunto esperado; completar entrada real en IntroActivity, permiso de archivos, creación/guardado de nota, force-stop original y reapertura con bytes persistidos. Conservar la instalación/lanzamiento/primer frame336 como pruebas parciales y el fallo exterior como fallo. Priorizar después el conjunto coherente de imágenes/perfiles/framework y perfil mínimo de paquetes originales, no construir DynamicSystem/DeviceLock por efectos secundarios del inventario GSI. Mantener negativas de firma/revocación, reserva continua, R1 y requisitos de instalación/actualización/ligereza abiertos.
 
 Historia de puertas y resultados:

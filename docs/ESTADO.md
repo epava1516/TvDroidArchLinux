@@ -1,5 +1,9 @@
 # Estado actual y punto de entrada
 
+Vigente ·337 creó una nota mediante interfaz y permiso original de almacenamiento; el cliente original verificó sus 21 bytes antes y después de force-stop y relanzamiento con PID nuevo.340 la ha abierto visualmente en una cohorte nueva sobre Rust/Smithay. 340 recibió STOPPED y salida0; exterior1 por escritura de diagnóstico en ruta del host ya separada tras pivot_root (corregida para usar stdout).19 contextos externos devuelven EACCES; identidades/R1 pendientes.337 agotó el plazo de10s. El candidato permite45s acotados, conservando STOPPED y salida real obligatorios. Evidencia canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `x509_reopen_correction.integration337/integration340`. No acredita R1, coherencia completa de boot images/perfiles ni compatibilidad amplia.
+
+Histórico336:
+
 Vigente ·336 cierra y se consume: con la inicialización X509 corregida, odsign verifica el certificado persistido, la firma de odsign.info y los hashes fs-verity; PMS instala Markor intacta (11861047bytes, SHAidéntico), arranca IntroActivity y se observan sus píxeles sobre Rust/Smithay. Entrada no ejecutada: el comando llegó al cerrar la ventana; ninguna nota/persistencia aceptada. Native0, exterior1 por comprobación final del conjunto de identidades, cuyos valores no se guardaron antes del assert; no es un pase global. Siguiente: conservar observaciones antes de esa misma guardia y completar interacción/notas/cierre/reapertura. Siguen abiertos coherencia framework/bootimage/perfil, negativas criptográficas, R1 y producto. Estado y evidencias canónicos: reports/android16-audio-bootstrap/artd-subprocess-progress.json →x509_reopen_correction.integration336; matriz →Markor.latest_workflow_attempt.
 
 Histórico de preparación336:

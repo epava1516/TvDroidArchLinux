@@ -223,7 +223,7 @@ if (payload.parent/'system-property-profile.json').exists():
  text=text.replace(profile_mount,profile_mount+"\nprofile_source=candidate/'system_ext/etc/build.prop';profile_target=root/'system/system_ext/etc/build.prop'\nassert profile_source.is_file() and profile_target.is_file()\nmount('--bind',profile_source,profile_target);mount('-o','remount,bind,ro,nosuid,nodev,noexec',profile_target)\nprint('SYSTEM_PROPERTY_PROFILE_PRIVATE_RO '+str(profile_target),flush=True)",1)
 
 text=text.replace('len(observed_logs)<512','len(observed_logs)<4096')
-text=text.replace("'--display-integration'","'--packages-integration'").replace("'--startup-ms','45000'","'--startup-ms','300000'").replace("'--observe-ms','30000'","'--observe-ms',"+repr(str(observe_ms)))
+text=text.replace("'--display-integration'","'--packages-integration'").replace("'--startup-ms','45000'","'--startup-ms','300000','--shutdown-ms','45000'").replace("'--observe-ms','30000'","'--observe-ms',"+repr(str(observe_ms)))
 text=text.replace('root.mkdir()\n',"""root.mkdir()
 import importlib.util
 factory_caps=int(next(l.split(':',1)[1].strip() for l in Path('/proc/self/status').read_text().splitlines() if l.startswith('CapEff:')),16)
@@ -925,6 +925,11 @@ print('APEX_NATIVE_NAMESPACE_OBSERVATION '+json.dumps(live_apex_evidence),flush=
  marker="print('MC1_RESULT '+json.dumps("
  assert text.count(marker)==1;text=text.replace(marker,native_parse+'\n'+marker,1)
 
+identity_guard="assert {v['kind']:v['actual_context'] for v in identities}==expected_identities"
+assert text.count(identity_guard)==1
+text=text.replace(identity_guard,
+ "identity_observations={'observed':identities,'expected':expected_identities,'scope':'Actual kernel observations before unchanged exact-set guard; not authorization or APK acceptance'}\n"
+ "print('MC1_IDENTITY_OBSERVATIONS '+json.dumps(identity_observations),flush=True)\n"+identity_guard,1)
 compile(text,'<integrated factory>','exec')
 if '--materialize-only' in saved:
  Path('/home/tv/.cache/archtv/integrated-factory-preview.py').write_text(text)

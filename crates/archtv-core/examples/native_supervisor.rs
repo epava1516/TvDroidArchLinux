@@ -32,6 +32,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         separator = args.next();
         Duration::from_millis(millis)
     } else { Duration::from_secs(20) };
+    let shutdown = if separator.as_deref() == Some(std::ffi::OsStr::new("--shutdown-ms")) {
+        let millis: u64 = args.next().ok_or("missing shutdown duration")?
+            .to_str().ok_or("invalid shutdown duration")?.parse()?;
+        if millis == 0 || millis > 60_000 { return Err("shutdown duration outside 1..60000ms".into()); }
+        separator = args.next();
+        Duration::from_millis(millis)
+    } else { Duration::from_secs(10) };
     if separator.as_deref() != Some(std::ffi::OsStr::new("--")) {
         return Err("expected --".into());
     }
@@ -91,7 +98,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             }
         }
     }
-    let exit = process.stop(Duration::from_secs(10))?;
+    let exit = process.stop(shutdown)?;
     println!("NATIVE_COMPONENT_STOPPED exit={exit}");
     Ok(())
 }

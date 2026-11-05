@@ -1,5 +1,9 @@
 # Arquitectura vigente · A16-QPR2-1
 
+Actualización funcional337/340: el almacenamiento ext4 privado conserva la nota escrita exclusivamente por la UI de Markor; la nueva cohorte la abre mediante entrada Linux→Smithay→Android original. El plazo de cierre del supervisor se configura explícitamente para esta integración (45s, límite60s; predeterminado10s), manteniendo reconocimiento STOPPED y salida exitosa reales. Las capas exteriores incorporan35s de margen adicional; el watchdog MAC sigue independiente y acotado. Esto no corrige la divergencia conocida entre framework adaptado, perfil y boot images originales: sigue haciendo falta una construcción ART coherente. Las verificaciones de firma SOFTWARE tampoco equivalen a TEE ni a aislamiento aceptado.
+
+Histórico336:
+
 Resultado de integración336 ·La inicialización explícita del out-pointer X509 permite la verificación original de certificado/cache persistidos bajo la ventana enforcing67; no cambia permisos, firma ni fs-verity. La imagen de datos1GiB conserva UUID y claves; raíz con2GiB de reserva administrativa. El primer frame de IntroActivity es real, pero no acredita entrada/notas. La comparación final de identidades falla y debe conservar sus observaciones antes del assert. El escaneo de paquetes de fábrica inicia también DeviceLockController/Dynsystem sin servicios correspondientes: su fallo no es de Markor ni justifica arrancar Android completo; revisar el perfil mínimo coherente de paquetes originales antes de añadir servicios ajenos al recorrido. Imágenes y perfiles adaptados deben corresponder a los DEX reales; la discrepancia existente no queda resuelta por firmar artefactos.
 
 Historia de decisiones de integración:

@@ -21,11 +21,11 @@
       "derive_classpath",
       "odrefresh"
     ],
-    "new_permission": "artd \u2192 artd_subprocess_type process2 nnp_transition only",
+    "new_permission": "artd → artd_subprocess_type process2 nnp_transition only",
     "original_transition_and_entrypoint_required": true,
     "execute_no_trans_not_granted": true,
     "offline_queries": 24,
-    "actual_runtime_observation": "Original artd invokes art_exec --drop-capabilities \u2192 dex2oat32 targeting oat/x86_64/base.odex; dex2oat returned code 0",
+    "actual_runtime_observation": "Original artd invokes art_exec --drop-capabilities → dex2oat32 targeting oat/x86_64/base.odex; dex2oat returned code 0",
     "boot_image": "Checksum mismatch remains; compiler falls back to imageless running. No coherent boot image acceptance."
   },
   "apk": {
@@ -221,7 +221,7 @@
     },
     "integration326": {
       "checkpoint": "/home/tv/recuperacion-archtv/cde2d4de-f95e-4841-b035-05eac8321be4-markor-software-launch",
-      "result": "art_boot exited0; odsign exited127 before main: init\u2192odsign process2 nosuid_transition denied under66",
+      "result": "art_boot exited0; odsign exited127 before main: init→odsign process2 nosuid_transition denied under66",
       "data_labels": {
         "store": "/home/tv/.local/share/archtv/experimental-userdata/art-coherent-326",
         "metadata": {
@@ -295,7 +295,7 @@
       "offline_access_evidence": "dist/aosp16/audio-policy-inputs-67/access-comparison.json",
       "offline_cases": 48,
       "payload_sha256": "4c058a8b21bcbcc7c9cfbc423573f3e252b57857e890788b4a47d42d073b93d7",
-      "scope": "Same326 payload/private store.67 adds only init\u2192odsign nosuid_transition; NNP1/nosuid/original labels preserved. No runtime success assumed.",
+      "scope": "Same326 payload/private store.67 adds only init→odsign nosuid_transition; NNP1/nosuid/original labels preserved. No runtime success assumed.",
       "functional_result": "/home/tv/recuperacion-archtv/1ac79885-39f9-4abf-8da2-16fee8b80080-markor-software-launch/functional-result.json",
       "result": {
         "id": "1ac79885-39f9-4abf-8da2-16fee8b80080",
@@ -857,6 +857,125 @@
             "backing-after.json": "1a7dd5fa615965cb1504fc52a2f05f7ac07eaf25cb21535783aaf43a03ff1df6",
             "recovery-readback.json": "f66834e65c3ef99e0b5a8f460864be55be09fded7d03929c55611d06a23aafca"
           }
+        }
+      },
+      "integration337": {
+        "checkpoint": "/home/tv/recuperacion-archtv/46b3ebf6-045f-4ccd-862a-c29933689905-markor-software-launch",
+        "result": {
+          "path": "/home/tv/recuperacion-archtv/46b3ebf6-045f-4ccd-862a-c29933689905-markor-software-launch/result.json",
+          "sha256": "280f73b7f76beb16f9ad89e3b60580378ffbf4ec9bdd86aed1687e933d8481c8"
+        },
+        "recovery": {
+          "path": "/home/tv/recuperacion-archtv/46b3ebf6-045f-4ccd-862a-c29933689905-markor-software-launch/recovery-readback.json",
+          "sha256": "c75b942341faa39baf280a2180c670d79a03a338dca2f2faeeb83244bbd74de0"
+        },
+        "consumer": {
+          "path": "/home/tv/recuperacion-archtv/46b3ebf6-045f-4ccd-862a-c29933689905-markor-software-launch/completion-consumer.json",
+          "sha256": "debdc5f53c95b0a5412746bd3731cf345242cf2a43d82e9fdd135b475aad81a8"
+        },
+        "note_body": "archtv note 337ac901\n",
+        "note_bytes": 21,
+        "note_sha256": "ade0b42b49d676eb10feb0ae1c3be4b82792d2ce8203f98c7e332f64e1a63322",
+        "original_lifecycle": {
+          "previous_pid": 1487,
+          "absent_before_relaunch": true,
+          "new_pid": 1984,
+          "launch_state": "COLD"
+        },
+        "workflow_evidence": {
+          "observed-markor-lifecycle.txt": {
+            "path": "/home/tv/recuperacion-archtv/46b3ebf6-045f-4ccd-862a-c29933689905-markor-software-launch/observed-markor-lifecycle.txt",
+            "sha256": "b617f4a6b2b6b928e16fbb1c6ef35303d85fa7519b422eb2cfae763682e35c0e"
+          },
+          "observed-markor-relaunch.txt": {
+            "path": "/home/tv/recuperacion-archtv/46b3ebf6-045f-4ccd-862a-c29933689905-markor-software-launch/observed-markor-relaunch.txt",
+            "sha256": "dcb0a1427e6b3b8d342b3df364c1741a996f78ce7b0f3457aaf61440d7d93e56"
+          },
+          "observed-markor-note-before-stop.txt": {
+            "path": "/home/tv/recuperacion-archtv/46b3ebf6-045f-4ccd-862a-c29933689905-markor-software-launch/observed-markor-note-before-stop.txt",
+            "sha256": "415decfc737b22285d4956fc09492f586b029951829a3364fe9086143b462517"
+          },
+          "observed-markor-note-after-relaunch.txt": {
+            "path": "/home/tv/recuperacion-archtv/46b3ebf6-045f-4ccd-862a-c29933689905-markor-software-launch/observed-markor-note-after-relaunch.txt",
+            "sha256": "415decfc737b22285d4956fc09492f586b029951829a3364fe9086143b462517"
+          },
+          "observed-markor-note-bytes.bin": {
+            "path": "/home/tv/recuperacion-archtv/46b3ebf6-045f-4ccd-862a-c29933689905-markor-software-launch/observed-markor-note-bytes.bin",
+            "sha256": "ade0b42b49d676eb10feb0ae1c3be4b82792d2ce8203f98c7e332f64e1a63322"
+          },
+          "workflow-output-copy.json": {
+            "path": "/home/tv/recuperacion-archtv/46b3ebf6-045f-4ccd-862a-c29933689905-markor-software-launch/workflow-output-copy.json",
+            "sha256": "d390849d8936197e24127956f82daef0544470ef15aa0a5c0dcf45d9b382af97"
+          }
+        },
+        "scope": "Real UI note creation/storage permission; original FUSE byte/hash before/after original force-stop+newPID. Offline debugfs copies preserve originals only; not a runtime authorization test. Whole cohort failed10s shutdown deadline; identity guard not reached; no global acceptance."
+      },
+      "integration340": {
+        "checkpoint": "/home/tv/recuperacion-archtv/5eca4625-0b53-4dbb-9ba9-bec591fc6f82-markor-software-launch",
+        "visual_reopen": {
+          "path": "/home/tv/recuperacion-archtv/5eca4625-0b53-4dbb-9ba9-bec591fc6f82-markor-software-launch/visual-note-reopen.json",
+          "sha256": "35139a1420a2fc8b611e0351ebdc063ed78d784159e91057e68b662418b5af0f"
+        },
+        "editor_png": {
+          "path": "/home/tv/recuperacion-archtv/5eca4625-0b53-4dbb-9ba9-bec591fc6f82-markor-software-launch/markor-retained-note-editor.png",
+          "sha256": "d328c06e4bb85d8a027c4dd8e406deb3e1726bf03585cbb11112c3ab56fe7203"
+        },
+        "build": "dist/aosp16/package-cohort-build-338",
+        "payload_sha256": "d7456314f86b002728eb057a93ad58344d58a2b5ed1b3383d402cc8659c3ab1c",
+        "scope": "Actual note visually reopened after full previous-cohort shutdown. Supervisor STOPPED and real exit0 underMAC; outer1 from attempted host-path diagnostic write afterpivot_root. External Linux identities:7 observed,19EACCES, guard not reached; no identity/MAC/global acceptance.",
+        "result": {
+          "path": "/home/tv/recuperacion-archtv/5eca4625-0b53-4dbb-9ba9-bec591fc6f82-markor-software-launch/result.json",
+          "sha256": "920be0ccc1435e6560c7ca67251e5052af72a71479a7a0f55e7e8751825290fa"
+        },
+        "native_result": {
+          "path": "/home/tv/recuperacion-archtv/5eca4625-0b53-4dbb-9ba9-bec591fc6f82-markor-software-launch/native-result.json",
+          "sha256": "24d3c2347eb5d5632be6b0eab412e65b7ce4eee6c9f82c89ff3158f57ebd132c"
+        },
+        "mac_window": {
+          "path": "/home/tv/recuperacion-archtv/5eca4625-0b53-4dbb-9ba9-bec591fc6f82-markor-software-launch/mac-window.json",
+          "sha256": "4b7df2adc0965220f6762e15881a70b3282a01c82bdb5d5258039f7e3b648fc1"
+        },
+        "recovery": {
+          "path": "/home/tv/recuperacion-archtv/5eca4625-0b53-4dbb-9ba9-bec591fc6f82-markor-software-launch/recovery-readback.json",
+          "sha256": "073f017384e91958bc02953b714535ac7e896bac78eecf44ad87c82285ef07c5"
+        },
+        "consumer": {
+          "path": "/home/tv/recuperacion-archtv/5eca4625-0b53-4dbb-9ba9-bec591fc6f82-markor-software-launch/completion-consumer.json",
+          "sha256": "d695b7734282fd79ae55a4105261bf95235fb9be57762faf93de5ae879a497bc"
+        },
+        "native_exit": 0,
+        "outer_exit": 1,
+        "original_stop_ack": true,
+        "identity_observations": {
+          "total": 26,
+          "context_observed": 7,
+          "context_denied": 19,
+          "source": "native-result.json.external_Linux_identity_observation",
+          "next_decision": "Determine actual kernel/proc security denial before choosing dedicated observer adaptation; never substitute intended contexts."
+        },
+        "recovery_checks": {
+          "mode": "0",
+          "policy": 67,
+          "image_allocation": 1073745920,
+          "loops_empty": true,
+          "userdata_unmounted_detached": true,
+          "mixer_equal": true,
+          "audit_lost_delta": 0,
+          "audit_rules_unchanged": true,
+          "audit_receiver_closed": true
+        },
+        "diagnostic_correction": "Removed postpivot host-path write; observations remain captured stdout MC1_RESULT/MC1_IDENTITY_OBSERVATIONS before unchanged guard. Not yet runtime-proven."
+      },
+      "early_preflight_failures338_339": {
+        "338": {
+          "checkpoint": "/home/tv/recuperacion-archtv/79c242b6-5802-4033-bd8e-59f963230d71-markor-software-launch",
+          "reason": "MAC600 exceeds limit480 for observe180s; assertion before candidate; no activation",
+          "consumer": "consumed"
+        },
+        "339": {
+          "checkpoint": "/home/tv/recuperacion-archtv/2ce6babe-5dc1-4f4b-a5a7-00e4c8b04e0f-markor-software-launch",
+          "reason": "Fresh manifest omitted compositor_executable_path; KeyError before MAC gate; corrected by exact executable path/SHA and literal-key validation340",
+          "consumer": "consumed"
         }
       }
     }
