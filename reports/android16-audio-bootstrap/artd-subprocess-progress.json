@@ -21,11 +21,11 @@
       "derive_classpath",
       "odrefresh"
     ],
-    "new_permission": "artd → artd_subprocess_type process2 nnp_transition only",
+    "new_permission": "artd \u2192 artd_subprocess_type process2 nnp_transition only",
     "original_transition_and_entrypoint_required": true,
     "execute_no_trans_not_granted": true,
     "offline_queries": 24,
-    "actual_runtime_observation": "Original artd invokes art_exec --drop-capabilities → dex2oat32 targeting oat/x86_64/base.odex; dex2oat returned code 0",
+    "actual_runtime_observation": "Original artd invokes art_exec --drop-capabilities \u2192 dex2oat32 targeting oat/x86_64/base.odex; dex2oat returned code 0",
     "boot_image": "Checksum mismatch remains; compiler falls back to imageless running. No coherent boot image acceptance."
   },
   "apk": {
@@ -215,13 +215,138 @@
       ]
     },
     "integration325": {
-      "state": "prepared_not_started",
-      "build": "dist/aosp16/package-cohort-build-325",
-      "payload_sha256": "46ba77ccb04e03e1b4d4b3cf46af170c95090de30f9dad488a68a292274755f8",
       "checkpoint": "/home/tv/recuperacion-archtv/5550676e-5f2f-469b-808b-98510c0d8cac-markor-software-launch",
-      "change": "Same whole original ART route; configured-vs-started Zygote health corrected. Actualrunning liveness still mandatory.",
-      "pending": "Only own closed consumed312/313/323 image preservation frees space beforeAOT cache; no source/log/userdata deletion.",
-      "artifact_preparation324": "Own build324 canceled before runtime onmisread escaped display. Bytecheck [92,110] confirmed correct C++newline; original323 retained. No falselyclaimed source newline bug."
+      "result": "art_boot exited127: real NNP transition denied under65; no odsign execution",
+      "scope": "Kernel negative; not cache/APK compatibility"
+    },
+    "integration326": {
+      "checkpoint": "/home/tv/recuperacion-archtv/cde2d4de-f95e-4841-b035-05eac8321be4-markor-software-launch",
+      "result": "art_boot exited0; odsign exited127 before main: init\u2192odsign process2 nosuid_transition denied under66",
+      "data_labels": {
+        "store": "/home/tv/.local/share/archtv/experimental-userdata/art-coherent-326",
+        "metadata": {
+          "format": "archtv-experimental-userdata-v1",
+          "name": "art-coherent-326",
+          "storage_uuid": "856a4a01-439e-474b-b5c4-b41f56bf75d5"
+        },
+        "roots": {
+          "misc/odsign": {
+            "context": "u:object_r:odsign_data_file:s0",
+            "uid": 0,
+            "gid": 1000,
+            "mode": "0o710"
+          },
+          "misc/odsign/metrics": {
+            "context": "u:object_r:odsign_metrics_file:s0",
+            "uid": 0,
+            "gid": 1000,
+            "mode": "0o770"
+          },
+          "misc/odrefresh": {
+            "context": "u:object_r:odrefresh_data_file:s0",
+            "uid": 1000,
+            "gid": 1000,
+            "mode": "0o777"
+          },
+          "misc/apexdata/com.android.art": {
+            "context": "u:object_r:apex_art_data_file:s0",
+            "uid": 0,
+            "gid": 1000,
+            "mode": "0o771"
+          }
+        }
+      },
+      "recovery": {
+        "mode": "0",
+        "policy_sha256": "a9e9c3d3f51416491074fa78417420b30aac837715f655dd28da46e8aca9a1c8",
+        "clock": "tsc",
+        "pcm": "closed",
+        "udev_drop_absent": true,
+        "units": {
+          "archtv-host-owner-cde2d4de-f95e-4841-b035-05eac8321be4.service": {
+            "ActiveState": "inactive",
+            "MainPID": "0"
+          },
+          "archtv-package-runner-cde2d4de-f95e-4841-b035-05eac8321be4.service": {
+            "ActiveState": "inactive",
+            "MainPID": "0"
+          },
+          "archtv-markor-session-cde2d4de-f95e-4841-b035-05eac8321be4.service": {
+            "ActiveState": "inactive",
+            "MainPID": "0"
+          }
+        },
+        "active_loops": "",
+        "dm": "No devices found",
+        "mixer_equal": true
+      },
+      "consumer": {
+        "id": "cde2d4de-f95e-4841-b035-05eac8321be4",
+        "state": "consumed",
+        "owner": "active:cde2d4de-f95e-4841-b035-05eac8321be4",
+        "consumed_by": "active:cde2d4de-f95e-4841-b035-05eac8321be4"
+      },
+      "scope": "Original art_boot execution only; no odsign signature/cache/image/APK acceptance. Host preparation permissive AVCs remain an R1 gap."
+    },
+    "integration327": {
+      "checkpoint": "/home/tv/recuperacion-archtv/1ac79885-39f9-4abf-8da2-16fee8b80080-markor-software-launch",
+      "state": "closed, recovered and consumed",
+      "policy67_checkpoint": "/home/tv/recuperacion-archtv/20261105T070620Z-art-policy67",
+      "offline_access_evidence": "dist/aosp16/audio-policy-inputs-67/access-comparison.json",
+      "offline_cases": 48,
+      "payload_sha256": "4c058a8b21bcbcc7c9cfbc423573f3e252b57857e890788b4a47d42d073b93d7",
+      "scope": "Same326 payload/private store.67 adds only init\u2192odsign nosuid_transition; NNP1/nosuid/original labels preserved. No runtime success assumed.",
+      "functional_result": "/home/tv/recuperacion-archtv/1ac79885-39f9-4abf-8da2-16fee8b80080-markor-software-launch/functional-result.json",
+      "result": {
+        "id": "1ac79885-39f9-4abf-8da2-16fee8b80080",
+        "attempt": 327,
+        "scope": "Actual original odsign execution and negative Keystore2 result under bounded MAC; no cache/image/APK acceptance",
+        "art_boot_exit": 0,
+        "odsign_main_executed": true,
+        "blocker": "Keystore2 HMAC generateKey returns LOCKED: Boot stage key absent",
+        "recovery": {
+          "mode": "0",
+          "policy_sha256": "61a41267ee6de3afb412dce4c199243b3a6536b7d3c0bd6aefd6b422fa66d703",
+          "clock": "tsc",
+          "pcm": "closed",
+          "udev_drop_absent": true,
+          "units": {
+            "archtv-host-owner-1ac79885-39f9-4abf-8da2-16fee8b80080.service": {
+              "ActiveState": "inactive",
+              "MainPID": "0"
+            },
+            "archtv-package-runner-1ac79885-39f9-4abf-8da2-16fee8b80080.service": {
+              "ActiveState": "inactive",
+              "MainPID": "0"
+            },
+            "archtv-markor-session-1ac79885-39f9-4abf-8da2-16fee8b80080.service": {
+              "ActiveState": "inactive",
+              "MainPID": "0"
+            }
+          },
+          "loops_absent": true,
+          "dm": "No devices found",
+          "mixer_equal": true
+        },
+        "consumer": {
+          "id": "1ac79885-39f9-4abf-8da2-16fee8b80080",
+          "state": "consumed",
+          "owner": "active:1ac79885-39f9-4abf-8da2-16fee8b80080",
+          "consumed_by": "active:1ac79885-39f9-4abf-8da2-16fee8b80080"
+        },
+        "evidence": {
+          "run.log": "af574d685c4184ca8c10120b2330681a407f1d779e3a72ed36b260b55bba2f11",
+          "observed-original-logcat.txt": "3612703551d963aaed17ef9de4fcc93da21bb9ca233cae4a35555156704647d8",
+          "finite-audit/result.json": "ab35b36f07b137e798bc8f6df7d05f05026bac31b0e8eb98ba685e1eeb16e09a",
+          "recovery-readback.json": "d797341ee2a40d0ca0d947a042c6bfd4421dfda0cddd63e882775b6906ee1103"
+        },
+        "source_followup": {
+          "maintenance.rs": "early_boot_ended() checks EarlyBootEnded permission, calls SuperKeyManager::set_up_boot_level_cache; setup failure is logged, so Binder success alone insufficient",
+          "super_key.rs": "get_level_zero_key must succeed before cache/watcher exists",
+          "boot_level_keys.rs": "Default strategy requires TEE; inspect explicit supported strategy/profile before adapting SOFTWARE. Do not fake boot key or relax MAC."
+        },
+        "next_action": "Integrate original earlyBootEnded bootstrap client and justified SOFTWARE boot-level provider; verify real key creation and negative boot-level behavior. No new policy grant absent actual denial."
+      }
     }
   }
 }

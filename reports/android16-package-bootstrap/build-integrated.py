@@ -393,6 +393,16 @@ if coherent_art:
  art_binary=Path(art_record['binary'])
  assert hashlib.sha256(art_binary.read_bytes()).hexdigest()==art_record['binary_sha256']
  for path,digest in art_record['inputs'].items():assert hashlib.sha256(Path(path).read_bytes()).hexdigest()==digest,path
+ fc=r/'dist/aosp16/factory-inputs-3/root/system/etc/selinux/plat_file_contexts'
+ fc_lines=[l.split() for l in fc.read_text().splitlines() if l.strip() and not l.lstrip().startswith('#')]
+ roots=[]
+ for path,mode,uid,gid,original_type in [('misc/odrefresh',0o777,1000,1000,'odrefresh_data_file'),('misc/odsign',0o710,0,1000,'odsign_data_file'),('misc/odsign/metrics',0o770,0,1000,'odsign_metrics_file'),('misc/apexdata/com.android.art',0o700,0,0,'apex_art_data_file')]:
+  context='u:object_r:'+original_type+':s0'
+  rows=[l for l in fc_lines if l[-1]==context and l[0].startswith('/data/misc/')]
+  assert len(rows)==1,(path,rows)
+  roots.append({'path':path,'mode':mode,'uid':uid,'gid':gid,'context':context,'original_regex':rows[0][0]})
+ art_record['private_data_roots']=roots
+ art_record['file_contexts_source']={'path':str(fc),'sha256':hashlib.sha256(fc.read_bytes()).hexdigest()}
  (out/'coherent-art-input.json').write_text(json.dumps(art_record,indent=2)+'\n')
  (out/'coherent-art-profile').write_text('software-signed-cache-v1\n')
  vendor['files']['/bin/archtv-odsign-software']={'source':str(art_binary),'context':'u:object_r:odsign_exec:s0','mode':0o755}

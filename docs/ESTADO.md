@@ -1,5 +1,13 @@
 # Estado actual y punto de entrada
 
+Vigente tras327 ·odsign ejecuta su main original con la transición67; la creación HMAC falla en Keystore2 con LOCKED/Boot stage key absent. La cohorte cerró, recuperó permisivo67/TSC/mixer/unidades/loops/dm y consumió resultado sin notificación. Próximo requisito original: earlyBootEnded inicializa la caché de claves de nivel de arranque; comprobar su cliente, permiso y proveedor SOFTWARE explícito. El código original por defecto busca TEE, por lo que llamar Binder sin verificar la clave no basta. No hay firma/caché/imágenes/APK nuevas aceptadas. Evidencia: reports/android16-audio-bootstrap/artd-subprocess-progress.json, integration327.
+
+Histórico de preparación327:
+
+Vigente ·327 prueba la secuencia ART/odsign con política67; consultar checkpoint y unidades reales, no asumir que sigue activa.326 cerró y se consumió: art_boot original salió0, pero odsign salió127 antes de main por denegación real init→odsign process2:nosuid_transition.65→66 ya resolvió la admisión NNP de art_boot.67 añade sólo la transición nosuid de odsign, conservando NNP1, bind nosuid y dominios originales;48 comprobaciones offline pasan y la carga global sigue permisiva. Cuatro raíces privadas tienen etiquetas originales verificadas tras326; prep Linux en permisivo no acredita instalación bajo enforcing. Sin firma, caché, imagen cargada ni etapa APK nuevas aceptadas. Evidencia canónica: reports/android16-audio-bootstrap/artd-subprocess-progress.json; recuperación67: /home/tv/recuperacion-archtv/20261105T070620Z-art-policy67/RETOMAR.txt.
+
+Histórico323–325 (conservar alcance):
+
 323 ejecuta el bind privado real y arranca art_boot, pero healthy() exige Zygote vivo antes de su arranque previsto tras ART. Se detiene antes de odsign; no hay caché/imágenes/APK aceptadas. El mensaje vold-failed viene de SIGKILL durante Close, no es causa inicial ni reinicio VM. Corregido el estado configurado/iniciado de Zygote: liveness obligatoria desde Start real y reinicio de estado al cerrar.325 compila esa corrección; recuperación323 permisivo65/TSC/mixer/recursos/auditoría verificada y resultado consumido.
 
 ART ·odsign completo enlaza en link1 con perfil SOFTWARE explícito, SHA25524786b3d8a1cce8f39f091ff6f9de7cde5c7c7243084d7cb99b8825c5c76b. Son6 unidades originales y el protobuf original generado; se preservan5 intentos de construcción y sus fallos de rutas/cabeceras. REA MCP inspecciona estáticamente initialize; no se ha ejecutado el servicio ni cargado imágenes. La receta final de construcción6 y enlace2 también pasa, sin ejecución; sus hashes exactos están en el candidato ART canónico. Próxima integración mantiene /system/bin/odsign y su namespace original mediante bind privado, con datos nuevos separados.

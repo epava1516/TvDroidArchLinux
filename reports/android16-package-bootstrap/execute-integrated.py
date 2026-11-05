@@ -270,8 +270,12 @@ if build_options.get('coherent_art',False):
  # Preserve original GSI backing; no host /system or shared input writes.
  root_code+="\nimport hashlib\nart_source=candidate/'bin/archtv-odsign-software';art_target=root/'system/bin/odsign'\nassert hashlib.sha256(art_source.read_bytes()).hexdigest()=="+repr(art_sha)+"\nassert art_target.is_file()\nmount('--bind',art_source,art_target);mount('-o','remount,bind,ro,nosuid,nodev',art_target)\nprint('COHERENT_ART_ODSIGN_PRIVATE_BIND '+str(art_target)+' sha256='+"+repr(art_sha)+",flush=True)"
  # Exact original init/APEX roots. Original restorecon below assigns labels.
- for name,mode,uid,gid in [('misc/odrefresh',0o777,1000,1000),('misc/odsign',0o710,0,1000),('misc/odsign/metrics',0o770,0,1000),('misc/apexdata/com.android.art',0o700,0,0)]:
-  root_code+="\np=root/'data'/"+repr(name)+";p.mkdir(parents=True,exist_ok=True);os.chmod(p,"+str(mode)+");os.chown(p,"+str(uid)+","+str(gid)+")"
+ assert hashlib.sha256(Path(art['file_contexts_source']['path']).read_bytes()).hexdigest()==art['file_contexts_source']['sha256']
+ assert len(art['private_data_roots'])==4
+ for entry in art['private_data_roots']:
+  name,mode,uid,gid,context=(entry[k] for k in ['path','mode','uid','gid','context'])
+  assert name in ['misc/odrefresh','misc/odsign','misc/odsign/metrics','misc/apexdata/com.android.art']
+  root_code+="\np=root/'data'/"+repr(name)+";p.mkdir(parents=True,exist_ok=True);os.chmod(p,"+str(mode)+");os.chown(p,"+str(uid)+","+str(gid)+");os.setxattr(p,'security.selinux',"+repr(context.encode()+bytes([0]))+");assert os.getxattr(p,'security.selinux').rstrip(bytes([0]))=="+repr(context.encode())
 media_test=build_options.get('media_test')
 if media_test is not None:
  assert apk_target['id']=='vlc' and media_test['bytes']<=1048576

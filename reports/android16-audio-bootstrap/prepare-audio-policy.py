@@ -64,6 +64,14 @@ if '--artd-subprocess-nnp' in sys.argv[2:]:
     assert with_memory and '--vold-private-bind' in sys.argv[2:], 'Preserve the complete verified policy64 base'
     profile['modules'].append('runtime/aosp/android16-qpr2/policy/experiments/artd-subprocess-nnp.cil')
     profile['limitations'].append('Only the extra inherited NNP admission for the closed original artd_subprocess_type set. Original domain_auto_trans/entrypoints/credentials remain mandatory and execute_no_trans remains denied. Offline only; actual compiler identities, operation and R1/APK acceptance require real execution.')
+if '--original-art-boot-nnp' in sys.argv[2:]:
+    assert '--artd-subprocess-nnp' in sys.argv[2:], 'Preserve the complete policy65 base'
+    profile['modules'].append('runtime/aosp/android16-qpr2/policy/experiments/art-boot-nnp.cil')
+    profile['limitations'].append('Only inherited NNP admission on original init->art_boot, init->odsign, odsign->odrefresh and odrefresh->dex2oat transitions. No new transition/entrypoint/execute_no_trans permission; actual signature/cache/image/R1 tests remain mandatory.')
+if '--original-art-sign-nosuid' in sys.argv[2:]:
+    assert '--original-art-boot-nnp' in sys.argv[2:], 'Preserve the complete policy66 base'
+    profile['modules'].append('runtime/aosp/android16-qpr2/policy/experiments/art-sign-nosuid.cil')
+    profile['limitations'].append('Only init->odsign nosuid label-transition admission for the explicitly private nosuid executable bind. Nosuid mount/NNP1 and original entrypoint/UID/capabilities retained; no execute_no_trans or file/device/Binder/capability grant. Actual cryptography/cache/image/R1 remains unproven.')
 profile['input_sha256']['aosp'] = hashlib.sha256(merged).hexdigest()
 profile['limitations'].append('Original complete vendor/hal_audio_default.te added; no runtime/domain transition/device/isolation acceptance.')
 (out / 'profile.json').write_text(json.dumps(profile, indent=2) + '\n')

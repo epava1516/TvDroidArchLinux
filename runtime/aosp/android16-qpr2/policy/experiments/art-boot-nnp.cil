@@ -1,0 +1,10 @@
+; Original ART boot/signing chain under inherited Linux NNP1.
+; Actual325 denies init -> art_boot process2:nnp_transition. All four
+; original process transitions/entrypoints already exist in policy65.
+; Preserve NNP1, original executable labels, credentials and capabilities.
+; No execute_no_trans, file, Binder, device or capability grant.
+; profman is not an original odrefresh transition; do not invent it.
+(allow init art_boot (process2 (nnp_transition)))
+(allow init odsign (process2 (nnp_transition)))
+(allow odsign odrefresh (process2 (nnp_transition)))
+(allow odrefresh dex2oat (process2 (nnp_transition)))

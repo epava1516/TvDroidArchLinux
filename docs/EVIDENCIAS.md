@@ -1,5 +1,11 @@
 # Índice de evidencias
 
+Vigente tras327 ·odsign ejecuta su main original con la transición67; la creación HMAC falla en Keystore2 con LOCKED/Boot stage key absent. La cohorte cerró, recuperó permisivo67/TSC/mixer/unidades/loops/dm y consumió resultado sin notificación. Próximo requisito original: earlyBootEnded inicializa la caché de claves de nivel de arranque; comprobar su cliente, permiso y proveedor SOFTWARE explícito. El código original por defecto busca TEE, por lo que llamar Binder sin verificar la clave no basta. No hay firma/caché/imágenes/APK nuevas aceptadas. Evidencia: reports/android16-audio-bootstrap/artd-subprocess-progress.json, integration327.
+
+Histórico de preparación327:
+
+ART325–327 ·Registro canónico: reports/android16-audio-bootstrap/artd-subprocess-progress.json, coherent_cache_candidate.integration325/326/327.326 conserva kernel/audit, etiquetas reales, restauración y consumo por UUID.67 tiene48 decisiones offline con libsepol original, neverallows activos e inputs originales idénticos a66; alcance estático, no ejecución ni compatibilidad. Checkpoint de carga67 /home/tv/recuperacion-archtv/20261105T070620Z-art-policy67 contiene plan/hashes y recuperación66;327 usa el payload326 SHA4c058a8b21bcbcc7c9cfbc423573f3e252b57857e890788b4a47d42d073b93d7 sin recompilar. Resultado327 pendiente de contraste, no aceptado por iniciar una unidad.
+
 323: [resultado funcional y hashes](../../recuperacion-archtv/8c4ec639-4ad7-4e50-bdae-8e8e7062e697-markor-software-launch/functional-result.json). art_boot inicia; MC1_FAILED por healthy antes de Zygote. Vold recibe SIGKILL después, durante limpieza. Sin odsign/caché/APK aceptados. Recuperación y auditoría sin pérdidas comprobadas; único consumo activo.
 
 Receta final ART: construcción6 compila7 unidades; enlace2 con --no-undefined/--no-allow-shlib-undefined pasa. Hashes y ABI están en coherent_cache_candidate del informe ART existente. El desensamblado REA citado corresponde al artefacto anterior link1; no se extrapola a ejecución de link2.

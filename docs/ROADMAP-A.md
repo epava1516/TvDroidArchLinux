@@ -1,5 +1,13 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+Vigente tras327 ·odsign ejecuta su main original con la transición67; la creación HMAC falla en Keystore2 con LOCKED/Boot stage key absent. La cohorte cerró, recuperó permisivo67/TSC/mixer/unidades/loops/dm y consumió resultado sin notificación. Próximo requisito original: earlyBootEnded inicializa la caché de claves de nivel de arranque; comprobar su cliente, permiso y proveedor SOFTWARE explícito. El código original por defecto busca TEE, por lo que llamar Binder sin verificar la clave no basta. No hay firma/caché/imágenes/APK nuevas aceptadas. Evidencia: reports/android16-audio-bootstrap/artd-subprocess-progress.json, integration327.
+
+Histórico de preparación327:
+
+Puerta vigente ·327: ejecutar odsign original adaptado explícitamente a SOFTWARE con política67 y datos326 conservados. Decidir por ejecución real de odsign/Keystore2/odrefresh, firma y verificación, no por compilación o propiedades.326 demostró art_boot exit0 y la denegación nosuid anterior a main de odsign;67 corrige sólo esa arista. Conservar recuperación66 y comprobar cierre/identidades/NNP, además de negativas. Después: carga real de imágenes sin fallback de checksum y regresión completa Markor/VLC. R1 sigue abierto: host permisivo, preparación con AVCs y aislamiento general sin acreditar.
+
+Histórico de prioridades anteriores:
+
 Puerta inmediata tras323: ejecutar325 con la integración completa y el estado de arranque Zygote corregido.323 sólo acreditó montaje privado y arranque art_boot; odsign no arrancó. Conservar la causa inicial separada de reboot_on_failure de vold al limpiar. Exigir después firma original real, carga coherente y negativas, antes de Markor/VLC completo.
 
 Decisión322: CPU300 no elimina el fallo de tiempo; conservar200 por defecto y detener ajustes especulativos del HAL/cuota. Prioridad funcional siguiente: original Keystore/KeyMint SOFTWARE -> odrefresh/odsign completos -> verificación real -> Zygote carga imágenes coherentes -> repetir recorrido completo Markor/VLC. No aceptar compilación, exit0 de odrefresh que pueda omitir trabajo, propiedades manuales o firmas sin verificación y negativas.

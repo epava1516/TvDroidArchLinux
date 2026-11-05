@@ -1,0 +1,6 @@
+; Actual326: the private read-only /system/bin/odsign bind retains nosuid.
+; Linux additionally checks process2:nosuid_transition after NNP admission.
+; Admit only original init -> odsign label transition; keep NNP1 and nosuid,
+; original domain_auto_trans/entrypoint, UID/groups/capabilities and all file
+; permissions. No setuid/file-capability enablement or execute_no_trans grant.
+(allow init odsign (process2 (nosuid_transition)))
