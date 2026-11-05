@@ -2865,6 +2865,11 @@
         "ui_connected": false,
         "original_services_available_claim": false,
         "next": "Native client authenticating server and bounded request worker, private Rust Home transport, then same-cohort original catalog -> user Home selection -> original launch -> actual frame/input/note/Back/reopen. No automatic launch retry after indeterminate delivery."
+      },
+      "native_launcher_client_preparation356": {
+        "record": "/home/tv/recuperacion-archtv/20261105-launcher-control356/native-client-preparation.json",
+        "sha256": "ebc19b8a84f82f2a4408445bb580687b283caf9277cefa51366222b3b032e0d3",
+        "scope": "Native original ATL1 client and bounded worker implemented, host regressions and Android36/Bionic compilation positive. Not linked or runtime-executed; no UI launch claim."
       }
     }
   },

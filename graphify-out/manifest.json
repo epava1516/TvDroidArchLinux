@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793900090.180045,
-    "seen": 1793900104.0945618,
-    "ast_hash": "95ccc50db6db6dc488e25d1ede6ed7cb",
+    "mtime": 1793900654.1091485,
+    "seen": 1793900668.9632792,
+    "ast_hash": "87843f652715acee45b88be9c1ed36a3",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
@@ -2259,6 +2259,18 @@
     "mtime": 1793900163.7836287,
     "seen": 1793900228.4455776,
     "ast_hash": "491d9fddaeee0a61e14d569ba857506a",
+    "semantic_hash": ""
+  },
+  "runtime/aosp/native/linux-launcher-control.h": {
+    "mtime": 1793900422.0991929,
+    "seen": 1793900668.9462345,
+    "ast_hash": "3625270184b28faea6290605134c3180",
+    "semantic_hash": ""
+  },
+  "tests/automation/test_launcher_native_control.py": {
+    "mtime": 1793900551.313178,
+    "seen": 1793900668.9558048,
+    "ast_hash": "88dd012b79b39451971d059f3947d43d",
     "semantic_hash": ""
   }
 }
