@@ -158,7 +158,6 @@ resolved=$(/system/bin/cmd package resolve-activity --brief --user 0 -a android.
 /system/bin/printf '%s\n' "$resolved" > /data/local/tmp/archtv-mc1/markor-resolve.txt
 component=$(/system/bin/printf '%s\n' "$resolved" | /system/bin/tail -n 1)
 case "$component" in "$target_package"/*) ;; *) exit 1;; esac
-/system/bin/cmd activity start-activity -W --user 0 -n "$component" > /data/local/tmp/archtv-mc1/markor-launch.txt 2>&1
 # The audio-only comparison uses VLC's declared VIEW contract, resolved by
 # original PMS. URI access is granted by original AMS; never synthesize a URI
 # or bypass provider permission checks. Actual playback still needs evidence.
@@ -168,6 +167,11 @@ if [ "${media_mime:-}" = audio/mp4 ]; then
     media_component=$(/system/bin/printf '%s\n' "$media_resolved" | /system/bin/tail -n 1)
     case "$media_component" in "$target_package"/*) ;; *) exit 1;; esac
     /system/bin/cmd activity start-activity -W --user 0 --grant-read-uri-permission -a android.intent.action.VIEW -d "$media_uri" -t "$media_mime" -n "$media_component" > /data/local/tmp/archtv-mc1/media-launch.txt 2>&1
+    # One original launch per audio experiment. Actual317's MAIN followed by
+    # immediate VIEW overlapped MediaParsingService foreground start/stop/restart.
+    # Preserve the real command output for the generic observer as an exact
+    # alias, not a second launch or a manufactured readiness response.
+    /system/bin/cp /data/local/tmp/archtv-mc1/media-launch.txt /data/local/tmp/archtv-mc1/markor-launch.txt
     # Bounded original service diagnostics. A failed dump remains a failure;
     # snapshots may perturb timing and do not establish playback continuity.
     # Actual313 showed both early snapshots preceded AudioTrack creation.
@@ -186,6 +190,8 @@ if [ "${media_mime:-}" = audio/mp4 ]; then
         /system/bin/printf 'snapshot=%s exit=%s NOT_AUDIO_ACCEPTANCE\n' "$snapshot" "$dump_status" >> /data/local/tmp/archtv-mc1/audio-flinger-status.txt
         snapshot=$((snapshot + 1))
     done
+else
+    /system/bin/cmd activity start-activity -W --user 0 -n "$component" > /data/local/tmp/archtv-mc1/markor-launch.txt 2>&1
 fi
 ps_status=0
 /system/bin/ps -A -o PID,LABEL,NAME > /data/local/tmp/archtv-mc1/android-ps-after.txt 2>/data/local/tmp/archtv-mc1/android-ps-error.txt || ps_status=$?

@@ -35,7 +35,7 @@
       "workflow": "Abrir fichero local, reproducir audio/vídeo, volver al shell y cerrar",
       "runtime_results": {
         "installation": "approved",
-        "launch": "approved",
+        "launch": "blocked",
         "interface": "approved",
         "input": "approved",
         "main_function": "blocked",
@@ -60,7 +60,21 @@
         "input": "not_run",
         "persistence": "not_run",
         "services": "not_run",
-        "close": "not_run"
+        "close": "not_run",
+        "before_foreground317": {
+          "runtime_results": {
+            "installation": "approved",
+            "launch": "approved",
+            "interface": "approved",
+            "input": "approved",
+            "main_function": "blocked",
+            "persistence": "not_tested",
+            "services": "partial",
+            "close": "not_tested",
+            "reopen": "not_tested"
+          },
+          "scope": "Previous bounded positive launch/interface/input stages retained; notgeneralstability orcurrent317availability."
+        }
       },
       "runtime_evidence_base": "Android16 QPR2 / A16-QPR2-1",
       "privilege_model": "Ordinary APK candidate. Privileged/OEM/signature-dependent features not assumed or patched away.",
@@ -204,7 +218,18 @@
           "record": "/home/tv/recuperacion-archtv/c4a1674a-e6ea-4f84-ae73-d856660265ad-markor-software-launch/functional-result.json",
           "record_sha256": "90f5d59d226a8be634b75d8ba5b4c262f4b9918e485b69dac6847f994b6ac9d0",
           "scope": "SameproductionDSP315payload withtemporaryacpi_pm; timingreset persists, server131072/flushed19472, nofullaudio. OriginalstateTSC/mode0/policy65/resourcesrestored, consumedonce."
-        }
+        },
+        "activation317": {
+          "record": "/home/tv/recuperacion-archtv/270b9a2e-5a3a-46eb-b66a-cd913a4ef08c-markor-software-launch/functional-result.json",
+          "record_sha256": "1c3dc01c44bd4a0ec6bded0c05c20673a5af86cae56d0c4f4c974336b8d4c75a",
+          "analysis": {
+            "path": "/home/tv/recuperacion-archtv/270b9a2e-5a3a-46eb-b66a-cd913a4ef08c-markor-software-launch/foreground-sequence-analysis.json",
+            "sha256": "c82709dec9299c824d45d8cb6dd43c7ff03c399ae1660680e3fa1b95a632a5d3"
+          },
+          "accepted": false,
+          "scope": "ActualFGSstart/stop/pendingrestart/bringdowncrash; elapseddeadline notproven.0PCM/positionlogs;317counterrestoreunexercised."
+        },
+        "foreground_lifecycle_remaining": "DirectVIEW318 in test; launcherthenmedia/rapidintent/reopen stability remainsopen. No timeout/permissionrelaxation."
       }
     },
     {

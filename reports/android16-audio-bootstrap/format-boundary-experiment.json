@@ -119,7 +119,7 @@
   },
   "next_candidate317": {
     "scope": "Original worker advances cumulative count only by actualFrameCount; restoring originalreset preserves stream lifetime acrossnewproxy. Diagnostic values do not replace realpresentation timestamps. No header/vtable/layout, policy, codec orclock change. EffectonVLCtiming notyettested.",
-    "state": "started_realVLC_result_pending",
+    "state": "terminal_consumed; actualVLCFGStimeout beforePCM; positioncorrection unexercised",
     "build": "dist/aosp16/audio-linux-primary-build-7",
     "source_pin": "aa229558cbf04bc997ed27465c5e7ad497123d1b",
     "original_contract_inputs": {
@@ -156,5 +156,25 @@
       "manifest": "dist/aosp16/package-cohort-build-307/image-preservation.json",
       "sha256": "12d28cf04b6cdf8ef24bd0bc5d3dd161d594e2d945d75b62ce89ee3b9cedc0f6"
     }
-  ]
+  ],
+  "control317": {
+    "path": "/home/tv/recuperacion-archtv/270b9a2e-5a3a-46eb-b66a-cd913a4ef08c-markor-software-launch/functional-result.json",
+    "sha256": "1c3dc01c44bd4a0ec6bded0c05c20673a5af86cae56d0c4f4c974336b8d4c75a"
+  },
+  "current_blocker": "317 servicewasbroughtdownwithpendingforegroundrestart afteractualforegroundstart/stop; elapseddeadline notproven.318oneoriginalVIEW isolates overlappingMAIN/VIEWtest; noAPI/control/timeoutrelaxation.",
+  "foreground317_analysis": {
+    "path": "/home/tv/recuperacion-archtv/270b9a2e-5a3a-46eb-b66a-cd913a4ef08c-markor-software-launch/foreground-sequence-analysis.json",
+    "sha256": "c82709dec9299c824d45d8cb6dd43c7ff03c399ae1660680e3fa1b95a632a5d3"
+  },
+  "next_candidate318": {
+    "build": "dist/aosp16/package-cohort-build-318",
+    "scope": "Same317HAL/DSP/TSC; oneoriginalVIEW, genericlaunchfilebyteidenticalalias ofactualcommandoutput. Launcherthenmedia stillseparateopenworkflow, not compatibility completed.",
+    "state": "active_result_pending",
+    "checkpoint": "/home/tv/recuperacion-archtv/7258fdce-6de6-458e-afd9-933d8a867d73-markor-software-launch",
+    "payload_sha256": "e59946cf57641de72a4b4e65105e7f6bb6f42eddacca8847f18a5f1402a76e72"
+  },
+  "storage_preservation317": {
+    "manifest": "dist/aosp16/package-cohort-build-317/image-preservation.json",
+    "sha256": "e5e0f91407b78727ecbb25727177b8e991878755bbb319fa99ecd7980c418bea"
+  }
 }
