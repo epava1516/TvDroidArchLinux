@@ -633,3 +633,5 @@ Política64 y ejecución295: fuente original vold, AVC/montaje, cierre/recuperac
 Audio299 y comparación Linux: [retornos originales, hashes, recuperación y límite temporal](../reports/android16-audio-bootstrap/write-observation-progress.json).42 llamadas exitosas son evidencia parcial; EIO Linux, continuidad, acústica y auditoría final abiertos. [Carrera del observador y tres regresiones](../reports/android16-package-bootstrap/capture-recovery-299.json); prueba integrada de la corrección pendiente.
 
 [Comparación de frames/drain y clocksources](../reports/android16-audio-bootstrap/clock-comparison.json): tsc/acpi_pm/kvm-clock, fuentes, hashes y recuperación;300 falla antes del lanzamiento. No acredita reproducción APK ni estabilidad global del reloj.
+
+[VLC302](../reports/android16-audio-bootstrap/clock-comparison.json), integrated302: instalación original/readback idéntico y comando de lanzamiento; sin captura/entrada/PCM. Componente nativo0/exterior1, transiciónNNP artd→dex2oat rechazada, recuperación normal. La retirada del ZIP descargado conserva cada imagen original con hash idéntico y URL/hash del contenedor (cache_retirement).

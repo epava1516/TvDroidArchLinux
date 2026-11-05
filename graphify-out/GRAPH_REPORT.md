@@ -1,7 +1,7 @@
-# Graph Report - repositorio-principal  (2026-11-04)
+# Graph Report - repositorio-principal  (2026-11-05)
 
 ## Corpus Check
-- 354 files · ~335,158 words
+- 354 files · ~335,810 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 60 file(s) not represented in the graph (top: .cil 21, .patch 15, .xml 11)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `a4f7600b`
+- Built from commit: `2fe5fd8a`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

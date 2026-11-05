@@ -82,9 +82,19 @@ subprocess.run(['systemctl','stop','getty@tty2.service'],check=True);subprocess.
 try:
  subprocess.run(['systemd-run','--unit='+unit,'--collect','--service-type=exec','--property=User=tv','--property=PAMName=login','--property=TTYPath=/dev/tty2','--property=StandardInput=tty','--property=TTYReset=yes','--property=TTYVHangup=yes','--property=KillMode=control-group','--property=TimeoutStopSec=5','--property=RuntimeMaxSec=990','/usr/bin/bash',str(cp/'session.sh'),str(cp)],check=True)
  subprocess.run(['chvt','2'],check=True)
+ # Physical input belongs to the real Linux session, not an APK Displayed
+ # log event. Register the bounded sender early; it emits no commands itself.
+ interaction=subprocess.Popen(['/usr/bin/python',str(cp/'interaction-test.py')],stdout=open(cp/'interaction-test.log','w'),stderr=subprocess.STDOUT)
  # Native bounded wait only: no model polling and no queue continuation.
  deadline=time.monotonic()+985
  while True:
+  # An explicit observer request can inspect a dark/stalled surface. It is
+  # never an Android readiness event and does not manufacture Displayed.
+  manual=cp/'capture-observation-request.json'
+  if not capture_triggered and manual.is_file():
+   requested=json.loads(manual.read_text());assert requested['id']==run
+   (cp/'capture-trigger.json').write_text(json.dumps({'source':'explicit-observer-request','request':requested,'scope':'Inspect actual compositor frame; not APK or service availability'},indent=2)+'\n');os.chown(cp/'capture-trigger.json',1000,1000)
+   request_capture();capture_triggered=True
   if not capture_triggered:
    factories=set(Path('/home/tv/repositorio-principal/dist/aosp16').glob('apex-live-*'))-factories_before
    assert len(factories)<=1, 'Concurrent unrelated factory'
@@ -97,8 +107,6 @@ try:
       if event.get('tag')=='ActivityTaskManager' and event.get('message','').startswith('Displayed org.videolan.vlc/') and original_display_record(event):
        (cp/'capture-trigger.json').write_text(json.dumps({'factory':str(factory),'event':event,'scope':'Original displayed event triggers read-only final DRM capture; no UI acceptance until image inspection'},indent=2)+'\n');os.chown(cp/'capture-trigger.json',1000,1000)
        request_capture();capture_triggered=True;trigger_at=time.monotonic();break
-  if trigger_at is not None and interaction is None and time.monotonic()-trigger_at>=2:
-   interaction=subprocess.Popen(['/usr/bin/python',str(cp/'interaction-test.py')],stdout=open(cp/'interaction-test.log','w'),stderr=subprocess.STDOUT)
   # Physical input is manually queued only after actual UI inspection.
   try:
    if capture_triggered:
