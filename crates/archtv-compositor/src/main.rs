@@ -3,6 +3,7 @@
 mod drm;
 mod handlers;
 mod input;
+mod launcher;
 mod session;
 mod state;
 mod winit;

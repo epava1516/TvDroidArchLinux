@@ -14,13 +14,10 @@ use std::{
 #[derive(Debug)]
 pub enum Event {
     Loaded(Vec<Application>, Settings, String),
+    AndroidCatalog(Vec<Application>, String),
     Icon(String, Option<tiny_skia::Pixmap>),
     Wallpaper(Option<tiny_skia::Pixmap>),
-    Status {
-        volume: String,
-        network: String,
-        android: String,
-    },
+    Status { volume: String, network: String },
     Notice(String),
     Launched(String),
     Saved(Result<(), String>),
@@ -42,6 +39,8 @@ pub fn start() -> Workers {
     let (assets, asset_rx) = mpsc::sync_channel::<Vec<Application>>(4);
     let (refresh, refresh_rx) = mpsc::sync_channel(1);
     let stop = Arc::new(AtomicBool::new(false));
+    let launcher =
+        crate::launcher::start(events.clone(), stop.clone()).expect("private launcher capability");
     let config = settings_path();
     let tx = events.clone();
     let stopped = stop.clone();
@@ -54,7 +53,10 @@ pub fn start() -> Workers {
                 .or_else(|_| std::env::var("LANG"))
                 .unwrap_or_else(|_| "es_ES".into());
             let dirs = data_directories();
-            let apps = discover(&dirs, &locale);
+            let apps = discover(&dirs, &locale)
+                .into_iter()
+                .filter(|app| !app.android)
+                .collect();
             let (settings, notice) = load_settings(&path);
             if tx.send(Event::Loaded(apps, settings, notice)).is_err() {
                 return;
@@ -93,6 +95,20 @@ pub fn start() -> Workers {
                             let _ = tx.send(Event::Saved(result));
                             Ok(String::new())
                         }
+                        Action::Launch(app) if app.android => match app.id.strip_prefix("apk:") {
+                            Some(component) => launcher
+                                .try_send(crate::launcher::Command::Launch {
+                                    component: component.into(),
+                                    name: app.name.clone(),
+                                    deadline: Instant::now() + Duration::from_secs(15),
+                                })
+                                .map(|_| format!("Solicitando {}…", app.name))
+                                .map_err(|_| {
+                                    "Control APK ocupado o desconectado; no se envió la solicitud"
+                                        .into()
+                                }),
+                            None => Err("Aplicación sin identidad del catálogo original".into()),
+                        },
                         Action::Launch(app) => launch(&app).map(|child| {
                             println!("SHELL_APP_STARTED id={} pid={}", app.id, child.id());
                             children.push((app.name.clone(), child));
@@ -138,7 +154,10 @@ pub fn start() -> Workers {
                                 )
                             })
                             .map(|_| "Radio Wi-Fi actualizada".into()),
-                        Action::Refresh => Ok("Consultando estado…".into()),
+                        Action::Refresh => {
+                            let _ = launcher.try_send(crate::launcher::Command::Refresh);
+                            Ok("Consultando estado…".into())
+                        }
                         Action::AndroidStart | Action::AndroidStop => Err(
                             "El control del runtime APK original aún no está conectado a Home"
                                 .into(),
@@ -195,15 +214,8 @@ pub fn start() -> Workers {
                 .unwrap_or_else(|_| "Red no disponible".into());
                 // No availability claim until the original runtime control
                 // connection has supplied a verified result.
-                let android = "Runtime APK · control sin conexión".to_string();
-                if events
-                    .send(Event::Status {
-                        volume,
-                        network,
-                        android,
-                    })
-                    .is_err()
-                {
+
+                if events.send(Event::Status { volume, network }).is_err() {
                     break;
                 }
                 let _ = refresh_rx.recv_timeout(Duration::from_secs(3));
@@ -363,6 +375,7 @@ fn launch(app: &Application) -> Result<Child, String> {
     command
         .env_remove("WAYLAND_SOCKET")
         .env_remove("ARCHTV_CONTROL_FD")
+        .env_remove("ARCHTV_LAUNCHER_FD")
         .stdin(Stdio::null())
         .stdout(Stdio::null())
         .stderr(Stdio::null());
@@ -391,6 +404,7 @@ fn run(program: &str, args: &[&str], timeout: Duration) -> Result<String, String
         .env("LC_ALL", "C")
         .env_remove("WAYLAND_SOCKET")
         .env_remove("ARCHTV_CONTROL_FD")
+        .env_remove("ARCHTV_LAUNCHER_FD")
         .stdin(Stdio::null())
         .stdout(Stdio::piped())
         .stderr(Stdio::null())

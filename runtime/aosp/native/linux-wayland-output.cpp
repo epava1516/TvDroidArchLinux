@@ -1,5 +1,8 @@
 #include "linux-wayland-output.h"
 #include "linux-wayland-input.h"
+#include "linux-launcher-control.h"
+#include "archtv-launcher-client-protocol.h"
+#include <memory>
 #include <wayland-client.h>
 #include "xdg-shell-client-protocol.h"
 #include <algorithm>
@@ -19,6 +22,32 @@ struct LinuxWaylandOutput::Impl {
     wl_shm* shm=nullptr;
     wl_seat* seat=nullptr;wl_keyboard* keyboard=nullptr;wl_pointer* pointer=nullptr;
     LinuxWaylandInput input;
+    archtv_launcher_bridge_v1* launcher=nullptr;
+    std::unique_ptr<LinuxLauncherWorker> launcher_worker;
+    void PumpLauncher() {
+        if(!launcher || !launcher_worker)return;
+        for(auto& result:launcher_worker->Poll()) {
+            uint32_t status=3;
+            switch(result.reply.status) {
+                case LauncherStatus::Returned:status=0;break;
+                case LauncherStatus::Rejected:status=1;break;
+                case LauncherStatus::BackendFailure:status=2;break;
+                case LauncherStatus::Unavailable:status=3;break;
+                case LauncherStatus::Indeterminate:status=4;break;
+            }
+            // Wayland string arguments cannot preserve embedded NUL. Reject
+            // the whole catalog instead of publishing silently altered labels.
+            bool valid=result.reply.detail.size()<=4096 && result.reply.detail.find('\0')==std::string::npos;
+            for(const auto& entry:result.reply.entries)valid=valid && entry.label.find('\0')==std::string::npos;
+            if(!valid) {
+                archtv_launcher_bridge_v1_complete(launcher,result.sequence,result.operation==2?4:2,"Unrepresentable original launcher response");
+                continue;
+            }
+            if(status==0 && result.operation==1)for(const auto& entry:result.reply.entries)
+                archtv_launcher_bridge_v1_entry(launcher,result.sequence,entry.component.c_str(),entry.label.c_str(),entry.category.c_str());
+            archtv_launcher_bridge_v1_complete(launcher,result.sequence,status,result.reply.detail.c_str());
+        }
+    }
     wl_output* output=nullptr;
     xdg_wm_base* wm=nullptr;
     wl_surface* surface=nullptr;
@@ -53,6 +82,7 @@ struct LinuxWaylandOutput::Impl {
         errno=ENODEV;return false;
     }
     bool Poll() {
+        PumpLauncher();
         input.Pump();
         if(!display || closed){errno=ENODEV;return false;}
         if(wl_display_dispatch_pending(display)<0)return false;
@@ -100,6 +130,17 @@ struct LinuxWaylandOutput::Impl {
     }
     static void Global(void* data,wl_registry* r,uint32_t name,const char* interface,uint32_t version) {
         auto& s=*static_cast<Impl*>(data);
+        if(!std::strcmp(interface,"archtv_launcher_bridge_v1") && !s.launcher) {
+            s.launcher=static_cast<archtv_launcher_bridge_v1*>(wl_registry_bind(r,name,&archtv_launcher_bridge_v1_interface,1));
+            s.launcher_worker=std::make_unique<LinuxLauncherWorker>();
+            static const archtv_launcher_bridge_v1_listener listener{
+                [](void* p,archtv_launcher_bridge_v1* bridge,uint32_t sequence,uint32_t operation,const char* component){
+                    auto& owner=*static_cast<Impl*>(p);
+                    if(!owner.launcher_worker->Submit(operation,sequence,component))
+                        archtv_launcher_bridge_v1_complete(bridge,sequence,operation==2?4:3,"Launcher worker did not admit request; never retry a launch automatically");
+                }};
+            archtv_launcher_bridge_v1_add_listener(s.launcher,&listener,&s);
+        }
         if(!std::strcmp(interface,"wl_compositor") && !s.compositor)s.compositor=static_cast<wl_compositor*>(wl_registry_bind(r,name,&wl_compositor_interface,std::min(version,4u)));
         else if(!std::strcmp(interface,"wl_seat") && !s.seat) {
             s.seat=static_cast<wl_seat*>(wl_registry_bind(r,name,&wl_seat_interface,std::min(version,5u)));
@@ -179,6 +220,8 @@ struct LinuxWaylandOutput::Impl {
         input.Reset();if(keyboard)wl_keyboard_destroy(keyboard);if(pointer)wl_pointer_destroy(pointer);if(seat)wl_seat_destroy(seat);
         if(top)xdg_toplevel_destroy(top);if(xsurface)xdg_surface_destroy(xsurface);if(surface)wl_surface_destroy(surface);
         for(auto& b:buffers){if(b.object)wl_buffer_destroy(b.object);if(b.data!=MAP_FAILED)munmap(b.data,b.bytes);}
+        if(launcher)archtv_launcher_bridge_v1_destroy(launcher);
+        launcher_worker.reset();
         if(output)wl_output_destroy(output);if(wm)xdg_wm_base_destroy(wm);if(shm)wl_shm_destroy(shm);if(compositor)wl_compositor_destroy(compositor);if(registry)wl_registry_destroy(registry);if(display)wl_display_disconnect(display);
     }
 };

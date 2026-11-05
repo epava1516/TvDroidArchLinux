@@ -6,10 +6,10 @@
     "semantic_hash": ""
   },
   "crates/archtv-compositor/Cargo.toml": {
-    "mtime": 1793315301.5817964,
-    "seen": 1793647620.6390457,
-    "ast_hash": "e07235a9c36b0cb03cd3f0b36b5cfa14",
-    "semantic_hash": "e07235a9c36b0cb03cd3f0b36b5cfa14"
+    "mtime": 1793900964.163597,
+    "seen": 1793902237.7704687,
+    "ast_hash": "e6694ecc1b5cde4769735a45a067b5be",
+    "semantic_hash": ""
   },
   "crates/archtv-compositor/src/drm.rs": {
     "mtime": 1793367973.0878084,
@@ -42,21 +42,21 @@
     "semantic_hash": ""
   },
   "crates/archtv-compositor/src/main.rs": {
-    "mtime": 1793801341.429322,
-    "seen": 1793801686.4239097,
-    "ast_hash": "42e7fc9c5cd2c2c10b12f577afc5c726",
+    "mtime": 1793900964.253839,
+    "seen": 1793902237.7707329,
+    "ast_hash": "59921eb1807be54d5ac226d1ca3b3fa3",
     "semantic_hash": ""
   },
   "crates/archtv-compositor/src/session.rs": {
-    "mtime": 1793316314.737812,
-    "seen": 1793647620.6390703,
-    "ast_hash": "087b619a5c70f4893c749a1f02672ca7",
-    "semantic_hash": "087b619a5c70f4893c749a1f02672ca7"
+    "mtime": 1793901191.6937037,
+    "seen": 1793902237.7707374,
+    "ast_hash": "7696f8488b06f2559d8f3e554ffa919a",
+    "semantic_hash": ""
   },
   "crates/archtv-compositor/src/state.rs": {
-    "mtime": 1793891347.3066995,
-    "seen": 1793892565.5182712,
-    "ast_hash": "69ae48b1ba2ebee1fa2f3633289f54ec",
+    "mtime": 1793901191.6937037,
+    "seen": 1793902237.7707415,
+    "ast_hash": "689fafc388bc4511048ecdfa30834a7c",
     "semantic_hash": ""
   },
   "crates/archtv-compositor/src/winit.rs": {
@@ -90,9 +90,9 @@
     "semantic_hash": ""
   },
   "crates/archtv-shell/src/main.rs": {
-    "mtime": 1793320999.5639086,
-    "seen": 1793647620.6391153,
-    "ast_hash": "34eba7094bc8e3630d2f76ecd099f425",
+    "mtime": 1793901191.6937037,
+    "seen": 1793902237.7713695,
+    "ast_hash": "9aa68494603b3f54050442977b3a5948",
     "semantic_hash": ""
   },
   "crates/archtv-shell/src/model.rs": {
@@ -108,9 +108,9 @@
     "semantic_hash": ""
   },
   "crates/archtv-shell/src/runtime.rs": {
-    "mtime": 1793321776.0589685,
-    "seen": 1793647620.6391246,
-    "ast_hash": "bb680dce3ed5944289248c1d28d54e82",
+    "mtime": 1793901191.7803717,
+    "seen": 1793902237.7714622,
+    "ast_hash": "e344f21616f26fff0d25d9194c5bf072",
     "semantic_hash": ""
   },
   "crates/archtv-shell/src/view.rs": {
@@ -120,9 +120,9 @@
     "semantic_hash": ""
   },
   "crates/archtv-shell/src/worker.rs": {
-    "mtime": 1793891502.2087877,
-    "seen": 1793892565.5192678,
-    "ast_hash": "9a5474bb1a3f92a6cc09f67975bb2bc2",
+    "mtime": 1793901191.6937037,
+    "seen": 1793902237.7715118,
+    "ast_hash": "7fbb6bd4e1663be706877a069c52f4bb",
     "semantic_hash": ""
   },
   "crates/archtv-test-client/Cargo.toml": {
@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793900654.1091485,
-    "seen": 1793900668.9632792,
-    "ast_hash": "87843f652715acee45b88be9c1ed36a3",
+    "mtime": 1793902921.5177467,
+    "seen": 1793902936.16065,
+    "ast_hash": "836bf47455c89c1a4a8dffe41b54e2cf",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793900214.9923444,
-    "seen": 1793900228.456162,
-    "ast_hash": "6e14d249d96e0289dd47bf9629914315",
+    "mtime": 1793902921.522464,
+    "seen": 1793902936.160858,
+    "ast_hash": "2e3724c571a0d1287396ce6197787528",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793900214.9987526,
-    "seen": 1793900228.4565935,
-    "ast_hash": "fc6337ff56581f4c28a9149f37ad3e3f",
+    "mtime": 1793902921.5259848,
+    "seen": 1793902936.1610892,
+    "ast_hash": "a05b945b3242d249c37aa84e2d0a48c8",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -1716,9 +1716,9 @@
     "semantic_hash": ""
   },
   "docs/EVIDENCIAS.md": {
-    "mtime": 1793899633.0185902,
-    "seen": 1793899648.7208629,
-    "ast_hash": "a282ddd6ffcc8f5ab63cb7000f9a4963",
+    "mtime": 1793902921.5278523,
+    "seen": 1793902936.1609054,
+    "ast_hash": "9d15c99231fb6c6c0166ca462ef566b2",
     "semantic_hash": ""
   },
   "fixtures/aosp-framework-space/FrameworkSpaceProbe.java": {
@@ -1986,9 +1986,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-wayland-output.cpp": {
-    "mtime": 1793891214.7950892,
-    "seen": 1793892565.529682,
-    "ast_hash": "9c8114a3d1956d13b38aab029487b7aa",
+    "mtime": 1793901191.0334265,
+    "seen": 1793902237.778903,
+    "ast_hash": "eca837a353c9e5f9b4c2ba017868ffc9",
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-wayland-output.h": {
@@ -2034,9 +2034,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/install-markor.sh": {
-    "mtime": 1793896555.2979326,
-    "seen": 1793896929.6021302,
-    "ast_hash": "758ea0e2fbecc724a9e135a850124dae",
+    "mtime": 1793901367.2543266,
+    "seen": 1793902237.7772477,
+    "ast_hash": "e0637af9cbf80ca8e2fe1db7e72d8859",
     "semantic_hash": ""
   },
   "scripts/run_completion.py": {
@@ -2244,9 +2244,9 @@
     "semantic_hash": ""
   },
   "tools/aosp/run_markor_normal_input.py": {
-    "mtime": 1793899039.4619045,
-    "seen": 1793899648.7129743,
-    "ast_hash": "db8e630cb5594a10e812d362e6ffa8f1",
+    "mtime": 1793902617.3792374,
+    "seen": 1793902632.51714,
+    "ast_hash": "41a8b89497a7481910e5bc69dcccceff",
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/org/archtv/aosplinux/LauncherControlBridge.java": {
@@ -2271,6 +2271,18 @@
     "mtime": 1793900551.313178,
     "seen": 1793900668.9558048,
     "ast_hash": "88dd012b79b39451971d059f3947d43d",
+    "semantic_hash": ""
+  },
+  "crates/archtv-compositor/src/launcher.rs": {
+    "mtime": 1793901469.734693,
+    "seen": 1793902237.7707262,
+    "ast_hash": "9ce2ba8f7443dcab825814d6b9377543",
+    "semantic_hash": ""
+  },
+  "crates/archtv-shell/src/launcher.rs": {
+    "mtime": 1793901469.7580268,
+    "seen": 1793902237.7713134,
+    "ast_hash": "61f8863e0d69e19f535688bee6c8b992",
     "semantic_hash": ""
   }
 }

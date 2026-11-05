@@ -8,6 +8,7 @@ It neither consumes the run result nor sends a continuation.
 import hashlib
 import json
 import os
+import re
 from pathlib import Path
 import subprocess
 import sys
@@ -93,6 +94,29 @@ def run(cp):
                         return sample
             time.sleep(0.2)
 
+    def fresh_unclassified_frame(after, purpose):
+        # Home/catalog pixels are new in this experiment. Preserve a real
+        # capture for visual review; do not relabel an unknown hash as a pass.
+        while True:
+            owner()
+            rows = read_json(cp / "capture-samples.json")
+            if rows and rows[-1]["observed_monotonic"] > after:
+                sample = rows[-1]
+                path = Path(sample["path"])
+                assert path.parent == cp and not path.is_symlink()
+                if path.is_file():
+                    with path.open("rb") as stream:
+                        digest = hashlib.file_digest(stream, "sha256").hexdigest()
+                    assert path.name == "smithay-frame-" + digest + ".ppm"
+                    result["steps"].append({"capture": sample, "sha256": digest,
+                        "purpose": purpose, "visual_classification": "pending_review"})
+                    save()
+                    return sample
+            time.sleep(0.2)
+
+    def compositor_log():
+        return (cp / "compositor.log").read_text(errors="replace")
+
     def send(operation):
         nonlocal commands
         owner()
@@ -126,6 +150,42 @@ def run(cp):
                 assert root["boot_id"] == before["boot_id"]
                 break
             time.sleep(0.1)
+        if before.get("markor_home_launch"):
+            result["plan"] = "Home catalog search and original launcher RPC, no CLI relaunch"
+            frame(MAIN, 0)
+            frame(EDITOR, send({"op": "click", "position": [300, 410]}))
+            frame(MAIN, send({"op": "keys", "value": ["back"]}))
+            previous_handoffs = compositor_log().count("ANDROID_TASK_HOME_HANDOFF")
+            sent = send({"op": "keys", "value": ["back"]})
+            while True:
+                owner()
+                log = compositor_log()
+                if (log.count("ANDROID_TASK_HOME_HANDOFF") > previous_handoffs
+                        and re.search(r"SHELL_ORIGINAL_APK_CATALOG count=[1-9][0-9]*", log)):
+                    break
+                time.sleep(0.2)
+            fresh_unclassified_frame(sent, "Home with original catalog")
+            sent = send({"op": "text", "value": "markor"})
+            while True:
+                owner()
+                if "SHELL_KEY Character('r') page=Search" in compositor_log():
+                    break
+                time.sleep(0.2)
+            fresh_unclassified_frame(sent, "Physical Home search for Markor")
+            previous_returns = compositor_log().count("SHELL_APK_ORIGINAL_START_REQUEST_RETURNED")
+            sent = send({"op": "keys", "value": ["enter"]})
+            while True:
+                owner()
+                if compositor_log().count("SHELL_APK_ORIGINAL_START_REQUEST_RETURNED") > previous_returns:
+                    break
+                time.sleep(0.2)
+            frame(MAIN, sent)
+            frame(EDITOR, send({"op": "click", "position": [300, 410]}))
+            result.update(status="physical_home_search_rpc_return_and_known_Markor_frames_observed",
+                          command_count=commands, visual_home_search_review="pending",
+                          scope="Selected physical Home-search/RPC-return and existing Markor348 frames only. Correlate original PMS/Instrumentation/AMS/FUSE/identity/recovery records; no broad APK or MAC acceptance.")
+            save()
+            return
         frame(MAIN, 0)
         frame(EDITOR, send({"op": "click", "position": [300, 410]}))
         frame(MAIN, send({"op": "keys", "value": ["back"]}))

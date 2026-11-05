@@ -240,10 +240,26 @@ impl State {
                         settings.hidden.len(),
                         settings.recent.len()
                     );
+                    let android = self
+                        .model
+                        .apps
+                        .iter()
+                        .filter(|app| app.android)
+                        .cloned()
+                        .collect::<Vec<_>>();
                     self.model.apps = apps;
+                    self.model.apps.extend(android);
                     self.model.settings = settings;
                     self.model.notice = notice;
                     self.model.loading = false;
+                    self.model.clamp();
+                    self.dirty = true;
+                }
+                Event::AndroidCatalog(apps, status) => {
+                    println!("SHELL_ORIGINAL_APK_CATALOG count={}", apps.len());
+                    self.model.apps.retain(|app| !app.android);
+                    self.model.apps.extend(apps);
+                    self.model.android = status;
                     self.model.clamp();
                     self.dirty = true;
                 }
@@ -266,18 +282,10 @@ impl State {
                     self.icons.insert(id, icon);
                     self.dirty = true;
                 }
-                Event::Status {
-                    volume,
-                    network,
-                    android,
-                } => {
-                    if self.model.volume != volume
-                        || self.model.network != network
-                        || self.model.android != android
-                    {
+                Event::Status { volume, network } => {
+                    if self.model.volume != volume || self.model.network != network {
                         self.model.volume = volume;
                         self.model.network = network;
-                        self.model.android = android;
                         self.dirty = true;
                     }
                 }

@@ -313,10 +313,23 @@ if [ -f /data/local/tmp/archtv-mc1/archtv-markor-normal-close-token ]; then
     /system/bin/printf 'MARKOR_NORMAL_TOP_RESUMED_ABSENT NOT_TASK_FINISH_OR_APK_ACCEPTANCE\n'
     /system/bin/sha256sum "$note" > "$normal_out/markor-normal-note-background.txt"
     /system/bin/cmp "$normal_out/markor-normal-note-before.txt" "$normal_out/markor-normal-note-background.txt"
-    /system/bin/sleep 3
-    /system/bin/cmd activity start-activity -W --user 0 -n "$component" > "$normal_out/markor-normal-relaunch.txt" 2>&1
-    /system/bin/grep -qx 'Status: ok' "$normal_out/markor-normal-relaunch.txt"
-    normal_dump "$normal_out/markor-normal-activities-relaunched.txt"
+    if [ -f /data/local/tmp/archtv-mc1/archtv-markor-home-launch ]; then
+        # Observe only. The actual Home user action must request the original
+        # gateway launch. Never substitute a CLI relaunch or write its result.
+        [ "$(/system/bin/cat /data/local/tmp/archtv-mc1/archtv-markor-home-launch)" = 1 ] || exit 1
+        n=0
+        while [ "$n" -lt "$budget" ]; do
+            normal_dump "$normal_out/markor-normal-activities-relaunched.txt"
+            if normal_markor_resumed "$normal_out/markor-normal-activities-relaunched.txt"; then break; fi
+            n=$((n+2)); /system/bin/sleep 2
+        done
+        [ "$n" -lt "$budget" ] || exit 1
+    else
+        /system/bin/sleep 3
+        /system/bin/cmd activity start-activity -W --user 0 -n "$component" > "$normal_out/markor-normal-relaunch.txt" 2>&1
+        /system/bin/grep -qx 'Status: ok' "$normal_out/markor-normal-relaunch.txt"
+        normal_dump "$normal_out/markor-normal-activities-relaunched.txt"
+    fi
     normal_markor_resumed "$normal_out/markor-normal-activities-relaunched.txt" || exit 1
     /system/bin/sha256sum "$note" > "$normal_out/markor-normal-note-relaunched.txt"
     /system/bin/cmp "$normal_out/markor-normal-note-before.txt" "$normal_out/markor-normal-note-relaunched.txt"

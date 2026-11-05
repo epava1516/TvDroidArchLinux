@@ -36,7 +36,8 @@ impl Supervisor {
             .args(&self.command[1..])
             .env("WAYLAND_DISPLAY", &state.socket_name)
             .env_remove("WAYLAND_SOCKET")
-            .env_remove("ARCHTV_CONTROL_FD");
+            .env_remove("ARCHTV_CONTROL_FD")
+            .env_remove("ARCHTV_LAUNCHER_FD");
         let mut inherited = Vec::new();
         if self.shell {
             // These connections are granted only to our child. A public Wayland
@@ -51,6 +52,10 @@ impl Supervisor {
             )?;
             command.env("WAYLAND_SOCKET", client.as_raw_fd().to_string());
             inherited.push(client);
+            let (launcher, child_launcher) = UnixStream::pair()?;
+            state.launcher.attach_home(launcher)?;
+            command.env("ARCHTV_LAUNCHER_FD", child_launcher.as_raw_fd().to_string());
+            inherited.push(child_launcher);
             let (control, child_control) = UnixStream::pair()?;
             control.set_nonblocking(true)?;
             command.env("ARCHTV_CONTROL_FD", child_control.as_raw_fd().to_string());

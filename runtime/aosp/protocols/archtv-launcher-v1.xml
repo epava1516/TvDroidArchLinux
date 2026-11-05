@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<protocol name="archtv_launcher">
+  <copyright>Copyright 2026 Arch TV contributors. MIT license.</copyright>
+  <interface name="archtv_launcher_bridge_v1" version="1">
+    <description summary="private original launcher bridge">
+      Only the kernel-authenticated Android display connection may bind.
+      Complete succeeds only after all catalog entries; a launch return is
+      never evidence of a frame. Requests are never automatically retried.
+    </description>
+    <request name="destroy" type="destructor"/>
+    <request name="entry">
+      <arg name="sequence" type="uint"/>
+      <arg name="component" type="string"/>
+      <arg name="label" type="string"/>
+      <arg name="category" type="string"/>
+    </request>
+    <request name="complete">
+      <arg name="sequence" type="uint"/>
+      <arg name="status" type="uint" summary="0 returned, 1 rejected, 2 backend failure, 3 unavailable, 4 indeterminate"/>
+      <arg name="message" type="string"/>
+    </request>
+    <event name="call">
+      <arg name="sequence" type="uint"/>
+      <arg name="operation" type="uint" summary="1 catalog, 2 launch"/>
+      <arg name="component" type="string" summary="empty for catalog"/>
+    </event>
+  </interface>
+</protocol>

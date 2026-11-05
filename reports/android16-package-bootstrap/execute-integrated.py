@@ -120,11 +120,14 @@ def verify_original_storage_metadata(native_stderr, worker_pid, expected_mode, d
  return {'verified':True,'observer_pid':int(worker_pid),'observer_context':'u:r:init:s0','enforcing':int(expected_mode),'namespace':'default','ce_device':device,'ce_inode':int(ce['ce_inode']),'hash_library':library,'files':observed,'scope':'Original init readonly post-service-close fixed metadata/hash witness; not permission semantics, FBE, isolation or general APK acceptance'}
 
 
-def verify_original_normal_back(workflow, token):
+def verify_original_normal_back(workflow, token, launch_source="original_cli"):
  """Validate protected original observations, not the cause of foreground exit."""
  assert 'capture_error' not in workflow,'Incomplete original workflow capture'
  normal=workflow['normal_back'];assert normal['token']==token and re.fullmatch('[0-9a-f]{8}',token)
+ assert launch_source in ['original_cli','original_home_gateway']
+ assert normal.get('launch_source','original_cli')==launch_source,'Wrong relaunch authority'
  files=normal['files'];required={'activities-before.txt','activities-background.txt','activities-relaunched.txt','processes-before.txt','processes-background.txt','note-bytes.bin','note-before.txt','note-background.txt','note-relaunched.txt','relaunch.txt'}
+ if launch_source=='original_home_gateway':required.remove('relaunch.txt')
  assert set(files)==required,'Missing/extra normal Back evidence'
  data={}
  for name,row in files.items():
@@ -142,8 +145,9 @@ def verify_original_normal_back(workflow, token):
  expected=('archtv note '+token+'\n').encode();assert data['note-bytes.bin']==expected,'Wrong persisted note bytes'
  note_sha=hashlib.sha256(expected).hexdigest();hash_line=(note_sha+'  /storage/emulated/0/Documents/markor/archtv-'+token+'.md\n').encode()
  assert all(data['note-'+phase+'.txt']==hash_line for phase in ['before','background','relaunched']),'Original note hash changed'
- assert 'Status: ok' in data['relaunch.txt'].decode().splitlines(),'Original relaunch not successful'
- return {'verified':True,'resumed':resumed,'note_sha256':note_sha,'token':token,'scope':'Original AMS top-resumed sequence and unchanged original FUSE note hashes only; correlate physical input/lifecycle/crashes separately. Not task finish, process death, full app compatibility or isolation acceptance'}
+ if launch_source=='original_cli':
+  assert 'Status: ok' in data['relaunch.txt'].decode().splitlines(),'Original relaunch not successful'
+ return {'verified':True,'launch_source':launch_source,'resumed':resumed,'note_sha256':note_sha,'token':token,'scope':'Original AMS top-resumed sequence and unchanged original FUSE note hashes only; correlate physical input/lifecycle/crashes separately. Not task finish, process death, full app compatibility or isolation acceptance'}
 
 
 def verify_original_installed_hashes(text, installed_path, apk_sha):
@@ -530,7 +534,7 @@ root_code+="\nshutil.copyfile(Path("+repr(str(apk_path))+"),root/'data/local/tmp
 root_code+="""
 import hashlib
 shell_inputs=[]
-for relative in ['bin/install-markor.sh','etc/archtv-install-package','etc/archtv-media-test-name','etc/archtv-markor-workflow-token','etc/archtv-markor-workflow-budget','etc/archtv-markor-normal-close-token','etc/archtv-markor-normal-close-budget']:
+for relative in ['bin/install-markor.sh','etc/archtv-install-package','etc/archtv-media-test-name','etc/archtv-markor-workflow-token','etc/archtv-markor-workflow-budget','etc/archtv-markor-normal-close-token','etc/archtv-markor-normal-close-budget','etc/archtv-markor-home-launch']:
  source=root/'vendor'/relative
  if not source.exists():
   assert relative!='bin/install-markor.sh','Missing external installer payload'
@@ -721,8 +725,11 @@ try:
  if normal_token_path.is_file():
   normal_token=normal_token_path.read_text().strip()
   assert len(normal_token)==8 and all(c in '0123456789abcdef' for c in normal_token)
-  workflow['normal_back']={'token':normal_token,'files':{},'scope':'Original AMS/hash observations after physical Back; no task-finish, process-death or general APK acceptance inferred'}
-  for name in ['activities-before.txt','activities-background.txt','activities-relaunched.txt','processes-before.txt','processes-background.txt','note-bytes.bin','note-before.txt','note-background.txt','note-relaunched.txt','relaunch.txt']:
+  home_launch=Path('/data/local/tmp/archtv-mc1/archtv-markor-home-launch').is_file()
+  workflow['normal_back']={'launch_source':'original_home_gateway' if home_launch else 'original_cli','token':normal_token,'files':{},'scope':'Original AMS/hash observations after physical Back; no task-finish, process-death or general APK acceptance inferred'}
+  names=['activities-before.txt','activities-background.txt','activities-relaunched.txt','processes-before.txt','processes-background.txt','note-bytes.bin','note-before.txt','note-background.txt','note-relaunched.txt']
+  if not home_launch:names.append('relaunch.txt')
+  for name in names:
    src=Path('/data/local/tmp/archtv-mc1')/('markor-normal-'+name)
    info=src.lstat();assert stat.S_ISREG(info.st_mode) and info.st_uid==2000 and not stat.S_IMODE(info.st_mode)&0o022 and 0<info.st_size<=1048576
    context=os.getxattr(src,'security.selinux').rstrip(bytes([0])).decode()
@@ -1188,7 +1195,7 @@ status_context_after="""    entry['status_bounded']=len(status)<=16384
 """
 text=text.replace(status_error_line,status_context_after+status_error_line,1)
 if build_options.get('markor_normal_close_token'):
- text+="\nnormal_back_result=verify_original_normal_back(workflow,"+repr(build_options['markor_normal_close_token'])+")\nprint('MARKOR_NORMAL_ORIGINAL_OBSERVATIONS_VERIFIED '+json.dumps(normal_back_result),flush=True)\n"
+ text+="\nnormal_back_result=verify_original_normal_back(workflow,"+repr(build_options['markor_normal_close_token'])+","+repr('original_home_gateway' if build_options.get('markor_home_launch') else 'original_cli')+")\nprint('MARKOR_NORMAL_ORIGINAL_OBSERVATIONS_VERIFIED '+json.dumps(normal_back_result),flush=True)\n"
 text=inspect.getsource(verify_original_fork_identities)+'\n'+inspect.getsource(verify_original_storage_metadata)+'\n'+inspect.getsource(verify_original_installed_hashes)+'\n'+inspect.getsource(verify_original_normal_back)+'\n'+text
 
 

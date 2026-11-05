@@ -894,6 +894,30 @@
         "restore": "/home/tv/recuperacion-archtv/20261105T163555Z-home355/restore-cold-payload-extra341.py",
         "restore_sha256": "0646ae22f3ad940725f251d2543ed2973ba3469864b2e340b4d7df582f34905c",
         "scope": "Closed historical341 raw payload losslessly archived; restore exact bytes before using raw path, no userdata removal."
+      },
+      "launcher356_archives": {
+        "receipt": "/home/tv/recuperacion-archtv/20261105-launcher-control356/cold-payload-archives.json",
+        "receipt_sha256": "bc14caa37f6a7aab2c7fef2f64c57d79c1e38eb536c6cee1939fb2e3ad98f0dc",
+        "restore": "/home/tv/recuperacion-archtv/20261105-launcher-control356/restore-cold-payload.py",
+        "restore_sha256": "e45f772620b09e050c5d6fa8dd7d1936c9e30b3d0c832430ef0e646dd308a7c3",
+        "candidates": [
+          329,
+          336,
+          337,
+          338
+        ],
+        "scope": "Exact historical read-only payload bytes preserved in full verifiedzstd, raw paths need exact restoration. Current no-unit/no-loop closure separately recorded; not a missing historical backing-after or VM/data restore claim. Sources, userdata and current355 unchanged."
+      },
+      "launcher356_archives-extra": {
+        "receipt": "/home/tv/recuperacion-archtv/20261105-launcher-control356/cold-payload-archives-extra.json",
+        "receipt_sha256": "c73e6fd6981dc3bd192a71cfb8b81fd5b7fd6cd0500397caeeb23c8d66cc5b62",
+        "restore": "/home/tv/recuperacion-archtv/20261105-launcher-control356/restore-cold-payload-extra.py",
+        "restore_sha256": "a990a44b09c689c0e57c283073158f24a642685524457fb55e80537fcbe57439",
+        "candidates": [
+          343,
+          345
+        ],
+        "scope": "Exact historical read-only payload bytes preserved in full verifiedzstd, raw paths need exact restoration. Current no-unit/no-loop closure separately recorded; not a missing historical backing-after or VM/data restore claim. Sources, userdata and current355 unchanged."
       }
     },
     "x509_reopen_correction": {
@@ -2870,6 +2894,29 @@
         "record": "/home/tv/recuperacion-archtv/20261105-launcher-control356/native-client-preparation.json",
         "sha256": "ebc19b8a84f82f2a4408445bb580687b283caf9277cefa51366222b3b032e0d3",
         "scope": "Native original ATL1 client and bounded worker implemented, host regressions and Android36/Bionic compilation positive. Not linked or runtime-executed; no UI launch claim."
+      },
+      "launcher_transport_preparation356": {
+        "record": "/home/tv/recuperacion-archtv/20261105-launcher-control356/transport-preparation.json",
+        "sha256": "69f832c63e588d6d9886c047d5f3a913a44a0caf0209be8579b48dc5a1d60ff9",
+        "runtime_executed": false,
+        "scope": "Transport wired in code, compiled/linked as coherent candidate356; original catalog/Home selection/launch/frame not yet demonstrated together. CLI relaunch disabled in Home test mode; nine AMS/FUSE outputs must be correlated with real physical input and RPC/frame logs.",
+        "next": "Deploy hashed root-owned frontend under existing69 labels, trim regenerable check metadata only if needed for recovery margin, fresh full backup and UUID-bound original integration run.",
+        "frontend_deployment": {
+          "path": "/home/tv/recuperacion-archtv/20261105-launcher-control356/frontend-deployment.json",
+          "sha256": "db133055cc77fb7c450157f0543e6eed7bd890128dabdd585b1138dfa49ab1de"
+        },
+        "host_before_deployment": {
+          "path": "/home/tv/recuperacion-archtv/20261105-launcher-control356/before-host-deployment.json",
+          "sha256": "0924a6641e819e5007cd92ea62d04986553215a393042f153e2332d1bef887bc"
+        },
+        "regenerable_cache_disposal": {
+          "path": "/home/tv/recuperacion-archtv/20261105-launcher-control356/check-cache-disposal.json",
+          "sha256": "7dd5604d7815476551b2d51b2c347ed1db90f3928be401ed18722d2f52b0f872"
+        },
+        "prepared_run": {
+          "path": "/home/tv/recuperacion-archtv/20261105-launcher-control356/prepared-run.json",
+          "sha256": "55b4612dbb5cbec8d6110d177cf3e49d6a1024827fbe5060bcc215aeaaf81dac"
+        }
       }
     }
   },

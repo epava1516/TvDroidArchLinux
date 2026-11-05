@@ -1,5 +1,9 @@
 # Índice de evidencias
 
+Preparación356: frontends Rust y HWC enlazados, cohorte original empaquetada, seis regresiones host de transporte positivas y despliegue root con etiquetas69 comprobado. No ejecución original conjunta todavía; no confundir la proyección sintética del verificador Home con lanzamiento real. En el modo Home el instalador no relanza por CLI. Registro y hashes: informe ART →launcher_transport_preparation356, checkpoint /home/tv/recuperacion-archtv/20261105-launcher-control356. Recibos de archivo sin pérdida329/336/337/338 y343/345 e instrucciones exactas de restauración enlazados en historical_artifact_preservation;355 sigue crudo. Sólo se retiró además metadata regenerable de cargo-check, con binarios productivos y de prueba conservados.
+
+Histórico anterior:
+
 355: recorrido seleccionado Markor → Atrás → Home Rust → relanzamiento original WARM → nota intacta comprobado, con diez outputs originales, guardia de identidades y tres servicios propietarios terminados correctamente. Nativa0/exterior0; recuperación y consumo verificados. El ensayo adicional de seis entradas NO pasa: la quinta llegó después del cierre de la superficie Android. Se conservan ambos intentos y sus fallos. No acredita lanzador UI, compatibilidad general, aislamiento ni rendimiento. Siguiente integración funcional: catálogo y lanzamiento originales desde Home Rust; R1, ARM/GMS/DRM, instalación/actualización y cobertura amplia siguen abiertos. Evidencia canónica: informe ART →coherent_cache_candidate.profile_coherence_experiment.integration355; checkpoint /home/tv/recuperacion-archtv/57bcd21d-b722-46a9-86fb-e95c916a53bb-markor-software-launch.
 
 Histórico anterior:

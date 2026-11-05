@@ -24,6 +24,7 @@ use smithay::{
 };
 
 pub struct TvCompositor {
+    pub launcher: crate::launcher::LauncherBroker,
     pub pressed_by_device: std::collections::HashMap<
         String,
         std::collections::HashSet<smithay::input::keyboard::Keycode>,
@@ -63,6 +64,16 @@ impl TvCompositor {
         let start_time = std::time::Instant::now();
 
         let dh = display.handle();
+        crate::launcher::initialize(&dh);
+        event_loop.handle().insert_source(
+            smithay::reexports::calloop::timer::Timer::immediate(),
+            |_, _, state| {
+                state.launcher.pump();
+                smithay::reexports::calloop::timer::TimeoutAction::ToDuration(
+                    std::time::Duration::from_millis(50),
+                )
+            },
+        )?;
 
         // Here we initialize implementations of some wayland protocols
         // Some of them require us to implement traits on the TvCompositor state,
@@ -112,6 +123,7 @@ impl TvCompositor {
         let loop_signal = event_loop.get_signal();
 
         Ok(Self {
+            launcher: Default::default(),
             pressed_by_device: Default::default(),
             loop_handle: event_loop.handle(),
             session: None,

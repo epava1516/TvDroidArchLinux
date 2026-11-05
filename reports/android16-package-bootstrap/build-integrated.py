@@ -7,7 +7,7 @@ r=Path(__file__).resolve().parents[2]
 allowed_flags = {'--checkpoint-diagnostic', '--keymint-component', '--keystore-component',
                  '--keystore-java-component', '--software-security', '--native-audio',
                  '--audio-write-diagnostic', '--audio-synchronous-pcm', '--audio-production-dynamics', '--coherent-art', '--coherent-art-images',
-                 '--memfd-label-original', '--media-test', '--audio-only-media'}
+                 '--memfd-label-original', '--media-test', '--audio-only-media', '--markor-home-launch'}
 allowed_values = ('--observe-ms=', '--userdata-name=', '--apk-id=', '--markor-workflow-token=', '--markor-normal-close-token=')
 assert all(a in allowed_flags or any(a.startswith(prefix) for prefix in allowed_values)
            for a in sys.argv[2:]), 'Unknown integrated build option'
@@ -16,7 +16,7 @@ tracked_inputs=['Cargo.toml','Cargo.lock','crates/archtv-core/Cargo.toml',*[str(
 tracked_inputs.extend(['reports/android16-package-bootstrap/userdata.py','reports/android16-hwc3-wayland/build-minigbm.py','reports/android16-hwc3-wayland/link-minigbm.py'])
 tracked_inputs.append('reports/android16-package-bootstrap/build-bootstrap-xml.py')
 tracked_inputs.extend(['runtime/aosp/linux-services/archtv/runtime/SelectedRuntime.java','tools/aosp/ZygoteSelectedEntryPlan.java','tools/aosp/build_selected_zygote_framework.py','reports/android16-selected-display/build-entry.py','runtime/aosp/android16-qpr2/patches/framework-zygote-selected-entry.patch'])
-tracked_inputs.extend(['runtime/aosp/linux-services/org/archtv/aosplinux/LauncherControlBridge.java','runtime/aosp/linux-services/org/archtv/aosplinux/TaskFocusObserver.java','tools/aosp/TaskStackObserverGlue.java','runtime/aosp/native/linux-wayland-task-protocol.h'])
+tracked_inputs.extend(['runtime/aosp/protocols/archtv-launcher-v1.xml','runtime/aosp/native/linux-launcher-control.h','runtime/aosp/linux-services/org/archtv/aosplinux/LauncherControlBridge.java','runtime/aosp/linux-services/org/archtv/aosplinux/TaskFocusObserver.java','tools/aosp/TaskStackObserverGlue.java','runtime/aosp/native/linux-wayland-task-protocol.h'])
 tracked_inputs.append('reports/android16-network-bootstrap/boundary.py')
 tracked_inputs.append('scripts/run_completion.py')
 tracked_inputs.extend(['reports/android16-package-bootstrap/build-libcutils-memory.py','runtime/aosp/android16-qpr2/patches/libcutils-memfd-original-label.patch','runtime/aosp/android16-qpr2/patches/libcutils-memfd-original-label.json'])
@@ -131,6 +131,8 @@ normal_close_token=next((a.split('=',1)[1] for a in sys.argv[2:] if a.startswith
 assert normal_close_token is None or (apk_id=='markor' and software_platform and observe_ms>=30000 and re.fullmatch('[0-9a-f]{8}',normal_close_token))
 assert not (workflow_token and normal_close_token), 'Forced and normal close experiments must remain separate'
 normal_close_budget_seconds=observe_ms//1000-15 if normal_close_token else None
+home_launch='--markor-home-launch' in sys.argv[2:]
+assert not home_launch or normal_close_token is not None
 keystore_java='--keystore-java-component' in sys.argv[2:] or software_platform
 keystore_component='--keystore-component' in sys.argv[2:] or keystore_java
 assert not (keymint_component and keystore_component)
@@ -138,7 +140,7 @@ if software_platform:
  lines[0]=lines[0].replace('-Xmx768m','-Xmx512m')
  lines.append('    setenv ARCHTV_SOFTWARE_SECURITY_PROFILE software-platform-v1')
 experiment_kind='markor-software-launch' if software_platform else 'keystore-java-component' if keystore_java else 'keystore-component' if keystore_component else ('keymint-component' if keymint_component else 'markor-launch')
-(out/'build-options.json').write_text(json.dumps({'apk_target':apk_target,'media_test':media_test,'coherent_art':coherent_art,'coherent_art_images':coherent_art_images,'memory_library':memory_library,'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component and not software_platform,'software_security_platform':software_platform,'observe_ms':observe_ms,'persistent_userdata_name':userdata_name,'markor_workflow_token':workflow_token,'markor_workflow_budget_seconds':workflow_budget_seconds,'markor_normal_close_token':normal_close_token,'markor_normal_close_budget_seconds':normal_close_budget_seconds,'experiment_kind':experiment_kind,'original_apex_bootstrap':True,'original_logd':True,'preconnected_wayland':True,'original_system_dma_heap':True,'native_audio':native_audio,'audio_write_diagnostic':audio_write_diagnostic,'audio_synchronous_pcm':audio_synchronous_pcm,'audio_production_dynamics':audio_production_dynamics},indent=2)+'\n')
+(out/'build-options.json').write_text(json.dumps({'apk_target':apk_target,'media_test':media_test,'coherent_art':coherent_art,'coherent_art_images':coherent_art_images,'memory_library':memory_library,'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component and not software_platform,'software_security_platform':software_platform,'observe_ms':observe_ms,'persistent_userdata_name':userdata_name,'markor_workflow_token':workflow_token,'markor_workflow_budget_seconds':workflow_budget_seconds,'markor_home_launch':home_launch,'markor_normal_close_token':normal_close_token,'markor_normal_close_budget_seconds':normal_close_budget_seconds,'experiment_kind':experiment_kind,'original_apex_bootstrap':True,'original_logd':True,'preconnected_wayland':True,'original_system_dma_heap':True,'native_audio':native_audio,'audio_write_diagnostic':audio_write_diagnostic,'audio_synchronous_pcm':audio_synchronous_pcm,'audio_production_dynamics':audio_production_dynamics},indent=2)+'\n')
 if checkpoint_diagnostic:lines.append('    setenv ARCHTV_CHECKPOINT_DIAGNOSTIC 1')
 lines=[l for l in lines if not any(l.startswith('    setenv '+n+' ') for n in ['BOOTCLASSPATH','DEX2OATBOOTCLASSPATH','SYSTEMSERVERCLASSPATH','STANDALONE_SYSTEMSERVER_JARS'])];(entry/'selected-services.rc').write_text('\n'.join(lines)+'\n')
 old=r/'dist/aosp16/apex-cohort-build-6';commands=[]
@@ -175,11 +177,11 @@ assert '[Requesting program interpreter: /system/bin/bootstrap/linker64]' in sub
 argv=json.loads((r/'reports/android16-hwmanager-cohort/helper-build.json').read_text())['argv'];argv[argv.index('-o')+1]=str(out/'linux-exec-context-image');run(argv)
 (out/'artifacts.json').write_text(json.dumps({n:hashlib.sha256((out/n).read_bytes()).hexdigest() for n in ['graphics-client','cargo/debug/examples/native_supervisor','linux-exec-context-image','property-coordinator']},indent=2))
 base=r/'dist/aosp16/sf-cohort-build-32';vendor=json.loads((base/'vendor-inputs.json').read_text())
-input_hwc=r/'dist/aosp16/hwc3-home-task-353'
+input_hwc=r/'dist/aosp16/hwc3-launcher-356b'
 input_record=json.loads((input_hwc/'build.json').read_text());assert input_record['terminal']
 assert hashlib.sha256(Path(input_record['executable']).read_bytes()).hexdigest()==input_record['executable_sha256']
 for source,digest in input_record['inputs'].items():
- if Path(source).is_relative_to(r/'runtime/aosp/native'):
+ if Path(source).is_relative_to(r/'runtime/aosp'):
   assert hashlib.sha256(Path(source).read_bytes()).hexdigest()==digest,source
 for target,value in vendor['files'].items():
  if value.get('source','').endswith('android.hardware.graphics.composer3-service.archtv-display-2'):value['source']=input_record['executable']
@@ -404,6 +406,9 @@ for experiment,token,budget in [('workflow',workflow_token,workflow_budget_secon
    name='markor-'+experiment+'-'+field
    (out/name).write_text(value+'\n')
    vendor['files']['/vendor/etc/archtv-'+name]={'source':str(out/name),'context':'u:object_r:vendor_configs_file:s0','mode':0o444}
+if home_launch:
+ (out/'markor-home-launch').write_text('1\n')
+ vendor['files']['/vendor/etc/archtv-markor-home-launch']={'source':str(out/'markor-home-launch'),'context':'u:object_r:vendor_configs_file:s0','mode':0o444}
 if memory_library is not None:
  vendor['files'][memory_library['payload_path']]={'source':memory_library['path'],'context':'u:object_r:system_lib_file:s0','mode':0o444}
 if media_test is not None:

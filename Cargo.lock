@@ -91,9 +91,11 @@ dependencies = [
  "calloop",
  "libc",
  "rustix 1.1.6",
+ "serde_json",
  "smithay",
  "tracing",
  "tracing-subscriber",
+ "wayland-scanner",
 ]
 
 [[package]]
