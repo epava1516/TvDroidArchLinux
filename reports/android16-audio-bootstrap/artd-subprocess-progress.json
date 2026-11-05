@@ -1896,7 +1896,7 @@
           "sha256": "d3eb7667da5d6443deb22eb91de5893b561c0d7ec098f92087a2ed33a0a58f36"
         }
       },
-      "current_integration": 355,
+      "current_integration": 356,
       "integration348": {
         "checkpoint": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch",
         "build": "dist/aosp16/package-cohort-build-348",
@@ -2916,6 +2916,68 @@
         "prepared_run": {
           "path": "/home/tv/recuperacion-archtv/20261105-launcher-control356/prepared-run.json",
           "sha256": "55b4612dbb5cbec8d6110d177cf3e49d6a1024827fbe5060bcc215aeaaf81dac"
+        }
+      },
+      "integration356": {
+        "native_exit": 1,
+        "outer_exit": 1,
+        "catalog_original_rpc_returned_entries": 2,
+        "launch_rpc_attempted": false,
+        "initial_Markor_cli_main_editor_back_observed": true,
+        "whole_home_launch_workflow_accepted": false,
+        "reason": "Physical Enter operated Q in the virtual keyboard (Search band1/index0), so no launch request reached the broker. Observer stopped after five commands; sixth Backspace changed only Home query. Runtime ended before corrected tile selection. Not an original Context/Instrumentation API failure.",
+        "known_search_frame_sha256": "18de80a19c743de0301de34f72c3751b8f9086fcc50f29483bc114c8c5ee9474",
+        "known_search_visual_review": "Actual image shows markor query, one Markor card at x647..1207,y153..206. Real catalog card, not synthetic inventory.",
+        "recovery_verified": true,
+        "consumed": true,
+        "next": "Reuse coherent payload356 with fresh UUID/backup, known real search frame, D-pad ten Right presses to actual result0, then Enter and original RPC/frame/note checks. Home pointer binding is not implemented; no new AOSP/native/frontend rebuild needed.",
+        "checkpoint": "/home/tv/recuperacion-archtv/07be21fd-7b33-4681-b29f-3d61c75d288a-markor-software-launch",
+        "build": "dist/aosp16/package-cohort-build-356",
+        "evidence": {
+          "failure-decision356.json": {
+            "path": "/home/tv/recuperacion-archtv/07be21fd-7b33-4681-b29f-3d61c75d288a-markor-software-launch/failure-decision356.json",
+            "sha256": "f6448ea6b233ecd0a4d58e8f75cd645a043ce81e629fcc9f0745dd65653daa15"
+          },
+          "completion-result.json": {
+            "path": "/home/tv/recuperacion-archtv/07be21fd-7b33-4681-b29f-3d61c75d288a-markor-software-launch/completion-result.json",
+            "sha256": "2361801beeccfaee213e48e7d1b83cc29513150dfb6ea203433a6d2e0ff022fd"
+          },
+          "result.json": {
+            "path": "/home/tv/recuperacion-archtv/07be21fd-7b33-4681-b29f-3d61c75d288a-markor-software-launch/result.json",
+            "sha256": "dc620b9676c70f6240ee1b9e203f2adb464b46425a83631bad8a7df99bcd6223"
+          },
+          "native-result.json": {
+            "path": "/home/tv/recuperacion-archtv/07be21fd-7b33-4681-b29f-3d61c75d288a-markor-software-launch/native-result.json",
+            "sha256": "b13aa6cb372fb893c0762e849d3aa5b42eb8581ab1c4af54668589b8763aa34c"
+          },
+          "terminal-owner-status.json": {
+            "path": "/home/tv/recuperacion-archtv/07be21fd-7b33-4681-b29f-3d61c75d288a-markor-software-launch/terminal-owner-status.json",
+            "sha256": "dff504151c3cc1e96cbb0503406b63f24219b93697a8e24d36d4f976b0453956"
+          },
+          "recovery-readback.json": {
+            "path": "/home/tv/recuperacion-archtv/07be21fd-7b33-4681-b29f-3d61c75d288a-markor-software-launch/recovery-readback.json",
+            "sha256": "984c2e08adf84c3e36c5c3761688239bdb1766ef6999b23bfc5f861346b1a7c3"
+          },
+          "backing-after.json": {
+            "path": "/home/tv/recuperacion-archtv/07be21fd-7b33-4681-b29f-3d61c75d288a-markor-software-launch/backing-after.json",
+            "sha256": "2cfdb3654d9cd71edeacc6a010214f5d7142f6759635c047ea364db3e705d08a"
+          },
+          "completion-consumer.json": {
+            "path": "/home/tv/recuperacion-archtv/07be21fd-7b33-4681-b29f-3d61c75d288a-markor-software-launch/completion-consumer.json",
+            "sha256": "d06dc14890d46256cbe07647f0549615567f387c8db41190eb25ac698984d6f5"
+          },
+          "native-ui-attempt1.json": {
+            "path": "/home/tv/recuperacion-archtv/07be21fd-7b33-4681-b29f-3d61c75d288a-markor-software-launch/native-ui-attempt1.json",
+            "sha256": "8141dd65d4137e190ea3db75cbc5db84224f53e546485909ad4589e0535790b0"
+          },
+          "driver-attempt1-terminal-observation.json": {
+            "path": "/home/tv/recuperacion-archtv/07be21fd-7b33-4681-b29f-3d61c75d288a-markor-software-launch/driver-attempt1-terminal-observation.json",
+            "sha256": "e09c244893a555416fc4647569428df049b22dee8bfb90b9181e71f4bd745e55"
+          },
+          "search-before-enter.png": {
+            "path": "/home/tv/recuperacion-archtv/07be21fd-7b33-4681-b29f-3d61c75d288a-markor-software-launch/search-before-enter.png",
+            "sha256": "26c0ca0acd65ccd17474915e2013f44bc1f81533e9aae25d52ab482255a88387"
+          }
         }
       }
     }

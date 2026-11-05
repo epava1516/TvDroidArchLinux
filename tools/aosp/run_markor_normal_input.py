@@ -18,6 +18,8 @@ import uuid
 MAIN = "f5595d6ee79245d7b140334ec909efaae6c26f58a0c44bdc1ed5a3875248cebc"
 EDITOR = "1ac26935642068519eb91bbfe02fe574b93c1e6ede2c14207b0bec3462d2e0c6"
 HOME = "e49fab04df879ef2a8cc1ed04b3ea47276ce59663b30766f58b26806ba96c88e"
+# Real356 search capture inspected: one Markor card at x647..1207,y153..206.
+SEARCH = "18de80a19c743de0301de34f72c3751b8f9086fcc50f29483bc114c8c5ee9474"
 
 
 def run(cp):
@@ -171,7 +173,18 @@ def run(cp):
                 if "SHELL_KEY Character('r') page=Search" in compositor_log():
                     break
                 time.sleep(0.2)
-            fresh_unclassified_frame(sent, "Physical Home search for Markor")
+            frame(SEARCH, sent)
+            # Home currently binds a keyboard/D-pad, not a pointer. Row0
+            # QWERTY has ten keys; moving right past it focuses result0. Enter
+            # while band1 would type Q instead of launching the actual card.
+            for _ in range(10):
+                sent = send({"op": "keys", "value": ["right"]})
+            while True:
+                owner()
+                if "SHELL_KEY Right page=Search band=2 index=0" in compositor_log():
+                    break
+                time.sleep(0.2)
+            fresh_unclassified_frame(sent, "D-pad focused original Markor result")
             previous_returns = compositor_log().count("SHELL_APK_ORIGINAL_START_REQUEST_RETURNED")
             sent = send({"op": "keys", "value": ["enter"]})
             while True:

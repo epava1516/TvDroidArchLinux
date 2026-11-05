@@ -1,5 +1,9 @@
 # Índice de evidencias
 
+356 falla por el guion UI: Enter activó Q del teclado virtual, no la tarjeta. No hubo RPC de lanzamiento; no es un fallo probado de Context/Instrumentation. Se ejecutó el catálogo original con dos entradas y la búsqueda mostró una tarjeta Markor real. Nativa1/exterior1, cohorte cerrada, datos desmontados/loop retirado, política69/permisivo y recuperación verificados; resultado consumido sin cola. Se conserva355 como último cierre seleccionado positivo. Siguiente357: misma imagen356 y frontend, nuevo UUID/backup, selección D-pad del resultado original y Enter tras la captura real inspeccionada; no recompilar AOSP ni relanzar por CLI. Informe ART →integration356.
+
+Histórico anterior:
+
 Preparación356: frontends Rust y HWC enlazados, cohorte original empaquetada, seis regresiones host de transporte positivas y despliegue root con etiquetas69 comprobado. No ejecución original conjunta todavía; no confundir la proyección sintética del verificador Home con lanzamiento real. En el modo Home el instalador no relanza por CLI. Registro y hashes: informe ART →launcher_transport_preparation356, checkpoint /home/tv/recuperacion-archtv/20261105-launcher-control356. Recibos de archivo sin pérdida329/336/337/338 y343/345 e instrucciones exactas de restauración enlazados en historical_artifact_preservation;355 sigue crudo. Sólo se retiró además metadata regenerable de cargo-check, con binarios productivos y de prueba conservados.
 
 Histórico anterior:

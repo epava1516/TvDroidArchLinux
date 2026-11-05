@@ -1,5 +1,9 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+356 falla por el guion UI: Enter activó Q del teclado virtual, no la tarjeta. No hubo RPC de lanzamiento; no es un fallo probado de Context/Instrumentation. Se ejecutó el catálogo original con dos entradas y la búsqueda mostró una tarjeta Markor real. Nativa1/exterior1, cohorte cerrada, datos desmontados/loop retirado, política69/permisivo y recuperación verificados; resultado consumido sin cola. Se conserva355 como último cierre seleccionado positivo. Siguiente357: misma imagen356 y frontend, nuevo UUID/backup, selección D-pad del resultado original y Enter tras la captura real inspeccionada; no recompilar AOSP ni relanzar por CLI. Informe ART →integration356.
+
+Histórico anterior:
+
 356 preparado: transporte Home privado→Smithay autorizado→worker HWC→PMS/Instrumentation original conectado en código; binarios Rust, HWC y cohorte original construidos. Pasan seis regresiones host de protocolo/rol/FD/catálogos; aún no se ejecutó el recorrido UI conjunto. La variante de ensayo no relanza por CLI: espera la acción real de Home y nueve observaciones originales, cuya coincidencia no sustituye el testigo RPC/entrada/frame. Despliegue nuevo con hashes y etiquetas69 existente verificado, sin cambiar política/modo. Ensayo preparado UUID07be21fd-7b33-4681-b29f-3d61c75d288a, todavía no iniciado; siguiente backup fresco/recuperación y prueba funcional, conservando355 válido. Véase informe ART →launcher_transport_preparation356.
 
 Histórico de preparación:
