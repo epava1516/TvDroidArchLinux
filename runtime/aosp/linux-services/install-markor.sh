@@ -172,24 +172,18 @@ if [ "${media_mime:-}" = audio/mp4 ]; then
     # Preserve the real command output for the generic observer as an exact
     # alias, not a second launch or a manufactured readiness response.
     /system/bin/cp /data/local/tmp/archtv-mc1/media-launch.txt /data/local/tmp/archtv-mc1/markor-launch.txt
-    # Bounded original service diagnostics. A failed dump remains a failure;
-    # snapshots may perturb timing and do not establish playback continuity.
-    # Actual313 showed both early snapshots preceded AudioTrack creation.
-    # Preserve a bounded window, including zero-track observations; no readiness
-    # marker, retry continuation, discarded snapshot or playback success claim.
-    snapshot=1
-    while [ "$snapshot" -le 16 ]; do
-        /system/bin/sleep 0.5
-        part=1
-        [ "$snapshot" -le 8 ] || part=2
-        dump_path=/data/local/tmp/archtv-mc1/audio-flinger-$part.txt
-        /system/bin/printf '\nSNAPSHOT %s BEGIN\n' "$snapshot" >> "$dump_path"
-        dump_status=0
-        /system/bin/dumpsys -t 1 media.audio_flinger >> "$dump_path" 2>&1 || dump_status=$?
-        /system/bin/printf 'SNAPSHOT %s END exit=%s\n' "$snapshot" "$dump_status" >> "$dump_path"
-        /system/bin/printf 'snapshot=%s exit=%s NOT_AUDIO_ACCEPTANCE\n' "$snapshot" "$dump_status" >> /data/local/tmp/archtv-mc1/audio-flinger-status.txt
-        snapshot=$((snapshot + 1))
-    done
+    # Measurement control after actual318: repeated AudioFlinger dumps take
+    # service locks during the short source. Keep playback free of these dumps,
+    # then query the original service once after 30 seconds. HAL position logs
+    # remain unchanged. A late dump and counters still do not prove signal output.
+    /system/bin/sleep 30
+    dump_path=/data/local/tmp/archtv-mc1/audio-flinger-1.txt
+    /system/bin/printf '\nSNAPSHOT 1 BEGIN late_after_seconds=30\n' > "$dump_path"
+    dump_status=0
+    /system/bin/dumpsys -t 1 media.audio_flinger >> "$dump_path" 2>&1 || dump_status=$?
+    /system/bin/printf 'SNAPSHOT 1 END exit=%s\n' "$dump_status" >> "$dump_path"
+    /system/bin/printf 'snapshot=1 late_after_seconds=30 exit=%s NOT_AUDIO_ACCEPTANCE\n' "$dump_status" > /data/local/tmp/archtv-mc1/audio-flinger-status.txt
+
 else
     /system/bin/cmd activity start-activity -W --user 0 -n "$component" > /data/local/tmp/archtv-mc1/markor-launch.txt 2>&1
 fi

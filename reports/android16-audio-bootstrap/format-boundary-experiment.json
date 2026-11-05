@@ -57,13 +57,7 @@
     "path": "/home/tv/recuperacion-archtv/47768c2f-8ed9-4b63-94f2-2dc69075bc02-markor-software-launch/functional-result.json",
     "sha256": "ccab625d57941e71b0c060e15d28ecbc5ed1e710d358c1c0b6e033ba1b985b5b"
   },
-  "next_experiment": {
-    "build": "dist/aosp16/package-cohort-build-314",
-    "scope": "SameHAL/APK/PCM/policy/TSC, original dumpsys16snapshots over delayed track creation; preserve all snapshots including zeros; no timing acceptance",
-    "state": "terminal_consumed",
-    "payload_sha256": "aeb9b07a29c160dd6f58298a9f65d0e6da1af0569cd0086d884bd682a5c31c38",
-    "result": "Original track55 remains Server0/FrmRdy0;25HALwrites102400not decodedsource proof; original16snapshots allquery0; recovery verified"
-  },
+  "next_experiment": "Same original stack and singleVIEW; one late AudioFlinger dump instead of16 during playback. Test measurement perturbation without changing clocks, policy, timestamps or application.",
   "control314": {
     "path": "/home/tv/recuperacion-archtv/ca39f661-16b2-4a71-beec-fd849cf14d7d-markor-software-launch/functional-result.json",
     "sha256": "95029372f366c61240fba4631e61b04c9480fd72fa9d79037cc893be6f491d52"
@@ -161,7 +155,7 @@
     "path": "/home/tv/recuperacion-archtv/270b9a2e-5a3a-46eb-b66a-cd913a4ef08c-markor-software-launch/functional-result.json",
     "sha256": "1c3dc01c44bd4a0ec6bded0c05c20673a5af86cae56d0c4f4c974336b8d4c75a"
   },
-  "current_blocker": "317 servicewasbroughtdownwithpendingforegroundrestart afteractualforegroundstart/stop; elapseddeadline notproven.318oneoriginalVIEW isolates overlappingMAIN/VIEWtest; noAPI/control/timeoutrelaxation.",
+  "current_blocker": "Actual318 consumes client data but flushes13846 frames; source complete signal and timing remain unproven. No cumulative rebase observed in119 positions.",
   "foreground317_analysis": {
     "path": "/home/tv/recuperacion-archtv/270b9a2e-5a3a-46eb-b66a-cd913a4ef08c-markor-software-launch/foreground-sequence-analysis.json",
     "sha256": "c82709dec9299c824d45d8cb6dd43c7ff03c399ae1660680e3fa1b95a632a5d3"
@@ -169,12 +163,44 @@
   "next_candidate318": {
     "build": "dist/aosp16/package-cohort-build-318",
     "scope": "Same317HAL/DSP/TSC; oneoriginalVIEW, genericlaunchfilebyteidenticalalias ofactualcommandoutput. Launcherthenmedia stillseparateopenworkflow, not compatibility completed.",
-    "state": "active_result_pending",
+    "state": "terminal_recovered_consumed_partial",
     "checkpoint": "/home/tv/recuperacion-archtv/7258fdce-6de6-458e-afd9-933d8a867d73-markor-software-launch",
     "payload_sha256": "e59946cf57641de72a4b4e65105e7f6bb6f42eddacca8847f18a5f1402a76e72"
   },
   "storage_preservation317": {
     "manifest": "dist/aosp16/package-cohort-build-317/image-preservation.json",
     "sha256": "e5e0f91407b78727ecbb25727177b8e991878755bbb319fa99ecd7980c418bea"
+  },
+  "control318": {
+    "attempt": 318,
+    "id": "7258fdce-6de6-458e-afd9-933d8a867d73",
+    "checkpoint": "/home/tv/recuperacion-archtv/7258fdce-6de6-458e-afd9-933d8a867d73-markor-software-launch",
+    "outer_exit": 1,
+    "install_session": 493167381,
+    "foreground_exception_count": 0,
+    "position_samples": 119,
+    "position_rebases": 0,
+    "max_observed_timestamp_age_ms": 697.637697,
+    "launch_alias_identical": true,
+    "track_server_frames": 163840,
+    "track_flushed_frames": 13846,
+    "source_reference_frames": 192000,
+    "late_flush_us": 738113,
+    "full_audio_accepted": false,
+    "decision": "Single VIEW exercised positions without foreground exception in this run; timing still fails. No counter rebase observed. Next isolate intrusive dumpsys measurements before altering timing semantics.",
+    "limits": [
+      "One VIEW run does not establish launcher/media/reopen stability",
+      "Counters do not prove source signal or acoustic output",
+      "Historical timestamps may be legitimate; stale age alone is not causal proof",
+      "R1 and broad APK compatibility remain open"
+    ],
+    "evidence": {
+      "observed-original-logcat.txt": "07bb41d024b8630068fe194d2a319ea95d47278a0c411bec3fb9539ce78cf5c0",
+      "observed-audio-flinger-1.txt": "f2c8d161ed781e2aa9bb9c60e9eb52018536fe112122468ca5bdf496e7e3c8e7",
+      "observed-audio-flinger-2.txt": "111afd082f993f6f84a28c419a4670b722984697690be265801df09e4655de71",
+      "recovery-readback.json": "c60d81fd633845f896c4f1d921688afdd7c4837719f2042cb18d68c1baf41cb4",
+      "observed-media-launch.txt": "3f66e2fc4e4c31446958ce9c09647025bc84ea197d576190493a5f321cc24edc",
+      "observed-markor-launch.txt": "3f66e2fc4e4c31446958ce9c09647025bc84ea197d576190493a5f321cc24edc"
+    }
   }
 }

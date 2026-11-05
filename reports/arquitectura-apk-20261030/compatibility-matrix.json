@@ -230,6 +230,16 @@
           "scope": "ActualFGSstart/stop/pendingrestart/bringdowncrash; elapseddeadline notproven.0PCM/positionlogs;317counterrestoreunexercised."
         },
         "foreground_lifecycle_remaining": "DirectVIEW318 in test; launcherthenmedia/rapidintent/reopen stability remainsopen. No timeout/permissionrelaxation."
+      },
+      "audio_control318": {
+        "checkpoint": "/home/tv/recuperacion-archtv/7258fdce-6de6-458e-afd9-933d8a867d73-markor-software-launch",
+        "single_view_foreground_exception": false,
+        "position_samples": 119,
+        "position_rebases": 0,
+        "client_frames_consumed": 163840,
+        "flushed_frames": 13846,
+        "complete_audio_accepted": false,
+        "limits": "Single VIEW result only; launcher/media/reopen stability and source signal remain open. Counters cannot prove decoded source output."
       }
     },
     {
