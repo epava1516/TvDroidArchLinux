@@ -1,5 +1,9 @@
 # Estado actual y punto de entrada
 
+347: cuota real cpu.max=300000 100000; Markor intacta abre la nota343, editor visible 1,85s tras clic real. Foco original de MainActivity/DocumentActivity y sin ANR de Markor en la captura; no prueba causal de la cuota ni estabilidad general. Guardia28 y retorno Binder original Installer positivos; nativa0/exterior1 por package-query.txt/package-list.txt sin productor. Cierre normal y modo0/política68 recuperados. Próximo: emitir consultas PMS originales reales y verificar juntos los contratos restantes, sin inventar archivos. CPU200 sigue por defecto; R1 abierto. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration347`.
+
+Histórico anterior:
+
 346: la guardia integrada verifica 28 identidades reales (27 servicios RC originales y system_server) con política68 en enforcing; modo0 y cierre normal del volumen/anfitrión restaurados. Salida nativa0/exterior1: la comprobación siguiente exige installd-query.txt sin productor en el perfil funcional. Installer.invalidateMounts sí retornó por Binder original. Markor devolvió Status ok/Displayed, pero sufrió ANR de foco y AMS mató PID1232; pantalla negra, sin aceptación UI346. Siguiente: corregir ese contrato de comprobación y resolver el ANR gráfico con evidencia original, sin rebajar timeouts. Fuente: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration346` y `identity_guard_correction`.
 
 Histórico anterior:

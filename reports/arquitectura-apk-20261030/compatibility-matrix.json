@@ -661,33 +661,33 @@
         }
       ],
       "latest_workflow_attempt": {
-        "candidate": 346,
+        "candidate": 347,
         "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
-        "record_sha256": "92ee4fff7816d39ff0a377f8b1566611552966e394f0100ab1e5820790cafdfc",
-        "section": "coherent_cache_candidate.profile_coherence_experiment.integration346",
+        "record_sha256": "dd79d35273a4a4d64d354dd946ce8832443c42db394af6f271b5291c53f96b9d",
+        "section": "coherent_cache_candidate.profile_coherence_experiment.integration347",
         "real_primary_workflow_observed": false,
         "native_exit": 0,
         "outer_exit": 1,
-        "scope": "OriginallaunchStatusok butFocusEventANR andAMS killed1232; blackUI, no savednoteopened in346.27RCservices+systemserveridentities verified separately; R1open.343primaryworkflowpositive retained ashistory, not current346acceptance.",
+        "scope": "Savednote343visible1.85safterrealclick atactualCPU300; originalmain/documentfocus andnoMarkorANRincapturedlogs. No newwrite/fulllifecycle; no causality/R1/generalcompatibilityclaim.343fullprimarypositive and346ANRnegative retained.",
         "stages": {
-          "installation": "originalPMS andsameintactAPK; fullfunctionalverifierdidnotfinish",
-          "launch": "Statusok COLD/Displayed thenANR",
-          "interface": "black_not_accepted",
-          "input": "oneactualKEY_WAKEUP afterappkilled; notnoteinput",
-          "main_function": "not_exercised_this_attempt",
-          "persistence": "prior343/344/345evidence_retained_not_retested346",
-          "services": "28identitywitnesses_actual; originalInstallerinvalidateMounts returned; fullservicecoverage_unproven",
-          "close": "originalAMS_killed_after_ANR",
-          "reopen": "not_accepted_this_attempt"
+          "installation": "originalPMSsession_success_andexactAPKhashreadback",
+          "launch": "originalMainActivityDisplayed+3.059s",
+          "interface": "actualsavednoteeditor",
+          "input": "actualpointerclick",
+          "main_function": "savednote_readonly_reopen",
+          "persistence": "existing343note_reopened_afterclosedcohorts",
+          "services": "28identityguard+originalInstallerRPCverified; finallegacyPMSqueryguardfails",
+          "close": "boundedcohortshutdown_normaldataandhostrecovery",
+          "reopen": "existingnoteonly_notnewforce_stop_relaunch_this_attempt"
         }
       },
       "runtime_security_observation": {
-        "candidate": 346,
-        "state": "policy68 bounded enforcing/restored0; 28actualidentityguardpass; native0/outer1stalequeryfile; normaldata/hostclose; R1open",
+        "candidate": 347,
+        "state": "policy68bounded enforcing/restored0;28identityguard+originalInstallerreturn; native0/outer1missingPMSqueryfiles; normaldata/hostclose; R1open",
         "evidence": "reports/android16-audio-bootstrap/artd-subprocess-progress.json",
-        "sha256": "92ee4fff7816d39ff0a377f8b1566611552966e394f0100ab1e5820790cafdfc",
-        "section": "coherent_cache_candidate.profile_coherence_experiment.integration346",
-        "latest_result": "27originalRCservices+originalsystemserver credential/SID witnesses; notatomic/allservices/authorization/isolation. MarkorANR andblackUI prevent346APKjourneyacceptance."
+        "sha256": "dd79d35273a4a4d64d354dd946ce8832443c42db394af6f271b5291c53f96b9d",
+        "section": "coherent_cache_candidate.profile_coherence_experiment.integration347",
+        "latest_result": "Selectedcredential/SID/RPCwitnesses, notallservices/authorization/isolation. CPU300doesnotproveproductionlightness orcauseof346ANR."
       },
       "runtime_security_observation_history": [
         {
@@ -996,6 +996,15 @@
           "evidence": "reports/android16-audio-bootstrap/artd-subprocess-progress.json",
           "sha256": "5e34a712c1ca9230c7e5048012b550363140b89df1d5a05dc920def64edf7b73",
           "record_commit": "257a4e092c764a8892e74c6dcda8eb848d952e27"
+        },
+        {
+          "candidate": 346,
+          "state": "policy68 bounded enforcing/restored0; 28actualidentityguardpass; native0/outer1stalequeryfile; normaldata/hostclose; R1open",
+          "evidence": "reports/android16-audio-bootstrap/artd-subprocess-progress.json",
+          "sha256": "92ee4fff7816d39ff0a377f8b1566611552966e394f0100ab1e5820790cafdfc",
+          "section": "coherent_cache_candidate.profile_coherence_experiment.integration346",
+          "latest_result": "27originalRCservices+originalsystemserver credential/SID witnesses; notatomic/allservices/authorization/isolation. MarkorANR andblackUI prevent346APKjourneyacceptance.",
+          "record_commit": "4a67847e836a026849501fd432c74e1947a7d445"
         }
       ],
       "runtime_security_history": [
@@ -1214,6 +1223,28 @@
             "close": "original_force_stop_oldPID1328_absent",
             "reopen": "original_coldPID1633_and_actual_saved_note_editor"
           }
+        },
+        {
+          "candidate": 346,
+          "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
+          "record_sha256": "92ee4fff7816d39ff0a377f8b1566611552966e394f0100ab1e5820790cafdfc",
+          "section": "coherent_cache_candidate.profile_coherence_experiment.integration346",
+          "real_primary_workflow_observed": false,
+          "native_exit": 0,
+          "outer_exit": 1,
+          "scope": "OriginallaunchStatusok butFocusEventANR andAMS killed1232; blackUI, no savednoteopened in346.27RCservices+systemserveridentities verified separately; R1open.343primaryworkflowpositive retained ashistory, not current346acceptance.",
+          "stages": {
+            "installation": "originalPMS andsameintactAPK; fullfunctionalverifierdidnotfinish",
+            "launch": "Statusok COLD/Displayed thenANR",
+            "interface": "black_not_accepted",
+            "input": "oneactualKEY_WAKEUP afterappkilled; notnoteinput",
+            "main_function": "not_exercised_this_attempt",
+            "persistence": "prior343/344/345evidence_retained_not_retested346",
+            "services": "28identitywitnesses_actual; originalInstallerinvalidateMounts returned; fullservicecoverage_unproven",
+            "close": "originalAMS_killed_after_ANR",
+            "reopen": "not_accepted_this_attempt"
+          },
+          "record_commit": "4a67847e836a026849501fd432c74e1947a7d445"
         }
       ],
       "runtime_results_scope": "Historical exact162/167 workflows and255–270 MAC stages retain their own evidence; not revalidated by336. Current profile trial is latest_workflow_attempt336; no generalAPK/security acceptance.",
@@ -1601,5 +1632,12 @@
     "source_sha256": "92ee4fff7816d39ff0a377f8b1566611552966e394f0100ab1e5820790cafdfc",
     "section": "coherent_cache_candidate.profile_coherence_experiment.integration346",
     "scope": "28identityguardactualpass; outer1missingqueryfile; actualANR/blackUI. NoR1orAPKacceptance."
+  },
+  "latest_integration_observation_347": {
+    "application": "Markor intact v164",
+    "source": "reports/android16-audio-bootstrap/artd-subprocess-progress.json",
+    "source_sha256": "dd79d35273a4a4d64d354dd946ce8832443c42db394af6f271b5291c53f96b9d",
+    "section": "coherent_cache_candidate.profile_coherence_experiment.integration347",
+    "scope": "ActualsavednoteUI atCPU300+28identities+InstallerRPC, outer1legacyPMSqueryfiles; noR1/generalAPKacceptance."
   }
 }

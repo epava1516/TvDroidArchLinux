@@ -1,5 +1,9 @@
 # Índice de evidencias
 
+347 (9904b9d6-7d3a-4b42-b283-446ee96ac2bc): informe ART →profile_coherence_experiment.integration347 enlaza cpu.max real, contadores/PSI, frame de nota y demora1,85s, logs originales, guardia28, InstallerRPC, ventanaMAC, cierre/recuperación/consumo y revisión de contratos restantes. installer_guard_correction conserva tres negativas de procedencia (retorno ausente, PID y UID incorrectos) más replay positivo offline346, separados de ejecución347. Sin ANR Markor en992231bytes capturados; dos fallos DSU de fondo preservados. Exterior1 por consultas PMS sin productor; no guardia global aceptada. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration347`.
+
+Histórico anterior:
+
 346 (c3d8950e-1b94-41a6-a3e0-21ef0f3b721f): informe ART →profile_coherence_experiment.integration346 vincula guardia28 positiva, ventana MAC, cierre normal, recuperación/consumo y negativa ANR/UI. identity_guard_correction conserva 26/28 de344, seis negativas offline, fallo de selector345, replay345 sólo offline y política68 con veinte comparaciones. anr-readback.json vincula traza original offline, fuentes SwiftShader y REA MCP ev_34c78613d3221d49cb3d1d7d862ed9332014b437093e4ed3c437454641f0962c: desensamblado estático de símbolo, no ejecución. Native0/exterior1 por archivo inexistente; APK no aceptada346. Fuente: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration346` y `identity_guard_correction`.
 
 Histórico anterior:

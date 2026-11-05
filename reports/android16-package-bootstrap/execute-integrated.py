@@ -1036,6 +1036,22 @@ if original_fork_profile:
 else:
 """+'\n'.join(' '+line for line in legacy_checks.splitlines())+'\n'
 text=text[:legacy_start]+functional_checks+text[legacy_end:]
+# The functional original-fork profile invokes Installer directly. The old
+# display-only client creates installd-query.txt; this client does not. Require
+# the real original Binder operation's return from the verified system-server
+# PID instead of manufacturing a query file or weakening availability checks.
+installer_query_guard="installer=Path('/data/local/tmp/archtv-mc1/installd-query.txt').read_text()\nassert installer=='Service installd: found\\n'\n"
+assert text.count(installer_query_guard)==1
+installer_operation_check=r"""if original_fork_profile:
+ installer_pid=original_identity_result['observed']['INSTALLD']['pid']
+ assert original_identity_result['observed']['INSTALLD']['actual_context']=='u:r:installd:s0'
+ installer_client_pid=original_identity_result['observed']['SERVICES']['pid']
+ installer_returns=re.findall(r'^\S+\s+\S+\s+1000\s+(\d+)\s+\d+\s+W System\.err: SELECTED_ORIGINAL_INSTALLER_INVALIDATE_RETURNED NOT_APK_INSTALLATION$',raw_logcat.decode(errors='replace'),re.M)
+ assert installer_returns and set(map(int,installer_returns))=={installer_client_pid},'Original Installer Binder return absent or wrong PID'
+ print('SELECTED_ORIGINAL_INSTALLER_OPERATION_VERIFIED '+json.dumps({'operation':'Installer.invalidateMounts','client_pid':installer_client_pid,'installd_pid':installer_pid,'scope':'Original non-isolated Installer Binder operation returned; not APK or MAC/isolation acceptance'}),flush=True)
+else:
+"""+'\n'.join(' '+line for line in installer_query_guard.splitlines())+'\n'
+text=text.replace(installer_query_guard,installer_operation_check,1)
 text=inspect.getsource(verify_original_fork_identities)+'\n'+text
 
 compile(text,'<integrated factory>','exec')

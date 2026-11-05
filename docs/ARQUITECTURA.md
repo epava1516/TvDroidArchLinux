@@ -1,5 +1,9 @@
 # Arquitectura vigente · A16-QPR2-1
 
+La guardia Installer347 usa la operación Binder original invalidateMounts y el PID verificado de system_server, en lugar del archivo de consulta exclusivo del cliente antiguo. La cuota300 experimental se comprueba en cgroupv2, con memoria4GiB/swap1GiB y límitesANR/seguridad intactos. La nota reaparece; no atribuir la mejora sólo aCPU (cachés/datos difieren y hubo éxitos200). Dos procesos DSU originales fallan por servicio dynamic_system ausente: evidencia de perfil de paquetes aún poco coherente, no razón para arrancar Android completo. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration347`.
+
+Histórico anterior:
+
 La verificación346 combina credenciales reales del padre init con getters del parser RC original, SID de getpidcon/ps originales y estado propio de system_server según ZygoteInit.forkSystemServer. Son testigos independientes, no una instantánea atómica ni aislamiento. Política68 añade sólo dos process:getattr de init a aconfigd/aconfigd_mainline; no amplía al observador Linux. El perfil se selecciona desde build-options verificado:345 falló al buscar un marcador en otra vista de montajes. El ANR346 espera RenderProxy→ANGLE→SwiftShader Queue::waitIdle mientras otro hilo ejecuta LLVM JIT; presión CPU/IO observada, causa definitiva pendiente. Fuente: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration346` y `identity_guard_correction`.
 
 Histórico anterior:

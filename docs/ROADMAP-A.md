@@ -1,5 +1,9 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+Tras347: InstallerRPC original verificado y Markor vuelve a mostrar la nota con CPU300 real; no ANR suyo en logs capturados. Resolver en conjunto el contrato de outputs restante: emitir service check package y cmd package list reales desde el instalador existente; conservar CEmount/inodos, tres archivos de permisos y hashAPK como comprobaciones aún pendientes de ejecutar. Después recorrido completo con la base integrada y medir estabilidad/ligereza, revisando paquetes GSI de fondo innecesarios. No aumentar timeoutsANR ni cambiar CPU200 por defecto con una muestra. R1/ARM/GMS/DRM siguen abiertos. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration347`.
+
+Histórico anterior:
+
 Orden tras346: guardia de 28 identidades integrada y positiva, con R1 todavía abierto. Primero alinear la comprobación Installer con la operación Binder original realmente ejecutada, sin fabricar installd-query.txt. Después resolver el ANR real de Markor: traza original muestra espera gráfica mientras la cola ejecuta LLVM JIT y hay presión CPU/IO. Experimento acotado de recursos/perfil coherente de paquetes, manteniendo límites ANR originales y midiendo interfaz/entrada/persistencia/cierre. No atribuirlo aún a GC, ABI de memoria o VirtualBox. Reutilizar el recorrido343 y reaperturas344/345 como evidencias históricas, no aceptar346 por Status ok. R1/ARM/GMS/DRM y compatibilidad amplia siguen abiertos. Fuente: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration346` y `identity_guard_correction`.
 
 Histórico anterior:

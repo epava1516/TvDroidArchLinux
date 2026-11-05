@@ -1,5 +1,9 @@
 # Contrato vigente · AOSP Android 16 QPR2
 
+347 acredita reapertura visual de una nota existente mediante entrada real, con cuota300 observada por kernel; no acredita nueva escritura/lifecycle completo, causa del ANR anterior ni ligereza productiva. InstallerRPC/28identidades son resultados parciales separados. La ausencia de ANR se limita a los logs capturados; fallos DSU siguen registrados. No fabricar archivos de consulta ni rebajar controles: los outputs deben proceder de clientes originales. R1 y compatibilidad amplia permanecen abiertos. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration347`.
+
+Histórico anterior:
+
 La guardia346 acredita sólo las identidades/credenciales de 27 servicios RC y system_server mediante testigos reales; no acredita todas las identidades, autorización, aislamiento o compatibilidad general. Modo enforcing durante una ventana y restauración tampoco cierran R1. Un Status ok/Displayed seguido de ANR y muerte por AMS no satisface lanzamiento utilizable/interfaz:346 es negativo. Las evidencias positivas343/344/345 se conservan con su alcance. Nunca sustituir un contrato sin productor por un archivo inventado; comprobar la operación Binder original efectiva y sus fallos. Fuente: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration346` y `identity_guard_correction`.
 
 Histórico anterior:
