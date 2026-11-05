@@ -1,5 +1,7 @@
 # Arquitectura vigente · A16-QPR2-1
 
+Actualización355: Home visual y retorno por cliente original probados; el catálogo y lanzamiento desde Home aún no están integrados. Los dominios Home/compositor comparten principal de confianza: no es aislamiento entre ambos. El reto adicional de seis entradas quedó incompleto y R1 permanece abierto. Véase informe ART →integration355.
+
 353 ejecuta TaskStackListener y ATMS originales, con estados APP23 → HOME1 → APP24 transmitidos por el canal privado v2 autenticado. HWC solicita minimize/fullscreen; Rust acepta sólo el socket del broker con credenciales/etiqueta verificadas y muestra su Home de socketpair privado. Captura Home y reapertura real de nota durante la ventana enforcing; no se usa app_id como autoridad. Home comparte dominio del compositor y arrancó antes de enforcing: separación y admisión de su exec durante enforcing no están probadas. Shell sin invocaciones Waydroid; catálogo/lanzador original desde Home pendiente. Wrappers1 impiden aceptar el ensayo global.
 
 Histórico anterior:

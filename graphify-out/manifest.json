@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793893814.2944546,
-    "seen": 1793893853.1531851,
-    "ast_hash": "35d9665749d6f7250baaa098408f36ea",
+    "mtime": 1793899633.0429916,
+    "seen": 1793899648.720021,
+    "ast_hash": "77cce9dbebc92448f91660672995855e",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793896912.8994577,
-    "seen": 1793896929.6212575,
-    "ast_hash": "b1b0502ef4b72f73b0700d458075db27",
+    "mtime": 1793899632.998979,
+    "seen": 1793899648.7206998,
+    "ast_hash": "c76ce6d9a7e6a8c860c0e529497e1ccb",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793896912.917043,
-    "seen": 1793896929.621953,
-    "ast_hash": "b5f4e068a1a3e26ce2f66a486bd6602f",
+    "mtime": 1793899633.0109358,
+    "seen": 1793899648.721455,
+    "ast_hash": "a5491cfeed8a530251cc927caf1ff6c8",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -816,9 +816,9 @@
     "semantic_hash": ""
   },
   "docs/CONTRATO-APK.md": {
-    "mtime": 1793893814.31875,
-    "seen": 1793893853.153567,
-    "ast_hash": "86b1902746d43943b3ba0adb6511e6c7",
+    "mtime": 1793899633.0595083,
+    "seen": 1793899648.7203903,
+    "ast_hash": "226eed8fd52201b45b58059f10bfac48",
     "semantic_hash": ""
   },
   "runtime/apk/README.md": {
@@ -1716,9 +1716,9 @@
     "semantic_hash": ""
   },
   "docs/EVIDENCIAS.md": {
-    "mtime": 1793896912.9284196,
-    "seen": 1793896929.621392,
-    "ast_hash": "d9ec78e3fc7c9b80ba1cf4112cde9bc5",
+    "mtime": 1793899633.0185902,
+    "seen": 1793899648.7208629,
+    "ast_hash": "a282ddd6ffcc8f5ab63cb7000f9a4963",
     "semantic_hash": ""
   },
   "fixtures/aosp-framework-space/FrameworkSpaceProbe.java": {
@@ -2244,9 +2244,9 @@
     "semantic_hash": ""
   },
   "tools/aosp/run_markor_normal_input.py": {
-    "mtime": 1793896693.3696494,
-    "seen": 1793896929.6128566,
-    "ast_hash": "a9f3efe4081212a291005d9b72ff17f6",
+    "mtime": 1793899039.4619045,
+    "seen": 1793899648.7129743,
+    "ast_hash": "db8e630cb5594a10e812d362e6ffa8f1",
     "semantic_hash": ""
   }
 }

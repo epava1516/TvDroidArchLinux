@@ -1,7 +1,7 @@
 # Graph Report - repositorio-principal  (2026-11-05)
 
 ## Corpus Check
-- 363 files · ~351,171 words
+- 363 files · ~351,644 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 69 file(s) not represented in the graph (top: .cil 26, .patch 19, .xml 11)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `c2749022`
+- Built from commit: `95a31401`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -821,6 +821,6 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `resources-jni.cpp` be split into smaller, more focused modules?**
   _Cohesion score 0.13535353535353536 - nodes in this community are weakly interconnected._
 - **Why does `TvCompositor` connect `TvCompositor` to `duration`, `mod.rs`, `xdg_shell.rs`, `drm.rs`, `input.rs`, `session.rs`, `compositor.rs`?**
-  _High betweenness centrality (0.068) - this node is a cross-community bridge._
+  _High betweenness centrality (0.067) - this node is a cross-community bridge._
 - **Should `Client` be split into smaller, more focused modules?**
   _Cohesion score 0.07932692307692307 - nodes in this community are weakly interconnected._

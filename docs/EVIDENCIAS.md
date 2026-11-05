@@ -1,5 +1,9 @@
 # Índice de evidencias
 
+355: recorrido seleccionado Markor → Atrás → Home Rust → relanzamiento original WARM → nota intacta comprobado, con diez outputs originales, guardia de identidades y tres servicios propietarios terminados correctamente. Nativa0/exterior0; recuperación y consumo verificados. El ensayo adicional de seis entradas NO pasa: la quinta llegó después del cierre de la superficie Android. Se conservan ambos intentos y sus fallos. No acredita lanzador UI, compatibilidad general, aislamiento ni rendimiento. Siguiente integración funcional: catálogo y lanzamiento originales desde Home Rust; R1, ARM/GMS/DRM, instalación/actualización y cobertura amplia siguen abiertos. Evidencia canónica: informe ART →coherent_cache_candidate.profile_coherence_experiment.integration355; checkpoint /home/tv/recuperacion-archtv/57bcd21d-b722-46a9-86fb-e95c916a53bb-markor-software-launch.
+
+Histórico anterior:
+
 354: nativa1/exterior1 y volcado original incompleto con DUMP TIMEOUT (3000ms) EXPIRED. Diagnóstico ext4 realizado offline con loop de sólo lectura y ro,noload; dispositivo retirado, sin usarlo como ejecución ni prueba MAC. El cliente precede la parada coordinada de vold y reboot_on_failure; petición contenida. Home se reinicia dos veces; recorrido de entrada sólo dos comandos, no aceptado. Fuente canónica integration354 y checkpoint /home/tv/recuperacion-archtv/94bb19bc-b5e0-4276-a8af-66013b6cba39-markor-software-launch. Se conservan353/352 y el índice de payloads archivados;355 pendiente.
 
 Histórico anterior:

@@ -27,6 +27,9 @@ def run(cp):
     assert cp.parent == Path("/home/tv/recuperacion-archtv")
     assert cp.name == run_id + "-markor-software-launch"
     binding = json.loads((cp / "owner-start-readback.json").read_text())
+    # The privileged owner already verified the actual kernel boot. Revalidate
+    # its unique live InvocationID below instead of requiring this unprivileged
+    # observer to read a restricted proc sysctl on every frame.
     unit = "archtv-host-owner-" + run_id + ".service"
     assert binding["unit"] == unit and binding["InvocationID"]
     assert before["markor_normal_close_token"] == "348ace01"
@@ -55,7 +58,12 @@ def run(cp):
         if actual.get("MainPID", "0") == "0" or actual.get("ActiveState") != "active":
             raise RuntimeError("Bound owner no longer active: " + repr(actual))
         assert actual["InvocationID"] == binding["InvocationID"], "Different invocation"
-        assert Path("/proc/sys/kernel/random/boot_id").read_text().strip() == before["boot_id"]
+        # This scoped cohort has only the owned Android display and Home.
+        # The recovery owner can remain alive after that display has closed.
+        compositor_log = cp / "compositor.log"
+        if (compositor_log.exists()
+                and "TV_APP_CLOSED_HOME" in compositor_log.read_text(errors="replace")):
+            raise RuntimeError("Owned display ended; no further physical input")
         if time.monotonic() >= overall:
             raise TimeoutError("Bounded UI observation deadline, never restart owner")
 
@@ -111,6 +119,13 @@ def run(cp):
             time.sleep(0.1)
 
     try:
+        while True:
+            owner()
+            root = read_json(cp / "root-before.json")
+            if root is not None:
+                assert root["boot_id"] == before["boot_id"]
+                break
+            time.sleep(0.1)
         frame(MAIN, 0)
         frame(EDITOR, send({"op": "click", "position": [300, 410]}))
         frame(MAIN, send({"op": "keys", "value": ["back"]}))

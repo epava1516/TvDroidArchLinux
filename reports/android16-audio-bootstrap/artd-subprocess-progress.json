@@ -21,11 +21,11 @@
       "derive_classpath",
       "odrefresh"
     ],
-    "new_permission": "artd \u2192 artd_subprocess_type process2 nnp_transition only",
+    "new_permission": "artd → artd_subprocess_type process2 nnp_transition only",
     "original_transition_and_entrypoint_required": true,
     "execute_no_trans_not_granted": true,
     "offline_queries": 24,
-    "actual_runtime_observation": "Original artd invokes art_exec --drop-capabilities \u2192 dex2oat32 targeting oat/x86_64/base.odex; dex2oat returned code 0",
+    "actual_runtime_observation": "Original artd invokes art_exec --drop-capabilities → dex2oat32 targeting oat/x86_64/base.odex; dex2oat returned code 0",
     "boot_image": "Checksum mismatch remains; compiler falls back to imageless running. No coherent boot image acceptance."
   },
   "apk": {
@@ -221,7 +221,7 @@
     },
     "integration326": {
       "checkpoint": "/home/tv/recuperacion-archtv/cde2d4de-f95e-4841-b035-05eac8321be4-markor-software-launch",
-      "result": "art_boot exited0; odsign exited127 before main: init\u2192odsign process2 nosuid_transition denied under66",
+      "result": "art_boot exited0; odsign exited127 before main: init→odsign process2 nosuid_transition denied under66",
       "data_labels": {
         "store": "/home/tv/.local/share/archtv/experimental-userdata/art-coherent-326",
         "metadata": {
@@ -295,7 +295,7 @@
       "offline_access_evidence": "dist/aosp16/audio-policy-inputs-67/access-comparison.json",
       "offline_cases": 48,
       "payload_sha256": "4c058a8b21bcbcc7c9cfbc423573f3e252b57857e890788b4a47d42d073b93d7",
-      "scope": "Same326 payload/private store.67 adds only init\u2192odsign nosuid_transition; NNP1/nosuid/original labels preserved. No runtime success assumed.",
+      "scope": "Same326 payload/private store.67 adds only init→odsign nosuid_transition; NNP1/nosuid/original labels preserved. No runtime success assumed.",
       "functional_result": "/home/tv/recuperacion-archtv/1ac79885-39f9-4abf-8da2-16fee8b80080-markor-software-launch/functional-result.json",
       "result": {
         "id": "1ac79885-39f9-4abf-8da2-16fee8b80080",
@@ -887,6 +887,13 @@
         "restore_script": "/home/tv/recuperacion-archtv/20261105T163555Z-home355/restore-cold-payload.py",
         "restore_script_sha256": "e45f772620b09e050c5d6fa8dd7d1936c9e30b3d0c832430ef0e646dd308a7c3",
         "scope": "Only closed consumed recovered342/344/354 payloads archived losslessly after355 built; complete decompression hashes verified. Raw replay requires exact restore. Sources/userdata/frontends/evidence retained."
+      },
+      "closed_payload_extra341": {
+        "receipt": "/home/tv/recuperacion-archtv/20261105T163555Z-home355/cold-payload-archives-extra341.json",
+        "receipt_sha256": "00fb85094a90fcc88d2bd7ee76c6deaa3d7e8280852bbcfc9b082a0341b59a0a",
+        "restore": "/home/tv/recuperacion-archtv/20261105T163555Z-home355/restore-cold-payload-extra341.py",
+        "restore_sha256": "0646ae22f3ad940725f251d2543ed2973ba3469864b2e340b4d7df582f34905c",
+        "scope": "Closed historical341 raw payload losslessly archived; restore exact bytes before using raw path, no userdata removal."
       }
     },
     "x509_reopen_correction": {
@@ -1865,7 +1872,7 @@
           "sha256": "d3eb7667da5d6443deb22eb91de5893b561c0d7ec098f92087a2ed33a0a58f36"
         }
       },
-      "current_integration": 354,
+      "current_integration": 355,
       "integration348": {
         "checkpoint": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch",
         "build": "dist/aosp16/package-cohort-build-348",
@@ -2661,7 +2668,7 @@
             "sha256": "b050682c253ef85fdaa175cfe7424acf03fa31ab81a336a03ab7c9bbeaa20d0c"
           }
         },
-        "scope": "Scoped original-task\u2192trusted RustHome\u2192original CLI WARM relaunch and existing note positive. Wrappers exit1, exact cause unknown; reproduced chown bug suspected. Not overall run acceptance or broad APK/R1 completion.",
+        "scope": "Scoped original-task→trusted RustHome→original CLI WARM relaunch and existing note positive. Wrappers exit1, exact cause unknown; reproduced chown bug suspected. Not overall run acceptance or broad APK/R1 completion.",
         "next": "Full354 candidate rebuilding; test actual closure and Home child exec/restart under enforcing, then original launcher/catalog UI."
       },
       "runner_close_correction353": {
@@ -2743,6 +2750,93 @@
         },
         "next": "355 built with bounded10s original dumps and all error/completeness guards retained. Native physical UI driver implemented/compiled but not runtime-validated; owner-bound six commands follow real inspected captures and original relaunch, no model response timing.",
         "payload_sha256": "69450fd7ba5558df41d6824793172f8972f89286b92435c39c8225f26acca767"
+      },
+      "integration355": {
+        "checkpoint": "/home/tv/recuperacion-archtv/57bcd21d-b722-46a9-86fb-e95c916a53bb-markor-software-launch",
+        "build": "dist/aosp16/package-cohort-build-355",
+        "native_exit": 0,
+        "outer_exit": 0,
+        "three_owner_services_success": true,
+        "selected_core_workflow_accepted": true,
+        "overall_run_accepted": false,
+        "six_command_challenge_completed": false,
+        "original_protected_outputs_verified": 10,
+        "original_identity_guard_verified": true,
+        "note_sha256": "d3dd765e00aedeb5b0325cbb4a7efa3a66892ed7e0b36ea2a385586dd7551a33",
+        "recovery_verified": true,
+        "consumed": true,
+        "scope": "Selected Markor Back/Home/original CLI WARM/note intact, all integrated guards and wrapper closure. Extra six-command challenge incomplete: fifth input after Android display closed. Not UI launcher, full APK compatibility, R1, performance or new Home credential acceptance.",
+        "evidence": {
+          "workflow355-decision.json": {
+            "path": "/home/tv/recuperacion-archtv/57bcd21d-b722-46a9-86fb-e95c916a53bb-markor-software-launch/workflow355-decision.json",
+            "sha256": "ea2844bb6282028971231f22c0fd245940595d1a47abfc8c7401f21f4b53c36e"
+          },
+          "native-result.json": {
+            "path": "/home/tv/recuperacion-archtv/57bcd21d-b722-46a9-86fb-e95c916a53bb-markor-software-launch/native-result.json",
+            "sha256": "ae0853643bd5ae1272b64a36844585f1e4a957669271f70d70d813b9cb44096a"
+          },
+          "result.json": {
+            "path": "/home/tv/recuperacion-archtv/57bcd21d-b722-46a9-86fb-e95c916a53bb-markor-software-launch/result.json",
+            "sha256": "7f2c9eb40197796f6b16bf67f1ed5ef51f252de92f4961ee83617c444c6c85e1"
+          },
+          "completion-result.json": {
+            "path": "/home/tv/recuperacion-archtv/57bcd21d-b722-46a9-86fb-e95c916a53bb-markor-software-launch/completion-result.json",
+            "sha256": "c849d51918674a438a4ac7ef5b73a287cc08fa348d23ab06fdc748a4ac3f089a"
+          },
+          "terminal-owner-status.json": {
+            "path": "/home/tv/recuperacion-archtv/57bcd21d-b722-46a9-86fb-e95c916a53bb-markor-software-launch/terminal-owner-status.json",
+            "sha256": "05ef57dce5a7fc775c80b59e8c6fac824912ad9170b4e501cfcdf2b1904f7c3a"
+          },
+          "completion-consumer.json": {
+            "path": "/home/tv/recuperacion-archtv/57bcd21d-b722-46a9-86fb-e95c916a53bb-markor-software-launch/completion-consumer.json",
+            "sha256": "530b0c5ceeac4226efb73de0d161c45937a6697ff445c25beb1baa128e2e9ba2"
+          },
+          "recovery-readback.json": {
+            "path": "/home/tv/recuperacion-archtv/57bcd21d-b722-46a9-86fb-e95c916a53bb-markor-software-launch/recovery-readback.json",
+            "sha256": "b99a7e010133ca30267234c777594d239cb39807f890c6836b06bdf77bbbc788"
+          },
+          "mac-window.json": {
+            "path": "/home/tv/recuperacion-archtv/57bcd21d-b722-46a9-86fb-e95c916a53bb-markor-software-launch/mac-window.json",
+            "sha256": "b77abc5f37216dc4654f9f64fba787478e3caf49a2003b7f1302d6f537e11e2f"
+          },
+          "original-workflow-capture.json": {
+            "path": "/home/tv/recuperacion-archtv/57bcd21d-b722-46a9-86fb-e95c916a53bb-markor-software-launch/original-workflow-capture.json",
+            "sha256": "49605e00cc23e18b8257f1fb408a8c1174161d1a3b13f3c2353e982414b95857"
+          },
+          "mc1_original_fork_identities.json": {
+            "path": "/home/tv/recuperacion-archtv/57bcd21d-b722-46a9-86fb-e95c916a53bb-markor-software-launch/mc1_original_fork_identities.json",
+            "sha256": "7d04f64996445aa74b9294babca2a5998cd012f20d0ee1def3d51b6455ef63a1"
+          },
+          "storage_original_android_authority_verified.json": {
+            "path": "/home/tv/recuperacion-archtv/57bcd21d-b722-46a9-86fb-e95c916a53bb-markor-software-launch/storage_original_android_authority_verified.json",
+            "sha256": "dfbe4755a4a597ba96afe5e159ae769d83caa76a59c149f908db19ac770794c2"
+          },
+          "apk_original_shell_hash_readback_verified.json": {
+            "path": "/home/tv/recuperacion-archtv/57bcd21d-b722-46a9-86fb-e95c916a53bb-markor-software-launch/apk_original_shell_hash_readback_verified.json",
+            "sha256": "3e40c10f83b4537ddbe8d447222e10c4bb2aab0b4da0083d5ba2b50953fb3879"
+          },
+          "markor_normal_original_observations_verified.json": {
+            "path": "/home/tv/recuperacion-archtv/57bcd21d-b722-46a9-86fb-e95c916a53bb-markor-software-launch/markor_normal_original_observations_verified.json",
+            "sha256": "a1808eb0ee9de3a988691c89d5bf4aa5e944cfa1416f34842e6a90d3afc2b830"
+          },
+          "observed-original-logcat.txt": {
+            "path": "/home/tv/recuperacion-archtv/57bcd21d-b722-46a9-86fb-e95c916a53bb-markor-software-launch/observed-original-logcat.txt",
+            "sha256": "c43faa76b23644c1a679f46cedee0daec24e57dc4f76d37aa165f740352ba1b5"
+          },
+          "native-ui-sequence.json": {
+            "path": "/home/tv/recuperacion-archtv/57bcd21d-b722-46a9-86fb-e95c916a53bb-markor-software-launch/native-ui-sequence.json",
+            "sha256": "30cf36130066f8e07a2019e3122d0e4f24c95f569c6f6d240b8f50186d22d318"
+          },
+          "native-ui-sequence2.json": {
+            "path": "/home/tv/recuperacion-archtv/57bcd21d-b722-46a9-86fb-e95c916a53bb-markor-software-launch/native-ui-sequence2.json",
+            "sha256": "6a4dd073199d646ee9a247be25d1be47c74febe33fb7b60ed7db170aee628d85"
+          },
+          "driver2-provenance.json": {
+            "path": "/home/tv/recuperacion-archtv/57bcd21d-b722-46a9-86fb-e95c916a53bb-markor-software-launch/driver2-provenance.json",
+            "sha256": "0fe220af3aa1276280450f6bee38e513edc261a88369cd830216c5d47c8d89a4"
+          }
+        },
+        "next": "Integrate original package/activity catalog and launch with trusted Rust Home; keep separate API, ABI and ARM/GMS/DRM requirements."
       }
     }
   },
