@@ -1,5 +1,9 @@
 # Índice de evidencias
 
+350 (8ce32c00-e419-43f2-abf8-eb44fb85e001): informe ART enlaza las 28identidades y observaciones externas crudas, SID/status/SID de snapshot, InstallerRPC, lectura original CE/permisos con hashes, hashAPK instalado, frame real de nota348, logs972022bytes, salida0 de los tres propietarios y recuperación/consumo. Diez negativas del parser son sintéticas y se distinguen de la ejecución real. El replay offline de testigos reales350 acepta el original y rechaza tres alteraciones de capacidades/bracket/SNAPSHOT ausente; no son tres nuevas ejecuciones. Logs conservan tres fatales de devicelockcontroller/dynsystem; no ANR Markor en el tramo capturado. REA MCP ev_5151bf84fe2bd50a8270d05fec0d232c8f2fc4b3122cda3e5427d3fb14675ca1 decompila MainActivity.onBackPressed; sólo evidencia estática para el siguiente recorrido. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration350`.
+
+Histórico anterior:
+
 349 (496ae6e0-55fd-4706-aba1-82a4d094e890): el informe ART enlaza resultado nativo0, lectura original de tres archivos con hashes, replay del parser sobre datos reales, frame visto de nota348 reabierta, muestra transitoria SNAPSHOT y exterior1, recuperación/consumo y pruebas negativas del parser. El nuevo branch integrado de metadatos/hash instalado no se alcanzó por la guardia anterior; no presentarlo como ejecutado. REA MCP SHA256 es inspección estática; readelf CLI sólo contrasta DT_NEEDED. La disponibilidad real de libcrypto procede de dlsym/dladdr y hashes nativos. Windows11/VirtualBox7.2.22 es información del usuario, sin atribución causal a relojes. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration349`.
 
 Histórico anterior:

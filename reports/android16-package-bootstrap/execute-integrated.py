@@ -47,14 +47,27 @@ def verify_original_fork_identities(native_stderr, external, ps_texts, logcat_te
     assert ps[pid]=={context},'conflicting original ps SID'
     witnesses.append('original ps -AZ')
    assert witnesses,'no actual post-exec kernel SID'
-   assert row['status_errno']=='0' and row['status_bounded']=='1','missing/bounded kernel status'
-   status=fields(row['status'])
-   assert list(map(int,status['Uid'].split()))==[int(row['configured_uid'])]*4,'RC/kernel UID mismatch'
-   assert list(map(int,status['Gid'].split()))==[int(row['configured_gid'])]*4,'RC/kernel GID mismatch'
-   assert sorted(map(int,status['Groups'].split()))==sorted(map(int,row['configured_supp_groups'].split())),'RC/kernel supplementary groups mismatch'
-   assert int(status['CapEff'],16)==caps and int(status['CapPrm'],16)==caps,'capabilities mismatch'
-   assert status['NoNewPrivs'].strip()=='1','NNP missing'
-   observed[kind]={'pid':pid,'actual_context':context,'witnesses':witnesses,'kernel_status':status,'original_rc_uid':int(row['configured_uid']),'original_rc_gid':int(row['configured_gid']),'original_rc_supp_groups':row['configured_supp_groups'],'configured_seclabel_not_sid':row['configured_seclabel']}
+   statuses=[]
+   for peer in external:
+    if peer['kind']==kind and peer['pid_namespace_pid']==pid and peer.get('actual_context')==context and peer.get('getpidcon_raw_return')==0 and peer.get('status_context_after')==context and peer.get('status_context_after_return')==0 and peer.get('status_bounded') is True:
+     statuses.append(('external post-exec SID/status/SID',fields('\n'.join(peer['status']))))
+   for sample in candidates:
+    if sample['context']==context and sample['context_errno']=='0' and sample['status_errno']=='0' and sample['status_bounded']=='1':
+     statuses.append(('native parent post-exec SID/status',fields(sample['status'])))
+   if not statuses:
+    # Retain the existing independent ps witness for domains whose proc SID
+    # is denied to init. A positively observed init SID is pre-exec and must
+    # never be relabelled by a separate later observation.
+    assert row['context']=='' and row['context_errno']!='0' and ps.get(pid)=={context},'No post-exec credential witness'
+    assert row['status_errno']=='0' and row['status_bounded']=='1','missing/bounded kernel status'
+    statuses.append(('native status with independent original ps SID; non-atomic',fields(row['status'])))
+   for source,status in statuses:
+    assert list(map(int,status['Uid'].split()))==[int(row['configured_uid'])]*4,'RC/kernel UID mismatch'
+    assert list(map(int,status['Gid'].split()))==[int(row['configured_gid'])]*4,'RC/kernel GID mismatch'
+    assert sorted(map(int,status['Groups'].split()))==sorted(map(int,row['configured_supp_groups'].split())),'RC/kernel supplementary groups mismatch'
+    assert int(status['CapEff'],16)==caps and int(status['CapPrm'],16)==caps,'capabilities mismatch'
+    assert status['NoNewPrivs'].strip()=='1','NNP missing'
+   observed[kind]={'pid':pid,'actual_context':context,'witnesses':witnesses,'kernel_status':statuses[-1][1],'credential_witnesses':[source for source,status in statuses],'original_rc_uid':int(row['configured_uid']),'original_rc_gid':int(row['configured_gid']),'original_rc_supp_groups':row['configured_supp_groups'],'configured_seclabel_not_sid':row['configured_seclabel']}
   except (KeyError,ValueError,AssertionError) as error:errors.append({'kind':kind,'error':str(error)})
  try:
   pids=set(map(int,re.findall(r'ORIGINAL_SYSTEMSERVER_STATUS_V1 pid=(\d+) ',logcat_text)));assert len(pids)==1,'missing/ambiguous original system-server PID'
@@ -68,7 +81,7 @@ def verify_original_fork_identities(native_stderr, external, ps_texts, logcat_te
   assert status['NoNewPrivs'].strip()=='1' and int(status['CapBnd'],16)==0,'original fork NNP/bounding mismatch'
   observed['SERVICES']={'pid':pid,'actual_context':'u:r:system_server:s0','witnesses':['original ps -AZ','selected entry own /proc/self/status'],'kernel_status':status}
  except (KeyError,ValueError,AssertionError) as error:errors.append({'kind':'SERVICES','error':str(error)})
- return {'verified':not errors and len(observed)==len(expected)+1,'observed':observed,'errors':errors,'expected_count':len(expected)+1,'scope':'Selected original-fork profile credential/SID witnesses only; not atomic snapshot, authorization, isolation or APK compatibility'}
+ return {'verified':not errors and len(observed)==len(expected)+1,'observed':observed,'errors':errors,'expected_count':len(expected)+1,'external_kernel_observations':external,'scope':'Selected original-fork profile credential/SID witnesses only; not atomic snapshot, authorization, isolation or APK compatibility'}
 
 def verify_original_storage_metadata(native_stderr, worker_pid, expected_mode, data_device):
  """Require complete fixed-path kernel observations from admitted Android init.
@@ -1123,6 +1136,19 @@ installed_checks="""if original_fork_profile:
 else:
 """.replace('APK_TARGET_SHA256',repr(apk_sha))+'\n'.join(' '+line for line in legacy_installed.splitlines())+'\n'
 text=text[:installed_start]+installed_checks+text[installed_end:]
+# Preserve the existing bounded wait for the real post-exec SID. Bracket its
+# credential read with a second actual SID observation, so a fast original
+# oneshot is not checked using the native parent's pre-exec capabilities.
+status_error_line="   except OSError as e:entry['status_error']=str(e)\n"
+assert text.count(status_error_line)==1
+status_context_after="""    entry['status_bounded']=len(status)<=16384
+    after=ctypes.c_char_p();after_return=lib.getpidcon_raw(pid,ctypes.byref(after))
+    entry['status_context_after_return']=after_return
+    entry['status_context_after']=after.value.decode() if after_return==0 else None
+    entry['status_context_after_errno']=ctypes.get_errno() if after_return<0 else 0
+    if after_return==0:lib.freecon(after)
+"""
+text=text.replace(status_error_line,status_context_after+status_error_line,1)
 text=inspect.getsource(verify_original_fork_identities)+'\n'+inspect.getsource(verify_original_storage_metadata)+'\n'+inspect.getsource(verify_original_installed_hashes)+'\n'+text
 
 

@@ -1042,7 +1042,7 @@
       "APK_inputs": 14,
       "scope": "Actual unprivileged original Bionic profman profile conversion; all original descriptors retained using adapted framework. StaticREA headers separate. No Android boot/services started, no profile bytes/checksums manually forged. No coherent bootimages/loading/signing/APK acceptance yet.",
       "initial_negative": "Compared location checksum incorrectly to raw DEX Adler; all18 failures preserved. OriginalDexFileLoader uses ZIPCRC32+i forcontainer; corrected verifier notprofilebytes.",
-      "next": "Obtain phase-coherent post-exec snapshot credential witness using original service lifecycle/source and kernel evidence, retaining negatives and original boundaries. Do not accept init pre-exec credentials as apexd or waive capabilities. Then normal app close/reopen and coherent minimal package profile, broad APK compatibility and R1 still open.",
+      "next": "Execute real normal Markor activity close (Back handling, not force-stop) with original AMS/task/lifecycle observations, then original launch and reopen savednote; preserve actual bytes and UI. Address coherent minimal package profile from original package contracts without implementing irrelevant fullAndroid boot. R1/broadAPK/ARM/GMS/DRM/install/update/lightness open.",
       "integration341": {
         "checkpoint": "/home/tv/recuperacion-archtv/28003656-01d6-4c93-866c-4a34bf3e1a62-markor-software-launch",
         "build": "dist/aosp16/package-cohort-build-341",
@@ -1246,7 +1246,7 @@
         ],
         "next": "Run existingoriginal Markorworkflowtoken with300sinteraction, immediatelyfocuseditorbodybeforetyping; originalCLI requiresbytes thenforce-stop/newPID/reopen. Keep oldnote/data. Correct identityproofs after functionalworkflow, no intendedSID substitution."
       },
-      "state": "349 original metadata native positive and existing note reopened; outer1 snapshot identity evidence transition, not accepted cohort",
+      "state": "350 selected original integrated guards all pass; existing note reopen; broad compatibility/R1 and normal app close still open",
       "integration343": {
         "checkpoint": "/home/tv/recuperacion-archtv/085b5399-1642-4738-9c64-5adeecb8b5e9-markor-software-launch",
         "build": "dist/aosp16/package-cohort-build-343",
@@ -1723,7 +1723,7 @@
           "sha256": "d3eb7667da5d6443deb22eb91de5893b561c0d7ec098f92087a2ed33a0a58f36"
         }
       },
-      "current_integration": 349,
+      "current_integration": 350,
       "integration348": {
         "checkpoint": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch",
         "build": "dist/aosp16/package-cohort-build-348",
@@ -1971,6 +1971,137 @@
         "host_report": {
           "path": "/home/tv/recuperacion-archtv/20261105T125645Z-metadata-authority349/host-reported.json",
           "sha256": "0f0e4374c6001cfb17a893de7a5ac0a91f19580ca3018214f29652eaa82c51d3"
+        }
+      },
+      "integration350": {
+        "checkpoint": "/home/tv/recuperacion-archtv/8ce32c00-e419-43f2-abf8-eb44fb85e001-markor-software-launch",
+        "build": "dist/aosp16/package-cohort-build-350",
+        "payload_sha256": "2229e0ee2fde2576813277ff9d6e5932c4dec7c70531a1254631f3f08a390c1b",
+        "native_exit": 0,
+        "outer_exit": 0,
+        "host_owner_exit": 0,
+        "selected_cohort_checks_passed": true,
+        "identity_guard_verified": true,
+        "identity_count": 28,
+        "snapshot_postexec_credential_witness": {
+          "pid": 327,
+          "actual_context": "u:r:apexd:s0",
+          "witnesses": [
+            "external Linux getpidcon"
+          ],
+          "kernel_status": {
+            "Uid": "\t0\t0\t0\t0",
+            "Gid": "\t1000\t1000\t1000\t1000",
+            "Groups": "\t ",
+            "CapPrm": "\t000000000000000f",
+            "CapEff": "\t000000000000000f",
+            "CapBnd": "\t000000000000000f",
+            "NoNewPrivs": "\t1"
+          },
+          "credential_witnesses": [
+            "external post-exec SID/status/SID"
+          ],
+          "original_rc_uid": 0,
+          "original_rc_gid": 1000,
+          "original_rc_supp_groups": "",
+          "configured_seclabel_not_sid": ""
+        },
+        "installer_original_operation_verified": true,
+        "original_pms_queries_verified": true,
+        "original_storage_metadata_verified": true,
+        "original_installed_hash_guard_verified": true,
+        "cross_cohort_note_reopen_observed": true,
+        "new_note_write_observed": false,
+        "real_primary_workflow_observed": false,
+        "overall_cohort_accepted": false,
+        "all_markor_features_accepted": false,
+        "R1_MAC_accepted": false,
+        "policy": 68,
+        "policy_changed": false,
+        "mac_restored": "0",
+        "cpu_quota_percent": 300,
+        "kernel_cpu_max": "300000 100000",
+        "note_path": "/storage/emulated/0/Documents/markor/archtv-348ace01.md",
+        "scope": "All selected integrated guards execute and pass on intact Markor/AOSP/ART/Bionic/Rust/Smithay, existing348note reopens. This is not all app features, broadAPK compatibility, graceful app close, FBE/reboot/update/lightness/stability or R1 acceptance. Full selected create/save/forcedstop/coldreopen remains348.",
+        "background_failures": "Captured original log retains devicelockcontroller ExceptionInInitializerError and two dynsystem service failures. No Markor ANR in972022 captured bytes; not proof of general stability. Coherent minimal preinstalled package profile remains necessary.",
+        "remaining_failure": null,
+        "next": "Execute real normal Markor activity close (Back handling, not force-stop) with original AMS/task/lifecycle observations, then original launch and reopen savednote; preserve actual bytes and UI. Address coherent minimal package profile from original package contracts without implementing irrelevant fullAndroid boot. R1/broadAPK/ARM/GMS/DRM/install/update/lightness open.",
+        "native_result": {
+          "path": "/home/tv/recuperacion-archtv/8ce32c00-e419-43f2-abf8-eb44fb85e001-markor-software-launch/native-result.json",
+          "sha256": "7094716df0a4a619216dfb2f283cf66b8865d263c22692dc6bbc27c7152bd652"
+        },
+        "result": {
+          "path": "/home/tv/recuperacion-archtv/8ce32c00-e419-43f2-abf8-eb44fb85e001-markor-software-launch/result.json",
+          "sha256": "e448d1b9ad31e0a4c0989e1db4ad7907499b5bf0703b00a396d767e40e626888"
+        },
+        "identity_guard": {
+          "path": "/home/tv/recuperacion-archtv/8ce32c00-e419-43f2-abf8-eb44fb85e001-markor-software-launch/original-fork-identities.json",
+          "sha256": "c5106972d7e0fc30ed14c1077251a830b9981a531563ed5d9774933bcb1f5726"
+        },
+        "installer_operation": {
+          "path": "/home/tv/recuperacion-archtv/8ce32c00-e419-43f2-abf8-eb44fb85e001-markor-software-launch/original-installer-operation.json",
+          "sha256": "ae838ce81ff0f519fd401e93c0c1ab20c5bc960738bed78751bbb20ab01e88ba"
+        },
+        "storage_metadata": {
+          "path": "/home/tv/recuperacion-archtv/8ce32c00-e419-43f2-abf8-eb44fb85e001-markor-software-launch/original-storage-metadata.json",
+          "sha256": "b348760a17bb829d1fb7e3f643a4c8d3b9f854c33bac99aa66414540fee5f197"
+        },
+        "installed_hashes": {
+          "path": "/home/tv/recuperacion-archtv/8ce32c00-e419-43f2-abf8-eb44fb85e001-markor-software-launch/original-installed-hashes.json",
+          "sha256": "668226df8f94dbdedbab32ce8dee784c08d41841737be23e143abadf3a735e4e"
+        },
+        "visual_reopened": {
+          "path": "/home/tv/recuperacion-archtv/8ce32c00-e419-43f2-abf8-eb44fb85e001-markor-software-launch/visual-note-reopened.json",
+          "sha256": "79df97ca2a8ccef00a987ceb912045ae4d20b37c1699e12351b363be65124d0e"
+        },
+        "original_log": {
+          "path": "/home/tv/recuperacion-archtv/8ce32c00-e419-43f2-abf8-eb44fb85e001-markor-software-launch/original-log-observation.json",
+          "sha256": "0da7d74108885f7c0e7a8f5e68292e492886e8486d304d0f44232e2919d3bda0"
+        },
+        "cpu_kernel": {
+          "path": "/home/tv/recuperacion-archtv/8ce32c00-e419-43f2-abf8-eb44fb85e001-markor-software-launch/cpu-quota-kernel.json",
+          "sha256": "5302a1e07f958b1fff13e04f29792a39bde8128eae9e48d6b9c59cb99184c411"
+        },
+        "mac_window": {
+          "path": "/home/tv/recuperacion-archtv/8ce32c00-e419-43f2-abf8-eb44fb85e001-markor-software-launch/mac-window.json",
+          "sha256": "49ad147bf1e140f76bf314cbff67e31ed3a9ac3ccca9dabea2c621a75b341917"
+        },
+        "normal_backing_close": {
+          "path": "/home/tv/recuperacion-archtv/8ce32c00-e419-43f2-abf8-eb44fb85e001-markor-software-launch/backing-after.json",
+          "sha256": "2cfdb3654d9cd71edeacc6a010214f5d7142f6759635c047ea364db3e705d08a"
+        },
+        "recovery": {
+          "path": "/home/tv/recuperacion-archtv/8ce32c00-e419-43f2-abf8-eb44fb85e001-markor-software-launch/recovery-readback.json",
+          "sha256": "c8ceea542fc4603147102c12534b5f383a9aac3632e159e9c203d36ee873d512"
+        },
+        "terminal_owners": {
+          "path": "/home/tv/recuperacion-archtv/8ce32c00-e419-43f2-abf8-eb44fb85e001-markor-software-launch/terminal-owner-status.json",
+          "sha256": "afe498317cbbf84d322e586e1fe3fbf7db083f1378a16bcc4ff69916076ad85e"
+        },
+        "consumer": {
+          "path": "/home/tv/recuperacion-archtv/8ce32c00-e419-43f2-abf8-eb44fb85e001-markor-software-launch/completion-consumer.json",
+          "sha256": "4d9d929253357fba8055e3b130966708f4f7a3748bb1ec08a83920242947bca6"
+        },
+        "phase_verifier_tests": {
+          "path": "/home/tv/recuperacion-archtv/20261105T132100Z-snapshot-phase350/phase-verifier-tests.json",
+          "sha256": "1dd334350ecf8a25f0b4ca2df9e4d89116dbf72754f181bd8882f92e6e2e358d"
+        },
+        "original_sources": {
+          "path": "/home/tv/recuperacion-archtv/20261105T132100Z-snapshot-phase350/original-init-sources.json",
+          "sha256": "54c4d64e45f9d0dbca18f29309d4bc97746eeadc09dc35d339ea4cbc5ef8edf0"
+        },
+        "source_phase_analysis": {
+          "path": "/home/tv/recuperacion-archtv/20261105T132100Z-snapshot-phase350/source-phase-analysis.json",
+          "sha256": "d4dd1c10333fa0d3522a3a42c6e531a40dca4bfe05557e06a028a916dab37041"
+        },
+        "rea_markor_back_static": {
+          "path": "/home/tv/recuperacion-archtv/20261105T132100Z-snapshot-phase350/rea-markor-main-back.json",
+          "sha256": "d2263dd9548b8ed5d649ff6b71b6d9a22be6cce21f02d7ac2649ee12cf1f0581"
+        },
+        "phase_guard_limits": "Sequential actual SID/status/SID reads, not atomic snapshot. External preexec or missing bracket is not accepted; raw external observations retained. Native init preexec row never relabelled by later SID. Existing independent original ps witness retained for init-denied proc SIDs, explicitly non-atomic.",
+        "actual_identity_replay_tests": {
+          "path": "/home/tv/recuperacion-archtv/8ce32c00-e419-43f2-abf8-eb44fb85e001-markor-software-launch/actual-identity-replay-tests.json",
+          "sha256": "2e2f19f8c93d3a5686fc96a82b078cdaa05245907f1ecb7faefd24850ff674c0"
         }
       }
     }

@@ -1,5 +1,9 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+350 cierra el bloqueo de observación integrado: nativa/exterior0, credenciales originales, metadatos y hashAPK verificados juntos, nota348 reabierta. Próximo avance funcional: Back real hasta cierre de actividades, observar ciclo/tareas AMS originales y persistencia, lanzar de nuevo por contrato original y reabrir nota; no sustituirlo por force-stop ni dar por muerto el proceso si Android lo conserva. REA MCP muestra que MainActivity delega primero al fragmento y luego a super.onBackPressed: inspección estática que orienta la prueba, no cierre ejecutado. Mantener el recorrido completo348 y corregir después el perfil mínimo coherente de paquetes. No ampliar más infraestructura de sondeo. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration350`.
+
+Histórico anterior:
+
 349 reduce el bloqueo del lector: metadatos originales reales verificados y nota348 reabierta entre cohortes, sin ampliar política. Siguiente experimento: capturar credenciales post-exec coherentes del proceso original corto apexd-snapshotde; resolver la carrera de observación con fuentes/ciclo original y evidencia kernel, sin aceptar CapEff0 pre-exec como contrato final. Después exigir la ejecución integrada de metadatos y hash instalado protegido, cierre normal de aplicación y perfil mínimo coherente. No repetir el workflow348 ya probado como requisito de cada sonda. R1, estabilidad/ligereza/instalación/actualización y ARM/GMS/DRM siguen abiertos. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration349`.
 
 Histórico anterior:

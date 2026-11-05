@@ -414,7 +414,7 @@
         "close": "approved",
         "reopen": "approved"
       },
-      "reason": "349 reopens existing348note across cohort, native original storage metadata verified, outer1 snapshot identity witness phase mismatch. Last full selected note workflow348 remains valid; no overall/R1/allfeatures acceptance.",
+      "reason": "350 selected integrated guards pass and note348 reopens across cohorts; originalmetadata/hash authority boundary works without policy widening. Last full create/save/forcedstop/coldreopen348 retained. Next normal activity close/reopen and coherent minimal package profile, not more class fixtures. General compatibility/R1 open.",
       "framework_class_link_pass": true,
       "declared_application": "net.gsantner.markor.ApplicationObject",
       "bootstrap_experiment": {
@@ -454,63 +454,63 @@
       "runtime_stage_evidence": {
         "installation": {
           "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
-          "record_sha256": "f0e85275486e202c16fc999f8b94c02af7bb92703ac7a100cee39dc4a64c142c",
+          "record_sha256": "71b6da4f4e4154cef39d55c28fe7a92cec1994ea22249fb25b1f28cccf32ca54",
           "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
           "scope": "ExactintactMarkorv164 selectedlocalnote workflow oncoherentoriginalART/Bionic/AOSP withRust/Smithay andboundedCPU300. ActualUI/input/create/save21bytes; originalFUSEhashbefore/after, originalAMSforce-stop/oldPIDabsent/coldnewPID, actualsavednoteeditor. Notallfeatures/broadAPK, gracefulclose, reboot/FBE/updates/lightness orR1acceptance. Stage installation: originalPMSsession_andintactAPKsource/installedhash"
         },
         "launch": {
           "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
-          "record_sha256": "f0e85275486e202c16fc999f8b94c02af7bb92703ac7a100cee39dc4a64c142c",
+          "record_sha256": "71b6da4f4e4154cef39d55c28fe7a92cec1994ea22249fb25b1f28cccf32ca54",
           "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
           "scope": "ExactintactMarkorv164 selectedlocalnote workflow oncoherentoriginalART/Bionic/AOSP withRust/Smithay andboundedCPU300. ActualUI/input/create/save21bytes; originalFUSEhashbefore/after, originalAMSforce-stop/oldPIDabsent/coldnewPID, actualsavednoteeditor. Notallfeatures/broadAPK, gracefulclose, reboot/FBE/updates/lightness orR1acceptance. Stage launch: originalMainActivitythenDocumentActivity"
         },
         "interface": {
           "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
-          "record_sha256": "f0e85275486e202c16fc999f8b94c02af7bb92703ac7a100cee39dc4a64c142c",
+          "record_sha256": "71b6da4f4e4154cef39d55c28fe7a92cec1994ea22249fb25b1f28cccf32ca54",
           "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
           "scope": "ExactintactMarkorv164 selectedlocalnote workflow oncoherentoriginalART/Bionic/AOSP withRust/Smithay andboundedCPU300. ActualUI/input/create/save21bytes; originalFUSEhashbefore/after, originalAMSforce-stop/oldPIDabsent/coldnewPID, actualsavednoteeditor. Notallfeatures/broadAPK, gracefulclose, reboot/FBE/updates/lightness orR1acceptance. Stage interface: actualcreatedandsavednoteeditoraftercoldrelaunch"
         },
         "input": {
           "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
-          "record_sha256": "f0e85275486e202c16fc999f8b94c02af7bb92703ac7a100cee39dc4a64c142c",
+          "record_sha256": "71b6da4f4e4154cef39d55c28fe7a92cec1994ea22249fb25b1f28cccf32ca54",
           "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
           "scope": "ExactintactMarkorv164 selectedlocalnote workflow oncoherentoriginalART/Bionic/AOSP withRust/Smithay andboundedCPU300. ActualUI/input/create/save21bytes; originalFUSEhashbefore/after, originalAMSforce-stop/oldPIDabsent/coldnewPID, actualsavednoteeditor. Notallfeatures/broadAPK, gracefulclose, reboot/FBE/updates/lightness orR1acceptance. Stage input: 10actualpointer/keyboardcommands; navigationrecoveryrecorded"
         },
         "main_function": {
           "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
-          "record_sha256": "f0e85275486e202c16fc999f8b94c02af7bb92703ac7a100cee39dc4a64c142c",
+          "record_sha256": "71b6da4f4e4154cef39d55c28fe7a92cec1994ea22249fb25b1f28cccf32ca54",
           "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
           "scope": "ExactintactMarkorv164 selectedlocalnote workflow oncoherentoriginalART/Bionic/AOSP withRust/Smithay andboundedCPU300. ActualUI/input/create/save21bytes; originalFUSEhashbefore/after, originalAMSforce-stop/oldPIDabsent/coldnewPID, actualsavednoteeditor. Notallfeatures/broadAPK, gracefulclose, reboot/FBE/updates/lightness orR1acceptance. Stage main_function: new21bytenotecreatedandsavedbyUI"
         },
         "persistence": {
           "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
-          "record_sha256": "f0e85275486e202c16fc999f8b94c02af7bb92703ac7a100cee39dc4a64c142c",
+          "record_sha256": "71b6da4f4e4154cef39d55c28fe7a92cec1994ea22249fb25b1f28cccf32ca54",
           "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
           "scope": "ExactintactMarkorv164 selectedlocalnote workflow oncoherentoriginalART/Bionic/AOSP withRust/Smithay andboundedCPU300. ActualUI/input/create/save21bytes; originalFUSEhashbefore/after, originalAMSforce-stop/oldPIDabsent/coldnewPID, actualsavednoteeditor. Notallfeatures/broadAPK, gracefulclose, reboot/FBE/updates/lightness orR1acceptance. Stage persistence: sameoriginalFUSEhashbefore/afterforcedstop; crosscohort348notyettested"
         },
         "services": {
           "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
-          "record_sha256": "f0e85275486e202c16fc999f8b94c02af7bb92703ac7a100cee39dc4a64c142c",
+          "record_sha256": "71b6da4f4e4154cef39d55c28fe7a92cec1994ea22249fb25b1f28cccf32ca54",
           "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
           "scope": "ExactintactMarkorv164 selectedlocalnote workflow oncoherentoriginalART/Bionic/AOSP withRust/Smithay andboundedCPU300. ActualUI/input/create/save21bytes; originalFUSEhashbefore/after, originalAMSforce-stop/oldPIDabsent/coldnewPID, actualsavednoteeditor. Notallfeatures/broadAPK, gracefulclose, reboot/FBE/updates/lightness orR1acceptance. Stage services: requiredlocalnote originalpackages/permission/activity/display/input/storage/ART +28identitywitnesses/PMSqueries/InstallerRPC; notallservices"
         },
         "close": {
           "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
-          "record_sha256": "f0e85275486e202c16fc999f8b94c02af7bb92703ac7a100cee39dc4a64c142c",
+          "record_sha256": "71b6da4f4e4154cef39d55c28fe7a92cec1994ea22249fb25b1f28cccf32ca54",
           "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
           "scope": "ExactintactMarkorv164 selectedlocalnote workflow oncoherentoriginalART/Bionic/AOSP withRust/Smithay andboundedCPU300. ActualUI/input/create/save21bytes; originalFUSEhashbefore/after, originalAMSforce-stop/oldPIDabsent/coldnewPID, actualsavednoteeditor. Notallfeatures/broadAPK, gracefulclose, reboot/FBE/updates/lightness orR1acceptance. Stage close: originalAMSforcedstop1347 andactualprocabsence/Zygoteexit"
         },
         "reopen": {
           "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
-          "record_sha256": "f0e85275486e202c16fc999f8b94c02af7bb92703ac7a100cee39dc4a64c142c",
+          "record_sha256": "71b6da4f4e4154cef39d55c28fe7a92cec1994ea22249fb25b1f28cccf32ca54",
           "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
           "scope": "ExactintactMarkorv164 selectedlocalnote workflow oncoherentoriginalART/Bionic/AOSP withRust/Smithay andboundedCPU300. ActualUI/input/create/save21bytes; originalFUSEhashbefore/after, originalAMSforce-stop/oldPIDabsent/coldnewPID, actualsavednoteeditor. Notallfeatures/broadAPK, gracefulclose, reboot/FBE/updates/lightness orR1acceptance. Stage reopen: originalcoldPID1712 thenactualpointeropenedsavednote"
@@ -729,23 +729,24 @@
         }
       ],
       "latest_workflow_attempt": {
-        "candidate": 349,
+        "candidate": 350,
         "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
-        "record_sha256": "f0e85275486e202c16fc999f8b94c02af7bb92703ac7a100cee39dc4a64c142c",
-        "section": "coherent_cache_candidate.profile_coherence_experiment.integration349",
+        "record_sha256": "71b6da4f4e4154cef39d55c28fe7a92cec1994ea22249fb25b1f28cccf32ca54",
+        "section": "coherent_cache_candidate.profile_coherence_experiment.integration350",
         "real_primary_workflow_observed": false,
         "existing_note_reopen_observed": true,
+        "selected_cohort_checks_passed": true,
         "native_exit": 0,
-        "outer_exit": 1,
-        "scope": "Intact Markor existing348note reopened through real UI on Rust/Smithay; native metadata proves original reader contract only. No new primary workflow, complete cohort, general stability/lightness/FBE/R1 acceptance."
+        "outer_exit": 0,
+        "scope": "All selected integrated guards execute and pass on intact Markor/AOSP/ART/Bionic/Rust/Smithay, existing348note reopens. This is not all app features, broadAPK compatibility, graceful app close, FBE/reboot/update/lightness/stability or R1 acceptance. Full selected create/save/forcedstop/coldreopen remains348."
       },
       "runtime_security_observation": {
-        "candidate": 349,
-        "state": "policy68 enforcing native metadata positive/restored0; snapshot post-exec capabilities not witnessed, guard fails; normaldata/hostclose; R1open",
+        "candidate": 350,
+        "state": "policy68 bounded enforcing/restored0; 28identities including postexec snapshot, InstallerRPC/PMS/storage/installedhash integrated pass; normalhost/dataclose; R1open",
         "evidence": "reports/android16-audio-bootstrap/artd-subprocess-progress.json",
-        "sha256": "f0e85275486e202c16fc999f8b94c02af7bb92703ac7a100cee39dc4a64c142c",
-        "section": "coherent_cache_candidate.profile_coherence_experiment.integration349",
-        "latest_result": "SNAPSHOT capabilities mismatch: only native sample is pre-exec init SID, CapPrm15/CapEff0; separate post-exec SID not phase-coherent capabilities proof. Guard failure retained."
+        "sha256": "71b6da4f4e4154cef39d55c28fe7a92cec1994ea22249fb25b1f28cccf32ca54",
+        "section": "coherent_cache_candidate.profile_coherence_experiment.integration350",
+        "latest_result": "All selected guards pass. Sequential witnesses do not prove complete authorization or isolation; normal application close/reopen not yet tested."
       },
       "runtime_security_observation_history": [
         {
@@ -1081,6 +1082,15 @@
           "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "latest_result": "Functionalnote proof separatefromLinuxobservermetadata failure andsecurity/isolation. No newpolicy orfakeoutputs.",
           "record_commit": "f205842073a402b19fdfc16b82d7c3ee1636657d"
+        },
+        {
+          "candidate": 349,
+          "state": "policy68 enforcing native metadata positive/restored0; snapshot post-exec capabilities not witnessed, guard fails; normaldata/hostclose; R1open",
+          "evidence": "reports/android16-audio-bootstrap/artd-subprocess-progress.json",
+          "sha256": "f0e85275486e202c16fc999f8b94c02af7bb92703ac7a100cee39dc4a64c142c",
+          "section": "coherent_cache_candidate.profile_coherence_experiment.integration349",
+          "latest_result": "SNAPSHOT capabilities mismatch: only native sample is pre-exec init SID, CapPrm15/CapEff0; separate post-exec SID not phase-coherent capabilities proof. Guard failure retained.",
+          "record_commit": "860182101c4b895ba389c23df418de935282fd91"
         }
       ],
       "runtime_security_history": [
@@ -1142,49 +1152,49 @@
       "runtime_mac_stage_evidence": {
         "installation": {
           "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
-          "record_sha256": "f0e85275486e202c16fc999f8b94c02af7bb92703ac7a100cee39dc4a64c142c",
+          "record_sha256": "71b6da4f4e4154cef39d55c28fe7a92cec1994ea22249fb25b1f28cccf32ca54",
           "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
           "scope": "Only exactfunctionalstage duringboundedactualenforcing; notR1authorization/isolation acceptance. originalPMSsession_andintactAPKsource/installedhash"
         },
         "launch": {
           "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
-          "record_sha256": "f0e85275486e202c16fc999f8b94c02af7bb92703ac7a100cee39dc4a64c142c",
+          "record_sha256": "71b6da4f4e4154cef39d55c28fe7a92cec1994ea22249fb25b1f28cccf32ca54",
           "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
           "scope": "Only exactfunctionalstage duringboundedactualenforcing; notR1authorization/isolation acceptance. originalMainActivitythenDocumentActivity"
         },
         "physical_presentation": {
           "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
-          "record_sha256": "f0e85275486e202c16fc999f8b94c02af7bb92703ac7a100cee39dc4a64c142c",
+          "record_sha256": "71b6da4f4e4154cef39d55c28fe7a92cec1994ea22249fb25b1f28cccf32ca54",
           "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
           "scope": "Only exactfunctionalstage duringboundedactualenforcing; notR1authorization/isolation acceptance. actualcreatedandsavednoteeditoraftercoldrelaunch"
         },
         "pointer_input": {
           "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
-          "record_sha256": "f0e85275486e202c16fc999f8b94c02af7bb92703ac7a100cee39dc4a64c142c",
+          "record_sha256": "71b6da4f4e4154cef39d55c28fe7a92cec1994ea22249fb25b1f28cccf32ca54",
           "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
           "scope": "Only exactfunctionalstage duringboundedactualenforcing; notR1authorization/isolation acceptance. 10actualpointer/keyboardcommands; navigationrecoveryrecorded"
         },
         "keyboard_ascii": {
           "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
-          "record_sha256": "f0e85275486e202c16fc999f8b94c02af7bb92703ac7a100cee39dc4a64c142c",
+          "record_sha256": "71b6da4f4e4154cef39d55c28fe7a92cec1994ea22249fb25b1f28cccf32ca54",
           "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
           "scope": "Only exactfunctionalstage duringboundedactualenforcing; notR1authorization/isolation acceptance. 10actualpointer/keyboardcommands; navigationrecoveryrecorded"
         },
         "note_create_save": {
           "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
-          "record_sha256": "f0e85275486e202c16fc999f8b94c02af7bb92703ac7a100cee39dc4a64c142c",
+          "record_sha256": "71b6da4f4e4154cef39d55c28fe7a92cec1994ea22249fb25b1f28cccf32ca54",
           "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
           "scope": "Only exactfunctionalstage duringboundedactualenforcing; notR1authorization/isolation acceptance. new21bytenotecreatedandsavedbyUI"
         },
         "forced_close_relaunch_persistence348": {
           "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
-          "record_sha256": "f0e85275486e202c16fc999f8b94c02af7bb92703ac7a100cee39dc4a64c142c",
+          "record_sha256": "71b6da4f4e4154cef39d55c28fe7a92cec1994ea22249fb25b1f28cccf32ca54",
           "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
           "accepted": true,
           "scope": "Only exactfunctionalstage duringboundedactualenforcing; notR1authorization/isolation acceptance. originalcoldPID1712 thenactualpointeropenedsavednote"
@@ -1365,13 +1375,25 @@
             "reopen": "originalcoldPID1712 thenactualpointeropenedsavednote"
           },
           "record_commit": "f205842073a402b19fdfc16b82d7c3ee1636657d"
+        },
+        {
+          "candidate": 349,
+          "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
+          "record_sha256": "f0e85275486e202c16fc999f8b94c02af7bb92703ac7a100cee39dc4a64c142c",
+          "section": "coherent_cache_candidate.profile_coherence_experiment.integration349",
+          "real_primary_workflow_observed": false,
+          "existing_note_reopen_observed": true,
+          "native_exit": 0,
+          "outer_exit": 1,
+          "scope": "Intact Markor existing348note reopened through real UI on Rust/Smithay; native metadata proves original reader contract only. No new primary workflow, complete cohort, general stability/lightness/FBE/R1 acceptance.",
+          "record_commit": "860182101c4b895ba389c23df418de935282fd91"
         }
       ],
       "runtime_results_scope": "runtime_results162/167 remainhistorical, archivedstageevidence retainsownlimits. Currentfunctional/matrixstage evidence348; prior343workflow and344/345/347savednote reopens retainedashistory.346ANR remainsnegative; no generalAPK/security acceptance.",
       "last_full_primary_workflow_positive": {
         "candidate": 348,
         "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
-        "record_sha256": "f0e85275486e202c16fc999f8b94c02af7bb92703ac7a100cee39dc4a64c142c",
+        "record_sha256": "71b6da4f4e4154cef39d55c28fe7a92cec1994ea22249fb25b1f28cccf32ca54",
         "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
         "real_primary_workflow_observed": true,
         "native_exit": 0,
@@ -1819,15 +1841,22 @@
   "latest_integration_observation_348": {
     "application": "Markor intact v164",
     "source": "reports/android16-audio-bootstrap/artd-subprocess-progress.json",
-    "source_sha256": "f0e85275486e202c16fc999f8b94c02af7bb92703ac7a100cee39dc4a64c142c",
+    "source_sha256": "71b6da4f4e4154cef39d55c28fe7a92cec1994ea22249fb25b1f28cccf32ca54",
     "section": "coherent_cache_candidate.profile_coherence_experiment.integration348",
     "scope": "Exactlocalnote workflow realpositive; outer1LinuxobserversearchMACdenial. Not R1/allapp/generalcompatibility."
   },
   "latest_integration_observation_349": {
     "application": "Markor intact v164",
     "source": "reports/android16-audio-bootstrap/artd-subprocess-progress.json",
-    "source_sha256": "f0e85275486e202c16fc999f8b94c02af7bb92703ac7a100cee39dc4a64c142c",
+    "source_sha256": "71b6da4f4e4154cef39d55c28fe7a92cec1994ea22249fb25b1f28cccf32ca54",
     "section": "coherent_cache_candidate.profile_coherence_experiment.integration349",
     "scope": "Intact Markor existing348note reopened through real UI on Rust/Smithay; native metadata proves original reader contract only. No new primary workflow, complete cohort, general stability/lightness/FBE/R1 acceptance."
+  },
+  "latest_integration_observation_350": {
+    "application": "Markor intact v164",
+    "source": "reports/android16-audio-bootstrap/artd-subprocess-progress.json",
+    "source_sha256": "71b6da4f4e4154cef39d55c28fe7a92cec1994ea22249fb25b1f28cccf32ca54",
+    "section": "coherent_cache_candidate.profile_coherence_experiment.integration350",
+    "scope": "All selected integrated guards execute and pass on intact Markor/AOSP/ART/Bionic/Rust/Smithay, existing348note reopens. This is not all app features, broadAPK compatibility, graceful app close, FBE/reboot/update/lightness/stability or R1 acceptance. Full selected create/save/forcedstop/coldreopen remains348."
   }
 }

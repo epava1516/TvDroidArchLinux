@@ -1,5 +1,9 @@
 # Contrato vigente · AOSP Android 16 QPR2
 
+350 satisface las guardias integradas seleccionadas y reapertura visual entre cohortes de la nota348, sin ampliar permisos Linux ni modificar la APK. No acredita todas las funciones Markor, aislamiento/autorización completos, estabilidad, ligereza, instalación/actualización productiva o persistencia tras reboot/FBE. El cierre forzado348 sigue diferenciado del cierre normal pendiente: Android puede cerrar actividades conservando proceso; exigir evidencias de AMS/tareas/ciclo y reapertura, no muerte ficticia. ARM/GMS/DRM permanecen separados y abiertos. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration350`.
+
+Histórico anterior:
+
 349 sólo añade reapertura entre cohortes de la nota348 y lectura nativa fija de metadatos en enforcing. No es un nuevo recorrido completo ni aceptación MAC/aislamiento. Las credenciales deben corresponder a la fase observada: init pre-exec con CapEff0 no acredita apexd post-exec aunque otro testigo muestre su SID después. Se conserva el fallo exterior y no se relajan capacidades. El recorrido348 continúa siendo evidencia parcial válida; cierre normal, reboot/FBE, actualización, estabilidad, ligereza y compatibilidad amplia permanecen abiertos. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration349`.
 
 Histórico anterior:

@@ -1,5 +1,9 @@
 # Arquitectura vigente · A16-QPR2-1
 
+350 integra las fronteras originales sin cambiar política: credenciales postexec de snapshot mediante SID/status/SID reales; init Android observa CE/permisos de sólo lectura y libcrypto original calcula SHA256; shell original produce hashes origen/instalado y Linux verifica su archivo protegido. Todas esas comprobaciones se ejecutan y pasan juntas. El testigo preexec init/CapEff0 de349 queda histórico, no se rebaja a éxito. Lecturas secuenciales y testigos ps independientes no son instantáneas atómicas ni aislamiento. El perfil de paquetes aún dispara devicelockcontroller y dynsystem sin servicios requeridos; justificar perfil mínimo coherente, sin arrancar Android completo. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration350`.
+
+Histórico anterior:
+
 349 demuestra la frontera de lectura: el worker original init, después de recoger servicios, observa CE/permisos de sólo lectura en NS_DEFAULT/enforcing1; SHA256 se resuelve en libcrypto original ya dependiente de libfs_mgr. No se añaden permisos Linux ni otra criptografía. El parser exige PID, contexto, dispositivo/inodo, propietarios, modos, etiquetas y tres hashes completos. La lectura nativa pasa, pero el ejecutor se detiene antes en la guardia SNAPSHOT: una muestra pre-exec y un SID post-exec separado no demuestran capacidades post-exec. Mantener esa distinción y obtener un testigo coherente. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration349`.
 
 Histórico anterior:

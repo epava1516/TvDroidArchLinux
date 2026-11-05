@@ -1,5 +1,9 @@
 # Estado actual y punto de entrada
 
+350: pasan juntas todas las guardias seleccionadas (28identidades, InstallerRPC, PMS, CE/permisos y bytesAPK); nativa0/exterior0/propietarios0. Snapshot muestra SID apexd antes/después de status, CapPrm/Eff/Bnd15, UID0/GID1000/NNP1 reales. Markor reabre visualmente nota348 entre cohortes. Política68 intacta; recuperación normal verificada. Siguiente: cierre normal de actividades y reapertura original con persistencia, sin confundir force-stop con cierre normal. Tres fallos de paquetes de fondo conservados; R1 y compatibilidad amplia abiertos. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration350`.
+
+Histórico anterior:
+
 349: Markor intacta reabre la nota348 en el editor real. La lectura CE y de tres archivos de permisos desde init Android pasa en enforcing, con SHA256 de libcrypto original; Linux conserva su denegación y política68 no cambia. Nativa0/exterior1: falta un testigo coherente de capacidades post-exec de apexd-snapshotde; la muestra nativa es todavía init, CapPrm15/CapEff0. Guardia fallida conservada. Cierre y recuperación normal verificados; próximo: observar esa transición con el ciclo original, después ejecutar todas las comprobaciones integradas restantes. R1 abierto. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration349`.
 
 Histórico anterior:
