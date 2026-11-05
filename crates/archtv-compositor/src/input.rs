@@ -59,9 +59,15 @@ impl TvCompositor {
                         use smithay::input::keyboard::Keysym;
                         let modified = key.modified_sym();
                         if modified == Keysym::Home || modified == Keysym::XF86_HomePage {
+                            if state.android_display_focused() {
+                                return FilterResult::Forward;
+                            }
                             return FilterResult::Intercept(Shortcut::Home);
                         }
                         if modifiers.alt && modified == Keysym::Tab {
+                            if state.android_display_focused() {
+                                return FilterResult::Forward;
+                            }
                             return FilterResult::Intercept(Shortcut::Resume);
                         }
                         if modifiers.ctrl && modifiers.alt && modified == Keysym::BackSpace {

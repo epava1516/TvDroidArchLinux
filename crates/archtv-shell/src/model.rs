@@ -121,8 +121,8 @@ pub const SETTING_ITEMS: [&str; 10] = [
     "Actualizar estado",
     "Restaurar aplicaciones ocultas",
     "Movimiento reducido",
-    "Iniciar sesión Android",
-    "Detener sesión Android",
+    "Iniciar runtime APK",
+    "Detener runtime APK",
     "Cerrar sesión",
 ];
 pub struct Model {

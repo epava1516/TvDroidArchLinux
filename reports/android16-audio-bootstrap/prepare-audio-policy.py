@@ -76,6 +76,10 @@ if '--original-aconfig-identity-read' in sys.argv[2:]:
     assert '--original-art-sign-nosuid' in sys.argv[2:], 'Preserve the complete policy67 base'
     profile['modules'].append('runtime/aosp/android16-qpr2/policy/experiments/aconfig-identity-read.cil')
     profile['limitations'].append('Only original init process:getattr for the two short-lived aconfig domains missing kernel SID witnesses in344. No Linux observer, ptrace, signal, transition or file-write widening. Offline compilation is not an actual identity observation or R1 acceptance.')
+if '--frontend-home-exec' in sys.argv[2:]:
+    assert '--original-aconfig-identity-read' in sys.argv[2:], 'Preserve the complete policy68 base'
+    profile['modules'].append('runtime/aosp/android16-qpr2/policy/experiments/frontend-home-exec.cil')
+    profile['limitations'].append('Trusted Home and compositor share one Linux frontend domain. Only immutable root-owned compositor_exec receives execute_no_trans; no unlabeled executable or APK execution permission. No claim of isolation between these two frontend components, generic native launching or actual Home operation.')
 profile['input_sha256']['aosp'] = hashlib.sha256(merged).hexdigest()
 profile['limitations'].append('Original complete vendor/hal_audio_default.te added; no runtime/domain transition/device/isolation acceptance.')
 (out / 'profile.json').write_text(json.dumps(profile, indent=2) + '\n')

@@ -7,15 +7,15 @@ import java.util.*;
 /** Private Linux seat gateway. Original InputManager owns permission checks,
  * focus, window targeting and dispatch; no APK callbacks or widget emulation. */
 final class WaylandInputBridge {
-    private final Object input;
+    private final Object input,atm;
     private final Class<?> eventType, keyType, motionType;
     private final Map<Integer, Long> held = new HashMap<>();
     private long touchDown;
     private boolean touching;
     private int lastX, lastY;
     private int meta;
-    private WaylandInputBridge(Object input) throws Exception {
-        this.input=input;
+    private WaylandInputBridge(Object input,Object atm) throws Exception {
+        this.input=input;this.atm=atm;
         eventType=Class.forName("android.view.InputEvent");
         keyType=Class.forName("android.view.KeyEvent");
         motionType=Class.forName("android.view.MotionEvent");
@@ -63,6 +63,14 @@ final class WaylandInputBridge {
         if(touching)try{touch(3,lastX,lastY,0);}catch(Exception e){System.err.println("WAYLAND_INPUT_CANCEL_FAILED "+e);}
         held.clear();touching=false;meta=0;
     }
+    private static void receiveTimeout(FileDescriptor fd,long millis) throws Exception {
+        Class<?> timeval=Class.forName("android.system.StructTimeval");
+        Object value=invoke(timeval,"fromMillis",new Class<?>[]{long.class},millis);
+        Class<?> constants=Class.forName("android.system.OsConstants");
+        int level=constants.getField("SOL_SOCKET").getInt(null);
+        int option=constants.getField("SO_RCVTIMEO").getInt(null);
+        invoke(Class.forName("android.system.Os"),"setsockoptTimeval",new Class<?>[]{FileDescriptor.class,int.class,int.class,timeval},fd,level,option,value);
+    }
     private void connection(Object socket) throws Exception {
         Object creds=invoke(socket,"getPeerCredentials",new Class<?>[0]);
         int uid=(Integer)invoke(creds,"getUid",new Class<?>[0]);
@@ -76,28 +84,61 @@ final class WaylandInputBridge {
         invoke(socket,"setSoTimeout",new Class<?>[]{int.class},3000);
         DataInputStream stream=new DataInputStream((InputStream)invoke(socket,"getInputStream",new Class<?>[0]));
         DataOutputStream output=new DataOutputStream((OutputStream)invoke(socket,"getOutputStream",new Class<?>[0]));
-        long sequence=0;
         int maximum=(Integer)invoke(keyType,"getMaxKeyCode",new Class<?>[0]);
+        // V2 has one bounded writer for ACK and original task-state frames.
+        // LocalSocket SO_TIMEOUT sets both receive and send timeouts in the
+        // pinned original LocalSocketImpl. Never reset it to an unbounded send.
+        java.util.concurrent.ArrayBlockingQueue<int[]> outgoing=new java.util.concurrent.ArrayBlockingQueue<>(64);
+        java.util.concurrent.atomic.AtomicBoolean closed=new java.util.concurrent.atomic.AtomicBoolean();
+        Runnable closePeer=()->{
+            if(closed.compareAndSet(false,true))try{invoke(socket,"close",new Class<?>[0]);}catch(Exception ignored){}
+        };
+        java.util.function.Consumer<int[]> publish=frame->{
+            if(closed.get() || !outgoing.offer(frame))throw new IllegalStateException("Closed/full task/input response queue");
+        };
+        Thread writer=new Thread(()->{
+            try {
+                while(!closed.get()) {
+                    int[] frame=outgoing.take();
+                    for(int value:frame)output.writeInt(value);
+                    output.flush();
+                }
+            }catch(InterruptedException stop){Thread.currentThread().interrupt();}
+            catch(Exception error){System.err.println("WAYLAND_INPUT_RESPONSE_FAILED "+error);}
+            finally{closePeer.run();}
+        },"linux-task-input-response");
+        writer.setDaemon(true);writer.start();
+        TaskFocusObserver focus=null;
+        long sequence=0;
         try {
-            for(;;){
+            focus=new TaskFocusObserver(atm,publish,closePeer);
+            for(;!closed.get();){
                 int magic;
-                invoke(socket,"setSoTimeout",new Class<?>[]{int.class},0);
-                int first=stream.read();if(first<0)throw new EOFException();
-                invoke(socket,"setSoTimeout",new Class<?>[]{int.class},3000);
+                // An idle reader may sleep indefinitely, while the independent
+                // writer keeps its original three-second SO_SNDTIMEO bound.
+                receiveTimeout(fd,0);
+                int first=stream.read();
+                if(first<0)throw new EOFException();
+                receiveTimeout(fd,3000);
                 magic=(first<<24)|(stream.readUnsignedByte()<<16)|(stream.readUnsignedByte()<<8)|stream.readUnsignedByte();
                 // Remaining packet must arrive within the socket bound; partial
                 // frames cannot indefinitely own the gateway.
                 int type=stream.readInt();long seq=Integer.toUnsignedLong(stream.readInt());
                 int code=stream.readInt(),action=stream.readInt(),state=stream.readInt(),scan=stream.readInt(),x=stream.readInt(),y=stream.readInt(),repeat=stream.readInt();
-                if(magic!=0x41544931 || seq<=sequence || repeat!=0)throw new IOException("Invalid input packet");
+                if(magic!=0x41544932 || seq<=sequence || repeat!=0)throw new IOException("Invalid input packet");
                 sequence=seq;boolean accepted;
                 if(type==1 && code>0 && code<=maximum && (action==0 || action==1) && scan>=0 && scan<=767)accepted=key(code,action,scan,state);
                 else if(type==2 && (action==0 || action==1 || action==2 || action==3) && x>=0 && y>=0 && x<=8192000 && y<=8192000)accepted=touch(action,x,y,state);
                 else throw new IOException("Unsupported input contract");
-                output.writeInt((int)seq);output.writeInt(accepted?1:0);output.flush();
+                publish.accept(new int[]{0x41545232,1,(int)seq,accepted?1:0,0,0,0,0});
                 System.err.println("WAYLAND_INPUT_ORIGINAL_DISPATCH seq="+seq+" type="+type+" code="+code+" action="+action+" accepted="+accepted);
             }
-        }finally{release();}
+        }finally{
+            if(focus!=null)focus.close();
+            closePeer.run();writer.interrupt();
+            try{writer.join(1500);}catch(InterruptedException stop){Thread.currentThread().interrupt();}
+            release();
+        }
     }
     private void serve(Object server) {
         for(;;){Object socket=null;
@@ -110,7 +151,7 @@ final class WaylandInputBridge {
     private static void verifyRejectedPeer() throws Exception {
         Object client=Class.forName("android.net.LocalSocket").getConstructor().newInstance();
         try {
-            Object address=Class.forName("android.net.LocalSocketAddress").getConstructor(String.class).newInstance("archtv-wayland-input-v1");
+            Object address=Class.forName("android.net.LocalSocketAddress").getConstructor(String.class).newInstance("archtv-wayland-input-v2");
             invoke(client,"connect",new Class<?>[]{address.getClass()},address);
             invoke(client,"setSoTimeout",new Class<?>[]{int.class},3000);
             int result=((InputStream)invoke(client,"getInputStream",new Class<?>[0])).read();
@@ -139,7 +180,7 @@ final class WaylandInputBridge {
             try(FileOutputStream file=new FileOutputStream(attribute)){
                 file.write((context+'\0').getBytes(java.nio.charset.StandardCharsets.UTF_8));
             }
-            server=Class.forName("android.net.LocalServerSocket").getConstructor(String.class).newInstance("archtv-wayland-input-v1");
+            server=Class.forName("android.net.LocalServerSocket").getConstructor(String.class).newInstance("archtv-wayland-input-v2");
         }finally{
             try(FileOutputStream file=new FileOutputStream(attribute)){
                 if(previous.length==0)file.write(0);else file.write(previous);
@@ -150,8 +191,8 @@ final class WaylandInputBridge {
         }
         return server;
     }
-    static void start(Object input) throws Exception {
-        WaylandInputBridge bridge=new WaylandInputBridge(input);
+    static void start(Object input,Object atm) throws Exception {
+        WaylandInputBridge bridge=new WaylandInputBridge(input,atm);
         // Abstract sockets are scoped by the cohort's private network namespace.
         // Both peers also verify kernel-provided UID and SELinux context.
         Object server=createServer();

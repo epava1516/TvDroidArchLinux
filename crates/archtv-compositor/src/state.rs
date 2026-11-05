@@ -1,5 +1,5 @@
 // Adapted from Smallvil; see licenses/Smithay-MIT.txt.
-use std::{ffi::OsString, sync::Arc};
+use std::{ffi::OsString, os::fd::AsRawFd, sync::Arc};
 
 use smithay::{
     desktop::{PopupManager, Space, Window, WindowSurfaceType},
@@ -52,6 +52,7 @@ pub struct TvCompositor {
     pub pending_activate: Vec<WlSurface>,
     pub size: (i32, i32),
     pub focus: archtv_core::FocusStack<WlSurface>,
+    pub android_home_surfaces: std::collections::HashSet<WlSurface>,
 }
 
 impl TvCompositor {
@@ -134,6 +135,7 @@ impl TvCompositor {
             pending_activate: Vec::new(),
             size: (1280, 720),
             focus: Default::default(),
+            android_home_surfaces: Default::default(),
         })
     }
 
@@ -152,12 +154,19 @@ impl TvCompositor {
 
         loop_handle
             .insert_source(listening_socket, move |client_stream, _, state| {
+                let is_android_display = android_display_peer(&client_stream);
                 // Inside the callback, you should insert the client into the display.
                 //
                 // You may also associate some data with the client when inserting the client.
                 state
                     .display_handle
-                    .insert_client(client_stream, Arc::new(ClientState::default()))
+                    .insert_client(
+                        client_stream,
+                        Arc::new(ClientState {
+                            is_android_display,
+                            ..Default::default()
+                        }),
+                    )
                     .unwrap();
             })
             .expect("Failed to init the wayland event source.");
@@ -198,6 +207,7 @@ impl TvCompositor {
 #[derive(Default)]
 pub struct ClientState {
     pub is_shell: bool,
+    pub is_android_display: bool,
     pub compositor_state: CompositorClientState,
 }
 
@@ -207,6 +217,58 @@ impl ClientData for ClientState {
 }
 
 impl TvCompositor {
+    pub fn is_android_display(&self, surface: &WlSurface) -> bool {
+        use smithay::reexports::wayland_server::Resource;
+        surface
+            .client()
+            .and_then(|client| {
+                client
+                    .get_data::<ClientState>()
+                    .map(|data| data.is_android_display)
+            })
+            .unwrap_or(false)
+    }
+
+    pub fn android_display_focused(&self) -> bool {
+        self.focus
+            .current()
+            .is_some_and(|surface| self.is_android_display(surface))
+    }
+
+    pub fn android_task_home(&mut self, surface: &WlSurface) {
+        if !self.is_android_display(surface) {
+            return;
+        }
+        self.android_home_surfaces.insert(surface.clone());
+        if self.focus.current() == Some(surface) {
+            self.show_home();
+            tracing::info!("ANDROID_TASK_HOME_HANDOFF");
+        }
+    }
+
+    pub fn android_task_application(&mut self, surface: &WlSurface) {
+        if !self.is_android_display(surface) {
+            return;
+        }
+        // Only a preceding original Home observation authorizes a return.
+        if !self.android_home_surfaces.remove(surface) {
+            return;
+        }
+        use smithay::reexports::wayland_server::Resource;
+        let own_home_or_none = self.focus.current().is_none_or(|current| {
+            current == surface
+                || current
+                    .client()
+                    .and_then(|client| client.get_data::<ClientState>().map(|data| data.is_shell))
+                    .unwrap_or(false)
+        });
+        if own_home_or_none {
+            self.focus.activate(surface.clone());
+            self.focus_surface(Some(surface.clone()));
+            tracing::info!("ANDROID_TASK_APPLICATION_HANDOFF");
+        }
+    }
+
     pub fn resize(&mut self, width: i32, height: i32) {
         if width <= 0 || height <= 0 {
             return;
@@ -239,9 +301,22 @@ impl TvCompositor {
                 .and_then(|client| client.get_data::<ClientState>().map(|data| data.is_shell))
                 .unwrap_or(false);
             if is_shell {
+                let previous = self.focus.current().cloned();
                 self.focus.set_home(surface.clone());
                 tracing::info!("SHELL_SURFACE_READY");
+                // A late/restarted Home must not steal a live application's focus.
+                if let Some(previous) = previous.filter(|previous| {
+                    previous != surface && !self.android_home_surfaces.contains(previous)
+                }) {
+                    self.focus.activate(previous.clone());
+                    self.focus_surface(Some(previous));
+                    return;
+                }
             } else {
+                if self.android_home_surfaces.contains(surface) {
+                    tracing::info!("ANDROID_HOME_DISPLAY_MAPPED_WITHOUT_ACTIVATION");
+                    return;
+                }
                 self.focus.activate(surface.clone());
             }
             self.focus_surface(Some(surface.clone()));
@@ -288,7 +363,18 @@ impl TvCompositor {
         }
     }
     pub fn resume_application(&mut self) {
+        let previous = self.focus.current().cloned();
         let next = self.focus.previous();
+        if next
+            .as_ref()
+            .is_some_and(|surface| self.android_home_surfaces.contains(surface))
+        {
+            if let Some(previous) = previous {
+                self.focus.activate(previous);
+            }
+            tracing::info!("TV_RESUME_REQUIRES_ORIGINAL_ACTIVITY_LAUNCH");
+            return;
+        }
         self.dismiss_active_popups();
         self.focus_surface(next);
         tracing::info!("TV_RESUME");
@@ -318,6 +404,44 @@ impl TvCompositor {
             }
         }
     }
+}
+
+/// The root admission broker passes this already connected socket to the HWC.
+/// Neither an app_id nor a public same-UID Wayland connection grants this role.
+fn android_display_peer(stream: &std::os::unix::net::UnixStream) -> bool {
+    let mut peer: libc::ucred = unsafe { std::mem::zeroed() };
+    let mut size = std::mem::size_of_val(&peer) as libc::socklen_t;
+    let mut label = [0u8; 256];
+    let mut length = label.len() as libc::socklen_t;
+    let valid = unsafe {
+        libc::getsockopt(
+            stream.as_raw_fd(),
+            libc::SOL_SOCKET,
+            libc::SO_PEERCRED,
+            (&mut peer as *mut libc::ucred).cast(),
+            &mut size,
+        ) == 0
+            && size as usize == std::mem::size_of_val(&peer)
+            && peer.uid == 0
+            && peer.gid == 0
+            && libc::getsockopt(
+                stream.as_raw_fd(),
+                libc::SOL_SOCKET,
+                libc::SO_PEERSEC,
+                label.as_mut_ptr().cast(),
+                &mut length,
+            ) == 0
+    };
+    let role = valid
+        && (length as usize) <= label.len()
+        && label[..length as usize]
+            .strip_suffix(&[0])
+            .unwrap_or(&label[..length as usize])
+            == b"linux.system_u:linux.object_r:archtv_wayland_channel:s0";
+    if role {
+        tracing::info!(pid = peer.pid, "ANDROID_DISPLAY_BROKER_AUTHENTICATED");
+    }
+    role
 }
 
 impl TvCompositor {

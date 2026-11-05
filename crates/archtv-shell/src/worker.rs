@@ -1,5 +1,4 @@
 use crate::model::{Action, Settings};
-use archtv_core::android::{AndroidProvider, BootState, RuntimeStatus, SessionState};
 use archtv_core::desktop::{Application, data_directories, discover};
 use std::{
     io::Read,
@@ -140,25 +139,10 @@ pub fn start() -> Workers {
                             })
                             .map(|_| "Radio Wi-Fi actualizada".into()),
                         Action::Refresh => Ok("Consultando estado…".into()),
-                        Action::AndroidStart => {
-                            let mut cmd = Command::new("waydroid");
-                            cmd.args(["session", "start"])
-                                .env_remove("WAYLAND_SOCKET")
-                                .env_remove("ARCHTV_CONTROL_FD")
-                                .stdin(Stdio::null())
-                                .stdout(Stdio::null())
-                                .stderr(Stdio::null());
-                            cmd.spawn()
-                                .map(|child| {
-                                    children.push(("Sesión Android".into(), child));
-                                    "Arrancando Android; esperando confirmación…".into()
-                                })
-                                .map_err(|error| error.to_string())
-                        }
-                        Action::AndroidStop => {
-                            run("waydroid", &["session", "stop"], Duration::from_secs(5))
-                                .map(|_| "Sesión Android detenida".into())
-                        }
+                        Action::AndroidStart | Action::AndroidStop => Err(
+                            "El control del runtime APK original aún no está conectado a Home"
+                                .into(),
+                        ),
                         Action::Quit | Action::Resume => Ok(String::new()),
                     };
                     match outcome {
@@ -194,7 +178,6 @@ pub fn start() -> Workers {
     std::thread::Builder::new()
         .name("archtv-status".into())
         .spawn(move || {
-            let mut android_provider = archtv_android::Waydroid::default();
             while !stopped.load(Ordering::Relaxed) {
                 let volume = run(
                     "wpctl",
@@ -210,10 +193,9 @@ pub fn start() -> Workers {
                 )
                 .map(|value| value.trim().to_string())
                 .unwrap_or_else(|_| "Red no disponible".into());
-                let android = android_provider
-                    .status(Instant::now() + Duration::from_secs(4))
-                    .map(|status| android_status_label(&status).to_string())
-                    .unwrap_or_else(|_| "Android no disponible".into());
+                // No availability claim until the original runtime control
+                // connection has supplied a verified result.
+                let android = "Runtime APK · control sin conexión".to_string();
                 if events
                     .send(Event::Status {
                         volume,
@@ -233,19 +215,6 @@ pub fn start() -> Workers {
         assets,
         events: event_rx,
         stop,
-    }
-}
-fn android_status_label(status: &RuntimeStatus) -> &'static str {
-    match status.session {
-        SessionState::Running => match status.boot {
-            BootState::Completed => "Arranque Android completado",
-            BootState::Starting => "Android arrancando…",
-            BootState::Unknown => "Sesión activa · estado no disponible",
-        },
-        SessionState::Starting => "Android arrancando…",
-        SessionState::Stopped => "Sesión Android detenida",
-        SessionState::Suspended => "Sesión Android suspendida",
-        SessionState::Unknown => "Estado Android desconocido",
     }
 }
 pub fn settings_path() -> PathBuf {
@@ -379,6 +348,9 @@ fn save_settings(path: &Path, settings: &Settings) -> Result<(), String> {
     result
 }
 fn launch(app: &Application) -> Result<Child, String> {
+    if app.android {
+        return Err("El lanzador APK original aún no está conectado a Home".into());
+    }
     let mut command = if app.terminal {
         let mut cmd = Command::new("foot");
         cmd.arg("--").args(&app.command);
@@ -564,46 +536,6 @@ fn decode_wallpaper(bytes: &[u8]) -> Result<tiny_skia::Pixmap, String> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    #[test]
-    fn android_labels_follow_typed_runtime_state() {
-        for (session, boot, label) in [
-            (
-                SessionState::Running,
-                BootState::Completed,
-                "Arranque Android completado",
-            ),
-            (
-                SessionState::Running,
-                BootState::Unknown,
-                "Sesión activa · estado no disponible",
-            ),
-            (
-                SessionState::Running,
-                BootState::Starting,
-                "Android arrancando…",
-            ),
-            (
-                SessionState::Stopped,
-                BootState::Completed,
-                "Sesión Android detenida",
-            ),
-            (
-                SessionState::Suspended,
-                BootState::Completed,
-                "Sesión Android suspendida",
-            ),
-            (
-                SessionState::Unknown,
-                BootState::Completed,
-                "Estado Android desconocido",
-            ),
-        ] {
-            assert_eq!(
-                android_status_label(&RuntimeStatus { session, boot }),
-                label
-            );
-        }
-    }
     #[test]
     fn downgrade_does_not_overwrite_newer_settings() {
         let dir =

@@ -1,5 +1,9 @@
 # Arquitectura vigente · A16-QPR2-1
 
+353 ejecuta TaskStackListener y ATMS originales, con estados APP23 → HOME1 → APP24 transmitidos por el canal privado v2 autenticado. HWC solicita minimize/fullscreen; Rust acepta sólo el socket del broker con credenciales/etiqueta verificadas y muestra su Home de socketpair privado. Captura Home y reapertura real de nota durante la ventana enforcing; no se usa app_id como autoridad. Home comparte dominio del compositor y arrancó antes de enforcing: separación y admisión de su exec durante enforcing no están probadas. Shell sin invocaciones Waydroid; catálogo/lanzador original desde Home pendiente. Wrappers1 impiden aceptar el ensayo global.
+
+Histórico anterior:
+
 352 prueba en ejecución la frontera de captura: perfil y archivos originales compartidos, no /vendor del namespace del worker. El compositor mantiene una superficie para el display Android durante toda la cohorte, incluso tras onDestroy de Markor; destroyed_toplevel no sirve como señal de cierre APK. Ya existe Home de confianza mediante socketpair privado y ClientState.is_shell; app_id no concede ese rol. El canal WaylandInputBridge/LinuxWaylandInput autentica UID/contexto de ambos pares y es bidireccional. El siguiente enlace debe reutilizarlo con protocolo versionado/acotado y APIs originales TaskStackListener/getFocusedRootTaskInfo, manteniendo lifecycle y autorización de foco. Disponibilidad de esas APIs en fuentes no acredita todavía esa integración. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration352`.
 
 Histórico anterior:

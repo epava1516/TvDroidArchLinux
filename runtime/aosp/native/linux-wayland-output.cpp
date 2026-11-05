@@ -138,6 +138,14 @@ struct LinuxWaylandOutput::Impl {
         surface=wl_compositor_create_surface(compositor);if(!surface)return false;xsurface=xdg_wm_base_get_xdg_surface(wm,surface);if(!xsurface)return false;
         static const xdg_surface_listener sl{[](void* p,xdg_surface* xs,uint32_t serial){auto& s=*static_cast<Impl*>(p);xdg_surface_ack_configure(xs,serial);s.configured=true;}};
         xdg_surface_add_listener(xsurface,&sl,this);top=xdg_surface_get_toplevel(xsurface);if(!top)return false;
+        input.SetTaskFocusHandler([this](const TaskInputResponse& state){
+            // Only authenticated original ATMS observations reach this callback.
+            // Unknown state is not a Home or application readiness signal.
+            if(!top || state.display!=0 || state.value==0)return;
+            if(state.value==2)xdg_toplevel_set_minimized(top);
+            else xdg_toplevel_set_fullscreen(top,output);
+            __android_log_print(ANDROID_LOG_INFO,"ArchTVInput","WAYLAND_TASK_HANDOFF kind=%u task=%d NOT_APK_READINESS",state.value,state.task);
+        });
         static const xdg_toplevel_listener tl{
             [](void* p,xdg_toplevel*,int32_t w,int32_t h,wl_array*){auto& s=*static_cast<Impl*>(p);s.w=w>0?w:s.output_w;s.h=h>0?h:s.output_h;},
             [](void* p,xdg_toplevel*){static_cast<Impl*>(p)->closed=true;}};

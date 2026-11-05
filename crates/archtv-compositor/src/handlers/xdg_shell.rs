@@ -39,6 +39,7 @@ impl XdgShellHandler for TvCompositor {
         }
         self.pending_activate
             .retain(|pending| pending != surface.wl_surface());
+        self.android_home_surfaces.remove(surface.wl_surface());
         let was_active = self.focus.current() == Some(surface.wl_surface());
         let next = self.focus.remove(surface.wl_surface());
         if was_active {
@@ -120,6 +121,9 @@ impl XdgShellHandler for TvCompositor {
         keyboard.set_grab(self, PopupKeyboardGrab::new(&grab), serial);
         tracing::info!("POPUP_GRABBED");
     }
+    fn minimize_request(&mut self, surface: ToplevelSurface) {
+        self.android_task_home(surface.wl_surface());
+    }
     fn fullscreen_request(
         &mut self,
         surface: ToplevelSurface,
@@ -130,6 +134,7 @@ impl XdgShellHandler for TvCompositor {
             pending.states.set(xdg_toplevel::State::Fullscreen);
         });
         surface.send_pending_configure();
+        self.android_task_application(surface.wl_surface());
     }
 }
 pub fn handle_commit(

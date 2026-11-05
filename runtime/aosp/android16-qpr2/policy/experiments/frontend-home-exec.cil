@@ -1,0 +1,7 @@
+; The existing private-socketpair Home is part of the trusted Linux frontend,
+; not an Android application or a generic native application launcher.
+; Only root-owned immutable binaries admitted as compositor_exec can execute
+; without transition inside that frontend's existing domain. NNP/capability
+; constraints remain inherited; unlabeled executables and appdomain are excluded.
+; This deliberately does not claim isolation between compositor and Home.
+(allow archtv_compositor archtv_compositor_exec (file (execute_no_trans)))

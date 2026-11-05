@@ -1,5 +1,9 @@
 # Estado actual y punto de entrada
 
+353 prueba el listener de tareas original y el recorrido Markor → dos Atrás → Home Rust visible → lanzamiento original WARM → nota348 visible e intacta. Pasan las 28 identidades y guardias originales seleccionadas; nativa0/exterior0. Los envoltorios runner/sesión terminan1: no se acepta el ensayo completo. Causa exacta sin traceback actual; se reproduce independientemente un fallo del cierre al seguir capture.request ausente. Anfitrión recuperado, resultado consumido y política69/permisivo conservada; temporizador69 cancelado tras recuperación. Próximo: corregir ese cierre y la prioridad del resultado notificado, después probar reinicio de Home bajo enforcing e integrar su catálogo/lanzador original.
+
+Histórico anterior:
+
 352: nativa0/exterior0/propietarios0. La captura corregida lee el perfil compartido protegido y verifica juntos los diez outputs originales de cierre normal, además de las guardias28/Installer/PMS/CE/permisos/hashAPK. Dos Atrás→onDestroy Document/Main, PID1354 en caché, tarea21→22 WARM y nota348 visible con hash21bytes intacto. Política68 intacta y anfitrión recuperado/consumido. Siguiente avance funcional: Home/Back a shell Rust, porque AMS aún selecciona FallbackHome y la superficie HWC persiste. Reutilizar canal privado bidireccional de entrada y APIs originales de tareas; integración aún no implementada. Preservar evidencias antes de liberar espacio de artefactos fríos. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration352`.
 
 Histórico anterior:

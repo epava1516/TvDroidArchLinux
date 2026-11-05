@@ -15,10 +15,22 @@ dex = out / 'dex'
 dex.mkdir()
 source = ROOT / 'runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java'
 commands = []
+engine=Path('/home/tv/.local/share/rea/android/jadx-headless-mcp-0.7.1-all.jar')
+glue_source=ROOT/'tools/aosp/TaskStackObserverGlue.java'
+original=ROOT/'dist/aosp16/selected-zygote-framework-7/framework.jar'
+original_record=json.loads(original.with_name('build.json').read_text())
+assert hashlib.sha256(original.read_bytes()).hexdigest()==original_record['output_sha256']
+glue=out/'original-task-observer.dex';build_tools=out/'build-tools';build_tools.mkdir()
+for argv in [['javac','-cp',str(engine),'-d',str(build_tools),str(glue_source)],
+             ['java','-cp',str(build_tools)+':'+str(engine),'TaskStackObserverGlue',str(original),str(glue)]]:
+    result=subprocess.run(argv,capture_output=True,text=True,timeout=90)
+    commands.append({'argv':argv,'exit':result.returncode,'stdout':result.stdout,'stderr':result.stderr})
+    (out/'listener-glue-build.json').write_text(json.dumps({'commands':commands,'original_framework_sha256':hashlib.sha256(original.read_bytes()).hexdigest(),'engine_sha256':hashlib.sha256(engine.read_bytes()).hexdigest(),'source_sha256':hashlib.sha256(glue_source.read_bytes()).hexdigest(),'scope':'Original executable Binder listener ABI checked; one own adapter subclass only, no android.* implementation or runtime acceptance'},indent=2)+'\n')
+    result.check_returncode()
 for stage in range(2):
-    argv = ['javac', '--release', '8', '-d', str(classes), str(source), str(source.with_name('ServiceLauncher.java')), str(source.with_name('WaylandInputBridge.java')), str(ROOT/'runtime/aosp/linux-services/archtv/runtime/SelectedRuntime.java')] if stage == 0 else ['java', '-cp', '/home/tv/.cache/archtv/apk-build-tools/r8.jar',
+    argv = ['javac', '--release', '8', '-d', str(classes), str(source), str(source.with_name('ServiceLauncher.java')), str(source.with_name('WaylandInputBridge.java')), str(source.with_name('TaskFocusObserver.java')), str(ROOT/'runtime/aosp/linux-services/archtv/runtime/SelectedRuntime.java')] if stage == 0 else ['java', '-cp', '/home/tv/.cache/archtv/apk-build-tools/r8.jar',
               'com.android.tools.r8.D8', '--min-api', '36', '--output', str(dex),
-              *map(str, classes.rglob('*.class'))]
+              str(glue), *map(str, classes.rglob('*.class'))]
     result = subprocess.run(argv, capture_output=True, text=True, timeout=90)
     commands.append({'argv': argv, 'exit': result.returncode, 'stdout': result.stdout, 'stderr': result.stderr})
     (out / 'build.json').write_text(json.dumps({'commands': commands,

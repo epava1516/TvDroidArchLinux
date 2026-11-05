@@ -16,6 +16,7 @@ tracked_inputs=['Cargo.toml','Cargo.lock','crates/archtv-core/Cargo.toml',*[str(
 tracked_inputs.extend(['reports/android16-package-bootstrap/userdata.py','reports/android16-hwc3-wayland/build-minigbm.py','reports/android16-hwc3-wayland/link-minigbm.py'])
 tracked_inputs.append('reports/android16-package-bootstrap/build-bootstrap-xml.py')
 tracked_inputs.extend(['runtime/aosp/linux-services/archtv/runtime/SelectedRuntime.java','tools/aosp/ZygoteSelectedEntryPlan.java','tools/aosp/build_selected_zygote_framework.py','reports/android16-selected-display/build-entry.py','runtime/aosp/android16-qpr2/patches/framework-zygote-selected-entry.patch'])
+tracked_inputs.extend(['runtime/aosp/linux-services/org/archtv/aosplinux/TaskFocusObserver.java','tools/aosp/TaskStackObserverGlue.java','runtime/aosp/native/linux-wayland-task-protocol.h'])
 tracked_inputs.append('reports/android16-network-bootstrap/boundary.py')
 tracked_inputs.extend(['reports/android16-package-bootstrap/build-libcutils-memory.py','runtime/aosp/android16-qpr2/patches/libcutils-memfd-original-label.patch','runtime/aosp/android16-qpr2/patches/libcutils-memfd-original-label.json'])
 tracked_inputs.extend(['runtime/aosp/native/linux-wayland-frame-composer.cpp','runtime/aosp/native/linux-wayland-frame-composer.h','reports/android16-hwc3-wayland/build-input.py'])
@@ -173,9 +174,12 @@ assert '[Requesting program interpreter: /system/bin/bootstrap/linker64]' in sub
 argv=json.loads((r/'reports/android16-hwmanager-cohort/helper-build.json').read_text())['argv'];argv[argv.index('-o')+1]=str(out/'linux-exec-context-image');run(argv)
 (out/'artifacts.json').write_text(json.dumps({n:hashlib.sha256((out/n).read_bytes()).hexdigest() for n in ['graphics-client','cargo/debug/examples/native_supervisor','linux-exec-context-image','property-coordinator']},indent=2))
 base=r/'dist/aosp16/sf-cohort-build-32';vendor=json.loads((base/'vendor-inputs.json').read_text())
-input_hwc=r/'dist/aosp16/hwc3-wayland-input-10'
+input_hwc=r/'dist/aosp16/hwc3-home-task-353'
 input_record=json.loads((input_hwc/'build.json').read_text());assert input_record['terminal']
 assert hashlib.sha256(Path(input_record['executable']).read_bytes()).hexdigest()==input_record['executable_sha256']
+for source,digest in input_record['inputs'].items():
+ if Path(source).is_relative_to(r/'runtime/aosp/native'):
+  assert hashlib.sha256(Path(source).read_bytes()).hexdigest()==digest,source
 for target,value in vendor['files'].items():
  if value.get('source','').endswith('android.hardware.graphics.composer3-service.archtv-display-2'):value['source']=input_record['executable']
 # The Linux seat HAL uses the original complete KeyLayoutMap implementation.

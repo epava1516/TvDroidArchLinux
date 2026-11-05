@@ -22,7 +22,7 @@ for name in ['linux-wayland-output.cpp','linux-wayland-frame-composer.cpp']:
  for flag,suffix in [('-o','.o'),('-MF','.d')]:cmd[cmd.index(flag)+1]=str(out/(source.stem+suffix))
  record['inputs'][str(source)]=digest(source)
  run(cmd)
-for name in ['linux-wayland-input.h','linux-wayland-output.h','linux-wayland-frame-composer.h']:
+for name in ['linux-wayland-input.h','linux-wayland-task-protocol.h','linux-wayland-output.h','linux-wayland-frame-composer.h']:
  p=r/'runtime/aosp/native'/name;record['inputs'][str(p)]=digest(p)
 cmd=list(link['argv'])
 for name in ['linux-wayland-output','linux-wayland-frame-composer']:

@@ -107,7 +107,6 @@ dependencies = [
 name = "archtv-shell"
 version = "0.1.0"
 dependencies = [
- "archtv-android",
  "archtv-core",
  "fontdue",
  "image",
