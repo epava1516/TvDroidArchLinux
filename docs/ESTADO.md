@@ -1,5 +1,8 @@
 # Estado actual y punto de entrada
 
+354 falla: el volcado original activity supera el límite diagnóstico3s y queda incompleto. El cliente sale1; la parada de servicios al cerrar activa reboot_on_failure de vold. La petición queda contenida y el anfitrión está recuperado, mismo arranque/política69/permisivo. Se conservan dos reinicios naturales de Home y sus commits, sin aceptar el recorrido completo ni las identidades nuevas por inferencia. Servicio/candidato1 se registran correctamente y se consumen sin cola. Siguiente355: diagnóstico original acotado10s, mismas guardias de integridad, y seis entradas físicas guiadas por capturas reales mediante proceso nativo; no depender de tiempos del modelo. Último handoff visual positivo353, último cierre seleccionado íntegro352.
+
+Histórico anterior:
 353 prueba el listener de tareas original y el recorrido Markor → dos Atrás → Home Rust visible → lanzamiento original WARM → nota348 visible e intacta. Pasan las 28 identidades y guardias originales seleccionadas; nativa0/exterior0. Los envoltorios runner/sesión terminan1: no se acepta el ensayo completo. Causa exacta sin traceback actual; se reproduce independientemente un fallo del cierre al seguir capture.request ausente. Anfitrión recuperado, resultado consumido y política69/permisivo conservada; temporizador69 cancelado tras recuperación. Corrección de cierre y prioridad de resultados implementada con trece regresiones positivas; falta la ejecución354 para validarla, probar reinicio de Home bajo enforcing e integrar su catálogo/lanzador original.
 
 Histórico anterior:

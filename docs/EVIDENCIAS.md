@@ -1,8 +1,13 @@
 # Índice de evidencias
 
+354: nativa1/exterior1 y volcado original incompleto con DUMP TIMEOUT (3000ms) EXPIRED. Diagnóstico ext4 realizado offline con loop de sólo lectura y ro,noload; dispositivo retirado, sin usarlo como ejecución ni prueba MAC. El cliente precede la parada coordinada de vold y reboot_on_failure; petición contenida. Home se reinicia dos veces; recorrido de entrada sólo dos comandos, no aceptado. Fuente canónica integration354 y checkpoint /home/tv/recuperacion-archtv/94bb19bc-b5e0-4276-a8af-66013b6cba39-markor-software-launch. Se conservan353/352 y el índice de payloads archivados;355 pendiente.
+
+Histórico anterior:
 353 conserva estados originales secuenciales, ocho despachos aceptados, Home real entre handoffs15:35:00.966→15:35:08.926 UTC, WARM439ms y nota21bytes SHA d3dd765e00aedeb5b0325cbb4a7efa3a66892ed7e0b36ea2a385586dd7551a33. Archivo logcat completo1107917bytes comprobado contra hash original; el marcador en run.log sólo incluye su últimoMiB. Nativa/exterior0, runner/sesión1 probados por journal de invocaciones únicas; no inferir exit0 de unidades ya descargadas. Recuperación y consumo verificados. Home arrancó antes de enforcing, cuyo intervalo registrado duró370.667s. Evidencia canónica: reports/android16-audio-bootstrap/artd-subprocess-progress.json → coherent_cache_candidate.profile_coherence_experiment.integration353.
 
 Corrección posterior: trece regresiones positivas (la de propietarios también con UID0), sin envíos reales. Los avisos distinguen servicio y candidato y esperan el callback final; no se convierte el resultado353 en aceptado. Registros: /home/tv/recuperacion-archtv/20261105T142631Z-home353/runner-close-correction-tests.json.
+
+Los payloads cerrados352/353 están archivados sin pérdida tras construir354; para reproducirlos, restaurar bytes exactos con /home/tv/recuperacion-archtv/20261105T155702Z-home354/restore-cold-payload.py y número de candidato. Recibo y hashes en historical_artifact_preservation.closed_payload_archives354; las evidencias y datos se conservan.
 
 Histórico anterior:
 

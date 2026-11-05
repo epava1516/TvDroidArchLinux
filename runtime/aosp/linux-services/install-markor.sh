@@ -284,7 +284,10 @@ if [ -f /data/local/tmp/archtv-mc1/archtv-markor-normal-close-token ]; then
     /system/bin/cat "$note" > "$normal_out/markor-normal-note-bytes.bin"
     /system/bin/sha256sum "$note" > "$normal_out/markor-normal-note-before.txt"
     normal_dump() {
-        /system/bin/dumpsys -t 3 activity activities > "$1" 2> "$1.stderr"
+        # Real354 exceeded the diagnostic3s bound while the APK remained visible.
+        # Keep this finite and reject partial/error output below; a successful
+        # longer diagnostic is not a latency or stability acceptance result.
+        /system/bin/dumpsys -t 10 activity activities > "$1" 2> "$1.stderr"
         [ ! -s "$1.stderr" ] || return 1
         /system/bin/grep -qx 'ACTIVITY MANAGER ACTIVITIES (dumpsys activity activities)' "$1" || return 1
         if /system/bin/grep -Eq 'DUMP TIMEOUT|DUMP FAILED|Error dumping service|Permission Denial|Can.t find service' "$1"; then return 1; fi
@@ -294,7 +297,7 @@ if [ -f /data/local/tmp/archtv-mc1/archtv-markor-normal-close-token ]; then
     }
     normal_dump "$normal_out/markor-normal-activities-before.txt"
     normal_markor_resumed "$normal_out/markor-normal-activities-before.txt" || exit 1
-    /system/bin/dumpsys -t 3 activity processes > "$normal_out/markor-normal-processes-before.txt"
+    /system/bin/dumpsys -t 10 activity processes > "$normal_out/markor-normal-processes-before.txt"
     n=0
     while [ "$n" -lt "$budget" ]; do
         normal_dump "$normal_out/markor-normal-activities-last.txt"
@@ -303,7 +306,7 @@ if [ -f /data/local/tmp/archtv-mc1/archtv-markor-normal-close-token ]; then
     done
     [ "$n" -lt "$budget" ] || exit 1
     /system/bin/cp "$normal_out/markor-normal-activities-last.txt" "$normal_out/markor-normal-activities-background.txt"
-    /system/bin/dumpsys -t 3 activity processes > "$normal_out/markor-normal-processes-background.txt"
+    /system/bin/dumpsys -t 10 activity processes > "$normal_out/markor-normal-processes-background.txt"
     # Android can retain a stopped task and process after normal Back. The
     # dumps, actual input and original lifecycle logs must distinguish this
     # from finish, crash or ANR; foreground absence alone is not app acceptance.

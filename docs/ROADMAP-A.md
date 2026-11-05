@@ -1,5 +1,8 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+354 identifica el bloqueo inmediato de la prueba: dumpsys activity agota3s y aborta la secuencia original; no es prueba de una muerte espontánea primaria de vold. Recuperación verificada.355 debe completar la secuencia física nativa y repetir las guardias originales con volcado acotado10s, sin aceptar salidas parciales ni ocultar errores. Dos reinicios Home observados354 no cierran por sí solos credenciales, aislamiento ni disponibilidad. Después: catálogo/lanzador original desde Home, ciclo real de nota y criterios completos de actualización, estabilidad, ligereza y compatibilidad amplia; R1/ARM/GMS/DRM abiertos.
+
+Histórico anterior:
 353 consigue el handoff visual de tareas originales a Home Rust y el retorno a Markor/nota existente. Bloqueo de cierre: runner/sesión1 aunque guardias nativas/exteriores pasan; fallo de chown siguiendo enlace efímero reproducido, atribución exacta353 aún desconocida. Correcciones de cierre/resultados probadas con trece regresiones; siguiente354 debe comprobarlas junto con reinicio de Home en enforcing sin quitar foco a Markor. Después conectar catálogo y lanzamiento originales con Home y repetir creación/guardado/cierre/reapertura. R1, aislamiento, actualización/reinicio/FBE, compatibilidad amplia y ARM/GMS/DRM permanecen abiertos.
 
 Histórico anterior:

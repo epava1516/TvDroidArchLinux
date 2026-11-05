@@ -873,6 +873,20 @@
         "userdata_and_historical12_unchanged": true,
         "available_bytes_after": 1727967232,
         "scope": "Six closed/consumed payload images346-351 preserved losslessly and full decompressionSHA verified before raw unlink. Historical rawpaths unavailable until exactrestoration; original runtime results not rewritten. Does not rehearse VM/snapshot/security-policy restoration or complete any APK compatibility requirement."
+      },
+      "closed_payload_archives354": {
+        "receipt": "/home/tv/recuperacion-archtv/20261105T155702Z-home354/cold-payload-archives.json",
+        "receipt_sha256": "b780f20abc9651341e83f49a815f59b6158483d10b544a4483f478c30c3c0dd4",
+        "restore_script": "/home/tv/recuperacion-archtv/20261105T155702Z-home354/restore-cold-payload.py",
+        "restore_script_sha256": "e45f772620b09e050c5d6fa8dd7d1936c9e30b3d0c832430ef0e646dd308a7c3",
+        "scope": "Closed consumed352/353 rawpayloads now lossless zstd; complete decompression hashes verified before unlink. Full354 payload built and retained; userdata/frontends/sources/pending untouched. Historical replay requires exact restore via script and candidate number; not VM/data restoration rehearsal."
+      },
+      "closed_payload_archives355": {
+        "receipt": "/home/tv/recuperacion-archtv/20261105T163555Z-home355/cold-payload-archives.json",
+        "receipt_sha256": "bbdf81ccb200a8900ca6591d919b41b28fb01c550c35b99f1b88df935859ee89",
+        "restore_script": "/home/tv/recuperacion-archtv/20261105T163555Z-home355/restore-cold-payload.py",
+        "restore_script_sha256": "e45f772620b09e050c5d6fa8dd7d1936c9e30b3d0c832430ef0e646dd308a7c3",
+        "scope": "Only closed consumed recovered342/344/354 payloads archived losslessly after355 built; complete decompression hashes verified. Raw replay requires exact restore. Sources/userdata/frontends/evidence retained."
       }
     },
     "x509_reopen_correction": {
@@ -1851,7 +1865,7 @@
           "sha256": "d3eb7667da5d6443deb22eb91de5893b561c0d7ec098f92087a2ed33a0a58f36"
         }
       },
-      "current_integration": 353,
+      "current_integration": 354,
       "integration348": {
         "checkpoint": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch",
         "build": "dist/aosp16/package-cohort-build-348",
@@ -2670,6 +2684,65 @@
         "limitations": "Exact353 final exception remains unknown; deterministic ownership-loop bug is real but attribution remains a hypothesis. Original legacy completion text runner exit0 preserved; actual353 service failure is separately authoritative. Overall353 acceptance stays false.",
         "next": "Full354 candidate rebuilding; test actual closure and Home child exec/restart under enforcing, then original launcher/catalog UI.",
         "base_home_milestone": "4d763ff"
+      },
+      "integration354": {
+        "checkpoint": "/home/tv/recuperacion-archtv/94bb19bc-b5e0-4276-a8af-66013b6cba39-markor-software-launch",
+        "build": "dist/aosp16/package-cohort-build-354",
+        "native_exit": 1,
+        "outer_exit": 1,
+        "overall_run_accepted": false,
+        "physical_command_count": 2,
+        "full_workflow_completed": false,
+        "primary_failure": "Original activity dump exceeded3s diagnostic limit, incomplete body retained. Shell workflow exited1; coordinator close stopped vold and its original reboot_on_failure requested reboot,vold-failed. Request contained, host sameboot recovered.",
+        "home_restarts_observed": 2,
+        "new_home_actual_kernel_credentials_sampled": false,
+        "recovery_verified": true,
+        "consumed": true,
+        "completion_scope": "New service/candidate statuses correctly both1; no queue continuation.",
+        "evidence": {
+          "failure-decision.json": {
+            "path": "/home/tv/recuperacion-archtv/94bb19bc-b5e0-4276-a8af-66013b6cba39-markor-software-launch/failure-decision.json",
+            "sha256": "8219f49e9242aba2d1ca70ff29ec7198e7b5988ac8aa27ba1c0e4696d01efa9d"
+          },
+          "offline-normal-diagnostic.json": {
+            "path": "/home/tv/recuperacion-archtv/94bb19bc-b5e0-4276-a8af-66013b6cba39-markor-software-launch/offline-normal-diagnostic.json",
+            "sha256": "83152f05e2ea7aa9026f07b8e2a1aee83fba4b33fadaba72bd36909a7b94dcfc"
+          },
+          "offline-markor-normal-activities-last.txt": {
+            "path": "/home/tv/recuperacion-archtv/94bb19bc-b5e0-4276-a8af-66013b6cba39-markor-software-launch/offline-markor-normal-activities-last.txt",
+            "sha256": "faf16d153a4d3a5776564e4e5458befd69c99f3bd9ca9a8457e3787408aa1d66"
+          },
+          "native-result.json": {
+            "path": "/home/tv/recuperacion-archtv/94bb19bc-b5e0-4276-a8af-66013b6cba39-markor-software-launch/native-result.json",
+            "sha256": "5d173c03d4ddc684a8f581112134d66ff9beb2d5c3ac1afa2d9fc0aefc5f02e9"
+          },
+          "result.json": {
+            "path": "/home/tv/recuperacion-archtv/94bb19bc-b5e0-4276-a8af-66013b6cba39-markor-software-launch/result.json",
+            "sha256": "cf086ea5b0740118e0ff5a45b194c043b7a9ff7f0454d6eff6b4c6306fee5525"
+          },
+          "mac-window.json": {
+            "path": "/home/tv/recuperacion-archtv/94bb19bc-b5e0-4276-a8af-66013b6cba39-markor-software-launch/mac-window.json",
+            "sha256": "8e20b08e82fc7a42e9f6a33f0194f274330223c8d49606b50d99890db41200d9"
+          },
+          "completion-result.json": {
+            "path": "/home/tv/recuperacion-archtv/94bb19bc-b5e0-4276-a8af-66013b6cba39-markor-software-launch/completion-result.json",
+            "sha256": "b515b16154e03b7b25df0f1afb89800e4ad23baf1bc9c63e228af8ae9adbc2ed"
+          },
+          "home-restart354-observation.json": {
+            "path": "/home/tv/recuperacion-archtv/94bb19bc-b5e0-4276-a8af-66013b6cba39-markor-software-launch/home-restart354-observation.json",
+            "sha256": "444c4cac136d6a628b0312de3a9028aedaae34ebab8a14d1fff0a87e5ac6248b"
+          },
+          "recovery-readback.json": {
+            "path": "/home/tv/recuperacion-archtv/94bb19bc-b5e0-4276-a8af-66013b6cba39-markor-software-launch/recovery-readback.json",
+            "sha256": "b99a7e010133ca30267234c777594d239cb39807f890c6836b06bdf77bbbc788"
+          },
+          "completion-consumer.json": {
+            "path": "/home/tv/recuperacion-archtv/94bb19bc-b5e0-4276-a8af-66013b6cba39-markor-software-launch/completion-consumer.json",
+            "sha256": "6654cd06e31c3aa94821c29d2537d2cf8830da7df791d41d1cf42e08993133fc"
+          }
+        },
+        "next": "355 built with bounded10s original dumps and all error/completeness guards retained. Native physical UI driver implemented/compiled but not runtime-validated; owner-bound six commands follow real inspected captures and original relaunch, no model response timing.",
+        "payload_sha256": "69450fd7ba5558df41d6824793172f8972f89286b92435c39c8225f26acca767"
       }
     }
   },
