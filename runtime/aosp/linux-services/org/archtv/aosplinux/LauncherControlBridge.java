@@ -15,6 +15,7 @@ final class LauncherControlBridge {
     private static final String LAUNCHER="android.intent.category.LAUNCHER";
     private static final String LEANBACK="android.intent.category.LEANBACK_LAUNCHER";
     private final Object context,pm;
+    private String lastObservedCatalog;
     private final Class<?> intentType,pmType,componentType;
     private static Object call(Object receiver,String name,Class<?>[] types,Object... args) throws Exception {
         Class<?> type=receiver instanceof Class ? (Class<?>)receiver:receiver.getClass();
@@ -79,6 +80,34 @@ final class LauncherControlBridge {
         out.writeInt(entries.size());
         for(Entry e:entries.values()){string(out,e.component,1024);string(out,e.label,4096);string(out,e.category,128);}
         if(bytes.size()>MAX_RESPONSE)throw new IOException("Catalog exceeds response bound; not a complete result");
+        // Explicit known-media integration observation only. These are the
+        // actual original PMS entries returned on the existing private wire;
+        // no test-package substitution, enable-state override or new inventory.
+        if ("1".equals(System.getenv("ARCHTV_OBSERVE_LAUNCHER_CATALOG"))) {
+            String snapshot=Base64.getEncoder().encodeToString(bytes.toByteArray());
+            if (!snapshot.equals(lastObservedCatalog)) {
+                lastObservedCatalog=snapshot;
+                int sampled=0,index=0;
+                for (Entry e:entries.values()) {
+                    byte[] component=e.component.getBytes(StandardCharsets.UTF_8);
+                    byte[] label=e.label.getBytes(StandardCharsets.UTF_8);
+                    byte[] category=e.category.getBytes(StandardCharsets.UTF_8);
+                    // Keep each original logcat line below its transport bound.
+                    // Oversized fields stay in the real RPC, unsampled here.
+                    if(component.length<=256 && label.length<=256 && category.length<=128) {
+                        System.err.println("LAUNCHER_ORIGINAL_CATALOG_ENTRY index="+index
+                                +" component64="+Base64.getEncoder().encodeToString(component)
+                                +" label64="+Base64.getEncoder().encodeToString(label)
+                                +" category64="+Base64.getEncoder().encodeToString(category)
+                                +" NOT_APP_COMPATIBILITY");
+                        sampled++;
+                    }
+                    index++;
+                }
+                System.err.println("LAUNCHER_ORIGINAL_CATALOG_OBSERVATION_END total="+entries.size()
+                        +" sampled="+sampled+" NOT_INVENTORY_OR_LAUNCH_ACCEPTANCE");
+            }
+        }
         System.err.println("LAUNCHER_ORIGINAL_CATALOG_RETURNED count="+entries.size()+" user=0 NOT_APP_COMPATIBILITY");
         return bytes.toByteArray();
     }

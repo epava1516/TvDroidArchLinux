@@ -1,5 +1,13 @@
 # Estado actual y punto de entrada
 
+365 recupera gráficos tras corregir etiquetas efímeras del anfitrión sin ampliar política. VLC original ejecuta VIEW; catálogo PMS devuelve13, tres órdenes físicas tras handoff, PCM282624frames/69escrituras, actividad nominal2,52s censurada por Back. Nativa/exterior0 y BPF/snapshotfinal/recuperación verificados; interacción1 al cerrar naturalmente la sesión, pausa/reapertura no aceptadas. La observación del catálogo estaba en RC auxiliar: moverla a Zygote original; DEX compilado sí contiene marcador.363 conserva fallo HWC y monitor corregido;364 falló antes del runtime por inode udev retirado. R1/compatibilidad amplia y ARM/GMS/DRM abiertos. Informe ART →integration363/364/365.
+
+Siguiente experimento funcional: catálogo original detallado → búsqueda/selección física en Home → reapertura VLC por Context/Instrumentation originales; comprobar efecto de pausa y cierre. El host reportado es Windows11/VirtualBox7.2.22r175245; Hyper-V/WSL2 desconocido, sin atribuirles el fallo.
+
+Evidencia: /home/tv/recuperacion-archtv/389042b9-7bae-45ae-9c3c-75169e5f0f60-markor-software-launch/functional-result.json SHA256 fdf42ac163a6bb88afa6e27c11a2ccd1ff5ff22245478f4420c33e100a7d2a87.
+
+Histórico anterior:
+
 Preparación363: candidato acota EIO a identidad DM calculada y exige snapshotfinal/propagación del fallo del monitor; sintaxis/materialización compilan, sin cohorte363 ejecutada. La prueba kernel de64ciclos fue abortada143 tras bloqueoD rcu_barrier y SOFTLOCKUP SLUB/RCU. El lector no tenía plazo propio mientras esperaba retirada: ensayo confuso, sin aceptación ni atribución aVirtualBox/kernel/candidato. Tras detener únicamente ese controlador, procesos/DM/loops/cohortes ausentes verificados. Se conserva362 fallido y Markor357/VLC361 válidos en su alcance. Preparar recuperación/reinicio con entrada custom verificada y nueva admisión antes de APK. Informe ART →monitor363_preparation.
 
 Histórico anterior (alcance y siguientes pasos de su fecha):

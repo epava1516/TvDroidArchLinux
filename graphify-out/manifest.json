@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793916721.931079,
-    "seen": 1793916760.5117984,
-    "ast_hash": "ddcaeabde19425d53f1db51b45a870ee",
+    "mtime": 1793922599.6541755,
+    "seen": 1793922617.1917648,
+    "ast_hash": "b93a46b1313112ef1e34b3d6b3bd05e8",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793918304.712549,
-    "seen": 1793918322.2086265,
-    "ast_hash": "e2ad7c537dbec33a20e921bc4ecf89af",
+    "mtime": 1793922599.5686274,
+    "seen": 1793922617.1920989,
+    "ast_hash": "a4101a62b49d0fa616d9ea26c0ccc9f1",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793918304.7168388,
-    "seen": 1793918322.209444,
-    "ast_hash": "bd44577bca4236e23831672ca40da9ee",
+    "mtime": 1793922599.588627,
+    "seen": 1793922617.1927793,
+    "ast_hash": "50473223dd324653dcad8d4f51be0dd4",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -1716,9 +1716,9 @@
     "semantic_hash": ""
   },
   "docs/EVIDENCIAS.md": {
-    "mtime": 1793916721.9016035,
-    "seen": 1793916760.5125449,
-    "ast_hash": "0248d41b3f30c2acd65a1881a749d7ee",
+    "mtime": 1793922599.6174052,
+    "seen": 1793922617.1921692,
+    "ast_hash": "3052f25e14bc90d4f89a63ae9e88ae48",
     "semantic_hash": ""
   },
   "fixtures/aosp-framework-space/FrameworkSpaceProbe.java": {
@@ -2250,9 +2250,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/org/archtv/aosplinux/LauncherControlBridge.java": {
-    "mtime": 1793900125.9798062,
-    "seen": 1793900228.4359033,
-    "ast_hash": "a2a80db3b0cbd853936cc6990dfe5eee",
+    "mtime": 1793918930.5413837,
+    "seen": 1793920932.0046654,
+    "ast_hash": "0ba9c3b7ac0ef86d4e869968418ddb42",
     "semantic_hash": ""
   },
   "tests/automation/test_launcher_control_build.py": {
@@ -2301,6 +2301,12 @@
     "mtime": 1793915947.442824,
     "seen": 1793916760.5018058,
     "ast_hash": "dddf5b961ad8e2806a150bd8672e04f6",
+    "semantic_hash": ""
+  },
+  "tools/aosp/prepare_host_labels.py": {
+    "mtime": 1793921300.2853615,
+    "seen": 1793922617.185675,
+    "ast_hash": "d5c7d8f1e36f4056bffcdf54a38e9c10",
     "semantic_hash": ""
   }
 }

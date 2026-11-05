@@ -171,8 +171,14 @@ if len(sys.argv)>1 and sys.argv[1] in ('--prepare-wayland-runtime','--close-wayl
  label='linux.system_u:linux.object_r:archtv_wayland_runtime_dir:s0'
  if sys.argv[1]=='--prepare-wayland-runtime':
   assert not directory.exists() and not directory.is_symlink() and not record.exists()
-  directory.mkdir(mode=0o700);os.chown(directory,1000,1000)
   lib=ctypes.CDLL(str(r/'dist/aosp16/linux-selinux-handoff-2/libselinux-3.11/src/libselinux.so.1'),use_errno=True)
+  # PAM/logind has now created its actual session state. Reuse the scoped
+  # original Linux labels before starting the unprivileged compositor.
+  import importlib.util
+  spec=importlib.util.spec_from_file_location('host_labels',r/'tools/aosp/prepare_host_labels.py')
+  labels=importlib.util.module_from_spec(spec);spec.loader.exec_module(labels)
+  labels.prepare(cp,lib)
+  directory.mkdir(mode=0o700);os.chown(directory,1000,1000)
   lib.setfilecon_raw.argtypes=[ctypes.c_char_p,ctypes.c_char_p]
   assert lib.setfilecon_raw(os.fsencode(directory),label.encode())==0,ctypes.get_errno()
   st=directory.lstat();assert stat.S_ISDIR(st.st_mode) and stat.S_IMODE(st.st_mode)==0o700

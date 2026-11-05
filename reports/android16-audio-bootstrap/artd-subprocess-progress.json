@@ -21,11 +21,11 @@
       "derive_classpath",
       "odrefresh"
     ],
-    "new_permission": "artd → artd_subprocess_type process2 nnp_transition only",
+    "new_permission": "artd \u2192 artd_subprocess_type process2 nnp_transition only",
     "original_transition_and_entrypoint_required": true,
     "execute_no_trans_not_granted": true,
     "offline_queries": 24,
-    "actual_runtime_observation": "Original artd invokes art_exec --drop-capabilities → dex2oat32 targeting oat/x86_64/base.odex; dex2oat returned code 0",
+    "actual_runtime_observation": "Original artd invokes art_exec --drop-capabilities \u2192 dex2oat32 targeting oat/x86_64/base.odex; dex2oat returned code 0",
     "boot_image": "Checksum mismatch remains; compiler falls back to imageless running. No coherent boot image acceptance."
   },
   "apk": {
@@ -221,7 +221,7 @@
     },
     "integration326": {
       "checkpoint": "/home/tv/recuperacion-archtv/cde2d4de-f95e-4841-b035-05eac8321be4-markor-software-launch",
-      "result": "art_boot exited0; odsign exited127 before main: init→odsign process2 nosuid_transition denied under66",
+      "result": "art_boot exited0; odsign exited127 before main: init\u2192odsign process2 nosuid_transition denied under66",
       "data_labels": {
         "store": "/home/tv/.local/share/archtv/experimental-userdata/art-coherent-326",
         "metadata": {
@@ -295,7 +295,7 @@
       "offline_access_evidence": "dist/aosp16/audio-policy-inputs-67/access-comparison.json",
       "offline_cases": 48,
       "payload_sha256": "4c058a8b21bcbcc7c9cfbc423573f3e252b57857e890788b4a47d42d073b93d7",
-      "scope": "Same326 payload/private store.67 adds only init→odsign nosuid_transition; NNP1/nosuid/original labels preserved. No runtime success assumed.",
+      "scope": "Same326 payload/private store.67 adds only init\u2192odsign nosuid_transition; NNP1/nosuid/original labels preserved. No runtime success assumed.",
       "functional_result": "/home/tv/recuperacion-archtv/1ac79885-39f9-4abf-8da2-16fee8b80080-markor-software-launch/functional-result.json",
       "result": {
         "id": "1ac79885-39f9-4abf-8da2-16fee8b80080",
@@ -1896,7 +1896,7 @@
           "sha256": "d3eb7667da5d6443deb22eb91de5893b561c0d7ec098f92087a2ed33a0a58f36"
         }
       },
-      "current_integration": 362,
+      "current_integration": "integration365",
       "integration348": {
         "checkpoint": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch",
         "build": "dist/aosp16/package-cohort-build-348",
@@ -2692,7 +2692,7 @@
             "sha256": "b050682c253ef85fdaa175cfe7424acf03fa31ab81a336a03ab7c9bbeaa20d0c"
           }
         },
-        "scope": "Scoped original-task→trusted RustHome→original CLI WARM relaunch and existing note positive. Wrappers exit1, exact cause unknown; reproduced chown bug suspected. Not overall run acceptance or broad APK/R1 completion.",
+        "scope": "Scoped original-task\u2192trusted RustHome\u2192original CLI WARM relaunch and existing note positive. Wrappers exit1, exact cause unknown; reproduced chown bug suspected. Not overall run acceptance or broad APK/R1 completion.",
         "next": "Full354 candidate rebuilding; test actual closure and Home child exec/restart under enforcing, then original launcher/catalog UI."
       },
       "runner_close_correction353": {
@@ -4138,6 +4138,115 @@
           "materialized-factory.py": {
             "path": "/home/tv/recuperacion-archtv/20261105-vlc-focus363/materialized-factory.py",
             "sha256": "005d86b2282107d3aefb2b7a6883bd6379a762c8a4887f5ce9bd4c384125f7fc"
+          }
+        }
+      },
+      "integration363": {
+        "checkpoint": "/home/tv/recuperacion-archtv/f968e07e-1697-4266-82eb-3dc9bc24ccb9-markor-software-launch",
+        "native_exit": 1,
+        "outer_exit": 1,
+        "failure": "Original HWC FrameComposer init fails; SF cannot create AidlComposerClient. Postboot host device labels wrong; vold-failed is cleanup secondary, vdc init_user0 exited0.",
+        "device_monitor_final_snapshot_verified": true,
+        "host_recovery_verified": true,
+        "APK_accepted": false
+      },
+      "integration364": {
+        "checkpoint": "/home/tv/recuperacion-archtv/2803b1d6-a487-45bd-a57d-688144b66ea3-markor-software-launch",
+        "original_runtime_started": false,
+        "failure": "Ephemeral /run/udev/queue disappeared during host label scan; fixed by recording only actually retired optional runtime inode. Required devices remain mandatory.",
+        "host_recovery_verified": true,
+        "APK_accepted": false
+      },
+      "integration365": {
+        "checkpoint": "/home/tv/recuperacion-archtv/389042b9-7bae-45ae-9c3c-75169e5f0f60-markor-software-launch",
+        "boot_id": "109b367f-8785-48af-a620-c355e33639fd",
+        "build": "dist/aosp16/package-cohort-build-365",
+        "native_exit": 0,
+        "outer_exit": 0,
+        "completion_candidate_exit": 0,
+        "interaction_exit": 1,
+        "interaction_failure": "Guard detected closed UI session at natural cohort end; three physical commands sent, no Home reopen completed. Not a successful full interaction test.",
+        "host_recovery": {
+          "boot_id": "109b367f-8785-48af-a620-c355e33639fd",
+          "kernel": "6.18.59-archtv-aosp16-1",
+          "units": "",
+          "loops": "",
+          "dm": "No devices found",
+          "mode": "0",
+          "policy_sha256": "d8b79d1fb58c875f06ee804c83fa3ee90dcd2a5fb0b356f425179e392cbeb818",
+          "clock": "tsc",
+          "pcm": "closed",
+          "udev_drop_absent": true,
+          "mixer_equal": true,
+          "audit_lost_delta": 0,
+          "audit_rules_restored": true,
+          "audit_receiver_closed": true,
+          "backing_unmounted_detached": true,
+          "native_result_present": true,
+          "BPF_cleanup": true
+        },
+        "consumed": true,
+        "original_catalog_returned_count": 13,
+        "catalog_detail_observed": false,
+        "catalog_detail_failure": "Observation env belongs on original zygote RC, not unused auxiliary service RC. Compiled deployed DEX contains diagnostic marker; no entries fabricated.",
+        "physical_commands": 3,
+        "pause_accepted": false,
+        "reopen_accepted": false,
+        "broad_APK_compatibility_accepted": false,
+        "R1_MAC_closed": false,
+        "audio": {
+          "frames": 282624,
+          "writes": 69,
+          "flags": 0,
+          "active_nominal_seconds": 2.52,
+          "raw_sample_sha256": "15e29945f4e029010dc24a9501649c2d989226c19d71f109d416e5377c679779",
+          "limits": "Back intentionally early; partial chirp, no full source/acoustic/synchronization acceptance."
+        },
+        "next": "Run focused original Home catalog/reopen experiment with diagnostic env inherited through original zygote, then verify actual pause/lifecycle effects. No permission or inventory substitutions.",
+        "evidence": {
+          "result.json": {
+            "path": "/home/tv/recuperacion-archtv/389042b9-7bae-45ae-9c3c-75169e5f0f60-markor-software-launch/result.json",
+            "sha256": "06b7fe762c5de70e06e0bde2a9e602a3aa08aeeb6052d26b5cdb334ae383c642"
+          },
+          "completion-result.json": {
+            "path": "/home/tv/recuperacion-archtv/389042b9-7bae-45ae-9c3c-75169e5f0f60-markor-software-launch/completion-result.json",
+            "sha256": "b5fd057212ac5e4e7c45270d11e1ff8730d567b952fd7033ae71d3461a87a9fb"
+          },
+          "completion-consumer.json": {
+            "path": "/home/tv/recuperacion-archtv/389042b9-7bae-45ae-9c3c-75169e5f0f60-markor-software-launch/completion-consumer.json",
+            "sha256": "3624758427a664e565af73083dd20cb21c47b40c320fedcf5ee37a5b47526240"
+          },
+          "session-state.json": {
+            "path": "/home/tv/recuperacion-archtv/389042b9-7bae-45ae-9c3c-75169e5f0f60-markor-software-launch/session-state.json",
+            "sha256": "8e0e32fcd09ef7dfb0ff3fc88876d58e0875c3b43572d98a9cecf3e1186d588c"
+          },
+          "recovery-readback.json": {
+            "path": "/home/tv/recuperacion-archtv/389042b9-7bae-45ae-9c3c-75169e5f0f60-markor-software-launch/recovery-readback.json",
+            "sha256": "525ad02a5f46dea40dc8557ff252b42c33633d37b2feea41ff7265726a8a9ea6"
+          },
+          "host-label-preparation.json": {
+            "path": "/home/tv/recuperacion-archtv/389042b9-7bae-45ae-9c3c-75169e5f0f60-markor-software-launch/host-label-preparation.json",
+            "sha256": "2144024367439149680e3ddb95d4ce0342d5bf12aa7816d551c954b8c3569c7f"
+          },
+          "observed-original-logcat.txt": {
+            "path": "/home/tv/recuperacion-archtv/389042b9-7bae-45ae-9c3c-75169e5f0f60-markor-software-launch/observed-original-logcat.txt",
+            "sha256": "73d405ed9aa01584885261c61ee63ec0f2640b1f0fdd6629b0d2599a20af568b"
+          },
+          "input-commands.jsonl": {
+            "path": "/home/tv/recuperacion-archtv/389042b9-7bae-45ae-9c3c-75169e5f0f60-markor-software-launch/input-commands.jsonl",
+            "sha256": "085fb80f5e3f422d5e4146b607d621e64f486d3c8196ddc75bc3002225cc5991"
+          },
+          "interaction-test.log": {
+            "path": "/home/tv/recuperacion-archtv/389042b9-7bae-45ae-9c3c-75169e5f0f60-markor-software-launch/interaction-test.log",
+            "sha256": "2980340da63de039645708a3bb87d54cccac1d2f2608f96b1eafcef45d942682"
+          },
+          "signal-analysis-1/signal-analysis.json": {
+            "path": "/home/tv/recuperacion-archtv/389042b9-7bae-45ae-9c3c-75169e5f0f60-markor-software-launch/signal-analysis-1/signal-analysis.json",
+            "sha256": "545596aafe5b4952b837074d01168607212302f9553fdbf9f3758884cb789579"
+          },
+          "home-live365.png": {
+            "path": "/home/tv/recuperacion-archtv/389042b9-7bae-45ae-9c3c-75169e5f0f60-markor-software-launch/home-live365.png",
+            "sha256": "fd55882d235b29dcbc97011c1fdc5add3fe7a3da2928dbce58f446c81abfc757"
           }
         }
       }
