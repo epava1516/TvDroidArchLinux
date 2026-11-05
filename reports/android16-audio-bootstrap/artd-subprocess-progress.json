@@ -421,6 +421,146 @@
           "next_action": "Evaluate private fs-verity-capable persistent ext4 backing against original full-verification route; preserve original cryptography and reject fake support/readiness. Prefer retaining original protection with private data filesystem rather than changing global host root features. Then actual odsign verification and image coherence, tamper/revocation negatives, full Markor/VLC."
         }
       }
+    },
+    "private_verity_data": {
+      "decision": "Use realpreallocated privatefilesystemverity; retainwholeoriginalodsign crypto ratherthanforcing itsfullhashfallback or enablingverity onhostroot.256MiB initialexperiment, notproductioncapacity/lightness acceptance.",
+      "host_boundary": "Global mount underroot0700store forread-onlyobserver; originalcohort bindsitprivately. Hostowner releasesspecificloop130 afteroriginalservices andobserverclose. No MAC/isolation claim from mountflags.",
+      "original_apex_boundary": "Onlyexactowneduserdata loop130 admitted outsideRWAPEXpool0..89 andpayload128/129; unrelatedloops remainrejected, actualactive_loops remainsnonemptyuntilhostownerclose.",
+      "integration330": {
+        "attempt": 330,
+        "scope": "Actual originalodsign negative onrealprivateverity filesystem; no verifiedcache/APK acceptance",
+        "fsverity_result": "EINVAL: originalblock4096 exceedsactualfilesystemblock1024",
+        "original_source": "original-odsign/VerityUtils.cpp enableFsVerity setsblock_size4096; actualLinux6.18.59 fs/verity/open.c rejectslog_blocksize>inode.i_blkbits",
+        "cleanup_failure": "util-linux customprivateblocknode query returned null back-file. Recoveryverifiedsysfs andcanonical/dev/loop130,allPIDs0/mode0, unmounted/detachedexactdevice. Corrected automaticquery for331.",
+        "recovery": {
+          "mode": "0",
+          "policy_sha256": "61a41267ee6de3afb412dce4c199243b3a6536b7d3c0bd6aefd6b422fa66d703",
+          "clock": "tsc",
+          "pcm": "closed",
+          "udev_drop_absent": true,
+          "loops": "",
+          "dm": "No devices found",
+          "mixer_equal": true
+        },
+        "consumer": {
+          "id": "a46c687a-c527-4dec-b232-76d443b16ce4",
+          "state": "consumed",
+          "owner": "active:a46c687a-c527-4dec-b232-76d443b16ce4",
+          "consumed_by": "active:a46c687a-c527-4dec-b232-76d443b16ce4"
+        },
+        "archive": {
+          "scope": "Closed consumed330 diagnostic data image, lossless archive; preserves keys and all filesystem bytes, no application data discarded",
+          "raw_image": "/home/tv/.local/share/archtv/experimental-userdata/art-verity330/data.ext4",
+          "raw_sha256": "32950081bf2396a7f5c851a84de8d02ec307ca32765c29f4eb5db5416804e63b",
+          "archive": "/home/tv/.local/share/archtv/experimental-userdata/art-verity330/data.ext4.gz",
+          "archive_sha256": "cc768e629566179dfd52f244a917756c5dc268fdea4f66e4bf76e86a1087afeb",
+          "restore": "sudo sh -c gzip ... is not sufficient: restore asroot with gzip -dc archive > original path, chmod0600, reserve allocatedcapacity256MiB withfallocate -l268435456, verify rawSHA before any mount",
+          "archived_bytes": 45983285
+        },
+        "evidence": {
+          "run.log": "3d2ab58d7376c4b75218cde1d12624f5612b0eb1e79c85eda4c6f4832788ce29",
+          "observed-original-logcat.txt": "51ac1fbd4689a3082d000a96552cd3ff049f619df72a2a6b34835c80ba0c0857",
+          "filesystem-and-cleanup-failure.json": "5c1a82ab1306f1bbebcc0edf4b6934d233cdb1e835b92fd84875ea96c120fac4",
+          "backing-after.json": "ffdae5bc4479cd43071aadaac240c5412ded2da33b63038c5fbd428b9a42bbb7",
+          "recovery-readback.json": "c5fc9e4309a74ea3d9d9c18f790465e54d8062622a33dd805bb6fcca471e9dee"
+        }
+      },
+      "integration331": {
+        "checkpoint": "/home/tv/recuperacion-archtv/dd3332a2-45fc-4432-8263-a3d57df1c32e-markor-software-launch",
+        "state": "closed recovered consumed; freshsigningpassed, APKinstallfailedrealcapacity",
+        "scope": "Same329 nativepayload and67policy, fresh4Kext4verityimage, exactidentitycleanupcorrection. Signature/load/APKnotacceptedbefore actualevidence.",
+        "result": {
+          "attempt": 331,
+          "scope": "Actual fresh original odsign signing on4Kext4verity; no persistedsignature/tamper/revocation/imagecoherence or APK acceptance",
+          "fresh_signing": {
+            "original_earlyBootEnded_exit": 0,
+            "odsign_exit": 0,
+            "original_verification_properties_observed": true,
+            "fsverity_enabled_logs": 4,
+            "original_signing_done_log": true
+          },
+          "apk_installation": {
+            "package": "org.videolan.vlc",
+            "apk_sha256": "4646633ede40c4784c5584087cffc5c60cc45b16966ae0b36cedd784d7c4a11e",
+            "staged_bytes": 49444910,
+            "result": "INSTALL_FAILED_INSUFFICIENT_STORAGE: Failed to override installation location",
+            "launch_accepted": false
+          },
+          "remaining": [
+            "Real capacity for complete APK install;256MiB boundedvolume insufficient",
+            "Original odrefresh trusts/system images by factory/preconditions/existence, not newoverlayDEXchecksum; frameworkprofile mismatch757717518 vs1617501790 stillobserved",
+            "Reopen originalsignatureverification, tamper/wrongkey/revocation negatives",
+            "WholeAPKlaunch/UI/input/function/persistence/close/reopen oncoherentART",
+            "R1 remainsopen"
+          ],
+          "recovery": {
+            "mode": "0",
+            "policy_sha256": "61a41267ee6de3afb412dce4c199243b3a6536b7d3c0bd6aefd6b422fa66d703",
+            "units": {
+              "archtv-host-owner-dd3332a2-45fc-4432-8263-a3d57df1c32e.service": {
+                "ActiveState": "inactive",
+                "MainPID": "0"
+              },
+              "archtv-package-runner-dd3332a2-45fc-4432-8263-a3d57df1c32e.service": {
+                "ActiveState": "inactive",
+                "MainPID": "0"
+              },
+              "archtv-markor-session-dd3332a2-45fc-4432-8263-a3d57df1c32e.service": {
+                "ActiveState": "inactive",
+                "MainPID": "0"
+              }
+            },
+            "clock": "tsc",
+            "pcm": "closed",
+            "udev_drop_absent": true,
+            "loops": "",
+            "dm": "No devices found",
+            "mixer_equal": true
+          },
+          "backing_closed": {
+            "store": {
+              "format": "archtv-experimental-userdata-v1",
+              "name": "art-verity331",
+              "storage_uuid": "4415a4ce-2170-4e75-90f1-e231afd594bb",
+              "backing": {
+                "kind": "preallocated-ext4-verity-v1",
+                "image": "/home/tv/.local/share/archtv/experimental-userdata/art-verity331/data.ext4",
+                "capacity": 268435456,
+                "filesystem_uuid": "15d9c7b7-75ae-4b26-be05-2a7bd907988a"
+              }
+            },
+            "image_inode": 11962662,
+            "image_device": 2050,
+            "allocated_bytes": 268439552,
+            "loop": "/home/tv/.local/share/archtv/experimental-userdata/art-verity331/loop130",
+            "mountpoint": "/home/tv/.local/share/archtv/experimental-userdata/art-verity331/data",
+            "loop_id": 130,
+            "created_loop": true,
+            "scope": "Original filesystem capability, no APK/key/permission/readiness seeded; no MAC/isolation acceptance",
+            "mount_observation": "{\n   \"filesystems\": [\n      {\n         \"target\": \"/home/tv/.local/share/archtv/experimental-userdata/art-verity331/data\",\n         \"source\": \"/home/tv/.local/share/archtv/experimental-userdata/art-verity331/loop130\",\n         \"fstype\": \"ext4\",\n         \"options\": \"rw,nosuid,nodev,noatime,seclabel\"\n      }\n   ]\n}\n",
+            "unmounted": true,
+            "loop_detached": true
+          },
+          "consumer": {
+            "id": "dd3332a2-45fc-4432-8263-a3d57df1c32e",
+            "state": "consumed",
+            "owner": "active:dd3332a2-45fc-4432-8263-a3d57df1c32e",
+            "consumed_by": "active:dd3332a2-45fc-4432-8263-a3d57df1c32e"
+          },
+          "evidence": {
+            "run.log": "91c6e297be799c653993da07ffd5a3d86316987678f125b451b286e597daddbb",
+            "observed-original-logcat.txt": "2e47abe6df83de83b20b2eaf4c79785454dfdb731114ddd8da9ec1206fb738f1",
+            "observed-markor-install.txt": "c8594a8c76a141a2910a79b47d0ba6a1549b8b2903c41185c8cf7c032a1490b5",
+            "backing-after.json": "f8386269b4bf792c8ae6ccb8c27ab49f8e51482039574ee12df0ca35615e4030",
+            "recovery-readback.json": "e97cd673ee50bdf4d0b1b360c1565d0c631984f123de0cbe420fa37248f47aaa"
+          }
+        },
+        "functional_result": "/home/tv/recuperacion-archtv/dd3332a2-45fc-4432-8263-a3d57df1c32e-markor-software-launch/functional-result.json"
+      }
+    },
+    "historical_artifact_preservation": {
+      "original_keystore_baseline": "/home/tv/.cache/archtv/keystore2-source-build-1/keystore2-original-baseline-preservation.json",
+      "scope": "Historical neverexecutedbaseline losslesslycompressed andSHAchecked; softwarecandidates andcurrentpayload untouched. Restore exactbytes beforefutureinspection requiringrawpath."
     }
   }
 }

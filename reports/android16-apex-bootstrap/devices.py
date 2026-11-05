@@ -76,17 +76,23 @@ def prepare(root, out, data_store, bootstrap=False):
     for host, logical in [('/dev/loop-control','loop-control'),('/dev/mapper/control','device-mapper'),('/dev/kmsg','kmsg')]:
         info=os.stat(host); assert stat.S_ISCHR(info.st_mode)
         os.mknod(root/'dev'/logical,stat.S_IFCHR|0o600,info.st_rdev)
+    import importlib.util
+    userdata_spec=importlib.util.spec_from_file_location('linux_userdata',REPO/'reports/android16-package-bootstrap/userdata.py')
+    userdata=importlib.util.module_from_spec(userdata_spec);userdata_spec.loader.exec_module(userdata)
+    checkpoint=os.environ.get('ARCHTV_RUN_CHECKPOINT')
+    owned_userdata=userdata.verified_verity_backing(checkpoint) if checkpoint else None
+    owned_data_image=owned_userdata['store']['backing']['image'] if owned_userdata else None
     paths=sorted(Path('/sys/devices/virtual/block').glob('loop*'),key=lambda p:int(p.name[4:]))
     idle=[]; occupied=[]
     for p in paths:
         backing=p/'loop/backing_file'
         if backing.exists() and backing.read_text().strip():
             value=backing.read_text().strip()
-            assert '/home/tv/repositorio-principal/dist/aosp16/' in value or value=='/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img',value
+            assert '/home/tv/repositorio-principal/dist/aosp16/' in value or value=='/home/tv/.cache/archtv/aosp16-qpr2/artifact-selection/gsi-original/system.img' or (value==owned_data_image and int(p.name[4:])==130),value
             occupied.append(int(p.name[4:]))
         else: idle.append(int(p.name[4:]))
     backing_rows=json.loads((out/'backing-loops.json').read_text()) if bootstrap else []
-    if bootstrap:assert occupied==[128,129] and all(row['mounted'] and row['flags']&5==5 for row in backing_rows)
+    if bootstrap:assert occupied==([128,129,130] if owned_userdata else [128,129]) and all(row['mounted'] and row['flags']&5==5 for row in backing_rows)
     created=[row['id'] for row in backing_rows if row['created']]; next_id=max([int(p.name[4:]) for p in paths],default=-1)+1
     state={'allowed_dm_names':sorted(allowed),'loop_pool':[],'created_loop_ids':created,'occupied_factory_loops':occupied,'dm_nodes':[],'scope':'Real Linux devices; trusted diagnostic only, not MAC or APK acceptance'}
     save(out/'devices.json',state)

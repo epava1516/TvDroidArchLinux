@@ -33,7 +33,13 @@ def dm_names(result):
     assert result.returncode==0,result.stderr
     raw=result.stdout.strip()
     return set() if raw=='No devices found' else {line.strip() for line in raw.splitlines() if line.strip()}
-assert not command(['losetup','-l','-n']).stdout.strip(),'Another loop workload exists'
+import importlib.util
+userdata_spec=importlib.util.spec_from_file_location('linux_userdata',repo/'reports/android16-package-bootstrap/userdata.py')
+userdata=importlib.util.module_from_spec(userdata_spec);userdata_spec.loader.exec_module(userdata)
+owned_userdata=userdata.verified_verity_backing(recovery)
+expected_userdata_images={owned_userdata['store']['backing']['image']} if owned_userdata else set()
+initial_loop_images=set(command(['losetup','-l','-n','-O','BACK-FILE']).stdout.strip().splitlines())
+assert initial_loop_images==expected_userdata_images,'Another loop workload or missing owned data loop'
 assert not command(['systemctl','list-units','archtv-mc3*','--all','--no-legend']).stdout.strip(),'Another cohort exists'
 integrated_socket=Path(sys.argv[3]) if len(sys.argv)==4 else None
 # Only extend the post-start interaction window; native startup stays300000ms.
@@ -235,10 +241,10 @@ finally:
     (recovery/'android-service-journal.json').write_text(json.dumps(service_messages,indent=2)+'\n')
 
     text=log.read_text() if log.exists() else ''
-    final={'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'unit':unit,'factory':str(factory) if factory else None,'outer_exit':exit_code,'elapsed_seconds':time.time()-started,'native_complete_inventory_verified':'APEX_ORIGINAL_COMPLETE_INVENTORY_VERIFIED modules=41' in text,'bpf_cleanup':bpf_cleanup,'dm_cleanup':cleanup,'devices':device_state,'loop_cleanup':loop_cleanup,'final_dm':sorted(dm_names(final_dm)),'final_dm_raw':final_dm.stdout,'active_loops':loops,'log_sha256':hashlib.sha256(log.read_bytes()).hexdigest() if log.exists() else None,'scope':'Execution evidence, not APK or MAC acceptance; inspect native results and errors.'}
+    final={'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'unit':unit,'factory':str(factory) if factory else None,'outer_exit':exit_code,'elapsed_seconds':time.time()-started,'native_complete_inventory_verified':'APEX_ORIGINAL_COMPLETE_INVENTORY_VERIFIED modules=41' in text,'bpf_cleanup':bpf_cleanup,'dm_cleanup':cleanup,'devices':device_state,'loop_cleanup':loop_cleanup,'final_dm':sorted(dm_names(final_dm)),'final_dm_raw':final_dm.stdout,'active_loops':loops,'owned_userdata_backing':owned_userdata,'unexpected_loop_images':sorted(set(loops.splitlines())-expected_userdata_images),'log_sha256':hashlib.sha256(log.read_bytes()).hexdigest() if log.exists() else None,'scope':'Execution evidence, not APK or MAC acceptance; inspect native results and errors. Host owner must subsequently unmount/detach its recorded private userdata backing.'}
     (recovery/'result.json').write_text(json.dumps(final,indent=2)+'\n')
     for p in recovery.iterdir():os.chown(p,1000,1000)
     os.chown(recovery,1000,1000)
     print('APEX_RESULT '+json.dumps({k:final[k] for k in ['outer_exit','elapsed_seconds','native_complete_inventory_verified','active_loops','final_dm']}),flush=True)
     print('APEX_EVIDENCE '+str(recovery),flush=True)
-assert bpf_cleanup['verified'] and exit_code==0 and final['native_complete_inventory_verified'] and not loops and not dm_names(final_dm),{k:final[k] for k in ['outer_exit','native_complete_inventory_verified','active_loops','final_dm']}
+assert bpf_cleanup['verified'] and exit_code==0 and final['native_complete_inventory_verified'] and set(loops.splitlines())==expected_userdata_images and not dm_names(final_dm),{k:final[k] for k in ['outer_exit','native_complete_inventory_verified','active_loops','final_dm']}

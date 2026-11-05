@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Combine existing real APEX and original graphics factories; no Android boot."""
 from pathlib import Path
-import sys,ast,json
+import sys,ast,json,os,re
 import xml.etree.ElementTree, hashlib
 # Resolve the Linux verification hash provider before entering the chroot.
 hashlib.sha256(b"").digest()
@@ -133,6 +133,17 @@ original_apex_bootstrap=build_options.get('original_apex_bootstrap',False)
 assert isinstance(original_apex_bootstrap,bool)
 observe_ms=build_options.get('observe_ms',3000)
 userdata_name=build_options.get('persistent_userdata_name')
+checkpoint_path=os.environ.get('ARCHTV_RUN_CHECKPOINT')
+if checkpoint_path:
+ before=json.loads((Path(checkpoint_path)/'before-launch.json').read_text())
+ override=before.get('userdata_override')
+ if override is not None:
+  assert build_options.get('coherent_art') and build_options.get('software_security_platform')
+  assert Path(before['build']).resolve()==payload.parent
+  assert override['from']==userdata_name and override['profile']=='preallocated-ext4-verity-v1'
+  assert re.fullmatch('[a-z0-9][a-z0-9_-]{0,47}',override['to'])
+  userdata_name=override['to']
+  print('LINUX_PRIVATE_USERDATA_SELECTION '+json.dumps(override),flush=True)
 assert isinstance(observe_ms,int) and 3000<=observe_ms<=600000
 # Materialize the existing graphics adapter, then add the tested APEX boundary.
 recipe=(r/'reports/android16-hwc3-wayland/execute-graphics.py').read_text()
