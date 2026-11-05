@@ -6,7 +6,7 @@ r=Path(__file__).resolve().parents[2]
 # Reject typos before creating artifacts: omitted memory/media inputs change the candidate.
 allowed_flags = {'--checkpoint-diagnostic', '--keymint-component', '--keystore-component',
                  '--keystore-java-component', '--software-security', '--native-audio',
-                 '--audio-write-diagnostic', '--audio-synchronous-pcm', '--audio-production-dynamics',
+                 '--audio-write-diagnostic', '--audio-synchronous-pcm', '--audio-production-dynamics', '--coherent-art',
                  '--memfd-label-original', '--media-test', '--audio-only-media'}
 allowed_values = ('--observe-ms=', '--userdata-name=', '--apk-id=', '--markor-workflow-token=')
 assert all(a in allowed_flags or any(a.startswith(prefix) for prefix in allowed_values)
@@ -24,6 +24,7 @@ tracked_inputs.append('reports/android16-audio-bootstrap/prepare-linux-profile.p
 tracked_inputs.extend(['reports/android16-audio-bootstrap/build-support.py','reports/android16-audio-bootstrap/link-effect.py'])
 tracked_inputs.extend(['reports/android16-audio-bootstrap/build-linux-primary.py','reports/android16-audio-bootstrap/link-linux-core.py','runtime/aosp/android16-qpr2/patches/audio-alsa-write-observation.patch','runtime/aosp/android16-qpr2/patches/audio-alsa-write-observation.json'])
 tracked_inputs.extend(['runtime/aosp/android16-qpr2/patches/audio-alsa-synchronous-pcm.patch','runtime/aosp/android16-qpr2/patches/audio-alsa-synchronous-pcm.json'])
+tracked_inputs.extend(['reports/android16-package-bootstrap/build-odsign-software.py','reports/android16-package-bootstrap/link-odsign-software.py','runtime/aosp/android16-qpr2/patches/odsign-explicit-software.patch','runtime/aosp/android16-qpr2/patches/odsign-explicit-software.json'])
 source_hashes={n:hashlib.sha256((r/n).read_bytes()).hexdigest() for n in tracked_inputs}
 (out/'source-inputs.json').write_text(json.dumps(source_hashes,indent=2)+'\n')
 actions_source=r/'dist/aosp16/property-actions-source-4'
@@ -58,6 +59,8 @@ lines=rc.splitlines();lines[0]='service archtv-selected-services /system/bin/app
 checkpoint_diagnostic='--checkpoint-diagnostic' in sys.argv[2:]
 keymint_component='--keymint-component' in sys.argv[2:]
 software_platform='--software-security' in sys.argv[2:]
+coherent_art='--coherent-art' in sys.argv[2:]
+assert not coherent_art or software_platform
 native_audio='--native-audio' in sys.argv[2:]
 assert not native_audio or software_platform
 audio_write_diagnostic='--audio-write-diagnostic' in sys.argv[2:]
@@ -73,6 +76,7 @@ observe_ms=int(next((a.split('=',1)[1] for a in sys.argv[2:] if a.startswith('--
 assert 3000<=observe_ms<=600000
 userdata_name=next((a.split('=',1)[1] for a in sys.argv[2:] if a.startswith('--userdata-name=')),None)
 assert userdata_name is None or (software_platform and re.fullmatch('[a-z0-9][a-z0-9_-]{0,47}',userdata_name))
+assert not coherent_art or userdata_name is not None
 # Select an intact real APK from the existing compatibility matrix. This is
 # trusted external installer input, never PMS inventory or a permission seed.
 apk_id=next((a.split('=',1)[1] for a in sys.argv[2:] if a.startswith('--apk-id=')),'markor')
@@ -125,7 +129,7 @@ if software_platform:
  lines[0]=lines[0].replace('-Xmx768m','-Xmx512m')
  lines.append('    setenv ARCHTV_SOFTWARE_SECURITY_PROFILE software-platform-v1')
 experiment_kind='markor-software-launch' if software_platform else 'keystore-java-component' if keystore_java else 'keystore-component' if keystore_component else ('keymint-component' if keymint_component else 'markor-launch')
-(out/'build-options.json').write_text(json.dumps({'apk_target':apk_target,'media_test':media_test,'memory_library':memory_library,'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component and not software_platform,'software_security_platform':software_platform,'observe_ms':observe_ms,'persistent_userdata_name':userdata_name,'markor_workflow_token':workflow_token,'markor_workflow_budget_seconds':workflow_budget_seconds,'experiment_kind':experiment_kind,'original_apex_bootstrap':True,'original_logd':True,'preconnected_wayland':True,'original_system_dma_heap':True,'native_audio':native_audio,'audio_write_diagnostic':audio_write_diagnostic,'audio_synchronous_pcm':audio_synchronous_pcm,'audio_production_dynamics':audio_production_dynamics},indent=2)+'\n')
+(out/'build-options.json').write_text(json.dumps({'apk_target':apk_target,'media_test':media_test,'coherent_art':coherent_art,'memory_library':memory_library,'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component and not software_platform,'software_security_platform':software_platform,'observe_ms':observe_ms,'persistent_userdata_name':userdata_name,'markor_workflow_token':workflow_token,'markor_workflow_budget_seconds':workflow_budget_seconds,'experiment_kind':experiment_kind,'original_apex_bootstrap':True,'original_logd':True,'preconnected_wayland':True,'original_system_dma_heap':True,'native_audio':native_audio,'audio_write_diagnostic':audio_write_diagnostic,'audio_synchronous_pcm':audio_synchronous_pcm,'audio_production_dynamics':audio_production_dynamics},indent=2)+'\n')
 if checkpoint_diagnostic:lines.append('    setenv ARCHTV_CHECKPOINT_DIAGNOSTIC 1')
 lines=[l for l in lines if not any(l.startswith('    setenv '+n+' ') for n in ['BOOTCLASSPATH','DEX2OATBOOTCLASSPATH','SYSTEMSERVERCLASSPATH','STANDALONE_SYSTEMSERVER_JARS'])];(entry/'selected-services.rc').write_text('\n'.join(lines)+'\n')
 old=r/'dist/aosp16/apex-cohort-build-6';commands=[]
@@ -382,6 +386,17 @@ if media_test is not None:
  vendor['files']['/vendor/etc/archtv-media-test-name']={'source':str(out/'media-test-name'),'context':'u:object_r:vendor_configs_file:s0','mode':0o444}
 (out/'install-package').write_text(apk_target['package']+'\n')
 vendor['files']['/vendor/etc/archtv-install-package']={'source':str(out/'install-package'),'context':'u:object_r:vendor_configs_file:s0','mode':0o444}
+if coherent_art:
+ art_link=r/'dist/aosp16/odsign-software-link-2'
+ art_record=json.loads((art_link/'link.json').read_text())
+ assert art_record['status']=='linked_not_executed'
+ art_binary=Path(art_record['binary'])
+ assert hashlib.sha256(art_binary.read_bytes()).hexdigest()==art_record['binary_sha256']
+ for path,digest in art_record['inputs'].items():assert hashlib.sha256(Path(path).read_bytes()).hexdigest()==digest,path
+ (out/'coherent-art-input.json').write_text(json.dumps(art_record,indent=2)+'\n')
+ (out/'coherent-art-profile').write_text('software-signed-cache-v1\n')
+ vendor['files']['/bin/archtv-odsign-software']={'source':str(art_binary),'context':'u:object_r:odsign_exec:s0','mode':0o755}
+ vendor['files']['/vendor/etc/archtv-coherent-art']={'source':str(out/'coherent-art-profile'),'context':'u:object_r:vendor_configs_file:s0','mode':0o444}
 vendor['files']['/vendor/bin/install-markor.sh']={'source':str(r/'runtime/aosp/linux-services/install-markor.sh'),'context':'u:object_r:vendor_file:s0','mode':0o644}
 zygote=(r/'dist/aosp16/factory-inputs-3/root/system/etc/init/hw/init.zygote64.rc').read_text()
 assert zygote.count(' --start-system-server')==1

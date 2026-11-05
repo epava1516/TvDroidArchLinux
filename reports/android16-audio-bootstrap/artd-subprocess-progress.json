@@ -96,7 +96,7 @@
     "artd_source_sha256": "94a90649a5ebdc06d371ad52def35ddb115cf5bda272538f18cc2f1df725485b"
   },
   "coherent_cache_candidate": {
-    "state": "whole_source_build6_link2_passed_not_executed",
+    "state": "integration325_built_waiting_lossless_space_preservation",
     "build": "dist/aosp16/odsign-software-build-6/build.json",
     "patch": "runtime/aosp/android16-qpr2/patches/odsign-explicit-software.patch",
     "sources": {
@@ -181,7 +181,7 @@
       "runtime_path": "Keep /system/bin/odsign using a private cohort-only bind of adaptedbinary, so original linker namespace/service RC/domain remain; preserve source GSI binary. A vendor executable path would select a different linker namespace.",
       "data": "Fresh dedicated private userdata/cache/signature/key state; do not overwrite old Markor/VLC caches or TEE-profile state.",
       "coordinator": "Original derive_classpath -> art_boot -> odsign -> actualkey.done -> originalkeystore.boot_level advancement -> actualverification.done/success -> zygote. No coordinator writes verification success.",
-      "validation": "Require original generated artifacts, originalsignature+negative tamper/bootlevel, actualimage mappings/logs withoutfallback, then Markor/VLC completeworkflows."
+      "validation": "Repeat actualoriginalsubsystems withconfigured-vs-started Zygotehealth corrected; only then demand signatures/image load/negatives. No readyproperty written."
     },
     "build_sha256": "93d92316f935683503d41b490f00d60587e2747fb5955711b7edf53baf74556e",
     "link_sha256": "b5b752968fda87999ca9b8f06b983bbb6d3063c7429d647d1647d9a697c9fa69",
@@ -189,6 +189,39 @@
       "path": "dist/aosp16/odsign-software-link-1/link.json",
       "binary_sha256": "25524786b3d8a1cce8f39f091ff6f9de7cde5c7c7243084d7cb99b8825c5c76b",
       "MCP_evidence_scope": "REA static disassembly belongs only to link1 artifact, not a runtime test of link2"
+    },
+    "integration323": {
+      "attempt": 323,
+      "state": "terminal_recovered_consumed",
+      "checkpoint": "/home/tv/recuperacion-archtv/8c4ec639-4ad7-4e50-bdae-8e8e7062e697-markor-software-launch",
+      "private_bind_verified": true,
+      "art_boot_started_pid_namespace": 451,
+      "art_boot_exit_observed_before_cleanup": false,
+      "odsign_started": false,
+      "APK_stage_accepted": false,
+      "cache_verified": false,
+      "primary_failure": "MC1_FAILED immediately afterart_boot ExecStart: healthy() requiresallocated zygote_ IsRunning although intendedstart is afterART signing. Deterministic configured-vs-started lifecycle mismatch.",
+      "secondary_cleanup": "vold SIGKILL duringClose triggers originalreboot_on_failure; Rust blocks shutdown request. Not an initial vold failure or VM reboot.",
+      "correction": "Track zygote_started_ only afteractualsuccessfulStart; require liveness thereafter, resetpointer/state onClose. Allother servicehealthchecks and realodsign results retained.",
+      "evidence": {
+        "run.log": "2617732fa1e106f66036590fe3e6926bb9e418bc7f1e7d1c39c7e1f1a1b008b4",
+        "observed-original-logcat.txt": "8ab0ac292ce63f919f65914c45db2d1cc5df51bac73553a64e72ca66ea40db27",
+        "recovery-readback.json": "27b282b1ca4baca815ada3d9afdf57a888d632b597fa133fa500432173e57768",
+        "finite-audit/result.json": "c50a84c1f1598a4b3b8cf1fca56bea73d4c60294d17b21461755138996cc5e99"
+      },
+      "limits": [
+        "No odsign/odrefresh/image/APK availability fromstartingart_boot",
+        "Mode0/policy65/TSC/mixer/resourcesrecovered, auditlost0; R1open"
+      ]
+    },
+    "integration325": {
+      "state": "prepared_not_started",
+      "build": "dist/aosp16/package-cohort-build-325",
+      "payload_sha256": "46ba77ccb04e03e1b4d4b3cf46af170c95090de30f9dad488a68a292274755f8",
+      "checkpoint": "/home/tv/recuperacion-archtv/5550676e-5f2f-469b-808b-98510c0d8cac-markor-software-launch",
+      "change": "Same whole original ART route; configured-vs-started Zygote health corrected. Actualrunning liveness still mandatory.",
+      "pending": "Only own closed consumed312/313/323 image preservation frees space beforeAOT cache; no source/log/userdata deletion.",
+      "artifact_preparation324": "Own build324 canceled before runtime onmisread escaped display. Bytecheck [92,110] confirmed correct C++newline; original323 retained. No falselyclaimed source newline bug."
     }
   }
 }

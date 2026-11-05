@@ -1,5 +1,7 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+Puerta inmediata tras323: ejecutar325 con la integración completa y el estado de arranque Zygote corregido.323 sólo acreditó montaje privado y arranque art_boot; odsign no arrancó. Conservar la causa inicial separada de reboot_on_failure de vold al limpiar. Exigir después firma original real, carga coherente y negativas, antes de Markor/VLC completo.
+
 Decisión322: CPU300 no elimina el fallo de tiempo; conservar200 por defecto y detener ajustes especulativos del HAL/cuota. Prioridad funcional siguiente: original Keystore/KeyMint SOFTWARE -> odrefresh/odsign completos -> verificación real -> Zygote carga imágenes coherentes -> repetir recorrido completo Markor/VLC. No aceptar compilación, exit0 de odrefresh que pueda omitir trabajo, propiedades manuales o firmas sin verificación y negativas.
 
 Tras321: control322 limitado de presupuesto CPU sobre la misma imagen para contrastar contención fuera del HAL. Si falla, descartar cuota como explicación suficiente. Priorizar después imagen/caché ART coherente original y carga real sin fallback: el desacuerdo de checksum ya está demostrado, no atribuirle audio sin prueba. Conservar la puerta completa de señal, continuidad, launcher/selección y reapertura.

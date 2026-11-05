@@ -262,6 +262,16 @@ if memory_library is not None:
  # Bind only inside the already-private factory; never overwrite the GSI or host.
  # All selected services use the original platform loader and the complete library.
  root_code+="\nimport hashlib\nmemory_source=candidate/'bin/archtv-libcutils-memory.so';memory_target=root/'system/lib64/libcutils.so'\nassert hashlib.sha256(memory_source.read_bytes()).hexdigest()=="+repr(memory_library['sha256'])+"\nassert memory_target.is_file()\nmount('--bind',memory_source,memory_target);mount('-o','remount,bind,ro,nosuid,nodev',memory_target)\nprint('ORIGINAL_LIBCUTILS_MEMORY_PRIVATE_RO '+str(memory_target),flush=True)"
+if build_options.get('coherent_art',False):
+ assert build_options['software_security_platform'] and userdata_name is not None
+ art=json.loads((payload.parent/'coherent-art-input.json').read_text())
+ art_sha=art['binary_sha256']
+ # Same original /system executable namespace, only in this private mount tree.
+ # Preserve original GSI backing; no host /system or shared input writes.
+ root_code+="\nimport hashlib\nart_source=candidate/'bin/archtv-odsign-software';art_target=root/'system/bin/odsign'\nassert hashlib.sha256(art_source.read_bytes()).hexdigest()=="+repr(art_sha)+"\nassert art_target.is_file()\nmount('--bind',art_source,art_target);mount('-o','remount,bind,ro,nosuid,nodev',art_target)\nprint('COHERENT_ART_ODSIGN_PRIVATE_BIND '+str(art_target)+' sha256='+"+repr(art_sha)+",flush=True)"
+ # Exact original init/APEX roots. Original restorecon below assigns labels.
+ for name,mode,uid,gid in [('misc/odrefresh',0o777,1000,1000),('misc/odsign',0o710,0,1000),('misc/odsign/metrics',0o770,0,1000),('misc/apexdata/com.android.art',0o700,0,0)]:
+  root_code+="\np=root/'data'/"+repr(name)+";p.mkdir(parents=True,exist_ok=True);os.chmod(p,"+str(mode)+");os.chown(p,"+str(uid)+","+str(gid)+")"
 media_test=build_options.get('media_test')
 if media_test is not None:
  assert apk_target['id']=='vlc' and media_test['bytes']<=1048576

@@ -1,5 +1,7 @@
 # Arquitectura vigente · A16-QPR2-1
 
+La etapa ART precede al arranque de Zygote: healthy debe distinguir puntero configurado de proceso iniciado.323 demostró el cierre prematuro al esperar art_boot. El indicador zygote_started sólo cambia tras Start exitoso, exige IsRunning desde entonces y se limpia al cerrar; no se relajan controles de procesos ya iniciados ni se inventa verificación de caché.
+
 Frontera ABI odsign: cabeceras CPP de snapshots AIDLv1 y proxies originales GSI v1 frente a Keystore2 Rust original y KeyMint v4 NDK SOFTWARE. El enlace resuelve símbolos, todavía no demuestra transacciones de firma. libstatspull/statssocket proceden del mismo APEX statsd original, no del anfitrión. Mantener ruta original /system/bin/odsign para el namespace del enlazador; separar datos/caché/firmas del perfil SOFTWARE de cualquier estado TEE y de los recorridos Markor/VLC históricos.
 
 Caché ART coherente: reutilizar odrefresh y odsign completos, no escribir propiedades de verificación desde el coordinador. El odsign original exige TEE; el perfil Linux SOFTWARE adapta explícitamente selección y validación de metadata y usa alias distintos para RSA/HMAC, conservando firma, nivel de arranque y fallo cerrado. Su ruta original sin fs-verity verifica el contenido completo. No aporta garantías de hardware ni prueba aislamiento. Exigir la secuencia original derive_classpath/art_boot/odsign y carga real de imágenes antes de aceptar la integración.

@@ -1,5 +1,7 @@
 # Índice de evidencias
 
+323: [resultado funcional y hashes](../../recuperacion-archtv/8c4ec639-4ad7-4e50-bdae-8e8e7062e697-markor-software-launch/functional-result.json). art_boot inicia; MC1_FAILED por healthy antes de Zygote. Vold recibe SIGKILL después, durante limpieza. Sin odsign/caché/APK aceptados. Recuperación y auditoría sin pérdidas comprobadas; único consumo activo.
+
 Receta final ART: construcción6 compila7 unidades; enlace2 con --no-undefined/--no-allow-shlib-undefined pasa. Hashes y ABI están en coherent_cache_candidate del informe ART existente. El desensamblado REA citado corresponde al artefacto anterior link1; no se extrapola a ejecución de link2.
 
 [ART/odsign adaptado completo](../reports/android16-audio-bootstrap/artd-subprocess-progress.json), coherent_cache_candidate:7 unidades compiladas verificadas y enlace1 exit0; protobuf/AIDL originales, StatsReporter completo y enum de métricas completo generado desde fuente. REA MCP ev_0b4c4d569e7e96b98e91bb5f57af39ad94594326dd5ecdfe87129e56d4a8724c es desensamblado estático de initialize, no ejecución. Artefacto SHA25524786b3d8a1cce8f39f091ff6f9de7cde5c7c7243084d7cb99b8825c5c76b.

@@ -213,7 +213,7 @@ class LinuxMc1Cohort {
         // Close clears the pointer only after every service has been reaped.
         return apex_clean_exit_ && (!apexd_ || !apexd_->IsRunning());
     }
-    bool healthy() const { return (!tombstoned_ || tombstoned_->IsRunning()) && (!mediaextractor_ || mediaextractor_->IsRunning()) && (!mediametrics_ || mediametrics_->IsRunning()) && (!mediaserver_ || mediaserver_->IsRunning()) && (!logd_ || logd_->IsRunning()) && (!logcat_ || logcat_->IsRunning()) && !manager_failed_ && (!storaged_ || storaged_->IsRunning()) && (!swcodec_ || swcodec_->IsRunning()) && (!idmap_ || idmap_->IsRunning()) && (!gatekeeper_hal_ || gatekeeper_hal_->IsRunning()) && (!gatekeeper_ || gatekeeper_->IsRunning()) && (!keystore_ || keystore_->IsRunning()) && (!keymint_ || keymint_->IsRunning()) && (!aconfig_system_ || aconfig_system_->IsRunning() || aconfig_system_clean_exit_) && (!aconfig_mainline_ || aconfig_mainline_->IsRunning() || aconfig_mainline_clean_exit_) && (!audiohal_ || audiohal_->IsRunning()) && (!audioeffect_ || audioeffect_->IsRunning()) && (!audioserver_ || audioserver_->IsRunning()) && (!lmkd_ || lmkd_->IsRunning()) && (!netd_ || netd_->IsRunning()) && (!statsd_ || statsd_->IsRunning()) && (!health_ || health_->IsRunning()) && (!zygote_ || zygote_->IsRunning()) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && (bootanimation_->IsRunning() || bootanimation_clean_exit_))) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning() || apex_clean_exit_); }
+    bool healthy() const { return (!tombstoned_ || tombstoned_->IsRunning()) && (!mediaextractor_ || mediaextractor_->IsRunning()) && (!mediametrics_ || mediametrics_->IsRunning()) && (!mediaserver_ || mediaserver_->IsRunning()) && (!logd_ || logd_->IsRunning()) && (!logcat_ || logcat_->IsRunning()) && !manager_failed_ && (!storaged_ || storaged_->IsRunning()) && (!swcodec_ || swcodec_->IsRunning()) && (!idmap_ || idmap_->IsRunning()) && (!gatekeeper_hal_ || gatekeeper_hal_->IsRunning()) && (!gatekeeper_ || gatekeeper_->IsRunning()) && (!keystore_ || keystore_->IsRunning()) && (!keymint_ || keymint_->IsRunning()) && (!aconfig_system_ || aconfig_system_->IsRunning() || aconfig_system_clean_exit_) && (!aconfig_mainline_ || aconfig_mainline_->IsRunning() || aconfig_mainline_clean_exit_) && (!audiohal_ || audiohal_->IsRunning()) && (!audioeffect_ || audioeffect_->IsRunning()) && (!audioserver_ || audioserver_->IsRunning()) && (!lmkd_ || lmkd_->IsRunning()) && (!netd_ || netd_->IsRunning()) && (!statsd_ || statsd_->IsRunning()) && (!health_ || health_->IsRunning()) && (!zygote_started_ || (zygote_ && zygote_->IsRunning())) && (!vold_ || vold_->IsRunning()) && (!manager_ || manager_->IsRunning()) && (!hardware_ || hardware_->IsRunning()) && (!allocator_ || allocator_->IsRunning()) && (!composer_ || composer_->IsRunning()) && (!surfaceflinger_ || surfaceflinger_->IsRunning()) && (!bootanimation_started_ || (bootanimation_ && (bootanimation_->IsRunning() || bootanimation_clean_exit_))) && (!selected_ || selected_->IsRunning()) && (!suspend_ || suspend_->IsRunning()) && (!installd_ || installd_->IsRunning()) && (!apexd_ || apexd_->IsRunning() || apex_clean_exit_); }
     android::base::Result<void> Close(const Tick& tick) {
         using namespace android::init;
         if(!active_) return {};
@@ -247,6 +247,7 @@ class LinuxMc1Cohort {
         statsd_=nullptr;
         health_=nullptr;
         selected_=nullptr;
+        zygote_=nullptr;zygote_started_=false;
         suspend_=nullptr;
         installd_=nullptr;
         apexd_=nullptr;software_security_=false;gatekeeper_hal_=nullptr;gatekeeper_=nullptr;keystore_=nullptr;keymint_=nullptr;
@@ -1224,7 +1225,54 @@ class LinuxMc1Cohort {
                 std::fprintf(stderr,"ORIGINAL_MEDIA_CRASH_SERVICE_STARTED name=%s pid=%d uid=%u gid=%u NOT_BINDER_OPERATION_OR_PLAYBACK_ACCEPTANCE\n",name.c_str(),service->pid(),service->uid(),service->gid());
             }
         }
+        // Optional complete original ART signing/refresh sequence, never a
+        // coordinator-written verification result. Data belongs to this cohort.
+        struct stat art_profile_info{};
+        if(lstat("/vendor/etc/archtv-coherent-art",&art_profile_info)==0) {
+            std::string profile;
+            if(!software_security_ || !S_ISREG(art_profile_info.st_mode) ||
+               art_profile_info.st_uid!=0 ||
+               !android::base::ReadFileToString("/vendor/etc/archtv-coherent-art",&profile) ||
+               profile!="software-signed-cache-v1\n")
+                return android::base::Error()<<"Invalid coherent ART SOFTWARE profile";
+            auto* art_boot=services.FindService("art_boot");
+            if(!art_boot || art_boot->args()!=std::vector<std::string>{"/apex/com.android.art/bin/art_boot"} ||
+               art_boot->uid()!=0)
+                return android::base::Error()<<"Original art_boot service missing or identity mismatch";
+            client_done_=false;client_ok_=false;
+            art_boot->AddReapCallback([this](const siginfo_t& info) {
+                client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;
+                std::fprintf(stderr,"COHERENT_ART_BOOT_EXIT pid=%d code=%d status=%d NOT_CACHE_ACCEPTANCE\n",info.si_pid,info.si_code,info.si_status);
+            });
+            if(auto result=art_boot->ExecStart();!result.ok())return result;
+            if(auto result=Wait(tick,[this]{return client_done_;},60);!result.ok())return result;
+            if(!client_ok_)return android::base::Error()<<"Original art_boot failed";
+            auto parsed=parser.ParseConfigFile("/system/etc/init/odsign.rc");
+            if(!parsed.ok() || parser.parse_error_count()!=0)
+                return android::base::Error()<<"Original odsign RC rejected";
+            auto* signer=services.FindService("odsign");
+            if(!signer || signer->args()!=std::vector<std::string>{"/system/bin/odsign"} || signer->uid()!=0)
+                return android::base::Error()<<"Original odsign entry/domain route rejected";
+            signer->AddReapCallback([](const siginfo_t& info) {
+                std::fprintf(stderr,"COHERENT_ODSIGN_EXIT pid=%d code=%d status=%d NOT_VERIFICATION_ACCEPTANCE\n",info.si_pid,info.si_code,info.si_status);
+            });
+            if(auto result=signer->Start();!result.ok())return result;
+            std::fprintf(stderr,"COHERENT_ODSIGN_STARTED pid=%d profile=SOFTWARE NOT_VERIFIED\n",signer->pid());
+            if(auto result=Wait(tick,[signer]{return android::base::GetProperty("odsign.key.done","")=="1" || !signer->IsRunning();},300);!result.ok())return result;
+            if(android::base::GetProperty("odsign.key.done","")!="1")
+                return android::base::Error()<<"Original odsign stopped without key completion";
+            // Exact original init ordering; this revokes further boot-key use.
+            if(!android::base::SetProperty("keystore.boot_level","1000000000") ||
+               android::base::GetProperty("keystore.boot_level","")!="1000000000")
+                return android::base::Error()<<"Original Keystore boot-level advancement failed";
+            if(auto result=Wait(tick,[signer]{return android::base::GetProperty("odsign.verification.done","")=="1" || !signer->IsRunning();},60);!result.ok())return result;
+            if(android::base::GetProperty("odsign.verification.done","")!="1" ||
+               android::base::GetProperty("odsign.verification.success","")!="1")
+                return android::base::Error()<<"Original odsign did not verify ART cache";
+            std::fprintf(stderr,"COHERENT_ODSIGN_ORIGINAL_PROPERTIES_VERIFIED SOFTWARE_NOT_TEE NOT_IMAGE_LOAD_ACCEPTANCE\n");
+        } else if(errno!=ENOENT)return android::base::Error()<<"Cannot inspect coherent ART profile";
         if(auto started=zygote_->Start();!started.ok())return started;
+        zygote_started_=true; // Demand liveness only after the actual successful start.
         std::fprintf(stderr,"SELECTED_ZYGOTE_ORIGINAL_SYSTEMSERVER_FORK_STARTED pid=%d NOT_APP_LAUNCH\n",zygote_->pid());
         client_done_=false;client_ok_=false;
         // Cold ART image generation precedes system_server/Display. Run300
@@ -1334,6 +1382,7 @@ class LinuxMc1Cohort {
     android::init::Service* statsd_=nullptr;
     android::init::Service* health_=nullptr;
     android::init::Service* zygote_=nullptr;
+    bool zygote_started_=false;
     android::init::Service* vold_=nullptr;
     android::init::Service* manager_=nullptr;
     android::init::Service* hardware_=nullptr;
