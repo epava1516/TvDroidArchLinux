@@ -1,5 +1,9 @@
 # Índice de evidencias
 
+344 (UUID 2dda2773-2217-40f0-8299-5c7b2614b1cd): informe ART →profile_coherence_experiment.integration344 vincula frame real de nota343 reabierta, metadatos RC originales, resultados, ventana enforcing de 221,89 s, cierre normal backing-after y recuperación/consumo. Native0/exterior1/host owner0; 65 muestras y 54 nombres no son aceptación de identidades. Loop130 ausente y sin mappings/dm tras cierre; no recuperación manual. Los cuatro ensayos de kernel anteriores conservan su alcance. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration344`.
+
+Histórico anterior:
+
 343 (UUID 085b5399-1642-4738-9c64-5adeecb8b5e9): informe ART →profile_coherence_experiment.integration343 vincula recibos originales y frames de creación/reapertura. Nota SHA 2a330f8030264f936000e2810a4ad195129d4894fcf15eedc2061c3ea92898ec, 21 bytes; PID 1328 ausente→1633. Salida nativa 0 y exterior 1, más error real del host al retirar loop130; recuperación manual identificada por separado, sin recibo normal fabricado. loop_cleanup_correction conserva el primer candidato/fallo del ensayo, recuperación y cuatro casos reales positivos/negativos de kernel de la corrección; falta cohorte con ese código.
 
 Histórico anterior:

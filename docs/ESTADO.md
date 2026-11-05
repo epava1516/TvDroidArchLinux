@@ -1,5 +1,9 @@
 # Estado actual y punto de entrada
 
+344: Markor intacta reabre visualmente la nota343 tras cerrar la cohorte anterior. El volumen se desmonta y loop130 se retira automáticamente (un intento), con recuperación del anfitrión verificada. Se registran 65 muestras de 54 nombres de servicios desde los getters del parser original RC, separadas de SID/credenciales del kernel. STOPPED/salida nativa0, exterior1 por guardia de identidades pendiente; host owner0. Siguiente: corregir esa guardia con contratos originales y testigos reales, sin sustituir observaciones por configuración. R1 sigue abierto. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration344`.
+
+Histórico anterior:
+
 Vigente343 ·Recorrido principal de Markor intacta observado sobre la base ART coherente: instalación/lanzamiento originales, entrada real, nota creada y guardada, 21 bytes leídos por FUSE, force-stop con PID 1328 ausente, relanzamiento frío con PID 1633 y editor mostrando la nota guardada. No es aceptación amplia ni R1. STOPPED y salida nativa 0; exterior 1 por guardia de identidades. El host owner además recibió EBUSY al retirar loop130 tras desmontar/desasociar: recuperación manual verificada, sin inventar backing-after. El arreglo acotado pasa cuatro pruebas reales de kernel, pero aún falta una cohorte con él. Fuente: informe ART →profile_coherence_experiment.integration343/loop_cleanup_correction.
 
 Histórico anterior:

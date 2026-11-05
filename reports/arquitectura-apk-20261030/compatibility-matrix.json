@@ -663,7 +663,7 @@
       "latest_workflow_attempt": {
         "candidate": 343,
         "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
-        "record_sha256": "69bf6b86a4c65ca23beeed6d00b915bf583d5821e2aacd71c5ac12d941a7395f",
+        "record_sha256": "5e34a712c1ca9230c7e5048012b550363140b89df1d5a05dc920def64edf7b73",
         "section": "coherent_cache_candidate.profile_coherence_experiment.integration343",
         "real_primary_workflow_observed": true,
         "native_exit": 0,
@@ -685,7 +685,7 @@
         "candidate": 343,
         "state": "BoundedMAC600/restored0; native0/outer1identityguard; hostcloseEBUSY/manuallyrecovered; R1open",
         "evidence": "reports/android16-audio-bootstrap/artd-subprocess-progress.json",
-        "sha256": "69bf6b86a4c65ca23beeed6d00b915bf583d5821e2aacd71c5ac12d941a7395f",
+        "sha256": "5e34a712c1ca9230c7e5048012b550363140b89df1d5a05dc920def64edf7b73",
         "latest_result": "Fullprimaryrealnoteworkflow observed; no identity/MAC/isolation/globalpass. Loopfixpassesactualkernelcases, wholecohortpending."
       },
       "runtime_security_observation_history": [
@@ -1536,5 +1536,12 @@
       "observation": "Original static vendor RRO loaded; Android wallpaper backend absent and original DisabledWallpaperManager reports unsupported. Actual original phase600/AMS return verified. Wallpaper-dependent application routes, color rendering and all unaccepted app stages remain open.",
       "app_stage_results": "unchanged; no new APK approval"
     }
-  ]
+  ],
+  "latest_integration_observation_344": {
+    "application": "Markor intact v164",
+    "source": "reports/android16-audio-bootstrap/artd-subprocess-progress.json",
+    "source_sha256": "5e34a712c1ca9230c7e5048012b550363140b89df1d5a05dc920def64edf7b73",
+    "section": "coherent_cache_candidate.profile_coherence_experiment.integration344",
+    "scope": "Reopens343 note across cohorts and normal automatic data cleanup; full primary workflow remains343; no R1/general compatibility closure."
+  }
 }

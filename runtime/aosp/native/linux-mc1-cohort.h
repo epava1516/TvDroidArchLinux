@@ -202,9 +202,18 @@ class LinuxMc1Cohort {
             const std::string signature=actual_context+fields+std::to_string(context_error)+":"+std::to_string(status_error);
             if(sample.observed && sample.last==signature)continue;
             sample.observed=true;sample.last=signature;
-            std::fprintf(stderr,"MC1_PARENT_KERNEL_IDENTITY_V1 parent=%d pid=%d name_hex=%s context_hex=%s context_errno=%d status_hex=%s status_errno=%d status_bounded=%d NOT_IDENTITY_ACCEPTANCE\n",
+            // Keep the original parsed RC contract distinct from observations.
+            // A configured seclabel is never a substitute for a kernel SID.
+            std::string configured_groups;
+            for(gid_t group:service->supp_gids()) {
+                if(!configured_groups.empty())configured_groups+=' ';
+                configured_groups+=std::to_string(group);
+            }
+            std::fprintf(stderr,"MC1_PARENT_KERNEL_IDENTITY_V1 parent=%d pid=%d name_hex=%s context_hex=%s context_errno=%d status_hex=%s status_errno=%d status_bounded=%d configured_uid=%u configured_gid=%u configured_supp_groups_hex=%s configured_seclabel_hex=%s NOT_IDENTITY_ACCEPTANCE\n",
                 getpid(),pid,hex(service->name()).c_str(),hex(actual_context).c_str(),context_error,
-                hex(fields).c_str(),status_error,status_read && status.size()<=16384);
+                hex(fields).c_str(),status_error,status_read && status.size()<=16384,
+                static_cast<unsigned>(service->uid()),static_cast<unsigned>(service->gid()),
+                hex(configured_groups).c_str(),hex(service->seclabel()).c_str());
         }
     }
     bool vold_cancelled() const { return vold_cancelled_; }

@@ -1397,8 +1397,85 @@
           "sha256": "5a98469dc08af842a3d32825429276f5f4b2e5302bf93f96541496dca76c1236"
         },
         "test_scope": "Realownedloop131/openFD/timer/LOOP_CTL_REMOVE, notmocks/APK/MACproof. Busyreference drains7attempts; heldreference timesoutandremains; otherbackingrefused; knownownrundowndrains. Alltestdevicesremoved, no runtimeuserdata access.",
-        "full_cohort_with_fix": "pending;343ranoldhelper901db47... andrequiredmanualrecovery"
+        "full_cohort_with_fix": {
+          "attempt": 344,
+          "result": "Normal umount/detach/LOOP_CTL_REMOVE receipt and actual host absence verified; no manual recovery. Native0/outer1 still separate.",
+          "receipt": {
+            "path": "/home/tv/recuperacion-archtv/2dda2773-2217-40f0-8299-5c7b2614b1cd-markor-software-launch/backing-after.json",
+            "sha256": "2cfdb3654d9cd71edeacc6a010214f5d7142f6759635c047ea364db3e705d08a"
+          },
+          "recovery": {
+            "path": "/home/tv/recuperacion-archtv/2dda2773-2217-40f0-8299-5c7b2614b1cd-markor-software-launch/recovery-readback.json",
+            "sha256": "6ba4cec2354a0c0e0e0b257514bbbc5e821aab6ad066d07f8a25327361d76e17"
+          }
+        }
+      },
+      "integration344": {
+        "checkpoint": "/home/tv/recuperacion-archtv/2dda2773-2217-40f0-8299-5c7b2614b1cd-markor-software-launch",
+        "build": "dist/aosp16/package-cohort-build-344",
+        "payload_sha256": "1b09826f6a476b1bea0db587bdda55c58538bdd8e1aefaddda4eafbf3b86ebcb",
+        "native_exit": 0,
+        "outer_exit": 1,
+        "host_owner_exit": 0,
+        "overall_cohort_accepted": false,
+        "scope": "Intact Markor visually reopens actual343 saved note after previous cohort closed. Original Service public parsed uid/gid/supp_gids/seclabel recorded separately from kernel context/status. No new write, intended SID substitution, full identity acceptance or R1 closure.",
+        "mac_seconds_actual": 221.88678271399112,
+        "mac_restored": "0",
+        "normal_backing_close": true,
+        "loop_remove_attempts": 1,
+        "metadata_records": 65,
+        "unique_service_names": 54,
+        "remaining_blocker": "Legacy exact-set identity guard still fails: external reads denied and expected profile/markers/credentials stale. Do not infer unavailable services or accept missing identities.",
+        "next": "Reconcile original RC/fork contracts with actual kernel witnesses, retain explicit missing observations and negative controls; then extend real app coverage/security/install/update.",
+        "result": {
+          "path": "/home/tv/recuperacion-archtv/2dda2773-2217-40f0-8299-5c7b2614b1cd-markor-software-launch/result.json",
+          "sha256": "9d1c17bb5644dfacc2d2bc059bf54371a21c28b4fcfac3c70bbcae889073ec4a"
+        },
+        "native_result": {
+          "path": "/home/tv/recuperacion-archtv/2dda2773-2217-40f0-8299-5c7b2614b1cd-markor-software-launch/native-result.json",
+          "sha256": "f2acffc863b360196cf0e6df50b9dfcbf47be042077ab00d744bed8c2e1e974c"
+        },
+        "visual_reopen": {
+          "path": "/home/tv/recuperacion-archtv/2dda2773-2217-40f0-8299-5c7b2614b1cd-markor-software-launch/visual-note-reopen.json",
+          "sha256": "4a686e445e88ea1f9c4c2fc11dd14f6b294c927af9b9bbde13775af91defbac1"
+        },
+        "original_service_metadata": {
+          "path": "/home/tv/recuperacion-archtv/2dda2773-2217-40f0-8299-5c7b2614b1cd-markor-software-launch/original-service-metadata.json",
+          "sha256": "36aa832e710c74adf95ce4e50d2c7e09ec539f0f24a96b6fbc156790c79ef5a2"
+        },
+        "identity_observations": {
+          "path": "/home/tv/recuperacion-archtv/2dda2773-2217-40f0-8299-5c7b2614b1cd-markor-software-launch/identity-observations.json",
+          "sha256": "5dd3ccab9bb623944a21977d5254b3fb4860349398b452e14395532e36af9d71"
+        },
+        "mac_window": {
+          "path": "/home/tv/recuperacion-archtv/2dda2773-2217-40f0-8299-5c7b2614b1cd-markor-software-launch/mac-window.json",
+          "sha256": "9f1a042484b7fc363129422d94d7c47f0608ccf2d8394a17b23904dcc5abcdaf"
+        },
+        "normal_backing_close_receipt": {
+          "path": "/home/tv/recuperacion-archtv/2dda2773-2217-40f0-8299-5c7b2614b1cd-markor-software-launch/backing-after.json",
+          "sha256": "2cfdb3654d9cd71edeacc6a010214f5d7142f6759635c047ea364db3e705d08a"
+        },
+        "recovery": {
+          "path": "/home/tv/recuperacion-archtv/2dda2773-2217-40f0-8299-5c7b2614b1cd-markor-software-launch/recovery-readback.json",
+          "sha256": "6ba4cec2354a0c0e0e0b257514bbbc5e821aab6ad066d07f8a25327361d76e17"
+        },
+        "consumer": {
+          "path": "/home/tv/recuperacion-archtv/2dda2773-2217-40f0-8299-5c7b2614b1cd-markor-software-launch/completion-consumer.json",
+          "sha256": "3284a03aa32fb0bd947fceb1ac691903bb812bf745b784ff321cb70e1f08099b"
+        },
+        "backup": {
+          "path": "/home/tv/recuperacion-archtv/2dda2773-2217-40f0-8299-5c7b2614b1cd-markor-software-launch/userdata-backup.json",
+          "sha256": "f11e2cd0a0d6ba6da0905f3328e18321b1269934a10ae30061bda1755347025e"
+        }
       }
     }
-  }
+  },
+  "history": [
+    {
+      "utc": "2026-11-05T11:16:14.394381+00:00",
+      "milestone": "344 saved-note reopen, original parsed RC metadata and automatic storage cleanup",
+      "evidence": "/home/tv/recuperacion-archtv/2dda2773-2217-40f0-8299-5c7b2614b1cd-markor-software-launch",
+      "scope": "No full cohort/R1 acceptance; identity guard open"
+    }
+  ]
 }

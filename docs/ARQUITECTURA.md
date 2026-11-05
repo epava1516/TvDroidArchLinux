@@ -1,5 +1,9 @@
 # Arquitectura vigente · A16-QPR2-1
 
+344 valida la reapertura de la nota343 y el cierre automático del backing con el helper corregido. La observación nativa conserva por separado configuración RC original (uid/gid/grupos/seclabel) y estado real del kernel; un seclabel configurado nunca acredita un SID. La guardia antigua no acepta aún el conjunto integrado; no se amplió la política67 ni se desactivaron comprobaciones para obtener un éxito. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration344`.
+
+Histórico anterior:
+
 Cierre de datos tras343: LOOP_CTL_REMOVE puede devolver EBUSY mientras el dispositivo deja de estar ligado o drenan referencias. El helper conserva las comprobaciones de propiedad y desmontaje/desasociación; espera hasta 5 s sólo por el backing antiguo conocido y reintenta sólo EBUSY. Rechaza un backing distinto y nunca desconecta desde el reintento. Si falla, propaga el error y guarda recibo incompleto, sin declarar cierre normal. No se atribuye el actor343 a udev sin traza. Las cuatro pruebas reales de loop131 no acreditan MAC ni APK;343 necesitó recuperación manual auténtica.
 
 Histórico anterior:

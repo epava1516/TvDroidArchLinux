@@ -1,5 +1,9 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+Actualización344: reapertura visual entre cohortes y cierre automático de datos comprobados. Próximo bloqueo concreto: alinear la guardia de identidades con el perfil original RC y fork de Zygote, usando metadatos reales; preservar observaciones ausentes y controles negativos. No repetir el recorrido343 ya probado salvo cambio que afecte a su conclusión. R1, cobertura de otras APK, instalación/actualización y ARM/GMS/DRM continúan abiertos. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration344`.
+
+Histórico anterior:
+
 Resultado343: el recorrido principal real de nota Markor está demostrado en la base coherente actual, incluida entrada/guardado/FUSE/force-stop/PID nuevo/reapertura visual. Mantener ese resultado con su alcance; no repetirlo sólo para producir otro hito. Siguiente: verificar el arreglo de cierre de loop en una cohorte y corregir la guardia de identidades según el fork original y metadatos reales, con negativas y R1 todavía abiertos. Después ampliar matriz de aplicaciones/recorridos y continuar aislamiento, estabilidad, ligereza, instalación/actualización y ARM/GMS/DRM conforme al contrato.
 
 Histórico anterior:
