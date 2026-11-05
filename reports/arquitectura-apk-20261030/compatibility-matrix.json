@@ -32,7 +32,7 @@
       },
       "evidence_id": "ev_37c5a66b942f8e277c88500b2a15d430c2e523b672bf47fe74cf9c90638d164e",
       "full_evidence_id": "ev_746d40138a0f10e9c3202cd147e41d5efd4a7c58e81078c6109567a0bce77781",
-      "workflow": "Abrir fichero local, reproducir audio/v\u00eddeo, volver al shell y cerrar",
+      "workflow": "Abrir fichero local, reproducir audio/vídeo, volver al shell y cerrar",
       "runtime_results": {
         "installation": "approved",
         "launch": "approved",
@@ -142,7 +142,12 @@
           "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "section": "native_audio296",
           "accepted": true,
-          "scope": "Actual original full-screen sourceframes29\u219243/time2.417\u21923.583 under bounded enforcing64, intact VLC/Smithay; limited MPEG4Part2 clip. Cohort closed/recovered. No physical audio/realtime/AVsync/fullR1 acceptance."
+          "scope": "Actual original full-screen sourceframes29→43/time2.417→3.583 under bounded enforcing64, intact VLC/Smithay; limited MPEG4Part2 clip. Cohort closed/recovered. No physical audio/realtime/AVsync/fullR1 acceptance."
+        },
+        "video_control304": {
+          "record": "/home/tv/recuperacion-archtv/429a62f4-0ff6-48ec-8009-634fe4b2bb3e-markor-software-launch/functional-result.json",
+          "record_sha256": "e680357c7c36d83fab13c71cc2f9a444fe0ba394d8064651ba73f9a827105949",
+          "scope": "Actual software video counters5→32 on Smithay; successful proxy writes39/159744frames coexist with MonoPipe drops. No continuous/acoustic audio, timing, complete lifecycle or R1 acceptance."
         }
       }
     },
@@ -1216,7 +1221,7 @@
       "acceptance": "Fix real author-distributed APK/version/requirements; test nine-stage workflow without per-APK patches or privileged bypass"
     }
   ],
-  "base_review": "A16-QPR2-1 supersedes A/B/C selection: native Bionic primary; SF\u2192Wayland first graphics hypothesis. Prior choice/experiments historical only.",
+  "base_review": "A16-QPR2-1 supersedes A/B/C selection: native Bionic primary; SF→Wayland first graphics hypothesis. Prior choice/experiments historical only.",
   "base_component_observation": {
     "evidence": "reports/bionic-component/art-core-result.json",
     "linker_help_and_launcher_list_exit": 0,

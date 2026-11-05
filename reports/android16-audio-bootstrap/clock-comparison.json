@@ -79,7 +79,7 @@
     "sha256": "7737128a86eddd06156a67d8c4bab8e9b3dce151c44e0f65531204bef3af0281",
     "result": "startup deadline, no APK launch; normal recovery verified; descriptor publisher unexercised"
   },
-  "next_experiment": "303 same image302/policy64, observer snapshot enables input with Linux session and explicit actual-frame request. One wake only after fresh original launch Statusok. No policy change while live. NNPedge artd->dex2oat remains open.",
+  "next_experiment": "Original HAL single attached output hardware-paced writes, no lossy intermediate MonoPipe; preserve errors/real counts and bounded close. Clock causality and acoustic output remain unverified.",
   "cold_boot_image": {
     "source": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/image_space.cc",
     "source_sha256": "c7b972499fe83b8e949aae4aa641b7fea7c3b5c52c2920979b155748f378765f",
@@ -109,5 +109,25 @@
     "record": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-302/gsi-cache-verified-retirement.json",
     "sha256": "b5d8f9a12fabb19eba9826a01767c9f99341a2a74371383659090ce0c2045d25",
     "scope": "CompressedZIPcache only, originals exactverifiedretained; redownload to recreateZIP. No runtimeimage/kernel/evidence removed."
+  },
+  "integrated303": {
+    "record": "/home/tv/recuperacion-archtv/3ad8abc3-923a-4de6-8811-a2b096de7355-markor-software-launch/functional-result.json",
+    "sha256": "93a288d4e4360d4a71f581e4a030c0ebb432b9485d28d1992ec99f9be8f131e1",
+    "scope": "Original SF and DRM captures black. No VLC UI/playback accepted. FATALs observed are devicelockcontroller/calendar/dynsystem, not demonstrated VLC crash."
+  },
+  "integrated304": {
+    "record": "/home/tv/recuperacion-archtv/429a62f4-0ff6-48ec-8009-634fe4b2bb3e-markor-software-launch/functional-result.json",
+    "sha256": "e680357c7c36d83fab13c71cc2f9a444fe0ba394d8064651ba73f9a827105949",
+    "scope": "video_motion_observed_audio_continuity_not_accepted"
+  },
+  "integrated305": {
+    "record": "reports/android16-audio-bootstrap/artd-subprocess-progress.json",
+    "scope": "Original compiler0; no clock/audio/boot image acceptance"
+  },
+  "host_report": {
+    "os": "Windows11",
+    "virtualbox": "7.2.22 r175245 Qt6.8.0",
+    "source": "user confirmed",
+    "hyper_v": "unknown, host log requested; not required for other runtime work"
   }
 }
