@@ -1,6 +1,6 @@
 # Estado actual y punto de entrada
 
-353 prueba el listener de tareas original y el recorrido Markor → dos Atrás → Home Rust visible → lanzamiento original WARM → nota348 visible e intacta. Pasan las 28 identidades y guardias originales seleccionadas; nativa0/exterior0. Los envoltorios runner/sesión terminan1: no se acepta el ensayo completo. Causa exacta sin traceback actual; se reproduce independientemente un fallo del cierre al seguir capture.request ausente. Anfitrión recuperado, resultado consumido y política69/permisivo conservada; temporizador69 cancelado tras recuperación. Próximo: corregir ese cierre y la prioridad del resultado notificado, después probar reinicio de Home bajo enforcing e integrar su catálogo/lanzador original.
+353 prueba el listener de tareas original y el recorrido Markor → dos Atrás → Home Rust visible → lanzamiento original WARM → nota348 visible e intacta. Pasan las 28 identidades y guardias originales seleccionadas; nativa0/exterior0. Los envoltorios runner/sesión terminan1: no se acepta el ensayo completo. Causa exacta sin traceback actual; se reproduce independientemente un fallo del cierre al seguir capture.request ausente. Anfitrión recuperado, resultado consumido y política69/permisivo conservada; temporizador69 cancelado tras recuperación. Corrección de cierre y prioridad de resultados implementada con trece regresiones positivas; falta la ejecución354 para validarla, probar reinicio de Home bajo enforcing e integrar su catálogo/lanzador original.
 
 Histórico anterior:
 

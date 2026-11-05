@@ -1,6 +1,6 @@
 # Roadmap A · plataforma APK general sobre Linux
 
-353 consigue el handoff visual de tareas originales a Home Rust y el retorno a Markor/nota existente. Bloqueo de cierre: runner/sesión1 aunque guardias nativas/exteriores pasan; fallo de chown siguiendo enlace efímero reproducido, atribución exacta353 aún desconocida. Siguiente experimento debe corregir cierre/resultados, reutilizar el candidato original coherente si sus entradas compiladas siguen iguales y comprobar reinicio de Home en enforcing sin quitar foco a Markor. Después conectar catálogo y lanzamiento originales con Home y repetir creación/guardado/cierre/reapertura. R1, aislamiento, actualización/reinicio/FBE, compatibilidad amplia y ARM/GMS/DRM permanecen abiertos.
+353 consigue el handoff visual de tareas originales a Home Rust y el retorno a Markor/nota existente. Bloqueo de cierre: runner/sesión1 aunque guardias nativas/exteriores pasan; fallo de chown siguiendo enlace efímero reproducido, atribución exacta353 aún desconocida. Correcciones de cierre/resultados probadas con trece regresiones; siguiente354 debe comprobarlas junto con reinicio de Home en enforcing sin quitar foco a Markor. Después conectar catálogo y lanzamiento originales con Home y repetir creación/guardado/cierre/reapertura. R1, aislamiento, actualización/reinicio/FBE, compatibilidad amplia y ARM/GMS/DRM permanecen abiertos.
 
 Histórico anterior:
 

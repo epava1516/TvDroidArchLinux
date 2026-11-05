@@ -1,4 +1,5 @@
 import importlib.util,json,multiprocessing,os,subprocess,tempfile,unittest,uuid
+from unittest.mock import patch
 from pathlib import Path
 spec=importlib.util.spec_from_file_location('completion',Path(__file__).resolve().parents[2]/'scripts/run_completion.py');module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
 def attempt(manifest):
@@ -8,9 +9,11 @@ def attempt(manifest):
  module.deliver(manifest,sender,enabled=True)
 class Delivery(unittest.TestCase):
  def setUp(self):
+  self.env=patch.dict(os.environ);self.env.start()
+  for key in ['SERVICE_RESULT','EXIT_CODE','EXIT_STATUS']:os.environ.pop(key,None)
   self.tmp=tempfile.TemporaryDirectory();self.cp=Path(self.tmp.name);self.manifest=self.cp/'completion-manifest.json'
   self.manifest.write_text(json.dumps(dict(id=str(uuid.uuid4()),checkpoint=str(self.cp),unit='test',owner='test',thread='mock-thread',remote='mock',name='Markor launch')))
- def tearDown(self):self.tmp.cleanup()
+ def tearDown(self):self.tmp.cleanup();self.env.stop()
  def handoff(self):
   m=json.loads(self.manifest.read_text());return module.transfer(self.manifest,'active:'+m['id'],'handoff')
  def test_success_concurrent_and_repeat(self):
@@ -46,10 +49,33 @@ class Delivery(unittest.TestCase):
   for _ in range(3):self.assertEqual(module.deliver(self.manifest,lambda m:self.fail('already consumed'),enabled=True)['state'],'consumed')
   with self.assertRaises(AssertionError):module.transfer(self.manifest,owner,'handoff')
  def test_consume_before_callback(self):
-  os.environ.pop('SERVICE_RESULT',None);(self.cp/'result.json').write_text('{"outer_exit":1}')
+  (self.cp/'result.json').write_text('{"outer_exit":0}')
   owner='active:'+json.loads(self.manifest.read_text())['id']
+  self.assertEqual(module.deliver(self.manifest,lambda m:self.fail('candidate is not terminal'),enabled=True)['state'],'not-terminal')
+  with self.assertRaisesRegex(AssertionError,'no terminal result'):module.transfer(self.manifest,owner,'consume')
+  self.assertFalse((self.cp/'completion-result.json').exists())
+  os.environ.update(SERVICE_RESULT='exit-code',EXIT_CODE='exited',EXIT_STATUS='1')
+  self.assertEqual(module.deliver(self.manifest,lambda m:self.fail('active owner'),enabled=True)['state'],'active_owned')
+  result=json.loads((self.cp/'completion-result.json').read_text())
+  self.assertEqual(result['candidate_exit'],0)
+  self.assertIn('service exit-code (exited 1)',result['outcome'])
   module.transfer(self.manifest,owner,'consume')
   self.assertEqual(module.deliver(self.manifest,lambda m:self.fail('late callback'),enabled=True)['state'],'consumed')
+ def test_provisional_legacy_record_retained_on_real_callback(self):
+  m=json.loads(self.manifest.read_text());previous={'id':m['id'],'service':{'SERVICE_RESULT':None},'outcome':'runner exit 0'}
+  (self.cp/'completion-result.json').write_text(json.dumps(previous));(self.cp/'result.json').write_text('{"outer_exit":0}')
+  self.assertEqual(module.deliver(self.manifest,lambda m:self.fail('not terminal'))['state'],'not-terminal')
+  os.environ.update(SERVICE_RESULT='exit-code',EXIT_CODE='exited',EXIT_STATUS='1')
+  module.deliver(self.manifest,lambda m:self.fail('active'),enabled=True)
+  result=json.loads((self.cp/'completion-result.json').read_text())
+  self.assertEqual(result['previous_provisional'],previous)
+  self.assertIn('service exit-code (exited 1); candidate exit 0',result['outcome'])
+ def test_successful_service_does_not_hide_candidate_failure(self):
+  os.environ.update(SERVICE_RESULT='success',EXIT_CODE='exited',EXIT_STATUS='0');(self.cp/'result.json').write_text('{"outer_exit":1}')
+  module.deliver(self.manifest,lambda m:self.fail('active'),enabled=True)
+  result=json.loads((self.cp/'completion-result.json').read_text())
+  self.assertEqual(result['candidate_exit'],1)
+  self.assertIn('service success (exited 0); candidate exit 1',result['outcome'])
  def test_disabled_even_after_handoff(self):
   self.handoff();os.environ['SERVICE_RESULT']='success'
   self.assertEqual(module.deliver(self.manifest,lambda m:self.fail('disabled'),enabled=False)['state'],'notifications_disabled')

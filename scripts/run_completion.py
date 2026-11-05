@@ -34,14 +34,23 @@ def consumer(cp,m):
 def terminal(cp,m):
     """Persist the terminal outcome even when no message is needed."""
     p=cp/'completion-result.json'
+    previous=None
     if p.exists():
-        result=json.loads(p.read_text());assert result['id']==m['id'];return result
+        previous=json.loads(p.read_text());assert previous['id']==m['id']
+        if previous.get('service',{}).get('SERVICE_RESULT') is not None:return previous
     status={k:os.environ.get(k) for k in ('SERVICE_RESULT','EXIT_CODE','EXIT_STATUS')}
     resultfile=cp/'result.json'
     data=json.loads(resultfile.read_text()) if resultfile.exists() else {}
-    if status['SERVICE_RESULT'] is None and not isinstance(data.get('outer_exit'),int):return None
-    outcome='runner exit '+str(data['outer_exit']) if 'outer_exit' in data else 'service '+str(status)
-    result={'id':m['id'],'service':status,'outcome':outcome,'evidence':str(cp),'result_sha256':hashlib.sha256(resultfile.read_bytes()).hexdigest() if resultfile.exists() else None}
+    # result.json precedes the runner's final ownership/cleanup. Its candidate
+    # exit cannot prove service termination or override a later service failure.
+    if status['SERVICE_RESULT'] is None:return None
+    candidate=data.get('outer_exit') if type(data.get('outer_exit')) is int else None
+    outcome='service '+status['SERVICE_RESULT']
+    if status['EXIT_CODE'] is not None or status['EXIT_STATUS'] is not None:
+        outcome+=' ('+str(status['EXIT_CODE'])+' '+str(status['EXIT_STATUS'])+')'
+    if candidate is not None:outcome+='; candidate exit '+str(candidate)
+    result={'schema':2,'id':m['id'],'service':status,'candidate_exit':candidate,'outcome':outcome,'evidence':str(cp),'result_sha256':hashlib.sha256(resultfile.read_bytes()).hexdigest() if resultfile.exists() else None}
+    if previous is not None:result['previous_provisional']=previous
     write(p,result);return result
 
 def transfer(manifest,owner,action):

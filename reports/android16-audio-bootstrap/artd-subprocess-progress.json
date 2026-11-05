@@ -2648,7 +2648,28 @@
           }
         },
         "scope": "Scoped original-task\u2192trusted RustHome\u2192original CLI WARM relaunch and existing note positive. Wrappers exit1, exact cause unknown; reproduced chown bug suspected. Not overall run acceptance or broad APK/R1 completion.",
-        "next": "Fix no-follow ownership handling and service/native outcome precedence separately; prove full wrapper success and Home restart/admission in enforcing, then original catalog/launch UI."
+        "next": "Full354 candidate rebuilding; test actual closure and Home child exec/restart under enforcing, then original launcher/catalog UI."
+      },
+      "runner_close_correction353": {
+        "status": "implemented_and_regression_tested_not_runtime_validated",
+        "evidence": {
+          "path": "/home/tv/recuperacion-archtv/20261105T142631Z-home353/runner-close-correction-tests.json",
+          "sha256": "fc17519c07b6577faa447a926daa0caf4c9c2c1750fcd578a55ae4d879cdfbfb"
+        },
+        "root_ownership_test": {
+          "command": "sudo -n /usr/bin/python tests/automation/test_runner_artifact_ownership.py",
+          "exit": 0,
+          "scope": "Actual UID0 temporary fixtures only; no runtime or policy change"
+        },
+        "changes": [
+          "Ownership loop changes the checkpoint symlink itself, never follows its ephemeral/outside target.",
+          "Completion records wait for actual SERVICE_RESULT and distinguish service exit from candidate outer_exit. No consuming provisional candidate result; legacy provisional record preserved on actual callback.",
+          "Completion helper source hash added to coherent candidate provenance."
+        ],
+        "tests": "One ownership regression passes as UID1000 and UID0; twelve mocked completion tests pass including service1/candidate0, candidate1/service0, eight concurrent callbacks and active consumer; no real queue sends.",
+        "limitations": "Exact353 final exception remains unknown; deterministic ownership-loop bug is real but attribution remains a hypothesis. Original legacy completion text runner exit0 preserved; actual353 service failure is separately authoritative. Overall353 acceptance stays false.",
+        "next": "Full354 candidate rebuilding; test actual closure and Home child exec/restart under enforcing, then original launcher/catalog UI.",
+        "base_home_milestone": "4d763ff"
       }
     }
   },

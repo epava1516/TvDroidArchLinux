@@ -243,7 +243,7 @@ finally:
     text=log.read_text() if log.exists() else ''
     final={'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'unit':unit,'factory':str(factory) if factory else None,'outer_exit':exit_code,'elapsed_seconds':time.time()-started,'native_complete_inventory_verified':'APEX_ORIGINAL_COMPLETE_INVENTORY_VERIFIED modules=41' in text,'bpf_cleanup':bpf_cleanup,'dm_cleanup':cleanup,'devices':device_state,'loop_cleanup':loop_cleanup,'final_dm':sorted(dm_names(final_dm)),'final_dm_raw':final_dm.stdout,'active_loops':loops,'owned_userdata_backing':owned_userdata,'unexpected_loop_images':sorted(set(loops.splitlines())-expected_userdata_images),'log_sha256':hashlib.sha256(log.read_bytes()).hexdigest() if log.exists() else None,'scope':'Execution evidence, not APK or MAC acceptance; inspect native results and errors. Host owner must subsequently unmount/detach its recorded private userdata backing.'}
     (recovery/'result.json').write_text(json.dumps(final,indent=2)+'\n')
-    for p in recovery.iterdir():os.chown(p,1000,1000)
+    for p in recovery.iterdir():os.chown(p,1000,1000,follow_symlinks=False)
     os.chown(recovery,1000,1000)
     print('APEX_RESULT '+json.dumps({k:final[k] for k in ['outer_exit','elapsed_seconds','native_complete_inventory_verified','active_loops','final_dm']}),flush=True)
     print('APEX_EVIDENCE '+str(recovery),flush=True)

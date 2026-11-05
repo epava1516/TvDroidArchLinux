@@ -20,8 +20,16 @@ Procedimiento del agente para cada manifiesto explícito (no usar el puntero glo
    delivery antes de procesarlo. Si está consumed, no repetir trabajo ni reencolar.
 2. Con propiedad active, procesar el resultado y registrar:
    `python scripts/run_completion.py MANIFEST consume active:UUID`.
-   Puede hacerse antes del callback si result.json ya contiene outer_exit terminal.
+   Esperar a que el callback conserve SERVICE_RESULT/EXIT_CODE/EXIT_STATUS.
+   outer_exit en result.json sólo describe el candidato: todavía puede fallar
+   el cierre del runner. Sin estado final del servicio no se permite consumir.
    Los callbacks posteriores conservarán la evidencia y guardarán consumed sin envío.
+
+El resultado distingue servicio y candidato. Un servicio con exit1 no se anuncia
+como exitoso porque el candidato haya registrado outer_exit0. Un registro antiguo
+provisional sin SERVICE_RESULT se conserva como previous_provisional cuando llega
+el callback real. Los registros históricos que ya contienen estado del servicio
+no se reescriben automáticamente; contrastar sus campos, no sólo el texto derivado.
 3. Sólo si el agente deja de observar esa ejecución y necesita una continuación,
    ceder explícitamente: `... MANIFEST handoff active:UUID`.
    Un resultado consumido no admite cesión. `claim-active` recupera una cesión
