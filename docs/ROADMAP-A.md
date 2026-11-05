@@ -1,5 +1,9 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+Orden tras346: guardia de 28 identidades integrada y positiva, con R1 todavía abierto. Primero alinear la comprobación Installer con la operación Binder original realmente ejecutada, sin fabricar installd-query.txt. Después resolver el ANR real de Markor: traza original muestra espera gráfica mientras la cola ejecuta LLVM JIT y hay presión CPU/IO. Experimento acotado de recursos/perfil coherente de paquetes, manteniendo límites ANR originales y midiendo interfaz/entrada/persistencia/cierre. No atribuirlo aún a GC, ABI de memoria o VirtualBox. Reutilizar el recorrido343 y reaperturas344/345 como evidencias históricas, no aceptar346 por Status ok. R1/ARM/GMS/DRM y compatibilidad amplia siguen abiertos. Fuente: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration346` y `identity_guard_correction`.
+
+Histórico anterior:
+
 Actualización344: reapertura visual entre cohortes y cierre automático de datos comprobados. Próximo bloqueo concreto: alinear la guardia de identidades con el perfil original RC y fork de Zygote, usando metadatos reales; preservar observaciones ausentes y controles negativos. No repetir el recorrido343 ya probado salvo cambio que afecte a su conclusión. R1, cobertura de otras APK, instalación/actualización y ARM/GMS/DRM continúan abiertos. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration344`.
 
 Histórico anterior:

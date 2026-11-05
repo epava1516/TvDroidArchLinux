@@ -1,5 +1,9 @@
 # Estado actual y punto de entrada
 
+346: la guardia integrada verifica 28 identidades reales (27 servicios RC originales y system_server) con política68 en enforcing; modo0 y cierre normal del volumen/anfitrión restaurados. Salida nativa0/exterior1: la comprobación siguiente exige installd-query.txt sin productor en el perfil funcional. Installer.invalidateMounts sí retornó por Binder original. Markor devolvió Status ok/Displayed, pero sufrió ANR de foco y AMS mató PID1232; pantalla negra, sin aceptación UI346. Siguiente: corregir ese contrato de comprobación y resolver el ANR gráfico con evidencia original, sin rebajar timeouts. Fuente: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration346` y `identity_guard_correction`.
+
+Histórico anterior:
+
 344: Markor intacta reabre visualmente la nota343 tras cerrar la cohorte anterior. El volumen se desmonta y loop130 se retira automáticamente (un intento), con recuperación del anfitrión verificada. Se registran 65 muestras de 54 nombres de servicios desde los getters del parser original RC, separadas de SID/credenciales del kernel. STOPPED/salida nativa0, exterior1 por guardia de identidades pendiente; host owner0. Siguiente: corregir esa guardia con contratos originales y testigos reales, sin sustituir observaciones por configuración. R1 sigue abierto. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration344`.
 
 Histórico anterior:

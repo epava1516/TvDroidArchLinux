@@ -1,5 +1,9 @@
 # Contrato vigente · AOSP Android 16 QPR2
 
+La guardia346 acredita sólo las identidades/credenciales de 27 servicios RC y system_server mediante testigos reales; no acredita todas las identidades, autorización, aislamiento o compatibilidad general. Modo enforcing durante una ventana y restauración tampoco cierran R1. Un Status ok/Displayed seguido de ANR y muerte por AMS no satisface lanzamiento utilizable/interfaz:346 es negativo. Las evidencias positivas343/344/345 se conservan con su alcance. Nunca sustituir un contrato sin productor por un archivo inventado; comprobar la operación Binder original efectiva y sus fallos. Fuente: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration346` y `identity_guard_correction`.
+
+Histórico anterior:
+
 Evidencia344: la nota343 persiste y se abre visualmente en otra cohorte; el cierre automático del almacenamiento está probado. No añade un nuevo recorrido de escritura ni cierra R1. Los valores configurados por RC y las observaciones del kernel son pruebas distintas; una identidad ausente o una guardia fallida permanecen pendientes, aunque la aplicación funcione. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration344`.
 
 Histórico anterior:

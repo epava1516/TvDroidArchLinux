@@ -1,5 +1,9 @@
 # Arquitectura vigente · A16-QPR2-1
 
+La verificación346 combina credenciales reales del padre init con getters del parser RC original, SID de getpidcon/ps originales y estado propio de system_server según ZygoteInit.forkSystemServer. Son testigos independientes, no una instantánea atómica ni aislamiento. Política68 añade sólo dos process:getattr de init a aconfigd/aconfigd_mainline; no amplía al observador Linux. El perfil se selecciona desde build-options verificado:345 falló al buscar un marcador en otra vista de montajes. El ANR346 espera RenderProxy→ANGLE→SwiftShader Queue::waitIdle mientras otro hilo ejecuta LLVM JIT; presión CPU/IO observada, causa definitiva pendiente. Fuente: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration346` y `identity_guard_correction`.
+
+Histórico anterior:
+
 344 valida la reapertura de la nota343 y el cierre automático del backing con el helper corregido. La observación nativa conserva por separado configuración RC original (uid/gid/grupos/seclabel) y estado real del kernel; un seclabel configurado nunca acredita un SID. La guardia antigua no acepta aún el conjunto integrado; no se amplió la política67 ni se desactivaron comprobaciones para obtener un éxito. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration344`.
 
 Histórico anterior:

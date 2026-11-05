@@ -72,6 +72,10 @@ if '--original-art-sign-nosuid' in sys.argv[2:]:
     assert '--original-art-boot-nnp' in sys.argv[2:], 'Preserve the complete policy66 base'
     profile['modules'].append('runtime/aosp/android16-qpr2/policy/experiments/art-sign-nosuid.cil')
     profile['limitations'].append('Only init->odsign nosuid label-transition admission for the explicitly private nosuid executable bind. Nosuid mount/NNP1 and original entrypoint/UID/capabilities retained; no execute_no_trans or file/device/Binder/capability grant. Actual cryptography/cache/image/R1 remains unproven.')
+if '--original-aconfig-identity-read' in sys.argv[2:]:
+    assert '--original-art-sign-nosuid' in sys.argv[2:], 'Preserve the complete policy67 base'
+    profile['modules'].append('runtime/aosp/android16-qpr2/policy/experiments/aconfig-identity-read.cil')
+    profile['limitations'].append('Only original init process:getattr for the two short-lived aconfig domains missing kernel SID witnesses in344. No Linux observer, ptrace, signal, transition or file-write widening. Offline compilation is not an actual identity observation or R1 acceptance.')
 profile['input_sha256']['aosp'] = hashlib.sha256(merged).hexdigest()
 profile['limitations'].append('Original complete vendor/hal_audio_default.te added; no runtime/domain transition/device/isolation acceptance.')
 (out / 'profile.json').write_text(json.dumps(profile, indent=2) + '\n')

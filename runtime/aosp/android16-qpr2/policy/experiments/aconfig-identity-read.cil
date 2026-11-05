@@ -1,0 +1,9 @@
+; Actual344: the admitted original init parent can read status but getpidcon
+; is denied for these two short-lived original RC services. Original ps -AZ
+; supplies persistent-service SIDs, but runs after these oneshots have exited.
+; Permit only their kernel process-context metadata to the original parent.
+; Configured seclabels, successful exits and pre-exec init SIDs are not witnesses.
+; No Linux observer widening, ptrace, signal, transition, capability, file write,
+; Binder access or runtime authorization is introduced by these two edges.
+(allow init aconfigd (process (getattr)))
+(allow init aconfigd_mainline (process (getattr)))

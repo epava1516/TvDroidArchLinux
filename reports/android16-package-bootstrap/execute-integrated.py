@@ -5,6 +5,71 @@ import sys,ast,json,os,re
 import xml.etree.ElementTree, hashlib
 # Resolve the Linux verification hash provider before entering the chroot.
 hashlib.sha256(b"").digest()
+def verify_original_fork_identities(native_stderr, external, ps_texts, logcat_text, factory_caps):
+ """Read-only kernel witnesses; parsed RC intent never supplies an actual SID.
+
+ Original Service getters supply the credential contract. Parent proc reads and
+ original ps are separate witnesses of the same namespace PID, not an atomic
+ snapshot or isolation proof. Missing oneshot SIDs remain fatal. System-server
+ credentials follow original ZygoteInit.forkSystemServer, not manual startup.
+ """
+ expected={
+ 'BOOTSTRAP':('apexd-bootstrap','apexd',0x200000),
+ 'MANAGER':('servicemanager','servicemanager',0),'HWMANAGER':('hwservicemanager','hwservicemanager',0),
+ 'VOLD':('vold','vold',factory_caps),'DAEMON':('apexd','apexd',0x20000f),'SNAPSHOT':('apexd-snapshotde','apexd',15),
+ 'DERIVE':('derive_classpath','derive_classpath',0),'ACONFIG_SYSTEM':('system_aconfigd_platform_init','aconfigd',0),
+ 'ACONFIG_MAINLINE':('mainline_aconfigd_init','aconfigd_mainline',0),'NETD':('netd','netd',0x80000074ef),
+ 'KEYMINT':('archtv-keymint-software','hal_keymint_default',0),'KEYSTORE':('archtv-keystore2','keystore',0),
+ 'GATEKEEPER_HAL':('vendor.gatekeeper_nonsecure','hal_gatekeeper_default',0),'GATEKEEPER':('gatekeeperd','gatekeeperd',0),
+ 'ALLOCATOR':('vendor.graphics.allocator','hal_graphics_allocator_default',1<<23),
+ 'COMPOSER':('vendor.hwcomposer-3','hal_graphics_composer_default',1<<23),'SF':('surfaceflinger','surfaceflinger',1<<23),
+ 'LMKD':('lmkd','lmkd',0x1804022),'STORAGED':('storaged','storaged',4),'IDMAP':('idmap2d','idmap',0),
+ 'SWCODEC':('media.swcodec','mediaswcodec',0),'STATSD':('statsd','statsd',0),
+ 'HEALTH':('vendor.health-default','hal_health_default',0x1800000000),'SUSPEND':('system_suspend','system_suspend',1<<36),
+ 'INSTALLD':('installd','installd',0x2000ff),'ARTD':('artd','artd',15),'ZYGOTE':('zygote','zygote',factory_caps)}
+ rows={};observed={};errors=[];ps={}
+ for line in native_stderr.splitlines():
+  if not line.startswith('MC1_PARENT_KERNEL_IDENTITY_V1 '):continue
+  item=dict(re.findall(r'(\w+)=([^ ]*)',line))
+  for key in ['name_hex','context_hex','status_hex','configured_supp_groups_hex','configured_seclabel_hex']:
+   value=item.pop(key);item[key[:-4]]=bytes.fromhex(value).decode() if value!='-' else ''
+  rows.setdefault(item['name'],[]).append(item)
+ for text in ps_texts:
+  for pid,context in re.findall(r'^\s*(\d+)\s+(u:r:\S+)\s+',text,re.M):ps.setdefault(int(pid),set()).add(context)
+ def fields(text):return dict(line.split(':',1) for line in text.splitlines() if ':' in line)
+ for kind,(name,domain,caps) in expected.items():
+  try:
+   candidates=rows[name];pids={int(v['pid']) for v in candidates};assert len(pids)==1,'restarted/PID ambiguous service'
+   pid=next(iter(pids));row=candidates[-1];context='u:r:'+domain+':s0';witnesses=[]
+   if any(v['context']==context and v['context_errno']=='0' for v in candidates):witnesses.append('native parent getpidcon')
+   if any(v['kind']==kind and v['pid_namespace_pid']==pid and v.get('actual_context')==context for v in external):witnesses.append('external Linux getpidcon')
+   if pid in ps:
+    assert ps[pid]=={context},'conflicting original ps SID'
+    witnesses.append('original ps -AZ')
+   assert witnesses,'no actual post-exec kernel SID'
+   assert row['status_errno']=='0' and row['status_bounded']=='1','missing/bounded kernel status'
+   status=fields(row['status'])
+   assert list(map(int,status['Uid'].split()))==[int(row['configured_uid'])]*4,'RC/kernel UID mismatch'
+   assert list(map(int,status['Gid'].split()))==[int(row['configured_gid'])]*4,'RC/kernel GID mismatch'
+   assert sorted(map(int,status['Groups'].split()))==sorted(map(int,row['configured_supp_groups'].split())),'RC/kernel supplementary groups mismatch'
+   assert int(status['CapEff'],16)==caps and int(status['CapPrm'],16)==caps,'capabilities mismatch'
+   assert status['NoNewPrivs'].strip()=='1','NNP missing'
+   observed[kind]={'pid':pid,'actual_context':context,'witnesses':witnesses,'kernel_status':status,'original_rc_uid':int(row['configured_uid']),'original_rc_gid':int(row['configured_gid']),'original_rc_supp_groups':row['configured_supp_groups'],'configured_seclabel_not_sid':row['configured_seclabel']}
+  except (KeyError,ValueError,AssertionError) as error:errors.append({'kind':kind,'error':str(error)})
+ try:
+  pids=set(map(int,re.findall(r'ORIGINAL_SYSTEMSERVER_STATUS_V1 pid=(\d+) ',logcat_text)));assert len(pids)==1,'missing/ambiguous original system-server PID'
+  pid=next(iter(pids));assert ps.get(pid)=={'u:r:system_server:s0'},'missing/conflicting system-server SID';status={}
+  for field in re.findall(r'ORIGINAL_SYSTEMSERVER_STATUS_V1 pid='+str(pid)+r' line_hex=([0-9a-f]+)',logcat_text):status.update(fields(bytes.fromhex(field).decode()))
+  assert list(map(int,status['Uid'].split()))==[1000]*4 and list(map(int,status['Gid'].split()))==[1000]*4,'original fork UID/GID mismatch'
+  groups=[1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1018,1021,1023,1024,1032,1065,3001,3002,3003,3005,3006,3007,3009,3010,3011,3012]
+  assert list(map(int,status['Groups'].split()))==groups,'original fork supplementary groups mismatch'
+  caps=sum(1<<bit for bit in [14,5,12,10,11,13,23,19,25,26,35,36]) & factory_caps
+  assert int(status['CapEff'],16)==caps and int(status['CapPrm'],16)==caps,'original fork capabilities mismatch'
+  assert status['NoNewPrivs'].strip()=='1' and int(status['CapBnd'],16)==0,'original fork NNP/bounding mismatch'
+  observed['SERVICES']={'pid':pid,'actual_context':'u:r:system_server:s0','witnesses':['original ps -AZ','selected entry own /proc/self/status'],'kernel_status':status}
+ except (KeyError,ValueError,AssertionError) as error:errors.append({'kind':'SERVICES','error':str(error)})
+ return {'verified':not errors and len(observed)==len(expected)+1,'observed':observed,'errors':errors,'expected_count':len(expected)+1,'scope':'Selected original-fork profile credential/SID witnesses only; not atomic snapshot, authorization, isolation or APK compatibility'}
+
 r=Path(__file__).resolve().parents[2]
 # Scope server-created shared files to this immutable execution, not /run/user.
 if len(sys.argv)>1 and sys.argv[1] in ('--prepare-wayland-runtime','--close-wayland-runtime'):
@@ -953,6 +1018,26 @@ assert text.count(identity_guard)==1
 text=text.replace(identity_guard,
  "identity_observations={'observed':identities,'expected':expected_identities,'scope':'Actual kernel observations before unchanged exact-set guard; not authorization or APK acceptance'}\n"
  "print('MC1_IDENTITY_OBSERVATIONS '+json.dumps(identity_observations),flush=True)\n"+identity_guard,1)
+# The original fork profile must retain genuine missing-witness failures.
+# Embed the verifier before pivot; no mutable host import inside Android.
+import inspect
+legacy_start=text.index("identity_observations={'observed':identities")
+legacy_end=text.index("if software_platform_profile:\n for fixture_output",legacy_start)
+legacy_checks=text[legacy_start:legacy_end]
+# Vendor marker binds belong to the worker mount namespace, not this Linux
+# verifier view. Select from the already hash-verified immutable build manifest;
+# require the original fork event as well, rather than silently downgrading.
+functional_checks="software_platform_profile="+repr(bool(build_options.get('software_security_platform',False)))+"\n"+"""original_fork_profile=software_platform_profile
+if original_fork_profile:
+ assert 'SELECTED_ZYGOTE_ORIGINAL_SYSTEMSERVER_FORK_STARTED ' in ''.join(errors),'Original system-server fork event missing'
+ original_identity_result=verify_original_fork_identities(''.join(errors),identities,[Path('/data/local/tmp/archtv-mc1/'+name).read_text() for name in ['android-ps-before.txt','android-ps-postinstall.txt','android-ps-after.txt'] if Path('/data/local/tmp/archtv-mc1/'+name).is_file()],raw_logcat.decode(errors='replace'),factory_caps)
+ print('MC1_ORIGINAL_FORK_IDENTITIES '+json.dumps(original_identity_result),flush=True)
+ assert original_identity_result['verified'],original_identity_result['errors']
+else:
+"""+'\n'.join(' '+line for line in legacy_checks.splitlines())+'\n'
+text=text[:legacy_start]+functional_checks+text[legacy_end:]
+text=inspect.getsource(verify_original_fork_identities)+'\n'+text
+
 compile(text,'<integrated factory>','exec')
 if '--materialize-only' in saved:
  Path('/home/tv/.cache/archtv/integrated-factory-preview.py').write_text(text)

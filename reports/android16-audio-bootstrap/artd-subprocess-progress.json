@@ -1467,6 +1467,147 @@
           "path": "/home/tv/recuperacion-archtv/2dda2773-2217-40f0-8299-5c7b2614b1cd-markor-software-launch/userdata-backup.json",
           "sha256": "f11e2cd0a0d6ba6da0905f3328e18321b1269934a10ae30061bda1755347025e"
         }
+      },
+      "identity_guard_correction": {
+        "source": "reports/android16-package-bootstrap/execute-integrated.py",
+        "source_sha256": "1a6152e7b0ac92b325b74ea69e91b7d79eb5ff9c4407906ed119fa7d19bc4d69",
+        "scope": "Selected originalfork profile only. 27 namedoriginalRCservices +originalsystemserver, notall54servicenames orR1closure. No configuredSIDsubstitution. Otherprofiles retainlegacyguard.",
+        "contract": "OriginalService publicuid/gid/supp_gids versus actualparentkernelstatus; actualSID via nativegetpidcon, externalLinuxgetpidcon ororiginalps -AZ. Systemserver originalZygoteInit UID/GID/groups/caps plusownkernelstatus andoriginalps. Independent nonatomicsnapshots; restart/PIDambiguity refused.",
+        "original_zygote_source": {
+          "path": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/ZygoteInit.java",
+          "sha256": "e2299c75b02bfe180deb346b14d80a71cafe5258a05f0ff6c3f39fc024441bae"
+        },
+        "source_pin": "frameworks/base 45034f0663f960d9ee5fb0a101a4732b71f6e2f4 ZygoteInit.java forkSystemServer:693-724",
+        "offline344_missing_witnesses": {
+          "path": "/home/tv/recuperacion-archtv/2dda2773-2217-40f0-8299-5c7b2614b1cd-markor-software-launch/corrected-identity-offline.json",
+          "sha256": "768c785c38dd5f603db385bf08300b363c03e09ae1cf5f4c80f3f546c61892cf"
+        },
+        "offline_negative_replay": {
+          "path": "/home/tv/recuperacion-archtv/2dda2773-2217-40f0-8299-5c7b2614b1cd-markor-software-launch/identity-verifier-negative-replay.json",
+          "sha256": "abdb590566465b2c2b397ed3097a58dd44347066221564c8bb0f36b263742f97"
+        },
+        "replay_driver": {
+          "path": "/home/tv/recuperacion-archtv/2dda2773-2217-40f0-8299-5c7b2614b1cd-markor-software-launch/identity-verifier-negative-replay.py",
+          "sha256": "6d6a3c6e49de6c7a7e7d16974e3f73d933a92f51581defa9b4704f83c2c759b2"
+        },
+        "negative_scope": "Actual344 accounts26/28 andretains2missingSIDs. Six copied-evidence corruptions reject wrongPS SID, missingselfstatus, wrongUID/groups/NNP/caps. Offline only.",
+        "policy68": {
+          "module": "runtime/aosp/android16-qpr2/policy/experiments/aconfig-identity-read.cil",
+          "delta": "Onlytwo init->aconfigd/aconfigd_mainline process:getattr edges; originalAOSP/Linuxinputs and23previousmodule hashes identical67. NoLinuxobserver/ptrace/signal/transition/filewrite widening.",
+          "artifact": {
+            "path": "/home/tv/repositorio-principal/dist/aosp16/selected-platform-policy-68/artifact.json",
+            "sha256": "be983c7e6061c018e93a3be5b3dd90ac6ec25caff82353dd9ba17e8be186841d"
+          },
+          "access_comparison": {
+            "path": "/home/tv/repositorio-principal/dist/aosp16/audio-policy-inputs-68/access-comparison.json",
+            "sha256": "8a145ec9904206a886e94cf735e4039a6e1c0564baed7f92d58c0e58a1eb73c4"
+          },
+          "load_plan": {
+            "path": "/home/tv/recuperacion-archtv/20261105T112542Z-aconfig-policy68/plan.json",
+            "sha256": "a3f714a8b7b5534f0bff69e6535099ef1c2e4962052c7cf3a2ba2ca98b71712b"
+          },
+          "actual_load": {
+            "path": "/home/tv/recuperacion-archtv/20261105T112542Z-aconfig-policy68/after.json",
+            "sha256": "e597e4608ff47de9028b3955695437b819c42df47d0b50d6657d1c3375239569"
+          },
+          "load_rollback_cancelled": {
+            "path": "/home/tv/recuperacion-archtv/20261105T112542Z-aconfig-policy68/rollback-cancelled-after345.json",
+            "sha256": "61eea550527f201fbb4afd453ad6cc0a6f5c1dc6a33ab40a94c8c7ffe4bf0c10"
+          },
+          "manual_recovery": "/home/tv/recuperacion-archtv/20261105T112542Z-aconfig-policy68/rollback.py",
+          "restore_rehearsed": false
+        },
+        "failed_integration345": {
+          "checkpoint": "/home/tv/recuperacion-archtv/f34998d3-dac1-43c5-bce9-983badaaebc0-markor-software-launch",
+          "native_exit": 0,
+          "outer_exit": 1,
+          "new_verifier_executed": false,
+          "reason": "Profile checkedvendor marker inLinuxverifier mountview; bind existsinAndroidworker view, solegacyguard selected.346usesimmutablebuild_options.software_security_platform andrequiresoriginalforkevent.",
+          "offline28_only": {
+            "path": "/home/tv/recuperacion-archtv/f34998d3-dac1-43c5-bce9-983badaaebc0-markor-software-launch/original-fork-identities-offline.json",
+            "sha256": "7bf0c8213cb08369168c0a661159596d3db1638966549e84819c0f1c33d26edc"
+          },
+          "result": {
+            "path": "/home/tv/recuperacion-archtv/f34998d3-dac1-43c5-bce9-983badaaebc0-markor-software-launch/result.json",
+            "sha256": "1f4071b7ca425c71c4486a2f3378de5bbcf4c475bfe8e12dd83aac4eb2096073"
+          },
+          "visual_reopen": {
+            "path": "/home/tv/recuperacion-archtv/f34998d3-dac1-43c5-bce9-983badaaebc0-markor-software-launch/visual-note-reopen.json",
+            "sha256": "bc43b23130c32381aa0fea1d8f8086b8b50161e26297774ac545d3ad6a990b81"
+          },
+          "recovery": {
+            "path": "/home/tv/recuperacion-archtv/f34998d3-dac1-43c5-bce9-983badaaebc0-markor-software-launch/recovery-readback.json",
+            "sha256": "c8ceea542fc4603147102c12534b5f383a9aac3632e159e9c203d36ee873d512"
+          },
+          "consumer": {
+            "path": "/home/tv/recuperacion-archtv/f34998d3-dac1-43c5-bce9-983badaaebc0-markor-software-launch/completion-consumer.json",
+            "sha256": "10cac24f0de8961b5f3b1e5f009a61467042e1d0bd56be8798fcbe60b2e8d3a0"
+          }
+        },
+        "preparation_failure346_preserved": "/home/tv/recuperacion-archtv/a62e92d7-39d6-42e3-bbbe-6ee285f93685-markor-software-launch/RETOMAR.txt; wrongsource-inputs345 guardstoppedbeforeruntime; freshUUIDused",
+        "integration346": "profile_coherence_experiment.integration346"
+      },
+      "integration346": {
+        "checkpoint": "/home/tv/recuperacion-archtv/c3d8950e-1b94-41a6-a3e0-21ef0f3b721f-markor-software-launch",
+        "build": "dist/aosp16/package-cohort-build-346",
+        "payload_sha256": "19f0d3dd636985069447ef16f63a64c888730f5b9327fef7aefba6c8d0d3e4ec",
+        "native_exit": 0,
+        "outer_exit": 1,
+        "host_owner_exit": 0,
+        "original_fork_identity_guard_verified": true,
+        "identity_count": 28,
+        "overall_cohort_accepted": false,
+        "apk_journey_accepted_this_attempt": false,
+        "scope": "Actualintegratedguard28passesunderpolicy68enforcing; otherfunctionalguardfailsmissingfile andMarkor realANR/blackframe. NoR1/broadAPKacceptance. Prior343fullnote positive remainshistorical valid withlimits.",
+        "mac_seconds_actual": 224.38875781200477,
+        "mac_restored": "0",
+        "failure": "Subsequentoldguardrequires installd-query.txt withnoproducer infunctionalprofile. OriginalInstaller.invalidateMounts actuallyreturned inoriginalsystemserverlog; adaptverifiertorealoperationwithoutfabricatingqueryfile.",
+        "application_failure": "OriginallaunchStatusok/COLD/Displayed, thenFocusEventANR5368ms andoriginalAMS killed1232. ActualUIblack; no noteopened.",
+        "next": "Replace stalefilecontract withoriginalInstaller Binderoperation+actualinstalldidentity; resolveUIANR: source+REA+originalstackshowqueueexecutingLLVM shaderJIT whileUIwaits, CPU/IOpressure. Test boundedresource/coherentpackageprofile, donotdisableANR orassumekernel/GC/hypervisorcause.",
+        "result": {
+          "path": "/home/tv/recuperacion-archtv/c3d8950e-1b94-41a6-a3e0-21ef0f3b721f-markor-software-launch/result.json",
+          "sha256": "0e2ce12b352e0ea2ef84a2994fe8e7532c8642b31d071a87bb8e43ee6385fd39"
+        },
+        "native_result": {
+          "path": "/home/tv/recuperacion-archtv/c3d8950e-1b94-41a6-a3e0-21ef0f3b721f-markor-software-launch/native-result.json",
+          "sha256": "0d10b2bbcd789597dec1e9974814782680726b8e71d3d7386f2d87a2dd9f944d"
+        },
+        "identity_guard": {
+          "path": "/home/tv/recuperacion-archtv/c3d8950e-1b94-41a6-a3e0-21ef0f3b721f-markor-software-launch/original-fork-identities.json",
+          "sha256": "126b01ebae43f1f2abce0b354bc7b1d9fcb6e9e3de0c952b8d2d9e7a7d40efd2"
+        },
+        "mac_window": {
+          "path": "/home/tv/recuperacion-archtv/c3d8950e-1b94-41a6-a3e0-21ef0f3b721f-markor-software-launch/mac-window.json",
+          "sha256": "6506b2a600c99a71d4c5dd0da240c09d94f3ec9f06b0100cd7b3b1064857ab41"
+        },
+        "normal_backing_close": {
+          "path": "/home/tv/recuperacion-archtv/c3d8950e-1b94-41a6-a3e0-21ef0f3b721f-markor-software-launch/backing-after.json",
+          "sha256": "2990631ad75b72eddc3301b3813982ca5aa59ca2cc362f265073cf84ed567724"
+        },
+        "recovery": {
+          "path": "/home/tv/recuperacion-archtv/c3d8950e-1b94-41a6-a3e0-21ef0f3b721f-markor-software-launch/recovery-readback.json",
+          "sha256": "c8ceea542fc4603147102c12534b5f383a9aac3632e159e9c203d36ee873d512"
+        },
+        "consumer": {
+          "path": "/home/tv/recuperacion-archtv/c3d8950e-1b94-41a6-a3e0-21ef0f3b721f-markor-software-launch/completion-consumer.json",
+          "sha256": "79300958f513ba0cc91ab96c9f3209da1e4dc83e586975a82af7e1f111f9b775"
+        },
+        "backup": {
+          "path": "/home/tv/recuperacion-archtv/c3d8950e-1b94-41a6-a3e0-21ef0f3b721f-markor-software-launch/userdata-backup.json",
+          "sha256": "1fe4f8fc689f74dc58549843c83cc69690113df5b815cdb3172ad8acfacf5d57"
+        },
+        "anr": {
+          "path": "/home/tv/recuperacion-archtv/c3d8950e-1b94-41a6-a3e0-21ef0f3b721f-markor-software-launch/anr-readback.json",
+          "sha256": "bfc354e8773037f4ddcb55819cd1b815d0496faa5d580f986f6f7318cdfbe6ad"
+        },
+        "visual_not_accepted": {
+          "path": "/home/tv/recuperacion-archtv/c3d8950e-1b94-41a6-a3e0-21ef0f3b721f-markor-software-launch/visual-ui-not-accepted.json",
+          "sha256": "24d11f48540322959deeb249623e6af5c00969dbaff80c71ef796c94ed939832"
+        },
+        "original_logcat": {
+          "path": "/home/tv/recuperacion-archtv/c3d8950e-1b94-41a6-a3e0-21ef0f3b721f-markor-software-launch/original-logcat.txt",
+          "sha256": "b7671a58741c83cf76c112fd9fcae8754d207807802fcc1270849d929b385246"
+        }
       }
     }
   },
@@ -1476,6 +1617,12 @@
       "milestone": "344 saved-note reopen, original parsed RC metadata and automatic storage cleanup",
       "evidence": "/home/tv/recuperacion-archtv/2dda2773-2217-40f0-8299-5c7b2614b1cd-markor-software-launch",
       "scope": "No full cohort/R1 acceptance; identity guard open"
+    },
+    {
+      "utc": "2026-11-05T11:49:30.442799+00:00",
+      "milestone": "346 originalfork28identitywitnesses integrated; keepouterfileguardfailure andrealMarkorANR negative",
+      "evidence": "/home/tv/recuperacion-archtv/c3d8950e-1b94-41a6-a3e0-21ef0f3b721f-markor-software-launch",
+      "R1": "open"
     }
   ]
 }

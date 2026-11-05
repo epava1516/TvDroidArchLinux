@@ -1,5 +1,9 @@
 # Índice de evidencias
 
+346 (c3d8950e-1b94-41a6-a3e0-21ef0f3b721f): informe ART →profile_coherence_experiment.integration346 vincula guardia28 positiva, ventana MAC, cierre normal, recuperación/consumo y negativa ANR/UI. identity_guard_correction conserva 26/28 de344, seis negativas offline, fallo de selector345, replay345 sólo offline y política68 con veinte comparaciones. anr-readback.json vincula traza original offline, fuentes SwiftShader y REA MCP ev_34c78613d3221d49cb3d1d7d862ed9332014b437093e4ed3c437454641f0962c: desensamblado estático de símbolo, no ejecución. Native0/exterior1 por archivo inexistente; APK no aceptada346. Fuente: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration346` y `identity_guard_correction`.
+
+Histórico anterior:
+
 344 (UUID 2dda2773-2217-40f0-8299-5c7b2614b1cd): informe ART →profile_coherence_experiment.integration344 vincula frame real de nota343 reabierta, metadatos RC originales, resultados, ventana enforcing de 221,89 s, cierre normal backing-after y recuperación/consumo. Native0/exterior1/host owner0; 65 muestras y 54 nombres no son aceptación de identidades. Loop130 ausente y sin mappings/dm tras cierre; no recuperación manual. Los cuatro ensayos de kernel anteriores conservan su alcance. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` →`coherent_cache_candidate.profile_coherence_experiment.integration344`.
 
 Histórico anterior:
