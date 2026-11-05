@@ -1,5 +1,9 @@
 # Arquitectura vigente · A16-QPR2-1
 
+351 confirma cierre normal de actividades con callbacks originales app-request/onStop/onDestroy, proceso conservado en caché y nueva tarea WARM. No equivale a matar el proceso ni borrar recents. La vuelta actual resuelve Settings.FallbackHome y produce un tramo negro: falta handoff a nuestra interfaz Rust/Linux, que no debe sustituirse por un launcher Android completo. El nuevo cliente sólo observa AMS/FUSE y relanza; sólo entrada UI real genera Back. La captura Linux debe leer el perfil CLI protegido compartido, no /vendor del namespace del worker. Fuente corregida y atribución shell/FUSE precisada; no presentar esa corrección como ejecutada aún. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration351`.
+
+Histórico anterior:
+
 350 integra las fronteras originales sin cambiar política: credenciales postexec de snapshot mediante SID/status/SID reales; init Android observa CE/permisos de sólo lectura y libcrypto original calcula SHA256; shell original produce hashes origen/instalado y Linux verifica su archivo protegido. Todas esas comprobaciones se ejecutan y pasan juntas. El testigo preexec init/CapEff0 de349 queda histórico, no se rebaja a éxito. Lecturas secuenciales y testigos ps independientes no son instantáneas atómicas ni aislamiento. El perfil de paquetes aún dispara devicelockcontroller y dynsystem sin servicios requeridos; justificar perfil mínimo coherente, sin arrancar Android completo. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration350`.
 
 Histórico anterior:

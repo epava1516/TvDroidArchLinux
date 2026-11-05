@@ -1,5 +1,9 @@
 # Índice de evidencias
 
+351 (dbef763b-8e05-4316-86f7-0d1703c13a29): informe ART enlaza cuatro comandos físicos, diez outputs AMS/procesos/FUSE originales, callbacks app-request/stop/onDestroy PID1372, tareas activas19/20 y referencia reciente conservada, WARM271ms, hash21bytes y editor visto. No ANR Markor en el log capturado; tres fatales de fondo conservados. Nativa0/exterior1 por KeyError normal_back: captura busca perfil worker-only /vendor. Debugfs de sólo lectura contrasta bytes contra copias vivas, UID2000/mode0600/etiquetas originales y replay positivo; no reejecuta el colector corregido. El manifiesto de inputs confirma el token protegido compartido. Recuperación/consumo y variantes sintéticas quedan enlazadas con su alcance. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration351`.
+
+Histórico anterior:
+
 350 (8ce32c00-e419-43f2-abf8-eb44fb85e001): informe ART enlaza las 28identidades y observaciones externas crudas, SID/status/SID de snapshot, InstallerRPC, lectura original CE/permisos con hashes, hashAPK instalado, frame real de nota348, logs972022bytes, salida0 de los tres propietarios y recuperación/consumo. Diez negativas del parser son sintéticas y se distinguen de la ejecución real. El replay offline de testigos reales350 acepta el original y rechaza tres alteraciones de capacidades/bracket/SNAPSHOT ausente; no son tres nuevas ejecuciones. Logs conservan tres fatales de devicelockcontroller/dynsystem; no ANR Markor en el tramo capturado. REA MCP ev_5151bf84fe2bd50a8270d05fec0d232c8f2fc4b3122cda3e5427d3fb14675ca1 decompila MainActivity.onBackPressed; sólo evidencia estática para el siguiente recorrido. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration350`.
 
 Histórico anterior:

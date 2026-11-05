@@ -1,5 +1,9 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+351 avanza el recorrido normal: Back→onDestroy de ambas actividades→PID en caché→lanzamiento original WARM→nota persistida visible. No repetir constructores ni fixtures como siguiente hito.352 debe ejecutar la corrección concreta de captura (perfil compartido, no /vendor de otra vista), manteniendo351exterior1 histórico. Después, prioridad funcional al contrato HOME/Back y retorno a shell Rust: FallbackHome de Android es un límite demostrado. Conservar pruebas de cierre forzado348 y normal351 separadas; continuar perfil mínimo coherente sin DSU/DeviceLock innecesarios y R1/broadAPK/instalación/actualización/ligereza. ARM/GMS/DRM separados. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration351`.
+
+Histórico anterior:
+
 350 cierra el bloqueo de observación integrado: nativa/exterior0, credenciales originales, metadatos y hashAPK verificados juntos, nota348 reabierta. Próximo avance funcional: Back real hasta cierre de actividades, observar ciclo/tareas AMS originales y persistencia, lanzar de nuevo por contrato original y reabrir nota; no sustituirlo por force-stop ni dar por muerto el proceso si Android lo conserva. REA MCP muestra que MainActivity delega primero al fragmento y luego a super.onBackPressed: inspección estática que orienta la prueba, no cierre ejecutado. Mantener el recorrido completo348 y corregir después el perfil mínimo coherente de paquetes. No ampliar más infraestructura de sondeo. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration350`.
 
 Histórico anterior:

@@ -1,5 +1,9 @@
 # Estado actual y punto de entrada
 
+351: dos Atrás reales producen app-request, parada/onDestroy de Document/Main; la tarea activa19 desaparece, PID1372 queda en caché. El lanzamiento original WARM crea tarea20 y la nota348 reaparece con el mismo hash21bytes. AMS vuelve temporalmente a Settings.FallbackHome, no a Rusthome. Guardias originales previas pasan; nativa0/exterior1 por captura que busca el perfil en otra vista /vendor. Diez outputs originales verificados offline y parser positivo; fuente corregida a copia protegida compartida, pendiente352. Anfitrión recuperado/resultado consumido. Próximo: comprobar captura integrada y resolver handoff HOME/Back con nuestra interfaz. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration351`.
+
+Histórico anterior:
+
 350: pasan juntas todas las guardias seleccionadas (28identidades, InstallerRPC, PMS, CE/permisos y bytesAPK); nativa0/exterior0/propietarios0. Snapshot muestra SID apexd antes/después de status, CapPrm/Eff/Bnd15, UID0/GID1000/NNP1 reales. Markor reabre visualmente nota348 entre cohortes. Política68 intacta; recuperación normal verificada. Siguiente: cierre normal de actividades y reapertura original con persistencia, sin confundir force-stop con cierre normal. Tres fallos de paquetes de fondo conservados; R1 y compatibilidad amplia abiertos. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration350`.
 
 Histórico anterior:

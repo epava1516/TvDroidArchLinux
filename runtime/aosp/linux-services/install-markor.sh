@@ -263,3 +263,58 @@ if [ -f /data/local/tmp/archtv-mc1/archtv-markor-workflow-token ]; then
     /system/bin/printf 'after_pid=%s\n' "$after" >> /data/local/tmp/archtv-mc1/markor-lifecycle.txt
     /system/bin/sha256sum "$note" > /data/local/tmp/archtv-mc1/markor-note-after-relaunch.txt
 fi
+
+# Separate real Back/navigation experiment. Only physical UI input may move
+# Markor out of the foreground. These original commands observe AMS and
+# relaunch; they never finish/kill tasks, inject Back or manufacture readiness.
+if [ -f /data/local/tmp/archtv-mc1/archtv-markor-normal-close-token ]; then
+    [ "$target_package" = net.gsantner.markor ] || exit 1
+    [ ! -f /data/local/tmp/archtv-mc1/archtv-markor-workflow-token ] || exit 1
+    token=$(/system/bin/cat /data/local/tmp/archtv-mc1/archtv-markor-normal-close-token)
+    case "$token" in ''|*[!0-9a-f]*) exit 1;; esac
+    [ "${#token}" -eq 8 ] || exit 1
+    budget=$(/system/bin/cat /data/local/tmp/archtv-mc1/archtv-markor-normal-close-budget)
+    case "$budget" in ''|*[!0-9]*) exit 1;; esac
+    [ "$budget" -ge 15 ] && [ "$budget" -le 585 ] || exit 1
+    normal_out=/data/local/tmp/archtv-mc1
+    note=/storage/emulated/0/Documents/markor/archtv-$token.md
+    expected="archtv note $token"
+    [ "$(/system/bin/stat -c %s "$note")" -eq "$((${#expected} + 1))" ] || exit 1
+    [ "$(/system/bin/cat "$note")" = "$expected" ] || exit 1
+    /system/bin/cat "$note" > "$normal_out/markor-normal-note-bytes.bin"
+    /system/bin/sha256sum "$note" > "$normal_out/markor-normal-note-before.txt"
+    normal_dump() {
+        /system/bin/dumpsys -t 3 activity activities > "$1" 2> "$1.stderr"
+        [ ! -s "$1.stderr" ] || return 1
+        /system/bin/grep -qx 'ACTIVITY MANAGER ACTIVITIES (dumpsys activity activities)' "$1" || return 1
+        if /system/bin/grep -Eq 'DUMP TIMEOUT|DUMP FAILED|Error dumping service|Permission Denial|Can.t find service' "$1"; then return 1; fi
+    }
+    normal_markor_resumed() {
+        /system/bin/grep -Eq '^  ResumedActivity: ActivityRecord\{[^}]* u0 net[.]gsantner[.]markor/' "$1"
+    }
+    normal_dump "$normal_out/markor-normal-activities-before.txt"
+    normal_markor_resumed "$normal_out/markor-normal-activities-before.txt" || exit 1
+    /system/bin/dumpsys -t 3 activity processes > "$normal_out/markor-normal-processes-before.txt"
+    n=0
+    while [ "$n" -lt "$budget" ]; do
+        normal_dump "$normal_out/markor-normal-activities-last.txt"
+        if ! normal_markor_resumed "$normal_out/markor-normal-activities-last.txt"; then break; fi
+        n=$((n+2)); /system/bin/sleep 2
+    done
+    [ "$n" -lt "$budget" ] || exit 1
+    /system/bin/cp "$normal_out/markor-normal-activities-last.txt" "$normal_out/markor-normal-activities-background.txt"
+    /system/bin/dumpsys -t 3 activity processes > "$normal_out/markor-normal-processes-background.txt"
+    # Android can retain a stopped task and process after normal Back. The
+    # dumps, actual input and original lifecycle logs must distinguish this
+    # from finish, crash or ANR; foreground absence alone is not app acceptance.
+    /system/bin/printf 'MARKOR_NORMAL_TOP_RESUMED_ABSENT NOT_TASK_FINISH_OR_APK_ACCEPTANCE\n'
+    /system/bin/sha256sum "$note" > "$normal_out/markor-normal-note-background.txt"
+    /system/bin/cmp "$normal_out/markor-normal-note-before.txt" "$normal_out/markor-normal-note-background.txt"
+    /system/bin/sleep 3
+    /system/bin/cmd activity start-activity -W --user 0 -n "$component" > "$normal_out/markor-normal-relaunch.txt" 2>&1
+    /system/bin/grep -qx 'Status: ok' "$normal_out/markor-normal-relaunch.txt"
+    normal_dump "$normal_out/markor-normal-activities-relaunched.txt"
+    normal_markor_resumed "$normal_out/markor-normal-activities-relaunched.txt" || exit 1
+    /system/bin/sha256sum "$note" > "$normal_out/markor-normal-note-relaunched.txt"
+    /system/bin/cmp "$normal_out/markor-normal-note-before.txt" "$normal_out/markor-normal-note-relaunched.txt"
+fi

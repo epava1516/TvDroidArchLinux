@@ -1,5 +1,9 @@
 # Contrato vigente · AOSP Android 16 QPR2
 
+351 acredita sólo el caso de cierre normal de actividades de Markor por entrada Atrás, callbacks originales y reapertura WARM con nota existente intacta. Proceso en caché y referencia de tarea reciente son válidos y se distinguen del cierre forzado previo. No acredita retorno al escritorio Rust: AMS seleccionó FallbackHome. Tampoco convierte el exterior1 del colector en éxito: corrección de vista requiere ejecución integrada. Compatibilidad amplia, todas las funciones Markor, seguridad/R1, persistencia reboot/FBE, instalación/actualización y ligereza siguen abiertos. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration351`.
+
+Histórico anterior:
+
 350 satisface las guardias integradas seleccionadas y reapertura visual entre cohortes de la nota348, sin ampliar permisos Linux ni modificar la APK. No acredita todas las funciones Markor, aislamiento/autorización completos, estabilidad, ligereza, instalación/actualización productiva o persistencia tras reboot/FBE. El cierre forzado348 sigue diferenciado del cierre normal pendiente: Android puede cerrar actividades conservando proceso; exigir evidencias de AMS/tareas/ciclo y reapertura, no muerte ficticia. ARM/GMS/DRM permanecen separados y abiertos. Fuente canónica: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.profile_coherence_experiment.integration350`.
 
 Histórico anterior:

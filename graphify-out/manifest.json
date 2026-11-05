@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793884615.4556615,
-    "seen": 1793885533.8041046,
-    "ast_hash": "8f265b2117e01a5f4a912000da543543",
+    "mtime": 1793885701.628511,
+    "seen": 1793886988.1171095,
+    "ast_hash": "4506fab466bd4e093c8dcccd0cf7d6da",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793884615.4480674,
-    "seen": 1793885533.80472,
-    "ast_hash": "f8bcaa2855f390a4b6d701bc367d9bca",
+    "mtime": 1793885701.618905,
+    "seen": 1793886988.1177995,
+    "ast_hash": "24f4a3332c6b783021da5a58b842a4c0",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793884615.4632401,
-    "seen": 1793885533.805793,
-    "ast_hash": "c90d8e620bd1fa31d683e46111bb786a",
+    "mtime": 1793885701.6382446,
+    "seen": 1793886988.1187792,
+    "ast_hash": "4b22b625ab0d96870094369aeba7404c",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -816,9 +816,9 @@
     "semantic_hash": ""
   },
   "docs/CONTRATO-APK.md": {
-    "mtime": 1793884615.4700053,
-    "seen": 1793885533.8044913,
-    "ast_hash": "34372dae5f25e964223b1e491577a458",
+    "mtime": 1793885701.6522605,
+    "seen": 1793886988.1175587,
+    "ast_hash": "350ff46d7ea60d56a156c7d8e004e149",
     "semantic_hash": ""
   },
   "runtime/apk/README.md": {
@@ -1716,9 +1716,9 @@
     "semantic_hash": ""
   },
   "docs/EVIDENCIAS.md": {
-    "mtime": 1793884615.4666166,
-    "seen": 1793885533.8049803,
-    "ast_hash": "99c813bcbf349e0533aa1ac5563509a8",
+    "mtime": 1793885756.6231658,
+    "seen": 1793886988.1179535,
+    "ast_hash": "8704024a1b20ff818a48fc5a352878c7",
     "semantic_hash": ""
   },
   "fixtures/aosp-framework-space/FrameworkSpaceProbe.java": {
@@ -2034,9 +2034,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/install-markor.sh": {
-    "mtime": 1793880725.5835795,
-    "seen": 1793880785.5200787,
-    "ast_hash": "b87a4736d9ef4cc80aac018f6b858bcd",
+    "mtime": 1793886043.4861774,
+    "seen": 1793886988.0960653,
+    "ast_hash": "23278e1f6208980acc5ab62590b9509a",
     "semantic_hash": ""
   },
   "scripts/run_completion.py": {

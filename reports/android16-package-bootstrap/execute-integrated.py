@@ -120,6 +120,32 @@ def verify_original_storage_metadata(native_stderr, worker_pid, expected_mode, d
  return {'verified':True,'observer_pid':int(worker_pid),'observer_context':'u:r:init:s0','enforcing':int(expected_mode),'namespace':'default','ce_device':device,'ce_inode':int(ce['ce_inode']),'hash_library':library,'files':observed,'scope':'Original init readonly post-service-close fixed metadata/hash witness; not permission semantics, FBE, isolation or general APK acceptance'}
 
 
+def verify_original_normal_back(workflow, token):
+ """Validate protected original observations, not the cause of foreground exit."""
+ assert 'capture_error' not in workflow,'Incomplete original workflow capture'
+ normal=workflow['normal_back'];assert normal['token']==token and re.fullmatch('[0-9a-f]{8}',token)
+ files=normal['files'];required={'activities-before.txt','activities-background.txt','activities-relaunched.txt','processes-before.txt','processes-background.txt','note-bytes.bin','note-before.txt','note-background.txt','note-relaunched.txt','relaunch.txt'}
+ assert set(files)==required,'Missing/extra normal Back evidence'
+ data={}
+ for name,row in files.items():
+  value=bytes.fromhex(row['bytes_hex'])
+  assert 0<len(value)<=1048576 and len(value)==row['size'] and hashlib.sha256(value).hexdigest()==row['sha256'],'Corrupt original evidence'
+  assert row['uid']==2000 and row['context']=='u:object_r:shell_data_file:s0','Wrong original evidence authority'
+  data[name]=value
+ resumed={}
+ for phase in ['before','background','relaunched']:
+  text=data['activities-'+phase+'.txt'].decode()
+  assert 'ACTIVITY MANAGER ACTIVITIES (dumpsys activity activities)' in text.splitlines(),'Missing AMS activities header'
+  assert not re.search('DUMP TIMEOUT|DUMP FAILED|Error dumping service|Permission Denial|Can.t find service',text),'Failed original AMS dump'
+  resumed[phase]=bool(re.search(r'^  ResumedActivity: ActivityRecord\{[^}\n]* u0 net[.]gsantner[.]markor/',text,re.M))
+ assert resumed=={'before':True,'background':False,'relaunched':True},'Original AMS foreground sequence mismatch'
+ expected=('archtv note '+token+'\n').encode();assert data['note-bytes.bin']==expected,'Wrong persisted note bytes'
+ note_sha=hashlib.sha256(expected).hexdigest();hash_line=(note_sha+'  /storage/emulated/0/Documents/markor/archtv-'+token+'.md\n').encode()
+ assert all(data['note-'+phase+'.txt']==hash_line for phase in ['before','background','relaunched']),'Original note hash changed'
+ assert 'Status: ok' in data['relaunch.txt'].decode().splitlines(),'Original relaunch not successful'
+ return {'verified':True,'resumed':resumed,'note_sha256':note_sha,'token':token,'scope':'Original AMS top-resumed sequence and unchanged original FUSE note hashes only; correlate physical input/lifecycle/crashes separately. Not task finish, process death, full app compatibility or isolation acceptance'}
+
+
 def verify_original_installed_hashes(text, installed_path, apk_sha):
  """Original shell hashes exact installed bytes; no Linux private-data grant."""
  rows=text.splitlines();assert len(rows)==2,'Missing/extra original installed hash rows'
@@ -504,7 +530,7 @@ root_code+="\nshutil.copyfile(Path("+repr(str(apk_path))+"),root/'data/local/tmp
 root_code+="""
 import hashlib
 shell_inputs=[]
-for relative in ['bin/install-markor.sh','etc/archtv-install-package','etc/archtv-media-test-name','etc/archtv-markor-workflow-token','etc/archtv-markor-workflow-budget']:
+for relative in ['bin/install-markor.sh','etc/archtv-install-package','etc/archtv-media-test-name','etc/archtv-markor-workflow-token','etc/archtv-markor-workflow-budget','etc/archtv-markor-normal-close-token','etc/archtv-markor-normal-close-budget']:
  source=root/'vendor'/relative
  if not source.exists():
   assert relative!='bin/install-markor.sh','Missing external installer payload'
@@ -674,13 +700,13 @@ if frame_source.is_file():
   frame_info.update(png_signature=pixels.startswith(bytes.fromhex('89504e470d0a1a0a')),sha256=hashlib.sha256(pixels).hexdigest())
 workflow={'scope':'Read-only actual note and original lifecycle outputs within one ephemeral cohort; not cross-cohort durability','token':None}
 try:
- token_path=Path('/vendor/etc/archtv-markor-workflow-token')
+ token_path=Path('/data/local/tmp/archtv-mc1/archtv-markor-workflow-token')
  if token_path.is_file():
   token=token_path.read_text().strip()
   assert len(token)==8 and all(c in '0123456789abcdef' for c in token)
   workflow['token']=token
   note=Path('/data/local/tmp/archtv-mc1/markor-note-bytes.bin')
-  workflow['note_source']='Original privileged system_server client cat of actual /data/media/0/Documents/markor/archtv-'+token+'.md before force-stop; evidence copy only'
+  workflow['note_source']='Original shell client cat through public FUSE /storage/emulated/0/Documents/markor/archtv-'+token+'.md before force-stop; evidence copy only'
   workflow['present']=note.is_file()
   if note.is_file():
    st=note.stat();assert st.st_size<=4096
@@ -691,6 +717,18 @@ try:
    if src.is_file():
     assert src.stat().st_size<=16384
     workflow[name]=src.read_text()
+ normal_token_path=Path('/data/local/tmp/archtv-mc1/archtv-markor-normal-close-token')
+ if normal_token_path.is_file():
+  normal_token=normal_token_path.read_text().strip()
+  assert len(normal_token)==8 and all(c in '0123456789abcdef' for c in normal_token)
+  workflow['normal_back']={'token':normal_token,'files':{},'scope':'Original AMS/hash observations after physical Back; no task-finish, process-death or general APK acceptance inferred'}
+  for name in ['activities-before.txt','activities-background.txt','activities-relaunched.txt','processes-before.txt','processes-background.txt','note-bytes.bin','note-before.txt','note-background.txt','note-relaunched.txt','relaunch.txt']:
+   src=Path('/data/local/tmp/archtv-mc1')/('markor-normal-'+name)
+   info=src.lstat();assert stat.S_ISREG(info.st_mode) and info.st_uid==2000 and not stat.S_IMODE(info.st_mode)&0o022 and 0<info.st_size<=1048576
+   context=os.getxattr(src,'security.selinux').rstrip(bytes([0])).decode()
+   assert context=='u:object_r:shell_data_file:s0'
+   data=src.read_bytes();assert len(data)==info.st_size
+   workflow['normal_back']['files'][name]={'bytes_hex':data.hex(),'sha256':hashlib.sha256(data).hexdigest(),'size':len(data),'uid':info.st_uid,'context':context}
 except Exception as error:
  workflow['capture_error']=repr(error)
 workflow_capture.write(json.dumps(workflow,indent=2)+'\\n');workflow_capture.flush();workflow_capture.close()
@@ -1149,7 +1187,9 @@ status_context_after="""    entry['status_bounded']=len(status)<=16384
     if after_return==0:lib.freecon(after)
 """
 text=text.replace(status_error_line,status_context_after+status_error_line,1)
-text=inspect.getsource(verify_original_fork_identities)+'\n'+inspect.getsource(verify_original_storage_metadata)+'\n'+inspect.getsource(verify_original_installed_hashes)+'\n'+text
+if build_options.get('markor_normal_close_token'):
+ text+="\nnormal_back_result=verify_original_normal_back(workflow,"+repr(build_options['markor_normal_close_token'])+")\nprint('MARKOR_NORMAL_ORIGINAL_OBSERVATIONS_VERIFIED '+json.dumps(normal_back_result),flush=True)\n"
+text=inspect.getsource(verify_original_fork_identities)+'\n'+inspect.getsource(verify_original_storage_metadata)+'\n'+inspect.getsource(verify_original_installed_hashes)+'\n'+inspect.getsource(verify_original_normal_back)+'\n'+text
 
 
 compile(text,'<integrated factory>','exec')
