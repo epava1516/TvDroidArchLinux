@@ -1,0 +1,15 @@
+{
+  "source_pin": "882e4a2102348cf7c320737d4e21b39c25d3a422",
+  "patch_sha256": "bf83d0bdefb3682b28de838f8bc015370608078f6c9bc8460c67221f8b1da2f1",
+  "files": [
+    {
+      "path": "CertUtils.cpp",
+      "original_sha256": "22147c2381a0f87429c9fd47017e2c18e0ad3728005ef8ab107c04c0eb794358",
+      "adapted_sha256": "da6059c7864c9a2a207add1e47e65f178b1a7ccb09b969b195e594d6a9793f4e"
+    }
+  ],
+  "reason": "Actual332 MAC crash and334 permissiveoriginaltombstone: X509_free\u2190d2i_X509\u2190d2i_X509_fp atodsign0x20f09. OriginalloadX509 passesaddress ofuninitializedrawCert; actualMCPdisassembly showsnoinitialization beforecall. Explicitnullptr suppliesempty existingobject, retainsoriginalcertificate/key comparison andcrypto.",
+  "runtime_evidence": "/home/tv/recuperacion-archtv/12d53b72-4bb6-4a52-a736-2dcc8edc1008-markor-software-launch/odsign-crash-traces.json",
+  "rea_evidence": "dist/aosp16/odsign-software-link-2/rea-x509-reopen.json",
+  "scope": "Sourcecorrection supportedbyruntime+static evidence; rerunMAC/persistedcache/tamper/boot-level/image/APK tests required. No falseverification orpermissionchange."
+}

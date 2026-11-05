@@ -556,11 +556,309 @@
           }
         },
         "functional_result": "/home/tv/recuperacion-archtv/dd3332a2-45fc-4432-8263-a3d57df1c32e-markor-software-launch/functional-result.json"
+      },
+      "actual_capacity_growth": {
+        "checkpoint": "/home/tv/recuperacion-archtv/20261105T074636Z-storage-capacity",
+        "root_reservation": {
+          "reserved_blocks": 524288,
+          "retained_emergency_bytes": 2147483648,
+          "available_bytes": 8601120768,
+          "filesystem_uuid": "4f479cd5-85ab-4806-931d-792e6f0c860c",
+          "features_unchanged": true,
+          "scope": "Actualspace nowavailable, not allocated/privateAPKspace yet",
+          "previous_reserved_blocks": 2608307,
+          "rollback": [
+            "sudo",
+            "tune2fs",
+            "-r",
+            "2608307",
+            "/dev/sda2"
+          ]
+        },
+        "volume": {
+          "metadata": {
+            "format": "archtv-experimental-userdata-v1",
+            "name": "art-verity331",
+            "storage_uuid": "4415a4ce-2170-4e75-90f1-e231afd594bb",
+            "backing": {
+              "kind": "preallocated-ext4-verity-v1",
+              "image": "/home/tv/.local/share/archtv/experimental-userdata/art-verity331/data.ext4",
+              "capacity": 1073741824,
+              "filesystem_uuid": "15d9c7b7-75ae-4b26-be05-2a7bd907988a"
+            }
+          },
+          "image_sha256": "246bbce9068b47ed261eede82ff5c3418fa3798e4405c851b854e6625be10e85",
+          "allocated_bytes": 1073745920,
+          "scope": "Actualpreallocated1GiB volume; preservedFSUUID andbackup. Original signature/key reuse stillneeds realreopen."
+        },
+        "evidence": {
+          "reserve-plan.json": "68aea868889a45ddfba16d57c782961985926db77b0d4e9f95a3d831baa302f9",
+          "reserve-after.json": "32497b84b9d12295aa7ee306911c0ca50b9da8fee487fc60fd495edf864a5805",
+          "volume-grow-before.json": "01daaae39836ca24b16f91f7f01e9c121b9c7d9f3a30e7301c4ef0cff333bfce",
+          "volume-grow-after.json": "507caa304698b63a1ede1282161bdbe137c4f08aba773831999c668bf427110b",
+          "volume-fsck-before.log": "a0c0c746e896182db0d05756dbe1454fbd40df0e86d76528c5de9792115d6d53",
+          "volume-resize.log": "a92ee1e7a6bda0e7c56c578e46cbaedc6acf8ba34c8e29360db9719fcd8b04e6"
+        },
+        "scope": "Actualspace allocation, notlowerAndroidchecks; retained2GiBhostemergencyreservation. Fullpreallocatedprivate1GiB, FSUUID/storageUUID retained, backedupoldimage. Signature/key reuse andPMSinstall stillrequire real332.",
+        "integration332": {
+          "checkpoint": "/home/tv/recuperacion-archtv/6d388173-f73d-46c7-9aac-97e9d1519f9f-markor-software-launch",
+          "state": "closed recovered consumed; originalodsignSIGABRT beforecacheverification",
+          "scope": "Same329payload/67, same331 persistedkeys/artifacts afterofflinegrow; noacceptance frommetadata/size.",
+          "result": {
+            "attempt": 332,
+            "scope": "Actual bounded-MAC negative, notverifiedcache/APK acceptance",
+            "existing_key_result": "Original odsign retrieves HMAC/signing keys; logs Verified public key signature and Initialized Keystore key. This is not cacheverification.",
+            "failure": "SIGABRT6 beforeodsign.key.done/cacheverification; no APKinstall orlaunch reached",
+            "trace_limits": "Originaltombstoned_crash_socket write denied aftersignal; crashlogpartial. Offline/tombstones empty andhostcoredumpctl info604861 foundnone. Causeunknown; do notassumeABI,resizecorruption orpolicycause.",
+            "recovery": {
+              "mode": "0",
+              "policy_sha256": "61a41267ee6de3afb412dce4c199243b3a6536b7d3c0bd6aefd6b422fa66d703",
+              "units": {
+                "archtv-host-owner-6d388173-f73d-46c7-9aac-97e9d1519f9f.service": {
+                  "ActiveState": "inactive",
+                  "MainPID": "0"
+                },
+                "archtv-package-runner-6d388173-f73d-46c7-9aac-97e9d1519f9f.service": {
+                  "ActiveState": "inactive",
+                  "MainPID": "0"
+                },
+                "archtv-markor-session-6d388173-f73d-46c7-9aac-97e9d1519f9f.service": {
+                  "ActiveState": "inactive",
+                  "MainPID": "0"
+                }
+              },
+              "clock": "tsc",
+              "pcm": "closed",
+              "udev_drop_absent": true,
+              "loops": "",
+              "dm": "No devices found",
+              "mixer_equal": true
+            },
+            "consumer": {
+              "id": "6d388173-f73d-46c7-9aac-97e9d1519f9f",
+              "state": "consumed",
+              "owner": "active:6d388173-f73d-46c7-9aac-97e9d1519f9f",
+              "consumed_by": "active:6d388173-f73d-46c7-9aac-97e9d1519f9f"
+            },
+            "evidence": {
+              "run.log": "c7f87a4272977a8ab8fdaceb25ed6bae799b216f25a0d6f7ee02dee2816f26bb",
+              "observed-original-logcat.txt": "6235960a5ad8697351d50183b06e94f2be3e4d042afe1281d0d5f9dabadbe40b",
+              "finite-audit/result.json": "952a5e95a29895769398fc96eda6242a32a123a57773f1650fe350a85e942ccd",
+              "backing-after.json": "1a7dd5fa615965cb1504fc52a2f05f7ac07eaf25cb21535783aaf43a03ff1df6",
+              "recovery-readback.json": "6d26588da051e68578d15e5a878de5c34bf25307f1b8d37c17678730ac7a67ff"
+            },
+            "next": "333 singlepermissive diagnostic, samepayload/data toobtainoriginalbacktrace; mustrerunMACafteractualfix"
+          },
+          "functional_result": "/home/tv/recuperacion-archtv/6d388173-f73d-46c7-9aac-97e9d1519f9f-markor-software-launch/functional-result.json"
+        },
+        "integration333": {
+          "checkpoint": "/home/tv/recuperacion-archtv/e840b7d8-9899-47cc-951a-054d3e77d98b-markor-software-launch",
+          "state": "refused_before_mount_and_runtime",
+          "scope": "Permissivebaseline0/67, MACwindowexplicit0. Samepayload andpersisteddata. Originaltombstonebacktraceonly, no MAC/cache/APKacceptance.",
+          "result": {
+            "attempt": 333,
+            "state": "refused_before_mount_and_runtime",
+            "failure": "Physicalallocationguard:1GiB logical image,1023414272 allocatedbytes.48MiB released since332; no nativeexperiment,runner orcompletionmanifest created.",
+            "observation": {
+              "size": 1073741824,
+              "allocated_bytes": 1023414272,
+              "metadata_capacity": 1073741824,
+              "active_loops": "",
+              "mount_active": false
+            },
+            "cause": "Nottraced. ActualLinuxloop canpunchholes forzeroout/discard; ext4lazyitable zeroout ispossibleaftergrowth. Do notclaimprovenfstrimcause.",
+            "next": "334 re-reservesofflinewithunchangedimageSHA, sameguard andsamepermissive diagnostic; continuousallocationlifecycle remainsopen."
+          }
+        },
+        "integration334": {
+          "checkpoint": "/home/tv/recuperacion-archtv/12d53b72-4bb6-4a52-a736-2dcc8edc1008-markor-software-launch",
+          "state": "closed recovered consumed; originaltombstone obtainedpermissiveonly",
+          "scope": "Same333 diagnostic, physicalallocationrestoredwithoutlogicalbytechange; no continuousreservation/MAC/crypto/APKacceptance.",
+          "result": {
+            "attempt": 334,
+            "scope": "Actual permissive-only diagnostic; not MAC/signature/cache/APK acceptance",
+            "trace": [
+              {
+                "source": "/home/tv/.local/share/archtv/experimental-userdata/art-verity331/data/tombstones/tombstone_00",
+                "source_sha256": "64fb0a308fd9eee02542d63f8d4bd0895c1abe7cdedfd117805fca88f767414f",
+                "lines": [
+                  "Cmdline: /system/bin/odsign",
+                  "pid: 464, tid: 464, name: odsign  >>> /system/bin/odsign <<<",
+                  "uid: 0",
+                  "signal 6 (SIGABRT), code -1 (SI_QUEUE), fault addr --------",
+                  "backtrace:",
+                  "      #00 pc 000000000006fce4  /apex/com.android.runtime/lib64/bionic/libc.so (abort+196) (BuildId: 3f8afd2a8485f380e843af6d787a9af4)",
+                  "      #01 pc 0000000000081b22  /system/lib64/libcrypto.so (X509_free+98) (BuildId: cb476a7572bf3a2b5478db17892c0b47)",
+                  "      #02 pc 000000000011240d  /system/lib64/libcrypto.so (d2i_X509+157) (BuildId: cb476a7572bf3a2b5478db17892c0b47)",
+                  "      #03 pc 00000000000817df  /system/lib64/libcrypto.so (d2i_X509_bio+79) (BuildId: cb476a7572bf3a2b5478db17892c0b47)",
+                  "      #04 pc 00000000001a5263  /system/lib64/libcrypto.so (d2i_X509_fp+35) (BuildId: cb476a7572bf3a2b5478db17892c0b47)",
+                  "      #05 pc 0000000000020f09  /system/bin/odsign (extractPublicKeyFromX509(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&)+89)",
+                  "      #06 pc 000000000001564c  /system/bin/odsign (main+2652)",
+                  "      #07 pc 0000000000064415  /apex/com.android.runtime/lib64/bionic/libc.so (__libc_init+117) (BuildId: 3f8afd2a8485f380e843af6d787a9af4)"
+                ],
+                "scope": "Original tombstone identity/abort/backtrace only; memory/register dumps not copied. Diagnostic permissive, no MAC/runtime acceptance."
+              }
+            ],
+            "rea_before": {
+              "evidence_id": "ev_155a5d502a124f59904c1d996097550eb11bb917c8a61341509e1c9e9fc24985",
+              "path": "dist/aosp16/odsign-software-link-2/rea-x509-reopen.json",
+              "scope": "Static originalfailingbinary disassembly; callsite0x20f05 return0x20f0a matchesruntimepc0x20f09, stackslot -0x1c0 uninitialized"
+            },
+            "inference": "SourceCertUtils.cpp rawCert uninitialized passed tod2i_X509_fp, whichfreesexisting*out. TombstoneX509_freeabort andcompileduninitializedslot supportnullinitcorrection; actualfix mustrerunMAC.",
+            "recovery": {
+              "mode": "0",
+              "policy_sha256": "61a41267ee6de3afb412dce4c199243b3a6536b7d3c0bd6aefd6b422fa66d703",
+              "units": {
+                "archtv-host-owner-12d53b72-4bb6-4a52-a736-2dcc8edc1008.service": {
+                  "ActiveState": "inactive",
+                  "MainPID": "0"
+                },
+                "archtv-package-runner-12d53b72-4bb6-4a52-a736-2dcc8edc1008.service": {
+                  "ActiveState": "inactive",
+                  "MainPID": "0"
+                },
+                "archtv-markor-session-12d53b72-4bb6-4a52-a736-2dcc8edc1008.service": {
+                  "ActiveState": "inactive",
+                  "MainPID": "0"
+                }
+              },
+              "clock": "tsc",
+              "pcm": "closed",
+              "udev_drop_absent": true,
+              "loops": "",
+              "dm": "No devices found",
+              "mixer_equal": true,
+              "data_image_allocation_after": 1073745920,
+              "data_image_capacity": 1073741824
+            },
+            "consumer": {
+              "id": "12d53b72-4bb6-4a52-a736-2dcc8edc1008",
+              "state": "consumed",
+              "owner": "active:12d53b72-4bb6-4a52-a736-2dcc8edc1008",
+              "consumed_by": "active:12d53b72-4bb6-4a52-a736-2dcc8edc1008"
+            }
+          },
+          "functional_result": "/home/tv/recuperacion-archtv/12d53b72-4bb6-4a52-a736-2dcc8edc1008-markor-software-launch/functional-result.json"
+        },
+        "allocation_limit": "332 imagepreallocatedatentry but48MiB deallocatedduringrun/growthlazyinit;333guardrefusedreuse. Kernelcause nottraced. Continuousreservedbackingunderzeroout/discard isnotyet aproductionguarantee."
       }
     },
     "historical_artifact_preservation": {
       "original_keystore_baseline": "/home/tv/.cache/archtv/keystore2-source-build-1/keystore2-original-baseline-preservation.json",
       "scope": "Historical neverexecutedbaseline losslesslycompressed andSHAchecked; softwarecandidates andcurrentpayload untouched. Restore exactbytes beforefutureinspection requiringrawpath."
+    },
+    "x509_reopen_correction": {
+      "patch": "runtime/aosp/android16-qpr2/patches/odsign-x509-initialization.patch",
+      "whole_build": "dist/aosp16/odsign-software-build-7/build.json",
+      "whole_link": "dist/aosp16/odsign-software-link-3/link.json",
+      "binary_sha256": "21a2e6c0921d3df542217135c7110ae99b4818c928d5160d232c9ba6e9ebba6f",
+      "rea_after": {
+        "id": "ev_c9ff2d089e285c3c75bfe61e6bb669101bf524d9550058b5ffcb2469a8fab7e1",
+        "path": "dist/aosp16/odsign-software-link-3/rea-x509-initialized.json",
+        "scope": "StaticMCP; movq0 to -0x1c0 befored2i_X509_fp. Not execution orcacheacceptance"
+      },
+      "integration336": {
+        "checkpoint": "/home/tv/recuperacion-archtv/8216f2cc-7bbf-4409-b102-c78cc2e19159-markor-software-launch",
+        "state": "closed recovered consumed; cacheverification/install/introobserved, identityguardfailed",
+        "scope": "Target intactMarkor on same331persisted1GiB store, MAC600/67. Frameworkimagecoherencestillopen.",
+        "functional_result": "/home/tv/recuperacion-archtv/8216f2cc-7bbf-4409-b102-c78cc2e19159-markor-software-launch/functional-result.json",
+        "result": {
+          "attempt": 336,
+          "payload_sha256": "a20ea8a711f8db8dba4d92e5561a5e912a9c4a0649f0e4964aa2eb253d330087",
+          "odsign_binary_sha256": "21a2e6c0921d3df542217135c7110ae99b4818c928d5160d232c9ba6e9ebba6f",
+          "scope": "Observed originalpersistedcertificate/cacheverification, intactMarkor install/launch/firstonboardingpixels withinboundedMAC. Not fullworkflow,coherentbootimages,R1isolation oroverallcohort pass.",
+          "crypto_observed": [
+            "ExistingHMAC/signingkeys retrieved",
+            "Existingpublickeysignatureverified",
+            "ExistingX509certificate verified afterexplicitnullptrfix",
+            "odsign.info.signature matches",
+            "Allfsverityroot hashes match",
+            "Originalodrefresh artifacts VALID"
+          ],
+          "markor": {
+            "apk_sha256": "c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440",
+            "bytes": 11861047,
+            "pms_install": "Success",
+            "installed_bytes_match_source": true,
+            "launch": "Status:ok, COLD, IntroActivity,4204ms",
+            "smithay_pixel_source": "/home/tv/recuperacion-archtv/8216f2cc-7bbf-4409-b102-c78cc2e19159-markor-software-launch/smithay-frame-7f0f69111db54602c3b6de648f45a1dcc2ae3e12c578d919994ebe6ab214c873.ppm",
+            "pixel_scope": "ActualIntroActivity tutorial page onRust/Smithay. Embeddedexamplefilelisting isnot actualnotebookdata. Black/dimlaterframes observedafterinactivity.",
+            "input": "Noevents executed. Commandsqueuedatwindowend; native senderrecordcommands/events empty, FDsclosed. No note/input/persistence acceptance.",
+            "main_function": "pending",
+            "close_reopen_note": "pending"
+          },
+          "mac_window": {
+            "seconds": 600,
+            "scope": "Global enforcing only after real factory preparation; original subsystems, not APK/MAC acceptance by exit0",
+            "activated": true,
+            "policy_readback_sha256": "61a41267ee6de3afb412dce4c199243b3a6536b7d3c0bd6aefd6b422fa66d703",
+            "started_monotonic": 86380.220791555,
+            "candidate_exit": 1,
+            "mode_at_candidate_exit": "1",
+            "elapsed_enforcing_attempt": 348.9398689810041,
+            "restored_enforce": "0",
+            "watchdog_cancelled_after_restore": true,
+            "watchdog_status": 15
+          },
+          "cohort": {
+            "native_exit": 0,
+            "outer_exit": 1,
+            "failure": "Final exactidentity-set assertion atfactory-materialized.py719; observations notpersistedbeforeassert. Mustretainfailure andcaptureactualset beforechanginganything; not securitypass."
+          },
+          "background_original_apps": "DeviceLockController andDynsystem crash dueabsentDeviceLock/DynamicSystem services. NotMarkor exceptions; assessminimaloriginalplatformpackageprofile, donotimplementunneededservicesorclaimallplatformservicesavailable.",
+          "remaining": [
+            "Framework/profile/imagechecksum mismatch stillopen",
+            "ActualfullMarkorUIinput/note/save/force-stop/newPID/reopen/persistence",
+            "Identityverifier actualset failure",
+            "Cryptographic tamper/wrongkey/boot-level negative tests",
+            "Continuousphysicalreservation underzeroout/discard",
+            "R1-MAC/isolation/stability/lightness/install/update/generalAPK/ARM/GMS/DRM"
+          ],
+          "recovery": {
+            "mode": "0",
+            "policy_sha256": "61a41267ee6de3afb412dce4c199243b3a6536b7d3c0bd6aefd6b422fa66d703",
+            "units": {
+              "archtv-host-owner-8216f2cc-7bbf-4409-b102-c78cc2e19159.service": {
+                "ActiveState": "inactive",
+                "MainPID": "0"
+              },
+              "archtv-package-runner-8216f2cc-7bbf-4409-b102-c78cc2e19159.service": {
+                "ActiveState": "inactive",
+                "MainPID": "0"
+              },
+              "archtv-markor-session-8216f2cc-7bbf-4409-b102-c78cc2e19159.service": {
+                "ActiveState": "inactive",
+                "MainPID": "0"
+              }
+            },
+            "clock": "tsc",
+            "pcm": "closed",
+            "udev_drop_absent": true,
+            "loops": "",
+            "dm": "No devices found",
+            "mixer_equal": true,
+            "data_image_allocation_after": 1073745920,
+            "data_image_capacity": 1073741824
+          },
+          "consumer": {
+            "id": "8216f2cc-7bbf-4409-b102-c78cc2e19159",
+            "state": "consumed",
+            "owner": "active:8216f2cc-7bbf-4409-b102-c78cc2e19159",
+            "consumed_by": "active:8216f2cc-7bbf-4409-b102-c78cc2e19159"
+          },
+          "evidence": {
+            "run.log": "ef610bcce40c494a0097102c1213a0bf59ef57c5459138c62f143d599a983a9b",
+            "observed-original-logcat.txt": "36ce6903f9c24dec226c6e8bef7ee10ca4909a7713641ec138c2c91b3f6e7916",
+            "observed-markor-installed-bytes.txt": "bb934824c63c4b899a619eb37944ddbe13422a8d1f9c978c3776ce47bf7ac12e",
+            "observed-markor-install.txt": "f854e3a14aea36253522b269c308f33d8a197a7fc90a46860f12e4c2ea1acbd2",
+            "observed-markor-launch.txt": "c705584bd9cc40c7dc8155f484aaaa88d8b88405bc41e0632d0446ce0dedea75",
+            "interaction-events.json": "aa993525af525db26cc3e657debf62205f74842e85172b16216fec6994cbbde7",
+            "mac-window.json": "ecd717508ca28b743f96d2b99acd6deddeeee99957504aa94b9fa88cfc75995b",
+            "backing-after.json": "1a7dd5fa615965cb1504fc52a2f05f7ac07eaf25cb21535783aaf43a03ff1df6",
+            "recovery-readback.json": "f66834e65c3ef99e0b5a8f460864be55be09fded7d03929c55611d06a23aafca"
+          }
+        }
+      }
     }
   }
 }

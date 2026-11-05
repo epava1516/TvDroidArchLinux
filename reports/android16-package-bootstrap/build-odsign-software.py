@@ -49,6 +49,15 @@ run(['patch', '--batch', '--fuzz=0', '-p1', '-d', source, '-i', patch])
 for item in meta['files']:
     assert sha(source / item['path']) == item['adapted_sha256']
 record['patch'] = meta
+correction = repo / 'runtime/aosp/android16-qpr2/patches/odsign-x509-initialization.patch'
+correction_meta = json.loads(correction.with_suffix('.json').read_text())
+assert sha(correction) == correction_meta['patch_sha256']
+for item in correction_meta['files']:
+    assert sha(source / item['path']) == item['original_sha256']
+run(['patch', '--batch', '--fuzz=0', '-p1', '-d', source, '-i', correction])
+for item in correction_meta['files']:
+    assert sha(source / item['path']) == item['adapted_sha256']
+record['source_corrections'] = [correction_meta]
 apis = [inputs / 'keystore2-aidl-original/source/system/hardware/interfaces/keystore2/aidl/aidl_api/android.system.keystore2/1',
         inputs / 'security-hal-original/source/hardware/interfaces/security/keymint/aidl/aidl_api/android.hardware.security.keymint/1',
         inputs / 'security-hal-original/source/hardware/interfaces/security/secureclock/aidl/aidl_api/android.hardware.security.secureclock/1']

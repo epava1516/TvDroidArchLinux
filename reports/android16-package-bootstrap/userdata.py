@@ -20,7 +20,7 @@ def mounted_verity_store(name, out, capacity=256 * 1024 * 1024):
     Existing directory stores are never migrated, adopted or overwritten.
     """
     assert os.geteuid() == 0 and re.fullmatch(r'[a-z0-9][a-z0-9_-]{0,47}', name)
-    assert capacity == 256 * 1024 * 1024  # Bounded initial integration, not a production size.
+    assert capacity in (256 * 1024 * 1024, 1024 * 1024 * 1024)  # Explicit experimental sizes, not production sizing.
     out = Path(out)
     assert not (out / 'backing-before.json').exists(), 'Execution already started'
     BASE.mkdir(parents=True, mode=0o700, exist_ok=True)

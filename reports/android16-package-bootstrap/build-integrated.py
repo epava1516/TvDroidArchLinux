@@ -24,7 +24,7 @@ tracked_inputs.append('reports/android16-audio-bootstrap/prepare-linux-profile.p
 tracked_inputs.extend(['reports/android16-audio-bootstrap/build-support.py','reports/android16-audio-bootstrap/link-effect.py'])
 tracked_inputs.extend(['reports/android16-audio-bootstrap/build-linux-primary.py','reports/android16-audio-bootstrap/link-linux-core.py','runtime/aosp/android16-qpr2/patches/audio-alsa-write-observation.patch','runtime/aosp/android16-qpr2/patches/audio-alsa-write-observation.json'])
 tracked_inputs.extend(['runtime/aosp/android16-qpr2/patches/audio-alsa-synchronous-pcm.patch','runtime/aosp/android16-qpr2/patches/audio-alsa-synchronous-pcm.json'])
-tracked_inputs.extend(['reports/android16-package-bootstrap/build-odsign-software.py','reports/android16-package-bootstrap/link-odsign-software.py','runtime/aosp/android16-qpr2/patches/odsign-explicit-software.patch','runtime/aosp/android16-qpr2/patches/odsign-explicit-software.json'])
+tracked_inputs.extend(['runtime/aosp/android16-qpr2/patches/odsign-x509-initialization.patch','runtime/aosp/android16-qpr2/patches/odsign-x509-initialization.json','reports/android16-package-bootstrap/build-odsign-software.py','reports/android16-package-bootstrap/link-odsign-software.py','runtime/aosp/android16-qpr2/patches/odsign-explicit-software.patch','runtime/aosp/android16-qpr2/patches/odsign-explicit-software.json'])
 tracked_inputs.extend(['reports/android16-package-bootstrap/build-keystore-boot-profile.py','runtime/aosp/android16-qpr2/patches/keystore2-software-boot-level.patch','runtime/aosp/android16-qpr2/patches/keystore2-software-boot-level.json'])
 source_hashes={n:hashlib.sha256((r/n).read_bytes()).hexdigest() for n in tracked_inputs}
 (out/'source-inputs.json').write_text(json.dumps(source_hashes,indent=2)+'\n')
@@ -400,9 +400,12 @@ if media_test is not None:
 (out/'install-package').write_text(apk_target['package']+'\n')
 vendor['files']['/vendor/etc/archtv-install-package']={'source':str(out/'install-package'),'context':'u:object_r:vendor_configs_file:s0','mode':0o444}
 if coherent_art:
- art_link=r/'dist/aosp16/odsign-software-link-2'
+ art_link=r/'dist/aosp16/odsign-software-link-3'
  art_record=json.loads((art_link/'link.json').read_text())
  assert art_record['status']=='linked_not_executed'
+ assert hashlib.sha256(Path(art_record['source_build']).read_bytes()).hexdigest()==art_record['source_build_sha256']
+ assert len(art_record['source_corrections'])==1
+ assert art_record['source_corrections'][0]['patch_sha256']==hashlib.sha256((r/'runtime/aosp/android16-qpr2/patches/odsign-x509-initialization.patch').read_bytes()).hexdigest()
  art_binary=Path(art_record['binary'])
  assert hashlib.sha256(art_binary.read_bytes()).hexdigest()==art_record['binary_sha256']
  for path,digest in art_record['inputs'].items():assert hashlib.sha256(Path(path).read_bytes()).hexdigest()==digest,path

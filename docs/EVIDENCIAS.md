@@ -1,5 +1,17 @@
 # Índice de evidencias
 
+336 ·reports/android16-audio-bootstrap/artd-subprocess-progress.json, x509_reopen_correction.integration336: hashes de log/CLI, APK fuente/instalada c105bf5cc9530f7486b984323a185c17086b459a56ec936a5990ceb8da3d8440, frame IntroActivity7f0f69111db54602c3b6de648f45a1dcc2ae3e12c578d919994ebe6ab214c873, MAC348,94s/mode1/restaurado0, identidad final fallida, input0eventos, recuperación y consumo. La traza334 permisiva y REA MCP antes/después siguen separados. La matriz conserva los workflows históricos como tales y apunta a336 como intento actual parcial.
+
+Índice histórico:
+
+Índice de capacidad/reapertura ·El registro canónico reports/android16-audio-bootstrap/artd-subprocess-progress.json contiene private_verity_data.actual_capacity_growth: plan/resultado de reserva raíz, backup/fsck/resize con hashes, negativa332, admisión rechazada333 y traza334. x509_reopen_correction enlaza build7/link3 y REA MCP antes/después (ev_155a5d502a124f59904c1d996097550eb11bb917c8a61341509e1c9e9fc24985 y ev_c9ff2d089e285c3c75bfe61e6bb669101bf524d9550058b5ffcb2469a8fab7e1). El binario corregido SHA21a2e6c0921d3df542217135c7110ae99b4818c928d5160d232c9ba6e9ebba6f es evidencia compilada/estática;336 debe aportar ejecución. Checkpoint de capacidad: /home/tv/recuperacion-archtv/20261105T074636Z-storage-capacity. Los artefactos de caché y recuperación son dependencias locales identificadas por hash.
+
+Evidencias históricas con su alcance:
+
+Vigente tras332 ·El volumen privado se amplió offline a1GiB físicamente reservado, con backup verificado y UUID/claves conservados; la raíz mantiene2GiB de reserva administrativa y sus features no cambiaron. Checkpoint/rollback: /home/tv/recuperacion-archtv/20261105T074636Z-storage-capacity.332 recupera claves existentes y verifica la firma de clave pública, pero odsign aborta SIGABRT antes de verificar caché; instalación/lanzamiento no alcanzados. Causa pendiente de backtrace, no atribuida a ABI, permisos o resize.333 es diagnóstico separado en el permisivo ya existente (sin ventana enforcing), para obtener traza original: ningún éxito suyo acredita MAC/compatibilidad. Tras corregir la causa: repetir reapertura bajo MAC, negativas de alteración/revocación y carga ART coherente; después recorrido completo Markor/VLC. Política67/R1 abierto, ARM/GMS/DRM separados. Evidencia canónica: reports/android16-audio-bootstrap/artd-subprocess-progress.json →private_verity_data.actual_capacity_growth.
+
+Histórico331:
+
 Vigente tras331 ·odsign original termina0 y firma sobre ext4 privado con fs-verity real y bloques4096. Misma imagen ejecutable329/política67;256MiB reservados físicamente, dispositivo de datos130 fuera del pool APEX0–89. El host owner desmontó y liberó el backing automáticamente; recuperación permisivo67/TSC/mixer/unidades/loops/dm/auditoría verificada y resultado consumido. Instalación VLC intacta falla por capacidad real (INSTALL_FAILED_INSUFFICIENT_STORAGE); lanzamiento no aceptado. Persistencia criptográfica, negativas y coherencia de imágenes siguen abiertas: el perfil original del framework aún difiere del DEX adaptado. Siguiente: capacidad real suficiente conservando el volumen/claves, verificación original tras reapertura y empaquetado ART coherente; no rebajar umbrales ni falsear free-space, perfiles o checksums.330 conserva la negativa EINVAL por bloque1024 y el fallo de consulta de cleanup, con recuperación exacta y volumen archivado sin pérdida. Evidencia: reports/android16-audio-bootstrap/artd-subprocess-progress.json →private_verity_data.
 
 Histórico329:

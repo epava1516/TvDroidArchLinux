@@ -32,7 +32,7 @@
       },
       "evidence_id": "ev_37c5a66b942f8e277c88500b2a15d430c2e523b672bf47fe74cf9c90638d164e",
       "full_evidence_id": "ev_746d40138a0f10e9c3202cd147e41d5efd4a7c58e81078c6109567a0bce77781",
-      "workflow": "Abrir fichero local, reproducir audio/vídeo, volver al shell y cerrar",
+      "workflow": "Abrir fichero local, reproducir audio/v\u00eddeo, volver al shell y cerrar",
       "runtime_results": {
         "installation": "approved",
         "launch": "blocked",
@@ -155,12 +155,12 @@
           "record_sha256": "e79f67db43e1fb647448faf64f9c0e45c518fb8ed9b7a1955c1f2a5071d73182",
           "section": "native_audio296",
           "accepted": true,
-          "scope": "Actual original full-screen sourceframes29→43/time2.417→3.583 under bounded enforcing64, intact VLC/Smithay; limited MPEG4Part2 clip. Cohort closed/recovered. No physical audio/realtime/AVsync/fullR1 acceptance."
+          "scope": "Actual original full-screen sourceframes29\u219243/time2.417\u21923.583 under bounded enforcing64, intact VLC/Smithay; limited MPEG4Part2 clip. Cohort closed/recovered. No physical audio/realtime/AVsync/fullR1 acceptance."
         },
         "video_control304": {
           "record": "/home/tv/recuperacion-archtv/429a62f4-0ff6-48ec-8009-634fe4b2bb3e-markor-software-launch/functional-result.json",
           "record_sha256": "e680357c7c36d83fab13c71cc2f9a444fe0ba394d8064651ba73f9a827105949",
-          "scope": "Actual software video counters5→32 on Smithay; successful proxy writes39/159744frames coexist with MonoPipe drops. No continuous/acoustic audio, timing, complete lifecycle or R1 acceptance."
+          "scope": "Actual software video counters5\u219232 on Smithay; successful proxy writes39/159744frames coexist with MonoPipe drops. No continuous/acoustic audio, timing, complete lifecycle or R1 acceptance."
         },
         "synchronous_pcm307": {
           "record": "/home/tv/recuperacion-archtv/e22360b9-f498-4042-a4ca-b0f87dd25a47-markor-software-launch/functional-result.json",
@@ -661,19 +661,31 @@
         }
       ],
       "latest_workflow_attempt": {
-        "candidate": 167,
-        "record": "../android16-package-bootstrap/persistent-userdata-functional.json",
+        "candidate": 336,
+        "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
+        "record_sha256": "d17f8c3db759b59123d67a71c875721f873b8798dd4c171d5f336e26d2714671",
+        "section": "coherent_cache_candidate.x509_reopen_correction.integration336",
         "native_exit": 0,
-        "outer_exit": 0,
-        "scope": "Exact Markorv164 Markdown note created163 survives complete cohort teardown and original subsystems167; actual bytes, same UID/inodes/MCS, original install/force-stop/relaunch and real single pointer opens editor.167 native/exterior0. Not host reboot/power loss, FBE/MAC, graceful close, arbitrary upgrade or general APK compatibility."
+        "outer_exit": 1,
+        "scope": "Observed originalpersistedcertificate/cacheverification, intactMarkor install/launch/firstonboardingpixels withinboundedMAC. Not fullworkflow,coherentbootimages,R1isolation oroverallcohort pass.",
+        "stages": {
+          "installation": "observed_intact_original_PMS",
+          "launch": "observed_IntroActivity",
+          "interface": "onboarding_pixels_observed",
+          "input": "not_executed",
+          "main_function": "pending",
+          "persistence": "pending",
+          "services": "partial_original_subsystems_only",
+          "close": "pending_app_lifecycle",
+          "reopen": "pending_app_lifecycle"
+        }
       },
       "runtime_security_observation": {
-        "candidate": 258,
-        "execution": 258,
-        "state": "controlled stop after real buffer boundary denial; no new APK stage accepted",
-        "evidence": "reports/android16-package-bootstrap/original-apex-derive-mac-progress.json",
-        "sha256": "8e9ef3ef41c82566dac0154cea8f81388063461e7c9aad30b17f9ceef0557db9",
-        "latest_result": "Fences/mapper pass; Rust generic Linux domain cannot receive HWC memfd. Own frontend succeeds standalone in permissive; actual original Markor transfer under MAC pending."
+        "candidate": 336,
+        "state": "MACwindowactivated1,349s,restored0; overallidentityguardfailed, R1open",
+        "evidence": "reports/android16-audio-bootstrap/artd-subprocess-progress.json",
+        "sha256": "d17f8c3db759b59123d67a71c875721f873b8798dd4c171d5f336e26d2714671",
+        "latest_result": "Actualstoredcert/cachechecks andMarkorPMS/introframe; notallidentitychecks, input/note, coherentbootimage, isolation orfullworkflow."
       },
       "runtime_security_observation_history": [
         {
@@ -939,6 +951,14 @@
           "evidence": "reports/android16-package-bootstrap/original-apex-derive-mac-progress.json",
           "sha256": "2db9cde21f7f46a8739d99adaed1b10004d334cd63bc7875062ddf9d320318be",
           "latest_result": "Actual original IntroActivity launched; SF onboarding screenshot inspected. Physical capture blank; HWC presents NO_RESOURCES before sleep. Input instrumentation failed safely, no input sent."
+        },
+        {
+          "candidate": 258,
+          "execution": 258,
+          "state": "controlled stop after real buffer boundary denial; no new APK stage accepted",
+          "evidence": "reports/android16-package-bootstrap/original-apex-derive-mac-progress.json",
+          "sha256": "8e9ef3ef41c82566dac0154cea8f81388063461e7c9aad30b17f9ceef0557db9",
+          "latest_result": "Fences/mapper pass; Rust generic Linux domain cannot receive HWC memfd. Own frontend succeeds standalone in permissive; actual original Markor transfer under MAC pending."
         }
       ],
       "runtime_security_history": [
@@ -1048,7 +1068,17 @@
           "scope": "Original force-stop PID1354 absent, cold newPID1757, same21-byte note hash and physical UI after reopen under policy60 enforcing; existing UI-created266 note. Not graceful close/full host MAC/general APK.",
           "section": "integrated270"
         }
-      }
+      },
+      "latest_workflow_attempt_history": [
+        {
+          "candidate": 167,
+          "record": "../android16-package-bootstrap/persistent-userdata-functional.json",
+          "native_exit": 0,
+          "outer_exit": 0,
+          "scope": "Exact Markorv164 Markdown note created163 survives complete cohort teardown and original subsystems167; actual bytes, same UID/inodes/MCS, original install/force-stop/relaunch and real single pointer opens editor.167 native/exterior0. Not host reboot/power loss, FBE/MAC, graceful close, arbitrary upgrade or general APK compatibility."
+        }
+      ],
+      "runtime_results_scope": "Historical exact162/167 workflows and255\u2013270 MAC stages retain their own evidence; not revalidated by336. Current profile trial is latest_workflow_attempt336; no generalAPK/security acceptance."
     }
   ],
   "uncovered": [
@@ -1343,7 +1373,7 @@
       "acceptance": "Fix real author-distributed APK/version/requirements; test nine-stage workflow without per-APK patches or privileged bypass"
     }
   ],
-  "base_review": "A16-QPR2-1 supersedes A/B/C selection: native Bionic primary; SF→Wayland first graphics hypothesis. Prior choice/experiments historical only.",
+  "base_review": "A16-QPR2-1 supersedes A/B/C selection: native Bionic primary; SF\u2192Wayland first graphics hypothesis. Prior choice/experiments historical only.",
   "base_component_observation": {
     "evidence": "reports/bionic-component/art-core-result.json",
     "linker_help_and_launcher_list_exit": 0,

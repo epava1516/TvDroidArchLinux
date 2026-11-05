@@ -24,6 +24,7 @@ for item in build['sources']:
 record = {'scope': 'Whole source-linked original odsign with explicit SOFTWARE selection; no execution, signing, image loading or APK acceptance',
           'source_build': str(source / 'build.json'), 'source_build_sha256': sha(source / 'build.json'),
           'all_seven_source_objects_verified': True, 'commands': [], 'source_profile': build['patch'],
+          'source_corrections': build.get('source_corrections', []),
           'source_build_state': build.get('status', 'legacy_missing_prelink_status'),
           'note': 'Reusing only all7 hash-recorded completed compilation artifacts, no failed compiler output. Linking and execution are separate.'}
 libs = repo / 'dist/aosp16/factory-inputs-3/root/system/lib64'

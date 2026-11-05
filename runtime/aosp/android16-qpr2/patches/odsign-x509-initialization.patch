@@ -1,0 +1,11 @@
+--- a/CertUtils.cpp
++++ b/CertUtils.cpp
+@@ -39,7 +39,7 @@
+ using android::base::Result;
+ 
+ static Result<bssl::UniquePtr<X509>> loadX509(const std::string& path) {
+-    X509* rawCert;
++    X509* rawCert = nullptr;
+     auto f = fopen(path.c_str(), "re");
+     if (f == nullptr) {
+         return Error() << "Failed to open " << path;

@@ -1,5 +1,17 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+Puerta siguiente tras336 ·Guardar valores de identidad antes de la misma comprobación, sin relajar el conjunto esperado; completar entrada real en IntroActivity, permiso de archivos, creación/guardado de nota, force-stop original y reapertura con bytes persistidos. Conservar la instalación/lanzamiento/primer frame336 como pruebas parciales y el fallo exterior como fallo. Priorizar después el conjunto coherente de imágenes/perfiles/framework y perfil mínimo de paquetes originales, no construir DynamicSystem/DeviceLock por efectos secundarios del inventario GSI. Mantener negativas de firma/revocación, reserva continua, R1 y requisitos de instalación/actualización/ligereza abiertos.
+
+Historia de puertas y resultados:
+
+Puerta vigente ·Comprobar que336 supera la reapertura del certificado/cache original bajo MAC con la inicialización X509 corregida. Si pasa, ejecutar la instalación/lanzamiento y recorrido físico de Markor sobre el volumen persistido. Esto no cierra ART: exigir imágenes/perfiles correspondientes al framework adaptado y carga sin fallback por checksum, además de negativas de alteración, clave y revocación. Validar reserva física a lo largo de crecimiento/zeroout/discard, instalación/actualización y recuperación. No mezclar el backtrace permisivo334 con autorización MAC ni los bytes disponibles con una instalación aceptada.
+
+Historia de prioridades y resultados:
+
+Vigente tras332 ·El volumen privado se amplió offline a1GiB físicamente reservado, con backup verificado y UUID/claves conservados; la raíz mantiene2GiB de reserva administrativa y sus features no cambiaron. Checkpoint/rollback: /home/tv/recuperacion-archtv/20261105T074636Z-storage-capacity.332 recupera claves existentes y verifica la firma de clave pública, pero odsign aborta SIGABRT antes de verificar caché; instalación/lanzamiento no alcanzados. Causa pendiente de backtrace, no atribuida a ABI, permisos o resize.333 es diagnóstico separado en el permisivo ya existente (sin ventana enforcing), para obtener traza original: ningún éxito suyo acredita MAC/compatibilidad. Tras corregir la causa: repetir reapertura bajo MAC, negativas de alteración/revocación y carga ART coherente; después recorrido completo Markor/VLC. Política67/R1 abierto, ARM/GMS/DRM separados. Evidencia canónica: reports/android16-audio-bootstrap/artd-subprocess-progress.json →private_verity_data.actual_capacity_growth.
+
+Histórico331:
+
 Vigente tras331 ·odsign original termina0 y firma sobre ext4 privado con fs-verity real y bloques4096. Misma imagen ejecutable329/política67;256MiB reservados físicamente, dispositivo de datos130 fuera del pool APEX0–89. El host owner desmontó y liberó el backing automáticamente; recuperación permisivo67/TSC/mixer/unidades/loops/dm/auditoría verificada y resultado consumido. Instalación VLC intacta falla por capacidad real (INSTALL_FAILED_INSUFFICIENT_STORAGE); lanzamiento no aceptado. Persistencia criptográfica, negativas y coherencia de imágenes siguen abiertas: el perfil original del framework aún difiere del DEX adaptado. Siguiente: capacidad real suficiente conservando el volumen/claves, verificación original tras reapertura y empaquetado ART coherente; no rebajar umbrales ni falsear free-space, perfiles o checksums.330 conserva la negativa EINVAL por bloque1024 y el fallo de consulta de cleanup, con recuperación exacta y volumen archivado sin pérdida. Evidencia: reports/android16-audio-bootstrap/artd-subprocess-progress.json →private_verity_data.
 
 Histórico329:
