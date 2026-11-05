@@ -1,5 +1,9 @@
 # Arquitectura vigente · A16-QPR2-1
 
+342 obtiene mapas y estado del propio system_server en SelectedRuntime existente, después de exigir SID real y UID 1000 del fork original. Sólo lee /proc/self/status y /proc/self/maps, con límites; publica ruta/inodo/dispositivo/permisos, nunca direcciones ni memoria. Se contrastaron los seis bootfiles con el volumen cerrado. El transporte original logd conservó 106 de 126 registros: prueba completa del subconjunto de seis archivos, no inventario íntegro del proceso. No hizo falta conceder permisos al observador Linux ni crear otra plataforma. Las credenciales originales (incluidos grupos/caps y NNP1) difieren de la antigua guardia pensada para otro lanzador.
+
+Histórico anterior:
+
 Candidato341: --coherent-art-images reutiliza el perfil producido por profman, enlaza su archivo RO y monta un directorio ISA vacío/RO únicamente sobre /system/framework/x86_64 de la fábrica privada. Los originales GSI/APEX permanecen intactos. La ausencia obliga a odrefresh a generar primario/mainline/system-server en /data; odsign original los firma. No hay fingerprints, inventario, checksums ni readiness inventados. La siguiente verificación debe capturar mapas reales desde el propio system_server y reapertura criptográfica original; el funcionamiento de Markor por sí solo no identifica cada imagen cargada.
 
 Histórico anterior:
@@ -84,7 +88,7 @@ Histórico ·280 prueba importación/publicación MediaStore original con420785 
 
 Vigente · El siguiente experimento y sus límites se mantienen en [Estado](ESTADO.md); resultados funcionales, hashes y alcance en el [registro de integración](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json). Los experimentos anteriores se conservan como históricos. La compatibilidad APK completa, R1-MAC, ARM/GMS/DRM y los requisitos de producto permanecen abiertos.
 
-Decisión vigente de la frontera gráfica: el compositor Linux tendrá identidad propia y ejecutable root-owned, UID1000/NNP1/capacidades cero; el lanzador privilegiado será otro proceso. La fábrica validará SO_PEERCRED/SO_PEERSEC, ejecutable/hash, padre y cgroup reales. Sólo esa identidad recibe los memfd del HWC; Linux.init_t sigue denegado. Se reutilizan los contratos Linux logind/sysctl y el tipo original de memfd del HWC. Las fences y el callback Wayland siguen siendo obligatorios. La identidad standalone en permisivo no acredita recepción de buffers, presentación ni aislamiento. Los detalles y hashes están en el registro de integración258 y compositor_domain_progress.
+Decisión vigente de la frontera gráfica: el compositor Linux tendrá identidad propia y ejecutable root-owned, UID 1000/NNP1/capacidades cero; el lanzador privilegiado será otro proceso. La fábrica validará SO_PEERCRED/SO_PEERSEC, ejecutable/hash, padre y cgroup reales. Sólo esa identidad recibe los memfd del HWC; Linux.init_t sigue denegado. Se reutilizan los contratos Linux logind/sysctl y el tipo original de memfd del HWC. Las fences y el callback Wayland siguen siendo obligatorios. La identidad standalone en permisivo no acredita recepción de buffers, presentación ni aislamiento. Los detalles y hashes están en el registro de integración258 y compositor_domain_progress.
 
 Canal de entrada: el adaptador conserva InputManager y WAIT_FOR_FINISH originales. Sólo el LocalServerSocket dedicado recibe archtv_input_channel mediante el atributo sockcreate del hilo, restaurado después del constructor original; no cambia la identidad de system_server. HWC comprueba UID/SO_PEERSEC del endpoint y el servidor comprueba el HWC original. HWC→sockets genéricos de system_server continúa prohibido.262 prueba páginas reales de Markor con puntero bajo enforcing; quince decisiones de política son evidencia separada y no sustituyen rechazo/entrega en ejecución. Teclado de texto, nota y ciclo completo siguen pendientes.
 
@@ -96,13 +100,13 @@ Histórico252 · Servicios multimedia originales integrados. La traza250 identif
 
 Histórico248 · El cliente original confirma RUNNING_UNLOCKED; los forks originales superan el bloqueo tmpfs y MediaProvider aparece con UID10078/contexto propio ante servicemanager. No prueba aislamiento completo. Faltan media.player/media.resource_manager: MediaProvider espera el segundo; la fuente original los publica juntos desde mediaserver64. System_server sufre SIGSEGV(Thread<00>), sin core/stack suficiente; causa exacta abierta. Volumen e instalación Markor aún sin aceptar. Siguiente: integrar servidor multimedia/extractor/métricas originales y recogida original del fallo para verificar volumen y PackageInstaller.48 cargada;121 decisiones y límites documentados, anfitrión restaurado/permisivo y cerrado, auditoría sin pérdidas. R1-MAC, presentación/audio, ARM/GMS/DRM abiertos. [Evidencia canónica](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json).
 
-Histórico234 · Primer fork original de system_server alcanza hijo UID1000 bajo MAC; aborta en selinux_android_setcontext antes del orquestador Java: Zygote necesita el contrato original de libselinux sobre enforce/context reales con etiqueta Linux.security_t. Se conserva denegada la entrada directa init→system_server. Framework original adaptado sólo en el destino de forkSystemServer; comparados54.525 métodos del DEX afectado, una diferencia de instrucción y otros DEX intactos; esto no acredita ejecución Java. Restorecon original recursive/skipCE permite avanzar a installd;42 habilita su statusRO real, sin escritura/administración, diez decisiones verificadas. PerfilLinuxAPK usa frontendRust y omite sólo bootanimationAndroid; su SIGSEGV sigue abierto en prueba gráfica específica y Markor aún debe probar gráficos reales. Datos232 nuevos/sin APKsembrada, almacén163 preservado. Perfil26módulos instalado tras autorización específica; arranque futuro pendiente. Anfitrión AOSP/permisivo42/load2, auditoría0/lost0 y sin recursos propios después de cierre. Siguiente: adaptar contrato libselinux completo de dominios seleccionados según política original, forkJava/Installer/display y Markor completo. R1-MAC, ARM/GMS/DRM y todas las etapas APK bajo MAC abiertos. [Evidencias](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json).
+Histórico234 · Primer fork original de system_server alcanza hijo UID 1000 bajo MAC; aborta en selinux_android_setcontext antes del orquestador Java: Zygote necesita el contrato original de libselinux sobre enforce/context reales con etiqueta Linux.security_t. Se conserva denegada la entrada directa init→system_server. Framework original adaptado sólo en el destino de forkSystemServer; comparados54.525 métodos del DEX afectado, una diferencia de instrucción y otros DEX intactos; esto no acredita ejecución Java. Restorecon original recursive/skipCE permite avanzar a installd;42 habilita su statusRO real, sin escritura/administración, diez decisiones verificadas. PerfilLinuxAPK usa frontendRust y omite sólo bootanimationAndroid; su SIGSEGV sigue abierto en prueba gráfica específica y Markor aún debe probar gráficos reales. Datos232 nuevos/sin APKsembrada, almacén163 preservado. Perfil26módulos instalado tras autorización específica; arranque futuro pendiente. Anfitrión AOSP/permisivo42/load2, auditoría0/lost0 y sin recursos propios después de cierre. Siguiente: adaptar contrato libselinux completo de dominios seleccionados según política original, forkJava/Installer/display y Markor completo. R1-MAC, ARM/GMS/DRM y todas las etapas APK bajo MAC abiertos. [Evidencias](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json).
 
 Histórico231 · Kernel AOSP6.18.59 restaurado, booted605c8c-db9e-4ce1-8c57-d383f08d3694; política41/hash verificado, permisivo/load1 tras cierre. Módulos Netfilter/XFRM cargados por Linux permiten avanzar a netd; pasa guardia ABI single64 y Start original de Zygote, sin acreditar socket/Java/APK. Bloqueos: SelectedServices127 por transición NNP directa init→system_server denegada; installd1 por layout_version y user0 con etiquetas linux.unlabeled_t. Siguiente: fork y hooks originales de Zygote/system_server y orden restorecon original, sin ampliar permisos a unlabeled ni entrada directa. Perfil26 módulos verificado sólo candidato: instalación persistente rechazada por revisión automática; cargas temporales vigentes. Auditoría0/lost0, sin procesos/loops/DM/BPF propios tras cierre. R1-MAC, ARM/GMS/DRM y todas las etapas APK bajo MAC abiertos. [Evidencias](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json).
 
 Histórico227 · Perfil de propiedades de sistema corregido: ABI single64 y configuración software usan system_ext/etc/build.prop original como base y alias privado RO; se conserva cargador original, política y guardia ABI.225 falló antes de MAC por orden de montaje, corregido.226 activó enforcing9,65s y bootanimation terminó SIGSEGV antes de Zygote: no se acredita paso de la guardia ABI ni ejecución APK.227 compilado, sin prueba MAC: el anfitrión actual es7.2.11-arch1-1, bootf445a28c-5c09-4893-98e8-4f2214a928cf, sin SELinux disponible; controlador abortó antes de la cohorte, auditoría restaurada0 sin pérdidas. Política41/load37 y kernelAOSP son históricos. Siguiente: checkpoint y arranque único del kernel separado autorizado, verificar estado real y política, después perfil227/diagnóstico original de bootanimation y Zygote hacia Markor completo. R1-MAC, ARM/GMS/DRM y producto abiertos. [Evidencias](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json).
 
-Histórico224 · [PSI y cliente LMKD originales bajo MAC](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): monitores PSI se registran y reinicializan; cliente original lmkd --reinit UID1000 recibe respuesta válida/exit0 y daemon sigue vivo tras ella. Sólo se adapta el directorio padre, conservando permisos originales de archivos. SysRq real queda en alias privado RO; apertura de escritura devuelve EROFS y montaje/metadatos del anfitrión no cambian. No orden SysRq emitida. Bloqueo siguiente: ABI en vendor es rechazada correctamente; GSI conserva x86_64,x86 frente al Zygote único64. Corregir el perfil de propiedades mediante fuente system original autorizada, después Zygote/system_server original y Markor completo. Presión/elección de víctimas/cgroupv2, identidad completa, píxeles y APK bajo MAC aún no aceptados. Política41/policyload37, anfitrión permisivo y recursos cerrados/nota previa intacta. R1-MAC y ARM/GMS/DRM abiertos.
+Histórico224 · [PSI y cliente LMKD originales bajo MAC](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): monitores PSI se registran y reinicializan; cliente original lmkd --reinit UID 1000 recibe respuesta válida/exit0 y daemon sigue vivo tras ella. Sólo se adapta el directorio padre, conservando permisos originales de archivos. SysRq real queda en alias privado RO; apertura de escritura devuelve EROFS y montaje/metadatos del anfitrión no cambian. No orden SysRq emitida. Bloqueo siguiente: ABI en vendor es rechazada correctamente; GSI conserva x86_64,x86 frente al Zygote único64. Corregir el perfil de propiedades mediante fuente system original autorizada, después Zygote/system_server original y Markor completo. Presión/elección de víctimas/cgroupv2, identidad completa, píxeles y APK bajo MAC aún no aceptados. Política41/policyload37, anfitrión permisivo y recursos cerrados/nota previa intacta. R1-MAC y ARM/GMS/DRM abiertos.
 
 Histórico179 · [integración original de aconfig e init_user0](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json): reemplazado el shell UID0/SID shell y sus capturas por el builtin AOSP, que crea VDC con su transición y callback de fallo originales. El coordinador sólo observa el reap real antes de avanzar. VDC llega a vold, falla25 en la transición NNP de vold_prepare_subdirs; no se omite. Early-system/mainline0 son inicializadores, no disponibilidad de sockets ni todas las flags. La verificación APEX posterior al cierre se distingue de disponibilidad en vivo. Preparación/limpieza externas permisivas y R1-MAC abierto.
 
@@ -134,7 +138,7 @@ Propiedades132: el servicio original conserva CheckPermissions y credenciales de
 
 Contrato de ciclo LockSettings: la fase600 no sustituye la llamada explícita original `LockSettingsInternal.onThirdPartyAppsStarted()` posterior a AMS.systemReady (SystemServer fijado45034f, línea3590). El subsistema original debe crear la contraseña sintética y claves vinculadas; nuestro coordinador no asigna flags ni secretos.126/127 prueban que systemReady/fase480 solos no bastan. [Evidencia y límites](../reports/android16-package-bootstrap/gatekeeper-platform-progress.json).
 
-Histórico · Avance de plataforma 2026-11-03 · [GateKeeper original122](../reports/android16-package-bootstrap/gatekeeper-platform-progress.json): el cliente original IGateKeeperService responde getSecureUserId(0)=0 a UID1000; es consulta de usuario sin credencial, no autenticación ni desbloqueo. GateKeeper/SharedSecret, Keystore/JCA y PMS ejecutan juntos; Markor se instala intacta por SHA256. El heap real pasa de128 a512MiB mediante propiedades privadas y VMRuntime.clearGrowthLimit original; se supera el OOM16MiB. La captura125 muestra runStartUser esperando su ProgressWaiter, con loopers principal/AMS/display en sondeo. Las fuentes revelan una omisión de ciclo: LockSettings.systemReady y fase480 antes de500. Integrar ambos pasos originales y contrastar su efecto; no se da por demostrada la causa sólo por inspección. SELinux permisivo/policyload4; R1-MAC abierto, sin nueva etapa de lanzamiento/UI/entrada/persistencia.
+Histórico · Avance de plataforma 2026-11-03 · [GateKeeper original122](../reports/android16-package-bootstrap/gatekeeper-platform-progress.json): el cliente original IGateKeeperService responde getSecureUserId(0)=0 a UID 1000; es consulta de usuario sin credencial, no autenticación ni desbloqueo. GateKeeper/SharedSecret, Keystore/JCA y PMS ejecutan juntos; Markor se instala intacta por SHA256. El heap real pasa de128 a512MiB mediante propiedades privadas y VMRuntime.clearGrowthLimit original; se supera el OOM16MiB. La captura125 muestra runStartUser esperando su ProgressWaiter, con loopers principal/AMS/display en sondeo. Las fuentes revelan una omisión de ciclo: LockSettings.systemReady y fase480 antes de500. Integrar ambos pasos originales y contrastar su efecto; no se da por demostrada la causa sólo por inspección. SELinux permisivo/policyload4; R1-MAC abierto, sin nueva etapa de lanzamiento/UI/entrada/persistencia.
 
 Decisión de integración GateKeeper · reutilizar el servicio C++ AOSP no seguro completo (GateKeeper, SharedSecret y scrypt originales), sus interfaces congeladas GateKeeper V1/KeyMint V4 y bibliotecas Bionic del GSI. El RC conserva UID/grupo originales; sólo se adapta la entrada desde vendor APEX a un alias privado Linux. Se copian VINTF y contexto de SharedSecret/gatekeeper originales; no se inventa un módulo APEX ni se cambia el inventario41 del sistema. La política compone hal_gatekeeper_default.te y las reglas originales Cuttlefish de cliente Keystore/logging, con neverallow activo. La carga global sigue en permisivo; recuperación: /home/tv/recuperacion-archtv/20261103T045223Z-gatekeeper-policy/RETOMAR.txt. Linux/glibc libselinux se limita al coordinador/etiquetado/carga; los servicios usan sus bibliotecas Bionic originales en otros procesos.
 
@@ -179,7 +183,7 @@ Histórico 2026-11-02 · [ART/dex2oat y supervisión originales](../reports/andr
 Histórico 2026-11-02 · [artd original bajo demanda](../reports/android16-package-bootstrap/artd-lazy-progress.json): la petición real de servicemanager pasa por la cola/handler originales y registra artd; UID/GID1082, dominio artd, capacidades0xf y NNP1 comprobados. El servicio privilegiado no seleccionado artd_pre_reboot es rechazado y permanece detenido. Markor devuelve Success en install-commit, pero el RPC dexopt devuelve el error real «Unable to get Zygote kinds» y un fallo asíncrono del controlador de roles por SupervisionManager ausente mata el proceso antes de comprobar ruta/firma/lanzamiento. No se acepta una etapa APK nueva. Siguiente: integrar SupervisionService original en su orden y el contrato real ro.zygote; después ciclo AMS/perfil Linux y recorrido completo. Cierre interno incompleto; limpieza exterior BPF/loops/dm y anfitrión sin unidades propias verificados. R1-MAC permisivo y ARM/GMS/DRM abiertos.
 
 
-Histórico 2026-11-02 · [AlarmManager nativo admitido; instalación esperando artd](../reports/android16-package-bootstrap/alarm-native-progress.json): la capacidad WAKE_ALARM original permite inicializar los temporizadores; la pila muestra AlarmThread en `waitForAlarm` nativo. UID1000/system_server, grupos originales, máscara0x1800800000 y NNP1 comprobados; SYS_TIME ausente. No prueba despertar de suspensión ni autorización MAC. Markor crea sesión/transfiere el APK, pero el commit espera artd: `ctl.interface_start=aidl/artd` es rechazado0x20 por el guard del coordinador sin backend de control. Siguiente: admitir explícitamente ese servicio original y procesar su arranque bajo demanda con la cola/handlers originales; después ciclo AMS y recorrido Markor completo. Ninguna etapa APK nueva; R1-MAC, audio físico/latencia y ARM/GMS/DRM abiertos.
+Histórico 2026-11-02 · [AlarmManager nativo admitido; instalación esperando artd](../reports/android16-package-bootstrap/alarm-native-progress.json): la capacidad WAKE_ALARM original permite inicializar los temporizadores; la pila muestra AlarmThread en `waitForAlarm` nativo. UID 1000/system_server, grupos originales, máscara0x1800800000 y NNP1 comprobados; SYS_TIME ausente. No prueba despertar de suspensión ni autorización MAC. Markor crea sesión/transfiere el APK, pero el commit espera artd: `ctl.interface_start=aidl/artd` es rechazado0x20 por el guard del coordinador sin backend de control. Siguiente: admitir explícitamente ese servicio original y procesar su arranque bajo demanda con la cola/handlers originales; después ciclo AMS y recorrido Markor completo. Ninguna etapa APK nueva; R1-MAC, audio físico/latencia y ARM/GMS/DRM abiertos.
 
 
 Histórico 2026-11-02 · [Recuperación original de audio y bloqueo timerfd](../reports/android16-package-bootstrap/audio-recovery-progress.json): AudioService/MediaSession regresan y alcanzan fase550 sin backend nativo; esto permite avanzar al editor, sin aceptar reproducción física. Markor crea sesión y transfiere11861047 bytes, pero la instalación se interrumpe. Bloqueo probado: `timerfd_create(8)` devuelve EPERM; AlarmManager usa su fallback de Handler y falla con un PendingIntent nulo de una alarma con listener. El proceso carece de WAKE_ALARM, presente en ZygoteInit original. Próximo: admisión original de temporizadores y AlarmThread; después ciclo AMS completo con perfil Linux comprobado, instalación/lanzamiento/UI/entrada/nota/cierre/reapertura. Backend audio, latencia, R1-MAC, ARM/GMS/DRM siguen abiertos.
@@ -211,9 +215,9 @@ Actualización 2026-11-02 · IHealth original: [evidencia](../reports/android16-
 
 ## Experimental · ciclo de almacenamiento e instalación Linux
 
-[Decisión y fallo original de escritura](../reports/android16-package-bootstrap/markor-session-write-negative.json). La CLI combinada `install` exige `sys.boot_completed`; se conservó su rechazo. Las sesiones originales create/write/commit conservan sus controles de UID, permisos, usuario y firma. El coordinador Linux despacha el callback original del subsistema StorageManager cuando sus dependencias originales están presentes; no declara una fase global Android. El cliente de instalación se ordena después del callback y usa UID1000/paquete android, ámbito de administrador de esta cohorte. La consulta independiente por shell y la comparación de bytes son obligatorias; ni crear sesión ni abandonar una fallida acredita instalación. La coherencia de otros ciclos y la admisión MAC siguen abiertas.
+[Decisión y fallo original de escritura](../reports/android16-package-bootstrap/markor-session-write-negative.json). La CLI combinada `install` exige `sys.boot_completed`; se conservó su rechazo. Las sesiones originales create/write/commit conservan sus controles de UID, permisos, usuario y firma. El coordinador Linux despacha el callback original del subsistema StorageManager cuando sus dependencias originales están presentes; no declara una fase global Android. El cliente de instalación se ordena después del callback y usa UID 1000/paquete android, ámbito de administrador de esta cohorte. La consulta independiente por shell y la comparación de bytes son obligatorias; ni crear sesión ni abandonar una fallida acredita instalación. La coherencia de otros ciclos y la admisión MAC siguen abiertas.
 
-[Almacenamiento original: usuario0 y archivos de permisos](../reports/android16-package-bootstrap/storage-functional.json). `vold`, `vdc init_user0`, `vold_prepare_subdirs` y `perform_apex_config` originales integrados con APEX/PMS/Display. Bind CE comprobado por mountinfo/inodos; tres archivos reales de permisos con UID1000/modo0600/etiquetas/hashes. Cierre y dispositivos limpios. **Tmpfs privado, sin reapertura/FBE/fs-verity/MAC aceptados**; la persistencia entre sesiones sigue abierta. Próximo: instalación Markor intacta por PMS original y verificación de resultado/firma/bytes, luego lanzamiento/UI/entrada/nota/cierre/reapertura.
+[Almacenamiento original: usuario0 y archivos de permisos](../reports/android16-package-bootstrap/storage-functional.json). `vold`, `vdc init_user0`, `vold_prepare_subdirs` y `perform_apex_config` originales integrados con APEX/PMS/Display. Bind CE comprobado por mountinfo/inodos; tres archivos reales de permisos con UID 1000/modo0600/etiquetas/hashes. Cierre y dispositivos limpios. **Tmpfs privado, sin reapertura/FBE/fs-verity/MAC aceptados**; la persistencia entre sesiones sigue abierta. Próximo: instalación Markor intacta por PMS original y verificación de resultado/firma/bytes, luego lanzamiento/UI/entrada/nota/cierre/reapertura.
 
 [PMS original: listado funcional en cohorte integrada](../reports/android16-package-bootstrap/integrated-functional.json). APEX41, classpath/init original, ART initializer/AccessChecking/AMS/ATMS/DomainVerification/PMS, Display0 e Installer se ejecutaron juntos; PMS.main retornó y el cliente original listó paquetes. Identidades/capacidades/NNP y cierre comprobados. Persisten errores reales de datos de aplicaciones y permisos: resolver almacenamiento/ciclo original antes de instalación Markor. Ninguna etapa APK aceptada; R1-MAC abierto.
 
@@ -242,7 +246,7 @@ Siguiente: preservar/revalidar caché original de descompresión y resolver su c
 El supervisor Linux conserva glibc y entrada ELF `/archtv/lib/ld-linux-x86-64.so.2`; los servicios Android conservan Bionic/APEX originales. El empaquetador verifica el intérprete y registra hashes. No se enruta ELF glibc por el enlazador Bionic. Inicio45s, observación30s, cierre10s y sesión DRM95s siguen acotados. La propiedad original `service.sf.prime_shader_cache=false` evita precalentamiento opcional sobre SwiftShader; el renderizado real bajo demanda sigue siendo obligatorio. Las pilas nativas y Java justifican la decisión, sin atribuir un deadlock al mero agotamiento del plazo.
 
 
-[Installer/installd originales integrados](../reports/android16-package-bootstrap/installer-functional.json): registro consultado por cliente original y `Installer.invalidateMounts` por Binder completado bajo UID1000; daemon original UID0, SID/capacidades/NNP observados, cierre nativo y externo0 y [anfitrión limpio](../reports/android16-package-bootstrap/host-post.json). Se restauró la exportación original `ASEC_MOUNTPOINT` con directorio privado real y se corrigió una muestra de registro prematura. No se acredita instalación, datos de APK, FBE, cuotas ni volúmenes ASEC. La cohorte está cerrada, no hay servicios de runtime activos acreditados.
+[Installer/installd originales integrados](../reports/android16-package-bootstrap/installer-functional.json): registro consultado por cliente original y `Installer.invalidateMounts` por Binder completado bajo UID 1000; daemon original UID0, SID/capacidades/NNP observados, cierre nativo y externo0 y [anfitrión limpio](../reports/android16-package-bootstrap/host-post.json). Se restauró la exportación original `ASEC_MOUNTPOINT` con directorio privado real y se corrigió una muestra de registro prematura. No se acredita instalación, datos de APK, FBE, cuotas ni volúmenes ASEC. La cohorte está cerrada, no hay servicios de runtime activos acreditados.
 
 Siguiente: bootstrap original de paquetes/permisos/actividad como conjunto; ART manager y AccessChecking, AMS/ATMS, DomainVerification/PMS y sus pares originales. Las fuentes de ApexManager esperan `apexservice`: integrar/evaluar apexd original con su activación e inventario auténticos antes de declarar el cierre de paquetes. No falsear inventario, permisos ni disponibilidad y no arrancar SystemServer/Android completos. Este requisito procede del código; su integración todavía no está ejecutada.
 
@@ -465,7 +469,7 @@ o entrada kernel explícita, sin asignar contextos ni cargar política ahora.
 | --- | --- | --- |
 | Dominio coordinador | Elegir sujeto Linux de lanzamiento real; contexto original Android de supervisión, usuario/rol/tipo/MLS, entrada exec explícita y denegación de rutas alternativas | Cálculos originales conservados; entrada ausente en perfil base. Prototipo de rol exclusivo/exec explícito pasa consultas offline; bootstrap anfitrión pendiente |
 | Etiquetas | Contextos originales de ejecutables/APEX/datos/propiedades/servicios y pseudoarchivos Linux; verificar contexto efectivo y transición, no sólo ficheros de reglas | getfilecon del servicemanager GSI devuelve ENODATA; no se aplicaron etiquetas |
-| Identidades | AID Android vs UID/GID anfitrión, rangos reservados, supplementary groups, mapeo Binder y control positivo/negativo entre usuarios | UID10000/caps0 probado sólo en sondas; Android1000 no debe dar acceso al usuario Linux1000 |
+| Identidades | AID Android vs UID/GID anfitrión, rangos reservados, supplementary groups, mapeo Binder y control positivo/negativo entre usuarios | UID 10000/caps0 probado sólo en sondas; Android1000 no debe dar acceso al usuario Linux1000 |
 | Binder/HIDL | Dispositivos/contextos privados, contenido SID real, transacciones entre UID, registro/descubrimiento/callback/muerte y denegaciones originales | Sonda misma UID con BR_TRANSACTION_SEC_CTX/respuesta0; gestores e identidad MAC no aceptados |
 | Propiedades/libselinux | Área y etiquetas originales; leer status genuino y permitir sólo transacciones necesarias de access/create/context; denegar administración a apps/gestores | Status real mmap0 tras set_selinuxmnt explícito; montaje RO no autodetectado. init carece de permisos Linux necesarios offline |
 | Dispositivos/gráficos | Cohorte Composer/SF, FD/capabilities mínimos, buffers/fences/entrada reales y mediación hacia Smithay | Dependencias/RC originales estudiados; sin frame ni UI APK |
@@ -675,7 +679,7 @@ El generador original de namespaces también necesita propiedades/APEX/listas;
 
 La [prueba del kernel](../reports/android16-configuration/kernel-property-prerequisites.json)
 distingue datos y enforcement: SELinux compilado pero no activo; crear una etiqueta
-falla para UID1000 y pasa para UID0. Eso permite explorar bootstrap privilegiado
+falla para UID 1000 y pasa para UID0. Eso permite explorar bootstrap privilegiado
 original, pero no acredita autorización SELinux ni aislamiento de aplicaciones.
 La [prueba de áreas Bionic](../reports/android16-property-area/validation.json)
 crea áreas con funciones originales, importa el build.prop exacto y lee 101 valores,
@@ -736,7 +740,7 @@ normal no demuestra cierre global; hay que reconciliar el build/config original.
 La frontera de configuración ya evita aplanar rutas en los ensayos consumidores:
 linker list, ayuda ART y getprop funcionan con los namespaces originales generados
 sin LD_LIBRARY_PATH/preload. Sólo el bootstrap del generador usó rutas explícitas;
-no se adopta esa excepción para las aplicaciones. Sigue siendo UID10000 sin
+no se adopta esa excepción para las aplicaciones. Sigue siendo UID 10000 sin
 capacidades con credenciales comprobadas antes de exec, no un Android iniciado.
 
 derive_classpath original consume sus fragmentos/properties sin overrides y
@@ -765,7 +769,7 @@ entre system/APEX. La biblioteca no está presente. Se conserva el fallo estrict
 global; el modo normal que ignora requisitos no convierte esa ausencia en éxito.
 
 El [ensayo app_process](../reports/android16-framework-entry/validation.json)
-usa código original, JNI/framework y classpaths del mismo build bajo UID10000
+usa código original, JNI/framework y classpaths del mismo build bajo UID 10000
 sin capacidades. El retorno 0 no acredita arranque: AndroidRuntime.start es void
 y retorna cuando falla startVm/startReg; main no propaga esos errores.
 La captura mediante API original liblog muestra el guard
@@ -929,7 +933,7 @@ protobuf siguen abiertas, junto al enlace y ejecución supervisada de PropertyIn
 XSDC original genera el esquema APEX; sus dos fuentes C++ compilan para Bionic.
 Rust1.88 original usa su std Android x86_64, sin objetos glibc en target. La FFI
 original genfslabelsversion se enlaza y ejecuta en cuatro casos reales: ausente,
-válido, malformado y permiso denegado. UID10000, sin grupos/capacidades, NNP1.
+válido, malformado y permiso denegado. UID 10000, sin grupos/capacidades, NNP1.
 El fallback original 202404 no demuestra mediación SELinux. No servidor, boot
 Android, aplicación ni etapa de la matriz aceptados por estas pruebas.
 
@@ -952,7 +956,7 @@ sin fabricar valores, omitir comprobaciones o iniciar Android completo.
 [Pruebas](../reports/android16-property-profile/validation.json): la regla original
 sepolicy_vers y la herencia BP4A derivan el valor202504 del perfil fuente. Con esa
 entrada, PropertyInit original retorna0; getprop original lee los mismos170 valores
-con UID10000/capacidades0. El inicializador fue UID0, separado del lector. No se
+con UID 10000/capacidades0. El inicializador fue UID0, separado del lector. No se
 acreditan vendor de hardware, paridad de configuración GSI, sockets ni SELinux.
 
 App_process termina1. REA MCP/GDB observa JNI_CreateJavaVM→Runtime::Create→
@@ -967,7 +971,7 @@ de opciones del arranque; no declarar ActivityThread/Markor ejecutados.
 
 [Resultados](../reports/android16-binder-service-gate/validation.json): kernel LTS
 6.18.59, Binder Rust integrado y montajes binderfs privados. Dos contextos asignan
-dispositivos distintos y responden protocolo8 con UID10000/capacidades0; esto no
+dispositivos distintos y responden protocolo8 con UID 10000/capacidades0; esto no
 prueba transacciones o aislamiento completo. Corrigiendo el conflicto de opciones
 del harness, ART original ejecuta RuntimeInit.main y llega a llamar ActivityThread.main
 con Binder privado; faltan el gestor de contexto y HIDL. No Markor instalada/ejecutada.
@@ -1299,7 +1303,7 @@ La siguiente puerta exige identidad y denegación reales, sin contexto sintétic
 ## Contraste nativo de transacciones con contexto de seguridad
 
 [Sonda local y capturas REA MCP](../reports/android16-binder-secctx-probe/validation.json).
-Mismo binario Bionic, dos procesos UID10000 sin capacidades, Binder privado:
+Mismo binario Bionic, dos procesos UID 10000 sin capacidades, Binder privado:
 sin solicitar SID, llegan transacción y respuesta con PID/UID reales correctos;
 con TXN_SECURITY_CTX, el registro del nodo retorna0 pero la transacción falla con
 BR_FAILED_REPLY y BINDER_GET_EXTENDED_ERROR devuelve -95/EOPNOTSUPP. No llega al servidor.
@@ -1370,7 +1374,7 @@ adaptador se distingue abajo. R1-MAC y Markor siguen pendientes.
 Las dos unidades originales completas HWC2On1Adapter/MiniFence, sin modificaciones,
 compilan con cabeceras A16 y libc++/Bionic originales. Biblioteca compartida enlazada
 con --no-undefined y --no-allow-shlib-undefined, CRT Bionic de biblioteca compartida
-y bibliotecas GSI originales. Un proceso UID10000, sin grupos/capacidades y NNP1,
+y bibliotecas GSI originales. Un proceso UID 10000, sin grupos/capacidades y NNP1,
 ejecutó dlopen(RTLD_NOW|RTLD_LOCAL) y dlclose con retorno correcto, observado por MCP.
 Hashes de las copias ejecutadas contrastados; muestreo de procesos parcial.
 
@@ -1386,7 +1390,7 @@ El fallo SID del anfitrión sigue bloqueando aceptación del gestor; no se omite
 
 [Contraste nativo sphal](../reports/android16-hwc-vendor-load/validation.json).
 Con el mismo adaptador original cuyo dlopen de plataforma pasó, una sonda Bionic
-UID10000/caps0 usa android_load_sphal_library original. sphal está visible; no se
+UID 10000/caps0 usa android_load_sphal_library original. sphal está visible; no se
 permite fallback a namespace abierto. La carga falla. La repetición directa
 con android_dlopen_ext y el mismo namespace obtiene: libutils.so no encontrada.
 La configuración linker original permite /data pero no exporta libutils.so por
@@ -1414,7 +1418,7 @@ No se copiaron variantes platform de libutils/libcutils/libbase/libhardware.
 Con /vendor preparado en namespace privado de sólo lectura y la configuración
 linker original intacta, android_load_sphal_library y descarga retornan0. REA MCP
 observa sphal visible y los seis paths vendor mapeados en /proc/self/maps. La sonda
-UID10000 no tiene grupos/capacidades; sigue vigente su limitación de muestreo parcial.
+UID 10000 no tiene grupos/capacidades; sigue vigente su limitación de muestreo parcial.
 Los hashes de artefactos se verifican por separado, sin atribuir enlace atómico
 entre bytes e imagen del kernel a una observación de paths.
 
@@ -1731,7 +1735,7 @@ aún no está en memoria. Invoca StartPropertyService y envía InitMessage origi
 por el socket devuelto. El handler carga el archivo y publica por código original
 ro.persistent_properties.ready=true; __system_property_wait observa el serial y
 la lectura coincide. No se fabrica la señal. Se conservan negativos del cliente
-UID10000: DAC EACCES y falta de contexto0x18, propiedad rechazada ausente.
+UID 10000: DAC EACCES y falta de contexto0x18, propiedad rechazada ausente.
 
 Es fase de inicialización confiada, no transacción de app autorizada: SELinux sigue
 inactivo y el inicializador root conserva capacidades. El archivo se crea en esta
@@ -1798,7 +1802,7 @@ REA MCP observa cambio cargado por servidor→ActionManager original→expansió
 propiedad→archivo esperado. Acción construida programáticamente, comando propio
 de regresión; no prueba parser RC ni builtins de producto. Una acción pendiente
 hace fallar Stop, Poll la ejecuta y la siguiente parada libera recursos; hilos4→1,
-FD4→4 y retorno normal. Negativos UID10000/DAC/contexto permanecen. Guardas de orden
+FD4→4 y retorno normal. Negativos UID 10000/DAC/contexto permanecen. Guardas de orden
 y Epoll ajeno también probadas. Primer fallo del alias Result en sonda conservado.
 Tres parches sin fuzz reproducen seis archivos compilados; cachés originales intactas.
 
@@ -1854,7 +1858,7 @@ Binder/Composer/frames/Markor ni APK. ISA y servicios propietarios siguen aparte
 CreateParser/ServiceParser/ActionParser/ServiceList originales y mapa de nombres/
 arity; no otra gramática RC. Cuatro archivos originales se contrastan con archivos
 fuente/Git; servicemanager/hwservicemanager coinciden además con GSI. Parse nativo
-sin capacidades, UID10000:4servicios/1acción/0errores, PID lógico0. Rutas system,
+sin capacidades, UID 10000:4servicios/1acción/0errores, PID lógico0. Rutas system,
 system_ext y vendor conservadas; vendor RC sólo staged, sin binarios instalados.
 
 Negativos observados por MCP: opción y arity inválidas dan read_ok1/parse_errors1,

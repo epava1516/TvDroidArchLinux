@@ -1150,7 +1150,103 @@
           "result_consumed": true
         },
         "next": "Add bounded original systemserver self-mapping/status evidence in existing SelectedRuntime entry, then repeatcoherentsignedcache reopen plusintactMarkor. Correct identitylifetimes using originalkernel metadata sources, not hoped SID or blanketrules."
-      }
+      },
+      "integration342": {
+        "checkpoint": "/home/tv/recuperacion-archtv/617baeb8-40e0-4336-bcee-48c369f50dcd-markor-software-launch",
+        "build": "dist/aosp16/package-cohort-build-342",
+        "payload_sha256": "7c128575bf8cb3db0d14fa2967151e1657b8ca63a292c92d24da27b0eece4eb3",
+        "source_selected_runtime_sha256": "93bc9d17247cfb21cc77bc7d013775abf8c973c16229332175c64d25646dd2a7",
+        "original_log": {
+          "path": "/home/tv/recuperacion-archtv/617baeb8-40e0-4336-bcee-48c369f50dcd-markor-software-launch/observed-original-logcat.txt",
+          "sha256": "2635b3e31b20d359fe117978f635268cd6ffba6036215029a1b3f5cae0248d81"
+        },
+        "original_ps": {
+          "path": "/home/tv/recuperacion-archtv/617baeb8-40e0-4336-bcee-48c369f50dcd-markor-software-launch/observed-android-ps-after.txt",
+          "sha256": "2ef6490355da4fbf7701472c46a7d260f823c9988d2615a387d6a2f544bbfa5f"
+        },
+        "self_maps": {
+          "path": "/home/tv/recuperacion-archtv/617baeb8-40e0-4336-bcee-48c369f50dcd-markor-software-launch/systemserver-selfmaps.json",
+          "sha256": "c0014b61de2f1b962fcc6a4f0619c6f27d17ee0d8f8af5c29940410527b5a6d8"
+        },
+        "self_status": {
+          "path": "/home/tv/recuperacion-archtv/617baeb8-40e0-4336-bcee-48c369f50dcd-markor-software-launch/systemserver-selfstatus.json",
+          "sha256": "138210ea8723d6c2238d42b15edcbcee6b27809fca3b7eca55efdeff7280f199"
+        },
+        "image_validation": {
+          "path": "/home/tv/recuperacion-archtv/617baeb8-40e0-4336-bcee-48c369f50dcd-markor-software-launch/image-mapping-validation.json",
+          "sha256": "19a9ee310dc8093fc0bc7516285586df8cc16998bc1c03616bd0f4a083347a64"
+        },
+        "visual_retained_note": {
+          "path": "/home/tv/recuperacion-archtv/617baeb8-40e0-4336-bcee-48c369f50dcd-markor-software-launch/visual-note-reopen.json",
+          "sha256": "0f4c4a0d5441d7f7ac006f1ad352444d5ba333bf7cda6e725d5b230ed6aa252d"
+        },
+        "incomplete_new_note": {
+          "path": "/home/tv/recuperacion-archtv/617baeb8-40e0-4336-bcee-48c369f50dcd-markor-software-launch/new-note-ui.json",
+          "sha256": "a99949ca895ddba69dde9d703327fef5f66813b522e2bb329b68b09e3b50e820"
+        },
+        "native_result": {
+          "path": "/home/tv/recuperacion-archtv/617baeb8-40e0-4336-bcee-48c369f50dcd-markor-software-launch/native-result.json",
+          "sha256": "7fe36a27ed1145a0cab186a8290777a5af5b95cb7b5ac4eb9d6a3b730b231524"
+        },
+        "identity_observations": {
+          "path": "/home/tv/recuperacion-archtv/617baeb8-40e0-4336-bcee-48c369f50dcd-markor-software-launch/identity-observations.json",
+          "sha256": "1f69b9fda0cd02ab6d98b951a66555855a99bec8f845ef744990afaf2d772cac"
+        },
+        "result": {
+          "path": "/home/tv/recuperacion-archtv/617baeb8-40e0-4336-bcee-48c369f50dcd-markor-software-launch/result.json",
+          "sha256": "4b700bc6466c6010b4e9e34fdaf8de93fe0591455f753681b22e20ac7fdfff5e"
+        },
+        "recovery": {
+          "path": "/home/tv/recuperacion-archtv/617baeb8-40e0-4336-bcee-48c369f50dcd-markor-software-launch/recovery-readback.json",
+          "sha256": "6ba4cec2354a0c0e0e0b257514bbbc5e821aab6ad066d07f8a25327361d76e17"
+        },
+        "consumer": {
+          "path": "/home/tv/recuperacion-archtv/617baeb8-40e0-4336-bcee-48c369f50dcd-markor-software-launch/completion-consumer.json",
+          "sha256": "aad13d89d98f03557ba128d5916b19f3504bffa81910b6c5cada5f4cda953600"
+        },
+        "backup": {
+          "path": "/home/tv/recuperacion-archtv/617baeb8-40e0-4336-bcee-48c369f50dcd-markor-software-launch/userdata-backup.json",
+          "sha256": "02ba5079f77936a6e5bf4b98ebae45fa0d6a4d658864391734c78f5b9628071e"
+        },
+        "native_exit": 0,
+        "outer_exit": 1,
+        "original_verification": [
+          "Existingpubliccertificate foundandverified",
+          "odsign.info.signature matches; originalmetadata loaded",
+          "sixbootfiles alreadyfsverity; nofullbootrecompilation",
+          "changedselectedservicesDEX triggersoriginalreplacement ofits .art/.odex/.vdex andcacheinfo"
+        ],
+        "selected_boot_mapping_proof": "Allsixgenerated341bootfiles actuallymappedbyoriginalsystem_serverPID528; kerneldevice7:130, inode andSHA matchcurrentclosedimage; fsverityflagsverified. ARTanonymousbootmapping alsoobserved, no address/content dumps.",
+        "transport_limit": "126records emitted,106 receivedthroughoriginal logd; selectedsixfiles allobserved/validated, no completeaddressspaceinventory claim. No extrafile/platform/privilege added.",
+        "systemserver_actual_credentials": {
+          "uid": [
+            1000,
+            1000,
+            1000,
+            1000
+          ],
+          "gid": [
+            1000,
+            1000,
+            1000,
+            1000
+          ],
+          "CapPrm": "0000001806887c20",
+          "CapEff": "0000001806887c20",
+          "CapBnd": "0000000000000000",
+          "NoNewPrivs": 1,
+          "groups_source": "systemserver-selfstatus.json; originalZygote systemserver groups, not oldmanuallyselected subset"
+        },
+        "functional_scope": "Markorintact installs/launches andopensactual337note. New342emptyeditor/filecreated, bodytyping lackedfocus; retrylateunprocessed, no newnotebody accepted. No overallAPK/MAC acceptance.",
+        "remaining": [
+          "Fullnewnote/save/force-stop/reopen oncurrentcoherentbase",
+          "Identityguard oldprofile/parser/permissionassumptions; originalPS canresolve17persistent contexts, twoaconfigoneshots absentafterexit",
+          "Originalruntime tamper/revocation negative tests andR1isolation",
+          "Allmapscoverage notcomplete; ARM/GMS/DRM/broadappmatrix/product gates open"
+        ],
+        "next": "Run existingoriginal Markorworkflowtoken with300sinteraction, immediatelyfocuseditorbodybeforetyping; originalCLI requiresbytes thenforce-stop/newPID/reopen. Keep oldnote/data. Correct identityproofs after functionalworkflow, no intendedSID substitution."
+      },
+      "state": "original_profile_regenerated_cache_signed_reopened_and_six_bootfiles_mapped; broadcoherence_security_APK_acceptance_open"
     }
   }
 }
