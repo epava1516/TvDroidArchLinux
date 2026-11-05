@@ -1246,7 +1246,159 @@
         ],
         "next": "Run existingoriginal Markorworkflowtoken with300sinteraction, immediatelyfocuseditorbodybeforetyping; originalCLI requiresbytes thenforce-stop/newPID/reopen. Keep oldnote/data. Correct identityproofs after functionalworkflow, no intendedSID substitution."
       },
-      "state": "original_profile_regenerated_cache_signed_reopened_and_six_bootfiles_mapped; broadcoherence_security_APK_acceptance_open"
+      "state": "original_profile_regenerated_cache_signed_reopened_and_six_bootfiles_mapped; broadcoherence_security_APK_acceptance_open",
+      "integration343": {
+        "checkpoint": "/home/tv/recuperacion-archtv/085b5399-1642-4738-9c64-5adeecb8b5e9-markor-software-launch",
+        "build": "dist/aosp16/package-cohort-build-343",
+        "payload_sha256": "0473dd1938de038fe483dba8a98e7c5d4798fa49b07125ae89188c057aa6f85b",
+        "workflow_receipt": {
+          "path": "/home/tv/recuperacion-archtv/085b5399-1642-4738-9c64-5adeecb8b5e9-markor-software-launch/original-workflow-live-readback.json",
+          "sha256": "f0281b75fb49a603f38ab122a669b2fda34c0952b61ff16ba0246fd48000d9b4"
+        },
+        "visual_created_note": {
+          "path": "/home/tv/recuperacion-archtv/085b5399-1642-4738-9c64-5adeecb8b5e9-markor-software-launch/new-note-visible.json",
+          "sha256": "2548afafb032aaa5af88c8a9bdc7d1431b468f9b44c0be7e51fdd477b3e92031"
+        },
+        "visual_after_relaunch": {
+          "path": "/home/tv/recuperacion-archtv/085b5399-1642-4738-9c64-5adeecb8b5e9-markor-software-launch/visual-note-after-relaunch.json",
+          "sha256": "af56c6658dd2a7bbd50742adc4d09b09e924f18b2c257f98682bc32243da90fc"
+        },
+        "original_note_before": {
+          "path": "/home/tv/recuperacion-archtv/085b5399-1642-4738-9c64-5adeecb8b5e9-markor-software-launch/live-markor-note-before-stop.txt",
+          "sha256": "cc7b7a018409d6188d716dd213c9a49670391d1d3258dc356be079bcbb9f3868"
+        },
+        "original_note_after": {
+          "path": "/home/tv/recuperacion-archtv/085b5399-1642-4738-9c64-5adeecb8b5e9-markor-software-launch/live-markor-note-after-relaunch.txt",
+          "sha256": "cc7b7a018409d6188d716dd213c9a49670391d1d3258dc356be079bcbb9f3868"
+        },
+        "original_note_bytes": {
+          "path": "/home/tv/recuperacion-archtv/085b5399-1642-4738-9c64-5adeecb8b5e9-markor-software-launch/live-markor-note-bytes.bin",
+          "sha256": "2a330f8030264f936000e2810a4ad195129d4894fcf15eedc2061c3ea92898ec"
+        },
+        "original_lifecycle": {
+          "path": "/home/tv/recuperacion-archtv/085b5399-1642-4738-9c64-5adeecb8b5e9-markor-software-launch/live-markor-lifecycle.txt",
+          "sha256": "9f06d04408257cb0e78261cbb9ceba3e779f64d3cf1512f1474fd67db368de7e"
+        },
+        "original_relaunch": {
+          "path": "/home/tv/recuperacion-archtv/085b5399-1642-4738-9c64-5adeecb8b5e9-markor-software-launch/live-markor-relaunch.txt",
+          "sha256": "2648e8bb31f9a1494930758c1e93ca8b449430c98c4ed40691fef2281ed103bf"
+        },
+        "native_result": {
+          "path": "/home/tv/recuperacion-archtv/085b5399-1642-4738-9c64-5adeecb8b5e9-markor-software-launch/native-result.json",
+          "sha256": "9a88a9b23da1611fe80f76b6b6f6580a0d3d163213ece7f94946120d958f67a2"
+        },
+        "identity_observations": {
+          "path": "/home/tv/recuperacion-archtv/085b5399-1642-4738-9c64-5adeecb8b5e9-markor-software-launch/identity-observations.json",
+          "sha256": "2843b9de0d1ea1b4dcd13cd55ab489a08799a2db1921de710e953adbbffb3086"
+        },
+        "result": {
+          "path": "/home/tv/recuperacion-archtv/085b5399-1642-4738-9c64-5adeecb8b5e9-markor-software-launch/result.json",
+          "sha256": "a152b49602763c31d688184b67c104d1e7881fef545f5ddcc0cd52584d6cf033"
+        },
+        "mac_window": {
+          "path": "/home/tv/recuperacion-archtv/085b5399-1642-4738-9c64-5adeecb8b5e9-markor-software-launch/mac-window.json",
+          "sha256": "532bc25747354f21df6e4ceaa0bbe4a7005bac43af5ca208ddd73cd8a64dd43d"
+        },
+        "original_host_close_error": {
+          "path": "/home/tv/recuperacion-archtv/085b5399-1642-4738-9c64-5adeecb8b5e9-markor-software-launch/host-owner-close-error.log",
+          "sha256": "c353e6471e0a5cae2ea2faf04266516da7acd0c090f84f6b38ccc28a102beada"
+        },
+        "manual_backing_recovery": {
+          "path": "/home/tv/recuperacion-archtv/085b5399-1642-4738-9c64-5adeecb8b5e9-markor-software-launch/backing-recovery-after.json",
+          "sha256": "9aa1040054d2a2f37468c5adb6a88316c32729d44c360085febeacc73dbe8f93"
+        },
+        "recovery": {
+          "path": "/home/tv/recuperacion-archtv/085b5399-1642-4738-9c64-5adeecb8b5e9-markor-software-launch/recovery-readback.json",
+          "sha256": "6ba4cec2354a0c0e0e0b257514bbbc5e821aab6ad066d07f8a25327361d76e17"
+        },
+        "consumer": {
+          "path": "/home/tv/recuperacion-archtv/085b5399-1642-4738-9c64-5adeecb8b5e9-markor-software-launch/completion-consumer.json",
+          "sha256": "d530da11bcbbe2605ff3ff54ace5bbf95b3ff152e791d89d16615f0ebbf7bf70"
+        },
+        "backup": {
+          "path": "/home/tv/recuperacion-archtv/085b5399-1642-4738-9c64-5adeecb8b5e9-markor-software-launch/userdata-backup.json",
+          "sha256": "31e563f0b087924e350995da65ba8ed89ca9cb8c2b473f5db9b962c5ce29c3d2"
+        },
+        "real_workflow_observed": true,
+        "scope": "IntactMarkor selectedprimarynote workflow onoriginalcoherentARTbase: originalPMS install/launch, actualUI/input/create/save21bytes, originalFUSEread, force-stop/oldPIDabsent, coldnewPID andactualsavednoteeditor. Not allappfeatures, broadAPKcompatibility, R1orproductionacceptance.",
+        "note": {
+          "path": "/storage/emulated/0/Documents/markor/archtv-343ace01.md",
+          "body": "archtv note 343ace01\n",
+          "bytes": 21,
+          "sha256": "2a330f8030264f936000e2810a4ad195129d4894fcf15eedc2061c3ea92898ec",
+          "creator": "ActualMarkorUI viauinput; no directnote/prefs/permissionseed"
+        },
+        "lifecycle": {
+          "before_pid": 1328,
+          "previous_process_absent": true,
+          "after_pid": 1633,
+          "original_client": "OriginalAMS/ATMS force-stop/start-activity; originalFUSEchecks before/after"
+        },
+        "native_exit": 0,
+        "outer_exit": 1,
+        "host_owner_exit": 1,
+        "overall_cohort_accepted": false,
+        "host_close_scope": "NativeSTOPPED/exit0; oldidentityguardfails. Hostowner independentlyfailed LOOP_CTL_REMOVE130 EBUSY afterumount/detach/nodeunlink. Ownbackingalreadyunassociated; manuallyremovedfree130 afterallMainPID0 andpreservedfailure. No normalbacking-after fabricated.",
+        "mac_seconds_actual": 347.50276576000033,
+        "mac_restored": "0",
+        "next": "Correctloopclose withboundedretry andincompletefailure receipts; actualkernelfourcasespass, fullcohortwithfixpending. Thenrepairidentityproof fromoriginalmetadata/profile while preservingverifiedMarkorworkflow.",
+        "independent_original_zygote_exit": [
+          "11-05 10:21:02.578  root   478   478 I Zygote  : Process 1328 exited due to signal 9 (Killed)"
+        ],
+        "app_kernel_status": {
+          "path": "/home/tv/recuperacion-archtv/085b5399-1642-4738-9c64-5adeecb8b5e9-markor-software-launch/observed-android-app-status.txt",
+          "sha256": "7f835a1f6b32d06f8864d10f45190f10b1a5fc2a480e23f8ed1de3bd246f93ec"
+        },
+        "actual_app_credentials": {
+          "pid": 1328,
+          "uid": [
+            10104,
+            10104,
+            10104,
+            10104
+          ],
+          "gid": [
+            10104,
+            10104,
+            10104,
+            10104
+          ],
+          "CapPrm": "0",
+          "CapEff": "0",
+          "CapBnd": "0",
+          "NoNewPrivs": 1,
+          "scope": "Originalshell cat/proc status; actualprocessmetadata, notisolation proof alone"
+        }
+      },
+      "loop_cleanup_correction": {
+        "demonstrated_failure_run": 343,
+        "source": "reports/android16-package-bootstrap/userdata.py",
+        "source_sha256": "bb4e0eaf194acbcbc8037407008d8cd8a8b6eef2c64d61759bba930c5f62daa4",
+        "kernel_contract": "drivers/block/loop.c loop_control_remove: EBUSY whennotLo_unbound or disk_openers>0. Actual343actor nottraced.",
+        "change": "Afterownumount/detachchecks, bounded5sdrain ofonlyknownoriginalbacking, thenretryonlyEBUSY. Neverdetachinsidehelper; unexpectedbackingrefused. Timeout/errorspropagate andwrite backing-close-incomplete.json, nosuccessreceipt.",
+        "actual_kernel_tests": {
+          "path": "/home/tv/recuperacion-archtv/085b5399-1642-4738-9c64-5adeecb8b5e9-markor-software-launch/loop-remove-kernel-test-v2.json",
+          "sha256": "2567a39b17d53d99183b68bb4db728cb9c7830fbbd7328fac9a64686a5220316"
+        },
+        "test_driver": {
+          "path": "/home/tv/recuperacion-archtv/085b5399-1642-4738-9c64-5adeecb8b5e9-markor-software-launch/loop-remove-kernel-test-v2.py",
+          "sha256": "ebd8c64bbefe3ec1a3f55212dc9b64be1c7e4a9c7b2cc167bac5b1a966df3a83"
+        },
+        "first_candidate": {
+          "path": "/home/tv/recuperacion-archtv/085b5399-1642-4738-9c64-5adeecb8b5e9-markor-software-launch/loop-remove-first-candidate.patch",
+          "sha256": "3cd55076d99e303de424c5eced6d36d58c39da2c1ae83dd3227a3a7682598448"
+        },
+        "first_test_failure": {
+          "path": "/home/tv/recuperacion-archtv/085b5399-1642-4738-9c64-5adeecb8b5e9-markor-software-launch/loop-remove-kernel-first-failure.json",
+          "sha256": "c6d8fb1c92db374594154ed20ae072547f23e0300502b667075caaea0dd01858"
+        },
+        "first_test_recovery": {
+          "path": "/home/tv/recuperacion-archtv/085b5399-1642-4738-9c64-5adeecb8b5e9-markor-software-launch/loop-first-test-recovery.json",
+          "sha256": "5a98469dc08af842a3d32825429276f5f4b2e5302bf93f96541496dca76c1236"
+        },
+        "test_scope": "Realownedloop131/openFD/timer/LOOP_CTL_REMOVE, notmocks/APK/MACproof. Busyreference drains7attempts; heldreference timesoutandremains; otherbackingrefused; knownownrundowndrains. Alltestdevicesremoved, no runtimeuserdata access.",
+        "full_cohort_with_fix": "pending;343ranoldhelper901db47... andrequiredmanualrecovery"
+      }
     }
   }
 }

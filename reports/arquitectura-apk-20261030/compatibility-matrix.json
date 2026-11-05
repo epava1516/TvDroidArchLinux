@@ -661,31 +661,32 @@
         }
       ],
       "latest_workflow_attempt": {
-        "candidate": 342,
+        "candidate": 343,
         "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
-        "record_sha256": "f64e3c3adfd8cd3ee82939042e1543a1cc4d12d54a7daec16c43beed938740f8",
-        "section": "coherent_cache_candidate.profile_coherence_experiment.integration342",
+        "record_sha256": "69bf6b86a4c65ca23beeed6d00b915bf583d5821e2aacd71c5ac12d941a7395f",
+        "section": "coherent_cache_candidate.profile_coherence_experiment.integration343",
+        "real_primary_workflow_observed": true,
         "native_exit": 0,
         "outer_exit": 1,
-        "scope": "Sixoriginalgeneratedbootfiles mappedandcacheverifiedonreopen; Markoractualretainednote. New342bodyunverified; no overallAPK/securityacceptance.",
+        "scope": "IntactrealAPK primarynote workflow observed oncoherentbase; notallMarkorfeatures, fullcohort/R1, broadcompatibility orproduction acceptance.",
         "stages": {
-          "installation": "observed_intact_original_PMS",
-          "launch": "observed_MainActivity",
-          "interface": "actual_editor_note_pixels_observed",
-          "input": "real_pointer_keys;new_body_typing_without_focus_notaccepted",
-          "main_function": "read_retained337_note;current_new_body_write_notverified",
-          "persistence": "retained_note_visual_current_profile;new_body_pending",
-          "services": "partial_original_subsystems_only",
-          "close": "original_app_force_stop337_and_cooperative_cohort_exit342",
-          "reopen": "actual_editor_newcohort342;new_body_lifecycle_pending"
+          "installation": "intact_original_PMS",
+          "launch": "original_MainActivity",
+          "interface": "actual_note_editor_before_and_after_relaunch",
+          "input": "actual_pointer_keyboard_focused_body",
+          "main_function": "note_created_saved21bytes343",
+          "persistence": "original_FUSE_same_bytes_hash_before_after_stop",
+          "services": "required_original_packages_permissions_activity_display_input_storage_ART;other_services_unproven",
+          "close": "original_force_stop_oldPID1328_absent",
+          "reopen": "original_coldPID1633_and_actual_saved_note_editor"
         }
       },
       "runtime_security_observation": {
-        "candidate": 342,
-        "state": "BoundedMAC/restored0; native0/outer1 staleidentityguard; R1open",
+        "candidate": 343,
+        "state": "BoundedMAC600/restored0; native0/outer1identityguard; hostcloseEBUSY/manuallyrecovered; R1open",
         "evidence": "reports/android16-audio-bootstrap/artd-subprocess-progress.json",
-        "sha256": "f64e3c3adfd8cd3ee82939042e1543a1cc4d12d54a7daec16c43beed938740f8",
-        "latest_result": "Originalcachecertificate/signatureverification andkernelselfmapping6files; originalcredentialsmapped. No hostobserverpermission changes, no fullpolicy/identityacceptance."
+        "sha256": "69bf6b86a4c65ca23beeed6d00b915bf583d5821e2aacd71c5ac12d941a7395f",
+        "latest_result": "Fullprimaryrealnoteworkflow observed; no identity/MAC/isolation/globalpass. Loopfixpassesactualkernelcases, wholecohortpending."
       },
       "runtime_security_observation_history": [
         {
@@ -980,6 +981,13 @@
           "evidence": "reports/android16-audio-bootstrap/artd-subprocess-progress.json",
           "sha256": "24b2c27260f03358c711aeb5da60cc0c84dfea7856a2ae7a03ba41e9df507eec",
           "latest_result": "Generatedbootcachefsverityflags andmetadataRSAverification+offlinecopynegative; notruntime tamperpolicy/boottrust/identityacceptance."
+        },
+        {
+          "candidate": 342,
+          "state": "BoundedMAC/restored0; native0/outer1 staleidentityguard; R1open",
+          "evidence": "reports/android16-audio-bootstrap/artd-subprocess-progress.json",
+          "sha256": "f64e3c3adfd8cd3ee82939042e1543a1cc4d12d54a7daec16c43beed938740f8",
+          "latest_result": "Originalcachecertificate/signatureverification andkernelselfmapping6files; originalcredentialsmapped. No hostobserverpermission changes, no fullpolicy/identityacceptance."
         }
       ],
       "runtime_security_history": [
@@ -1156,6 +1164,26 @@
             "services": "partial_original_subsystems_only",
             "close": "original_app_force_stop337_and_cooperative_cohort_exit341",
             "reopen": "original_cold_newPID337_and_actual_editor_newcohort341"
+          }
+        },
+        {
+          "candidate": 342,
+          "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
+          "record_sha256": "f64e3c3adfd8cd3ee82939042e1543a1cc4d12d54a7daec16c43beed938740f8",
+          "section": "coherent_cache_candidate.profile_coherence_experiment.integration342",
+          "native_exit": 0,
+          "outer_exit": 1,
+          "scope": "Sixoriginalgeneratedbootfiles mappedandcacheverifiedonreopen; Markoractualretainednote. New342bodyunverified; no overallAPK/securityacceptance.",
+          "stages": {
+            "installation": "observed_intact_original_PMS",
+            "launch": "observed_MainActivity",
+            "interface": "actual_editor_note_pixels_observed",
+            "input": "real_pointer_keys;new_body_typing_without_focus_notaccepted",
+            "main_function": "read_retained337_note;current_new_body_write_notverified",
+            "persistence": "retained_note_visual_current_profile;new_body_pending",
+            "services": "partial_original_subsystems_only",
+            "close": "original_app_force_stop337_and_cooperative_cohort_exit342",
+            "reopen": "actual_editor_newcohort342;new_body_lifecycle_pending"
           }
         }
       ],

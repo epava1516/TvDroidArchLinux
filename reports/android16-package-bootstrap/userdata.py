@@ -1,5 +1,6 @@
 """Owned experimental Linux /data storage; Android alone creates its state."""
 from pathlib import Path
+import errno
 import fcntl
 import json
 import os
@@ -7,8 +8,51 @@ import re
 import shutil
 import stat
 import subprocess
+import time
 import uuid
 from contextlib import contextmanager
+
+
+def _remove_created_loop_after_detach(loop_id, *, expected_backing=None, timeout_seconds=5.0):
+    """Remove only a caller-owned, already detached loop; never force a consumer.
+
+    Linux may return EBUSY after losetup -d while references drain. Its sysfs
+    backing attribute can also survive into rundown. Wait only for the known
+    old backing; a different backing belongs to another owner. Never detach here.
+    The kernel also rejects removal of a bound device or one with openers.
+    """
+    assert os.geteuid() == 0 and isinstance(loop_id, int) and loop_id >= 0
+    assert 0 <= timeout_seconds <= 5.0
+    kernel = Path('/sys/devices/virtual/block') / ('loop' + str(loop_id))
+    deadline = time.monotonic() + timeout_seconds
+    control = os.open('/dev/loop-control', os.O_RDWR | os.O_CLOEXEC)
+    attempts = 0
+    try:
+        while True:
+            try:
+                backing = (kernel / 'loop/backing_file').read_text().strip()
+            except FileNotFoundError:
+                backing = ''
+            if backing:
+                if expected_backing is None or backing != str(expected_backing):
+                    raise RuntimeError('Refuse removal: loop has an unexpected backing')
+                if time.monotonic() >= deadline:
+                    error = OSError(errno.EBUSY, 'Owned loop detach did not finish draining')
+                    error.loop_remove_attempts = attempts
+                    raise error
+                time.sleep(min(0.05, max(0, deadline - time.monotonic())))
+                continue
+            attempts += 1
+            try:
+                fcntl.ioctl(control, 0x4c81, loop_id)
+                return attempts
+            except OSError as error:
+                if error.errno != errno.EBUSY or time.monotonic() >= deadline:
+                    error.loop_remove_attempts = attempts
+                    raise
+                time.sleep(min(0.05, max(0, deadline - time.monotonic())))
+    finally:
+        os.close(control)
 
 
 @contextmanager
@@ -121,11 +165,20 @@ def mounted_verity_store(name, out, capacity=256 * 1024 * 1024):
             assert node.stat().st_rdev == os.makedev(major, minor)
             node.unlink()
             if created_loop:
-                control = os.open('/dev/loop-control', os.O_RDWR | os.O_CLOEXEC)
                 try:
-                    fcntl.ioctl(control, 0x4c81, loop_id)
-                finally:
-                    os.close(control)
+                    record['loop_control_remove_attempts'] = _remove_created_loop_after_detach(
+                        loop_id, expected_backing=image)
+                except (OSError, RuntimeError) as error:
+                    write_record('backing-close-incomplete.json', {
+                        **record, 'unmounted': not os.path.ismount(data),
+                        'own_image_unassociated': not subprocess.check_output(
+                            ['losetup', '-j', str(image)], text=True).strip(),
+                        'kernel_node_removed': not kernel.exists(),
+                        'error': str(error), 'errno': getattr(error, 'errno', None),
+                        'loop_control_remove_attempts': getattr(error, 'loop_remove_attempts', None),
+                        'scope': 'Incomplete close; no successful backing-after receipt',
+                    })
+                    raise
             write_record('backing-after.json', {**record, 'unmounted': True, 'loop_detached': True})
     finally:
         os.close(lock)

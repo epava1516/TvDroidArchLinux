@@ -1,5 +1,9 @@
 # Índice de evidencias
 
+343 (UUID 085b5399-1642-4738-9c64-5adeecb8b5e9): informe ART →profile_coherence_experiment.integration343 vincula recibos originales y frames de creación/reapertura. Nota SHA 2a330f8030264f936000e2810a4ad195129d4894fcf15eedc2061c3ea92898ec, 21 bytes; PID 1328 ausente→1633. Salida nativa 0 y exterior 1, más error real del host al retirar loop130; recuperación manual identificada por separado, sin recibo normal fabricado. loop_cleanup_correction conserva el primer candidato/fallo del ensayo, recuperación y cuatro casos reales positivos/negativos de kernel de la corrección; falta cohorte con ese código.
+
+Histórico anterior:
+
 342 (UUID 617baeb8-40e0-4336-bcee-48c369f50dcd): informe ART →profile_coherence_experiment.integration342 vincula mapas propios, estado, ps original, logcat, validación offline de inodos/bytes/fs-verity y recuperación/consumo. Seis bootfiles mapeados y certificados/firma de caché verificados por el original. Captura 106/126 registros limita la cobertura; no impide los seis cruces concretos, no prueba todos los mapas. La nueva nota sólo tiene evidencia de título/editor vacío; comandos de foco/reintento9–11 llegaron tras cierre. La nota337 sigue visible y conservada.
 
 Histórico anterior:
@@ -10,7 +14,7 @@ Histórico anterior:
 
 Preparación ART posterior a340: informe canónico →profile_coherence_experiment identifica binario original profman (REA MCP `ev_0f73aa82e02bd43f5489998abfb92c9f1941986b30ad53d438bdb48fdc1f5da1`, sólo headers), fuentes ART fijadas, comandos ejecutados y perfil SHA `b6c53a209c86cb5973cde735455bdd5dc9c9e21c36f2ad42b337224a408862d7`.52.539 descriptores conservados,18 identificadores ZIP coincidentes; no prueba imágenes/carga. Se conserva el fallo del comprobador inicial: confundió Adler de DEX con CRC del contenedor; la fuente DexFileLoader justifica la corrección, sin editar el perfil.
 
-Resultados337/340 y fallos de preparación338/339: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.x509_reopen_correction`.337 conserva CLI original (PID1487 ausente→1984, lanzamiento COLD) y nota SHA `ade0b42b49d676eb10feb0ae1c3be4b82792d2ce8203f98c7e332f64e1a63322`; cierre negativo por plazo10s.340 conserva el frame P6 `6195a154fce052467c06214e6e32ea0c6dd94a1f53309f7e569a77ab8f5a7a74` con el texto visible tras clic real en otra cohorte; STOPPED/salida0 pero exterior1;19 contextos externos EACCES y fallo de ruta del diagnóstico tras pivot_root. Las copias offline debugfs preservan evidencia original, no son pruebas de acceso sin privilegios.19 pruebas nativas pasan fuera del sandbox; dentro cinco fallaron EPERM. Compilación y sintaxis pasan; no sustituyen el recorrido real.
+Resultados337/340 y fallos de preparación338/339: `reports/android16-audio-bootstrap/artd-subprocess-progress.json` → `coherent_cache_candidate.x509_reopen_correction`.337 conserva CLI original (PID1487 ausente→1984, lanzamiento COLD) y nota SHA `ade0b42b49d676eb10feb0ae1c3be4b82792d2ce8203f98c7e332f64e1a63322`; cierre negativo por plazo10s.340 conserva el frame P6 `6195a154fce052467c06214e6e32ea0c6dd94a1f53309f7e569a77ab8f5a7a74` con el texto visible tras clic real en otra cohorte; STOPPED/salida0 pero exterior 1;19 contextos externos EACCES y fallo de ruta del diagnóstico tras pivot_root. Las copias offline debugfs preservan evidencia original, no son pruebas de acceso sin privilegios.19 pruebas nativas pasan fuera del sandbox; dentro cinco fallaron EPERM. Compilación y sintaxis pasan; no sustituyen el recorrido real.
 
 Histórico336:
 
@@ -60,7 +64,7 @@ VLC/audio310 ·[Índice canónico](../reports/android16-audio-bootstrap/audio-on
 
 Audio307 ·[Registro con hashes](../reports/android16-audio-bootstrap/synchronous-pcm-progress.json): original VLC→FMQ→TinyALSA,25 escrituras/102400frames completos por llamada; vídeo sourceframe40, cierre y recuperación comprobados. No cubre la fuente nominal192000frames; underrun y fallo SoundPool-9 permanecen visibles. Drain/flush no ejercitados, pausa no implementada, sonido acústico no demostrado. No constituye compatibilidad APK general.
 
-ART305 ·[Registro y hashes](../reports/android16-audio-bootstrap/artd-subprocess-progress.json): compilación original vía artd/art_exec/dex2oat32 con retorno0 y OAT conservado; política65/24 decisiones offline, cierre y recuperación. Límites: checksum de imagen de arranque incompatible, fallback imageless, exterior1/R1 abierto y proveedor ELF de REA MCP no configurado. No prueba compatibilidad general APK ni audio continuo.
+ART305 ·[Registro y hashes](../reports/android16-audio-bootstrap/artd-subprocess-progress.json): compilación original vía artd/art_exec/dex2oat32 con retorno0 y OAT conservado; política65/24 decisiones offline, cierre y recuperación. Límites: checksum de imagen de arranque incompatible, fallback imageless, exterior 1/R1 abierto y proveedor ELF de REA MCP no configurado. No prueba compatibilidad general APK ni audio continuo.
 
 Memoria63 · [Registro canónico](../reports/android16-audio-bootstrap/source-progress.json), private_audio_memory_policy63: hashes distintos de binario y lectura kernel, macro/fuentes, nueve decisiones offline y carga permisiva/contextos. El registro enlaza backup62 y reversión. Ninguna ejecución real del nuevo probe memfd/stream/PCM queda probada por estos resultados.
 
@@ -88,7 +92,7 @@ Histórico ·280 prueba importación/publicación MediaStore original con420785 
 
 273 · [Calculadora intacta real](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json), calculator273: instalación/alias original, [resultado2+3=5](../reports/android16-package-bootstrap/calculator-mac273-result.png), [historial](../reports/android16-package-bootstrap/calculator-mac273-history.png), Back/onDestroy y restauración. No reapertura ni aceptación completa de compatibilidad.
 
-272 · [Cierre nativo real y límite del observador](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json), integrated272: STOPPED0, cliente0, recogida y restauración; exterior1 por identidad proc EACCES/None. Hashes de salida y materialización diagnóstica conservados. No aceptación R1-MAC.
+272 · [Cierre nativo real y límite del observador](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json), integrated272: STOPPED0, cliente0, recogida y restauración; exterior 1 por identidad proc EACCES/None. Hashes de salida y materialización diagnóstica conservados. No aceptación R1-MAC.
 
 270 · [Cierre y reapertura reales bajo MAC](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json), integrated270: PID original ausente/nuevo, hashes FUSE antes/después, [captura física](../reports/android16-package-bootstrap/markor-mac270-reopened.png), cierre/restauración acotados. No aislamiento general ni cierre elegante.
 
@@ -146,7 +150,7 @@ Histórico parcial 2026-11-03 · [KeyMint Binder original114](../reports/android
 
 Histórico de compilación 2026-11-02 · [Keystore2 original y perfil SOFTWARE explícito](../reports/android16-package-bootstrap/keystore2-source-candidate.json): biblioteca, entrada y servicios legacy completos enlazan con Rust/Bionic originales y panic=abort. El parche de dos archivos selecciona /software declarado y comprueba el nivel informado; no cambia peticiones TEE/StrongBox por software. En el hito de compilación no se había ejecutado;114 registra el fallo de enlace posterior. Siguiente: integrar KeyMint/Keystore2 por Binder con VINTF, RC e identidades reales, operaciones de claves y negativas; después proveedor Java coherente, desbloqueo y Markor. Reproducción limpia/instalación aún pendientes; R1-MAC, ARM/GMS/DRM abiertos.
 
-[Componente criptográfico original106](../reports/android16-package-bootstrap/keymint-software-component.json): ejecución local de API C++ original v4/SOFTWARE, AES256-GCM, lectura en segundo proceso, dos negativas y hashes. Nativo0, exterior1 conservado, APEX41; cierre exterior comprobado. Comprobador corregido contrastado offline, no nueva ejecución. No Binder KeyMint, Keystore2, usuario, MAC ni Markor aceptados.
+[Componente criptográfico original106](../reports/android16-package-bootstrap/keymint-software-component.json): ejecución local de API C++ original v4/SOFTWARE, AES256-GCM, lectura en segundo proceso, dos negativas y hashes. Nativo0, exterior 1 conservado, APEX41; cierre exterior comprobado. Comprobador corregido contrastado offline, no nueva ejecución. No Binder KeyMint, Keystore2, usuario, MAC ni Markor aceptados.
 
 [Prueba negativa de seguridad104](../reports/android16-package-bootstrap/original-security-backend-negative.json): hashes de artefactos, captura original y fuentes fijadas; gatekeeperd sin HAL y aborto Keystore2 por TEE ausente. APEX41 y cierre exterior conservados. No demuestra claves, autenticación, desbloqueo ni lanzamiento de Markor.
 
@@ -690,10 +694,10 @@ Actualización 2026-11-02 · [Namespaces AOSP y operación netd originales](../r
 Política64 y ejecución295: fuente original vold, AVC/montaje, cierre/recuperación y22decisionesoffline63/64. Ninguna prueba de volumen/API/PCM por la mera carga de64. [Evidencia y límites](../reports/android16-audio-bootstrap/vendor-memory-progress.json).
 
 
-296: observación inmutable de vídeo móvil (PPM original, selección por entrada física y PNG frames29/43), clientes originales con APK fuente/instalada de hash idéntico, log final/cierre/MAC64 y comparación Linux posterior por pidfd del dueño exacto. Cada resultado conserva su alcance y hashes; exterior1 y fallo ALSA-1 impiden aceptar audio o R1 completo. [Evidencia](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json), native_audio296.
+296: observación inmutable de vídeo móvil (PPM original, selección por entrada física y PNG frames29/43), clientes originales con APK fuente/instalada de hash idéntico, log final/cierre/MAC64 y comparación Linux posterior por pidfd del dueño exacto. Cada resultado conserva su alcance y hashes; exterior 1 y fallo ALSA-1 impiden aceptar audio o R1 completo. [Evidencia](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json), native_audio296.
 
 Audio299 y comparación Linux: [retornos originales, hashes, recuperación y límite temporal](../reports/android16-audio-bootstrap/write-observation-progress.json).42 llamadas exitosas son evidencia parcial; EIO Linux, continuidad, acústica y auditoría final abiertos. [Carrera del observador y tres regresiones](../reports/android16-package-bootstrap/capture-recovery-299.json); prueba integrada de la corrección pendiente.
 
 [Comparación de frames/drain y clocksources](../reports/android16-audio-bootstrap/clock-comparison.json): tsc/acpi_pm/kvm-clock, fuentes, hashes y recuperación;300 falla antes del lanzamiento. No acredita reproducción APK ni estabilidad global del reloj.
 
-[VLC302](../reports/android16-audio-bootstrap/clock-comparison.json), integrated302: instalación original/readback idéntico y comando de lanzamiento; sin captura/entrada/PCM. Componente nativo0/exterior1, transiciónNNP artd→dex2oat rechazada, recuperación normal. La retirada del ZIP descargado conserva cada imagen original con hash idéntico y URL/hash del contenedor (cache_retirement).
+[VLC302](../reports/android16-audio-bootstrap/clock-comparison.json), integrated302: instalación original/readback idéntico y comando de lanzamiento; sin captura/entrada/PCM. Componente nativo0/exterior 1, transiciónNNP artd→dex2oat rechazada, recuperación normal. La retirada del ZIP descargado conserva cada imagen original con hash idéntico y URL/hash del contenedor (cache_retirement).
