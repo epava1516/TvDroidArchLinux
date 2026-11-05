@@ -7,7 +7,7 @@ r=Path(__file__).resolve().parents[2]
 allowed_flags = {'--checkpoint-diagnostic', '--keymint-component', '--keystore-component',
                  '--keystore-java-component', '--software-security', '--native-audio',
                  '--audio-write-diagnostic', '--audio-synchronous-pcm', '--audio-production-dynamics', '--coherent-art', '--coherent-art-images',
-                 '--memfd-label-original', '--media-test', '--audio-only-media', '--markor-home-launch', '--audio-pcm-observation'}
+                 '--memfd-label-original', '--media-test', '--audio-only-media', '--markor-home-launch', '--audio-pcm-observation', '--timecoded-media'}
 allowed_values = ('--observe-ms=', '--userdata-name=', '--apk-id=', '--markor-workflow-token=', '--markor-normal-close-token=', '--audio-period-size-multiplier=')
 assert all(a in allowed_flags or any(a.startswith(prefix) for prefix in allowed_values)
            for a in sys.argv[2:]), 'Unknown integrated build option'
@@ -19,6 +19,9 @@ audio_pcm_observation='--audio-pcm-observation' in sys.argv[2:]
 assert not audio_pcm_observation or all(a in sys.argv[2:] for a in (
     '--native-audio', '--audio-synchronous-pcm', '--media-test', '--apk-id=vlc'))
 assert not audio_pcm_observation or '--audio-only-media' not in sys.argv[2:]
+timecoded_media='--timecoded-media' in sys.argv[2:]
+assert not timecoded_media or all(a in sys.argv[2:] for a in ('--media-test','--apk-id=vlc'))
+assert not timecoded_media or '--audio-only-media' not in sys.argv[2:]
 out=(r/sys.argv[1]).resolve();out.mkdir()
 tracked_inputs=['Cargo.toml','Cargo.lock','crates/archtv-core/Cargo.toml',*[str(p.relative_to(r)) for p in sorted((r/'crates/archtv-core/src').rglob('*.rs'))],'crates/archtv-core/examples/native_supervisor.rs','reports/android16-package-bootstrap/execute-integrated.py','reports/android16-package-bootstrap/integrated-session.sh','reports/android16-apex-bootstrap/run.py','reports/android16-package-bootstrap/build-platform-overlay.py','tools/apk/SignPlatformOverlay.java','runtime/aosp/platform-overlay/AndroidManifest.xml','runtime/aosp/platform-overlay/res/values/config.xml','runtime/aosp/platform-overlay/overlay-config.xml','reports/android16-apex-bootstrap/devices.py','runtime/aosp/linux-services/initial-apk-profile.json','runtime/aosp/linux-services/org/archtv/aosplinux/SelectedServices.java','runtime/aosp/linux-services/org/archtv/aosplinux/ServiceLauncher.java','runtime/aosp/linux-services/install-markor.sh','runtime/aosp/native/linux-property-worker.cpp','runtime/aosp/native/linux-mc1-cohort.h','reports/android16-package-bootstrap/build-integrated.py','runtime/aosp/android16-qpr2/patches/0004-linux-admitted-lazy-services.patch','fixtures/aosp-keymint-software/SoftwareCryptoProbe.cpp','runtime/aosp/native/linux-keymint-service.cpp','reports/android16-package-bootstrap/build-keymint-software.py','fixtures/aosp-keystore2-software/BinderClient.rs','runtime/aosp/android16-qpr2/patches/keystore2-linux-software.patch','fixtures/aosp-keystore2-software/OriginalJavaProviderProbe.java','runtime/aosp/android16-qpr2/patches/framework-keystore-linux-software.patch','tools/aosp/KeystoreFrameworkProfilePlan.java','tools/aosp/build_software_keystore_framework.py','reports/android16-package-bootstrap/build-keystore-java-probe.py','reports/android16-package-bootstrap/build-gatekeeper-software.py']
 tracked_inputs.extend(['reports/android16-package-bootstrap/userdata.py','reports/android16-hwc3-wayland/build-minigbm.py','reports/android16-hwc3-wayland/link-minigbm.py'])
@@ -120,6 +123,17 @@ if '--media-test' in sys.argv[2:]:
  media_test={k:media_record[k] for k in ['path','sha256','bytes']}
  assert media_test['sha256']=='30fc8da5b0511c723c434cc13b3635507d7caae0b0d137c1f87aecbe6d1d4e17'
  assert media_test['bytes']==420785 and hashlib.sha256(Path(media_test['path']).read_bytes()).hexdigest()==media_test['sha256']
+ if timecoded_media:
+  media_manifest=Path('/home/tv/.cache/archtv/media-test-assets/archtv-vlc-chirp-4s.json')
+  media_record=json.loads(media_manifest.read_text())
+  media_test={k:media_record[k] for k in ['path','sha256','bytes']}
+  assert media_test['sha256']=='955fb736cff6316c063a36615962f807bf1c2e41b4ef48f4595141d4483f6dfe'
+  assert media_test['bytes']==498232 and hashlib.sha256(Path(media_test['path']).read_bytes()).hexdigest()==media_test['sha256']
+  reference=media_record['reference']
+  assert reference['sha256']=='122b47920fea0b78e73301660761039b55673a965efdcfdb3e86d5df2a0db75f'
+  assert reference['bytes']==768000 and hashlib.sha256(Path(reference['path']).read_bytes()).hexdigest()==reference['sha256']
+  media_test['reference_manifest']=str(media_manifest)
+  media_test['reference_manifest_sha256']=hashlib.sha256(media_manifest.read_bytes()).hexdigest()
  media_test['display_name']='archtv-test-'+media_test['sha256'][:8]+'.mp4'
  if audio_only_media:
   media_manifest=Path('/home/tv/.cache/archtv/media-test-assets/archtv-vlc-audio-only-4s.json')
@@ -149,7 +163,7 @@ if software_platform:
  lines[0]=lines[0].replace('-Xmx768m','-Xmx512m')
  lines.append('    setenv ARCHTV_SOFTWARE_SECURITY_PROFILE software-platform-v1')
 experiment_kind='markor-software-launch' if software_platform else 'keystore-java-component' if keystore_java else 'keystore-component' if keystore_component else ('keymint-component' if keymint_component else 'markor-launch')
-(out/'build-options.json').write_text(json.dumps({'apk_target':apk_target,'media_test':media_test,'coherent_art':coherent_art,'coherent_art_images':coherent_art_images,'memory_library':memory_library,'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component and not software_platform,'software_security_platform':software_platform,'observe_ms':observe_ms,'persistent_userdata_name':userdata_name,'markor_workflow_token':workflow_token,'markor_workflow_budget_seconds':workflow_budget_seconds,'markor_home_launch':home_launch,'markor_normal_close_token':normal_close_token,'markor_normal_close_budget_seconds':normal_close_budget_seconds,'experiment_kind':experiment_kind,'original_apex_bootstrap':True,'original_logd':True,'preconnected_wayland':True,'original_system_dma_heap':True,'native_audio':native_audio,'audio_write_diagnostic':audio_write_diagnostic,'audio_synchronous_pcm':audio_synchronous_pcm,'audio_production_dynamics':audio_production_dynamics,'audio_period_size_multiplier':audio_period_size_multiplier,'audio_pcm_observation':audio_pcm_observation},indent=2)+'\n')
+(out/'build-options.json').write_text(json.dumps({'apk_target':apk_target,'media_test':media_test,'coherent_art':coherent_art,'coherent_art_images':coherent_art_images,'memory_library':memory_library,'checkpoint_contract_diagnostic':checkpoint_diagnostic,'keymint_component_diagnostic':keymint_component,'keystore_component_diagnostic':keystore_component and not software_platform,'software_security_platform':software_platform,'observe_ms':observe_ms,'persistent_userdata_name':userdata_name,'markor_workflow_token':workflow_token,'markor_workflow_budget_seconds':workflow_budget_seconds,'markor_home_launch':home_launch,'markor_normal_close_token':normal_close_token,'markor_normal_close_budget_seconds':normal_close_budget_seconds,'experiment_kind':experiment_kind,'original_apex_bootstrap':True,'original_logd':True,'preconnected_wayland':True,'original_system_dma_heap':True,'native_audio':native_audio,'audio_write_diagnostic':audio_write_diagnostic,'audio_synchronous_pcm':audio_synchronous_pcm,'audio_production_dynamics':audio_production_dynamics,'audio_period_size_multiplier':audio_period_size_multiplier,'audio_pcm_observation':audio_pcm_observation,'timecoded_media':timecoded_media},indent=2)+'\n')
 if checkpoint_diagnostic:lines.append('    setenv ARCHTV_CHECKPOINT_DIAGNOSTIC 1')
 lines=[l for l in lines if not any(l.startswith('    setenv '+n+' ') for n in ['BOOTCLASSPATH','DEX2OATBOOTCLASSPATH','SYSTEMSERVERCLASSPATH','STANDALONE_SYSTEMSERVER_JARS'])];(entry/'selected-services.rc').write_text('\n'.join(lines)+'\n')
 old=r/'dist/aosp16/apex-cohort-build-6';commands=[]

@@ -95,6 +95,48 @@ def signal_metrics(pcm):
             'windows': rows}
 
 
+def chirp_trace(pcm):
+    """Measure zero crossings for the exact generated400+400*t source only.
+
+    Derived nominal source times are diagnostic estimates under resampling,
+    not wall-clock, sample-exact alignment, acoustic output or acceptance.
+    """
+    samples = array.array('h')
+    samples.frombytes(pcm)
+    if sys.byteorder != 'little':
+        samples.byteswap()
+    left = samples[::2]
+    peak_rms = max((math.sqrt(sum(x*x for x in left[i:i+960]) /
+                    len(left[i:i+960])) for i in range(0, len(left), 960)), default=0)
+    threshold = max(2.0, peak_rms/20)
+    rows = []
+    for start in range(0, len(left), 960):
+        block = left[start:start+960]
+        rms = math.sqrt(sum(x*x for x in block)/len(block))
+        crossings = [i - block[i]/(block[i+1]-block[i])
+                     for i in range(len(block)-1) if block[i] <= 0 < block[i+1]]
+        frequency = None
+        variation = None
+        if rms > threshold and len(crossings) >= 4:
+            periods = [b-a for a,b in zip(crossings, crossings[1:])]
+            period = sum(periods)/len(periods)
+            variation = math.sqrt(sum((x-period)**2 for x in periods)/len(periods))/period
+            frequency = 48000/period
+        rows.append({'accepted_start_frame': start, 'frames': len(block),
+                     'rms_pcm16': rms, 'estimated_frequency_hz': frequency,
+                     'period_relative_deviation': variation,
+                     'estimated_source_seconds': (frequency-400)/400
+                         if frequency is not None and 350 <= frequency <= 2050 else None})
+    identified = [x['estimated_source_seconds'] for x in rows
+                  if x['estimated_source_seconds'] is not None and
+                  x['period_relative_deviation'] < .1]
+    return {'source_equation': 'frequency=400+400*t Hz,0<=t<4s',
+            'active_threshold_pcm16': threshold, 'windows': rows,
+            'estimated_source_time_min': min(identified, default=None),
+            'estimated_source_time_max': max(identified, default=None),
+            'scope': 'Zero-crossing estimates for known chirp. Resampling, gain/noise, gaps, replay and flush affect mapping; no automatic coverage/sync/audio verdict.'}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('capture', type=Path)
@@ -104,6 +146,8 @@ def main():
     parser.add_argument('--out', required=True, type=Path)
     parser.add_argument('--audioflinger-envelope', action='store_true',
                         help='Explicitly retain/validate original AF text around the HAL binary section')
+    parser.add_argument('--timecoded-chirp', action='store_true',
+                        help='Estimate source times for the pinned400+400*t Hz/4s chirp only')
     args = parser.parse_args()
     if args.capture.stat().st_size > 2*1024*1024 + (512*1024 if args.audioflinger_envelope else 16384):
         raise ValueError('Refuse unbounded capture read')
@@ -122,6 +166,11 @@ def main():
               'reference_path': str(args.reference.resolve()),
               'reference_sha256': digest(reference), 'reference_signal': signal_metrics(reference),
               'scope': 'Known-media signal metrics only. Producer proc read is separate from external identity/MAC proof. Accepted samples are not acoustic output, clock accuracy, source completeness, A/V sync or APK compatibility. Constant1kHz reference cannot uniquely identify source time/coverage; active thresholds and power ratios are diagnostic, not acceptance gates.'}
+    if args.timecoded_chirp:
+        if digest(reference) != '122b47920fea0b78e73301660761039b55673a965efdcfdb3e86d5df2a0db75f':
+            raise ValueError('Timecoded mode requires the exact pinned chirp reference')
+        result['timecoded_capture'] = chirp_trace(pcm)
+        result['timecoded_reference'] = chirp_trace(reference)
     args.out.mkdir(parents=True, exist_ok=False)
     wav_path = args.out/'accepted-signal.wav'
     with wave.open(str(wav_path), 'wb') as output:

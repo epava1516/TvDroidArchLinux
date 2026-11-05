@@ -1,5 +1,9 @@
 # Arquitectura vigente · A16-QPR2-1
 
+362 separa Displayed Android, handoff del compositor, envío uinput y efecto APK: el guion no puede aceptar pausa sólo por las dos primeras órdenes. Catálogo PMS real devuelve13entradas mientras búsqueda Home vlc0; causa de ausencia/etiqueta/filtro aún desconocida y debe resolverse sin inventar entrada. Monitor original de dispositivos adaptado falla EIO sysfs dm/name y omite snapshotBPFfinal; IDs observados ausentes no bastan para cierre completo. La fuente chirp permite estimar tiempo de origen; Back temprano censura el recorrido y evita inferir pérdida4s. Mantener enfoque y seguridad sin sustituir servicios originales ni alterar posiciones. Informe ART →integration362.
+
+Histórico anterior (alcance y siguientes pasos de su fecha):
+
 361 reutiliza Module::dump y la mediación AudioFlinger→DeviceHalAidl originales: el shell conserva su denegación Binder directa al HAL, audioserver1041 reenvía el FD con argumento original. Variante diagnóstica explícita/default apagado copia sólo bytes tras pcm_writei positivo (máximo2MiB), consulta proc ALSA original y no modifica ABI/clases públicas/retornos/posiciones/política. Puede perturbar tiempos; primer stream y medio generado conocido solamente. La señal1kHz parcial y geometría real no acreditan fuente completa/sincronía/acústica. NBAIO_Tee requiere habilitación de build según fuentes originales; REA export tables no demuestra ausencia de todo el código. Informe ART →integration361.
 
 Histórico anterior (alcance y siguientes pasos de su fecha):

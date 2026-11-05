@@ -1,5 +1,9 @@
 # Estado actual y punto de entrada
 
+362 ejecuta fuente chirp y4órdenes físicas con VLC intacta: captura204800frames, traza temporal estimada0,025→2s y Back deliberado; no demuestra pérdida de fuente completa ni pausa. Home muestra búsqueda vlc0 aunque el catálogo original devuelve13entradas: reapertura bloqueada. El guion esperaba Displayed, sin exigir handoff del compositor; orden exacto de teclas/foco no acreditado por relojes mezclados. Nativa/exterior0, runner/UI1 por monitor EIO sysfs dm/name y falta snapshotBPFfinal; IDs conocidos retirados, cierre completo no aceptado. Host69/permisivo/TSC/mixer/datos/auditoría recuperados y consumido sin cola. Markor357/VLC361 mantienen alcance. Informe ART →integration362.
+
+Histórico anterior (alcance y siguientes pasos de su fecha):
+
 361: captura PCM real mediante AudioFlinger/DeviceHal originales, sin ampliar política69.286720frames aceptados, geometría real48kHz/estéreo/periodo4096/buffer16384; tono1kHz activo nominal2,44s frente a4s de referencia. VLC original conserva instalación/VIEW/vídeo; flush/silencio/resampling impiden aceptar audio completo o sincronía.360 queda histórico: llamada directa Binder denegada, captura vacía rechazada aunque pipeline0. Tres propietarios cerrados0,349,585s enforcing y recuperación verificada; consumido sin cola. Markor357 mantiene su alcance. Informe ART →integration361.
 
 Histórico anterior (alcance y siguientes pasos de su fecha):

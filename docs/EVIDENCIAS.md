@@ -1,5 +1,9 @@
 # Índice de evidencias
 
+362 · informe ART →coherent_cache_candidate.profile_coherence_experiment.integration362: fuente temporal/receta/hashes, REA MCP onKeyDown ev_69f16585bc1350e0e02bbbdb5998dd28de20e4f3c4e821997008213692ae964c (estático),4órdenes uinput, chirp aceptado, capturas de Home vlc0 y fallo real del monitor. Checkpoint6a01bb10-c27e-45bb-82f7-e4d2620cd7d4 contiene functional-result.json con SHA de cada evidencia. Runner/UI1 se conservan aunque nativa0; recuperación comprobada no suple snapshotfinalBPF ausente ni acredita pausa/reapertura.
+
+Histórico anterior (alcance y siguientes pasos de su fecha):
+
 360/361 · informe ART →coherent_cache_candidate.profile_coherence_experiment:360 conserva AVC Binder real, error FAILED_TRANSACTION y captura vacía, nunca aceptada por exit0.361 captura1.153.642bytes por AF original,286720frames PCM sin truncar, geometría proc real y señal1kHz; WAV/hash/métricas/frames DRM/identidades/cierre/recuperación en functional-result.json del checkpoint10a0bd46-16f7-4d8d-98f9-a9475cec17ce. Ni PCM ni métricas cierran audio completo/sincronía/salida acústica. REA MCP exportó tablas reales; Rizin no disponible, no se presenta como ejecución ni decompilación.
 
 Histórico anterior (alcance y siguientes pasos de su fecha):

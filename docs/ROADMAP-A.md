@@ -1,5 +1,9 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+Tras362, ejecutar la integración funcional corrigiendo tres puntos concretos: esperar foco/handoff actual además de Displayed para entrada; contrastar componentes/etiquetas del catálogo PMS real ante Home vlc0; asegurar cierre observable del monitor sin ocultar EIO ni fabricar snapshotBPF. Después pausa/Back/reapertura real desde Home con fuente temporal; no CLI de sustitución.362 fue censurado por Back temprano y no mide cobertura4s completa. No más auditorías de clases como hito principal. R1/ARM/GMS/DRM/compatibilidad amplia/instalación/actualización/ligereza abiertos. Informe ART →integration362.
+
+Histórico anterior (alcance y siguientes pasos de su fecha):
+
 Tras361, prioridad funcional: fuente con tiempo identificable y recorrido VLC por entrada real/pausa/Back/reapertura, correlacionando señal aceptada y contratos originales de posición/reloj. La captura ya funciona por AF original sin permisos nuevos; no repetir auditorías de acceso como siguiente entregable. El tono constante sólo acredita frecuencia, no cobertura temporal:2,44s activos nominales frente a4s fuente y correcciones VLC siguen abiertos. No atribuirlo a VirtualBox ni cambiar timestamps sin experimento controlado. R1/compatibilidad amplia/instalación/actualización/ligereza/ARM/GMS/DRM abiertos. Informe ART →integration361.
 
 Histórico anterior (alcance y siguientes pasos de su fecha):
