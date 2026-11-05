@@ -1,5 +1,9 @@
 # Arquitectura vigente · A16-QPR2-1
 
+Resultado358: VLC x86_64 intacta cruza PMS/MediaProvider/AMS, Bionic/JNI y MediaCodec originales hasta vídeo en Rust/Smithay. El audio falla en TinyALSA con EIO también reproducible en aplay Linux; el control de buffer mayor completa. Se prioriza el parámetro original ALSA de periodos para el siguiente experimento, sin sustituir servicios, falsificar posiciones ni considerar la causa del dispositivo virtual resuelta. Doce errores de presentación HWC y fallos de fondo se conservan; tres frames positivos no prueban sincronía/rendimiento. Véase informe ART →integration358.
+
+Histórico anterior (alcance y siguientes pasos de su fecha):
+
 Resultado357: el recorrido original PMS→Home privado→HWC→Context/Instrumentation→Markor/interfaz/nota y cierre de cohorte está ejecutado y contrastado. Retorno RPC no equivale a frame: se conservan testigos originales, capturas y hashes por separado. Aceptación limitada al recorrido de nota existente; R1, resto de APK/funciones, instalación/actualización, ligereza y ARM/GMS/DRM siguen abiertos. Véase informe ART →integration357.
 
 Actualización355: Home visual y retorno por cliente original probados; el catálogo y lanzamiento desde Home aún no están integrados. Los dominios Home/compositor comparten principal de confianza: no es aislamiento entre ambos. El reto adicional de seis entradas quedó incompleto y R1 permanece abierto. Véase informe ART →integration355.

@@ -1,5 +1,9 @@
 # Estado actual y punto de entrada
 
+358: VLC intacta se instala y abre por VIEW original; tres capturas DRM muestran vídeo real a1,333/1,667/2,667s y retorno a Home tras EOF. Audio no pasa: segunda escritura ALSA EIO, HAL ERROR tras4096frames. Linux aplay reproduce EIO con buffer4096; con16384 termina. Cohorte y tres propietarios cerrados0,345,441s enforcing, host69/permisivo y recuperación verificados; consumido sin cola. Markor357 conserva su alcance. Informe ART →integration358.
+
+Histórico anterior (alcance y siguientes pasos de su fecha):
+
 357 pasa el recorrido seleccionado: catálogo PMS real→Home Rust/búsqueda→D-pad→Context/Instrumentation original inicia MainActivity→interfaz/nota348 intacta. Dieciséis entradas físicas, nueve outputs originales AMS/FUSE, guardias de identidad/Installer/CE/hashAPK y tres invocaciones terminadas0. Nativa0/exterior0;338.104s de ventana enforcing registrada, host69/permisivo y datos desmontados/loop retirado verificados, consumido sin cola. Primera captura pedida como Home muestra Markor y no cuenta como Home; la búsqueda/enfoque de tarjeta sí se inspeccionó. No es creación nueva357 ni compatibilidad APK amplia/R1. Siguiente: VLC real y su audio/vídeo sobre la base coherente actual, con negativas concretas del launcher en la misma cohorte. Informe ART →integration357.
 
 Histórico anterior:

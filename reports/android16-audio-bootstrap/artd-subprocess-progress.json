@@ -1896,7 +1896,7 @@
           "sha256": "d3eb7667da5d6443deb22eb91de5893b561c0d7ec098f92087a2ed33a0a58f36"
         }
       },
-      "current_integration": 357,
+      "current_integration": 358,
       "integration348": {
         "checkpoint": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch",
         "build": "dist/aosp16/package-cohort-build-348",
@@ -3107,6 +3107,228 @@
             "path": "/home/tv/recuperacion-archtv/237e6a54-d906-4c80-801e-5ef767f7186b-markor-software-launch/review-ui-1.png",
             "sha256": "9cd5c23d64794c99266cfa8212858975f2bf4e97e872bee5527008915728eaf3"
           }
+        }
+      },
+      "integration358": {
+        "checkpoint": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch",
+        "build": "dist/aosp16/package-cohort-build-358",
+        "tested_code_commit": "6836db1 plus frozen install-markor.sh pending patch",
+        "native_exit": 0,
+        "outer_exit": 0,
+        "three_owner_services_success": true,
+        "intact_original_install_and_VIEW_launch_accepted": true,
+        "selected_moving_video_observed": true,
+        "complete_audio_video_workflow_accepted": false,
+        "broad_APK_compatibility_accepted": false,
+        "apk_sha256": "4646633ede40c4784c5584087cffc5c60cc45b16966ae0b36cedd784d7c4a11e",
+        "media_readback_sha256": "30fc8da5b0511c723c434cc13b3635507d7caae0b0d137c1f87aecbe6d1d4e17",
+        "original_component": "org.videolan.vlc/.gui.video.VideoPlayerActivity",
+        "actual_native_contracts": [
+          "Original Bionic nativeloader loaded APK x86_64 libvlc.so/libvlcjni.so and JNI interface",
+          "Original URI grant and MediaProvider real publication/readback",
+          "Original NDK MediaCodec c2.android.mpeg4.decoder opened",
+          "Original AudioTrack -> AudioFlinger -> AIDL HAL -> TinyALSA writes; second write actual EIO and stream ERROR"
+        ],
+        "video_evidence": [
+          {
+            "raw_path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/smithay-frame-d35054b0d4d657296c3146424512063a9fd0e821ef603ac9be647b74df31b419.ppm",
+            "raw_sha256": "d35054b0d4d657296c3146424512063a9fd0e821ef603ac9be647b74df31b419",
+            "review_path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/vlc-video-observed-0.png",
+            "review_sha256": "8f183a8d1f9b197931692f7a3230af23c50be3228ed822e18dcf4194dc0691a2",
+            "visible_source_pts_seconds": 1.333,
+            "visible_source_frame_counter": 16,
+            "scope": "Visually reviewed actual DRM capture of generated local clip through intact VLC, original MediaCodec c2.android.mpeg4.decoder and Rust/Smithay; not all48 frames, rate, sync, scaling or audio acceptance."
+          },
+          {
+            "raw_path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/smithay-frame-7f4c74202159e24e277fcbfb54f08f9a2e40b66c977f7fb210240cc9d93f2a99.ppm",
+            "raw_sha256": "7f4c74202159e24e277fcbfb54f08f9a2e40b66c977f7fb210240cc9d93f2a99",
+            "review_path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/vlc-video-observed-1.png",
+            "review_sha256": "2fc26832fd600ae1e1548da184369b35aac07b815e4b02466bbc8b7357bd49cc",
+            "visible_source_pts_seconds": 1.667,
+            "visible_source_frame_counter": 20,
+            "scope": "Visually reviewed actual DRM capture of generated local clip through intact VLC, original MediaCodec c2.android.mpeg4.decoder and Rust/Smithay; not all48 frames, rate, sync, scaling or audio acceptance."
+          },
+          {
+            "raw_path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/smithay-frame-3875d779e6147e9d718fdefc8596910e645272ca705c40c9f87bd7eac157161b.ppm",
+            "raw_sha256": "3875d779e6147e9d718fdefc8596910e645272ca705c40c9f87bd7eac157161b",
+            "review_path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/vlc-video-observed-2.png",
+            "review_sha256": "d99ef9e85e00e8aa36b3d37b3bdcddf0f21b6dec77409ef329a17caad751da05",
+            "visible_source_pts_seconds": 2.667,
+            "visible_source_frame_counter": 32,
+            "scope": "Visually reviewed actual DRM capture of generated local clip through intact VLC, original MediaCodec c2.android.mpeg4.decoder and Rust/Smithay; not all48 frames, rate, sync, scaling or audio acceptance."
+          }
+        ],
+        "physical_input_commands": 0,
+        "audio_eio_decision": {
+          "actual_PCM_writes": [
+            "11-05 19:51:33.806  1041   416   467 I AHAL_StreamAlsa: LINUX_PCM_SYNC_WRITE requested=4096 accepted=4096 begin_ns=128162420193971 end_ns=128162455120795 begin_clock_result=0 begin_clock_errno=0 end_clock_result=0 end_clock_errno=0",
+            "11-05 19:51:33.945  1041   416   467 E AHAL_StreamAlsa: LINUX_PCM_SYNC_WRITE requested=4096 accepted=0 result=-1 errno=5"
+          ],
+          "state_ERROR_witnesses": [
+            "11-05 19:51:33.954  1041   416   467 W AHAL_Stream: command 'burst' can not be handled in the state ERROR",
+            "11-05 19:51:33.954  1041   416   467 W AHAL_Stream: command 'burst' can not be handled in the state ERROR",
+            "11-05 19:51:33.954  1041   416   467 W AHAL_Stream: command 'burst' can not be handled in the state ERROR"
+          ],
+          "audioflinger_late_snapshot_frames_written": 4096,
+          "reference_frames": 192000,
+          "reference_sample_rate": 48000,
+          "complete_source_signal_audio_accepted": false,
+          "host_comparison": {
+            "period1024_buffer4096": {
+              "exit": 1,
+              "elapsed_seconds": 1.0432196079927962,
+              "failure": "aplay PCM write Input/output error"
+            },
+            "period4096_buffer16384": {
+              "exit": 0,
+              "elapsed_seconds": 3.299515178994625,
+              "samples": 49,
+              "final_sample": {
+                "monotonic": 128727.493166614,
+                "status": "state: DRAINING\nowner_pid   : 851666\ntrigger_time: 128724.265365117\ntstamp      : 0.000000000\ndelay       : 3136\navail       : 13248\navail_max   : 13248\n-----\nhw_ptr      : 189376\nappl_ptr    : 192512\n",
+                "hw_params": "access: RW_INTERLEAVED\nformat: S16_LE\nsubformat: STD\nchannels: 2\nrate: 48000 (48000/1)\nperiod_size: 4096\nbuffer_size: 16384\n"
+              },
+              "scope": "Host ffmpeg decoded source; no Android services. Successful write/drain/close does not prove source signal at VM host or acoustic output; clock divergence not explained."
+            }
+          },
+          "decision": "EIO also occurs in Linux aplay with period1024/buffer4096; larger4096/16384 completes. Do not attribute current failure solely to ART/JNI/API or add arbitrary success/retries. Next controlled intact VLC experiment uses original AOSP ro.hardware.audio.tinyalsa.period_size_multiplier=4 contract, with unchanged actual positions/errors; verify actual negotiated ALSA geometry and full audio source/signal. Cause of host emulation/IRQ timing and clock behavior remains unproved."
+        },
+        "original_identity_guard_verified": true,
+        "enforcing_interval_seconds": 345.44064118700044,
+        "host_restored_mode": 0,
+        "recovery_verified": true,
+        "consumed": true,
+        "presentation_failures": 12,
+        "scope": "Original package installation, signed bytes, direct single VIEW, real moving video frames and EOF/task handoff to Home witnessed on coherent ART/Bionic/native original services. Audio fails; no whole VLC workflow, physical VLC input, user-driven Back/close, reopen/persistence, source-signal, acoustic, clock, scaling/frame-rate, broad APK or R1 acceptance. ARM/GMS/DRM remain separate. Root/compositor/Home trust and background failures unchanged.",
+        "next": "EIO also occurs in Linux aplay with period1024/buffer4096; larger4096/16384 completes. Do not attribute current failure solely to ART/JNI/API or add arbitrary success/retries. Next controlled intact VLC experiment uses original AOSP ro.hardware.audio.tinyalsa.period_size_multiplier=4 contract, with unchanged actual positions/errors; verify actual negotiated ALSA geometry and full audio source/signal. Cause of host emulation/IRQ timing and clock behavior remains unproved.",
+        "evidence": {
+          "native-result.json": {
+            "path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/native-result.json",
+            "sha256": "ea5652d98f597b1acbc799dc73134e7e12a356390b800c9cadc02b7876041713"
+          },
+          "result.json": {
+            "path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/result.json",
+            "sha256": "88251fac26558e6c7f32976758f3eb374727d653316b33f7bf37ed25237e30ef"
+          },
+          "terminal-owner-status.json": {
+            "path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/terminal-owner-status.json",
+            "sha256": "650c7e820551256ca595a787c4787f35f597bfc79d3615e7274fce10bb1514fd"
+          },
+          "completion-result.json": {
+            "path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/completion-result.json",
+            "sha256": "4a2ee1d736b0f632f315d2e73651e23211cf38fea47f6694e9461e3b17ac287f"
+          },
+          "completion-consumer.json": {
+            "path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/completion-consumer.json",
+            "sha256": "be5b8982f6d1a79c8c0dac511609266cbec874c52693b2468813ce7a087bc4df"
+          },
+          "original-identities.json": {
+            "path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/original-identities.json",
+            "sha256": "5da020390309a832b9fcb83dd927effb5bf4cfeb25a95702202d1c2f52444a38"
+          },
+          "original-installer.json": {
+            "path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/original-installer.json",
+            "sha256": "3de2b4e41923ef5ce8cd92ffa2a5ee8277c4c17f5edc740e48142dc5045a2bea"
+          },
+          "original-storage.json": {
+            "path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/original-storage.json",
+            "sha256": "93f04b95e3c95a875936c3d8a6224e9fd613b4ff7edc6ebbe0bb08d0f6761d07"
+          },
+          "original-apk-hashes.json": {
+            "path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/original-apk-hashes.json",
+            "sha256": "ee531e210218b0e37524c75e07831be1b21e62ca49515421dca7f80c3ce766b7"
+          },
+          "observed-original-logcat.txt": {
+            "path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/observed-original-logcat.txt",
+            "sha256": "08bed5df06c7733becd8c3e16aeb3f959739b317b9d178698cbac7cdcc0e539b"
+          },
+          "original-logcat-capture.json": {
+            "path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/original-logcat-capture.json",
+            "sha256": "838d4fd58b8a67b0101c341f151541e74190a76fe3a71b16da7c026a89c83680"
+          },
+          "observed-media-launch.txt": {
+            "path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/observed-media-launch.txt",
+            "sha256": "8c746e56b09cb8ea4199ba72118a646ec76e0def8f5644495cd26a96cb9bdaa6"
+          },
+          "observed-media-resolve.txt": {
+            "path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/observed-media-resolve.txt",
+            "sha256": "8bd5ddac916aebb912f347821c3ad788c6e3ce200a5ce893e3b82c686caa8927"
+          },
+          "observed-media-published.txt": {
+            "path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/observed-media-published.txt",
+            "sha256": "89ac5a0c148edf649ac8d3da0201a6823ef4bd14d7d3c458252e4d7e4c6f9e8a"
+          },
+          "observed-media-bytes.txt": {
+            "path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/observed-media-bytes.txt",
+            "sha256": "76a4010c16d2430c8f17674d11c552ebb296bb30ce886e621b82a493c80d1bc5"
+          },
+          "observed-media-readback.mp4": {
+            "path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/observed-media-readback.mp4",
+            "sha256": "30fc8da5b0511c723c434cc13b3635507d7caae0b0d137c1f87aecbe6d1d4e17"
+          },
+          "observed-audio-flinger-1.txt": {
+            "path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/observed-audio-flinger-1.txt",
+            "sha256": "d4d427034df13c6dafd34d30340f6b69143eeaf06c5f4cc7f1e48c28bddc6361"
+          },
+          "observed-audio-flinger-status.txt": {
+            "path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/observed-audio-flinger-status.txt",
+            "sha256": "34b8c8fd5682223b3a76346a08e8859b0daeec7f7b2866b4e9d92d09117a4f80"
+          },
+          "mac-window.json": {
+            "path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/mac-window.json",
+            "sha256": "3058dad0cd538e297b302634ab0f2bc9789070bb9d05d9598f3d04aca8595069"
+          },
+          "recovery-readback.json": {
+            "path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/recovery-readback.json",
+            "sha256": "984c2e08adf84c3e36c5c3761688239bdb1766ef6999b23bfc5f861346b1a7c3"
+          },
+          "backing-after.json": {
+            "path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/backing-after.json",
+            "sha256": "5d9e48b25f4d95f5a0cc2c4afc39492ad3e4bcb85e23bb3029524ca701aa29e5"
+          },
+          "visual-review358.json": {
+            "path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/visual-review358.json",
+            "sha256": "e3cb23ce322f1f97c7ee42af67e6c254dc257d4fa90d83482cae52d85d0d2e07"
+          },
+          "background-fatal-scope.json": {
+            "path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/background-fatal-scope.json",
+            "sha256": "f840418cdae189457af7b5d543b75980aedb4cd4a4e15f4141671a2b22cc60db"
+          },
+          "audio-eio-decision.json": {
+            "path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/audio-eio-decision.json",
+            "sha256": "97c42c21f0b46d9b422951768e2a0b60e345bd06c4c94b436d2c5b2b75814b4b"
+          },
+          "host-audio-comparison.json": {
+            "path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/host-audio-comparison.json",
+            "sha256": "a8657374d8a444fea0928ddef572b2397edbf0ab3c10e206f6d5c43b4b0aa018"
+          },
+          "host-audio-large-comparison.json": {
+            "path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/host-audio-large-comparison.json",
+            "sha256": "9d9702677dcc5f595a920c5552766a70c5f3e9fcb25ca1dbb35d202d29362a52"
+          },
+          "host-audio-aplay.log": {
+            "path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/host-audio-aplay.log",
+            "sha256": "7dabbe6f4e563b43b2ed2b31a854e10611b129a3413a3ff8cf528fca0e9d35fb"
+          },
+          "host-audio-large-aplay.log": {
+            "path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/host-audio-large-aplay.log",
+            "sha256": "7bd8d7a674f5212b4f9368ceeee75fd862b502fbf4b91fe322ff421596c9687c"
+          },
+          "host-audio-driver-parameters.json": {
+            "path": "/home/tv/recuperacion-archtv/750f70b7-dcd6-4485-80d1-7ac731995b04-markor-software-launch/host-audio-driver-parameters.json",
+            "sha256": "6b9c8910131ca67b8ac407a3098c0173acfc44e9d8102b0598c6311b2ad03f38"
+          }
+        },
+        "REA_static": {
+          "path": "/home/tv/recuperacion-archtv/20261105-vlc-coherent358/rea-vlc-play.json",
+          "sha256": "987822fea38d4e416847166202558b6f59d796d069ef9749bf3604a69026eefa",
+          "evidence_id": "ev_fa4ce6bd33ffaa8d010c16be38a285dcd716b481a5129f0f3440e752b0d307ab",
+          "scope": "Actual REA MCP inspect_android_method play()V; may return while surfaces wait, then nativePlay JNI. Static inspection does not implement JNI or prove execution."
+        },
+        "artifact_preservation": {
+          "path": "/home/tv/recuperacion-archtv/20261105-vlc-coherent358/iso-cache-preservation.json",
+          "sha256": "0c8a7b9e45bc0a1faf153a47e4131743d05e7a4ba5c61e2b6a2796ff2b25c707",
+          "scope": "Historic ISO intermediate tar stream/decompression/compare verified before expanded cache unlink; source/keys/data/final ISO/evidence preserved; exact restore command retained. No VM restore rehearsal."
         }
       }
     }

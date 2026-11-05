@@ -1,5 +1,9 @@
 # Índice de evidencias
 
+358 · informe ART →coherent_cache_candidate.profile_coherence_experiment.integration358: instalación/VIEW VLC x86_64 intacta, MediaProvider con hash de lectura, JNI original y MediaCodec original, tres imágenes DRM con avance visible. Audio EIO y controles Linux4096/16384 conservados; exit0 de cohorte no acepta AV. Checkpoint750f70b7-dcd6-4485-80d1-7ac731995b04; hash y rutas en el informe. Recuperación y consumo verificados. REA MCP aporta inspección estática play()V, separada de ejecución.
+
+Histórico anterior (alcance y siguientes pasos de su fecha):
+
 357 pasa el recorrido seleccionado: catálogo PMS real→Home Rust/búsqueda→D-pad→Context/Instrumentation original inicia MainActivity→interfaz/nota348 intacta. Dieciséis entradas físicas, nueve outputs originales AMS/FUSE, guardias de identidad/Installer/CE/hashAPK y tres invocaciones terminadas0. Nativa0/exterior0;338.104s de ventana enforcing registrada, host69/permisivo y datos desmontados/loop retirado verificados, consumido sin cola. Primera captura pedida como Home muestra Markor y no cuenta como Home; la búsqueda/enfoque de tarjeta sí se inspeccionó. No es creación nueva357 ni compatibilidad APK amplia/R1. Siguiente: VLC real y su audio/vídeo sobre la base coherente actual, con negativas concretas del launcher en la misma cohorte. Informe ART →integration357.
 
 Histórico anterior:

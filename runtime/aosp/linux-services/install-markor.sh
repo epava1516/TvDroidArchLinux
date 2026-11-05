@@ -162,10 +162,10 @@ resolved=$(/system/bin/cmd package resolve-activity --brief --user 0 -a android.
 /system/bin/printf '%s\n' "$resolved" > /data/local/tmp/archtv-mc1/markor-resolve.txt
 component=$(/system/bin/printf '%s\n' "$resolved" | /system/bin/tail -n 1)
 case "$component" in "$target_package"/*) ;; *) exit 1;; esac
-# The audio-only comparison uses VLC's declared VIEW contract, resolved by
+# Local-media experiments use VLC's declared VIEW contract, resolved by
 # original PMS. URI access is granted by original AMS; never synthesize a URI
 # or bypass provider permission checks. Actual playback still needs evidence.
-if [ "${media_mime:-}" = audio/mp4 ]; then
+if [ -n "${media_uri:-}" ]; then
     media_resolved=$(/system/bin/cmd package resolve-activity --brief --user 0 -a android.intent.action.VIEW -c android.intent.category.DEFAULT -d "$media_uri" -t "$media_mime" -p "$target_package")
     /system/bin/printf '%s\n' "$media_resolved" > /data/local/tmp/archtv-mc1/media-resolve.txt
     media_component=$(/system/bin/printf '%s\n' "$media_resolved" | /system/bin/tail -n 1)

@@ -1,5 +1,9 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+Prioridad tras358: probar VLC intacta con el contrato original AOSP ro.hardware.audio.tinyalsa.period_size_multiplier=4, porque el control Linux de buffer16384 supera el EIO observado con4096. Verificar geometría real, errores/posiciones reales y señal de la fuente; no prometer audio por exit0, aumentar contadores ni ocultar el fallo. Después entrada/Back/cierre/reapertura VLC y negativas concretas del launcher. Markor357 sigue probado; compatibilidad amplia, R1, instalación/actualización, ligereza, ARM/GMS/DRM abiertos. Evidencias y alcance en informe ART →integration358.
+
+Histórico anterior (alcance y siguientes pasos de su fecha):
+
 357 pasa el recorrido seleccionado: catálogo PMS real→Home Rust/búsqueda→D-pad→Context/Instrumentation original inicia MainActivity→interfaz/nota348 intacta. Dieciséis entradas físicas, nueve outputs originales AMS/FUSE, guardias de identidad/Installer/CE/hashAPK y tres invocaciones terminadas0. Nativa0/exterior0;338.104s de ventana enforcing registrada, host69/permisivo y datos desmontados/loop retirado verificados, consumido sin cola. Primera captura pedida como Home muestra Markor y no cuenta como Home; la búsqueda/enfoque de tarjeta sí se inspeccionó. No es creación nueva357 ni compatibilidad APK amplia/R1. Siguiente: VLC real y su audio/vídeo sobre la base coherente actual, con negativas concretas del launcher en la misma cohorte. Informe ART →integration357.
 
 Histórico anterior:
