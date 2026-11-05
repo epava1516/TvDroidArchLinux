@@ -1,5 +1,9 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+Vigente tras329 ·La secuencia original level30→vdc system/system earlyBootEnded→Keystore SOFTWARE→odsign ejecuta: caché de clave de arranque y watcher creados, claves HMAC/firma inicializadas, odrefresh compila artefactos de selected-services (exit80). No prueba coherencia de boot images: odrefresh consideró /system válido pese a la discrepancia de framework previamente demostrada. Bloqueo actual: FS_IOC_ENABLE_VERITY devuelve EOPNOTSUPP; el ext4 real de datos no tiene feature verity, aunque el kernel sí la anuncia. odsign elimina6 entradas y no verifica caché. Cohorte cerrada/recuperada/consumida; permisivo67 y R1 abierto. Siguiente integración: almacenamiento privado compatible con fs-verity, contrastado con la ruta original de verificación completa; no activar features del filesystem raíz global ni fingir soporte. Exigir después firma/verificación, carga coherente real, negativas de alteración/revocación y recorridos Markor/VLC completos. Evidencia canónica: reports/android16-audio-bootstrap/artd-subprocess-progress.json →software_boot_key_integration.integration329.
+
+Histórico327 y preparación:
+
 Vigente tras327 ·odsign ejecuta su main original con la transición67; la creación HMAC falla en Keystore2 con LOCKED/Boot stage key absent. La cohorte cerró, recuperó permisivo67/TSC/mixer/unidades/loops/dm y consumió resultado sin notificación. Próximo requisito original: earlyBootEnded inicializa la caché de claves de nivel de arranque; comprobar su cliente, permiso y proveedor SOFTWARE explícito. El código original por defecto busca TEE, por lo que llamar Binder sin verificar la clave no basta. No hay firma/caché/imágenes/APK nuevas aceptadas. Evidencia: reports/android16-audio-bootstrap/artd-subprocess-progress.json, integration327.
 
 Histórico de preparación327:

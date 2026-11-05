@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793862518.2631702,
-    "seen": 1793862532.2162685,
-    "ast_hash": "6378221ba124fce1b43cf2752234144a",
+    "mtime": 1793862644.3127725,
+    "seen": 1793863047.5341687,
+    "ast_hash": "3be142cb5a375ec09430272ef14635b3",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793862518.2501416,
-    "seen": 1793862532.2169652,
-    "ast_hash": "bb6dc77e8db719c73d8534ed440b0259",
+    "mtime": 1793862644.3054242,
+    "seen": 1793863047.534795,
+    "ast_hash": "f233ae24d72d3158900194d1e002c5b9",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793862518.2545152,
-    "seen": 1793862532.2176955,
-    "ast_hash": "c8005c040b90b58b0cb67af6e609fb13",
+    "mtime": 1793862644.3086376,
+    "seen": 1793863047.535789,
+    "ast_hash": "fa4663a78f23fccf0f8fd647e3b2fd09",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -1716,9 +1716,9 @@
     "semantic_hash": ""
   },
   "docs/EVIDENCIAS.md": {
-    "mtime": 1793862518.2672522,
-    "seen": 1793862532.2171168,
-    "ast_hash": "4a30e3faebab1449da13c08ebce88b21",
+    "mtime": 1793862644.3155568,
+    "seen": 1793863047.5351746,
+    "ast_hash": "6eaaff3a69812ae2b8fe86cacc305bdc",
     "semantic_hash": ""
   },
   "fixtures/aosp-framework-space/FrameworkSpaceProbe.java": {
@@ -1974,9 +1974,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/native/linux-mc1-cohort.h": {
-    "mtime": 1793858581.9446228,
-    "seen": 1793858739.331729,
-    "ast_hash": "2ebe1cebc392ba937614b43d031d71ba",
+    "mtime": 1793862898.6629455,
+    "seen": 1793863047.5149918,
+    "ast_hash": "36627ae8ad6c16b3a85e7fef05fbab9e",
     "semantic_hash": ""
   },
   "fixtures/aosp-wayland-output/client.cpp": {
@@ -2205,6 +2205,12 @@
     "mtime": 1793857590.2932332,
     "seen": 1793857604.2338126,
     "ast_hash": "2fb2318c639053a81cac79c699067370",
+    "semantic_hash": ""
+  },
+  "runtime/aosp/android16-qpr2/patches/keystore2-software-boot-level.json": {
+    "mtime": 1793862790.2795696,
+    "seen": 1793863047.5117998,
+    "ast_hash": "618b56b623d38e75945d0eb222221e5b",
     "semantic_hash": ""
   }
 }

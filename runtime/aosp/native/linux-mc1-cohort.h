@@ -1235,6 +1235,31 @@ class LinuxMc1Cohort {
                !android::base::ReadFileToString("/vendor/etc/archtv-coherent-art",&profile) ||
                profile!="software-signed-cache-v1\n")
                 return android::base::Error()<<"Invalid coherent ART SOFTWARE profile";
+            // Original init.rc: level30 -> system/system VDC earlyBootEnded.
+            // These are security-phase inputs, never invented key readiness.
+            const auto boot_level=android::base::GetProperty("keystore.boot_level","");
+            if(!boot_level.empty() && boot_level!="30")
+                return android::base::Error()<<"Refuse to reset an advanced Keystore boot level";
+            if(!android::base::SetProperty("keystore.boot_level","30") ||
+               android::base::GetProperty("keystore.boot_level","")!="30")
+                return android::base::Error()<<"Original initial Keystore boot level failed";
+            auto early_boot=Service::MakeTemporaryOneshotService({"exec","-","system","system","--",
+                "/system/bin/vdc","keymaster","earlyBootEnded"});
+            if(!early_boot.ok())return early_boot.error();
+            auto* early_boot_client=early_boot->get();
+            if(early_boot_client->uid()!=1000 || early_boot_client->gid()!=1000)
+                return android::base::Error()<<"Original earlyBootEnded client identity mismatch";
+            client_done_=false;client_ok_=false;
+            early_boot_client->AddReapCallback([this](const siginfo_t& info) {
+                client_done_=true;client_ok_=info.si_code==CLD_EXITED && info.si_status==0;
+                std::fprintf(stderr,"COHERENT_KEYSTORE_EARLY_BOOT_CLIENT_EXIT pid=%d code=%d status=%d NOT_BOOT_KEY_ACCEPTANCE\n",info.si_pid,info.si_code,info.si_status);
+            });
+            services.AddService(std::move(*early_boot));
+            if(auto result=early_boot_client->ExecStart();!result.ok())return result;
+            if(auto result=Wait(tick,[this]{return client_done_;},60);!result.ok())return result;
+            if(!client_ok_)return android::base::Error()<<"Original vdc earlyBootEnded failed";
+            // Original maintenance can log cache setup errors and still return
+            // Binder success. Require subsequent real odsign key/crypto results.
             auto* art_boot=services.FindService("art_boot");
             if(!art_boot || art_boot->args()!=std::vector<std::string>{"/apex/com.android.art/bin/art_boot"} ||
                art_boot->uid()!=0)

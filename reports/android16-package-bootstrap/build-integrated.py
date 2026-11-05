@@ -25,6 +25,7 @@ tracked_inputs.extend(['reports/android16-audio-bootstrap/build-support.py','rep
 tracked_inputs.extend(['reports/android16-audio-bootstrap/build-linux-primary.py','reports/android16-audio-bootstrap/link-linux-core.py','runtime/aosp/android16-qpr2/patches/audio-alsa-write-observation.patch','runtime/aosp/android16-qpr2/patches/audio-alsa-write-observation.json'])
 tracked_inputs.extend(['runtime/aosp/android16-qpr2/patches/audio-alsa-synchronous-pcm.patch','runtime/aosp/android16-qpr2/patches/audio-alsa-synchronous-pcm.json'])
 tracked_inputs.extend(['reports/android16-package-bootstrap/build-odsign-software.py','reports/android16-package-bootstrap/link-odsign-software.py','runtime/aosp/android16-qpr2/patches/odsign-explicit-software.patch','runtime/aosp/android16-qpr2/patches/odsign-explicit-software.json'])
+tracked_inputs.extend(['reports/android16-package-bootstrap/build-keystore-boot-profile.py','runtime/aosp/android16-qpr2/patches/keystore2-software-boot-level.patch','runtime/aosp/android16-qpr2/patches/keystore2-software-boot-level.json'])
 source_hashes={n:hashlib.sha256((r/n).read_bytes()).hexdigest() for n in tracked_inputs}
 (out/'source-inputs.json').write_text(json.dumps(source_hashes,indent=2)+'\n')
 actions_source=r/'dist/aosp16/property-actions-source-4'
@@ -260,6 +261,18 @@ if keystore_component:
  candidate=json.loads((r/'reports/android16-package-bootstrap/keystore2-source-candidate.json').read_text())
  service=Path(candidate['software_candidate']['path'])
  assert hashlib.sha256(service.read_bytes()).hexdigest()==candidate['software_candidate']['sha256']
+ if coherent_art:
+  boot_record_path=r/'dist/aosp16/keystore-boot-profile-build-2/build.json'
+  boot_record=json.loads(boot_record_path.read_text())
+  assert boot_record['exit']==0 and boot_record['workspace_sources_restored']
+  boot_patch=r/'runtime/aosp/android16-qpr2/patches/keystore2-software-boot-level.patch'
+  assert hashlib.sha256(boot_patch.read_bytes()).hexdigest()==boot_record['patch_sha256']
+  for source,digest in boot_record['sources'].items():
+   assert hashlib.sha256((boot_record_path.parent/Path(source).name).read_bytes()).hexdigest()==digest
+  service=Path(boot_record['binary'])
+  assert hashlib.sha256(service.read_bytes()).hexdigest()==boot_record['binary_sha256']
+  (out/'keystore-boot-input.json').write_text(json.dumps(boot_record,indent=2)+'\n')
+
  client=source_root/'binder-platform/target/x86_64-linux-android/debug/keystore-binder-client'
  client_build=json.loads((source_root/'keystore-binder-client-build.json').read_text());assert client_build['exit']==0
  assert (source_root/'binder-platform/keystore-binder-client/main.rs').read_bytes()==(r/'fixtures/aosp-keystore2-software/BinderClient.rs').read_bytes()

@@ -347,6 +347,80 @@
         },
         "next_action": "Integrate original earlyBootEnded bootstrap client and justified SOFTWARE boot-level provider; verify real key creation and negative boot-level behavior. No new policy grant absent actual denial."
       }
+    },
+    "software_boot_key_integration": {
+      "source_pin": "882e4a2102348cf7c320737d4e21b39c25d3a422",
+      "patch": "runtime/aosp/android16-qpr2/patches/keystore2-software-boot-level.patch",
+      "metadata": "runtime/aosp/android16-qpr2/patches/keystore2-software-boot-level.json",
+      "build": "dist/aosp16/keystore-boot-profile-build-2/build.json",
+      "binary_sha256": "87983e7b21dc4f485fb863f863923c3cb005841eb2340131b30dbb5e9c1b5013",
+      "scope": "Whole original Keystore2 SOFTWARE profile; boot provider uses original deny-later selection, original database/HKDF/crypto/watchers; maintenance operates explicit SOFTWARE provider. No hardware trust guarantees. Existing normal hardware build unchanged.",
+      "rea_evidence": "dist/aosp16/keystore-boot-profile-build-2/rea-headers.json",
+      "rea_scope": "Actual MCP static ELF64 x86_64 header observation only",
+      "integration329": {
+        "checkpoint": "/home/tv/recuperacion-archtv/9d7f3336-daf1-4b54-b145-603775c6d61a-markor-software-launch",
+        "state": "closed recovered consumed",
+        "payload_sha256": "a2d6d9b398faac29395b5273da8533b2212ad691080b36592e452decd82b6e0e",
+        "scope": "Original level30 + system/system vdc earlyBootEnded before art_boot/odsign; refuses to reset advanced phase. Requires actual key creation/use/revocation/signature/cache/image and APK workflow evidence.",
+        "functional_result": "/home/tv/recuperacion-archtv/9d7f3336-daf1-4b54-b145-603775c6d61a-markor-software-launch/functional-result.json",
+        "result": {
+          "attempt": 329,
+          "id": "9d7f3336-daf1-4b54-b145-603775c6d61a",
+          "execution": {
+            "original_vdc_earlyBootEnded_exit": 0,
+            "original_keystore_provider": "SOFTWARE",
+            "original_deny_later_strategy": "EarlyBootOnly",
+            "boot_level_watcher_started": true,
+            "boot_level30_observed": true,
+            "boot_level1B_finished_observed": true,
+            "odsign_hmac_and_signing_key_initialized": true,
+            "original_odrefresh_compile_exit": 80,
+            "compiled_scope": "Selected-services systemserver artifacts; original odrefresh considered /system boot images OK. Does NOT prove modified framework image coherence.",
+            "fsverity_enable": "EOPNOTSUPP",
+            "odsign_removed_entries": 6
+          },
+          "blocker": "Actual private store lives on host ext4 without verity superblock feature; original SupportsFsVerity checks only kernel /proc/sys/fs/verity and chooses fs-verity path. Kernel support alone does not prove per-filesystem capability.",
+          "scope": "Actual original service integration/negative filesystem result under bounded MAC, not verified cache/image/APK/security isolation. Revocation watcher log is not a denied-key-use negative test.",
+          "recovery": {
+            "mode": "0",
+            "policy_sha256": "61a41267ee6de3afb412dce4c199243b3a6536b7d3c0bd6aefd6b422fa66d703",
+            "clock": "tsc",
+            "pcm": "closed",
+            "udev_drop_absent": true,
+            "units": {
+              "archtv-host-owner-9d7f3336-daf1-4b54-b145-603775c6d61a.service": {
+                "ActiveState": "inactive",
+                "MainPID": "0"
+              },
+              "archtv-package-runner-9d7f3336-daf1-4b54-b145-603775c6d61a.service": {
+                "ActiveState": "inactive",
+                "MainPID": "0"
+              },
+              "archtv-markor-session-9d7f3336-daf1-4b54-b145-603775c6d61a.service": {
+                "ActiveState": "inactive",
+                "MainPID": "0"
+              }
+            },
+            "loops_absent": true,
+            "dm": "No devices found",
+            "mixer_equal": true
+          },
+          "consumer": {
+            "id": "9d7f3336-daf1-4b54-b145-603775c6d61a",
+            "state": "consumed",
+            "owner": "active:9d7f3336-daf1-4b54-b145-603775c6d61a",
+            "consumed_by": "active:9d7f3336-daf1-4b54-b145-603775c6d61a"
+          },
+          "evidence": {
+            "run.log": "a71e92482558b2929952a0f7c2a876972a709ad2f735e305fc9b71ba84bc88d4",
+            "observed-original-logcat.txt": "14f638e0472fdb8a7c1d211da653eabd1a7fe05749bf290e28f6d58b7844eada",
+            "filesystem-verity-observation.json": "e9a4f06c032cb12bc4ac7f32c0f2d2c574cdb76ed860082dfd260d33b97cc0a4",
+            "finite-audit/result.json": "1ae7dc79f6e14e4555b45201b9fae3233884c97ea4a5d244cdb4946919063b25",
+            "recovery-readback.json": "d3d4c7ca50276db3abfd4e679548e6898684de6772f13420de63198bffe084cb"
+          },
+          "next_action": "Evaluate private fs-verity-capable persistent ext4 backing against original full-verification route; preserve original cryptography and reject fake support/readiness. Prefer retaining original protection with private data filesystem rather than changing global host root features. Then actual odsign verification and image coherence, tamper/revocation negatives, full Markor/VLC."
+        }
+      }
     }
   }
 }
