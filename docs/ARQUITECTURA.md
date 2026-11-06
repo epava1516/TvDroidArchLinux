@@ -1,5 +1,9 @@
 # Arquitectura vigente · A16-QPR2-1
 
+Decisión experimental375: conservar payload374 y usar acpi_pm sólo en ventanas de diagnóstico con rollback a TSC antes de valorar controles/reproducción. La mejora de cobertura estimada de la señal ALSA justifica repetir el control; no justifica cambiar el reloj por defecto ni atribuir el fallo a VirtualBox. La salida de vídeo permanece parcial y requiere medición de presentación/temporización. API/servicios, Bionic/JNI, ISA y R1 siguen separados. Evidencia canónica: informe ART →integration375 y ESTADO.md.
+
+Histórico anterior:
+
 374 verifica Back→cierre MainTv original→Home real con VLC1→Enter→MainTv original→History→reproducción visible otra vez (PTS0,417/frame5 a1,833/frame22).30órdenes físicas; sin CLI ni grants. El instalador observa el primer cierre original y consulta el mismo AudioFlinger/HAL:67escrituras/270336frames, flags0, sin errores ni truncamiento. Sólo2,5s de señal activa frente a4s de referencia; salto estimado0,244→1,833s. No se acepta audio completo/sincronía/salida acústica/pausa ni compatibilidad amplia. Exterior0, recuperación69/permisivo/TSC/mixer/datos/BPF y consumo único verificados.
 
 Siguiente: mismo payload374, control temporal acpi_pm con rollback existente armado antes y finally, copia offline nueva. El antecedente Linux contado2,65s TSC/4,01s acpi_pm justifica contrastar ahora esta base multimedia; no prueba causa ni aceptación APK actual. Comparar discontinuidad de señal y late/flush originales; restaurarTSC, sin cambio permanente. R1/ARM/GMS/DRM y producto siguen abiertos.

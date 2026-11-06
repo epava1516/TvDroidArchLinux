@@ -79,7 +79,7 @@
     "sha256": "7737128a86eddd06156a67d8c4bab8e9b3dce151c44e0f65531204bef3af0281",
     "result": "startup deadline, no APK launch; normal recovery verified; descriptor publisher unexercised"
   },
-  "next_experiment": "Original HAL single attached output hardware-paced writes, no lossy intermediate MonoPipe; preserve errors/real counts and bounded close. Clock causality and acoustic output remain unverified.",
+  "next_experiment": "Same374 payload, temporaryacpi_pm again, native control armed before first UI playback. After original first-player finish AND original PCM pipeline0, promptly replay by physical select, use new original PLAYING->physicalSPACE->PAUSED->2s->physicalSPACE->PLAYING and original finish; actual frames required. Verify warm video coverage separately; no manual model delay in60s idle window.",
   "cold_boot_image": {
     "source": "/home/tv/.cache/archtv/aosp16-qpr2/package-bootstrap-study-1/image_space.cc",
     "source_sha256": "c7b972499fe83b8e949aae4aa641b7fea7c3b5c52c2920979b155748f378765f",
@@ -129,5 +129,17 @@
     "virtualbox": "7.2.22 r175245 Qt6.8.0",
     "source": "user confirmed",
     "hyper_v": "unknown, host log requested; not required for other runtime work"
+  },
+  "integrated375": {
+    "functional_result": "/home/tv/recuperacion-archtv/fda327ee-52ba-476c-8185-7baf15ad1386-markor-software-launch/functional-result.json",
+    "sha256": "c84e48ba2dcd554736125152e12c64e7698e658bd1ffb3fc8705bfe0922549b9",
+    "same_payload374": true,
+    "accepted_pcm_active_seconds": 4.04,
+    "estimated_source_range": [
+      0.024546424759871996,
+      3.9799056438930625
+    ],
+    "large_source_steps": [],
+    "scope": "One temporaryacpi_pm trial restoresTSC; signal submission improved versus374, video only inspected toPTS1.250. No permanent clock, acoustic, sync or broad acceptance."
   }
 }

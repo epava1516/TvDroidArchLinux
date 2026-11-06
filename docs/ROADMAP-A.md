@@ -1,5 +1,9 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+Prioridad después de375: validar reproducción templada y controles reales con la captura primera ya terminada; el reloj temporal mejora señal conocida pero no cierra vídeo/audio/sincronía. El actor de control debe reaccionar a estados originales nuevos dentro de la misma cohorte; un timeout suyo no es terminación. Instalación/permiso/cierre-reapertura374 conservan su alcance. No hay cambio persistente de reloj; R1/ARM/GMS/DRM y producto siguen abiertos. Resultado y límites: ESTADO.md e informe ART →integration375.
+
+Histórico anterior:
+
 374 verifica Back→cierre MainTv original→Home real con VLC1→Enter→MainTv original→History→reproducción visible otra vez (PTS0,417/frame5 a1,833/frame22).30órdenes físicas; sin CLI ni grants. El instalador observa el primer cierre original y consulta el mismo AudioFlinger/HAL:67escrituras/270336frames, flags0, sin errores ni truncamiento. Sólo2,5s de señal activa frente a4s de referencia; salto estimado0,244→1,833s. No se acepta audio completo/sincronía/salida acústica/pausa ni compatibilidad amplia. Exterior0, recuperación69/permisivo/TSC/mixer/datos/BPF y consumo único verificados.
 
 Siguiente: mismo payload374, control temporal acpi_pm con rollback existente armado antes y finally, copia offline nueva. El antecedente Linux contado2,65s TSC/4,01s acpi_pm justifica contrastar ahora esta base multimedia; no prueba causa ni aceptación APK actual. Comparar discontinuidad de señal y late/flush originales; restaurarTSC, sin cambio permanente. R1/ARM/GMS/DRM y producto siguen abiertos.

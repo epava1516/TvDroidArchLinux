@@ -44,7 +44,7 @@
         "close": "not_tested",
         "reopen": "not_tested"
       },
-      "reason": "374 proves original Back/MainTv finish -> real Home -> original relaunch -> same history medium opened and moving again, with intact APK and no CLI launch/grants. Original AF/HAL capture succeeds but contains2.5s active signal vs4s reference and estimated source discontinuity0.244->1.833s. FullAV/pause/acoustic/sync/R1/ARM/GMS/DRM not accepted. Next exact-payload clocksource control with recovery, no new audio runtime.",
+      "reason": "375 same374 payload with temporaryacpi_pm: accepted PCM contains4.04s active known chirp, estimated source0.025..3.980s and no large source jumps versus374 gap. TSC restored; one VM pair, no universal cause or acoustic/sync acceptance. Actual video inspected only to1.250s; pause attempt missed owned window.374 original activity/Home/media reopen retained. Next native event-driven warm playback/pause control.",
       "framework_class_link_pass": null,
       "source_verification": "Existing cached artifact; download provenance not revalidated in this audit. REA identity and declared signer recorded.",
       "declared_application": "org.videolan.mobile.app.VLCApplication",
@@ -399,6 +399,17 @@
         "source_signal_active_seconds": 2.5,
         "reference_seconds": 4.0,
         "scope": "Original physical UI warm activity close/reopen and actual movie frames. Capture proves gap, not continuous audio or causal clock diagnosis. Host recovery and one-time consumption verified."
+      },
+      "coherent_control375": {
+        "evidence": "/home/tv/recuperacion-archtv/fda327ee-52ba-476c-8185-7baf15ad1386-markor-software-launch/functional-result.json",
+        "evidence_sha256": "c84e48ba2dcd554736125152e12c64e7698e658bd1ffb3fc8705bfe0922549b9",
+        "known_source_frequency_range_at_ALSA": true,
+        "complete_audio": false,
+        "complete_video": false,
+        "pause": false,
+        "full_workflow": false,
+        "source_signal_active_seconds": 4.04,
+        "scope": "No large estimated source gap; not acoustic/sync/sample-perfect/general acceptance. Temporary clock restored and host recovery verified."
       }
     },
     {

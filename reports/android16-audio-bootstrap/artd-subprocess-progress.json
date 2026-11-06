@@ -5297,6 +5297,116 @@
           "path": "/home/tv/recuperacion-archtv/82939f7c-3867-4903-90ef-8813dd88b5d1-markor-software-launch/functional-result.json",
           "sha256": "eb8a7ae3a50c55ffa9a771e9a9c651424d615948ae6af47f66f4b3ffd0d051d6"
         }
+      },
+      "integration375": {
+        "id": "fda327ee-52ba-476c-8185-7baf15ad1386",
+        "checkpoint": "/home/tv/recuperacion-archtv/fda327ee-52ba-476c-8185-7baf15ad1386-markor-software-launch",
+        "payload_sha256": "a36aea76ec0df559a6bff19e2543f6d97d66034fff467591bb205d3dba658e99",
+        "build": "dist/aosp16/package-cohort-build-374",
+        "clock_control": {
+          "baseline": "tsc",
+          "temporary": "acpi_pm",
+          "restored": "tsc",
+          "persistent_change": false,
+          "original_rollback_readback": {
+            "path": "/home/tv/recuperacion-archtv/fda327ee-52ba-476c-8185-7baf15ad1386-markor-software-launch/clock-control-readback.json",
+            "sha256": "86e2e438b7c564882442f78ddc40d900ca9e2c3e7f42345a942754948a06ca3f"
+          }
+        },
+        "outer_exit": 0,
+        "physical_commands": 28,
+        "comparison": {
+          "374_tsc": {
+            "accepted_frames": 270336,
+            "writes": 67,
+            "active_seconds": 2.5,
+            "source_jump": "estimated0.244->1.833s"
+          },
+          "375_acpi_pm": {
+            "accepted_frames": 339968,
+            "writes": 83,
+            "flags": 0,
+            "active_seconds": 4.04,
+            "source_min": 0.024546424759871996,
+            "source_max": 3.9799056438930625,
+            "large_estimated_source_steps": []
+          },
+          "scope": "Same immutable APK/media/native audio/policy/payload; one Linux VM pair. UI timing/wake history and fresh cohort differ. Supports temporary guest-clock control, not universal cause or production/acoustic/sync acceptance."
+        },
+        "video_observed": "Actual fullscreen frame3/PTS0.250 then frame15/PTS1.250. Full4-second video rendering not demonstrated despite source-frequency range at accepted PCM.",
+        "pause_control": "Not accepted: initial select after normal timeout; physical wake/select and native observation later reached observation deadline with no new PLAYING. Actual package runtime subsequently verified terminal, not restarted.",
+        "next_action": "Same374 payload, temporaryacpi_pm again, native control armed before first UI playback. After original first-player finish AND original PCM pipeline0, promptly replay by physical select, use new original PLAYING->physicalSPACE->PAUSED->2s->physicalSPACE->PLAYING and original finish; actual frames required. Verify warm video coverage separately; no manual model delay in60s idle window.",
+        "open": [
+          "Complete rendered video/AVsync/acoustic output and pause control",
+          "Reproducibility/current-clock effects on host and cold-start costs",
+          "R1 isolation, ARM/GMS/DRM, installation/update/rollback/distribution and broad APK compatibility"
+        ],
+        "evidence": [
+          {
+            "path": "/home/tv/recuperacion-archtv/fda327ee-52ba-476c-8185-7baf15ad1386-markor-software-launch/result.json",
+            "sha256": "b96b05882cfa775899f823d344b6a8d873417d2a08839f790df700674264752d"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/fda327ee-52ba-476c-8185-7baf15ad1386-markor-software-launch/completion-result.json",
+            "sha256": "66f84abf7d14b2275a16271878bd3a2d8841964953f3c4e1fd6b55868a1dca2c"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/fda327ee-52ba-476c-8185-7baf15ad1386-markor-software-launch/completion-consumer.json",
+            "sha256": "e506af8923a0a80c3b5848418067cac4e5d6e770287b1b7eb25d7848b6dd882b"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/fda327ee-52ba-476c-8185-7baf15ad1386-markor-software-launch/recovery-readback.json",
+            "sha256": "525ad02a5f46dea40dc8557ff252b42c33633d37b2feea41ff7265726a8a9ea6"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/fda327ee-52ba-476c-8185-7baf15ad1386-markor-software-launch/root-after.json",
+            "sha256": "69254043c7389477d34e02f7cf0819cff6d9d3014fbe5d0d6aab9a783e5e0a0d"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/fda327ee-52ba-476c-8185-7baf15ad1386-markor-software-launch/observed-original-logcat.txt",
+            "sha256": "047a7fdd9d9d4c2cb015d055b90bcb69c7786993c42b2992ebc77b0146decc1a"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/fda327ee-52ba-476c-8185-7baf15ad1386-markor-software-launch/observed-audio-accepted-pcm.bin",
+            "sha256": "50e20d748c3da8094dd73cceffeca59bfe48e886af96f7050b87ca302c95a40d"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/fda327ee-52ba-476c-8185-7baf15ad1386-markor-software-launch/observed-audio-pcm-status.txt",
+            "sha256": "bddde26fdcde62164f6559d4722720b2bed912c3d3aeec21d160bcab06799901"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/fda327ee-52ba-476c-8185-7baf15ad1386-markor-software-launch/pcm-signal/signal-analysis.json",
+            "sha256": "74dfb21abe29dd2b12e35b88d43f6181247cfeb8507381b70b7d094c6f1a1c82"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/fda327ee-52ba-476c-8185-7baf15ad1386-markor-software-launch/pcm-signal/source-step-observation.json",
+            "sha256": "4ea827415f34e1f236ae6c660490511e431ec09909a6864df680b08c4c05934d"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/fda327ee-52ba-476c-8185-7baf15ad1386-markor-software-launch/clock-playback-frames.json",
+            "sha256": "3186269b19c624955466e8c2ea75fb38bdb7feba2b0de2f72e2580ae3e8eb8c2"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/fda327ee-52ba-476c-8185-7baf15ad1386-markor-software-launch/clock-movie-b.png",
+            "sha256": "d9be77d03d906af72e7a2602d2b29708c7ef57b6a9e8d13ea934ea7b58b4fb4d"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/fda327ee-52ba-476c-8185-7baf15ad1386-markor-software-launch/clock-movie-c.png",
+            "sha256": "23f6fabca35d49dfaa57c8d3e8c7676ce263baa8f56cf6cecdf3632cc8c1f4e7"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/fda327ee-52ba-476c-8185-7baf15ad1386-markor-software-launch/pause-input-observation.json",
+            "sha256": "e3ece4bb6043837751ab4f524f1a6d97d9c4ac8ed1b869c47d99a6cab5e07f5b"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/fda327ee-52ba-476c-8185-7baf15ad1386-markor-software-launch/original-lateness-lines.json",
+            "sha256": "545ce47488e6ac80ff48d929ffb8a2e55c44d1f0227fe5cf13769c3fca0671a4"
+          }
+        ],
+        "functional_result": {
+          "path": "/home/tv/recuperacion-archtv/fda327ee-52ba-476c-8185-7baf15ad1386-markor-software-launch/functional-result.json",
+          "sha256": "c84e48ba2dcd554736125152e12c64e7698e658bd1ffb3fc8705bfe0922549b9"
+        }
       }
     }
   },
