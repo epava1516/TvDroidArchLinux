@@ -1896,7 +1896,7 @@
           "sha256": "d3eb7667da5d6443deb22eb91de5893b561c0d7ec098f92087a2ed33a0a58f36"
         }
       },
-      "current_integration": "integration370",
+      "current_integration": "integration371",
       "integration348": {
         "checkpoint": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch",
         "build": "dist/aosp16/package-cohort-build-348",
@@ -4870,6 +4870,149 @@
           "after-normal-back.png": {
             "path": "/home/tv/recuperacion-archtv/5418e068-64d7-4f4c-ac62-5374ae3380a2-markor-software-launch/after-normal-back.png",
             "sha256": "04a66961abe72eae1453e2e58e7d547c368a2b0aae82cf7adda489e6745307fe"
+          }
+        }
+      },
+      "integration371": {
+        "checkpoint": "/home/tv/recuperacion-archtv/e26a78f4-85ee-4cc3-91fc-9c4c20a4e744-markor-software-launch",
+        "build": "dist/aosp16/package-cohort-build-370",
+        "code_commit": "0b385a5",
+        "native_exit": 0,
+        "outer_exit": 0,
+        "interaction_exit": 0,
+        "physical_main_actor_commands": 16,
+        "temporary_remote_select_events": 2,
+        "cold_native_PMS_readback": [
+          {
+            "path": "/home/tv/recuperacion-archtv/e26a78f4-85ee-4cc3-91fc-9c4c20a4e744-markor-software-launch/cold-original-markor-preinstall-dump.txt",
+            "sha256": "023ce9690a53b3efcc19b257c3f9260de1332cd4bb027ce86027cd3d8d5f88f5",
+            "selected_permission_lines": [
+              "android.permission.READ_MEDIA_VISUAL_USER_SELECTED: granted=true, flags=[ USER_SET|USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]",
+              "android.permission.READ_MEDIA_IMAGES: granted=false, flags=[ USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]",
+              "android.permission.READ_MEDIA_AUDIO: granted=true, flags=[ USER_SET|USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]",
+              "android.permission.READ_MEDIA_VIDEO: granted=true, flags=[ USER_SET|USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]"
+            ],
+            "scope": "Original PMS before/after identical reinstall in a new native cohort on same Linux boot; no current grant writes or host reboot persistence acceptance."
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/e26a78f4-85ee-4cc3-91fc-9c4c20a4e744-markor-software-launch/cold-original-markor-postcommit-dump.txt",
+            "sha256": "81e13addc088686bdcd44be4ae999bf9b745b5efe7c5b95395bce6e0720acd33",
+            "selected_permission_lines": [
+              "android.permission.READ_MEDIA_VISUAL_USER_SELECTED: granted=true, flags=[ USER_SET|USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]",
+              "android.permission.READ_MEDIA_IMAGES: granted=false, flags=[ USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]",
+              "android.permission.READ_MEDIA_AUDIO: granted=true, flags=[ USER_SET|USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]",
+              "android.permission.READ_MEDIA_VIDEO: granted=true, flags=[ USER_SET|USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]"
+            ],
+            "scope": "Original PMS before/after identical reinstall in a new native cohort on same Linux boot; no current grant writes or host reboot persistence acceptance."
+          }
+        ],
+        "media_permissions_persisted_across_native_restart": true,
+        "host_reboot_persistence_accepted": false,
+        "original_app_UI_library_unlocked": true,
+        "file_history_card_and_thumbnail_present": true,
+        "actual_current_file_open_accepted": false,
+        "moving_video_accepted_this_run": false,
+        "complete_AV_workflow_accepted": false,
+        "remote_select": {
+          "keylayout": {
+            "run_id": "e26a78f4-85ee-4cc3-91fc-9c4c20a4e744",
+            "owner_invocation": "fe58886ffd0249afb3d5df4000ecf27f",
+            "linux_key_code": 353,
+            "original_android_mapping": "DPAD_CENTER",
+            "original_keylayout_sha256": "3c2c3c704f05973b49cecd5dbccd28f211c399e6f5eb2877fd07cdd203b690ac",
+            "scope": "Physical remote SELECT key for the actually focused media card; events are not playback acceptance.",
+            "events_written": 2,
+            "device_closed": true
+          },
+          "original_rejection_logs": [
+            "11-06 01:42:18.716  1000   523   746 W System.err: WAYLAND_INPUT_ORIGINAL_DISPATCH seq=11 type=1 code=23 action=0 accepted=false",
+            "11-06 01:42:23.816  1000   523   746 W System.err: WAYLAND_INPUT_ORIGINAL_DISPATCH seq=12 type=1 code=23 action=1 accepted=false"
+          ],
+          "scope": "353\u2192DPAD_CENTER23 confirmed; attempted late with display off, original dispatch rejected. Enter66 earlier focused the card but no VideoPlayer START observed. Do not infer translator/decoder failure or require permission changes."
+        },
+        "R1_MAC_closed": false,
+        "host_recovery": {
+          "boot_id": "109b367f-8785-48af-a620-c355e33639fd",
+          "kernel": "6.18.59-archtv-aosp16-1",
+          "units": "",
+          "loops": "",
+          "dm": "No devices found",
+          "mode": "0",
+          "policy_sha256": "d8b79d1fb58c875f06ee804c83fa3ee90dcd2a5fb0b356f425179e392cbeb818",
+          "clock": "tsc",
+          "pcm": "closed",
+          "udev_drop_absent": true,
+          "mixer_equal": true,
+          "audit_lost_delta": 0,
+          "audit_rules_restored": true,
+          "audit_receiver_closed": true,
+          "backing_unmounted_detached": true,
+          "native_result_present": true,
+          "BPF_cleanup": true
+        },
+        "enforcing_interval_seconds": 463.0077364890003,
+        "consumed": true,
+        "next": "Same370, next real UI run with SELECT353 in the main bounded input actor (explicit key bit plus select mapping), use Enter only for Linux Home. Open actual visible media promptly through DPAD_CENTER, collect video frames/EOF, normal close/reopen. Do not repeat permission dialogs or compile unchanged runtime; audio complete/sync remains separate until measured. Initial Home stacking defect remains open.",
+        "evidence": {
+          "before.json": {
+            "path": "/home/tv/recuperacion-archtv/e26a78f4-85ee-4cc3-91fc-9c4c20a4e744-markor-software-launch/before.json",
+            "sha256": "07fd1be789fe45beade49edc6c30e7743e9f60b116673660c239ef42c7bb92dd"
+          },
+          "before-launch.json": {
+            "path": "/home/tv/recuperacion-archtv/e26a78f4-85ee-4cc3-91fc-9c4c20a4e744-markor-software-launch/before-launch.json",
+            "sha256": "ce076d701720fc75b2ea97f96273a0ab2fc15ba58b9b2c803cc065f8080d5403"
+          },
+          "result.json": {
+            "path": "/home/tv/recuperacion-archtv/e26a78f4-85ee-4cc3-91fc-9c4c20a4e744-markor-software-launch/result.json",
+            "sha256": "d14cf1a5d3cbedd8f0d7a1c6aebb42434575c46a5de5908136fbb9b4eb1bf0c4"
+          },
+          "completion-result.json": {
+            "path": "/home/tv/recuperacion-archtv/e26a78f4-85ee-4cc3-91fc-9c4c20a4e744-markor-software-launch/completion-result.json",
+            "sha256": "856236c7dda6b69f62e59789ae19378ae0e14fd6a8ecb78e52d55047f1fec479"
+          },
+          "completion-consumer.json": {
+            "path": "/home/tv/recuperacion-archtv/e26a78f4-85ee-4cc3-91fc-9c4c20a4e744-markor-software-launch/completion-consumer.json",
+            "sha256": "1b4cabdb7d791e95185b56ae17b9671d29bfb2d4444c461138456a551d663802"
+          },
+          "mac-window.json": {
+            "path": "/home/tv/recuperacion-archtv/e26a78f4-85ee-4cc3-91fc-9c4c20a4e744-markor-software-launch/mac-window.json",
+            "sha256": "26dbb793ea30a483fb37dea45f58f13a8530ca2798f25ea35838e5cf93fa0772"
+          },
+          "recovery-readback.json": {
+            "path": "/home/tv/recuperacion-archtv/e26a78f4-85ee-4cc3-91fc-9c4c20a4e744-markor-software-launch/recovery-readback.json",
+            "sha256": "525ad02a5f46dea40dc8557ff252b42c33633d37b2feea41ff7265726a8a9ea6"
+          },
+          "interaction-events.json": {
+            "path": "/home/tv/recuperacion-archtv/e26a78f4-85ee-4cc3-91fc-9c4c20a4e744-markor-software-launch/interaction-events.json",
+            "sha256": "eb9ca9dfec56adab6cb580858f2d11ee7cfbea46bd1c3b827df6c7867705d363"
+          },
+          "physical-select-key.json": {
+            "path": "/home/tv/recuperacion-archtv/e26a78f4-85ee-4cc3-91fc-9c4c20a4e744-markor-software-launch/physical-select-key.json",
+            "sha256": "aed363d44b5ed247d6a7684a779d188242e6f93b5622b3a05f0b92c3b5538f72"
+          },
+          "observed-original-logcat.txt": {
+            "path": "/home/tv/recuperacion-archtv/e26a78f4-85ee-4cc3-91fc-9c4c20a4e744-markor-software-launch/observed-original-logcat.txt",
+            "sha256": "7c2c20c77f2b103e648500aa5ee8dcd5c885ca8d94f0982a7620e3adb03334e6"
+          },
+          "frame-links.jsonl": {
+            "path": "/home/tv/recuperacion-archtv/e26a78f4-85ee-4cc3-91fc-9c4c20a4e744-markor-software-launch/frame-links.jsonl",
+            "sha256": "5fd7c4a3092f6187c92fe4faeac46a337421e7d8051849c5f0acb2c117e93ceb"
+          },
+          "cold-vlc-main.png": {
+            "path": "/home/tv/recuperacion-archtv/e26a78f4-85ee-4cc3-91fc-9c4c20a4e744-markor-software-launch/cold-vlc-main.png",
+            "sha256": "ff7f335649e3c057bd31271a0fd25561a2eb7c2fc02ebb000a08a7bb33b485d9"
+          },
+          "browsing.png": {
+            "path": "/home/tv/recuperacion-archtv/e26a78f4-85ee-4cc3-91fc-9c4c20a4e744-markor-software-launch/browsing.png",
+            "sha256": "27c6698c969f3c71d3421494ac828e06fa3b88e514ec3655f4210ca867360cdf"
+          },
+          "opened-real-video.png": {
+            "path": "/home/tv/recuperacion-archtv/e26a78f4-85ee-4cc3-91fc-9c4c20a4e744-markor-software-launch/opened-real-video.png",
+            "sha256": "cebe68255979ef2ee42a45e5eff391dc86f489d045dfd99c45e402e1127310e3"
+          },
+          "after-remote-select.png": {
+            "path": "/home/tv/recuperacion-archtv/e26a78f4-85ee-4cc3-91fc-9c4c20a4e744-markor-software-launch/after-remote-select.png",
+            "sha256": "3e25a09ca6defc8efa884ff9945f86dea746b99e7fd6c70fdfdfa8109877351a"
           }
         }
       }

@@ -1,5 +1,13 @@
 # Índice de evidencias
 
+371 confirma PMS original User0: READ_MEDIA_AUDIO/VIDEO/VISUAL_USER_SELECTED=true antes y después de reinstalar APK intacta en una cohorte nueva, sin nuevo grant. VLC abre biblioteca sin bloqueo y muestra historial/miniatura; eso no prueba lectura/reproducción actual.16órdenes; SELECT353→DPAD_CENTER23 se probó tarde con pantalla apagada y fue rechazado, no fallo de códec ni permisos. Nativa/exterior/interacción0, recuperación69/permisivo/datos/BPF y consumo único verificados. Persistencia sólo entre cohortes en el mismo arranque Linux, no reinicio de anfitrión.
+
+Siguiente: misma imagen370, actor de entrada con SELECT353 y Home real; seleccionar medio visible sin demora, comprobar frames/EOF y cierre/reapertura. Enter66 queda para Home, no sustituir mando por callbacks. No repetir diálogos ni recompilar runtime intacto. Audio completo/sincronía, apilado inicial de Home, R1/ARM/GMS/DRM y compatibilidad amplia abiertos.
+
+Evidencia: /home/tv/recuperacion-archtv/e26a78f4-85ee-4cc3-91fc-9c4c20a4e744-markor-software-launch/functional-result.json SHA256 43bd30d6e65a0f2197722c46c2a4253a83d0c3082ab2ae4eb6cf1ae9c250175a. Informe ART →integration371, dumps originales y hashes enlazados allí.
+
+Histórico anterior:
+
 370 elimina el VIEW CLI inicial: instalación/hash y medio publicados por servicios originales → Home real → VLC TV → diálogos originales de música/audio y fotos/vídeos aceptados por D-pad. VLC muestra ambas marcas, pero la biblioteca sigue mostrando permisos; acceso efectivo, reproducción y persistencia aún no aceptados.21órdenes más botón Home físico; nativa/exterior/interacción0,453,856s enforcing y recuperación69/permisivo/datos/BPF verificada, consumido. Defecto inicial de apilado: superficie Android negra cubre Home aunque el teclado llega al shell; Home físico lo hace visible. No se declara arreglado.
 
 Siguiente: misma base370, cohorte nueva, lectura original dumpsys package User0 pre/postinstalación después de estos diálogos y antes de relanzar. Ese estado decide persistencia/caché frente a servicio de permisos; después medio real, cierre/reapertura. Sin nuevo runtime compilado ni otra capa de observación. R1/ARM/GMS/DRM y compatibilidad amplia abiertos.
