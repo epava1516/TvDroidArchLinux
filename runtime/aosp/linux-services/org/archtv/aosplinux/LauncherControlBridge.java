@@ -111,6 +111,24 @@ final class LauncherControlBridge {
         System.err.println("LAUNCHER_ORIGINAL_CATALOG_RETURNED count="+entries.size()+" user=0 NOT_APP_COMPATIBILITY");
         return bytes.toByteArray();
     }
+    private void launcherUserActivity() throws Exception {
+        // This is the already authenticated Linux Home launch request, not a
+        // catalog poll or synthetic keepalive. Original PowerManager owns wake,
+        // display-group policy and permission checks; never hold a wake lock or
+        // change the original screen timeout to make a launch appear visible.
+        Object power=call(context,"getSystemService",new Class<?>[]{String.class},"power");
+        if(power==null)throw new IOException("Original PowerManager unavailable");
+        Class<?> powerType=Class.forName("android.os.PowerManager");
+        long when=(Long)call(Class.forName("android.os.SystemClock"),"uptimeMillis",new Class<?>[0]);
+        boolean before=(Boolean)call(power,"isInteractive",new Class<?>[0]);
+        if(!before)call(power,"wakeUp",new Class<?>[]{long.class,int.class,String.class},when,
+                powerType.getField("WAKE_REASON_APPLICATION").getInt(null),"archtv:linux-home-launch");
+        call(power,"userActivity",new Class<?>[]{long.class,int.class,int.class},when,
+                powerType.getField("USER_ACTIVITY_EVENT_OTHER").getInt(null),0);
+        boolean after=(Boolean)call(power,"isInteractive",new Class<?>[0]);
+        System.err.println("LAUNCHER_ORIGINAL_POWER_REQUEST_RETURNED beforeInteractive="+before
+                +" afterInteractive="+after+" uptimeMillis="+when+" NOT_DISPLAY_OR_LIFECYCLE_ACCEPTANCE");
+    }
     private byte[] launch(String component) throws Exception {
         // Resolve current original PMS state again. An old catalog is never a
         // grant to launch an arbitrary component or a disabled/uninstalled app.
@@ -126,6 +144,7 @@ final class LauncherControlBridge {
         // The actual Context is user0. Its standard startActivity path uses
         // Instrumentation's original start-result checks. ContextImpl's hidden
         // startActivityAsUser overload discards ATMS's integer result instead.
+        launcherUserActivity();
         call(context,"startActivity",new Class<?>[]{intentType},intent);
         System.err.println("LAUNCHER_ORIGINAL_START_REQUEST_RETURNED component="+entry.component+" user=0 NOT_FRAME_OR_LIFECYCLE_ACCEPTANCE");
         return "original start request returned; presentation unverified".getBytes(StandardCharsets.UTF_8);

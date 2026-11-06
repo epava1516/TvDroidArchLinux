@@ -8,6 +8,15 @@ payload=(repo/sys.argv[1]).resolve()
 data_store=Path(sys.argv[2]).resolve()
 assert data_store.parent==Path("/home/tv/.cache/archtv/aosp16-qpr2") and data_store.name.startswith("apex-data-store-") and (data_store/"linux-preparation.json").is_file()
 assert os.geteuid()==0 and payload.is_relative_to(repo/'dist/aosp16') and payload.is_file()
+# A frozen integrated checkpoint is authoritative for the whole candidate.
+# Refuse a stale cloned client command before locks, mounts or global changes.
+if os.environ.get('ARCHTV_RUN_CHECKPOINT'):
+    launch_record = Path(os.environ['ARCHTV_RUN_CHECKPOINT'])/'before-launch.json'
+    if launch_record.is_file():
+        launch = json.loads(launch_record.read_text())
+        if 'build' in launch:
+            assert payload == (Path(launch['build'])/'payload-2.ext4').resolve(), 'Checkpoint/candidate payload mismatch'
+            assert __import__('hashlib').sha256(payload.read_bytes()).hexdigest() == launch['payload_sha256'], 'Checkpoint/candidate payload hash mismatch'
 # Explicit bounded resource comparison, default unchanged. A4-vCPU VM retains
 # at least one CPU of aggregate headroom at the experimental300% ceiling.
 # This is not a production lightness or scheduling guarantee.

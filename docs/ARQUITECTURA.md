@@ -1,5 +1,21 @@
 # Arquitectura vigente · A16-QPR2-1
 
+368 prueba sueño real → búsqueda vlc/selección física en Home → PowerManager original despierta → MainTvActivity de VLC intacta visible → diálogo original PermissionController.17entradas; nativa/exterior/interacción y tres propietarios0;349,160s enforcing registrado y retorno69/permisivo/TSC/mixer/datos/BPF verificado, consumido sin cola. Concesión de medios, reproducción por UI, cierre/reapertura y compatibilidad amplia pendientes.367 se conserva rechazado antes de ejecución AOSP por ruta de payload incoherente; el runner ya vincula ruta/hash al checkpoint y la negativa real rechaza otro payload existente antes de locks/montajes. El Home Linux y la pantalla Android tienen estados independientes: sólo una selección autenticada de aplicación llama wakeUp/userActivity originales, nunca el sondeo del catálogo. Se conservan permisos, timeout60000 y servicio PowerManagerService completo; no wakelock ni keepalive. Mismo principal de confianza experimental, R1 no cerrado.
+
+Siguiente recorrido: diálogo real de medios estándar → confirmar permisos por PMS original → seleccionar/reproducir medio en VLC TV → entrada/cierre/reapertura. Markor357 conserva su alcance probado; R1/ARM/GMS/DRM, instalación/actualización/ligereza y compatibilidad amplia siguen abiertos.
+
+Evidencia: /home/tv/recuperacion-archtv/d0046566-5087-4e20-80a6-5f047d428f95-markor-software-launch/functional-result.json SHA256 43e5c9aab9494a13a1a4c4af3712e1859786199b05389532d767c299982c1df3. Informe ART →integration366/367/368; fuentes AOSP/pins y negativa de admisión enlazadas allí.
+
+Histórico anterior:
+
+366: selección física de VLC real en Home → Context/Instrumentation → StartActivity → OnboardingActivity originales, sin CLI. No UI aceptada: PowerManager durmió por timeout60000; al lanzar desde Home la actividad recibió pause/sleep y no era visible.31entradas, nativa/exterior0, recuperación69/permisivo/PCM/datos/BPF verificada y consumo único. PCM315392frames, señal activa nominal2,52s censurada por Back; pausa/audio completo no aceptados. Catálogo detallado sólo parcial; UI muestra13 y VLC. REA MCP ev_fb95233ff4eaf6118afdfa7f0045f0c028059b4c3c3ab7c7896505c8538a3dec inspeccionó APK tras recuperación; en enforcing Java recibió AVC execmem, conservado sin ampliar permiso.
+
+Siguiente: integración original PowerManager al lanzamiento autenticado desde Home; probar sueño→selección física→despertar→UI VLC. No keepalive ni cambio de timeout. Candidato367 compilado, aún sin aceptación funcional. R1/ARM/GMS/DRM y compatibilidad amplia siguen abiertos.
+
+Evidencia: /home/tv/recuperacion-archtv/e5992e0b-346c-41a8-a66b-ba2db60f4e32-markor-software-launch/functional-result.json SHA256 2ae432e477b0f84817bc4710280a76a94b6062d603dee4622b190bf41ee2d287. Informe ART →integration366.
+
+Histórico anterior:
+
 365 recupera gráficos tras corregir etiquetas efímeras del anfitrión sin ampliar política. VLC original ejecuta VIEW; catálogo PMS devuelve13, tres órdenes físicas tras handoff, PCM282624frames/69escrituras, actividad nominal2,52s censurada por Back. Nativa/exterior0 y BPF/snapshotfinal/recuperación verificados; interacción1 al cerrar naturalmente la sesión, pausa/reapertura no aceptadas. La observación del catálogo estaba en RC auxiliar: moverla a Zygote original; DEX compilado sí contiene marcador.363 conserva fallo HWC y monitor corregido;364 falló antes del runtime por inode udev retirado. R1/compatibilidad amplia y ARM/GMS/DRM abiertos. Informe ART →integration363/364/365.
 
 Siguiente experimento funcional: catálogo original detallado → búsqueda/selección física en Home → reapertura VLC por Context/Instrumentation originales; comprobar efecto de pausa y cierre. El host reportado es Windows11/VirtualBox7.2.22r175245; Hyper-V/WSL2 desconocido, sin atribuirles el fallo.

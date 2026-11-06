@@ -1896,7 +1896,7 @@
           "sha256": "d3eb7667da5d6443deb22eb91de5893b561c0d7ec098f92087a2ed33a0a58f36"
         }
       },
-      "current_integration": "integration365",
+      "current_integration": "integration368",
       "integration348": {
         "checkpoint": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch",
         "build": "dist/aosp16/package-cohort-build-348",
@@ -4247,6 +4247,340 @@
           "home-live365.png": {
             "path": "/home/tv/recuperacion-archtv/389042b9-7bae-45ae-9c3c-75169e5f0f60-markor-software-launch/home-live365.png",
             "sha256": "fd55882d235b29dcbc97011c1fdc5add3fe7a3da2928dbce58f446c81abfc757"
+          }
+        }
+      },
+      "integration366": {
+        "checkpoint": "/home/tv/recuperacion-archtv/e5992e0b-346c-41a8-a66b-ba2db60f4e32-markor-software-launch",
+        "build": "dist/aosp16/package-cohort-build-366",
+        "tested_code_commit": "e526cbf",
+        "native_exit": 0,
+        "outer_exit": 0,
+        "interaction_exit": 0,
+        "host_recovery_verified": true,
+        "recovery": {
+          "boot_id": "109b367f-8785-48af-a620-c355e33639fd",
+          "kernel": "6.18.59-archtv-aosp16-1",
+          "units": "",
+          "loops": "",
+          "dm": "No devices found",
+          "mode": "0",
+          "policy_sha256": "d8b79d1fb58c875f06ee804c83fa3ee90dcd2a5fb0b356f425179e392cbeb818",
+          "clock": "tsc",
+          "pcm": "closed",
+          "udev_drop_absent": true,
+          "mixer_equal": true,
+          "audit_lost_delta": 0,
+          "audit_rules_restored": true,
+          "audit_receiver_closed": true,
+          "backing_unmounted_detached": true,
+          "native_result_present": true,
+          "BPF_cleanup": true
+        },
+        "consumed": true,
+        "physical_input_commands": 31,
+        "original_home_launch": {
+          "component": "org.videolan.vlc/org.videolan.vlc.StartActivity",
+          "original_START_result": 0,
+          "VLC_onCreate_onStart_onResume_observed": true,
+          "forwarded_activity": "org.videolan.television.ui.OnboardingActivity",
+          "visible_UI_accepted": false,
+          "failure": "Original PowerManager went to sleep for screenOffTimeout60000 at23:59:01; Home launch00:01:25 forwarded successfully but Onboarding !mAppVisible, paused sleep. No wake integration on Linux Home launch.",
+          "search_literal_vlc_results": 0,
+          "search_android_results": 13,
+          "real_VLC_card_visually_selected": true,
+          "scope": "Original launch and lifecycle callbacks only; no complete reopen/UI acceptance."
+        },
+        "catalog_diagnostic": {
+          "zygote_environment_effect_verified": true,
+          "first_complete_catalog": 2,
+          "later_RPC_count": 13,
+          "later_entry_lines_observed": 11,
+          "later_complete_observation": false,
+          "scope": "Bounded log projection loses tail; not accepted as complete inventory. Actual UI shows13 and VLC card."
+        },
+        "pause_accepted": false,
+        "complete_AV_workflow_accepted": false,
+        "broad_APK_compatibility_accepted": false,
+        "R1_MAC_closed": false,
+        "audio": {
+          "captured_signal": {
+            "frames": 315392,
+            "nominal_sample_duration_seconds": 6.570666666666667,
+            "peak_abs_pcm16": 132,
+            "peak_window_rms_pcm16": 70.00346717603826,
+            "active_threshold_pcm16": 3.500173358801913,
+            "active_nominal_seconds": 2.52,
+            "nominal_1khz_active_seconds": 0.0,
+            "identical_stereo_frames": 315392
+          },
+          "metadata": {
+            "rate": 48000,
+            "channels": 2,
+            "frame_bytes": 4,
+            "format": 0,
+            "total_frames": 315392,
+            "captured_bytes": 1261568,
+            "writes": 78,
+            "flags": 0,
+            "hw_params_bytes": 124,
+            "status_bytes": 186,
+            "hw_error": 0,
+            "status_error": 0,
+            "producer_pid": 423,
+            "producer_tid": 473,
+            "transport_envelope": {
+              "kind": "original AudioFlinger --hal dump",
+              "prefix_bytes": 6113,
+              "prefix_sha256": "81f301b9619c585a538a196ac74d30a5c10e80fde78f2d1f904b5a04ab05728f",
+              "suffix_bytes": 0,
+              "suffix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "scope": "Original surrounding dump retained in the input artifact; not source samples."
+            },
+            "producer_read_hw_params": "access: RW_INTERLEAVED\nformat: S16_LE\nsubformat: STD\nchannels: 2\nrate: 48000 (48000/1)\nperiod_size: 4096\nbuffer_size: 16384\n",
+            "producer_read_pcm_status": "state: PREPARED\nowner_pid   : 473\ntrigger_time: 0.000000000\ntstamp      : 4447.483605024\ndelay       : 0\navail       : 12288\navail_max   : 12288\n-----\nhw_ptr      : 0\nappl_ptr    : 4096\n"
+          },
+          "raw_sample_sha256": "2242f218edf62a114e51deced27fd6ba80f3c0a6007d1d0138f194459c3ce125",
+          "limits": "Early Back censors source coverage. No acoustic/synchronization/full-audio acceptance."
+        },
+        "REA": {
+          "static_evidence": "ev_fb95233ff4eaf6118afdfa7f0045f0c028059b4c3c3ab7c7896505c8538a3dec",
+          "during_enforcing": "Java execmem AVC denied for linux.init_t, inspect failed; after restored permissive MCP APK inspection succeeds. No permission added.",
+          "manifest": "Original exported StartActivity advertises LAUNCHER and LEANBACK; signature verification not performed by this tool."
+        },
+        "next": "Integrate original PowerManager wakeUp/userActivity only for authenticated Linux Home launch, keep timeout/permissions original. Prove sleep\u2192physical selection\u2192wake\u2192visible original VLC onboarding, no keepalive or false success.",
+        "evidence": {
+          "result.json": {
+            "path": "/home/tv/recuperacion-archtv/e5992e0b-346c-41a8-a66b-ba2db60f4e32-markor-software-launch/result.json",
+            "sha256": "d67643f4dbac83d8c0bc2738ff3812a023fd335b9e99fb6da58d78f0a37be75b"
+          },
+          "completion-result.json": {
+            "path": "/home/tv/recuperacion-archtv/e5992e0b-346c-41a8-a66b-ba2db60f4e32-markor-software-launch/completion-result.json",
+            "sha256": "8e9855a5838174c95b8fdeaca6c3b990821a1fff0369d248864c8382739ef705"
+          },
+          "completion-consumer.json": {
+            "path": "/home/tv/recuperacion-archtv/e5992e0b-346c-41a8-a66b-ba2db60f4e32-markor-software-launch/completion-consumer.json",
+            "sha256": "693c807d22731b3957823e41dc25b8df7367a96e35f11522224f190ef3b3e4a1"
+          },
+          "recovery-readback.json": {
+            "path": "/home/tv/recuperacion-archtv/e5992e0b-346c-41a8-a66b-ba2db60f4e32-markor-software-launch/recovery-readback.json",
+            "sha256": "525ad02a5f46dea40dc8557ff252b42c33633d37b2feea41ff7265726a8a9ea6"
+          },
+          "observed-original-logcat.txt": {
+            "path": "/home/tv/recuperacion-archtv/e5992e0b-346c-41a8-a66b-ba2db60f4e32-markor-software-launch/observed-original-logcat.txt",
+            "sha256": "6f1007c7e10c9b7f6df3f9d866f7d87b44e510436f9a6653df865840520bb7fe"
+          },
+          "interaction-events.json": {
+            "path": "/home/tv/recuperacion-archtv/e5992e0b-346c-41a8-a66b-ba2db60f4e32-markor-software-launch/interaction-events.json",
+            "sha256": "cd0eb1709a821ff40e87835ba00684b84dbb9d117a4bf81b2f37680daa3f1eb5"
+          },
+          "input-commands.jsonl": {
+            "path": "/home/tv/recuperacion-archtv/e5992e0b-346c-41a8-a66b-ba2db60f4e32-markor-software-launch/input-commands.jsonl",
+            "sha256": "735af8cb663bbfcc3748b56741e6ec73f4afc20ec9305801ce6af5203f1a8d27"
+          },
+          "catalog-end366.png": {
+            "path": "/home/tv/recuperacion-archtv/e5992e0b-346c-41a8-a66b-ba2db60f4e32-markor-software-launch/catalog-end366.png",
+            "sha256": "66d757ae51b92ac3d37b64b25ac3a14b92f9d798a792310cf41be8237ab0456f"
+          },
+          "android-search366.png": {
+            "path": "/home/tv/recuperacion-archtv/e5992e0b-346c-41a8-a66b-ba2db60f4e32-markor-software-launch/android-search366.png",
+            "sha256": "786aeb4a9cecbf0f9208d6f985be09deb881091f19ba3a94b3ed47872768c835"
+          },
+          "onboarding366.png": {
+            "path": "/home/tv/recuperacion-archtv/e5992e0b-346c-41a8-a66b-ba2db60f4e32-markor-software-launch/onboarding366.png",
+            "sha256": "cc0c625159cf071a116b3f70faeaa85afd25a2d1142596f42f10f76b26f79806"
+          },
+          "rea-apk-after-recovery.json": {
+            "path": "/home/tv/recuperacion-archtv/e5992e0b-346c-41a8-a66b-ba2db60f4e32-markor-software-launch/rea-apk-after-recovery.json",
+            "sha256": "dd43705449cfaff5d306649c32429886bfff7439dd1d90aee7cb137e72bb6f4b"
+          },
+          "rea-inspection-during-enforcing.json": {
+            "path": "/home/tv/recuperacion-archtv/e5992e0b-346c-41a8-a66b-ba2db60f4e32-markor-software-launch/rea-inspection-during-enforcing.json",
+            "sha256": "6fb9fc10d5541e2bcb163e3fa74a67346a57659a7119ac6b02b47213764a2a47"
+          },
+          "signal-analysis-1/signal-analysis.json": {
+            "path": "/home/tv/recuperacion-archtv/e5992e0b-346c-41a8-a66b-ba2db60f4e32-markor-software-launch/signal-analysis-1/signal-analysis.json",
+            "sha256": "ef07ccbb8c05ae9068bc14fe41ecaf57a417f36509e2026d2a2bf535f2c4e25e"
+          }
+        }
+      },
+      "integration367": {
+        "checkpoint": "/home/tv/recuperacion-archtv/2b21331b-370d-435a-a4b7-68fcc58d543a-markor-software-launch",
+        "original_runtime_started": false,
+        "service_exit": 1,
+        "candidate_exit": null,
+        "failure": "Frozen client-entry still referenced build366 while before-launch declared367. Runner rejected absent archived366 payload before lock/native cohort. No Power integration exercised.",
+        "observed_legacy_files_scope": "Preexisting Android diagnostics copied by collector are not execution367 evidence. No APK stage accepted.",
+        "recovery": {
+          "boot_id": "109b367f-8785-48af-a620-c355e33639fd",
+          "kernel": "6.18.59-archtv-aosp16-1",
+          "units": "",
+          "loops": "",
+          "dm": "No devices found",
+          "mode": "0",
+          "policy_sha256": "d8b79d1fb58c875f06ee804c83fa3ee90dcd2a5fb0b356f425179e392cbeb818",
+          "clock": "tsc",
+          "pcm": "closed",
+          "udev_drop_absent": true,
+          "mixer_equal": true,
+          "audit_lost_delta": 0,
+          "audit_rules_restored": true,
+          "audit_receiver_closed": true,
+          "backing_unmounted_detached": true,
+          "native_result_present": false,
+          "BPF_cleanup": null,
+          "scope": "Host setup recovery only; no original runtime result or BPF cleanup acceptance inferred."
+        },
+        "consumed": true,
+        "fix": "Canonical runner binds exact frozen build/path/hash before cohort lock; preparation replaces all candidate build references and verifies them. Wrong existing payload362 refused by new guard, evidence368/wrong-payload-rejected.json."
+      },
+      "integration368": {
+        "checkpoint": "/home/tv/recuperacion-archtv/d0046566-5087-4e20-80a6-5f047d428f95-markor-software-launch",
+        "build": "/home/tv/repositorio-principal/dist/aosp16/package-cohort-build-368",
+        "tested_code_base_commit": "e526cbf80b19d97c12cb55a73c4e587c8f84a975",
+        "pending_code": "PowerManager launcher integration and exact frozen-payload guard, captured under checkpoint/code and before-launch hashes. Commit assigned after evidence review.",
+        "native_exit": 0,
+        "outer_exit": 0,
+        "interaction_exit": 0,
+        "three_owner_services_success": true,
+        "host_recovery": {
+          "boot_id": "109b367f-8785-48af-a620-c355e33639fd",
+          "kernel": "6.18.59-archtv-aosp16-1",
+          "units": "",
+          "loops": "",
+          "dm": "No devices found",
+          "mode": "0",
+          "policy_sha256": "d8b79d1fb58c875f06ee804c83fa3ee90dcd2a5fb0b356f425179e392cbeb818",
+          "clock": "tsc",
+          "pcm": "closed",
+          "udev_drop_absent": true,
+          "mixer_equal": true,
+          "audit_lost_delta": 0,
+          "audit_rules_restored": true,
+          "audit_receiver_closed": true,
+          "backing_unmounted_detached": true,
+          "native_result_present": true,
+          "BPF_cleanup": true
+        },
+        "consumed": true,
+        "enforcing_interval_seconds": 349.15972722899915,
+        "R1_MAC_closed": false,
+        "apk_sha256": "4646633ede40c4784c5584087cffc5c60cc45b16966ae0b36cedd784d7c4a11e",
+        "original_installed_bytes_verified": true,
+        "payload_matches_frozen_candidate": true,
+        "physical_input_commands": 17,
+        "original_power_and_UI": {
+          "sleep_to_real_Home_launch_to_wake_to_MainTv": true,
+          "original_logs": {
+            "sleep": "11-06 00:29:30.963  1000   528   579 I PowerManagerService: Going to sleep due to timeout (uid 1000, screenOffTimeout=60000, activityTimeoutWM=-1, maxDimRatio=0.20000005, maxDimDur=7000)...",
+            "wake": "11-06 00:30:04.613  1000   528   734 I PowerManagerService: Waking up from Asleep (uid=1000, reason=WAKE_REASON_APPLICATION, details=archtv:linux-home-launch)...",
+            "power_request": "11-06 00:30:04.631  1000   528   734 W System.err: LAUNCHER_ORIGINAL_POWER_REQUEST_RETURNED beforeInteractive=false afterInteractive=true uptimeMillis=6375234 NOT_DISPLAY_OR_LIFECYCLE_ACCEPTANCE",
+            "main_tv_displayed": "11-06 00:30:06.066  1000   528   556 I ActivityTaskManager: Displayed org.videolan.vlc/org.videolan.television.ui.MainTvActivity for user 0: +1s339ms",
+            "permissions_displayed": "11-06 00:31:43.752  1000   528   556 I ActivityTaskManager: Displayed com.android.permissioncontroller/.permission.ui.GrantPermissionsActivity for user 0: +1s691ms"
+          },
+          "original_timeout_ms": 60000,
+          "keepalive_or_timeout_override": false,
+          "permission_controller_UI_presented": true,
+          "standard_media_option_selected_through_UI": true,
+          "permission_grant_verified": false,
+          "complete_media_workflow_accepted": false
+        },
+        "search": {
+          "literal_vlc_results": 1,
+          "VLC_card_visually_focused": true,
+          "previous_attempt_limit": "366 routed a Space to Home before Back; query survives Back.368 Back-only finds VLC. Do not infer a fabricated/missing PMS entry or accept earlier pause."
+        },
+        "pause_accepted": false,
+        "complete_audio_video_workflow_accepted": false,
+        "broad_APK_compatibility_accepted": false,
+        "ARM_GMS_DRM": "Open, separate; not tested here.",
+        "source_contract": [
+          {
+            "source": "core/java/android/os/PowerManager.java",
+            "commit": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+            "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/core/java/android/os/PowerManager.java?format=TEXT",
+            "sha256": "e77d58e1beee9e4bda6b1d174d110da011d3d68a5e7034652dcccdec8752b120",
+            "path": "/home/tv/recuperacion-archtv/20261106-vlc-power367/PowerManager.java"
+          },
+          {
+            "source": "services/core/java/com/android/server/power/PowerManagerService.java",
+            "commit": "45034f0663f960d9ee5fb0a101a4732b71f6e2f4",
+            "url": "https://android.googlesource.com/platform/frameworks/base/+/45034f0663f960d9ee5fb0a101a4732b71f6e2f4/services/core/java/com/android/server/power/PowerManagerService.java?format=TEXT",
+            "sha256": "398f55cdd9148e4f3396edc1f20dac0b782032825049ecb2bb0e8947e3da93ff",
+            "path": "/home/tv/recuperacion-archtv/20261106-vlc-power367/PowerManagerService.java"
+          }
+        ],
+        "admission_negative_evidence": "/home/tv/recuperacion-archtv/20261106-vlc-power368/wrong-payload-rejected.json",
+        "failed_attempt367": "/home/tv/recuperacion-archtv/2b21331b-370d-435a-a4b7-68fcc58d543a-markor-software-launch/functional-result.json",
+        "next": "Continue actual original music/audio + video permission UI and verify original PMS state; select published known media through VLC TV UI, complete playback/input, close and reopen with persistence. Do not repeat sleep experiment already valid; retain R1 and broad coverage gates.",
+        "evidence": {
+          "before.json": {
+            "path": "/home/tv/recuperacion-archtv/d0046566-5087-4e20-80a6-5f047d428f95-markor-software-launch/before.json",
+            "sha256": "53c79b04d7322d78ce0b8ebd43525e242b2c051365a38a52564ba66c181d4797"
+          },
+          "before-launch.json": {
+            "path": "/home/tv/recuperacion-archtv/d0046566-5087-4e20-80a6-5f047d428f95-markor-software-launch/before-launch.json",
+            "sha256": "c90603a839a8ae823764a068bdd72ae8056eb12aa14bf3232f5f9495a015644b"
+          },
+          "result.json": {
+            "path": "/home/tv/recuperacion-archtv/d0046566-5087-4e20-80a6-5f047d428f95-markor-software-launch/result.json",
+            "sha256": "f419e59477b36c9cf4d787f0dcc59e62eb1cc2294536d416a1d8903b482f8752"
+          },
+          "completion-result.json": {
+            "path": "/home/tv/recuperacion-archtv/d0046566-5087-4e20-80a6-5f047d428f95-markor-software-launch/completion-result.json",
+            "sha256": "e0afce36eff2eb114b5c67bb9d79ad015d33de25d77615f045c83f4ebe8b99ba"
+          },
+          "completion-consumer.json": {
+            "path": "/home/tv/recuperacion-archtv/d0046566-5087-4e20-80a6-5f047d428f95-markor-software-launch/completion-consumer.json",
+            "sha256": "bdd9ed6950915a23739529d49658feca7cd0c33a9e1e1710c3d9388f2eacad92"
+          },
+          "three-owner-close.json": {
+            "path": "/home/tv/recuperacion-archtv/d0046566-5087-4e20-80a6-5f047d428f95-markor-software-launch/three-owner-close.json",
+            "sha256": "0dea2fd7961d495a2686fe2eb75a0d6b6f67a4ae16b7801ca2e3409c5bec31e3"
+          },
+          "recovery-readback.json": {
+            "path": "/home/tv/recuperacion-archtv/d0046566-5087-4e20-80a6-5f047d428f95-markor-software-launch/recovery-readback.json",
+            "sha256": "525ad02a5f46dea40dc8557ff252b42c33633d37b2feea41ff7265726a8a9ea6"
+          },
+          "mac-window.json": {
+            "path": "/home/tv/recuperacion-archtv/d0046566-5087-4e20-80a6-5f047d428f95-markor-software-launch/mac-window.json",
+            "sha256": "a51e32b96b89797e11c1bba45bf0950c1f455843ae4a7a3f9d2cb39650671c61"
+          },
+          "observed-original-logcat.txt": {
+            "path": "/home/tv/recuperacion-archtv/d0046566-5087-4e20-80a6-5f047d428f95-markor-software-launch/observed-original-logcat.txt",
+            "sha256": "56ccd65009d980859a2793e9b4ba3b129729e6ea9d20727377f198e2d38b5212"
+          },
+          "observed-markor-installed-bytes.txt": {
+            "path": "/home/tv/recuperacion-archtv/d0046566-5087-4e20-80a6-5f047d428f95-markor-software-launch/observed-markor-installed-bytes.txt",
+            "sha256": "1678b6d049448c32e2c887ef35a42f61299c1c903598a9807b8bd86a248d6d46"
+          },
+          "input-commands.jsonl": {
+            "path": "/home/tv/recuperacion-archtv/d0046566-5087-4e20-80a6-5f047d428f95-markor-software-launch/input-commands.jsonl",
+            "sha256": "4a1be96ce7a6691cfe8202289ed1e14d4b444fb14853ef4604c5e55c43ab2fd1"
+          },
+          "interaction-events.json": {
+            "path": "/home/tv/recuperacion-archtv/d0046566-5087-4e20-80a6-5f047d428f95-markor-software-launch/interaction-events.json",
+            "sha256": "d1d16eee71b781f41cadd5cf9000f96857b1ee9f7c93ca38c0fbe0c54b408bf5"
+          },
+          "vlc-selected-before-sleep368.png": {
+            "path": "/home/tv/recuperacion-archtv/d0046566-5087-4e20-80a6-5f047d428f95-markor-software-launch/vlc-selected-before-sleep368.png",
+            "sha256": "8e8763cd9522d4069a08f3fdefd2c183f0a4e9cb203f440538527fbc3f82035d"
+          },
+          "after-wake368.png": {
+            "path": "/home/tv/recuperacion-archtv/d0046566-5087-4e20-80a6-5f047d428f95-markor-software-launch/after-wake368.png",
+            "sha256": "0725d86ce79f04042576b7c268e3ecf480213452e110ece3c75cf672794e839f"
+          },
+          "permission-dialog368.png": {
+            "path": "/home/tv/recuperacion-archtv/d0046566-5087-4e20-80a6-5f047d428f95-markor-software-launch/permission-dialog368.png",
+            "sha256": "a05b007934db25752f95ab341648b1d5f511c1bf7847221b527d58b3a1e1eb06"
+          },
+          "standard-media-request368.png": {
+            "path": "/home/tv/recuperacion-archtv/d0046566-5087-4e20-80a6-5f047d428f95-markor-software-launch/standard-media-request368.png",
+            "sha256": "2928b35fca336c50f9354144b451f301225d37e18d2c6d86879d3cb815705f77"
+          },
+          "next-permission368.png": {
+            "path": "/home/tv/recuperacion-archtv/d0046566-5087-4e20-80a6-5f047d428f95-markor-software-launch/next-permission368.png",
+            "sha256": "2928b35fca336c50f9354144b451f301225d37e18d2c6d86879d3cb815705f77"
           }
         }
       }
