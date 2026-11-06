@@ -1,5 +1,13 @@
 # Índice de evidencias
 
+370 elimina el VIEW CLI inicial: instalación/hash y medio publicados por servicios originales → Home real → VLC TV → diálogos originales de música/audio y fotos/vídeos aceptados por D-pad. VLC muestra ambas marcas, pero la biblioteca sigue mostrando permisos; acceso efectivo, reproducción y persistencia aún no aceptados.21órdenes más botón Home físico; nativa/exterior/interacción0,453,856s enforcing y recuperación69/permisivo/datos/BPF verificada, consumido. Defecto inicial de apilado: superficie Android negra cubre Home aunque el teclado llega al shell; Home físico lo hace visible. No se declara arreglado.
+
+Siguiente: misma base370, cohorte nueva, lectura original dumpsys package User0 pre/postinstalación después de estos diálogos y antes de relanzar. Ese estado decide persistencia/caché frente a servicio de permisos; después medio real, cierre/reapertura. Sin nuevo runtime compilado ni otra capa de observación. R1/ARM/GMS/DRM y compatibilidad amplia abiertos.
+
+Evidencia: /home/tv/recuperacion-archtv/5418e068-64d7-4f4c-ac62-5374ae3380a2-markor-software-launch/functional-result.json SHA256 421701b8ac25b05e9ba884188ed2a4c7d22add59275e21d8a84638a897df6b5b. Informe ART →integration370; fuente oficial PermissionController fijada y hash enlazados allí.
+
+Histórico anterior:
+
 369 no completa permisos: PowerManager durmió a00:50:15 antes del VIEW CLI a00:50:23; VideoPlayer no emitió Displayed y el guion automático quedó esperando. Se relevó únicamente el actor propio tras verificar salida/dispositivos retirados; tecla física WAKEUP produjo dispatch original aceptado y WAKE_REASON_WAKE_KEY. La selección tardía en Home no acredita lanzamiento/permisos. Nativa/exterior0 no cierran APK: actor original-15 por relevo,13órdenes manuales y retirada verificada. Recuperación69/permisivo/TSC/datos/BPF comprobada, consumido una vez.368 conserva su UI/Power/PermissionController probados.
 
 Siguiente370: publicar medio por MediaProvider e instalar/verificar APK por PMS originales, dejando el lanzamiento a Home real; nueva opción estática de perfil media-home-launch, no propiedad de readiness ni concesión URI. Probar permisos, selección/reproducción por UI, cierre/reapertura. Candidato pendiente de ejecución; R1/ARM/GMS/DRM y compatibilidad amplia abiertos.

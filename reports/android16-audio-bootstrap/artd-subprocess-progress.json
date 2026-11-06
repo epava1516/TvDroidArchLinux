@@ -1896,7 +1896,7 @@
           "sha256": "d3eb7667da5d6443deb22eb91de5893b561c0d7ec098f92087a2ed33a0a58f36"
         }
       },
-      "current_integration": "integration369",
+      "current_integration": "integration370",
       "integration348": {
         "checkpoint": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch",
         "build": "dist/aosp16/package-cohort-build-348",
@@ -4721,7 +4721,157 @@
         "build_exit": 0,
         "build": "dist/aosp16/package-cohort-build-370",
         "build_options_sha256": "ba83a9830598734b75fdfd4229092cc2d7e9fa48ac81a53ac109dc3540db07ba",
-        "source_inputs_sha256": "17adcf6004103711ac53ec9b340f5c5607f5b29d5b33c428f06c8ce6563486fa"
+        "source_inputs_sha256": "17adcf6004103711ac53ec9b340f5c5607f5b29d5b33c428f06c8ce6563486fa",
+        "runtime_executed": true
+      },
+      "integration370": {
+        "checkpoint": "/home/tv/recuperacion-archtv/5418e068-64d7-4f4c-ac62-5374ae3380a2-markor-software-launch",
+        "build": "dist/aosp16/package-cohort-build-370",
+        "code_commit": "5d6daf62d777851ffe32c03abca8b9e112cab5a7",
+        "native_exit": 0,
+        "outer_exit": 0,
+        "interaction_exit": 0,
+        "physical_commands": 21,
+        "additional_physical_Home_events": 2,
+        "no_initial_shell_VIEW_observed": true,
+        "fresh_original_install_readback": {
+          "path": "/home/tv/.local/share/archtv/experimental-userdata/art-verity331/data/local/tmp/archtv-mc1/markor-installed-bytes.txt",
+          "uid": 2000,
+          "inode": 4386,
+          "text": "SOURCE 4646633ede40c4784c5584087cffc5c60cc45b16966ae0b36cedd784d7c4a11e  /data/local/tmp/markor.apk\nINSTALLED 4646633ede40c4784c5584087cffc5c60cc45b16966ae0b36cedd784d7c4a11e  /data/app/~~fCdQLgBQIFdz3UaeK1tqGA==/org.videolan.vlc-iF7vY22Ar_FkSc1VGP0sag==/base.apk\n",
+          "monotonic": 8905.871125658,
+          "scope": "Fresh protected original shell hash readback after original PMS commit; only gates physical Home input, not launch/permissions/APK acceptance."
+        },
+        "Home_visibility": {
+          "initial_capture_black": true,
+          "keyboard_events_reached_Rust_Home": true,
+          "physical_Home_exposes_correct_shell": true,
+          "defect_open": "Android fallback surface covers initial Linux Home despite keyboard Home focus; actual Home action raises shell. Not an APK failure or fully fixed product boot."
+        },
+        "original_permission_UI": {
+          "music_audio_allow_action": true,
+          "visual_AllowAll_action": true,
+          "VLC_standard_media_icons_checked": true,
+          "original_result_logs": [
+            "11-06 01:16:04.295 10092   737   737 I GrantPermissionsViewModel: Permission grant result requestId=-7174667146055212614 callingUid=10105 callingPackage=org.videolan.vlc permission=android.permission.READ_MEDIA_AUDIO isImplicit=false result=4 isPermissionRationaleShown=falseisPackageRestrictedByEnhancedConfirmation=false",
+            "11-06 01:16:39.508 10092   737   737 I GrantPermissionsViewModel: Permission grant result requestId=-7174667146055212614 callingUid=10105 callingPackage=org.videolan.vlc permission=android.permission.READ_MEDIA_VIDEO isImplicit=false result=4 isPermissionRationaleShown=falseisPackageRestrictedByEnhancedConfirmation=false",
+            "11-06 01:16:39.514 10092   737   737 I GrantPermissionsViewModel: Permission grant result requestId=-7174667146055212614 callingUid=10105 callingPackage=org.videolan.vlc permission=android.permission.READ_MEDIA_VISUAL_USER_SELECTED isImplicit=true result=4 isPermissionRationaleShown=falseisPackageRestrictedByEnhancedConfirmation=false"
+          ],
+          "permission_controller_source": {
+            "path": "/home/tv/recuperacion-archtv/20261106-vlc-home-media370/GrantPermissionsViewModel.kt",
+            "commit": "e86c3ce11c473fe33c644296363a9d72069f40a3",
+            "url": "https://android.googlesource.com/platform/packages/modules/Permission/+/e86c3ce11c473fe33c644296363a9d72069f40a3/PermissionController/src/com/android/permissioncontroller/permission/ui/model/GrantPermissionsViewModel.kt?format=TEXT",
+            "sha256": "4bdb0f999cd9bad9d8595e1b1701c7a98dc473ec86a199ded381ac5747e06b77"
+          },
+          "effective_PMS_state_independently_read_back_after_grants": false,
+          "media_library_still_showed_permission_card": true,
+          "scope": "Original UI actions and controller responses proved, not full effective media access. No pm grant, all-file access or manual permission writes."
+        },
+        "normal_Back_returns_Home": true,
+        "media_discovery_playback_accepted": false,
+        "cold_reopen_permission_persistence_accepted": false,
+        "complete_APK_workflow_accepted": false,
+        "R1_MAC_closed": false,
+        "enforcing_interval_seconds": 453.85620173999996,
+        "host_recovery": {
+          "boot_id": "109b367f-8785-48af-a620-c355e33639fd",
+          "kernel": "6.18.59-archtv-aosp16-1",
+          "units": "",
+          "loops": "",
+          "dm": "No devices found",
+          "mode": "0",
+          "policy_sha256": "d8b79d1fb58c875f06ee804c83fa3ee90dcd2a5fb0b356f425179e392cbeb818",
+          "clock": "tsc",
+          "pcm": "closed",
+          "udev_drop_absent": true,
+          "mixer_equal": true,
+          "audit_lost_delta": 0,
+          "audit_rules_restored": true,
+          "audit_receiver_closed": true,
+          "backing_unmounted_detached": true,
+          "native_result_present": true,
+          "BPF_cleanup": true
+        },
+        "consumed": true,
+        "next": "Reuse exact370 in a new cold cohort. Preserve/remove prior original PMS pre/postinstall dump diagnostics after backup; after real install readback copy original postcommit dumpsys package and inspect User0 runtime grants. Actual Home key before search, then real VLC launch. Decide persisted permission/cache versus permission service failure from original state; finish media UI/playback/close/reopen. Initial fallback stacking defect remains open.",
+        "evidence": {
+          "before.json": {
+            "path": "/home/tv/recuperacion-archtv/5418e068-64d7-4f4c-ac62-5374ae3380a2-markor-software-launch/before.json",
+            "sha256": "2ec7edc5d24a30aabb0cab3d97f8885f11b5605932ba944f44764efeb2567b02"
+          },
+          "before-launch.json": {
+            "path": "/home/tv/recuperacion-archtv/5418e068-64d7-4f4c-ac62-5374ae3380a2-markor-software-launch/before-launch.json",
+            "sha256": "966513e52c9f2ff7eb373afbe4d63621b81f0e8b11ceb248298fa2742d0d246a"
+          },
+          "result.json": {
+            "path": "/home/tv/recuperacion-archtv/5418e068-64d7-4f4c-ac62-5374ae3380a2-markor-software-launch/result.json",
+            "sha256": "f444c9bc9bea952a9c4870ed690a6ba557165b4d7583bc3f44760dec97dad7b6"
+          },
+          "completion-result.json": {
+            "path": "/home/tv/recuperacion-archtv/5418e068-64d7-4f4c-ac62-5374ae3380a2-markor-software-launch/completion-result.json",
+            "sha256": "6ab2c10d829af05dd8f495ec8d1b8a5f2118034c5c268936d9258068e16e8b76"
+          },
+          "completion-consumer.json": {
+            "path": "/home/tv/recuperacion-archtv/5418e068-64d7-4f4c-ac62-5374ae3380a2-markor-software-launch/completion-consumer.json",
+            "sha256": "b3e866b5bc2f9094376af709c7ddde175f70a65e69a674d2091b7c689f25d5e0"
+          },
+          "mac-window.json": {
+            "path": "/home/tv/recuperacion-archtv/5418e068-64d7-4f4c-ac62-5374ae3380a2-markor-software-launch/mac-window.json",
+            "sha256": "c38b63a91ff12d726e97ee3f56decf781accde4dfab3bfd79ac87fc438fa16b7"
+          },
+          "recovery-readback.json": {
+            "path": "/home/tv/recuperacion-archtv/5418e068-64d7-4f4c-ac62-5374ae3380a2-markor-software-launch/recovery-readback.json",
+            "sha256": "525ad02a5f46dea40dc8557ff252b42c33633d37b2feea41ff7265726a8a9ea6"
+          },
+          "observed-original-logcat.txt": {
+            "path": "/home/tv/recuperacion-archtv/5418e068-64d7-4f4c-ac62-5374ae3380a2-markor-software-launch/observed-original-logcat.txt",
+            "sha256": "d2b799ce3f0f09f7dfffc43895044c784da71c925cafe162871aeb4d367b607a"
+          },
+          "interaction-events.json": {
+            "path": "/home/tv/recuperacion-archtv/5418e068-64d7-4f4c-ac62-5374ae3380a2-markor-software-launch/interaction-events.json",
+            "sha256": "11fc3ebd8de426768400ae55b784105a9661f3ebb4ae64e56374a9e76ff2461c"
+          },
+          "physical-home-key.json": {
+            "path": "/home/tv/recuperacion-archtv/5418e068-64d7-4f4c-ac62-5374ae3380a2-markor-software-launch/physical-home-key.json",
+            "sha256": "cb2e721a856c77ce3c3ac74d594f9b77d0801f8fc7235758988427f3e6d18e04"
+          },
+          "frame-links.jsonl": {
+            "path": "/home/tv/recuperacion-archtv/5418e068-64d7-4f4c-ac62-5374ae3380a2-markor-software-launch/frame-links.jsonl",
+            "sha256": "8243a1d97f6098aff5028cc83315c1ba5bed59176f7f2c297a2da712f197249c"
+          },
+          "vlc-home-focus.png": {
+            "path": "/home/tv/recuperacion-archtv/5418e068-64d7-4f4c-ac62-5374ae3380a2-markor-software-launch/vlc-home-focus.png",
+            "sha256": "3e25a09ca6defc8efa884ff9945f86dea746b99e7fd6c70fdfdfa8109877351a"
+          },
+          "after-home-key.png": {
+            "path": "/home/tv/recuperacion-archtv/5418e068-64d7-4f4c-ac62-5374ae3380a2-markor-software-launch/after-home-key.png",
+            "sha256": "2ed392c91030988847223036849033a5a4931ab24837e6cfe9fa8584ce6b2f36"
+          },
+          "vlc-main.png": {
+            "path": "/home/tv/recuperacion-archtv/5418e068-64d7-4f4c-ac62-5374ae3380a2-markor-software-launch/vlc-main.png",
+            "sha256": "1abd58dc7ef3ac6bdf6d0420b8969e9d2092501faeb88eefba7fcda75737c0e9"
+          },
+          "android-media-permission.png": {
+            "path": "/home/tv/recuperacion-archtv/5418e068-64d7-4f4c-ac62-5374ae3380a2-markor-software-launch/android-media-permission.png",
+            "sha256": "db81ec97ba27c5d0c701a87549eeefc5ffcd1aa856b07e61bbab6ce884b34861"
+          },
+          "after-audio-allow.png": {
+            "path": "/home/tv/recuperacion-archtv/5418e068-64d7-4f4c-ac62-5374ae3380a2-markor-software-launch/after-audio-allow.png",
+            "sha256": "c4c699a953be62b571e818b9bf506b9490f1faa769f558332aee8bbe812d7cfd"
+          },
+          "after-visual-allow.png": {
+            "path": "/home/tv/recuperacion-archtv/5418e068-64d7-4f4c-ac62-5374ae3380a2-markor-software-launch/after-visual-allow.png",
+            "sha256": "370a49f40f753adda900d3b3f7a746cad53c5c1a59ef2f44e99a404724e946da"
+          },
+          "library-after-grants.png": {
+            "path": "/home/tv/recuperacion-archtv/5418e068-64d7-4f4c-ac62-5374ae3380a2-markor-software-launch/library-after-grants.png",
+            "sha256": "4546ee72de9387ae5e81beb39c21310c16e53e331d26ca59009448a2e76162fd"
+          },
+          "after-normal-back.png": {
+            "path": "/home/tv/recuperacion-archtv/5418e068-64d7-4f4c-ac62-5374ae3380a2-markor-software-launch/after-normal-back.png",
+            "sha256": "04a66961abe72eae1453e2e58e7d547c368a2b0aae82cf7adda489e6745307fe"
+          }
+        }
       }
     }
   },
