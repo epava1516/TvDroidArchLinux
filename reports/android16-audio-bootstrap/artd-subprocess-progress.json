@@ -5170,6 +5170,133 @@
           "path": "/home/tv/recuperacion-archtv/90c4e020-c172-487a-9a84-a82fa97ec5d2-markor-software-launch/functional-result.json",
           "sha256": "36ef9547a0719f8037c4cd479a200ad3e4668f96a8b95c2eb1949033f646a8b4"
         }
+      },
+      "integration374": {
+        "id": "82939f7c-3867-4903-90ef-8813dd88b5d1",
+        "checkpoint": "/home/tv/recuperacion-archtv/82939f7c-3867-4903-90ef-8813dd88b5d1-markor-software-launch",
+        "build": "dist/aosp16/package-cohort-build-374",
+        "source_delta_vs370": [
+          "runtime/aosp/linux-services/install-markor.sh"
+        ],
+        "outer_exit": 0,
+        "duration_seconds": 501.13454842567444,
+        "physical_commands": 30,
+        "observed": [
+          "Original Home launch -> physical remote file selection -> visible movie and original player finish",
+          "Original AF/HAL accepted PCM dump after actual original UID1000 VideoPlayer finish; pipeline0, original captured bytes preserved unchanged before/after owner close",
+          "Back -> original MainTv app-request finish -> actual Home with VLC1 focused -> Enter -> original Start/MainTv Displayed -> actual History and second VideoPlayer Displayed/finish",
+          "Reopened movie actual fullscreen PTS0.417/frame5 then1.833/frame22; same APK/data process context, no CLI launch or grant"
+        ],
+        "original_lifecycle_lines": [
+          "11-06 02:37:59.011  1000   531  1458 I wm_finish_activity: [0,65247664,46,org.videolan.vlc/.StartActivity,app-request]",
+          "11-06 02:38:00.438  1000   531   564 I ActivityTaskManager: Displayed org.videolan.vlc/org.videolan.television.ui.MainTvActivity for user 0: +2s38ms",
+          "11-06 02:38:09.015  1000   531   564 I ActivityTaskManager: Displayed org.videolan.vlc/.gui.video.VideoPlayerActivity for user 0: +1s168ms",
+          "11-06 02:38:17.159  1000   531   934 I wm_finish_activity: [0,85886440,46,org.videolan.vlc/.gui.video.VideoPlayerActivity,app-request]",
+          "11-06 02:39:10.631  1000   531  1458 I wm_finish_activity: [0,87870675,46,org.videolan.vlc/org.videolan.television.ui.MainTvActivity,app-request]",
+          "11-06 02:39:34.884  1000   531   552 I wm_finish_activity: [0,209097355,47,org.videolan.vlc/.StartActivity,app-request]",
+          "11-06 02:39:35.262  1000   531   564 I ActivityTaskManager: Displayed org.videolan.vlc/org.videolan.television.ui.MainTvActivity for user 0: +522ms",
+          "11-06 02:40:40.774  1000   531   564 I ActivityTaskManager: Displayed org.videolan.vlc/.gui.video.VideoPlayerActivity for user 0: +899ms",
+          "11-06 02:40:46.065  1000   531   552 I wm_finish_activity: [0,148036620,47,org.videolan.vlc/.gui.video.VideoPlayerActivity,app-request]"
+        ],
+        "pcm_summary": {
+          "writes": 67,
+          "accepted_frames": 270336,
+          "flags": 0,
+          "actual_period_size": 4096,
+          "actual_buffer_size": 16384,
+          "nominal_captured_seconds": 5.632,
+          "active_nominal_seconds": 2.5,
+          "reference_active_seconds": 4.0,
+          "estimated_source_jump_seconds": [
+            {
+              "from_source_seconds": 0.24400076790170844,
+              "to_source_seconds": 1.8330522765598647,
+              "delta_source_seconds": 1.5890515086581563,
+              "accepted_start_frames": [
+                15360,
+                20160
+              ]
+            }
+          ],
+          "capture_shape": "Stereo PCM16/48k; actual positive TinyALSA writes, no errors/truncation/multiple-stream flags in first capture"
+        },
+        "limitations": [
+          "Only2.5s active signal vs4s reference; estimated source gap0.244->1.833, not complete audio",
+          "Decoder EOF and app-request close do not prove full rendered source or AV sync",
+          "Acoustic/physical host output, pause controls, host reboot persistence, full R1 isolation, ARM/GMS/DRM and broad compatibility remain open",
+          "Observed original late/flush/drop logs identify timing discontinuity, not its root cause; no causation attributed to VirtualBox version"
+        ],
+        "next_action": "Reuse exact374 payload for controlled temporary acpi_pm vs baselineTSC, with prearmed existing rollback timer/finally and fresh offline backup. Earlier counted Linux PCM clock comparison2.65s TSC vs4.01s acpi_pm supports discriminating hypothesis, not current APK acceptance. Preserve same source/APK/policy/audio; compare actual first-stream source gaps and original late/flush logs, then restoreTSC.",
+        "evidence": [
+          {
+            "path": "/home/tv/recuperacion-archtv/82939f7c-3867-4903-90ef-8813dd88b5d1-markor-software-launch/result.json",
+            "sha256": "014843e59414edec7d72824650fad9857ebbdef7ec2cdc97533e9e00eccec455"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/82939f7c-3867-4903-90ef-8813dd88b5d1-markor-software-launch/completion-result.json",
+            "sha256": "dca2806ad6ae5882c687a6e305de68dce52f638c1a10a0f9bd74988437d83e87"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/82939f7c-3867-4903-90ef-8813dd88b5d1-markor-software-launch/completion-consumer.json",
+            "sha256": "e04746526f4e410ca5116a3ec45a88d447b245fce141575d431e393e2ec3a73a"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/82939f7c-3867-4903-90ef-8813dd88b5d1-markor-software-launch/recovery-readback.json",
+            "sha256": "525ad02a5f46dea40dc8557ff252b42c33633d37b2feea41ff7265726a8a9ea6"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/82939f7c-3867-4903-90ef-8813dd88b5d1-markor-software-launch/interaction-events.json",
+            "sha256": "153ca8a800d914105997f08827c11725abce0bba385c071f46126f760396b631"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/82939f7c-3867-4903-90ef-8813dd88b5d1-markor-software-launch/observed-original-logcat.txt",
+            "sha256": "1e102f9e870010d60833c2233ff82133234a2a4b3298da0a6d3b7025ffbf8c2c"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/82939f7c-3867-4903-90ef-8813dd88b5d1-markor-software-launch/observed-audio-ui-finish-observation.txt",
+            "sha256": "7a53bd54cdceeae52862b1bc5c8d6aedfb9de56a982321d7a87ba0e96039c896"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/82939f7c-3867-4903-90ef-8813dd88b5d1-markor-software-launch/observed-audio-accepted-pcm.bin",
+            "sha256": "77ad5a2d7de267ce3093f69f7178433f1c09cd312872453afb690b6fec5566a5"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/82939f7c-3867-4903-90ef-8813dd88b5d1-markor-software-launch/observed-audio-pcm-status.txt",
+            "sha256": "bddde26fdcde62164f6559d4722720b2bed912c3d3aeec21d160bcab06799901"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/82939f7c-3867-4903-90ef-8813dd88b5d1-markor-software-launch/pcm-signal/signal-analysis.json",
+            "sha256": "ac22dec3c7a33920e868060901611a7112508620dc64c23c9b7e7aee9bc6c062"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/82939f7c-3867-4903-90ef-8813dd88b5d1-markor-software-launch/pcm-signal/source-step-observation.json",
+            "sha256": "ab2241bd631842a3b5dc4b697f152c4ac52befb199db69222a49330c318b0c3e"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/82939f7c-3867-4903-90ef-8813dd88b5d1-markor-software-launch/after-back2.png",
+            "sha256": "5f53555220f95481d3f368d5645400988f9d04d24b0dacc5160dc5459bebee5a"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/82939f7c-3867-4903-90ef-8813dd88b5d1-markor-software-launch/relaunched-vlc.png",
+            "sha256": "419d2590dd192eda1ff99944df2a04d5efb22d0cc154769259a5baae512d84fc"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/82939f7c-3867-4903-90ef-8813dd88b5d1-markor-software-launch/reopened-movie-frames.json",
+            "sha256": "293d7408008b3459d4430e2d4c71a2c1ae6a6a7da2fffa5d1557065e904853d7"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/82939f7c-3867-4903-90ef-8813dd88b5d1-markor-software-launch/reopen-movie-b.png",
+            "sha256": "e1feecbbdfb125f2af6b63af674f1dd59be3086a4d1509596880628449efa25d"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/82939f7c-3867-4903-90ef-8813dd88b5d1-markor-software-launch/reopen-movie-c.png",
+            "sha256": "7bcceb21a7ceb869f6253fe5f589917876884eff4396be53f445aae53aef33cf"
+          }
+        ],
+        "functional_result": {
+          "path": "/home/tv/recuperacion-archtv/82939f7c-3867-4903-90ef-8813dd88b5d1-markor-software-launch/functional-result.json",
+          "sha256": "eb8a7ae3a50c55ffa9a771e9a9c651424d615948ae6af47f66f4b3ffd0d051d6"
+        }
       }
     }
   },

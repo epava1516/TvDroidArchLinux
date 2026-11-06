@@ -1,5 +1,13 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+374 verifica Back→cierre MainTv original→Home real con VLC1→Enter→MainTv original→History→reproducción visible otra vez (PTS0,417/frame5 a1,833/frame22).30órdenes físicas; sin CLI ni grants. El instalador observa el primer cierre original y consulta el mismo AudioFlinger/HAL:67escrituras/270336frames, flags0, sin errores ni truncamiento. Sólo2,5s de señal activa frente a4s de referencia; salto estimado0,244→1,833s. No se acepta audio completo/sincronía/salida acústica/pausa ni compatibilidad amplia. Exterior0, recuperación69/permisivo/TSC/mixer/datos/BPF y consumo único verificados.
+
+Siguiente: mismo payload374, control temporal acpi_pm con rollback existente armado antes y finally, copia offline nueva. El antecedente Linux contado2,65s TSC/4,01s acpi_pm justifica contrastar ahora esta base multimedia; no prueba causa ni aceptación APK actual. Comparar discontinuidad de señal y late/flush originales; restaurarTSC, sin cambio permanente. R1/ARM/GMS/DRM y producto siguen abiertos.
+
+Evidencia: /home/tv/recuperacion-archtv/82939f7c-3867-4903-90ef-8813dd88b5d1-markor-software-launch/functional-result.json SHA256 eb8a7ae3a50c55ffa9a771e9a9c651424d615948ae6af47f66f4b3ffd0d051d6. Informe ART →integration374, matriz y captura original/estimaciones enlazadas. Sólo cambió install-markor.sh: observación acotada después de UI y propagación del fallo real del pipeline; política/API/ABI/APK intactas.
+
+Histórico anterior:
+
 373 abre el archivo visible en Movies por mando, vuelve a seleccionarlo después del cierre original del reproductor y registra dos Displayed/EOF de entrada/app-request finish. Back normal cierra MainTv y presenta Home real. No se acepta todo el vídeo/audio: últimos frames inspeccionados PTS2,583/2,667 de fuente4s; EOF de decodificador no prueba render completo. Relanzamiento de toda VLC pendiente: la cohorte ya había cerrado al buscar desde Home. Exterior0, recuperación69/permisivo/TSC/datos/BPF y consumo único verificados. Primer guion de navegación llegó a Browser, conservado sin declararlo éxito.
 
 Siguiente: observación PCM original AudioFlinger→HAL después del primer cierre de VideoPlayer en perfil Home; ahora ese perfil omite el dump existente del bloque VIEW CLI. Reutilizar el mismo contrato de observación, sin lanzar por CLI ni ampliar permisos, para decidir cobertura de señal frente a temporización/presentación. R1/ARM/GMS/DRM/compatibilidad amplia abiertos.

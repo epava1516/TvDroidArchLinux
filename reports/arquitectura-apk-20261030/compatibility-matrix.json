@@ -44,7 +44,7 @@
         "close": "not_tested",
         "reopen": "not_tested"
       },
-      "reason": "371 proves persisted original PMS User0 audio/video grants across native restart/reinstall and unlocked VLC library UI. History card/thumbnail is not proof of current file read/playback. Main actor had no SELECT353; late temporary DPAD_CENTER was rejected with display off. Next actual media selection via proper remote key, then video/audio/input/close/reopen evidence; full workflow/R1/ARM/GMS/DRM open.",
+      "reason": "374 proves original Back/MainTv finish -> real Home -> original relaunch -> same history medium opened and moving again, with intact APK and no CLI launch/grants. Original AF/HAL capture succeeds but contains2.5s active signal vs4s reference and estimated source discontinuity0.244->1.833s. FullAV/pause/acoustic/sync/R1/ARM/GMS/DRM not accepted. Next exact-payload clocksource control with recovery, no new audio runtime.",
       "framework_class_link_pass": null,
       "source_verification": "Existing cached artifact; download provenance not revalidated in this audit. REA identity and declared signer recorded.",
       "declared_application": "org.videolan.mobile.app.VLCApplication",
@@ -272,7 +272,7 @@
         "complete_audio_accepted": false,
         "decision": "CPU300 insufficient; coherent original ART/signing integration next. No source signal or acoustic acceptance."
       },
-      "current_retest_gate_after357": "370 real Home launch and actual permission UI decisions proved; next cold original PMS dumpsys state must distinguish persistence/cache from service failure, then real media playback/close/reopen. No further fixture-only milestones.",
+      "current_retest_gate_after357": "Original install/signature/UID and actual source waveform coverage, video timing, pause and whole-app close/reopen in one owned cohort; retain373 original UI/EOF/close evidence and current scoped limits.",
       "historical_reason_before_home357": "Original native audio HAL/effect factory/audioserver now execute with real IAudioPolicy/IAudioFlinger retrieval under enforcing62; primary output still cannot open due original HAL memfd feature-probe write denied on Linux tmpfs. Actual clip remains frame0, no PCM/video motion accepted.21 effect plugins missing; R1 and broad compatibility open.",
       "coherent_control358": {
         "record": "../android16-audio-bootstrap/artd-subprocess-progress.json",
@@ -385,6 +385,20 @@
         "whole_app_reopen": false,
         "full_AV_accepted": false,
         "scope": "Two original VideoPlayer Displayed/decoder EOF/app-request finish, actual moving frames. Inspected last PTS below4s; decoder EOF is not complete render/audio proof. Back to Home verified, native cohort ended before app relaunch."
+      },
+      "historical_reason_before_remote373": "371 proves persisted original PMS User0 audio/video grants across native restart/reinstall and unlocked VLC library UI. History card/thumbnail is not proof of current file read/playback. Main actor had no SELECT353; late temporary DPAD_CENTER was rejected with display off. Next actual media selection via proper remote key, then video/audio/input/close/reopen evidence; full workflow/R1/ARM/GMS/DRM open.",
+      "historical_reason_before_PCM374": "373 proves original UI file selection/reselection, moving fullscreen frames, original decoder EOF and player app-request finish twice, then normal MainTv finish/real RustHome. Last inspected visible PTS below4-second source; EOF is not full rendered/audio acceptance. Whole-app reopen missed because original cohort closed; captured empty catalog is not service availability. Next374 samples accepted PCM via existing original AF/HAL contract after original UI finish; candidate built, not executed result yet. FullAV/pause/acoustic/sync/R1/ARM/GMS/DRM remain open.",
+      "coherent_control374": {
+        "evidence": "/home/tv/recuperacion-archtv/82939f7c-3867-4903-90ef-8813dd88b5d1-markor-software-launch/functional-result.json",
+        "evidence_sha256": "eb8a7ae3a50c55ffa9a771e9a9c651424d615948ae6af47f66f4b3ffd0d051d6",
+        "original_full_activity_close_Home_relaunch_media_reopen": true,
+        "process_death_reopen": false,
+        "accepted_PCM_source_signal_observed": true,
+        "complete_audio": false,
+        "full_workflow": false,
+        "source_signal_active_seconds": 2.5,
+        "reference_seconds": 4.0,
+        "scope": "Original physical UI warm activity close/reopen and actual movie frames. Capture proves gap, not continuous audio or causal clock diagnosis. Host recovery and one-time consumption verified."
       }
     },
     {

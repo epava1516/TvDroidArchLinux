@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "docs/ARQUITECTURA.md": {
-    "mtime": 1793932046.684013,
-    "seen": 1793932065.8932831,
-    "ast_hash": "619fa40866d8c9c69ecaf2ea27f6b11e",
+    "mtime": 1793933132.155315,
+    "seen": 1793933155.8492227,
+    "ast_hash": "a7bfefa61b473593c6d95f51f35bad98",
     "semantic_hash": ""
   },
   "docs/DESARROLLO-RUST.md": {
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1793932046.649564,
-    "seen": 1793932065.893955,
-    "ast_hash": "1b522ab33d7f885fa4d27c168ee8240b",
+    "mtime": 1793933132.1007106,
+    "seen": 1793933155.8499095,
+    "ast_hash": "c45d6c4b46c5e15c8d89c6a79a1f2bec",
     "semantic_hash": ""
   },
   "docs/ESTUDIO-SMITHAY-ANVIL.md": {
@@ -630,9 +630,9 @@
     "semantic_hash": ""
   },
   "docs/ROADMAP-A.md": {
-    "mtime": 1793932046.6684396,
-    "seen": 1793932065.8948247,
-    "ast_hash": "8655891b1b15e6d394177fb4913b53fb",
+    "mtime": 1793933132.131076,
+    "seen": 1793933155.850581,
+    "ast_hash": "d943c565cca70a5e49c44d79c6dfd70b",
     "semantic_hash": ""
   },
   "crates/archtv-android/Cargo.toml": {
@@ -1716,9 +1716,9 @@
     "semantic_hash": ""
   },
   "docs/EVIDENCIAS.md": {
-    "mtime": 1793932046.6631055,
-    "seen": 1793932065.894115,
-    "ast_hash": "3986de4af1b990a1a79df0b1b522f0bf",
+    "mtime": 1793933132.1183312,
+    "seen": 1793933155.850066,
+    "ast_hash": "4b2faa4574acf987006938c6422230a5",
     "semantic_hash": ""
   },
   "fixtures/aosp-framework-space/FrameworkSpaceProbe.java": {
@@ -2034,9 +2034,9 @@
     "semantic_hash": ""
   },
   "runtime/aosp/linux-services/install-markor.sh": {
-    "mtime": 1793926798.574606,
-    "seen": 1793926856.3895698,
-    "ast_hash": "ec66bec356f275a9c1aaf65c9b3415b9",
+    "mtime": 1793932122.097271,
+    "seen": 1793932215.348357,
+    "ast_hash": "43c4f715bf53e82c33a7d478bed51439",
     "semantic_hash": ""
   },
   "scripts/run_completion.py": {
@@ -2089,7 +2089,7 @@
   },
   "runtime/aosp/hwui-sources.json": {
     "mtime": 1793383954.003966,
-    "seen": 1793931145.9531467,
+    "seen": 1793932088.8378563,
     "ast_hash": "",
     "semantic_hash": ""
   },
