@@ -165,7 +165,16 @@ case "$component" in "$target_package"/*) ;; *) exit 1;; esac
 # Local-media experiments use VLC's declared VIEW contract, resolved by
 # original PMS. URI access is granted by original AMS; never synthesize a URI
 # or bypass provider permission checks. Actual playback still needs evidence.
-if [ -n "${media_uri:-}" ]; then
+if [ -f /vendor/etc/archtv-media-home-launch ]; then
+    # The media is already published/read back through the original provider,
+    # and the intact APK installed/read back through original PMS above.
+    # Let the actual Linux Home selection call Context/Instrumentation and
+    # PowerManager. No initial CLI VIEW, URI grant, fabricated launch output,
+    # timeout override or permission grant in this profile.
+    [ "$target_package" = org.videolan.vlc ]
+    [ -n "${media_uri:-}" ]
+    [ "$(/system/bin/cat /vendor/etc/archtv-media-home-launch)" = 1 ]
+elif [ -n "${media_uri:-}" ]; then
     media_resolved=$(/system/bin/cmd package resolve-activity --brief --user 0 -a android.intent.action.VIEW -c android.intent.category.DEFAULT -d "$media_uri" -t "$media_mime" -p "$target_package")
     /system/bin/printf '%s\n' "$media_resolved" > /data/local/tmp/archtv-mc1/media-resolve.txt
     media_component=$(/system/bin/printf '%s\n' "$media_resolved" | /system/bin/tail -n 1)

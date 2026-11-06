@@ -1,5 +1,13 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+369 no completa permisos: PowerManager durmió a00:50:15 antes del VIEW CLI a00:50:23; VideoPlayer no emitió Displayed y el guion automático quedó esperando. Se relevó únicamente el actor propio tras verificar salida/dispositivos retirados; tecla física WAKEUP produjo dispatch original aceptado y WAKE_REASON_WAKE_KEY. La selección tardía en Home no acredita lanzamiento/permisos. Nativa/exterior0 no cierran APK: actor original-15 por relevo,13órdenes manuales y retirada verificada. Recuperación69/permisivo/TSC/datos/BPF comprobada, consumido una vez.368 conserva su UI/Power/PermissionController probados.
+
+Siguiente370: publicar medio por MediaProvider e instalar/verificar APK por PMS originales, dejando el lanzamiento a Home real; nueva opción estática de perfil media-home-launch, no propiedad de readiness ni concesión URI. Probar permisos, selección/reproducción por UI, cierre/reapertura. Candidato pendiente de ejecución; R1/ARM/GMS/DRM y compatibilidad amplia abiertos.
+
+Evidencia: /home/tv/recuperacion-archtv/b30ee9b5-799a-4bd6-9da9-c7c71c6da5e3-markor-software-launch/functional-result.json SHA256 00b14be3d836990669b3e9e127ccdc0599543259ee7dcb57505b899f7b36f6df. Informe ART →integration369/home_media370_preparation.
+
+Histórico anterior:
+
 368 prueba sueño real → búsqueda vlc/selección física en Home → PowerManager original despierta → MainTvActivity de VLC intacta visible → diálogo original PermissionController.17entradas; nativa/exterior/interacción y tres propietarios0;349,160s enforcing registrado y retorno69/permisivo/TSC/mixer/datos/BPF verificado, consumido sin cola. Concesión de medios, reproducción por UI, cierre/reapertura y compatibilidad amplia pendientes.367 se conserva rechazado antes de ejecución AOSP por ruta de payload incoherente; el runner ya vincula ruta/hash al checkpoint y la negativa real rechaza otro payload existente antes de locks/montajes.
 
 Siguiente recorrido: diálogo real de medios estándar → confirmar permisos por PMS original → seleccionar/reproducir medio en VLC TV → entrada/cierre/reapertura. Markor357 conserva su alcance probado; R1/ARM/GMS/DRM, instalación/actualización/ligereza y compatibilidad amplia siguen abiertos.

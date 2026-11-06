@@ -1896,7 +1896,7 @@
           "sha256": "d3eb7667da5d6443deb22eb91de5893b561c0d7ec098f92087a2ed33a0a58f36"
         }
       },
-      "current_integration": "integration368",
+      "current_integration": "integration369",
       "integration348": {
         "checkpoint": "/home/tv/recuperacion-archtv/e0fa5b78-4a45-43d5-8ddf-fe45ef118344-markor-software-launch",
         "build": "dist/aosp16/package-cohort-build-348",
@@ -4583,6 +4583,145 @@
             "sha256": "2928b35fca336c50f9354144b451f301225d37e18d2c6d86879d3cb815705f77"
           }
         }
+      },
+      "integration369": {
+        "checkpoint": "/home/tv/recuperacion-archtv/b30ee9b5-799a-4bd6-9da9-c7c71c6da5e3-markor-software-launch",
+        "build": "dist/aosp16/package-cohort-build-369",
+        "code_commit": "94e18a5d90ae63a69ffcb0fa9fbd370085548602",
+        "native_exit": 0,
+        "outer_exit": 0,
+        "original_actor_exit": -15,
+        "original_actor_commands": 0,
+        "manual_actor_commands": 13,
+        "actor_handoff": {
+          "run_id": "b30ee9b5-799a-4bd6-9da9-c7c71c6da5e3",
+          "owner_invocation": "48245569429747d68b405521bfb2343c",
+          "old_pid": 48529,
+          "old_pidfd_exit_observed": true,
+          "old_devices_retired": true,
+          "old_commands": 0,
+          "reason": "No original VideoPlayer Displayed; current capture black. Manual real physical wake, not readiness or original API success.",
+          "manual_pid": 58622,
+          "manual_starttime_ticks": "783210",
+          "manual_source_sha256": "5c76041648111f4d055f1ebe4ba8cc2a8a08043ba8f4c1f6670c22b852c7d7cd",
+          "manual_input_file": "/home/tv/recuperacion-archtv/b30ee9b5-799a-4bd6-9da9-c7c71c6da5e3-markor-software-launch/manual-input-commands.jsonl",
+          "scope": "Only owned test input actor replaced after observed exit/device retirement; original runtime uninterrupted. Original actor SIGTERM remains separate, not pass."
+        },
+        "manual_actor_close": {
+          "manual_pid": 58622,
+          "original_process_still_live": false,
+          "manual_devices_fd_closed": true,
+          "manual_devices_retired": true,
+          "commands_written": 13,
+          "scope": "Test input actor closure only, not APK acceptance"
+        },
+        "first_VIEW_failure": {
+          "original_sleep": "11-06 00:50:15.545  1000   514   563 I PowerManagerService: Going to sleep due to timeout (uid 1000, screenOffTimeout=60000, activityTimeoutWM=-1, maxDimRatio=0.20000005, maxDimDur=7000)...",
+          "later_original_VIEW": "11-06 00:50:23.535  1000   514   846 I ActivityTaskManager: START u0 {act=android.intent.action.VIEW dat=content://media/... typ=video/mp4 flg=0x10000001 xflg=0x4 cmp=org.videolan.vlc/.StartActivity} with LAUNCH_MULTIPLE from uid 2000 (com.android.shell) (BAL_ALLOW_PERMISSION) result code=0",
+          "VideoPlayer_Display_observed": false,
+          "automatic_gate_completed": false,
+          "capture": "current-before-manual.png",
+          "scope": "Original Power slept before CLI VIEW; Started does not mean Displayed. This dependency blocked the input plan, not an APK compatibility success."
+        },
+        "physical_wake": {
+          "original_power_log": "11-06 00:54:38.351  1000   514   692 I PowerManagerService: Waking up from Asleep (uid=1000, reason=WAKE_REASON_WAKE_KEY, details=android.policy:KEY)...",
+          "original_dispatch": [
+            "11-06 00:54:38.369  1000   514   692 W System.err: WAYLAND_INPUT_ORIGINAL_DISPATCH seq=1 type=1 code=224 action=0 accepted=true",
+            "11-06 00:54:38.373  1000   514   692 W System.err: WAYLAND_INPUT_ORIGINAL_DISPATCH seq=2 type=1 code=224 action=1 accepted=true"
+          ],
+          "wake_contract_observed": true,
+          "complete_UI_or_media_acceptance": false
+        },
+        "late_Home_attempt": {
+          "real_VLC_card_focused": true,
+          "Enter13_written": true,
+          "original_start_proved": false,
+          "permission_UI_completed": false,
+          "scope": "Root owner was still active during append but native pipeline was closing; no original launch or permission success inferred."
+        },
+        "R1_MAC_closed": false,
+        "complete_APK_workflow_accepted": false,
+        "enforcing_interval_seconds": 455.933998386,
+        "host_recovery": {
+          "boot_id": "109b367f-8785-48af-a620-c355e33639fd",
+          "kernel": "6.18.59-archtv-aosp16-1",
+          "units": "",
+          "loops": "",
+          "dm": "No devices found",
+          "mode": "0",
+          "policy_sha256": "d8b79d1fb58c875f06ee804c83fa3ee90dcd2a5fb0b356f425179e392cbeb818",
+          "clock": "tsc",
+          "pcm": "closed",
+          "udev_drop_absent": true,
+          "mixer_equal": true,
+          "audit_lost_delta": 0,
+          "audit_rules_restored": true,
+          "audit_receiver_closed": true,
+          "backing_unmounted_detached": true,
+          "native_result_present": true,
+          "BPF_cleanup": true
+        },
+        "consumed": true,
+        "next": "370 profile: original media publish/readback and PMS install/readback retained, no initial CLI VIEW/URI grant. Start via real Home after actual fresh installed-byte readback. Complete original permission UI and read actual media through VLC; no fake readiness/permissions.",
+        "evidence": {
+          "before.json": {
+            "path": "/home/tv/recuperacion-archtv/b30ee9b5-799a-4bd6-9da9-c7c71c6da5e3-markor-software-launch/before.json",
+            "sha256": "185b72a337bda040ba7a8cff693f07096736f765aae805676589e1ffbe48ca2b"
+          },
+          "completion-result.json": {
+            "path": "/home/tv/recuperacion-archtv/b30ee9b5-799a-4bd6-9da9-c7c71c6da5e3-markor-software-launch/completion-result.json",
+            "sha256": "a6b9f97e84990c69e951a9e4963c130fd025b9831503a83e5eb0248e229ba3c6"
+          },
+          "completion-consumer.json": {
+            "path": "/home/tv/recuperacion-archtv/b30ee9b5-799a-4bd6-9da9-c7c71c6da5e3-markor-software-launch/completion-consumer.json",
+            "sha256": "82b4084d4886bd06fa725097b8649dddf14cc513506cb4e417c076be5e72c677"
+          },
+          "result.json": {
+            "path": "/home/tv/recuperacion-archtv/b30ee9b5-799a-4bd6-9da9-c7c71c6da5e3-markor-software-launch/result.json",
+            "sha256": "993652eb77717e7f38ff51f07f02b73ade2f39ce7f3e893b0a5c8ea4d4798233"
+          },
+          "recovery-readback.json": {
+            "path": "/home/tv/recuperacion-archtv/b30ee9b5-799a-4bd6-9da9-c7c71c6da5e3-markor-software-launch/recovery-readback.json",
+            "sha256": "525ad02a5f46dea40dc8557ff252b42c33633d37b2feea41ff7265726a8a9ea6"
+          },
+          "mac-window.json": {
+            "path": "/home/tv/recuperacion-archtv/b30ee9b5-799a-4bd6-9da9-c7c71c6da5e3-markor-software-launch/mac-window.json",
+            "sha256": "2eea1c908d890af4b071f39b2bc543bb7f4d7a51499315dfa156b51913b1b314"
+          },
+          "observed-original-logcat.txt": {
+            "path": "/home/tv/recuperacion-archtv/b30ee9b5-799a-4bd6-9da9-c7c71c6da5e3-markor-software-launch/observed-original-logcat.txt",
+            "sha256": "b96520ee7c4b8b74364ab6fc352718d36fc1800ec7aa3f36b05cb63b27f93c35"
+          },
+          "interaction-events.json": {
+            "path": "/home/tv/recuperacion-archtv/b30ee9b5-799a-4bd6-9da9-c7c71c6da5e3-markor-software-launch/interaction-events.json",
+            "sha256": "818aa35efeabe4c5a1dd7842fafe59b847549694dd372de32d30af9a59fe5db5"
+          },
+          "interaction-manual-events.json": {
+            "path": "/home/tv/recuperacion-archtv/b30ee9b5-799a-4bd6-9da9-c7c71c6da5e3-markor-software-launch/interaction-manual-events.json",
+            "sha256": "d68c18aee8f80f81ff1e7eff3c8e04b476641cbfbb3de5fc77eadfb3c61dc5ef"
+          },
+          "manual-input-handoff.json": {
+            "path": "/home/tv/recuperacion-archtv/b30ee9b5-799a-4bd6-9da9-c7c71c6da5e3-markor-software-launch/manual-input-handoff.json",
+            "sha256": "3875faeab2006aea50ce7ae739b5ca9f5291d6f8ca87a33c6d9aad5a7ada2b6b"
+          },
+          "manual-input-close.json": {
+            "path": "/home/tv/recuperacion-archtv/b30ee9b5-799a-4bd6-9da9-c7c71c6da5e3-markor-software-launch/manual-input-close.json",
+            "sha256": "c893e2381c472fd3483bbb0778644d62e8e7b5db6489511c2cd132f0b35aca8d"
+          },
+          "frame-links.jsonl": {
+            "path": "/home/tv/recuperacion-archtv/b30ee9b5-799a-4bd6-9da9-c7c71c6da5e3-markor-software-launch/frame-links.jsonl",
+            "sha256": "60e3b4597cff1a0989298ee2468cc4440def16171c235cb96590d7ffbc1a4662"
+          }
+        }
+      },
+      "home_media370_preparation": {
+        "workdir": "/home/tv/recuperacion-archtv/20261106-vlc-home-media370",
+        "scope": "Candidate only until real execution. Defers CLI launch to actual authenticated Home selection; original install, media publication and permission checks remain.",
+        "runtime_accepted": false,
+        "build_exit": 0,
+        "build": "dist/aosp16/package-cohort-build-370",
+        "build_options_sha256": "ba83a9830598734b75fdfd4229092cc2d7e9fa48ac81a53ac109dc3540db07ba",
+        "source_inputs_sha256": "17adcf6004103711ac53ec9b340f5c5607f5b29d5b33c428f06c8ce6563486fa"
       }
     }
   },
