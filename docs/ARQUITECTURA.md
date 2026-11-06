@@ -1,5 +1,13 @@
 # Arquitectura vigente · A16-QPR2-1
 
+372 prueba selección por mando real → VideoPlayer original → vídeo visible sobre Smithay: PTS1,667/frame20 y PTS2,750/frame33.22órdenes físicas; tras SELECT22 no más entrada y la actividad finaliza por app-request. No se acepta EOF completo sin observación explícita, ni audio completo/sincronía, pausa o cierre/reapertura. Exterior0,488,524s; recuperación69/permisivo/TSC/mixer/datos/BPF y consumo único verificados. Windows11/VirtualBox7.2.22r175245 confirmado por usuario; Hyper-V/WSL2 desconocidos, sin atribución causal de relojes.
+
+Siguiente: reutilizar imagen370 y recorrido de mando observado hasta historial sin pausas de operador, reproducir y comprobar final y reapertura por UI original. No recompilar ni repetir grants. R1/ARM/GMS/DRM y compatibilidad amplia abiertos.
+
+Evidencia: /home/tv/recuperacion-archtv/976cd3e8-feb1-4a7d-ad24-b32a668c3bf9-markor-software-launch/functional-result.json SHA256 3c0b9478a98c7045f3dc988e2fe3b933d8ffb9a3d4f60f7b3f5530ef6b9c3d2c. Informe ART →integration372, frames originales/hash y logcat enlazados.
+
+Histórico anterior:
+
 371 confirma PMS original User0: READ_MEDIA_AUDIO/VIDEO/VISUAL_USER_SELECTED=true antes y después de reinstalar APK intacta en una cohorte nueva, sin nuevo grant. VLC abre biblioteca sin bloqueo y muestra historial/miniatura; eso no prueba lectura/reproducción actual.16órdenes; SELECT353→DPAD_CENTER23 se probó tarde con pantalla apagada y fue rechazado, no fallo de códec ni permisos. Nativa/exterior/interacción0, recuperación69/permisivo/datos/BPF y consumo único verificados. Persistencia sólo entre cohortes en el mismo arranque Linux, no reinicio de anfitrión.
 
 Siguiente: misma imagen370, actor de entrada con SELECT353 y Home real; seleccionar medio visible sin demora, comprobar frames/EOF y cierre/reapertura. Enter66 queda para Home, no sustituir mando por callbacks. No repetir diálogos ni recompilar runtime intacto. Audio completo/sincronía, apilado inicial de Home, R1/ARM/GMS/DRM y compatibilidad amplia abiertos.

@@ -21,11 +21,11 @@
       "derive_classpath",
       "odrefresh"
     ],
-    "new_permission": "artd \u2192 artd_subprocess_type process2 nnp_transition only",
+    "new_permission": "artd → artd_subprocess_type process2 nnp_transition only",
     "original_transition_and_entrypoint_required": true,
     "execute_no_trans_not_granted": true,
     "offline_queries": 24,
-    "actual_runtime_observation": "Original artd invokes art_exec --drop-capabilities \u2192 dex2oat32 targeting oat/x86_64/base.odex; dex2oat returned code 0",
+    "actual_runtime_observation": "Original artd invokes art_exec --drop-capabilities → dex2oat32 targeting oat/x86_64/base.odex; dex2oat returned code 0",
     "boot_image": "Checksum mismatch remains; compiler falls back to imageless running. No coherent boot image acceptance."
   },
   "apk": {
@@ -221,7 +221,7 @@
     },
     "integration326": {
       "checkpoint": "/home/tv/recuperacion-archtv/cde2d4de-f95e-4841-b035-05eac8321be4-markor-software-launch",
-      "result": "art_boot exited0; odsign exited127 before main: init\u2192odsign process2 nosuid_transition denied under66",
+      "result": "art_boot exited0; odsign exited127 before main: init→odsign process2 nosuid_transition denied under66",
       "data_labels": {
         "store": "/home/tv/.local/share/archtv/experimental-userdata/art-coherent-326",
         "metadata": {
@@ -295,7 +295,7 @@
       "offline_access_evidence": "dist/aosp16/audio-policy-inputs-67/access-comparison.json",
       "offline_cases": 48,
       "payload_sha256": "4c058a8b21bcbcc7c9cfbc423573f3e252b57857e890788b4a47d42d073b93d7",
-      "scope": "Same326 payload/private store.67 adds only init\u2192odsign nosuid_transition; NNP1/nosuid/original labels preserved. No runtime success assumed.",
+      "scope": "Same326 payload/private store.67 adds only init→odsign nosuid_transition; NNP1/nosuid/original labels preserved. No runtime success assumed.",
       "functional_result": "/home/tv/recuperacion-archtv/1ac79885-39f9-4abf-8da2-16fee8b80080-markor-software-launch/functional-result.json",
       "result": {
         "id": "1ac79885-39f9-4abf-8da2-16fee8b80080",
@@ -2692,7 +2692,7 @@
             "sha256": "b050682c253ef85fdaa175cfe7424acf03fa31ab81a336a03ab7c9bbeaa20d0c"
           }
         },
-        "scope": "Scoped original-task\u2192trusted RustHome\u2192original CLI WARM relaunch and existing note positive. Wrappers exit1, exact cause unknown; reproduced chown bug suspected. Not overall run acceptance or broad APK/R1 completion.",
+        "scope": "Scoped original-task→trusted RustHome→original CLI WARM relaunch and existing note positive. Wrappers exit1, exact cause unknown; reproduced chown bug suspected. Not overall run acceptance or broad APK/R1 completion.",
         "next": "Full354 candidate rebuilding; test actual closure and Home child exec/restart under enforcing, then original launcher/catalog UI."
       },
       "runner_close_correction353": {
@@ -4348,7 +4348,7 @@
           "during_enforcing": "Java execmem AVC denied for linux.init_t, inspect failed; after restored permissive MCP APK inspection succeeds. No permission added.",
           "manifest": "Original exported StartActivity advertises LAUNCHER and LEANBACK; signature verification not performed by this tool."
         },
-        "next": "Integrate original PowerManager wakeUp/userActivity only for authenticated Linux Home launch, keep timeout/permissions original. Prove sleep\u2192physical selection\u2192wake\u2192visible original VLC onboarding, no keepalive or false success.",
+        "next": "Integrate original PowerManager wakeUp/userActivity only for authenticated Linux Home launch, keep timeout/permissions original. Prove sleep→physical selection→wake→visible original VLC onboarding, no keepalive or false success.",
         "evidence": {
           "result.json": {
             "path": "/home/tv/recuperacion-archtv/e5992e0b-346c-41a8-a66b-ba2db60f4e32-markor-software-launch/result.json",
@@ -4928,7 +4928,7 @@
             "11-06 01:42:18.716  1000   523   746 W System.err: WAYLAND_INPUT_ORIGINAL_DISPATCH seq=11 type=1 code=23 action=0 accepted=false",
             "11-06 01:42:23.816  1000   523   746 W System.err: WAYLAND_INPUT_ORIGINAL_DISPATCH seq=12 type=1 code=23 action=1 accepted=false"
           ],
-          "scope": "353\u2192DPAD_CENTER23 confirmed; attempted late with display off, original dispatch rejected. Enter66 earlier focused the card but no VideoPlayer START observed. Do not infer translator/decoder failure or require permission changes."
+          "scope": "353→DPAD_CENTER23 confirmed; attempted late with display off, original dispatch rejected. Enter66 earlier focused the card but no VideoPlayer START observed. Do not infer translator/decoder failure or require permission changes."
         },
         "R1_MAC_closed": false,
         "host_recovery": {
@@ -5014,6 +5014,78 @@
             "path": "/home/tv/recuperacion-archtv/e26a78f4-85ee-4cc3-91fc-9c4c20a4e744-markor-software-launch/after-remote-select.png",
             "sha256": "3e25a09ca6defc8efa884ff9945f86dea746b99e7fd6c70fdfdfa8109877351a"
           }
+        }
+      },
+      "integration372": {
+        "execution_id": "976cd3e8-feb1-4a7d-ad24-b32a668c3bf9",
+        "checkpoint": "/home/tv/recuperacion-archtv/976cd3e8-feb1-4a7d-ad24-b32a668c3bf9-markor-software-launch",
+        "build": "dist/aosp16/package-cohort-build-370",
+        "runtime_code_commit": "0b385a5",
+        "review_head": "dcc557ef82406891394d3a1627e184b2fa5bcb36",
+        "host_reported": {
+          "os": "Windows 11",
+          "virtualbox": "7.2.22 r175245 (Qt6.8.0 on Windows)",
+          "HyperV": "unknown",
+          "WSL2": "unknown",
+          "causation": "No clock divergence cause established by this report."
+        },
+        "outer_exit": 0,
+        "duration_seconds": 488.5236921310425,
+        "physical_commands": 22,
+        "observed": [
+          "Home search/launch of intact VLC, original MainTvActivity and original VideoPlayerActivity Displayed",
+          "Linux SELECT353 maps through original Generic.kl to Android DPAD_CENTER23; accepted original dispatch",
+          "Actual fullscreen Smithay output visibly advances from source PTS1.667/frame20 to PTS2.750/frame33",
+          "Original VideoPlayer app-request finish and destruction after playback; no further input after SELECT22"
+        ],
+        "not_accepted": [
+          "Complete 4-second visible source/EOF: no explicit EOF observation verified",
+          "Complete audio, acoustic output, audiovisual sync",
+          "Pause, full close/reopen media workflow",
+          "Host reboot persistence, R1 isolation, broad APK compatibility, ARM/GMS/DRM"
+        ],
+        "next_action": "Reuse image370; automate only the already observed remote path to focused history card promptly, select, observe full movie and original EOF, then original UI reopen. No permission grants or CLI VIEW.",
+        "evidence": [
+          {
+            "path": "/home/tv/recuperacion-archtv/976cd3e8-feb1-4a7d-ad24-b32a668c3bf9-markor-software-launch/result.json",
+            "sha256": "80c7c1abcbd05f4d13aec4c7d22516f3cf78659e9e9107aaf95d86b840b3e095"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/976cd3e8-feb1-4a7d-ad24-b32a668c3bf9-markor-software-launch/recovery-readback.json",
+            "sha256": "525ad02a5f46dea40dc8557ff252b42c33633d37b2feea41ff7265726a8a9ea6"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/976cd3e8-feb1-4a7d-ad24-b32a668c3bf9-markor-software-launch/completion-consumer.json",
+            "sha256": "5c62cc01b8f6f827ca31e14a4aa460415e89e92294de0030fb5ec30d4510be23"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/976cd3e8-feb1-4a7d-ad24-b32a668c3bf9-markor-software-launch/interaction-events.json",
+            "sha256": "e709cd46347d4f064d3dc8b67cc1d5786570884aaebd231315e7cf69f9b52fc7"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/976cd3e8-feb1-4a7d-ad24-b32a668c3bf9-markor-software-launch/observed-original-logcat.txt",
+            "sha256": "12008043b9d09d067285e786348a879b7887c4d61e2cfeeeb0706d7b95485acc"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/976cd3e8-feb1-4a7d-ad24-b32a668c3bf9-markor-software-launch/video-selection-frame-window.json",
+            "sha256": "ebe8c736c05fa7e72420248d97462c52710642f9cb6e42640fdef52412944e69"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/976cd3e8-feb1-4a7d-ad24-b32a668c3bf9-markor-software-launch/video-window-7.png",
+            "sha256": "12636b6ae5b8745aec5ba08921aaeb694dad20718f3f90dcd91b3049e071be24"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/976cd3e8-feb1-4a7d-ad24-b32a668c3bf9-markor-software-launch/video-window-9.png",
+            "sha256": "fb73384b680198eddeae4dab437490c7a13e6e4073fb6429d4da2f5dd6a0cae9"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/976cd3e8-feb1-4a7d-ad24-b32a668c3bf9-markor-software-launch/selected-movie.png",
+            "sha256": "36b80dbd3498b18f5ace8ef38c385a6c2c39b29ae7997f88aa47060cb9322285"
+          }
+        ],
+        "functional_result": {
+          "path": "/home/tv/recuperacion-archtv/976cd3e8-feb1-4a7d-ad24-b32a668c3bf9-markor-software-launch/functional-result.json",
+          "sha256": "3c0b9478a98c7045f3dc988e2fe3b933d8ffb9a3d4f60f7b3f5530ef6b9c3d2c"
         }
       }
     }
