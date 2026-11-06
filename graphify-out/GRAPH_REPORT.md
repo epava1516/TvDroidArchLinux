@@ -1,7 +1,7 @@
 # Graph Report - repositorio-principal  (2026-11-06)
 
 ## Corpus Check
-- 373 files · ~365,131 words
+- 373 files · ~365,651 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 71 file(s) not represented in the graph (top: .cil 26, .patch 20, .xml 12)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `dcc557ef`
+- Built from commit: `16aad772`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -315,7 +315,7 @@ Nodes (5): Estudio de Smithay y Anvil, Mapa de lectura, Qué no resuelve Smithay
 
 ### Community 18 - "Roadmap A · compatibilidad APK mínima sobre Linux"
 Cohesion: 0.09
-Nodes (23): Bootstrap original aislado · 2026-10-30, Corrección del enfoque anterior, DEX de la APK ejecutado con API mínima, Entregables actuales de la reconducción, Evolución previa de la priorización (histórico), Fixture disponible, Framework modular original · 2026-10-30, La APK ya usa el principal original (+15 more)
+Nodes (23): Bootstrap original aislado · 2026-10-30, Corrección del enfoque anterior, DEX de la APK ejecutado con API mínima, Entregables actuales de la reconducción, Evolución previa de la priorización (histórico), Fixture disponible, Framework modular original · 2026-10-30, Histórico · puertas BASE-AOSP-1 anteriores a A16-QPR2-1 (+15 more)
 
 ### Community 20 - "common.sh"
 Cohesion: 0.38
@@ -767,7 +767,7 @@ Nodes (12): dex_inventory(), string(), table(), uint(), inspect(), digest(), dec
 
 ### Community 227 - "Camino crítico vigente · Markor completo"
 Cohesion: 0.67
-Nodes (3): Camino crítico vigente · Markor completo, Decisión gráfica tras la cohorte real, Histórico · camino crítico anterior al recorrido162
+Nodes (3): Camino crítico vigente · aplicaciones completas, Decisión gráfica tras la cohorte real, Histórico · camino crítico anterior al recorrido162
 
 ### Community 230 - "prepare_factory_inputs.py"
 Cohesion: 0.38

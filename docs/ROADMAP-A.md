@@ -1,5 +1,13 @@
 # Roadmap A · plataforma APK general sobre Linux
 
+373 abre el archivo visible en Movies por mando, vuelve a seleccionarlo después del cierre original del reproductor y registra dos Displayed/EOF de entrada/app-request finish. Back normal cierra MainTv y presenta Home real. No se acepta todo el vídeo/audio: últimos frames inspeccionados PTS2,583/2,667 de fuente4s; EOF de decodificador no prueba render completo. Relanzamiento de toda VLC pendiente: la cohorte ya había cerrado al buscar desde Home. Exterior0, recuperación69/permisivo/TSC/datos/BPF y consumo único verificados. Primer guion de navegación llegó a Browser, conservado sin declararlo éxito.
+
+Siguiente: observación PCM original AudioFlinger→HAL después del primer cierre de VideoPlayer en perfil Home; ahora ese perfil omite el dump existente del bloque VIEW CLI. Reutilizar el mismo contrato de observación, sin lanzar por CLI ni ampliar permisos, para decidir cobertura de señal frente a temporización/presentación. R1/ARM/GMS/DRM/compatibilidad amplia abiertos.
+
+Evidencia: /home/tv/recuperacion-archtv/90c4e020-c172-487a-9a84-a82fa97ec5d2-markor-software-launch/functional-result.json SHA256 36ef9547a0719f8037c4cd479a200ad3e4668f96a8b95c2eb1949033f646a8b4. Informe ART →integration373 y matriz; frames/logcat/recuperación enlazados.
+
+Histórico anterior:
+
 372 prueba selección por mando real → VideoPlayer original → vídeo visible sobre Smithay: PTS1,667/frame20 y PTS2,750/frame33.22órdenes físicas; tras SELECT22 no más entrada y la actividad finaliza por app-request. No se acepta EOF completo sin observación explícita, ni audio completo/sincronía, pausa o cierre/reapertura. Exterior0,488,524s; recuperación69/permisivo/TSC/mixer/datos/BPF y consumo único verificados. Windows11/VirtualBox7.2.22r175245 confirmado por usuario; Hyper-V/WSL2 desconocidos, sin atribución causal de relojes.
 
 Siguiente: reutilizar imagen370 y recorrido de mando observado hasta historial sin pausas de operador, reproducir y comprobar final y reapertura por UI original. No recompilar ni repetir grants. R1/ARM/GMS/DRM y compatibilidad amplia abiertos.
@@ -434,18 +442,21 @@ primera hipótesis SurfaceFlinger→Wayland reemplazan la selección A/B/C y API
 anteriores. La base nueva se mantiene aislada; no se descartan el compositor,
 instalación, herramientas o regresiones útiles. Reinicios necesarios autorizados expresamente; checkpoint y recuperación antes de interrupciones.
 
-## Camino crítico vigente · Markor completo
+## Camino crítico vigente · aplicaciones completas
 
-[Registro vigente MAC](../reports/android16-package-bootstrap/original-apex-derive-mac-progress.json), integrated266/268/269/270.162–167 se conservan como antecedentes permisivos; no son el estado actual de seguridad.270 prueba el recorrido acotado con política60 enforcing: instalación original, presentación física Smithay, entrada y nota previamente creada266, cierre forzado/PID ausente/nuevo PID y reapertura visible con bytes idénticos. No acredita toda Markor ni compatibilidad amplia.
+Markor conserva el recorrido acotado probado: nota creada y guardada por UI348,
+cierre/reapertura normal351/352/355 y selección desde Home357. Las evidencias
+canónicas están en el informe ART y la matriz; no equivalen a toda Markor ni a
+compatibilidad amplia. Los estados270–272 inferiores son históricos.
 
 | Orden | Resultado funcional exigido | Estado y puerta |
 | --- | --- | --- |
-| 1 · recorrido local | Instalación/firma original, UI física Smithay, entrada, nota, servicios requeridos, cierre y reapertura | Nota creada/guardada por UI266; force-stop/relaunch y nota visible270 bajo enforcing. Cierre elegante de actividad y resto de funciones todavía sin aceptar |
-| 2 · datos durables | Cohortes originales independientes conservan APK/firma/UID y misma nota sin sembrar estados | Nota real266 conservada y reabierta270 con mismo SHA21 bytes. No acredita reinicio del anfitrión, FBE ni toda semántica de almacenamiento |
-| 3 · cierre reproducible | Coordinador termina por protocolo normal, cliente completado, servicios recogidos, modo y recursos restaurados | 270 se cerró externamente después de probar la UI; no acepta esta puerta.271 cierra al expirar120s con cliente aún incompleto: fallo real conservado, no STOPPED.272 prueba cierre nativo0 por protocolo, pero el exterior 1 conserva EACCES/None en identidades proc. Puerta de verificación global todavía abierta; no cambiar Stop ni fabricar SID. No cambiar Stop por el antiguo fallo de workflow incompleto ya corregido |
-| 4 · R1-MAC | Identidades y acceso cruzado permitido/denegado, caída/recuperación y efectos del anfitrión | Abierto. Política60 permite el recorrido Android bajo enforcing y frontend propio, sin nuevos grupos/permisos para FUSE. Admisión PAM/host confiable aún usa permisivo; falta aislamiento completo y recuperación por expiración realmente ensayada.171 es histórico y su cliente APEX ya está superado |
-| 5 · estabilidad y producto | Presupuestos, latencias/soak/ciclos, reproducción limpia, instalación/actualización/rollback/distro | Abierto; resolver cierre natural antes de empaquetar el recorrido. Conservar H7–H9 y C2/C4–C7; no aprobar por compilar o una nota |
-| 6 · compatibilidad amplia | APK reales representativas en la misma base, multimedia/WebView/splits | Otras APK pendientes; API/servicios, Bionic/JNI e ISA separados. ARM/GMS/DRM mantienen investigación y limitaciones, fuera de este primer recorrido |
+| 1 · segunda aplicación completa | VLC intacta desde Home, permisos originales, selección de medio, vídeo/audio, controles, cierre y reapertura | Permisos persistidos entre cohortes371; vídeo por mando y frames reales372. Audio completo/sincronía, controles y reapertura aún pendientes. Reutilizar imagen370; siguiente373 intenta recorrido UI completo |
+| 2 · datos durables | APK/firma/UID, nota y medios se conservan sin sembrar estados entre cohortes y reinicio del anfitrión | Persistencia acotada entre cohortes demostrada; reinicio del anfitrión, FBE y cobertura de almacenamiento siguen abiertos |
+| 3 · cierre reproducible | Protocolo normal, cliente/servicios terminados, recursos y modo restaurados | Cohortes recientes verifican cierre y recuperación; ampliar a repetición/cancelación/caída y costes, sin extrapolar éxito universal |
+| 4 · R1-MAC | Identidades, accesos permitidos/denegados, caída/recuperación y efectos del anfitrión | Abierto. Política69 en ventanas enforcing y recuperación permisiva; frontend Linux confiable y etiquetado global incompleto no acreditan aislamiento completo |
+| 5 · estabilidad y producto | Presupuestos, latencias/soak/ciclos, reproducción limpia, instalación/actualización/rollback/distro | Abierto. Conservar H7–H9 y C2/C4–C7; no aprobar por compilar ni por una aplicación |
+| 6 · compatibilidad amplia | Aplicaciones reales en la misma base, multimedia/WebView/splits y servicios externos | Matriz parcial. API/servicios, Bionic/JNI e ISA separados; ARM/GMS/DRM siguen abiertos con requisitos externos explícitos |
 
 ### Histórico · camino crítico anterior al recorrido162
 
@@ -696,9 +707,12 @@ Waydroid. El éxito se mide por ejecución real de aplicaciones, no por boot And
 | A4 · compatibilidad y estabilidad | APK reales por ABI/API, reflexión, WebView y demás dependencias descubiertas; ampliar la capa con evidencia | Matriz por aplicación, pruebas prolongadas, reinicios y mediciones; fallos y cobertura registrados | Pendiente |
 | A5 · distribución | Runtime y servicio anfitrión propios, paquetes, actualizaciones, migración de datos e integración TV | Instalación limpia sin Waydroid ni sistema Android completo, apps verificadas, actualización y rollback | Pendiente |
 
-## Puertas vigentes BASE-AOSP-1
+## Histórico · puertas BASE-AOSP-1 anteriores a A16-QPR2-1
 
-Estas puertas preceden a más ampliaciones por métodos aislados. No sustituyen
+El estado de la tabla siguiente corresponde a la evaluación anterior de API33/A/B/C;
+no describe el runtime A16 actual. Se conserva para trazabilidad.
+
+Estas puertas precedían a más ampliaciones por métodos aislados. No sustituyen
 A3–A5 ni H6–H9 y no convierten sus preparativos en compatibilidad.
 
 | Puerta | Dependencias y experimento | Aceptación verificable | Estado |

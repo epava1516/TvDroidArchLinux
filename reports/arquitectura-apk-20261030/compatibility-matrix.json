@@ -361,7 +361,31 @@
         "full_playback_accepted": false,
         "scope": "Original User0 grants true before/after reinstall on same Linux boot; real MainTv no permission lock. Enter is not DPAD_CENTER; late SELECT23 rejected with display off. No new codec/dependency failure inferred."
       },
-      "historical_reason_before_cold371": "368 proves literal VLC search/card focus, original Home launch after original60s sleep, real PowerManager wake and MainTv UI, then original PermissionController music/audio dialog.17physical commands; correct frozen payload, threeowners0 and host recovery verified. Standard media grant/readback and playback through the VLC UI remain unaccepted; full media close/reopen/persistence and broad compatibility remain open. Earlier zero-search is retained as a Space-to-Home contaminated input attempt, not current missing catalog. Prior361/362 audio evidence remains scoped."
+      "historical_reason_before_cold371": "368 proves literal VLC search/card focus, original Home launch after original60s sleep, real PowerManager wake and MainTv UI, then original PermissionController music/audio dialog.17physical commands; correct frozen payload, threeowners0 and host recovery verified. Standard media grant/readback and playback through the VLC UI remain unaccepted; full media close/reopen/persistence and broad compatibility remain open. Earlier zero-search is retained as a Space-to-Home contaminated input attempt, not current missing catalog. Prior361/362 audio evidence remains scoped.",
+      "coherent_control372": {
+        "checkpoint": "/home/tv/recuperacion-archtv/976cd3e8-feb1-4a7d-ad24-b32a668c3bf9-markor-software-launch",
+        "evidence": "/home/tv/recuperacion-archtv/976cd3e8-feb1-4a7d-ad24-b32a668c3bf9-markor-software-launch/functional-result.json",
+        "evidence_sha256": "3c0b9478a98c7045f3dc988e2fe3b933d8ffb9a3d4f60f7b3f5530ef6b9c3d2c",
+        "launch_from_real_Home_no_initial_CLI_VIEW": true,
+        "original_remote_selection_and_moving_fullscreen_video": true,
+        "visual_source_pts_seconds": [
+          1.667,
+          2.75
+        ],
+        "full_playback_accepted": false,
+        "complete_audio": false,
+        "full_workflow": false,
+        "scope": "Original physical SELECT23 dispatch, VideoPlayerActivity Displayed, two inspected actual Smithay frames visibly progress; app-request finish observed but explicit source EOF not verified. Native/exterior0 and recovery verified. No pause/reopen/acoustic/sync/R1 acceptance."
+      },
+      "coherent_control373": {
+        "evidence": "/home/tv/recuperacion-archtv/90c4e020-c172-487a-9a84-a82fa97ec5d2-markor-software-launch/functional-result.json",
+        "evidence_sha256": "36ef9547a0719f8037c4cd479a200ad3e4668f96a8b95c2eb1949033f646a8b4",
+        "original_remote_file_open_and_reopen": true,
+        "normal_MainTv_finish_and_Home_visible": true,
+        "whole_app_reopen": false,
+        "full_AV_accepted": false,
+        "scope": "Two original VideoPlayer Displayed/decoder EOF/app-request finish, actual moving frames. Inspected last PTS below4s; decoder EOF is not complete render/audio proof. Back to Home verified, native cohort ended before app relaunch."
+      }
     },
     {
       "id": "calculator",

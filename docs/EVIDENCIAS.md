@@ -1,5 +1,13 @@
 # Índice de evidencias
 
+373 abre el archivo visible en Movies por mando, vuelve a seleccionarlo después del cierre original del reproductor y registra dos Displayed/EOF de entrada/app-request finish. Back normal cierra MainTv y presenta Home real. No se acepta todo el vídeo/audio: últimos frames inspeccionados PTS2,583/2,667 de fuente4s; EOF de decodificador no prueba render completo. Relanzamiento de toda VLC pendiente: la cohorte ya había cerrado al buscar desde Home. Exterior0, recuperación69/permisivo/TSC/datos/BPF y consumo único verificados. Primer guion de navegación llegó a Browser, conservado sin declararlo éxito.
+
+Siguiente: observación PCM original AudioFlinger→HAL después del primer cierre de VideoPlayer en perfil Home; ahora ese perfil omite el dump existente del bloque VIEW CLI. Reutilizar el mismo contrato de observación, sin lanzar por CLI ni ampliar permisos, para decidir cobertura de señal frente a temporización/presentación. R1/ARM/GMS/DRM/compatibilidad amplia abiertos.
+
+Evidencia: /home/tv/recuperacion-archtv/90c4e020-c172-487a-9a84-a82fa97ec5d2-markor-software-launch/functional-result.json SHA256 36ef9547a0719f8037c4cd479a200ad3e4668f96a8b95c2eb1949033f646a8b4. Informe ART →integration373 y matriz; frames/logcat/recuperación enlazados.
+
+Histórico anterior:
+
 372 prueba selección por mando real → VideoPlayer original → vídeo visible sobre Smithay: PTS1,667/frame20 y PTS2,750/frame33.22órdenes físicas; tras SELECT22 no más entrada y la actividad finaliza por app-request. No se acepta EOF completo sin observación explícita, ni audio completo/sincronía, pausa o cierre/reapertura. Exterior0,488,524s; recuperación69/permisivo/TSC/mixer/datos/BPF y consumo único verificados. Windows11/VirtualBox7.2.22r175245 confirmado por usuario; Hyper-V/WSL2 desconocidos, sin atribución causal de relojes.
 
 Siguiente: reutilizar imagen370 y recorrido de mando observado hasta historial sin pausas de operador, reproducir y comprobar final y reapertura por UI original. No recompilar ni repetir grants. R1/ARM/GMS/DRM y compatibilidad amplia abiertos.

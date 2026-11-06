@@ -5087,6 +5087,89 @@
           "path": "/home/tv/recuperacion-archtv/976cd3e8-feb1-4a7d-ad24-b32a668c3bf9-markor-software-launch/functional-result.json",
           "sha256": "3c0b9478a98c7045f3dc988e2fe3b933d8ffb9a3d4f60f7b3f5530ef6b9c3d2c"
         }
+      },
+      "integration373": {
+        "id": "90c4e020-c172-487a-9a84-a82fa97ec5d2",
+        "checkpoint": "/home/tv/recuperacion-archtv/90c4e020-c172-487a-9a84-a82fa97ec5d2-markor-software-launch",
+        "build": "dist/aosp16/package-cohort-build-370",
+        "outer_exit": 0,
+        "duration_seconds": 503.05525159835815,
+        "physical_commands": 42,
+        "observed": [
+          "Intact VLC original Home launch and original Browser Internal memory/Movies navigation",
+          "Two physical selections of timecoded file, original VideoPlayer Displayed/EOF input logs/app-request finish each time",
+          "Actual fullscreen movie windows inspected: first PTS2.250/frame27 then2.583/frame31, second PTS2.667/frame32",
+          "Physical Back through Browser to MainTv app-request finish and actual RustHome visible"
+        ],
+        "limitations": [
+          "Original decoder EOF is not full rendered source coverage: last inspected frames below4s; investigate with accepted PCM observation",
+          "Normal whole-app reopen not achieved: original runtime closed before Home search, empty catalog is not service availability",
+          "First automatic22 commands entered Browser instead of history; navigation depends on persisted focus, not a codec failure",
+          "Late physical inputs while screen asleep were rejected; genuine WAKEUP used, original60s timeout retained",
+          "Audio complete/acoustic/sync/pause, host-reboot persistence, R1 and broad compatibility remain open"
+        ],
+        "original_selected_lines": [
+          "11-06 02:22:07.642  1000   531   562 I ActivityTaskManager: Displayed org.videolan.vlc/.gui.video.VideoPlayerActivity for user 0: +975ms",
+          "11-06 02:22:11.577 10105  1495  1698 D VLC     : [00007fc7b3a23740/6a2] libvlc input: EOF reached",
+          "11-06 02:22:13.573  1000   531   896 I wm_finish_activity: [0,210586305,45,org.videolan.vlc/.gui.video.VideoPlayerActivity,app-request]",
+          "11-06 02:22:14.037 10105  1495  1724 D VLC     : [00007fc7b3a1fae0/6bc] libvlc input: EOF reached",
+          "11-06 02:22:35.685  1000   531   562 I ActivityTaskManager: Displayed org.videolan.vlc/.gui.video.VideoPlayerActivity for user 0: +452ms",
+          "11-06 02:22:38.750 10105  1495  1743 D VLC     : [00007fc7b3a35100/6cf] libvlc input: EOF reached",
+          "11-06 02:22:40.754  1000   531   743 I wm_finish_activity: [0,201296469,45,org.videolan.vlc/.gui.video.VideoPlayerActivity,app-request]",
+          "11-06 02:22:41.312 10105  1495  1758 D VLC     : [00007fc7b3a36520/6de] libvlc input: EOF reached",
+          "11-06 02:24:33.087  1000   531  1426 I wm_finish_activity: [0,175864879,45,org.videolan.vlc/org.videolan.television.ui.MainTvActivity,app-request]"
+        ],
+        "next_action": "Observe original AudioFlinger/HAL accepted PCM after first original VideoPlayer finish in media-home profile. Current profile skips the existing late dump in CLI VIEW branch; move observation to a bounded post-UI stage without CLI launch, permission changes or fabricated readiness.",
+        "evidence": [
+          {
+            "path": "/home/tv/recuperacion-archtv/90c4e020-c172-487a-9a84-a82fa97ec5d2-markor-software-launch/result.json",
+            "sha256": "2074a142efccd657b4c6f9c86e076d0cfa16e4f0b7e3d4ae586ef81d04a46d22"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/90c4e020-c172-487a-9a84-a82fa97ec5d2-markor-software-launch/completion-result.json",
+            "sha256": "d7cf81dad30738e56c3b49edf7156c99eae4531f927b2cf20c9c44bba6255bd2"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/90c4e020-c172-487a-9a84-a82fa97ec5d2-markor-software-launch/completion-consumer.json",
+            "sha256": "4994791c03a4cd4e66747f8671055cfaf0dcd66ee614df247b6532adf57c8182"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/90c4e020-c172-487a-9a84-a82fa97ec5d2-markor-software-launch/recovery-readback.json",
+            "sha256": "525ad02a5f46dea40dc8557ff252b42c33633d37b2feea41ff7265726a8a9ea6"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/90c4e020-c172-487a-9a84-a82fa97ec5d2-markor-software-launch/interaction-events.json",
+            "sha256": "6d3f86a15af579a17e5469acd12e350afe4679804e7d5b97d662285fd5eb9999"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/90c4e020-c172-487a-9a84-a82fa97ec5d2-markor-software-launch/observed-original-logcat.txt",
+            "sha256": "ea82b94128f2ea4183db9eab0ee8cb11fba368c841dc9e3ed747787f8c168a3e"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/90c4e020-c172-487a-9a84-a82fa97ec5d2-markor-software-launch/movie-frame-windows.json",
+            "sha256": "ef35511525792fe0f952a8b44020067d6e466706d555d3300f2c1959d7f26e12"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/90c4e020-c172-487a-9a84-a82fa97ec5d2-markor-software-launch/movie-window-10.png",
+            "sha256": "ce1052a681aff93895e775faf9c96759fdcec3ee814339189dcc0b73838eb304"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/90c4e020-c172-487a-9a84-a82fa97ec5d2-markor-software-launch/movie-window-11.png",
+            "sha256": "f36ea8094d40aa08d3002f3862fdcb625b6ba5c418cbe88378847515a871c58f"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/90c4e020-c172-487a-9a84-a82fa97ec5d2-markor-software-launch/movie-window-51.png",
+            "sha256": "5c4c9d4b02cd4b3566b5d79411c70daaba9bb41a80090aad8d910739e58ddd1e"
+          },
+          {
+            "path": "/home/tv/recuperacion-archtv/90c4e020-c172-487a-9a84-a82fa97ec5d2-markor-software-launch/exit-confirmed.png",
+            "sha256": "04a66961abe72eae1453e2e58e7d547c368a2b0aae82cf7adda489e6745307fe"
+          }
+        ],
+        "functional_result": {
+          "path": "/home/tv/recuperacion-archtv/90c4e020-c172-487a-9a84-a82fa97ec5d2-markor-software-launch/functional-result.json",
+          "sha256": "36ef9547a0719f8037c4cd479a200ad3e4668f96a8b95c2eb1949033f646a8b4"
+        }
       }
     }
   },
